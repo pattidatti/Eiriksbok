@@ -105,8 +105,18 @@ const Hundreaarskrigen3D = lazy(() => import('./Hundreaarskrigen3D'));
 const Stenderpyramiden3D = lazy(() => import('./Stenderpyramiden3D'));
 const FingertFlukt3D = lazy(() => import('./FingertFlukt3D'));
 const Personalunion3D = lazy(() => import('./Personalunion3D'));
+const Leiegaarden3D = lazy(() => import('./Leiegaarden3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'leiegaarden-3d': {
+        id: 'leiegaarden-3d',
+        title: 'Leiegården: byen som stod på hodet',
+        description:
+            'Et tverrsnitt av en romersk insula (leiegård) i fire etasjer, sett rett forfra som et dukkehus. Nede på gata venter fire familier, fra den rike kjøpmannen (rød) til den fattige enka (grå). Klikk en familie og sett den inn i riktig etasje: i Roma var alt snudd på hodet mot i dag, så de rikeste bodde NEDERST med innlagt vann og dør rett ut, mens de fattigste ble presset OPP under taket uten vann. Når alle bor, velt oljelampen: brannen sprer seg oppover, kjøpmannen på gateplan går rett ut, men familiene øverst sitter fast i røyken. Lyspæren: i en insula var høyden motsatt av i dag. Jo høyere du bodde, jo fattigere og farligere var livet, fordi det fantes verken heis, vann eller trygg rømningsvei på toppen.',
+        estimatedSeconds: 150,
+        loader: () => import('./Leiegaarden3D'),
+        Component: Leiegaarden3D as never,
+    },
     'fingerte-flukten-3d': {
         id: 'fingerte-flukten-3d',
         title: 'Den fingerte flukten',
