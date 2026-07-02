@@ -38,6 +38,13 @@
             }
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "leiegaarden-3d"
+            }
+        },
+        {
             "type": "header",
             "content": "Mat og drikke: Smaken av Roma"
         },
