@@ -76,6 +76,7 @@ const Berlinmuren3D = lazy(() => import('./Berlinmuren3D'));
 const Falltaarnet3D = lazy(() => import('./Falltaarnet3D'));
 const JapanMirakelBy3D = lazy(() => import('./JapanMirakelBy3D'));
 const StormingenAvBastillen3D = lazy(() => import('./StormingenAvBastillen3D'));
+const Teselskapet3D = lazy(() => import('./Teselskapet3D'));
 const TempeletsRenselse3D = lazy(() => import('./TempeletsRenselse3D'));
 const JapanskImperium3D = lazy(() => import('./JapanskImperium3D'));
 const SaturnVMane3D = lazy(() => import('./SaturnVMane3D'));
@@ -330,6 +331,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./StormingenAvBastillen3D'),
         Component: StormingenAvBastillen3D as never,
+    },
+    'teselskapet-3d': {
+        id: 'teselskapet-3d',
+        title: 'Teselskapet i Boston',
+        description:
+            'Boston havn, natt til 16. desember 1773. Tre skip ligger fulle av te som britene har lagt skatt pa. Dra tekiste etter tekiste over rekka og se dem plaske ned i havet. Lyspaeren: kolonistene naektet a betale en skatt de ikke fikk stemme om, og valgte heller a odelegge teen enn a gi etter. Britene svarte med a stenge havna, og protesten forte et langt skritt naermere apen krig.',
+        estimatedSeconds: 110,
+        loader: () => import('./Teselskapet3D'),
+        Component: Teselskapet3D as never,
     },
     'japan-mirakel-by-3d': {
         id: 'japan-mirakel-by-3d',

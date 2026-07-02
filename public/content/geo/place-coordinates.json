@@ -836,7 +836,7 @@
     },
     {
       "tag": "demokrati",
-      "count": 25
+      "count": 27
     },
     {
       "tag": "imperium",
@@ -859,6 +859,10 @@
       "count": 23
     },
     {
+      "tag": "revolusjon",
+      "count": 22
+    },
+    {
       "tag": "vikingtiden",
       "count": 21
     },
@@ -876,10 +880,6 @@
     },
     {
       "tag": "renessansen",
-      "count": 20
-    },
-    {
-      "tag": "revolusjon",
       "count": 20
     },
     {
@@ -963,6 +963,14 @@
       "count": 12
     },
     {
+      "tag": "1700-tallet",
+      "count": 12
+    },
+    {
+      "tag": "menneskerettigheter",
+      "count": 12
+    },
+    {
       "tag": "grammatikk",
       "count": 12
     },
@@ -1000,14 +1008,6 @@
     },
     {
       "tag": "rettigheter",
-      "count": 10
-    },
-    {
-      "tag": "1700-tallet",
-      "count": 10
-    },
-    {
-      "tag": "menneskerettigheter",
       "count": 10
     },
     {
@@ -1292,6 +1292,10 @@
     },
     {
       "tag": "natur",
+      "count": 5
+    },
+    {
+      "tag": "opplysningstid",
       "count": 5
     },
     {
@@ -1604,10 +1608,6 @@
     },
     {
       "tag": "global-historie",
-      "count": 3
-    },
-    {
-      "tag": "opplysningstid",
       "count": 3
     },
     {

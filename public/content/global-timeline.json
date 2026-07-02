@@ -4122,6 +4122,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "uavhengighetskrigen",
+      "title": "Den amerikanske revolusjonen",
+      "description": "Fra teselskapet i Boston til uavhengighetserklæringen: slik ble USA født.",
+      "startDate": 1775,
+      "endDate": 1783,
+      "displayDate": "1775-1783",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "den-amerikanske-revolusjonen",
+      "link": "/historie/den-amerikanske-revolusjonen/uavhengighetskrigen",
+      "tags": [
+        "usa",
+        "revolusjon",
+        "opplysningstid",
+        "menneskerettigheter",
+        "demokrati",
+        "1700-tallet"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "okonomiske-skoler",
       "title": "Ulike økonomiske skoler",
       "description": "Hvorfor uenes økonomer om kriser, rente og inflasjon? Et grunnriss av de fire store retningene.",

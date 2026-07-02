@@ -1,0 +1,213 @@
+{
+    "id": "uavhengighetskrigen",
+    "title": "Den amerikanske revolusjonen",
+    "layout": "rich",
+    "year": "1775-1783",
+    "category": "Verdenshistorie",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Tretten britiske kolonier i Nord-Amerika brøt med kongen og skapte en ny stat: USA.",
+        "Kravet «ingen skatt uten representasjon» drev fram opprøret.",
+        "Uavhengighetserklæringen fra 1776 sa at alle mennesker er skapt like."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Det var mørkt over Boston havn kvelden 16. desember 1773. Tre skip lå fullastet med te. Plutselig klatret en gjeng menn om bord. De var kledd ut, og i løpet av noen timer kastet de 342 kister med te rett i sjøen. De ødela varer verdt en formue. Men de tok ikke en eneste ting for seg selv. Dette var ingen tyver. Det var en protest. Og den protesten skulle ende med at en helt ny stat ble født: USA."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Menn kaster tekister i Boston havn om natten",
+            "caption": "Teselskapet i Boston 1773. Kolonistene ødela teen heller enn å betale skatt på den."
+        },
+        {
+            "type": "header",
+            "text": "Tretten kolonier langt hjemmefra"
+        },
+        {
+            "type": "text",
+            "content": "På 1700-tallet hadde Storbritannia tretten kolonier langs østkysten av Nord-Amerika. Der bodde rundt to og en halv million mennesker. De fleste hadde røtter i Europa, men var født i Amerika. De dyrket jorda, drev handel og styrte mye av hverdagen sin selv. Likevel var koloniene en del av det britiske riket. Den øverste makten lå hos kongen og parlamentet i London, mer enn fem tusen kilometer unna."
+        },
+        {
+            "type": "text",
+            "content": "I mange år gikk dette bra. Men rundt 1760 hadde Storbritannia nettopp vunnet en dyr krig mot Frankrike om land i Nord-Amerika. Krigen hadde tømt den britiske statskassa. Nå mente kongen at koloniene måtte være med og betale. Løsningen ble skatter. Og det var her det begynte å skjære seg."
+        },
+        {
+            "type": "header",
+            "text": "Ingen skatt uten representasjon"
+        },
+        {
+            "type": "text",
+            "content": "Problemet var ikke bare at skattene kom. Problemet var hvem som bestemte dem. Kolonistene hadde ingen representanter i parlamentet i London. Ingen talte deres sak når nye lover ble vedtatt. Likevel skulle de betale. Kolonistene fant et slagord som samlet dem: «Ingen skatt uten representasjon.» Med andre ord: den som ikke får være med å bestemme, skal heller ikke tvinges til å betale."
+        },
+        {
+            "type": "text",
+            "content": "Tanken var ikke grepet ut av lufta. Filosofen [John Locke](/krle/filosofi/locke) hadde skrevet at alle mennesker har noen rettigheter ingen konge kan ta fra dem, og at et styre bare er lovlig hvis folket har sagt ja til det. En annen tenker, [Montesquieu](/krle/filosofi/montesquieu), mente at makten måtte deles opp, slik at ingen enkeltperson kunne bli for mektig. Slike ideer fra opplysningstiden ga kolonistene ord for det de følte: at de ble styrt urettferdig."
+        },
+        {
+            "type": "text",
+            "content": "Prøv det selv nedenfor. Du er kolonist, og lov etter lov kommer fra London. Se hva som skjer med sinnet i koloniene når du aldri får en stemme."
+        },
+        {
+            "type": "component",
+            "name": "RoadToRevolution",
+            "props": {
+                "title": "Veien til opprør"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Fra skatt til bråk"
+        },
+        {
+            "type": "text",
+            "content": "Konflikten vokste steg for steg. I 1765 kom stempelloven, en skatt på alt av papir. Kolonistene ble rasende og nektet å bruke det stemplede papiret. I 1770 skjøt britiske soldater inn i en folkemengde i Boston og drepte fem menn. Hendelsen ble kalt massakren i Boston, og den gjorde sinnet enda større."
+        },
+        {
+            "type": "text",
+            "content": "I 1773 kom te-loven. Den ga ett britisk selskap enerett på å selge te i koloniene, med skatt på. For kolonistene var teen et symbol på alt de var imot. Svaret ble teselskapet i Boston, natten da teen havnet i havet. Du kan selv være med på den natten under. Dra tekistene over rekka og kast den skattlagte teen på sjøen."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "teselskapet-3d"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Britene ble rasende over ødeleggelsen. Som straff stengte de havna i Boston og tok fra byen selvstyret. Kolonistene kalte disse lovene «tvangslovene». Men straffen virket motsatt av det London håpet. I stedet for å bli redde, samlet koloniene seg. De sendte utsendinger til et felles møte og begynte å planlegge et felles forsvar. Nå var det ikke lenger bare Boston mot London. Det var alle tretten koloniene sammen."
+        },
+        {
+            "type": "header",
+            "text": "Krigen bryter ut"
+        },
+        {
+            "type": "text",
+            "content": "I april 1775 gikk britiske soldater for å ta et lager med våpen utenfor Boston. Ved landsbyene Lexington og Concord møtte de væpnede kolonister. Det falt skudd, og folk døde. Krigen var i gang. Kolonistene stablet på beina sin egen hær og valgte George Washington til å lede den. Han var en rolig og seig leder som holdt hæren samlet selv når det så mørkt ut."
+        },
+        {
+            "type": "text",
+            "content": "Den 4. juli 1776 tok kolonistene det store steget. De vedtok uavhengighetserklæringen. I den erklærte de seg løsrevet fra kongen og skapte en ny stat. Erklæringen inneholdt en setning som skulle bli berømt over hele verden: «Alle mennesker er skapt like.» Den sa også at folk har rett til liv, frihet og til å søke sin egen lykke, og at et styre får sin makt fra folket. Det var opplysningstidens ideer omgjort til praktisk politikk."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Menn undertegner uavhengighetserklæringen i en sal",
+            "caption": "Uavhengighetserklæringen 4. juli 1776. USAs nasjonaldag feires fortsatt denne datoen."
+        },
+        {
+            "type": "quote",
+            "content": "Alle mennesker er skapt like, og skaperen har gitt dem visse rettigheter som ingen kan ta fra dem: liv, frihet og retten til å søke lykke.",
+            "author": "Den amerikanske uavhengighetserklæringen, 1776"
+        },
+        {
+            "type": "header",
+            "text": "En liten hær mot verdens sterkeste rike"
+        },
+        {
+            "type": "text",
+            "content": "På papiret var kampen håpløs. Storbritannia hadde verdens sterkeste hær og marine. Kolonistene hadde en liten hær som ofte manglet mat, klær og penger. Men de hadde noen fordeler. De kjempet på hjemmebane, i et enormt land der britene aldri klarte å kontrollere alt. Og de fikk hjelp utenfra. Frankrike, som fortsatt var bittert etter å ha tapt mot britene, sendte penger, våpen, soldater og skip til kolonistenes side."
+        },
+        {
+            "type": "text",
+            "content": "Vendepunktet kom i 1781 ved byen Yorktown. Der klarte Washington og de franske styrkene å omringe en hel britisk hær og tvinge den til å overgi seg. Etter det hadde britene ikke lenger vilje til å fortsette. I 1783 ble det undertegnet en fredsavtale i Paris. Storbritannia godtok at USA var en fri og selvstendig stat."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Britiske soldater overgir seg til amerikansk og fransk hær",
+            "caption": "Overgivelsen ved Yorktown i 1781 avgjorde krigen. To år senere kom freden."
+        },
+        {
+            "type": "header",
+            "text": "En ny slags stat"
+        },
+        {
+            "type": "text",
+            "content": "Å vinne krigen var én ting. Å styre en ny stat var noe annet. I 1787 skrev lederne en grunnlov, et sett med regler for hvordan landet skulle styres. De bygde på ideen fra Montesquieu om å dele makten. Én del laget lovene, én del styrte landet, og én del dømte i rettssaker. Slik skulle ingen kunne bli en ny konge. Kort etter kom en liste med rettigheter som staten aldri kunne bryte, blant annet ytringsfrihet og religionsfrihet."
+        },
+        {
+            "type": "info_box",
+            "title": "Hvorfor er dette viktig?",
+            "content": "USA ble et av de første landene i verden som ble styrt som en republikk med delt makt og en grunnlov som beskyttet folks rettigheter. Modellen har siden inspirert land over hele verden, også Norge."
+        },
+        {
+            "type": "header",
+            "text": "Et forbilde med en stor sprekk"
+        },
+        {
+            "type": "text",
+            "content": "Nyheten om at et folk hadde styrtet en konge og skrevet ned at alle er like, spredte seg raskt. Bare noen år senere brøt [den franske revolusjonen](/historie/den-franske-revolusjon/intro) ut, og mange av de samme ideene om frihet og folkestyre stod i sentrum. Den amerikanske revolusjonen ble et forbilde for alle som drømte om å bytte ut enevelde med folkestyre."
+        },
+        {
+            "type": "text",
+            "content": "Men forbildet hadde en stygg sprekk. Setningen «alle mennesker er skapt like» gjaldt langt fra alle. Mange av mennene som skrev den, eide selv slaver. Slaveriet fortsatte i nesten hundre år til. Urfolk ble drevet vekk fra landet sitt, og kvinner fikk verken stemmerett eller like rettigheter. Idealene var større enn virkeligheten. Mye av historien etterpå handler nettopp om kampen for at ordene «alle mennesker» skulle bety alle, på ordentlig."
+        },
+        {
+            "type": "text",
+            "content": "Den amerikanske revolusjonen viser derfor to ting på én gang. Den viser hvor mektig en idé kan være: at vanlige mennesker kan styre seg selv. Og den minner oss om at flotte ord på et papir ikke er nok. Noen må kjempe for at de skal gjelde alle."
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betydde slagordet «ingen skatt uten representasjon»?",
+                        "options": [
+                            "At kolonistene ikke ville betale noen skatter i det hele tatt",
+                            "At de ikke ville betale skatt så lenge de ikke fikk være med å bestemme lovene",
+                            "At bare rike folk skulle betale skatt",
+                            "At kongen skulle betale skatt til koloniene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Kolonistene godtok ikke å bli skattlagt av et parlament de ikke hadde noen representanter i."
+                    },
+                    {
+                        "question": "Hva skjedde under teselskapet i Boston i 1773?",
+                        "options": [
+                            "Kolonistene holdt en stor teselskap for kongen",
+                            "Britene delte ut gratis te til folket",
+                            "Kolonister kastet skattlagt te i havna i protest",
+                            "En fabrikk som lagde te brant ned"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Kolonistene ødela teen heller enn å betale skatt på den. Det ble en av de mest kjente protestene i historien."
+                    },
+                    {
+                        "question": "Hva sa uavhengighetserklæringen fra 4. juli 1776?",
+                        "options": [
+                            "At koloniene ville betale mer skatt til London",
+                            "At alle mennesker er skapt like og har rettigheter ingen kan ta fra dem",
+                            "At kongen skulle få styre koloniene for alltid",
+                            "At Frankrike skulle overta koloniene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Erklæringen bygde på opplysningstidens ideer om frihet og folkestyre."
+                    },
+                    {
+                        "question": "Hvilket land hjalp kolonistene i krigen mot Storbritannia?",
+                        "options": ["Spania", "Frankrike", "Russland", "Kina"],
+                        "correctAnswer": 1,
+                        "explanation": "Frankrike sendte penger, våpen, soldater og skip, og var med på å avgjøre krigen ved Yorktown i 1781."
+                    },
+                    {
+                        "question": "Hva var den store sprekken i idealet om at «alle mennesker er skapt like»?",
+                        "options": [
+                            "At bare kongen fikk stemme",
+                            "At ingen fikk lov til å eie jord",
+                            "At slaveri fortsatte og mange grupper ikke fikk de samme rettighetene",
+                            "At erklæringen ble skrevet på feil språk"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Slaver, urfolk og kvinner var i praksis holdt utenfor. Kampen for at ordene skulle gjelde alle, tok lang tid."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
