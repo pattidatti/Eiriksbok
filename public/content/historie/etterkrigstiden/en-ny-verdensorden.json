@@ -107,6 +107,13 @@
             "caption": "Havner som denne bygges med kinesiske lån over hele verden. Men hvem eier dem når gjelden ikke kan betales?"
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "gjeldshavna-3d"
+            }
+        },
+        {
             "type": "header",
             "text": "Kampen om ressursene"
         },
@@ -126,6 +133,11 @@
         {
             "type": "text",
             "content": "Mønsteret er gammelt, bare med nye varer. Den som eier råvarene og teknologien, eier framtiden. Derfor bruker USA og Kina milliarder på å bygge egne fabrikker for databrikker, og derfor kjemper selskaper fra hele verden om gruverettigheter i Afrika."
+        },
+        {
+            "type": "component",
+            "name": "MobilensVerdenskart",
+            "props": {}
         },
         {
             "type": "header",

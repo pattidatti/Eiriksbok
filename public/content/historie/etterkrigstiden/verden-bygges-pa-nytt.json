@@ -79,6 +79,11 @@
             }
         },
         {
+            "type": "component",
+            "name": "VetorettSimulator",
+            "props": {}
+        },
+        {
             "type": "header",
             "text": "Bretton Woods: reglene for verdens penger"
         },
@@ -111,6 +116,13 @@
         {
             "type": "text",
             "content": "I 1948 gjorde USA noe som lignet ren sjenerøsitet. Gjennom Marshallhjelpen sendte de rundt 13 milliarder dollar til Vest-Europa, en enorm sum den gangen. Pengene bygde opp fabrikker, veier og byer, også i Norge. Men granskeren spør alltid: hva fikk giveren igjen? USA trengte kunder som hadde råd til å kjøpe amerikanske varer, og mye av hjelpen ble nettopp brukt på varer fra USA. USA ville også hindre at fattige og desperate europeere valgte kommunismen. Sovjetunionen skjønte poenget og nektet landene i Øst-Europa å ta imot hjelpen."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "marshallhjelpen-3d"
+            }
         },
         {
             "type": "header",

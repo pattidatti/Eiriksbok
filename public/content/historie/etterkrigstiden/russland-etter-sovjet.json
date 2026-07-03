@@ -105,6 +105,13 @@
             "content": "Kreml så det motsatt. Gassen var ikke bare en vare, den var et pressmiddel. Land som gjorde som Russland ville, fikk billig gass. Land som protesterte, kunne oppleve at kranene ble strupt midt på vinteren. Granskerens regel gjelder her: se ikke på hva ledere sier, se på hva de bygger. Russland bygde rørledninger som gikk utenom Ukraina, slik at gassen kunne flyte til Vest-Europa selv om Russland lå i konflikt med naboene sine."
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "gasskranen-3d"
+            }
+        },
+        {
             "type": "header",
             "text": "Opptrappingen: Georgia, Krim, Ukraina"
         },
@@ -154,6 +161,11 @@
                 "Vanen: Etter hver krise ble det raskt hverdag igjen, og gassen fortsatte å strømme.",
                 "Frykten: Russland har atomvåpen, og ingen ønsket en direkte konfrontasjon."
             ]
+        },
+        {
+            "type": "component",
+            "name": "EuropasDilemma",
+            "props": {}
         },
         {
             "type": "text",

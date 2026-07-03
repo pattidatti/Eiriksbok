@@ -99,6 +99,11 @@
             "content": "For mange land ble globaliseringen en vei ut av fattigdom. Hundrevis av millioner mennesker, spesielt i Asia, fikk jobb og bedre levestandard. Men i gamle industribyer i USA og Europa forsvant fabrikkene, og arbeidere sto uten jobb. Gevinsten ble delt svært ujevnt."
         },
         {
+            "type": "component",
+            "name": "JoggeskoensReise",
+            "props": {}
+        },
+        {
             "type": "header",
             "text": "Baksiden: lån med lenker"
         },
