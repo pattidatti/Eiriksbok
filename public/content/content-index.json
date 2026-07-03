@@ -1,5 +1,5 @@
 {
-  "buildId": 1783042103507,
+  "buildId": 1783102363288,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1359,6 +1359,21 @@
     ],
     "vietnamkrigen": [
       "content/historie/den-kalde-krigen/vietnamkrigen.json"
+    ],
+    "den-unipolare-verden": [
+      "content/historie/etterkrigstiden/den-unipolare-verden.json"
+    ],
+    "en-ny-verdensorden": [
+      "content/historie/etterkrigstiden/en-ny-verdensorden.json"
+    ],
+    "etterkrigstiden-sti": [
+      "content/historie/etterkrigstiden/etterkrigstiden-sti.json"
+    ],
+    "russland-etter-sovjet": [
+      "content/historie/etterkrigstiden/russland-etter-sovjet.json"
+    ],
+    "verden-bygges-pa-nytt": [
+      "content/historie/etterkrigstiden/verden-bygges-pa-nytt.json"
     ],
     "hjemmefronten": [
       "content/historie/forste-verdenskrig/hjemmefronten.json"
@@ -3952,6 +3967,11 @@
     "historie/den-kalde-krigen/suez-krisen": "content/historie/den-kalde-krigen/suez-krisen.json",
     "historie/den-kalde-krigen/veien-mot-slutt": "content/historie/den-kalde-krigen/veien-mot-slutt.json",
     "historie/den-kalde-krigen/vietnamkrigen": "content/historie/den-kalde-krigen/vietnamkrigen.json",
+    "historie/etterkrigstiden/den-unipolare-verden": "content/historie/etterkrigstiden/den-unipolare-verden.json",
+    "historie/etterkrigstiden/en-ny-verdensorden": "content/historie/etterkrigstiden/en-ny-verdensorden.json",
+    "historie/etterkrigstiden/etterkrigstiden-sti": "content/historie/etterkrigstiden/etterkrigstiden-sti.json",
+    "historie/etterkrigstiden/russland-etter-sovjet": "content/historie/etterkrigstiden/russland-etter-sovjet.json",
+    "historie/etterkrigstiden/verden-bygges-pa-nytt": "content/historie/etterkrigstiden/verden-bygges-pa-nytt.json",
     "historie/forste-verdenskrig/hjemmefronten": "content/historie/forste-verdenskrig/hjemmefronten.json",
     "historie/forste-verdenskrig/konsekvenser": "content/historie/forste-verdenskrig/konsekvenser.json",
     "historie/forste-verdenskrig/krigens-lop": "content/historie/forste-verdenskrig/krigens-lop.json",

@@ -1,0 +1,599 @@
+{
+    "id": "etterkrigstiden-sti",
+    "title": "Læringssti: Etterkrigstiden",
+    "description": "Følg pengene, oljen og våpnene fra 1945 til i dag. Hvem bestemmer i verden - og hvordan?",
+    "layout": "learning-path",
+    "category": "Læringssti",
+    "year": "1945-2026",
+    "readTime": "5-6 timer",
+    "heroImage": "/images/placeholder.webp",
+    "learningPathData": {
+        "id": "etterkrigstiden-sti",
+        "title": "Etterkrigstiden: Følg pengene",
+        "description": "Du er gransker. Foran deg ligger en mappe med 80 år med hemmeligheter: kupp, lån, oljeavtaler og murer som falt. Oppdraget ditt er å svare på ett spørsmål: Hvem bestemmer i verden - og hvordan?",
+        "targetTopicId": "etterkrigstiden",
+        "targetSubjectId": "historie",
+        "steps": [
+            {
+                "id": "prolog",
+                "phase": "Prolog",
+                "title": "År null",
+                "type": "fakta",
+                "content": "Velkommen til redaksjonen. Du er ny her, og sjefen legger en tykk mappe på pulten din. På forsiden står det bare: 1945-2026. Hvem bestemmer?\n\nVi starter der alt begynte på nytt. Det er 1945. Byene i Europa og Asia ligger i grus. Titalls millioner mennesker er døde. De som overlevde, sier det samme over hele kloden: Aldri mer.\n\nMen mens folk rydder i ruinene, sitter noen få menn i dress rundt bord i USA og tegner den nye verden. FN får et sikkerhetsråd der fem land får vetorett. På et hotell i Bretton Woods bestemmes det at dollaren skal bli verdens valuta, og to nye banker ser dagens lys: IMF og Verdensbanken.\n\nHer er din første lærdom som gransker: Se ikke bare på hva som blir bestemt. Se på hvem som holder pennen. Reglene fra 1945 styrer fortsatt mye av verden du lever i. Åpne mappen.",
+                "tasks": [
+                    "Les artikkelen [1945: Verden bygges på nytt](/historie/etterkrigstiden/verden-bygges-pa-nytt)",
+                    "Hvilke fem land fikk vetorett i FNs sikkerhetsråd? (Fakta)",
+                    "Hva ble bestemt i Bretton Woods i 1944? (Fakta)",
+                    "Hvorfor ga Marshallhjelpen USA både venner og kunder? (Forståelse)",
+                    "Hva betyr det at dollaren ble verdens valuta? Forklar med egne ord. (Forståelse)",
+                    "Granskerspørsmål: Hvem var IKKE med da reglene ble skrevet i 1944-1945? Hvorfor har det noe å si? (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "1945: Verden bygges på nytt", "url": "/historie/etterkrigstiden/verden-bygges-pa-nytt" }
+                ]
+            },
+            {
+                "id": "jernteppet",
+                "phase": "Akt 1: Den delte verden",
+                "title": "To supermakter, ett jernteppe",
+                "type": "fakta",
+                "content": "Første dokument i mappen er et kart over Europa fra 1946. Noen har tegnet en tykk, svart strek tvers gjennom kontinentet. Winston Churchill kalte den et jernteppe.\n\nDe to som vant krigen sammen, USA og Sovjetunionen, stoler ikke på hverandre. De har hvert sitt system: kapitalisme og demokrati på den ene siden, kommunisme og ettpartistat på den andre. Begge mener deres system er framtiden for hele verden.\n\nDette blir den kalde krigen. Den varer i over 40 år, og den er kald fordi supermaktene aldri skyter direkte på hverandre. De kjemper med penger, propaganda, spioner og allierte i stedet.\n\nSom gransker skal du merke deg noe viktig allerede nå: Den kalde krigen handlet om ideologi på overflaten. Men under overflaten handlet den ofte om noe eldre og enklere: makt, marked og ressurser. Det mønsteret kommer du til å se igjen og igjen i denne mappen.",
+                "tasks": [
+                    "Les artikkelen [Den kalde krigen: Oversikt](/historie/den-kalde-krigen/oversikt)",
+                    "Hva var jernteppet? (Fakta)",
+                    "Hva var forskjellen på de to systemene som sto mot hverandre? (Fakta)",
+                    "Hvorfor kalles krigen kald når den kostet millioner av liv i andre land? (Forståelse)",
+                    "Hva var Truman-doktrinen, og hvordan delte den verden i to lag? (Forståelse)",
+                    "Granskerspørsmål: Hvem tjente på at verden ble delt i to blokker? (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Den kalde krigen: Oversikt", "url": "/historie/den-kalde-krigen/oversikt" },
+                    { "title": "NATO mot Warszawapakten", "url": "/historie/den-kalde-krigen/nato-vs-warszawa" }
+                ]
+            },
+            {
+                "id": "imperienes-fall",
+                "phase": "Akt 1: Den delte verden",
+                "title": "Imperienes fall",
+                "type": "fakta",
+                "content": "Neste dokument er en liste over land, med årstall bak hvert navn. India 1947. Indonesia 1949. Ghana 1957. Algerie 1962. Lista fortsetter i det uendelige.\n\nMens supermaktene stirrer på hverandre i Europa, skjer det noe enormt i resten av verden: Imperiene kollapser. I 1945 lever en tredjedel av alle mennesker på jorda i en koloni. Femti år senere er nesten alle koloniene borte. Det er en av de største maktforflytningene i historien.\n\nMen som gransker vet du at aviser kan fortelle samme historie på helt ulike måter. Da Ghana ble fritt i 1957, skrev britiske aviser om at Storbritannia ga landet selvstendighet. Ghanesiske aviser skrev om at folket vant sin frihet. Samme hendelse, to fortellinger.\n\nPrøv verktøyet under: samme tekst, lest gjennom to ulike briller. Legg merke til hvordan små ordvalg endrer hele historien.",
+                "component": {
+                    "name": "BiasLens",
+                    "props": {
+                        "title": "Ghana 1957: Gitt eller vunnet?",
+                        "baseContent": "I mars 1957 ble Ghana selvstendig. Storbritannia overførte makten til Kwame Nkrumah og hans regjering. Kolonitiden i Ghana var over etter mer enn 80 år. Landet skulle nå styre sin egen økonomi og sine egne ressurser.",
+                        "lenses": [
+                            {
+                                "id": "british",
+                                "label": "Britisk kolonipresse",
+                                "description": "Imperiet som gir en gave",
+                                "theme": {
+                                    "color": "#1e40af",
+                                    "bgColor": "bg-[#f8fafc]",
+                                    "borderColor": "border-blue-900/10",
+                                    "textColor": "text-gray-900"
+                                },
+                                "replacements": [
+                                    {
+                                        "original": "ble Ghana selvstendig",
+                                        "replacement": "ga Storbritannia Ghana selvstendighet",
+                                        "explanation": "Britiske aviser framstilte frigjøringen som en gave fra imperiet, ikke som noe ghaneserne hadde kjempet seg til."
+                                    },
+                                    {
+                                        "original": "overførte makten",
+                                        "replacement": "betrodde ansvaret",
+                                        "explanation": "Ordet betrodde antyder at Ghana måtte bevise at de fortjente å styre seg selv. Det setter briter over ghanesere."
+                                    },
+                                    {
+                                        "original": "Kolonitiden i Ghana var over",
+                                        "replacement": "Et vellykket kapittel i imperiets historie ble avsluttet",
+                                        "explanation": "Kolonistyret beskrives som vellykket. Tvangsarbeid, ran av ressurser og undertrykkelse nevnes ikke."
+                                    },
+                                    {
+                                        "original": "styre sin egen økonomi og sine egne ressurser",
+                                        "replacement": "prøve å stå på egne bein",
+                                        "explanation": "Formuleringen sår tvil om Ghana vil klare seg alene, og forbereder leseren på at Vesten fortsatt må hjelpe til."
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "ghanaian",
+                                "label": "Ghanesisk frihetspresse",
+                                "description": "Et folk som vinner sin kamp",
+                                "theme": {
+                                    "color": "#15803d",
+                                    "bgColor": "bg-[#f7fdf9]",
+                                    "borderColor": "border-green-900/10",
+                                    "textColor": "text-gray-900"
+                                },
+                                "replacements": [
+                                    {
+                                        "original": "ble Ghana selvstendig",
+                                        "replacement": "vant Ghana friheten",
+                                        "explanation": "For ghaneserne var ikke friheten en gave. Den var resultatet av streiker, protester og år med politisk kamp."
+                                    },
+                                    {
+                                        "original": "overførte makten",
+                                        "replacement": "måtte gi fra seg makten",
+                                        "explanation": "Frihetspressen la vekt på at britene ikke hadde noe valg. Presset fra folket var blitt for stort."
+                                    },
+                                    {
+                                        "original": "Kolonitiden i Ghana var over",
+                                        "replacement": "Åtti år med fremmedstyre var endelig knust",
+                                        "explanation": "Kolonitiden beskrives som noe som ble knust, ikke avsluttet. Det gjør ghaneserne til handlende helter i sin egen historie."
+                                    },
+                                    {
+                                        "original": "styre sin egen økonomi og sine egne ressurser",
+                                        "replacement": "endelig høste fruktene av sin egen jord",
+                                        "explanation": "Gullet og kakaoen hadde i årtier beriket London. Nå skulle verdiene endelig bli i landet."
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "tasks": [
+                    "Les artikkelen [Dekolonisering: Oversikt](/historie/dekolonisering/oversikt)",
+                    "Omtrent hvor stor del av verdens befolkning bodde i kolonier i 1945? (Fakta)",
+                    "Nevn tre land som ble frie mellom 1945 og 1962. (Fakta)",
+                    "Bruk BiasLens-verktøyet over: Finn to ordvalg som endrer hvem som er helten i historien. (Analyse)",
+                    "Hvorfor ville britiske aviser framstille frigjøringen som en gave? (Forståelse)",
+                    "Granskerspørsmål: Hvis et land blir politisk fritt, men utlendinger fortsatt eier gruvene og plantasjene, hvor fritt er landet da? (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Dekolonisering: Oversikt", "url": "/historie/dekolonisering/oversikt" },
+                    { "title": "India: Gandhis ikkevold", "url": "/historie/dekolonisering/india" },
+                    { "title": "Ghana og panafrikanismen", "url": "/historie/dekolonisering/ghana-panafrikanisme" }
+                ]
+            },
+            {
+                "id": "suez",
+                "phase": "Akt 1: Den delte verden",
+                "title": "Suez 1956 - maktskiftet ingen kunne skjule",
+                "type": "fakta",
+                "content": "Et gulnet telegram fra november 1956 ligger øverst i neste bunke. Avsender: Washington. Mottaker: London. Innholdet, kort fortalt: Trekk dere ut av Egypt, ellers senker vi pundet.\n\nDette er øyeblikket da alle kan se at verden har fått nye sjefer. Egypts leder Nasser har tatt kontroll over Suezkanalen, vannveien som frakter oljen fra Midtøsten til Europa. Storbritannia og Frankrike, de gamle imperiene, invaderer sammen med Israel for å ta den tilbake. Slik hadde de løst ting i hundre år.\n\nMen nå skjer noe nytt. USA sier nei. Sovjetunionen truer. Og de gamle stormaktene må snu, ydmyket foran hele verden.\n\nLegg merke til hva slags våpen USA brukte: ikke soldater, men penger. Trusselen om å senke den britiske valutaen var nok. Notér det i granskerloggen din. Det er ikke siste gang penger vinner over kanoner i denne mappen.",
+                "tasks": [
+                    "Les artikkelen [Suez-krisen](/historie/den-kalde-krigen/suez-krisen)",
+                    "Hva var Suezkanalen så viktig for? (Fakta)",
+                    "Hvilke tre land angrep Egypt i 1956? (Fakta)",
+                    "Hvordan tvang USA Storbritannia til å trekke seg ut? (Forståelse)",
+                    "Hvorfor kalles Suez-krisen ofte øyeblikket da imperienes tid var forbi? (Forståelse)",
+                    "Granskerspørsmål: USA brukte økonomisk makt mot sin egen alliert. Hva forteller det om hvem som egentlig bestemte i Vesten? (Analyse)"
+                ],
+                "links": [
+                    { "title": "Suez-krisen", "url": "/historie/den-kalde-krigen/suez-krisen" }
+                ]
+            },
+            {
+                "id": "kanten-av-stupet",
+                "phase": "Akt 2: Skyggekrigen - følg pengene",
+                "title": "På kanten av stupet",
+                "type": "fakta",
+                "content": "Akt to i granskingen starter med det skumleste dokumentet i hele mappen: et flyfoto av Cuba, datert oktober 1962. På bildet: sovjetiske atomraketter, 15 minutters flytid fra USA.\n\nI tretten dager holder verden pusten. President Kennedy og Sovjets leder Khrusjtsjov står ansikt til ansikt, med hver sin hånd på knappen som kan utslette sivilisasjonen. Begge vet at den som trykker først, dreper også seg selv. Logikken har et passende navn: MAD, gjensidig garantert ødeleggelse.\n\nI siste øyeblikk finner de en utvei. Sovjet fjerner rakettene på Cuba, USA fjerner i stillhet sine raketter i Tyrkia og lover å la Cuba være i fred.\n\nEtter 1962 forstår begge supermaktene at de aldri kan møtes direkte på slagmarken. Så hvor flytter kampen seg? Til skyggene. Til andre lands jord. Det er dit granskingen din går nå.",
+                "tasks": [
+                    "Les artikkelen [Cuba-krisen](/historie/den-kalde-krigen/cuba-krisen)",
+                    "Hvorfor plasserte Sovjetunionen raketter på Cuba? (Fakta)",
+                    "Hva betyr forkortelsen MAD, og hvordan virket logikken? (Fakta)",
+                    "Hvordan ble krisen løst, og hva måtte begge parter gi? (Forståelse)",
+                    "Hvorfor sluttet supermaktene aldri å lage atomvåpen, selv om ingen kunne bruke dem? (Analyse)",
+                    "Granskerspørsmål: Etter Cuba-krisen flyttet konflikten seg til fattigere land. Hvorfor var det tryggere for supermaktene, og hvem betalte prisen? (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Cuba-krisen", "url": "/historie/den-kalde-krigen/cuba-krisen" },
+                    { "title": "Atomvåpenkappløpet", "url": "/historie/den-kalde-krigen/atomvapenkapplopet" }
+                ]
+            },
+            {
+                "id": "kupp-pa-bestilling",
+                "phase": "Akt 2: Skyggekrigen - følg pengene",
+                "title": "Kupp på bestilling",
+                "type": "utfordring",
+                "content": "Neste dokument er stemplet TOP SECRET, men det ble avgradert for lenge siden. Operasjon Ajax, Iran, 1953.\n\nHistorien er nesten ikke til å tro, men den er sann og bekreftet av CIA selv: Irans folkevalgte statsminister Mosaddeq ville at oljeinntektene skulle tilhøre Iran, ikke det britiske oljeselskapet som tok mesteparten. Svaret? Britisk og amerikansk etterretning betalte demonstranter, kjøpte aviser og organiserte et kupp. Mosaddeq ble fjernet, og sjahen styrte deretter som diktator med vestlig støtte.\n\nÅret etter skjedde nesten det samme i Guatemala. Der ville presidenten gi jord til fattige bønder, jord som det amerikanske fruktselskapet United Fruit eide. Han ble også fjernet i et CIA-kupp.\n\nSer du mønsteret? Et fattig land prøver å ta kontroll over egne ressurser. Et rikt lands selskaper taper penger på det. Kort tid etter skifter landet regjering. Som gransker trenger du ikke tro på konspirasjoner. Du trenger bare å lese de avgraderte dokumentene.",
+                "tasks": [
+                    "Les artikkelen [Operasjon Ajax](/historie/den-kalde-krigen/operasjon-ajax)",
+                    "Hva ville Mosaddeq gjøre med Irans olje? (Fakta)",
+                    "Hvordan gjennomførte CIA og britisk etterretning kuppet i 1953? (Fakta)",
+                    "Les også om [Guatemala 1954](/historie/dekolonisering/guatemala-1954). Hva har de to kuppene felles? (Forståelse)",
+                    "Begge kuppene ble forklart med kampen mot kommunismen. Hva tyder på at penger og ressurser var vel så viktig? (Analyse)",
+                    "Iran fikk islamsk revolusjon i 1979, delvis som en reaksjon på sjahens diktatur. Hvordan kan et kupp i 1953 påvirke verden i dag? (Refleksjon)",
+                    "Granskerspørsmål: Hvorfor tror du disse operasjonene ble holdt hemmelige i tiår? (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Operasjon Ajax", "url": "/historie/den-kalde-krigen/operasjon-ajax" },
+                    { "title": "Guatemala 1954", "url": "/historie/dekolonisering/guatemala-1954" }
+                ]
+            },
+            {
+                "id": "okonomiske-leiemordere",
+                "phase": "Akt 2: Skyggekrigen - følg pengene",
+                "title": "De økonomiske leiemorderne",
+                "type": "utfordring",
+                "content": "Nå er du fremme ved kjernen av granskingen. Dokumentet foran deg er en tilståelse. John Perkins, amerikansk konsulent, forteller om jobben sin: økonomisk leiemorder.\n\nOppskriften hans var enkel og nesten usynlig. Reis til et fattig land med olje eller andre ressurser. Lag glansede rapporter som lover eventyrlig vekst hvis landet bare bygger gigantiske kraftverk og havner. Sørg for at landet låner enorme summer til byggingen, og at pengene går rett til vestlige selskaper som bygger. Når regningene kommer og veksten uteblir, sitter landet i en gjeldsfelle. Da kommer kravene: billig olje, militærbaser, lojale stemmer i FN.\n\nIngen soldater. Ingen kuler. Bare tall i et regneark. Dette kalles nykolonialisme: kontroll over land som på papiret er helt frie.\n\nI simuleringen under er det din tur. Du er ung og lovende konsulent, og du har nettopp fått drømmejobben. Eller er det noe annet du har fått?",
+                "component": {
+                    "name": "ScenarioRoleplay",
+                    "props": {
+                        "title": "Tilbudet: En økonomisk leiemorders dilemma",
+                        "intro": "Året er 1972. Du er nyutdannet økonom i et stort amerikansk konsulentfirma. Lønnen er fantastisk, kontoret har utsikt over hele byen. I dag skal du på ditt første store oppdrag i et fattig land med mye olje. Sjefen din smiler og gir deg en mappe.",
+                        "startId": "start",
+                        "scenarios": [
+                            {
+                                "id": "start",
+                                "text": "Sjefen forklarer oppdraget: Du skal beregne hvor mye landets økonomi vil vokse hvis de bygger et enormt kraftverk. Han legger til, lavt: Prognosene dine bør være svært optimistiske. Jo større lån landet tar opp, jo bedre for alle. Du ser på tallene. Ærlig regnet vil veksten bli lav. Hva gjør du?",
+                                "options": [
+                                    { "label": "Lever optimistiske tall, slik sjefen ønsker", "nextId": "inflated" },
+                                    { "label": "Lever ærlige tall, uansett hva sjefen sier", "nextId": "honest" },
+                                    { "label": "Spør sjefen hvorfor tallene må være optimistiske", "nextId": "ask" }
+                                ]
+                            },
+                            {
+                                "id": "ask",
+                                "text": "Sjefen lener seg tilbake. Enkelt, sier han. Landet låner penger av Verdensbanken. Pengene betaler amerikanske selskaper for å bygge. Hvis landet ikke klarer å betale tilbake, skylder de oss en tjeneste. Olje. Baser. Stemmer i FN. Alle vinner. Han ser på deg. Nesten alle, tenker du. Hva gjør du?",
+                                "options": [
+                                    { "label": "Gjør jobben. Slik fungerer verden", "nextId": "inflated" },
+                                    { "label": "Nekt, og lever ærlige tall", "nextId": "honest" }
+                                ]
+                            },
+                            {
+                                "id": "inflated",
+                                "text": "Rapporten din lover 15 prosent årlig vekst. Landet tar opp et lån på to milliarder dollar. Fem år senere står kraftverket der, bygget av amerikanske firmaer. Veksten kom aldri. Landet bruker nå en tredjedel av statsbudsjettet på å betale renter, mens skoler og sykehus forfaller. Du får en forfremmelse. En kveld ser du bilder fra landet på TV: demonstranter i gatene, politi som slår. Hva gjør du?",
+                                "options": [
+                                    { "label": "Skru av TV-en. Du gjorde bare jobben din", "nextId": "career" },
+                                    { "label": "Si opp og fortell alt til pressen", "nextId": "whistleblower" }
+                                ]
+                            },
+                            {
+                                "id": "honest",
+                                "text": "Du leverer ærlige tall: lav vekst, høy risiko. Sjefen leser rapporten i taushet. Uken etter er du tatt av oppdraget. En kollega leverer nye, optimistiske tall, og lånet går gjennom likevel. Du beholder jobben, så vidt, men karrieren din har stoppet opp. Hva gjør du?",
+                                "options": [
+                                    { "label": "Bli værende og prøv å endre systemet innenfra", "nextId": "inside" },
+                                    { "label": "Si opp og fortell alt til pressen", "nextId": "whistleblower" }
+                                ]
+                            },
+                            {
+                                "id": "career",
+                                "text": "Du stiger i gradene og blir rik. År senere skriver en tidligere kollega bok om det dere drev med. Journalister ringer deg. Barnebarnet ditt spør en dag: Hva jobbet du egentlig med, bestefar? Du åpner munnen for å svare, og nøler.",
+                                "isEnding": true,
+                                "endingType": "historical",
+                                "feedback": "Dette er veien de fleste valgte. Ikke fordi de var onde, men fordi hvert lille valg virket ufarlig. Slik holdes urettferdige systemer i live: av vanlige folk som bare gjør jobben sin. John Perkins valgte denne veien i mange år, før han til slutt fortalte alt."
+                            },
+                            {
+                                "id": "whistleblower",
+                                "text": "Du står fram. Noen aviser skriver om saken, firmaet nekter for alt, og gamle kolleger slutter å hilse. Men dokumentene dine blir brukt av journalister og forskere i årevis. Sakte, altfor sakte, begynner folk å stille spørsmål ved hvordan lån til fattige land egentlig fungerer.",
+                                "isEnding": true,
+                                "endingType": "alternative",
+                                "feedback": "Dette er omtrent det John Perkins gjorde da han skrev boka si i 2004. Varslere betaler ofte en høy personlig pris, men uten dem hadde vi ikke visst det vi vet. Granskere som deg bygger på deres mot."
+                            },
+                            {
+                                "id": "inside",
+                                "text": "Du blir værende i årevis. Noen ganger klarer du å gjøre en rapport litt ærligere, et lån litt mindre. Men systemet er større enn deg, og de store beslutningene tas over hodet ditt. En dag innser du at du har brukt tjue år på å pusse på en maskin som fortsatt knuser folk.",
+                                "isEnding": true,
+                                "endingType": "alternative",
+                                "feedback": "Å endre systemer innenfra er mulig, men langsomt og slitsomt. Historien viser at det oftest er kombinasjonen av folk på innsiden OG press fra utsiden, som varslere, journalister og folkebevegelser, som tvinger fram endring."
+                            }
+                        ]
+                    }
+                },
+                "tasks": [
+                    "Les artikkelen [Økonomiske leiemordere](/historie/dekolonisering/okonomiske-leiemordere)",
+                    "Hva var jobben til en økonomisk leiemorder, ifølge John Perkins? (Fakta)",
+                    "Forklar hva en gjeldsfelle er, med egne ord. (Forståelse)",
+                    "Spill gjennom simuleringen over. Hvilket valg tok du først, og hvorfor? (Refleksjon)",
+                    "Les også om [nykolonialisme](/historie/dekolonisering/nykolonialisme). Hva er forskjellen på gammel og ny kolonialisme? (Forståelse)",
+                    "Hvorfor er økonomisk kontroll vanskeligere å oppdage og protestere mot enn militær okkupasjon? (Analyse)",
+                    "Granskerspørsmål: Hvem har ansvaret når et land havner i gjeldsfelle: långiveren, konsulenten eller landets egne ledere? Begrunn svaret. (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Økonomiske leiemordere", "url": "/historie/dekolonisering/okonomiske-leiemordere" },
+                    { "title": "Nykolonialisme", "url": "/historie/dekolonisering/nykolonialisme" }
+                ]
+            },
+            {
+                "id": "stedfortrederkrigene",
+                "phase": "Akt 2: Skyggekrigen - følg pengene",
+                "title": "Blodige frigjøringer og stedfortrederkrig",
+                "type": "fakta",
+                "content": "Neste del av mappen er den tyngste. Den handler om landene der skyggekrigen ikke ble ført med regneark, men med napalm, geværer og massegraver.\n\nVietnam: Et land som kjempet seg fritt fra Frankrike, ble delt i to, og endte som slagmark mellom supermaktene i tjue år. Millioner døde. Kongo: Den folkevalgte lederen Lumumba ville at landets enorme mineralrikdom skulle komme folket til gode. Han ble drept etter få måneder, med belgisk og amerikansk medvirkning. Indonesia 1965: Militæret tok makten, og hundretusener ble drept som påståtte kommunister, mens Vesten så en annen vei. Chile 1973: Det eldste demokratiet i Sør-Amerika ble knust av et militærkupp, støttet av USA, fordi presidenten ville nasjonalisere kobbergruvene.\n\nDette kalles stedfortrederkriger: Supermaktene kjempet mot hverandre gjennom andre folks land og andre folks barn. Som gransker noterer du det samme mønsteret som før: Bak nesten hver konflikt ligger ressurser noen vil kontrollere.",
+                "tasks": [
+                    "Les artikkelen [Vietnamkrigen](/historie/den-kalde-krigen/vietnamkrigen)",
+                    "Hva er en stedfortrederkrig? (Fakta)",
+                    "Hvorfor tapte verdens sterkeste militærmakt mot bønder og geriljasoldater i Vietnam? (Forståelse)",
+                    "Velg ett av landene Kongo ([artikkel](/historie/dekolonisering/kongo)), Indonesia ([artikkel](/historie/den-kalde-krigen/indonesia-1965)) eller Chile ([artikkel](/historie/den-kalde-krigen/chile-1973)) og les artikkelen. Hvilke ressurser sto på spill der? (Fakta)",
+                    "Hva har lederne Lumumba, Allende og Mosaddeq til felles? (Analyse)",
+                    "Granskerspørsmål: Supermaktene sa de kjempet for frihet og rettferdighet. Stemmer det med det du nå har funnet i mappen? Bruk eksempler. (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Vietnamkrigen", "url": "/historie/den-kalde-krigen/vietnamkrigen" },
+                    { "title": "Kongo: Kald krig i tropene", "url": "/historie/dekolonisering/kongo" },
+                    { "title": "Indonesia 1965", "url": "/historie/den-kalde-krigen/indonesia-1965" },
+                    { "title": "Chile 1973", "url": "/historie/den-kalde-krigen/chile-1973" }
+                ]
+            },
+            {
+                "id": "midtosten",
+                "phase": "Akt 2: Skyggekrigen - følg pengene",
+                "title": "Midtøsten: linjer i sanden, olje som våpen",
+                "type": "utfordring",
+                "content": "En hel skuff i arkivet er merket Midtøsten. Du åpner den og finner tre lag med historie oppå hverandre.\n\nNederst: et kart fra 1916, der en brite og en franskmann har tegnet rette streker gjennom ørkenen. Sykes-Picot-avtalen delte Midtøsten mellom kolonimaktene, uten å spørre dem som bodde der. Mange av dagens grenser, og mange av dagens konflikter, følger fortsatt de strekene.\n\nI midten: 1948 og konflikten mellom Israel og palestinerne. To folk med hver sin historie, hver sin smerte og hvert sitt krav på samme land. En konflikt som fortsatt ikke er løst.\n\nØverst: oljen. I 1973 viste de arabiske oljelandene at de hadde fått et supervåpen. De skrudde igjen kranene, og prisene firedoblet seg. Bensinstasjoner i Europa og USA gikk tomme. For første gang kjente Vesten på hvordan det er når noen andre kontrollerer ressursene dine.\n\nHer finnes ingen enkel fasit. Derfor får du nå granskerens viktigste verktøy: evnen til å se samme sak fra flere sider samtidig.",
+                "component": {
+                    "name": "PerspectivePrism",
+                    "props": {
+                        "title": "Midtøsten etter 1948: Fire blikk på samme konflikt",
+                        "instruction": "Dra prismen sidelengs for å rotere. Klikk på pilene for å navigere.",
+                        "sides": [
+                            {
+                                "id": "israeli",
+                                "title": "Israelsk perspektiv",
+                                "color": "#1e40af",
+                                "icon": "🕍",
+                                "content": "**Vi trenger et trygt hjem.** Etter Holocaust, der seks millioner jøder ble myrdet, vet vi at vi ikke kan stole på at andre beskytter oss. Israel er vårt eneste hjemland, og naboene har angrepet oss flere ganger.\n\n*\"Aldri mer skal vi stå forsvarsløse.\"*",
+                                "sourceCredit": "Vanlig israelsk synspunkt"
+                            },
+                            {
+                                "id": "palestinian",
+                                "title": "Palestinsk perspektiv",
+                                "color": "#15803d",
+                                "icon": "🕌",
+                                "content": "**Vi mistet hjemmene våre.** I 1948 flyktet eller ble fordrevet over 700 000 av oss fra landsbyene vi hadde bodd i i generasjoner. Vi kaller det al-Nakba, katastrofen. Vi lever fortsatt som flyktninger eller under okkupasjon.\n\n*\"Nøkkelen til huset vårt henger fortsatt på veggen.\"*",
+                                "sourceCredit": "Vanlig palestinsk synspunkt"
+                            },
+                            {
+                                "id": "superpowers",
+                                "title": "Supermaktene",
+                                "color": "#0f172a",
+                                "icon": "🛢️",
+                                "content": "**Regionen er for viktig til å overlates til seg selv.** Her ligger verdens største oljereserver og viktige handelsruter. USA og Sovjetunionen støttet hver sine land med våpen og penger. Stabilitet var målet, sa vi. Innflytelse var det vi mente.\n\n*\"Den som kontrollerer oljen, kontrollerer verdensøkonomien.\"*",
+                                "sourceCredit": "Stormaktenes logikk under den kalde krigen"
+                            },
+                            {
+                                "id": "un",
+                                "title": "FN",
+                                "color": "#b45309",
+                                "icon": "🕊️",
+                                "content": "**Vi foreslo å dele landet, og har meklet siden.** FN vedtok delingsplanen i 1947 og har vedtatt utallige resolusjoner siden. Men i Sikkerhetsrådet stopper vetoretten oss gang på gang, når stormaktene beskytter sine allierte.\n\n*\"Folkeretten gjelder for alle, eller så gjelder den for ingen.\"*",
+                                "sourceCredit": "FNs dilemma i regionen"
+                            }
+                        ]
+                    }
+                },
+                "tasks": [
+                    "Les artikkelen [Israel og Palestina](/historie/midtoesten/israel-og-palestina)",
+                    "Hva var Sykes-Picot-avtalen, og hvorfor skaper den fortsatt problemer? Les gjerne [artikkelen](/historie/midtoesten/sykes-picot). (Fakta)",
+                    "Hva skjedde i 1948, sett fra israelsk og fra palestinsk side? (Forståelse)",
+                    "Bruk prismet over: Hvilket perspektiv var nytt for deg, og hva overrasket deg? (Refleksjon)",
+                    "Hva skjedde under oljekrisen i 1973, og hva viste den om ressursmakt? Les gjerne [Olje og makt](/historie/midtoesten/olje-og-makt). (Fakta)",
+                    "Hvorfor blandet supermaktene seg inn i Midtøsten? Finn minst to grunner. (Analyse)",
+                    "Granskerspørsmål: Kan en konflikt løses hvis begge parter har rett i deler av sin historie? Hva måtte i så fall til? (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Israel og Palestina", "url": "/historie/midtoesten/israel-og-palestina" },
+                    { "title": "Sykes-Picot-avtalen", "url": "/historie/midtoesten/sykes-picot" },
+                    { "title": "Olje og makt", "url": "/historie/midtoesten/olje-og-makt" },
+                    { "title": "Iran-revolusjonen", "url": "/historie/midtoesten/iran-revolusjonen" }
+                ]
+            },
+            {
+                "id": "dragen-vakner",
+                "phase": "Akt 2: Skyggekrigen - følg pengene",
+                "title": "Dragen våkner",
+                "type": "fakta",
+                "content": "Mens Vesten og Sovjet har kranglet, har du nesten oversett en mappe i hjørnet av arkivet. På den står det bare: Kina.\n\nI 1949 vinner Mao Zedong borgerkrigen, og verdens folkerikeste land blir kommunistisk. Det som følger, er noen av historiens største tragedier: Det store spranget, Maos plan for lynrask industrialisering, ender i en hungersnød som tar titalls millioner liv. Kulturrevolusjonen kaster landet ut i kaos.\n\nMen så, i 1978, skjer vendepunktet. Den nye lederen Deng Xiaoping sier en setning som forandrer verden: Det spiller ingen rolle om katten er svart eller hvit, så lenge den fanger mus. Kina åpner seg for marked og handel, men beholder partiets jerngrep om makten.\n\nFabrikker skyter opp langs kysten. Hundrevis av millioner mennesker løftes ut av fattigdom, den raskeste velstandsveksten i menneskehetens historie. Verden jubler og tenker: Snart blir de nok demokrater også. Notér i granskerloggen at det var en antakelse, ikke et funn.",
+                "tasks": [
+                    "Les artikkelen [Mao og revolusjonen](/historie/kinas-historie/mao-og-revolusjonen)",
+                    "Hva skjedde i Kina i 1949? (Fakta)",
+                    "Hva var Det store spranget, og hvorfor endte det i katastrofe? Les gjerne [artikkelen](/historie/kinas-historie/store-spranget). (Fakta)",
+                    "Hva mente Deng Xiaoping med setningen om katten og musene? (Forståelse)",
+                    "Hvordan klarte Kina å kombinere marked og ettpartistat, når mange trodde det var umulig? (Analyse)",
+                    "Granskerspørsmål: Vestlige selskaper flyttet fabrikkene sine til Kina for å spare penger. Hvem fikk makt av det på lang sikt? (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Mao og revolusjonen", "url": "/historie/kinas-historie/mao-og-revolusjonen" },
+                    { "title": "Det store spranget", "url": "/historie/kinas-historie/store-spranget" },
+                    { "title": "Deng og reformene", "url": "/historie/kinas-historie/deng-og-reformene" }
+                ]
+            },
+            {
+                "id": "murens-fall",
+                "phase": "Akt 2: Skyggekrigen - følg pengene",
+                "title": "Murens fall - slutten eller pausen?",
+                "type": "fakta",
+                "content": "Fotografiet i neste mappe kjenner du kanskje igjen: unge mennesker som danser på Berlinmuren, natten mellom 9. og 10. november 1989.\n\nSovjetunionen har tapt. Ikke på slagmarken, men i butikkhyllene. Planøkonomien klarer aldri å gi folk det Vesten har: mat, biler, musikk, frihet. Da Gorbatsjov prøver å redde systemet med åpenhet og reformer, rakner alt. Muren faller i 1989. To år senere finnes ikke Sovjetunionen lenger.\n\nDen kalde krigen er over, og Vesten erklærer seier. Champagnekorker spretter i Washington. En statsviter skriver til og med at vi har nådd historiens slutt: Nå vil hele verden bli liberale demokratier, og de store konfliktene er forbi.\n\nDu er gransker, så du lar champagnen stå. I loggen din skriver du to spørsmål: Hva skjer med et såret Russland som føler seg ydmyket? Og hva skjer med et Kina som vokser i stillhet? Svarene finner du i siste del av mappen.",
+                "tasks": [
+                    "Les artikkelen [Veien mot slutten](/historie/den-kalde-krigen/veien-mot-slutt)",
+                    "Hva var glasnost og perestrojka? (Fakta)",
+                    "Hvorfor kollapset Sovjetunionen? Finn minst to grunner. (Forståelse)",
+                    "Hva mentes med påstanden om historiens slutt? (Forståelse)",
+                    "Hvorfor ble ikke Russland med i NATO eller EU etter 1991, tror du? (Analyse)",
+                    "Granskerspørsmål: Var den kalde krigens slutt en seier for frihet, for kapitalisme, eller for begge deler? Begrunn. (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Veien mot slutten", "url": "/historie/den-kalde-krigen/veien-mot-slutt" },
+                    { "title": "Berlinmuren", "url": "/historie/den-kalde-krigen/berlinmuren" }
+                ]
+            },
+            {
+                "id": "unipolar",
+                "phase": "Akt 3: Den nye verdensordenen",
+                "title": "Den unipolare verden",
+                "type": "fakta",
+                "content": "Akt tre. Mappene her er nyere, noen lukter fortsatt av fersk trykksverte.\n\n1990-tallet: USA står alene på toppen av verden. Ingen fiende, ingen konkurrent. Amerikanske filmer, amerikanske merkevarer og amerikanske ideer flommer over kloden. Handel krysser grenser som aldri før, og et nytt ord er på alles lepper: globalisering. Verdens handelsorganisasjon WTO opprettes for å lage felles spilleregler, og i 2001 slippes Kina inn i klubben.\n\nMen du er gransker, og du leser også de kjedelige vedleggene. Der finner du de gamle kjenningene dine: IMF og Verdensbanken. Fattige land som trenger lån, må godta strenge krav, kalt strukturtilpasning: kutt i skoler og helse, salg av statlige selskaper, åpne markeder. For mange land ligner det mistenkelig på leksjonen du lærte i akt to. Frie land, ufrie valg.\n\nOg helt bakerst i mappen ligger et foto datert 11. september 2001. To tårn i brann. Den unipolare festen er i ferd med å få en brå slutt.",
+                "tasks": [
+                    "Les artikkelen [Den unipolare verden](/historie/etterkrigstiden/den-unipolare-verden)",
+                    "Hva betyr det at verden var unipolar etter 1991? (Fakta)",
+                    "Hva er globalisering? Gi to konkrete eksempler. (Fakta)",
+                    "Hva var strukturtilpasning, og hvorfor ble IMF kritisert for kravene sine? (Forståelse)",
+                    "Hvordan ligner strukturtilpasning på de økonomiske leiemordernes metoder fra akt to? Hva er forskjellen? (Analyse)",
+                    "Granskerspørsmål: Da ingen kunne utfordre USA, hvem passet da på at supermakten fulgte reglene? (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Den unipolare verden", "url": "/historie/etterkrigstiden/den-unipolare-verden" }
+                ]
+            },
+            {
+                "id": "tarnene-faller",
+                "phase": "Akt 3: Den nye verdensordenen",
+                "title": "Tårnene faller",
+                "type": "fakta",
+                "content": "11. september 2001. Nitten flykaprere fra terrornettverket al-Qaida styrter passasjerfly inn i World Trade Center og Pentagon. Nesten 3000 mennesker dør, og hele verden ser det skje direkte på TV.\n\nUSA svarer med å erklære krig mot terror. Først invaderes Afghanistan, der al-Qaida har baser. Så, i 2003, invaderes Irak, med en begrunnelse om masseødeleggelsesvåpen som aldri ble funnet. Krigene skulle bli korte. De varte i tjue år, kostet hundretusener av liv og billioner av dollar, og endte uten seier. Sommeren 2021 rullet Taliban inn i Kabul igjen, som om tiden hadde stått stille.\n\nSom gransker stiller du de ubehagelige spørsmålene: Hvorfor angrep USA Irak, et land som ikke sto bak 11. september, men som har verdens femte største oljereserver? Hvorfor mistet USA så mye tillit i verden i disse årene? Og hvem fylte tomrommet mens supermakten var opptatt i ørkenen? Hint: Du møter dem i neste mappe.",
+                "tasks": [
+                    "Les artikkelen [Krigen mot terror](/historie/midtoesten/krigen-mot-terror)",
+                    "Hva skjedde 11. september 2001? (Fakta)",
+                    "Hvorfor invaderte USA Afghanistan, og hvorfor Irak? (Fakta)",
+                    "Begrunnelsen for Irak-krigen viste seg å være feil. Hva gjorde det med tilliten til USA? (Forståelse)",
+                    "Les gjerne om [Golfkrigene](/historie/midtoesten/golfkrigene). Hvilken rolle spilte oljen i konfliktene rundt Irak? (Analyse)",
+                    "Granskerspørsmål: Kan et demokrati føre krig mot terror uten selv å bryte reglene det sier det forsvarer? Bruk eksempler fra artikkelen. (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Krigen mot terror", "url": "/historie/midtoesten/krigen-mot-terror" },
+                    { "title": "Golfkrigene", "url": "/historie/midtoesten/golfkrigene" },
+                    { "title": "Den arabiske våren", "url": "/historie/midtoesten/arabisk-var" }
+                ]
+            },
+            {
+                "id": "kina-supermakt",
+                "phase": "Akt 3: Den nye verdensordenen",
+                "title": "Kina som supermakt",
+                "type": "utfordring",
+                "content": "Mens USA var opptatt i Afghanistan og Irak, fortsatte Kina å bygge. Fabrikker, høyhastighetstog, hele byer. I 2010 passerte Kina Japan som verdens nest største økonomi. Dragen fra akt to er ikke lenger våknende. Den er våken.\n\nOg nå kommer det mest interessante dokumentet i denne delen av mappen: Belte og vei-initiativet. Kina låner ut enorme summer til fattige land i Afrika, Asia og Latin-Amerika, som bygger havner, jernbaner og kraftverk. Kjenner du igjen oppskriften? Store lån, store byggeprosjekter, og når regningen ikke kan betales, overtar långiveren kontrollen. Havnen i Sri Lanka endte på kinesiske hender i 99 år da lånene ikke kunne betjenes.\n\nKritikere kaller det gjeldsfellediplomati og en ny kolonialisme. Kina svarer at de bygger det Vesten aldri bygde, uten å kreve at landene endrer styresett. Mange fattige land foretrekker faktisk kinesiske lån: raskere penger, færre moralprekener.\n\nDu er granskeren. Du har sett dette mønsteret før, fra Vestens side. Nå må du vurdere: Er Kina den nye økonomiske leiemorderen, eller bare en smartere handelspartner?",
+                "tasks": [
+                    "Les artikkelen [Kina som supermakt](/historie/kinas-historie/kina-supermakt)",
+                    "Hva er Belte og vei-initiativet? (Fakta)",
+                    "Hva skjedde med havnen i Sri Lanka, og hvorfor brukes den ofte som eksempel? (Fakta)",
+                    "Hvorfor velger mange fattige land kinesiske lån framfor vestlige? (Forståelse)",
+                    "Sammenlign Belte og vei med de økonomiske leiemordernes metoder fra akt to: Finn minst én likhet og én forskjell. (Analyse)",
+                    "Granskerspørsmål: Er det rettferdig å kalle Belte og vei for nykolonialisme når Vesten har drevet med lignende i 80 år? Argumenter for begge syn. (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Kina som supermakt", "url": "/historie/kinas-historie/kina-supermakt" },
+                    { "title": "Nykolonialisme", "url": "/historie/dekolonisering/nykolonialisme" }
+                ]
+            },
+            {
+                "id": "russland",
+                "phase": "Akt 3: Den nye verdensordenen",
+                "title": "Russland slår tilbake",
+                "type": "fakta",
+                "content": "Husker du spørsmålet du noterte da muren falt? Hva skjer med et såret Russland som føler seg ydmyket? Her er svaret, og det er mappens mørkeste kapittel etter 1991.\n\n1990-tallet ble et traume for Russland. Statens eiendommer ble solgt på billigsalg til en liten gruppe menn, oligarkene, som ble ufattelig rike mens vanlige russere mistet sparepengene og stoltheten. Inn fra skyggene kom Vladimir Putin, tidligere KGB-agent, med et enkelt løfte: Jeg gir dere orden og stolthet tilbake. Prisen var friheten.\n\nPutin bygde makten sin på det du nå vet er verdens eldste oppskrift: ressurser. Olje og gass til Europa ga penger i statskassen og et våpen i forhandlinger. Så kom opptrappingen: krig i Georgia i 2008, anneksjon av Krim i 2014, og 24. februar 2022 det utenkelige: fullskala invasjon av Ukraina, det største angrepet på et europeisk land siden andre verdenskrig.\n\nEuropa våknet brått. Sanksjoner, våpenstøtte, og Finland og Sverige søkte seg inn i NATO. Krigen har ennå ikke fått en varig løsning. Granskingen din er med andre ord ikke ferdig. Den er høyaktuell.",
+                "tasks": [
+                    "Les artikkelen [Russland etter Sovjet](/historie/etterkrigstiden/russland-etter-sovjet)",
+                    "Hvem var oligarkene, og hvordan ble de rike? (Fakta)",
+                    "Hva lovte Putin russerne, og hva tok han i bytte? (Forståelse)",
+                    "Hvordan brukte Russland gass som våpen mot Europa? (Forståelse)",
+                    "Russland sier NATO-utvidelsen truet dem. Ukraina og NATO sier land selv velger sine allianser. Forklar begge argumentene, og forklar hvorfor folkeretten likevel er tydelig på at angrepskrig er forbudt. (Analyse)",
+                    "Granskerspørsmål: Kunne Vesten handlet annerledes på 1990-tallet slik at Russland hadde valgt en annen vei? Eller var dette Russlands eget valg? Begrunn. (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Russland etter Sovjet", "url": "/historie/etterkrigstiden/russland-etter-sovjet" }
+                ]
+            },
+            {
+                "id": "ny-verdensorden",
+                "phase": "Akt 3: Den nye verdensordenen",
+                "title": "En ny verdensorden?",
+                "type": "utfordring",
+                "content": "Siste mappe. Den er tynnest, for den handler om nå, og historien om nå er ikke ferdig skrevet.\n\nDu blar gjennom overskriftene fra de siste årene: Finanskrisen i 2008, da banker gamblet bort verdens sparepenger og vanlige folk tok regningen. BRICS-landene som krever nye regler og handler stadig mer utenom dollaren. Kampen om sjeldne jordarter, databrikker og batterier, råvarene som all moderne teknologi er bygget av. En pandemi som viste hvor skjøre verdens forsyningslinjer er. Handelskrig mellom USA og Kina. Og krigen i Ukraina, som har delt verden i blokker igjen.\n\nEkspertene kaller det en multipolar verden: ikke én sjef, ikke to, men flere maktsentre som drar i hver sin retning. Det ligner mer på 1914 enn på 1995, sier noen. Andre mener flere maktsentre gir mer rettferdighet, fordi ingen lenger kan diktere alene.\n\nFør du skriver sluttrapporten din, skal du testes. Under venter en motdebattant som har lest de samme mappene som deg, men trukket andre konklusjoner. Vis hva du har lært.",
+                "component": {
+                    "name": "DebateSimulator",
+                    "props": {
+                        "topic": "Hvem har egentlig makten i verden i 2026?",
+                        "opponentName": "Analytiker Vela",
+                        "context": "En debattscene i 2026. Du hevder at USA og Vesten fortsatt leder verden. Motdebattanten mener makten allerede har flyttet seg. Bruk det du har lært fra hele granskingen.",
+                        "winningScore": 15,
+                        "arguments": [
+                            {
+                                "id": "a1",
+                                "text": "Dollaren er fortsatt verdens valuta. Nesten all internasjonal handel og sparing skjer i dollar.",
+                                "strength": 9,
+                                "type": "economy",
+                                "response": "Foreløpig, ja. Men BRICS-landene handler stadig mer i egne valutaer. Slikt skifte skjer sakte, og så plutselig."
+                            },
+                            {
+                                "id": "a2",
+                                "text": "USA har verdens sterkeste militærmakt, med baser i over 70 land.",
+                                "strength": 7,
+                                "type": "military",
+                                "response": "Og likevel tapte de i Vietnam, Irak og Afghanistan. Militærmakt vinner slag, ikke århundrer."
+                            },
+                            {
+                                "id": "a3",
+                                "text": "Verdens viktigste teknologiselskaper og universiteter er fortsatt vestlige.",
+                                "strength": 8,
+                                "type": "technology",
+                                "response": "Se på tallene igjen. Kina leder allerede på solceller, batterier og elbiler, og utdanner flere ingeniører enn noen andre."
+                            },
+                            {
+                                "id": "a4",
+                                "text": "Folk over hele verden vil fortsatt flytte til Vesten, ikke til Kina eller Russland. Det beviser at systemet vårt er mest attraktivt.",
+                                "strength": 8,
+                                "type": "culture",
+                                "response": "Attraktivt for enkeltmennesker, ja. Men regjeringer i sør velger stadig oftere kinesiske lån og partnerskap. Følg pengene, ikke flyttestrømmene."
+                            },
+                            {
+                                "id": "a5",
+                                "text": "Kina eier fabrikkene, men Vesten eier merkevarene og patentene. Det er der fortjenesten ligger.",
+                                "strength": 6,
+                                "type": "economy",
+                                "response": "Slik var det lenge. Men den som kontrollerer råvarene og produksjonen, kan lære seg resten. Spør britene hvordan det gikk med deres forsprang."
+                            },
+                            {
+                                "id": "a6",
+                                "text": "FN, Verdensbanken og IMF, verdens viktigste institusjoner, ble bygget av Vesten og følger Vestens regler.",
+                                "strength": 7,
+                                "type": "institutions",
+                                "response": "Nettopp derfor bygger Kina og BRICS sine egne banker og avtaler utenom. Institusjoner uten medlemmer er bare bygninger."
+                            }
+                        ]
+                    }
+                },
+                "tasks": [
+                    "Les artikkelen [En ny verdensorden?](/historie/etterkrigstiden/en-ny-verdensorden)",
+                    "Hva skjedde under finanskrisen i 2008, og hvem betalte regningen? (Fakta)",
+                    "Hva er BRICS, og hva vil landene oppnå? (Fakta)",
+                    "Hva betyr multipolar verden? (Forståelse)",
+                    "Gjennomfør debatten over. Hvilket motargument var vanskeligst å svare på, og hvorfor? (Refleksjon)",
+                    "Hvorfor er sjeldne jordarter og databrikker blitt like viktige som olje var i forrige århundre? (Analyse)",
+                    "Granskerspørsmål: Er en verden med flere maktsentre tryggere eller farligere enn en verden med én supermakt? Bruk eksempler fra hele stien. (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "En ny verdensorden?", "url": "/historie/etterkrigstiden/en-ny-verdensorden" }
+                ]
+            },
+            {
+                "id": "granskerens-rapport",
+                "phase": "Akt 3: Den nye verdensordenen",
+                "title": "Granskerens rapport",
+                "type": "refleksjon",
+                "content": "Mappen er tom. Åtti år med kupp, lån, murer, oljekriser og maktskifter ligger bak deg. Nå gjenstår bare det viktigste: rapporten din.\n\nDa du begynte, fikk du ett spørsmål: Hvem bestemmer i verden, og hvordan? Nå vet du at svaret har endret seg underveis. I 1945 bestemte de som skrev reglene. Under den kalde krigen bestemte to supermakter, ofte gjennom andre lands blod. Etter 1991 bestemte én, en stund. Og i dag? I dag er svaret åpent, og det er nettopp derfor det angår deg.\n\nFor her er sannheten ingen lærebok kan skrive for deg: Neste kapittel i denne mappen handler om din levetid. Beslutningene om ressurser, teknologi, krig og fred de neste tiårene tas av generasjonen som går på skole nå.\n\nFør du leverer, sorterer du arkivet en siste gang med tidslinjen under. Så skriver du rapporten. Granskere konkluderer ikke med det de håper er sant, men med det dokumentene viser. Lykke til.",
+                "component": {
+                    "name": "DragDropTimeline",
+                    "props": {
+                        "title": "Åtti år på riktig plass",
+                        "events": [
+                            { "id": "e1", "year": 1945, "label": "FN opprettes, verden bygges på nytt" },
+                            { "id": "e2", "year": 1947, "label": "India blir fritt - dekoloniseringen skyter fart" },
+                            { "id": "e3", "year": 1953, "label": "CIA-kupp mot Mosaddeq i Iran" },
+                            { "id": "e4", "year": 1956, "label": "Suez-krisen - imperienes tid er forbi" },
+                            { "id": "e5", "year": 1962, "label": "Cuba-krisen - verden på kanten av stupet" },
+                            { "id": "e6", "year": 1973, "label": "Oljekrisen - ressursmakt ryster Vesten" },
+                            { "id": "e7", "year": 1989, "label": "Berlinmuren faller" },
+                            { "id": "e8", "year": 1991, "label": "Sovjetunionen oppløses - USA alene på toppen" },
+                            { "id": "e9", "year": 2001, "label": "11. september - krigen mot terror begynner" },
+                            { "id": "e10", "year": 2008, "label": "Finanskrisen - tilliten til Vesten får en knekk" },
+                            { "id": "e11", "year": 2014, "label": "Russland annekterer Krim" },
+                            { "id": "e12", "year": 2022, "label": "Fullskala invasjon av Ukraina" }
+                        ]
+                    }
+                },
+                "tasks": [
+                    "Fullfør tidslinjen over: Plasser alle tolv hendelsene i riktig rekkefølge. (Fakta)",
+                    "Skriv granskerens rapport (én til to sider): Hvordan endret måten makt utøves på seg fra 1945 til 2026? Bruk minst tre konkrete eksempler fra stien. (Analyse)",
+                    "I rapporten: Hvilket mønster gikk igjen oftest i mappen din? Kupp, gjeld, ressurser eller noe annet? Begrunn med eksempler. (Analyse)",
+                    "Velg den ene hendelsen fra stien du mener har formet dagens verden mest. Forsvar valget ditt. (Refleksjon)",
+                    "Til slutt i rapporten: Hva bør DIN generasjon gjøre annerledes enn generasjonene i denne mappen? (Refleksjon)"
+                ],
+                "links": [
+                    { "title": "Global tidslinje", "url": "/tidslinje" }
+                ]
+            }
+        ]
+    }
+}

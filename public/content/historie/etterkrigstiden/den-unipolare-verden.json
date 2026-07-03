@@ -1,0 +1,273 @@
+{
+    "id": "den-unipolare-verden",
+    "title": "Den unipolare verden",
+    "subject": "historie",
+    "layout": "rich",
+    "year": "1991-2008",
+    "category": "Verden",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "I 1991 forsvant Sovjetunionen, og USA sto igjen alene på toppen.",
+        "Globalisering vevde verden sammen med varer, penger og internett.",
+        "IMF-lån med strenge krav ga rike land makt over fattige.",
+        "11. september 2001 og finanskrisen 2008 avsluttet epoken."
+    ],
+    "externalUrl": "https://snl.no/globalisering",
+    "timeline": [
+        {
+            "year": "1991",
+            "title": "Sovjetunionen oppløses",
+            "description": "Den kalde krigen er over. USA står igjen som verdens eneste supermakt."
+        },
+        {
+            "year": "1995",
+            "title": "WTO opprettes",
+            "description": "Verdens handelsorganisasjon skal få varer og penger til å flyte fritt over grensene."
+        },
+        {
+            "year": "2001",
+            "title": "Kina blir med i WTO",
+            "description": "Verdens fabrikk kobles på verdensøkonomien for fullt."
+        },
+        {
+            "year": "2001",
+            "title": "11. september",
+            "description": "Terrorangrepene mot USA viser at supermakten kan rammes hjemme."
+        },
+        {
+            "year": "2008",
+            "title": "Finanskrisen",
+            "description": "Amerikanske banker kollapser og drar verdensøkonomien med seg. Den unipolare epoken slutter."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Julaften 1991 skjedde noe nesten ingen hadde trodd var mulig. Flagget med hammer og sigd ble firt ned fra Kreml i Moskva for siste gang. Sovjetunionen, den ene av verdens to supermakter, fantes ikke lenger. I over 40 år hadde USA og Sovjetunionen holdt hverandre i sjakk. Nå sto USA igjen helt alene på toppen."
+        },
+        {
+            "type": "text",
+            "content": "Historikere kaller dette en unipolar verden. Ordet betyr at verden bare har én pol, altså ett maktsentrum. Under den kalde krigen var verden bipolar, med to poler som balanserte hverandre. Etter 1991 fantes det ingen som kunne måle seg med USA, verken militært eller økonomisk. Og da melder et spørsmål seg, det samme spørsmålet som går igjen i hele etterkrigstiden: Når ingen kan stoppe den sterkeste, hvem passer da på at makten brukes rettferdig?"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Det sovjetiske flagget fires ned fra Kreml i Moskva en mørk vinterkveld i 1991",
+            "caption": "25. desember 1991 ble sovjetflagget firt ned fra Kreml. Den kalde krigen var over."
+        },
+        {
+            "type": "header",
+            "text": "Historiens slutt?"
+        },
+        {
+            "type": "text",
+            "content": "I Vesten var stemningen nesten euforisk. Den amerikanske forskeren Francis Fukuyama skrev en berømt tekst der han kalte øyeblikket for historiens slutt. Han mente ikke at det ikke ville skje flere ting. Han mente at den store kampen mellom ideer var avgjort. Demokrati og markedsøkonomi hadde vunnet over kommunismen, og resten av verden ville før eller siden følge etter."
+        },
+        {
+            "type": "text",
+            "content": "Tanken var fristende enkel: Gi folk frihet til å stemme og frihet til å handle, så ordner resten seg selv. USA så på seg selv som en snill kjempe som skulle spre demokrati og frihandel til hele verden. Men en gransker bør alltid stille seg spørsmålet: Hvem tjente mest på den nye verdensordenen?"
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva betyr unipolar?",
+                "content": "Polar kommer av ordet pol, et maktsentrum. En bipolar verden har to sentre som balanserer hverandre, slik USA og Sovjetunionen gjorde under den kalde krigen. En unipolar verden har bare ett. Fra 1991 til rundt 2008 var USA det eneste senteret, med verdens største økonomi og militærbaser i over 70 land."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Globalisering: verden veves sammen"
+        },
+        {
+            "type": "text",
+            "content": "På 1990-tallet begynte varer, penger og informasjon å krysse grenser raskere enn noen gang før. Dette kalles globalisering. En joggesko kunne bli designet i USA, sydd i Vietnam av stoff fra Kina, og solgt i Norge. Containerskip fraktet varene billig over havene, og internett gjorde at penger kunne flyttes over hele kloden på sekunder."
+        },
+        {
+            "type": "text",
+            "content": "I 1995 fikk den nye verdensøkonomien sitt eget hovedkvarter: Verdens handelsorganisasjon, WTO. Der ble landene enige om felles regler for handel, og tollmurer ble revet ned. I 2001 skjedde noe som skulle forandre alt: Kina ble medlem. Vestlige selskaper flyttet fabrikkene sine dit fordi arbeidskraften var billig. Kina ble verdens fabrikk, og det ble starten på landets vei mot å bli en supermakt. Det kan du lese mer om i [Kina som supermakt](/historie/kinas-historie/kina-supermakt)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Et enormt containerskip stablet fullt av fargerike containere på vei over havet",
+            "caption": "Containerskipet ble globaliseringens arbeidshest. Billig frakt gjorde det lønnsomt å produsere varer på andre siden av kloden."
+        },
+        {
+            "type": "text",
+            "content": "For mange land ble globaliseringen en vei ut av fattigdom. Hundrevis av millioner mennesker, spesielt i Asia, fikk jobb og bedre levestandard. Men i gamle industribyer i USA og Europa forsvant fabrikkene, og arbeidere sto uten jobb. Gevinsten ble delt svært ujevnt."
+        },
+        {
+            "type": "header",
+            "text": "Baksiden: lån med lenker"
+        },
+        {
+            "type": "text",
+            "content": "Det var i denne perioden gjeldsfellen du kjenner fra artikkelen om [økonomiske leiemordere](/historie/dekolonisering/okonomiske-leiemordere) ble satt i system. Mange fattige land hadde tatt opp store lån på 1970- og 80-tallet og klarte ikke å betale. Da måtte de gå til Det internasjonale pengefondet, IMF, for å få hjelp."
+        },
+        {
+            "type": "text",
+            "content": "Hjelpen kom med strenge krav. Dette kalles strukturtilpasning. For å få nye lån måtte landene kutte i offentlige utgifter som skoler og sykehus, selge statlige selskaper til private eiere og åpne markedene sine for utenlandske varer. Kravene ble bestemt i Washington, ikke i landene selv."
+        },
+        {
+            "type": "text",
+            "content": "Noen mener kravene var nødvendig medisin for syke økonomier. Andre mener de var en ny og usynlig form for kolonistyre: Ingen soldater, ingen guvernører, men full kontroll over et lands økonomi gjennom gjeld. Det er dette som kalles [nykolonialisme](/historie/dekolonisering/nykolonialisme). Følger du pengene, ser du at mønsteret fra kolonitiden levde videre. Råvarene og fortjenesten strømmet fortsatt fra fattige land til rike."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Vi fikk beskjed om å kutte i alt som hjalp de fattige, for å betale banker som allerede var rike.",
+                "author": "Slik beskrev flere afrikanske ledere møtet med strukturtilpasning på 1990-tallet"
+            }
+        },
+        {
+            "type": "header",
+            "text": "NATO og EU flytter østover"
+        },
+        {
+            "type": "text",
+            "content": "Samtidig forandret kartet over Europa seg. Landene som hadde vært tvunget inn i Sovjetunionens maktområde, som Polen, Tsjekkia og de baltiske landene, ville vestover så fort som mulig. De søkte medlemskap i både NATO og EU, og fra 1999 ble de sluppet inn i store puljer."
+        },
+        {
+            "type": "text",
+            "content": "Sett fra Vesten var dette en seier for friheten. Landene valgte selv, og de valgte demokrati. Men sett fra Moskva så det helt annerledes ut. Russland opplevde at en gammel fiendtlig militærallianse rykket stadig nærmere grensen, mens landet selv lå nede med brukket rygg. Denne bitterheten skulle få store følger, som du kan lese om i [Russland etter Sovjet](/historie/etterkrigstiden/russland-etter-sovjet)."
+        },
+        {
+            "type": "component",
+            "name": "TimelineComponent",
+            "props": {
+                "title": "Den unipolare epoken",
+                "compact": true,
+                "events": [
+                    {
+                        "date": "1991",
+                        "title": "Sovjetunionen oppløses",
+                        "description": "USA blir verdens eneste supermakt."
+                    },
+                    {
+                        "date": "1995",
+                        "title": "WTO opprettes",
+                        "description": "Felles regler for verdenshandelen. Globaliseringen skyter fart."
+                    },
+                    {
+                        "date": "1999",
+                        "title": "NATO utvider østover",
+                        "description": "Polen, Tsjekkia og Ungarn blir medlemmer. Flere følger i 2004."
+                    },
+                    {
+                        "date": "2001",
+                        "title": "Kina inn i WTO og 11. september",
+                        "description": "Verdens fabrikk kobles på, samtidig som terror rammer USA."
+                    },
+                    {
+                        "date": "2008",
+                        "title": "Finanskrisen",
+                        "description": "Wall Street kollapser. Troen på den amerikanske modellen får en alvorlig knekk."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "Sprekkene i fasaden"
+        },
+        {
+            "type": "text",
+            "content": "Den 11. september 2001 fikk den unipolare verden sitt første store sjokk. Terrornettverket al-Qaida kapret fly og styrtet dem inn i World Trade Center i New York og forsvarsdepartementet Pentagon. Nesten 3000 mennesker døde. Verdens mektigste land ble rammet midt i hjertet, av en fiende uten hær og uten stat. USA svarte med å gå til krig i Afghanistan og Irak, noe du kan lese mer om i [Krigen mot terror](/historie/midtoesten/krigen-mot-terror). Krigene ble lange, dyre og svekket USAs rykte i store deler av verden."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Skyskrapere på Manhattan i røyk sett fra elven en klar høstmorgen",
+            "caption": "11. september 2001 viste at selv en supermakt kan rammes hjemme."
+        },
+        {
+            "type": "text",
+            "content": "Det andre sjokket kom innenfra. I 2008 kollapset flere av USAs største banker etter mange år med grådige boliglån og risikable veddemål. Finanskrisen spredte seg som en bølge over hele den globaliserte verden. Millioner mistet jobb og bolig. Landet som hadde fortalt alle andre hvordan økonomi skulle styres, hadde mistet kontrollen over sin egen."
+        },
+        {
+            "type": "text",
+            "content": "Etter 2008 snakket færre om historiens slutt. Kina vokste i rekordfart, Russland var på vei tilbake som stormakt, og tilliten til den amerikanske modellen hadde fått en knekk. Den unipolare epoken var over. Hva som kom i stedet, kan du lese om i [En ny verdensorden?](/historie/etterkrigstiden/en-ny-verdensorden)."
+        },
+        {
+            "type": "header",
+            "text": "Granskerens notat"
+        },
+        {
+            "type": "text",
+            "content": "Se på perioden 1991 til 2008 med granskerens blikk. På overflaten handlet den om frihet, demokrati og fri handel. Følger du pengene, ser du også noe annet: et system der reglene ble skrevet av de mektigste, der gjeld ga kontroll, og der gevinsten havnet svært skjevt. Begge deler er sanne samtidig. Det er nettopp det som gjør historie vanskelig, og viktig."
+        }
+    ],
+    "quiz": [
+        {
+            "id": "q1",
+            "question": "Hva betyr det at verden var unipolar etter 1991?",
+            "options": [
+                "Verden var delt mellom to supermakter",
+                "Det fantes bare ett maktsentrum: USA",
+                "FN styrte hele verden",
+                "Ingen land hadde militærmakt lenger"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": "q2",
+            "question": "Hva mente Fukuyama med historiens slutt?",
+            "options": [
+                "Verden ville snart gå under",
+                "Det ville aldri skje noe viktig igjen",
+                "Historiefaget skulle fjernes fra skolen",
+                "Kampen mellom de store ideene var avgjort, demokrati og marked hadde vunnet"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": "q3",
+            "question": "Hva var strukturtilpasning?",
+            "options": [
+                "Strenge krav om kutt og privatisering som fulgte med IMF-lån",
+                "En ny type fabrikk i Kina",
+                "NATOs plan for å utvide østover",
+                "En regel i WTO om tollsatser"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": "q4",
+            "question": "Hvorfor ble Kinas WTO-medlemskap i 2001 så viktig?",
+            "options": [
+                "Kina fikk kontroll over amerikanske banker",
+                "Kina lovet å innføre demokrati",
+                "Vestlige selskaper flyttet fabrikker dit, og Kina ble verdens fabrikk",
+                "Kina meldte seg samtidig inn i NATO"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": "q5",
+            "question": "Hvordan så Russland på NATO-utvidelsen østover?",
+            "options": [
+                "Som en god idé Russland selv hadde foreslått",
+                "Som en trussel som rykket stadig nærmere grensen",
+                "Som helt uten betydning",
+                "Som en invitasjon til å bli medlem"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": "q6",
+            "question": "Hvilke to hendelser regnes som slutten på den unipolare epoken?",
+            "options": [
+                "Første og andre verdenskrig",
+                "Berlinmurens fall og Sovjetunionens oppløsning",
+                "WTO-opprettelsen og Kinas medlemskap",
+                "11. september 2001 og finanskrisen 2008"
+            ],
+            "correctAnswer": 3
+        }
+    ],
+    "createdDate": "2026-07-03T00:00:00Z",
+    "lastUpdated": "2026-07-03T00:00:00Z"
+}

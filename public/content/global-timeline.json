@@ -7043,6 +7043,29 @@
       ]
     },
     {
+      "id": "verden-bygges-pa-nytt-sub-0",
+      "title": "Bretton Woods",
+      "description": "44 land møtes på et hotell i USA og bestemmer hvordan verdens penger skal fungere.",
+      "startDate": 1944,
+      "endDate": null,
+      "displayDate": "1944",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/verden-bygges-pa-nytt",
+      "tags": [
+        "usa",
+        "fn",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "atombombene",
       "title": "Atombombene over Japan",
       "description": "Hiroshima og Nagasaki bombes, krigen slutter.",
@@ -7235,6 +7258,52 @@
         "atomvåpen",
         "frykt"
       ]
+    },
+    {
+      "id": "verden-bygges-pa-nytt",
+      "title": "1945: Verden bygges på nytt",
+      "description": "Verden ligger i ruiner, og vinnerne skriver nye regler: FN, dollaren, IMF og Verdensbanken. Men hvem tjente på reglene?",
+      "startDate": 1945,
+      "endDate": null,
+      "displayDate": "1945",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/verden-bygges-pa-nytt",
+      "tags": [
+        "usa",
+        "fn",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "verden-bygges-pa-nytt-sub-1",
+      "title": "FN opprettes",
+      "description": "51 land signerer FN-pakten i San Francisco. De fem store får vetorett.",
+      "startDate": 1945,
+      "endDate": null,
+      "displayDate": "1945",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/verden-bygges-pa-nytt",
+      "tags": [
+        "usa",
+        "fn",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
     },
     {
       "id": "sorost-asia-sub-1",
@@ -7515,6 +7584,29 @@
         "kald-krig",
         "atomvåpen"
       ]
+    },
+    {
+      "id": "verden-bygges-pa-nytt-sub-2",
+      "title": "Marshallhjelpen",
+      "description": "USA sender milliarder av dollar til Vest-Europa for å bygge landene opp igjen.",
+      "startDate": 1948,
+      "endDate": null,
+      "displayDate": "1948",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/verden-bygges-pa-nytt",
+      "tags": [
+        "usa",
+        "fn",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
     },
     {
       "id": "midtosten-mandater-sub-3",
@@ -9792,6 +9884,94 @@
       ]
     },
     {
+      "id": "den-unipolare-verden",
+      "title": "Den unipolare verden",
+      "description": "USA sto alene på toppen etter 1991. Globalisering, IMF-krav og NATO-utvidelse formet verden, helt til 11. september og finanskrisen avsluttet epoken.",
+      "startDate": 1991,
+      "endDate": 2008,
+      "displayDate": "1991-2008",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/den-unipolare-verden",
+      "tags": [
+        "usa",
+        "globalisering",
+        "verdensorden"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "den-unipolare-verden-sub-0",
+      "title": "Sovjetunionen oppløses",
+      "description": "Den kalde krigen er over. USA står igjen som verdens eneste supermakt.",
+      "startDate": 1991,
+      "endDate": null,
+      "displayDate": "1991",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/den-unipolare-verden",
+      "tags": [
+        "usa",
+        "globalisering",
+        "verdensorden"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "russland-etter-sovjet",
+      "title": "Russland etter Sovjet: Fra sammenbrudd til krig",
+      "description": "Fra sjokkterapi og oligarker til Putin, gassmakt og krigen i Ukraina - veien fra sammenbruddet i 1991 til angrepskrigen i 2022.",
+      "startDate": 1991,
+      "endDate": 2026,
+      "displayDate": "1991-2026",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/russland-etter-sovjet",
+      "tags": [
+        "russland",
+        "ukraina",
+        "verdensorden"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "russland-etter-sovjet-sub-0",
+      "title": "Sovjetunionen oppløses",
+      "description": "Femten nye land oppstår. Russland arver atomvåpnene og setet i FNs sikkerhetsråd.",
+      "startDate": 1991,
+      "endDate": null,
+      "displayDate": "1991",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/russland-etter-sovjet",
+      "tags": [
+        "russland",
+        "ukraina",
+        "verdensorden"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "eu-og-eos",
       "title": "EU og EØS: Norge mellom selvstyre og samarbeid",
       "description": "Hvorfor Norge sa nei til EU to ganger, men likevel følger tusenvis av EU-regler gjennom EØS-avtalen.",
@@ -9836,6 +10016,28 @@
       "lng": -8,
       "placeLabel": "Portugal",
       "placeCountryId": 620,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "den-unipolare-verden-sub-1",
+      "title": "WTO opprettes",
+      "description": "Verdens handelsorganisasjon skal få varer og penger til å flyte fritt over grensene.",
+      "startDate": 1995,
+      "endDate": null,
+      "displayDate": "1995",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/den-unipolare-verden",
+      "tags": [
+        "usa",
+        "globalisering",
+        "verdensorden"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
       "geoConfidence": "tag"
     },
     {
@@ -9943,6 +10145,28 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "russland-etter-sovjet-sub-1",
+      "title": "Putin blir president",
+      "description": "En ukjent tidligere KGB-offiser lover å gi russerne orden og stolthet tilbake.",
+      "startDate": 2000,
+      "endDate": null,
+      "displayDate": "2000",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/russland-etter-sovjet",
+      "tags": [
+        "russland",
+        "ukraina",
+        "verdensorden"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "kina-supermakt",
       "title": "Kina som supermakt",
       "description": "Fra verdens fabrikk til geopolitisk stormakt - og hva det betyr for verden.",
@@ -9962,6 +10186,50 @@
       "lng": 105,
       "placeLabel": "Kina",
       "placeCountryId": 156,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "den-unipolare-verden-sub-2",
+      "title": "Kina blir med i WTO",
+      "description": "Verdens fabrikk kobles på verdensøkonomien for fullt.",
+      "startDate": 2001,
+      "endDate": null,
+      "displayDate": "2001",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/den-unipolare-verden",
+      "tags": [
+        "usa",
+        "globalisering",
+        "verdensorden"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "den-unipolare-verden-sub-3",
+      "title": "11. september",
+      "description": "Terrorangrepene mot USA viser at supermakten kan rammes hjemme.",
+      "startDate": 2001,
+      "endDate": null,
+      "displayDate": "2001",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/den-unipolare-verden",
+      "tags": [
+        "usa",
+        "globalisering",
+        "verdensorden"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
       "geoConfidence": "tag"
     },
     {
@@ -10073,6 +10341,96 @@
         "kald-krig",
         "økonomi"
       ]
+    },
+    {
+      "id": "den-unipolare-verden-sub-4",
+      "title": "Finanskrisen",
+      "description": "Amerikanske banker kollapser og drar verdensøkonomien med seg. Den unipolare epoken slutter.",
+      "startDate": 2008,
+      "endDate": null,
+      "displayDate": "2008",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/den-unipolare-verden",
+      "tags": [
+        "usa",
+        "globalisering",
+        "verdensorden"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "russland-etter-sovjet-sub-2",
+      "title": "Krigen i Georgia",
+      "description": "Russland går til krig mot nabolandet Georgia. Vesten protesterer, men gjør lite.",
+      "startDate": 2008,
+      "endDate": null,
+      "displayDate": "2008",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/russland-etter-sovjet",
+      "tags": [
+        "russland",
+        "ukraina",
+        "verdensorden"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "en-ny-verdensorden",
+      "title": "En ny verdensorden?",
+      "description": "Finanskrisen, BRICS og kampen om ressursene: hvordan verden etter 2008 gikk fra én supermakt til flere maktsentre.",
+      "startDate": 2008,
+      "endDate": 2026,
+      "displayDate": "2008-2026",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/en-ny-verdensorden",
+      "tags": [
+        "kina",
+        "usa",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "en-ny-verdensorden-sub-0",
+      "title": "Finanskrisen",
+      "description": "Storbanken Lehman Brothers går konkurs. Krisen sprer seg til hele verden.",
+      "startDate": 2008,
+      "endDate": null,
+      "displayDate": "2008",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/en-ny-verdensorden",
+      "tags": [
+        "kina",
+        "usa",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
     },
     {
       "id": "hjorten-i-skogbrynet",
@@ -10253,6 +10611,51 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "en-ny-verdensorden-sub-1",
+      "title": "Belte og vei",
+      "description": "Kina lanserer sitt gigantiske prosjekt for veier, havner og jernbaner i over 100 land.",
+      "startDate": 2013,
+      "endDate": null,
+      "displayDate": "2013",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/en-ny-verdensorden",
+      "tags": [
+        "kina",
+        "usa",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "russland-etter-sovjet-sub-3",
+      "title": "Krim annekteres",
+      "description": "Russland tar Krim-halvøya fra Ukraina. Det er første gang siden 1945 at et europeisk land tar land fra et annet med makt.",
+      "startDate": 2014,
+      "endDate": null,
+      "displayDate": "2014",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/russland-etter-sovjet",
+      "tags": [
+        "russland",
+        "ukraina",
+        "verdensorden"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "kylie-jenner-snapchat",
       "title": "Jenner knuser Snapchat-aksjen",
       "description": "Et enkelt innlegg fra Kylie Jenner senker selskapsverdien med 1,3 mrd dollar.",
@@ -10273,6 +10676,52 @@
       "placeLabel": "Norge",
       "placeCountryId": 578,
       "geoConfidence": "guess"
+    },
+    {
+      "id": "en-ny-verdensorden-sub-2",
+      "title": "Handelskrigen",
+      "description": "USA innfører toll på kinesiske varer. Kina svarer med det samme.",
+      "startDate": 2018,
+      "endDate": null,
+      "displayDate": "2018",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/en-ny-verdensorden",
+      "tags": [
+        "kina",
+        "usa",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "en-ny-verdensorden-sub-3",
+      "title": "Pandemien",
+      "description": "Covid-19 stenger verden og viser hvor sårbare globale forsyningskjeder er.",
+      "startDate": 2020,
+      "endDate": null,
+      "displayDate": "2020",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/en-ny-verdensorden",
+      "tags": [
+        "kina",
+        "usa",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
     },
     {
       "id": "frances-haugen-facebook",
@@ -10317,6 +10766,28 @@
       "placeLabel": "Norge",
       "placeCountryId": 578,
       "geoConfidence": "guess"
+    },
+    {
+      "id": "russland-etter-sovjet-sub-4",
+      "title": "Fullskalainvasjonen av Ukraina",
+      "description": "Russland angriper Ukraina fra tre kanter. Europas største krig siden andre verdenskrig er i gang.",
+      "startDate": 2022,
+      "endDate": null,
+      "displayDate": "2022",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/russland-etter-sovjet",
+      "tags": [
+        "russland",
+        "ukraina",
+        "verdensorden"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
     },
     {
       "id": "global-handel-oversikt",
@@ -10456,6 +10927,29 @@
       "placeLabel": "Norge",
       "placeCountryId": 578,
       "geoConfidence": "guess"
+    },
+    {
+      "id": "en-ny-verdensorden-sub-4",
+      "title": "BRICS utvides",
+      "description": "Flere land, blant dem Egypt, Etiopia og Iran, blir med i klubben som utfordrer Vesten.",
+      "startDate": 2024,
+      "endDate": null,
+      "displayDate": "2024",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/en-ny-verdensorden",
+      "tags": [
+        "kina",
+        "usa",
+        "verdensorden",
+        "økonomi"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
     },
     {
       "id": "aldri-godt-nok",

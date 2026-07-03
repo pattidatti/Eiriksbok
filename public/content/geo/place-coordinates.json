@@ -791,6 +791,10 @@
       "count": 73
     },
     {
+      "tag": "økonomi",
+      "count": 68
+    },
+    {
       "tag": "krig",
       "count": 66
     },
@@ -801,10 +805,6 @@
     {
       "tag": "filosofi",
       "count": 57
-    },
-    {
-      "tag": "økonomi",
-      "count": 56
     },
     {
       "tag": "politikk",
@@ -831,12 +831,16 @@
       "count": 32
     },
     {
+      "tag": "demokrati",
+      "count": 29
+    },
+    {
       "tag": "oppfinnelser",
       "count": 29
     },
     {
-      "tag": "demokrati",
-      "count": 28
+      "tag": "verdensorden",
+      "count": 26
     },
     {
       "tag": "imperium",
@@ -935,6 +939,10 @@
       "count": 14
     },
     {
+      "tag": "1700-tallet",
+      "count": 14
+    },
+    {
       "tag": "1800-tallet",
       "count": 14
     },
@@ -947,15 +955,15 @@
       "count": 14
     },
     {
-      "tag": "1700-tallet",
-      "count": 13
-    },
-    {
       "tag": "folkemord",
       "count": 13
     },
     {
       "tag": "jernalder",
+      "count": 12
+    },
+    {
+      "tag": "globalisering",
       "count": 12
     },
     {
@@ -984,6 +992,10 @@
     },
     {
       "tag": "atomvåpen",
+      "count": 11
+    },
+    {
+      "tag": "fn",
       "count": 11
     },
     {
@@ -1135,6 +1147,10 @@
       "count": 7
     },
     {
+      "tag": "opplysningstid",
+      "count": 7
+    },
+    {
       "tag": "segregering",
       "count": 7
     },
@@ -1151,6 +1167,10 @@
       "count": 7
     },
     {
+      "tag": "ukraina",
+      "count": 7
+    },
+    {
       "tag": "ordklasser",
       "count": 7
     },
@@ -1164,6 +1184,10 @@
     },
     {
       "tag": "silkeveien",
+      "count": 6
+    },
+    {
+      "tag": "maktfordeling",
       "count": 6
     },
     {
@@ -1200,10 +1224,6 @@
     },
     {
       "tag": "psykologi",
-      "count": 6
-    },
-    {
-      "tag": "opplysningstid",
       "count": 6
     },
     {
@@ -1247,10 +1267,6 @@
       "count": 6
     },
     {
-      "tag": "fn",
-      "count": 6
-    },
-    {
       "tag": "fremtid",
       "count": 6
     },
@@ -1272,14 +1288,6 @@
     },
     {
       "tag": "eskatologi",
-      "count": 5
-    },
-    {
-      "tag": "globalisering",
-      "count": 5
-    },
-    {
-      "tag": "maktfordeling",
       "count": 5
     },
     {
@@ -2148,6 +2156,10 @@
     },
     {
       "tag": "plikt",
+      "count": 2
+    },
+    {
+      "tag": "grunnlov",
       "count": 2
     },
     {
@@ -3196,10 +3208,6 @@
     },
     {
       "tag": "nøytralitet",
-      "count": 1
-    },
-    {
-      "tag": "grunnlov",
       "count": 1
     },
     {

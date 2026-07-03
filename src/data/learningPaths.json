@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-05-27T11:32:05.380Z",
-  "count": 18,
+  "updatedAt": "2026-07-03T18:03:39.457Z",
+  "count": 19,
   "paths": [
     {
       "id": "romerriket-sti",
@@ -83,7 +83,7 @@
     {
       "id": "mellomkrigstiden-sti",
       "title": "Læringssti: Mellomkrigstiden",
-      "description": "Fra Versailles til verdenskrig – en reise gjennom epoken som formet det 20. århundret.",
+      "description": "Fra Versailles til verdenskrig - en reise gjennom epoken som formet det 20. århundret.",
       "subjectId": "historie",
       "subjectName": "Historie",
       "topicId": "mellomkrigstiden",
@@ -104,6 +104,19 @@
       "readTime": "4-5 timer",
       "path": "/historie/den-kalde-krigen/kald-krig-sti",
       "fileRelativePath": "historie/den-kalde-krigen/kald-krig-sti.json",
+      "version": 1
+    },
+    {
+      "id": "etterkrigstiden-sti",
+      "title": "Læringssti: Etterkrigstiden",
+      "description": "Følg pengene, oljen og våpnene fra 1945 til i dag. Hvem bestemmer i verden - og hvordan?",
+      "subjectId": "historie",
+      "subjectName": "Historie",
+      "topicId": "etterkrigstiden",
+      "year": "1945-2026",
+      "readTime": "5-6 timer",
+      "path": "/historie/etterkrigstiden/etterkrigstiden-sti",
+      "fileRelativePath": "historie/etterkrigstiden/etterkrigstiden-sti.json",
       "version": 1
     },
     {

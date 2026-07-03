@@ -1,0 +1,243 @@
+{
+    "id": "en-ny-verdensorden",
+    "title": "En ny verdensorden?",
+    "subject": "historie",
+    "layout": "rich",
+    "year": "2008-2026",
+    "category": "Verden",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Finanskrisen i 2008 ga tilliten til Vesten en alvorlig knekk.",
+        "BRICS-landene bygger sine egne banker og handelsruter.",
+        "Den som kontrollerer råvarer og teknologi, kontrollerer framtiden.",
+        "Verden går fra én supermakt til flere maktsentre - og ingen vet hvordan det ender."
+    ],
+    "externalUrl": "https://snl.no/BRICS",
+    "timeline": [
+        {
+            "year": "2008",
+            "title": "Finanskrisen",
+            "description": "Storbanken Lehman Brothers går konkurs. Krisen sprer seg til hele verden."
+        },
+        {
+            "year": "2013",
+            "title": "Belte og vei",
+            "description": "Kina lanserer sitt gigantiske prosjekt for veier, havner og jernbaner i over 100 land."
+        },
+        {
+            "year": "2018",
+            "title": "Handelskrigen",
+            "description": "USA innfører toll på kinesiske varer. Kina svarer med det samme."
+        },
+        {
+            "year": "2020",
+            "title": "Pandemien",
+            "description": "Covid-19 stenger verden og viser hvor sårbare globale forsyningskjeder er."
+        },
+        {
+            "year": "2024",
+            "title": "BRICS utvides",
+            "description": "Flere land, blant dem Egypt, Etiopia og Iran, blir med i klubben som utfordrer Vesten."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk deg at du er journalist og får ett eneste spørsmål å granske: Hvem bestemmer i verden? I år 2000 var svaret enkelt. USA var alene på toppen, og de fleste land fulgte amerikanske regler for handel, penger og politikk. I 2026 er svaret mye vanskeligere. Makten er i bevegelse, og for å forstå hvor den flytter seg, må du gjøre som en ekte gransker: følg pengene, følg råvarene og følg teknologien."
+        },
+        {
+            "type": "text",
+            "content": "Denne artikkelen handler om årene etter 2008, da verden sakte gikk fra å ha én sjef til å få flere maktsentre. Historikere kaller det en multipolar verden. Ordet betyr rett og slett en verden med flere poler, altså flere sentre for makt, slik en magnet har to poler."
+        },
+        {
+            "type": "header",
+            "text": "2008: Da tilliten sprakk"
+        },
+        {
+            "type": "text",
+            "content": "Historien starter med et brak. I september 2008 gikk den amerikanske storbanken Lehman Brothers konkurs. Banken hadde gamblet med boliglån, altså lånt ut penger til folk som aldri kunne betale tilbake, og deretter solgt lånene videre som om de var trygge. Da korthuset falt, dro det med seg banker over hele verden. Millioner av mennesker mistet jobben, huset eller sparepengene sine."
+        },
+        {
+            "type": "text",
+            "content": "Det mest provoserende kom etterpå. Statene brukte enorme summer av skattebetalernes penger på å redde de samme bankene som hadde skapt krisen. Vanlige folk betalte regningen, mens mange banksjefer slapp unna. Rundt om i verden stilte land som Kina, India og Brasil et ubehagelig spørsmål: Hvorfor skal vi følge Vestens økonomiske regler, når Vesten ikke klarer å følge dem selv?"
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva var finanskrisen i 2008?",
+                "content": "Amerikanske banker lånte ut penger til boligkjøpere som ikke kunne betale tilbake. Lånene ble pakket sammen og solgt videre som trygge investeringer. Da boligprisene falt, kollapset hele systemet. Krisen regnes som den verste siden børskrakket i 1929."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Fortvilte bankansatte bærer pappesker ut av et kontorbygg i New York",
+            "caption": "September 2008: Ansatte i Lehman Brothers bærer eiendelene sine ut av banken som nettopp har gått konkurs."
+        },
+        {
+            "type": "header",
+            "text": "BRICS: De nye stemmene"
+        },
+        {
+            "type": "text",
+            "content": "Etter 2008 begynte flere store land å organisere seg utenfor Vestens klubber. Brasil, Russland, India, Kina og Sør-Afrika dannet gruppen BRICS, oppkalt etter forbokstavene i landenes navn. Sammen har de over 40 prosent av verdens befolkning. De startet sin egen utviklingsbank som et alternativ til Verdensbanken og IMF, og de jobber for å handle med hverandre uten å bruke amerikanske dollar."
+        },
+        {
+            "type": "text",
+            "content": "I 2024 ble klubben større. Land som Egypt, Etiopia, Iran og De forente arabiske emirater ble medlemmer. Beskjeden til Vesten var tydelig: Dere bestemmer ikke lenger alene. Landene i sør, de som en gang var kolonier, vil nå sitte ved bordet der reglene lages."
+        },
+        {
+            "type": "header",
+            "text": "Belte og vei: Gave eller gjeldsfelle?"
+        },
+        {
+            "type": "text",
+            "content": "Ingen har flyttet mer makt med penger enn Kina. I 2013 lanserte landet Belte og vei-initiativet, verdens største byggeprosjekt. Kina låner ut penger til fattige land, som bruker pengene på havner, jernbaner og motorveier, ofte bygget av kinesiske selskaper. Over 100 land har blitt med. For mange av dem er dette en gyllen mulighet til å få infrastruktur de ellers aldri hadde fått råd til."
+        },
+        {
+            "type": "text",
+            "content": "Men her må granskeren i deg våkne. Høres oppskriften kjent ut? Store lån, gigantiske byggeprosjekter og land som ikke klarer å betale tilbake. Det er nesten den samme oppskriften som de [økonomiske leiemorderne](/historie/dekolonisering/okonomiske-leiemordere) brukte for Vesten på 1970-tallet. Da Sri Lanka ikke klarte å betale gjelden for en ny storhavn, måtte landet leie bort havna til Kina i 99 år. Kritikere kaller det gjeldsfellediplomati og en ny form for [nykolonialisme](/historie/dekolonisering/nykolonialisme). Kina svarer at de bygger det Vesten aldri bygde, og at landene selv har bedt om lånene. Hvem har rett? Det er et spørsmål historikere fortsatt krangler om."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En enorm containerhavn med kinesiske skip og heisekraner i et asiatisk land",
+            "caption": "Havner som denne bygges med kinesiske lån over hele verden. Men hvem eier dem når gjelden ikke kan betales?"
+        },
+        {
+            "type": "header",
+            "text": "Kampen om ressursene"
+        },
+        {
+            "type": "text",
+            "content": "På 1900-tallet handlet verdenspolitikk ofte om olje. Det gjør den fortsatt, men i dag har nye ressurser blitt like viktige. Mobilen i lomma di er faktisk et lite stykke verdenspolitikk. Den er full av materialer og teknologi som stormaktene kjemper om."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Sjeldne jordarter: metaller som trengs i alt fra mobiler til vindmøller. Kina kontrollerer det meste av produksjonen.",
+                "Databrikker: hjernen i all moderne teknologi. De mest avanserte lages på Taiwan, øya Kina mener er en del av Kina.",
+                "Kobolt og litium: nødvendig i batterier til elbiler. Mye av det finnes i Kongo og Sør-Amerika.",
+                "Olje og gass: fortsatt et maktmiddel, slik verden ser tydelig når kriger og kriser rammer."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Mønsteret er gammelt, bare med nye varer. Den som eier råvarene og teknologien, eier framtiden. Derfor bruker USA og Kina milliarder på å bygge egne fabrikker for databrikker, og derfor kjemper selskaper fra hele verden om gruverettigheter i Afrika."
+        },
+        {
+            "type": "header",
+            "text": "Pandemien: Da hyllene ble tomme"
+        },
+        {
+            "type": "text",
+            "content": "I 2020 stengte covid-19-pandemien verden. Fabrikker i Kina stoppet, og plutselig manglet Europa og USA alt fra munnbind til databrikker. Bilfabrikker måtte stanse fordi én liten del manglet. Pandemien avslørte noe granskere lenge hadde advart mot: Verden hadde gjort seg helt avhengig av lange, sårbare forsyningskjeder. Etterpå begynte mange land å flytte produksjon hjem igjen, eller til land de stoler på. Globaliseringen gikk i revers for første gang på flere tiår."
+        },
+        {
+            "type": "header",
+            "text": "Krig og nye blokker"
+        },
+        {
+            "type": "text",
+            "content": "I februar 2022 gikk Russland til fullskala angrep på Ukraina. Det ble den største krigen i Europa siden 1945. Vesten svarte ikke med soldater, men med økonomiske våpen: sanksjoner som stengte Russland ute fra vestlige banker og markeder. Igjen ser vi at penger brukes som våpen. Men sanksjonene delte også verden. Mange land i Asia, Afrika og Sør-Amerika nektet å velge side, og Kina og India kjøpte billig russisk olje og gass."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig har USA og Kina havnet i en handelskrig. Siden 2018 har de svart på hverandres toll med enda mer toll, og USA har forbudt salg av avansert teknologi til Kina. Noen kaller det en ny kald krig. Andre mener det er noe helt nytt, fordi USA og Kina, i motsetning til USA og Sovjetunionen, handler enormt mye med hverandre. Les mer om Kinas vei til toppen i [Kina som supermakt](/historie/kinas-historie/kina-supermakt)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To gigantiske containerskip under hvert sitt flagg møtes på et verdenshav i solnedgang",
+            "caption": "USA og Kina er rivaler, men også hverandres største handelspartnere. Det gjør den nye maktkampen annerledes enn den kalde krigen."
+        },
+        {
+            "type": "header",
+            "text": "En verden med flere maktsentre"
+        },
+        {
+            "type": "text",
+            "content": "Så hva fant granskeren ut? Verden i 2026 har ikke lenger én sjef. USA er fortsatt verdens sterkeste land, men Kina puster dem i nakken, India vokser raskt, og grupper som BRICS krever nye regler. Makt flyttes sjelden med bomber alene. Den flyttes med lån, havner, databrikker, rørledninger og handelsavtaler."
+        },
+        {
+            "type": "text",
+            "content": "For Norge er dette alvor. Vi er et lite land med en åpen økonomi, og vi eier ressurser verden vil ha: olje, gass, fisk og mineraler. Da Europa mistet russisk gass i 2022, ble Norge plutselig kontinentets viktigste energileverandør. Små land klarer seg best i en verden med regler alle følger. Derfor har Norge alltid støttet FN og internasjonale avtaler. Hva skjer med oss hvis de store landene slutter å bry seg om reglene?"
+        },
+        {
+            "type": "text",
+            "content": "Og for deg? Neste gang du plukker opp mobilen, vet du at du holder verdenspolitikk i hånda: kinesiske jordarter, kobolt fra Kongo, databrikker fra Taiwan og amerikansk programvare. Historien om den nye verdensordenen er ikke ferdig skrevet. Den skrives akkurat nå, og du kommer til å leve midt i den."
+        }
+    ],
+    "quiz": [
+        {
+            "id": "q1",
+            "question": "Hva startet finanskrisen i 2008?",
+            "options": [
+                "Banker hadde gamblet med boliglån folk ikke kunne betale tilbake",
+                "Kina sluttet å handle med USA",
+                "Oljeprisen ble tidoblet på ett år",
+                "Alle verdens børser ble hacket"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": "q2",
+            "question": "Hva er BRICS?",
+            "options": [
+                "En militærallianse ledet av USA",
+                "En gruppe land, blant dem Brasil, Russland, India og Kina, som vil utfordre Vestens makt",
+                "En europeisk bank",
+                "Et kinesisk teknologiselskap"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": "q3",
+            "question": "Hvorfor kaller kritikere Belte og vei-initiativet for gjeldsfellediplomati?",
+            "options": [
+                "Fordi Kina gir bort penger gratis",
+                "Fordi prosjektene bare bygges i Kina",
+                "Fordi land som ikke kan betale gjelden, kan miste kontroll over havner og ressurser",
+                "Fordi FN har forbudt prosjektet"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": "q4",
+            "question": "Hva viste pandemien i 2020 om verdensøkonomien?",
+            "options": [
+                "At verden hadde gjort seg avhengig av lange og sårbare forsyningskjeder",
+                "At alle land klarer seg fint alene",
+                "At databrikker ikke lenger er viktige",
+                "At globalisering ikke kan reverseres"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": "q5",
+            "question": "Hva betyr det at verden er blitt multipolar?",
+            "options": [
+                "At all makt samles i FN",
+                "At USA og Sovjetunionen deler makten",
+                "At verden ikke lenger har noen stormakter",
+                "At verden har flere maktsentre i stedet for én supermakt"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": "q6",
+            "question": "Hvordan svarte Vesten på Russlands angrep på Ukraina i 2022?",
+            "options": [
+                "Med økonomiske sanksjoner som stengte Russland ute fra vestlige banker og markeder",
+                "Med å sende NATO-soldater til Moskva",
+                "Med å kjøpe mer russisk gass",
+                "Med å melde seg ut av FN"
+            ],
+            "correctAnswer": 0
+        }
+    ],
+    "createdDate": "2026-07-03T00:00:00Z",
+    "lastUpdated": "2026-07-03T00:00:00Z"
+}

@@ -1,0 +1,233 @@
+{
+    "id": "russland-etter-sovjet",
+    "title": "Russland etter Sovjet: Fra sammenbrudd til krig",
+    "subject": "historie",
+    "layout": "rich",
+    "year": "1991-2026",
+    "category": "Verden",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Da Sovjetunionen kollapset i 1991, mistet Russland et imperium over natten.",
+        "Putin bygde makt av tre ting: gass, penger og såret stolthet.",
+        "Georgia 2008, Krim 2014, Ukraina 2022 - opptrappingen skjedde i full åpenhet.",
+        "Europa kjøpte gassen og håpet på det beste. Det ble dyrt."
+    ],
+    "externalUrl": "https://snl.no/Russland",
+    "timeline": [
+        {
+            "year": "1991",
+            "title": "Sovjetunionen oppløses",
+            "description": "Femten nye land oppstår. Russland arver atomvåpnene og setet i FNs sikkerhetsråd."
+        },
+        {
+            "year": "2000",
+            "title": "Putin blir president",
+            "description": "En ukjent tidligere KGB-offiser lover å gi russerne orden og stolthet tilbake."
+        },
+        {
+            "year": "2008",
+            "title": "Krigen i Georgia",
+            "description": "Russland går til krig mot nabolandet Georgia. Vesten protesterer, men gjør lite."
+        },
+        {
+            "year": "2014",
+            "title": "Krim annekteres",
+            "description": "Russland tar Krim-halvøya fra Ukraina. Det er første gang siden 1945 at et europeisk land tar land fra et annet med makt."
+        },
+        {
+            "year": "2022",
+            "title": "Fullskalainvasjonen av Ukraina",
+            "description": "Russland angriper Ukraina fra tre kanter. Europas største krig siden andre verdenskrig er i gang."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Julaften 1991 ble det sovjetiske flagget firt fra Kreml for siste gang. Et av verdens to mektigste land forsvant, uten krig og nesten uten et skudd. Femten nye land dukket opp på kartet. Men for millioner av russere føltes det ikke som en fødsel. Det føltes som et nederlag. Hvordan gikk landet fra dette sammenbruddet til å starte Europas største krig siden 1945? Følg pengene, gassen og den sårede stoltheten, så ser du mønsteret."
+        },
+        {
+            "type": "header",
+            "text": "1990-tallet: Da alt raste sammen"
+        },
+        {
+            "type": "text",
+            "content": "Etter Sovjetunionens fall skulle Russland bytte system i full fart, fra planøkonomi til marked. Vestlige rådgivere anbefalte det som ble kalt sjokkterapi: slipp alle priser fri, selg statens eiendom, gjør det raskt. Resultatet ble et sjokk, men lite terapi. Prisene eksploderte, og sparepengene til vanlige folk ble verdiløse i løpet av måneder. Lærere og leger fikk ikke lønn. Forventet levealder for menn sank dramatisk."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig ble statens største skatter solgt for småpenger. Oljefelt, gruver og fabrikker som var bygget opp gjennom sytti år, havnet hos en liten gruppe menn med gode kontakter. De ble kalt oligarker, og de ble noen av verdens rikeste mennesker mens naboene deres solgte eiendeler på gata for å overleve. For mange russere ble 90-tallet selve beviset på at demokrati og marked betydde kaos, fattigdom og ydmykelse."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva er en oligark?",
+                "content": "En oligark er en person som er blitt ekstremt rik på å overta statlige selskaper, og som bruker rikdommen til å skaffe seg politisk makt. På 90-tallet styrte oligarkene mye av Russland. Under Putin ble rollene byttet om: de fikk beholde pengene, men bare hvis de var lojale mot Kreml."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Putin tar over: Orden i bytte mot frihet"
+        },
+        {
+            "type": "text",
+            "content": "Nyttårsaften 1999 overrasket president Boris Jeltsin alle: han trakk seg og pekte på en nesten ukjent etterfølger, den tidligere KGB-offiseren Vladimir Putin. Putin tilbød russerne en stilltiende avtale. Dere får orden, lønninger som kommer i tide og landet reist opp igjen. Til gjengjeld blander dere dere ikke i politikken."
+        },
+        {
+            "type": "text",
+            "content": "Putin hadde flaks med timingen. Oljeprisen steg kraftig utover 2000-tallet, og pengene strømmet inn i statskassen. Levestandarden økte, og mange russere fikk det bedre enn noen gang. Samtidig tok Putin kontroll over de store TV-kanalene, som er der de fleste russere får nyhetene sine fra. Kritiske journalister mistet jobben, og noen mistet livet. Oligarker som utfordret ham, endte i fengsel eller i utlandet. Bit for bit forsvant den frie debatten."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Sovjetunionens sammenbrudd var det 20. århundrets største geopolitiske katastrofe.",
+                "author": "Vladimir Putin, tale til nasjonalforsamlingen i 2005"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gassrørledninger som strekker seg gjennom et vinterlandskap mot horisonten",
+            "caption": "Rørledningene bandt Russland og Europa sammen. Gassen ga Kreml penger og makt på samme tid."
+        },
+        {
+            "type": "header",
+            "text": "Gass som våpen"
+        },
+        {
+            "type": "text",
+            "content": "Russland sitter på noen av verdens største gass- og oljereserver, og Europa trengte energien. Tyskland og flere andre land bygde rørledninger rett til Russland og gjorde seg avhengige av russisk gass. Tanken var at handel skaper fred: land som tjener penger på hverandre, går ikke til krig mot hverandre."
+        },
+        {
+            "type": "text",
+            "content": "Kreml så det motsatt. Gassen var ikke bare en vare, den var et pressmiddel. Land som gjorde som Russland ville, fikk billig gass. Land som protesterte, kunne oppleve at kranene ble strupt midt på vinteren. Granskerens regel gjelder her: se ikke på hva ledere sier, se på hva de bygger. Russland bygde rørledninger som gikk utenom Ukraina, slik at gassen kunne flyte til Vest-Europa selv om Russland lå i konflikt med naboene sine."
+        },
+        {
+            "type": "header",
+            "text": "Opptrappingen: Georgia, Krim, Ukraina"
+        },
+        {
+            "type": "text",
+            "content": "Mens Russland ble rikere, flyttet grensene i Europa seg. Tidligere østblokkland som Polen og de baltiske statene meldte seg inn i NATO og EU. De hadde levd under sovjetisk kontroll og ville ha beskyttelse. Fra Kreml så det annerledes ut: en fiendtlig militærallianse rykket stadig nærmere Russlands grenser. Dette russiske perspektivet er viktig å forstå, men det er ikke det samme som at det ga Russland rett til å angripe noen. Folkeretten er klar: ingen stat har lov til å ta land fra en annen med makt."
+        },
+        {
+            "type": "text",
+            "content": "I 2008 gikk russiske styrker inn i Georgia, et lite naboland som ønsket seg vestover. Krigen varte i fem dager. Vesten protesterte, men fortsatte å kjøpe gass som før. I 2014 gjorde ukrainerne opprør mot sin russiskvennlige president. Putin svarte med å sende soldater uten kjennetegn til Krim-halvøya og annekterte den, altså tok den og erklærte den som russisk. Vesten svarte med milde sanksjoner, og fortsatte å kjøpe gass."
+        },
+        {
+            "type": "text",
+            "content": "Den 24. februar 2022 kom fullskalainvasjonen. Russiske kolonner rullet mot Kyiv fra tre kanter, og raketter traff byer over hele Ukraina. Putin regnet med at landet ville falle på noen dager, og at et splittet Vesten ville se en annen vei denne gangen også. Han tok feil på begge punkter. Ukrainerne kjempet imot, og krigen ble lang og blodig."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Utbombet boligblokk i en ukrainsk by med redningsarbeidere i forgrunnen",
+            "caption": "Krigen i Ukraina rammet vanlige folk hardest. Millioner måtte flykte fra hjemmene sine."
+        },
+        {
+            "type": "header",
+            "text": "Verden svarer"
+        },
+        {
+            "type": "text",
+            "content": "Invasjonen forandret Europa på noen uker. Vestlige land innførte de kraftigste sanksjonene noe stort land er blitt møtt med: russiske banker ble stengt ute fra verdens betalingssystemer, og hundrevis av selskaper forlot landet. Europa begynte det smertefulle arbeidet med å kutte den russiske gassen. Finland og Sverige, som hadde holdt seg utenfor militærallianser i generasjoner, søkte medlemskap i NATO. Tyskland og resten av Europa begynte å ruste opp."
+        },
+        {
+            "type": "text",
+            "content": "Krigen har kostet enormt, mest for Ukraina, men også for Russland, som har mistet soldater, inntekter og naboers tillit. Per 2026 finnes det fortsatt ingen varig fredsløsning. Hvordan krigen ender, vil forme Europa i tiår fremover."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor så ikke Vesten det komme?"
+        },
+        {
+            "type": "text",
+            "content": "Her må granskeren stille det ubehagelige spørsmålet. Signalene var synlige i årevis: krigen i Georgia, anneksjonen av Krim, taler der Putin sa rett ut at han ikke godtok Europas grenser. Hvorfor reagerte ikke Vesten hardere før?"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Pengene: Europeisk industri tjente på billig russisk gass, og ingen ville gi slipp på den.",
+                "Ønsketenkningen: Mange trodde handel automatisk ville gjøre Russland fredelig og demokratisk.",
+                "Vanen: Etter hver krise ble det raskt hverdag igjen, og gassen fortsatte å strømme.",
+                "Frykten: Russland har atomvåpen, og ingen ønsket en direkte konfrontasjon."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Historien om Russland etter Sovjet er derfor også en historie om Vesten. Den viser hvordan avhengighet av en ressurs kan gjøre land blinde for fare, og hvordan et såret land kan bruke råvarer som våpen. Det er det samme mønsteret du finner i [Den unipolare verden](/historie/etterkrigstiden/den-unipolare-verden) og i kampen om ressurser i [En ny verdensorden?](/historie/etterkrigstiden/en-ny-verdensorden). Den som eier energien, eier også en del av makten."
+        }
+    ],
+    "quiz": [
+        {
+            "id": "q1",
+            "question": "Hva var 'sjokkterapien' i Russland på 1990-tallet?",
+            "options": [
+                "Et vestlig hjelpeprogram med gratis mat og medisiner",
+                "En militær opprydding i hæren",
+                "En rask overgang til markedsøkonomi der priser ble sluppet fri og statens eiendom solgt",
+                "En ny grunnlov skrevet av FN"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": "q2",
+            "question": "Hvilken avtale tilbød Putin det russiske folket?",
+            "options": [
+                "Orden og bedre økonomi i bytte mot politisk frihet",
+                "Full ytringsfrihet i bytte mot høyere skatter",
+                "Medlemskap i EU i bytte mot atomvåpnene",
+                "Gratis gass i bytte mot militærtjeneste"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": "q3",
+            "question": "Hvordan brukte Russland gassen som pressmiddel?",
+            "options": [
+                "Gassen ble gitt gratis til alle naboland",
+                "Lydige land fikk billig gass, mens kritiske land kunne miste leveransene",
+                "Russland nektet å selge gass til noen i det hele tatt",
+                "Gassen ble kun solgt til USA"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": "q4",
+            "question": "Hva skjedde med Krim-halvøya i 2014?",
+            "options": [
+                "Den ble delt mellom Russland og Ukraina i en fredelig avtale",
+                "Den ble solgt til Tyrkia",
+                "Den erklærte seg selvstendig med støtte fra FN",
+                "Russland annekterte den fra Ukraina, som første maktovertakelse av land i Europa siden 1945"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": "q5",
+            "question": "Hvordan reagerte Finland og Sverige på invasjonen av Ukraina i 2022?",
+            "options": [
+                "De begynte å kjøpe mer russisk gass",
+                "De erklærte seg nøytrale for alltid",
+                "De søkte medlemskap i NATO etter generasjoner utenfor militærallianser",
+                "De meldte seg ut av EU"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": "q6",
+            "question": "Hvorfor reagerte ikke Vesten hardere på Russlands opptrapping før 2022?",
+            "options": [
+                "Blant annet fordi europeisk industri var avhengig av billig russisk gass",
+                "Fordi ingen visste at Russland hadde et militære",
+                "Fordi FN forbød alle sanksjoner",
+                "Fordi Russland aldri hadde brukt makt mot naboland før"
+            ],
+            "correctAnswer": 0
+        }
+    ],
+    "createdDate": "2026-07-03T00:00:00Z",
+    "lastUpdated": "2026-07-03T00:00:00Z"
+}

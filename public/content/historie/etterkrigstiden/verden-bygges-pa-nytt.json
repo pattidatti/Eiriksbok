@@ -1,0 +1,242 @@
+{
+    "id": "verden-bygges-pa-nytt",
+    "title": "1945: Verden bygges på nytt",
+    "subject": "historie",
+    "layout": "rich",
+    "year": "1945",
+    "category": "Verden",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Vinnerne av krigen skrev reglene som fortsatt styrer verden.",
+        "FN, IMF og Verdensbanken ble født i 1944-1945.",
+        "Dollaren ble verdens valuta på et hotell i New Hampshire.",
+        "Allerede i 1945 viste sprekken mellom USA og Sovjetunionen seg."
+    ],
+    "externalUrl": "https://snl.no/FN",
+    "timeline": [
+        {
+            "year": "1944",
+            "title": "Bretton Woods",
+            "description": "44 land møtes på et hotell i USA og bestemmer hvordan verdens penger skal fungere."
+        },
+        {
+            "year": "1945",
+            "title": "FN opprettes",
+            "description": "51 land signerer FN-pakten i San Francisco. De fem store får vetorett."
+        },
+        {
+            "year": "1948",
+            "title": "Marshallhjelpen",
+            "description": "USA sender milliarder av dollar til Vest-Europa for å bygge landene opp igjen."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Sommeren 1945 ligger store deler av verden i grus. Byer som Warszawa, Tokyo og Berlin er bombet i stykker. Rundt 60 millioner mennesker er døde. Millioner vandrer langs veiene i Europa uten hjem og uten land. Midt i dette kaoset samles verdens ledere for å bygge noe nytt. De lover hverandre: aldri mer krig. Men de gjør noe mer enn å love. De skriver regler. Og den som skriver reglene, får makt."
+        },
+        {
+            "type": "text",
+            "content": "Denne artikkelen handler om året da verden fikk nye spilleregler. Reglene fra 1945 styrer fortsatt mye av livet ditt i dag, selv om du kanskje aldri har hørt om dem. Derfor skal du stille det viktigste spørsmålet en gransker kan stille: hvem skrev reglene, og hvem tjente på dem?"
+        },
+        {
+            "type": "header",
+            "text": "En verden i ruiner - og to kjemper igjen"
+        },
+        {
+            "type": "text",
+            "content": "Andre verdenskrig var den dødeligste krigen i historien. Europa og Asia var utslitt. Storbritannia var nesten konkurs. Frankrike hadde vært okkupert. Tyskland og Japan lå knust. Men to land sto igjen som kjemper. Sovjetunionen hadde mistet over 25 millioner mennesker, men hadde verdens største hær, og den sto midt i Øst-Europa. USA hadde knapt blitt bombet hjemme. Fabrikkene gikk for fullt, landet sto for nesten halvparten av all industri i verden, og bare USA hadde atombomben."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Utbombet europeisk by i ruiner 1945, mennesker går mellom murrester",
+            "caption": "1945: Store deler av Europa og Asia lå i ruiner. Den som hadde penger og fabrikker igjen, fikk makten til å bestemme."
+        },
+        {
+            "type": "header",
+            "text": "FN: aldri mer krig"
+        },
+        {
+            "type": "text",
+            "content": "I juni 1945 møttes 51 land i San Francisco og opprettet De forente nasjoner, FN. Tanken var enkel: hvis alle land har et sted å snakke sammen, trenger de ikke skyte på hverandre. I Generalforsamlingen fikk alle land én stemme hver, uansett om landet var stort eller lite. Det hørtes rettferdig ut. Men den virkelige makten ble lagt et annet sted: i Sikkerhetsrådet."
+        },
+        {
+            "type": "text",
+            "content": "Fem land fikk fast plass i Sikkerhetsrådet: USA, Sovjetunionen (i dag Russland), Storbritannia, Frankrike og Kina. Hver av dem fikk vetorett. Veto betyr at ett enkelt nei stopper hele saken, uansett hva resten av verden mener. Hvorfor akkurat disse fem? Svaret er enkelt: de vant krigen. Vinnerne bygde fredens hus, og ga seg selv nøklene."
+        },
+        {
+            "type": "text",
+            "content": "FN var likevel mye mer enn stormaktenes klubb. Organisasjonen fikk egne kontorer for helse, mat og barn, som WHO og UNICEF. I 1948 vedtok FN Verdenserklæringen om menneskerettigheter, som slår fast at alle mennesker er født frie og like. Og den aller første generalsekretæren, altså FNs øverste sjef, ble faktisk en nordmann: Trygve Lie. Et lite land som Norge satset alt på FN, nettopp fordi små land trenger felles regler mer enn stormaktene gjør."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Vetoretten i dag",
+                "content": "Vetoretten er brukt hundrevis av ganger siden 1945. Når stormaktene selv er part i en konflikt, kan de stanse alle FN-vedtak som rammer dem. Derfor klarer FN ofte ikke å stoppe kriger der de fem store er involvert. Regelen fra 1945 gjelder fortsatt, helt uendret."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Bretton Woods: reglene for verdens penger"
+        },
+        {
+            "type": "text",
+            "content": "Den kanskje viktigste avtalen ble laget før krigen engang var slutt. I juli 1944 møttes 44 land på et hotell i den lille byen Bretton Woods i USA. Der bestemte de hvordan verdens penger skulle fungere. Amerikanske dollar ble knyttet til gull, og alle andre lands valuta ble knyttet til dollaren. Fra nå av var dollaren verdens penger. Ville et land kjøpe olje, korn eller maskiner fra utlandet, trengte det som regel dollar."
+        },
+        {
+            "type": "text",
+            "content": "På det samme møtet opprettet landene to nye pengeinstitusjoner. Det internasjonale pengefondet, IMF, skulle låne ut penger til land i økonomisk krise, men stilte krav til hvordan landet måtte styre økonomien sin. Verdensbanken skulle gi lån til gjenoppbygging og til fattige land som ville utvikle seg. Og hvem bestemmer i disse bankene? Der teller ikke stemmene likt. Jo mer penger et land har skutt inn, jo mer makt har det. USA har alltid hatt mest."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "IMF og Verdensbanken - enkelt forklart",
+                "content": "IMF er som en legevakt for land i pengetrøbbel: du får hjelp, men må følge legens ordre. Verdensbanken er som en bank for store byggeprosjekter i fattige land: veier, kraftverk og havner. Begge ble laget i 1944, begge har hovedkontor i Washington, og i begge har rike land mest makt."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Stort hotell i fjellandskap i New Hampshire, delegater med dokumentmapper utenfor",
+            "caption": "Hotellet Mount Washington i Bretton Woods, 1944. Her ble dollaren verdens valuta, mens krigen fortsatt raste."
+        },
+        {
+            "type": "header",
+            "text": "Marshallhjelpen: gave med baktanke"
+        },
+        {
+            "type": "text",
+            "content": "I 1948 gjorde USA noe som lignet ren sjenerøsitet. Gjennom Marshallhjelpen sendte de rundt 13 milliarder dollar til Vest-Europa, en enorm sum den gangen. Pengene bygde opp fabrikker, veier og byer, også i Norge. Men granskeren spør alltid: hva fikk giveren igjen? USA trengte kunder som hadde råd til å kjøpe amerikanske varer, og mye av hjelpen ble nettopp brukt på varer fra USA. USA ville også hindre at fattige og desperate europeere valgte kommunismen. Sovjetunionen skjønte poenget og nektet landene i Øst-Europa å ta imot hjelpen."
+        },
+        {
+            "type": "header",
+            "text": "Sprekken som allerede var der"
+        },
+        {
+            "type": "text",
+            "content": "Verden fikk altså FN, felles pengeregler og gjenoppbygging. Håpet var ekte. Folk som hadde overlevd to verdenskriger på tretti år, mente det når de sa aldri mer. Men under overflaten var sprekken synlig allerede i 1945. Sovjetunionens hær ble stående i Øst-Europa, og Stalin sørget for lydige regjeringer i land etter land. USA satt på atombomben og verdens sterkeste økonomi. Ingen av dem stolte på den andre. Året etter sa Winston Churchill at et jernteppe hadde senket seg tvers gjennom Europa. Det som kom etterpå, kan du lese om i [Den kalde krigen](/historie/den-kalde-krigen/oversikt)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Soldater fra USA og Sovjetunionen håndhilser over en elv i 1945, anspente blikk",
+            "caption": "Amerikanske og sovjetiske soldater møttes som allierte i 1945. Vennskapet varte ikke lenge."
+        },
+        {
+            "type": "header",
+            "text": "Hvem skrev reglene?"
+        },
+        {
+            "type": "text",
+            "content": "La oss samle sporene. Vetorett i FN: de fem som vant krigen. Verdens valuta: dollaren. Makten i IMF og Verdensbanken: den som betaler mest, altså USA. Dette var ikke nødvendigvis en ond plan. Mange av dem som bygde systemet, mente alvor med fred og gjenoppbygging, og systemet ga verden tiår uten storkrig mellom stormaktene. Men det ga også vinnerne av 1945 et forsprang som verden fortsatt lever med."
+        },
+        {
+            "type": "text",
+            "content": "Husk dette bildet av 1945: fred bygget på regler, og regler skrevet av vinnerne. Senere skal du se hva som skjedde da lån fra nettopp disse bankene ble brukt som våpen mot fattige land. Den historien finner du i [Økonomiske leiemordere](/historie/dekolonisering/okonomiske-leiemordere)."
+        },
+        {
+            "type": "component",
+            "name": "TimelineComponent",
+            "props": {
+                "title": "1944-1948: De nye spillereglene",
+                "compact": true,
+                "events": [
+                    {
+                        "year": "1944",
+                        "title": "Bretton Woods",
+                        "description": "Dollaren blir verdens valuta. IMF og Verdensbanken opprettes."
+                    },
+                    {
+                        "year": "1945",
+                        "title": "Krigen slutter og FN opprettes",
+                        "description": "51 land signerer FN-pakten. De fem store får vetorett i Sikkerhetsrådet."
+                    },
+                    {
+                        "year": "1946",
+                        "title": "Jernteppet",
+                        "description": "Churchill holder talen om jernteppet som deler Europa i to."
+                    },
+                    {
+                        "year": "1948",
+                        "title": "Marshallhjelpen",
+                        "description": "USA sender milliarder til Vest-Europa. Sovjetunionen sier nei på vegne av øst."
+                    }
+                ]
+            }
+        }
+    ],
+    "quiz": [
+        {
+            "id": "q1",
+            "question": "Hvilke to land sto igjen som supermakter etter 1945?",
+            "options": [
+                "Storbritannia og Frankrike",
+                "USA og Sovjetunionen",
+                "Tyskland og Japan",
+                "Kina og India"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": "q2",
+            "question": "Hva betyr vetoretten i FNs sikkerhetsråd?",
+            "options": [
+                "At alle land må stemme likt",
+                "At Generalforsamlingen kan overstyre stormaktene",
+                "At ett nei fra et av de fem faste medlemmene stopper hele saken",
+                "At små land får dobbel stemme"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "id": "q3",
+            "question": "Hva ble bestemt i Bretton Woods i 1944?",
+            "options": [
+                "At dollaren skulle være verdens valuta, og at IMF og Verdensbanken skulle opprettes",
+                "At Tyskland skulle deles i fire soner",
+                "At FN skulle få egen hær",
+                "At alle land skulle bruke gullmynter"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "id": "q4",
+            "question": "Hvorfor var Marshallhjelpen mer enn bare en gave?",
+            "options": [
+                "Pengene måtte betales tilbake med høye renter",
+                "USA fikk kunder til varene sine og allierte mot kommunismen",
+                "Hjelpen gikk bare til Tyskland",
+                "Sovjetunionen fikk halvparten av pengene"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": "q5",
+            "question": "Hvordan fordeles makten i IMF og Verdensbanken?",
+            "options": [
+                "Alle land har én stemme hver",
+                "FNs generalsekretær bestemmer alt",
+                "Landene bytter på å bestemme hvert år",
+                "Den som har skutt inn mest penger, har mest makt"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "id": "q6",
+            "question": "Hva mener vi med at «vinnerne skrev reglene» i 1945?",
+            "options": [
+                "At landene som vant krigen ga seg selv mest makt i FN og pengesystemet",
+                "At taperne ikke fikk lov til å ha egne lover",
+                "At alle regler fra før 1945 ble slettet",
+                "At FN skrev en ny grunnlov for alle land"
+            ],
+            "correctAnswer": 0
+        }
+    ],
+    "createdDate": "2026-07-03T00:00:00Z",
+    "lastUpdated": "2026-07-03T00:00:00Z"
+}
