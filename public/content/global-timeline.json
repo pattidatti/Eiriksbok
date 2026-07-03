@@ -4280,6 +4280,31 @@
       ]
     },
     {
+      "id": "den-amerikanske-grunnloven",
+      "title": "Den amerikanske grunnloven",
+      "description": "Hvordan USA delte makten i tre for at ingen skulle kunne bli en ny konge.",
+      "startDate": 1787,
+      "endDate": null,
+      "displayDate": "1787",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "den-amerikanske-revolusjonen",
+      "link": "/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven",
+      "tags": [
+        "usa",
+        "grunnlov",
+        "maktfordeling",
+        "demokrati",
+        "opplysningstid",
+        "1700-tallet"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "intro",
       "title": "Den franske revolusjon",
       "description": "En kort introduksjon til hendelsene 1789-1799 og hvordan de formet moderne demokrati.",

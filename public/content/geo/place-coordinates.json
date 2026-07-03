@@ -836,7 +836,7 @@
     },
     {
       "tag": "demokrati",
-      "count": 27
+      "count": 28
     },
     {
       "tag": "imperium",
@@ -947,6 +947,10 @@
       "count": 14
     },
     {
+      "tag": "1700-tallet",
+      "count": 13
+    },
+    {
       "tag": "folkemord",
       "count": 13
     },
@@ -960,10 +964,6 @@
     },
     {
       "tag": "industri",
-      "count": 12
-    },
-    {
-      "tag": "1700-tallet",
       "count": 12
     },
     {
@@ -1203,6 +1203,10 @@
       "count": 6
     },
     {
+      "tag": "opplysningstid",
+      "count": 6
+    },
+    {
       "tag": "teori",
       "count": 6
     },
@@ -1275,6 +1279,10 @@
       "count": 5
     },
     {
+      "tag": "maktfordeling",
+      "count": 5
+    },
+    {
       "tag": "karl-den-store",
       "count": 5
     },
@@ -1292,10 +1300,6 @@
     },
     {
       "tag": "natur",
-      "count": 5
-    },
-    {
-      "tag": "opplysningstid",
       "count": 5
     },
     {
@@ -1392,10 +1396,6 @@
     },
     {
       "tag": "dynastier",
-      "count": 4
-    },
-    {
-      "tag": "maktfordeling",
       "count": 4
     },
     {
@@ -3196,6 +3196,10 @@
     },
     {
       "tag": "nøytralitet",
+      "count": 1
+    },
+    {
+      "tag": "grunnlov",
       "count": 1
     },
     {

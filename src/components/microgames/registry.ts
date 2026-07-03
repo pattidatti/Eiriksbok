@@ -106,6 +106,7 @@ const Stenderpyramiden3D = lazy(() => import('./Stenderpyramiden3D'));
 const FingertFlukt3D = lazy(() => import('./FingertFlukt3D'));
 const Personalunion3D = lazy(() => import('./Personalunion3D'));
 const Leiegaarden3D = lazy(() => import('./Leiegaarden3D'));
+const RepublikkensSoyler3D = lazy(() => import('./RepublikkensSoyler3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'leiegaarden-3d': {
@@ -1016,6 +1017,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 120,
         loader: () => import('./DorerSomApnet3D'),
         Component: DorerSomApnet3D as never,
+    },
+    'republikkens-soyler-3d': {
+        id: 'republikkens-soyler-3d',
+        title: 'Republikkens tre søyler',
+        description:
+            'Etter at amerikanerne hadde beseiret en konge, delte grunnloven fra 1787 makten i tre. Fordel tre maktklosser på de tre statsmaktene - Kongressen som lager lovene, presidenten som styrer, og Høyesterett som dømmer. Legg én på hver, og taket over «Republikken» lyser opp og står stødig. Stabler du to på samme søyle, blir den for mektig: taket tipper, og en gullkrone senker seg ned over den. Lyspæren: makten må deles likt mellom de tre, ellers kan én av dem vokse seg til en ny konge.',
+        estimatedSeconds: 130,
+        loader: () => import('./RepublikkensSoyler3D'),
+        Component: RepublikkensSoyler3D as never,
     },
 };
 
