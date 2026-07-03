@@ -1,0 +1,198 @@
+{
+    "id": "den-amerikanske-grunnloven",
+    "title": "Den amerikanske grunnloven",
+    "layout": "rich",
+    "year": "1787",
+    "category": "Verdenshistorie",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Sommeren 1787 møttes 55 menn i Philadelphia for å bygge en helt ny stat.",
+        "De delte makten i tre for at ingen skulle kunne bli en ny konge.",
+        "Grunnloven fra 1787 er den eldste skrevne grunnloven som fortsatt er i bruk."
+    ],
+    "externalUrl": "https://snl.no/USAs_grunnlov",
+    "content": [
+        {
+            "type": "text",
+            "content": "Sommeren 1787 var det kokvarmt i Philadelphia. Inne i en stor sal satt 55 menn med vinduene lukket, enda de svettet gjennom skjortene. De hadde stengt vinduene med vilje, for ingen utenfor skulle høre hva de snakket om. Krigen mot Storbritannia var vunnet. Amerikanerne hadde beseiret en konge og fått friheten sin. Men nå holdt det nye landet på å falle fra hverandre, og mennene i salen skulle finne ut hvordan de skulle bygge en stat som varte."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Menn samlet rundt bord i varm sal i Philadelphia 1787",
+            "caption": "Grunnlovsmøtet i Philadelphia sommeren 1787. Vinduene var lukket så ingen skulle høre debattene."
+        },
+        {
+            "type": "header",
+            "text": "Et land som holdt på å falle fra hverandre"
+        },
+        {
+            "type": "text",
+            "content": "Etter [uavhengighetskrigen](/historie/den-amerikanske-revolusjonen/uavhengighetskrigen) var USA egentlig tretten små stater som knapt hang sammen. Hver delstat lagde sine egne regler og trykte sine egne penger. Det fantes ingen sterk felles regjering. Landet hadde ingen god måte å kreve inn skatt på, så det var nesten blakk. Soldatene som hadde vunnet krigen, ventet fortsatt på lønna si."
+        },
+        {
+            "type": "text",
+            "content": "Mange var redde for at det hele skulle rakne. Hvis delstatene begynte å krangle for alvor, kunne de ende opp i krig med hverandre. Da ville drømmen om et fritt USA være over nesten før den hadde begynt. Noe måtte gjøres, og det raskt."
+        },
+        {
+            "type": "text",
+            "content": "Vinteren før møtet hadde fattige bønder i delstaten Massachusetts gjort opprør. Mange av dem satt i dyp gjeld og var redde for å miste gårdene sine, og til slutt grep de til våpen. Den svake fellesstaten hadde nesten ingen hær å stoppe dem med. Opprøret skremte mange, og de skjønte at landet trengte en fastere styring hvis det skulle overleve."
+        },
+        {
+            "type": "header",
+            "text": "Redde for én ny konge"
+        },
+        {
+            "type": "text",
+            "content": "Men her stod mennene overfor et vanskelig valg. De trengte en sterkere felles stat. Samtidig var de livredde for å gi for mye makt til én person. De hadde jo nettopp kjempet seg fri fra en konge som bestemte alt. Tanken på at en ny mann skulle sette seg på tronen og styre som han ville, var skrekkelig for dem."
+        },
+        {
+            "type": "text",
+            "content": "Løsningen fant de hos opplysningstenkerne i Europa. Den franske filosofen [Montesquieu](/krle/filosofi/montesquieu) hadde skrevet at frihet bare er trygg når makten deles opp. Så lenge én person eller én gruppe sitter med all makten, kan de bli tyranner. Men deler du makten i flere deler som må passe på hverandre, blir det vanskelig for noen å ta over alene. Denne ideen ble selve ryggraden i den nye grunnloven."
+        },
+        {
+            "type": "component",
+            "name": "MaktfordelingSjekk",
+            "props": {
+                "title": "Hvem stopper hvem?"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Makten deles i tre"
+        },
+        {
+            "type": "text",
+            "content": "Grunnloven delte makten i staten i tre deler. Vi kaller dem de tre statsmaktene. Hver del har sin egen jobb, og ingen av dem kan gjøre alt alene."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Den lovgivende makten er Kongressen. Det er de folkevalgte som lager lovene og bestemmer over pengene.",
+                "Den utøvende makten er presidenten. Presidenten styrer landet fra dag til dag og passer på at lovene blir fulgt.",
+                "Den dømmende makten er Høyesterett. Dommerne der avgjør hva loven betyr, og de kan stoppe en lov som bryter grunnloven."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg at Kongressen vil lage en ny lov. Først må et flertall av de folkevalgte stemme ja. Så må presidenten skrive under. Sier presidenten nei, kan Kongressen likevel få loven vedtatt hvis et stort flertall står fast. Og skulle loven bryte grunnloven, kan Høyesterett stoppe den etterpå. Én lov må altså gjennom flere hender før den gjelder."
+        },
+        {
+            "type": "text",
+            "content": "Det smarte er at de tre kan stoppe hverandre. Presidenten kan si nei til en lov fra Kongressen. Kongressen bestemmer over pengene og kan avsette en president som går for langt. Høyesterett kan kjenne en lov ugyldig. Dette samspillet kalles maktfordeling, og det er hele hjertet i den amerikanske grunnloven. Ingen av de tre kan bli konge, fordi de andre to alltid står klare til å stanse dem."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tre klassiske søyler som holder oppe et tak sammen",
+            "caption": "De tre statsmaktene er som tre søyler. Faller én, eller blir én for stor, tipper hele bygget."
+        },
+        {
+            "type": "text",
+            "content": "Prøv det selv i spillet under. Du får tre maktklosser du skal fordele på de tre søylene. Klarer du å dele makten likt, står republikken stødig. Legger du for mye på én, ser du hva amerikanerne var så redde for."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "republikkens-soyler-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Delstatene beholdt mye selv"
+        },
+        {
+            "type": "text",
+            "content": "Makten ble ikke bare delt mellom de tre statsmaktene. Den ble også delt mellom den felles staten og de enkelte delstatene. Den felles staten fikk ansvar for de store tingene, som hær, penger og avtaler med andre land. Delstatene fikk fortsatt bestemme mye selv, som skoler og lokale lover. Denne todelingen kalles føderalisme. Slik følte hver delstat at den fortsatt hadde noe å si, samtidig som landet stod samlet utad."
+        },
+        {
+            "type": "text",
+            "content": "Grunnloven begynte med tre ord som ble berømte: «Vi, folket». Med det mente de at makten kom nedenfra, fra innbyggerne selv, ikke ovenfra fra en konge av Guds nåde. Det var en helt ny tanke om hvem en stat egentlig tilhører."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Verdens eldste i bruk",
+                "content": "Grunnloven fra 1787 er den eldste skrevne grunnloven som fortsatt gjelder i dag. Da Norge skulle lage sin egen [grunnlov i 1814](/samfunnskunnskap/styringsformer/grunnloven), var den amerikanske et av forbildene. Bare noen få år etterpå kom også den franske [erklæringen om menneskerettigheter](/historie/den-franske-revolusjon/menneskerettighetserklaeringen)."
+            }
+        },
+        {
+            "type": "header",
+            "text": "En grunnlov med et stort hull"
+        },
+        {
+            "type": "text",
+            "content": "Grunnloven snakket vakkert om frihet og om at makten tilhører folket. Men «folket» var ikke alle. Slaveriet fikk fortsette. Hundretusener av svarte mennesker ble fortsatt kjøpt og solgt som eiendom, uten noen rettigheter. Kvinner fikk ikke stemme. Det gjorde heller ikke urfolket som allerede bodde i landet. Friheten som mennene i Philadelphia var så stolte av, gjaldt først og fremst hvite menn med eiendom."
+        },
+        {
+            "type": "text",
+            "content": "Det tok lang tid og mye kamp før flere fikk del i rettighetene. Kort etter 1787 la de til de ti første tilleggene til grunnloven. De kalles rettighetserklæringen og verner om ting som ytringsfrihet og religionsfrihet. Siden er grunnloven endret mange ganger, blant annet for å avskaffe slaveriet og gi flere stemmerett. Grunnloven var altså ikke ferdig i 1787. Den var en begynnelse som senere generasjoner måtte kjempe for å gjøre bedre."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gammelt håndskrevet dokument med ordene We the People øverst",
+            "caption": "«Vi, folket» stod øverst i grunnloven. Men i 1787 gjaldt friheten langt fra alle som bodde i landet."
+        },
+        {
+            "type": "text",
+            "content": "Likevel var det som skjedde i den varme salen i 1787 noe helt nytt i verden. For første gang bygde et land bevisst en stat der makten var delt, slik at ingen skulle kunne bli enehersker. Ideen om maktfordeling spredte seg videre til mange andre land, og den preger fortsatt måten demokratier bygges på i dag."
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva var mennene i Philadelphia i 1787 mest redde for?",
+                        "options": [
+                            "At én person skulle få for mye makt og bli en ny konge",
+                            "At britene skulle angripe igjen med en gang",
+                            "At folk skulle slutte å betale for lite skatt",
+                            "At delstatene skulle bli for like hverandre"
+                        ],
+                        "explanation": "De hadde nettopp kjempet seg fri fra en konge, og ville for all del ikke få en ny enehersker.",
+                        "correctAnswer": 0
+                    },
+                    {
+                        "question": "Hvilke tre deler ble makten i staten delt i?",
+                        "options": [
+                            "Konge, adel og kirke",
+                            "Kongressen, presidenten og Høyesterett",
+                            "Hæren, marinen og politiet",
+                            "Nord, sør og vest"
+                        ],
+                        "explanation": "Den lovgivende (Kongressen), den utøvende (presidenten) og den dømmende (Høyesterett) makten.",
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hva er poenget med maktfordeling?",
+                        "options": [
+                            "At alle avgjørelser går raskere",
+                            "At de tre statsmaktene kan stoppe hverandre, så ingen tar over alene",
+                            "At presidenten kan bestemme alt selv",
+                            "At delstatene ikke får bestemme noe"
+                        ],
+                        "explanation": "Når de tre passer på hverandre, blir det svært vanskelig for noen å samle all makten.",
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hvorfor sier vi at grunnloven fra 1787 hadde et stort hull?",
+                        "options": [
+                            "Den var skrevet på feil språk",
+                            "Den varte bare i noen få år",
+                            "Friheten gjaldt ikke alle: slaveriet fortsatte, og kvinner og urfolk fikk ikke stemme",
+                            "Ingen ville skrive under på den"
+                        ],
+                        "explanation": "Grunnloven snakket om frihet for «folket», men i praksis gjaldt rettighetene mest hvite menn med eiendom.",
+                        "correctAnswer": 2
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
