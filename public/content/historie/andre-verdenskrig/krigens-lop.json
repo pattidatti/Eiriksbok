@@ -30,6 +30,11 @@
       "content": "Da Tyskland invaderte Polen 1. september 1939, demonstrerte de en ny og skremmende form for krigføring: Blitzkrieg (lynkrig). I stedet for skyttergravenes stillstand, brukte tyskerne raske stridsvogner støttet av stupbombefly for å slå hull i fiendens linjer og skape kaos. Polen falt på under en måned.\n\nVåren 1940 vendte Hitler blikket mot vest. 9. april ble Danmark og Norge invadert for å sikre baser og jernmalmtransport. I mai angrep tyskerne Nederland, Belgia og Frankrike. Til alles sjokk kollapset den franske hæren, som ble regnet som en av verdens sterkeste, på bare seks uker. Britiske styrker måtte evakueres i all hast fra strendene ved Dunkerque. Hitler var nå herre over nesten hele det kontinentale Europa."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": { "gameId": "lynkrigen-3d" }
+    },
+    {
       "type": "header",
       "text": "Slaget om Storbritannia"
     },

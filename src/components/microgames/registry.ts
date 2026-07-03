@@ -107,8 +107,18 @@ const FingertFlukt3D = lazy(() => import('./FingertFlukt3D'));
 const Personalunion3D = lazy(() => import('./Personalunion3D'));
 const Leiegaarden3D = lazy(() => import('./Leiegaarden3D'));
 const RepublikkensSoyler3D = lazy(() => import('./RepublikkensSoyler3D'));
+const Lynkrigen3D = lazy(() => import('./Lynkrigen3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'lynkrigen-3d': {
+        id: 'lynkrigen-3d',
+        title: 'Lynkrigen: samle støtet',
+        description:
+            'Vestfronten 1940. Du har seks stridsvogner og en fiendtlig forsvarslinje med fem bunkere. Dra vognene fram mot fronten. Sprer du dem likt utover, blir ingen punkt sterkt nok, og angrepet stanser mot linja. Samle i stedet minst fire vogner på ETT punkt: da slår de hull i linja, kjører dypt inn bak fienden og vifter ut, så hele forsvaret faller som en bølge. Lyspæren: lynkrigen (Blitzkrieg) vant ikke ved å presse likt langs hele fronten, men ved å samle all panserkraft på ett punkt, slå hull og kjøre raskt gjennom. Slik falt Polen og Frankrike på få uker.',
+        estimatedSeconds: 140,
+        loader: () => import('./Lynkrigen3D'),
+        Component: Lynkrigen3D as never,
+    },
     'leiegaarden-3d': {
         id: 'leiegaarden-3d',
         title: 'Leiegården: byen som stod på hodet',
