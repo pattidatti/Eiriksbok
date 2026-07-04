@@ -108,8 +108,18 @@ const Personalunion3D = lazy(() => import('./Personalunion3D'));
 const Leiegaarden3D = lazy(() => import('./Leiegaarden3D'));
 const RepublikkensSoyler3D = lazy(() => import('./RepublikkensSoyler3D'));
 const Lynkrigen3D = lazy(() => import('./Lynkrigen3D'));
+const KongestatuenFaller3D = lazy(() => import('./KongestatuenFaller3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'kongestatuen-faller-3d': {
+        id: 'kongestatuen-faller-3d',
+        title: 'Kongestatuen faller',
+        description:
+            'New York, 9. juli 1776. Erklæringen leses høyt på Bowling Green foran en forgylt rytterstatue av kong George III. Klikk skriftrullen og les de berømte ordene: alle mennesker er skapt like. Da låses handlingen opp. Trekk så i tauet, ved å klikke statuen eller knappen, tre ganger: for hvert napp heller kongen mer, til han velter og folkemengden jubler. Lyspæren: erklæringens ord ble til handling. Folket rev ned symbolet på kongemakten, og blyet i statuen ble smeltet om til over 42 000 kuler til revolusjonshæren. Makten skiftet fra kronen til folket.',
+        estimatedSeconds: 130,
+        loader: () => import('./KongestatuenFaller3D'),
+        Component: KongestatuenFaller3D as never,
+    },
     'lynkrigen-3d': {
         id: 'lynkrigen-3d',
         title: 'Lynkrigen: samle støtet',

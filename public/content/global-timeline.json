@@ -4169,6 +4169,31 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "uavhengighetserklaeringen",
+      "title": "Uavhengighetserklæringen",
+      "description": "Ordene fra 1776 som sa at alle er skapt like og at makten kommer fra folket.",
+      "startDate": 1776,
+      "endDate": null,
+      "displayDate": "1776",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "den-amerikanske-revolusjonen",
+      "link": "/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen",
+      "tags": [
+        "usa",
+        "revolusjon",
+        "menneskerettigheter",
+        "opplysningstid",
+        "demokrati",
+        "1700-tallet"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "usa-frigjoring",
       "title": "USA: Den første dominobrikken",
       "description": "Hvordan 13 kolonier slo verdens mektigste imperium.",

@@ -1,5 +1,5 @@
 {
-  "buildId": 1783107612701,
+  "buildId": 1783128338639,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1281,6 +1281,9 @@
     ],
     "den-amerikanske-grunnloven": [
       "content/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven.json"
+    ],
+    "uavhengighetserklaeringen": [
+      "content/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen.json"
     ],
     "uavhengighetskrigen": [
       "content/historie/den-amerikanske-revolusjonen/uavhengighetskrigen.json"
@@ -3941,6 +3944,7 @@
     "historie/dekolonisering/usa-frigjoring": "content/historie/dekolonisering/usa-frigjoring.json",
     "historie/demo-artikkel/demo-artikkel": "content/historie/demo-artikkel/demo-artikkel.json",
     "historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven": "content/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven.json",
+    "historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen": "content/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen.json",
     "historie/den-amerikanske-revolusjonen/uavhengighetskrigen": "content/historie/den-amerikanske-revolusjonen/uavhengighetskrigen.json",
     "historie/den-franske-revolusjon/intro": "content/historie/den-franske-revolusjon/intro.json",
     "historie/den-franske-revolusjon/menneskerettighetserklaeringen": "content/historie/den-franske-revolusjon/menneskerettighetserklaeringen.json",

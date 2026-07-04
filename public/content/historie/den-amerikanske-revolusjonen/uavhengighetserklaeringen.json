@@ -1,0 +1,205 @@
+{
+    "id": "uavhengighetserklaeringen",
+    "title": "Uavhengighetserklæringen",
+    "layout": "rich",
+    "year": "1776",
+    "category": "Verdenshistorie",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "4. juli 1776 vedtok de tretten koloniene at de var frie og løsrevet fra Storbritannia.",
+        "Erklæringen sa at alle mennesker er skapt like og har rettigheter ingen konge kan ta fra dem.",
+        "De vakre ordene gjaldt ikke slaver, kvinner eller urfolk, men de ble et forbilde for hele verden."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Det var varmt i Philadelphia sommeren 1776. Inne i et rom med lukkede vinduer satt en ung mann på 33 år og skrev. Han het Thomas Jefferson. På bare noen få uker skrev han et dokument som skulle forandre verden. Han visste at ordene hans kunne føre til at han ble hengt for forræderi mot kongen. Likevel skrev han videre."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Menn i parykker signerer et dokument i et lyst møterom",
+            "caption": "Representantene fra de tretten koloniene vedtok erklæringen 4. juli 1776. Datoen er fortsatt USAs nasjonaldag."
+        },
+        {
+            "type": "header",
+            "text": "Et brev til kongen som ble til noe mye større"
+        },
+        {
+            "type": "text",
+            "content": "Krigen mot Storbritannia hadde allerede pågått i over et år. Du kan lese om selve kampene i artikkelen om [den amerikanske revolusjonen](/historie/den-amerikanske-revolusjonen/uavhengighetskrigen). Men koloniene hadde ennå ikke sagt tydelig hvorfor de kjempet. Var de bare sinte britiske borgere som ville ha lavere skatt? Eller ville de bli et helt nytt land?"
+        },
+        {
+            "type": "text",
+            "content": "Uavhengighetserklæringen svarte på det spørsmålet. Den forklarte for hele verden hvorfor tretten kolonier hadde rett til å bryte med kongen sin. Og den gjorde det ikke ved å klage over skatt. Den gjorde det ved å si noe mye større: at det finnes regler som står over enhver konge."
+        },
+        {
+            "type": "header",
+            "text": "Fem menn og et hastverk"
+        },
+        {
+            "type": "text",
+            "content": "Erklæringen var ikke skrevet av én mann alene. Kongressen valgte en gruppe på fem, blant dem den kjente oppfinneren Benjamin Franklin og den skarpe advokaten John Adams. Men de andre ba Jefferson skrive selve teksten, rett og slett fordi han skrev best. Han satt bøyd over papiret i litt over to uker, og de andre rettet på noen av ordene hans etterpå."
+        },
+        {
+            "type": "text",
+            "content": "Den 2. juli stemte kongressen for at koloniene skulle bli frie. To dager senere, den 4. juli, godtok de selve teksten. Derfor er det 4. juli folk husker, og ikke den 2. Den første som skrev under, var kongressens leder John Hancock. Han skrev navnet sitt så stort og tydelig at det fylte en hel linje. Sagnet sier at han ville at kong George skulle kunne lese det uten briller. I dag betyr «a John Hancock» rett og slett en underskrift på engelsk."
+        },
+        {
+            "type": "header",
+            "text": "De store tankene"
+        },
+        {
+            "type": "text",
+            "content": "Erklæringen bygger på noen få enkle tanker som henger sammen som ledd i en kjede. Den første er den mest kjente av alle."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Vi holder disse sannhetene for å være selvsagte: at alle mennesker er skapt like, og at de har fått visse rettigheter som ingen kan ta fra dem. Blant disse er retten til liv, frihet og til å søke lykke.",
+                "author": "Uavhengighetserklæringen, 4. juli 1776"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til ordet «selvsagte». Jefferson sier ikke at kongen har gitt folk disse rettighetene. Han sier at de bare finnes, fra fødselen av, hos hvert eneste menneske. Denne tanken hadde han hentet fra filosofen [John Locke](/krle/filosofi/locke), som mente at alle mennesker har naturlige rettigheter til liv, frihet og eiendom. Ingen konge og ingen lov kan ta disse rettighetene bort, mente Locke. De er en del av det å være menneske."
+        },
+        {
+            "type": "text",
+            "content": "Den neste tanken er den farligste. Hvorfor finnes en regjering i det hele tatt? Erklæringen svarer: en regjering finnes bare for å beskytte rettighetene til folket. Og den får makten sin fra én eneste kilde. Ikke fra Gud. Ikke fra arv. Fra folket selv. Prøv det ut under."
+        },
+        {
+            "type": "component",
+            "name": "MaktensKilde",
+            "props": {
+                "title": "Hvor kommer makten fra?"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Ideen som snudde alt på hodet"
+        },
+        {
+            "type": "text",
+            "content": "I nesten hele historien hadde folk trodd at kongen fikk makten sin ovenfra, fra Gud. Å gjøre opprør mot kongen var derfor det samme som å gjøre opprør mot Gud. Denne tanken vokste fram i [opplysningstiden](/samfunnskunnskap/styringsformer/opplysningstid), da tenkere begynte å spørre om alt de hadde fått høre var sant."
+        },
+        {
+            "type": "text",
+            "content": "Erklæringen snudde hele bildet. Makten kommer nedenfra, sa den, fra folket. En regjering er som en avtale: folket gir de styrende lov til å styre, mot at de beskytter folkets rettigheter. Og her kommer den virkelig farlige setningen: hvis en regjering bryter avtalen og tråkker på folkets rettigheter, da har folket rett til å kaste den og lage en ny. Med de ordene forvandlet Jefferson opprør fra en synd til en rettighet."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Folkemengde river ned en forgylt rytterstatue av en konge",
+            "caption": "Da erklæringen ble lest opp i New York, rev folkemengden ned statuen av kong George III."
+        },
+        {
+            "type": "text",
+            "content": "Ordene ble raskt til handling. Da erklæringen ble lest høyt på et torg i New York, stormet folkemengden fram og rev ned den store, forgylte statuen av kong George III. Metallet i statuen ble smeltet om og støpt til kuler for revolusjonshæren. Symbolet på den gamle makten ble bokstavelig talt gjort om til våpen for den nye. Prøv det selv."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "kongestatuen-faller-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Sprekken i de vakre ordene"
+        },
+        {
+            "type": "text",
+            "content": "«Alle mennesker er skapt like.» Det er noen av de mest kjente ordene som noen gang er skrevet. Men de hadde en stor sprekk. For da erklæringen ble skrevet, gjaldt ikke ordet «alle» de fleste mennesker som faktisk levde i koloniene."
+        },
+        {
+            "type": "text",
+            "content": "Slaver var ikke frie. Kvinner fikk ikke stemme. Urfolket ble jaget fra landet sitt. Og verst av alt: Thomas Jefferson, mannen som skrev at alle er like og frie, eide selv over 600 slaver gjennom livet. Han skrev ordene med den ene hånden og holdt mennesker som eiendom med den andre. Denne dype motsetningen fulgte USA i mange tiår og førte til slutt til en blodig borgerkrig."
+        },
+        {
+            "type": "text",
+            "content": "Og likevel var det noe kraftfullt ved ordene. De var større enn mannen som skrev dem. For når du først har sagt at alle er skapt like, kan andre bruke de samme ordene mot deg. Det gjorde de også. Slaver som kjempet for frihet, kvinner som krevde stemmerett, og senere borgerrettsforkjempere som Martin Luther King, pekte alle tilbake på setningen fra 1776 og sa: dere skrev det selv. Nå må dere holde ordet."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Ideene som reiste over havet",
+                "content": "Erklæringen ble lest og beundret over hele verden. Bare 13 år senere brukte franskmennene mange av de samme tankene i sin egen [erklæring om menneskerettigheter](/historie/den-franske-revolusjon/menneskerettighetserklaeringen). Tanken om at makten kommer fra folket, ble senere bygd inn i [den amerikanske grunnloven](/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven) fra 1787."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Arven etter 1776"
+        },
+        {
+            "type": "text",
+            "content": "Uavhengighetserklæringen vant ingen slag. Den var bare ord på et papir. Men ordene ga krigen en mening, og de ga verden en ny idé: at vanlige mennesker kan bestemme over sitt eget land, og at makten hører hjemme hos folket. Elleve år senere ble denne ideen gjort om til et fast styresett i [den amerikanske grunnloven](/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven), som delte makten i tre for at ingen skulle bli en ny konge."
+        },
+        {
+            "type": "text",
+            "content": "I dag feirer USA fortsatt 4. juli som sin nasjonaldag, med flagg og fyrverkeri. Men den viktigste arven er ikke festen. Det er tanken om at et menneske har rettigheter ingen kan ta fra det, og at et folk har rett til å styre seg selv. Den tanken lever videre i grunnlover og menneskerettigheter over hele verden, også i vår egen."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gammelt pergamentdokument med tett håndskrift og signaturer nederst",
+            "caption": "Selve dokumentet finnes fortsatt. Det oppbevares godt beskyttet i Washington D.C."
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva var hovedbudskapet i Uavhengighetserklæringen fra 1776?",
+                        "options": [
+                            "At koloniene ville ha lavere skatt på te",
+                            "At alle mennesker er skapt like og har rettigheter ingen konge kan ta fra dem",
+                            "At kongen skulle flytte til Amerika",
+                            "At bare rike menn skulle få stemme"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Erklæringen bygde på tanken om at alle mennesker har naturlige rettigheter til liv, frihet og til å søke lykke."
+                    },
+                    {
+                        "question": "Hvor mente erklæringen at makten til å styre kommer fra?",
+                        "options": [
+                            "Fra Gud, gjennom kongen",
+                            "Fra hæren",
+                            "Fra folket selv",
+                            "Fra de rikeste kjøpmennene"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Erklæringen snudde det gamle bildet: makten kommer nedenfra, fra folket, ikke ovenfra fra en konge."
+                    },
+                    {
+                        "question": "Hvilken filosof hadde stor innflytelse på tankene i erklæringen?",
+                        "options": [
+                            "John Locke",
+                            "Julius Cæsar",
+                            "Karl Marx",
+                            "Adam Smith"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "John Locke mente at alle mennesker har naturlige rettigheter til liv, frihet og eiendom som ingen kan ta fra dem."
+                    },
+                    {
+                        "question": "Hva var den store «sprekken» i erklæringens ord om at alle er like?",
+                        "options": [
+                            "Ordene gjaldt ikke slaver, kvinner eller urfolk",
+                            "Ingen kunne lese dokumentet",
+                            "Kongen hadde skrevet det selv",
+                            "Det var skrevet på fransk"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Selv om erklæringen sa at alle er like, gjaldt det i praksis ikke slaver, kvinner eller urfolk. Jefferson eide selv slaver."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
