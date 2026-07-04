@@ -24,7 +24,7 @@
                     { "tittel": "Introduksjon til Jødedom", "link": "/krle/religion/jodedom/intro", "begrunnelse": "Jødedommens historie, utbredelse og praksis i dag." },
                     { "tittel": "Introduksjon til Hinduisme", "link": "/krle/religion/hinduisme/intro", "begrunnelse": "Hinduismens mangfold og praksis i dag." },
                     { "tittel": "Introduksjon til Buddhisme", "link": "/krle/religion/buddhisme/intro", "begrunnelse": "Buddhismens grunnsyn, retninger og global utbredelse." },
-                    { "tittel": "Introduksjon til sikhismen", "link": "/krle/religion/sikhisme/introduksjon", "begrunnelse": "Sikhismens grunnsyn og posisjon i Norge og verden." },
+                    { "tittel": "Introduksjon til sikhismen", "link": "/krle/religion/sikhisme", "begrunnelse": "Sikhismens grunnsyn og posisjon i Norge og verden." },
                     { "tittel": "Kirkesamfunn: Splittelse og enhet", "link": "/krle/religion/kristendom/kirkesamfunn", "begrunnelse": "Dekker Religionstradisjoner i dag" },
                     { "tittel": "Pinse", "link": "/krle/religion/kristendom/pinse", "begrunnelse": "Dekker Religionstradisjoner i dag" },
                     { "tittel": "Frelse og nåde", "link": "/krle/religion/kristendom/frelse", "begrunnelse": "Dekker Religionstradisjoner i dag" },
@@ -104,7 +104,7 @@
                     { "tittel": "Introduksjon til Bahá'í", "link": "/krle/religion/bahai/intro", "begrunnelse": "En ung verdensreligion som vokser globalt." },
                     { "tittel": "Introduksjon til Jehovas vitner", "link": "/krle/religion/jehovas-vitner/intro", "begrunnelse": "Et nyere kristent trossamfunn med distinkte praksiser." },
                     { "tittel": "Introduksjon til Mormonisme", "link": "/krle/religion/mormonisme/intro", "begrunnelse": "Siste-dagers-hellige og deres egne hellige tekster." },
-                    { "tittel": "Introduksjon til sikhismen", "link": "/krle/religion/sikhisme/introduksjon", "begrunnelse": "En egen religion som vokste fram mellom hinduisme og islam." },
+                    { "tittel": "Introduksjon til sikhismen", "link": "/krle/religion/sikhisme", "begrunnelse": "En egen religion som vokste fram mellom hinduisme og islam." },
                     { "tittel": "Sentrale trekk i Bahá'í", "link": "/krle/religion/bahai/sentrale-trekk", "begrunnelse": "Bahá'í-troens samlende prinsipper." },
                     { "tittel": "Baptistene: frihet gjennom dåpen", "link": "/krle/religion/kristendom/baptistene", "begrunnelse": "Dekker Religiøst mangfold" }
                 ],
