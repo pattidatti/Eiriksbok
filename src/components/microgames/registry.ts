@@ -109,6 +109,7 @@ const Leiegaarden3D = lazy(() => import('./Leiegaarden3D'));
 const RepublikkensSoyler3D = lazy(() => import('./RepublikkensSoyler3D'));
 const Lynkrigen3D = lazy(() => import('./Lynkrigen3D'));
 const KongestatuenFaller3D = lazy(() => import('./KongestatuenFaller3D'));
+const PersepolisGaver3D = lazy(() => import('./PersepolisGaver3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'kongestatuen-faller-3d': {
@@ -1046,6 +1047,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 130,
         loader: () => import('./RepublikkensSoyler3D'),
         Component: RepublikkensSoyler3D as never,
+    },
+    'persepolis-gaver-3d': {
+        id: 'persepolis-gaver-3d',
+        title: 'Persepolis: gavene til storkongen',
+        description:
+            'I Persepolis, det persiske rikets seremonielle hovedstad, møttes utsendinger fra hele riket for å gi gaver til kongen. Dra fem folkeslag fram til tronen, ett om gangen: lyderne med gullkar fra dagens Tyrkia, armenerne med en vinkrukke fra Kaukasus, inderne med gullstøv fra Indusdalen, babylonerne med fint vevd tøy fra Irak og nubierne med elfenbein helt fra Afrika. Legg merke til at hvert folk har sin egen drakt og sin egen gave, men alle bøyer seg for den samme kongen. Lyspæren: Perserriket var verdens første verdensrike fordi det holdt dusinvis av ulike folk samlet i ett rike, ved å la hvert folk beholde sitt eget, samtidig som alle anerkjente én konge.',
+        estimatedSeconds: 150,
+        loader: () => import('./PersepolisGaver3D'),
+        Component: PersepolisGaver3D as never,
     },
 };
 
