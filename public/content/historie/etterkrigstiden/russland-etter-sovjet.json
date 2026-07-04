@@ -170,6 +170,58 @@
         {
             "type": "text",
             "content": "Historien om Russland etter Sovjet er derfor også en historie om Vesten. Den viser hvordan avhengighet av en ressurs kan gjøre land blinde for fare, og hvordan et såret land kan bruke råvarer som våpen. Det er det samme mønsteret du finner i [Den unipolare verden](/historie/etterkrigstiden/den-unipolare-verden) og i kampen om ressurser i [En ny verdensorden?](/historie/etterkrigstiden/en-ny-verdensorden). Den som eier energien, eier også en del av makten."
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva var 'sjokkterapien' i Russland på 1990-tallet?",
+                        "options": [
+                            "Et vestlig hjelpeprogram med gratis mat og medisiner",
+                            "En militær opprydding i hæren",
+                            "En rask overgang til markedsøkonomi der priser ble sluppet fri og statens eiendom solgt",
+                            "En ny grunnlov skrevet av FN"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Resultatet ble kaos: priser eksploderte, sparepengene ble verdiløse, og en liten gruppe oligarker ble styrtrike mens vanlige folk ble fattigere."
+                    },
+                    {
+                        "question": "Hvilken avtale tilbød Putin det russiske folket?",
+                        "options": [
+                            "Orden og bedre økonomi i bytte mot politisk frihet",
+                            "Full ytringsfrihet i bytte mot høyere skatter",
+                            "Medlemskap i EU i bytte mot atomvåpnene",
+                            "Gratis gass i bytte mot militærtjeneste"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Folk fikk bedre lønninger og orden. Til gjengjeld tok Putin kontroll over medier og politikk. Mange aksepterte byttet etter 1990-tallets kaos."
+                    },
+                    {
+                        "question": "Hvordan brukte Russland gassen som pressmiddel?",
+                        "options": [
+                            "Gassen ble gitt gratis til alle naboland",
+                            "Lydige land fikk billig gass, mens kritiske land kunne miste leveransene",
+                            "Russland nektet å selge gass til noen i det hele tatt",
+                            "Gassen ble kun solgt til USA"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Gassen var ikke bare en vare - den var et pressmiddel. Kreml kunne belønne vennligstilte land og straffe kritiske uten å bruke et eneste skudd."
+                    },
+                    {
+                        "question": "Hva skjedde med Krim-halvøya i 2014?",
+                        "options": [
+                            "Den ble delt mellom Russland og Ukraina i en fredelig avtale",
+                            "Den ble solgt til Tyrkia",
+                            "Den erklærte seg selvstendig med støtte fra FN",
+                            "Russland annekterte den fra Ukraina, som første maktovertakelse av land i Europa siden 1945"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Det var første gang siden 1945 at et land i Europa tok land fra et annet med makt. Vesten svarte med milde sanksjoner og fortsatte å kjøpe gass."
+                    }
+                ]
+            }
         }
     ],
     "quiz": [

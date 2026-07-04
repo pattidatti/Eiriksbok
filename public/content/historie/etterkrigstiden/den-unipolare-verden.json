@@ -203,6 +203,58 @@
         {
             "type": "text",
             "content": "Se på perioden 1991 til 2008 med granskerens blikk. På overflaten handlet den om frihet, demokrati og fri handel. Følger du pengene, ser du også noe annet: et system der reglene ble skrevet av de mektigste, der gjeld ga kontroll, og der gevinsten havnet svært skjevt. Begge deler er sanne samtidig. Det er nettopp det som gjør historie vanskelig, og viktig."
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr det at verden var unipolar etter 1991?",
+                        "options": [
+                            "Verden var delt mellom to supermakter",
+                            "Det fantes bare ett maktsentrum: USA",
+                            "FN styrte hele verden",
+                            "Ingen land hadde militærmakt lenger"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Bipolar betyr to poler, unipolar betyr én. Da Sovjetunionen kollapset, var det ingen igjen som kunne utfordre USA militært eller økonomisk."
+                    },
+                    {
+                        "question": "Hva mente Fukuyama med historiens slutt?",
+                        "options": [
+                            "Verden ville snart gå under",
+                            "Det ville aldri skje noe viktig igjen",
+                            "Historiefaget skulle fjernes fra skolen",
+                            "Kampen mellom de store ideene var avgjort, demokrati og marked hadde vunnet"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Fukuyama mente demokrati og markedsøkonomi hadde seiret over kommunismen for godt. Historien viste at han tok feil."
+                    },
+                    {
+                        "question": "Hvorfor ble Kinas WTO-medlemskap i 2001 så viktig?",
+                        "options": [
+                            "Kina fikk kontroll over amerikanske banker",
+                            "Kina lovet å innføre demokrati",
+                            "Vestlige selskaper flyttet fabrikker dit, og Kina ble verdens fabrikk",
+                            "Kina meldte seg samtidig inn i NATO"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Billig arbeidskraft i Kina ble koblet på verdenshandelen. Vestlige selskaper outsourcet produksjonen dit, og Kinas økonomi vokste dramatisk."
+                    },
+                    {
+                        "question": "Hvilke to hendelser regnes som slutten på den unipolare epoken?",
+                        "options": [
+                            "Første og andre verdenskrig",
+                            "Berlinmurens fall og Sovjetunionens oppløsning",
+                            "WTO-opprettelsen og Kinas medlemskap",
+                            "11. september 2001 og finanskrisen 2008"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "11. september viste at USA var sårbar. Finanskrisen viste at den amerikanske modellen ikke var feilfri. Etter 2008 var troen på USAs eneherredømme svekket."
+                    }
+                ]
+            }
         }
     ],
     "quiz": [

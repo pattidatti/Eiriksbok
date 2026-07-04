@@ -179,6 +179,58 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvilke to land sto igjen som supermakter etter 1945?",
+                        "options": [
+                            "Storbritannia og Frankrike",
+                            "USA og Sovjetunionen",
+                            "Tyskland og Japan",
+                            "Kina og India"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Storbritannia og Frankrike var utmattet, Japan og Tyskland lå knust. USA og Sovjetunionen sto igjen med de mektigste hærene og økomiene."
+                    },
+                    {
+                        "question": "Hva betyr vetoretten i FNs sikkerhetsråd?",
+                        "options": [
+                            "At alle land må stemme likt",
+                            "At Generalforsamlingen kan overstyre stormaktene",
+                            "At ett nei fra et av de fem faste medlemmene stopper hele saken",
+                            "At små land får dobbel stemme"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Veto betyr nei på latin. De fem som vant krigen fikk denne retten for å sørge for at ingen FN-vedtak kunne brukes mot dem selv."
+                    },
+                    {
+                        "question": "Hva ble bestemt i Bretton Woods i 1944?",
+                        "options": [
+                            "At dollaren skulle være verdens valuta, og at IMF og Verdensbanken skulle opprettes",
+                            "At Tyskland skulle deles i fire soner",
+                            "At FN skulle få egen hær",
+                            "At alle land skulle bruke gullmynter"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Møtet ble holdt mens krigen fortsatt raste. USA, som var langt rikest, fikk sin valuta som verdens penger, noe som ga landet enorm innflytelse i tiår fremover."
+                    },
+                    {
+                        "question": "Hvorfor var Marshallhjelpen mer enn bare en gave?",
+                        "options": [
+                            "Pengene måtte betales tilbake med høye renter",
+                            "USA fikk kunder til varene sine og allierte mot kommunismen",
+                            "Hjelpen gikk bare til Tyskland",
+                            "Sovjetunionen fikk halvparten av pengene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Pengehjelpen bandt Europa til USA på to måter: europeerne kjøpte amerikanske varer, og de ble naturlige allierte mot Sovjetunionen. En gave med to gevinster."
+                    }
+                ]
+            }
         }
     ],
     "quiz": [

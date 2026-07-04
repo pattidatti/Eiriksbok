@@ -180,6 +180,58 @@
         {
             "type": "text",
             "content": "Og for deg? Neste gang du plukker opp mobilen, vet du at du holder verdenspolitikk i hånda: kinesiske jordarter, kobolt fra Kongo, databrikker fra Taiwan og amerikansk programvare. Historien om den nye verdensordenen er ikke ferdig skrevet. Den skrives akkurat nå, og du kommer til å leve midt i den."
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva startet finanskrisen i 2008?",
+                        "options": [
+                            "Banker hadde gamblet med boliglån folk ikke kunne betale tilbake",
+                            "Kina sluttet å handle med USA",
+                            "Oljeprisen ble tidoblet på ett år",
+                            "Alle verdens børser ble hacket"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Bankene pakket dårlige boliglån som trygge investeringer og solgte dem videre. Da boligprisene falt, kollapset hele systemet og dro resten av verdensøkonomien med seg."
+                    },
+                    {
+                        "question": "Hva er BRICS?",
+                        "options": [
+                            "En militærallianse ledet av USA",
+                            "En gruppe land, blant dem Brasil, Russland, India og Kina, som vil utfordre Vestens makt",
+                            "En europeisk bank",
+                            "Et kinesisk teknologiselskap"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Brasil, Russland, India, Kina og Sør-Afrika. Til sammen over 40 prosent av verdens befolkning. De vil ha mer innflytelse og handler mer med hverandre utenfor det amerikanske systemet."
+                    },
+                    {
+                        "question": "Hvorfor kaller kritikere Belte og vei-initiativet for gjeldsfellediplomati?",
+                        "options": [
+                            "Fordi Kina gir bort penger gratis",
+                            "Fordi prosjektene bare bygges i Kina",
+                            "Fordi land som ikke kan betale gjelden, kan miste kontroll over havner og ressurser",
+                            "Fordi FN har forbudt prosjektet"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Sri Lanka er eksempelet: landet kunne ikke betale gjelden for en storhavn Kina bygde, og måtte leie havna tilbake til Kina i 99 år."
+                    },
+                    {
+                        "question": "Hva betyr det at verden er blitt multipolar?",
+                        "options": [
+                            "At all makt samles i FN",
+                            "At USA og Sovjetunionen deler makten",
+                            "At verden ikke lenger har noen stormakter",
+                            "At verden har flere maktsentre i stedet for én supermakt"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "USA er fortsatt sterkest, men Kina, India og grupper som BRICS utfordrer nå dominansen. Makt deles mellom flere sentre i stedet for å samles på ett sted."
+                    }
+                ]
+            }
         }
     ],
     "quiz": [

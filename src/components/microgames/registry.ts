@@ -113,8 +113,18 @@ const PersepolisGaver3D = lazy(() => import('./PersepolisGaver3D'));
 const Marshallhjelpen3D = lazy(() => import('./Marshallhjelpen3D'));
 const Gasskranen3D = lazy(() => import('./Gasskranen3D'));
 const Gjeldshavna3D = lazy(() => import('./Gjeldshavna3D'));
+const ImperiumSoyler = lazy(() => import('./ImperiumSoyler'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'imperium-soyler': {
+        id: 'imperium-soyler',
+        title: 'Rikets fire søyler',
+        description:
+            'Riket er en kuppel som hviler på fire søyler: hæren, økonomien, legitimiteten (at folket godtar makten) og grensene. Klikk en pulserende ring for å slå ut en søyle. Mister riket én søyle, heller kuppelen, men den bærer. Mister det to, vakler hele bygget. Men når den tredje søylen ryker, er vippepunktet nådd og kuppelen raser sammen. Lyspæren: et imperium tåler å miste én bæresøyle, selv to, men det finnes en grense. Kollaps kommer ikke av én enkelt svikt, men når for mange av rikets grunnpilarer svikter på samme tid.',
+        estimatedSeconds: 120,
+        loader: () => import('./ImperiumSoyler'),
+        Component: ImperiumSoyler as never,
+    },
     'kongestatuen-faller-3d': {
         id: 'kongestatuen-faller-3d',
         title: 'Kongestatuen faller',

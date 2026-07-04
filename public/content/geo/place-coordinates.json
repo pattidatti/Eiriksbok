@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 280
+      "count": 281
     },
     {
       "tag": "dekolonisering",
@@ -839,12 +839,12 @@
       "count": 29
     },
     {
-      "tag": "verdensorden",
+      "tag": "imperium",
       "count": 26
     },
     {
-      "tag": "imperium",
-      "count": 25
+      "tag": "verdensorden",
+      "count": 26
     },
     {
       "tag": "delte-samfunn",
@@ -959,6 +959,10 @@
       "count": 14
     },
     {
+      "tag": "samfunn",
+      "count": 13
+    },
+    {
       "tag": "folkemord",
       "count": 13
     },
@@ -968,10 +972,6 @@
     },
     {
       "tag": "globalisering",
-      "count": 12
-    },
-    {
-      "tag": "samfunn",
       "count": 12
     },
     {
@@ -1307,6 +1307,10 @@
       "count": 5
     },
     {
+      "tag": "makt",
+      "count": 5
+    },
+    {
       "tag": "natur",
       "count": 5
     },
@@ -1411,6 +1415,10 @@
       "count": 4
     },
     {
+      "tag": "kollaps",
+      "count": 4
+    },
+    {
       "tag": "germansk",
       "count": 4
     },
@@ -1436,10 +1444,6 @@
     },
     {
       "tag": "union",
-      "count": 4
-    },
-    {
-      "tag": "makt",
       "count": 4
     },
     {
@@ -1592,10 +1596,6 @@
     },
     {
       "tag": "biografi",
-      "count": 3
-    },
-    {
-      "tag": "kollaps",
       "count": 3
     },
     {

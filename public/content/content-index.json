@@ -1,5 +1,5 @@
 {
-  "buildId": 1783145151572,
+  "buildId": 1783175592804,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2334,6 +2334,9 @@
     "symboler-og-klaer": [
       "content/krle/religion-og-kultur/symboler-og-klaer.json"
     ],
+    "microgame-map": [
+      "content/microgame-map.json"
+    ],
     "akkorder-og-harmoni": [
       "content/musikk/grunnleggende/akkorder-og-harmoni.json"
     ],
@@ -3371,6 +3374,9 @@
     "utopier": [
       "content/samfunnskunnskap/ideer-og-verdenssyn/utopier.json"
     ],
+    "hvorfor-imperier-faller": [
+      "content/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller.json"
+    ],
     "ekkokamre": [
       "content/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre.json"
     ],
@@ -4294,6 +4300,7 @@
     "krle/religion-og-kultur/mat-og-religion": "content/krle/religion-og-kultur/mat-og-religion.json",
     "krle/religion-og-kultur/religion-i-medier": "content/krle/religion-og-kultur/religion-i-medier.json",
     "krle/religion-og-kultur/symboler-og-klaer": "content/krle/religion-og-kultur/symboler-og-klaer.json",
+    "microgame-map.json/undefined/microgame-map": "content/microgame-map.json",
     "musikk/grunnleggende/akkorder-og-harmoni": "content/musikk/grunnleggende/akkorder-og-harmoni.json",
     "musikk/grunnleggende/notasjon": "content/musikk/grunnleggende/notasjon.json",
     "musikk/grunnleggende/takt-og-rytme": "content/musikk/grunnleggende/takt-og-rytme.json",
@@ -4645,6 +4652,7 @@
     "samfunnskunnskap/ideer-og-verdenssyn/store-sykluser-sti": "content/samfunnskunnskap/ideer-og-verdenssyn/store-sykluser-sti.json",
     "samfunnskunnskap/ideer-og-verdenssyn/store-sykluser": "content/samfunnskunnskap/ideer-og-verdenssyn/store-sykluser.json",
     "samfunnskunnskap/ideer-og-verdenssyn/utopier": "content/samfunnskunnskap/ideer-og-verdenssyn/utopier.json",
+    "samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller": "content/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre": "content/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet": "content/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt": "content/samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt.json",
