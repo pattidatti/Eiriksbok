@@ -25,6 +25,7 @@ const RidderMotLangbue = lazy(() => import('./content/interactive/RidderMotLangb
 const EratosthenesJorda = lazy(() => import('./content/interactive/EratosthenesJorda').then(m => ({ default: m.EratosthenesJorda })));
 const RoadToRevolution = lazy(() => import('./content/interactive/RoadToRevolution').then(m => ({ default: m.RoadToRevolution })));
 const MaktfordelingSjekk = lazy(() => import('./content/interactive/MaktfordelingSjekk').then(m => ({ default: m.MaktfordelingSjekk })));
+const MaktensKilde = lazy(() => import('./content/interactive/MaktensKilde').then(m => ({ default: m.MaktensKilde })));
 const KongensMaktBinding = lazy(() => import('./content/interactive/KongensMaktBinding').then(m => ({ default: m.KongensMaktBinding })));
 const GullSaltVekten = lazy(() => import('./content/interactive/GullSaltVekten').then(m => ({ default: m.GullSaltVekten })));
 const TondibiSlaget = lazy(() => import('./content/interactive/TondibiSlaget').then(m => ({ default: m.TondibiSlaget })));
@@ -303,6 +304,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     RidderMotLangbue,
     RoadToRevolution,
     MaktfordelingSjekk,
+    MaktensKilde,
     EratosthenesJorda,
     GullSaltVekten,
     TondibiSlaget,

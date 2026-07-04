@@ -832,7 +832,7 @@
     },
     {
       "tag": "demokrati",
-      "count": 29
+      "count": 31
     },
     {
       "tag": "oppfinnelser",
@@ -855,16 +855,16 @@
       "count": 24
     },
     {
+      "tag": "revolusjon",
+      "count": 24
+    },
+    {
       "tag": "musikk",
       "count": 24
     },
     {
       "tag": "middelalderen",
       "count": 23
-    },
-    {
-      "tag": "revolusjon",
-      "count": 22
     },
     {
       "tag": "vikingtiden",
@@ -919,6 +919,10 @@
       "count": 16
     },
     {
+      "tag": "1700-tallet",
+      "count": 16
+    },
+    {
       "tag": "geopolitikk",
       "count": 16
     },
@@ -939,11 +943,11 @@
       "count": 14
     },
     {
-      "tag": "1700-tallet",
+      "tag": "1800-tallet",
       "count": 14
     },
     {
-      "tag": "1800-tallet",
+      "tag": "menneskerettigheter",
       "count": 14
     },
     {
@@ -972,10 +976,6 @@
     },
     {
       "tag": "industri",
-      "count": 12
-    },
-    {
-      "tag": "menneskerettigheter",
       "count": 12
     },
     {
@@ -1040,6 +1040,10 @@
     },
     {
       "tag": "keiser",
+      "count": 9
+    },
+    {
+      "tag": "opplysningstid",
       "count": 9
     },
     {
@@ -1144,10 +1148,6 @@
     },
     {
       "tag": "opplysningstiden",
-      "count": 7
-    },
-    {
-      "tag": "opplysningstid",
       "count": 7
     },
     {
