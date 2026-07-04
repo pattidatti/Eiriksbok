@@ -5,7 +5,7 @@
     "year": "1787",
     "category": "Verdenshistorie",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/den-amerikanske-revolusjonen/den-amerikanske-grunnloven-hero.webp",
     "details": [
         "Sommeren 1787 møttes 55 menn i Philadelphia for å bygge en helt ny stat.",
         "De delte makten i tre for at ingen skulle kunne bli en ny konge.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/den-amerikanske-grunnloven-01.webp",
             "alt": "Menn samlet rundt bord i varm sal i Philadelphia 1787",
             "caption": "Grunnlovsmøtet i Philadelphia sommeren 1787. Vinduene var lukket så ingen skulle høre debattene."
         },
@@ -84,7 +84,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/den-amerikanske-grunnloven-02.webp",
             "alt": "Tre klassiske søyler som holder oppe et tak sammen",
             "caption": "De tre statsmaktene er som tre søyler. Faller én, eller blir én for stor, tipper hele bygget."
         },
@@ -133,7 +133,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/den-amerikanske-grunnloven-03.webp",
             "alt": "Gammelt håndskrevet dokument med ordene We the People øverst",
             "caption": "«Vi, folket» stod øverst i grunnloven. Men i 1787 gjaldt friheten langt fra alle som bodde i landet."
         },

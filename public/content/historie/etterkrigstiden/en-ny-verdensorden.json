@@ -6,7 +6,7 @@
     "year": "2008-2026",
     "category": "Verden",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/etterkrigstiden/en-ny-verdensorden-hero.webp",
     "details": [
         "Finanskrisen i 2008 ga tilliten til Vesten en alvorlig knekk.",
         "BRICS-landene bygger sine egne banker og handelsruter.",
@@ -72,7 +72,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/en-ny-verdensorden-01.webp",
             "alt": "Fortvilte bankansatte bærer pappesker ut av et kontorbygg i New York",
             "caption": "September 2008: Ansatte i Lehman Brothers bærer eiendelene sine ut av banken som nettopp har gått konkurs."
         },
@@ -102,7 +102,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/en-ny-verdensorden-02.webp",
             "alt": "En enorm containerhavn med kinesiske skip og heisekraner i et asiatisk land",
             "caption": "Havner som denne bygges med kinesiske lån over hele verden. Men hvem eier dem når gjelden ikke kan betales?"
         },
@@ -161,7 +161,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/en-ny-verdensorden-03.webp",
             "alt": "To gigantiske containerskip under hvert sitt flagg møtes på et verdenshav i solnedgang",
             "caption": "USA og Kina er rivaler, men også hverandres største handelspartnere. Det gjør den nye maktkampen annerledes enn den kalde krigen."
         },

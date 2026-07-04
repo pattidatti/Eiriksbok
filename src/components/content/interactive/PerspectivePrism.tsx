@@ -1,8 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import type { PanInfo } from 'framer-motion';
-import { motion, useAnimation, useMotionValue } from 'framer-motion';
-import styles from './PerspectivePrism.module.css';
-import { ChevronLeft, ChevronRight, Info } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight, MoveHorizontal } from 'lucide-react';
 
 interface PerspectiveSide {
     id: string;
@@ -20,227 +19,205 @@ interface PerspectivePrismProps {
     sides: PerspectiveSide[];
 }
 
-export const PerspectivePrism: React.FC<PerspectivePrismProps> = ({
-    title = "Perspektivprisme",
-    instruction = "Dra for å rotere og se saken fra flere sider.",
-    sides
-}) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [width, setWidth] = useState(300);
-    const controls = useAnimation();
+const SPRING = { type: 'spring', stiffness: 250, damping: 28 } as const;
+const GAP = 16;
 
-    // 3D Math configuration
-    const sideCount = sides.length;
-    const theta = 360 / sideCount;
-    // Apothem: distance from center to side
-    const radius = Math.round((width / 2) / Math.tan(Math.PI / sideCount));
-
-    // Motion values for direct manipulation
-    const rotation = useMotionValue(0);
-
-    // Update width on mount and resize
-    useEffect(() => {
-        if (!containerRef.current) return;
-        const updateWidth = () => {
-            if (containerRef.current) {
-                // Limit max width for better 3D effect on desktop
-                const newWidth = Math.min(containerRef.current.offsetWidth, 420);
-                setWidth(newWidth);
-            }
-        };
-
-        updateWidth();
-        window.addEventListener('resize', updateWidth);
-        return () => window.removeEventListener('resize', updateWidth);
-    }, []);
-
-    // Snap logic
-    const handleDragEnd = (_: any, info: PanInfo) => {
-        const velocity = info.velocity.x;
-        const offset = info.offset.x;
-
-        // Determine direction based on drag distance or velocity
-        let direction = 0;
-        if (offset > 100 || velocity > 500) direction = 1; // Previous
-        else if (offset < -100 || velocity < -500) direction = -1; // Next
-
-        const newIndex = currentIndex - direction;
-        // Keep index properly normalized if we want circular, but for rotation math
-        // strictly, we just keep adding/subtracting degrees.
-        // However, to track "active side", we need state.
-
-        // Let's settle on the target angle
-        rotateToSide(newIndex);
-    };
-
-    const rotateToSide = (index: number) => {
-        setCurrentIndex(index);
-        const targetAngle = index * -theta;
-
-        controls.start({
-            rotateY: targetAngle,
-            transition: {
-                type: "spring",
-                stiffness: 200,
-                damping: 18,
-                mass: 1.2
-            }
-        });
-    };
-
-    // Calculate normalized index (0 to sideCount-1) for UI display
-    const normalizedIndex = ((currentIndex % sideCount) + sideCount) % sideCount;
+const SideBody: React.FC<{ side: PerspectiveSide }> = ({ side }) => {
+    const paragraphs = side.content.split('\n').filter((p) => p.trim() !== '');
 
     return (
-        <div className="my-12 flex flex-col items-center select-none">
-            <h3 className="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-2">{title}</h3>
+        <div className="p-5 md:p-6 max-h-[340px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300">
+            {side.image && (
+                <div className="mb-4 rounded-lg overflow-hidden aspect-video w-full border border-slate-200">
+                    <img src={side.image} alt="" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+            )}
 
-            {/* Instruction with explicit visual cue */}
-            <div className="text-slate-500 dark:text-slate-400 mb-8 flex flex-col items-center gap-2 text-center animate-pulse">
-                <div className="flex items-center gap-2">
-                    <Info size={16} />
-                    <span className="text-sm font-medium uppercase tracking-wider">{instruction}</span>
+            <div className="text-[15px] leading-relaxed text-slate-700">
+                {paragraphs.map((p, i) => {
+                    if (p.startsWith('**') && p.endsWith('**')) {
+                        return (
+                            <p
+                                key={i}
+                                className="font-bold text-lg text-slate-900 mb-3 border-l-4 pl-3"
+                                style={{ borderColor: side.color }}
+                            >
+                                {p.replace(/\*\*/g, '')}
+                            </p>
+                        );
+                    }
+                    if (p.startsWith('*') && p.endsWith('*')) {
+                        return (
+                            <blockquote
+                                key={i}
+                                className="border-l-4 pl-3 italic text-slate-600 my-3 bg-slate-50 py-2 pr-3 rounded-r-lg"
+                                style={{ borderColor: side.color }}
+                            >
+                                "{p.replace(/\*/g, '').replace(/"/g, '')}"
+                            </blockquote>
+                        );
+                    }
+                    return (
+                        <p key={i} className="mb-3 last:mb-0">
+                            {p.replace(/\*\*/g, '')}
+                        </p>
+                    );
+                })}
+            </div>
+
+            {side.sourceCredit && (
+                <div className="mt-4 pt-3 border-t border-slate-100 flex justify-end">
+                    <span className="text-xs uppercase tracking-widest font-semibold text-slate-500">
+                        - {side.sourceCredit}
+                    </span>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export const PerspectivePrism: React.FC<PerspectivePrismProps> = ({
+    title = 'Perspektivprisme',
+    instruction = 'Dra for å se saken fra flere sider.',
+    sides,
+}) => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const viewportRef = useRef<HTMLDivElement>(null);
+    const [viewportWidth, setViewportWidth] = useState(0);
+
+    const sideCount = sides.length;
+
+    useEffect(() => {
+        const el = viewportRef.current;
+        if (!el) return;
+        const update = () => setViewportWidth(el.offsetWidth);
+        update();
+        const observer = new ResizeObserver(update);
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
+    // Peek-gutter: nabokortene titter frem i kantene
+    const gutter = viewportWidth < 640 ? 16 : 44;
+    const cardWidth = Math.max(viewportWidth - gutter * 2, 0);
+    const targetX = gutter - activeIndex * (cardWidth + GAP);
+
+    const goTo = (index: number) => {
+        setActiveIndex(((index % sideCount) + sideCount) % sideCount);
+    };
+
+    const handleDragEnd = (_: unknown, info: PanInfo) => {
+        const { offset, velocity } = info;
+        if (offset.x < -80 || velocity.x < -400) goTo(activeIndex + 1);
+        else if (offset.x > 80 || velocity.x > 400) goTo(activeIndex - 1);
+        else setActiveIndex(activeIndex); // snapp tilbake
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            goTo(activeIndex + 1);
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            goTo(activeIndex - 1);
+        }
+    };
+
+    return (
+        <div
+            className="my-6 rounded-2xl border border-slate-200/60 bg-white shadow-sm overflow-hidden select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300"
+            tabIndex={0}
+            onKeyDown={handleKeyDown}
+        >
+            {/* Toppfelt */}
+            <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-slate-100 bg-slate-50/60">
+                <h3 className="font-display font-bold text-slate-900 tracking-tight">{title}</h3>
+                <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+                    <MoveHorizontal size={14} />
+                    <span>{instruction}</span>
                 </div>
             </div>
 
-            <div
-                ref={containerRef}
-                className={`${styles.scene} h-[420px] w-full max-w-[420px] cursor-grab active:cursor-grabbing touch-none perspective-[1200px]`}
-            >
+            {/* Kort-spor */}
+            <div ref={viewportRef} className="overflow-hidden py-4 bg-slate-50/40">
                 <motion.div
-                    className={styles.prism}
-                    animate={controls}
-                    initial={{ rotateY: 0 }}
+                    className="flex items-stretch cursor-grab active:cursor-grabbing"
+                    style={{ gap: GAP }}
+                    animate={{ x: targetX }}
+                    transition={SPRING}
                     drag="x"
-                    dragConstraints={{ left: 0, right: 0 }}
-                    dragElastic={0.05} // Stiffer drag for better control
+                    dragConstraints={{ left: targetX, right: targetX }}
+                    dragElastic={0.15}
                     onDragEnd={handleDragEnd}
-                    style={{
-                        rotateY: rotation,
-                    }}
                 >
                     {sides.map((side, index) => {
-                        const angle = index * theta;
-                        const isActive = index === normalizedIndex;
-
-                        // We calculate dynamic opacity based on distance from active index?
-                        // Simple active check is usually enough
-
+                        const isActive = index === activeIndex;
                         return (
-                            <div
+                            <motion.div
                                 key={side.id}
-                                className={`${styles.side} ${styles.glass} rounded-2xl overflow-hidden shadow-2xl transition-all duration-300`}
-                                style={{
-                                    transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
-                                    width: `${width}px`,
-                                    left: '50%',
-                                    marginLeft: `-${width / 2}px`,
-                                    // Subtle lighting effect based on active state
-                                    filter: isActive ? 'brightness(1)' : 'brightness(0.5) blur(1px)',
-                                    opacity: isActive ? 1 : 0.8 // Fade out non-active sides for depth
+                                className="flex-shrink-0 rounded-xl overflow-hidden bg-white border border-slate-200 shadow-sm flex flex-col"
+                                style={{ width: cardWidth }}
+                                animate={{ scale: isActive ? 1 : 0.94, opacity: isActive ? 1 : 0.55 }}
+                                transition={SPRING}
+                                onClick={() => {
+                                    if (!isActive) goTo(index);
                                 }}
                             >
-                                {/* Header Bar - More vivid colors */}
+                                {/* Farget headerstripe */}
                                 <div
-                                    className="h-20 flex items-center px-6 border-b border-black/5"
+                                    className="h-14 flex items-center px-5 gap-3 text-white flex-shrink-0"
                                     style={{
                                         background: `linear-gradient(to right, ${side.color}, ${side.color}dd)`,
-                                        color: 'white'
                                     }}
                                 >
-                                    <div className="p-3 bg-white/20 rounded-lg mr-4 shadow-inner text-2xl">
+                                    <div className="p-1.5 bg-white/20 rounded-lg text-xl leading-none">
                                         {side.icon || '📜'}
                                     </div>
-                                    <h4 className="font-bold text-xl tracking-tight truncate">
-                                        {side.title}
-                                    </h4>
+                                    <h4 className="font-bold text-lg tracking-tight truncate">{side.title}</h4>
                                 </div>
 
-                                {/* Body Content - Improved readability */}
-                                <div className="p-6 pb-8 h-[calc(100%-5rem)] overflow-y-auto bg-white/95 dark:bg-slate-900/95 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600">
-                                    {side.image && (
-                                        <div className="mb-6 rounded-lg overflow-hidden h-40 w-full shadow-md border border-slate-200 dark:border-slate-700 relative group">
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10" />
-                                            <img
-                                                src={side.image}
-                                                alt=""
-                                                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                            />
-                                        </div>
-                                    )}
-
-                                    {/* Quote style branding */}
-                                    <div className="text-sm leading-relaxed text-slate-700 dark:text-slate-200">
-                                        {side.content.split('\n').map((p, i) => {
-                                            if (p.startsWith('**') && p.endsWith('**')) { // Simple bold detection
-                                                return <p key={i} className="font-bold text-xl text-slate-900 dark:text-white mb-4 border-l-4 border-blue-500 pl-4">{p.replace(/\*\*/g, '')}</p>;
-                                            }
-                                            if (p.startsWith('*') && p.endsWith('*')) { // Simple quote detection
-                                                return (
-                                                    <blockquote key={i} className="border-l-4 border-slate-300 pl-4 italic text-slate-600 dark:text-slate-400 my-6 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-r-lg">
-                                                        "{p.replace(/\*/g, '').replace(/"/g, '')}"
-                                                    </blockquote>
-                                                );
-                                            }
-                                            if (p.trim() === "") return <br key={i} />;
-                                            return <p key={i} className="mb-4">{p.replace(/\*\*/g, '')}</p>;
-                                        })}
-                                    </div>
-
-                                    {side.sourceCredit && (
-                                        <div className="mt-8 pt-4 border-t border-slate-200 dark:border-slate-700 flex justify-end">
-                                            <span className="text-xs uppercase tracking-widest font-semibold text-slate-500">
-                                                — {side.sourceCredit}
-                                            </span>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
+                                <SideBody side={side} />
+                            </motion.div>
                         );
                     })}
                 </motion.div>
-
-                {/* 3D Depth Floor Shadow to ground the object */}
-                {/* 3D Depth Floor Shadow Removed for cleaner look */}
             </div>
 
-            {/* Navigation Controls - More prominent */}
-            <div className="mt-16 flex flex-col items-center gap-4 z-10 relative">
-                <div className="flex gap-6 items-center bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm p-2 rounded-full border border-slate-200 dark:border-slate-700">
-                    <button
-                        onClick={() => rotateToSide(currentIndex - 1)}
-                        className="p-4 rounded-full bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 active:scale-95 transition shadow-lg group border border-slate-100 dark:border-slate-600"
-                        aria-label="Previous Perspective"
-                    >
-                        <ChevronLeft className="w-6 h-6 text-slate-600 dark:text-slate-200 group-hover:-translate-x-0.5 transition-transform" />
-                    </button>
+            {/* Bunnavigasjon */}
+            <div className="flex items-center justify-center gap-4 px-5 py-2.5 border-t border-slate-100">
+                <button
+                    onClick={() => goTo(activeIndex - 1)}
+                    className="p-2 rounded-full bg-white border border-slate-200 hover:bg-slate-50 active:scale-95 transition shadow-sm"
+                    aria-label="Forrige perspektiv"
+                >
+                    <ChevronLeft className="w-4 h-4 text-slate-600" />
+                </button>
 
-                    <div className="flex gap-3 px-4">
-                        {sides.map((_, i) => (
-                            <button
-                                key={i}
-                                onClick={() => rotateToSide(i)}
-                                className={`h-3 rounded-full transition-all duration-300 shadow-sm ${i === normalizedIndex
-                                    ? 'w-10 bg-blue-600 dark:bg-blue-400 scale-100 ring-2 ring-blue-200 dark:ring-blue-900'
-                                    : 'w-3 bg-slate-300 dark:bg-slate-600 hover:bg-slate-400'
-                                    }`}
-                                aria-label={`Go to side ${i + 1}`}
-                            />
-                        ))}
-                    </div>
-
-                    <button
-                        onClick={() => rotateToSide(currentIndex + 1)}
-                        className="p-4 rounded-full bg-white dark:bg-slate-700 hover:bg-slate-50 dark:hover:bg-slate-600 active:scale-95 transition shadow-lg group border border-slate-100 dark:border-slate-600"
-                        aria-label="Next Perspective"
-                    >
-                        <ChevronRight className="w-6 h-6 text-slate-600 dark:text-slate-200 group-hover:translate-x-0.5 transition-transform" />
-                    </button>
+                <div className="flex gap-2">
+                    {sides.map((side, i) => (
+                        <button
+                            key={side.id}
+                            onClick={() => goTo(i)}
+                            className={`h-2.5 rounded-full transition-all duration-300 ${
+                                i === activeIndex ? 'w-8' : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+                            }`}
+                            style={i === activeIndex ? { backgroundColor: side.color } : undefined}
+                            aria-label={`Gå til ${side.title}`}
+                        />
+                    ))}
                 </div>
-                <p className="text-xs text-slate-400 uppercase tracking-widest font-mono">
-                    Side {normalizedIndex + 1} / {sides.length}
-                </p>
+
+                <button
+                    onClick={() => goTo(activeIndex + 1)}
+                    className="p-2 rounded-full bg-white border border-slate-200 hover:bg-slate-50 active:scale-95 transition shadow-sm"
+                    aria-label="Neste perspektiv"
+                >
+                    <ChevronRight className="w-4 h-4 text-slate-600" />
+                </button>
+
+                <span className="text-xs text-slate-400 font-mono tabular-nums">
+                    {activeIndex + 1} / {sideCount}
+                </span>
             </div>
         </div>
     );

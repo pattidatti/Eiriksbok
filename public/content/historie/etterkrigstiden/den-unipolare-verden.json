@@ -6,7 +6,7 @@
     "year": "1991-2008",
     "category": "Verden",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/etterkrigstiden/den-unipolare-verden-hero.webp",
     "details": [
         "I 1991 forsvant Sovjetunionen, og USA sto igjen alene på toppen.",
         "Globalisering vevde verden sammen med varer, penger og internett.",
@@ -52,7 +52,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/den-unipolare-verden-01.webp",
             "alt": "Det sovjetiske flagget fires ned fra Kreml i Moskva en mørk vinterkveld i 1991",
             "caption": "25. desember 1991 ble sovjetflagget firt ned fra Kreml. Den kalde krigen var over."
         },
@@ -90,7 +90,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/den-unipolare-verden-02.webp",
             "alt": "Et enormt containerskip stablet fullt av fargerike containere på vei over havet",
             "caption": "Containerskipet ble globaliseringens arbeidshest. Billig frakt gjorde det lønnsomt å produsere varer på andre siden av kloden."
         },
@@ -184,7 +184,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/den-unipolare-verden-03.webp",
             "alt": "Skyskrapere på Manhattan i røyk sett fra elven en klar høstmorgen",
             "caption": "11. september 2001 viste at selv en supermakt kan rammes hjemme."
         },

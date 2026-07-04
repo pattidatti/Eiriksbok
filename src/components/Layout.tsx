@@ -74,7 +74,6 @@ export const Layout: React.FC = () => {
                             <PrefetchLink to="/krle" prefetchTarget="SubjectPage" className={`text-sm transition-colors ${isActive('/krle')}`}>KRLE</PrefetchLink>
                             <PrefetchLink to="/musikk" prefetchTarget="SubjectPage" className={`text-sm transition-colors ${isActive('/musikk')}`}>Musikk</PrefetchLink>
                             <PrefetchLink to="/laeringsstier" prefetchTarget="Unknown" className={`text-sm transition-colors ${isActive('/laeringsstier')}`}>Læringsstier</PrefetchLink>
-                            <PrefetchLink to="/atlas" prefetchTarget="AtlasPage" className={`text-sm transition-colors ${isActive('/atlas')}`}>Atlas</PrefetchLink>
                             <PrefetchLink to="/oving" prefetchTarget="PracticePage" className={`text-sm transition-colors ${isActive('/oving')}`}>Øving</PrefetchLink>
                         </nav>
 

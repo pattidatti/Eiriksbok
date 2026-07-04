@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2 } from 'lucide-react';
+import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map } from 'lucide-react';
 
 export const PracticePage: React.FC = () => {
     const modules = [
@@ -51,6 +51,14 @@ export const PracticePage: React.FC = () => {
             icon: Clock,
             color: 'bg-amber-500',
             link: '/tidslinje'
+        },
+        {
+            id: 'atlas',
+            title: 'Verdensatlas',
+            description: 'Se historien på verdenskartet. Skrubb gjennom tid og oppdag hvor ting skjedde.',
+            icon: Map,
+            color: 'bg-sky-600',
+            link: '/atlas'
         },
         {
             id: 'virkemidler',

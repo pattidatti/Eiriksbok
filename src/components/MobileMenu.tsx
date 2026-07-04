@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { X, BookOpen, GraduationCap, History, Globe, Music, Dumbbell, Map, Globe2 } from 'lucide-react';
+import { X, BookOpen, GraduationCap, History, Globe, Music, Dumbbell, Map } from 'lucide-react';
 import { PrefetchLink } from './PrefetchLink';
 
 interface MobileMenuProps {
@@ -50,7 +50,6 @@ const menuItems: MenuItem[] = [
     { label: 'KRLE', path: '/krle', icon: GraduationCap, prefetchTarget: 'SubjectPage' },
     { label: 'Musikk', path: '/musikk', icon: Music, prefetchTarget: 'SubjectPage' },
     { label: 'Læringsstier', path: '/laeringsstier', icon: Map, prefetchTarget: 'LearningPathsHub' },
-    { label: 'Verdensatlas', path: '/atlas', icon: Globe2, prefetchTarget: 'AtlasPage' },
     { label: 'Øving', path: '/oving', icon: Dumbbell, prefetchTarget: 'PracticePage' },
 ];
 

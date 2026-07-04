@@ -78,6 +78,10 @@ const HistoriensSpotlight = lazy(() => import('./content/interactive/HistoriensS
 const Eskaleringstrappa = lazy(() => import('./content/interactive/Eskaleringstrappa').then(m => ({ default: m.Eskaleringstrappa })));
 const Konsekvensvidda = lazy(() => import('./content/interactive/Konsekvensvidda').then(m => ({ default: m.Konsekvensvidda })));
 const AutomationRisk = lazy(() => import('./content/interactive/AutomationRisk').then(m => ({ default: m.AutomationRisk })));
+const VetorettSimulator = lazy(() => import('./content/interactive/VetorettSimulator').then(m => ({ default: m.VetorettSimulator })));
+const JoggeskoensReise = lazy(() => import('./content/interactive/JoggeskoensReise').then(m => ({ default: m.JoggeskoensReise })));
+const EuropasDilemma = lazy(() => import('./content/interactive/EuropasDilemma').then(m => ({ default: m.EuropasDilemma })));
+const MobilensVerdenskart = lazy(() => import('./content/interactive/MobilensVerdenskart').then(m => ({ default: m.MobilensVerdenskart })));
 const ConformityExperiment = lazy(() => import('./content/interactive/ConformityExperiment').then(m => ({ default: m.ConformityExperiment })));
 const OstracismGame = lazy(() => import('./content/interactive/OstracismGame').then(m => ({ default: m.OstracismGame })));
 const VirtueBalance = lazy(() => import('./content/interactive/VirtueBalance').then(m => ({ default: m.VirtueBalance })));
@@ -341,6 +345,10 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     HistoriensSpotlight,
     Eskaleringstrappa,
     Konsekvensvidda,
+    VetorettSimulator,
+    JoggeskoensReise,
+    EuropasDilemma,
+    MobilensVerdenskart,
     WaveMap,
     DigitalsporProfileren,
 

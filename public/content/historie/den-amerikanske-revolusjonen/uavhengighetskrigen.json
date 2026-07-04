@@ -5,7 +5,7 @@
     "year": "1775-1783",
     "category": "Verdenshistorie",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/den-amerikanske-revolusjonen/uavhengighetskrigen-hero.webp",
     "details": [
         "Tretten britiske kolonier i Nord-Amerika brøt med kongen og skapte en ny stat: USA.",
         "Kravet «ingen skatt uten representasjon» drev fram opprøret.",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/uavhengighetskrigen-01.webp",
             "alt": "Menn kaster tekister i Boston havn om natten",
             "caption": "Teselskapet i Boston 1773. Kolonistene ødela teen heller enn å betale skatt på den."
         },
@@ -94,7 +94,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/uavhengighetskrigen-02.webp",
             "alt": "Menn undertegner uavhengighetserklæringen i en sal",
             "caption": "Uavhengighetserklæringen 4. juli 1776. USAs nasjonaldag feires fortsatt denne datoen."
         },
@@ -117,7 +117,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/uavhengighetskrigen-03.webp",
             "alt": "Britiske soldater overgir seg til amerikansk og fransk hær",
             "caption": "Overgivelsen ved Yorktown i 1781 avgjorde krigen. To år senere kom freden."
         },
@@ -190,7 +190,12 @@
                     },
                     {
                         "question": "Hvilket land hjalp kolonistene i krigen mot Storbritannia?",
-                        "options": ["Spania", "Frankrike", "Russland", "Kina"],
+                        "options": [
+                            "Spania",
+                            "Frankrike",
+                            "Russland",
+                            "Kina"
+                        ],
                         "correctAnswer": 1,
                         "explanation": "Frankrike sendte penger, våpen, soldater og skip, og var med på å avgjøre krigen ved Yorktown i 1781."
                     },

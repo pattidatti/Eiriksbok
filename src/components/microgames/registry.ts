@@ -110,6 +110,9 @@ const RepublikkensSoyler3D = lazy(() => import('./RepublikkensSoyler3D'));
 const Lynkrigen3D = lazy(() => import('./Lynkrigen3D'));
 const KongestatuenFaller3D = lazy(() => import('./KongestatuenFaller3D'));
 const PersepolisGaver3D = lazy(() => import('./PersepolisGaver3D'));
+const Marshallhjelpen3D = lazy(() => import('./Marshallhjelpen3D'));
+const Gasskranen3D = lazy(() => import('./Gasskranen3D'));
+const Gjeldshavna3D = lazy(() => import('./Gjeldshavna3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'kongestatuen-faller-3d': {
@@ -1056,6 +1059,33 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./PersepolisGaver3D'),
         Component: PersepolisGaver3D as never,
+    },
+    'marshallhjelpen-3d': {
+        id: 'marshallhjelpen-3d',
+        title: 'Marshallhjelpen: gaven som delte Europa',
+        description:
+            'Europa ligger i ruiner i 1948, og et amerikansk lasteskip har lagt til kai med hjelpekasser. Dra kassene til de utbombede byene i vest og se dem reise seg: nye hus, lys i vinduene og fabrikker i gang - mens telleren viser hvor mye av pengene som ble brukt på amerikanske varer. Prøver du å hjelpe byene i øst, sier Stalin nei, og et rødt jernteppe reiser seg langs grensen. Lyspæren: hjelpen bygde Vest-Europa opp - og gjorde delingen av Europa synlig. Gaven og jernteppet var to sider av samme år.',
+        estimatedSeconds: 150,
+        loader: () => import('./Marshallhjelpen3D'),
+        Component: Marshallhjelpen3D as never,
+    },
+    'gasskranen-3d': {
+        id: 'gasskranen-3d',
+        title: 'Gasskranen: rørene som styrte Europa',
+        description:
+            'Først sitter du i Kreml med hånden på gasskranen: vri på hjulet og se lysene og fabrikkene i tre europeiske byer dempes og tennes i takt med gassen - og pengene som strømmer inn. Så bytter du side: det er 2022, kranen er strupt, og du må bygge Europa fritt med LNG-havn, vindmøller og rør fra Norge til byene lyser igjen uten russisk gass. Lyspæren: gass er bare et våpen så lenge ingen har alternativer. Da Europa bygde seg fri, mistet kranen makten.',
+        estimatedSeconds: 150,
+        loader: () => import('./Gasskranen3D'),
+        Component: Gasskranen3D as never,
+    },
+    'gjeldshavna-3d': {
+        id: 'gjeldshavna-3d',
+        title: 'Gjeldshavna: lånet som tok havna',
+        description:
+            'Du styrer et lite kystland som drømmer om en storhavn, og et kinesisk lasteskip ligger klar med lånetilbud. Velg stort eller lite lån gjennom tre byggerunder og se havna vokse - mens gjelden vokser fortere enn inntektene. På nedbetalingsdagen kommer regningen: tok du for store lån, må du leie bort havna in 99 år, og flagget byttes ut. Bygget du forsiktig, beholder du kontrollen. Basert på Sri Lanka 2017. Lyspæren: makt flyttes uten soldater - den som eier gjelden, kan ende med å eie havna.',
+        estimatedSeconds: 160,
+        loader: () => import('./Gjeldshavna3D'),
+        Component: Gjeldshavna3D as never,
     },
 };
 
