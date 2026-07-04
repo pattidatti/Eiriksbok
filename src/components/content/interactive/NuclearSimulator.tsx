@@ -327,7 +327,7 @@ const RollingNumber = ({ value }: { value: number }) => {
     const [display, setDisplay] = useState(0);
 
     useEffect(() => {
-        let start = display;
+        const start = display;
         const duration = 1500;
         const startTime = Date.now();
 

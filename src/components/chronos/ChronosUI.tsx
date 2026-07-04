@@ -522,7 +522,7 @@ export const ChronosUI: React.FC<ChronosUIProps> = ({
         } else {
             if (!isPausedRef.current && audioRef.current) audioRef.current.play().catch(() => {});
         }
-    }, [showJournal, showCrafting, showDecisionMap, showHubNav, selectedItem]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [showJournal, showCrafting, showDecisionMap, showHubNav, selectedItem]);
 
     const togglePause = () => {
         setIsPaused(prev => {

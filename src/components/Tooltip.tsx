@@ -40,8 +40,8 @@ export const Tooltip: React.FC<TooltipProps> = ({ text, children, type = 'concep
             const scrollX = window.scrollX;
 
             // Default: Centered above
-            let top = rect.top + scrollY - 10; // 10px gap
-            let left = rect.left + scrollX + rect.width / 2;
+            const top = rect.top + scrollY - 10; // 10px gap
+            const left = rect.left + scrollX + rect.width / 2;
 
             setCoords({ top, left });
         }

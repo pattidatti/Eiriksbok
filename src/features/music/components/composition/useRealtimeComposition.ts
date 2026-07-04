@@ -115,7 +115,7 @@ export const useRealtimeComposition = () => {
         if (!composition) return;
 
         // 1. Optimistic Update (Local)
-        let nextComposition = { ...composition };
+        const nextComposition = { ...composition };
 
         // We will construct a Firebase update object here
         // path -> value
