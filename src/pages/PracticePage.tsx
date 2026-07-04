@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map } from 'lucide-react';
+import { DailyReviewCard } from '../components/review/DailyReviewCard';
 
 export const PracticePage: React.FC = () => {
     const modules = [
@@ -185,6 +186,8 @@ export const PracticePage: React.FC = () => {
                         Velg en modul for å øve og teste kunnskapene dine.
                     </p>
                 </div>
+
+                <DailyReviewCard />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
                     {modules.map((module) => (

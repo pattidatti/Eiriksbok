@@ -31,15 +31,30 @@ export const useConcepts = () => {
                 if (response.ok) {
                     const data = await response.json();
 
-                    const formatted = data.map((item: any) => ({
-                        id: item.id || `global-${item.term}`,
-                        term: item.term,
-                        definition: item.definition,
-                        sourceType: 'global',
-                        subjectId: item.subject,
-                        topicId: item.topic,
-                        tags: item.tags
-                    }));
+                    interface RawConcept {
+                        id?: string;
+                        term?: string;
+                        definition?: string;
+                        subject?: string;
+                        topic?: string;
+                        tags?: string[];
+                    }
+                    // Enkelte auto-genererte innslag mangler term/definition
+                    // (bruker title/explanation-skjema) - de kan ikke vises
+                    const formatted = (data as RawConcept[])
+                        .filter(
+                            (item): item is RawConcept & { term: string; definition: string } =>
+                                !!item.term && !!item.definition
+                        )
+                        .map((item) => ({
+                            id: item.id || `global-${item.term}`,
+                            term: item.term,
+                            definition: item.definition,
+                            sourceType: 'global' as const,
+                            subjectId: item.subject,
+                            topicId: item.topic,
+                            tags: item.tags,
+                        }));
 
                     setGlobalConcepts(formatted);
                 }

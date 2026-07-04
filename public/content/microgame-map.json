@@ -1,0 +1,438 @@
+{
+  "tvillingbyen-koumbi-saleh-3d": {
+    "subjectId": "historie",
+    "topicId": "afrikanske-riker"
+  },
+  "karavanen-over-sahara-3d": {
+    "subjectId": "historie",
+    "topicId": "afrikanske-riker"
+  },
+  "riket-langs-niger-3d": {
+    "subjectId": "historie",
+    "topicId": "afrikanske-riker"
+  },
+  "stor-zimbabwe-mur-3d": {
+    "subjectId": "historie",
+    "topicId": "afrikanske-riker"
+  },
+  "lynkrigen-3d": {
+    "subjectId": "historie",
+    "topicId": "andre-verdenskrig"
+  },
+  "radarvakten-3d": {
+    "subjectId": "historie",
+    "topicId": "andre-verdenskrig"
+  },
+  "falanksen-3d": {
+    "subjectId": "historie",
+    "topicId": "antikkens-hellas"
+  },
+  "gresk-teater-3d": {
+    "subjectId": "historie",
+    "topicId": "antikkens-hellas"
+  },
+  "arkimedes-kronen-3d": {
+    "subjectId": "historie",
+    "topicId": "antikkens-hellas"
+  },
+  "gudenes-verden-3d": {
+    "subjectId": "historie",
+    "topicId": "antikkens-hellas"
+  },
+  "olympia-diskos-3d": {
+    "subjectId": "historie",
+    "topicId": "antikkens-hellas"
+  },
+  "forene-unionen-3d": {
+    "subjectId": "historie",
+    "topicId": "dekolonisering"
+  },
+  "republikkens-soyler-3d": {
+    "subjectId": "historie",
+    "topicId": "den-amerikanske-revolusjonen"
+  },
+  "kongestatuen-faller-3d": {
+    "subjectId": "historie",
+    "topicId": "den-amerikanske-revolusjonen"
+  },
+  "teselskapet-3d": {
+    "subjectId": "historie",
+    "topicId": "den-amerikanske-revolusjonen"
+  },
+  "stenderpyramiden-3d": {
+    "subjectId": "historie",
+    "topicId": "den-franske-revolusjon"
+  },
+  "stormingen-av-bastillen-3d": {
+    "subjectId": "historie",
+    "topicId": "den-franske-revolusjon"
+  },
+  "vekten-i-wien-3d": {
+    "subjectId": "historie",
+    "topicId": "den-franske-revolusjon"
+  },
+  "berlinmuren-3d": {
+    "subjectId": "historie",
+    "topicId": "den-kalde-krigen"
+  },
+  "karantenelinja-3d": {
+    "subjectId": "historie",
+    "topicId": "den-kalde-krigen"
+  },
+  "saturn-v-mane-3d": {
+    "subjectId": "historie",
+    "topicId": "den-kalde-krigen"
+  },
+  "gjeldshavna-3d": {
+    "subjectId": "historie",
+    "topicId": "etterkrigstiden"
+  },
+  "gasskranen-3d": {
+    "subjectId": "historie",
+    "topicId": "etterkrigstiden"
+  },
+  "marshallhjelpen-3d": {
+    "subjectId": "historie",
+    "topicId": "etterkrigstiden"
+  },
+  "ingenmannsland-mg": {
+    "subjectId": "historie",
+    "topicId": "forste-verdenskrig"
+  },
+  "smitten-i-byen-3d": {
+    "subjectId": "historie",
+    "topicId": "forste-verdenskrig"
+  },
+  "stalmonsteret-3d": {
+    "subjectId": "historie",
+    "topicId": "forste-verdenskrig"
+  },
+  "dampmaskin-hjerte-3d": {
+    "subjectId": "historie",
+    "topicId": "industriell-revolusjon"
+  },
+  "standardklokka-3d": {
+    "subjectId": "historie",
+    "topicId": "industriell-revolusjon"
+  },
+  "rismark-og-makt-3d": {
+    "subjectId": "historie",
+    "topicId": "japans-historie"
+  },
+  "japan-mirakel-by-3d": {
+    "subjectId": "historie",
+    "topicId": "japans-historie"
+  },
+  "japansk-imperium-3d": {
+    "subjectId": "historie",
+    "topicId": "japans-historie"
+  },
+  "meiji-byen-3d": {
+    "subjectId": "historie",
+    "topicId": "japans-historie"
+  },
+  "chinampabyen-3d": {
+    "subjectId": "historie",
+    "topicId": "jordbruk-og-sivilisasjoner"
+  },
+  "pyramidebyggeren-3d": {
+    "subjectId": "historie",
+    "topicId": "jordbruk-og-sivilisasjoner"
+  },
+  "rutebyen-mohenjo-daro": {
+    "subjectId": "historie",
+    "topicId": "jordbruk-og-sivilisasjoner"
+  },
+  "kanalbyggeren-3d": {
+    "subjectId": "historie",
+    "topicId": "jordbruk-og-sivilisasjoner"
+  },
+  "sjoimperiet-3d": {
+    "subjectId": "historie",
+    "topicId": "kolonialisering"
+  },
+  "trekanthandelen-3d": {
+    "subjectId": "historie",
+    "topicId": "kolonialisering"
+  },
+  "forseglingen-runnymede-3d": {
+    "subjectId": "historie",
+    "topicId": "lov-og-rett"
+  },
+  "marsj-mot-roma-3d": {
+    "subjectId": "historie",
+    "topicId": "mellomkrigstiden"
+  },
+  "demokrati-lysene-3d": {
+    "subjectId": "historie",
+    "topicId": "mellomkrigstiden"
+  },
+  "gobekli-tepe-3d": {
+    "subjectId": "historie",
+    "topicId": "menneskets-tidlige-historie"
+  },
+  "ut-av-afrika-3d": {
+    "subjectId": "historie",
+    "topicId": "menneskets-tidlige-historie"
+  },
+  "gutenberg-presse-3d": {
+    "subjectId": "historie",
+    "topicId": "middelalderen"
+  },
+  "hagia-sofia-3d": {
+    "subjectId": "historie",
+    "topicId": "middelalderen"
+  },
+  "hundreaarskrigen-3d": {
+    "subjectId": "historie",
+    "topicId": "middelalderen"
+  },
+  "fingerte-flukten-3d": {
+    "subjectId": "historie",
+    "topicId": "middelalderen"
+  },
+  "pestrute-3d": {
+    "subjectId": "historie",
+    "topicId": "middelalderen"
+  },
+  "samisk-gjenreising-3d": {
+    "subjectId": "historie",
+    "topicId": "norgeshistorie"
+  },
+  "hamskiftet-3d": {
+    "subjectId": "historie",
+    "topicId": "norgeshistorie"
+  },
+  "bergkunsten-3d": {
+    "subjectId": "historie",
+    "topicId": "norgeshistorie"
+  },
+  "kalmar-kronene-3d": {
+    "subjectId": "historie",
+    "topicId": "norgeshistorie"
+  },
+  "fimbulvinteren-3d": {
+    "subjectId": "historie",
+    "topicId": "norgeshistorie"
+  },
+  "dorer-som-apnet-3d": {
+    "subjectId": "historie",
+    "topicId": "norgeshistorie"
+  },
+  "personalunion-3d": {
+    "subjectId": "historie",
+    "topicId": "norgeshistorie"
+  },
+  "pakk-amerikakofferten-3d": {
+    "subjectId": "historie",
+    "topicId": "norgeshistorie"
+  },
+  "teodosianmuren": {
+    "subjectId": "historie",
+    "topicId": "osmanske-riket"
+  },
+  "persepolis-gaver-3d": {
+    "subjectId": "historie",
+    "topicId": "perserriket"
+  },
+  "himmelmodellen-3d": {
+    "subjectId": "historie",
+    "topicId": "renessansen"
+  },
+  "falltaarnet-3d": {
+    "subjectId": "historie",
+    "topicId": "renessansen"
+  },
+  "leonardo-flygemaskin-3d": {
+    "subjectId": "historie",
+    "topicId": "renessansen"
+  },
+  "testudo-3d": {
+    "subjectId": "historie",
+    "topicId": "romerriket"
+  },
+  "leiegaarden-3d": {
+    "subjectId": "historie",
+    "topicId": "romerriket"
+  },
+  "pompeii-3d": {
+    "subjectId": "historie",
+    "topicId": "romerriket"
+  },
+  "colosseum-3d": {
+    "subjectId": "historie",
+    "topicId": "romerriket"
+  },
+  "gladius-duell": {
+    "subjectId": "historie",
+    "topicId": "romerriket"
+  },
+  "de-sju-hoydene-3d": {
+    "subjectId": "historie",
+    "topicId": "romerriket"
+  },
+  "stromveien-3d": {
+    "subjectId": "historie",
+    "topicId": "teknologi-og-hverdagsliv"
+  },
+  "gangen-3d": {
+    "subjectId": "historie",
+    "topicId": "teknologi-og-hverdagsliv"
+  },
+  "laasesting-3d": {
+    "subjectId": "historie",
+    "topicId": "teknologi-og-hverdagsliv"
+  },
+  "rent-vann-rorene-3d": {
+    "subjectId": "historie",
+    "topicId": "teknologi-og-hverdagsliv"
+  },
+  "vannmolla-3d": {
+    "subjectId": "historie",
+    "topicId": "teknologi-og-hverdagsliv"
+  },
+  "vesterleden-3d": {
+    "subjectId": "historie",
+    "topicId": "vikingtiden"
+  },
+  "rikssamlingen-3d": {
+    "subjectId": "historie",
+    "topicId": "vikingtiden"
+  },
+  "vikingskip-3d": {
+    "subjectId": "historie",
+    "topicId": "vikingtiden"
+  },
+  "moralsk-tomrom-3d": {
+    "subjectId": "krle",
+    "topicId": "etikk"
+  },
+  "allmennviljen-3d": {
+    "subjectId": "krle",
+    "topicId": "filosofi"
+  },
+  "attedelt-vei-hjulet": {
+    "subjectId": "krle",
+    "topicId": "religion"
+  },
+  "samsara-syklusen": {
+    "subjectId": "krle",
+    "topicId": "religion"
+  },
+  "moksha-veien-3d": {
+    "subjectId": "krle",
+    "topicId": "religion"
+  },
+  "tempelets-renselse-3d": {
+    "subjectId": "krle",
+    "topicId": "religion"
+  },
+  "tikkun-olam-3d": {
+    "subjectId": "krle",
+    "topicId": "religion"
+  },
+  "kristendom-spredning": {
+    "subjectId": "krle",
+    "topicId": "religion"
+  },
+  "festens-lys-3d": {
+    "subjectId": "krle",
+    "topicId": "religion-og-kultur"
+  },
+  "matreglerbordet-3d": {
+    "subjectId": "krle",
+    "topicId": "religion-og-kultur"
+  },
+  "skjulte-symboler-3d": {
+    "subjectId": "krle",
+    "topicId": "religion-og-kultur"
+  },
+  "symboler-paa-taket-3d": {
+    "subjectId": "krle",
+    "topicId": "religion-og-kultur"
+  },
+  "levekaarsgapet-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "demografi"
+  },
+  "konklusjonsbroen-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "eksamen"
+  },
+  "argumentbroen-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "eksamen"
+  },
+  "tidens-former-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "ideer-og-verdenssyn"
+  },
+  "monument-torget-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "ideer-og-verdenssyn"
+  },
+  "imperium-soyler": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "imperienes-fall"
+  },
+  "datasporet-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "mennesket-kultur-samfunn"
+  },
+  "grenselinja-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "mennesket-kultur-samfunn"
+  },
+  "taushetsspiralen-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "mennesket-kultur-samfunn"
+  },
+  "nyheitsbobla-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "mennesket-kultur-samfunn"
+  },
+  "teknologibolgen-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "mennesket-kultur-samfunn"
+  },
+  "perspektivkjernen-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "mennesket-kultur-samfunn"
+  },
+  "produksjonsoppskriften-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "okonomi"
+  },
+  "europa-broen-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "styringsformer"
+  },
+  "maktbalansen-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "styringsformer"
+  },
+  "spillereglene-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "styringsformer"
+  },
+  "spleiselaget-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "styringsformer"
+  },
+  "maktskiftet-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "styringsformer"
+  },
+  "streikefronten-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "styringsformer"
+  },
+  "konsekvensbolgen-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "styringsformer"
+  },
+  "ansiktene-i-mengden-3d": {
+    "subjectId": "samfunnskunnskap",
+    "topicId": "styringsformer"
+  }
+}

@@ -35,6 +35,7 @@ import { DialogTreeStep } from './learning-path-v2/DialogTreeStep';
 import { MapQuestStep } from './learning-path-v2/MapQuestStep';
 import { LearningPathPass } from './learning-path-v2/LearningPathPass';
 import { StepperTopBar } from './learning-path-v2/StepperTopBar';
+import { captureConceptEncounters } from '../../utils/reviewCapture';
 import { OpenTasksPanel } from './learning-path-v2/OpenTasksPanel';
 
 interface LearningPathV2Props {
@@ -126,6 +127,7 @@ export const LearningPathV2: React.FC<LearningPathV2Props> = ({ data }) => {
         response: Omit<StepResponse, 'completedAt'>
     ) => {
         profile.completeStep(data.id, step.id, response, step.conceptsIntroduced ?? []);
+        captureConceptEncounters(step.conceptsIntroduced ?? []);
     };
 
     const handleAdvance = () => {

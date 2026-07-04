@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import type { QuizQuestion } from '../types';
 import './Quiz.css';
 import { motion } from 'framer-motion';
+import { captureQuizAnswer } from '../utils/reviewCapture';
 
 interface QuizProps {
     questions: QuizQuestion[];
@@ -42,6 +43,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
     const submitAnswer = () => {
         setIsAnswered(true);
         const correct = getCorrectAnswer(questions[currentQuestion]);
+        captureQuizAnswer(questions[currentQuestion], selectedOption === correct);
         if (selectedOption === correct) {
             setScore(score + 1);
             setStreak(streak + 1);

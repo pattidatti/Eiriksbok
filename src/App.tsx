@@ -21,6 +21,7 @@ const TextReaderPage = React.lazy(routeFactories.TextReaderPage);
 const NotFoundPage = React.lazy(routeFactories.NotFoundPage);
 const FlashcardPage = React.lazy(routeFactories.FlashcardPage);
 const PracticePage = React.lazy(routeFactories.PracticePage);
+const DailyReviewPage = React.lazy(routeFactories.DailyReviewPage);
 const QuizPage = React.lazy(routeFactories.QuizPage);
 const QuizAdmin = React.lazy(routeFactories.QuizAdmin);
 const QuizLobby = React.lazy(routeFactories.QuizLobby);
@@ -108,6 +109,7 @@ const router = createBrowserRouter([
       { path: "musikk/oving/gehortrening", element: <EarTrainerPage /> },
       { path: "musikk/gitarstudio", element: <GitarstudioPage /> },
       { path: "oving", element: <PracticePage /> },
+      { path: "oving/dagens-okt", element: <DailyReviewPage /> },
       { path: "quiz", element: <QuizPage /> },
       { path: "oving/flashcards", element: <FlashcardPage /> },
       { path: "oving/quiz", element: <QuizPage /> },

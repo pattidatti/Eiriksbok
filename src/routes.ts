@@ -18,6 +18,7 @@ export const routeFactories: Record<string, PageFactory> = {
     ColonizationMap: () => import('./components/ColonizationMap/ColonizationMap'),
     FlashcardPage: () => import('./pages/FlashcardPage').then(module => ({ default: module.FlashcardPage })),
     PracticePage: () => import('./pages/PracticePage').then(module => ({ default: module.PracticePage })),
+    DailyReviewPage: () => import('./pages/DailyReviewPage').then(module => ({ default: module.DailyReviewPage })),
     QuizPage: () => import('./pages/QuizPage').then(module => ({ default: module.QuizPage })),
     ReligionPage: () => import('./pages/ReligionPage').then(module => ({ default: module.ReligionPage })),
     ReligionComparisonPage: () => import('./pages/ReligionComparisonPage').then(module => ({ default: module.ReligionComparisonPage })),

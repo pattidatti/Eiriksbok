@@ -4,6 +4,7 @@ import { useConcepts } from '../hooks/useConcepts';
 import type { ConceptItem } from '../hooks/useConcepts';
 import { Link } from 'react-router-dom';
 import { Filter, Search, RotateCw, ArrowRight } from 'lucide-react';
+import { captureFlashcardFlip } from '../utils/reviewCapture';
 
 export const FlashcardPage: React.FC = () => {
     const concepts = useConcepts();
@@ -155,7 +156,10 @@ const Flashcard: React.FC<{ concept: ConceptItem }> = ({ concept }) => {
     return (
         <div
             className="h-60 perspective-1000 cursor-pointer group"
-            onClick={() => setIsFlipped(!isFlipped)}
+            onClick={() => {
+                if (!isFlipped) captureFlashcardFlip(concept);
+                setIsFlipped(!isFlipped);
+            }}
         >
             <motion.div
                 className="relative w-full h-full transition-all duration-500 [transform-style:preserve-3d]"

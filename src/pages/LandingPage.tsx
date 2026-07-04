@@ -8,6 +8,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 import { useManifestData } from '../hooks/useManifestData';
 import { PageSkeleton } from '../components/Skeleton';
 import { getSubjectUrl, getLessonUrl, ROUTES } from '../utils/routes';
+import { DailyReviewCard } from '../components/review/DailyReviewCard';
 
 export const LandingPage: React.FC = () => {
     const { manifest, recentLessons, historyLessons, isLoading } = useManifestData();
@@ -41,6 +42,8 @@ export const LandingPage: React.FC = () => {
                         ))}
                     </div>
                 </motion.div>
+
+                <DailyReviewCard variant="compact" />
 
                 {/* Recently Viewed Section */}
                 {historyLessons.length > 0 && (
