@@ -6,7 +6,7 @@
     "year": "1945",
     "category": "Verden",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/etterkrigstiden/verden-bygges-pa-nytt-hero.webp",
     "details": [
         "Vinnerne av krigen skrev reglene som fortsatt styrer verden.",
         "FN, IMF og Verdensbanken ble født i 1944-1945.",
@@ -50,7 +50,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/verden-bygges-pa-nytt-01.webp",
             "alt": "Utbombet europeisk by i ruiner 1945, mennesker går mellom murrester",
             "caption": "1945: Store deler av Europa og Asia lå i ruiner. Den som hadde penger og fabrikker igjen, fikk makten til å bestemme."
         },
@@ -105,7 +105,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/verden-bygges-pa-nytt-02.webp",
             "alt": "Stort hotell i fjellandskap i New Hampshire, delegater med dokumentmapper utenfor",
             "caption": "Hotellet Mount Washington i Bretton Woods, 1944. Her ble dollaren verdens valuta, mens krigen fortsatt raste."
         },
@@ -134,7 +134,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/verden-bygges-pa-nytt-03.webp",
             "alt": "Soldater fra USA og Sovjetunionen håndhilser over en elv i 1945, anspente blikk",
             "caption": "Amerikanske og sovjetiske soldater møttes som allierte i 1945. Vennskapet varte ikke lenge."
         },

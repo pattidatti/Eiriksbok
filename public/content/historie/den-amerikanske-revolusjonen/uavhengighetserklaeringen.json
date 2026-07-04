@@ -5,7 +5,7 @@
     "year": "1776",
     "category": "Verdenshistorie",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/den-amerikanske-revolusjonen/uavhengighetserklaeringen-hero.webp",
     "details": [
         "4. juli 1776 vedtok de tretten koloniene at de var frie og løsrevet fra Storbritannia.",
         "Erklæringen sa at alle mennesker er skapt like og har rettigheter ingen konge kan ta fra dem.",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/uavhengighetserklaeringen-01.webp",
             "alt": "Menn i parykker signerer et dokument i et lyst møterom",
             "caption": "Representantene fra de tretten koloniene vedtok erklæringen 4. juli 1776. Datoen er fortsatt USAs nasjonaldag."
         },
@@ -91,7 +91,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/uavhengighetserklaeringen-02.webp",
             "alt": "Folkemengde river ned en forgylt rytterstatue av en konge",
             "caption": "Da erklæringen ble lest opp i New York, rev folkemengden ned statuen av kong George III."
         },
@@ -144,7 +144,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/uavhengighetserklaeringen-03.webp",
             "alt": "Gammelt pergamentdokument med tett håndskrift og signaturer nederst",
             "caption": "Selve dokumentet finnes fortsatt. Det oppbevares godt beskyttet i Washington D.C."
         },
