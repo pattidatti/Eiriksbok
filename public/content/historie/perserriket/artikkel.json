@@ -42,6 +42,11 @@
             "caption": "Ruiner av Persepolis, den seremonielle hovedstaden i Achaemenide-riket."
         },
         {
+            "type": "component",
+            "name": "MicroGame",
+            "props": { "gameId": "persepolis-gaver-3d" }
+        },
+        {
             "type": "text",
             "title": "Arven etter Perserriket",
             "content": "Selv om riket falt for Aleksander den store, levde den persiske kulturen og administrasjonsmodellen videre. Aleksander selv adopterte mange persiske skikker og giftet seg med en persisk prinsesse. Achaemenide-riket satte standarden for hvordan et multikulturelt imperium kunne styres, og ideen om et universelt rike levde videre gjennom historien."
