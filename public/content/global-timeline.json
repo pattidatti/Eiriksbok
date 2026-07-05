@@ -358,6 +358,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "bronsealderens-kollaps",
+      "title": "Bronsealderens kollaps",
+      "description": "En sammenkoblet verden av riker rundt Middelhavet forsvant på femti år. Se hvordan handel gjorde dem både rike og skjøre.",
+      "startDate": -1200,
+      "endDate": null,
+      "displayDate": "1200 fvt",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "imperienes-fall",
+      "link": "/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps",
+      "tags": [
+        "samfunn",
+        "kollaps",
+        "bronsealder",
+        "handel",
+        "imperium"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "frashokereti",
       "title": "Frashokereti: Zoroastrismens dommedag",
       "description": "Den eldste systematiske forestillingen om en lineær verdensende der det gode seirer over det onde.",

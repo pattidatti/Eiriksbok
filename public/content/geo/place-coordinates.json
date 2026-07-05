@@ -815,16 +815,16 @@
       "count": 37
     },
     {
+      "tag": "handel",
+      "count": 37
+    },
+    {
       "tag": "kald-krig",
       "count": 36
     },
     {
       "tag": "nykolonialisme",
       "count": 36
-    },
-    {
-      "tag": "handel",
-      "count": 35
     },
     {
       "tag": "antikken",
@@ -840,7 +840,7 @@
     },
     {
       "tag": "imperium",
-      "count": 26
+      "count": 28
     },
     {
       "tag": "verdensorden",
@@ -935,6 +935,10 @@
       "count": 16
     },
     {
+      "tag": "samfunn",
+      "count": 15
+    },
+    {
       "tag": "konflikt",
       "count": 15
     },
@@ -957,10 +961,6 @@
     {
       "tag": "skrivehjelp",
       "count": 14
-    },
-    {
-      "tag": "samfunn",
-      "count": 13
     },
     {
       "tag": "folkemord",
@@ -1187,6 +1187,10 @@
       "count": 6
     },
     {
+      "tag": "kollaps",
+      "count": 6
+    },
+    {
       "tag": "maktfordeling",
       "count": 6
     },
@@ -1399,6 +1403,10 @@
       "count": 4
     },
     {
+      "tag": "bronsealder",
+      "count": 4
+    },
+    {
       "tag": "republikk",
       "count": 4
     },
@@ -1412,10 +1420,6 @@
     },
     {
       "tag": "gull",
-      "count": 4
-    },
-    {
-      "tag": "kollaps",
       "count": 4
     },
     {
@@ -2500,10 +2504,6 @@
     },
     {
       "tag": "saktekst",
-      "count": 2
-    },
-    {
-      "tag": "bronsealder",
       "count": 2
     },
     {

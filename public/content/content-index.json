@@ -1,5 +1,5 @@
 {
-  "buildId": 1783175592804,
+  "buildId": 1783215051705,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -3374,6 +3374,9 @@
     "utopier": [
       "content/samfunnskunnskap/ideer-og-verdenssyn/utopier.json"
     ],
+    "bronsealderens-kollaps": [
+      "content/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps.json"
+    ],
     "hvorfor-imperier-faller": [
       "content/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller.json"
     ],
@@ -4652,6 +4655,7 @@
     "samfunnskunnskap/ideer-og-verdenssyn/store-sykluser-sti": "content/samfunnskunnskap/ideer-og-verdenssyn/store-sykluser-sti.json",
     "samfunnskunnskap/ideer-og-verdenssyn/store-sykluser": "content/samfunnskunnskap/ideer-og-verdenssyn/store-sykluser.json",
     "samfunnskunnskap/ideer-og-verdenssyn/utopier": "content/samfunnskunnskap/ideer-og-verdenssyn/utopier.json",
+    "samfunnskunnskap/imperienes-fall/bronsealderens-kollaps": "content/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps.json",
     "samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller": "content/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre": "content/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet": "content/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet.json",

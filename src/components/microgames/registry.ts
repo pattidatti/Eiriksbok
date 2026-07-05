@@ -56,6 +56,7 @@ const HagiaSofia3D = lazy(() => import('./HagiaSofia3D'));
 const Pompeii3D = lazy(() => import('./Pompeii3D'));
 const PakkAmerikakofferten3D = lazy(() => import('./PakkAmerikakofferten3D'));
 const Pyramidebyggeren3D = lazy(() => import('./Pyramidebyggeren3D'));
+const Bronseruta3D = lazy(() => import('./Bronseruta3D'));
 const KalmarKronene3D = lazy(() => import('./KalmarKronene3D'));
 const Pestrute3D = lazy(() => import('./Pestrute3D'));
 const KristendomSpredning3D = lazy(() => import('./KristendomSpredning3D'));
@@ -889,6 +890,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Pyramidebyggeren3D'),
         Component: Pyramidebyggeren3D as never,
+    },
+    'bronseruta-3d': {
+        id: 'bronseruta-3d',
+        title: 'Smi bronse ved Middelhavet',
+        description:
+            'Smi et bronsesverd i en smie ved Middelhavet rundt 1300 fvt. Dra kobber-barren som ligger rett ved smia, og tinn-barren som må hentes helt fra båten ute på havet, inn i den glødende diglen. Klikk så for å støpe sverdet. Lyspæren: bronse er kobber pluss tinn. Kobber fantes mange steder, men tinn var sjeldent og måtte fraktes tusenvis av kilometer. Hele bronsealderen hvilte derfor på lange, sårbare handelsruter.',
+        estimatedSeconds: 130,
+        loader: () => import('./Bronseruta3D'),
+        Component: Bronseruta3D as never,
     },
     'kalmar-kronene-3d': {
         id: 'kalmar-kronene-3d',
