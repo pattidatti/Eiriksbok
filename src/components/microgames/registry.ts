@@ -115,8 +115,18 @@ const Marshallhjelpen3D = lazy(() => import('./Marshallhjelpen3D'));
 const Gasskranen3D = lazy(() => import('./Gasskranen3D'));
 const Gjeldshavna3D = lazy(() => import('./Gjeldshavna3D'));
 const ImperiumSoyler = lazy(() => import('./ImperiumSoyler'));
+const HimmelensMandat3D = lazy(() => import('./HimmelensMandat3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'himmelens-mandat-3d': {
+        id: 'himmelens-mandat-3d',
+        title: 'Himmelens mandat',
+        description:
+            'Spill ut den kinesiske dynastisyklusen. En gullstråle faller fra himmelen ned på keiserpalasset - det er Himmelens mandat, retten til å styre. For hver keiser klikker du kornlageret for å styre rettferdig, eller skattekista for å styre grådig. Rettferd løfter mandatet: rismarkene grønnes, folket jubler, palasset står stødig. Grådighet tapper det: markene visner, opprør bryter ut, palasset heller, og til slutt trekker himmelen mandatet tilbake og dynastiet faller. Grunnlegg da et nytt dynasti og løft det til gullalder. Lyspæren: keiserens rett til å styre var betinget - styrte han rettferdig, besto dynastiet; ble han grådig, mistet han Himmelens mandat, og et nytt dynasti tok over. Det er dynastisyklusen som gikk igjen i Kina i nesten to tusen år.',
+        estimatedSeconds: 150,
+        loader: () => import('./HimmelensMandat3D'),
+        Component: HimmelensMandat3D as never,
+    },
     'imperium-soyler': {
         id: 'imperium-soyler',
         title: 'Rikets fire søyler',

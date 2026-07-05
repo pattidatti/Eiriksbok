@@ -38,6 +38,13 @@
       "content": "Konfutsianismen ble ikke bare en filosofi - den ble selve grunnlaget for kinesisk statsstyre i over to tusen år. Den lærte at studium og selvdisiplin var veien til makt. En mann som leste Konfutsios sine skrifter, lærte de klassiske tekstene utenat og besto eksamen, kunne bli embetsmann i keiserens tjeneste. Ikke fødsel, ikke rikdom - kunnskap. Det var revolusjonerende."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "himmelens-mandat-3d"
+      }
+    },
+    {
       "type": "image",
       "src": "/images/kinas-historie/dynastiene-01.webp",
       "alt": "Kinesisk embetsmann som studerer til eksamen",
