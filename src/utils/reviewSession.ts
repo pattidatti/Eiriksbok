@@ -92,12 +92,20 @@ const buildConceptExercise = (
     const variant = item.reps === 0 ? Math.floor(rng() * 3) : item.reps % 3;
 
     if (variant === 2) {
-        // Koble par: begrepet + 2 distraktorer fra samme fag (unike termer)
+        // Koble par: begrepet + 2 distraktorer fra samme fag. Distraktorene må
+        // være unike både på term OG forklaring: to par med identisk forklaring
+        // gjør kortet uløselig (forklaringen låses av det første paret, det
+        // andre kan aldri kobles). Ekskluder derfor også hovedbegrepets
+        // forklaring fra distraktor-utvalget.
         const candidates = sameSubject.length >= 2 ? sameSubject : anyOther;
         const uniqueByTerm = new Map<string, ConceptItem>();
+        const seenDefs = new Set<string>([concept.definition.trim().toLowerCase()]);
         for (const c of candidates) {
-            const key = c.term.toLowerCase();
-            if (!uniqueByTerm.has(key)) uniqueByTerm.set(key, c);
+            const termKey = c.term.toLowerCase();
+            const defKey = c.definition.trim().toLowerCase();
+            if (uniqueByTerm.has(termKey) || seenDefs.has(defKey)) continue;
+            uniqueByTerm.set(termKey, c);
+            seenDefs.add(defKey);
         }
         const distractors = shuffleWith(Array.from(uniqueByTerm.values()), rng).slice(0, 2);
         if (distractors.length === 2) {
@@ -379,12 +387,40 @@ export const buildSession = (
         }
     }
 
-    // 7. Dramaturgi: oppvarming -> kjerne -> tyngst. Seeded shuffle som
-    //    tie-break gir variasjon innenfor hvert nivå (stabil sort bevarer den).
+    // 7. Dramaturgi + variasjon: seeded shuffle gir stabil variasjon, deretter
+    //    fletter vi korttypene sammen så vi unngår lange striper av samme type
+    //    (særlig flere «husker du»-flashcards på rad). Grådig maks-spredning:
+    //    velg hver gang typen med flest kort igjen som IKKE er lik forrige kort.
+    //    Tie-break på vekt (lett før tung) beholder en mild lett -> tung-tendens.
     const orderRng = mulberry32(djb2Hash(today + ':order'));
-    return shuffleWith(exercises, orderRng).sort(
-        (a, b) => KIND_WEIGHT[a.kind] - KIND_WEIGHT[b.kind]
-    );
+    const buckets = new Map<ExerciseKind, SessionExercise[]>();
+    for (const ex of shuffleWith(exercises, orderRng)) {
+        const list = buckets.get(ex.kind) ?? [];
+        list.push(ex);
+        buckets.set(ex.kind, list);
+    }
+    const ordered: SessionExercise[] = [];
+    let lastKind: ExerciseKind | null = null;
+    while (ordered.length < exercises.length) {
+        let choice: ExerciseKind | null = null;
+        for (const [kind, list] of buckets) {
+            if (list.length === 0 || kind === lastKind) continue;
+            const best = choice ? buckets.get(choice)!.length : -1;
+            if (
+                list.length > best ||
+                (choice !== null &&
+                    list.length === best &&
+                    KIND_WEIGHT[kind] < KIND_WEIGHT[choice])
+            ) {
+                choice = kind;
+            }
+        }
+        // Bare forrige type igjen -> uunngåelig gjentakelse
+        if (choice === null) choice = lastKind!;
+        ordered.push(buckets.get(choice)!.shift()!);
+        lastKind = choice;
+    }
+    return ordered;
 };
 
 // Round-robin over fag: ett begrep fra hvert fag om gangen

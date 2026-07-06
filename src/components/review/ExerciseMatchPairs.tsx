@@ -21,35 +21,37 @@ export const ExerciseMatchPairs: React.FC<ExerciseMatchPairsProps> = ({
     const pairs = exercise.pairs ?? [];
     const definitions = exercise.shuffledDefinitions ?? [];
     const [selectedTerm, setSelectedTerm] = useState<string | null>(null);
-    // term -> definisjon for låste par
-    const [matched, setMatched] = useState<Record<string, string>>({});
-    const [shakeDefinition, setShakeDefinition] = useState<string | null>(null);
+    // term -> indeks i definisjonslisten for låste par. Vi sporer på indeks (ikke
+    // tekst) slik at to like forklaringer aldri kan låse hverandre ute og henge
+    // kortet - hvert par matcher sin egen knapp.
+    const [matched, setMatched] = useState<Record<string, number>>({});
+    const [shakeIndex, setShakeIndex] = useState<number | null>(null);
     const [done, setDone] = useState<boolean | null>(null);
     const mistakesRef = useRef(0);
     const { play } = useStepSounds();
 
-    const matchedDefinitions = new Set(Object.values(matched));
+    const matchedIndices = new Set(Object.values(matched));
     const definitionByTerm = new Map(pairs.map((p) => [p.term, p.definition]));
 
     const chooseTerm = (term: string) => {
-        if (done !== null || matched[term]) return;
+        if (done !== null || matched[term] !== undefined) return;
         play('select');
         setSelectedTerm(term);
     };
 
-    const chooseDefinition = (definition: string) => {
-        if (done !== null || !selectedTerm || matchedDefinitions.has(definition)) return;
+    const chooseDefinition = (definition: string, index: number) => {
+        if (done !== null || !selectedTerm || matchedIndices.has(index)) return;
         const isMatch = definitionByTerm.get(selectedTerm) === definition;
         if (!isMatch) {
             mistakesRef.current += 1;
             play('incorrect');
-            setShakeDefinition(definition);
+            setShakeIndex(index);
             setSelectedTerm(null);
-            window.setTimeout(() => setShakeDefinition(null), 400);
+            window.setTimeout(() => setShakeIndex(null), 400);
             return;
         }
         play('correct');
-        const nextMatched = { ...matched, [selectedTerm]: definition };
+        const nextMatched = { ...matched, [selectedTerm]: index };
         setMatched(nextMatched);
         setSelectedTerm(null);
         if (Object.keys(nextMatched).length === pairs.length) {
@@ -60,14 +62,14 @@ export const ExerciseMatchPairs: React.FC<ExerciseMatchPairsProps> = ({
     };
 
     const termClasses = (term: string) => {
-        if (matched[term]) return 'bg-emerald-50 border-emerald-400 text-emerald-800';
+        if (matched[term] !== undefined) return 'bg-emerald-50 border-emerald-400 text-emerald-800';
         if (selectedTerm === term)
             return 'bg-indigo-50 border-indigo-400 text-indigo-800 ring-2 ring-indigo-200';
         return 'bg-white/70 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50';
     };
 
-    const definitionClasses = (definition: string) => {
-        if (matchedDefinitions.has(definition))
+    const definitionClasses = (index: number) => {
+        if (matchedIndices.has(index))
             return 'bg-emerald-50 border-emerald-400 text-emerald-800';
         if (!selectedTerm) return 'bg-white/50 border-slate-100 text-slate-500';
         return 'bg-white/70 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50';
@@ -94,19 +96,19 @@ export const ExerciseMatchPairs: React.FC<ExerciseMatchPairsProps> = ({
                     ))}
                 </div>
                 <div className="flex flex-col gap-2.5">
-                    {definitions.map((definition) => (
+                    {definitions.map((definition, index) => (
                         <motion.button
-                            key={definition}
-                            onClick={() => chooseDefinition(definition)}
+                            key={index}
+                            onClick={() => chooseDefinition(definition, index)}
                             animate={
-                                shakeDefinition === definition
+                                shakeIndex === index
                                     ? { x: [0, -6, 6, -4, 4, 0] }
-                                    : matchedDefinitions.has(definition)
+                                    : matchedIndices.has(index)
                                       ? { scale: [1, 1.03, 1] }
                                       : {}
                             }
                             transition={{ duration: 0.35 }}
-                            className={`flex-1 px-3 py-2.5 rounded-xl border-2 text-sm text-left leading-snug transition-colors ${definitionClasses(definition)}`}
+                            className={`flex-1 px-3 py-2.5 rounded-xl border-2 text-sm text-left leading-snug transition-colors ${definitionClasses(index)}`}
                         >
                             <span className="line-clamp-3">{definition}</span>
                         </motion.button>
