@@ -910,6 +910,7 @@
           "id": "eksamen",
           "title": "Eksamen",
           "description": "Alt du trenger for å mestre skriftlig og muntlig eksamen i norsk etter 10. trinn.",
+          "image": "/images/norsk/eksamen/skriftlig_hero.webp",
           "lessons": [
             {
               "id": "skriftlig",
@@ -2115,6 +2116,7 @@
           "id": "eksamen",
           "title": "Eksamen",
           "description": "Alt du trenger for å mestre muntlig eksamen i samfunnsfag etter 10. trinn.",
+          "image": "/images/samfunnskunnskap/eksamen/muntlig-hero.webp",
           "tools": [
             {
               "id": "eksamen-samfunnsfag",
@@ -2847,6 +2849,7 @@
         {
           "id": "japans-historie",
           "title": "Japans historie",
+          "image": "/images/japans-historie/det-foydale-japan-hero.webp",
           "lessons": [
             {
               "id": "det-foydale-japan",
