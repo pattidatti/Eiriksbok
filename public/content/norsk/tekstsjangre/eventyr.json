@@ -4,7 +4,7 @@
     "subject": "norsk",
     "topic": "tekstsjangre",
     "layout": "rich",
-    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80",
+    "heroImage": "/images/norsk/tekstsjangre/eventyr-hero.webp",
     "content": [
         {
             "type": "text",

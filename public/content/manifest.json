@@ -131,7 +131,7 @@
               "id": "setningsanalyse",
               "title": "Setningsanalyse",
               "description": "Hvordan analysere setninger.",
-              "image": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80",
+              "image": "/images/norsk/grammatikk/setningsanalyse-hero.webp",
               "tags": [
                 "skjønnlitteratur",
                 "fortelling"
@@ -228,7 +228,7 @@
               "id": "novelle",
               "title": "Novelle",
               "description": "Korte fortellinger med en tydelig konflikt.",
-              "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80",
+              "image": "/images/norsk/tekstsjangre/novelle-hero.webp",
               "tags": [
                 "skjønnlitteratur",
                 "fortelling",
@@ -242,7 +242,7 @@
               "id": "eventyr",
               "title": "Eventyr",
               "description": "Folkediktning full av magi og overnaturlige vesener.",
-              "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80",
+              "image": "/images/norsk/tekstsjangre/eventyr-hero.webp",
               "tags": [
                 "skjønnlitteratur",
                 "eventyr",
@@ -255,7 +255,7 @@
               "id": "roman",
               "title": "Roman",
               "description": "Lengre fortellinger som gir rom for fordypning.",
-              "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80",
+              "image": "/images/norsk/tekstsjangre/roman-hero.webp",
               "tags": [
                 "skjønnlitteratur",
                 "fortelling",
@@ -269,7 +269,7 @@
               "id": "dikt",
               "title": "Dikt (Lyrikk)",
               "description": "Tekster som uttrykker stemninger og følelser.",
-              "image": "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&q=80",
+              "image": "/images/norsk/tekstsjangre/dikt-hero.webp",
               "tags": [
                 "skjønnlitteratur",
                 "lyrikk",
@@ -283,7 +283,7 @@
               "id": "artikkel",
               "title": "Fagartikkel",
               "description": "Objektive tekster som formidler kunnskap.",
-              "image": "https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?auto=format&fit=crop&q=80",
+              "image": "/images/norsk/tekstsjangre/artikkel-hero.webp",
               "tags": [
                 "sakprosa",
                 "fakta",

@@ -4,7 +4,7 @@
     "subject": "norsk",
     "topic": "tekstsjangre",
     "layout": "rich",
-    "heroImage": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80",
+    "heroImage": "/images/norsk/tekstsjangre/roman-hero.webp",
     "content": [
         {
             "type": "text",
