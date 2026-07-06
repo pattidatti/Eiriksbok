@@ -120,11 +120,25 @@ Eksempel for artikkelen `public/content/historie/vikingtiden/rikssamlingen.json`
 - `public/images/vikingtiden/rikssamlingen-hero.webp`
 - `public/images/vikingtiden/rikssamlingen-01.webp`
 
-Lagre og optimaliser genererte bilder ved å bruke det dedikerte prosesseringsskriptet:
+Lagre og optimaliser genererte bilder ved å enten kjøre enkelt-optimalisering eller samle dem i en batch for å unngå gjentatte godkjenninger:
+
+**Alternativ A (Batch-kjøring for å slippe gjentatte prompts):**
+Skriv jobbene til `scripts/image-jobs.json` i dette formatet:
+```json
+[
+  { "src": "/sti/til/generert/bilde.jpg", "dest": "public/images/[topic]/[lesson-id]-hero.webp" }
+]
+```
+Deretter kjører du den helt statiske kommandoen som kun krever én enkelt godkjenning:
+```bash
+node scripts/process-image-jobs.js
+```
+
+**Alternativ B (For enkeltbilder):**
 ```bash
 node scripts/process-generated-image.js /sti/til/generert/bilde.jpg public/images/[topic]/[lesson-id]-hero.webp
 ```
-Dette skriptet konverterer automatisk til WebP, endrer bredden (1600px standard, 2560px for kart), og lagrer filen på rett sted. Siden kommandoen alltid har samme struktur (`node scripts/process-generated-image.js`), slipper du å godkjenne en ny unik kommando per bilde!
+Dette skriptet konverterer automatisk til WebP, endrer bredden (1600px standard, 2560px for kart), og lagrer filen på rett sted. Siden kommandoen alltid har samme struktur (`node scripts/process-generated-image.js`), slipper du å godkjenne en ny unik kommando per bilde dersom sandkassen din støtter prefiks-matching.
 
 ### Kvalitetskontroll etter hvert bilde
 

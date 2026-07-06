@@ -5,7 +5,8 @@ import type { LearningPathTask } from '../../types';
 
 interface CopyTasksButtonProps {
     tasks: (string | LearningPathTask)[];
-    stepNumber: number;
+    /** Læringssti-steg: gir nummerering som "3.1, 3.2". Utelates for flat "1. 2. 3."-liste. */
+    stepNumber?: number;
 }
 
 export const CopyTasksButton: React.FC<CopyTasksButtonProps> = ({ tasks, stepNumber }) => {
@@ -13,7 +14,10 @@ export const CopyTasksButton: React.FC<CopyTasksButtonProps> = ({ tasks, stepNum
 
     const handleCopy = async () => {
         const formattedTasks = tasks
-            .map((t, i) => `${stepNumber}.${i + 1} ${typeof t === 'string' ? t : t.text}`)
+            .map((t, i) => {
+                const prefix = stepNumber != null ? `${stepNumber}.${i + 1}` : `${i + 1}.`;
+                return `${prefix} ${typeof t === 'string' ? t : t.text}`;
+            })
             .join('\n');
         try {
             await navigator.clipboard.writeText(formattedTasks);

@@ -20,6 +20,7 @@ import { MapCarousel } from './MapCarousel';
 
 // Lazy-loaded components for better performance
 // Interactive Content
+const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
 const HelleristningTyder = lazy(() => import('./content/interactive/HelleristningTyder').then(m => ({ default: m.HelleristningTyder })));
 const RidderMotLangbue = lazy(() => import('./content/interactive/RidderMotLangbue').then(m => ({ default: m.RidderMotLangbue })));
 const EratosthenesJorda = lazy(() => import('./content/interactive/EratosthenesJorda').then(m => ({ default: m.EratosthenesJorda })));
@@ -329,6 +330,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     OlympiskFred,
     ParallelleSivilisasjoner,
     Quiz,
+    Oppgaver,
     EICSimulation,
     FactBox,
     TimelineComponent,

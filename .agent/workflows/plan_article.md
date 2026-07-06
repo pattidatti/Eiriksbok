@@ -103,7 +103,8 @@ Referanse-standard: `VikingShip3D.tsx` (dra-bygg med klikk + drag + slider + fle
         - `VirtualPiano`: Playable instrument.
         - `SongwriterStudio` / `BeatBuilder`: Creative music tools.
     - **Assessment:**
-        - `Quiz`: 3-5 questions at the end.
+        - `Oppgaver` (obligatorisk, plassert nest sist — rett før Quiz): felles oppgavesett i bunnen av hver artikkel. Bloom-trapp med tre valgfrie kategorier — `forstaa` (finn fakta i teksten), `reflekter` (forklar/analyser/vurder), `gaaVidere` (diskusjon, skriveoppgave eller koble til nåtid = det ekstra utover teksten). Skriv gode oppgaver forankret i artikkelens innhold; "Gå videre" skal løfte eleven ut over gjengivelse. Komponenten har en innebygd "kopier oppgaver"-knapp. Se JSON-skjema i Phase 2.
+        - `Quiz`: 3-5 questions, ALLER siste blokk (seriens faste sjekkpunkt).
     - **General Rule:** Make a model that underscores what the article is about. Make it interactive, beautiful, fun, and insightful.
     - **Lager du ny komponent?** Følg `/build_interactive`-skillet for designprinsipper og teknisk implementasjon.
 
@@ -126,6 +127,19 @@ Focus on the "Bones" of the JSON structure.
 - **No Markdown Bolding:** Never use `**text**` for emphasis. Use the concept system.
 - **Cross-linking:** Vev 2-4 naturlige innlenker inn i brødteksten med `[Link Text](/subject/topic/article-id)` der andre temaer nevnes. Dette er måten tverrfaglig kobling gjøres på — ikke en egen komponent.
 - **Lists:** Use `{ "type": "list", "items": [...] }`. NEVER use markdown `-` lists.
+- **Avslutning (obligatorisk rekkefølge):** Artikkelen avsluttes med en `Oppgaver`-blokk nest sist, og deretter `Quiz` som **ALLER siste blokk** (Quiz forblir seriens faste avslutning). `Oppgaver` er et felles oppgavesett (Bloom-trapp) som skal ligge like over Quiz på hver artikkel. Skjema:
+  ```json
+  {
+    "type": "component",
+    "name": "Oppgaver",
+    "props": {
+      "forstaa":   ["Finn-fakta-oppgave 1", "Finn-fakta-oppgave 2"],
+      "reflekter": ["Analyser/vurder-oppgave 1", "Analyser/vurder-oppgave 2"],
+      "gaaVidere": ["Diskusjon/skriv/koble-til-nåtid 1", "..."]
+    }
+  }
+  ```
+  Alle tre kategoriene er valgfrie (tomme utelates), men sikt på 3-4 i `forstaa`, 3-4 i `reflekter` og 2-3 i `gaaVidere`. Oppgavetekst kan inneholde innlenker (`[tekst](/sti)`). Kategoriene rendres med farge, ikon og fortløpende nummerering av komponenten — skriv bare selve oppgaveteksten.
 - **Bilder (obligatorisk):** Artikkelen MÅ ha `"heroImage": "/images/placeholder.webp"` på toppnivå, og 3 inline bildebokser fordelt i content-arrayen. Eksakte plasseringer: (1) rett etter åpningsteksten, (2) ved et dramatisk vendepunkt midt i artikkelen, (3) etter siste hoveddel (før Quiz). `alt`-teksten (5-10 ord, norsk) beskriver konkret hva bildet skal vise — den brukes av bildegenererings-workflowen. Eksempel:
   ```json
   { "type": "image", "src": "/images/placeholder.webp", "alt": "Norske vikingskip i havn, 900-tallet", "caption": "Langskip brukt på raids" }
@@ -160,6 +174,7 @@ Bilder genereres etterpå i Antigravity med workflowen `generate_article_images.
 - [ ] Concepts are clickable and show in sidebar.
 - [ ] Timeline events appear correctly.
 - [ ] Images load without errors.
+- [ ] Artikkelen har `Oppgaver` (Forstå/Reflekter/Gå videre) nest sist, og `Quiz` som aller siste blokk.
 - **Data Synchronization:**
     - [ ] Run `node scripts/scan-concepts.js` to update the global glossary and people records.
 

@@ -394,6 +394,7 @@ Interactive components in articles are referenced by string name in JSON and res
 | `BiasLens` | Perspective/source criticism |
 | `MapCarousel` | Historical map lightbox |
 | `Quiz` | Inline quizzes |
+| `Oppgaver` | Felles oppgavesett nederst i artikkelen (Bloom-trapp: Forstå/Reflekter/Gå videre) med "kopier oppgaver"-knapp — plasseres rett før Quiz |
 | `TimelineComponent` | Compact inline timeline |
 | `FactBox` | Info callout box |
 | `QuoteBlock` | Styled quote |
