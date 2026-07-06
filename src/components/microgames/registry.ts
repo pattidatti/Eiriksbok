@@ -116,6 +116,7 @@ const Gasskranen3D = lazy(() => import('./Gasskranen3D'));
 const Gjeldshavna3D = lazy(() => import('./Gjeldshavna3D'));
 const ImperiumSoyler = lazy(() => import('./ImperiumSoyler'));
 const HimmelensMandat3D = lazy(() => import('./HimmelensMandat3D'));
+const VendMotMekka3D = lazy(() => import('./VendMotMekka3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'himmelens-mandat-3d': {
@@ -1116,6 +1117,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./Gjeldshavna3D'),
         Component: Gjeldshavna3D as never,
+    },
+    'vend-mot-mekka': {
+        id: 'vend-mot-mekka',
+        title: 'Vend mot Mekka',
+        description:
+            'Dra bønneteppet ditt rundt til pilen peker mot Kaba, det svarte huset i Mekka. To andre bedende står allerede vendt mot samme punkt fra hver sin kant, så du ser at alle retningene møtes i Mekka. Lyspæren: uansett hvor i verden en muslim er, vender hen seg mot det samme punktet når hen ber. Retningen kalles qibla, og den binder over en milliard mennesker sammen.',
+        estimatedSeconds: 110,
+        loader: () => import('./VendMotMekka3D'),
+        Component: VendMotMekka3D as never,
     },
 };
 

@@ -1,5 +1,5 @@
 {
-  "buildId": 1783215051705,
+  "buildId": 1783301316925,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2184,6 +2184,9 @@
     "islam-hellige-tekster": [
       "content/krle/religion/islam/hellige-tekster/artikkel.json"
     ],
+    "islam-intro": [
+      "content/krle/religion/islam/intro/artikkel.json"
+    ],
     "islam-overgangsriter": [
       "content/krle/religion/islam/overgangsriter/artikkel.json"
     ],
@@ -4253,6 +4256,7 @@
     "krle/religion/islam/grunnleggere": "content/krle/religion/islam/grunnleggere/artikkel.json",
     "krle/religion/islam/gudsbilde": "content/krle/religion/islam/gudsbilde/artikkel.json",
     "krle/religion/islam/hellige-tekster": "content/krle/religion/islam/hellige-tekster/artikkel.json",
+    "krle/religion/islam/intro": "content/krle/religion/islam/intro/artikkel.json",
     "krle/religion/islam/overgangsriter": "content/krle/religion/islam/overgangsriter/artikkel.json",
     "krle/religion/islam/sentrale-trekk": "content/krle/religion/islam/sentrale-trekk/artikkel.json",
     "krle/religion/islam/skapelse": "content/krle/religion/islam/skapelse/artikkel.json",

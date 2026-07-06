@@ -292,6 +292,7 @@ const DigitalsporProfileren = lazy(() => import('./content/interactive/Digitalsp
 const Selvfolelsensfundament = lazy(() => import('./content/interactive/Selvfolelsensfundament').then(m => ({ default: m.Selvfolelsensfundament })));
 const NordMotSor = lazy(() => import('./content/interactive/NordMotSor').then(m => ({ default: m.NordMotSor })));
 const KristendomsGrenerUtforsker = lazy(() => import('./content/interactive/KristendomsGrenerUtforsker').then(m => ({ default: m.KristendomsGrenerUtforsker })));
+const IslamsFemSoyler = lazy(() => import('./content/interactive/IslamsFemSoyler').then(m => ({ default: m.IslamsFemSoyler })));
 const BritPilarer = lazy(() => import('./content/interactive/BritPilarer').then(m => ({ default: m.BritPilarer })));
 const DharmahjuletUtforsker = lazy(() => import('./content/interactive/DharmahjuletUtforsker').then(m => ({ default: m.DharmahjuletUtforsker })));
 const AttedeltVeiDilemma = lazy(() => import('./content/interactive/AttedeltVeiDilemma').then(m => ({ default: m.AttedeltVeiDilemma })));
@@ -614,6 +615,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     EngasjementsMaskinen,
     ArgumentBroen,
     KristendomsGrenerUtforsker,
+    IslamsFemSoyler,
     BritPilarer,
     DharmahjuletUtforsker,
     AttedeltVeiDilemma,

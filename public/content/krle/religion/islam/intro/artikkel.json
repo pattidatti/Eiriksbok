@@ -1,0 +1,216 @@
+{
+    "id": "intro",
+    "title": "Introduksjon til Islam",
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "islam",
+    "dimension": "doctrinal",
+    "comparison_tags": ["sentrale_trekk"],
+    "year": "Fra 610 e.Kr.",
+    "category": "Islam",
+    "readTime": "10 min lesning",
+    "createdDate": "2026-07-06T00:00:00Z",
+    "lastUpdated": "2026-07-06T00:00:00Z",
+    "heroImage": "/images/krle/religion/islam_hero.webp",
+    "details": [
+        "Islam betyr å gi seg over til én Gud, og en muslim er en som gjør nettopp det",
+        "Muhammad regnes som den siste profeten, og Koranen er islams hellige bok",
+        "De fem søylene er handlingene som former hverdagen til en muslim"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Fem ganger hver dag lyder et rop fra minareten på en moské. Det kalles bønneropet, og det minner muslimer om at det er tid for å be. I dag følger nesten to milliarder mennesker denne kallelsen. Det er omtrent én av fire mennesker på jorda. Islam er verdens nest største religion, og den vokser raskt. Men hva tror en muslim egentlig på, og hvor kommer denne religionen fra?"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Minaret på en moske ved soloppgang med bonneropet",
+            "caption": "Fra minareten ropes det til bønn fem ganger om dagen."
+        },
+        {
+            "type": "header",
+            "text": "Hva betyr ordet islam?"
+        },
+        {
+            "type": "text",
+            "content": "Ordet islam er arabisk og betyr å gi seg over eller å overgi seg. En muslim er altså en som gir seg over til Gud og stoler helt på ham. Ordet henger tett sammen med det arabiske ordet salam, som betyr fred. Tanken er at et menneske finner ro og fred når det slutter å kjempe imot og i stedet lever slik Gud vil. For en muslim er ikke troen bare noe man tenker. Den er noe man gjør, hver eneste dag."
+        },
+        {
+            "type": "header",
+            "text": "Én Gud og ingen andre"
+        },
+        {
+            "type": "text",
+            "content": "Kjernen i islam er så enkel at den kan sies med noen få ord: Det finnes bare én Gud. På arabisk heter Gud Allah, som rett og slett er det arabiske ordet for Gud. Det er den samme Gud som jøder og kristne tror på. Denne troen på at Gud er én og udelt, kaller vi tawhid. Den er selve grunnvollen i islam."
+        },
+        {
+            "type": "text",
+            "content": "For en muslim er Gud så stor og annerledes at ingen kan tegne eller lage et bilde av ham. Derfor finner du aldri bilder av Gud i en moské. I stedet pynter muslimene med vakre mønstre og med selve skriften fra den hellige boka. Å si at noe annet enn Gud er like stort som Gud, er den alvorligste feilen en muslim kan gjøre."
+        },
+        {
+            "type": "header",
+            "text": "Muhammad - den siste profeten"
+        },
+        {
+            "type": "text",
+            "content": "For rundt 1400 år siden levde en mann ved navn Muhammad i byen Mekka, som ligger i dagens Saudi-Arabia. Muslimer tror at han rundt år 610 begynte å få budskap fra Gud, gitt til ham gjennom engelen Gabriel. Disse budskapene fortalte at det bare finnes én Gud, og at menneskene må leve rettferdig og hjelpe de fattige. Du kan lese mer om livet hans i artikkelen om [Muhammad](/krle/religion/islam/grunnleggere)."
+        },
+        {
+            "type": "text",
+            "content": "Muslimer ser på Muhammad som den siste i en lang rekke profeter. En profet er et menneske Gud har valgt til å bære fram budskapet sitt. Muslimer regner også Abraham, Moses og Jesus som profeter. Men Muhammad er den siste, og derfor kalles han seglet på profetene. Etter ham kom det ingen ny profet. Muslimer ber ikke til Muhammad. De ber bare til Gud, men de prøver å leve slik Muhammad levde."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Pilegrimer i hvite klaer samlet rundt Kaba i Mekka",
+            "caption": "Rundt Kaba i Mekka samles muslimer fra hele verden."
+        },
+        {
+            "type": "header",
+            "text": "Koranen - Guds ord"
+        },
+        {
+            "type": "text",
+            "content": "Budskapene Muhammad fikk, ble senere skrevet ned i islams hellige bok, [Koranen](/krle/religion/islam/hellige-tekster). For muslimer er Koranen ikke skrevet av mennesker. De tror den er Guds egne ord, gitt på arabisk. Derfor lærer mange muslimer å lese Koranen på arabisk, selv om de snakker et helt annet språk til daglig."
+        },
+        {
+            "type": "text",
+            "content": "Koranen blir ofte lest høyt med en vakker, syngende stemme. Noen muslimer kan hele boka utenat. Å kunne resitere Koranen er noe mange er stolte av. Ved siden av Koranen støtter muslimer seg også på fortellinger om hva Muhammad sa og gjorde. Disse fortellingene hjelper dem å forstå hvordan de skal leve."
+        },
+        {
+            "type": "header",
+            "text": "De fem søylene"
+        },
+        {
+            "type": "text",
+            "content": "Hvordan lever en muslim ut troen sin i praksis? Svaret er de fem søylene. Det er fem plikter som til sammen bærer et muslimsk liv, på samme måte som fem søyler kan bære taket på et hus. De handler ikke om vanskelige tanker, men om konkrete handlinger som gjentar seg. Reis søylene selv i verktøyet under, så ser du hva hver av dem betyr."
+        },
+        {
+            "type": "component",
+            "name": "IslamsFemSoyler",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Bønnen og retningen mot Mekka"
+        },
+        {
+            "type": "text",
+            "content": "Av de fem søylene er [bønnen](/krle/religion/islam/bonn) den som fyller hverdagen mest. En muslim ber fem faste ganger hver dag: tidlig om morgenen, midt på dagen, om ettermiddagen, ved solnedgang og om kvelden. Før bønnen vasker man hendene, ansiktet og føttene, slik at man er ren når man møter Gud."
+        },
+        {
+            "type": "text",
+            "content": "Uansett hvor i verden en muslim ber, vender hen seg mot det samme punktet: Kaba, det svarte, firkantede huset i Mekka. Denne retningen kalles qibla. En muslim i Norge, en i Indonesia og en i Sør-Afrika vender seg altså mot nøyaktig samme sted. Prøv det selv i mikrospillet: vri bønneteppet til det peker rett mot Kaba."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "vend-mot-mekka"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Sunni og sjia"
+        },
+        {
+            "type": "text",
+            "content": "Da Muhammad døde, ble muslimene uenige om hvem som skulle lede dem videre. Den ene gruppen mente at lederen kunne velges blant de dyktigste. De ble kalt sunnimuslimer, og de er i klart flertall i verden i dag. Den andre gruppen mente at lederen måtte komme fra Muhammads egen familie. De ble kalt sjiamuslimer. Begge gruppene tror på den samme Gud, den samme Koranen og de samme fem søylene. Uenigheten handler mest om ledelse og historie."
+        },
+        {
+            "type": "header",
+            "text": "To store høytider"
+        },
+        {
+            "type": "text",
+            "content": "Muslimer har to store høytider i året. Den første heter id al-fitr og feires når fastemåneden ramadan er over. Da samles familien til god mat, nye klær og gaver, litt slik mange feirer jul. Den andre heter id al-adha og faller sammen med den store pilegrimsreisen til Mekka. På begge høytidene er det vanlig å gi noe til dem som har lite, slik at også de kan feire. Høytidene minner muslimer om at troen ikke bare handler om regler, men også om glede og fellesskap."
+        },
+        {
+            "type": "header",
+            "text": "Islam i Norge"
+        },
+        {
+            "type": "text",
+            "content": "Islam er ikke bare noe som skjer langt borte. Rundt 200 000 mennesker i Norge har bakgrunn fra islam, og dermed er islam den nest største religionen i landet etter [kristendommen](/krle/religion/kristendom/intro). Mange norske byer har egne moskeer der muslimer møtes til fredagsbønn og til fest ved høytider."
+        },
+        {
+            "type": "text",
+            "content": "For de fleste muslimske ungdommer i Norge er troen en naturlig del av livet, side om side med skole, venner og fritidsaktiviteter. Noen ber fem ganger om dagen, andre sjeldnere. Noen faster hele ramadan, andre bare deler av den. Akkurat som i alle andre religioner er det stor forskjell på hvor mye den enkelte følger reglene."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdommer utenfor en moske i en norsk by",
+            "caption": "Islam er en del av hverdagen for mange unge i Norge."
+        },
+        {
+            "type": "header",
+            "text": "Kort oppsummert"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Islam betyr å gi seg over til Gud, og en muslim er en som gjør det",
+                "Tawhid er troen på at det bare finnes én Gud, som muslimer kaller Allah",
+                "Muhammad regnes som den siste profeten, og Koranen er islams hellige bok",
+                "De fem søylene er handlingene som former hverdagen til en muslim",
+                "Islam er den nest største religionen både i verden og i Norge"
+            ]
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr ordet islam?",
+                        "options": ["Å kjempe", "Å gi seg over til Gud", "Å be fem ganger", "Å reise til Mekka"],
+                        "correctAnswer": 1,
+                        "explanation": "Islam er arabisk og betyr å gi seg over eller overgi seg til Gud. En muslim er en som gjør nettopp det."
+                    },
+                    {
+                        "question": "Hva kaller vi troen på at det bare finnes én Gud?",
+                        "options": ["Qibla", "Ramadan", "Tawhid", "Zakat"],
+                        "correctAnswer": 2,
+                        "explanation": "Tawhid er troen på at Gud er én og udelt. Det er selve grunnvollen i islam."
+                    },
+                    {
+                        "question": "Hvorfor kalles Muhammad seglet på profetene?",
+                        "options": [
+                            "Fordi han var den første profeten",
+                            "Fordi han skrev Koranen selv",
+                            "Fordi han var den siste profeten",
+                            "Fordi muslimer ber til ham"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Muslimer tror Muhammad var den siste i rekken av profeter. Etter ham kom det ingen ny profet."
+                    },
+                    {
+                        "question": "Hva er qibla?",
+                        "options": [
+                            "Retningen mot Mekka som muslimer ber mot",
+                            "Navnet på den hellige boka",
+                            "En av de fem søylene",
+                            "Måneden man faster i"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Qibla er retningen mot Kaba i Mekka. Uansett hvor en muslim er, vender hen seg mot dette punktet når hen ber."
+                    },
+                    {
+                        "question": "Hvilken plass har islam i Norge i dag?",
+                        "options": [
+                            "Den er forbudt",
+                            "Den er den største religionen",
+                            "Den er den nest største religionen",
+                            "Nesten ingen i Norge er muslimer"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Rundt 200 000 mennesker i Norge har bakgrunn fra islam. Det gjør islam til den nest største religionen etter kristendommen."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
