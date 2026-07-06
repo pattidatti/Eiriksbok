@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useManifest } from '../hooks/useManifest';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { useProgressStore, buildMetrics, isStreakAlive } from '../features/progress/useProgressStore';
+import { streakMultiplier } from '../features/progress/streak';
 import { useReviewStore } from '../stores/useReviewStore';
 import { useLearningPathProfile } from '../stores/useLearningPathProfile';
 import { computeMastery } from '../features/progress/mastery';
@@ -13,6 +14,7 @@ import { generateDailyGoals, goalProgress } from '../features/progress/goals';
 import { getAvatar } from '../features/progress/avatars';
 import { todayLocal } from '../utils/reviewScheduler';
 import { HeroCard } from '../features/progress/components/HeroCard';
+import type { PrimaryAction } from '../features/progress/components/HeroCard';
 import { LevelCard } from '../features/progress/components/LevelCard';
 import { SubjectRings } from '../features/progress/components/SubjectRings';
 import { ContinueSection } from '../features/progress/components/ContinueSection';
@@ -82,6 +84,8 @@ export const MyLearningPage = () => {
     const bestScores = useProgressStore((s) => s.bestScores);
     const goals = useProgressStore((s) => s.goals);
     const setDailyGoals = useProgressStore((s) => s.setDailyGoals);
+    const lastGoalBonusDay = useProgressStore((s) => s.lastGoalBonusDay);
+    const awardDailyGoalBonus = useProgressStore((s) => s.awardDailyGoalBonus);
 
     const dueCount = useReviewStore((s) => s.dueCount(today));
     const hasSessionToday = useReviewStore((s) => s.hasSessionToday(today));
@@ -90,8 +94,8 @@ export const MyLearningPage = () => {
     const [profileOpen, setProfileOpen] = useState(false);
 
     const mastery = useMemo(
-        () => (manifest ? computeMastery(manifest, firstCompletions, bestScores) : []),
-        [manifest, firstCompletions, bestScores]
+        () => (manifest ? computeMastery(manifest, firstCompletions, bestScores, events) : []),
+        [manifest, firstCompletions, bestScores, events]
     );
 
     const metrics = useMemo(
@@ -217,6 +221,37 @@ export const MyLearningPage = () => {
         [goals, today, todaysEvents]
     );
 
+    // Streak-tall til hero: multiplikatoren gjelder bare en levende streak.
+    const streakAlive = isStreakAlive(streak, today);
+    const multiplier = streakMultiplier(streakAlive ? streak.current : 0);
+
+    // Det viktigste neste steget løftes ut som stor knapp øverst; resten blir
+    // liggende i «Fortsett der du slapp». Prioritet: sti > artikkel > repetisjon > svakt emne.
+    const { primaryAction, restRecommendations } = useMemo(() => {
+        const priority = ['path', 'article', 'review', 'weak'];
+        const primary =
+            [...recommendations].sort(
+                (a, b) => priority.indexOf(a.icon) - priority.indexOf(b.icon)
+            )[0] ?? null;
+        const action: PrimaryAction | null = primary
+            ? { title: primary.title, subtitle: primary.subtitle, link: primary.link }
+            : null;
+        return {
+            primaryAction: action,
+            restRecommendations: primary
+                ? recommendations.filter((r) => r.id !== primary.id)
+                : recommendations,
+        };
+    }, [recommendations]);
+
+    // Dagsbonus: når alle dagens mål er fullført, gi engangsbonus (idempotent).
+    useEffect(() => {
+        if (goalsWithProgress.length === 0) return;
+        if (lastGoalBonusDay === today) return;
+        const allDone = goalsWithProgress.every(({ goal, progress }) => progress >= goal.target);
+        if (allDone) awardDailyGoalBonus(today);
+    }, [goalsWithProgress, lastGoalBonusDay, today, awardDailyGoalBonus]);
+
     return (
         <div className="pb-16">
             <div className="mb-6">
@@ -233,8 +268,11 @@ export const MyLearningPage = () => {
                     nickname={profile.nickname}
                     avatarEmoji={getAvatar(profile.avatarId).emoji}
                     streak={streak.current}
-                    streakAlive={isStreakAlive(streak, today)}
+                    streakAlive={streakAlive}
                     bestStreak={streak.best}
+                    freezes={streak.freezes ?? 0}
+                    multiplier={multiplier}
+                    primaryAction={primaryAction}
                     goals={goalsWithProgress}
                     onEditProfile={() => setProfileOpen(true)}
                 />
@@ -245,7 +283,7 @@ export const MyLearningPage = () => {
                         <SyncCard />
                     </div>
                     <div className="space-y-4 lg:col-span-2">
-                        <ContinueSection items={recommendations} />
+                        <ContinueSection items={restRecommendations} />
                         <SubjectRings mastery={mastery} />
                     </div>
                 </div>

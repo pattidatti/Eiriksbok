@@ -14,6 +14,7 @@ import { FeedbackWidget } from './FeedbackWidget'; // Added import
 import { ProgressBoot } from '../features/progress/ProgressBoot';
 import { ProgressChip } from '../features/progress/components/ProgressChip';
 import { ProgressToaster } from '../features/progress/components/ProgressToaster';
+import { CelebrationOverlay } from '../features/progress/components/CelebrationOverlay';
 
 export const Layout: React.FC = () => {
     const location = useLocation();
@@ -131,6 +132,7 @@ export const Layout: React.FC = () => {
             <ScrollToTop />
             <ProgressBoot />
             <ProgressToaster />
+            <CelebrationOverlay />
         </div>
     );
 };

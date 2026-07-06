@@ -9,8 +9,12 @@
 //   path-step-completed:<pathId>/<stegId>
 
 import type { Manifest, ManifestSubject, ManifestTopic, TopicTool } from '../../types';
+import type { ActivityEvent } from './types';
 
 export type QualityLevel = 'green' | 'yellow' | 'red';
+
+// Retning på resultatene i et emne over tid. null = for lite data til å si noe.
+export type MasteryTrend = 'up' | 'down' | 'flat' | null;
 
 export interface TopicMastery {
     topicId: string;
@@ -20,6 +24,8 @@ export interface TopicMastery {
     // null = ingen kvalitetsdata (ingen quiz/sti tatt i emnet ennå)
     quality: number | null;
     qualityLevel: QualityLevel | null;
+    // Blir eleven bedre eller dårligere i emnet? Regnet fra hendelsesloggen.
+    trend: MasteryTrend;
 }
 
 export interface SubjectMastery {
@@ -95,10 +101,41 @@ const topicQuality = (
     return scores.reduce((a, b) => a + b, 0) / scores.length;
 };
 
+// Terskel for hva som teller som en reell endring i resultat (7 prosentpoeng).
+const TREND_THRESHOLD = 0.07;
+
+// Blir eleven bedre eller dårligere i et emne? Ser på scorede hendelser
+// (quiz/sti) i emnet, i tidsrekkefølge, og sammenligner siste resultat med
+// snittet av de foregående. Krever minst to datapunkter.
+const topicTrend = (
+    subjectId: string,
+    topicId: string,
+    events: ActivityEvent[]
+): MasteryTrend => {
+    const scored = events
+        .filter((e) => {
+            if (e.score === undefined) return false;
+            const parts = e.activityId.split('/');
+            return parts[0] === subjectId && parts[1] === topicId;
+        })
+        .sort((a, b) => a.at - b.at)
+        .map((e) => e.score as number);
+
+    if (scored.length < 2) return null;
+    const recent = scored[scored.length - 1];
+    const prior = scored.slice(0, -1);
+    const priorAvg = prior.reduce((a, b) => a + b, 0) / prior.length;
+    const diff = recent - priorAvg;
+    if (diff > TREND_THRESHOLD) return 'up';
+    if (diff < -TREND_THRESHOLD) return 'down';
+    return 'flat';
+};
+
 export const computeMastery = (
     manifest: Manifest,
     firstCompletions: Record<string, number>,
-    bestScores: Record<string, number>
+    bestScores: Record<string, number>,
+    events: ActivityEvent[] = []
 ): SubjectMastery[] => {
     const isRead = (path: string): boolean => Boolean(firstCompletions[`article-read:${path}`]);
     const isPathDone = (pathId: string): boolean =>
@@ -116,6 +153,7 @@ export const computeMastery = (
                 completedLessons: completed,
                 quality,
                 qualityLevel: quality === null ? null : qualityLevelFor(quality),
+                trend: topicTrend(subject.id, topic.id, events),
             };
         });
 

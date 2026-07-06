@@ -5,11 +5,14 @@
 
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import { addDays, todayLocal } from '../../utils/reviewScheduler';
+import { todayLocal } from '../../utils/reviewScheduler';
 import { newlyUnlockedTiers, badgeTierKey } from './badges';
-import { levelForXp, repeatBonus, XP_VALUES } from './xp';
+import { levelForXp, repeatBonus, xpValueFor, masteryMultiplier } from './xp';
+import { advanceStreakForEffortDay, streakMultiplier, isStreakAlive } from './streak';
+import { getProgressionConfig } from './progressionConfig';
 import { DEFAULT_AVATAR_ID } from './avatars';
 import { useProgressToasts } from './useProgressToasts';
+import { useCelebration } from './useCelebration';
 import type {
     ActivityEvent,
     ActivityInput,
@@ -45,10 +48,15 @@ export interface ProgressData {
     counters: Record<string, number>;
     goals: { day: string; items: DailyGoal[] } | null;
     checkedGoalIds: string[];
+    // Siste dag ('YYYY-MM-DD') dagsbonusen for «alle mål fullført» ble gitt
+    lastGoalBonusDay: string | null;
     retroDone: boolean;
     sync: SyncState;
     updatedAt: number;
 }
+
+// Re-eksport så eksisterende importer (ProgressChip, MyLearningPage) består.
+export { isStreakAlive } from './streak';
 
 interface ProgressState extends ProgressData {
     recordActivity: (input: ActivityInput) => RecordResult;
@@ -56,6 +64,7 @@ interface ProgressState extends ProgressData {
     setAvatar: (avatarId: string) => void;
     setDailyGoals: (day: string, items: DailyGoal[]) => void;
     toggleGoal: (goalId: string) => void;
+    awardDailyGoalBonus: (day: string) => void;
     applyRetroData: (data: {
         events: ActivityEvent[];
         counters: Record<string, number>;
@@ -71,7 +80,7 @@ interface ProgressState extends ProgressData {
     resetAll: () => void;
 }
 
-const emptyStreak: ProgressStreak = { current: 0, best: 0, lastActiveDay: null };
+const emptyStreak: ProgressStreak = { current: 0, best: 0, lastActiveDay: null, freezes: 0 };
 
 const initialData = (): ProgressData => ({
     profile: { nickname: null, avatarId: DEFAULT_AVATAR_ID },
@@ -86,36 +95,11 @@ const initialData = (): ProgressData => ({
     counters: {},
     goals: null,
     checkedGoalIds: [],
+    lastGoalBonusDay: null,
     retroDone: false,
     sync: { code: null, lastSyncedAt: null },
     updatedAt: 0,
 });
-
-// Samme streak-logikk som review-storen: samme dag = uendret,
-// dagen etter = +1, ellers tilbake til 1
-export const advanceStreak = (streak: ProgressStreak, today: string): ProgressStreak => {
-    const { current, best, lastActiveDay } = streak;
-    let next = current;
-    if (lastActiveDay === null) {
-        next = 1;
-    } else if (lastActiveDay >= today) {
-        next = current;
-    } else if (addDays(lastActiveDay, 1) === today) {
-        next = current + 1;
-    } else {
-        next = 1;
-    }
-    return {
-        current: next,
-        best: Math.max(best, next),
-        lastActiveDay: lastActiveDay && lastActiveDay > today ? lastActiveDay : today,
-    };
-};
-
-// Er streaken fortsatt i live i dag? (aktiv i dag eller i går)
-export const isStreakAlive = (streak: ProgressStreak, today: string): boolean =>
-    streak.lastActiveDay !== null &&
-    (streak.lastActiveDay >= today || addDays(streak.lastActiveDay, 1) === today);
 
 const pruneDayLog = (dayLog: Record<string, DayStats>): Record<string, DayStats> => {
     const days = Object.keys(dayLog);
@@ -177,16 +161,26 @@ export const useProgressStore = create<ProgressState>()(
                 const key = `${input.kind}:${input.activityId}`;
                 const firstTime = !state.firstCompletions[key];
 
-                // XP: full uttelling første gang, ellers liten bonus maks
-                // én gang per dag per aktivitet
-                let xp = 0;
+                // Grunn-XP: full uttelling første gang, ellers liten bonus maks
+                // én gang per dag per aktivitet.
+                let baseXp = 0;
                 let bonusDay = state.lastBonusDay;
                 if (firstTime) {
-                    xp = XP_VALUES[input.kind];
+                    baseXp = xpValueFor(input.kind);
                 } else if (state.lastBonusDay[key] !== today) {
-                    xp = repeatBonus(input.kind);
+                    baseXp = repeatBonus(input.kind);
                     bonusDay = { ...state.lastBonusDay, [key]: today };
                 }
+
+                // Påslag: mestring (gjøre det godt) kun på scorede førstegangs-
+                // fullføringer, og streak (jevn innsats) basert på streaken som
+                // er i live akkurat nå.
+                const masteryMult = firstTime ? masteryMultiplier(input.score) : 1;
+                const aliveStreak = isStreakAlive(state.streak, today)
+                    ? state.streak.current
+                    : 0;
+                const streakMult = streakMultiplier(aliveStreak);
+                const xp = Math.round(baseXp * masteryMult * streakMult);
 
                 const levelBefore = levelForXp(state.totalXp);
                 const totalXp = state.totalXp + xp;
@@ -209,13 +203,22 @@ export const useProgressStore = create<ProgressState>()(
                     }
                 }
 
-                const streak = advanceStreak(state.streak, today);
-
                 const prevDay = state.dayLog[today] ?? { xp: 0, activities: 0 };
+                const dayXpAfter = prevDay.xp + xp;
                 const dayLog = pruneDayLog({
                     ...state.dayLog,
-                    [today]: { xp: prevDay.xp + xp, activities: prevDay.activities + 1 },
+                    [today]: { xp: dayXpAfter, activities: prevDay.activities + 1 },
                 });
+
+                // Streaken rykker fram først når dagen krysser innsats-terskelen -
+                // ikke ved hver bitte lille handling. Da betyr en streak faktisk noe.
+                const { minXp } = getProgressionConfig().streak;
+                const alreadyCountedToday = state.streak.lastActiveDay === today;
+                const streakAdvance =
+                    !alreadyCountedToday && dayXpAfter >= minXp
+                        ? advanceStreakForEffortDay(state.streak, today)
+                        : null;
+                const streak = streakAdvance ? streakAdvance.streak : state.streak;
 
                 const bestScores =
                     input.score !== undefined &&
@@ -265,11 +268,27 @@ export const useProgressStore = create<ProgressState>()(
                     unlockedBadges: unlocked,
                 };
 
-                // Toasts: XP først, deretter level-up og badges
+                // Belønning: små ting blir toasts, de store øyeblikkene blir en
+                // fullskjerms feiringsseremoni.
                 const toast = useProgressToasts.getState().push;
+                const celebrate = useCelebration.getState().celebrate;
                 if (xp > 0) toast({ type: 'xp', xp, title: input.title });
-                if (result.leveledUpTo) toast({ type: 'levelup', level: result.leveledUpTo });
-                for (const u of unlocked) toast({ type: 'badge', badge: u.badge, tier: u.tier });
+                if (streakAdvance?.frozen) {
+                    toast({
+                        type: 'info',
+                        emoji: '❄️',
+                        title: 'En fryser reddet streaken din!',
+                        subtitle: 'Du var borte en dag, men streaken lever videre.',
+                    });
+                }
+                if (result.leveledUpTo) celebrate({ type: 'levelup', level: result.leveledUpTo });
+                for (const u of unlocked) {
+                    if (u.tier === 'gull') {
+                        celebrate({ type: 'badge-gull', title: u.badge.title, emoji: u.badge.emoji });
+                    } else {
+                        toast({ type: 'badge', badge: u.badge, tier: u.tier });
+                    }
+                }
 
                 return result;
             },
@@ -296,6 +315,51 @@ export const useProgressStore = create<ProgressState>()(
                         : [...state.checkedGoalIds, goalId],
                     updatedAt: Date.now(),
                 })),
+
+            // Engangsbonus når alle dagens mål er huket av. Idempotent per dag:
+            // kalles fritt fra siden, men gir bare uttelling én gang.
+            awardDailyGoalBonus: (day) => {
+                const state = get();
+                if (state.lastGoalBonusDay === day) return;
+                const now = Date.now();
+                const xp = getProgressionConfig().dailyGoalBonusXp;
+
+                const levelBefore = levelForXp(state.totalXp);
+                const totalXp = state.totalXp + xp;
+                const levelAfter = levelForXp(totalXp);
+
+                const prevDay = state.dayLog[day] ?? { xp: 0, activities: 0 };
+                const dayLog = pruneDayLog({
+                    ...state.dayLog,
+                    [day]: { xp: prevDay.xp + xp, activities: prevDay.activities },
+                });
+
+                const metrics = buildMetrics({
+                    counters: state.counters,
+                    totalXp,
+                    streak: state.streak,
+                    dayLog,
+                });
+                const unlocked = newlyUnlockedTiers(state.badges, metrics);
+                const badges = { ...state.badges };
+                for (const { badge, tier } of unlocked) {
+                    badges[badgeTierKey(badge.id, tier)] = now;
+                }
+
+                set({ totalXp, dayLog, badges, lastGoalBonusDay: day, updatedAt: now });
+
+                const celebrate = useCelebration.getState().celebrate;
+                celebrate({ type: 'goals', xp });
+                if (levelAfter > levelBefore) celebrate({ type: 'levelup', level: levelAfter });
+                const toast = useProgressToasts.getState().push;
+                for (const u of unlocked) {
+                    if (u.tier === 'gull') {
+                        celebrate({ type: 'badge-gull', title: u.badge.title, emoji: u.badge.emoji });
+                    } else {
+                        toast({ type: 'badge', badge: u.badge, tier: u.tier });
+                    }
+                }
+            },
 
             // Engangsimport av gammel fremdrift (retroactive.ts bygger dataene).
             // Låser opp badges stille - én samle-toast pushes av kalleren.
@@ -367,6 +431,7 @@ export const serializeProgress = (): ProgressData => {
         counters: s.counters,
         goals: s.goals,
         checkedGoalIds: s.checkedGoalIds,
+        lastGoalBonusDay: s.lastGoalBonusDay,
         retroDone: s.retroDone,
         sync: s.sync,
         updatedAt: s.updatedAt,

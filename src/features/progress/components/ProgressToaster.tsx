@@ -44,6 +44,18 @@ const ToastCard = ({ toast }: { toast: ProgressToast }) => {
                 </div>
             </div>
         );
+    } else if (toast.type === 'info') {
+        content = (
+            <div className="flex items-center gap-3">
+                <span className="text-2xl">{toast.emoji}</span>
+                <div>
+                    <p className="font-display font-bold text-slate-900">{toast.title}</p>
+                    {toast.subtitle && (
+                        <p className="text-xs text-slate-500 line-clamp-1">{toast.subtitle}</p>
+                    )}
+                </div>
+            </div>
+        );
     } else if (toast.type === 'badge') {
         content = (
             <div className="flex items-center gap-3">

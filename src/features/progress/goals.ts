@@ -1,8 +1,10 @@
 // Dagens mål: 2-3 auto-genererte mål fra elevens egne data.
 // Genereres én gang per dag (lagres i progresjonsstoren) og hukes av
-// automatisk når dagens hendelser matcher målet.
+// automatisk når dagens hendelser matcher målet. Noen mål er progressive
+// (target > 1), f.eks. «Tjen 80 XP i dag».
 
 import type { ActivityEvent, DailyGoal, GoalKind } from './types';
+import { getProgressionConfig } from './progressionConfig';
 
 export interface GoalInputs {
     dueCount: number;
@@ -16,10 +18,10 @@ export interface GoalInputs {
 }
 
 export const generateDailyGoals = (inputs: GoalInputs): DailyGoal[] => {
-    const goals: DailyGoal[] = [];
+    const core: DailyGoal[] = [];
 
     if (inputs.dueCount > 0 && !inputs.hasSessionToday) {
-        goals.push({
+        core.push({
             id: 'review',
             kind: 'review',
             label: `Fullfør dagens økt (${inputs.dueCount} kort venter)`,
@@ -29,7 +31,7 @@ export const generateDailyGoals = (inputs: GoalInputs): DailyGoal[] => {
     }
 
     if (inputs.continuePath) {
-        goals.push({
+        core.push({
             id: 'path-step',
             kind: 'path-step',
             label: `Ta et steg videre i «${inputs.continuePath.title}»`,
@@ -37,7 +39,7 @@ export const generateDailyGoals = (inputs: GoalInputs): DailyGoal[] => {
             target: 1,
         });
     } else if (inputs.nextArticle) {
-        goals.push({
+        core.push({
             id: 'article',
             kind: 'article',
             label: `Les «${inputs.nextArticle.title}»`,
@@ -47,7 +49,7 @@ export const generateDailyGoals = (inputs: GoalInputs): DailyGoal[] => {
     }
 
     if (inputs.weakTopic) {
-        goals.push({
+        core.push({
             id: 'quiz',
             kind: 'quiz',
             label: `Øv på ${inputs.weakTopic.title} - ta en quiz`,
@@ -56,9 +58,9 @@ export const generateDailyGoals = (inputs: GoalInputs): DailyGoal[] => {
         });
     }
 
-    // Fyll opp til minst to mål med en generell øvings-oppfordring
-    if (goals.length < 2) {
-        goals.push({
+    // Fyll opp med en generell øvings-oppfordring hvis vi mangler et konkret mål
+    if (core.length === 0) {
+        core.push({
             id: 'practice',
             kind: 'practice',
             label: 'Fullfør en øving eller et spill',
@@ -66,17 +68,20 @@ export const generateDailyGoals = (inputs: GoalInputs): DailyGoal[] => {
             target: 1,
         });
     }
-    if (goals.length < 2) {
-        goals.push({
-            id: 'article-any',
-            kind: 'article',
-            label: 'Les en artikkel',
-            link: '/sok',
-            target: 1,
-        });
-    }
 
-    return goals.slice(0, 3);
+    // La alltid plass til XP-strekkmålet, som binder dagen sammen og utløser
+    // dagsbonusen når alt er huket av.
+    const xpTarget = getProgressionConfig().dailyXpTarget;
+    const goals = core.slice(0, 2);
+    goals.push({
+        id: 'xp-stretch',
+        kind: 'xp',
+        label: `Tjen ${xpTarget} XP i dag`,
+        link: '/oving',
+        target: xpTarget,
+    });
+
+    return goals;
 };
 
 const GOAL_EVENT_KINDS: Record<GoalKind, string[]> = {
@@ -92,13 +97,16 @@ const GOAL_EVENT_KINDS: Record<GoalKind, string[]> = {
         'detective-solved',
         'scenario-completed',
     ],
+    // 'xp' måles ikke på antall hendelser, men på dagens samlede XP (se under).
+    xp: [],
 };
 
 // Fremdrift mot et mål regnet fra dagens hendelser
 export const goalProgress = (goal: DailyGoal, todaysEvents: ActivityEvent[]): number => {
+    if (goal.kind === 'xp') {
+        const xp = todaysEvents.reduce((sum, e) => sum + e.xp, 0);
+        return Math.min(goal.target, xp);
+    }
     const kinds = GOAL_EVENT_KINDS[goal.kind];
-    return Math.min(
-        goal.target,
-        todaysEvents.filter((e) => kinds.includes(e.kind)).length
-    );
+    return Math.min(goal.target, todaysEvents.filter((e) => kinds.includes(e.kind)).length);
 };

@@ -46,6 +46,9 @@ export interface ProgressStreak {
     current: number;
     best: number;
     lastActiveDay: string | null;
+    // «Fryser» som dekker korte fravær så en streak ikke ryker på én glipp.
+    // Kan mangle i gammel persistert data - les alltid med `?? 0`.
+    freezes?: number;
 }
 
 // Aggregert per dag - grunnlag for aktivitetskalender og grafer
@@ -54,7 +57,7 @@ export interface DayStats {
     activities: number;
 }
 
-export type GoalKind = 'review' | 'article' | 'quiz' | 'path-step' | 'practice';
+export type GoalKind = 'review' | 'article' | 'quiz' | 'path-step' | 'practice' | 'xp';
 
 export interface DailyGoal {
     id: string;

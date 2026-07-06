@@ -1,0 +1,30 @@
+{
+    "_kommentar": "Fjernstyrbar XP-økonomi for «Min læring». Endre verdier her for å justere balanse eller kjøre kampanjer (f.eks. dobbel XP) uten ny deploy. Manglende felt faller tilbake til innebygde standardverdier i progressionConfig.ts.",
+    "xpValues": {
+        "article-read": 40,
+        "quiz-completed": 30,
+        "path-step-completed": 25,
+        "path-completed": 150,
+        "review-session": 30,
+        "minigame-played": 60,
+        "detective-solved": 100,
+        "scenario-completed": 80,
+        "practice-game": 20,
+        "virkemiddel-exercise": 10,
+        "microgame-played": 15
+    },
+    "repeatBonusFactor": 0.15,
+    "repeatBonusMin": 5,
+    "levelBase": 100,
+    "levelStep": 50,
+    "masteryBonusMax": 0.5,
+    "dailyGoalBonusXp": 50,
+    "dailyXpTarget": 80,
+    "streak": {
+        "minXp": 30,
+        "multiplierPerDay": 0.05,
+        "multiplierCapDays": 10,
+        "freezeCap": 2,
+        "freezeEveryDays": 7
+    }
+}

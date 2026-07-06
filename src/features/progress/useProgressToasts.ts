@@ -9,6 +9,7 @@ export type ProgressToast =
     | { id: number; type: 'xp'; xp: number; title?: string }
     | { id: number; type: 'levelup'; level: number }
     | { id: number; type: 'badge'; badge: BadgeDef; tier: BadgeTier }
+    | { id: number; type: 'info'; emoji: string; title: string; subtitle?: string }
     | { id: number; type: 'retro'; xp: number; badgeCount: number };
 
 // Omit må distribueres over union-typen, ellers kollapser feltene

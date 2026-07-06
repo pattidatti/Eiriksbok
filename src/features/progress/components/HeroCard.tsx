@@ -1,10 +1,17 @@
-// Hero-seksjonen på «Min læring»: streak-flamme, hilsen med avatar,
-// og dagens auto-genererte mål med avhuking fra dagens hendelser.
+// Hero-seksjonen på «Min læring»: streak-flamme med XP-multiplikator og
+// fryser, en stor «neste steg»-knapp, og dagens auto-genererte mål med
+// avhuking fra dagens hendelser.
 
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Check, ChevronRight, Pencil } from 'lucide-react';
+import { ArrowRight, Check, ChevronRight, Pencil, Snowflake } from 'lucide-react';
 import type { DailyGoal } from '../types';
+
+export interface PrimaryAction {
+    title: string;
+    subtitle: string;
+    link: string;
+}
 
 interface HeroCardProps {
     nickname: string | null;
@@ -12,6 +19,9 @@ interface HeroCardProps {
     streak: number;
     streakAlive: boolean;
     bestStreak: number;
+    freezes: number;
+    multiplier: number;
+    primaryAction: PrimaryAction | null;
     goals: { goal: DailyGoal; progress: number }[];
     onEditProfile: () => void;
 }
@@ -22,10 +32,15 @@ export const HeroCard = ({
     streak,
     streakAlive,
     bestStreak,
+    freezes,
+    multiplier,
+    primaryAction,
     goals,
     onEditProfile,
 }: HeroCardProps) => {
     const shownStreak = streakAlive ? streak : 0;
+    // Vis multiplikatoren bare når den faktisk gir noe (levende streak > 0).
+    const showMultiplier = shownStreak > 0 && multiplier > 1;
     return (
         <div className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 rounded-3xl p-6 md:p-8 shadow-xl shadow-indigo-500/20 overflow-hidden">
             {/* Bakgrunns-orbs */}
@@ -55,10 +70,26 @@ export const HeroCard = ({
                                 Rekord: {bestStreak}
                             </p>
                         )}
+                        <div className="flex items-center justify-center gap-1.5 mt-1.5">
+                            {showMultiplier && (
+                                <span className="inline-flex items-center rounded-full bg-amber-300/90 px-2 py-0.5 text-[11px] font-bold text-amber-900">
+                                    ×{multiplier.toFixed(2).replace(/\.?0+$/, '')} XP
+                                </span>
+                            )}
+                            {freezes > 0 && (
+                                <span
+                                    className="inline-flex items-center gap-0.5 rounded-full bg-sky-300/90 px-2 py-0.5 text-[11px] font-bold text-sky-900"
+                                    title="Fryser dekker en dag du er borte, så streaken ikke ryker"
+                                >
+                                    <Snowflake className="w-3 h-3" />
+                                    {freezes}
+                                </span>
+                            )}
+                        </div>
                     </div>
                 </div>
 
-                {/* Hilsen + dagens mål */}
+                {/* Hilsen + neste steg + dagens mål */}
                 <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-4">
                         <button
@@ -81,20 +112,42 @@ export const HeroCard = ({
                         </button>
                     </div>
 
+                    {/* Stor «neste steg»-knapp - det viktigste på hele siden */}
+                    {primaryAction && (
+                        <Link
+                            to={primaryAction.link}
+                            className="group mb-4 flex items-center gap-4 rounded-2xl bg-white px-4 py-3.5 no-underline shadow-lg shadow-indigo-900/10 transition-transform hover:-translate-y-0.5"
+                        >
+                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white">
+                                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+                            </span>
+                            <span className="min-w-0 flex-1">
+                                <span className="block text-[11px] font-bold uppercase tracking-wider text-indigo-500">
+                                    Fortsett her
+                                </span>
+                                <span className="block truncate font-display text-lg font-bold text-slate-900">
+                                    {primaryAction.title}
+                                </span>
+                                <span className="block truncate text-xs text-slate-500">
+                                    {primaryAction.subtitle}
+                                </span>
+                            </span>
+                        </Link>
+                    )}
+
                     <p className="text-xs font-bold uppercase tracking-wider text-indigo-100 mb-2">
                         Dagens mål
                     </p>
                     <div className="space-y-2">
                         {goals.map(({ goal, progress }) => {
                             const done = progress >= goal.target;
+                            const showCount = goal.target > 1;
                             return (
                                 <Link
                                     key={goal.id}
                                     to={goal.link}
                                     className={`flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all no-underline group ${
-                                        done
-                                            ? 'bg-white/25'
-                                            : 'bg-white/10 hover:bg-white/20'
+                                        done ? 'bg-white/25' : 'bg-white/10 hover:bg-white/20'
                                     }`}
                                 >
                                     <span
@@ -113,6 +166,11 @@ export const HeroCard = ({
                                     >
                                         {goal.label}
                                     </span>
+                                    {showCount && !done && (
+                                        <span className="text-xs font-bold text-indigo-100 tabular-nums">
+                                            {progress}/{goal.target}
+                                        </span>
+                                    )}
                                     {!done && (
                                         <ChevronRight className="w-4 h-4 text-indigo-200 group-hover:translate-x-0.5 transition-transform" />
                                     )}

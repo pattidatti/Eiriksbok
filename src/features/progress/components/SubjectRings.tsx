@@ -4,8 +4,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { TrendingDown, TrendingUp } from 'lucide-react';
 import { getSubjectColor } from '../../../utils/subjectColors';
-import type { SubjectMastery } from '../mastery';
+import type { MasteryTrend, SubjectMastery } from '../mastery';
 
 const RING_RADIUS = 30;
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
@@ -33,6 +34,24 @@ const QUALITY_STYLE: Record<string, { dot: string; label: string }> = {
     green: { dot: 'bg-emerald-500', label: 'Sitter godt' },
     yellow: { dot: 'bg-amber-400', label: 'På vei' },
     red: { dot: 'bg-rose-500', label: 'Trenger øving' },
+};
+
+// Liten pil som viser om resultatene i emnet går opp eller ned.
+const TrendArrow = ({ trend }: { trend: MasteryTrend }) => {
+    if (trend === 'up') {
+        return (
+            <TrendingUp className="w-3.5 h-3.5 text-emerald-500 shrink-0" aria-label="Du blir bedre" />
+        );
+    }
+    if (trend === 'down') {
+        return (
+            <TrendingDown
+                className="w-3.5 h-3.5 text-rose-500 shrink-0"
+                aria-label="Resultatene har gått ned"
+            />
+        );
+    }
+    return null;
 };
 
 export const SubjectRings = ({ mastery }: { mastery: SubjectMastery[] }) => {
@@ -115,6 +134,7 @@ export const SubjectRings = ({ mastery }: { mastery: SubjectMastery[] }) => {
                                             <span className="flex-1 text-sm text-slate-700 truncate">
                                                 {topic.title}
                                             </span>
+                                            <TrendArrow trend={topic.trend} />
                                             <span className="text-xs text-slate-400 tabular-nums">
                                                 {topic.completedLessons}/{topic.totalLessons}
                                             </span>
