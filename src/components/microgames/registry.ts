@@ -24,6 +24,7 @@ const DampmaskinHjerte3D = lazy(() => import('./DampmaskinHjerte3D'));
 const Falanksen3D = lazy(() => import('./Falanksen3D'));
 const OlympiaDiskos3D = lazy(() => import('./OlympiaDiskos3D'));
 const Vannmolla3D = lazy(() => import('./Vannmolla3D'));
+const Kjoleskapet3D = lazy(() => import('./Kjoleskapet3D'));
 const Radarvakten3D = lazy(() => import('./Radarvakten3D'));
 const Konklusjonsbroen3D = lazy(() => import('./Konklusjonsbroen3D'));
 const MonumentTorget3D = lazy(() => import('./MonumentTorget3D'));
@@ -622,6 +623,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Vannmolla3D'),
         Component: Vannmolla3D as never,
+    },
+    'kjoleskapet-3d': {
+        id: 'kjoleskapet-3d',
+        title: 'Kjøleskapet: maskinen som flytter varme',
+        description:
+            'Følg kjølevæsken rundt det lukkede kretsløpet i et kjøleskap i 3D: klikk fordamperen, kompressoren, kondensatoren og strupeventilen i riktig rekkefølge, og skru så på kompressoren med spaken. Se maten bli kald mens varmen strømmer ut bak kjøleskapet. Lyspæren: et kjøleskap lager ikke kulde, det flytter varmen ut i rommet.',
+        estimatedSeconds: 160,
+        loader: () => import('./Kjoleskapet3D'),
+        Component: Kjoleskapet3D as never,
     },
     'konklusjonsbroen-3d': {
         id: 'konklusjonsbroen-3d',
