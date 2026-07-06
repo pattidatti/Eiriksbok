@@ -95,6 +95,29 @@
       "content": "Norge er et lite land, men langt fra uvesentlig. Vi er verdens tredje største eksportør av naturgass etter Russlands tilbaketrekning, en av verdens største sjøfartsnasjoner, og eksporterer fisk til over 100 land. Norsk økonomi er eksponert mot globale konjunkturer på en måte som er svært tydelig: når oljeprisene faller, kjennes det. Når eurosonen stagnerer, faller norsk eksport."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvor stor andel av all handel skjer via skip?",
+                "Hva heter teorien om at land bør spesialisere seg på det de er relativt best til, og hvem formulerte den i 1817?",
+                "Nevn minst tre av flaskehalsene som teksten trekker frem.",
+                "Hva skjedde med Suezkanalen i mars 2021, og hvor lenge varte det?"
+            ],
+            "reflekter": [
+                "Hvorfor er sjøtransport så mye billigere enn andre måter å frakte varer på, og hva hadde containerrevolusjonen å si for dette?",
+                "Teksten sier at ingen land er selvforsynt. Forklar hvordan interdependens kan gjøre alle land rikere enn de ville vært alene.",
+                "Hvorfor kan en enkelt hendelse i en flaskehals som Suezkanalen ramme hele verden på én gang?",
+                "Hva mener teksten med deglobalisering og reshoring, og hvilke hendelser har fått politikere til å tenke nytt om avhengighet?"
+            ],
+            "gaaVidere": [
+                "Finn en vare du eier og undersøk hvor delene kan ha kommet fra. Skriv noen setninger om reisen varen kan ha hatt før den havnet hos deg.",
+                "Norge eksporterer gass, fisk og skipsfartstjenester, men merker det tydelig når oljeprisen faller. Diskuter to par: hvilke fordeler og hvilke farer følger med å være så tett koblet til verdenshandelen?",
+                "Skriv en kort tekst der du sammenligner den globale handelen med en maskin der ingen del fungerer alene. Bruk minst tre eksempler fra artikkelen for å vise hvordan delene henger sammen."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

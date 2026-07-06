@@ -64,6 +64,29 @@
         {
             "type": "text",
             "value": "Spørsmålet for fremtiden er ikke bare om vi kan leve lenger, men hvordan teknologien kan hjelpe oss til å ha god helse hele livet."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange barn i Norge døde før de fylte ett år for 150 år siden, ifølge artikkelen?",
+                    "Hva var de tre store revolusjonene som gjorde at vi lever lenger? Nevn alle tre.",
+                    "Hvilket år ble penicillin oppdaget, og hva betydde det for en enkel halsbetennelse?",
+                    "Hvor mye har forventet levealder i Norge steget fra 1850 til i dag? Oppgi begge tallene."
+                ],
+                "reflekter": [
+                    "Artikkelen sier at rent vann og hygiene har reddet flere liv enn alle medisiner til sammen. Hvorfor tror du noe så enkelt som å vaske hendene kan ha så stor effekt?",
+                    "Forklar hvordan vaksiner har fått barnedødeligheten til å synke dramatisk over hele verden.",
+                    "Artikkelen kaller det et nytt problem at vi dør av livsstilssykdommer som kreft og hjerte- og karsykdommer. Hvorfor er det egentlig et tegn på at noe har gått bra?",
+                    "Hvorfor tror du forfatteren mener at kampen mot bakterier og virus var en større endring enn å lande på månen?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (5-8 setninger) om hvordan livet ditt ville vært annerledes hvis du levde i Norge i 1850, da forventet levealder var 45 år.",
+                    "Artikkelen nevner at vi i dag kan bruke roboter og KI i medisin. Diskuter med en partner: Hva slags helseteknologi tror dere finnes om 50 år?",
+                    "Snakk med en voksen hjemme om hvilke vaksiner du har fått. Lag en liste over sykdommer du er beskyttet mot, og finn ut hvor farlig én av dem var før i tiden."
+                ]
+            }
         }
     ],
     "quiz": [

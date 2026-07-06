@@ -57,6 +57,29 @@
         {
             "type": "text",
             "value": "Uten arbeidsspesialisering ville vi alle vært fattige bønder som kjempet for å overleve. Spesialisering er det som gjør det mulig for oss å ha leger, lærere, ingeniører og YouTube-stjerner."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke fire deler og materialer nevner teksten som trengs for å lage en vanlig blyant?",
+                    "Hvilket eksempel brukte Adam Smith i 1776 for å vise hvordan produktiviteten kan øke?",
+                    "Hvor mange nåler klarte ti arbeidere å lage på en dag da de delte arbeidet i 18 trinn?",
+                    "Hva kalte Karl Marx følelsen en arbeider kan få når han bare gjør en liten, repeterende del av en prosess?"
+                ],
+                "reflekter": [
+                    "Teksten nevner tre fordeler med spesialisering: mestring, tidsbesparelse og innovasjon. Forklar med egne ord hvorfor det å gjøre én oppgave om og om igjen fører til at man mestrer den bedre.",
+                    "Hvorfor klarte ti arbeidere som delte oppgavene å lage så mange flere nåler enn én person som gjorde alt selv? Bruk det du leste om tidsbesparelse i svaret ditt.",
+                    "Karl Marx mente vi kan bli rike på ting, men fattigere på meningsfylt arbeid. Er du enig i at en arbeider mister noe når han ikke lager hele produktet selv? Begrunn svaret.",
+                    "Teksten sier at ingen enkeltperson kan lage en smarttelefon alene. Hva forteller det oss om hvor avhengige vi er av hverandre i dagens samfunn?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du beskriver en dag i livet ditt og peker på minst tre ting du bruker som er laget av spesialister du aldri møter.",
+                    "Tenk deg at du og fire venner skal lage 100 matpakker til en skoletur. Beskriv hvordan dere kan dele oppgavene i trinn slik at dere jobber som knappenålsfabrikken til Adam Smith.",
+                    "Diskuter i klassen: Finnes det jobber i dag der arbeidet er så oppdelt at folk kan føle fremmedgjøring? Kom med eksempler og forslag til hvordan man kan gjøre slikt arbeid mer meningsfylt."
+                ]
+            }
         }
     ],
     "quiz": [

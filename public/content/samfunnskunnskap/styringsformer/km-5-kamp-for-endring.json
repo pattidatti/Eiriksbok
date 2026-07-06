@@ -239,6 +239,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva menes med en samfunnsendring, og hva er forskjellen på endring som kommer ovenfra og ned og endring som kommer nedenfra og opp?",
+                    "Nevn de tre hovedstrategiene folk har brukt for å kjempe for endring, og forklar kort hva hver av dem går ut på.",
+                    "Hva betyr ordet suffragett, og hvilke metoder brukte de norske suffragettene for å få stemmerett?",
+                    "I hvilket år fikk norske kvinner stemmerett, og i hvilket år ble LO stiftet?"
+                ],
+                "reflekter": [
+                    "Hvorfor lyktes norske arbeidere lettere med å få rettigheter enn arbeidere i mange andre land? Bruk det artikkelen sier om Norges størrelse og kultur.",
+                    "Både norske og britiske kvinner fikk til slutt stemmerett, men de valgte ulike veier dit. Forklar hvordan konteksten bestemte hvilken strategi hver bevegelse valgte.",
+                    "Artikkelen sier at en fredelig streik ofte vinner sikrere enn en voldelig. Hvorfor kan vold svekke en bevegelse selv når saken er rettferdig?",
+                    "Hvorfor kunne Norge spille rollen som mekler og brobygger i fredsbevegelsen, mens land nær konfliktområdene engasjerte seg på en annen måte?"
+                ],
+                "gaaVidere": [
+                    "Velg en sak i dagens samfunn som folk kjemper for endring i (for eksempel klima, rettigheter eller lønn). Skriv en kort tekst der du vurderer hvilken av de tre strategiene som passer best for den saken, og hvorfor.",
+                    "Artikkelen sier at en bevegelse overlever når den holder en bred koalisjon samlet, tilpasser metodene til konteksten og beholder legitimiteten. Diskuter med en medelev hvordan en bevegelse du kjenner til i dag klarer eller ikke klarer disse tre tingene.",
+                    "Tenk deg at du var tekstilarbeideren i 1905 fra scenariet. Skriv noen setninger om hvilket valg du ville tatt, og forklar hva du ville risikert og hva du kunne vunnet."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

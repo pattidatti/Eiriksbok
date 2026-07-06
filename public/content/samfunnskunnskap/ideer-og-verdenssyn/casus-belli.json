@@ -128,6 +128,29 @@
         {
             "type": "text",
             "content": "Casus Belli minner oss om at selv de mektigste imperier føler seg tvunget til å spille etter regler, eller i det minste late som om de gjør det. I en verden av internasjonal lov er kampen om 'narrativet' viktigere enn noen gang."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det latinske begrepet Casus Belli?",
+                    "Ifølge Thukydid, hva var den egentlige årsaken til at Peloponneserkrigen brøt ut mellom Athen og Sparta?",
+                    "Hva gjorde de romerske prestene som ble kalt fetialer da Roma mente seg forurettet, og hva kastet de over grensen etter 33 dager?",
+                    "Hvilken hendelse i 1618 ble den offisielle grunnen til å starte 30-årskrigen?"
+                ],
+                "reflekter": [
+                    "Artikkelen skiller mellom den offisielle begrunnelsen og den dypere årsaken til en krig. Hvorfor er det så viktig for en hersker å ha en offisiell Casus Belli, selv om det egentlige motivet er noe annet?",
+                    "Forklar hva preventiv krigføring er, og hvordan hypotesen om angrepet på Lindisfarne i 793 kan være et eksempel på det.",
+                    "En False Flag-operasjon er et angrep et land iscenesetter mot seg selv. Hvorfor tok Japan seg bryet med å sprenge sin egen jernbane i Mukden-hendelsen i 1931, i stedet for bare å invadere Kina direkte?",
+                    "Hvorfor tror du noen begrunnelser for krig, som at Irak invaderte Kuwait i 1990, blir godtatt av verdenssamfunnet, mens andre, som masseødeleggelsesvåpnene i Irak-krigen i 2003, blir forkastet?"
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at kampen om narrativet er viktigere enn noen gang. Skriv en kort tekst der du forklarer hvorfor det å overbevise verden om at man har rett kan være like viktig som selve våpnene i en moderne konflikt.",
+                    "Velg ett av de historiske eksemplene fra teksten (for eksempel Cæsar ved Rubicon, Den spanske armada eller Tonkin-bukta) og skriv et kort avisoppslag slik det kunne stått samme dag som hendelsen skjedde, med den offisielle begrunnelsen som overskrift.",
+                    "Diskuter med en medelev: Artikkelen nevner at moderne Casus Belli kan være digitale angrep eller påvirkningsoperasjoner i gråsonen mellom fred og krig. Hvordan kan det være vanskeligere å vite når en slik krig egentlig har startet?"
+                ]
+            }
         }
     ],
     "quiz": [

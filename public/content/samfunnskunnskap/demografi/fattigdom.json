@@ -60,6 +60,29 @@
         {
             "type": "text",
             "value": "I denne simulatoren ser du hvordan uforutsette utgifter kan velte lasset når du lever på marginene. Er det virkelig bare å \"ta seg sammen\", eller er systemet rigget mot deg?"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er de to hovedtypene fattigdom som artikkelen skiller mellom?",
+                    "Hvilken grense per dag bruker Verdensbanken for å definere ekstrem fattigdom?",
+                    "I støvel-teorien til Terry Pratchett: hvor mye har den fattige mannen brukt på støvler etter 10 år, og hvor mye har den rike brukt?",
+                    "Hva betyr tallet 0 og tallet 1 på Gini-koeffisienten?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor relativ fattigdom ofte handler om ekskludering, selv om personen har nok mat og et sted å bo.",
+                    "Hvorfor blir det ifølge støvel-teorien dyrere å være fattig enn å være rik over tid? Forklar mekanismen.",
+                    "Norge har en Gini på ca. 0,27 og Sør-Afrika ca. 0,63. Hva forteller denne forskjellen oss om de to landene?",
+                    "Artikkelen sier at høy ulikhet ofte skaper kriminalitet og politisk uro. Hvorfor tror du det kan bli slik i et land med stor ulikhet?"
+                ],
+                "gaaVidere": [
+                    "Tenk på din egen skoleklasse. Nevn tre situasjoner der en elev kan oppleve relativ fattigdom eller falle utenfor på grunn av penger.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer for en venn hvorfor det kan være vanskelig å \"bare ta seg sammen\" når man er fattig. Bruk støvel-teorien som eksempel.",
+                    "Diskuter med en partner: Bør et land helst ha lav ulikhet som Norge, eller finnes det gode grunner til at noen tjener mye mer enn andre? Bli enige om ett argument for hver side."
+                ]
+            }
         }
     ],
     "quiz": [

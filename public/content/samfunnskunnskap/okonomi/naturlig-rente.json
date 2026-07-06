@@ -283,6 +283,29 @@
         {
             "type": "text",
             "content": "Vil du lære mer? Les om de østerrikske tenkerne bak teoriene: [Ludwig von Mises](/krle/filosofi/mises) og [Murray Rothbard](/krle/filosofi/rothbard). Se også artikkelen om [finanskriser](/samfunnskunnskap/okonomi/finanskriser) for å forstå boom-bust-syklusen i praksis, og [børskrakket i 1929](/historie/mellomkrigstiden/borskrakk) som et historisk eksempel."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mente Böhm-Bawerk at rente egentlig er en pris på?",
+                    "Hva betyr tidspreferanse, og hvorfor velger de fleste 1000 kroner i dag fremfor 1000 kroner om et år?",
+                    "Hva skjedde den 15. august 1971 da president Nixon gikk på TV?",
+                    "Hvilke fire bobler eller kriser peker den østerrikske skolen på som eksempler i teksten (nevn årstallene)?"
+                ],
+                "reflekter": [
+                    "Forklar hvordan renten fungerer som et signal: hva forteller en lav naturlig rente entreprenørene, og hva forteller en høy rente dem?",
+                    "Hvorfor mener den østerrikske skolen at renten blir et falskt signal når sentralbanken setter den kunstig lavt? Bruk Hayeks kunnskapsproblem i svaret.",
+                    "Sammenlign argumentene til keynesianerne og den østerrikske skolen. Hvorfor mener keynesianerne at sentralbanken må gripe inn, og hva svarer østerrikerne på dette?",
+                    "Teksten sier at en resesjon ikke er en feil i systemet, men oppryddingen etter feilinvesteringene. Forklar hva som menes med det."
+                ],
+                "gaaVidere": [
+                    "Se på grafen over Federal Reserve sin styringsrente. Velg to årstall der renten var svært ulik, og skriv noen setninger om hva som kan ha skjedd i økonomien i de periodene.",
+                    "Skriv en kort tekst der du forklarer for en venn hvorfor billige lån kan høres bra ut på kort sikt, men skape problemer på lengre sikt.",
+                    "Diskuter i klassen: Bør en gruppe eksperter i en sentralbank bestemme renten, eller bør markedet finne den selv? Hvilke fordeler og farer ser dere ved hvert alternativ?"
+                ]
+            }
         }
     ],
     "concepts": [

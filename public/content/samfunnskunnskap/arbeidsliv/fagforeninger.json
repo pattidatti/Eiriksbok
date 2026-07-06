@@ -198,6 +198,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange timer om dagen og hvor mange dager i uken jobbet en vanlig industriarbeider rundt 1850?",
+                    "Hvem var Marcus Thrane, og hva startet han i 1848?",
+                    "Hva het Norges første egentlige fagforening, og i hvilket år ble den stiftet?",
+                    "Hvilket år ble LO grunnlagt, og hva står forkortelsen LO for?"
+                ],
+                "reflekter": [
+                    "Teksten sier at en enkelt arbeider var svak alene. Forklar hvorfor arbeiderne fikk mer makt når de sto sammen enn hver for seg.",
+                    "Hvorfor blir Hovedavtalen av 1935 kalt arbeidslivets grunnlov? Hva var nytt med den sammenlignet med kampene før?",
+                    "Hva er trepartssamarbeidet i den norske modellen, og hvorfor tror du dette samarbeidet har gjort det norske arbeidslivet mer velfungerende?",
+                    "Norge bruker frontfagmodellen, der industrien forhandler lønn først. Hvorfor er tanken at lønnsveksten ikke skal bli for høy?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (5-8 setninger) der du sammenligner arbeidslivet rundt 1850 med ditt eget syn på hvordan en jobb bør være i dag. Hva er de største forskjellene?",
+                    "Teksten nevner nye utfordringer som plattformjobber i den digitale økonomien, der det er uklart om folk regnes som ansatte. Diskuter med en partner: Bør de som kjører for matleverings-apper ha samme rettigheter som fast ansatte? Begrunn svaret.",
+                    "Er du eller noen i familien din medlem av en fagforening? Finn ut hvilken, eller velg en av de fire i teksten (LO, Unio, YS, Akademikerne), og skriv tre grunner til at noen velger å melde seg inn."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -127,6 +127,29 @@
         {
             "type": "text",
             "value": "Eiriksbok. (2024a). *Den demografiske overgangen*. Eiriksbok. Hentet 15. januar 2026 fra [https://bok.haaland.de/samfunnskunnskap/demografi/den-demografiske-overgangen](https://bok.haaland.de/samfunnskunnskap/demografi/den-demografiske-overgangen)\n\nEiriksbok. (2024b). *Malthus vs. Boserup*. Eiriksbok. Hentet 15. januar 2026 fra [https://bok.haaland.de/samfunnskunnskap/demografi/malthus-vs-boserup](https://bok.haaland.de/samfunnskunnskap/demografi/malthus-vs-boserup)\n\nEiriksbok. (2024c). *Migrasjon: Hvorfor flytter vi?*. Eiriksbok. Hentet 15. januar 2026 fra [https://bok.haaland.de/samfunnskunnskap/demografi/migrasjon-push-pull](https://bok.haaland.de/samfunnskunnskap/demografi/migrasjon-push-pull)\n\nFN-sambandet. (2023). *Finland*. FN.no. Hentet 15. januar 2026 fra [https://www.fn.no/Land/finland](https://www.fn.no/Land/finland)\n\nStore norske leksikon. (2024). *Finlands historie*. Hentet 15. januar 2026 fra [https://snl.no/Finlands_historie](https://snl.no/Finlands_historie)"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde under Det store uåret vinteren 1867, og hvor stor del av befolkningen døde av sult og sykdom på bare to år?",
+                    "Hva blandet folk i brødet under hungersnøden, og hva slags mat ble redningen etter 1870?",
+                    "Omtrent hvor mange finner utvandret til Amerika, og hva ble de lokket av?",
+                    "Hvor mange barn per kvinne føder finske kvinner i dag, og hvilken fase i den demografiske overgangen befinner Finland seg i nå?"
+                ],
+                "reflekter": [
+                    "Teksten kaller hungersnøden i 1867 en maltusiansk sjekk. Forklar hvorfor sulten kan beskrives som naturens måte å korrigere en befolkning som hadde vokst seg større enn matfatet.",
+                    "Hvorfor eksploderte befolkningen i Finland etter 1870? Forklar hvordan lavere dødsrate og fortsatt store barnekull førte til fase 2.",
+                    "Teksten sier at utvandringen til Amerika var en ventil som hindret Finland i å eksplodere i sosialt opprør. Forklar hva som menes med dette bildet av trykkokeren.",
+                    "Etter andre verdenskrig valgte Finland å satse på hjernene til befolkningen fremfor jordbruk. Hvordan henger denne satsingen sammen med at barneflokkene ble mindre?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at demografi er skjebne. Skriv en kort tekst (5-8 setninger) der du forklarer hvordan både sulten og velstanden formet Finlands befolkning, og hva du mener er den vanskeligste utfordringen landet står overfor nå.",
+                    "Finland sliter med tomme vugger og en aldrende befolkning. Diskuter med en partner: Hva kan et land gjøre for å få folk til å ønske seg flere barn, eller for å tiltrekke seg nye hender utenfra?",
+                    "Finske unge flyttet først til Amerika, senere til Volvo-fabrikkene i Sverige. Tenk på i dag: Hvilke push- og pull-faktorer kan få unge mennesker til å flytte fra ett land til et annet nå?"
+                ]
+            }
         }
     ],
     "quiz": [

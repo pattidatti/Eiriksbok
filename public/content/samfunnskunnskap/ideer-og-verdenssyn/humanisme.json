@@ -115,6 +115,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Nevn de tre grunnleggende ideene humanismen bygger på, ifølge teksten.",
+                    "Hva gjorde de lærde i Italia da renessansen begynte, og hvor lette de etter glemte tekster?",
+                    "Hva het skriftet Giovanni Pico della Mirandola skrev i 1486, og hva handlet det om?",
+                    "Hva heter dokumentet fra 1948 som skulle beskytte de humanistiske verdiene?"
+                ],
+                "reflekter": [
+                    "Teksten sier at ordet 'human' ofte betyr å være snill, men at humanismen som idé stikker dypere. Forklar forskjellen med dine egne ord.",
+                    "Hvorfor førte tanken om at alle mennesker har samme verdi til opprør mot konger og slaveri på 1700-tallet?",
+                    "Sekulær humanisme mener vi kan handle godt uten å tro på det overnaturlige. Hvilken grunn gir teksten for at vi skal være gode mot hverandre?",
+                    "Se på tabellen 'Før og etter humanismen'. Velg én av radene og forklar hvorfor endringen var stor for vanlige mennesker."
+                ],
+                "gaaVidere": [
+                    "Teksten spør om vi har satt mennesket for mye i sentrum og glemt naturen. Skriv en kort tekst der du gir ditt syn på dette i møte med klimakrisen.",
+                    "Finn ett eksempel fra din egen hverdag - på skolen, sykehuset eller i loven - der du ser spor av de humanistiske verdiene teksten beskriver.",
+                    "Teksten spør om kunstig intelligens kan bli 'menneskelig'. Diskuter med en medelev hva som eventuelt skiller et menneske fra en maskin."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

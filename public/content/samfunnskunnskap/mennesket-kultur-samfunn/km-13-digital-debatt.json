@@ -217,6 +217,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalte filosofen Jürgen Habermas arenaen der borgere kommer sammen for å diskutere og forme felles meninger?",
+                    "Hvilket ett mål er algoritmene på sosiale medier laget for å oppnå?",
+                    "Ifølge teksten står omtrent hvor mange prosent av brukerne på Twitter for over halvparten av alle innlegg, og hvordan skiller denne gruppen seg fra resten av befolkningen?",
+                    "Hva menes med «taushetsspiralen», slik sosiologen Elisabeth Noelle-Neumann beskrev den?"
+                ],
+                "reflekter": [
+                    "Teksten sier at innhold som vekker sinne, frykt og avsky sprer seg raskere enn nøkternt innhold. Forklar hvorfor det skjer, og hvorfor det ikke er fordi folk er dumme.",
+                    "Hvorfor bruker norske politikere ifølge studien fra Institutt for samfunnsforskning stadig mer provoserende og ekstreme formuleringer på sosiale medier?",
+                    "Teksten sier at det er «et demokratisk problem» at unge jenter og minoriteter møter hat og trusler når de deltar i debatt. Forklar hvorfor dette svekker ytringsfriheten for alle, ikke bare for dem som blir angrepet.",
+                    "Den digitale offentligheten kan både styrke og svekke demokratiet. Velg ett eksempel på hver side fra teksten, og forklar hvorfor de trekker i hver sin retning."
+                ],
+                "gaaVidere": [
+                    "Tenk på en app du bruker mye. Still deg de fire spørsmålene til en bevisst digital borger fra teksten (Hvorfor ser jeg dette nå? Er kilden troverdig? Bidrar jeg til forståelse eller støy? Ser jeg ulike perspektiver?) og skriv ned svarene dine for den appen.",
+                    "Skriv en kort tekst der du sammenligner hvordan en 17-åring i 1985 kunne si meningen sin med hvordan en 17-åring kan gjøre det i dag. Nevn både hva som har blitt bedre og hva som har blitt vanskeligere.",
+                    "Diskuter i klassen: Bør sosiale medier merke politisk misinformasjon automatisk? Bruk minst ett argument for og ett imot fra debatten i artikkelen."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

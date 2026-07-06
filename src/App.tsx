@@ -22,6 +22,7 @@ const NotFoundPage = React.lazy(routeFactories.NotFoundPage);
 const FlashcardPage = React.lazy(routeFactories.FlashcardPage);
 const PracticePage = React.lazy(routeFactories.PracticePage);
 const DailyReviewPage = React.lazy(routeFactories.DailyReviewPage);
+const SkyPage = React.lazy(routeFactories.SkyPage);
 const QuizPage = React.lazy(routeFactories.QuizPage);
 const QuizAdmin = React.lazy(routeFactories.QuizAdmin);
 const QuizLobby = React.lazy(routeFactories.QuizLobby);
@@ -96,6 +97,7 @@ const router = createBrowserRouter([
       { path: "norsk/bibliotek", element: <TextLibraryPage /> },
       { path: "norsk/bibliotek/:textId", element: <TextReaderPage /> },
       { path: "tidslinje", element: <GlobalTimelinePage /> },
+      { path: "himmel", element: <SkyPage /> },
       { path: "atlas", element: <AtlasPage /> },
       { path: "persongalleri", element: <PersonGallery /> },
       { path: "persongalleri/:slug", element: <PersonGallery /> },

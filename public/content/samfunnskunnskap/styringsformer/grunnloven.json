@@ -154,6 +154,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange menn møttes på Eidsvoll, og hvor lang tid brukte de på å skrive Grunnloven?",
+                    "Hvorfor måtte Danmark gi fra seg Norge til Sverige i 1814?",
+                    "Hva heter de tre statsmaktene, og hvilken oppgave har hver av dem?",
+                    "Hvilket år fikk norske kvinner samme stemmerett som menn?"
+                ],
+                "reflekter": [
+                    "Eidsvollsmennene delte makten i tre fordi de fryktet at én person skulle bli for mektig. Forklar med egne ord hvordan de tre statsmaktene kan stoppe hverandre.",
+                    "Å endre Grunnloven tar minst fire år og krever to ulike storting. Hvorfor lagde Eidsvollsmennene en så treg prosess med vilje?",
+                    "Under andre verdenskrig nektet lærere og prester å følge nazistene. Hva forteller det om hvor viktig Grunnloven hadde blitt for vanlige nordmenn?",
+                    "I 1814 kunne bare menn med eiendom stemme, og jøder fikk ikke komme inn i landet. Hvorfor mener du Grunnloven likevel regnes som moderne for sin tid?"
+                ],
+                "gaaVidere": [
+                    "I klimasaken i 2020 brukte miljøorganisasjoner Grunnlovens § 112 om et sunt miljø for å utfordre oljeleting. Skriv en kort tekst om en sak i dag du synes Grunnloven burde beskytte.",
+                    "Noen mener Norge bør bli republikk og velge en president, andre mener kongen er viktig for norsk identitet. Skriv ned tre argumenter for hver side, og fortell til slutt hva du selv mener.",
+                    "Grunnloven § 100 sier at ytringsfrihet bør finne sted. Diskuter med en medelev hva denne friheten betyr for hva dere kan si på skolen og på sosiale medier - og om den bør ha grenser."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

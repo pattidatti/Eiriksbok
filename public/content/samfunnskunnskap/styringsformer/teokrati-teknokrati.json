@@ -166,6 +166,29 @@
                     "right": "Beregninger og eksperimenter"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet teokrati, og hvilke to greske ord kommer det fra?",
+                    "Hvem har det siste ordet i alle saker i Iran etter revolusjonen i 1979?",
+                    "Hva betyr begrepet algokrati, ifølge teksten?",
+                    "Nevn to eksempler fra teksten på at vi har ekspertstyre i hverdagen i vanlige demokratier."
+                ],
+                "reflekter": [
+                    "Teksten sier at teokrati og teknokrati virker som motsetninger, men deler en viktig egenskap. Forklar hva de har til felles.",
+                    "Hvorfor er det så vanskelig å være uenig med regjeringen i et teokrati, ifølge teksten?",
+                    "Teksten sier at vitenskapen kan fortelle oss hvordan vi bygger en vei mest effektivt, men ikke om vi bør bygge en vei eller et sykehus. Forklar hvorfor dette er et problem for teknokratiet.",
+                    "Hva menes med den sorte boksen-effekten, og hvorfor gjør den algokrati farlig for vanlige borgere?"
+                ],
+                "gaaVidere": [
+                    "Algoritmer bestemmer allerede hvilke nyheter du ser og hvem som blir kalt inn til jobbintervju. Skriv en kort tekst om en gang du selv har blitt påvirket av en algoritme, og om du synes det var rettferdig.",
+                    "Teksten sier at meritokrati kan skape en ny, arrogant elite som mister empati med de som faller utenfor. Diskuter med en medelev om du er enig i denne kritikken.",
+                    "Se for deg at et AI-system skal styre byplanleggingen i din kommune. Skriv en kort tekst der du sammenligner fordelene og farene ved dette med hvordan folkevalgte politikere styrer i dag."
+                ]
+            }
         }
     ],
     "quiz": [

@@ -389,6 +389,29 @@
                     "correctAnswer": 1
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken faktor mener Ray Dalio er selve fundamentet for at en nasjon skal stige til makten?",
+                    "Hva skjedde med koblingen mellom dollar og gull i 1971, og hvem sto bak?",
+                    "Hvor mange år varer en hel stor syklus vanligvis, ifølge Dalio?",
+                    "Hva er forskjellen på intern orden og ekstern orden, og hvordan endres de to vanligvis?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor teksten sier at suksessen selv sår frøene til forfall. Hva er det som gjør at en stormakt på toppen begynner å svekkes?",
+                    "Hvorfor rammer pengetrykking og inflasjon middelklassen og de fattige hardere enn de rikeste, ifølge artikkelen?",
+                    "Teksten forklarer en kjede fra utdanning til større andel av verdenshandelen. Velg to av leddene i kjeden og forklar hvordan det ene fører til det andre.",
+                    "Hvorfor kaller Dalio øyeblikket der en ny makt utfordrer den sittende for det farligste punktet i syklusen?"
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at mange mener vi i dag er i fase 5 eller 6. Skriv en kort tekst der du bruker det du har lest til å vurdere om du er enig, og hva du selv legger merke til i nyhetene.",
+                    "Diskuter i par eller gruppe: Hvis penger i bunn og grunn bare er tillit, hva ville skje hvis verden mistet tilliten til dollaren? Skriv ned tre mulige følger.",
+                    "Velg en oppfinnelse fra Nederlands storhetstid på 1600-tallet og sammenlign den med en teknologi som gir land makt i dag. Hva er likt, og hva er annerledes?"
+                ]
+            }
         }
     ]
 }

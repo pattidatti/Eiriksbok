@@ -367,6 +367,29 @@
         {
             "type": "text",
             "content": "Det er her dere kommer inn. Generasjonen som vokser opp nå, vil måtte ta stilling til om frontfagmodellen skal videreføres, endres eller erstattes. Det krever at dere forstår hva den er, hvorfor den ble laget, hva den har oppnådd - og hva den kanskje ikke klarer lenger. Uansett hva dere velger, er det viktig at valget bygger på kunnskap, ikke bare følelser."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken del av arbeidslivet forhandler lønn først i frontfagmodellen, og hvorfor akkurat den?",
+                    "Hva står forkortelsene LO og NHO for, og hvilken rolle spiller de to i lønnsoppgjøret?",
+                    "Hva er oppgaven til Det tekniske beregningsutvalget (TBU) før forhandlingene starter?",
+                    "Hvem var Odd Aukrust, og hva gjorde han i 1952?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor eksportbedriftene ikke kan gi for høy lønnsvekst. Hva skjer med varene deres hvis lønningene blir for høye?",
+                    "Artikkelen sier at frontfagmodellen gir en sammenpresset lønnsstruktur. Forklar hvordan modellen både løfter bunnlønningene og bremser topplønningene.",
+                    "Kritikere mener modellen har en innebygd skjevhet mellom kjønnene. Forklar hva de mener med det, og hvordan rekkefølgen i forhandlingene henger sammen med dette.",
+                    "Se på tabellen som sammenligner lønn med og uten frontfagmodellen. Hvorfor taper IT-ingeniøren på modellen, mens frisøren tjener på den?"
+                ],
+                "gaaVidere": [
+                    "Tenk deg at du selv skal velge yrke. Ville frontfagmodellen påvirket valget ditt? Skriv en kort tekst (5-8 setninger) om hvordan modellen kunne gjort ett yrke mer eller mindre fristende for deg.",
+                    "Diskuter med en partner: Er det rettferdig at industriarbeidere i eksportbedrifter setter normen for hva sykepleiere og lærere skal tjene? Bli enige om ett argument for og ett imot.",
+                    "Artikkelen sier at deres generasjon må bestemme om frontfagmodellen skal videreføres, endres eller erstattes. Velg ett av alternativene og skriv en kort begrunnelse (5-8 setninger) for hvorfor du mener nettopp det."
+                ]
+            }
         }
     ],
     "timeline": []

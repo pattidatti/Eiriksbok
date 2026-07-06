@@ -165,6 +165,29 @@
                     "correctAnswer": 1
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva gjorde Edward Bernays for et tobakksselskap i New York i 1929, og hva kalte avisene sigarettene dagen etter?",
+                    "Hva betyr begrepet influenser, og hva bygger kraften til en moderne influenser på ifølge teksten?",
+                    "Hva er et parasosialt forhold? Forklar med egne ord hva som gjør det ensidig.",
+                    "Hva er deinfluencing, og hvorfor mener teksten at det er en reaksjon på noe?"
+                ],
+                "reflekter": [
+                    "Teksten sier at grensene mellom underholdning, hverdagsliv og reklame nesten er visket ut. Hvorfor gjør dette det vanskeligere å være kildekritisk enn da vi ble avbrutt av en reklamepause på TV?",
+                    "Hvorfor er det mer effektivt for en bedrift å betale en influenser for å snike inn et produkt i en hverdagsvideo enn å kjøpe en vanlig reklameplass?",
+                    "Teksten kaller deinfluencing ironisk, fordi det bygger enda mer tillit. Forklar hvordan noe som ser ut som en advarsel mot forbruk likevel kan bli et salgsverktøy.",
+                    "Bør en persons evne til å underholde gi dem stor makt over politiske debatter? Bruk eksemplene Taylor Swift, Trump og Zelenskij når du argumenterer."
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du sammenligner hvordan Edward Bernays påvirket folk i 1929 med hvordan en influenser påvirker deg i dag. Hva er likt, og hva er nytt?",
+                    "Tenk på en influenser eller kjendis du følger. Skriv ned tre ting du vet om livet deres, og vurder deretter om dette er et parasosialt forhold. Hva sier det om hvordan du bruker oppmerksomheten din?",
+                    "Virtuelle influensere som Lil Miquela finnes bare i piksler. Diskuter med en medelev om dere ville stolt på en anbefaling fra en AI-influenser skreddersydd akkurat for dere, og skriv ned hva dere ble enige og uenige om."
+                ]
+            }
         }
     ]
 }

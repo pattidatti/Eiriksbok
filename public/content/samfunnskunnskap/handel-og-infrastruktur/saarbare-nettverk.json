@@ -84,6 +84,29 @@
       "content": "Alternativet til sårbare nettverk er resiliente nettverk — systemer designet for å tåle sjokk og gjenopprette seg raskt. Det betyr redundans (backup-kapasitet), diversifisering (flere leverandører), og bufring (lagre nok til å overlevere et avbrudd). Norge er godt stilt: vi har store strategiske matreserver, et kraftnett koblet til naboland, og en stor flåte av egne skip. Men digital infrastruktur er en svakhet."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva stoppet Colonial Pipeline i USA i mai 2021, og hvordan startet angrepet?",
+                "Hva mente økonomen Charles Perrow med uttrykket 'normale ulykker'?",
+                "Hvorfor kunne det ikke produseres nye biler under pandemien, og hvor mange halvledere finnes det i en ny bil?",
+                "Hva skjedde i Suezkanalen 23. mars 2021, og hvor mye anslår analyser at det kostet verdenshandelen i timen?"
+            ],
+            "reflekter": [
+                "Teksten sier at nettverk er både styrke og svakhet. Forklar hvordan det å koble alt til alt kan skape både velstand og kaskadefeil.",
+                "Under Suezblokaden valgte de fleste skipene å vente i stedet for å seile rundt Afrika. Hvorfor kan det noen ganger lønne seg å vente på at problemet løser seg fremfor å ta omveien?",
+                "USA, EU og Japan bruker enorme summer på å bygge halvlederfabrikker hjemme. Forklar hvorfor de mener dette er verdt den store kostnaden.",
+                "Teksten sier at Norge er godt stilt, men at digital infrastruktur er en svakhet. Argumenter for hvorfor nettopp det digitale er vanskeligere å beskytte enn matreserver og kraftnett."
+            ],
+            "gaaVidere": [
+                "Se rundt på ditt eget liv en helt vanlig dag. Skriv en kort tekst der du beskriver tre ting du er avhengig av som stopper hvis strømmen eller internett faller ut.",
+                "Resiliens bygger på redundans, diversifisering og bufring. Velg ett av begrepene og forklar med et eksempel fra din egen hverdag eller familie hvordan dere allerede bruker det uten å tenke over det.",
+                "Diskuter i klassen: Bør Norge lagre mer mat, medisiner og reservedeler selv om det koster mye og mye kan bli kastet ubrukt? Finn argumenter både for og mot."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

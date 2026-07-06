@@ -192,6 +192,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva heter den viktigste loven for alle som jobber i Norge, og hvilket år ble den vedtatt?",
+                    "Hvor mange dager ferie har du krav på i året etter arbeidsmiljøloven, og hvor mange timer kan du jobbe per dag før det regnes som overtid?",
+                    "Hva er en tariffavtale, og hvem er det som forhandler den frem?",
+                    "Hvor mye kan du jobbe hvis du er under 15 år, og hva slags arbeid er forbudt for alle under 18?"
+                ],
+                "reflekter": [
+                    "Teksten sier at arbeidstakeren er den svake parten i forholdet mellom sjef og ansatt. Forklar hvorfor en tariffavtale gir de ansatte mer forhandlingsstyrke enn om hver enkelt forhandlet alene.",
+                    "Både streik og lockout koster penger for den som bruker dem. Forklar hvorfor en streik rammer arbeidstakerne selv, og hvorfor de likevel kan velge å bruke dette våpenet.",
+                    "Tvungen lønnsnemnd er kontroversielt fordi det tar bort streikeretten. Hvorfor mener du staten likevel griper inn når for eksempel sykehusansatte eller brannfolk streiker?",
+                    "Se på sammenligningen mellom Norge og USA. Velg en av forskjellene og forklar hva den betyr i praksis for en vanlig arbeidstaker som blir syk eller mister jobben."
+                ],
+                "gaaVidere": [
+                    "Mange unge har sommerjobb eller deltidsjobb. Skriv en kort tekst (5-8 setninger) om hvilke rettigheter du selv ville sjekket før du takket ja til en jobb, og hvorfor en skriftlig arbeidsavtale er så viktig.",
+                    "Teksten kaller det norske arbeidslivet en suksesshistorie som er bygget stein for stein av vanlige folk. Diskuter med en partner: hva tror dere hadde skjedd hvis fagforeningene aldri hadde startet kampen på 1800-tallet?",
+                    "Den norske modellen bygger på trepartssamarbeid mellom staten, arbeidsgiverne og arbeidstakerne. Finn ett eksempel fra nyhetene eller egen erfaring der du ser at dette samarbeidet fungerer - eller der det svikter, som ved sosial dumping."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

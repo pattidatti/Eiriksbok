@@ -313,6 +313,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre nivåer av årsaker skiller historikere mellom når de forklarer konflikter?",
+                    "Hva var den utløsende årsaken til første verdenskrig, ifølge teksten?",
+                    "Hvilke to blokker var Europa delt i før første verdenskrig, og hvilke land var med?",
+                    "Når og hvorfor ble FN grunnlagt?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor alliansesystemet i 1914 gjorde en lokal konflikt til en verdenskrig, selv om avtalene egentlig var laget for å skape trygghet.",
+                    "Teksten sier at Versaillestraktaten 'la grunnlaget' for andre verdenskrig. Forklar hvordan konsekvensene av én krig kan bli en strukturell årsak til den neste.",
+                    "Hvorfor mener historikere at det å reflektere over hva som kunne hindret en konflikt er viktigere enn bare å gjenfortelle hva som skjedde?",
+                    "Teksten sier at to etablerte demokratier aldri har gått til krig mot hverandre. Hvorfor tror du økonomisk gjensidig avhengighet og demokrati gjør krig mindre sannsynlig?"
+                ],
+                "gaaVidere": [
+                    "Bruk de fire spørsmålene fra teksten (strukturelle årsaker, utløsende årsak, konsekvenser, hva måtte til for å gå annerledes) til å analysere krigen i Ukraina. Skriv et kort svar på hvert spørsmål.",
+                    "Velg en konflikt du har hørt om i nyhetene. Skriv en kort tekst der du prøver å skille mellom de strukturelle årsakene og den utløsende årsaken.",
+                    "Diskuter i klassen: Hvis du var historisk rådgiver i juli 1914, hva ville du gjort annerledes for å hindre krigen? Begrunn valget ditt."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

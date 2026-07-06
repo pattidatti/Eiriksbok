@@ -56,6 +56,29 @@
         {
             "type": "text",
             "value": "Er fremtiden gigantiske megabyer som dekker halve kontinentet, eller vil vi flytte ut igjen takket være hjemmekontor og internett?"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilket år krysset verden grensen der flere mennesker bodde i byer enn på landsbygda?",
+                    "Hvor mange innbyggere må en by ha for å kalles en megaby, og hvor mange megabyer fantes i 1950 mot i dag?",
+                    "Hva er forskjellen på en slum og en forstad slik teksten beskriver dem?",
+                    "Hva er Urban Heat Island-effekten, og hvorfor blir byer varmere enn landsbygda rundt?"
+                ],
+                "reflekter": [
+                    "Teksten kaller Tokyo en velsmurt maskin og Lagos en eksplosjon av vekst. Hva menes med disse beskrivelsene, og hvorfor kan begge byene fungere selv om de er så ulike?",
+                    "Hvorfor velger mange å bo i en slum uten vann og kloakk i stedet for å bo lenger unna byen?",
+                    "Teksten sier at forstaden ofte krever at man eier bil. Forklar hvordan dette henger sammen med kø og forurensning.",
+                    "Hvordan kan parker, grønne tak og trær hjelpe mot at byer blir for varme? Forklar mekanismen med egne ord."
+                ],
+                "gaaVidere": [
+                    "Bor du selv i by, forstad eller på landet? Skriv 5-8 setninger om hva som er bra og dårlig med å bo akkurat der, og bruk minst ett begrep fra teksten.",
+                    "Teksten avslutter med et spørsmål: Vil fremtiden bli gigantiske megabyer, eller vil folk flytte ut igjen på grunn av hjemmekontor og internett? Skriv ned hva du tror, og gi to grunner.",
+                    "Diskuter med en partner: Hvis dere skulle planlegge en helt ny by, hvilke tre ting ville dere gjort for at den skal være både stor og god å leve i?"
+                ]
+            }
         }
     ],
     "quiz": [

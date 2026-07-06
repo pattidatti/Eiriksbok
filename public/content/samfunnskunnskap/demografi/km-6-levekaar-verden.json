@@ -141,6 +141,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre hovedkrefter mener forskere forklarer hvorfor folk lever så forskjellig rundt om i verden?",
+                    "Hva står HDI for, og hvilke tre ting kombinerer dette målet?",
+                    "Hvilket land lå på topp i HDI-rangeringen i 2023, og hvilket land lå nederst?",
+                    "Hva betyr ordet hjerneflukt?"
+                ],
+                "reflekter": [
+                    "Japan og Nederland har lite naturressurser, men er likevel svært velstående. Hva forklarer teksten at de har kompensert med, og hvorfor viser dette at geografi ikke er skjebne?",
+                    "Teksten sier at HDI ikke er perfekt fordi det ikke sier noe om ulikhet innad i et land. Forklar med eksempelet om Brasil og Norge hvorfor to land med lik gjennomsnittsinntekt likevel kan være svært forskjellige.",
+                    "Hvorfor kan migrasjon både hjelpe og skade et fattig land på samme tid? Bruk hjerneflukt og pengene migranter sender hjem i svaret ditt.",
+                    "Sør-Korea og Finland klarte å forbedre levekårene dramatisk. Hva var felles for det som gjorde det mulig, og hvorfor har ikke alle land hatt de samme forutsetningene?"
+                ],
+                "gaaVidere": [
+                    "Amara i Niger kan forvente å leve til hun er rundt 62 år, mens Emma i Oslo kan forvente å leve til hun er rundt 84 år. Skriv en kort tekst (5-8 setninger) der du forklarer denne forskjellen ved å bruke minst to av de tre kreftene politikk, geografi og historie.",
+                    "Diskuter med en partner: Har rike land et ansvar for å hjelpe fattigere land med å utjevne levekårsforskjellene? Finn ett argument for og ett argument mot.",
+                    "Se rundt i ditt eget nærmiljø: hvilke offentlige tjenester (som skole, helse eller rent vann) tar du for gitt hver dag, men som mangler i land med lav HDI? Lag en liste og velg ut den ene du mener betyr mest."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

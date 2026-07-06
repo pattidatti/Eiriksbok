@@ -165,6 +165,29 @@
                     "correctAnswer": 2
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva ble Sokrates anklaget for i Athen i 399 f.Kr., og hvilket valg fikk han?",
+                    "Hva går teorien om taushetsspiralen ut på?",
+                    "Hva mente John Stuart Mill vi mister hvis vi forbyr en falsk mening?",
+                    "Hva betyr uttrykket chilling effect slik artikkelen bruker det?"
+                ],
+                "reflekter": [
+                    "Artikkelen sammenligner kanselleringskultur med den gamle gapestokken. Hvorfor passer den sammenligningen, og på hvilke måter er det annerledes i dag?",
+                    "Hvorfor kan ytringsvett ifølge artikkelen bikke over i feighet? Forklar hvor grensen mellom hensynsfull og servil går.",
+                    "Artikkelen sier at katastrofer ofte skjer på grunn av tausheten til de mange, ikke bare ondskapen til noen få. Bruk eksempelet fra andre verdenskrig til å forklare hvordan taushet kan bli farlig.",
+                    "Hvorfor kaller Mill overbevisninger vi følger uten å forstå begrunnelsen for døde dogmer? Hva er problemet med slike meninger?"
+                ],
+                "gaaVidere": [
+                    "Har du noen gang latt være å skrive noe på sosiale medier fordi du var redd for reaksjonene? Skriv noen setninger om hva du var redd for, og koble det til begrepet taushetsspiralen.",
+                    "Skriv en kort tekst der du argumenterer for enten ytringsvett eller ytringsmot i en konkret situasjon fra din egen hverdag, for eksempel i klasserommet eller i en gruppechat.",
+                    "Diskuter i par: Snowden og Haugen tok stor personlig risiko for å dele informasjon. Er det alltid riktig å varsle, eller finnes det tilfeller der man bør tie? Begrunn svaret."
+                ]
+            }
         }
     ]
 }

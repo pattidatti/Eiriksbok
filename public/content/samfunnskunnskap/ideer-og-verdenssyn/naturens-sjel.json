@@ -116,6 +116,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet animisme?",
+                    "Hva mente Descartes om dyr, ifølge teksten?",
+                    "Hva ville Francis Bacon at vitenskapen skulle gjøre med naturen?",
+                    "Hvilken bevegelse på 1800-tallet var en protest mot industrialiseringen og hyllet den uberørte naturen?"
+                ],
+                "reflekter": [
+                    "Hvorfor var det mekanistiske natursynet nødvendig for at den industrielle revolusjon kunne skje?",
+                    "Da de monoteistiske religionene kom, ble Gud plassert over naturen i stedet for i den. Hvordan endret dette menneskets syn på seg selv og naturen?",
+                    "Teksten sier at Gaia-hypotesen ligner påfallende mye på de eldste animistiske tankene. Hva er likt, og hva er forskjellen mellom dem?",
+                    "I et animistisk samfunn måtte du be treet om unnskyldning før du hogg det ned. Hvordan tror du en slik holdning påvirket hvor mye folk tok fra naturen?"
+                ],
+                "gaaVidere": [
+                    "Gå en tur ute, eller se for deg skogen. Skriv en kort tekst der du beskriver om du ser naturen mest som en ressurs, et fristed eller noe med egenverdi - og hvorfor.",
+                    "Teksten avslutter med spørsmålet om vi klarer å endre måten vi tenker på før vi har endret planeten for mye. Skriv ned ditt eget svar og tre grunner til at du mener det.",
+                    "Diskuter med en medelev: Bør fjell, elver og skoger ha egne rettigheter, slik mennesker har? Finn ett argument for og ett imot."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

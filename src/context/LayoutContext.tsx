@@ -25,6 +25,7 @@ const FULL_WIDTH_PATHS = [
     '/samfunnskunnskap/okonomi/verden',
     '/oving/spill/',
     '/musikk/gitarstudio',
+    '/himmel',
 ];
 
 export const LayoutProvider: React.FC<{ children: ReactNode }> = ({ children }) => {

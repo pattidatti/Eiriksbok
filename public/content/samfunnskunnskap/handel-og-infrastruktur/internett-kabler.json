@@ -71,6 +71,29 @@
       "content": "Rundt 150-200 kabelskader repareres hvert år. Spesialbygde kabelskip — det finnes bare rundt 50 i verden — lokaliserer skaden med sonar, henter opp kabelen med robotarmer fra dyp på opptil 8 000 meter, og spleiser den på nytt. En enkelt reparasjon kan ta uker og koster millioner av dollar."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvor stor andel av den internasjonale internettrafikken går gjennom undersjøiske kabler?",
+                "Hvor tykk er en undersjøisk kabel omtrent, ifølge teksten?",
+                "Hva er den vanligste årsaken til at kabler blir skadet?",
+                "Omtrent hvor mange spesialbygde kabelskip finnes det i verden?"
+            ],
+            "reflekter": [
+                "Teksten sier at internett er et fysisk objekt. Hvorfor tror mange likevel at internett bare finnes i luften eller i skyen?",
+                "Hvorfor er myndigheter bekymret for at tech-giganter som Google og Meta eier stadig flere av kablene?",
+                "Forklar hvorfor et jordskjelv i havet kan lamme internett for millioner av mennesker langt unna, slik det skjedde i Asia i 2006.",
+                "Hvorfor tar NATO trusler mot undersjøiske kabler så alvorlig, tror du?"
+            ],
+            "gaaVidere": [
+                "Skriv en kort tekst om hva som ville skjedd i din egen hverdag hvis kablene til Norge ble kuttet for en hel uke.",
+                "Diskuter i klassen: Bør stater eller private selskaper eie de viktigste kablene? Kom med argumenter for begge sider.",
+                "Finn ut hvilke land eller tjenester du bruker på nettet hver dag, og tenk gjennom hvor langt dataene dine faktisk reiser under havet for å nå deg."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

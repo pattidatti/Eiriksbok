@@ -102,6 +102,29 @@
         {
             "type": "text",
             "content": "Vil du gå dypere? Artikkelen Den naturlige renten (/samfunnskunnskap/okonomi/naturlig-rente) tar for seg Böhm-Bawerks og Hayeks teori om hva renten egentlig er, og hva som skjer når sentralbanken overstyrer den."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er inflasjon, og hva skjer med verdien av pengene dine når inflasjonen stiger?",
+                    "Hva betyr tidspreferanse, og hvorfor velger de fleste 1000 kroner i dag fremfor 1000 kroner om et år?",
+                    "Hva er forskjellen på den naturlige renten og styringsrenten, og hvem er det som setter styringsrenten?",
+                    "Hva måler Konsumprisindeksen (KPI), og hvem sjekker prisene i handlekurven hver måned?"
+                ],
+                "reflekter": [
+                    "Artikkelen bruker eksemplet med at alle i Norge plutselig får en million kroner hver. Forklar med egne ord hvorfor vi likevel ikke blir rikere av dette.",
+                    "Hvorfor taper sparere på inflasjon mens låntakere vinner? Bruk eksemplene fra teksten med bankkonto og boliglån når du forklarer.",
+                    "Hva skjer i økonomien hvis styringsrenten settes lavere enn den naturlige renten? Forklar hvorfor dette kan skape bobler i boligmarkedet.",
+                    "Forklar Cantillon-effekten med eksemplet der staten trykker penger for å bygge en vei. Hvorfor taper en vanlig lønnsmottaker på dette?"
+                ],
+                "gaaVidere": [
+                    "Se på matvarer og strøm hjemme hos deg. Artikkelen sier at slike varer med høy frekvens rammer folk hardt. Skriv ned tre ting familien din må kjøpe uansett pris, og forklar hvorfor prisøkning på disse merkes ekstra godt.",
+                    "Skriv en kort tekst der du forklarer for en venn hva som er lurest hvis man venter høy inflasjon: å ha penger på sparekonto eller å ha nedbetalt et lån. Bruk begrepet realrente i svaret ditt.",
+                    "Diskuter i klassen: Er det rettferdig at de som får de nye pengene først blir rikere, mens vanlige lønnsmottakere taper? Kom med argumenter for begge sider."
+                ]
+            }
         }
     ],
     "concepts": [

@@ -193,6 +193,29 @@
                     "correctAnswer": 0
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en algoritme, ifølge teksten, og hva er hovedmålet til plattformer som TikTok, YouTube og Facebook?",
+                    "Hvem var Eli Pariser, og hva oppdaget han da to venner søkte på ordet 'Egypt' på Google?",
+                    "Hva betyr 'bekreftelsesfelle' (confirmation bias)?",
+                    "Hva menes med 'gruppepolarisering' når likesinnede diskuterer en sak?"
+                ],
+                "reflekter": [
+                    "Forklar forskjellen på en informasjonsboble og et ekkokammer slik teksten beskriver dem.",
+                    "Hvorfor tjener sosiale medier mer penger jo lenger du blir værende pålogget, og hvordan påvirker det hva algoritmen viser deg?",
+                    "Teksten sier at 'algoritmen elsker sinne'. Forklar hvorfor sinne skaper mer engasjement enn enighet.",
+                    "Hvorfor mener teksten at ekkokamre og informasjonsbobler er en fare for demokratiet og ikke bare et personlig problem?"
+                ],
+                "gaaVidere": [
+                    "Teksten sammenligner radioen på 1930-tallet med dagens sosiale medier. Skriv en kort tekst der du forklarer én viktig likhet og én viktig forskjell mellom dem.",
+                    "Tenk over din egen feed på TikTok eller YouTube. Skriv ned tre ting algoritmen viser deg mye av, og vurder om noe av det bekrefter meninger du allerede har.",
+                    "Diskuter med en medelev: Hva kan du selv gjøre for å komme deg litt ut av din egen boble og 'lese bredere', slik teksten oppfordrer til?"
+                ]
+            }
         }
     ]
 }

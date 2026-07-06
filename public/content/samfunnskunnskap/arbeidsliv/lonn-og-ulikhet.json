@@ -207,6 +207,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en Gini-koeffisient, og hvilket tall har Norge ifølge artikkelen?",
+                    "Hva betyr det at Norge har en sammenpresset lønnsstruktur?",
+                    "Hvor mange prosent av arbeidstakerne i Norge er organisert i en fagforening, og hva er tallet i USA?",
+                    "Artikkelen nevner fem faktorer som er med på å bestemme lønnen din. Nevn minst tre av dem."
+                ],
+                "reflekter": [
+                    "Forklar hvordan frontfagmodellen virker i to retninger. Hva skjer med de lavest betalte, og hva skjer med de høyest betalte?",
+                    "Hvorfor tjener en norsk renholder mer enn en amerikansk renholder, mens en norsk lege tjener mindre enn en amerikansk lege? Bruk det du har lest om tariffavtaler.",
+                    "Artikkelen sier at stor ulikhet ofte gir lav mobilitet. Forklar hvorfor det er vanskeligere å jobbe seg oppover fra bunnen i land med store lønnsforskjeller.",
+                    "Gini-koeffisienten har begrensninger. Nevn én ting den ikke måler, og forklar hvorfor det kan gi et skjevt bilde av hvem som egentlig har det godt."
+                ],
+                "gaaVidere": [
+                    "Er det rettferdig at en renholder tjener nesten like mye som en person som har studert i mange år? Skriv en kort tekst (5-8 setninger) der du argumenterer for ditt syn, og bruk minst ett argument fra artikkelen.",
+                    "Diskuter med en partner: Artikkelen nevner tre trusler mot den norske modellen - globalisering, teknologi og nye arbeidsformer. Velg én av dem og bli enige om hvordan den kan endre arbeidslivet dere skal inn i.",
+                    "Tenk på et yrke du kunne tenke deg å ha. Bruk faktorene fra artikkelen (tilbud og etterspørsel, utdanning, produktivitet, ansvar og forhandlingsmakt) til å forklare hvorfor akkurat det yrket tjener som det gjør."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

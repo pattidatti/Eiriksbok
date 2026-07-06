@@ -285,6 +285,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mener teksten når den sier at historie aldri er nøytral?",
+                    "Hvorfor stiller artikkelen spørsmålet Oppdaget for hvem? når den snakker om Columbus i 1492?",
+                    "Hva er propaganda ifølge artikkelen?",
+                    "Hvorfor ble mange statuer av sydstatsgeneraler i USA reist på 1910- til 1960-tallet, og ikke rett etter borgerkrigen?"
+                ],
+                "reflekter": [
+                    "Setningen om at staten hjalp samene med å bli sivilisert og setningen om at staten tvang samene til å gi opp språket sitt beskriver det samme. Hvorfor kan de to ordvalgene få deg til å tenke helt ulikt om det som skjedde?",
+                    "Artikkelen sier at den norske nasjonalfortellingen er stolt og for det meste sann, men likevel ufullstendig. Hvorfor mener teksten at en historie som bare viser det positive, kan bli en form for propaganda?",
+                    "Hvorfor kan et monument på et torg både få noen til å føle seg inkludert og andre til å føle seg skjøvet ut?",
+                    "Velg ett av de fire spørsmålene artikkelen anbefaler (hvem har skrevet det, hvem er synlig og usynlig, hvilke ord brukes, hvilke konsekvenser har det hatt). Forklar hvordan akkurat det spørsmålet kan avsløre skjevhet i en tekst."
+                ],
+                "gaaVidere": [
+                    "Finn en nyhet, en video eller et innlegg på sosiale medier som forteller om en hendelse. Bruk de fire spørsmålene fra artikkelen og skriv kort hvem som er synlig, hvem som er usynlig, og hvilke ord som farger fortellingen.",
+                    "Tenk deg at du bestemmer hvem hjembyen din skal hedre med en statue. Skriv en kort tekst der du forklarer hvem du ville valgt, hvem som da blir usynlig, og hvorfor valget ikke er nøytralt.",
+                    "Diskuter i klassen: Bør gamle statuer og kart som gir et skjevt bilde av historien fjernes, stå med en forklarende tekst, eller bli stående som de er? Begrunn hva du selv mener."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

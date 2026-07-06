@@ -134,6 +134,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to år stemte nordmenn om EU-medlemskap, og hva ble svaret begge gangene?",
+                    "Hva heter mellomløsningen Norge valgte i stedet for å bli EU-medlem, og hvilket år trådte den i kraft?",
+                    "Hvilke fire ting kan bevege seg fritt over grensene i det indre markedet?",
+                    "Hvilke to områder holdt Norge utenfor EØS-avtalen?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor Norge må følge tusenvis av EU-regler selv om landet ikke er medlem av EU.",
+                    "Hvorfor stod ofte by mot bygd i EU-striden? Bruk fisk, landbruk og næringsliv i svaret ditt.",
+                    "Teksten sier at land som handler med hverandre sjeldnere går til krig. Forklar hvorfor lederne etter andre verdenskrig trodde på denne tanken.",
+                    "To av tre varer Norge selger til utlandet går til EU. Hvorfor gjør dette tallet mange forsiktige med å si opp EØS-avtalen?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du forklarer byttehandelen mellom selvstyre og samarbeid til en som aldri har hørt om EØS. Bruk et eksempel fra din egen hverdag.",
+                    "Tenk deg at du skal stemme i en ny folkeavstemning om EU. Skriv ned to grunner for å si ja og to grunner for å si nei, og forklar hva du selv ville stemt.",
+                    "Diskuter i klassen: Er det udemokratisk at Norge må følge lover landet ikke selv har vært med å bestemme? Finn argumenter for begge sidene."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

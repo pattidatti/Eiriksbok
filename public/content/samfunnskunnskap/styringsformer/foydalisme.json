@@ -184,6 +184,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva byttet vasallen til seg fra kongen, og hva måtte han gi tilbake?",
+                    "Hva heter de tre stendene i middelalderen, og hva var oppgaven til hver av dem?",
+                    "Hva var forskjellen på en livegen bonde og en slave?",
+                    "Nevn tre grunner til at føydalismen forsvant mot slutten av middelalderen."
+                ],
+                "reflekter": [
+                    "Hvorfor kunne ikke kongen lønne soldatene sine med penger, og hvordan løste han dette problemet med jord i stedet?",
+                    "Forklar hva ordtaket 'Min vasalls vasall er ikke min vasall' betyr, og hvorfor det gjorde kongen svakere.",
+                    "Hvorfor ga Svartedauden bøndene mer makt, når pesten egentlig var en katastrofe?",
+                    "Bøndene var over 90 prosent av befolkningen, men hadde nesten ingen makt. Hvordan klarte adelen og kirken å holde dette systemet på plass så lenge?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du sammenligner føydalstaten med den moderne staten. Bruk minst tre av forskjellene fra artikkelen, og forklar hva du selv mener er den viktigste forskjellen.",
+                    "Artikkelen sier at Norge aldri fikk full føydalisme, blant annet fordi bøndene ofte eide sin egen jord. Diskuter med en klassekamerat hvordan Norge kunne blitt annerledes i dag hvis vi hadde hatt et sterkt føydalt system.",
+                    "Ridderidealet om mot og lojalitet lever fortsatt videre i filmer og spill. Finn et eksempel fra noe du selv har sett eller spilt, og forklar hvordan det ligner på ridderkulturen artikkelen beskriver."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -165,6 +165,29 @@
                     "right": "Eliten setter dagsorden for folket"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet oligarki, og hvor kommer ordet plutokrati fra?",
+                    "Hva sier Robert Michels sin oligarkiets jernlov?",
+                    "Hva mente Vilfredo Pareto med begrepet elitenes sirkulasjon, og hva kalte han de to elitetypene?",
+                    "Hvilke tre grupper mente C. Wright Mills utgjorde makteliten i USA i boken fra 1956?"
+                ],
+                "reflekter": [
+                    "Forklar hvordan et land kan ha demokrati med én stemme til hver, men likevel skli over i et plutokrati.",
+                    "Hvordan henger lobbyisme, tilsynsfanging og svingdørseffekten sammen til et lukket nettverk der eliten styrer for eliten?",
+                    "Michael Young advarte mot meritokratiet han selv ga navn. Hvorfor kan det være farligere at en elite tror den har fortjent makten, enn at den har arvet den?",
+                    "Teksten sier at makt er som vann som søker de laveste punktene. Hvordan passer dette bildet med tanken om at oligarki er uunngåelig?"
+                ],
+                "gaaVidere": [
+                    "Teksten kaller Silicon Valley-selskapene et mulig digitalt oligarki fordi de styrer algoritmene. Skriv en kort tekst der du vurderer om appene du bruker daglig påvirker hva du tenker, uten at du merker det.",
+                    "Diskuter i klassen: Hvis Michels har rett i at eliter alltid oppstår, hvilke av tiltakene teksten nevner (åpenhet, fri presse, gode skoler) tror dere virker best for å holde elitene i sjakk?",
+                    "Velg en organisasjon du selv er en del av, for eksempel et idrettslag, elevrådet eller en gjeng venner. Skriv en kort tekst om hvem som egentlig bestemmer der, og om du kjenner igjen noe av det Michels beskriver."
+                ]
+            }
         }
     ],
     "quiz": [

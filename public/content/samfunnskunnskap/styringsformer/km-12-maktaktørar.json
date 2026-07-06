@@ -139,6 +139,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en maktaktør? Skriv definisjonen med egne ord.",
+                    "Nevn de fire hovedtypene maktaktører som artikkelen beskriver.",
+                    "Hva mener vi med at media er den fjerde statsmakt?",
+                    "Hva er lobbyisme, og hvorfor kaller artikkelen det en omdiskutert form for maktutøvelse?"
+                ],
+                "reflekter": [
+                    "Politikere begrunner makta si med demokratisk legitimitet, mens et stort selskap begrunner sin med arbeidsplasser og vekst. Hvorfor lytter politikerne likevel til selskapet?",
+                    "Artikkelen deler begrunnelser i tre typer: interesse, prinsipp og konsekvens. Forklar forskjellen ved å bruke debatten om skattlegging av de rikeste.",
+                    "Et oljeselskap kan vektlegge klimaansvar i én debatt og arbeidsplasser i en annen. Hvorfor mener artikkelen at dette ikke nødvendigvis er hykleri?",
+                    "I eksemplet om oljeboring sier alle aktørene at de handler for det felles beste, men de er dypt uenige. Hvordan kan det henge sammen?"
+                ],
+                "gaaVidere": [
+                    "Kjendiser og influensere kalles en femte maktaktør. Skriv en kort tekst der du drøfter om en fotballspiller med mange følgere bør ha like mye makt over meninger som en folkevalgt politiker.",
+                    "Velg en aktuell sak fra nyhetene og finn ut hvilke av de fire maktaktørene som er involvert. Still spørsmålet artikkelen anbefaler: hvem tjener på dette, og hvem får ikke komme til orde?",
+                    "Diskuter i klassen: Hvem har egentlig mest makt over hva dere tenker om verden i løpet av en vanlig dag?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

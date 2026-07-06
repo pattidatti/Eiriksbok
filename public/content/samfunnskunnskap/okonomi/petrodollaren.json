@@ -117,6 +117,29 @@
         {
             "type": "text",
             "content": "Som alltid bør vi være litt kritiske. Noen forklarer petrodollaren som en hemmelig avtale som styrer hele verden. Virkeligheten er litt mindre dramatisk og litt mer rotete: det handler om mange aktører, tillit og tilfeldigheter like mye som om en stor plan. Men mønsteret er ekte, og det forklarer mye av hvorfor verden ser ut som den gjør."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet petrodollar?",
+                    "Hva skjedde i 1971 med forbindelsen mellom dollaren og gull?",
+                    "Hva gjorde OPEC i 1973, og hva skjedde med oljeprisen?",
+                    "Hvilket tiltak innførte norske myndigheter vinteren 1973 til 1974 på grunn av oljekrisen?"
+                ],
+                "reflekter": [
+                    "Hvorfor holder dollaren seg sterk når all olje må kjøpes i dollar? Forklar med egne ord.",
+                    "Hvorfor sier teksten at en pengeseddel bare er verdt noe fordi alle stoler på at den er det?",
+                    "Hvorfor ble oljepengene som virket som en gave på 1970-tallet til en felle på 1980-tallet for land som Mexico?",
+                    "Hvorfor kan USA stenge land ute fra dollarsystemet uten å avfyre et eneste skudd?"
+                ],
+                "gaaVidere": [
+                    "Følg én dollar fra en oljebrønn og hele veien til gjeld i et fattig land. Skriv de fire til fem stegene i riktig rekkefølge.",
+                    "Teksten sier at vi bør være litt kritiske til dem som forklarer petrodollaren som en hemmelig avtale. Diskuter i par: Når er det lurt å tvile på en forklaring som virker for enkel?",
+                    "Norge tjener enorme summer på å selge olje i dollar. Skriv en kort tekst der du drøfter om det er en fordel eller en ulempe for Norge at hele verden er avhengig av olje og dollar."
+                ]
+            }
         }
     ],
     "quiz": [

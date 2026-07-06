@@ -169,6 +169,29 @@
                     "right": "Samlende nasjonalt symbol"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to greske ord kommer ordet monarki fra, og hva betyr de?",
+                    "Hva menes med læren om kongedømmet av Guds nåde?",
+                    "Hvorfor beordret Ludvig XIV den franske adelen til å flytte inn på slottet i Versailles?",
+                    "Hva skjedde i Norge i 1884, og hvorfor var det viktig for kongens makt?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor en middelalderkonge ble kalt den fremste blant likemenn, mens en enevoldskonge kunne si l'état, c'est moi.",
+                    "Frederik den store kalte seg statens første tjener i stedet for Guds utvalgte. Hva forteller denne forskjellen om hvordan synet på kongemakt endret seg?",
+                    "Prins Carl krevde en folkeavstemning før han ville bli konge i 1905. Hvorfor ga dette det norske monarkiet en spesiell form for legitimitet?",
+                    "Kritikerne mener en arvelig kongetittel er udemokratisk, mens tilhengerne mener kongen kan være alles konge. Hvilket argument synes du er sterkest, og hvorfor?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du sammenligner hvordan kongen fikk makten sin under eneveldet med hvordan Haakon VII fikk sin i 1905.",
+                    "Tenk deg at Norge skal stemme over å beholde monarkiet i dag. Skriv tre argumenter for og tre argumenter mot, og forklar hva du selv ville stemt.",
+                    "Artikkelen sier at kongen fungerer som et anker og et samlende symbol som står over partipolitikken. Diskuter med en medelev om et land trenger en slik upartisk figur, eller om en valgt president gjør samme nytten."
+                ]
+            }
         }
     ],
     "quiz": [

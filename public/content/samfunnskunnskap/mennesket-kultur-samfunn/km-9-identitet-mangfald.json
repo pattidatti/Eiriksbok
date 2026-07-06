@@ -250,6 +250,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilke to deler pleier psykologer å dele identitet, og hva handler hver av dem om?",
+                    "Hva menes med at en identitet er flerdimensjonal? Bruk eksemplet med Leila fra teksten.",
+                    "Hva er forskjellen på synlige og skjulte kulturuttrykk? Gi ett eksempel på hver fra artikkelen.",
+                    "Hva er strukturell diskriminering, og hvilket eksempel bruker teksten for å forklare det?"
+                ],
+                "reflekter": [
+                    "Teksten sier at 'identiteter som aldri endrer seg, tilhører museer - ikke levende mennesker'. Forklar med egne ord hva forfatteren mener med dette.",
+                    "Hvorfor mener teksten at grupper med ulik bakgrunn ofte løser problemer bedre enn grupper der alle tenker likt?",
+                    "Artikkelen sier at mangfold ikke er det samme som at alle kulturer er like bra på alle områder. Hvor går grensen for kulturell toleranse, og hvorfor er den grensen viktig?",
+                    "Hvorfor er det et problem hvis det oppstår parallellsamfunn, både for enkeltmennesket og for samfunnet?"
+                ],
+                "gaaVidere": [
+                    "Tenk over din egen identitet slik teksten beskriver den. Skriv en kort tekst der du nevner minst fire ulike ting som til sammen former hvem du er.",
+                    "I scenariet krangler Jonas og Amara om skolemat. Skriv hva du selv ville sagt hvis læreren så på deg, og forklar hvorfor.",
+                    "Neste gang du ser en nyhetssak om innvandring, still deg spørsmålet fra teksten: Hvem sin stemme er ikke med her? Skriv ned et eksempel og hvem du mener mangler."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

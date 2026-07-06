@@ -50,6 +50,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva heter Norges nasjonalforsamling, og i hvilket år ble bygningen reist?",
+                    "Hvilke tre hovedoppgaver har Stortinget? Forklar kort hva hver av dem betyr.",
+                    "Hvor mange representanter sitter på Stortinget, og hvor ofte holder vi stortingsvalg?",
+                    "Hva heter de tre delene makten i Norge er delt i, ifølge maktfordelingsprinsippet?"
+                ],
+                "reflekter": [
+                    "Hvorfor har vi et representativt demokrati i dag i stedet for at alle nordmenn møtes for å stemme direkte, slik bøndene gjorde på tinget?",
+                    "Hvorfor tror du makten er delt i tre i stedet for at én person eller gruppe bestemmer alt?",
+                    "Hva menes med parlamentarisme, og hvorfor er det viktig at regjeringen må ha Stortingets tillit for å styre?",
+                    "Teksten sier at ingen kan straffes uten etter lov, og at loven må komme fra Stortinget. Hvorfor er dette en trygghet for vanlige folk?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du sammenligner tinget i vikingtiden med Stortinget i dag. Hva er likt, og hva er forskjellig?",
+                    "Ordtaket 'Med lov skal land bygges' er over tusen år gammelt. Diskuter med en klassekamerat hva dette ordtaket betyr, og om det fortsatt passer i dagens Norge.",
+                    "Se for deg at du fikk bestemme statsbudsjettet i ett år. Hvilke tre områder (for eksempel skole, sykehus, veier eller forsvar) ville du gitt mest penger til, og hvorfor?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

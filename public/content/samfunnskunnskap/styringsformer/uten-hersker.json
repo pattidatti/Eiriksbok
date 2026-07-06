@@ -166,6 +166,29 @@
                     "right": "Frivillige kontrakter mellom individer"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet anarki bokstavelig, og hvilket gresk ord kommer det fra?",
+                    "Hva het boken Peter Kropotkin skrev i 1902, og hva mente han var viktigere enn konkurranse for å overleve?",
+                    "Hva mente Proudhon da han sa 'Eiendomsrett er tyveri'? Angrep han retten til å eie tannbørsten din, eller noe annet?",
+                    "Hva sier ikke-aggresjonsprinsippet (NAP) i anarko-kapitalismen at det er forbudt å gjøre?"
+                ],
+                "reflekter": [
+                    "Hvorfor mener anarkister at staten er både urettferdig og unødvendig? Bruk det teksten sier om makt og samtykke.",
+                    "Kropotkin og Rothbard var begge anarkister, men drømte om helt ulike samfunn. Forklar hvorfor de er så uenige om eiendomsrett og marked.",
+                    "Teksten bruker språket som et eksempel på spontan orden. Forklar hvorfor språk passer så godt til å vise hva anarkistene mener med orden uten en sjef som bestemmer.",
+                    "Hobbes mente at et samfunn uten stat blir en krig mot alle. Hvordan svarer anarkistene på denne innvendingen? Hvem av dem synes du har det sterkeste argumentet?"
+                ],
+                "gaaVidere": [
+                    "Erfaringene fra Catalonia og fristaden Christiania viser at anarkistisk organisering kan fungere i hvert fall for en tid. Skriv en kort tekst der du forklarer hvorfor slike samfunn likevel ofte bryter sammen eller blir presset ut.",
+                    "Anarko-kapitalismen vil privatisere alt, også veier, skoler og politi. Velg én av disse tjenestene og diskuter med en medelev hva som kunne blitt bedre og hva som kunne blitt verre hvis et privat firma overtok den der du bor.",
+                    "Teksten sier at blokkjeder og DAO-er er en digital versjon av den anarkistiske drømmen. Skriv en kort tekst der du sammenligner Liberland eller en DAO med det Kropotkin drømte om for over hundre år siden."
+                ]
+            }
         }
     ],
     "quiz": [

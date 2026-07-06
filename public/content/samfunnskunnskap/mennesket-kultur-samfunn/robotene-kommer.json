@@ -169,6 +169,29 @@
                     "correctAnswer": 1
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem var luddittene, og hva gjorde de i 1811?",
+                    "Hva skjedde i 1997 da IBMs Deep Blue møtte Garry Kasparov?",
+                    "Hva står de fire k-ene for, ifølge teksten?",
+                    "Hvilke typer yrker sier teksten er tryggest for automatisering, og hva har de til felles?"
+                ],
+                "reflekter": [
+                    "Teksten sier at teknologi 'sjelden bare fjerner jobber, men endrer dem'. Bruk sjakk-eksempelet til å forklare hva den mener.",
+                    "Hvorfor blir empati og kritisk tenkning mer verdifullt når maskiner kan levere faktakunnskap som 'hyllevare'?",
+                    "Teksten peker på at AI-revolusjonen skjer på tiår, mens den industrielle revolusjonen tok hundre år. Hvorfor kan denne farten gjøre situasjonen vår vanskeligere enn den luddittene sto i?",
+                    "Sammenlign den dystopiske og den utopiske fremtidsvisjonen. Hva må til for at vi havner i den ene fremfor den andre?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at vi ofte bygger identiteten vår rundt spørsmålet 'Hva jobber du med?'. Skriv en kort tekst om hvem du er uten å nevne en jobb eller et yrke.",
+                    "Se for deg at du får borgerlønn og ikke må jobbe for penger. Skriv ned hva du ville brukt tiden på, og vurder om du tror du hadde savnet å ha en jobb.",
+                    "Diskuter med en medelev: Er det noen oppgaver en robot aldri bør få lov til å gjøre? Bli enige om ett eksempel dere begge mener bør være forbudt, og begrunn hvorfor."
+                ]
+            }
         }
     ]
 }

@@ -135,6 +135,29 @@
                     "value": "Norge har en blandingsøkonomi. Vi har både private bedrifter (som selger mat og klær) og offentlig produksjon (som sykehus og skoler). \n\nHvorfor tror du vi har valgt å la staten ta seg av akkurat sykehusene, mens vi lar Rema 1000 og Kiwi selge oss maten? Kunne det vært omvendt?"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet produksjon i økonomifaget? Nevn ett eksempel på en vare og ett eksempel på en tjeneste fra teksten.",
+                    "Hvem bestemmer hva som skal produseres i en planøkonomi, og hvem bestemmer det i en markedsøkonomi?",
+                    "Hva menes med forbrukersuverenitet? Forklar med ett eksempel fra teksten.",
+                    "Hva kalte økonomen Ludwig von Mises problemet med å vite om man sløser eller skaper verdi uten markedspriser?"
+                ],
+                "reflekter": [
+                    "Teksten sier at ressursene på jorden er knappe. Hvorfor tvinger dette hvert samfunn til å velge mellom for eksempel jernbane og sykehussenger?",
+                    "I markedsøkonomien er overskudd og underskudd signaler. Forklar hva et underskudd forteller en bedrift om ressursbruken.",
+                    "De østerrikske økonomene mener forurensning ofte skyldes manglende eiendomsrett. Hvordan kan det å eie en elv hindre en fabrikk i å slippe ut gift?",
+                    "Teksten hevder at politikere ofte tenker fram til neste valg, mens markedet tenker lenger fram. Er du enig eller uenig? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Norge har en blandingsøkonomi. Skriv en kort tekst der du forklarer hvorfor du tror staten driver sykehusene, mens Rema 1000 og Kiwi selger oss maten.",
+                    "Tenk deg at du skulle bestemme hva alle i klassen din skulle spise til lunsj hver dag i en uke. Skriv ned tre problemer du ville møtt, og koble dem til utfordringene ved planøkonomi.",
+                    "Velg en vare du har kjøpt den siste uka. Diskuter med en medelev hvilket signal kjøpet ditt sendte til produsenten, og hva som ville skjedd om ingen kjøpte varen."
+                ]
+            }
         }
     ]
 }

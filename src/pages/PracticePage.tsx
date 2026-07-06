@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map } from 'lucide-react';
+import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles } from 'lucide-react';
 import { DailyReviewCard } from '../components/review/DailyReviewCard';
 
 export const PracticePage: React.FC = () => {
@@ -12,6 +12,14 @@ export const PracticePage: React.FC = () => {
             icon: GraduationCap,
             color: 'bg-teal-600',
             link: '/oving/kompetansemal'
+        },
+        {
+            id: 'stjernehimmelen',
+            title: 'Stjernehimmelen',
+            description: 'Kunnskapen din som nattehimmel. Tenn stjerner ved å huske begreper - og redd dem som blafrer før de slukner.',
+            icon: Sparkles,
+            color: 'bg-indigo-900',
+            link: '/himmel'
         },
         {
             id: 'historiske-spill',

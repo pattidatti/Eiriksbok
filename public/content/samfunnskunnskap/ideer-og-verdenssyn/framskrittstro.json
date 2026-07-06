@@ -115,6 +115,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva menes med at mennesker før i tiden så på tiden som en sirkel og ikke en pil?",
+                    "Hva mente filosofene Condorcet og Kant med at menneskeheten var inne i en 'modningsprosess'?",
+                    "Hvilke oppfinnelser fra den industrielle revolusjonen bandt verden tettere sammen?",
+                    "Hvorfor ble første verdenskrig et stort nederlag for troen på framskrittet?"
+                ],
+                "reflekter": [
+                    "Hvorfor tror du opplysningstidens tenkere så på framskrittet som en naturlov, altså noe som måtte skje helt av seg selv?",
+                    "Hvordan kunne den samme teknologien som folk hyllet som framskritt, som fly og kjemikalier, bli brukt til å drepe millioner under verdenskrigene?",
+                    "Condorcet skrev sitt mest optimistiske verk i fengsel rett før han ble henrettet. Hva forteller det oss om hvor sterk troen på framskrittet var?",
+                    "Artikkelen sier at uendelig vekst på en begrenset planet er umulig. Hvorfor kan dette tvinge oss til å tenke nytt om hva framskritt egentlig betyr?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du sammenligner hvordan du selv tenker om framtiden med hvordan en bonde i vikingtiden ville tenkt om den.",
+                    "Artikkelen spør om framskritt i framtiden handler om å produsere 'bedre' i stedet for 'mer'. Diskuter i klassen hva et slikt framskritt kunne bety i praksis.",
+                    "Finn et eksempel fra din egen hverdag der du forventer at neste versjon skal være bedre enn den forrige, og forklar hvordan det viser troen på framskritt."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

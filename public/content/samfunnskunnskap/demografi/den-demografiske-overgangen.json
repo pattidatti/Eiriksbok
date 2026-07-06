@@ -77,6 +77,29 @@
         {
             "type": "text",
             "value": "Modellen er tegnet som en togreise som alle land må gjennom. Men tar vi feil? Kanskje Afrikas befolkningsvekst vil stoppe opp mye raskere enn vi tror, takket være smarttelefoner og internett? Les mer om debatten i [Malthus vs. Boserup](/samfunnskunnskap/demografi/malthus-vs-boserup)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange mennesker var vi for 200 år siden, og hvor mange er vi i dag?",
+                    "I Fase 1 fikk folk 6-8 barn. Omtrent hvor mange av dem vokste opp, og hva var det som holdt befolkningen nede?",
+                    "Hva er kjennetegnet på Fase 2, og nevn to eksempler på land som er i denne fasen i dag.",
+                    "Hvorfor krymper folketallet i Fase 5, ifølge teksten? Nevn to land som er i denne fasen."
+                ],
+                "reflekter": [
+                    "I Fase 2 stuper dødsraten, men fødselsraten er fortsatt høy. Forklar hvorfor folk fortsetter å få mange barn selv om barna nå overlever.",
+                    "Teksten sier at barn er gratis arbeidskraft på en bondegård, men dyre i drift i en by. Bruk dette til å forklare hvorfor fødselsraten faller i Fase 3.",
+                    "Hva er Utviklingsfellen, og hvorfor kan fattigdom føre til at folk får enda flere barn?",
+                    "Teksten sammenligner modellen med en togreise som alle land må gjennom. Hvorfor tror du noen mener det er feil å tro at alle land følger nøyaktig samme rute?"
+                ],
+                "gaaVidere": [
+                    "Norge er i Fase 4 med lav fødselsrate. Skriv en kort tekst (5-8 setninger) om hva som kan skje i Norge hvis vi glir over i Fase 5 med en stor eldrebølge.",
+                    "Teksten nevner at smarttelefoner og internett kanskje kan bremse befolkningsveksten i Afrika raskere enn ventet. Diskuter med en partner: Hvordan kan tilgang til internett påvirke hvor mange barn en familie velger å få?",
+                    "Finn ut hvilken fase et land du er nysgjerrig på befinner seg i (for eksempel besteforeldrenes hjemland eller et land du har besøkt). Begrunn svaret ditt ut fra kjennetegnene i teksten."
+                ]
+            }
         }
     ],
     "quiz": [

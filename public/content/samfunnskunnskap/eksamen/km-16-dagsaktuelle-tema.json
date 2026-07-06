@@ -203,6 +203,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er de tre delene i et godt argument, og hva betyr hver av dem?",
+                    "Hvorfor er 'Klimaet' et dårlig tema å undersøke, og hva slags spørsmål bør du stille i stedet?",
+                    "Hvilke tre spørsmål kan du bruke for å vurdere om en kilde er pålitelig?",
+                    "Ifølge teksten, hvorfor er SSB (Statistisk sentralbyrå) en mer pålitelig kilde enn en kommentarartikkel i en nettavis?"
+                ],
+                "reflekter": [
+                    "Teksten sier at også statsetater og forskningsinstitusjoner kan ha en agenda. Hvorfor regnes noen kilder likevel som mer pålitelige enn andre?",
+                    "Hvorfor legger sensor så mye merke til om du imøtegår motargumentene? Hva viser det om forståelsen din?",
+                    "I BiasLens-verktøyet fremstiller Olje- og energidepartementet og Greenpeace samme sak helt ulikt. Forklar hvorfor de to kildene beskriver norsk olje så forskjellig.",
+                    "Kompetansemålet sier at du skal kunne argumentere for både dine egne og andres meninger. Hvorfor er det vanskeligere å argumentere for et standpunkt du selv er uenig i?"
+                ],
+                "gaaVidere": [
+                    "Velg et dagsaktuelt tema som opptar deg, og lag en avgrenset problemstilling etter modellen i teksten (ja-nei, sammenligning eller hva-bør-vi-gjøre). Skriv deretter ett argument med påstand, belegg og forklaring.",
+                    "Prøv DebateSimulator om reklameforbud for usunn mat. Skriv 5-8 setninger om hvilket argument du synes var sterkest, og forklar om det var belegget eller forklaringen som overbeviste deg.",
+                    "Sett deg sammen med en partner. Én av dere argumenterer for et standpunkt, den andre finner det beste motargumentet. Bytt så roller, og diskuter etterpå hvem som klarte å forstå den andre siden best."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

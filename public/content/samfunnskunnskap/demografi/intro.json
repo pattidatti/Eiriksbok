@@ -43,6 +43,29 @@
         {
             "type": "text",
             "value": "Bli med på en reise gjennom tallene som former verden vår!"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet demografi? Skriv den enkle definisjonen som står i artikkelen.",
+                    "Skriv opp regnestykket for demografi slik det står i teksten. Hvilke fire tall må du kjenne for å regne ut neste års befolkning?",
+                    "Artikkelen nevner fem ting du skal lære i dette emnet. Nevn minst tre av dem.",
+                    "Hva menes med Push og Pull i teksten, og hvilket tema hører disse ordene til?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at demografi handler om mer enn tørr statistikk. Forklar med egne ord hvorfor fødsel, død og flytting kan skjule dramatiske historier.",
+                    "Hvorfor må politikerne vite hvor mange vi kommer til å være i fremtiden? Bruk et av eksemplene fra teksten (barnehager, gamlehjem, fabrikker eller hus) og forklar.",
+                    "I regnestykket kan befolkningen både øke og synke. Forklar hva som må skje med tallene for at et land skal få færre innbyggere fra ett år til det neste.",
+                    "Den demografiske overgangen beskrives som veien fra mange barn til mange gamle. Hva tror du kan gjøre at et samfunn går fra å få mange barn til å få færre barn?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer for en yngre elev hva demografi er, og hvorfor det er viktig å vite hvor mange mennesker vi er.",
+                    "Snakk med en partner: Hvilket av de fem temaene i emnet (demografisk overgang, migrasjon, bæreevne, fattigdom eller urbanisering) synes dere er mest spennende, og hvorfor?",
+                    "Tenk på din egen familie eller hjemsted. Har noen flyttet til eller fra stedet der du bor? Skriv ned én grunn til at folk flytter dit, og én grunn til at folk flytter derfra."
+                ]
+            }
         }
     ],
     "quiz": [

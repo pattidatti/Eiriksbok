@@ -173,6 +173,29 @@
         {
             "type": "paragraph",
             "content": "Hver gang vi går til valglokalet, hver gang vi stoler på at rettssystemet vil behandle oss rettferdig, og hver gang vi adlyder en lov vi kanskje er uenige i, bekrefter vi statens legitimitet. Det er et skjørt byggverk basert på milliarder av menneskers tro og handlinger. Å forstå dette er første skritt mot å bli en bevisst borger som ikke bare adlyder, men som og tør å stille spørsmålet [Sokrates](/krle/filosofi/sokrates) stilte: Hvorfor skal denne makten gjelde over meg?"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på makt og autoritet slik teksten forklarer det?",
+                    "Hva heter de tre typene legitim autoritet som Max Weber beskrev?",
+                    "Hva mener Weber med at staten har monopol på legitim bruk av fysisk tvang?",
+                    "Hvorfor mente Thomas Hobbes at selv den dårligste staten var bedre enn ingen stat?"
+                ],
+                "reflekter": [
+                    "Teksten bruker en raner med pistol som eksempel. Forklar hvorfor ranerens makt ikke er legitim, mens en politibetjents makt er det.",
+                    "Weber sa at karismatisk autoritet er ustabil. Hvorfor blir en slik lederbevegelse ofte i fare når lederen dør eller mislykkes?",
+                    "John Locke og Thomas Hobbes hadde ulikt syn på den sosiale kontrakten. Hvorfor gir Lockes syn folket rett til å kaste en hersker, mens Hobbes sitt syn ikke gjør det?",
+                    "Hvorfor kan en stat som leverer trygghet og rettferdighet klare seg med mindre politi enn en stat som styrer med frykt?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at legitimiteten blir utfordret i dag av desinformasjon og avstand mellom eliter og folk. Skriv en kort tekst der du forklarer hvorfor dette kan føre til at flere følger karismatiske populistledere.",
+                    "Tenk på en regel hjemme eller på skolen som du er uenig i, men følger likevel. Bruk Webers tre typer autoritet til å forklare hvorfor du adlyder.",
+                    "Diskuter med en medelev: Kan en stat beholde legitimiteten sin hvis den overvåker alt du gjør på internett? Skriv ned de sterkeste argumentene for og imot."
+                ]
+            }
         }
     ],
     "quiz": [

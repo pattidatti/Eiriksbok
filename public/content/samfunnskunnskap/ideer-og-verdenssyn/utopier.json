@@ -115,6 +115,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem fant på ordet 'utopi', og hvilket år skjedde det?",
+                    "Ordet 'utopi' kan leses på to måter på gresk. Hva betyr 'ou-topos', og hva betyr 'eu-topos'?",
+                    "Hvordan mente Platon at staten burde styres, og hvem skulle ha makten?",
+                    "Hva er en dystopi, og nevn to bøker fra artikkelen som beskriver et slikt samfunn."
+                ],
+                "reflekter": [
+                    "Artikkelen sier at en utopi er 'en kritikk av samtiden forkledd som en fantasi'. Forklar hvordan Thomas More brukte øya si uten penger til å angripe forholdene i sitt eget England.",
+                    "Hvorfor virker Platons perfekte stat 'kald og autoritær' for et moderne menneske, selv om den er full av orden og rettferdighet?",
+                    "Artikkelen kaller marxismen en utopisk teori, men peker på at forsøket på å tvinge fram en utopi kan føre til de verste diktaturer. Hvorfor kan drømmen om det perfekte samfunn ende så galt?",
+                    "Robert Owens mønstersamfunn la grunnlaget for velferdsstaten. Hvorfor tror du utopiske ideer noen ganger blir til virkelighet, mens andre bare forblir drømmer?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du sammenligner Platons drøm om det perfekte samfunn med de 'grønne' eller teknologiske utopiene vi hører om i dag.",
+                    "Tenk deg at du fikk starte et samfunn helt på nytt. Lag tre regler du mener ville gjort samfunnet bedre, og forklar hvilken frihet folk kanskje måtte gi opp for at reglene skal fungere.",
+                    "Diskuter i klassen: Kan drømmer om et bedre samfunn som aldri kan bli helt virkelige, likevel være nyttige? Bruk et eksempel fra din egen tid."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

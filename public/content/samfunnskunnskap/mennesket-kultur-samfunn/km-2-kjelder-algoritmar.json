@@ -181,6 +181,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en kilde? Gi minst tre eksempler fra teksten.",
+                    "Hvilke fire grunnleggende spørsmål bør du stille når du skal vurdere en kilde?",
+                    "Hva er hovedmålet til algoritmer på sosiale medier, og hvordan tjener plattformen penger på det?",
+                    "Nevn de tre typene skjeve kilder teksten beskriver, og forklar kort hva som kjennetegner hver av dem."
+                ],
+                "reflekter": [
+                    "Teksten sier at ensidig informasjon ikke nødvendigvis betyr at noen lyver. Forklar med egne ord hvordan en kilde kan gi et skjevt bilde uten å komme med direkte løgn.",
+                    "Hvorfor kan mangelen på kilder være mer krevende å oppdage enn ensidig informasjon? Bruk eksempelet om hendelser i fattige land.",
+                    "I BiasLens-verktøyet bruker fire kilder den samme SSB-rapporten, men bare forskeren gir et nyansert bilde. Hvorfor er det ikke nok at fakta i seg selv er riktige?",
+                    "Hvorfor kan to personer som søker på det samme temaet få helt ulike resultater? Forklar hva algoritmen bruker for å bestemme dette."
+                ],
+                "gaaVidere": [
+                    "Velg en sak du bryr deg om, for eksempel innvandring, skolepolitikk eller klimatiltak. Skriv en kort tekst der du undersøker hvilke kilder som har formet synet ditt, og finn bevisst én kilde som er ulik det du vanligvis leser.",
+                    "Test de fire stegene fra 'Hva kan du gjøre?' på en nyhetssak du finner på TikTok eller i en avis denne uka. Skriv ned hva du oppdaget om avsenderen og om saken stemmer med andre kilder.",
+                    "Diskuter med en medelev: Hvorfor skriver teksten at kildekritikk er en grunnleggende ferdighet i et demokrati? Hva kan skje med et samfunn der folk slutter å sjekke kildene sine?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

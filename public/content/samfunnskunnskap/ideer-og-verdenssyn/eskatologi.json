@@ -147,6 +147,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr de greske ordene 'eschatos' og 'logos' som ordet eskatologi kommer fra?",
+                    "Hva er forskjellen på sirkulær tid og lineær tid slik teksten forklarer det?",
+                    "Hva var Fimbulvinteren i den norrøne fortellingen om Ragnarok?",
+                    "Hva fryktet folk skulle skje da klokken slo tolv ved tusenårsskiftet (Y2K)?"
+                ],
+                "reflekter": [
+                    "Teksten sier at dommedag ofte blir sett på som en gledens dag for de som føler seg undertrykt. Hvorfor kunne budskapet om Guds inngripen gi håp til de tidlige, forfulgte kristne i Romerriket?",
+                    "Zoroastrismen lærte at den samme flommen av smeltet metall ville føles som varm melk for de gode, men brenne bort de onde. Hvorfor tror du en slik forestilling kunne få folk til å velge å leve etisk?",
+                    "I Ragnarok er selv gudene underlagt skjebnen og vet at de skal tape. Hvordan gjør dette den norrøne fortellingen mørkere enn den bibelske apokalypsen, der Gud dømmer og vinner?",
+                    "Teksten sammenligner klimakrisen med Ragnarok og de gamle religiøse advarslene. Hvilke fellestrekk mener forfatteren at disse fortellingene deler?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du sammenligner en moderne undergangsfrykt (for eksempel klima, AI eller atomvåpen) med en av de gamle religiøse dommedagsfortellingene i artikkelen. Hva er likt, og hva er forskjellig?",
+                    "Teksten avslutter med at eskatologi kanskje ikke er en lære om død, men om verdi: Hva er verdt å bevare når alt annet forsvinner? Skriv ned ditt eget svar og forklar hvorfor.",
+                    "Diskuter i klassen: Er det sunt eller usunt at hver generasjon tror den lever i en helt avgjørende tid for verdens skjebne? Bruk minst ett eksempel fra artikkelen."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

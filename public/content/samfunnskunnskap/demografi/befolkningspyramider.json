@@ -81,6 +81,29 @@
         {
             "type": "text",
             "value": "Hvis du ser nøye på en virkelig pyramide (sjekk gjerne data fra *populationpyramid.net*), vil du ofte se ujevne hakk inn eller ut.\n\n*   **Et innhugg i menn 20-30 år:** Kan tyde på en krig der soldater døde, eller stor utvandring av arbeidskraft.\n*   **En utbuling i 60-åringene:** Dette er \"Baby Boomers\" – generasjonen født like etter 2. verdenskrig da optimismen var stor."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange grunnformer deler artikkelen verdens land inn i, og hva heter modellen de følger?",
+                    "Hvilke to land nevnes som eksempel på Fase 2, den ekte pyramiden med bred base?",
+                    "Hva betyr det at basen er bred i en befolkningspyramide?",
+                    "Hva kalles diagramformen i Fase 5, og hvilke to land nevnes som eksempel på den?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor sidene på den konkave pyramiden i Fase 1 buer bratt innover. Hva sier det om livet i et slikt samfunn?",
+                    "Hvorfor er en enormt ung befolkning (Fase 2) både en mulighet og en fare for et land? Hva må staten få til for at det skal gå bra?",
+                    "Hva menes med forsørgerbyrde, og hvorfor er byrden mange barn i Fase 2, men mange eldre i Fase 5?",
+                    "Hvis du ser et tydelig innhugg blant menn i alderen 20-30 år i en pyramide, hva kan ha skjedd i landet? Nevn minst to mulige forklaringer."
+                ],
+                "gaaVidere": [
+                    "Norge er nevnt som et Fase 4-land (bikube/søyle). Skriv en kort tekst (5-8 setninger) om hva slags utfordringer Norge kan møte de neste tiårene hvis vi beveger oss mot Fase 5.",
+                    "Gå sammen med en partner. Den ene forklarer hvorfor Japan har en urneformet pyramide, den andre hvorfor Niger har en bred trekant. Diskuter deretter hvilket av landene dere tror har det vanskeligst, og hvorfor.",
+                    "Sjekk en ekte befolkningspyramide for et land du er nysgjerrig på (for eksempel på populationpyramid.net). Beskriv hvilken fase landet ser ut til å være i, og pek på ett hakk eller én utbuling du legger merke til."
+                ]
+            }
         }
     ],
     "quiz": [

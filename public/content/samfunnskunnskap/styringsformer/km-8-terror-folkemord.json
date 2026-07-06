@@ -271,6 +271,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på terrorisme og folkemord slik artikkelen forklarer det?",
+                    "Hvordan definerer FN folkemord?",
+                    "Hvor mange mennesker døde i terrorangrepet 22. juli 2011, og hvor skjedde det?",
+                    "Nevn tre av stegene i Gregory Stantons modell for hvordan et folkemord vokser fram."
+                ],
+                "reflekter": [
+                    "Artikkelen sier at 'folkemord bygges med språk lenge før det bygges med våpen'. Hva menes med dette, og hvorfor er propaganda så farlig?",
+                    "Hvorfor er dehumanisering et så viktig varseltegn? Forklar hvordan det senker terskelen for å drepe.",
+                    "Radikalisering starter ofte med en personlig krise. Hvorfor blir et menneske i krise mer sårbart for ekstreme grupper?",
+                    "Hvorfor sier artikkelen at rosetogene og det å straffe gjerningsmannen etter vanlig lov var en seier for demokratiet etter 22. juli?"
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at algoritmer og ekkokamre gjør radikalisering raskere. Skriv en kort tekst der du forklarer hvordan din egen bruk av sosiale medier kan trekke deg mot mer ekstremt innhold, og hva du kan gjøre for å unngå det.",
+                    "Diskuter i klassen: Hva kan du og medelevene dine gjøre for at ingen på skolen skal føle seg så ensomme og utenfor at de blir sårbare for ekstreme miljøer?",
+                    "Statsviteren Rudolph Rummel fant at fungerende demokratier ikke begår folkemord, mens diktaturer gjør det. Skriv noen setninger om hvorfor du tror et sterkt demokrati beskytter mot folkemord."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

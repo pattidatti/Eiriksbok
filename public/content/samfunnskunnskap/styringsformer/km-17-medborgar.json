@@ -338,6 +338,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er de tre hovedelementene i et medborgerskap, og gi ett eksempel på en rettighet i hver gruppe.",
+                    "Fra hvilket språk kommer ordet medborger, og hva betydde det opprinnelig i Romerriket?",
+                    "Hva menes med Den store brannmuren i Kina?",
+                    "Hva kalte Rousseau ideen om at frihet er å være med på å lage reglene alle må følge?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at innbyggerne i Kina ikke er medborgere i demokratisk forstand, selv om landet har løftet mange ut av fattigdom. Forklar hvorfor teksten mener dette.",
+                    "Hvorfor henger de sivile, politiske og sosiale rettighetene sammen? Bruk eksempelet fra teksten om at fattige ikke kan bruke de politiske rettighetene sine.",
+                    "Hva menes med at demokratiet kan stemme seg selv bort, og hvorfor er det farlig at en leder svekker domstoler og fri presse?",
+                    "Hvorfor er et aktivt sivilsamfunn viktig også mellom valgene, ifølge artikkelen?"
+                ],
+                "gaaVidere": [
+                    "Tenk på ditt eget liv i Norge. Nevn tre uformelle plikter fra teksten, og skriv kort om hvordan du selv kan oppfylle minst én av dem allerede i dag.",
+                    "Skriv en kort tekst der du sammenligner hvilke handlinger en 16-åring kan gjøre i Norge, i Kina og i Iran, og forklar hva forskjellen betyr for den enkelte.",
+                    "Artikkelen sier at de som ikke stemmer ofte er de yngste. Diskuter i klassen hvorfor mange unge lar være å stemme, og hva som kunne fått flere unge til å delta."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

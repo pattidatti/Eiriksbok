@@ -50,6 +50,29 @@
         {
             "type": "text",
             "content": "I 1948 vedtok FN Verdenserklæringen om menneskerettigheter. Ledet av Eleanor Roosevelt ble dette et dokument som utfordret diktaturer over hele verden. Selv om mange land ikke fulgte den i praksis, ble den en moralsk målestokk som senere bidro til å inspirere frihetsbevegelser i østblokken."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken dato trådte FN-pakten i kraft?",
+                    "Hvilke fem land er faste medlemmer av Sikkerhetsrådet?",
+                    "Hva betyr det at et land har vetorett i Sikkerhetsrådet?",
+                    "Hva heter dokumentet FN vedtok i 1948, og hvem ledet arbeidet med det?"
+                ],
+                "reflekter": [
+                    "Hvorfor følte verdens ledere at de trengte FN etter at Folkeforbundet hadde feilet?",
+                    "Forklar hvorfor vetoretten ofte lammet FN i viktige konflikter under den kalde krigen.",
+                    "Hvordan kunne FN sende en styrke til Sør-Korea i 1950 uten at Sovjetunionen stoppet det med veto?",
+                    "Hvorfor kaller teksten Menneskerettighetserklæringen en moralsk målestokk selv om mange land ikke fulgte den i praksis?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du forklarer om du synes det er rettferdig at bare fem land har vetorett i dag, eller om reglene burde endres.",
+                    "Finn et eksempel fra nyhetene på en konflikt der FN er involvert i dag, og fortell hva FN prøver å gjøre.",
+                    "Diskuter med en medelev: Kan et dokument om menneskerettigheter forandre verden, selv når land bryter reglene?"
+                ]
+            }
         }
     ],
     "quiz": [

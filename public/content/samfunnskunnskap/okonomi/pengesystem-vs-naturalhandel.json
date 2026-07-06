@@ -132,6 +132,29 @@
             "type": "task",
             "title": "Oppgave 3: Drøft",
             "content": "Fiat-penger er kun verdt noe fordi vi stoler på at andre godtar dem. Hva tror du ville skjedd med tilliten til norske kroner hvis Norges Bank plutselig trykte dobbelt så mange sedler - uten at det ble produsert mer varer? Hva sier det om forholdet mellom penger og tillit?"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva menes med den doble tilfeldigheten av behov?",
+                    "Nevn tre ting som mennesker har brukt som penger opp gjennom historien.",
+                    "Hva er fiat-penger, og hvor kommer navnet fra?",
+                    "Hva skjedde i 1971 da president Nixon tok grep om dollaren?"
+                ],
+                "reflekter": [
+                    "Artikkelen kaller penger for en felles hukommelse. Forklar hva pengene egentlig husker når du selger en fisk for 100 kroner.",
+                    "Hvorfor ble gull og sølv foretrukket som penger fremfor for eksempel brød eller fisk?",
+                    "Steinpengene på Yap-øyene var så store som en bil og ble aldri flyttet. Hvorfor kunne de likevel fungere som penger?",
+                    "Artikkelen sier at spesialiseringen stopper opp uten penger. Forklar hvorfor byttehandel gjør det vanskelig for folk å spesialisere seg."
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du beskriver en dag på skolen eller i byen der penger plutselig ikke fantes. Hvordan ville du fått tak i det du trengte?",
+                    "Tenk på mobiltelefonen din. Finn ut hvor tre av delene eller råvarene kommer fra, og forklar hvorfor penger gjorde det mulig for alle disse menneskene å samarbeide uten å møte hverandre.",
+                    "Diskuter med en medelev: Hva tror dere ville skjedd med tilliten til norske kroner hvis alle en dag sluttet å godta dem i butikken?"
+                ]
+            }
         }
     ],
     "quiz": [

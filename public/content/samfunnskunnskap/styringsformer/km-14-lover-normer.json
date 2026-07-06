@@ -150,6 +150,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Nevn de tre typene regler artikkelen skiller mellom, og forklar kort hva som kjennetegner hver av dem.",
+                    "Hvem vedtar lovene i Norge, og hvorfor kan ingen annen lov bryte med Grunnloven?",
+                    "Hva menes med de tre formålene med straff: gjengjeldelse, individualprevensjon og allmennprevensjon?",
+                    "Hvilket år ble røyking på offentlige steder forbudt ved lov, og når startet selve normskiftet ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Artikkelen bruker fotballbanen som bilde på et samfunn uten regler. Forklar hvorfor et spill trenger både lover, regler og normer samtidig.",
+                    "En politiker som lyver for Stortinget bryter kanskje ingen lov, men kan likevel miste jobben. Forklar hvorfor konsekvensen blir så streng når det bare er en norm som brytes.",
+                    "Apartheid og slaveri var lovlige. Hva viser slike eksempler om forskjellen på at en lov er gyldig og at den er rettferdig?",
+                    "Hvorfor mener artikkelen at utbredt regelbrudd rammer hele samfunnet på lang sikt, og ikke bare den som bryter reglene?"
+                ],
+                "gaaVidere": [
+                    "Tenk på en norm i ditt eget miljø, for eksempel hva man bør ha på seg eller hvordan man snakker. Beskriv normen og vurder om den er inkluderende eller om den presser folk til å skjule hvem de er.",
+                    "Skriv en kort tekst der du sammenligner en regel på skolen din med en lov i samfunnet. Hva er likt, og hva er forskjellig i hvordan de håndheves?",
+                    "Diskuter med en medelev: Finnes det en lov eller norm i dag som dere tror kommer til å endre seg i løpet av deres levetid? Begrunn hvorfor."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

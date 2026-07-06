@@ -359,6 +359,29 @@
                 "label": "Prøv selv: Hvem har rett om krisen?",
                 "description": "Åpne Økonomi-Verden og test hva som skjer når du følger rådet fra hver skole. Senk renten som en keynesianer - eller la markedet rydde opp som en østerriker."
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mener monetaristene er den viktigste årsaken til inflasjon?",
+                    "Hva er en feilinvestering, ifølge den østerrikske skolen?",
+                    "Hva kalte Keynes ideen om at en krone brukt av staten kan gi mer enn en krone i total aktivitet?",
+                    "Hva mente Hyman Minsky med stabilitetens paradoks?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at de fire skolene ikke er uenige om fakta, men om antakelser. Forklar med egne ord hva som menes med dette.",
+                    "Hvorfor mener østerrikerne at det er sentralbanken, og ikke markedet, som skaper boom-bust-syklusen?",
+                    "Keynes sa at når alle sparer i en krise, gjør det krisen verre for samfunnet. Forklar hvorfor noe som er lurt for én person kan være dårlig for alle sammen.",
+                    "En keynesianer og en østerriksk økonom ser begge at arbeidsledigheten stiger til 10 prosent. Hvorfor gir de helt ulike råd om hva som bør gjøres?"
+                ],
+                "gaaVidere": [
+                    "Økonomi-Verden-simuleringen er bygget på antakelser fra den østerrikske skolen. Skriv en kort tekst der du forklarer hva modellen kan vise deg, og hva den ikke får med seg.",
+                    "Tenk deg at prisene i Norge plutselig stiger 8 prosent på ett år. Velg to av skolene og skriv hva hver av dem ville rådet politikerne til å gjøre.",
+                    "Diskuter i klassen: Bør staten gripe inn når det er krise i økonomien, eller bør markedet få ordne opp selv? Bruk argumenter fra minst to av skolene."
+                ]
+            }
         }
     ],
     "timeline": []

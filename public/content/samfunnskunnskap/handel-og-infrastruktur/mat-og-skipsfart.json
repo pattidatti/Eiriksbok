@@ -75,6 +75,29 @@
       "content": "Samtidig åpner klimaendringene Arktis. Den nordøstlige passasjen langs Russlands arktiske kyst — kjent som Nordøstpassasjen — er nå is-fri deler av året. Den kutter reiseavstanden fra Asia til Europa med 40 prosent sammenlignet med Suezkanalen. Russland tjener penger på å tilby isbrytere. Men ruten er fortsatt risikabel og politisk kompleks."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvem oppfant containerfrakten, og hvilket yrke hadde han da han fikk ideen i 1956?",
+                "Hvor mange containere kan et moderne containerskip på nesten 400 meter frakte, og hvor stort mannskap holder det gående?",
+                "Hvor stor andel av verdens hveteeksport står Ukraina og Russland for til sammen?",
+                "Hvor mye kortere blir reisen fra Asia til Europa hvis skip bruker Nordøstpassasjen i stedet for Suezkanalen?"
+            ],
+            "reflekter": [
+                "Artikkelen sier at det kan være billigere å frakte et eple 20 000 km enn å dyrke mat lokalt. Forklar hvordan containeren gjorde dette mulig.",
+                "Hvorfor rammet blokkeringen av havnene i Svartehavet nettopp land som Egypt, Tunisia og Libanon så hardt?",
+                "Skipsfarten står for rundt 2,5 prosent av verdens CO2-utslipp, like mye som hele Tyskland. Hvorfor er det vanskelig å kutte disse utslippene til null?",
+                "Klimaendringene åpner Nordøstpassasjen samtidig som skipsfarten prøver å bli mer miljøvennlig. Hvorfor er det en motsetning i at Russland tjener penger på isbrytere langs denne ruten?"
+            ],
+            "gaaVidere": [
+                "Gå gjennom kjøleskapet eller matskapet hjemme og finn tre varer fra andre land. Skriv ned hvor de kommer fra, og forklar hva som ville skjedd hvis skipsfarten stoppet en uke.",
+                "Skriv en kort tekst der du sammenligner hvordan maten din reiser i dag med hvordan folk skaffet mat for hundre år siden.",
+                "Diskuter i klassen: Bør Norge dyrke mer av sin egen mat for å bli mindre avhengig av import, selv om det blir dyrere? Finn ett argument for og ett imot."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

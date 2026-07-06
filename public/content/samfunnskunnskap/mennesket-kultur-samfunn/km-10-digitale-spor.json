@@ -232,6 +232,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på et aktivt og et passivt digitalt spor? Gi et eksempel på hver.",
+                    "Hva står forkortelsen GDPR for, og hvilke tre rettigheter gir loven deg over dataene dine?",
+                    "Hva skjedde i den spanske saken mot Google i 2014, og hva ble resultatet?",
+                    "Hva menes med opphavsrett, og når får du opphavsrett til noe du har laget?"
+                ],
+                "reflekter": [
+                    "Teksten sier at passive spor kan avsløre mer enn du tror. Forklar hvordan noen søk om helse midt på natten kan fortelle en algoritme noe du aldri har sagt til noen.",
+                    "Hvorfor er en privat Instagram-profil ikke det samme som å slette et digitalt spor? Bruk det du lærte i rollespillet.",
+                    "Retten til å bli glemt gjelder ikke absolutt. Hvorfor kan ikke en offentlig person kreve at en avisartikkel slettes bare fordi den er flau?",
+                    "Mange tror at et bilde er fritt å bruke bare fordi det ligger gratis på nett. Forklar hvorfor dette er en misforståelse."
+                ],
+                "gaaVidere": [
+                    "Google deg selv slik teksten foreslår, og skriv ned tre ting du finner. Overrasket noe deg? Hva ville du eventuelt ha fjernet?",
+                    "Skriv en kort tekst der du sammenligner et fysisk fotavtrykk med et digitalt spor. Hva er likt, og hva gjør det digitale sporet farligere?",
+                    "Diskuter i klassen: 'Når noe er gratis, er du gjerne produktet.' Er det greit at gratis apper tjener penger på dataene dine, så lenge du vet om det?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

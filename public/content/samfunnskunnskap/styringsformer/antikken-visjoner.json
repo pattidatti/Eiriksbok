@@ -189,6 +189,29 @@
                     "right": "Studier av eksisterende forfatninger"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det greske ordet polis, og hvilket vanlig ord har vi fått fra det?",
+                    "Hvor mange av de rundt 250 000 menneskene i Athen hadde egentlig borgerrettigheter, og hvem var utestengt fra å delta?",
+                    "Hva skjedde med en person som fikk navnet sitt på flest potteskår under en ostrasisme?",
+                    "Hvilke tre klasser delte Platon samfunnet inn i, og hvem mente han skulle styre?"
+                ],
+                "reflekter": [
+                    "Athenerne brukte loddtrekning i stedet for valg til mange embeter. Forklar hvorfor de mente at valg egentlig var en form for aristokrati.",
+                    "Platon sammenlignet staten med et skip og spurte om du ville trukket lodd om hvem som skulle være kaptein. Hva prøvde han å få fram med dette bildet?",
+                    "Både Athen og Sparta var greske samfunn, men de valgte helt ulike veier. Hvorfor tror du disiplin og krig var viktigere for Sparta enn samtale og kultur?",
+                    "Aristoteles mente at en stor middelklasse ga en stabil stat. Forklar hvorfor han trodde at både veldig rike og veldig fattige gjorde samfunnet ustabilt."
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du sammenligner det athenske direkte demokratiet med hvordan Norge styres i dag. Hva er den største forskjellen?",
+                    "Teksten sier at vi følger i Platons fotspor når vi ønsker ekspertregjeringer under en krise. Diskuter med en medelev: Bør eksperter eller folkevalgte bestemme mest når landet er i en krise?",
+                    "Athenerne innførte ostrasisme for å hindre at én person ble for mektig. Finn ut om ordninger i dagens samfunn som skal hindre at ledere får for mye makt, og forklar hvordan en av dem virker."
+                ]
+            }
         }
     ],
     "quiz": [

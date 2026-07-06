@@ -157,6 +157,29 @@
                     "right": "Holdes ofte, men med ulik tilgang"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr de greske ordene demos og kratos som demokrati kommer fra?",
+                    "Hva er forskjellen på et proseduralt demokrati og et liberalt demokrati?",
+                    "Hva skjer med regjeringen i et parlamentarisk system hvis Stortinget vedtar et mistillitsforslag?",
+                    "Hvor høy er sperregrensen i Norge, og hva mister et parti som havner under den?"
+                ],
+                "reflekter": [
+                    "Teksten sier at demokrati handler om hva som skjer mellom valgene, ikke bare på valgdagen. Hvorfor er det ikke nok å bare holde valg for å kalle et land et ekte demokrati?",
+                    "Forklar hvorfor flertallsvalg i enmannskretser (winner takes it all) nesten alltid fører til et topartisystem, mens forholdstallsvalg gir plass til mange partier.",
+                    "Hvorfor kaller teksten uavhengige domstoler for demokratiets øverste forsvarere? Bruk uttrykket flertallets tyranni i svaret ditt.",
+                    "Populisme beskrives som en dobbeltegget kniv. Forklar med egne ord hvordan populisme både kan styrke og true demokratiet."
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du forklarer for en venn hvorfor et sterkt sivilt samfunn (idrettslag, foreninger, frie medier) er viktig for at demokratiet skal fungere. Bruk minst tre eksempler fra artikkelen.",
+                    "Teksten advarer om at sosiale medier skaper ekkokamre der vi bare møter folk som mener det samme som oss. Tenk over din egen bruk av sosiale medier: møter du meninger du er uenig i, eller mest folk som tenker som deg?",
+                    "Norge har hatt folkeavstemninger om blant annet EU. Diskuter med en medelev: bør vi bruke folkeavstemninger oftere, eller egner ikke kompliserte saker seg for enkle ja- eller nei-svar?"
+                ]
+            }
         }
     ],
     "quiz": [

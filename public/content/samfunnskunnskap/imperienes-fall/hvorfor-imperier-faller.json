@@ -130,6 +130,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mente Paul Kennedy med uttrykket imperial overstretch?",
+                    "Hva gjorde de romerske keiserne med myntene sine, og hva skjedde med prisene da?",
+                    "Hvilke tre eksempler nevner teksten på riker som falt (nevnt helt i starten)?",
+                    "Hvorfor forsvant mayaenes store byer og de norrøne bosetningene på Grønland, ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten sier at et imperium nesten aldri faller av bare én grunn. Forklar med egne ord hvordan en tom statskasse, en svak hær og utrygge grenser kan forsterke hverandre.",
+                    "Joseph Tainter mente at samfunn kan kollapse fordi de blir for kompliserte. Hvorfor kan vanlige folk til slutt slutte å holde et rike oppe når byråkratiet vokser?",
+                    "Peter Turchin peker på at riker blir farligst når det finnes for mange rike og mektige mennesker. Hvorfor kan for mange mektige som slåss om for få topp-posisjoner svekke et rike innenfra?",
+                    "Teksten sier at ytre press som fiender og pest som regel ble dødelig først etter at riket allerede var svekket innenfra. Hvorfor tror du et sterkt rike tåler et angrep bedre enn et svekket ett?"
+                ],
+                "gaaVidere": [
+                    "Velg et rike eller en stormakt du kjenner til i dag, og skriv en kort tekst der du vurderer om noen av de seks kreftene fra artikkelen kan true den.",
+                    "Teksten sammenligner et rike med et bygg som holdes oppe av flere bæresøyler. Tegn eller beskriv fire søyler du mener holder ditt eget samfunn oppe, og forklar hva som skjer hvis én ryker.",
+                    "Diskuter i par: Hvis kollaps bygger seg opp over lang tid, men er nesten umulig å se mens man står midt i det, hvordan kan et samfunn likevel oppdage faresignalene i tide?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

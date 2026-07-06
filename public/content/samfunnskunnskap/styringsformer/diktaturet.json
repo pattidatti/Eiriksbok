@@ -161,6 +161,29 @@
                     "right": "Brukt systematisk mot hele folket"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er den viktigste forskjellen på et autoritært og et totalitært regime slik teksten beskriver det?",
+                    "Nevn de tre hovedmekanismene et diktatur bruker for å beholde kontrollen, og forklar kort hva hver av dem betyr.",
+                    "Hva mente Hannah Arendt med uttrykket ondskapens banalitet da hun så på rettssaken mot Adolf Eichmann?",
+                    "Hva er en spin-diktator, og hvordan skiller han seg fra diktatorene i forrige århundre?"
+                ],
+                "reflekter": [
+                    "Teksten sier at personkulten ikke bare skal gjøre lederen populær, men også fjerne sannheten. Forklar hvordan tilbedelsen av en leder kan gjøre det umulig å si imot ham.",
+                    "Hvorfor er et diktatur en ustabil styreform selv om lederen har all makten? Bruk diktatorens dilemma og problemet med arvefølge i svaret ditt.",
+                    "Arendt mente at totalitære stater bygger på atomisering, altså at båndene mellom mennesker brytes ned. Hvorfor blir folk lettere å styre når de ikke lenger stoler på hverandre?",
+                    "Teksten kaller debatter, rettssaker og byråkrati for diktaturets verste fiender. Forklar hvorfor disse kjedelige prosessene er en styrke og ikke en svakhet i et demokrati."
+                ],
+                "gaaVidere": [
+                    "Moderne diktaturer bruker ansiktsgjenkjenning, overvåking av sosiale medier og algoritmer. Diskuter med en medelev hvor grensen går mellom nyttig teknologi og farlig overvåking i vår egen hverdag.",
+                    "Skriv en kort tekst der du sammenligner en spin-diktator med en ekte demokratisk leder. Hva ser likt ut på overflaten, og hva er forskjellen når du ser nærmere etter?",
+                    "Orwells begreper som Storebror ser deg og tanke-politi har blitt en del av dagligtalen. Finn ett eksempel fra nyheter eller egen erfaring der du synes disse begrepene passer, og forklar hvorfor."
+                ]
+            }
         }
     ],
     "quiz": [

@@ -127,6 +127,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva menes med korrespondanseteorien om sannhet, og hvilket eksempel bruker teksten for å forklare den?",
+                    "Hvor mente man at sannheten kom fra i middelalderen?",
+                    "Hva skjedde med Galileo Galilei da han hevdet at jorden beveget seg rundt solen?",
+                    "Hva kalles den nye typen sannhet som teksten sier at en AI som ChatGPT bygger på?"
+                ],
+                "reflekter": [
+                    "Teksten sier at middelalderens syn på sannhet ga samfunnet stabilitet, men også undertrykte nye ideer. Forklar hvordan det ene henger sammen med det andre.",
+                    "Hvorfor kaller teksten den vitenskapelige metoden en 'radikalt demokratisk tanke'?",
+                    "Postmodernismen sier at det kan finnes flere sannheter side om side. Hva er styrken og hva er svakheten ved en slik tankegang, ifølge teksten?",
+                    "Teksten advarer om at vi kan være på vei tilbake til en form for 'autoritetssannhet'. Hvorfor kan en algoritme være en farligere autoritet enn en kirke eller en konge?"
+                ],
+                "gaaVidere": [
+                    "Tenk på siste gang du sjekket om noe stemte på nettet. Brukte du korrespondanse (sjekket mot virkeligheten) eller koherens (om det passet med det du visste fra før)? Skriv noen setninger om hva du gjorde.",
+                    "Skriv en kort tekst der du forklarer hvordan TikTok- eller YouTube-algoritmen bestemmer hva som føles 'sant' for nettopp deg, og hva du kan gjøre for å ikke havne i et ekkokammer.",
+                    "Diskuter i klassen: Sokrates sa 'Det eneste jeg vet, er at jeg intet vet.' Er det et tegn på svakhet eller styrke å innrømme at man kan ta feil?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

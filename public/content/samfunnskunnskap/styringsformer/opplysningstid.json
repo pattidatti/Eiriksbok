@@ -157,6 +157,30 @@
                     "right": "Er ofte bedre enn et tyranni"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mente tenkerne i opplysningstiden at menneskeheten hadde levd i lenge, og hva skulle fornuft og vitenskap gjøre med det?",
+                    "Hva kalte filosofene tiden før det fantes lover, politi, konger eller stater?",
+                    "Hvordan oppsummerte Hobbes livet i naturtilstanden med fem ord?",
+                    "Hvilke tre naturlige rettigheter mente John Locke at mennesket er født med?",
+                    "Hvilke tre grener ville Montesquieu dele statens makt i?"
+                ],
+                "reflekter": [
+                    "Hobbes og Locke hadde helt ulikt syn på mennesket i naturtilstanden. Forklar hvorfor de to endte opp med å ønske seg så forskjellige typer stater.",
+                    "Locke mente at statens makt bare er lånt fra folket. Forklar hva som skjer med staten hvis herskeren begynner å krenke folkets liv, frihet eller eiendom.",
+                    "Montesquieu sa at makt alltid vil forsøke å utvide seg til den møter motstand. Forklar hvordan tredelingen av makten skal hindre at én person tar kontroll over hele staten.",
+                    "Den franske revolusjonen viste opplysningstidens mørke side med skrekkveldet. Hvorfor kan forsøket på å tvinge gjennom allmennviljen og dygd ende i terror?"
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at vi diskuterer statens overvåking i dag, som er Hobbes' frykt satt i system. Skriv en kort tekst der du bruker Hobbes og Locke til å drøfte hvor mye staten bør få overvåke innbyggerne.",
+                    "Den norske grunnloven bygger på Montesquieu og Locke. Finn ut hvilke tre organer som utgjør maktfordelingen i Norge i dag, og forklar hva hvert av dem gjør.",
+                    "Diskuter i klassen spørsmålet artikkelen stiller til slutt: Kan man tvinge folk til å bli frie? Bruk eksempler fra egen hverdag eller nyhetene."
+                ]
+            }
         }
     ],
     "quiz": [

@@ -102,6 +102,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvordan ble galskap sett på i antikkens Hellas, og hvordan endret dette synet seg i middelalderen?",
+                    "Hva var 'Narrenes skip', og hva ble det et symbol på?",
+                    "Hva mente filosofen Michel Foucault med 'den store innesperringen' på 1600- og 1700-tallet?",
+                    "Hva betyr begrepet nevromangfold?"
+                ],
+                "reflekter": [
+                    "Teksten sier at historien om det unormale egentlig handler om makt. Hvorfor kan det å bestemme hva som er 'normalt' gi makt over andre mennesker?",
+                    "Diagnosen 'hysteri' ble ofte brukt på kvinner som kjempet for rettigheter. Hvorfor er det farlig når legers diagnoser blir brukt politisk?",
+                    "Da galskap gikk fra å være en synd til å bli en sykdom på 1800-tallet, ble behandlingen mer human. Men teksten sier legene også fikk enorm makt. Hvordan kan begge deler være sanne samtidig?",
+                    "Teksten sammenligner menneskeheten med en skog som trenger forskjellige typer trær. Hva prøver bildet å si om ulikhet mellom mennesker?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at det vi i dag ser på som vitenskapelig fakta om psyken, kanskje blir sett på som 'narrenes skip' om hundre år. Skriv en kort tekst der du gjetter på hva folk i framtiden vil mene at vi tok feil om i dag.",
+                    "Tenk på ordet 'normal' i din egen hverdag, på skolen eller blant venner. Skriv ned tre eksempler på hva som regnes som normalt der du er, og diskuter hvem som egentlig bestemmer det.",
+                    "Diskuter i klassen: Bør skolen tilpasse seg elever som har ADHD, autisme eller dysleksi, eller bør elevene tilpasse seg skolen? Bruk tanken om nevromangfold i argumentene deres."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

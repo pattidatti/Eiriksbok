@@ -399,6 +399,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre trekk må en god problemstilling ha ifølge artikkelen?",
+                    "Hva er forskjellen på en primærkilde og en sekundærkilde? Gi ett eksempel på hver.",
+                    "Hvilke fire spørsmål stiller du når du driver kildekritikk?",
+                    "Hvilken graftype passer best for å vise en utvikling over tid, og hvilken passer best for andeler av en helhet?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at «tall lyver ikke, men de kan presenteres på måter som villeder». Forklar med eksempelet om arbeidsledige (fra 500 til 1000) hvorfor et absolutt tall og en prosent kan fortelle helt ulike historier.",
+                    "Hvorfor kan det være misvisende å sammenligne ungdomsarbeidsledigheten i 2021 med tallene fra 2020? Hva har det å si for hvilket bilde du får?",
+                    "I BiasLens-eksempelet bruker både opposisjonspartiet og regjeringen de samme tallene, men vrir teksten ulikt. Hvorfor er det viktig å sette flere kilder opp mot hverandre i stedet for å stole på én?",
+                    "Artikkelen sier at det er en styrke, ikke en svakhet, å peke på begrensninger i egne funn. Forklar hvorfor sensor setter mer pris på en elev som sier «dette funnet er usikkert fordi...» enn en som later som alt er sikkert."
+                ],
+                "gaaVidere": [
+                    "Finn en ekte nyhetsoverskrift som bruker et tall (for eksempel «... doblet seg» eller «... økte med 20 prosent»). Skriv 5-8 setninger der du bruker de tre statistikk-spørsmålene fra artikkelen: Hva måler dette egentlig? Sammenlignet med hva? Hvem er ikke med i tallene?",
+                    "Lag din egen problemstilling om et tema du bryr deg om. Bytt så med en partner og vurder hverandres problemstillinger: er de tydelige, avgrensede og drøftbare? Gi hverandre ett konkret forbedringsforslag.",
+                    "Tenk deg at du skal presentere en undersøkelse på muntlig eksamen. Skriv ned de fem stegene i samfunnsfaglig metode med dine egne ord, og forklar kort hva du ville gjort i hvert steg for temaet skjermbruk blant ungdom."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

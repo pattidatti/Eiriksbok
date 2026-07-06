@@ -87,6 +87,29 @@
         {
             "type": "component",
             "name": "MalthusBoserupModel"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem var Thomas Malthus, og hva mente han ville skje hvis befolkningen fortsatte å vokse?",
+                    "Hva er forskjellen på at befolkningen vokser eksponentielt (1, 2, 4, 8, 16) og at matproduksjonen vokser lineært (1, 2, 3, 4, 5)?",
+                    "Hva mente Esther Boserup skjer med oss når vi blir for mange? Bruk uttrykket hennes: 'Nød lærer naken kvinne å spinne'.",
+                    "Hvem var Norman Borlaug, og hva utviklet han som hjalp mot frykten for massesult i India?"
+                ],
+                "reflekter": [
+                    "Malthus og Boserup så helt ulikt på befolkningsvekst. Forklar hvorfor den ene ble kalt pessimist og den andre optimist.",
+                    "Grafen viser at kornavlingen i Norge har nesten firedoblet seg på 100 år. Hvordan kan dette ha skjedd når vi har like mye jord som før? Nevn minst to grunner fra teksten.",
+                    "Teksten sier at Boserup 'hittil har fått rett'. Hvorfor er ordet 'hittil' viktig her, og hva kan gjøre at Malthus likevel kan få rett en gang i framtida?",
+                    "Hva menes med at jorda har en bæreevne (carrying capacity)? Hvorfor mener teksten at hovedspørsmålet i dag ikke er om vi går tom for mat, men om vi ødelegger økosystemene?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvem av de to, Malthus eller Boserup, du tror har mest rett om framtida. Bruk minst ett eksempel fra din egen tid.",
+                    "Diskuter med en partner: Finnes det problemer i dagens verden der ny teknologi virkelig kan redde oss, slik den grønne revolusjonen gjorde? Bli enige om ett eksempel og forklar hvorfor.",
+                    "Tenk på et eksempel fra ditt eget liv der du fant en ny løsning fordi du var nødt til det. Skriv noen setninger om hvordan dette ligner på Boserup sin idé om at press fører til nye oppfinnelser."
+                ]
+            }
         }
     ],
     "quiz": [

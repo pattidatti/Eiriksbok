@@ -146,6 +146,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange representanter sitter på Stortinget, og hvor ofte velger vi dem?",
+                    "Hva heter de tre delene av makten i Norge, og hva gjør hver av dem?",
+                    "Hvor stor andel av stemmene må et parti få for å komme over sperregrensen?",
+                    "Hvilke tre parter er med i trepartssamarbeidet i norsk arbeidsliv?"
+                ],
+                "reflekter": [
+                    "Hvorfor er makten i Norge delt mellom Stortinget, regjeringen og domstolene i stedet for å ligge hos én person?",
+                    "Teksten sier at velferdsstaten er universell, solidarisk og obligatorisk. Forklar med egne ord hvorfor de som tjener mest, betaler mest i skatt.",
+                    "Hvorfor blir det et problem for velferdsstaten når andelen pensjonister vokser mens andelen i arbeid synker?",
+                    "Norge tjener store penger på olje og gass, men har også lovet å kutte utslipp. Forklar hvorfor disse to hensynene kan komme i konflikt."
+                ],
+                "gaaVidere": [
+                    "Teksten forteller at unge stemmer sjeldnere enn eldre. Skriv noen setninger om hva du tror kan få flere unge til å bruke stemmeretten sin.",
+                    "Artikkelen nevner ekkokamre på sosiale medier. Beskriv en gang du har lagt merke til at du mest ser meninger du er enig i, og diskuter med en medelev hvorfor det kan være farlig for demokratiet.",
+                    "Skriv en kort tekst der du forklarer hvorfor demokrati og velferdsstat ikke er naturlover, men noe hver generasjon må velge på nytt - og hva du selv kan gjøre for å bidra."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

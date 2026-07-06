@@ -704,6 +704,29 @@
             "text": "Regler for muntlig eksamen (Udir)",
             "url": "https://www.udir.no/eksamen-og-prover/eksamen/muntlig-eksamen/",
             "icon": "external"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjer på hver av de tre dagene under muntlig eksamen? Beskriv dag 1, dag 2 og dag 3 kort.",
+                    "Hva er forskjellen på et tema og en problemstilling, slik artikkelen forklarer det? Gi et eksempel på hver.",
+                    "Nevn minst tre typer egne kilder artikkelen anbefaler at du bruker for å vise selvstendig arbeid.",
+                    "Forklar med egne ord hva disse begrepene betyr: demokrati, makt og kildekritikk."
+                ],
+                "reflekter": [
+                    "Artikkelen sier at de som gjør det best ikke er de som pugger mest, men de som forbereder seg smartest. Hva mener den med det, og er du enig?",
+                    "Hvorfor tester sensor deg med spørsmål om temaer du ikke valgte selv? Hva sier det om hva eksamen egentlig måler?",
+                    "Se på eksemplet med referat kontra selvstendig analyse om urbanisering. Hva gjør det andre svaret sterkere enn det første?",
+                    "Hvorfor er det viktig å være kildekritisk? Forklar hvorfor tall fra SSB kan være mer til å stole på enn en kilde som vil overbevise deg om en sak."
+                ],
+                "gaaVidere": [
+                    "Velg et tema fra listen over vanlige eksamenstemaer (for eksempel migrasjon eller bærekraftig utvikling). Lag din egen problemstilling og en påstand du kunne argumentert for.",
+                    "Finn en nyhetssak fra denne uka som henger sammen med et av begrepene i artikkelen. Forklar koblingen i noen setninger.",
+                    "Diskuter i par: Hva er den viktigste feilen å unngå på muntlig eksamen, og hvordan ville dere forberedt dere for å slippe å gjøre den?"
+                ]
+            }
         }
     ],
     "quiz": [

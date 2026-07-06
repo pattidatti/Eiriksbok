@@ -265,6 +265,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var den aller første teknologien mennesker brukte, ifølge artikkelen, og hvor lenge siden er det?",
+                    "Hvem var luddittene, og hva gjorde de i England i 1811?",
+                    "Hvilke tre store revolusjoner mener historikeren Yuval Noah Harari har formet menneskene?",
+                    "Hva betyr det at teknologi er en 'endringsdriver'?"
+                ],
+                "reflekter": [
+                    "Da dampmaskinene kom, tjente fabrikkeierne enorme summer mens arbeiderne jobbet 14-timers dager i farlige miljøer. Forklar hvorfor ny teknologi ofte skaper vinnere og tapere på samme tid.",
+                    "Artikkelen kaller det digital monopolmakt at noen få selskaper i USA og Kina kontrollerer infrastrukturen verden er avhengig av. Hvorfor kan dette være et problem for et samfunn?",
+                    "Dampmaskinen ble ikke oppfunnet for å smelte isbreer, men klimaendringen ble likevel et resultat. Bruk dette til å forklare hva vi mener med utilsiktede konsekvenser av teknologi.",
+                    "Artikkelen foreslår tre spørsmål for å drøfte teknologi: Hvem vinner? Hvem taper? Hvilke alternativer finnes? Bruk denne malen på smarttelefonen og skriv minst én vinner og én taper."
+                ],
+                "gaaVidere": [
+                    "Velg en app eller teknologi du bruker hver dag. Skriv en kort tekst der du veier gevinsten mot kostnaden, både for deg selv, for samfunnet og for naturen.",
+                    "Artikkelen sier at hvert klikk du gjør er med på å forme algoritmer og investeringer. Diskuter med en medelev om dere er enige i at dere selv er med på å forme teknologiutviklingen, eller om det er de store selskapene som bestemmer.",
+                    "Er du mest teknologioptimist eller teknologiskeptiker? Skriv en kort tekst der du forklarer standpunktet ditt med minst ett eksempel fra artikkelen eller ditt eget liv."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -79,6 +79,29 @@
       "content": "Da Russland trakk seg tilbake, ble Norge Europas viktigste gassleverandør. Norsk gass transporteres gjennom Gassled — et nettverk av undersjøiske rørledninger på norsk kontinentalsokkel — til mottaksterminaler i Storbritannia, Frankrike, Belgia, Nederland og Tyskland. Noen av disse rørledningene har ligget på havbunnen siden 1970-tallet og er blant verdens lengste offshore-gassrørledninger."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva frakter rørledningene, og hvorfor kaller teksten dem et usynlig nervesystem under bakken og havbunnen?",
+                "Hvor stor andel av gassen sin fikk EU fra Russland i 2021, og hvordan kom mesteparten av den?",
+                "Hva skjedde med Nord Stream 1 og 2 i september 2022, og hvor mange eksplosjoner var det?",
+                "Hva er LNG, og til hvor mange grader Celsius kjøles gassen ned for å bli flytende?"
+            ],
+            "reflekter": [
+                "Teksten sier at rørledninger er politikk støpt i stål. Forklar hvorfor Russland bygde gassrør direkte til Vest-Europa, og hvordan det skapte avhengighet.",
+                "Hvorfor kalles LNG en revolusjon som bryter rørledningenes monopol? Hva kan et land som får gass med skip gjøre, som et land bundet til ett rør ikke kan?",
+                "LNG reddet Europa vinteren 2022-2023, men til en pris. Forklar hvilke ulemper LNG har sammenlignet med rørgass, og hva prisen ble for vanlige folk og fabrikker.",
+                "Hvorfor gjør en smal passasje som Hormuzstredet verdens oljehandel sårbar? Hva kan skje med oljeprisen hvis stredet blir blokkert?"
+            ],
+            "gaaVidere": [
+                "Norge ble Europas viktigste gassleverandør da Russland trakk seg tilbake. Diskuter med en partner: gir dette Norge mer makt eller mer ansvar overfor Europa? Begrunn svaret.",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor du mener infrastruktur som rørledninger og streder bør regnes som et mål i moderne konflikter, slik teksten hevder etter Nord Stream-sabotasjen.",
+                "Tenk over din egen hverdag: hvor mange ting hjemme hos deg trenger olje eller gass for å lages, varmes opp eller fraktes? Lag en liste med minst fem eksempler, og forklar hva som ville skjedd hvis en flaskehals som Hormuzstredet ble stengt."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

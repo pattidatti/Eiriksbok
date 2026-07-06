@@ -113,6 +113,29 @@
         {
             "type": "text",
             "content": "Vil du se hvordan disse lånene henger sammen med olje og dollar, kan du lese om [petrodollaren](/samfunnskunnskap/okonomi/petrodollaren). Og vil du se hele bildet av hvordan verden er knyttet sammen økonomisk, finnes det i [det globale handelssystemet](/samfunnskunnskap/handel-og-infrastruktur/global-handel-oversikt)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilket år og i hvilken by ble IMF og Verdensbanken opprettet?",
+                    "Hva var oppgaven til Verdensbanken, og hva var oppgaven til IMF? Forklar forskjellen med egne ord.",
+                    "Hva betyr ordet strukturtilpasning, og hvilke tre krav pleier IMF å stille når et fattig land ber om lån?",
+                    "Hva skjedde i byen Cochabamba i Bolivia i år 2000?"
+                ],
+                "reflekter": [
+                    "Teksten forklarer hvordan gjelden til et land kan vokse som en snøball. Beskriv trinnene fra det første lånet til landet må banke på døra hos IMF.",
+                    "Hvorfor er dollargjeld mye farligere for et fattig land enn for et rikt land? Bruk det teksten sier om å trykke penger og om valuta som faller i verdi.",
+                    "Hvorfor kalles kapittelet gjeld som våpen, når ingen soldater er involvert? Forklar hvordan penger kan gi kontroll.",
+                    "Teksten sier at sannheten om IMF og Verdensbanken ligger et sted i mellom. Gi ett argument for at de har gjort nytte, og ett argument for at de har gjort skade."
+                ],
+                "gaaVidere": [
+                    "Prøv modellen StrukturtilpasningSim i artikkelen. Skriv noen setninger om hvilke valg du tok som finansminister, og hva som skjedde med folkets velferd.",
+                    "Rundt år 2000 presset en stor folkebevegelse frem at noe av gjelden til de fattigste landene ble slettet. Skriv en kort tekst der du argumenterer for eller mot at rike land bør slette gjeld i dag.",
+                    "Diskuter med en medelev: Hvis du var finansminister i et fattig land med stor dollargjeld, hva ville du prøvd å beskytte mest mot IMFs kuttkrav, og hvorfor?"
+                ]
+            }
         }
     ],
     "quiz": [

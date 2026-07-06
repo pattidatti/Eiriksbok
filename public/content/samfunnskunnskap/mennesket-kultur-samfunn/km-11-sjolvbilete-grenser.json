@@ -306,6 +306,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva består identiteten din av, ifølge artikkelen? Nevn minst tre av delene (for eksempel verdier, interesser, tilknytninger og historie).",
+                    "Hva er forskjellen på selvtillit og selvfølelse slik artikkelen forklarer det?",
+                    "Hva mente psykologen Erik Erikson at ungdomstida først og fremst handler om, og hva kalte han denne utfordringen?",
+                    "Hva menes med digital krenking, og hvorfor er det ofte ulovlig i Norge?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at et usunt fellesskap 'bruker tilhørighet som valuta'. Forklar med egne ord hva dette betyr, og hvorfor det er et varseltegn.",
+                    "Hvorfor er det som regel vanskeligere å si nei til en bestevenn eller en gruppe du vil være med i, enn å si nei til en fremmed?",
+                    "Artikkelen forklarer at sosiale medier kan skade selvbildet fordi vi bare ser 'de redigerte høydepunktene'. Hvorfor gir dette et forvrengt bilde av virkeligheten?",
+                    "Hvorfor mener artikkelen at det å ha grenser ikke er egoistisk, men faktisk også en form for respekt for andre?"
+                ],
+                "gaaVidere": [
+                    "Tenk på en situasjon der du selv har kjent på gruppepress. Skriv noen setninger om hva du gjorde, og hva du kunne gjort annerledes ut fra de konkrete stegene artikkelen foreslår.",
+                    "Lag din egen 'grense-plakat': skriv ned tre grenser som er viktige for deg (én fysisk, én følelsesmessig og én verdimessig) og hvordan du kan si dem høyt på en rolig måte.",
+                    "Diskuter i klassen: Hvis en venn opplever at et krenkende bilde deles uten samtykke, hvilke steg fra artikkelen ville dere anbefalt, og hvem kan de be om hjelp?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

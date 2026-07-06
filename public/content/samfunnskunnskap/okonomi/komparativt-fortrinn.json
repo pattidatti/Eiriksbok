@@ -190,6 +190,29 @@
                     "correctAnswer": 1
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke fire slags ingredienser trengs alltid i produksjon, ifølge teksten?",
+                    "Hva betyr det at noen har et absolutt fortrinn?",
+                    "Hva menes med alternativkostnad?",
+                    "Hva har Norge mye av som gjør oss gode til å lage laks, aluminium og skipsfart?"
+                ],
+                "reflekter": [
+                    "Legen er raskest til både å behandle pasienter og skrive brev. Forklar hvorfor det likevel lønner seg at sekretæren skriver brevene.",
+                    "Hvorfor sier teksten at et frivillig bytte ikke er som en fotballkamp der én vinner og én taper?",
+                    "Selv om Ada er raskest til å lage både brød og fisk, tjener både Ada og Bjørn på å bytte. Forklar hvordan det kan stemme.",
+                    "Hvorfor er mange økonomer skeptiske til toll og handelsmurer? Bruk sammenligningen med legen og sekretæren i svaret."
+                ],
+                "gaaVidere": [
+                    "Tenk på en oppgave hjemme, for eksempel å lage middag eller rydde. Hvem i familien har lavest alternativkostnad ved å gjøre den? Skriv noen setninger der du forklarer valget med komparativt fortrinn.",
+                    "Skriv en kort tekst der du forklarer, med egne ord, hvorfor Norge kjøper billige t-skjorter fra utlandet i stedet for å sy dem selv.",
+                    "Diskuter med en medelev: Finnes det ting et land bør lage selv, selv om det er dyrere, i stedet for å bytte til seg alt? Kom med minst ett eksempel og en grunn."
+                ]
+            }
         }
     ]
 }

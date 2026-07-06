@@ -197,6 +197,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr gig-økonomi, og hvordan får gig-arbeiderne oppdragene sine?",
+                    "Hvor stor andel av alle jobber i Norge tror forskere kan bli sterkt påvirket av automatisering de neste tjue årene?",
+                    "Nevn tre rettigheter en fast ansatt har, som en gig-arbeider som regel mangler.",
+                    "Hvordan fungerer frontfagmodellen? Hvem forhandler først om lønn, og hva bestemmer denne forhandlingen?"
+                ],
+                "reflekter": [
+                    "Teksten sier at automatisering denne gangen er annerledes enn før. Hva er den store forskjellen, og hvorfor gjør den det vanskeligere for samfunnet å tilpasse seg?",
+                    "Hvorfor kan gig-arbeid være frihet for en student, men en felle for en som lever av det på heltid? Bruk eksempler fra teksten.",
+                    "Hjemmekontor kan skape et nytt skille i arbeidslivet. Forklar hvem som får fleksibilitet og hvem som ikke får det, og hvorfor.",
+                    "Hvorfor mister frontfagmodellen grepet hvis for få arbeidstakere er organisert i fagforeninger?"
+                ],
+                "gaaVidere": [
+                    "Se på scenariet i artikkelen. Hvilken vei ville du valgt i 2040 - fast jobb, gig-oppdrag, eget selskap eller å jobbe med AI som partner? Skriv 5-8 setninger om hvorfor.",
+                    "Har du eller noen du kjenner bestilt mat, tatt en Uber eller leid hjelp gjennom en app? Diskuter med en partner om personen bak oppdraget burde hatt de samme rettighetene som en fast ansatt.",
+                    "Teksten sier at livslang læring blir viktigst i fremtidens arbeidsliv. Skriv en kort tekst der du beskriver hvilke ferdigheter du tror du må lære flere ganger i løpet av livet, og hvorfor."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

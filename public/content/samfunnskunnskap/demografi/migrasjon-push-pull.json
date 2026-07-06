@@ -60,6 +60,29 @@
         {
             "type": "text",
             "value": "Migrasjon endrer også landet man drar fra. Når migranter får jobb i rike land, sender de ofte penger hjem til familien. Dette kalles *remittances* (pengeoversendelser).\n\nFaktisk sendes det MER penger hjem via remittances enn all verdens u-hjelp til sammen! Disse pengene betaler for skolegang og helsehjelp i hjemlandet."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på en push-faktor og en pull-faktor, med egne ord?",
+                    "Nevn tre push-faktorer som teksten trekker fram som grunner til at folk må flykte.",
+                    "Hvor mange nordmenn utvandret til Amerika i perioden 1825-1920, og hvilket land mistet en enda større andel av befolkningen sin?",
+                    "Hva er remittances, og hva bruker familiene disse pengene til ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Norge var fattig fordi gårdene var for små til å deles mellom alle sønnene. Forklar hvorfor dette gjorde at så mange valgte å reise til Amerika.",
+                    "Hvorfor drar ikke alle flyktninger bare til nabolandet? Bruk pull-faktorene i teksten til å forklare hvorfor mange reiste helt til Europa i 2015.",
+                    "Teksten sier at det sendes mer penger hjem via remittances enn all verdens u-hjelp til sammen. Hvorfor kan slike penger fra migranter være viktigere for et land enn hjelp fra andre stater?",
+                    "Sammenlign den store utvandringen fra Norge på 1800-tallet med flukten fra Syria i 2015. Hva er likt, og hva er forskjellig når det gjelder push- og pull-faktorer?"
+                ],
+                "gaaVidere": [
+                    "Se for deg at du selv måtte flytte til et helt nytt land. Skriv en kort tekst (5-8 setninger) om hvilke tre ting du ville savnet mest av alt du kjenner.",
+                    "Diskuter med en partner: Hvis en i din familie fikk jobb i utlandet og sendte penger hjem, hva synes dere pengene burde brukes til?",
+                    "Finn ut hvor familien din eller besteforeldrene dine kommer fra. Har noen i slekten flyttet på grunn av en push- eller pull-faktor? Fortell historien til klassen."
+                ]
+            }
         }
     ],
     "quiz": [

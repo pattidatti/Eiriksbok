@@ -444,6 +444,29 @@
                     "correctAnswer": 1
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var modell-elevens problemstilling, og hva var hovedpåstanden hennes om hvordan folkestyre blir til ettmannsstyre?",
+                    "Hvordan sikret Augustus seg all makt uten å bli hatet slik en konge ble? Forklar hva ordet princeps og fasaden til republikken betyr her.",
+                    "Hva var fullmaktsloven av 1933, og hvordan brukte Hitler den til å skaffe seg makt på lovlig vis?",
+                    "Nevn den viktigste forskjellen eleven trakk fram mellom Roma og Weimar, ikke likheten."
+                ],
+                "reflekter": [
+                    "Eleven bygde presentasjonen rundt sammenligningspunkter og vekslet mellom Roma og Tyskland under hvert punkt, i stedet for å ta ett land av gangen. Forklar hvorfor dette viser mer forståelse enn å fortelle alt om det ene landet først.",
+                    "Både Augustus og Hitler grep makten innenfra og lot fasaden stå (senatet og Riksdagen fikk bestå). Hvorfor var dette et smartere grep enn å ta makten med et væpnet kupp utenfra?",
+                    "Augustus skrev sin egen historie (Res Gestae) der han fremstilte seg som republikkens redningsmann. Hvorfor må man være kritisk til en kilde der en hersker skriver om seg selv?",
+                    "Goebbels kalte det en av demokratiets beste vitser at det ga sine dødsfiender midlene til å ødelegge det. Hva mente han, og hva sier dette om svakheter ved demokratiet?"
+                ],
+                "gaaVidere": [
+                    "Eleven mente mønsteret fra Roma og Weimar fortsatt gjelder i dag. Skriv et kort avsnitt om hvordan et moderne demokrati kan svekkes uten våpen, og hva som gjør Norge sterkere enn Weimar var.",
+                    "Bruk mønsteret fra artikkelen (krise, en sterk leder, makt grepet innenfra) på et tredje eksempel, for eksempel Napoleon i Frankrike. Forklar hvordan eksemplet passer inn.",
+                    "Diskuter i klassen: Var Augustus en redningsmann som skapte fred etter borgerkrigene, eller en tyrann som knuste folkestyret? Kom med argumenter for begge syn."
+                ]
+            }
         }
     ],
     "quiz": [
