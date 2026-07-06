@@ -96,6 +96,29 @@
                 ],
                 "instruction": "Bygg en leddsetning. Husk hvor 'ikke' skal stå!"
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er de fem konjunksjonene i huskeregelen O-M-F-E-S?",
+                    "Hva heter ordene som starter en leddsetning?",
+                    "I setningen 'Jeg spiser is fordi det er varmt', hvilket ord er subjunksjonen?",
+                    "Hvor står ordet 'ikke' i en leddsetning - foran eller etter verbet?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at vi ville snakket 'som roboter' uten bindeord. Forklar med egne ord hva bindeord gjør med setningene våre.",
+                    "En leddsetning som '...fordi jeg er sulten' gir ikke mening alene. Hvorfor tror du det er sånn, og hva mangler den?",
+                    "Forklar forskjellen på hvor 'ikke' står i 'Jeg spiser ikke is' og i '...fordi jeg ikke spiser is'.",
+                    "Konjunksjoner binder sammen 'to ting som er like viktige'. Hvorfor passer ikke ordet 'fordi' inn i den gruppen?"
+                ],
+                "gaaVidere": [
+                    "Skriv tre helsetninger og bind dem sammen til lengre setninger ved å bruke minst tre forskjellige konjunksjoner fra O-M-F-E-S.",
+                    "Lag fem leddsetninger som starter med subjunksjonene 'fordi', 'hvis', 'når', 'selv om' og 'da'. Pass på at 'ikke' står riktig i minst to av dem.",
+                    "Skriv et kort avsnitt om dagen din uten å bruke noen bindeord, og skriv det så om med bindeord. Diskuter med en klassekamerat hvilken versjon som er lettest å lese."
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",

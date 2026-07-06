@@ -166,6 +166,7 @@ The app uses a manifest-driven routing system:
 /tidslinje                      Global timeline
 /atlas                          Verdensatlas (fullskjerms kart-tidslinje)
 /laeringsstier                  Learning paths hub
+/min-laering                    «Min læring» - elevdashboard (XP, streak, badges, fag-mestring, synk-kode)
 /persongalleri                  Person gallery
 /colonization                   Kolonisering-kart (verdenshistorie)
 /infrastruktur-atlas            Infrastruktur-Atlas (samfunnskunnskap)
@@ -593,6 +594,7 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 | `src/routes.ts` | Lazy-load route factories |
 | `src/lib/firebase.ts` | Firebase configuration |
 | `src/games/engine/` | Mini-spillmotor (typer, GameEngine, systems/, builders/). Se `BUILD_GAME_GUIDE.md` for API-er. |
+| `src/features/progress/` | Progresjonssystemet bak «Min læring» (`/min-laering`): `useProgressStore.recordActivity()` kalles fra alle fullføringspunkter og eier XP/nivå, streak, badges, dagens mål, fag-mestring og Firebase-synk via tre-ords-kode. Nye moduler som gir eleven fullføringer skal kalle `recordActivity()`. |
 | `src/pages/MiniGamesPage.tsx` | Galleriside — legg til nye spill i HISTORICAL_GAMES her |
 | `src/pages/GamePage.tsx` | Enkeltspill-side — legg til spill-ID i GAME_REGISTRY her |
 | `docs/THE_ARCHITECTS_HANDBOOK.md` | Workflow philosophy |

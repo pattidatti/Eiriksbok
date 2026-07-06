@@ -431,6 +431,29 @@
                     "correctAnswer": 1
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre tekster valgte modell-eleven, og hvilken epoke hører hver av dem til?",
+                    "Hva var den skarpe påstanden eleven åpnet presentasjonen med?",
+                    "Hvorfor er det smart å velge tekster fra tre ulike epoker, ifølge artikkelen?",
+                    "Hva menes med en baklomme-tekst, og hvorfor forbereder en sterk elev slike?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at framgang flytter seg fra Askeladden til Karen til Sult. Forklar med egne ord hvordan synet på framgang endrer seg gjennom de tre tekstene.",
+                    "Hos Amalie Skram ligger motgangen i samfunnet, mens hos Hamsun flytter den seg inn i hodet. Hva er forskjellen på disse to typene motgang?",
+                    "Hvorfor er en ordbokdefinisjon av ironi et svakere svar enn å forklare hvordan ironien virker i Karens jul? Bruk eksemplet fra teksten.",
+                    "Askeladden lurer trollet. Vurder svaret i artikkelen om at han likevel fortjener framgangen sin. Er du enig i at list er en dyd i eventyrets logikk?"
+                ],
+                "gaaVidere": [
+                    "Velg et tema du kan tenke deg på muntlig eksamen, og skriv én skarp påstand om det. Test den: kan noen være uenig?",
+                    "Les en av tekstene fra biblioteket som eleven brukte, og finn ett sitat og ett virkemiddel du selv kunne forklart effekten av.",
+                    "Diskuter med en medelev: hvilken av de tre tekstene sier mest om vår egen tid, og hvorfor?"
+                ]
+            }
         }
     ],
     "quiz": [

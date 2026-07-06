@@ -20,6 +20,29 @@
             "type": "text",
             "title": "Oppgave: Finn E",
             "content": "Bassen er stemt i E, A, D, G. Finn den tykkeste strengen (nederst på tegningen) og trykk på den åpne sirkelen (0). Dette er den dypeste tonen på en vanlig bass."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange strenger har en vanlig bass, og hva heter de?",
+                    "Hvilke toner spiller bassen ofte, og hvordan er de sammenlignet med gitarakkorden?",
+                    "Hvor mye dypere spiller bassen enn gitaren når den følger grunntonene?",
+                    "Hvilken streng på bassen er den tykkeste, og hvilken tone er den stemt i?"
+                ],
+                "reflekter": [
+                    "Teksten kaller bassisten limet mellom trommene og resten av bandet. Hva tror du menes med det?",
+                    "Hvorfor tror du bassen spiller de samme grunntonene som gitaren, men en oktav dypere i stedet for i samme tonehøyde?",
+                    "Bassens fire strenger er de samme som de fire dypeste på gitaren. Hvorfor kan det være en fordel for noen som allerede kan litt gitar?",
+                    "Hva tror du ville skjedd med lyden i et band hvis bassen plutselig forsvant?"
+                ],
+                "gaaVidere": [
+                    "Hør på en sang du liker, og prøv å legge merke til basslinjen. Skriv ned om den holder seg rolig eller beveger seg mye.",
+                    "Bruk FretboardExplorer og finn den dypeste tonen (E) på den tykkeste, åpne strengen. Prøv deretter å finne A, D og G på de åpne strengene.",
+                    "Diskuter med en klassekamerat: Hvorfor tror dere folk ofte legger mest merke til sang og gitar, men sjeldnere til bassen?"
+                ]
+            }
         }
     ]
 }

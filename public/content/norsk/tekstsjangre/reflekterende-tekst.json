@@ -61,6 +61,29 @@
                 "[Min leserhistorie](/norsk/bibliotek/min-leserhistorie) – Alise reflekterer over hvordan hennes forhold til bøker har endret seg gjennom oppveksten.",
                 "[Fordummende intelligent teknologi](/norsk/bibliotek/fordummende-intelligent-teknologi) – En refleksjon over hvordan KI påvirker vår egen evne til å tenke."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva undersøker forfatteren i en reflekterende tekst?",
+                    "Hvilken forteller-stemme tar en reflekterende tekst utgangspunkt i?",
+                    "Nevn tre ord som fungerer som refleksjonsmarkører i en slik tekst.",
+                    "I hvilke tekster skriver vi ofte reflekterende, ifølge artikkelen?"
+                ],
+                "reflekter": [
+                    "Hva er den viktigste forskjellen mellom en reflekterende tekst og en rent informerende tekst?",
+                    "Hvorfor har en reflekterende tekst en mer åpen tone enn et debattinnlegg?",
+                    "Forklar hvorfor tankesprang mellom fortid og nåtid passer godt i denne sjangeren.",
+                    "Hvordan hjelper retoriske spørsmål forfatteren med å utforske et tema?"
+                ],
+                "gaaVidere": [
+                    "Skriv starten på en reflekterende tekst om en gang du ombestemte deg om noe. Bruk minst to refleksjonsmarkører og et retorisk spørsmål.",
+                    "Velg en av tekstene fra biblioteket og pek på tre steder der du ser kjennetegn på refleksjon.",
+                    "Diskuter med en medelev: Er det lettere eller vanskeligere å skrive en tekst der du ikke trenger å ha alle svarene? Begrunn svaret."
+                ]
+            }
         }
     ],
     "tags": [

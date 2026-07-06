@@ -146,6 +146,30 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva starter og slutter en skala på, og hvor mange oktaver spenner den over?",
+                    "Hvilket mønster av hele og halve steg følger dur-skalaen?",
+                    "Hvilken tone er den viktigste forskjellen mellom dur og moll, og hva heter den?",
+                    "Hva betyr de latinske ordene durus og mollis, og hvilke skalaer har fått navn fra dem?",
+                    "Hvor mange toner har en pentatonisk skala, og i hvilke musikksjangre brukes den mye?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at pianoet er bygget rundt C-dur. Hvorfor treffer nettopp C-dur-skalaen bare de hvite tangentene?",
+                    "Hvorfor kjennes det trygt ut når en melodi slutter på grunntonen, mens en melodi som ender på en annen tone henger i lufta?",
+                    "Modulasjon er vanskelig for musikere fordi alle akkordene endrer seg samtidig. Hvorfor gir det likevel en stor fordel å kunne bytte toneart på øret?",
+                    "Filmkomponister kan gjøre en scene farlig ved å bruke frygisk, eller trist ved å flytte tersen ett halvt steg ned. Hvorfor er så små endringer nok til å snu stemningen helt?"
+                ],
+                "gaaVidere": [
+                    "Finn en sang du liker, og prøv å høre om den står i dur eller moll ved å lytte etter tersen. Skriv ned hva du kom fram til og hvorfor.",
+                    "Bruk Toneart-laben i artikkelen: spill den samme grunntonen i dur og i moll, og beskriv med egne ord hvordan stemningen flyttes.",
+                    "Lytt etter en popslager der siste refreng stiger et halvt steg opp (modulasjon). Beskriv hvordan det føles, og diskuter med en klassekamerat hvorfor artister bruker dette grepet."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Test deg selv: Tonearter og skalaer",

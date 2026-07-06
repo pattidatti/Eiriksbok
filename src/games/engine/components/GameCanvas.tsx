@@ -139,6 +139,17 @@ export function GameCanvas({ config }: GameCanvasProps) {
             onStart: () => {},
             onEnd: (text) => {
                 setUIState((prev) => ({ ...prev, ended: true, endText: text }));
+                // «Min læring»: 3D-spillet er fullført
+                import('../../../features/progress/useProgressStore').then(
+                    ({ useProgressStore }) => {
+                        useProgressStore.getState().recordActivity({
+                            kind: 'minigame-played',
+                            activityId: `spill/${config.id}`,
+                            subjectId: config.subject,
+                            title: config.title,
+                        });
+                    }
+                );
             },
             onCollect: (name) => {
                 setToast(name);

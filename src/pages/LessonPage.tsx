@@ -18,6 +18,7 @@ import { usePageTitle } from '../hooks/usePageTitle';
 import { useGlobalTimeline } from '../hooks/useGlobalTimeline';
 import { useAnalytics } from '../hooks/useAnalytics';
 import { useReadingTime } from '../hooks/useReadingTime';
+import { useArticleReadTracker } from '../features/progress/useArticleReadTracker';
 import { useLayout } from '../context/LayoutContext';
 import { LearningPathErrorState } from '../components/content/LearningPathErrorState';
 import { ArticleContent } from '../components/ArticleContent';
@@ -64,6 +65,24 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
     const analyticsPath = `${subjectId}/${topicId}${subTopicId ? `/${subTopicId}` : ''}/${lessonId}`;
     useAnalytics(lessonId ? analyticsPath : undefined);
     useReadingTime();
+
+    // «Min læring»: artikkel regnes som lest etter åpnet + minimumstid.
+    // Stier, verktøy og detektivsaker spores av sine egne fullføringspunkter.
+    const isTrackableArticle =
+        !!lesson &&
+        lesson.layout !== 'tool' &&
+        lesson.layout !== 'learning-path' &&
+        lesson.layout !== 'learning-path-v2' &&
+        !lesson.engine &&
+        !lesson.learningPathData;
+    useArticleReadTracker({
+        enabled: isTrackableArticle,
+        path: analyticsPath,
+        subjectId,
+        topicId,
+        title: lesson?.title,
+        readTime: lesson?.readTime,
+    });
 
     useEffect(() => {
         if (lesson) {

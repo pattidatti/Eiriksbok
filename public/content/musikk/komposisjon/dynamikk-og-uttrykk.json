@@ -137,6 +137,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet dynamikk i musikk?",
+                    "Nevn de seks dynamikkmerkene fra svakest til sterkest, og forklar kort hva hvert av dem betyr.",
+                    "Hva er forskjellen på crescendo og diminuendo?",
+                    "Hvorfor kommer de fleste dynamikkmerkene fra italiensk?"
+                ],
+                "reflekter": [
+                    "Teksten sier at hvis alt er like sterkt, blir ingenting sterkt. Forklar med egne ord hvorfor kontrast er så viktig for at musikk skal virke på oss.",
+                    "Hvorfor føles et refreng enormt når det kommer rett etter et stille parti, en drop? Bruk det du har lest om kontrast.",
+                    "I klassisk musikk spiller én musiker sterkere eller svakere, mens produsenter i pop og hip-hop legger til eller fjerner lag av lyd. Forklar hvorfor teksten mener effekten likevel blir den samme.",
+                    "Teksten sier at forskjellen på en nybegynner og en erfaren musiker ofte ikke er hva de spiller, men at de behersker dynamikk. Er du enig? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Velg en sang du liker godt. Lytt etter dynamikk: hvor er det stille, hvor smeller det til, og finnes det en drop før refrenget? Skriv noen setninger om hva du la merke til.",
+                    "Prøv øvelsen fra teksten på et instrument eller med stemmen din: spill eller syng verset svakt og refrenget sterkt. Beskriv hvordan sangen forandret seg.",
+                    "Fortell en kort, spennende historie til en venn der du bruker dynamikk med stemmen. Senk stemmen på det skumleste stedet og hev den på poenget. Diskuter etterpå hvordan volumet påvirket hvordan historien føltes."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

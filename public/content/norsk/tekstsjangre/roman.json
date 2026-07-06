@@ -63,6 +63,29 @@
                 "[Små nøkler, store rom](/norsk/bibliotek/sma-nokler-store-rom) av Bjørg Vik – Et utdrag fra en oppvekstskildring som viser hvordan en roman kan fange barnets perspektiv.",
                 "[Barsakh](/norsk/bibliotek/barsakh) av Simon Stranger – Et utdrag fra en ungdomsroman som tar opp aktuelle og alvorlige temaer som flukt og urettferdighet."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kommer ordet roman opprinnelig av, og hva betydde det?",
+                    "Hvem var de fire store i norsk litteratur på slutten av 1800-tallet?",
+                    "Hva kjennetegner en utviklingsroman?",
+                    "Hva er forskjellen på en kollektivroman og en historisk roman ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten sier at romanen er et panorama, mens novellen er et øyeblikksbilde. Forklar med egne ord hva denne forskjellen betyr for hva forfatteren kan få til.",
+                    "Hvorfor gir lengden på en roman rom for at hovedpersonene kan være sammensatte og utvikle seg gjennom boka?",
+                    "Hva menes med retrospektiv teknikk, og hvorfor kan det være nyttig for en forfatter å hoppe frem og tilbake i tid?",
+                    "Hvorfor tror du krim, fantasy og kjærlighetsromaner kalles sjangerromaner med egne regler og forventninger?"
+                ],
+                "gaaVidere": [
+                    "Velg en bok eller film du kjenner godt, og plasser den i en av romantypene fra teksten (utviklingsroman, kollektivroman, historisk roman eller sjangerroman). Forklar valget ditt med minst to kjennetegn.",
+                    "Skriv de første ti setningene på en roman. Prøv å få med en miljøskildring og introduser minst én karakter som virker sammensatt.",
+                    "Diskuter i klassen: Hvorfor tror dere romanen er blitt den mest populære litterære sjangeren i dag? Kom med minst tre grunner."
+                ]
+            }
         }
     ],
     "tags": [

@@ -703,6 +703,29 @@
                     "icon": "external"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor lenge varer skriftlig eksamen i norsk, og hvilke to hoveddeler består den av?",
+                    "Hva er forskjellen på kortsvarsoppgavene og langsvarsoppgavene når det gjelder omfang og valgmuligheter?",
+                    "Hva står bokstavene i PAMK-modellen for, og når skal du bruke denne modellen?",
+                    "Hvilke hjelpemidler får du lov til å bruke på eksamen?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at et referat gjenforteller hva teksten handler om, mens en analyse forklarer hvordan teksten skaper mening. Forklar denne forskjellen med egne ord, og gi et eksempel.",
+                    "Hvorfor mener artikkelen at det er lurt å bryte en oppgave opp i flere ledd før du begynner å svare? Hva kan gå galt hvis du ikke gjør det?",
+                    "Ifølge artikkelen skiller det som gir karakter 5-6 seg fra karakter 3-4 ved at eleven kobler virkemidler til tema. Forklar hva det vil si å koble et virkemiddel til tema, og hvorfor det er vanskeligere enn å bare navngi virkemidler.",
+                    "Når du har én time igjen og bare er to tredjedeler ferdig, anbefaler artikkelen å kutte ned og skrive en kortere, men ferdig tekst. Begrunn hvorfor en ferdig tekst vurderes bedre enn en lengre, uferdig tekst."
+                ],
+                "gaaVidere": [
+                    "Velg en kort tekst fra biblioteket, sett klokken på 45 minutter, og skriv et kortsvar der du finner minst to virkemidler og forklarer effekten deres. Bruk sitat som bevis.",
+                    "Skriv en kort drøftende tekst på cirka 200 ord om en påstand du er opptatt av. Bruk PAMK-modellen, og pass på at du lander på en tydelig konklusjon.",
+                    "Finn en tidligere eksamensoppgave hos Udir, del den opp i alle leddene den består av, og skriv ned hva sensor leter etter i hvert enkelt ledd."
+                ]
+            }
         }
     ],
     "quiz": [

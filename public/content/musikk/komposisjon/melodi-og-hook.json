@@ -132,6 +132,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet hook på engelsk, og hvorfor passer det navnet på en musikkbit?",
+                    "Hvilke tre ting går igjen i nesten alle gode hooker ifølge teksten?",
+                    "Hva kaller forskerne det når en hook setter seg fast i hodet, og hvor ofte har de fleste det?",
+                    "Hvor mange toner har den pentatoniske skalaen, og i hvilke musikkstiler dukker den opp?"
+                ],
+                "reflekter": [
+                    "Teksten sier at hjernen liker mønstre og små gjettekonkurranser den nesten alltid vinner. Forklar hvorfor gjentakelse gjør at en hook fester seg bedre.",
+                    "Hvorfor blir lange og kompliserte melodier nesten aldri ørehengere, mens korte og enkle biter havner der?",
+                    "Låtskriveren har ofte hooken først og bygger vers, bro, intro og outro rundt den. Hvorfor kan det være lurt å starte med hooken i stedet for å begynne på begynnelsen av sangen?",
+                    "Teksten sier at den vanligste forbedringen av en hook er å fjerne ting. Hvorfor kan færre toner og mindre sprang gjøre en hook bedre?"
+                ],
+                "gaaVidere": [
+                    "Tenk på en låt du elsker. Hvilken bit dukker opp i hodet ditt når du tenker på sangen? Skriv ned hooken og prøv å telle hvor mange toner den har og hvor mange ganger den gjentas i låten.",
+                    "Følg oppskriften i teksten: velg fire eller fem toner som ligger nær hverandre, lag en kort melodi, syng den to ganger og endre den siste tonen andre gangen. Test på en venn en time senere - klarer de å nynne den tilbake?",
+                    "Neste gang du scroller på TikTok, legg merke til de første sju sekundene av låtene. Skriv en kort tekst om hvorfor du tror hooken må komme så tidlig når folk scroller videre så fort."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

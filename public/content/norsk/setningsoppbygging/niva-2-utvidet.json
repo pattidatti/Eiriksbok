@@ -74,6 +74,29 @@
         {
             "type": "text",
             "content": "Husk: På norsk kan vi flytte litt på disse klossene, men det er én streng regel vi ALDRI må bryte. Den skal vi se på i neste nivå!"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva står bokstavene S, V, O og A for i denne artikkelen?",
+                    "Hva forteller objektet (O) oss i en setning?",
+                    "Hvilke tre spørsmål svarer adverbialet (A) ofte på?",
+                    "I setningen 'Marit kjøper bil' - hvilket ord er objektet?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at 'Jens spiser' er litt kjedelig. Forklar hvorfor et objekt og et adverbial gjør setningen mer nyttig.",
+                    "I eksemplet 'Jens spiser et eple på kjøkkenet' er 'på kjøkkenet' et adverbial for sted. Hvordan ville du byttet det ut for å lage et adverbial for tid i stedet?",
+                    "Adverbialet kan svare på både når, hvor og hvordan. Hvorfor tror du det er nyttig å kunne legge til så forskjellige typer informasjon i én og samme setning?",
+                    "Artikkelen sier at vi kan flytte litt på 'klossene', men at det finnes én streng regel vi aldri må bryte. Hva tror du denne regelen kan handle om?"
+                ],
+                "gaaVidere": [
+                    "Skriv tre egne setninger som følger mønsteret S - V - O - A, akkurat som 'Gutten sparker fotballen hardt'. Marker hvert ledd med bokstaven S, V, O eller A.",
+                    "Ta setningen 'Jens spiser et eple'. Legg til tre ulike adverbialer, ett for tid, ett for sted og ett for måte, slik at du får tre nye setninger.",
+                    "Sett dere sammen to og to. Den ene sier en kort setning med bare subjekt og verbal, og den andre utvider den med objekt og adverbial. Bytt på hvem som starter."
+                ]
+            }
         }
     ]
 }

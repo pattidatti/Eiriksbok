@@ -190,6 +190,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Omtrent hvor mange øre gir én avspilling på Spotify til hele kjeden bak låten?",
+                    "Hvilke to ulike opphavsretter finnes det i en sang, og hvem eier vanligvis hver av dem?",
+                    "Hvor lenge varer opphavsretten i Norge etter at den som skapte verket dør?",
+                    "Hva er TONO, og hvem passer den på at får betalt?"
+                ],
+                "reflekter": [
+                    "Hvorfor sitter artisten ofte igjen med bare 10 til 20 prosent av sin del, mens plateselskapet tar mye mer? Forklar hva plateselskapet betaler for.",
+                    "Hvorfor mener noen at streaming er urettferdig, mens andre mener at det har gjort musikk mer tilgjengelig enn noen gang? Gi ett argument for hvert syn.",
+                    "Beethoven kan du høre gratis, mens Beyoncé koster penger. Forklar hvorfor, ut fra reglene om opphavsrett.",
+                    "Hvis en KI-modell er trent på Taylor Swifts sanger og lager en låt som høres ut som henne, mener du den har brutt opphavsretten? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Se på din egen musikklytting den siste uka. Regn omtrent ut hvor mange avspillinger favorittartisten din trenger i måneden for å tjene minstelønn, og skriv noen linjer om hva tallet fikk deg til å tenke.",
+                    "Velg en artist du liker og finn ut hvordan du kan støtte dem slik at de får mest mulig penger (konsert, vinyl, t-skjorte, Bandcamp eller Patreon). Skriv en kort plan for hva du kunne gjort.",
+                    "Diskuter i klassen: Skal en ikke-samisk artist få lage en pop-låt med joik i, og skal noen få betalt for det? Bruk argumenter fra teksten om kulturell appropriasjon."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

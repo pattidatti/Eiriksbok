@@ -110,6 +110,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva gjorde Ivar Aasen da han vandret fra bygd til bygd sommeren 1842?",
+                    "Hva var Knud Knudsens metode for å lage et norsk skriftspråk?",
+                    "Hvilket år ble de to skriftspråkene likestilte i lov, og hva kalles dette vedtaket?",
+                    "Hva het skriftspråket Aasen bygde opp først, og hvilket navn fikk det senere?"
+                ],
+                "reflekter": [
+                    "Aasen og Knudsen kom med to helt ulike løsninger på samme problem. Forklar hvorfor Aasen mente bygdedialektene var mer ekte norsk enn dansken.",
+                    "Hvorfor reagerte folk så sterkt på samnorsk-prosjektet at mødre rev sider ut av lærebøkene?",
+                    "Teksten sier at språkstriden ikke bare handlet om språk, men også om makt og klasse. Forklar hva som menes med det.",
+                    "Hvorfor ligner nynorsk-ord ofte mer på norrøne ord enn på danske ord?"
+                ],
+                "gaaVidere": [
+                    "Tenk på dialekten du selv snakker. Ligner den mest på bokmål eller nynorsk? Skriv fem setninger der du forklarer hvorfor, og gi eksempler på ord.",
+                    "Skriv et kort innlegg på fem til seks setninger der du argumenterer for eller mot at Norge bør beholde begge skriftspråkene. Bruk minst to argumenter fra artikkelen.",
+                    "Diskuter i par: Ville det vært enklere om Norge hadde valgt bare ett skriftspråk? Skriv ned det beste argumentet fra hver av dere."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

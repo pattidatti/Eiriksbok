@@ -79,6 +79,29 @@
         {
             "type": "text",
             "content": "Vi bruker ofte Det når vi snakker om noe generelt, eller været. 'Det regner'. Vi kaller det et formelt subjekt - det betyr ingenting, men må være der for at setningen skal virke."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet pronomen?",
+                    "Hvilke tre pronomen er det i setningen 'Han ga henne en gave fordi hun var snill'?",
+                    "Når skal du bruke sin, si, sitt eller sine ifølge regelen i teksten?",
+                    "Hva kaller vi ordet 'det' i setningen 'Det regner'?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor vi trenger pronomen. Bruk eksempelet med Per og bilen til å vise hva som skjer hvis vi bare bruker navn hele tiden.",
+                    "I setningen 'Ola liker bilen hans' er det ikke sikkert bilen tilhører Ola. Forklar hvorfor 'hans' gir en annen betydning enn 'sin'.",
+                    "Setningen 'Anna kysset kjæresten hennes' skaper drama ifølge teksten. Forklar hva som egentlig skjer i den setningen, og hvordan du kan rette den hvis Anna kysser sin egen kjæreste.",
+                    "Teksten kaller 'det' et formelt subjekt som ikke betyr noe. Forklar hva som menes med det, og hvorfor setningen likevel trenger ordet."
+                ],
+                "gaaVidere": [
+                    "Skriv tre setninger hvor subjektet eier noe, og bruk sin, sitt eller sine riktig. Bytt så ut med hans eller hennes i én av dem, og forklar hvordan betydningen endrer seg.",
+                    "Finn en tekst du selv har skrevet, eller en du finner på nett. Let etter steder der noen har brukt hans eller hennes der de burde brukt sin. Rett feilene og forklar hvorfor.",
+                    "Diskuter med en medelev - hvorfor tror dere sin- og hans-feilen er så vanlig i norsk, selv blant voksne?"
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",

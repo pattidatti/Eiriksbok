@@ -115,8 +115,8 @@ export const SkyPage: React.FC = () => {
         setFlare((prev) => ({ index, token: (prev?.token ?? 0) + 1 }));
     };
 
-    const handleGrade = (correct: boolean) => {
-        if (selected === null) return;
+    const handleGrade = (correct: boolean): { completedTitle: string | null } => {
+        if (selected === null) return { completedTitle: null };
         const star = world.stars[selected];
         // Fullfører dette stjernebildet? (alle andre lyser, denne var siste som manglet)
         const constellation = world.constellations.find((c) => c.starIndices.includes(selected));
@@ -154,6 +154,7 @@ export const SkyPage: React.FC = () => {
                 });
             }
         }
+        return { completedTitle: completes && constellation ? constellation.title : null };
     };
 
     const handleAdd = () => {
@@ -242,7 +243,16 @@ export const SkyPage: React.FC = () => {
                         </h1>
                         <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
                             <StarIcon className="w-3 h-3 fill-amber-400 text-amber-400" />
-                            {world.litCount} av {world.stars.length} stjerner tent
+                            <motion.span
+                                key={world.litCount}
+                                initial={{ scale: 1.5, color: '#d97706' }}
+                                animate={{ scale: 1, color: '#64748b' }}
+                                transition={{ type: 'spring', stiffness: 300, damping: 18 }}
+                                className="font-bold"
+                            >
+                                {world.litCount}
+                            </motion.span>
+                            av {world.stars.length} stjerner tent
                         </p>
                     </div>
                 </div>

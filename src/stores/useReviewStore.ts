@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import type { ReviewItem, ReviewSessionRecord, ReviewStreak } from '../types/review';
 import { addDays, gradeLeitner } from '../utils/reviewScheduler';
+import { useProgressStore } from '../features/progress/useProgressStore';
 
 // Repetisjonskøen for «Dagens økt». localStorage-only, samme fase-1-strategi
 // som useLearningPathProfile. Flere faner: last-write-wins via persist -
@@ -100,7 +101,14 @@ export const useReviewStore = create<ReviewState>()(
                     };
                 }),
 
-            completeSession: (record, today) =>
+            completeSession: (record, today) => {
+                // «Min læring»: dagens økt gir XP og teller på streaken
+                useProgressStore.getState().recordActivity({
+                    kind: 'review-session',
+                    activityId: today,
+                    score: record.total > 0 ? record.correct / record.total : undefined,
+                    title: 'Dagens økt',
+                });
                 set((state) => {
                     const { current, best, lastSessionDay } = state.streak;
                     let nextCurrent = current;
@@ -126,11 +134,18 @@ export const useReviewStore = create<ReviewState>()(
                             -MAX_SESSIONS
                         ),
                     };
-                }),
+                });
+            },
 
             // Dagens spill spilles ETTER at økta er fullført (streaken er
             // allerede sikret) - resultatet flettes inn i dagens session-record
-            recordGameResult: (today, gameId, score) =>
+            recordGameResult: (today, gameId, score) => {
+                useProgressStore.getState().recordActivity({
+                    kind: 'practice-game',
+                    activityId: `review-game/${gameId}`,
+                    title: 'Dagens spill',
+                    score: undefined,
+                });
                 set((state) => {
                     const sessions = [...state.sessions];
                     for (let i = sessions.length - 1; i >= 0; i--) {
@@ -140,7 +155,8 @@ export const useReviewStore = create<ReviewState>()(
                         }
                     }
                     return state;
-                }),
+                });
+            },
 
             resetAll: () =>
                 set({

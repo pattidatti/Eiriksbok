@@ -148,6 +148,29 @@
       "content": "Husk at ingen skriver en perfekt tekst på første forsøk. Profesjonelle låtskrivere skriver om igjen og igjen. De kutter linjer de er glad i, bytter ut ord som nesten passer med ord som passer perfekt, og tester teksten på andre mennesker. Den viktigste egenskapen en låtskriver kan ha er ikke talent, men tålmodighet."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva betyr regelen vis, ikke fortell i tekstskriving?",
+                "Nevn de tre tingene artikkelen sier du trenger for å skrive en god sangtekst.",
+                "Hva er forskjellen på parrim, kryssrim og halvrim?",
+                "Hva er en bro i en sang, og når dukker den vanligvis opp?"
+            ],
+            "reflekter": [
+                "Hvorfor treffer linjen skoene dine står fortsatt ved døra mi sterkere enn å skrive jeg er trist?",
+                "Hvorfor velger mange moderne artister å droppe rim i versene, men beholde dem i refrenget?",
+                "Artikkelen sier at de sterkeste ordene bør lande på de sterkeste slagene i takten. Hva skjer med et viktig ord hvis det havner på et svakt slag?",
+                "Hvorfor mener artikkelen at tålmodighet er viktigere enn talent for en låtskriver?"
+            ],
+            "gaaVidere": [
+                "Velg en sang du liker godt, og finn en linje som viser en følelse i stedet for å fortelle den. Skriv ned linjen og forklar hvilket bilde den gir deg.",
+                "Bruk metoden i artikkelen: velg en følelse du kjenner godt, skriv ned fem konkrete minner knyttet til den, og lag en åpningslinje til et vers av det sterkeste minnet.",
+                "Ta en abstrakt følelse som kjærlighet eller ensomhet, og skriv om den med en konkret detalj slik artikkelen viser, for eksempel en kaffekopp eller en tom stol."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

@@ -295,6 +295,29 @@
             "type": "info",
             "title": "Veien Videre",
             "content": "Gratulerer! Du har nå lært grunnsteinene i god narrativ skriving. Husk at skriving er et håndverk som krever øvelse. Sjekk ut artikkelen om [7 Vanlige Plot](/norsk/skrivehjelp/7-vanlige-plot) for å finne den perfekte strukturen for din neste historie."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet agens, slik artikkelen forklarer det?",
+                    "Hvorfor mener artikkelen at du bør kutte ordet begynte å, som i setningen Han begynte å løpe?",
+                    "Hva er forskjellen på tankereferat og indre monolog ifølge teksten?",
+                    "Hva menes med hodehopping, og hvorfor kaller artikkelen det en vanlig begynnerfeil?"
+                ],
+                "reflekter": [
+                    "Artikkelen bytter ut Plutselig gikk lyset med Et høyt smell fikk ham til å hoppe. Alt ble svart. Forklar hvorfor sanseinntrykket sjokkerer leseren mer enn ordet plutselig.",
+                    "Se på eksempelet der Kari stormer inn på biblioteket for å finne boka før det stenger. Hvorfor blir selv et vanlig biblioteksbesøk spennende når vi vet hva som står på spill?",
+                    "Artikkelen sier at presisjon slår volum. Hvorfor formidler den rolige setningen Fingrene lekte med glidelåsen mer nervøsitet enn Hjertet dunket som en tromme?",
+                    "Regelen vis, ikke fortell går igjen i hele guiden. Velg ett av de andre rådene i artikkelen og forklar hvordan det egentlig handler om å vise i stedet for å fortelle."
+                ],
+                "gaaVidere": [
+                    "Gjør skriveverkstedet i Del 1: skriv en kort scene der en karakter reagerer på at en hemmelighet blir avslørt. Bruk aktive verb, gi karakteren agens og unngå ordet plutselig.",
+                    "Finn et avsnitt du har skrevet før, eller skriv tre nye setninger, og fjern alle store ord som ekstremt, fryktelig eller kaotisk. Bytt dem ut med presise detaljer, slik artikkelen anbefaler.",
+                    "Skriv en kort dialog mellom to personer der du følger to av rådene i artikkelen samtidig: sett hver replikk på ny linje, og la minst én indre tanke komme fram som indre monolog."
+                ]
+            }
         }
     ],
     "tags": [

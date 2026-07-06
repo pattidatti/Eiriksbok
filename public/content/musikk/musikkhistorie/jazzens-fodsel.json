@@ -120,6 +120,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilken by og omtrent hvilket år oppsto jazzen?",
+                    "Hvilke to musikktradisjoner møttes og skapte jazz? Nevn hva hver av dem bidro med.",
+                    "Hva er blå toner, og hvorfor kalles de nettopp blå?",
+                    "Hva gjorde Louis Armstrong som forandret hvordan jazz ble spilt?"
+                ],
+                "reflekter": [
+                    "Teksten sammenligner jazz-improvisasjon med en samtale på norsk. Forklar med egne ord hvorfor den sammenligningen passer.",
+                    "Hvorfor kunne trommerytmene fra Vest-Afrika overleve på Congo Square, når slik musikk ofte var forbudt andre steder i landet?",
+                    "Billie Holiday sang Strange Fruit selv om mange radiokanaler nektet å spille den. Hvorfor tror du hun valgte å fortsette å synge den likevel?",
+                    "Teksten sier at jazz var et språk for frihet, politisk like mye som musikalsk. Forklar hvordan improvisasjon kunne handle om frihet og ikke bare om musikk."
+                ],
+                "gaaVidere": [
+                    "Finn en sang du liker som du selv hører på i dag. Lytt etter en bøyd eller lengtende tone, eller en mollakkord som gir gåsehud. Beskriv hvor i sangen du hører det, og hvordan det får deg til å føle.",
+                    "Hør på en jazz-låt og en pop-låt du kjenner godt. Skriv noen setninger om hva som er likt og hva som er forskjellig, og prøv å høre om du kjenner igjen jazz-arven teksten snakker om.",
+                    "Skriv en kort tekst der du forklarer for en venn hvorfor det samme jazz-stykket aldri høres helt likt ut fra gang til gang."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

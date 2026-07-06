@@ -372,6 +372,16 @@ export const TimeTravelEngine: React.FC<TimeTravelEngineProps> = ({ scenarioId }
             };
             saveRun(log);
 
+            // «Min læring»: scenario fullført - seier gir full score
+            import('../../features/progress/useProgressStore').then(({ useProgressStore }) => {
+                useProgressStore.getState().recordActivity({
+                    kind: 'scenario-completed',
+                    activityId: `tidsreise/${scenario.id}`,
+                    score: isWin ? 1 : 0.3,
+                    title: scenario.title,
+                });
+            });
+
             if (isWin) {
                 if (scenario.id === 'roman-soldier') unlockScenario('feudal-peasant');
                 if (newInventory.includes('celtic_brooch')) addLegacyItem('celtic_brooch');

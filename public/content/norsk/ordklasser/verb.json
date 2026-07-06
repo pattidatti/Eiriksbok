@@ -103,6 +103,29 @@
                 "**Kan:** Noe du får til.",
                 "**Bør:** Noe som er lurt å gjøre."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er et verb? Skriv med egne ord hva et verb forteller oss.",
+                    "Hva sier V2-regelen om hvor verbet skal stå i en vanlig norsk setning?",
+                    "Nevn de tre verbtidene fra teksten og forklar kort når hver av dem brukes.",
+                    "Hva kaller vi ord som skal, vil, må, kan og bør? Skriv ett eksempel på hva ordet betyr."
+                ],
+                "reflekter": [
+                    "Hvorfor blir setningen 'I dag jeg spiser is' feil, mens 'I dag spiser jeg is' er riktig? Bruk V2-regelen når du forklarer.",
+                    "Teksten sier at verbet er sjefen i setningen. Hva mener den med det, og hvorfor blir en setning uten verb stående helt stille?",
+                    "Hva er forskjellen på presens og presens perfektum? Lag din egen setning med verbet 'game' i begge tidene.",
+                    "Hjelpeverbene skal og vil ligner på hverandre, men betyr ikke det samme. Forklar forskjellen med et eksempel fra din egen hverdag."
+                ],
+                "gaaVidere": [
+                    "Skriv fem setninger som alle starter med noe annet enn subjektet, for eksempel 'I går', 'Etter skolen' eller 'Hjemme'. Sjekk at verbet står på plass nummer 2 i alle.",
+                    "Velg et verb du bruker ofte, og bøy det i presens, preteritum og presens perfektum. Lag en kort setning for hver tid.",
+                    "Diskuter med en medelev: Hvorfor tror dere det er så lett å bryte V2-regelen når man skriver? Kommer feilen oftere når setningen starter med et tidsord?"
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",

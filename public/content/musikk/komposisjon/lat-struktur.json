@@ -39,6 +39,29 @@
             "type": "text",
             "title": "Dynamikk",
             "content": "Tenk også på *energien* i låta. Versene er ofte litt lavere i energi. Refrenget skal 'løfte' taket. Broen kan være helt rolig, eller bygge seg sakte opp mot et klimaks."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er de tre viktigste byggeklossene i en poplåt, ifølge teksten?",
+                    "Hvilken del er det du nynner på, og som kommer igjen flere ganger?",
+                    "Hva er oppgaven til verset i en sang?",
+                    "Hva er meningen med en bro (bridge) i en låt?"
+                ],
+                "reflekter": [
+                    "Hvorfor tror du refrenget kommer igjen flere ganger, mens broen bare dukker opp én gang?",
+                    "Teksten sier at broen skal bryte monotoni før siste refreng. Forklar hva som ville skjedd med en sang som bare gjentok vers og refreng om og om igjen.",
+                    "Versene har ofte lavere energi enn refrenget. Hvorfor er det smart å la energien gå opp og ned i stedet for å holde den på topp hele tiden?",
+                    "Nesten alle poplåter bruker den samme oppskriften. Hvorfor tror du så mange artister velger å følge en fast formel i stedet for å finne på noe helt nytt hver gang?"
+                ],
+                "gaaVidere": [
+                    "Velg en sang du liker godt, og hør nøye etter. Prøv å finne verset, refrenget og broen, og skriv ned rekkefølgen du hører dem i.",
+                    "Bruk verktøyet i artikkelen til å bygge strukturen intro-vers-refreng-vers-refreng-bro-refreng-outro, og regn ut hvor mange takter sangen ble totalt.",
+                    "Tegn en enkel energikurve for en av favorittsangene dine, der du viser hvor låta er rolig og hvor den løfter taket. Diskuter med en medelev hvorfor artisten la energien akkurat der."
+                ]
+            }
         }
     ]
 }

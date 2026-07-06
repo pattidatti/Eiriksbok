@@ -6,6 +6,7 @@ import React, {
     useRef,
     useState,
 } from 'react';
+import { Plus, Minus, Maximize } from 'lucide-react';
 import type { SkyWorld, StarStatus } from '../../types/sky';
 import { SKY_HEIGHT, SKY_WIDTH, skyStatusText } from '../../utils/skyModel';
 import { mulberry32 } from '../../utils/reviewScheduler';
@@ -106,6 +107,8 @@ export const SkyCanvas = forwardRef<SkyCanvasHandle, SkyCanvasProps>(
             start: number;
         } | null>(null);
         const meteorNextRef = useRef(0);
+        const pointersRef = useRef(new Map<number, { x: number; y: number }>());
+        const pinchRef = useRef<{ dist: number; mx: number; my: number } | null>(null);
         const hoverRef = useRef<number | null>(null);
         const pointerRef = useRef<{
             startX: number;
@@ -552,8 +555,51 @@ export const SkyCanvas = forwardRef<SkyCanvasHandle, SkyCanvasProps>(
             return () => canvas.removeEventListener('wheel', onWheel);
         }, []);
 
+        const clampScale = (scale: number) => {
+            const fit = fitScaleRef.current;
+            return Math.min(fit * 7, Math.max(fit * 0.85, scale));
+        };
+
+        // Zoom rundt et skjermpunkt uten at punktet flytter seg
+        const zoomAround = (px: number, py: number, newScale: number) => {
+            const cam = cameraRef.current;
+            targetRef.current = null;
+            cam.x = cam.x + px / cam.scale - px / newScale;
+            cam.y = cam.y + py / cam.scale - py / newScale;
+            cam.scale = newScale;
+        };
+
+        const zoomBy = (factor: number) => {
+            const { cw, ch } = viewSize();
+            const cam = cameraRef.current;
+            const scale = clampScale(cam.scale * factor);
+            targetRef.current = {
+                x: cam.x + cw / (2 * cam.scale) - cw / (2 * scale),
+                y: cam.y + ch / (2 * cam.scale) - ch / (2 * scale),
+                scale,
+            };
+        };
+
         const handlePointerDown = (e: React.PointerEvent) => {
             const rect = e.currentTarget.getBoundingClientRect();
+            pointersRef.current.set(e.pointerId, {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top,
+            });
+            if (pointersRef.current.size === 2) {
+                const [a, b] = [...pointersRef.current.values()];
+                pinchRef.current = {
+                    dist: Math.hypot(b.x - a.x, b.y - a.y),
+                    mx: (a.x + b.x) / 2,
+                    my: (a.y + b.y) / 2,
+                };
+                pointerRef.current.dragging = true;
+                if (hoverRef.current !== null) {
+                    hoverRef.current = null;
+                    setTooltip(null);
+                }
+                return;
+            }
             pointerRef.current = {
                 startX: e.clientX - rect.left,
                 startY: e.clientY - rect.top,
@@ -570,6 +616,26 @@ export const SkyCanvas = forwardRef<SkyCanvasHandle, SkyCanvasProps>(
             const px = e.clientX - rect.left;
             const py = e.clientY - rect.top;
             const pointer = pointerRef.current;
+
+            if (pointersRef.current.has(e.pointerId)) {
+                pointersRef.current.set(e.pointerId, { x: px, y: py });
+            }
+            const pinch = pinchRef.current;
+            if (pinch && pointersRef.current.size >= 2) {
+                const [a, b] = [...pointersRef.current.values()];
+                const dist = Math.hypot(b.x - a.x, b.y - a.y);
+                const mx = (a.x + b.x) / 2;
+                const my = (a.y + b.y) / 2;
+                if (pinch.dist > 0) {
+                    const cam = cameraRef.current;
+                    zoomAround(mx, my, clampScale(cam.scale * (dist / pinch.dist)));
+                    // Panorer med midtpunktet
+                    cam.x -= (mx - pinch.mx) / cam.scale;
+                    cam.y -= (my - pinch.my) / cam.scale;
+                }
+                pinchRef.current = { dist, mx, my };
+                return;
+            }
 
             if (pointer.down) {
                 const dx = px - pointer.startX;
@@ -599,7 +665,10 @@ export const SkyCanvas = forwardRef<SkyCanvasHandle, SkyCanvasProps>(
         };
 
         const handlePointerUp = (e: React.PointerEvent) => {
+            pointersRef.current.delete(e.pointerId);
+            if (pointersRef.current.size < 2) pinchRef.current = null;
             const pointer = pointerRef.current;
+            if (!pointer.down) return;
             const wasDragging = pointer.dragging;
             pointer.down = false;
             pointer.dragging = false;
@@ -609,7 +678,9 @@ export const SkyCanvas = forwardRef<SkyCanvasHandle, SkyCanvasProps>(
             if (hit !== null) onStarClick(hit);
         };
 
-        const handlePointerLeave = () => {
+        const handlePointerLeave = (e: React.PointerEvent) => {
+            pointersRef.current.delete(e.pointerId);
+            if (pointersRef.current.size < 2) pinchRef.current = null;
             hoverRef.current = null;
             setTooltip(null);
         };
@@ -627,7 +698,31 @@ export const SkyCanvas = forwardRef<SkyCanvasHandle, SkyCanvasProps>(
                     onPointerLeave={handlePointerLeave}
                     aria-label="Stjernehimmelen - klikk på en stjerne for å øve"
                     role="application"
+                    style={{ touchAction: 'none' }}
                 />
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-1.5">
+                    <button
+                        onClick={() => zoomBy(1.45)}
+                        className="p-2 rounded-xl bg-white/80 backdrop-blur text-slate-600 hover:text-slate-900 hover:bg-white shadow-lg border border-white/40 transition-colors"
+                        aria-label="Zoom inn"
+                    >
+                        <Plus className="w-4 h-4" />
+                    </button>
+                    <button
+                        onClick={() => zoomBy(1 / 1.45)}
+                        className="p-2 rounded-xl bg-white/80 backdrop-blur text-slate-600 hover:text-slate-900 hover:bg-white shadow-lg border border-white/40 transition-colors"
+                        aria-label="Zoom ut"
+                    >
+                        <Minus className="w-4 h-4" />
+                    </button>
+                    <button
+                        onClick={resetView}
+                        className="p-2 rounded-xl bg-white/80 backdrop-blur text-slate-600 hover:text-slate-900 hover:bg-white shadow-lg border border-white/40 transition-colors"
+                        aria-label="Vis hele himmelen"
+                    >
+                        <Maximize className="w-4 h-4" />
+                    </button>
+                </div>
                 {hoveredStar && tooltip && (
                     <div
                         className="absolute pointer-events-none z-10 px-3 py-2 rounded-xl bg-white/90 backdrop-blur border border-white/40 shadow-lg max-w-56"

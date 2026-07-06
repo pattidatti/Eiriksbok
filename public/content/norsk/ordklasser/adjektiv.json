@@ -82,6 +82,29 @@
                 "**Komparativ:** Penere (Han er penere enn meg)",
                 "**Superlativ:** Penest (Han er penest i klassen)"
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva forteller et adjektiv oss om et ord, ifølge teksten?",
+                    "Hvilken bokstav legger vi ofte til når adjektivet beskriver et intetkjønnsord (et 'et'-ord)?",
+                    "Hva heter de tre gradene i gradbøying, og gi eksempelet teksten bruker for hver av dem?",
+                    "Hva mener teksten med 'dobbel bestemthet' når vi peker på noe bestemt?"
+                ],
+                "reflekter": [
+                    "Hvorfor skriver vi 'et fint hus' med T, men 'en fin bil' uten T? Forklar regelen med egne ord.",
+                    "Teksten sier at 'Den gammel mann' er feil, mens 'Den gamle mannen' er riktig. Hvorfor må adjektivet få en E her?",
+                    "Hvorfor tror du vi trenger gradbøying (stor, større, størst) når vi snakker og skriver?",
+                    "Teksten sier at verden ville vært 'kjedelig og i gråskala' uten adjektiver. Er du enig? Forklar hva vi ville mistet."
+                ],
+                "gaaVidere": [
+                    "Skriv tre setninger om noe du spiste i dag. Sett strek under alle adjektivene du bruker, og sjekk at de beskriver hvordan maten så ut, luktet, smakte eller føltes.",
+                    "Bøy disse adjektivene i alle tre gradene slik teksten viser (positiv, komparativ, superlativ): rask, kald og morsom.",
+                    "Lag tre setninger med intetkjønnsord ('et'-ord) der adjektivet må få en T på slutten. For eksempel: Et stort tre."
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",

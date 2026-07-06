@@ -34,6 +34,29 @@
         {
             "type": "text",
             "content": "Trykk alle tre ned samtidig. Gratulerer, du spiller nå en C-dur akkord!"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kaller vi de hvite tangentene på pianoet, og hvilke sju toner heter de?",
+                    "Hva er halvtoner, og hvilken farge har tangentene som lager dem?",
+                    "Hvor på pianoet finner du alltid tonen C?",
+                    "Hvilke tre toner spiller du samtidig når du lager en C-dur akkord?"
+                ],
+                "reflekter": [
+                    "Hvorfor er det lurt at de svarte tangentene kommer i grupper på to og tre, når du skal finne fram på pianoet?",
+                    "Artikkelen kaller pianoet det mest oversiktlige instrumentet som finnes. Hva er det ved tangentene som gjør at det stemmer?",
+                    "To C-er høres like ut, men den ene er lysere enn den andre. Forklar med egne ord hva en oktav er.",
+                    "Hva er forskjellen på å spille én tone og å spille en akkord, og hvorfor tror du en akkord kan høres fyldigere ut?"
+                ],
+                "gaaVidere": [
+                    "Bruk pianoet i artikkelen og finn alle C-ene du klarer. Trykk på dem etter tur og skriv ned hva du hører når du går fra en lys C til en mørkere.",
+                    "Øv på C-dur akkorden slik artikkelen viser: C med tommelen, E med pekefingeren og G med lillefingeren. Klarer du å trykke alle tre helt likt?",
+                    "Lytt til en sang du liker, og prøv å høre om det er ett instrument som spiller enkelttoner eller akkorder. Beskriv hva du hører."
+                ]
+            }
         }
     ]
 }

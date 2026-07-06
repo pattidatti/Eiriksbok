@@ -11,6 +11,9 @@ import { useLayout } from '../context/LayoutContext';
 import { Menu, Search } from 'lucide-react';
 import { useSearchHotkeys } from '../hooks/useSearchHotkeys';
 import { FeedbackWidget } from './FeedbackWidget'; // Added import
+import { ProgressBoot } from '../features/progress/ProgressBoot';
+import { ProgressChip } from '../features/progress/components/ProgressChip';
+import { ProgressToaster } from '../features/progress/components/ProgressToaster';
 
 export const Layout: React.FC = () => {
     const location = useLocation();
@@ -78,6 +81,7 @@ export const Layout: React.FC = () => {
                         </nav>
 
                         <div className="flex items-center gap-2">
+                            <ProgressChip />
                             <button
                                 onClick={toggleDyslexicMode}
                                 className={`p-2 transition-colors rounded-full hover:bg-black/5 ${settings.dyslexicMode ? 'text-blue-600 bg-blue-50' : 'text-text-muted hover:text-text-main'}`}
@@ -125,6 +129,8 @@ export const Layout: React.FC = () => {
             </main>
 
             <ScrollToTop />
+            <ProgressBoot />
+            <ProgressToaster />
         </div>
     );
 };

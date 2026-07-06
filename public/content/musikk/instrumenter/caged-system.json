@@ -83,6 +83,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke fem åpne grunngrep har gitt CAGED-systemet navnet sitt?",
+                    "Hvor sitter grunntonen i E-formen, og hvilket kjent barre-grep er E-formen på bånd 1?",
+                    "Hvilken av de fem formene bruker bare fire strenger, og hvilke strenger er det?",
+                    "Hvor mange ulike steder på halsen kan du spille C-dur når du bruker alle CAGED-formene?"
+                ],
+                "reflekter": [
+                    "Teksten sier at de fem formene henger på hverandre langs halsen. Forklar hva som menes med at en form tar over der en annen slutter.",
+                    "Hvorfor begynner mange nybegynnere å høre seg selv spille de samme tonene om og om igjen, og hvordan løser CAGED dette problemet?",
+                    "Artikkelen kaller CAGED det beste verktøyet du kan investere tid i, selv for gitarister med tjue års erfaring. Hva er det med systemet som gjør at det fortsatt er nyttig etter så lang tid?",
+                    "Øveplanen ber deg lære én form grundig før du går videre, i stedet for å pugge alt på én gang. Hvorfor tror du den framgangsmåten fungerer bedre?"
+                ],
+                "gaaVidere": [
+                    "Har du en gitar? Finn det åpne C-grepet og prøv å spille C-dur i A-formen på bånd 3. Skriv ned hva som kjennes likt og hva som kjennes ulikt mellom de to stedene.",
+                    "Følg de to første ukene i øveplanen: lær C-formen i C-dur og finn alle C-grunntonene på A-strengen. Beskriv hvordan det gikk.",
+                    "Lytt til en gitarsolo du liker. Prøv å legge merke til om gitaristen holder seg på ett sted på halsen eller flytter seg oppover, og diskuter med en medelev hva du hørte."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

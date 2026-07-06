@@ -1,6 +1,18 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import type { DeviceProgress, Level } from '../data/virkemiddelverkstedet/types';
+import { useProgressStore } from '../features/progress/useProgressStore';
+
+// «Min læring»: begge øvingsmoduser rapporterer til progresjonssystemet.
+// Nøkkelformatet matcher retro-importen (deviceId/exerciseId).
+const reportExercise = (deviceId: string, exerciseId: string) => {
+    useProgressStore.getState().recordActivity({
+        kind: 'virkemiddel-exercise',
+        activityId: `${deviceId}/${exerciseId}`,
+        subjectId: 'norsk',
+        title: 'Virkemiddel-øving',
+    });
+};
 
 const DEFAULT_PROGRESS: DeviceProgress = {
     completedExercises: [],
@@ -45,7 +57,8 @@ export const useVirkemiddelStore = create<VirkemiddelState>()(
                 return get().progress[deviceId] || { ...DEFAULT_PROGRESS };
             },
 
-            completeExercise: (deviceId, exerciseId, points) =>
+            completeExercise: (deviceId, exerciseId, points) => {
+                reportExercise(deviceId, exerciseId);
                 set((state) => {
                     const current = state.progress[deviceId] || { ...DEFAULT_PROGRESS };
                     if (current.completedExercises.includes(exerciseId)) return state;
@@ -60,7 +73,8 @@ export const useVirkemiddelStore = create<VirkemiddelState>()(
                         },
                         totalPoints: state.totalPoints + points,
                     };
-                }),
+                });
+            },
 
             unlockLevel: (deviceId, level) =>
                 set((state) => {
@@ -111,7 +125,8 @@ export const useVirkemiddelStore = create<VirkemiddelState>()(
                 return get().applyProgress[deviceId] || { ...DEFAULT_PROGRESS };
             },
 
-            completeApplyExercise: (deviceId, exerciseId, points) =>
+            completeApplyExercise: (deviceId, exerciseId, points) => {
+                reportExercise(deviceId, exerciseId);
                 set((state) => {
                     const current = state.applyProgress[deviceId] || { ...DEFAULT_PROGRESS };
                     if (current.completedExercises.includes(exerciseId)) return state;
@@ -129,7 +144,8 @@ export const useVirkemiddelStore = create<VirkemiddelState>()(
                         },
                         applyTotalPoints: state.applyTotalPoints + points,
                     };
-                }),
+                });
+            },
 
             unlockApplyLevel: (deviceId, level) =>
                 set((state) => {

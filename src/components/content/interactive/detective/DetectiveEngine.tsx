@@ -139,14 +139,26 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
     // Lagre fullføring
     useEffect(() => {
         if (state.isCompleted && data.id) {
+            const stars = finalResult?.stars ?? evidenceStars;
             saveCaseProgress(data.id, {
                 completed: true,
-                stars: finalResult?.stars ?? evidenceStars,
+                stars,
                 foundClues: Array.from(state.collectedClues),
                 currentStepIndex: null,
                 chosenOption: finalResult?.optionId,
                 chosenEvidence: finalResult?.evidenceUsed,
             });
+            // «Min læring»: sak løst - stjerner (1-3) normaliseres til 0-1
+            import('../../../../features/progress/useProgressStore').then(
+                ({ useProgressStore }) => {
+                    useProgressStore.getState().recordActivity({
+                        kind: 'detective-solved',
+                        activityId: `detektiv/${data.id}`,
+                        score: stars / 3,
+                        title: data.title,
+                    });
+                }
+            );
         }
     }, [state.isCompleted, data.id, finalResult, evidenceStars, state.collectedClues]);
 

@@ -418,6 +418,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er anafora, og hvor mange ganger bruker Martin Luther King dette grepet i talen «I have a dream»?",
+                    "Hvorfor er tre det magiske tallet i en treklang? Hva skjer ifølge teksten hvis du bruker to eller fire ledd i stedet?",
+                    "Hva er forskjellen på etos, patos og logos på den ene siden og retoriske grep på den andre?",
+                    "Nevn tre av grepene fra teksten og forklar kort hva hvert av dem går ut på."
+                ],
+                "reflekter": [
+                    "Teksten sier at politikere elsker kontrast fordi det «forenkler virkeligheten til to ting». Forklar hvorfor det kan være både nyttig og farlig når noen stiller opp bare to valg.",
+                    "Hvorfor virker et retorisk spørsmål bedre enn å bare fortelle lytteren hva de skal mene? Bruk reklame-eksemplet «Lei av tørt hår?» i svaret ditt.",
+                    "Teksten sier at hjernen husker bilder bedre enn tall. Forklar hvorfor «en bunke sedler høyere enn Eiffeltårnet» fester seg bedre enn «to milliarder kroner».",
+                    "Hvorfor råder teksten deg til å bruke grepene «presist og sparsomt»? Hva mener den med at for mange grep blir «som et måltid med for mange krydder»?"
+                ],
+                "gaaVidere": [
+                    "Velg en sak du bryr deg om (for eksempel mer fritid, bedre skolemat eller miljøet). Skriv den samme påstanden på tre måter: én med anafora, én med treklang og én med retorisk spørsmål.",
+                    "Finn en reklame, en sangtekst eller en tale du kjenner. Les den høyt slik teksten anbefaler, og pek ut minst to retoriske grep. Forklar hvilken effekt hvert grep har.",
+                    "Diskuter i klassen: Er det juks å bruke retoriske grep for å overbevise andre, eller er det bare god kommunikasjon? Begrunn synet ditt med eksempler fra teksten."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Test deg selv: retoriske grep",

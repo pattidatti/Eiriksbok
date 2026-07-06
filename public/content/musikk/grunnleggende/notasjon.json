@@ -23,6 +23,29 @@
             "type": "text",
             "title": "Eksempel: Smoke on the Water (TAB)",
             "content": "Her er verdens mest kjente gitarriff skrevet i TAB:\n\n```\nE|-----------------|\nB|-----------------|\nG|--0---3---5------|\nD|--0---3---5------|\nA|-----------------|\nE|-----------------|\n```\n\nDette forteller deg at du skal spille på D- og G-strengen samtidig. Først på åpent bånd (0), så på 3. bånd, så på 5. bånd."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva heter de to vanligste måtene å skrive ned musikk på?",
+                    "Hvor mange linjer er det i notelinjene, og hva forteller de oss om tonen?",
+                    "Hva forteller G-nøkkelen oss når den står i starten av notelinjene?",
+                    "I tabulatur (TAB): hva betyr tallet 0, og hva forteller de andre tallene deg?"
+                ],
+                "reflekter": [
+                    "Teksten sammenligner notasjon med et kart du bruker for å finne frem i en by. Forklar hvorfor den sammenligningen passer.",
+                    "Hvorfor tror du gitarister ofte velger tabulatur i stedet for vanlige noter, når teksten sier at TAB er mye enklere å lese?",
+                    "Vanlige noter brukes av nesten alle instrumenter, mens tabulatur bare passer til gitar og bass. Hva er grunnen til at TAB ikke fungerer for for eksempel et piano?",
+                    "I Smoke on the Water-eksempelet står tallene 0, 3 og 5 på D- og G-strengen. Forklar med egne ord hva en person må gjøre med fingrene for å spille dette riffet."
+                ],
+                "gaaVidere": [
+                    "Finn en sang du liker som spilles på gitar, og let opp tabulaturen til den på nett. Skriv noen setninger om hva du klarte å forstå av TAB-en.",
+                    "Prøv å lese TAB-en til Smoke on the Water høyt som en instruksjon til en venn, uten å bruke ordene noter eller bånd. Skriv ned hvordan du forklarte det.",
+                    "Skriv en kort tekst der du sammenligner det å lese noter med det å lese tekstmeldinger eller emojier. Hva er likt, og hva er forskjellig?"
+                ]
+            }
         }
     ]
 }

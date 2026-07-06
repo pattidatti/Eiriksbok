@@ -136,6 +136,29 @@
             "type": "link",
             "target": "norsk/litteraturhistorie/realismen",
             "text": "Se hvordan Ibsen mestert retrospektiv teknikk"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det latinske uttrykket in medias res, og hvordan starter en tekst som bruker dette grepet?",
+                    "Hva er forskjellen på fortalt tid og fortelletid? Gi et eksempel fra artikkelen.",
+                    "Hvilken forteller-teknikk sier artikkelen at Henrik Ibsen brukte mest, og hva skjer i stykkene hans før teppet går opp?",
+                    "Hva er frampek, og hva heter regelen om at en kniv som nevnes tidlig i teksten må brukes senere?"
+                ],
+                "reflekter": [
+                    "Hvorfor tvinger in medias res leseren til å være mer aktiv enn en tekst som starter med Det var en gang?",
+                    "Artikkelen sier at et tilbakeblikk gir oss nøkkelen til å forstå nåtiden. Forklar hvordan et tilbakeblikk til at en person holdt på å drukne som barn kan gjøre karakteren lettere å forstå.",
+                    "Hvorfor føles slutten på en historie mer logisk hvis forfatteren har brukt frampek underveis?",
+                    "I det utvidede øyeblikket bruker forfatteren flere sider på noe som varer et sekund. Hvorfor velger forfattere å gjøre dette akkurat i høydepunktene i en tekst?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst på fem til seks setninger som starter in medias res. Kast leseren rett inn i noe dramatisk uten å forklare hvem personene er først.",
+                    "Velg en hendelse du selv har opplevd, for eksempel et fall eller et mål i en kamp. Skriv den som et utvidet øyeblikk der du zoomer inn på detaljer og bruker minst fem setninger på noe som varte et par sekunder.",
+                    "Finn en bok eller film du kjenner godt, og forklar for en medelev hvor forfatteren eller regissøren bruker tilbakeblikk eller frampek. Diskuter hvordan historien hadde vært annerledes uten det grepet."
+                ]
+            }
         }
     ],
     "createdDate": "2024-05-22T10:00:00Z",

@@ -172,6 +172,29 @@
             "type": "expandable",
             "title": "Les en mønstergyldig analyse av utdraget fra «Sult»",
             "content": "Utdraget fra Knut Hamsuns Sult plasserer oss midt i den desperate indre konflikten til en upålitelig jeg-forteller. Gjennom en intens bruk av indre monolog, skildres hovedpersonens møte med Ylajali som en febrilsk kamp mellom begjær og lammende skam. Synsvinkelen er strengt personal; vi har full tilgang til heltens tankekaos, men vi er samtidig avskåret fra Ylajalis egentlige intensjoner, noe som forsterker følelsen av usikkerhet og psykologisk press.\n\nTeksten preges av hyppige og uforklarlige stemningsskifter, noe som er typisk for nyromantikkens interesse for det ubevisste sjeleliv. Når hovedpersonen plutselig avbryter det intime øyeblikket for å proklamere sin fattigdom, fungerer dette ikke som en ærlig tilståelse, men som en forsvarsmekanisme. Han er en person som saboterer for seg selv for å unngå å bli avslørt som uverdig; stoltheten hans er så skjør at den ikke tåler ekte nærhet.\n\nHamsun bruker språket til å male dette nervevraket i sanntid. Setningene skifter fra det poetisk lengtende til det nesten brutalt ærlige, noe som speiler det moderne menneskets splittelser. Analysen av dette utdraget viser hvordan Hamsun flytter fokus fra ytre sosiale problemer til den indre, subjektive sannheten, og slik markerer et tydelig brudd med realismens objektive virkelighetsskildring."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mener teksten når den kaller fortelleren for filteret som all informasjon må passere gjennom?",
+                    "Hva er forskjellen på en pålitelig og en upålitelig forteller ifølge artikkelen?",
+                    "Hva betyr begrepet indre monolog, og hvorfor blir tankene ofte rotete og springende?",
+                    "Hvem skrev romanen Sult, og hvilket år kom den ut?"
+                ],
+                "reflekter": [
+                    "Hovedpersonen forteller om sin fattigdom akkurat i det mest intime øyeblikket med Ylajali. Hvorfor bruker han sannheten som et våpen nettopp da?",
+                    "Artikkelen sier at hovedpersonen er en upålitelig forteller overfor seg selv. Hvordan kan en person lyve for seg selv, og hva skjuler han?",
+                    "Hvorfor valgte Hamsun å la dramaet skje inne i hodet på en mann i stedet for i et rettslokale eller et borgerlig hjem?",
+                    "Realistene ville sette problemer under debatt, mens Hamsun ville sette menneskesinnet under lupen. Hvorfor er dette et brudd med den eldre litteraturen?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort indre monolog (5-8 setninger) der en person svinger raskt mellom to motsatte følelser, slik Hamsun gjør det i utdraget.",
+                    "Les hele utdraget fra Sult i biblioteket, og skriv et avsnitt der du forklarer hvordan hovedpersonen saboterer sin egen lykke.",
+                    "Diskuter med en medelev: Er det mulig å stole på en jeg-forteller? Finn eksempler fra en bok, film eller serie dere kjenner der fortelleren lurer oss."
+                ]
+            }
         }
     ],
     "relatedLink": {

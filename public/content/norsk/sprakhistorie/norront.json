@@ -153,6 +153,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilke land og områder ble norrønt snakket, og i hvilken tidsperiode?",
+                    "Hvor mange kasus hadde norrønt, og hva heter de?",
+                    "Hva het ordet for hest når hesten var subjekt, og hva het det når hesten var objekt?",
+                    "Hvilket språk i dag ligner mest på norrønt, og hvorfor?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at norrønt ikke er et fremmed språk, men en eldre form av norsk. Forklar hva som menes med det.",
+                    "Hvorfor er moderne norsk enklere å lære enn islandsk? Bruk det du leste om kasus og verbbøyninger i svaret.",
+                    "Etter svartedauden tok dansk over som skriftspråk i Norge. Forklar hvordan dette henger sammen med at Norge ikke hadde noe eget skriftspråk i 1814.",
+                    "Hvorfor er mange nynorske ord som «eg», «ikkje» og «kvifor» nærmere norrønt enn bokmål er?"
+                ],
+                "gaaVidere": [
+                    "Finn tre stedsnavn i nærheten av der du bor som slutter på -vik, -fjord, -sund, -bø, -stad, -nes eller -dal. Skriv hva hver endelse betyr, og hva stedsnavnet forteller om landskapet der.",
+                    "Artikkelen kaller islandsk en tidsmaskin. Skriv et kort avsnitt der du forklarer hva som menes med bildet, og om du synes det passer.",
+                    "Diskuter i klassen: Bør elever i norsk skole lære litt norrønt, slik man lærer gammel historie? Finn minst ett argument for og ett imot."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Test deg selv",

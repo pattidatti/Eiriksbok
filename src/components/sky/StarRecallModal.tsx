@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Compass, Sparkles, X, Zap } from 'lucide-react';
+import { ArrowRight, Compass, Sparkles, Trophy, X, Zap } from 'lucide-react';
 import type { Star } from '../../types/sky';
 import { subjectAccent } from '../review/reviewTheme';
 import { skyStatusText } from '../../utils/skyModel';
@@ -20,14 +20,15 @@ interface StarRecallModalProps {
     hasNextDue: boolean;
     hasNextNew: boolean;
     onClose: () => void;
-    onGrade: (correct: boolean) => void;
+    // Returnerer tittelen på stjernebildet hvis dette svaret fullførte det
+    onGrade: (correct: boolean) => { completedTitle: string | null };
     onAdd: () => void;
     onNextDue: () => void;
     onNextNew: () => void;
 }
 
 type Phase = 'ask' | 'revealed' | 'discover' | 'feedback';
-type FeedbackKind = 'correct' | 'wrong' | 'new';
+type FeedbackKind = 'correct' | 'wrong' | 'new' | 'complete';
 
 const nextIntervalDays = (box: number | null, correct: boolean): number => {
     const newBox = (correct ? Math.min((box ?? 1) + 1, 5) : 1) as LeitnerBox;
@@ -35,6 +36,10 @@ const nextIntervalDays = (box: number | null, correct: boolean): number => {
 };
 
 const FEEDBACK_TEXT: Record<FeedbackKind, { title: string; sub: (days: number) => string }> = {
+    complete: {
+        title: 'Stjernebilde fullført!',
+        sub: () => 'Alle stjernene lyser. Se deg tilbake på himmelen - du har tent et helt emne.',
+    },
     correct: {
         title: 'Stjernen lyser klarere!',
         sub: (days) =>
@@ -67,6 +72,7 @@ export const StarRecallModal: React.FC<StarRecallModalProps> = ({
     const [feedback, setFeedback] = useState<{ kind: FeedbackKind; days: number } | null>(null);
     const { play } = useStepSounds();
     const accent = subjectAccent(star.subjectId);
+    const displayTerm = star.term.charAt(0).toUpperCase() + star.term.slice(1);
 
     const reveal = () => {
         play('advance');
@@ -74,9 +80,12 @@ export const StarRecallModal: React.FC<StarRecallModalProps> = ({
     };
 
     const grade = (correct: boolean) => {
-        setFeedback({ kind: correct ? 'correct' : 'wrong', days: nextIntervalDays(star.box, correct) });
+        const result = onGrade(correct);
+        setFeedback({
+            kind: !correct ? 'wrong' : result.completedTitle ? 'complete' : 'correct',
+            days: nextIntervalDays(star.box, correct),
+        });
         setPhase('feedback');
-        onGrade(correct);
     };
 
     const add = () => {
@@ -91,6 +100,12 @@ export const StarRecallModal: React.FC<StarRecallModalProps> = ({
             if ((e.key === ' ' || e.key === 'Enter') && phase === 'ask') {
                 e.preventDefault();
                 reveal();
+            }
+            if (e.key === 'Enter' && phase === 'feedback') {
+                e.preventDefault();
+                if (hasNextDue) onNextDue();
+                else if (hasNextNew) onNextNew();
+                else onClose();
             }
         };
         window.addEventListener('keydown', onKey);
@@ -111,7 +126,9 @@ export const StarRecallModal: React.FC<StarRecallModalProps> = ({
 
     return (
         <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm"
+            className={`fixed inset-0 z-50 flex items-center justify-center p-4 ${
+                phase === 'feedback' ? 'bg-slate-950/15' : 'bg-slate-950/60 backdrop-blur-sm'
+            }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -133,7 +150,7 @@ export const StarRecallModal: React.FC<StarRecallModalProps> = ({
                             </span>
                         )}
                         <span className="text-xs font-semibold text-slate-500">
-                            {phase === 'feedback' ? star.term : skyStatusText(star)}
+                            {phase === 'feedback' ? displayTerm : skyStatusText(star)}
                         </span>
                     </div>
                     <button
@@ -154,7 +171,7 @@ export const StarRecallModal: React.FC<StarRecallModalProps> = ({
                             </span>
                         </div>
                         <h2 className="text-3xl font-display font-bold text-slate-900 mb-3">
-                            {star.term}
+                            {displayTerm}
                         </h2>
                         <p className="text-lg text-slate-700 leading-relaxed mb-4">
                             {star.definition}
@@ -173,7 +190,7 @@ export const StarRecallModal: React.FC<StarRecallModalProps> = ({
                     <>
                         <p className="text-sm font-semibold text-slate-500 mb-1">Hva betyr</p>
                         <h2 className="text-3xl font-display font-bold text-slate-900 mb-5">
-                            {star.term}?
+                            {displayTerm}?
                         </h2>
 
                         {phase === 'ask' ? (
@@ -234,11 +251,15 @@ export const StarRecallModal: React.FC<StarRecallModalProps> = ({
                             className={`mx-auto mb-4 w-16 h-16 rounded-full flex items-center justify-center ${
                                 feedback.kind === 'wrong'
                                     ? 'bg-amber-100 text-amber-600'
-                                    : 'bg-emerald-100 text-emerald-600'
+                                    : feedback.kind === 'complete'
+                                      ? 'bg-amber-100 text-amber-500'
+                                      : 'bg-emerald-100 text-emerald-600'
                             }`}
                         >
                             {feedback.kind === 'wrong' ? (
                                 <Zap className="w-8 h-8" />
+                            ) : feedback.kind === 'complete' ? (
+                                <Trophy className="w-8 h-8" />
                             ) : (
                                 <Sparkles className="w-8 h-8" />
                             )}

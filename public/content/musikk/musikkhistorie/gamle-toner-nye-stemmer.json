@@ -124,6 +124,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en musikktradisjon ifølge artikkelen?",
+                    "Hvor mange folketoner samlet Ludvig Mathias Lindeman i løpet av livet sitt?",
+                    "Hva gjør UNESCO for å ta vare på musikktradisjoner fra hele verden?",
+                    "Nevn tre av dagens artister eller grupper som artikkelen sier bygger videre på gamle norske tradisjoner, og kort hva hver av dem gjør."
+                ],
+                "reflekter": [
+                    "Artikkelen sier at joik betyr å joike en person eller et sted, ikke om dem, men dem. Hva tror du er forskjellen på å synge om noe og å synge det?",
+                    "Hvorfor risikerte norsk folkemusikk å forsvinne på 1800-tallet? Forklar hvordan industrialiseringen og flyttingen til byene truet de gamle slåttene.",
+                    "Artikkelen kaller det et paradoks at en tradisjon som bare konserveres blir et museum. Forklar hvorfor musikk må forandre seg for å overleve.",
+                    "Når en pop-artist sampler en gammel blues-innspilling, kan det være både hyllest og tyveri. Bruk de tre grunnprinsippene i artikkelen til å vurdere når det er greit og når det ikke er det."
+                ],
+                "gaaVidere": [
+                    "Finn en sang du liker, og undersøk hva den bygger på. Hvilken sjanger tilhører den, og hvilke eldre stiler eller artister har påvirket den? Skriv noen setninger om kjeden bakover i tid.",
+                    "Hør på en versjon av en gammel folkemelodi og en moderne versjon av samme melodi (for eksempel Grieg, Gåte eller Wardruna). Skriv kort hva som er likt og hva som er nytt.",
+                    "Diskuter med en medelev: Hvem eier egentlig musikken? Ta for dere ett konkret eksempel der en artist låner fra en annen kultur, og bli enige om det er gjort med respekt eller ikke."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

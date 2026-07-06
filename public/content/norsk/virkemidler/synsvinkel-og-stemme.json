@@ -148,6 +148,29 @@
             "type": "link",
             "target": "norsk/virkemidler/tid-og-struktur",
             "text": "Neste leksjon: Tid og Struktur"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Teksten sammenligner synsvinkel med et kamera i en film. Hva er det kameraet bestemmer for leseren?",
+                    "Hva vet vi og hva vet vi ikke når en historie er fortalt med personal synsvinkel (jeg)?",
+                    "I autoral synsvinkel skriver forfatteren ikke 'han var sint'. Hva skriver de i stedet, ifølge teksten?",
+                    "Hva er det som gjør en forteller upålitelig? Nevn minst ett eksempel fra teksten."
+                ],
+                "reflekter": [
+                    "Teksten sier at synsvinkelen 'farger sannheten'. Bruk eksempelet med Harry Potter og Voldemort og forklar hva det betyr.",
+                    "Autoral synsvinkel krever at leseren er 'detektiv'. Hvorfor må du jobbe hardere som leser når ingen tanker og følelser står skrevet rett ut?",
+                    "Se på Perspektivprismet med Anna og Jonas. Hvorfor får du helt ulikt inntrykk av Jonas i den personale og den allvitende versjonen, selv om han gjør akkurat det samme?",
+                    "Allvitende synsvinkel kan skape ironi fordi leseren vet mer enn karakterene. Forklar hvordan sitatet om han som smiler i stuen mens hun gråter, viser dette."
+                ],
+                "gaaVidere": [
+                    "Skriv den samme lille scenen tre ganger: først med personal synsvinkel, så autoral, så allvitende. Velg selv en enkel hendelse, for eksempel at noen mister bussen.",
+                    "Skriv et kort avsnitt med en upålitelig forteller. La leseren ane at noe annet skjer enn det fortelleren påstår, uten at du sier det rett ut.",
+                    "Diskuter med en medelev: Hvilken synsvinkel liker dere best å lese, og hvorfor? Finn et eksempel fra en bok eller film dere kjenner."
+                ]
+            }
         }
     ],
     "createdDate": "2024-05-22T10:00:00Z",

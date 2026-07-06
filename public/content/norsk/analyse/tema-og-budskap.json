@@ -136,6 +136,29 @@
             "type": "expandable",
             "title": "Les en analyse av tema og budskap i «Jeg ser»",
             "content": "I diktet Jeg ser av Sigbjørn Obstfelder møter vi et lyrisk jeg som betrakter den moderne byen. Motivet er enkelt: En mann står og ser på husene, himmelen og menneskene rundt seg. Men bildet av denne betrakteren er preget av en dyp uro. Han kjenner seg ikke igjen; han føler at han har havnet på en feil klode.\n\nTemaet i diktet er utenforskap og moderne fremmedgjøring. Obstfelder bruker gjentakelsen av setningen «jeg ser» til å bygge opp en følelse av avstand. Vedkommende er en observatør, ikke en deltaker. Dette forsterkes av kontrasten mellom den vakre naturen («de spillende skyer») og de kalde, grå bygningene. Diktet utforsker hvordan det moderne bylivet kan skape en eksistensiell ensomhet selv når man er omgitt av tusenvis av mennesker.\n\nBudskapet i teksten kan tolkes som en advarsel eller en klage over det tidsmessige forfallet i mellommenneskelige relasjoner. Obstfelder formidler at det moderne mennesket har mistet sin naturlige plass i kosmos og lever i en tilstand av konstant hjemløshet. Gjennom diktet tvinges vi til å spørre oss selv: Hvor er vi egentlig hjemme? Slik blir en enkel observasjon av en by til en dyp refleksjon over menneskets plass i en foranderlig verden."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på handling og tema i en tekst?",
+                    "Hva er motivet i novellen Å drepe et barn?",
+                    "Hva menes med at temaer er universelle?",
+                    "Hva er forskjellen på tema og budskap?"
+                ],
+                "reflekter": [
+                    "Hvorfor er motivet viktig selv om det bare er den konkrete, ytre handlingen?",
+                    "Hvorfor er budskapet ofte tydeligere i eventyr og fabler enn i moderne litteratur?",
+                    "Hvordan hjelper kontraster som lys/mørke eller rik/fattig deg med å finne temaet?",
+                    "Forklar hvordan den hermeneutiske sirkelen får deg til å gå fram og tilbake mellom delene og helheten."
+                ],
+                "gaaVidere": [
+                    "Velg en film eller bok du kjenner godt. Skriv noen setninger der du skiller mellom handlingen og temaet, og foreslå ett budskap.",
+                    "Les diktet Jeg ser av Sigbjørn Obstfelder og skriv en kort analyse der du bruker begrepene motiv, tema og budskap slik modellteksten viser.",
+                    "Skriv en kort analysesetning om en tekst du har lest, der du løfter blikket fra gjenfortelling til et menneskelig eller sosialt tema, slik eksempelet om piken med svovelstikkene gjør."
+                ]
+            }
         }
     ],
     "relatedLink": {

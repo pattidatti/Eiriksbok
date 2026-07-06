@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Loader2 } from 'lucide-react';
 import { getMicroGame } from './registry';
 import type { MicroGameProps, MicroGameResult } from './types';
+import { useProgressStore } from '../../features/progress/useProgressStore';
 
 // Bro mellom artikkel-JSON og mikrospill-registeret. Lar et hvilket som helst
 // mikrospill embeddes rett i en artikkel:
@@ -35,12 +36,19 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
     const GameComponent = entry.Component as unknown as React.ComponentType<MicroGameProps>;
 
     // I artikkel-kontekst finnes ingen sti-flyt å gå videre i. Spillene viser
-    // sin egen vinn/feedback-skjerm, så vi gir en trygg no-op (eller en valgfri
-    // onComplete sendt inn for analytics) uten å blokkere artikkelen.
-    const handleComplete =
-        typeof onComplete === 'function'
-            ? (onComplete as (result: MicroGameResult) => void)
-            : () => {};
+    // sin egen vinn/feedback-skjerm; vi rapporterer fullføring til «Min læring»
+    // og kaller ev. onComplete sendt inn for analytics.
+    const handleComplete = (result: MicroGameResult) => {
+        useProgressStore.getState().recordActivity({
+            kind: 'microgame-played',
+            activityId: `microgame/${gameId}`,
+            score: result.score,
+            title: entry.title,
+        });
+        if (typeof onComplete === 'function') {
+            (onComplete as (result: MicroGameResult) => void)(result);
+        }
+    };
 
     return (
         <div className="my-6" data-microgame={gameId}>

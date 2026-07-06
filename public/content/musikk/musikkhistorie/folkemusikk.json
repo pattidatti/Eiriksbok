@@ -123,6 +123,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange ekstra strenger har hardingfela gjemt under fingerbrettet, og hva heter de?",
+                    "Hva er en slått, og hva heter de tre hovedtypene slåtter i Norge?",
+                    "Hva betyr det å kvede, og hva heter de små ornamentene kvederen synger mellom tonene?",
+                    "Hvem reiste rundt på 1800-tallet og noterte over 3000 slåtter og folkeviser?"
+                ],
+                "reflekter": [
+                    "Understrengene på hardingfela stryker du aldri direkte, likevel lager de lyd. Forklar med egne ord hvorfor de begynner å vibrere når du spiller en tone.",
+                    "Teksten sier at ingen slått er helt lik to ganger. Hvorfor blir en slått forandret hver gang en ny spelemann lærer den?",
+                    "Hvorfor sier artikkelen at tradisjonen er et bål som må mates med ny ved, og ikke en fryser som bevarer fortiden? Hva mister vi hvis ingen tar folkemusikken i bruk?",
+                    "Da radioen og platespilleren kom på 1900-tallet, trodde mange at folkemusikken ville dø. Forklar hvorfor de nye maskinene var en trussel mot slåttene fra nabodalen."
+                ],
+                "gaaVidere": [
+                    "Hør på en låt av Aurora, Gåte eller Wardruna. Skriv noen setninger om hvor du hører folkemusikk-røtter, for eksempel kvedeklang, slått-rytme eller lyden av hardingfele.",
+                    "Artikkelen sier at du arver en slått ved å høre noen spille den og prøve å spille den tilbake, ikke ved å lese om den. Prøv selv: lær en kort melodi av en medelev bare ved å lytte og herme, uten noter. Fortell klassen hva som var vanskelig.",
+                    "Diskuter i par: Hvis du hørte en springar i en TikTok-låt uten å vite hva det var, ville du telle deg selv som neste ledd i kjeden? Hva skal til for at folkemusikken skal leve videre til dine barn?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

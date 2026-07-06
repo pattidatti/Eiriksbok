@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import type { QuizQuestion } from '../types';
 import './Quiz.css';
 import { motion } from 'framer-motion';
 import { captureQuizAnswer } from '../utils/reviewCapture';
+import { useProgressStore } from '../features/progress/useProgressStore';
 
 interface QuizProps {
     questions: QuizQuestion[];
 }
 
 export const Quiz: React.FC<QuizProps> = ({ questions }) => {
+    const location = useLocation();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [showResult, setShowResult] = useState(false);
     const [score, setScore] = useState(0);
+    const [correctCount, setCorrectCount] = useState(0);
     const [streak, setStreak] = useState(0);
     const [isAnswered, setIsAnswered] = useState(false);
     const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
@@ -46,6 +50,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
         captureQuizAnswer(questions[currentQuestion], selectedOption === correct);
         if (selectedOption === correct) {
             setScore(score + 1);
+            setCorrectCount(correctCount + 1);
             setStreak(streak + 1);
         } else {
             setScore(score - 1);
@@ -59,6 +64,13 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
             setSelectedOption(null);
             setIsAnswered(false);
         } else {
+            // «Min læring»: quiz fullført - normalisert score 0-1
+            useProgressStore.getState().recordActivity({
+                kind: 'quiz-completed',
+                activityId: location.pathname.replace(/^\//, ''),
+                score: questions.length > 0 ? correctCount / questions.length : 0,
+                title: 'Quiz fullført',
+            });
             setShowResult(true);
         }
     };

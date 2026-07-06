@@ -137,6 +137,30 @@
         {
             "type": "text",
             "value": "Hvis en kilde ikke har et personlig forfatternavn, bruker du navnet på organisasjonen (som \"Store norske leksikon\" eller \"Utdanningsdirektoratet\"). Finner du ikke årstallet? Da skriver du (u.å.) som betyr \"uten år\". Du trenger som regel ikke ta med datoen du leste kilden, med mindre innholdet endrer seg ofte (som på Wikipedia) eller kilden mangler årstall."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken kildestil bruker vi som regel i skolen ifølge artikkelen?",
+                    "Hvilke fire spørsmål følger den enkle logikken i APA 7?",
+                    "Hva skal stå inni parentesen når du bruker en løpende henvisning i teksten?",
+                    "Etter hva skal litteraturlisten sorteres?",
+                    "Hva betyr forkortelsen (u.å.), og når bruker du den?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at å føre kilder handler om ærlighet og sporbarhet. Forklar med egne ord hva disse to ordene betyr når du skriver en fagtekst.",
+                    "En SNL-artikkel om vikingtiden er skrevet av Jon Vidar Sigurdsson, mens en annen SNL-side om Norge ikke har noen forfatter oppgitt. Forklar hvorfor du fører disse to kildene ulikt.",
+                    "Hvorfor er det ekstra viktig å ta med datoen du hentet kilden når den mangler årstall?",
+                    "Du har brukt to artikler av Per Hansen fra 2023: en om havnivåstigning og en om klimaendringer. Forklar hvorfor havnivåstigning får bokstaven a og klimaendringer får bokstaven b."
+                ],
+                "gaaVidere": [
+                    "Finn en ekte artikkel på snl.no eller fn.no om et tema du liker. Skriv kilden riktig i litteraturlisten etter oppskriften for nettsider, med forfatter eller organisasjon, årstall, tittel i kursiv, hentedato og URL.",
+                    "Skriv den samme setningen om Finland på begge måtene artikkelen viser: først med forfatteren i parentes til slutt, og deretter med forfatteren nevnt direkte inne i setningen.",
+                    "Bytt tekst med en klassekamerat. Sjekk om kildene deres er ført riktig etter APA 7, og gi hverandre ett konkret tips til forbedring."
+                ]
+            }
         }
     ],
     "quiz": [

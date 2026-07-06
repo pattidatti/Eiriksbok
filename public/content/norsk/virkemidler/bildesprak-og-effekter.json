@@ -266,6 +266,29 @@
             "type": "link",
             "target": "norsk/virkemidler/synsvinkel-og-stemme",
             "text": "Neste leksjon: Synsvinkel og Stemme"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på en metafor og en sammenligning, og hvilket ord bruker vi alltid i en sammenligning?",
+                    "Hva betyr det å bruke besjeling, og hva slags egenskaper gir vi da til ting som ikke er mennesker?",
+                    "Hva er forskjellen på besjeling og personifisering? Bruk eksemplet med Døden fra teksten.",
+                    "Hva menes med isfjell-metoden når vi snakker om symboler?"
+                ],
+                "reflekter": [
+                    "Teksten sier at en metafor er en språklig løgn som forteller en dypere sannhet. Hva mener forfatteren med det når vi sier at noen er en stjerne?",
+                    "Hvorfor kan det være lettere å forstå et abstrakt begrep som Døden eller Tiden når vi gjør det om til en person?",
+                    "Teksten forklarer kontrast med hvitt kritt på hvit tavle. Hvorfor føles sorg tyngre hvis den kommer rett etter stor glede?",
+                    "Hvorfor var gjentakelse så viktig før menneskene kunne skrive, og hva bruker vi det mest til i dag?"
+                ],
+                "gaaVidere": [
+                    "Skriv om setningen Det var en skummel natt slik at du viser i stedet for å fortelle. Bruk minst ett konkret sanseinntrykk, slik teksten lærer deg i Show, Don't Tell.",
+                    "Finn en sang du liker og se etter minst ett virkemiddel fra artikkelen (metafor, sammenligning, besjeling eller gjentakelse). Skriv ned linjen og forklar hvilket virkemiddel det er og hvorfor det virker.",
+                    "Skriv tre setninger om det samme været: én med en metafor, én med en sammenligning og én med besjeling. Forklar kort hvordan de tre setningene gir ulik stemning."
+                ]
+            }
         }
     ],
     "quiz": [

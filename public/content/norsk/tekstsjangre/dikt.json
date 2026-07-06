@@ -64,6 +64,29 @@
             "type": "info_box",
             "title": "Tren på virkemidlene",
             "content": "Kan du kjenne igjen metaforer, symboler og alliterasjon i et dikt? Test deg selv i [Virkemiddelverkstedet](/oving/virkemidler)!"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor kommer ordet lyrikk fra, og hva forteller det oss om hvordan dikt opprinnelig ble fremført?",
+                    "Nevn minst tre kjennetegn på et tradisjonelt dikt.",
+                    "Hva er forskjellen på en metafor og en sammenligning? Bruk eksempelet med rosen fra teksten.",
+                    "Hva betyr besjeling, og hvilke to eksempler gir artikkelen på det?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at modernistiske dikt oppstod som en reaksjon på en kaotisk og fragmentert verden. Hvorfor kan det passe å bryte med fast rytme og rim når man vil vise en verden som føles kaotisk?",
+                    "Teksten kaller diktet «språk på tomgang», der hvert ord må jobbe hardt. Hvorfor tror du et dikt kan skape sterk stemning på få linjer, mens en roman trenger mange sider?",
+                    "Hvorfor kan en due bety fred i ett dikt og noe helt annet i et annet dikt? Forklar hvordan symboler fungerer.",
+                    "Artikkelen anbefaler å oppleve diktet før du forstår det, og å ikke lete etter en fasit med en gang. Hvorfor kan det være lurt å lese diktet høyt og kjenne på følelsen først?"
+                ],
+                "gaaVidere": [
+                    "Skriv ditt eget korte dikt på fire til seks linjer. Bruk minst to av virkemidlene fra artikkelen, for eksempel metafor, kontrast eller allitterasjon, og marker hvilke du har brukt.",
+                    "Les diktet Døden av Ragnar Hovland i biblioteket. Hvilken stemning får du, og hvilke virkemidler kjenner du igjen fra artikkelen?",
+                    "Diskuter med en medelev: Er et fritt, modernistisk dikt uten rim like mye et ekte dikt som et tradisjonelt dikt med fast rytme og rim? Begrunn hva dere mener."
+                ]
+            }
         }
     ],
     "tags": [

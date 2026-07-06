@@ -38,6 +38,29 @@
             "type": "text",
             "title": "Vurderingskriterier",
             "content": "Lav måloppnåelse: Du deltar, men er usikker på grep/rytme.\nMiddels måloppnåelse: Du mestrer det tekniske greit og klarer å følge pulsen til de andre.\nHøy måloppnåelse: Du spiller med overskudd, lytter til de andre, og bidrar kreativt til samspillet."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre hovedting sier teksten at du skal kunne i musikk? Nevn alle tre.",
+                    "Hva betyr det å oppleve musikk, ifølge teksten? Nevn minst ett fagbegrep den trekker fram som eksempel.",
+                    "Teksten gir tre tips for å øve effektivt. Hva er de tre tipsene?",
+                    "Hva skiller høy måloppnåelse fra lav måloppnåelse i vurderingskriteriene?"
+                ],
+                "reflekter": [
+                    "Teksten sier at hvis du ikke kan spille noe sakte, kan du ikke spille det raskt. Hvorfor tror du det stemmer?",
+                    "Å utøve musikk handler mest om samspill og formidling, ikke bare teknikk, står det. Forklar forskjellen på å spille teknisk riktig og å spille med godt samspill.",
+                    "Hvorfor er det lurt å øve bare på den vanskelige overgangen i stedet for å spille hele sangen hver gang?",
+                    "Vurderingskriteriene nevner å lytte til de andre og bidra kreativt. Hvorfor er det viktigere enn å bare spille sine egne toner riktig?"
+                ],
+                "gaaVidere": [
+                    "Velg en sang eller et musikkstykke du liker. Bruk de tre øvingstipsene i teksten og skriv ned hvordan du ville øvd på den vanskeligste delen.",
+                    "Lytt til en låt og beskriv den med minst tre fagbegreper (for eksempel takt, rytme, dur eller moll). Del beskrivelsen med en medelev.",
+                    "Diskuter i par: Hva må du gjøre for å flytte deg fra middels til høy måloppnåelse i musikk? Lag en konkret plan for deg selv."
+                ]
+            }
         }
     ]
 }

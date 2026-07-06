@@ -111,6 +111,29 @@
       ]
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva er grunntonen i en akkord, og hva er grunntonen til en G-akkord?",
+                "Hva betyr skalagrind, og hvorfor høres det tilfeldig ut?",
+                "Når i takten bør du helst lande på grunntonen ifølge teksten?",
+                "Hva er en approachnote, og når spiller du den?"
+            ],
+            "reflekter": [
+                "Teksten sier at skalaen er kartet og akkorden er X-et. Forklar med egne ord hva denne sammenligningen prøver å lære deg.",
+                "Versjon A og versjon B i lytteverktøyet bruker nøyaktig de samme skalatonene. Hvorfor høres likevel versjon B mer målbevisst ut?",
+                "Hvorfor er det en dårlig idé å lande på grunntonen hele tiden, selv om den høres trygg og hjemme ut?",
+                "Teksten sier at samme note finnes flere steder på gripebrettet. Hvorfor er det en fordel når du spiller solo?"
+            ],
+            "gaaVidere": [
+                "Finn en sang du liker med gitarsolo. Prøv å høre etter om soloen ser ut til å lande roligere på visse steder, og skriv ned hva du legger merke til.",
+                "Åpne Progresjon-analysatoren i artikkelen, sett inn en akkordprogresjon du kjenner, og øv på å spille bare grunntonene ved hvert akkordskifte.",
+                "Diskuter med en medelev: hva mener teksten når den sier at en god solo forteller en liten musikalsk historie i stedet for å vandre rundt?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

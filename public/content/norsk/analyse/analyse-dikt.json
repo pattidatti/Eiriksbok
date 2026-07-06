@@ -104,6 +104,29 @@
                     "content": "Diktet «Bak glasset» handler om kontrasten mellom den perfekte fasaden vi viser frem på sosiale medier, og den sårbare virkeligheten som skjuler seg bak skjermen. Motivet er en person som legger ut et feilfritt bilde av seg selv, men som sitter alene og gråter når telefonen legges bort.\n\nFormen i diktet underbygger denne kontrasten tydelig. I den første strofen bruker forfatteren faste enderim (AABB) og en jevn rytme. Dette skaper en følelse av orden og harmoni, som speiler det «perfekte» livet jeg-personen viser frem på nettet. Alt virker kontrollert og pyntet på, akkurat som et Instagram-feed.\n\nI den andre strofen skjer det imidlertid et markant brudd. Rimet forsvinner fullstendig, og rytmen blir oppstykket og ujevn. Dette formbruddet markerer overgangen fra fasade til virkelighet. Når jeg-personen forteller at det er «mørkt» og at hun gråter, slutter diktet å være «lyst og lett». Det manglende rimet gjør at smerten føles mer ekte og naken.\n\nDiktet avsluttes med en enkeltstående, løs linje: «Er jeg alene nå?». Ved å la denne linjen stå helt for seg selv, fungerer den som en spotlight på diktets hovedbudskap. Spørsmålet blir hengende i luften, og tvinger leseren til å reflektere over ensomheten som teknologien kan skape. Glasset i mobilskjermen blir en barriere som gjør at vi kan se hverandre, men ikke nå inn til hverandre."
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva rimer på hverandre i den første strofen av diktet «Bak glasset», og hva heter denne rimtypen?",
+                    "Hva skjer med rimet og rytmen i strofe 2 ifølge artikkelen?",
+                    "Hvorfor sier artikkelen at «Diktet handler om ensomhet» er en dårlig start på en analyse?",
+                    "Hva er det bokstavelige, konkrete som «glasset» viser til i diktet?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at formen er «et speilbilde av innholdet». Forklar hvordan det faste rimet i strofe 1 passer til det jeg-personen viser frem.",
+                    "Hvorfor ville gråten i strofe 2 virket «falsk og pyntet på» hvis forfatteren hadde fortsatt å rime? Forklar med egne ord.",
+                    "Glass er både gjennomsiktig og hardt og kaldt. Hvordan gjør disse egenskapene glasset til et godt symbol på avstanden mellom personen og verden?",
+                    "Hvorfor får den løse linjen «Er jeg alene nå?» så mye kraft når den står helt for seg selv til slutt?"
+                ],
+                "gaaVidere": [
+                    "Velg et kort dikt du kjenner, eller finn ett. Gå gjennom de fire stegene fra artikkelen (motiv, form, språklige bilder, tema) og skriv en kort analyse på fem til seks setninger.",
+                    "Skriv et lite dikt på to strofer der du selv bruker fast rim i den første strofen og bryter rimet i den andre for å vise at noe endrer seg.",
+                    "Diskuter med en medelev: Er kontrasten mellom fasaden på sosiale medier og virkeligheten bak skjermen noe dere kjenner igjen? Finn ett eksempel hver og forklar det for hverandre."
+                ]
+            }
         }
     ],
     "quiz": [

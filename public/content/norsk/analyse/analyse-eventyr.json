@@ -169,6 +169,29 @@
             "type": "expandable",
             "title": "Les en mønstergyldig analyse av «Askeladden»",
             "content": "Eventyret Askeladden som kappåt med trollet er en bauta i den norske folkediktningen og et mønstergyldig eksempel på sjangerens oppbygging. Teksten styres av strenge lover som gjør historien forutsigbar, men likevel spennende. Den mest sentrale strukturen er tretallsloven, som brukes for å etablere en stigende spenningskurve. Gjennom brødrenes feilslåtte forsøk blir trollets makt og trussel tydelig for leseren, noe som gjør Askeladdens endelige seier både heroisk og uventet.\n\nPersongalleriet er preget av en skarp typetegning uten indre kompleksitet. Her finnes det ingen gråsoner; Askeladden er ikke en person, men et bilde på nysgjerrighet og list, mens trollet er et symbol på en rå og tankeløs naturkraft. Denne motsetningsloven skaper et tydelig bilde av konflikten som ligger i kjernen av verket: Det er kampen mellom den fysiske overmakten og menneskets evne til intellektuell overlistelse.\n\nNår Askeladden lurer trollet til å skjære seg selv i magen, er dette den matematiske løsningen på eventyrets gåte. Det stadfester moralen som har gitt håp til lyttere i århundrer: At intelligens og mot trumfer makt og rikdom. Askeladden står som en universell representant for den svake part som seirer gjennom visdom, et budskap som er like aktuelt i dag som da historien ble fortalt rundt bålet i middelalderen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva sier tretallsloven om hvordan ting skjer i et eventyr, og hvem lykkes til slutt?",
+                    "Hva gjør Askeladden med hvitosten, og hva later han som at den er?",
+                    "Hva er forskjellen på tvillingloven og motsetningsloven?",
+                    "Hvorfor fulgte eventyrene så strenge og faste regler, ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Hvorfor må både Per og Pål feile før Askeladden får prøve seg? Forklar hva de to feilene gjør med spenningen.",
+                    "Teksten sier at kampen står mellom forstand (Hode) og rå makt (Mage). Hvorfor vinner Askeladden med list i stedet for styrke?",
+                    "Hvorfor blir personene i eventyret kalt symboler og ikke ekte mennesker? Bruk trollet og Askeladden som eksempel.",
+                    "Teksten sier at moralen i eventyret handler om håp. Hvorfor kan denne historien gi håp til noen som føler seg liten og svak?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort analyse av et annet eventyr du kjenner. Vis hvor du finner tretallsloven og en kontrast mellom to personer.",
+                    "Skriv ditt eget mini-eventyr på cirka en halv side der en liten og svak helt vinner over en stor og sterk motstander ved hjelp av list.",
+                    "Diskuter med en medelev: Hvorfor er skurkene i moderne filmer ofte mer sammensatte enn trollet i eventyret? Hva vinner og hva taper man på det?"
+                ]
+            }
         }
     ],
     "relatedLink": {

@@ -94,6 +94,29 @@
         {
             "type": "text",
             "content": "Men selv ikke de vakreste brudeferder eller de mest heroiske bondefortellinger kunne i lengden skjule at Norge var i drastisk endring. Mot slutten av perioden begynte diktere og samfunnsdebattanter å se at glansbildet slo sprekker. Det stemte rett og slett ikke overens med virkeligheten i de voksende industribyene eller den faktiske nøden på bygdene som tvang folk til å emigrere til Amerika. Det nasjonale svermeriet måtte etter hvert vike for et krav om sannhet, problemer under debatt og samfunnskritikk. Slik la nasjonalromantikken, med sine høye idealer, paradoksalt nok grunnlaget for det som måtte komme: det brutale oppgjøret i realismen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken tidsperiode regnes som nasjonalromantikken i Norge?",
+                    "Hva kalte man den lange unionstiden med Danmark, da eliten i byene skrev og leste dansk?",
+                    "Hva slags språk ville Ivar Aasen bygge, og hvor hentet han ordene fra?",
+                    "Hvem samlet inn norske eventyr og sagn, slik Brødrene Grimm gjorde i Tyskland?"
+                ],
+                "reflekter": [
+                    "Hvorfor trengte Norge en egen historie, et eget språk og en egen kultur etter at landet fikk grunnloven i 1814?",
+                    "Aasen, Knudsen og Munch var uenige om det norske språket. Forklar hva som skilte Aasens og Knudsens tilnærming fra hverandre.",
+                    "Hvorfor ble akkurat bonden og fjellandskapet så viktige symboler for det ekte norske?",
+                    "Teksten sier at kunstnerne malte et glansbilde. Hva ble visket vekk i dette glansbildet, og hvorfor kan det være et problem å pynte på virkeligheten på denne måten?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du beskriver et norsk landskap slik en nasjonalromantiker ville gjort det, altså stolt, dramatisk og der alt er vakkert.",
+                    "Nasjonalromantikken endte i realismen, der dikterne krevde sannhet og samfunnskritikk. Diskuter med en medelev hvorfor glansbildet til slutt måtte vike for virkeligheten.",
+                    "Finn maleriet Brudeferden i Hardanger på nettet. Skriv ned tre ting i bildet som viser den harmoniske idyllen teksten beskriver."
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",

@@ -234,6 +234,29 @@
                     "value": "Hvem er deres rake motsetning?"
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er de fem trinnene i «Karaktersmien», og hva handler hvert trinn om?",
+                    "Hva er Elias sitt kjennetegn, altså de detaljene som gjør at vi husker ham?",
+                    "Hva er forskjellen på det Elias VIL ha og det han egentlig TRENGER?",
+                    "Hva er et «Ghost», og hvilken hendelse fra fortiden bærer Elias på?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at en god historie sjelden bare handler om hva som skjer, men om hvem det skjer med. Hvorfor gjør en levende karakter en historie bedre enn et spennende plott alene?",
+                    "Hvorfor skaper en klokke som har stoppet mer nysgjerrighet hos leseren enn å bare skrive at Elias hadde brunt hår og vanlige klær?",
+                    "Teksten sier at perfekte karakterer er kjedelige å lese om. Forklar hvorfor sårbarhet og feil gjør at vi kjenner oss igjen i en karakter.",
+                    "Hvorfor blir Elias tydeligere som karakter når han møter Sara, som er hans rake motsetning?"
+                ],
+                "gaaVidere": [
+                    "Bruk «Karakterens Mester-ark» og smi din egen karakter: gi den navn, et ytre kjennetegn, en vilje, et behov, en skygge og en gnisning.",
+                    "Skriv en kort scene på fem til seks setninger der karakteren din møter sin rake motsetning. Vis gnisningene mellom dem uten å forklare direkte at de er uenige.",
+                    "Velg en karakter fra en bok eller film du kjenner godt. Fyll ut Mester-sjekklisten for den karakteren: hva er kjennetegnet, viljen, behovet, frykten og gnisningen?"
+                ]
+            }
         }
     ],
     "quiz": [

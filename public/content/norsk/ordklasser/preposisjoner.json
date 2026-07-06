@@ -59,6 +59,29 @@
                 "På grunn **av** (Alltid sammen)",
                 "Forhold **til**"
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kaller artikkelen preposisjonene, siden de forteller hvor og når noe er?",
+                    "Hvor står preposisjonen nesten alltid i forhold til ordet den styrer?",
+                    "Nevn to preposisjoner som forteller hvor noe er, og to som forteller når noe skjer.",
+                    "Hvilken preposisjon er riktig: er du sint 'på' eller sint 'i' noen?"
+                ],
+                "reflekter": [
+                    "I setningen 'Mobilen ligger på bordet under boka' er både 'på' og 'under' preposisjoner. Forklar hva hvert av de to ordene forteller oss om hvor mobilen er.",
+                    "Artikkelen deler preposisjoner inn i sted, tid og måte. Lag din egen setning for hver av de tre gruppene, og forklar hvorfor preposisjonen du valgte passer i den gruppa.",
+                    "Hvorfor heter det 'forelsket i' men 'sint på', selv om begge handler om følelser? Forklar hvorfor slike faste uttrykk er vanskelige å forstå ut fra regler.",
+                    "Hvordan kan det å bytte ut bare preposisjonen endre meningen i en setning? Bruk et eksempel som 'katten er bak sofaen' og prøv andre preposisjoner."
+                ],
+                "gaaVidere": [
+                    "Skriv fem setninger om rommet du sitter i akkurat nå, og bruk en ny preposisjon i hver setning. Strek under preposisjonene når du er ferdig.",
+                    "Lag en huskeliste med minst fem faste uttrykk der du må pugge preposisjonen, for eksempel 'glad i' og 'lyst på'. Test en medelev på lista.",
+                    "Diskuter med en medelev: hvorfor kan preposisjoner være ekstra vanskelige for noen som holder på å lære seg norsk? Kom med tre grunner."
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",

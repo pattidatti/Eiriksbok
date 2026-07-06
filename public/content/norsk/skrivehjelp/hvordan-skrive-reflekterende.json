@@ -99,6 +99,29 @@
             "type": "fact_box",
             "title": "Nyttige uttrykk",
             "content": "- 'Kanskje betyr dette at...'\n- 'Det gir meg et inntrykk av...'\n- 'Spørsmålet er om...'\n- 'På den ene siden... på den andre siden...'\n- 'Jeg lurer på om forfatteren mener...'\n- 'Dette kan føre til at...'"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet refleksjon ifølge teksten?",
+                    "Hvilke fire steg består refleksjons-raketten av?",
+                    "Hva er en refleksjonsmarkør, og nevn to eksempler fra teksten.",
+                    "Hva menes med å gå i referat-fella?"
+                ],
+                "reflekter": [
+                    "Se på de to eksemplene om skjermbruk. Hva er det refleksjonsversjonen gjør som referatversjonen ikke gjør?",
+                    "Hvorfor hjelper det å skrive på den ene siden ... på den andre siden når du reflekterer?",
+                    "Teksten sier at det er lov å være usikker når du skriver om skjønnlitteratur. Hvorfor kan usikkerhet være en styrke og ikke en svakhet?",
+                    "Hvorfor er det viktig å vurdere om forfatteren bruker gode kilder når du reflekterer over sakprosa?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort refleksjon på tre-fire setninger om en påstand du har hørt, for eksempel at unge sover for lite. Bruk minst to refleksjonsmarkører fra verktøykassa.",
+                    "Ta en setning som er et rent referat, og skriv den om til refleksjon slik teksten viser med skjermbruk-eksemplet.",
+                    "Velg en novelle eller et dikt du kjenner. Undre deg over hva teksten egentlig handler om, og pek på ett symbol som kan tolkes på flere måter."
+                ]
+            }
         }
     ],
     "quiz": [

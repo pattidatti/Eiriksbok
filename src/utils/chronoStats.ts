@@ -67,6 +67,15 @@ export function recordGameEnd(bestStreakThisGame: number) {
     s.bestStreak = Math.max(s.bestStreak, bestStreakThisGame);
     s.lastPlayed = Date.now();
     write(s);
+    // «Min læring»: hver fullførte chrono-runde teller (id per runde-nummer
+    // så de første rundene gir full XP, senere runder daglig bonus)
+    import('../features/progress/useProgressStore').then(({ useProgressStore }) => {
+        useProgressStore.getState().recordActivity({
+            kind: 'practice-game',
+            activityId: `chrono/runde-${Math.min(s.totalGames, 10)}`,
+            title: 'Chrono',
+        });
+    });
 }
 
 export function resetStats() {

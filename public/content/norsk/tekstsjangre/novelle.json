@@ -80,6 +80,29 @@
                 "[Karen](/norsk/bibliotek/karen) av Alexander Kielland – En parallellhistorie der to handlinger speiler hverandre.",
                 "[Twitter-noveller](/norsk/bibliotek/twitter-noveller) av Frode Grytten – Eksempler på svært korte korttekster som utfordrer sjangergrensene."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet novella, som novelle kommer fra på italiensk?",
+                    "Nevn tre kjennetegn på en novelle som teksten trekker fram.",
+                    "Hvem regnes ofte som den norske novellens far, og hva het novellesamlingen hans?",
+                    "Hva er forskjellen på motivet og temaet i en novelle?"
+                ],
+                "reflekter": [
+                    "Hvorfor tåler en novelle lite utenomsnakk, mens en roman kan bruke hundrevis av sider?",
+                    "Hva menes med at mye av meningen i en novelle ligger mellom linjene, og hvorfor krever det mer av leseren?",
+                    "Forklar virkemidlet show, don't tell med et eget eksempel på hvordan du kan vise at en person er redd uten å skrive det.",
+                    "Hvorfor kan en visnet blomst eller en storm bety noe mer enn seg selv i en novelle?"
+                ],
+                "gaaVidere": [
+                    "Velg en novelle fra biblioteket, for eksempel Karens jul av Amalie Skram, og skriv kort hva du mener er temaet og hvordan tittelen peker mot det.",
+                    "Skriv starten på en egen novelle som begynner in medias res, altså rett inn i handlingen uten innledning. Bruk minst ett symbol.",
+                    "Diskuter i klassen om en åpen slutt gjør en novelle bedre eller mer irriterende, og begrunn synet ditt."
+                ]
+            }
         }
     ],
     "tags": [

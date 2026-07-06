@@ -39,6 +39,29 @@
             "type": "text",
             "title": "Hvorfor heter det Dur og Moll?",
             "content": "*   Dur kommer fra latin *durus* som betyr 'hard'.\n*   Moll kommer fra *mollis* som betyr 'myk'.\n\nI dag tenker vi ofte at Dur er 'glad' og Moll er 'trist', men det finnes mange glade sanger i moll og triste sanger i dur!"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange toner må du spille samtidig for at det skal kalles en akkord?",
+                    "Hvilke tre toner består en treklang av, og hva kaller vi den enkleste akkorden?",
+                    "Hvilken av de tre tonene i en treklang bestemmer om akkorden høres glad eller trist ut?",
+                    "Hva betyr de latinske ordene durus og mollis, og hvilke akkordtyper har fått navn fra dem?"
+                ],
+                "reflekter": [
+                    "Forklar hva som skjer med akkorden når du bytter ut E-en i C-dur med Eb og spiller C, Eb og G i stedet.",
+                    "Teksten sier at grunntonen er sjefen, tersen bestemmer stemningen og kvinten rammer inn akkorden. Hvorfor tror du nettopp tersen får så stor betydning for følelsen?",
+                    "Artikkelen sier at det finnes glade sanger i moll og triste sanger i dur. Hva forteller det oss om påstanden dur er lik glad og moll er lik trist?",
+                    "Hvorfor tror du harmoni, altså hvordan akkorder passer sammen, kan gi musikk følelser når en enkelt tone alene ikke gjør det på samme måte?"
+                ],
+                "gaaVidere": [
+                    "Sett deg ved et piano eller bruk pianoet i artikkelen. Spill først C, E og G, så C, Eb og G. Skriv ned med egne ord hvordan de to akkordene fikk deg til å føle deg forskjellig.",
+                    "Velg en sang du liker godt. Prøv å høre etter om den mest bruker dur eller moll, og skriv en kort forklaring på hvorfor du tror låtskriveren valgte akkurat den stemningen.",
+                    "Finn sammen med en venn ett eksempel på en glad sang i moll eller en trist sang i dur, og forklar for hverandre hvorfor sangen likevel virker slik den gjør."
+                ]
+            }
         }
     ]
 }

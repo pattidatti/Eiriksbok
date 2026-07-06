@@ -84,6 +84,29 @@
         {
             "type": "text",
             "content": "Når vi har S og V på plass, har vi en helsetning. Det er den minste byggeklossen i språket vårt. Men ofte vil vi si mer enn bare hvem som gjør noe. Da må vi utvide setningen i neste nivå!"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to deler må en setning inneholde for at den skal kunne kalles en setning?",
+                    "Hva forteller verbalet oss, og hva slags ord er verbalet alltid?",
+                    "Hvilket spørsmål stiller vi for å finne subjektet i en setning?",
+                    "I setningen 'Katten sover i sofaen', hva er subjektet og hva er verbalet?"
+                ],
+                "reflekter": [
+                    "Hvorfor kaller vi subjektet og verbalet for setningens grunnmur?",
+                    "Hvorfor lønner det seg å lete etter verbalet først når vi skal analysere en setning?",
+                    "Ordene 'på himmelen om kvelden' er ikke en setning. Hvorfor ikke?",
+                    "Hva mener teksten når den sier at helsetningen er den minste byggeklossen i språket vårt?"
+                ],
+                "gaaVidere": [
+                    "Lag tre egne setninger som bare består av et subjekt og et verbal, slik som 'Hunden bjeffer'. Marker hva som er subjekt og hva som er verbal i hver av dem.",
+                    "Ta en tekstmelding eller en overskrift du finner, og pek ut subjektet og verbalet i minst to av setningene.",
+                    "Skriv en kort setning uten subjekt og en uten verbal. Les dem høyt for en medelev og forklar hvorfor de ikke fungerer som fullstendige setninger."
+                ]
+            }
         }
     ]
 }

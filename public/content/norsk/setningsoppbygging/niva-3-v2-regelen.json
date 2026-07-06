@@ -88,6 +88,29 @@
         {
             "type": "text",
             "content": "Bra jobba, betjent! Nå som du har kontroll på helsetninger, er det på tide å se på hva som skjer når vi putter en setning inni en annen setning..."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva sier V2-regelen om hvor verbet skal stå i en fortellende helsetning?",
+                    "I setningen 'I dag spiser jeg mat', hvilket ord står på plass nummer to?",
+                    "Hva kaller vi det når subjektet og verbalet bytter plass fordi setningen starter med noe annet enn subjektet?",
+                    "Hvorfor er setningen 'I dag jeg spiser mat' ulovlig ifølge V2-regelen?"
+                ],
+                "reflekter": [
+                    "Forklar med dine egne ord hvorfor verbet 'går' står på plass to i både 'Jeg går på skolen i dag' og 'I dag går jeg på skolen'.",
+                    "Artikkelen sier at verbet i engelsk kan flytte litt på seg, men ikke i norske fortellende helsetninger. Hvorfor tror du en slik fast regel gjør norsk lettere å forstå?",
+                    "Når du starter en setning med et tidsadverb som 'I morgen', hva må du huske å gjøre med subjektet og verbet for å ikke bryte V2-regelen?",
+                    "Se på riktig svar 'I morgen skal jeg reise'. Forklar hvorfor 'skal' teller som plass to, mens 'reise' kan stå lenger bak i setningen."
+                ],
+                "gaaVidere": [
+                    "Skriv tre setninger som starter med et tidsadverb (for eksempel 'I går', 'Om sommeren', 'Neste uke'), og pass på at verbet står på plass to i alle tre.",
+                    "Ta setningen 'Jeg leser en bok på rommet' og skriv den om ved å bruke inversjon, slik at den starter med stedet eller tiden i stedet for subjektet.",
+                    "Lek V2-politiet med en medelev: skriv fem setninger der noen har brutt V2-regelen, og bytt med hverandre for å rette dem opp."
+                ]
+            }
         }
     ]
 }

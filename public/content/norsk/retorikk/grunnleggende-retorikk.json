@@ -73,6 +73,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet retorikk ifølge artikkelen?",
+                    "Hvilke tre appellformer delte Aristoteles overbevisning inn i?",
+                    "Hva handler etos om, og hva er forskjellen på innledende etos og avledet etos?",
+                    "Hvilken appellform bygger på fakta, logikk og statistikk?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at det ikke hjelper med gode argumenter uten tillit. Forklar hvorfor etos ofte må være på plass før logos og patos virker.",
+                    "Hvorfor kan et bilde av en isbjørn på et smeltende isflak få folk til å gi penger, mens tørr statistikk om klima bare informerer? Forklar hvordan patos virker her.",
+                    "Artikkelen skriver at patos tenner en gnist, men logos sørger for at bålet brenner lenge. Forklar med egne ord hva som menes med dette.",
+                    "Se på advokat-eksempelet i artikkelen. Velg én av de tre appellformene og forklar hva som kan gå galt hvis akkurat den mangler."
+                ],
+                "gaaVidere": [
+                    "Finn en reklame du har sett nylig (på TV, YouTube eller sosiale medier). Beskriv hvordan den bruker etos, patos og logos. Er noen av appellformene sterkere enn de andre?",
+                    "Skriv en kort tale på fem til seks setninger der du prøver å overbevise klassen om noe du bryr deg om. Bruk minst én setning med hver av de tre appellformene, og marker hvilken som er hvilken.",
+                    "Artikkelen bruker Haaland som reklamerer for en klokke som eksempel på etos. Diskuter med en medelev: Er det greit at kjendiser låner troverdighet til produkter de ikke kan noe om? Bør vi stole mer eller mindre på slik reklame?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

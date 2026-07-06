@@ -53,6 +53,29 @@
         {
             "type": "text",
             "content": "Nå holder du to fingre nede. Resten av strengene skal være åpne (0). Gratulerer, du kan spille E-moll!"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange strenger har en standard gitar?",
+                    "Hvilke toner heter de seks strengene fra den tykkeste til den tynneste?",
+                    "Hva kalles en streng du spiller uten å trykke ned noen fingre (bånd 0)?",
+                    "På hvilke to strenger og hvilket bånd trykker du for å spille grepet E-moll (Em)?"
+                ],
+                "reflekter": [
+                    "Huskeregelen En Annen Dag Gikk Bjørn Egentlig hjelper deg å huske strengene. Forklar hvordan første bokstav i hvert ord henger sammen med tonen på strengen.",
+                    "Teksten sier at den tykkeste strengen ser ut til å ligge nederst på tegningen når du holder gitaren og ser ned på den. Hvorfor tror du strengene vises på denne måten i stedet for slik andre ser dem forfra?",
+                    "E-moll blir kalt verdens enkleste grep. Hvorfor er det lettere å lære enn et grep der du må trykke ned mange strenger på ulike bånd samtidig?",
+                    "Når du spiller Em holder du to fingre nede, mens resten av strengene er åpne. Hva tror du ville skjedd med lyden hvis du kom borti en av de åpne strengene med feil finger?"
+                ],
+                "gaaVidere": [
+                    "Ta en gitar (eller bruk gripebrett-verktøyet i artikkelen) og prøv å spille strengene i rekkefølge fra den tykke E-en til den tynne E-en mens du sier tonenavnet høyt.",
+                    "Lag din egen huskeregel for strengene E, A, D, G, H, E med seks morsomme ord, og test om en venn klarer å huske den.",
+                    "Finn en sang du liker som bruker gitar, og lytt etter om du hører når noen bytter grep. Skriv ned tre setninger om hvordan gitaren låter i sangen."
+                ]
+            }
         }
     ]
 }

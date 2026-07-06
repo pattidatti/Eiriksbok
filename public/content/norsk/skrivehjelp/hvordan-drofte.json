@@ -323,6 +323,29 @@
             "type": "info_box",
             "title": "Relaterte artikler",
             "content": "Bygger videre på ferdighetene i denne artikkelen: [Hvordan skrive gode saktekster](/norsk/skrivehjelp/hvordan-skrive-gode-saktekster) — strukturen bak gode avsnitt med temasetninger og bindeord. [Hvordan skrive reflekterende](/norsk/skrivehjelp/hvordan-skrive-reflekterende) — neste nivå etter drøfting: dypere undring og personlig perspektiv."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva står bokstavene P, A, M og K for i PAMK-modellen?",
+                    "Hvilke fire nivåer består Argumentstigen av, fra bunnen til toppen?",
+                    "Ifølge artikkelen er det å drøfte mer enn å liste opp fakta. Hva må du gjøre i tillegg for at det skal være en drøfting?",
+                    "Hva er de tre vanligste feilene i drøftingsoppgaver som artikkelen advarer mot?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at motargumenter gjør teksten din sterkere, ikke svakere. Hvorfor er en konklusjon som har møtt motargumentet sterkere enn en som aldri ble utfordret?",
+                    "Hvorfor holder det ikke å skrive På den ene siden og På den andre siden hvis du ikke har ekte argumenter bak? Forklar hva som gjør slike diskursmarkører til tomme formler.",
+                    "Se på setningen Alt i alt finnes det mange argumenter for og mot, og dette er et komplisert tema. Hvorfor kaller artikkelen dette en unnvikelse og ikke en konklusjon?",
+                    "I øvelsen om kunstig intelligens i skolen er det å legge til enda et argument FOR regnet som feil valg. Hvorfor blir teksten et debattinnlegg og ikke en drøfting hvis du bare fortsetter på samme side?"
+                ],
+                "gaaVidere": [
+                    "Velg et tema du bryr deg om, for eksempel mobilforbud på skolen eller lekser. Skriv ett avsnitt som følger PAMK: en klar påstand, et argument med bevis, et reelt motargument og en begrunnet konklusjon.",
+                    "Finn den svake konklusjonen i Feil 3 i artikkelen (den som sier at alle har sine meninger). Skriv den om til en god konklusjon som tar et standpunkt og begrunner det, gjerne med et forbehold.",
+                    "Bruk huskeregelen fra artikkelen: Hvis noen bare leser konklusjonen din, skjønner de hva du mener OG hvorfor? Bytt en drøftingskonklusjon med en medelev og test hverandres tekster mot denne regelen."
+                ]
+            }
         }
     ],
     "quiz": [

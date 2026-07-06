@@ -156,6 +156,29 @@
             "type": "info",
             "title": "Oppsummert: Huskeregel",
             "content": "God saktekst = Tydelig plan + Sterke bindeord + Logisk rekkefølge."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalles den første setningen i et avsnitt, den som forteller leseren hva de neste linjene skal handle om?",
+                    "Hva er oppgaven til kommentarsetningene i et avsnitt?",
+                    "Nevn tre bindeord som teksten trekker fram som eksempler.",
+                    "Hvilke fire deler består det ferdige avsnittet av, ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten kaller temasetningen for et 'løfte' til leseren. Hvorfor er det et problem hvis resten av avsnittet ikke holder dette løftet?",
+                    "Uten bindeord beskriver teksten setningene som 'øyer i havet'. Forklar hvordan bindeord som 'nemlig' og 'slik at' gjør at setningene henger sammen.",
+                    "Hvorfor er den vage temasetningen 'Søvn er noe vi alle gjør hver natt' dårligere enn 'Søvn fungerer som hjernens eget renovasjonsanlegg'?",
+                    "Teksten sammenligner overgangen mellom avsnitt med en stafettpinne. Hva mister leseren hvis avsnittene mangler slike overganger?"
+                ],
+                "gaaVidere": [
+                    "Velg et tema du kan litt om, for eksempel mobilbruk eller trening. Skriv et helt avsnitt med temasetning, to kommentarsetninger, minst to bindeord og en avslutning.",
+                    "Ta det ferdige søvn-avsnittet i teksten og skriv en overgangssetning som starter et nytt avsnitt om et annet emne, slik teksten gjør med 'I tillegg til'.",
+                    "Finn et avsnitt fra en lærebok eller nettartikkel. Marker temasetningen, kommentarsetningene og bindeordene, og vurder om avsnittet holder løftet sitt."
+                ]
+            }
         }
     ],
     "tags": [

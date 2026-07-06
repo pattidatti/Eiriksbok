@@ -129,6 +129,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor og når oppsto hip-hop, og hva gjorde Kool Herc som ingen hadde gjort før?",
+                    "Hva var de fire elementene i hip-hop-kulturen, og hva gikk hvert av dem ut på?",
+                    "Hva betyr sampling, og hvordan lager en produsent en ny låt ved hjelp av det?",
+                    "Hva handlet låten The Message fra 1982 om, og hvorfor var den spesiell?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Bronx på 1970-tallet var fattig fordi myndighetene hadde kuttet i skoler og transport. Hvorfor tror du kreativitet blomstret nettopp der det var lite penger?",
+                    "Sampling skapte en debatt: er det tyveri eller kunst å bruke andres musikk? Forklar begge sidene i uenigheten og si hva du selv mener.",
+                    "Hvorfor kaller teksten rap for en nyhetssending fra gata da hip-hop ble politisk på 1980-tallet? Hva mener de med det?",
+                    "Teksten sier at musikk aldri oppstår i et vakuum. Forklar hva det betyr, og bruk hip-hop som eksempel."
+                ],
+                "gaaVidere": [
+                    "Velg en raplåt du selv liker. Hør godt etter og prøv å finne ut hvilke samfunnsforhold eller følelser artisten synger om. Skriv noen setninger om hva du oppdaget.",
+                    "Norske artister som Karpe rapper på norsk om identitet, rasisme og kjærlighet. Sammenlign hva Karpe synger om med det ungdommene i Bronx ville uttrykke. Hva er likt, og hva er ulikt?",
+                    "Prøv deg selv som MC: finn et enkelt beat eller trommemønster og lag fire linjer med rap om noe du bryr deg om. Fremfør det for en medelev eller les det høyt for deg selv."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

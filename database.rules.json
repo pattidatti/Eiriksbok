@@ -42,6 +42,13 @@
             ".read": true,
             ".write": true
         },
+        "progress": {
+            "$code": {
+                ".read": true,
+                ".write": true,
+                ".validate": "$code.matches(/^[a-z]+-[a-z]+-[a-z]+$/)"
+            }
+        },
         ".read": false,
         ".write": false
     }

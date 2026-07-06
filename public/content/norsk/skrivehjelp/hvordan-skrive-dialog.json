@@ -193,6 +193,29 @@
             "type": "info",
             "title": "Vil du trene mer?",
             "text": "Prøv [Scenariospill](/norsk/virkemidler/synsvinkel-og-stemme) for å eksperimentere med hvordan ulike karakterer ville sagt det samme på forskjellige måter."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to måter kan du markere dialog på i norsk, og hvilken av dem anbefaler artikkelen at du bruker?",
+                    "Hva er hovedregelen for når du skal skifte til ny linje i en dialog?",
+                    "Hvorfor kaller artikkelen ordet 'sa' for usynlig?",
+                    "Hva er de tre funksjonene en replikk kan ha ifølge artikkelen?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at du ofte ikke trenger å skrive 'sa mamma' eller 'sa jeg'. Forklar hvordan leseren likevel skjønner hvem som snakker.",
+                    "Hva er forskjellen på en replikkmarkører som 'sa pappa stresset' og en handlingsmarkør som 'Pappa rotet gjennom skuffen'? Hvorfor mener artikkelen at handlingen er sterkere?",
+                    "Artikkelen advarer mot ord som 'utbrøt', 'freste' og 'bønnfalt'. Hva er problemet med å bruke slike ord i stedet for 'sa'?",
+                    "Når bør du bruke direkte tale, og når er indirekte tale (oppsummering) bedre? Bruk eksempelet med Jonas og Maria til å forklare."
+                ],
+                "gaaVidere": [
+                    "Skriv en kort dialog på minst seks replikker mellom to personer som krangler om noe. Følg regelen om ny linje for hver ny taler, og bruk kun 'sa' eller ingen replikkmarkør i det hele tatt.",
+                    "Ta dialogen du skrev, og bytt ut minst to av 'sa'-ene med handlingsmarkører som viser hva personene gjør mens de snakker.",
+                    "Skriv den samme scenen to ganger: én gang med direkte tale og én gang med indirekte tale. Skriv deretter et par setninger om hvilken versjon du synes fungerer best, og hvorfor."
+                ]
+            }
         }
     ],
     "tags": [

@@ -188,6 +188,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva menes med at en joik tilhører den den joiker, og ikke den som synger?",
+                    "Hvilke tre hovedtyper joik finnes i samisk tradisjon, og hva tilhører hver av dem?",
+                    "Hva var noaiden, og hvordan brukte noaiden joiken?",
+                    "Hvorfor så kirken og myndighetene på joiken som noe farlig, og hva gjorde de med barn som ble tatt i å joike?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at joiken ikke er en sang om noen, men noen. Hvorfor gjør denne forskjellen joiken så ulik vanlig musikk der komponisten eier låten?",
+                    "Fornorskingspolitikken varte i over to hundre år. Forklar hvordan skammen kunne føre til at mange joiker gikk tapt for alltid, selv etter at forbudene var borte.",
+                    "Bruk BiasLens-oppgaven i artikkelen. Hvordan kan de samme handlingene bli beskrevet som hedensk trolldom av kirken og som hellig tradisjon av samene? Hva sier det om hvem som forteller historien?",
+                    "Da unge samer tok joiken tilbake på 1970-tallet, brukte de den ikke lenger som religiøs handling, men som symbol på motstand og identitet. Hvorfor kunne joiken bli et så sterkt politisk symbol?"
+                ],
+                "gaaVidere": [
+                    "Finn en joik på Spotify eller YouTube (for eksempel av Mari Boine eller Jon Henrik Fjällgren) og hør på den. Skriv noen setninger om hvordan den låter sammenlignet med musikken du vanligvis hører på.",
+                    "Tenk deg at du skulle laget en joik til en person du kjenner godt, uten ord - bare lyder og klang som fanger hvem de er. Beskriv med egne ord hvilke lyder du ville brukt og hvorfor.",
+                    "Diskuter i klassen: I dag finnes joik på TikTok og Spotify, side om side med pop og rap. Er det bra eller problematisk at en så gammel og hellig tradisjon møter helt nye plattformer? Begrunn hva dere mener."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

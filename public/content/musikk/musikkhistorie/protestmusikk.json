@@ -97,6 +97,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem skrev sangen Strange Fruit, og hva var det han hadde sett som fikk ham til å skrive den?",
+                    "Hva er de tre delene i oppskriften som artikkelen mener at protestsanger har til felles?",
+                    "Hvorfor sang rundt 200 000 mennesker Mitt lille land sammen i Oslo etter 22. juli 2011?",
+                    "Hva mente folkemusikeren Pete Seeger kjennetegner en god protestsang?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at forskjellen mellom et slagord og en protestsang er liten, men viktig. Forklar med egne ord hvorfor en sang kan virke lenger enn et rop.",
+                    "Hvorfor er det så viktig at en protestsang er enkel å lære med korte refrenger og enkle akkorder? Hva ville gått tapt hvis sangen var vanskelig?",
+                    "Artikkelen skriver at musikken treffer hjertet før den treffer hjernen. Hvorfor kan det gjøre en sang mer virkningsfull enn en avisartikkel, og hvorfor kan det også være farlig?",
+                    "Nazistene brukte marsjmusikk til å bygge hat. Forklar hvordan det samme verktøyet kan brukes både til å løfte undertrykte og til å undertrykke andre."
+                ],
+                "gaaVidere": [
+                    "Velg en sang du selv liker som betyr noe for deg. Bruk de tre spørsmålene fra slutten av artikkelen: Hvilken urett peker den på? Hvilket musikalsk grep gjør at den setter seg fast? Hva ber den deg om å gjøre?",
+                    "Artikkelen ber oss lytte til musikk som vi leser en avis: Hvem snakker? Hva ber sangen oss om å føle? Hvem tjener på at vi føler det? Finn en låt du har hørt på radio nylig og svar på disse tre spørsmålene.",
+                    "Diskuter i klassen: Kan en sang forandre verden alene? Bruk eksempler fra artikkelen, som Strange Fruit og Free Nelson Mandela, til å begrunne svaret ditt."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Test deg selv",

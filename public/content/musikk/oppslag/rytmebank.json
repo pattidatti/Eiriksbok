@@ -208,6 +208,29 @@
                     ]
                 }
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor spiller basstromma og hvor spiller skarptromma i en standard rock beat?",
+                    "Hva er det som kjennetegner en four-on-the-floor-rytme, og i hvilken type musikk hører du den ofte?",
+                    "Hva menes med at en hiphop break er synkopert, og hvordan påvirker det følelsen i rytmen?",
+                    "Hva mener teksten når den sier at rytme er fundamentet i all moderne musikk?"
+                ],
+                "reflekter": [
+                    "Forklar forskjellen mellom rock beat og four-on-the-floor. Hvorfor passer den ene bedre til dansemusikk?",
+                    "Hvorfor tror du en rytme føles mer groovy når basstromma ikke lander på de tunge slagene?",
+                    "Rock beaten kalles verdens mest brukte rytme. Hvorfor tror du så mange sanger bruker akkurat denne rytmen?",
+                    "Hi-hat spiller ofte jevne slag i bakgrunnen. Hva gjør den for helheten i rytmen?"
+                ],
+                "gaaVidere": [
+                    "Bruk BeatBuilder-verktøyet og lag din egen rytme. Start med en rock beat og flytt på ett basstromme-slag. Hva skjer med følelsen?",
+                    "Finn en sang du liker og prøv å høre etter om den bruker en av rytmene fra siden. Hvilken kjenner du igjen?",
+                    "Klapp eller tapp de tre rytmene på pulten sammen med en medelev. Hvilken var lettest å holde, og hvorfor?"
+                ]
+            }
         }
     ]
 }

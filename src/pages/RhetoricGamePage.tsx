@@ -15,6 +15,15 @@ export const RhetoricGamePage: React.FC = () => {
     });
 
     const handleLevelComplete = (id: string) => {
+        // «Min læring»: nivå fullført (nøkkelen matcher retro-importen)
+        import('../features/progress/useProgressStore').then(({ useProgressStore }) => {
+            useProgressStore.getState().recordActivity({
+                kind: 'practice-game',
+                activityId: `retorikk/${id}`,
+                subjectId: 'norsk',
+                title: 'Retorikk-spill',
+            });
+        });
         if (!completedLevels.includes(id)) {
             const newCompleted = [...completedLevels, id];
             setCompletedLevels(newCompleted);

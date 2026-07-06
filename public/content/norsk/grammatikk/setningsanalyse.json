@@ -30,6 +30,29 @@
         {
             "type": "text",
             "content": "Objektet er det leddet handlingen retter seg mot eller går ut over. Ikke alle setninger har objekt. Du finner det ved å spørre: 'Hva [verbal] [subjekt]?'. I setningen 'Jeg spiser eplet', er 'spiser' verbal og 'Jeg' subjekt. Da spør vi: 'Hva spiser jeg?'. Svaret er 'eplet', som dermed er objektet."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre setningsledd starter vi med når vi lærer setningsanalyse?",
+                    "Hva forteller verbalet oss, og hvilken ordklasse er verbalet alltid?",
+                    "Hvilket spørsmål bruker du for å finne subjektet i en setning?",
+                    "Har alle setninger et objekt? Forklar hva teksten sier om dette."
+                ],
+                "reflekter": [
+                    "Hvorfor lønner det seg å finne verbalet først, før du leter etter subjekt og objekt?",
+                    "I setningen 'Jeg spiser eplet' er 'Jeg' subjekt og 'eplet' objekt. Forklar forskjellen på hva subjektet gjør og hva objektet gjør.",
+                    "Teksten sier at verbalet er kjernen i setningen. Hva mener den med det, og hvorfor kan ikke subjektet være kjernen i stedet?",
+                    "Hvordan hjelper det å stille spørsmål ('Hva er det som skjer?', 'Hvem er det som løper?') deg med å dele opp en setning?"
+                ],
+                "gaaVidere": [
+                    "Analyser setningen 'Katten fanger musa'. Finn verbal, subjekt og objekt, og skriv hvilket spørsmål du brukte for å finne hvert ledd.",
+                    "Skriv tre egne setninger: en med bare subjekt og verbal, og to med subjekt, verbal og objekt. Marker leddene i hver setning.",
+                    "Sett deg sammen med en klassekamerat og lag fem setninger hver. Bytt setninger og analyser hverandres. Er dere enige om hva som er verbal, subjekt og objekt?"
+                ]
+            }
         }
     ],
     "concepts": [

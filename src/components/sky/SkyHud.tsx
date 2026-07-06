@@ -30,6 +30,19 @@ export const SkyHud: React.FC<SkyHudProps> = ({
     muted,
     onToggleMute,
 }) => {
+    // Teller kun stjerner i fokusert fag når filteret er på
+    const dueCount = focusSubjectId
+        ? world.stars.reduce(
+              (count, star) =>
+                  count +
+                  (star.subjectId === focusSubjectId &&
+                  (star.status === 'flickering' || star.status === 'fading')
+                      ? 1
+                      : 0),
+              0
+          )
+        : world.dueCount;
+
     return (
         <div className="absolute bottom-0 inset-x-0 z-20 p-3 sm:p-4 pointer-events-none">
             <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-2 sm:gap-3">
@@ -73,15 +86,13 @@ export const SkyHud: React.FC<SkyHudProps> = ({
                     </button>
                 </div>
 
-                {world.dueCount > 0 ? (
+                {dueCount > 0 ? (
                     <button
                         onClick={onJumpToDue}
                         className="pointer-events-auto flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-amber-950 font-bold text-sm px-4 py-2.5 rounded-2xl shadow-lg shadow-amber-500/30 transition-all hover:scale-105 active:scale-95"
                     >
                         <Zap className="w-4 h-4 fill-current" />
-                        {world.dueCount === 1
-                            ? '1 stjerne blafrer'
-                            : `${world.dueCount} stjerner blafrer`}
+                        {dueCount === 1 ? '1 stjerne blafrer' : `${dueCount} stjerner blafrer`}
                     </button>
                 ) : (
                     hasDiscoverable && (

@@ -59,6 +59,29 @@
                 "text": "Åpne Rytme-klikkeren",
                 "variant": "primary"
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kaller vi det jevne slaget i musikken, det du tramper når du hører en sang på radioen?",
+                    "Hvor mange slag teller vi til i en 4/4-takt før vi begynner på 1 igjen?",
+                    "I Beat Builderen er takten delt inn i 16 ruter. Hva kalles hver av disse rutene?",
+                    "Hvor mange slag teller vi til i en vals?"
+                ],
+                "reflekter": [
+                    "Teksten sier at musikk uten fast puls føles rotete. Forklar med egne ord hvorfor pulsen er grunnmuren alt annet bygges på.",
+                    "Hva er forskjellen på puls og rytme? Bruk klokke-eksempelet fra teksten til å forklare.",
+                    "En fjerdedelsnote varer fire ruter, mens en åttedelsnote varer to ruter. Forklar hvorfor en hi-hat som spiller åttedeler høres tettere ut enn en stortromme som spiller fjerdedeler.",
+                    "Hvorfor får en vals en mer svingende følelse enn en vanlig popsang, tror du, når den teller til tre i stedet for fire?"
+                ],
+                "gaaVidere": [
+                    "Sett på en sang du liker og prøv å tramp pulsen mens den spiller. Teller du mest naturlig til fire eller til tre? Skriv ned hva du fant ut.",
+                    "Bruk Beat Builderen: legg stortromme på rute 1, 5, 9 og 13, og legg deretter skarptromme på rute 5 og 13. Beskriv hvordan rytmen forandrer seg når du legger til skarptromma.",
+                    "Åpne Rytme-klikkeren og tapp i takt med metronomen. Øv til du får en god skår, og skriv en setning om hva som var vanskeligst med å treffe presist."
+                ]
+            }
         }
     ]
 }

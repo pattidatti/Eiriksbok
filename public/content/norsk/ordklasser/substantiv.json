@@ -112,6 +112,29 @@
                     "Unntak: Et barn -> barnet -> BARN -> barna (korte intetkjønnsord)"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre små ord kan du sette foran et ord for å sjekke om det er et substantiv?",
+                    "Hva er forskjellen på et konkret og et abstrakt substantiv?",
+                    "Hvilke tre kjønn kan et norsk substantiv ha, og hvilken artikkel hører til hvert kjønn?",
+                    "Hva er bøyingsmønsteret artikkelen bruker for de fleste substantiver i entall og flertall?"
+                ],
+                "reflekter": [
+                    "I setningen 'Læreren spiste en stor pizza på skolen' er 'Læreren', 'pizza' og 'skolen' substantiver. Forklar hvorfor 'stor' ikke er et substantiv.",
+                    "Artikkelen sier at kjønnet avgjør hvordan vi bøyer ordet. Hvorfor er det viktig å vite kjønnet før du bøyer et substantiv?",
+                    "Ordet 'barn' bøyes ikke slik som 'gutt' og 'bil'. Hva slags ord er unntak fra hovedmønsteret, og hvordan ser flertallet ut?",
+                    "Substantivet har ofte hovedrollen i setningen. Forklar med egne ord forskjellen på når et substantiv er subjekt og når det er objekt."
+                ],
+                "gaaVidere": [
+                    "Skriv fem setninger. I hver setning skal du bruke minst ett konkret og ett abstrakt substantiv. Stryk under de abstrakte med én farge og de konkrete med en annen.",
+                    "Velg tre substantiver med ulikt kjønn (en, ei, et). Bøy hvert av dem gjennom hele mønsteret: entall ubestemt, entall bestemt, flertall ubestemt og flertall bestemt.",
+                    "Lag tre setninger der det samme substantivet, for eksempel 'eplet', først er subjekt og deretter objekt. Forklar til en medelev hvordan du kan se forskjellen."
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",

@@ -802,6 +802,29 @@
             "text": "Regler for muntlig eksamen (Udir)",
             "url": "https://www.udir.no/eksamen-og-prover/eksamen/muntlig-eksamen/",
             "icon": "external"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor lang forberedelsestid har du, og hva skjer 48 timer, 24 timer og 30 minutter før eksamen?",
+                    "Hva er hovedforskjellen mellom presentasjonen og samtalen, ifølge artikkelen?",
+                    "Hvor mange tekster bør du forberede, og hvorfor bør minst en av dem kunne kobles til en litterær epoke?",
+                    "Hva er forskjellen mellom å beskrive og å analysere en tekst?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at en klar påstand er bedre enn en oppsummering i åpningen. Forklar med egne ord hvorfor en påstand gir presentasjonen mer retning.",
+                    "Velg ett av virkemidlene i artikkelen (metafor, symbol, kontrast, ironi eller synsvinkel) og forklar hvordan det kan påvirke en leser. Bruk et eget eksempel.",
+                    "Hvorfor lønner det seg å ha 2-3 ekstra tekster i baklomma som du ikke bruker i selve presentasjonen?",
+                    "Artikkelen anbefaler stikkord fremfor et fullt manus. Vurder hvorfor stikkord viser sensor mer kompetanse enn å lese opp."
+                ],
+                "gaaVidere": [
+                    "Velg et av temaene i artikkelen (for eksempel «Identitet» eller «Utenforskap») og lag et tankekart med tre tekster du kjenner. Skriv ned en mulig påstand for presentasjonen.",
+                    "Finn en kort tekst du liker og skriv en analyse på fem-seks setninger der du navngir minst ett virkemiddel, siterer teksten og forklarer effekten.",
+                    "Øv sammen med en medelev: den ene holder en kort presentasjon, den andre stiller oppfølgingsspørsmål slik faglærer ville gjort på eksamen."
+                ]
+            }
         }
     ],
     "quiz": [

@@ -174,6 +174,29 @@
             "type": "expandable",
             "title": "Les en komplett modellanalyse av «Faderen»",
             "content": "Novellen Faderen av Bjørnstjerne Bjørnson er en klassisk studie i menneskelig hovmod og den smertelige prosessen det er å nå frem til sann ydmykhet. Historien er preget av en ekstremt stram komposisjon med fire tydelige scener og store tidshopp mellom hver. Denne strukturen setter et skarpt søkelys på Tord Øverås og hans karakteristiske utvikling, snarere enn på livet hans som helhet.\n\nI de tre første delene av novellen møter vi en mann som er fanget i sin egen makt og stolthet. Gjennom in medias res-starten og de korte dialogene, ser vi en mann som ikke ber om råd, men som kommanderer presten. Vendepunktet inntreffer i det stille været på vannet, hvor sønnens død blir den katalysatoren som knuser Tords ytre fasade.\n\nI den siste scenen bruker Bjørnson virkemidlet show, don't tell mesterlig. Beskrivelsen av Tord som foroverbøyd og hvit i håret speiler den indre transformasjonen han har gjennomgått: Sorgen har bøyd ham i støvet og fratatt ham hans hovmodige natur. Når Tord til slutt gir bort halve sin formue til de fattige, er det den ytre handlingen som beviser at han har funnet frem til novellens dype tema: At sann rikdom ikke finnes i gods og gull, men i åndelig forsoning. Bjørnson har her skapt et isfjell hvor de få skrevne ordene bærer en enorm tyngde av universell menneskelig erfaring."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor stor del av isfjellet er synlig over vannet i Hemingways teori, og hva står den delen for i en novelle?",
+                    "Hva betyr uttrykket in medias res, og hvordan starter en novelle som bruker dette grepet?",
+                    "Hvilke fire dager i Tords liv velger Bjørnson å vise oss i Faderen?",
+                    "Hva er forskjellen på motivet og temaet i novellen Faderen, ifølge artikkelen?"
+                ],
+                "reflekter": [
+                    "Hvorfor hopper Bjørnson over nesten hele livet til Tord og bare viser fire dager? Forklar hva tidshoppene avslører om personligheten hans.",
+                    "Artikkelen sier at Tord er høy og alvorlig i starten, men foroverbøyd og hvit i håret på slutten. Hvordan bruker Bjørnson disse beskrivelsene til å vise en indre forandring uten å skrive den rett ut?",
+                    "Hvorfor er det viktig at Tord kommer til presten sent en høstkveld i mørket, i stedet for midt på dagen slik han gjorde før?",
+                    "Hva mener artikkelen med at det å gi bort halve gården er et ytre tegn på en indre renselse? Knytt handlingen til temaet hovmod og fall."
+                ],
+                "gaaVidere": [
+                    "Velg en kort scene fra livet ditt, for eksempel en middag eller en busstur, og skriv den med grepet show, don't tell. Vis en følelse gjennom kroppsspråk og handling uten å nevne følelsen med navn.",
+                    "Les hele novellen Faderen i biblioteket og finn ett tomt rom som artikkelen ikke nevner, altså noe forfatteren lar deg fylle inn selv. Forklar kort hva du tror skjer der.",
+                    "Skriv ett avsnitt av en novelleanalyse om en tekst du selv har lest. Bruk minst tre av fagbegrepene fra artikkelen (isfjell-teorien, in medias res, det tomme rom, show don't tell, vendepunkt eller tema)."
+                ]
+            }
         }
     ],
     "relatedLink": {

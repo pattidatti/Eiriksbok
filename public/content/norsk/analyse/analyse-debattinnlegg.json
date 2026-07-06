@@ -191,6 +191,29 @@
             "type": "expandable",
             "title": "Les analysen av «Ferdighetstyven»",
             "content": "I debattinnlegget «Fordummende intelligent teknologi» går Bjørn Hofmann til verks mot vår ukritiske bruk av kunstig intelligens. Teksten er en advarsel om at vi er i ferd med å ofre vår egen kompetanse på bekvemmelighetens alter.\n\nHofmanns hovedgrep er å etablere en fiende. Dette gjør han gjennom den sentrale metaforen om teknologien som en ferdighetstyv. Ordet er nøye valgt for å vekke ubehag (Patos); det fremstiller teknologien ikke som et dødt verktøy, men som en aktiv aktør som stjeler noe fra oss. Tittelen underbygger dette gjennom paradokset ferdummende intelligent, som effektivt fanger essensen i budskapet: Maskinene blir smartere, men vi blir dummere.\n\nFor å gi tyngde til denne advarselen, lener forfatteren seg på logos-argumentasjon. Han viser til forskning og bruker konkrete eksempler fra legestanden for å sannsynliggjøre at forfallet allerede er i gang. Selv om kildebruken er vag, fungerer den for å gi teksten et vitenskapelig alibi.\n\nTeksten styrkes av at forfatteren bruker imøtegåelse. Han anerkjenner at det kan føles meningsløst å pugge når maskiner kan gjøre jobben. Ved å validere motargumentet bygger han etos; han fremstår som en realistisk og reflektert fagperson. Slik leder han leseren frem til den logiske sluttslutningen: At KI først blir et gode når vi selv har grunnleggende forståelse, men en fare hvis vi bruker den som sovepute."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva heter de tre appellformene som Aristoteles beskrev, og hva handler hver av dem om?",
+                    "Hvem har skrevet debattinnlegget som analyseres, og hva er han bekymret for at kunstig intelligens gjør med oss?",
+                    "Hvilket nyord bruker Hofmann om teknologien, og hvilke to ord er satt sammen for å lage det?",
+                    "Hva menes med imøtegåelse, slik teksten forklarer det?"
+                ],
+                "reflekter": [
+                    "Hvorfor virker ordet ferdighetstyv sterkere på leseren enn en nøytral formulering som teknologi som svekker ferdighetene våre?",
+                    "Hvorfor senker mange lesere garden når de ser ordet forskning, og hvorfor bør du likevel være kritisk til Hofmanns bruk av det?",
+                    "Hvordan kan det å innrømme at KI er nyttig faktisk gjøre Hofmanns eget poeng sterkere i stedet for svakere?",
+                    "Hva er forskjellen på styrken og risikoen ved logos sammenlignet med patos når man skal overbevise noen?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort analyse av ett virkemiddel du finner i et debattinnlegg eller en reklame. Bruk rammen HVA, HVORDAN og HVORFOR, og forklar hvilken effekt grepet har på leseren.",
+                    "Finn et debattinnlegg i en avis og let etter etos, logos og patos. Marker minst ett eksempel på hver, og skriv en setning om hvordan hvert grep prøver å påvirke deg.",
+                    "Diskuter med en medelev: Når blir bruk av patos et ærlig virkemiddel, og når blir det manipulerende? Prøv å bli enige om hvor grensen går."
+                ]
+            }
         }
     ],
     "quiz": [

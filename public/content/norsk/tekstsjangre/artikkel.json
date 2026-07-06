@@ -52,6 +52,29 @@
         {
             "type": "text",
             "content": "Språket i en fagartikkel skal være presist og klart. Bruk gjerne fagbegreper, men forklar dem hvis de er vanskelige. Unngå «jeg-form» med mindre det er helt nødvendig. Bruk heller passive former («Det hevdes at...») eller la saken være subjekt («Forskningen viser...»)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er hovedmålet med en fagartikkel?",
+                    "Hvorfor kalles den klassiske oppbyggingen for fagartikkelen «fisken», og hvilke deler består den av?",
+                    "Hva er forskjellen på en ingress og en innledning i en fagartikkel?",
+                    "Nevn to nettsteder der du kan finne fagartikler, ifølge teksten."
+                ],
+                "reflekter": [
+                    "Teksten sier at forfatteren skal «tre til side og la saken stå i sentrum». Hva betyr det å skrive objektivt, og hvorfor er det viktig i en fagartikkel?",
+                    "Hvorfor gjør god kildebruk en fagartikkel mer troverdig?",
+                    "Hvorfor må en fagartikkel tilpasses målgruppen? Forklar med et eksempel på hvordan en artikkel for eksperter kan se annerledes ut enn en for skoleelever.",
+                    "Hvorfor anbefaler teksten å bruke former som «Forskningen viser...» i stedet for «jeg-form»?"
+                ],
+                "gaaVidere": [
+                    "Skriv en ingress på tre-fire setninger til en fagartikkel om et emne du kan godt. Husk at ingressen skal oppsummere hovedsaken og gjøre leseren nysgjerrig.",
+                    "Finn en tekst i en avis eller på nett, og undersøk om den følger kravene til en fagartikkel. Er den objektiv, bygger den på fakta, og oppgir den kilder? Begrunn svaret ditt.",
+                    "Diskuter med en medelev: Kan en fagartikkel noen gang være helt objektiv, eller vil forfatterens valg av tema og fakta alltid prege teksten litt?"
+                ]
+            }
         }
     ],
     "tags": [

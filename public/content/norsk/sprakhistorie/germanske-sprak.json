@@ -338,6 +338,29 @@
       "content": "Når du lærer engelsk på skolen, har du allerede en hemmelig fordel: morsmålet ditt er i slekt med engelsk. Mange av de enkleste og mest hverdagslige engelske ordene — de du lærte først — er germanske arveord som ligner på norsk. Det er de lange, «vanskelige» engelske ordene som ofte er lånt fra latin og fransk. Å forstå språkfamilier gir deg også et nytt blikk på ditt eget språk. Norsk er ikke bare «norsk» — det er et levende resultat av tusenvis av år med vandring, kontakt og forandring. Hver gang du sier «natt» eller «vann», bruker du ord som forbinder deg med mennesker over hele Europa, helt tilbake til urgermansk tid."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilke fire språk nevner artikkelen som germanske søskenbarn?",
+                "Hva heter det felles opphavet som alle de germanske språkene stammer fra?",
+                "Hva er en kognat, og hva heter ordet for natt på engelsk, tysk og norrønt?",
+                "Hvilke tre hovedgreiner splittet urgermansk seg i, og hvilken av dem er utdødd?"
+            ],
+            "reflekter": [
+                "Norsk er nordgermansk og engelsk er vestgermansk, men de ligner likevel mye på hverandre. Forklar de to grunnene artikkelen gir til dette.",
+                "Hvorfor kan islendinger fortsatt lese sagaer fra 1200-tallet nesten uten hjelp, mens vi som snakker norsk ikke klarer det like lett?",
+                "Den høytyske lydforskyvningen rammet bare de sørlige dialektene. Forklar hvordan dette gjorde at tysk høres mer annerledes ut enn norsk, engelsk og nederlandsk.",
+                "Ord som they, window og knife kom inn i engelsk fra norrønt. Hva forteller dette oss om hvordan vikinger og engelsktalende levde sammen i Danelagen?"
+            ],
+            "gaaVidere": [
+                "Se på kognat-tabellen i artikkelen. Velg tre ord og skriv en kort tekst der du forklarer for en yngre elev hvorfor de like ordene i norsk, engelsk og tysk beviser at språkene er i slekt.",
+                "Artikkelen sier at de enkleste engelske ordene ofte er germanske arveord, mens de lange ordene ofte er lånt fra latin og fransk. Finn tre enkle og tre lange engelske ord, og undersøk om påstanden stemmer.",
+                "Ukedagene og mange stedsnavn kommer fra norrønt. Undersøk hvor du bor eller hvor du kommer fra: finn et stedsnavn i nærheten og prøv å forklare hva det kan bety på norrønt."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

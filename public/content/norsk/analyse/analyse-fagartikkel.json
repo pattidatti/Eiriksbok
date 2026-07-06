@@ -135,6 +135,29 @@
                     "content": "Ibn Fadlans reisebeskrivelse fra år 921 gir oss et unikt, men sterkt farget innblikk i vikingenes liv. Teksten er en hybrid av objektiv rapportering og subjektiv fordømmelse, og analysen krever at vi klarer å skille mellom disse to nivåene.\n\nPå den ene siden opptrer Ibn Fadlan som en presis feltarbeider. Han skildrer vikingenes «fullkomne kropper» med beundring, og gir detaljerte, nøytrale beskrivelser av kvinnenes smykker og draktskikker. Disse observasjonene har høy kildeverdi fordi de virker å være basert på direkte observasjon uten moralsk dom.\n\nMen teksten skifter brått karakter når temaet beveger seg inn på hygiene og moral. Som muslim fra en høykultur, ser Ibn Fadlan ned på vikingenes skikker. Når han beskriver dem som «de skitneste av Guds skapninger» og bruker metaforer som «ville esler», trer han ut av rollen som observatør. Han vurderer det han ser gjennom et strengt religiøst kulturfilter. Hans dom over vikingene sier derfor egentlig mer om hans egne verdier enn om vikingenes faktiske renslighet. Teksten er dermed et klassisk eksempel på etnosentrisk sakprosa, hvor forfatteren bruker sin egen kultur som målestokk for å dømme andre."
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det at en tekst er subjektiv, og hva betyr det at den er objektiv? Gi ett eksempel på hver fra artikkelen.",
+                    "Hvor kom Ibn Fadlan fra, og hvem var det han møtte ved elven Volga?",
+                    "Hva mener vi med etnosentrisme, slik det forklares i teksten?",
+                    "Nevn to ting Ibn Fadlan beskriver nøytralt (som fakta), og to ting han dømmer (som mening)."
+                ],
+                "reflekter": [
+                    "Hvorfor kan vi stole mer på Ibn Fadlan når han beskriver smykkene enn når han kaller vikingene «ville esler»?",
+                    "Artikkelen sier at renslighet for Ibn Fadlan ikke bare var hygiene, men religion. Hvorfor gjorde det at han reagerte så sterkt på vikingenes vask?",
+                    "Hvorfor sier teksten at Ibn Fadlans dom over vikingene egentlig sier mer om ham selv enn om vikingene?",
+                    "Hvordan kan du kjenne igjen forfatterens holdning ved å se på adjektivene i en tekst? Forklar med et eksempel."
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst der du beskriver en person eller et sted to ganger: først som «Reporteren» (bare fakta), så som «Dommeren» (med meninger og følelser).",
+                    "Les hele «Ibn Fadlans Reisebeskrivelse» i biblioteket, og finn tre nye setninger. Sorter hver av dem som fakta eller mening, og forklar valget ditt.",
+                    "Diskuter i par: Finnes det etnosentrisme i tekster vi leser i dag, for eksempel i nyheter eller på sosiale medier? Kom med et eksempel dere har sett."
+                ]
+            }
         }
     ],
     "relatedLink": {

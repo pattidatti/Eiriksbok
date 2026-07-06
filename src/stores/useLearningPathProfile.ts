@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
+import { useProgressStore } from '../features/progress/useProgressStore';
 
 // Profilen lagrer fremdrift for hver V2-sti eleven har påbegynt.
 // localStorage-only i Fase 1; profil-interfacet er bevisst tynt slik at vi
@@ -132,7 +133,17 @@ export const useLearningPathProfile = create<LearningPathProfileState>()(
                     };
                 }),
 
-            completeStep: (pathId, stepId, response, conceptsIntroduced = []) =>
+            completeStep: (pathId, stepId, response, conceptsIntroduced = []) => {
+                // «Min læring»: hvert fullførte steg gir XP (grinding håndteres
+                // av progresjonsstoren via first-time/daglig bonus)
+                if (get().paths[pathId]) {
+                    useProgressStore.getState().recordActivity({
+                        kind: 'path-step-completed',
+                        activityId: `${pathId}/${stepId}`,
+                        score: response.score,
+                        title: 'Steg i læringssti',
+                    });
+                }
                 set((state) => {
                     const path = state.paths[pathId];
                     if (!path) return state;
@@ -157,9 +168,19 @@ export const useLearningPathProfile = create<LearningPathProfileState>()(
                             },
                         },
                     };
-                }),
+                });
+            },
 
-            finishPath: (pathId) =>
+            finishPath: (pathId) => {
+                const existing = get().paths[pathId];
+                if (existing && existing.finishedAt === null) {
+                    useProgressStore.getState().recordActivity({
+                        kind: 'path-completed',
+                        activityId: pathId,
+                        score: get().getMasteryScore(pathId),
+                        title: 'Læringssti fullført',
+                    });
+                }
                 set((state) => {
                     const path = state.paths[pathId];
                     if (!path) return state;
@@ -172,7 +193,8 @@ export const useLearningPathProfile = create<LearningPathProfileState>()(
                             },
                         },
                     };
-                }),
+                });
+            },
 
             resetPath: (pathId) =>
                 set((state) => {

@@ -70,6 +70,18 @@ export const HangmanGame = ({ words, onExit }: HangmanGameProps) => {
                     });
                 });
             });
+            // «Min læring»: bare seier teller som fullført runde
+            if (gameStatus === 'won') {
+                import('../../../features/progress/useProgressStore').then(
+                    ({ useProgressStore }) => {
+                        useProgressStore.getState().recordActivity({
+                            kind: 'practice-game',
+                            activityId: `hengemann/${wordToGuess.toLowerCase()}`,
+                            title: 'Hengemann',
+                        });
+                    }
+                );
+            }
         }
     }, [gameStatus, wordToGuess]);
 

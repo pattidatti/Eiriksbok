@@ -143,6 +143,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen i mening mellom setningene «Spis bestemor!» og «Spis, bestemor!»?",
+                    "Hvilken jobb har punktum, og hva forteller det leseren ifølge teksten?",
+                    "Hvilke anførselstegn bruker vi på norsk, og hvilke hører hjemme i engelsk?",
+                    "Teksten nevner fire situasjoner der du bruker komma i hverdagen. Nevn minst tre av dem."
+                ],
+                "reflekter": [
+                    "Teksten sammenligner tegn med trafikkskilt: punktum er stoppskilt, komma er gult lyssignal. Forklar hvorfor denne sammenligningen passer.",
+                    "Hvorfor må du sette komma når leddsetningen står først («Når klokka ringer, går vi ut»), mens du ofte kan droppe det når leddsetningen kommer sist?",
+                    "Hvorfor kan et punktum på slutten av en kort melding oppleves som irritert, når det egentlig bare er korrekt grammatikk?",
+                    "Teksten sier at tegnsetting er «respekt for leseren». Hva mener forfatteren med det?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort dialog på fem-seks replikker mellom to personer. Bruk vinklede anførselstegn og pass på at spørsmålstegn og utropstegn står inne i anførselen.",
+                    "Finn en tekst du har skrevet selv, og les den høyt. Marker to steder der du naturlig tar en pause, og sjekk om det står et tegn der.",
+                    "Diskuter med en medelev: Er det greit å droppe punktum i raske meldinger, men feil i en søknad til læreren? Bli enige om når reglene gjelder."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Test deg selv",

@@ -488,6 +488,29 @@
             "type": "info",
             "title": "Klar til å skrive historien?",
             "text": "Gå tilbake til [Forfatterens Verksted](/norsk/virkemidler/skapende-skriving-sti) for å finne historien din, eller les [Hvordan lage karakterer](/norsk/skrivehjelp/hvordan-lage-karakterer) for å gjøre skuespillerne dine mer troverdige."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er scenetesten? Skriv ned spørsmålet du skal stille om hver enkelt scene.",
+                    "Hvilken av de fem kameraavstandene brukes oftest på TV, og hva heter den på engelsk?",
+                    "Hva står forkortelsen ADR for, og hva betyr det i praksis når du lager film?",
+                    "Nevn de tre lysfeilene artikkelen advarer mot, og skriv løsningen på hver av dem."
+                ],
+                "reflekter": [
+                    "Artikkelen sier at en scene må drive plottet fremover, avsløre noe om en karakter eller skape stemning. Velg en scene fra en film eller serie du kjenner, og forklar hvilken av de tre jobbene den gjør.",
+                    "Hvorfor gjør et froskeperspektiv (nedenfra og opp) at en karakter ser mektig ut, mens et fugleperspektiv (ovenfra og ned) gjør at hun ser sårbar ut? Forklar hva kamerahøyden gjør med seeren.",
+                    "Artikkelen kaller lyd 'den usynlige halvdelen' og sier at publikum slutter å se ved dårlig lyd, men tolererer dårlig bilde. Hvorfor tror du lyd betyr så mye mer enn folk tror?",
+                    "Se på replikkeksempelet der Emma sier 'Han sendte ikke engang melding til bursdagen min'. Forklar hvorfor denne replikken virker bedre enn å si rett ut at faren dro for tre år siden."
+                ],
+                "gaaVidere": [
+                    "Skriv et scenenotat for en kort scene på tre til fem bilder. For hvert bilde skriver du kort hva vi ser, hvilken kameraavstand du bruker, og hvorfor.",
+                    "Ta én setning med eksponeringsdialog (en replikk som bare forteller seeren noe) og skriv den om til en handling eller en indirekte replikk som viser det samme uten å si det.",
+                    "Diskuter to og to: Dere skal lage en 30 sekunders film om en elev som gruer seg til noe. Bli enige om ett totalbilde, ett nært bilde og ett reaksjonsklipp dere vil bruke, og forklar hva hvert av dem skal få seeren til å føle."
+                ]
+            }
         }
     ]
 }

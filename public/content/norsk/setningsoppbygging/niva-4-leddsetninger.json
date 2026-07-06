@@ -86,6 +86,29 @@
         {
             "type": "text",
             "content": "Du har bestått kurset i setningsoppbygging! Du vet nå forskjellen på Subjekt og Verbal, du kan bygge ut setninger, du kan V2-regelen, og du behersker leddsetninger."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på en helsetning og en leddsetning?",
+                    "Nevn tre ord som en leddsetning ofte starter med.",
+                    "Hvor står ordet 'ikke' i en helsetning, og hvor står det i en leddsetning?",
+                    "I bildet av pute-leken: kaster vi puten foran eller bak verbet i en helsetning?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor setningen '...fordi jeg er sulten' ikke gir mening helt alene.",
+                    "Hvorfor er 'ikke-testen' en smart måte å finne ut om en setning er hel- eller leddsetning?",
+                    "Ta setningen 'Han kommer ikke på festen' og gjør den om til en leddsetning som starter med 'at'. Hva skjer med plasseringen av 'ikke'?",
+                    "Pute-leken sier at vi setter puten foran verbet for å 'dempe' det i en leddsetning. Hva tror du menes med å dempe verbet her?"
+                ],
+                "gaaVidere": [
+                    "Skriv tre egne helsetninger med 'ikke', og gjør deretter hver av dem om til en leddsetning som starter med 'fordi', 'at' eller 'når'. Marker hvor 'ikke' flytter seg.",
+                    "Bytt bok med en medelev. Skriv fem korte setninger hver, der noen er helsetninger og noen er leddsetninger. La den andre gjette hvilke som er hva, og forklare hvordan de kjente det igjen.",
+                    "Finn en tekst du liker, for eksempel fra en sang eller en bok. Let opp tre leddsetninger og skriv opp hvilket ord hver av dem starter med."
+                ]
+            }
         }
     ]
 }

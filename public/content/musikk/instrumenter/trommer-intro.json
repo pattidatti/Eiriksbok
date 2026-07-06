@@ -25,6 +25,29 @@
             "type": "text",
             "title": "Oppgave: Enkel Rocke-beat",
             "content": "Prøv å lage denne rytmen i hodet (eller klapp den):\n\n*   1: Kick + Hi-hat\n*   2: Snare + Hi-hat\n*   3: Kick + Hi-hat\n*   4: Snare + Hi-hat"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre deler av trommesettet er de viktigste ifølge teksten?",
+                    "Hvilken tromme lager den dype BOM-lyden du kjenner i brystet, og på hvilke slag spilles den ofte?",
+                    "Hva kalles den skarpe KAH-lyden, og på hvilke slag spilles den ofte?",
+                    "Hva består hi-haten av, og hva er oppgaven dens i rytmen?"
+                ],
+                "reflekter": [
+                    "Backbeat betyr at skarptrommen slår på slag 2 og 4. Hvorfor tror du en beat føles mer drivende når skarpen ligger imellom stortromme-slagene i stedet for på slag 1 og 3?",
+                    "Hi-haten spiller tikk-tikk-tikk-tikk hele tiden mens stortromme og skarp bytter på. Forklar hvorfor det hjelper deg å holde takten når ett instrument spiller jevnt hele veien.",
+                    "I den enkle rocke-beaten spiller kick og snare aldri alene, men alltid sammen med hi-hat. Hva ville skjedd med lyden og følelsen hvis du fjernet hi-haten helt?",
+                    "Hvorfor tror du nettopp disse tre delene er nok til å bygge en hel rockebeat, selv om et trommesett har mange flere deler?"
+                ],
+                "gaaVidere": [
+                    "Velg en sang du liker. Hør nøye etter og prøv å kjenne igjen stortromme, skarp og hi-hat. Skriv ned på hvilke slag du hører BOM og KAH.",
+                    "Klapp eller bank ut den enkle rocke-beaten fra teksten: kick på slag 1 og 3, snare på slag 2 og 4, hi-hat hele tiden. Bruk to hender og en fot, og øv til du klarer den jevnt.",
+                    "Lag din egen firetakters beat der du flytter skarptrommen til andre slag enn 2 og 4. Beskriv hvordan den nye rytmen føles annerledes enn den vanlige rocke-beaten."
+                ]
+            }
         }
     ]
 }

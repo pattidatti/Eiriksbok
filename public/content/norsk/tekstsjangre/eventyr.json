@@ -59,6 +59,29 @@
             "items": [
                 "[Piken med svovelstikkene](/norsk/bibliotek/piken-med-svovelstikkene) av H.C. Andersen – Et rørende kunsteventyr som skiller seg fra folkeeventyrene ved sin tragiske slutt og sosiale realisme."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet eventyr, og hvilket språk kommer det fra?",
+                    "Hva er forskjellen på et folkeeventyr og et kunsteventyr?",
+                    "Hvem reiste rundt i Norge på 1800-tallet og samlet inn folkeeventyr?",
+                    "Hvilke tall går ofte igjen i eventyr, og hva kaller vi regelen om at ting skjer tre ganger?"
+                ],
+                "reflekter": [
+                    "Hvorfor tror du eventyr følger så faste mønstre, som «Det var en gang...» og tretallsloven? Tenk på at de ble fortalt videre muntlig.",
+                    "I eventyr er personene typer og ikke sammensatte individer. Hvorfor er det lettere å fortelle en historie når figurene bare er gode eller onde?",
+                    "Teksten sier at troll kan være symboler på mørke krefter i naturen eller i menneskesinnet. Forklar hva det betyr at et eventyr kan handle om en dannelsesreise.",
+                    "Kunsteventyr som «Piken med svovelstikkene» ender ikke alltid lykkelig. Hvorfor bryter det med det du forventer av et eventyr?"
+                ],
+                "gaaVidere": [
+                    "Skriv starten på ditt eget eventyr. Bruk minst tre av kjennetegnene fra artikkelen: fast innledning, ubestemt tid og sted, tretallsloven eller en magisk hjelper.",
+                    "Les «Piken med svovelstikkene» i biblioteket. Sammenlign den med et folkeeventyr du kjenner, og pek på minst to ting som er ulike.",
+                    "Diskuter i klassen: Trenger vi fortsatt eventyr i dag, eller er de bare gamle historier? Bruk eksempler fra artikkelen i argumentene dine."
+                ]
+            }
         }
     ],
     "tags": [

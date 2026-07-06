@@ -65,6 +65,29 @@
                 "**Måtesadverb:** Forteller HVORDAN. (Fort, sakte, pent)",
                 "**Gradsadverb:** Forteller HVOR MYE. (Veldig, ganske, litt)"
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre spørsmål kan et adverb svare på?",
+                    "Hvilken ordklasse beskriver adverbet oftest?",
+                    "I setningen 'Han løper fort hjem nå', hvilke tre ord er adverb?",
+                    "Hva sier T-regelen om ord som beskriver måten noe gjøres på?"
+                ],
+                "reflekter": [
+                    "Forklar forskjellen på adjektiv og adverb med egne ord. Hva bestemmer hvilken ordklasse et ord havner i?",
+                    "Hvorfor blir det 'Bilen er fin', men 'Bilen kjører fint'? Forklar hvorfor T-en dukker opp i det ene tilfellet.",
+                    "Teksten kaller adverb for 'krydder i setningen'. Hva mener den med det, og hva skjer med en setning hvis du fjerner alle adverbene?",
+                    "Adverbet 'veldig' er et gradsadverb. Hvorfor passer ikke 'veldig' inn i de samme spørsmålene (når, hvor, hvordan) som de andre adverbene?"
+                ],
+                "gaaVidere": [
+                    "Skriv fire korte setninger, én for hver type adverb i teksten: ett tidsadverb, ett stedsadverb, ett måtesadverb og ett gradsadverb. Strek under adverbet i hver setning.",
+                    "Ta ordet 'rask' og lag to setninger: én der det er adjektiv og beskriver en ting, og én der det blir adverb med T og beskriver en handling.",
+                    "Gå sammen to og to. Den ene sier en handling ('spiser', 'synger', 'går'), den andre legger til et adverb som gjør handlingen tydeligere. Bytt på, og prøv å bruke alle de fire typene adverb."
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",

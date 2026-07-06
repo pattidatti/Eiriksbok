@@ -171,6 +171,29 @@
             "type": "expandable",
             "title": "Les en komplett modellanalyse av «KI-Botox»",
             "content": "I kommentaren «KI er Botox for hjernen» går skribenten til et kraftfullt retorisk angrep på det han anser som en sjelløs teknologiutvikling. Tekstens bærebjelke er en utvidet metafor der språkteknologi sammenlignes med rynkebehandlingen Botox. Dette grepet er svært effektivt fordi det henter negative kulturelle assosiasjoner om det kunstige, giftige og emosjonelt døde, og projiserer disse over på maskinskrevne tekster. Budskapet er krystallklart: KI fjerner språklige rynker (feil), men dreper samtidig tekstens mimikk (sjelen).\n\nFor å styre leserens emosjonelle respons (Patos), benytter forfatteren en gjennomført strategi med pluss- og minusord. Ord som «glatt» og «død» brukes for å skape avstand til teknologien, mens det menneskelige strevet hylles som «tilfredsstillende». Han snur dermed opp-ned på konvensjonelle verdier ved å fremstille feilbarlighet som mer verdifullt enn teknisk perfeksjon. Dette toppes med et slående paradoks: At en tekst kan være «helt riktig, men likevel fullstendig feil». Med dette tankekorset tvinger han leseren til å reflektere over hva kvalitet og menneskelighet egentlig betyr i en digital tidsalder.\n\nAnalysen av teksten viser en skribent som har full kontroll over retorikkens virkemidler. Han bruker ikke statistikk eller logiske bevis (Logos), men bygger sin sak på en kombinasjon av sterke bilder og emosjonell appell. Slik lykkes han i å fremstille bruken av KI ikke som et praktisk verktøy, men som et moralsk og estetisk forfall."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er den viktigste forskjellen på en kommentar og en vanlig nyhetsartikkel ifølge teksten?",
+                    "Hva menes med verdiladde ord, og hva er forskjellen på et plussord og et minusord?",
+                    "Hvilke to ting sammenligner skribenten når han skriver at KI er Botox for hjernen?",
+                    "Hvilke ord bruker forfatteren om KI, og hvilke ord bruker han om det å skrive selv?"
+                ],
+                "reflekter": [
+                    "Hvorfor valgte skribenten å sammenligne KI med Botox i stedet for med en kalkulator eller en assistent?",
+                    "Teksten sier at forfatteren aldri diskuterer om KI faktisk kan være nyttig. Hvorfor er dette et smart retorisk grep fra ham?",
+                    "Forklar paradokset «helt riktig, men likevel fullstendig feil». Hvorfor tvinger en slik selvmotsigelse leseren til å stoppe opp?",
+                    "Hvorfor er det bedre å skrive «skribenten overfører negative assosiasjoner til teknologien» enn å bare skrive «forfatteren bruker en metafor»?"
+                ],
+                "gaaVidere": [
+                    "Velg en sak du bryr deg om, og skriv en kort kommentar på fem-seks setninger der du bruker minst tre plussord for å få saken til å virke god.",
+                    "Finn en ekte kommentar eller et leserinnlegg i en avis. Marker plussordene og minusordene, og skriv en kort forklaring på hvordan de styrer følelsene dine.",
+                    "Diskuter med en medelev: Er det juks å bruke KI når du skriver, eller er det bare et nytt verktøy? Bruk argumenter fra teksten på begge sider."
+                ]
+            }
         }
     ],
     "relatedLink": {
