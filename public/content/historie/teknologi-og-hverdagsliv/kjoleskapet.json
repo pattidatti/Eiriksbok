@@ -59,12 +59,48 @@
         "overweightLabel": "For tungt - kjelleren rommer ikke mer enn 30 kg.",
         "pendingLabel": "Ikke nok ennå - velg mer mat som holder seg.",
         "items": [
-          { "id": "korn", "name": "Korn og mel", "weight": 12, "value": 40, "icon": "🌾" },
-          { "id": "kjott", "name": "Saltet kjøtt", "weight": 10, "value": 35, "icon": "🥩" },
-          { "id": "torrfisk", "name": "Tørrfisk", "weight": 8, "value": 30, "icon": "🐟" },
-          { "id": "erter", "name": "Tørkede erter", "weight": 6, "value": 20, "icon": "🫛" },
-          { "id": "kal", "name": "Syltet kål", "weight": 5, "value": 15, "icon": "🥬" },
-          { "id": "smor", "name": "Saltet smør", "weight": 4, "value": 12, "icon": "🧈" }
+          {
+            "id": "korn",
+            "name": "Korn og mel",
+            "weight": 12,
+            "value": 40,
+            "icon": "🌾"
+          },
+          {
+            "id": "kjott",
+            "name": "Saltet kjøtt",
+            "weight": 10,
+            "value": 35,
+            "icon": "🥩"
+          },
+          {
+            "id": "torrfisk",
+            "name": "Tørrfisk",
+            "weight": 8,
+            "value": 30,
+            "icon": "🐟"
+          },
+          {
+            "id": "erter",
+            "name": "Tørkede erter",
+            "weight": 6,
+            "value": 20,
+            "icon": "🫛"
+          },
+          {
+            "id": "kal",
+            "name": "Syltet kål",
+            "weight": 5,
+            "value": 15,
+            "icon": "🥬"
+          },
+          {
+            "id": "smor",
+            "name": "Saltet smør",
+            "weight": 4,
+            "value": 12,
+            "icon": "🧈"
+          }
         ]
       }
     },
@@ -130,6 +166,13 @@
     {
       "type": "text",
       "content": "Et kjøleskap kan bare surre og gå hvis det får [strøm fra veggen](/historie/teknologi-og-hverdagsliv/elektrisiteten), og rundt 1930 ble kjøleskap trygge og billige nok til å stå i vanlige hjem. Det forandret hverdagen fullstendig. Nå kunne familien kjøpe fersk mat og ta vare på den i flere dager. Melk surnet ikke over natten, og rester kunne spises dagen etter. Folk slapp å handle hver eneste dag, og de slapp den salte vintermaten. Aller viktigst: langt færre ble syke av bedervet mat, fordi kjøleskapet holdt bakteriene i sjakk."
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "kjoleskapet-3d"
+      }
     },
     {
       "type": "component",
