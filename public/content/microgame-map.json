@@ -147,6 +147,10 @@
     "subjectId": "historie",
     "topicId": "jordbruk-og-sivilisasjoner"
   },
+  "himmelens-mandat-3d": {
+    "subjectId": "historie",
+    "topicId": "kinas-historie"
+  },
   "sjoimperiet-3d": {
     "subjectId": "historie",
     "topicId": "kolonialisering"
@@ -324,6 +328,10 @@
     "topicId": "religion"
   },
   "tempelets-renselse-3d": {
+    "subjectId": "krle",
+    "topicId": "religion"
+  },
+  "vend-mot-mekka": {
     "subjectId": "krle",
     "topicId": "religion"
   },
