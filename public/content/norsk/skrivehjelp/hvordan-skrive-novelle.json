@@ -4,7 +4,7 @@
     "subject": "norsk",
     "topic": "skrivehjelp",
     "layout": "rich",
-    "heroImage": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80",
+    "heroImage": "/images/norsk/skrivehjelp/hvordan-skrive-novelle-hero.webp",
     "content": [
         {
             "type": "text",
@@ -46,6 +46,29 @@
             "type": "info",
             "title": "Vil du bli enda bedre?",
             "text": "Sjekk ut vår komplette guide: [Skriv bedre historier](/norsk/skrivehjelp/skriv-bedre-historier) for 10 konkrete tips som løfter teksten din."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en novelle, og hva handler den ofte om ifølge teksten?",
+                    "Hva betyr det å starte in medias res?",
+                    "Hva er et vendepunkt, og hvorfor kaller teksten det ofte klimakset?",
+                    "Hva sier teksten at en åpen slutt kan gjøre med leseren?"
+                ],
+                "reflekter": [
+                    "Teksten bruker eksemplet 'Han smalt døren igjen så hardt at bildene på veggen ristet' i stedet for 'Han var sint'. Forklar hvorfor det ene fungerer bedre enn det andre.",
+                    "Hvorfor tror du en kort fortelling om én avgjørende hendelse kan gjøre sterkere inntrykk enn en lang fortelling om mange hendelser?",
+                    "Hvorfor kan det være lurt å hoppe rett inn i handlingen i stedet for å bruke tid på en lang innledning?",
+                    "Når passer det å bruke en åpen slutt, og når kan det være bedre å gi leseren en tydelig avslutning? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Velg en følelse (redd, glad, sjalu). Skriv én setning som viser følelsen gjennom handling, uten å nevne selve følelsesordet.",
+                    "Skriv de første tre setningene av en novelle som starter in medias res, midt i en spennende hendelse.",
+                    "Skisser en kort novelle: bestem hovedpersonen, den avgjørende hendelsen og vendepunktet. Skriv noen setninger om hvert av de tre punktene."
+                ]
+            }
         }
     ],
     "tags": [

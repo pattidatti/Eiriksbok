@@ -4,7 +4,7 @@
     "subject": "norsk",
     "topic": "skrivehjelp",
     "layout": "rich",
-    "heroImage": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80",
+    "heroImage": "/images/norsk/skrivehjelp/hvordan-skrive-eventyr-hero.webp",
     "content": [
         {
             "type": "text",
@@ -41,6 +41,29 @@
         {
             "type": "text",
             "content": "Det gode vinner alltid over det onde. Og de lever lykkelig alle sine dager."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre ord skal du alltid starte eventyret med?",
+                    "Hvor mange prøvelser må helten gjennom?",
+                    "Hva slags hjelper møter helten ofte, og hva kan hjelperen gi?",
+                    "Hvordan ender et eventyr, ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten sier at de to første prøvelsene kan gå galt før helten lykkes på den tredje. Hvorfor tror du eventyret bygges opp slik i stedet for at helten lykkes med en gang?",
+                    "Askeladden nevnes som et eksempel på en helt. Hva tror du gjør ham til en typisk eventyrhelt?",
+                    "Den magiske hjelperen er ofte en gammel kone eller et dyr. Hvorfor passer det godt at hjelpen kommer fra noen som ser svak eller uviktig ut?",
+                    "I eventyr vinner det gode alltid over det onde. Hva lærer denne faste slutten leseren, tror du?"
+                ],
+                "gaaVidere": [
+                    "Skriv starten på ditt eget eventyr. Bruk 'Det var en gang', introduser en helt og et mål helten vil oppnå.",
+                    "Finn et eventyr du kjenner fra før, for eksempel om Askeladden. Pek ut de tre prøvelsene og den magiske hjelperen i det eventyret.",
+                    "Diskuter med en medelev: Er det kjedelig at det gode alltid vinner, eller gjør det eventyret bedre? Begrunn svaret."
+                ]
+            }
         }
     ],
     "tags": [

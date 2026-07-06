@@ -4,7 +4,7 @@
     "subject": "norsk",
     "topic": "skrivehjelp",
     "layout": "rich",
-    "heroImage": "https://images.unsplash.com/photo-1519791883288-dc8bd696e667?auto=format&fit=crop&q=80",
+    "heroImage": "/images/norsk/skrivehjelp/7-vanlige-plot-hero.webp",
     "content": [
         {
             "type": "text",
@@ -309,6 +309,29 @@
                         "x": 100,
                         "y": 90
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem er forfatteren som mener at alle historier kan kokes ned til syv grunnleggende mønstre, og hva heter boka hans?",
+                    "I plottet Overvinne monsteret, hva er det helten kjemper mot, og hva truer denne onde kraften?",
+                    "Hva er hovedforskjellen mellom plottene Reise og retur og Oppdraget slik teksten forklarer dem?",
+                    "Hva er en fatal svakhet (hubris), og i hvilket av de syv plottene fører den til at helten går under?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Tragedie er det motsatte av Fra fattig til rik. Forklar hvorfor de to plottene er speilbilder av hverandre.",
+                    "Hvorfor tror du helten i Reise og retur ofte kommer hjem klokere enn før? Hva er det ved den fremmede verdenen som forandrer helten?",
+                    "Komedie handler ikke nødvendigvis om noe morsomt, men om forvirring og kaos som løses opp. Hvorfor kan et bryllup eller en fest være en god måte å avslutte et slikt plot på?",
+                    "Se på spenningskurvene i teksten. Hvorfor stiger kurven for Overvinne monsteret helt på slutten, mens kurven for Tragedie faller helt til bunnen?"
+                ],
+                "gaaVidere": [
+                    "Velg en bok eller film du liker godt. Hvilket av de syv plottene passer best, og hvilke deler av handlingen viser at det er nettopp dette plottet?",
+                    "Skriv et kort handlingssammendrag (5-8 setninger) for en egen historie som følger plottet Gjenfødelse. Vis tydelig når helten er fanget i mørket og hva som gjør at hun eller han forandrer seg.",
+                    "Noen historier passer i flere plot samtidig. Diskuter med en medelev om en film dere begge kjenner, og prøv å bli enige om hvilket plot som passer best. Hvor er dere uenige, og hvorfor?"
                 ]
             }
         }

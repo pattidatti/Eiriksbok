@@ -4,7 +4,7 @@
     "subject": "norsk",
     "topic": "skrivehjelp",
     "layout": "rich",
-    "heroImage": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80",
+    "heroImage": "/images/norsk/skrivehjelp/hvordan-skrive-roman-hero.webp",
     "content": [
         {
             "type": "text",
@@ -41,6 +41,29 @@
         {
             "type": "text",
             "content": "Vis handling gjennom dialog og handlinger, ikke bare beskriv hva som skjer."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Teksten sammenligner det å skrive en roman med et maraton, ikke en sprint. Hva mener den med det?",
+                    "Hvilke tre spørsmål foreslår teksten at du svarer på når du lager en disposisjon?",
+                    "Hvor mange ord om dagen bruker teksten som eksempel på et skrivemål?",
+                    "Hva betyr rådet show, don't tell ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten sier at du kan redigere senere, og at det viktigste er å få teksten ned på papiret. Hvorfor kan det hjelpe å skille skriving og redigering i to steg?",
+                    "Hvorfor tror du det hjelper å vite hva karakterene drømmer om og er redde for, før du skriver om dem?",
+                    "Teksten bruker bildet av å ha et kart før du begynner å gå. Hvordan passer dette bildet på det å lage en disposisjon?",
+                    "Hvorfor blir en historie ofte mer levende når du viser handling gjennom dialog i stedet for bare å beskrive hva som skjer?"
+                ],
+                "gaaVidere": [
+                    "Lag en kort disposisjon til din egen roman: skriv ned hvem hovedpersonen er, hva konflikten er, og hvordan det skal ende.",
+                    "Velg en enkel setning som forteller (for eksempel Per var sint) og skriv den om slik at du viser følelsen gjennom handling eller dialog.",
+                    "Sett deg et skrivemål for en uke, for eksempel 500 ord om dagen, og skriv en kort plan for hvordan du skal klare å holde det."
+                ]
+            }
         }
     ],
     "tags": [

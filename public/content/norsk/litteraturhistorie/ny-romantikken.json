@@ -2,7 +2,7 @@
     "id": "ny-romantikken",
     "title": "Nyromantikken: Mystikk, sjel og underbevissthet",
     "ingress": "Pendelen svinger alltid. Etter to tiår der alt skulle handle om samfunnsproblemer, kloakk og fattigdom, sa forfatterne stopp. De ville ikke lenger se utover på elendigheten – de ville se innover i sin egen sjel.",
-    "heroImage": "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=2574&auto=format&fit=crop",
+    "heroImage": "/images/norsk/litteraturhistorie/ny-romantikken-hero.webp",
     "content": [
         {
             "type": "header",
@@ -76,6 +76,29 @@
             "type": "info_box",
             "title": "Hvorfor kaller vi det 'Ny'-romantikk?",
             "content": "Fordi den ligner litt på den gamle romantikken (ca. 1800-1850). Begge periodene er opptatt av følelser, lengsel og natur. Forskjellen er at den gamle romantikken ofte var mer *harmonisk* og religiøs (Gud i naturen). Nyromantikken er mer *psykologisk*, urolig og moderne. Naturen er ikke nødvendigvis god, den er mystisk og kan være skremmende."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to tiår med litteratur reagerte nyromantikerne mot, og hvilken periode kaller vi den?",
+                    "Hvem var de 'fire store' som Knut Hamsun skjelte ut på turné, og hva mente han at de skrev om?",
+                    "Hvilken roman av Hamsun regnes som startskuddet i 1890, og hvem handler den om?",
+                    "Hva gjorde Sigbjørn Obstfelder annerledes med lyrikken, og hva heter hans mest kjente dikt om fremmedfølelse?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at naturen i nyromantikken var 'besjelet'. Forklar hva det betyr, og bruk en mørk skog som eksempel.",
+                    "Hvorfor tror du de unge forfatterne ble så lei av realismens fornuft og vitenskap at de heller ville skrive om 'det ubevisste sjeleliv'?",
+                    "Sammenlign nyromantikken med den gamle romantikken fra rundt 1800. Hvorfor kaller vi den nye perioden for 'ny'-romantikk når de ligner på hverandre?",
+                    "Nyrealismen (1905-1935) beskrives som en blanding. Hva beholdt den fra nyromantikken, og hva hentet den tilbake fra realismen?"
+                ],
+                "gaaVidere": [
+                    "Skriv et kort dikt i 'frie vers' uten rim, slik Obstfelder gjorde, der du beskriver et sted som føles fremmed for deg.",
+                    "Les diktet 'Jeg ser' av Obstfelder høyt sammen med en klassekamerat. Diskuter hvorfor personen i diktet føler seg 'kommet på en feil klode'.",
+                    "Skriv en kort tekst der du beskriver en helt vanlig tur, men lar naturen rundt deg speile følelsene dine slik nyromantikerne gjorde."
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",

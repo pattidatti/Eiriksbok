@@ -4,7 +4,7 @@
     "subject": "norsk",
     "topic": "skrivehjelp",
     "layout": "rich",
-    "heroImage": "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&q=80",
+    "heroImage": "/images/norsk/skrivehjelp/hvordan-skrive-dikt-hero.webp",
     "content": [
         {
             "type": "text",
@@ -121,6 +121,29 @@
             "type": "info_box",
             "title": "Tren på virkemidlene",
             "content": "Vil du bli bedre til å bruke metaforer, sammenligninger og besjeling? Tren i [Virkemiddelverkstedet](/oving/virkemidler)!"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det gylne prinsippet 'Vis det, ikke si det'?",
+                    "Hva er forskjellen på en metafor og en sammenligning slik teksten forklarer det?",
+                    "Hva er besjeling, og hvilket eksempel bruker teksten på det?",
+                    "Hva kalles rimmønsteret der første og andre linje rimer, og tredje og fjerde linje rimer (som i AABB)?"
+                ],
+                "reflekter": [
+                    "Setningen 'Jeg var trist fordi det regnet' ble skrevet om til 'Jeg tegnet streker i duggen på ruten mens himmelen gråt stille'. Forklar hvorfor den andre versjonen gir en sterkere opplevelse.",
+                    "Teksten sier at formen på diktet skal være med på å fortelle historien. Hvorfor kan en rotete, oppstykket form passe bra hvis du skriver om kaos?",
+                    "I det korte diktet 'Du gikk. / Ikke.' står ordet 'Ikke' alene på en linje. Forklar hvordan linjedelingen gir dette ordet ekstra tyngde.",
+                    "Teksten råder deg til å kutte fyllord som 'veldig', 'ganske' og 'liksom' under redigeringen. Hvorfor tror du slike ord ofte svekker et dikt?"
+                ],
+                "gaaVidere": [
+                    "Velg en enkel følelse, for eksempel glede eller ensomhet. Skriv først én setning som bare forteller følelsen, og skriv den så om til noe som viser følelsen gjennom sansene.",
+                    "Skriv et lite dikt på fire linjer med kryssrim (ABAB). La formen passe til stemningen du velger.",
+                    "Følg oppskriften i punkt 4 og lag et dikt fra bunnen: start med idémyldring, velg ut de sterkeste ordene, skriv råtekst, og siseler til slutt. Marker hvilket ord du valgte å la stå alene på en linje."
+                ]
+            }
         }
     ],
     "tags": [

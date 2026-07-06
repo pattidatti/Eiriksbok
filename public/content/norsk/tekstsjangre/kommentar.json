@@ -4,7 +4,7 @@
     "subject": "norsk",
     "topic": "tekstsjangre",
     "layout": "rich",
-    "heroImage": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80",
+    "heroImage": "/images/norsk/tekstsjangre/kommentar-hero.webp",
     "content": [
         {
             "type": "text",
@@ -53,6 +53,29 @@
             "type": "link",
             "url": "/norsk/bibliotek/fordummende-intelligent-teknologi",
             "text": "Fordummende intelligent teknologi"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er hovedmålet med en kommentar, ifølge teksten?",
+                    "Hva er den viktigste forskjellen mellom en kommentar og en nyhetsartikkel?",
+                    "Nevn tre av kjennetegnene på en kommentar som teksten lister opp.",
+                    "Hvilke fire deler består oppbyggingen av en kommentar av?"
+                ],
+                "reflekter": [
+                    "Teksten sier at en kommentar skal være kunnskapsbasert. Hvorfor er det ikke nok å bare skrive løse påstander?",
+                    "Hva menes med at kommentaren forklarer hvorfor noe skjer, og ikke bare hva som har skjedd? Gi et eksempel.",
+                    "Hvorfor tror du en kommentar ofte tar utgangspunkt i en aktuell nyhetssak eller pågående debatt?",
+                    "Hva er poenget med at avslutningen gjerne skal ha et blikk fremover?"
+                ],
+                "gaaVidere": [
+                    "Velg en sak du er opptatt av, og skriv en kort ingress til en kommentar. Den skal oppsummere saken og hovedpoenget ditt på noen få setninger.",
+                    "Les kommentaren Fordummende intelligent teknologi som teksten lenker til. Finn ett sted der skribenten viser en tydelig personlig stemme, og forklar hva som gjør stemmen tydelig.",
+                    "Diskuter i klassen: Er det en fordel eller en ulempe at en kommentar er subjektiv? Kom med argumenter for begge sider."
+                ]
+            }
         }
     ],
     "tags": [

@@ -2,7 +2,7 @@
     "id": "ny-realismen",
     "title": "Nyrealismen: Etikk og historie",
     "ingress": "På begynnelsen av 1900-tallet vendte forfatterne tilbake til virkelighetsskildring, men nå med dypere psykologisk innsikt og ofte med historiske motiver.",
-    "heroImage": "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80",
+    "heroImage": "/images/norsk/litteraturhistorie/ny-realismen-hero.webp",
     "content": [
         {
             "type": "text",
@@ -32,6 +32,29 @@
                 "**Olav Duun:** Han skrev på nynorsk (jølster-dialekt) og er kjent for verket *Juvikfolke* (seks bind). Det handler om en slekt gjennom flere generasjoner og kampen mellom det gode og det onde i menneskesinnet.",
                 "**Johan Falkberget:** Han skrev om gruvearbeiderne på Røros. I verket *Den fjerde nattevakt* og serien om *Christianus Sextus* skildret han hardt arbeid, fattigdom, men også samhold og kristen nestekjærlighet."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Omtrent hvilket år begynte nyrealismen, og hva skjedde med Norge samme år?",
+                    "Hvilke grupper av vanlige folk skrev nyrealistene ofte om?",
+                    "Hva er hjemstavnsdiktning, og nevn to områder som teksten trekker fram som eksempel?",
+                    "Hvem av forfatterne fikk Nobelprisen i litteratur, og hva heter hovedverket hennes?"
+                ],
+                "reflekter": [
+                    "Teksten sier at nyrealistene tok med seg lærdommen fra nyromantikken om at mennesker er kompliserte. Hvordan skiller dette nyrealismen fra den eldre realismen som mest handlet om samfunnsproblemer?",
+                    "Kristin Lavransdatter foregår på 1300-tallet, men handler om tidløse temaer. Hvorfor kunne det være nyttig for forfattere å skrive om fortiden for å forstå sin egen tid?",
+                    "Både Olav Duun og Sigrid Undset skrev store verk om en slekt gjennom flere generasjoner. Hvorfor tror du forholdet mellom slekt og individ var så viktig for nyrealistene?",
+                    "Johan Falkberget skildret både hardt arbeid og fattigdom, men også samhold og nestekjærlighet. Hva forteller denne blandingen oss om hvordan nyrealistene så på vanlige menneskers liv?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst på rundt en halv side der du følger en person i din egen slekt gjennom et viktig valg. Prøv å få fram et etisk dilemma, slik nyrealistene gjorde.",
+                    "Finn et kort utdrag fra Kristin Lavransdatter eller et annet nyrealistisk verk, les det, og skriv tre setninger om hvilket tidløst tema du kjenner igjen.",
+                    "Diskuter i par: Hvis en nyrealist skulle skrive om ditt hjemsted i dag, hvilke mennesker og hvilke etiske valg ville forfatteren trukket fram?"
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",

@@ -2,7 +2,7 @@
     "id": "realismen",
     "title": "Realismen: Sannheten skal frem",
     "ingress": "Realismen er en av de mest spennende og viktige periodene i norsk historie. Den varte fra ca. 1870 til 1890.",
-    "heroImage": "https://images.unsplash.com/photo-1712687948350-9906073eb5f7?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=600",
+    "heroImage": "/images/norsk/litteraturhistorie/realismen-hero.webp",
     "content": [
         {
             "type": "text",
@@ -79,6 +79,29 @@
         {
             "type": "text",
             "content": "Realismen tok slutt rundt 1890. Da ble folk litt lei av å lese om problemer, kloakk og fattigdom hele tiden. De ville heller lese om mystikk, drømmer og det uforklarlige (nyromantikken).\n\nMen perioden var likevel utrolig viktig for Norge. Forfatterne i realismen lærte oss at litteratur kan være et kraftig våpen. Ved å skrive om det som er galt, kan man faktisk få politikere til å endre lover og vanlige folk til å endre meninger. Realismen viste oss at sannheten er viktig, selv om den kan gjøre vondt, og at vi alltid må tørre å stille spørsmål ved makten."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilke år varte realismen, og hva het perioden som kom rett før den?",
+                    "Hvem var Georg Brandes, og hvilken kjent setning brukte han om hva litteraturen skulle gjøre?",
+                    "Hva handler Henrik Ibsens stykke Et dukkehjem om, og hva er det Nora gjør på slutten?",
+                    "Hva mente naturalistene, som Amalie Skram, bestemte menneskets skjebne?"
+                ],
+                "reflekter": [
+                    "Forfatterne kalte seg nesten som leger for samfunnet. Forklar hva de mente med at de skulle finne samfunnets sykdommer og gi den usminkede sannheten som medisin.",
+                    "Hvorfor irriterte forfatterne seg så mye over dobbeltmoralen hos borgerskapet? Bruk eksempler fra teksten om hva som skjedde bak de lukkede dørene.",
+                    "I En folkefiende blir Dr. Stockmann motarbeidet selv om han forteller sannheten. Hvorfor blir byen rasende på ham, og hva prøver Ibsen å vise med dette?",
+                    "Hva er forskjellen på hvordan realistene og naturalistene tenkte om muligheten til å forandre livet sitt?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst i kikkhullsperspektiv der du beskriver en helt vanlig situasjon i et hjem, men lar leseren ane at det skjuler seg en hemmelighet bak fasaden.",
+                    "Velg en av de fire kjente forfatterne (Ibsen, Bjørnson, Kielland eller Lie) og finn ut mer om en av bøkene eller stykkene hans. Skriv fem setninger om hva den handler om og hvilket problem den setter under debatt.",
+                    "Diskuter i klassen: Kan bøker, filmer eller sanger fortsatt være et våpen som forandrer samfunnet i dag? Finn et eksempel dere mener beviser det."
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",
