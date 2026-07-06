@@ -5,7 +5,7 @@
     "year": "1200 fvt",
     "category": "Samfunn",
     "readTime": "10 min lesing",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps-hero.webp",
     "details": [
         "Rundt 1200 fvt forsvant nesten alle de store rikene rundt Middelhavet på bare femti år",
         "Verden var bundet sammen av handel - og nettopp derfor falt den samlet",
@@ -27,7 +27,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps-01.webp",
             "alt": "En brennende palassby ved havet i skumringen",
             "caption": "Rundt 1200 fvt ble den ene mektige byen etter den andre brent og forlatt."
         },
@@ -75,7 +75,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps-02.webp",
             "alt": "Fremmede krigsskip nærmer seg en kystby",
             "caption": "Egyptiske kilder forteller om «havfolkene» som kom over havet og angrep by etter by."
         },
@@ -109,13 +109,36 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps-03.webp",
             "alt": "En smed som hamrer et glødende jernstykke i soloppgang",
             "caption": "Ut av kollapsen vokste jernalderen: jern fantes nesten overalt og trengte ingen lang handelsrute."
         },
         {
             "type": "text",
             "content": "Bronsealderens kollaps er mer enn en gammel historie. Den viser oss noe viktig om hvordan verden henger sammen. Et tett nettverk av handel gjør alle rikere og sterkere, men det gjør dem også sårbare. Når noe rammer ett sted, kan det spre seg til alle. Vår egen verden er knyttet sammen tettere enn noen gang, med varer, penger og data som flyter på tvers av landegrenser. Nettopp derfor er det verdt å huske hva som skjedde for over tre tusen år siden, da den første globaliserte verdenen brøt sammen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er bronse laget av, og hvilke to metaller trengs for å lage det?",
+                    "Hvorfor måtte tinnet fraktes svært langt før det kunne bli til bronse?",
+                    "Hvem var «havfolkene», og hva forteller egyptiske kilder om dem?",
+                    "Nevn minst tre ting som kan ha vært med på å utløse kollapsen."
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor kollapsen spredte seg som en dominoeffekt fra by til by.",
+                    "Hvorfor klarte Egypt seg bedre enn de små palassrikene? Hva hadde Egypt som de andre manglet?",
+                    "Etter kollapsen tok jernet over for bronsen. Hvorfor var jern tryggere å satse på når handelsrutene var brutt?",
+                    "Var det tette handelsnettet en styrke eller en svakhet for bronsealderens riker? Argumenter for begge sider."
+                ],
+                "gaaVidere": [
+                    "Finn et produkt du bruker i hverdagen som er avhengig av ett sjeldent råstoff fra ett bestemt land. Hva ville skjedd hvis den leveransen stoppet?",
+                    "Skriv en kort tekst (5-8 setninger) der du sammenligner bronsealderens handelsnett med dagens globaliserte verden. Er vi mer eller mindre sårbare i dag?",
+                    "Diskuter med en partner: Hva kan et samfunn gjøre for å bli mindre sårbart uten å gi opp fordelene ved handel?"
+                ]
+            }
         },
         {
             "type": "component",

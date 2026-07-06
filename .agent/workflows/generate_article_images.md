@@ -24,39 +24,10 @@ Disse reglene overstyrer alt annet. De gjelder uten unntak, uansett feilsituasjo
 
 ## Steg 1: Skann etter artikler som mangler bilder
 
-**Kjør alltid begge fasene og behandle resultatene i denne rekkefølgen: Fase B først, deretter Fase A.** Brutte referanser er mer kritiske — de vises som ødelagte bilder i appen — mens plassholdere bare er generiske. Behandler du Fase A først risikerer du å bruke opp kvoten uten å fikse de synlig ødelagte bildene.
-
-### Fase B: Brutte bildereferanser (ekte sti i JSON, men fil mangler på disk) — KJØres FØRST
+**Kjør alltid begge fasene og behandle resultatene i denne rekkefølgen: Fase B først, deretter Fase A.** Brutte referanser er mer kritiske — de vises som ødelagte bilder i appen — mens plassholdere bare er generiske. Behandler du Fase A først risikerer du å bruke opp kvoten uten å fikse de### Fase B: Brutte bildereferanser (ekte sti i JSON, men fil mangler på disk) — KJØres FØRST
 
 ```bash
-python3 -c "
-import os, json, glob
-
-broken = {}
-for f in sorted(glob.glob('public/content/**/*.json', recursive=True)):
-    try:
-        data = json.load(open(f))
-    except:
-        continue
-
-    def find_images(obj, paths=[]):
-        if isinstance(obj, str) and obj.startswith('/images/') and 'placeholder' not in obj:
-            paths.append(obj)
-        elif isinstance(obj, dict):
-            for v in obj.values(): find_images(v, paths)
-        elif isinstance(obj, list):
-            for item in obj: find_images(item, paths)
-        return paths
-
-    paths = find_images(data, [])
-    missing = [p for p in set(paths) if not os.path.exists('public' + p)]
-    if missing:
-        broken[f] = missing
-
-for f, imgs in sorted(broken.items()):
-    print(f)
-    for img in imgs: print('  ', img)
-"
+node scripts/scan-missing-images.js
 ```
 
 Merk: skriptet scanner **alle** JSON-filer, inkludert scenarier og andre filer uten `content`-array. Dette er bevisst — scenarier kan også ha manglende bildereferanser.
@@ -127,7 +98,7 @@ Samme struktur, men motiv er hentet fra konteksten rundt bildeplasseringen i art
 
 ### Regler for gode prompts:
 
-- Aldri generiske fraser som "ancient times" eller "long ago" - alltid spesifikt tidsrom
+- Aldri generiske fraser som "ancient times" or "long ago" - alltid spesifikt tidsrom
 - Aldri "an AI image of..." - beskriv motivet direkte
 - Spesifiser alltid et konkret motiv (person, scene, gjenstand) - ikke abstrakt konsept
 - Unngå tekst og symboler i bildet med "No text, no watermarks, no anachronisms"
@@ -137,7 +108,7 @@ Samme struktur, men motiv er hentet fra konteksten rundt bildeplasseringen i art
 
 ## Steg 5: Generer bilder med Gemini — ett om gangen
 
-**Viktig: behandle bildene ett for ett, ikke i en batch.** Etter hvert enkelt bilde: sjekk om Gemini returnerte feil. Fikk du 429 — stopp umiddelbart (se Kvotehåndtering under). Fikk du et annet kall-feil — logg det, hopp til neste bilde og fortsett.
+**Viktig: behandle bildene ett for ett, ikke i en batch.** Etter hvert enkelt bilde: sjekk om Gemini returnerte feil. Fikk du 429 — stopp umiddelbart (se Kvotehåndtering under). Fikk du et annet kall-feil — logg det, hopp to neste bilde og fortsett.
 
 Filnavngivning:
 - Hero-bilde: `public/images/[topic]/[lesson-id]-hero.webp`
@@ -149,7 +120,11 @@ Eksempel for artikkelen `public/content/historie/vikingtiden/rikssamlingen.json`
 - `public/images/vikingtiden/rikssamlingen-hero.webp`
 - `public/images/vikingtiden/rikssamlingen-01.webp`
 
-Lagre genererte bilder i riktig WebP-format, maks 1600px bredde for inline, 1600px for hero.
+Lagre og optimaliser genererte bilder ved å bruke det dedikerte prosesseringsskriptet:
+```bash
+node scripts/process-generated-image.js /sti/til/generert/bilde.jpg public/images/[topic]/[lesson-id]-hero.webp
+```
+Dette skriptet konverterer automatisk til WebP, endrer bredden (1600px standard, 2560px for kart), og lagrer filen på rett sted. Siden kommandoen alltid har samme struktur (`node scripts/process-generated-image.js`), slipper du å godkjenne en ny unik kommando per bilde!
 
 ### Kvalitetskontroll etter hvert bilde
 

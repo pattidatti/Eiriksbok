@@ -4,7 +4,7 @@
     "layout": "rich",
     "category": "Samfunn",
     "readTime": "9 min lesing",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller-hero.webp",
     "details": [
         "Hvorfor virker et rike evig - helt til det plutselig forsvinner?",
         "Ingen imperier faller av én grunn. Kollaps er alltid flere krefter på én gang.",
@@ -26,7 +26,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller-01.webp",
             "alt": "Forfalne søyler fra et gammelt imperium i solnedgang",
             "caption": "Ruinene av en gang mektige riker finnes over hele verden."
         },
@@ -75,7 +75,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller-02.webp",
             "alt": "Barbarer strømmer inn gjennom en åpen byport",
             "caption": "Når riket er svekket innenfra, blir presset utenfra plutselig dødelig."
         },
@@ -105,7 +105,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller-03.webp",
             "alt": "En sprukket kuppel som holdes oppe av noen få søyler",
             "caption": "Riket bæres av flere søyler samtidig. Faller for mange, raser hele bygget."
         },
