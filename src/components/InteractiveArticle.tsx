@@ -286,7 +286,7 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, f
             </div>
 
             {/* Header Section */}
-            <div className="pt-4 pb-4 md:pt-8 md:pb-6 px-3 sm:px-4 md:px-6 max-w-5xl mx-auto text-center">
+            <div className="pt-4 pb-4 md:pt-8 md:pb-6 px-2 sm:px-4 md:px-6 max-w-5xl mx-auto text-center">
                 <div>
                     {/* Mobile-Only Meta Row */}
                     <div className="md:hidden flex flex-wrap justify-center items-center gap-3 text-xs font-bold text-slate-500 mb-3">
@@ -333,7 +333,7 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, f
 
             {/* Hero Image Banner */}
             {event.layout !== 'tool' && (
-                <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 mb-8 md:mb-12">
+                <div className="max-w-6xl mx-auto px-2 sm:px-4 md:px-6 mb-8 md:mb-12">
                     <div className="w-full h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl">
                         <ImageWithFallback
                             src={event.heroImage}
@@ -346,8 +346,8 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, f
             )}
 
             {/* Main Content Container */}
-            <div className={`${(event.layout === 'tool' || event.layout === 'learning-path' || event.layout === 'learning-path-v2') ? 'w-full' : 'max-w-6xl mx-auto px-3 sm:px-4 md:px-6'}`}>
-                <div className={`${(event.layout === 'tool' || event.layout === 'learning-path' || event.layout === 'learning-path-v2') ? 'w-full' : 'bg-white rounded-3xl p-4 sm:p-5 md:p-10'}`}>
+            <div className={`${(event.layout === 'tool' || event.layout === 'learning-path' || event.layout === 'learning-path-v2') ? 'w-full' : 'max-w-6xl mx-auto px-2 sm:px-4 md:px-6'}`}>
+                <div className={`${(event.layout === 'tool' || event.layout === 'learning-path' || event.layout === 'learning-path-v2') ? 'w-full' : 'bg-white rounded-3xl p-3 sm:p-5 md:p-10'}`}>
                     {event.layout === 'learning-path-v2' && event.learningPathV2Data ? (
                         <LearningPathV2 data={event.learningPathV2Data} />
                     ) : event.layout === 'learning-path' && event.learningPathData ? (
