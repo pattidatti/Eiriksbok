@@ -3,22 +3,18 @@
 // og synk-kode. All data kommer fra progresjonsstoren + manifestet.
 
 import { useEffect, useMemo, useState } from 'react';
-import { useManifest } from '../hooks/useManifest';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { useProgressStore, buildMetrics, isStreakAlive } from '../features/progress/useProgressStore';
 import { streakMultiplier } from '../features/progress/streak';
 import { useReviewStore } from '../stores/useReviewStore';
 import { useLearningPathProfile } from '../stores/useLearningPathProfile';
-import { computeMastery } from '../features/progress/mastery';
 import { generateDailyGoals, goalProgress, pickBonusGoalId } from '../features/progress/goals';
 import {
-    buildRecommendations,
     buildWelcomeRecommendations,
     findPathTool,
     findNextArticle,
 } from '../features/progress/recommendations/engine';
-import { loadDetectiveCatalog } from '../features/progress/recommendations/catalog';
-import type { DetectiveCatalogEntry } from '../features/progress/recommendations/catalog';
+import { useRecommendations } from '../features/progress/useRecommendations';
 import { getAvatar } from '../features/progress/avatars';
 import { todayLocal } from '../utils/reviewScheduler';
 import { HeroCard } from '../features/progress/components/HeroCard';
@@ -34,7 +30,7 @@ export const MyLearningPage = () => {
     usePageTitle('Min læring', true);
     const today = todayLocal();
 
-    const { data: manifest } = useManifest();
+    const { manifest, mastery, recommendations } = useRecommendations();
     const profile = useProgressStore((s) => s.profile);
     const totalXp = useProgressStore((s) => s.totalXp);
     const streak = useProgressStore((s) => s.streak);
@@ -43,7 +39,6 @@ export const MyLearningPage = () => {
     const dayLog = useProgressStore((s) => s.dayLog);
     const events = useProgressStore((s) => s.events);
     const firstCompletions = useProgressStore((s) => s.firstCompletions);
-    const bestScores = useProgressStore((s) => s.bestScores);
     const goals = useProgressStore((s) => s.goals);
     const setDailyGoals = useProgressStore((s) => s.setDailyGoals);
     const setBonusGoalId = useProgressStore((s) => s.setBonusGoalId);
@@ -60,41 +55,10 @@ export const MyLearningPage = () => {
 
     const [profileOpen, setProfileOpen] = useState(false);
 
-    // Detektivsaker enumereres fra sitt eget manifest (async, lettvekts).
-    const [detectiveCases, setDetectiveCases] = useState<DetectiveCatalogEntry[]>([]);
-    useEffect(() => {
-        let alive = true;
-        loadDetectiveCatalog().then((cases) => {
-            if (alive) setDetectiveCases(cases);
-        });
-        return () => {
-            alive = false;
-        };
-    }, []);
-
-    const mastery = useMemo(
-        () => (manifest ? computeMastery(manifest, firstCompletions, bestScores, events) : []),
-        [manifest, firstCompletions, bestScores, events]
-    );
-
     const metrics = useMemo(
         () => buildMetrics({ counters, totalXp, streak, dayLog }),
         [counters, totalXp, streak, dayLog]
     );
-
-    // Anbefalinger på tvers av alle innholdstyper - rangert og variert.
-    const recommendations = useMemo(() => {
-        if (!manifest) return [];
-        return buildRecommendations({
-            manifest,
-            mastery,
-            firstCompletions,
-            events,
-            paths,
-            dueCount,
-            detectiveCases,
-        });
-    }, [manifest, mastery, firstCompletions, events, paths, dueCount, detectiveCases]);
 
     // Helt ny elev: heroen bytter til velkomstvariant med fagvalg.
     const isNewStudent = totalXp === 0 && Object.keys(firstCompletions).length === 0;

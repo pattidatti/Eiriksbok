@@ -9,9 +9,10 @@ import { useManifestData } from '../hooks/useManifestData';
 import { PageSkeleton } from '../components/Skeleton';
 import { getSubjectUrl, getLessonUrl, ROUTES } from '../utils/routes';
 import { DailyReviewCard } from '../components/review/DailyReviewCard';
+import { HomeLearningModule } from '../features/progress/components/HomeLearningModule';
 
 export const LandingPage: React.FC = () => {
-    const { manifest, recentLessons, historyLessons, isLoading } = useManifestData();
+    const { manifest, recentLessons, isLoading } = useManifestData();
     usePageTitle('Eiriks lærebok', true);
 
     if (isLoading || !manifest) return <PageSkeleton />;
@@ -45,39 +46,8 @@ export const LandingPage: React.FC = () => {
 
                 <DailyReviewCard variant="compact" />
 
-                {/* Recently Viewed Section */}
-                {historyLessons.length > 0 && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="mb-12"
-                    >
-                        <div className="flex items-center justify-between mb-6">
-                            <h3 className="text-xl font-display font-bold text-text-main">
-                                Nylig lest
-                            </h3>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                            {historyLessons.map((lesson, index) => (
-                                <motion.div
-                                    key={`history-${lesson.id}`}
-                                    className="h-full"
-                                    {...motionPresets.slideUp}
-                                    transition={{ delay: index * 0.05 }}
-                                >
-                                    <LessonCard
-                                        lesson={lesson}
-                                        path={getLessonUrl(lesson.subjectId, lesson.topicId, lesson.id, lesson.subTopicId)}
-                                        topicTitle={lesson.topicTitle}
-                                        badgeText="Fortsett"
-                                    />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
+                {/* Min læring: streak, mål og neste steg fra anbefalingsmotoren */}
+                <HomeLearningModule />
 
                 {recentLessons.length > 0 && (
                     <motion.div
