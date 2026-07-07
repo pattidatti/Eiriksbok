@@ -27,6 +27,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: write   # for å kunne dispatche deploy-workflowen etter en merge
 
 concurrency:
   group: auto-merge-bot-prs
@@ -63,6 +64,8 @@ jobs:
             echo "Ingen kandidat-PR-er."
             exit 0
           fi
+
+          MERGED_ANY=0
 
           for PR in $PRS; do
             echo "::group::PR #$PR"
@@ -109,8 +112,17 @@ jobs:
 
             if [ -n "$SHA" ]; then
               echo "PR #$PR merget: $SHA"
+              MERGED_ANY=1
             else
               echo "::warning::PR #$PR ble ikke merget (mergeable=$MERGEABLE) - manuell sjekk anbefalt"
             fi
             echo "::endgroup::"
           done
+
+          # En merge utført med GITHUB_TOKEN trigger IKKE `on: push`-deployen
+          # (GitHub hindrer rekursive workflow-kjøringer). Derfor dispatcher vi
+          # deploy-workflowen eksplisitt når minst én PR faktisk ble merget.
+          if [ "$MERGED_ANY" = "1" ]; then
+            echo "Minst én PR merget - trigger deploy av main."
+            gh workflow run deploy.yml --repo "$REPO" --ref main
+          fi

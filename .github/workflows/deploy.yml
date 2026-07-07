@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  # Manuell/programmatisk trigger. Auto-merge-workflowen kaller denne via
+  # `gh workflow run deploy.yml` etter en bot-PR-merge, fordi en merge gjort med
+  # GITHUB_TOKEN ikke trigger `on: push` (GitHub hindrer rekursive workflow-kjøringer).
+  workflow_dispatch: {}
 
 permissions:
   contents: read
