@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Reorder } from 'framer-motion';
+import { Reorder, motion } from 'framer-motion';
 import { GripVertical, CheckCircle2, XCircle, RotateCcw } from 'lucide-react';
+import { correctPop, wrongShake, celebrateCompletion } from '../../ui/answerFeedback';
 
 interface TimelineEvent {
     id: string;
@@ -24,6 +25,7 @@ export const DragDropTimeline: React.FC<DragDropTimelineProps> = ({ events, titl
             return item.year >= items[index - 1].year;
         });
         setStatus(isCorrect ? 'success' : 'failure');
+        if (isCorrect) celebrateCompletion();
     };
 
     const reset = () => {
@@ -42,7 +44,12 @@ export const DragDropTimeline: React.FC<DragDropTimelineProps> = ({ events, titl
 
             <Reorder.Group axis="y" values={items} onReorder={setItems} className="space-y-3 mb-6">
                 {items.map((item) => (
-                    <Reorder.Item key={item.id} value={item} className="bg-white">
+                    <Reorder.Item
+                        key={item.id}
+                        value={item}
+                        className="bg-white"
+                        animate={status === 'success' ? correctPop : status === 'failure' ? wrongShake : undefined}
+                    >
                         <div className={`
                             flex items-center gap-4 p-4 rounded-lg border-2 cursor-grab active:cursor-grabbing transition-colors
                             ${status === 'success' ? 'border-emerald-200 bg-emerald-50' :
@@ -64,15 +71,24 @@ export const DragDropTimeline: React.FC<DragDropTimelineProps> = ({ events, titl
 
             <div className="flex justify-between items-center">
                 {status === 'success' ? (
-                    <div className="flex items-center gap-2 text-emerald-600 font-bold animate-pulse">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.7 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 18 }}
+                        className="flex items-center gap-2 text-emerald-600 font-bold"
+                    >
                         <CheckCircle2 className="w-5 h-5" />
                         Riktig rekkefølge!
-                    </div>
+                    </motion.div>
                 ) : status === 'failure' ? (
-                    <div className="flex items-center gap-2 text-rose-600 font-bold">
+                    <motion.div
+                        initial={{ opacity: 0, x: -8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        className="flex items-center gap-2 text-rose-600 font-bold"
+                    >
                         <XCircle className="w-5 h-5" />
                         Prøv igjen..
-                    </div>
+                    </motion.div>
                 ) : (
                     <div />
                 )}
@@ -81,7 +97,7 @@ export const DragDropTimeline: React.FC<DragDropTimelineProps> = ({ events, titl
                     {status !== 'idle' && (
                         <button
                             onClick={reset}
-                            className="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors flex items-center gap-2 font-bold text-sm"
+                            className="pressable focus-ring px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors flex items-center gap-2 font-bold text-sm"
                         >
                             <RotateCcw className="w-4 h-4" />
                             Nullstill
@@ -90,7 +106,7 @@ export const DragDropTimeline: React.FC<DragDropTimelineProps> = ({ events, titl
                     <button
                         onClick={checkOrder}
                         disabled={status === 'success'}
-                        className="px-6 py-2 bg-indigo-600 text-white rounded-lg font-bold hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="pressable focus-ring px-6 py-2 bg-indigo-600 text-white rounded-lg font-bold hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         Sjekk svar
                     </button>
