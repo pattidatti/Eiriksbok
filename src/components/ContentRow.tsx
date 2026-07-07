@@ -41,7 +41,7 @@ export const ContentRow: React.FC<ContentRowProps> = ({ title, titleLink, childr
         <div className="content-row mb-6">
             <h2 className="text-3xl font-bold mb-6 text-text-main font-outfit px-4 md:px-0 flex items-center">
                 {titleLink ? (
-                    <Link to={titleLink} className="hover:text-neon-accent transition-colors flex items-center group">
+                    <Link to={titleLink} className="focus-ring hover:text-neon-accent transition-colors flex items-center group">
                         {title}
                         <span className="opacity-0 group-hover:opacity-100 transition-opacity ml-2 text-sm">→</span>
                     </Link>

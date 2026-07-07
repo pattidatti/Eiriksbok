@@ -91,7 +91,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                             <span className="text-xl font-display font-bold text-slate-900 tracking-widest">MENY</span>
                             <button
                                 onClick={onClose}
-                                className="p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors"
+                                className="pressable focus-ring p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-full transition-colors"
                                 aria-label="Lukk meny"
                             >
                                 <X size={28} />
@@ -106,7 +106,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                                         to={item.path}
                                         prefetchTarget={item.prefetchTarget}
                                         onClick={onClose}
-                                        className="group flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50 transition-all active:scale-95 border border-transparent hover:border-slate-100"
+                                        className="focus-ring group flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50 transition-all active:scale-95 border border-transparent hover:border-slate-100"
                                     >
                                         <div className="p-3 bg-indigo-50 text-indigo-600 group-hover:text-indigo-700 group-hover:bg-indigo-100 rounded-lg transition-colors">
                                             <item.icon size={24} />

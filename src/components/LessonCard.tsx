@@ -19,8 +19,9 @@ export const LessonCard = React.memo<LessonCardProps & { badgeText?: string }>((
         <Link to={path} className="block group no-underline h-full">
             <motion.div
                 whileHover={{ y: -5 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="h-full bg-surface-card border border-white/5 hover:border-white/10 rounded-xl overflow-hidden transition-all duration-200 flex flex-col"
+                className="h-full bg-surface-card border border-white/5 hover:border-white/10 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col"
             >
                 {/* Image Area */}
                 <div className="h-32 relative overflow-hidden">

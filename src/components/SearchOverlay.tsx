@@ -241,7 +241,8 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
                             />
                             <button
                                 onClick={onClose}
-                                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
+                                aria-label="Lukk søk"
+                                className="focus-ring absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
                             >
                                 <X className="w-5 h-5" />
                             </button>
@@ -264,9 +265,10 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
                                         id={`result-${index}`}
                                         role="option"
                                         aria-selected={index === selectedIndex}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: index * 0.05 }}
+                                        initial={{ opacity: 0, y: 8 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        transition={{ delay: Math.min(index * 0.03, 0.3), duration: 0.2, ease: 'easeOut' }}
                                         onMouseEnter={() => setSelectedIndex(index)}
                                         className={`border rounded-xl p-4 flex justify-between items-center transition-all group cursor-pointer ${index === selectedIndex
                                             ? 'bg-slate-800/90 border-indigo-500 shadow-lg shadow-indigo-500/20'

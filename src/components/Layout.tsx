@@ -57,7 +57,7 @@ export const Layout: React.FC = () => {
                             {/* Mobile Menu Trigger */}
                             <button
                                 onClick={() => setIsMobileMenuOpen(true)}
-                                className="md:hidden p-2 text-text-muted hover:text-text-main transition-colors"
+                                className="pressable focus-ring md:hidden p-2 text-text-muted hover:text-text-main transition-colors"
                                 aria-label="Åpne meny"
                             >
                                 <Menu size={28} />
@@ -86,7 +86,7 @@ export const Layout: React.FC = () => {
                             <ProgressChip />
                             <button
                                 onClick={toggleDyslexicMode}
-                                className={`p-2 transition-colors rounded-full hover:bg-black/5 ${settings.dyslexicMode ? 'text-blue-600 bg-blue-50' : 'text-text-muted hover:text-text-main'}`}
+                                className={`pressable focus-ring p-2 transition-colors rounded-full hover:bg-black/5 ${settings.dyslexicMode ? 'text-blue-600 bg-blue-50' : 'text-text-muted hover:text-text-main'}`}
                                 aria-label="Dysleksivennlig modus"
                                 title="Dysleksivennlig modus"
                             >
@@ -97,7 +97,7 @@ export const Layout: React.FC = () => {
                             </button>
                             <button
                                 onClick={() => setIsSearchOpen(true)}
-                                className="group relative p-2 text-text-muted hover:text-text-main transition-colors rounded-full hover:bg-black/5 flex items-center gap-2"
+                                className="pressable focus-ring group relative p-2 text-text-muted hover:text-text-main transition-colors rounded-full hover:bg-black/5 flex items-center gap-2"
                                 aria-label="Søk (Ctrl+K)"
                             >
                                 <Search size={20} className="w-5 h-5" />

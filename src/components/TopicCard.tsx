@@ -17,7 +17,8 @@ export const TopicCard: React.FC<TopicCardProps> = ({ title, description, image,
         <Link to={path} className="block group no-underline h-full">
             <motion.div
                 whileHover={{ y: -5 }}
-                className="h-full bg-surface-card border border-white/10 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
+                whileTap={{ scale: 0.98 }}
+                className="h-full bg-surface-card border border-white/10 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
             >
                 {/* Image Area - Updated to h-40 to match ExplorerView */}
                 <div className="h-32 bg-slate-100 relative overflow-hidden">

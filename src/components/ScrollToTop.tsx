@@ -1,38 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import './ScrollToTop.css';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronUp } from 'lucide-react';
+import { transitions } from '../styles/motion-presets';
 
 export const ScrollToTop: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
 
-    const toggleVisibility = () => {
-        if (window.pageYOffset > 300) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
-    };
-
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
-
     useEffect(() => {
-        window.addEventListener('scroll', toggleVisibility);
+        const toggleVisibility = () => {
+            setIsVisible(window.pageYOffset > 300);
+        };
+        window.addEventListener('scroll', toggleVisibility, { passive: true });
         return () => {
             window.removeEventListener('scroll', toggleVisibility);
         };
     }, []);
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
     return (
-        <div className={`scroll-to-top ${isVisible ? 'visible' : ''}`}>
-            <button onClick={scrollToTop} aria-label="Til toppen">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 15l-6-6-6 6" />
-                </svg>
-            </button>
-        </div>
+        <AnimatePresence>
+            {isVisible && (
+                <motion.button
+                    initial={{ opacity: 0, y: 24, scale: 0.8 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 24, scale: 0.8 }}
+                    transition={transitions.springBouncy}
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={scrollToTop}
+                    aria-label="Til toppen"
+                    className="focus-ring fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full bg-white/80 backdrop-blur-md border border-black/10 text-slate-700 hover:text-slate-900 hover:bg-white shadow-lg flex items-center justify-center cursor-pointer"
+                >
+                    <ChevronUp className="w-6 h-6" />
+                </motion.button>
+            )}
+        </AnimatePresence>
     );
 };
