@@ -22,6 +22,8 @@ import { parseYearRange } from '../utils/dateUtils';
 import { ImageWithFallback } from './ImageWithFallback';
 import { useRelatedContent } from '../hooks/useRelatedContent';
 import { renderInlineMarkdown } from './markdownUtils';
+import { LessonNavFooter } from './LessonNavFooter';
+import type { LessonNav } from './LessonNavFooter';
 import type { SidebarConfig } from '../types';
 
 // Generic Article Data Type
@@ -55,6 +57,7 @@ interface InteractiveArticleProps {
     event: ArticleData;
     fallbackUrl?: string;
     sidebarConfig?: SidebarConfig;
+    lessonNav?: LessonNav;
 }
 
 
@@ -73,7 +76,7 @@ const FactBox: React.FC<{ content: string }> = React.memo(({ content }) => (
 
 
 
-export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, fallbackUrl, sidebarConfig }) => {
+export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, fallbackUrl, sidebarConfig, lessonNav }) => {
     const navigate = useNavigate();
     const { events: globalEvents } = useGlobalTimeline();
     const { speak, pause, resume, cancel, playBlock, isPlaying, isPaused, hasVoice, activeBlockIndex, rate, setRate } = useTTS();
@@ -452,6 +455,10 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, f
                                             </div>
                                         </details>
                                     </div>
+                                )}
+
+                                {lessonNav && event.layout !== 'tool' && (
+                                    <LessonNavFooter nav={lessonNav} />
                                 )}
                             </div>
 

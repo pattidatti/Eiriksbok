@@ -22,6 +22,7 @@ import { useArticleReadTracker } from '../features/progress/useArticleReadTracke
 import { useLayout } from '../context/LayoutContext';
 import { LearningPathErrorState } from '../components/content/LearningPathErrorState';
 import { LessonNotFoundError } from '../utils/contentLoader';
+import type { LessonNav } from '../components/LessonNavFooter';
 import { ArticleContent } from '../components/ArticleContent';
 
 
@@ -117,6 +118,43 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
         if (foundLesson?.image) return foundLesson.image;
         if (topicImg) return topicImg;
         return undefined;
+    }, [manifest, subjectId, topicId, subTopicId, lessonId]);
+
+    // Forrige/Neste-navigasjon: utled naboleksjonene fra manifest-rekkefølgen
+    const lessonNav = useMemo((): LessonNav => {
+        const none: LessonNav = { prev: null, next: null };
+        if (!manifest || !subjectId || !topicId || !lessonId) return none;
+
+        const subject = manifest.subjects.find(s => s.id === subjectId);
+        const topic = subject?.topics.find(t => t.id === topicId);
+        let lessons: ManifestLesson[] | undefined;
+        let basePath = `/${subjectId}/${topicId}`;
+
+        if (subTopicId && topic?.subTopics) {
+            const subTopic = topic.subTopics.find(st => st.id === subTopicId);
+            lessons = subTopic?.lessons;
+            basePath = `/${subjectId}/${topicId}/${subTopicId}`;
+        } else {
+            lessons = topic?.lessons;
+        }
+
+        if (!lessons || lessons.length < 2) return none;
+        const index = lessons.findIndex(l => l.id === lessonId);
+        if (index === -1) return none;
+
+        const toTarget = (l: ManifestLesson | undefined) =>
+            l
+                ? {
+                      title: l.title,
+                      path: `${basePath}/${l.id}`,
+                      subjectId,
+                      topicId,
+                      subTopicId,
+                      lessonId: l.id,
+                  }
+                : null;
+
+        return { prev: toTarget(lessons[index - 1]), next: toTarget(lessons[index + 1]) };
     }, [manifest, subjectId, topicId, subTopicId, lessonId]);
 
     // Handle Layout Context
@@ -298,6 +336,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                     event={articleData}
                     fallbackUrl={fallbackUrl}
                     sidebarConfig={sidebarConfig}
+                    lessonNav={lessonNav}
                 />
             </ErrorBoundary>
         );
