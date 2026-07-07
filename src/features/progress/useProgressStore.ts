@@ -4,7 +4,8 @@
 // speiling til Firebase skjer i sync.ts når en synk-kode er aktiv.
 
 import { create } from 'zustand';
-import { persist, createJSONStorage } from 'zustand/middleware';
+import { persist } from 'zustand/middleware';
+import type { PersistStorage, StorageValue } from 'zustand/middleware';
 import { todayLocal } from '../../utils/reviewScheduler';
 import { newlyUnlockedTiers, badgeTierKey } from './badges';
 import { levelForXp, repeatBonus, xpValueFor, masteryMultiplier } from './xp';
@@ -27,6 +28,68 @@ import type {
 const STORAGE_KEY = 'progress-store-v1';
 const MAX_EVENTS = 200;
 const MAX_DAY_LOG = 400;
+const PERSIST_DEBOUNCE_MS = 500;
+
+// Debounced localStorage-persist: recordActivity kan fyre mange set() på kort
+// tid (quiz, spill), og synkron stringify + skriving av hele profilen på hvert
+// kall blokkerer main thread. Vi holder siste snapshot i minnet og flusher
+// etter en kort pause - og umiddelbart når fanen skjules/lukkes, så ingenting
+// går tapt. Firebase-synk (sync.ts) leser fra store-state og er upåvirket.
+const debouncedProgressStorage: PersistStorage<ProgressData> = (() => {
+    let pending: StorageValue<ProgressData> | null = null;
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
+    const flush = () => {
+        if (timer) {
+            clearTimeout(timer);
+            timer = null;
+        }
+        if (!pending) return;
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(pending));
+        } catch {
+            // Kvote overskredet eller utilgjengelig - profilen lever videre i minnet
+        }
+        pending = null;
+    };
+
+    if (typeof window !== 'undefined') {
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') flush();
+        });
+        window.addEventListener('pagehide', flush);
+    }
+
+    return {
+        getItem: (name) => {
+            if (pending) return pending;
+            try {
+                const raw = localStorage.getItem(name);
+                if (!raw) return null;
+                return JSON.parse(raw) as StorageValue<ProgressData>;
+            } catch {
+                return null;
+            }
+        },
+        setItem: (_name, value) => {
+            pending = value;
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(flush, PERSIST_DEBOUNCE_MS);
+        },
+        removeItem: (name) => {
+            pending = null;
+            if (timer) {
+                clearTimeout(timer);
+                timer = null;
+            }
+            try {
+                localStorage.removeItem(name);
+            } catch {
+                // Utilgjengelig - ignorer
+            }
+        },
+    };
+})();
 
 // Feltene som persisteres og synkes - holdes samlet så sync.ts kan
 // serialisere/hydrere nøyaktig det samme som localStorage.
@@ -477,7 +540,7 @@ export const useProgressStore = create<ProgressState>()(
         }),
         {
             name: STORAGE_KEY,
-            storage: createJSONStorage(() => localStorage),
+            storage: debouncedProgressStorage,
             version: 1,
         }
     )
