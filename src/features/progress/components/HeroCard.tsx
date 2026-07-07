@@ -71,7 +71,7 @@ const LevelInline = ({ totalXp, badgeCount }: { totalXp: number; badgeCount: num
                     <p className="text-xs font-bold text-white tabular-nums">
                         {shownXp.toLocaleString('nb-NO')} XP
                     </p>
-                    <p className="truncate text-[10px] text-indigo-100">
+                    <p className="truncate text-[10px] text-slate-300">
                         {needed - into} til niv. {level + 1}
                     </p>
                 </div>
@@ -83,7 +83,7 @@ const LevelInline = ({ totalXp, badgeCount }: { totalXp: number; badgeCount: num
                         className="h-full rounded-full bg-gradient-to-r from-amber-300 to-amber-400"
                     />
                 </div>
-                <p className="mt-1 text-[10px] text-indigo-100">
+                <p className="mt-1 text-[10px] text-slate-300">
                     🏅 {badgeCount} {badgeCount === 1 ? 'utmerkelse' : 'utmerkelser'}
                 </p>
             </div>
@@ -131,17 +131,18 @@ export const HeroCard = ({
     const justDone = (goalId: string): boolean => glowIds.includes(goalId);
 
     // Velkomstvariant: tre tydelige steg i stedet for streak og mål.
+    // Dyp, nøytral slate-bunn - fagbildene skal få eie fargene.
     if (welcome) {
         return (
-            <div className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 rounded-3xl p-6 md:p-8 shadow-xl shadow-indigo-500/20 overflow-hidden">
-                <div className="absolute -top-16 -right-16 w-56 h-56 bg-white/10 rounded-full blur-2xl" />
-                <div className="absolute -bottom-20 -left-10 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl" />
+            <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-900/25 overflow-hidden">
+                <div className="absolute -top-16 -right-16 w-56 h-56 bg-indigo-400/10 rounded-full blur-2xl" />
+                <div className="absolute -bottom-20 -left-10 w-48 h-48 bg-amber-300/10 rounded-full blur-2xl" />
 
                 <div className="relative z-10">
                     <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-1">
                         Velkommen{nickname ? `, ${nickname}` : ''}! 👋
                     </h2>
-                    <p className="text-sm text-indigo-100 mb-5">
+                    <p className="text-sm text-slate-300 mb-5">
                         Slik kommer du i gang - tre enkle steg:
                     </p>
 
@@ -164,7 +165,7 @@ export const HeroCard = ({
                                 <span className="block text-sm font-bold text-white">
                                     Velg navn og avatar
                                 </span>
-                                <span className="block text-xs text-indigo-100">
+                                <span className="block text-xs text-slate-300">
                                     {nickname
                                         ? `Klart! Du er ${avatarEmoji} ${nickname}.`
                                         : 'Gjør profilen til din egen.'}
@@ -185,7 +186,7 @@ export const HeroCard = ({
                                     <span className="block text-sm font-bold text-white">
                                         Velg et fag du vil starte med
                                     </span>
-                                    <span className="block text-xs text-indigo-100">
+                                    <span className="block text-xs text-slate-300">
                                         Hvert kort tar deg rett til en fin første artikkel.
                                     </span>
                                 </span>
@@ -221,7 +222,7 @@ export const HeroCard = ({
                                 <span className="block text-sm font-bold text-white">
                                     Fullfør din første artikkel
                                 </span>
-                                <span className="block text-xs text-indigo-100">
+                                <span className="block text-xs text-slate-300">
                                     Da tenner du streaken 🔥 og tjener dine første XP!
                                 </span>
                             </span>
@@ -233,10 +234,20 @@ export const HeroCard = ({
     }
 
     return (
-        <div className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 rounded-3xl p-6 md:p-8 shadow-xl shadow-indigo-500/20 overflow-hidden">
-            {/* Bakgrunns-orbs */}
-            <div className="absolute -top-16 -right-16 w-56 h-56 bg-white/10 rounded-full blur-2xl" />
-            <div className="absolute -bottom-20 -left-10 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl" />
+        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-900/25 overflow-hidden">
+            {/* Bakteppe: en uskarp, dempet utgave av artikkelbildet - da
+                harmonerer heroen alltid med bildet i CTA-en. Uten bilde står
+                slate-gradienten alene. */}
+            {primaryAction?.image && (
+                <img
+                    src={primaryAction.image}
+                    alt=""
+                    aria-hidden
+                    className="absolute inset-0 h-full w-full scale-125 object-cover opacity-45 blur-2xl"
+                />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/65 to-slate-900/50" />
+            <div className="absolute -top-16 -right-16 w-56 h-56 bg-white/5 rounded-full blur-2xl" />
 
             <div className="relative z-10 flex flex-col md:flex-row gap-6 md:items-start">
                 {/* Streak */}
@@ -253,11 +264,11 @@ export const HeroCard = ({
                         <p className="text-4xl font-display font-bold text-white leading-none tabular-nums">
                             {countedStreak}
                         </p>
-                        <p className="text-xs text-indigo-100 mt-1">
+                        <p className="text-xs text-slate-300 mt-1">
                             {shownStreak === 1 ? 'dag på rad' : 'dager på rad'}
                         </p>
                         {bestStreak > shownStreak && (
-                            <p className="text-[10px] text-indigo-200 mt-0.5">
+                            <p className="text-[10px] text-slate-400 mt-0.5">
                                 Rekord: {bestStreak}
                             </p>
                         )}
@@ -295,7 +306,7 @@ export const HeroCard = ({
                                 <span className="block text-xl md:text-2xl font-display font-bold text-white">
                                     Hei{nickname ? `, ${nickname}` : ''}!
                                 </span>
-                                <span className="flex items-center gap-1 text-[11px] text-indigo-100 group-hover:text-white transition-colors">
+                                <span className="flex items-center gap-1 text-[11px] text-slate-300 group-hover:text-white transition-colors">
                                     <Pencil className="w-3 h-3" />
                                     {nickname ? 'Endre navn og avatar' : 'Velg navn og avatar'}
                                 </span>
@@ -371,7 +382,7 @@ export const HeroCard = ({
                         </div>
                     )}
 
-                    <p className="text-xs font-bold uppercase tracking-wider text-indigo-100 mb-2">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
                         Dagens mål
                     </p>
                     <div className="space-y-2">
@@ -427,18 +438,18 @@ export const HeroCard = ({
                                         </span>
                                     )}
                                     {showCount && !done && (
-                                        <span className="text-xs font-bold text-indigo-100 tabular-nums">
+                                        <span className="text-xs font-bold text-slate-300 tabular-nums">
                                             {progress}/{goal.target}
                                         </span>
                                     )}
                                     {!done && (
-                                        <ChevronRight className="w-4 h-4 text-indigo-200 group-hover:translate-x-0.5 transition-transform" />
+                                        <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
                                     )}
                                 </Link>
                             );
                         })}
                         {goals.length === 0 && (
-                            <p className="text-sm text-indigo-100">
+                            <p className="text-sm text-slate-300">
                                 Ingen mål i dag - utforsk fagene og kom tilbake!
                             </p>
                         )}
