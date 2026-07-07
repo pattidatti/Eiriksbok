@@ -430,3 +430,19 @@ body.dyslexia-mode h6 {
   /* Hero-bilde: begrens høyde */
   .article-hero-image { max-height: 180px; object-fit: cover; }
 }
+
+/* «Min læring»: gull-glød når et dagsmål akkurat ble fullført */
+@keyframes goal-glow {
+    0% { box-shadow: 0 0 0 0 rgba(252, 211, 77, 0); }
+    25% { box-shadow: 0 0 18px 4px rgba(252, 211, 77, 0.55); }
+    100% { box-shadow: 0 0 0 0 rgba(252, 211, 77, 0); }
+}
+.animate-goal-glow { animation: goal-glow 1.2s ease-out; }
+
+/* «Min læring»: aktivitetskalenderen toner inn kolonnevis (billig CSS,
+   ingen motion per celle - 112 ruter på svake Chromebooks) */
+@keyframes progress-cell-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.animate-cell-in { animation: progress-cell-in 0.4s ease-out both; }

@@ -2,6 +2,7 @@
   "cases": [
     {
       "id": "isdalskvinnen",
+      "caseId": "isdalskvinnen-mysteriet",
       "title": "Gåten i Isdalen: Spion eller tragisk skjebne?",
       "description": "I 1970 ble en kvinne funnet død i en isolert dal i Bergen. Alle merker var fjernet fra klærne hennes. Hvem var hun egentlig?",
       "image": "/images/detective/isdalskvinnen_hero.webp",
@@ -20,6 +21,7 @@
     },
     {
       "id": "vardo",
+      "caseId": "vardo-hekseprosesser",
       "title": "Heksejakten i Vardø (1662)",
       "description": "Hva førte til at en liten fiskerlandsby i Finnmark ble åsted for noen av Europas mest brutale hekseprosesser? Gå bak protokollene.",
       "image": "/images/detective/vardo_hero.webp",
@@ -38,6 +40,7 @@
     },
     {
       "id": "tungtvann",
+      "caseId": "tungtvann-sabotasje",
       "title": "Jakten på Tungtvannet: Sabotasjen på Vemork",
       "description": "Hvordan klarte en liten gruppe norske sabotører å stanse Hitlers drøm om en atombombe? Undersøk de topphemmelige rapportene.",
       "image": "/images/detective/tungtvann_hero.webp",
@@ -56,6 +59,7 @@
     },
     {
       "id": "lindisfarne",
+      "caseId": "lindisfarne-detective",
       "title": "Lindisfarne 793: Et lyn fra klar himmel?",
       "description": "Var vikingtiden et plutselig sjokk, eller var 793 bare toppen av isfjellet? Undersøk bevisene for kontakt før det store angrepet.",
       "image": "/images/detective/lindisfarne_hero.webp",
@@ -74,6 +78,7 @@
     },
     {
       "id": "berlinmuren",
+      "caseId": "berlinmuren-fall",
       "title": "Muren som falt ved en feil: Berlin 1989",
       "description": "Var det massivt folkeopprør eller en klønete byråkrat som egentlig åpnet Berlinmuren? Undersøk kaoset den 9. november.",
       "image": "/images/detective/berlin_wall_hero.webp",
@@ -92,6 +97,7 @@
     },
     {
       "id": "karl-xii",
+      "caseId": "karl-xii-mysteriet",
       "title": "Mysteriet i Skyttergraven: Karl XIIs død",
       "description": "Ble den svenske krigerkongen drept av en norsk kule, eller var det et snikmord fra hans egne rekker? Undersøk bevisene fra 1718.",
       "image": "/images/detective/karl_xii_hero.webp",
@@ -110,6 +116,7 @@
     },
     {
       "id": "greenland",
+      "caseId": "greenland-detective",
       "title": "Mysteriet på Grønland",
       "description": "Hvorfor forsvant den norrøne bosetningen på Grønland etter 500 år? Undersøk sporene de etterlot seg.",
       "image": "/images/detective/greenland_hero.webp",
@@ -129,6 +136,7 @@
     },
     {
       "id": "stiklestad",
+      "caseId": "stiklestad-detektiv",
       "title": "Slaget ved Stiklestad: Myte eller Virkelighet?",
       "description": "Hvordan døde Olav Haraldsson egentlig? Undersøk splittelsen mellom samtidens kvad og senere tiders helgenfortellinger.",
       "image": "/images/detective/stiklestad_hero.webp",
@@ -147,6 +155,7 @@
     },
     {
       "id": "svartedauden",
+      "caseId": "svartedauden-detective",
       "title": "Svartedaudens Ankomst: Da Skipet kom til Vågen",
       "description": "Kom pesten virkelig med et skip til Bergen i 1349, eller var den i Norge mye tidligere? Løs gåten bak norgeshistoriens største katastrofe.",
       "image": "/images/detective/svartedauden_hero.webp",

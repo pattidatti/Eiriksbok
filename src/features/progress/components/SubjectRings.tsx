@@ -11,7 +11,7 @@ import type { MasteryTrend, SubjectMastery } from '../mastery';
 const RING_RADIUS = 30;
 const RING_CIRCUMFERENCE = 2 * Math.PI * RING_RADIUS;
 
-const Ring = ({ coverage, hex }: { coverage: number; hex: string }) => (
+const Ring = ({ coverage, hex, delay = 0 }: { coverage: number; hex: string; delay?: number }) => (
     <svg viewBox="0 0 72 72" className="w-full h-full -rotate-90">
         <circle cx="36" cy="36" r={RING_RADIUS} fill="none" stroke="#e2e8f0" strokeWidth="7" />
         <motion.circle
@@ -25,7 +25,7 @@ const Ring = ({ coverage, hex }: { coverage: number; hex: string }) => (
             strokeDasharray={RING_CIRCUMFERENCE}
             initial={{ strokeDashoffset: RING_CIRCUMFERENCE }}
             animate={{ strokeDashoffset: RING_CIRCUMFERENCE * (1 - coverage) }}
-            transition={{ type: 'spring', stiffness: 60, damping: 20 }}
+            transition={{ type: 'spring', stiffness: 60, damping: 20, delay }}
         />
     </svg>
 );
@@ -63,7 +63,7 @@ export const SubjectRings = ({ mastery }: { mastery: SubjectMastery[] }) => {
             <h2 className="text-lg font-display font-bold text-slate-900 mb-4">Fagene dine</h2>
 
             <div className="grid grid-cols-5 gap-2">
-                {mastery.map((subject) => {
+                {mastery.map((subject, index) => {
                     const color = getSubjectColor(subject.subjectId);
                     const isSelected = selectedId === subject.subjectId;
                     return (
@@ -77,7 +77,11 @@ export const SubjectRings = ({ mastery }: { mastery: SubjectMastery[] }) => {
                             }`}
                         >
                             <div className="relative w-14 h-14 md:w-16 md:h-16">
-                                <Ring coverage={subject.coverage} hex={color.hex} />
+                                <Ring
+                                    coverage={subject.coverage}
+                                    hex={color.hex}
+                                    delay={index * 0.1}
+                                />
                                 <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-slate-700">
                                     {Math.round(subject.coverage * 100)}%
                                 </span>

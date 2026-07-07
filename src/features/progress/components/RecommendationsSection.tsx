@@ -1,6 +1,7 @@
 // «Anbefalt for deg» - en variert, begrunnet liste med neste steg på tvers av
 // alle innholdstyper (artikler, stier, quizer, spill, detektiv, tidsreiser og
-// repetisjon). Kortene er kompakte (Chromebook 1366x768) og spring-animerte.
+// repetisjon). Første kort er «featured» med stort bilde; resten er kompakte
+// kort med thumbnail (Chromebook 1366x768). Alt er spring-animert.
 
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -13,7 +14,9 @@ import {
     Map,
     RefreshCw,
     Search,
+    Trophy,
 } from 'lucide-react';
+import { Image as LazyImage } from '../../../components/Image';
 import type { Recommendation, RecommendationType } from '../recommendations/engine';
 
 const TYPE_STYLE: Record<
@@ -22,6 +25,7 @@ const TYPE_STYLE: Record<
 > = {
     path: { Icon: Map, bg: 'bg-indigo-500', label: 'Læringssti', chip: 'bg-indigo-50 text-indigo-700' },
     article: { Icon: BookOpen, bg: 'bg-sky-500', label: 'Artikkel', chip: 'bg-sky-50 text-sky-700' },
+    finish: { Icon: Trophy, bg: 'bg-emerald-500', label: 'Fullfør emnet', chip: 'bg-emerald-50 text-emerald-700' },
     quiz: { Icon: HelpCircle, bg: 'bg-rose-500', label: 'Quiz', chip: 'bg-rose-50 text-rose-700' },
     game: { Icon: Gamepad2, bg: 'bg-violet-500', label: 'Spill', chip: 'bg-violet-50 text-violet-700' },
     detective: { Icon: Search, bg: 'bg-amber-500', label: 'Detektiv', chip: 'bg-amber-50 text-amber-700' },
@@ -29,53 +33,116 @@ const TYPE_STYLE: Record<
     review: { Icon: RefreshCw, bg: 'bg-emerald-500', label: 'Repetisjon', chip: 'bg-emerald-50 text-emerald-700' },
 };
 
+const spring = (delay: number) => ({
+    initial: { opacity: 0, y: 8 },
+    animate: { opacity: 1, y: 0 },
+    transition: { type: 'spring' as const, stiffness: 320, damping: 26, delay },
+});
+
+// Stort kort med bilde i toppen - det mest fristende neste steget.
+const FeaturedCard = ({ item }: { item: Recommendation }) => {
+    const { Icon, bg, label } = TYPE_STYLE[item.type];
+    return (
+        <motion.div {...spring(0)}>
+            <Link
+                to={item.link}
+                className="group relative block h-32 overflow-hidden rounded-xl no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
+            >
+                {item.image ? (
+                    <LazyImage
+                        src={item.image}
+                        alt=""
+                        seed={item.title}
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                ) : (
+                    <span className={`absolute inset-0 ${bg} opacity-90`} />
+                )}
+                <span className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/30 to-transparent" />
+                <span className="absolute left-3 top-3 flex items-center gap-1.5 rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-slate-800 backdrop-blur">
+                    <Icon className="h-3 w-3" />
+                    {label}
+                </span>
+                <span className="absolute inset-x-0 bottom-0 flex items-end gap-3 p-3.5">
+                    <span className="min-w-0 flex-1">
+                        <span className="block truncate font-display text-lg font-bold text-white">
+                            {item.title}
+                        </span>
+                        <span className="block text-xs leading-snug text-slate-200 line-clamp-1">
+                            {item.reason}
+                        </span>
+                    </span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/90 text-indigo-600 transition-transform group-hover:translate-x-0.5">
+                        <ChevronRight className="h-4 w-4" />
+                    </span>
+                </span>
+            </Link>
+        </motion.div>
+    );
+};
+
+// Kompakt kort med thumbnail til venstre (ikonrute når bilde mangler).
+const SmallCard = ({ item, delay }: { item: Recommendation; delay: number }) => {
+    const { Icon, bg, label, chip } = TYPE_STYLE[item.type];
+    return (
+        <motion.div {...spring(delay)}>
+            <Link
+                to={item.link}
+                className="group flex h-full items-center gap-3 overflow-hidden rounded-xl border border-slate-100 p-2 pr-3 no-underline transition-all hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-md"
+            >
+                {item.image ? (
+                    <span className="relative h-14 w-16 shrink-0 overflow-hidden rounded-lg bg-slate-100">
+                        <LazyImage
+                            src={item.image}
+                            alt=""
+                            seed={item.title}
+                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                    </span>
+                ) : (
+                    <span
+                        className={`flex h-14 w-16 shrink-0 items-center justify-center rounded-lg ${bg} text-white transition-transform group-hover:scale-105`}
+                    >
+                        <Icon className="h-5 w-5" />
+                    </span>
+                )}
+                <span className="min-w-0 flex-1">
+                    <span
+                        className={`mb-0.5 inline-block rounded-md px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${chip}`}
+                    >
+                        {label}
+                    </span>
+                    <span className="block truncate text-sm font-semibold text-slate-900">
+                        {item.title}
+                    </span>
+                    <span className="mt-0.5 block text-xs leading-snug text-slate-500 line-clamp-1">
+                        {item.reason}
+                    </span>
+                </span>
+                <ChevronRight className="h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-indigo-500" />
+            </Link>
+        </motion.div>
+    );
+};
+
 export const RecommendationsSection = ({ items }: { items: Recommendation[] }) => {
     if (items.length === 0) return null;
+    const [featured, ...rest] = items;
     return (
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
             <h2 className="text-lg font-display font-bold text-slate-900 mb-1">Anbefalt for deg</h2>
             <p className="text-xs text-slate-500 mb-3">
                 Neste steg valgt ut fra hvor du er akkurat nå.
             </p>
-            <div className="grid sm:grid-cols-2 gap-2">
-                {items.map((item, i) => {
-                    const { Icon, bg, label, chip } = TYPE_STYLE[item.type];
-                    return (
-                        <motion.div
-                            key={item.id}
-                            initial={{ opacity: 0, y: 8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ type: 'spring', stiffness: 320, damping: 26, delay: i * 0.04 }}
-                        >
-                            <Link
-                                to={item.link}
-                                className="group flex h-full items-start gap-3 rounded-xl border border-slate-100 px-3 py-3 no-underline transition-all hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-md"
-                            >
-                                <span
-                                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${bg} text-white transition-transform group-hover:scale-110`}
-                                >
-                                    <Icon className="h-[18px] w-[18px]" />
-                                </span>
-                                <span className="min-w-0 flex-1">
-                                    <span className="mb-0.5 flex items-center gap-2">
-                                        <span
-                                            className={`rounded-md px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${chip}`}
-                                        >
-                                            {label}
-                                        </span>
-                                    </span>
-                                    <span className="block truncate text-sm font-semibold text-slate-900">
-                                        {item.title}
-                                    </span>
-                                    <span className="mt-0.5 block text-xs leading-snug text-slate-500 line-clamp-2">
-                                        {item.reason}
-                                    </span>
-                                </span>
-                                <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-slate-300 transition-all group-hover:translate-x-0.5 group-hover:text-indigo-500" />
-                            </Link>
-                        </motion.div>
-                    );
-                })}
+            <div className="space-y-2">
+                <FeaturedCard item={featured} />
+                {rest.length > 0 && (
+                    <div className="grid gap-2 sm:grid-cols-2">
+                        {rest.map((item, i) => (
+                            <SmallCard key={item.id} item={item} delay={(i + 1) * 0.04} />
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );

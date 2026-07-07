@@ -903,6 +903,10 @@
       "count": 18
     },
     {
+      "tag": "samfunn",
+      "count": 17
+    },
+    {
       "tag": "kristendom",
       "count": 17
     },
@@ -912,10 +916,6 @@
     },
     {
       "tag": "islam",
-      "count": 16
-    },
-    {
-      "tag": "samfunn",
       "count": 16
     },
     {
@@ -1067,6 +1067,10 @@
       "count": 8
     },
     {
+      "tag": "kollaps",
+      "count": 8
+    },
+    {
       "tag": "verdenshistorie",
       "count": 8
     },
@@ -1129,10 +1133,6 @@
     {
       "tag": "jehovas-vitner",
       "count": 8
-    },
-    {
-      "tag": "kollaps",
-      "count": 7
     },
     {
       "tag": "ytringsfrihet",
@@ -1924,6 +1924,22 @@
     },
     {
       "tag": "shogun",
+      "count": 2
+    },
+    {
+      "tag": "baerekraft",
+      "count": 2
+    },
+    {
+      "tag": "miljo",
+      "count": 2
+    },
+    {
+      "tag": "ressurser",
+      "count": 2
+    },
+    {
+      "tag": "paskeoya",
       "count": 2
     },
     {
@@ -3188,22 +3204,6 @@
     },
     {
       "tag": "rettsvitenskap",
-      "count": 1
-    },
-    {
-      "tag": "baerekraft",
-      "count": 1
-    },
-    {
-      "tag": "miljo",
-      "count": 1
-    },
-    {
-      "tag": "ressurser",
-      "count": 1
-    },
-    {
-      "tag": "paskeoya",
       "count": 1
     },
     {

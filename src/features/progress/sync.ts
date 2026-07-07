@@ -33,6 +33,7 @@ const normalizeRemote = (raw: Partial<ProgressData>, code: string): ProgressData
     goals: raw.goals ?? null,
     checkedGoalIds: raw.checkedGoalIds ?? [],
     lastGoalBonusDay: raw.lastGoalBonusDay ?? null,
+    lastSurpriseBonusDay: raw.lastSurpriseBonusDay ?? null,
     retroDone: raw.retroDone ?? true,
     sync: { code, lastSyncedAt: raw.updatedAt ?? null },
     updatedAt: raw.updatedAt ?? 0,

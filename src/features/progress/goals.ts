@@ -84,6 +84,27 @@ export const generateDailyGoals = (inputs: GoalInputs): DailyGoal[] => {
     return goals;
 };
 
+// Dagens «gnistmål»: ett av målene gir ekstra bonus-XP - en liten
+// overraskelse som gjør det verdt å sjekke innom hver dag. Valget er
+// deterministisk per dag+profil (stabil hash), og persisteres i storen slik
+// at det aldri endrer seg ved refresh. XP-strekkmålet er uspennende som
+// bonus og holdes utenfor.
+export const pickBonusGoalId = (
+    day: string,
+    items: DailyGoal[],
+    seed: string
+): string | null => {
+    const candidates = items.filter((g) => g.kind !== 'xp');
+    if (candidates.length === 0) return null;
+    const input = `${day}:${seed}`;
+    let hash = 2166136261;
+    for (let i = 0; i < input.length; i++) {
+        hash ^= input.charCodeAt(i);
+        hash = Math.imul(hash, 16777619);
+    }
+    return candidates[Math.abs(hash) % candidates.length].id;
+};
+
 const GOAL_EVENT_KINDS: Record<GoalKind, string[]> = {
     review: ['review-session'],
     article: ['article-read'],

@@ -46,10 +46,12 @@ export interface ProgressData {
     // badge-grad-nøkkel ('leseren:gull') -> epoch ms opplåst
     badges: Record<string, number>;
     counters: Record<string, number>;
-    goals: { day: string; items: DailyGoal[] } | null;
+    goals: { day: string; items: DailyGoal[]; bonusGoalId?: string | null } | null;
     checkedGoalIds: string[];
     // Siste dag ('YYYY-MM-DD') dagsbonusen for «alle mål fullført» ble gitt
     lastGoalBonusDay: string | null;
+    // Siste dag overraskelsesbonusen (gnistmålet) ble gitt
+    lastSurpriseBonusDay: string | null;
     retroDone: boolean;
     sync: SyncState;
     updatedAt: number;
@@ -62,9 +64,11 @@ interface ProgressState extends ProgressData {
     recordActivity: (input: ActivityInput) => RecordResult;
     setNickname: (nickname: string) => void;
     setAvatar: (avatarId: string) => void;
-    setDailyGoals: (day: string, items: DailyGoal[]) => void;
+    setDailyGoals: (day: string, items: DailyGoal[], bonusGoalId?: string | null) => void;
+    setBonusGoalId: (bonusGoalId: string | null) => void;
     toggleGoal: (goalId: string) => void;
     awardDailyGoalBonus: (day: string) => void;
+    awardSurpriseGoalBonus: (day: string) => void;
     applyRetroData: (data: {
         events: ActivityEvent[];
         counters: Record<string, number>;
@@ -96,6 +100,7 @@ const initialData = (): ProgressData => ({
     goals: null,
     checkedGoalIds: [],
     lastGoalBonusDay: null,
+    lastSurpriseBonusDay: null,
     retroDone: false,
     sync: { code: null, lastSyncedAt: null },
     updatedAt: 0,
@@ -305,8 +310,21 @@ export const useProgressStore = create<ProgressState>()(
                     updatedAt: Date.now(),
                 })),
 
-            setDailyGoals: (day, items) =>
-                set({ goals: { day, items }, checkedGoalIds: [], updatedAt: Date.now() }),
+            setDailyGoals: (day, items, bonusGoalId = null) =>
+                set({
+                    goals: { day, items, bonusGoalId },
+                    checkedGoalIds: [],
+                    updatedAt: Date.now(),
+                }),
+
+            // Backfill for dager der målene alt er generert uten gnistmål
+            // (f.eks. rett etter oppdatering av appen).
+            setBonusGoalId: (bonusGoalId) =>
+                set((state) =>
+                    state.goals
+                        ? { goals: { ...state.goals, bonusGoalId }, updatedAt: Date.now() }
+                        : {}
+                ),
 
             toggleGoal: (goalId) =>
                 set((state) => ({
@@ -352,6 +370,56 @@ export const useProgressStore = create<ProgressState>()(
                 celebrate({ type: 'goals', xp });
                 if (levelAfter > levelBefore) celebrate({ type: 'levelup', level: levelAfter });
                 const toast = useProgressToasts.getState().push;
+                for (const u of unlocked) {
+                    if (u.tier === 'gull') {
+                        celebrate({ type: 'badge-gull', title: u.badge.title, emoji: u.badge.emoji });
+                    } else {
+                        toast({ type: 'badge', badge: u.badge, tier: u.tier });
+                    }
+                }
+            },
+
+            // Overraskelsesbonus når dagens gnistmål fullføres. Samme
+            // idempotente mønster som dagsbonusen: én gang per dag.
+            awardSurpriseGoalBonus: (day) => {
+                const state = get();
+                if (state.lastSurpriseBonusDay === day) return;
+                const now = Date.now();
+                const xp = getProgressionConfig().surpriseGoalBonusXp;
+
+                const levelBefore = levelForXp(state.totalXp);
+                const totalXp = state.totalXp + xp;
+                const levelAfter = levelForXp(totalXp);
+
+                const prevDay = state.dayLog[day] ?? { xp: 0, activities: 0 };
+                const dayLog = pruneDayLog({
+                    ...state.dayLog,
+                    [day]: { xp: prevDay.xp + xp, activities: prevDay.activities },
+                });
+
+                const metrics = buildMetrics({
+                    counters: state.counters,
+                    totalXp,
+                    streak: state.streak,
+                    dayLog,
+                });
+                const unlocked = newlyUnlockedTiers(state.badges, metrics);
+                const badges = { ...state.badges };
+                for (const { badge, tier } of unlocked) {
+                    badges[badgeTierKey(badge.id, tier)] = now;
+                }
+
+                set({ totalXp, dayLog, badges, lastSurpriseBonusDay: day, updatedAt: now });
+
+                const toast = useProgressToasts.getState().push;
+                toast({
+                    type: 'info',
+                    emoji: '✨',
+                    title: 'Overraskelsesbonus!',
+                    subtitle: `Du traff dagens gnistmål - +${xp} XP ekstra.`,
+                });
+                const celebrate = useCelebration.getState().celebrate;
+                if (levelAfter > levelBefore) celebrate({ type: 'levelup', level: levelAfter });
                 for (const u of unlocked) {
                     if (u.tier === 'gull') {
                         celebrate({ type: 'badge-gull', title: u.badge.title, emoji: u.badge.emoji });
@@ -432,6 +500,7 @@ export const serializeProgress = (): ProgressData => {
         goals: s.goals,
         checkedGoalIds: s.checkedGoalIds,
         lastGoalBonusDay: s.lastGoalBonusDay,
+        lastSurpriseBonusDay: s.lastSurpriseBonusDay,
         retroDone: s.retroDone,
         sync: s.sync,
         updatedAt: s.updatedAt,

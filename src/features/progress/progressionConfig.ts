@@ -34,6 +34,8 @@ export interface ProgressionConfig {
     masteryBonusMax: number;
     // Engangsbonus når alle dagens mål er fullført.
     dailyGoalBonusXp: number;
+    // Ekstra XP når dagens hemmelige «gnistmål» fullføres (variabel belønning).
+    surpriseGoalBonusXp: number;
     // Mål for «Tjen X XP i dag»-strekkmålet.
     dailyXpTarget: number;
     streak: StreakTuning;
@@ -59,6 +61,7 @@ export const DEFAULT_PROGRESSION_CONFIG: ProgressionConfig = {
     levelStep: 50,
     masteryBonusMax: 0.5,
     dailyGoalBonusXp: 50,
+    surpriseGoalBonusXp: 40,
     dailyXpTarget: 80,
     streak: {
         minXp: 30,

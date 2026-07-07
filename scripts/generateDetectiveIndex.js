@@ -42,6 +42,9 @@ async function main() {
             const slug = file.replace(/\.json$/, '');
             cases.push({
                 id: slug,
+                // Sakens interne id - DetectiveEngine logger fullføringer med
+                // denne, og den kan avvike fra filslugen.
+                caseId: data.id,
                 title: data.title,
                 description: data.description,
                 image: data.briefing?.image || data.image,

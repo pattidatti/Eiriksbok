@@ -84,6 +84,47 @@ export const ActivitySection = ({ dayLog }: ActivitySectionProps) => {
         return { labels, data };
     }, [dayLog, today]);
 
+    // Ny elev: 16 uker tomme ruter og en flat graf demotiverer. Vis heller en
+    // vennlig start-tilstand - og ikke montér Chart.js i det hele tatt
+    // (sparer arbeid på svake Chromebooks).
+    const activeDays = Object.keys(dayLog).length;
+    if (activeDays < 5) {
+        const last7 = Array.from({ length: 7 }, (_, i) => {
+            const day = addDays(today, i - 6);
+            return { day, active: (dayLog[day]?.activities ?? 0) > 0 };
+        });
+        return (
+            <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
+                <h2 className="text-lg font-display font-bold text-slate-900 mb-1">
+                    Historien din starter her
+                </h2>
+                <p className="text-sm text-slate-500 mb-4">
+                    Hver dag du øver, tennes en rute i aktivitetskalenderen din. Kom tilbake i
+                    morgen og hold rekka i gang!
+                </p>
+                <div className="flex items-center gap-2">
+                    {last7.map(({ day, active }) => (
+                        <div
+                            key={day}
+                            className={`h-8 w-8 rounded-lg ${
+                                active
+                                    ? 'bg-indigo-500 shadow-md shadow-indigo-300/50'
+                                    : 'bg-slate-100'
+                            }`}
+                        />
+                    ))}
+                </div>
+                {weekXp > 0 && (
+                    <p className="mt-3 text-xs text-slate-500">
+                        Denne uka: <span className="font-bold text-slate-700">{weekXp} XP</span> ·{' '}
+                        <span className="font-bold text-slate-700">{weekActivities}</span>{' '}
+                        {weekActivities === 1 ? 'aktivitet' : 'aktiviteter'}
+                    </p>
+                )}
+            </div>
+        );
+    }
+
     return (
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
             <div className="flex items-baseline justify-between mb-4">
@@ -103,7 +144,11 @@ export const ActivitySection = ({ dayLog }: ActivitySectionProps) => {
                     </p>
                     <div className="flex gap-[3px]">
                         {calendarWeeks.map((week, wi) => (
-                            <div key={wi} className="flex flex-col gap-[3px] flex-1">
+                            <div
+                                key={wi}
+                                className="flex flex-col gap-[3px] flex-1 animate-cell-in"
+                                style={{ animationDelay: `${wi * 30}ms` }}
+                            >
                                 {week.map(({ day, activities }) => (
                                     <div
                                         key={day}

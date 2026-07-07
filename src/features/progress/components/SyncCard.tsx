@@ -1,8 +1,9 @@
 // Synk-seksjonen: opprett tre-ords-kode (kontinuerlig speiling til Firebase)
-// eller hent en eksisterende profil med kode på ny maskin.
+// eller hent en eksisterende profil med kode på ny maskin. Koden vises
+// maskert som standard - siden havner ofte på projektor i klasserommet.
 
 import { useState } from 'react';
-import { Cloud, CloudOff, Copy, Check, Loader2 } from 'lucide-react';
+import { Cloud, CloudOff, Copy, Check, Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useProgressStore } from '../useProgressStore';
 import { createSyncCode, loginWithCode, disconnectSync } from '../sync';
 
@@ -12,6 +13,7 @@ export const SyncCard = () => {
     const [input, setInput] = useState('');
     const [message, setMessage] = useState<string | null>(null);
     const [copied, setCopied] = useState(false);
+    const [revealed, setRevealed] = useState(false);
 
     const handleCreate = async () => {
         setBusy(true);
@@ -75,9 +77,26 @@ export const SyncCard = () => {
                         hente alt dit.
                     </p>
                     <div className="flex items-center gap-2 mb-2">
-                        <code className="flex-1 text-center text-base md:text-lg font-bold tracking-wide bg-indigo-50 text-indigo-800 rounded-xl px-4 py-3 border border-indigo-100 select-all">
-                            {sync.code}
-                        </code>
+                        {revealed ? (
+                            <code className="flex-1 text-center text-base md:text-lg font-bold tracking-wide bg-indigo-50 text-indigo-800 rounded-xl px-4 py-3 border border-indigo-100 select-all">
+                                {sync.code}
+                            </code>
+                        ) : (
+                            <code className="flex-1 text-center text-base md:text-lg font-bold tracking-widest bg-indigo-50 text-indigo-300 rounded-xl px-4 py-3 border border-indigo-100 select-none">
+                                ••• - ••• - •••
+                            </code>
+                        )}
+                        <button
+                            onClick={() => setRevealed((v) => !v)}
+                            className="p-3 rounded-xl border border-slate-200 hover:bg-slate-50 transition-colors"
+                            aria-label={revealed ? 'Skjul koden' : 'Vis koden'}
+                        >
+                            {revealed ? (
+                                <EyeOff className="w-5 h-5 text-slate-500" />
+                            ) : (
+                                <Eye className="w-5 h-5 text-slate-500" />
+                            )}
+                        </button>
                         <button
                             onClick={handleCopy}
                             className="p-3 rounded-xl border border-slate-200 hover:bg-slate-50 transition-colors"
@@ -92,9 +111,11 @@ export const SyncCard = () => {
                     </div>
                     <div className="flex items-center justify-between">
                         <p className="text-xs text-slate-400">
-                            {sync.lastSyncedAt
-                                ? `Sist lagret ${new Date(sync.lastSyncedAt).toLocaleTimeString('nb-NO', { hour: '2-digit', minute: '2-digit' })}`
-                                : 'Lagres automatisk'}
+                            {revealed
+                                ? sync.lastSyncedAt
+                                    ? `Sist lagret ${new Date(sync.lastSyncedAt).toLocaleTimeString('nb-NO', { hour: '2-digit', minute: '2-digit' })}`
+                                    : 'Lagres automatisk'
+                                : 'Koden er skjult - trykk øyet for å vise den.'}
                         </p>
                         <button
                             onClick={() => disconnectSync()}

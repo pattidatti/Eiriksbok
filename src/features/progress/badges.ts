@@ -20,6 +20,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '📖',
         counter: 'articlesRead',
         tiers: [10, 30, 100],
+        actionLink: '/',
+        actionLabel: 'Finn en artikkel',
     },
     {
         id: 'quizmester',
@@ -28,6 +30,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '❓',
         counter: 'quizzesCompleted',
         tiers: [5, 20, 50],
+        actionLink: '/oving/quiz',
+        actionLabel: 'Ta en quiz',
     },
     {
         id: 'perfeksjonist',
@@ -36,6 +40,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '💯',
         counter: 'quizzesPerfect',
         tiers: [3, 10, 25],
+        actionLink: '/oving/quiz',
+        actionLabel: 'Ta en quiz',
     },
     {
         id: 'stivandrer',
@@ -44,6 +50,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🗺️',
         counter: 'pathsCompleted',
         tiers: [1, 3, 8],
+        actionLink: '/laeringsstier',
+        actionLabel: 'Velg en læringssti',
     },
     {
         id: 'stegviser',
@@ -52,6 +60,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '👣',
         counter: 'pathStepsCompleted',
         tiers: [10, 40, 120],
+        actionLink: '/laeringsstier',
+        actionLabel: 'Fortsett en sti',
     },
     {
         id: 'repetisjonshelt',
@@ -60,6 +70,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🔁',
         counter: 'reviewSessions',
         tiers: [5, 20, 60],
+        actionLink: '/oving/dagens-okt',
+        actionLabel: 'Ta dagens økt',
     },
     {
         id: 'flammen',
@@ -68,6 +80,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🔥',
         counter: 'streak',
         tiers: [3, 7, 30],
+        actionLink: '/oving',
+        actionLabel: 'Øv litt i dag',
     },
     {
         id: 'spillmester',
@@ -76,6 +90,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🎮',
         counter: 'minigamesPlayed',
         tiers: [3, 10, 25],
+        actionLink: '/oving/spill',
+        actionLabel: 'Spill et 3D-spill',
     },
     {
         id: 'detektiven',
@@ -84,6 +100,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🕵️',
         counter: 'detectivesSolved',
         tiers: [1, 3, 6],
+        actionLink: '/oving/detektiv',
+        actionLabel: 'Løs en sak',
     },
     {
         id: 'tidsreisende',
@@ -92,6 +110,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '⏳',
         counter: 'scenariosCompleted',
         tiers: [1, 3, 8],
+        actionLink: '/oving/tidsreise',
+        actionLabel: 'Dra på tidsreise',
     },
     {
         id: 'ordkunstner',
@@ -100,6 +120,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '✒️',
         counter: 'virkemiddelExercises',
         tiers: [10, 30, 80],
+        actionLink: '/oving/virkemidler',
+        actionLabel: 'Øv på virkemidler',
     },
     {
         id: 'xp-jeger',
@@ -108,6 +130,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '⭐',
         counter: 'xp',
         tiers: [500, 2500, 10000],
+        actionLink: '/oving',
+        actionLabel: 'Tjen XP i øvingsrommet',
     },
     {
         id: 'allsidig',
@@ -116,6 +140,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🧭',
         counter: 'activeSubjects',
         tiers: [2, 3, 5],
+        actionLink: '/',
+        actionLabel: 'Utforsk et nytt fag',
     },
     {
         id: 'trofast',
@@ -124,6 +150,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '📅',
         counter: 'activeDays',
         tiers: [5, 20, 60],
+        actionLink: '/oving',
+        actionLabel: 'Vær aktiv i dag',
     },
     {
         id: 'historikeren',
@@ -132,6 +160,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🏺',
         counter: 'articles:historie',
         tiers: [5, 20, 60],
+        actionLink: '/historie',
+        actionLabel: 'Les historie',
     },
     {
         id: 'spraakviteren',
@@ -140,6 +170,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '📝',
         counter: 'articles:norsk',
         tiers: [5, 20, 50],
+        actionLink: '/norsk',
+        actionLabel: 'Les norsk',
     },
     {
         id: 'tenkeren',
@@ -148,6 +180,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🤔',
         counter: 'articles:krle',
         tiers: [5, 15, 40],
+        actionLink: '/krle',
+        actionLabel: 'Les KRLE',
     },
     {
         id: 'samfunnsviteren',
@@ -156,6 +190,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🏛️',
         counter: 'articles:samfunnskunnskap',
         tiers: [5, 20, 50],
+        actionLink: '/samfunnskunnskap',
+        actionLabel: 'Les samfunnskunnskap',
     },
     {
         id: 'musikeren',
@@ -164,6 +200,8 @@ export const BADGES: BadgeDef[] = [
         emoji: '🎵',
         counter: 'articles:musikk',
         tiers: [3, 8, 20],
+        actionLink: '/musikk',
+        actionLabel: 'Les musikk',
     },
 ];
 

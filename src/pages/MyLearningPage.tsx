@@ -10,15 +10,19 @@ import { streakMultiplier } from '../features/progress/streak';
 import { useReviewStore } from '../stores/useReviewStore';
 import { useLearningPathProfile } from '../stores/useLearningPathProfile';
 import { computeMastery } from '../features/progress/mastery';
-import { generateDailyGoals, goalProgress } from '../features/progress/goals';
-import { buildRecommendations, findPathTool, findNextArticle } from '../features/progress/recommendations/engine';
+import { generateDailyGoals, goalProgress, pickBonusGoalId } from '../features/progress/goals';
+import {
+    buildRecommendations,
+    buildWelcomeRecommendations,
+    findPathTool,
+    findNextArticle,
+} from '../features/progress/recommendations/engine';
 import { loadDetectiveCatalog } from '../features/progress/recommendations/catalog';
 import type { DetectiveCatalogEntry } from '../features/progress/recommendations/catalog';
 import { getAvatar } from '../features/progress/avatars';
 import { todayLocal } from '../utils/reviewScheduler';
 import { HeroCard } from '../features/progress/components/HeroCard';
 import type { PrimaryAction } from '../features/progress/components/HeroCard';
-import { LevelCard } from '../features/progress/components/LevelCard';
 import { SubjectRings } from '../features/progress/components/SubjectRings';
 import { RecommendationsSection } from '../features/progress/components/RecommendationsSection';
 import { BadgeGallery } from '../features/progress/components/BadgeGallery';
@@ -42,8 +46,13 @@ export const MyLearningPage = () => {
     const bestScores = useProgressStore((s) => s.bestScores);
     const goals = useProgressStore((s) => s.goals);
     const setDailyGoals = useProgressStore((s) => s.setDailyGoals);
+    const setBonusGoalId = useProgressStore((s) => s.setBonusGoalId);
     const lastGoalBonusDay = useProgressStore((s) => s.lastGoalBonusDay);
     const awardDailyGoalBonus = useProgressStore((s) => s.awardDailyGoalBonus);
+    const lastSurpriseBonusDay = useProgressStore((s) => s.lastSurpriseBonusDay);
+    const awardSurpriseGoalBonus = useProgressStore((s) => s.awardSurpriseGoalBonus);
+    const syncCode = useProgressStore((s) => s.sync.code);
+    const avatarId = useProgressStore((s) => s.profile.avatarId);
 
     const dueCount = useReviewStore((s) => s.dueCount(today));
     const hasSessionToday = useReviewStore((s) => s.hasSessionToday(today));
@@ -87,12 +96,28 @@ export const MyLearningPage = () => {
         });
     }, [manifest, mastery, firstCompletions, events, paths, dueCount, detectiveCases]);
 
+    // Helt ny elev: heroen bytter til velkomstvariant med fagvalg.
+    const isNewStudent = totalXp === 0 && Object.keys(firstCompletions).length === 0;
+    const welcomeSubjects = useMemo(() => {
+        if (!isNewStudent || !manifest) return null;
+        return buildWelcomeRecommendations(manifest).map((rec) => ({
+            subjectId: rec.subjectId ?? '',
+            title:
+                manifest.subjects.find((s) => s.id === rec.subjectId)?.title ??
+                rec.subjectId ??
+                '',
+            image: rec.image,
+            link: rec.link,
+        }));
+    }, [isNewStudent, manifest]);
+
     // Det viktigste steget blir stor knapp øverst; resten fyller «Anbefalt for deg».
     const primaryAction: PrimaryAction | null = recommendations[0]
         ? {
               title: recommendations[0].title,
               subtitle: recommendations[0].reason,
               link: recommendations[0].link,
+              image: recommendations[0].image,
           }
         : null;
     const restRecommendations = recommendations.slice(1);
@@ -140,12 +165,22 @@ export const MyLearningPage = () => {
         return { dueCount, hasSessionToday, continuePath, nextArticle, weakTopic };
     }, [manifest, mastery, paths, firstCompletions, dueCount, hasSessionToday]);
 
-    // Generer dagens mål én gang per dag
+    // Generer dagens mål én gang per dag - med et hemmelig gnistmål blant dem.
+    // Seed: synk-kode hvis den finnes, ellers avatar (stabilt per profil).
+    const bonusSeed = syncCode ?? avatarId;
     useEffect(() => {
         if (!manifest) return;
         if (goals?.day === today) return;
-        setDailyGoals(today, generateDailyGoals(goalInputs));
-    }, [manifest, goals?.day, today, goalInputs, setDailyGoals]);
+        const items = generateDailyGoals(goalInputs);
+        setDailyGoals(today, items, pickBonusGoalId(today, items, bonusSeed));
+    }, [manifest, goals?.day, today, goalInputs, setDailyGoals, bonusSeed]);
+
+    // Backfill: mål generert av en eldre versjon mangler gnistmål - velg det
+    // uten å regenerere målene.
+    useEffect(() => {
+        if (goals?.day !== today || goals.bonusGoalId !== undefined) return;
+        setBonusGoalId(pickBonusGoalId(today, goals.items, bonusSeed));
+    }, [goals, today, bonusSeed, setBonusGoalId]);
 
     const todaysEvents = useMemo(() => events.filter((e) => e.day === today), [events, today]);
     const goalsWithProgress = useMemo(
@@ -161,6 +196,10 @@ export const MyLearningPage = () => {
     const streakAlive = isStreakAlive(streak, today);
     const multiplier = streakMultiplier(streakAlive ? streak.current : 0);
 
+    // Streaken er i fare: den lever, men dagens innsats har ikke krysset
+    // terskelen ennå. Da fortjener eleven en vennlig dytt i heroen.
+    const streakAtRisk = streakAlive && streak.current > 0 && streak.lastActiveDay !== today;
+
     // Dagsbonus: når alle dagens mål er fullført, gi engangsbonus (idempotent).
     useEffect(() => {
         if (goalsWithProgress.length === 0) return;
@@ -168,6 +207,14 @@ export const MyLearningPage = () => {
         const allDone = goalsWithProgress.every(({ goal, progress }) => progress >= goal.target);
         if (allDone) awardDailyGoalBonus(today);
     }, [goalsWithProgress, lastGoalBonusDay, today, awardDailyGoalBonus]);
+
+    // Overraskelsesbonus: når gnistmålet fullføres (idempotent per dag).
+    useEffect(() => {
+        const bonusGoalId = goals?.day === today ? goals.bonusGoalId : null;
+        if (!bonusGoalId || lastSurpriseBonusDay === today) return;
+        const bonus = goalsWithProgress.find(({ goal }) => goal.id === bonusGoalId);
+        if (bonus && bonus.progress >= bonus.goal.target) awardSurpriseGoalBonus(today);
+    }, [goals, goalsWithProgress, lastSurpriseBonusDay, today, awardSurpriseGoalBonus]);
 
     return (
         <div className="pb-16">
@@ -189,24 +236,29 @@ export const MyLearningPage = () => {
                     bestStreak={streak.best}
                     freezes={streak.freezes ?? 0}
                     multiplier={multiplier}
+                    totalXp={totalXp}
+                    badgeCount={Object.keys(badges).length}
                     primaryAction={primaryAction}
                     goals={goalsWithProgress}
+                    bonusGoalId={goals?.day === today ? (goals.bonusGoalId ?? null) : null}
+                    streakAtRisk={streakAtRisk}
                     onEditProfile={() => setProfileOpen(true)}
+                    welcome={welcomeSubjects}
                 />
 
+                {/* Ny elev får fagvalget i heroen - da er lista bare duplikat. */}
+                {!isNewStudent && <RecommendationsSection items={restRecommendations} />}
+                <SubjectRings mastery={mastery} />
+                <ActivitySection dayLog={dayLog} />
+
                 <div className="grid lg:grid-cols-3 gap-4 items-start">
-                    <div className="space-y-4 lg:col-span-1">
-                        <LevelCard totalXp={totalXp} badgeCount={Object.keys(badges).length} />
+                    <div className="lg:col-span-2">
+                        <BadgeGallery unlocked={badges} metrics={metrics} />
+                    </div>
+                    <div className="lg:col-span-1">
                         <SyncCard />
                     </div>
-                    <div className="space-y-4 lg:col-span-2">
-                        <RecommendationsSection items={restRecommendations} />
-                        <SubjectRings mastery={mastery} />
-                    </div>
                 </div>
-
-                <ActivitySection dayLog={dayLog} />
-                <BadgeGallery unlocked={badges} metrics={metrics} />
             </div>
 
             <ProfileDialog open={profileOpen} onClose={() => setProfileOpen(false)} />

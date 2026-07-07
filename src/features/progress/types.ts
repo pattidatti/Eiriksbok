@@ -76,6 +76,9 @@ export interface BadgeDef {
     emoji: string;
     counter: string; // nøkkel i counters-recorden
     tiers: [number, number, number]; // terskler for bronse/sølv/gull
+    // Rute som gir fremgang mot badgen - CTA-en i «Nærmest deg».
+    actionLink: string;
+    actionLabel: string;
 }
 
 export interface AvatarDef {
