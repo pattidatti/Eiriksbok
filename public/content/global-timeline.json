@@ -2136,6 +2136,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "paskeoyas-kollaps",
+      "title": "Påskeøyas kollaps",
+      "description": "En grønn øy full av palmer ble hogd naken for å reise steinstatuer. Se hvordan et samfunn kan bruke opp det det lever av.",
+      "startDate": 1200,
+      "endDate": 1722,
+      "displayDate": "1200-1722",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "imperienes-fall",
+      "link": "/samfunnskunnskap/imperienes-fall/paskeoyas-kollaps",
+      "tags": [
+        "samfunn",
+        "kollaps",
+        "baerekraft",
+        "miljo",
+        "ressurser",
+        "paskeoya"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "havamal",
       "title": "Håvamål",
       "description": "Utgitt av Ukjent (Den høyes tale)",

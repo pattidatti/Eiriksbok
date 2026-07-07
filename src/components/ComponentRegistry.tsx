@@ -29,6 +29,7 @@ const MaktfordelingSjekk = lazy(() => import('./content/interactive/Maktfordelin
 const MaktensKilde = lazy(() => import('./content/interactive/MaktensKilde').then(m => ({ default: m.MaktensKilde })));
 const KollapsDiagnose = lazy(() => import('./content/interactive/KollapsDiagnose').then(m => ({ default: m.KollapsDiagnose })));
 const HandelsnettKollaps = lazy(() => import('./content/interactive/HandelsnettKollaps').then(m => ({ default: m.HandelsnettKollaps })));
+const RessurskollapsSimulator = lazy(() => import('./content/interactive/RessurskollapsSimulator').then(m => ({ default: m.RessurskollapsSimulator })));
 const KongensMaktBinding = lazy(() => import('./content/interactive/KongensMaktBinding').then(m => ({ default: m.KongensMaktBinding })));
 const GullSaltVekten = lazy(() => import('./content/interactive/GullSaltVekten').then(m => ({ default: m.GullSaltVekten })));
 const TondibiSlaget = lazy(() => import('./content/interactive/TondibiSlaget').then(m => ({ default: m.TondibiSlaget })));
@@ -315,6 +316,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     MaktensKilde,
     KollapsDiagnose,
     HandelsnettKollaps,
+    RessurskollapsSimulator,
     EratosthenesJorda,
     GullSaltVekten,
     TondibiSlaget,
