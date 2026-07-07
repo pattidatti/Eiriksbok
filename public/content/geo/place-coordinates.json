@@ -915,6 +915,10 @@
       "count": 16
     },
     {
+      "tag": "samfunn",
+      "count": 16
+    },
+    {
       "tag": "imperialisme",
       "count": 16
     },
@@ -933,10 +937,6 @@
     {
       "tag": "doctrinal",
       "count": 16
-    },
-    {
-      "tag": "samfunn",
-      "count": 15
     },
     {
       "tag": "konflikt",
@@ -1131,6 +1131,10 @@
       "count": 8
     },
     {
+      "tag": "kollaps",
+      "count": 7
+    },
+    {
       "tag": "ytringsfrihet",
       "count": 7
     },
@@ -1184,10 +1188,6 @@
     },
     {
       "tag": "silkeveien",
-      "count": 6
-    },
-    {
-      "tag": "kollaps",
       "count": 6
     },
     {
@@ -3188,6 +3188,22 @@
     },
     {
       "tag": "rettsvitenskap",
+      "count": 1
+    },
+    {
+      "tag": "baerekraft",
+      "count": 1
+    },
+    {
+      "tag": "miljo",
+      "count": 1
+    },
+    {
+      "tag": "ressurser",
+      "count": 1
+    },
+    {
+      "tag": "paskeoya",
       "count": 1
     },
     {

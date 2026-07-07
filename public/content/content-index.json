@@ -1,5 +1,5 @@
 {
-  "buildId": 1783363224562,
+  "buildId": 1783387845016,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1155,6 +1155,9 @@
     ],
     "concept-zimmermann-telegrammet": [
       "content/concepts/zimmermann-telegrammet.json"
+    ],
+    "progression": [
+      "content/config/progression.json"
     ],
     "scanner-config": [
       "content/config/scanner-config.json"
@@ -3383,6 +3386,9 @@
     "hvorfor-imperier-faller": [
       "content/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller.json"
     ],
+    "paskeoyas-kollaps": [
+      "content/samfunnskunnskap/imperienes-fall/paskeoyas-kollaps.json"
+    ],
     "ekkokamre": [
       "content/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre.json"
     ],
@@ -3914,6 +3920,7 @@
     "concepts/ytringsfrihet.json/ytringsfrihet": "content/concepts/ytringsfrihet.json",
     "concepts/zeppeliner.json/zeppeliner": "content/concepts/zeppeliner.json",
     "concepts/zimmermann-telegrammet.json/zimmermann-telegrammet": "content/concepts/zimmermann-telegrammet.json",
+    "config/progression.json/progression": "content/config/progression.json",
     "config/scanner-config.json/scanner-config": "content/config/scanner-config.json",
     "geo/place-coordinates.json/place-coordinates": "content/geo/place-coordinates.json",
     "global-timeline-images.json/undefined/global-timeline-images": "content/global-timeline-images.json",
@@ -4661,6 +4668,7 @@
     "samfunnskunnskap/ideer-og-verdenssyn/utopier": "content/samfunnskunnskap/ideer-og-verdenssyn/utopier.json",
     "samfunnskunnskap/imperienes-fall/bronsealderens-kollaps": "content/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps.json",
     "samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller": "content/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller.json",
+    "samfunnskunnskap/imperienes-fall/paskeoyas-kollaps": "content/samfunnskunnskap/imperienes-fall/paskeoyas-kollaps.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre": "content/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet": "content/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt": "content/samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt.json",

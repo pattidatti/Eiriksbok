@@ -118,8 +118,18 @@ const Gjeldshavna3D = lazy(() => import('./Gjeldshavna3D'));
 const ImperiumSoyler = lazy(() => import('./ImperiumSoyler'));
 const HimmelensMandat3D = lazy(() => import('./HimmelensMandat3D'));
 const VendMotMekka3D = lazy(() => import('./VendMotMekka3D'));
+const Paaskeoya3D = lazy(() => import('./Paaskeoya3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'paskeoya-3d': {
+        id: 'paskeoya-3d',
+        title: 'Påskeøya: skogen og statuene',
+        description:
+            'En grønn øy full av palmer. Klikk et tre for å hogge det, og se en moai reise seg langs kysten - for hvert par trær du feller, står en ny statue ferdig. Men øya blir brunere for hvert tre som faller. Når siste palme er hogd, står alle de seks moaiene ferdige på en naken stein. Lyspæren kommer i hendene: det samme arbeidet øyboerne var stolte av, å reise moai, brukte opp skogen som holdt dem i live. Uten trær ble det ingen kanoer til fiske, ingen ved og ingen tømmer. De brukte ressursen raskere enn den kunne fornye seg, og forbi vippepunktet var det ingen vei tilbake.',
+        estimatedSeconds: 140,
+        loader: () => import('./Paaskeoya3D'),
+        Component: Paaskeoya3D as never,
+    },
     'himmelens-mandat-3d': {
         id: 'himmelens-mandat-3d',
         title: 'Himmelens mandat',
