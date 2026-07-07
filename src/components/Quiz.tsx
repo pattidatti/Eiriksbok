@@ -45,7 +45,13 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
         return q.answer || '';
     };
 
+    // Vern mot dobbeltklikk: «Neste» rendres på samme sted som «Svar»
+    // forsvinner fra, så et raskt dobbeltklikk hoppet ellers rett forbi
+    // fasit-visningen uten at eleven så riktig svar.
+    const answeredAtRef = React.useRef(0);
+
     const submitAnswer = () => {
+        answeredAtRef.current = Date.now();
         setIsAnswered(true);
         const correct = getCorrectAnswer(questions[currentQuestion]);
         captureQuizAnswer(questions[currentQuestion], selectedOption === correct);
@@ -60,6 +66,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
     };
 
     const nextQuestion = () => {
+        if (Date.now() - answeredAtRef.current < 350) return;
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
             setSelectedOption(null);
@@ -97,7 +104,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
                     {emoji}
                 </motion.div>
                 <h3>Quiz fullført!</h3>
-                <p>Du fikk {correctCount} av {questions.length} riktige ({score} poeng).</p>
+                <p>Du fikk {correctCount} av {questions.length} riktige.</p>
                 <button className="next-btn pressable focus-ring" onClick={() => window.location.reload()}>Start på nytt</button>
             </motion.div>
         )

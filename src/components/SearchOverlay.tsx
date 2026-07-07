@@ -193,14 +193,16 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
                 import('../lib/firebase').then(({ db }) => {
                     import('firebase/database').then(({ ref, push, serverTimestamp }) => {
                         const searchRef = ref(db, 'analytics/searches');
+                        // Analytikk er best-effort: manglende skrivetilgang
+                        // (f.eks. localhost) skal aldri gi feil i konsollen
                         push(searchRef, {
                             query: query,
                             type: 'text',
                             timestamp: serverTimestamp(),
                             resultsCount: searchResults.length
-                        });
-                    });
-                });
+                        }).catch(() => {});
+                    }).catch(() => {});
+                }).catch(() => {});
             }
         }, 2000); // 2 second debounce
 
