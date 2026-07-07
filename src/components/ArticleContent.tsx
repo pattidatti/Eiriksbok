@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Volume2, ChevronDown, Info, CheckCircle2, XCircle, Pause, Play, Square } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { getComponent } from './ComponentRegistry';
 import { useGlossary } from '../context/GlossaryContext';
 import type { Concept, ContentBlock } from '../types';
@@ -100,6 +100,27 @@ const renderWithMarkdown = (text: string, concepts?: Concept[]) => {
     );
 };
 
+// Blokk-vis scroll-inn-animasjon (samme mønster som FactBox). Bilder får kun
+// opacity - y-forskyvning på bilder føles som layout-hopp. once: true gjør at
+// blokken aldri animeres om igjen, viktig for ro ved scrolling opp/ned.
+const RevealBlock: React.FC<{ imageOnly?: boolean; children: React.ReactNode }> = ({
+    imageOnly = false,
+    children,
+}) => {
+    const reduceMotion = useReducedMotion();
+    if (reduceMotion) return <>{children}</>;
+    return (
+        <motion.div
+            initial={imageOnly ? { opacity: 0 } : { opacity: 0, y: 16 }}
+            whileInView={imageOnly ? { opacity: 1 } : { opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ type: 'spring', stiffness: 200, damping: 24 }}
+        >
+            {children}
+        </motion.div>
+    );
+};
+
 interface ArticleContentProps {
     content: ContentBlock[];
     concepts?: Concept[];
@@ -166,6 +187,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
     return (
         <div className={`article-content min-w-0 ${isTool ? 'w-full max-w-none' : 'max-w-5xl mx-auto'}`}>
             {displayContent.map((block, index) => {
+                const rendered = ((): React.ReactNode => {
                 // ... (rest of the mapping using mergedConcepts instead of concepts)
                 // Handle 'type' (standard), 'name' (legacy), and '__typename' (GraphQL)
                 let type = block.type || (block as any).name;
@@ -591,6 +613,16 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                         }
                         return null;
                 }
+                })();
+
+                if (!rendered) return null;
+
+                const isImageBlock = (block.type || (block as any).name) === 'image';
+                return (
+                    <RevealBlock key={index} imageOnly={isImageBlock}>
+                        {rendered}
+                    </RevealBlock>
+                );
             })}
         </div >
     );
