@@ -134,6 +134,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvordan erobret Kyros byen Babylon i 539 fvt, og hva gjorde han da han kom inn i byen?",
+                    "Hva er en satrap, og hva måtte en satrap gi kongen tilbake for å få styre provinsen sin?",
+                    "Hva gjorde Kyros med jødene som satt som fanger i Babylon?",
+                    "Hva er Kyros-sylinderen, og hvorfor viste FN den fram i 1971?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor det å la folk beholde gudene, språket og lovene sine kunne gjøre imperiet sterkere, ikke svakere.",
+                    "Sammenlign hvordan assyrerne styrte med hvordan Kyros styrte. Hvorfor tror du de valgte så ulike metoder?",
+                    "Teksten sier at Kyros-sylinderen først og fremst er kongelig propaganda. Forklar hva det betyr, og hvorfor historikere likevel mener Kyros gjorde noe sjeldent.",
+                    "I Bibelen kalles Kyros «Herrens salvede», men teksten mener det neppe var en åndelig handling for ham. Vurder hvorfor Kyros hjalp jødene hjem."
+                ],
+                "gaaVidere": [
+                    "Satrap-modellen lot lokale ledere styre seg selv mot skatt og lojalitet. Finn et eksempel i dagens verden der et sentralt styre lar lokale områder bestemme mye selv, og forklar likheten.",
+                    "Skriv en kort tekst (5-8 setninger) der du tar stilling til om Kyros fortjener å bli kalt tolerant, eller om han bare var en smart hersker som gjorde det som lønte seg.",
+                    "Diskuter med en partner: Er det mulig å bygge et stort rike i dag uten frykt og vold, slik Kyros forsøkte? Hva ville vært vanskeligst?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Sjekk forståelsen",

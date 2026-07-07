@@ -73,6 +73,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalles metoden der båtbyggerne festet bordgangene over hverandre som takstein og klinket dem sammen med jernnagler?",
+                    "Hva var den viktigste oppfinnelsen ifølge teksten, og hvilket materiale ble den laget av?",
+                    "Hva var forskjellen på et langskip og en knarr, og hva ble hvert av skipene brukt til?",
+                    "Hva heter det godt bevarte vikingskipet som ble funnet i en gravhaug i Vestfold?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor klinkbyggingen gjorde skipene bedre til å tåle bølger enn skip bygget med skjelett først.",
+                    "Teksten sier at kjølen gjorde det mulig å bære en stor mast med seil uten å velte. Forklar hvorfor seilet var så viktig for at vikingene kunne reise langt.",
+                    "Hvorfor var det grunne dypgående en så stor fordel i krig? Bruk det teksten sier om elver og strender i svaret ditt.",
+                    "Vikingene brukte både årer og seil på skipene sine. Vurder hvorfor det var lurt å ha begge deler i stedet for bare én av dem."
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt der du sammenligner et vikingskip med et moderne skip du kjenner til. Hva er likt, og hva er blitt helt annerledes?",
+                    "Diskuter med en medelev: Teksten sier at vikingtiden aldri ville ha skjedd uten disse skipene. Er dere enige i at én teknologi kan forandre en hel tidsalder? Finn et eksempel fra vår egen tid.",
+                    "Finn ut mer om enten Gokstadskipet eller Osebergskipet, og skriv tre nye ting du lærte om hvordan vikingskip ble bygget eller brukt."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

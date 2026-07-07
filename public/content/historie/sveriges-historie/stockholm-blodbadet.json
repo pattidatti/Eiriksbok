@@ -144,6 +144,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var Kalmarunionen, og hvilke tre kongeriker var med i den?",
+                    "Hvorfor stoppet ikke amnesti-brevet henrettelsene? Forklar hvilket smutthull Christian II brukte.",
+                    "Hvem var Sten Sture den yngre, og hva skjedde med ham i 1520?",
+                    "Hvor mange dager varte henrettelsene, og hvilke grupper mennesker ble halshugget på Stortorget?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Christian II handlet lovlig på papiret, men brøt med all rettsfølelse. Forklar hvordan han klarte begge deler samtidig ved å bruke to parallelle rettssystem.",
+                    "Artikkelen sier at Christian II selv skapte den fienden han fryktet mest. Forklar hva som menes med dette.",
+                    "I faktaboksen får Christian II tilnavnet Christian Tyrann i Sverige, men Christian den gode i Danmark. Hvorfor kan samme person huskes så ulikt i to land?",
+                    "Hvorfor ombestemte bøndene i Dalarna seg og valgte å følge Gustav Vasa etter at nyheten om blodbadet nådde dem?"
+                ],
+                "gaaVidere": [
+                    "Skriv et kort dagbokinnlegg (4-6 setninger) fra Gustav Vasas ståsted den kvelden han flyktet nordover til Dalarna.",
+                    "Teksten sier at når lov og rettferdighet ikke lenger henger sammen, mister staten sin legitimitet. Finn eller tenk på et eksempel fra vår egen tid der noen bruker reglene på en måte som føles urettferdig, og diskuter det med en medelev.",
+                    "Den dramatiske skituren til Gustav Vasa huskes i dag gjennom Vasaloppet. Undersøk hvordan et land velger å minnes historiske hendelser, og diskuter hvorfor noen historier blir feiret mens andre glemmes."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

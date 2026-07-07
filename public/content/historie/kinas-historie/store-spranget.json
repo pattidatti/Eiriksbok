@@ -205,6 +205,29 @@
       "content": "Deng Xiaoping kom tilbake til makten. Han tok Kina i en helt ny retning - mot markedsøkonomi og åpenhet for handel med omverdenen. Det er historien om [Kinas vekst til supermakt](/historie/kinas-historie/kina-supermakt). Men arret etter Det store spranget og kulturrevolusjonen sitter fortsatt dypt i det kinesiske samfunnet."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var Maos mål med Det store spranget fremover, og hvor lang tid ville han bruke på å ta igjen Storbritannia i stålproduksjon?",
+                "Hva er et kollektiv, og hvordan fikk bøndene betalt for arbeidet sitt under Mao?",
+                "Hvorfor rapporterte lokale partiledere avlinger som var mye høyere enn de faktiske?",
+                "Hvem var Rødegardistene, hvor gamle var de, og hva fikk de i oppgave å gjøre?"
+            ],
+            "reflekter": [
+                "Teksten sier at hungersnøden mellom 1959 og 1961 var menneskeskapt og ikke skyldtes tørke eller naturkatastrofer. Forklar med egne ord hvordan politikk og løgn kunne føre til at millioner sultet i hjel.",
+                "Hvorfor tror du Mao valgte å mobilisere nettopp ungdommen da han startet kulturrevolusjonen? Hva kan gjøre unge lettere å styre enn voksne?",
+                "Teksten forteller at barn anklaget foreldre og ektefeller anklaget hverandre. Hvorfor kunne det være tryggere å vise lojalitet til Mao enn til sin egen familie?",
+                "Se på linjediagrammet over kornproduksjonen. Hva forteller tallene fra 1958 til 1961 oss om hva som skjedde, og hvordan passer det med det teksten sier om hungersnøden?"
+            ],
+            "gaaVidere": [
+                "Teksten sier at det kinesiske kommunistpartiet fortsatt holder arkivene hemmelige og at temaet er sensurert i Kina i dag. Diskuter i klassen hvorfor et land kan ønske å skjule sin egen historie, og hvorfor det er viktig at vi likevel lærer om den.",
+                "Skriv en kort tekst på 5-8 setninger fra en 15-årings synsvinkel som blir med i Rødegardistene i 1966. Hva føler han eller hun når de får uniform, rødt armbind og makt?",
+                "Deng Xiaoping tok senere Kina i retning markedsøkonomi og handel med resten av verden. Finn ut hva Kina er kjent for å produsere i dag, og drøft hvor mye landet har forandret seg siden Maos tid."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

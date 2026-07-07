@@ -235,6 +235,29 @@
       "caption": "Grensene i Midtøsten i dag speiler fortsatt de linjene europeiske diplomater trakk for over hundre ar siden."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvem var de to diplomatene som ga navn til Sykes-Picot-avtalen i 1916, og hvilke to land representerte de?",
+                "Hva lovet britene araberne gjennom brevvekslingen mellom Henry McMahon og Husain bin Ali, og hva gjorde araberne til gjengjeld?",
+                "Hvordan delte Sykes-Picot-avtalen Midtøsten? Skriv hvilke områder Frankrike fikk og hvilke Storbritannia fikk.",
+                "Hva var Balfour-erklæringen fra 1917, og til hvem sendte Arthur James Balfour brevet?"
+            ],
+            "reflekter": [
+                "Artikkelen kaller de tre løftene (Husain-McMahon, Sykes-Picot og Balfour) for 'motstridende'. Forklar hvorfor det var umulig for britene å holde alle tre samtidig.",
+                "I Irak ble sjiamuslimer, sunnimuslimer og kurdere presset inn i én stat. Teksten sammenligner dette med å putte nordmenn, franskmenn og grekere i ett land. Forklar hvorfor slike grenser kunne skape konflikt.",
+                "Noen historikere mener Sykes-Picot får for mye skyld for Midtøstens problemer. Hva sier artikkelen om dette, og hva mener du selv - kan én avtale forklare så mye?",
+                "Hvorfor tror du Sykes og Picot holdt avtalen sin hemmelig mens araberne kjempet mot osmanerne?"
+            ],
+            "gaaVidere": [
+                "Teksten sier at Palestina-konflikten har sin rot i løftene fra 1915 til 1917. Finn en nyhet om Midtøsten i dag og skriv noen setninger om hvordan den kan henge sammen med det du har lest.",
+                "Skriv et kort dagbokinnlegg (5-6 setninger) som Faisal etter Paris-fredskonferansen i 1919, der han oppdager at løftene til araberne ble brutt.",
+                "Diskuter med en medelev: Burde folk som bor i et område få bestemme sine egne grenser, eller har stormakter noen ganger rett til å tegne dem? Bruk eksempler fra artikkelen."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

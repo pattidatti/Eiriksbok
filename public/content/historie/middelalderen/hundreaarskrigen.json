@@ -100,6 +100,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to land kjempet mot hverandre i Hundreårskrigen, og hva startet krigen?",
+                    "Hvorfor kunne den engelske langbuen slå de franske ridderne? Nevn minst to grunner fra teksten.",
+                    "Hva gjorde Jeanne d'Arc ved byen Orléans i 1429, og hvordan endte det for henne selv?",
+                    "Hvor mange år varte krigen, og hva rammet Europa midt i den i 1349?"
+                ],
+                "reflekter": [
+                    "Teksten sier at hemmeligheten bak de engelske seirene ikke var ett supervåpen, men mengden. Forklar hvorfor tusenvis av billige bueskyttere kunne slå noen få dyre riddere.",
+                    "Både langbuen og kanonen gjorde slutt på riddernes makt. Sammenlign de to våpnene: hva ødela hver av dem for ridderne?",
+                    "Hvorfor tror du en ung bondejente som Jeanne d'Arc klarte å gi de franske soldatene troen på seier tilbake?",
+                    "Krigen gjorde kongene sterkere og folk mer knyttet til nasjonen sin. Forklar hvordan behovet for penger og soldater til krigen førte til dette."
+                ],
+                "gaaVidere": [
+                    "Skriv et kort dagboknotat (4-6 setninger) fra en fransk bonde som ble lært opp til å skyte med langbue i den engelske hæren. Hvordan føles det å kunne slå en ridder?",
+                    "Teksten sier krigen gjorde at folk begynte å føle seg som egne nasjoner. Diskuter med en medelev: hva er det som gjør at folk i dag føler seg som nordmenn?",
+                    "Langbuen og kanonen gjorde krig billigere og åpen for vanlige folk. Finn et eksempel på et nyere våpen eller en ny teknologi som har forandret hvordan kriger utkjempes."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Hundreårskrigen - sjekk forståelsen",

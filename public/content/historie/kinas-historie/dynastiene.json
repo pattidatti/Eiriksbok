@@ -120,6 +120,29 @@
       "caption": "Zheng Hes flaggskip var over 120 meter langt - fire ganger lengre enn Columbus' Santa Maria."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilke fire store oppfinnelser kom fra Kina, og hva ble hver av dem brukt til?",
+                "Hva var keju-systemet, og hva var hovedhensikten med det?",
+                "Hva menes med 'Himmelens mandat', og hva skjer med en keiser som bryter ansvaret sitt?",
+                "Hva gjorde Qin Shi Huang for å knytte riket sammen etter at han samlet Kina i 221 fvt.?"
+            ],
+            "reflekter": [
+                "Forklar hvorfor eksamenssystemet keju ble kalt revolusjonerende, selv om det i praksis favoriserte rikere familier.",
+                "Konfutsios var verken gud eller profet, men tankene hans styrte Kina i over to tusen år. Hvorfor tror du en filosofi om lydighet og orden ble så nyttig for keiserne?",
+                "Qin Shi Huang beskrives både som en tyrann og som mannen som skapte Kina. Vurder om ettertiden bør huske ham mest for det gode eller det brutale han gjorde.",
+                "Ming-dynastiet valgte å stoppe Zheng Hes ekspedisjoner og vende innover, akkurat da Europa begynte å seile ut. Forklar hvordan dette valget forandret Kinas plass i verden."
+            ],
+            "gaaVidere": [
+                "I dag brukes eksamener og prøver fortsatt for å velge ut hvem som kommer inn på gode utdanninger og jobber. Skriv fem til åtte setninger om likheter og forskjeller mellom keju-systemet og prøver du selv tar på skolen.",
+                "Diskuter med en partner: Er det klokt eller farlig for et land å isolere seg fra resten av verden slik Ming-Kina gjorde? Finn argumenter for begge sider.",
+                "Terrakottahæren til Qin Shi Huang ble funnet av bønder i 1974. Velg et av byggverkene eller oppfinnelsene fra artikkelen og skriv en kort tekst om hva det forteller oss om menneskene som laget det."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

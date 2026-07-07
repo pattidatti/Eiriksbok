@@ -259,6 +259,29 @@
                 "title": "Middelalderens teknologier",
                 "content": "Selv om perioden ofte kalles stillestående, ble mange viktige oppfinnelser introdusert eller forbedret i Europa: Vindmøller, vannmøller, briller, det mekaniske uret, kompasset og til slutt [boktrykkerkunsten](/historie/middelalderen/boktrykkerkunsten)."
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre hovedfaser deles middelalderen inn i, og omtrent hvilke årstall dekker hver av dem?",
+                    "Hva skjedde 1. juledag år 800, og hvorfor var det en viktig hendelse?",
+                    "Forklar hvordan føydalsamfunnet var bygget opp, fra kongen på toppen til bøndene nederst.",
+                    "Hva var Svartedauden, og hvor stor del av Europas befolkning døde av den?"
+                ],
+                "reflekter": [
+                    "Teksten sier at 'den mørke middelalder' er et feilaktig bilde. Bruk minst tre eksempler fra artikkelen til å forklare hvorfor perioden ikke var stillestående.",
+                    "Angrepene fra vikinger, madjarer og arabere tvang frem føydalismen. Forklar sammenhengen mellom trusselen utenfra og at lokale stormenn bygde borger og overtok forsvaret.",
+                    "Svartedauden gjorde arbeidskraft til en mangelvare, og mange steder opphørte livegenskapet. Forklar hvorfor en katastrofe kunne føre til bedre vilkår for bøndene som overlevde.",
+                    "Sammenlign tidlig middelalder og høymiddelalder. Hva var de viktigste forskjellene når det gjaldt befolkning, handel og byer?"
+                ],
+                "gaaVidere": [
+                    "Universitetene i Bologna, Paris og Oxford ble grunnlagt i middelalderen. Finn ut hvor gammelt det eldste universitetet i Norge er, og diskuter hva det sier om når høyere utdanning kom hit.",
+                    "Skriv en kort tekst (5-8 setninger) der du tar rollen som en ung bonde like etter Svartedauden. Hvordan har livet ditt endret seg fordi det er blitt så få arbeidere igjen?",
+                    "Diskuter med en partner: Korstogene førte til at europeerne gjenoppdaget gresk filosofi, vitenskap og nye varer. Kan en krig ha positive følger for samfunnet selv om selve krigen er brutal?"
+                ]
+            }
         }
     ],
     "quiz": [

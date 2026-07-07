@@ -97,6 +97,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilket år og hvilken by introduserte Johannes Gutenberg moderne boktrykkerkunst?",
+                    "Hvordan ble bøker laget før 1440, og hvorfor gjorde det bøker så dyre?",
+                    "Hvilke tre metaller blandet Gutenberg for å lage de løse typene, og hvilken egenskap ga blandingen bokstavene?",
+                    "Hvor mange bøker fantes det i Europa rundt år 1500, bare 60 år etter oppfinnelsen?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Gutenbergs genistrek var å sette sammen eksisterende kunnskap, ikke å finne opp trykking. Forklar med egne ord hva som menes med det.",
+                    "Kineserne hadde løse typer allerede rundt år 1040. Hvorfor passet Gutenbergs metode bedre til det latinske alfabetet enn til det kinesiske skriftspråket?",
+                    "Forklar hvordan trykkpressen knuste kirkens monopol på kunnskap og sannhet.",
+                    "Hvorfor ble det nesten umulig for makthaverne å drive sensur etter at trykkpressen kom? Bruk eksempelet med Martin Luthers teser."
+                ],
+                "gaaVidere": [
+                    "Teksten sammenligner trykkpressen med internett. Skriv en kort tekst (5-8 setninger) der du sammenligner hvordan de to spredte informasjon og utfordret makthavere.",
+                    "Diskuter med en partner: Er det bra eller farlig at informasjon kan spres raskt og billig til alle? Finn argumenter for begge sider.",
+                    "Finn et eksempel fra din egen tid der en ny teknologi ga vanlige folk tilgang til noe som før var forbeholdt en liten elite. Forklar likheten med trykkpressen."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

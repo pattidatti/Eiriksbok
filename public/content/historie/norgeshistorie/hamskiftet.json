@@ -189,6 +189,29 @@
                 "title": "Fra hest til hestekrefter",
                 "content": "I 1905 kom en av de første traktorene til Norge fra England. Den ble sett på som et monster! Men utviklingen gikk sin gang: I 1949 var det ca. 9 000 traktorer i Norge. I 1959 var tallet økt til over 50 000. I dag styrer mange bønder avanserte maskiner via GPS."
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr 'mangesysleri', og hvilke arbeidsoppgaver måtte en bonde i det gamle samfunnet kunne?",
+                    "Hvem var husmennene, og hvordan levde de sammenlignet med bøndene som eide jorda si?",
+                    "Hva var 'Det store hamskiftet', altså hvilken overgang i jordbruket handlet det om?",
+                    "Nevn tre årsaker til at befolkningen i Norge vokste så raskt på 1800-tallet."
+                ],
+                "reflekter": [
+                    "Forklar hvordan jernbanen fra 1854 og nye maskiner som slåmaskinen hang sammen med at bøndene begynte å produsere for salg.",
+                    "Hvorfor dro over 800 000 nordmenn til USA? Bruk 'Amerikabrevene' og husmannsvesenet i svaret ditt.",
+                    "Sammenlign det første hamskiftet (1840+) med det andre hamskiftet (1960+). Hva var likt, og hva var forskjellig?",
+                    "Hvorfor tror du livet i byene ved Akerselva la grunnlaget for arbeiderforeninger som Thranebevegelsen?"
+                ],
+                "gaaVidere": [
+                    "I dag styrer mange bønder maskiner via GPS. Skriv en kort tekst (5-8 setninger) om hvordan du tror gårdsarbeid vil se ut om 50 år.",
+                    "Da maskinene tok over, forsvant behovet for mange arbeidere. Finn et eksempel fra din egen tid der ny teknologi gjør at færre folk trengs i en jobb.",
+                    "Diskuter med en partner: Var hamskiftet mest et gode eller et onde for vanlige folk? Trekk fram både fordeler og ulemper."
+                ]
+            }
         }
     ],
     "quiz": [

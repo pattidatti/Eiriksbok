@@ -38,6 +38,29 @@
             "props": {
                 "content": "Homo sapiens oppstod i Afrika for 200 000 år siden. Nomader er jegere og samlere uten fast boplass."
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor og for omtrent hvor lenge siden oppstod Homo sapiens ifølge teksten?",
+                    "Hva betyr det at menneskene levde som nomader, og hvordan skaffet de seg mat?",
+                    "I hvilken rekkefølge nådde Homo sapiens Asia, Europa og Amerika, og omtrent når kom de til hvert sted?",
+                    "Når og hvor kom de første nomadene til Norge, og hva var det som gjorde det mulig?"
+                ],
+                "reflekter": [
+                    "Teksten sier at flere mennesketyper som Homo neanderthalensis og Homo erectus levde samtidig, men at det var Homo sapiens som spredte seg til hele verden. Hvorfor tror du det ble slik?",
+                    "Norges historie starter mye senere enn menneskets historie ellers. Forklar hvorfor isen er en viktig del av svaret på hvorfor menneskene kom så sent hit.",
+                    "Hvorfor tror du menneskene i titusenvis av år måtte flytte rundt i stedet for å bli boende på ett sted?",
+                    "Faktaboksen forteller at Homo sapiens og neanderthalere fikk barn sammen. Hva sier dette om hvor like de to mennesketypene egentlig var?"
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt der du forestiller deg én dag i livet som nomade for 40 000 år siden. Hva må du gjøre for å overleve fram til kvelden?",
+                    "I dag flytter mange mennesker fra ett land til et annet. Diskuter med en medelev hva som er likt og hva som er ulikt mellom dagens flytting og den store utvandringen fra Afrika.",
+                    "Menneskene brukte tusenvis av år på å spre seg over kloden. Finn ut hvor lang tid et fly bruker fra Afrika til Amerika i dag, og skriv én setning om hvor mye raskere vi reiser nå."
+                ]
+            }
         }
     ]
 }

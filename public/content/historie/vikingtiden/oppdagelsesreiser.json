@@ -53,6 +53,28 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Rundt hvilket år startet landnåmet på Island, og hva het parlamentet som ble grunnlagt i år 930?",
+                    "Hvorfor ga Eirik Raude øya navnet Grønland, og hvor lenge overlevde bosettingene hans der?",
+                    "Hvorfor kalte Leiv Eiriksson landet i vest for Vinland, og hvor lå trolig basen de bygde?",
+                    "Hva forteller teksten var hovedgrunnen til at vikingene ikke klarte å bli værende i Amerika?"
+                ],
+                "reflekter": [
+                    "Mange av dem som dro til Island, reiste i protest mot Harald Hårfagre. Forklar hvorfor de valgte å bygge et samfunn helt uten konge.",
+                    "Grønland lå svært langt unna resten av verden. Forklar hvordan de store avstandene både gjorde bosettingen mulig og til slutt gjorde den sårbar.",
+                    "Sammenlign bosettingene på Island og i Vinland: hvorfor holdt den ene i århundrer mens den andre ble oppgitt etter få år?",
+                    "Teksten sier at bragdene deres er et av de mest imponerende kapitlene i sjøfartshistorien. Er du enig? Argumenter ut fra det du har lest."
+                ],
+                "gaaVidere": [
+                    "Columbus får ofte æren for å ha oppdaget Amerika, men vikingene var der rundt 500 år før. Skriv 5-8 setninger om hvorfor du tror det er Columbus vi husker best.",
+                    "Utgravningene på Newfoundland på 1960-tallet beviste at sagaene om Vinland var sanne. Diskuter med en partner: hvordan kan gamle fortellinger og arkeologi sammen hjelpe oss å forstå fortiden?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

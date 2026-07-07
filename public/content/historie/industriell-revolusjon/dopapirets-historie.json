@@ -104,6 +104,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalte romerne svampen på en stokk som de brukte i de offentlige latrinene, og hvordan ble den gjort ren mellom brukerne?",
+                    "Hvem oppfant papir i Kina rundt år 105 e.Kr., og hva var papiret laget av?",
+                    "Hva het produktet Joseph Gayetty lanserte i 1857, og hvorfor ble salget skuffende?",
+                    "Hva viser Seth Wheelers patent fra 1891 om hvilken vei toalettpapiret skal henge?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor toalettpapir først ble billig nok til daglig bruk etter den industrielle revolusjonen. Hva var det ved dampmaskinen og fabrikkene som gjorde det mulig?",
+                    "Kineserne brukte papir til hygiene over 1000 år før europeerne. Hvorfor tror du ideen ikke fulgte med papiret vestover langs silkeveien, selv om selve papirproduksjonen gjorde det?",
+                    "Scott-brødrene var flaue over produktet sitt og markedsførte det anonymt. Hva sier det om hvordan folk så på toalettpapir på den tiden?",
+                    "Under depresjonen på 1930-tallet og under koronapandemien i 2020 hamstret folk toalettpapir. Hvorfor tror du nettopp toalettpapir ble et symbol når folk ble redde?"
+                ],
+                "gaaVidere": [
+                    "Nordmenn bruker rundt 164 ruller i året, mens en kineser bruker rundt 49. Diskuter med en partner hva slike forskjeller kan fortelle om kultur og velstand.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan en helt vanlig hverdagsvare, som du nesten ikke tenker på, har en historie som henger sammen med store hendelser som industrialisering og kriser.",
+                    "Finn en annen hverdagsting du bruker daglig, og undersøk kort når og hvordan den ble vanlig i norske hjem. Ble den, som toalettpapiret, først en luksusvare?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

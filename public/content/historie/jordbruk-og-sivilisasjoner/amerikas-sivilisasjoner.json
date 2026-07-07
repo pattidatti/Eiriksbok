@@ -117,6 +117,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to planter ble grunnlaget for sivilisasjonene i Amerika, og hvor ble de først dyrket?",
+                    "Hva var en chinampa, og hvorfor bygde aztekerne slike hager rundt Tenochtitlán?",
+                    "Hva var quipu, og hva brukte inkaene disse knyttede snorene til?",
+                    "Hvilke oppdagelser er mayaene kjent for innen tall, kalender og skrift?"
+                ],
+                "reflekter": [
+                    "Teksten sier at de samme stegene fra jordbruk til sivilisasjon skjedde både i Midtøsten og i Amerika, helt uten kontakt mellom stedene. Hva forteller det oss om mennesker?",
+                    "Aztekernes harde styring skapte mye hat blant nabofolkene. Forklar hvordan dette hatet senere ble til en fordel for spanjolene.",
+                    "Teksten kaller sykdom det aller farligste våpenet, mer enn gevær og hester. Begrunn hvorfor kopper og meslinger fikk så store følger nettopp i Amerika.",
+                    "Sammenlign mayaene og inkaene som samfunn: hvordan var de bygd opp forskjellig, og hva hadde de likevel felles?"
+                ],
+                "gaaVidere": [
+                    "Inkaene styrte et enormt rike uten hjul og uten bokstavskrift. Skriv et kort avsnitt om hvordan du tror hverdagen ville vært annerledes hvis vi mistet skriften i dag.",
+                    "Diskuter i klassen: Hvorfor tror du historietimer på skolen ofte forteller mer om Egypt og Roma enn om maya, aztekere og inka? Bør vi endre på det?",
+                    "Finn ut hva mais og poteter betyr for verdens matforsyning i dag, og lag en kort liste over retter du selv spiser som stammer fra disse plantene fra Amerika."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

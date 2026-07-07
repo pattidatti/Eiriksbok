@@ -178,6 +178,29 @@
         {
             "type": "text",
             "content": "Etter at Alv døde, endret alt seg i Norge. Den nye kongen, Haakon V, sørget for at ingen adelsmenn lenger fikk ha egne hærer eller bygge egne borger. Han flyttet hovedstaden til Oslo og gjorde Akershus til landets sentrum. Tiden med uavhengige riddere var over – nå var det kongens lov som gjaldt for alle sammen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken adelsætt kom Alv Erlingsson fra, og i hvilket område hadde denne familien makten sin?",
+                    "Hva gjorde Alv da han ble sendt til England i 1286? Nevn både lånet han tok opp og hvem han fikk med seg hjem.",
+                    "Hvilken festning begynte hertug Haakon å bygge etter at Alv angrep Oslo, og hvorfor bygde han den av stein?",
+                    "Hvordan endte livet til Alv Erlingsson? Forklar hvor og hvordan han ble henrettet i 1290."
+                ],
+                "reflekter": [
+                    "Alv følte at han kunne snakke til kongen som en likemann. Forklar hvordan slekten og posisjonen hans gjorde at han oppførte seg nesten som en småkonge.",
+                    "Teksten forteller at drapet på Hallkjell Krøkedans brøt med alle regler for hvordan riddere skulle oppføre seg. Hvorfor tror du nettopp dette svikoppdraget ble et vendepunkt som ingen kunne tilgi?",
+                    "Sammenlign de tre perspektivene i artikkelen: hertug Haakon, Hansaen og Alvs tilhengere. Hvordan kan de fortelle så ulike historier om den samme mannen?",
+                    "Kongen valgte den mest vanærende straffen, steile og hjul, mot en adelsmann. Hva ville han vise resten av riket med å gjøre det på denne måten?"
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at den som vinner får definere hvem taperen var. Finn et eksempel fra nyhetene eller din egen tid der to sider forteller helt ulike historier om det samme, og forklar hvorfor det er vanskelig å vite hva som er sant.",
+                    "Skriv en kort tale (5-8 setninger) som Alvs forsvarer i rettssaken i 1290. Bruk minst to konkrete detaljer fra teksten til å forsvare ham.",
+                    "Diskuter i klassen: Var Alv Erlingsson en helt som kjempet mot fremmede kjøpmenn, eller bare en egoistisk sjørøver som beriket seg selv? Begrunn standpunktet ditt med eksempler fra teksten."
+                ]
+            }
         }
     ],
     "quiz": [

@@ -125,6 +125,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet wergild, og hvilke to germanske ord kommer det fra? Hva het det samme systemet på norrønt?",
+                    "Hvilket valg hadde en ætt når noen i familien ble drept, både før og etter at wergild kom?",
+                    "Hvor mye var en hauld verdt etter Gulatingsloven, og hvor mye var en vanlig fribonde og en træl verdt?",
+                    "Hva het den franske loven som kong Klodvig lot skrive ned rundt år 500, og hva inneholdt den?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvordan wergild kunne bryte spiralen med blodhevn mellom to ætter.",
+                    "Teksten sier at pristabellen ikke var nøytral. Hva mener den med at loven satte en pris på menneskelig verdi?",
+                    "Hvorfor forsvant wergild da kongemakten ble sterkere og kristendommen kom? Forklar hvordan begge dro i samme retning.",
+                    "Ifølge Lex Salica var en kvinne i fertil alder verdt det dobbelte av en mann. Hva sier denne regelen om hva samfunnet verdsatte?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at ideen om at skade kan måles i penger lever videre i dag. Finn et eksempel på erstatning i dagens Norge, og forklar hva som er den viktigste forskjellen fra wergild.",
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er den frie bonden i Gallia som fant broren sin drept. Ville du krevd betaling eller tatt hevn, og hvorfor?",
+                    "Diskuter med en partner: Er det rettferdig at et samfunn setter ulik pris på ulike menneskeliv? Finnes det spor av dette i dag også?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -121,6 +121,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var hemmeligheten bak de fem gode keiserne, ifølge teksten, og hvorfor fungerte det så bra?",
+                    "Hva bygde Trajan og Hadrian som fortsatt kan sees i dag, og hva ble Hadrians mur brukt til?",
+                    "Hva var Caracalla mest kjent for, og hvorfor ga han statsborgerskap til alle frie menn i 212 evt.?",
+                    "Hva menes med 'Krisen i det tredje århundre', og hva skjedde med de fleste av de over 26 keiserne i denne perioden?"
+                ],
+                "reflekter": [
+                    "Teksten kaller Trajansøylen 'antikkens propagandaplakat'. Forklar hva som gjør et byggverk til propaganda, og hvorfor en keiser ville bruke penger på slikt.",
+                    "Sammenlign den sivile keiseren med soldatkeiseren slik teksten beskriver dem. Hvilken type tror du var mest stabil for riket over tid, og hvorfor?",
+                    "Marcus Aurelius brøt tradisjonen med adopsjon og lot sønnen Commodus arve tronen. Vurder hvorfor dette valget kan ha vært en dårlig idé for riket.",
+                    "Septimius Severus ga sønnene rådet 'Vær venner, betal soldatene, og gi blaffen i alle andre.' Hva forteller dette rådet oss om hvor keiserens virkelige makt lå på denne tiden?"
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt der du forklarer 'Damnatio Memoriae' til en venn, og finn et eksempel fra vår egen tid der noen prøver å slette en persons navn eller minne.",
+                    "Nero skyldte på de kristne for brannen i Roma for å avlede oppmerksomheten fra seg selv. Diskuter med en klassekamerat hvorfor ledere noen ganger gir en gruppe skylden for problemer de ikke har skapt.",
+                    "Velg én av keiserne i artikkelen og lag et kort 'CV' for ham med de tre viktigste tingene han gjorde, både bra og dårlig."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

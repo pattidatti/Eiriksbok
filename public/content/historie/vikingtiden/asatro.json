@@ -91,6 +91,29 @@
                 "Skjebnetro: Dødsdagen er bestemt ved fødselen.",
                 "Balanse mellom Orden (Guder) og Kaos (Jotner)."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalte vikingene selv troen sin, i stedet for ordet religion?",
+                    "Nevn minst tre av de ni verdenene i Yggdrasil, og forklar kort hvem eller hva som bodde i hver av dem.",
+                    "Hvem var Nornene, og hva var oppgaven deres ved Yggdrasils rot?",
+                    "Hva var et blot, og hva håpet vikingene å få igjen for det?"
+                ],
+                "reflekter": [
+                    "Teksten sier at vikingene tilba gudene av respekt og litt frykt, ikke av kjærlighet. Forklar hvorfor gudene ble sett på som mektige, men verken gode eller allmektige.",
+                    "Vikingene mente at dødsdagen din var bestemt allerede da du ble født. Forklar hvordan denne skjebnetroen kunne gi dem stor dødsforakt i kamp.",
+                    "Hvorfor var det så viktig for vikingene å få et godt ettermæle? Bruk sitatet fra Håvamål om at ordets glans aldri dør.",
+                    "Sammenlign åsatru og kristendommen slik teksten beskriver dem. Hvorfor var møtet mellom de to et kultursjokk?"
+                ],
+                "gaaVidere": [
+                    "Håvamål gir råd om vennskap, vett og forsiktighet i stedet for bud om hva du ikke skal gjøre. Skriv tre korte leveregler for livet ditt i dag i samme stil som Håvamål.",
+                    "Diskuter med en partner: Vikingene brydde seg mye om hva folk sa om dem etter at de var døde. Hvor mye betyr ryktet eller ettermælet ditt for folk i dag?",
+                    "Skriv en kort tekst (5-8 setninger) om hvordan livet ditt ville sett annerledes ut hvis du trodde at dødsdagen din allerede var bestemt og ikke kunne endres."
+                ]
+            }
         }
     ],
     "concepts": [

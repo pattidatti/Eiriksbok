@@ -104,6 +104,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Når ble NATO stiftet, og hvor mange land skrev under på Atlanterhavspakten?",
+                    "Hvorfor opprettet Sovjetunionen Warszawapakten i 1955, og hvilken hendelse utløste det?",
+                    "Hva sier prinsippet om kollektivt forsvar i NATOs artikkel 5?",
+                    "Hva var Fulda-gapet, og hvorfor var akkurat dette området så viktig militært?"
+                ],
+                "reflekter": [
+                    "Teksten sier at NATO var en frivillig allianse, mens Warszawapakten ble styrt med hard hånd fra Moskva. Forklar forskjellen med egne ord, og bruk Ungarn 1956 og Tsjekkoslovakia 1968 som eksempler.",
+                    "Hvorfor var det et så dramatisk skifte for Norge å bli med i NATO? Se på hva erfaringene fra 9. april 1940 hadde å si.",
+                    "NATO satset på avansert teknologi og atomvåpen, mens Warszawapakten hadde flest tanks og soldater. Hvorfor valgte de to alliansene så ulike strategier?",
+                    "Hvorfor ville land som Sverige, Sveits og Finland holde seg nøytrale? Hva kunne de vinne, og hva kunne de tape, på å stå utenfor begge alliansene?"
+                ],
+                "gaaVidere": [
+                    "NATO finnes fortsatt i dag. Finn ut hvilke land som er blitt med i NATO etter at den kalde krigen tok slutt, og skriv noen setninger om hvorfor du tror flere land ville bli medlem.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor to fiendtlige allianser som sto ansikt til ansikt langs jernteppet gjorde at en lokal konflikt raskt kunne bli til en verdenskrig.",
+                    "Diskuter med en partner: Den alliansefrie bevegelsen ville navigere mellom supermaktene uten å velge side. Er det mulig for et land å stå helt utenfor når to stormakter kjemper om makt? Argumenter for og mot."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

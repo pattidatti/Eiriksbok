@@ -106,6 +106,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Langs hvilken elv vokste Songhai-riket fram, og hvilke tre store byer lå langs vannet?",
+                    "Hva var Timbuktu mest kjent for i tillegg til gull?",
+                    "Nevn minst tre ting Askia Muhammad gjorde for å styre riket bedre.",
+                    "Hvorfor vant den lille marokkanske hæren over Songhai i slaget ved Tondibi i 1591?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor teksten kaller elva Niger for rikets motorvei. Hvordan ga kontrollen over elva makt?",
+                    "En håndskrevet bok kunne være verdt mer enn gull i Timbuktu. Hva forteller det oss om hva folk der satte høyt?",
+                    "Marokkanerne vant slaget, men klarte aldri å styre det enorme riket selv. Hvorfor gikk det slik, tror du?",
+                    "Teksten sier at nye våpen som skytevåpen kunne snu opp ned på styrkeforholdet i verden. Argumenter for hvorfor ny teknologi kan felle selv det største riket."
+                ],
+                "gaaVidere": [
+                    "I lang tid fikk mange høre at Afrika ikke hadde noen stor historie før europeerne kom. Skriv en kort tekst (5-8 setninger) der du bruker Songhai til å vise at dette er feil.",
+                    "Diskuter med en partner: Hva ligner mellom hvordan Songhai kontrollerte elva Niger og hvordan land i dag prøver å kontrollere viktige handelsveier?",
+                    "Finn ut mer om manuskriptene i Timbuktu. Hvorfor er det viktig å ta vare på slike gamle bøker i dag?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

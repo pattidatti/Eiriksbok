@@ -54,6 +54,29 @@
         {
             "type": "text",
             "content": "I Vietnam stod kommunisten Ho Chi Minh på et torg i Hanoi i 1945 og leste opp en uavhengighetserklæring. Han startet med å sitere den amerikanske uavhengighetserklæringen: «Alle mennesker er født like...».\n\nHo Chi Minh håpet på støtte fra USA. Men den kalde krigen var i gang. USA så på ham som en kommunist først, og en nasjonalist dernest. Derfor støttet USA Frankrikes forsøk på å ta tilbake kolonien. Det endte med et katastrofalt fransk nederlag ved Dien Bien Phu i 1954, som igjen ledet rett inn i den store Vietnamkrigen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde i Sørøst-Asia i 1941-42, og hvilke europeiske hærer ble slått av Japan?",
+                    "Hvem var Sukarno, og hva erklærte han to dager etter at Japan overga seg?",
+                    "Hvor lenge hadde nederlenderne styrt Indonesia, og hvilket år måtte de gi tapt?",
+                    "Hvilken tekst siterte Ho Chi Minh da han leste opp uavhengighetserklæringen i Hanoi i 1945?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Japans okkupasjon 'beviste én ting: Den hvite mann var ikke overlegen'. Forklar hvorfor akkurat dette gjorde det lettere for nasjonalistene å kreve uavhengighet.",
+                    "Hva menes med et 'maktvakuum' i 1945, og hvorfor var det så viktig for nasjonalistene å erklære uavhengighet før europeerne kom tilbake?",
+                    "USA truet med å kutte Marshallhjelpen til Nederland, men støttet Frankrike i Vietnam. Forklar hvorfor USA handlet så ulikt i de to landene.",
+                    "Overskriften kaller Vietnam 'Ironien i historien'. Forklar hva som er ironisk når Ho Chi Minh siterer den amerikanske uavhengighetserklæringen, men likevel ender opp som USAs fiende."
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt (4-5 setninger) der du forklarer hvordan andre verdenskrig, som handlet om Europa, endte med å svekke europeernes makt helt på andre siden av kloden.",
+                    "Diskuter i klassen: Hvis USA hadde støttet Ho Chi Minh i 1945 i stedet for Frankrike, tror dere Vietnamkrigen kunne vært unngått? Bruk det teksten sier om den kalde krigen.",
+                    "Finn ut hva ordet 'dekolonisering' betyr, og gi ett eksempel fra vår egen tid på et land eller folk som fortsatt kjemper for mer selvstyre."
+                ]
+            }
         }
     ],
     "quiz": [

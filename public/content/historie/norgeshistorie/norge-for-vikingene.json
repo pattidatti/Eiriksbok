@@ -204,6 +204,29 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor og etter hva er Komsakulturen oppkalt, og omtrent når slo de første menneskene seg ned i Finnmark?",
+                    "Hvorfor var bronsealderens Norge helt avhengig av import fra kontinentet? Nevn de to metallene bronse er laget av.",
+                    "Hva er en bygdeborg, og hvor mange slike anlegg er registrert i Norge?",
+                    "Hva skjedde i år 536 evt., og hvilket navn ga den norrøne myten denne hendelsen?"
+                ],
+                "reflekter": [
+                    "Teksten beskriver to teorier om hvor de første finnmarkingene kom fra: den østlige hypotesen og kystruten sørfra. Forklar hovedargumentet for hver, og hvorfor de eldste boplassene på ytterkysten støtter kystruten.",
+                    "Hvorfor tok det nesten 1500 år før jordbruket ble hovednæring i Sør-Norge? Bruk arkeolog Christopher Prescotts poeng om hvor vellykket fangstkulturen var.",
+                    "Førromersk jernalder ble før sett på som en fattig nedgangstid, men nyere forskning kaller jernet en demokratisering av teknologien. Forklar hva som menes med det, og hvorfor myrmalm var så viktig.",
+                    "Sammenlign hvordan Stridsøksfolket endret samfunnet (individuelle graver, krigersk ideologi, nytt språk) med bondesamfunnet som fulgte etter. Hva var det viktigste bruddet med tidligere steinalderkulturer?"
+                ],
+                "gaaVidere": [
+                    "Fimbulvinteren i 536 evt. viser hvor sårbart et samfunn er for plutselige klimaendringer. Skriv en kort tekst (5-8 setninger) der du sammenligner denne krisen med hvordan klimaendringer kan ramme samfunn i dag.",
+                    "Teksten sier at moderne DNA-analyser og klimadata har snudd om på gamle teorier om innvandring. Finn ett eksempel i artikkelen der ny vitenskap endret det forskerne trodde, og forklar hvorfor det er lurt å endre mening når nye bevis dukker opp.",
+                    "Diskuter med en partner: Bygdeborgene ble brukt til forsvar, kontroll eller kult. Hvis dere skulle bygge en tilfluktsborg for bygda deres i dag, hvor ville dere plassert den og hvorfor?"
+                ]
+            }
         }
     ],
     "quiz": [

@@ -126,6 +126,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva het skipet som tok de første norske utvandrerne til Amerika i 1825, og hvor mange var om bord da det la ut?",
+                    "Hvorfor kunne bare den eldste sønnen arve gården, og hva måtte de andre barna gjøre i stedet?",
+                    "Hva lovet Homestead-loven fra 1862, og hvorfor betydde den så mye for en husmannssønn?",
+                    "I hvilke amerikanske stater slo de fleste norske utvandrerne seg ned, og hvorfor trivdes de nettopp der?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord forskjellen på press (push) og lokking (pull). Gi ett eksempel på hver fra teksten.",
+                    "Amerikabrevene blir kalt et sterkt lokkemiddel. Hvorfor kunne et brev fra en nabo virke mer overbevisende enn et løfte om gratis jord?",
+                    "Teksten sier at utvandringen var en slags sikkerhetsventil for Norge. Forklar hva som menes med det.",
+                    "Mange kjente seg revet mellom to land. Hvorfor kunne det være vanskelig for en utvandrer å være både amerikaner og fortsatt litt norsk?"
+                ],
+                "gaaVidere": [
+                    "I dag er det andre som flytter til Norge for å finne et bedre liv, slik nordmenn en gang reiste til Amerika. Skriv noen setninger om hva som er likt og hva som er annerledes mellom de to folkeflyttingene.",
+                    "Tenk deg at du er 15 år i en fattig norsk bygd på 1880-tallet og har fått et amerikabrev fra en fetter. Skriv et kort svarbrev der du forklarer om du vil reise eller bli, og hvorfor.",
+                    "Diskuter med en partner: Hva veier tyngst for en som vurderer å flytte langt bort - drømmen om et bedre liv, eller alt man må forlate hjemme?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -53,6 +53,29 @@
                 "Hovedhandelsvarer: Pels og slaver.",
                 "Mange tjente som leiesoldater (væringer) i Konstantinopel."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr navnet Rus, og hvilket språk kommer det sannsynligvis fra?",
+                    "Hva het de to viktigste handelsbyene vikingene bygde langs elvene, og hva heter de i dag?",
+                    "Hva kalte vikingene byen Konstantinopel, og hva betyr navnet?",
+                    "Hvem var Væringgarden, og hvorfor stolte de bysantinske keiserne på dem i stedet for sine egne folk?"
+                ],
+                "reflekter": [
+                    "Teksten sier at ferdene østover handlet mer om handel enn plyndring, men at det var en brutal handel. Forklar hva som gjorde denne handelen brutal.",
+                    "Hvorfor klarte ikke vikingene å erobre Miklagard med makt, og hvordan endret de strategi da de skjønte det?",
+                    "Sammenlign ferdene østover med ferdene vestover. Hva var likt, og hva var forskjellig mellom det svenske og det norsk-danske sporet?",
+                    "Harald Hardråde brukte gullet fra Miklagard til å kjøpe seg kongemakt i Norge. Forklar hvordan rikdom fra utlandet kunne bli til makt hjemme."
+                ],
+                "gaaVidere": [
+                    "Ordet slave kommer fra folkeslaget slaverne fordi så mange av dem ble fanget og solgt. Finn et annet ord i norsk som har fått betydning fra en hendelse eller et folk i historien, og forklar sammenhengen.",
+                    "Skriv en kort tekst (5-8 setninger) fra en ung vikings synsvinkel som ser Miklagard for første gang. Bruk minst tre detaljer fra artikkelen.",
+                    "Diskuter med en partner: Navnet Russland stammer fra vikingene som rodde på elvene. Hvorfor tror dere land og steder ofte får navn fra folk som kom utenfra?"
+                ]
+            }
         }
     ],
     "concepts": [

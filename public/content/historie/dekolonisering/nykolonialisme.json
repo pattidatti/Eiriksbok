@@ -115,6 +115,29 @@
         {
             "type": "text",
             "content": "En god historiker bruker derfor begrepet som et verktøy, ikke som en fasit. Det hjelper oss å se et ekte mønster: at makt og rikdom ofte henger sammen, og at frihet på papiret ikke alltid er det samme som frihet i praksis. Men hvert land og hver hendelse må undersøkes for seg, med flere kilder, før vi feller en dom."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr forstavelsen 'ny' i ordet nykolonialisme, og hvordan er den nye kolonimakten forskjellig fra den gamle?",
+                    "Teksten sier at målet er det samme, men metoden er ny. Hva er målet, og hva er byttet ut med hva?",
+                    "Ramse opp de fire verktøyene den nye kolonimakten bruker, og forklar kort hva hvert av dem går ut på.",
+                    "Hvorfor får en kakaobonde i Ghana bare noen få kroner, mens sjokoladen koster mange ganger så mye i butikken?"
+                ],
+                "reflekter": [
+                    "Forklar hvordan gjeld kan gjøre et fritt land avhengig av en långiver. Hvorfor kaller teksten gjeld det mektigste verktøyet?",
+                    "Hvorfor er det ikke to like parter når et stort selskap forhandler med en fattig regjering? Bruk United Fruit i Guatemala som eksempel.",
+                    "Norge fant olje, men endte ikke som en bananrepublikk. Hva gjorde Norge annerledes, og hva har det med 'ressursforbannelsen' å gjøre?",
+                    "Teksten sier at ordet nykolonialisme kan misbrukes. Hvorfor er det farlig å forklare alt som skjer i fattige land med skjulte planer fra Vesten?"
+                ],
+                "gaaVidere": [
+                    "FactBoxen nevner at også Kina bruker store lån til prosjekter i Afrika og Asia. Diskuter i klassen: er dette en ny form for nykolonialisme, eller noe annet?",
+                    "Skriv et kort avsnitt om Thomas Sankara i Burkina Faso. Hvorfor ble han en helt for mange, og hva forteller skjebnen hans om prisen for å si nei?",
+                    "Finn en vare du bruker ofte (som sjokolade, kaffe eller en mobil). Undersøk hvor råvarene kommer fra, og skriv noen setninger om hvem som tjener mest i kjeden."
+                ]
+            }
         }
     ],
     "quiz": [

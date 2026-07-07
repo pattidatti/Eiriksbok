@@ -149,6 +149,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva drev vannhjulet rundt, og hvordan kom kraften fra hjulet og inn til kvernsteinene inne i mølla?",
+                "Hvorfor var det å male korn med håndkvern så hardt og tidkrevende, og hvem falt dette arbeidet ofte på?",
+                "Nevn minst tre andre ting møllene kunne drive i tillegg til å male korn.",
+                "Hvorfor begynte folk å bygge vindmøller på 1100-tallet, og hva brukte de dem til i Nederland i tillegg til å male korn?"
+            ],
+            "reflekter": [
+                "Teksten sier at elva aldri blir trøtt, mens et menneske må spise, sove og hvile. Forklar hvorfor akkurat dette gjorde vannmølla så mye kraftigere enn en håndkvern.",
+                "Domesday Book fra 1086 listet over 6000 vannmøller i England. Hva forteller det oss om hvor viktig mølla var for en middelalderlandsby?",
+                "Både vannmølla og vindmølla hadde samme svakhet: de var bundet til naturen. Forklar hva dette betydde for hvor byer og verksteder måtte ligge.",
+                "Teksten sier at den som eide mølla, eide makt. Hvorfor ga det makt å eie mølla i landsbyen?"
+            ],
+            "gaaVidere": [
+                "Teksten sier at mølla for en middelalderlandsby var like viktig som strømmen er for oss i dag. Skriv noen setninger om hva som ville skjedd i din hverdag hvis all strøm forsvant en hel uke.",
+                "Møllene lærte menneskene at naturen kunne gjøre det tunge arbeidet. I dag bruker vi fortsatt vann og vind til å lage kraft, for eksempel i vannkraftverk og vindmølleparker. Diskuter i klassen hva som er likt og hva som er nytt sammenlignet med de gamle møllene.",
+                "Dampmaskinen sto på skuldrene til møllene, sier teksten. Finn ut mer om dampmaskinen og forklar med egne ord hva den kunne som møllene ikke klarte."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

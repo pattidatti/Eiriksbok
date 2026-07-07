@@ -124,6 +124,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilket årstall regnes som Vestromerrikets fall, og hva het den siste keiseren i vest?",
+                    "Hvorfor ble hunerkongen Attila kalt Guds svøpe?",
+                    "Hvorfor var det så katastrofalt for Roma at vandalene erobret Nord-Afrika?",
+                    "Hva gjorde Odovakar i år 476, og hvorfor utnevnte han ingen ny keiser i vest?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvordan hunernes press fra øst skapte en dominoeffekt som førte germanske stammer inn over Romas grenser.",
+                    "Sammenlign de to plyndringene av Roma: hva var forskjellen på visigoterne i 410 og vandalene i 455?",
+                    "Teksten sier at fallet skyldtes både dårlig økonomi og korrupsjon innenfra og invasjoner utenfra. Hvilken av disse tror du var viktigst, og hvorfor?",
+                    "Hvorfor tror du folket i Roma reagerte med sjokk i 410, men med resignasjon i 455?"
+                ],
+                "gaaVidere": [
+                    "Faktaboksen forteller at Østromerriket levde videre helt til 1453. Skriv noen setninger om hva du synes: falt egentlig Romerriket i 476, eller først i 1453?",
+                    "Roma var avhengig av korn fra Afrika, og sultet da forsyningen stoppet. Finn et eksempel på et land i dag som er avhengig av å importere mat eller varer fra utlandet, og diskuter hva som kan skje hvis leveransen stopper.",
+                    "Diskuter med en partner: Kan et sterkt samfunn falle langsomt uten at folk merker det før det er for sent? Bruk Romerrikets fall som eksempel."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

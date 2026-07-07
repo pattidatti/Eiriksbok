@@ -73,6 +73,29 @@
         "title": "Visste du at?",
         "content": "Robert Oppenheimer, lederen for prosjektet, siterte et hinduistisk skriftsted da han så den første prøvesprengningen: **Nav har jeg blitt døden, ødelegger av verdener.**"
       }
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva ble radar brukt til, og hvorfor var det så viktig for at britene vant Slaget om Storbritannia i 1940?",
+                "Hva var Enigma, og hvem klarte til slutt å knekke koden ved Bletchley Park?",
+                "Hva var V2, og hva gjorde denne raketten nesten umulig å forsvare seg mot?",
+                "Hvorfor reddet masseproduksjonen av penicillin livet til så mange soldater?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor teksten sier at seieren avhengte like mye av ingeniører og vitenskapsmenn som av soldater.",
+                "Colossus regnes som verdens første programmerbare elektroniske datamaskin. Hvorfor tror du krig kan drive fram teknologi så raskt?",
+                "Sammenlign atombomben og penicillin. Begge var store gjennombrudd, men på hvilken måte var de helt forskjellige for menneskene?",
+                "Me 262 og V2 var avanserte, men kom for sent til å endre krigen. Hva forteller det oss om at det ikke bare er teknologien som avgjør, men også når og hvor mye man har av den?"
+            ],
+            "gaaVidere": [
+                "V2-teknologien ble senere ryggraden i romprogrammene. Finn et eksempel på teknologi vi bruker i dag som opprinnelig ble utviklet for krig, og skriv noen setninger om det.",
+                "Skriv en kort tekst (5-8 setninger) om atombomben over Hiroshima og Nagasaki: Mener du det kan forsvares å bruke et slikt våpen for å avslutte en krig raskere? Begrunn svaret ditt.",
+                "Diskuter med en partner: Er det galt at vitenskapsfolk lager våpen, eller har de ikke noe valg når fienden også prøver? Bruk Manhattan-prosjektet som eksempel."
+            ]
+        }
     }
   ],
   "createdDate": "2025-12-21T15:30:00Z",

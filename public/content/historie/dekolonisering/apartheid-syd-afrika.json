@@ -158,6 +158,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet «apartheid», og hvilket språk kommer det fra?",
+                    "Hva var passbok-systemet, og hvorfor måtte svarte sørafrikanere bære et slikt passbok?",
+                    "Hva skjedde i Sharpeville 21. mars 1960, og hvorfor hadde folk samlet seg der?",
+                    "Hvor lenge satt Nelson Mandela i fengsel, og på hvilken øy sonet han mesteparten av tiden?"
+                ],
+                "reflekter": [
+                    "Forklar hvordan Population Registration Act og «blyanttesten» kunne splitte en familie ved at søsken ble klassifisert ulikt.",
+                    "Teksten sier at passbok-systemet var «designet for å kontrollere arbeidskraft». Forklar med egne ord hvordan systemet knyttet svarte sørafrikaneres bevegelsesfrihet til at de tjenestegjorde hvite.",
+                    "I Soweto i 1976 protesterte elevene fordi undervisningen skulle skje på afrikaans. Hvorfor ble nettopp språket en så sterk grunn til opprør?",
+                    "Artikkelen sier at apartheid tok slutt i 1994, men at ulikheten ikke tok slutt. Forklar hvorfor lover kan oppheves over natten, mens strukturene de skapte tar generasjoner å jevne ut."
+                ],
+                "gaaVidere": [
+                    "Sør-Afrika har i dag noen av verdens største inntektsforskjeller, og grensen mellom fattig og rik følger fortsatt gamle rasegrenser. Finn ut hvordan Sør-Afrika ser ut i dag, og skriv noen setninger om hva som har endret seg og hva som ikke har det.",
+                    "Skriv en kort tekst (5-8 setninger) der du sammenligner apartheid med Jim Crow-lovene i USA. Hva var likt, og hva gjorde apartheid mer systematisk?",
+                    "Diskuter med en partner: Bildet av Hector Pieterson gikk verden rundt og forandret hvordan verden så på apartheid. Hvorfor kan ett enkelt bilde få så stor makt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -111,6 +111,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet fornorsking, og hvem var det staten ville fornorske?",
+                    "Hva var Wexelsen-plakaten fra 1898, og hva slo den fast om språket i skolen?",
+                    "Hvorfor ble internatskolene det sterkeste våpenet i fornorskinga?",
+                    "Hva var Alta-aksjonen, og hva handlet protesten om?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvordan et helt språk kunne dø ut på bare to eller tre generasjoner, uten at noen ble drept.",
+                    "Teksten sier at fornorskinga hang sammen med en sterk nasjonalfølelse på 1800-tallet. Hvorfor mente mange at et land ble sterkest når alle snakket samme språk?",
+                    "Alta-aksjonen tapte kampen om elva, men vant noe mye større. Hva vant den, og hvorfor kan et tap likevel bli et vendepunkt?",
+                    "Teksten sier at det å si unnskyld ikke løser alt, men likevel er viktig. Er du enig? Begrunn svaret ditt."
+                ],
+                "gaaVidere": [
+                    "Samefolkets dag er 6. februar, og det samiske flagget heises da. Finn ut hva som skjer på skolen din eller i nærmiljøet ditt denne dagen, og skriv noen setninger om det.",
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er et samisk barn på internatskole rundt år 1910. Hvordan ville det føles å ikke få snakke morsmålet ditt?",
+                    "Diskuter med en partner: Hva kan et samfunn gjøre i dag for at et minoritetsspråk skal overleve og vokse, i stedet for å forsvinne?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

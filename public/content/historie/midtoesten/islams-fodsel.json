@@ -163,6 +163,29 @@
       "caption": "På litt over hundre år ekspanderte det islamske riket fra Arabia til Spania og India."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "I hvilket år og på hvilket sted mottok Muhammed ifølge islam sine første åpenbaringer?",
+                "Hva betyr ordet hijra, og hvilken hendelse i år 622 viser det til?",
+                "Hvorfor starter den islamske tidsregningen fra hijra og ikke fra Muhammeds fødsel eller de første åpenbaringene?",
+                "Hvilken by ble hovedsete da Muawiya grunnla Umayyadedynastiet, og hvor lå det islamske riket ytterst i vest og øst under dette dynastiet?"
+            ],
+            "reflekter": [
+                "Teksten sier at de mektige familiene i Mekka følte seg truet av Muhammeds budskap. Forklar hvorfor en religion med bare én gud var farlig for inntektene deres.",
+                "Artikkelen skriver at ekspansjonen gikk forbausende raskt. Forklar de to grunnene teksten gir til at muslimske hærer så lett kunne erobre land fra Persia og Bysants.",
+                "Teksten sier at splittelsen mellom sunni og shia egentlig handler om politikk, ikke teologi. Forklar hva de to gruppene var uenige om, og hvorfor du tror en arvefølgestrid kunne vokse til dype religiøse forskjeller.",
+                "I Medina var Muhammed både religiøs og politisk leder. Vurder hvorfor det å ha begge rollene kan ha gjort det lettere å bygge opp et samlet Arabia."
+            ],
+            "gaaVidere": [
+                "Hendelsene rundt Ali og slaget ved Karbala i 680 markeres fremdeles av hundremillioner shia-muslimer hvert år. Finn ett eksempel på en historisk hendelse som fortsatt markeres i dag, og skriv noen setninger om hvorfor mennesker holder minnet levende.",
+                "Skriv en kort dagbokstekst (4-6 setninger) fra en handelsmann i Mekka rundt år 610, som nettopp har hørt Muhammeds nye budskap. Vis hva han tenker og frykter.",
+                "Diskuter med en medelev: På hundre år vokste det islamske riket fra en hule utenfor Mekka til et rike fra Spania til India. Hva tror dere er viktigst når et rike skal vokse så raskt - militær makt, felles språk og lov, eller handel?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

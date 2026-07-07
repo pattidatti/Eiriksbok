@@ -121,6 +121,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet renessanse, og hvilke ideer var det som ble gjenfødt?",
+                    "Nevn minst tre grunner til at renessansen begynte nettopp i Italia, slik teksten forklarer.",
+                    "Hva skjedde i 1453, og hvorfor hjalp denne hendelsen renessansen på vei?",
+                    "Hva mente humanistene var det viktigste, og hvor kommer ordet humanist fra?"
+                ],
+                "reflekter": [
+                    "Forklar hvordan menneskesynet endret seg fra middelalderen til renessansen. Hva var forskjellen på å være en brikke og å være hovedpersonen?",
+                    "Teksten sier at boktrykkerkunsten kanskje var viktigst av alt. Forklar hvorfor det å kunne trykke bøker raskt kunne endre hele Europa.",
+                    "Hvorfor kalles Leonardo da Vinci et l'uomo universale, og hva sier idealet om hva renessansen så på som et fullkomment menneske?",
+                    "Teksten kaller reformasjonen renessansens religiøse storebror. Forklar hva de to hadde til felles i måten å tenke på."
+                ],
+                "gaaVidere": [
+                    "Teksten sier at vi i dag lever på renessansens skuldre. Skriv et kort avsnitt der du gir ett eksempel fra ditt eget liv på en idé fra renessansen som fortsatt gjelder.",
+                    "Renessansens malere ville vise verden slik øyet faktisk ser den. Diskuter med en medelev: er det viktigere at et bilde er sant, eller at det er vakkert?",
+                    "Renessansen mente man ikke skulle stole blindt på autoriteter, men sjekke selv. Finn ett eksempel fra i dag der det er lurt å sjekke en påstand selv i stedet for bare å tro på den."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

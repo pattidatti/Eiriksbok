@@ -64,6 +64,29 @@
         {
             "type": "text",
             "content": "Den franske revolusjon viste at vanlige folk kunne styrte en konge. Den spredte tanken om at staten finnes for folkets skyld, ikke omvendt. Ideer om menneskerettigheter, demokrati og likhet for loven kom inn i nesten alle grunnlover som ble skrevet etterpå.\n\nSamtidig viste revolusjonen at idealer kan tippe over i blodbad. Den er fortsatt et speil vi holder opp når vi diskuterer hvor langt det er lov å gå for å skape et bedre samfunn."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilket år stormet folk i Paris festningen Bastillen, og hva var den et symbol på?",
+                    "Hva het de tre ordene som ble revolusjonens motto?",
+                    "Hvem var Maximilien Robespierre, og hva kalles tiden da han styrte?",
+                    "Hvem grep makten i Frankrike i 1799, og hva krona han seg selv til?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Kongen og adelen levde i sus og dus mens vanlige folk knapt hadde mat. Forklar hvordan slike store forskjeller kunne føre til at folk gjorde opprør.",
+                    "Filosofer som Voltaire og Rousseau spurte hvorfor noen skulle være født som konger og andre som bønder. Hvorfor tror du slike spørsmål var farlige for kongen?",
+                    "Erklæringen om menneskets rettigheter slo fast at alle er født frie og like. Samtidig ble tusenvis henrettet under skrekkveldet. Hvordan henger disse to sidene av revolusjonen sammen?",
+                    "Teksten kaller revolusjonen et speil vi holder opp. Hva mener den med det, og er du enig i at idealer kan tippe over i blodbad?"
+                ],
+                "gaaVidere": [
+                    "Erklæringen om menneskerettighetene formet moderne demokratier. Finn ett eksempel på en rettighet du selv har i dag som kan spores tilbake til slike ideer, og forklar den kort.",
+                    "Skriv en kort tekst på fem til seks setninger der du er en vanlig innbygger i Paris 14. juli 1789. Hva ser du, og hvorfor er du med på å storme Bastillen?",
+                    "Diskuter i klassen: Hvor langt er det lov å gå for å skape et bedre samfunn? Bruk skrekkveldet som eksempel i argumentene deres."
+                ]
+            }
         }
     ],
     "timeline": []

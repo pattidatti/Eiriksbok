@@ -138,6 +138,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor bygde Øst-Tyskland Berlinmuren i 1961, og hvem var det de ville hindre i å dra?",
+                    "Hva var «dødsstripen», og hvordan var den bygget opp for å stoppe flukt?",
+                    "Hvilke to amerikanske presidenter holdt kjente taler i Berlin, og hva sa de om muren?",
+                    "Hvordan endte muren opp med å falle 9. november 1989, ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten kaller muren i øst «den antifascistiske beskyttelsesmuren», men Kennedy kalte den et bevis på at kommunismen hadde mislyktes. Forklar hvorfor de to sidene beskrev den samme muren så ulikt.",
+                    "Mellom 1949 og 1961 flyktet over 2,5 millioner mennesker, og ofte de best utdannede. Forklar hvorfor denne «hjerneflukten» var så farlig for den østtyske staten.",
+                    "Murens fall skjedde nesten ved en feiltakelse etter Schabowskis pressekonferanse. Vurder hvor mye tilfeldighet og hvor mye folkelig press som avgjorde at portene ble åpnet.",
+                    "Sammenlign farene folk tok da de flyktet over muren med grunnene til at de likevel forsøkte. Hva forteller det oss om livet i Øst-Tyskland?"
+                ],
+                "gaaVidere": [
+                    "Finn ut om en grense eller mur som finnes i verden i dag. Hva skal den stoppe, og på hvilke måter ligner eller skiller den seg fra Berlinmuren?",
+                    "Skriv en kort tekst (5-8 setninger) fra en 18-årings perspektiv som våkner opp morgenen 13. august 1961 og oppdager at gaten til den andre siden av byen er stengt.",
+                    "Diskuter med en partner: Peter Fechter ble liggende å blø i hjel mens verden så på. Hva burde vaktene, naboene eller landene på hver side ha gjort, og hva hindret dem?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -182,6 +182,29 @@
       "content": "Historien om vaksiner og antibiotika er derfor ikke ferdig. To enkle ideer, en kukoppe og en glemt skål med muggsopp, forandret hva det vil si å være menneske. Likevel var ikke medisinen alene om å redde oss. Like viktig var arbeidet med [rent vann og kloakk](/historie/teknologi-og-hverdagsliv/vann-og-kloakk), som stoppet mange sykdommer før de i det hele tatt rakk å gjøre noen syk. Vi sørger ikke lenger over halvparten av barna våre, og en betent rift er ikke lenger en dødsdom. Men oppfinnelser som redder liv må også passes på. Neste gang du får en vaksine eller en kur som gjør deg frisk på noen dager, er det verdt å huske hvor nytt og hvor skjørt dette egentlig er."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva la Edward Jenner merke til hos budeiene som ga ham ideen til den første vaksinen, og hvilket år laget han den?",
+                "Hvordan oppdaget Alexander Fleming penicillin, og hva så han rundt muggsoppen i den glemte skålen?",
+                "Hva er den viktigste forskjellen på når en vaksine og et antibiotikum brukes: før eller etter at du har blitt syk?",
+                "Hvilken sykdom ble erklært helt utryddet i 1980, og hvor mange av ti smittede drepte den ifølge teksten?"
+            ],
+            "reflekter": [
+                "Teksten sammenligner en vaksine med en brannøvelse. Forklar med egne ord hvorfor immunforsvaret trenger en slik øvelse før den ekte sykdommen kommer.",
+                "Hvorfor virker antibiotika bare mot bakterier og ikke mot virus? Bruk dette til å forklare hvorfor det er nytteløst å ta antibiotika mot en forkjølelse.",
+                "Forklar hvordan flokkimmunitet beskytter en nyfødt baby som ikke selv kan vaksineres, og hva som skjer hvis for mange dropper vaksinen.",
+                "Antibiotikaresistens oppstår fordi de seigeste bakteriene overlever hver runde med medisin. Forklar hvorfor det å sløse med antibiotika gjør at medisinen slutter å virke raskere."
+            ],
+            "gaaVidere": [
+                "Teksten sier at medisinen ikke reddet oss alene, men at rent vann og kloakk var like viktig. Skriv et kort avsnitt om hvorfor begge deler måtte til for at folk skulle leve lenger.",
+                "Diskuter i klassen: Bør alle være nødt til å ta vaksiner som beskytter flokken, eller skal hver enkelt få velge selv? Bruk det du lærte om flokkimmunitet i argumentene dine.",
+                "Antibiotikaresistens kalles et av de største helseproblemene i verden i dag. Finn ett konkret forslag til hva vi kan gjøre for å bruke antibiotika smartere, og forklar hvorfor det hjelper."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

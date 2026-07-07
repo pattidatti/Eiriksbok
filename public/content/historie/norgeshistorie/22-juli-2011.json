@@ -145,6 +145,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde klokken 15:25 og hva skjedde klokken 17:21 den 22. juli 2011?",
+                    "Hvor mange mennesker ble drept til sammen, og hvordan fordelte antallet seg mellom regjeringskvartalet og Utøya?",
+                    "Hvorfor kaller politiet gjerningsmannen en ensom ulv, og hva betyr det?",
+                    "Hva mente Jens Stoltenberg da han sa at Norge skulle svare med mer demokrati, mer åpenhet og mer menneskelighet?"
+                ],
+                "reflekter": [
+                    "Teksten sier at radikalisering er en gradvis prosess over flere år. Forklar hvorfor det gir flere sjanser underveis til å stoppe utviklingen.",
+                    "Gjerningsmannen valgte AUF-leiren fordi han hatet Arbeiderpartiets politikk. Hvorfor er det urimelig å angripe ungdommer som verken bestemte politikken eller var ansvarlige for den?",
+                    "Mange land svarer på terror med strengere lover og mer overvåkning. Hvorfor tror du Norge valgte en annen vei, og hva kan være styrken og svakheten ved det valget?",
+                    "Domstolen og mediene møtte gjerningsmannen med saklighet i stedet for sensasjon. Hvorfor kan det være viktig når noen prøver å bruke rettssalen som en scene for ideene sine?"
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt (4-6 setninger) om hva du tror det betyr for overlevende og pårørende at 22. juli nå er pensum i norsk skole.",
+                    "Teksten nevner at samfunnet fortsatt diskuterer hvordan vi skal snakke om ekstreme meninger på nett uten å gi dem mer oksygen. Diskuter i par eller gruppe hva dere selv kan gjøre når dere møter hat på nett.",
+                    "Finn ut hvordan et minnested etter 22. juli ser ut i dag (for eksempel Hegnhuset på Utøya eller minnestedet på Sørbråten). Beskriv hvorfor et lyst og åpent bygg kan være et bevisst valg."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

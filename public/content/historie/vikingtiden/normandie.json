@@ -61,6 +61,29 @@
                 "Utviklet ridderkulturen og tungt kavaleri.",
                 "Erobret England i 1066 og Sicilia senere."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var avtalen mellom kong Karl den Enfoldige og Rollo i 911, og hva fikk Rollo ut av den?",
+                    "Hva betyr navnet Normandie, og hvorfor fikk landet dette navnet?",
+                    "Hvilke to kampmåter kombinerte normannerne da de utviklet ridderen?",
+                    "Hvem var Vilhelm Erobreren, og hva gjorde han i England i 1066?"
+                ],
+                "reflekter": [
+                    "Rollo nektet å kysse kongens fot og lot en av mennene sine gjøre det slik at kongen veltet bakover. Hva ville han vise med denne handlingen?",
+                    "Teksten kaller det 'verdens raskeste integrering' at vikingene ble franske og kristne på et par generasjoner. Hvorfor tror du de forandret seg så fort?",
+                    "Artikkelen sier normannerne ikke bare var ødeleggere, men også statsbyggere. Forklar forskjellen med eksempler fra teksten.",
+                    "Det var etterkommere av vikinger som knuste vikingtiden ved Stamford Bridge og Hastings i 1066. Hvorfor kaller teksten dette ironisk?"
+                ],
+                "gaaVidere": [
+                    "Engelsk er en miks av germansk språk og fransk fordi normannerne styrte England. Finn tre engelske ord som ligner på franske ord, og skriv dem ned.",
+                    "Skriv en kort tekst på fem til seks setninger der du later som du er en av Rollos menn. Fortell om hvordan livet forandret seg fra viking til ridder.",
+                    "Diskuter med en medelev: Er det en styrke eller en svakhet å ta det beste fra andre kulturer og gjøre det til sitt eget? Bruk normannerne som eksempel."
+                ]
+            }
         }
     ],
     "concepts": [

@@ -83,6 +83,29 @@
     {
       "type": "text",
       "content": "For Norge førte krigen til et brudd med den gamle nøytralitetspolitikken. Erfaringen fra 9. april 1940 viste at nøytralitet ikke beskytter mot en aggressiv stormakt. Norge valgte derfor å søke sikkerhet i allianse med vestmaktene, og ble et av de stiftende medlemmene i forsvarsalliansen NATO i 1949. Landet gikk inn i en periode med sterk statlig styring og oppbygging av velferdsstaten, ofte under mottoet «Aldri mer 9. april»."
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilke to land ble de store vinnerne etter andre verdenskrig, og hvilke ideologier sto de for?",
+                "Hva mente Winston Churchill med at et «jernteppe» hadde senket seg over Europa i 1946?",
+                "Hvorfor ble FN grunnlagt i 1945, og hva vedtok FN i 1948 for å beskytte enkeltmennesket?",
+                "Hva var Marshallhjelpen, og hvilke land fikk lov til å ta imot den?"
+            ],
+            "reflekter": [
+                "Forklar hvorfor USA mente at fattigdom og nød i Europa kunne føre til mer kommunisme, og hvordan Marshallhjelpen skulle stoppe dette.",
+                "Krigen ble kalt «dødsstøtet» for de europeiske kolonirikene. Forklar hvordan soldater fra India og Afrika var med på å svekke myten om den hvite manns overlegenhet.",
+                "Hvorfor valgte Norge å gi opp nøytralitetspolitikken og bli med i NATO i 1949? Bruk erfaringen fra 9. april 1940 i svaret ditt.",
+                "Sammenlign Vestblokken og Østblokken slik artikkelen beskriver dem. Hvilke forskjeller i styresett og økonomi gjorde det vanskelig for de to sidene å stole på hverandre?"
+            ],
+            "gaaVidere": [
+                "FN og Verdenserklæringen om menneskerettighetene finnes fortsatt i dag. Finn ett eksempel fra nyhetene der menneskerettigheter blir brutt et sted i verden, og forklar hvorfor.",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor mottoet «Aldri mer 9. april» ble så viktig for Norge etter krigen.",
+                "Diskuter med en partner: Var det klokt av USA å bruke milliarder på å gjenreise Vest-Europa, eller burde pengene vært brukt på noe annet? Argumenter for begge sider."
+            ]
+        }
     }
   ],
   "createdDate": "2025-12-21T15:40:00Z",

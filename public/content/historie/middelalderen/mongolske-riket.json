@@ -244,6 +244,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor stort var det mongolske riket på sitt største, og hvorfor er det spesielt i verdenshistorien?",
+                    "Hva het Djengis Khan da han ble født, og hva betyr tittelen 'Djengis Khan'?",
+                    "Hva var Pax Mongolica, og omtrent hvilken periode varte den?",
+                    "Forklar hva den fingerte flukten var, og hvorfor den krevde så streng disiplin."
+                ],
+                "reflekter": [
+                    "Teksten sier at Djengis Khans klokskap var like viktig som brutaliteten hans. Forklar med egne ord hvordan han klarte å samle de splittede mongolske stammene.",
+                    "Hvorfor kunne en mongolsk hær bevege seg mye raskere enn europeiske riddere i tung rustning, og hvilken fordel ga det i krig?",
+                    "Forklar den historiske ironien i at de trygge veiene under Pax Mongolica både fremmet handel og hjalp Svartedauden med å spre seg.",
+                    "Riket var bygd på personlig lojalitet til én hersker i stedet for sterke institusjoner. Hvorfor gjorde dette riket sårbart etter at Djengis Khan døde?"
+                ],
+                "gaaVidere": [
+                    "Teksten forteller at ideer, teknologi og religion reiste langs de mongolske handelsveiene. Finn ett eksempel fra i dag på hvordan ideer eller varer sprer seg raskt mellom land, og sammenlign kort med Silkeveien.",
+                    "Skriv en kort tekst (5-8 setninger) der du er handelsmannen på Silkeveien og forteller hva du opplever på reisen gjennom det mongolske riket.",
+                    "Diskuter med en partner: Var det mongolske riket mest en ødeleggende kraft eller mest en kraft som knyttet verden sammen? Bruk eksempler fra teksten til å begrunne svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

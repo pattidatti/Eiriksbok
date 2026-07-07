@@ -124,6 +124,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr navnet Magna Carta, og i hvilket år satte kong Johan seglet sitt på dokumentet?",
+                    "Hvorfor gjorde baronene opprør mot kong Johan? Nevn minst to grunner fra teksten.",
+                    "Hva sa punkt 39 om hva som måtte til før en fri mann kunne fengsles eller fratas eiendommen sin?",
+                    "Hva skjedde med Magna Carta rett etter at kong Johan hadde skrevet under, og hvordan overlevde avtalen likevel?"
+                ],
+                "reflekter": [
+                    "Teksten sier at kongen før 1215 sto over loven. Forklar med egne ord hva forskjellen er på å stå over loven og å stå under loven.",
+                    "Hvorfor var det så viktig at kongen ikke lenger kunne kreve ny skatt uten å spørre et råd først? Hva sier dette om hvem pengene egentlig tilhørte?",
+                    "Baronene var rike og mektige menn, ikke vanlige bønder. Vurder hvorfor det nettopp var de som klarte å tvinge kongen til å bøye seg.",
+                    "Sammenlign Magna Carta med Magnus Lagabøtes landslov slik teksten beskriver dem. Hva var likt ved det som skjedde i England og i Norge?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at vi lever i en rettsstat der loven gjelder likt for alle, også for dem som styrer. Finn et eksempel fra nyheter eller samfunnet i dag der en mektig person måtte følge loven, og skriv noen setninger om det.",
+                    "Skriv en kort tekst på fem til seks setninger der du er en av baronene ved Runnymede i 1215. Forklar hvorfor du krever at kongen skal skrive under.",
+                    "Diskuter i par: Er det alltid en god idé at ingen skal stå over loven, eller finnes det situasjoner der en leder burde få bestemme uten faste regler? Begrunn svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

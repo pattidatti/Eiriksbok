@@ -136,6 +136,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem var George Stephenson, og hva åpnet han mellom Stockton og Darlington i 1825?",
+                    "Hva het lokomotivet som viste seg fram da Liverpool og Manchester-banen åpnet i 1830, og hvor fort kjørte det?",
+                    "Når åpnet Norges første jernbane, hvor gikk den, og hva ble den bygget for å frakte?",
+                    "Hva skjedde i 1847 og i 1884 som gjorde at klokken ble lik over store områder?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor jernbanen tvang fram en felles standardtid. Hva gikk galt så lenge hver by hadde sin egen klokke?",
+                    "Teksten sier at en fabrikk ikke lenger trengte å ligge ved en elv. Forklar hvorfor jernbanen gjorde dette mulig.",
+                    "Hvorfor ble noen byer rike mens andre visnet hen etter at jernbanen kom? Bruk stasjonen som torg i svaret ditt.",
+                    "Teksten skiller mellom dampmaskinen som ga kraft og jernbanen som ga et nettverk. Forklar forskjellen og hvorfor nettverket var så viktig."
+                ],
+                "gaaVidere": [
+                    "Teksten sammenligner jernbanen med internett som noe som har krympet verden. Skriv 5-8 setninger om hvordan en oppfinnelse i din egen tid har endret hva avstand betyr.",
+                    "Bergensbanen brukte 14 år på å bli bygget over Hardangervidda. Finn ut mer om ett stort samferdselsprosjekt i Norge i dag, og diskuter med en partner om det er verdt tid og penger.",
+                    "Reisen fra York til London gikk fra tre dager til fem timer på tretti år. Skriv en kort dagbokstekst der du er en reisende som opplever togreisen for aller første gang."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Sjekk om du henger med",

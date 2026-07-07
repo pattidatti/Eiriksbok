@@ -138,6 +138,29 @@
       "content": "Uten det islamske gullaldet, ingen europeisk renessanse. Det er historikernes dom. De store europeiske tenkerne på 1300- og 1400-tallet bygde på et fundament som muslimske lærde hadde lagt ferdig gjennom fem hundre år med tålmodig arbeid. Neste gang du løser en algebraoppgave, husker du hvem du kan takke."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilken herskerslekt tok makten i 750, og hvilken by grunnla de fra år 762?",
+                "Hva var Bayt al-Hikma, og hva slags arbeid foregikk der?",
+                "Hvilke to hverdagsord fikk vi fra matematikeren al-Khwarizmi?",
+                "Hva skjedde med Bagdad i 1258, og hvem sto bak?"
+            ],
+            "reflekter": [
+                "Teksten sier at lærde i Bagdad ikke bare tok vare på gammel kunnskap, men bygde ny kunnskap oppå den. Forklar forskjellen med et eksempel fra artikkelen.",
+                "Hvorfor byttet europeerne fra romertall til arabiske tall? Bruk regneeksempelet i teksten til å forklare hvorfor det ene systemet var lettere.",
+                "Artikkelen kaller kaffehusene i middelalderens Kairo møtesteder for diskusjon og politikk. Hvorfor kan et sted der folk møtes og snakker fritt bli viktig for utviklingen av nye ideer?",
+                "Historikerne mener at uten det islamske gullaldet hadde det ikke blitt noen europeisk renessanse. Vurder om det er rettferdig å si at renessansen egentlig begynte i Bagdad."
+            ],
+            "gaaVidere": [
+                "En algoritme er en steg-for-steg-fremgangsmåte for å løse et problem. Skriv ned en algoritme i tre til fem steg for en helt vanlig oppgave du gjør hjemme, for eksempel å lage frokost.",
+                "Skriv et kort avsnitt (fire til fem setninger) om hvordan hverdagen din hadde sett annerledes ut uten oppfinnelsene og kunnskapen fra det islamske gullaldet.",
+                "Diskuter i klassen: Når biblioteket i Bagdad ble ødelagt, overlevde kunnskapen fordi den allerede hadde spredt seg til andre byer. Hvordan tar vi vare på viktig kunnskap i dag, slik at den ikke går tapt?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

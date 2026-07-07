@@ -83,6 +83,29 @@
     {
       "type": "text",
       "content": "Våren 1945 kollapset Det tredje riket. Sovjetiske styrker kjempet seg inn i Berlins gater. I en bunker under rikskanselliet begikk Adolf Hitler selvmord 30. april. Tyskland kapitulerte betingelsesløst 8. mai 1945 (Frigjøringsdagen).\n\nI Asia fortsatte fanatiske japanske styrker å kjempe, til tross for at de var i ferd med å tape. USA fryktet at en invasjon av Japan ville koste hundretusener av amerikanske liv. President Harry S. Truman tok avgjørelsen om å bruke det nye atomvåpenet. 6. august falt den første bomben over Hiroshima, og 9. august falt den andre over Nagasaki. Japan kapitulerte 15. august, og andre verdenskrig var over."
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var Blitzkrieg (lynkrig), og hvilke våpen brukte tyskerne for å slå hull i fiendens linjer?",
+                "Hvorfor invaderte Tyskland Danmark og Norge 9. april 1940, ifølge teksten?",
+                "Hva skjedde 7. desember 1941, og hvorfor ble dette avgjørende for at USA gikk inn i krigen?",
+                "Hvilke fire vendepunkter nevner teksten, og i hvilken rekkefølge kom de?"
+            ],
+            "reflekter": [
+                "Teksten deler krigen i to faser: Aksemaktenes fremmarsj (1939-1942) og de alliertes motoffensiv (1943-1945). Forklar hvorfor 1942-1943 blir kalt vendepunktene.",
+                "Hvorfor var Slaget om Storbritannia et så viktig nederlag for Hitler, selv om det ikke var en stor bakkeslag?",
+                "Frankrikes hær ble regnet som en av verdens sterkeste, men kollapset på seks uker. Hva forteller det om hvordan lynkrigen endret måten å føre krig på?",
+                "President Truman valgte å bruke atombombene fordi han fryktet at en invasjon av Japan ville koste hundretusener av amerikanske liv. Vurder dette valget: kan du se argumenter både for og imot?"
+            ],
+            "gaaVidere": [
+                "8. mai kalles Frigjøringsdagen i Norge. Finn ut hvordan denne dagen markeres i dag, og skriv noen setninger om hvorfor den fortsatt er viktig.",
+                "Skriv en kort dagbokstekst (5-6 setninger) fra en britisk pilot under Slaget om Storbritannia høsten 1940.",
+                "Diskuter i klassen: Bør atombombene over Hiroshima og Nagasaki forstås som det som avsluttet krigen, eller som en menneskelig katastrofe? Kan begge deler være sant samtidig?"
+            ]
+        }
     }
   ],
   "createdDate": "2025-12-21T15:20:00Z",

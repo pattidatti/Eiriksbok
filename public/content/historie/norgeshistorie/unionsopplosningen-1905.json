@@ -125,6 +125,29 @@
       "content": "Forholdet mellom Norge og Sverige ble raskt godt igjen etter 1905. Allerede få år senere samarbeidet landene tett, og under begge verdenskrigene sto de på samme side. I dag er Norge og Sverige nære allierte, handelspartnere og venner. Hundretusener av nordmenn og svensker krysser grensen daglig for å jobbe, handle og besøke familie. Den fredelige skilsmissen i 1905 viste at det går an å løse selv de dypeste konflikter uten å ty til våpen, så lenge begge sider er villige til å gi og ta."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva handlet konsulatsaken om, og hvorfor ble den så viktig for nordmennene?",
+                "Hva vedtok Stortinget 7. juni 1905, og hva var begrunnelsen for at unionen var oppløst?",
+                "Hvordan var resultatet av folkeavstemningen 13. august 1905? Nevn tallene fra teksten.",
+                "Hva ble Norge og Sverige enige om i Karlstad-avtalen?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor Stortingets vedtak 7. juni kalles et enormt sjansespill.",
+                "Hvorfor ville verken norske eller svenske soldater egentlig ha krig? Nevn minst to grunner fra teksten.",
+                "Hvorfor krevde Sverige en folkeavstemning, og hva ga resultatet Norge i møte med resten av verden?",
+                "Teksten sier at de fleste land har kjempet seg til selvstendighet gjennom krig. Hva var det som gjorde at Norge klarte det fredelig?"
+            ],
+            "gaaVidere": [
+                "Forholdet mellom Norge og Sverige ble raskt godt igjen etter 1905. Skriv en kort tekst (5-8 setninger) om hvorfor du tror to land som nesten gikk til krig, kunne bli nære venner så fort.",
+                "Diskuter med en partner: Kan folkeavstemning og forhandling løse alle konflikter mellom land, eller finnes det situasjoner der det ikke er nok?",
+                "Finn et eksempel fra nyhetene på et område eller folk som ønsker selvstendighet i dag. Hva kan de lære av måten Norge gjorde det på i 1905?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

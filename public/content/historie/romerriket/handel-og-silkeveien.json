@@ -125,6 +125,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor bygde romerne havnebyen Ostia ved elvemunningen i stedet for å seile skipene helt opp til Roma?",
+                    "Hva var Cura Annonae, og hvorfor kunne det bryte ut opptøyer i Roma hvis kornflåten ble forsinket?",
+                    "Hvordan gjorde monsunvindene det mulig å seile fra Rødehavet til India og hjem igjen på ett år?",
+                    "Hva er Monte Testaccio laget av, og hva forteller denne åsen oss om forbruket i Roma?"
+                ],
+                "reflekter": [
+                    "Teksten sier at silke ble solgt for sin egen vekt i gull, og at gull rant ut av riket for å betale for luksus. Hvorfor klarte ikke keiserne å forby silke, selv om de prøvde flere ganger?",
+                    "Sammenlign transport til lands og til vanns slik artikkelen beskriver det. Hvorfor ble tunge varer som korn og olje fraktet med skip, mens veiene mest ble brukt til hæren og lette luksusvarer?",
+                    "Romerne og kineserne handlet med hverandre uten å møtes direkte. Forklar hvordan varer kunne bevege seg hele veien fra Kina til Roma når ingen reiste hele strekningen selv.",
+                    "Artikkelen kaller Romerriket 'verdens første globale økonomi'. Hva mener du gjør denne handelen 'global', ut fra eksemplene i teksten?"
+                ],
+                "gaaVidere": [
+                    "Roma var avhengig av korn fra Egypt og Nord-Afrika for å brødfø folket sitt. Hvilke varer er Norge i dag avhengig av å importere fra andre land? Skriv noen setninger om hva som kunne skje hvis en av disse forsyningene ble stoppet.",
+                    "Tenk deg at du er en handelsmann i Ostia. Skriv en kort dagbokstekst om en dag der du tar imot skip lastet med silke, pepper og rav fra tre ulike verdenshjørner.",
+                    "Diskuter med en medelev: Handelen på Silkeveien og Rav-veien inkluderte også slaver. Hvordan endrer det synet ditt på denne 'globale økonomien' at mennesker ble byttet som varer?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

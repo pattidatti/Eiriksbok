@@ -183,6 +183,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var det som startet finanskrisen i 2008, og hva gjorde storbanken Lehman Brothers galt?",
+                    "Hvilke fem land dannet opprinnelig gruppen BRICS, og hva vil de oppnå sammen?",
+                    "Hva er Belte og vei-initiativet, og hva bruker landene de kinesiske lånene til?",
+                    "Nevn minst tre råvarer eller teknologier stormaktene i dag kjemper om, og hvor de finnes eller lages."
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hva det betyr at verden er blitt multipolar, og hvorfor artikkelen mener den ble det etter 2008.",
+                    "Kritikere kaller Belte og vei for gjeldsfellediplomati, mens Kina sier de bygger det Vesten aldri bygde. Vurder begge sidene ved å bruke eksempelet med havna i Sri Lanka.",
+                    "Artikkelen sier at makt i dag flyttes med lån, havner og databrikker heller enn med bomber. Forklar hvordan pandemien i 2020 og sanksjonene mot Russland i 2022 viser dette.",
+                    "Hvorfor mener noen at rivaliseringen mellom USA og Kina er annerledes enn den gamle kalde krigen mellom USA og Sovjetunionen? Argumenter for hvorfor du er enig eller uenig."
+                ],
+                "gaaVidere": [
+                    "Ta fram mobilen din og finn ut hvor delene kan komme fra, slik artikkelen beskriver. Skriv en kort tekst (5-8 setninger) om hvorfor mobilen kan kalles et lite stykke verdenspolitikk.",
+                    "Artikkelen spør hva som skjer med Norge hvis de store landene slutter å bry seg om reglene. Diskuter med en partner: hvorfor er internasjonale avtaler og FN spesielt viktige for et lite land som Norge?",
+                    "Da Europa mistet russisk gass i 2022, ble Norge en viktig energileverandør. Diskuter om det er en fordel eller en risiko for Norge å eie ressurser som verden vil ha."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

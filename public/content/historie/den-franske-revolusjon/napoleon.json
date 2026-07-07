@@ -115,6 +115,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var Code Civil, og hva slo lovboken fra 1804 fast om borgerne?",
+                    "Hva skjedde da Napoleon ble kronet i Notre-Dame 2. desember 1804, og hva grep han selv i siste øyeblikk?",
+                    "Hvor mange soldater marsjerte Napoleon inn i Russland med i 1812, og hvor mange kom tilbake?",
+                    "Nevn to ting Napoleon gjorde for å begrense friheten til folket, slik teksten beskriver."
+                ],
+                "reflekter": [
+                    "Teksten kaller Napoleon et paradoks fordi han spredte borgerrettigheter samtidig som han styrte med sensur og hemmelig politi. Forklar med egne ord hvorfor dette er et paradoks.",
+                    "Russerne nektet å møte Napoleon i ett stort slag og brente alt på veien. Forklar hvorfor denne taktikken virket bedre mot Napoleon enn en vanlig kamp ville gjort.",
+                    "Etter Napoleon møttes de store maktene i Wien for å gjenopprette gamle konger og grenser. Hvorfor klarte de likevel ikke å viske ut idéene fra revolusjonen?",
+                    "Var Napoleon mest en reformator eller mest en diktator? Bruk minst tre konkrete eksempler fra teksten for å begrunne svaret ditt."
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt (4-6 setninger) der du forklarer hvorfor tanken om at alle er like for loven fortsatt er viktig i Norge i dag.",
+                    "Diskuter i par: Kan en leder som tar makten med tvang likevel gjøre noe godt for et land? Finn ett argument for og ett imot.",
+                    "Ordet gerilja kommer fra folkekrigen i Spania mot Napoleon. Finn ett eksempel på gerilja eller motstandskamp fra nyere tid, og forklar kort hva som skjedde."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

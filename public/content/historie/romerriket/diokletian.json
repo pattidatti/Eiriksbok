@@ -263,6 +263,29 @@
         {
             "type": "text",
             "text": "Diokletian døde i 311. Han fikk oppleve at hans nøye planlagte tetrarki begynte å rakne i kaos og krig, men han hadde lykkes med det viktigste: Han hadde gitt det døende Romerriket en ny administrativ, militær og økonomisk ryggmarg som lot det overleve i vest i hundre år til, og i øst (Bysants) i over tusen år. Han var arkitekten bak den sene romerske staten – en mann som forsto maktens pris og som hadde viljen til å bygge en verden som var hardere, strammere, men mer stabil."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var tetrarkiet, og hvilke to titler hadde de fire keiserne som styrte sammen?",
+                    "Hva betyr ordet Dominatet, og hvordan skilte keiserrollen seg her fra den gamle Princeps-rollen?",
+                    "Hva var Ediktet om maksimalpriser fra 301, og hva ble straffen for å ta en for høy pris?",
+                    "Hva gjorde Diokletian som nesten ingen romersk keiser hadde gjort før: hva skjedde 1. mai 305?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor Diokletian delte riket mellom fire keisere i stedet for å styre alene. Hvilket problem løste det?",
+                    "Hvorfor mislyktes Ediktet om maksimalpriser selv om keiseren hadde all makt? Hva forteller det om forholdet mellom makt og økonomi?",
+                    "Diokletian bandt bønder (coloni) og håndverkere til yrket og jorda. Forklar hvordan disse reformene la kimen til føydalismen.",
+                    "Den store forfølgelsen skulle utrydde kristendommen, men gjorde den sterkere. Hvorfor kan forfølgelse noen ganger styrke en gruppe i stedet for å knuse den?"
+                ],
+                "gaaVidere": [
+                    "Diokletian gjorde keiseren til en fjern, hellig figur som folk måtte kaste seg ned for. Finn et eksempel fra nyere tid der en leder bruker seremonier og symboler for å virke mektig og uangripelig.",
+                    "Skriv en kort tekst (5-8 setninger) der du argumenterer for eller mot dette utsagnet: Diokletian reddet Romerriket, men prisen var at folk mistet friheten sin.",
+                    "Diskuter med en partner: Diokletian valgte å gi fra seg makten frivillig og dyrke kål i Split. Hvorfor er det så sjelden at mektige ledere gir slipp på makten selv?"
+                ]
+            }
         }
     ],
     "quiz": [

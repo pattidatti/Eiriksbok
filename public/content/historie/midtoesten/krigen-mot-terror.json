@@ -144,6 +144,29 @@
       "content": "Angrepene 11. september forandret verden. De satte i gang to lange og kostbare kriger. De endret måten stater overvåker borgerne sine på. De skapte nye spenninger mellom Vesten og den muslimske verden. Og de viste at en liten gruppe, med enkle virkemidler, kan utfordre verdens mektigste supermakt. Leksen er ikke enkel - men den er viktig å forstå."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva skjedde morgenen 11. september 2001, og hvor mange mennesker mistet livet?",
+                "Hvem var Osama bin Laden, og hvordan vokste al-Qaida frem under krigen i Afghanistan på 1980-tallet?",
+                "Hvilke to begrunnelser brukte Bush-administrasjonen for å invadere Irak i 2003, og hva viste seg å skje med dem?",
+                "Hva skjedde i Afghanistan i august 2021 da USA trakk seg ut?"
+            ],
+            "reflekter": [
+                "Teksten sier at krigen mot terror ikke hadde noe klart sluttmål. Forklar med egne ord hvorfor det er vanskelig å vinne en krig mot terrorisme.",
+                "Sammenlign krigen i Afghanistan i 2001 med krigen i Irak i 2003. Hvorfor var verden mye mer uenig om Irak-krigen?",
+                "Hendelsene i Abu Ghraib og på Guantanamo svekket USA sitt omdømme. Forklar hvorfor et land kan tape sympati selv om det startet som den angrepne parten.",
+                "Teksten sier at USA styrtet Saddam Hussein, men at det etterpå ble kaos og at IS vokste frem. Hva mener artikkelen med at det å invadere uten plan for etterpå kan skape et maktvakuum?"
+            ],
+            "gaaVidere": [
+                "Krigen mot terror endret måten stater overvåker borgerne sine på. Finn ett eksempel på overvåking i din egen hverdag, og diskuter om økt trygghet er verdt mindre privatliv.",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hva du mener er den viktigste leksen fra krigen mot terror, og hvorfor.",
+                "Diskuter med en partner: Kan frykt få et demokrati til å gjøre ting det senere angrer på? Bruk eksempler fra artikkelen og fra nyheter i dag."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

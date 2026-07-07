@@ -231,6 +231,30 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvorfor råtner mat, og hva trenger bakteriene for å vokse?",
+                "Hvordan virker salting for å bevare mat?",
+                "Hva var den store fordelen med hermetikk som ble oppfunnet i 1810?",
+                "Rundt hvilket årstall ble kjøleskap vanlige i vanlige hjem, og hva krevde de for å kunne fungere?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor et kjøleskap ikke lager kulde, men flytter varme.",
+                "Sammenlign gamle metoder som tørking og salting med kjøling. Hva gjør de med bakteriene, og hva skjer med smaken på maten?",
+                "Hvorfor var kostholdet ofte usunt om vinteren før kjøleskapet kom, og hvordan endret kjøling dette?",
+                "Teksten sier at kjøleskapet ga folk noe mer enn fersk mat, nemlig tid. Forklar hvorfor.",
+                "Isbokser med is fra innsjøer kunne holde mat kald, men folk drømte likevel om en kjølemaskin. Hva var problemet med isboksene?"
+            ],
+            "gaaVidere": [
+                "Åpne ditt eget kjøleskap hjemme og finn tre matvarer som ville vært umulige å ha om vinteren for to hundre år siden. Skriv dem ned og forklar hvorfor.",
+                "Skriv en kort tekst (5-8 setninger) der du beskriver en vanlig høst i et hjem uten kjøleskap. Hva må familien gjøre for å ha nok mat til vinteren?",
+                "Diskuter med en partner: Hvilken oppfinnelse tror dere har forandret hverdagen mest, kjøleskapet eller noe annet? Begrunn valget."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

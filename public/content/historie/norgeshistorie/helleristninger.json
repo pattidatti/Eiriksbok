@@ -126,6 +126,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en helleristning, og hvordan ble den laget i berget?",
+                    "Hva er forskjellen på veideristninger og jordbruksristninger, og hvilke motiver er typiske for hver av dem?",
+                    "Hvorfor er helleristninger ofte lettest å se når sola står lavt på himmelen?",
+                    "Hvorfor er Alta-ristningene så kjente, og hva skjedde med dem i 1985?"
+                ],
+                "reflekter": [
+                    "De fleste helleristningene ligger langs kysten og ved vann. Forklar hvorfor det ikke er en tilfeldighet.",
+                    "Mange tror folk hugget jaktdyr i stein for å sikre seg god fangst. Hva forteller det oss om hvordan menneskene den gang tenkte om jakt og natur?",
+                    "Teksten sier at en god historiker er ærlig når et svar er usikkert. Hvorfor er det viktig, og hva kan gå galt hvis en forsker later som om alt er kjent?",
+                    "En båt på en helleristning kan bety en ekte ferd eller en reise for sjelen etter døden. Hvorfor er det så vanskelig å vite hva et slikt symbol egentlig betydde?"
+                ],
+                "gaaVidere": [
+                    "Tenk deg at du skulle lage en helleristning som forteller om livet ditt til noen om fem tusen år. Beskriv tre motiver du ville hugget, og forklar hva de skulle bety.",
+                    "Skriv en kort tekst (5-8 setninger) om hvorfor helleristninger er en vanskeligere kilde til fortida enn for eksempel et gammelt brev.",
+                    "Diskuter med en partner: Hvorfor er det verdt å ta vare på et naket berg med bilder som er tusenvis av år gamle?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Sjekk om du henger med",

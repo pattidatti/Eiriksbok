@@ -219,6 +219,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er Peace Lines, og hvem er det de skiller fra hverandre i Belfast?",
+                    "Hva skjedde da Irland ble delt i 1921, og hvorfor forble de seks nordlige fylkene en del av Storbritannia?",
+                    "Hva skjedde på Bloody Sunday 30. januar 1972, og hvor mange mennesker ble drept?",
+                    "Hva het fredsavtalen fra 1998, og hva ble partene enige om at skulle skje med murene?"
+                ],
+                "reflekter": [
+                    "Murene kalles Peace Lines, men teksten sier de egentlig er det motsatte av navnet sitt. Forklar hva som menes med det.",
+                    "Mange katolikker jublet da den britiske hæren kom i 1969 for å beskytte dem, men stemningen snudde raskt. Forklar hvorfor du tror det gikk slik.",
+                    "Teksten sier at Bloody Sunday rekrutterte flere til IRA enn noe annet enkeltmoment. Forklar hvordan en hendelse kan gjøre en konflikt verre i stedet for å skremme folk vekk fra vold.",
+                    "Sammenlign Belfast med Berlin: Berlinmuren falt på én natt i 1989, mens murene i Belfast fortsatt står. Hva tror du gjør konflikten i Belfast vanskeligere å løse?"
+                ],
+                "gaaVidere": [
+                    "Undersøkelser viser at mange som bor ved murene selv ønsker å beholde dem, over 25 år etter freden. Skriv noen setninger om hva dette forteller om hvor lang tid det tar å lege splittelse i et samfunn.",
+                    "Teksten avslutter med spørsmålet: Hva gjør man med freden etter at krigen er over? Diskuter med en medelev hvem som bør bestemme om murene skal rives - politikerne eller de som faktisk bor i nabolagene.",
+                    "Finnes det andre steder i verden i dag der grupper lever adskilt av murer eller grenser på grunn av gammel mistro? Velg ett eksempel og skriv kort om hva det har til felles med Belfast."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

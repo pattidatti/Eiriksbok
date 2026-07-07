@@ -114,6 +114,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva slags marmorblokk fikk Michelangelo bruke da han hugde David, og hvorfor hadde to andre billedhuggere gitt opp på den?",
+                    "Hva mente Michelangelo at billedhuggerens jobb egentlig var? Bruk sitatet om engelen i marmoren i svaret ditt.",
+                    "Hvor lenge lå Michelangelo på et stillas og malte taket i Det sixtinske kapell, og hvilke plager fikk han av arbeidet?",
+                    "Hvorfor snek Michelangelo seg inn i Peterskirken om natten og ristet inn navnet sitt på Pietà?"
+                ],
+                "reflekter": [
+                    "Teksten sier at middelalderens kunstnere så seg selv som håndverkere, mens Michelangelo så seg selv som en frigjører. Forklar hva som er forskjellen på disse to måtene å tenke om kunst på.",
+                    "Michelangelo sa nei takk til å male taket i Det sixtinske kapell fordi han var billedhugger, ikke maler. Hvorfor tror du han likevel gjorde det, og hva sier det om forholdet mellom paven og kunstnerne?",
+                    "Da Michelangelo var ferdig med Moses, sies det at han slo skulpturen og ropte «Hvorfor snakker du ikke?». Hva forteller denne historien om hvordan han så på sitt eget arbeid?",
+                    "Teksten beskriver Michelangelo som en sint og ensom mann som sjelden vasket seg og kranglet med paver. Synes du en kunstner må være behagelig å være sammen med for å lage stor kunst? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Teksten sier at hver gang en ung person tenker «kanskje jeg kan skape noe nytt», står de på Michelangelos skuldre. Skriv et kort avsnitt om en person i dag - innen kunst, musikk, teknologi eller sport - som du mener skaper noe nytt på samme måte.",
+                    "Michelangelo trodde figuren allerede lå ferdig inne i marmoren. Diskuter med en medelev: kan en idé eller en løsning ligge «gjemt» og vente på å bli funnet, eller skaper vi alltid noe helt fra bunnen av?",
+                    "Finn et bilde av Skapelsen av Adam på nettet og se på det lille gapet mellom fingertuppene til Gud og Adam. Skriv tre setninger om hvorfor du tror akkurat dette gapet har blitt så berømt."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

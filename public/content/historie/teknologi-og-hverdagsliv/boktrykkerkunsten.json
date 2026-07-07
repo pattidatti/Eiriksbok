@@ -187,6 +187,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvordan ble bøker laget før trykkpressen, og hvor foregikk det meste av dette arbeidet?",
+                "Hva var det nye og smarte med Gutenbergs løse typer, og hvorfor kunne de brukes om og om igjen?",
+                "Rundt hvilket år satte Gutenberg sammen pressen sin, og i hvilken by bodde han?",
+                "Hva het den første store boka Gutenberg trykte, og omtrent hvor mange eksemplarer klarte han å lage av den?"
+            ],
+            "reflekter": [
+                "Teksten sier at det viktigste med pressen ikke var farten, men hva farten gjorde med prisen. Forklar med egne ord hvordan raske trykk førte til billigere bøker.",
+                "Artikkelen beskriver en 'sløyfe som drev seg selv': billige bøker ga flere lesere, og flere lesere ga grunn til å trykke flere bøker. Forklar hvorfor denne sløyfen ikke kunne starte før pressen fantes.",
+                "Hvorfor mistet de mektige, som kirken, en del av kontrollen sin da ideer kunne trykkes og spres raskt? Bruk Martin Luther som eksempel.",
+                "Artikkelen sammenligner trykkpressen med plogen. Forklar hva de to oppfinnelsene har felles, selv om den ene handler om mat og den andre om kunnskap."
+            ],
+            "gaaVidere": [
+                "Da bøker ble billige, ble det plutselig verdt å lære seg å lese. Finnes det noe i din egen tid som har gjort kunnskap billigere og lettere å få tak i? Skriv noen setninger om det.",
+                "Skriv en kort tekst der du forestiller deg at du er en munk i klosteret som får høre om Gutenbergs presse for første gang. Hva tenker du om at maskinen kan gjøre jobben din på minutter?",
+                "Diskuter i klassen: Trykkpressen gjorde at ideer kunne spres til mange på kort tid, både sanne og falske. Hvilke likheter ser dere mellom dette og hvordan nyheter spres på nettet i dag?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

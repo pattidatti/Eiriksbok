@@ -90,6 +90,29 @@
             "props": {
                 "gameId": "ingenmannsland-mg"
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor begynte soldatene å grave seg ned høsten 1914? Forklar hva som skjedde etter at den tyske offensiven stanset og 'Kappløpet mot havet' var over.",
+                    "Hva var forskjellen på frontlinjen, støttelinjen, reserve-linjen og kommunikasjonsgravene? Beskriv kort hva hver linje ble brukt til.",
+                    "Hva var 'Skyttergravsfot', og hvorfor fikk soldatene denne tilstanden? Nevn også hva de gjorde for å hindre den.",
+                    "Hva sto forkortelsen 'Shell Shock' for, og hva kaller vi den samme lidelsen i dag?"
+                ],
+                "reflekter": [
+                    "Teksten sier at frontlinjen var bygget i sikksakk med 'traverser'. Forklar de to grunnene til at soldatene bygget graven slik i stedet for en rett linje.",
+                    "Artikkelen kaller vannet en fiende 'like mye som tyskerne'. Forklar med egne ord hvorfor gjørma og vannet var så farlige for soldatene.",
+                    "Hvorfor tror du soldatene i starten stemplet menn med granatsjokk som feiginger, og hva sier det om hvor lite folk visste om psykiske skader den gangen?",
+                    "'Live and let live'-systemet var pragmatisme, ikke pasifisme, skriver teksten. Forklar hva som er forskjellen, og hvorfor soldatene noen ganger hatet sine egne offiserer mer enn fienden i den andre graven."
+                ],
+                "gaaVidere": [
+                    "Julevåpenhvilen i 1914 endte med at soldater spilte fotball i Ingenmannsland. Skriv et kort brev hjem (5-8 setninger) som en soldat kunne ha skrevet på selve julaften, der du beskriver hva du opplevde.",
+                    "I dag kjenner vi granatsjokk som PTSD, og mange soldater og andre får hjelp for det. Diskuter i klassen hvordan samfunnet vårt behandler mennesker med psykiske skader nå, sammenlignet med hvordan soldatene ble behandlet under første verdenskrig.",
+                    "Finn ut mer om ett av de store slagene som nevnes i teksten, Somme eller Verdun. Skriv tre fakta du fant, og forklar hvorfor akkurat dette slaget blir husket."
+                ]
+            }
         }
     ],
     "quiz": [

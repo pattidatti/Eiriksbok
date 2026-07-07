@@ -138,6 +138,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem hadde den virkelige makten i føydale Japan, og hvilken rolle hadde egentlig keiseren?",
+                    "Hva var bushido, og hvilke verdier handlet levereglene om?",
+                    "Hva var koku, og hvorfor ble en herres rikdom målt i ris i stedet for gull?",
+                    "Hva var sakoku, og hva skjedde i 1868 med Meiji-restaurasjonen?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor bøndene sto over kjøpmennene i rangstigen, selv om kjøpmennene kunne være rikere.",
+                    "Hvordan endret den lange freden under Tokugawa-shogunene samuraiene, og hvorfor gikk mange fra slagmark til skrivebord?",
+                    "Teksten sammenligner føydale Japan med middelalderen i Europa. Hvilke likheter ser du mellom shogun/daimyo/samurai og konge/riddere?",
+                    "Hvorfor tror du sjokket fra de svarte skipene i 1853 fikk japanerne til å styrte shogunen og modernisere landet så fort?"
+                ],
+                "gaaVidere": [
+                    "Japan gikk fra sverd til damptog på bare noen tiår. Finn et eksempel fra vår egen tid der et land eller samfunn har forandret seg svært raskt, og forklar hva som drev forandringen.",
+                    "Skriv en kort tekst (5-8 setninger) der du er en samurai i fredstiden under Tokugawa. Hvordan er dagen din når det ikke lenger er kriger å kjempe?",
+                    "Diskuter med en partner: Var det klokt av Japan å stenge grensene i over 200 år? Finn argumenter både for og mot en slik lukket politikk."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

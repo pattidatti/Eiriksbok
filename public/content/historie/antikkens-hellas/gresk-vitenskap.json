@@ -124,6 +124,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var det nye med måten naturfilosofene i Milet, som Thales, tenkte på?",
+                    "Hva mente grekerne med et bevis, og hvordan bygde de det opp?",
+                    "Hvordan brukte Eratosthenes en pinne og en skygge til å regne ut hvor stor jorda er?",
+                    "Hva var det Arkimedes oppdaget da han satte seg i badekaret og så vannet stige?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor det å lete etter naturlige årsaker i stedet for guder ble starten på vitenskap.",
+                    "Legen Hippokrates mente sykdom har naturlige årsaker, ikke at det er straff fra gudene. Hvorfor er dette en viktig forskjell for hvordan en lege arbeider?",
+                    "Teksten sier at grekerne ikke alltid hadde rett, men likevel ga oss noe enda viktigere enn riktige svar. Hva mener den med det, og er du enig?",
+                    "Sammenlign måten Arkimedes løste gullkrone-gåten på med måten en forsker arbeider på i dag. Hva er likt?"
+                ],
+                "gaaVidere": [
+                    "Velg en ting du lurer på i hverdagen, og skriv ned hvordan du kunne funnet svaret ved å måle og observere i stedet for å bare gjette.",
+                    "Mye gresk kunnskap ble glemt i Europa, men tatt vare på av lærde i den arabiske verden før den kom tilbake under renessansen. Diskuter hvorfor det er viktig at kunnskap skrives ned og deles mellom kulturer.",
+                    "Skriv en kort tekst (5-8 setninger) om hvordan Eratosthenes sin metode viser at man kan finne ut noe stort med enkle midler."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

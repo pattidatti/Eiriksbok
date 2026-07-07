@@ -240,6 +240,29 @@
       "caption": "Etter invasjonen i 2003 sto USA overfor et land uten fungerende statsapparat og med dype indre motsetninger."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvorfor invaderte Irak Kuwait 2. august 1990? Nevn minst to av kravene Saddam stilte til Kuwait.",
+                "Hvor lenge varte luftkrigen (Operasjon Desert Storm), og hvor lenge varte bakkekrigen i 1991? Forklar forskjellen mellom de to fasene.",
+                "Hva var den offisielle begrunnelsen USA ga for å invadere Irak i 2003, og hva fant de faktisk da de kom inn?",
+                "Hvem var Vestens venn i Midtøsten på 1980-tallet, og hvorfor støttet USA denne personen den gangen?"
+            ],
+            "reflekter": [
+                "Teksten forteller at koalisjonen stoppet ved Kuwait i 1991 i stedet for å marsjere til Bagdad. Forklar hvorfor de valgte å stoppe, og hvilken rolle FN-mandatet spilte i den beslutningen.",
+                "Sanksjonene på 1990-tallet skulle presse Saddam til å gi opp. Forklar hvorfor de likevel rammet vanlige irakere hardere enn regimet.",
+                "Artikkelen sier at det er lett å vinne en krig, men vanskelig å vinne freden. Bruk 1991-krigen og 2003-krigen til å forklare hva som menes med dette.",
+                "Sammenlign de to krigene: hva hadde 1991-krigen som 2003-krigen manglet når det gjaldt FN-mandat og allierte?"
+            ],
+            "gaaVidere": [
+                "Colin Powell sa til FN i 2003 at USA visste at Saddam hadde masseødeleggelsesvåpen. Skriv et kort avsnitt om hvorfor det er farlig når ledere bygger beslutninger om krig på etterretning som viser seg å være feil.",
+                "Etter at USA forlot Irak i 2011, fylte gruppen IS mye av maktvakuumet. Undersøk kort hva som skjedde med IS på 2010-tallet, og diskuter hvordan det henger sammen med invasjonen i 2003.",
+                "Diskuter i klassen: Bør et land ha lov til å gå til krig for å fjerne en diktator uten godkjenning fra FN? Bruk 2003-invasjonen som eksempel."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

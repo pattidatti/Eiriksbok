@@ -112,6 +112,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva gikk dominoteorien ut på, og hvorfor gjorde den at USA så på lille Vietnam som viktig for hele verdens sikkerhet?",
+                    "Hva var Tonkin-resolusjonen, og hvilken makt ga den president Lyndon B. Johnson?",
+                    "Hva var Ho Chi Minh-stien, og hvorfor gikk den gjennom nabolandene Laos og Kambodsja?",
+                    "Hva var vietnamisering, og hva ville president Nixon oppnå med denne planen?"
+                ],
+                "reflekter": [
+                    "Tet-offensiven ble militært slått tilbake, men teksten kaller den likevel en politisk seier for kommunistene. Forklar hvordan et angrep kan tapes på slagmarken, men vinnes i opinionen.",
+                    "Vietnamkrigen blir kalt den første TV-krigen. Hvordan tror du bildene som nådde stuene til amerikanerne påvirket motstanden mot krigen?",
+                    "Se på tabellen over krigføring og taktikk. Hvorfor klarte ikke USA sin teknologiske overlegenhet å slå Viet Congs geriljakrig med tunneler og bakholdsangrep?",
+                    "USA brukte Agent Orange og napalm for å ødelegge jungelen som ga fienden skjul. Vurder om det kan forsvares å ramme naturen og sivilbefolkningen så hardt for å nå et militært mål."
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst på fem til seks setninger der du er en amerikansk student i 1968 som nettopp har sett Tet-offensiven på TV. Hvordan har synet ditt på krigen endret seg?",
+                    "Diskuter i klassen: Bør en president kunne føre en stor krig i årevis uten en formell krigserklæring, slik Johnson gjorde etter Tonkin-resolusjonen?",
+                    "Finn et eksempel på en konflikt i dag der en sterk militærmakt sliter mot en svakere motstander som bruker geriljataktikk. Hvilke likheter ser du med Vietnamkrigen?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

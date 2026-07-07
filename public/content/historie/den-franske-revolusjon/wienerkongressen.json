@@ -111,6 +111,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke fire stormakter bestemte det meste på Wienerkongressen, og hvem var verten som ledet møtene?",
+                    "Hva menes med maktbalanse, og hvorfor ville diplomatene ikke knuse Frankrike helt?",
+                    "Hva betyr ordet restaurasjon slik det brukes i teksten om kongene i Europa?",
+                    "Hva skjedde med Norge i 1814 ifølge avtalen mellom stormaktene?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor et levende Frankrike var nyttig for stormaktene, selv om Frankrike hadde tapt krigen.",
+                    "Teksten sier at freden i Wien hadde en pris. Hva var denne prisen, og hvem måtte betale den?",
+                    "Hvorfor holdt ikke Wien-ordenen for alltid? Bruk opprørene i 1830 og 1848 i svaret ditt.",
+                    "Diplomatene flyttet grenser uten å spørre folket som bodde der. Hvorfor tror du det til slutt skapte problemer for den nye ordenen?"
+                ],
+                "gaaVidere": [
+                    "Tenk på et land i dag som er delt eller styrt av andre uten at folket ble spurt. Hvilke likheter ser du med det som skjedde i Wien?",
+                    "Skriv en kort tekst (5-8 setninger) der du argumenterer for om Wienerkongressen var en suksess eller ikke. Husk å ta med både stormaktenes og vanlige folks side.",
+                    "Diskuter med en partner: Er det riktig at noen få mektige land skal bestemme over mange små? Finnes det slike situasjoner i verden i dag?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

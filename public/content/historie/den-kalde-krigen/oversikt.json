@@ -261,6 +261,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to supermakter sto mot hverandre under den kalde krigen, og i hvilket tidsrom varte konflikten?",
+                    "Hva betyr begrepet oppdemming (containment), og hva var målet med denne amerikanske strategien?",
+                    "Hva var jernteppet, og hvilken britisk politiker gjorde uttrykket kjent i en tale i 1946?",
+                    "Hva gjorde USA og Storbritannia da Stalin stengte veiene til Vest-Berlin i 1948?"
+                ],
+                "reflekter": [
+                    "Teksten kaller den kalde krigen 'kald' fordi supermaktene aldri kjempet direkte mot hverandre. Forklar hvorfor atomvåpen gjorde en direkte krig så farlig at begge parter unngikk den.",
+                    "Marshallplanen kalles i teksten 'penger som våpen'. Forklar hvordan økonomisk hjelp kunne være et middel mot spredning av kommunisme.",
+                    "Sammenlign vestblokken og østblokken slik teksten beskriver dem. Velg to forskjeller (for eksempel politisk system og økonomi) og forklar hva som skilte sidene.",
+                    "Bresjnev-doktrinen ga Sovjetunionen rett til å gripe militært inn i sosialistiske land. Vurder hva opprørene i Ungarn (1956) og Tsjekkoslovakia (1968) forteller oss om hvordan østblokken egentlig ble holdt sammen."
+                ],
+                "gaaVidere": [
+                    "MAD-doktrinen bygde på at frykt for total utslettelse skulle hindre krig. Skriv et kort avsnitt om hvorvidt du mener denne 'terrorbalansen' er en trygg eller farlig måte å holde fred på.",
+                    "Diskuter to og to: Fins det konflikter i verden i dag der store makter kjemper gjennom stedfortrederkriger (proksykriger) i stedet for å krige direkte mot hverandre?",
+                    "Velg én av proksykrigene som nevnes i teksten (Korea, Vietnam eller Afghanistan) og finn ut mer om hvem som kjempet og hvordan den endte. Del funnene dine i noen setninger."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

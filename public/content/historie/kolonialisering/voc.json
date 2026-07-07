@@ -126,6 +126,29 @@
         {
             "type": "text",
             "content": "Til tross for sin dramatiske slutt har VOC satt dype spor i historien. Selskapets to århundrer med virksomhet la grunnlaget for Nederlands kolonivelde i Asia og utviklet global handel i stor skala. Historien om VOC illustrerer både fremveksten av moderne selskaper og de mørkere sidene ved kolonialismen – med enorm rikdom skapt gjennom monopol og militærmakt, men også korrupsjon, konflikter og utnyttelse av lokalbefolkninger. Det nederlandske ostindiske kompani står igjen som et av de mest fascinerende eksemplene på hvordan handel og imperialisme gikk hånd i hånd i tidlig moderne tid."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilket år ble VOC stiftet, og i hvilket år ble selskapet oppløst?",
+                    "Hva het byen som var VOCs hovedbase i Asia, og hva heter denne byen i dag?",
+                    "Nevn minst tre av varene VOC handlet med, ifølge teksten.",
+                    "Hva var Heren XVII, og hvor mange direktører besto dette rådet av?"
+                ],
+                "reflekter": [
+                    "Teksten kaller VOC en stat i staten. Forklar hvorfor, og pek på minst to fullmakter selskapet hadde som vanlige selskaper ikke har.",
+                    "Hvorfor grep den nederlandske staten inn og slo sammen de små selskapene til ett stort kompani i 1602? Forklar problemet de prøvde å løse.",
+                    "Teksten nevner flere grunner til at VOC gikk nedover på 1700-tallet. Velg de to du mener var viktigst, og begrunn valget ditt.",
+                    "VOC skapte enorm rikdom for Nederland, men teksten peker også på mørke sider. Vurder hvordan de samme metodene som ga rikdom, også kunne skade andre."
+                ],
+                "gaaVidere": [
+                    "VOC regnes som verdens første selskap som solgte aksjer til vanlige folk. Finn ut hva en aksje er i dag, og skriv noen setninger om hvordan aksjer fungerer nå sammenlignet med på VOCs tid.",
+                    "Skriv en kort dagbokstekst (4-6 setninger) fra en sjømann på et VOC-skip underveis på den nesten ett år lange reisen mellom Nederland og Asia.",
+                    "Diskuter i klassen: Bør et privat selskap få lov til å ha sin egen hær og styre områder slik VOC gjorde? Finnes det store selskaper med mye makt i dag?"
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",

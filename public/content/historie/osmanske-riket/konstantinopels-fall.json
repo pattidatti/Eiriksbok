@@ -172,6 +172,29 @@
       "caption": "Greske lærde flyktet vestover med kunnskap fra antikken. De ble en gnist i renessansen."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilket år falt Konstantinopel, og hvem var sultanen som erobret byen?",
+                "Hva hadde Konstantinopel vært hovedstad i før osmanerne tok den, og hvor lenge?",
+                "Hva ga Mehmet 2. et fortrinn som ingen tidligere angriper hadde hatt?",
+                "Hva gjorde Mehmet med byen etter erobringen, og hvilket navn fikk den etter hvert?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor de tusen år gamle murene ikke lenger klarte å stoppe angriperne i 1453.",
+                "Forsvarerne hadde sperret havna med en jernkjetting. Forklar hvordan Mehmet kom seg forbi den, og hvorfor grepet var så overraskende.",
+                "Byen var nesten tom for folk og hær, men murene sto fortsatt. Vurder hvorfor Bysants likevel klarte å holde ut i 53 dager.",
+                "Teksten sier at ett byfall satte i gang to store endringer i verden. Forklar hvordan fallet både tente renessansen og førte til oppdagelsesreisene."
+            ],
+            "gaaVidere": [
+                "Skriv en kort tekst (5-8 setninger) fra den siste keiserens eller en forsvarers synsvinkel den 29. mai 1453. Bruk minst tre konkrete detaljer fra artikkelen.",
+                "Mehmet valgte å bygge byen opp igjen i stedet for å rive den. Diskuter med en partner hvorfor en erobrer kan tjene mer på å beholde en by enn å ødelegge den, og finn et eksempel fra nyere tid.",
+                "Handelsrutene mellom øst og vest ble stengt, og det tvang europeerne til å finne nye veier. Finn et eksempel i dag der en stengt handelsvei har skapt problemer, og sammenlign med 1453."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

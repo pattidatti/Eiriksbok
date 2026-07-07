@@ -239,6 +239,29 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor og omtrent når skjedde skipsbegravelsen på Myklebust, og hva var det spesielle ved akkurat denne graven sammenlignet med andre norske skipshauger?",
+                    "Hvilke gjenstander i gravene viser at makten på Nordfjordeid hadde kontakt langt utenfor Norge? Nevn minst to og hvor de kom fra.",
+                    "Hva fant arkeologen Anders Lorange inne i den keltiske bronsekjelen i 1874?",
+                    "Hva mener forskerne at de 12 skjoldbulene ved høvdingens bein kan ha representert?"
+                ],
+                "reflekter": [
+                    "Teksten kaller skipsbrenningen en 'performance' og et 'teaterstykke for de levende'. Forklar hva som menes med dette, og hvorfor en høvding ville brenne et helt praktskip i stedet for å beholde det.",
+                    "I graven ble våpen bevisst bøyd og 'drept'. Hva forteller dette ritualet oss om hva vikingene trodde skjedde etter døden?",
+                    "Sammenlign arkeologien i 1874 med undersøkelsene i 2024. Hvilke fordeler har de nye metodene med georadar, og hva gikk kanskje tapt med Loranges gravemåte?",
+                    "Kvinnen i haug 5 ble gravlagt med et steikespidd, eksotiske perler og en tåring. Hvorfor tror forskerne at hun kan ha vært en volve og en åndelig leder, og ikke bare en vanlig husfrue?"
+                ],
+                "gaaVidere": [
+                    "Lorange la igjen flaskeposter til fremtidens finnere. Skriv en kort beskjed du selv ville lagt i en tidskapsel til noen som graver den opp om 150 år.",
+                    "Myklebust er foreslått til UNESCOs verdensarvliste. Diskuter i klassen hvorfor det er viktig å ta vare på et sted som Myklebust, og hvem som bør bestemme hvordan det skal bevares.",
+                    "Ibn Fadlan så en Rus-viking bli brent ved Volga, over tusen kilometer fra Norge. Finn ut hvor langt vikingene reiste, og lag en enkel liste over steder de nådde."
+                ]
+            }
         }
     ]
 }

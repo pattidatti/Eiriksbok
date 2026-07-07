@@ -116,6 +116,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kaller Israel muren, og hva kaller palestinerne den?",
+                    "Hva er «Grønne linjen», og hvorfor er det viktig at store deler av barrieren ikke følger den?",
+                    "Hva bestemte den israelske regjeringen seg for å gjøre i 2002, og hva var begrunnelsen?",
+                    "Hva fastslo FNs internasjonale domstol (ICJ) om barrieren i 2004?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor israelere ser barrieren som nødvendig, mens palestinere ser den som et virkemiddel i en okkupasjon. Bruk konkrete eksempler fra teksten.",
+                    "Antallet selvmordsangrep falt med over 90 prosent etter at byggingen startet. Betyr det at muren er en god løsning? Argumenter for og imot.",
+                    "Sammenlign muren på Vestbredden med blokaden av Gaza. På hvilken måte er de like, og på hvilken måte er de forskjellige?",
+                    "Teksten sier at konflikten skiller seg fra Belfast, apartheid og Korea fordi det ikke er noen avslutning i sikte. Hvorfor er denne konflikten så mye vanskeligere å løse?"
+                ],
+                "gaaVidere": [
+                    "Muren er fortsatt en aktiv del av konflikten i dag. Finn en nyhetssak om Israel og Palestina fra det siste året, og forklar kort hvordan den henger sammen med bakgrunnen du har lest om her.",
+                    "Skriv en kort tekst (5-8 setninger) der du svarer på spørsmålet artikkelen stiller til slutt: Hva er vi villige til å ofre for sikkerhet, og hva koster det de som havner på feil side av grensen?",
+                    "Diskuter med en partner: Kan en fysisk mur noen gang løse en konflikt mellom to folk, eller flytter den bare problemet? Bruk eksempler fra teksten."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

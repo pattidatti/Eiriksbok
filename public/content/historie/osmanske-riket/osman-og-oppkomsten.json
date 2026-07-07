@@ -91,6 +91,29 @@
       "caption": "Fra en flokk grensekrigere til herre over Balkan: nå rettet osmanerne blikket mot det største byttet av alle."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvem var Osman, og hva har han med navnet på riket å gjøre?",
+                "Hva var en ghazi-kriger, og hvordan levde disse rytterne i grenselandet?",
+                "Hvorfor var Bysants svakt akkurat da osmanerne begynte å vokse? Nevn minst to grunner fra teksten.",
+                "Hva skjedde i slaget på Kosovosletta i 1389, og hva betydde det for osmanerne?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvordan osmanerne vokste på to måter samtidig: gjennom sverd og gjennom smarte avtaler.",
+                "Teksten sier at det for en bonde kunne være tryggere å leve under en sterk osmansk hersker enn under en svak bysantinsk. Hvorfor det, tror du?",
+                "Hva var det viktigste med at osmanerne bygde en fast og disiplinert hær, sammenlignet med naboene som måtte samle krigere på nytt for hver kamp?",
+                "Sagnet om Osmans drøm forteller om et tre som dekker hele verden. Hvorfor passer bildet av et tre som vokser gren for gren så godt på hvordan riket faktisk utviklet seg?"
+            ],
+            "gaaVidere": [
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan et tomrom, altså en svak eller manglende makt, kan gi noen andre sjansen til å vokse. Finn gjerne et eksempel fra din egen tid.",
+                "Osmanerne lot ofte folk beholde sin egen tro og sine egne skikker. Diskuter med en partner: Hvorfor kan det være smart av en hersker å gi de erobrede lov til å leve som før?",
+                "Teksten slutter med at osmanerne rettet blikket mot Konstantinopel. Finn ut hva som skjedde med byen i 1453, og skriv tre setninger om det."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

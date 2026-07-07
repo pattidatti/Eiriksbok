@@ -120,6 +120,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre store slag blir husket som vendepunktene i Perserkrigene?",
+                    "Hva var en falanks, og hvorfor var den så vanskelig å bryte forfra?",
+                    "Hvem var Leonidas, og hvor mange spartanere ledet han ved Thermopylae?",
+                    "Hvordan lokket Themistokles den persiske flåten inn i sundet ved Salamis?"
+                ],
+                "reflekter": [
+                    "Teksten sier at grekerne vant fordi de tvang Persia inn i trange terreng. Forklar med egne ord hvordan smale sletter, trange pass og trange sund gjorde det store persiske overtallet nytteløst.",
+                    "Ved Thermopylae tapte grekerne slaget, men teksten sier at Hellas likevel vant tid. Hvorfor var det verdt å ofre Leonidas og spartanerne for å vinne litt tid?",
+                    "Sammenlign de greske triremene med de persiske skipene i Salamis-sundet. Hvorfor ble persernes mange skip en hindring i stedet for en fordel?",
+                    "Teksten sier at seieren ga grekerne et nytt selvbilde: små frie folk kunne slå store imperier. Hvorfor tror du en slik idé kunne bli så viktig for hvordan grekerne så på seg selv?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan seieren over Persia la grunnlaget for Athens gullalder og demokratiet.",
+                    "Også i dag hender det at en liten og svakere part slår en mye større motstander. Finn et eksempel og forklar hva den svake parten gjorde smart, slik grekerne utnyttet terrenget.",
+                    "Diskuter med en partner: Var det egentlig smarte valg av terreng som avgjorde krigen, eller hadde grekerne bare flaks? Argumenter for begge sider."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Sjekk forståelsen",

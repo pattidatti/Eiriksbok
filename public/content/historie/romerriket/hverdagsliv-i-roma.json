@@ -136,6 +136,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var forskjellen på en domus og en insula, og hvem bodde hvor?",
+                    "Hvorfor bodde de fattigste øverst i leiegårdene, mens det er omvendt i dag?",
+                    "Hva var garum, og hvordan ble denne fiskesausen laget?",
+                    "Hvem fikk lov til å bære toga, og hvorfor var det bare disse som hadde lov?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor togaen var både upraktisk og et statussymbol på samme tid. Hva sier det om hva romerne verdsatte?",
+                    "Skolen kostet penger og var ikke obligatorisk. Hvordan påvirket dette hvem som fikk utdanning, og hva slags forskjeller skapte det mellom folk?",
+                    "Retorikk var det viktigste faget for en romersk gutt. Hvorfor var det å kunne tale for seg så viktig for å gjøre karriere i Roma?",
+                    "Sammenlign hverdagen til en patrisier med hverdagen til en plebeier eller slave. Nevn minst tre konkrete forskjeller fra teksten."
+                ],
+                "gaaVidere": [
+                    "I dag kan en rik person gå i t-skjorte, men i Roma viste klærne nøyaktig hvem du var. Finn eksempler på klær eller ting i vår tid som fortsatt viser status, og skriv noen setninger om det.",
+                    "Skriv en kort dagbok (6-8 setninger) fra en dag i livet til et barn som bor øverst i en insula i Roma.",
+                    "Diskuter med en partner: Ordet 'pedagog' kommer fra slaven som fulgte barna til skolen. Hvorfor tror dere så mange ord fra Roma fortsatt lever videre i språket vårt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

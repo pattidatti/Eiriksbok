@@ -260,6 +260,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor lang er den grønne linjen, hvem overvåker sonen, og hvor bred kan den bli på landsbygda?",
+                    "Hva skjedde 15. juli 1974, og hva gjorde Tyrkia fem dager seinere?",
+                    "Hva var Varosha før 1974, og hvorfor forlot innbyggerne byen så raskt?",
+                    "Hvordan stemte gresk-kyprioter og tyrkisk-kyprioter i folkeavstemningen om FN-planen i 2004?"
+                ],
+                "reflekter": [
+                    "Grunnloven fra 1960 skulle bygge en felles stat med begge folkegruppene i regjeringen. Hvorfor tror du et slikt system likevel kan være vanskelig å få til å fungere?",
+                    "Elena tok med seg nøklene til leiligheten da hun flyktet, og de henger fortsatt i kjøkkenskuffen. Hva forteller det om hvordan folk opplevde flukten i 1974?",
+                    "Kypros ble EU-medlem i 2004 mens øya fortsatt var delt. Forklar hvorfor artikkelen kaller dette en ironi.",
+                    "Artikkelen sammenligner Kypros med både Berlinmuren og Peace Lines i Belfast. Velg én av dem og forklar en viktig likhet og en viktig forskjell sammenlignet med delingen av Kypros."
+                ],
+                "gaaVidere": [
+                    "Grensen på Kypros har stått i over 50 år uten løsning. Finn et annet sted i verden i dag der en grense eller mur deler et folk, og skriv tre-fire setninger om hva de to har til felles.",
+                    "Skriv en kort tekst (5-8 setninger) der du er Elena eller Mehmet fra scenariet, og beskriver hva du kjenner idet du krysser grensen for første gang.",
+                    "Diskuter i klassen: Da grensen åpnet i 2003, krysset folk 100 000 ganger den første uken, men gjenforeningen kom aldri. Kan det å møtes igjen ha en verdi selv om landet fortsatt er delt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

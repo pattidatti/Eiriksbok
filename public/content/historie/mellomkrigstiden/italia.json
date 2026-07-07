@@ -212,6 +212,29 @@
                 "[Sovjetunionen: Stalins jernhånd](/historie/mellomkrigstiden/sovjet) - Frykten for 'De røde' som drev Mussolini.",
                 "[Folkeforbundet](/historie/mellomkrigstiden/folkeforbundet) - Hvordan Abessinia-krigen knuste fredshåpet."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor følte Italia seg som en taper etter første verdenskrig, selv om landet kjempet på vinnersiden?",
+                    "Hva var squadristi (svartskjortene), og hva brukte Mussolini dem til?",
+                    "Hva skjedde egentlig under «marsjen mot Roma» i 1922, og hvorfor ble Mussolini statsminister?",
+                    "Hva menes med korporativismen, og hva betydde den i praksis for arbeiderne?"
+                ],
+                "reflekter": [
+                    "Teksten sier at demokratiet «ikke ble ødelagt av seg selv, men av dem som burde beskytte det». Forklar hva som menes, og pek på hvem eliten og kongen var.",
+                    "Godseiere og industrialister finansierte svartskjortene fordi de var redde for «den røde trusselen». Forklar hvorfor denne frykten hjalp Mussolini til makten.",
+                    "Sammenlign fascismen med kommunismen slik teksten beskriver dem. Hva var likt, og hva var den store forskjellen når det gjaldt hvem som eide bedriftene?",
+                    "Marsjen mot Roma var egentlig et bluff der svartskjortene var dårlig bevæpnet. Hva forteller det oss om hvorfor demokratiet falt, at et bluff likevel lyktes?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at «et demokrati ga makten til en diktator». Finn et eksempel fra nyere tid der en leder har fått mer makt gjennom lovlige valg, og sammenlign med Italia.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan en karismatisk taler og bruk av frykt kan svekke et demokrati.",
+                    "Diskuter med en partner: FactBoxen lister opp fascismens kjennetegn. Hvilke av disse kjennetegnene mener dere det er viktigst å være på vakt mot i dag?"
+                ]
+            }
         }
     ],
     "quiz": [

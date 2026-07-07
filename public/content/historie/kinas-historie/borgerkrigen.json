@@ -154,6 +154,29 @@
       "content": "For verden var det et sjokk. Den største nasjonen på jord - med en fjerdedel av menneskeheten - hadde blitt kommunistisk. For Kinas bønder var det slutten på generasjoners fattigdom og ydmykelse. Og for den lille eks-keiseren Puyi, som levde som vanlig borger i Beijing, var sirkelen sluttet: landet han hadde arvet som seksåring, var nå fullstendig forandret."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva het Kinas siste keiser, og hvor gammel var han da han abdiserte i 1912?",
+                "Hva var Sun Yat-sens tre prinsipper, og hva gikk hvert av dem ut på?",
+                "Hva var den lange marsjen, og hvor mange av de 86 000 som startet var i live da den var over?",
+                "Hva skjedde 1. oktober 1949, og hvem sto fram på Tiananmen-porten den dagen?"
+            ],
+            "reflekter": [
+                "Forklar hvorfor alliansen mellom Kuomintang og kommunistpartiet brøt sammen i 1927. Hva gjorde Chiang Kai-shek i Sjanghai?",
+                "Teksten sier at kommunistene vant folkets tillit under den japanske invasjonen. Forklar hva de gjorde ute i landsbyene som Chiang ikke gjorde.",
+                "Etter 1945 hadde USA støttet Chiang med penger og utstyr, men han tapte likevel. Forklar hvorfor korrupsjon og inflasjon veide tyngre enn våpen i denne krigen.",
+                "Sammenlign krigsherretiden (1916-1928) med tanken om Kina som ett samlet land. Hvorfor var det vanskelig å styre Kina i disse årene?"
+            ],
+            "gaaVidere": [
+                "Den lange marsjen ble en skapelsesmyte for kommunistpartiet. Skriv noen setninger om hvorfor ledere gjerne bygger legender rundt harde prøvelser de har overlevd.",
+                "Chiang Kai-shek grunnla et nytt Republikken Kina på Taiwan i 1949, og øya har fortsatt egen regjering. Finn ut hvorfor forholdet mellom Kina og Taiwan skaper spenning den dag i dag.",
+                "Diskuter med en partner: Borgerkrigen handlet mye om hvem bøndene stolte på. Hvorfor kan tillit hos vanlige folk avgjøre hvem som vinner makten i et land?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

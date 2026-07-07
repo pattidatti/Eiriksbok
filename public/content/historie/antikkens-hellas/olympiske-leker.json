@@ -106,6 +106,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilket år regner vi at de første olympiske lekene ble holdt, og hvilken idrettsgren var den eldste?",
+                    "Hva var ekecheiria, og hva skjedde med krigene mellom bystatene mens den varte?",
+                    "Hvilken gud ble lekene holdt til ære for, og hva stod midt i Olympia til minne om ham?",
+                    "Hvem fikk lov til å delta i lekene, og hvem ble holdt utenfor?"
+                ],
+                "reflekter": [
+                    "Vinneren fikk bare en enkel krans av oliventre og ingen pengepremie. Forklar hvorfor denne seieren likevel var noe av det største en greker kunne oppnå.",
+                    "Hellas var ikke ett land, men hundrevis av bystater som ofte lå i krig. Hvordan klarte lekene å samle grekerne til en felles fest selv når de var fiender?",
+                    "Teksten sier at sporten gjorde noe ingen hær klarte. Hva mener den med det, og hvorfor var den hellige våpenhvilen så uvanlig?",
+                    "At gifte kvinner og slaver ikke fikk være med, viser at det greske samfunnet var mindre likt enn vårt. Vurder hva dette forteller oss om hvem som hadde makt og verdi i antikkens Hellas."
+                ],
+                "gaaVidere": [
+                    "De moderne olympiske lekene startet i 1896 som en hyllest til den greske arven. Skriv et kort avsnitt om hva som ligner og hva som er ulikt mellom de antikke lekene og OL i dag.",
+                    "Den olympiske ilden tennes fortsatt i Olympia før hver lek. Diskuter med en medelev om tanken på at idrett kan samle folk på tvers av konflikter fortsatt stemmer i vår egen tid.",
+                    "Under lekene la fiender ned våpnene i en kort periode. Finn et eksempel fra nyere tid der idrett eller en felles begivenhet har fått folk som var uenige til å møtes, og fortell om det."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

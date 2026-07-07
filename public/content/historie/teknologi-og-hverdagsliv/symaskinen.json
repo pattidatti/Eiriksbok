@@ -246,6 +246,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvorfor var klær så dyrt før symaskinen kom? Bruk teksten om hvor lang tid det tok å sy for hånd.",
+                "Hva er et låsesting, og hvorfor trengs det to tråder for å få det til?",
+                "Hva gjorde Isaac Singer med symaskinen som gjorde at vanlige familier fikk råd til den?",
+                "Hva betyr ordet konfeksjon, slik det forklares i artikkelen?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvordan symaskinen gjorde at prisen på klær falt så kraftig.",
+                "Artikkelen sier at billige klær hadde en mørk bakside. Hvem betalte prisen for de billige klærne, og hvordan?",
+                "I komponenten Den samme symaskinen, tre liv ser du maskinen fra syerskens, fabrikkeierens og kundens side. Hvem av dem tjener mest på symaskinen, og hvem taper mest? Begrunn svaret.",
+                "Artikkelen sier at ny teknologi ofte løser ett problem, men skaper nye. Hvordan passer symaskinen inn i det mønsteret?"
+            ],
+            "gaaVidere": [
+                "Artikkelen skriver at mye av klærne våre fortsatt lages i fabrikker i fattige land med lav lønn og lange dager. Sjekk merkelappene på tre plagg du eier og finn ut hvor de er laget. Hva tenker du om det?",
+                "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en syerske i 1850 som nettopp har fått en symaskin. Hva er blitt bedre, og hva er blitt verre?",
+                "Diskuter med en partner: Bør vi være villige til å betale mer for klær hvis det betyr bedre forhold for dem som syr dem? Hvorfor eller hvorfor ikke?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

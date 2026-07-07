@@ -93,6 +93,29 @@
         {
             "type": "text",
             "value": "Etter krigen følte mange seg lurt av de voldsomme overdrivelsene (som historier om at tyske soldater spiddet babyer på bajonetter). Denne kynismen gjorde at folk var mer skeptiske til advarsler om virkelige overgrep senere – for eksempel da nyhetene om Holocaust begynte å lekke ut under andre verdenskrig."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Forklar hva teksten mener med en total krig, og hvorfor fabrikkarbeideren som lagde granaten ble like viktig for krigen som soldaten som fyrte den av.",
+                    "Hva var Munitionettes for slags arbeidere, og hvorfor fikk noen av dem kallenavnet Canary Girls?",
+                    "Hva var Kålrotvinteren i Tyskland vinteren 1916-1917, og hva var det den britiske blokaden i Nordsjøen stoppet?",
+                    "Teksten sier at propagandaen hadde tre hovedmål. Nevn dem, og gi et eksempel på det målet som handlet om å fremstille fienden som monstre."
+                ],
+                "reflekter": [
+                    "Teksten sier at når skillet mellom soldat og sivil ble visket ut, ble sivile også legitime mål. Forklar hvordan denne tankegangen henger sammen med at over 700 000 tyske sivile døde av sult under blokaden.",
+                    "Kvinnenes innsats gjorde det umulig for politikerne å nekte dem stemmerett etter krigen. Vurder om det er rettferdig at kvinner måtte bevise seg gjennom en krig for å få rettigheter de burde hatt fra før.",
+                    "Sammenlign de to propagandaplakatene i teksten. Hvordan spiller Destroy This Mad Brute på hat, mens Will you fight now or wait for this spiller på frykt?",
+                    "Teksten forteller at folk følte seg lurt av krigspropagandaen, og at dette gjorde dem skeptiske da nyheter om Holocaust senere lekket ut. Forklar hvorfor overdreven propaganda kan bli farlig på lang sikt."
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en Munitionette. Beskriv en arbeidsdag på ammunisjonsfabrikken, farene og hvordan du ser på din egen rolle i krigen.",
+                    "Diskuter med en medelev: Finnes det propaganda i dag også? Tenk på reklame, sosiale medier eller nyheter, og pek på minst ett triks fra teksten (frykt, hat eller pliktfølelse) som fortsatt brukes.",
+                    "Blokaden brukte sult som våpen mot vanlige mennesker. Undersøk om det finnes eksempler i dag der mat, medisiner eller forsyninger holdes tilbake for å presse en befolkning, og forklar hva du finner."
+                ]
+            }
         }
     ],
     "quiz": [

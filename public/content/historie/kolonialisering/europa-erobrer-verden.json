@@ -311,6 +311,29 @@
         {
             "type": "text",
             "content": "Samtidig er arven også preget av dype sår og urettferdighet. Den massive utbyttingen av naturressurser, de kunstige grensene som ble trukket på tvers av kulturelle linjer, og den systematiske undertrykkelsen av urfolks kulturer har etterlatt seg utfordringer vi fortsatt kjemper med i dag. Konflikter i Midtøsten, Afrika og Asia har ofte sine røtter i de beslutningene som ble tatt i koloniadministrasjonene i London eller Paris for hundre år siden. Å forstå denne historien er derfor ikke bare en akademisk øvelse; det er en nødvendighet for å forstå hvorfor vår moderne verden ser ut som den gjør, og for å kunne navigere i en fremtid der maktbalansen igjen er i ferd med å skifte, denne gangen kanskje bort fra Europa for godt."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva står de tre G-ene for, og hva handlet hver enkelt av dem om?",
+                    "Hva bestemte Tordesillas-traktaten i 1494, og hvem delte verden mellom seg?",
+                    "Hva var trekanthandelen, og hvilke tre kontinenter bandt den sammen?",
+                    "Hvilken hendelse i 1956 blir sett på som slutten på Europas globale herredømme, og hva handlet konflikten om?"
+                ],
+                "reflekter": [
+                    "Teksten sier at europeiske skip var som flytende festninger på grunn av kanoner i skipssidene. Forklar hvorfor denne teknologien ga europeerne et så stort overtak over de lokale handelsskipene.",
+                    "Sammenlign den spanske og den portugisiske måten å bygge rike på. Hvorfor satset Spania på bosetting og gruver, mens Portugal satset på et nett av handelsstasjoner?",
+                    "Ideen om 'den hvite manns byrde' ble brukt som et moralsk skjold. Forklar hvordan denne tanken gjorde det mulig for europeere å rettferdiggjøre koloniseringen for seg selv.",
+                    "Teksten peker på at både første og andre verdenskrig svekket imperiene. Vurder hvorfor krig i Europa gjorde det lettere for koloniene å kreve frihet."
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at dagens verdensspråk som engelsk, spansk og fransk er en arv fra kolonitiden. Finn ett eksempel fra din egen hverdag på noe som er formet av denne arven, og forklar sammenhengen.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor VOC og EIC kan kalles forløperne til dagens multinasjonale selskaper, og hva som gjorde dem så mektige.",
+                    "Diskuter med en partner: Teksten sier at konflikter i verden i dag ofte har røtter i grenser som ble tegnet i London eller Paris. Bør tidligere kolonimakter ha et ansvar for disse problemene i dag?"
+                ]
+            }
         }
     ],
     "quiz": [

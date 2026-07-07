@@ -126,6 +126,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr slagordene Glasnost og Perestrojka, og hva ville Gorbatsjov oppnå med hvert av dem?",
+                    "Hvorfor sendte det sjokkbølger gjennom Østblokken da Gorbatsjov forkastet Bresjnev-doktrinen?",
+                    "Hva var det som til slutt tvang frem murens fall i Berlin 9. november 1989?",
+                    "Hva skjedde med Sovjetunionen den 25. desember 1991, og hvor mange nye stater ble unionen delt opp i?"
+                ],
+                "reflekter": [
+                    "Teksten sier at reformene ga folk muligheten til å uttrykke hvor misfornøyde de var, som når lokket tas av en kokende kjele. Forklar med egne ord hvorfor åpenhet kunne svekke systemet i stedet for å redde det.",
+                    "Gorbatsjov ønsket ikke å avskaffe kommunismen, men å redde den. Hvorfor tror du forsøket endte med det motsatte av det han ville?",
+                    "Revolusjonene i 1989 ble kalt fløyelsrevolusjoner fordi de var fredelige. Hvorfor er det spesielt at et helt maktsystem falt uten at supermaktene skjøt mot hverandre?",
+                    "Frankrike og Storbritannia var skeptiske til et gjenforent Tyskland. Hvorfor kunne et stort og sterkt Tyskland virke skummelt for naboene like etter den kalde krigen?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier den kalde krigen etterlot atomvåpen som fremdeles finnes og uløste konflikter. Finn ett eksempel fra nyhetene i dag som du mener har røtter i den kalde krigen, og forklar sammenhengen.",
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en østtysker som står ved muren kvelden 9. november 1989. Hva ser, hører og føler du?",
+                    "Diskuter med en partner: Artikkelen sier at selv de dypeste skiller kan overvinnes fredelig hvis lederne er villige til å snakke sammen. Er du enig i at samtale alltid er nok, eller trengs det mer?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

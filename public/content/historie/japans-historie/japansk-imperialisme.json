@@ -124,6 +124,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde i Tsushimastredet i mai 1905, og hvorfor sjokkerte det hele verden?",
+                    "Hvorfor trengte Japan råvarer og markeder fra nabolandene? Nevn minst to grunner som teksten gir.",
+                    "Hvem vant krigen mellom Japan og Kina i 1894-1895, og hvilken koloni fikk seierherren?",
+                    "Hva skjedde med Korea i 1910, og hvordan styrte Japan landet de neste 35 årene?"
+                ],
+                "reflekter": [
+                    "Japans ledere tenkte: skal vi overleve mellom rovdyrene, må vi bli et rovdyr selv. Forklar med egne ord hva de mente med dette.",
+                    "Den russiske Østersjøflåten seilte over 30 000 kilometer i et halvt år før slaget. Forklar hvordan denne lange reisen kan ha bidratt til det japanske overtaket.",
+                    "Teksten sier at Japan ble et imperium med to ansikter: stolthet hjemme og undertrykkelse ute. Sammenlign dette med hvordan de europeiske stormaktene oppførte seg.",
+                    "Seieren i 1905 ga håp til folk i India og andre koloniserte land, men koreanerne ble selv undertrykt av Japan. Hvorfor er dette en motsetning som er verdt å tenke over?"
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt der du svarer på spørsmålet fra slutten av artikkelen: Hva tror du veide tyngst for vanlige japanere den gangen, stoltheten over å vinne eller det andre land måtte betale?",
+                    "Teksten viser at et land kan modernisere seg og bli sterkt på svært kort tid. Finn et eksempel fra vår egen tid på et land som har vokst raskt, og diskuter i klassen om rask vekst alltid er bra.",
+                    "Artikkelen sier at Japans seire førte landet videre mot krig på 1930-tallet. Diskuter med en medelev hvorfor stolthet og selvsikkerhet etter en seier kan bli farlig for et land."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

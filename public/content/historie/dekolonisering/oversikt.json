@@ -39,6 +39,29 @@
                 "href": "/historie/dekolonisering/dekolonisering-sti",
                 "icon": "flag"
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet dekolonisering? Forklar med egne ord ut fra teksten.",
+                    "Hvor mange selvstendige stater er med i FN i dag, ifølge artikkelen, og hvor mange kolonier startet det med?",
+                    "Nevn to land som måtte kjempe blodige kriger for å bli frie, slik teksten sier.",
+                    "Hva var drømmen som alle frigjøringsbevegelsene hadde felles, ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Gandhi valgte ikke-vold, mens Bolivar valgte sverdet. Hvorfor tror du to ledere kunne velge så ulike veier til det samme målet?",
+                    "Norge fikk sin frihet fredelig, mens Vietnam og Algerie måtte gjennom krig. Hva tror du kan avgjøre om en frigjøring blir fredelig eller blodig?",
+                    "Artikkelen deler historien inn i tre store bølger. Hvorfor kan det være nyttig å dele en så stor forandring inn i bølger i stedet for å se på hvert land for seg?",
+                    "Teksten kaller selvstyre for retten til å bestemme over egen fremtid. Hvorfor tror du dette var så viktig for folk at de var villige til å dø for det?"
+                ],
+                "gaaVidere": [
+                    "Finnes det steder i verden i dag der folk fortsatt kjemper for selvstyre? Finn ett eksempel og skriv tre setninger om det.",
+                    "Skriv en kort tekst på fem-seks setninger om hvordan verden kunne sett ut hvis dekoloniseringen aldri hadde skjedd.",
+                    "Diskuter i klassen: Er ikke-vold eller væpnet kamp den beste veien til frihet? Bruk Gandhi og Bolivar som eksempler."
+                ]
+            }
         }
     ],
     "quiz": [

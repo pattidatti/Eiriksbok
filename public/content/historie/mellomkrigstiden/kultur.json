@@ -145,6 +145,29 @@
                 "[USA: Fra 'Roaring 20s' til New Deal](/historie/mellomkrigstiden/usa) – Jazzens hjemland.",
                 "[Tyskland: Veien mot nazismen](/historie/mellomkrigstiden/tyskland) – Weimar-kulturens undergang."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva bekreftet den britiske ekspedisjonen under solformørkelsen i 1919, og hvem hadde forutsagt det?",
+                    "Hva var Bauhaus, hvem grunnla skolen, og hvilke materialer og ideer sto sentralt der?",
+                    "Hvorfor reagerte dadaistene på krigen med det de kalte kunstnerisk meningsløshet, og hva var Marcel Duchamps «Fontene»?",
+                    "Hva skjedde med Weimar-kulturen og dens stjerner da nazistene kom til makten i 1933?"
+                ],
+                "reflekter": [
+                    "Einsteins teorier ble ofte misforstått som at «alt er relativt». Forklar forskjellen mellom det Einstein faktisk viste om tid og rom, og den filosofiske ideen mange trakk ut av det.",
+                    "Teksten sier at surrealistene var inspirert av Freuds psykoanalyse. Forklar hvordan et maleri av smeltende klokker eller en pipe med teksten «dette er ikke en pipe» kan stille spørsmål ved hva virkelighet er.",
+                    "Jazz ble sett på som befrielse av de unge og som skandaløs av de konservative. Forklar hvorfor den samme musikken kunne oppleves så forskjellig av ulike grupper.",
+                    "Artikkelen sier at demagogene ventet i «vakuumet» da felles sannhet forsvant. Forklar sammenhengen mellom tapet av felles sannhet og at folk begynte å søke etter enkle svar som nasjonen, rasen og lederen."
+                ],
+                "gaaVidere": [
+                    "Bauhaus-ideen om at «form skal følge funksjon» finnes overalt i dag. Finn en gjenstand hjemme eller på skolen som er ren og enkel uten unødvendig pynt, og skriv noen setninger om hvordan formen følger funksjonen.",
+                    "Skriv en kort tekst (5-8 setninger) der du sammenligner hvordan Hollywood-stjerner ble «de nye gudene» på 1920-tallet med hvordan kjendiser og influensere følges i dag. Hva er likt, og hva er annerledes?",
+                    "Diskuter med en partner: Kan en tid der «alt blir relativt» og gamle sannheter forvitrer, både være frigjørende og farlig samtidig? Bruk eksempler fra artikkelen."
+                ]
+            }
         }
     ],
     "quiz": [

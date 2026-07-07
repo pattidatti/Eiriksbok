@@ -71,6 +71,29 @@
                 "text": "Historien vil ikke tilgi oss hvis vi ikke griper makten nå.",
                 "author": "Vladimir Lenin, oktober 1917"
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva sluttet soldatene å gjøre i februar 1917 som gjorde Tsaren maktesløs, og hvem var det de nektet å skyte på?",
+                    "Hva var de tre ordene i Lenins program som gjorde bolsjevikene populære, og hva lovet hvert av dem?",
+                    "Hvorfor hjalp Tyskland Lenin med den hemmelige togreisen fra Sveits til Russland?",
+                    "Hvilke landområder måtte Russland gi fra seg i fredsavtalen i Brest-Litovsk i 1918?"
+                ],
+                "reflekter": [
+                    "Teksten kaller det russiske imperiet 'en kjempe på leirføtter'. Forklar hva dette bildet betyr, og bruk eksempler fra teksten om soldatene og brødkøene.",
+                    "Den provisoriske regjeringen valgte å fortsette krigen. Hvorfor kaller teksten dette en fatal feil, og hvordan hjalp det bolsjevikene?",
+                    "De andre partiene våget ikke å love fred for enhver pris, men det gjorde bolsjevikene. Vurder hva de vant og hva de tapte på dette valget.",
+                    "Teksten sier freden i Brest-Litovsk la grunnlaget for mistillit mellom Vesten og Sovjetunionen. Forklar hvorfor de vestallierte så på bolsjevikene som forrædere."
+                ],
+                "gaaVidere": [
+                    "Lenin lovet 'Brød, Fred og Land' med korte, enkle ord. Finn et eksempel på en enkel slagord-lignende beskjed fra vår egen tid, og skriv noen setninger om hvorfor korte budskap kan bli så populære.",
+                    "Skriv en kort dagbokstekst (4-6 setninger) fra en russisk soldat i skyttergraven vinteren 1916-1917 som nettopp har hørt om Lenins løfte om fred.",
+                    "Diskuter i klassen: Var det riktig av bolsjevikene å love fred for enhver pris, selv om Russland måtte gi fra seg en tredjedel av befolkningen og mesteparten av industrien?"
+                ]
+            }
         }
     ],
     "quiz": [

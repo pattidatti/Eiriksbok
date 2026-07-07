@@ -126,6 +126,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilket år brøt Vesuv ut, og hvorfor var innbyggerne i Pompeii helt uforberedt på at fjellet var en vulkan?",
+                    "Hvem var Plinius den Yngre, og hva gjorde onkelen hans, Plinius den Eldre, under utbruddet?",
+                    "Forklar hva pyroklastiske strømmer er, og hvorfor de drepte flere enn selve asken ifølge teksten.",
+                    "Hva er et thermopolium, og hva fant arkeologene igjen i en av grytene?"
+                ],
+                "reflekter": [
+                    "Pompeii ble begravet i aske mens Herculaneum ble fylt av vulkansk gjørme. Forklar hvordan denne forskjellen påvirket hvor godt de to byene ble bevart.",
+                    "Arkeologen Fiorelli helte gips i tomrommene etter kroppene. Hvorfor kan disse avstøpningene fortelle oss noe som skjeletter alene ikke kan?",
+                    "Teksten kaller Pompeii en tidsmaskin. Bruk grafittien, gatekjøkkenene og freskene i Mysterievillaen til å forklare hvorfor ruinene er en så spesiell kilde til hverdagslivet.",
+                    "Vulkanologer kaller eksplosive utbrudd for plinske utbrudd. Hva sier det om verdien av at Plinius den Yngre skrev ned det han så?"
+                ],
+                "gaaVidere": [
+                    "Se på tidslinjen i artikkelen. Skriv en kort dagbokstekst (5-6 setninger) som en innbygger i Pompeii kunne ha skrevet mellom klokka 13:00 og 20:00 den første dagen.",
+                    "Grafittien på veggene i Pompeii ligner beskjeder folk skriver på nett i dag. Diskuter med en medelev hva slike hverdagsspor kan fortelle framtidige forskere om oss.",
+                    "Vesuv er fortsatt en aktiv vulkan med mange mennesker rundt seg. Finn ut hvordan Napoli-området i dag forbereder seg på et nytt utbrudd, og sammenlign med hvor uforberedt Pompeii var."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

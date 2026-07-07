@@ -182,6 +182,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to land sto igjen som supermakter etter 1945, og hva gjorde hvert av dem sterke?",
+                    "Hvilke fem land fikk fast plass og vetorett i FNs sikkerhetsråd, og hva betyr det å ha veto?",
+                    "Hva ble bestemt om verdens penger på møtet i Bretton Woods i 1944?",
+                    "Hva var Marshallhjelpen, og hvor mye penger sendte USA til Vest-Europa?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at «den som skriver reglene, får makt». Forklar hvordan dette stemmer for både FN, Bretton Woods og Marshallhjelpen.",
+                    "I FNs generalforsamling har alle land én stemme, mens makten i IMF og Verdensbanken følger hvor mye penger et land har skutt inn. Hvorfor gir disse to reglene helt ulik fordeling av makt?",
+                    "Hvorfor var Marshallhjelpen mer enn en ren gave? Nevn minst to ting USA fikk igjen for pengene.",
+                    "Artikkelen sier at sprekken mellom USA og Sovjetunionen var synlig allerede i 1945. Hva peker teksten på som tegn på at de to ikke stolte på hverandre?"
+                ],
+                "gaaVidere": [
+                    "Vetoretten fra 1945 gjelder fortsatt helt uendret. Finn et eksempel fra nyhetene der en stormakt har brukt eller kunne brukt veto, og skriv noen setninger om hvorfor FN da får det vanskelig.",
+                    "Skriv en kort tekst (5-8 setninger) der du svarer på artikkelens hovedspørsmål: Var det rettferdig at vinnerne av krigen ga seg selv mest makt? Argumenter for begge sider.",
+                    "Diskuter med en partner: Norge, et lite land, satset alt på FN. Hvorfor trenger små land felles regler mer enn stormaktene gjør?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

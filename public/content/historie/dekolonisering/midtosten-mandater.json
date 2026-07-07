@@ -62,6 +62,29 @@
         {
             "type": "text",
             "content": "Samtidig ga den britiske utenriksministeren enda et løfte. I Balfour-erklæringen (1917) lovet han å støtte opprettelsen av et 'nasjonalt hjem for det jødiske folk' i Palestina. Dette kolliderte direkte med løftene gitt til araberne som allerede bodde der. Britenes dobbelspill la grunnlaget for en av verdens mest fastlåste konflikter."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva la britene merke til at var rart med grensene i Midtøsten, og hvordan ble de tegnet?",
+                    "Hva lovet britene de arabiske lederne hvis de gjorde opprør mot Osmanriket?",
+                    "Hva ble Storbritannia og Frankrike enige om i den hemmelige Sykes-Picot-avtalen fra 1916?",
+                    "Hva lovet den britiske utenriksministeren i Balfour-erklæringen fra 1917?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor britene lovet bort det samme landet til flere parter samtidig.",
+                    "Teksten sier at landene ble kalt mandater og ikke kolonier. Hvorfor tror du navnet ble endret, når styret i praksis lignet på kolonistyre?",
+                    "Hvorfor kolliderte Balfour-erklæringen direkte med løftene britene hadde gitt til araberne som allerede bodde i Palestina?",
+                    "Vurder påstanden i teksten om at britenes dobbeltspill la grunnlaget for en av verdens mest fastlåste konflikter. Er du enig i at ett lands løfter kunne få så store følger?"
+                ],
+                "gaaVidere": [
+                    "Israel-Palestina-konflikten er fortsatt i nyhetene. Finn ett ferskt eksempel og forklar kort hvordan det henger sammen med det som skjedde mellom 1916 og 1948.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer for en venn hvorfor snorrette grenser tegnet med linjal kan skape problemer for menneskene som bor der.",
+                    "Diskuter med en partner: Hvem hadde ansvaret for konflikten som fulgte - de som ga løftene, eller de som mottok dem?"
+                ]
+            }
         }
     ],
     "quiz": [

@@ -181,6 +181,29 @@
                 "[Italia: Fascismens fødsel](/historie/mellomkrigstiden/italia) – Spikeren i kista (Abessinia).",
                 "[Midtøsten: De nye grensene](/historie/mellomkrigstiden/midtoesten) – Hvordan mandatene egentlig fungerte."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilket år ble Folkeforbundet grunnlagt, og hva var hovedmålet organisasjonen skulle oppnå?",
+                    "Hvem var Woodrow Wilson, og hvorfor kalles han drivkraften bak Folkeforbundet?",
+                    "Hva var ifølge teksten Folkeforbundets mest ødeleggende svakhet fra fødselen av?",
+                    "Hva gjorde Folkeforbundet da Japan invaderte Mandsjuria i 1931, og hva ble resultatet?"
+                ],
+                "reflekter": [
+                    "Teksten kaller Folkeforbundet en «papirtiger». Forklar hva som menes med dette, og bruk Mandsjuria og Abessinia som eksempler.",
+                    "Da Italia invaderte Abessinia, unntok Folkeforbundet olje, stål og kull fra sanksjonene. Hvorfor gjorde de det, og hvordan svekket dette hele tiltaket?",
+                    "Haile Selassie sa: «Det er oss i dag. Det vil være dere i morgen.» Forklar hva han advarte mot, og vurder om han fikk rett.",
+                    "FNs grunnleggere «lærte av Folkeforbundets feil». Sammenlign Folkeforbundet og FN på minst to punkter, og forklar hvorfor endringene ble gjort."
+                ],
+                "gaaVidere": [
+                    "Teksten sier at internasjonale institusjoner «bare er så sterke som medlemslandenes vilje til å bruke dem». Finn et eksempel fra nyhetene i dag der FN har hatt problemer med å handle, og skriv kort om hvordan det ligner på Folkeforbundets utfordringer.",
+                    "Skriv en kort tale (5-6 setninger) som Haile Selassie kunne holdt for Folkeforbundet i 1936, der du prøver å overbevise medlemslandene om å hjelpe Abessinia.",
+                    "Diskuter i klassen: Bør et land som USA kunne stå utenfor en fredsorganisasjon og samtidig handle fritt med en angriper som Italia? Argumenter for og mot."
+                ]
+            }
         }
     ],
     "quiz": [

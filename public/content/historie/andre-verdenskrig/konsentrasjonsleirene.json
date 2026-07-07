@@ -170,6 +170,29 @@
         {
             "type": "text",
             "content": "Da de allierte styrkene rykket frem våren 1945, møtte de et syn som trosset all beskrivelse. Lik lå i hauger. De overlevende var så utmagret at de knapt lignet mennesker. General Eisenhower ga ordre om at amerikanske soldater og lokale tyske borgere skulle tvinges til å se leirene med egne øyne, slik at ingen senere kunne si at 'dette har ikke skjedd'. Han forsto at forbrytelsen var så enorm at den ville bli møtt med vantro.\n\nFrigjøringen var slutten på leirene, men ikke slutten på lidelsen. Mange fanger døde i ukene etterpå av sykdom og utmattelse. De overlevende ('Displaced Persons') sto uten hjem, uten familie og uten land. Mange jøder kunne ikke dra tilbake til sine hjemsteder på grunn av fortsatt antisemittisme. Dette bidro sterkt til opprettelsen av staten Israel i 1948.\n\nVerden måtte ta inn over seg omfanget av forbrytelsen, noe som førte til Nürnbergprosessene der naziledere ble stilt for retten for 'forbrytelser mot menneskeheten'. Konsentrasjonsleirene står igjen som en evig advarsel. De viser hva som kan skje når [demokratiet](/samfunnskunnskap/styringsformer/demokrati-ansikter) forvitrer, når rasisme blir statlig politikk, og når vi slutter å se våre medmennesker som mennesker."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken leir ble opprettet først, i 1933, og hvem var den i starten ment for?",
+                    "Hva var forskjellen på en konsentrasjonsleir og en tilintetgjørelsesleir ifølge teksten?",
+                    "Hva skjedde under 'seleksjonen' på rampen i Auschwitz, og hvem ble sendt rett til gasskamrene?",
+                    "Hvor mange nordmenn ble deportert, og hva hjalp mange av de norske fangene med å overleve fra 1943?"
+                ],
+                "reflekter": [
+                    "Teksten sier at man må frata et folk deres menneskelighet før man kan drepe dem. Forklar hvordan ord, lover og propaganda var med på å gjøre folkemordet mulig.",
+                    "Hva mente Hannah Arendt med 'det ondes banalitet'? Forklar hvordan systemet var bygget for å 'pulverisere ansvar', slik at ingen enkeltperson følte seg som en morder.",
+                    "Sonderkommandoene ble tvunget til å hjelpe til i drapsprosessen. Hvorfor kalte Primo Levi dette kanskje den ultimate ondskapen ved systemet?",
+                    "Hvorfor ga general Eisenhower ordre om at tyske borgere og soldater måtte se leirene med egne øyne? Hva sier det om faren for at slikt kan bli glemt eller benektet?"
+                ],
+                "gaaVidere": [
+                    "Elie Wiesel sa at likegyldighet er farligere enn hat. Skriv en kort tekst (5-8 setninger) om hva likegyldighet kan føre til i dag, for eksempel når noen blir mobbet eller utestengt.",
+                    "Teksten avslutter med at leirene viser hva som kan skje når demokratiet forvitrer og rasisme blir statlig politikk. Diskuter med en partner: Hvilke tegn bør vi være på vakt mot i vår egen tid?",
+                    "Finn ut mer om Odd Nansens hemmelige dagbok eller 'hvite busser'-aksjonen, og fortell klassen kort hvorfor slike vitnesbyrd er viktige for at vi skal huske hva som skjedde."
+                ]
+            }
         }
     ],
     "quiz": [

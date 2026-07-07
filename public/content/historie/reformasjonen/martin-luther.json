@@ -305,6 +305,29 @@
       "content": "Samtidig hadde Luther sine mørke sider. Han skrev hatske tekster mot jøder mot slutten av livet, tekster som tyske nazister senere skulle misbruke. Han støttet fyrstene mot bøndene da de gjorde opprør. Han er en påminnelse om at de som forandrer historien sjelden er enkle helter eller skurker, men sammensatte mennesker som har gjort både stort og smått."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var et avlatsbrev, og hvorfor mente Luther at det var galt å selge dem?",
+                "Hvilken dato og hvor hengte Martin Luther opp de 95 tesene, og på hvilket språk skrev han dem?",
+                "Hva skjedde med Luther etter Edikt fra Worms i 1521, og hvem hjalp ham?",
+                "Hvordan kom reformasjonen til Norge, og hva betydde den for landets stilling overfor Danmark?"
+            ],
+            "reflekter": [
+                "Forklar hvorfor boktrykkerpressen var så avgjørende for at Luthers protest ble en europeisk bevegelse i stedet for en lokal debatt.",
+                "Teksten sier at Luther lyktes der Wycliffe og Hus mislyktes. Hvilke tre ting kom sammen samtidig, og hvorfor var akkurat den kombinasjonen viktig?",
+                "Sammenlign den katolske og den protestantiske veien til frelse. Hvorfor tror du forskjellen om «tro alene» ble så viktig for vanlige folk?",
+                "Luther kalte de opprørske bøndene «mordere og tjuver». Hva forteller det om forholdet mellom religion og makt, og var det å svikte sine egne idealer?"
+            ],
+            "gaaVidere": [
+                "Teksten kaller reformasjonen «den første store mediebegivenheten i historien». Sammenlign hvordan tesene spredte seg med hvordan ideer sprer seg på sosiale medier i dag. Hva er likt, og hva er ulikt?",
+                "Skriv et kort avsnitt (5-6 setninger) der du forklarer for en venn hvorfor det å oversette Bibelen til folkespråket forandret så mye, både for religionen og for skriftspråket.",
+                "Diskuter i klassen: Luther gjorde både stort og smått, og han skrev hatske tekster mot jøder. Bør vi feire mennesker som forandret historien selv om de også hadde mørke sider? Begrunn synet ditt."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

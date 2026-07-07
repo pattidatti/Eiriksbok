@@ -158,6 +158,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva het de fire lagdømmene Norge var delt i før 1274, og hvilke landsdeler styrte de?",
+                    "Hva var mannebot, og hva kunne en ætt gjøre hvis den andre ætten nektet å betale den?",
+                    "Nevn de tre store tingene Landsloven endret da den ble vedtatt mellom 1274 og 1276.",
+                    "Hva betyr tilnavnet Lagabøte, og hvorfor fikk Magnus akkurat dette tilnavnet?"
+                ],
+                "reflekter": [
+                    "Teksten sier at ættesystemet med blodhevn 'ikke var uten logikk'. Forklar hvorfor systemet fungerte i et samfunn av løse bygder uten sterk konge.",
+                    "Hvorfor kaller teksten forbudet mot blodhevn en 'revolusjon'? Bruk det du vet om hva ætten betydde for folk før 1274.",
+                    "Magnus reformerte bylovene før han lagde landsloven. Forklar hvorfor det var lurt å gjøre denne 'prøvekjøringen' først.",
+                    "Sammenlign hvordan en drapssak ble håndtert før og etter 1274. Hvem hadde ansvaret for straffen i hvert tilfelle?"
+                ],
+                "gaaVidere": [
+                    "Setningen 'Med lov skal landet bygges, og ikke med ulov ødes' er fortsatt motto for norsk rettsvesen. Skriv fem-seks setninger om hva du tror setningen betyr for hvordan Norge styres i dag.",
+                    "Teksten sier at staten har monopol på vold, og at dette hviler på det Magnus skrev ned. Finn et eksempel fra nyhetene eller hverdagen der du ser denne ideen i praksis, og forklar den.",
+                    "Diskuter i par: Er det alltid rettferdig at kongen eller staten straffer i stedet for familien selv? Finn ett argument for og ett mot."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

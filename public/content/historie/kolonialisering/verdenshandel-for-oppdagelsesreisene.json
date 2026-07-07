@@ -176,6 +176,29 @@
         {
             "type": "text",
             "content": "Og det viktigste av alt: de europeiske oppdagelsesreisene på 1400- og 1500-tallet var ikke et plutselig eventyr drevet av osmansk press. Portugal hadde allerede utforsket Afrikas kyst i årtier drevet av korstogsideologi, afrikansk gull og [slavehandel](/historie/kolonialisering/trekanthandelen) til sukkerplantasjene på Madeira. [Columbus](/historie/kolonialisering/spansk-kolonialisering) dro ikke vestover for å oppdage Amerika — han prøvde å finne en kortere sjørute til de samme krydderne som venetianerne importerte gjennom Egypt. Verden han fant var allerede knyttet til resten av kloden gjennom handelsruter han aldri ante eksisterte. De store oppdagelsesreisene var ikke starten på et globalt nettverk. De var en europeisk inngripen i et nettverk som allerede hadde eksistert i tusenvis av år — og den gamle nettverket gjennom Egypt var faktisk så seiglivet at det så sent som i 1600 fraktet fire ganger mer krydder enn de portugisiske sjørutene."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor kostet et pepperkorn hundre ganger mer i Venezia enn da det forlot India?",
+                    "Hva utnyttet arabiske sjøkaptener for å seile effektivt gjennom Indiahavet, og hvordan virker denne vinden?",
+                    "Hva var Silkeveien egentlig, og hvorfor fulgte ingen enkelt kjøpmann varen hele veien fra Kina til Middelhavet?",
+                    "Hvilke varer spesialiserte hanseatene seg på i nord, og hva hentet de fra Norge?"
+                ],
+                "reflekter": [
+                    "Teksten sier at europeerne ikke oppfant globalhandelen, men var «fattige sluttbrukere». Forklar med egne ord hva som menes med det.",
+                    "Mange lærebøker sier at Konstantinopels fall i 1453 stengte krydderrutene og tvang Europa ut på havet. Bruk minst to bevis fra artikkelen til å vise hvorfor dette ikke stemmer.",
+                    "Portugal begynte å utforske Afrikas kyst allerede i 1415. Hvilke motiver drev dem ut på havet, og hvorfor var osmansk press ikke den egentlige gnisten?",
+                    "Sammenlign Venezias handel med hanseatenes handel. Hvorfor handlet ikke hanseatene med silke og krydder slik venetianerne gjorde?"
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at arabiske tall, bankvesen og sjøforsikring har røtter i middelalderhandelen. Velg én av disse og finn ut hvordan vi bruker den i dag.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor det er viktig å sjekke om en populær «sannhet» i historiebøker faktisk stemmer med kildene.",
+                    "Diskuter med en partner: Da Vasco da Gama seilte direkte til India uten mellommenn, tapte Venezia monopolet sitt. Finnes det liknende eksempler i dag der ny teknologi kutter ut mellomledd?"
+                ]
+            }
         }
     ],
     "timeline": [],

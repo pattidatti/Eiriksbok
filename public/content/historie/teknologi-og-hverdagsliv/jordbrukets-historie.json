@@ -173,6 +173,29 @@
       "name": "MalthusBoserupModel"
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvorfor klarte ikke arden å dyrke den tunge, våte jorda i Nord-Europa, og hva gjorde den tunge plogen annerledes?",
+                "Hva er vekselbruk, og hvorfor slapp bøndene å la en del av åkeren ligge tom når de tok det i bruk?",
+                "Hva fant de to tyske forskerne Fritz Haber og Carl Bosch ut i 1909?",
+                "Hva gjorde skurtreskeren i én kjøretur som før krevde en hel landsby i flere uker?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvordan kløver kunne gjøre jorda rikere, selv om bøndene ikke la på ekstra gjødsel.",
+                "Teksten sier at omtrent halvparten av all mat i verden er mulig bare på grunn av kunstgjødsel. Hvorfor er nitrogen så avgjørende, og hva ville skjedd uten Haber og Bosch sin oppfinnelse?",
+                "Den grønne revolusjonen reddet mange fra sult, men hadde også en bakside. Hvem tjente mest på de nye metodene, og hvem slet med å henge med?",
+                "Artikkelen kaller jordbruksforandringene en stille revolusjon fordi den ikke handlet om konger og kriger. Hvorfor kan bedre redskaper forandre et samfunn mer enn en krig?"
+            ],
+            "gaaVidere": [
+                "Under to av hundre nordmenn dyrker i dag maten til hele landet. Hva bruker resten av oss tiden på i stedet, og hvordan henger det sammen med redskapene du leste om?",
+                "Skriv en kort tekst (5-8 setninger) der du følger en brødskive bakover i tid: hvilke oppfinnelser fra artikkelen måtte til for at akkurat den skiva kunne havne på tallerkenen din?",
+                "Diskuter med en partner: Ny teknologi løser ofte ett problem, men skaper nye spørsmål. Finn et eksempel fra i dag der en oppfinnelse hjelper oss, men samtidig lager nye problemer."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

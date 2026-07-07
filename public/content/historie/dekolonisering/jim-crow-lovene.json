@@ -152,6 +152,28 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva fastslo Høyesterett i saken Plessy mot Ferguson i 1896, og hvilken setning ble stående som selve prinsippet?",
+                    "Hva var «sundown towns», og hva risikerte svarte amerikanere som ble værende i slike byer etter solnedgang?",
+                    "Hva gjorde Rosa Parks 1. desember 1955, og hvor lenge varte boikotten som fulgte?",
+                    "Hvilke to lover fra 1964 og 1965 gjorde formelt slutt på Jim Crow-lovene, og hva forbød de?"
+                ],
+                "reflekter": [
+                    "Teksten sier at fasilitetene aldri var «like», selv om loven krevde «separate but equal». Forklar med eksempler fra artikkelen hvordan ulikheten viste seg i praksis.",
+                    "Dommer Harlan skrev i sin dissens at avgjørelsen ville hindre forsoning mellom rasene. Hvorfor kan man si at han fikk rett?",
+                    "Historien forteller ofte at Rosa Parks var «for sliten til å reise seg». Hvorfor mener artikkelen at dette bildet er misvisende, og hvorfor er forskjellen viktig?",
+                    "Sit-in'ene i Greensboro endret Woolworths uten at loven ble endret først. Forklar hvordan slik ikke-voldelig motstand kunne virke."
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at formuesgapet mellom hvite og svarte amerikanere er nesten like stort som i 1968. Skriv noen setninger om hvorfor lovene kunne forsvinne uten at ulikheten forsvant.",
+                    "Artikkelen sammenligner Jim Crow med apartheid i Sør-Afrika og Peace Lines i Belfast, og sier at «splittelse er enklere å bygge enn å rive». Diskuter med en partner hva denne setningen betyr, og finn ett eksempel til fra vår egen tid."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

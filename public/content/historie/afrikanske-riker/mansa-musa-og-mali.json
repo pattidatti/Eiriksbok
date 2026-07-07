@@ -123,6 +123,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to varer var Mali-rikets rikdom bygd på, og hvor i riket kom hver av dem fra?",
+                    "Hvorfor ble salt like verdifullt som gull i de sørlige delene av Mali?",
+                    "Hvordan tjente kongen i Mali penger på karavanene som krysset Sahara, uten selv å grave gull eller hogge salt?",
+                    "Hva ble byen Timbuktu berømt for, i tillegg til handel?"
+                ],
+                "reflekter": [
+                    "Teksten sammenligner Mali med en bompengestasjon. Forklar med egne ord hvorfor den sammenligningen passer.",
+                    "Da Mansa Musa ga bort store mengder gull i Kairo i 1324, falt verdien av gull i byen i over ti år. Forklar hvorfor så mye gull på ett sted kunne gjøre gullet mindre verdt.",
+                    "Artikkelen sier at en bok i Timbuktu noen ganger kunne være verdt mer enn gull. Hva forteller det oss om hva folk i Mali satte høyt?",
+                    "Hvorfor mener teksten at historien om Mali motbeviser tanken om at Afrika ikke hadde noen stor historie før europeerne kom?"
+                ],
+                "gaaVidere": [
+                    "Mali ble rikt ved å kontrollere veien mellom to varer folk trengte. Finn et eksempel i dagens verden på et land eller en by som tjener penger på å kontrollere en viktig handelsvei eller ressurs.",
+                    "Skriv en kort tekst (5-8 setninger) der du er en kjøpmann i en karavane på vei gjennom Sahara. Beskriv hva du frakter, hva du frykter, og hva du håper å tjene.",
+                    "Diskuter med en partner: Hvorfor tror dere så mange fortsatt henter stolthet og inspirasjon fra gamle riker som Mali i dag?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

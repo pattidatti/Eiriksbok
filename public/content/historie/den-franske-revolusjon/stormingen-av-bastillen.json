@@ -204,6 +204,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var Bastillen, og hvorfor kunne kongen sende folk dit uten dom eller rettssak?",
+                    "Hva kom folkemengden egentlig for å hente inne i Bastillen, og hvorfor trengte de det?",
+                    "Hvor mange fanger satt i Bastillen den 14. juli 1789, og hvem var de?",
+                    "Hva skrev kong Ludvig 16. i dagboken sin denne dagen, og hva betyr ordet?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor et brev som lettre de cachet gjorde folk i Paris så redde og sinte.",
+                    "Hvorfor ble en dag der bare sju fanger ble fri regnet som så viktig? Hva var det egentlig folk forsto?",
+                    "Frykten spredte seg «fra gate til gate som en flamme» da kongen sendte tyske leiesoldater. Forklar hvorfor folk tolket dette som en trussel.",
+                    "Hvordan henger stormingen av Bastillen sammen med Erklæringen om menneskets og borgerens rettigheter som kom noen uker senere?"
+                ],
+                "gaaVidere": [
+                    "Den 14. juli er fortsatt Frankrikes nasjonaldag. Sammenlign med den norske grunnlovsdagen 17. mai: hva feirer de to dagene egentlig, og hva har de til felles?",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hva sitatet «Nei, sire. Det er en revolusjon» betyr, og hvorfor det er blitt husket i over to hundre år.",
+                    "Diskuter med en partner: Var det riktig av folkemengden å drepe kommandanten de Launay etter at han hadde overgitt festningen? Argumenter for begge sider."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

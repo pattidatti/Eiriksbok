@@ -125,6 +125,29 @@
         {
             "type": "text",
             "content": "Som alltid bør vi være kildekritiske. United Fruit malte Árbenz som en kommunist for å få viljen sin, og den versjonen ble lenge den offisielle. Først senere, da hemmelige dokumenter kom frem, ble det tydelig hvor stor rolle selskapet og CIA hadde spilt. Det minner oss om å spørre: hvem tjente på historien vi fikk høre?"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr uttrykket bananrepublikk, og hvorfor passet det på Guatemala i 1950-årene?",
+                    "Hvilke ting eide United Fruit Company i Guatemala? Nevn minst tre.",
+                    "Hva gikk president Árbenz sin jordreform ut på, og hvem skulle få jorda?",
+                    "Hvordan klarte CIA å få Árbenz til å trekke seg i 1954, uten å bruke en stor hær?"
+                ],
+                "reflekter": [
+                    "Selskapet ble kalt el pulpo, blekkspruten. Forklar hvorfor det kallenavnet passet så godt.",
+                    "Árbenz tilbød seg å betale for jorda ut fra den lave verdien United Fruit selv hadde oppgitt for å slippe skatt. Hvorfor følte selskapet seg lurt, og hva sier dette om hvordan selskapet hadde oppført seg tidligere?",
+                    "Hvorfor var ordet kommunist nok til å utløse alarm i USA på 1950-tallet, selv om det var en overdrivelse i Árbenz sitt tilfelle?",
+                    "Teksten sammenligner Guatemala med Iran og Chile. Hva var det samme mønsteret i alle tre landene, og hva var forskjellen i Guatemala?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst på fem til seks setninger der du forklarer hvordan ett fruktselskap kunne bli mektigere enn selve staten. Bruk eksempler fra artikkelen.",
+                    "Til slutt spør teksten: hvem tjente på historien vi fikk høre? Diskuter med en klassekamerat hvorfor det er viktig å være kildekritisk når mektige selskaper eller stater forteller sin egen versjon av det som skjedde.",
+                    "I 1999 innrømmet president Clinton at den amerikanske støtten til volden i Guatemala hadde vært feil. Finn et annet eksempel fra nyere tid der et land eller selskap har beklaget noe de gjorde mange år tidligere, og vurder om en unnskyldning er nok når skaden allerede er skjedd."
+                ]
+            }
         }
     ],
     "quiz": [

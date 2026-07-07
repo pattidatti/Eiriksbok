@@ -140,6 +140,29 @@
       "caption": "Ett etter ett rev folkene på Balkan seg løs. Området ble kalt 'Europas kruttønne'."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva skjedde ved Wien i 1683, og hvorfor var det et vendepunkt for Det osmanske riket?",
+                "Hvorfor sakket riket akterut i forhold til Europa på 1700- og 1800-tallet?",
+                "Hva var Tanzimat, og nevn minst to ting reformbølgen førte til?",
+                "Hvorfor ble Balkan kalt 'Europas kruttønne'?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor janitsjarene gikk fra å være rikets styrke til å bli en bremsekloss.",
+                "Tanzimat-reformene skulle redde riket, men gjorde det på en måte også svakere. Forklar hvordan lån fra europeiske banker kunne gi stormaktene mer makt over riket.",
+                "Se på tabellen 'Reform eller stagnasjon'. Hvilke argumenter hadde de som ville bevare det gamle? Kan du forstå hvorfor noen fryktet for mye forandring?",
+                "Hvorfor tror du nasjonalismen ble så farlig nettopp for et rike som Det osmanske, der mange ulike folk levde sammen?"
+            ],
+            "gaaVidere": [
+                "Uttrykket 'Europas syke mann' ble brukt om et rike alle ventet skulle dø. Finn et land eller en organisasjon som omtales på lignende måte i dag, og forklar hva som menes.",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor et imperium oftere dør sakte enn med et brak, slik artikkelen beskriver.",
+                "Diskuter med en partner: Da riket forsto at det sakket akterut, prøvde det å reformere seg. Hvor lett eller vanskelig er det for et samfunn å forandre seg raskt, og hvorfor?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

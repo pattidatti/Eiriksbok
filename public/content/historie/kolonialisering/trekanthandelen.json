@@ -90,6 +90,29 @@
         {
             "type": "text",
             "content": "Trekant-handelen la grunnlaget for den industrielle revolusjon. Kapitalen som ble tjent på sukker og slaver finansierte fabrikker, jernbaner og banker i byer som Liverpool, Bristol og Nantes. Samtidig ble det afrikanske kontinentet tappet for sin viktigste ressurs: unge, friske mennesker. Konsekvensene av denne ubalansen preger fortsatt verden i dag gjennom økonomisk ulikhet og systemisk rasisme."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken vare sammenligner teksten med olje i dag, og hvorfor var den så ettertraktet på 1700-tallet?",
+                    "Nevn de tre etappene i trekant-handelen og hva som ble fraktet på hver av dem.",
+                    "Hva kalles reisen fra Afrika til Amerika, og hvor stor andel av menneskene om bord døde under overfarten?",
+                    "Ifølge tabellen i teksten: hva er hovedforskjellen mellom kontraktsarbeid og chattel slavery (eiendomsslaveri)?"
+                ],
+                "reflekter": [
+                    "Teksten sier at skipene aldri seilte tomme, og at hver etappe finansierte den neste. Forklar med egne ord hvorfor dette gjorde systemet så lønnsomt.",
+                    "Olaudah Equiano beskriver Midtpassasjen som en scene av skrekk. Hvorfor tror du teksten bruker et sitat fra en person som selv opplevde dette, i stedet for bare tall og fakta?",
+                    "Teksten skriver at slaveriet var arvelig og basert på rase. Hvordan skiller dette seg fra eldre former for slaveri, og hvorfor gjorde det systemet ekstra grusomt?",
+                    "Artikkelen sier at Afrika ble tappet for unge, friske mennesker. Forklar hvorfor akkurat dette tapet kunne ramme et helt kontinent i lang tid framover."
+                ],
+                "gaaVidere": [
+                    "Teksten hevder at konsekvensene av trekant-handelen fortsatt preger verden gjennom økonomisk ulikhet og systemisk rasisme. Finn ett eksempel fra nyheter eller samfunnet i dag som du mener kan knyttes til denne arven, og forklar koblingen.",
+                    "Skriv en kort tekst på 5-8 setninger der du forestiller deg at du er en kjøpmann i Liverpool på 1700-tallet. Hvordan ville du forsvart handelen for deg selv, og hva ville du helst ikke tenkt på?",
+                    "Diskuter i klassen: Byer som Liverpool og Bristol ble rike på slavehandel. Bør slike byer i dag be om unnskyldning eller betale erstatning for fortiden? Argumenter for og imot."
+                ]
+            }
         }
     ],
     "quiz": [

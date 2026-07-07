@@ -110,6 +110,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor lå Ghana-riket, og hvilket folk var det som bygde det?",
+                    "Hvorfor ble kongen i Ghana styrtrik selv om han ikke eide en eneste gullgruve?",
+                    "Forklar hva den tause handelen gikk ut på, steg for steg.",
+                    "Hva var spesielt med hovedstaden Koumbi Saleh?"
+                ],
+                "reflekter": [
+                    "Kongen bestemte at alle store gullklumper tilhørte ham, mens folk flest bare fikk handle med gullstøv. Forklar hvordan denne regelen holdt gullet sjeldent og verdifullt.",
+                    "Den tause handelen fungerte selv om de to folkene ikke stolte på hverandre. Hvordan kan man handle trygt med noen man ikke stoler på? Forklar hva som gjorde skikken til å virke.",
+                    "Ghana falt av flere grunner samtidig: krigere fra nord, tørke og nye handelsveier lenger øst. Hvilken av disse tror du var den viktigste, og hvorfor?",
+                    "I Koumbi Saleh levde folk med de gamle gudene og muslimske kjøpmenn fredelig side om side. Hva var det som bandt de to byene sammen, og hvorfor tror du det holdt freden?"
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at mange fikk høre at Afrika ikke hadde noen stor historie før europeerne kom. Skriv fem-seks setninger om hvorfor Ghana-riket viser at dette er feil.",
+                    "Ghana tjente penger på å eie veien mellom gull og salt. Finn et eksempel i dagens verden der noen tjener stort på å kontrollere en viktig vei eller forbindelse, og forklar likheten.",
+                    "Diskuter i klassen: hemmeligheten om hvor gullet kom fra, ble holdt i hundrevis av år. Hvorfor kan det lønne seg å holde noe hemmelig i handel, og finnes det liknende hemmeligheter i næringslivet i dag?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

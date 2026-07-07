@@ -193,6 +193,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var kallenavnet til Robespierre, og hvorfor fikk han det?",
+                    "Hva het rådet på tolv menn som styrte Frankrike under skrekkveldet, og hva kunne det gjøre med folk?",
+                    "Hva gikk «loven om mistenkte» ut på? Hvorfor var det lett å bli arrestert under den?",
+                    "Hvordan endte Robespierre selv den 28. juli 1794?"
+                ],
+                "reflekter": [
+                    "Robespierre var mot dødsstraff og sa at han hatet vold, men ble likevel leder for det blodigste året i revolusjonen. Forklar hvordan dette kunne skje.",
+                    "I teksten sier Robespierre at «skrekken» bare er rask og hard rettferdighet, og et uttrykk for dyden. Hva mener han med dette, og hvorfor er det farlig å tenke slik?",
+                    "Hvorfor ble medlemmene i nasjonalforsamlingen til slutt modige nok til å reise seg mot Robespierre? Bruk uttrykket «når jegeren blir byttet» i svaret ditt.",
+                    "Teksten sier at ettertiden lærte to ting av Robespierre. Forklar begge med dine egne ord, og velg hvilken du mener er viktigst."
+                ],
+                "gaaVidere": [
+                    "Artikkelen spør hvor langt et samfunn har lov til å gå for å beskytte seg når det føler seg truet. Skriv et kort svar (5-8 setninger) på om politiet burde få arrestere folk uten bevis hvis landet er i krise. Bruk minst ett argument fra teksten.",
+                    "Etter skrekkveldet bygde franskmennene inn flere bremser i statsmakten, slik vi ser i Norge der Stortinget, regjeringen og domstolene kontrollerer hverandre. Finn ut ett eksempel på hvordan disse tre kan stoppe hverandre i dag, og skriv det ned.",
+                    "Diskuter to og to: Robespierre svarte «så langt som nødvendig» på hvor langt man kan gå. Pliktetikken svarer at en handling er gal hvis den ikke kan bli en regel for alle. Hvilket svar er dere mest enige i, og hvorfor?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

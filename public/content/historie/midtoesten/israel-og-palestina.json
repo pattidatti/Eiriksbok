@@ -202,6 +202,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var Balfour-erklæringen fra 1917, og hvem sendte den til hvem?",
+                "Hva betyr ordet nakba, og hva skjedde med rundt 700 000 palestinere i 1948?",
+                "Hvilke fire områder tok Israel kontroll over under 6-dagerskrigen i 1967?",
+                "Hva var Oslo-avtalen fra 1993, og hvem håndhilste foran Det hvite hus?"
+            ],
+            "reflekter": [
+                "Teksten sier at dette er en konflikt der begge sider har rett. Forklar med egne ord hvorfor det gjør konflikten så vanskelig å løse.",
+                "Hvorfor ble presset for å opprette en jødisk stat så stort etter Holocaust? Bruk teksten til å forklare hvordan andre verdenskrig endret situasjonen.",
+                "Jødene aksepterte FNs delingsplan i 1947, mens palestinerne og de arabiske landene avviste den. Forklar hvorfor de to sidene så så ulikt på planen.",
+                "Drapet på Rabin i 1995 kalles i teksten et vendepunkt. Vurder hvorfor én manns død kunne svekke fredsprosessen så mye."
+            ],
+            "gaaVidere": [
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hva en tostatsløsning er, og hvorfor teksten mener den ser stadig vanskeligere ut å gjennomføre.",
+                "Diskuter med en partner: Kan en konflikt der begge parter føler seg som ofre i det hele tatt løses? Hva må til for at to folk skal stole på hverandre igjen?",
+                "Følg med på nyhetene i noen dager og finn en sak om Israel og Palestina. Hvilke av begivenhetene fra artikkelen (1948, 1967, 1993) merkes fortsatt i saken du fant?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

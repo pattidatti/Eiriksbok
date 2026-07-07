@@ -133,6 +133,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalte egypterne selv landet sitt, og hva betydde navnet Kemet, «det svarte landet»?",
+                    "Hva het de tre egyptiske sesongene, og hva gjorde bøndene i hver av dem?",
+                    "Hvorfor var faraoens stilling helt spesiell sammenlignet med konger i andre tidlige riker?",
+                    "Hva var Rosettastenen, og hvordan hjalp den forskerne med å lese hieroglyfene?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Nilens forutsigbarhet kanskje er den viktigste grunnen til at Egypt ble så stabilt. Forklar hvordan det at flommen kom hvert år hjalp både bøndene, kongen og prestene.",
+                    "Hvorfor kunne faraoen sette bøndene til å bygge pyramider akkurat i flomsesongen? Forklar sammenhengen mellom flommen og arbeidskraften.",
+                    "Egypt lå beskyttet av ørken og hav, mens Mesopotamia stadig ble erobret. Hvordan tror du geografien påvirket at Egypt fikk utvikle seg i fred i tusenvis av år?",
+                    "Farao Akhnaton ville at folk skulle tilbe bare én gud, men forsøket holdt ikke etter at han døde. Hvorfor tror du det var så vanskelig å forandre religionen til et helt folk?"
+                ],
+                "gaaVidere": [
+                    "Khufus pyramide var verdens høyeste bygning i 3800 år, helt til Eiffeltårnet i 1889. Finn ut hvilken bygning som er verdens høyeste i dag, og skriv noen setninger om hvor mye høyere den er.",
+                    "Skriv en kort dagbokside fra jenta på fjorten år i Theben. Beskriv hvordan det ser ut når Nilen flommer over, og hvorfor familien hennes ikke er redd.",
+                    "Diskuter i klassen: Teksten sier at pyramidene sannsynligvis ble bygget av vanlige bønder, ikke slaver. Hvorfor tror dere så mange fortsatt tror at slaver bygde dem?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

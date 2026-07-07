@@ -117,6 +117,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva gjorde oberst Birger Eriksen på Oscarsborg festning natt til 9. april 1940, og hvorfor var det så viktig at han fikk senket Blücher?",
+                    "Hvorfor ville Hitler ha kontroll over Norge? Nevn de to tingene teksten sier han trengte fra landet.",
+                    "Hva var Nasjonal Samling, og hvor stor oppslutning hadde partiet før krigen?",
+                    "Hva skjedde med de norske jødene den 26. november 1942, og hvor mange av de 772 deporterte overlevde?"
+                ],
+                "reflekter": [
+                    "Quisling erklærte seg selv som statsminister allerede 9. april, men teksten kaller ham en tysk marionett. Forklar hvorfor tyskerne ville bruke ham selv om nesten ingen nordmenn hadde stemt på ham.",
+                    "Lærerne og Den norske kirke sa begge nei til Quisling i 1942. Sammenlign de to protestene: hva hadde de til felles, og hvorfor tror du de virket?",
+                    "Teksten forteller om små tegn på motstand, som binders på jakkeslaget og å gå av bussen. Hvorfor kan slike små handlinger likevel bety mye når nesten alle er med?",
+                    "Vurder utsagnet fra Sara Levin: «Det fantes onde nordmenn, men det fantes mange flere gode.» Hvilke eksempler i teksten støtter dette, og hvorfor er det viktig å huske begge deler?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at demokrati ikke er gratis, men må forsvares hver dag. Skriv et kort avsnitt om hva du mener det betyr i dag, og gi ett eksempel.",
+                    "Diskuter i klassen: Hvis du hadde levd under okkupasjonen, tror du det hadde vært lett eller vanskelig å velge stille motstand framfor å tilpasse seg? Begrunn svaret.",
+                    "Finn ut mer om tungtvannsaksjonen på Vemork i 1943, og skriv ned tre grunner til at den regnes som en av krigens viktigste aksjoner."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Test forståelsen din",

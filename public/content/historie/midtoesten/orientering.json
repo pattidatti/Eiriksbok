@@ -146,6 +146,29 @@
       "props": {}
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvem fant opp begrepet \"Midtøsten\", og i hvilket år? Forklar hvorfor teksten sier at begrepet sier mer om europeisk perspektiv enn om regionen selv.",
+                "Teksten nevner tre store folkegrupper i regionen: arabere, persere og tyrkere. Hvilket språk snakker hver av dem, og hvilket av disse språkene er beslektet med norsk?",
+                "Hva var den egentlige grunnen til at muslimene ble delt i sunni og shia etter at Muhammed døde i 632? Svar med det teksten sier.",
+                "Hvor mange kurdere finnes det ifølge teksten, og i hvilke fire land bor de fleste av dem?"
+            ],
+            "reflekter": [
+                "Teksten sier at skillet mellom sunni og shia ikke handler om teologiske dogmer, men er politisk og historisk. Forklar med egne ord hva som menes med dette.",
+                "Grensene i Midtøsten ble i stor grad trukket av europeiske kolonimakter etter første verdenskrig, uten hensyn til hvem som bodde der. Hvordan kan dette henge sammen med at kurderne i dag er et stort folk uten egen stat?",
+                "Jødedom, kristendom og islam deler stamfar, hellig by og overlappende tekster, men har likevel vært i konflikt gjennom historien. Hvorfor tror du folk kan havne i strid selv når de har mye til felles?",
+                "Velg én av de tre aksene fra teksten (sunni/shia, arabere/ikke-arabere eller olje/ikke-olje) og forklar hvordan den kan brukes til å forstå en konkret rivalisering, for eksempel mellom Saudi-Arabia og Iran."
+            ],
+            "gaaVidere": [
+                "Finn en nyhetssak om Midtøsten fra denne uken. Bruk de tre aksene fra teksten og still deg spørsmålene: Hvem er sunni, hvem er shia? Er dette arabere eller ikke? Har landet olje? Skriv et kort avsnitt om hva svarene forteller deg om konflikten.",
+                "Skriv en kort tekst på 5-6 setninger som forklarer for en venn hvorfor det er feil å tro at \"alle i Midtøsten er arabere\".",
+                "Diskuter i klassen: Olje har gjort noen land i regionen svært rike og latt andre bli igjen i fattigdom. Er det rettferdig at naturressurser under bakken avgjør hvor rikt et land blir? Kom med argumenter for og mot."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

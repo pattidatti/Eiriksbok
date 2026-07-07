@@ -104,6 +104,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var det som egentlig falt i år 476, og hva skjedde med den andre halvdelen av Romerriket?",
+                    "Hvilket språk snakket folk i Det bysantinske riket, og hva kalte de seg selv?",
+                    "Hvorfor så den store kuppelen i Hagia Sofia ut til å sveve, ifølge teksten?",
+                    "Hva var «gresk ild», og hvorfor kunne den brukes mot fiendtlige skip?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor det kan være riktig å si at Romerriket levde helt til 1453, selv om skolebøker ofte sier at det falt i 476.",
+                    "Konstantinopel lå der Silkeveien endte og Europa begynte. Forklar hvordan denne plasseringen gjorde riket så rikt.",
+                    "Hvordan var bysantinerne med på å tenne renessansen i Vest-Europa? Beskriv hele veien fra klostrene til de lærde som flyktet.",
+                    "I 1204 plyndret soldater fra Vest-Europa en kristen by. Hvorfor er det spesielt at nettopp kristne angrep Konstantinopel?"
+                ],
+                "gaaVidere": [
+                    "Den ortodokse og den katolske kirken skilte lag i 1054. Finn ut hvor mange i dag som tilhører hver av de to retningene, og skriv tre setninger om hva du fant.",
+                    "Skriv en kort tekst (5-8 setninger) der du er tenåringen fra Konstantinopel rundt år 1000 og forteller en venn i Vest-Europa hvorfor du mener Roma slett ikke har falt.",
+                    "Diskuter med en partner: Hvorfor tror dere det er så mange som fortsatt tror at Romerriket falt i 476? Hva sier det om hvordan historie blir fortalt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

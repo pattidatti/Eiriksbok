@@ -49,6 +49,29 @@
             "props": {
                 "content": "Svartedauden drepte halvparten av Norges befolkning, men førte til bedre kår for de som overlevde."
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilket år kom svartedauden til Norge, og hvilken by kom pesten til først?",
+                    "Omtrent hvor stor del av Norges befolkning døde av pesten?",
+                    "Hvor spredte pesten seg fra, og langs hvilke ruter kom den til Europa?",
+                    "Hva er en ødegård, og hvorfor ble det så mange av dem etter pesten?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor svartedauden var en katastrofe for staten, men samtidig kunne gjøre livet bedre for de fattige bøndene som overlevde.",
+                    "Teksten sier at bøndene kunne kreve bedre vilkår etter pesten. Forklar med egne ord hvorfor det ble slik når så mange gårder sto tomme.",
+                    "Svartedauden markerte slutten på Norges storhetstid og starten på unionstiden med Danmark. Hvorfor kan et så stort befolkningstap svekke et helt land?",
+                    "På verdensbasis døde mellom 70 og 200 millioner mennesker. Hvorfor tror du tallet er så usikkert for en hendelse så langt tilbake i tid?"
+                ],
+                "gaaVidere": [
+                    "Pesten spredte seg langs handelsruter mellom land. Sammenlign med hvordan en sykdom sprer seg i verden i dag. Hva er likt, og hva er annerledes?",
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en bonde i Norge i 1350. Hvordan har livet ditt forandret seg etter at pesten kom?",
+                    "Diskuter med en partner: Kan en stor katastrofe noen ganger føre til noe positivt for et samfunn? Bruk svartedauden som eksempel."
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",

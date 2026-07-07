@@ -143,6 +143,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva het den første kunstige satellitten, og hvilket land skjøt den opp i 1957?",
+                    "Hvem ble det første mennesket i verdensrommet, og hvilken dato skjedde det?",
+                    "Hvilket mål satte president Kennedy for USA i talen sin i mai 1961?",
+                    "Hvilken tysk forsker beskrives i teksten som hjernen bak det amerikanske måneprogrammet?"
+                ],
+                "reflekter": [
+                    "Teksten kaller Sputnik-oppskytingen 'et teknologisk Pearl Harbor'. Forklar hvorfor amerikanerne ble så redde av en satellitt på størrelse med en basketball.",
+                    "Hvorfor handlet romkappløpet like mye om våpen og makt som om vitenskap? Bruk sammenhengen mellom raketter og atomvåpen fra teksten.",
+                    "Sovjetunionen vant nesten alle de første etappene, men USA vant til slutt. Forklar hvordan Kennedys måneprogram klarte å snu kappløpet.",
+                    "I 1975 møttes et amerikansk og et sovjetisk fartøy i rommet med et håndtrykk. Hva forteller dette øyeblikket om hvordan forholdet mellom supermaktene endret seg?"
+                ],
+                "gaaVidere": [
+                    "Teksten nevner at teknologi fra måneferden ga oss GPS, værvarsling og røykvarslere. Velg én ting du bruker i hverdagen, og skriv et kort avsnitt om hvordan romkappløpet kan ha bidratt til den.",
+                    "Diskuter med en medelev: Var det verdt å bruke milliarder av dollar og 400 000 mennesker på å nå månen, når pengene kunne gått til andre ting? Finn argumenter for begge sider.",
+                    "I dag konkurrerer land og private selskaper igjen om rommet, for eksempel om å reise til Mars. Skriv noen setninger om hva som er likt og hva som er ulikt sammenlignet med kappløpet i den kalde krigen."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

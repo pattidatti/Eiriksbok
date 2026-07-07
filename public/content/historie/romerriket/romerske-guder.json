@@ -110,6 +110,29 @@
                 "text": "Jeg kom, jeg så, jeg vant.",
                 "author": "Julius Cæsar (Veni, vidi, vici)"
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr uttrykket 'do ut des', og hva forteller det om hvordan romerne så på forholdet mellom mennesker og guder?",
+                    "Hva var Pax Deorum, og hva trodde romerne skjedde hvis denne freden ble brutt?",
+                    "Hva er de romerske navnene på de greske gudene Zevs, Ares og Athene?",
+                    "Hvem var Lares og Penates, og hva gjorde romerne for dem hjemme hver dag?"
+                ],
+                "reflekter": [
+                    "Teksten sier at romersk religion handlet mer om hva du gjorde enn hva du trodde inni deg. Forklar med egne ord hvorfor ofringer og ritualer da ble så viktige.",
+                    "Da romerne erobret nye områder, tenkte de ofte at fremmede guder egentlig var deres egne under nye navn. Hvorfor kan en slik måte å tenke på ha gjort det lettere å styre et stort rike?",
+                    "Julius Cæsar var yppersteprest lenge før han ble diktator. Forklar hvordan det å blande religion og politikk kunne gi en person mer makt i Roma.",
+                    "Keiserdyrkelsen skapte store problemer for de tidlige kristne. Forklar hvorfor det å nekte å ofre til keiseren ble sett på som forræderi mot staten, og ikke bare som en privat tro."
+                ],
+                "gaaVidere": [
+                    "Romerne hadde en beskytter for nesten alt, til og med for dørstokken (guden Janus). Finn tre steder eller ting i ditt eget liv du tror en romer ville gitt sin egen beskyttergud, og forklar hvorfor.",
+                    "Skriv et kort avsnitt der du forklarer en venn hvorfor romersk religion var så tett knyttet til staten og makten, og ikke bare en privatsak.",
+                    "Diskuter i klassen: Finnes det i dag eksempler på ledere eller symboler som mennesker nesten tilber eller viser overdreven respekt? Sammenlign med den romerske keiserdyrkelsen."
+                ]
+            }
         }
     ],
     "quiz": [

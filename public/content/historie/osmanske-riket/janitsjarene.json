@@ -91,6 +91,29 @@
       "caption": "I 1826 oppløste sultanen janitsjarene med makt. En 500 år gammel ordning var over."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var devşirme, eller barnetributten, og hvor hentet sultanens menn guttene fra?",
+                "Hvorfor var janitsjarene en så sterk hær? Nevn minst tre grunner fra teksten.",
+                "Hva betydde de store grytene for janitsjarene, og hva skjedde når de veltet dem?",
+                "Hva skjedde med janitsjarene i 1826, og hvem sto bak?"
+            ],
+            "reflekter": [
+                "Guttene var formelt slaver, men de dyktigste kunne bli rikets mektigste menn. Forklar med egne ord hvorfor dette systemet både var grusomt og fullt av muligheter.",
+                "Hvorfor tror du sultanen stolte mer på slavesoldatene sine enn på sine egne slektninger?",
+                "Den styrken som gjorde riket mektig, ble til slutt en trussel mot sultanen selv. Forklar hvordan janitsjarene gikk fra å være sultanens beste våpen til å bli hans største fare.",
+                "Var det klokt av sultanen å bygge hele elitehæren sin på tvangshentede gutter fra andre land? Argumenter for og imot."
+            ],
+            "gaaVidere": [
+                "Tenk på en familie som mistet et barn til barnetributten. Skriv en kort tekst (5-8 setninger) der du beskriver dagen guttene ble hentet, sett fra familiens side.",
+                "Finnes det eksempler i dagens verden på at mennesker uten makt likevel kan stige helt til topps? Diskuter med en partner hva som skal til for at det kan skje.",
+                "Diskuter: Kan en hersker noen gang stole helt på en hær som er sterk nok til å avsette ham? Hva kunne sultanen ha gjort annerledes?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

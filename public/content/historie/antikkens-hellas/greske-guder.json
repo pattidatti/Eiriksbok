@@ -131,6 +131,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor trodde grekerne at gudene bodde, og hvem var overhodet i gudefamilien?",
+                    "Hva styrte hver av disse gudene over: Poseidon, Demeter og Afrodite?",
+                    "Hva forklarte myten om Demeter og Persefone, og hvorfor blir det vinter ifølge myten?",
+                    "Hva mente grekerne med hybris, og hva skjedde vanligvis med helter som viste hybris?"
+                ],
+                "reflekter": [
+                    "Teksten sier at gudene var som et speil av menneskene selv. Forklar hva som menes med det, og gi et eksempel fra artikkelen.",
+                    "Hvorfor var mytene grekernes vitenskap før vitenskapen fantes? Sammenlign hvordan grekerne og vi i dag prøver å forklare ting vi ikke forstår.",
+                    "Det fantes ingen skole som lærte bort mytene, og de fleste kunne ikke lese. Forklar hvordan de samme historiene likevel ble kjent over hele Hellas.",
+                    "Hvorfor tror du grekerne likte guder som kranglet, ble sjalu og gjorde feil, i stedet for perfekte guder?"
+                ],
+                "gaaVidere": [
+                    "Ordene panikk og ekko kommer fra greske myter. Finn eller diskuter minst ett annet ord eller navn i dag som kommer fra gresk mytologi, og forklar hvor det kommer fra.",
+                    "Skriv en kort tekst (5-8 setninger) der du lager din egen lille myte som forklarer et naturfenomen, for eksempel regn, torden eller natt, på samme måte som grekerne forklarte vinteren.",
+                    "Diskuter med en partner: Hvorfor leser og bruker vi fortsatt greske myter nesten tre tusen år senere, selv om nesten ingen tror på gudene lenger?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

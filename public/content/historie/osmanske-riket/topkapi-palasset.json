@@ -91,6 +91,29 @@
       "caption": "Jo lenger inn i palasset, jo nærmere makten. Aller innerst lå haremet, et eget maktsenter."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var Topkapı-palasset, og hvor lå det?",
+                "Hva var storvesirens oppgave, og hva betydde det at han bar sultanens segl?",
+                "Hvem var Valide Sultan, og hvorfor var hun ofte så mektig?",
+                "Hva menes med uttrykket 'kvinnenes sultanat'?"
+            ],
+            "reflekter": [
+                "Palasset var bygget slik at jo lenger inn du kom, jo nærmere makten var du. Forklar hvordan selve byggemåten var med på å skape makt og ærefrykt.",
+                "Teksten sier at storvesirens makt alltid var 'lånt'. Forklar hva som menes med det, og hvorfor det var både mektig og farlig å sitte nær toppen.",
+                "Hürrem var en tidligere slavinne som ble en av rikets mektigste personer. Hva forteller det om hvordan makt kunne vinnes i palasset?",
+                "Artikkelen sier at 'ingen styrte alene'. Argumenter for hvorfor det kan være en fordel for et rike at makten er delt mellom flere, og hvorfor det også kan skape problemer."
+            ],
+            "gaaVidere": [
+                "I Topkapı avgjorde ofte hvisking i sultanens øre mer enn titler og lover. Finn et eksempel fra vår egen tid der noen har mye makt uten å ha en offisiell tittel, og forklar likheten.",
+                "Skriv en kort tekst (5-8 setninger) der du beskriver en helt vanlig dag sett med øynene til en ung storvesir som nettopp har fått sultanens segl. Hvordan tror du han føler seg?",
+                "Diskuter med en partner: Er det tryggest for et land at én person bestemmer alt, eller at makten er delt mellom flere slik den var i Topkapı? Begrunn svarene."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

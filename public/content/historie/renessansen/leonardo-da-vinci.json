@@ -148,6 +148,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor og når ble Leonardo da Vinci født, og hva betyr egentlig navnet «da Vinci»?",
+                    "Hvorfor dissekerte Leonardo lik om natten? Finn svaret i teksten.",
+                    "Hva er sfumato, og i hvilket maleri brukte Leonardo denne teknikken?",
+                    "Hva skrev Leonardo om i de første ti punktene i brevet til hertugen av Milano, og hva nevnte han helt til slutt?"
+                ],
+                "reflekter": [
+                    "Leonardo kalte seg selv «en mann uten bokstaver» fordi han aldri lærte latin eller gikk på universitet. Hvordan kunne han likevel bli renessansens største geni? Bruk teksten til å forklare hva han stolte på i stedet for gamle bøker.",
+                    "Teksten sier at Leonardo «fullførte nesten ingenting». Forklar med minst to eksempler fra artikkelen hvorfor så mange av prosjektene hans aldri ble ferdige.",
+                    "Hva menes med «uomo universale», og hvordan viser Leonardos måte å jobbe på (for eksempel at han studerte anatomi for å male bedre) at han var et slikt menneske?",
+                    "Teksten forteller at fyrster betalte best for våpen, og at Leonardo derfor solgte seg inn som våpensmed. Hva forteller dette om hvordan geniene på den tiden måtte tjene penger?"
+                ],
+                "gaaVidere": [
+                    "Leonardo skjulte ideene sine i speilskrift og viste dem aldri fram, så ingen kunne bygge videre på dem. I dag deler forskere ofte arbeidet sitt åpent. Skriv fem-seks setninger om hvorfor det er lurt å dele kunnskap i stedet for å holde den hemmelig.",
+                    "Teksten sier at du er «litt av et renessansemenneske selv» når du kobler sammen fag på skolen. Velg to fag du har, og forklar for klassen én ting du har lært i det ene som også hjelper deg i det andre.",
+                    "Diskuter i klassen: Mona Lisa er bare 77 centimeter høyt, men ti millioner mennesker reiser hvert år for å se det. Hva er det som gjør at akkurat dette bildet er blitt så kjent?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

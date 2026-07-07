@@ -146,6 +146,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor valgte de allierte å stille nazitoppene for en domstol i stedet for å skyte dem, slik Churchill og Sovjet foreslo?",
+                    "Hva betydde det nye anklagepunktet «forbrytelser mot menneskeheten», og hvorfor var det spesielt?",
+                    "Hva ble dommen 1. oktober 1946: hvor mange ble dømt til døden, hvor mange fikk fengsel og hvor mange ble frikjent?",
+                    "Hva sier Nürnbergprinsipp IV om det å følge ordre fra en overordnet?"
+                ],
+                "reflekter": [
+                    "Aktoratet mente noen handlinger er så åpenbart onde at de er forbudt uansett hva den nasjonale loven sier. Er du enig, eller må en handling stå skrevet i en lov for å kunne straffes?",
+                    "Kritikerne kalte Nürnberg «seierherrens rett». Forklar hva de mente med det, og vurder om kritikken er rettferdig.",
+                    "Sammenlign forsvaret nazitoppene brukte («vi adlød bare ordre») med det Robert Jackson sa om å sette loven over hevnen. Hvorfor holdt ikke ordre-forsvaret i retten?",
+                    "Hannah Arendt kalte Eichmann et eksempel på «det ondes banalitet». Forklar hva hun mente, og hvordan det henger sammen med hovedbudskapet i artikkelen om at vanlige mennesker kan gjøre onde ting."
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt om en situasjon i ditt eget liv der noen kunne finne på å si «jeg gjorde det bare fordi noen ba meg». Forklar hvorfor artikkelen mener det ikke er et gyldig forsvar.",
+                    "Den internasjonale straffedomstolen (ICC) i Haag bygger på Nürnbergprinsippene. Finn ut om en sak ICC jobber med i dag, og diskuter i klassen om domstolen klarer å stille de mektigste for retten.",
+                    "Diskuter spørsmålet fra artikkelen: hvis ICC anklager en sittende president, bør landet hans utlevere ham? Bruk minst ett argument for og ett mot."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

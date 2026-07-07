@@ -63,6 +63,29 @@
             "type": "text",
             "title": "Hvorfor er dette viktig?",
             "content": "Denne måten å se vikingtiden på endrer vikingene fra å være 'primitive barbarer' til å bli rasjonelle, politiske aktører som kjempet for sin overlevelse. Det setter også vikingtiden inn i en større europeisk sammenheng: Det var et sammenstøt mellom to sivilisasjoner – det gamle, desentraliserte stammesamfunnet i nord mot det nye, sentraliserte føydalriket i sør.\n\nTapte de til slutt? Ja. Men de holdt stand i 250 år, og i prosessen endret de Europa for alltid."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilket år angrep vikingene klosteret på Lindisfarne, og hva markerer dette angrepet ifølge historiebøkene?",
+                    "Hva skjedde i Massakren i Verden i 782, og hvorfor ble sakserne drept?",
+                    "Hva var Dannevirke, og hvem sto bak utbyggingen av forsvarsvollen?",
+                    "Hva går den nye hypotesen i artikkelen ut på? Forklar med egne ord hva 'preventiv krig' betyr."
+                ],
+                "reflekter": [
+                    "Artikkelen nevner både de gamle forklaringene på vikingtiden (befolkningsvekst, bedre skip, eventyrlyst) og den nye hypotesen om selvforsvar. Hvilken forklaring virker mest overbevisende på deg, og hvorfor?",
+                    "Hvorfor angrep vikingene nettopp klostre, ifølge hypotesen? Forklar hvordan et angrep på et kloster kunne være både et ran og en ideologisk beskjed.",
+                    "Artikkelen bruker funn som Kanhave-kanalen og 'Den store hedenske hæren' som bevis på at vikingene var organiserte. Hvorfor er det viktig for hypotesen å vise at nordboerne hadde en sterk sentralmakt?",
+                    "Artikkelen kaller vikingtiden et sammenstøt mellom to sivilisasjoner. Sammenlign det desentraliserte stammesamfunnet i nord med det sentraliserte føydalriket i sør. Hvilke styrker hadde hver side?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort dagbokstekst (5-8 setninger) fra en dansk høvding i år 793 som nettopp har hørt ryktene om at sakserne i sør blir slaktet ned for sin tro.",
+                    "Diskuter i klassen: Kan et angrep noen gang forsvares som selvforsvar? Finn et eksempel fra nyere tid der et land har begrunnet et angrep med at det var for å beskytte seg selv.",
+                    "Historikere er uenige om denne hypotesen. Finn ett argument som taler for at vikingtoktene var planlagt selvforsvar, og ett argument som taler mot. Hvilket veier tyngst?"
+                ]
+            }
         }
     ],
     "concepts": [

@@ -167,6 +167,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvor lang tid kunne et brev bruke over Atlanteren med seilskip, ifølge teksten?",
+                "Hva er morsekode, og hvem laget dette systemet?",
+                "Hva var den store forskjellen mellom telegrafen og telefonen?",
+                "Hva gjorde operatørene på de første telefonsentralene når noen ville ringe?"
+            ],
+            "reflekter": [
+                "Teksten sier at avstand før 1800-tallet var det samme som tid. Forklar med egne ord hva dette betydde for en konge som skulle sende ordre til hæren sin.",
+                "Signaltårnene i Frankrike var raske for sin tid, men hadde svakheter. Forklar hvorfor de bare virket noen ganger, og hvorfor telegrafen var mye bedre.",
+                "Hvorfor forandret telefonen hverdagen til vanlige folk mer enn telegrafen gjorde? Bruk eksemplene fra teksten i svaret ditt.",
+                "Teksten sier at verden plutselig krympet da kabelen ble lagt over Atlanteren i 1866. Forklar hva som menes med at verden krympet, selv om avstanden i kilometer var akkurat den samme."
+            ],
+            "gaaVidere": [
+                "Teksten sier at beskjedene dine fortsatt reiser gjennom kabler på havbunnen, akkurat som den første telegrafkabelen. Finn ut hva du bruker i dag som sender meldinger denne veien, og skriv noen setninger om hvordan livet ditt ville vært uten det.",
+                "Skriv en kort tekst der du sammenligner å vente en måned på svar fra en venn i Amerika med å sende en melding og få svar på sekunder. Hvordan tror du dette forandrer måten folk holder kontakten på?",
+                "Teksten peker på at når alle kan nås når som helst, blir det vanskeligere å koble av. Diskuter i klassen om det alltid er bra å kunne nå hverandre hele tiden, eller om det også har en bakside."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

@@ -87,6 +87,29 @@
       "caption": "Süleyman døde under et felttog som gammel mann, fortsatt i sadelen. Med ham endte rikets høydepunkt."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvor lenge styrte Süleyman, og hvorfor kalte Europa ham 'den store'?",
+                "Hva betyr tilnavnet Kanuni, og hva gjorde Süleyman som fortjente det?",
+                "Hva skjedde ved Wien i 1529, og hvorfor var dette et vendepunkt?",
+                "Hvem var Mimar Sinan, og hva bygde han under gullalderen?"
+            ],
+            "reflekter": [
+                "Forklar hvordan Süleyman kunne være to ting på en gang: en fryktet kriger og en klok lovgiver.",
+                "Teksten sier at presset fra Süleyman i øst ga protestantene i Tyskland rom til å vokse. Forklar med egne ord hvordan det henger sammen.",
+                "Süleyman lot også kristne og jøder søke rettferd i domstolene sine. Hvorfor kaller teksten dette uvanlig moderne tanker for en hersker på 1500-tallet?",
+                "Hvorfor kunne ikke riket vokse lenger vest enn Wien? Nevn minst én grunn teksten peker på."
+            ],
+            "gaaVidere": [
+                "Süleyman ble husket både for erobringer og for lover. Skriv en kort tekst (5-8 setninger) om hva du mener det er viktigst at en leder blir husket for, og hvorfor.",
+                "Sinan bygde moskeer som fortsatt står i dag. Finn et byggverk i Norge eller verden som har stått i flere hundre år, og forklar hvorfor folk fortsatt tar vare på det.",
+                "Diskuter med en partner: Kan en leder både føre krig ute og skape rettferd hjemme, eller kommer de to alltid i konflikt?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

@@ -77,6 +77,29 @@
                 "York (Jorvik) ble en vikingmetropol.",
                 "Engelsk språk er stappfullt av norrøne låneord."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var nytt med vikingene som kom til England i 865, sammenlignet med tidligere?",
+                    "Hvilket engelsk kongerike sto igjen etter at 'The Great Heathen Army' hadde knust de andre?",
+                    "Hva het slaget der Alfred vant over vikinghøvdingen Guthrum i 878, og hva måtte Guthrum gjøre etterpå?",
+                    "Hvilken by vokste til å bli en av Europas rikeste handelsbyer under vikingstyre, og hva het den på norrønt?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor engelskmennene begynte å bruke norrøne ord. Hva hadde det å gjøre med at språkene lignet hverandre?",
+                    "Ordene 'law', 'outlaw', 'knife' og 'egg' kom fra vikingene. Hva forteller disse ordene oss om hva vikingene drev med i Danelagen?",
+                    "Teksten sier at England 'nesten' ble helt norsk, men at det endte i 1066. Forklar hvorfor du tror vikingene til slutt mistet grepet om England.",
+                    "Sammenlign å plyndre og dra hjem med å erobre og bosette seg. Hvorfor tror du vikingene endret strategi?"
+                ],
+                "gaaVidere": [
+                    "Skriv fem setninger på norsk der du bruker så mange norrøne låneord fra engelsk som mulig (for eksempel egg, kniv, sister, take). Marker ordene og forklar hva de betyr.",
+                    "Knut den Mektige styrte et 'Nordsjø-imperium' med England, Danmark og Norge. Diskuter med en medelev: Hvordan tror du det var å styre et rike spredt over hav på 1000-tallet, uten telefon eller raske skip?",
+                    "Finn ut mer om Alfred den Store. Hvorfor tror du han fikk tilnavnet 'den Store', mens de fleste andre konger ikke fikk det?"
+                ]
+            }
         }
     ],
     "concepts": [

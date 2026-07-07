@@ -103,6 +103,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva står DMZ for, og hvor lang og bred er sonen ifølge teksten?",
+                    "Hvorfor er Nord- og Sør-Korea teknisk sett fortsatt i krig 70 år etter at skytingen stoppet?",
+                    "Hva skjedde med koreanske familier da våpenhvilen ble inngått i 1953?",
+                    "Hvorfor har DMZ blitt et naturreservat med over 5 000 plante- og dyrearter?"
+                ],
+                "reflekter": [
+                    "Teksten kaller DMZ et paradoks. Forklar med egne ord hva som er så motsigelsesfullt ved sonen.",
+                    "Hvorfor tror du så få splittede familier faktisk har fått møtt hverandre, når rundt 57 000 sørkoreanere har søkt om det?",
+                    "Sammenlign DMZ med Berlinmuren slik teksten gjør. Hvorfor falt muren raskt, mens grensen i Korea fortsatt står?",
+                    "De diplomatiske møtene i 2018 skapte håp, men ga minimale resultater. Hvorfor er det så vanskelig å løse konflikten mellom nord og sør?"
+                ],
+                "gaaVidere": [
+                    "Nord-Korea er ett av verdens mest lukkede land. Finn ut hvordan vanlige nordkoreanere lever i dag, og skriv fem setninger om hva du finner.",
+                    "Skriv en kort tekst der du forestiller deg at du er en 14-åring som ikke har sett besteforeldrene dine på andre siden av grensen på 40 år. Hvordan ville det føles?",
+                    "Diskuter med en partner: Bør resten av verden blande seg inn i konflikten på Koreahalvøya, eller bør Korea løse den selv?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

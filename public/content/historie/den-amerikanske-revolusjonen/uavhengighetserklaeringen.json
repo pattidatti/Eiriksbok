@@ -150,6 +150,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem skrev selve teksten til Uavhengighetserklæringen, og hvor gammel var han da han gjorde det?",
+                    "Hvorfor er det 4. juli folk husker og feirer, og ikke 2. juli, når det egentlig skjedde noe viktig begge dagene?",
+                    "Hvor mente erklæringen at makten til å styre kommer fra, og hvem sa den at makten IKKE kommer fra?",
+                    "Hva menes med «sprekken» i de vakre ordene om at alle mennesker er skapt like?"
+                ],
+                "reflekter": [
+                    "Erklæringen sier at hvis en regjering tråkker på folkets rettigheter, har folket rett til å kaste den. Forklar hvorfor teksten kaller dette den «farligste» tanken, og hva den gjorde med opprør fra å være en synd til å bli en rettighet.",
+                    "Thomas Jefferson skrev at alle er skapt like samtidig som han selv eide over 600 slaver. Hva synes du om at et menneske kan skrive noe så vakkert og handle så motsatt? Kan ordene likevel ha en verdi?",
+                    "Teksten sier at ordene «var større enn mannen som skrev dem». Forklar hvordan slaver, kvinner og senere Martin Luther King kunne bruke Jeffersons egne ord mot USA.",
+                    "Sammenlign den gamle tanken om at kongen fikk makten fra Gud med erklæringens tanke om at makten kommer fra folket. Hvorfor snudde dette «alt på hodet»?"
+                ],
+                "gaaVidere": [
+                    "Da statuen av kong George III ble revet ned, ble metallet smeltet om til kuler for revolusjonshæren. Skriv noen setninger om hva dette symbolet betyr: at den gamle maktens statue bokstavelig talt ble gjort om til våpen for den nye.",
+                    "Erklæringen sier at hvert menneske har rettigheter ingen kan ta fra det. Finn ett eksempel på en slik rettighet du selv har i dag, og forklar hvorfor du mener den er viktig.",
+                    "Diskuter med en medelev: Ordene fra 1776 lever fortsatt i grunnlover og menneskerettigheter over hele verden, også i vår egen. Hvorfor tror dere en tekst som er nesten 250 år gammel fortsatt betyr så mye?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -133,6 +133,29 @@
       "content": "Lederen som styrer Kina i dag - Xi Jinping - bygger videre på den modellen Deng skapte. Sterk økonomisk vekst. Sterk stat. Lite politisk toleranse. Xi har til og med strammer til der Deng lot det slappe litt. Det er Dengs modell, men i en hardere utgave. Katten fanger fortsatt mus - men den har skarpe klør."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva mente Deng Xiaoping med uttrykket om at det ikke spiller noen rolle om katten er svart eller hvit, bare den fanger mus?",
+                "Hva var de fire moderniseringene Deng ville at Kina skulle nå innen år 2000?",
+                "Hva skjedde med Shenzhen fra det ble en spesiell økonomisk sone i 1979 og frem til år 2000?",
+                "Hvordan svarte Deng da studentene samlet seg på Den himmelske freds plass i 1989 og krevde demokrati?"
+            ],
+            "reflekter": [
+                "Deng lot markedsøkonomi virke i Shenzhen mens resten av Kina forble kommunistisk. Forklar hvorfor det var lurt å prøve reformene i en liten sone først i stedet for i hele landet på en gang.",
+                "Deng kalte politikken sin \"sosialisme med kinesiske kjennetegn\" og nektet å bruke ordet kapitalisme. Var dette en genistrek eller en selvmotsigelse? Bruk eksempler fra teksten til å begrunne svaret ditt.",
+                "800 millioner kinesere kom ut av fattigdom, men ulikheten og korrupsjonen vokste samtidig. Vurder om reformene var verdt det, og forklar hvem som vant mest og hvem som ble hengende etter.",
+                "Deng skilte skarpt mellom økonomisk og politisk frihet. Forklar hva forskjellen er, og hvorfor Deng mente Kina trengte det ene, men ikke det andre."
+            ],
+            "gaaVidere": [
+                "Teksten sier at Xi Jinping bygger videre på Dengs modell, men i en hardere utgave. Finn ett eksempel fra nyhetene i dag som viser at Kina fortsatt har sterk økonomi men lite politisk frihet, og skriv noen setninger om det.",
+                "Skriv en kort tekst på rundt ti setninger der du forestiller deg at du er en bonde i Kina i 1978 som nettopp har fått lov til å selge maten du dyrker utover kvoten. Hvordan endrer livet ditt seg?",
+                "Diskuter med en medelev: Er det mulig for et land å ha fri markedsøkonomi og streng politisk kontroll samtidig over lang tid, slik Deng ville? Prøv å finne argumenter både for og mot."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

@@ -70,6 +70,29 @@
                 "author": "Toussaint Louverture",
                 "text": "In overthrowing me, you have cut down in San Domingo only the trunk of the tree of liberty. It will spring up again by the roots for they are numerous and deep."
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva het den franske kolonien før den ble Haiti, og hva var den kjent for på slutten av 1700-tallet?",
+                    "Hvem var Toussaint Louverture, og hva krevde han til å begynne med av Frankrike?",
+                    "Hvilke to fiender møtte Napoleons 30 000 soldater da de kom for å knuse opprøret?",
+                    "Hva krevde Frankrike av Haiti i 1825 for å anerkjenne landet som selvstendig?"
+                ],
+                "reflekter": [
+                    "Slavene på Saint-Domingue spurte om slagordet «Frihet, likhet og brorskap» også gjaldt dem. Forklar hvorfor den franske revolusjonen ble en gnist for opprøret deres.",
+                    "USA og europeiske land nektet å anerkjenne Haiti av frykt for at opprøret skulle spre seg. Hva forteller denne frykten oss om hvordan slaveriet holdt seg oppe i andre land?",
+                    "Teksten kaller Haiti-revolusjonen «den glemte revolusjonen». Hvorfor tror du dette opprøret er mindre kjent enn den franske og den amerikanske revolusjonen?",
+                    "Forklar hvordan erstatningskravet fra 1825 kan være en direkte årsak til at Haiti er fattig i dag, selv om opprøret lyktes."
+                ],
+                "gaaVidere": [
+                    "Toussaint sa at selv om de felte ham, ville frihetens tre vokse opp igjen fra røttene. Skriv noen setninger om hva du tror han mente med dette bildet.",
+                    "Diskuter i klassen: Bør Frankrike i dag betale tilbake pengene Haiti måtte gi for sin egen frihet? Finn argumenter for og mot.",
+                    "Finn ut hvordan Haiti har det i dag. Kan du se spor av historien fra denne artikkelen i landets situasjon nå?"
+                ]
+            }
         }
     ],
     "quiz": [

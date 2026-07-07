@@ -158,6 +158,29 @@
         {
             "type": "text",
             "content": "Mens Brasil erklærte seg uavhengig allerede i 1822, tviholdt Portugal på sine afrikanske kolonier (Angola, Mosambik) helt frem til 1970-tallet – lenge etter at andre kolonimakter hadde trukket seg ut. Men gullalderen – tiden da en liten nasjon styrte verdenshavene – var over for lengst."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var en karavell, og hvorfor var dette skipet så viktig for portugiserne?",
+                    "Hvem var prins Henrik Sjøfareren, og hva bygget han opp i Sagres?",
+                    "Hva var en Feitoria, og hvordan brukte portugiserne slike stasjoner til å kontrollere handelen?",
+                    "Hvor mange afrikanere anslår teksten at portugisiske skip fraktet til Amerika, og hvor stor andel av dem havnet i Brasil?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord forskjellen på det spanske landimperiet og det portugisiske sjøimperiet.",
+                    "Hvordan fungerte cartaz-passet, og hvorfor kaller teksten det statsfinansiert piratvirksomhet?",
+                    "Hvorfor ble Brasil et unntak fra den portugisiske modellen, der de ellers holdt seg til kysten?",
+                    "Ordtaket sier: Uten sukker, ingen Brasil. Uten slaver, ingen sukker. Uten Angola, ingen slaver. Forklar hvordan disse tre leddene hang sammen."
+                ],
+                "gaaVidere": [
+                    "Portugal tjente enorme summer på å kutte ut mellomledd i krydderhandelen. Finn et eksempel i dag der en bedrift tjener på å selge noe direkte til kunden i stedet for via butikker.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan slavehandelen både skapte rikdom i Lisboa og en arv av lidelse i Brasil.",
+                    "Diskuter med en partner: Hvorfor tror dere Portugals gullalder tok slutt da Nederland, England og Frankrike ville ha sin del av handelen?"
+                ]
+            }
         }
     ],
     "quiz": [

@@ -136,6 +136,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange år vervet en legionær seg for, og hva het den hellige eden han sverget til keiseren?",
+                    "Hva var forskjellen på våpnene Pilum og Gladius, og hva var hvert av dem laget for?",
+                    "Forklar hva straffen Decimering gikk ut på når en hel avdeling feiget ut i kamp.",
+                    "Nevn minst tre ting legionærene bygde eller gjorde i tillegg til å slåss."
+                ],
+                "reflekter": [
+                    "Romerne sa at soldatene fryktet offiserene sine mer enn fienden. Hvordan tror du en så brutal disiplin gjorde hæren sterkere i kamp?",
+                    "Forklar hvorfor det bøyde jernet i spissen på et Pilum var et smart våpen mot fiendens skjold.",
+                    "Hvorfor tror du en romersk legionær vant mot en germansk kriger som var like sterk, når vi ser på hvordan de to kjempet ulikt?",
+                    "En såret soldat hadde større sjanse for å overleve enn en rik borger i Roma. Hva sier dette om hvor viktig hæren var for staten?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign den romerske legionen med et moderne forsvar eller en profesjonell hær i dag. Hva er likt, og hva er forskjellig?",
+                    "Skriv en kort tekst (5-8 setninger) om en dag i livet til en fersk legionær som trener med treplater og marsjerer med tung oppakning.",
+                    "Diskuter med en partner: Var det rettferdig at hver tiende soldat kunne bli henrettet for feil hele avdelingen gjorde? Begrunn svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

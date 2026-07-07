@@ -115,6 +115,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor kalles Huang He både «Den gule elven» og «Kinas sorg»? Forklar begge navnene ut fra teksten.",
+                    "Hva er orakelbein, og hvordan brukte Shang-prestene dem til å snakke med gudene?",
+                    "Hva går ideen om «Himmelens mandat» ut på, og når har folket lov til å gjøre opprør ifølge denne tanken?",
+                    "Nevn tre kinesiske oppfinnelser fra teksten, og forklar kort hva silke ble laget av."
+                ],
+                "reflekter": [
+                    "Teksten sier at Kina utviklet seg helt for seg selv, men likevel fant kineserne opp mange av de samme tingene som Mesopotamia og Egypt. Hva forteller det oss om hvordan sivilisasjoner oppstår?",
+                    "Løss-jorda gjorde elven både livgivende og livsfarlig. Forklar hvordan den samme jorda kunne gi mat og samtidig føre til dødelige flommer.",
+                    "Qin Shi Huangdi blir kalt både en av de mest brutale og en av de mest betydningsfulle herskerne. Vurder om det er mulig å være begge deler samtidig, og bruk eksempler fra teksten.",
+                    "Hvorfor var «Himmelens mandat» en smart forklaring for Zhou-kongene som nettopp hadde tatt makten fra Shang?"
+                ],
+                "gaaVidere": [
+                    "Kina ledet verdens oppfinnelser i flere hundre år før Europa. Finn ett eksempel på en oppfinnelse fra vår egen tid som har forandret verden på samme måte, og skriv noen setninger om hvorfor.",
+                    "Skriv en kort tekst der du er Mei fra begynnelsen av artikkelen. Beskriv en dag ved Den gule elven og hva du frykter mest.",
+                    "Diskuter i klassen: Ifølge «Himmelens mandat» mister en dårlig hersker retten til å styre. Finnes det lignende tanker om at ledere kan miste makten sin i dagens samfunn?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

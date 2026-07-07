@@ -57,6 +57,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det å bli 'primsignet', og hvorfor lot mange vikinger seg primsigne?",
+                    "Hvilke tre konger nevner teksten som viktige i kristningen av Norge, og hva hadde de til felles?",
+                    "Hva innførte Olav Haraldsson på Mostertinget i 1024, og nevn minst to ting Kristenretten forbød eller påla.",
+                    "Hvorfor regnes vikingtiden som over i år 1066, og hva skjedde med Harald Hardråde det året?"
+                ],
+                "reflekter": [
+                    "Teksten sier at kristningen ikke skjedde med ett sverdslag, men var en prosess over flere hundre år. Forklar med egne ord hvorfor det tok så lang tid.",
+                    "Hvorfor likte kongene kristendommen så godt? Forklar forskjellen på å være 'første blant likemenn' og å være Guds utvalgte.",
+                    "Olav den Hellige tapte slaget på Stiklestad, men teksten kaller det likevel en seier. Forklar hvordan et militært tap kunne bli en religiøs og politisk seier.",
+                    "Kristningen ga både trelene og kvinnene et nytt liv, men ikke på samme måte. Sammenlign hva som ble bedre for trelene og hva som ble verre for kvinnene."
+                ],
+                "gaaVidere": [
+                    "Olav Tryggvason ga folk valget: 'La deg døpe, eller slåss mot meg.' Diskuter med en partner om det er mulig å tvinge fram en ekte tro med makt.",
+                    "Skriv en kort tekst (5-8 setninger) fra en bondes side som nettopp har fått høre at det er forbudt å blote og å sette ut barn. Hvordan føles den nye Kristenretten for ham?",
+                    "Teksten sier at prestene brakte med seg bøker og skriftkultur. Finn ett eksempel på hvordan skrift og bøker fortsatt forandrer samfunnet i dag."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

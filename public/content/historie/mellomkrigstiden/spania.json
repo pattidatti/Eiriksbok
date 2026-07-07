@@ -160,6 +160,29 @@
         {
             "type": "paragraph",
             "text": "For de som kjempet der – Hemingway, Orwell, de navnløse tusenene i de internasjonale brigadene – var Spania frihetens siste skanse før mørket. De tapte. Og verden lærte for sent at fascismen ikke kunne stoppes med ikke-intervensjon."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem ledet militærkuppet i juli 1936, og hvem satt de i regjeringen?",
+                    "Hvilke land sendte hjelp til Franco, og hvilke land hjalp republikanerne?",
+                    "Hva skjedde i Guernica 26. april 1937, og hvem stod bak bombingen?",
+                    "Hvor lenge styrte Franco Spania etter at han vant krigen i 1939?"
+                ],
+                "reflekter": [
+                    "Republikanersiden blir beskrevet som et kaotisk lappeteppe av grupper som ofte bekjempet hverandre. Forklar hvordan denne splittelsen kan ha svekket dem i kampen mot Franco.",
+                    "Teksten kaller borgerkrigen en generalprøve på andre verdenskrig. Bruk eksempler fra artikkelen til å forklare hva som menes med det.",
+                    "Storbritannia og Frankrike valgte ikke-intervensjon fordi de var redde for å provosere Hitler. Vurder om denne beslutningen var klok eller feig, og begrunn svaret ditt.",
+                    "Sovjetunionens hjelp til republikanerne hadde en pris. Forklar hva prisen var, og hvorfor den kan ha skadet republikanersiden innenfra."
+                ],
+                "gaaVidere": [
+                    "Picasso malte «Guernica» som et bilde på krigens gru. Finn et bilde eller kunstverk fra vår egen tid som protesterer mot krig eller urett, og forklar hvordan det virker på deg.",
+                    "Skriv et kort dagbokinnlegg (5-8 setninger) som en av de 35 000 frivillige i de internasjonale brigadene. Hvorfor reiste du til Spania for å kjempe?",
+                    "Diskuter i klassen: Har land i dag et ansvar for å blande seg inn når demokrati blir angrepet i et annet land, eller bør de holde seg utenfor?"
+                ]
+            }
         }
     ],
     "quiz": [

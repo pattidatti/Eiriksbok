@@ -135,6 +135,29 @@
                 "title": "Visste du?",
                 "content": "Måneden August er oppkalt etter keiser Augustus. Før dette het måneden Sextilis, men senatet endret navnet for å ære keiseren som brakte fred til riket. Juli er for øvrig oppkalt etter Julius Cæsar!"
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr uttrykket 'Alea iacta est', og hvorfor sa Cæsar det da han sto ved elven Rubicon?",
+                    "Hvem kjempet Octavian mot i sjøslaget ved Actium i år 31 fvt., og hvordan endte slaget for de to taperne?",
+                    "Hvorfor kalte Octavian seg 'Princeps' (den første borger) i stedet for konge?",
+                    "Hva menes med Pax Romana, og omtrent hvor lenge varte denne perioden?"
+                ],
+                "reflekter": [
+                    "Morderne av Cæsar trodde de hadde reddet republikken. Forklar hvorfor det motsatte skjedde i stedet.",
+                    "Augustus sa: 'Jeg fant Roma i murstein og etterlot henne i marmor.' Hvorfor var det store byggeprogrammet mer enn bare forfengelighet, ifølge teksten?",
+                    "Teksten sier at 'prisen for freden var friheten'. Hva mister romerne når de går fra republikk til keiserdømme?",
+                    "Augustus var en mester i propaganda og malte Marcus Antonius som en forræder. Hvorfor kan det å styre hva folk tror være like viktig som å vinne et slag?"
+                ],
+                "gaaVidere": [
+                    "Månedene juli og august er oppkalt etter Julius Cæsar og Augustus. Finn ett eksempel til på at en mektig person i dag har fått noe oppkalt etter seg, og diskuter hvorfor makthavere ønsker det.",
+                    "Skriv en kort tekst (5-8 setninger) der du tar stilling til Augustus' siste ord: 'Har jeg spilt rollen min godt i livets komedie?' Var det verdt å ofre friheten for fred og stabilitet?",
+                    "Diskuter med en partner: Er det farlig når én person samler all makt, selv om han bruker den til å skape fred? Bruk Augustus som eksempel."
+                ]
+            }
         }
     ],
     "quiz": [

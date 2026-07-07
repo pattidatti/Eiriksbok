@@ -125,6 +125,29 @@
         {
             "type": "text",
             "content": "Vi bør også være kritiske til kildene. I mange år nektet USA for at de sto bak kuppet. Først i 2013, seksti år etter, innrømmet CIA offentlig sin rolle. Det minner oss om at sannheten om hemmelige operasjoner kan ta lang tid å komme frem - og at vi alltid bør spørre hvem som tjener på den versjonen vi får høre. Du kan lese om en lignende hemmelig operasjon i [Iran-Contra-skandalen](/historie/den-kalde-krigen/iran-contra)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det at Mossadeq nasjonaliserte oljen, og hvorfor gjorde han det?",
+                    "Hvorfor sa USA ja til å hjelpe Storbritannia med å velte Mossadeq? Nevn både unnskyldningen og den egentlige grunnen teksten peker på.",
+                    "Hva gjorde CIA-agenten Kermit Roosevelt for å få kuppet til å se ut som folkets vilje?",
+                    "Hva skjedde med Mossadeq og med sjahen etter at Operasjon Ajax lyktes i august 1953?"
+                ],
+                "reflekter": [
+                    "FactBoxen forteller at hele kuppet kostet under en million dollar. Hvorfor er det så skummelt at makt kan være så billig å bytte ut?",
+                    "Teksten kaller kuppet en bumerang. Forklar med egne ord hvordan seieren i 1953 førte til revolusjonen i 1979 og fiendskapet som varer i dag.",
+                    "Britene kalte Mossadeq en tyv, mens iranerne kalte ham en helt. Hvordan kan de samme handlingene se så ulike ut avhengig av hvem som forteller?",
+                    "Artikkelen sier at Ajax følger samme mønster som de økonomiske leiemorderne: et fattig land med en verdifull ressurs og en stormakt som fjerner lederen i det skjulte. Hvorfor tror du dette mønsteret gjentar seg?"
+                ],
+                "gaaVidere": [
+                    "CIA innrømmet først i 2013, seksti år etterpå, at de sto bak kuppet. Skriv et kort avsnitt om hvorfor det er viktig å være kritisk til kilder når sannheten kan ta så lang tid å komme frem.",
+                    "Begrepet blowback betyr at en hemmelig handling slår tilbake mange år senere. Diskuter med en medelev om dere kjenner andre eksempler fra nyheter i dag der noe et land gjorde tidligere slår tilbake på det.",
+                    "Tenk deg at du var en ung iraner i 1953. Skriv noen setninger om hva du ville følt da du oppdaget at din egen folkevalgte leder ble fjernet av utlendinger."
+                ]
+            }
         }
     ],
     "quiz": [

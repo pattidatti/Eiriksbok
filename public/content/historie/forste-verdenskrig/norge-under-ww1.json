@@ -72,6 +72,29 @@
             "src": "/images/historie/forste-verdenskrig/norge_ww1_dyrtid.webp",
             "alt": "Rasjoneringkø i Kristiania",
             "caption": "Dyrtiden rammet hardt. Vanlige folk måtte stå i lange køer for rasjonerte varer."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva erklærte Norge seg da krigen brøt ut i 1914, og hva sa statsminister Gunnar Knudsen om det?",
+                    "Hvilket ultimatum stilte britene til Norge for at de norske dampskipene skulle få kull?",
+                    "Omtrent hvor mange norske sjøfolk mistet livet, og hvor stor del av flåten ble senket?",
+                    "Hva var 'Jobbetiden', og hvordan kunne verdien på et skip endre seg på få uker?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor Norge ble kalt 'Den nøytrale allierte' selv om landet offisielt var nøytralt.",
+                    "Teksten sier at rederne hevet forsikringspengene mens enkene satt igjen langs kysten. Hva forteller dette om hvem som tjente og hvem som tapte på krigen?",
+                    "Hvorfor tror du den tyske 'uinnskrenkede ubåtkrigen' fra 1917 var så farlig nettopp for norske skip som seilte mot Storbritannia?",
+                    "Sammenlign livet til en nyrik 'jobber' i byen med livet til en vanlig arbeider under dyrtiden. Hvorfor skapte denne forskjellen bitterhet?"
+                ],
+                "gaaVidere": [
+                    "Skriv et kort dagbokinnlegg (5-8 setninger) fra en norsk sjømann som nettopp har overlevd en torpedering og sitter i en livbåt.",
+                    "Diskuter i klassen: Er det greit å tjene store penger på en krig andre dør i? Bruk 'blodpenger' fra Jobbetiden som eksempel.",
+                    "Teksten sier at radikaliseringen av arbeiderbevegelsen preget mellomkrigstiden. Finn ett eksempel i dag på at store forskjeller mellom rike og fattige skaper politisk uro."
+                ]
+            }
         }
     ],
     "quiz": [

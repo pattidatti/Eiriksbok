@@ -91,6 +91,29 @@
       "caption": "Arven etter riket lever videre i språk, mat, arkitektur og grensene på dagens Midtøsten-kart."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "I hvilket tidsrom fantes Det osmanske riket, og på hvor mange kontinenter lå det på det meste?",
+                "Hvilket smalt sund lå hovedstaden Istanbul ved, og hvorfor var akkurat denne plasseringen så viktig for handelen?",
+                "Nevn minst fire ulike folkegrupper som bodde i riket. Var de fleste innbyggerne tyrkere og muslimer?",
+                "Hvilke tre navn hadde hovedstaden gjennom historien, og hvilket land ligger byen i i dag?"
+            ],
+            "reflekter": [
+                "Forklar hva teksten mener med at rikets plassering var både en velsignelse og en forbannelse.",
+                "Hvordan kunne sultanene holde et rike med så mange ulike folk og religioner samlet i hundrevis av år? Kom med dine egne forslag.",
+                "Teksten sier at handelen måtte gjennom osmansk land, og at dette fikk europeerne til å lete etter en sjøvei utenom. Hvorfor kan kontroll over en handelsrute både gi makt og skape problemer for et rike?",
+                "Sammenlign hva det betyr å være en bro mellom øst og vest og en barriere mellom dem. Hva må endre seg for at det samme riket går fra det ene til det andre?"
+            ],
+            "gaaVidere": [
+                "Teksten sier at riket falt sammen i 1918 og fødte dagens Tyrkia og Midtøsten, og at vi fortsatt krangler om kartet. Finn ett eksempel fra nyhetene i dag der grenser i Midtøsten skaper konflikt, og skriv noen setninger om det.",
+                "Skriv en kort tekst på fem til seks setninger der du forestiller deg at du står på en høyde i Istanbul og ser handelsskip fra både Europa og Asia. Beskriv hva du ser og hører.",
+                "Diskuter i par: Er det en styrke eller en svakhet for et land at mange ulike folk og religioner lever side om side? Bruk eksempler fra riket og fra Norge i dag."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

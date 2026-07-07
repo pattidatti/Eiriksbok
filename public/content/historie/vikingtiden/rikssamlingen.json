@@ -52,6 +52,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem var Harald Hårfagre, og hvem arvet han et rike etter da han startet rikssamlingen?",
+                    "Hvor og omtrent når fant det avgjørende slaget i rikssamlingen sted?",
+                    "Hvilke allierte knyttet Harald til seg for å vinne kontroll over kysten, og hvor kom de fra?",
+                    "Hva betyr navnet Norge, og hvorfor var akkurat kysten så viktig å kontrollere?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor den som kontrollerte kysten (Nordvegen), også kontrollerte handelen og makten.",
+                    "Harald bygde kongsgårder langs kysten for å kreve inn skatter og sikre lojalitet. Hvorfor var dette lurt for å holde riket samlet?",
+                    "Teksten sier at makten hans var knyttet til hans egen person. Hvorfor brøt det ut maktkamp mellom sønnene etter at Harald døde?",
+                    "Historien om Gyda og løftet om håret står i sagaen. Hvorfor bør vi være litt forsiktige med å tro at alt i sagaene skjedde akkurat slik?"
+                ],
+                "gaaVidere": [
+                    "Senere konger mente at bare de som stammet fra Harald hadde rett til kongetittelen. Finn et eksempel i dag på at folk bruker slektskap eller historie for å hevde at de har en rettighet.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor et rike som er samlet av én sterk person, lett kan falle fra hverandre igjen.",
+                    "Diskuter med en partner: Var Harald Hårfagre først og fremst en samlende helt eller en hensynsløs erobrer? Bruk konkrete ting fra teksten i svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

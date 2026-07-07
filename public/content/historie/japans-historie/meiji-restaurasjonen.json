@@ -116,6 +116,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde i 1853, og hvem var Matthew Perry som kom til bukta utenfor Tokyo?",
+                    "Hva var forskjellen på shogunen og keiseren før 1868, og hva endret seg under Meiji-restaurasjonen?",
+                    "Hva var Iwakura-oppdraget, og hva gjorde de japanske lederne på reisen rundt i Europa og USA?",
+                    "Nevn tre konkrete ting som forandret seg i Japan etter 1868, for eksempel innen transport, skole eller klær."
+                ],
+                "reflekter": [
+                    "Teksten sier at Japan ble modernisert 'frivillig', ikke med tvang utenfra. Forklar hvorfor det gjorde en forskjell at japanerne valgte forandringen selv.",
+                    "Hvorfor var det smart av Japan å plukke det beste forbildet fra flere ulike land i stedet for å kopiere alt fra ett enkelt land?",
+                    "Meiji-restaurasjonen betydde slutten for samuraiene. Forklar hva de mistet, og hvorfor opprøret i 1877 under Saigo Takamori ikke hadde noen sjanse.",
+                    "Overskriften 'Prisen og prisene' peker på at forandringen kostet noe. Hvem måtte betale, og på hvilke måter?"
+                ],
+                "gaaVidere": [
+                    "Japan så nøkternt på sin egen svakhet og lærte av de beste. Skriv noen setninger om en situasjon i ditt eget liv der du kunne lære av noen som var flinkere enn deg selv.",
+                    "Diskuter med en medelev: Nesten hele Asia ble kolonisert, men Japan gikk motsatt vei og ble selv en stormakt som erobret andre land. Var Meiji-restaurasjonen bare en solskinnshistorie, eller har den en mørkere side?",
+                    "Finn ut hvordan Japan er som land i dag når det gjelder teknologi og industri, og skriv kort om hvordan sporene fra Meiji-tiden fortsatt kan merkes."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

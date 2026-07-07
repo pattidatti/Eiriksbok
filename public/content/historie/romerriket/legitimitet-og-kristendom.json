@@ -145,6 +145,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet legitimitet, og hva er forskjellen på en hersker med legitimitet og en som bare styrer med makt?",
+                    "Hva kalte Augustus seg selv, og hvorfor ville han fremstå som en vanlig borger fremfor en enehersker?",
+                    "Hva bestemte biskopene på kirkemøtet i Nikea i år 325, og hva skjedde med presten Arius?",
+                    "Hva gjorde Theodosius I i år 380, og hva måtte han selv gjøre etter massakren i Thessaloniki?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor kristendommen passet så godt for en keiser som ville ha all makt. Hvordan hang det å adlyde keiseren sammen med det å adlyde Gud?",
+                    "Sammenlign Prinsipatet og Dominatet. Hva var de viktigste forskjellene på hvordan keiseren fikk sin legitimitet og hvordan han opptrådte?",
+                    "Konstantin var knapt døpt, men ledet likevel kirkemøtet i Nikea. Hva forteller det oss om forholdet mellom religion og politikk i denne tiden?",
+                    "Da biskop Ambrosius nektet Theodosius adgang til kirken, sto en prest sterkere enn keiseren. Hvorfor var dette øyeblikket et vendepunkt for maktbalansen mellom kirke og stat?"
+                ],
+                "gaaVidere": [
+                    "Ledere i dag trenger også legitimitet for å styre. Tenk på en statsleder du kjenner til: hvor kommer legitimiteten fra nå, og hvordan er det annerledes enn i Romerriket?",
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er soldat i Konstantins hær før slaget ved den milviske bro. Beskriv hva du tenker når du får ordre om å male Chi-Rho-symbolet på skjoldet.",
+                    "Diskuter med en partner: Er det farlig når religion og politisk makt blandes sammen slik de ble i Romerriket? Finn argumenter for og mot."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -149,6 +149,29 @@
                 "title": "Visste du at?",
                 "content": "Navnet Karl kommer fra det gammelhøytyske ordet 'Karal', som betyr 'fri mann'. Det har gitt opphav til navnet på utallige konger over hele Europa og er fortsatt et av de vanligste navnene i dag."
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde i år 476, og hvorfor regnes det som slutten på en æra?",
+                    "Hva var Bysants, og hvor lenge overlevde Romerriket i øst etter at Roma falt i vest?",
+                    "Hva gjorde Klodvig i 496, og hvorfor var dåpen hans også et politisk trekk?",
+                    "Hva skjedde i år 800, og hvorfor var det viktig for Karl den Store?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor den katolske kirken og klostrene ble så viktige etter at den romerske staten forsvant i vest.",
+                    "Sammenlign den romerske og den germanske samfunnsmodellen. Hva var den største forskjellen på hvordan makt og lojalitet fungerte?",
+                    "Historikeren Henri Pirenne mente middelalderen egentlig begynte da araberne tok kontroll over Middelhavet. Forklar hvordan dette kunne flytte tyngdepunktet i Europa nordover.",
+                    "Gregor av Tours er vår viktigste kilde til frankernes historie, men han skrev farget av sin egen tid og tro. Hvorfor må historikere være forsiktige med slike kilder?"
+                ],
+                "gaaVidere": [
+                    "Munkene i klostrene kopierte bøker for hånd for å ta vare på kunnskap. Hvordan tar vi vare på kunnskap i dag, og hva kan gå tapt hvis systemene våre svikter?",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor mange kaller denne perioden en mørk tid, og om du synes det navnet er rettferdig.",
+                    "Diskuter med en partner: Karl den Store blir kalt en av grunnleggerne av det moderne Europa. Hvorfor kan én enkelt hersker få så stor betydning for ettertiden?"
+                ]
+            }
         }
     ],
     "quiz": [

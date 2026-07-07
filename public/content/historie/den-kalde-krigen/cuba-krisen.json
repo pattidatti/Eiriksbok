@@ -154,6 +154,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva slags fly oppdaget de sovjetiske rakettene på Cuba, og omtrent hvor langt fra USA lå øya?",
+                    "Nevn de to hovedgrunnene til at Sovjetunionen plasserte atomraketter på Cuba.",
+                    "Hvilken løsning valgte Kennedy i stedet for et luftangrep, og hvorfor brukte han ordet karantene i stedet for blokade?",
+                    "Hva gikk den offentlige avtalen 28. oktober ut på, og hvilken del av avtalen ble holdt hemmelig i mange år?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor lørdag 27. oktober (Sort lørdag) regnes som den farligste dagen under hele krisen.",
+                    "Både Kennedy og Khrusjtsjov hadde press fra hardlinere hjemme. Hvordan kan slikt indre press gjøre det vanskeligere å velge en fredelig løsning?",
+                    "Teksten sier at feilberegning fra én enkelt person kunne ha utløst en tredje verdenskrig. Bruk eksempelet med offiseren Vasilij Arkhipov og ubåten til å vise hva som menes.",
+                    "Hvorfor kan man si at begge lederne kom ut av krisen med noe de kunne kalle en seier, selv om ingen fikk alt de ville?"
+                ],
+                "gaaVidere": [
+                    "Etter krisen ble den røde linjen opprettet så Moskva og Washington kunne snakke sammen raskt. Finn et eksempel i dag der land bruker direkte kontakt for å unngå at en konflikt kommer ut av kontroll.",
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en av Kennedys rådgivere 22. oktober. Ville du anbefalt karantene eller angrep, og hvorfor?",
+                    "Diskuter med en partner: Var det klokt eller feigt av Kennedy å holde avtalen om rakettene i Tyrkia hemmelig? Argumenter for begge sider."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

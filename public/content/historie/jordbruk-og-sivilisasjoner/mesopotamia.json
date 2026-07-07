@@ -182,6 +182,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet Mesopotamia, og hvilke to elver renner gjennom området?",
+                    "Hvorfor fant sumererne opp kileskriften? Forklar hva de først brukte den til.",
+                    "Hva var en ziggurat, og hvilke tre funksjoner hadde den i byen?",
+                    "Hvor mange lover samlet Hammurabi på steinsøylen sin, og rundt hvilket år skjedde det?"
+                ],
+                "reflekter": [
+                    "Teksten sier at flommene i Eufrat og Tigris førte til at de første byene oppstod. Forklar hvordan behovet for kanaler og demninger tvang folk til å samarbeide.",
+                    "Hvorfor kaller teksten arbeidsdelingen - at folk gjør ulike jobber - kanskje den viktigste oppfinnelsen i historien? Bruk hierarkiet i den sumeriske byen når du svarer.",
+                    "Hammurabis lov ga ulik straff til rike og fattige. Forklar hvorfor loven likevel var et viktig steg framover.",
+                    "Bare under fem prosent av folket kunne lese. Hvorfor ga det skriverne så mye makt i det sumeriske samfunnet?"
+                ],
+                "gaaVidere": [
+                    "Timen din har 60 minutter og sirkelen 360 grader på grunn av sumerernes tallsystem. Finn to andre ting fra teksten som vi fortsatt bruker i dag, og skriv noen setninger om hvorfor de fortsatt er nyttige.",
+                    "Skriv en kort tekst (5-8 setninger) fra synsvinkelen til gutten med leirtavla i Uruk. Hva ser han, og hvorfor er tavla så viktig for familien hans?",
+                    "Diskuter med en partner: Hammurabi ville at alle skulle kjenne reglene på forhånd, slik at kongen ikke kunne dømme tilfeldig. Hvorfor er det fortsatt viktig i dag at lovene står skrevet ned?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

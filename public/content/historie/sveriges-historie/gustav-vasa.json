@@ -133,6 +133,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var Stockholms blodbad i 1520, og hvem av Gustavs egen familie ble drept der?",
+                    "Hvorfor ville Gustav Vasa bryte med paven og støtte reformasjonen? Forklar med tanke på statskassen og gjelden til Lübeck.",
+                    "Hva vedtok riksdagen i Västerås i 1527, og hva betydde det for den katolske kirken i Sverige?",
+                    "Hva skjedde med Norge da Sverige forlot Kalmarunionen i 1523, og hvor lenge varte det?"
+                ],
+                "reflekter": [
+                    "Teksten kaller kirkens rikdom, det sentrale byråkratiet og Vasamyten for tre maktspaker som ble dratt samtidig. Forklar hvorfor Vasa trengte alle tre og ikke bare én av dem.",
+                    "Gustav gjorde Bibelen om til folkets bok på svensk i 1541. Hvorfor mener teksten at dette var en form for nasjonsbygging og ikke bare et religiøst tiltak?",
+                    "Bøndene i Dalarna ga Gustav makten, men gjorde senere opprør mot ham. Hva forandret seg mellom disse to tidspunktene, og hvorfor følte de seg sviktet?",
+                    "Teksten sier at Gustav Vasa ikke er en helt uten skygger. Vei det han skapte mot måten han skaffet seg makt på, og gi din egen vurdering av om han fortjener å hylles."
+                ],
+                "gaaVidere": [
+                    "Hver mars går nesten 16 000 skiløpere Vasaloppet fra Sälen til Mora. Skriv et kort avsnitt om hvorfor et land kan ønske å holde liv i en grunnleggermyte gjennom en årlig folkefest.",
+                    "Gustav Vasa kontrollerte penger, byråkrati og fortelling på samme tid. Finn et eksempel fra vår egen tid der en leder eller stat prøver å styre alle tre samtidig, og forklar likheten.",
+                    "Diskuter i klassen: Sitatet sier at den som vil regjere et folk, må regjere over deres handlemåte og tro. Er dette en klok statskunst eller et farlig maktprinsipp?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -128,6 +128,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalles de romanske språkene, og nevn minst tre av dem som utviklet seg fra latin.",
+                    "Hva var hemmeligheten bak romersk betong (Opus Caementicium), og hva gjorde denne blandingen så spesiell ifølge teksten?",
+                    "Hva het de to hovedgatene i en romersk byplan, og hvilken retning gikk hver av dem?",
+                    "Hvilket juridisk verk samlet keiser Justinian på 500-tallet, og hvorfor er det viktig i dag?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor buen lot romerne bygge mye større rom enn grekerne, som brukte søyler og bjelker.",
+                    "Teksten sier at norsk er et germansk språk, men likevel fullt av latinske ord som system, video og prosent. Forklar hvordan latin havnet i språket vårt selv om vi aldri var en del av Romerriket.",
+                    "Sammenlign gresk og romersk byggekunst ut fra tabellen i artikkelen. Hvilken forskjell mener du betyr mest for hvordan vi bygger i dag, og hvorfor?",
+                    "Artikkelen kaller uskyldspresumpsjonen en romersk arv, men nevner også at romerne ikke behandlet slaver likt for loven. Diskuter hvorfor et prinsipp kan være verdifullt selv om de som fant det opp ikke fulgte det selv."
+                ],
+                "gaaVidere": [
+                    "Gå en tur eller se på et kart over hjembyen din eller en by du kjenner. Finn ett eksempel på noe som minner om romersk arv (rette gater, en domstol, betongbygg, eller latinske ord på skilt) og beskriv det i noen setninger.",
+                    "Skriv en kort tekst på 5-6 setninger som svarer på artikkelens påstand: Falt Romerriket egentlig, eller forandret det seg bare til oss? Bruk minst to eksempler fra teksten.",
+                    "Diskuter i klassen: Hvilken av Romas arver (språk, lov, betong, veier eller kristendommen) tror dere ville vært vanskeligst å klare seg uten i dag? Begrunn valget."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

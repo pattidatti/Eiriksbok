@@ -121,6 +121,29 @@
         {
             "type": "text",
             "content": "Her er kildekritikk ekstra viktig. Mye av det vi vet i dag, kom først frem da hemmelige dokumenter ble offentliggjort, og da overlevende endelig torde å fortelle. Det minner oss om at de som vinner, ofte får bestemme hvilken historie som fortelles - og at noen av de viktigste hendelsene kan bli holdt skjult i lang tid. Det samme så vi i [Iran](/historie/den-kalde-krigen/operasjon-ajax) og [Chile](/historie/den-kalde-krigen/chile-1973)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem ledet Indonesia etter at landet løsrev seg fra Nederland i 1949, og hva het det store kommunistpartiet i landet?",
+                    "Hva var dominoeffekten som USA fryktet, og hvordan hang den sammen med synet på Indonesia?",
+                    "Hva skjedde i månedene etter det mislykkede kuppforsøket i oktober 1965, og hvor mange mennesker mener forskere ble drept?",
+                    "Hva gjorde general Suharto med landet etter at han hadde tatt makten fullt ut i 1967?"
+                ],
+                "reflekter": [
+                    "Teksten sier at USA blant annet ga hæren lister med navn på mistenkte. Forklar hvorfor Vesten var villig til å støtte massedrapene, ut fra frykten i den kalde krigen.",
+                    "Artikkelen forteller at vanlige mennesker ble presset til å angi og drepe naboer. Forklar hvordan frykt og propaganda kan forvandle et helt samfunn på kort tid.",
+                    "Hvorfor kaller teksten Suhartos åpning for vestlige selskaper et 'mønster' du kjenner fra de andre artiklene i serien? Bruk Freeport-gruven som eksempel.",
+                    "Artikkelen sier at 'de som vinner, ofte får bestemme hvilken historie som fortelles'. Vurder hvorfor denne tragedien har blitt så lite kjent, og hvem som tjente på at den ble glemt."
+                ],
+                "gaaVidere": [
+                    "FactBoksen forklarer hvordan ordet 'Jakarta' ble malt på vegger i Chile og Argentina som en advarsel. Skriv et kort avsnitt om hvordan et navn på en by kunne bli navnet på en metode andre land kopierte.",
+                    "Teksten sier at mye av det vi vet i dag først kom frem da hemmelige dokumenter ble offentliggjort. Diskuter i klassen hvorfor det er viktig at slike dokumenter til slutt blir åpnet, selv mange tiår etterpå.",
+                    "Artikkelen nevner at det samme mønsteret ble sett i Iran og Chile. Velg ett av disse landene, finn ut hva som skjedde der, og forklar hva de tre historiene har til felles."
+                ]
+            }
         }
     ],
     "quiz": [

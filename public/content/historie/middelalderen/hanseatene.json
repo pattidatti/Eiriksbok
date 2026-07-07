@@ -298,6 +298,29 @@
                     "explanation": "'Arbeid' (Arbeit) er et av mange ord vi fikk fra middelnedertysk. Det norrøne ordet var 'vinna'."
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr navnet Hansa opprinnelig, og hvorfor var det viktig for kjøpmennene å reise sammen i en slik gruppe?",
+                    "Hvorfor ble tørrfisk kalt det norske gullet, og omtrent hvor stor andel av Norges eksport utgjorde den på 1300-tallet?",
+                    "Hvorfor valgte hanseatene akkurat Bergen som sitt fotfeste i Norden? Nevn de to fordelene teksten peker på.",
+                    "Hva var Verhansung, og hvorfor var denne straffen så alvorlig for en by i forbundet?"
+                ],
+                "reflekter": [
+                    "Forklar hvordan kornmonopolet og nordfarergjelden gjorde de nordnorske fiskerne avhengige av de tyske kjøpmennene. På hvilken måte ga systemet både usikkerhet og trygghet for fiskeren?",
+                    "Hanseatene krevde at kjøpmennene levde i sølibat og ikke giftet seg med norske kvinner. Forklar hvorfor dette var et smart økonomisk grep for forbundet, og ikke bare en regel mot lokalbefolkningen.",
+                    "Teksten sier at hanseatenes viktigste arv i Norge er usynlig. Bruk eksemplene fra sammenligningen mellom norrønt og hanseatiske ord til å forklare hva som menes med dette.",
+                    "Vurder mordet i Munkeliv kloster i 1455 og angrepet fra Vitaliebrødrene. Hva forteller disse hendelsene om hvor mye makt hanseatene egentlig hadde i Bergen?"
+                ],
+                "gaaVidere": [
+                    "Hanseatene beskrives som de første globalistene i Nord-Europa. Skriv et kort avsnitt der du sammenligner deres handelsnettverk med hvordan store internasjonale selskaper handler på tvers av landegrenser i dag.",
+                    "Bryggen gikk fra å bli sett på som et rottereir til å bli oppført på UNESCOs verdensarvliste i 1979. Diskuter med en medelev hvorfor synet på gamle bygninger kan endre seg så mye over tid.",
+                    "Finn tre ord fra hverdagen din som du tror kan være lånord fra hanseatene, og forklar hvorfor akkurat handelsord var lette å låne inn i det norske språket."
+                ]
+            }
         }
     ]
 }

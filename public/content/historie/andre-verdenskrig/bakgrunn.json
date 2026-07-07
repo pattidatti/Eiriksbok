@@ -72,6 +72,28 @@
     {
       "type": "text",
       "content": "Det siste hinderet for Hitler var Sovjetunionen. En krig mot Polen kunne provosere russerne. I et sjokkerende diplomatisk trekk inngikk erke-fiendene Tyskland (nazister) og Sovjetunionen (kommunister) en ikke-angrepspakt i august 1939, kjent som Molotov-Ribbentrop-pakten. Offisielt lovet de å ikke angripe hverandre. I en hemmelig tilleggsprotokoll delte de Øst-Europa mellom seg: Tyskland skulle få vestre Polen, mens Sovjetunionen skulle få østre Polen, Finland og de baltiske statene.\n\nMed ryggen fri i øst ga Hitler ordren. 1. september 1939 rullet tyske stridsvogner over grensen til Polen. Det ble krigens [casus belli](/samfunnskunnskap/ideer-og-verdenssyn/casus-belli). To dager senere erklærte Storbritannia og Frankrike krig. Katastrofen var et faktum."
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var det ved Versailles-traktaten fra 1919 som gjorde mange tyskere bitre og misfornøyde?",
+                "Hva lovet Hitler det tyske folket, og hva mente han med «Lebensraum»?",
+                "Hva gjorde Folkeforbundet da Japan angrep Mandsjuria og Italia angrep Etiopia?",
+                "Hva gikk München-avtalen fra 1938 ut på, og hva lovet Hitler til gjengjeld?"
+            ],
+            "reflekter": [
+                "Forklar hvorfor den økonomiske krisen i 1929 gjorde det lettere for Hitler å få makten i Tyskland.",
+                "Chamberlain trodde ettergivenhetspolitikken («appeasement») ville sikre fred. Hvorfor slo den feil?",
+                "Hvorfor var Molotov-Ribbentrop-pakten så sjokkerende, når vi vet at nazister og kommunister var erke-fiender?",
+                "Se på rekken av trekk fra 1936 til 1939. Hvorfor tror du Hitler ble stadig dristigere for hvert steg?"
+            ],
+            "gaaVidere": [
+                "Skriv en kort tekst (5-8 setninger) der du forklarer om du mener vestmaktene burde stoppet Hitler tidligere, og hva som eventuelt gjorde det vanskelig.",
+                "Diskuter med en partner: Finnes det situasjoner i verden i dag der land gir etter for en aggressiv stat for å unngå konflikt? Er det klokt eller farlig?"
+            ]
+        }
     }
   ],
   "createdDate": "2023-01-01T12:00:00Z",

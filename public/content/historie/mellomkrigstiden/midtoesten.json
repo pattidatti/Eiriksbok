@@ -165,6 +165,29 @@
         {
             "type": "paragraph",
             "text": "Å forstå Midtøsten i dag krever å forstå denne historien – og å anerkjenne at det som virker som «urgamle konflikter» ofte er resultater av ganske moderne beslutninger."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem var Mark Sykes og François Georges-Picot, og hva gjorde de med kartet over Midtøsten i 1916?",
+                    "Hva lovet Balfour-erklæringen fra 1917, og hvem sendte britene brevet til?",
+                    "Hva var mandatsystemet, og hvilke områder fikk Frankrike og Storbritannia kontroll over?",
+                    "Hva skjedde i Palestina i årene 1936-1939, og hvordan reagerte britene på det?"
+                ],
+                "reflekter": [
+                    "Balfour-erklæringen lovet et jødisk nasjonalhjem samtidig som den skulle beskytte rettighetene til de ikke-jødiske innbyggerne, som utgjorde 90% av befolkningen. Forklar hvorfor disse to løftene var vanskelige å holde samtidig.",
+                    "Teksten sier at britene ga tre uforenlige løfter: til araberne, til franskmennene og til sionistene. Forklar hvordan disse løftene sto i motsetning til hverandre.",
+                    "Hvorfor tegnet grensene kolonimaktene lagde så store problemer, når de ikke tok hensyn til etniske, religiøse eller stammeforhold? Bruk eksemplet med Irak.",
+                    "Vurder påstanden i teksten om at det som virker som urgamle konflikter i Midtøsten ofte er resultater av ganske moderne beslutninger. Er du enig? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Finn en nyhetssak fra dagens Midtøsten, for eksempel om Syria, Irak eller konflikten mellom Israel og palestinerne. Skriv kort hvordan hendelsene i mellomkrigstiden kan henge sammen med det du leser om.",
+                    "Skriv en kort dagbokstekst (4-6 setninger) sett fra T.E. Lawrence sitt perspektiv i det øyeblikket han oppdager at britenes løfter til araberne var tomme.",
+                    "Diskuter i klassen: Kan land i dag holdes ansvarlige for grenser og løfter som ble laget for over hundre år siden? Kom med argumenter for begge sider."
+                ]
+            }
         }
     ],
     "quiz": [

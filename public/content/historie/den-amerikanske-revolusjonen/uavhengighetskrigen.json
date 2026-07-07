@@ -152,6 +152,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde under teselskapet i Boston i desember 1773, og hvorfor ødela mennene teen i stedet for å ta den med seg?",
+                    "Forklar hva slagordet «ingen skatt uten representasjon» betydde for kolonistene.",
+                    "Hva vedtok kolonistene 4. juli 1776, og hvilken berømt setning stod i den?",
+                    "Hvilket land hjalp kolonistene i krigen, og hva sendte de?"
+                ],
+                "reflekter": [
+                    "Storbritannia hadde verdens sterkeste hær og marine, men tapte likevel. Forklar hvilke fordeler kolonistene hadde som veide opp for at hæren deres var liten og fattig.",
+                    "Da britene straffet Boston med tvangslovene, samlet koloniene seg i stedet for å bli redde. Hvorfor tror du straffen virket motsatt av det London håpet på?",
+                    "Teksten sier at forbildet hadde en «stygg sprekk». Forklar hva denne sprekken var, og hvorfor det er et problem når mennene som skrev «alle mennesker er skapt like» selv eide slaver.",
+                    "Ideene til John Locke og Montesquieu er nevnt i teksten. Velg én av dem og forklar hvordan tanken hans ble brukt i den nye amerikanske staten."
+                ],
+                "gaaVidere": [
+                    "Den amerikanske grunnloven delte makten i tre deler så ingen kunne bli en ny konge. Undersøk hvordan makten er delt i Norge i dag, og skriv noen setninger om hva som ligner.",
+                    "Skriv en kort dagbokstekst (4-6 setninger) som en kolonist natten etter teselskapet i Boston. Hva gjorde du, og hva er du redd for at skal skje?",
+                    "Diskuter med en medelev: Kan flotte ord på et papir forandre et samfunn av seg selv, eller må noen alltid kjempe for at ordene skal gjelde alle? Bruk eksempler fra teksten."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

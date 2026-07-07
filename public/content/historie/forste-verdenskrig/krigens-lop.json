@@ -119,6 +119,29 @@
           }
         ]
       }
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var Schlieffen-planen, og hva var hovedmålet med den?",
+                "Hva skjedde under slaget ved Marne i september 1914, og hvorfor var det viktig?",
+                "Forklar hva som menes med at soldatene gikk «over toppen», og hva som ofte møtte dem på ingenmannsland.",
+                "Nevn to hendelser i 1917 som endret krigens gang, og forklar kort hva som skjedde i hver av dem."
+            ],
+            "reflekter": [
+                "Ved starten trodde både ledere og vanlige folk at krigen ville bli kort og heroisk. Hvorfor tok de så feil, ut fra det du leser om Vestfronten?",
+                "Falkenhayn ville «blø den franske hæren hvit» ved Verdun i stedet for bare å ta byen. Forklar tankegangen bak en slik utmattelseskrig, og hvorfor den ble så kostbar for begge sider.",
+                "Tysklands «uinnskrenkede ubåtkrig» blir kalt et sjansespill i teksten. Vurder hva Tyskland kunne vinne, og hva de risikerte å tape, på denne strategien.",
+                "Sammenlign krigen på Vestfronten med Østfronten. Hvorfor ble den ene fastlåst i skyttergraver mens den andre var mer i bevegelse?"
+            ],
+            "gaaVidere": [
+                "Skriv et kort dagbokinnlegg (5-8 setninger) fra en soldat i skyttergraven kvelden før han skal gå «over toppen». Bruk konkrete detaljer fra teksten, som gjørme, lus, piggtråd og maskingevær.",
+                "Somme og Verdun krevde over en million tapte for at frontlinjen knapt flyttet seg. Diskuter i klassen: Bør vi kalle noe slikt en «seier»? Hva burde man ellers måle når man vurderer utfallet av en krig?",
+                "Zimmermann-telegrammet, der Tyskland ba Mexico angripe USA, ble avslørt fordi britene snappet det opp. Finn et nyere eksempel på at avlyttet eller lekket informasjon endret en konflikt eller politisk sak, og forklar likheten."
+            ]
+        }
     }
   ],
   "createdDate": "2025-12-21T14:20:00Z",

@@ -160,6 +160,29 @@
         {
             "type": "text",
             "content": "Likevel peker boken på noe sant og viktig: rike land og store selskaper har ofte brukt penger, lån og makt til å styre fattigere land, lenge etter at koloniene formelt ble frie. Det kalles [nykolonialisme](/historie/dekolonisering/nykolonialisme). En god historiker tror ikke blindt på én kilde, men sammenligner flere. Da ser vi at sannheten ligger et sted mellom Perkins sine dramatiske historier og de tørre fakta i arkivene."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mener John Perkins med en 'økonomisk leiemorder', og hvordan er den forskjellig fra en vanlig leiemorder?",
+                    "Hva var oppgaven til Perkins da han jobbet som 'sjeføkonom', og hva forteller han at jobben egentlig gikk ut på?",
+                    "Hva gjorde Mohammad Mossadeq i Iran, og hva skjedde med ham i 1953?",
+                    "Hvem er 'sjakalene' i Perkins sin oppskrift, og når kommer de inn i bildet?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor gjeld kan bli et sterkere våpen enn en hær. Hvordan gir et lån landet ikke kan betale kontroll over landet?",
+                    "Perkins sier oppskriften sjelden virker uten hjelp fra noen på innsiden. Hvorfor ville en liten, rik elite i landet være villig til å bli en del av fellen?",
+                    "Sammenlign kuppet i Iran 1953 med kuppet i Chile 1973. Hva er likt i mønsteret, og hva er ulikt i måten vesten gikk fram på?",
+                    "Artikkelen sier at USA ofte forklarte inngrepene med å stanse kommunisme, men at det også lå et ønske om ressurser bak. Hvorfor kan det være vanskelig å vite hvilken grunn som var den ekte?"
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at mange fattige land i dag bruker store deler av inntektene på å betale renter i stedet for skoler og sykehus, og at Kina nå låner ut penger til store prosjekter i Afrika og Asia. Finn ett eksempel fra nyhetene og vurder om mønsteret Perkins beskriver passer.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor vi må være kritiske til Perkins, selv om mye av det han forteller er sant. Bruk begrepet nykolonialisme.",
+                    "Diskuter med en partner: Hva kan et fattig land gjøre for å unngå å havne i gjeldsfellen når det trenger penger til å bygge veier og kraftverk?"
+                ]
+            }
         }
     ],
     "quiz": [

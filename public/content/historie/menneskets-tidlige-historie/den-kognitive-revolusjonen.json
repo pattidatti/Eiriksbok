@@ -144,6 +144,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Når begynte den kognitive revolusjonen, og hva er den vanligste forklaringen på hva som skjedde i hjernen vår?",
+                    "Hva kan mennesker gjøre med språket sitt som apekatter ikke kan, selv om apekatter kan rope ulike alarmer for ulike fiender?",
+                    "Hva er en fiktiv virkelighet? Gi minst tre eksempler fra teksten på ting vi ikke kan peke på, men likevel tror på sammen.",
+                    "Hvorfor forsvant neandertalerne, ifølge den beste forklaringen i artikkelen, selv om de var sterkere og hadde større hjerner enn oss?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvordan felles myter kan få tusenvis av fremmede til å samarbeide om noe stort, som å bygge en pyramide.",
+                    "Teksten sier at vi kan kjenne rundt 150 mennesker godt. Hvorfor trenger vi felles historier og regler for å fungere sammen når gruppen blir større enn det?",
+                    "Sammenlign et fotballag som har trent sammen med elleve flinke enkeltspillere som aldri har spilt sammen. Hvorfor bruker artikkelen dette bildet for å forklare hvorfor Homo sapiens vant?",
+                    "Artikkelen sier at penger, lover og nasjoner er ekte fordi vi sammen bestemmer at de er ekte. Er du enig i at de er like ekte som fjell og elver? Argumenter for hva du mener."
+                ],
+                "gaaVidere": [
+                    "Finn et eksempel fra din egen hverdag på en fiktiv virkelighet du stoler på hver dag uten å tenke over det. Forklar hva som ville skjedd hvis folk plutselig sluttet å tro på den.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor Norge er en idé som lever i hodene våre, slik artikkelen beskriver det.",
+                    "Diskuter med en partner: Internett og sosiale medier lar oss dele historier med millioner av fremmede. Bruker vi den samme superkraften som begynte for 70 000 år siden, eller er noe helt nytt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Sjekk om du forstod",

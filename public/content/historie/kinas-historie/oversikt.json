@@ -142,6 +142,29 @@
       "caption": "Kinas grenser har endret seg dramatisk gjennom dynastiene - fra de tidlige statene langs Huang He til det enorme Qing-riket."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva betydde Himmelens mandat, og hva skjedde med keiseren hvis hungersnød, flom og opprør brøt løs?",
+                "Beskriv dynastisyklusen: hvordan starter et nytt dynasti, og hvorfor faller det til slutt?",
+                "Hva måtte du gjøre for å bli embetsmann i Kina, og hva testet eksamenene deg i?",
+                "Hva betyr det kinesiske navnet Zhongguo, og hva forteller det om hvordan kineserne så på seg selv?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor ideen om Himmelens mandat gjorde det lettere for et nytt dynasti å ta makten når det gamle sviktet.",
+                "Konfusianisme bygde på respekt oppover: sønn til far, undersått til keiser. Hvordan kan en slik idé hjelpe til med å holde et enormt land samlet?",
+                "Ming-dynastiet sendte først en stor flåte helt til Afrika, men stengte så landet. Hvorfor kan det ha vært skjebnesvangert da europeerne kom to generasjoner senere?",
+                "Teksten sier at møtet med europeerne på 1800-tallet var et dypt kulturelt sjokk, ikke bare et militært nederlag. Hva mener den med det?"
+            ],
+            "gaaVidere": [
+                "Kina så lenge seg selv som verdens sentrum og andre folk som barbarer. Kjenner du til andre land eller grupper i dag som mener at nettopp deres kultur er den viktigste? Diskuter.",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer for en venn hvorfor dynastisyklusen er nøkkelen til å forstå 3000 år med kinesisk historie.",
+                "Diskuter med en partner: Kan man tenke seg noe som ligner Himmelens mandat i moderne demokratier, der en leder mister makten hvis folket blir misfornøyd?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

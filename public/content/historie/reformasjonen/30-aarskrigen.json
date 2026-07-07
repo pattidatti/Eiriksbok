@@ -114,6 +114,29 @@
     {
       "type": "text",
       "content": "30-årskrigen sluttet der den startet: i Praha. Svenske tropper forsøkte å innta byen helt på tampen av krigen, men ble stoppet på Karlsbroen. Da budet om freden kom, la soldatene ned våpnene. Stillheten senket seg over et utarmet kontinent."
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilken hendelse i Praha i 1618 regnes som startskuddet for 30-årskrigen, og hva gjorde de protestantiske adelsmennene?",
+                "Hva gikk «krig skatter krig»-prinsippet til Wallenstein ut på, og hvem gikk det verst ut over?",
+                "Hvorfor gikk det katolske Frankrike, ledet av kardinal Richelieu, inn i krigen på protestantenes side?",
+                "Nevn minst tre viktige resultater av Freden i Westfalen i 1648."
+            ],
+            "reflekter": [
+                "Krigen startet som en krangel om religion, men endte som ren maktpolitikk. Forklar med egne ord hvordan denne endringen skjedde gjennom de fire fasene.",
+                "Hvorfor tapte den danske hæren til Christian 4. mot Wallenstein, mens den svenske hæren til Gustav II Adolf først vant store seiere? Sammenlign de to hærene.",
+                "Teksten kaller suverenitetsprinsippet «kanskje viktigst av alt». Forklar hva prinsippet betyr, og hvorfor det var så nytt at ingen makt som Paven eller keiseren kunne blande seg inn i en annen stat.",
+                "Det var sivilbefolkningen som betalte den høyeste prisen. Vurder hvordan det å la hæren leve av å plyndre landet førte til at opp mot 60 % av folk i noen områder døde."
+            ],
+            "gaaVidere": [
+                "Suverenitetsprinsippet fra Westfalen er fortsatt grunnlaget for FN-pakten i dag. Finn et eksempel fra nyhetene der land er uenige om ett land har rett til å blande seg inn i et annet lands indre saker.",
+                "Skriv en kort tekst (5-8 setninger) fra en tysk bonde sitt perspektiv, der du forteller om en dag da soldater kom til landsbyen for å ta det de trengte.",
+                "Diskuter med en partner: Var Freden i Westfalen en god løsning, når den etterlot Tyskland splittet i over 200 år til? Argumenter for og imot."
+            ]
+        }
     }
   ],
   "quiz": [

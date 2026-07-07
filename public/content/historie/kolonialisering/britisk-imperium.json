@@ -175,6 +175,29 @@
         {
             "type": "text",
             "content": "Arven etter imperiet er synlig overalt i dag: Det engelske språket, rettssystemer basert på *Common Law*, og sportsgrener som fotball og cricket som spilles over hele verden."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to hovedretninger utviklet det britiske imperiet seg i, og hva drev ekspansjonen i hver av dem?",
+                    "Hva var Det Østindiske Kompani, og hva gjorde det til mer enn bare et vanlig firma?",
+                    "Hva het den første permanente engelske kolonien i Nord-Amerika, og hvorfor ble den grunnlagt?",
+                    "Hva var Pax Britannica, og hvilken rolle spilte den britiske flåten i denne perioden?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor britene fordrev de innfødte i Nord-Amerika, mens spanjolene heller brukte dem som arbeidskraft.",
+                    "Hvordan førte den industrielle revolusjonen til en ny bølge av imperialisme? Bruk eksemplene med råvarer fra teksten.",
+                    "Teksten sier at britene bygde jernbaner og skoler i India, men at profitten endte i London. Var det britiske styret godt eller vondt for India? Argumenter for begge sider.",
+                    "Hvorfor markerte Suez-krisen i 1956 slutten på Storbritannia som supermakt, når landet allerede hadde mistet India i 1947?"
+                ],
+                "gaaVidere": [
+                    "Arven etter imperiet er synlig i språk, rettssystemer og sport over hele verden. Finn ett eksempel fra din egen hverdag som stammer fra det britiske imperiet, og forklar sammenhengen.",
+                    "Skriv en kort tekst (5-8 setninger) der du sammenligner den britiske og den spanske kolonimodellen. Hvilken tror du var verst for dem som allerede bodde i landet, og hvorfor?",
+                    "Diskuter med en partner: Bør et land i dag be om unnskyldning eller betale erstatning for det imperiet gjorde for hundre år siden? Begrunn svaret."
+                ]
+            }
         }
     ],
     "quiz": [

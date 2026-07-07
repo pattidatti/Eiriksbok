@@ -124,6 +124,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor gammelt er Göbekli Tepe, og hva var det som gjorde arkeologen Klaus Schmidt overrasket over hvem som bygde det?",
+                    "Hvorfor mener forskerne at stedet ikke var en vanlig boplass eller by? Nevn minst to grunner fra teksten.",
+                    "Hvilke dyr er hugget inn i steinpilarene, og hva forteller valget av nettopp disse dyrene oss om menneskene som lagde dem?",
+                    "Hva gjorde menneskene med Göbekli Tepe etter cirka 1 500 år, og hvorfor er stedet så godt bevart i dag?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hypotesen til Klaus Schmidt: hvordan kan et tempel ha drevet fram jordbruket i stedet for omvendt?",
+                    "Den klassiske teorien sier at jordbruk kom først, så bofasthet, så religion. Hvorfor stiller Göbekli Tepe spørsmål ved denne rekkefølgen?",
+                    "Fjellet Karaca Dağ, der hveten trolig ble temmet, ligger bare 32 kilometer fra tempelet. Hvorfor mener noen forskere at dette er et viktig spor?",
+                    "Teksten sier at diskusjonen ikke er ferdig, og at mange forskere fortsatt tror jordbruket kom først. Hvorfor er det lurt av en historiker å si at noe ikke er bevist, selv når et funn er spennende?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (5-8 setninger) der du beskriver hvordan du tror en pilegrimsreise til Göbekli Tepe kunne se ut for en jeger som kom langveisfra én gang i året.",
+                    "Diskuter med en partner: Kan en felles idé, som en religion eller et mål, få mennesker i dag til å samle seg og bygge noe stort? Finn et eksempel fra vår egen tid.",
+                    "Teksten avslutter med at vi noen ganger reiser oss fordi vi har en idé som er verdt å reise seg for. Er du enig i at tanker kan forme et samfunn like mye som mat og penger? Begrunn svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

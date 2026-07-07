@@ -165,6 +165,29 @@
         {
             "type": "paragraph",
             "text": "USAs reise gjennom mellomkrigstiden illustrerer kapitalismens doble natur: dens evne til å skape enorm rikdom og innovasjon, men også dens tendens til kriser som rammer de svakeste hardest. Det er en leksjon som er like relevant i dag."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor kom USA sterkere ut av første verdenskrig enn landene i Europa?",
+                    "Hva vil det si å kjøpe aksjer 'on margin', og hvorfor virket det trygt så lenge kursene steg?",
+                    "Hva var forbudstiden (Prohibition), og hva ble et av de uventede resultatene av forbudet?",
+                    "Nevn minst tre av programmene i The New Deal og hva hvert av dem skulle gjøre."
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvordan børskrakket i 1929 spredte seg som en dominoeffekt fra Wall Street til vanlige folks hjem.",
+                    "Teksten sier at økonomien var 'syk' allerede før krakket. Hvilke tegn på svakhet fantes under overflaten mens aksjekursene steg?",
+                    "The New Deal ble kalt sosialisme av noen og for svakt av andre. Hvorfor kunne så ulike grupper være misfornøyde med den samme politikken?",
+                    "Roosevelt sa 'The only thing we have to fear is fear itself'. Hvorfor kan frykt i seg selv gjøre en økonomisk krise verre?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at leksjonene fra 1929 kom igjen 'igjen, og igjen, og igjen'. Finn ut hva finanskrisen i 2008 handlet om, og skriv tre likheter med det som skjedde i 1929.",
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en vanlig amerikaner i 1933 som har mistet både jobb og sparepenger. Hva føler du, og hva håper du at presidenten skal gjøre?",
+                    "Diskuter med en partner: Hvor mye ansvar bør staten ha for folk som mister jobben i en krise? Bruk The New Deal som eksempel i argumentene deres."
+                ]
+            }
         }
     ],
     "quiz": [

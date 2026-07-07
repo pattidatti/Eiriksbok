@@ -183,6 +183,29 @@
       "content": "For Norge og andre små land betyr Kinas vekst at verden ikke lenger har ett tyngdepunkt. Vi lever i en tid der to giganter - USA og Kina - konkurrerer om å forme framtiden. Hvem som vinner, og på hvilke betingelser, vil påvirke alle land på jorda."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva skjedde i desember 2001 som gjorde det mye lettere for kinesiske varer å nå ut i verden?",
+                "Hva er Belte- og vei-initiativet, og hvor mange land er med ifølge teksten?",
+                "Hva betyr prinsippet \"ett land, to systemer\", og hva skjedde med det i Hong Kong etter 2020?",
+                "Hvorfor har USA innført forbud mot å eksportere de mest avanserte halvlederne til Kina?"
+            ],
+            "reflekter": [
+                "Teksten kaller Kina \"verdens fabrikk\". Forklar hvordan lave lønninger og mange arbeidere gjorde at utenlandske selskaper strømmet til Kina.",
+                "Tilhengere og kritikere er uenige om Belte- og vei-initiativet. Sammenlign de to synene, og bruk eksemplet med havnen i Sri Lanka i svaret ditt.",
+                "Xi Jinping fjernet i 2018 grensen for hvor mange perioder en president kan sitte. Hvorfor kan dette gjøre det farligere å være kritiker av regjeringen i Kina?",
+                "Teksten sier at Kinas vekst handler om \"gjenreisning\" etter \"de to hundre ydmykelsenes tid\". Forklar hvordan historien om Midtens rike kan drive Kinas ambisjoner i dag."
+            ],
+            "gaaVidere": [
+                "Norge valgte å ikke bruke Huawei i sitt 5G-nett. Diskuter i klassen hvordan et lite land som Norge bør velge når to giganter som USA og Kina drar i hver sin retning.",
+                "Skriv et kort innlegg (100-150 ord) der du tar stilling til spørsmålet fra debatten i artikkelen: Er Kinas vekst til supermakt en trussel mot verdensfreden? Begrunn svaret med minst to eksempler fra teksten.",
+                "Teksten sier at klimasamarbeid er umulig uten Kina, samtidig som Kina og USA er verdens største utslippsland. Diskuter hvorfor land som er rivaler likevel må samarbeide om klima."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

@@ -143,6 +143,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Ifølge myten, hvem grunnla Roma i år 753 fvt., og hva skjedde med tvillingbroren hans?",
+                    "Hva skjedde i år 509 fvt., og hva ble innført i stedet for kongemakten?",
+                    "Hva var en folketribun, og hvilken spesiell rett hadde han?",
+                    "Hva gjorde Hannibal som ingen trodde var mulig i den andre punerkrigen?"
+                ],
+                "reflekter": [
+                    "Sammenlign hva sagnet om Romulus sier om Romas start med det arkeologene mener. Hvorfor tror du myten ble så viktig for romerne selv om den ikke var sann?",
+                    "Forklar hvordan plebeierstreiken i 494 fvt. fungerte. Hvorfor fikk patrisierne panikk da plebeierne marsjerte ut av byen?",
+                    "Teksten sier at seieren over Kartago ødela republikken. Forklar hvordan rikdom og slaver gjorde de fattige bøndene fattigere.",
+                    "Vurder hvorfor det ble farlig for republikken da generaler som Marius og Sulla brukte hærene mot hverandre. Hva betyr det at soldatene var lojale mot generalen, ikke mot staten?"
+                ],
+                "gaaVidere": [
+                    "Konsulene måtte være enige for å ta beslutninger, slik at ingen ble for mektig. Finn et eksempel fra dagens samfunn der makten deles på lignende måte, og forklar likheten.",
+                    "Skriv en kort tekst (5-8 setninger) der du later som du er en plebeier i år 494 fvt. Forklar hvorfor du blir med på streiken og hva du håper å oppnå.",
+                    "Diskuter med en partner: Republikken falt fordi de rike valgte vold framfor å dele. Hva kunne senatorene gjort annerledes for å redde systemet?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -103,6 +103,29 @@
     {
       "type": "text",
       "content": "Til sjøs innså Tyskland at de ikke kunne slå den mektige britiske marinen i åpne slag. I stedet satset de på ubåter (Unterseeboot) for å angripe handelsskipene som forsynte Storbritannia med mat og råvarer. Ubåtene var effektive og vanskelige å oppdage, og i 1917 var Storbritannia farlig nær å gå tom for mat. De allierte lærte seg imidlertid å beskytte skipene ved å organisere dem i konvoier beskyttet av krigsskip, samt utvikle teknologier som synkeminer og hydrofoner for å lytte etter ubåter."
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvor mange skudd i minuttet kunne ett enkelt maskingevær fyre av, og hvorfor gjorde dette det nesten umulig å angripe over åpent terreng?",
+                "Hvor stor andel av alle dødsfall og skader i krigen skyldtes artilleriild, og hva var trommeild?",
+                "Hvorfor fikk stridsvognen kodenavnet tank, og under hvilket slag ble de første stridsvognene (Mark I) brukt?",
+                "Hva ble flyene først brukt til i 1914, og hvilket gjennombrudd gjorde det mulig å lage jagerfly?"
+            ],
+            "reflekter": [
+                "Teksten sier at 1800-tallets taktikker møtte 1900-tallets teknologi. Forklar hvorfor det ble så farlig å angripe slik generalene var vant til, når fienden hadde maskingevær.",
+                "Giftgass skapte enorm frykt, men var ikke militært avgjørende. Forklar minst to grunner til at gass var lite effektivt som våpen.",
+                "Både stridsvognen og maskingeværet endret balansen mellom angrep og forsvar. Sammenlign hvordan de to våpnene virket motsatt vei på skyttergravskrigen.",
+                "Tyskland satset på ubåter i stedet for åpne sjøslag mot den britiske marinen. Vurder hvorfor dette var et smart valg, og hvordan de allierte klarte å svare på trusselen."
+            ],
+            "gaaVidere": [
+                "Den Røde Baron ble dyrket som en moderne ridder og helt i propagandaen. Finn et eksempel på hvordan soldater eller våpen blir fremstilt som heltemodige i nyheter eller filmer i dag, og diskuter hvorfor slike bilder lages.",
+                "Skriv en kort tekst på fem til seks setninger fra en soldat som opplever trommeild i skyttergraven for første gang. Bruk minst tre detaljer fra artikkelen.",
+                "Krigen drev frem ny teknologi fordi begge sider ville bryte stillstanden. Diskuter to av teknologiene fra teksten som fortsatt betyr noe i dag, og hvordan de har utviklet seg videre."
+            ]
+        }
     }
   ],
   "createdDate": "2025-12-21T14:30:00Z",

@@ -173,6 +173,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var 'sjokkterapien', og hvorfor mistet vanlige russere sparepengene sine på 1990-tallet?",
+                    "Hvilken stilltiende avtale tilbød Putin det russiske folket da han tok over etter Jeltsin?",
+                    "Nevn de tre stegene i opptrappingen som artikkelen peker på: hva skjedde i Georgia 2008, med Krim 2014 og i Ukraina 2022?",
+                    "Hvorfor kaller artikkelen gassen et pressmiddel og ikke bare en vare?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at Putin bygde makt av tre ting: gass, penger og såret stolthet. Forklar med egne ord hvordan disse tre hang sammen.",
+                    "Europa trodde at handel skaper fred, mens Kreml så gassen som et våpen. Hvorfor kunne de samme rørledningene bety så forskjellige ting for de to sidene?",
+                    "Artikkelen lister fire grunner til at Vesten ikke reagerte hardere før 2022: pengene, ønsketenkningen, vanen og frykten. Hvilken av disse tror du veide tyngst, og hvorfor?",
+                    "Artikkelen skiller mellom å forstå det russiske perspektivet på NATO og å gi Russland rett til å angripe. Forklar hvorfor det er viktig å holde disse to tingene fra hverandre."
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt (5-6 setninger) der du forklarer hva 'den som eier energien, eier også en del av makten' betyr, med eksempler fra artikkelen.",
+                    "Diskuter i klassen: Burde Europa ha kuttet den russiske gassen tidligere, selv om det ville kostet dyrt? Hva ville du gjort hvis du styrte et land som var avhengig av gassen?",
+                    "Finn en nyhetssak fra i dag om krigen i Ukraina eller forholdet mellom Russland og Europa. Passer den inn i mønsteret artikkelen beskriver, eller viser den noe nytt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

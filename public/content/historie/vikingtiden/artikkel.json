@@ -51,6 +51,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to hendelser regner vi tradisjonelt som starten og slutten på vikingtiden, og hvilke årstall skjedde de?",
+                    "Hva var Tinget, og hvem hadde lov til å møte og bestemme der?",
+                    "Nevn minst tre steder eller riker vikingene grunnla eller oppdaget, både i øst og vest.",
+                    "Ifølge artikkelen: hvorfor er det feil å tro at vikingene brukte hjelmer med horn?"
+                ],
+                "reflekter": [
+                    "Artikkelen nevner bedre jernredskaper som en indre årsak til at vikingene reiste ut. Forklar hvordan jernredskaper kan henge sammen med at folketallet vokste og at det ble plassmangel.",
+                    "Arvereglene gjorde at bare den eldste sønnen overtok gården. Hvorfor tror du dette kan ha presset yngre brødre til å dra ut på tokt eller søke nytt land?",
+                    "Ætten skulle kreve erstatning eller hevn hvis noen skadet deg. Hva er både fordelene og ulempene med et samfunn der familien er sikkerhetsnettet i stedet for politi og domstoler slik vi har i dag?",
+                    "Vikingene ble kalt forskjellige navn ulike steder: væringer i Bysants, rus blant slaverne og normanner i Frankrike. Hva forteller disse ulike navnene deg om hvor langt vikingene faktisk reiste?"
+                ],
+                "gaaVidere": [
+                    "Alkuin trodde vikingangrepene var et tegn på Guds vrede. Skriv et kort avsnitt om hvorfor mennesker den gang forklarte plutselige katastrofer med gudene, og hvordan vi forklarer uventede hendelser i dag.",
+                    "Diskuter i klassen: Artikkelen sier at hornhjelmene er en myte fra 1800-tallets opera. Hvorfor tror dere slike myter fester seg og lever videre, selv når forskerne vet at de er feil?",
+                    "Vikingene knyttet Norden til resten av verden gjennom handel og bosetting. Finn ett norsk ord eller stedsnavn i nærmiljøet ditt som kan ha røtter fra vikingtiden, og forklar hvorfor arven fra denne tiden fortsatt betyr noe."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

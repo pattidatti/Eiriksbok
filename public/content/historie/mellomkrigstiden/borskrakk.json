@@ -187,6 +187,29 @@
                 "[USA: The New Deal](/historie/mellomkrigstiden/usa) – Løsningen? Hvordan Roosevelt møtte krisen.",
                 "[Samfunnskunnskap: Finanskriser](/samfunnskunnskap/okonomi/finanskriser) – Lær teorien om hvorfor økonomien krasjer."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde 29. oktober 1929, og omtrent hvor mye penger forsvant fra den amerikanske økonomien den ene dagen?",
+                    "Forklar hva teksten mener med en spekulativ boble: hvorfor kjøpte folk egentlig aksjer mot slutten av 1920-tallet?",
+                    "Ifølge FactBoxen om depresjonens omfang: hvor mye steg arbeidsløsheten i USA, og hvor mange banker gikk konkurs?",
+                    "Hva var Keynes' løsning på depresjonen, og hva mente Hayek at staten burde gjøre i stedet?"
+                ],
+                "reflekter": [
+                    "Forklar spareparadokset med egne ord: hvorfor kan det som er lurt for én enkelt person (å spare) bli farlig for hele økonomien?",
+                    "Hayek mente at Keynes' løsning var å behandle sykdommen med mer av det som forårsaket den. Hva mente han med det, og synes du han har et poeng?",
+                    "Teksten sier at Keynes vant på 1930-tallet, men at Hayeks ideer fikk ny vind i seilene på 1970-tallet. Hva skjedde som gjorde at folk begynte å tvile på keynesiansk politikk?",
+                    "Både keynesianere og østerrikere er enige om at proteksjonisme og Smoot-Hawley-tollmurene forverret krisen. Hvorfor kan det å stenge grensene for handel gjøre en økonomisk krise verre?"
+                ],
+                "gaaVidere": [
+                    "Da finanskrisen kom i 2008, grep statene inn med store redningspakker, altså en keynesiansk respons. Finn ett eksempel på hvordan staten grep inn under en krise i din egen levetid, og diskuter om du synes det var riktig.",
+                    "Skriv en kort tekst (5-8 setninger) der du velger side i debatten mellom Keynes og Hayek. Bruk minst tre argumenter fra artikkelen for å begrunne valget ditt.",
+                    "Diskuter i par: teksten sier at økonomiske kriser ikke er abstrakte kurver, men menneskelige tragedier. Hvorfor er det viktig å huske på menneskene bak tallene når politikere bestemmer hva de skal gjøre i en krise?"
+                ]
+            }
         }
     ],
     "quiz": [

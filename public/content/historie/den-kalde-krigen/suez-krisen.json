@@ -147,6 +147,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var det Nasser kunngjorde 26. juli 1956, og hva skulle inntektene fra kanalen brukes til?",
+                    "Beskriv kort hva Sèvres-protokollen gikk ut på. Hvilken rolle skulle Israel spille i planen?",
+                    "Hvorfor ble USA og president Eisenhower rasende, og hvilket økonomisk pressmiddel brukte USA mot Storbritannia?",
+                    "Hva var UNEF, og hvem foreslo å opprette denne styrken?"
+                ],
+                "reflekter": [
+                    "Teksten sier at invasjonen militært var en suksess, men politisk en katastrofe. Forklar hvordan begge deler kan være sant samtidig.",
+                    "Hvorfor var timingen med opprøret i Ungarn så uheldig for Storbritannia og Frankrike? Bruk teksten til å forklare hvordan Sovjetunionen kunne utnytte situasjonen.",
+                    "Se på Comparison-tabellen: Egypt tapte på slagmarken, men vant politisk. Hvordan kan et land tape en krig militært og likevel komme ut som seierherre?",
+                    "Hvorfor tror du Storbritannia og Frankrike måtte lage en hemmelig plan i stedet for å angripe Egypt åpent? Hva sier det om folkeretten på den tiden?"
+                ],
+                "gaaVidere": [
+                    "Suezkanalen er fortsatt en av verdens viktigste vannveier. Undersøk en nyere hendelse der kanalen ble stengt eller blokkert, og skriv noen setninger om hvordan det påvirket verdenshandelen.",
+                    "Skriv en kort tekst (4-6 setninger) fra Nassers synsvinkel like etter at supermaktene tvang britene og franskmennene til å trekke seg ut. Hva ville han følt og tenkt?",
+                    "Diskuter med en medelev: Suez-krisen regnes som slutten på Storbritannia og Frankrike som selvstendige stormakter. Hvilke land vil dere si legger premissene i verden i dag, og hvorfor?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

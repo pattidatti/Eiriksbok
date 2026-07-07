@@ -147,6 +147,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke fire store keiserdømmer kollapset som følge av første verdenskrig, ifølge teksten?",
+                    "Nevn tre krav Versaillestraktaten stilte til Tyskland.",
+                    "Hva var dolkestøtlegenden, og hvorfor var den farlig?",
+                    "Ifølge faktaboksen: hvor mange europeiske stater var demokratier i 1920, og hvor mange var igjen i 1938?"
+                ],
+                "reflekter": [
+                    "Økonomen John Maynard Keynes kalte Versaillesfreden «ikke fred, men en 20 år lang pause». Forklar hva han mente, og hvorfor teksten sier at han fikk rett.",
+                    "Teksten sier at demokratiet i mange land hadde et problem: det var nytt. Forklar hvorfor mangel på tradisjon for debatt og kompromiss gjorde de nye demokratiene sårbare da krisen kom på 1930-tallet.",
+                    "Folkeforbundet ble «født med en dødelig svakhet» fordi USA aldri meldte seg inn. Forklar hvordan dette svekket organisasjonen da Japan og Italia gikk til angrep.",
+                    "«The Roaring Twenties» var både fest og fare. Forklar hvordan festen og fremgangen på 1920-tallet skjulte spenninger som til slutt førte til børskrakket i 1929."
+                ],
+                "gaaVidere": [
+                    "Teksten sier vi må forstå mellomkrigstiden for å skjønne hvorfor demokratier kan bryte sammen. Diskuter med en medelev: finnes det tegn i vår egen tid på at folk ønsker seg sterke ledere fremfor lange debatter?",
+                    "Skriv en kort tekst (5-6 setninger) der du forklarer hvorfor mange tyskere opplevde Versaillesfreden som en ydmykelse, og hvordan denne følelsen kunne utnyttes av farlige bevegelser.",
+                    "Velg én av de tre kreftene som formet mellomkrigstiden (demokratiets krise, økonomi i fritt fall eller totalitarismens fremmarsj) og finn et eksempel fra nyheter i dag som minner om den samme kraften."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Test deg selv",

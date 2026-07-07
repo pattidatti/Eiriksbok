@@ -205,6 +205,29 @@
                 "[Det store krakket](/historie/mellomkrigstiden/borskrakk) – Hvorfor krisen traff Norge.",
                 "[USA: Fra 'Roaring 20s' til New Deal](/historie/mellomkrigstiden/usa) – Inspirasjonen for statlig inngripen."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var paripolitikken, og hvilket mål hadde Norges Bank under Nicolai Rygg med den?",
+                    "Hva skjedde ved Menstad brygge 8. juni 1931, og hvorfor ble statspolitiet sendt inn?",
+                    "Hva gikk kriseforliket fra 1935 ut på, og hvilke to partier inngikk det?",
+                    "Hvor stor oppslutning fikk Vidkun Quislings Nasjonal Samling i frie valg, ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor deflasjonen under paripolitikken rammet bønder og bedrifter med lån ekstra hardt.",
+                    "Teksten sier at Menstad-slaget paradoksalt nok bidro til en erkjennelse om at Norge måtte endre kurs. Forklar hvordan en så voldelig konflikt kunne føre til kompromiss.",
+                    "Sammenlign The New Deal i USA med kriseforliket i Norge. Nevn minst én likhet og én forskjell fra teksten.",
+                    "Hvorfor mener forfatteren at fascismen forble marginal i Norge mens den vokste seg sterk i Tyskland og Italia?"
+                ],
+                "gaaVidere": [
+                    "Teksten avslutter med at demokrati er noe man velger igjen og igjen. Skriv en kort tekst (5-8 setninger) om hva den setningen betyr i dag.",
+                    "Kriseforliket bygde på samarbeid mellom stat, arbeidsgivere og arbeidstakere. Finn ett eksempel på et slikt trepartssamarbeid i Norge i dag, og forklar hva det handler om.",
+                    "Diskuter med en partner: Var kriseforliket et svik mot arbeiderbevegelsens revolusjonære idealer, eller var det et klokt valg? Argumenter for begge sider."
+                ]
+            }
         }
     ],
     "quiz": [

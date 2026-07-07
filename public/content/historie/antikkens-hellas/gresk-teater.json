@@ -128,6 +128,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken gud holdt athenerne fest for hver vår, og hva var han gud for?",
+                    "Hva betyr det greske ordet hybris, og hvordan fører det helten mot fallet i en tragedie?",
+                    "Hva het de tre delene av teaterbygningen (theatron, orkhestra og skene), og hva ble hver del brukt til?",
+                    "Hvorfor kunne én enkelt skuespiller nå fram til tusenvis av tilskuere uten mikrofon?"
+                ],
+                "reflekter": [
+                    "Teksten sier at komedien var mer enn moro, den var også en måte å kritisere makta på. Forklar hvorfor det var mulig for Aristofanes å gjøre narr av mektige politikere akkurat i Athen.",
+                    "Bare to eller tre skuespillere spilte alle rollene, og de brukte masker med faste uttrykk. Hvorfor tror du maskene var så nyttige i et så stort teater?",
+                    "Teateret startet som religion, men ble til underholdning og konkurranse. Hva tror du gjorde at folk strømmet til, selv om de ofte visste hvordan tragedien kom til å ende?",
+                    "Sammenlign tragedie og komedie. Hvilken av dem tror du fikk publikum til å tenke mest, og hvorfor?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at filmer der helten gjør en stor feil og må betale for den, følger mønsteret grekerne fant opp. Finn et eksempel fra en film eller serie du kjenner, og beskriv hvordan helten faller på grunn av sin egen feil.",
+                    "Skriv et kort avsnitt der du forklarer hvorfor ordene teater, scene og drama viser at det greske teateret fortsatt lever i språket vårt i dag.",
+                    "Diskuter i klassen: Bør vi fortsatt få lov til å gjøre narr av de mektigste menneskene i samfunnet, slik Aristofanes gjorde? Hvorfor eller hvorfor ikke?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

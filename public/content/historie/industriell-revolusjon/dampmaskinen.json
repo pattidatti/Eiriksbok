@@ -159,6 +159,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var det viktigste problemet med Newcomen-maskinen fra 1712, og hvor mye av kullet gikk bort på grunn av det?",
+                    "Hva gikk Watts idé om den separate kondensatoren ut på, og hvorfor kunne hovedsylinderen holde seg varm hele tiden?",
+                    "Hva gjorde Matthew Boulton for Watt, og hva het firmaet de bygde sammen?",
+                    "Hvordan kom Watt fram til hva én hestekraft var, og hvorfor var det nyttig for kundene hans?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor det var så viktig at Watt-maskinen brukte bare en fjerdedel så mye kull som Newcomen-maskinen.",
+                    "Teksten sier at vind, vann og hester alle har en grense, men at dampmaskinen ikke hadde det. Forklar hva denne grensen er for hver av dem, og hvorfor damp var annerledes.",
+                    "Hvorfor var det å kunne flytte dampmaskinen dit folk bodde like viktig som at den var kraftig? Bruk eksemplet med fabrikker og fosser fra teksten.",
+                    "Watt var en dyktig oppfinner, men brukte likevel nesten ti år på å få maskinen ferdig. Hva forteller det oss om forskjellen mellom å ha en god idé og å få den til å virke i praksis?"
+                ],
+                "gaaVidere": [
+                    "I dag måles effekten til alt fra lyspærer til vaskemaskiner i watt. Finn tre ting hjemme hos deg og skriv ned hvor mange watt de bruker. Hva overrasket deg mest?",
+                    "Skriv en kort tekst (5-8 setninger) om en oppfinnelse fra din egen tid som du mener har forandret verden like mye som dampmaskinen. Forklar hvorfor.",
+                    "Diskuter med en partner: Watts maskiner skapte fabrikker som ga arbeid, men mange av arbeiderne var barn. Kan en oppfinnelse være både bra og ille på samme tid?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

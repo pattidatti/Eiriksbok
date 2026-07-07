@@ -156,6 +156,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor ble Norge gitt fra Danmark til Sverige i 1814? Hva hadde Danmark-Norge gjort galt i krigene?",
+                    "Hva gjorde de 112 mennene som samlet seg på Eidsvoll våren 1814, og hvem valgte de til konge 17. mai?",
+                    "Hva var en personalunion, og hva var det eneste Norge egentlig delte med Sverige utenom kongen?",
+                    "Hva var 'sildesalaten', og hvorfor kranglet nordmennene om den?"
+                ],
+                "reflekter": [
+                    "Karl Johan valgte å tilby Norge et kompromiss i stedet for å knuse landet med makt. Forklar hvorfor det var klokt av ham.",
+                    "Teksten sier at unionstiden ikke bare var en tvangstrøye, men også en skole i selvstyre. Forklar hva som menes med det.",
+                    "Sammenlign unionen med Sverige fra 1814 med den eldre Kalmarunionen. Hvorfor slapp nordmennene billigere unna i 1814?",
+                    "Teksten minner om at frihet for noen ikke betydde frihet for alle, og peker på fornorskingen av samene. Hvorfor er det viktig å ta med denne siden av historien?"
+                ],
+                "gaaVidere": [
+                    "Hver 17. mai feirer vi grunnloven fra 1814. Skriv 5-8 setninger om hva du synes dagen egentlig burde handle om, ut fra det du har lest.",
+                    "Konsulatsaken handlet om at norske sjøfolk ville ha egne norske representanter ute i verden. Finn ut hva slags oppgaver et lands ambassader og konsulater har i dag.",
+                    "Diskuter med en partner: Norge og Sverige klarte å løse opp unionen fredelig i 1905. Hvorfor er det viktig at nabofolk kan skille lag uten krig?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

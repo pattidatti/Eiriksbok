@@ -125,6 +125,29 @@
       "content": "Men som administrator var han katastrofal. Han forstod ikke økonomi. Han ignorerte eksperter som advarte ham. Han lot ideologi styre avgjørelser som burde vært styrt av kunnskap. Og da han mot slutten av 1950-tallet bestemte seg for å forvandle Kina til en industriell stormakt på rekordtid, la han grunnlaget for den verste hungersnøden i menneskehetens historie. Den historien - Det store spranget - kommer i [neste artikkel](/historie/kinas-historie/store-spranget)."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva ropte Mao ut over folkemengden fra Den himmelske freds port 1. oktober 1949?",
+                "Hva gikk landreformen ut på, og omtrent hvor mange bønder fikk jord?",
+                "Hva var Hundre blomster-kampanjen fra 1956, og hva skjedde med dem som kom med kritikk?",
+                "Hvorfor sendte Mao kinesiske soldater inn i Koreakrigen i 1950, og hvem mistet han der?"
+            ],
+            "reflekter": [
+                "Teksten sier at landreformen var frigjøring og terror på én gang. Forklar hvorfor den samme reformen kunne oppleves helt ulikt av en fattig bonde og en godseier.",
+                "Hvorfor bygde Mao bevisst en ettpartistat der partiet kontrollerer aviser, skoler og kunst? Bruk teksten til å forklare hva han var redd for.",
+                "Historikere kaller Mao en genial strateg, men en katastrofal administrator. Forklar hva forskjellen betyr med eksempler fra artikkelen.",
+                "Var Hundre blomster-kampanjen en felle fra starten, eller ble den til en felle underveis? Argumenter for et syn med utgangspunkt i det teksten forteller."
+            ],
+            "gaaVidere": [
+                "Mao sa at politisk makt kommer fra geværet. Diskuter i klassen om makt i dag først og fremst kommer fra våpen, eller fra noe annet, og gi eksempler fra vår egen tid.",
+                "Skriv et kort avsnitt (5-8 setninger) der du forklarer hvorfor det er farlig for et samfunn når ett parti kontrollerer alle aviser og all undervisning.",
+                "Artikkelen slutter med at Det store spranget kommer i neste artikkel. Skriv ned tre spørsmål du håper å få svar på om hvordan Mao var som administrator."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

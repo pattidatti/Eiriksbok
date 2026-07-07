@@ -122,6 +122,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Langs hvilken breddegrad ble Korea delt i nord og sør etter andre verdenskrig, og hvilke to land tok kontroll over hver sin del?",
+                    "Hva var landgangen ved Inchon, og hvorfor kom den som et sjokk på nordkoreanerne?",
+                    "Hvorfor grep Kina inn i krigen i november 1950, og hva gjorde de kinesiske styrkene med FN-hæren?",
+                    "Hvordan endte krigshandlingene i 1953, og hvorfor er Nord- og Sør-Korea teknisk sett fremdeles i krig?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor FN kunne sende en styrke til Sør-Korea uten at Sovjetunionen stoppet det med veto.",
+                    "MacArthur ville utvide krigen til Kina og bruke atomvåpen, mens Truman holdt fast på begrenset krig. Vurder hvem du mener tok den klokeste avgjørelsen, og begrunn svaret.",
+                    "At Truman ga MacArthur sparken, kalles i teksten en påminnelse om at sivile ledere styrer militæret. Forklar hvorfor dette er viktig i et demokrati.",
+                    "Sammenlign Nord-Korea og Sør-Korea slik de er i dag. Hva forteller de store forskjellene mellom dem om de to samfunnssystemene som møttes i krigen?"
+                ],
+                "gaaVidere": [
+                    "Koreakrigen kalles ofte den glemte krigen. Skriv en kort tekst (5-8 setninger) om hvorfor du tror den huskes mindre enn andre verdenskrig og Vietnamkrigen.",
+                    "Nord- og Sør-Korea er fremdeles delt av den demilitariserte sonen. Finn ut hvordan forholdet mellom de to landene er i dag, og del det du finner med klassen.",
+                    "Diskuter med en partner: Var det riktig av Norge og de andre 16 landene å sende soldater og hjelp til en krig så langt hjemmefra? Argumenter for begge sider."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

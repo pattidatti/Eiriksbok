@@ -210,6 +210,29 @@
                 "[Folkeforbundet](/historie/mellomkrigstiden/folkeforbundet) – Hvorfor verden ikke stoppet invasjonen.",
                 "[Tyskland: Veien mot nazismen](/historie/mellomkrigstiden/tyskland) – Japans allierte i vest."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var Taishō-perioden, og hvilke tegn på et friere samfunn nevner teksten fra 1910- og 1920-tallet?",
+                    "Hva gjorde offiserene i Kwantung-hæren i september 1931, og hvordan reagerte regjeringen i Tokyo på det?",
+                    "Hva skjedde i Nanjing i desember 1937, og hvor mange mennesker anslår teksten at ble drept?",
+                    "Hvorfor ble den amerikanske oljeembargoen i 1941 en så alvorlig krise for Japan?"
+                ],
+                "reflekter": [
+                    "Historikeren i teksten sier at demokratiet i Japan var 'som et vakkert tre plantet i sand - uten røtter'. Forklar med egne ord hva som gjorde Taishō-demokratiet svakt.",
+                    "26. februar-hendelsen var et mislykket kupp, men styrket likevel militærets makt. Forklar hvordan et nederlag kunne føre til mer makt for hæren.",
+                    "Teksten sier at Japan 'lærte ekspansjon av de samme maktene som senere fordømte den'. Hva mener forfatteren med dette, og synes du kritikken mot Japan blir mindre rettferdig av den grunn?",
+                    "Sammenlign situasjonen unge offiserer fra fattige landsbyer havnet i etter 1929-krakket. Hvordan kan økonomisk krise gjøre folk mer villige til å støtte vold og radikale ideer?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at stridene om minnene, over Nanjing og Yasukuni-helligdommen, ennå ikke er fullt ut konfrontert. Finn et eksempel på at fortiden fortsatt skaper strid mellom land i dag, og skriv kort om hvorfor.",
+                    "Skriv en kort tekst på rundt ti setninger der du er admiral Yamamoto. Du advarer mot krig med USA, men får likevel ordre om å planlegge angrepet på Pearl Harbor. Hvordan tenker du?",
+                    "Diskuter i klassen: Teksten kaller Japans historie et 'moderniseringens paradoks' fordi teknologi og industri ikke automatisk ga liberale verdier. Kan et land bli teknologisk avansert og samtidig udemokratisk i dag?"
+                ]
+            }
         }
     ],
     "quiz": [

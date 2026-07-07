@@ -80,6 +80,29 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordene ahimsa og satyagraha, og hvordan brukte Gandhi disse ideene i frigjøringskampen?",
+                    "Hva skjedde under Saltmarsjen i 1930, og hvorfor var salt et smart valg for Gandhi å protestere mot?",
+                    "Hvorfor krevde Muhammad Ali Jinnah og muslimene sin egen stat, Pakistan?",
+                    "Hva var Radcliffe Line, og hva skjedde med menneskene da britene trakk denne streken i 1947?"
+                ],
+                "reflekter": [
+                    "Gandhi mente man skulle bryte urettferdige lover åpenlyst og ta straffen med verdighet. Forklar hvorfor denne metoden kunne snu verdensopinionen mot britene selv om Gandhi selv ikke brukte vold.",
+                    "Britene fengslet 60 000 mennesker under Saltmarsjen, men klarte likevel ikke å stoppe bevegelsen. Hva sier dette om hvorfor makt bygget på frykt kan svikte?",
+                    "Sammenlign Gandhis og Jinnahs visjoner for India ut fra Comparison-tabellen. Hvilken av de to synene tror du var vanskeligst å gjennomføre i praksis, og hvorfor?",
+                    "Frigjøringen kalles i artikkelen en blodig fødsel fordi opp mot en million mennesker ble drept. Hvordan kan en frihetskamp bygget på ikke-vold likevel ende i så mye vold?"
+                ],
+                "gaaVidere": [
+                    "Gandhis ikke-voldelige metoder inspirerte senere ledere i andre land. Finn et eksempel på en bevegelse eller person i nyere tid som har brukt sivil ulydighet, og forklar kort hva de kjempet for.",
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en ung person i India i 1947 som må flykte over den nye grensen. Hva ser du, og hva tenker du?",
+                    "Diskuter med en partner: Er ikke-vold alltid den beste måten å kjempe mot urett på, eller finnes det situasjoner der det ikke fungerer? Bruk eksempler fra artikkelen."
+                ]
+            }
         }
     ],
     "quiz": [

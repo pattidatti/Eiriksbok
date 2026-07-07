@@ -206,6 +206,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde julaften 1991, og hvorfor sto USA da igjen alene på toppen?",
+                    "Forklar med egne ord forskjellen på en bipolar og en unipolar verden.",
+                    "Hva var strukturtilpasning, og hvilke tre krav måtte fattige land ofte godta for å få nye lån fra IMF?",
+                    "Hvilke to hendelser regnes i teksten som slutten på den unipolare epoken, og i hvilke år skjedde de?"
+                ],
+                "reflekter": [
+                    "Fukuyama kalte 1991 for historiens slutt. Forklar hva han mente, og hvorfor teksten sier at han tok feil.",
+                    "Teksten sier at globaliseringen ble en vei ut av fattigdom for noen, men tok jobbene fra andre. Forklar hvordan gevinsten ble delt så ujevnt, og bruk eksempelet med joggeskoen.",
+                    "Sett fra Vesten var NATO-utvidelsen østover en seier for friheten, men sett fra Moskva så det helt annerledes ut. Forklar begge synene og hvorfor de kan være sanne samtidig.",
+                    "Granskerens notat sier at både historien om frihet og historien om skjev makt er sanne på én gang. Argumenter for hvorfor det gjør historie vanskelig, men også viktig."
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt (4-6 setninger) der du undersøker klærne eller mobilen din: hvor er de laget, og hvordan viser det at globaliseringen fortsatt preger hverdagen din.",
+                    "Teksten sier at Kina og Russland vokste fram etter 2008. Diskuter i klassen om verden i dag er unipolar, eller om det finnes flere maktsentre nå.",
+                    "Bruk granskerens metode fra teksten (følg pengene) på en nyhetssak du har hørt om nylig. Hvem tjener mest på det som skjer, og hvem betaler prisen?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

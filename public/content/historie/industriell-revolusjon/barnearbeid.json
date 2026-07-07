@@ -306,6 +306,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor gammel var Mary, og hva var jobben hennes under vevemaskinene i fabrikken i Manchester?",
+                    "Nevn tre grunner til at fabrikkeierne foretrakk å bruke barn framfor voksne menn.",
+                    "Hva var Sadler-komiteen fra 1832, og hva gjorde den?",
+                    "Hva bestemte fabrikkloven av 1833, og hvorfor var det viktig at loven krevde inspektører?"
+                ],
+                "reflekter": [
+                    "Teksten sier at mange fattige familier ikke hadde noe valg og måtte sende barna på jobb. Forklar hvorfor foreldrene følte at de ikke kunne velge annerledes.",
+                    "I fabrikken kunne barna få bomullslunge, bli tunghørte og miste fingre. Forklar hvordan selve arbeidsplassen skapte disse skadene.",
+                    "Sammenlign hverdagen til en bondegutt på landet i 1750 med en fabrikkjente i byen i 1830. Hva var den største forskjellen, mener du, og hvorfor?",
+                    "Fabrikkeierne klaget over at lover ville ødelegge handelen og gjøre England fattig. Vurder om dette var et godt argument, og forklar hvorfor det likevel tapte."
+                ],
+                "gaaVidere": [
+                    "Teksten forteller at rundt 160 millioner barn jobber i verden i dag, og at noen varer havner i norske butikker. Skriv et kort avsnitt om hva du selv kan gjøre for å unngå å kjøpe varer laget av barnearbeid.",
+                    "Elizabeth Bentley fikk aldri en bedre barndom, men historien hennes bidro til endring. Diskuter med en medelev hvorfor det å fortelle slike historier kan forandre et samfunn.",
+                    "Teksten sier at maskiner en gang tok jobbene til de voksne veverne, og at nye maskiner tar over arbeid på nytt i dag. Skriv ned to likheter og en forskjell mellom den gangen og nå."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

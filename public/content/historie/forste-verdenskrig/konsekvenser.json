@@ -107,6 +107,29 @@
     {
       "type": "text",
       "content": "Krigen fikk også store sosiale konsekvenser, spesielt for kvinner. Da millioner av menn dro til fronten, ble det mangel på arbeidskraft hjemme. Kvinner overtok jobbene i ammunisjonsfabrikkene, i transportsektoren og i landbruket. De viste at de kunne utføre tungt og krevende arbeid like godt som menn. Denne innsatsen gjorde det umulig å opprettholde de gamle argumentene om at kvinner ikke var skikket til å delta i samfunnslivet.\n\nI årene rett etter krigen fikk kvinner stemmerett i en rekke land, inkludert Storbritannia, Tyskland, USA og Østerrike (Norge hadde innført dette allerede i 1913). Krigen hadde dermed fremskyndet likestillingen, selv om mange kvinner ble tvunget tilbake til husmorrollen da mennene kom hjem."
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilke fire imperier kollapset som følge av krigen, og nevn minst én ny stat som oppsto etter hvert av dem?",
+                "Hva sa artikkel 231 i Versailles-traktaten, og hvorfor skapte den så mye bitterhet i Tyskland?",
+                "Hva var prinsippet om nasjonal selvbestemmelse i Woodrow Wilsons «14 punkter», og hvilke nye stater i Øst-Europa førte det til?",
+                "Hvorfor ble Folkeforbundet svakt allerede fra starten? Nevn minst to grunner fra teksten."
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvordan «dolkestøtlegenden» oppsto, og hvorfor Hitler og nazistene senere kunne utnytte den.",
+                "Teksten sier at grensene ikke kunne trekkes slik at alle ble fornøyde. Forklar hvorfor de nye statene endte opp med store etniske minoriteter, og hvorfor det var farlig.",
+                "Sammenlign hva Frankrike ønsket med hva USA ønsket under fredsforhandlingene. Hvorfor tror du de var uenige?",
+                "Krigen ga kvinner nye jobber og etter hvert stemmerett i flere land. Hvorfor mener du krigen fremskyndet likestillingen, og hvorfor ble mange kvinner likevel tvunget tilbake til husmorrollen?"
+            ],
+            "gaaVidere": [
+                "Folkeforbundet var forløperen til dagens FN. Finn ut én ting FN gjør i dag som Folkeforbundet ikke klarte, og skriv noen setninger om hva som er forbedret.",
+                "Skriv en kort tekst (5-8 setninger) der du argumenterer for om Versailles-traktaten var for hard mot Tyskland eller passe streng. Bruk minst to konkrete punkter fra traktaten.",
+                "Diskuter med en partner: Kan en fredsavtale som ydmyker den tapende parten skape grunnlag for en ny krig? Bruk konsekvensene av Versailles som eksempel."
+            ]
+        }
     }
   ],
   "createdDate": "2025-12-21T14:40:00Z",

@@ -54,6 +54,29 @@
         {
             "type": "text",
             "content": "Da portugiserne dro, stod ett hvitt mindretallsstyre igjen: Apartheid-regimet i Sør-Afrika. Omgitt av nye, svarte nasjoner, ble Sør-Afrika mer og mer isolert. Etter tiår med internasjonal boikott og indre motstand (ledet av ANC), måtte regimet til slutt gi tapt.\n\nI 1994, da Nelson Mandela ble valgt til president, ble den siste store brikken i dekoloniseringen lagt på plass. Et kapittel som startet med Columbus i 1492 var omsider over."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalte diktatoren Salazar koloniene Angola, Mosambik og Guinea-Bissau, og hva mente han om dem?",
+                    "Hva skjedde 25. april 1974, og hvorfor kalles det Nellikrevolusjonen?",
+                    "Hvilket land stod igjen som den siste skansen etter at portugiserne dro, og hvem styrte det?",
+                    "Hva skjedde i Sør-Afrika i 1994, og hvem ble valgt til president?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor den lange krigen fra 1961 til 1974 til slutt fikk selve hæren i Portugal til å vende seg mot diktaturet.",
+                    "Hvorfor ble Sør-Afrika mer og mer isolert etter at nabolandene ble frie, svarte nasjoner?",
+                    "Teksten sier at internasjonal boikott og indre motstand fra ANC sammen tvang Apartheid-regimet til å gi tapt. Hvorfor kan det trenge press både utenfra og innenfra for å velte et regime?",
+                    "Artikkelen sier at et kapittel som startet med Columbus i 1492 var over i 1994. Hva mener teksten med at dette var det samme kapitlet, og er du enig i at det henger sammen?"
+                ],
+                "gaaVidere": [
+                    "Nelson Mandela satt i fengsel i mange år før han ble president. Finn ut hvor lenge han satt fengslet, og skriv tre-fire setninger om hva det forteller om kampen mot Apartheid.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor akkurat Sør-Afrika kalles den siste skansen i dekoloniseringen.",
+                    "Diskuter med en partner: Boikott var et viktig våpen mot Apartheid. Finnes det steder i verden i dag der land bruker boikott for å presse fram forandring? Virker det?"
+                ]
+            }
         }
     ],
     "quiz": [

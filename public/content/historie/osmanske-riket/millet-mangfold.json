@@ -87,6 +87,29 @@
       "caption": "Da nasjonalismen vokste fram, begynte folkegruppene å drømme om egne land. Da ble mangfoldet en bruddlinje."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva skjedde i Spania i 1492, og hva gjorde den osmanske sultanen samtidig?",
+                "Hva var millet-systemet? Forklar kort hvordan hver religiøs gruppe ble styrt.",
+                "Hva var cizye, og hvem måtte betale denne skatten?",
+                "Nevn minst tre folkegrupper som bodde i det osmanske riket."
+            ],
+            "reflekter": [
+                "Artikkelen sier at friheten hadde en pris som ble betalt i skatt og status. Forklar hva som menes med 'frihet, men ikke likhet'.",
+                "Hvorfor tror du sultanen valgte å la hver gruppe styre seg selv i stedet for å tvinge alle til å bli like?",
+                "Sammenlign hvordan riket og Europa behandlet folk med annen tro på samme tid. Hva var den største forskjellen?",
+                "Forklar hvordan mangfoldet først var en styrke for riket, men senere ble en bruddlinje som rev det fra hverandre."
+            ],
+            "gaaVidere": [
+                "Finnes det land i dag der folk med ulik religion lever side om side under samme stat? Nevn ett eksempel og beskriv kort hvordan det fungerer.",
+                "Skriv en kort tekst (4-6 setninger) fra en jødisk familie som forlot Spania i 1492 og kom til det osmanske riket. Hvordan opplevde de forskjellen?",
+                "Diskuter i klassen: Er det nok å gi folk frihet til å tro hva de vil, eller må alle også være helt like for loven for at et samfunn skal være rettferdig?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

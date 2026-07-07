@@ -125,6 +125,29 @@
         {
             "type": "text",
             "content": "Som alltid bør vi være kildekritiske. I lang tid nektet USA for å ha blandet seg inn i Chile. Men senere ble hemmelige dokumenter offentliggjort, og de viste svart på hvitt hva CIA hadde gjort. Det minner oss om at de mektige ikke alltid forteller sannheten med en gang - og at historikere må grave i arkivene for å finne den."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var den største rikdommen i Chile, og hvem eide de store gruvene før Allende ble president?",
+                    "Hva ville Salvador Allende gjøre med kobbergruvene, og hva skulle pengene brukes til?",
+                    "Hvilke tre-fire grep brukte USA for å ødelegge Chiles økonomi uten å sende soldater?",
+                    "Hva skjedde 11. september 1973, og hvem tok makten etter kuppet?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hva Nixon mente da han ga ordren om å 'få økonomien til å skrike'. Hvorfor er dette en slags krig selv om ingen skjøt?",
+                    "Hvorfor ble Nixon så redd for at Allende skulle lykkes? Hva var han egentlig redd for at andre land ville gjøre?",
+                    "Teksten sier at Chile ble et 'laboratorium' for Chicago-guttene. Hvorfor er det et problem at de store økonomiske endringene ble gjennomført under et diktatur der ingen fikk protestere?",
+                    "Sammenlign kuppet i Chile med Operasjon Ajax i Iran. Hva er likt i oppskriften, og hva er den viktigste forskjellen i metoden?"
+                ],
+                "gaaVidere": [
+                    "USA nektet lenge for å ha blandet seg inn i Chile, helt til hemmelige dokumenter ble offentliggjort. Skriv noen setninger om hvorfor det er viktig at historikere får tilgang til gamle arkiver.",
+                    "Diskuter med en partner: Er økonomisk krigføring, der man kveler et lands økonomi i stedet for å invadere, mer eller mindre alvorlig enn en vanlig krig? Begrunn svaret.",
+                    "Finn ut om et land som i dag er rammet av økonomiske sanksjoner eller boikott. Ligner det på det USA gjorde mot Chile, eller er det forskjellig?"
+                ]
+            }
         }
     ],
     "quiz": [

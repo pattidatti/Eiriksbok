@@ -160,6 +160,29 @@
       "content": "I dag, over 35 år senere, holder studenter i Hongkong stearinlys hvert år den 4. juni for å minnes de som ble drept. Men siden 2020 har myndighetene forbudt også det. Det siste stedet i Kina der noen åpent minnes Tiananmen, er blitt stille. Flammen er slukket - i det minste der man kan se den."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var det studentene på Tiananmen-plassen faktisk krevde i april og mai 1989? Nevn minst tre ting fra teksten.",
+                "Hvem var Zhao Ziyang, og hva skjedde med ham etter at han ville snakke med demonstrantene?",
+                "Hva skjedde natten til 4. juni 1989, og hvorfor er det umulig å vite nøyaktig hvor mange som ble drept?",
+                "Hvem var tankmannen, og hva vet vi egentlig om hva som skjedde med ham etterpå?"
+            ],
+            "reflekter": [
+                "Teksten forteller at soldatene som først kom til plassen delte mat med studentene, mens myndighetene senere hentet soldater fra andre deler av Kina. Hvorfor tror du lederskapet gjorde nettopp det?",
+                "I 1989 valgte Kina stridsvogner, mens Berlin-muren falt fordi soldatene lot folk passere. Hva forteller denne forskjellen deg om hvordan ledere kan svare på krav om frihet?",
+                "Teksten sier at partiets seier i 1989 var kortsiktig, men at tilliten mellom folk og parti aldri ble reparert, bare undertrykt. Forklar hva du tror menes med dette.",
+                "Kinesiske ungdommer bruker koder som den 35. mai for å omgå sensuren. Hvorfor tror du folk tar en slik risiko for å snakke om noe som skjedde for over 35 år siden?"
+            ],
+            "gaaVidere": [
+                "Bildet av tankmannen er kjent over hele verden, men usynlig i Kina. Skriv et kort avsnitt om hvorfor et enkelt fotografi kan bli så farlig for et lederskap.",
+                "Finn ut hvordan en stat kan sensurere informasjon på nettet i dag, og sammenlign med hvordan Kina blokkerer over 90 000 nettsider om Tiananmen. Del funnene dine med klassen.",
+                "Diskuter i grupper: Bør et land ha rett til å bestemme selv hva som skjer med egne innbyggere, eller har andre land et ansvar for å reagere når noe slikt som Tiananmen skjer?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

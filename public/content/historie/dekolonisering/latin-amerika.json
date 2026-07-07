@@ -88,6 +88,29 @@
                 "author": "Simón Bolívar",
                 "text": "Jeg har pløyd i havet."
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var en kreol, og hvordan skilte kreolene seg fra peninsulares i det spanske systemet?",
+                    "Hvilken hendelse i 1808 ga kreolene sjansen til å danne sine egne regjeringer?",
+                    "Hvilke land dekker Gran Colombia, som Bolívar grunnla, i dag?",
+                    "Nevn to grunner teksten gir til at Gran Colombia falt sammen i 1831."
+                ],
+                "reflekter": [
+                    "Forklar hvorfor opprøret i Latin-Amerika ble ledet av den rike overklassen og ikke av slavene, slik som på Haiti.",
+                    "Hvordan gjorde geografien i Sør-Amerika, med Andesfjellene og Amazonas-jungelen, det vanskelig å holde Gran Colombia samlet?",
+                    "Sammenlign Simón Bolívar og José de San Martín. Hvordan var målene og stilen deres forskjellige?",
+                    "Bolívar sa «Jeg har pløyd i havet.» Hva tror du han mente med dette, ut fra hvordan drømmen hans endte?"
+                ],
+                "gaaVidere": [
+                    "Bolívar ville forene Sør-Amerika til én stor nasjon, slik USA i nord. Diskuter hvorfor det lyktes i nord, men ikke i sør.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor et land som frigjør seg, likevel kan ende opp splittet og ustabilt.",
+                    "Finn ut hvilket land Bolívar har fått oppkalt etter seg i dag, og fortell kort hvorfor han fortsatt blir husket der."
+                ]
+            }
         }
     ],
     "quiz": [

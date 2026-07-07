@@ -156,6 +156,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange mennesker ble omtrent brent som hekser i Norge mellom 1567 og 1696, og hvor mange av dem var fra Finnmark?",
+                    "Hva var det ved forordningen fra Danmark i 1617 som gjorde den så juridisk farlig?",
+                    "Hvilke tre grupper mennesker var mest utsatt for å bli anklaget for hekseri?",
+                    "Hva var vannprøven, og hvordan kunne den gi skyldig-dom uansett hva som skjedde?"
+                ],
+                "reflekter": [
+                    "Forklar hva et lukket bevissystem er, og bruk minst to eksempler fra teksten på hvordan et merke, en tilståelse eller en vannprøve alltid endte med skyldig dom.",
+                    "Teksten sier at hekseprosessene sluttet fordi folk begynte å tvile på bevisreglene, ikke fordi noen oppdaget at heksene var uskyldige. Hvorfor er den forskjellen viktig for hvordan en rettsstat blir bedre?",
+                    "Hvorfor tror du de som hadde lite familie, lite eiendom og liten innflytelse var lettest å peke ut som hekser? Bruk eksemplet med kua som dør etter en krangel.",
+                    "Sammenlign torturen sin rolle med bevisreglene sin rolle. Hvilken av de to mener du drev kjedereaksjonene mest, og hvorfor?"
+                ],
+                "gaaVidere": [
+                    "Teksten sammenligner heksetankegangen med moderne konspirasjonsteorier, der manglende bevis blir tolket som bevis. Finn et eksempel fra i dag der noen tolker mangel på bevis som bekreftelse, og forklar likheten.",
+                    "Skriv en kort tekst på 5-8 setninger fra Mari Jorgensdatter sitt perspektiv den natten hun blir presset til å tilstå og navngi andre.",
+                    "Diskuter i klassen: Steilneset minnested ble åpnet i 2011, over 300 år etter prosessene. Hvorfor er det viktig at et land minnes urett som staten selv sto bak?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

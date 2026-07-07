@@ -134,6 +134,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva heter den ene gode skaperguden i zoroastrismen, og hva betyr navnet hans?",
+                    "Hva betyr de tre ordene humata, hukhta og hvarshta?",
+                    "Hvorfor brenner det en flamme i et zoroastrisk tempel, og hva er den et symbol på?",
+                    "Hva er Chinvat-brua, og hva skjer med den ut fra hvordan et menneske har levd?"
+                ],
+                "reflekter": [
+                    "Zarathustra mente at et menneske som tenker pent og snakker pent, men handler stygt, er like skadelig som en åpent ond person - kanskje verre. Forklar hvorfor han mente det.",
+                    "Forklar med egne ord hvordan zoroastrismen svarer på spørsmålet om hvorfor det finnes lidelse og ondskap i verden.",
+                    "Da Kyros den store frigjorde jødene fra Babylon i 539 fvt, endret dette religionshistorien. Forklar hvordan zoroastriske ideer kunne spre seg videre til jødedom, kristendom og islam.",
+                    "Zoroastrismen har i dag kanskje bare 100 000-200 000 tilhengere, men teksten sier at læren har påvirket milliarder. Hvordan kan en så liten religion få så stor betydning?"
+                ],
+                "gaaVidere": [
+                    "Ord vandrer mellom språk: paradis kommer fra det gammelpersiske paridaida, som betyr «hage med mur rundt». Finn to andre norske ord som opprinnelig kommer fra et annet språk, og skriv kort hva de betydde før.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hva tanken om «gode tanker, gode ord, gode gjerninger» kan bety i din egen hverdag. Gi minst tre konkrete eksempler.",
+                    "Diskuter med en partner: Bør vi prøve å redde religioner og språk som holder på å dø ut, eller er det greit at de forsvinner? Begrunn svarene deres."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Test deg selv",

@@ -80,6 +80,29 @@
     {
       "type": "text",
       "content": "Etter krigen var de gamle europeiske stormaktene Storbritannia og Frankrike svekket. Makten i verden flyttet seg til de to nye supermaktene: USA og Sovjetunionen. Det gamle systemet med europeiske kolonier begynte å rakne, da folk i Asia og Afrika krevde sin frihet.\n\nFor å hindre nye verdenskriger og sikre menneskerettighetene, ble De forente nasjoner (FN) opprettet i 1945. Men alliansen mellom øst og vest brøt raskt sammen, og verden ble delt i to under den kalde krigen. Slik formet andre verdenskrig den verden vi lever i i dag, fra landegrenser og politiske allianser til teknologi og internasjonal rett."
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilke land ledet Aksemaktene, og hvem ledet dem? Nevn de tre lederne teksten trekker fram.",
+                "Hva menes med «total krig», og hvorfor ble sivilbefolkningen legitime mål?",
+                "Hva var Holocaust, og hvor mange jøder ble ifølge teksten drept?",
+                "Hvilken hendelse startet krigen i Europa, og hva gjorde Storbritannia og Frankrike da?"
+            ],
+            "reflekter": [
+                "Teksten kaller alliansen mellom vestlige demokratier og Sovjetunionen «skjør». Forklar hvorfor de likevel kjempet sammen.",
+                "Året 1941 endret krigen fra en europeisk konflikt til en verdenskrig. Forklar hvordan Operasjon Barbarossa og angrepet på Pearl Harbor bidro til dette.",
+                "Hvorfor regnes Stalingrad, Midway og El Alamein som vendepunkter? Hva hadde de til felles?",
+                "Etter krigen flyttet makten seg fra Storbritannia og Frankrike til USA og Sovjetunionen. Forklar hvorfor de gamle stormaktene ble svekket."
+            ],
+            "gaaVidere": [
+                "FN ble opprettet i 1945 for å hindre nye verdenskriger. Finn ut én ting FN gjør i dag, og vurder om organisasjonen har lykkes med målet sitt.",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor det er viktig at vi fortsatt lærer om Holocaust i dag.",
+                "Diskuter med en partner: Atombombene over Hiroshima og Nagasaki avsluttet krigen raskt, men drepte titusener av sivile. Var det riktig å bruke dem? Argumenter for begge sider."
+            ]
+        }
     }
   ],
   "createdDate": "2025-12-21T15:00:00Z",

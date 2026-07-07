@@ -75,6 +75,29 @@
         {
             "type": "component",
             "name": "EICSimulation"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem ga Det britiske ostindiske kompani kongelig privilegium, og i hvilket år ble selskapet stiftet?",
+                    "Hvorfor flyttet engelskmennene handelen sin fra Krydderøyene til India på 1600-tallet?",
+                    "Hva skjedde i slaget ved Plassey i 1757, og hvem ledet kompaniets styrker?",
+                    "Hva ble de indiske soldatene i kompaniets hær kalt, og omtrent hvor mange soldater hadde EIC på det meste?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvordan EIC kunne gå fra å være et handelsselskap til å bli en kolonimakt som styrte over millioner av mennesker.",
+                    "Kompaniet fikk rett til å føre krig, prege egne mynter og ha egen hær. Hvorfor er det spesielt at et privat selskap fikk slike fullmakter, og hvilke farer kan det føre til?",
+                    "For å betale for te fra Kina begynte kompaniet å smugle opium dit. Vurder hva denne handelen forteller oss om hvordan EIC prioriterte penger framfor mennesker.",
+                    "Etter Sepoy-opprøret i 1857 tok den britiske staten over styringen av India. Hvorfor mistet britene tilliten til kompaniet, selv om opprøret ble slått ned?"
+                ],
+                "gaaVidere": [
+                    "Finn et stort selskap i dag som har mye makt over land og mennesker. Sammenlign det kort med EIC: hva er likt, og hva er annerledes?",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor bomull og te ble viktigere pengemaskiner for EIC enn krydder.",
+                    "Diskuter med en partner: Teksten sier at EIC etterlot seg en arv av utbytting som preger verden i dag. Hva kan menes med det?"
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",

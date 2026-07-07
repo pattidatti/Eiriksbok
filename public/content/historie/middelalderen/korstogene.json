@@ -77,6 +77,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva lovte pave Urban 2. i talen sin i Clermont til alle som dro på korstog?",
+                    "Hva betyr ropet «Deus vult», og hvem ropte det?",
+                    "Hva skjedde da korstogfarerne stormet Jerusalem 15. juli 1099?",
+                    "Hvorfor endte det fjerde korstoget med at kristne plyndret den kristne byen Konstantinopel?"
+                ],
+                "reflekter": [
+                    "Teksten sier at bare en mindre del av korstogfarerne dro av rein religiøs tro. Forklar minst tre andre grunner til at folk ble med.",
+                    "Hvorfor passet det paven godt å sende Europas kranglende riddere østover mot en felles fiende?",
+                    "Artikkelen sier at Europa tapte korstogene militært, men likevel vant noe viktigere. Forklar hva som menes med det.",
+                    "Den islamske verden lå i 1095 langt foran Europa i kunnskap og handel. Hvorfor er dette overraskende for mange når de tenker på middelalderen?"
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at en flat «vi mot dem»-fortelling lett kan brukes til å mobilisere mennesker. Finn et eksempel fra vår egen tid der noen bruker en slik enkel fortelling, og forklar hvordan den virker.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan varer som krydder, sukker og papir fra Midtøsten kan ha forandret hverdagen til folk i Europa.",
+                    "Diskuter med en partner: Var korstogene mest en religionskrig eller mest en kamp om jord, penger og makt? Bruk eksempler fra teksten."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Korstogene – sjekk forståelsen",

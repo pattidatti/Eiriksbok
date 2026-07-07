@@ -146,6 +146,29 @@
       "content": "Når du i dag ser at Sør-Europa er katolsk og Skandinavia er luthersk, ser du resultatet av to bevegelser som svarte hverandre: Luthers reformasjon og Roms svar. Mottreformasjonen er bevis på at en gammel og mektig institusjon kan fornye seg selv — så lenge den klarer å se i speilet."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var de tre hovedverktøyene Den katolske kirke brukte i mottreformasjonen?",
+                "Hvor og i hvor mange år varte Tridentinerkonsilet, og nevn to ting det bestemte?",
+                "Hva var Index Librorum Prohibitorum, og hvilke kjente forfattere havnet på lista?",
+                "Hva het den nye kunststilen katolikkene brukte, og hvordan skilte kirkene deres seg fra de protestantiske?"
+            ],
+            "reflekter": [
+                "Teksten kaller jesuittordenen for en hær, med en general på toppen og militær lydighet. Forklar hvorfor denne oppbyggingen gjorde jesuittene til et så effektivt verktøy for paven.",
+                "På Tridentinerkonsilet avviste kirken mye av det Luther mente, men vedtok også noe han hadde rett i (som forbud mot avlatshandel). Hvorfor tror du kirken gjorde begge deler samtidig?",
+                "Artikkelen sier at Roma ville bygge kirken sin på opplevelse, mens Luther bygde på det skrevne ordet. Sammenlign de to måtene å nå folk på, og vurder hvilken du tror virket sterkest på vanlige mennesker på 1500-tallet.",
+                "Teksten sier at mottreformasjonen både fornyet kirken og satte et bittert spor. Argumenter for om du mener bevegelsen først og fremst var en styrke eller en svakhet for Europa."
+            ],
+            "gaaVidere": [
+                "Galileo måtte trekke tilbake det han hadde funnet ut, og først i 1992 innrømmet paven at kirken tok feil. Diskuter i klassen: finnes det i dag makter som prøver å stoppe ideer eller informasjon de ikke liker?",
+                "Skriv en kort tekst (4-6 setninger) der du forklarer hvorfor Norge ble et protestantisk land, og hva mottreformasjonen hadde med den grensen å gjøre.",
+                "Artikkelen sier at det religiøse kartet fra rundt 1650 nesten ligger fast i dag. Finn et kart over dagens Europa og sjekk om påstanden stemmer for tre land du velger selv."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

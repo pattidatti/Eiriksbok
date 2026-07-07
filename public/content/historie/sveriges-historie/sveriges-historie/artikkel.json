@@ -209,6 +209,29 @@
                     "explanation": "Forhandlingene mellom Norge og Sverige i 1905 foregikk i Karlstad."
                 }
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er Birger Jarl best kjent for, og hvilken by regnes han som grunnleggeren av?",
+                    "Hva var Stockholms blodbad i 1520, og hvem sto bak henrettelsene?",
+                    "Hva skjedde i 1523, og hvorfor er 6. juni en viktig dato i svensk historie?",
+                    "Hvordan ble unionen mellom Norge og Sverige oppløst i 1905, og hvor ble forhandlingene holdt?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Sverige ofte vendte blikket østover mot Østersjøen, mens Norge og Danmark så vestover mot Atlanterhavet. Forklar hvordan denne ulike orienteringen kan ha formet landenes historie forskjellig.",
+                    "Gustav Vasa gjennomførte reformasjonen ikke først og fremst av religiøs overbevisning, men for å konfiskere kirkens verdier og betale ned statsgjelden. Hva forteller dette om hvordan makt og penger kan henge sammen med religion?",
+                    "Under Stormaktstiden var Østersjøen nesten en 'svensk innsjø', men imperiet krevde konstante og dyre kriger. Vurder hvorfor det å bygge et stort imperium kan bli en svakhet i stedet for en styrke.",
+                    "I 1905 mobiliserte både Norge og Sverige hærene sine langs grensen, men det endte likevel med fred. Forklar hvorfor unionsoppløsningen regnes som et forbilde på fredelig konfliktløsning."
+                ],
+                "gaaVidere": [
+                    "Sverige holdt seg nøytralt gjennom begge verdenskrigene og bygde den såkalte 'svenske modellen'. Undersøk hva Sverige er kjent for i dag, og skriv kort om hvordan landet har endret seg fra krigerstaten i stormaktstiden.",
+                    "Birger Jarls kvinnefred satte strenge straffer for overgrep mot kvinner på 1200-tallet. Diskuter i klassen hvorfor en slik lov var uvanlig for sin tid, og hva den kan fortelle oss om hvordan lover kan endre et samfunn.",
+                    "Skriv en kort tekst der du forestiller deg at du er en av delegatene i Karlstad høsten 1905. Hva ville du sagt for å overbevise de andre om at fred var bedre enn krig?"
+                ]
+            }
         }
     ]
 }

@@ -147,6 +147,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor gammel var Aleksander da han ble konge, og hvor gammel var han da han døde?",
+                    "Hvem var Aleksanders lærer, og hvilken bok ga læreren ham som Aleksander sov med under puta resten av livet?",
+                    "Nevn de tre store slagene Aleksander vant mot perserne, og forklar hvorfor teksten sier han tapte aldri et slag.",
+                    "Hva menes med hellenismen, og hvor lenge levde denne blandingskulturen ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten sier at det ikke var seirene som gjorde Aleksander til den store, men det han gjorde med de tapende. Forklar med egne ord hva han gjorde annerledes enn andre erobrere.",
+                    "Persia hadde ti ganger så mange soldater, men tapte likevel. Bruk faktaboksen og teksten til å forklare minst to grunner til at den store hæren tapte.",
+                    "Mange av Aleksanders egne generaler mislikte at han kledde seg i persisk drakt og lot persiske ledere beholde stillingene. Vurder om du synes valget hans var klokt eller ikke, og begrunn svaret.",
+                    "Buddha-statuene i Gandhara fikk plutselig greske ansiktstrekk. Forklar hvordan dette ene eksemplet viser hva hellenismen egentlig var."
+                ],
+                "gaaVidere": [
+                    "Aleksander integrerte de erobrede folkene i stedet for å utslette dem. Finn et eksempel fra nyere tid der to kulturer har blandet seg og blitt til noe nytt, og skriv noen setninger om likhetene med hellenismen.",
+                    "Skriv en kort tekst på 5-8 setninger der du forsvarer eller kritiserer påstanden om at Aleksander fortjener tilnavnet den store, når du vet at han også brente Persepolis og drepte vennen sin Kleitos.",
+                    "Diskuter i par: Hvorfor kan et imperium som ser erobreren som en av oss holde lenger enn et imperium som hater erobreren sin? Bruk Aleksander som eksempel."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "title": "Sjekk forståelsen",

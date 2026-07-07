@@ -108,6 +108,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem satt som president i USA da Iran-Contra-skandalen skjedde, og i hvilke år foregikk de hemmelige operasjonene?",
+                    "Hva forbød Boland-tillegget fra 1984, og hvorfor vedtok Kongressen det?",
+                    "Forklar det doble spillet med gisler og missiler: Hva skulle Iran få, og hva skulle USA få tilbake?",
+                    "Hvordan sprakk skandalen? Nevn de to hendelsene i oktober og november 1986 som avslørte den."
+                ],
+                "reflekter": [
+                    "Reagan sa offentlig at han aldri ville forhandle med terrorister, men solgte i hemmelighet missiler til Iran som han kalte et terroristregime. Forklar hvorfor dette gapet mellom ord og handling gjorde skandalen så alvorlig.",
+                    "I teksten står det at Reagan og medarbeiderne mente 'hensikten helliggjorde midlene'. Vurder dette forsvaret: Kan et godt mål gjøre det greit å bryte loven? Begrunn svaret ditt.",
+                    "Comparison-boksen viser to syn på Oliver North: helten og lovbryteren. Velg det synet du er mest uenig i, og skriv et motargument mot det.",
+                    "President George H.W. Bush benådet i 1992 flere av de dømte, selv om han hadde vært visepresident under Reagan. Hvorfor kan mange mene at nettopp han ikke burde ha gitt disse benådningene?"
+                ],
+                "gaaVidere": [
+                    "Teksten avslutter med spørsmålet om en president kan sette sine egne mål over landets lover. Finn et nyere eksempel fra nyhetene der en leder anklages for å ha satt seg over loven, og sammenlign kort med Iran-Contra.",
+                    "Skriv en kort tekst (5-8 setninger) fra Oliver Norths perspektiv der han forklarer for en venn hvorfor han mente han gjorde det riktige.",
+                    "Diskuter i klassen: Bør politikere som handler i hemmelighet 'for landets beste' straffes hardere eller mildere enn andre lovbrytere? Finn argumenter for begge sider."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

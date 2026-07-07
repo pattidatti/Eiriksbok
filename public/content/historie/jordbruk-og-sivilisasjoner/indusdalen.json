@@ -164,6 +164,29 @@
       "content": "Den lærer oss også at sivilisasjoner ikke er evige. En kultur som blomstret i nesten tusen år, kunne forsvinne i løpet av noen få generasjoner når naturen endret seg. Det er en påminnelse om hvor sårbare også våre egne samfunn kan være. Endelig viser Indusdalen at historien er full av hull. Vi har funn, men ingen tekst. Vi har byer, men ingen navn. Arkeologien er detektivarbeid — og noen ganger forblir saken uoppklart."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvor lå Indusdalen, og hvilken elv er sivilisasjonen oppkalt etter?",
+                "Hva var spesielt med gatene og avløpssystemet i byer som Mohenjo-daro?",
+                "Hvorfor mener forskere at Indusdalen kanskje var et samfunn uten konger? Nevn minst to funn de bygger på.",
+                "Hva er hovedgrunnen til at ingen har klart å lese Indus-skriften?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor arkeologene ble så overrasket over at byene i Indusdalen var planlagt på forhånd, mens byene i Egypt og Mesopotamia vokste mer tilfeldig.",
+                "Artikkelen sier at Indusdalen tvinger oss til å revurdere hva en avansert sivilisasjon er. Hva mener den med det?",
+                "Sammenlign Indusdalen med Mesopotamia slik teksten beskriver dem. Hva var den største forskjellen mellom de to samfunnene?",
+                "Teksten peker på flere teorier om hvorfor Indusdalen forsvant, men sier vi ikke vet sikkert. Hvilken teori synes du virker mest sannsynlig, og hvorfor?"
+            ],
+            "gaaVidere": [
+                "Indusdalen hadde innlagt avløp i hvert hus 4000 år før det ble vanlig i Europa. Undersøk hvordan kloakk og rent vann fungerer der du bor i dag, og skriv tre setninger om hvorfor dette er viktig for et samfunn.",
+                "Artikkelen sier at en kultur som blomstret i nesten tusen år, kunne forsvinne på noen få generasjoner da naturen endret seg. Skriv en kort tekst (5-8 setninger) om hva vårt eget samfunn kan lære av dette.",
+                "Diskuter med en partner: Er det mulig for et stort samfunn å fungere godt uten en tydelig leder eller konge? Bruk Indusdalen som eksempel i argumentene deres."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

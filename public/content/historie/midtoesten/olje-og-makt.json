@@ -220,6 +220,29 @@
       "content": "Olje formet Midtøsten, og Midtøstens olje formet verden. Fra de første britiske oljeboringene i Persia i 1908 til OPEC-embargoen som rystet verdensøkonomien, til petrodollar-nettverkene som binder Vesten og arabiske monarker sammen i dag - ressursen under ørkensanden har alltid vært mer enn drivstoff. Den er makt, politikk og skjebne pa en gang. Les mer om [konflikter i Midtøsten](/historie/midtoesten) og [den kalde krigen](/historie/den-kalde-krigen) for a forsta det større bildet."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvem eide og kontrollerte oljen i Midtøsten da de første oljefunnene ble gjort tidlig på 1900-tallet, ifølge artikkelen?",
+                "Hvilke fem land grunnla OPEC i 1960, og hva var målet med organisasjonen?",
+                "Hva var den direkte årsaken til oljekrisen i 1973, og hva skjedde med oljeprisen i løpet av tre måneder?",
+                "Hva mener økonomer med begrepet oljeforbannelsen? Forklar med eksempler fra teksten."
+            ],
+            "reflekter": [
+                "Artikkelen sier at olje ikke bare er drivstoff, men makt. Forklar med egne ord hvordan de arabiske landene brukte olje som et politisk våpen i 1973.",
+                "Sammenlign Qatar og Yemen slik faktaboksen beskriver dem. Hvorfor er det ene landet blant verdens rikeste og det andre blant de fattigste, når begge ligger i Midtøsten?",
+                "Teksten sier at Vesten står i et politisk dilemma overfor Saudi-Arabia. Forklar hvorfor olje gjør det vanskelig for vestlige demokratier å kreve demokrati og menneskerettigheter.",
+                "Hvorfor startet Norge sin egen oljeutvinning i Nordsjøen på 1970-tallet? Koble svaret til det som skjedde under oljekrisen i 1973."
+            ],
+            "gaaVidere": [
+                "Artikkelen forteller at Gulf-statene nå investerer i solenergi fordi de vet at oljealderen har en slutt. Skriv et kort avsnitt om hva du tror kan skje med et land som Saudi-Arabia hvis verden slutter å bruke olje.",
+                "Diskuter i klassen: Bør vestlige land fortsette å kjøpe olje fra land som bryter menneskerettighetene, eller bør de la være selv om det blir dyrere? Finn argumenter for begge sider.",
+                "Midtøsten rammes hardt av klimaendringene selv om regionen tjener store penger på olje. Undersøk hvordan klimaendringer merkes der du bor, og sammenlign med det teksten sier om tørke og vannmangel i Midtøsten."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

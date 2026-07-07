@@ -143,6 +143,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor satt de 55 mennene i Philadelphia med lukkede vinduer sommeren 1787, enda det var kokvarmt?",
+                    "Hvilke tre statsmakter delte grunnloven makten mellom, og hva er hovedjobben til hver av dem?",
+                    "Hva menes med ordet føderalisme, slik det brukes i teksten om forholdet mellom den felles staten og delstatene?",
+                    "Hvem gjaldt friheten i grunnloven fra 1787 først og fremst for, og hvilke grupper falt utenfor?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvordan de tre statsmaktene kan stoppe hverandre. Bruk eksemplet med at Kongressen vil lage en ny lov.",
+                    "Mennene i salen trengte en sterkere stat, men var samtidig livredde for å gi for mye makt til én person. Hvordan løste maktfordelingen dette dilemmaet?",
+                    "Teksten sier at grunnloven hadde et stort hull. Er det rettferdig å kalle grunnloven en frihetsgrunnlov når slaveriet fikk fortsette? Begrunn svaret ditt.",
+                    "Filosofen Montesquieu skrev at frihet bare er trygg når makten deles opp. Hvorfor tror du en enehersker som sitter med all makten kan bli farlig?"
+                ],
+                "gaaVidere": [
+                    "Grunnloven fra 1787 er fortsatt i bruk. Finn ett eksempel fra nyhetene i dag der en av de tre statsmaktene i USA stopper eller er uenig med en annen, og forklar hva som skjer.",
+                    "Skriv et kort avsnitt der du forestiller deg at du er en av de fattige bøndene i Massachusetts som gjorde opprør vinteren før møtet. Hva ville du håpet at grunnloven skulle gi deg?",
+                    "Den amerikanske grunnloven var et forbilde da Norge lagde sin egen i 1814. Diskuter i klassen: hva er likt og hva er ulikt mellom hvordan makten deles i USA og i Norge i dag?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

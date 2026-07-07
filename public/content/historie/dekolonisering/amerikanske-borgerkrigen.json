@@ -125,6 +125,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor meldte sørstatene seg ut av unionen etter at Lincoln ble valgt til president?",
+                    "Hva var forskjellen på hvordan Nord og Sør tjente penger, og hvilken rolle spilte slavene i Sør?",
+                    "Hva erklærte Lincoln ved nyttår 1863, og hvordan forandret det hva krigen handlet om?",
+                    "Hva bestemte det 13. tillegget til grunnloven, og hvor mange mennesker ble fri?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor Nord hadde et overtak i krigen selv om Sør vant flere av de første slagene.",
+                    "Teksten sier at to syn på frihet sto mot hverandre. Forklar hva disse to synene var, og hvorfor de ikke kunne forenes.",
+                    "Hvorfor ble Frigjøringserklæringen viktig både på slagmarken og for hvordan verden så på krigen?",
+                    "Slaveriet ble forbudt i 1865, men teksten sier at friheten ikke var hel. Forklar hva Jim Crow-lovene gjorde, og hvorfor kampen fortsatte i hundre år til."
+                ],
+                "gaaVidere": [
+                    "Borgerkrigen bygde videre på idealene fra 1776 om at alle mennesker er skapt like. Finn et eksempel i dagens verden der folk fortsatt kjemper for at dette skal gjelde alle.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor over 600 000 døde likevel kan kalles en seier for USA.",
+                    "Diskuter med en partner: Har et enkeltland lov til å bryte ut av et større fellesskap hvis det er uenig med flertallet? Bruk borgerkrigen som eksempel."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

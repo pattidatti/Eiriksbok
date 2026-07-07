@@ -62,6 +62,29 @@
         {
             "type": "text",
             "content": "Nkrumah drømte om et «United States of Africa», et sterkt kontinent som kunne stå imot press fra både USA og Sovjetunionen. Han brukte Ghanas penger på å støtte frigjøringsbevegelser i andre land (som Guinea og Kongo).\n\nMen hjemme i Ghana gikk det dårligere. For å gjennomføre sine visjoner, gjorde Nkrumah seg selv til diktator og knuste opposisjonen. I 1966, mens han var på besøk i Kina, ble han styrtet i et militærkupp (sannsynligvis med hjelp fra CIA). Drømmen om et forent Afrika levde videre, men veien dit ble lengre enn han trodde."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken dato ble Ghana selvstendig, og hva het kolonien før den ble til Ghana?",
+                    "Hvorfor var uavhengigheten til Ghana i 1957 spesiell for Afrika sør for Sahara?",
+                    "Hva gikk ideen om Pan-Afrikanismen ut på, ifølge teksten?",
+                    "Hva skjedde med Kwame Nkrumah i 1966, og hvor var han da det skjedde?"
+                ],
+                "reflekter": [
+                    "Nkrumahs motto var «Søk først det politiske kongeriket, så skal alt annet gis dere.» Forklar hva han mente med dette, og hvorfor han satte politisk frihet foran økonomisk utvikling.",
+                    "Nkrumah brukte Ghanas penger på å støtte frigjøringsbevegelser i andre land som Guinea og Kongo. Hvorfor gjorde han det, når det kanskje gikk dårligere hjemme i Ghana?",
+                    "Teksten sier at Nkrumah gjorde seg selv til diktator for å gjennomføre visjonene sine. Diskuter om det kan være riktig å knuse opposisjonen for å nå et stort mål. Begrunn svaret ditt.",
+                    "Hvorfor ville Nkrumah at Afrika skulle stå samlet mot press fra både USA og Sovjetunionen? Hva kunne et forent Afrika oppnå som enkeltland ikke kunne?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (3-5 setninger) der du forklarer hvorfor drømmen om Afrikas Forente Stater var vanskeligere å gjennomføre enn Nkrumah trodde.",
+                    "Teksten nevner at kuppet mot Nkrumah sannsynligvis skjedde med hjelp fra CIA. Diskuter i klassen hvorfor en stormakt som USA kunne være interessert i hvem som styrte et land i Afrika.",
+                    "Finn ut om Den afrikanske union (etterfølgeren til OAU fra 1963) i dag. Hvordan lever tanken om afrikansk enhet videre nå?"
+                ]
+            }
         }
     ],
     "quiz": [

@@ -129,6 +129,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Omtrent hvor lenge siden startet jordbruksrevolusjonen, og hvor lang tid tok det før overgangen var fullført?",
+                    "Hva heter området mellom dagens Iran, Irak, Syria og Israel der jordbruket sannsynligvis startet, og hvorfor egnet det seg så godt?",
+                    "Hva forteller knoklene fra tidlige bønder om helsa deres sammenlignet med jegerne?",
+                    "Hvorfor kunne dyrket jord fø langt flere mennesker enn en jaktmark?"
+                ],
+                "reflekter": [
+                    "Jordbruket ble oppfunnet uavhengig på minst sju ulike steder. Hva forteller det oss om hvorfor jordbruket oppsto, når folk som aldri hadde hørt om hverandre kom fram til det samme?",
+                    "Forklar med egne ord hvorfor forfatteren skriver at bøndene ikke egentlig valgte å bli bofaste, selv om livet ble hardere.",
+                    "Yuval Noah Harari sier at vi trodde vi temmet hveten, men at hveten temmet oss. Hva mener han med det, og synes du det er en god måte å beskrive det på?",
+                    "Artikkelen sier at jordbruket både bygde og knuste. Velg én ting det bygde og én ting det knuste, og forklar hvordan begge kom fra det samme skiftet."
+                ],
+                "gaaVidere": [
+                    "Artikkelen sier at pandemier ble mulige først da mennesker flyttet tett sammen med husdyr. Finn ett eksempel fra vår egen tid der sykdom har spredt seg fordi mennesker lever tett. Hva er likt, og hva er ulikt?",
+                    "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en av de siste jegerne i en gruppe som er i ferd med å bli bønder. Hva ville du vært glad for, og hva ville du savnet?",
+                    "Diskuter med en partner: Var jordbruksrevolusjonen et fremskritt eller ikke? Bruk minst to konkrete grunner fra artikkelen for hver side."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

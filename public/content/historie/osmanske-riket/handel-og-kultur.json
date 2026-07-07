@@ -102,6 +102,29 @@
       "caption": "Tulipanen var en yndlingsblomst ved hoffet lenge før den ble berømt i Nederland."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvor kom kaffebønnene fra, og i hvilken by åpnet verdens første kaffehus?",
+                "Hvordan tjente riket penger på handelen langs Silkeveien?",
+                "Hvem var arkitekten Mimar Sinan, og hva er han kjent for?",
+                "Nevn minst tre ord eller ting vi bruker i dag som kom til oss via det osmanske riket."
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor kaffehuset ble mer enn bare et sted å drikke kaffe, og hvorfor noen herskere ble nervøse for det.",
+                "Hvordan kan osmanernes kontroll over handelsrutene ha vært en skjult grunn til at europeerne dro på oppdagelsesreiser?",
+                "Teksten sier at «så lenge handelen rant og kassene var fulle, blomstret kulturen». Forklar sammenhengen mellom rikets handel og kunsten deres.",
+                "Tulipanen forbinder vi gjerne med Nederland, men den var en yndlingsblomst ved det osmanske hoffet først. Hva forteller dette oss om hvordan ideer og ting reiser mellom kulturer?"
+            ],
+            "gaaVidere": [
+                "Finn en vane eller drikk du kjenner i dag som spredte seg fra ett sted til hele verden, slik kaffen gjorde. Skriv noen setninger om hvordan den reiste.",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor det å ligge midt i et «veikryss» kunne gjøre et rike både rikt og utsatt.",
+                "Diskuter med en partner: Er det bra eller dårlig at ord og varer fra andre kulturer blir en fast del av vår hverdag? Kom med eksempler fra teksten."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

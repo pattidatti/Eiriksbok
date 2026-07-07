@@ -150,6 +150,29 @@
                 "[Tyskland: Veien mot nazismen](/historie/mellomkrigstiden/tyskland) – Stalins dødsfiende vokser frem.",
                 "[Tidsreise: Veien mot mørket](/oving/tidsreise/mellomkrigstiden-del1) – Opplev mellomkrigstiden interaktivt."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem advarte Lenin mot i sitt hemmelige testament, og hva var han redd for?",
+                    "Hvordan klarte Stalin å vinne maktkampen etter Lenin, selv om han ble underestimert? Nevn to grep han brukte som generalsekretær.",
+                    "Hva var femårsplanene, og hvorfor mente Stalin at Sovjetunionen måtte industrialiseres så raskt?",
+                    "Hva var Holodomor, og hvorfor døde mellom 4 og 7 millioner mennesker i Ukraina alene?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Holodomor ikke var et uhell eller en naturkatastrofe, men en menneskeskapt tragedie. Forklar hvilke politiske valg som gjorde hungersnøden verre.",
+                    "Kollektiviseringen skulle skaffe kapital og mat til byene. Forklar hvorfor bøndene gjorde så sterk motstand, og hvordan Stalin svarte på den.",
+                    "Hvorfor tror du skuerettssakene, der gamle bolsjeviker tilsto forbrytelser de umulig kunne ha gjort, var nyttige for Stalin? Vurder hva slags virkning de hadde på folk flest.",
+                    "Artikkelen kaller Sovjetunionen 'en industrigigant bygget på frykt'. Vei fremskrittene (industri, utdanning, kvinners rettigheter) opp mot prisen (sult, leirer, terror). Kan det ene forsvare det andre?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst på 5-8 setninger fra perspektivet til en ukrainsk bonde i 1932, som opplever at kornet blir hentet mens familien sulter.",
+                    "Artikkelen slutter med at 'fremskritt uten frihet' kan bli et helvete på jord. Diskuter med en medelev om det finnes eksempler i dagens verden der land vokser økonomisk uten å gi innbyggerne frihet.",
+                    "Stalin lot naboer angi hverandre for kontrarevolusjonære vitser. Undersøk hvordan slik angiveri også ble brukt i andre diktaturer, for eksempel i Nazi-Tyskland, og skriv ned to likheter du finner."
+                ]
+            }
         }
     ],
     "quiz": [

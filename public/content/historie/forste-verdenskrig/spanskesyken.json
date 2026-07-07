@@ -124,6 +124,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var spanskesyken, og hvorfor var akkurat denne influensaen så mye farligere enn en vanlig vinterinfluensa?",
+                    "Hvorfor fikk sykdommen navnet spanskesyken, selv om den ikke startet i Spania?",
+                    "Hvilke aldersgrupper rammet spanskesyken hardest, og hvorfor var dette uvanlig for en influensa?",
+                    "Omtrent hvor mange mennesker døde av spanskesyken i Norge, og hva sammenligner teksten dette tallet med?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor krigen gjorde at spanskesyken spredte seg så raskt over hele verden.",
+                    "Teksten sier at kroppens eget forsvar kunne bli en fare for unge og friske. Forklar hvordan noe som vanligvis er en styrke kunne bli dødelig.",
+                    "Hva menes med å flate ut kurven, og hvorfor klarte byer som satte inn tiltak tidlig seg bedre enn byer som ventet?",
+                    "Legene i 1918 sto nesten maktesløse. Hvilke våpen hadde de igjen mot smitten når de manglet vaksine og medisin?"
+                ],
+                "gaaVidere": [
+                    "Teksten peker på likheter mellom spanskesyken i 1918 og koronapandemien i 2020. Skriv en kort tekst (5-8 setninger) der du sammenligner de to pandemiene: hva var likt, og hva var forskjellig?",
+                    "Diskuter med en partner: Hvorfor er det å holde folk fra hverandre fortsatt et av de sterkeste våpnene vi har mot en farlig smitte, selv i dag med vaksiner og moderne medisin?",
+                    "Teksten sammenligner spanskesyken med svartedauden. Finn ett fellestrekk ved hvordan de to sykdommene spredte seg, og forklar hvorfor måten vi lever på gir smitte flere veier å gå."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

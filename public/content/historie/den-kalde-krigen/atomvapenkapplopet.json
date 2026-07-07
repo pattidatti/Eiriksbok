@@ -131,6 +131,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to hendelser i 1945 startet atomvåpenkappløpet, og hvor lenge var USA alene om å ha atomvåpen?",
+                    "Hva står MAD for, og forklar med egne ord hvorfor logikken gjorde at ingen turte å angripe først?",
+                    "Hva er forskjellen på en atombombe (fisjon) og en hydrogenbombe (fusjon), og hvor mye kraftigere kunne en hydrogenbombe være?",
+                    "Nevn de tre måtene supermaktene kunne levere bombene på, fra bombefly til raketter på ubåter, og forklar hvorfor ubåtrakettene var så viktige."
+                ],
+                "reflekter": [
+                    "Teksten kaller MAD-logikken både enkel og makaber. Forklar hvorfor freden i Europa faktisk hvilte på en konstant frykt for total utslettelse.",
+                    "Terrorbalansen holdt grensene i Europa stabile, men spenningene ble flyttet til proksykriger som Korea og Vietnam. Hvorfor tror du supermaktene valgte å slåss slik i stedet for direkte mot hverandre?",
+                    "Se på grafen over antall stridshoder: tallet steg fra 2 i 1945 til titusener på 1980-tallet. Hva forteller denne veksten deg om hvor vanskelig det er å stoppe et våpenkappløp når det først har startet?",
+                    "På 1970-tallet innså lederne at kappløpet tømte statskassene og økte faren for ulykker. Vurder hvilken av disse to grunnene du tror veide tyngst da de begynte å forhandle om nedrustning."
+                ],
+                "gaaVidere": [
+                    "Prøvestansavtalen fra 1963 kom delvis fordi folk ble redde for radioaktivt nedfall. Finn ut om det fortsatt finnes atomvåpen i verden i dag, og skriv noen setninger om hvorvidt du synes terrorbalansen fortsatt gjelder.",
+                    "Skriv en kort dagbokside (cirka ti setninger) som en tenåring i 1962 som nettopp har hørt om Tsar Bomba på nyhetene. Hvordan føles det å vokse opp med frykten for verdens undergang?",
+                    "Diskuter i klassen: INF-avtalen skrotet ekte, fungerende atomvåpen for første gang i historien. Er det klokt av et land å kvitte seg med våpen hvis fienden også gjør det, eller er det for risikabelt å stole på en motstander?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

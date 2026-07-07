@@ -167,6 +167,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvem var Mohamed Bouazizi, og hva gjorde han 17. desember 2010 som ble starten på den arabiske våren?",
+                "Hvilket land er det eneste som klarte overgangen til et fungerende demokrati etter den arabiske våren?",
+                "Hva skjedde i Egypt etter at Mubarak gikk av? Nevn hvem som til slutt tok makten.",
+                "Hvor mange mennesker mistet livet i borgerkrigen i Syria, og hvor mange ble drevet på flukt?"
+            ],
+            "reflekter": [
+                "Forklar hvordan Twitter og Facebook gjorde den arabiske våren annerledes enn tidligere opprør. Hvorfor klarte ikke regjeringene å stoppe budskapet?",
+                "Teksten sier at «revolusjonen spiste barna sine» om Egypt. Forklar med egne ord hva som menes med dette.",
+                "Hvorfor lyktes Tunisia når nesten alle andre land mislyktes? Nevn minst to grunner artikkelen gir.",
+                "Artikkelen sier at demokrati er mer enn å velte en diktator. Hva mer trengs, ifølge teksten, og hvorfor tar det tid å bygge?"
+            ],
+            "gaaVidere": [
+                "Sammenlign Tunisia og Syria. Skriv en kort tekst (5-8 setninger) om hvorfor de samme protestene endte så ulikt i de to landene.",
+                "IS rekrutterte unge menn ved å tilby identitet, fellesskap og svar. Diskuter med en partner: hvorfor kan et makttomrom og en borgerkrig gjøre folk lettere å radikalisere?",
+                "Flyktningkrisen i 2015 knytter Syria direkte til Europa og Norge. Finn ut hvordan denne krisen påvirket Norge, og skriv noen setninger om det du finner."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

@@ -121,6 +121,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva så Galileo gjennom kikkerten i 1609 som ikke stemte med det de lærde hadde ment i over tusen år?",
+                    "Hva påstod Kopernikus i boka si fra 1543, og hvorfor gjorde denne ideen himmelen enklere å forklare?",
+                    "Nevn de fire stegene i den vitenskapelige metoden slik teksten beskriver dem.",
+                    "Hva forklarte Newton med tyngdekraften, og hva var det spesielle med at den samme regelen gjaldt både eplet og planetene?"
+                ],
+                "reflekter": [
+                    "Før den vitenskapelige revolusjonen avgjorde man hva som var sant ved å slå opp hva en autoritet som Aristoteles hadde sagt. Forklar hvorfor forskerne mente at det å teste ideene selv var en bedre måte å finne sannheten på.",
+                    "Royal Society hadde mottoet nullius in verba, 'ikke på noens ord'. Forklar hvordan dette mottoet fanger hele den vitenskapelige revolusjonen.",
+                    "Teksten sier at det kunne være farlig å tvile på autoritetene, og Galileo ble dømt til husarrest. Hvorfor tror du kirken reagerte så hardt på ideene til Kopernikus og Galileo?",
+                    "Hvorfor var det siste steget i metoden, å dele forsøkene åpent med andre, like viktig som selve forsøket? Ta med hva trykkpressen hadde å si."
+                ],
+                "gaaVidere": [
+                    "Teksten sier at når man først kunne stille spørsmål ved Aristoteles og kirken, kunne man kanskje også stille spørsmål ved kongen og gamle lover. Skriv et kort avsnitt om hvordan denne tankemåten kan ha ført videre til opplysningstiden.",
+                    "Tenk på hvordan vi finner ut hva som er sant i dag, for eksempel om en ny medisin virker eller om noe du leser på nettet stemmer. Diskuter med en medelev hvor mye vi fortsatt bruker den vitenskapelige metoden.",
+                    "Velg en påstand du hører ofte, og beskriv hvordan du kunne teste den med et forsøk i stedet for bare å tro på den fordi noen sier det."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

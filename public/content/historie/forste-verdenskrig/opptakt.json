@@ -122,6 +122,29 @@
     {
       "type": "text",
       "content": "På under en uke hadde en lokal konflikt på Balkan dratt nesten hele Europa inn i en storkrig. Entusiasmen var stor i mange hovedsteder; soldatene marsjerte ut til jubel og blomster, overbevist om at de ville «være hjemme igjen før jul»."
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilke tre land var med i Trippelententen, og hvilke tre var med i Trippelalliansen?",
+                "Hva mente keiser Wilhelm II med at Tyskland skulle ha sin «plass i solen», og hvorfor gjorde dette Storbritannia urolig?",
+                "Hvem var Gavrilo Princip, og hva gjorde han i Sarajevo 28. juni 1914?",
+                "Hva var «blankofullmakten» Tyskland ga Østerrike-Ungarn under Juli-krisen?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor teksten sammenligner Europa i 1914 med en trykkoker som venter på en gnist.",
+                "Alliansene skulle egentlig hindre krig gjennom maktbalanse. Forklar hvordan de i stedet gjorde en liten konflikt til en storkrig.",
+                "Hvorfor så Østerrike-Ungarn på serbisk nasjonalisme som en trussel mot sitt eget rike?",
+                "Serbia godtok nesten alle kravene i ultimatumet, men krigen kom likevel. Hva forteller det oss om hvor mye stormaktene egentlig ønsket fred i juli 1914?"
+            ],
+            "gaaVidere": [
+                "Soldatene marsjerte ut i 1914 sikre på at de var hjemme igjen før jul. Finn et eksempel fra nyere tid der folk trodde en konflikt ville bli kort, men tok feil, og skriv noen setninger om hva de to har til felles.",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan én enkelt hendelse kan utløse en kjedereaksjon, slik skuddene i Sarajevo gjorde.",
+                "Diskuter med en partner: Kunne krigen vært stoppet hvis ett av landene hadde tenkt annerledes i juli 1914, eller var den umulig å unngå?"
+            ]
+        }
     }
   ],
   "createdDate": "2025-12-21T14:10:00Z",

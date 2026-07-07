@@ -115,6 +115,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde i 1913, og hvorfor var dette spesielt for Norge sammenlignet med andre land?",
+                    "Hva betydde loven fra 1888 for gifte kvinner? Forklar hva som endret seg med pengene og eiendommen deres.",
+                    "Hvem var Camilla Collett, og hva handlet romanen Amtmandens Døtre om?",
+                    "Hva krevde Gina Krog og Norsk Kvinnesaksforening som mange syntes var helt vilt på den tiden?"
+                ],
+                "reflekter": [
+                    "Teksten sier at rettighetene ble vunnet dør for dør, ikke alle på en gang. Forklar hvorfor det kan være lurt å kjempe for en rettighet av gangen i stedet for alt samtidig.",
+                    "Tankene fra den franske revolusjonen om frihet og likhet fikk folk til å spørre hvorfor dette ikke gjaldt kvinner. Forklar hvordan en idé kan føre til at folk begynner å kreve forandring.",
+                    "I 1901 fikk noen kvinner stemme ved kommunevalg, men bare hvis de eller mannen tjente nok penger. Hva synes du er urettferdig med en slik regel, og hvorfor?",
+                    "Teksten forteller at kvinner som talte i det offentlige rom ofte ble hånet. Hvorfor kan det ha vært ekstra modig å være pioner som Aasta Hansteen på den tiden?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at kampen ikke er helt over, og at folk fortsatt jobber for lik lønn og like muligheter. Skriv et kort avsnitt om en sak du mener det er verdt å kjempe for i dag.",
+                    "Diskuter i klassen: Hvorfor er det viktig å vite at rettighetene vi har ikke alltid har vært der? Hva kan skje hvis vi tror de kom av seg selv?",
+                    "Snakk med en besteforelder eller et eldre familiemedlem om hvordan mulighetene for jenter og gutter var da de var unge, og sammenlign med i dag."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

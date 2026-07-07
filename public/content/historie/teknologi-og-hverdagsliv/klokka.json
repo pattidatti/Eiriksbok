@@ -190,6 +190,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvordan visste folk hva tiden var før klokka ble vanlig? Hva slags enkle hjelpemidler brukte de, og hvorfor virket ikke alltid soluret og timeglasset?",
+                "Hva var oppfinnelsen som het gangen, og hvorfor gjorde den at den mekaniske klokka kunne tikke i et fast tempo dag og natt?",
+                "Hvorfor ble de aller første store klokkene satt opp i kirketårn og rådhustårn i stedet for hjemme hos folk?",
+                "Hva skjedde i 1884, og hvorfor kaller vi det som ble innført for standardtid?"
+            ],
+            "reflekter": [
+                "Forklar hvorfor en sommertime ble lengre enn en vintertime da folk delte dagen fra soloppgang til solnedgang, og hvorfor den mekaniske klokka gjorde alle timene like lange.",
+                "Sammenlign livet til bonden på gården og arbeideren i fabrikken. Hva var det som bestemte arbeidsdagen deres, og hvordan endret klokka forholdet mellom folk og tid?",
+                "Teksten sier at uttrykket \"tid er penger\" plutselig ble bokstavelig talt sant i fabrikkene. Forklar hva som gjorde at tiden ble noe man fikk betalt for, time for time.",
+                "Hvorfor ble togtabellene et rot da hver by stilte klokka etter sin egen sol? Bruk eksemplet med Bergen og Oslo til å forklare problemet jernbanen skapte."
+            ],
+            "gaaVidere": [
+                "Se på din egen dag i dag. Skriv ned tre klokkeslett du må rette deg etter, og forklar hvordan livet ditt hadde vært annerledes uten dem. Ligner det litt på fabrikkarbeideren i teksten?",
+                "Skriv en kort dagbokside (rundt 100 ord) som en fabrikkarbeider på 1800-tallet, som nettopp er gått over fra å følge sola til å følge fabrikkfløyta. Hvordan føles det?",
+                "Diskuter i klassen: Klokka ga oss en delt, nøyaktig tid, men også en ny herre. Er det mest en frihet eller et press å ha livet styrt av tall på en skjerm?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

@@ -124,6 +124,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem stod bak dannelsen av Kalmarunionen i 1397, og hvilke tre riker ble samlet under én konge?",
+                    "Hva betyr det at Kalmarunionen var en personalunion?",
+                    "Hvorfor var Norge et svakt rike da unionen ble til? Nevn minst to grunner fra teksten.",
+                    "Hva skjedde under Stockholms blodbad i 1520, og hvem stod bak?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor makten i unionen endte opp i Danmark, selv om planen var at de tre rikene skulle være likeverdige.",
+                    "Hvorfor var mange nordmenn og svensker misfornøyde med unionsstyret? Sammenlign misnøyen i de to landene.",
+                    "Teksten sier at unionen hang sammen så lenge kongen ga adelen det den ville, men sprakk når han krevde for mye. Forklar hvorfor makten til kongen var så avhengig av adelen.",
+                    "Hvorfor gikk det så ulikt for Sverige og Norge etter at unionen sprakk i 1523?"
+                ],
+                "gaaVidere": [
+                    "I dag samarbeider land i unioner som EU. Diskuter med en partner: Hva er likt og hva er ulikt mellom Kalmarunionen og en moderne union der land går sammen?",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor perioden under Danmark er blitt kalt 400-årsnatten. Synes du navnet passer?",
+                    "Dronning Margrete blir regnet som en av de mektigste kvinnene i nordisk historie. Finn ut mer om henne, og skriv tre setninger om hva som gjorde henne til en så dyktig politiker."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

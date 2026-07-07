@@ -131,6 +131,29 @@
         {
             "type": "text",
             "content": "Selv om Knut Alvssons opprør mislyktes, står han igjen som en av de siste norske stormennene som utfordret det danske styret i middelalderen. I ettertid er han blitt husket som en symbolsk skikkelse – noen har kalt ham en martyr for norsk selvstendighet. Hans dramatiske død under forræderiske omstendigheter gjorde sterkt inntrykk på samtiden. Folk diktet viser og fortellinger om hendelsen, og historien om sviket på Akershus festning har siden inspirert både skuespill og litteratur. I Henrik Ibsens dikt «På Akershus» beskrives drapet slik: “Hugget i Knut Alvssons pande var et hugg i Norges hjerte.” Knut Alvssons fall markerte slutten på en æra, men minnet om ridderen som trosset kongen lever videre som et kapittel om kampen for et selvstendig Norge."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var Kalmarunionen, og hvilke tre land hadde felles konge i denne unionen?",
+                    "Hvilken hendelse på Romerike i 1497 utløste bondeopprøret, og hvem ble drept?",
+                    "Hvilket krav stilte Knut Alvsson i oppsigelsesbrevet til kong Hans sommeren 1501?",
+                    "Hva skjedde med Knut Alvsson den 18. august 1502 da han gikk om bord på Henrik Krummediges skip?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor mange nordmenn, både bønder og adelsmenn, var misfornøyde med det danske styret under Kalmarunionen.",
+                    "Hvorfor sluttet vanlige bønder så raskt opp om Knut Alvsson da han krevde at alle danske fogder måtte ut av Norge?",
+                    "Drapet på Knut Alvsson ble sett på som et grovt svik i samtiden. Forklar hvorfor bruddet på løftet om fritt leide gjorde folk så sinte.",
+                    "Teksten sier at opprøret mistet drivkraften da Knut døde. Hva forteller det oss om hvordan opprøret var bygget opp?"
+                ],
+                "gaaVidere": [
+                    "Knut Alvsson er blitt husket som en martyr for norsk selvstendighet. Skriv noen setninger om hvorfor du tror land ofte trenger slike heltefigurer i historien sin.",
+                    "Diskuter med en partner: Var Knut Alvsson en helt som ofret seg for Norge, eller en mektig adelsmann som først og fremst kjempet for egen makt? Finn argumenter for begge sider.",
+                    "I dag venter vi at avtaler og løfter skal holdes. Skriv en kort tekst der du sammenligner løftebruddet på Akershus i 1502 med hvorfor vi i dag har lover og regler som skal beskytte folk som forhandler."
+                ]
+            }
         }
     ],
     "quiz": [

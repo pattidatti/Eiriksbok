@@ -149,6 +149,29 @@
     {
       "type": "text",
       "content": "Fredsoppgjøret i Versailles året etter tegnet europakartet på nytt. Men freden var skjør. Tyskland ble pålagt det mange tyskere opplevde som en ydmykende fredsavtale, noe som ga grobunn for politisk ekstremisme. Slik sett var ikke første verdenskrig slutten på alle kriger, men snarere startskuddet for en trettiårsperiode med konflikt. Du kan fordype deg videre i de dype [konsekvensene av krigen her](/historie/forste-verdenskrig/konsekvenser)."
+    },
+    {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvilken hendelse i Sarajevo 28. juni 1914 regnes som den utløsende årsaken til krigen, og hvem ble drept?",
+                "Hvilke land var hovedmaktene i Ententen, og hvilke land ledet Sentralmaktene?",
+                "Hva kjennetegnet krigføringen på Vestfronten, og hvorfor stivnet krigen til i en stillstandskrig?",
+                "Hvor mange soldater og sivile mistet livet i krigen, ifølge teksten?"
+            ],
+            "reflekter": [
+                "Teksten sier at alliansesystemet fungerte som en felle. Forklar med egne ord hvordan en konflikt mellom to land kunne dra hele kontinentet inn i krig.",
+                "Krigen blir kalt en total krig. Forklar hva det betyr, og bruk eksempelet med kvinnene som produserte artillerigranater i fabrikkene.",
+                "Sammenlign krigføringen på Vestfronten og Østfronten. Hva var de viktigste forskjellene, og hvorfor?",
+                "Teksten sier at freden i Versailles sådde frøene til neste konflikt. Forklar hvorfor en ydmykende fredsavtale kunne gi grobunn for politisk ekstremisme i Tyskland."
+            ],
+            "gaaVidere": [
+                "De tre mektigste monarkene i Europa var fettere, men endte i krig med hverandre. Skriv en kort tekst (5-8 setninger) om hvorfor familiebånd ikke var nok til å hindre krigen.",
+                "Krigen blir kalt starten på en trettiårsperiode med konflikt fram til andre verdenskrig. Finn ett eksempel fra vår egen tid der en konflikt i ett land trekker inn flere andre land, og forklar likheten.",
+                "Diskuter med en partner: I 1913 trodde folk at fremtiden bare ville bli bedre. Hva kan vi lære av at en så trygg verden kunne bryte sammen på så kort tid?"
+            ]
+        }
     }
   ],
   "createdDate": "2025-12-21T14:00:00Z",

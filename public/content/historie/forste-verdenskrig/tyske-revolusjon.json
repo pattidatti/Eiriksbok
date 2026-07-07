@@ -54,6 +54,29 @@
         {
             "type": "text",
             "value": "Det mest skjebnesvangre som skjedde høsten 1918, var skapelsen av 'Dolkesjøtlegenden' (Dolchstoßlegende). Fordi krigen sluttet mens tyske soldater fortsatt sto på fransk jord, og fordi sensuren hadde holdt sannheten om nederlaget skjult for folket, oppsto en myte: 'Den tyske hæren ble ikke overvunnet i felt (på slagmarken), men ble dolket i ryggen av forrædere hjemme'.\n\nHvem var disse forræderne? Ifølge høyre-ekstreme var det sosialistene, kommunistene og jødene. Denne løgnen ble en sentral del av propagandaen til Adolf Hitler og nazistene. De brukte bitterheten over nederlaget og 'November-forbryterne' som signerte freden, til å bygge sin vei til makten."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva ville den tyske militærledelsen at flåten skulle gjøre høsten 1918, og hvorfor sa matrosene i Kiel nei?",
+                    "Hva skjedde med keiser Wilhelm II den 9. november 1918?",
+                    "Når og hvor ble våpenhvilen signert, og hva var klokken?",
+                    "Hva gikk Dolkesjøtlegenden (Dolchstoßlegende) ut på, ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten sier at opprøret spredte seg 'som ild i tørt gress'. Forklar hvorfor misnøyen kunne spre seg så raskt over hele Tyskland i 1918.",
+                    "Hvorfor var det farlig at sensuren hadde holdt sannheten om nederlaget skjult for det tyske folket? Koble dette til hvordan Dolkesjøtlegenden kunne oppstå.",
+                    "De revolusjonære rådene var inspirert av russerne, mens frikorpsene var høyreorienterte. Forklar hvorfor Weimar-republikken ble 'født i blod og kaos' med slike motstandere i gatene.",
+                    "Hvorfor tror du nazistene og Hitler brukte akkurat 'November-forbryterne' og bitterheten over nederlaget i propagandaen sin?"
+                ],
+                "gaaVidere": [
+                    "Skriv et kort avsnitt (5-6 setninger) der du forklarer hvordan en løgn som Dolkesjøtlegenden kunne bli så farlig. Kjenner du til lignende falske forklaringer eller konspirasjonsteorier som sprer seg i dag?",
+                    "Diskuter i klassen: Kan det være riktig å nekte å adlyde en ordre, slik matrosene i Kiel gjorde? Hvor går grensen mellom lydighet og å gjøre opprør?",
+                    "Finn ut mer om Rosa Luxemburg eller Karl Liebknecht. Hvem var de, hva kjempet de for, og hvorfor ble de drept?"
+                ]
+            }
         }
     ],
     "quiz": [

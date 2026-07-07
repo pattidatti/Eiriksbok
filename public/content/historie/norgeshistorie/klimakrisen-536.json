@@ -73,6 +73,29 @@
             "type": "text",
             "title": "Avslutning",
             "content": "Klimakrisen i år 536 er et skremmende eksempel på hvordan naturen brått kan endre historien. Et voldsomt vulkanutbrudd (eller flere på rad) førte til en global klimaendring: solen forsvant bak et slør, temperaturer stupte, og resultatet var år med nød. Denne 'mørke tiden' utløste sultkatastrofer og bidro til pestutbrudd og folkevandringer. Samfunn brøt sammen, og millioner av mennesker døde. Sporene etter krisen ser vi både i historiske tekster, i trærnes årringer og isens lag, og i myter som Fimbulvinteren i norrøn tradisjon. For ungdom i dag kan det være fascinerende – og litt skremmende – å tenke på at 536 e.Kr. var et år da himmelen virkelig falt ned i hodene på folk. Heldigvis er slike katastrofale klimahendelser ekstremt sjeldne, men historien om 536 minner oss om hvor sårbart menneskelig samfunn kan være når klimaet plutselig forandrer seg."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mener forskere i dag var hovedårsaken til at solen ble så svak i år 536?",
+                    "Hvor mye falt gjennomsnittstemperaturen i Europa sommeren 536, ifølge forskerne?",
+                    "Hva skrev den bysantinske historikeren Prokopios om solen i 536?",
+                    "Hva er en fimbulvinter i norrøn mytologi, og hvilken hendelse i verdens ende varsler den?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvordan et vulkanutbrudd kunne føre til sult og hungersnød så langt unna som i Norge.",
+                    "Hvorfor mener forskere at klimakrisen i 536 var global og ikke bare rammet Europa? Bruk minst to eksempler fra teksten.",
+                    "Historikere tror at klimakrisen kan ha gjort det lettere for langobardene å innta Italia og for slaviske folk å slå seg ned i Øst-Europa. Forklar hvordan sult og pest kan ha skapt et slikt maktvakuum.",
+                    "Arkeologen Bo Gräslund mener myten om Fimbulvinteren kan ha blitt farget av det som skjedde etter 536. Vurder hvor overbevisende du synes denne koblingen mellom en virkelig katastrofe og en myte er."
+                ],
+                "gaaVidere": [
+                    "Vi hører ofte om klimaendringer i dag. Skriv noen setninger om hva historien om 536 kan lære oss om hvor sårbart et samfunn kan bli når klimaet plutselig forandrer seg.",
+                    "Da folk ikke forsto hvorfor solen forsvant, ofret de gullsmykker i myrer for å blidgjøre gudene. Diskuter med en partner hvorfor mennesker søker etter mening i religion og ritualer når noe skremmende og uforklarlig skjer.",
+                    "Skriv en kort dagbokstekst (5-8 setninger) som om du var en bonde i Norge sommeren 536, og beskriv hva du ser, kjenner og frykter."
+                ]
+            }
         }
     ],
     "timeline": [

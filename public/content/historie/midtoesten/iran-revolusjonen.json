@@ -177,6 +177,29 @@
       "content": "Mange av de iranerne som jublet i februar 1979 angret senere bittert. Revolusjonen de drømte om - en revolusjon for frihet og rettferdighet - ble kapret av et religiøst regime som forfulgte opposisjonelle like brutalt som sjahen hadde gjort. Men forandringen de utløste, det kan ingen ta tilbake."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva kalte sjahen moderniseringsprogrammet sitt på 1960-tallet, og nevn minst to reformer som inngikk i det?",
+                "Hvordan fikk Khomeini spredt talene sine inn i Iran mens han levde i eksil i Frankrike?",
+                "Hva betyr velayet-e faqih, og hvilken makt ga dette styresettet Khomeini?",
+                "Hvor lenge holdt de iranske studentene de 52 amerikanske gislene, og hva krevde de i bytte mot å slippe dem fri?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor sjahen mistet makten selv om han hadde både oljepenger, et hemmelig politi og støtte fra USA.",
+                "Teksten sier at revolusjonen ble kapret av et religiøst regime som forfulgte opposisjonelle like brutalt som sjahen. Hva mener sitatet Vi ville ha frihet, vi fikk Khomeini om dette?",
+                "Hvorfor var det avgjørende for revolusjonen at hæren til slutt nektet å skyte på folkemengden, tror du?",
+                "Krigen mellom Iran og Irak avslørte splittelsen mellom sunni og shia. Forklar hvorfor denne splittelsen fremdeles preger konflikter i Midtøsten i dag."
+            ],
+            "gaaVidere": [
+                "Khomeini brukte kassettbånd som revolusjonsvåpen. Hvilken teknologi tror du kunne spilt samme rolle i en folkelig bevegelse i dag, og hvorfor?",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor gisselkrisen ødela forholdet mellom USA og Iran, og hvordan dette fiendskapet fortsatt merkes.",
+                "Diskuter med en partner: Mange iranere angret bittert på revolusjonen etterpå. Kan en folkelig revolusjon ende opp med å gjøre vondt verre, og hva bør folk passe på?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

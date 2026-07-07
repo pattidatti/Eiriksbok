@@ -67,6 +67,29 @@
                 "Kristnet sakserne med ekstrem vold.",
                 "Hans død i 814 åpnet døren for de store vikingangrepene."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde i Peterskirken i Roma første juledag år 800, og hvorfor var det et sjokk for verden?",
+                    "Hvilke moderne land dekket Frankerriket til Karl den Store?",
+                    "Forklar hvordan føydalismen var bygd opp fra Gud på toppen til de livegne bøndene nederst.",
+                    "Hva menes med at Karls utenrikspolitikk var 'konverter eller dø', og hvordan behandlet han sakserne?"
+                ],
+                "reflekter": [
+                    "Hvorfor virket det frankiske føydalsystemet fremmed og skremmende for vikingene, som lot alle frie menn si sin mening på Tinget?",
+                    "Forklar hvorfor føydalismen var så effektiv for krigføring i et rike uten moderne kommunikasjon.",
+                    "Da riket ble delt i tre etter Karls død, ble det gull verdt for vikingene. Forklar hvordan de kunne bruke splittelsen til sin fordel.",
+                    "Karl den Store blir kalt både 'Europas Far' og en 'marerittaktig erobrer'. Argumenter for hvordan begge beskrivelsene kan stemme samtidig."
+                ],
+                "gaaVidere": [
+                    "Danegeld var beskyttelsespenger for at vikingene ikke skulle angripe. Finn et eksempel fra nyere tid eller i dag der noen betaler for å slippe angrep eller trusler, og sammenlign.",
+                    "Skriv en kort tekst (5-8 setninger) fra en sakser sitt ståsted som opplever at Karls hær brenner det hellige treet Irminsul. Hvordan tenker og føler personen?",
+                    "Diskuter med en partner: Er det riktig å tvinge folk til å bytte religion? Hva slags spor kan slik tvang sette igjen i et samfunn i lang tid etterpå?"
+                ]
+            }
         }
     ],
     "concepts": [

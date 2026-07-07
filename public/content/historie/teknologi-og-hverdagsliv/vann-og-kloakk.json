@@ -143,6 +143,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva trodde de fleste legene på 1800-tallet var årsaken til kolera, og hva kalte de denne teorien?",
+                "Hvordan gikk John Snow fram for å finne ut hvor koleraen kom fra i nabolaget Soho?",
+                "Hvorfor ble arbeiderne på bryggeriet nesten aldri syke, mens folk rundt Broad Street-pumpa døde?",
+                "Hva gjorde Snow konkret for å stoppe utbruddet, og hva fant man senere ut hadde lekket ned i brønnen?"
+            ],
+            "reflekter": [
+                "Miasme-teorien om giftig luft hørtes logisk ut fordi byene stinket og det var i byene folk ble syke. Forklar hvorfor en forklaring kan virke fornuftig og likevel være helt feil.",
+                "Snow undersøkte unntakene, som bryggeriet og fattighuset, like nøye som selve dødsfallene. Hvorfor var det så viktig for beviset hans å se på dem som IKKE ble syke?",
+                "Teksten sier at rent vann og kloakk kanskje har reddet flere liv enn både vaksiner og antibiotika, men at disse fikk all æren. Hvorfor tror du en usynlig oppfinnelse som kloakkrør blir så lett glemt?",
+                "Snow klarte å løse gåten uten å kunne se bakterien, bare ved å følge tallene og tegne dem på et kart. Hva viser dette om hvordan man kan finne sannheten selv når man ikke ser årsaken direkte?"
+            ],
+            "gaaVidere": [
+                "I dag åpner du bare en kran og drikker trygt. Skriv et kort avsnitt om hva som måtte skje i det skjulte, fra pumpe til renseanlegg, for at det skal være mulig.",
+                "Teksten sammenligner kloakkrør med de usynlige nettverkene av strøm og data som vi sjelden tenker på. Diskuter i klassen: hvilke andre usynlige systemer er vi helt avhengige av uten å legge merke til dem?",
+                "Snow brukte et kart til å spore smitte i 1854. Finn ut hvordan helsemyndigheter sporet smitte under en moderne epidemi, og skriv noen setninger om hva som ligner og hva som er nytt."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

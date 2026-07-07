@@ -152,6 +152,29 @@
       "caption": "Da osmanerne inntok Konstantinopel i 1453, ble europeiske handelsmenn tvunget til å finne nye ruter til Asia - og det utløste oppdagelsestiden."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva var Silkeveien egentlig? Forklar med egne ord hvorfor navnet «en vei» er misvisende.",
+                "Nevn minst tre varer som gikk vestover fra Kina, og tre varer som kom østover mot Kina.",
+                "Hvordan brøt Bysants Kinas silkemonopol rundt 550 evt, og hvem sto bak?",
+                "Hva var Pax Mongolica, og hvorfor gjorde den det lettere å reise langs Silkeveien?"
+            ],
+            "reflekter": [
+                "Teksten kaller Silkeveien et «stafettløp» der varene skiftet hender mange ganger. Forklar hvorfor dette gjorde silken så dyr da den nådde Roma.",
+                "Hvorfor tror du kineserne straffet det å smugle ut silkeormer med døden? Hva hadde de å tape hvis hemmeligheten kom ut?",
+                "Artikkelen sier at rutene var «informasjonsmotorveier». Vurder om ideer og religioner var like viktige som varer på Silkeveien, og begrunn svaret.",
+                "Svartepesten reiste med handelsbyttene og drepte opp mot halvparten av Europas befolkning. Diskuter hvordan det samme som gjorde handelen rik, også kunne gjøre den farlig."
+            ],
+            "gaaVidere": [
+                "Da osmanerne tok Konstantinopel i 1453, lette europeerne etter sjøveier til Asia. Finn ett eksempel i dag på at en stengt handelsvei eller toll tvinger land til å finne nye ruter, og forklar likheten.",
+                "Skriv en kort dagbokstekst (5-8 setninger) fra en sogdisk kjøpmann som nettopp har byttet varer én gang på ruten mellom Kina og Roma.",
+                "Diskuter i klassen: Er dagens globale handel med varer fra hele verden en fortsettelse av Silkeveien, eller noe helt annet? Kom med argumenter for begge sider."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

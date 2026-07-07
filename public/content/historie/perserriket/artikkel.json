@@ -50,6 +50,29 @@
             "type": "text",
             "title": "Arven etter Perserriket",
             "content": "Selv om riket falt for Aleksander den store, levde den persiske kulturen og administrasjonsmodellen videre. Aleksander selv adopterte mange persiske skikker og giftet seg med en persisk prinsesse. Achaemenide-riket satte standarden for hvordan et multikulturelt imperium kunne styres, og ideen om et universelt rike levde videre gjennom historien."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem grunnla Perserriket, og hvilket rike styrtet han for å gjøre det?",
+                    "Hva kalte perserne provinsene sine, og hvem styrte dem?",
+                    "Hvilke tre ting bygde eller innførte Dareios I for å knytte det store riket sammen?",
+                    "Hva het den persiske religionen, og hva lærte den om kampen mellom godt og ondt?"
+                ],
+                "reflekter": [
+                    "Teksten sier at Perserriket skilte seg fra det assyriske ved sin toleranse. Forklar hvordan det å respektere lokale skikker og religioner kunne hjelpe Kyros med å holde et enormt rike samlet.",
+                    "Kyros lot jødene vende tilbake til Jerusalem og bygge opp tempelet sitt. Hvorfor tror du en hersker kunne tjene på å behandle et erobret folk godt i stedet for hardt?",
+                    "Persepolis-relieffene viser folk fra hele riket i sine egne nasjonaldrakter. Hva forteller dette valget oss om hvordan perserne ville at riket skulle framstå?",
+                    "Aleksander den store erobret Perserriket, men adopterte mange persiske skikker etterpå. Hvordan kan en taper i en krig likevel ende opp med å forme seieren?"
+                ],
+                "gaaVidere": [
+                    "Kyros-sylinderen kalles ofte en tidlig form for menneskerettigheter. Finn ut hva som faktisk står på den, og skriv kort om hvorfor noen mener den fortjener det navnet - og hvorfor andre er uenige.",
+                    "Zoroastrismen påvirket senere jødedom, kristendom og islam. Velg én av disse religionene og skriv noen setninger om en idé som kan minne om zoroastrismens kamp mellom godt og ondt.",
+                    "Diskuter i klassen: Er det lettere å styre mange folkeslag med toleranse eller med hard makt? Bruk eksempler fra Perserriket i argumentene deres."
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",

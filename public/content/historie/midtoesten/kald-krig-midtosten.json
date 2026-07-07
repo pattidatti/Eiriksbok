@@ -178,6 +178,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvorfor styrtet CIA og britisk etterretning statsminister Mosaddegh i Iran i 1953?",
+                "Hva gjorde Nasser under Suez-krisen i 1956, og hvordan reagerte USA på angrepet fra Storbritannia, Frankrike og Israel?",
+                "Hvem finansierte mujahedin-krigerne i Afghanistan på 1980-tallet, og hvorfor gjorde de det?",
+                "Hva skjedde i Iran i 1979, og hvorfor mistet USA sin viktigste allierte i regionen?"
+            ],
+            "reflekter": [
+                "Teksten sier at Midtøsten ble et sjakkbrett der to supermakter flyttet brikker. Forklar med egne ord hvordan USA og Sovjet brukte regionen i den kalde krigen.",
+                "Etter Iran-revolusjonen valgte USA å støtte Saddam Hussein mot Iran, selv med tilgang til kjemiske stoffer. Vurder hvorfor USA gjorde dette, og hva det viser om hvordan supermaktene tenkte.",
+                "Sammenlign hvordan USA behandlet Mosaddegh i 1953 med hvordan USA senere støttet mujahedin i Afghanistan. Hva har disse valgene til felles?",
+                "Teksten sier at USA skapte et monster da de bygde opp nettverk som senere ble til al-Qaida. Argumenter for om USA burde bære ansvaret for det som skjedde etterpå."
+            ],
+            "gaaVidere": [
+                "Teksten kobler den kalde krigen til 11. september 2001, Irak-krigen i 2003 og krisen i Afghanistan i 2021. Velg én av disse hendelsene og skriv 5-8 setninger om hvordan den henger sammen med avgjørelser tatt under den kalde krigen.",
+                "Skriv en kort tekst der du tenker deg at du er en iransk demokrat i 1979 som husker kuppet i 1953. Hvordan ser du på Vesten og ordet demokrati?",
+                "Diskuter med en partner: Bør en stormakt kunne blande seg inn i andre lands politikk for å beskytte sine egne interesser, slik USA og Sovjet gjorde i Midtøsten? Finn argumenter for begge sider."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

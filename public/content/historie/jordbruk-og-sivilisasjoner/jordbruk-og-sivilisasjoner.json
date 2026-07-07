@@ -114,6 +114,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvordan levde menneskene før jordbruket, og hva kaller vi denne levemåten?",
+                    "Hvor startet jordbruket først, og hvilke ville kornsorter vokste der?",
+                    "Hva betyr arbeidsdeling, og hvilke nye yrker fikk folk da ikke alle lenger måtte være bønder?",
+                    "Når og hvor i Norge ryddet de første bøndene åkrer, og hva kalles folkegruppen som kom rundt 2500 fvt.?"
+                ],
+                "reflekter": [
+                    "Teksten sier at jordbruket på noen områder gjorde livet bedre og på andre områder verre. Forklar med egne ord både en fordel og en ulempe for de første bøndene.",
+                    "Hvorfor fortsatte folk som bønder selv om livet på mange måter ble hardere? Forklar hvordan små beslutninger over mange generasjoner gjorde at det ikke fantes noen vei tilbake.",
+                    "Forklar hvorfor overskudd av mat var nøkkelen til at byer, konger og skrift kunne oppstå.",
+                    "Jordbruket skapte både sivilisasjoner og store forskjeller mellom mennesker. Hvordan kan det samme overskuddet føre til begge deler samtidig?"
+                ],
+                "gaaVidere": [
+                    "De første store sivilisasjonene vokste fram langs store elver. Velg én av dem (Mesopotamia, Egypt, Indusdalen eller Kina) og skriv tre setninger om hvorfor akkurat en elv var så viktig for et jordbrukssamfunn.",
+                    "Skriv en kort tekst (5-8 setninger) der du sammenligner livet ditt i dag med livet til en jeger og sanker. Hva ville du savnet mest hvis du måtte vandre rundt uten fast bosted?",
+                    "Diskuter med en partner: Var jordbruksrevolusjonen først og fremst et framskritt eller et tap for menneskene? Bruk minst to eksempler fra teksten til å begrunne svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

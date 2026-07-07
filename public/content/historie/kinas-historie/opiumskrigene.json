@@ -169,6 +169,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor betalte England enorme summer med sølv til Kina på 1700-tallet, og hva var det England kjøpte?",
+                    "Hva gjorde Lin Zexu med det britiske opiumet i Guangzhou i 1839, og hvor lang tid tok det å destruere det?",
+                    "Hvilke tre store krav måtte Kina godta i Nanking-traktaten fra 1842?",
+                    "Hva betyr uttrykket 'de 100 ydmykelsenes år', og hvilken periode dekker det?"
+                ],
+                "reflekter": [
+                    "Teksten kaller den første opiumskrigen 'ikke egentlig en krig, men et massaker'. Forklar hva som gjorde at Kina tapte så fort mot den britiske flåten.",
+                    "I brevet til dronning Victoria peker Lin Zexu på at opium var forbudt i Storbritannia selv. Hvorfor mente han dette var et sterkt argument mot britene?",
+                    "Hvorfor var ekstraterritorialiteten en så ydmykende del av Nanking-traktaten for Kina? Bruk teksten til å forklare hva den betydde i praksis.",
+                    "Lin Zexu ble først avsatt og sendt i eksil, men er i dag en nasjonal helt i Kina. Hva sier denne forandringen om hvordan Kina ser tilbake på opiumskrigene?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at kinesiske ledere fortsatt bruker 'de 100 ydmykelsenes år' for å forklare at ingen skal blande seg i Kinas indre anliggender. Diskuter med en medelev hvordan gamle sår kan påvirke et lands politikk i dag.",
+                    "Artikkelen åpner med et tenkt eksempel der et fremmed land selger narkotika i norske byer og sender krigsskip når politiet griper inn. Skriv et kort avsnitt om hvorfor forfatteren valgte å starte slik, og om det hjalp deg å forstå Kinas situasjon.",
+                    "Opiumskrigene var en del av den samme europeiske koloniseringen som rammet Afrika, India og Amerika. Velg ett annet område og undersøk kort én likhet med det som skjedde i Kina."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

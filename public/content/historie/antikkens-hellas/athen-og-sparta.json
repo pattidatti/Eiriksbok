@@ -118,6 +118,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var en polis, og hvorfor så folk på seg selv som athenere eller spartanere i stedet for grekere?",
+                    "Hvem fikk være med å bestemme i folkeforsamlingen i Athen, og hvem ble holdt utenfor?",
+                    "Hva skjedde med spartanske gutter da de var sju år, og hva var målet med oppdragelsen deres?",
+                    "Hvorfor var falanksen så sterk, og hva skjedde hvis det ble luker i rekka?"
+                ],
+                "reflekter": [
+                    "Athen satset på folkestyre og kunst, mens Sparta satset på disiplin og hær. Forklar hvorfor to byer som lå så nær hverandre, kunne velge så ulike måter å leve på.",
+                    "Kvinner i Sparta fikk mer frihet enn kvinner i Athen. Forklar hvorfor byen ga dem denne friheten, og hva det sier om hva Sparta satte høyest.",
+                    "Så lenge perserne truet, sto Athen og Sparta sammen, men etterpå gikk de til krig. Forklar hvorfor felles fiende samlet dem, og hvorfor freden gjorde dem til rivaler igjen.",
+                    "Krigen mellom Athen og Sparta svekket hele Hellas og gjorde det lettere for andre å ta over. Var det verdt det for Sparta å knuse rivalen sin? Argumenter for svaret ditt."
+                ],
+                "gaaVidere": [
+                    "Teksten sier at tanken om at folket selv skal styre, ble født i Athen. Finn ett eksempel på hvordan vi bruker denne tanken i Norge i dag, og forklar likheten.",
+                    "Skriv en kort tekst (5-8 setninger) der du velger om du helst ville levd i Athen eller i Sparta, og begrunner valget med minst tre konkrete forskjeller mellom byene.",
+                    "Diskuter med en partner: Bør et samfunn satse mest på frihet og ideer, som Athen, eller på orden og styrke, som Sparta? Finn argumenter for begge sider."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

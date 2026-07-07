@@ -176,6 +176,29 @@
         {
             "type": "text",
             "content": "Ingen imperier varer evig. Utover 1600- og 1700-tallet ble Spanias makt utfordret av England, Frankrike og Nederland. Den spanske armadaens nederlag i 1588 var et forvarsel. Men det var først på begynnelsen av 1800-tallet, inspirert av den amerikanske og franske revolusjon, at de spanske koloniene i Amerika rev seg løs. I løpet av noen få tiår mistet Spania nesten alt de hadde erobret, og giganten trakk seg tilbake til den europeiske halvøy, ribbet for sin fordums storhet."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var de tre drivkreftene bak conquistadorenes reiser, og hva betyr hvert av ordene Gull, Gud og ære?",
+                    "Hva delte Tordesillastraktaten fra 1494, og hvordan ble verden fordelt mellom Spania og Portugal?",
+                    "Hva var Encomienda-systemet i teorien, og hva ble det ofte til i praksis?",
+                    "Ifølge teksten var det ikke sverd og krutt som drepte flest i Amerika. Hva var den største drapsmannen, og hvorfor rammet den de innfødte så hardt?"
+                ],
+                "reflekter": [
+                    "Hvordan klarte noen få hundre spanjoler å felle de mektige aztek- og inkarikene? Forklar minst to grunner teksten gir.",
+                    "Sammenlign den spanske og den portugisiske modellen for kolonisering. Hva var hovedforskjellen i måten de tok kontroll på?",
+                    "Teksten sier at rikdommen fra Amerika også ble en forbannelse for Spania. Forklar hvordan sølvet både gjorde Spania mektig og skadet landet.",
+                    "Bartolomé de las Casas hadde selv hatt en encomienda, men ble senere en forsvarer av de innfødte. Hvorfor er det spesielt at et imperium diskuterte sin egen erobring mens den pågikk?"
+                ],
+                "gaaVidere": [
+                    "Teksten sier at spansk i dag er verdens nest største morsmål og at katolisismen dominerer i Latin-Amerika. Finn ett annet eksempel fra dagens verden på at koloniseringen fortsatt setter spor.",
+                    "Skriv en kort tekst (5-8 setninger) fra synsvinkelen til en innfødt person som møter Cortés' menn for første gang. Hva ser og føler du?",
+                    "Diskuter med en partner: Var conquistadorene helter eller skurker? Bruk konkrete eksempler fra teksten til å begrunne begge sider."
+                ]
+            }
         }
     ],
     "quiz": [

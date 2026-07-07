@@ -202,6 +202,29 @@
         {
             "type": "text",
             "content": "Selv om riket ofte har blitt latterliggjort for sin ineffektivitet, har historikere i dag et mer nyansert syn. Riket var en organisasjon som bevarte fred og rettssikkerhet i Sentral-Europa gjennom lov og forhandlinger, snarere enn rå makt. Dets desentraliserte struktur ga rom for et rikt kulturliv – tenk på Bach, Goethe og Kant, som alle virket innenfor rikets grenser. Noen ser til og med riket som en tidlig forløper til Den europeiske union (EU): et overnasjonalt fellesskap av stater som samarbeider, men bevarer sin egenart."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor lenge eksisterte Det hellige romerske rike, og hvilke to hendelser markerer starten (962) og slutten (1806)?",
+                    "Hva var kurfyrstene, og hvor mange var de ifølge Den gylne bulle fra 1356?",
+                    "Hva skjedde under Canossagangen i 1077, og hvem var de to hovedpersonene i konflikten?",
+                    "Hva betyr prinsippet Cuius regio, eius religio fra religionsfreden i Augsburg (1555)?"
+                ],
+                "reflekter": [
+                    "Voltaire skrev at riket 'verken var hellig, romersk eller et rike'. Artikkelen svarer på dette. Forklar med egne ord hvorfor riket likevel kalte seg alle tre delene.",
+                    "Hvorfor var det vanskeligere for keiseren å styre effektivt enn for kongene i Frankrike og England? Bruk valgkongedømmet og Riksdagen i svaret ditt.",
+                    "Mange fyrster gikk over til lutherdommen etter 1517. Forklar hvordan dette både handlet om tro OG om makt og penger for fyrstene.",
+                    "Freden i Westfalen i 1648 gjorde riket til en løs føderasjon av over 300 stater. Vurder hvorfor dette regnes som et vendepunkt der keiserens makt nesten forsvant."
+                ],
+                "gaaVidere": [
+                    "Artikkelen sammenligner riket med EU: et fellesskap av stater som samarbeider, men beholder sin egenart. Skriv et kort avsnitt om hvor du synes sammenligningen passer, og hvor den halter.",
+                    "Se på tabellen som sammenligner riket med den moderne nasjonalstaten. Diskuter med en klassekamerat hvilken av de to dere ville følt størst tilhørighet til, og hvorfor.",
+                    "Trettiårskrigen kan ha halvert befolkningen i deler av Tyskland. Finn ett eksempel på en religions- eller borgerkrig i nyere tid, og sammenlign hvordan tro og makt blandes."
+                ]
+            }
         }
     ],
     "quiz": [

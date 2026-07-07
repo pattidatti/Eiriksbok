@@ -155,6 +155,29 @@
         {
             "type": "text",
             "content": "Selv om det politiske styret forsvant, lever det franske språket og kulturen videre i Québec, store deler av Afrika og i de franske oversjøiske områdene som fortsatt er en del av Frankrike i dag."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor kom franskmennene til Nord-Amerika, og hvilken vare var viktigst for dem?",
+                    "Hva var Coureurs de bois, og hvordan levde de blant urbefolkningen?",
+                    "Hva slags koloni var Saint-Domingue (dagens Haiti), og hva var rikdommen der bygget på?",
+                    "Hva skjedde med det franske Nord-Amerika under Sjuårskrigen (1756-1763)?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor franskmennene var helt avhengige av gode allianser med de innfødte stammene i nord.",
+                    "Sammenlign den franske modellen (handel) med den britiske modellen (bosetting) i Nord-Amerika. Hvilke forskjeller ser du, og hvorfor endte britene med langt flere bosettere?",
+                    "Idealene om frihet, likhet og brorskap fra den franske revolusjonen inspirerte slaveopprøret på Saint-Domingue. Hvorfor kan disse idealene ha virket truende for et imperium bygget på slaveri?",
+                    "Franskmennene kalte koloniprosjektet sitt Mission Civilisatrice, en misjon for å gjøre folk franske. Vurder hva som var problematisk med tanken om å sivilisere andre folk med makt."
+                ],
+                "gaaVidere": [
+                    "Det franske språket lever fortsatt videre i Québec og store deler av Afrika. Finn ett land utenfor Frankrike der mange snakker fransk i dag, og forklar hvordan kolonihistorien henger sammen med det.",
+                    "Skriv en kort tekst (5-8 setninger) der du sammenligner den franske pelshandelen i nord med sukkerplantasjene i Karibia. Hvordan kunne det samme imperiet bygge på både samarbeid og brutalt slaveri?",
+                    "Diskuter med en partner: Algeriekrigen var så splittende at den nesten førte til borgerkrig i selve Frankrike. Hvorfor er det ofte så vanskelig for et land å gi slipp på en koloni?"
+                ]
+            }
         }
     ],
     "quiz": [

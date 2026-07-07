@@ -45,6 +45,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre hovedklasser var samfunnet i vikingtiden delt inn i, og hvem sto øverst og nederst?",
+                    "Hva var Tinget, og hvem hadde rett til å møte og tale der?",
+                    "Hva betydde det å bli lyst fredløs, og hvorfor var dette den strengeste straffen?",
+                    "Hvilke rettigheter hadde husfrua, og hva symboliserte nøklene hun bar i beltet?"
+                ],
+                "reflekter": [
+                    "Teksten sier at det var mulig å bevege seg mellom klassene, for eksempel hvis en trell ble kjøpt fri. Hvorfor tror du et slikt klassesystem likevel holdt seg stabilt?",
+                    "Forklar hva prinsippet 'land skal med lov bygges, og ikke med ulov ødes' betyr med egne ord, og hvorfor vikingene mente lovverket var nødvendig for å overleve.",
+                    "Kvinnene deltok sjelden direkte på Tinget, men hadde likevel stor uformell makt gjennom ætten. Hvordan kan noen ha makt uten å ha en offisiell posisjon?",
+                    "Teksten sier at det var viktigere å dø med ære enn å leve i skam. Hvilke problemer kunne en slik holdning skape i et samfunn der hele ætten måtte hevne en krenkelse?"
+                ],
+                "gaaVidere": [
+                    "Gulatinget påvirket det norske rettssystemet helt frem til i dag. Finn ett eksempel på hvordan vi løser konflikter med lov og domstol i stedet for vold nå, og sammenlign kort med hvordan vikingene gjorde det.",
+                    "Skriv en kort tekst på fem til seks setninger der du er husfrue på en gård mens mannen er ute på tokt. Beskriv en avgjørelse du må ta i løpet av dagen.",
+                    "Diskuter med en medelev: I dag er du selv ansvarlig for det du gjør, mens i vikingtiden var hele ætten ansvarlig sammen. Hva er bra og hva er dårlig med hvert system?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

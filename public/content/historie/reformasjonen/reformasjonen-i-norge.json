@@ -250,6 +250,29 @@
       "content": "Reformasjonen i Norge er en historie om hva som skjer når store endringer kommer ovenfra og uten dialog. Folket ble ikke spurt. Tradisjoner som hadde levd i 500 år ble forbudt over natten. Men historien er også en påminnelse om at slike skifter sjelden er rene tap eller rene seire. Norge mistet selvstendigheten, men fikk på sikt skoler. Tapte helgenene, men fikk en bibel folk faktisk kunne lese. Sporene er der fortsatt: Norge er i dag et hovedsakelig luthersk land, og du kan se hvordan det henger sammen med andre [kristne kirkesamfunn](/krle/religion/kristendom/kirkesamfunn). Et fag som historie hjelper oss å holde begge sider av regnskapet åpne samtidig, uten å forenkle det til en enkel moralhistorie."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hvem var Christian 3., og hvordan endte han opp med å innføre reformasjonen i Norge? Forklar hva Grevefeiden hadde med saken å gjøre.",
+                "Hva sto det i den danske recessen fra 30. oktober 1536 om Norges stilling, og hva mistet Norge på grunn av den ene setningen?",
+                "Hvorfor rømte erkebiskop Olav Engelbrektsson landet i april 1537, og hva tok han med seg i kistene sine?",
+                "Omtrent hvor stor del av all dyrket jord eide kirken før reformasjonen, og hvem overtok denne jorden etterpå?"
+            ],
+            "reflekter": [
+                "Teksten sier at reformasjonen kom til Norge «ovenfra, ikke nedenfra». Forklar hva det betyr, og hvorfor det var så annerledes enn i Tyskland.",
+                "Bruk Comparison-tabellen «Norge før og etter 1537» og velg de to endringene du mener rammet vanlige folk mest i hverdagen. Begrunn valget.",
+                "Artikkelen kaller det et paradoks at «en tvungen religion la grunnlaget for et land der vanlige folk kunne lese og tenke selv». Forklar hvordan protestantismen kunne føre til flere skoler og bedre leseferdighet.",
+                "I «Tre stemmer fra 1537» reagerer bonden, sognepresten og fogden helt ulikt på samme plakat. Velg to av dem og forklar hvorfor de opplevde reformasjonen så forskjellig."
+            ],
+            "gaaVidere": [
+                "Skriv en kort tekst (4-6 setninger) der du er sogneprest i 1537. Du må velge om du vil bli i embetet og bytte til den nye kirken, eller nekte og miste inntekten. Forklar valget ditt.",
+                "Teksten sier at bokmål i dag ligner mye på dansk fordi «språket fulgte makten» i nesten 300 år. Diskuter med en medelev: kan du komme på andre eksempler i dag der språk, mote eller musikk sprer seg sammen med makt eller penger?",
+                "Olavs skrin ble sendt til København og sølvet smeltet om til mynt. Diskuter hvorfor en makthaver kan ønske å fjerne nettopp symbolene til et folk, og ikke bare bytte lover og regler."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

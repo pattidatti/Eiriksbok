@@ -80,6 +80,29 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var forskjellen på måten Storbritannia og Frankrike behandlet koloniene sine på, ifølge teksten?",
+                    "Hva ble de over en million europeerne som bodde i Algerie kalt?",
+                    "Hvorfor kunne ikke frigjøringsbevegelsen FLN slå den franske hæren i åpne slag, og hva gjorde de i stedet?",
+                    "Teksten sier at Frankrike vant militært i Algerie, men tapte på en annen måte. Hvordan tapte de?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor æren var så viktig for Frankrike etter andre verdenskrig. Hvordan hang ydmykelsen fra Tyskland sammen med at de nektet å gi slipp på koloniene?",
+                    "Algerie var juridisk sett en del av Frankrike, ikke bare en koloni. Hvorfor gjorde nettopp det krigen der ekstra vanskelig å gi opp?",
+                    "Sammenlign de to krigene: Vietnam endte med et militært nederlag ved Dien Bien Phu, mens Algerie endte med et politisk nederlag. Hva er forskjellen på disse to måtene å tape en krig på?",
+                    "FLN plasserte bomber på kafeer og kinoer, og Frankrike svarte med systematisk tortur. Kan noen av sidene forsvare det de gjorde? Argumenter for hvorfor det er vanskelig å kalle noen av partene helt uskyldige."
+                ],
+                "gaaVidere": [
+                    "Teksten sier verden vendte seg mot krigen da tortur ble kjent. Finn et eksempel fra en nyere konflikt der bilder eller nyheter fikk folk hjemme til å snu seg mot sitt eget lands krig.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor en hær kan vinne alle slagene og likevel tape krigen. Bruk Algerie som eksempel.",
+                    "Diskuter med en partner: Da Algerie ble uavhengig i 1962, flyktet 900 000 franskmenn fra landet. Hva slags problemer tror dere det skaper når så mange mennesker må forlate hjemmet sitt på kort tid?"
+                ]
+            }
         }
     ],
     "quiz": [

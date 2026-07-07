@@ -162,6 +162,29 @@
       }
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Nevn de tre store problemene med lyset fra flamme før strømmen kom (svaret står i teksten).",
+                "Hva var Thomas Edisons virkelig store grep utover selve lyspæra, og hvorfor var det så viktig?",
+                "Hvorfor passet Norge spesielt godt til den nye elektriske tiden, og hvilken by fikk elektrisk gatelys allerede i 1885?",
+                "Forklar hvorfor vekselstrømmen vant over likestrømmen i strømkrigen."
+            ],
+            "reflekter": [
+                "Teksten sier at strømmen forandret hvem som hadde tid til hva. Forklar hvordan de elektriske apparatene betydde mest for kvinner, og hva denne frigjorte tiden gjorde mulig senere.",
+                "Hemmeligheten bak Edisons pære var en glødetråd i en glasskule uten luft. Forklar hvorfor det var nødvendig å suge ut lufta for at tråden ikke skulle brenne opp.",
+                "Sammenlign hverdagen før og etter at det elektriske lyset kom. Hva kunne folk plutselig gjøre om kvelden som de ikke kunne før?",
+                "Teksten sier at vi kanskje er litt for godt opplyst i dag. Vurder om denne baksiden av elektrisk lys veier tungt mot alle fordelene, og begrunn svaret ditt."
+            ],
+            "gaaVidere": [
+                "Se deg rundt i hjemmet ditt og lag en liste over ting som ikke ville fungert uten strøm. Velg ett apparat og skriv noen setninger om hvordan livet hadde vært uten det.",
+                "Skjermer og lamper sent på kvelden kan gjøre det vanskelig å sovne. Diskuter i klassen hva dere selv kan gjøre for å få bedre ro på kvelden, når kroppen fortsatt tror at lys betyr dag.",
+                "Norsk strøm kom i stor grad fra vann i fosser og elver. Finn ut hvor strømmen i ditt eget hjem kommer fra i dag, og skriv en kort tekst om hva som er likt og ulikt fra 1885."
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

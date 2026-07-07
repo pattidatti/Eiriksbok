@@ -94,6 +94,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr navnet Stor-Zimbabwe på shona-folkets språk, og hvilken bergart ble byen bygd av?",
+                    "Hvordan klarte byggerne å reise murer som har stått i over 700 år uten mørtel?",
+                    "Hvilke to varer gjorde Stor-Zimbabwe rikt, og hvilke fjerne land ble de sendt til gjennom handel?",
+                    "Hvorfor fant europeere på at fenikere eller egyptere hadde bygget byen, ifølge teksten?"
+                ],
+                "reflekter": [
+                    "Teksten sier at murene ikke først og fremst var en festning, men en slags steinkrone. Forklar hva det betyr at et byggverk viser makt fremfor å beskytte.",
+                    "Forskerne fant glassperler, kinesisk keramikk og arabiske mynter i ruinene. Forklar hvorfor disse funnene beviser at byen drev handel med fjerne land.",
+                    "Sammenlign hvordan Stor-Zimbabwe ble rikt med hvordan Ghana-riket og Mali-riket i Vest-Afrika ble rike. Hva hadde de felles?",
+                    "En god historiker spør alltid hvem som forteller en historie og hvorfor. Bruk historien om hvem som bygde Stor-Zimbabwe til å forklare hvorfor dette spørsmålet er viktig."
+                ],
+                "gaaVidere": [
+                    "Da landet ble fritt i 1980, tok det navnet Zimbabwe etter denne byen. Skriv noen setninger om hvorfor et land kan velge å oppkalle seg etter en gammel ruinby.",
+                    "Diskuter med en medelev: Finnes det eksempler i dag på at folk nekter å tro fakta fordi det ikke passer med det de mener fra før? Kom med minst ett eksempel.",
+                    "Teksten sier at forskere ikke er sikre på hvorfor byen ble forlatt rundt år 1450. Velg en av forklaringene i teksten og skriv kort hvorfor nettopp den kan stemme."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

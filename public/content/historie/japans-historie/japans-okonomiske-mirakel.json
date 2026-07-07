@@ -122,6 +122,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde med Japan sommeren 1945, og hvorfor lå landet i ruiner?",
+                    "Hva var det viktigste løftet i den nye grunnloven Japan fikk etter krigen?",
+                    "Hva betyr ordet kaizen, og hvordan brukte japanske bedrifter denne arbeidsmåten?",
+                    "Hva var Shinkansen, og hvorfor ble det åpnet nettopp i 1964 et symbol på det nye Japan?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor forbudet mot en stor hær ble en fordel for Japans økonomi og ikke bare en straff.",
+                    "Hvorfor måtte et lite land som Japan satse så mye på eksport? Bruk sammenligningen med USA i teksten.",
+                    "Teksten sier at et land uten olje og gruver bare hadde én ting å satse på: kunnskapen og arbeidet til folket. Er du enig i at dette var nok? Begrunn svaret.",
+                    "Karoshi og boblen som sprakk rundt 1990 var baksider av miraklet. Var suksessen verdt prisen? Argumenter for eller mot."
+                ],
+                "gaaVidere": [
+                    "Se deg rundt hjemme: hvor mange ting finner du som er laget i Japan eller av japanske merker som Toyota og Sony? Skriv en kort liste og tenk over hvorfor akkurat disse merkene ble så kjente.",
+                    "Skriv et kort avsnitt der du forklarer for en venn hvordan et land som taper alt i en krig, likevel kan bli et av verdens rikeste på bare 40 år.",
+                    "Diskuter i klassen: Kan Japans oppskrift med utdanning, hardt arbeid og kvalitetsvarer brukes av fattige land i dag, eller var situasjonen etter krigen helt spesiell?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

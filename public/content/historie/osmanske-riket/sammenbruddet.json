@@ -124,6 +124,29 @@
       "caption": "I 1923 ble republikken Tyrkia født. Atatürk bygde en moderne stat på ruinene av det 600 år gamle riket."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "På hvilken side gikk Det osmanske riket inn i første verdenskrig i 1914, og hva håpet sultanen å oppnå?",
+                "Hva skjedde ved Gallipoli i 1915, og hvordan endte slaget for de osmanske styrkene?",
+                "Hva skjedde med armenerne i 1915, og hvor mange mennesker mistet livet?",
+                "Hvem var Mustafa Kemal Atatürk, og hva bygde han opp etter at riket brøt sammen?"
+            ],
+            "reflekter": [
+                "Forklar med egne ord hvorfor det å gå inn i krigen på Tysklands side ble kalt et stort sjansespill for riket.",
+                "Hvorfor mener teksten at det er viktig å vite hva som skjedde med armenerne? Hva kan vi lære av det?",
+                "Sykes-Picot-avtalen tegnet grenser med linjal tvers gjennom områder der det bodde ulike folk. Hvorfor kan slike grenser skape problemer i lang tid etterpå?",
+                "Riket vant faktisk slaget ved Gallipoli, men teksten sier at seieren ikke reddet riket. Forklar hvorfor en seier i ett slag ikke var nok."
+            ],
+            "gaaVidere": [
+                "Teksten sier at verden fortsatt krangler om kartet Sykes-Picot tegnet. Finn et land i Midtøsten i dagens nyheter og undersøk om grensene fra denne tiden har noe med konflikten å gjøre.",
+                "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan det samme landet kunne gå fra å være et 600 år gammelt keiserrike til å bli en moderne republikk på bare noen få år.",
+                "Diskuter med en partner: Dagens Tyrkia er uenig i å bruke ordet folkemord om det som skjedde med armenerne. Hvorfor kan det være vanskelig for et land å innrømme mørke hendelser i sin egen fortid?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

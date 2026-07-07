@@ -115,6 +115,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva het dokumentet Nasjonalforsamlingen vedtok den 26. august 1789, og hvor mange setninger (artikler) besto det av?",
+                    "Hvordan var det franske samfunnet delt inn i tre stender, og hvorfor var det urettferdig at tredjestanden betalte nesten all skatten?",
+                    "Hva slo den aller første setningen i erklæringen fast om alle mennesker?",
+                    "Hvem var Olympe de Gouges, og hva gjorde hun i 1791?"
+                ],
+                "reflekter": [
+                    "Erklæringen sa at all makt kommer fra folket, ikke fra Gud eller fra kongen. Forklar hvorfor dette snudde tusen år med tankegang på hodet.",
+                    "Teksten sier at erklæringen lovet mer enn den klarte å holde. Bruk kvinner og slaver som eksempler og forklar hva som menes.",
+                    "Sammenlign den første setningen i erklæringen fra 1789 med den første setningen i FNs verdenserklæring fra 1948. Hva forteller likheten oss om ideenes styrke?",
+                    "Natten til 4. august ga adelsmenn og prester frivillig fra seg særrettighetene sine. Hvorfor tror du de gjorde det akkurat da, like etter stormingen av Bastillen?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (3-4 setninger) om en rettighet du bruker i hverdagen din, for eksempel retten til å si meningen din, og forklar hvordan den henger sammen med arven fra 1789.",
+                    "Diskuter i par: Teksten sier at rettighetene dine ikke ble gitt av en konge, og at ingen konge derfor kan ta dem fra deg. Er dere enige i at rettigheter som ingen ga oss, er tryggere enn rettigheter en konge kunne gitt?",
+                    "Erklæringen sa «alle mennesker», men mente egentlig bare menn. Finn et eksempel fra vår egen tid der ord om likhet ikke helt stemmer med virkeligheten, og forklar hva som mangler."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

@@ -203,6 +203,29 @@
                 "[Det store krakket](/historie/mellomkrigstiden/borskrakk) – Økonomien som drepte Weimar.",
                 "[Italia: Fascismens fødsel](/historie/mellomkrigstiden/italia) – Mussolinis marsj som inspirerte Hitler."
             ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var dolkestøtlegenden, og hvem fikk skylden ifølge nasjonalistene og militærlederne?",
+                    "Hva skjedde med pengeverdien under hyperinflasjonen i 1923? Bruk et eksempel fra teksten, som at en dollar kostet 18 000 mark i januar og 4,2 billioner mark i november.",
+                    "Hvor mange var arbeidsløse i Tyskland i 1932, og hvor mye hadde tallet steget siden 1929?",
+                    "Hvordan kom Hitler til makten 30. januar 1933? Forklar hvorfor teksten sier at han kom til makten lovlig."
+                ],
+                "reflekter": [
+                    "Teksten sier at «demokratiet = svik» for millioner av tyskere fordi Weimar-republikken signerte Versaillestraktaten. Forklar hvordan dette svekket republikken helt fra starten.",
+                    "Franz von Papen sa overlegent «Vi har hyret ham» om Hitler. Hvorfor kaller teksten dette «tidenes feilberegning»?",
+                    "Teksten peker på flere grunner til at Weimar falt: Versailles, den økonomiske krisen, en svak grunnlov og eliter som foraktet demokratiet. Velg de to du mener var viktigst, og begrunn valget ditt.",
+                    "Sammenlign Hitler og Stalin ut fra tabellen i artikkelen. Nevn én ting de hadde felles og én ting som skilte dem."
+                ],
+                "gaaVidere": [
+                    "Teksten avslutter med at «demokrati er ikke selvopprettholdende». Skriv et kort avsnitt (4-6 setninger) om hva som skal til for at et demokrati skal overleve i dag.",
+                    "Diskuter i klassen: Hyperinflasjonen og massearbeidsløsheten gjorde folk desperate og villige til å stemme på ekstreme partier. Hvorfor kan økonomiske kriser være farlige for et demokrati?",
+                    "Nazistpartiet gikk fra 2,6 prosent av stemmene i 1928 til 37,3 prosent i 1932. Finn ut hva som kan få et lite parti til å vokse raskt, og gi et eksempel du kjenner til fra nyere tid."
+                ]
+            }
         }
     ],
     "quiz": [

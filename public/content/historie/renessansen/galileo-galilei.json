@@ -121,6 +121,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva så Galileo da han pekte kikkerten mot Jupiter i januar 1610, og hvorfor var det så viktig?",
+                    "Hvilket verdensbilde lærte kirken og universitetene, og hvem hadde lagt grunnlaget for det?",
+                    "Nevn minst tre oppdagelser Galileo gjorde da han rettet kikkerten mot himmelen.",
+                    "Hva ble Galileo dømt for i 1633, og hvordan straffet inkvisisjonen ham?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hva som var nytt med måten Galileo tenkte på, sammenlignet med hvordan man arbeidet ved middelalderens universiteter.",
+                    "Hvorfor ble Galileos oppdagelser et problem for kirken, selv om han bare beskrev det han faktisk så gjennom kikkerten?",
+                    "Galileo bøyde seg for inkvisisjonen i stedet for å bli brent slik Giordano Bruno ble. Var det feigt eller klokt? Argumenter for begge sider.",
+                    "Teksten sier at Galileo også er en advarsel. Hva mener den med at sannhet ikke alltid er velkommen?"
+                ],
+                "gaaVidere": [
+                    "Finn et eksempel fra din egen hverdag der noen tester en påstand i stedet for bare å tro på den, slik Galileos metode ber oss om. Beskriv hvordan det fungerer.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor 'Eppur si muove' er blitt et symbol, selv om vi ikke vet om Galileo virkelig sa det.",
+                    "Diskuter med en partner: Hvorfor tok det 350 år før kirken innrømmet at Galileo hadde rett? Hva gjør det vanskelig for mektige å innrømme at de tok feil?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

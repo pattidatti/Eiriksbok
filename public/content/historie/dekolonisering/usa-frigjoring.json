@@ -70,6 +70,29 @@
                 "title": "Hvorfor vant kolonistene?",
                 "content": "Gueriljakrigføring: Amerikanerne kjente terrenget og brukte skyttergravstaktikk.\nFransk hjelp: Frankrike så en sjanse til å svekke sin erkefiende Storbritannia og sendte penger, våpen og skip.\nMotivasjon: Kolonistene kjempet for sine hjem, britene kjempet for en lønnsslipp."
             }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange britiske kolonier var det som erklærte seg uavhengige i 1776, og fra hvilket imperium?",
+                    "Hva betyr slagordet 'No taxation without representation', og hvorfor nektet kolonistene å betale skatt til parlamentet i London?",
+                    "Hvem skrev at 'alle menn er skapt like', og hva var det store paradokset ved denne personen?",
+                    "Nevn tre grunner til at kolonistene klarte å vinne krigen mot Storbritannia."
+                ],
+                "reflekter": [
+                    "Teksten sier at 'ideer reiser raskere enn kuler'. Forklar med egne ord hvordan opplysningstidens ideer ble brukt som våpen i revolusjonen.",
+                    "Før revolusjonen var det en selvfølge at konger styrte av Guds nåde. Forklar hvordan den amerikanske revolusjonen snudde dette på hodet.",
+                    "Hvorfor kalles USA 'den første dominobrikken'? Hva mener teksten med at revolusjonen ble et startskudd for andre land som Haiti og Vietnam?",
+                    "Ordene i uavhengighetserklæringen gjaldt i praksis mest hvite, eiende menn. Var erklæringen likevel viktig for grupper som ble stående utenfor? Argumenter for begge sider."
+                ],
+                "gaaVidere": [
+                    "Slagordet 'ingen skatt uten representasjon' handler om retten til å være med å bestemme. Finn et eksempel fra i dag der folk krever å få bestemme over noe som angår dem.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor du mener det er et paradoks at Thomas Jefferson skrev om frihet mens han selv eide slaver.",
+                    "Diskuter med en partner: Kan en god idé være farlig for makthaverne? Bruk den amerikanske revolusjonen som eksempel."
+                ]
+            }
         }
     ],
     "quiz": [

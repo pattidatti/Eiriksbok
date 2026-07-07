@@ -198,6 +198,29 @@
       "content": "Midtøsten er ikke et sted der folk er «skapt for krig». Det er et område der dårlige grenser, utenlandsk innblanding og manglende demokratiutvikling har stablet opp konflikter i generasjoner. Mange av de som bor der ønsker det samme som folk flest: trygghet, arbeid og en fremtid for barna sine. Det finnes også tegn til håp. Jemen-krigen har sett forsiktige fredsforhandlinger. Sudan og Marokko har normalisert forholdet til Israel. Unge arabere bruker sosiale medier til å utfordre korrupte ledere. Historien i Midtøsten er ikke ferdigskrevet - og å forstå hva som skapte kaoset er første skritt mot å endre det."
     },
     {
+        "type": "component",
+        "name": "Oppgaver",
+        "props": {
+            "forstaa": [
+                "Hva skjedde med IS i 2019, og hvordan endret organisasjonen seg etterpå?",
+                "Forklar hva en proxy-krig er, og gi et eksempel fra teksten på hvordan Saudi-Arabia og Iran støtter hver sin side.",
+                "Hvorfor kaller FN krigen i Jemen verdens største humanitære krise? Nevn minst to konkrete tall eller forhold fra teksten.",
+                "Hva startet borgerkrigen i Syria i 2011, og hva ble resultatet for landet og befolkningen?"
+            ],
+            "reflekter": [
+                "Teksten sier at tanken om at folk i Midtøsten «bare slåss fordi de alltid har gjort det» er feil. Hvilke tre historiske valg trekker artikkelen fram som forklaring i stedet?",
+                "Sammenlign Midtøsten i 1920 og i dag ut fra Comparison-boksen. Hva har endret seg med stormaktenes rolle, og hva har holdt seg likt med grensene?",
+                "Assad «vant» borgerkrigen i Syria, men teksten kaller det en vunnet krig i et ødelagt land. Hva mener artikkelen med det, og kan en krig egentlig vinnes slik?",
+                "Kina meglet i 2023 fram en normalisering mellom Saudi-Arabia og Iran. Hvorfor mener teksten at dette viser at amerikansk dominans i regionen ikke lenger er selvfølgelig?"
+            ],
+            "gaaVidere": [
+                "Artikkelen sier at Norge «heller ikke er nøytral» fordi vi er NATO-allierte med USA og selger våpen til Saudi-Arabia. Skriv et kort avsnitt der du tar stilling til om Norge bør selge våpen til land som er i krig.",
+                "Jemen-krigen får lite dekning i norske medier. Diskuter i par hvorfor noen konflikter havner på forsiden mens andre blir «glemte kriser».",
+                "Velg én av dagens konflikter fra artikkelen og finn en fersk nyhetssak om den. Hvordan stemmer det du leser med bildet teksten gir?"
+            ]
+        }
+    },
+    {
       "type": "component",
       "name": "Quiz",
       "props": {

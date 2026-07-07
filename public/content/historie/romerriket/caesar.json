@@ -116,6 +116,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr uttrykket «Alea iacta est», og i hvilken situasjon sa Cæsar det?",
+                    "Hvordan skaffet Cæsar seg rikdom og makt gjennom de åtte årene i Gallia?",
+                    "Hva betydde tittelen «dictator perpetuo», og hvordan var den forskjellig fra den vanlige diktator-tittelen i republikken?",
+                    "Hva skjedde den 15. mars år 44 fvt., og hvem var Marcus Brutus i det som hendte?"
+                ],
+                "reflekter": [
+                    "Cæsar var en helt i Roma samtidig som han drepte over en million mennesker i Gallia. Forklar hvordan begge deler kunne være sant på samme tid.",
+                    "Senatet var «livredd» for Cæsar. Forklar hvorfor en general med mye penger, mange soldater og stor popularitet var akkurat den typen mann republikken var bygd for å stoppe.",
+                    "Cæsar hadde tre valg ved Rubicon, og alle var dårlige. Vurder valget han tok - var det modig, egoistisk eller nødvendig? Begrunn svaret ditt.",
+                    "Senatorene drepte Cæsar for å redde republikken, men oppnådde det motsatte. Forklar hvorfor drapet førte til keiserdømmet i stedet."
+                ],
+                "gaaVidere": [
+                    "I dag sier vi at noen «krysser sin Rubicon» når de tar et valg som ikke kan trekkes tilbake. Finn eller finn på et eksempel fra ditt eget liv eller fra nyhetene som passer til uttrykket, og forklar hvorfor.",
+                    "Skriv en kort tekst (5-8 setninger) der du tar stilling til påstanden: én person kan endre hele historien. Bruk Cæsar som eksempel, og si om du er enig eller uenig.",
+                    "Diskuter med en partner: Ordene «keiser», «Kaiser» og «Tsar» kommer alle fra navnet Cæsar. Hva forteller det oss om hvor stor betydning én person kan få lenge etter sin død?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

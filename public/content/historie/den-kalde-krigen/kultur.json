@@ -92,6 +92,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva var Kjøkkendebatten i 1959, og hvem var de to lederne som kranglet foran det amerikanske kjøkkenet i Moskva?",
+                    "Hvorfor så sovjetlederne på amerikansk rock 'n' roll og olabukser som farlig, ifølge teksten?",
+                    "Hva var 'Miracle on Ice' i 1980, og hvorfor ble det feiret som en stor seier for USA?",
+                    "Hva het det hemmelige politiet i Øst-Tyskland som overvåket innbyggerne, og hva var McCarthyismen i USA?"
+                ],
+                "reflekter": [
+                    "Teksten kaller kampen om film, musikk og livsstil for 'soft power' (myk makt). Forklar med egne ord hvordan popkultur kunne være et våpen i den kalde krigen.",
+                    "Både USA og Sovjetunionen laget filmer som skapte fiendebilder. Hvorfor var det nyttig for lederne at folk mistrodde den andre siden?",
+                    "I Kjøkkendebatten mente Nixon at kapitalismen var best fordi vanlige folk hadde råd til vaskemaskiner og farge-TV, mens Khrusjtsjov mente utdanning og bolig til alle var viktigere. Hvem synes du hadde det beste argumentet, og hvorfor?",
+                    "Sport ble kalt 'krig uten våpen'. Forklar hvorfor en seier på idrettsbanen kunne bety så mye mer enn bare selve kampen for begge supermaktene."
+                ],
+                "gaaVidere": [
+                    "I dag konkurrerer land fortsatt om å virke sterke gjennom idrett, film og musikk. Finn ett eksempel fra vår egen tid der et land bruker kultur eller sport til å vise seg fram, og forklar likheten med den kalde krigen.",
+                    "Skriv en kort tekst (5-6 setninger) fra en ungdom i Øst-Europa som nettopp har fått tak i en Beatles-plate. Hvordan føles det å høre på musikk regimet mener er farlig?",
+                    "Diskuter i klassen: Da amerikanske barn øvde på å 'dukke og dekke seg' og sovjetiske barn fikk høre at amerikanerne ville sulte dem ut, hvilke følger kan slik frykt få for hvordan folk ser på hverandre?"
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

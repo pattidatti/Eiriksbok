@@ -195,6 +195,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilket land og omtrent hvilket år begynte den industrielle revolusjonen, og hva erstattet dampmaskinen som hovedkilde til energi?",
+                    "Teksten nevner fire forhold som gjorde at revolusjonen startet nettopp i England. Nevn minst tre av dem.",
+                    "Hvor mange innbyggere hadde Manchester i 1772, og hvor mange bodde der sytti år senere?",
+                    "Hvem var luddittene, og hva gjorde de i protest fra 1811?"
+                ],
+                "reflekter": [
+                    "Teksten kaller dampmaskinen en lommeflaske med energi. Forklar med egne ord hvorfor dette bildet passer, og hva som gjorde dampmaskinen så mye friere enn vann- og vindkraft.",
+                    "Se på tabellen Husflid mot fabrikk. Velg to rader du synes viser den største forskjellen for et vanlig menneske, og forklar hvorfor du valgte akkurat dem.",
+                    "Teksten sier at revolusjonen la grunnlaget for moderne velstand, men også for trangboddhet, barnearbeid og forurensning. Var den industrielle revolusjonen et gode eller et onde for vanlige arbeidere? Bruk minst to eksempler fra teksten til å argumentere.",
+                    "Hvorfor tok det så mange tiår før arbeiderne fikk lover som forbød barnearbeid og kortere arbeidsdager, tror du? Bruk det teksten sier om fagforeninger og parlamentet."
+                ],
+                "gaaVidere": [
+                    "Teksten sammenligner luddittene med folk som frykter at kunstig intelligens tar over jobber i dag. Skriv fem-seks setninger om hvilke jobber du tror KI kan endre i din levetid, og om vi bør bekymre oss slik luddittene gjorde.",
+                    "Den industrielle revolusjonen startet stor bruk av kull, som teksten kobler til klimakrisen i dag. Diskuter i par: kan vi løse klimaproblemet uten å gi opp velstanden industrien ga oss?",
+                    "Manchester ble fjorten ganger større på sytti år. Finn ut hvor mange som bor i hjembyen eller nærmeste by i dag, og skriv kort om hva som skjer med en by når folk flytter dit raskere enn boliger og avløp blir bygd."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [

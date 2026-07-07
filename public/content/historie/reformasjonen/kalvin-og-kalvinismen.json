@@ -164,6 +164,29 @@
         },
         {
             "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken by gjorde Calvin om til den protestantiske verdens hovedstad, og hvilket tilnavn fikk byen?",
+                    "Hva går predestinasjonslæren ut på? Forklar med egne ord hva Calvin mente Gud hadde bestemt før verden ble skapt.",
+                    "Hva het Calvins store hovedverk fra 1536, og hvorfor skrev artikkelen at han la fram troen 'punkt for punkt' som en jurist?",
+                    "Nevn minst tre grupper eller land der kalvinismen spredte seg, for eksempel presbyterianere, huguenotter eller puritanere."
+                ],
+                "reflekter": [
+                    "Comparison-tabellen viser tre forskjeller mellom Luther og Calvin. Velg den forskjellen du synes er størst, og forklar hvorfor.",
+                    "Max Weber mente at frykten for å ikke være blant de utvalgte fikk folk til å jobbe hardt og spare. Forklar hvordan denne uroen kunne føre til at det vokste fram kapitalisme.",
+                    "Reformasjonen handlet om frihet fra paven, men Calvin støttet at Michael Servetus ble brent på bålet i 1553. Hva forteller dette oss om hvor tolerante de tidlige protestantene egentlig var?",
+                    "Artikkelen sier at arven etter Calvin handler om både lys og skygge. Gi ett eksempel på hver side, og vurder om det gode veier opp for det vonde."
+                ],
+                "gaaVidere": [
+                    "Skottland fikk verdens første allmenne skolesystem fordi alle måtte kunne lese Bibelen. Skriv et kort avsnitt om hvordan en religiøs idé kan få følger som varer i flere hundre år.",
+                    "Diskuter i klassen: Er det rett at rikdom du tjener ikke skal sløses bort, men spares og investeres? Kjenner dere igjen denne tanken i samfunnet i dag?",
+                    "Konsistoriet i Geneve passet på at folk ikke drakk for mye, danset eller gikk med for fancy klær. Skriv ned tre regler du tror ville skapt størst bråk hvis en slik gruppe overvåket ditt eget nabolag i dag."
+                ]
+            }
+        },
+        {
+            "type": "component",
             "name": "Quiz",
             "props": {
                 "questions": [
