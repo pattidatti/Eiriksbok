@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Scroll, ArrowRight, Skull, Trophy, RefreshCcw } from 'lucide-react';
 import { renderInlineMarkdown } from '../../markdownUtils';
+import { celebrateCompletion } from '../../ui/answerFeedback';
 
 interface Option {
     label?: string;
@@ -46,6 +47,17 @@ export const ScenarioRoleplay: React.FC<ScenarioRoleplayProps> = ({ title, intro
         setHistory([]);
     };
 
+    const options = currentScenario?.options ?? currentScenario?.choices ?? [];
+    const isEnding = !!currentScenario && options.length === 0;
+    const isFailureEnding =
+        !!currentScenario &&
+        (currentScenario.id.includes('death') || currentScenario.id.includes('fail'));
+
+    // Konfetti når eleven når en god slutt - kun ved fullført historie
+    React.useEffect(() => {
+        if (isEnding && !isFailureEnding) celebrateCompletion();
+    }, [isEnding, isFailureEnding, currentScenario?.id]);
+
     if (!currentScenario) {
         return (
             <div className="p-6 bg-slate-100 rounded-xl text-center">
@@ -54,9 +66,6 @@ export const ScenarioRoleplay: React.FC<ScenarioRoleplayProps> = ({ title, intro
             </div>
         );
     }
-
-    const options = currentScenario.options ?? currentScenario.choices ?? [];
-    const isEnding = options.length === 0;
 
     return (
         <div className="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-sm font-sans mx-auto max-w-2xl">
@@ -101,7 +110,7 @@ export const ScenarioRoleplay: React.FC<ScenarioRoleplayProps> = ({ title, intro
                                 <button
                                     key={idx}
                                     onClick={() => handleOptionClick(option)}
-                                    className="w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all group flex items-center justify-between shadow-sm hover:shadow"
+                                    className="pressable focus-ring w-full text-left p-4 rounded-xl border border-slate-200 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all group flex items-center justify-between shadow-sm hover:shadow"
                                 >
                                     <span className="font-medium text-slate-800 group-hover:text-indigo-900">
                                         {option.label ?? option.text}
@@ -112,17 +121,22 @@ export const ScenarioRoleplay: React.FC<ScenarioRoleplayProps> = ({ title, intro
 
                             {isEnding && (
                                 <div className="text-center mt-8">
-                                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4">
-                                        {currentScenario.id.includes('death') || currentScenario.id.includes('fail') ? (
+                                    <motion.div
+                                        initial={{ scale: 0, rotate: -20 }}
+                                        animate={{ scale: 1, rotate: 0 }}
+                                        transition={{ type: 'spring', stiffness: 260, damping: 16 }}
+                                        className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-100 mb-4"
+                                    >
+                                        {isFailureEnding ? (
                                             <Skull className="w-8 h-8 text-slate-600" />
                                         ) : (
                                             <Trophy className="w-8 h-8 text-amber-500" />
                                         )}
-                                    </div>
+                                    </motion.div>
                                     <h4 className="text-xl font-bold mb-2">Historien er slutt</h4>
                                     <button
                                         onClick={reset}
-                                        className="inline-flex items-center gap-2 px-6 py-2 bg-indigo-600 text-white rounded-full font-bold hover:bg-indigo-700 transition-colors"
+                                        className="pressable focus-ring inline-flex items-center gap-2 px-6 py-2 bg-indigo-600 text-white rounded-full font-bold hover:bg-indigo-700 transition-colors"
                                     >
                                         <RefreshCcw className="w-4 h-4" />
                                         Prøv igjen
