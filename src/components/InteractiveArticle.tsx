@@ -270,7 +270,9 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, f
             />
 
             {/* Navigation Bar */}
-            <div className="fixed top-32 left-0 w-full p-4 flex justify-between items-center z-40 pointer-events-none">
+            {/* På mobil ligger knappen i normal flyt øverst (over meta-raden) så den
+                ikke overlapper tittelen; fra md flyter den fast over hero-bildet. */}
+            <div className="relative top-0 md:fixed md:top-32 left-0 w-full p-4 flex justify-between items-center z-40 pointer-events-none">
                 <div className="pointer-events-auto flex gap-2">
 
                     <button

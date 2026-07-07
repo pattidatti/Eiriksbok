@@ -49,8 +49,8 @@ export const Layout: React.FC = () => {
             {/* Navbar */}
             {!hideHeader && (
                 <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-white/70 border-b border-white/20 shadow-sm transition-all duration-300">
-                    <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                        <div className="flex items-center gap-4">
+                    <div className="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between">
+                        <div className="flex items-center gap-2 sm:gap-4">
                             {/* Feedback Widget - Top Left */}
                             <FeedbackWidget />
 
@@ -63,11 +63,12 @@ export const Layout: React.FC = () => {
                                 <Menu size={28} />
                             </button>
 
-                            <Link to="/" className="flex items-center gap-3 text-xl font-display font-bold text-text-main no-underline tracking-tight group">
+                            <Link to="/" className="flex items-center gap-2 sm:gap-3 text-xl font-display font-bold text-text-main no-underline tracking-tight group">
 
                                 <img src="/logo.webp" alt="Logo" className="w-8 h-8 object-contain transition-transform group-hover:scale-110" />
+                                {/* Merkenavnet vises kun fra tablet/desktop (sm+). På telefon står
+                                    logo-ikonet alene, så topbaren aldri renner over (Fold lukket ~344px). */}
                                 <span className="hidden sm:inline">BOK.HAALAND.DE</span>
-                                <span className="sm:hidden">EIRIKSBOK</span>
                             </Link>
                         </div>
 
@@ -81,7 +82,7 @@ export const Layout: React.FC = () => {
                             <PrefetchLink to="/oving" prefetchTarget="PracticePage" className={`text-sm transition-colors ${isActive('/oving')}`}>Øving</PrefetchLink>
                         </nav>
 
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-1 sm:gap-2">
                             <ProgressChip />
                             <button
                                 onClick={toggleDyslexicMode}
