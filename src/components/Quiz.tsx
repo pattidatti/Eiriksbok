@@ -5,6 +5,7 @@ import './Quiz.css';
 import { motion } from 'framer-motion';
 import { captureQuizAnswer } from '../utils/reviewCapture';
 import { useProgressStore } from '../features/progress/useProgressStore';
+import { correctPop, wrongShake, celebrateCompletion } from './ui/answerFeedback';
 
 interface QuizProps {
     questions: QuizQuestion[];
@@ -65,23 +66,40 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
             setIsAnswered(false);
         } else {
             // «Min læring»: quiz fullført - normalisert score 0-1
+            const ratio = questions.length > 0 ? correctCount / questions.length : 0;
             useProgressStore.getState().recordActivity({
                 kind: 'quiz-completed',
                 activityId: location.pathname.replace(/^\//, ''),
-                score: questions.length > 0 ? correctCount / questions.length : 0,
+                score: ratio,
                 title: 'Quiz fullført',
             });
+            celebrateCompletion({ big: ratio === 1 });
             setShowResult(true);
         }
     };
 
     if (showResult) {
+        const ratio = questions.length > 0 ? correctCount / questions.length : 0;
+        const emoji = ratio === 1 ? '🏆' : ratio >= 0.7 ? '🎉' : ratio >= 0.4 ? '💪' : '📖';
         return (
-            <div className="quiz-container quiz-result">
-                <h3>Quiz Fullført!</h3>
-                <p>Du fikk {score} poeng totalt.</p>
-                <button className="next-btn" onClick={() => window.location.reload()}>Start på nytt</button>
-            </div>
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 12 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+                className="quiz-container quiz-result"
+            >
+                <motion.div
+                    initial={{ scale: 0, rotate: -20 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ type: 'spring', stiffness: 260, damping: 16, delay: 0.15 }}
+                    className="text-5xl text-center mb-4"
+                >
+                    {emoji}
+                </motion.div>
+                <h3>Quiz fullført!</h3>
+                <p>Du fikk {correctCount} av {questions.length} riktige ({score} poeng).</p>
+                <button className="next-btn pressable focus-ring" onClick={() => window.location.reload()}>Start på nytt</button>
+            </motion.div>
         )
     }
 
@@ -139,23 +157,30 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
                 )}
 
                 <div className="options-grid">
-                    {shuffledOptions.map((option) => (
-                        <button
-                            key={option}
-                            className={`option-btn ${selectedOption === option ? 'selected' : ''} ${isAnswered && option === correctAnswer ? 'correct' : ''} ${isAnswered && selectedOption === option && option !== correctAnswer ? 'wrong' : ''}`}
-                            onClick={() => handleOptionClick(option)}
-                            disabled={isAnswered}
-                        >
-                            {option}
-                        </button>
-                    ))}
+                    {shuffledOptions.map((option) => {
+                        const isCorrectAnswer = isAnswered && option === correctAnswer;
+                        const isWrongPick = isAnswered && selectedOption === option && option !== correctAnswer;
+                        return (
+                            <motion.button
+                                key={option}
+                                animate={isCorrectAnswer ? correctPop : isWrongPick ? wrongShake : undefined}
+                                whileTap={!isAnswered ? { scale: 0.97 } : undefined}
+                                className={`option-btn focus-ring ${selectedOption === option ? 'selected' : ''} ${isCorrectAnswer ? 'correct' : ''} ${isWrongPick ? 'wrong' : ''}`}
+                                onClick={() => handleOptionClick(option)}
+                                disabled={isAnswered}
+                            >
+                                {option}
+                            </motion.button>
+                        );
+                    })}
                 </div>
                 {!isAnswered && selectedOption && (
                     <motion.button
-                        className="submit-btn"
+                        className="submit-btn focus-ring"
                         onClick={submitAnswer}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
+                        whileTap={{ scale: 0.97 }}
                     >
                         Svar
                     </motion.button>
@@ -163,10 +188,11 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
                 {isAnswered && (
                     <div className="flex flex-col gap-4">
                         <motion.button
-                            className="next-btn"
+                            className="next-btn focus-ring"
                             onClick={nextQuestion}
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
+                            whileTap={{ scale: 0.97 }}
                         >
                             {currentQuestion < questions.length - 1 ? 'Neste' : 'Se resultat'}
                         </motion.button>
