@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   base: '/',
   plugins: [
     react(),
@@ -17,6 +17,10 @@ export default defineConfig({
   ],
   optimizeDeps: {
     exclude: ['@dimforge/rapier3d-compat'],
+  },
+  esbuild: {
+    // Strip støyende logging fra prod-bundle (kun build); warn/error beholdes
+    pure: command === 'build' ? ['console.log', 'console.count', 'console.debug'] : [],
   },
   build: {
     chunkSizeWarningLimit: 1500,
@@ -36,4 +40,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

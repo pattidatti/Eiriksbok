@@ -58,7 +58,13 @@ export const ProjectManager: React.FC<ProjectManagerProps> = ({
             const rawStorage = localStorage.getItem(MY_SONGS_KEY);
             console.log('[ProjectManager] Loading library. Raw storage:', rawStorage);
 
-            const savedIds = JSON.parse(rawStorage || '[]');
+            let savedIds: string[] = [];
+            try {
+                const parsed = JSON.parse(rawStorage || '[]');
+                if (Array.isArray(parsed)) savedIds = parsed;
+            } catch {
+                // Korrupt localStorage - start med tom liste i stedet for å krasje
+            }
             const fetchedSongs = [];
             let storageNeedsUpdate = false;
             let finalIds = [...savedIds];

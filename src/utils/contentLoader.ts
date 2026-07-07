@@ -1,5 +1,14 @@
 import type { Lesson, Manifest, Philosopher, ManifestLesson } from '../types';
 
+// Kastes når en leksjon ikke finnes i noen tier. React Query skal IKKE
+// retrye denne (i motsetning til nettverksfeil) - se useLesson.
+export class LessonNotFoundError extends Error {
+    constructor(subject: string, topic: string, lessonId: string) {
+        super(`Fant ikke leksjonen «${lessonId}» under ${subject}/${topic}`);
+        this.name = 'LessonNotFoundError';
+    }
+}
+
 // --- Registry Types ---
 interface ContentIndex {
     buildId: number;
@@ -68,7 +77,11 @@ export async function fetchRegistry(): Promise<ContentIndex | null> {
 
     const basePath = getBasePath();
     // Pathological case: If basePath is wrong, relative fetches will 404
-    const url = `${basePath}content/content-index.json?v=${Date.now()}`;
+    // Prod: ingen cache-busting i URL-en - 'no-cache' gir ETag-revalidering (304)
+    // slik at browser-cachen faktisk gjenbrukes mellom økter.
+    const url = import.meta.env.DEV
+        ? `${basePath}content/content-index.json?v=${Date.now()}`
+        : `${basePath}content/content-index.json`;
     console.log(`[ContentRegistry] Fetching registry from: ${url}`);
 
     globalRegistryPromise = fetchWithTimeout(url, { cache: 'no-cache' })
@@ -103,8 +116,11 @@ export async function fetchManifest(): Promise<Manifest | null> {
 
     const basePath = getBasePath();
 
-    const url = `${basePath}content/manifest.json?v=${Date.now()}`; // Manifest itself always fresh or cached by browser default
-    globalManifestPromise = fetchWithTimeout(url, { cache: 'default' })
+    // Prod: ingen cache-busting - 'no-cache' revaliderer med ETag (304 hvis uendret)
+    const url = import.meta.env.DEV
+        ? `${basePath}content/manifest.json?v=${Date.now()}`
+        : `${basePath}content/manifest.json`;
+    globalManifestPromise = fetchWithTimeout(url, { cache: 'no-cache' })
         .then(async (response) => {
             if (!response.ok) {
                 throw new Error(`Failed to fetch manifest: ${response.statusText}`);
@@ -152,7 +168,7 @@ export async function fetchManifest(): Promise<Manifest | null> {
  * Authority-based content loader.
  * Eliminates "guessing" in favor of deterministic resolution.
  */
-export async function fetchLesson(subject: string, topic: string, lessonId: string, subTopicId?: string): Promise<Lesson | null> {
+export async function fetchLesson(subject: string, topic: string, lessonId: string, subTopicId?: string): Promise<Lesson> {
     const basePath = getBasePath();
     const normalizedId = lessonId.toLowerCase();
 
@@ -296,7 +312,7 @@ export async function fetchLesson(subject: string, topic: string, lessonId: stri
         return dataTier3;
     }
 
-    return null;
+    throw new LessonNotFoundError(subject, topic, lessonId);
 }
 
 

@@ -309,7 +309,7 @@ export const QuizHost: React.FC = () => {
             }
 
             setDebugStatus(`Henter ${lessonsToFetch.length} leksjoner...`);
-            const results = await Promise.all(lessonsToFetch.map(l => fetchLesson(l.subjectId, l.topicId, l.lessonId, l.subTopicId)));
+            const results = await Promise.all(lessonsToFetch.map(l => fetchLesson(l.subjectId, l.topicId, l.lessonId, l.subTopicId).catch(() => null)));
             let allQuestions: QuizQuestion[] = [];
 
             setDebugStatus('Prosesserer spørsmål...');

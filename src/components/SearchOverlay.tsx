@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useManifest } from '../hooks/useManifest';
 import { useScrollLock } from '../hooks/useScrollLock';
-import type { ManifestLesson } from '../types';
+import type { Manifest, ManifestLesson } from '../types';
 import { Search, X, Map } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { textLibraryData } from '../data/textLibraryData';
@@ -20,6 +20,102 @@ interface SearchResult {
     path: string;
     description?: string;
     tags?: string[];
+}
+
+// Fuse-indeksen bygges én gang per manifest-referanse (modulcache), ikke per
+// tastetrykk/åpning - indeksering av 1000+ items blokkerer ellers main thread.
+let fuseCache: { manifest: Manifest; fuse: Fuse<SearchResult> } | null = null;
+
+function getFuse(manifest: Manifest): Fuse<SearchResult> {
+    if (fuseCache && fuseCache.manifest === manifest) return fuseCache.fuse;
+
+    const allItems: SearchResult[] = [];
+
+    // 1. Manifest Content
+    manifest.subjects.forEach((subject: any) => {
+        subject.topics.forEach((topic: any) => {
+            // Add Topic
+            allItems.push({
+                type: 'topic',
+                title: topic.title,
+                path: `/${subject.id}`,
+                description: `Emne i ${subject.title}`,
+                tags: []
+            });
+
+            const processLesson = (lesson: ManifestLesson, path: string, contextTitle: string) => {
+                // List of generic titles that need context
+                const genericTitles = [
+                    'Bønn', 'Sentrale trekk', 'Introduksjon', 'Overgangsriter',
+                    'Gudsbilde', 'Frelse', 'Hellige tekster', 'Grunnleggere',
+                    'Etikk', 'Arkitektur', 'Kunst', 'Bakgrunn'
+                ];
+
+                const shouldAppendContext = genericTitles.includes(lesson.title) ||
+                    (lesson.title.startsWith('Bønn') && lesson.title.length < 20);
+
+                const displayTitle = shouldAppendContext
+                    ? `${lesson.title} - ${contextTitle}`
+                    : lesson.title;
+
+                allItems.push({
+                    type: 'lesson',
+                    title: displayTitle,
+                    path: path,
+                    description: lesson.description || `Leksjon i ${contextTitle}`,
+                    tags: lesson.tags || []
+                });
+            };
+
+            if (topic.subTopics) {
+                topic.subTopics.forEach((subTopic: any) => {
+                    subTopic.lessons.forEach((lesson: any) => {
+                        processLesson(lesson, `/${subject.id}/${topic.id}/${subTopic.id}/${lesson.id}`, subTopic.title);
+                    });
+                });
+            } else if (topic.lessons) {
+                topic.lessons.forEach((lesson: any) => {
+                    processLesson(lesson, `/${subject.id}/${topic.id}/${lesson.id}`, topic.title);
+                });
+            }
+        });
+    });
+
+    // 2. Library Texts
+    textLibraryData.forEach(text => {
+        const tags = [text.genre, ...(text.theme || []), text.author];
+        allItems.push({
+            type: 'library',
+            title: text.title,
+            path: `/norsk/bibliotek/${text.id}`,
+            description: `Av ${text.author}`,
+            tags: tags.filter(Boolean) as string[]
+        });
+    });
+
+    // 3. Learning Paths
+    learningPathsData.paths.forEach(path => {
+        allItems.push({
+            type: 'learning-path',
+            title: path.title,
+            path: path.path,
+            description: path.description,
+            tags: (path as any).tags || []
+        });
+    });
+
+    const fuse = new Fuse(allItems, {
+        keys: [
+            { name: 'title', weight: 0.7 },
+            { name: 'tags', weight: 0.5 },
+            { name: 'description', weight: 0.3 }
+        ],
+        threshold: 0.3, // 0.0 = perfect match, 1.0 = match anything
+        includeScore: true
+    });
+
+    fuseCache = { manifest, fuse };
+    return fuse;
 }
 
 export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
@@ -82,108 +178,12 @@ export const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose })
     }, [selectedIndex]);
 
     useEffect(() => {
-        if (!manifest) {
+        if (!manifest || !query.trim()) {
             setResults([]);
             return;
         }
 
-        const allItems: SearchResult[] = [];
-
-        // Collect all searchable items
-
-        // 1. Manifest Content
-        manifest.subjects.forEach((subject: any) => {
-            subject.topics.forEach((topic: any) => {
-                // Add Topic
-                allItems.push({
-                    type: 'topic',
-                    title: topic.title,
-                    path: `/${subject.id}`,
-                    description: `Emne i ${subject.title}`,
-                    tags: []
-                });
-
-                const processLesson = (lesson: ManifestLesson, path: string, contextTitle: string) => {
-                    // List of generic titles that need context
-                    const genericTitles = [
-                        'Bønn', 'Sentrale trekk', 'Introduksjon', 'Overgangsriter',
-                        'Gudsbilde', 'Frelse', 'Hellige tekster', 'Grunnleggere',
-                        'Etikk', 'Arkitektur', 'Kunst', 'Bakgrunn'
-                    ];
-
-                    // Check if title is generic or contains generic terms like "Bønn" but isn't specific enough
-                    // e.g. "Bønn (Puja)" is specific enough? Maybe not for a global search.
-                    // Let's stick to the list for now, but also check for exact match of "Bønn"
-                    const shouldAppendContext = genericTitles.includes(lesson.title) ||
-                        (lesson.title.startsWith('Bønn') && lesson.title.length < 20);
-
-                    const displayTitle = shouldAppendContext
-                        ? `${lesson.title} - ${contextTitle}`
-                        : lesson.title;
-
-                    allItems.push({
-                        type: 'lesson',
-                        title: displayTitle,
-                        path: path,
-                        description: lesson.description || `Leksjon i ${contextTitle}`,
-                        tags: lesson.tags || []
-                    });
-                };
-
-                if (topic.subTopics) {
-                    topic.subTopics.forEach((subTopic: any) => {
-                        subTopic.lessons.forEach((lesson: any) => {
-                            processLesson(lesson, `/${subject.id}/${topic.id}/${subTopic.id}/${lesson.id}`, subTopic.title);
-                        });
-                    });
-                } else if (topic.lessons) {
-                    topic.lessons.forEach((lesson: any) => {
-                        processLesson(lesson, `/${subject.id}/${topic.id}/${lesson.id}`, topic.title);
-                    });
-                }
-            });
-        });
-
-        // 2. Library Texts
-        textLibraryData.forEach(text => {
-            const tags = [text.genre, ...(text.theme || []), text.author];
-            allItems.push({
-                type: 'library',
-                title: text.title,
-                path: `/norsk/bibliotek/${text.id}`,
-                description: `Av ${text.author}`,
-                tags: tags.filter(Boolean) as string[]
-            });
-        });
-
-        // 3. Learning Paths
-        learningPathsData.paths.forEach(path => {
-            allItems.push({
-                type: 'learning-path',
-                title: path.title,
-                path: path.path,
-                description: path.description,
-                tags: (path as any).tags || []
-            });
-        });
-
-        if (!query.trim()) {
-            setResults([]);
-            return;
-        }
-
-        // Configure Fuse
-        const fuse = new Fuse(allItems, {
-            keys: [
-                { name: 'title', weight: 0.7 },
-                { name: 'tags', weight: 0.5 },
-                { name: 'description', weight: 0.3 }
-            ],
-            threshold: 0.3, // 0.0 = perfect match, 1.0 = match anything
-            includeScore: true
-        });
-
-        const searchResults = fuse.search(query);
+        const searchResults = getFuse(manifest).search(query);
         setResults(searchResults.map(result => result.item).slice(0, 50)); // Limit to 50 results
         setSelectedIndex(0); // Reset selection on new results
 

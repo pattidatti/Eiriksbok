@@ -21,6 +21,7 @@ import { useReadingTime } from '../hooks/useReadingTime';
 import { useArticleReadTracker } from '../features/progress/useArticleReadTracker';
 import { useLayout } from '../context/LayoutContext';
 import { LearningPathErrorState } from '../components/content/LearningPathErrorState';
+import { LessonNotFoundError } from '../utils/contentLoader';
 import { ArticleContent } from '../components/ArticleContent';
 
 
@@ -207,12 +208,6 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
     }, [lesson, lessonImage, subjectId, topicId, relevantLearningPaths]);
 
 
-    // Diagnostic logging
-    console.count("[LessonPage] Render Count");
-    if (lessonLoading || isFetching || lesson) {
-        console.log(`[LessonPage] Render: lessonLoading=${lessonLoading}, isFetching=${isFetching}, hasLesson=${!!lesson}, layout="${lesson?.layout || 'none'}", hasSteps=${!!lesson?.learningPathData?.steps}`);
-    }
-
     // --- Loading & Error States (After all hooks) ---
 
     // Show loading if:
@@ -227,6 +222,9 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
     if (loading) return <LessonSkeleton />;
 
     if (isError) {
+        if (error instanceof LessonNotFoundError) {
+            return <LearningPathErrorState type="not-found" />;
+        }
         return <LearningPathErrorState type="network" error={error as Error} onRetry={() => refetch()} />;
     }
 
@@ -238,8 +236,9 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
         return <LearningPathErrorState type="data" onRetry={() => refetch()} />;
     }
 
+    // Ingen data, ingen feil, ingen lasting - vis feilside i stedet for evig skeleton
     if (!lesson || !articleData) {
-        return <LessonSkeleton />;
+        return <LearningPathErrorState type="not-found" />;
     }
 
     // --- Conditional Rendering & Layout Logic ---

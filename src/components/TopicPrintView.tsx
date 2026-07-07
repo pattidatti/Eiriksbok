@@ -19,11 +19,13 @@ export function TopicPrintView({ subjectId, topicId, lessons, onClose }: Props) 
         let count = 0;
         Promise.all(
             lessons.map((lesson) =>
-                fetchLesson(subjectId, topicId, lesson.id).then((data) => {
-                    count++;
-                    setLoaded(count);
-                    return data;
-                })
+                fetchLesson(subjectId, topicId, lesson.id)
+                    .catch(() => null)
+                    .then((data) => {
+                        count++;
+                        setLoaded(count);
+                        return data;
+                    })
             )
         ).then(setArticles);
     }, []);

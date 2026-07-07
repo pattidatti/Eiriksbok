@@ -3,6 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './index.css';
 import App from './App.tsx';
+import { fetchRegistry, fetchManifest } from './utils/contentLoader';
+
+// Boot-prefetch: varm opp modulcachen i contentLoader mens appen laster,
+// slik at første navigasjon ikke venter på manifest + content-index (~550 KB).
+fetchRegistry().catch(() => {});
+fetchManifest().catch(() => {});
 
 const queryClient = new QueryClient({
   defaultOptions: {
