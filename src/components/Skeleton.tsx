@@ -6,7 +6,7 @@ interface SkeletonProps {
 
 export const Skeleton: React.FC<SkeletonProps> = ({ className = '' }) => {
     return (
-        <div className={`bg-white/5 animate-pulse rounded-md ${className}`} />
+        <div className={`skeleton-shimmer rounded-md ${className}`} />
     );
 };
 
@@ -22,7 +22,7 @@ export const PageSkeleton: React.FC = () => {
             {/* Grid Skeleton */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
-                    <div key={i} className="h-64 rounded-xl bg-white/5 border border-white/5 overflow-hidden">
+                    <div key={i} className="h-64 rounded-xl bg-white border border-slate-100 overflow-hidden">
                         <Skeleton className="h-32 w-full" />
                         <div className="p-4 space-y-3">
                             <Skeleton className="h-4 w-1/3" />

@@ -404,7 +404,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                     case 'image':
                         const imgStyle = (block as any).width ? { width: (block as any).width } : {};
                         // Use inline style to override w-full if width is provided.
-                        // We keep w-full as base class for responsiveness if no width is set, 
+                        // We keep w-full as base class for responsiveness if no width is set,
                         // but inline width will take precedence.
 
                         return (
@@ -412,8 +412,11 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 <img
                                     src={(block as any).src}
                                     alt={(block as any).alt || ''}
+                                    loading="lazy"
                                     className="w-full rounded-xl shadow-lg"
-                                    style={imgStyle}
+                                    // 'auto 16 / 9' reserverer 16:9-plass FØR lasting (unngår
+                                    // layout-hopp); etter lasting gjelder bildets egne proporsjoner.
+                                    style={{ aspectRatio: 'auto 16 / 9', ...imgStyle }}
                                 />
                                 {(block as any).caption && (
                                     <figcaption className="mt-2 text-center text-sm text-gray-400 italic">
@@ -617,7 +620,8 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
 
                 if (!rendered) return null;
 
-                const isImageBlock = (block.type || (block as any).name) === 'image';
+                const blockKind = block as { type?: string; name?: string };
+                const isImageBlock = (blockKind.type || blockKind.name) === 'image';
                 return (
                     <RevealBlock key={index} imageOnly={isImageBlock}>
                         {rendered}

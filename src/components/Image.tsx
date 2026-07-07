@@ -7,6 +7,10 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     seed?: string; // For placeholder generation if src fails or is missing
     className?: string;
     priority?: boolean;
+    // CSS aspect-ratio på wrapperen (f.eks. "16 / 9"). Reserverer plass før
+    // bildet er lastet så layouten ikke hopper (CLS). Bruk der wrapperen ikke
+    // får fast høyde via className.
+    aspectRatio?: string;
 }
 
 export const Image: React.FC<ImageProps> = ({
@@ -15,6 +19,7 @@ export const Image: React.FC<ImageProps> = ({
     seed,
     className = '',
     priority = false,
+    aspectRatio,
     ...props
 }) => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -60,17 +65,19 @@ export const Image: React.FC<ImageProps> = ({
     // - If containing (or others), max-w/max-h is safer to preserve aspect ratio within bounds without forcing stretch
     const sizeClasses = finalObjectFit === 'object-cover' ? 'w-full h-full' : 'max-w-full max-h-full';
 
+    const wrapperStyle = aspectRatio ? { aspectRatio } : undefined;
+
     // If no src or error, show placeholder
     if (!currentSrc || error) {
         return (
-            <div className={`relative overflow-hidden bg-surface-card ${className}`}>
+            <div className={`relative overflow-hidden bg-surface-card ${className}`} style={wrapperStyle}>
                 <PlaceholderImage seed={seed || alt} className="w-full h-full object-cover" />
             </div>
         );
     }
 
     return (
-        <div className={`relative flex items-center justify-center overflow-hidden ${className}`}>
+        <div className={`relative flex items-center justify-center overflow-hidden ${className}`} style={wrapperStyle}>
             {/* Blur placeholder (could be a tiny version of image, or just a color/skeleton) */}
             {!isLoaded && (
                 <div className="absolute inset-0 bg-white/5 animate-pulse" />
