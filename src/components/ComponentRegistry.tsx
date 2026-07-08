@@ -30,6 +30,7 @@ const MaktensKilde = lazy(() => import('./content/interactive/MaktensKilde').the
 const KollapsDiagnose = lazy(() => import('./content/interactive/KollapsDiagnose').then(m => ({ default: m.KollapsDiagnose })));
 const HandelsnettKollaps = lazy(() => import('./content/interactive/HandelsnettKollaps').then(m => ({ default: m.HandelsnettKollaps })));
 const RessurskollapsSimulator = lazy(() => import('./content/interactive/RessurskollapsSimulator').then(m => ({ default: m.RessurskollapsSimulator })));
+const TorkensVippepunkt = lazy(() => import('./content/interactive/TorkensVippepunkt').then(m => ({ default: m.TorkensVippepunkt })));
 const KongensMaktBinding = lazy(() => import('./content/interactive/KongensMaktBinding').then(m => ({ default: m.KongensMaktBinding })));
 const GullSaltVekten = lazy(() => import('./content/interactive/GullSaltVekten').then(m => ({ default: m.GullSaltVekten })));
 const TondibiSlaget = lazy(() => import('./content/interactive/TondibiSlaget').then(m => ({ default: m.TondibiSlaget })));
@@ -317,6 +318,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     KollapsDiagnose,
     HandelsnettKollaps,
     RessurskollapsSimulator,
+    TorkensVippepunkt,
     EratosthenesJorda,
     GullSaltVekten,
     TondibiSlaget,

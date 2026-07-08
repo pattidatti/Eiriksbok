@@ -1634,6 +1634,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "mayaenes-kollaps",
+      "title": "Mayaenes kollaps",
+      "description": "Mayaene bygde storslåtte steinbyer i jungelen. Se hvordan en lang tørke tømte dem - fordi den traff et samfunn som allerede sto på kanten.",
+      "startDate": 750,
+      "endDate": 950,
+      "displayDate": "750-950",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "imperienes-fall",
+      "link": "/samfunnskunnskap/imperienes-fall/mayaenes-kollaps",
+      "tags": [
+        "samfunn",
+        "kollaps",
+        "maya",
+        "klima",
+        "ressurser",
+        "mellom-amerika"
+      ],
+      "lat": 17.22,
+      "lng": -89.62,
+      "placeLabel": "Mayariket",
+      "placeCountryId": 320,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "skipsteknologi",
       "title": "Skipet: Vikingtidens teknologi",
       "description": "Uten de klinkbygde skipene ville vikingtiden aldri ha skjedd.",
