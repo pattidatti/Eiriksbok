@@ -22,7 +22,7 @@ export const MethodBadge: React.FC<MethodBadgeProps> = ({ method, compact }) => 
             <GraduationCap
                 className={`${compact ? 'w-3.5 h-3.5' : 'w-4 h-4'} text-[var(--det-accent)]`}
             />
-            <span className="font-semibold text-slate-100">
+            <span className="font-semibold text-[var(--det-accent)]">
                 Ferdighet: {METHOD_LABEL[method]}
             </span>
         </motion.div>

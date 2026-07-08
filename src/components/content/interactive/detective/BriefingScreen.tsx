@@ -27,7 +27,7 @@ export const BriefingScreen: React.FC<BriefingScreenProps> = ({ briefing, onStar
             <motion.div
                 initial={{ opacity: 0, scale: 0.97 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="relative max-w-3xl w-full bg-[var(--det-surface)]/80 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+                className="relative max-w-3xl w-full bg-[var(--det-surface)] backdrop-blur-xl border border-[var(--det-border)] rounded-2xl overflow-hidden shadow-xl flex flex-col md:flex-row"
             >
                 {/* Visuell side */}
                 <div
@@ -68,37 +68,30 @@ export const BriefingScreen: React.FC<BriefingScreenProps> = ({ briefing, onStar
                         >
                             Nytt oppdrag
                         </span>
-                        <h1 className="text-2xl md:text-3xl font-display font-bold text-white mt-1">
+                        <h1 className="text-2xl md:text-3xl font-display font-bold text-[var(--det-text)] mt-1">
                             {briefing.title}
                         </h1>
                     </div>
 
                     <div className="space-y-3 text-base leading-relaxed">
-                        <p className="text-slate-200">{briefing.context}</p>
-                        <p
-                            className="font-medium"
-                            style={{
-                                color: 'color-mix(in srgb, var(--det-warning) 75%, white)',
-                            }}
-                        >
+                        <p className="text-[var(--det-text)]">{briefing.context}</p>
+                        <p className="font-medium" style={{ color: 'var(--det-warning)' }}>
                             {briefing.mystery}
                         </p>
-                        <p
-                            className="font-semibold"
-                            style={{
-                                color: 'color-mix(in srgb, var(--det-evidence) 75%, white)',
-                            }}
-                        >
+                        <p className="font-semibold" style={{ color: 'var(--det-evidence)' }}>
                             {briefing.mission}
                         </p>
                         {briefing.stakes && (
-                            <p className="text-slate-400 text-sm italic">{briefing.stakes}</p>
+                            <p className="text-[var(--det-text-muted)] text-sm italic">
+                                {briefing.stakes}
+                            </p>
                         )}
                     </div>
 
                     <button
                         onClick={onStart}
-                        className="w-full md:w-auto px-8 py-3 bg-white text-slate-900 rounded-xl font-bold text-base flex items-center justify-center gap-2 hover:bg-slate-200 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-white/5"
+                        className="w-full md:w-auto px-8 py-3 text-white rounded-xl font-bold text-base flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:opacity-90"
+                        style={{ background: 'var(--det-accent)' }}
                     >
                         Start etterforskningen
                         <ChevronRight className="w-5 h-5" />

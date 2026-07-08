@@ -48,12 +48,12 @@ export const DetectiveCasePage: React.FC = () => {
     };
 
     return (
-        <div className="h-[calc(100dvh-4rem)] bg-slate-900 text-slate-100 flex flex-col">
+        <div className="h-[calc(100dvh-4rem)] bg-slate-50 text-slate-900 flex flex-col">
             {/* Compact header */}
-            <header className="h-12 border-b border-slate-800 bg-slate-900/50 backdrop-blur-md flex items-center justify-between px-4 sticky top-0 z-50">
+            <header className="h-12 border-b border-slate-200 bg-white/70 backdrop-blur-md flex items-center justify-between px-4 sticky top-0 z-50">
                 <button
                     onClick={handleBack}
-                    className="flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors group px-2 py-1 rounded-lg hover:bg-slate-800"
+                    className="flex items-center gap-1.5 text-slate-500 hover:text-slate-900 transition-colors group px-2 py-1 rounded-lg hover:bg-slate-100"
                 >
                     <ChevronLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
                     <span className="text-sm font-semibold">Avslutt</span>
@@ -68,9 +68,9 @@ export const DetectiveCasePage: React.FC = () => {
 
             <main className="flex-1 min-h-0 flex flex-col overflow-hidden relative">
                 {loading ? (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-slate-900">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-slate-50">
                         <Loader2 className="w-10 h-10 text-indigo-500 animate-spin" />
-                        <p className="text-slate-400 text-sm font-medium italic">
+                        <p className="text-slate-500 text-sm font-medium italic">
                             Samler kildemateriale...
                         </p>
                     </div>
@@ -80,10 +80,10 @@ export const DetectiveCasePage: React.FC = () => {
                             <AlertCircle className="w-7 h-7" />
                         </div>
                         <h2 className="text-xl font-bold mb-2">Noe gikk galt</h2>
-                        <p className="text-slate-400 max-w-md mb-6 text-sm">{error}</p>
+                        <p className="text-slate-500 max-w-md mb-6 text-sm">{error}</p>
                         <button
                             onClick={() => window.location.reload()}
-                            className="px-5 py-2 bg-white text-slate-900 rounded-xl font-bold text-sm hover:bg-slate-200 transition-colors"
+                            className="px-5 py-2 bg-indigo-600 text-white rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors"
                         >
                             Prøv igjen
                         </button>

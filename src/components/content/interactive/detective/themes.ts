@@ -1,17 +1,25 @@
 import type { DetectiveThemeId } from './types';
 
 export interface DetectiveTheme {
-    /** Bakgrunnsfarge på case-skall (mørk). */
+    /** Sidebakgrunn på case-skallet (lys). */
     bg: string;
-    /** Sekundær overflate (kortbakgrunn). */
+    /** Kort-/panelbakgrunn (hvit glass). */
     surface: string;
-    /** Aksentfarge for highlights, knapper, focus. */
+    /** Litt hevet flate for sekundære paneler. */
+    elevated: string;
+    /** Hovedtekstfarge (mørk på lys bakgrunn). */
+    text: string;
+    /** Dempet tekst (metadata, hjelpetekst). */
+    textMuted: string;
+    /** Kantfarge for kort og skiller. */
+    border: string;
+    /** Aksentfarge for highlights, knapper, focus. Lesbar på hvit. */
     accent: string;
     /** Farge brukt på samlede bevis. */
     evidence: string;
-    /** Farge brukt på advarsel / kildekritikk-tab. */
+    /** Farge brukt på advarsel / kildekritikk. */
     warning: string;
-    /** Tekstfarge på "Originalfragment" når tema vil signalisere alder. */
+    /** Papir-look på "Originalfragment" (signaliserer alder). */
     paperBg: string;
     paperText: string;
     paperBorder: string;
@@ -21,78 +29,82 @@ export interface DetectiveTheme {
     eraLabel: string;
 }
 
+/** Felles lyse nøytraler – aksent/warning/paper skiller epokene. */
+const LIGHT_BASE = {
+    surface: '#ffffff',
+    elevated: '#f1f5f9',
+    text: '#0f172a',
+    textMuted: '#64748b',
+    border: '#e2e8f0',
+    evidence: '#059669',
+};
+
 export const DETECTIVE_THEMES: Record<DetectiveThemeId, DetectiveTheme> = {
     'medieval-cold': {
-        bg: '#0c1219',
-        surface: '#141c28',
-        accent: '#7dd3fc',
-        evidence: '#a7f3d0',
-        warning: '#fcd34d',
+        ...LIGHT_BASE,
+        bg: '#f1f5fa',
+        accent: '#0369a1',
+        warning: '#b45309',
         paperBg: '#ede4cf',
         paperText: '#3d2f1f',
         paperBorder: '#a08864',
         paperFontClass: 'font-serif italic',
-        eraLabel: 'Middelalder · kald arkivsone',
+        eraLabel: 'Middelalder',
     },
     'viking-sea': {
-        bg: '#0a1820',
-        surface: '#13242e',
-        accent: '#fbbf24',
-        evidence: '#86efac',
-        warning: '#fb7185',
+        ...LIGHT_BASE,
+        bg: '#f8f5ef',
+        accent: '#b45309',
+        warning: '#e11d48',
         paperBg: '#e8dcc0',
         paperText: '#2d1f0f',
         paperBorder: '#8b6b3a',
         paperFontClass: 'font-serif',
-        eraLabel: 'Vikingtid · seilende arkiv',
+        eraLabel: 'Vikingtid',
     },
     enlightenment: {
-        bg: '#1a1410',
-        surface: '#2a2018',
-        accent: '#f59e0b',
-        evidence: '#bef264',
-        warning: '#f87171',
+        ...LIGHT_BASE,
+        bg: '#faf6ee',
+        accent: '#a16207',
+        warning: '#dc2626',
         paperBg: '#f5ecd6',
         paperText: '#2d1810',
         paperBorder: '#8b6b3a',
         paperFontClass: 'font-serif',
-        eraLabel: 'Tidlig moderne · opplysningens skygge',
+        eraLabel: 'Tidlig moderne',
     },
     'cold-war': {
-        bg: '#0a0e12',
-        surface: '#15191f',
-        accent: '#22d3ee',
-        evidence: '#34d399',
-        warning: '#fb7185',
-        paperBg: '#1f2937',
-        paperText: '#e5e7eb',
+        ...LIGHT_BASE,
+        bg: '#eff4f6',
+        accent: '#0e7490',
+        warning: '#e11d48',
+        paperBg: '#e2e8f0',
+        paperText: '#1f2937',
         paperBorder: '#dc2626',
         paperFontClass: 'font-mono',
-        eraLabel: 'Kalde krigen · deklassifisert',
+        eraLabel: 'Kalde krigen',
     },
     'modern-investigation': {
-        bg: '#0a0c10',
-        surface: '#161a22',
-        accent: '#a78bfa',
-        evidence: '#86efac',
-        warning: '#fbbf24',
+        ...LIGHT_BASE,
+        bg: '#f6f5fb',
+        accent: '#6d28d9',
+        warning: '#d97706',
         paperBg: '#f3f4f6',
         paperText: '#111827',
-        paperBorder: '#6b7280',
+        paperBorder: '#9ca3af',
         paperFontClass: 'font-mono',
-        eraLabel: 'Moderne tid · åpen sak',
+        eraLabel: 'Moderne tid',
     },
     antiquity: {
-        bg: '#180f0a',
-        surface: '#241712',
-        accent: '#fbbf24',
-        evidence: '#a3e635',
-        warning: '#f87171',
+        ...LIGHT_BASE,
+        bg: '#faf5ec',
+        accent: '#a16207',
+        warning: '#dc2626',
         paperBg: '#ede0c5',
         paperText: '#3d2818',
         paperBorder: '#a08550',
         paperFontClass: 'font-serif',
-        eraLabel: 'Oldtid · papyrus-arkiv',
+        eraLabel: 'Oldtid',
     },
 };
 
@@ -107,6 +119,10 @@ export function themeStyleVars(theme: DetectiveTheme): React.CSSProperties {
     return {
         ['--det-bg' as string]: theme.bg,
         ['--det-surface' as string]: theme.surface,
+        ['--det-elevated' as string]: theme.elevated,
+        ['--det-text' as string]: theme.text,
+        ['--det-text-muted' as string]: theme.textMuted,
+        ['--det-border' as string]: theme.border,
         ['--det-accent' as string]: theme.accent,
         ['--det-evidence' as string]: theme.evidence,
         ['--det-warning' as string]: theme.warning,

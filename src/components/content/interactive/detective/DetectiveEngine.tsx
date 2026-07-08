@@ -1,9 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
     Search,
     ChevronRight,
     ChevronLeft,
+    ChevronDown,
+    Scale,
     Star,
     AlertCircle,
     CheckCircle2,
@@ -44,31 +46,10 @@ function StarRating({ stars, size = 'md' }: { stars: number; size?: 'sm' | 'md' 
                         className={`${px} ${
                             i <= stars
                                 ? 'text-amber-400 fill-amber-400'
-                                : 'text-slate-700 fill-slate-800'
+                                : 'text-slate-300 fill-slate-200'
                         }`}
                     />
                 </motion.div>
-            ))}
-        </div>
-    );
-}
-
-function ProgressDots({ count, current }: { count: number; current: number }) {
-    return (
-        <div className="flex items-center gap-1">
-            {Array.from({ length: count }).map((_, i) => (
-                <motion.div
-                    key={i}
-                    animate={{ scale: i === current ? [1, 1.4, 1] : 1 }}
-                    transition={{ duration: 0.4, type: 'spring', stiffness: 400 }}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                        i < current
-                            ? 'bg-emerald-500'
-                            : i === current
-                              ? 'bg-[var(--det-accent)]'
-                              : 'bg-slate-700'
-                    }`}
-                />
             ))}
         </div>
     );
@@ -97,6 +78,7 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
     const [activeSourceIndex, setActiveSourceIndex] = useState(0);
     const [finalResult, setFinalResult] = useState<ConclusionResult | null>(null);
     const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
+    const [theoryOpen, setTheoryOpen] = useState(false);
 
     const stepId = currentStep?.id;
     const [prevStepId, setPrevStepId] = useState(stepId);
@@ -197,7 +179,7 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
         return (
             <div
                 style={themeVars}
-                className="flex-1 flex flex-col p-4 md:p-6 bg-[var(--det-bg)] text-slate-100 overflow-y-auto custom-scrollbar"
+                className="flex-1 flex flex-col p-4 md:p-6 bg-[var(--det-bg)] text-[var(--det-text)] overflow-y-auto custom-scrollbar"
             >
                 <div className="max-w-3xl w-full mx-auto">
                     <motion.div
@@ -216,7 +198,7 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                         <Search className="w-8 h-8" />
                     </motion.div>
 
-                    <h2 className="text-2xl font-display font-bold text-white text-center mb-2">
+                    <h2 className="text-2xl font-display font-bold text-[var(--det-text)] text-center mb-2">
                         Saken er avsluttet
                     </h2>
 
@@ -224,7 +206,7 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                         <StarRating stars={displayedStars} />
                     </div>
 
-                    <p className="text-base text-slate-300 text-center mb-6">
+                    <p className="text-base text-[var(--det-text-muted)] text-center mb-6">
                         Du fant{' '}
                         <span className="text-[var(--det-accent)] font-bold">
                             {found} av {total}
@@ -237,8 +219,8 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                                 <span
                                     className={
                                         finalResult.isCorrect
-                                            ? 'text-emerald-400 font-bold'
-                                            : 'text-amber-400 font-bold'
+                                            ? 'text-emerald-600 font-bold'
+                                            : 'text-amber-600 font-bold'
                                     }
                                 >
                                     {finalResult.isCorrect ? 'Korrekt konklusjon' : 'Avvik fra konsensus'}
@@ -256,14 +238,14 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                                 {state.collectedClueDetails.map((clue) => (
                                     <div
                                         key={clue.id}
-                                        className="flex items-start gap-2 p-3 bg-emerald-500/5 rounded-lg border border-emerald-500/15"
+                                        className="flex items-start gap-2 p-3 bg-emerald-50 rounded-lg border border-emerald-200"
                                     >
                                         <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
                                         <div className="min-w-0">
-                                            <p className="text-sm font-semibold text-emerald-200">
+                                            <p className="text-sm font-semibold text-emerald-800">
                                                 "{clue.text}"
                                             </p>
-                                            <p className="text-sm text-slate-300 leading-snug mt-0.5">
+                                            <p className="text-sm text-[var(--det-text-muted)] leading-snug mt-0.5">
                                                 {clue.insight}
                                             </p>
                                         </div>
@@ -274,17 +256,17 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                     )}
 
                     {methods.length > 0 && (
-                        <div className="mb-5 p-3 rounded-xl bg-[var(--det-surface)]/60 border border-white/5">
+                        <div className="mb-5 p-3 rounded-xl bg-[var(--det-surface)] border border-[var(--det-border)]">
                             <div className="flex items-center gap-2 mb-2">
                                 <GraduationCap className="w-4 h-4 text-[var(--det-accent)]" />
-                                <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+                                <h3 className="text-xs font-bold text-[var(--det-text)] uppercase tracking-wider">
                                     Historiske metoder du øvde på
                                 </h3>
                             </div>
                             <ul className="space-y-1.5">
                                 {methods.map((m) => (
-                                    <li key={m} className="text-sm text-slate-300 leading-snug">
-                                        <span className="font-semibold text-white">
+                                    <li key={m} className="text-sm text-[var(--det-text-muted)] leading-snug">
+                                        <span className="font-semibold text-[var(--det-text)]">
                                             {METHOD_LABEL[m]}.
                                         </span>{' '}
                                         {METHOD_EXPLANATION[m]}
@@ -295,7 +277,7 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                     )}
 
                     {data.kompetansemaal && data.kompetansemaal.length > 0 && (
-                        <div className="mb-5 p-3 rounded-xl bg-[var(--det-surface)]/60 border border-white/5">
+                        <div className="mb-5 p-3 rounded-xl bg-[var(--det-surface)] border border-[var(--det-border)]">
                             <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">
                                 Kompetansemål trent
                             </h3>
@@ -313,10 +295,10 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                     )}
 
                     {data.relatedArticles && data.relatedArticles.length > 0 && (
-                        <div className="mb-5 p-3 rounded-xl bg-[var(--det-surface)]/60 border border-white/5">
+                        <div className="mb-5 p-3 rounded-xl bg-[var(--det-surface)] border border-[var(--det-border)]">
                             <div className="flex items-center gap-2 mb-2">
                                 <BookOpen className="w-4 h-4 text-[var(--det-accent)]" />
-                                <h3 className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+                                <h3 className="text-xs font-bold text-[var(--det-text)] uppercase tracking-wider">
                                     Les videre
                                 </h3>
                             </div>
@@ -336,7 +318,7 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                     )}
 
                     {missed > 0 && (
-                        <div className="flex items-center gap-2 text-sm text-amber-400/90 mb-5 justify-center">
+                        <div className="flex items-center gap-2 text-sm text-amber-600 mb-5 justify-center">
                             <AlertCircle className="w-4 h-4" />
                             Du gikk glipp av {missed} bevis - spill igjen for å finne alle.
                         </div>
@@ -345,16 +327,16 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                     <div className="grid grid-cols-2 gap-2 mb-3">
                         <button
                             onClick={onCopy}
-                            className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl border border-white/10 bg-black/20 hover:bg-black/40 text-slate-200 font-semibold text-base transition-colors"
+                            className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl border border-[var(--det-border)] bg-[var(--det-surface)] hover:bg-[var(--det-elevated)] text-[var(--det-text)] font-semibold text-base transition-colors"
                         >
                             {copyStatus === 'copied' ? (
                                 <>
-                                    <Check className="w-4 h-4 text-emerald-400" />
+                                    <Check className="w-4 h-4 text-emerald-500" />
                                     Kopiert
                                 </>
                             ) : copyStatus === 'failed' ? (
                                 <>
-                                    <AlertCircle className="w-4 h-4 text-rose-400" />
+                                    <AlertCircle className="w-4 h-4 text-rose-500" />
                                     Klarte ikke
                                 </>
                             ) : (
@@ -366,7 +348,7 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                         </button>
                         <button
                             onClick={() => downloadReport(report, data.title)}
-                            className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl border border-white/10 bg-black/20 hover:bg-black/40 text-slate-200 font-semibold text-base transition-colors"
+                            className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl border border-[var(--det-border)] bg-[var(--det-surface)] hover:bg-[var(--det-elevated)] text-[var(--det-text)] font-semibold text-base transition-colors"
                         >
                             <Download className="w-4 h-4" />
                             Last ned (.md)
@@ -376,13 +358,14 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                     <div className="flex gap-2">
                         <button
                             onClick={() => navigate('/oving/detektiv')}
-                            className="flex-1 px-6 py-3 bg-[var(--det-surface)] text-slate-200 rounded-xl font-semibold hover:bg-[var(--det-surface)]/80 transition-colors text-base"
+                            className="flex-1 px-6 py-3 bg-[var(--det-elevated)] text-[var(--det-text)] rounded-xl font-semibold hover:bg-[var(--det-border)] transition-colors text-base"
                         >
                             Tilbake til oversikten
                         </button>
                         <button
                             onClick={() => window.location.reload()}
-                            className="flex-1 px-6 py-3 bg-white text-slate-900 rounded-xl font-bold hover:bg-slate-200 transition-all text-base"
+                            className="flex-1 px-6 py-3 rounded-xl font-bold text-white hover:opacity-90 transition-all text-base"
+                            style={{ background: 'var(--det-accent)' }}
                         >
                             Spill igjen
                         </button>
@@ -434,155 +417,189 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
             s.clues.some((c) => Array.isArray(c.supports) && c.supports.length > 0)
         );
 
+    const found = state.collectedClues.size;
+    const totalEvidence = data.status.totalEvidence;
+    const foundPct = totalEvidence > 0 ? Math.min(100, (found / totalEvidence) * 100) : 0;
+    const allFound = found >= totalEvidence;
+
+    // Spor som gjenstår i den aktive kilden – driver footer-nudgen
+    const activeSourceRemaining = activeSource
+        ? activeSource.clues.filter((c) => !state.collectedClues.has(c.id)).length
+        : 0;
+
+    // Vektskål-knappen dukker først opp når minst ett funnet spor peker mot en teori
+    const supportingCluesCount = state.collectedClueDetails.filter(
+        (c) => Array.isArray(c.supports) && c.supports.length > 0
+    ).length;
+    const showTheoryDrawer = useTheoryBalance && supportingCluesCount > 0;
+
     return (
         <div
             style={themeVars}
-            className="relative bg-[var(--det-bg)] text-slate-200 rounded-2xl overflow-hidden border border-white/5 shadow-2xl flex flex-col flex-1 min-h-0"
+            className="relative bg-[var(--det-bg)] text-[var(--det-text)] rounded-2xl overflow-hidden border border-[var(--det-border)] shadow-xl flex flex-col flex-1 min-h-0"
         >
-            {/* Persistent hero-backdrop */}
-            {data.briefing?.image && (
-                <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
-                    <img
-                        src={data.briefing.image}
-                        alt=""
-                        className="w-full h-full object-cover"
-                        style={{ filter: 'blur(12px)' }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[var(--det-bg)]/60 via-transparent to-[var(--det-bg)]/90" />
+            {/* Header – én tydelig framdriftsindikator */}
+            <header className="px-4 py-3 border-b border-[var(--det-border)] bg-[var(--det-surface)] flex items-center justify-between flex-shrink-0 gap-3">
+                <div className="min-w-0 flex-1">
+                    <span className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--det-accent)]">
+                        Steg {currentStepIndex + 1} av {totalSteps}
+                    </span>
+                    <h2 className="text-lg font-bold text-[var(--det-text)] font-display truncate">
+                        {currentStep.title}
+                    </h2>
                 </div>
-            )}
 
-            <div className="relative flex flex-col flex-1 min-h-0">
-                {/* Header */}
-                <header className="px-4 py-3 border-b border-white/5 bg-black/30 backdrop-blur-md flex items-center justify-between flex-shrink-0 gap-3">
-                    <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2">
-                            <span className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--det-accent)]">
-                                Steg {currentStepIndex + 1} av {totalSteps}
-                            </span>
-                            <span className="text-xs text-slate-600 hidden sm:inline">·</span>
-                            <span className="text-xs uppercase tracking-widest text-slate-600 hidden sm:inline truncate">
-                                {theme.eraLabel}
-                            </span>
-                        </div>
-                        <h2 className="text-lg font-bold text-white font-display truncate">
-                            {currentStep.title}
-                        </h2>
-                    </div>
-
-                    <div className="flex items-center gap-3 flex-shrink-0">
-                        <StarRating stars={evidenceStars} size="sm" />
-                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 border border-white/5">
-                            <ProgressDots count={totalSteps} current={currentStepIndex} />
-                            <motion.span
-                                key={state.collectedClues.size}
-                                initial={{ scale: 1.3 }}
-                                animate={{ scale: 1 }}
-                                transition={{ type: 'spring', stiffness: 500, damping: 15 }}
-                                className="text-sm font-bold tabular-nums text-slate-300"
-                            >
-                                <span
-                                    className={
-                                        state.collectedClues.size >= data.status.totalEvidence
-                                            ? 'text-emerald-400'
-                                            : 'text-[var(--det-accent)]'
-                                    }
-                                >
-                                    {state.collectedClues.size}
-                                </span>
-                                /{data.status.totalEvidence}
-                            </motion.span>
-                        </div>
-                    </div>
-                </header>
-
-                {/* TheoryBalance (kun v2 med supports) */}
-                {useTheoryBalance && (
-                    <TheoryBalance
-                        suspects={data.suspects}
-                        collectedClues={state.collectedClueDetails}
-                    />
-                )}
-
-                {/* Multi-source-faner */}
-                {multiSource && (
-                    <div className="flex border-b border-white/5 bg-black/20 flex-shrink-0">
-                        {currentStep.sources.map((src, i) => {
-                            const cluesInSource = src.clues.length;
-                            const foundInSource = src.clues.filter((c) =>
-                                state.collectedClues.has(c.id)
-                            ).length;
-                            const complete =
-                                cluesInSource > 0 && foundInSource === cluesInSource;
-                            return (
-                                <button
-                                    key={src.id}
-                                    onClick={() => setActiveSourceIndex(i)}
-                                    className={`flex-1 px-3 py-2.5 text-sm font-semibold transition-colors truncate flex items-center justify-center gap-1.5 ${
-                                        i === activeSourceIndex
-                                            ? 'text-white border-b-2 border-[var(--det-accent)] bg-[var(--det-accent)]/5'
-                                            : 'text-slate-400 hover:text-slate-200'
-                                    }`}
-                                >
-                                    <span className="truncate">
-                                        Kilde {i + 1}: {src.title}
-                                    </span>
-                                    {cluesInSource > 0 && (
-                                        <span
-                                            className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${
-                                                complete
-                                                    ? 'bg-emerald-500/20 text-emerald-400'
-                                                    : 'bg-white/5 text-slate-400'
-                                            }`}
-                                        >
-                                            {foundInSource}/{cluesInSource}
-                                        </span>
-                                    )}
-                                </button>
-                            );
-                        })}
-                    </div>
-                )}
-
-                {/* Innholdsområde */}
-                <div className="flex-1 min-h-0 overflow-y-auto p-4 custom-scrollbar">
-                    <div className="max-w-3xl mx-auto">
-                        {currentStep.content && (
-                            <p className="text-base text-slate-300 mb-4 italic leading-relaxed">
-                                {currentStep.content}
-                            </p>
-                        )}
-
-                        <SourceViewer
-                            source={activeSource}
-                            onClueFound={state.collectClue}
-                            foundClues={state.collectedClues}
-                            paperFontClass={theme.paperFontClass}
+                <div className="flex flex-col items-end gap-1.5 flex-shrink-0 w-28 sm:w-40">
+                    <motion.span
+                        key={found}
+                        initial={{ scale: 1.12 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: 'spring', stiffness: 500, damping: 16 }}
+                        className="text-sm font-bold tabular-nums whitespace-nowrap"
+                    >
+                        <span className={allFound ? 'text-emerald-600' : 'text-[var(--det-accent)]'}>
+                            {found}
+                        </span>
+                        <span className="text-[var(--det-text-muted)]"> av {totalEvidence} spor</span>
+                    </motion.span>
+                    <div className="w-full h-1.5 rounded-full bg-[var(--det-elevated)] overflow-hidden">
+                        <motion.div
+                            animate={{ width: `${foundPct}%` }}
+                            transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+                            className="h-full rounded-full"
+                            style={{ background: allFound ? '#059669' : 'var(--det-accent)' }}
                         />
                     </div>
                 </div>
+            </header>
 
-                {/* Navigasjonsfooter */}
-                <footer className="px-4 py-3 border-t border-white/5 bg-black/30 backdrop-blur-md flex items-center justify-between flex-shrink-0">
+            {/* Multi-source-faner */}
+            {multiSource && (
+                <div className="flex border-b border-[var(--det-border)] bg-[var(--det-surface)] flex-shrink-0">
+                    {currentStep.sources.map((src, i) => {
+                        const cluesInSource = src.clues.length;
+                        const foundInSource = src.clues.filter((c) =>
+                            state.collectedClues.has(c.id)
+                        ).length;
+                        const complete = cluesInSource > 0 && foundInSource === cluesInSource;
+                        return (
+                            <button
+                                key={src.id}
+                                onClick={() => setActiveSourceIndex(i)}
+                                className={`flex-1 px-3 py-2.5 text-sm font-semibold transition-colors truncate flex items-center justify-center gap-1.5 ${
+                                    i === activeSourceIndex
+                                        ? 'text-[var(--det-text)] border-b-2 border-[var(--det-accent)] bg-[var(--det-accent)]/5'
+                                        : 'text-[var(--det-text-muted)] hover:text-[var(--det-text)]'
+                                }`}
+                            >
+                                <span className="truncate">
+                                    Kilde {i + 1}: {src.title}
+                                </span>
+                                {cluesInSource > 0 && (
+                                    <span
+                                        className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${
+                                            complete
+                                                ? 'bg-emerald-100 text-emerald-700'
+                                                : 'bg-[var(--det-elevated)] text-[var(--det-text-muted)]'
+                                        }`}
+                                    >
+                                        {foundInSource}/{cluesInSource}
+                                    </span>
+                                )}
+                            </button>
+                        );
+                    })}
+                </div>
+            )}
+
+            {/* Innholdsområde – kilden er helten */}
+            <div className="flex-1 min-h-0 overflow-y-auto p-4 custom-scrollbar bg-[var(--det-bg)]">
+                <div className="max-w-3xl mx-auto">
+                    {currentStep.content && (
+                        <p className="text-sm text-[var(--det-text-muted)] mb-4 leading-relaxed">
+                            {currentStep.content}
+                        </p>
+                    )}
+
+                    <SourceViewer
+                        source={activeSource}
+                        onClueFound={state.collectClue}
+                        foundClues={state.collectedClues}
+                        paperFontClass={theme.paperFontClass}
+                        showHint={found === 0}
+                    />
+                </div>
+            </div>
+
+            {/* Footer med on-demand vektskål + navigasjon */}
+            <div className="flex-shrink-0 border-t border-[var(--det-border)] bg-[var(--det-surface)]">
+                {showTheoryDrawer && (
+                    <div className="px-4 pt-3">
+                        <button
+                            onClick={() => setTheoryOpen((o) => !o)}
+                            className="w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-[var(--det-border)] bg-[var(--det-bg)] hover:bg-[var(--det-elevated)] transition-colors"
+                        >
+                            <span className="flex items-center gap-2 text-sm font-semibold text-[var(--det-text)]">
+                                <Scale className="w-4 h-4 text-[var(--det-accent)]" />
+                                Teorienes vektskål
+                                <span className="text-xs font-bold px-1.5 py-0.5 rounded-full bg-[var(--det-accent)]/10 text-[var(--det-accent)]">
+                                    {data.suspects.length}
+                                </span>
+                            </span>
+                            <ChevronDown
+                                className={`w-4 h-4 text-[var(--det-text-muted)] transition-transform ${
+                                    theoryOpen ? 'rotate-180' : ''
+                                }`}
+                            />
+                        </button>
+                        <AnimatePresence initial={false}>
+                            {theoryOpen && (
+                                <motion.div
+                                    initial={{ height: 0, opacity: 0 }}
+                                    animate={{ height: 'auto', opacity: 1 }}
+                                    exit={{ height: 0, opacity: 0 }}
+                                    transition={{ duration: 0.25 }}
+                                    className="overflow-hidden"
+                                >
+                                    <div className="pt-3">
+                                        <TheoryBalance
+                                            suspects={data.suspects}
+                                            collectedClues={state.collectedClueDetails}
+                                        />
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                )}
+
+                <footer className="px-4 py-3 flex items-center justify-between gap-3">
                     <button
                         onClick={prevStep}
                         disabled={isFirstStep}
                         className={`flex items-center gap-1.5 px-4 py-2.5 rounded-lg font-semibold text-base transition-all ${
                             isFirstStep
-                                ? 'text-slate-600 cursor-not-allowed'
-                                : 'text-slate-200 hover:bg-white/5'
+                                ? 'text-slate-300 cursor-not-allowed'
+                                : 'text-[var(--det-text-muted)] hover:bg-[var(--det-elevated)] hover:text-[var(--det-text)]'
                         }`}
                     >
                         <ChevronLeft className="w-5 h-5" />
                         Forrige
                     </button>
 
+                    {activeSourceRemaining > 0 && (
+                        <span className="hidden sm:block text-xs text-[var(--det-text-muted)] text-center flex-1 truncate">
+                            {activeSourceRemaining === 1
+                                ? '1 spor igjen i denne kilden'
+                                : `${activeSourceRemaining} spor igjen i denne kilden`}
+                        </span>
+                    )}
+
                     <button
                         onClick={nextStep}
-                        className="flex items-center gap-1.5 px-6 py-2.5 rounded-lg font-bold text-base transition-all shadow-lg"
+                        className="flex items-center gap-1.5 px-6 py-2.5 rounded-lg font-bold text-base text-white transition-all shadow-lg hover:opacity-90"
                         style={{
                             background: 'var(--det-accent)',
-                            color: '#0a0c10',
                             boxShadow:
                                 '0 6px 14px color-mix(in srgb, var(--det-accent) 30%, transparent)',
                         }}

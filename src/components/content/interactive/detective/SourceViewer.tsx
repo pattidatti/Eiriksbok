@@ -1,6 +1,15 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, FileText, Eye, FlaskConical, Pickaxe, Maximize2 } from 'lucide-react';
+import {
+    CheckCircle2,
+    FileText,
+    Eye,
+    FlaskConical,
+    Pickaxe,
+    Maximize2,
+    Lightbulb,
+    ChevronDown,
+} from 'lucide-react';
 import type { DetectiveSource, DetectiveClue } from './types';
 import { MethodBadge } from './MethodBadge';
 import { ImageLightbox } from './ImageLightbox';
@@ -13,25 +22,25 @@ const SOURCE_TYPE_CONFIG: Record<
         icon: FileText,
         label: 'Skriftlig kilde',
         color: 'bg-amber-500/10',
-        iconColor: 'text-amber-400',
+        iconColor: 'text-amber-600',
     },
     archaeological: {
         icon: Pickaxe,
         label: 'Arkeologisk funn',
         color: 'bg-orange-500/10',
-        iconColor: 'text-orange-400',
+        iconColor: 'text-orange-600',
     },
     visual: {
         icon: Eye,
         label: 'Visuell kilde',
         color: 'bg-purple-500/10',
-        iconColor: 'text-purple-400',
+        iconColor: 'text-purple-600',
     },
     scientific: {
         icon: FlaskConical,
         label: 'Vitenskapelig analyse',
         color: 'bg-cyan-500/10',
-        iconColor: 'text-cyan-400',
+        iconColor: 'text-cyan-600',
     },
 };
 
@@ -40,6 +49,8 @@ interface SourceViewerProps {
     onClueFound: (clue: DetectiveClue) => void;
     foundClues: Set<string>;
     paperFontClass?: string;
+    /** Vis engangs-instruks om at ordene kan klikkes (til første spor er funnet). */
+    showHint?: boolean;
 }
 
 function renderTextWithClues(
@@ -133,15 +144,15 @@ function InlineClue({
                 onClick={handleClick}
                 animate={justCollected ? { scale: [1, 1.15, 1] } : {}}
                 transition={{ duration: 0.3, type: 'spring', stiffness: 400 }}
-                className={`inline rounded px-0.5 -mx-0.5 transition-colors cursor-pointer ${
+                className={`inline rounded px-0.5 -mx-0.5 font-semibold transition-colors cursor-pointer ${
                     isFound
-                        ? 'bg-emerald-500/20 text-emerald-200 underline decoration-emerald-500/40'
-                        : 'bg-[var(--det-accent)]/15 text-[color-mix(in_srgb,var(--det-accent)_70%,white)] underline decoration-[var(--det-accent)]/40 hover:bg-[var(--det-accent)]/30'
+                        ? 'bg-emerald-100 text-emerald-800 underline decoration-emerald-500/50'
+                        : 'bg-[var(--det-accent)]/10 text-[var(--det-accent)] underline decoration-dotted decoration-2 decoration-[var(--det-accent)]/50 hover:bg-[var(--det-accent)]/20'
                 }`}
             >
                 {displayText}
                 {isFound && (
-                    <CheckCircle2 className="inline w-3.5 h-3.5 ml-1 -mt-0.5 text-emerald-400" />
+                    <CheckCircle2 className="inline w-3.5 h-3.5 ml-1 -mt-0.5 text-emerald-500" />
                 )}
             </motion.button>
             <AnimatePresence>
@@ -150,7 +161,7 @@ function InlineClue({
                         initial={{ opacity: 0, y: -4 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -4 }}
-                        className="block mt-1 mb-2 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-sm text-emerald-200 italic leading-relaxed"
+                        className="block mt-1 mb-2 p-3 rounded-lg bg-emerald-50 border border-emerald-200 text-sm text-emerald-800 italic leading-relaxed"
                     >
                         {clue.insight}
                         {clue.method && (
@@ -179,19 +190,19 @@ function ClueChip({
             onClick={() => !isFound && onCollect()}
             className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-left text-sm transition-all ${
                 isFound
-                    ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-200'
-                    : 'bg-[var(--det-accent)]/5 border-[var(--det-accent)]/20 text-slate-300 hover:bg-[var(--det-accent)]/10 hover:border-[var(--det-accent)]/40'
+                    ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
+                    : 'bg-[var(--det-accent)]/5 border-[var(--det-accent)]/25 text-[var(--det-text)] hover:bg-[var(--det-accent)]/10 hover:border-[var(--det-accent)]/50'
             }`}
         >
             <span
                 className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    isFound ? 'bg-emerald-500 text-white' : 'bg-slate-700'
+                    isFound ? 'bg-emerald-500 text-white' : 'bg-[var(--det-elevated)]'
                 }`}
             >
                 {isFound ? (
                     <CheckCircle2 className="w-3 h-3" />
                 ) : (
-                    <div className="w-1 h-1 rounded-full bg-slate-500" />
+                    <div className="w-1 h-1 rounded-full bg-[var(--det-accent)]" />
                 )}
             </span>
             <span className="font-medium">"{clue.text}"</span>
@@ -199,7 +210,7 @@ function ClueChip({
                 <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-sm text-emerald-300 italic ml-1"
+                    className="text-sm text-emerald-700 italic ml-1"
                 >
                     - {clue.insight}
                 </motion.span>
@@ -219,11 +230,11 @@ function ClueToast({ clue, onDismiss }: { clue: DetectiveClue; onDismiss: () => 
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            className="absolute top-2 left-2 right-2 z-10 p-3 rounded-xl bg-emerald-600/90 backdrop-blur-md border border-emerald-400/30 shadow-lg shadow-emerald-900/40 flex items-start gap-2.5"
+            className="absolute top-2 left-2 right-2 z-10 p-3 rounded-xl bg-emerald-600 border border-emerald-500 shadow-lg shadow-emerald-900/20 flex items-start gap-2.5"
         >
-            <CheckCircle2 className="w-5 h-5 text-emerald-200 flex-shrink-0 mt-0.5" />
+            <CheckCircle2 className="w-5 h-5 text-emerald-100 flex-shrink-0 mt-0.5" />
             <div className="min-w-0">
-                <p className="text-base font-bold text-white">Bevis sikret!</p>
+                <p className="text-base font-bold text-white">Spor sikret!</p>
                 <p className="text-sm text-emerald-50 leading-snug mt-0.5">
                     "{clue.text}" - {clue.insight}
                 </p>
@@ -237,9 +248,10 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
     onClueFound,
     foundClues,
     paperFontClass = 'font-serif italic',
+    showHint = false,
 }) => {
     const [viewMode, setViewMode] = useState<'raw' | 'interpreted'>('interpreted');
-    const [contextTab, setContextTab] = useState<'background' | 'criticism'>('background');
+    const [contextOpen, setContextOpen] = useState(false);
     const [toastClue, setToastClue] = useState<DetectiveClue | null>(null);
     const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -260,7 +272,8 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
         [translationText, source.clues, foundClues, handleClueFound]
     );
 
-    const hasBackground = !!(source.introduction || source.guidance);
+    // "Bakgrunn" = guidance (introduction vises som rammesetning over kilden).
+    const hasBackground = !!source.guidance;
     const hasCriticism = !!(source.provenance || source.uncertainty || source.hint);
     const hasContext = hasBackground || hasCriticism;
 
@@ -274,8 +287,10 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
             ? source.original
             : undefined);
 
+    const hasClickableClues = source.clues.length > 0;
+
     return (
-        <div className="relative flex flex-col bg-[var(--det-surface)]/40 rounded-xl border border-white/5 overflow-hidden">
+        <div className="relative flex flex-col bg-[var(--det-surface)] rounded-xl border border-[var(--det-border)] overflow-hidden shadow-sm">
             <AnimatePresence>
                 {toastClue && (
                     <ClueToast
@@ -295,7 +310,7 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
 
             {/* Kilde-header */}
             <div className="flex-shrink-0">
-                <div className="px-4 py-3 flex items-center justify-between bg-black/30 border-b border-white/5">
+                <div className="px-4 py-3 flex items-center justify-between bg-[var(--det-elevated)] border-b border-[var(--det-border)]">
                     <div className="flex items-center gap-2 min-w-0">
                         <div
                             className={`w-8 h-8 rounded-lg ${typeConfig.color} flex items-center justify-center ${typeConfig.iconColor} flex-shrink-0`}
@@ -303,7 +318,7 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                             <TypeIcon className="w-4 h-4" />
                         </div>
                         <div className="min-w-0">
-                            <h4 className="text-base font-bold text-slate-100 truncate">
+                            <h4 className="text-base font-bold text-[var(--det-text)] truncate">
                                 {source.title}
                             </h4>
                             <div className="flex items-center gap-2">
@@ -312,8 +327,8 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                                 >
                                     {typeConfig.label}
                                 </span>
-                                <span className="text-xs text-slate-600">·</span>
-                                <span className="text-sm text-slate-400 truncate">
+                                <span className="text-xs text-[var(--det-text-muted)]">·</span>
+                                <span className="text-sm text-[var(--det-text-muted)] truncate">
                                     {source.metadata.origin}
                                 </span>
                             </div>
@@ -321,13 +336,13 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                     </div>
 
                     {source.original && (
-                        <div className="flex bg-black/40 rounded-lg p-0.5 border border-white/5 ml-3 flex-shrink-0">
+                        <div className="flex bg-[var(--det-bg)] rounded-lg p-0.5 border border-[var(--det-border)] ml-3 flex-shrink-0">
                             <button
                                 onClick={() => setViewMode('raw')}
                                 className={`px-3 py-1.5 rounded-md text-sm font-semibold transition-all ${
                                     viewMode === 'raw'
-                                        ? 'bg-[var(--det-accent)] text-slate-900 shadow-md'
-                                        : 'text-slate-500 hover:text-slate-300'
+                                        ? 'bg-[var(--det-accent)] text-white shadow-sm'
+                                        : 'text-[var(--det-text-muted)] hover:text-[var(--det-text)]'
                                 }`}
                             >
                                 Original
@@ -336,8 +351,8 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                                 onClick={() => setViewMode('interpreted')}
                                 className={`px-3 py-1.5 rounded-md text-sm font-semibold transition-all ${
                                     viewMode === 'interpreted'
-                                        ? 'bg-[var(--det-accent)] text-slate-900 shadow-md'
-                                        : 'text-slate-500 hover:text-slate-300'
+                                        ? 'bg-[var(--det-accent)] text-white shadow-sm'
+                                        : 'text-[var(--det-text-muted)] hover:text-[var(--det-text)]'
                                 }`}
                             >
                                 {source.type === 'textual' ? 'Norsk oversettelse' : 'Tolkning'}
@@ -345,6 +360,13 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                         </div>
                     )}
                 </div>
+
+                {/* Rammesetning (introduction) */}
+                {source.introduction && (
+                    <p className="px-4 pt-4 text-sm text-[var(--det-text-muted)] italic leading-relaxed">
+                        {source.introduction}
+                    </p>
+                )}
 
                 {/* Innhold */}
                 <div className="p-4">
@@ -359,7 +381,7 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                                         borderLeft: '4px solid var(--det-paper-border)',
                                         borderRight: '1px solid var(--det-paper-border)',
                                         boxShadow:
-                                            'inset 0 0 60px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.3)',
+                                            'inset 0 0 60px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.12)',
                                     }}
                                 >
                                     <div className="absolute top-2 right-3 text-xs uppercase tracking-widest opacity-60 font-bold">
@@ -370,12 +392,12 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                             ) : imageSrc ? (
                                 <button
                                     onClick={() => setLightboxOpen(true)}
-                                    className="group relative w-full rounded-lg overflow-hidden shadow-xl"
+                                    className="group relative w-full rounded-lg overflow-hidden shadow-md"
                                 >
                                     <img
                                         src={imageSrc}
                                         alt={source.title}
-                                        className="w-full h-auto max-h-[60vh] object-contain bg-black/40"
+                                        className="w-full h-auto max-h-[60vh] object-contain bg-slate-100"
                                     />
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                                         <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 px-4 py-2 rounded-lg bg-black/70 text-white text-sm font-semibold">
@@ -385,7 +407,7 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                                     </div>
                                 </button>
                             ) : (
-                                <p className="text-base text-slate-400 italic">
+                                <p className="text-base text-[var(--det-text-muted)] italic">
                                     Ingen original tilgjengelig.
                                 </p>
                             )}
@@ -395,12 +417,12 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                             {imageSrc && isVisualSource && (
                                 <button
                                     onClick={() => setLightboxOpen(true)}
-                                    className="group relative w-full rounded-lg overflow-hidden shadow-xl mb-4"
+                                    className="group relative w-full rounded-lg overflow-hidden shadow-md mb-4"
                                 >
                                     <img
                                         src={imageSrc}
                                         alt={source.title}
-                                        className="w-full h-auto max-h-[45vh] object-contain bg-black/40"
+                                        className="w-full h-auto max-h-[45vh] object-contain bg-slate-100"
                                     />
                                     <div className="absolute top-2 right-2 px-3 py-1.5 rounded-md bg-black/70 text-white text-sm font-semibold flex items-center gap-1 opacity-90 group-hover:opacity-100">
                                         <Maximize2 className="w-4 h-4" />
@@ -409,7 +431,22 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                                 </button>
                             )}
 
-                            <p className="text-base text-slate-100 leading-relaxed">
+                            {/* Engangs oppgaveinstruks */}
+                            <AnimatePresence>
+                                {showHint && hasClickableClues && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -6 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -6 }}
+                                        className="mb-3 flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--det-accent)]/10 border border-[var(--det-accent)]/25 text-sm font-semibold text-[var(--det-accent)]"
+                                    >
+                                        <Lightbulb className="w-4 h-4 flex-shrink-0" />
+                                        Trykk på ordene som lyser opp for å samle spor.
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+
+                            <p className="text-base text-[var(--det-text)] leading-relaxed">
                                 {highlightedText}
                             </p>
 
@@ -430,72 +467,46 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                 </div>
             </div>
 
-            {/* Kontekstpanel (faner) */}
+            {/* "Om kilden" – kollapset som standard (bakgrunn + kildekritikk) */}
             {hasContext && (
-                <div className="border-t border-white/5">
-                    {hasBackground && hasCriticism ? (
-                        <div className="flex border-b border-white/5">
-                            <button
-                                onClick={() => setContextTab('background')}
-                                className={`flex-1 px-4 py-2.5 text-sm font-semibold transition-colors ${
-                                    contextTab === 'background'
-                                        ? 'text-[var(--det-accent)] border-b-2 border-[var(--det-accent)] bg-[var(--det-accent)]/5'
-                                        : 'text-slate-500 hover:text-slate-300'
-                                }`}
+                <div className="border-t border-[var(--det-border)]">
+                    <button
+                        onClick={() => setContextOpen((o) => !o)}
+                        className="w-full flex items-center justify-between px-4 py-2.5 text-sm font-semibold text-[var(--det-text-muted)] hover:text-[var(--det-text)] hover:bg-[var(--det-elevated)] transition-colors"
+                    >
+                        <span>Om kilden - bakgrunn og kildekritikk</span>
+                        <ChevronDown
+                            className={`w-4 h-4 transition-transform ${
+                                contextOpen ? 'rotate-180' : ''
+                            }`}
+                        />
+                    </button>
+                    <AnimatePresence initial={false}>
+                        {contextOpen && (
+                            <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.25 }}
+                                className="overflow-hidden"
                             >
-                                Bakgrunn
-                            </button>
-                            <button
-                                onClick={() => setContextTab('criticism')}
-                                className={`flex-1 px-4 py-2.5 text-sm font-semibold transition-colors ${
-                                    contextTab === 'criticism'
-                                        ? 'border-b-2 bg-[var(--det-warning)]/5'
-                                        : 'text-slate-500 hover:text-slate-300'
-                                }`}
-                                style={
-                                    contextTab === 'criticism'
-                                        ? {
-                                              color: 'var(--det-warning)',
-                                              borderColor: 'var(--det-warning)',
-                                          }
-                                        : undefined
-                                }
-                            >
-                                Kildekritikk
-                            </button>
-                        </div>
-                    ) : (
-                        <div className="px-4 py-2 border-b border-white/5">
-                            <span className="text-xs font-semibold text-slate-500">
-                                {hasBackground ? 'Bakgrunn' : 'Kildekritikk'}
-                            </span>
-                        </div>
-                    )}
-
-                    <div className="relative">
-                        <div className="p-4 max-h-[260px] overflow-y-auto custom-scrollbar">
-                            {(contextTab === 'background' && hasBackground) ||
-                            !hasCriticism ? (
-                                <div className="space-y-3">
-                                    {source.introduction && (
-                                        <p className="text-base text-slate-200 leading-relaxed italic">
-                                            {source.introduction}
-                                        </p>
-                                    )}
+                                <div className="px-4 pb-4 space-y-3 border-t border-[var(--det-border)] pt-3">
                                     {source.guidance && (
-                                        <p className="text-base text-slate-200 leading-relaxed">
-                                            {source.guidance}
-                                        </p>
+                                        <div>
+                                            <span className="text-xs font-bold text-[var(--det-text-muted)] uppercase tracking-wider">
+                                                Bakgrunn:{' '}
+                                            </span>
+                                            <span className="text-base text-[var(--det-text)] leading-relaxed">
+                                                {source.guidance}
+                                            </span>
+                                        </div>
                                     )}
-                                </div>
-                            ) : (
-                                <div className="space-y-3">
                                     {source.provenance && (
                                         <div>
-                                            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                                            <span className="text-xs font-bold text-[var(--det-text-muted)] uppercase tracking-wider">
                                                 Opphav:{' '}
                                             </span>
-                                            <span className="text-base text-slate-200 leading-relaxed">
+                                            <span className="text-base text-[var(--det-text)] leading-relaxed">
                                                 {source.provenance}
                                             </span>
                                         </div>
@@ -504,33 +515,29 @@ export const SourceViewer: React.FC<SourceViewerProps> = ({
                                         <div>
                                             <span
                                                 className="text-xs font-bold uppercase tracking-wider"
-                                                style={{
-                                                    color:
-                                                        'color-mix(in srgb, var(--det-warning) 70%, white)',
-                                                }}
+                                                style={{ color: 'var(--det-warning)' }}
                                             >
                                                 Usikkerhet:{' '}
                                             </span>
-                                            <span className="text-base text-slate-200 leading-relaxed italic">
+                                            <span className="text-base text-[var(--det-text)] leading-relaxed italic">
                                                 {source.uncertainty}
                                             </span>
                                         </div>
                                     )}
                                     {source.hint && (
                                         <div>
-                                            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                                            <span className="text-xs font-bold text-[var(--det-text-muted)] uppercase tracking-wider">
                                                 Hint:{' '}
                                             </span>
-                                            <span className="text-base text-slate-300 italic">
+                                            <span className="text-base text-[var(--det-text-muted)] italic">
                                                 {source.hint}
                                             </span>
                                         </div>
                                     )}
                                 </div>
-                            )}
-                        </div>
-                        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[var(--det-surface)] to-transparent pointer-events-none rounded-b-xl" />
-                    </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             )}
         </div>
