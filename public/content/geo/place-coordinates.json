@@ -887,11 +887,11 @@
       "count": 20
     },
     {
-      "tag": "kultur",
-      "count": 18
+      "tag": "samfunn",
+      "count": 19
     },
     {
-      "tag": "samfunn",
+      "tag": "kultur",
       "count": 18
     },
     {
@@ -1007,6 +1007,10 @@
       "count": 10
     },
     {
+      "tag": "kollaps",
+      "count": 10
+    },
+    {
       "tag": "rettsstat",
       "count": 10
     },
@@ -1039,10 +1043,6 @@
       "count": 10
     },
     {
-      "tag": "kollaps",
-      "count": 9
-    },
-    {
       "tag": "keiser",
       "count": 9
     },
@@ -1068,6 +1068,10 @@
     },
     {
       "tag": "arkeologi",
+      "count": 8
+    },
+    {
+      "tag": "klima",
       "count": 8
     },
     {
@@ -1136,10 +1140,6 @@
     },
     {
       "tag": "ytringsfrihet",
-      "count": 7
-    },
-    {
-      "tag": "klima",
       "count": 7
     },
     {
@@ -1431,6 +1431,10 @@
       "count": 4
     },
     {
+      "tag": "ressurser",
+      "count": 4
+    },
+    {
       "tag": "krle",
       "count": 4
     },
@@ -1600,10 +1604,6 @@
     },
     {
       "tag": "biografi",
-      "count": 3
-    },
-    {
-      "tag": "ressurser",
       "count": 3
     },
     {
@@ -1880,6 +1880,10 @@
     },
     {
       "tag": "språkutvikling",
+      "count": 2
+    },
+    {
+      "tag": "mellom-amerika",
       "count": 2
     },
     {
@@ -3204,10 +3208,6 @@
     },
     {
       "tag": "rettsvitenskap",
-      "count": 1
-    },
-    {
-      "tag": "mellom-amerika",
       "count": 1
     },
     {
