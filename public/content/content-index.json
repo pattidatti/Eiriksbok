@@ -1,5 +1,5 @@
 {
-  "buildId": 1783423865081,
+  "buildId": 1783473973708,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -3386,6 +3386,9 @@
     "hvorfor-imperier-faller": [
       "content/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller.json"
     ],
+    "mayaenes-kollaps": [
+      "content/samfunnskunnskap/imperienes-fall/mayaenes-kollaps.json"
+    ],
     "paskeoyas-kollaps": [
       "content/samfunnskunnskap/imperienes-fall/paskeoyas-kollaps.json"
     ],
@@ -4668,6 +4671,7 @@
     "samfunnskunnskap/ideer-og-verdenssyn/utopier": "content/samfunnskunnskap/ideer-og-verdenssyn/utopier.json",
     "samfunnskunnskap/imperienes-fall/bronsealderens-kollaps": "content/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps.json",
     "samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller": "content/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller.json",
+    "samfunnskunnskap/imperienes-fall/mayaenes-kollaps": "content/samfunnskunnskap/imperienes-fall/mayaenes-kollaps.json",
     "samfunnskunnskap/imperienes-fall/paskeoyas-kollaps": "content/samfunnskunnskap/imperienes-fall/paskeoyas-kollaps.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre": "content/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet": "content/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet.json",

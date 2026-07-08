@@ -119,8 +119,18 @@ const ImperiumSoyler = lazy(() => import('./ImperiumSoyler'));
 const HimmelensMandat3D = lazy(() => import('./HimmelensMandat3D'));
 const VendMotMekka3D = lazy(() => import('./VendMotMekka3D'));
 const Paaskeoya3D = lazy(() => import('./Paaskeoya3D'));
+const MayaKollaps3D = lazy(() => import('./MayaKollaps3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'maya-3d': {
+        id: 'maya-3d',
+        title: 'Mayaenes kollaps: byen og tørken',
+        description:
+            'En blomstrende maya-by i jungelen: en trappepyramide, et vannmagasin, maisåkrer og hus fulle av folk. Mayabyene i lavlandet hadde ingen elver - de samlet regnvann i store magasin. Dra tørkeår-spaken fra 0 til 8 og se hva som skjer når regnet uteblir: vannmagasinet synker og blir gjørmete, maisåkrene brunes og faller sammen, folk forlater byen, og jungelen vokser fram over torget og kryper opp pyramiden. Til slutt står byen forlatt som en ruin slukt av skog. Lyspæren kommer i hendene: når regnet stanser i en by uten elver, renner det lagrede vannet ut, maten svikter, og hele byen må forlates. Men tørken velter sjelden et samfunn alene - den ble dødelig fordi mayabyene allerede var strukket til bristepunktet av for mange mennesker og evig krig mellom bystatene.',
+        estimatedSeconds: 150,
+        loader: () => import('./MayaKollaps3D'),
+        Component: MayaKollaps3D as never,
+    },
     'paskeoya-3d': {
         id: 'paskeoya-3d',
         title: 'Påskeøya: skogen og statuene',

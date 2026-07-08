@@ -891,6 +891,10 @@
       "count": 18
     },
     {
+      "tag": "samfunn",
+      "count": 18
+    },
+    {
       "tag": "etikk",
       "count": 18
     },
@@ -901,10 +905,6 @@
     {
       "tag": "narrative",
       "count": 18
-    },
-    {
-      "tag": "samfunn",
-      "count": 17
     },
     {
       "tag": "kristendom",
@@ -1039,6 +1039,10 @@
       "count": 10
     },
     {
+      "tag": "kollaps",
+      "count": 9
+    },
+    {
       "tag": "keiser",
       "count": 9
     },
@@ -1064,10 +1068,6 @@
     },
     {
       "tag": "arkeologi",
-      "count": 8
-    },
-    {
-      "tag": "kollaps",
       "count": 8
     },
     {
@@ -1139,6 +1139,10 @@
       "count": 7
     },
     {
+      "tag": "klima",
+      "count": 7
+    },
+    {
       "tag": "mat",
       "count": 7
     },
@@ -1204,10 +1208,6 @@
     },
     {
       "tag": "rettsutvikling",
-      "count": 6
-    },
-    {
-      "tag": "klima",
       "count": 6
     },
     {
@@ -1603,6 +1603,10 @@
       "count": 3
     },
     {
+      "tag": "ressurser",
+      "count": 3
+    },
+    {
       "tag": "vasa",
       "count": 3
     },
@@ -1932,10 +1936,6 @@
     },
     {
       "tag": "miljo",
-      "count": 2
-    },
-    {
-      "tag": "ressurser",
       "count": 2
     },
     {
@@ -3204,6 +3204,10 @@
     },
     {
       "tag": "rettsvitenskap",
+      "count": 1
+    },
+    {
+      "tag": "mellom-amerika",
       "count": 1
     },
     {
