@@ -10,6 +10,7 @@ import { djb2Hash, mulberry32, shuffleWith, slugifyTerm } from './reviewSchedule
 export const SESSION_MIN = 8;
 export const SESSION_MAX = 10;
 const MAX_PER_TYPE = 6;
+const MAX_PER_KIND = 3;
 
 // Bildekilder for bilde-oppgaver - bygges av siden fra manifest + tidslinjebilder.
 // Valgfri: uten assets bygges økta uten bilde-varianter (samme som før).
@@ -63,7 +64,8 @@ const buildConceptExercise = (
     concept: ConceptItem,
     pool: ConceptItem[],
     today: string,
-    assets?: SessionAssets
+    assets?: SessionAssets,
+    avoidKind?: (kind: ExerciseKind) => boolean
 ): SessionExercise => {
     const rng = mulberry32(djb2Hash(today + item.id));
     const sourceLink =
@@ -89,7 +91,29 @@ const buildConceptExercise = (
     // Variasjonsrotasjon per item: flervalg -> flashcard -> koble par.
     // Første møte (reps 0) trekkes tilfeldig (seeded) så også en fersk økt
     // får blanding - ellers ville dag én vært bare flervalg.
-    const variant = item.reps === 0 ? Math.floor(rng() * 3) : item.reps % 3;
+    const naturalVariant = item.reps === 0 ? Math.floor(rng() * 3) : item.reps % 3;
+
+    // Prediksjon: hvilken ExerciseKind vil variant v trolig produsere?
+    const predictKind = (v: number): ExerciseKind => {
+        if (v === 1) return 'flashcard';
+        if (v === 2) {
+            const candidates = sameSubject.length >= 2 ? sameSubject : anyOther;
+            return candidates.length >= 2 ? 'match-pairs' : 'flashcard';
+        }
+        return 'mcq'; // variant 0: mcq eller image-mcq (samme bucket for fordeling)
+    };
+
+    // Prøv naturalVariant først; bytt til neste tilgjengelige hvis den kinds er overrepresentert
+    let variant = naturalVariant;
+    if (avoidKind) {
+        for (let i = 0; i < 3; i++) {
+            const v = (naturalVariant + i) % 3;
+            if (!avoidKind(predictKind(v))) {
+                variant = v;
+                break;
+            }
+        }
+    }
 
     if (variant === 2) {
         // Koble par: begrepet + 2 distraktorer fra samme fag. Distraktorene må
@@ -361,28 +385,42 @@ export const buildSession = (
         }
     }
 
-    // 6. Bygg øvelser med deterministiske alternativer
+    // 6. Bygg øvelser med deterministiske alternativer.
+    //    Spor ExerciseKind-fordeling og begrens til MAX_PER_KIND for å unngå lange
+    //    striper av samme type (f.eks. 7 flashcards på rad).
     const exercises: SessionExercise[] = [];
+    const kindCount = new Map<ExerciseKind, number>();
+    const bumpKind = (k: ExerciseKind) => kindCount.set(k, (kindCount.get(k) ?? 0) + 1);
+    const overLimit = (k: ExerciseKind) => (kindCount.get(k) ?? 0) >= MAX_PER_KIND;
+
     for (const item of picked) {
         if (item.type === 'concept') {
             const concept = conceptByTerm.get(item.term!.toLowerCase());
-            if (concept)
-                exercises.push(buildConceptExercise(item, concept, concepts, today, assets));
+            if (concept) {
+                const ex = buildConceptExercise(item, concept, concepts, today, assets, overLimit);
+                exercises.push(ex);
+                bumpKind(ex.kind);
+            }
         } else if (item.type === 'quiz') {
             const rng = mulberry32(djb2Hash(today + item.id));
-            exercises.push({
+            const ex: SessionExercise = {
                 item,
                 kind: 'mcq',
                 prompt: item.quiz!.question,
                 options: shuffleWith(item.quiz!.options, rng),
                 answer: item.quiz!.answer,
                 sourceLink: item.quiz!.sourceUrl,
-            });
+            };
+            exercises.push(ex);
+            bumpKind(ex.kind);
         } else if (item.type === 'timeline') {
             const event = eventById.get(item.eventId!);
             if (event) {
                 const exercise = buildTimelineExercise(item, event, timelineEvents, today, assets);
-                if (exercise) exercises.push(exercise);
+                if (exercise) {
+                    exercises.push(exercise);
+                    bumpKind(exercise.kind);
+                }
             }
         }
     }

@@ -32,6 +32,7 @@ export const routeFactories: Record<string, PageFactory> = {
     QuizHost: () => import('./pages/quiz/QuizHost').then(module => ({ default: module.QuizHost })),
     QuizPlayer: () => import('./pages/quiz/QuizPlayer').then(module => ({ default: module.QuizPlayer })),
     ChronoGamePage: () => import('./pages/ChronoGamePage'),
+    KunnskapsloypaPage: () => import('./pages/KunnskapsloypaPage'),
     StatsPage: () => import('./pages/StatsPage').then(module => ({ default: module.StatsPage })),
     AdminDashboard: () => import('./pages/admin/AdminDashboard').then(module => ({ default: module.AdminDashboard })),
     ContentInventory: () => import('./pages/admin/ContentInventory').then(module => ({ default: module.ContentInventory })),

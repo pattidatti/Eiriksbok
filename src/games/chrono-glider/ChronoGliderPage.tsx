@@ -42,7 +42,7 @@ export default function ChronoGliderPage() {
         status,
         current,
         remaining,
-        playerLane,
+        targetLane,
         resolveState,
         score,
         streak,
@@ -50,9 +50,14 @@ export default function ChronoGliderPage() {
         best,
         isNewBest,
         results,
+        planeHit,
+        hitPulse,
+        containerRef,
         worldRef,
+        planeRef,
+        obstacleLayerRef,
         startGame,
-        selectLane,
+        steer,
         togglePause,
         goToMenu,
     } = game;
@@ -161,13 +166,18 @@ export default function ChronoGliderPage() {
             {/* Scene + overlegg */}
             <div className="relative w-full max-w-5xl z-10">
                 <GliderScene
+                    containerRef={containerRef}
                     worldRef={worldRef}
+                    planeRef={planeRef}
+                    obstacleLayerRef={obstacleLayerRef}
                     current={status === 'playing' || status === 'paused' ? current : undefined}
-                    playerLane={playerLane}
+                    targetLane={targetLane}
                     resolveState={resolveState}
                     remaining={remaining}
                     streak={streak}
-                    onSelectLane={selectLane}
+                    planeHit={planeHit}
+                    hitPulse={hitPulse}
+                    onSteer={steer}
                 />
 
                 {/* MENY */}
@@ -181,8 +191,9 @@ export default function ChronoGliderPage() {
                             Klar for tidsreise?
                         </h2>
                         <p className="text-slate-500 mb-5 max-w-md text-center text-sm sm:text-base">
-                            En hendelse vises øverst - styr glideren gjennom porten med riktig
-                            årstall. Bommer du, kommer hendelsen tilbake til den sitter!
+                            En hendelse vises øverst - fly glideren gjennom porten med riktig
+                            årstall. Styr opp, ned, venstre og høyre for å unngå hindrene på veien.
+                            Bommer du, kommer hendelsen tilbake til den sitter!
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-2 mb-6">
@@ -214,7 +225,8 @@ export default function ChronoGliderPage() {
                             {pool.length === 0 ? 'Laster hendelser…' : 'Ta av!'}
                         </motion.button>
                         <p className="text-xs text-slate-400 mt-3">
-                            Piltaster/AD eller klikk · Mellomrom for pause
+                            Piltaster eller WASD (opp/ned/venstre/høyre) · dra med fingeren ·
+                            Mellomrom for pause
                         </p>
                     </motion.div>
                 )}

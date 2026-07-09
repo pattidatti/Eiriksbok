@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles } from 'lucide-react';
+import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain } from 'lucide-react';
 import { DailyReviewCard } from '../components/review/DailyReviewCard';
 
 export const PracticePage: React.FC = () => {
@@ -20,6 +20,14 @@ export const PracticePage: React.FC = () => {
             icon: Sparkles,
             color: 'bg-indigo-900',
             link: '/himmel'
+        },
+        {
+            id: 'kunnskapsloypa',
+            title: 'Kunnskapsløypa',
+            description: 'Velg vei opp fjellet, overlev utfordringene og slå Glemselens vokter på toppen!',
+            icon: Mountain,
+            color: 'bg-emerald-700',
+            link: '/oving/loype'
         },
         {
             id: 'historiske-spill',

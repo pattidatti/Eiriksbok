@@ -36,6 +36,7 @@ const TopicComparisonPage = React.lazy(routeFactories.TopicComparisonPage);
 const GlobalTimelinePage = React.lazy(routeFactories.GlobalTimelinePage);
 const AtlasPage = React.lazy(routeFactories.AtlasPage);
 const ChronoGamePage = React.lazy(routeFactories.ChronoGamePage);
+const KunnskapsloypaPage = React.lazy(routeFactories.KunnskapsloypaPage);
 const RhetoricGamePage = React.lazy(routeFactories.RhetoricGamePage);
 const HangmanPage = React.lazy(routeFactories.HangmanPage);
 const ChronoGliderPage = React.lazy(routeFactories.ChronoGliderPage);
@@ -118,6 +119,7 @@ const router = createBrowserRouter([
       { path: "oving/flashcards", element: <FlashcardPage /> },
       { path: "oving/quiz", element: <QuizPage /> },
       { path: "oving/chrono", element: <ChronoGamePage /> },
+      { path: "oving/loype", element: <KunnskapsloypaPage /> },
       { path: "oving/retorikk", element: <RhetoricGamePage /> },
       { path: "oving/hengemann", element: <HangmanPage /> },
       { path: "oving/chrono-glider", element: <ChronoGliderPage /> },

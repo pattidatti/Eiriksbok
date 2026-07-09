@@ -18,10 +18,21 @@ export interface Gate {
     isCorrect: boolean;
 }
 
+// Hinder eleven må styre unna på vei mot porten. Posisjon i normaliserte
+// koordinater: xNorm -1..1 (samme akse som banene), yNorm -1..1 (opp/ned).
+// hitAt = hvor i innflygningen (0..1) hinderet når spilleren.
+export interface Obstacle {
+    xNorm: number;
+    yNorm: number;
+    hitAt: number;
+    kind: 'storm' | 'bird' | 'rock';
+}
+
 export interface QueueItem {
     event: GliderEvent;
     gates: Gate[]; // alltid 3, én per bane
     correctLane: Lane;
+    obstacles: Obstacle[];
     attempt: number; // 1 = første forsøk
 }
 
@@ -86,6 +97,26 @@ export const parseEvents = (raw: unknown): GliderEvent[] => {
         }));
 };
 
+const OBSTACLE_KINDS: Obstacle['kind'][] = ['storm', 'bird', 'rock'];
+
+// 3 hinder spredt utover innflygningen. De holder seg unna den siste
+// tredelen (hitAt <= 0.78) slik at eleven har fri bane til å legge seg
+// i riktig port helt på tampen.
+const buildObstacles = (attempt: number): Obstacle[] => {
+    const count = 3;
+    const out: Obstacle[] = [];
+    for (let i = 0; i < count; i++) {
+        const base = 0.24 + (i / count) * 0.5;
+        out.push({
+            xNorm: Math.random() * 2 - 1,
+            yNorm: (Math.random() * 2 - 1) * 0.85,
+            hitAt: Math.min(0.78, base + Math.random() * 0.08),
+            kind: OBSTACLE_KINDS[(i + attempt) % OBSTACLE_KINDS.length],
+        });
+    }
+    return out;
+};
+
 // Tre porter: riktig år + to plausible distraktører. Ekte år fra andre
 // hendelser i nærheten foretrekkes; syntetiske avvik som reserve.
 export const buildQueueItem = (
@@ -136,6 +167,7 @@ export const buildQueueItem = (
         event,
         gates,
         correctLane: order.indexOf(y) as Lane,
+        obstacles: buildObstacles(attempt),
         attempt,
     };
 };
