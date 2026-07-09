@@ -1,0 +1,131 @@
+/* Chrono Glider - scenens kontinuerlige animasjoner */
+
+@keyframes glider-cloud-drift {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes glider-bob {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes glider-portal-pulse {
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1.06);
+    }
+}
+
+@keyframes glider-shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-10px);
+    }
+    40% {
+        transform: translateX(9px);
+    }
+    60% {
+        transform: translateX(-6px);
+    }
+    80% {
+        transform: translateX(4px);
+    }
+}
+
+/* Vindstriper som suser forbi - fartsfølelse */
+@keyframes glider-streak-fly {
+    0% {
+        transform: translateY(-30vh) scaleY(0.4);
+        opacity: 0;
+    }
+    15% {
+        opacity: var(--streak-opacity, 0.5);
+    }
+    100% {
+        transform: translateY(130vh) scaleY(1.6);
+        opacity: 0;
+    }
+}
+
+@keyframes glider-plane-bob {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes glider-contrail {
+    0% {
+        opacity: 0.8;
+        transform: scaleY(0.6);
+    }
+    100% {
+        opacity: 0.25;
+        transform: scaleY(1);
+    }
+}
+
+.glider-wind-streak {
+    animation: glider-streak-fly linear infinite;
+}
+
+.glider-plane-bob {
+    animation: glider-plane-bob 2.2s ease-in-out infinite;
+}
+
+.glider-contrail {
+    animation: glider-contrail 0.5s ease-in-out infinite alternate;
+}
+
+.glider-fire-glow {
+    filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.7));
+}
+
+.glider-cloud-layer {
+    animation: glider-cloud-drift linear infinite;
+}
+
+.glider-gate-bob {
+    animation: glider-bob 2.6s ease-in-out infinite;
+}
+
+.glider-portal-ring {
+    animation: glider-portal-pulse 3.2s ease-in-out infinite;
+}
+
+.glider-shake {
+    animation: glider-shake 0.45s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .glider-cloud-layer,
+    .glider-gate-bob,
+    .glider-portal-ring,
+    .glider-shake,
+    .glider-wind-streak,
+    .glider-plane-bob,
+    .glider-contrail {
+        animation: none;
+    }
+}

@@ -96,7 +96,7 @@ export const PracticePage: React.FC = () => {
         {
             id: 'chrono-glider',
             title: 'Chrono Glider',
-            description: 'Fly gjennom historien og sikt på årstallene.',
+            description: 'Fly gjennom porten med riktig årstall!',
             icon: Plane,
             color: 'bg-cyan-500',
             link: '/oving/chrono-glider'
