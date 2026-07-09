@@ -215,6 +215,8 @@ const KIND_COUNTERS: Record<string, string> = {
     'practice-game': 'practiceGames',
     'virkemiddel-exercise': 'virkemiddelExercises',
     'microgame-played': 'microgamesPlayed',
+    'philosophy-quest': 'philosophyQuests',
+    'comparison-task': 'comparisonTasks',
 };
 
 export const useProgressStore = create<ProgressState>()(

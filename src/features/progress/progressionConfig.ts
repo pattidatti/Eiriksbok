@@ -54,6 +54,8 @@ export const DEFAULT_PROGRESSION_CONFIG: ProgressionConfig = {
         'practice-game': 20,
         'virkemiddel-exercise': 10,
         'microgame-played': 15,
+        'philosophy-quest': 60,
+        'comparison-task': 25,
     },
     repeatBonusFactor: 0.15,
     repeatBonusMin: 5,

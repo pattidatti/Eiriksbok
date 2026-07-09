@@ -23,7 +23,7 @@
                 },
                 {
                     "id": "virtue",
-                    "text": "Jeg ville prøvd å gjøre det rette, for min egen sjel skyld.",
+                    "text": "Jeg ville prøvd å gjøre det rette, for min egen sjels skyld.",
                     "impact": {
                         "idealism": 5,
                         "stoicism": 3
@@ -36,7 +36,7 @@
         {
             "id": "glaucon",
             "speaker": "Platon",
-            "text": "Min bror Glaukon mener at alle, både den rettferdige og den urettferdige, ville endt opp med å stjele og begå urett hvis de var usynlige. At vi bare er 'gode' fordi vi er redde for straff.",
+            "text": "Min bror Glaukon mener at alle, både den rettferdige og den urettferdige, ville endt opp med å stjele og gjøre urett hvis de var usynlige. At vi bare er 'gode' fordi vi er redde for straff.",
             "choices": [
                 {
                     "id": "agree_glaucon",
@@ -92,7 +92,7 @@
         {
             "id": "conclusion",
             "speaker": "Platon",
-            "text": "Husk dette. Dyd er sin egen lønn. Ikke fordi andre ser deg, men fordi du ser deg selv.",
+            "text": "Husk dette. Å gjøre det rette er sin egen belønning. Ikke fordi andre ser deg, men fordi du ser deg selv.",
             "choices": [
                 {
                     "id": "end",

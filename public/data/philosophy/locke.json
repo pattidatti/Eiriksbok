@@ -1,0 +1,13 @@
+{
+    "id": "locke",
+    "name": "John Locke",
+    "color": "#14b8a6",
+    "group": "Opplysningstiden",
+    "dimensions": {
+        "metafysikk": "Verden finnes der ute, men vi blir ikke født med ferdig kunnskap om den. Alt vi vet, må vi hente inn gjennom sansene og bygge opp bit for bit. Locke var skeptisk til store teorier om ting ingen kan erfare, og holdt seg til det vi faktisk kan undersøke.",
+        "epistemologi": "Sinnet er ved fødselen en blank tavle, en tabula rasa. All kunnskap kommer fra erfaring, gjennom to kilder: sansing av verden utenfor og refleksjon over våre egne tanker. Ingenting finnes i forstanden som ikke først har vært i sansene. Dette gjør Locke til empirismens far, motpolen til Descartes.",
+        "etikk": "Alle mennesker har naturlige rettigheter som ingen stat kan ta fra oss: retten til liv, frihet og eiendom. Eiendomsretten oppstår når du blander ditt eget arbeid med naturen, som når du dyrker en åker. Locke argumenterte også for toleranse: staten skal ikke tvinge noen til en bestemt tro.",
+        "menneskesyn": "Alle mennesker fødes frie og likeverdige, som blanke ark. Ingen er født til å herske over andre, og ingen er født dum eller klok. Det er erfaringene våre som former hvem vi blir, ikke arv eller adelig blod.",
+        "samfunnssyn": "Vi inngår en samfunnspakt og gir staten makt for å få rettighetene våre beskyttet. Men makten er betinget: bryter herskeren pakten og krenker folkets rettigheter, har folket ikke bare rett, men plikt til å gjøre opprør. Denne tanken inspirerte både den amerikanske og den franske revolusjonen."
+    }
+}

@@ -17,7 +17,7 @@ export const QUEST_REGISTRY: Record<string, QuestConfig> = {
     'sokrates': {
         id: 'socratic-method',
         philosopherId: 'sokrates',
-        title: 'Den Uutforskede Hulen',
+        title: 'Jakten på Rettferdighet',
         description: 'Utforsk hva rettferdighet egentlig betyr med Sokrates på agoraen.',
         learningGoal: 'Forstå dialogmetoden og hvorfor det er viktig å stille spørsmål.',
         path: '/content/krle/filosofi/quests/socratic_dialogue.json',

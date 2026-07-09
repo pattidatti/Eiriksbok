@@ -38,7 +38,23 @@ export const DimensionWheel: React.FC<DimensionWheelProps> = ({ religion }) => {
     return (
         <div className="flex flex-col md:flex-row items-center gap-8 p-8 bg-white/50 rounded-3xl backdrop-blur-md border border-white/20 shadow-sm">
             {/* The Wheel */}
-            <div className="relative w-[320px] h-[320px] flex-shrink-0">
+            <div
+                className="relative w-[320px] h-[320px] flex-shrink-0"
+                role="radiogroup"
+                aria-label={`Velg dimensjon for ${religion.name}`}
+                onKeyDown={(event) => {
+                    const currentIndex = DIMENSIONS.findIndex((d) => d.key === selectedDim);
+                    let nextIndex = -1;
+                    if (event.key === 'ArrowRight' || event.key === 'ArrowDown')
+                        nextIndex = (currentIndex + 1) % DIMENSIONS.length;
+                    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp')
+                        nextIndex = (currentIndex - 1 + DIMENSIONS.length) % DIMENSIONS.length;
+                    if (nextIndex >= 0) {
+                        event.preventDefault();
+                        setSelectedDim(DIMENSIONS[nextIndex].key);
+                    }
+                }}
+            >
                 <svg width="320" height="320" viewBox="0 0 320 320" className="transform -rotate-90">
                     {DIMENSIONS.map((dim, index) => {
                         const startAngle = index * (360 / 7);
@@ -54,7 +70,17 @@ export const DimensionWheel: React.FC<DimensionWheelProps> = ({ religion }) => {
                                 strokeWidth="2"
                                 whileHover={{ scale: 1.05, originX: 0.5, originY: 0.5 }}
                                 onClick={() => setSelectedDim(dim.key)}
-                                className="cursor-pointer transition-colors duration-300 hover:fill-indigo-500/20"
+                                role="radio"
+                                aria-checked={isSelected}
+                                aria-label={dim.label}
+                                tabIndex={isSelected || (!selectedDim && index === 0) ? 0 : -1}
+                                onKeyDown={(event) => {
+                                    if (event.key === 'Enter' || event.key === ' ') {
+                                        event.preventDefault();
+                                        setSelectedDim(dim.key);
+                                    }
+                                }}
+                                className="cursor-pointer transition-colors duration-300 hover:fill-indigo-500/20 focus:outline-none focus-visible:stroke-indigo-500 focus-visible:[stroke-width:4]"
                                 style={{
                                     fill: isSelected ? (religion.color || '#6366f1') : undefined
                                 }}

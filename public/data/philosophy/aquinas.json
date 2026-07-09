@@ -1,0 +1,13 @@
+{
+    "id": "aquinas",
+    "name": "Thomas Aquinas",
+    "color": "#92400e",
+    "group": "Middelalderen",
+    "dimensions": {
+        "metafysikk": "Alt som finnes, har fått sin eksistens fra Gud. Ingenting kan være årsak til seg selv, så det må finnes en Første Årsak og en Første Beveger som satte alt i gang, og det er Gud. Vi kan ikke se Gud direkte, men vi kan se sporene etter Gud i naturen.",
+        "epistemologi": "Tro og fornuft kan aldri motsi hverandre, fordi begge kommer fra Gud. Ser vitenskapen og Bibelen ut til å være uenige, har vi misforstått den ene eller tolket den andre feil. Fornuften kan bevise at Gud finnes, men troen trengs for å forstå Guds dypere mysterier. Metoden hans var skolastikken: still et spørsmål, list opp alle motargumenter, og svar på dem med knivskarp logikk.",
+        "etikk": "Det finnes en naturlig lov som er lik for alle mennesker, uansett religion. Siden alle er skapt med fornuft, kan alle forstå at det er rett å bevare liv, leve i samfunn og søke sannhet. Oppå Aristoteles' dyder la han de kristne dydene tro, håp og kjærlighet.",
+        "menneskesyn": "Mennesket er et fornuftsvesen skapt av Gud, med et evig mål som strekker seg forbi dette livet. Fornuften er en gave alle mennesker deler, ikke bare de kristne. Derfor kan alle, uansett tro, skjelne rett fra galt.",
+        "samfunnssyn": "Lover skal bygge på den naturlige loven og tjene fellesskapet. En lov som strider mot den naturlige loven, er ingen ekte lov, men en perversjon av loven, altså en forvrengning. Denne tanken la grunnlaget for vestlig rettstenkning og ideen om at alle mennesker har rettigheter."
+    }
+}

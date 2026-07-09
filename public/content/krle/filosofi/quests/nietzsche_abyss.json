@@ -101,7 +101,7 @@
         {
             "id": "create_values",
             "speaker": "Friedrich Nietzsche",
-            "text": "Ja! Du er din egen lovgiver. Knus de gamle steintavlene! Skriv nye! Hva er godt? Alt som høyner følelsen av makt i mennesket. Hva er ondt? Alt som stammer fra svakhet.",
+            "text": "Ja! Du er din egen lovgiver. Knus de gamle steintavlene! Skriv nye! Hva er godt? Alt som øker følelsen av makt og styrke i mennesket. Hva er ondt? Alt som kommer fra svakhet.",
             "choices": [
                 {
                     "id": "power",

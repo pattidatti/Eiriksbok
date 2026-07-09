@@ -1,0 +1,13 @@
+{
+    "id": "arendt",
+    "name": "Hannah Arendt",
+    "color": "#ea580c",
+    "group": "Moderne",
+    "dimensions": {
+        "metafysikk": "Arendt lette ikke etter evige sannheter i en usynlig idéverden. Det viktigste er den felles, synlige verden vi bygger og deler med hverandre: byer, ting, institusjoner og samtaler. Hver fødsel er en ny begynnelse i denne verdenen, og denne evnen til å starte noe helt nytt kalte hun natalitet.",
+        "epistemologi": "Å tenke er for Arendt å føre en indre samtale med seg selv og å kunne se verden fra andres perspektiv. Under rettssaken mot nazisten Eichmann så hun hva som skjer når denne evnen mangler: han var ikke et monster, bare en tankeløs mann som fulgte ordre. Derfor er tenkning ikke bare noe for filosofer, det er en moralsk plikt for alle.",
+        "etikk": "Det største onde er ofte banalt: det oppstår når vanlige mennesker slutter å tenke selv og blir lydige tannhjul i et system. Ondskap krever altså ikke onde monstre, bare mangel på fantasi og kritisk tenkning. Å stille spørsmål og nekte å følge strømmen er derfor selve kjernen i moralsk ansvar.",
+        "menneskesyn": "Mennesker finnes bare i flertall, og vi er alle ulike. Denne pluraliteten er ingen feil, men selve vilkåret for et menneskelig liv. Arendt skilte mellom arbeid (overleve), verk (bygge varige ting) og handling, og handlingen er det ypperste: når vi trer fram blant andre, viser hvem vi er og begynner noe nytt.",
+        "samfunnssyn": "Offentligheten er som et bord mellom oss: det både forbinder oss og lar oss forbli unike individer. Totalitære regimer ødelegger dette rommet, presser mennesker sammen til en masse og erstatter sannhet med ideologi og løgn. Frihet finnes bare der mennesker møtes som likeverdige og handler sammen, og derfor må vi pleie det offentlige rommet hver eneste dag."
+    }
+}

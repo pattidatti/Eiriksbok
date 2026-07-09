@@ -1,0 +1,13 @@
+{
+    "id": "beauvoir",
+    "name": "Simone de Beauvoir",
+    "color": "#db2777",
+    "group": "Moderne",
+    "dimensions": {
+        "metafysikk": "Det finnes ingen ferdig plan eller «natur» som bestemmer hvem du skal bli. Eksistensen kommer først, essensen etterpå: du finnes, og så skaper du deg selv gjennom valgene og handlingene dine. Mennesket lever i en spenning mellom å være en kropp bundet til jorda og en fri vilje som strekker seg utover den.",
+        "epistemologi": "Vi ser aldri verden fra ingensteds, men alltid fra en bestemt situasjon: kjønn, kropp, klasse og historie farger blikket vårt. Mange «sannheter» om hva som er naturlig kvinnelig, er derfor ikke funnet i naturen, men laget av mennesker. Skal vi forstå slike myter, må vi granske hvordan folk faktisk oppdras og lever.",
+        "etikk": "Å ville seg selv fri er også å ville at de andre skal være frie. Ingen kan være virkelig fri i et samfunn der andre er undertrykte, så kampen for egen frihet og kampen for andres henger sammen. Å flykte fra frihetens ansvar ved å gjøre seg selv til et passivt objekt, kalte hun selvbedrag.",
+        "menneskesyn": "Man fødes ikke som kvinne, man blir det: jenter oppdras til å behage, gutter til å handle og erobre. Biologien er ikke en skjebne, men en situasjon vi må forholde oss til. Hvert menneske har både friheten og ansvaret til å definere seg selv gjennom sine handlinger.",
+        "samfunnssyn": "Gjennom historien har mannen gjort seg selv til subjektet, det tenkende sentrum, mens kvinnen er blitt definert som «den andre». Samfunnet må endres slik at alle kan skape sitt eget liv, uansett kjønn. Beauvoir utfordret også synet på eldre, som ofte behandles som «ikke-personer» uten behov eller rettigheter."
+    }
+}

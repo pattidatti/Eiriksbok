@@ -9,7 +9,7 @@
         {
             "id": "start",
             "speaker": "Aristoteles",
-            "text": "Velkommen til Lykeion. Vi studerer her det viktigste av alle mål: Eudaimonia – lykken. Men fortell meg, hva tror du er hemmeligheten til et godt liv?",
+            "text": "Velkommen til Lykeion. Vi studerer her det viktigste av alle mål: Eudaimonia - lykken. Men fortell meg, hva tror du er hemmeligheten til et godt liv?",
             "choices": [
                 {
                     "id": "pleasure",
@@ -36,7 +36,7 @@
         {
             "id": "critique_pleasure",
             "speaker": "Aristoteles",
-            "text": "Nytelse er godt, men er det nok? Selv kveget kan føle nytelse. Men mennesket har fornuft. Er ikke vår lykke knyttet til det som er unikt for oss?",
+            "text": "Nytelse er godt, men er det nok? Selv dyrene kan føle nytelse. Men mennesket har fornuft. Er ikke vår lykke knyttet til det som er unikt for oss?",
             "choices": [
                 {
                     "id": "reason_agree",
@@ -85,7 +85,7 @@
         {
             "id": "conclusion",
             "speaker": "Aristoteles",
-            "text": "Du forstår. Dyden – og lykken – finnes i midten. I balansen mellom to ekstremer. Gå nå, og finn din egen middelvei.",
+            "text": "Du forstår. Dyden - og lykken - finnes i midten. I balansen mellom to ekstremer. Gå nå, og finn din egen middelvei.",
             "choices": [
                 {
                     "id": "end",

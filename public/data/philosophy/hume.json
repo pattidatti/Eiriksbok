@@ -1,0 +1,13 @@
+{
+    "id": "hume",
+    "name": "David Hume",
+    "color": "#64748b",
+    "group": "Opplysningstiden",
+    "dimensions": {
+        "metafysikk": "Vi kan bare kjenne våre egne sanseinntrykk, ikke verden bak dem. Ord som Gud, sjel og selv gir bare mening hvis vi kan peke på hvilket inntrykk de kommer fra. Da Hume kikket inn i seg selv for å finne sitt jeg, fant han bare en strøm av skiftende følelser, aldri noe fast jeg bak dem. Derfor var han også skeptisk til fortellinger om mirakler: det er alltid mer sannsynlig at vitnet tar feil enn at naturlovene ble brutt.",
+        "epistemologi": "All kunnskap starter med sanseinntrykk, og ideene våre er bare bleke kopier av dem. Når en biljardkule treffer en annen, ser vi aldri selve årsaken, bare at det ene følger det andre. At vi tror på årsak og virkning, er en vane, ikke et bevis. Vi kan ikke engang bevise at solen står opp i morgen, vi kan bare forvente det.",
+        "etikk": "Moral er ikke logikk, men følelser. Fornuften kan fortelle oss hvordan vi når et mål, men aldri hvorfor vi bør velge det: fornuften er og bør bare være lidenskapenes slave. Og fra hvordan verden er, kan vi aldri slutte oss til hvordan den bør være. Den regelen kalles Humes giljotin, fordi den kutter hodet av dårlige argumenter.",
+        "menneskesyn": "Mennesket er først og fremst et følelsesvesen, ikke en kald tenkemaskin. Det er vaner og følelser som styrer oss i hverdagen, mens fornuften kommer diltende etterpå. Det finnes ingen fast sjel inni oss, bare en bunt av skiftende inntrykk og opplevelser.",
+        "samfunnssyn": "Samfunnet holdes ikke sammen av logiske beviser, men av vaner, tradisjoner og felles følelser som sympati. Vi dømmer handlinger som gode fordi de vekker medfølelse og behag i oss. Hume var derfor skeptisk til dem som ville bygge samfunnet om etter en perfekt teori, og stolte mer på erfaring enn på store systemer."
+    }
+}

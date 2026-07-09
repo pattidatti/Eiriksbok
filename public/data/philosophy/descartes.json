@@ -1,0 +1,13 @@
+{
+    "id": "descartes",
+    "name": "René Descartes",
+    "color": "#0ea5e9",
+    "group": "Opplysningstiden",
+    "dimensions": {
+        "metafysikk": "Virkeligheten består av to helt forskjellige stoffer: den tenkende sjelen, som ikke kan måles, og den fysiske materien, som følger naturlovene. Kroppen er en slags komplisert maskin, mens sjelen er fri. Dette skarpe skillet kalles dualisme, og Gud er garantisten for at verden rundt oss ikke bare er en illusjon.",
+        "epistemologi": "Descartes ville tvile på alt som overhodet kunne betviles, til og med tanken på at en ond ånd lurte ham om alt. Men én ting sto igjen: selv om han ble lurt, måtte det finnes et jeg som ble lurt. Jeg tenker, altså er jeg. Fornuften, ikke sansene, er kilden til sikker viten, og derfor kalles han rasjonalist.",
+        "etikk": "For Descartes var det å tenke klart selve grunnlaget for å handle riktig. Den som bygger livet på vaner og løse antakelser, kan bli lurt. Vi bør derfor tvile oss frem til det som er sikkert, og la klare og tydelige tanker styre valgene våre.",
+        "menneskesyn": "Mennesket er først og fremst et tenkende vesen. Det sikreste vi vet om oss selv, er ikke hvordan kroppen ser ut, men at vi tenker. Men skillet mellom sjel og kropp skapte et problem han aldri løste: hvordan kan en tanke få hånden til å bevege seg?",
+        "samfunnssyn": "Descartes ville rive ned det gamle tankebyggverket fra middelalderen og bygge alt på nytt, like sikkert som matematikk. Kunnskap skal ikke hvile på gamle autoriteter, men på det hver enkelt kan tenke seg frem til selv. Slik la han grunnlaget for den moderne vitenskapen."
+    }
+}

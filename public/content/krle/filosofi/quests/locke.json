@@ -10,7 +10,7 @@
         {
             "id": "start",
             "speaker": "John Locke",
-            "text": "I naturtilstanden er alle mennesker frie og like. Ingen er født som konge over andre. Er du enig?",
+            "text": "Tenk deg tiden før stater og lover fantes. Jeg kaller den naturtilstanden. Der er alle mennesker frie og like. Ingen er født som konge over andre. Er du enig?",
             "choices": [
                 {
                     "id": "agree",
@@ -35,7 +35,7 @@
         {
             "id": "property",
             "speaker": "John Locke",
-            "text": "Og hvis du eier din egen kropp, eier du også arbeidet ditt. Når du blander arbeidet ditt med naturen – plukker et eple eller bygger et hus – blir det ditt. Enig?",
+            "text": "Og hvis du eier din egen kropp, eier du også arbeidet ditt. Når du blander arbeidet ditt med naturen - plukker et eple eller bygger et hus - blir det ditt. Enig?",
             "choices": [
                 {
                     "id": "agree_prop",

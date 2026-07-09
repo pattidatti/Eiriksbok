@@ -54,7 +54,7 @@
         {
             "id": "categorical",
             "speaker": "Immanuel Kant",
-            "text": "Her er loven: Handle bare etter den regel som du samtidig kan ønske skal bli en allmenn lov. Kan du ønske at alle lyver når det passer dem?",
+            "text": "Her er loven, som jeg kaller det kategoriske imperativ: Handle bare etter den regelen du samtidig kan ønske skal bli en allmenn lov, en regel som gjelder for alle. Kan du ønske at alle lyver når det passer dem?",
             "choices": [
                 {
                     "id": "no_universal",
@@ -70,7 +70,7 @@
         {
             "id": "conclusion",
             "speaker": "Immanuel Kant",
-            "text": "Akkurat. Det ville være en selvmotsigelse. Mennesket er fornuftig, og derfor fritt til å følge denne loven vi gir oss selv. Det gir oss verdighet. Behandle alltid mennesket som et mål i seg selv, aldri bare som et middel.",
+            "text": "Akkurat. Det ville være en selvmotsigelse. Mennesket er fornuftig, og derfor fritt til å følge denne loven vi gir oss selv. Det gir oss verdighet. Behandle alltid mennesket som et mål i seg selv, aldri bare som et middel, et verktøy for å oppnå noe annet.",
             "choices": [
                 {
                     "id": "end",

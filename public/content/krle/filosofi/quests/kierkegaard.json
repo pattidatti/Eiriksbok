@@ -9,7 +9,7 @@
         {
             "id": "start",
             "speaker": "Søren Kierkegaard",
-            "text": "De fleste lever som 'spissborgere', de bare flyter med strømmen. Eller de nyter livet som estetikere, flykter fra kjedsomhet. Men føler du noen gang at noe mangler? En angst, en svimmelhet?",
+            "text": "De fleste lever som 'spissborgere' - de bare flyter med strømmen uten å tenke selv. Eller de lever som estetikere, som jager nytelse for å flykte fra kjedsomheten. Men føler du noen gang at noe mangler? En angst, en svimmelhet?",
             "choices": [
                 {
                     "id": "yes_anxiety",
@@ -36,7 +36,7 @@
         {
             "id": "despair",
             "speaker": "Søren Kierkegaard",
-            "text": "Det er den farligste formen for fortvilelse: Å ikke vite at man er fortvilet. Å miste sitt *selv* uten å merke det. Du trenger å våkne! Du trenger å velge!",
+            "text": "Det er den farligste formen for fortvilelse: Å ikke vite at man er fortvilet. Å miste seg selv uten å merke det. Du trenger å våkne! Du trenger å velge!",
             "choices": [
                 {
                     "id": "wake_up",
@@ -51,7 +51,7 @@
         {
             "id": "choice",
             "speaker": "Søren Kierkegaard",
-            "text": "Etikken krever at du tar ansvar. At du velger deg selv. Men selv det er ikke nok. Sannheten er subjektiv. Den er noe du må leve og dø for. Tør du ta spranget ut på de 70 000 favners dyp?",
+            "text": "Etikken krever at du tar ansvar. At du velger deg selv. Men selv det er ikke nok. Sannheten er subjektiv - den finnes ikke i bøker, men i hvordan du selv lever. Den er noe du må leve og dø for. Tør du ta spranget ut på 70 000 favners dyp, der du aldri når bunnen?",
             "choices": [
                 {
                     "id": "leap",

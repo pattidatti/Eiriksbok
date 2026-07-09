@@ -1,0 +1,13 @@
+{
+    "id": "kierkegaard",
+    "name": "Søren Kierkegaard",
+    "color": "#8b5cf6",
+    "group": "Moderne",
+    "dimensions": {
+        "metafysikk": "Det viktigste er ikke store teorier om verden, men at du selv eksisterer her og nå. Din egen virkelighet, med valg og ansvar, kommer foran alle systemer. Gud er ikke en idé man kan bevise, men en du må forholde deg til personlig.",
+        "epistemologi": "Sannheten er subjektivitet: den viktigste sannheten er den som er sann for deg og som du lever etter. Objektiv viten, som 2+2=4, kan aldri svare på hvordan du skal leve. Troen krever et sprang, et modig hopp ut i det du ikke kan bevise.",
+        "etikk": "Mennesket kan leve på tre stadier: det estetiske (nytelse og øyeblikk), det etiske (ansvar og forpliktelse) og det religiøse (personlig tro på Gud). Du må selv velge hvordan du vil leve, og ingen kan ta valget for deg. Det å velge, og stå for valget, er selve kjernen i et ekte liv.",
+        "menneskesyn": "Mennesket er et enkeltindivid som må skape seg selv gjennom sine valg. Friheten gir angst, en svimmelhet ved å innse at alt er mulig, men angsten viser at vi er frie. Den som flykter fra valgene og bare følger strømmen, ender i fortvilelse og mister seg selv.",
+        "samfunnssyn": "Kritiserte 'mengden': når alle mener det samme, slutter den enkelte å tenke selv. Han angrep også statskirkens vanekristendom, der folk gikk i kirken av gammel vane uten ekte tro. Den enkelte står alltid foran systemet og massen."
+    }
+}

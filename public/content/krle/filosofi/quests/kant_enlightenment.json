@@ -9,7 +9,7 @@
         {
             "id": "start",
             "speaker": "Immanuel Kant",
-            "text": "Opplysning er menneskets utgang av dets selvforskyldte umyndighet. Umyndighet er manglende evne til å bruke sin forstand uten en annens ledelse. Er du myndig?",
+            "text": "Opplysning er at mennesket kommer seg ut av sin selvforskyldte umyndighet. Umyndig er du når du ikke klarer å bruke din egen forstand uten at noen andre leder deg. Er du myndig?",
             "choices": [
                 {
                     "id": "yes_think",
@@ -35,7 +35,7 @@
         {
             "id": "laziness",
             "speaker": "Immanuel Kant",
-            "text": "Det er så behagelig å være umyndig. Hvis jeg har en bok som har forstand for meg, en sjelesørger som har samvittighet for meg, så trenger jeg ikke å tenke selv. Latskap og feighet er årsakene.",
+            "text": "Det er så behagelig å være umyndig. Hvis jeg har en bok som har forstand for meg, en prest som har samvittighet for meg, så trenger jeg ikke å tenke selv. Latskap og feighet er årsakene.",
             "choices": [
                 {
                     "id": "guilty",
@@ -58,7 +58,7 @@
         {
             "id": "public_use",
             "speaker": "Immanuel Kant",
-            "text": "Nei, men du må ha motet til å bruke din EGEN forstand. Offentlig bruk av fornuften må alltid være fri. Bare slik kan opplysning skje blant mennesker.",
+            "text": "Nei, men du må ha motet til å bruke din EGEN forstand. Og alle må fritt kunne si og skrive det de tenker. Bare slik kan opplysning skje blant mennesker.",
             "choices": [
                 {
                     "id": "freedom_speech",
@@ -74,7 +74,7 @@
         {
             "id": "sapere_aude",
             "speaker": "Immanuel Kant",
-            "text": "Sapere Aude! Ha mot til å bruke din egen forstand! Dette er opplysningens valgspråk. Tør du å stå alene med dine tanker?",
+            "text": "Sapere Aude! Ha mot til å bruke din egen forstand! Dette er opplysningens motto. Tør du å stå alene med dine tanker?",
             "choices": [
                 {
                     "id": "end",

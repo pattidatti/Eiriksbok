@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Trophy, ArrowRight, Star, Sparkles, MessageCircle, Target, Compass } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Zap, Trophy, ArrowRight, Star, Sparkles, MessageCircle, Target, Compass, Scale } from 'lucide-react';
 import type { DialogueChoice, PhilosophyAxis, PhilosophyQuest } from '../../../../data/philosophy/types';
 import { AXIS_DESCRIPTIONS, AXIS_LABELS } from '../../../../data/philosophy/types';
 import { usePhilosophyProfile } from '../../../../hooks/usePhilosophyProfile';
@@ -17,7 +18,7 @@ interface QuestCompletionScreenProps {
 }
 
 export const QuestCompletionScreen: React.FC<QuestCompletionScreenProps> = ({ quest, choicesMade = [], newlyEarnedAchievementIds = [], onClose, onStartNextQuest }) => {
-    const { profile, ACHIEVEMENTS } = usePhilosophyProfile();
+    const { profile, ACHIEVEMENTS, reflections, saveReflection } = usePhilosophyProfile();
     const [xpAnimated, setXpAnimated] = useState(0);
     const [achievementModalDismissed, setAchievementModalDismissed] = useState(false);
 
@@ -173,25 +174,31 @@ export const QuestCompletionScreen: React.FC<QuestCompletionScreenProps> = ({ qu
                 </motion.div>
             </div>
 
-            {/* Reflection Questions */}
+            {/* Reflection Questions - besvarbare, lagres i tenkedagboken */}
             {quest.reflectionQuestions && quest.reflectionQuestions.length > 0 && (
                 <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.9 }}
-                    className="mb-6 w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl p-5 text-left"
+                    className="mb-6 w-full max-w-md bg-slate-50 border border-slate-200 rounded-2xl p-5 text-left relative z-10"
                 >
                     <div className="flex items-center gap-2 mb-3">
                         <MessageCircle size={14} className="text-indigo-500" />
                         <p className="text-[10px] font-bold text-indigo-600 uppercase tracking-widest">Hva tenker du?</p>
                     </div>
-                    <ul className="space-y-2">
+                    <div className="space-y-4">
                         {quest.reflectionQuestions.map((q, i) => (
-                            <li key={i} className="text-sm text-slate-600 font-serif italic leading-relaxed">
-                                {q}
-                            </li>
+                            <ReflectionField
+                                key={i}
+                                question={q}
+                                initialAnswer={reflections[quest.id]?.[i]?.a ?? ''}
+                                onSave={(text) => saveReflection(quest.id, i, q, text)}
+                            />
                         ))}
-                    </ul>
+                    </div>
+                    <p className="mt-3 text-[10px] text-slate-400">
+                        Svarene dine lagres i tenkedagboken på oversikten.
+                    </p>
                 </motion.div>
             )}
 
@@ -211,6 +218,15 @@ export const QuestCompletionScreen: React.FC<QuestCompletionScreenProps> = ({ qu
                         Neste: {nextQuest.title}
                     </button>
                 )}
+                {questConfig?.philosopherId && (
+                    <Link
+                        to={`/krle/filosofi/sammenlign?velg=${questConfig.philosopherId}`}
+                        className="w-full px-8 py-3 rounded-2xl bg-white text-indigo-600 border border-indigo-200 font-bold text-xs uppercase tracking-widest hover:bg-indigo-50 hover:scale-105 active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2"
+                    >
+                        <Scale size={14} />
+                        Sammenlign {quest.mentor} med andre
+                    </Link>
+                )}
                 <button
                     onClick={onClose}
                     className={`w-full px-8 py-3 rounded-2xl font-bold text-xs uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2 ${
@@ -223,6 +239,56 @@ export const QuestCompletionScreen: React.FC<QuestCompletionScreenProps> = ({ qu
                     <ArrowRight size={14} />
                 </button>
             </motion.div>
+        </div>
+    );
+};
+
+interface ReflectionFieldProps {
+    question: string;
+    initialAnswer: string;
+    onSave: (text: string) => void;
+}
+
+// Tekstfelt for ett refleksjonsspørsmål. Lagrer ved blur, og viser en kort
+// bekreftelse så eleven vet at svaret er tatt vare på.
+const ReflectionField: React.FC<ReflectionFieldProps> = ({ question, initialAnswer, onSave }) => {
+    const [value, setValue] = useState(initialAnswer);
+    const [savedAt, setSavedAt] = useState<number | null>(null);
+
+    useEffect(() => {
+        if (savedAt === null) return;
+        const timer = setTimeout(() => setSavedAt(null), 2000);
+        return () => clearTimeout(timer);
+    }, [savedAt]);
+
+    const handleBlur = () => {
+        if (value.trim() === initialAnswer.trim() && !value.trim()) return;
+        onSave(value.trim());
+        if (value.trim()) setSavedAt(Date.now());
+    };
+
+    return (
+        <div>
+            <p className="text-sm text-slate-600 font-serif italic leading-relaxed mb-1.5">{question}</p>
+            <div className="relative">
+                <textarea
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    onBlur={handleBlur}
+                    rows={2}
+                    placeholder="Skriv tanken din her..."
+                    className="w-full text-sm text-slate-700 bg-white border border-slate-200 rounded-xl p-3 resize-none focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 transition-all placeholder:text-slate-300"
+                />
+                {savedAt !== null && (
+                    <motion.span
+                        initial={{ opacity: 0, y: 4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="absolute -bottom-1 right-1 text-[10px] font-bold text-emerald-600"
+                    >
+                        Lagret ✓
+                    </motion.span>
+                )}
+            </div>
         </div>
     );
 };

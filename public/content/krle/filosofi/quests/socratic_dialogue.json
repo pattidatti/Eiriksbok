@@ -36,7 +36,7 @@
         {
             "id": "weapon_analogy",
             "speaker": "Sokrates",
-            "text": "Interessant. Men sett at en venn har lånt meg et våpen mens han var ved sine fulle fem, men kommer og krever det tilbake i et øyeblikk av galskap. Ville det være rettferdig av meg å gi det tilbake til ham da?",
+            "text": "Interessant. Men sett at en venn lånte meg et våpen da han tenkte klart, og nå krever det tilbake i et anfall av galskap. Ville det være rettferdig av meg å gi det tilbake til ham da?",
             "choices": [
                 {
                     "id": "give_back",
@@ -63,7 +63,7 @@
         {
             "id": "deeper_justice",
             "speaker": "Sokrates",
-            "text": "Nettopp! Så rettferdighet kan ikke bare være en blind regel om tilbakebetaling. Den må være knyttet til noe dypere – kanskje til sjelens helse eller samfunnets harmoni? Hva tror du er viktigst: Den sterkes rett, eller den svakes vern?",
+            "text": "Nettopp! Så rettferdighet kan ikke bare være en blind regel om tilbakebetaling. Den må være knyttet til noe dypere - kanskje til sjelens helse eller samfunnets harmoni? Hva tror du er viktigst: Den sterkes rett, eller den svakes vern?",
             "choices": [
                 {
                     "id": "strong_right",
@@ -90,7 +90,7 @@
         {
             "id": "challenge_might",
             "speaker": "Sokrates",
-            "text": "En dristig påstand! Men er en hersker som bare søker sin egen fordel virkelig en mester i sin kunst? En lege søker jo pasientens vel, ikke sin egen profitt. Bør ikke en rettferdig leder søke undersåttenes vel?",
+            "text": "En dristig påstand! Men er en hersker som bare jakter på egen fordel virkelig god i jobben sin? En lege jobber jo for at pasienten skal bli frisk, ikke for sin egen lommebok. Bør ikke en rettferdig leder på samme måte jobbe for folket sitt?",
             "choices": [
                 {
                     "id": "agree_leader",
@@ -107,7 +107,7 @@
         {
             "id": "conclusion",
             "speaker": "Sokrates",
-            "text": "Vi har bare så vidt begynt å skrape i overflaten, min venn. Men du har vist at du ikke er redd for å stille spørsmål ved det vedtatte. Det er selve begynnelsen på visdom. Gå nå, men fortsett å utforske de usynlige trådene som binder oss sammen.",
+            "text": "Vi har bare så vidt begynt å skrape i overflaten, min venn. Men du har vist at du tør å stille spørsmål ved det alle tar for gitt. Det er selve begynnelsen på visdom. Gå nå, men fortsett å utforske de usynlige trådene som binder oss sammen.",
             "choices": [
                 {
                     "id": "end",

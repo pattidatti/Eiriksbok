@@ -78,16 +78,26 @@ const ACHIEVEMENTS: Achievement[] = [
 
 const validAxes = Object.keys(INITIAL_PROFILE.alignment) as PhilosophyAxis[];
 
+// Ett refleksjonssvar: spørsmålet lagres sammen med svaret slik at
+// tenkedagboken kan vises uten å laste quest-JSON-filene på nytt.
+export interface ReflectionEntry {
+    q: string;
+    a: string;
+}
+
 interface ProfileStore {
     profile: PhilosophyProfile;
     isLoaded: boolean;
     questProgress: QuestProgress | null;
+    // questId -> svar, indeks-justert med questens reflectionQuestions
+    reflections: Record<string, ReflectionEntry[]>;
     addXp: (amount: number) => void;
     updateAlignment: (changes: Partial<Record<string, number>>) => void;
     completeQuest: (questId: string, xpReward: number) => void;
     resetProfile: () => void;
     saveQuestProgress: (progress: QuestProgress) => void;
     clearQuestProgress: () => void;
+    saveReflection: (questId: string, index: number, q: string, a: string) => void;
 }
 
 const useProfileStore = create<ProfileStore>()(
@@ -96,6 +106,7 @@ const useProfileStore = create<ProfileStore>()(
             profile: INITIAL_PROFILE,
             isLoaded: true,
             questProgress: null as QuestProgress | null,
+            reflections: {} as Record<string, ReflectionEntry[]>,
 
             addXp: (amount: number) =>
                 set((state) => {
@@ -161,12 +172,21 @@ const useProfileStore = create<ProfileStore>()(
 
             clearQuestProgress: () =>
                 set({ questProgress: null }),
+
+            saveReflection: (questId, index, q, a) =>
+                set((state) => {
+                    const entries = [...(state.reflections[questId] ?? [])];
+                    entries[index] = { q, a };
+                    return { reflections: { ...state.reflections, [questId]: entries } };
+                }),
         }),
         {
             name: 'odyssey_philosophy_profile',
             // Migrate old localStorage key if present
             onRehydrateStorage: () => (state) => {
                 if (!state) return;
+                // Eldre persistert data mangler reflections (migration)
+                state.reflections = state.reflections ?? {};
                 // Ensure all alignment axes exist (migration)
                 const alignment = { ...INITIAL_PROFILE.alignment };
                 if (state.profile.alignment) {
@@ -184,7 +204,8 @@ const useProfileStore = create<ProfileStore>()(
 
 export const usePhilosophyProfile = () => {
     const { profile, isLoaded, addXp, updateAlignment, completeQuest, resetProfile,
-        questProgress, saveQuestProgress, clearQuestProgress } = useProfileStore();
+        questProgress, saveQuestProgress, clearQuestProgress,
+        reflections, saveReflection } = useProfileStore();
 
     const earnedAchievements = useMemo(
         () => ACHIEVEMENTS.filter((a) => a.condition(profile)),
@@ -217,5 +238,7 @@ export const usePhilosophyProfile = () => {
         questProgress,
         saveQuestProgress,
         clearQuestProgress,
+        reflections,
+        saveReflection,
     };
 };

@@ -114,6 +114,16 @@ export const BADGES: BadgeDef[] = [
         actionLabel: 'Dra på tidsreise',
     },
     {
+        id: 'filosofen',
+        title: 'Filosofen',
+        description: 'Fullfør {n} filosofiske dialoger',
+        emoji: '🦉',
+        counter: 'philosophyQuests',
+        tiers: [3, 9, 18],
+        actionLink: '/krle/filosofi/odyssey',
+        actionLabel: 'Start en dialog',
+    },
+    {
         id: 'ordkunstner',
         title: 'Ordkunstner',
         description: 'Fullfør {n} virkemiddel-øvinger',

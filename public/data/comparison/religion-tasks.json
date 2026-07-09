@@ -1,0 +1,184 @@
+[
+    {
+        "dimension": "ritual",
+        "entities": ["kristendom", "islam"],
+        "claim": "Begge religionene har faste bønnetider som alle troende må følge hver dag.",
+        "answer": "ulikt",
+        "explanation": "Islam har fem faste bønnetider hver dag. I kristendommen finnes det ingen felles regel om faste daglige bønnetider, selv om mange kristne ber daglig."
+    },
+    {
+        "dimension": "ritual",
+        "entities": ["islam", "jodedom"],
+        "claim": "Begge religionene har regler for hva man kan spise.",
+        "answer": "likt",
+        "explanation": "Islam har halal-regler og jødedommen har kosher-regler. Begge sier noe om hvilke dyr man kan spise og hvordan maten skal lages."
+    },
+    {
+        "dimension": "ritual",
+        "entities": ["kristendom", "jodedom"],
+        "claim": "Begge religionene har en fast ukentlig helligdag.",
+        "answer": "likt",
+        "explanation": "Jødedommen har sabbat fra fredag kveld til lørdag kveld, og kristendommen har søndagen. Dagen er ulik, men tanken om en ukentlig hviledag deler de."
+    },
+    {
+        "dimension": "ritual",
+        "entities": ["kristendom", "buddhisme"],
+        "claim": "Stille bønn eller meditasjon og det å tenne lys finnes i begge religionene.",
+        "answer": "likt",
+        "explanation": "Buddhister mediterer og tenner lys ved statuer og altere. Kristne ber stille og tenner lys i kirken. Formen ligner, men innholdet er ulikt: buddhisten søker indre ro og innsikt, den kristne snakker med Gud."
+    },
+    {
+        "dimension": "ritual",
+        "entities": ["buddhisme", "hinduisme"],
+        "claim": "Meditasjon er en viktig praksis i begge religionene.",
+        "answer": "likt",
+        "explanation": "Begge bruker meditasjon for å samle sinnet. I hinduismen er meditasjon og yoga en vei mot frigjøring, i buddhismen er meditasjon selve kjernen i veien mot oppvåkning."
+    },
+    {
+        "dimension": "narrative",
+        "entities": ["kristendom", "islam"],
+        "claim": "Begge religionene regner Abraham og Moses som viktige personer.",
+        "answer": "likt",
+        "explanation": "Både Bibelen og Koranen forteller om Abraham og Moses. I islam regnes de som profeter i rekken som ender med Muhammad."
+    },
+    {
+        "dimension": "narrative",
+        "entities": ["kristendom", "islam"],
+        "claim": "Jesus er en viktig person i fortellingene til begge religionene.",
+        "answer": "likt",
+        "explanation": "I kristendommen er Jesus Guds sønn og frelseren. I islam er Isa (Jesus) en av de store profetene, men ikke Guds sønn. Han er viktig i begge, men rollen er svært ulik."
+    },
+    {
+        "dimension": "narrative",
+        "entities": ["islam", "jodedom"],
+        "claim": "Begge religionene leser sin hellige bok på originalspråket i gudstjenesten.",
+        "answer": "likt",
+        "explanation": "Koranen leses på arabisk og Toraen på hebraisk, uansett hvilket land de troende bor i. Originalspråket regnes som en del av tekstens hellighet."
+    },
+    {
+        "dimension": "narrative",
+        "entities": ["kristendom", "buddhisme"],
+        "claim": "De viktigste fortellingene i begge religionene handler om grunnleggerens liv.",
+        "answer": "likt",
+        "explanation": "Evangeliene forteller om Jesu liv, død og oppstandelse. Buddhismens fortellinger handler om Siddharta Gautamas vei til oppvåkning. Begge religioner er bygget rundt fortellingen om én person."
+    },
+    {
+        "dimension": "experiential",
+        "entities": ["kristendom", "buddhisme"],
+        "claim": "Målet med den religiøse opplevelsen er det samme i begge: å komme nær Gud.",
+        "answer": "ulikt",
+        "explanation": "Kristne søker fellesskap med Gud. Buddhismen har ingen skapergud, og målet er oppvåkning og indre frihet (nirvana), ikke kontakt med en gud."
+    },
+    {
+        "dimension": "experiential",
+        "entities": ["islam", "jodedom"],
+        "claim": "Fellesskapet i bønn og høytider er en viktig del av opplevelsen i begge religionene.",
+        "answer": "likt",
+        "explanation": "Fredagsbønnen i moskeen og sabbatsmåltidet med familien gir begge en sterk følelse av å høre til i et fellesskap."
+    },
+    {
+        "dimension": "experiential",
+        "entities": ["buddhisme", "hinduisme"],
+        "claim": "Begge religionene søker å bli fri fra kretsløpet av gjenfødsler.",
+        "answer": "likt",
+        "explanation": "Både hinduer og buddhister tror på gjenfødsel og ønsker frigjøring fra kretsløpet. Hinduer kaller målet moksha, buddhister kaller det nirvana."
+    },
+    {
+        "dimension": "social",
+        "entities": ["islam", "jodedom"],
+        "claim": "Begge religionene ledes lokalt av lærde, ikke av prester med spesielle fullmakter.",
+        "answer": "likt",
+        "explanation": "Imamen leder bønnen og rabbineren tolker loven. Begge er lærde forbilder, men ingen av dem er prester som står mellom Gud og mennesket."
+    },
+    {
+        "dimension": "social",
+        "entities": ["kristendom", "buddhisme"],
+        "claim": "Begge religionene har klostre der munker eller nonner lever hele livet for troen.",
+        "answer": "likt",
+        "explanation": "Klosterliv finnes i katolsk og ortodoks kristendom og står helt sentralt i buddhismen, der munkefellesskapet (sanghaen) er en av de tre juvelene."
+    },
+    {
+        "dimension": "social",
+        "entities": ["kristendom", "islam"],
+        "claim": "Begge religionene har én verdensleder som bestemmer over alle troende.",
+        "answer": "ulikt",
+        "explanation": "Paven leder bare den katolske kirken, ikke alle kristne. Islam har ingen felles leder i det hele tatt; hver moské og hvert land har sine egne lærde."
+    },
+    {
+        "dimension": "ethical",
+        "entities": ["kristendom", "islam"],
+        "claim": "Å gi til de fattige er en viktig plikt i begge religionene.",
+        "answer": "likt",
+        "explanation": "Islam har zakat, en fast andel av det man eier som gis til fattige. Kristendommen lærer nestekjærlighet og deling. Begge ser omsorg for fattige som en del av troen."
+    },
+    {
+        "dimension": "ethical",
+        "entities": ["kristendom", "jodedom"],
+        "claim": "De ti bud er en del av etikken i begge religionene.",
+        "answer": "likt",
+        "explanation": "De ti bud kommer fra Toraen, jødedommens hellige skrift, og ble tatt videre inn i kristendommen. Begge bygger sin etikk på dem."
+    },
+    {
+        "dimension": "ethical",
+        "entities": ["buddhisme", "hinduisme"],
+        "claim": "Ahimsa, tanken om å ikke skade levende vesener, er viktig i begge religionene.",
+        "answer": "likt",
+        "explanation": "Ikkevold er en grunnverdi i begge. Det er en av grunnene til at mange hinduer og buddhister lar være å spise kjøtt."
+    },
+    {
+        "dimension": "ethical",
+        "entities": ["kristendom", "buddhisme"],
+        "claim": "Medfølelse med andre står sentralt i etikken til begge religionene.",
+        "answer": "likt",
+        "explanation": "Buddhismen løfter frem medfølelse (karuna) med alt som lever. Kristendommen lærer at du skal elske din neste som deg selv. Begrunnelsen er ulik, men verdien ligner."
+    },
+    {
+        "dimension": "doctrinal",
+        "entities": ["islam", "jodedom"],
+        "claim": "Begge religionene tror på én Gud og avviser at Gud har en sønn.",
+        "answer": "likt",
+        "explanation": "Både islam og jødedommen er strengt monoteistiske. Begge avviser den kristne læren om at Jesus er Guds sønn."
+    },
+    {
+        "dimension": "doctrinal",
+        "entities": ["kristendom", "islam"],
+        "claim": "Begge religionene tror på en dommens dag der Gud dømmer menneskene.",
+        "answer": "likt",
+        "explanation": "Troen på dommens dag er sentral i begge. Menneskene skal stå til ansvar for livet sitt, og Gud avgjør deres evige skjebne."
+    },
+    {
+        "dimension": "doctrinal",
+        "entities": ["kristendom", "buddhisme"],
+        "claim": "Begge religionene lærer at mennesket har en evig sjel som lever videre etter døden.",
+        "answer": "ulikt",
+        "explanation": "Kristendommen lærer at mennesket har en evig sjel. Buddhismen lærer det motsatte: det finnes ingen fast, uforanderlig sjel (anatman), bare en strøm av tanker og handlinger som fortsetter."
+    },
+    {
+        "dimension": "doctrinal",
+        "entities": ["buddhisme", "hinduisme"],
+        "claim": "Karma, at handlingene dine får følger for hva som skjer med deg, er viktig i begge.",
+        "answer": "likt",
+        "explanation": "Begge lærer at gode og dårlige handlinger påvirker gjenfødslene dine. Karma er en fellesarv fra det gamle India."
+    },
+    {
+        "dimension": "material",
+        "entities": ["islam", "jodedom"],
+        "claim": "Begge religionene unngår bilder av Gud i sine gudshus.",
+        "answer": "likt",
+        "explanation": "Både moskeer og synagoger er uten bilder av Gud. I stedet brukes kalligrafi, mønstre og symboler. Begge vil hindre at noen tilber et bilde."
+    },
+    {
+        "dimension": "material",
+        "entities": ["kristendom", "buddhisme"],
+        "claim": "Statuer og bilder er vanlige i begge religioners bygninger.",
+        "answer": "likt",
+        "explanation": "Buddhastatuer fyller templene, og mange kirker har bilder, ikoner og statuer. Men det varierer: protestantiske kirker er ofte enklere utsmykket."
+    },
+    {
+        "dimension": "material",
+        "entities": ["kristendom", "islam"],
+        "claim": "Gudshusene i begge religionene har gjerne et høyt tårn.",
+        "answer": "likt",
+        "explanation": "Kirker har kirketårn med klokker, og moskeer har minareter der det kalles inn til bønn. Tårnet viser vei til gudshuset og løfter blikket oppover i begge."
+    }
+]

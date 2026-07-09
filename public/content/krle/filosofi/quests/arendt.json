@@ -9,7 +9,7 @@
         {
             "id": "start",
             "speaker": "Hannah Arendt",
-            "text": "Jeg så Eichmann i Jerusalem. Han var ikke et monster med horn. Han var... skremmende normal. En byråkrat. Han gjorde bare jobben sin. Forstår du hva det betyr?",
+            "text": "Jeg så Eichmann under rettssaken i Jerusalem - nazisten som organiserte togene til dødsleirene. Han var ikke et monster med horn. Han var... skremmende normal. En byråkrat, en mann bak et skrivebord. Han gjorde bare jobben sin. Forstår du hva det betyr?",
             "choices": [
                 {
                     "id": "banality",
@@ -51,7 +51,7 @@
         {
             "id": "thoughtlessness",
             "speaker": "Hannah Arendt",
-            "text": "Nettopp. 'Ondskapens banalitet'. Når systemet tar over, og vi slutter å ha en indre dialog med oss selv, da er vi i stand til alt.",
+            "text": "Nettopp. 'Ondskapens banalitet'. Når systemet tar over, og vi slutter å ha en indre samtale med oss selv, da er vi i stand til alt.",
             "choices": [
                 {
                     "id": "prevention",
@@ -67,7 +67,7 @@
         {
             "id": "action",
             "speaker": "Hannah Arendt",
-            "text": "Vi må tenke. Og vi må handle. Politikk er frihet – å tre frem i det offentlige rom og handle sammen med andre, som likeverdige. Ikke bare adlyde.",
+            "text": "Vi må tenke. Og vi må handle. Politikk er frihet - å stå frem blant andre mennesker og handle sammen med dem, som likeverdige. Ikke bare adlyde.",
             "choices": [
                 {
                     "id": "end",

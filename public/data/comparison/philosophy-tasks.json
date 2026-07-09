@@ -1,0 +1,149 @@
+[
+    {
+        "dimension": "metafysikk",
+        "entities": ["platon", "aristoteles"],
+        "claim": "Begge mener at det finnes en egen ideverden som er mer virkelig enn den vi sanser.",
+        "answer": "ulikt",
+        "explanation": "Det er Platons lære. Aristoteles var uenig: formene finnes ikke i en egen verden, de finnes i tingene selv, her i vår verden."
+    },
+    {
+        "dimension": "metafysikk",
+        "entities": ["sokrates", "platon"],
+        "claim": "Begge brukte mest tid på store spørsmål om hva virkeligheten egentlig er.",
+        "answer": "ulikt",
+        "explanation": "Platon bygde en hel lære om ideverdenen. Sokrates brydde seg lite om slike spørsmål og konsentrerte seg om hvordan mennesket bør leve."
+    },
+    {
+        "dimension": "metafysikk",
+        "entities": ["platon", "descartes"],
+        "claim": "Begge deler virkeligheten i to: en åndelig del og en fysisk del.",
+        "answer": "likt",
+        "explanation": "Platon skiller mellom ideverdenen og sanseverdenen. Descartes skiller mellom den tenkende sjelen og kroppen som maskin. Begge er dualister, men på hver sin måte."
+    },
+    {
+        "dimension": "metafysikk",
+        "entities": ["platon", "marx"],
+        "claim": "Begge mener at ideene er det som styrer verden.",
+        "answer": "ulikt",
+        "explanation": "Platon satte ideene øverst. Marx snudde det på hodet: det er de materielle forholdene, altså økonomien og arbeidet, som former ideene våre."
+    },
+    {
+        "dimension": "epistemologi",
+        "entities": ["platon", "aristoteles"],
+        "claim": "Begge mener at sann kunnskap kommer fra fornuften alene, ikke fra sansene.",
+        "answer": "ulikt",
+        "explanation": "Platon stolte på fornuften og mistrodde sansene. Aristoteles mente kunnskap starter med å observere verden nøye, sansene er en viktig kilde."
+    },
+    {
+        "dimension": "epistemologi",
+        "entities": ["locke", "hume"],
+        "claim": "Begge mener at all kunnskap starter med erfaring.",
+        "answer": "likt",
+        "explanation": "Begge er empirister. Locke sa at sinnet er som et ubeskrevet blad som erfaringen skriver på, og Hume bygde videre på samme tanke."
+    },
+    {
+        "dimension": "epistemologi",
+        "entities": ["sokrates", "descartes"],
+        "claim": "Begge startet tenkningen sin med å innrømme egen tvil eller uvitenhet.",
+        "answer": "likt",
+        "explanation": "Sokrates sa at alt han visste, var at han ingenting visste. Descartes tvilte systematisk på alt til han fant noe sikkert. Begge brukte tvilen som verktøy."
+    },
+    {
+        "dimension": "epistemologi",
+        "entities": ["kant", "hume"],
+        "claim": "Begge mener at all kunnskap kommer bare fra sansene.",
+        "answer": "ulikt",
+        "explanation": "Det mente Hume. Kant svarte at sansene gir råstoffet, men fornuften former det: rom, tid og årsak er briller vi aldri kan ta av."
+    },
+    {
+        "dimension": "etikk",
+        "entities": ["sokrates", "aristoteles"],
+        "claim": "Begge mener at et godt liv handler om å utvikle gode egenskaper, altså dyder.",
+        "answer": "likt",
+        "explanation": "Sokrates knyttet det gode livet til sjelens dygd, og Aristoteles bygde en hel etikk på å øve opp gode vaner og finne den gylne middelvei."
+    },
+    {
+        "dimension": "etikk",
+        "entities": ["kant", "aristoteles"],
+        "claim": "Begge mener at det viktigste i etikken er å følge regler som gjelder likt for alle.",
+        "answer": "ulikt",
+        "explanation": "Det er Kants pliktetikk: handle bare etter regler som kunne gjelde for alle. Aristoteles tenkte annerledes: det gode livet handler om karakter og skjønn, ikke faste regler."
+    },
+    {
+        "dimension": "etikk",
+        "entities": ["sokrates", "platon"],
+        "claim": "Begge mener at den som virkelig vet hva som er rett, også vil gjøre det rette.",
+        "answer": "likt",
+        "explanation": "Tanken kommer fra Sokrates: ingen gjør urett med vilje, bare av uvitenhet. Platon, som var eleven hans, førte den videre."
+    },
+    {
+        "dimension": "etikk",
+        "entities": ["kierkegaard", "beauvoir"],
+        "claim": "Begge mener at du selv må velge hvem du vil være, og at valget er ditt ansvar.",
+        "answer": "likt",
+        "explanation": "Begge er eksistensialister i tenkemåten: mennesket skaper seg selv gjennom valgene sine, og ingen andre kan ta ansvaret for deg."
+    },
+    {
+        "dimension": "menneskesyn",
+        "entities": ["platon", "aristoteles"],
+        "claim": "Begge mener at mennesket har en sjel.",
+        "answer": "likt",
+        "explanation": "Begge snakker om sjelen, men ulikt: Platon mente sjelen er udødelig og fanget i kroppen, Aristoteles så sjelen som kroppens form og liv."
+    },
+    {
+        "dimension": "menneskesyn",
+        "entities": ["marx", "rousseau"],
+        "claim": "Begge mener at mennesket formes av samfunnet rundt seg.",
+        "answer": "likt",
+        "explanation": "Rousseau mente mennesket er godt fra naturen, men ødelegges av samfunnet. Marx mente de økonomiske forholdene former hvordan vi tenker og lever."
+    },
+    {
+        "dimension": "menneskesyn",
+        "entities": ["platon", "hume"],
+        "claim": "Begge mener at fornuften bør styre over følelsene.",
+        "answer": "ulikt",
+        "explanation": "Platon lot fornuften være kusken som styrer sjelens hester. Hume snudde det: fornuften er lidenskapenes slave, det er følelsene som driver oss."
+    },
+    {
+        "dimension": "menneskesyn",
+        "entities": ["aristoteles", "beauvoir"],
+        "claim": "Begge mener at mennesket er født med en fast natur som bestemmer hvem det blir.",
+        "answer": "ulikt",
+        "explanation": "Aristoteles mente alt har et innebygd mål, også mennesket. Beauvoir avviste det: eksistensen kommer før essensen, du blir den du velger å være."
+    },
+    {
+        "dimension": "samfunnssyn",
+        "entities": ["platon", "aristoteles"],
+        "claim": "Begge mener at noen få kloke bør styre samfunnet alene.",
+        "answer": "ulikt",
+        "explanation": "Platon ville ha filosofer som konger. Aristoteles var mer praktisk og mente et blandet styre der frie borgere deltar, ofte fungerer best."
+    },
+    {
+        "dimension": "samfunnssyn",
+        "entities": ["sokrates", "platon"],
+        "claim": "Begge var kritiske til at flertallet alltid skal bestemme.",
+        "answer": "likt",
+        "explanation": "Sokrates fryktet at uvitende flertall tar dårlige valg, og Platon, som så læremesteren sin bli dømt til døden av folkeforsamlingen, gikk enda lenger i samme retning."
+    },
+    {
+        "dimension": "samfunnssyn",
+        "entities": ["locke", "montesquieu"],
+        "claim": "Begge ville begrense makten til de som styrer.",
+        "answer": "likt",
+        "explanation": "Locke ga folket rett til å kaste makthavere som bryter samfunnspakten. Montesquieu delte makten i tre grener som holder hverandre i sjakk."
+    },
+    {
+        "dimension": "samfunnssyn",
+        "entities": ["marx", "mises"],
+        "claim": "Begge mener at fellesskapet bør eie fabrikkene og styre økonomien.",
+        "answer": "ulikt",
+        "explanation": "Det er Marx sitt standpunkt. Mises mente det stikk motsatte: uten fritt marked og private eiere kan ingen regne ut hva ting egentlig er verdt."
+    },
+    {
+        "dimension": "samfunnssyn",
+        "entities": ["locke", "rousseau"],
+        "claim": "Begge mener at samfunnet bygger på en avtale mellom menneskene.",
+        "answer": "likt",
+        "explanation": "Begge bruker tanken om en samfunnskontrakt. Men de fyller den ulikt: Locke vil beskytte den enkeltes rettigheter, Rousseau vil at alle skal følge allmennviljen."
+    }
+]

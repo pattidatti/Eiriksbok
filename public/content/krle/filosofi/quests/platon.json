@@ -100,7 +100,7 @@
         {
             "id": "conclusion_hero",
             "speaker": "Platon",
-            "text": "Dette er filosofens lodd. Vi må søke sannheten, ikke bare for vår egen del, men for å opplyse samfunnet. Selv om det kan være farlig å utfordre massenes illusjoner (som min lærer Sokrates smertelig fikk erfare!), er det den edleste handling et menneske kan gjøre.",
+            "text": "Dette er filosofens skjebne. Vi må søke sannheten, ikke bare for vår egen del, men for å opplyse samfunnet. Det kan være farlig å utfordre det folk flest tror på (det kostet min lærer Sokrates livet!), men det er det edleste et menneske kan gjøre.",
             "choices": [
                 {
                     "id": "finish",

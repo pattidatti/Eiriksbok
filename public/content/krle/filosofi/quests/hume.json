@@ -52,7 +52,7 @@
         {
             "id": "habit",
             "speaker": "David Hume",
-            "text": "Nettopp! Det er vanen som er livets store veiviser, ikke fornuften. Vi føler at ting henger sammen, vi ser det ikke. Fornuften er, og bør bare være, følelsenes slave.",
+            "text": "Nettopp! Det er vanen som er livets store veiviser, ikke fornuften. Vi føler at ting henger sammen, vi ser det ikke. Fornuften er følelsenes slave, og bør ikke være noe annet.",
             "choices": [
                 {
                     "id": "shock",

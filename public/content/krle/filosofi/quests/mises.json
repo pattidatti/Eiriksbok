@@ -9,11 +9,11 @@
         {
             "id": "start",
             "speaker": "Ludwig von Mises",
-            "text": "Mennesket handler. Det er det grunnleggende aksiomet. Vi handler alltid for å fjerne et ubehag. Hva forteller det oss?",
+            "text": "Mennesket handler. Det er det grunnleggende aksiomet - en sannhet så sikker at vi ikke trenger å bevise den. Vi handler alltid for å fjerne et ubehag. Hva forteller det oss?",
             "choices": [
                 {
                     "id": "purpose",
-                    "text": "At all handling er målrettet og rasjonell fra aktørens perspektiv.",
+                    "text": "At all handling har et mål og gir mening for den som handler.",
                     "impact": {
                         "rationalism": 4,
                         "individualism": 2
@@ -35,7 +35,7 @@
         {
             "id": "value_subjective",
             "speaker": "Ludwig von Mises",
-            "text": "Og siden handling springer ut av individets ønsker, er verdi subjektivt. En flaske vann er verdt lite ved elven, men alt i ørkenen. Ingen sentral planlegger kan vite hva ting er verdt for deg.",
+            "text": "Og siden handling springer ut av individets ønsker, er verdi subjektivt. En flaske vann er verdt lite ved elven, men alt i ørkenen. Ingen planlegger på et fjernt kontor kan vite hva ting er verdt for deg.",
             "choices": [
                 {
                     "id": "planning_impossible",
@@ -51,17 +51,17 @@
         {
             "id": "calc_problem",
             "speaker": "Ludwig von Mises",
-            "text": "Korrekt! Uten markedspriser – som oppstår gjennom frie bytter av privat eiendom – er økonomisk kalkulasjon umulig. Sosialisme er ikke bare dårlig moral, det er umulig i praksis. Det fører til kaos.",
+            "text": "Korrekt! Uten markedspriser - prisene som oppstår når folk fritt bytter det de eier - kan ingen regne ut hva ting egentlig koster. Sosialisme er ikke bare dårlig moral. Det er umulig i praksis, og det fører til kaos.",
             "choices": [
                 {
                     "id": "freedom",
-                    "text": "Frihet er altså en forutsetning for orden.",
+                    "text": "Så uten frihet blir det ikke orden, men kaos.",
                     "impact": {
                         "individualism": 5,
                         "rationalism": 2
                     },
                     "nextStepId": "conclusion",
-                    "feedback": "Mises mente at frie priser er nødvendige for at samfunnet skal kunne koordinere millioner av beslutninger."
+                    "feedback": "Mises mente at frie priser må til for at millioner av valg skal passe sammen i samfunnet."
                 }
             ]
         },

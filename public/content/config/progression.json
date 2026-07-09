@@ -11,7 +11,8 @@
         "scenario-completed": 80,
         "practice-game": 20,
         "virkemiddel-exercise": 10,
-        "microgame-played": 15
+        "microgame-played": 15,
+        "philosophy-quest": 60
     },
     "repeatBonusFactor": 0.15,
     "repeatBonusMin": 5,

@@ -9,7 +9,7 @@
         {
             "id": "start",
             "speaker": "Martin Heidegger",
-            "text": "Vi er kastet inn i verden. Vi er 'Dasein' – tilstedeværelse. Men ofte glemmer vi det. Vi lever i 'det man gjør'. Man spiser, man snakker, man dør. Er du deg selv, eller er du bare 'man'?",
+            "text": "Vi er kastet inn i verden. Vi er 'Dasein' - tilstedeværelse. Men ofte glemmer vi det. Vi lever i 'det man gjør'. Man spiser, man snakker, man dør. Er du deg selv, eller er du bare 'man'?",
             "choices": [
                 {
                     "id": "the_they",
@@ -36,11 +36,11 @@
         {
             "id": "inauthentic",
             "speaker": "Martin Heidegger",
-            "text": "Dette er uegentlig eksistens. Du flykter fra ansvaret for din egen væren. Hva vekker deg fra denne dvalen? Angsten.",
+            "text": "Dette kalte jeg uegentlig eksistens - et liv som ikke er ditt eget. Du flykter fra ansvaret for din egen væren. Hva vekker deg fra denne dvalen? Angsten.",
             "choices": [
                 {
                     "id": "anxiety_awakens",
-                    "text": "Angsten viser meg intetheten. At jeg står alene.",
+                    "text": "Angsten viser meg tomheten. At jeg står helt alene.",
                     "impact": {
                         "existentialism": 3
                     },
@@ -68,7 +68,7 @@
         {
             "id": "conclusion",
             "speaker": "Martin Heidegger",
-            "text": "Ta vare på din væren. Vær en hyrde for væren. Ikke la teknologien gjøre verden til et kaldt lager av ressurser. Tenk!",
+            "text": "Ta vare på din væren. Vær en hyrde for væren, en som passer på det som finnes. Ikke la teknologien gjøre verden til et kaldt lager av ressurser. Tenk!",
             "choices": [
                 {
                     "id": "end",

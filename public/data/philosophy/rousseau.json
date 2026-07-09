@@ -1,0 +1,13 @@
+{
+    "id": "rousseau",
+    "name": "Jean-Jacques Rousseau",
+    "color": "#16a34a",
+    "group": "Opplysningstiden",
+    "dimensions": {
+        "metafysikk": "Naturen er den gode grunnordenen, og alt naturen har gitt oss er opprinnelig godt. Problemene i verden kommer ikke fra naturen, men fra det vi mennesker har laget selv: eiendom, penger og rang. For å forstå hva som er sant og riktig, må vi derfor se tilbake til hvordan mennesket var før samfunnet formet det.",
+        "epistemologi": "Rousseau stolte mer på følelsen og samvittigheten enn på kald fornuft og lærde teorier. Hjertet vet ofte bedre enn hodet hva som er rett. Han lærte seg selv det meste gjennom erfaring, og i boka Émile mente han at barn lærer best ved å utforske fritt, ikke ved å pugge det voksne dikterer.",
+        "etikk": "Det gode livet er det naturlige og enkle livet, uten misunnelse og jag etter status. Da noen først satte opp et gjerde og sa «dette er mitt», oppstod ulikhet, grådighet og strid, og det er roten til mye urett. Ekte frihet er ikke å gjøre hva du vil, men å følge lover du selv har vært med på å lage i fellesskap.",
+        "menneskesyn": "Mennesket er født fritt og godt, men er overalt i lenker. Lenkene er ikke naturens verk, men samfunnets: regler, eiendom og rang som gjør oss ufrie og misunnelige fordi vi hele tiden måler oss mot hverandre. Derfor bør barn oppdras i frihet, slik at det gode i dem får vokse.",
+        "samfunnssyn": "Folket skal styre seg selv gjennom en samfunnskontrakt, der makten ligger hos folket som helhet og ikke hos en konge. Det viktigste er allmennviljen: det som er best for fellesskapet, ikke summen av alle de private ønskene. Disse tankene inspirerte den franske revolusjonen og ligger under alt moderne folkestyre."
+    }
+}

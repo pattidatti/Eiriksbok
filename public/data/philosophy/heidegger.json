@@ -1,0 +1,13 @@
+{
+    "id": "heidegger",
+    "name": "Martin Heidegger",
+    "color": "#57534e",
+    "group": "Moderne",
+    "dimensions": {
+        "metafysikk": "Heidegger mente at filosofien helt siden Platon hadde glemt det største spørsmålet av alle: hva vil det egentlig si at noe finnes? Han kalte dette spørsmålet om væren. Mennesket er det eneste vesenet som bryr seg om at det eksisterer, og denne særegne måten å være til på kalte han Dasein, å være der, midt i verden.",
+        "epistemologi": "Vi er ikke først en isolert hjerne som etterpå oppdager verden, slik Descartes trodde. Vi er alltid allerede i verden, og vi forstår den ved å bruke den: en snekker forstår ikke hammeren ved å stirre på den, men ved å hamre med den. Kunnskap begynner altså i det praktiske livet, ikke i teorier.",
+        "etikk": "Det viktigste skillet går mellom et egentlig og et uegentlig liv. De fleste flykter fra ansvaret ved å gjøre som «man» gjør og mene det «man» mener. Angsten og vissheten om at vi skal dø kan rive oss løs fra mengden, slik at vi tar ansvar for våre egne, sanne valg.",
+        "menneskesyn": "Mennesket er kastet inn i tilværelsen: vi har ikke valgt språket vårt, tiden vår eller kroppen vår. Døden er den eneste muligheten som er bare min, som ingen kan ta over for meg. Ved å akseptere at tiden er begrenset, kan jeg slutte å leve som en kopi av alle andre og begynne å leve ekte.",
+        "samfunnssyn": "Heidegger advarte mot å gjemme seg i massen, i det han kalte «Das Man», der ingen lenger tenker selv. Han kritiserte også den moderne teknologien: vi ser elva som et kraftverk, skogen som tømmer og mennesker som «ressurser», og mister evnen til å undre oss. Selv ble han medlem av nazipartiet, og det gjør ham fortsatt dypt omstridt."
+    }
+}

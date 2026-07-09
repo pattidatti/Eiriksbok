@@ -10,7 +10,25 @@
                     "children": [
                         {
                             "type": "text",
-                            "text": "Puja (tilbedelse hjemme eller i tempel), ofringer, yoga, meditasjon og pilegrimsreiser (f.eks. til Ganges)."
+                            "text": "Det viktigste ritualet er puja, tilbedelse som skjer både hjemme og i tempelet. Guden inviteres som gjest: gudestatuen vaskes og pyntes, og man ofrer mat, lys, blomster og røkelse. De fleste hinduiske hjem har et eget alter der familien gjør puja."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Livet markeres med overgangsriter som kalles samskaras, fra før fødselen til etter døden. Navngiving, første faste føde og første hårklipp hører til barndommen. Bryllupet er en stor og fargerik fest, der paret går sju skritt rundt en hellig ild mens de lover hverandre troskap. Når noen dør, brennes liket, helst ved elven Ganges, og asken spres i vannet."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Året har store høytider. Divali er lysfesten, da hus og gater fylles med små lamper som feirer at lyset vinner over mørket. Holi er fargefesten om våren, der folk kaster farget pulver på hverandre. I bønn og meditasjon brukes mantraer, og det viktigste av dem er lyden om."
                         }
                     ]
                 }
@@ -24,7 +42,25 @@
                     "children": [
                         {
                             "type": "text",
-                            "text": "Store epos som Mahabharata (med Bhagavadgita) og Ramayana. Myter om guder som Shiva, Vishnu og Devi."
+                            "text": "Hinduismen har ingen enkelt grunnlegger. Den har vokst frem i India gjennom mer enn 5000 år, og hinduer kaller den gjerne sanatana dharma, den evige orden. De eldste hellige tekstene er Vedaene, som betyr viten. De inneholder hymner til gudene, offerformler og filosofiske tekster som kalles Upanishadene."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "De mest folkekjære fortellingene finnes i de to store eposene Ramayana og Mahabharata, som handler om guder og helter og lærer hinduer om rett og galt. En del av Mahabharata er Bhagavadgita, Herrens sang. Der underviser guden Krishna krigeren Arjuna om plikt, handling og hengivelse."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Tekstene er skrevet på sanskrit, hinduismens hellige språk. Et berømt vers fra Rigveda oppsummerer mye av tankegangen: Sannheten er én, men de vise kaller den ved mange navn."
                         }
                     ]
                 }
@@ -38,7 +74,25 @@
                     "children": [
                         {
                             "type": "text",
-                            "text": "Moksha (frigjøring), enhet med Brahman, bhakti (hengivelse) og mystiske opplevelser gjennom yoga."
+                            "text": "Når hinduer besøker tempelet, er målet darshan: å se guden og bli sett av guden. Øyekontakten med gudestatuen regnes som en velsignelse. Det er en personlig og nær opplevelse, som å besøke en du er glad i."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Yoga og meditasjon er hinduistiske praksiser som brukes for å komme i kontakt med det guddommelige, og de har spredt seg over hele verden. Bhakti, hengivelse og kjærlighet til en gud, er en annen vei. Hinduismen respekterer at mennesker er ulike, og tilbyr derfor flere veier mot det samme målet."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Den dypeste opplevelsen handler om å gjennomskue maya, illusjonen om at du er atskilt fra alt annet. Upanishadene sier det med tre ord: tat tvam asi, det er deg. Din egen sjel (atman) og verdenssjelen (Brahman) er ett, og å erkjenne dette er første skritt mot frigjøring."
                         }
                     ]
                 }
@@ -52,7 +106,25 @@
                     "children": [
                         {
                             "type": "text",
-                            "text": "Kastesystemet (tradisjonelt), familien som rituell enhet, guruer og asketer (sadhu)."
+                            "text": "Familien er den viktigste rammen rundt hinduisk liv. Puja skjer hjemme, ekteskapet feires i flere dager, og slektens bånd markeres med riter gjennom hele livet. Guruer, åndelige lærere, veileder elever på deres religiøse vei."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Det tradisjonelle indiske samfunnet var delt inn i kaster, grupper man ble født inn i og som avgjorde yrke og status. Gutter i de øverste kastene får for eksempel en hellig tråd som markerer starten på studietiden. Kastesystemet har møtt sterk kritikk, og diskriminering på grunn av kaste er i dag forbudt i India, men systemet preger fortsatt manges liv."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Med rundt 1,2 milliarder tilhengere er hinduismen verdens tredje største religion, med de fleste i India og Nepal. Hinduismen misjonerer ikke, men har spredt seg med utvandring til Sørøst-Asia, Karibia og Vest-Europa. I Norge har mange hinduer bakgrunn fra Sri Lanka og India, og det finnes hinduistiske templer blant annet i Oslo-området."
                         }
                     ]
                 }
@@ -66,7 +138,25 @@
                     "children": [
                         {
                             "type": "text",
-                            "text": "Dharma (plikter knyttet til kaste og livsstadium), karma (handling og konsekvens), ahimsa (ikke-vold)."
+                            "text": "Det viktigste etiske begrepet er dharma, den rette orden. Dharma er pliktene dine ut fra den du er: som elev, forelder, leder eller borger. Å leve godt er å gjøre din plikt uten å jage etter belønning. Bhagavadgita sier det slik: gjør din plikt uten tanke på handlingens frukt."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Karma er loven om handling og konsekvens, ikke skjebne. Hvert valg legger seg som frø i sjelen. Gode handlinger, gjort uten egoisme og med omsorg for andre, bærer god karma. Handlinger som springer ut av grådighet, bærer dårlig karma og former hva du møter i neste liv."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Ahimsa betyr ikkevold: du skal ikke skade levende vesener. Det er en av grunnene til at mange hinduer er vegetarianere, og prinsippet inspirerte senere Mahatma Gandhi i kampen for et fritt India."
                         }
                     ]
                 }
@@ -80,7 +170,25 @@
                     "children": [
                         {
                             "type": "text",
-                            "text": "Samsara (gjenfødsel), Karma, Brahman (verdenssjelen) og Atman (individets sjel)."
+                            "text": "Bak alt står Brahman, verdenssjelen, den usynlige kraften som holder universet oppe. Inne i hvert menneske bor atman, den udødelige sjelen, og dypest sett er atman og Brahman det samme. Hinduismen har millioner av guder, men mange hinduer ser dem som ulike former av det ene guddommelige. De viktigste er Brahma som skaper, Vishnu som opprettholder og Shiva som ødelegger det gamle for å gi plass til noe nytt."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Vishnu stiger av og til ned på jorden i en kropp for å redde verden. Slike nedstigninger kalles avatarer, og de mest kjente er Krishna og Rama. Fordi gudene er uttrykk for det samme, rommer hinduismen både troen på én Gud og troen på mange, uten å se noen motsetning i det."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Sjelen gjenfødes igjen og igjen i et kretsløp som kalles samsara. Bhagavadgita forklarer det med et bilde: som en mann kaster gamle klær og tar på seg nye, slik bytter sjelen kropp. Målet er moksha, frigjøring fra kretsløpet, der atman erkjenner at den er ett med Brahman. Det finnes flere veier dit, blant annet gjennom kunnskap, handling og hengivelse."
                         }
                     ]
                 }
@@ -94,7 +202,25 @@
                     "children": [
                         {
                             "type": "text",
-                            "text": "Templer (Mandir), gudestatuer (Murti), hellige elver (Ganges), kuer, fargerike festivaler."
+                            "text": "Tempelet kalles mandir og regnes som gudens bolig på jorden. I midten står en murti, en innviet gudestatue som guden er til stede i. Statuen behandles som en levende gjest: den vaskes, pyntes og får ofringer av mat, lys og blomster."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Elven Ganges er hellig. Mange pilegrimer reiser dit for å bade i vannet, og de døde kremeres helst ved elvebredden slik at asken kan spres i elven og hjelpe sjelen videre. Kua er også hellig i hinduismen og skal ikke skades, og derfor spiser hinduer ikke storfekjøtt."
+                        }
+                    ]
+                },
+                {
+                    "type": "p",
+                    "children": [
+                        {
+                            "type": "text",
+                            "text": "Hinduismen er full av farger og symboler: lysrekkene under divali, fargepulveret under holi og tegnet for den hellige lyden om, som ofte pryder templer og hjem. Mange bruker også en prikk i pannen, bindi eller tilak, som et synlig religiøst tegn."
                         }
                     ]
                 }

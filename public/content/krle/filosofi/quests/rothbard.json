@@ -1,7 +1,7 @@
 {
     "id": "anatomy-state",
     "title": "Statens Anatomi",
-    "description": "Murray Rothbard kler av staten dens mytologi og avslører dens sanne natur.",
+    "description": "Murray Rothbard river ned mytene om staten og viser hva den egentlig er.",
     "mentor": "Rothbard",
     "initialStepId": "start",
     "rewardXp": 500,
@@ -51,7 +51,7 @@
         {
             "id": "monopoly",
             "speaker": "Murray Rothbard",
-            "text": "Akkurat. Staten definerer seg selv som uunnværlig, og bruker intellektuelle til å bygge murer av myter for å skjule sin nakne makt. Når staten går til krig, sier den at DU må forsvare deg. Men det er staten som beskytter sin egen makt.",
+            "text": "Akkurat. Staten sier at vi ikke klarer oss uten den, og bruker tenkere og eksperter til å bygge myter som skjuler den nakne makten. Når staten går til krig, sier den at DU må forsvare deg. Men det er staten som beskytter sin egen makt.",
             "choices": [
                 {
                     "id": "rights",
@@ -67,7 +67,7 @@
         {
             "id": "liberty",
             "speaker": "Murray Rothbard",
-            "text": "Alternativet er frihet. Et samfunn bygget utelukkende på frivillige bytter. Enhver aggressjon mot fredelige mennesker er en forbrytelse, uansett om den begås av en gatebande eller en politiker. Ikke la dem lure deg.",
+            "text": "Alternativet er frihet. Et samfunn bygget bare på frivillige avtaler og bytter. Ethvert angrep på fredelige mennesker er en forbrytelse, uansett om det er en gatebande eller en politiker som står bak. Ikke la dem lure deg.",
             "choices": [
                 {
                     "id": "end",

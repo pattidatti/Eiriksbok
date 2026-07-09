@@ -1,0 +1,13 @@
+{
+    "id": "marx",
+    "name": "Karl Marx",
+    "color": "#dc2626",
+    "group": "Moderne",
+    "dimensions": {
+        "metafysikk": "Marx var materialist: det finnes ingen idéverden eller guddommelig plan som styrer historien. Det er de økonomiske forholdene, hvem som eier maten, redskapene og fabrikkene, som former samfunnet og tankene våre. Religion er noe mennesker har laget, og han kalte den «folkets opium»: en trøst som demper smerten ved urettferdighet, slik at folk holder ut i stedet for å forandre.",
+        "epistemologi": "Tankene dine formes av klassen du tilhører og forholdene du lever under, så ideer er aldri helt nøytrale. Vil du forstå et samfunn, må du ikke studere hva folk sier de tror på, men hvordan de faktisk produserer og hvem som eier hva. Filosofene har bare tolket verden, mente Marx, poenget er å forandre den.",
+        "etikk": "Kapitalismen bygger på en stille utbytting: arbeideren skaper mer verdi enn hun får i lønn, og eieren beholder resten som profitt. Denne merverdien gjemmes bak lønnsslippen, så systemet ser rettferdig ut uten å være det. Rettferdighet krever at fabrikker, jord og maskiner eies i fellesskap, slik at ingen kan bli rike på andres arbeid.",
+        "menneskesyn": "Arbeidet er selve kjernen i mennesket: vi blir oss selv når vi skaper noe og kan være stolte av det. I fabrikken stykkes arbeidet opp i bittesmå biter, og ingen ser lenger hva de er med på å lage. Dette kalte Marx fremmedgjøring: mennesket blir fjernet fra sitt eget arbeid, fra produktet og til slutt fra seg selv, som et tannhjul i en maskin det ikke kontrollerer.",
+        "samfunnssyn": "Historien drives av klassekamp: slaver mot herrer, bønder mot adel, og nå arbeidere mot kapitaleiere. Marx trodde arbeiderne til slutt ville reise seg, ta over produksjonsmidlene og avskaffe klassesamfunnet. Ideene hans formet arbeiderbevegelsen og velferdsstaten, men ble også misbrukt til å rettferdiggjøre diktaturer der makten bare samlet seg hos partiet."
+    }
+}

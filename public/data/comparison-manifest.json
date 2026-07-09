@@ -1,0 +1,1564 @@
+{
+  "generated": "2026-07-09T08:13:30.924Z",
+  "religions": [
+    {
+      "id": "bahai",
+      "name": "Bahai",
+      "color": "#14b8a6",
+      "dimensions": {
+        "ritual": 839,
+        "narrative": 873,
+        "experiential": 768,
+        "social": 865,
+        "ethical": 761,
+        "doctrinal": 917,
+        "material": 775
+      }
+    },
+    {
+      "id": "buddhisme",
+      "name": "Buddhisme",
+      "color": "#f59e0b",
+      "dimensions": {
+        "ritual": 784,
+        "narrative": 920,
+        "experiential": 833,
+        "social": 903,
+        "ethical": 848,
+        "doctrinal": 876,
+        "material": 756
+      }
+    },
+    {
+      "id": "hinduisme",
+      "name": "Hinduisme",
+      "color": "#ec4899",
+      "dimensions": {
+        "ritual": 876,
+        "narrative": 764,
+        "experiential": 774,
+        "social": 921,
+        "ethical": 743,
+        "doctrinal": 1039,
+        "material": 747
+      }
+    },
+    {
+      "id": "islam",
+      "name": "Islam",
+      "color": "#10b981",
+      "dimensions": {
+        "ritual": 818,
+        "narrative": 959,
+        "experiential": 892,
+        "social": 873,
+        "ethical": 779,
+        "doctrinal": 800,
+        "material": 822
+      }
+    },
+    {
+      "id": "jehovas-vitner",
+      "name": "Jehovas vitner",
+      "color": "#0ea5e9",
+      "dimensions": {
+        "ritual": 795,
+        "narrative": 834,
+        "experiential": 716,
+        "social": 858,
+        "ethical": 826,
+        "doctrinal": 763,
+        "material": 829
+      }
+    },
+    {
+      "id": "jodedom",
+      "name": "Jødedom",
+      "color": "#3b82f6",
+      "dimensions": {
+        "ritual": 881,
+        "narrative": 846,
+        "experiential": 796,
+        "social": 903,
+        "ethical": 710,
+        "doctrinal": 922,
+        "material": 815
+      }
+    },
+    {
+      "id": "kristendom",
+      "name": "Kristendom",
+      "color": "#6366f1",
+      "dimensions": {
+        "ritual": 660,
+        "narrative": 720,
+        "experiential": 669,
+        "social": 730,
+        "ethical": 690,
+        "doctrinal": 800,
+        "material": 800
+      }
+    },
+    {
+      "id": "mormonisme",
+      "name": "Mormonisme",
+      "color": "#8b5cf6",
+      "dimensions": {
+        "ritual": 831,
+        "narrative": 903,
+        "experiential": 750,
+        "social": 911,
+        "ethical": 805,
+        "doctrinal": 857,
+        "material": 826
+      }
+    },
+    {
+      "id": "sikhisme",
+      "name": "Sikhisme",
+      "color": "#ff9933",
+      "dimensions": {
+        "ritual": 948,
+        "narrative": 947,
+        "experiential": 773,
+        "social": 783,
+        "ethical": 722,
+        "doctrinal": 764,
+        "material": 773
+      }
+    }
+  ],
+  "philosophers": [
+    {
+      "id": "aquinas",
+      "name": "Thomas Aquinas",
+      "color": "#92400e",
+      "dimensions": {
+        "metafysikk": 248,
+        "epistemologi": 379,
+        "etikk": 258,
+        "menneskesyn": 213,
+        "samfunnssyn": 276
+      },
+      "group": "Middelalderen",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "arendt",
+      "name": "Hannah Arendt",
+      "color": "#ea580c",
+      "dimensions": {
+        "metafysikk": 293,
+        "epistemologi": 334,
+        "etikk": 294,
+        "menneskesyn": 309,
+        "samfunnssyn": 358
+      },
+      "group": "Moderne",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "aristoteles",
+      "name": "Aristoteles",
+      "color": "#10b981",
+      "dimensions": {
+        "metafysikk": 103,
+        "epistemologi": 115,
+        "etikk": 114,
+        "menneskesyn": 101,
+        "samfunnssyn": 135
+      },
+      "group": "Antikken",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "augustin",
+      "name": "Augustin",
+      "color": "#b45309",
+      "dimensions": {
+        "metafysikk": 275,
+        "epistemologi": 276,
+        "etikk": 254,
+        "menneskesyn": 281,
+        "samfunnssyn": 282
+      },
+      "group": "Middelalderen",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "beauvoir",
+      "name": "Simone de Beauvoir",
+      "color": "#db2777",
+      "dimensions": {
+        "metafysikk": 306,
+        "epistemologi": 316,
+        "etikk": 289,
+        "menneskesyn": 265,
+        "samfunnssyn": 310
+      },
+      "group": "Moderne",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "descartes",
+      "name": "René Descartes",
+      "color": "#0ea5e9",
+      "dimensions": {
+        "metafysikk": 312,
+        "epistemologi": 307,
+        "etikk": 241,
+        "menneskesyn": 247,
+        "samfunnssyn": 270
+      },
+      "group": "Opplysningstiden",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "heidegger",
+      "name": "Martin Heidegger",
+      "color": "#57534e",
+      "dimensions": {
+        "metafysikk": 316,
+        "epistemologi": 295,
+        "etikk": 265,
+        "menneskesyn": 289,
+        "samfunnssyn": 333
+      },
+      "group": "Moderne",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "hume",
+      "name": "David Hume",
+      "color": "#64748b",
+      "dimensions": {
+        "metafysikk": 421,
+        "epistemologi": 322,
+        "etikk": 329,
+        "menneskesyn": 253,
+        "samfunnssyn": 314
+      },
+      "group": "Opplysningstiden",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "kant",
+      "name": "Immanuel Kant",
+      "color": "#f59e0b",
+      "dimensions": {
+        "metafysikk": 145,
+        "epistemologi": 121,
+        "etikk": 134,
+        "menneskesyn": 79,
+        "samfunnssyn": 127
+      },
+      "group": "Opplysningstiden",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "kierkegaard",
+      "name": "Søren Kierkegaard",
+      "color": "#8b5cf6",
+      "dimensions": {
+        "metafysikk": 229,
+        "epistemologi": 236,
+        "etikk": 282,
+        "menneskesyn": 259,
+        "samfunnssyn": 229
+      },
+      "group": "Moderne",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "locke",
+      "name": "John Locke",
+      "color": "#14b8a6",
+      "dimensions": {
+        "metafysikk": 252,
+        "epistemologi": 297,
+        "etikk": 289,
+        "menneskesyn": 206,
+        "samfunnssyn": 293
+      },
+      "group": "Opplysningstiden",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "marx",
+      "name": "Karl Marx",
+      "color": "#dc2626",
+      "dimensions": {
+        "metafysikk": 378,
+        "epistemologi": 306,
+        "etikk": 336,
+        "menneskesyn": 366,
+        "samfunnssyn": 359
+      },
+      "group": "Moderne",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "mises",
+      "name": "Ludwig von Mises",
+      "color": "#3b82f6",
+      "dimensions": {
+        "metafysikk": 144,
+        "epistemologi": 123,
+        "etikk": 130,
+        "menneskesyn": 117,
+        "samfunnssyn": 123
+      },
+      "group": "Moderne",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "montesquieu",
+      "name": "Montesquieu",
+      "color": "#7c3aed",
+      "dimensions": {
+        "metafysikk": 245,
+        "epistemologi": 261,
+        "etikk": 272,
+        "menneskesyn": 281,
+        "samfunnssyn": 340
+      },
+      "group": "Opplysningstiden",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "nietzsche",
+      "name": "Friedrich Nietzsche",
+      "color": "#ef4444",
+      "dimensions": {
+        "metafysikk": 134,
+        "epistemologi": 106,
+        "etikk": 120,
+        "menneskesyn": 120,
+        "samfunnssyn": 137
+      },
+      "group": "Moderne",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "platon",
+      "name": "Platon",
+      "color": "#6366f1",
+      "dimensions": {
+        "metafysikk": 106,
+        "epistemologi": 131,
+        "etikk": 136,
+        "menneskesyn": 103,
+        "samfunnssyn": 113
+      },
+      "group": "Antikken",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "rothbard",
+      "name": "Murray Rothbard",
+      "color": "#1e3a8a",
+      "dimensions": {
+        "metafysikk": 129,
+        "epistemologi": 118,
+        "etikk": 143,
+        "menneskesyn": 116,
+        "samfunnssyn": 149
+      },
+      "group": "Moderne",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "rousseau",
+      "name": "Jean-Jacques Rousseau",
+      "color": "#16a34a",
+      "dimensions": {
+        "metafysikk": 309,
+        "epistemologi": 289,
+        "etikk": 312,
+        "menneskesyn": 275,
+        "samfunnssyn": 313
+      },
+      "group": "Opplysningstiden",
+      "hasArticle": true,
+      "hasDimensions": true
+    },
+    {
+      "id": "sokrates",
+      "name": "Sokrates",
+      "color": "#94a3b8",
+      "dimensions": {
+        "metafysikk": 125,
+        "epistemologi": 132,
+        "etikk": 116,
+        "menneskesyn": 121,
+        "samfunnssyn": 128
+      },
+      "group": "Antikken",
+      "hasArticle": true,
+      "hasDimensions": true
+    }
+  ],
+  "topics": [
+    {
+      "slug": "grunnleggere",
+      "label": "Grunnleggere",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Bahá'u'lláh",
+          "file": "content/krle/religion/bahai/grunnleggere/artikkel.json",
+          "link": "/krle/religion/bahai/grunnleggere"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Siddhartha Gautama (Buddha)",
+          "file": "content/krle/religion/buddhisme/grunnleggere/artikkel.json",
+          "link": "/krle/religion/buddhisme/grunnleggere"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Ingen enkelt grunnlegger",
+          "file": "content/krle/religion/hinduisme/grunnleggere/artikkel.json",
+          "link": "/krle/religion/hinduisme/grunnleggere"
+        },
+        {
+          "religion": "islam",
+          "title": "Profeten Muhammad",
+          "file": "content/krle/religion/islam/grunnleggere/artikkel.json",
+          "link": "/krle/religion/islam/grunnleggere"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Charles Taze Russell",
+          "file": "content/krle/religion/jehovas-vitner/grunnleggere/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/grunnleggere"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Abraham og Moses",
+          "file": "content/krle/religion/jodedom/grunnleggere/artikkel.json",
+          "link": "/krle/religion/jodedom/grunnleggere"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Jesus Kristus",
+          "file": "content/krle/religion/kristendom/grunnleggere/artikkel.json",
+          "link": "/krle/religion/kristendom/grunnleggere"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Joseph Smith",
+          "file": "content/krle/religion/mormonisme/grunnleggere/artikkel.json",
+          "link": "/krle/religion/mormonisme/grunnleggere"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Guruene – sikhismens læremestre",
+          "file": "content/krle/religion/sikhisme/grunnleggere/artikkel.json",
+          "link": "/krle/religion/sikhisme/grunnleggere"
+        }
+      ],
+      "count": 9,
+      "total": 9
+    },
+    {
+      "slug": "hellige-tekster",
+      "label": "Hellige tekster",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Kitáb-i-Aqdas",
+          "file": "content/krle/religion/bahai/hellige-tekster/artikkel.json",
+          "link": "/krle/religion/bahai/hellige-tekster"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Tripitaka: De tre kurver",
+          "file": "content/krle/religion/buddhisme/hellige-tekster/artikkel.json",
+          "link": "/krle/religion/buddhisme/hellige-tekster"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Vedaene og Bhagavad Gita",
+          "file": "content/krle/religion/hinduisme/hellige-tekster/artikkel.json",
+          "link": "/krle/religion/hinduisme/hellige-tekster"
+        },
+        {
+          "religion": "islam",
+          "title": "Koranen",
+          "file": "content/krle/religion/islam/hellige-tekster/artikkel.json",
+          "link": "/krle/religion/islam/hellige-tekster"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Ny verden-oversettelsen",
+          "file": "content/krle/religion/jehovas-vitner/hellige-tekster/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/hellige-tekster"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Tanakh og Talmud",
+          "file": "content/krle/religion/jodedom/hellige-tekster/artikkel.json",
+          "link": "/krle/religion/jodedom/hellige-tekster"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Bibelen",
+          "file": "content/krle/religion/kristendom/hellige-tekster/artikkel.json",
+          "link": "/krle/religion/kristendom/hellige-tekster"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Mormons bok",
+          "file": "content/krle/religion/mormonisme/hellige-tekster/artikkel.json",
+          "link": "/krle/religion/mormonisme/hellige-tekster"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Guru Granth Sahib",
+          "file": "content/krle/religion/sikhisme/hellige-tekster/artikkel.json",
+          "link": "/krle/religion/sikhisme/hellige-tekster"
+        }
+      ],
+      "count": 9,
+      "total": 9
+    },
+    {
+      "slug": "sentrale-trekk",
+      "label": "Sentrale trekk",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Sentrale trekk i Bahá'í",
+          "file": "content/krle/religion/bahai/sentrale-trekk/artikkel.json",
+          "link": "/krle/religion/bahai/sentrale-trekk"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Sentrale trekk i Buddhismen",
+          "file": "content/krle/religion/buddhisme/sentrale-trekk/artikkel.json",
+          "link": "/krle/religion/buddhisme/sentrale-trekk"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Sentrale trekk i Hinduismen",
+          "file": "content/krle/religion/hinduisme/sentrale-trekk/artikkel.json",
+          "link": "/krle/religion/hinduisme/sentrale-trekk"
+        },
+        {
+          "religion": "islam",
+          "title": "Introduksjon til Islam",
+          "file": "content/krle/religion/islam/intro/artikkel.json",
+          "link": "/krle/religion/islam/intro"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Sentrale trekk i Jehovas vitner",
+          "file": "content/krle/religion/jehovas-vitner/sentrale-trekk/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/sentrale-trekk"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Sentrale trekk i Jødedommen",
+          "file": "content/krle/religion/jodedom/sentrale-trekk/artikkel.json",
+          "link": "/krle/religion/jodedom/sentrale-trekk"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Introduksjon til kristendommen",
+          "file": "content/krle/religion/kristendom/intro/artikkel.json",
+          "link": "/krle/religion/kristendom/intro"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Sentrale trekk i Mormonismen",
+          "file": "content/krle/religion/mormonisme/sentrale-trekk/artikkel.json",
+          "link": "/krle/religion/mormonisme/sentrale-trekk"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Sentrale trekk i sikhismen",
+          "file": "content/krle/religion/sikhisme/sentrale-trekk/artikkel.json",
+          "link": "/krle/religion/sikhisme/sentrale-trekk"
+        }
+      ],
+      "count": 9,
+      "total": 9
+    },
+    {
+      "slug": "bonn",
+      "label": "Bønn",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Bønn i Bahá'í",
+          "file": "content/krle/religion/bahai/bonn/artikkel.json",
+          "link": "/krle/religion/bahai/bonn"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Meditasjon og Puja i Buddhismen",
+          "file": "content/krle/religion/buddhisme/bonn/artikkel.json",
+          "link": "/krle/religion/buddhisme/bonn"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Puja og Bønn i Hinduismen",
+          "file": "content/krle/religion/hinduisme/bonn/artikkel.json",
+          "link": "/krle/religion/hinduisme/bonn"
+        },
+        {
+          "religion": "islam",
+          "title": "Bønn (Salah) i Islam",
+          "file": "content/krle/religion/islam/bonn/artikkel.json",
+          "link": "/krle/religion/islam/bonn"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Bønn i Jehovas vitner",
+          "file": "content/krle/religion/jehovas-vitner/bonn/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/bonn"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Bønn i Jødedommen",
+          "file": "content/krle/religion/jodedom/bonn/artikkel.json",
+          "link": "/krle/religion/jodedom/bonn"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Bønn i kristendommen",
+          "file": "content/krle/religion/kristendom/bonn/artikkel.json",
+          "link": "/krle/religion/kristendom/bonn"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Bønn i Mormonismen",
+          "file": "content/krle/religion/mormonisme/bonn/artikkel.json",
+          "link": "/krle/religion/mormonisme/bonn"
+        }
+      ],
+      "count": 8,
+      "total": 9
+    },
+    {
+      "slug": "doden",
+      "label": "Døden",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Overgangsriter i Bahá'í",
+          "file": "content/krle/religion/bahai/overgangsriter/artikkel.json",
+          "link": "/krle/religion/bahai/overgangsriter"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Overgangsriter i Buddhismen",
+          "file": "content/krle/religion/buddhisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/buddhisme/overgangsriter"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Overgangsriter i Hinduismen",
+          "file": "content/krle/religion/hinduisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/hinduisme/overgangsriter"
+        },
+        {
+          "religion": "islam",
+          "title": "Overgangsriter i Islam",
+          "file": "content/krle/religion/islam/overgangsriter/artikkel.json",
+          "link": "/krle/religion/islam/overgangsriter"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Overgangsriter i Jehovas vitner",
+          "file": "content/krle/religion/jehovas-vitner/overgangsriter/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/overgangsriter"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Overgangsriter i Jødedommen",
+          "file": "content/krle/religion/jodedom/overgangsriter/artikkel.json",
+          "link": "/krle/religion/jodedom/overgangsriter"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Overgangsriter i kristendommen",
+          "file": "content/krle/religion/kristendom/overgangsriter/artikkel.json",
+          "link": "/krle/religion/kristendom/overgangsriter"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Overgangsriter i Mormonismen",
+          "file": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/mormonisme/overgangsriter"
+        }
+      ],
+      "count": 8,
+      "total": 9
+    },
+    {
+      "slug": "frelse",
+      "label": "Frelse og mål",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Åndelig utvikling",
+          "file": "content/krle/religion/bahai/frelse/artikkel.json",
+          "link": "/krle/religion/bahai/frelse"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Nirvana: Utslukning",
+          "file": "content/krle/religion/buddhisme/frelse/artikkel.json",
+          "link": "/krle/religion/buddhisme/frelse"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Moksha: Frigjøring",
+          "file": "content/krle/religion/hinduisme/frelse/artikkel.json",
+          "link": "/krle/religion/hinduisme/frelse"
+        },
+        {
+          "religion": "islam",
+          "title": "Dommens dag og Paradis",
+          "file": "content/krle/religion/islam/frelse/artikkel.json",
+          "link": "/krle/religion/islam/frelse"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Paradis på jord",
+          "file": "content/krle/religion/jehovas-vitner/frelse/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/frelse"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Livet her og nå",
+          "file": "content/krle/religion/jodedom/frelse/artikkel.json",
+          "link": "/krle/religion/jodedom/frelse"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Frelse og nåde",
+          "file": "content/krle/religion/kristendom/frelse/artikkel.json",
+          "link": "/krle/religion/kristendom/frelse"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Evig progresjon",
+          "file": "content/krle/religion/mormonisme/frelse/artikkel.json",
+          "link": "/krle/religion/mormonisme/frelse"
+        }
+      ],
+      "count": 8,
+      "total": 9
+    },
+    {
+      "slug": "gudsbilde",
+      "label": "Gudsbilde",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "En ukjennbar Gud",
+          "file": "content/krle/religion/bahai/gudsbilde/artikkel.json",
+          "link": "/krle/religion/bahai/gudsbilde"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Ingen skapergud",
+          "file": "content/krle/religion/buddhisme/gudsbilde/artikkel.json",
+          "link": "/krle/religion/buddhisme/gudsbilde"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Brahman og guder",
+          "file": "content/krle/religion/hinduisme/gudsbilde/artikkel.json",
+          "link": "/krle/religion/hinduisme/gudsbilde"
+        },
+        {
+          "religion": "islam",
+          "title": "Tawhid: Guds enhet",
+          "file": "content/krle/religion/islam/gudsbilde/artikkel.json",
+          "link": "/krle/religion/islam/gudsbilde"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Jehova",
+          "file": "content/krle/religion/jehovas-vitner/gudsbilde/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/gudsbilde"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Monoteisme: Troen på én Gud",
+          "file": "content/krle/religion/jodedom/gudsbilde/artikkel.json",
+          "link": "/krle/religion/jodedom/gudsbilde"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Treenigheten",
+          "file": "content/krle/religion/kristendom/gudsbilde/artikkel.json",
+          "link": "/krle/religion/kristendom/gudsbilde"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Guddommen",
+          "file": "content/krle/religion/mormonisme/gudsbilde/artikkel.json",
+          "link": "/krle/religion/mormonisme/gudsbilde"
+        }
+      ],
+      "count": 8,
+      "total": 9
+    },
+    {
+      "slug": "overgangsriter",
+      "label": "Overgangsriter",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Overgangsriter i Bahá'í",
+          "file": "content/krle/religion/bahai/overgangsriter/artikkel.json",
+          "link": "/krle/religion/bahai/overgangsriter"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Overgangsriter i Buddhismen",
+          "file": "content/krle/religion/buddhisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/buddhisme/overgangsriter"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Overgangsriter i Hinduismen",
+          "file": "content/krle/religion/hinduisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/hinduisme/overgangsriter"
+        },
+        {
+          "religion": "islam",
+          "title": "Overgangsriter i Islam",
+          "file": "content/krle/religion/islam/overgangsriter/artikkel.json",
+          "link": "/krle/religion/islam/overgangsriter"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Overgangsriter i Jehovas vitner",
+          "file": "content/krle/religion/jehovas-vitner/overgangsriter/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/overgangsriter"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Overgangsriter i Jødedommen",
+          "file": "content/krle/religion/jodedom/overgangsriter/artikkel.json",
+          "link": "/krle/religion/jodedom/overgangsriter"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Overgangsriter i kristendommen",
+          "file": "content/krle/religion/kristendom/overgangsriter/artikkel.json",
+          "link": "/krle/religion/kristendom/overgangsriter"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Overgangsriter i Mormonismen",
+          "file": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/mormonisme/overgangsriter"
+        }
+      ],
+      "count": 8,
+      "total": 9
+    },
+    {
+      "slug": "skapelse",
+      "label": "Skapelsen",
+      "entries": [
+        {
+          "religion": "islam",
+          "title": "Skapelsen i Islam",
+          "file": "content/krle/religion/islam/skapelse/artikkel.json",
+          "link": "/krle/religion/islam/skapelse"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Skapelsen i Bibelen",
+          "file": "content/krle/religion/kristendom/skapelse/artikkel.json",
+          "link": "/krle/religion/kristendom/skapelse"
+        }
+      ],
+      "count": 2,
+      "total": 9
+    }
+  ],
+  "religionArticles": [
+    {
+      "religion": "bahai",
+      "title": "Bønn i Bahá'í",
+      "link": "/krle/religion/bahai/bonn",
+      "dimension": "ritual",
+      "tags": [
+        "bonn",
+        "ritual"
+      ]
+    },
+    {
+      "religion": "bahai",
+      "title": "Åndelig utvikling",
+      "link": "/krle/religion/bahai/frelse",
+      "dimension": "doctrinal",
+      "tags": [
+        "frelse",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "bahai",
+      "title": "Bahá'u'lláh",
+      "link": "/krle/religion/bahai/grunnleggere",
+      "dimension": "narrative",
+      "tags": [
+        "grunnleggere",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "bahai",
+      "title": "En ukjennbar Gud",
+      "link": "/krle/religion/bahai/gudsbilde",
+      "dimension": "doctrinal",
+      "tags": [
+        "gudsbilde",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "bahai",
+      "title": "Kitáb-i-Aqdas",
+      "link": "/krle/religion/bahai/hellige-tekster",
+      "dimension": "narrative",
+      "tags": [
+        "hellige-tekster",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "bahai",
+      "title": "Overgangsriter i Bahá'í",
+      "link": "/krle/religion/bahai/overgangsriter",
+      "dimension": "ritual",
+      "tags": [
+        "overgangsriter",
+        "ritual",
+        "doden"
+      ]
+    },
+    {
+      "religion": "bahai",
+      "title": "Sentrale trekk i Bahá'í",
+      "link": "/krle/religion/bahai/sentrale-trekk",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk",
+        "frelse"
+      ]
+    },
+    {
+      "religion": "buddhisme",
+      "title": "Meditasjon og Puja i Buddhismen",
+      "link": "/krle/religion/buddhisme/bonn",
+      "dimension": "ritual",
+      "tags": [
+        "bonn",
+        "ritual"
+      ]
+    },
+    {
+      "religion": "buddhisme",
+      "title": "Den åttedelte veien",
+      "link": "/krle/religion/buddhisme/den-attedelte-vei",
+      "dimension": "ethical",
+      "tags": [
+        "den-attedelte-vei",
+        "ethical"
+      ]
+    },
+    {
+      "religion": "buddhisme",
+      "title": "Nirvana: Utslukning",
+      "link": "/krle/religion/buddhisme/frelse",
+      "dimension": "doctrinal",
+      "tags": [
+        "frelse",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "buddhisme",
+      "title": "Siddhartha Gautama (Buddha)",
+      "link": "/krle/religion/buddhisme/grunnleggere",
+      "dimension": "narrative",
+      "tags": [
+        "grunnleggere",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "buddhisme",
+      "title": "Ingen skapergud",
+      "link": "/krle/religion/buddhisme/gudsbilde",
+      "dimension": "doctrinal",
+      "tags": [
+        "gudsbilde",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "buddhisme",
+      "title": "Tripitaka: De tre kurver",
+      "link": "/krle/religion/buddhisme/hellige-tekster",
+      "dimension": "narrative",
+      "tags": [
+        "hellige-tekster",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "buddhisme",
+      "title": "Overgangsriter i Buddhismen",
+      "link": "/krle/religion/buddhisme/overgangsriter",
+      "dimension": "ritual",
+      "tags": [
+        "overgangsriter",
+        "ritual",
+        "doden"
+      ]
+    },
+    {
+      "religion": "buddhisme",
+      "title": "Sentrale trekk i Buddhismen",
+      "link": "/krle/religion/buddhisme/sentrale-trekk",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk",
+        "frelse"
+      ]
+    },
+    {
+      "religion": "hinduisme",
+      "title": "Puja og Bønn i Hinduismen",
+      "link": "/krle/religion/hinduisme/bonn",
+      "dimension": "ritual",
+      "tags": [
+        "bonn",
+        "ritual"
+      ]
+    },
+    {
+      "religion": "hinduisme",
+      "title": "Moksha: Frigjøring",
+      "link": "/krle/religion/hinduisme/frelse",
+      "dimension": "doctrinal",
+      "tags": [
+        "frelse",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "hinduisme",
+      "title": "Ingen enkelt grunnlegger",
+      "link": "/krle/religion/hinduisme/grunnleggere",
+      "dimension": "narrative",
+      "tags": [
+        "grunnleggere",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "hinduisme",
+      "title": "Brahman og guder",
+      "link": "/krle/religion/hinduisme/gudsbilde",
+      "dimension": "doctrinal",
+      "tags": [
+        "gudsbilde",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "hinduisme",
+      "title": "Vedaene og Bhagavad Gita",
+      "link": "/krle/religion/hinduisme/hellige-tekster",
+      "dimension": "narrative",
+      "tags": [
+        "hellige-tekster",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "hinduisme",
+      "title": "Overgangsriter i Hinduismen",
+      "link": "/krle/religion/hinduisme/overgangsriter",
+      "dimension": "ritual",
+      "tags": [
+        "overgangsriter",
+        "ritual",
+        "doden"
+      ]
+    },
+    {
+      "religion": "hinduisme",
+      "title": "Sentrale trekk i Hinduismen",
+      "link": "/krle/religion/hinduisme/sentrale-trekk",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk",
+        "frelse"
+      ]
+    },
+    {
+      "religion": "islam",
+      "title": "Bønn (Salah) i Islam",
+      "link": "/krle/religion/islam/bonn",
+      "dimension": "ritual",
+      "tags": [
+        "ritual",
+        "bonn",
+        "dagligliv"
+      ]
+    },
+    {
+      "religion": "islam",
+      "title": "Dommens dag og Paradis",
+      "link": "/krle/religion/islam/frelse",
+      "dimension": "doctrinal",
+      "tags": [
+        "frelse",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "islam",
+      "title": "Profeten Muhammad",
+      "link": "/krle/religion/islam/grunnleggere",
+      "dimension": "narrative",
+      "tags": [
+        "grunnleggere",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "islam",
+      "title": "Tawhid: Guds enhet",
+      "link": "/krle/religion/islam/gudsbilde",
+      "dimension": "doctrinal",
+      "tags": [
+        "gudsbilde",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "islam",
+      "title": "Koranen",
+      "link": "/krle/religion/islam/hellige-tekster",
+      "dimension": "narrative",
+      "tags": [
+        "hellige-tekster",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "islam",
+      "title": "Introduksjon til Islam",
+      "link": "/krle/religion/islam/intro",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk"
+      ]
+    },
+    {
+      "religion": "islam",
+      "title": "Overgangsriter i Islam",
+      "link": "/krle/religion/islam/overgangsriter",
+      "dimension": "ritual",
+      "tags": [
+        "overgangsriter",
+        "ritual",
+        "doden"
+      ]
+    },
+    {
+      "religion": "islam",
+      "title": "Sentrale trekk i Islam",
+      "link": "/krle/religion/islam/sentrale-trekk",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk",
+        "frelse"
+      ]
+    },
+    {
+      "religion": "islam",
+      "title": "Skapelsen i Islam",
+      "link": "/krle/religion/islam/skapelse",
+      "dimension": "narrative",
+      "tags": [
+        "narrative",
+        "skapelse",
+        "opprinnelse"
+      ]
+    },
+    {
+      "religion": "jehovas-vitner",
+      "title": "Bønn i Jehovas vitner",
+      "link": "/krle/religion/jehovas-vitner/bonn",
+      "dimension": "ritual",
+      "tags": [
+        "bonn",
+        "ritual"
+      ]
+    },
+    {
+      "religion": "jehovas-vitner",
+      "title": "Paradis på jord",
+      "link": "/krle/religion/jehovas-vitner/frelse",
+      "dimension": "doctrinal",
+      "tags": [
+        "frelse",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "jehovas-vitner",
+      "title": "Charles Taze Russell",
+      "link": "/krle/religion/jehovas-vitner/grunnleggere",
+      "dimension": "narrative",
+      "tags": [
+        "grunnleggere",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "jehovas-vitner",
+      "title": "Jehova",
+      "link": "/krle/religion/jehovas-vitner/gudsbilde",
+      "dimension": "doctrinal",
+      "tags": [
+        "gudsbilde",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "jehovas-vitner",
+      "title": "Ny verden-oversettelsen",
+      "link": "/krle/religion/jehovas-vitner/hellige-tekster",
+      "dimension": "narrative",
+      "tags": [
+        "hellige-tekster",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "jehovas-vitner",
+      "title": "Overgangsriter i Jehovas vitner",
+      "link": "/krle/religion/jehovas-vitner/overgangsriter",
+      "dimension": "ritual",
+      "tags": [
+        "overgangsriter",
+        "ritual",
+        "doden"
+      ]
+    },
+    {
+      "religion": "jehovas-vitner",
+      "title": "Sentrale trekk i Jehovas vitner",
+      "link": "/krle/religion/jehovas-vitner/sentrale-trekk",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk",
+        "frelse"
+      ]
+    },
+    {
+      "religion": "jodedom",
+      "title": "Bønn i Jødedommen",
+      "link": "/krle/religion/jodedom/bonn",
+      "dimension": "ritual",
+      "tags": [
+        "bonn",
+        "ritual"
+      ]
+    },
+    {
+      "religion": "jodedom",
+      "title": "Livet her og nå",
+      "link": "/krle/religion/jodedom/frelse",
+      "dimension": "doctrinal",
+      "tags": [
+        "frelse",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "jodedom",
+      "title": "Abraham og Moses",
+      "link": "/krle/religion/jodedom/grunnleggere",
+      "dimension": "narrative",
+      "tags": [
+        "grunnleggere",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "jodedom",
+      "title": "Monoteisme: Troen på én Gud",
+      "link": "/krle/religion/jodedom/gudsbilde",
+      "dimension": "doctrinal",
+      "tags": [
+        "gudsbilde",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "jodedom",
+      "title": "Tanakh og Talmud",
+      "link": "/krle/religion/jodedom/hellige-tekster",
+      "dimension": "narrative",
+      "tags": [
+        "hellige-tekster",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "jodedom",
+      "title": "Overgangsriter i Jødedommen",
+      "link": "/krle/religion/jodedom/overgangsriter",
+      "dimension": "ritual",
+      "tags": [
+        "overgangsriter",
+        "ritual",
+        "doden"
+      ]
+    },
+    {
+      "religion": "jodedom",
+      "title": "Sentrale trekk i Jødedommen",
+      "link": "/krle/religion/jodedom/sentrale-trekk",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk",
+        "frelse"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Bønn i kristendommen",
+      "link": "/krle/religion/kristendom/bonn",
+      "dimension": "ritual",
+      "tags": [
+        "bonn",
+        "ritual"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Frelse og nåde",
+      "link": "/krle/religion/kristendom/frelse",
+      "dimension": "doctrinal",
+      "tags": [
+        "frelse",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Jesus Kristus",
+      "link": "/krle/religion/kristendom/grunnleggere",
+      "dimension": "narrative",
+      "tags": [
+        "grunnleggere",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Treenigheten",
+      "link": "/krle/religion/kristendom/gudsbilde",
+      "dimension": "doctrinal",
+      "tags": [
+        "gudsbilde",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Bibelen",
+      "link": "/krle/religion/kristendom/hellige-tekster",
+      "dimension": "narrative",
+      "tags": [
+        "hellige-tekster",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Introduksjon til kristendommen",
+      "link": "/krle/religion/kristendom/intro",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Overgangsriter i kristendommen",
+      "link": "/krle/religion/kristendom/overgangsriter",
+      "dimension": "ritual",
+      "tags": [
+        "overgangsriter",
+        "ritual",
+        "doden"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Sentrale trekk i kristendommen",
+      "link": "/krle/religion/kristendom/sentrale-trekk",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk",
+        "frelse"
+      ]
+    },
+    {
+      "religion": "kristendom",
+      "title": "Skapelsen i Bibelen",
+      "link": "/krle/religion/kristendom/skapelse",
+      "dimension": "narrative",
+      "tags": [
+        "skapelse",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "mormonisme",
+      "title": "Bønn i Mormonismen",
+      "link": "/krle/religion/mormonisme/bonn",
+      "dimension": "ritual",
+      "tags": [
+        "bonn",
+        "ritual"
+      ]
+    },
+    {
+      "religion": "mormonisme",
+      "title": "Evig progresjon",
+      "link": "/krle/religion/mormonisme/frelse",
+      "dimension": "doctrinal",
+      "tags": [
+        "frelse",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "mormonisme",
+      "title": "Joseph Smith",
+      "link": "/krle/religion/mormonisme/grunnleggere",
+      "dimension": "narrative",
+      "tags": [
+        "grunnleggere",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "mormonisme",
+      "title": "Guddommen",
+      "link": "/krle/religion/mormonisme/gudsbilde",
+      "dimension": "doctrinal",
+      "tags": [
+        "gudsbilde",
+        "doctrinal"
+      ]
+    },
+    {
+      "religion": "mormonisme",
+      "title": "Mormons bok",
+      "link": "/krle/religion/mormonisme/hellige-tekster",
+      "dimension": "narrative",
+      "tags": [
+        "hellige-tekster",
+        "narrative"
+      ]
+    },
+    {
+      "religion": "mormonisme",
+      "title": "Overgangsriter i Mormonismen",
+      "link": "/krle/religion/mormonisme/overgangsriter",
+      "dimension": "ritual",
+      "tags": [
+        "overgangsriter",
+        "ritual",
+        "doden"
+      ]
+    },
+    {
+      "religion": "mormonisme",
+      "title": "Sentrale trekk i Mormonismen",
+      "link": "/krle/religion/mormonisme/sentrale-trekk",
+      "dimension": "doctrinal",
+      "tags": [
+        "sentrale-trekk",
+        "frelse"
+      ]
+    },
+    {
+      "religion": "sikhisme",
+      "title": "Guruene – sikhismens læremestre",
+      "link": "/krle/religion/sikhisme/grunnleggere",
+      "dimension": null,
+      "tags": [
+        "grunnleggere"
+      ]
+    },
+    {
+      "religion": "sikhisme",
+      "title": "Guru Granth Sahib",
+      "link": "/krle/religion/sikhisme/hellige-tekster",
+      "dimension": null,
+      "tags": [
+        "hellige-tekster"
+      ]
+    },
+    {
+      "religion": "sikhisme",
+      "title": "Introduksjon til sikhismen",
+      "link": "/krle/religion/sikhisme/introduksjon",
+      "dimension": null,
+      "tags": []
+    },
+    {
+      "religion": "sikhisme",
+      "title": "Sentrale trekk i sikhismen",
+      "link": "/krle/religion/sikhisme/sentrale-trekk",
+      "dimension": null,
+      "tags": [
+        "sentrale-trekk"
+      ]
+    }
+  ],
+  "_warnings": {
+    "philosophersMissingDimensions": [],
+    "thinReligionDimensions": []
+  }
+}

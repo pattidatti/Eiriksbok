@@ -45,7 +45,7 @@
         {
             "id": "utility_pleasure",
             "speaker": "Aristoteles",
-            "text": "Dette er vennskap basert på nytte eller nytelse. Slike vennskap er skjøre. De oppløses lett når nytten eller gleden forsvinner. Mener du at dette er ekte vennskap?",
+            "text": "Dette er vennskap basert på nytte eller nytelse. Slike vennskap er skjøre. De tar lett slutt når nytten eller gleden forsvinner. Mener du at dette er ekte vennskap?",
             "choices": [
                 {
                     "id": "defend",
@@ -83,7 +83,7 @@
         {
             "id": "true_friendship",
             "speaker": "Aristoteles",
-            "text": "Det fullkomne vennskap er mellom gode mennesker som er like i dyd. De ønsker hverandre vel for den andres skyld. En venn er 'et annet selv'. Slike vennskap tar tid å bygge.",
+            "text": "Det fullkomne vennskapet er mellom gode mennesker som ligner hverandre i karakter. De ønsker hverandre vel for den andres skyld. En venn er 'et annet selv'. Slike vennskap tar tid å bygge.",
             "choices": [
                 {
                     "id": "rare",

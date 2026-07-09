@@ -52,11 +52,11 @@
         {
             "id": "ubermensch",
             "speaker": "Friedrich Nietzsche",
-            "text": "Mennesket er en line spent mellom dyret og overmennesket. Du må overvinne deg selv! Du må elske din skjebne – Amor Fati. Kan du ville at dette øyeblikket skal gjentas i evighet?",
+            "text": "Mennesket er en line spent mellom dyret og overmennesket. Du må overvinne deg selv! Du må elske din skjebne - Amor Fati. Kan du ville at dette øyeblikket skal gjentas i evighet?",
             "choices": [
                 {
                     "id": "eternal_return",
-                    "text": "Ja! Jeg vil leve slik at jeg ønsker det evige tilbakekomst.",
+                    "text": "Ja! Jeg vil leve slik at jeg kan ønske at alt skjer igjen, i all evighet.",
                     "impact": {
                         "existentialism": 5,
                         "individualism": 5
@@ -77,7 +77,7 @@
         {
             "id": "conclusion",
             "speaker": "Friedrich Nietzsche",
-            "text": "Bli hvem du er! Ikke følg flokken, ikke følg slavmoralen. Skap dine egne dyder. Vær en danser i kaoset!",
+            "text": "Bli hvem du er! Ikke følg flokken, ikke følg slavemoralen - moralen som dyrker lydighet og svakhet. Skap dine egne verdier. Vær en danser i kaoset!",
             "choices": [
                 {
                     "id": "end",

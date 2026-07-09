@@ -78,6 +78,19 @@ export const PhilosophicalQuestEngine: React.FC<PhilosophicalQuestEngineProps> =
             completeQuest(quest.id, quest.rewardXp);
             clearQuestProgress();
             setIsCompleted(true);
+
+            // «Min læring»: filosofisk dialog fullført
+            import('../../../../features/progress/useProgressStore').then(
+                ({ useProgressStore }) => {
+                    useProgressStore.getState().recordActivity({
+                        kind: 'philosophy-quest',
+                        activityId: `filosofi/${quest.id}`,
+                        subjectId: 'krle',
+                        topicId: 'filosofi',
+                        title: quest.title,
+                    });
+                }
+            );
         } else {
             setHistory(prev => [...prev, currentStepId]);
             setCurrentStepId(stepId);
@@ -114,6 +127,18 @@ export const PhilosophicalQuestEngine: React.FC<PhilosophicalQuestEngineProps> =
     const goBack = () => {
         if (history.length > 0) {
             const previousStepId = history[history.length - 1];
+            // Reverser alignment-effekten av valget som førte hit, slik at
+            // tilbake + nytt valg ikke teller dobbelt. Ved gjenopptatt quest
+            // finnes ikke tidligere valg i minnet - da lar vi alignment stå.
+            const lastChoice = choicesMade[choicesMade.length - 1];
+            if (lastChoice?.impact) {
+                const reversed: Partial<Record<PhilosophyAxis, number>> = {};
+                for (const [axis, value] of Object.entries(lastChoice.impact)) {
+                    if (value) reversed[axis as PhilosophyAxis] = -value;
+                }
+                updateAlignment(reversed);
+            }
+            setChoicesMade(prev => prev.slice(0, -1));
             setHistory(prev => prev.slice(0, -1));
             setCurrentStepId(previousStepId);
             setPendingFeedback(null);
@@ -121,8 +146,9 @@ export const PhilosophicalQuestEngine: React.FC<PhilosophicalQuestEngineProps> =
         }
     };
 
+    // Bevar lagret fremgang ved avslutning - eleven skal kunne fortsette
+    // dialogen senere. Kun fullføring rydder questProgress.
     const handleExit = () => {
-        clearQuestProgress();
         onExit?.();
     };
 
@@ -290,25 +316,51 @@ export const PhilosophicalQuestEngine: React.FC<PhilosophicalQuestEngineProps> =
                                     </p>
                                 </div>
 
-                                <div className="space-y-2.5 pt-3">
-                                    {currentStep.choices.map((choice, idx) => (
-                                        <motion.button
-                                            key={choice.id}
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ delay: 0.15 + idx * 0.08 }}
-                                            onClick={() => handleChoice(choice)}
-                                            className="group w-full p-4 text-left rounded-2xl bg-white border border-slate-200 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/10 transition-all flex items-center justify-between"
+                                {/* Ett valg = ikke et reelt valg. Da rendres det som
+                                    elevens svar med en fortsett-knapp, ikke som valgliste. */}
+                                {currentStep.choices.length === 1 ? (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.15 }}
+                                        className="pt-3"
+                                    >
+                                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">
+                                            Ditt svar
+                                        </p>
+                                        <button
+                                            onClick={() => handleChoice(currentStep.choices[0])}
+                                            className="group w-full p-4 text-left rounded-2xl bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-500/20 transition-all flex items-center justify-between"
                                         >
-                                            <p className="font-bold text-sm text-slate-700 group-hover:text-indigo-600 transition-colors leading-snug flex-1">
-                                                {choice.text}
+                                            <p className="font-bold text-sm text-white leading-snug flex-1">
+                                                {currentStep.choices[0].text}
                                             </p>
-                                            <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-indigo-500 group-hover:text-white transition-all ml-3 shrink-0">
+                                            <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center text-white transition-all ml-3 shrink-0 group-hover:translate-x-0.5">
                                                 <ArrowRight size={16} />
                                             </div>
-                                        </motion.button>
-                                    ))}
-                                </div>
+                                        </button>
+                                    </motion.div>
+                                ) : (
+                                    <div className="space-y-2.5 pt-3">
+                                        {currentStep.choices.map((choice, idx) => (
+                                            <motion.button
+                                                key={choice.id}
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ delay: 0.15 + idx * 0.08 }}
+                                                onClick={() => handleChoice(choice)}
+                                                className="group w-full p-4 text-left rounded-2xl bg-white border border-slate-200 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/10 transition-all flex items-center justify-between"
+                                            >
+                                                <p className="font-bold text-sm text-slate-700 group-hover:text-indigo-600 transition-colors leading-snug flex-1">
+                                                    {choice.text}
+                                                </p>
+                                                <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-indigo-500 group-hover:text-white transition-all ml-3 shrink-0">
+                                                    <ArrowRight size={16} />
+                                                </div>
+                                            </motion.button>
+                                        ))}
+                                    </div>
+                                )}
                             </motion.div>
                         )}
                     </AnimatePresence>

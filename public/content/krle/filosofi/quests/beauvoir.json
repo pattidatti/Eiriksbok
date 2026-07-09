@@ -36,7 +36,7 @@
         {
             "id": "object",
             "speaker": "Simone de Beauvoir",
-            "text": "Kvinnen har blitt definert som 'Den Andre'. Mannen er Subjektet, det Absolutte. Kvinnen er objektet. Hun defineres i forhold til ham. Er dette frihet?",
+            "text": "Kvinnen har blitt definert som 'Den Andre'. Mannen er Subjektet - den som ser, velger og bestemmer. Kvinnen er objektet - den som blir sett og vurdert. Hun defineres i forhold til ham. Er dette frihet?",
             "choices": [
                 {
                     "id": "no_freedom",
@@ -52,7 +52,7 @@
         {
             "id": "immanence",
             "speaker": "Simone de Beauvoir",
-            "text": "Mange kvinner lokkes til å bli værende i 'immanensen' – i passivitet og huslige sysler. Det er trygt, men det er å gi avkall på sin menneskelighet. Målet er transcendens! Å overskride seg selv gjennom handling.",
+            "text": "Mange kvinner lokkes til å bli værende i 'immanensen' - et liv i stillstand, der de bare gjentar husarbeidet og venter. Det er trygt, men da gir de fra seg noe av sin menneskelighet. Målet er transcendens! Å strekke seg ut over det man er, og skape noe nytt gjennom handling.",
             "choices": [
                 {
                     "id": "project",
@@ -69,7 +69,7 @@
         {
             "id": "conclusion",
             "speaker": "Simone de Beauvoir",
-            "text": "Frihet er en byrde, men det er den eneste veien til et autentisk liv. Krev din plass som subjekt i verden!",
+            "text": "Frihet er en byrde, men det er den eneste veien til et autentisk liv - et liv som virkelig er ditt eget. Krev din plass som subjekt i verden!",
             "choices": [
                 {
                     "id": "end",

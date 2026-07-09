@@ -17,6 +17,7 @@ import { QuestList } from '../components/content/interactive/philosophy/QuestLis
 import { HeroSection } from '../components/content/interactive/philosophy/HeroSection';
 import { AlignmentRadar } from '../components/content/interactive/philosophy/AlignmentRadar';
 import { PhilosophyTimeline } from '../components/content/interactive/philosophy/PhilosophyTimeline';
+import { ReflectionJournal } from '../components/content/interactive/philosophy/ReflectionJournal';
 
 export const PhilosophyOdysseyPage: React.FC = () => {
     const [activeQuest, setActiveQuest] = useState<PhilosophyQuest | null>(null);
@@ -197,6 +198,9 @@ export const PhilosophyOdysseyPage: React.FC = () => {
                                         <p className="text-xs text-slate-400 mb-4">Basert på dine valg i dialogene.</p>
                                         <AlignmentRadar alignment={profile.alignment} compact />
                                     </div>
+
+                                    {/* Tenkedagbok - vises først når eleven har svart på noe */}
+                                    <ReflectionJournal />
                                 </div>
                             </div>
                         </motion.div>

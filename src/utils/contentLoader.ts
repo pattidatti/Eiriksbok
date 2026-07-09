@@ -340,7 +340,9 @@ export async function fetchReligion(id: string): Promise<any | null> {
         const cleanId = id.replace(/\.json$/, '').split('/').pop();
         const response = await fetch(`${basePath}data/religion/${cleanId}.json`, { cache: 'no-cache' });
         if (!response.ok) return null;
-        return await response.json();
+        const data = await response.json();
+        // Religions-JSON-ene mangler id-felt; injiser fra filnavnet
+        return { id: cleanId, ...data };
     } catch (error) {
         console.error("Error loading religion:", error);
         return null;
@@ -353,7 +355,8 @@ export async function fetchPhilosopher(id: string): Promise<Philosopher | null> 
         const cleanId = id.replace(/\.json$/, '').split('/').pop();
         const response = await fetch(`${basePath}data/philosophy/${cleanId}.json`, { cache: 'no-cache' });
         if (!response.ok) return null;
-        return await response.json() as Philosopher;
+        const data = await response.json();
+        return { id: cleanId, ...data } as Philosopher;
     } catch (error) {
         console.error("Error loading philosopher:", error);
         return null;

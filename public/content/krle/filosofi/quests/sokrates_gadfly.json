@@ -1,7 +1,7 @@
 {
     "id": "socratic-gadfly",
     "title": "Kleggen i Aten",
-    "description": "Sokrates forklarer hvorfor han irriterer makteliten – og hvorfor det er nødvendig.",
+    "description": "Sokrates forklarer hvorfor han irriterer makteliten - og hvorfor det er nødvendig.",
     "mentor": "Sokrates",
     "initialStepId": "start",
     "rewardXp": 600,
@@ -35,7 +35,7 @@
         {
             "id": "truth_vs_comfort",
             "speaker": "Sokrates",
-            "text": "Nettopp. De vil heller sove i sin uvitenhet. Men et liv uten prøvelse er ikke verdt å leve. Er det bedre å leve trygt i en løgn, eller farlig i sannheten?",
+            "text": "Nettopp. De vil heller sove i sin uvitenhet. Men et liv der du aldri stiller spørsmål ved deg selv, er ikke verdt å leve. Er det bedre å leve trygt i en løgn, eller farlig i sannheten?",
             "choices": [
                 {
                     "id": "truth",
@@ -49,7 +49,7 @@
                 },
                 {
                     "id": "safety",
-                    "text": "Noen ganger må man være pragmatisk for å overleve.",
+                    "text": "Noen ganger må man tilpasse seg for å overleve.",
                     "impact": {
                         "empiricism": 4,
                         "skepticism": 1
@@ -91,7 +91,7 @@
         {
             "id": "laws",
             "speaker": "Sokrates",
-            "text": "Skal jeg møte urett med urett? Jeg har levd hele mitt liv under Atens lover. Hvis jeg nå bryter dem fordi dommen gikk meg imot, ville jeg ødelegge lovens respekt. Jeg må dø som en lovlydig borger.",
+            "text": "Skal jeg møte urett med urett? Jeg har levd hele mitt liv under Atens lover. Hvis jeg nå bryter dem fordi dommen gikk meg imot, ville jeg ødelegge respekten for loven. Jeg må dø som en lovlydig borger.",
             "choices": [
                 {
                     "id": "end",
