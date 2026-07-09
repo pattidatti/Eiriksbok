@@ -18,14 +18,28 @@ export type FoodItem = {
     type: FoodType;
 };
 
+// Ord slangen har spist i løpet av en runde - vises i oppsummeringen
+export type EatenWord = {
+    text: string;
+    type: FoodType;
+};
+
+// Kortvarig hendelse for feedback-chip over brettet
+export type EatEvent = {
+    id: number;
+    text: string;
+    type: FoodType;
+    points: number;
+};
+
 export type ConceptLevel = {
     id: string;
     name: string;
     topic: string;
+    icon: string;
     description: string;
-    targetConcept: string; // The concept the snake represents e.g., "Metafor"
+    targetConcept: string; // Begrepet slangen jakter på, f.eks. «Metafor»
+    wrongHint: string; // Forklaring som vises når eleven spiser feil ord
     correctExamples: string[];
     wrongExamples: string[];
-    backgroundColor?: string;
-    snakeColor?: string;
 };

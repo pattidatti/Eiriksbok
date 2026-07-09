@@ -1,234 +1,321 @@
-
 import { useState, useEffect, useCallback, useRef } from 'react';
-import type { Direction, GameStatus, SnakeSegment, FoodItem, ConceptLevel } from '../types';
+import type {
+    Direction,
+    GameStatus,
+    SnakeSegment,
+    FoodItem,
+    ConceptLevel,
+    EatenWord,
+    EatEvent,
+} from '../types';
 import { levels } from '../data/conceptData';
 
-const GRID_WIDTH = 20; // Reduced from 25 to make cells bigger
-const GRID_HEIGHT = 12; // Reduced from 15
-const INITIAL_SNAKE = [{ x: 5, y: 5 }, { x: 4, y: 5 }, { x: 3, y: 5 }];
-const INITIAL_SPEED = 220; // Slower start (was 150)
-const SPEED_INCREMENT = 5; // Faster scale up since we start slower
+const GRID_WIDTH = 20;
+const GRID_HEIGHT = 12;
+const INITIAL_SNAKE = [
+    { x: 5, y: 5 },
+    { x: 4, y: 5 },
+    { x: 3, y: 5 },
+];
+const INITIAL_SPEED = 220; // ms per steg
+const SPEED_INCREMENT = 6; // raskere for hvert riktige ord
+const MIN_SPEED = 90;
+const MAX_FOOD = 3;
+
+const bestScoreKey = (levelId: string) => `konsept-snake-best-${levelId}`;
+
+const readBestScore = (levelId: string) => {
+    try {
+        return Number(localStorage.getItem(bestScoreKey(levelId))) || 0;
+    } catch {
+        return 0;
+    }
+};
 
 export const useSnakeGame = () => {
-    // State
     const [level, setLevel] = useState<ConceptLevel>(levels[0]);
     const [snake, setSnake] = useState<SnakeSegment[]>(INITIAL_SNAKE);
     const [direction, setDirection] = useState<Direction>('RIGHT');
     const [status, setStatus] = useState<GameStatus>('MENU');
     const [score, setScore] = useState(0);
+    const [bestScore, setBestScore] = useState(() => readBestScore(levels[0].id));
+    const [isNewBest, setIsNewBest] = useState(false);
     const [wallsEnabled, setWallsEnabled] = useState(true);
-     
     const [foodItems, setFoodItems] = useState<FoodItem[]>([]);
+    const [eatenWords, setEatenWords] = useState<EatenWord[]>([]);
+    const [lastEat, setLastEat] = useState<EatEvent | null>(null);
 
-    // Refs
+    // Refs slik at spill-løkka alltid ser fersk state uten å restarte
     const snakeRef = useRef(snake);
     const directionRef = useRef(direction);
+    const lastMovedDirRef = useRef<Direction>('RIGHT');
     const speedRef = useRef(INITIAL_SPEED);
-    const gameLoopRef = useRef<number | null>(null);
+    const scoreRef = useRef(0);
+    const tickTimerRef = useRef<number | null>(null);
     const foodItemsRef = useRef(foodItems);
     const levelRef = useRef(level);
     const wallsEnabledRef = useRef(wallsEnabled);
+    const eatCounterRef = useRef(0);
 
-    // Sync refs
-    useEffect(() => { snakeRef.current = snake; }, [snake]);
-    useEffect(() => { directionRef.current = direction; }, [direction]);
-    useEffect(() => { foodItemsRef.current = foodItems; }, [foodItems]);
-    useEffect(() => { levelRef.current = level; }, [level]);
-    useEffect(() => { wallsEnabledRef.current = wallsEnabled; }, [wallsEnabled]);
+    useEffect(() => {
+        snakeRef.current = snake;
+    }, [snake]);
+    useEffect(() => {
+        directionRef.current = direction;
+    }, [direction]);
+    useEffect(() => {
+        foodItemsRef.current = foodItems;
+    }, [foodItems]);
+    useEffect(() => {
+        levelRef.current = level;
+    }, [level]);
+    useEffect(() => {
+        wallsEnabledRef.current = wallsEnabled;
+    }, [wallsEnabled]);
+    useEffect(() => {
+        scoreRef.current = score;
+    }, [score]);
 
     const spawnFood = useCallback(() => {
         const currentSnake = snakeRef.current;
         const currentFood = foodItemsRef.current;
         const currentLevel = levelRef.current;
 
-        // Try X times to find a valid position
         for (let i = 0; i < 10; i++) {
             const x = Math.floor(Math.random() * GRID_WIDTH);
             const y = Math.floor(Math.random() * GRID_HEIGHT);
 
-            // Check collision with snake
-            if (currentSnake.some(s => s.x === x && s.y === y)) continue;
-            // Check collision with existing food
-            if (currentFood.some(f => f.position.x === x && f.position.y === y)) continue;
+            if (currentSnake.some((s) => s.x === x && s.y === y)) continue;
+            if (currentFood.some((f) => f.position.x === x && f.position.y === y)) continue;
 
-            // Determine type (ensure we don't have too many wrong ones? Random for now)
-            // 60% Chance of Correct food if none exists, else 50/50
-            const hasCorrect = currentFood.some(f => f.type === 'CORRECT');
+            // Sørg for at det alltid finnes minst ett riktig ord på brettet
+            const hasCorrect = currentFood.some((f) => f.type === 'CORRECT');
             const isCorrect = hasCorrect ? Math.random() > 0.4 : true;
 
-            const textList = isCorrect ? currentLevel.correctExamples : currentLevel.wrongExamples;
+            const sourceList = isCorrect
+                ? currentLevel.correctExamples
+                : currentLevel.wrongExamples;
+            // Unngå at samme ord ligger på brettet to ganger
+            const onBoard = new Set(currentFood.map((f) => f.text));
+            const available = sourceList.filter((t) => !onBoard.has(t));
+            const textList = available.length > 0 ? available : sourceList;
             const text = textList[Math.floor(Math.random() * textList.length)];
-            const type = isCorrect ? 'CORRECT' : 'WRONG';
 
             const newFood: FoodItem = {
-                id: Math.random().toString(36).substr(2, 9),
+                id: Math.random().toString(36).slice(2, 11),
                 position: { x, y },
                 text,
-                type
+                type: isCorrect ? 'CORRECT' : 'WRONG',
             };
 
-            setFoodItems(prev => [...prev, newFood]);
+            setFoodItems((prev) => [...prev, newFood]);
+            foodItemsRef.current = [...foodItemsRef.current, newFood];
             return;
         }
     }, []);
 
     const startGame = useCallback(() => {
         setSnake(INITIAL_SNAKE);
+        snakeRef.current = INITIAL_SNAKE;
         setDirection('RIGHT');
+        directionRef.current = 'RIGHT';
+        lastMovedDirRef.current = 'RIGHT';
         setScore(0);
-        setStatus('PLAYING');
+        scoreRef.current = 0;
+        setEatenWords([]);
+        setLastEat(null);
+        setIsNewBest(false);
         setFoodItems([]);
+        foodItemsRef.current = [];
         speedRef.current = INITIAL_SPEED;
-        // Spawn initial food
-        setTimeout(() => spawnFood(), 100);
-        setTimeout(() => spawnFood(), 200);
+        spawnFood();
+        spawnFood();
+        setStatus('PLAYING');
     }, [spawnFood]);
 
     const stopGame = useCallback(() => {
         setStatus('GAME_OVER');
-        if (gameLoopRef.current) clearInterval(gameLoopRef.current);
+        const finalScore = scoreRef.current;
+        const currentLevel = levelRef.current;
+        const best = readBestScore(currentLevel.id);
+        if (finalScore > best) {
+            try {
+                localStorage.setItem(bestScoreKey(currentLevel.id), String(finalScore));
+            } catch {
+                // localStorage kan være utilgjengelig - highscore er best-effort
+            }
+            setBestScore(finalScore);
+            setIsNewBest(finalScore > 0);
+        } else {
+            setBestScore(best);
+        }
     }, []);
 
     const moveSnake = useCallback(() => {
         const currentHead = snakeRef.current[0];
         const currentDir = directionRef.current;
-        const currentWalls = wallsEnabledRef.current; // New Ref needed
+        lastMovedDirRef.current = currentDir;
 
         const newHead = { ...currentHead };
-
         switch (currentDir) {
-            case 'UP': newHead.y -= 1; break;
-            case 'DOWN': newHead.y += 1; break;
-            case 'LEFT': newHead.x -= 1; break;
-            case 'RIGHT': newHead.x += 1; break;
+            case 'UP':
+                newHead.y -= 1;
+                break;
+            case 'DOWN':
+                newHead.y += 1;
+                break;
+            case 'LEFT':
+                newHead.x -= 1;
+                break;
+            case 'RIGHT':
+                newHead.x += 1;
+                break;
         }
 
-        // Check Wall Collision / Wrap Logic
-        if (newHead.x < 0 || newHead.x >= GRID_WIDTH || newHead.y < 0 || newHead.y >= GRID_HEIGHT) {
-            if (currentWalls) {
+        // Vegg: kollisjon eller wrap
+        if (
+            newHead.x < 0 ||
+            newHead.x >= GRID_WIDTH ||
+            newHead.y < 0 ||
+            newHead.y >= GRID_HEIGHT
+        ) {
+            if (wallsEnabledRef.current) {
                 stopGame();
                 return;
-            } else {
-                // Wrap around
-                if (newHead.x < 0) newHead.x = GRID_WIDTH - 1;
-                if (newHead.x >= GRID_WIDTH) newHead.x = 0;
-                if (newHead.y < 0) newHead.y = GRID_HEIGHT - 1;
-                if (newHead.y >= GRID_HEIGHT) newHead.y = 0;
             }
+            if (newHead.x < 0) newHead.x = GRID_WIDTH - 1;
+            if (newHead.x >= GRID_WIDTH) newHead.x = 0;
+            if (newHead.y < 0) newHead.y = GRID_HEIGHT - 1;
+            if (newHead.y >= GRID_HEIGHT) newHead.y = 0;
         }
 
-        // Check Self Collision
-        if (snakeRef.current.some(segment => segment.x === newHead.x && segment.y === newHead.y)) {
+        // Selvkollisjon (halen flytter seg, så siste segment er trygt)
+        const body = snakeRef.current.slice(0, -1);
+        if (body.some((segment) => segment.x === newHead.x && segment.y === newHead.y)) {
             stopGame();
             return;
         }
 
-        // Check Food Collision
-        const eatenFoodIndex = foodItemsRef.current.findIndex(f => f.position.x === newHead.x && f.position.y === newHead.y);
+        // Mat
+        const eatenFood = foodItemsRef.current.find(
+            (f) => f.position.x === newHead.x && f.position.y === newHead.y
+        );
         let grew = false;
 
-        if (eatenFoodIndex !== -1) {
-            const food = foodItemsRef.current[eatenFoodIndex];
-
-            if (food.type === 'CORRECT') {
-                // Good job!
-                setScore(s => s + 100);
-                speedRef.current = Math.max(50, speedRef.current - SPEED_INCREMENT);
+        if (eatenFood) {
+            const points = eatenFood.type === 'CORRECT' ? 100 : -50;
+            if (eatenFood.type === 'CORRECT') {
+                setScore((s) => s + points);
+                speedRef.current = Math.max(MIN_SPEED, speedRef.current - SPEED_INCREMENT);
                 grew = true;
-                // Remove food and spawn new
-                setFoodItems(prev => prev.filter((_, i) => i !== eatenFoodIndex));
-                spawnFood();
             } else {
-                // Bad!
-                setScore(s => Math.max(0, s - 50));
-                // Maybe some visual feedback later?
-                // For now, just remove food, don't grow
-                setFoodItems(prev => prev.filter((_, i) => i !== eatenFoodIndex));
-                spawnFood(); // Spawn replacement
+                setScore((s) => Math.max(0, s + points));
             }
-        }
-
-        // Logic for moving
-        const newSnake = [newHead, ...snakeRef.current];
-        if (!grew) {
-            newSnake.pop(); // Remove tail if we didn't grow
-        }
-        setSnake(newSnake);
-
-        // Maintain food population (max 3 items)
-        if (foodItemsRef.current.length < 3 && Math.random() < 0.05) {
+            eatCounterRef.current += 1;
+            setLastEat({
+                id: eatCounterRef.current,
+                text: eatenFood.text,
+                type: eatenFood.type,
+                points,
+            });
+            setEatenWords((prev) => [...prev, { text: eatenFood.text, type: eatenFood.type }]);
+            const remaining = foodItemsRef.current.filter((f) => f.id !== eatenFood.id);
+            setFoodItems(remaining);
+            foodItemsRef.current = remaining;
             spawnFood();
         }
 
+        const newSnake = [newHead, ...snakeRef.current];
+        if (!grew) newSnake.pop();
+        setSnake(newSnake);
+        snakeRef.current = newSnake;
+
+        // Hold brettet fylt
+        if (foodItemsRef.current.length < MAX_FOOD) {
+            spawnFood();
+        }
     }, [stopGame, spawnFood]);
 
-    // Input handling
+    // Tastatur: piltaster + WASD styrer, mellomrom/P pauser
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === ' ' || e.key.toLowerCase() === 'p') {
+                if (status === 'PLAYING') setStatus('PAUSED');
+                else if (status === 'PAUSED') setStatus('PLAYING');
+                return;
+            }
             if (status !== 'PLAYING') return;
 
-            const current = directionRef.current;
-            switch (e.key) {
-                case 'ArrowUp':
-                    if (current !== 'DOWN') setDirection('UP');
-                    break;
-                case 'ArrowDown':
-                    if (current !== 'UP') setDirection('DOWN');
-                    break;
-                case 'ArrowLeft':
-                    if (current !== 'RIGHT') setDirection('LEFT');
-                    break;
-                case 'ArrowRight':
-                    if (current !== 'LEFT') setDirection('RIGHT');
-                    break;
-            }
+            // Sammenlign med retningen slangen faktisk beveget seg sist,
+            // ellers kan to raske tastetrykk snu slangen inn i seg selv.
+            const moved = lastMovedDirRef.current;
+            const key = e.key.toLowerCase();
+            if ((e.key === 'ArrowUp' || key === 'w') && moved !== 'DOWN') setDirection('UP');
+            else if ((e.key === 'ArrowDown' || key === 's') && moved !== 'UP')
+                setDirection('DOWN');
+            else if ((e.key === 'ArrowLeft' || key === 'a') && moved !== 'RIGHT')
+                setDirection('LEFT');
+            else if ((e.key === 'ArrowRight' || key === 'd') && moved !== 'LEFT')
+                setDirection('RIGHT');
         };
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [status]);
 
-    // Game Loop
+    // Spill-løkke med setTimeout slik at farten faktisk øker underveis
     useEffect(() => {
-        if (status === 'PLAYING') {
-            // Clear any existing interval before setting a new one
-            if (gameLoopRef.current) clearInterval(gameLoopRef.current);
-            gameLoopRef.current = window.setInterval(moveSnake, speedRef.current);
-        } else {
-            if (gameLoopRef.current) clearInterval(gameLoopRef.current);
-        }
-
+        if (status !== 'PLAYING') return;
+        let cancelled = false;
+        const tick = () => {
+            if (cancelled) return;
+            moveSnake();
+            tickTimerRef.current = window.setTimeout(tick, speedRef.current);
+        };
+        tickTimerRef.current = window.setTimeout(tick, speedRef.current);
         return () => {
-            if (gameLoopRef.current) clearInterval(gameLoopRef.current);
+            cancelled = true;
+            if (tickTimerRef.current) clearTimeout(tickTimerRef.current);
         };
     }, [status, moveSnake]);
 
     const setCategory = useCallback((levelId: string) => {
-        const found = levels.find(l => l.id === levelId);
-        if (found) setLevel(found);
+        const found = levels.find((l) => l.id === levelId);
+        if (found) {
+            setLevel(found);
+            setBestScore(readBestScore(found.id));
+        }
     }, []);
 
     const goToMenu = useCallback(() => {
         setStatus('MENU');
-        setSnake(INITIAL_SNAKE); // Optional: Reset snake visual
+        setSnake(INITIAL_SNAKE);
+        snakeRef.current = INITIAL_SNAKE;
         setScore(0);
-        if (gameLoopRef.current) clearInterval(gameLoopRef.current);
+        setFoodItems([]);
+        foodItemsRef.current = [];
+    }, []);
+
+    const togglePause = useCallback(() => {
+        setStatus((s) => (s === 'PLAYING' ? 'PAUSED' : s === 'PAUSED' ? 'PLAYING' : s));
     }, []);
 
     return {
         snake,
-        direction,
         status,
         score,
+        bestScore,
+        isNewBest,
         foodItems,
+        eatenWords,
+        lastEat,
         level,
         gridSize: { width: GRID_WIDTH, height: GRID_HEIGHT },
         startGame,
-        stopGame,
         goToMenu,
+        togglePause,
         setCategory,
         wallsEnabled,
-        setWallsEnabled
+        setWallsEnabled,
     };
 };
-
