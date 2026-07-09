@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useGlobalTimeline } from '../hooks/useGlobalTimeline';
 import { useManifest } from '../hooks/useManifest';
 import { ChronoBoard } from '../components/games/chrono/ChronoBoard';
+import type { TimelineEvent } from '../components/games/chrono/ChronoCard';
 import { ChronoSetup, type ChronoFilterOptions } from '../components/games/chrono/ChronoSetup';
 import { ChronoTutorial } from '../components/games/chrono/ChronoTutorial';
 import { hasSeenTutorial } from '../utils/chronoStats';
@@ -15,9 +16,10 @@ const ChronoGamePage: React.FC = () => {
     const { data: manifest, isLoading: manifestLoading } = useManifest();
     const { setFullWidth } = useLayout();
     const [gameState, setGameState] = useState<'setup' | 'playing'>('setup');
-    const [filteredEvents, setFilteredEvents] = useState<any[]>([]);
+    const [filteredEvents, setFilteredEvents] = useState<TimelineEvent[]>([]);
     const [difficulty, setDifficulty] = useState<'easy' | 'medium' | 'hard'>('medium');
     const [showTutorial, setShowTutorial] = useState<boolean>(() => !hasSeenTutorial());
+    const [startError, setStartError] = useState<string | null>(null);
 
     React.useEffect(() => {
         setFullWidth(false); // No longer 100% widescreen
@@ -69,8 +71,10 @@ const ChronoGamePage: React.FC = () => {
                 const subjectTitle = titleLookups.subjectMap[e.subjectId] || e.subjectId;
                 if (!options.subjects.includes(subjectTitle)) return false;
             }
-            // Filter by topic
-            if (options.topics.length > 0 && e.topicId) {
+            // Filter by topic - hendelser uten topicId skal også bort når
+            // eleven har valgt emner, ellers lyver filteret
+            if (options.topics.length > 0) {
+                if (!e.topicId) return false;
                 const topicTitle = titleLookups.topicMap[e.topicId] || e.topicId;
                 if (!options.topics.includes(topicTitle)) return false;
             }
@@ -90,10 +94,12 @@ const ChronoGamePage: React.FC = () => {
         }));
 
         if (filtered.length < 5) {
-            alert('For få hendelser med dette valget. Prøv å velge flere fag eller emner.');
+            setStartError('For få hendelser med dette valget. Prøv å velge flere fag eller emner.');
+            window.setTimeout(() => setStartError(null), 4000);
             return;
         }
 
+        setStartError(null);
         setDifficulty(options.difficulty);
         setFilteredEvents(filtered);
         setGameState('playing');
@@ -144,13 +150,31 @@ const ChronoGamePage: React.FC = () => {
             {/* Game Content */}
             <main className="max-w-6xl mx-auto px-4 py-4 sm:py-8 font-sans">
                 {gameState === 'setup' ? (
-                    <ChronoSetup
-                        availableSubjects={availableSubjects}
-                        availableTopics={availableTopics}
-                        minYear={-4000}
-                        maxYear={2100}
-                        onStart={handleStart}
-                    />
+                    <>
+                        {/* ChronoSetup er et fullskjerms-overlegg (z-50), så
+                            feilmeldingen må ligge over det som en toast */}
+                        <AnimatePresence>
+                            {startError && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -12 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -8 }}
+                                    className="fixed top-6 inset-x-0 z-[60] flex justify-center px-4 pointer-events-none"
+                                >
+                                    <span className="px-5 py-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-800 text-sm font-semibold shadow-lg">
+                                        {startError}
+                                    </span>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                        <ChronoSetup
+                            availableSubjects={availableSubjects}
+                            availableTopics={availableTopics}
+                            minYear={-4000}
+                            maxYear={2100}
+                            onStart={handleStart}
+                        />
+                    </>
                 ) : (
                     <ChronoBoard
                         events={filteredEvents}

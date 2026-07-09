@@ -184,7 +184,6 @@ The app uses a manifest-driven routing system:
 /oving/retorikk                 Retorikk-spill
 /oving/hengemann                Hengemann (ordgjetting)
 /oving/virkemidler              Virkemiddel-verkstedet
-/oving/dungeon                  Dungeon quiz game
 /oving/detektiv                 Detektiv-hub
 /oving/detektiv/:caseId         Detective case
 /oving/etikk                    Ethics experiment
