@@ -25,6 +25,7 @@ const HelleristningTyder = lazy(() => import('./content/interactive/Helleristnin
 const RidderMotLangbue = lazy(() => import('./content/interactive/RidderMotLangbue').then(m => ({ default: m.RidderMotLangbue })));
 const EratosthenesJorda = lazy(() => import('./content/interactive/EratosthenesJorda').then(m => ({ default: m.EratosthenesJorda })));
 const RoadToRevolution = lazy(() => import('./content/interactive/RoadToRevolution').then(m => ({ default: m.RoadToRevolution })));
+const MaktensFristelse = lazy(() => import('./content/interactive/MaktensFristelse').then(m => ({ default: m.MaktensFristelse })));
 const MaktfordelingSjekk = lazy(() => import('./content/interactive/MaktfordelingSjekk').then(m => ({ default: m.MaktfordelingSjekk })));
 const MaktensKilde = lazy(() => import('./content/interactive/MaktensKilde').then(m => ({ default: m.MaktensKilde })));
 const KollapsDiagnose = lazy(() => import('./content/interactive/KollapsDiagnose').then(m => ({ default: m.KollapsDiagnose })));
@@ -387,6 +388,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     KaizenVerksted,
     SuverenitetsSkala,
     TrolleyProblem,
+    MaktensFristelse,
     GoldenMeanSlider,
     CategoricalImperativeTester,
     FilterBubbleSim,

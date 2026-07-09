@@ -827,12 +827,12 @@
       "count": 36
     },
     {
-      "tag": "antikken",
-      "count": 32
+      "tag": "demokrati",
+      "count": 33
     },
     {
-      "tag": "demokrati",
-      "count": 31
+      "tag": "antikken",
+      "count": 32
     },
     {
       "tag": "oppfinnelser",
@@ -841,6 +841,10 @@
     {
       "tag": "imperium",
       "count": 28
+    },
+    {
+      "tag": "revolusjon",
+      "count": 26
     },
     {
       "tag": "verdensorden",
@@ -852,10 +856,6 @@
     },
     {
       "tag": "hverdagsliv",
-      "count": 24
-    },
-    {
-      "tag": "revolusjon",
       "count": 24
     },
     {
@@ -903,6 +903,10 @@
       "count": 18
     },
     {
+      "tag": "1700-tallet",
+      "count": 18
+    },
+    {
       "tag": "narrative",
       "count": 18
     },
@@ -920,10 +924,6 @@
     },
     {
       "tag": "imperialisme",
-      "count": 16
-    },
-    {
-      "tag": "1700-tallet",
       "count": 16
     },
     {
@@ -2164,6 +2164,10 @@
     },
     {
       "tag": "rousseau",
+      "count": 2
+    },
+    {
+      "tag": "ledelse",
       "count": 2
     },
     {

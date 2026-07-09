@@ -1,0 +1,213 @@
+{
+    "id": "george-washington",
+    "title": "George Washington",
+    "layout": "rich",
+    "year": "1732-1799",
+    "category": "Verdenshistorie",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Washington ledet den amerikanske hæren til seier mot verdens sterkeste rike.",
+        "To ganger kunne han grepet makten for alltid. Begge ganger ga han den fra seg.",
+        "Nettopp fordi han ga slipp på makten, ble USA en republikk og ikke et nytt kongedømme."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Det var den 23. desember 1783. En mann i uniform gikk inn i en sal full av folkevalgte i byen Annapolis. Han hadde nettopp vunnet en krig mot verdens sterkeste rike. Hæren stolte blindt på ham, og mange mente han kunne blitt konge over det helt nye landet om han bare ville. I stedet tok han fram et papir, leste opp noen ord om at oppdraget var fullført, og la fra seg sverdet. Så red han hjem til gården sin. Da kong George III i England hørte at Washington hadde tenkt å gi fra seg makten, skal han ha sagt: «Gjør han det, blir han den største mannen i verden.»"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En general legger fra seg sverdet foran en forsamling folkevalgte",
+            "caption": "Washington gir fra seg kommandoen over hæren i 1783. Han hadde all makt i hendene, og valgte å legge den fra seg."
+        },
+        {
+            "type": "text",
+            "content": "Dette er den viktigste tingen å forstå om George Washington. Historien er full av folk som grep makten og aldri slapp den. Washington gjorde det motsatte, ikke bare én gang, men to. Det er derfor han er så viktig. Landet han var med på å skape kunne lett blitt et nytt kongedømme med ham selv på toppen. At det ikke ble slik, skyldes ikke minst at én mann bestemte seg for å gå hjem."
+        },
+        {
+            "type": "header",
+            "text": "En helt vanlig start"
+        },
+        {
+            "type": "text",
+            "content": "Washington ble født i 1732 i kolonien Virginia. Familien var ikke blant de aller rikeste, og faren døde da George var elleve år. Han gikk ikke på universitet slik mange andre ledere gjorde. I stedet lærte han seg å måle opp land, og som ung mann red han langt inn i villmarken for å tegne kart. Han var høy, sterk og rolig, og folk la merke til at han holdt hodet kaldt når andre mistet det."
+        },
+        {
+            "type": "text",
+            "content": "Som ung offiser var han med i en tidligere krig mellom England og Frankrike. Han gjorde noen feil, men han lærte av dem. Da de tretten koloniene i Nord-Amerika til slutt gjorde opprør mot den britiske kongen, trengte de en general alle kunne stole på. Valget falt på Washington. Han var ikke den mest lærde eller den mest strålende taleren, men han var den folk stolte på. Det skulle vise seg å bety mer enn alt annet."
+        },
+        {
+            "type": "header",
+            "text": "Generalen som nesten tapte"
+        },
+        {
+            "type": "text",
+            "content": "De første årene av [uavhengighetskrigen](/historie/den-amerikanske-revolusjonen/uavhengighetskrigen) gikk dårlig. Washingtons hær var liten, dårlig utstyrt og full av vanlige bønder og håndverkere. De sloss mot verdens best trente soldater. Gang på gang måtte de trekke seg tilbake. Menn døde av kulde og sult, og mange rømte hjem. Vinteren 1776 var alt i ferd med å rakne."
+        },
+        {
+            "type": "text",
+            "content": "Da tok Washington en sjanse ingen trodde var mulig. Selveste julenatten lastet han hæren i robåter og rodde tvers over den iskalde Delaware-elven, midt i snøen og mørket. På den andre siden overrasket de fienden i byen Trenton og vant. Seieren var ikke stor i seg selv, men den ga nytt håp akkurat da alt så mørkest ut. Slike dristige trekk holdt hæren i live til hjelp kom fra Frankrike, og til slutt vant koloniene. Prøv selv å ro hæren over elven i spillet under."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "delaware-1776-3d"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Soldater ror over en frossen elv i snøvær om natten",
+            "caption": "Washington krysser Delaware-elven julenatten 1776. Et dristig angrep snudde en tapende krig."
+        },
+        {
+            "type": "header",
+            "text": "Mannen som kunne blitt konge"
+        },
+        {
+            "type": "text",
+            "content": "Da krigen nærmet seg slutten, var mange soldater sinte. Kongressen hadde ikke betalt dem lønn på lenge. Noen offiserer begynte å hviske om at hæren burde ta makten med vold og gjøre Washington til enehersker. Én kveld i 1783 møtte Washington de sinte offiserene. Han holdt en kort tale, men det som gjorde størst inntrykk var da han tok fram brillene sine og sa at han var blitt både grå og nesten blind i tjeneste for landet. Flere av mennene begynte å gråte. Opprøret rant ut i sanden. Washington kunne brukt hæren til å ta makten. Han nektet."
+        },
+        {
+            "type": "text",
+            "content": "Samme år la han fra seg kommandoen og dro hjem, slik du leste i starten. Tenk deg at du vinner det største spillet som finnes, og alle roper at du kan bli sjefen over alt for alltid. Og så sier du bare nei takk og går hjem. Det er nesten umulig for de fleste mennesker. Men det var akkurat dette valget som gjorde at det nye landet ikke fikk en ny konge. Prøv de samme valgene selv i oppgaven under."
+        },
+        {
+            "type": "component",
+            "name": "MaktensFristelse",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Den første presidenten"
+        },
+        {
+            "type": "text",
+            "content": "Noen år senere skrev amerikanerne en [grunnlov](/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven) som bestemte hvordan landet skulle styres. De var redde for at én person igjen skulle få for mye makt. Likevel trengte de en første leder de kunne stole på, og alle pekte på den samme mannen. I 1789 ble Washington valgt til USAs første president."
+        },
+        {
+            "type": "text",
+            "content": "Alt han gjorde ble til en regel for dem som kom etter. Ingen hadde vært president før, så hvert valg han tok skapte et mønster. Det viktigste kom til slutt. Etter to perioder, åtte år, kunne han lett blitt valgt på nytt så mange ganger han ville. I stedet gikk han av og dro hjem igjen. Dermed ble det en uskreven regel at makten i USA skal skifte hender fredelig, og ingen president skal sitte for alltid. Sammenlign dette med [Napoleon](/historie/den-franske-revolusjon/napoleon) i Frankrike, som noen år senere satte en keiserkrone på sitt eget hode. To revolusjoner, to helt ulike slutter."
+        },
+        {
+            "type": "header",
+            "text": "Sprekken i bildet"
+        },
+        {
+            "type": "text",
+            "content": "Washington var ingen feilfri helt, og det er viktig å si tydelig. Han eide slaver. På gården hans i Mount Vernon arbeidet flere hundre slavebundne mennesker uten frihet og uten lønn. Mannen som kjempet for at et folk skulle være fritt, holdt selv andre mennesker ufrie. Dette er den samme [sprekken](/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen) som fantes i hele den amerikanske revolusjonen: vakre ord om frihet og likhet, samtidig som mange mennesker ikke fikk del i den."
+        },
+        {
+            "type": "text",
+            "content": "Mot slutten av livet ser det ut til at Washington fikk dårlig samvittighet. I testamentet sitt bestemte han at slavene hans skulle settes fri etter at han og kona var døde. Han var den eneste av de store lederne som gjorde dette. Det gjør ikke det gale han var med på riktig, men det viser at selv han skjønte at noe skurret mellom ordene og handlingene."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En eldre mann rir alene hjem til en gård i solnedgang",
+            "caption": "To ganger red Washington hjem fra makten. Det er dette valget verden husker ham for."
+        },
+        {
+            "type": "header",
+            "text": "Arven etter Washington"
+        },
+        {
+            "type": "text",
+            "content": "Washington døde i 1799. Han hadde ikke funnet opp de store tankene om frihet, og han var ikke den flinkeste generalen som noen gang har levd. Det han ga verden var noe annet og sjeldnere: et eksempel på at en mektig person kan gi slipp på makten frivillig. Hver gang en president, statsminister eller leder taper et valg og går rolig av, lever litt av Washingtons valg videre."
+        },
+        {
+            "type": "text",
+            "content": "Også i Norge bygger vi på den samme ideen. Ledere styrer for en tid, ikke for alltid, og makten skal skifte hender fredelig etter valg. Det høres kanskje selvsagt ut i dag. Men noen måtte gjøre det først, den gangen det slett ikke var selvsagt. Washington viste at den største styrken en leder kan ha, av og til er å tørre å gi fra seg makten."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva gjorde Washington i Annapolis i 1783, og hvorfor overrasket det både vennene hans og kongen i England?",
+                    "Hvorfor gikk de første årene av krigen så dårlig for Washingtons hær?",
+                    "Hva skjedde da Washington rodde over Delaware-elven julenatten 1776?",
+                    "Hvor mange perioder satt Washington som president før han gikk av frivillig?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor det var så viktig for det nye landet at Washington ikke tok makten da han kunne. Hva kunne skjedd om han hadde sagt ja?",
+                    "Washington kjempet for frihet, men eide selv slaver. Hvordan er det mulig at et menneske kan gjøre begge deler samtidig? Kan det han gjorde av godt likevel telle?",
+                    "Sammenlign Washington og Napoleon. Den ene ga fra seg makten, den andre kronet seg selv til keiser. Hva tror du gjorde at de valgte så ulikt?",
+                    "Teksten sier at den største styrken en leder kan ha, av og til er å gi fra seg makten. Er du enig? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Finn ut hvor lenge en president i USA kan sitte i dag, og hvordan reglene ble endret etter Washington. Skriv noen setninger om hva du finner.",
+                    "Tenk deg at du er Washington kvelden før du skal gi fra deg makten. Skriv et kort dagbokinnlegg om hva du tenker og føler.",
+                    "Diskuter i klassen: Hvorfor er det viktig at makt skifter hender fredelig? Finn et eksempel fra nyhetene der dette gikk bra eller dårlig."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er George Washington mest kjent for i historien?",
+                        "options": [
+                            "At han fant opp de store tankene om frihet",
+                            "At han to ganger ga fra seg makten i stedet for å gripe den",
+                            "At han var den beste taleren i sin tid",
+                            "At han gjorde USA til et kongedømme"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Washington kunne blitt konge eller sittet ved makten for alltid, men ga den fra seg to ganger. Det gjorde at USA ble en republikk."
+                    },
+                    {
+                        "question": "Hva gjorde Washington julenatten 1776?",
+                        "options": [
+                            "Han undertegnet grunnloven",
+                            "Han ble valgt til president",
+                            "Han rodde hæren over den iskalde Delaware-elven og overrasket fienden",
+                            "Han satte en krone på sitt eget hode"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Det dristige angrepet over Delaware-elven ga nytt håp akkurat da krigen så mest håpløs ut."
+                    },
+                    {
+                        "question": "Hvorfor gikk Washington av etter to perioder som president?",
+                        "options": [
+                            "Han tapte et valg",
+                            "Han ble tvunget av hæren",
+                            "Han ville ikke at én person skulle sitte ved makten for alltid",
+                            "Han var for syk til å fortsette"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Ved å gå av frivillig skapte han en regel om at makten i USA skal skifte hender fredelig."
+                    },
+                    {
+                        "question": "Hva er «sprekken» i bildet av Washington som frihetshelt?",
+                        "options": [
+                            "Han kunne ikke lese",
+                            "Han eide selv slaver mens han kjempet for frihet",
+                            "Han var egentlig britisk",
+                            "Han nektet å bli president"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Washington kjempet for et fritt folk, men holdt samtidig flere hundre mennesker som slaver på gården sin."
+                    },
+                    {
+                        "question": "Hvordan skiller Washington seg fra Napoleon i Frankrike?",
+                        "options": [
+                            "Washington kronet seg selv, Napoleon ga fra seg makten",
+                            "Begge ble konger",
+                            "Washington ga fra seg makten, mens Napoleon kronet seg selv til keiser",
+                            "Ingen av dem hadde noen makt"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "To revolusjoner endte helt ulikt: Washington gikk hjem fra makten, mens Napoleon gjorde seg selv til keiser."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

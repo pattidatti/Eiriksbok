@@ -1,5 +1,5 @@
 {
-  "buildId": 1783488730726,
+  "buildId": 1783560592634,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1284,6 +1284,9 @@
     ],
     "den-amerikanske-grunnloven": [
       "content/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven.json"
+    ],
+    "george-washington": [
+      "content/historie/den-amerikanske-revolusjonen/george-washington.json"
     ],
     "uavhengighetserklaeringen": [
       "content/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen.json"
@@ -3966,6 +3969,7 @@
     "historie/dekolonisering/usa-frigjoring": "content/historie/dekolonisering/usa-frigjoring.json",
     "historie/demo-artikkel/demo-artikkel": "content/historie/demo-artikkel/demo-artikkel.json",
     "historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven": "content/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven.json",
+    "historie/den-amerikanske-revolusjonen/george-washington": "content/historie/den-amerikanske-revolusjonen/george-washington.json",
     "historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen": "content/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen.json",
     "historie/den-amerikanske-revolusjonen/uavhengighetskrigen": "content/historie/den-amerikanske-revolusjonen/uavhengighetskrigen.json",
     "historie/den-franske-revolusjon/intro": "content/historie/den-franske-revolusjon/intro.json",

@@ -4027,6 +4027,30 @@
       ]
     },
     {
+      "id": "george-washington",
+      "title": "George Washington",
+      "description": "Generalen som vant krigen og to ganger ga fra seg makten i stedet for å bli konge.",
+      "startDate": 1732,
+      "endDate": 1799,
+      "displayDate": "1732-1799",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "den-amerikanske-revolusjonen",
+      "link": "/historie/den-amerikanske-revolusjonen/george-washington",
+      "tags": [
+        "usa",
+        "revolusjon",
+        "demokrati",
+        "ledelse",
+        "1700-tallet"
+      ],
+      "lat": 39.5,
+      "lng": -98,
+      "placeLabel": "USA",
+      "placeCountryId": 840,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "david-hume",
       "title": "David Hume",
       "description": "Den skotske filosofen David Hume utgir 'A Treatise of Human Nature', et av de viktigste verkene i vestlig filosofi.",

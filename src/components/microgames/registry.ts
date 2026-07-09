@@ -12,6 +12,7 @@ const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
+const DelawareKrysning3D = lazy(() => import('./DelawareKrysning3D'));
 const LeonardoFlygemaskin3D = lazy(() => import('./LeonardoFlygemaskin3D'));
 const DeSjuHoydene3D = lazy(() => import('./DeSjuHoydene3D'));
 const SymbolerPaaTaket3D = lazy(() => import('./SymbolerPaaTaket3D'));
@@ -122,6 +123,15 @@ const Paaskeoya3D = lazy(() => import('./Paaskeoya3D'));
 const MayaKollaps3D = lazy(() => import('./MayaKollaps3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'delaware-1776-3d': {
+        id: 'delaware-1776-3d',
+        title: 'Kryss Delaware-elven',
+        description:
+            'Julenatt 1776. Etter måneder med nederlag tar George Washington en desperat sjanse: han ror hele hæren tvers over den frosne Delaware-elven for å overraske fienden i Trenton. Dra hver robåt, fullastet med soldater og med Washington stående i baugen, fra Pennsylvania-bredden gjennom drivisen og over til New Jersey-siden. Når hele hæren er over, stiger grålysningen og angrepet lykkes. Lyspæren kommer i hendene: Washington snudde en tapende krig ikke ved å være forsiktig, men ved å våge det ingen trodde var mulig. Nettopp fordi han kunne være så dristig med makt, ble det så oppsiktsvekkende at han senere valgte å gi den fra seg.',
+        estimatedSeconds: 120,
+        loader: () => import('./DelawareKrysning3D'),
+        Component: DelawareKrysning3D as never,
+    },
     'maya-3d': {
         id: 'maya-3d',
         title: 'Mayaenes kollaps: byen og tørken',
