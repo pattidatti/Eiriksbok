@@ -28,11 +28,11 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
         <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl border-2 border-amber-200 overflow-hidden shadow-sm"
+            className="bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden shadow-sm"
         >
-            <header className="flex items-center justify-between gap-3 px-3.5 py-1.5 border-b border-amber-200 bg-white/60">
+            <header className="flex items-center justify-between gap-3 px-3.5 py-1.5 border-b border-slate-200 bg-white/60">
                 <div className="flex items-center gap-2 min-w-0">
-                    <div className="w-6 h-6 rounded-md bg-amber-500 text-white flex items-center justify-center shadow-sm flex-shrink-0">
+                    <div className="w-6 h-6 rounded-md bg-slate-700 text-white flex items-center justify-center shadow-sm flex-shrink-0">
                         <Gamepad2 className="w-3.5 h-3.5" />
                     </div>
                     <div className="flex items-baseline gap-2 min-w-0">
@@ -56,7 +56,7 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
                     {onRetry && (
                         <button
                             onClick={onRetry}
-                            className="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold text-slate-600 hover:text-amber-700 hover:bg-amber-100 rounded-md transition"
+                            className="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition"
                             aria-label="Start mikro-spillet på nytt"
                         >
                             <RotateCcw className="w-3.5 h-3.5" />

@@ -54,7 +54,7 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
         <div className="my-6" data-microgame={gameId}>
             <Suspense
                 fallback={
-                    <div className="flex items-center justify-center py-16 bg-amber-50/60 border-2 border-amber-200 text-amber-700 rounded-2xl">
+                    <div className="flex items-center justify-center py-16 bg-white/70 border border-slate-200 text-slate-500 rounded-2xl">
                         <Loader2 className="w-5 h-5 animate-spin mr-3" />
                         Laster {entry.title}...
                     </div>
