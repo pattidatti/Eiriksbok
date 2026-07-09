@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import type { QuizQuestion } from '../types';
-import './Quiz.css';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Flame, CheckCircle2, XCircle, RotateCcw, ExternalLink } from 'lucide-react';
 import { captureQuizAnswer } from '../utils/reviewCapture';
 import { useProgressStore } from '../features/progress/useProgressStore';
 import { correctPop, wrongShake, celebrateCompletion } from './ui/answerFeedback';
@@ -11,27 +11,27 @@ interface QuizProps {
     questions: QuizQuestion[];
 }
 
-export const Quiz: React.FC<QuizProps> = ({ questions }) => {
+const shuffle = (options: string[]) => {
+    const shuffled = [...options];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+};
+
+export const Quiz = ({ questions }: QuizProps) => {
     const location = useLocation();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const [showResult, setShowResult] = useState(false);
-    const [score, setScore] = useState(0);
     const [correctCount, setCorrectCount] = useState(0);
     const [streak, setStreak] = useState(0);
+    const [bestStreak, setBestStreak] = useState(0);
     const [isAnswered, setIsAnswered] = useState(false);
-    const [shuffledOptions, setShuffledOptions] = useState<string[]>([]);
-
-    useEffect(() => {
-        if (questions && questions[currentQuestion]) {
-            const options = [...questions[currentQuestion].options];
-            for (let i = options.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [options[i], options[j]] = [options[j], options[i]];
-            }
-            setShuffledOptions(options);
-        }
-    }, [currentQuestion, questions]);
+    const [shuffledOptions, setShuffledOptions] = useState<string[]>(() =>
+        questions && questions[0] ? shuffle(questions[0].options) : []
+    );
 
     const handleOptionClick = (option: string) => {
         if (isAnswered) return;
@@ -56,11 +56,11 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
         const correct = getCorrectAnswer(questions[currentQuestion]);
         captureQuizAnswer(questions[currentQuestion], selectedOption === correct);
         if (selectedOption === correct) {
-            setScore(score + 1);
             setCorrectCount(correctCount + 1);
-            setStreak(streak + 1);
+            const newStreak = streak + 1;
+            setStreak(newStreak);
+            setBestStreak(Math.max(bestStreak, newStreak));
         } else {
-            setScore(score - 1);
             setStreak(0);
         }
     };
@@ -69,6 +69,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
         if (Date.now() - answeredAtRef.current < 350) return;
         if (currentQuestion < questions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
+            setShuffledOptions(shuffle(questions[currentQuestion + 1].options));
             setSelectedOption(null);
             setIsAnswered(false);
         } else {
@@ -85,125 +86,220 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
         }
     };
 
+    const restart = () => {
+        setCurrentQuestion(0);
+        setShuffledOptions(questions && questions[0] ? shuffle(questions[0].options) : []);
+        setSelectedOption(null);
+        setShowResult(false);
+        setCorrectCount(0);
+        setStreak(0);
+        setBestStreak(0);
+        setIsAnswered(false);
+    };
+
     if (showResult) {
         const ratio = questions.length > 0 ? correctCount / questions.length : 0;
         const emoji = ratio === 1 ? '🏆' : ratio >= 0.7 ? '🎉' : ratio >= 0.4 ? '💪' : '📖';
+        const message =
+            ratio === 1
+                ? 'Perfekt! Du kan dette.'
+                : ratio >= 0.7
+                  ? 'Sterkt! Nesten alt riktig.'
+                  : ratio >= 0.4
+                    ? 'Godt forsøk! Prøv en runde til.'
+                    : 'Les gjennom stoffet en gang til, så sitter det.';
         return (
             <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 12 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-                className="quiz-container quiz-result"
+                className="mt-12 max-w-xl mx-auto bg-white/70 backdrop-blur rounded-2xl border border-slate-200 shadow-sm p-8 text-center"
             >
                 <motion.div
                     initial={{ scale: 0, rotate: -20 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ type: 'spring', stiffness: 260, damping: 16, delay: 0.15 }}
-                    className="text-5xl text-center mb-4"
+                    className="text-6xl mb-4"
                 >
                     {emoji}
                 </motion.div>
-                <h3>Quiz fullført!</h3>
-                <p>Du fikk {correctCount} av {questions.length} riktige.</p>
-                <button className="next-btn pressable focus-ring" onClick={() => window.location.reload()}>Start på nytt</button>
+                <h3 className="font-display font-bold text-2xl text-slate-900 mb-2">
+                    Quiz fullført!
+                </h3>
+                <p className="text-slate-600 mb-6">{message}</p>
+                <div className="flex justify-center gap-3 mb-8">
+                    <div className="bg-white rounded-xl border border-slate-200 px-5 py-3">
+                        <div className="text-2xl font-bold text-indigo-600">
+                            {correctCount}/{questions.length}
+                        </div>
+                        <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                            Riktige
+                        </div>
+                    </div>
+                    <div className="bg-white rounded-xl border border-slate-200 px-5 py-3">
+                        <div className="text-2xl font-bold text-amber-500 flex items-center justify-center gap-1">
+                            <Flame className="w-5 h-5" />
+                            {bestStreak}
+                        </div>
+                        <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                            Beste streak
+                        </div>
+                    </div>
+                </div>
+                <motion.button
+                    whileTap={{ scale: 0.97 }}
+                    onClick={restart}
+                    className="focus-ring inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/25 transition-colors"
+                >
+                    <RotateCcw className="w-4 h-4" />
+                    Prøv igjen
+                </motion.button>
             </motion.div>
-        )
+        );
     }
 
     if (!questions || questions.length === 0) return null;
 
     const question = questions[currentQuestion];
     const correctAnswer = getCorrectAnswer(question);
+    const answeredCorrectly = isAnswered && selectedOption === correctAnswer;
+    const progress = (currentQuestion + (isAnswered ? 1 : 0)) / questions.length;
 
     return (
-        <div className="quiz-container">
-            {/* Gamification Header */}
-            <div className="flex justify-between items-center mb-6 px-4">
-                {/* Streak */}
-                <div className="flex items-center gap-2">
-                    <motion.div
+        <div className="mt-12 max-w-xl mx-auto">
+            {/* Fremdrift + streak */}
+            <div className="flex items-end justify-between mb-2 px-1">
+                <span className="text-sm font-semibold text-slate-500">
+                    Spørsmål {currentQuestion + 1} av {questions.length}
+                </span>
+                <div className="flex items-center gap-1.5">
+                    <motion.span
                         key={streak}
-                        initial={{ scale: 1 }}
-                        animate={streak > 0 ? { scale: [1, 1.5, 1], rotate: [0, 10, -10, 0] } : { scale: [1, 0.8, 1], x: [0, -5, 5, 0] }}
-                        transition={{ duration: 0.3 }}
+                        animate={
+                            streak > 0
+                                ? { scale: [1, 1.35, 1], rotate: [0, 8, -8, 0] }
+                                : undefined
+                        }
+                        transition={{ duration: 0.35 }}
                     >
-                        {streak > 0 ? (
-                            <span className="text-2xl">⭐</span>
-                        ) : (
-                            <span className="text-2xl grayscale opacity-50">⭐</span>
-                        )}
-                    </motion.div>
-                    <div className="flex flex-col">
-                        <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Streak</span>
-                        <span className={`text-xl font-bold ${streak > 2 ? 'text-amber-500' : 'text-slate-700'}`}>{streak}</span>
-                    </div>
-                </div>
-
-                {/* Score */}
-                <div className="flex flex-col items-end">
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Poeng</span>
-                    <span className={`text-xl font-bold ${score >= 0 ? 'text-indigo-600' : 'text-red-500'}`}>{score}</span>
+                        <Flame
+                            className={`w-4 h-4 ${streak > 0 ? 'text-amber-500' : 'text-slate-300'}`}
+                        />
+                    </motion.span>
+                    <span
+                        className={`text-sm font-bold ${streak > 2 ? 'text-amber-500' : streak > 0 ? 'text-slate-700' : 'text-slate-400'}`}
+                    >
+                        {streak} på rad
+                    </span>
                 </div>
             </div>
+            <div className="h-2 bg-slate-200/70 rounded-full overflow-hidden mb-6">
+                <motion.div
+                    className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+                    initial={false}
+                    animate={{ width: `${progress * 100}%` }}
+                    transition={{ type: 'spring', stiffness: 200, damping: 26 }}
+                />
+            </div>
 
-            <div className="question-card">
-                <p className="question-text">{question.question}</p>
+            <div className="bg-white/70 backdrop-blur rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+                <p className="text-lg sm:text-xl font-semibold text-slate-900 text-center leading-snug mb-6">
+                    {question.question}
+                </p>
 
-                {question.sourceUrl && (
-                    <div className="text-center mb-6">
-                        <a
-                            href={question.sourceUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-indigo-600 hover:text-indigo-800 hover:underline font-medium flex items-center justify-center gap-1"
-                        >
-                            <span>Les om dette i: {question.sourceTitle || 'artikkelen'}</span>
-                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                    </div>
-                )}
-
-                <div className="options-grid">
+                <div className="grid gap-3 mb-6">
                     {shuffledOptions.map((option) => {
+                        const isSelected = selectedOption === option;
                         const isCorrectAnswer = isAnswered && option === correctAnswer;
-                        const isWrongPick = isAnswered && selectedOption === option && option !== correctAnswer;
+                        const isWrongPick = isAnswered && isSelected && option !== correctAnswer;
                         return (
                             <motion.button
                                 key={option}
-                                animate={isCorrectAnswer ? correctPop : isWrongPick ? wrongShake : undefined}
-                                whileTap={!isAnswered ? { scale: 0.97 } : undefined}
-                                className={`option-btn focus-ring ${selectedOption === option ? 'selected' : ''} ${isCorrectAnswer ? 'correct' : ''} ${isWrongPick ? 'wrong' : ''}`}
+                                animate={
+                                    isCorrectAnswer ? correctPop : isWrongPick ? wrongShake : undefined
+                                }
+                                whileTap={!isAnswered ? { scale: 0.98 } : undefined}
                                 onClick={() => handleOptionClick(option)}
                                 disabled={isAnswered}
+                                className={`focus-ring w-full flex items-center justify-between gap-3 text-left px-4 py-3.5 rounded-xl border-2 font-medium transition-colors ${
+                                    isCorrectAnswer
+                                        ? 'border-emerald-400 bg-emerald-50 text-emerald-800'
+                                        : isWrongPick
+                                          ? 'border-rose-300 bg-rose-50 text-rose-700'
+                                          : isSelected
+                                            ? 'border-indigo-500 bg-indigo-50 text-indigo-900'
+                                            : isAnswered
+                                              ? 'border-slate-200 bg-white/60 text-slate-400'
+                                              : 'border-slate-200 bg-white text-slate-700 hover:border-indigo-300 hover:bg-indigo-50/60 cursor-pointer'
+                                }`}
                             >
-                                {option}
+                                <span>{option}</span>
+                                {isCorrectAnswer && (
+                                    <CheckCircle2 className="w-5 h-5 shrink-0 text-emerald-500" />
+                                )}
+                                {isWrongPick && <XCircle className="w-5 h-5 shrink-0 text-rose-400" />}
                             </motion.button>
                         );
                     })}
                 </div>
-                {!isAnswered && selectedOption && (
+
+                <AnimatePresence mode="wait">
+                    {isAnswered && (
+                        <motion.div
+                            key={`feedback-${currentQuestion}`}
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0 }}
+                            className={`mb-4 px-4 py-3 rounded-xl text-sm font-medium ${
+                                answeredCorrectly
+                                    ? 'bg-emerald-50 text-emerald-700'
+                                    : 'bg-rose-50 text-rose-700'
+                            }`}
+                        >
+                            {answeredCorrectly ? (
+                                'Riktig!'
+                            ) : (
+                                <>
+                                    Riktig svar: <span className="font-bold">{correctAnswer}</span>
+                                </>
+                            )}
+                            {question.sourceUrl && (
+                                <a
+                                    href={question.sourceUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-1 flex items-center gap-1 text-indigo-600 hover:text-indigo-800 hover:underline"
+                                >
+                                    Les om dette i: {question.sourceTitle || 'artikkelen'}
+                                    <ExternalLink className="w-3 h-3" />
+                                </a>
+                            )}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+                {!isAnswered && (
                     <motion.button
-                        className="submit-btn focus-ring"
                         onClick={submitAnswer}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        whileTap={{ scale: 0.97 }}
+                        disabled={!selectedOption}
+                        initial={false}
+                        animate={{ opacity: selectedOption ? 1 : 0.4 }}
+                        whileTap={selectedOption ? { scale: 0.97 } : undefined}
+                        className="focus-ring w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:hover:bg-indigo-600 disabled:cursor-not-allowed text-white font-bold text-lg shadow-lg shadow-indigo-500/25 transition-colors"
                     >
                         Svar
                     </motion.button>
                 )}
                 {isAnswered && (
-                    <div className="flex flex-col gap-4">
-                        <motion.button
-                            className="next-btn focus-ring"
-                            onClick={nextQuestion}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            whileTap={{ scale: 0.97 }}
-                        >
-                            {currentQuestion < questions.length - 1 ? 'Neste' : 'Se resultat'}
-                        </motion.button>
-                    </div>
+                    <motion.button
+                        onClick={nextQuestion}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        whileTap={{ scale: 0.97 }}
+                        className="focus-ring w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-lg transition-colors"
+                    >
+                        {currentQuestion < questions.length - 1 ? 'Neste' : 'Se resultat'}
+                    </motion.button>
                 )}
             </div>
         </div>
