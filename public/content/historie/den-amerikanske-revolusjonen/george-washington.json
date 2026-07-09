@@ -5,7 +5,7 @@
     "year": "1732-1799",
     "category": "Verdenshistorie",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/den-amerikanske-revolusjonen/george-washington-hero.webp",
     "details": [
         "Washington ledet den amerikanske hæren til seier mot verdens sterkeste rike.",
         "To ganger kunne han grepet makten for alltid. Begge ganger ga han den fra seg.",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/george-washington-01.webp",
             "alt": "En general legger fra seg sverdet foran en forsamling folkevalgte",
             "caption": "Washington gir fra seg kommandoen over hæren i 1783. Han hadde all makt i hendene, og valgte å legge den fra seg."
         },
@@ -59,7 +59,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/george-washington-02.webp",
             "alt": "Soldater ror over en frossen elv i snøvær om natten",
             "caption": "Washington krysser Delaware-elven julenatten 1776. Et dristig angrep snudde en tapende krig."
         },
@@ -106,7 +106,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-amerikanske-revolusjonen/george-washington-03.webp",
             "alt": "En eldre mann rir alene hjem til en gård i solnedgang",
             "caption": "To ganger red Washington hjem fra makten. Det er dette valget verden husker ham for."
         },
