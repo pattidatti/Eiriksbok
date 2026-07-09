@@ -44,9 +44,23 @@ const ConceptSnakeGame: React.FC = () => {
 
         // Aggressive blocking configuration
         window.addEventListener('keydown', handleKeyDown, { capture: false });
-        // Also capture to be sure? 
+        // Also capture to be sure?
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [status]);
+
+    // «Min læring»: hver fullførte runde teller (id per kategori så nye
+    // kategorier gir full XP, repetisjon gir daglig bonus)
+    useEffect(() => {
+        if (status !== 'GAME_OVER') return;
+        import('../../features/progress/useProgressStore').then(({ useProgressStore }) => {
+            useProgressStore.getState().recordActivity({
+                kind: 'practice-game',
+                activityId: `konsept-snake/${level.id}`,
+                subjectId: 'norsk',
+                title: 'Konseptslange',
+            });
+        });
+    }, [status, level.id]);
 
     return (
         <div className="w-full min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center p-2 overflow-hidden">

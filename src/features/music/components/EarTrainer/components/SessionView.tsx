@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { AlertTriangle } from 'lucide-react';
 import type { Question } from '../logic/questionGenerator';
 import type { ModeId } from '../logic/levels';
@@ -13,6 +13,7 @@ import {
     loadState,
     saveBestStreak,
 } from '../logic/storage';
+import { useProgressStore } from '../../../../progress/useProgressStore';
 
 type Phase = 'idle' | 'playing' | 'awaiting' | 'feedback';
 
@@ -40,6 +41,9 @@ export const SessionView: React.FC<SessionViewProps> = ({
     const [isLoadingAudio, setIsLoadingAudio] = useState(false);
     const [audioError, setAudioError] = useState<string | null>(null);
     const [bestStreak, setBestStreak] = useState(() => getBestStreak(loadState(), mode, level));
+    // Fri øving uten sluttskjerm - hvert 10. besvarte spørsmål teller som en
+    // fullført runde i «Min læring», med andel riktige som score
+    const roundStats = useRef({ answered: 0, correct: 0 });
 
     useEffect(() => {
         setQuestion(generate());
@@ -48,6 +52,7 @@ export const SessionView: React.FC<SessionViewProps> = ({
         setStreak(0);
         setAudioError(null);
         setBestStreak(getBestStreak(loadState(), mode, level));
+        roundStats.current = { answered: 0, correct: 0 };
     }, [mode, level, generate]);
 
     const handlePlay = useCallback(async () => {
@@ -80,6 +85,19 @@ export const SessionView: React.FC<SessionViewProps> = ({
             setSelected(label);
             const correct = label === question.correctLabel;
             incrementStat(mode, question.correctLabel, correct);
+            roundStats.current.answered += 1;
+            if (correct) roundStats.current.correct += 1;
+            if (roundStats.current.answered >= 10) {
+                const { correct: correctCount } = roundStats.current;
+                roundStats.current = { answered: 0, correct: 0 };
+                useProgressStore.getState().recordActivity({
+                    kind: 'practice-game',
+                    activityId: `musikk/gehor/${mode}/niv${level}`,
+                    subjectId: 'musikk',
+                    title: 'Gehørtrening',
+                    score: correctCount / 10,
+                });
+            }
             if (correct) {
                 const next = streak + 1;
                 setStreak(next);

@@ -6,6 +6,7 @@ import { DilemmaEngine } from '../components/content/interactive/ethics/DilemmaE
 import { MoralCompass } from '../components/content/interactive/ethics/MoralCompass';
 import { MasteryResults } from '../components/content/interactive/ethics/MasteryResults';
 import { Sparkles, Brain, Compass, ArrowRight, RotateCcw, Shield } from 'lucide-react';
+import { useProgressStore } from '../features/progress/useProgressStore';
 
 export const EthicsExperimentPage: React.FC = () => {
     const [step, setStep] = useState<'intro' | 'mode-select' | 'system-select' | 'theory-briefing' | 'experiment' | 'result'>('intro');
@@ -33,6 +34,18 @@ export const EthicsExperimentPage: React.FC = () => {
         if (currentDilemmaIndex < dilemmas.length - 1) {
             setCurrentDilemmaIndex(prev => prev + 1);
         } else {
+            // «Min læring»: eksperimentet er fullført. Id per etisk system
+            // gjør at det lønner seg å prøve alle; utforskermodus er uscoret.
+            useProgressStore.getState().recordActivity({
+                kind: 'philosophy-quest',
+                activityId:
+                    mode === 'mastery' && selectedSystemId
+                        ? `etikk/${selectedSystemId}`
+                        : 'etikk/utforsker',
+                subjectId: 'krle',
+                title: 'Etikk-eksperimentet',
+                score: mode === 'mastery' ? score / dilemmas.length : undefined,
+            });
             setStep('result');
         }
     };

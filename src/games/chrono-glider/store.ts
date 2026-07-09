@@ -66,6 +66,21 @@ export interface GameStore {
     incrementStreak: () => void;
 }
 
+// «Min læring»: registrer runden ved nivåfullføring (score 1) eller tap
+// (score 0.3). Id per nivå gjør at nye nivåer gir full XP, repetisjon gir
+// daglig bonus. Dynamisk import holder progresjonsstoren ute av spill-bundelen.
+const recordGliderRound = (level: number, score: number) => {
+    import('../../features/progress/useProgressStore').then(({ useProgressStore }) => {
+        useProgressStore.getState().recordActivity({
+            kind: 'practice-game',
+            activityId: `chrono-glider/level-${level}`,
+            subjectId: 'historie',
+            title: 'Chrono-Glider',
+            score,
+        });
+    });
+};
+
 export const useGameStore = create<GameStore>((set, get) => ({
     score: 0,
     lives: 5,
@@ -103,7 +118,10 @@ export const useGameStore = create<GameStore>((set, get) => ({
         });
     },
 
-    endGame: (won) => set({ gameState: won ? 'won' : 'gameover', isBoosting: false }),
+    endGame: (won) => {
+        recordGliderRound(get().level, won ? 1 : 0.3);
+        set({ gameState: won ? 'won' : 'gameover', isBoosting: false });
+    },
 
     resetGame: () => set({ gameState: 'menu', score: 0, lives: 5, level: 1, currentEventIndex: 0, feedbackTrigger: null, isBoosting: false, streak: 0, multiplier: 1 }),
 
@@ -162,6 +180,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
         const newLives = state.lives - 1;
         if (newLives <= 0) {
             AudioManager.getInstance().playWrong();
+            recordGliderRound(state.level, 0.3);
             return { lives: 0, gameState: 'gameover', streak: 0, multiplier: 1 };
         }
         return { lives: newLives, streak: 0, multiplier: 1 };
@@ -180,6 +199,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
         if (nextIndex >= state.events.length) {
             // Level Complete!
             AudioManager.getInstance().playCorrect();
+            recordGliderRound(state.level, 1);
             return { gameState: 'level_complete' };
         }
         return { currentEventIndex: nextIndex };

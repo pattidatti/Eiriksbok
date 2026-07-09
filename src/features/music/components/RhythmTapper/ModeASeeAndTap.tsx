@@ -11,6 +11,7 @@ import { generatePattern } from '../../lib/rhythmGenerator';
 import { calculateAccuracy } from '../../lib/accuracy';
 import type { AccuracyResult, RhythmPattern } from '../../lib/rhythmTypes';
 import { recordAttempt } from '../../lib/progressStore';
+import { useProgressStore } from '../../../progress/useProgressStore';
 import { VexFlowRenderer } from './VexFlowRenderer';
 import { TapZone } from './TapZone';
 import { MetronomePulse } from './MetronomePulse';
@@ -96,6 +97,15 @@ export function ModeASeeAndTap({ level, bpm, latencyOffsetMs, onScoreRecorded, o
         setPhase('result');
         recordAttempt(level, acc.score);
         onScoreRecorded?.(acc.score);
+        // «Min læring»: hver fullførte rytme-frase teller (id per nivå,
+        // acc.score er 0-100 og normaliseres til 0-1)
+        useProgressStore.getState().recordActivity({
+            kind: 'practice-game',
+            activityId: `musikk/rytme/niv${level}`,
+            subjectId: 'musikk',
+            title: 'Rytmetrening',
+            score: acc.score / 100,
+        });
     };
 
     const newPhrase = () => {

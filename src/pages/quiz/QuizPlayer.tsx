@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '../../lib/firebase';
 import { ref, onValue, update, runTransaction, push, set, get } from 'firebase/database';
@@ -6,6 +6,23 @@ import { Trophy, CheckCircle, XCircle, Clock, Heart, ThumbsUp, Flame, Rocket, Ar
 import { useQuizAudio } from '../../hooks/useQuizAudio';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import type { QuizQuestion } from '../../types';
+import { useProgressStore } from '../../features/progress/useProgressStore';
+
+// Korrekthetssjekk delt mellom «anbefalt lesing»-rapporten og XP-registreringen
+const isAnswerCorrect = (
+    q: { correctAnswer?: unknown; options?: string[]; answer?: string | string[] },
+    myAns: unknown
+): boolean => {
+    if (!myAns) return false;
+    if (typeof q.correctAnswer === 'number') {
+        return !!q.options && q.options[q.correctAnswer] === myAns;
+    }
+    if (q.answer) {
+        if (Array.isArray(q.answer)) return JSON.stringify(myAns) === JSON.stringify(q.answer);
+        return myAns === q.answer;
+    }
+    return false;
+};
 
 export const QuizPlayer: React.FC = () => {
     const { pin } = useParams();
@@ -117,15 +134,34 @@ export const QuizPlayer: React.FC = () => {
     }, [pin, navigate, playSound, hasAnswered]);
 
     // Fetch Private Questions on Finish for Report
+    const [reportReady, setReportReady] = useState(false);
     useEffect(() => {
         if (status === 'FINISHED' && pin) {
-            get(ref(db, `quiz-data/${pin}/questions`)).then((snap) => {
-                if (snap.exists()) {
-                    setPrivateQuestions(snap.val());
-                }
-            });
+            get(ref(db, `quiz-data/${pin}/questions`))
+                .then((snap) => {
+                    if (snap.exists()) {
+                        setPrivateQuestions(snap.val());
+                    }
+                })
+                .finally(() => setReportReady(true));
         }
     }, [status, pin]);
+
+    // «Min læring»: registrer runden én gang når spillet er ferdig, med
+    // andel riktige som score der fasiten finnes
+    const progressRecorded = useRef(false);
+    useEffect(() => {
+        if (status !== 'FINISHED' || !reportReady || !pin || progressRecorded.current) return;
+        progressRecorded.current = true;
+        const total = privateQuestions.length;
+        const correct = privateQuestions.filter((q, i) => isAnswerCorrect(q, myAnswers[i])).length;
+        useProgressStore.getState().recordActivity({
+            kind: 'quiz-completed',
+            activityId: `quiz-battle/${pin}`,
+            title: 'Quiz Battle',
+            score: total > 0 ? correct / total : undefined,
+        });
+    }, [status, reportReady, pin, privateQuestions, myAnswers]);
 
     // Handle Question Change
     useEffect(() => {
@@ -379,21 +415,7 @@ export const QuizPlayer: React.FC = () => {
                             {(() => {
                                 const wrongLinks: any[] = [];
                                 privateQuestions.forEach((q, i) => {
-                                    // Check if correct
-                                    const myAns = myAnswers[i];
-                                    let isCorrect = false;
-
-                                    if (myAns) {
-                                        if (typeof q.correctAnswer === 'number') {
-                                            if (q.options && q.options[q.correctAnswer] === myAns) isCorrect = true;
-                                        } else if (q.answer) {
-                                            if (Array.isArray(q.answer)) {
-                                                if (JSON.stringify(myAns) === JSON.stringify(q.answer)) isCorrect = true;
-                                            } else {
-                                                if (myAns === q.answer) isCorrect = true;
-                                            }
-                                        }
-                                    }
+                                    const isCorrect = isAnswerCorrect(q, myAnswers[i]);
 
                                     if (!isCorrect) {
                                         if (q.sourceLessonId && q.sourceSubjectId && q.sourceTopicId) {

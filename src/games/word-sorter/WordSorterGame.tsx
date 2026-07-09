@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wordClasses, words } from './wordSorterData';
 import type { WordClassId, WordClass, WordItem } from './wordSorterData';
 import { Check, X, Info, RotateCcw, Play } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { useProgressStore } from '../../features/progress/useProgressStore';
 
 // --- Game Setup Component ---
 interface GameSetupProps {
@@ -184,10 +185,29 @@ const GameLoop: React.FC<GameLoopProps> = ({ selectedClassIds, onExit }) => {
     const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
     const [streak, setStreak] = useState(0);
     const [animatingBucket, setAnimatingBucket] = useState<WordClassId | null>(null);
+    // Spillet er endeløst - hvert 10. sorteringsforsøk teller som en fullført
+    // runde i «Min læring», med andel riktige som score
+    const roundStats = useRef({ attempts: 0, correct: 0 });
 
     // Filter classes and words
     const activeClasses = wordClasses.filter(c => selectedClassIds.includes(c.id));
     const pool = words.filter(w => selectedClassIds.includes(w.classId));
+
+    const countAttempt = (correct: boolean) => {
+        roundStats.current.attempts += 1;
+        if (correct) roundStats.current.correct += 1;
+        if (roundStats.current.attempts >= 10) {
+            const { correct: correctCount } = roundStats.current;
+            roundStats.current = { attempts: 0, correct: 0 };
+            useProgressStore.getState().recordActivity({
+                kind: 'practice-game',
+                activityId: `ordsortering/${[...selectedClassIds].sort().join('-')}`,
+                subjectId: 'norsk',
+                title: 'Ordsortering',
+                score: correctCount / 10,
+            });
+        }
+    };
 
     const pickNewWord = () => {
         const randomIndex = Math.floor(Math.random() * pool.length);
@@ -204,6 +224,8 @@ const GameLoop: React.FC<GameLoopProps> = ({ selectedClassIds, onExit }) => {
         if (!currentWord || feedback) return;
 
         setAnimatingBucket(classId);
+
+        countAttempt(currentWord.classId === classId);
 
         if (currentWord.classId === classId) {
             // Correct

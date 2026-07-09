@@ -13,6 +13,7 @@ import type { AccuracyResult, RhythmPattern } from '../../lib/rhythmTypes';
 import { TapZone } from './TapZone';
 import { MetronomePulse } from './MetronomePulse';
 import { AccuracyTimeline } from './AccuracyTimeline';
+import { useProgressStore } from '../../../progress/useProgressStore';
 
 type Phase = 'idle' | 'demoCountIn' | 'demoPlay' | 'responseGap' | 'responseTap' | 'result';
 
@@ -136,6 +137,15 @@ export function ModeBCallResponse({ level, bpm, latencyOffsetMs, onChangeBpm }: 
         );
         setResult(acc);
         setPhase('result');
+        // «Min læring»: hver fullførte ekko-frase teller (id per nivå,
+        // acc.score er 0-100 og normaliseres til 0-1)
+        useProgressStore.getState().recordActivity({
+            kind: 'practice-game',
+            activityId: `musikk/rytme/ekko/niv${level}`,
+            subjectId: 'musikk',
+            title: 'Rytmetrening',
+            score: acc.score / 100,
+        });
     };
 
     const newPhrase = () => {
