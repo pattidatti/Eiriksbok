@@ -26,9 +26,9 @@ const SmallRecCard = ({ item, delay }: { item: Recommendation; delay: number }) 
     <motion.div {...spring(delay)} className="min-w-0">
         <Link
             to={item.link}
-            className="group flex h-full items-center gap-3 rounded-xl bg-white/10 p-2 pr-3 no-underline backdrop-blur transition-colors hover:bg-white/20"
+            className="group flex h-full items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-2 pr-3 no-underline transition-colors hover:bg-slate-100"
         >
-            <span className="relative h-12 w-14 shrink-0 overflow-hidden rounded-lg bg-white/10">
+            <span className="relative h-12 w-14 shrink-0 overflow-hidden rounded-lg bg-slate-100">
                 <LazyImage
                     src={item.image}
                     alt=""
@@ -37,12 +37,12 @@ const SmallRecCard = ({ item, delay }: { item: Recommendation; delay: number }) 
                 />
             </span>
             <span className="min-w-0 flex-1">
-                <span className="block truncate text-sm font-semibold text-white">
+                <span className="block truncate text-sm font-semibold text-slate-900">
                     {item.title}
                 </span>
-                <span className="block truncate text-xs text-slate-300">{item.reason}</span>
+                <span className="block truncate text-xs text-slate-500">{item.reason}</span>
             </span>
-            <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-all group-hover:translate-x-0.5 group-hover:text-white" />
+            <ChevronRight className="h-4 w-4 shrink-0 text-slate-400 transition-all group-hover:translate-x-0.5 group-hover:text-slate-700" />
         </Link>
     </motion.div>
 );
@@ -74,31 +74,31 @@ export const HomeLearningModule = () => {
 
     return (
         <motion.div {...spring(0.05)} className="mb-12">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-5 shadow-xl shadow-slate-900/25 md:p-6">
-                {/* Bakteppe fra det anbefalte bildet - harmonerer alltid. */}
+            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6">
+                {/* Bakteppe fra det anbefalte bildet - et svakt, lyst slør som gir et hint av emnets farge. */}
                 {primary.image && (
                     <img
                         src={primary.image}
                         alt=""
                         aria-hidden
-                        className="absolute inset-0 h-full w-full scale-125 object-cover opacity-40 blur-2xl"
+                        className="absolute inset-0 h-full w-full scale-125 object-cover opacity-25 blur-2xl"
                     />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/65 to-slate-900/50" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/72 to-white/60" />
 
                 <div className="relative z-10">
                     {/* Topplinje: tittel + status-chips + lenke */}
                     <div className="mb-4 flex flex-wrap items-center gap-2">
-                        <h3 className="mr-1 font-display text-xl font-bold text-white">
+                        <h3 className="mr-1 font-display text-xl font-bold text-slate-900">
                             {isNewStudent ? 'Start reisen din' : 'Min læring'}
                         </h3>
                         {shownStreak > 0 && (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-xs font-bold text-white backdrop-blur">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-700">
                                 🔥 {shownStreak} {shownStreak === 1 ? 'dag' : 'dager'}
                             </span>
                         )}
                         {!isNewStudent && (
-                            <span className="inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 text-xs font-bold text-white backdrop-blur">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-700">
                                 Nivå {level}
                             </span>
                         )}
@@ -107,8 +107,8 @@ export const HomeLearningModule = () => {
                                 to="/min-laering"
                                 className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-bold no-underline backdrop-blur transition-colors ${
                                     goalsDone >= goalItems.length
-                                        ? 'bg-emerald-400/20 text-emerald-200'
-                                        : 'bg-amber-400/20 text-amber-200 hover:bg-amber-400/30'
+                                        ? 'bg-emerald-100 text-emerald-700'
+                                        : 'bg-amber-100 text-amber-700 hover:bg-amber-200'
                                 }`}
                             >
                                 <Target className="h-3 w-3" />
@@ -117,7 +117,7 @@ export const HomeLearningModule = () => {
                         )}
                         <Link
                             to="/min-laering"
-                            className="ml-auto inline-flex items-center gap-1 text-sm font-semibold text-slate-300 no-underline transition-colors hover:text-white"
+                            className="ml-auto inline-flex items-center gap-1 text-sm font-semibold text-slate-500 no-underline transition-colors hover:text-slate-900"
                         >
                             Åpne Min læring
                             <ArrowRight className="h-4 w-4" />

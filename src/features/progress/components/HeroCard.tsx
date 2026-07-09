@@ -48,18 +48,18 @@ interface HeroCardProps {
     welcome?: WelcomeSubject[] | null;
 }
 
-// Nivå + XP-bar, kompakt på gradienten - erstatter det gamle LevelCard-kortet.
+// Nivå + XP-bar, kompakt på det lyse kortet - erstatter det gamle LevelCard-kortet.
 const LevelInline = ({ totalXp, badgeCount }: { totalXp: number; badgeCount: number }) => {
     const { level, into, needed } = levelProgress(totalXp);
     const pct = Math.min(100, Math.round((into / needed) * 100));
     const shownXp = useCountUp(totalXp);
     const celebrate = useCelebration((s) => s.celebrate);
     return (
-        <div className="flex items-center gap-3 rounded-2xl bg-white/15 backdrop-blur px-3.5 py-2.5 md:ml-auto">
+        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 md:ml-auto">
             <button
                 onClick={() => celebrate({ type: 'levelup', level })}
                 title="Vis frem nivået ditt"
-                className="flex h-11 w-11 shrink-0 flex-col items-center justify-center rounded-xl bg-white/25 text-white transition-transform hover:scale-110"
+                className="flex h-11 w-11 shrink-0 flex-col items-center justify-center rounded-xl bg-indigo-500 text-white transition-transform hover:scale-110"
             >
                 <span className="text-[8px] font-bold uppercase tracking-wide opacity-80">
                     Nivå
@@ -68,22 +68,22 @@ const LevelInline = ({ totalXp, badgeCount }: { totalXp: number; badgeCount: num
             </button>
             <div className="w-36 min-w-0">
                 <div className="mb-1 flex items-baseline justify-between gap-2">
-                    <p className="text-xs font-bold text-white tabular-nums">
+                    <p className="text-xs font-bold text-slate-900 tabular-nums">
                         {shownXp.toLocaleString('nb-NO')} XP
                     </p>
-                    <p className="truncate text-[10px] text-slate-300">
+                    <p className="truncate text-[10px] text-slate-500">
                         {needed - into} til niv. {level + 1}
                     </p>
                 </div>
-                <div className="h-2 overflow-hidden rounded-full bg-white/20">
+                <div className="h-2 overflow-hidden rounded-full bg-slate-200">
                     <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${pct}%` }}
                         transition={{ type: 'spring', stiffness: 80, damping: 20 }}
-                        className="h-full rounded-full bg-gradient-to-r from-amber-300 to-amber-400"
+                        className="h-full rounded-full bg-gradient-to-r from-amber-400 to-amber-500"
                     />
                 </div>
-                <p className="mt-1 text-[10px] text-slate-300">
+                <p className="mt-1 text-[10px] text-slate-500">
                     🏅 {badgeCount} {badgeCount === 1 ? 'utmerkelse' : 'utmerkelser'}
                 </p>
             </div>
@@ -131,18 +131,18 @@ export const HeroCard = ({
     const justDone = (goalId: string): boolean => glowIds.includes(goalId);
 
     // Velkomstvariant: tre tydelige steg i stedet for streak og mål.
-    // Dyp, nøytral slate-bunn - fagbildene skal få eie fargene.
+    // Lyst glasskort - fagbildene får eie fargene.
     if (welcome) {
         return (
-            <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-900/25 overflow-hidden">
-                <div className="absolute -top-16 -right-16 w-56 h-56 bg-indigo-400/10 rounded-full blur-2xl" />
-                <div className="absolute -bottom-20 -left-10 w-48 h-48 bg-amber-300/10 rounded-full blur-2xl" />
+            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                <div className="absolute -top-16 -right-16 w-56 h-56 bg-indigo-200/40 rounded-full blur-2xl" />
+                <div className="absolute -bottom-20 -left-10 w-48 h-48 bg-amber-200/40 rounded-full blur-2xl" />
 
                 <div className="relative z-10">
-                    <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-1">
+                    <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-900 mb-1">
                         Velkommen{nickname ? `, ${nickname}` : ''}! 👋
                     </h2>
-                    <p className="text-sm text-slate-300 mb-5">
+                    <p className="text-sm text-slate-500 mb-5">
                         Slik kommer du i gang - tre enkle steg:
                     </p>
 
@@ -150,22 +150,22 @@ export const HeroCard = ({
                         {/* Steg 1: avatar og navn */}
                         <button
                             onClick={onEditProfile}
-                            className="group flex w-full items-center gap-3 rounded-2xl bg-white/10 px-4 py-3 text-left transition-colors hover:bg-white/20"
+                            className="group flex w-full items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-left transition-colors hover:bg-slate-100"
                         >
                             <span
                                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
                                     nickname
-                                        ? 'bg-emerald-400 text-white'
-                                        : 'bg-white text-indigo-600'
+                                        ? 'bg-emerald-500 text-white'
+                                        : 'bg-indigo-500 text-white'
                                 }`}
                             >
                                 {nickname ? <Check className="h-4 w-4" /> : '1'}
                             </span>
                             <span className="flex-1">
-                                <span className="block text-sm font-bold text-white">
+                                <span className="block text-sm font-bold text-slate-900">
                                     Velg navn og avatar
                                 </span>
-                                <span className="block text-xs text-slate-300">
+                                <span className="block text-xs text-slate-500">
                                     {nickname
                                         ? `Klart! Du er ${avatarEmoji} ${nickname}.`
                                         : 'Gjør profilen til din egen.'}
@@ -177,16 +177,16 @@ export const HeroCard = ({
                         </button>
 
                         {/* Steg 2: velg fag */}
-                        <div className="rounded-2xl bg-white/10 px-4 py-3">
+                        <div className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
                             <div className="mb-2.5 flex items-center gap-3">
-                                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-sm font-bold text-indigo-600">
+                                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-sm font-bold text-white">
                                     2
                                 </span>
                                 <span>
-                                    <span className="block text-sm font-bold text-white">
+                                    <span className="block text-sm font-bold text-slate-900">
                                         Velg et fag du vil starte med
                                     </span>
-                                    <span className="block text-xs text-slate-300">
+                                    <span className="block text-xs text-slate-500">
                                         Hvert kort tar deg rett til en fin første artikkel.
                                     </span>
                                 </span>
@@ -214,15 +214,15 @@ export const HeroCard = ({
                         </div>
 
                         {/* Steg 3: første artikkel */}
-                        <div className="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3">
-                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/30 text-sm font-bold text-white">
+                        <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
+                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-500 text-sm font-bold text-white">
                                 3
                             </span>
                             <span>
-                                <span className="block text-sm font-bold text-white">
+                                <span className="block text-sm font-bold text-slate-900">
                                     Fullfør din første artikkel
                                 </span>
-                                <span className="block text-xs text-slate-300">
+                                <span className="block text-xs text-slate-500">
                                     Da tenner du streaken 🔥 og tjener dine første XP!
                                 </span>
                             </span>
@@ -234,20 +234,20 @@ export const HeroCard = ({
     }
 
     return (
-        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-900/25 overflow-hidden">
-            {/* Bakteppe: en uskarp, dempet utgave av artikkelbildet - da
-                harmonerer heroen alltid med bildet i CTA-en. Uten bilde står
-                slate-gradienten alene. */}
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+            {/* Bakteppe: et svakt, lyst slør av artikkelbildet - gir et hint av
+                emnets farge uten å bli mørkt. Uten bilde står det rene glasskortet
+                alene. */}
             {primaryAction?.image && (
                 <img
                     src={primaryAction.image}
                     alt=""
                     aria-hidden
-                    className="absolute inset-0 h-full w-full scale-125 object-cover opacity-45 blur-2xl"
+                    className="absolute inset-0 h-full w-full scale-125 object-cover opacity-25 blur-2xl"
                 />
             )}
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/65 to-slate-900/50" />
-            <div className="absolute -top-16 -right-16 w-56 h-56 bg-white/5 rounded-full blur-2xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/72 to-white/60" />
+            <div className="absolute -top-16 -right-16 w-56 h-56 bg-indigo-200/40 rounded-full blur-2xl" />
 
             <div className="relative z-10 flex flex-col md:flex-row gap-6 md:items-start">
                 {/* Streak */}
@@ -261,10 +261,10 @@ export const HeroCard = ({
                         🔥
                     </motion.div>
                     <div className="text-center">
-                        <p className="text-4xl font-display font-bold text-white leading-none tabular-nums">
+                        <p className="text-4xl font-display font-bold text-slate-900 leading-none tabular-nums">
                             {countedStreak}
                         </p>
-                        <p className="text-xs text-slate-300 mt-1">
+                        <p className="text-xs text-slate-500 mt-1">
                             {shownStreak === 1 ? 'dag på rad' : 'dager på rad'}
                         </p>
                         {bestStreak > shownStreak && (
@@ -274,13 +274,13 @@ export const HeroCard = ({
                         )}
                         <div className="flex items-center justify-center gap-1.5 mt-1.5">
                             {showMultiplier && (
-                                <span className="inline-flex items-center rounded-full bg-amber-300/90 px-2 py-0.5 text-[11px] font-bold text-amber-900">
+                                <span className="inline-flex items-center rounded-full bg-amber-400 px-2 py-0.5 text-[11px] font-bold text-amber-950">
                                     ×{multiplier.toFixed(2).replace(/\.?0+$/, '')} XP
                                 </span>
                             )}
                             {freezes > 0 && (
                                 <span
-                                    className="inline-flex items-center gap-0.5 rounded-full bg-sky-300/90 px-2 py-0.5 text-[11px] font-bold text-sky-900"
+                                    className="inline-flex items-center gap-0.5 rounded-full bg-sky-400 px-2 py-0.5 text-[11px] font-bold text-sky-950"
                                     title="Fryser dekker en dag du er borte, så streaken ikke ryker"
                                 >
                                     <Snowflake className="w-3 h-3" />
@@ -299,14 +299,14 @@ export const HeroCard = ({
                             className="group flex items-center gap-2 text-left"
                             aria-label="Rediger profil"
                         >
-                            <span className="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                            <span className="w-11 h-11 rounded-2xl bg-slate-100 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                                 {avatarEmoji}
                             </span>
                             <span>
-                                <span className="block text-xl md:text-2xl font-display font-bold text-white">
+                                <span className="block text-xl md:text-2xl font-display font-bold text-slate-900">
                                     Hei{nickname ? `, ${nickname}` : ''}!
                                 </span>
-                                <span className="flex items-center gap-1 text-[11px] text-slate-300 group-hover:text-white transition-colors">
+                                <span className="flex items-center gap-1 text-[11px] text-slate-500 group-hover:text-slate-900 transition-colors">
                                     <Pencil className="w-3 h-3" />
                                     {nickname ? 'Endre navn og avatar' : 'Velg navn og avatar'}
                                 </span>
@@ -350,7 +350,7 @@ export const HeroCard = ({
                     {primaryAction && !primaryAction.image && (
                         <Link
                             to={primaryAction.link}
-                            className="group mb-4 flex items-center gap-4 rounded-2xl bg-white px-4 py-3.5 no-underline shadow-lg shadow-indigo-900/10 transition-transform hover:-translate-y-0.5"
+                            className="group mb-4 flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 no-underline transition-transform hover:-translate-y-0.5 hover:bg-slate-100"
                         >
                             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white">
                                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
@@ -371,7 +371,7 @@ export const HeroCard = ({
 
                     {/* Streak i fare: vennlig dytt, ikke alarm. */}
                     {streakAtRisk && (
-                        <div className="mb-3 flex items-center gap-2 rounded-xl bg-amber-400/20 px-3 py-2 text-xs font-medium text-amber-100">
+                        <div className="mb-3 flex items-center gap-2 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-800">
                             <span className="text-base">🔥</span>
                             <span>
                                 Hold streaken på {streak} {streak === 1 ? 'dag' : 'dager'} i live -
@@ -382,7 +382,7 @@ export const HeroCard = ({
                         </div>
                     )}
 
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
                         Dagens mål
                     </p>
                     <div className="space-y-2">
@@ -394,9 +394,11 @@ export const HeroCard = ({
                                 <Link
                                     key={goal.id}
                                     to={goal.link}
-                                    className={`flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all no-underline group ${
-                                        done ? 'bg-white/25' : 'bg-white/10 hover:bg-white/20'
-                                    } ${isBonus && !done ? 'ring-2 ring-amber-300/70 bg-amber-400/15' : ''} ${
+                                    className={`flex items-center gap-3 rounded-xl border px-3 py-2.5 transition-all no-underline group ${
+                                        done
+                                            ? 'border-emerald-200 bg-emerald-50'
+                                            : 'border-slate-200 bg-slate-50 hover:bg-slate-100'
+                                    } ${isBonus && !done ? 'ring-2 ring-amber-300 border-amber-200 bg-amber-50' : ''} ${
                                         justDone(goal.id) ? 'animate-goal-glow' : ''
                                     }`}
                                 >
@@ -404,7 +406,7 @@ export const HeroCard = ({
                                         className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 border-2 ${
                                             done
                                                 ? 'bg-emerald-400 border-emerald-300'
-                                                : 'border-white/40'
+                                                : 'border-slate-300'
                                         }`}
                                     >
                                         {done && (
@@ -426,19 +428,19 @@ export const HeroCard = ({
                                     </span>
                                     <span
                                         className={`flex-1 text-sm font-medium ${
-                                            done ? 'text-white/80 line-through' : 'text-white'
+                                            done ? 'text-slate-400 line-through' : 'text-slate-800'
                                         }`}
                                     >
                                         {goal.label}
                                     </span>
                                     {isBonus && !done && (
-                                        <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-amber-300/90 px-2 py-0.5 text-[10px] font-bold text-amber-900">
+                                        <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-amber-400 px-2 py-0.5 text-[10px] font-bold text-amber-950">
                                             <Sparkles className="h-3 w-3" />
                                             Bonus-XP
                                         </span>
                                     )}
                                     {showCount && !done && (
-                                        <span className="text-xs font-bold text-slate-300 tabular-nums">
+                                        <span className="text-xs font-bold text-slate-500 tabular-nums">
                                             {progress}/{goal.target}
                                         </span>
                                     )}
@@ -449,7 +451,7 @@ export const HeroCard = ({
                             );
                         })}
                         {goals.length === 0 && (
-                            <p className="text-sm text-slate-300">
+                            <p className="text-sm text-slate-500">
                                 Ingen mål i dag - utforsk fagene og kom tilbake!
                             </p>
                         )}
