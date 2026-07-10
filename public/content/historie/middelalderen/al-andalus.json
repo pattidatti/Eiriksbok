@@ -5,7 +5,7 @@
     "year": "711-1492",
     "category": "Middelalderen",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/middelalderen/al-andalus-hero.webp",
     "details": [
         "I 711 erobret muslimske hærer nesten hele Den iberiske halvøya på bare noen år.",
         "I byer som Córdoba levde muslimer, jøder og kristne side om side, og byen ble et av Europas største lærdomssentre.",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/middelalderen/al-andalus-01.webp",
             "alt": "Bueganger i den store moskeen i Córdoba med røde og hvite steinbuer",
             "caption": "Den store moskeen i Córdoba. De stripete buene er blitt et symbol på Al-Andalus."
         },
@@ -77,7 +77,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/middelalderen/al-andalus-02.webp",
             "alt": "Oversettere som arbeider med bøker og pergament rundt et bord i middelalderen",
             "caption": "Oversetterne i Toledo gjorde arabiske og greske bøker om til latin. Slik nådde kunnskapen resten av Europa."
         },
@@ -130,7 +130,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/middelalderen/al-andalus-03.webp",
             "alt": "Alhambra-palasset i Granada sett fra utsiden med fjell i bakgrunnen",
             "caption": "Alhambra i Granada står fortsatt som et minne om det muslimske Spania."
         },
