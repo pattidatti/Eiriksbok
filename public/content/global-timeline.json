@@ -1590,6 +1590,30 @@
       ]
     },
     {
+      "id": "al-andalus",
+      "title": "Al-Andalus: da Spania var muslimsk",
+      "description": "I nesten 800 år var store deler av Spania muslimsk, og byer som Córdoba ble bro mellom antikkens kunnskap og Europa.",
+      "startDate": 711,
+      "endDate": 1492,
+      "displayDate": "711-1492",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "middelalderen",
+      "link": "/historie/middelalderen/al-andalus",
+      "tags": [
+        "historie",
+        "middelalderen",
+        "al-andalus",
+        "islam",
+        "spania"
+      ],
+      "lat": 40,
+      "lng": -3.7,
+      "placeLabel": "Spania",
+      "placeCountryId": 724,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "battle-of-tours",
       "title": "Slaget ved Tours",
       "description": "Karl Martell stanser den islamske ekspansjonen inn i Frankrike, et avgjørende øyeblikk for Europas fremtid.",

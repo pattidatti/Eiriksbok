@@ -121,8 +121,18 @@ const HimmelensMandat3D = lazy(() => import('./HimmelensMandat3D'));
 const VendMotMekka3D = lazy(() => import('./VendMotMekka3D'));
 const Paaskeoya3D = lazy(() => import('./Paaskeoya3D'));
 const MayaKollaps3D = lazy(() => import('./MayaKollaps3D'));
+const Reconquista3D = lazy(() => import('./Reconquista3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'reconquista-3d': {
+        id: 'reconquista-3d',
+        title: 'Reconquista: gjenerobringen av Spania',
+        description:
+            'Den iberiske halvøya bygd av små ruter. Dra års-spaken fra 711 til 1492 og se en glødende frontlinje krype sørover: land nord for linja blir kristent (gull), land sør for den er muslimsk Al-Andalus (grønt). De fire store byene faller etter tur - Toledo 1085, Córdoba 1236, Sevilla 1248 og til slutt Granada 1492, samme år som Columbus seilte mot Amerika. Lyspæren kommer i hendene: Reconquista tok nesten 800 år og skjedde steg for steg sørover, ikke på én gang.',
+        estimatedSeconds: 150,
+        loader: () => import('./Reconquista3D'),
+        Component: Reconquista3D as never,
+    },
     'delaware-1776-3d': {
         id: 'delaware-1776-3d',
         title: 'Kryss Delaware-elven',
