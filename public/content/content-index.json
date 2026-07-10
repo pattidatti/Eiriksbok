@@ -1,5 +1,5 @@
 {
-  "buildId": 1783618619995,
+  "buildId": 1783646855698,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1587,6 +1587,9 @@
     ],
     "menneskets-tidlige-historie": [
       "content/historie/menneskets-tidlige-historie/menneskets-tidlige-historie.json"
+    ],
+    "al-andalus": [
+      "content/historie/middelalderen/al-andalus.json"
     ],
     "boktrykkerkunsten": [
       "content/historie/middelalderen/boktrykkerkunsten.json",
@@ -4070,6 +4073,7 @@
     "historie/menneskets-tidlige-historie/den-kognitive-revolusjonen": "content/historie/menneskets-tidlige-historie/den-kognitive-revolusjonen.json",
     "historie/menneskets-tidlige-historie/gobekli-tepe": "content/historie/menneskets-tidlige-historie/gobekli-tepe.json",
     "historie/menneskets-tidlige-historie/menneskets-tidlige-historie": "content/historie/menneskets-tidlige-historie/menneskets-tidlige-historie.json",
+    "historie/middelalderen/al-andalus": "content/historie/middelalderen/al-andalus.json",
     "historie/middelalderen/boktrykkerkunsten": "content/historie/middelalderen/boktrykkerkunsten.json",
     "historie/middelalderen/bysantinske-riket": "content/historie/middelalderen/bysantinske-riket.json",
     "historie/middelalderen/det-hellige-romerske-rike": "content/historie/middelalderen/det-hellige-romerske-rike.json",

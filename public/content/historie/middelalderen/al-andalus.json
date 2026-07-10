@@ -1,0 +1,220 @@
+{
+    "id": "al-andalus",
+    "title": "Al-Andalus: da Spania var muslimsk",
+    "layout": "rich",
+    "year": "711-1492",
+    "category": "Middelalderen",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "I 711 erobret muslimske hærer nesten hele Den iberiske halvøya på bare noen år.",
+        "I byer som Córdoba levde muslimer, jøder og kristne side om side, og byen ble et av Europas største lærdomssentre.",
+        "Den kristne gjenerobringen, Reconquista, tok nesten 800 år og endte da Granada falt i 1492."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk deg at du står på en travel gate i byen Córdoba i år 1000. Rundt deg er det gatelys om kvelden, rennende vann i husene og et bibliotek med hundretusener av bøker. Samtidig er de fleste byene lenger nord i Europa små, mørke og fattige. Dette er Al-Andalus, det muslimske Spania, og i flere hundre år var det et av de rikeste og mest lærde stedene i hele Europa."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Bueganger i den store moskeen i Córdoba med røde og hvite steinbuer",
+            "caption": "Den store moskeen i Córdoba. De stripete buene er blitt et symbol på Al-Andalus."
+        },
+        {
+            "type": "header",
+            "text": "Hvordan begynte det?"
+        },
+        {
+            "type": "text",
+            "content": "På 600-tallet vokste en ny religion fram på Den arabiske halvøya: islam. Du kan lese mer om starten i artikkelen om [islams fødsel](/historie/midtoesten/islams-fodsel). På under hundre år bredte muslimske hærer seg over et enormt område, fra Midtøsten og hele veien vestover langs Nord-Afrika."
+        },
+        {
+            "type": "text",
+            "content": "I år 711 satte en muslimsk hær over det smale sundet mellom Afrika og Europa. Der ligger fjellet vi i dag kaller Gibraltar. Hæren møtte et svakt kristent kongerike, og på bare noen få år tok den kontroll over nesten hele Den iberiske halvøya, altså dagens Spania og Portugal. Bare en tynn stripe med land helt i nord holdt seg kristen. Det nye muslimske området fikk navnet al-Andalus."
+        },
+        {
+            "type": "header",
+            "text": "En by som lyste i mørket"
+        },
+        {
+            "type": "text",
+            "content": "Hovedstaden Córdoba vokste til å bli en av de største byene i verden. Mens mange europeiske byer hadde noen tusen innbyggere, hadde Córdoba kanskje flere hundre tusen. Byen hadde offentlige bad, apotek, sykehus og et bibliotek som skal ha hatt rundt 400 000 bøker. På denne tiden hadde de fleste klostrene i resten av Europa noen få hundre bøker hver. Gatene var brolagt, og om natten lyste lamper opp de viktigste veiene. Bønder fikk nye planter og bedre måter å vanne åkrene på, så det vokste appelsiner, ris og sukkerrør på steder der slikt aldri hadde vokst før."
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor kunne akkurat Al-Andalus bli så avansert? Svaret henger sammen med resten av den muslimske verden. Dette var midt i det vi kaller [den islamske gullalderen](/historie/midtoesten/islamsk-gullaldet), en tid da forskere samlet, oversatte og bygde videre på kunnskap fra grekerne, perserne og inderne. Al-Andalus lå lengst vest i denne verdenen, og alt det nye rant hele veien hit."
+        },
+        {
+            "type": "header",
+            "text": "Tre religioner i samme by"
+        },
+        {
+            "type": "text",
+            "content": "Det som gjør Al-Andalus spesielt, er at muslimer, jøder og kristne levde side om side i de samme byene. De hadde ikke helt like rettigheter. Muslimer stod øverst, og jøder og kristne måtte betale en egen skatt. Men de fikk beholde sin egen tro, sine egne lover og sine egne gudshus. For jødene ble Al-Andalus en gullalder. Mange av de viktigste jødiske tenkerne i middelalderen levde nettopp her."
+        },
+        {
+            "type": "text",
+            "content": "Denne sameksistensen var ikke alltid fredelig, og den varte ikke evig. Men i de beste periodene satt lærde fra alle tre religioner sammen og oversatte bøker. En kristen konge lenger nord fikk til og med tilnavnet \"kongen av de tre religionene\", fordi han inviterte både muslimske og jødiske lærde til hoffet sitt. Det er dette samarbeidet som gjorde Al-Andalus til en bro mellom to verdener."
+        },
+        {
+            "type": "component",
+            "name": "KunnskapsbroAndalus",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Broen som reddet antikkens kunnskap"
+        },
+        {
+            "type": "text",
+            "content": "I den greske og romerske oldtiden hadde forskere skrevet ned mye kunnskap om filosofi, medisin, stjerner og matematikk. Da Romerriket falt fra hverandre, ble mange av disse bøkene glemt i Vest-Europa. Ingen leste dem lenger, og noen forsvant helt."
+        },
+        {
+            "type": "text",
+            "content": "Men i den muslimske verden ble de tatt vare på og oversatt til arabisk. I byer som Toledo og Córdoba satt oversettere og gjorde bøkene om, først til arabisk og senere til latin, språket de lærde i Europa kunne lese. Slik fikk Europa tilbake gamle greske tenkere som Aristoteles, og på kjøpet fikk de helt ny kunnskap: tallene 0 til 9 og ideen om null, faget algebra og avanserte legebøker."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Oversettere som arbeider med bøker og pergament rundt et bord i middelalderen",
+            "caption": "Oversetterne i Toledo gjorde arabiske og greske bøker om til latin. Slik nådde kunnskapen resten av Europa."
+        },
+        {
+            "type": "text",
+            "content": "Denne kunnskapen ble en viktig del av grunnlaget for de første universitetene i Europa, og senere for [renessansen](/historie/renessansen/oversikt), den store blomstringen av kunst og vitenskap noen hundre år etter. Uten broen gjennom Al-Andalus hadde mye av dette aldri nådd fram."
+        },
+        {
+            "type": "header",
+            "text": "Reconquista: gjenerobringen"
+        },
+        {
+            "type": "text",
+            "content": "Helt fra begynnelsen fantes det små kristne kongeriker i nord som ikke ble erobret. Sakte, men sikkert begynte de å ta tilbake land sørover. Denne lange kampen kalles Reconquista, som betyr gjenerobringen. Det var ikke én krig, men en rekke kriger og fredsperioder som til sammen varte i nesten 800 år."
+        },
+        {
+            "type": "text",
+            "content": "Grensa mellom kristne og muslimske områder flyttet seg langsomt sørover. Én etter én falt de store byene til de kristne kongene. Toledo falt i 1085, Córdoba i 1236 og Sevilla i 1248. Kampene fikk etter hvert et religiøst preg, litt på samme måte som [korstogene](/historie/middelalderen/korstogene) i Midtøsten på samme tid."
+        },
+        {
+            "type": "text",
+            "content": "Bruk kartet under til å kjenne på hvor langsomt dette gikk. Dra spaken og se frontlinja krype sørover, år for år."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "reconquista-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "1492: et vendepunkt"
+        },
+        {
+            "type": "text",
+            "content": "Til slutt var det bare ett muslimsk rike igjen, kongedømmet Granada helt sør på halvøya. I 1492 overga Granada seg til de kristne kongene Ferdinand og Isabella. Da var Reconquista fullført, og det muslimske Spania var borte etter nesten 800 år."
+        },
+        {
+            "type": "text",
+            "content": "Året 1492 er et av de viktigste vendepunktene i historien. Samme år som Granada falt, sendte de samme kongene sjøfareren Christofer Columbus vestover over Atlanterhavet. Det ble starten på at europeerne [erobret store deler av verden](/historie/kolonialisering/europa-erobrer-verden). Men 1492 hadde også en mørk side: de kristne kongene tvang jøder og muslimer til å velge mellom å bli kristne eller å reise fra landet. Den lange tiden med tre religioner side om side var over."
+        },
+        {
+            "type": "header",
+            "text": "Hva sitter vi igjen med?"
+        },
+        {
+            "type": "text",
+            "content": "Al-Andalus viser oss to viktige ting. Det ene er at kulturer som møtes kan skape noe helt nytt. Da muslimsk, jødisk og kristen kunnskap ble blandet, fikk vi biblioteker, oversettelser og oppfinnelser som forandret Europa. Det andre er at grenser og makt kan forandre seg fullstendig over tid. Et område som var muslimsk i nesten 800 år, er i dag kjent som det katolske Spania. Fortsatt kan du se sporene: i palasset Alhambra i Granada, i moskeen i Córdoba, og i alle de spanske ordene som stammer fra arabisk."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Alhambra-palasset i Granada sett fra utsiden med fjell i bakgrunnen",
+            "caption": "Alhambra i Granada står fortsatt som et minne om det muslimske Spania."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde i år 711 på Den iberiske halvøya, og hvor kom hæren fra?",
+                    "Hvorfor var byen Córdoba spesiell sammenlignet med andre byer i Europa på 900- og 1000-tallet?",
+                    "Hvilke tre religioner levde side om side i Al-Andalus, og hvem hadde flest rettigheter?",
+                    "Hva betyr ordet Reconquista, og hvor lang tid tok den?"
+                ],
+                "reflekter": [
+                    "Teksten kaller Al-Andalus en bro mellom to verdener. Forklar med egne ord hva det menes med det.",
+                    "Mye gammel gresk kunnskap ble borte i Vest-Europa, men tatt vare på i den muslimske verden. Hvorfor kan det være farlig for et samfunn å miste bøker og kunnskap?",
+                    "Året 1492 hadde både en lys og en mørk side. Forklar begge sidene ut fra teksten.",
+                    "Reconquista tok nesten 800 år og skjedde steg for steg. Hvorfor tror du det tok så lang tid å ta tilbake halvøya, i stedet for at alt skjedde raskt?"
+                ],
+                "gaaVidere": [
+                    "Finn tre spanske eller norske ord som stammer fra arabisk (for eksempel algebra, sofa eller sukker). Skriv en kort forklaring på hvor ordet kommer fra.",
+                    "Se for deg at du er en ung person i Córdoba i år 1000. Skriv en kort dagbokstekst om en helt vanlig dag i byen.",
+                    "Diskuter i klassen: Hva skal til for at mennesker med ulik tro og bakgrunn skal klare å leve godt sammen i samme by i dag?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr navnet Al-Andalus?",
+                        "options": [
+                            "Det muslimske området på Den iberiske halvøya",
+                            "En by i Nord-Afrika",
+                            "Et gammelt gresk kongerike",
+                            "Navnet på en spansk konge"
+                        ],
+                        "answer": "Det muslimske området på Den iberiske halvøya"
+                    },
+                    {
+                        "question": "Hvorfor var Al-Andalus viktig for kunnskapen i Europa?",
+                        "options": [
+                            "De fant opp trykkpressen der",
+                            "De tok vare på og oversatte gammel gresk kunnskap som Europa hadde mistet",
+                            "De bygde de første skolene i verden",
+                            "De oppfant skriften"
+                        ],
+                        "answer": "De tok vare på og oversatte gammel gresk kunnskap som Europa hadde mistet"
+                    },
+                    {
+                        "question": "Hva var Reconquista?",
+                        "options": [
+                            "En stor handelsrute over Sahara",
+                            "En religion som oppstod i Spania",
+                            "Den kristne gjenerobringen av Den iberiske halvøya",
+                            "En muslimsk høytid"
+                        ],
+                        "answer": "Den kristne gjenerobringen av Den iberiske halvøya"
+                    },
+                    {
+                        "question": "Hvilken by var det siste muslimske riket som falt, og i hvilket år?",
+                        "options": [
+                            "Toledo i 1085",
+                            "Córdoba i 1236",
+                            "Sevilla i 1248",
+                            "Granada i 1492"
+                        ],
+                        "answer": "Granada i 1492"
+                    },
+                    {
+                        "question": "Hvorfor er året 1492 et viktig vendepunkt?",
+                        "options": [
+                            "Granada falt, og samme år seilte Columbus mot Amerika",
+                            "Den islamske gullalderen begynte",
+                            "Romerriket falt sammen",
+                            "Den første moskeen i Córdoba ble bygd"
+                        ],
+                        "answer": "Granada falt, og samme år seilte Columbus mot Amerika"
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

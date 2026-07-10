@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 281
+      "count": 282
     },
     {
       "tag": "dekolonisering",
@@ -859,12 +859,12 @@
       "count": 24
     },
     {
-      "tag": "musikk",
+      "tag": "middelalderen",
       "count": 24
     },
     {
-      "tag": "middelalderen",
-      "count": 23
+      "tag": "musikk",
+      "count": 24
     },
     {
       "tag": "vikingtiden",
@@ -911,15 +911,15 @@
       "count": 18
     },
     {
+      "tag": "islam",
+      "count": 17
+    },
+    {
       "tag": "kristendom",
       "count": 17
     },
     {
       "tag": "sivilisasjon",
-      "count": 16
-    },
-    {
-      "tag": "islam",
       "count": 16
     },
     {
@@ -3236,6 +3236,10 @@
     },
     {
       "tag": "slavehandel",
+      "count": 1
+    },
+    {
+      "tag": "al-andalus",
       "count": 1
     },
     {
