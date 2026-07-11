@@ -1,5 +1,5 @@
 {
-  "buildId": 1783661537722,
+  "buildId": 1783733719170,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1955,6 +1955,9 @@
     ],
     "dygdsetikk": [
       "content/krle/etikk/dygdsetikk.json"
+    ],
+    "dyreetikk": [
+      "content/krle/etikk/dyreetikk.json"
     ],
     "etikk-intro": [
       "content/krle/etikk/intro.json"
@@ -4195,6 +4198,7 @@
     "kompetansemal/norsk-10-trinn.json/norsk-10-trinn": "content/kompetansemal/norsk-10-trinn.json",
     "kompetansemal/samfunnsfag-10-trinn.json/samfunnsfag-10-trinn": "content/kompetansemal/samfunnsfag-10-trinn.json",
     "krle/etikk/dygdsetikk": "content/krle/etikk/dygdsetikk.json",
+    "krle/etikk/dyreetikk": "content/krle/etikk/dyreetikk.json",
     "krle/etikk/intro": "content/krle/etikk/intro.json",
     "krle/etikk/naturrett": "content/krle/etikk/naturrett.json",
     "krle/etikk/nihilisme": "content/krle/etikk/nihilisme.json",

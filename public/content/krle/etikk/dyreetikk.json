@@ -1,0 +1,216 @@
+{
+    "id": "dyreetikk",
+    "title": "Dyreetikk: Har dyr rettigheter?",
+    "subject": "krle",
+    "topic": "etikk",
+    "layout": "rich",
+    "year": "1789",
+    "category": "Anvendt etikk",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Dyreetikk spør hva vi skylder dyr, og hvorfor.",
+        "Det viktigste spørsmålet er ikke om dyr er smarte, men om de kan lide.",
+        "Nytteetikk, rettighetsetikk og dygdsetikk svarer ulikt på de samme dilemmaene."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Om morgenen klapper du hunden og gir den frokost. Blir den syk, tar familien den til dyrlegen og betaler mye for å gjøre den frisk. Samme kveld spiser du kanskje kjøttdeig av gris. Grisen er minst like smart som hunden, og den kjenner smerte like godt. Likevel behandler vi de to dyrene helt ulikt. Hvorfor det? Dette er akkurat den typen spørsmål dyreetikken stiller. Etikk betyr læren om rett og galt. Dyreetikk er den delen som handler om hvordan vi bør behandle dyr, og hvorfor."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Hund og gris side om side på lys bakgrunn",
+            "caption": "Vi kjæler med hunden, men spiser grisen. Dyreetikk spør hvorfor vi skiller."
+        },
+        {
+            "type": "header",
+            "text": "Kan dyr føle noe?"
+        },
+        {
+            "type": "text",
+            "content": "For å svare på hva vi skylder dyr, må vi først vite hva dyr faktisk kan kjenne. Et dyr med hjerne og nervesystem kan føle smerte, frykt og velvære. Forskere kaller dette å være et sansende vesen. En hund som får poten i klem, piper og trekker seg unna, akkurat som du ville gjort. En gris i et trangt bur viser tydelige tegn på stress. Til og med fisk reagerer på smerte, viser nyere forskning, selv om mange lenge trodde noe annet."
+        },
+        {
+            "type": "text",
+            "content": "Men ikke alt levende kan føle. En plante vokser og lever, men den har ikke nervesystem og kan ikke kjenne smerte. En stein er helt livløs. Denne forskjellen er viktig i dyreetikken: det er evnen til å føle som gjør at et vesen har noe å tape eller vinne. Uten følelse finnes det verken lidelse å spare eller glede å gi."
+        },
+        {
+            "type": "text",
+            "content": "Grensa er ikke alltid lett å trekke. Pattedyr som ku, hest og gris ligner oss mye, og få tviler på at de kjenner smerte. Fugler og fisk er vi litt mindre sikre på, men forskningen peker mot at også de føler. Insekter har bare et enkelt nervesystem, og her strides forskerne. Det som er sikkert, er at vi mennesker bruker enormt mange dyr. Bare i Norge slaktes det rundt 80 millioner kyllinger i året. Når så mange dyr er i vår makt, blir spørsmålet om hva vi skylder dem stort og alvorlig."
+        },
+        {
+            "type": "header",
+            "text": "Bentham og det avgjørende spørsmålet"
+        },
+        {
+            "type": "text",
+            "content": "Den engelske filosofen Jeremy Bentham skrev allerede i 1789 en setning som fortsatt former hele feltet. Han pekte på at folk pleide å utelukke dyr fra moralen fordi dyr ikke kan snakke eller tenke like godt som mennesker. Men er det egentlig det som betyr noe? Bentham snudde spørsmålet: det viktige er ikke om dyr kan tenke, men om de kan lide. Denne tankegangen henger tett sammen med [utilitarismen](/krle/etikk/utilitarisme), som sier at vi bør gjøre det som gir minst lidelse og mest velvære, uansett hvem som føler den."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Spørsmålet er ikke: Kan de tenke? Heller ikke: Kan de snakke? Men: Kan de lide?",
+                "author": "Jeremy Bentham, 1789"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Tre måter å tenke på dyr"
+        },
+        {
+            "type": "text",
+            "content": "Når vi skal avgjøre et konkret dyre-spørsmål, henter etikken fram tre ulike tankeretninger. Nytteetikken veier lidelse mot nytte og spør: gir handlingen mer godt enn vondt til sammen? Rettighetsetikken, som bygger på [pliktetikken](/krle/etikk/pliktetikk), spør noe helt annet: har dyret en egenverdi som gjør at vi ikke kan bruke det som et redskap, uansett hvor stor nytten er? Og [dygdsetikken](/krle/etikk/dygdsetikk) flytter blikket fra handlingen til mennesket og spør: hva ville et medfølende og klokt menneske gjort her? De tre brillene ser på det samme dilemmaet, men legger merke til ulike ting. Prøv selv: velg et dilemma under og se hvor mye svarene spriker."
+        },
+        {
+            "type": "component",
+            "name": "DyreetikkBrillene",
+            "props": {
+                "title": "De tre etiske brillene"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tre briller som ser på samme dyr fra ulike sider",
+            "caption": "Samme spørsmål, tre etiske briller, tre ulike svar."
+        },
+        {
+            "type": "header",
+            "text": "Den moralske sirkelen som vokser"
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg en sirkel rundt alle du mener det er galt å skade uten grunn. Vi kan kalle den den moralske sirkelen. Gjennom historien har denne sirkelen blitt større og større. Før tenkte mange bare på sin egen slekt eller sitt eget folk. Senere kom tanken om at alle mennesker teller likt, uansett hudfarge eller kjønn. Mange mener sirkelen fortsatt vokser, og at den nå også bør romme dyr som kan lide."
+        },
+        {
+            "type": "text",
+            "content": "Filosofen Peter Singer kaller det for artssjåvinisme når vi setter vår egen art foran alle andre uten god grunn. Han mener det ligner måten folk før forsvarte urett mot andre grupper på. Poenget hans er ikke at en gris er like mye verdt som et menneske, men at grisens lidelse teller, den også. Andre tenkere bygger heller på [naturretten](/krle/etikk/naturrett) og sier at dyr har en egenverdi i seg selv, ikke bare fordi de er nyttige for oss."
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som avgjør hvem som slipper inn i sirkelen. Det er ikke hvor smart et vesen er, og heller ikke om det kan snakke. Da ville et lite barn eller en person med sterk demens også falt utenfor, og det mener nesten ingen. Det som teller, er om vesenet kan lide. Derfor kommer dyr med, mens planter og stein blir stående utenfor. Uansett hvilken vei du velger, ender du på det samme spørsmålet: hvor går grensa for sirkelen din? Utforsk den i modellen under."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "moralske-sirkelen-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hva sier loven i Norge?"
+        },
+        {
+            "type": "text",
+            "content": "Dyreetikk er ikke bare noe filosofer tenker på. Den står også i norsk lov. Dyrevelferdsloven fra 2009 slår fast at dyr har en egenverdi, og at de skal behandles godt og skånes for unødige påkjenninger. Loven forbyr å pine dyr, og den setter regler for hvordan husdyr skal ha det. Norge var også tidlig ute med å forby pels-oppdrett, nettopp fordi mange mente lidelsen var for stor i forhold til nytten. Samtidig er mye fortsatt tillatt: vi spiser kjøtt, driver med fiske og bruker dyr i noen forsøk. Loven er et kompromiss mellom hensynet til dyra og det menneskene ønsker."
+        },
+        {
+            "type": "header",
+            "text": "Hvor går grensa for deg?"
+        },
+        {
+            "type": "text",
+            "content": "Dyreetikk gir sjelden ett fasitsvar. Det finnes gode grunner på flere sider, og mye avhenger av hvilken etisk brille du ser gjennom og hvor du trekker grensa i den moralske sirkelen. Men noen ting er de fleste enige om i dag: dyr som kan lide, fortjener at vi tar hensyn til den lidelsen. Det betyr ikke at du må slutte å spise kjøtt eller ha kjæledyr. Det betyr at valgene fortjener en tanke. Neste gang du klapper hunden og samtidig tenker på hva som ligger på middagstallerkenen, har du allerede begynt å tenke som en dyreetiker."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom som klapper en ku på en gård",
+            "caption": "Å ta hensyn til dyr som kan lide, er kjernen i dyreetikken."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Dyrevelferdsloven (2009)",
+                "content": "Den norske dyrevelferdsloven sier rett ut at dyr har egenverdi. Det betyr at de er verdifulle i seg selv, ikke bare fordi vi kan bruke dem. Loven krever at dyr skal beskyttes mot fare for unødige påkjenninger og belastninger, og at de som holder dyr, har ansvar for at dyra har det godt. Å plage eller mishandle et dyr er straffbart."
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det at et dyr er et sansende vesen?",
+                    "Hvilket spørsmål mente Jeremy Bentham var det avgjørende når vi skal avgjøre hvem som teller moralsk?",
+                    "Hva sier dyrevelferdsloven fra 2009 om egenverdien til dyr?",
+                    "Hva mener Peter Singer med ordet artssjåvinisme?"
+                ],
+                "reflekter": [
+                    "Teksten sier at vi behandler hund og gris helt ulikt, selv om grisen er minst like smart. Forklar hvorfor du tror vi gjør denne forskjellen.",
+                    "Velg dilemmaet om dyreforsøk. Forklar hvordan [nytteetikk](/krle/etikk/utilitarisme) og [rettighetsetikk](/krle/etikk/pliktetikk) kan komme fram til ulike svar på det.",
+                    "Hvorfor faller en plante og en stein utenfor den moralske sirkelen, mens en fisk kommer innenfor?",
+                    "Norge forbød pels-oppdrett. Forklar hvordan et menneske med [dygdsetikk](/krle/etikk/dygdsetikk) som utgangspunkt kan begrunne det forbudet."
+                ],
+                "gaaVidere": [
+                    "Diskuter i klassen: bør det være lov å holde ville dyr i dyrehage? Bruk minst to av de tre etiske brillene i svaret.",
+                    "Skriv en kort tekst der du forklarer hvor du selv trekker grensa i din egen moralske sirkel, og hvorfor.",
+                    "Undersøk hva dyrene på en vanlig norsk gård har krav på etter dyrevelferdsloven, og vurder om reglene er strenge nok."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva mente Jeremy Bentham var det avgjørende spørsmålet i dyreetikken?",
+                        "options": [
+                            "Kan dyret tenke?",
+                            "Kan dyret snakke?",
+                            "Kan dyret lide?",
+                            "Er dyret nyttig for oss?"
+                        ],
+                        "answer": "Kan dyret lide?"
+                    },
+                    {
+                        "question": "Hva er et sansende vesen?",
+                        "options": [
+                            "Et vesen som kan føle smerte, frykt og velvære",
+                            "Et vesen som lever og vokser",
+                            "Et vesen som er nyttig for mennesker",
+                            "Et vesen som kan snakke"
+                        ],
+                        "answer": "Et vesen som kan føle smerte, frykt og velvære"
+                    },
+                    {
+                        "question": "Hva spør rettighetsetikken om når vi skal vurdere et dyre-dilemma?",
+                        "options": [
+                            "Om handlingen gir mest mulig nytte til sammen",
+                            "Om dyret har en egenverdi som gjør at vi ikke kan bruke det bare som et redskap",
+                            "Om et klokt menneske ville likt handlingen",
+                            "Om dyret er smart nok"
+                        ],
+                        "answer": "Om dyret har en egenverdi som gjør at vi ikke kan bruke det bare som et redskap"
+                    },
+                    {
+                        "question": "Hva sier den norske dyrevelferdsloven fra 2009?",
+                        "options": [
+                            "At alle former for kjøtt er forbudt",
+                            "At dyr har egenverdi og skal skånes for unødige påkjenninger",
+                            "At dyr ikke kan føle smerte",
+                            "At bare kjæledyr har krav på beskyttelse"
+                        ],
+                        "answer": "At dyr har egenverdi og skal skånes for unødige påkjenninger"
+                    },
+                    {
+                        "question": "Hva menes med at den moralske sirkelen har vokst gjennom historien?",
+                        "options": [
+                            "At jorda har blitt varmere",
+                            "At stadig flere vesener regnes som noen vi må ta moralsk hensyn til",
+                            "At det bor flere mennesker på jorda",
+                            "At dyr har blitt smartere"
+                        ],
+                        "answer": "At stadig flere vesener regnes som noen vi må ta moralsk hensyn til"
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
