@@ -65,7 +65,7 @@
                     { "tittel": "Rikssamlingen", "link": "/historie/vikingtiden/rikssamlingen", "begrunnelse": "Hvordan myten om Harald Hårfagre har formet norsk identitet." },
                     { "tittel": "Hypotesen: Norden vs. Frankrike", "link": "/historie/vikingtiden/hypotesen-norden-vs-frankrike", "begrunnelse": "Konkurrerende framstillinger av vikingtidens opphav." },
                     { "tittel": "Jim Crow: «Separate but equal»", "link": "/historie/dekolonisering/jim-crow-lovene", "begrunnelse": "Hvordan rasistiske framstillinger ble institusjonalisert." },
-                    { "tittel": "Alv Erlingsson: Piratjarlen", "link": "/historie/norgeshistorie/alv-erlingsson", "begrunnelse": "Hvordan tapere i historien framstilles vs. seierherrene." },
+                    { "tittel": "Alv Erlingsson: Piratjarlen", "link": "/historie/norsk-middelalder/alv-erlingsson", "begrunnelse": "Hvordan tapere i historien framstilles vs. seierherrene." },
                     { "tittel": "Modernismens eksplosjon", "link": "/historie/mellomkrigstiden/kultur", "begrunnelse": "Dekker Framstillinger av fortida" },
                     { "tittel": "Renessansen: Gjenfødelsen av antikken", "link": "/historie/renessansen/oversikt", "begrunnelse": "Dekker Framstillinger av fortida" },
                     { "tittel": "Michelangelo: Han som hugde mennesker ut av stein", "link": "/historie/renessansen/michelangelo", "begrunnelse": "Dekker Framstillinger av fortida" },
@@ -78,7 +78,7 @@
                     { "tittel": "De Romerske Gudene", "link": "/historie/romerriket/romerske-guder", "begrunnelse": "Dekker Framstillinger av fortida" },
                     { "tittel": "Zarathustra og zoroastrismen", "link": "/historie/perserriket/zarathustra-og-zoroastrismen", "begrunnelse": "Dekker Framstillinger av fortida" },
                     { "tittel": "Göbekli Tepe — tempelet eldre enn jordbruket", "link": "/historie/menneskets-tidlige-historie/gobekli-tepe", "begrunnelse": "Dekker Framstillinger av fortida" },
-                    { "tittel": "Knut Alvsson", "link": "/historie/norgeshistorie/knut-alvsson", "begrunnelse": "Dekker Framstillinger av fortida" }
+                    { "tittel": "Knut Alvsson", "link": "/historie/norsk-middelalder/knut-alvsson", "begrunnelse": "Dekker Framstillinger av fortida" }
                 ],
                 "stier": [
                     { "tittel": "Læringssti: Vikingtiden", "link": "/historie/vikingtiden/vikingtiden-sti" },
@@ -155,8 +155,8 @@
                     { "tittel": "Ghana & Pan-Afrikanismen", "link": "/historie/dekolonisering/ghana-panafrikanisme" },
                     { "tittel": "Apartheid: Et samfunn delt i lov", "link": "/historie/dekolonisering/apartheid-syd-afrika" },
                     { "tittel": "Klassekamp i Norge", "link": "/historie/mellomkrigstiden/norge", "begrunnelse": "Arbeiderbevegelsens framvekst." },
-                    { "tittel": "Hamskiftet", "link": "/historie/norgeshistorie/hamskiftet", "begrunnelse": "Norges store samfunnsendring på 1800-tallet." },
-                    { "tittel": "Unionsoppløsningen 1905", "link": "/historie/norgeshistorie/unionsopplosningen-1905", "begrunnelse": "Dekker Kamp for endring" },
+                    { "tittel": "Hamskiftet", "link": "/historie/norge-i-moderne-tid/hamskiftet", "begrunnelse": "Norges store samfunnsendring på 1800-tallet." },
+                    { "tittel": "Unionsoppløsningen 1905", "link": "/historie/norge-i-moderne-tid/unionsopplosningen-1905", "begrunnelse": "Dekker Kamp for endring" },
                     { "tittel": "Gustav Vasa — Sveriges grunnlegger", "link": "/historie/sveriges-historie/gustav-vasa", "begrunnelse": "Dekker Kamp for endring" },
                     { "tittel": "Rød Storm", "link": "/historie/forste-verdenskrig/russiske-revolusjon", "begrunnelse": "Dekker Kamp for endring" },
                     { "tittel": "Tysk Revolusjon", "link": "/historie/forste-verdenskrig/tyske-revolusjon", "begrunnelse": "Dekker Kamp for endring" },
@@ -347,7 +347,7 @@
                     { "tittel": "Fascismens fødsel", "link": "/historie/mellomkrigstiden/italia" },
                     { "tittel": "Stalins jernhånd", "link": "/historie/mellomkrigstiden/sovjet", "begrunnelse": "Holodomor og Gulag — kommunistiske folkemord." },
                     { "tittel": "Geopolitikk og Opptakt (2. verdenskrig)", "link": "/historie/andre-verdenskrig/bakgrunn" },
-                    { "tittel": "22. juli 2011 — terrorangrepet på Norge", "link": "/historie/norgeshistorie/22-juli-2011", "begrunnelse": "Dekker Terror og folkemord" },
+                    { "tittel": "22. juli 2011 — terrorangrepet på Norge", "link": "/historie/norge-i-moderne-tid/22-juli-2011", "begrunnelse": "Dekker Terror og folkemord" },
                     { "tittel": "Jakarta-metoden: Indonesias glemte tragedie", "link": "/historie/den-kalde-krigen/indonesia-1965", "begrunnelse": "Dekker Terror og folkemord" },
                     { "tittel": "Nürnbergprosessen - ingen er over loven", "link": "/historie/lov-og-rett/nurnbergprosessen", "begrunnelse": "Dekker Terror og folkemord" },
                     { "tittel": "Det store spranget og kulturrevolusjonen", "link": "/historie/kinas-historie/store-spranget", "begrunnelse": "Dekker Terror og folkemord" },

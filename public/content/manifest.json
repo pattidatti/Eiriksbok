@@ -2513,46 +2513,6 @@
               "lastUpdated": "2026-07-08T00:30:53+02:00"
             },
             {
-              "id": "detective-vardo",
-              "title": "Historisk Detektiv: Vardø-mysteriet",
-              "description": "Hvorfor ble Vardø sentrum for heksejakten? Undersøk rettsprotokollene.",
-              "link": "/oving/detektiv/vardo",
-              "image": "/images/detective/vardo_hero.webp",
-              "icon": "search",
-              "createdDate": "2025-12-25T19:43:00+01:00",
-              "lastUpdated": "2026-05-12T21:18:19+02:00"
-            },
-            {
-              "id": "detective-karl-xii",
-              "title": "Historisk Detektiv: Karl XIIs død",
-              "description": "Ble krigerkongen skutt av sine egne ved Fredriksten festning?",
-              "link": "/oving/detektiv/karl-xii",
-              "image": "/images/detective/karl_xii_hero.webp",
-              "icon": "search",
-              "createdDate": "2025-12-25T21:27:38+01:00",
-              "lastUpdated": "2026-05-12T21:18:19+02:00"
-            },
-            {
-              "id": "detective-isdalskvinnen",
-              "title": "Historisk Detektiv: Isdalskvinnen",
-              "description": "Hvem var kvinnen i Isdalen? Løs norgeshistoriens største krimgåte.",
-              "link": "/oving/detektiv/isdalskvinnen",
-              "image": "/images/detective/isdalskvinnen_hero.webp",
-              "icon": "search",
-              "createdDate": "2025-12-25T21:27:38+01:00",
-              "lastUpdated": "2026-05-12T21:18:19+02:00"
-            },
-            {
-              "id": "detective-tungtvann",
-              "title": "Historisk Detektiv: Sabotasjen på Vemork",
-              "description": "Hvor nær var Hitler atombomben? Undersøk etterretningen bak Tungtvannsaksjonen.",
-              "link": "/oving/detektiv/tungtvann",
-              "image": "/images/detective/tungtvann_hero.webp",
-              "icon": "search",
-              "createdDate": "2025-12-25T21:27:38+01:00",
-              "lastUpdated": "2026-05-12T21:18:19+02:00"
-            },
-            {
               "id": "norge-for-vikingene",
               "title": "Norge før vikingene",
               "description": "Fra pionerbosetning til folkevandringstid.",
@@ -2600,7 +2560,49 @@
                   "definition": "Perioden som markerer overgangen fra antikken til middelalderen (ca. 300–600 e.Kr.)."
                 }
               ]
+            }
+          ],
+          "tools": [
+            {
+              "id": "link-vikingtiden",
+              "title": "Vikingtiden",
+              "description": "Plyndring, handel og rikssamling - fra ca. 800 til 1030.",
+              "link": "/historie/vikingtiden",
+              "image": "/images/lessons/vikingtiden/viking_main.webp",
+              "icon": "compass"
             },
+            {
+              "id": "link-norsk-middelalder",
+              "title": "Norsk middelalder",
+              "description": "Fra rikssamling til Kalmarunionen sprakk - ca. 1030 til 1537.",
+              "link": "/historie/norsk-middelalder",
+              "image": "/images/norgeshistorie/kalmarunionen-hero.webp",
+              "icon": "crown"
+            },
+            {
+              "id": "link-dansketiden",
+              "title": "Dansketiden",
+              "description": "Norge under dansk styre - ca. 1537 til 1814.",
+              "link": "/historie/dansketiden",
+              "image": "/images/detective/vardo_hero.webp",
+              "icon": "book"
+            },
+            {
+              "id": "link-norge-i-moderne-tid",
+              "title": "Norge i moderne tid",
+              "description": "Fra unionsoppløsning til i dag - ca. 1814 til nå.",
+              "link": "/historie/norge-i-moderne-tid",
+              "image": "/images/norgeshistorie/unionen-med-sverige-hero.webp",
+              "icon": "globe"
+            }
+          ]
+        },
+        {
+          "id": "norsk-middelalder",
+          "title": "Norsk middelalder",
+          "description": "Fra rikssamling til Kalmarunionen sprakk - riddere, pest og maktkamp.",
+          "image": "/images/topics/norsk-middelalder_hero.webp",
+          "lessons": [
             {
               "id": "alv-erlingsson",
               "title": "Alv Erlingsson: Piratjarlen",
@@ -2615,7 +2617,7 @@
                 "adel"
               ],
               "createdDate": "2026-01-30T00:14:38+01:00",
-              "lastUpdated": "2026-05-08T09:48:04+02:00"
+              "lastUpdated": "2026-07-07T19:16:36.346Z"
             },
             {
               "id": "knut-alvsson",
@@ -2673,20 +2675,6 @@
               "lastUpdated": "2026-07-08T00:30:53+02:00"
             },
             {
-              "id": "hamskiftet",
-              "title": "Hamskiftet",
-              "description": "Norge skifter ham: Fra bonde til arbeider.",
-              "image": "/images/lessons/norgeshistorie/hamskiftet.webp",
-              "year": "1840-1900",
-              "tags": [
-                "historie",
-                "norge",
-                "industrialisering"
-              ],
-              "createdDate": "2025-12-12T10:22:51+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
-            },
-            {
               "id": "hanseatene",
               "title": "Hanseatene",
               "description": "Kjøpmennene som formet Norge og Europa.",
@@ -2698,6 +2686,56 @@
                 "bergen"
               ],
               "createdDate": "2026-01-30T14:38:55+01:00",
+              "lastUpdated": "2026-07-08T00:30:53+02:00"
+            }
+          ]
+        },
+        {
+          "id": "dansketiden",
+          "title": "Dansketiden",
+          "description": "Norge under dansk styre, fra reformasjonen til 1814.",
+          "image": "/images/topics/dansketiden_hero.webp",
+          "lessons": [
+            {
+              "id": "detective-vardo",
+              "title": "Historisk Detektiv: Vardø-mysteriet",
+              "description": "Hvorfor ble Vardø sentrum for heksejakten? Undersøk rettsprotokollene.",
+              "link": "/oving/detektiv/vardo",
+              "image": "/images/detective/vardo_hero.webp",
+              "icon": "search",
+              "createdDate": "2025-12-25T19:43:00+01:00",
+              "lastUpdated": "2026-05-12T21:18:19+02:00"
+            },
+            {
+              "id": "detective-karl-xii",
+              "title": "Historisk Detektiv: Karl XIIs død",
+              "description": "Ble krigerkongen skutt av sine egne ved Fredriksten festning?",
+              "link": "/oving/detektiv/karl-xii",
+              "image": "/images/detective/karl_xii_hero.webp",
+              "icon": "search",
+              "createdDate": "2025-12-25T21:27:38+01:00",
+              "lastUpdated": "2026-05-12T21:18:19+02:00"
+            }
+          ]
+        },
+        {
+          "id": "norge-i-moderne-tid",
+          "title": "Norge i moderne tid",
+          "description": "Fra unionsoppløsning til i dag - demokrati, industri og velferd.",
+          "image": "/images/topics/norge-i-moderne-tid_hero.webp",
+          "lessons": [
+            {
+              "id": "hamskiftet",
+              "title": "Hamskiftet",
+              "description": "Norge skifter ham: Fra bonde til arbeider.",
+              "image": "/images/lessons/norgeshistorie/hamskiftet.webp",
+              "year": "1840-1900",
+              "tags": [
+                "historie",
+                "norge",
+                "industrialisering"
+              ],
+              "createdDate": "2025-12-12T10:22:51+01:00",
               "lastUpdated": "2026-07-08T00:30:53+02:00"
             },
             {
@@ -2735,6 +2773,24 @@
               "lastUpdated": "2026-07-08T00:30:53+02:00"
             },
             {
+              "id": "utvandringen-til-amerika",
+              "title": "Utvandringen til Amerika",
+              "description": "Over 800 000 nordmenn reiste til Amerika mellom 1825 og 1930. Press hjemmefra og lokking fra Amerika drev den største folkeflyttingen i norsk historie.",
+              "image": "/images/norgeshistorie/utvandringen-til-amerika-hero.webp",
+              "year": "1825-1930",
+              "layout": "rich",
+              "tags": [
+                "historie",
+                "norge",
+                "utvandring",
+                "amerika",
+                "migrasjon",
+                "1800-tallet"
+              ],
+              "createdDate": "2026-06-08T00:00:00Z",
+              "lastUpdated": "2026-07-08T00:30:53+02:00"
+            },
+            {
               "id": "kvinnekampen",
               "title": "Kvinnekampen",
               "description": "Hvordan kvinner i Norge vant rettigheter som utdanning, egen lønn og stemmerett, dør for dør.",
@@ -2750,22 +2806,6 @@
                 "stemmerett"
               ],
               "createdDate": "2026-06-25T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
-            },
-            {
-              "id": "22-juli-2011",
-              "title": "22. juli 2011 — terrorangrepet på Norge",
-              "description": "Dagen et terrorangrep rammet regjeringskvartalet og Utøya — og hvordan Norge svarte med mer demokrati.",
-              "image": "/images/norgeshistorie/22-juli-2011-hero.webp",
-              "tags": [
-                "historie",
-                "norge",
-                "samtidshistorie",
-                "terror",
-                "demokrati",
-                "radikalisering"
-              ],
-              "createdDate": "2026-05-17T00:00:00Z",
               "lastUpdated": "2026-07-08T00:30:53+02:00"
             },
             {
@@ -2787,22 +2827,40 @@
               "lastUpdated": "2026-07-08T00:30:53+02:00"
             },
             {
-              "id": "utvandringen-til-amerika",
-              "title": "Utvandringen til Amerika",
-              "description": "Over 800 000 nordmenn reiste til Amerika mellom 1825 og 1930. Press hjemmefra og lokking fra Amerika drev den største folkeflyttingen i norsk historie.",
-              "image": "/images/norgeshistorie/utvandringen-til-amerika-hero.webp",
-              "year": "1825-1930",
-              "layout": "rich",
+              "id": "22-juli-2011",
+              "title": "22. juli 2011 — terrorangrepet på Norge",
+              "description": "Dagen et terrorangrep rammet regjeringskvartalet og Utøya — og hvordan Norge svarte med mer demokrati.",
+              "image": "/images/norgeshistorie/22-juli-2011-hero.webp",
               "tags": [
                 "historie",
                 "norge",
-                "utvandring",
-                "amerika",
-                "migrasjon",
-                "1800-tallet"
+                "samtidshistorie",
+                "terror",
+                "demokrati",
+                "radikalisering"
               ],
-              "createdDate": "2026-06-08T00:00:00Z",
+              "createdDate": "2026-05-17T00:00:00Z",
               "lastUpdated": "2026-07-08T00:30:53+02:00"
+            },
+            {
+              "id": "detective-isdalskvinnen",
+              "title": "Historisk Detektiv: Isdalskvinnen",
+              "description": "Hvem var kvinnen i Isdalen? Løs norgeshistoriens største krimgåte.",
+              "link": "/oving/detektiv/isdalskvinnen",
+              "image": "/images/detective/isdalskvinnen_hero.webp",
+              "icon": "search",
+              "createdDate": "2025-12-25T21:27:38+01:00",
+              "lastUpdated": "2026-05-12T21:18:19+02:00"
+            },
+            {
+              "id": "detective-tungtvann",
+              "title": "Historisk Detektiv: Sabotasjen på Vemork",
+              "description": "Hvor nær var Hitler atombomben? Undersøk etterretningen bak Tungtvannsaksjonen.",
+              "link": "/oving/detektiv/tungtvann",
+              "image": "/images/detective/tungtvann_hero.webp",
+              "icon": "search",
+              "createdDate": "2025-12-25T21:27:38+01:00",
+              "lastUpdated": "2026-05-12T21:18:19+02:00"
             }
           ]
         },

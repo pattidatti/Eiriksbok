@@ -1,5 +1,5 @@
 {
-  "buildId": 1783756058964,
+  "buildId": 1783757643394,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1664,10 +1664,6 @@
     "22-juli-2011": [
       "content/historie/norgeshistorie/22-juli-2011.json"
     ],
-    "alv-erlingsson": [
-      "content/historie/norgeshistorie/alv-erlingsson/alv-erlingsson.json",
-      "content/people/alv-erlingsson.json"
-    ],
     "fornorskingen-av-samene": [
       "content/historie/norgeshistorie/fornorskingen-av-samene.json"
     ],
@@ -1701,6 +1697,10 @@
     ],
     "utvandringen-til-amerika": [
       "content/historie/norgeshistorie/utvandringen-til-amerika.json"
+    ],
+    "alv-erlingsson": [
+      "content/historie/norsk-middelalder/alv-erlingsson.json",
+      "content/people/alv-erlingsson.json"
     ],
     "forfallet": [
       "content/historie/osmanske-riket/forfallet.json"
@@ -4101,7 +4101,6 @@
     "historie/midtoesten/orientering": "content/historie/midtoesten/orientering.json",
     "historie/midtoesten/sykes-picot": "content/historie/midtoesten/sykes-picot.json",
     "historie/norgeshistorie/22-juli-2011": "content/historie/norgeshistorie/22-juli-2011.json",
-    "historie/norgeshistorie/alv-erlingsson/alv-erlingsson": "content/historie/norgeshistorie/alv-erlingsson/alv-erlingsson.json",
     "historie/norgeshistorie/fornorskingen-av-samene": "content/historie/norgeshistorie/fornorskingen-av-samene.json",
     "historie/norgeshistorie/hamskiftet": "content/historie/norgeshistorie/hamskiftet.json",
     "historie/norgeshistorie/helleristninger": "content/historie/norgeshistorie/helleristninger.json",
@@ -4113,6 +4112,7 @@
     "historie/norgeshistorie/unionen-med-sverige": "content/historie/norgeshistorie/unionen-med-sverige.json",
     "historie/norgeshistorie/unionsopplosningen-1905": "content/historie/norgeshistorie/unionsopplosningen-1905.json",
     "historie/norgeshistorie/utvandringen-til-amerika": "content/historie/norgeshistorie/utvandringen-til-amerika.json",
+    "historie/norsk-middelalder/alv-erlingsson": "content/historie/norsk-middelalder/alv-erlingsson.json",
     "historie/osmanske-riket/forfallet": "content/historie/osmanske-riket/forfallet.json",
     "historie/osmanske-riket/handel-og-kultur": "content/historie/osmanske-riket/handel-og-kultur.json",
     "historie/osmanske-riket/janitsjarene": "content/historie/osmanske-riket/janitsjarene.json",

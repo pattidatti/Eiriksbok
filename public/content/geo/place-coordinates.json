@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 283
+      "count": 280
     },
     {
       "tag": "dekolonisering",
@@ -827,11 +827,11 @@
       "count": 36
     },
     {
-      "tag": "demokrati",
-      "count": 33
+      "tag": "antikken",
+      "count": 32
     },
     {
-      "tag": "antikken",
+      "tag": "demokrati",
       "count": 32
     },
     {
@@ -879,10 +879,6 @@
       "count": 20
     },
     {
-      "tag": "middelalder",
-      "count": 20
-    },
-    {
       "tag": "vitenskap",
       "count": 20
     },
@@ -900,6 +896,10 @@
     },
     {
       "tag": "islam",
+      "count": 18
+    },
+    {
+      "tag": "middelalder",
       "count": 18
     },
     {
@@ -1547,14 +1547,6 @@
       "count": 4
     },
     {
-      "tag": "terror",
-      "count": 4
-    },
-    {
-      "tag": "radikalisering",
-      "count": 4
-    },
-    {
       "tag": "syntaks",
       "count": 4
     },
@@ -1695,6 +1687,10 @@
       "count": 3
     },
     {
+      "tag": "terror",
+      "count": 3
+    },
+    {
       "tag": "kilder",
       "count": 3
     },
@@ -1716,6 +1712,10 @@
     },
     {
       "tag": "levekår",
+      "count": 3
+    },
+    {
+      "tag": "radikalisering",
       "count": 3
     },
     {
@@ -2483,10 +2483,6 @@
       "count": 2
     },
     {
-      "tag": "samtidshistorie",
-      "count": 2
-    },
-    {
       "tag": "is",
       "count": 2
     },
@@ -3228,6 +3224,10 @@
     },
     {
       "tag": "rettsvitenskap",
+      "count": 1
+    },
+    {
+      "tag": "samtidshistorie",
       "count": 1
     },
     {
