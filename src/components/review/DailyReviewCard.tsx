@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Flame, Sparkles } from 'lucide-react';
+import { ArrowRight, Flame } from 'lucide-react';
 import { useReviewStore } from '../../stores/useReviewStore';
 import { todayLocal } from '../../utils/reviewScheduler';
+import { DailyReviewHeroGraphic } from './DailyReviewHeroGraphic';
 
 interface DailyReviewCardProps {
     variant?: 'hero' | 'compact';
@@ -55,8 +56,8 @@ export const DailyReviewCard: React.FC<DailyReviewCardProps> = ({ variant = 'her
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-300 to-purple-300 rounded-t-3xl" />
 
                 <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-5">
-                    <div className="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                        <Sparkles className="w-7 h-7 text-indigo-500" />
+                    <div className="shrink-0 group-hover:scale-110 transition-transform">
+                        <DailyReviewHeroGraphic variant="square" className="w-14 h-14 rounded-2xl shadow-sm" />
                     </div>
 
                     <div className="flex-1">

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Flame, Play, CheckCircle2, Brain, Clock, HelpCircle, Gamepad2 } from 'lucide-react';
 import type { DailyGamePick, SessionExercise } from '../../types/review';
 import { transitions } from '../../styles/motion-presets';
+import { DailyReviewHeroGraphic } from './DailyReviewHeroGraphic';
 
 interface ReviewIntroProps {
     streak: number;
@@ -49,12 +50,12 @@ export const ReviewIntro: React.FC<ReviewIntroProps> = ({
             </Link>
 
             <motion.div
-                className="w-20 h-20 rounded-3xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-xl shadow-indigo-500/30"
-                initial={{ scale: 0.8, rotate: -6 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={transitions.springBouncy}
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="w-full max-w-md h-32 rounded-3xl overflow-hidden shadow-lg border border-slate-200"
             >
-                <Flame className="w-10 h-10 text-white" />
+                <DailyReviewHeroGraphic variant="banner" className="w-full h-full" />
             </motion.div>
 
             <div>

@@ -14,6 +14,7 @@ import { goalProgress } from '../goals';
 import { levelProgress } from '../xp';
 import { todayLocal } from '../../../utils/reviewScheduler';
 import type { Recommendation } from '../recommendations/engine';
+import { DailyReviewHeroGraphic } from '../../../components/review/DailyReviewHeroGraphic';
 
 const spring = (delay: number) => ({
     initial: { opacity: 0, y: 12 },
@@ -131,13 +132,17 @@ export const HomeLearningModule = () => {
                                 to={primary.link}
                                 className="group relative block h-36 overflow-hidden rounded-2xl no-underline shadow-lg shadow-slate-950/40 md:h-40"
                             >
-                                <LazyImage
-                                    src={primary.image}
-                                    alt=""
-                                    seed={primary.title}
-                                    priority
-                                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                />
+                                {primary.type === 'review' ? (
+                                    <DailyReviewHeroGraphic variant="card" className="absolute inset-0 w-full h-full" />
+                                ) : (
+                                    <LazyImage
+                                        src={primary.image}
+                                        alt=""
+                                        seed={primary.title}
+                                        priority
+                                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                )}
                                 <span className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/30 to-transparent" />
                                 <span className="absolute inset-x-0 bottom-0 flex items-end gap-3 p-4">
                                     <span className="min-w-0 flex-1">
