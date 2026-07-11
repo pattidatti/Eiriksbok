@@ -146,7 +146,7 @@ const findReadLesson = (
 const pct = (part: number, whole: number): number =>
     whole > 0 ? Math.round((part / whole) * 100) : 0;
 
-const MAX_RECOMMENDATIONS = 6;
+const MAX_RECOMMENDATIONS = 8;
 const MAX_PER_TYPE = 2;
 
 // Kuraterte startanbefalinger for en helt ny elev: første artikkel i første
