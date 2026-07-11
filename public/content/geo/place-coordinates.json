@@ -875,6 +875,10 @@
       "count": 20
     },
     {
+      "tag": "etikk",
+      "count": 20
+    },
+    {
       "tag": "middelalder",
       "count": 20
     },
@@ -888,10 +892,6 @@
     },
     {
       "tag": "samfunn",
-      "count": 19
-    },
-    {
-      "tag": "etikk",
       "count": 19
     },
     {
@@ -1631,6 +1631,10 @@
       "count": 3
     },
     {
+      "tag": "moral",
+      "count": 3
+    },
+    {
       "tag": "medisin",
       "count": 3
     },
@@ -2192,6 +2196,14 @@
     },
     {
       "tag": "grunnlov",
+      "count": 2
+    },
+    {
+      "tag": "dyreetikk",
+      "count": 2
+    },
+    {
+      "tag": "dyrevelferd",
       "count": 2
     },
     {
@@ -2792,10 +2804,6 @@
     },
     {
       "tag": "politisk",
-      "count": 2
-    },
-    {
-      "tag": "moral",
       "count": 2
     },
     {
@@ -3448,14 +3456,6 @@
     },
     {
       "tag": "verdier",
-      "count": 1
-    },
-    {
-      "tag": "dyreetikk",
-      "count": 1
-    },
-    {
-      "tag": "dyrevelferd",
       "count": 1
     },
     {

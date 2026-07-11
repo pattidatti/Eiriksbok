@@ -7,7 +7,7 @@
     "year": "1789",
     "category": "Anvendt etikk",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/etikk/dyreetikk-hero.webp",
     "details": [
         "Dyreetikk spør hva vi skylder dyr, og hvorfor.",
         "Det viktigste spørsmålet er ikke om dyr er smarte, men om de kan lide.",
@@ -20,7 +20,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etikk/dyreetikk-01.webp",
             "alt": "Hund og gris side om side på lys bakgrunn",
             "caption": "Vi kjæler med hunden, men spiser grisen. Dyreetikk spør hvorfor vi skiller."
         },
@@ -73,7 +73,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etikk/dyreetikk-02.webp",
             "alt": "Tre briller som ser på samme dyr fra ulike sider",
             "caption": "Samme spørsmål, tre etiske briller, tre ulike svar."
         },
@@ -118,7 +118,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etikk/dyreetikk-03.webp",
             "alt": "Ungdom som klapper en ku på en gård",
             "caption": "Å ta hensyn til dyr som kan lide, er kjernen i dyreetikken."
         },
