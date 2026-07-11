@@ -891,15 +891,15 @@
       "count": 19
     },
     {
+      "tag": "etikk",
+      "count": 19
+    },
+    {
       "tag": "kultur",
       "count": 18
     },
     {
       "tag": "islam",
-      "count": 18
-    },
-    {
-      "tag": "etikk",
       "count": 18
     },
     {
@@ -2795,6 +2795,10 @@
       "count": 2
     },
     {
+      "tag": "moral",
+      "count": 2
+    },
+    {
       "tag": "rytme",
       "count": 2
     },
@@ -3407,10 +3411,6 @@
       "count": 1
     },
     {
-      "tag": "moral",
-      "count": 1
-    },
-    {
       "tag": "nytte",
       "count": 1
     },
@@ -3448,6 +3448,14 @@
     },
     {
       "tag": "verdier",
+      "count": 1
+    },
+    {
+      "tag": "dyreetikk",
+      "count": 1
+    },
+    {
+      "tag": "dyrevelferd",
       "count": 1
     },
     {

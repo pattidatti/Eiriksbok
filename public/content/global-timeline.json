@@ -4550,6 +4550,24 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "dyreetikk",
+      "title": "Dyreetikk: Har dyr rettigheter?",
+      "description": "Hva skylder vi dyr, og hvorfor? Om lidelse, egenverdi og den moralske sirkelen.",
+      "startDate": 1789,
+      "endDate": null,
+      "displayDate": "1789",
+      "type": "lesson",
+      "subjectId": "krle",
+      "topicId": "etikk",
+      "link": "/krle/etikk/dyreetikk",
+      "tags": [
+        "etikk",
+        "dyreetikk",
+        "dyrevelferd",
+        "moral"
+      ]
+    },
+    {
       "id": "haiti",
       "title": "Haiti: Den glemte revolusjonen",
       "description": "Det eneste vellykkede slaveopprøret i historien.",

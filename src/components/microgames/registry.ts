@@ -122,8 +122,18 @@ const VendMotMekka3D = lazy(() => import('./VendMotMekka3D'));
 const Paaskeoya3D = lazy(() => import('./Paaskeoya3D'));
 const MayaKollaps3D = lazy(() => import('./MayaKollaps3D'));
 const Reconquista3D = lazy(() => import('./Reconquista3D'));
+const DenMoralskeSirkelen3D = lazy(() => import('./DenMoralskeSirkelen3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'moralske-sirkelen-3d': {
+        id: 'moralske-sirkelen-3d',
+        title: 'Den moralske sirkelen',
+        description:
+            'Mennesket står i midten, og rundt det ligger en hund, en gris, en fisk, et insekt, en plante og en stein. Dra spaken og blås opp en glødende sirkel over hvem som "teller" moralsk: for hvert vesen sirkelen når, lyser det opp, og klikker du det, ser du hva det kan føle. Dyr som kan lide kommer med, mens planten og steinen faller utenfor. Lyspæren kommer i hendene: grensa for hvem vi skylder noe har flyttet seg utover gjennom historien, og det avgjørende spørsmålet er ikke "kan de tenke?" men "kan de lide?".',
+        estimatedSeconds: 150,
+        loader: () => import('./DenMoralskeSirkelen3D'),
+        Component: DenMoralskeSirkelen3D as never,
+    },
     'reconquista-3d': {
         id: 'reconquista-3d',
         title: 'Reconquista: gjenerobringen av Spania',
