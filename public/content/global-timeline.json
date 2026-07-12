@@ -3252,6 +3252,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "trelasthandelen",
+      "title": "Trelasthandelen: da Norge ble Europas sagbruk",
+      "description": "Skog, elv og foss gjorde Norge til Europas sagbruk. Slik ble trelast landets viktigste eksport i dansketiden.",
+      "startDate": 1500,
+      "endDate": 1807,
+      "displayDate": "1500-1807",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/trelasthandelen",
+      "tags": [
+        "dansketiden",
+        "trelast",
+        "handel",
+        "norge",
+        "okonomi"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "boktrykkerkunsten-sub-2",
       "title": "Masseproduksjon",
       "description": "Over 20 millioner bøker er trykket i Europa.",
