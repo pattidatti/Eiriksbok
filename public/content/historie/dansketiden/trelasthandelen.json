@@ -6,7 +6,7 @@
     "year": "1500-1807",
     "category": "Dansketiden",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/dansketiden/trelasthandelen-hero.webp",
     "details": [
         "Oppgangssaga kom til Norge rundt 1500 og gjorde det mulig å skjære billige planker i store mengder.",
         "Elva fraktet tømmeret gratis, og fossen drev sagene, så Norge kunne selge trelast billig til resten av Europa.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dansketiden/trelasthandelen-01.webp",
             "alt": "Hollandsk lasteskip henter planker ved et norsk sagbruk, 1600-tallet",
             "caption": "Hollandske skip seilte til Norge for å hente trelast. Det de betalte, gjorde kystbyene rike."
         },
@@ -74,7 +74,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dansketiden/trelasthandelen-02.webp",
             "alt": "Travel norsk havn full av seilskip og plankestabler på 1600-tallet",
             "caption": "På det travleste lå det rekker av skip og ventet på last. Trelast var blitt Norges viktigste eksportvare."
         },
@@ -123,7 +123,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dansketiden/trelasthandelen-03.webp",
             "alt": "Velstående kjøpmannshus i en norsk trelastby på 1700-tallet",
             "caption": "Trelasthandlerne ble så rike at folk kalte dem plankeadelen. De satte preg på hele byer."
         },

@@ -812,7 +812,7 @@
     },
     {
       "tag": "handel",
-      "count": 38
+      "count": 39
     },
     {
       "tag": "religion",
@@ -1471,6 +1471,10 @@
       "count": 4
     },
     {
+      "tag": "okonomi",
+      "count": 4
+    },
+    {
       "tag": "selvstendighet",
       "count": 4
     },
@@ -1668,10 +1672,6 @@
     },
     {
       "tag": "våpen",
-      "count": 3
-    },
-    {
-      "tag": "okonomi",
       "count": 3
     },
     {
@@ -2036,6 +2036,14 @@
     },
     {
       "tag": "statsbygging",
+      "count": 2
+    },
+    {
+      "tag": "dansketiden",
+      "count": 2
+    },
+    {
+      "tag": "trelast",
       "count": 2
     },
     {
@@ -3224,14 +3232,6 @@
     },
     {
       "tag": "rettsvitenskap",
-      "count": 1
-    },
-    {
-      "tag": "dansketiden",
-      "count": 1
-    },
-    {
-      "tag": "trelast",
       "count": 1
     },
     {
