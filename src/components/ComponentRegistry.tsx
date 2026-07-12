@@ -21,6 +21,7 @@ import { MapCarousel } from './MapCarousel';
 // Lazy-loaded components for better performance
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
+const TrelastVerdikjede = lazy(() => import('./content/interactive/TrelastVerdikjede').then(m => ({ default: m.TrelastVerdikjede })));
 const KunnskapsbroAndalus = lazy(() => import('./content/interactive/KunnskapsbroAndalus').then(m => ({ default: m.KunnskapsbroAndalus })));
 const HelleristningTyder = lazy(() => import('./content/interactive/HelleristningTyder').then(m => ({ default: m.HelleristningTyder })));
 const RidderMotLangbue = lazy(() => import('./content/interactive/RidderMotLangbue').then(m => ({ default: m.RidderMotLangbue })));
@@ -338,6 +339,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ParallelleSivilisasjoner,
     Quiz,
     Oppgaver,
+    TrelastVerdikjede,
     KunnskapsbroAndalus,
     EICSimulation,
     FactBox,

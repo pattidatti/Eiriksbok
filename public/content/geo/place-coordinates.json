@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 280
+      "count": 286
     },
     {
       "tag": "dekolonisering",
@@ -811,11 +811,11 @@
       "count": 40
     },
     {
-      "tag": "religion",
-      "count": 37
+      "tag": "handel",
+      "count": 38
     },
     {
-      "tag": "handel",
+      "tag": "religion",
       "count": 37
     },
     {
@@ -863,6 +863,10 @@
       "count": 24
     },
     {
+      "tag": "middelalder",
+      "count": 24
+    },
+    {
       "tag": "musikk",
       "count": 24
     },
@@ -896,10 +900,6 @@
     },
     {
       "tag": "islam",
-      "count": 18
-    },
-    {
-      "tag": "middelalder",
       "count": 18
     },
     {
@@ -1047,6 +1047,10 @@
       "count": 9
     },
     {
+      "tag": "sjørøveri",
+      "count": 9
+    },
+    {
       "tag": "opplysningstid",
       "count": 9
     },
@@ -1076,6 +1080,10 @@
     },
     {
       "tag": "verdenshistorie",
+      "count": 8
+    },
+    {
+      "tag": "adel",
       "count": 8
     },
     {
@@ -1603,10 +1611,6 @@
       "count": 3
     },
     {
-      "tag": "sjørøveri",
-      "count": 3
-    },
-    {
       "tag": "tid",
       "count": 3
     },
@@ -1664,6 +1668,10 @@
     },
     {
       "tag": "våpen",
+      "count": 3
+    },
+    {
+      "tag": "okonomi",
       "count": 3
     },
     {
@@ -1972,10 +1980,6 @@
     },
     {
       "tag": "magnus-lagabote",
-      "count": 2
-    },
-    {
-      "tag": "adel",
       "count": 2
     },
     {
@@ -2388,10 +2392,6 @@
     },
     {
       "tag": "quisling",
-      "count": 2
-    },
-    {
-      "tag": "okonomi",
       "count": 2
     },
     {
@@ -3224,6 +3224,14 @@
     },
     {
       "tag": "rettsvitenskap",
+      "count": 1
+    },
+    {
+      "tag": "dansketiden",
+      "count": 1
+    },
+    {
+      "tag": "trelast",
       "count": 1
     },
     {

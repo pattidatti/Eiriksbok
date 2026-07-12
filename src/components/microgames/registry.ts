@@ -119,6 +119,7 @@ const Gjeldshavna3D = lazy(() => import('./Gjeldshavna3D'));
 const ImperiumSoyler = lazy(() => import('./ImperiumSoyler'));
 const HimmelensMandat3D = lazy(() => import('./HimmelensMandat3D'));
 const VendMotMekka3D = lazy(() => import('./VendMotMekka3D'));
+const Trelastruta3D = lazy(() => import('./Trelastruta3D'));
 const Paaskeoya3D = lazy(() => import('./Paaskeoya3D'));
 const MayaKollaps3D = lazy(() => import('./MayaKollaps3D'));
 const Reconquista3D = lazy(() => import('./Reconquista3D'));
@@ -1177,6 +1178,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./Gjeldshavna3D'),
         Component: Gjeldshavna3D as never,
+    },
+    'trelastruta-3d': {
+        id: 'trelastruta-3d',
+        title: 'Trelastruta: fra skog til Amsterdam',
+        description:
+            'En norsk elv renner fra skogen til havna. Dra en tømmerstokk ut i elva, så bærer strømmen den gratis ned til sagbruket ved fossen. Slipp vannet på saghjulet, og oppgangssaga skjærer stokken til jevne planker. Til slutt drar du plankestabelen om bord i det hollandske skipet, som seiler mot Amsterdam. Lyspæren kommer i hendene: på nesten hvert steg gjør naturen (elva og fossen) det tunge arbeidet gratis, og det var derfor skogen gjorde Norge rikt i dansketiden.',
+        estimatedSeconds: 150,
+        loader: () => import('./Trelastruta3D'),
+        Component: Trelastruta3D as never,
     },
     'vend-mot-mekka': {
         id: 'vend-mot-mekka',
