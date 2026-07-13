@@ -1627,6 +1627,10 @@
       "count": 3
     },
     {
+      "tag": "dansketiden",
+      "count": 3
+    },
+    {
       "tag": "empirisme",
       "count": 3
     },
@@ -2036,10 +2040,6 @@
     },
     {
       "tag": "statsbygging",
-      "count": 2
-    },
-    {
-      "tag": "dansketiden",
       "count": 2
     },
     {
@@ -3232,6 +3232,22 @@
     },
     {
       "tag": "rettsvitenskap",
+      "count": 1
+    },
+    {
+      "tag": "christian-iv",
+      "count": 1
+    },
+    {
+      "tag": "kongsberg",
+      "count": 1
+    },
+    {
+      "tag": "solv",
+      "count": 1
+    },
+    {
+      "tag": "bergverk",
       "count": 1
     },
     {

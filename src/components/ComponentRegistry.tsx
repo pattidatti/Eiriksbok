@@ -22,6 +22,7 @@ import { MapCarousel } from './MapCarousel';
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
 const TrelastVerdikjede = lazy(() => import('./content/interactive/TrelastVerdikjede').then(m => ({ default: m.TrelastVerdikjede })));
+const SolvetsReise = lazy(() => import('./content/interactive/SolvetsReise').then(m => ({ default: m.SolvetsReise })));
 const KunnskapsbroAndalus = lazy(() => import('./content/interactive/KunnskapsbroAndalus').then(m => ({ default: m.KunnskapsbroAndalus })));
 const HelleristningTyder = lazy(() => import('./content/interactive/HelleristningTyder').then(m => ({ default: m.HelleristningTyder })));
 const RidderMotLangbue = lazy(() => import('./content/interactive/RidderMotLangbue').then(m => ({ default: m.RidderMotLangbue })));
@@ -340,6 +341,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Quiz,
     Oppgaver,
     TrelastVerdikjede,
+    SolvetsReise,
     KunnskapsbroAndalus,
     EICSimulation,
     FactBox,

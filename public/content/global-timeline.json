@@ -3725,6 +3725,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "christian-iv",
+      "title": "Christian IV - kongen som bygde nye byer",
+      "description": "Christian IV grunnla Kongsberg da det ble funnet sølv i fjellet. Slik ble Norges rikdommer til byer og kongemakt i dansketiden.",
+      "startDate": 1577,
+      "endDate": 1648,
+      "displayDate": "1577-1648",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/christian-iv",
+      "tags": [
+        "dansketiden",
+        "christian-iv",
+        "kongsberg",
+        "solv",
+        "bergverk",
+        "norge"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "den-spanske-armada-1588",
       "title": "Den spanske armada",
       "description": "Filip II invaderer England med religiøs og politisk legitimering.",
