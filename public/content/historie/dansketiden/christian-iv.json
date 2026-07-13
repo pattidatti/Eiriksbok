@@ -6,7 +6,7 @@
     "year": "1577-1648",
     "category": "Dansketiden",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/dansketiden/christian-iv-hero.webp",
     "details": [
         "Christian IV var konge over Danmark og Norge i 60 år, fra 1588 til 1648.",
         "I 1624 grunnla han gruvebyen Kongsberg etter at det ble funnet sølv i fjellet.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dansketiden/christian-iv-01.webp",
             "alt": "To barn finner glitrende sølv i skogbunnen ved Sandsvær",
             "caption": "Sagnet forteller at barn fant det første sølvet da en okse skrapte det løs. Funnet ble starten på en helt ny by."
         },
@@ -83,7 +83,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dansketiden/christian-iv-02.webp",
             "alt": "Travel gruveby med tre trehus, smeltehytte og kirke i en skogsdal",
             "caption": "Kongsberg vokste raskt. Byen fikk egen kirke, eget myntverk og tusenvis av innbyggere."
         },
@@ -105,7 +105,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dansketiden/christian-iv-03.webp",
             "alt": "Christian IV peker over et kart mens arbeidere reiser en ny by bak ham",
             "caption": "Christian IV blandet seg direkte inn i byggingen. Han tegnet gater, valgte tomter og ga ordre om hva som skulle reises."
         },

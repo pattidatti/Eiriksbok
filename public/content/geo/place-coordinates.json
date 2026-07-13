@@ -1471,6 +1471,10 @@
       "count": 4
     },
     {
+      "tag": "dansketiden",
+      "count": 4
+    },
+    {
       "tag": "okonomi",
       "count": 4
     },
@@ -1624,10 +1628,6 @@
     },
     {
       "tag": "global-historie",
-      "count": 3
-    },
-    {
-      "tag": "dansketiden",
       "count": 3
     },
     {
@@ -2136,6 +2136,22 @@
     },
     {
       "tag": "kvinnehistorie",
+      "count": 2
+    },
+    {
+      "tag": "christian-iv",
+      "count": 2
+    },
+    {
+      "tag": "kongsberg",
+      "count": 2
+    },
+    {
+      "tag": "solv",
+      "count": 2
+    },
+    {
+      "tag": "bergverk",
       "count": 2
     },
     {
@@ -3232,22 +3248,6 @@
     },
     {
       "tag": "rettsvitenskap",
-      "count": 1
-    },
-    {
-      "tag": "christian-iv",
-      "count": 1
-    },
-    {
-      "tag": "kongsberg",
-      "count": 1
-    },
-    {
-      "tag": "solv",
-      "count": 1
-    },
-    {
-      "tag": "bergverk",
       "count": 1
     },
     {
