@@ -40,7 +40,7 @@
         },
         {
             "type": "text",
-            "content": "I England hadde gruveindustrien siden 1700-tallet brukt små vogner på tresleder for å frakte kull. Etter at James Watt forbedret dampmaskinen, begynte ingeniører å spørre: hva om vi setter en dampmaskin på hjul, og lar den dra vognene selv? Den første som klarte det skikkelig var George Stephenson, en ingeniør som hadde lært seg å lese først som voksen. I 1825 åpnet han verdens første offentlige jernbane mellom Stockton og Darlington. Lokomotivet hans dro 80 tonn varer i 25 km i timen - utenkelig fart for sin tid."
+            "content": "I England hadde gruveindustrien siden 1700-tallet brukt små vogner på tresleder for å frakte kull. Etter at [James Watt forbedret dampmaskinen](/historie/industriell-revolusjon/dampmaskinen), begynte ingeniører å spørre: hva om vi setter en dampmaskin på hjul, og lar den dra vognene selv? Den første som klarte det skikkelig var George Stephenson, en ingeniør som hadde lært seg å lese først som voksen. I 1825 åpnet han verdens første offentlige jernbane mellom Stockton og Darlington. Lokomotivet hans dro 80 tonn varer i 25 km i timen - utenkelig fart for sin tid."
         },
         {
             "type": "text",
@@ -51,6 +51,10 @@
             "src": "/images/industriell-revolusjon/jernbanen-01.webp",
             "alt": "Lokomotivet Rocket fra 1830 med svart skorstein og messingdetaljer står på et jernbanespor mens en folkemengde ser på",
             "caption": "Stephensons «Rocket» vant den berømte Rainhill-konkurransen i 1829 og ble blåkopien for moderne lokomotiver."
+        },
+        {
+            "type": "text",
+            "content": "Vil du selv forsøke deg som Watts ingeniør før du leser videre om jernbanen? Spill [Watts laboratorium](/oving/spill/watt-lab) og bygg dampmaskinen som gjorde alt dette mulig."
         },
         {
             "type": "header",
