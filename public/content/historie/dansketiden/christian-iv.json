@@ -1,0 +1,208 @@
+{
+    "id": "christian-iv",
+    "title": "Christian IV - kongen som bygde nye byer",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "1577-1648",
+    "category": "Dansketiden",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Christian IV var konge over Danmark og Norge i 60 år, fra 1588 til 1648.",
+        "I 1624 grunnla han gruvebyen Kongsberg etter at det ble funnet sølv i fjellet.",
+        "Sølvet, kobberet og skogen gjorde Norge verdifullt for den danske kongen."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "I 1623 gjette to barn en flokk okser i skogen ved Sandsvær, sør i Norge. En av oksene skrapte med hoven i bakken, og der glitret det. Barna hadde funnet sølv, rent sølv, midt i den norske skogen. Nyheten reiste helt til kongen i København. Kongen het Christian IV, og han skjønte straks hva funnet betydde. Sølv var det samme som penger, og penger var det samme som makt. Året etter, i 1624, grunnla han en helt ny by akkurat der. Byen fikk navnet Kongsberg."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To barn finner glitrende sølv i skogbunnen ved Sandsvær",
+            "caption": "Sagnet forteller at barn fant det første sølvet da en okse skrapte det løs. Funnet ble starten på en helt ny by."
+        },
+        {
+            "type": "header",
+            "text": "Kongen som likte Norge"
+        },
+        {
+            "type": "text",
+            "content": "Christian IV ble født i 1577 og satt på tronen i hele 60 år. Ingen annen konge har styrt Danmark og Norge så lenge. På denne tiden var Norge ikke et eget land med egen konge. Norge hadde vært under Danmark helt siden [Kalmarunionen](/historie/norgeshistorie/kalmarunionen) på slutten av 1300-tallet. Kongen bodde i København, og han bestemte over begge landene. Norge hadde ikke lenger eget råd eller egen regjering, og de viktigste beslutningene ble tatt i Danmark."
+        },
+        {
+            "type": "text",
+            "content": "De fleste danske kongene brydde seg lite om Norge. Christian IV var annerledes. Han reiste til Norge nesten tretti ganger. Han klatret ned i gruver, tegnet opp nye byer og ga ordre om hva som skulle bygges. For ham var Norge ikke et glemt hjørne, men et land fullt av verdier han kunne bruke: sølv i fjellet, kobber i berget og endeløse skoger."
+        },
+        {
+            "type": "header",
+            "text": "Sølvet i fjellet"
+        },
+        {
+            "type": "text",
+            "content": "Sølvet ved Kongsberg lå ikke oppe i dagen. Det lå i smale årer dypt inne i harde fjell. For å komme til det måtte arbeiderne hakke seg meter etter meter inn i berget. Gruvene ble stadig dypere, helt ned til flere hundre meter under bakken. Der nede var det kaldt, mørkt og farlig. Vann rant inn, og luften var tung. Likevel kom folk fra hele Europa for å jobbe her, for kongen betalte for arbeidet."
+        },
+        {
+            "type": "text",
+            "content": "Sølvverket ved Kongsberg ble den største arbeidsplassen i Norge. På det meste jobbet det flere tusen mennesker der. Arbeidsdagen var lang og hard. Nede i gruvene lyste arbeiderne seg fram med små talglys, og de bar malmen ut på ryggen eller kjørte den i vogner på skinner. Selv barn jobbet i verket, ofte med å sortere stein. Gruvedriften varte i mer enn trehundre år, helt fram til 1958. Ingen annen bedrift i Norge har holdt det gående så lenge."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hvordan sprakk de fjellet?",
+                "content": "Før dynamitten fantes, hadde ikke gruvearbeiderne noe sprengstoff. I stedet brukte de ild. De stablet store bål inntil fjellveggen og lot dem brenne hele natten. Varmen fikk steinen til å utvide seg og sprekke opp. Neste morgen kunne arbeiderne hakke løs det som hadde løsnet. Denne måten kaltes fyrsetting. Den var langsom og fylte gangene med røyk, men den var det eneste som virket mot det harde berget."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Men et stykke sølvmalm i en mørk gruve var ikke penger ennå. Sølvet måtte på en lang reise før det ble til noe kongen kunne bruke. Følg reisen selv nedenfor, steg for steg, og se hvordan et funn i fjellet ble til kongemakt."
+        },
+        {
+            "type": "component",
+            "name": "SolvetsReise",
+            "props": {
+                "title": "Sølvets reise: fra fjell til kongemakt"
+            }
+        },
+        {
+            "type": "header",
+            "text": "En by vokser fram i skogen"
+        },
+        {
+            "type": "text",
+            "content": "Der det før bare var skog, vokste det nå fram en hel by. Sølvet trakk folk til dalen som en magnet. Først kom gruvearbeiderne, og de trengte hus. Så kom smelterne som renset malmen, og myntslagerne som lagde mynter. Rundt dem kom kjøpmenn, håndverkere og prester. På 1700-tallet var Kongsberg blitt en av de aller største byene i Norge, nesten like stor som Bergen. Alt sammen sprang ut av én sølvåre i fjellet. Bygg byen selv i spillet under, og se den vokse fram steg for steg."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "bygg-kongsberg-3d"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Travel gruveby med tre trehus, smeltehytte og kirke i en skogsdal",
+            "caption": "Kongsberg vokste raskt. Byen fikk egen kirke, eget myntverk og tusenvis av innbyggere."
+        },
+        {
+            "type": "header",
+            "text": "Byggmesterkongen"
+        },
+        {
+            "type": "text",
+            "content": "Kongsberg var ikke det eneste Christian IV bygde. I 1624 brant hele Oslo ned til grunnen. I stedet for å bygge byen opp igjen på samme sted, flyttet kongen den. Han la den nye byen tett inntil festningen Akershus, med rette, brede gater i et rutemønster. Den nye byen kalte han Christiania, etter seg selv. I dag heter den Oslo igjen, men de rette gatene i sentrum er fortsatt de kongen tegnet opp."
+        },
+        {
+            "type": "text",
+            "content": "Kongen grunnla flere byer. I 1641 startet han Kristiansand helt sør i landet. Han satte også i gang kobbergruver, blant annet på Røros. Og han visste godt at Norges skoger var verdt en formue. Trærne ble til planker som ble solgt til hele Europa. Du kan lese mer om det i artikkelen om [trelasthandelen](/historie/dansketiden/trelasthandelen). Sølv, kobber og tømmer gjorde til sammen Norge til en gullgruve for den danske kongen. For å styre alt dette bygde kongen opp et helt system av embetsmenn, bergmestere og soldater rundt om i landet."
+        },
+        {
+            "type": "text",
+            "content": "Men Christian IV var også en krigerkonge, og her gikk det verre. Han førte flere kriger mot Sverige og tapte mye land og mange penger. I et sjøslag i 1644 mistet han synet på det ene øyet av en granatsplint, men han ble stående og lede skipet videre. Krigene tømte kongens kasse, og det var en av grunnene til at han var så glad i det norske sølvet. Tiden hans hadde også en mørk side for vanlige folk. Det var i disse årene at frykten for hekser var på sitt sterkeste, slik du kan lese om i artikkelen om [hekseprosessene](/historie/lov-og-rett/hekseprosessene)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Christian IV peker over et kart mens arbeidere reiser en ny by bak ham",
+            "caption": "Christian IV blandet seg direkte inn i byggingen. Han tegnet gater, valgte tomter og ga ordre om hva som skulle reises."
+        },
+        {
+            "type": "header",
+            "text": "Hva ble igjen etter Christian IV?"
+        },
+        {
+            "type": "text",
+            "content": "Da Christian IV døde i 1648, hadde han satt dype spor i Norge. Byene han grunnla, står fortsatt. Sølvverket på Kongsberg holdt det gående i over trehundre år, og der lager staten fortsatt alle norske mynter den dag i dag. Kongen hadde vist noe viktig: selv om Norge ble styrt fra København, var landet fullt av verdier som gjorde det verdt å bry seg om."
+        },
+        {
+            "type": "text",
+            "content": "Christian IV kunne bruke sølvet så fritt fordi kongen etter [reformasjonen](/historie/reformasjonen/reformasjonen-i-norge) hadde fått nesten all makt i landet. Han bestemte over kirken, over gruvene og over pengene. Historien om Christian IV viser hvordan det henger sammen: en naturressurs i bakken ble til penger, og pengene ble til byer, veier og makt. Sølvet i det norske fjellet var med på å holde en konge i København rik og sterk."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvordan ble sølvet ved Kongsberg funnet, ifølge sagnet?",
+                    "Hvilket år grunnla Christian IV byen Kongsberg?",
+                    "Hva var fyrsetting, og hvorfor brukte gruvearbeiderne det?",
+                    "Hvorfor flyttet kongen byen Oslo i 1624, og hva kalte han den nye byen?",
+                    "Nevn tre verdier i Norge som gjorde landet viktig for den danske kongen."
+                ],
+                "reflekter": [
+                    "Teksten sier at sølv var det samme som makt. Forklar med egne ord hvordan et funn i fjellet kunne gi kongen mer makt.",
+                    "Hvorfor tror du folk fra hele Europa var villige til å jobbe i de kalde og farlige gruvene ved Kongsberg?",
+                    "Christian IV brydde seg mye mer om Norge enn de fleste danske kongene. Hvorfor gjorde han det, tror du?",
+                    "Kongen brukte mye av sølvet på kriger han tapte. Var det en klok bruk av pengene? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Kongsberg lager fortsatt alle norske mynter. Finn ut hvordan en mynt blir laget i dag, og sammenlign med myntverket på 1600-tallet.",
+                    "Se på et kart over Oslo sentrum. Klarer du å finne de rette gatene fra kvartalet Christian IV tegnet opp? Beskriv hva du ser.",
+                    "Diskuter i klassen: Var det rettferdig at sølvet fra norske fjell havnet i kongens kasse i København?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvorfor grunnla Christian IV byen Kongsberg i 1624?",
+                        "options": [
+                            "Fordi det ble funnet sølv i fjellet der",
+                            "Fordi den gamle hovedstaden hadde brent ned",
+                            "Fordi han trengte en havn for handelsskip",
+                            "Fordi svenskene hadde tatt de andre byene"
+                        ],
+                        "answer": "Fordi det ble funnet sølv i fjellet der"
+                    },
+                    {
+                        "question": "Hva var fyrsetting?",
+                        "options": [
+                            "En måte å varme opp husene i gruvebyen på",
+                            "Å brenne bål mot fjellet så steinen sprakk opp",
+                            "En fest arbeiderne holdt når de fant sølv",
+                            "En type ovn i myntverket"
+                        ],
+                        "answer": "Å brenne bål mot fjellet så steinen sprakk opp"
+                    },
+                    {
+                        "question": "Hva skjedde med byen Oslo i 1624?",
+                        "options": [
+                            "Den ble Norges hovedstad for første gang",
+                            "Den brant ned, og kongen flyttet og bygde den opp på nytt",
+                            "Svenskene erobret den",
+                            "Den ble slått sammen med Kongsberg"
+                        ],
+                        "answer": "Den brant ned, og kongen flyttet og bygde den opp på nytt"
+                    },
+                    {
+                        "question": "Hvorfor var Norge verdifullt for den danske kongen?",
+                        "options": [
+                            "Norge hadde en stor og sterk hær",
+                            "Norge hadde mange store byer fra før",
+                            "Norge hadde sølv, kobber og enorme skoger",
+                            "Norge lå nærmest de andre kongene i Europa"
+                        ],
+                        "answer": "Norge hadde sølv, kobber og enorme skoger"
+                    },
+                    {
+                        "question": "Hvor lenge holdt sølvverket ved Kongsberg det gående?",
+                        "options": [
+                            "I omtrent tjue år",
+                            "I omtrent femti år",
+                            "I mer enn trehundre år, helt til 1958",
+                            "Det er fortsatt i full drift i dag"
+                        ],
+                        "answer": "I mer enn trehundre år, helt til 1958"
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

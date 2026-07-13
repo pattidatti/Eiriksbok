@@ -1,5 +1,5 @@
 {
-  "buildId": 1783834349045,
+  "buildId": 1783905908674,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1221,6 +1221,9 @@
     ],
     "olympiske-leker": [
       "content/historie/antikkens-hellas/olympiske-leker.json"
+    ],
+    "christian-iv": [
+      "content/historie/dansketiden/christian-iv.json"
     ],
     "trelasthandelen": [
       "content/historie/dansketiden/trelasthandelen.json"
@@ -3957,6 +3960,7 @@
     "historie/antikkens-hellas/gresk-vitenskap": "content/historie/antikkens-hellas/gresk-vitenskap.json",
     "historie/antikkens-hellas/greske-guder": "content/historie/antikkens-hellas/greske-guder.json",
     "historie/antikkens-hellas/olympiske-leker": "content/historie/antikkens-hellas/olympiske-leker.json",
+    "historie/dansketiden/christian-iv": "content/historie/dansketiden/christian-iv.json",
     "historie/dansketiden/trelasthandelen": "content/historie/dansketiden/trelasthandelen.json",
     "historie/dekolonisering/amerikanske-borgerkrigen": "content/historie/dekolonisering/amerikanske-borgerkrigen.json",
     "historie/dekolonisering/apartheid-syd-afrika": "content/historie/dekolonisering/apartheid-syd-afrika.json",

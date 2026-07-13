@@ -124,8 +124,18 @@ const Paaskeoya3D = lazy(() => import('./Paaskeoya3D'));
 const MayaKollaps3D = lazy(() => import('./MayaKollaps3D'));
 const Reconquista3D = lazy(() => import('./Reconquista3D'));
 const DenMoralskeSirkelen3D = lazy(() => import('./DenMoralskeSirkelen3D'));
+const ByggKongsberg3D = lazy(() => import('./ByggKongsberg3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'bygg-kongsberg-3d': {
+        id: 'bygg-kongsberg-3d',
+        title: 'Bygg gruvebyen Kongsberg',
+        description:
+            'Forvandle en tom skogsdal til gruvebyen Kongsberg i 3D. Dra den glødende sølvklumpen ut av fjellet så gruva åpner, og klikk deg gjennom byggingen mens gruvehytter, smeltehytte, myntverk og kirke reiser seg og innbyggertallet klatrer. Lyspæren: sølvet i fjellet skapte en hel by. Uten sølvåren hadde det bare vært skog. Christian IV grunnla Kongsberg i 1624.',
+        estimatedSeconds: 140,
+        loader: () => import('./ByggKongsberg3D'),
+        Component: ByggKongsberg3D as never,
+    },
     'moralske-sirkelen-3d': {
         id: 'moralske-sirkelen-3d',
         title: 'Den moralske sirkelen',
