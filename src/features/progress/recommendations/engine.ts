@@ -340,25 +340,25 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
         });
     });
 
-    // 6. En tidsreise eleven ikke har fullført.
+    // 6. Tidsreiser eleven ikke har fullført.
     const activeHistory = activeSubjects.has('historie');
-    const unfinishedScenario = SCENARIO_CATALOG.filter(
+    const unfinishedScenarios = SCENARIO_CATALOG.filter(
         (s) => !firstCompletions[`scenario-completed:tidsreise/${s.id}`]
-    )[0];
-    if (unfinishedScenario) {
+    );
+    unfinishedScenarios.slice(0, 2).forEach((s, i) => {
         recs.push({
-            id: `scenario-${unfinishedScenario.id}`,
+            id: `scenario-${s.id}`,
             type: 'scenario',
-            title: unfinishedScenario.title,
-            reason: `Tidsreise til ${unfinishedScenario.era}. Ta valgene som former historien, og se hvordan det går.`,
-            link: `/oving/tidsreise/${unfinishedScenario.id}`,
-            subjectId: unfinishedScenario.subjectId,
-            image: unfinishedScenario.image,
-            score: activeHistory ? 55 : 30,
+            title: s.title,
+            reason: `Tidsreise til ${s.era}. Ta valgene som former historien, og se hvordan det går.`,
+            link: `/oving/tidsreise/${s.id}`,
+            subjectId: s.subjectId,
+            image: s.image,
+            score: (activeHistory ? 55 : 30) - i * 2,
         });
-    }
+    });
 
-    // 7. En detektivsak eleven ikke har løst. DetectiveEngine logger sakens
+    // 7. Detektivsaker eleven ikke har løst. DetectiveEngine logger sakens
     //    interne id (caseId), som avviker fra filslugen/ruten - match derfor
     //    på caseId, med tittel som fallback for gamle hendelser.
     const detectiveEvents = events.filter((e) => e.kind === 'detective-solved');
@@ -368,21 +368,21 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
                 (c.caseId && e.activityId === `detektiv/${c.caseId}`) ||
                 (e.title !== undefined && e.title === c.title)
         );
-    const unsolvedCase = detectiveCases.filter((c) => !isSolved(c))[0];
-    if (unsolvedCase) {
+    const unsolvedCases = detectiveCases.filter((c) => !isSolved(c));
+    unsolvedCases.slice(0, 2).forEach((c, i) => {
         recs.push({
-            id: `detective-${unsolvedCase.id}`,
+            id: `detective-${c.id}`,
             type: 'detective',
-            title: unsolvedCase.title,
-            reason: unsolvedCase.difficulty
-                ? `Løs mysteriet (${unsolvedCase.difficulty.toLowerCase()}). Følg sporene og tenk som en historiker.`
+            title: c.title,
+            reason: c.difficulty
+                ? `Løs mysteriet (${c.difficulty.toLowerCase()}). Følg sporene og tenk som en historiker.`
                 : 'Løs mysteriet. Følg sporene og tenk som en historiker.',
-            link: `/oving/detektiv/${unsolvedCase.id}`,
-            subjectId: unsolvedCase.subjectId,
-            image: unsolvedCase.image,
-            score: activeHistory ? 54 : 29,
+            link: `/oving/detektiv/${c.id}`,
+            subjectId: c.subjectId,
+            image: c.image,
+            score: (activeHistory ? 54 : 29) - i * 2,
         });
-    }
+    });
 
     // 8. Start et helt nytt emne i et fag eleven allerede er aktiv i.
     const freshTopic = topics.find(
@@ -438,5 +438,15 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
         out.push(rec);
         if (out.length >= MAX_RECOMMENDATIONS) break;
     }
+
+    // UI-et viser første kort stort og resten i et 2-kolonners rutenett. Et
+    // partall totalt gir et tomt hull i siste rad - fyll det med ett ekstra
+    // kort (ser bort fra type-taket, men aldri duplikate lenker) hvis en
+    // reell kandidat finnes til overs.
+    if (out.length > 0 && out.length % 2 === 0) {
+        const filler = sorted.find((rec) => !seenLinks.has(rec.link));
+        if (filler) out.push(filler);
+    }
+
     return out;
 };
