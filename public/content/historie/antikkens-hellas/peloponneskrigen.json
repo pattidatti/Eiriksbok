@@ -1,0 +1,218 @@
+{
+    "id": "peloponneskrigen",
+    "title": "Peloponneskrigen: Da Hellas ødela seg selv",
+    "layout": "rich",
+    "year": "431-404 fvt",
+    "category": "Antikkens Hellas",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Athen var en sjømakt, Sparta en landmakt, og ingen kunne slå den andre raskt",
+        "Krigen varte i nesten tretti år og svekket hele Hellas innenfra",
+        "Athen tapte til slutt flåten sin, men Sparta vant bare en tom seier"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Sommeren 431 før vår tidsregning står tusenvis av athenere oppe på bymuren og ser noe forferdelig. Nede på slettene utenfor brenner åkrene deres. Spartas hær har marsjert inn i landet og setter fyr på korn, oliventrær og gårder. Mange athenere har lyst til å styrte ut og slåss, men den gamle lederen Perikles holder dem igjen. Vi vinner ikke mot Sparta på land, sier han. Bli bak murene, og la flåten gjøre jobben. Slik begynte Peloponneskrigen, en krig som skulle vare i nesten tretti år og knuse hele Hellas innenfra."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Athenere pa bymuren ser Spartas haer brenne akrene utenfor byen",
+            "caption": "Athenerne mate se pa at Sparta brente akrene deres, men Perikles nektet a mote fienden pa land."
+        },
+        {
+            "type": "header",
+            "text": "To stormakter, to helt ulike styrker"
+        },
+        {
+            "type": "text",
+            "content": "For å skjønne krigen må du kjenne de to motstanderne. Athen og Sparta var de to mektigste bystatene i Hellas, men de var sterke på hver sin måte. Du kan lese mer om hvor ulike de var i [Athen og Sparta](/historie/antikkens-hellas/athen-og-sparta). Athen var en sjømakt. Byen hadde den største flåten i Hellas, tjente seg rik på handel over havet og styrte en mengde mindre byer som betalte skatt. Sparta var en landmakt. Spartanerne hadde ingen stor flåte, men hæren deres var den beste i verden. Ingen ville møte de spartanske soldatene i åpen kamp på land."
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg en hai og en tiger. Haien er nesten umulig å slå i vannet, og tigeren er nesten umulig å slå på land. Men haien kan ikke jage tigeren opp på stranda, og tigeren kan ikke svømme ut og ta haien. Slik var det med Athen og Sparta. Hver av dem var farlig på sin arena, men ingen av dem kunne enkelt nå den andre der den var sterkest. Det er nettopp derfor krigen ble så lang."
+        },
+        {
+            "type": "text",
+            "content": "En gang hadde de to byene stått sammen. Da perserne angrep fra øst noen tiår tidligere, kjempet Athen og Sparta side om side, slik du kan lese i [Perserkrigene](/historie/perserriket/perserkrigene). Men da den felles faren var over, vokste mistroen. Athen ble stadig rikere og mektigere og samlet flere og flere byer under seg. Sparta og vennene deres på halvøya Peloponnes, som krigen er oppkalt etter, fryktet at Athen skulle bli for sterk. Til slutt brøt det ut åpen krig mellom de to gruppene."
+        },
+        {
+            "type": "header",
+            "text": "Perikles' plan: gjem deg bak murene"
+        },
+        {
+            "type": "text",
+            "content": "Perikles skjønte at Athen aldri kunne vinne et stort landslag mot Sparta. Derfor la han en helt annen plan. Alle bøndene rundt Athen skulle flytte inn bak bymurene. Sparta fikk gjerne brenne åkrene utenfor, for Athen trengte ikke sine egne åkre. Byen kunne kjøpe korn fra land langt borte og få det fraktet sjøveien inn til havna. Så lenge flåten hersket over havet, ville maten alltid komme fram. Samtidig kunne athenske skip seile rundt og herje langs Spartas kyst. Planen var enkel: unngå fienden der han er sterk, og slå tilbake der du selv er sterk."
+        },
+        {
+            "type": "text",
+            "content": "Under er du rådgiver i Athen. Velg strategi mot Sparta år for år, og se selv hvorfor ingen av partene klarte å vinne raskt."
+        },
+        {
+            "type": "component",
+            "name": "PeloponnesStrategi",
+            "props": {
+                "title": "Krigsrådet: Peloponneskrigen"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Pesten rammer Athen"
+        },
+        {
+            "type": "text",
+            "content": "Planen var smart, men den hadde en svakhet. Da hele befolkningen fra landet stuet seg sammen bak murene, ble byen overfylt. Folk bodde tett i tett, med dårlig plass og lite reint vann. I år 430 brøt det ut en fryktelig pest. Sykdommen spredte seg som ild i den trange byen, og tusenvis av mennesker døde. Til og med Perikles selv ble syk og døde året etter. Athen mistet lederen sin midt i krigen, og mange begynte å tvile på om byen kunne vinne."
+        },
+        {
+            "type": "text",
+            "content": "Men pesten var en katastrofe, ikke et nederlag. Flåten var fortsatt hel, og byen hadde fremdeles gull og skip. Athen holdt ut, sendte flåten mot Spartas kyst og kjempet videre. Krigen ble til en langvarig kamp der begge sider gjorde skade på hverandre uten at noen fikk et avgjørende overtak."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Syke og doende mennesker tett sammen i gatene i Athen under pesten",
+            "caption": "Da folk trengte seg sammen bak murene, spredte pesten seg raskt. Selv Perikles dode."
+        },
+        {
+            "type": "header",
+            "text": "Murene som gjorde Athen til en øy"
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor kunne ikke Sparta bare sulte Athen ut? Svaret ligger i de lange murene. Athen lå et lite stykke inne i landet, men byen hadde bygd to lange, parallelle murer som strakte seg helt ned til havnebyen Piraeus ved sjøen. Mellom murene lå en trygg korridor. Selv når Spartas hær omringet Athen på land, kunne skip seile inn i havna og sende korn opp gjennom korridoren og inn i byen. Murene og flåten gjorde Athen til en slags øy på land. En landhær kunne stå utenfor så lenge den ville uten å komme inn."
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv å bygge de lange murene nedenfor. Reis korridoren stykke for stykke, og se hva som skjer når kornskipet seiler inn mens Spartas soldater står maktesløse utenfor."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "lange-murene-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Tjuesju år uten en vinner"
+        },
+        {
+            "type": "text",
+            "content": "Fordi hai og tiger ikke kunne nå hverandre, dro krigen ut i årevis. Det var perioder med kamp og perioder med skjør fred, men aldri et endelig oppgjør. En gang prøvde Athen å bli enda mektigere ved å sende en enorm flåte helt til øya Sikilia langt mot vest. Det ble en katastrofe. Nesten hele flåten og hæren gikk tapt i år 413, og Athen sto plutselig mye svakere enn før."
+        },
+        {
+            "type": "text",
+            "content": "Nå så Sparta sin sjanse. Men for å slå en sjømakt trengte spartanerne noe de aldri hadde hatt: en flåte. Løsningen var å ta imot gull fra perserne, de gamle fiendene fra øst. Med persisk gull bygde Sparta endelig egne krigsskip og kunne utfordre Athen der byen var sterkest, på havet. Krigen skulle ikke lenger avgjøres på land, men til sjøs."
+        },
+        {
+            "type": "text",
+            "content": "Det avgjørende slaget kom i år 405 ved elvemunningen Aigospotamoi. Der overrasket den spartanske flåten athenerne og ødela nesten hele flåten deres. Uten skip kunne ikke Athen lenger hente korn sjøveien. Byen ble omringet og sulten, og året etter, i 404, måtte Athen overgi seg. Spartanerne rev ned de lange murene mens de spilte fløyte, som et tegn på at Athens storhetstid var over."
+        },
+        {
+            "type": "header",
+            "text": "Arven: et svekket Hellas"
+        },
+        {
+            "type": "text",
+            "content": "Sparta hadde vunnet, men det var en tom seier. Krigen hadde vart i tjuesju år og tappet hele Hellas for krefter. Byene var fattigere, folketallet var mindre, og mistroen mellom grekerne var dypere enn noen gang. Sparta klarte ikke å styre Hellas godt, og snart kranglet bystatene videre seg imellom."
+        },
+        {
+            "type": "text",
+            "content": "Denne svakheten fikk store følger. Noen tiår senere kom kong Filip av Makedonia nordfra med en sterk og samlet hær. De greske bystatene var altfor utslitte og splittede til å stå imot, og Makedonia tok over. Sønnen til Filip, Aleksander den store, bygde siden det største riket verden til da hadde sett, slik du kan følge i [Aleksander den store](/historie/perserriket/aleksander-den-store). På den måten banet den greske borgerkrigen vei for at grekernes egen frihet tok slutt."
+        },
+        {
+            "type": "text",
+            "content": "En athensk offiser ved navn Thukydides skrev ned historien om krigen mens den pågikk. Han ville ikke bare fortelle hva som skjedde, men også forklare hvorfor. Boka hans regnes i dag som en av de første ekte historiebøkene. Takket være ham vet vi så mye om krigen, og vi lærer fortsatt av den. Peloponneskrigen viser noe som gjelder langt utover antikken: når to motstandere er sterke på hver sin arena, kan krigen bli lang og grusom, og til slutt taper begge mer enn de vinner."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Nedrevne bymurer i Athen med spartanske soldater som seirer",
+            "caption": "I 404 fvt rev Sparta ned de lange murene. Men seieren kostet hele Hellas dyrt."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor nektet Perikles å møte Spartas hær i åpent slag på land?",
+                    "Hva var de lange murene, og hvordan lot de Athen få mat selv om Sparta sto utenfor?",
+                    "Hva skjedde med Athen i år 430, og hvorfor spredte pesten seg så raskt?",
+                    "Hvordan klarte Sparta til slutt å beseire Athen i år 405 og 404?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor det å være sterk på hver sin arena, én på havet og én på land, gjorde at krigen ble så lang.",
+                    "Perikles' plan om å gjemme seg bak murene var smart, men den førte også til pesten. Forklar hvordan den samme planen kunne være både en styrke og en fare.",
+                    "Sparta vant krigen, men teksten kaller det en tom seier. Forklar hva som menes med det, og hvorfor seieren kostet Sparta og Hellas så mye.",
+                    "Krigen svekket Hellas så mye at Makedonia senere kunne ta over. Vurder om grekerne kunne ha unngått dette, eller om striden mellom Athen og Sparta måtte ende slik."
+                ],
+                "gaaVidere": [
+                    "Thukydides ville forklare hvorfor krigen skjedde, ikke bare hva som skjedde. Finn ett eksempel fra vår egen tid der det er viktig å forstå hvorfor noe skjer, og forklar hvorfor.",
+                    "Skriv en kort tekst (5-8 setninger) fra en ung athener som lever bak murene mens pesten herjer. Beskriv hva hen ser, hører og frykter.",
+                    "Diskuter med en partner: Finnes det konflikter i verden i dag der to parter er sterke på hver sin måte og derfor sliter hverandre ut over lang tid? Finn ett eksempel og sammenlign det med Peloponneskrigen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva var hovedforskjellen mellom Athen og Sparta i krigen?",
+                        "options": [
+                            "Athen var en sjømakt, Sparta en landmakt",
+                            "Athen hadde konge, Sparta hadde ingen leder",
+                            "Athen var rikt, Sparta hadde ingen soldater",
+                            "Athen lå på Peloponnes, Sparta ved havet"
+                        ],
+                        "answer": "Athen var en sjømakt, Sparta en landmakt"
+                    },
+                    {
+                        "question": "Hva gikk Perikles' plan ut på da Sparta angrep?",
+                        "options": [
+                            "Å møte Sparta i et stort slag på land",
+                            "Å overgi byen med en gang",
+                            "Å samle alle bak murene og la flåten skaffe korn utenfra",
+                            "Å be perserne om hjelp"
+                        ],
+                        "answer": "Å samle alle bak murene og la flåten skaffe korn utenfra"
+                    },
+                    {
+                        "question": "Hvorfor kunne ikke Sparta sulte Athen ut fra land?",
+                        "options": [
+                            "Athen hadde nok korn til mange år",
+                            "De lange murene og flåten lot skip frakte korn inn i havna",
+                            "Sparta hadde ingen soldater igjen",
+                            "Athen lå på en ekte øy langt fra land"
+                        ],
+                        "answer": "De lange murene og flåten lot skip frakte korn inn i havna"
+                    },
+                    {
+                        "question": "Hva avgjorde krigen til slutt, i år 405?",
+                        "options": [
+                            "Et stort landslag mellom hærene",
+                            "Sparta ødela Athens flåte ved Aigospotamoi",
+                            "Pesten drepte alle spartanerne",
+                            "Perserne erobret begge byene"
+                        ],
+                        "answer": "Sparta ødela Athens flåte ved Aigospotamoi"
+                    },
+                    {
+                        "question": "Hva ble den langsiktige følgen av krigen for Hellas?",
+                        "options": [
+                            "Hellas ble rikere og sterkere enn før",
+                            "Athen og Sparta ble venner for alltid",
+                            "Hele Hellas ble så svekket at Makedonia senere tok over",
+                            "Perserne ga opp og forlot området"
+                        ],
+                        "answer": "Hele Hellas ble så svekket at Makedonia senere tok over"
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

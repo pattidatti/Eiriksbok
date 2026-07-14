@@ -23,6 +23,7 @@ const UtvandringenFraAfrika3D = lazy(() => import('./UtvandringenFraAfrika3D'));
 const HimmelModellen3D = lazy(() => import('./HimmelModellen3D'));
 const DampmaskinHjerte3D = lazy(() => import('./DampmaskinHjerte3D'));
 const Falanksen3D = lazy(() => import('./Falanksen3D'));
+const LangeMurene3D = lazy(() => import('./LangeMurene3D'));
 const OlympiaDiskos3D = lazy(() => import('./OlympiaDiskos3D'));
 const Vannmolla3D = lazy(() => import('./Vannmolla3D'));
 const Kjoleskapet3D = lazy(() => import('./Kjoleskapet3D'));
@@ -667,6 +668,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./Falanksen3D'),
         Component: Falanksen3D as never,
+    },
+    'lange-murene-3d': {
+        id: 'lange-murene-3d',
+        title: 'De lange murene',
+        description:
+            'Bygg de lange murene som bandt Athen til havna Piraeus i 3D. Reis korridoren seksjon for seksjon, og se kornskipet seile inn og fylle byen mens Spartas hær står maktesløs utenfor. Lyspæra: så lenge flåten styrte havet, kunne en landhær aldri sulte Athen ut. Murene gjorde byen til en øy på land, og derfor ble Peloponneskrigen en 27 år lang utmattelseskrig.',
+        estimatedSeconds: 130,
+        loader: () => import('./LangeMurene3D'),
+        Component: LangeMurene3D as never,
     },
     'olympia-diskos-3d': {
         id: 'olympia-diskos-3d',
