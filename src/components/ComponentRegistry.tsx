@@ -9,6 +9,7 @@ import { FactBox } from './FactBox';
 import { TimelineComponent } from './TimelineComponent';
 import { PlotGraph } from './PlotGraph';
 import { QuoteBlock } from './QuoteBlock';
+import { Kildeliste } from './Kildeliste';
 import { Comparison } from './Comparison';
 import { WritingFix } from './WritingFix';
 import { LineChart } from './LineChart';
@@ -350,6 +351,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     TimelineComponent,
     PlotGraph,
     QuoteBlock,
+    Kildeliste,
     Comparison,
     WritingFix,
     LineChart,

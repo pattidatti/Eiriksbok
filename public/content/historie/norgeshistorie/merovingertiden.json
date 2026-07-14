@@ -67,6 +67,10 @@
         },
         {
             "type": "text",
+            "content": "Det samme mønsteret ser vi enda tydeligere på Avaldsnes på Karmøy i Rogaland. Her, ved det smale sundet Karmsundet, har arkeologer funnet rester etter en befestning og et naust fra merovingertiden. Avaldsnes lå rett ved den viktigste seilingsleia langs kysten, den som senere ga navn til hele landet: Nordvegen, veien mot nord. Den som kontrollerte Karmsundet, kontrollerte trafikken av skip langs hele kysten. Slik ble stedet et av de mektigste maktsentrene i Norge, lenge før noen konge hadde samlet landet. Grunnlaget for den kystmakten som skulle bli Norge, ble lagt akkurat her, i de stille århundrene."
+        },
+        {
+            "type": "text",
             "content": "Håndverkerne i denne tiden var dyktige. De laget vakre spenner av bronse og gull, dekket med dyr som fletter seg inn i hverandre i et innviklet mønster. Vi kaller det dyrestilen. Den samme stilen finnes over hele Norden, og det forteller oss noe viktig: folk her var ikke isolert. Ideer, mennesker og varer beveget seg fra bygd til bygd og over havet."
         },
         {
@@ -196,6 +200,19 @@
                         ],
                         "correctAnswer": 0
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Solberg, B. (2025, 22. februar). Merovingertid. I *Store norske leksikon*. [snl.no/merovingertid](https://snl.no/merovingertid)",
+                    "Solheim, S. & Iversen, F. (2019). The mid-6th century crises and their impacts on human activity and settlements in south-eastern Norway. I C. Theune & N. Brady (Red.), *Settlement change across medieval Europe: Old paradigms and new vistas* (s. 423-434). Sidestone Press.",
+                    "Munch, G. S., Johansen, O. S. & Roesdahl, E. (Red.). (2003). *Borg in Lofoten: A chieftain's farm in North Norway*. Tapir Academic Press.",
+                    "Skre, D. (Red.). (2018). *Avaldsnes - A sea-kings' manor in first-millennium Western Scandinavia*. De Gruyter. [doi.org/10.1515/9783110421088](https://doi.org/10.1515/9783110421088)",
+                    "Store norske leksikon. (2025, 15. desember). Vikingskip. [snl.no/vikingskip](https://snl.no/vikingskip)"
                 ]
             }
         }
