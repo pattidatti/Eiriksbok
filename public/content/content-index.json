@@ -1,5 +1,5 @@
 {
-  "buildId": 1783923849677,
+  "buildId": 1783992781263,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1691,6 +1691,9 @@
     ],
     "kvinnekampen": [
       "content/historie/norgeshistorie/kvinnekampen.json"
+    ],
+    "merovingertiden": [
+      "content/historie/norgeshistorie/merovingertiden.json"
     ],
     "norge-for-vikingene": [
       "content/historie/norgeshistorie/norge-for-vikingene.json"
@@ -4116,6 +4119,7 @@
     "historie/norgeshistorie/klimakrisen-536": "content/historie/norgeshistorie/klimakrisen-536.json",
     "historie/norgeshistorie/knut-alvsson": "content/historie/norgeshistorie/knut-alvsson.json",
     "historie/norgeshistorie/kvinnekampen": "content/historie/norgeshistorie/kvinnekampen.json",
+    "historie/norgeshistorie/merovingertiden": "content/historie/norgeshistorie/merovingertiden.json",
     "historie/norgeshistorie/norge-for-vikingene": "content/historie/norgeshistorie/norge-for-vikingene.json",
     "historie/norgeshistorie/unionen-med-sverige": "content/historie/norgeshistorie/unionen-med-sverige.json",
     "historie/norgeshistorie/unionsopplosningen-1905": "content/historie/norgeshistorie/unionsopplosningen-1905.json",

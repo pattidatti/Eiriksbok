@@ -125,8 +125,18 @@ const MayaKollaps3D = lazy(() => import('./MayaKollaps3D'));
 const Reconquista3D = lazy(() => import('./Reconquista3D'));
 const DenMoralskeSirkelen3D = lazy(() => import('./DenMoralskeSirkelen3D'));
 const ByggKongsberg3D = lazy(() => import('./ByggKongsberg3D'));
+const VeienTilVikingtid3D = lazy(() => import('./VeienTilVikingtid3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'veien-til-vikingtid-3d': {
+        id: 'veien-til-vikingtid-3d',
+        title: 'Veien til vikingtiden',
+        description:
+            'Forvandle den norske kysten fra sammenbrudd til vikingtid i 3D. Etter katastrofen i 536 ligger gårdene øde og bygdeborgen i ruiner. Velg tre grep i rekkefølge - la folk rydde gårdene på nytt, reis høvdinghallen og handelsplassen, og reis til slutt seilet - og se robåten bli et havgående skip som seiler ut i 793. Lyspæra: vikingtiden braket ikke ut fra ingenting. De stille århundrene bygde grunnlaget - folk, makt og handel kom tilbake, og seilet åpnet havet til slutt.',
+        estimatedSeconds: 150,
+        loader: () => import('./VeienTilVikingtid3D'),
+        Component: VeienTilVikingtid3D as never,
+    },
     'bygg-kongsberg-3d': {
         id: 'bygg-kongsberg-3d',
         title: 'Bygg gruvebyen Kongsberg',

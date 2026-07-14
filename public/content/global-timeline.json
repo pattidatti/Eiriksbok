@@ -1454,6 +1454,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "merovingertiden",
+      "title": "Merovingertiden: De stille århundrene",
+      "description": "Tiden mellom folkevandringstidens sammenbrudd og vikingtiden, da folk, makt, handel og seilet gjorde vikingtiden mulig.",
+      "startDate": 550,
+      "endDate": 793,
+      "displayDate": "550-793",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norgeshistorie",
+      "link": "/historie/norgeshistorie/merovingertiden",
+      "tags": [
+        "historie",
+        "norge",
+        "merovingertid",
+        "jernalder",
+        "vikingtiden"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "klimakrisen-536-sub-3",
       "title": "Langobardene invaderer",
       "description": "Langobardene inntar Italia, muligens drevet av uår og sult.",
