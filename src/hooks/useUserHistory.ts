@@ -6,6 +6,10 @@ export interface HistoryItem {
     subjectId: string;
     timestamp: number;
     type?: 'topic' | 'lesson';
+    // Valgfrie - kun satt for type: 'lesson' (trengs for å bygge korrekt
+    // lenke/matche mot firstCompletions i "påbegynte artikler").
+    topicId?: string;
+    subTopicId?: string;
 }
 
 const HISTORY_KEY = 'gravity_user_history';

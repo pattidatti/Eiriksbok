@@ -93,10 +93,12 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                 id: lesson.id,
                 title: lesson.title,
                 subjectId: (lesson.subject || subjectId).toLowerCase(),
-                type: 'lesson'
+                type: 'lesson',
+                topicId,
+                subTopicId,
             });
         }
-    }, [lesson, subjectId, addToHistory]);
+    }, [lesson, subjectId, topicId, subTopicId, addToHistory]);
 
     // Optimized: Derive lessonImage directly without effect
     const lessonImage = useMemo(() => {

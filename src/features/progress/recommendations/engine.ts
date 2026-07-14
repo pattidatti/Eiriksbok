@@ -4,7 +4,7 @@
 // mestring, hva som er påbegynt, og hva som er svakt. Resultatet er en kort,
 // variert liste med begrunnelser på norsk.
 
-import type { Manifest, ManifestTopic, TopicTool } from '../../../types';
+import type { Manifest, ManifestLesson, ManifestTopic, TopicTool } from '../../../types';
 import type { PathProgress } from '../../../stores/useLearningPathProfile';
 import type { SubjectMastery } from '../mastery';
 import type { ActivityEvent } from '../types';
@@ -20,7 +20,9 @@ export type RecommendationType =
     | 'game'
     | 'detective'
     | 'scenario'
-    | 'review';
+    | 'review'
+    | 'recent'
+    | 'started';
 
 export interface Recommendation {
     id: string;
@@ -141,6 +143,25 @@ const findReadLesson = (
         }
     }
     return null;
+};
+
+// Slår opp en spesifikk, kjent leksjon (i motsetning til findNextArticle/
+// findReadLesson, som finner "første uleste/leste" - her vet vi allerede
+// hvilken leksjon vi vil ha, f.eks. fra en historikk-logg).
+export const findManifestLesson = (
+    manifest: Manifest,
+    subjectId: string,
+    topicId: string,
+    lessonId: string,
+    subTopicId?: string
+): ManifestLesson | null => {
+    const topic = topicById(manifest, subjectId, topicId);
+    if (!topic) return null;
+    if (subTopicId) {
+        const sub = topic.subTopics?.find((s) => s.id === subTopicId);
+        return sub?.lessons.find((l) => l.id === lessonId) ?? null;
+    }
+    return topic.lessons?.find((l) => l.id === lessonId) ?? null;
 };
 
 const pct = (part: number, whole: number): number =>
@@ -277,7 +298,11 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
                 b.topic.completedLessons / b.topic.totalLessons -
                 a.topic.completedLessons / a.topic.totalLessons
         );
-    ongoing.slice(0, 2).forEach(({ subjectId, topic }, i) => {
+    // Kun de to beste vinner over MAX_PER_TYPE-taket (scoren er strengt
+    // synkende), men de neste tre finnes som reelt reservemateriale for
+    // fyll-steget lenger ned - slik fylles rutenett-hull heller med en
+    // artikkel enn med en ekstra tidsreise/detektivsak.
+    ongoing.slice(0, 5).forEach(({ subjectId, topic }, i) => {
         const next = findNextArticle(manifest, subjectId, topic.topicId, isRead);
         if (!next) return;
         recs.push({
@@ -340,25 +365,25 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
         });
     });
 
-    // 6. Tidsreiser eleven ikke har fullført.
+    // 6. En tidsreise eleven ikke har fullført.
     const activeHistory = activeSubjects.has('historie');
-    const unfinishedScenarios = SCENARIO_CATALOG.filter(
+    const unfinishedScenario = SCENARIO_CATALOG.filter(
         (s) => !firstCompletions[`scenario-completed:tidsreise/${s.id}`]
-    );
-    unfinishedScenarios.slice(0, 2).forEach((s, i) => {
+    )[0];
+    if (unfinishedScenario) {
         recs.push({
-            id: `scenario-${s.id}`,
+            id: `scenario-${unfinishedScenario.id}`,
             type: 'scenario',
-            title: s.title,
-            reason: `Tidsreise til ${s.era}. Ta valgene som former historien, og se hvordan det går.`,
-            link: `/oving/tidsreise/${s.id}`,
-            subjectId: s.subjectId,
-            image: s.image,
-            score: (activeHistory ? 55 : 30) - i * 2,
+            title: unfinishedScenario.title,
+            reason: `Tidsreise til ${unfinishedScenario.era}. Ta valgene som former historien, og se hvordan det går.`,
+            link: `/oving/tidsreise/${unfinishedScenario.id}`,
+            subjectId: unfinishedScenario.subjectId,
+            image: unfinishedScenario.image,
+            score: activeHistory ? 55 : 30,
         });
-    });
+    }
 
-    // 7. Detektivsaker eleven ikke har løst. DetectiveEngine logger sakens
+    // 7. En detektivsak eleven ikke har løst. DetectiveEngine logger sakens
     //    interne id (caseId), som avviker fra filslugen/ruten - match derfor
     //    på caseId, med tittel som fallback for gamle hendelser.
     const detectiveEvents = events.filter((e) => e.kind === 'detective-solved');
@@ -368,48 +393,47 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
                 (c.caseId && e.activityId === `detektiv/${c.caseId}`) ||
                 (e.title !== undefined && e.title === c.title)
         );
-    const unsolvedCases = detectiveCases.filter((c) => !isSolved(c));
-    unsolvedCases.slice(0, 2).forEach((c, i) => {
+    const unsolvedCase = detectiveCases.filter((c) => !isSolved(c))[0];
+    if (unsolvedCase) {
         recs.push({
-            id: `detective-${c.id}`,
+            id: `detective-${unsolvedCase.id}`,
             type: 'detective',
-            title: c.title,
-            reason: c.difficulty
-                ? `Løs mysteriet (${c.difficulty.toLowerCase()}). Følg sporene og tenk som en historiker.`
+            title: unsolvedCase.title,
+            reason: unsolvedCase.difficulty
+                ? `Løs mysteriet (${unsolvedCase.difficulty.toLowerCase()}). Følg sporene og tenk som en historiker.`
                 : 'Løs mysteriet. Følg sporene og tenk som en historiker.',
-            link: `/oving/detektiv/${c.id}`,
-            subjectId: c.subjectId,
-            image: c.image,
-            score: (activeHistory ? 54 : 29) - i * 2,
+            link: `/oving/detektiv/${unsolvedCase.id}`,
+            subjectId: unsolvedCase.subjectId,
+            image: unsolvedCase.image,
+            score: activeHistory ? 54 : 29,
         });
-    });
+    }
 
     // 8. Start et helt nytt emne i et fag eleven allerede er aktiv i.
-    const freshTopic = topics.find(
+    const freshTopics = topics.filter(
         ({ subjectId, topic }) =>
             topic.completedLessons === 0 &&
             topic.totalLessons > 0 &&
             activeSubjects.has(subjectId)
     );
-    if (freshTopic) {
+    freshTopics.slice(0, 2).forEach((freshTopic, i) => {
         const next = findNextArticle(manifest, freshTopic.subjectId, freshTopic.topic.topicId, isRead);
-        if (next) {
-            recs.push({
-                id: `fresh-${freshTopic.subjectId}-${freshTopic.topic.topicId}`,
-                type: 'article',
-                title: next.title,
-                reason: `Nytt emne i ${subjectTitle(freshTopic.subjectId)}: ${freshTopic.topic.title}. Bygg videre på det du kan.`,
-                link: next.link,
-                subjectId: freshTopic.subjectId,
-                image: next.image,
-                score: 42,
-            });
-        }
-    }
+        if (!next) return;
+        recs.push({
+            id: `fresh-${freshTopic.subjectId}-${freshTopic.topic.topicId}`,
+            type: 'article',
+            title: next.title,
+            reason: `Nytt emne i ${subjectTitle(freshTopic.subjectId)}: ${freshTopic.topic.title}. Bygg videre på det du kan.`,
+            link: next.link,
+            subjectId: freshTopic.subjectId,
+            image: next.image,
+            score: 42 - i * 2,
+        });
+    });
 
     // 9. Oppfordre til å utforske et fag eleven ikke har rørt ennå.
-    const newSubject = mastery.find((s) => s.completedUnits === 0 && s.totalUnits > 0);
-    if (newSubject) {
+    const newSubjects = mastery.filter((s) => s.completedUnits === 0 && s.totalUnits > 0);
+    newSubjects.slice(0, 2).forEach((newSubject, i) => {
         recs.push({
             id: `explore-${newSubject.subjectId}`,
             type: 'article',
@@ -421,9 +445,9 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
                 .find((s) => s.id === newSubject.subjectId)
                 ?.topics.map((t) => findTopicImage(manifest, newSubject.subjectId, t.id))
                 .find(Boolean),
-            score: 28,
+            score: 28 - i * 2,
         });
-    }
+    });
 
     // Sorter, fjern duplikate lenker, og begrens per type for variasjon.
     const sorted = recs.sort((a, b) => b.score - a.score);
@@ -439,12 +463,17 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
         if (out.length >= MAX_RECOMMENDATIONS) break;
     }
 
-    // UI-et viser første kort stort og resten i et 2-kolonners rutenett. Et
-    // partall totalt gir et tomt hull i siste rad - fyll det med ett ekstra
-    // kort (ser bort fra type-taket, men aldri duplikate lenker) hvis en
-    // reell kandidat finnes til overs.
-    if (out.length > 0 && out.length % 2 === 0) {
-        const filler = sorted.find((rec) => !seenLinks.has(rec.link));
+    // MyLearningPage kutter av out[0] til HeroCard, og RecommendationsSection
+    // plukker selv items[0] som sitt eget store featured-kort - så rutenettet
+    // (SmallCard-gridet) har out.length - 2 kort. Et oddetall out.length gir
+    // dermed et oddetall rutenett-kort, som etterlater et tomt hull i siste
+    // rad. Fyll det med én ekstra artikkel hvis mulig (ser bort fra
+    // type-taket, men aldri duplikate lenker); fall tilbake til hvilken som
+    // helst type bare hvis ingen artikkel finnes til overs.
+    if (out.length > 0 && out.length % 2 !== 0) {
+        const filler =
+            sorted.find((rec) => !seenLinks.has(rec.link) && rec.type === 'article') ??
+            sorted.find((rec) => !seenLinks.has(rec.link));
         if (filler) out.push(filler);
     }
 

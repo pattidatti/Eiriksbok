@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
     BookOpen,
+    Bookmark,
     ChevronRight,
+    Clock,
     Gamepad2,
     HelpCircle,
     Hourglass,
@@ -31,6 +33,8 @@ const TYPE_STYLE: Record<
     detective: { Icon: Search, bg: 'bg-amber-500', label: 'Detektiv', chip: 'bg-amber-50 text-amber-700' },
     scenario: { Icon: Hourglass, bg: 'bg-teal-500', label: 'Tidsreise', chip: 'bg-teal-50 text-teal-700' },
     review: { Icon: RefreshCw, bg: 'bg-emerald-500', label: 'Repetisjon', chip: 'bg-emerald-50 text-emerald-700' },
+    recent: { Icon: Clock, bg: 'bg-slate-500', label: 'Nylig lest', chip: 'bg-slate-50 text-slate-700' },
+    started: { Icon: Bookmark, bg: 'bg-orange-500', label: 'Påbegynt', chip: 'bg-orange-50 text-orange-700' },
 };
 
 const spring = (delay: number) => ({
@@ -82,7 +86,8 @@ const FeaturedCard = ({ item }: { item: Recommendation }) => {
 };
 
 // Kompakt kort med thumbnail til venstre (ikonrute når bilde mangler).
-const SmallCard = ({ item, delay }: { item: Recommendation; delay: number }) => {
+// Eksportert for gjenbruk i andre lister (f.eks. ArticleListSection).
+export const SmallCard = ({ item, delay }: { item: Recommendation; delay: number }) => {
     const { Icon, bg, label, chip } = TYPE_STYLE[item.type];
     return (
         <motion.div {...spring(delay)}>

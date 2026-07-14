@@ -1,4 +1,40 @@
 
+// Relativ tid på norsk for aktivitetslogger («Min læring»): "nettopp",
+// "for 3 minutter siden", "for 2 timer siden", osv.
+export const formatRelativeTimeNo = (at: number, now: number = Date.now()): string => {
+    const diffSeconds = Math.max(0, Math.round((now - at) / 1000));
+
+    if (diffSeconds < 60) return 'nettopp';
+
+    const diffMinutes = Math.round(diffSeconds / 60);
+    if (diffMinutes < 60) {
+        return diffMinutes === 1 ? 'for 1 minutt siden' : `for ${diffMinutes} minutter siden`;
+    }
+
+    const diffHours = Math.round(diffMinutes / 60);
+    if (diffHours < 24) {
+        return diffHours === 1 ? 'for 1 time siden' : `for ${diffHours} timer siden`;
+    }
+
+    const diffDays = Math.round(diffHours / 24);
+    if (diffDays < 7) {
+        return diffDays === 1 ? 'for 1 dag siden' : `for ${diffDays} dager siden`;
+    }
+
+    const diffWeeks = Math.round(diffDays / 7);
+    if (diffWeeks < 5) {
+        return diffWeeks === 1 ? 'for 1 uke siden' : `for ${diffWeeks} uker siden`;
+    }
+
+    const diffMonths = Math.round(diffDays / 30);
+    if (diffMonths < 12) {
+        return diffMonths === 1 ? 'for 1 måned siden' : `for ${diffMonths} måneder siden`;
+    }
+
+    const diffYears = Math.round(diffDays / 365);
+    return diffYears === 1 ? 'for 1 år siden' : `for ${diffYears} år siden`;
+};
+
 // Helper to parse year strings like "1918–1939", "1885", "550 fvt", "-500-476", "August 1945", "6. juni 1944"
 export const parseYearRange = (yearStr: string): { start: number, end: number } => {
     if (!yearStr) return { start: 0, end: 0 };

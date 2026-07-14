@@ -15,12 +15,15 @@ import {
     findNextArticle,
 } from '../features/progress/recommendations/engine';
 import { useRecommendations } from '../features/progress/useRecommendations';
+import { buildRecentlyRead, buildStartedArticles } from '../features/progress/recommendations/history';
+import { useUserHistory } from '../hooks/useUserHistory';
 import { getAvatar } from '../features/progress/avatars';
 import { todayLocal } from '../utils/reviewScheduler';
 import { HeroCard } from '../features/progress/components/HeroCard';
 import type { PrimaryAction } from '../features/progress/components/HeroCard';
 import { SubjectRings } from '../features/progress/components/SubjectRings';
 import { RecommendationsSection } from '../features/progress/components/RecommendationsSection';
+import { ArticleListSection } from '../features/progress/components/ArticleListSection';
 import { BadgeGallery } from '../features/progress/components/BadgeGallery';
 import { ActivitySection } from '../features/progress/components/ActivitySection';
 import { SyncCard } from '../features/progress/components/SyncCard';
@@ -52,6 +55,7 @@ export const MyLearningPage = () => {
     const dueCount = useReviewStore((s) => s.dueCount(today));
     const hasSessionToday = useReviewStore((s) => s.hasSessionToday(today));
     const paths = useLearningPathProfile((s) => s.paths);
+    const { history } = useUserHistory();
 
     const [profileOpen, setProfileOpen] = useState(false);
 
@@ -85,6 +89,17 @@ export const MyLearningPage = () => {
           }
         : null;
     const restRecommendations = recommendations.slice(1);
+
+    // Artikler åpnet men ikke fullført, og artikler nylig fullført - egne
+    // seksjoner adskilt fra den kuraterte «Anbefalt for deg».
+    const startedArticles = useMemo(
+        () => (manifest ? buildStartedArticles(manifest, history, firstCompletions) : []),
+        [manifest, history, firstCompletions]
+    );
+    const recentlyRead = useMemo(
+        () => (manifest ? buildRecentlyRead(manifest, events) : []),
+        [manifest, events]
+    );
 
     // Inndata til dagens mål (påbegynt sti, neste artikkel, svakt emne).
     const goalInputs = useMemo(() => {
@@ -212,6 +227,8 @@ export const MyLearningPage = () => {
 
                 {/* Ny elev får fagvalget i heroen - da er lista bare duplikat. */}
                 {!isNewStudent && <RecommendationsSection items={restRecommendations} />}
+                <ArticleListSection title="Påbegynte artikler" items={startedArticles} />
+                <ArticleListSection title="Nylig lest" items={recentlyRead} />
                 <SubjectRings mastery={mastery} />
                 <ActivitySection dayLog={dayLog} />
 
