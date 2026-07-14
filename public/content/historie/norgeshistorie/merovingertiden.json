@@ -5,7 +5,7 @@
     "year": "550-793",
     "category": "Norges forhistorie",
     "readTime": "8 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norgeshistorie/merovingertiden-hero.webp",
     "details": [
         "Tiden mellom folkevandringstidens sammenbrudd og vikingtiden (ca. 550-793)",
         "Nesten ingen skriftlige kilder - vi kjenner tiden gjennom arkeologi",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norgeshistorie/merovingertiden-01.webp",
             "alt": "En øde norsk gård som grønnes igjen med folk som rydder åker",
             "caption": "Etter nedgangstiden ble gårder som lå øde ryddet på nytt, og bygdene fyltes med liv igjen."
         },
@@ -71,7 +71,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norgeshistorie/merovingertiden-02.webp",
             "alt": "Arkeologer graver fram en rik båtgrav med spenner og våpen",
             "caption": "Rike graver, forgylte spenner og store haller viser at makten ble samlet hos færre og sterkere høvdinger."
         },
@@ -108,7 +108,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norgeshistorie/merovingertiden-03.webp",
             "alt": "Vikingskip med reist seil forlater en norsk fjord mot åpent hav",
             "caption": "Da robåten fikk seil, kunne nordboerne krysse åpent hav. I 793 seilte de mot Lindisfarne, og vikingtiden begynte."
         },
