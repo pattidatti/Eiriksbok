@@ -1091,6 +1091,30 @@
       ]
     },
     {
+      "id": "peloponneskrigen",
+      "title": "Peloponneskrigen: Da Hellas ødela seg selv",
+      "description": "Athen var en sjømakt, Sparta en landmakt, og ingen kunne slå den andre raskt. Derfor ble krigen en tjuesju år lang utmattelseskamp som svekket hele Hellas.",
+      "startDate": 431,
+      "endDate": -404,
+      "displayDate": "431-404 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "antikkens-hellas",
+      "link": "/historie/antikkens-hellas/peloponneskrigen",
+      "tags": [
+        "antikken",
+        "hellas",
+        "athen",
+        "sparta",
+        "krig"
+      ],
+      "lat": 37.98,
+      "lng": 23.73,
+      "placeLabel": "Athen",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "arven-etter-romerriket",
       "title": "Arven etter Romerriket",
       "description": "Et dypdykk i hvordan Romerriket preger kultur, språk, lover og politikk i dag.",
