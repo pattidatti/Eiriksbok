@@ -5,7 +5,7 @@
     "year": "431-404 fvt",
     "category": "Antikkens Hellas",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/antikkens-hellas/peloponneskrigen-hero.webp",
     "details": [
         "Athen var en sjømakt, Sparta en landmakt, og ingen kunne slå den andre raskt",
         "Krigen varte i nesten tretti år og svekket hele Hellas innenfra",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/antikkens-hellas/peloponneskrigen-01.webp",
             "alt": "Athenere pa bymuren ser Spartas haer brenne akrene utenfor byen",
             "caption": "Athenerne mate se pa at Sparta brente akrene deres, men Perikles nektet a mote fienden pa land."
         },
@@ -71,7 +71,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/antikkens-hellas/peloponneskrigen-02.webp",
             "alt": "Syke og doende mennesker tett sammen i gatene i Athen under pesten",
             "caption": "Da folk trengte seg sammen bak murene, spredte pesten seg raskt. Selv Perikles dode."
         },
@@ -128,7 +128,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/antikkens-hellas/peloponneskrigen-03.webp",
             "alt": "Nedrevne bymurer i Athen med spartanske soldater som seirer",
             "caption": "I 404 fvt rev Sparta ned de lange murene. Men seieren kostet hele Hellas dyrt."
         },
