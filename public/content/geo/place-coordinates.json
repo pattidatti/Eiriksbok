@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 286
+      "count": 288
     },
     {
       "tag": "dekolonisering",
@@ -872,7 +872,7 @@
     },
     {
       "tag": "vikingtiden",
-      "count": 21
+      "count": 23
     },
     {
       "tag": "steinalder",
@@ -943,6 +943,10 @@
       "count": 15
     },
     {
+      "tag": "jernalder",
+      "count": 14
+    },
+    {
       "tag": "reformasjonen",
       "count": 14
     },
@@ -965,10 +969,6 @@
     {
       "tag": "folkemord",
       "count": 13
-    },
-    {
-      "tag": "jernalder",
-      "count": 12
     },
     {
       "tag": "globalisering",
@@ -1860,6 +1860,10 @@
     },
     {
       "tag": "komedie",
+      "count": 2
+    },
+    {
+      "tag": "merovingertid",
       "count": 2
     },
     {
