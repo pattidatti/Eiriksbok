@@ -105,6 +105,7 @@ Referanse-standard: `VikingShip3D.tsx` (dra-bygg med klikk + drag + slider + fle
     - **Assessment:**
         - `Oppgaver` (obligatorisk, plassert nest sist — rett før Quiz): felles oppgavesett i bunnen av hver artikkel. Bloom-trapp med tre valgfrie kategorier — `forstaa` (finn fakta i teksten), `reflekter` (forklar/analyser/vurder), `gaaVidere` (diskusjon, skriveoppgave eller koble til nåtid = det ekstra utover teksten). Skriv gode oppgaver forankret i artikkelens innhold; "Gå videre" skal løfte eleven ut over gjengivelse. Komponenten har en innebygd "kopier oppgaver"-knapp. Se JSON-skjema i Phase 2.
         - `Quiz`: 3-5 questions, ALLER siste blokk (seriens faste sjekkpunkt).
+        - `Kildeliste` (valgfri, plasseres aller sist etter Quiz): kilder MÅ hentes og verifiseres, aldri konstrueres. Se sourcing-regel og APA-format i Phase 2, JSON Structure Rules.
     - **General Rule:** Make a model that underscores what the article is about. Make it interactive, beautiful, fun, and insightful.
     - **Lager du ny komponent?** Følg `/build_interactive`-skillet for designprinsipper og teknisk implementasjon.
 
@@ -140,6 +141,7 @@ Focus on the "Bones" of the JSON structure.
   }
   ```
   Alle tre kategoriene er valgfrie (tomme utelates), men sikt på 3-4 i `forstaa`, 3-4 i `reflekter` og 2-3 i `gaaVidere`. Oppgavetekst kan inneholde innlenker (`[tekst](/sti)`). Kategoriene rendres med farge, ikon og fortløpende nummerering av komponenten — skriv bare selve oppgaveteksten.
+- **Kildeliste (valgfri, aller siste blokk hvis brukt — etter Quiz):** Hver kilde MÅ faktisk hentes og verifiseres (forfatter + år) mot den virkelige siden — ALDRI konstrueres eller gjettes, heller ikke plausible SNL-forfatternavn eller datoer. Format følger husets APA-stil fra `public/content/norsk/skrivehjelp/hvordan-fore-kilder.json`: kun årstall i parentes (aldri SNL sin "sist oppdatert"-dato), pluss `Hentet DD.MM.ÅÅÅÅ fra URL` for kilder som endres ofte (som SNL). Stabile bok-/artikkelkilder trenger ikke hentedato. Eksempel: `Sigurdsson, J. V. (2021). *Vikingtiden*. Store norske leksikon. Hentet 10.01.2024 fra https://snl.no/vikingtiden`.
 - **Bilder (obligatorisk):** Artikkelen MÅ ha `"heroImage": "/images/placeholder.webp"` på toppnivå, og 3 inline bildebokser fordelt i content-arrayen. Eksakte plasseringer: (1) rett etter åpningsteksten, (2) ved et dramatisk vendepunkt midt i artikkelen, (3) etter siste hoveddel (før Quiz). `alt`-teksten (5-10 ord, norsk) beskriver konkret hva bildet skal vise — den brukes av bildegenererings-workflowen. Eksempel:
   ```json
   { "type": "image", "src": "/images/placeholder.webp", "alt": "Norske vikingskip i havn, 900-tallet", "caption": "Langskip brukt på raids" }
