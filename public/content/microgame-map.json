@@ -43,6 +43,10 @@
     "subjectId": "historie",
     "topicId": "antikkens-hellas"
   },
+  "lange-murene-3d": {
+    "subjectId": "historie",
+    "topicId": "antikkens-hellas"
+  },
   "bygg-kongsberg-3d": {
     "subjectId": "historie",
     "topicId": "dansketiden"
@@ -214,6 +218,10 @@
   "pestrute-3d": {
     "subjectId": "historie",
     "topicId": "middelalderen"
+  },
+  "smi-det-tyske-riket-3d": {
+    "subjectId": "historie",
+    "topicId": "nasjonalstatenes-tid"
   },
   "samisk-gjenreising-3d": {
     "subjectId": "historie",

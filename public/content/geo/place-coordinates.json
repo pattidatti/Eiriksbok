@@ -796,7 +796,7 @@
     },
     {
       "tag": "krig",
-      "count": 66
+      "count": 68
     },
     {
       "tag": "teknologi",
@@ -828,7 +828,7 @@
     },
     {
       "tag": "antikken",
-      "count": 32
+      "count": 34
     },
     {
       "tag": "demokrati",
@@ -943,15 +943,15 @@
       "count": 15
     },
     {
+      "tag": "1800-tallet",
+      "count": 15
+    },
+    {
       "tag": "jernalder",
       "count": 14
     },
     {
       "tag": "reformasjonen",
-      "count": 14
-    },
-    {
-      "tag": "1800-tallet",
       "count": 14
     },
     {
@@ -1732,6 +1732,10 @@
     },
     {
       "tag": "opphavsrett",
+      "count": 3
+    },
+    {
+      "tag": "nasjonalisme",
       "count": 3
     },
     {
@@ -2779,10 +2783,6 @@
       "count": 2
     },
     {
-      "tag": "nasjonalisme",
-      "count": 2
-    },
-    {
       "tag": "samfunnsfag",
       "count": 2
     },
@@ -3276,6 +3276,14 @@
     },
     {
       "tag": "nøytralitet",
+      "count": 1
+    },
+    {
+      "tag": "bismarck",
+      "count": 1
+    },
+    {
+      "tag": "garibaldi",
       "count": 1
     },
     {

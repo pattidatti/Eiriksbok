@@ -55,6 +55,7 @@ const Chinampabyen3D = lazy(() => import('./Chinampabyen3D'));
 const Kanalbyggeren3D = lazy(() => import('./Kanalbyggeren3D'));
 const SamiskGjenreising3D = lazy(() => import('./SamiskGjenreising3D'));
 const ForeneUnionen3D = lazy(() => import('./ForeneUnionen3D'));
+const SmiDetTyskeRiket3D = lazy(() => import('./SmiDetTyskeRiket3D'));
 const HagiaSofia3D = lazy(() => import('./HagiaSofia3D'));
 const Pompeii3D = lazy(() => import('./Pompeii3D'));
 const PakkAmerikakofferten3D = lazy(() => import('./PakkAmerikakofferten3D'));
@@ -1217,6 +1218,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Trelastruta3D'),
         Component: Trelastruta3D as never,
+    },
+    'smi-det-tyske-riket-3d': {
+        id: 'smi-det-tyske-riket-3d',
+        title: 'Smi det tyske riket',
+        description:
+            'På midten av 1800-tallet var «Tyskland» dusinvis av spredte småstater. Dra hver tyske stat inn på kartbordet, en etter en, og se dem klikke sammen til én form. Når den siste staten låser seg på plass, reiser keiserflagget seg - Tyskland er samlet i 1871. Bismarck ser på fra kanten. Lyspæren ligger i selve grepet: mange selvstendige biter blir føyd sammen til én nasjon, akkurat slik nasjonssamlingen skjedde.',
+        estimatedSeconds: 140,
+        loader: () => import('./SmiDetTyskeRiket3D'),
+        Component: SmiDetTyskeRiket3D as never,
     },
     'vend-mot-mekka': {
         id: 'vend-mot-mekka',

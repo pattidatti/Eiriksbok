@@ -1091,6 +1091,30 @@
       ]
     },
     {
+      "id": "peloponneskrigen",
+      "title": "Peloponneskrigen: Da Hellas ødela seg selv",
+      "description": "Athen var en sjømakt, Sparta en landmakt, og ingen kunne slå den andre raskt. Derfor ble krigen en tjuesju år lang utmattelseskamp som svekket hele Hellas.",
+      "startDate": 431,
+      "endDate": -404,
+      "displayDate": "431-404 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "antikkens-hellas",
+      "link": "/historie/antikkens-hellas/peloponneskrigen",
+      "tags": [
+        "antikken",
+        "hellas",
+        "athen",
+        "sparta",
+        "krig"
+      ],
+      "lat": 37.98,
+      "lng": 23.73,
+      "placeLabel": "Athen",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "arven-etter-romerriket",
       "title": "Arven etter Romerriket",
       "description": "Et dypdykk i hvordan Romerriket preger kultur, språk, lover og politikk i dag.",
@@ -5159,6 +5183,31 @@
       "lng": -2.5,
       "placeLabel": "Storbritannia",
       "placeCountryId": 826,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "samlingen-av-italia-og-tyskland",
+      "title": "Da nasjonene ble til: Samlingen av Italia og Tyskland",
+      "description": "Nasjonalismen forandret Europa. Italia ble samlet gjennom folkelig begeistring og Garibaldi, Tyskland gjennom Bismarcks jern og blod.",
+      "startDate": 1815,
+      "endDate": 1871,
+      "displayDate": "1815-1871",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "nasjonalstatenes-tid",
+      "link": "/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland",
+      "tags": [
+        "nasjonalisme",
+        "italia",
+        "tyskland",
+        "bismarck",
+        "garibaldi",
+        "1800-tallet"
+      ],
+      "lat": 42.5,
+      "lng": 12.5,
+      "placeLabel": "Italia",
+      "placeCountryId": 380,
       "geoConfidence": "tag"
     },
     {

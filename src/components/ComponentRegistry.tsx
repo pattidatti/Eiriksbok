@@ -23,6 +23,7 @@ import { MapCarousel } from './MapCarousel';
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
 const StilleKilder = lazy(() => import('./content/interactive/StilleKilder').then(m => ({ default: m.StilleKilder })));
+const NasjonsbyggerLab = lazy(() => import('./content/interactive/NasjonsbyggerLab').then(m => ({ default: m.NasjonsbyggerLab })));
 const TrelastVerdikjede = lazy(() => import('./content/interactive/TrelastVerdikjede').then(m => ({ default: m.TrelastVerdikjede })));
 const SolvetsReise = lazy(() => import('./content/interactive/SolvetsReise').then(m => ({ default: m.SolvetsReise })));
 const KunnskapsbroAndalus = lazy(() => import('./content/interactive/KunnskapsbroAndalus').then(m => ({ default: m.KunnskapsbroAndalus })));
@@ -316,6 +317,7 @@ const MicroGame = lazy(() => import('./microgames/MicroGameBlock').then(m => ({ 
 
 export const componentRegistry: Record<string, React.ComponentType<any>> = {
     // Core
+    NasjonsbyggerLab,
     GovernmentExplorer,
     HistoryLongLines,
     HelleristningTyder,
