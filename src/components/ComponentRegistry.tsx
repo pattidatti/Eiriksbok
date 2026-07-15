@@ -26,6 +26,7 @@ const StilleKilder = lazy(() => import('./content/interactive/StilleKilder').the
 const NasjonsbyggerLab = lazy(() => import('./content/interactive/NasjonsbyggerLab').then(m => ({ default: m.NasjonsbyggerLab })));
 const TrelastVerdikjede = lazy(() => import('./content/interactive/TrelastVerdikjede').then(m => ({ default: m.TrelastVerdikjede })));
 const SolvetsReise = lazy(() => import('./content/interactive/SolvetsReise').then(m => ({ default: m.SolvetsReise })));
+const Nordnesnatten = lazy(() => import('./content/interactive/Nordnesnatten').then(m => ({ default: m.Nordnesnatten })));
 const KunnskapsbroAndalus = lazy(() => import('./content/interactive/KunnskapsbroAndalus').then(m => ({ default: m.KunnskapsbroAndalus })));
 const HelleristningTyder = lazy(() => import('./content/interactive/HelleristningTyder').then(m => ({ default: m.HelleristningTyder })));
 const RidderMotLangbue = lazy(() => import('./content/interactive/RidderMotLangbue').then(m => ({ default: m.RidderMotLangbue })));
@@ -348,6 +349,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     StilleKilder,
     TrelastVerdikjede,
     SolvetsReise,
+    Nordnesnatten,
     KunnskapsbroAndalus,
     EICSimulation,
     FactBox,

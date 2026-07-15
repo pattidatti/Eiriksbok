@@ -128,8 +128,18 @@ const Reconquista3D = lazy(() => import('./Reconquista3D'));
 const DenMoralskeSirkelen3D = lazy(() => import('./DenMoralskeSirkelen3D'));
 const ByggKongsberg3D = lazy(() => import('./ByggKongsberg3D'));
 const VeienTilVikingtid3D = lazy(() => import('./VeienTilVikingtid3D'));
+const Hansakoggen3D = lazy(() => import('./Hansakoggen3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'hansakoggen-3d': {
+        id: 'hansakoggen-3d',
+        title: 'Hansakoggen i Bergen',
+        description:
+            'Bryggen i Bergen på 1400-tallet. Last tørrfisk (tørket torsk fra Nord-Norge) om bord i den brede hansakoggen ved kaia, klikk seilet og send skipet til Europa. Det kommer tilbake fullt av korn, mel og sølv - men når du skal dra sølvkista i land, godtar bare Kontoret (de tyske hansakjøpmennene) den. Prøver du kongen, får du beskjed om at all handel gikk gjennom Kontoret. Til slutt viser to sølvhauger at storparten ble kjøpmennenes, mens kongen bare fikk litt toll. Lyspæren: Hansaen kontrollerte handelen i Bergen, så varene og fortjenesten gikk gjennom kjøpmennene, ikke kongen.',
+        estimatedSeconds: 150,
+        loader: () => import('./Hansakoggen3D'),
+        Component: Hansakoggen3D as never,
+    },
     'veien-til-vikingtid-3d': {
         id: 'veien-til-vikingtid-3d',
         title: 'Veien til vikingtiden',

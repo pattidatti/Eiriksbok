@@ -1,5 +1,12 @@
 [
   {
+    "id": "absolutt-fortrinn",
+    "term": "Absolutt fortrinn",
+    "definition": "Å være best til å lage en vare, altså klare å lage mest av den med de samme ressursene. Et land kan ha absolutt fortrinn i alt og likevel tjene på å spesialisere seg etter komparativt fortrinn.",
+    "subject": "samfunnskunnskap",
+    "type": "concept"
+  },
+  {
     "term": "Adel",
     "aliases": [
       "adelen",
@@ -57,6 +64,13 @@
     "subject": "historie",
     "topic": "forste-verdenskrig",
     "tags": [],
+    "type": "concept"
+  },
+  {
+    "id": "alternativkostnad",
+    "term": "Alternativkostnad",
+    "definition": "Det beste du gir opp når du velger å bruke tid eller ressurser på noe annet. Hver time legen skriver brev, er en time hun ikke behandler pasienter. Alternativkostnaden er kjernen i komparativt fortrinn.",
+    "subject": "samfunnskunnskap",
     "type": "concept"
   },
   {
@@ -1546,6 +1560,13 @@
     "type": "concept"
   },
   {
+    "id": "komparativt-fortrinn",
+    "term": "Komparativt fortrinn",
+    "definition": "Å kunne lage en vare med lavere alternativkostnad enn andre, altså å ofre minst for å lage den. Selv den som er dårligst til alt har et komparativt fortrinn i noe, og derfor lønner det seg å spesialisere seg og bytte.",
+    "subject": "samfunnskunnskap",
+    "type": "concept"
+  },
+  {
     "term": "Komsakulturen",
     "definition": "En eldre steinalderkultur i Finnmark og Nord-Troms, datert til ca. 9000–7000 fvt. Navnet kommer fra Komsa-fjellet ved Alta.",
     "type": "concept",
@@ -1855,7 +1876,7 @@
     "links": [
       {
         "title": "Det Mongolske Riket",
-        "url": "/historie/middelalder/mongolske-riket"
+        "url": "/historie/middelalderen/mongolske-riket"
       }
     ],
     "type": "concept"
@@ -2267,7 +2288,7 @@
     "links": [
       {
         "title": "Det Mongolske Riket",
-        "url": "/historie/middelalder/mongolske-riket"
+        "url": "/historie/middelalderen/mongolske-riket"
       }
     ],
     "type": "concept"
@@ -3436,7 +3457,7 @@
     "links": [
       {
         "title": "Det Mongolske Riket",
-        "url": "/historie/middelalder/mongolske-riket"
+        "url": "/historie/middelalderen/mongolske-riket"
       }
     ],
     "type": "concept"
@@ -3579,7 +3600,7 @@
     ],
     "subject": "historie",
     "lifespan": "384 f.Kr. – 322 f.Kr.",
-    "link": "/historie/antikken/platon-og-aristoteles"
+    "link": "/krle/filosofi/aristoteles"
   },
   {
     "term": "Louis Armstrong",
@@ -3604,7 +3625,7 @@
     ],
     "subject": "historie",
     "lifespan": "354 e.Kr. – 430 e.Kr.",
-    "link": "/historie/antikken/princeps-til-guds-utvalgte"
+    "link": "/krle/filosofi/augustin"
   },
   {
     "term": "Ayatollah Khomeini",
@@ -3843,7 +3864,7 @@
     ],
     "subject": "historie",
     "lifespan": "1711 – 1776",
-    "link": "/filosofi/opplysningstid/david-hume"
+    "link": "/krle/filosofi/hume"
   },
   {
     "term": "Deng Xiaoping",
@@ -3988,6 +4009,19 @@
     "lifespan": "950 - 1003"
   },
   {
+    "term": "Elise Eskildsdatter",
+    "definition": "Norsk adelskvinne og enke etter høvedsmannen Olav Nilsson. Etter drapet på mannen i 1455 ledet hun i flere tiår en privat kaperkrig mot de tyske hanseatene.",
+    "type": "person",
+    "tags": [
+      "middelalder",
+      "norge",
+      "bergen",
+      "hanseatene"
+    ],
+    "subject": "historie",
+    "lifespan": "1400-tallet, død ca. 1483"
+  },
+  {
     "term": "Duke Ellington",
     "definition": "Ellington var en av jazzhistoriens viktigste komponister og ledet et berømt storband som spilte på Cotton Club i Harlem.",
     "type": "person",
@@ -4116,7 +4150,7 @@
     ],
     "subject": "historie",
     "lifespan": "1844 – 1900",
-    "link": "/filosofi/eksistensialisme/friedrich-nietzsche"
+    "link": "/krle/filosofi/nietzsche"
   },
   {
     "term": "Frode Grytten",
@@ -4140,7 +4174,7 @@
     ],
     "subject": "historie",
     "lifespan": "63 f.Kr. – 14 e.Kr.",
-    "link": "/historie/romerriket/augustus"
+    "link": "/historie/romerriket/augustus-og-keiserdomme"
   },
   {
     "term": "Galileo Galilei",
@@ -4200,7 +4234,7 @@
     "lifespan": "1162 - 1227",
     "definition": "Grunnleggeren av Mongolriket og en av historiens mest betydningsfulle erobrere.",
     "image": "/images/people/genghis-khan.webp",
-    "link": "/historie/middelalder/mongolske-riket",
+    "link": "/historie/middelalderen/mongolske-riket",
     "type": "person"
   },
   {
@@ -4350,7 +4384,7 @@
     ],
     "subject": "historie",
     "lifespan": "1594 – 1632",
-    "link": "/historie/reformasjonen/30-arskrigen"
+    "link": "/historie/reformasjonen/30-aarskrigen"
   },
   {
     "term": "Gustav Trolle",
@@ -4492,7 +4526,7 @@
     ],
     "subject": "historie",
     "lifespan": "ca. 1464 – 1530",
-    "link": "/historie/middelalder/knut-alvsson"
+    "link": "/historie/norsk-middelalder/knut-alvsson"
   },
   {
     "term": "Henrik Wergeland",
@@ -4666,7 +4700,7 @@
     ],
     "subject": "historie",
     "lifespan": "ca. 1412 – 1431",
-    "link": "/historie/middelalder/jeanne-d-arc"
+    "link": "/historie/middelalderen/hundreaarskrigen"
   },
   {
     "term": "Jeremy Bentham",
@@ -4749,7 +4783,7 @@
     ],
     "subject": "historie",
     "lifespan": "1632 – 1704",
-    "link": "/filosofi/opplysningstid/john-locke"
+    "link": "/krle/filosofi/locke"
   },
   {
     "term": "John Poindexter",
@@ -4835,7 +4869,7 @@
     ],
     "subject": "historie",
     "lifespan": "742 – 814",
-    "link": "/historie/middelalder/karl-den-store"
+    "link": "/historie/vikingtiden/karl-den-store"
   },
   {
     "term": "Karl Liebknecht",
@@ -4945,7 +4979,7 @@
     ],
     "subject": "historie",
     "lifespan": "ca. 1455 – 1502",
-    "link": "/historie/middelalder/knut-alvsson"
+    "link": "/historie/norsk-middelalder/knut-alvsson"
   },
   {
     "term": "Knut Alvsson",
@@ -4958,7 +4992,7 @@
     ],
     "subject": "historie",
     "lifespan": "1455 - 1502",
-    "link": "/historie/norgeshistorie/knut-alvsson"
+    "link": "/historie/norsk-middelalder/knut-alvsson"
   },
   {
     "term": "Knut den Mektige",
@@ -5041,7 +5075,7 @@
     "lifespan": "1215 - 1294",
     "definition": "Barnebarn av Genghis Khan, grunnlegger av Yuan-dynastiet i Kina og vert for Marco Polo.",
     "image": "/images/people/kublai-khan.webp",
-    "link": "/historie/middelalder/mongolske-riket",
+    "link": "/historie/middelalderen/mongolske-riket",
     "type": "person"
   },
   {
@@ -5201,7 +5235,7 @@
     ],
     "subject": "historie",
     "lifespan": "83 f.Kr. – 30 f.Kr.",
-    "link": "/historie/romerriket/augustus"
+    "link": "/historie/romerriket/augustus-og-keiserdomme"
   },
   {
     "term": "Marcus Aurelius",
@@ -5291,7 +5325,7 @@
     ],
     "subject": "historie",
     "lifespan": "1889 – 1976",
-    "link": "/filosofi/eksistensialisme/martin-heidegger"
+    "link": "/krle/filosofi/heidegger"
   },
   {
     "term": "Martin Luther King Jr.",
@@ -5762,7 +5796,7 @@
     ],
     "subject": "historie",
     "lifespan": "ca. 427 f.Kr. – 347 f.Kr.",
-    "link": "/historie/antikken/platon-og-aristoteles"
+    "link": "/krle/filosofi/platon"
   },
   {
     "term": "Puyi",
@@ -6009,7 +6043,7 @@
     ],
     "subject": "historie",
     "lifespan": "ca. 470 f.Kr. – 399 f.Kr.",
-    "link": "/historie/antikken/sokrates"
+    "link": "/krle/filosofi/sokrates"
   },
   {
     "term": "Solomon Asch",
@@ -6114,7 +6148,7 @@
     ],
     "subject": "historie",
     "lifespan": "1225 – 1274",
-    "link": "/filosofi/middelalder/thomas-aquinas"
+    "link": "/krle/filosofi/aquinas"
   },
   {
     "term": "Thomas Hobbes",

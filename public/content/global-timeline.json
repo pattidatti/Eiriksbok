@@ -3001,6 +3001,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "hansadrapet-1455",
+      "title": "Hansadrapet i Bergen 1455: Da kjøpmennene var sterkere enn kongen",
+      "description": "Da tyske kjøpmenn brente Munkeliv kloster og drepte kongens høvedsmann Olav Nilsson.",
+      "startDate": 1455,
+      "endDate": null,
+      "displayDate": "1455",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norsk-middelalder",
+      "link": "/historie/norsk-middelalder/hansadrapet-1455",
+      "tags": [
+        "historie",
+        "norge",
+        "middelalder",
+        "bergen",
+        "hanseatene",
+        "kalmarunionen"
+      ],
+      "lat": 60.39,
+      "lng": 5.32,
+      "placeLabel": "Bergen",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "songhai-riket",
       "title": "Songhai-riket",
       "description": "Det største riket i Afrikas historie vokste fram langs elva Niger, men falt for skytevåpen i 1591.",

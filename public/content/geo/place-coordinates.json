@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 288
+      "count": 290
     },
     {
       "tag": "dekolonisering",
@@ -843,6 +843,10 @@
       "count": 28
     },
     {
+      "tag": "middelalder",
+      "count": 26
+    },
+    {
       "tag": "revolusjon",
       "count": 26
     },
@@ -860,10 +864,6 @@
     },
     {
       "tag": "hverdagsliv",
-      "count": 24
-    },
-    {
-      "tag": "middelalder",
       "count": 24
     },
     {
@@ -927,6 +927,10 @@
       "count": 16
     },
     {
+      "tag": "1800-tallet",
+      "count": 16
+    },
+    {
       "tag": "geopolitikk",
       "count": 16
     },
@@ -940,10 +944,6 @@
     },
     {
       "tag": "konflikt",
-      "count": 15
-    },
-    {
-      "tag": "1800-tallet",
       "count": 15
     },
     {
@@ -1503,6 +1503,10 @@
       "count": 4
     },
     {
+      "tag": "nasjonalisme",
+      "count": 4
+    },
+    {
       "tag": "ideologi",
       "count": 4
     },
@@ -1732,10 +1736,6 @@
     },
     {
       "tag": "opphavsrett",
-      "count": 3
-    },
-    {
-      "tag": "nasjonalisme",
       "count": 3
     },
     {
@@ -2027,6 +2027,10 @@
       "count": 2
     },
     {
+      "tag": "hanseatene",
+      "count": 2
+    },
+    {
       "tag": "songhai",
       "count": 2
     },
@@ -2268,6 +2272,14 @@
     },
     {
       "tag": "maktbalanse",
+      "count": 2
+    },
+    {
+      "tag": "bismarck",
+      "count": 2
+    },
+    {
+      "tag": "garibaldi",
       "count": 2
     },
     {
@@ -3276,14 +3288,6 @@
     },
     {
       "tag": "nøytralitet",
-      "count": 1
-    },
-    {
-      "tag": "bismarck",
-      "count": 1
-    },
-    {
-      "tag": "garibaldi",
       "count": 1
     },
     {

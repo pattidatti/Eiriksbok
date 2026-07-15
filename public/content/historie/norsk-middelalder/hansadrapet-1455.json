@@ -1,0 +1,214 @@
+{
+    "id": "hansadrapet-1455",
+    "title": "Hansadrapet i Bergen 1455: Da kjøpmennene var sterkere enn kongen",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "1455",
+    "category": "Norsk middelalder",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Olav Nilsson var kongens høvedsmann i Bergen og kjempet mot de tyske hanseatenes makt.",
+        "1. september 1455 ble han drept da tyske kjøpmenn brente Munkeliv kloster på Nordnes.",
+        "Drapet viser hvor mektige hanseatene var: de slapp nesten unna med å drepe kongens mann."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Natten til 1. september 1455 sto Munkeliv kloster i full fyr. Flammene kastet et rødt skjær ut over havnen i Bergen. Inne i klosteret på Nordnes hadde noen av de mektigste mennene i Norge søkt tilflukt. Der var Olav Nilsson, kongens egen høvedsmann i byen. Der var biskopen i Bergen. Utenfor sto tyske kjøpmenn med våpen i hendene og ventet på at ilden skulle drive dem ut. Da natten var over, var over seksti mennesker drept. Hvordan kunne noen våge å drepe kongens mann og en biskop, og likevel slippe unna med det?"
+        },
+        {
+            "type": "header",
+            "text": "Byen der tyskerne rådde"
+        },
+        {
+            "type": "text",
+            "content": "For å skjønne hva som skjedde den natten, må vi først forstå hvem som egentlig styrte Bergen. På 1400-tallet var Bergen den største byen i Norge og en av de viktigste handelsbyene i hele Nord-Europa. Men mye av handelen lå ikke i norske hender. Den lå hos hanseatene. En hanseat var en tysk kjøpmann som tilhørte Hansaen, et stort forbund av handelsbyer rundt Østersjøen og Nordsjøen. Fra bydelen Bryggen styrte de en av sine aller viktigste stasjoner i utlandet. Den ble kalt Det tyske kontor, og et slikt kontor var et helt handelssamfunn med egne regler, egne ledere og hundrevis av kjøpmenn og svenner."
+        },
+        {
+            "type": "text",
+            "content": "Det viktigste hanseatene handlet med, var tørrfisk. Tørrfisk er torsk som er hengt til tørk i den kalde lufta i Nord-Norge, helt tørr og hard som en planke. Slik fisk kunne lagres i årevis og fraktes langt. Fiskerne i nord sendte tørrfisken sørover til Bergen. Der kjøpte de tyske kjøpmennene den, og solgte den videre til hele det katolske Europa, der folk trengte fisk å spise i fasten. Hanseatene satt som en dør mellom Norge og resten av Europa. Alt måtte gjennom dem, og de bestemte prisene. Det gjorde dem rike og mektige, og de likte dårlig at noen blandet seg inn."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Travel kai på Bryggen i Bergen med tyske hansakjøpmenn og et bredt handelsskip lastet med tørrfisk",
+            "caption": "På Bryggen styrte de tyske kjøpmennene handelen. Herfra gikk norsk tørrfisk ut til hele Europa."
+        },
+        {
+            "type": "header",
+            "text": "Olav Nilsson tar opp kampen"
+        },
+        {
+            "type": "text",
+            "content": "Olav Nilsson var ikke en mann som lot seg skremme. Han kom fra en fornem norsk slekt og var ridder og medlem av riksrådet, altså kretsen av stormenn som styrte landet sammen med kongen. I 1455 var han høvedsmann på Bergenhus. En høvedsmann var kongens fremste mann i en by eller en landsdel, med ansvar for borgen, loven og forsvaret. Olav mente at tyskerne hadde fått altfor mye makt. Han ville nekte dem å handle direkte med de norske fiskerne, og han ville tvinge tyske håndverkere i byen til å følge norsk lov, akkurat som alle andre."
+        },
+        {
+            "type": "text",
+            "content": "Olav nøyde seg ikke med ord. Han utstyrte skip og gikk til angrep på hanseatiske handelsfartøy ute på havet. En slik privat sjøkrig ble kalt kaperkrig, og de som drev med det, kapret skip og last fra fienden. For hanseatene var Olav Nilsson blitt en farlig mann som truet selve grunnlaget for rikdommen deres."
+        },
+        {
+            "type": "text",
+            "content": "Men Olav sto mer alene enn han trodde. Han skulle egentlig hatt kongen i ryggen. Problemet var at kongen i København selv trengte hanseatene. Både kong Christoffer og kong Christian den første var avhengige av lån og krigsskip fra de rike handelsbyene. Derfor turte de ikke å støtte sin egen høvedsmann fullt ut mot kjøpmennene. Olav Nilsson kjempet kongens kamp, men kongen lot ham i stikken."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva var Hansaen?",
+                "content": "Hansaen, også kalt Hanseforbundet, var et forbund av rundt to hundre tyske handelsbyer med Lübeck i spissen. Sammen kontrollerte de handelen i Nord-Europa i flere hundre år. De hadde faste stasjoner i utlandet, kalt kontorer, i storbyer som Bergen, London, Brügge og Novgorod. I Bergen holdt de til på Bryggen fra midten av 1300-tallet helt til 1754. På det meste bodde det opptil to tusen tyskere i Det tyske kontor i Bergen, i et eget samfunn med egne lover midt inne i den norske byen."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Sommeren 1455 kom Olav Nilsson tilbake til Bergen. Bare to dager senere brøt det løs. Følg det som skjedde, steg for steg, på kartet under, og legg merke til hvem som til slutt sitter igjen med makten."
+        },
+        {
+            "type": "component",
+            "name": "Nordnesnatten",
+            "props": {
+                "title": "Natten på Nordnes: kongen eller kjøpmennene?"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Drapet i klosteret"
+        },
+        {
+            "type": "text",
+            "content": "Den 1. september 1455 gikk tyskerne til angrep på Olav Nilsson mens han var på tinget i byen. Tinget var stedet der folk møttes for å styre og dømme. Olav skjønte at han var i livsfare. Sammen med sønnen Nils, broren Peder og biskop Thorleiv flyktet han i båt over havnen til Munkeliv kloster på Nordnes. Klosteret var et hellig sted, et birgittinerkloster der det bodde nonner og munker. Olav håpet at ingen ville våge å bruke vold på hellig grunn. Han tok feil. De tyske kjøpmennene omringet klosteret og satte fyr på det. Olav Nilsson, biskopen og over seksti mann mistet livet i flammene og kampen."
+        },
+        {
+            "type": "text",
+            "content": "Nå hadde tyske kjøpmenn drept både kongens høvedsmann og en biskop. Man skulle tro at straffen ville bli hard. Men kong Christian den første trengte fortsatt hanseatene, og han valgte å se en annen vei. Ingen ble dømt til døden for drapene. Først i 1490, hele trettifem år senere, betalte hanseatene en erstatning på sju tusen danske mark. En slik erstatning for et drap ble kalt mannbot, en bot man betalte til familien til den drepte i stedet for å bli straffet på livet. For familien var det en mager trøst."
+        },
+        {
+            "type": "header",
+            "text": "Enkens hevn"
+        },
+        {
+            "type": "text",
+            "content": "Historien var likevel ikke slutt. Olav Nilsson hadde en kone som het Elise Eskildsdatter. Hun var ikke typen til å sørge i stillhet. Etter drapet tok hun opp mannens kamp. Fra gården Talgje i Ryfylke ledet hun en privat kaperkrig mot de tyske kjøpmennene, og hun skal selv ha vært om bord som fører på et av kaperskipene. I flere tiår kapret hun og barna hennes hanseatiske skip. Den eldste sønnen druknet i et forlis i 1465, men den yngste sønnen, Axel, førte krigen videre. Til slutt stolte ikke kongen på henne heller, og i 1468 tok han fra henne lenet hennes, altså jorda og inntektene hun styrte på kongens vegne. Elise er blitt stående som et bilde på en sterk kvinne i en tid da menn skrev det meste av historien."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En kvinne står på dekket av et middelaldersk skip som nærmer seg et tysk handelsskip på et grått hav",
+            "caption": "Elise Eskildsdatter ga seg ikke. I tiår etter drapet ledet hun kaperkrig mot de tyske kjøpmennene."
+        },
+        {
+            "type": "text",
+            "content": "For å skjønne hvorfor hanseatene var så mektige, hjelper det å se hvordan handelen deres virket. Prøv selv i spillet under: last den hanseatiske koggen på Bryggen, og se hvor varene og fortjenesten til slutt havner."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "hansakoggen-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvem hadde makten?"
+        },
+        {
+            "type": "text",
+            "content": "Drapet i Munkeliv kloster forteller noe viktig om Norge på 1400-tallet. På papiret var det kongen som styrte. I virkeligheten var det ofte andre som satt med den virkelige makten. I Bergen var det de tyske kjøpmennene. De var så rike og så viktige for kongen at de kunne drepe hans egen høvedsmann og en biskop, og likevel slippe unna med en bot mange år etterpå. Norge var på denne tiden i union med Danmark, styrt av en fjern konge i København, og du kan lese mer om det i artikkelen om [Kalmarunionen](/historie/norgeshistorie/kalmarunionen). Vil du vite mer om selve kjøpmennene, kan du lese om [hanseatene](/historie/norsk-middelalder/hanseatene). Historien om Olav Nilsson minner oss om et spørsmål som gjelder i alle tider: Hvem har egentlig makten, de som bærer tittelen, eller de som sitter på pengene?"
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem var hanseatene, og hva var Det tyske kontor på Bryggen?",
+                    "Hva var den viktigste varen hanseatene handlet med i Bergen?",
+                    "Hvilken stilling hadde Olav Nilsson i Bergen i 1455?",
+                    "Hva skjedde med Olav Nilsson og biskopen ved Munkeliv kloster?",
+                    "Hva gjorde Elise Eskildsdatter etter at mannen hennes ble drept?"
+                ],
+                "reflekter": [
+                    "Teksten sier at hanseatene satt som en dør mellom Norge og Europa. Forklar med egne ord hvorfor det ga dem så mye makt.",
+                    "Hvorfor turte ikke kongen å straffe de tyske kjøpmennene hardt etter drapet, tror du?",
+                    "Olav Nilsson søkte tilflukt i et kloster fordi det var et hellig sted. Hvorfor hjalp ikke det ham?",
+                    "Var det klokt av Olav Nilsson å gå til kaperkrig mot hanseatene? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Finn ut mer om tørrfisk. Hvorfor kunne nettopp denne varen fraktes så langt, og hvorfor var den så viktig i det katolske Europa?",
+                    "Bryggen i Bergen står fortsatt og er på UNESCOs verdensarvliste. Finn bilder av Bryggen i dag, og sammenlign med hvordan det kan ha sett ut på 1400-tallet.",
+                    "Diskuter i klassen: Finnes det i dag selskaper eller grupper som har mer makt enn politikerne som egentlig styrer? Kom med eksempler."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvem var hanseatene?",
+                        "options": [
+                            "Tyske kjøpmenn i et stort handelsforbund",
+                            "Norske fiskere fra Nord-Norge",
+                            "Kongens soldater på Bergenhus",
+                            "Munker i Munkeliv kloster"
+                        ],
+                        "answer": "Tyske kjøpmenn i et stort handelsforbund"
+                    },
+                    {
+                        "question": "Hva handlet hanseatene mest med i Bergen?",
+                        "options": [
+                            "Sølv fra fjellet",
+                            "Tørrfisk fra Nord-Norge",
+                            "Tømmer fra skogene",
+                            "Korn fra Danmark"
+                        ],
+                        "answer": "Tørrfisk fra Nord-Norge"
+                    },
+                    {
+                        "question": "Hvilken stilling hadde Olav Nilsson?",
+                        "options": [
+                            "Han var kongens høvedsmann på Bergenhus",
+                            "Han var biskop i Bergen",
+                            "Han var leder for Det tyske kontor",
+                            "Han var konge over Norge"
+                        ],
+                        "answer": "Han var kongens høvedsmann på Bergenhus"
+                    },
+                    {
+                        "question": "Hva skjedde ved Munkeliv kloster i 1455?",
+                        "options": [
+                            "Kongen holdt et stort ting der",
+                            "Tyske kjøpmenn brente klosteret og drepte Olav og biskopen",
+                            "Hanseatene ble jaget ut av Bergen",
+                            "Elise Eskildsdatter grunnla en ny by"
+                        ],
+                        "answer": "Tyske kjøpmenn brente klosteret og drepte Olav og biskopen"
+                    },
+                    {
+                        "question": "Hvorfor straffet ikke kongen hanseatene hardt etter drapet?",
+                        "options": [
+                            "Fordi han ikke fikk vite om drapet før mange år senere",
+                            "Fordi han selv var redd for biskopen",
+                            "Fordi han trengte hanseatenes penger og krigsskip",
+                            "Fordi Olav Nilsson hadde brutt norsk lov"
+                        ],
+                        "answer": "Fordi han trengte hanseatenes penger og krigsskip"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Opsahl, E. & Salvesen, H. (2026). *Olav Nilsson*. Store norske leksikon. Hentet 15.07.2026 fra [snl.no/Olav_Nilsson](https://snl.no/Olav_Nilsson)",
+                    "Holmboe, H. & Salvesen, H. (2024). *Det tyske kontor*. Store norske leksikon. Hentet 15.07.2026 fra [snl.no/Det_tyske_kontor](https://snl.no/Det_tyske_kontor)",
+                    "Bratberg, T. (2026). *Elise Eskildsdatter*. Norsk biografisk leksikon. Hentet 15.07.2026 fra [nbl.snl.no/Elise_Eskildsdatter](https://nbl.snl.no/Elise_Eskildsdatter)",
+                    "Lokalhistoriewiki.no (2026). *Munkeliv kloster*. Norsk lokalhistorisk institutt, Nasjonalbiblioteket. Hentet 15.07.2026 fra [lokalhistoriewiki.no/Munkeliv_kloster](https://lokalhistoriewiki.no/Munkeliv_kloster)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

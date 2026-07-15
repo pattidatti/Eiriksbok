@@ -1,5 +1,5 @@
 {
-  "buildId": 1784079087600,
+  "buildId": 1784101378065,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1717,6 +1717,9 @@
       "content/historie/norsk-middelalder/alv-erlingsson.json",
       "content/people/alv-erlingsson.json"
     ],
+    "hansadrapet-1455": [
+      "content/historie/norsk-middelalder/hansadrapet-1455.json"
+    ],
     "forfallet": [
       "content/historie/osmanske-riket/forfallet.json"
     ],
@@ -2755,6 +2758,9 @@
     ],
     "eirik-raude": [
       "content/people/eirik-raude.json"
+    ],
+    "elise-eskildsdatter": [
+      "content/people/elise-eskildsdatter.json"
     ],
     "ellington": [
       "content/people/ellington.json"
@@ -4133,6 +4139,7 @@
     "historie/norgeshistorie/unionsopplosningen-1905": "content/historie/norgeshistorie/unionsopplosningen-1905.json",
     "historie/norgeshistorie/utvandringen-til-amerika": "content/historie/norgeshistorie/utvandringen-til-amerika.json",
     "historie/norsk-middelalder/alv-erlingsson": "content/historie/norsk-middelalder/alv-erlingsson.json",
+    "historie/norsk-middelalder/hansadrapet-1455": "content/historie/norsk-middelalder/hansadrapet-1455.json",
     "historie/osmanske-riket/forfallet": "content/historie/osmanske-riket/forfallet.json",
     "historie/osmanske-riket/handel-og-kultur": "content/historie/osmanske-riket/handel-og-kultur.json",
     "historie/osmanske-riket/janitsjarene": "content/historie/osmanske-riket/janitsjarene.json",
@@ -4480,6 +4487,7 @@
     "people/einstein.json/einstein": "content/people/einstein.json",
     "people/eirik-magnusson.json/eirik-magnusson": "content/people/eirik-magnusson.json",
     "people/eirik-raude.json/eirik-raude": "content/people/eirik-raude.json",
+    "people/elise-eskildsdatter.json/elise-eskildsdatter": "content/people/elise-eskildsdatter.json",
     "people/ellington.json/ellington": "content/people/ellington.json",
     "people/ernest-hemingway.json/ernest-hemingway": "content/people/ernest-hemingway.json",
     "people/ester-boserup.json/ester-boserup": "content/people/ester-boserup.json",
