@@ -126,7 +126,7 @@ export const HomeLearningModule = () => {
                     </div>
 
                     {/* Innhold: featured bildekort + to små anbefalinger */}
-                    <div className="grid gap-3 lg:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
                         <motion.div {...spring(0.1)}>
                             <Link
                                 to={primary.link}

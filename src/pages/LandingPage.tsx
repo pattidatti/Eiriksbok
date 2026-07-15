@@ -8,7 +8,6 @@ import { usePageTitle } from '../hooks/usePageTitle';
 import { useManifestData } from '../hooks/useManifestData';
 import { PageSkeleton } from '../components/Skeleton';
 import { getSubjectUrl, getLessonUrl, ROUTES } from '../utils/routes';
-import { DailyReviewCard } from '../components/review/DailyReviewCard';
 import { HomeLearningModule } from '../features/progress/components/HomeLearningModule';
 
 export const LandingPage: React.FC = () => {
@@ -44,9 +43,9 @@ export const LandingPage: React.FC = () => {
                     </div>
                 </motion.div>
 
-                <DailyReviewCard variant="compact" />
-
-                {/* Min læring: streak, mål og neste steg fra anbefalingsmotoren */}
+                {/* Min læring: streak, mål og neste steg fra anbefalingsmotoren.
+                    «Dagens økt» dukker opp her som anbefaling når noe er forfalt -
+                    derfor trenger den ikke et eget kort over. */}
                 <HomeLearningModule />
 
                 {recentLessons.length > 0 && (
