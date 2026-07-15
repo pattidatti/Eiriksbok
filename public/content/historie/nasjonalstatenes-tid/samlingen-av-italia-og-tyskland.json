@@ -5,7 +5,7 @@
     "year": "1815-1871",
     "category": "Nasjonalstatenes tid",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland-hero.webp",
     "details": [
         "Nasjonalisme: ideen om at folk med samme språk og kultur bør ha sin egen stat",
         "Italia ble samlet gjennom folkelig begeistring og Garibaldi",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland-01.webp",
             "alt": "Gammelt kart over Europa på 1800-tallet delt opp i mange små fargede stater",
             "caption": "Før 1861 var både Italia og Tyskland lappetepper av små stater, ikke samlede land."
         },
@@ -81,7 +81,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland-02.webp",
             "alt": "Høytidelig sal full av soldater og offiserer som roper ut et nytt keiserrike",
             "caption": "I 1871 ble Det tyske keiserriket ropt ut i speilsalen i Versailles, midt i det beseirede Frankrike."
         },
@@ -129,7 +129,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland-03.webp",
             "alt": "Flagg fra et samlet Italia og et samlet Tyskland side om side over et europakart",
             "caption": "To nye nasjonalstater i hjertet av Europa forandret maktbalansen for alltid."
         },
