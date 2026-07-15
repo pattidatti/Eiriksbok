@@ -1,0 +1,251 @@
+{
+    "id": "samlingen-av-italia-og-tyskland",
+    "title": "Da nasjonene ble til: Samlingen av Italia og Tyskland",
+    "layout": "rich",
+    "year": "1815-1871",
+    "category": "Nasjonalstatenes tid",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Nasjonalisme: ideen om at folk med samme språk og kultur bør ha sin egen stat",
+        "Italia ble samlet gjennom folkelig begeistring og Garibaldi",
+        "Tyskland ble samlet gjennom Bismarcks krig og maktpolitikk",
+        "Begge rikene var ferdig samlet i 1871"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk deg en gutt som vokser opp i Napoli i 1850. Han snakker italiensk, spiser italiensk mat og synger italienske sanger. Men hvis du spør ham hvilket land han bor i, kan han ikke svare Italia. Det landet finnes ikke ennå. Der Italia ligger på kartet i dag, lå det på den tiden et lappeteppe av små kongedømmer, hertugdømmer og områder styrt av fremmede makter. Det samme gjaldt Tyskland. Begge stedene var mange små stater, ikke ett land. På bare noen tiår skulle dette forandre seg helt. Dette er historien om hvordan to nasjoner ble smidd sammen."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gammelt kart over Europa på 1800-tallet delt opp i mange små fargede stater",
+            "caption": "Før 1861 var både Italia og Tyskland lappetepper av små stater, ikke samlede land."
+        },
+        {
+            "type": "header",
+            "text": "En ny og farlig idé: nasjonen"
+        },
+        {
+            "type": "text",
+            "content": "På 1800-tallet spredte en ny tanke seg over Europa. Tanken var enkel: mennesker som deler språk, historie og kultur hører sammen, og de bør styre seg selv i sin egen stat. Denne ideen kaller vi nasjonalisme. En nasjon er en gruppe mennesker som føler at de hører til det samme folket."
+        },
+        {
+            "type": "text",
+            "content": "Ideen fikk fart av Napoleon. Da hærene hans marsjerte gjennom Europa på begynnelsen av 1800-tallet, rev de ned gamle grenser og vekket folk til å tenke nytt om hvem de var. Du kan lese mer om ham i artikkelen om [Napoleon](/historie/den-franske-revolusjon/napoleon). Etter at Napoleon var slått, møttes Europas ledere i 1815 for å tegne kartet på nytt. På [Wienerkongressen](/historie/den-franske-revolusjon/wienerkongressen) forsøkte de å presse den nye nasjonalismen ned igjen og beholde de mange småstatene. Men ideen lot seg ikke stoppe."
+        },
+        {
+            "type": "text",
+            "content": "Rundt om i Italia og Tyskland begynte folk å drømme om ett samlet land. Studenter, forfattere og vanlige folk skrev sanger og dikt på sitt eget språk og feiret sin egen historie. Mange var lei av å bli styrt av fremmede konger og keisere. De ville selv bestemme hvem som skulle lede dem. Denne følelsen vokste seg sterkere for hvert tiår, og til slutt ble den for kraftig til at noen kongress kunne holde den tilbake."
+        },
+        {
+            "type": "header",
+            "text": "Italia: mange stater, én drøm"
+        },
+        {
+            "type": "text",
+            "content": "Italia var delt i mange biter. I nord styrte Østerrike store områder. I midten styrte paven i Roma. I sør lå kongedømmet Napoli og Sicilia. Bare ett italiensk kongedømme var både fritt og sterkt: Sardinia i nordvest. Der satt en klok statsmann som het Camillo Cavour. Han bygde opp Sardinia til å bli rikt og moderne, med jernbaner, hær og gode avtaler med andre land. Cavour ville samle Italia ovenfra, steg for steg, gjennom smart diplomati."
+        },
+        {
+            "type": "text",
+            "content": "Men samlingen fikk også en helt annen kraft: folkelig begeistring. Helten het Giuseppe Garibaldi. I 1860 seilte han til Sicilia med rundt tusen frivillige soldater kledd i røde skjorter. De ble kalt de tusen rødskjortene. Mot alle odds slo de den store hæren i sør og erobret hele Sør-Italia. Garibaldi ga så alt han hadde vunnet til kongen av Sardinia. I 1861 ble kongeriket Italia ropt ut. Ti år senere, i 1871, ble Roma hovedstad, og Italia var endelig samlet til ett land."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "De tusen rødskjortene",
+                "content": "Garibaldi hadde ingen stor hær og ingen rike sponsorer. Han hadde bare rundt tusen frivillige menn i røde skjorter og en brennende tro på et samlet Italia. At denne lille styrken klarte å erobre hele Sør-Italia, gjorde Garibaldi til en folkehelt over hele Europa. Han viste at nasjonalisme ikke bare var en idé for konger og statsmenn, men noe vanlige folk var villige til å risikere livet for."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Tyskland: jern og blod"
+        },
+        {
+            "type": "text",
+            "content": "Tyskland var enda mer oppdelt enn Italia. Der lå det dusinvis av små tyske stater samlet i en løs forbindelse som ble kalt Det tyske forbund. Den sterkeste av dem var Preussen, et land med en hard og godt trent hær. I 1862 fikk Preussen en ny leder som skulle forandre alt: Otto von Bismarck. Han var kald, smart og villig til å bruke makt for å nå målet. Bismarck trodde ikke at Tyskland kunne samles gjennom fine taler og avstemninger. Han mente det måtte skje gjennom styrke."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "De store spørsmålene i vår tid blir ikke avgjort gjennom taler og flertallsvedtak, men gjennom jern og blod.",
+                "author": "Otto von Bismarck, 1862. Med jern mente han våpen, med blod mente han krig."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Og slik gikk det. Bismarck førte Preussen inn i tre korte kriger på rad. Først mot Danmark, så mot Østerrike i 1866, og til slutt mot Frankrike i 1870 til 1871. Hver seier trakk flere tyske stater inn under Preussens ledelse. Da Frankrike var slått, samlet Bismarck alle de tyske statene til ett rike. I januar 1871 ble Det tyske keiserriket ropt ut, og stedet han valgte var ikke en gang i Tyskland. Det skjedde i speilsalen i Versailles, det franske kongeslottet. For Frankrike var dette en dyp ydmykelse som de ikke skulle glemme."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Høytidelig sal full av soldater og offiserer som roper ut et nytt keiserrike",
+            "caption": "I 1871 ble Det tyske keiserriket ropt ut i speilsalen i Versailles, midt i det beseirede Frankrike."
+        },
+        {
+            "type": "text",
+            "content": "Nå har du hørt begge historiene. Prøv å bygge de to nasjonene selv i verktøyet under. Velg en hendelse, og trykk på nasjonen den bygde. Legg merke til hvor forskjellig de to landene ble til."
+        },
+        {
+            "type": "component",
+            "name": "NasjonsbyggerLab",
+            "props": {
+                "title": "Bygg to nasjoner"
+            }
+        },
+        {
+            "type": "header",
+            "text": "To veier, ett resultat"
+        },
+        {
+            "type": "text",
+            "content": "Italia og Tyskland endte begge opp som samlede nasjonalstater i 1871. Men de kom dit langs helt ulike veier. Italia ble samlet mye nedenfra, drevet av folkelig begeistring, idealisme og en folkehelt som Garibaldi. Tyskland ble samlet ovenfra, gjennom Bismarcks kalde maktpolitikk og tre kriger. Den ene veien handlet om drømmer og frihet. Den andre handlet om hær og jern. Likevel var sluttresultatet det samme: der det før hadde vært mange små stater, sto det nå ett stort land."
+        },
+        {
+            "type": "text",
+            "content": "Det tyske eksempelet er lett å kjenne på kroppen: mange spredte biter som blir føyd sammen til én form. I mikrospillet under kan du samle de tyske statene selv."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "smi-det-tyske-riket-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor betyr dette noe i dag?"
+        },
+        {
+            "type": "text",
+            "content": "Samlingen av Italia og Tyskland forandret hele Europa. Særlig det nye Tyskland var stort, folkerikt og hadde en sterk industri og hær. Det rokket ved balansen mellom stormaktene, og gjorde Frankrike og andre naboer nervøse. Denne spenningen bygde seg opp i flere tiår og var en viktig grunn til at [første verdenskrig](/historie/forste-verdenskrig/opptakt) brøt ut i 1914."
+        },
+        {
+            "type": "text",
+            "content": "Nasjonalismen hadde også en annen side. Der den samlet Italia og Tyskland, rev den andre riker i stykker. I store, flerkulturelle riker begynte folkegrupper å kreve sin egen stat. Dette var en av kreftene som førte til [sammenbruddet i Det osmanske riket](/historie/osmanske-riket/sammenbruddet). Nasjonalisme kan altså både binde folk sammen og splitte dem fra hverandre. Den samme ideen som ga en gutt i Napoli et fedreland, kunne andre steder føre til krig og oppløsning. Derfor er nasjonalisme en av de mektigste og mest tveeggede ideene i moderne historie."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Flagg fra et samlet Italia og et samlet Tyskland side om side over et europakart",
+            "caption": "To nye nasjonalstater i hjertet av Europa forandret maktbalansen for alltid."
+        },
+        {
+            "type": "component",
+            "name": "TimelineComponent",
+            "props": {
+                "title": "Veien til to nasjoner",
+                "compact": true,
+                "events": [
+                    { "year": 1815, "description": "Wienerkongressen tegner Europas kart på nytt og prøver å holde nasjonalismen nede." },
+                    { "year": 1860, "description": "Garibaldi og de tusen rødskjortene erobrer Sør-Italia." },
+                    { "year": 1861, "description": "Kongeriket Italia ropes ut, men Roma er ennå ikke med." },
+                    { "year": 1866, "description": "Preussen slår Østerrike og styrker sin ledelse blant de tyske statene." },
+                    { "year": 1871, "description": "Det tyske keiserriket ropes ut i Versailles, og Roma blir hovedstad i Italia. Begge rikene er nå samlet." }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet nasjonalisme? Forklar med egne ord.",
+                    "Hvem var Giuseppe Garibaldi, og hva gjorde de tusen rødskjortene i 1860?",
+                    "Hva mente Bismarck da han sa at Tyskland måtte samles gjennom jern og blod?",
+                    "I hvilket år var både Italia og Tyskland ferdig samlet?"
+                ],
+                "reflekter": [
+                    "Forklar hvordan Italia og Tyskland ble samlet på to helt ulike måter. Hva var den viktigste forskjellen?",
+                    "Hvorfor tror du Bismarck valgte å rope ut det tyske keiserriket akkurat i Versailles, i Frankrike?",
+                    "Teksten sier at nasjonalisme både kan binde folk sammen og splitte dem fra hverandre. Gi ett eksempel på hver av delene fra artikkelen.",
+                    "Hvorfor gjorde det nye, sterke Tyskland naboene sine nervøse?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort tekst (5 til 8 setninger) om hva du mener det vil si å høre til et land i dag. Er det språket, stedet du bor, eller noe annet som betyr mest?",
+                    "Finn ut hva som binder Norge sammen som nasjon. Nevn minst tre ting nordmenn ofte føler at de deler.",
+                    "Diskuter med en partner: Er det best å samle et land nedenfra, slik som i Italia, eller ovenfra med makt, slik som i Tyskland? Begrunn svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva menes med nasjonalisme?",
+                        "options": [
+                            "Ideen om at alle land bør styres av en konge",
+                            "Ideen om at folk med samme språk og kultur bør ha sin egen stat",
+                            "Ideen om at land bør slå seg sammen til ett verdensrike",
+                            "Ideen om at kirken bør styre staten"
+                        ],
+                        "answer": 1,
+                        "explanation": "Nasjonalisme er tanken om at mennesker som deler språk, historie og kultur hører sammen og bør styre seg selv i sin egen stat."
+                    },
+                    {
+                        "question": "Hvordan ble Sør-Italia erobret i 1860?",
+                        "options": [
+                            "Østerrike ga det bort frivillig",
+                            "Paven i Roma overtok det",
+                            "Garibaldi og de tusen rødskjortene slo hæren i sør",
+                            "Frankrike erobret det i en krig"
+                        ],
+                        "answer": 2,
+                        "explanation": "Garibaldi seilte til Sicilia med rundt tusen frivillige i røde skjorter og erobret hele Sør-Italia, som han så ga til kongen av Sardinia."
+                    },
+                    {
+                        "question": "Hvem var Otto von Bismarck?",
+                        "options": [
+                            "En italiensk folkehelt",
+                            "Lederen i Preussen som samlet Tyskland gjennom krig",
+                            "En fransk keiser",
+                            "Paven i Roma"
+                        ],
+                        "answer": 1,
+                        "explanation": "Bismarck ledet Preussen fra 1862 og samlet de tyske statene gjennom tre kriger, ikke gjennom taler og avstemninger."
+                    },
+                    {
+                        "question": "Hvor ble Det tyske keiserriket ropt ut i 1871?",
+                        "options": [
+                            "I Berlin",
+                            "I München",
+                            "I speilsalen i Versailles i Frankrike",
+                            "I Wien i Østerrike"
+                        ],
+                        "answer": 2,
+                        "explanation": "Bismarck valgte speilsalen i Versailles, det franske kongeslottet, midt i det beseirede Frankrike. Det var en dyp ydmykelse for franskmennene."
+                    },
+                    {
+                        "question": "Hvorfor var samlingen av Tyskland viktig for tiden som kom?",
+                        "options": [
+                            "Det nye Tyskland var stort og sterkt og rokket ved maktbalansen i Europa",
+                            "Tyskland ble straks oppløst igjen",
+                            "Det gjorde slutt på all nasjonalisme i Europa",
+                            "Ingen andre land brydde seg om det"
+                        ],
+                        "answer": 0,
+                        "explanation": "Et stort, folkerikt og sterkt Tyskland gjorde naboene nervøse. Spenningen bygde seg opp og var en viktig grunn til at første verdenskrig brøt ut i 1914."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, R. (2023, 4. mai). Italias historie. I *Store norske leksikon*. [snl.no/Italias_historie](https://snl.no/Italias_historie)",
+                    "Emberland, T. (2024, 12. januar). Otto von Bismarck. I *Store norske leksikon*. [snl.no/Otto_von_Bismarck](https://snl.no/Otto_von_Bismarck)",
+                    "Tvedt, K. A. (2023, 9. november). Giuseppe Garibaldi. I *Store norske leksikon*. [snl.no/Giuseppe_Garibaldi](https://snl.no/Giuseppe_Garibaldi)",
+                    "Nordby, T. (2024, 3. mars). Tysklands historie. I *Store norske leksikon*. [snl.no/Tysklands_historie](https://snl.no/Tysklands_historie)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
