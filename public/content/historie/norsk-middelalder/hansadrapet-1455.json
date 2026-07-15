@@ -6,7 +6,7 @@
     "year": "1455",
     "category": "Norsk middelalder",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norsk-middelalder/hansadrapet-1455-hero.webp",
     "details": [
         "Olav Nilsson var kongens høvedsmann i Bergen og kjempet mot de tyske hanseatenes makt.",
         "1. september 1455 ble han drept da tyske kjøpmenn brente Munkeliv kloster på Nordnes.",
@@ -31,7 +31,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norsk-middelalder/hansadrapet-1455-01.webp",
             "alt": "Travel kai på Bryggen i Bergen med tyske hansakjøpmenn og et bredt handelsskip lastet med tørrfisk",
             "caption": "På Bryggen styrte de tyske kjøpmennene handelen. Herfra gikk norsk tørrfisk ut til hele Europa."
         },
@@ -92,7 +92,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norsk-middelalder/hansadrapet-1455-02.webp",
             "alt": "En kvinne står på dekket av et middelaldersk skip som nærmer seg et tysk handelsskip på et grått hav",
             "caption": "Elise Eskildsdatter ga seg ikke. I tiår etter drapet ledet hun kaperkrig mot de tyske kjøpmennene."
         },

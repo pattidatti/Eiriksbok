@@ -6,7 +6,7 @@
     "year": "1177-1202",
     "category": "Norsk middelalder",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norsk-middelalder/sverre-sigurdsson-hero.webp",
     "details": [
         "Sverre Sigurdsson var prest, ikke kriger, da han i 1177 ble leder for birkebeinerne og krevde den norske kronen.",
         "I sju år kjempet han mot kong Magnus Erlingsson, som var kronet av kirken selv som barn.",
@@ -39,7 +39,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norsk-middelalder/sverre-sigurdsson-01.webp",
             "alt": "En gruppe fattigkledde krigere med bjørkebark bundet rundt leggene samler seg rundt et bål i en snødekt fjellskog",
             "caption": "Birkebeinerne fikk navnet sitt av fiendene, som hånte dem for å være så fattige at de bandt bjørkebark rundt leggene."
         },
@@ -88,7 +88,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norsk-middelalder/sverre-sigurdsson-02.webp",
             "alt": "Middelalderskip lenket sammen på rekke i en trang norsk fjord, med krigere som kjemper om bord mens ett skip synker",
             "caption": "Ved Fimreite ble kong Magnus sin lenkede flåte hans undergang: da ett skip sank, dro lenken de andre med."
         },
