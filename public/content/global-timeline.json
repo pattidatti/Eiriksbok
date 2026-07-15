@@ -2209,6 +2209,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "sverre-sigurdsson",
+      "title": "Sverre Sigurdsson: presten som ble konge",
+      "description": "En prest fra Færøyene hevdet han var en konges hemmelige sønn, samlet birkebeinerne og ble Norges enekonge etter slaget ved Fimreite i 1184.",
+      "startDate": 1177,
+      "endDate": 1202,
+      "displayDate": "1177-1202",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norsk-middelalder",
+      "link": "/historie/norsk-middelalder/sverre-sigurdsson",
+      "tags": [
+        "historie",
+        "norge",
+        "middelalder",
+        "borgerkrig",
+        "birkebeinere",
+        "konge"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "det-foydale-japan",
       "title": "Det føydale Japan: samuraienes tid",
       "description": "I nesten 700 år styrte samurai-krigere Japan mens keiseren var et symbol, og makten hvilte på ris.",

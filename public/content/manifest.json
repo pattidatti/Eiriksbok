@@ -2721,6 +2721,23 @@
               ],
               "createdDate": "2026-07-15T00:00:00Z",
               "lastUpdated": "2026-07-15T07:38:13.342Z"
+            },
+            {
+              "id": "sverre-sigurdsson",
+              "title": "Sverre Sigurdsson: presten som ble konge",
+              "description": "En prest fra Færøyene hevdet han var en konges hemmelige sønn, samlet birkebeinerne og ble Norges enekonge etter slaget ved Fimreite i 1184.",
+              "image": "/images/placeholder.webp",
+              "year": "1177-1202",
+              "tags": [
+                "historie",
+                "norge",
+                "middelalder",
+                "borgerkrig",
+                "birkebeinere",
+                "konge"
+              ],
+              "createdDate": "2026-07-15T00:00:00Z",
+              "lastUpdated": "2026-07-15T00:00:00Z"
             }
           ]
         },

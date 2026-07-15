@@ -1,5 +1,5 @@
 {
-  "buildId": 1784101378065,
+  "buildId": 1784117753173,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -102,6 +102,9 @@
     ],
     "concept-biologi": [
       "content/concepts/biologi.json"
+    ],
+    "concept-birkebeiner": [
+      "content/concepts/birkebeiner.json"
     ],
     "concept-bitterhet": [
       "content/concepts/bitterhet.json"
@@ -1720,6 +1723,10 @@
     "hansadrapet-1455": [
       "content/historie/norsk-middelalder/hansadrapet-1455.json"
     ],
+    "sverre-sigurdsson": [
+      "content/historie/norsk-middelalder/sverre-sigurdsson.json",
+      "content/people/sverre-sigurdsson.json"
+    ],
     "forfallet": [
       "content/historie/osmanske-riket/forfallet.json"
     ],
@@ -3035,6 +3042,9 @@
     "lysander-spooner": [
       "content/people/lysander-spooner.json"
     ],
+    "magnus-erlingsson": [
+      "content/people/magnus-erlingsson.json"
+    ],
     "magnus-lagabote": [
       "content/people/magnus-lagabote.json"
     ],
@@ -3602,6 +3612,7 @@
     "concepts/bevissthet.json/bevissthet": "content/concepts/bevissthet.json",
     "concepts/bindeord.json/bindeord": "content/concepts/bindeord.json",
     "concepts/biologi.json/biologi": "content/concepts/biologi.json",
+    "concepts/birkebeiner.json/birkebeiner": "content/concepts/birkebeiner.json",
     "concepts/bitterhet.json/bitterhet": "content/concepts/bitterhet.json",
     "concepts/blankoblankett.json/blankoblankett": "content/concepts/blankoblankett.json",
     "concepts/bletchley-park.json/bletchley-park": "content/concepts/bletchley-park.json",
@@ -4140,6 +4151,7 @@
     "historie/norgeshistorie/utvandringen-til-amerika": "content/historie/norgeshistorie/utvandringen-til-amerika.json",
     "historie/norsk-middelalder/alv-erlingsson": "content/historie/norsk-middelalder/alv-erlingsson.json",
     "historie/norsk-middelalder/hansadrapet-1455": "content/historie/norsk-middelalder/hansadrapet-1455.json",
+    "historie/norsk-middelalder/sverre-sigurdsson": "content/historie/norsk-middelalder/sverre-sigurdsson.json",
     "historie/osmanske-riket/forfallet": "content/historie/osmanske-riket/forfallet.json",
     "historie/osmanske-riket/handel-og-kultur": "content/historie/osmanske-riket/handel-og-kultur.json",
     "historie/osmanske-riket/janitsjarene": "content/historie/osmanske-riket/janitsjarene.json",
@@ -4581,6 +4593,7 @@
     "people/luigi-facta.json/luigi-facta": "content/people/luigi-facta.json",
     "people/lyndon-b-johnson.json/lyndon-b-johnson": "content/people/lyndon-b-johnson.json",
     "people/lysander-spooner.json/lysander-spooner": "content/people/lysander-spooner.json",
+    "people/magnus-erlingsson.json/magnus-erlingsson": "content/people/magnus-erlingsson.json",
     "people/magnus-lagabote.json/magnus-lagabote": "content/people/magnus-lagabote.json",
     "people/mahmud-2.json/mahmud-2": "content/people/mahmud-2.json",
     "people/mao-zedong.json/mao-zedong": "content/people/mao-zedong.json",
@@ -4653,6 +4666,7 @@
     "people/sten-sture.json/sten-sture": "content/people/sten-sture.json",
     "people/suleyman-1.json/suleyman-1": "content/people/suleyman-1.json",
     "people/sun-yat-sen.json/sun-yat-sen": "content/people/sun-yat-sen.json",
+    "people/sverre-sigurdsson.json/sverre-sigurdsson": "content/people/sverre-sigurdsson.json",
     "people/tarjei-vesaas.json/tarjei-vesaas": "content/people/tarjei-vesaas.json",
     "people/theodor-herzl.json/theodor-herzl": "content/people/theodor-herzl.json",
     "people/thomas-aquinas.json/thomas-aquinas": "content/people/thomas-aquinas.json",

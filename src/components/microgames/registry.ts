@@ -129,8 +129,18 @@ const DenMoralskeSirkelen3D = lazy(() => import('./DenMoralskeSirkelen3D'));
 const ByggKongsberg3D = lazy(() => import('./ByggKongsberg3D'));
 const VeienTilVikingtid3D = lazy(() => import('./VeienTilVikingtid3D'));
 const Hansakoggen3D = lazy(() => import('./Hansakoggen3D'));
+const Fimreite3D = lazy(() => import('./Fimreite3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'fimreite-1184': {
+        id: 'fimreite-1184',
+        title: 'Slaget ved Fimreite',
+        description:
+            'Sognefjorden, 15. juni 1184. Kong Magnus Erlingsson har lenket skipene sine sammen på rekke for å stå stødig i kamp. Dra birkebeiner-skipet ditt ut til flåten, og klikk kongsskipet Mariasuden for å gå til angrep. Se hvordan lenken som skulle gjøre flåten sterk, drar naboskipene ned i dypet sammen med den. Lyspæren: det som skal gjøre deg trygg, kan bli fellen som senker deg.',
+        estimatedSeconds: 90,
+        loader: () => import('./Fimreite3D'),
+        Component: Fimreite3D as never,
+    },
     'hansakoggen-3d': {
         id: 'hansakoggen-3d',
         title: 'Hansakoggen i Bergen',

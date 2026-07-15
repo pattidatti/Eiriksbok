@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 290
+      "count": 292
     },
     {
       "tag": "dekolonisering",
@@ -844,7 +844,7 @@
     },
     {
       "tag": "middelalder",
-      "count": 26
+      "count": 28
     },
     {
       "tag": "revolusjon",
@@ -1079,6 +1079,10 @@
       "count": 8
     },
     {
+      "tag": "borgerkrig",
+      "count": 8
+    },
+    {
       "tag": "verdenshistorie",
       "count": 8
     },
@@ -1248,10 +1252,6 @@
     },
     {
       "tag": "1814",
-      "count": 6
-    },
-    {
-      "tag": "borgerkrig",
       "count": 6
     },
     {
@@ -1452,6 +1452,10 @@
     },
     {
       "tag": "guder",
+      "count": 4
+    },
+    {
+      "tag": "konge",
       "count": 4
     },
     {
@@ -1951,6 +1955,10 @@
       "count": 2
     },
     {
+      "tag": "birkebeinere",
+      "count": 2
+    },
+    {
       "tag": "samurai",
       "count": 2
     },
@@ -2100,10 +2108,6 @@
     },
     {
       "tag": "gullalder",
-      "count": 2
-    },
-    {
-      "tag": "konge",
       "count": 2
     },
     {
