@@ -5,7 +5,7 @@
     "year": "1789-1905",
     "category": "Nasjonalstatenes tid",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/nasjonalstatenes-tid/hva-er-nasjonalisme-hero.webp",
     "details": [
         "En nasjon er en gruppe mennesker som føler at de hører sammen",
         "Nasjonalisme er ideen om at hvert folk bør ha sin egen stat",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/nasjonalstatenes-tid/hva-er-nasjonalisme-01.webp",
             "alt": "Barnetog på 17. mai med mange norske flagg langs en gate",
             "caption": "På nasjonaldagen føler fremmede at de hører til det samme fellesskapet."
         },
@@ -94,7 +94,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/nasjonalstatenes-tid/hva-er-nasjonalisme-02.webp",
             "alt": "Stor folkemengde som samler seg under et flagg på en byplass",
             "caption": "Felles symboler kan gjøre tusener av fremmede til ett folk på et øyeblikk."
         },
@@ -143,7 +143,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/nasjonalstatenes-tid/hva-er-nasjonalisme-03.webp",
             "alt": "Fjordlandskap malt i romantisk stil med bratte fjell og en liten gård",
             "caption": "Nasjonalromantikkens malere løftet fram norsk natur som et bilde på folkesjelen."
         },
