@@ -56,6 +56,7 @@ const Kanalbyggeren3D = lazy(() => import('./Kanalbyggeren3D'));
 const SamiskGjenreising3D = lazy(() => import('./SamiskGjenreising3D'));
 const ForeneUnionen3D = lazy(() => import('./ForeneUnionen3D'));
 const SmiDetTyskeRiket3D = lazy(() => import('./SmiDetTyskeRiket3D'));
+const FolketSamles3D = lazy(() => import('./FolketSamles3D'));
 const HagiaSofia3D = lazy(() => import('./HagiaSofia3D'));
 const Pompeii3D = lazy(() => import('./Pompeii3D'));
 const PakkAmerikakofferten3D = lazy(() => import('./PakkAmerikakofferten3D'));
@@ -132,6 +133,15 @@ const Hansakoggen3D = lazy(() => import('./Hansakoggen3D'));
 const Fimreite3D = lazy(() => import('./Fimreite3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'folket-samles-3d': {
+        id: 'folket-samles-3d',
+        title: 'Folket samles',
+        description:
+            'En plass full av mennesker som står spredt og vender hver sin vei. Reis tre felles symboler i rekkefølge — heis flagget, syng nasjonalsangen, fortell den felles historien — og se folket snu seg mot midten, gå tettere sammen og få samme farge. Lyspæren: en nasjon er ikke naturlig eller evig. Følelsen av å høre sammen blir bygd av felles språk, symboler og fortellinger. Det er dette vi kaller nasjonalisme.',
+        estimatedSeconds: 130,
+        loader: () => import('./FolketSamles3D'),
+        Component: FolketSamles3D as never,
+    },
     'fimreite-1184': {
         id: 'fimreite-1184',
         title: 'Slaget ved Fimreite',
