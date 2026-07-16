@@ -1,0 +1,268 @@
+{
+    "id": "hva-er-nasjonalisme",
+    "title": "Hva er nasjonalisme?",
+    "layout": "rich",
+    "year": "1789-1905",
+    "category": "Nasjonalstatenes tid",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "En nasjon er en gruppe mennesker som føler at de hører sammen",
+        "Nasjonalisme er ideen om at hvert folk bør ha sin egen stat",
+        "Nasjonalismen vokste fram på 1800-tallet og tegnet Europas kart på nytt"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk deg 17. mai. Du står i et tog fullt av folk du aldri har møtt. Likevel synger dere den samme sangen, vifter med det samme flagget og føler noe felles. Du kjenner deg som en del av et stort «vi». Denne følelsen har et navn. Den heter nasjonalisme, og den er en av de sterkeste ideene i moderne historie."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Barnetog på 17. mai med mange norske flagg langs en gate",
+            "caption": "På nasjonaldagen føler fremmede at de hører til det samme fellesskapet."
+        },
+        {
+            "type": "header",
+            "text": "Nasjon og stat er ikke det samme"
+        },
+        {
+            "type": "text",
+            "content": "For å forstå nasjonalisme må vi skille mellom to ord som ligner på hverandre. En stat er selve apparatet: grenser, lover, en regjering, et politi og en hær. En nasjon er noe annet. En nasjon er en gruppe mennesker som føler at de hører sammen, ofte fordi de deler språk, historie og kultur."
+        },
+        {
+            "type": "text",
+            "content": "Når en nasjon får sin egen stat, kaller vi det en nasjonalstat. Norge er et eksempel: nordmennene er nasjonen, og Norge er staten deres. Men det er ikke alltid slik. Noen nasjoner har ingen egen stat, og noen stater rommer mange nasjoner. Nettopp dette gapet mellom folk og stat ble motoren i historien på 1800-tallet."
+        },
+        {
+            "type": "header",
+            "text": "En ny idé sprer seg"
+        },
+        {
+            "type": "text",
+            "content": "Nasjonalisme har ikke alltid vært en selvfølge. For 300 år siden tenkte de fleste mennesker lite på hvilken nasjon de tilhørte. En bonde var trofast mot kongen sin, mot kirken og mot landsbyen der han bodde. Om naboene i neste dal snakket samme språk, betydde det ikke stort. Tanken om at «alle som snakker norsk, hører sammen og bør styre seg selv» fantes nesten ikke."
+        },
+        {
+            "type": "text",
+            "content": "Dette endret seg raskt. [Den franske revolusjonen](/historie/den-franske-revolusjon/intro) i 1789 spredte en ny idé: makten skulle komme fra folket, ikke fra en konge av Guds nåde. Hvis folket skulle bestemme, måtte man først bli enige om hvem «folket» var. Samtidig samlet diktere og forskere inn gamle sagn, eventyr og folkeviser. I Norge kalte vi denne bølgen [nasjonalromantikken](/norsk/litteraturhistorie/nasjonalromantikken). Kunstnerne malte fjell og fjorder og sa: dette er vårt, dette er den norske sjelen."
+        },
+        {
+            "type": "text",
+            "content": "Selve språket måtte ofte bygges også. I mange land snakket folk så ulike dialekter at de knapt forsto hverandre. I Norge reiste språkforskeren Ivar Aasen rundt på 1840-tallet og skrev ned hvordan vanlige folk snakket i bygd etter bygd. Ut av dette laget han et nytt norsk skriftspråk. Slik ble språket et verktøy for å knytte folket sammen, ikke bare en måte å prate på."
+        },
+        {
+            "type": "text",
+            "content": "Under kan du selv teste hva som skal til for at en gruppe mennesker begynner å føle seg som ett folk. Legg til det de deler, og se vi-følelsen vokse."
+        },
+        {
+            "type": "component",
+            "name": "ViFolelsen",
+            "props": {
+                "title": "Hva skaper en nasjon?"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Slik bygger man en nasjon"
+        },
+        {
+            "type": "text",
+            "content": "Som du kanskje merket i verktøyet over, blir ikke en nasjon til av seg selv. Den blir bygd, bit for bit. På 1800-tallet jobbet ledere, lærere og kunstnere hardt for å få folk til å føle seg som ett. De brukte flere verktøy:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Et felles språk, gjerne med en skriftlig standard alle lærte på skolen",
+                "Et flagg og andre symboler som alle kunne samle seg om",
+                "En nasjonalsang som folk sang sammen ved store anledninger",
+                "En felles historie med helter, seiere og vanskelige tider",
+                "En skole der barna lærte den samme fortellingen om landet sitt",
+                "Aviser som ga folk over hele landet de samme nyhetene samtidig"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Skolen og avisene var særlig viktige. For første gang kunne mennesker som bodde langt fra hverandre lese de samme ordene på samme dag. En bonde i nord og en arbeider i sør kunne plutselig føle at de hørte til det samme fellesskapet, selv om de aldri kom til å møtes."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Et oppfunnet fellesskap?",
+                "content": "En nasjon kan ha millioner av medlemmer. Du vil aldri møte mer enn en bitteliten del av dem. Likevel føler du at dere hører sammen. Derfor sier noen forskere at en nasjon er et «forestilt fellesskap»: det finnes ikke i naturen, men i hodene og hjertene til folk som tror på det. Og nettopp fordi folk tror på det, blir det ekte og kraftfullt."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Stor folkemengde som samler seg under et flagg på en byplass",
+            "caption": "Felles symboler kan gjøre tusener av fremmede til ett folk på et øyeblikk."
+        },
+        {
+            "type": "text",
+            "content": "I mikrospillet under ser du den samme ideen spilt ut i 3D. En plass full av mennesker står spredt og vender hver sin vei. Reis de felles symbolene, og se hva som skjer med folket."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "folket-samles-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "To sider av samme sak"
+        },
+        {
+            "type": "text",
+            "content": "Nasjonalismen kunne skape noe stort og vakkert. Folk fikk stolthet, samhold og lyst til å styre seg selv. På 1800-tallet førte denne kraften til at nye land ble til. [Italia og Tyskland ble samlet](/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland) av mange små stater til to store nasjoner, drevet av troen på at folk med samme språk burde høre sammen."
+        },
+        {
+            "type": "text",
+            "content": "Men nasjonalismen har en bakside. Følelsen av «vi» krever ofte et «dem». Når en gruppe føler seg som ett folk, kan de begynne å se på andre som fremmede som ikke hører til. Da kan stolthet bli til hat. Flere nasjoner ville ha mest mulig makt og land, og rivaliseringen bidro til at [første verdenskrig](/historie/forste-verdenskrig/opptakt) brøt ut i 1914. Den samme følelsen som samlet folk, kunne altså også drive dem til krig."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "En nasjon er en avstemning som holdes hver eneste dag.",
+                "author": "Ernest Renan, fransk tenker, 1882. Han mente at en nasjon ikke er blod eller språk alene, men at folk hver dag velger å høre sammen."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Renan sa noe viktig: en nasjon lever bare så lenge folk velger å tro på den. Det gjør nasjonalismen både sterk og skjør. Den kan samle mennesker om noe godt, og den kan brukes til å stenge andre ute. Begge deler er mulig, og historien er full av begge."
+        },
+        {
+            "type": "header",
+            "text": "Nasjonalisme i Norge"
+        },
+        {
+            "type": "text",
+            "content": "Norge er et godt eksempel på hvor sterk nasjonalismen var. I 1814 fikk landet sin egen grunnlov, men måtte samtidig gå inn i en union med Sverige. Gjennom hele 1800-tallet vokste følelsen av at nordmenn var et eget folk som burde styre seg selv. Kunstnere malte fjellene, forfattere skrev om bøndene, og 17. mai ble en dag da folk feiret grunnloven i gatene. Litt etter litt bygde alt dette opp en sterk norsk nasjonalfølelse. Denne følelsen endte med at [unionen med Sverige ble oppløst i 1905](/historie/norgeshistorie/unionsopplosningen-1905), og Norge ble en selvstendig nasjonalstat."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Fjordlandskap malt i romantisk stil med bratte fjell og en liten gård",
+            "caption": "Nasjonalromantikkens malere løftet fram norsk natur som et bilde på folkesjelen."
+        },
+        {
+            "type": "text",
+            "content": "Nasjonalisme er altså ikke bare noe som hører fortiden til. Hver gang du synger nasjonalsangen, heier på landslaget eller ser flagget vaie, kjenner du den samme følelsen som forandret Europa for over 200 år siden. Å forstå hvordan denne følelsen blir bygd, hjelper deg å se både det fine og det farlige ved den."
+        },
+        {
+            "type": "component",
+            "name": "TimelineComponent",
+            "props": {
+                "title": "Nasjonalismens vei",
+                "compact": true,
+                "events": [
+                    {
+                        "year": 1789,
+                        "description": "Den franske revolusjonen sprer ideen om at makten kommer fra folket."
+                    },
+                    {
+                        "year": 1814,
+                        "description": "Norge får sin egen grunnlov, men går inn i union med Sverige."
+                    },
+                    {
+                        "year": 1882,
+                        "description": "Ernest Renan spør: hva er en nasjon? Svaret hans blir berømt."
+                    },
+                    {
+                        "year": 1905,
+                        "description": "Unionen med Sverige oppløses, og Norge blir en selvstendig nasjonalstat."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på en stat og en nasjon? Forklar med egne ord.",
+                    "Hva betyr ordet nasjonalstat?",
+                    "Nevn minst tre verktøy som ble brukt for å bygge en nasjon på 1800-tallet.",
+                    "Hva mente Ernest Renan da han sa at en nasjon er en avstemning som holdes hver dag?"
+                ],
+                "reflekter": [
+                    "Hvorfor var skolen og avisene så viktige for å skape en felles nasjonalfølelse?",
+                    "Forklar hvorfor forskere kaller en nasjon et «forestilt fellesskap».",
+                    "Nasjonalisme kan både samle folk og stenge andre ute. Beskriv ett eksempel på hver av disse to sidene.",
+                    "Hvorfor kunne følelsen av «vi» føre til krig mellom nasjoner?"
+                ],
+                "gaaVidere": [
+                    "Se på en dag i ditt eget liv. Hvor møter du nasjonale symboler (flagg, sang, sport, penger)? Lag en liste og diskuter hva de gjør med oss.",
+                    "Skriv en kort tekst der du argumenterer for eller mot påstanden: «Nasjonalisme er mest av alt en god ting.»",
+                    "Diskuter i klassen: Kan man være stolt av landet sitt uten å se ned på andre? Begrunn svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er en nasjon?",
+                        "options": [
+                            "Grensene, lovene og regjeringen i et land",
+                            "En gruppe mennesker som føler at de hører sammen",
+                            "Et annet ord for en konge og hoffet hans",
+                            "En avtale mellom to land om handel"
+                        ],
+                        "answer": 1,
+                        "explanation": "En nasjon er et fellesskap av mennesker som føler at de hører sammen, ofte gjennom felles språk, historie og kultur. Selve apparatet med grenser og lover kaller vi staten."
+                    },
+                    {
+                        "question": "Hva menes med nasjonalisme?",
+                        "options": [
+                            "Ideen om at alle land bør styres av en keiser",
+                            "Ideen om at kirken bør bestemme over staten",
+                            "Ideen om at hvert folk bør ha sin egen stat",
+                            "Ideen om at alle land bør slå seg sammen til ett verdensrike"
+                        ],
+                        "answer": 2,
+                        "explanation": "Nasjonalisme er troen på at et folk som hører sammen, bør styre seg selv i sin egen nasjonalstat."
+                    },
+                    {
+                        "question": "Hvorfor var skolen og avisene viktige for nasjonalismen?",
+                        "options": [
+                            "De ga folk over hele landet den samme fortellingen og de samme nyhetene",
+                            "De lærte folk å lese på fremmede språk",
+                            "De ble styrt av kongen alene",
+                            "De fantes bare i de store byene"
+                        ],
+                        "answer": 0,
+                        "explanation": "Skole og aviser gjorde at mennesker langt fra hverandre lærte det samme og leste de samme ordene, slik at de begynte å føle seg som ett folk."
+                    },
+                    {
+                        "question": "Hva er baksiden ved nasjonalisme?",
+                        "options": [
+                            "Den gjør at folk glemmer sitt eget språk",
+                            "Følelsen av «vi» kan gjøre at man ser på andre som fremmede og fiender",
+                            "Den fører alltid til at land blir mindre",
+                            "Den gjør det umulig å ha et flagg"
+                        ],
+                        "answer": 1,
+                        "explanation": "Når en gruppe føler seg sterkt som ett folk, kan de begynne å se ned på andre. Da kan stolthet bli til hat og til og med krig."
+                    },
+                    {
+                        "question": "Hva skjedde med Norge i 1905?",
+                        "options": [
+                            "Norge fikk sin første grunnlov",
+                            "Norge gikk inn i en union med Sverige",
+                            "Norge oppløste unionen med Sverige og ble en selvstendig nasjonalstat",
+                            "Norge ble en del av Danmark"
+                        ],
+                        "answer": 2,
+                        "explanation": "I 1905 oppløste Norge unionen med Sverige. Nasjonalfølelsen som hadde vokst gjennom 1800-tallet, endte med et eget, selvstendig land."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

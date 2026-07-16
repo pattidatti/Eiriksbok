@@ -4372,6 +4372,20 @@
               ],
               "createdDate": "2026-07-15T00:00:00Z",
               "lastUpdated": "2026-07-15T08:54:47+02:00"
+            },
+            {
+              "id": "hva-er-nasjonalisme",
+              "title": "Hva er nasjonalisme?",
+              "description": "Hva gjør en gruppe mennesker til et folk? Bli kjent med ideen som tegnet Europas kart på nytt.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "nasjonalisme",
+                "nasjon",
+                "nasjonalstat",
+                "1800-tallet",
+                "identitet"
+              ],
+              "createdDate": "2026-07-16T00:00:00Z"
             }
           ]
         },
