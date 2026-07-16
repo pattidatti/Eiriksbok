@@ -919,15 +919,15 @@
       "count": 17
     },
     {
+      "tag": "1800-tallet",
+      "count": 17
+    },
+    {
       "tag": "sivilisasjon",
       "count": 16
     },
     {
       "tag": "imperialisme",
-      "count": 16
-    },
-    {
-      "tag": "1800-tallet",
       "count": 16
     },
     {
@@ -1295,6 +1295,10 @@
       "count": 6
     },
     {
+      "tag": "identitet",
+      "count": 6
+    },
+    {
       "tag": "kulturhistorie",
       "count": 6
     },
@@ -1324,6 +1328,10 @@
     },
     {
       "tag": "natur",
+      "count": 5
+    },
+    {
+      "tag": "nasjonalisme",
       "count": 5
     },
     {
@@ -1400,10 +1408,6 @@
     },
     {
       "tag": "sakprosa",
-      "count": 5
-    },
-    {
-      "tag": "identitet",
       "count": 5
     },
     {
@@ -1504,10 +1508,6 @@
     },
     {
       "tag": "1789",
-      "count": 4
-    },
-    {
-      "tag": "nasjonalisme",
       "count": 4
     },
     {
@@ -3292,6 +3292,14 @@
     },
     {
       "tag": "nøytralitet",
+      "count": 1
+    },
+    {
+      "tag": "nasjon",
+      "count": 1
+    },
+    {
+      "tag": "nasjonalstat",
       "count": 1
     },
     {
