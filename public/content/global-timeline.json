@@ -4771,6 +4771,25 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "hva-er-nasjonalisme",
+      "title": "Hva er nasjonalisme?",
+      "description": "Hva gjør en gruppe mennesker til et folk? Bli kjent med ideen som tegnet Europas kart på nytt.",
+      "startDate": 1789,
+      "endDate": 1905,
+      "displayDate": "1789-1905",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "nasjonalstatenes-tid",
+      "link": "/historie/nasjonalstatenes-tid/hva-er-nasjonalisme",
+      "tags": [
+        "nasjonalisme",
+        "nasjon",
+        "nasjonalstat",
+        "1800-tallet",
+        "identitet"
+      ]
+    },
+    {
       "id": "usa-frigjoring-sub-3",
       "title": "Grunnloven",
       "description": "USA får sin konstitusjon og George Washington blir president.",

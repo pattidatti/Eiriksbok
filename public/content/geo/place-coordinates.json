@@ -911,6 +911,10 @@
       "count": 18
     },
     {
+      "tag": "1800-tallet",
+      "count": 18
+    },
+    {
       "tag": "narrative",
       "count": 18
     },
@@ -924,10 +928,6 @@
     },
     {
       "tag": "imperialisme",
-      "count": 16
-    },
-    {
-      "tag": "1800-tallet",
       "count": 16
     },
     {
@@ -1171,6 +1171,10 @@
       "count": 7
     },
     {
+      "tag": "identitet",
+      "count": 7
+    },
+    {
       "tag": "segregering",
       "count": 7
     },
@@ -1244,6 +1248,10 @@
     },
     {
       "tag": "teori",
+      "count": 6
+    },
+    {
+      "tag": "nasjonalisme",
       "count": 6
     },
     {
@@ -1403,10 +1411,6 @@
       "count": 5
     },
     {
-      "tag": "identitet",
-      "count": 5
-    },
-    {
       "tag": "evolusjon",
       "count": 4
     },
@@ -1504,10 +1508,6 @@
     },
     {
       "tag": "1789",
-      "count": 4
-    },
-    {
-      "tag": "nasjonalisme",
       "count": 4
     },
     {
@@ -2240,6 +2240,14 @@
     },
     {
       "tag": "grunnlov",
+      "count": 2
+    },
+    {
+      "tag": "nasjon",
+      "count": 2
+    },
+    {
+      "tag": "nasjonalstat",
       "count": 2
     },
     {
