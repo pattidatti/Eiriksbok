@@ -848,7 +848,7 @@
     },
     {
       "tag": "revolusjon",
-      "count": 26
+      "count": 27
     },
     {
       "tag": "verdensorden",
@@ -895,6 +895,10 @@
       "count": 19
     },
     {
+      "tag": "1800-tallet",
+      "count": 19
+    },
+    {
       "tag": "kultur",
       "count": 18
     },
@@ -916,10 +920,6 @@
     },
     {
       "tag": "kristendom",
-      "count": 17
-    },
-    {
-      "tag": "1800-tallet",
       "count": 17
     },
     {
@@ -1171,6 +1171,14 @@
       "count": 7
     },
     {
+      "tag": "nasjonalisme",
+      "count": 7
+    },
+    {
+      "tag": "identitet",
+      "count": 7
+    },
+    {
       "tag": "segregering",
       "count": 7
     },
@@ -1295,10 +1303,6 @@
       "count": 6
     },
     {
-      "tag": "identitet",
-      "count": 6
-    },
-    {
       "tag": "kulturhistorie",
       "count": 6
     },
@@ -1331,11 +1335,11 @@
       "count": 5
     },
     {
-      "tag": "nasjonalisme",
+      "tag": "eksistensialisme",
       "count": 5
     },
     {
-      "tag": "eksistensialisme",
+      "tag": "frihet",
       "count": 5
     },
     {
@@ -1512,10 +1516,6 @@
     },
     {
       "tag": "ideologi",
-      "count": 4
-    },
-    {
-      "tag": "frihet",
       "count": 4
     },
     {
@@ -2240,6 +2240,14 @@
     },
     {
       "tag": "grunnlov",
+      "count": 2
+    },
+    {
+      "tag": "nasjon",
+      "count": 2
+    },
+    {
+      "tag": "nasjonalstat",
       "count": 2
     },
     {
@@ -3295,11 +3303,7 @@
       "count": 1
     },
     {
-      "tag": "nasjon",
-      "count": 1
-    },
-    {
-      "tag": "nasjonalstat",
+      "tag": "1848",
       "count": 1
     },
     {

@@ -5570,6 +5570,25 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "revolusjonene-1848",
+      "title": "Folkenes vår: Revolusjonene i 1848",
+      "description": "I 1848 feide en bølge av revolusjoner over Europa. Folk krevde frihet og egne nasjoner, men opprørene ble slått ned. Likevel vant ideene til slutt.",
+      "startDate": 1848,
+      "endDate": null,
+      "displayDate": "1848",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "nasjonalstatenes-tid",
+      "link": "/historie/nasjonalstatenes-tid/revolusjonene-1848",
+      "tags": [
+        "nasjonalisme",
+        "revolusjon",
+        "1848",
+        "frihet",
+        "1800-tallet"
+      ]
+    },
+    {
       "id": "crystal-palace",
       "title": "Verdensutstillingen i London",
       "description": "The Great Exhibition i Crystal Palace markerer høydepunktet for victorianernes tro på industrielt og teknologisk framskritt.",
