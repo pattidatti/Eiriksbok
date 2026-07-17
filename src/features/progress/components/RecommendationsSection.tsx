@@ -16,6 +16,7 @@ import {
     Map,
     RefreshCw,
     Search,
+    Sparkles,
     Trophy,
 } from 'lucide-react';
 import { Image as LazyImage } from '../../../components/Image';
@@ -32,6 +33,7 @@ const TYPE_STYLE: Record<
     game: { Icon: Gamepad2, bg: 'bg-violet-500', label: 'Spill', chip: 'bg-violet-50 text-violet-700' },
     detective: { Icon: Search, bg: 'bg-amber-500', label: 'Detektiv', chip: 'bg-amber-50 text-amber-700' },
     scenario: { Icon: Hourglass, bg: 'bg-teal-500', label: 'Tidsreise', chip: 'bg-teal-50 text-teal-700' },
+    discovery: { Icon: Sparkles, bg: 'bg-fuchsia-500', label: 'Oppdag', chip: 'bg-fuchsia-50 text-fuchsia-700' },
     review: { Icon: RefreshCw, bg: 'bg-emerald-500', label: 'Repetisjon', chip: 'bg-emerald-50 text-emerald-700' },
     recent: { Icon: Clock, bg: 'bg-slate-500', label: 'Nylig lest', chip: 'bg-slate-50 text-slate-700' },
     started: { Icon: Bookmark, bg: 'bg-orange-500', label: 'Påbegynt', chip: 'bg-orange-50 text-orange-700' },
@@ -137,7 +139,7 @@ export const RecommendationsSection = ({ items }: { items: Recommendation[] }) =
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
             <h2 className="text-lg font-display font-bold text-slate-900 mb-1">Anbefalt for deg</h2>
             <p className="text-xs text-slate-500 mb-3">
-                Neste steg valgt ut fra hvor du er akkurat nå.
+                Neste steg og nye oppdagelser, valgt ut fra hva du liker og hvor du er nå.
             </p>
             <div className="space-y-2">
                 <FeaturedCard item={featured} />

@@ -6,11 +6,19 @@
 
 import type { Manifest, ManifestLesson, ManifestTopic, TopicTool } from '../../../types';
 import type { PathProgress } from '../../../stores/useLearningPathProfile';
+import type { HistoryItem } from '../../../hooks/useUserHistory';
 import type { SubjectMastery } from '../mastery';
 import type { ActivityEvent } from '../types';
 import { GAME_CATALOG, SCENARIO_CATALOG } from './catalog';
 import type { DetectiveCatalogEntry } from './catalog';
 import { findTopicImage } from './images';
+import {
+    MIN_PROFILE_MASS,
+    scoreLessonInterest,
+    type InterestProfile,
+    type LessonTagIndex,
+} from './interest';
+import { mulberry32, shuffleWithinTiers, weightedSample } from './rng';
 
 export type RecommendationType =
     | 'path'
@@ -21,6 +29,7 @@ export type RecommendationType =
     | 'detective'
     | 'scenario'
     | 'review'
+    | 'discovery'
     | 'recent'
     | 'started';
 
@@ -46,6 +55,14 @@ export interface RecommendationContext {
     paths: Record<string, PathProgress>;
     dueCount: number;
     detectiveCases: DetectiveCatalogEntry[];
+    // Interesse-drevet oppdagelse (valgfritt - motoren fungerer uten, men da
+    // uten «oppdag»-kort). Settes av useRecommendations.
+    lessonIndex?: LessonTagIndex;
+    interestProfile?: InterestProfile;
+    history?: HistoryItem[];
+    // Frø for dynamisk rotasjon av rutenettet mellom sidevisninger. Uten det
+    // faller motoren tilbake til fast rekkefølge.
+    rotationSeed?: number;
 }
 
 // Læringssti-verktøyet + faget (og ev. emnet) det hører til, funnet fra
@@ -169,6 +186,13 @@ const pct = (part: number, whole: number): number =>
 
 const MAX_RECOMMENDATIONS = 8;
 const MAX_PER_TYPE = 2;
+// Antall «oppdag»-kort som holdes av plass til (av 8), så interesse-kort ikke
+// blir presset ut av pliktkortene. Justeres ned når noe haster (se under).
+const DISCOVERY_SLOTS = 3;
+// Hvor mange kandidater vi vurderer før vi trekker ut oppdag-slottene.
+const DISCOVERY_POOL = 12;
+// Nivå-bredde for rotasjon: kort med score innenfor dette kan bytte plass.
+const TIER_EPS = 6;
 
 // Kuraterte startanbefalinger for en helt ny elev: første artikkel i første
 // emne med bilde, ett kort per fag. Ingen mestring å score på ennå - målet er
@@ -200,7 +224,19 @@ export const buildWelcomeRecommendations = (manifest: Manifest): Recommendation[
 // vi sorterer, fjerner duplikater på lenke og begrenser antall per type slik
 // at lista blir bredt sammensatt i stedet for seks artikler på rad.
 export const buildRecommendations = (ctx: RecommendationContext): Recommendation[] => {
-    const { manifest, mastery, firstCompletions, events, paths, dueCount, detectiveCases } = ctx;
+    const {
+        manifest,
+        mastery,
+        firstCompletions,
+        events,
+        paths,
+        dueCount,
+        detectiveCases,
+        lessonIndex,
+        interestProfile,
+        history,
+        rotationSeed,
+    } = ctx;
 
     // Helt ny elev: ingen fullføringer, ingen påbegynte stier - da er den
     // kuraterte velkomstlista bedre enn score-motoren.
@@ -449,19 +485,97 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
         });
     });
 
-    // Sorter, fjern duplikate lenker, og begrens per type for variasjon.
-    const sorted = recs.sort((a, b) => b.score - a.score);
+    // 10. «Oppdag» - nytt innhold som treffer interessene dine. Scorer uleste
+    //     artikler etter tagg-overlapp med interesse-profilen, så feeden viser
+    //     noe fristende, ikke bare neste steg i rekka. Krever nok engasjement
+    //     til at profilen er meningsfull (ellers dekker sekvens-kortene den).
+    const discoveryRecs: Recommendation[] = [];
+    if (
+        interestProfile &&
+        lessonIndex &&
+        interestProfile.magnitude > MIN_PROFILE_MASS
+    ) {
+        // Artikler eleven alt har åpnet vises i «Påbegynte»/«Nylig lest» - hold
+        // dem ute av oppdag så feeden ikke gjentar seg selv.
+        const browsed = new Set(
+            (history ?? [])
+                .filter((h) => h.type === 'lesson' && h.topicId)
+                .map(
+                    (h) =>
+                        `${h.subjectId}/${h.topicId}${h.subTopicId ? `/${h.subTopicId}` : ''}/${h.id}`
+                )
+        );
+        const capitalize = (s: string) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+        lessonIndex.all
+            .filter(
+                (e) => e.tags.length > 0 && !isRead(e.path) && !browsed.has(e.path)
+            )
+            .map((e) => ({ e, cos: scoreLessonInterest(interestProfile, e, lessonIndex.idf) }))
+            .filter((x) => x.cos > 0)
+            .sort((a, b) => b.cos - a.cos)
+            .slice(0, DISCOVERY_POOL)
+            .forEach(({ e, cos }) => {
+                const matched =
+                    e.tags.find((t) => interestProfile.topTags.includes(t)) ?? e.tags[0];
+                discoveryRecs.push({
+                    id: `discovery-${e.path}`,
+                    type: 'discovery',
+                    title: e.title,
+                    reason: `Fordi du liker ${capitalize(matched)}. Noe nytt å utforske.`,
+                    link: `/${e.path}`,
+                    subjectId: e.subjectId,
+                    image: e.image ?? findTopicImage(manifest, e.subjectId, e.topicId),
+                    score: 63 + cos * 22,
+                });
+            });
+    }
+
+    // Sett sammen den endelige lista. Målet er balanse + variasjon:
+    //   - Kort 0 (heroen) er det sterkeste pliktkortet, valgt deterministisk,
+    //     så forsiden og «Min læring» er enige om samme neste steg.
+    //   - Noen faste plasser reserveres til «oppdag» så interesse-kort ikke
+    //     drukner. Færre når noe haster (forfalt repetisjon + aktiv sti).
+    //   - Resten fylles av pliktkort, nivå-stokket så jevnbyrdige kort roterer
+    //     mellom besøk (frø-styrt, stabilt innenfor én sidevisning).
+    const rng = mulberry32((rotationSeed ?? 1) >>> 0);
+
+    const dutySorted = [...recs].sort((a, b) => b.score - a.score);
+    const hero = dutySorted[0];
+    const restDuty = shuffleWithinTiers(dutySorted.slice(1), (r) => r.score, TIER_EPS, rng);
+
+    // Færre oppdag-slott når eleven har presserende ting å gjøre.
+    let discoverySlots = DISCOVERY_SLOTS;
+    if (dueCount > 0) discoverySlots -= 1;
+    if (activePaths.length > 0) discoverySlots -= 1;
+    discoverySlots = Math.max(1, discoverySlots);
+
+    const sampledDiscovery = weightedSample(
+        discoveryRecs.map((r) => ({ v: r, w: Math.pow(Math.max(0.01, r.score - 63), 2) })),
+        discoverySlots,
+        rng
+    );
+
     const seenLinks = new Set<string>();
     const typeCount: Record<string, number> = {};
     const out: Recommendation[] = [];
-    for (const rec of sorted) {
-        if (seenLinks.has(rec.link)) continue;
-        if ((typeCount[rec.type] ?? 0) >= MAX_PER_TYPE) continue;
+    const tryAdd = (rec: Recommendation | undefined, ignoreTypeCap = false): boolean => {
+        if (!rec || out.length >= MAX_RECOMMENDATIONS) return false;
+        if (seenLinks.has(rec.link)) return false;
+        if (!ignoreTypeCap && rec.type !== 'discovery' && (typeCount[rec.type] ?? 0) >= MAX_PER_TYPE)
+            return false;
         seenLinks.add(rec.link);
         typeCount[rec.type] = (typeCount[rec.type] ?? 0) + 1;
         out.push(rec);
-        if (out.length >= MAX_RECOMMENDATIONS) break;
-    }
+        return true;
+    };
+
+    tryAdd(hero); // deterministisk hero først
+    sampledDiscovery.forEach((d) => tryAdd(d)); // reserverte oppdag-plasser
+    restDuty.forEach((r) => tryAdd(r)); // pliktkort, nivå-stokket
+    discoveryRecs.forEach((d) => tryAdd(d)); // fyll opp med flere oppdag ved behov
+
+    // Bevar sorted-navnet til fyll-logikken under (leftover-kandidater).
+    const sorted = [...dutySorted, ...discoveryRecs];
 
     // MyLearningPage kutter av out[0] til HeroCard, og RecommendationsSection
     // plukker selv items[0] som sitt eget store featured-kort - så rutenettet
@@ -472,9 +586,15 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
     // helst type bare hvis ingen artikkel finnes til overs.
     if (out.length > 0 && out.length % 2 !== 0) {
         const filler =
-            sorted.find((rec) => !seenLinks.has(rec.link) && rec.type === 'article') ??
-            sorted.find((rec) => !seenLinks.has(rec.link));
-        if (filler) out.push(filler);
+            sorted.find(
+                (rec) =>
+                    !seenLinks.has(rec.link) &&
+                    (rec.type === 'article' || rec.type === 'discovery')
+            ) ?? sorted.find((rec) => !seenLinks.has(rec.link));
+        if (filler) {
+            seenLinks.add(filler.link);
+            out.push(filler);
+        }
     }
 
     return out;
