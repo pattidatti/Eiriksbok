@@ -25,6 +25,7 @@ const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => (
 const StilleKilder = lazy(() => import('./content/interactive/StilleKilder').then(m => ({ default: m.StilleKilder })));
 const NasjonsbyggerLab = lazy(() => import('./content/interactive/NasjonsbyggerLab').then(m => ({ default: m.NasjonsbyggerLab })));
 const ViFolelsen = lazy(() => import('./content/interactive/ViFolelsen').then(m => ({ default: m.ViFolelsen })));
+const Revolusjonsbolgen1848 = lazy(() => import('./content/interactive/Revolusjonsbolgen1848').then(m => ({ default: m.Revolusjonsbolgen1848 })));
 const TrelastVerdikjede = lazy(() => import('./content/interactive/TrelastVerdikjede').then(m => ({ default: m.TrelastVerdikjede })));
 const SolvetsReise = lazy(() => import('./content/interactive/SolvetsReise').then(m => ({ default: m.SolvetsReise })));
 const Nordnesnatten = lazy(() => import('./content/interactive/Nordnesnatten').then(m => ({ default: m.Nordnesnatten })));
@@ -322,6 +323,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     // Core
     NasjonsbyggerLab,
     ViFolelsen,
+    Revolusjonsbolgen1848,
     GovernmentExplorer,
     HistoryLongLines,
     HelleristningTyder,

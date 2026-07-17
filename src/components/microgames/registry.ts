@@ -131,8 +131,18 @@ const ByggKongsberg3D = lazy(() => import('./ByggKongsberg3D'));
 const VeienTilVikingtid3D = lazy(() => import('./VeienTilVikingtid3D'));
 const Hansakoggen3D = lazy(() => import('./Hansakoggen3D'));
 const Fimreite3D = lazy(() => import('./Fimreite3D'));
+const Barrikaden1848 = lazy(() => import('./Barrikaden1848'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'barrikaden-1848': {
+        id: 'barrikaden-1848',
+        title: 'Barrikaden i Paris',
+        description:
+            'Paris, februar 1848. En trang gate med hus på begge sider. Klikk de tre lysende punktene i rekkefølge: riv opp brosteinen så den løftes fra gata og stables til en mur, velt hestevogna og møblene så barrikaden vokser, og reis til slutt trikoloren på toppen mens folket samler seg bak. Lyspæren: revolusjonen i 1848 ble ikke ledet fra et slott, men bygd med hendene av vanlige byfolk som rev opp gata si og reiste flagget over en haug med brostein og møbler.',
+        estimatedSeconds: 120,
+        loader: () => import('./Barrikaden1848'),
+        Component: Barrikaden1848 as never,
+    },
     'folket-samles-3d': {
         id: 'folket-samles-3d',
         title: 'Folket samles',
