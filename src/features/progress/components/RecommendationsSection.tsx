@@ -144,7 +144,7 @@ export const RecommendationsSection = ({ items }: { items: Recommendation[] }) =
             <div className="space-y-2">
                 <FeaturedCard item={featured} />
                 {rest.length > 0 && (
-                    <div className="grid gap-2 sm:grid-cols-2">
+                    <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                         {rest.map((item, i) => (
                             <SmallCard key={item.id} item={item} delay={(i + 1) * 0.04} />
                         ))}

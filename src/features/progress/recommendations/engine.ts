@@ -515,8 +515,13 @@ export const buildRecommendations = (ctx: RecommendationContext): Recommendation
             .sort((a, b) => b.cos - a.cos)
             .slice(0, DISCOVERY_POOL)
             .forEach(({ e, cos }) => {
+                // Velg den mest spesifikke delte taggen (høyest idf) til
+                // begrunnelsen - «vikinger» treffer bedre enn «historie».
+                const overlap = e.tags.filter((t) => interestProfile.topTags.includes(t));
                 const matched =
-                    e.tags.find((t) => interestProfile.topTags.includes(t)) ?? e.tags[0];
+                    overlap.sort(
+                        (a, b) => (lessonIndex.idf[b] ?? 0) - (lessonIndex.idf[a] ?? 0)
+                    )[0] ?? e.tags[0];
                 discoveryRecs.push({
                     id: `discovery-${e.path}`,
                     type: 'discovery',

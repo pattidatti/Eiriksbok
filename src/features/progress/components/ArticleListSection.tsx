@@ -20,7 +20,7 @@ export const ArticleListSection = ({
         <div className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100">
             <h2 className="text-lg font-display font-bold text-slate-900 mb-1">{title}</h2>
             {subtitle && <p className="text-xs text-slate-500 mb-3">{subtitle}</p>}
-            <div className={`grid gap-2 sm:grid-cols-2 ${subtitle ? '' : 'mt-3'}`}>
+            <div className={`grid grid-cols-1 gap-2 sm:grid-cols-2 ${subtitle ? '' : 'mt-3'}`}>
                 {items.map((item, i) => (
                     <SmallCard key={item.id} item={item} delay={i * 0.04} />
                 ))}
