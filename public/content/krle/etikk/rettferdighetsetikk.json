@@ -7,7 +7,7 @@
     "year": "1971",
     "category": "Etikk",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/etikk/rettferdighetsetikk-hero.webp",
     "dimension": "etikk",
     "comparison_tags": [
         "rettferdighet",
@@ -75,7 +75,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etikk/rettferdighetsetikk-01.webp",
             "alt": "Elever deler et kakestykke likt fordi den ene skjærer og den andre velger",
             "caption": "Den som skjærer kaka men ikke får velge stykke, deler helt likt. Rawls bygde en hel rettferdighetsteori på denne enkle ideen."
         },
@@ -132,7 +132,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etikk/rettferdighetsetikk-02.webp",
             "alt": "Ungdommer diskuterer rundt et bord med et vektskål-symbol over seg",
             "caption": "Rawls sitt spørsmål dukker opp hver gang vi krangler om hva som er rettferdig i skolen, i politikken og i hverdagen."
         },
