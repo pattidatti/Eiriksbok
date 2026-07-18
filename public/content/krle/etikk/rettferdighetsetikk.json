@@ -1,0 +1,236 @@
+{
+    "id": "rettferdighetsetikk",
+    "title": "Rettferdighet: uvitenhetens slør",
+    "subject": "krle",
+    "topic": "etikk",
+    "layout": "rich",
+    "year": "1971",
+    "category": "Etikk",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "dimension": "etikk",
+    "comparison_tags": [
+        "rettferdighet",
+        "samfunnskontrakt",
+        "fordeling"
+    ],
+    "details": [
+        "John Rawls spurte hvordan et samfunn kan bli virkelig rettferdig.",
+        "Tankeeksperimentet uvitenhetens slør: velg reglene uten å vite hvem du selv blir.",
+        "To prinsipper: like friheter for alle, og forskjeller bare når de også løfter de svakeste.",
+        "Kalles rettferdighet som rimelighet, og forsvarer velferdsstaten.",
+        "Kritiseres av libertarianere som mener omfordeling krenker den enkeltes frihet."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk deg at du og en venn skal dele det siste kakestykket, og ingen vil ha det minste stykket. Hvordan gjør dere det rettferdig? Det finnes et gammelt triks: den ene får dele kaka i to, men den andre får velge stykke først. Plutselig deler den som skjærer helt likt. Hvorfor? Fordi hun ikke vet hvilket stykke hun selv ender opp med. Når du ikke kjenner din egen plass, blir du rettferdig av ren egeninteresse."
+        },
+        {
+            "type": "text",
+            "content": "Den amerikanske filosofen John Rawls (1921-2002) tok denne enkle ideen og stilte et enormt spørsmål: Hva om vi kunne bygge hele samfunnet på samme måte? I boka Rettferdighetens teori fra 1971 la han fram et svar som fortsatt preger måten vi tenker om skatt, skole og velferd på (Sagdahl, 2026). Boka ble solgt i over 400 000 eksemplarer og oversatt til nesten 30 språk, og den vekket hele den politiske filosofien til live igjen (Fastvold, 2019)."
+        },
+        {
+            "type": "header",
+            "text": "Problemet: alle vil ha reglene som passer dem selv"
+        },
+        {
+            "type": "text",
+            "content": "Tenk på hvor vanskelig det er å bli enige om hva som er rettferdig. Den som er rik, vil gjerne ha lav skatt. Den som er syk eller arbeidsledig, vil ha et sterkt hjelpeapparat. Den som er ung og frisk, tenker kanskje ikke så mye på alderdom i det hele tatt. Vi drar alle mot de reglene som gir oss selv mest. Rawls så at nettopp derfor blir det så lett urettferdig: den sterkeste gruppa får ofte bestemme. Rettferdighet handler jo om at mennesker blir behandlet på en rimelig måte, og at alle får det de har krav på (Sagdahl, 2024). Men hvordan finner vi regler som er rimelige for alle, ikke bare for oss selv?"
+        },
+        {
+            "type": "header",
+            "text": "Uvitenhetens slør"
+        },
+        {
+            "type": "text",
+            "content": "Rawls sitt svar var et tankeeksperiment. Se for deg at du skal være med og bestemme reglene for et helt nytt samfunn. Men du gjør det bak det Rawls kalte uvitenhetens slør. Bak sløret vet du ingenting om hvem du selv skal bli i dette samfunnet. Du vet ikke om du blir gutt eller jente, rik eller fattig, frisk eller syk, smart eller mindre skoleflink, om du blir født inn i majoriteten eller i en liten minoritet (Fastvold, 2019)."
+        },
+        {
+            "type": "text",
+            "content": "Rawls kalte denne startsituasjonen for den opprinnelige posisjonen. Poenget er at når du ikke kjenner din egen plass, kan du ikke lure til deg regler som bare gagner deg selv (Sagdahl, 2026). Da tør du ikke lage et samfunn der de fattige har det grusomt, for hva om det er nettopp der du havner? Sløret tvinger deg til å tenke på alle. Det er den samme mekanismen som når den som skjærer kaka ikke får velge stykke."
+        },
+        {
+            "type": "component",
+            "name": "VeilOfIgnorance"
+        },
+        {
+            "type": "header",
+            "text": "To regler for et rettferdig samfunn"
+        },
+        {
+            "type": "text",
+            "content": "Hva ville et fornuftig menneske velge bak sløret? Rawls mente at vi ville lande på to grunnregler. Han kalte dem prinsippene for rettferdighet, og de kommer i en bestemt rekkefølge (Sagdahl, 2026)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Frihetsprinsippet: Alle skal ha de samme grunnleggende frihetene, som ytringsfrihet, stemmerett og rettssikkerhet. Disse kan aldri selges bort for å tjene penger, og de gjelder likt for alle.",
+                "Differanseprinsippet: Forskjeller i rikdom og makt er bare tillatt hvis de også gjør livet best mulig for dem som har minst. Blir de svakeste dårligere stilt, er forskjellen urettferdig."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Det andre prinsippet er det mest overraskende. Rawls sa altså ikke at alle må ha nøyaktig like mye. Han godtok at en dyktig lege eller ingeniør kan tjene mer enn andre, men bare hvis den ekstra lønna får talentene til å jobbe på en måte som også kommer fellesskapet og de svakeste til gode (Sagdahl, 2026). En forskjell må med andre ord kunne forsvares overfor den som sitter nederst ved bordet."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Elever deler et kakestykke likt fordi den ene skjærer og den andre velger",
+            "caption": "Den som skjærer kaka men ikke får velge stykke, deler helt likt. Rawls bygde en hel rettferdighetsteori på denne enkle ideen."
+        },
+        {
+            "type": "header",
+            "text": "Rettferdighet som rimelighet"
+        },
+        {
+            "type": "text",
+            "content": "Rawls ga teorien sin navnet rettferdighet som rimelighet. Tanken er at et resultat blir rettferdig når selve utgangspunktet er rimelig for alle. Akkurat som en fotballkamp føles rettferdig når begge lag spiller etter de samme reglene, blir et samfunn rettferdig når reglene er valgt uten at noen fikk jukse til seg en fordel på forhånd."
+        },
+        {
+            "type": "text",
+            "content": "Her ligner Rawls på en gammel idé i filosofien: samfunnskontrakten. Tenkere som [Jean-Jacques Rousseau](/krle/filosofi/rousseau) mente at samfunnet bygger på en slags avtale mellom menneskene om hvordan vi skal leve sammen. Rawls tok denne kontrakt-tanken og ga den en ny og skarpere form gjennom sløret. Samtidig var teorien hans et oppgjør med [utilitarismen](/krle/etikk/utilitarisme), som sier at vi skal skape størst mulig lykke for flest mulig (Fastvold, 2019). Problemet med å bare legge sammen lykke, mente Rawls, er at flertallet da kan ofre et lite mindretall så lenge summen blir høy nok. Bak sløret ville ingen godta å bli det ofrede mindretallet. Derfor satte Rawls den enkeltes ukrenkelige rettigheter først."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "bak-sloret-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Kritikk: er det rettferdig å omfordele?"
+        },
+        {
+            "type": "text",
+            "content": "Ikke alle er enige med Rawls. Den kanskje sterkeste motstanden kom fra filosofen Robert Nozick. I boka Anarki, stat og utopi fra 1974 forsvarte han en libertariansk tanke: staten bør være så liten som mulig og bare beskytte folk mot vold, tyveri og svindel (Svendsen, 2025). Nozick mente at hvis du har tjent pengene dine ærlig, så eier du dem fullt og helt. Da er det ikke statens rett å ta fra deg med tvang for å gi til andre, selv om hensikten er god."
+        },
+        {
+            "type": "text",
+            "content": "For libertarianere blir Rawls sitt differanseprinsipp derfor et problem, fordi det krever at samfunnet omfordeler fra dem som har mest til dem som har minst. Er det rettferdig å hjelpe de svakeste, eller er det urettferdig å tvinge noen til å gi fra seg det de har skapt selv? Dette er en av de store diskusjonene i moderne etikk, og den henger tett sammen med spørsmål om eiendom og frihet som også står sentralt i [ikke-aggresjonsprinsippet](/krle/etikk/non-aggression). Rawls og Nozick er uenige om hvor grensen går, men begge er opptatt av å ta det enkelte mennesket på alvor."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hvem var John Rawls?",
+                "content": "Rawls vokste opp i en religiøs familie i Baltimore i USA. Under andre verdenskrig var han soldat, og det han opplevde av krig og folkemord fikk ham til å miste troen. Etterpå brukte han livet på ett stort spørsmål: Hva er et rettferdig samfunn? Han underviste ved Harvard og var kjent som et beskjedent og stillfarent menneske, langt fra en bråkete stjernefilosof."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor betyr Rawls noe i dag?"
+        },
+        {
+            "type": "text",
+            "content": "Selv om Rawls skrev en tung og vanskelig bok, er ideen hans overraskende dagligdags. Hver gang vi diskuterer om skolen skal være gratis, om syke skal få hjelp uansett lommebok, eller hvor mye de rikeste bør betale i skatt, er vi egentlig inne i Rawls sitt spørsmål. En velferdsstat som den norske hviler på tanken om at samfunnet skal fange opp dem som faller, ikke bare belønne dem som allerede vant (Fastvold, 2019)."
+        },
+        {
+            "type": "text",
+            "content": "Neste gang du synes noe er urettferdig, kan du prøve Rawls sitt triks. Spør deg selv: Ville jeg valgt denne regelen hvis jeg ikke visste hvem jeg kom til å bli? Hvis svaret er nei, har du kanskje funnet en urettferdighet verdt å gjøre noe med."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdommer diskuterer rundt et bord med et vektskål-symbol over seg",
+            "caption": "Rawls sitt spørsmål dukker opp hver gang vi krangler om hva som er rettferdig i skolen, i politikken og i hverdagen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalte John Rawls tankeeksperimentet sitt, og hva er det du ikke får vite bak det?",
+                    "Hva heter Rawls sine to prinsipper for rettferdighet?",
+                    "Hva menes med uttrykket rettferdighet som rimelighet?",
+                    "Hvem var Robert Nozick, og hva mente han at staten burde gjøre?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor den som skjærer kaka deler helt likt når hun ikke får velge stykke selv. Hva har dette med uvitenhetens slør å gjøre?",
+                    "Differanseprinsippet tillater at noen tjener mer enn andre, men bare på én betingelse. Forklar betingelsen, og gi et eksempel der en forskjell kan forsvares.",
+                    "Rawls var uenig med utilitarismen. Forklar hvorfor han mente at det å legge sammen lykke kan bli urettferdig for et mindretall.",
+                    "Nozick mente det er urettferdig å tvinge folk til å gi fra seg det de har tjent. Rawls mente det er urettferdig å la de svakeste falle. Hvem synes du har det beste argumentet, og hvorfor?"
+                ],
+                "gaaVidere": [
+                    "Bruk Rawls sitt triks på skolen din. Tenk deg at du lager reglene for skolen bak uvitenhetens slør, uten å vite om du blir den flinkeste, den som strever mest, eller den som blir mobbet. Skriv tre regler du ville valgt, og forklar hvorfor.",
+                    "Finn en nyhetssak om noe mange mener er urettferdig i Norge i dag. Vurder saken med spørsmålet: Ville dette vært greit hvis jeg ikke visste hvem jeg var i historien?",
+                    "Diskuter i klassen: Er full likhet det samme som rettferdighet? Bruk de tre samfunnene fra det interaktive verktøyet i artikkelen som utgangspunkt."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er hovedideen i uvitenhetens slør?",
+                        "options": [
+                            "Du velger reglene for samfunnet uten å vite hvem du selv blir i det.",
+                            "Du skal alltid velge det som gir deg selv mest.",
+                            "Ingen får lov til å bestemme reglene i samfunnet.",
+                            "Bare de rikeste får være med og bestemme."
+                        ],
+                        "correctAnswer": 0
+                    },
+                    {
+                        "question": "Hva sier Rawls sitt differanseprinsipp?",
+                        "options": [
+                            "Alle må ha nøyaktig like mye av alt.",
+                            "Forskjeller er bare tillatt hvis de også gjør livet best mulig for de svakeste.",
+                            "Den sterkeste har alltid rett.",
+                            "Staten skal ikke blande seg inn i noe."
+                        ],
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hva kalte Rawls teorien sin?",
+                        "options": [
+                            "Størst mulig lykke",
+                            "Nyttemoral",
+                            "Rettferdighet som rimelighet",
+                            "Den sterkestes rett"
+                        ],
+                        "correctAnswer": 2
+                    },
+                    {
+                        "question": "Hvorfor var Rawls uenig med utilitarismen?",
+                        "options": [
+                            "Fordi han mente lykke ikke betyr noe.",
+                            "Fordi han mente at å legge sammen lykke kan la flertallet ofre et mindretall.",
+                            "Fordi han mente rike alltid fortjener mer.",
+                            "Fordi han var imot all form for frihet."
+                        ],
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hva var Robert Nozick sin viktigste innvending mot Rawls?",
+                        "options": [
+                            "At sløret var for vanskelig å forstå.",
+                            "At samfunnet burde være enda mer likt.",
+                            "At det er urettferdig å tvinge folk til å gi fra seg det de har tjent ærlig.",
+                            "At Rawls ikke brydde seg om de svakeste."
+                        ],
+                        "correctAnswer": 2
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Fastvold, M. (2019). *John Rawls - rettferdighetens beskjedne ridder*. Fritanke.no. Hentet 18.07.2026 fra https://fritanke.no/john-rawls-rettferdighetens-beskjedne-ridder/19.11296",
+                    "Sagdahl, M. S. (2024). *Rettferdighet*. Store norske leksikon. Hentet 18.07.2026 fra https://snl.no/rettferdighet",
+                    "Sagdahl, M. S. (2026). *John Rawls*. Store norske leksikon. Hentet 18.07.2026 fra https://snl.no/John_Rawls",
+                    "Svendsen, L. F. H. (2025). *Robert Nozick*. Store norske leksikon. Hentet 18.07.2026 fra https://snl.no/Robert_Nozick"
+                ]
+            }
+        }
+    ],
+    "timeline": [],
+    "createdDate": "2026-07-18T00:00:00Z",
+    "lastUpdated": "2026-07-18T00:00:00Z"
+}

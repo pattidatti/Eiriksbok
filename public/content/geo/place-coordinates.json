@@ -848,7 +848,7 @@
     },
     {
       "tag": "revolusjon",
-      "count": 27
+      "count": 28
     },
     {
       "tag": "verdensorden",
@@ -875,11 +875,11 @@
       "count": 23
     },
     {
-      "tag": "steinalder",
-      "count": 20
+      "tag": "etikk",
+      "count": 22
     },
     {
-      "tag": "etikk",
+      "tag": "steinalder",
       "count": 20
     },
     {
@@ -891,11 +891,11 @@
       "count": 20
     },
     {
-      "tag": "samfunn",
-      "count": 19
+      "tag": "1800-tallet",
+      "count": 20
     },
     {
-      "tag": "1800-tallet",
+      "tag": "samfunn",
       "count": 19
     },
     {
@@ -1099,6 +1099,10 @@
       "count": 8
     },
     {
+      "tag": "nasjonalisme",
+      "count": 8
+    },
+    {
       "tag": "slaveri",
       "count": 8
     },
@@ -1168,10 +1172,6 @@
     },
     {
       "tag": "opplysningstiden",
-      "count": 7
-    },
-    {
-      "tag": "nasjonalisme",
       "count": 7
     },
     {
@@ -1263,6 +1263,10 @@
       "count": 6
     },
     {
+      "tag": "frihet",
+      "count": 6
+    },
+    {
       "tag": "borgerrettigheter",
       "count": 6
     },
@@ -1336,10 +1340,6 @@
     },
     {
       "tag": "eksistensialisme",
-      "count": 5
-    },
-    {
-      "tag": "frihet",
       "count": 5
     },
     {
@@ -1504,6 +1504,10 @@
     },
     {
       "tag": "dampmaskin",
+      "count": 4
+    },
+    {
+      "tag": "samfunnskontrakt",
       "count": 4
     },
     {
@@ -1696,6 +1700,10 @@
     },
     {
       "tag": "kennedy",
+      "count": 3
+    },
+    {
+      "tag": "rettferdighet",
       "count": 3
     },
     {
@@ -2207,10 +2215,6 @@
       "count": 2
     },
     {
-      "tag": "samfunnskontrakt",
-      "count": 2
-    },
-    {
       "tag": "folkesuverenitet",
       "count": 2
     },
@@ -2328,6 +2332,10 @@
     },
     {
       "tag": "fagforening",
+      "count": 2
+    },
+    {
+      "tag": "1848",
       "count": 2
     },
     {
@@ -2492,6 +2500,14 @@
     },
     {
       "tag": "økologi",
+      "count": 2
+    },
+    {
+      "tag": "rawls",
+      "count": 2
+    },
+    {
+      "tag": "fordeling",
       "count": 2
     },
     {
@@ -3003,10 +3019,6 @@
       "count": 1
     },
     {
-      "tag": "rettferdighet",
-      "count": 1
-    },
-    {
       "tag": "dyrerettigheter",
       "count": 1
     },
@@ -3300,10 +3312,6 @@
     },
     {
       "tag": "nøytralitet",
-      "count": 1
-    },
-    {
-      "tag": "1848",
       "count": 1
     },
     {

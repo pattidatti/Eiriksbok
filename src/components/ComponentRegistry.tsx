@@ -82,6 +82,7 @@ const GreskGudeMatch = lazy(() => import('./content/interactive/GreskGudeMatch')
 const TestPaastanden = lazy(() => import('./content/interactive/TestPaastanden').then(m => ({ default: m.TestPaastanden })));
 const RomanExpansionMap = lazy(() => import('./content/interactive/RomanExpansionMap').then(m => ({ default: m.RomanExpansionMap })));
 const TrolleyProblem = lazy(() => import('./content/interactive/TrolleyProblem').then(m => ({ default: m.TrolleyProblem })));
+const VeilOfIgnorance = lazy(() => import('./content/interactive/VeilOfIgnorance').then(m => ({ default: m.VeilOfIgnorance })));
 const DyreetikkBrillene = lazy(() => import('./content/interactive/DyreetikkBrillene').then(m => ({ default: m.DyreetikkBrillene })));
 const GoldenMeanSlider = lazy(() => import('./content/interactive/GoldenMeanSlider').then(m => ({ default: m.GoldenMeanSlider })));
 const CategoricalImperativeTester = lazy(() => import('./content/interactive/CategoricalImperativeTester').then(m => ({ default: m.CategoricalImperativeTester })));
@@ -411,6 +412,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     KaizenVerksted,
     SuverenitetsSkala,
     TrolleyProblem,
+    VeilOfIgnorance,
     DyreetikkBrillene,
     MaktensFristelse,
     GoldenMeanSlider,

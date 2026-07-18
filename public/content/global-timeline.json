@@ -9645,6 +9645,25 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "rettferdighetsetikk",
+      "title": "Rettferdighet: uvitenhetens slør",
+      "description": "John Rawls spurte hvordan et samfunn kan bli virkelig rettferdig, og svaret var et tankeeksperiment: velg reglene uten å vite hvem du selv blir.",
+      "startDate": 1971,
+      "endDate": null,
+      "displayDate": "1971",
+      "type": "lesson",
+      "subjectId": "krle",
+      "topicId": "etikk",
+      "link": "/krle/etikk/rettferdighetsetikk",
+      "tags": [
+        "etikk",
+        "rettferdighet",
+        "rawls",
+        "samfunnskontrakt",
+        "fordeling"
+      ]
+    },
+    {
       "id": "bloody-sunday",
       "title": "Bloody Sunday",
       "description": "Britiske fallskjermsoldater dreper 14 ubevæpnede demonstranter i Derry. Hendelsen rekrutterte tusenvis til IRA.",
