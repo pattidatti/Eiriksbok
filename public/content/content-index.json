@@ -1,5 +1,5 @@
 {
-  "buildId": 1784266283731,
+  "buildId": 1784377803825,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2004,6 +2004,9 @@
     ],
     "pliktetikk": [
       "content/krle/etikk/pliktetikk.json"
+    ],
+    "rettferdighetsetikk": [
+      "content/krle/etikk/rettferdighetsetikk.json"
     ],
     "utilitarisme": [
       "content/krle/etikk/utilitarisme.json"
@@ -4251,6 +4254,7 @@
     "krle/etikk/nihilisme": "content/krle/etikk/nihilisme.json",
     "krle/etikk/non-aggression": "content/krle/etikk/non-aggression.json",
     "krle/etikk/pliktetikk": "content/krle/etikk/pliktetikk.json",
+    "krle/etikk/rettferdighetsetikk": "content/krle/etikk/rettferdighetsetikk.json",
     "krle/etikk/utilitarisme": "content/krle/etikk/utilitarisme.json",
     "krle/filosofi/aquinas": "content/krle/filosofi/aquinas.json",
     "krle/filosofi/arendt": "content/krle/filosofi/arendt.json",

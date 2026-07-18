@@ -132,6 +132,7 @@ const VeienTilVikingtid3D = lazy(() => import('./VeienTilVikingtid3D'));
 const Hansakoggen3D = lazy(() => import('./Hansakoggen3D'));
 const Fimreite3D = lazy(() => import('./Fimreite3D'));
 const Barrikaden1848 = lazy(() => import('./Barrikaden1848'));
+const BakSloret3D = lazy(() => import('./BakSloret3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'barrikaden-1848': {
@@ -142,6 +143,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 120,
         loader: () => import('./Barrikaden1848'),
         Component: Barrikaden1848 as never,
+    },
+    'bak-sloret-3d': {
+        id: 'bak-sloret-3d',
+        title: 'Bak uvitenhetens slør',
+        description:
+            'En liten landsby med tre livsstasjoner står bak et frostet slør. Klikk en steintavle for å velge samfunnsregelen - husene vokser og krymper etter hvor mye de ulike gruppene får. Så trekker du sløret til side, og et søkelys faller på en helt tilfeldig innbygger: dette ble deg. Lyspæren: bak sløret vet du ikke hvem du blir, så det tryggeste er å velge reglene der selv den nederste plassen er best mulig - akkurat slik John Rawls tenkte.',
+        estimatedSeconds: 120,
+        loader: () => import('./BakSloret3D'),
+        Component: BakSloret3D as never,
     },
     'folket-samles-3d': {
         id: 'folket-samles-3d',
