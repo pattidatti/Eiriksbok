@@ -133,8 +133,18 @@ const Hansakoggen3D = lazy(() => import('./Hansakoggen3D'));
 const Fimreite3D = lazy(() => import('./Fimreite3D'));
 const Barrikaden1848 = lazy(() => import('./Barrikaden1848'));
 const BakSloret3D = lazy(() => import('./BakSloret3D'));
+const GreskOpproret3D = lazy(() => import('./GreskOpproret3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'gresk-oppror-3d': {
+        id: 'gresk-oppror-3d',
+        title: 'Det greske opprøret sprer seg',
+        description:
+            'Tenn varselbålene på greske fjelltopper og se frigjøringskrigen bre seg fjell for fjell. Opprøret starter på Peloponnes i 1821 og kan bare spre seg til nabotopper som alt brenner — ut til øyene og opp på fastlandet, mens landsbyene lyser opp. Lyspæren: den greske frigjøringskrigen var ingen enkelt slagmark. Et helt folk reiste seg område for område helt til hele landet sto i brann og osmanene mistet kontrollen.',
+        estimatedSeconds: 120,
+        loader: () => import('./GreskOpproret3D'),
+        Component: GreskOpproret3D as never,
+    },
     'barrikaden-1848': {
         id: 'barrikaden-1848',
         title: 'Barrikaden i Paris',

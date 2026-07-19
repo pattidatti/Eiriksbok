@@ -1,5 +1,5 @@
 {
-  "buildId": 1784378915352,
+  "buildId": 1784424996773,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1672,6 +1672,9 @@
     ],
     "sykes-picot": [
       "content/historie/midtoesten/sykes-picot.json"
+    ],
+    "gresk-frigjoringskrig": [
+      "content/historie/nasjonalstatenes-tid/gresk-frigjoringskrig.json"
     ],
     "hva-er-nasjonalisme": [
       "content/historie/nasjonalstatenes-tid/hva-er-nasjonalisme.json"
@@ -4144,6 +4147,7 @@
     "historie/midtoesten/olje-og-makt": "content/historie/midtoesten/olje-og-makt.json",
     "historie/midtoesten/orientering": "content/historie/midtoesten/orientering.json",
     "historie/midtoesten/sykes-picot": "content/historie/midtoesten/sykes-picot.json",
+    "historie/nasjonalstatenes-tid/gresk-frigjoringskrig": "content/historie/nasjonalstatenes-tid/gresk-frigjoringskrig.json",
     "historie/nasjonalstatenes-tid/hva-er-nasjonalisme": "content/historie/nasjonalstatenes-tid/hva-er-nasjonalisme.json",
     "historie/nasjonalstatenes-tid/revolusjonene-1848": "content/historie/nasjonalstatenes-tid/revolusjonene-1848.json",
     "historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland": "content/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland.json",
