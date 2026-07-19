@@ -5,7 +5,7 @@
     "year": "1821-1832",
     "category": "Nasjonalstatenes tid",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/nasjonalstatenes-tid/gresk-frigjoringskrig-hero.webp",
     "details": [
         "I 1821 reiste grekerne seg mot Det osmanske riket etter nesten 400 år under tyrkisk styre",
         "Opprøret alene var ikke nok - Hellas ble fritt først da Storbritannia, Frankrike og Russland grep inn",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/nasjonalstatenes-tid/gresk-frigjoringskrig-01.webp",
             "alt": "Varselbål brenner på greske fjelltopper i nattemørket",
             "caption": "Opprøret spredte seg fra fjell til fjell, som en ild ingen klarte å slukke."
         },
@@ -67,7 +67,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/nasjonalstatenes-tid/gresk-frigjoringskrig-02.webp",
             "alt": "Maleri av lidende mennesker under massakren på Chios",
             "caption": "Delacroix' maleri fra Chios rørte hele Europa og skapte sympati for grekerne."
         },
@@ -114,7 +114,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/nasjonalstatenes-tid/gresk-frigjoringskrig-03.webp",
             "alt": "Det greske flagget heises over en fri by ved havet",
             "caption": "I 1832 var Hellas fritt - den første nye nasjonalstaten på 1800-tallet."
         },
