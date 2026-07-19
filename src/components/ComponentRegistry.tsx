@@ -315,6 +315,7 @@ const DharmahjuletUtforsker = lazy(() => import('./content/interactive/Dharmahju
 const AttedeltVeiDilemma = lazy(() => import('./content/interactive/AttedeltVeiDilemma').then(m => ({ default: m.AttedeltVeiDilemma })));
 const MokshaVeiene = lazy(() => import('./content/interactive/MokshaVeiene').then(m => ({ default: m.MokshaVeiene })));
 const DemokratietFaller = lazy(() => import('./content/interactive/DemokratietFaller').then(m => ({ default: m.DemokratietFaller })));
+const VeienTilFrihet = lazy(() => import('./content/interactive/VeienTilFrihet').then(m => ({ default: m.VeienTilFrihet })));
 
 // Mikrospill: lett, embeddbart spill inline i artikkel. gameId-prop velger spillet
 // fra mikrospill-registeret (src/components/microgames/registry.ts).
@@ -322,6 +323,7 @@ const MicroGame = lazy(() => import('./microgames/MicroGameBlock').then(m => ({ 
 
 export const componentRegistry: Record<string, React.ComponentType<any>> = {
     // Core
+    VeienTilFrihet,
     NasjonsbyggerLab,
     ViFolelsen,
     Revolusjonsbolgen1848,

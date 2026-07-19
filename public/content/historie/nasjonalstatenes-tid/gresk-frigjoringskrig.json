@@ -1,0 +1,260 @@
+{
+    "id": "gresk-frigjoringskrig",
+    "title": "Den greske frigjøringskrigen",
+    "layout": "rich",
+    "year": "1821-1832",
+    "category": "Nasjonalstatenes tid",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "I 1821 reiste grekerne seg mot Det osmanske riket etter nesten 400 år under tyrkisk styre",
+        "Opprøret alene var ikke nok - Hellas ble fritt først da Storbritannia, Frankrike og Russland grep inn",
+        "I 1832 ble Hellas den første nye nasjonalstaten som nasjonalismen skapte på 1800-tallet"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "En natt våren 1821 begynte varselbål å lyse på fjelltoppene rundt om i Hellas. Det var et hemmelig signal. Fra fjell til fjell spredte ilden seg, og med den et budskap: nå reiser vi oss. Etter nesten 400 år under Det osmanske riket ville grekerne ha sitt eget land tilbake. Ingen visste det da, men dette opprøret skulle bli den første nye nasjonen som ble født i Europa på 1800-tallet."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Varselbål brenner på greske fjelltopper i nattemørket",
+            "caption": "Opprøret spredte seg fra fjell til fjell, som en ild ingen klarte å slukke."
+        },
+        {
+            "type": "header",
+            "text": "Et folk uten et land"
+        },
+        {
+            "type": "text",
+            "content": "Grekerne hadde mye til felles. De snakket samme språk, de delte den ortodokse kristne troen, og de husket stolt at det var forfedrene deres som en gang bygde antikkens Hellas. Men de hadde ikke sitt eget land. I stedet ble de styrt fra Istanbul av den osmanske sultanen, langt borte. De måtte betale skatt til sultanen og hadde lite de skulle ha sagt over sitt eget liv. At nettopp de, som bodde der demokratiet en gang ble født, ikke fikk styre seg selv, gjorde savnet enda sterkere."
+        },
+        {
+            "type": "text",
+            "content": "På denne tiden vokste en helt ny tanke fram i Europa. Den kalles nasjonalisme: ideen om at et folk som deler språk, kultur og historie, bør få styre seg selv i sin egen stat (Knudsen, 2024). Tanken spredte seg for alvor etter den franske revolusjonen og [Napoleonskrigene](/historie/den-franske-revolusjon/napoleon). Vil du forstå selve ideen bedre, kan du lese mer om [hva nasjonalisme er](/historie/nasjonalstatenes-tid/hva-er-nasjonalisme). For grekerne ble denne tanken til et brennende spørsmål: hvorfor skal vi lystre en fremmed sultan?"
+        },
+        {
+            "type": "header",
+            "text": "Opprøret bryter ut (1821)"
+        },
+        {
+            "type": "text",
+            "content": "I 1821 brøt det ut kraftige opprør mot det osmanske styret på Peloponnes, halvøya lengst sør i Hellas (Store norske leksikon, 2025). Opprøret bredte seg raskt ut til øyene i Egeerhavet og nordover mot fastlandet. Sommeren 1822 erobret opprørerne selveste Athen. For grekerne var det en drøm som gikk i oppfyllelse: antikkens by var gresk igjen. Riket de gjorde opprør mot, kan du lese mer om i artikkelen om [Det osmanske riket](/historie/osmanske-riket/osman-og-oppkomsten)."
+        },
+        {
+            "type": "text",
+            "content": "Osmanene svarte med hard hånd. På øya Chios slo soldatene ned et opprør i 1822, og titusener av grekere ble drept eller solgt som slaver (Chios-massakren, 2024). Nesten hele øyas befolkning ble utslettet på noen få måneder. Nyheten om massakren nådde hele Europa og gjorde dypt inntrykk på folk. Den skulle vise seg å bli et vendepunkt - men ikke på den måten sultanen hadde tenkt."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "gresk-oppror-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Europa våkner"
+        },
+        {
+            "type": "text",
+            "content": "Over hele Europa ble folk rørt av grekernes kamp. Utdannede europeere hadde lest de gamle greske dikterne og filosofene på skolen, og for dem var Hellas selve vuggen for kunst, vitenskap og folkestyre. Mange syntes derfor det var forferdelig at etterkommerne deres led slik. Diktere og malere grep pennene og penslene. Den franske maleren Eugène Delacroix malte det berømte bildet \"Massakren på Khios\" i 1824, som fikk hele Paris til å snakke om Hellas (Tschudi-Madsen, 2025). Bildet skapte heftig strid mellom kunstnerne, men ingen klarte å overse det."
+        },
+        {
+            "type": "text",
+            "content": "Den engelske dikteren Lord Byron gikk lengst av alle. Han reiste selv til Hellas for å slåss for saken, og grekerne tok imot ham som en helt. I 1824 døde han av feber i byen Mesolongi, midt under kampen (Smidt & Sørbø, 2026). Døden hans gjorde ham til et symbol. Denne bølgen av sympati for Hellas fikk et eget navn: filhellenisme, som betyr \"kjærlighet til det greske\". Kunsten som vekket følelsene, hang tett sammen med [nasjonalromantikken](/norsk/litteraturhistorie/nasjonalromantikken) som preget hele tiden."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Maleri av lidende mennesker under massakren på Chios",
+            "caption": "Delacroix' maleri fra Chios rørte hele Europa og skapte sympati for grekerne."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "De frie fjellene, de har alltid vært grekernes.",
+                "author": "Fra en gresk frihetssang. Sangene og diktene fra opprøret holdt motet oppe og fortalte at kampen handlet om noe større enn dem selv."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Opprøret alene var ikke nok"
+        },
+        {
+            "type": "text",
+            "content": "Sympati er én ting, seier noe annet. Sultanen ba om hjelp fra Egypt, og i 1825 gikk den egyptiske hærføreren Ibrahim i land i Hellas med en veltrent hær. Han slo tilbake bit for bit, og i 1826 tok han byen Mesolongi (Store norske leksikon, 2025). Nå så det mørkt ut. Grekerne var modige, men de var færre og dårligere utrustet. Opprøret holdt på å bli knust. Noe mer måtte til om drømmen skulle overleve. Prøv selv i modellen under: hva skulle egentlig til for at Hellas kunne bli fritt?"
+        },
+        {
+            "type": "component",
+            "name": "VeienTilFrihet",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Stormaktene avgjør: Navarino 1827"
+        },
+        {
+            "type": "text",
+            "content": "Til slutt bestemte de tre store landene Storbritannia, Frankrike og Russland seg for å gripe inn. En stormakt er et land som er så sterkt at det kan bestemme mye i verden. Disse tre grep inn dels fordi folkene deres krevde det, og dels fordi de selv ville ha innflytelse i området. I London-protokollen fra 1827 ble de enige om å hjelpe Hellas. Den 20. oktober 1827 møtte flåtene deres den osmanske og egyptiske flåten i bukta ved Navarino, og på noen timer ble hele fiendeflåten senket (Store norske leksikon, 2025). Slaget ved Navarino ble slutten på det osmanske herredømmet over Hellas. Nå var det ikke lenger et lite opprør mot en kjempe - nå sto Europas sterkeste makter på grekernes side."
+        },
+        {
+            "type": "header",
+            "text": "En ny nasjon blir til"
+        },
+        {
+            "type": "text",
+            "content": "Etter Navarino gikk det raskt. En krig mellom Russland og osmanene gjorde sultanen enda svakere, og i 1830 ble Hellas anerkjent som en egen stat. Grev Ioannis Kapodistrias ble den første lederen, men grekerne var ikke enige med hverandre om hvordan landet skulle styres, og han ble myrdet i 1831. Til slutt fikk landet en konge utenfra: den unge prins Otto av Bayern ble gresk konge, og i 1832 var Hellas endelig fritt og selvstendig (Store norske leksikon, 2025). Etter mer enn ti år med krig hadde et lite folk fått sitt eget land tilbake."
+        },
+        {
+            "type": "text",
+            "content": "Hellas viste resten av Europa at det gikk an. Et folk kunne bryte seg løs fra et gammelt rike og bygge sin egen nasjonalstat. Bare noen tiår senere fulgte andre etter, da [Italia og Tyskland ble samlet](/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland), og da nye [revolusjoner i 1848](/historie/nasjonalstatenes-tid/revolusjonene-1848) krevde frihet over hele kontinentet. Den greske frihetsilden fra 1821 var bare den første."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Det greske flagget heises over en fri by ved havet",
+            "caption": "I 1832 var Hellas fritt - den første nye nasjonalstaten på 1800-tallet."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hvorfor vant Hellas til slutt?",
+                "content": "Grekernes eget opprør var motoren, men det var ikke sterkt nok alene til å felle et helt rike. Det som avgjorde krigen, var at nasjonalfølelsen hjemme møtte hjelp utenfra. Sympatien i Europa gjorde at Storbritannia, Frankrike og Russland til slutt grep inn ved Navarino. Uten opprøret hadde stormaktene ikke hatt noen å hjelpe - men uten stormaktene hadde opprøret trolig blitt slått ned. Det trengtes begge deler."
+            }
+        },
+        {
+            "type": "component",
+            "name": "TimelineComponent",
+            "props": {
+                "title": "Frihetskrigen, steg for steg",
+                "compact": true,
+                "events": [
+                    {
+                        "year": 1821,
+                        "description": "Opprøret bryter ut på Peloponnes og sprer seg raskt utover landet."
+                    },
+                    {
+                        "year": 1822,
+                        "description": "Opprørerne tar Athen, men osmanene slår hardt tilbake, blant annet på Chios."
+                    },
+                    {
+                        "year": 1824,
+                        "description": "Lord Byron dør i Mesolongi. Sympatien for Hellas vokser i hele Europa."
+                    },
+                    {
+                        "year": 1827,
+                        "description": "Stormaktenes flåter knuser den osmanske flåten i slaget ved Navarino."
+                    },
+                    {
+                        "year": 1832,
+                        "description": "Hellas anerkjennes som en fri og selvstendig stat med sin egen konge."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange år hadde grekerne levd under Det osmanske riket da opprøret brøt ut?",
+                    "I hvilket år og på hvilken halvøy startet opprøret?",
+                    "Hvem var Lord Byron, og hva gjorde han for den greske saken?",
+                    "Hvilke tre stormakter grep inn på grekernes side ved Navarino?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hva nasjonalisme er, og hvorfor den tanken gjorde grekerne villige til å gjøre opprør.",
+                    "Hvorfor tror du massakren på Chios skapte sympati for Hellas i Europa, i stedet for å skremme folk fra å hjelpe?",
+                    "Hva mener vi når vi sier at opprøret alene ikke var nok? Hva mer måtte til?",
+                    "Hvorfor kaller vi Hellas den første nye nasjonalstaten på 1800-tallet?"
+                ],
+                "gaaVidere": [
+                    "Filhellenismen viser hvordan kunst og dikt kan få folk til å bry seg om en sak langt borte. Finn et eksempel fra i dag der en sang, et bilde eller en film har fått mange til å engasjere seg i noe. Presenter det for klassen.",
+                    "Sammenlign den greske frigjøringskrigen med samlingen av Italia og Tyskland. Skriv en kort tekst om hva som var likt og hva som var ulikt ved hvordan de tre nasjonene ble til.",
+                    "Diskuter: Var det riktig av stormaktene å blande seg inn i krigen? Kan du tenke deg både gode og dårlige grunner til at de gjorde det?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvorfor gjorde grekerne opprør i 1821?",
+                        "options": [
+                            "De ville erobre Det osmanske riket",
+                            "De ville ha sitt eget land og styre seg selv",
+                            "De ville flytte til Vest-Europa",
+                            "De ville gjeninnføre de gamle gudene"
+                        ],
+                        "answer": 1,
+                        "explanation": "Grekerne delte språk, tro og historie, men manglet sitt eget land. Nasjonalismen ga dem ideen om at de burde styre seg selv i sin egen stat."
+                    },
+                    {
+                        "question": "Hva er filhellenisme?",
+                        "options": [
+                            "En gresk krigstaktikk i fjellene",
+                            "Navnet på den osmanske hæren",
+                            "Bølgen av sympati for Hellas rundt om i Europa",
+                            "En fredsavtale mellom Hellas og Egypt"
+                        ],
+                        "answer": 2,
+                        "explanation": "Filhellenisme betyr kjærlighet til det greske. Diktere og malere som Byron og Delacroix vakte sympati for grekerne i hele Europa."
+                    },
+                    {
+                        "question": "Hva skjedde i slaget ved Navarino i 1827?",
+                        "options": [
+                            "Grekerne tapte og ga opp kampen",
+                            "Stormaktenes flåter knuste den osmanske flåten",
+                            "Athen ble erobret av osmanene",
+                            "Lord Byron ledet et sjøslag"
+                        ],
+                        "answer": 1,
+                        "explanation": "Britiske, franske og russiske flåter senket den osmanske og egyptiske flåten ved Navarino. Det ble slutten på det osmanske herredømmet over Hellas."
+                    },
+                    {
+                        "question": "Hvorfor var ikke det greske opprøret nok til å vinne alene?",
+                        "options": [
+                            "Grekerne ville egentlig ikke ha frihet",
+                            "Osmanene fikk hjelp av en sterk egyptisk hær, og grekerne var færre og dårligere utrustet",
+                            "Europa var på osmanenes side",
+                            "Grekerne manglet fjell å gjemme seg i"
+                        ],
+                        "answer": 1,
+                        "explanation": "Da Egypt sendte en veltrent hær i 1825, holdt opprøret på å bli knust. Det trengtes hjelp utenfra for at Hellas skulle vinne."
+                    },
+                    {
+                        "question": "I hvilket år ble Hellas anerkjent som en fri og selvstendig stat?",
+                        "options": [
+                            "1821",
+                            "1824",
+                            "1832",
+                            "1848"
+                        ],
+                        "answer": 2,
+                        "explanation": "I 1832 var Hellas endelig fritt, med prins Otto av Bayern som konge. Det var den første nye nasjonalstaten som nasjonalismen skapte på 1800-tallet."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Lurås, G., Greve, T. & Ersland, B. L. (2025). *Hellas' historie*. Store norske leksikon. Hentet 19.07.2026 fra [snl.no/Hellas'_historie](https://snl.no/Hellas'_historie)",
+                    "Smidt, K. & Sørbø, M. N. (2026). *Lord Byron*. Store norske leksikon. Hentet 19.07.2026 fra [snl.no/Lord_Byron](https://snl.no/Lord_Byron)",
+                    "Knudsen, O. F. (2024). *Nasjonalisme*. Store norske leksikon. Hentet 19.07.2026 fra [snl.no/nasjonalisme](https://snl.no/nasjonalisme)",
+                    "Tschudi-Madsen, S. (2025). *Eugène Delacroix*. Store norske leksikon. Hentet 19.07.2026 fra [snl.no/Eugène_Delacroix](https://snl.no/Eugène_Delacroix)",
+                    "Chios-massakren. (2024). I *Wikipedia*. Hentet 19.07.2026 fra [en.wikipedia.org/wiki/Chios_massacre](https://en.wikipedia.org/wiki/Chios_massacre)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

@@ -5319,6 +5319,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "gresk-frigjoringskrig",
+      "title": "Den greske frigjøringskrigen",
+      "description": "I 1821 reiste grekerne seg mot Det osmanske riket. Se hvordan et opprør og hjelp fra stormaktene skapte den første nye nasjonalstaten på 1800-tallet.",
+      "startDate": 1821,
+      "endDate": 1832,
+      "displayDate": "1821-1832",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "nasjonalstatenes-tid",
+      "link": "/historie/nasjonalstatenes-tid/gresk-frigjoringskrig",
+      "tags": [
+        "nasjonalisme",
+        "hellas",
+        "frihet",
+        "1800-tallet",
+        "osmanske-riket"
+      ],
+      "lat": 39,
+      "lng": 22,
+      "placeLabel": "Hellas",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "latin-amerika-sub-3",
       "title": "Slaget ved Ayacucho",
       "description": "Det siste spanske nederlaget i Sør-Amerika.",

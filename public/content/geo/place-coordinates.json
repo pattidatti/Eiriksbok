@@ -879,6 +879,10 @@
       "count": 22
     },
     {
+      "tag": "1800-tallet",
+      "count": 22
+    },
+    {
       "tag": "steinalder",
       "count": 20
     },
@@ -888,10 +892,6 @@
     },
     {
       "tag": "renessansen",
-      "count": 20
-    },
-    {
-      "tag": "1800-tallet",
       "count": 20
     },
     {
@@ -1027,6 +1027,10 @@
       "count": 10
     },
     {
+      "tag": "nasjonalisme",
+      "count": 10
+    },
+    {
       "tag": "arbeidsliv",
       "count": 10
     },
@@ -1099,15 +1103,15 @@
       "count": 8
     },
     {
-      "tag": "nasjonalisme",
-      "count": 8
-    },
-    {
       "tag": "slaveri",
       "count": 8
     },
     {
       "tag": "helse",
+      "count": 8
+    },
+    {
+      "tag": "frihet",
       "count": 8
     },
     {
@@ -1260,10 +1264,6 @@
     },
     {
       "tag": "1814",
-      "count": 6
-    },
-    {
-      "tag": "frihet",
       "count": 6
     },
     {
