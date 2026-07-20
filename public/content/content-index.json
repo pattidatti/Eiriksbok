@@ -1,5 +1,5 @@
 {
-  "buildId": 1784530711892,
+  "buildId": 1784535629396,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -129,6 +129,9 @@
     ],
     "concept-boddel": [
       "content/concepts/boddel.json"
+    ],
+    "concept-bolgemodellen": [
+      "content/concepts/bolgemodellen.json"
     ],
     "concept-borskrakk": [
       "content/concepts/borskrakk.json"
@@ -930,6 +933,9 @@
     ],
     "concept-spesiell-okonomisk-sone": [
       "content/concepts/spesiell-okonomisk-sone.json"
+    ],
+    "concept-sprangmodellen": [
+      "content/concepts/sprangmodellen.json"
     ],
     "concept-squadristi": [
       "content/concepts/squadristi.json"
@@ -2497,6 +2503,9 @@
     "hva-er-dialekter": [
       "content/norsk/dialekter/hva-er-dialekter.json"
     ],
+    "spredning-av-dialekttrekk": [
+      "content/norsk/dialekter/spredning-av-dialekttrekk.json"
+    ],
     "muntlig-modell": [
       "content/norsk/eksamen/muntlig-modell.json",
       "content/samfunnskunnskap/eksamen/muntlig-modell.json"
@@ -3639,6 +3648,7 @@
     "concepts/blokade.json/blokade": "content/concepts/blokade.json",
     "concepts/bloody-sunday.json/bloody-sunday": "content/concepts/bloody-sunday.json",
     "concepts/boddel.json/boddel": "content/concepts/boddel.json",
+    "concepts/bolgemodellen.json/bolgemodellen": "content/concepts/bolgemodellen.json",
     "concepts/borskrakk.json/borskrakk": "content/concepts/borskrakk.json",
     "concepts/bretton-woods.json/bretton-woods": "content/concepts/bretton-woods.json",
     "concepts/brutalitet.json/brutalitet": "content/concepts/brutalitet.json",
@@ -3906,6 +3916,7 @@
     "concepts/sosialisme.json/sosialisme": "content/concepts/sosialisme.json",
     "concepts/spekulasjon.json/spekulasjon": "content/concepts/spekulasjon.json",
     "concepts/spesiell-okonomisk-sone.json/spesiell-okonomisk-sone": "content/concepts/spesiell-okonomisk-sone.json",
+    "concepts/sprangmodellen.json/sprangmodellen": "content/concepts/sprangmodellen.json",
     "concepts/squadristi.json/squadristi": "content/concepts/squadristi.json",
     "concepts/stabilitet.json/stabilitet": "content/concepts/stabilitet.json",
     "concepts/stalingrad.json/stalingrad": "content/concepts/stalingrad.json",
@@ -4427,6 +4438,7 @@
     "norsk/analyse/tekstanalyse-sti": "content/norsk/analyse/tekstanalyse-sti.json",
     "norsk/analyse/tema-og-budskap": "content/norsk/analyse/tema-og-budskap.json",
     "norsk/dialekter/hva-er-dialekter": "content/norsk/dialekter/hva-er-dialekter.json",
+    "norsk/dialekter/spredning-av-dialekttrekk": "content/norsk/dialekter/spredning-av-dialekttrekk.json",
     "norsk/eksamen/muntlig-modell": "content/norsk/eksamen/muntlig-modell.json",
     "norsk/eksamen/muntlig": "content/norsk/eksamen/muntlig.json",
     "norsk/eksamen/skriftlig": "content/norsk/eksamen/skriftlig.json",

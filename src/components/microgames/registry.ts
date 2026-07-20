@@ -19,6 +19,7 @@ const SymbolerPaaTaket3D = lazy(() => import('./SymbolerPaaTaket3D'));
 const IngenmanslandMG = lazy(() => import('./IngenmanslandMG'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
+const Spredning3D = lazy(() => import('./Spredning3D'));
 const UtvandringenFraAfrika3D = lazy(() => import('./UtvandringenFraAfrika3D'));
 const HimmelModellen3D = lazy(() => import('./HimmelModellen3D'));
 const DampmaskinHjerte3D = lazy(() => import('./DampmaskinHjerte3D'));
@@ -685,6 +686,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 130,
         loader: () => import('./IngenmanslandMG'),
         Component: IngenmanslandMG as never,
+    },
+    'dialekt-spredning': {
+        id: 'dialekt-spredning',
+        title: 'Slik reiser et dialekttrekk',
+        description:
+            'Slipp et nytt dialekttrekk løs fra Oslo og se hvordan det brer seg. Bølgemodellen sprer det som ringer i vann til nabo etter nabo, mens sprangmodellen lar det hoppe fra by til by og hoppe over bygdene imellom.',
+        estimatedSeconds: 140,
+        loader: () => import('./Spredning3D'),
+        Component: Spredning3D as never,
     },
     'tidens-former-3d': {
         id: 'tidens-former-3d',

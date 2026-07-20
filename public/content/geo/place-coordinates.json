@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 293
+      "count": 294
     },
     {
       "tag": "dekolonisering",
@@ -907,6 +907,10 @@
       "count": 18
     },
     {
+      "tag": "imperialisme",
+      "count": 18
+    },
+    {
       "tag": "ritual",
       "count": 18
     },
@@ -920,10 +924,6 @@
     },
     {
       "tag": "kristendom",
-      "count": 17
-    },
-    {
-      "tag": "imperialisme",
       "count": 17
     },
     {
@@ -1055,6 +1055,10 @@
       "count": 9
     },
     {
+      "tag": "kolonialisering",
+      "count": 9
+    },
+    {
       "tag": "opplysningstid",
       "count": 9
     },
@@ -1100,10 +1104,6 @@
     },
     {
       "tag": "1500-tallet",
-      "count": 8
-    },
-    {
-      "tag": "kolonialisering",
       "count": 8
     },
     {
@@ -2391,6 +2391,10 @@
       "count": 2
     },
     {
+      "tag": "berlinkonferansen",
+      "count": 2
+    },
+    {
       "tag": "russisk-japanske-krig",
       "count": 2
     },
@@ -2648,6 +2652,18 @@
     },
     {
       "tag": "debatt",
+      "count": 2
+    },
+    {
+      "tag": "dialekt",
+      "count": 2
+    },
+    {
+      "tag": "talemål",
+      "count": 2
+    },
+    {
+      "tag": "målmerke",
       "count": 2
     },
     {
@@ -3183,6 +3199,26 @@
       "count": 1
     },
     {
+      "tag": "sosiolekt",
+      "count": 1
+    },
+    {
+      "tag": "språk og identitet",
+      "count": 1
+    },
+    {
+      "tag": "bølgemodellen",
+      "count": 1
+    },
+    {
+      "tag": "sprangmodellen",
+      "count": 1
+    },
+    {
+      "tag": "språkendring",
+      "count": 1
+    },
+    {
       "tag": "apa7",
       "count": 1
     },
@@ -3316,10 +3352,6 @@
     },
     {
       "tag": "slavehandel",
-      "count": 1
-    },
-    {
-      "tag": "berlinkonferansen",
       "count": 1
     },
     {

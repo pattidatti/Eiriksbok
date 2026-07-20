@@ -302,6 +302,19 @@
     "definition": "Vitenskapen om levende organismer - fra bakterier til hvaler. Studerer hvordan liv oppstår, fungerer og utvikler seg."
   },
   {
+    "id": "birkebeiner",
+    "term": "Birkebeiner",
+    "definition": "En politisk og militær gruppe i den norske borgerkrigstiden. Navnet var opprinnelig en hån fra fiendene, som mente birkebeinerne var så fattige at de bandt bjørkebark rundt leggene. Sverre Sigurdsson ble deres leder i 1177 og brukte hæren til å bli Norges konge.",
+    "type": "concept",
+    "tags": [
+      "middelalder",
+      "borgerkrig",
+      "hær"
+    ],
+    "subject": "historie",
+    "link": "/historie/norsk-middelalder/sverre-sigurdsson"
+  },
+  {
     "id": "bitterhet",
     "term": "Bitterhet",
     "definition": "Vedvarende vrede over urett man har opplevd. Tyskland etter Versailles-freden var preget av nasjonal bitterhet."
@@ -374,6 +387,12 @@
       "samfunn"
     ],
     "subject": "historie"
+  },
+  {
+    "id": "bolgemodellen",
+    "term": "Bølgemodellen",
+    "definition": "En modell for hvordan et språktrekk sprer seg. Trekket brer seg jevnt utover fra der det oppsto, som ringer i vann: fra nabo til nabo. Nære steder får trekket først, fjerne steder sist. Forklarer de myke overgangene mellom nabodialekter.",
+    "subject": "norsk"
   },
   {
     "id": "borskrakk",
@@ -1933,7 +1952,7 @@
     "links": [
       {
         "title": "Det Mongolske Riket",
-        "url": "/historie/middelalder/mongolske-riket"
+        "url": "/historie/middelalderen/mongolske-riket"
       }
     ]
   },
@@ -2351,7 +2370,7 @@
     "links": [
       {
         "title": "Det Mongolske Riket",
-        "url": "/historie/middelalder/mongolske-riket"
+        "url": "/historie/middelalderen/mongolske-riket"
       }
     ]
   },
@@ -2894,6 +2913,12 @@
     ],
     "subject": "historie",
     "topic": "kinas-historie"
+  },
+  {
+    "id": "sprangmodellen",
+    "term": "Sprangmodellen",
+    "definition": "En modell for hvordan et språktrekk sprer seg. Trekket hopper direkte fra by til by, der folk har mye kontakt, og hopper over bygdene imellom. Forklarer hvorfor byer langt fra hverandre kan dele et trekk som stedene mellom dem ikke har.",
+    "subject": "norsk"
   },
   {
     "id": "squadristi",
@@ -3558,7 +3583,7 @@
     "links": [
       {
         "title": "Det Mongolske Riket",
-        "url": "/historie/middelalder/mongolske-riket"
+        "url": "/historie/middelalderen/mongolske-riket"
       }
     ]
   },
