@@ -6,8 +6,8 @@
     "year": "1884-1885",
     "category": "Afrika",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
-    "image": "/images/placeholder.webp",
+    "heroImage": "/images/kolonialisering/kapplopet-om-afrika-hero.webp",
+    "image": "/images/kolonialisering/kapplopet-om-afrika-hero.webp",
     "details": [
         "Berlinkonferansen 1884-1885 delte Afrika mellom europeiske stormakter",
         "Ingen afrikanske ledere var med i rommet da grensene ble tegnet",
@@ -31,7 +31,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/kapplopet-om-afrika-01.webp",
             "alt": "Europeiske diplomater rundt et bord med et stort Afrika-kart på veggen",
             "caption": "Berlinkonferansen 1884: stormaktene delte et kontinent de knapt hadde satt sin fot på."
         },
@@ -117,7 +117,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/kapplopet-om-afrika-02.webp",
             "alt": "Kart over Afrika delt inn i fargelagte europeiske kolonier rundt år 1914",
             "caption": "Rundt år 1900 var det meste av Afrika delt mellom europeiske land."
         },
