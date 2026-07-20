@@ -710,6 +710,29 @@
           ]
         },
         {
+          "id": "dialekter",
+          "title": "Dialekter",
+          "description": "Hvorfor snakker vi så ulikt? Talemål, målmerker og identitet i norsk.",
+          "image": "/images/dialekter/dialekter-hero.webp",
+          "lessons": [
+            {
+              "id": "hva-er-dialekter",
+              "title": "Dialekter: Hvorfor snakker vi så ulikt?",
+              "description": "En dialekt er talemålet der du bor. Lær om målmerker, dialektområder og hvorfor Norge er så rikt på dialekter.",
+              "image": "/images/dialekter/dialekter-hero.webp",
+              "tags": [
+                "dialekt",
+                "talemål",
+                "målmerke",
+                "sosiolekt",
+                "språk og identitet"
+              ],
+              "createdDate": "2026-07-20T00:00:00Z",
+              "lastUpdated": "2026-07-20T00:00:00Z"
+            }
+          ]
+        },
+        {
           "id": "skrivehjelp",
           "title": "Skrivehjelp",
           "description": "Tips og triks for å skrive bedre.",
