@@ -181,6 +181,7 @@ const BattleTacticsSim = lazy(() => import('./content/interactive/BattleTacticsS
 const MottreformasjonsVerktoy = lazy(() => import('./content/interactive/MottreformasjonsVerktoy').then(m => ({ default: m.MottreformasjonsVerktoy })));
 const LovensSmutthull = lazy(() => import('./content/interactive/LovensSmutthull').then(m => ({ default: m.LovensSmutthull })));
 const SprakBaneVelger = lazy(() => import('./content/interactive/SprakBaneVelger').then(m => ({ default: m.SprakBaneVelger })));
+const DialektDetektiv = lazy(() => import('./content/interactive/DialektDetektiv').then(m => ({ default: m.DialektDetektiv })));
 const StormaktVagskal = lazy(() => import('./content/interactive/StormaktVagskal').then(m => ({ default: m.StormaktVagskal })));
 const LeonardoNotatbok = lazy(() => import('./content/interactive/LeonardoNotatbok').then(m => ({ default: m.LeonardoNotatbok })));
 const GalileoTelescope = lazy(() => import('./content/interactive/GalileoTelescope').then(m => ({ default: m.GalileoTelescope })));
@@ -499,6 +500,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     MottreformasjonsVerktoy,
     LovensSmutthull,
     SprakBaneVelger,
+    DialektDetektiv,
     StormaktVagskal,
     LeonardoNotatbok,
     GalileoTelescope,

@@ -1,5 +1,5 @@
 {
-  "buildId": 1784511138505,
+  "buildId": 1784530711892,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2494,6 +2494,9 @@
     "tema-og-budskap": [
       "content/norsk/analyse/tema-og-budskap.json"
     ],
+    "hva-er-dialekter": [
+      "content/norsk/dialekter/hva-er-dialekter.json"
+    ],
     "muntlig-modell": [
       "content/norsk/eksamen/muntlig-modell.json",
       "content/samfunnskunnskap/eksamen/muntlig-modell.json"
@@ -4423,6 +4426,7 @@
     "norsk/analyse/analyse-roman": "content/norsk/analyse/analyse-roman.json",
     "norsk/analyse/tekstanalyse-sti": "content/norsk/analyse/tekstanalyse-sti.json",
     "norsk/analyse/tema-og-budskap": "content/norsk/analyse/tema-og-budskap.json",
+    "norsk/dialekter/hva-er-dialekter": "content/norsk/dialekter/hva-er-dialekter.json",
     "norsk/eksamen/muntlig-modell": "content/norsk/eksamen/muntlig-modell.json",
     "norsk/eksamen/muntlig": "content/norsk/eksamen/muntlig.json",
     "norsk/eksamen/skriftlig": "content/norsk/eksamen/skriftlig.json",
