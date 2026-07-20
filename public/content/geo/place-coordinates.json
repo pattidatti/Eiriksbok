@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 292
+      "count": 293
     },
     {
       "tag": "dekolonisering",
@@ -923,11 +923,11 @@
       "count": 17
     },
     {
-      "tag": "sivilisasjon",
-      "count": 16
+      "tag": "imperialisme",
+      "count": 17
     },
     {
-      "tag": "imperialisme",
+      "tag": "sivilisasjon",
       "count": 16
     },
     {
@@ -1103,6 +1103,10 @@
       "count": 8
     },
     {
+      "tag": "kolonialisering",
+      "count": 8
+    },
+    {
       "tag": "slaveri",
       "count": 8
     },
@@ -1168,10 +1172,6 @@
     },
     {
       "tag": "bøker",
-      "count": 7
-    },
-    {
-      "tag": "kolonialisering",
       "count": 7
     },
     {
@@ -3316,6 +3316,10 @@
     },
     {
       "tag": "slavehandel",
+      "count": 1
+    },
+    {
+      "tag": "berlinkonferansen",
       "count": 1
     },
     {

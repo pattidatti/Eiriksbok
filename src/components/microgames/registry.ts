@@ -134,8 +134,18 @@ const Fimreite3D = lazy(() => import('./Fimreite3D'));
 const Barrikaden1848 = lazy(() => import('./Barrikaden1848'));
 const BakSloret3D = lazy(() => import('./BakSloret3D'));
 const GreskOpproret3D = lazy(() => import('./GreskOpproret3D'));
+const KapplopetOmAfrika3D = lazy(() => import('./KapplopetOmAfrika3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'kapplopet-om-afrika-3d': {
+        id: 'kapplopet-om-afrika-3d',
+        title: 'Kappløpet om Afrika',
+        description:
+            'Du er en europeisk diplomat under kappløpet om Afrika. Klikk område etter område på kartet og plant flagg for stormaktene, til hele kontinentet er et lappeteppe av europeiske farger. Når alt er tatt, faller de rette grensestrekene på plass - rett gjennom landsbyene. Lyspæren: Europa tok hele Afrika bit for bit og tegnet grensene uten å spørre dem som bodde der.',
+        estimatedSeconds: 110,
+        loader: () => import('./KapplopetOmAfrika3D'),
+        Component: KapplopetOmAfrika3D as never,
+    },
     'gresk-oppror-3d': {
         id: 'gresk-oppror-3d',
         title: 'Det greske opprøret sprer seg',
