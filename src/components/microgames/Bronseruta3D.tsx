@@ -23,17 +23,17 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill til "Bronsealderens kollaps". Lyspaere: bronse er kobber PLUSS tinn.
-// Kobber fantes mange steder rundt Middelhavet, men tinn maatte fraktes langt -
-// ofte tusenvis av kilometer med skip. Hele bronsealderen hvilte derfor paa
-// laange, saarbare handelsruter. Eleven kjenner det paa kroppen: kobber-barren
-// ligger rett ved smia, men tinn-barren maa dras helt fra baaten ute paa havet.
-// Foerst naar begge er i diglen, kan sverdet stoepes.
+// Mikrospill til "Bronsealderens kollaps". Lyspære: bronse er kobber PLUSS tinn.
+// Kobber fantes mange steder rundt Middelhavet, men tinn måtte fraktes langt -
+// ofte tusenvis av kilometer med skip. Hele bronsealderen hvilte derfor på
+// lange, sårbare handelsruter. Eleven kjenner det på kroppen: kobber-barren
+// ligger rett ved smia, men tinn-barren må dras helt fra båten ute på havet.
+// Først når begge er i diglen, kan sverdet støpes.
 //
-// Mekanikk (drag-til-snap x2 + klikk for aa stoepe):
-//   1. Dra kobber-barren (naer) inn i diglen.
-//   2. Dra tinn-barren (langt ute paa havet) inn i diglen.
-//   3. Klikk "Stoep sverdet" - det gyldne bronsesverdet stiger opp av stoepeformen.
+// Mekanikk (drag-til-snap x2 + klikk for å støpe):
+//   1. Dra kobber-barren (nær) inn i diglen.
+//   2. Dra tinn-barren (langt ute på havet) inn i diglen.
+//   3. Klikk "Støp sverdet" - det gyldne bronsesverdet stiger opp av støpeformen.
 
 const CRUCIBLE: [number, number] = [0, 1.8]; // snap-punkt (x, z) foran smia
 
@@ -209,21 +209,21 @@ function Smie({
             {/* Smia med digel og ild */}
             <Forge copperIn={copperIn} tinIn={tinIn} />
 
-            {/* Stoepeformen med sverdet som stiger opp */}
+            {/* Støpeformen med sverdet som stiger opp */}
             <Mould casting={casting} done={done} />
 
             {/* Smeden */}
             <Person position={[1.7, 0, 1.3]} rotation={[0, -2.3, 0]} body="#8a5a32" skin="#d8a878" />
 
-            {/* Baaten ute paa havet - der tinnet kommer fra */}
+            {/* Båten ute på havet - der tinnet kommer fra */}
             <Boat position={[-4.6, 0.15, -8.5]} rotation={[0, 0.5, 0]} color="#6b4a2c" sail="#e7d7b0" />
             <Rock position={[6.2, 0, 3.4]} color="#b9ad90" scale={1.1} />
             <Rock position={[-6.4, 0, 2.2]} color="#c2b593" scale={0.8} />
 
-            {/* Burst der sverdet stoepes */}
+            {/* Burst der sverdet støpes */}
             <Burst position={[2.2, 1.1, 0.4]} trigger={burst} color="#f5c76a" count={26} spread={2.2} />
 
-            {/* Kobber-barren (naer smia) */}
+            {/* Kobber-barren (nær smia) */}
             {!copperIn && (
                 <Draggable
                     key={`copper-${copperKey}`}
@@ -242,7 +242,7 @@ function Smie({
                 </Draggable>
             )}
 
-            {/* Tinn-barren (langt ute ved baaten) */}
+            {/* Tinn-barren (langt ute ved båten) */}
             {!tinIn && (
                 <Draggable
                     key={`tin-${tinKey}`}
@@ -260,7 +260,7 @@ function Smie({
                 </Draggable>
             )}
 
-            {/* Klikk for aa stoepe - dukker opp naar begge metaller er i diglen */}
+            {/* Klikk for å støpe - dukker opp når begge metaller er i diglen */}
             {bothIn && !casting && !done && (
                 <Hotspot position={[2.2, 1.7, 0.4]} onSelect={onCast} label="Støp sverdet" />
             )}
@@ -268,8 +268,8 @@ function Smie({
     );
 }
 
-// En metallbarre. Kobber er varmt oransje, tinn er kjolig sølv. En liten flaggstang
-// med farget vimpel gjor det lett aa se hvilken barre som er hvilken paa avstand.
+// En metallbarre. Kobber er varmt oransje, tinn er kjølig sølv. En liten flaggstang
+// med farget vimpel gjør det lett å se hvilken barre som er hvilken på avstand.
 function Ingot({ color, tin }: { color: string; tin: boolean }) {
     return (
         <group>
@@ -277,12 +277,12 @@ function Ingot({ color, tin }: { color: string; tin: boolean }) {
                 <boxGeometry args={[1.1, 0.42, 0.7]} />
                 <meshStandardMaterial color={color} roughness={0.5} metalness={0.6} flatShading />
             </mesh>
-            {/* Smalere topp saa barren ser stoept ut */}
+            {/* Smalere topp så barren ser støpt ut */}
             <mesh position={[0, 0.55, 0]} castShadow>
                 <boxGeometry args={[0.8, 0.16, 0.5]} />
                 <meshStandardMaterial color={color} roughness={0.45} metalness={0.65} />
             </mesh>
-            {/* Liten vimpel: varm for kobber, kjolig for tinn */}
+            {/* Liten vimpel: varm for kobber, kjølig for tinn */}
             <mesh position={[0, 1.0, 0]}>
                 <cylinderGeometry args={[0.03, 0.03, 0.7, 6]} />
                 <meshStandardMaterial color="#6b5636" />
@@ -298,7 +298,7 @@ function Ingot({ color, tin }: { color: string; tin: boolean }) {
     );
 }
 
-// Smia: en steinovn med en glodende digel og ild.
+// Smia: en steinovn med en glødende digel og ild.
 function Forge({ copperIn, tinIn }: { copperIn: boolean; tinIn: boolean }) {
     const melt = useRef<THREE.Mesh>(null);
     const antall = (copperIn ? 1 : 0) + (tinIn ? 1 : 0);
@@ -315,12 +315,12 @@ function Forge({ copperIn, tinIn }: { copperIn: boolean; tinIn: boolean }) {
                 <cylinderGeometry args={[0.95, 1.1, 1, 8]} />
                 <meshStandardMaterial color="#8a7156" roughness={1} flatShading />
             </mesh>
-            {/* Digelen paa toppen */}
+            {/* Digelen på toppen */}
             <mesh position={[0, 1.05, 0]} castShadow>
                 <cylinderGeometry args={[0.62, 0.42, 0.5, 10]} />
                 <meshStandardMaterial color="#5a4636" roughness={0.9} flatShading />
             </mesh>
-            {/* Glodende smelte i diglen (vokser med antall metaller) */}
+            {/* Glødende smelte i diglen (vokser med antall metaller) */}
             <mesh ref={melt} position={[0, 1.28, 0]} scale={[0.12, 1, 0.12]}>
                 <cylinderGeometry args={[0.5, 0.5, 0.12, 12]} />
                 <meshStandardMaterial
@@ -336,7 +336,7 @@ function Forge({ copperIn, tinIn }: { copperIn: boolean; tinIn: boolean }) {
     );
 }
 
-// Stoepeformen. Sverdet stiger opp av den mens/etter stoeping.
+// Støpeformen. Sverdet stiger opp av den mens/etter støping.
 function Mould({ casting, done }: { casting: boolean; done: boolean }) {
     const sword = useRef<THREE.Group>(null);
     useFrame((_, dt) => {

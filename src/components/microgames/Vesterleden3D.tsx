@@ -23,20 +23,20 @@ import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen "Oppdagelsesreiser i Vesterled". Et stilisert kart
 // over Nord-Atlanteren sett ovenfra. Eleven drar et langskip vestover, hav for
-// hav, fra Norge til Island, videre til Gronland og til slutt til Vinland i
-// Amerika. Hver gang skipet naar en ny kyst, vaakner bosettingen til liv: hus
-// reiser seg, sauer og vinranker dukker opp, og aaret teller framover.
+// hav, fra Norge til Island, videre til Grønland og til slutt til Vinland i
+// Amerika. Hver gang skipet når en ny kyst, våkner bosettingen til liv: hus
+// reiser seg, sauer og vinranker dukker opp, og året teller framover.
 //
-// Lyspaera (rett fra artikkelen): vikingene naadde Amerika rundt 500 aar for
-// Columbus ved aa hoppe fra oy til oy. Hver landingsplass de bosatte ble basen
-// for neste sprang vestover. Vinland ble oppgitt nettopp fordi det laa for langt
+// Lyspæra (rett fra artikkelen): vikingene nådde Amerika rundt 500 år før
+// Columbus ved å hoppe fra øy til øy. Hver landingsplass de bosatte ble basen
+// for neste sprang vestover. Vinland ble oppgitt nettopp fordi det lå for langt
 // unna til at de kunne sende forsterkninger.
 //
-// Mekanikk (naviger over aapent hav): dra langskipet fra forrige kyst og helt
+// Mekanikk (naviger over åpent hav): dra langskipet fra forrige kyst og helt
 // fram til den lysende neste kysten. Slipper du for tidlig, driver skipet tilbake
-// og du maa prove paa nytt. En knapp under vinduet seiler ogsaa skipet fram for
-// dem som heller vil klikke. Slik kjenner eleven paa kroppen at hvert hav maatte
-// krysses for seg, og at landet i vest laa stadig lenger unna hjelp.
+// og du må prøve på nytt. En knapp under vinduet seiler også skipet fram for
+// dem som heller vil klikke. Slik kjenner eleven på kroppen at hvert hav måtte
+// krysses for seg, og at landet i vest lå stadig lenger unna hjelp.
 
 interface Land {
     name: string;
@@ -47,8 +47,8 @@ interface Land {
     kind: 'home' | 'thing' | 'farm' | 'camp';
 }
 
-// Landene i historisk rekkefolge, lagt vestover (synkende x) over Nord-Atlanteren.
-// Norge ligger ost (start), Vinland lengst vest (Newfoundland).
+// Landene i historisk rekkefølge, lagt vestover (synkende x) over Nord-Atlanteren.
+// Norge ligger øst (start), Vinland lengst vest (Newfoundland).
 const LANDS: Land[] = [
     { name: 'Norge', label: 'Norge', year: '', x: 9.2, z: 0.6, kind: 'home' },
     { name: 'Island', label: 'Island', year: '870', x: 2.6, z: -1.6, kind: 'thing' },
@@ -58,10 +58,10 @@ const LANDS: Land[] = [
 const TOTAL_LEGS = LANDS.length - 1;
 const ARRIVE_RADIUS = 2.7;
 
-// Kort fakta for en 14-aaring, ett per ny kyst eleven naar.
+// Kort fakta for en 14-åring, ett per ny kyst eleven når.
 const FACTS = [
-    'Rundt aar 870 seilte misfornoyde hovdinger til Island. Der bygde de et samfunn uten konge, med Alltinget som ramme.',
-    'Eirik Raude ble lyst fredlos og fant en stor oy i vest. Han kalte den Grønland for aa lokke flere bosettere. Naa var Grønland basen for neste sprang.',
+    'Rundt år 870 seilte misfornøyde høvdinger til Island. Der bygde de et samfunn uten konge, med Alltinget som ramme.',
+    'Eirik Raude ble lyst fredløs og fant en stor øy i vest. Han kalte den Grønland for å lokke flere bosettere. Nå var Grønland basen for neste sprang.',
 ];
 
 function distXZ(ax: number, az: number, bx: number, bz: number) {
@@ -73,7 +73,7 @@ const Vesterleden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const ambience = useAmbience('waves');
     // Hvor mange kyster er bosatt. Norge (index 0) er bosatt fra start.
     const [settled, setSettled] = useState(1);
-    // Tvinger Draggable til aa remounte tilbake til forrige kyst naar et forsok
+    // Tvinger Draggable til å remounte tilbake til forrige kyst når et forsøk
     // bommer (skipet slippes for langt fra land).
     const [resetNonce, setResetNonce] = useState(0);
     const [banner, setBanner] = useState<string | null>(
@@ -109,12 +109,12 @@ const Vesterleden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             setFact(null);
         } else {
             sounds.play('advance');
-            setBanner('Bra! Du naadde land. Dra skipet videre til neste lysende kyst.');
+            setBanner('Bra! Du nådde land. Dra skipet videre til neste lysende kyst.');
             setFact(FACTS[Math.min(settled - 1, FACTS.length - 1)]);
         }
     };
 
-    // Eleven slapp skipet. Naadde det fram til neste kyst?
+    // Eleven slapp skipet. Nådde det fram til neste kyst?
     const handleDrop = (pos: THREE.Vector3) => {
         if (done || !targetLand) return;
         const d = distXZ(pos.x, pos.z, targetLand.x, targetLand.z);
@@ -122,7 +122,7 @@ const Vesterleden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             arrive();
         } else {
             sounds.play('incorrect');
-            setBanner('Du naadde ikke land. Dra langskipet heilt fram til den lysende kysten.');
+            setBanner('Du nådde ikke land. Dra langskipet heilt fram til den lysende kysten.');
             setResetNonce((n) => n + 1);
         }
     };
@@ -145,7 +145,7 @@ const Vesterleden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     return (
         <MicroGameScaffold
-            title="Vesterleden: fra oy til oy mot Amerika"
+            title="Vesterleden: fra øy til øy mot Amerika"
             subtitle="Dra langskipet vestover over Nord-Atlanteren. Hver ny kyst blir basen for neste sprang."
             estimatedSeconds={140}
             onRetry={settled > 1 ? reset : undefined}
@@ -160,7 +160,7 @@ const Vesterleden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <>
                     <SceneBanner message={banner} wide />
                     <SceneBadge corner="br">
-                        {done ? 'Vinland 1000' : latest.year ? `Aar ${latest.year}` : 'Norge'}
+                        {done ? 'Vinland 1000' : latest.year ? `År ${latest.year}` : 'Norge'}
                     </SceneBadge>
                     {!done && (
                         <DataReadout
@@ -201,9 +201,9 @@ const Vesterleden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         <p className="text-sm text-slate-600 leading-snug">
                             Ta tak i{' '}
                             <span className="font-bold text-amber-700">langskipet</span> og dra det
-                            over det aapne havet fram til den lysende kysten i vest. Naar du naar
+                            over det åpne havet fram til den lysende kysten i vest. Når du når
                             land, reiser bosettingen seg, og du kan seile videre derfra. Du kan
-                            ogsaa trykke knappen for aa la skipet seile selv.
+                            også trykke knappen for å la skipet seile selv.
                         </p>
                         {targetLand && (
                             <button
@@ -220,11 +220,11 @@ const Vesterleden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         {fact && <SceneFact>{fact}</SceneFact>}
                     </>
                 ) : (
-                    <WinScreen title="Du naadde Vinland rundt aar 1000, nesten 500 aar for Columbus." onReplay={reset}>
-                        Vikingene krysset Atlanteren ved aa hoppe fra oy til oy. Hver kyst de bosatte
-                        ble basen for neste sprang vestover: Island, saa Grønland, saa Vinland. Men
-                        Vinland laa for langt unna til at de kunne sende nok folk og forsterkninger,
-                        og bosettingen ble oppgitt etter bare noen aar.
+                    <WinScreen title="Du nådde Vinland rundt år 1000, nesten 500 år før Columbus." onReplay={reset}>
+                        Vikingene krysset Atlanteren ved å hoppe fra øy til øy. Hver kyst de bosatte
+                        ble basen for neste sprang vestover: Island, så Grønland, så Vinland. Men
+                        Vinland lå for langt unna til at de kunne sende nok folk og forsterkninger,
+                        og bosettingen ble oppgitt etter bare noen år.
                     </WinScreen>
                 )}
             </div>
@@ -287,7 +287,7 @@ function Sea({
             {targetLand && <TargetGlow position={[targetLand.x, 0.5, targetLand.z]} />}
 
             {/* Langskipet eleven drar. Remounter til forrige kyst ved nytt steg
-                eller bommet forsok (key bytter), saa det alltid starter ved land. */}
+                eller bommet forsøk (key bytter), så det alltid starter ved land. */}
             {targetLand && (
                 <Draggable
                     key={`leg-${settled}-${resetNonce}`}
@@ -306,14 +306,14 @@ function Sea({
                 </Draggable>
             )}
 
-            {/* Skvulp-burst naar en kyst naas */}
+            {/* Skvulp-burst når en kyst nås */}
             <Burst position={burstPos} trigger={burst} color="#dbeafe" count={22} spread={1.9} />
         </group>
     );
 }
 
-// Et langskip pekende vestover (mot -x). Skrog, stripet seil paa mast, dragehode
-// i baugen. Vugger lett paa boglgene.
+// Et langskip pekende vestover (mot -x). Skrog, stripet seil på mast, dragehode
+// i baugen. Vugger lett på bølgene.
 function Longship() {
     const hull = useRef<THREE.Group>(null);
     useFrame(({ clock }) => {
@@ -352,7 +352,7 @@ function Longship() {
                         <meshStandardMaterial color={i % 2 ? '#b23b2e' : '#e8dcc0'} roughness={0.8} />
                     </mesh>
                 ))}
-                {/* Mast + raaseil */}
+                {/* Mast + råseil */}
                 <mesh position={[0, 0.8, 0]} castShadow>
                     <cylinderGeometry args={[0.04, 0.04, 1.2, 6]} />
                     <meshStandardMaterial color="#4a3520" roughness={0.9} />
@@ -361,7 +361,7 @@ function Longship() {
                     <boxGeometry args={[0.04, 0.7, 0.9]} />
                     <meshStandardMaterial color="#e8dcc0" roughness={0.9} side={THREE.DoubleSide} />
                 </mesh>
-                {/* Roede striper paa seilet */}
+                {/* Røde striper på seilet */}
                 {[-0.22, 0.22].map((z, i) => (
                     <mesh key={i} position={[0.025, 1.05, z]}>
                         <boxGeometry args={[0.02, 0.7, 0.18]} />
@@ -373,7 +373,7 @@ function Longship() {
     );
 }
 
-// En lysende ring som markerer neste kyst eleven skal naa.
+// En lysende ring som markerer neste kyst eleven skal nå.
 function TargetGlow({ position }: { position: [number, number, number] }) {
     const ring = useRef<THREE.Mesh>(null);
     const beam = useRef<THREE.Mesh>(null);
@@ -457,9 +457,9 @@ function RouteLeg({
     );
 }
 
-// Et land paa kartet. Selve kysten er alltid synlig (lavpoly oyflekker). Naar
+// Et land på kartet. Selve kysten er alltid synlig (lavpoly øyflekker). Når
 // kysten bosettes, vokser bosettingen fram: hus, og innhold tilpasset stedet
-// (Alltinget paa Island, sauer paa Grønland, vinranker paa Vinland).
+// (Alltinget på Island, sauer på Grønland, vinranker på Vinland).
 function LandMass({ land, settled }: { land: Land; settled: boolean }) {
     const grow = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -468,7 +468,7 @@ function LandMass({ land, settled }: { land: Land; settled: boolean }) {
         grow.current.scale.setScalar(s);
     });
 
-    // Faste oyflekker per land (deterministisk, ingen RNG i render).
+    // Faste øyflekker per land (deterministisk, ingen RNG i render).
     const blobs = useMemo(() => landBlobs(land.kind), [land.kind]);
 
     return (
@@ -492,7 +492,7 @@ function LandMass({ land, settled }: { land: Land; settled: boolean }) {
                 <Settlement kind={land.kind} />
             </group>
 
-            {/* Stedsnavn (og aar naar bosatt) */}
+            {/* Stedsnavn (og år når bosatt) */}
             <Html position={[0, 2.0, 0]} center pointerEvents="none">
                 <div className="px-2 py-0.5 rounded-md bg-slate-900/80 text-white text-[11px] font-bold whitespace-nowrap shadow">
                     {land.label}
@@ -510,8 +510,8 @@ interface Blob {
     s: number;
     c: string;
 }
-// Land-paletter: gronn norsk kyst, brun-gronn Island, hvit-isete Grønland,
-// frodig gronn Vinland.
+// Land-paletter: grønn norsk kyst, brun-grønn Island, hvit-isete Grønland,
+// frodig grønn Vinland.
 function landBlobs(kind: Land['kind']): Blob[] {
     switch (kind) {
         case 'home':
@@ -552,7 +552,7 @@ function Settlement({ kind }: { kind: Land['kind'] }) {
             {kind === 'home' && <Banner3D x={0.1} z={0.7} />}
 
             {kind === 'thing' && (
-                // Alltinget: en ring av staaende steiner.
+                // Alltinget: en ring av stående steiner.
                 <group>
                     {Array.from({ length: 6 }).map((_, i) => {
                         const a = (i / 6) * Math.PI * 2;
@@ -571,7 +571,7 @@ function Settlement({ kind }: { kind: Land['kind'] }) {
             )}
 
             {kind === 'farm' &&
-                // Sauer paa beite.
+                // Sauer på beite.
                 [
                     [0.3, 0.7],
                     [0.7, 0.4],

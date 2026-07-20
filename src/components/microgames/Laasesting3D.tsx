@@ -17,22 +17,22 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill til artikkelen om symaskinen. Eleven oppdager laasestinget paa
-// kroppen: en symaskin syr IKKE ved aa dra en lang traad gjennom stoffet slik
-// haanda gjoer. Den bruker TO traader. Naala foerer den blaa overtraaden ned
-// gjennom stoffet, en krok under bordet fanger sloeyfa og foerer den rundt den
-// oransje undertraaden paa spolen, og naar naala loefter seg laases de to
-// traadene fast inni stoffet. Lyspaera: derfor kan maskinen sy hundrevis av
-// sting i minuttet uten at traaden floker seg eller ryker.
+// Mikrospill til artikkelen om symaskinen. Eleven oppdager låsestinget på
+// kroppen: en symaskin syr IKKE ved å dra en lang tråd gjennom stoffet slik
+// hånda gjør. Den bruker TO tråder. Nåla fører den blå overtråden ned
+// gjennom stoffet, en krok under bordet fanger sløyfa og fører den rundt den
+// oransje undertråden på spolen, og når nåla løfter seg låses de to
+// trådene fast inni stoffet. Lyspæra: derfor kan maskinen sy hundrevis av
+// sting i minuttet uten at tråden floker seg eller ryker.
 //
-// Mekanikk: foerst drar eleven spolen med undertraaden paa plass under bordet
-// (Draggable). Saa er svinghjulet en SceneSlider eleven vugger fram og tilbake -
-// hvert fulle drag plunger naala en gang og syr ett laasesting, og sammen vokser
-// det en soem der blaatt ligger paa toppen og oransje under.
+// Mekanikk: først drar eleven spolen med undertråden på plass under bordet
+// (Draggable). Så er svinghjulet en SceneSlider eleven vugger fram og tilbake -
+// hvert fulle drag plunger nåla en gang og syr ett låsesting, og sammen vokser
+// det en søm der blått ligger på toppen og oransje under.
 
 // Farger
-const BLUE = '#2563eb'; // overtraad (gaar gjennom naala, ligger paa toppen)
-const ORANGE = '#ea7317'; // undertraad (paa spolen, ligger under stoffet)
+const BLUE = '#2563eb'; // overtråd (går gjennom nåla, ligger på toppen)
+const ORANGE = '#ea7317'; // undertråd (på spolen, ligger under stoffet)
 const FABRIC_TOP = '#e8d5b5';
 const FABRIC_BOT = '#d3bd97';
 const IRON = '#26262c';
@@ -40,16 +40,16 @@ const STEEL = '#9aa0a6';
 const GOLD = '#c9a227';
 const WOOD = '#9c6b3e';
 
-// Naala-hoyder: tipp like over stoffet (oppe) -> under bordet ved spolen (nede).
+// Nåla-høyder: tipp like over stoffet (oppe) -> under bordet ved spolen (nede).
 const NDL_UP = 0.6;
 const NDL_DOWN = -0.66;
 
-const STITCH_GAP = 0.45; // avstand mellom sting i soemmen
+const STITCH_GAP = 0.45; // avstand mellom sting i sømmen
 const TARGET_STITCHES = 5;
 
 type Stage = 'thread' | 'sew' | 'won';
 
-// Maal for spolen naar den dras paa plass (over maskinhalsen, der den faller ned
+// Mål for spolen når den dras på plass (over maskinhalsen, der den faller ned
 // i griperommet under bordet).
 const SPOOL_TARGET: [number, number] = [0, 1.15];
 
@@ -59,12 +59,12 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [cycle, setCycle] = useState(0); // 0-100, svinghjulet
     const [stitches, setStitches] = useState(0);
     const [banner, setBanner] = useState<string | null>(
-        'Maskinen har bare overtraaden. Dra spolen med den oransje undertraaden paa plass under stoffet.'
+        'Maskinen har bare overtråden. Dra spolen med den oransje undertråden på plass under stoffet.'
     );
     const [burst, setBurst] = useState(0);
 
     // Hvilken ende svinghjulet sist var ved. Et sting teller hver gang hjulet
-    // foeres helt fra den ene enden til den andre (fram ELLER tilbake).
+    // føres helt fra den ene enden til den andre (fram ELLER tilbake).
     const lastEnd = useRef<'lo' | 'hi'>('lo');
 
     const reset = () => {
@@ -72,12 +72,12 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setCycle(0);
         setStitches(0);
         setBanner(
-            'Maskinen har bare overtraaden. Dra spolen med den oransje undertraaden paa plass under stoffet.'
+            'Maskinen har bare overtråden. Dra spolen med den oransje undertråden på plass under stoffet.'
         );
         lastEnd.current = 'lo';
     };
 
-    // Ett fullfoert hjulslag = ett laasesting.
+    // Ett fullført hjulslag = ett låsesting.
     const sewStitch = () => {
         setStitches((n) => {
             const next = n + 1;
@@ -91,7 +91,7 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 sounds.play('correct');
                 if (next === 1) {
                     setBanner(
-                        'Se godt etter: blaatt ligger paa toppen, oransje under. De to traadene laaser hverandre inni stoffet.'
+                        'Se godt etter: blått ligger på toppen, oransje under. De to trådene låser hverandre inni stoffet.'
                     );
                 }
             }
@@ -99,8 +99,8 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         });
     };
 
-    // Svinghjulet styrer naala i sanntid. Et sting teller naar hjulet naar en ny
-    // ende (lo->hi eller hi->lo), saa eleven vugger det fram og tilbake.
+    // Svinghjulet styrer nåla i sanntid. Et sting teller når hjulet når en ny
+    // ende (lo->hi eller hi->lo), så eleven vugger det fram og tilbake.
     const turnWheel = (v: number) => {
         setCycle(v);
         if (stage !== 'sew') return;
@@ -119,7 +119,7 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             sounds.play('advance');
             setBurst((b) => b + 1);
             setStage('sew');
-            setBanner('Naa har maskinen to traader. Vugg svinghjulet fram og tilbake for aa sy.');
+            setBanner('Nå har maskinen to tråder. Vugg svinghjulet fram og tilbake for å sy.');
         } else {
             setBanner('Dra den oransje spolen helt inn over maskinhalsen, der griperingen er.');
         }
@@ -129,8 +129,8 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     return (
         <MicroGameScaffold
-            title="Laasesting: maskinen med to traader"
-            subtitle="Tre maskinen og sy en soem - og oppdag hvorfor symaskinen bruker to traader"
+            title="Laasesting: maskinen med to tråder"
+            subtitle="Tre maskinen og sy en søm - og oppdag hvorfor symaskinen bruker to tråder"
             estimatedSeconds={120}
             onRetry={stage !== 'thread' || cycle > 0 ? reset : undefined}
             containerClassName="bg-gradient-to-b from-[#efe2cc] via-[#ecdcc0] to-[#d9c39c]"
@@ -151,8 +151,8 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                             corner="bl"
                             items={[
                                 { label: 'Sting sydd', value: stitches, unit: `/${TARGET_STITCHES}` },
-                                { label: 'Overtraad', value: 'blaa' },
-                                { label: 'Undertraad', value: 'oransje' },
+                                { label: 'Overtråd', value: 'blå' },
+                                { label: 'Undertråd', value: 'oransje' },
                             ]}
                         />
                     )}
@@ -174,12 +174,12 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             {stage === 'thread' && (
                 <div className="flex flex-col gap-2.5">
                     <p className="text-sm text-slate-600">
-                        En maskin kan ikke dra en hel, lang traad gjennom stoffet for hvert sting
-                        slik haanda gjoer - da floker traaden seg eller ryker. Loesningen er to
-                        traader. Dra den oransje spolen paa plass under stoffet foer du syr.
+                        En maskin kan ikke dra en hel, lang tråd gjennom stoffet for hvert sting
+                        slik hånda gjør - da floker tråden seg eller ryker. Løsningen er to
+                        tråder. Dra den oransje spolen på plass under stoffet før du syr.
                     </p>
                     <SceneFact>
-                        Klikk og dra den oransje spolen nede til hoeyre helt inn over maskinhalsen,
+                        Klikk og dra den oransje spolen nede til høyre helt inn over maskinhalsen,
                         der griperingen sitter.
                     </SceneFact>
                 </div>
@@ -188,7 +188,7 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             {stage === 'sew' && (
                 <div className="flex flex-col gap-3">
                     <SceneSlider
-                        label="Svinghjulet: vugg fram og tilbake for aa sy"
+                        label="Svinghjulet: vugg fram og tilbake for å sy"
                         min={0}
                         max={100}
                         step={1}
@@ -196,28 +196,28 @@ const Laasesting3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         onChange={turnWheel}
                         valueLabel={(v) =>
                             v > 65
-                                ? 'Naala loefter - stinget laases'
+                                ? 'Nåla løfter - stinget låses'
                                 : v > 35
-                                  ? 'Naala nede - kroken fanger sloeyfa'
-                                  : 'Naala oppe'
+                                  ? 'Nåla nede - kroken fanger sløyfa'
+                                  : 'Nåla oppe'
                         }
                     />
                     <StepTracker current={stitches} total={TARGET_STITCHES} />
                     <SceneFact>
-                        Naala foerer den blaa overtraaden ned gjennom stoffet. Under bordet svinger
-                        en krok rundt og fanger den lille sloeyfa, og foerer den rundt den oransje
-                        undertraaden paa spolen. Naar naala loefter seg, strammes alt til et
-                        laasesting. Slik kan maskinen sy hundrevis av sting i minuttet.
+                        Nåla fører den blå overtråden ned gjennom stoffet. Under bordet svinger
+                        en krok rundt og fanger den lille sløyfa, og fører den rundt den oransje
+                        undertråden på spolen. Når nåla løfter seg, strammes alt til et
+                        låsesting. Slik kan maskinen sy hundrevis av sting i minuttet.
                     </SceneFact>
                 </div>
             )}
 
             {stage === 'won' && (
-                <WinScreen title="Soemmen er ferdig!" onReplay={reset}>
-                    Du sydde en hel soem med laasesting. To traader, en paa toppen og en under,
+                <WinScreen title="Sømmen er ferdig!" onReplay={reset}>
+                    Du sydde en hel søm med låsesting. To tråder, en på toppen og en under,
                     hekter seg fast i hverandre inni stoffet. Det var dette trikset som gjorde
-                    symaskinen mulig - og som gjorde klaer billige nok til at vanlige folk kunne eie
-                    mer enn noen faa plagg. Symaskiner virker fortsatt paa akkurat denne maaten i
+                    symaskinen mulig - og som gjorde klær billige nok til at vanlige folk kunne eie
+                    mer enn noen få plagg. Symaskiner virker fortsatt på akkurat denne måten i
                     dag.
                 </WinScreen>
             )}
@@ -242,10 +242,10 @@ function SewingScene({
     burst: number;
     onInstall: (pos: THREE.Vector3) => void;
 }) {
-    // Naala: oppe ved c=0 og c=1, helt nede ved c=0.5.
+    // Nåla: oppe ved c=0 og c=1, helt nede ved c=0.5.
     const dip = Math.sin(Math.PI * cyc);
     const needleTipY = NDL_UP - (NDL_UP - NDL_DOWN) * dip;
-    // Sloeyfa under stoffet: dukker opp naar naala er nede og loefter seg igjen.
+    // Sløyfa under stoffet: dukker opp når nåla er nede og løfter seg igjen.
     const loopAmount = stage === 'sew' ? Math.max(0, dip - 0.45) / 0.55 : 0;
     // Kroken under bordet svinger en runde med hjulet.
     const hookAngle = cyc * Math.PI * 2;
@@ -254,33 +254,33 @@ function SewingScene({
 
     return (
         <group>
-            {/* Bordplate med aapen front, saa eleven ser mekanikken under */}
+            {/* Bordplate med åpen front, så eleven ser mekanikken under */}
             <Table />
 
             {/* Stoffet: to lag som sys sammen */}
             <Fabric />
 
-            {/* Den ferdige soemmen som vokser */}
+            {/* Den ferdige sømmen som vokser */}
             <Seam count={stitches} />
 
-            {/* Selve symaskinen: soyle, arm, hode */}
+            {/* Selve symaskinen: søyle, arm, hode */}
             <MachineBody />
 
-            {/* Spole med blaa overtraad paa toppen */}
+            {/* Spole med blå overtråd på toppen */}
             <ThreadSpool position={[0.75, 3.05, -0.7]} color={BLUE} />
 
-            {/* Naalstangen som beveger seg opp og ned */}
+            {/* Nålstangen som beveger seg opp og ned */}
             <Needle tipY={needleTipY} />
 
-            {/* Trykkfoten holder stoffet nede ved naala */}
+            {/* Trykkfoten holder stoffet nede ved nåla */}
             <PresserFoot />
 
-            {/* Under bordet: griper, spole og sloeyfe */}
+            {/* Under bordet: griper, spole og sløyfe */}
             {installed && (
                 <UnderBed hookAngle={hookAngle} loopAmount={loopAmount} cyc={cyc} />
             )}
 
-            {/* Spolen som dras paa plass i tre-fasen */}
+            {/* Spolen som dras på plass i tre-fasen */}
             {stage === 'thread' && (
                 <>
                     <GhostTarget />
@@ -306,7 +306,7 @@ function SewingScene({
     );
 }
 
-// Bordplate: en tynn topp baaret av en bakvegg, slik at fronten staar aapen og
+// Bordplate: en tynn topp båret av en bakvegg, slik at fronten står åpen og
 // vi ser griperommet under.
 function Table() {
     return (
@@ -320,7 +320,7 @@ function Table() {
                 <boxGeometry args={[9, 2, 0.3]} />
                 <meshStandardMaterial color="#7d552f" roughness={0.9} />
             </mesh>
-            {/* throat-plate i staal rundt naala */}
+            {/* throat-plate i stål rundt nåla */}
             <mesh position={[0, 0.01, 0]}>
                 <boxGeometry args={[1.3, 0.06, 1.1]} />
                 <meshStandardMaterial color={STEEL} metalness={0.5} roughness={0.4} />
@@ -329,7 +329,7 @@ function Table() {
     );
 }
 
-// To stofflag som ligger paa bordet og skal sys sammen.
+// To stofflag som ligger på bordet og skal sys sammen.
 function Fabric() {
     return (
         <group>
@@ -345,35 +345,35 @@ function Fabric() {
     );
 }
 
-// Soemmen som vokser: hvert sting viser blaatt paa toppen, oransje under, og en
-// liten knute der de moetes inni stoffet. Nyeste sting ligger rett under naala.
+// Sømmen som vokser: hvert sting viser blått på toppen, oransje under, og en
+// liten knute der de møtes inni stoffet. Nyeste sting ligger rett under nåla.
 function Seam({ count }: { count: number }) {
     const items = [];
     for (let i = 0; i < count; i++) {
         const x = -((count - 1 - i) * STITCH_GAP);
         items.push(
             <group key={i} position={[x, 0, 0]}>
-                {/* blaa overtraad - synlig dash paa toppen */}
+                {/* blå overtråd - synlig dash på toppen */}
                 <mesh position={[0, 0.15, 0]}>
                     <boxGeometry args={[0.13, 0.04, 0.3]} />
                     <meshStandardMaterial color={BLUE} roughness={0.6} />
                 </mesh>
-                {/* blaatt ned til midten av stoffet */}
+                {/* blått ned til midten av stoffet */}
                 <mesh position={[0, 0.11, 0.12]}>
                     <boxGeometry args={[0.05, 0.07, 0.05]} />
                     <meshStandardMaterial color={BLUE} roughness={0.6} />
                 </mesh>
-                {/* oransje undertraad - opp til midten */}
+                {/* oransje undertråd - opp til midten */}
                 <mesh position={[0, 0.06, 0.12]}>
                     <boxGeometry args={[0.05, 0.06, 0.05]} />
                     <meshStandardMaterial color={ORANGE} roughness={0.6} />
                 </mesh>
-                {/* knuten der traadene laaser - midt i stoffet */}
+                {/* knuten der trådene låser - midt i stoffet */}
                 <mesh position={[0, 0.09, 0.12]}>
                     <sphereGeometry args={[0.05, 10, 10]} />
                     <meshStandardMaterial color={ORANGE} roughness={0.5} />
                 </mesh>
-                {/* oransje dash paa undersiden */}
+                {/* oransje dash på undersiden */}
                 <mesh position={[0, 0.02, 0]}>
                     <boxGeometry args={[0.13, 0.03, 0.3]} />
                     <meshStandardMaterial color={ORANGE} roughness={0.6} />
@@ -384,12 +384,12 @@ function Seam({ count }: { count: number }) {
     return <group>{items}</group>;
 }
 
-// Symaskinens kropp i svart stoepejern: soyle bak til hoeyre, arm over, hode med
-// naalstang foran. Et gulltrykk gir den et 1800-tallspreg.
+// Symaskinens kropp i svart støpejern: søyle bak til høyre, arm over, hode med
+// nålstang foran. Et gulltrykk gir den et 1800-tallspreg.
 function MachineBody() {
     return (
         <group>
-            {/* soyle */}
+            {/* søyle */}
             <mesh position={[2.5, 1.45, -0.95]} castShadow receiveShadow>
                 <boxGeometry args={[1, 2.9, 1]} />
                 <meshStandardMaterial color={IRON} roughness={0.5} metalness={0.3} />
@@ -399,17 +399,17 @@ function MachineBody() {
                 <boxGeometry args={[3.8, 0.6, 0.6]} />
                 <meshStandardMaterial color={IRON} roughness={0.5} metalness={0.3} />
             </mesh>
-            {/* hode foran, boeyer seg fram til naala */}
+            {/* hode foran, bøyer seg fram til nåla */}
             <mesh position={[0, 2.5, -0.45]} castShadow>
                 <boxGeometry args={[0.9, 1.3, 1.1]} />
                 <meshStandardMaterial color={IRON} roughness={0.5} metalness={0.3} />
             </mesh>
-            {/* gulltrykk paa armen */}
+            {/* gulltrykk på armen */}
             <mesh position={[1.1, 2.75, -0.64]}>
                 <boxGeometry args={[2.6, 0.16, 0.02]} />
                 <meshStandardMaterial color={GOLD} metalness={0.6} roughness={0.4} />
             </mesh>
-            {/* svinghjul paa enden av soyla */}
+            {/* svinghjul på enden av søyla */}
             <mesh position={[3.05, 2.4, -0.95]} rotation={[0, 0, Math.PI / 2]} castShadow>
                 <cylinderGeometry args={[0.55, 0.55, 0.18, 24]} />
                 <meshStandardMaterial color="#1c1c22" metalness={0.4} roughness={0.5} />
@@ -422,7 +422,7 @@ function MachineBody() {
     );
 }
 
-// Spole med traad paa toppen av maskinen.
+// Spole med tråd på toppen av maskinen.
 function ThreadSpool({
     position,
     color,
@@ -448,23 +448,23 @@ function ThreadSpool({
     );
 }
 
-// Naalstangen med naala. tipY er hoeyden paa naalspissen.
+// Nålstangen med nåla. tipY er høyden på nålspissen.
 function Needle({ tipY }: { tipY: number }) {
-    // naala er 1.0 lang, spissen nederst.
+    // nåla er 1.0 lang, spissen nederst.
     const midY = tipY + 0.5;
     return (
         <group position={[0, 0, 0]}>
-            {/* naalstang ned fra hodet */}
+            {/* nålstang ned fra hodet */}
             <mesh position={[0, midY + 0.9, 0]} castShadow>
                 <boxGeometry args={[0.12, 0.9, 0.12]} />
                 <meshStandardMaterial color={STEEL} metalness={0.6} roughness={0.4} />
             </mesh>
-            {/* selve naala */}
+            {/* selve nåla */}
             <mesh position={[0, midY, 0]}>
                 <cylinderGeometry args={[0.025, 0.045, 1, 10]} />
                 <meshStandardMaterial color="#d7dade" metalness={0.8} roughness={0.3} />
             </mesh>
-            {/* blaa traad gjennom naaloeyet (liten markoer) */}
+            {/* blå tråd gjennom nåløyet (liten markør) */}
             <mesh position={[0, tipY + 0.12, 0.05]}>
                 <boxGeometry args={[0.03, 0.2, 0.03]} />
                 <meshStandardMaterial color={BLUE} roughness={0.6} />
@@ -473,7 +473,7 @@ function Needle({ tipY }: { tipY: number }) {
     );
 }
 
-// Trykkfoten som holder stoffet ned ved naala.
+// Trykkfoten som holder stoffet ned ved nåla.
 function PresserFoot() {
     return (
         <group position={[0, 0.2, 0]}>
@@ -489,8 +489,8 @@ function PresserFoot() {
     );
 }
 
-// Mekanikken under bordet: spolen med oransje undertraad, griperingen som
-// svinger rundt, og den blaa sloeyfa naala lager.
+// Mekanikken under bordet: spolen med oransje undertråd, griperingen som
+// svinger rundt, og den blå sløyfa nåla lager.
 function UnderBed({
     hookAngle,
     loopAmount,
@@ -509,9 +509,9 @@ function UnderBed({
                 <cylinderGeometry args={[0.34, 0.34, 0.22, 20]} />
                 <meshStandardMaterial color="#3a3a42" metalness={0.4} roughness={0.5} />
             </mesh>
-            {/* spolen med oransje traad */}
+            {/* spolen med oransje tråd */}
             <Bobbin position={[0, -0.9, 0.22]} />
-            {/* griperingen som svinger rundt og fanger sloeyfa */}
+            {/* griperingen som svinger rundt og fanger sløyfa */}
             <group position={[0, -0.9, 0.16]} rotation={[0, 0, hookAngle]}>
                 <mesh rotation={[Math.PI / 2, 0, 0]}>
                     <torusGeometry args={[0.4, 0.04, 8, 28, Math.PI * 1.5]} />
@@ -523,14 +523,14 @@ function UnderBed({
                     <meshStandardMaterial color="#cfd3d8" metalness={0.8} roughness={0.3} />
                 </mesh>
             </group>
-            {/* den blaa sloeyfa naala lager - vises naar loopAmount > 0 */}
+            {/* den blå sløyfa nåla lager - vises når loopAmount > 0 */}
             {loopAmount > 0.02 && (
                 <mesh position={[0, loopY, 0.05]} scale={loopScale}>
                     <torusGeometry args={[0.14, 0.03, 8, 18]} />
                     <meshStandardMaterial color={BLUE} roughness={0.6} />
                 </mesh>
             )}
-            {/* oransje undertraad opp mot stoffet ved aktivt punkt */}
+            {/* oransje undertråd opp mot stoffet ved aktivt punkt */}
             <mesh position={[0, -0.5, 0.1]}>
                 <boxGeometry args={[0.03, 0.7 - cyc * 0.2, 0.03]} />
                 <meshStandardMaterial color={ORANGE} roughness={0.6} />
@@ -539,7 +539,7 @@ function UnderBed({
     );
 }
 
-// Spolen med oransje traad (brukes baade i draget og under bordet).
+// Spolen med oransje tråd (brukes både i draget og under bordet).
 function Bobbin({ position }: { position?: [number, number, number] }) {
     return (
         <group position={position ?? [0, 0, 0]}>
@@ -559,7 +559,7 @@ function Bobbin({ position }: { position?: [number, number, number] }) {
     );
 }
 
-// Lysende maalmarkoer der spolen skal slippes.
+// Lysende målmarkør der spolen skal slippes.
 function GhostTarget() {
     const ref = useRef<THREE.Mesh>(null);
     useFrame(({ clock }) => {

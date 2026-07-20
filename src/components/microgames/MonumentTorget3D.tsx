@@ -18,9 +18,9 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill: et monument er en fysisk historieframstilling. Det sier "denne er
-// verdt aa huske". Eleven kuraterer et by-torg med tre sokler og bestemmer hvem
-// byen hedrer. Lyspaere: det du reiser i det offentlige rommet blir "historia" -
-// og de du lar staa igjen, blir usynlige. Reiser du bare makt (eller bare
+// verdt å huske". Eleven kuraterer et by-torg med tre sokler og bestemmer hvem
+// byen hedrer. Lyspære: det du reiser i det offentlige rommet blir "historia" -
+// og de du lar stå igjen, blir usynlige. Reiser du bare makt (eller bare
 // vanlige folk), forteller torget en ensidig historie, og de glemte dukker opp
 // som svake skygger i kantene. Et torg som blander flere slags historier lar
 // flere kjenne seg igjen.
@@ -111,7 +111,7 @@ const MonumentTorget3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         sounds.play('pick');
     };
 
-    // Plasser en kandidat paa valgt (eller forste ledige) sokkel.
+    // Plasser en kandidat på valgt (eller første ledige) sokkel.
     const placeCandidate = (id: string) => {
         if (phase === 'won' || usedIds.has(id)) return;
         if (phase === 'ensidig') setPhase('build');
@@ -128,7 +128,7 @@ const MonumentTorget3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         }
     };
 
-    // Klikk en statue for aa fjerne den igjen.
+    // Klikk en statue for å fjerne den igjen.
     const removeStatue = (i: number) => {
         if (phase === 'won' || placed[i] === null) return;
         if (phase === 'ensidig') setPhase('build');
@@ -137,7 +137,7 @@ const MonumentTorget3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setPlaced(next);
         setSelected(i);
         sounds.play('drop');
-        setBanner('Plassen er ledig igjen. Velg hvem som skal staa her.');
+        setBanner('Plassen er ledig igjen. Velg hvem som skal stå her.');
     };
 
     const unveil = () => {
@@ -355,8 +355,8 @@ function TorgScene({
     );
 }
 
-// En sokkel. Tom => Hotspot for aa velge. Fylt => statue eleven kan klikke for aa
-// fjerne. Den valgte tomme sokkelen gloder svakt.
+// En sokkel. Tom => Hotspot for å velge. Fylt => statue eleven kan klikke for å
+// fjerne. Den valgte tomme sokkelen gløder svakt.
 function Pedestal({
     x,
     candId,
@@ -408,7 +408,7 @@ function Pedestal({
     );
 }
 
-// En bronse-aktig statue som reiser seg paa sokkelen.
+// En bronse-aktig statue som reiser seg på sokkelen.
 function Statue({ color, hovered, won }: { color: string; hovered: boolean; won: boolean }) {
     const grp = useRef<THREE.Group>(null);
     const t = useRef(0);

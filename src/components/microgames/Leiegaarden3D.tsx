@@ -23,21 +23,21 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen "Hverdagslivet i Roma".
-// Lyspaere: I en romersk insula (leiegaard) stod byen paa hodet. De rikeste
-// bodde NEDERST, paa gateplan, med innlagt vann og en dor rett ut. De fattigste
-// ble presset OPP i de trange, morke loftsrommene uten vann og uten trygg
-// rommningsvei. Eleven kjenner dette paa kroppen i to steg: forst setter hun
-// fire familier inn i riktig etasje (rikest nederst, fattigst overst), saa
-// velter en oljelampe og brannen sprer seg oppover. Bare familien paa gateplan
-// slipper ut. De overste sitter fast. Mekanikken ER poenget: hoyden var
-// motsatt av i dag - jo hoyere du bodde, jo fattigere og farligere var livet.
+// Lyspære: I en romersk insula (leiegaard) stod byen på hodet. De rikeste
+// bodde NEDERST, på gateplan, med innlagt vann og en dør rett ut. De fattigste
+// ble presset OPP i de trange, mørke loftsrommene uten vann og uten trygg
+// rommningsvei. Eleven kjenner dette på kroppen i to steg: først setter hun
+// fire familier inn i riktig etasje (rikest nederst, fattigst øverst), så
+// velter en oljelampe og brannen sprer seg oppover. Bare familien på gateplan
+// slipper ut. De overste sitter fast. Mekanikken ER poenget: høyden var
+// motsatt av i dag - jo høyere du bodde, jo fattigere og farligere var livet.
 
 const T = THEMES.roman;
 
 const FLOORS = 4; // etasje 0 (gateplan) opp til etasje 3 (toppen/loftet)
-const FLOOR_H = 2.0; // hoyde per etasje
+const FLOOR_H = 2.0; // høyde per etasje
 
-// Familiene, rikest forst. correctFloor: hvilken etasje de hoerer hjemme i.
+// Familiene, rikest først. correctFloor: hvilken etasje de hører hjemme i.
 // Regelen er invers: rikest -> gateplan (0), fattigst -> toppen (3).
 type Family = {
     id: number;
@@ -81,7 +81,7 @@ const Leiegaarden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     const placedCount = placedFamily.filter((f) => f !== null).length;
     const allPlaced = placedCount >= FLOORS;
-    // familyPlaced[id] = true naar familien har flyttet inn et sted.
+    // familyPlaced[id] = true når familien har flyttet inn et sted.
     const familyPlaced = FAMILIES.map((fam) => placedFamily.includes(fam.id));
 
     const step = !allPlaced ? 1 : 2;
@@ -267,7 +267,7 @@ function Insula({
             {/* Offentleg fontene til venstre: den einaste vasskjelda i gata */}
             <Fountain position={[-6.4, 0, 3.2]} />
 
-            {/* Sjolve leigegarden i tverrsnitt (dukkehus-kutt i fronten) */}
+            {/* Sjølve leigegarden i tverrsnitt (dukkehus-kutt i fronten) */}
             <group position={[0, 0, 0]}>
                 {Array.from({ length: FLOORS }).map((_, f) => (
                     <FloorRoom
@@ -288,7 +288,7 @@ function Insula({
                     <RentCoins key={f} floor={f} count={FLOORS - f} />
                 ))}
 
-                {/* Klikkpunkt for aa flytte inn valgt familie (steg 1) */}
+                {/* Klikkpunkt for å flytte inn valgt familie (steg 1) */}
                 {!allPlaced &&
                     Array.from({ length: FLOORS }).map((_, f) =>
                         placedFamily[f] !== null ? null : (
@@ -314,7 +314,7 @@ function Insula({
                     />
                 )}
 
-                {/* Brann og roeyk som sprer seg oppover naar det tek fyr */}
+                {/* Brann og røyk som sprer seg oppover når det tek fyr */}
                 {ignited && (
                     <group>
                         <Fire position={[0.2, FLOOR_H, 0.3]} scale={1.3} />
@@ -324,10 +324,10 @@ function Insula({
                 )}
             </group>
 
-            {/* Kjopmannen fraa gateplan gaar trygt ut paa gata naar det brenn */}
+            {/* Kjopmannen frå gateplan går trygt ut på gata når det brenn */}
             {ignited && <EscapedMerchant />}
 
-            {/* Familiane som ventar nede paa gata (steg 1) */}
+            {/* Familiane som ventar nede på gata (steg 1) */}
             {FAMILIES.map((fam) =>
                 familyPlaced[fam.id] ? null : (
                     <StreetFamily
@@ -346,7 +346,7 @@ function Insula({
 }
 
 // Ei etasje i tverrsnitt: golv, bakvegg og sidevegger, open front. Romma er
-// lysare og romslegare nederst, moerkare og traangare opp mot loftet.
+// lysare og romslegare nederst, mørkare og trångare opp mot loftet.
 function FloorRoom({
     floor,
     occupant,
@@ -357,12 +357,12 @@ function FloorRoom({
     ignited: boolean;
 }) {
     const y = floor * FLOOR_H;
-    // Interioret moerknar oppover: gateplan lyst, loftet moerkt.
+    // Interioret mørknar oppover: gateplan lyst, loftet mørkt.
     const inner = ['#e8d9b8', '#d2c096', '#b0a077', '#8a7d66'][floor];
     const fam = occupant !== null ? FAMILIES[occupant] : null;
-    // Kjopmannen paa gateplan (etasje 0) gaar ut paa gata naar det brenn.
+    // Kjopmannen på gateplan (etasje 0) går ut på gata når det brenn.
     const escaped = ignited && floor === 0;
-    // Dei overste sit fast og hever armane naar roeyken kjem.
+    // Dei overste sit fast og hever armane når røyken kjem.
     const trapped = ignited && floor > 0;
 
     return (
@@ -387,7 +387,7 @@ function FloorRoom({
                 <meshStandardMaterial color="#b06a44" roughness={1} />
             </mesh>
 
-            {/* Gateplan: blaatt vassroer i veggen (innlagt vatn) */}
+            {/* Gateplan: blått vassrør i veggen (innlagt vatn) */}
             {floor === 0 && (
                 <mesh position={[1.5, FLOOR_H / 2, -1.28]}>
                     <boxGeometry args={[0.16, FLOOR_H * 0.8, 0.1]} />
@@ -400,7 +400,7 @@ function FloorRoom({
                 </mesh>
             )}
 
-            {/* Bebuar inne i rommet (naar familien er flytta inn og ikkje har roemt) */}
+            {/* Bebuar inne i rommet (når familien er flytta inn og ikkje har rømt) */}
             {fam && !escaped && (
                 <Person
                     position={[-0.6, 0.2, -0.1]}
@@ -413,7 +413,7 @@ function FloorRoom({
                 />
             )}
 
-            {/* Roeyk-glimt i dei overste etasjane naar det brenn */}
+            {/* Røyk-glimt i dei overste etasjane når det brenn */}
             {trapped && (
                 <mesh position={[0.6, FLOOR_H * 0.7, 0.2]}>
                     <sphereGeometry args={[0.5, 10, 10]} />
@@ -424,7 +424,7 @@ function FloorRoom({
     );
 }
 
-// Kjopmannen som gaar trygt ut paa gata naar brannen bryt ut.
+// Kjopmannen som går trygt ut på gata når brannen bryt ut.
 function EscapedMerchant() {
     return (
         <Person
@@ -439,7 +439,7 @@ function EscapedMerchant() {
     );
 }
 
-// Ein familie-token som ventar paa gata. Klikkbar; lyser og loeftar seg naar valgt.
+// Ein familie-token som ventar på gata. Klikkbar; lyser og løftar seg når valgt.
 function StreetFamily({
     family,
     selected,
@@ -487,7 +487,7 @@ function StreetFamily({
     );
 }
 
-// Myntstabel ved sida av ei etasje. Fleire myntar = hoegare leige. Dyrast nederst.
+// Myntstabel ved sida av ei etasje. Fleire myntar = høgare leige. Dyrast nederst.
 function RentCoins({ floor, count }: { floor: number; count: number }) {
     return (
         <group position={[2.45, floor * FLOOR_H + 0.5, 1.3]}>
@@ -507,8 +507,8 @@ function RentCoins({ floor, count }: { floor: number; count: number }) {
     );
 }
 
-// Offentleg fontene: ei steinskaal med litt vatn. Einaste vasskjelda i gata,
-// difor maatte folk hoegare oppe bere vatn opp mange trapper.
+// Offentleg fontene: ei steinskål med litt vatn. Einaste vasskjelda i gata,
+// difor måtte folk høgare oppe bere vatn opp mange trapper.
 function Fountain({ position }: { position: [number, number, number] }) {
     const water = useRef<THREE.MeshStandardMaterial>(null);
     useFrame(({ clock }) => {

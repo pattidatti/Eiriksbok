@@ -28,13 +28,13 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // 536 - Fimbulvinteren. Et stage-drevet scenespill om klimakatastrofen i 536.
-// Eleven utloser et vulkanutbrudd, drar et stovsky-slor over himmelen og ser
-// hele verdenen reagere: solen dovner, himmelen graner, avlingene visner og det
-// snor om sommeren. Lyspaera: det var ikke solen som dode - et slor av vulkanstov
-// stengte sollyset ute i flere ar, og kulda kan ha tatt halve Norges befolkning.
+// Eleven utløser et vulkanutbrudd, drar et støvsky-slør over himmelen og ser
+// hele verdenen reagere: solen dovner, himmelen gråner, avlingene visner og det
+// snør om sommeren. Lyspæra: det var ikke solen som døde - et slør av vulkanstøv
+// stengte sollyset ute i flere år, og kulda kan ha tatt halve Norges befolkning.
 //
-// Mekanikken ER pedagogikken: hver lenke i arsakskjeden er noe eleven gjor og ser.
-// Scenen leser bare `stage` og `veil` og demper alt mykt mot mal utledet av dem.
+// Mekanikken ER pedagogikken: hver lenke i årsakskjeden er noe eleven gjør og ser.
+// Scenen leser bare `stage` og `veil` og demper alt mykt mot mål utledet av dem.
 
 // Modul-niva farger (gjenbrukt scratch unngar allokering hver frame).
 const C_SKY = new THREE.Color('#9fc6e6');
@@ -98,7 +98,7 @@ function Scene536({ stage, veil, erupted, onErupt, onInspectField }: SceneProps)
             sunGroup.current.scale.setScalar(s);
         }
 
-        // Avlingene visner forst nar stage naar 2 (etter at sloret er fullt).
+        // Avlingene visner først når stage når 2 (etter at sløret er fullt).
         witherCur.current = damp(witherCur.current, stage >= 2 ? 1 : 0, dt, 1.1);
         if (cropMat.current) {
             _scratch.copy(C_CROP).lerp(C_CROP_DEAD, witherCur.current);
@@ -112,12 +112,12 @@ function Scene536({ stage, veil, erupted, onErupt, onInspectField }: SceneProps)
 
     return (
         <group ref={shakeRef}>
-            {/* Himmelkuppel - graner nar sloret tykner */}
+            {/* Himmelkuppel - gråner når sløret tykner */}
             <mesh>
                 <sphereGeometry args={[62, 24, 16]} />
                 <meshBasicMaterial ref={skyMat} color="#9fc6e6" side={THREE.BackSide} fog={false} />
             </mesh>
-            {/* Stov-slor: mork halvgjennomsiktig kuppel som demper alt */}
+            {/* Støv-slør: mørk halvgjennomsiktig kuppel som demper alt */}
             <mesh>
                 <sphereGeometry args={[56, 24, 16]} />
                 <meshBasicMaterial
@@ -131,7 +131,7 @@ function Scene536({ stage, veil, erupted, onErupt, onInspectField }: SceneProps)
                 />
             </mesh>
 
-            {/* Solen - dovner og krymper bak sloret */}
+            {/* Solen - dovner og krymper bak sløret */}
             <group ref={sunGroup} position={[-10, 13, -22]}>
                 <mesh>
                     <sphereGeometry args={[1.7, 20, 20]} />
@@ -157,9 +157,9 @@ function Scene536({ stage, veil, erupted, onErupt, onInspectField }: SceneProps)
                 </mesh>
             </group>
 
-            {/* Bakken og garden */}
+            {/* Bakken og gården */}
             <GroundPlane size={70} depth={60} color="#7aa84f" />
-            {/* Egen bakkeflate vi kan farge (visner) oppa standardbakken */}
+            {/* Egen bakkeflate vi kan farge (visner) oppå standardbakken */}
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 4]} receiveShadow>
                 <planeGeometry args={[40, 26]} />
                 <meshStandardMaterial ref={groundMat} color="#7aa84f" roughness={1} />
@@ -170,7 +170,7 @@ function Scene536({ stage, veil, erupted, onErupt, onInspectField }: SceneProps)
             <Tree position={[7.5, 0, 3]} leaf="#42703b" seed={9} />
             <Person position={[3.5, 0, 4.5]} pose={stage >= 2 ? 'sit' : 'idle'} body="#5a4632" hat="hood" />
 
-            {/* Kornakeren - InstancedField med delt materiale vi farger */}
+            {/* Kornåkeren - InstancedField med delt materiale vi farger */}
             <InstancedField
                 count={70}
                 area={[22, 12]}
@@ -216,10 +216,10 @@ function Scene536({ stage, veil, erupted, onErupt, onInspectField }: SceneProps)
                 <Burst position={[0, 7, 0]} trigger={erupted ? 1 : 0} color="#ff8a3c" count={30} />
             </group>
 
-            {/* Sno om sommeren nar krisa har slatt inn */}
+            {/* Snø om sommeren når krisa har slått inn */}
             {stage >= 2 && <Particles preset="snow" area={[26, 22]} height={16} count={80} />}
 
-            {/* Steg 0: klikk vulkanen for a utlose utbruddet */}
+            {/* Steg 0: klikk vulkanen for å utløse utbruddet */}
             {stage === 0 && (
                 <Hotspot
                     position={[12, 8.5, -24]}
@@ -228,12 +228,12 @@ function Scene536({ stage, veil, erupted, onErupt, onInspectField }: SceneProps)
                         sounds.play('correct');
                         onErupt();
                     }}
-                    label="Utlos utbruddet"
+                    label="Utløs utbruddet"
                     radius={0.9}
                 />
             )}
 
-            {/* Steg 2: klikk den visne akeren */}
+            {/* Steg 2: klikk den visne åkeren */}
             {stage === 2 && (
                 <Hotspot
                     position={[0, 1.6, 5]}
@@ -241,7 +241,7 @@ function Scene536({ stage, veil, erupted, onErupt, onInspectField }: SceneProps)
                         sounds.play('advance');
                         onInspectField();
                     }}
-                    label="Se pa akeren"
+                    label="Se på åkeren"
                     radius={0.9}
                 />
             )}
@@ -282,17 +282,17 @@ export default function Fimbulvinteren3D({ onComplete, onRetry }: MicroGameProps
         won
             ? null
             : stage === 0
-              ? 'Et vulkanutbrudd er pa vei. Trykk pa vulkanen.'
+              ? 'Et vulkanutbrudd er på vei. Trykk på vulkanen.'
               : stage === 1
-                ? 'Dra spaken og se stovskyen legge seg over himmelen.'
+                ? 'Dra spaken og se støvskyen legge seg over himmelen.'
                 : stage === 2
-                  ? 'Avlingene visner og det snor om sommeren. Klikk pa akeren.'
+                  ? 'Avlingene visner og det snør om sommeren. Klikk på åkeren.'
                   : 'Hva trodde folk i Norden at de opplevde?';
 
     return (
         <MicroGameScaffold
             title="536 - Fimbulvinteren"
-            subtitle="Aret da solen forsvant"
+            subtitle="Året da solen forsvant"
             estimatedSeconds={140}
             onRetry={reset}
             scene={
@@ -333,14 +333,14 @@ export default function Fimbulvinteren3D({ onComplete, onRetry }: MicroGameProps
 
                 {stage === 0 && (
                     <p className="text-sm text-slate-600 leading-relaxed">
-                        Et eller flere voldsomme vulkanutbrudd slynget enorme mengder aske hoyt opp i
-                        atmosfaeren. Trykk pa vulkanen i bildet for a sette katastrofen i gang.
+                        Et eller flere voldsomme vulkanutbrudd slynget enorme mengder aske høyt opp i
+                        atmosfæren. Trykk på vulkanen i bildet for å sette katastrofen i gang.
                     </p>
                 )}
 
                 {stage === 1 && (
                     <SceneSlider
-                        label="Stovskyen brer seg (535 til 540)"
+                        label="Støvskyen brer seg (535 til 540)"
                         min={0}
                         max={100}
                         value={veil}
@@ -351,8 +351,8 @@ export default function Fimbulvinteren3D({ onComplete, onRetry }: MicroGameProps
 
                 {stage === 2 && (
                     <p className="text-sm text-slate-600 leading-relaxed">
-                        Sollyset ble svekket i over et ar. Uten varme modnet ikke kornet, og det kom
-                        sno midt pa sommeren. Klikk pa akeren i bildet for a se naermere.
+                        Sollyset ble svekket i over et år. Uten varme modnet ikke kornet, og det kom
+                        snø midt på sommeren. Klikk på åkeren i bildet for å se nærmere.
                     </p>
                 )}
 
@@ -365,7 +365,7 @@ export default function Fimbulvinteren3D({ onComplete, onRetry }: MicroGameProps
                             'En solformorkelse som snart gikk over',
                         ]}
                         answerIndex={0}
-                        explanation="I norron tro var Fimbulvinteren tre vintre uten sommer imellom - et tegn pa at verdens ende naermet seg. Forskere mener minnet om de harde arene etter 536 kan ha farget akkurat denne myten."
+                        explanation="I norrøn tro var Fimbulvinteren tre vintre uten sommer imellom - et tegn på at verdens ende nærmet seg. Forskere mener minnet om de harde årene etter 536 kan ha farget akkurat denne myten."
                         onResult={(correct) => {
                             if (correct && !won) {
                                 setWon(true);
@@ -380,14 +380,14 @@ export default function Fimbulvinteren3D({ onComplete, onRetry }: MicroGameProps
 
                 {won && (
                     <>
-                        <WinScreen title="Du fulgte hele arsakskjeden." onReplay={reset}>
-                            Det var ikke solen som dode. Et slor av vulkanstov stengte sollyset ute i
-                            flere ar. Kulda drepte avlingene, og kanskje halve Norges befolkning. Folk
-                            kalte de morke arene Fimbulvinteren.
+                        <WinScreen title="Du fulgte hele årsakskjeden." onReplay={reset}>
+                            Det var ikke solen som døde. Et slør av vulkanstøv stengte sollyset ute i
+                            flere år. Kulda drepte avlingene, og kanskje halve Norges befolkning. Folk
+                            kalte de mørke årene Fimbulvinteren.
                         </WinScreen>
                         <SceneFact>
-                            Sommeren 536 var en av de kaldeste pa 1500 ar. Arringer i traer fra Irland
-                            til Chile viser at krisa var global, og i Skandinavia ble hele garder
+                            Sommeren 536 var en av de kaldeste på 1500 år. Årringer i trær fra Irland
+                            til Chile viser at krisa var global, og i Skandinavia ble hele gårder
                             forlatt.
                         </SceneFact>
                     </>

@@ -23,14 +23,14 @@ import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen "Hundreaarskrigen". Et stilisert kart over Frankrike
 // sett ovenfra. Krigen mellom England og Frankrike svingte fram og tilbake i over
-// hundre aar. Eleven spiller arven: foerst klikker hen tre store engelske seire
-// (Crecy 1346, Poitiers 1356, Azincourt 1415) som farger landet roedt og presser
-// fronten sorover, helt til byen Orleans ligger beleiret. Saa kommer vendepunktet:
-// eleven klikker Jeanne d'Arc, som loefter beleiringen av Orleans i 1429. Da snur
-// krigen, det franske blaa skyller tilbake over kartet, og Frankrike vinner i 1453.
+// hundre år. Eleven spiller arven: først klikker hen tre store engelske seire
+// (Crecy 1346, Poitiers 1356, Azincourt 1415) som farger landet rødt og presser
+// fronten sørover, helt til byen Orleans ligger beleiret. Så kommer vendepunktet:
+// eleven klikker Jeanne d'Arc, som løfter beleiringen av Orleans i 1429. Da snur
+// krigen, det franske blå skyller tilbake over kartet, og Frankrike vinner i 1453.
 //
-// Lyspaera (rett fra artikkelen): Hundreaarskrigen var ikke ett slag, men en serie
-// kriger som svingte fram og tilbake i over hundre aar. England vant slag etter
+// Lyspæra (rett fra artikkelen): Hundreaarskrigen var ikke ett slag, men en serie
+// kriger som svingte fram og tilbake i over hundre år. England vant slag etter
 // slag, helt til en ung bondejente, Jeanne d'Arc, snudde krigen ved Orleans og ga
 // franskmennene troen tilbake.
 
@@ -49,29 +49,29 @@ const BATTLES: Place[] = [
 ];
 // Orleans er vendepunkt-noden (tas til slutt, med Jeanne d'Arc).
 const ORLEANS: Place = { id: 'orleans', name: 'Orléans 1429', x: 0.2, z: -0.6 };
-// Paris ligger midt i landet som et fast holdepunkt paa kartet.
+// Paris ligger midt i landet som et fast holdepunkt på kartet.
 const PARIS: Place = { id: 'paris', name: 'Paris', x: 1.1, z: -1.7 };
 
 const TOTAL_STEPS = BATTLES.length + 1; // tre engelske seire + vendepunktet
 
 const FACTS = [
-    'Crécy 1346: de engelske langbueskytterne meide ned den franske ridderhaeren. Et sjokk for hele Europa.',
+    'Crécy 1346: de engelske langbueskytterne meide ned den franske ridderhæren. Et sjokk for hele Europa.',
     'Poitiers 1356: engelskmennene tok til og med den franske kongen til fange. Frankrike var i kne.',
-    'Azincourt 1415: en liten, sliten engelsk haer slo en mye stoerre fransk. Naa laa Frankrike helt nede.',
+    'Azincourt 1415: en liten, sliten engelsk hær slo en mye større fransk. Nå lå Frankrike helt nede.',
 ];
 
 const PROMPTS = [
-    'Klikk Crécy (1346), det foerste store engelske slaget.',
-    'Klikk Poitiers (1356) og foelg de engelske seirene.',
+    'Klikk Crécy (1346), det første store engelske slaget.',
+    'Klikk Poitiers (1356) og følg de engelske seirene.',
     'Klikk Azincourt (1415), den verste dagen for Frankrike.',
 ];
 
 const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const sounds = useStepSounds();
     const [enWon, setEnWon] = useState(0); // engelske seire klikket (0..3)
-    const [jeanne, setJeanne] = useState(false); // Jeanne loftet Orleans
+    const [jeanne, setJeanne] = useState(false); // Jeanne løftet Orleans
     const [banner, setBanner] = useState<string | null>(
-        'England og Frankrike kriget i over hundre aar. Klikk de tre store engelske seirene og se landet bli roedt.'
+        'England og Frankrike kriget i over hundre år. Klikk de tre store engelske seirene og se landet bli rødt.'
     );
     const [fact, setFact] = useState<string | null>(null);
     const [burst, setBurst] = useState(0);
@@ -93,7 +93,7 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         sounds.play('advance');
         if (next >= BATTLES.length) {
             setBanner(
-                'England hadde vunnet alt. Bare Orleans holdt stand, beleiret. Klikk Jeanne d’Arc for aa snu krigen.'
+                'England hadde vunnet alt. Bare Orleans holdt stand, beleiret. Klikk Jeanne d’Arc for å snu krigen.'
             );
         } else {
             setBanner(PROMPTS[next]);
@@ -108,7 +108,7 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setJeanne(true);
         sounds.play('complete');
         setBanner(
-            'Jeanne d’Arc loftet beleiringen av Orleans i 1429. Krigen snudde, og i 1453 vant Frankrike.'
+            'Jeanne d’Arc løftet beleiringen av Orleans i 1429. Krigen snudde, og i 1453 vant Frankrike.'
         );
         setFact(null);
     };
@@ -117,7 +117,7 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setEnWon(0);
         setJeanne(false);
         setBanner(
-            'England og Frankrike kriget i over hundre aar. Klikk de tre store engelske seirene og se landet bli roedt.'
+            'England og Frankrike kriget i over hundre år. Klikk de tre store engelske seirene og se landet bli rødt.'
         );
         setFact(null);
         setBurstPos([0, 0.7, 0]);
@@ -135,7 +135,7 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Hundreaarskrigen: krigen som svingte"
-            subtitle="Foelg de engelske seirene som farger Frankrike roedt, og se Jeanne d&apos;Arc snu krigen ved Orleans."
+            subtitle="Følg de engelske seirene som farger Frankrike rødt, og se Jeanne d&apos;Arc snu krigen ved Orleans."
             estimatedSeconds={150}
             onRetry={enWon > 0 || jeanne ? reset : undefined}
             canvas={{
@@ -186,7 +186,7 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         <p className="text-sm text-slate-600 leading-snug">
                             Klikk slaget som{' '}
                             <span className="font-bold text-rose-700">lyser</span>. For hver engelske
-                            seier farges et stykke av Frankrike roedt og fronten presser sorover. Til
+                            seier farges et stykke av Frankrike rødt og fronten presser sørover. Til
                             slutt holder bare Orleans stand. Da kan Jeanne d&apos;Arc snu alt.
                         </p>
                         {phase1Done && (
@@ -201,11 +201,11 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     </>
                 ) : (
                     <WinScreen
-                        title="Hundreaarskrigen svingte fram og tilbake i over hundre aar, helt til Jeanne d&apos;Arc snudde den ved Orleans og Frankrike vant i 1453."
+                        title="Hundreaarskrigen svingte fram og tilbake i over hundre år, helt til Jeanne d&apos;Arc snudde den ved Orleans og Frankrike vant i 1453."
                         onReplay={reset}
                     >
-                        England vant slag etter slag med langbuene sine, og rundt 1420 saa det ut som
-                        Frankrike var ferdig. Men en ung bondejente, Jeanne d&apos;Arc, loftet
+                        England vant slag etter slag med langbuene sine, og rundt 1420 så det ut som
+                        Frankrike var ferdig. Men en ung bondejente, Jeanne d&apos;Arc, løftet
                         beleiringen av Orleans i 1429 og ga franskmennene troen tilbake. Etter det tok
                         Frankrike landet sitt tilbake bit for bit, og i 1453 var krigen over.
                     </WinScreen>
@@ -260,8 +260,8 @@ function WarMap({
             {/* Frankrikes landmasse */}
             <FranceLand frenchVictory={jeanne} />
 
-            {/* Territorie-flekker som farges roedt ved hver engelsk seier,
-                og skyller blaatt tilbake naar Jeanne vinner */}
+            {/* Territorie-flekker som farges rødt ved hver engelsk seier,
+                og skyller blått tilbake når Jeanne vinner */}
             {BATTLES.map((b, i) => (
                 <RegionPatch key={b.id} place={b} english={enWon > i && !jeanne} french={jeanne} />
             ))}
@@ -295,8 +295,8 @@ function WarMap({
     );
 }
 
-// Frankrikes landmasse: noen store, flate landflekker. Far en svak fransk blaa-groenn
-// grunntone, og lyser litt sterkere blaatt naar Frankrike vinner.
+// Frankrikes landmasse: noen store, flate landflekker. Far en svak fransk blå-grønn
+// grunntone, og lyser litt sterkere blått når Frankrike vinner.
 function FranceLand({ frenchVictory }: { frenchVictory: boolean }) {
     const blobs = useMemo(
         () => [
@@ -339,8 +339,8 @@ function LandBlob({
     );
 }
 
-// En territorie-flekk rundt en slag-node. Naer den engelske siden vinner her, lyser
-// flekken roedt. Naar Jeanne snur krigen, skifter alle flekkene til fransk blaa.
+// En territorie-flekk rundt en slag-node. Nær den engelske siden vinner her, lyser
+// flekken rødt. Når Jeanne snur krigen, skifter alle flekkene til fransk blå.
 const RED = new THREE.Color('#c4392f');
 const BLUE = new THREE.Color('#3f63b3');
 const NEUTRAL = new THREE.Color('#6f9a5e');
@@ -382,8 +382,8 @@ function RegionPatch({
     );
 }
 
-// En slag-node: en liten haug med kryssede sverd, et banner som reiser seg roedt naar
-// England vinner her, og en lysende ring naar noden er den aktive.
+// En slag-node: en liten haug med kryssede sverd, et banner som reiser seg rødt når
+// England vinner her, og en lysende ring når noden er den aktive.
 function BattleNode({ place, held, isActive }: { place: Place; held: boolean; isActive: boolean }) {
     return (
         <group>
@@ -393,7 +393,7 @@ function BattleNode({ place, held, isActive }: { place: Place; held: boolean; is
                 <meshStandardMaterial color="#7d8a5a" roughness={1} flatShading />
             </mesh>
 
-            {/* Kryssede sverd som markoer */}
+            {/* Kryssede sverd som markør */}
             <group position={[0, 0.5, 0]}>
                 <mesh rotation={[0, 0, Math.PI / 4]} castShadow>
                     <boxGeometry args={[0.08, 0.8, 0.08]} />
@@ -423,7 +423,7 @@ function BattleNode({ place, held, isActive }: { place: Place; held: boolean; is
     );
 }
 
-// Et banner som vokser opp (skala 0 -> 1) naar slaget er vunnet.
+// Et banner som vokser opp (skala 0 -> 1) når slaget er vunnet.
 function RisingBanner({ held, color }: { held: boolean; color: string }) {
     const grow = useRef<THREE.Group>(null);
     const cloth = useRef<THREE.Mesh>(null);
@@ -469,7 +469,7 @@ function ActiveRing() {
     );
 }
 
-// En liten by (boks + tak) paa kartet.
+// En liten by (boks + tak) på kartet.
 function Town({ place, color, label }: { place: Place; color: string; label?: boolean }) {
     return (
         <group position={[place.x, 0, place.z]}>
@@ -492,19 +492,19 @@ function Town({ place, color, label }: { place: Place; color: string; label?: bo
     );
 }
 
-// Orleans: byen som holder stand. Mens den er beleiret ligger en roed beleiringsring
-// rundt og en Hotspot ber eleven sende Jeanne d'Arc. Naar beleiringen loftes, bryter
-// ringen, et fransk blaatt-hvitt banner reiser seg, og Jeanne staar med sitt banner.
+// Orleans: byen som holder stand. Mens den er beleiret ligger en rød beleiringsring
+// rundt og en Hotspot ber eleven sende Jeanne d'Arc. Når beleiringen løftes, bryter
+// ringen, et fransk blått-hvitt banner reiser seg, og Jeanne står med sitt banner.
 function OrleansNode({ active, won, onLift }: { active: boolean; won: boolean; onLift: () => void }) {
     const ring = useRef<THREE.Mesh>(null);
     const jeanne = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
-        // Beleiringsringen vises mens byen er beleiret, og synker bort naar den loftes.
+        // Beleiringsringen vises mens byen er beleiret, og synker bort når den løftes.
         if (ring.current) {
             const mat = ring.current.material as THREE.MeshStandardMaterial;
             mat.opacity = damp(mat.opacity, active && !won ? 0.85 : 0, dt, 3);
         }
-        // Jeanne reiser seg naar beleiringen er loftet.
+        // Jeanne reiser seg når beleiringen er løftet.
         if (jeanne.current) {
             const s = damp(jeanne.current.scale.x, won ? 1 : 0.0001, dt, 4);
             jeanne.current.scale.setScalar(s);
@@ -523,7 +523,7 @@ function OrleansNode({ active, won, onLift }: { active: boolean; won: boolean; o
                 <meshStandardMaterial color="#e6ddca" roughness={0.85} />
             </mesh>
 
-            {/* Roed beleiringsring */}
+            {/* Rød beleiringsring */}
             <mesh ref={ring} position={[0, 0.26, 0]} rotation={[-Math.PI / 2, 0, 0]}>
                 <torusGeometry args={[1.7, 0.13, 12, 40]} />
                 <meshStandardMaterial
@@ -546,7 +546,7 @@ function OrleansNode({ active, won, onLift }: { active: boolean; won: boolean; o
                     <sphereGeometry args={[0.16, 12, 12]} />
                     <meshStandardMaterial color="#e8c7a0" roughness={0.8} />
                 </mesh>
-                {/* Banner-stang + blaatt-hvitt kled */}
+                {/* Banner-stang + blått-hvitt kled */}
                 <mesh position={[0.32, 0.7, 0]} castShadow>
                     <cylinderGeometry args={[0.04, 0.04, 1.6, 6]} />
                     <meshStandardMaterial color="#5a4326" roughness={0.9} />
@@ -567,7 +567,7 @@ function OrleansNode({ active, won, onLift }: { active: boolean; won: boolean; o
                 <Hotspot
                     position={[0, 1.6, 0]}
                     onSelect={onLift}
-                    label="Jeanne d'Arc loefter beleiringen"
+                    label="Jeanne d'Arc løfter beleiringen"
                     radius={0.6}
                     color="#3f63b3"
                 />

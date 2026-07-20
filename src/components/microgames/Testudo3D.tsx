@@ -21,14 +21,14 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill: bygg den romerske skilpadda (testudo). Eleven kjenner kjernen paa
-// kroppen: en legionaer alene er saarbar for pilregn, men naar hver mann setter
-// skjoldet sitt paa rett plass - de ytterste som vegger som vender utover, de
+// Mikrospill: bygg den romerske skilpadda (testudo). Eleven kjenner kjernen på
+// kroppen: en legionær alene er sårbar for pilregn, men når hver mann setter
+// skjoldet sitt på rett plass - de ytterste som vegger som vender utover, de
 // indre som et flatt tak over hodet - blir tropppen en bevegelig festning av
 // jern og tre. Disiplin og samarbeid, ikke den enkelte soldaten, er hemmeligheten.
 //
-// Mekanikk: klikk legionaerene. Foerst reiser ytterringen veggene, saa legger de
-// fire i midten taket. Naar skilpadda er lukket, slipper du pilregnet loes og ser
+// Mekanikk: klikk legionærene. Først reiser ytterringen veggene, så legger de
+// fire i midten taket. Når skilpadda er lukket, slipper du pilregnet løs og ser
 // pilene klatre av skallet. Fyrer du for tidlig, finner pilene hullene.
 
 type Phase = 'walls' | 'roof' | 'test' | 'won';
@@ -48,7 +48,7 @@ interface Sol {
     rotY: number;
 }
 
-// Bygg formasjonen som en ren konstant paa modulnivaa (ingen state-avhengighet).
+// Bygg formasjonen som en ren konstant på modulnivå (ingen state-avhengighet).
 const SOLDIERS: Sol[] = (() => {
     const out: Sol[] = [];
     for (let r = 0; r < ROWS; r++) {
@@ -77,7 +77,7 @@ const SOLDIERS: Sol[] = (() => {
 const WALL_IDS = SOLDIERS.filter((s) => s.role === 'wall').map((s) => s.i);
 const ROOF_IDS = SOLDIERS.filter((s) => s.role === 'roof').map((s) => s.i);
 
-// Liten ren RNG paa modulnivaa (ingen muterte let i useMemo).
+// Liten ren RNG på modulnivå (ingen muterte let i useMemo).
 function rng(seed: number) {
     const s = Math.sin(seed * 127.1 + 311.7) * 43758.5453;
     return s - Math.floor(s);
@@ -88,7 +88,7 @@ const Testudo3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [phase, setPhase] = useState<Phase>('walls');
     const [raised, setRaised] = useState<boolean[]>(() => Array(COLS * ROWS).fill(false));
     const [banner, setBanner] = useState<string | null>(
-        'Klikk legionaerene i ytterkanten. Hver reiser skjoldet til en vegg som vender utover.'
+        'Klikk legionærene i ytterkanten. Hver reiser skjoldet til en vegg som vender utover.'
     );
     const [fact, setFact] = useState<string | null>(null);
     const [volley, setVolley] = useState(0);
@@ -105,7 +105,7 @@ const Testudo3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setPhase('walls');
         setRaised(Array(COLS * ROWS).fill(false));
         setBanner(
-            'Klikk legionaerene i ytterkanten. Hver reiser skjoldet til en vegg som vender utover.'
+            'Klikk legionærene i ytterkanten. Hver reiser skjoldet til en vegg som vender utover.'
         );
         setFact(null);
         setVolley(0);
@@ -125,23 +125,23 @@ const Testudo3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             sounds.play('advance');
             setPhase('roof');
             setBanner(
-                'Veggene staar. Klikk naa de fire i midten. De legger skjoldene flatt over hodet.'
+                'Veggene står. Klikk nå de fire i midten. De legger skjoldene flatt over hodet.'
             );
             setFact(
-                'Bak frontmuren loefter mennene skjoldene vannrett over hodet, kant i kant som takstein. Da er hele troppen pakket inn - foran, paa sidene og oppe.'
+                'Bak frontmuren løfter mennene skjoldene vannrett over hodet, kant i kant som takstein. Da er hele troppen pakket inn - foran, på sidene og oppe.'
             );
         } else if (nextRoof === ROOF_IDS.length && phase === 'roof') {
             sounds.play('advance');
             setPhase('test');
-            setBanner('Skilpadda er lukket! Slipp pilregnet loes og se skjoldene ta imot.');
+            setBanner('Skilpadda er lukket! Slipp pilregnet løs og se skjoldene ta imot.');
             setFact(
-                'Na ser fienden bare en kompakt boks av skjold. Formasjonen het testudo - latin for skilpadde - fordi den kroep fram under sitt eget skall.'
+                'Nå ser fienden bare en kompakt boks av skjold. Formasjonen het testudo - latin for skilpadde - fordi den krøp fram under sitt eget skall.'
             );
         } else {
             sounds.play('correct');
             if (phase === 'walls') {
                 setFact(
-                    'Et romersk skjold (scutum) er en stor, buet rektangel av tre og laer. Side om side blir de en sammenhengende mur.'
+                    'Et romersk skjold (scutum) er en stor, buet rektangel av tre og lær. Side om side blir de en sammenhengende mur.'
                 );
             }
         }
@@ -162,7 +162,7 @@ const Testudo3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             setOutcome('through');
             setVolley((v) => v + 1);
             sounds.play('incorrect');
-            setBanner('Pilene fant hull i taket! Legg de siste skjoldene over hodet foer du fyrer.');
+            setBanner('Pilene fant hull i taket! Legg de siste skjoldene over hodet før du fyrer.');
             setTimeout(() => setOutcome('idle'), 1700);
         }
     };
@@ -214,7 +214,7 @@ const Testudo3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     />
                     {phase === 'walls' && (
                         <p className="text-sm text-slate-600">
-                            Klikk de markerte legionaerene i ytterringen. Hver reiser skjoldet til en
+                            Klikk de markerte legionærene i ytterringen. Hver reiser skjoldet til en
                             vegg som vender utover.
                         </p>
                     )}
@@ -222,15 +222,15 @@ const Testudo3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         <div className="rounded-xl border border-amber-200 bg-white p-3 sm:flex sm:items-center sm:gap-4">
                             <p className="text-xs text-slate-600 leading-relaxed min-w-0 flex-1">
                                 {roofDone
-                                    ? 'Skilpadda er tett, foran, paa sidene og oppe. Slipp pilregnet loes.'
-                                    : 'Veggene staar, men taket er aapent. Klikk de fire i midten foer du fyrer.'}
+                                    ? 'Skilpadda er tett, foran, på sidene og oppe. Slipp pilregnet løs.'
+                                    : 'Veggene står, men taket er åpent. Klikk de fire i midten før du fyrer.'}
                             </p>
                             <button
                                 onClick={fire}
                                 className="mt-2.5 sm:mt-0 inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-amber-600 text-white rounded-lg text-sm font-bold hover:bg-amber-700 transition flex-shrink-0"
                             >
                                 <CloudRain className="w-4 h-4" />
-                                Slipp pilregnet loes
+                                Slipp pilregnet løs
                             </button>
                         </div>
                     )}
@@ -240,10 +240,10 @@ const Testudo3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
             {phase === 'won' && (
                 <WinScreen title="Skilpadda holdt pilregnet ute!" onReplay={reset}>
-                    Pilene klatret av skjoldskallet uten aa naa en eneste mann. Det var hele
-                    poenget med testudo: en legionaer alene er saarbar, men naar hver mann setter
-                    skjoldet sitt paa rett plass, blir troppen en bevegelig festning. Disiplinen og
-                    samarbeidet, ikke den enkelte soldaten, gjorde den romerske legionen saa
+                    Pilene klatret av skjoldskallet uten å nå en eneste mann. Det var hele
+                    poenget med testudo: en legionær alene er sårbar, men når hver mann setter
+                    skjoldet sitt på rett plass, blir troppen en bevegelig festning. Disiplinen og
+                    samarbeidet, ikke den enkelte soldaten, gjorde den romerske legionen så
                     fryktet.
                 </WinScreen>
             )}
@@ -315,7 +315,7 @@ function TestudoScene({
     );
 }
 
-// En legionaer: roed tunika, segmentert panser, hjelm og et stort rektangulaert
+// En legionær: rød tunika, segmentert panser, hjelm og et stort rektangulært
 // scutum. Skjoldet damper fra hvileposisjon mot vegg- eller takposisjon.
 function Legionary({ sol, up, highlight }: { sol: Sol; up: boolean; highlight: boolean }) {
     const shield = useRef<THREE.Group>(null);
@@ -351,7 +351,7 @@ function Legionary({ sol, up, highlight }: { sol: Sol; up: boolean; highlight: b
 
     return (
         <group>
-            {/* markeringsring naar mannen er klar til aa klikkes */}
+            {/* markeringsring når mannen er klar til å klikkes */}
             <mesh ref={glow} position={[0, 0.06, 0]} rotation={[-Math.PI / 2, 0, 0]}>
                 <ringGeometry args={[0.42, 0.6, 28]} />
                 <meshBasicMaterial color="#f59e0b" transparent opacity={0} depthWrite={false} />
@@ -362,7 +362,7 @@ function Legionary({ sol, up, highlight }: { sol: Sol; up: boolean; highlight: b
                 <cylinderGeometry args={[0.18, 0.22, 0.55, 8]} />
                 <meshStandardMaterial color="#7a5535" roughness={0.9} />
             </mesh>
-            {/* overkropp i roed tunika */}
+            {/* overkropp i rød tunika */}
             <mesh position={[0, 0.78, 0]} castShadow>
                 <cylinderGeometry args={[0.22, 0.26, 0.55, 8]} />
                 <meshStandardMaterial color={T.accent} roughness={0.85} />
@@ -383,7 +383,7 @@ function Legionary({ sol, up, highlight }: { sol: Sol; up: boolean; highlight: b
                 <meshStandardMaterial color="#c79a3a" metalness={0.55} roughness={0.4} />
             </mesh>
 
-            {/* scutum - stort rektangulaert skjold */}
+            {/* scutum - stort rektangulært skjold */}
             <group ref={shield} position={[0, 0.55, 0.34]} rotation={[0.32, 0, 0]}>
                 <mesh castShadow>
                     <boxGeometry args={[0.92, 1.32, 0.1]} />
@@ -438,7 +438,7 @@ function Archers() {
 }
 
 const ARROW_COUNT = 18;
-// Faste, men spredte nedslagspunkter over formasjonen (ren RNG paa modulnivaa).
+// Faste, men spredte nedslagspunkter over formasjonen (ren RNG på modulnivå).
 const ARROW_SPOTS = Array.from({ length: ARROW_COUNT }, (_, i) => ({
     x: (rng(i + 1) * 2 - 1) * 2.4,
     z: (rng(i + 11) * 2 - 1) * 2.4,
@@ -446,8 +446,8 @@ const ARROW_SPOTS = Array.from({ length: ARROW_COUNT }, (_, i) => ({
     spin: rng(i + 31) * 0.5 - 0.25,
 }));
 
-// Pilregnet. Pilene faller fra himmelen. Er taket lukket, stopper de paa skallet
-// (y ca 2.5) og tipper over. Er det aapent, fortsetter de helt ned blant mennene.
+// Pilregnet. Pilene faller fra himmelen. Er taket lukket, stopper de på skallet
+// (y ca 2.5) og tipper over. Er det åpent, fortsetter de helt ned blant mennene.
 function ArrowRain({
     volley,
     outcome,
@@ -480,7 +480,7 @@ function ArrowRain({
             child.position.x = spot.x + (outcome === 'bounced' ? e * spot.spin : 0);
             child.position.y = startY + (endY - startY) * e;
             child.position.z = spot.z;
-            // Stupende pil; tipper over naar den treffer skallet.
+            // Stupende pil; tipper over når den treffer skallet.
             const tip = outcome === 'bounced' ? e * spot.spin * 2 : 0;
             child.rotation.set(Math.PI + tip, 0, spot.spin * (outcome === 'bounced' ? e : 0));
             child.visible = volley > 0 && local > 0.001;
@@ -501,7 +501,7 @@ function ArrowRain({
                         <coneGeometry args={[0.06, 0.18, 6]} />
                         <meshStandardMaterial color="#9aa0a8" metalness={0.5} roughness={0.4} />
                     </mesh>
-                    {/* fjaer */}
+                    {/* fjær */}
                     <mesh position={[0, 0.42, 0]}>
                         <coneGeometry args={[0.07, 0.16, 6]} />
                         <meshStandardMaterial color="#e8e2d2" roughness={0.85} />

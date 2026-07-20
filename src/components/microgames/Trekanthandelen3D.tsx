@@ -26,11 +26,11 @@ import type { MicroGameProps } from './types';
 
 // Mikrospill til "Trekant-handelen: Det Søte Livets Pris".
 //
-// Lyspaere: trekant-handelen var et lukket kretsloep der skipet ALDRI seilte tomt.
-// Hver etappe ga profitt og betalte for den neste, og hele maskinen hvilte paa den
+// Lyspære: trekant-handelen var et lukket kretsløp der skipet ALDRI seilte tomt.
+// Hver etappe ga profitt og betalte for den neste, og hele maskinen hvilte på den
 // midterste etappen, Midtpassasjen, der mennesker ble behandlet som last. Eleven
-// drar skipet rundt de tre hjoernene og kjenner paa kroppen at trekanten er et
-// kretsloep. Den midterste etappen er bevisst tung: ingen feiring, bare det moerke
+// drar skipet rundt de tre hjørnene og kjenner på kroppen at trekanten er et
+// kretsløp. Den midterste etappen er bevisst tung: ingen feiring, bare det mørke
 // faktumet om hva systemet gjorde med mennesker.
 //
 // Mekanikk: Draggable (samme grep tre ganger). Eleven drar skipet langs hver etappe
@@ -233,7 +233,7 @@ function TradeScene({
             <LegLine a={AFRIKA} b={AMERIKA} drawn={stage > 1} grave={true} />
             <LegLine a={AMERIKA} b={EUROPA} drawn={stage > 2} grave={false} />
 
-            {/* Maalring ved neste havn */}
+            {/* Målring ved neste havn */}
             {leg && <TargetRing position={leg.to} grave={leg.grave} />}
 
             {/* Skipet eleven drar (remountes per etappe slik at det starter i riktig havn) */}
@@ -258,7 +258,7 @@ function TradeScene({
                 </Draggable>
             )}
 
-            {/* Skipet i ro hjemme i Europa naar trekanten er sluttet */}
+            {/* Skipet i ro hjemme i Europa når trekanten er sluttet */}
             {done && (
                 <group position={[EUROPA[0], 0.35, EUROPA[2]]}>
                     <TradeShip cargo="raw" />
@@ -274,7 +274,7 @@ function TradeScene({
     );
 }
 
-// Etappe-linje: en tynn strek over havet mellom to havner, som gloeder naar etappen
+// Etappe-linje: en tynn strek over havet mellom to havner, som gløder når etappen
 // er seilt. Bygger trekanten visuelt, linje for linje.
 function LegLine({
     a,
@@ -326,7 +326,7 @@ function LegLine({
     );
 }
 
-// Pulserende maalring paa vannet ved neste havn: viser hvor skipet skal slippes.
+// Pulserende målring på vannet ved neste havn: viser hvor skipet skal slippes.
 function TargetRing({
     position,
     grave,
@@ -357,7 +357,7 @@ function TargetRing({
     );
 }
 
-// Selve handelsskipet. Lasten paa dekk forteller hvilken etappe det seiler.
+// Selve handelsskipet. Lasten på dekk forteller hvilken etappe det seiler.
 function TradeShip({ cargo }: { cargo: 'goods' | 'people' | 'raw' }) {
     const hull = cargo === 'people' ? '#4a3722' : '#6b4a2c';
     const sail = cargo === 'people' ? '#7d7468' : '#efe3c6';
@@ -373,7 +373,7 @@ function TradeShip({ cargo }: { cargo: 'goods' | 'people' | 'raw' }) {
     );
 }
 
-// Etappe 1: ferdigvarer. Kasser, en tønne brennevin og et gevaer.
+// Etappe 1: ferdigvarer. Kasser, en tønne brennevin og et gevær.
 function GoodsCargo() {
     return (
         <group>
@@ -385,7 +385,7 @@ function GoodsCargo() {
                 <cylinderGeometry args={[0.22, 0.22, 0.46, 12]} />
                 <meshStandardMaterial color="#7a5230" roughness={0.8} />
             </mesh>
-            {/* Gevaer-silhuett */}
+            {/* Gevær-silhuett */}
             <mesh position={[0, 0.45, -0.1]} rotation={[0, 0, -0.5]} castShadow>
                 <boxGeometry args={[0.06, 0.7, 0.06]} />
                 <meshStandardMaterial color="#3a342c" roughness={0.7} metalness={0.3} />
@@ -426,7 +426,7 @@ function PeopleCargo() {
     );
 }
 
-// Etappe 3: raavarene slavene matte dyrke. Sukkersekker og en bomullsball.
+// Etappe 3: råvarene slavene måtte dyrke. Sukkersekker og en bomullsball.
 function RawCargo() {
     return (
         <group>
@@ -461,7 +461,7 @@ function EuropaPort() {
     );
 }
 
-// Vest-Afrika: et slavefort ved kysten, med mur og taarn.
+// Vest-Afrika: et slavefort ved kysten, med mur og tårn.
 function AfrikaPort() {
     return (
         <group position={AFRIKA}>

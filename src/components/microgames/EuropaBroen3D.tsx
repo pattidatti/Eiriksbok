@@ -19,7 +19,7 @@ import type { MicroGameProps } from './types';
 // EU-regler daler ned over Norge, og en norsk stol ved EUs bord står tom helt
 // til fullt medlemskap. Tre live-tall (Markedstilgang, Innflytelse, Selvstyre)
 // endrer seg mens eleven drar.
-// Lyspaere: ved EØS-punktet er markedet nesten helt åpent og reglene daler ned,
+// Lyspære: ved EØS-punktet er markedet nesten helt åpent og reglene daler ned,
 // men stolen ved bordet er tom. Norge følger reglene uten å være med å bestemme.
 
 const NORGE_X = -5.4;

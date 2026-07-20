@@ -18,11 +18,11 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill til artikkelen om hoytider og kultur.
-// Lyspaere-oyeblikket: fire religioner, fire hoytider - men ALLE feirer med lys,
-// samling og glede. Eleven tenner lysene paa hvert hoytidsbord og ser bordet
-// lyse opp. Naar alle fire er tent, sitter innsikten: lys og fest er felles for
-// mennesker, paa tvers av tro.
+// Mikrospill til artikkelen om høytider og kultur.
+// Lyspære-øyeblikket: fire religioner, fire høytider - men ALLE feirer med lys,
+// samling og glede. Eleven tenner lysene på hvert høytidsbord og ser bordet
+// lyse opp. Når alle fire er tent, sitter innsikten: lys og fest er felles for
+// mennesker, på tvers av tro.
 
 type CelebId = 'jul' | 'hanukka' | 'divali' | 'eid';
 
@@ -32,7 +32,7 @@ interface Celebration {
     religion: string;
     glow: string;
     fact: string;
-    // posisjoner for de tre lysene paa bordet
+    // posisjoner for de tre lysene på bordet
     lights: [number, number, number][];
 }
 
@@ -212,7 +212,7 @@ const FestensLys3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 };
 
 // ============================================================
-//  3D-SCENEN - et hoytidsbord i et varmt rom
+//  3D-SCENEN - et høytidsbord i et varmt rom
 // ============================================================
 
 interface SceneProps {
@@ -266,7 +266,7 @@ function FestScene({ celeb, lit, totalLit, burst, onLight }: SceneProps) {
                 ))}
             </group>
 
-            {/* Senterpynt som forteller hvilken hoytid det er */}
+            {/* Senterpynt som forteller hvilken høytid det er */}
             <group position={[0, 0, -0.55]}>
                 <Centerpiece celeb={celeb} />
             </group>
@@ -325,7 +325,7 @@ function Candle({
     );
 }
 
-// Ulik senterpynt per hoytid - billig, men gjenkjennelig.
+// Ulik senterpynt per høytid - billig, men gjenkjennelig.
 function Centerpiece({ celeb }: { celeb: Celebration }) {
     const grp = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -350,7 +350,7 @@ function Centerpiece({ celeb }: { celeb: Celebration }) {
     }
 
     if (celeb.id === 'hanukka') {
-        // ni-armet stake (menorah): midtstamme + armer i ulik hoyde
+        // ni-armet stake (menorah): midtstamme + armer i ulik høyde
         const arms = [-2, -1, 0, 1, 2];
         return (
             <group position={[0, 0.45, 0]}>

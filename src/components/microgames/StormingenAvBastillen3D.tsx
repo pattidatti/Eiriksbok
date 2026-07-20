@@ -26,20 +26,20 @@ import type { MicroGameProps } from './types';
 
 // Stormingen av Bastillen, 14. juli 1789.
 //
-// Lyspaere: vanlige parisere, ikke kongen, tok en kongelig festning med makt.
-// De kom egentlig for kruttet, ikke for fangene. Da symbolet pa enevoldsmakten
-// falt, forsto folket at makten la hos dem. Eleven kjenner dette pa kroppen ved a
-// (1) kappe kjettingene sa vindebrua dundrer ned og folket stromer inn, (2) rulle
+// Lyspære: vanlige parisere, ikke kongen, tok en kongelig festning med makt.
+// De kom egentlig for kruttet, ikke for fangene. Da symbolet på enevoldsmakten
+// falt, forsto folket at makten lå hos dem. Eleven kjenner dette på kroppen ved å
+// (1) kappe kjettingene så vindebrua dundrer ned og folket strømmer inn, (2) rulle
 // de fem kanonene fra avhopperne i stilling foran porten, og (3) kreve overgivelse
-// sa det hvite flagget gar opp, de fa fangene gar fri og trikoloren heises.
+// så det hvite flagget går opp, de få fangene går fri og trikoloren heises.
 //
 // Scenen drives av enkel React-tilstand (chains, placed, surge, surrender) og hvert
-// delobjekt demper mykt mot mal utledet av den.
+// delobjekt demper mykt mot mål utledet av den.
 
 const STONE = '#c3b291';
 const ROOF = '#6b4a33';
 const GATE_X = 0;
-// Kanonenes parkeringsplasser (sidegatene) og malslukene i raden foran porten.
+// Kanonenes parkeringsplasser (sidegatene) og målslukene i raden foran porten.
 const PARK: [number, number][] = [
     [-8, 2.4],
     [-8, 4.2],
@@ -57,7 +57,7 @@ const SLOTS: [number, number][] = [
 
 type Phase = 'bridge' | 'cannons' | 'storm' | 'done';
 
-// --- Festningen: en gra steinkjempe med atte runde tarn og en port ---
+// --- Festningen: en grå steinkjempe med åtte runde tårn og en port ---
 function Fortress() {
     return (
         <group>
@@ -73,14 +73,14 @@ function Fortress() {
                     <meshStandardMaterial color={STONE} roughness={0.97} />
                 </mesh>
             ))}
-            {/* atte runde tarn: fire foran, fire bak */}
+            {/* åtte runde tårn: fire foran, fire bak */}
             {[-5.2, -1.9, 1.9, 5.2].map((x) => (
                 <Tower key={`f${x}`} position={[x, 0, 0.3]} radius={0.9} height={6.4} color={STONE} roof={ROOF} />
             ))}
             {[-5.2, -1.9, 1.9, 5.2].map((x) => (
                 <Tower key={`b${x}`} position={[x, 0, -3]} radius={0.9} height={6.4} color={STONE} roof={ROOF} />
             ))}
-            {/* morkt portrom bak vindebrua */}
+            {/* mørkt portrom bak vindebrua */}
             <mesh position={[GATE_X, 1.5, 0.2]}>
                 <boxGeometry args={[2.2, 3, 0.5]} />
                 <meshStandardMaterial color="#2b241c" roughness={1} />
@@ -99,7 +99,7 @@ function Drawbridge({ down }: { down: boolean }) {
     const g = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
         if (!g.current) return;
-        // 0 = flat (nede, over vollgrava), -1.5 = star loddrett foran porten
+        // 0 = flat (nede, over vollgrava), -1.5 = står loddrett foran porten
         const target = down ? 0 : -1.5;
         g.current.rotation.x = damp(g.current.rotation.x, target, dt, down ? 4.5 : 3);
     });
@@ -109,7 +109,7 @@ function Drawbridge({ down }: { down: boolean }) {
                 <boxGeometry args={[2.4, 0.18, 2.7]} />
                 <meshStandardMaterial color="#5a4029" roughness={0.9} />
             </mesh>
-            {/* planker pa tvers */}
+            {/* planker på tvers */}
             {[-0.7, 0, 0.7, 1.4, 2.1].map((z) => (
                 <mesh key={z} position={[0, 0.11, z + 0.15]}>
                     <boxGeometry args={[2.3, 0.05, 0.16]} />
@@ -141,7 +141,7 @@ function Chain({ x, cut, onCut }: { x: number; cut: boolean; onCut: () => void }
     );
 }
 
-// --- En kanon: hjul, lavett og lop. Dras i stilling, eller star fast nar plassert ---
+// --- En kanon: hjul, lavett og løp. Dras i stilling, eller står fast når plassert ---
 function CannonMesh() {
     return (
         <group>
@@ -149,7 +149,7 @@ function CannonMesh() {
                 <boxGeometry args={[0.7, 0.4, 1.5]} />
                 <meshStandardMaterial color="#5b4a36" roughness={0.9} />
             </mesh>
-            {/* lop, peker mot porten (-Z) */}
+            {/* løp, peker mot porten (-Z) */}
             <mesh position={[0, 0.6, -0.7]} rotation={[Math.PI / 2, 0, 0]} castShadow>
                 <cylinderGeometry args={[0.16, 0.2, 1.7, 12]} />
                 <meshStandardMaterial color="#2f2f33" metalness={0.7} roughness={0.4} />
@@ -201,7 +201,7 @@ function Cannon({
     );
 }
 
-// --- En oppror: damper framover mot courtyard nar folket stormer inn ---
+// --- En opprører: damper framover mot courtyard når folket stormer inn ---
 function Rioter({
     home,
     target,
@@ -232,7 +232,7 @@ function Rioter({
     );
 }
 
-// --- Fange som gar ut av porten ved seier ---
+// --- Fange som går ut av porten ved seier ---
 function Prisoner({ out, x }: { out: number; x: number }) {
     const ref = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -246,7 +246,7 @@ function Prisoner({ out, x }: { out: number; x: number }) {
     );
 }
 
-// --- Flagg som heises pa det hoyeste tarnet (hvitt -> trikolor) ---
+// --- Flagg som heises på det høyeste tårnet (hvitt -> trikolor) ---
 function VictoryFlag({ up }: { up: number }) {
     const ref = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -260,7 +260,7 @@ function VictoryFlag({ up }: { up: number }) {
                 <cylinderGeometry args={[0.04, 0.04, 1.6, 6]} />
                 <meshStandardMaterial color="#4a3a26" />
             </mesh>
-            {/* trikolor: bla, hvit, rod */}
+            {/* trikolor: blå, hvit, rød */}
             {[
                 ['#2e4a9e', -0.32],
                 ['#f4f4f4', 0],
@@ -309,7 +309,7 @@ function BastilleScene({
                 const jitter = ((k * 37) % 7) / 14 - 0.25;
                 arr.push({
                     home: [x + jitter, z],
-                    // front blir trukket inn pa borggarden, bakerste rad rykker bare litt fram
+                    // front blir trukket inn på borggården, bakerste rad rykker bare litt fram
                     target: [x * 0.5 + jitter, 0.6 + row * 1.2],
                     body: bodies[k % bodies.length],
                     hat: k % 3 === 0 ? 'cap' : 'none',
@@ -322,7 +322,7 @@ function BastilleScene({
 
     return (
         <group>
-            {/* bakken: brustein-gra plass */}
+            {/* bakken: brustein-grå plass */}
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 2]} receiveShadow>
                 <planeGeometry args={[34, 28]} />
                 <meshStandardMaterial color="#9a9476" roughness={1} />
@@ -343,7 +343,7 @@ function BastilleScene({
                 </>
             )}
 
-            {/* kruttrok fra forsvarerne nar folket presser pa (steg 2) */}
+            {/* kruttrøk fra forsvarerne når folket presser på(steg 2) */}
             {phase === 'cannons' && (
                 <>
                     <Smoke origin={[-3, 4.4, 0.4]} />
@@ -351,7 +351,7 @@ function BastilleScene({
                 </>
             )}
 
-            {/* malsluk-markorer + kanoner (steg 2) */}
+            {/* målsluk-markører + kanoner (steg 2) */}
             {(phase === 'cannons' || phase === 'storm' || phase === 'done') &&
                 SLOTS.map((s, i) =>
                     placed[i] ? null : (
@@ -381,7 +381,7 @@ function BastilleScene({
                 <Rioter key={i} home={p.home} target={p.target} surge={surge} body={p.body} hat={p.hat} />
             ))}
 
-            {/* de fa fangene gar fri ved seier */}
+            {/* de få fangene går fri ved seier */}
             <Prisoner out={surrender} x={-0.8} />
             <Prisoner out={surrender} x={0.8} />
 
@@ -421,7 +421,7 @@ export default function StormingenAvBastillen3D({ onComplete }: MicroGameProps) 
             if (next.every(Boolean)) {
                 setSurge(1);
                 sound.play('advance');
-                setBanner('Brua dundret ned, og folket stromer inn! Men forsvarerne skyter. Hent kanonene fra avhopperne.');
+                setBanner('Brua dundret ned, og folket strømmer inn! Men forsvarerne skyter. Hent kanonene fra avhopperne.');
                 setTimeout(() => setPhase('cannons'), 1100);
             }
             return next;
@@ -449,7 +449,7 @@ export default function StormingenAvBastillen3D({ onComplete }: MicroGameProps) 
         if (surrender > 0) return;
         setSurrender(1);
         sound.play('complete');
-        setBanner('Klokka fem: det hvite flagget gar opp. Bastillen har falt, de sju fangene gar fri og folket tar kruttet.');
+        setBanner('Klokka fem: det hvite flagget går opp. Bastillen har falt, de sju fangene går fri og folket tar kruttet.');
         setPhase('done');
         onComplete({ score: 1, completed: true });
     };
@@ -461,7 +461,7 @@ export default function StormingenAvBastillen3D({ onComplete }: MicroGameProps) 
     return (
         <MicroGameScaffold
             title="Stormingen av Bastillen"
-            subtitle="Kapp vindebrua, rull kanonene i stilling, og tving festningen til a overgi seg"
+            subtitle="Kapp vindebrua, rull kanonene i stilling, og tving festningen til å overgi seg"
             estimatedSeconds={150}
             onRetry={reset}
             scene={
@@ -537,23 +537,23 @@ export default function StormingenAvBastillen3D({ onComplete }: MicroGameProps) 
 
             {phase === 'bridge' && (
                 <SceneFact>
-                    Folket hadde alt tatt nesten tretti tusen gevaer, men de manglet krutt, og uten krutt var
-                    gevaerene bare jernror. Kruttet la i kjelleren under Bastillen. Vindebrua sperret veien.
+                    Folket hadde alt tatt nesten tretti tusen gevær, men de manglet krutt, og uten krutt var
+                    geværene bare jernrør. Kruttet lå i kjelleren under Bastillen. Vindebrua sperret veien.
                     Klikk de to kjettingene som holder brua oppe.
                 </SceneFact>
             )}
 
             {phase === 'cannons' && (
                 <SceneFact>
-                    Da folket stormet inn pa den ytre garden, ga kommandanten ordre om a skyte. Pa et par timer
-                    falt nesten hundre angripere. Men sa kom gardesoldater som hadde hoppet av kongens haer, med
+                    Da folket stormet inn på den ytre gården, ga kommandanten ordre om å skyte. På et par timer
+                    falt nesten hundre angripere. Men så kom gardesoldater som hadde hoppet av kongens hær, med
                     fem store kanoner. Dra hver kanon fram til ringene foran porten.
                 </SceneFact>
             )}
 
             {phase === 'storm' && (
                 <SceneFact>
-                    Med kanonene rettet mot hovedporten skjonte de Launay at festningen ikke kunne holde. Klikk
+                    Med kanonene rettet mot hovedporten skjønte de Launay at festningen ikke kunne holde. Klikk
                     porten og krev at han overgir seg.
                 </SceneFact>
             )}
@@ -561,8 +561,8 @@ export default function StormingenAvBastillen3D({ onComplete }: MicroGameProps) 
             {phase === 'done' && (
                 <WinScreen title="Bastillen har falt, 14. juli 1789" onReplay={reset}>
                     Du kjente det selv: det var vanlige parisere, ikke kongen, som tok en kongelig festning med
-                    makt. De kom for kruttet, og inne satt det bare sju fanger. Likevel ble dagen enorm, for na
-                    visste folk at makten la hos dem. Den 14. juli er fortsatt Frankrikes nasjonaldag.
+                    makt. De kom for kruttet, og inne satt det bare sju fanger. Likevel ble dagen enorm, for nå
+                    visste folk at makten lå hos dem. Den 14. juli er fortsatt Frankrikes nasjonaldag.
                 </WinScreen>
             )}
         </MicroGameScaffold>

@@ -18,16 +18,16 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill: "Ansiktene i mengden". Dehumanisering -> re-humanisering.
-// En gruppe er gjort om til gra, ansiktslose, like skikkelser med et morkt
+// En gruppe er gjort om til grå, ansiktsløse, like skikkelser med et mørkt
 // propaganda-symbol svevende over seg - "dem". Eleven klikker hver skikkelse,
 // og den blir et unikt menneske: egen farge, ansikt og en liten detalj som
 // skiller den fra de andre. Etter hvert som ansiktene kommer fram, smuldrer
 // propaganda-symbolet, muren mellom "oss" og "dem" synker, og gruppene blandes.
-// Lyspaere: det er vanskelig a hate dem du ser som enkeltmennesker.
+// Lyspære: det er vanskelig å hate dem du ser som enkeltmennesker.
 
 const N = 6;
 
-// Individuelle farger og hudtoner skikkelsene far NaR de blir sett som mennesker.
+// Individuelle farger og hudtoner skikkelsene får når de blir sett som mennesker.
 const INDIVIDUALS: { body: string; skin: string; hat: string }[] = [
     { body: '#3f7cc4', skin: '#e8c39e', hat: '#e2574c' },
     { body: '#c98a2b', skin: '#b6815a', hat: '#5aa469' },
@@ -40,7 +40,7 @@ const INDIVIDUALS: { body: string; skin: string; hat: string }[] = [
 const GREY_BODY = new THREE.Color('#8d949c');
 const GREY_HEAD = new THREE.Color('#9aa0a7');
 
-// Rutenett-posisjon for "dem" (hoyre side), tett pakket og likt.
+// Rutenett-posisjon for "dem" (høyre side), tett pakket og likt.
 const GRID: [number, number][] = [
     [3.0, -1.2],
     [4.4, -1.2],
@@ -50,7 +50,7 @@ const GRID: [number, number][] = [
     [4.4, 1.2],
 ];
 
-// "oss" - allerede menneskelige, varierte skikkelser pa venstre side.
+// "oss" - allerede menneskelige, varierte skikkelser på venstre side.
 const OSS = [
     { pos: [-4.4, 0, -1.0] as [number, number, number], body: '#c4622d', skin: '#e8c39e' },
     { pos: [-3.0, 0, -0.2] as [number, number, number], body: '#3b6e4f', skin: '#caa17a' },
@@ -69,7 +69,7 @@ const AnsikteneIMengden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const fraction = count / N;
 
     const [banner, setBanner] = useState<string | null>(
-        'Klikk de gra skikkelsene og se menneskene bak merkelappen.'
+        'Klikk de grå skikkelsene og se menneskene bak merkelappen.'
     );
 
     const humanize = (i: number) => {
@@ -96,7 +96,7 @@ const AnsikteneIMengden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const reset = () => {
         setHumanized(Array(N).fill(false));
         setWon(false);
-        setBanner('Klikk de gra skikkelsene og se menneskene bak merkelappen.');
+        setBanner('Klikk de grå skikkelsene og se menneskene bak merkelappen.');
     };
 
     return (
@@ -131,8 +131,8 @@ const AnsikteneIMengden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <div className="flex flex-col gap-3">
                     <StepTracker current={count} total={N} />
                     <SceneFact>
-                        Dehumanisering gjor en gruppe om til en ansiktslos masse - "de andre". Det
-                        senker terskelen for hat. Klikk en skikkelse for a se enkeltmennesket bak.
+                        Dehumanisering gjør en gruppe om til en ansiktsløs masse - "de andre". Det
+                        senker terskelen for hat. Klikk en skikkelse for å se enkeltmennesket bak.
                     </SceneFact>
                 </div>
             ) : (
@@ -140,7 +140,7 @@ const AnsikteneIMengden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     Da ansiktene kom fram, ble "de andre" til seks ulike mennesker - hver med sin
                     egen farge og historie. Propagandaen mister grepet, og muren mellom "oss" og
                     "dem" synker. Det er vanskelig a hate dem du ser som enkeltmennesker. Derfor er
-                    det a se hverandre en av de sterkeste motkreftene mot hat og folkemord.
+                    det å se hverandre en av de sterkeste motkreftene mot hat og folkemord.
                 </WinScreen>
             )}
         </MicroGameScaffold>
@@ -176,7 +176,7 @@ function Scene({
             {/* Muren mellom oss og dem - synker etter hvert som ansiktene kommer fram */}
             <Wall fraction={fraction} />
 
-            {/* "dem" - gra, like, ansiktslose til de blir sett */}
+            {/* "dem" - grå, like, ansiktsløse til de blir sett */}
             {GRID.map(([x, z], i) => (
                 <CrowdFigure
                     key={`dem-${i}`}
@@ -192,7 +192,7 @@ function Scene({
             {/* Propaganda-symbolet som svever over "dem" og smuldrer bort */}
             <PropagandaMark fraction={fraction} />
 
-            {/* Sluttburst NaR symbolet smuldrer helt */}
+            {/* Sluttburst når symbolet smuldrer helt */}
             <Burst
                 position={[3.7, 2.2, 0]}
                 trigger={bannerBurst}
@@ -204,7 +204,7 @@ function Scene({
     );
 }
 
-// Lav mur som deler torget. Synker ned i bakken etter hvert som skillet loses opp.
+// Lav mur som deler torget. Synker ned i bakken etter hvert som skillet løses opp.
 function Wall({ fraction }: { fraction: number }) {
     const grp = useRef<THREE.Group>(null);
     const y = useRef(0);
@@ -223,7 +223,7 @@ function Wall({ fraction }: { fraction: number }) {
     );
 }
 
-// Et morkt, kantete propaganda-symbol med et rodt "oye". Krymper og synker
+// Et mørkt, kantete propaganda-symbol med et rødt "øye". Krymper og synker
 // etter hvert som folk blir sett som mennesker.
 function PropagandaMark({ fraction }: { fraction: number }) {
     const grp = useRef<THREE.Group>(null);
@@ -240,12 +240,12 @@ function PropagandaMark({ fraction }: { fraction: number }) {
     });
     return (
         <group ref={grp} position={[3.7, 3.4, 0]}>
-            {/* kantete mork slab */}
+            {/* kantete mørk slab */}
             <mesh castShadow rotation={[0, 0, Math.PI / 4]}>
                 <boxGeometry args={[1.3, 1.3, 0.2]} />
                 <meshStandardMaterial color="#3b3f47" roughness={0.6} />
             </mesh>
-            {/* rodt "oye" - hatets blikk */}
+            {/* rødt "øye" - hatets blikk */}
             <mesh position={[0, 0, 0.18]}>
                 <sphereGeometry args={[0.26, 16, 16]} />
                 <meshStandardMaterial color="#e11d48" emissive="#e11d48" emissiveIntensity={0.7} />
@@ -254,7 +254,7 @@ function PropagandaMark({ fraction }: { fraction: number }) {
     );
 }
 
-// En skikkelse i "dem"-gruppen. Gra og ansiktslos til den blir sett, da
+// En skikkelse i "dem"-gruppen. Grå og ansiktsløs til den blir sett, da
 // lerper kropp/ansikt mot en unik farge, en liten hatt-detalj vokser fram,
 // og den sprer seg litt ut fra den tette, like massen.
 function CrowdFigure({
@@ -281,7 +281,7 @@ function CrowdFigure({
     const targetBody = useMemo(() => new THREE.Color(ind.body), [ind.body]);
     const targetSkin = useMemo(() => new THREE.Color(ind.skin), [ind.skin]);
 
-    // NaR den blir menneske, sprer den seg litt mot venstre (mot "oss") og far
+    // når den blir menneske, sprer den seg litt mot venstre (mot "oss") og får
     // sin egen lille plass - ikke lenger en del av den tette massen.
     const targetX = humanized ? baseX - 1.1 - (index % 2) * 0.2 : baseX;
     const targetZ = humanized ? z * 1.15 : z;
@@ -310,7 +310,7 @@ function CrowdFigure({
                 <sphereGeometry args={[0.13, 12, 12]} />
                 <meshStandardMaterial ref={headMat} color="#9aa0a7" roughness={0.8} />
             </mesh>
-            {/* ansiktslos gra "maske" foran hodet - forsvinner NaR den blir menneske */}
+            {/* ansiktsløs grå "maske" foran hodet - forsvinner når den blir menneske */}
             {!humanized && (
                 <mesh position={[0, 0.66, 0.1]}>
                     <circleGeometry args={[0.1, 16]} />
@@ -320,7 +320,7 @@ function CrowdFigure({
             {/* individuell hatt-detalj - vokser fram */}
             <HatDetail show={humanized} color={ind.hat} />
 
-            {/* Burst NaR den blir sett */}
+            {/* Burst når den blir sett */}
             {humanized && (
                 <Burst
                     position={[0, 0.7, 0]}
@@ -331,7 +331,7 @@ function CrowdFigure({
                 />
             )}
 
-            {/* Klikk-hotspot mens den fortsatt er ansiktslos */}
+            {/* Klikk-hotspot mens den fortsatt er ansiktsløs */}
             {!humanized && (
                 <Hotspot
                     position={[0, 1.15, 0]}
@@ -344,7 +344,7 @@ function CrowdFigure({
     );
 }
 
-// Liten farget detalj (lue) som popper fram NaR skikkelsen blir menneske.
+// Liten farget detalj (lue) som popper fram når skikkelsen blir menneske.
 function HatDetail({ show, color }: { show: boolean; color: string }) {
     const ref = useRef<THREE.Mesh>(null);
     const s = useRef(0);

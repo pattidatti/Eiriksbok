@@ -24,19 +24,19 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill til artikkelen om elektrisiteten. Lyspaere-oeyeblikket er Edisons
-// store innsikt: ei paere alene gir ikke lys. Stroemmen maa ha en HEL vei aa gaa
+// Mikrospill til artikkelen om elektrisiteten. Lyspære-øyeblikket er Edisons
+// store innsikt: ei pære alene gir ikke lys. Strømmen må ha en HEL vei å gå
 // - fra fossen som lager den, gjennom ledningene, helt inn i taket ditt.
-// Eleven bygger hele dette systemet i en norsk dal i kveldsmoerket:
-//   1) slipper vannet loes (slider) saa fossen driver generatoren,
+// Eleven bygger hele dette systemet i en norsk dal i kveldsmørket:
+//   1) slipper vannet løs (slider) så fossen driver generatoren,
 //   2) strekker ledningen fra kraftverket via stolpene til huset (Connector),
-//   3) skrur paa lyset (Hotspot) - og hele dalen lyser opp.
+//   3) skrur på lyset (Hotspot) - og hele dalen lyser opp.
 
 type Phase = 'water' | 'wire' | 'switch' | 'done';
 
-const FLOW_NEEDED = 60; // nok vannfoering til aa drive generatoren
+const FLOW_NEEDED = 60; // nok vannføring til å drive generatoren
 
-// Hvor sterkt huset lyser: bare naar ledningen er koblet, bryteren paa OG det
+// Hvor sterkt huset lyser: bare når ledningen er koblet, bryteren på OG det
 // faktisk renner nok vann. Ren funksjon (driver useFrame trygt fra props).
 function powerLevel(flow: number, connected: boolean, on: boolean): number {
     if (!connected || !on) return 0;
@@ -63,7 +63,7 @@ const Stromveien3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [connected, setConnected] = useState(false);
     const [switchOn, setSwitchOn] = useState(false);
     const [banner, setBanner] = useState<string | null>(
-        'Det er kveld og dalen er mork. Slipp vannet los i fossen.'
+        'Det er kveld og dalen er mørk. Slipp vannet løs i fossen.'
     );
     const [fact, setFact] = useState<string | null>(null);
 
@@ -73,7 +73,7 @@ const Stromveien3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setConnected(false);
         setSwitchOn(false);
         setFact(null);
-        setBanner('Det er kveld og dalen er mork. Slipp vannet los i fossen.');
+        setBanner('Det er kveld og dalen er mørk. Slipp vannet løs i fossen.');
     };
 
     const onFlow = (v: number) => {
@@ -82,7 +82,7 @@ const Stromveien3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             sounds.play('advance');
             setPhase('wire');
             setFact(
-                'Fossen driver generatoren, og na lages det strom. Men pera er fortsatt mork - stommen har ingen vei a ga enda.'
+                'Fossen driver generatoren, og nå lages det strøm. Men pæra er fortsatt mørk - stommen har ingen vei å gå enda.'
             );
             setBanner('Strekk ledningen: klikk punktene etter tur fra kraftverket til huset.');
         }
@@ -94,7 +94,7 @@ const Stromveien3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         sounds.play('advance');
         setPhase('switch');
         setFact(null);
-        setBanner('Ledningen er framme. Klikk bryteren ved huset for a skru pa lyset.');
+        setBanner('Ledningen er framme. Klikk bryteren ved huset for å skru på lyset.');
     };
 
     const flipSwitch = () => {
@@ -110,8 +110,8 @@ const Stromveien3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     return (
         <MicroGameScaffold
-            title="Strommen kommer inn i huset"
-            subtitle="Slipp vannet los, strekk ledningen, og skru pa lyset i den morke dalen"
+            title="Strømmen kommer inn i huset"
+            subtitle="Slipp vannet løs, strekk ledningen, og skru på lyset i den mørke dalen"
             estimatedSeconds={150}
             onRetry={phase !== 'water' || flow > 0 ? reset : undefined}
             canvas={{
@@ -130,12 +130,12 @@ const Stromveien3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     <DataReadout
                         corner="bl"
                         items={[
-                            { label: 'Vannforing', value: Math.round(flow), unit: '%' },
+                            { label: 'Vannføring', value: Math.round(flow), unit: '%' },
                             { label: 'Lys i huset', value: lys, unit: '%' },
                         ]}
                     />
                     <DragHint show={phase === 'water'} corner="bc">
-                        Dra spaken under vinduet for a slippe vannet los
+                        Dra spaken under vinduet for å slippe vannet løs
                     </DragHint>
                 </>
             }
@@ -157,7 +157,7 @@ const Stromveien3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 />
 
                 <SceneSlider
-                    label="Vannforing i fossen"
+                    label="Vannføring i fossen"
                     min={0}
                     max={100}
                     step={1}
@@ -171,21 +171,21 @@ const Stromveien3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 {phase === 'water' && (
                     <p className="text-sm text-slate-600">
                         Norge hadde noe som passet perfekt: masse vann som rant nedover bratte
-                        fjell. Dra spaken opp til full kraft, sa fossen kan drive generatoren i
+                        fjell. Dra spaken opp til full kraft, så fossen kan drive generatoren i
                         kraftverket.
                     </p>
                 )}
 
                 {phase === 'wire' && (
                     <p className="text-sm text-slate-600">
-                        Klikk punktene i scenen etter tur: forst kraftverket, sa de to stolpene, og
+                        Klikk punktene i scenen etter tur: først kraftverket, så de to stolpene, og
                         til slutt huset. Da strekker du ledningen hele veien fram.
                     </p>
                 )}
 
                 {phase === 'switch' && (
                     <p className="text-sm text-slate-600">
-                        Alt henger sammen na. Klikk den lysende ringen ved huset for a skru pa
+                        Alt henger sammen nå. Klikk den lysende ringen ved huset for å skru på
                         bryteren.
                     </p>
                 )}
@@ -194,11 +194,11 @@ const Stromveien3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
                 {phase === 'done' && (
                     <WinScreen title="Lyset kom inn i huset!" onReplay={reset}>
-                        Pera alene gir ikke lys. Strommen ma ha en hel vei a ga - fra fossen som
+                        Pæra alene gir ikke lys. Strømmen må ha en hel vei å gå - fra fossen som
                         lager den, gjennom ledningene, helt inn i taket ditt. Det var nettopp dette
-                        Edison forstod: han bygde ikke bare pera, men hele systemet fra kraftverk til
-                        stikkontakt. Prov a dra vannforingen ned igjen, sa ser du at lyset svekkes -
-                        hele kjeden ma virke samtidig.
+                        Edison forstod: han bygde ikke bare pæra, men hele systemet fra kraftverk til
+                        stikkontakt. Prøv å dra vannføringen ned igjen, så ser du at lyset svekkes -
+                        hele kjeden må virke samtidig.
                     </WinScreen>
                 )}
             </div>
@@ -275,7 +275,7 @@ function Valley({
     );
 }
 
-// Et morkt fjell bak kraftverket.
+// Et mørkt fjell bak kraftverket.
 function Mountain() {
     return (
         <group position={[-9, 0, -1]}>
@@ -291,8 +291,8 @@ function Mountain() {
     );
 }
 
-// Fossen som faller fra fjellet ned i dammen. Bredde, lengde og glod foelger
-// vannfoeringen, og noen draaper renner nedover.
+// Fossen som faller fra fjellet ned i dammen. Bredde, lengde og glød følger
+// vannføringen, og noen dråper renner nedover.
 function Waterfall({ flow }: { flow: number }) {
     const sheet = useRef<THREE.Mesh>(null);
     const sheetMat = useRef<THREE.MeshStandardMaterial>(null);
@@ -337,7 +337,7 @@ function Waterfall({ flow }: { flow: number }) {
                 <circleGeometry args={[1.3, 20]} />
                 <meshStandardMaterial color="#2c6a8c" roughness={0.3} metalness={0.2} />
             </mesh>
-            {/* draaper */}
+            {/* dråper */}
             <group ref={drops}>
                 {Array.from({ length: 6 }).map((_, i) => (
                     <mesh key={i} position={[(i % 3) * 0.28 - 0.28, 3, (i % 2) * 0.1]}>
@@ -356,21 +356,21 @@ function PowerPlant({ flow }: { flow: number }) {
     return (
         <group position={[-6.4, 0, 0.4]}>
             <Building body="#5b6470" roof="#343c47" w={2.6} h={2.2} d={2.4} />
-            {/* generatorhjulet paa fasaden */}
+            {/* generatorhjulet på fasaden */}
             <group position={[0, 1.2, 1.25]}>
                 <Gear radius={0.7} teeth={12} color="#8a929c" spin={f * 4.5} />
                 <mesh position={[0, 0, 0.05]} rotation={[Math.PI / 2, 0, 0]}>
                     <cylinderGeometry args={[0.22, 0.22, 0.5, 16]} />
                     <meshStandardMaterial color="#c9a23a" metalness={0.5} roughness={0.4} />
                 </mesh>
-                {/* liten glod som vokser med kraften */}
+                {/* liten glød som vokser med kraften */}
                 <GeneratorGlow level={f} />
             </group>
         </group>
     );
 }
 
-// Glod rundt generatoren som vokser med vannfoeringen (viser at det lages strom).
+// Glød rundt generatoren som vokser med vannføringen (viser at det lages strøm).
 function GeneratorGlow({ level }: { level: number }) {
     const mat = useRef<THREE.MeshBasicMaterial>(null);
     useFrame((_, dt) => {
@@ -410,7 +410,7 @@ function Pole({ position }: { position: [number, number, number] }) {
     );
 }
 
-// Huset. Vinduene og en innvendig glod tennes naar hele kjeden virker.
+// Huset. Vinduene og en innvendig glød tennes når hele kjeden virker.
 function House({
     flow,
     connected,
@@ -450,7 +450,7 @@ function House({
         <group position={[6.3, 0, 0.4]}>
             <Building body="#7a4a32" roof="#3f2a1d" w={2.4} h={2.0} d={2.2} />
 
-            {/* to vinduer paa fasaden som lyser opp */}
+            {/* to vinduer på fasaden som lyser opp */}
             {[-0.55, 0.55].map((x, i) => (
                 <mesh key={x} position={[x, 1.0, 1.12]}>
                     <planeGeometry args={[0.62, 0.78]} />
@@ -466,10 +466,10 @@ function House({
                 </mesh>
             ))}
 
-            {/* taklampe inni (vises gjennom glod/lys) */}
+            {/* taklampe inni (vises gjennom glød/lys) */}
             <pointLight ref={lamp} position={[0, 1.3, 0]} color="#ffd27a" intensity={0} distance={9} />
 
-            {/* en synlig lyspaere paa veggen ved doera */}
+            {/* en synlig lyspære på veggen ved døra */}
             <group position={[1.0, 1.25, 1.16]}>
                 <mesh>
                     <sphereGeometry args={[0.16, 14, 14]} />
@@ -498,7 +498,7 @@ function House({
     );
 }
 
-// Et gatelys ved huset som ogsaa tennes naar strommen er framme.
+// Et gatelys ved huset som også tennes når strømmen er framme.
 function StreetLamp({
     flow,
     connected,

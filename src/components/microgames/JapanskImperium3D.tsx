@@ -23,18 +23,18 @@ import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen "Japansk imperialisme: Da Japan slo en stormakt".
 //
-// Lyspaera (rett fra artikkelen): Meiji-Japan brukte sin nye industri og haer til aa
-// bli en imperialistisk stormakt. Forst slo det Kina og tok Taiwan (1895). Saa kom
-// det avgjorende: i 1905 senket Japans moderne flaate den russiske i Tsushimastredet.
-// Det var forste gang i moderne tid at et asiatisk land slo en europeisk stormakt.
-// Etterpaa gjorde Japan Korea til koloni (1910). Naboene betalte prisen for framgangen.
+// Lyspæra (rett fra artikkelen): Meiji-Japan brukte sin nye industri og hær til å
+// bli en imperialistisk stormakt. Først slo det Kina og tok Taiwan (1895). Så kom
+// det avgjørende: i 1905 senket Japans moderne flåte den russiske i Tsushimastredet.
+// Det var første gang i moderne tid at et asiatisk land slo en europeisk stormakt.
+// Etterpå gjorde Japan Korea til koloni (1910). Naboene betalte prisen for framgangen.
 //
-// Mekanikk: et stilisert kart over Ost-Asia sett ovenfra. Japans oyer ligger alt
-// roede i ost. Eleven legger nabolandene under Japan i historisk rekkefolge - bare
-// den aktive noden lyser og kan klikkes. Den midterste noden er sjoeslaget ved
-// Tsushima: en russisk flaate ligger i stredet, og eleven klikker for aa ta slaget.
-// Flaaten synker, og forst da aapnes Korea. For hvert land som faller, blir det roedt
-// og en roed imperie-lenke fra Japan lyser opp.
+// Mekanikk: et stilisert kart over Øst-Asia sett ovenfra. Japans øyer ligger alt
+// røde i øst. Eleven legger nabolandene under Japan i historisk rekkefølge - bare
+// den aktive noden lyser og kan klikkes. Den midterste noden er sjøslaget ved
+// Tsushima: en russisk flåte ligger i stredet, og eleven klikker for å ta slaget.
+// Flåten synker, og først da åpnes Korea. For hvert land som faller, blir det rødt
+// og en rød imperie-lenke fra Japan lyser opp.
 
 type NodeKind = 'claim' | 'battle';
 
@@ -44,12 +44,12 @@ interface ImperialNode {
     x: number;
     z: number;
     kind: NodeKind;
-    badge: string; // aarstall paa stedsetiketten
+    badge: string; // årstall på stedsetiketten
     fact: string;
     prompt: string;
 }
 
-// Japans hjemmeoyer (alltid roede). Ligger i ost.
+// Japans hjemmeøyer (alltid røde). Ligger i øst.
 const JAPAN_CENTER: [number, number, number] = [5.4, 0, 1.4];
 const HOME_ISLANDS: { x: number; z: number; r: number }[] = [
     { x: 6.2, z: -2.6, r: 1.5 },
@@ -58,7 +58,7 @@ const HOME_ISLANDS: { x: number; z: number; r: number }[] = [
     { x: 6.6, z: 4.6, r: 1.1 },
 ];
 
-// Nodene eleven legger under Japan, i historisk rekkefolge.
+// Nodene eleven legger under Japan, i historisk rekkefølge.
 const NODES: ImperialNode[] = [
     {
         id: 'taiwan',
@@ -67,8 +67,8 @@ const NODES: ImperialNode[] = [
         z: 6.0,
         kind: 'claim',
         badge: '1895',
-        fact: 'Japan slo det mye storre Kina i krig og tok oya Taiwan. Verden ble overrasket over den nye stormakten.',
-        prompt: 'Klikk Taiwan. Japan vant oya fra Kina i 1895.',
+        fact: 'Japan slo det mye større Kina i krig og tok øya Taiwan. Verden ble overrasket over den nye stormakten.',
+        prompt: 'Klikk Taiwan. Japan vant øya fra Kina i 1895.',
     },
     {
         id: 'tsushima',
@@ -77,8 +77,8 @@ const NODES: ImperialNode[] = [
         z: 3.2,
         kind: 'battle',
         badge: '1905',
-        fact: 'Japans moderne flaate senket nesten hele den russiske flaaten paa en dag. Forste gang et asiatisk land slo en europeisk stormakt.',
-        prompt: 'Klikk den russiske flaaten i stredet og ta sjoeslaget ved Tsushima (1905).',
+        fact: 'Japans moderne flåte senket nesten hele den russiske flåten på en dag. Første gang et asiatisk land slo en europeisk stormakt.',
+        prompt: 'Klikk den russiske flåten i stredet og ta sjøslaget ved Tsushima (1905).',
     },
     {
         id: 'korea',
@@ -118,7 +118,7 @@ const JapanskImperium3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setStep(next);
         if (next >= TOTAL_STEPS) {
             sounds.play('complete');
-            setBanner('Japan var blitt et imperium. En europeisk stormakt var slaatt, og naboland laa under japansk styre.');
+            setBanner('Japan var blitt et imperium. En europeisk stormakt var slått, og naboland lå under japansk styre.');
         } else {
             sounds.play(NODES[step].kind === 'battle' ? 'complete' : 'advance');
             setBanner(NODES[next].prompt);
@@ -145,7 +145,7 @@ const JapanskImperium3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Det japanske imperiet vokser"
-            subtitle="Legg nabolandene under Japan i historisk rekkefolge, og ta det avgjorende sjoeslaget mot Russland."
+            subtitle="Legg nabolandene under Japan i historisk rekkefølge, og ta det avgjørende sjøslaget mot Russland."
             estimatedSeconds={140}
             onRetry={step > 0 ? reset : undefined}
             canvas={{
@@ -158,7 +158,7 @@ const JapanskImperium3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             overlays={
                 <>
                     <SceneBanner message={banner} wide />
-                    <SceneBadge corner="br">{done ? 'Japansk imperium' : 'Ost-Asia, 1895-1910'}</SceneBadge>
+                    <SceneBadge corner="br">{done ? 'Japansk imperium' : 'Øst-Asia, 1895-1910'}</SceneBadge>
                     {!done && (
                         <DataReadout
                             corner="bl"
@@ -235,7 +235,7 @@ function ImperiumMap({
     const prevStep = useRef(step);
     useEffect(() => {
         if (step > prevStep.current) {
-            // Sjoeslaget (node-indeks 1) gir et kraftigere rist.
+            // Sjøslaget (node-indeks 1) gir et kraftigere rist.
             shake(NODES[prevStep.current]?.kind === 'battle' ? 0.9 : 0.4);
         }
         prevStep.current = step;
@@ -258,7 +258,7 @@ function ImperiumMap({
                 />
             ))}
 
-            {/* Japans hjemmeoyer, alltid roede */}
+            {/* Japans hjemmeøyer, alltid røde */}
             {HOME_ISLANDS.map((b, i) => (
                 <Landmass key={`home-${i}`} x={b.x} z={b.z} r={b.r} owned />
             ))}
@@ -302,7 +302,7 @@ function ImperiumMap({
     );
 }
 
-// Ei landmasse: lavpoly kystflekk som farges roed naar den legges under Japan.
+// Ei landmasse: lavpoly kystflekk som farges rød når den legges under Japan.
 const LAND_FREE = new THREE.Color('#5f8a44');
 function Landmass({
     x,
@@ -339,9 +339,9 @@ function Landmass({
     );
 }
 
-// En klikkbar territorie-node: ei landmasse, en flaggstang som heiser det roede
-// Hinomaru-flagget naar landet faller, en pulserende ring naar noden er aktiv, og
-// en stedsetikett med aarstall.
+// En klikkbar territorie-node: ei landmasse, en flaggstang som heiser det røde
+// Hinomaru-flagget når landet faller, en pulserende ring når noden er aktiv, og
+// en stedsetikett med årstall.
 function TerritoryMarker({
     node,
     owned,
@@ -369,8 +369,8 @@ function TerritoryMarker({
     );
 }
 
-// Sjoeslag-noden ved Tsushima: en russisk flaate ligger i stredet mens slaget kan
-// tas, og synker naar Japan vinner. Etterpaa heises det japanske flagget her ogsaa.
+// Sjøslag-noden ved Tsushima: en russisk flåte ligger i stredet mens slaget kan
+// tas, og synker når Japan vinner. Etterpå heises det japanske flagget her også.
 function BattleNode({
     node,
     owned,
@@ -393,7 +393,7 @@ function BattleNode({
 
     return (
         <group position={[node.x, 0, node.z]}>
-            {/* Den russiske flaaten i stredet */}
+            {/* Den russiske flåten i stredet */}
             <group ref={fleet}>
                 {[
                     [-0.7, 0.6],
@@ -404,7 +404,7 @@ function BattleNode({
                 ))}
             </group>
 
-            {/* Naar slaget er vunnet: japansk flagg heises her */}
+            {/* Når slaget er vunnet: japansk flagg heises her */}
             {owned && <SunFlag held />}
 
             {/* Slag-Hotspot mens noden er aktiv */}
@@ -412,7 +412,7 @@ function BattleNode({
                 <Hotspot
                     position={[0, 1.5, 0]}
                     onSelect={onFight}
-                    label="Sjoeslaget ved Tsushima"
+                    label="Sjøslaget ved Tsushima"
                     radius={0.62}
                     color="#e0432f"
                 />
@@ -431,7 +431,7 @@ function BattleNode({
     );
 }
 
-// En liten russisk krigsskip-silhuett med graa skrog og hvit-blaa kommandostripe.
+// En liten russisk krigsskip-silhuett med grå skrog og hvit-blå kommandostripe.
 function RussianShip({ x, z }: { x: number; z: number }) {
     const hull = useRef<THREE.Group>(null);
     useFrame(({ clock }) => {
@@ -456,7 +456,7 @@ function RussianShip({ x, z }: { x: number; z: number }) {
     );
 }
 
-// Det japanske solflagget (Hinomaru) som heiser seg (skala 0 -> 1) naar landet faller.
+// Det japanske solflagget (Hinomaru) som heiser seg (skala 0 -> 1) når landet faller.
 function SunFlag({ held }: { held: boolean }) {
     const grow = useRef<THREE.Group>(null);
     const cloth = useRef<THREE.Mesh>(null);
@@ -510,8 +510,8 @@ function ActiveRing() {
     );
 }
 
-// Ei imperie-lenke fra Japan til et erobret land. Dempet blaa mens fritt, lyser
-// roed naar landet ligger under Japan.
+// Ei imperie-lenke fra Japan til et erobret land. Dempet blå mens fritt, lyser
+// rød når landet ligger under Japan.
 const LINK_RED = new THREE.Color('#d23a3a');
 const LINK_DIM = new THREE.Color('#7fa6c2');
 function ImperialLink({

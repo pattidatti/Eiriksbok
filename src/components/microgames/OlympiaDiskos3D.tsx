@@ -18,18 +18,18 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill: kast diskos paa Olympias hellige stadion. Eleven justerer vinkel
-// og kraft, ser kastebanen tegne seg i sanntid, og kaster. Lyspaera: dette var
-// en ekte idrettskonkurranse ved et hellig sted - og diskosen flyr lengst naar
-// vinkelen er rundt 45 grader. Eleven kjenner baade idretten og fysikken paa
+// Mikrospill: kast diskos på Olympias hellige stadion. Eleven justerer vinkel
+// og kraft, ser kastebanen tegne seg i sanntid, og kaster. Lyspæra: dette var
+// en ekte idrettskonkurranse ved et hellig sted - og diskosen flyr lengst når
+// vinkelen er rundt 45 grader. Eleven kjenner både idretten og fysikken på
 // kroppen.
 
 type Phase = 'aim' | 'flying' | 'won';
 
-const RECORD = 27; // skritt aa slaa
+const RECORD = 27; // skritt å slå
 const K = 33; // skalering: maks ca. 33 skritt ved 45 grader og full kraft
 const SCALE = 0.42; // scene-enheter per skritt
-const START_X = -7; // der kasteren staar
+const START_X = -7; // der kasteren står
 
 // Lengde i skritt ut fra vinkel (grader) og kraft (0-1). Maks ved 45 grader.
 function distanceSkritt(angleDeg: number, power: number): number {
@@ -37,7 +37,7 @@ function distanceSkritt(angleDeg: number, power: number): number {
     return K * power * Math.sin(2 * rad);
 }
 
-// Kastebanens topp-punkt i scene-enheter (hoyere ved bratt vinkel).
+// Kastebanens topp-punkt i scene-enheter (høyere ved bratt vinkel).
 function apex(rangeScene: number, angleDeg: number): number {
     const rad = (angleDeg * Math.PI) / 180;
     return Math.min(rangeScene * 0.25 * Math.tan(rad), 7);
@@ -88,8 +88,8 @@ const OlympiaDiskos3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 sounds.play('incorrect');
                 setBanner(
                     skritt < RECORD - 6
-                        ? 'For kort. Prov mer kraft og en vinkel naer 45 grader.'
-                        : 'Naer! Juster vinkelen mot 45 grader for aa naa lengst.'
+                        ? 'For kort. Prøv mer kraft og en vinkel nær 45 grader.'
+                        : 'Nær! Juster vinkelen mot 45 grader for å nå lengst.'
                 );
                 setPhase('aim');
             }
@@ -98,7 +98,7 @@ const OlympiaDiskos3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     return (
         <MicroGameScaffold
-            title="Diskos paa Olympia"
+            title="Diskos på Olympia"
             subtitle="Still inn vinkel og kraft, og kast diskosen lengre enn rekorden"
             estimatedSeconds={140}
             onRetry={lastDist !== null || phase === 'won' ? reset : undefined}
@@ -163,7 +163,7 @@ const OlympiaDiskos3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     <div className="rounded-xl border border-amber-200 bg-white p-3 sm:flex sm:items-center sm:gap-4">
                         <p className="text-xs text-slate-600 leading-relaxed min-w-0 flex-1">
                             Den stiplede banen viser hvor langt kastet rekker. Diskos var en av fem
-                            grener i femkampen. Slaa rekorden paa {RECORD} skritt for aa vinne
+                            grener i femkampen. Slå rekorden på {RECORD} skritt for å vinne
                             olivenkransen.
                         </p>
                         <button
@@ -176,8 +176,8 @@ const OlympiaDiskos3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         </button>
                     </div>
                     <SceneFact>
-                        Predikert lengde: {Math.round(predicted)} skritt. Prov ulike vinkler - du
-                        oppdager at diskosen flyr lengst naar vinkelen er rundt 45 grader.
+                        Predikert lengde: {Math.round(predicted)} skritt. Prøv ulike vinkler - du
+                        oppdager at diskosen flyr lengst når vinkelen er rundt 45 grader.
                     </SceneFact>
                 </div>
             )}
@@ -188,8 +188,8 @@ const OlympiaDiskos3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         <Trophy className="w-3.5 h-3.5 text-amber-500" />
                     </span>{' '}
                     Du kastet {best} skritt og slo rekorden. Vinneren i Olympia fikk ingen
-                    pengepremie, bare en krans av oliventre (kotinos) og evig aere. Diskosen var en
-                    av fem grener i femkampen, og den flyr lengst naar vinkelen er rundt 45 grader.
+                    pengepremie, bare en krans av oliventre (kotinos) og evig ære. Diskosen var en
+                    av fem grener i femkampen, og den flyr lengst når vinkelen er rundt 45 grader.
                     Lekene samlet greske bystater fra hele Hellas til den samme festen.
                 </WinScreen>
             )}
@@ -218,7 +218,7 @@ function StadiumScene({
     return (
         <group>
             <GroundPlane size={48} depth={30} color="#d8c184" />
-            {/* Lopebane / stadion-stripe i sanden */}
+            {/* Løpebane / stadion-stripe i sanden */}
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[1, 0.01, 0]} receiveShadow>
                 <planeGeometry args={[26, 5]} />
                 <meshStandardMaterial color="#caa85f" roughness={1} />
@@ -239,7 +239,7 @@ function StadiumScene({
             {/* Kasteren (diskobolos) */}
             <Figure position={[START_X, 0, 0.3]} body="#b8742e" skin="#e0b98c" />
 
-            {/* Avstandsmarkorer langs banen */}
+            {/* Avstandsmarkører langs banen */}
             {[10, 20, 30].map((m) => (
                 <group key={m} position={[START_X + m * SCALE, 0, 1.9]}>
                     <mesh position={[0, 0.4, 0]} castShadow>
@@ -297,7 +297,7 @@ function StadiumScene({
     );
 }
 
-// Et enkelt dorisk tempel: trappetrinn, soyler og gavl.
+// Et enkelt dorisk tempel: trappetrinn, søyler og gavl.
 function Temple({ position }: { position: [number, number, number] }) {
     return (
         <group position={position}>
@@ -323,7 +323,7 @@ function Temple({ position }: { position: [number, number, number] }) {
     );
 }
 
-// Diskosen flyr fra kasteren langs den forhaandsviste banen naar throwId endrer
+// Diskosen flyr fra kasteren langs den forhåndsviste banen når throwId endrer
 // seg. All animasjon lever i refs - ingen state settes per frame.
 function Diskos({
     throwId,
@@ -337,7 +337,7 @@ function Diskos({
     const mesh = useRef<THREE.Mesh>(null);
     const t = useRef(1); // 1 = i ro hos kasteren
     const last = useRef(0);
-    // Frys banen ved kast-oyeblikket saa slider-endringer ikke paavirker den.
+    // Frys banen ved kast-øyeblikket så slider-endringer ikke påvirker den.
     const flight = useRef({ rangeScene, peak });
 
     useFrame((_, dt) => {

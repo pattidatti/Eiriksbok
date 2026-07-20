@@ -248,7 +248,7 @@ const CONTINENT_DATA = [
     { pos: latLng(54, 15, GLOBE_R + 0.02), scale: [0.9, 0.35, 0.7] as [number, number, number], color: '#5a8040' },
     // Vest-Asia / Midtøsten
     { pos: latLng(38, 42, GLOBE_R + 0.02), scale: [0.8, 0.32, 0.65] as [number, number, number], color: '#8a9050' },
-    // Ost-Asia
+    // Øst-Asia
     { pos: latLng(35, 105, GLOBE_R + 0.02), scale: [1.1, 0.38, 1.0] as [number, number, number], color: '#7a9050' },
     // Syd-Asia
     { pos: latLng(20, 78, GLOBE_R + 0.02), scale: [0.65, 0.3, 0.7] as [number, number, number], color: '#8a9050' },
@@ -256,7 +256,7 @@ const CONTINENT_DATA = [
     { pos: latLng(5, 20, GLOBE_R + 0.02), scale: [0.85, 0.35, 1.1] as [number, number, number], color: '#b08040' },
     // Nord-Amerika
     { pos: latLng(48, -100, GLOBE_R + 0.02), scale: [1.0, 0.35, 0.9] as [number, number, number], color: '#5a8040' },
-    // Sor-Amerika
+    // Sør-Amerika
     { pos: latLng(-15, -58, GLOBE_R + 0.02), scale: [0.7, 0.32, 0.9] as [number, number, number], color: '#5a8840' },
     // Australia
     { pos: latLng(-27, 134, GLOBE_R + 0.02), scale: [0.65, 0.28, 0.55] as [number, number, number], color: '#a07040' },
@@ -292,7 +292,7 @@ function GlobeGroup({ stage }: { stage: number }) {
                 </mesh>
             ))}
 
-            {/* Varm glod-overflate som oker med stage */}
+            {/* Varm glød-overflate som øker med stage */}
             <mesh scale={1.055}>
                 <sphereGeometry args={[GLOBE_R, 32, 32]} />
                 <meshBasicMaterial
@@ -306,7 +306,7 @@ function GlobeGroup({ stage }: { stage: number }) {
                 />
             </mesh>
 
-            {/* Atmosfære-glod */}
+            {/* Atmosfære-glød */}
             <mesh scale={1.04}>
                 <sphereGeometry args={[GLOBE_R, 32, 32]} />
                 <meshBasicMaterial

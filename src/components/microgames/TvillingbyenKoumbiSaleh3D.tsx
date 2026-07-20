@@ -25,9 +25,9 @@ import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen om Ghana-riket.
 // Hovedstaden Koumbi Saleh var to byer i én: kongebyen El-Ghaba med kongens
-// palass, den hellige lunden og kongegravene, og kjopmannsbyen et stykke unna
-// med moske, marked og handelshus for muslimske kjopmenn fra nord. Eleven drar
-// seks bygninger paa plass i hver sin by. Lyspaera: Ghanas hovedstad var to
+// palass, den hellige lunden og kongegravene, og kjøpmannsbyen et stykke unna
+// med moské, marked og handelshus for muslimske kjøpmenn fra nord. Eleven drar
+// seks bygninger på plass i hver sin by. Lyspæra: Ghanas hovedstad var to
 // verdener side om side - en gammel afrikansk kongeby og en muslimsk
 // handelsby - bundet sammen av gullhandelen. Mekanikken ER poenget: du sorterer
 // de to kulturene i hver sin bydel og ser tvillingbyen reise seg.
@@ -40,7 +40,7 @@ interface BuildingDef {
     id: string;
     name: string;
     town: Town;
-    // Glodende tomt der bygningen skal staa (xz i verden).
+    // Glødende tomt der bygningen skal stå (xz i verden).
     plot: [number, number];
     // Der bygningen starter i forgrunnen.
     start: [number, number];
@@ -51,7 +51,7 @@ const BUILDINGS: BuildingDef[] = [
     { id: 'palass', name: 'Kongens palass', town: 'konge', plot: [-5.4, -2.4], start: [-6.6, 6.4] },
     { id: 'lund', name: 'Den hellige lunden', town: 'konge', plot: [-3.6, -0.6], start: [-4.0, 6.4] },
     { id: 'graver', name: 'Kongegravene', town: 'konge', plot: [-6.6, -0.4], start: [-1.4, 6.6] },
-    // Kjopmannsbyen (til hoyre)
+    // Kjøpmannsbyen (til høyre)
     { id: 'moske', name: 'Moskeen', town: 'kjopmann', plot: [5.4, -2.4], start: [1.4, 6.6] },
     { id: 'marked', name: 'Markedet', town: 'kjopmann', plot: [3.6, -0.6], start: [4.0, 6.4] },
     { id: 'handelshus', name: 'Handelshusene', town: 'kjopmann', plot: [6.6, -0.4], start: [6.6, 6.4] },
@@ -63,7 +63,7 @@ const TvillingbyenKoumbiSaleh3D: React.FC<MicroGameProps> = ({ onComplete }) => 
     const [placed, setPlaced] = useState<boolean[]>(() => Array(TOTAL).fill(false));
     const [burst, setBurst] = useState(0);
     const [banner, setBanner] = useState<string | null>(
-        'Dra hver bygning til den glodende tomten i riktig by.'
+        'Dra hver bygning til den glødende tomten i riktig by.'
     );
 
     const count = placed.filter(Boolean).length;
@@ -85,7 +85,7 @@ const TvillingbyenKoumbiSaleh3D: React.FC<MicroGameProps> = ({ onComplete }) => 
                 setTimeout(() => onComplete({ score: 1, completed: true }), 250);
             } else {
                 sounds.play('correct');
-                const t = BUILDINGS[i].town === 'konge' ? 'kongebyen' : 'kjopmannsbyen';
+                const t = BUILDINGS[i].town === 'konge' ? 'kongebyen' : 'kjøpmannsbyen';
                 setBanner(`${BUILDINGS[i].name} reiser seg i ${t}. Sett neste bygning på plass.`);
             }
             return next;
@@ -94,7 +94,7 @@ const TvillingbyenKoumbiSaleh3D: React.FC<MicroGameProps> = ({ onComplete }) => 
 
     const reset = () => {
         setPlaced(Array(TOTAL).fill(false));
-        setBanner('Dra hver bygning til den glodende tomten i riktig by.');
+        setBanner('Dra hver bygning til den glødende tomten i riktig by.');
     };
 
     const idle = count === 0;
@@ -102,7 +102,7 @@ const TvillingbyenKoumbiSaleh3D: React.FC<MicroGameProps> = ({ onComplete }) => 
     return (
         <MicroGameScaffold
             title="Bygg tvillingbyen Koumbi Saleh"
-            subtitle="Reis Ghana-rikets hovedstad: en kongeby og en kjopmannsby side om side"
+            subtitle="Reis Ghana-rikets hovedstad: en kongeby og en kjøpmannsby side om side"
             estimatedSeconds={140}
             onRetry={count > 0 ? reset : undefined}
             canvas={{
@@ -175,7 +175,7 @@ function TwinCity({
 }) {
     return (
         <group>
-            {/* Sandfarget orkenland */}
+            {/* Sandfarget ørkenland */}
             <GroundPlane size={34} depth={34} color="#dcc187" />
 
             {/* To bydeler markert med svake fargeflater */}
@@ -188,7 +188,7 @@ function TwinCity({
                 <meshStandardMaterial color="#c9bf9a" roughness={1} />
             </mesh>
 
-            {/* Bygninger som allerede er plassert, vises i full storrelse */}
+            {/* Bygninger som allerede er plassert, vises i full størrelse */}
             {BUILDINGS.map((b, i) =>
                 placed[i] ? (
                     <group key={`built-${b.id}`} position={[b.plot[0], 0, b.plot[1]]}>
@@ -197,7 +197,7 @@ function TwinCity({
                 ) : null
             )}
 
-            {/* Glodende tomter som markerer hvor neste bygning skal */}
+            {/* Glødende tomter som markerer hvor neste bygning skal */}
             {BUILDINGS.map((b, i) =>
                 placed[i] ? null : (
                     <PlotMarker
@@ -233,7 +233,7 @@ function TwinCity({
             {/* En liten karavane mellom byene: handelen som binder dem sammen */}
             <Person position={[0, 0, 1.2]} body="#b5894a" skin="#7a4a2c" pose="walk" />
 
-            {/* Feiringspartikler nar en bygning settes paa plass */}
+            {/* Feiringspartikler når en bygning settes på plass */}
             <Burst position={[0, 1.8, -1]} trigger={burst} color="#f2c14e" count={22} spread={2.6} />
         </group>
     );
@@ -315,8 +315,8 @@ function Mound({
     );
 }
 
-// Pulserende ring som markerer en ledig tomt. Gronn i kongebyen, gull i
-// kjopmannsbyen, saa eleven ser hvilken kultur som hoerer hjemme hvor.
+// Pulserende ring som markerer en ledig tomt. Grønn i kongebyen, gull i
+// kjøpmannsbyen, så eleven ser hvilken kultur som hører hjemme hvor.
 function PlotMarker({
     position,
     town,

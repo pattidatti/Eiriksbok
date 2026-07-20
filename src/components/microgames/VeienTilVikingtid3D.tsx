@@ -8,22 +8,22 @@ import { MicroCanvas, Burst } from './kit';
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Veien til vikingtiden - et fritt 3D-mikrospill. Dette er IKKE et objekt aa
+// Veien til vikingtiden - et fritt 3D-mikrospill. Dette er IKKE et objekt å
 // inspisere, men en levende norsk kyst som eleven forvandler fra sammenbrudd til
-// vikingtid. Tre grep driver de stille arhundrene (550-793) framover: folk vender
-// tilbake, hovdingmakten reiser seg, og til slutt far robaaten seil. Lyspaera kommer
+// vikingtid. Tre grep driver de stille århundrene (550-793) framover: folk vender
+// tilbake, høvdingmakten reiser seg, og til slutt får robåten seil. Lyspæra kommer
 // i siste steg: vikingtiden braket ikke ut fra ingenting. Den ble bygd stein for stein
-// gjennom de stille arhundrene - og seilet var det som til slutt aapnet havet.
+// gjennom de stille århundrene - og seilet var det som til slutt åpnet havet.
 //
-// Mekanikken: eleven trykker tre kort i rekkefolge (Chromebook-vennlig, ingen
-// fikkel-klikk). Scenen leser bare `stage` (0-3) og demper alt mykt mot maal
-// utledet av stage, slik at hele kysten animeres naar stage oker.
+// Mekanikken: eleven trykker tre kort i rekkefølge (Chromebook-vennlig, ingen
+// fikkel-klikk). Scenen leser bare `stage` (0-3) og demper alt mykt mot mål
+// utledet av stage, slik at hele kysten animeres når stage øker.
 
 function damp(cur: number, target: number, dt: number, speed: number) {
     return cur + (target - cur) * Math.min(1, dt * speed);
 }
 
-// Enkel, ren pseudo-random paa modulnivaa (ikke muter let inni useMemo).
+// Enkel, ren pseudo-random på modulnivå (ikke muter let inni useMemo).
 function rng(seed: number) {
     const x = Math.sin(seed * 127.1) * 43758.5453;
     return x - Math.floor(x);
@@ -285,7 +285,7 @@ const VeienTilVikingtid3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 };
 
 // ============================================================
-//  3D-SCENEN - alt utledes av `stage` og dempes mykt mot maal.
+//  3D-SCENEN - alt utledes av `stage` og dempes mykt mot mål.
 // ============================================================
 
 function Coast({ stage }: { stage: number }) {
@@ -305,7 +305,7 @@ function Coast({ stage }: { stage: number }) {
     );
 }
 
-// --- Bakke: brun og karrig ved sammenbrudd, gronnere naar folk vender tilbake ---
+// --- Bakke: brun og karrig ved sammenbrudd, grønnere når folk vender tilbake ---
 const DEAD = new THREE.Color('#9c8f5f');
 const LIVE = new THREE.Color('#6f9a45');
 function Ground({ stage }: { stage: number }) {
@@ -346,7 +346,7 @@ function Sea() {
     );
 }
 
-// --- Bygdeborg-ruin pa haugen: forfalt steinmur som alltid staar der ---
+// --- Bygdeborg-ruin på haugen: forfalt steinmur som alltid står der ---
 function BorgRuin() {
     const blocks = useMemo(() => {
         const out: { pos: [number, number, number]; s: [number, number, number]; rot: number }[] = [];
@@ -379,7 +379,7 @@ function BorgRuin() {
     );
 }
 
-// --- Akeren: rutenett som glir fra brun/overgrodd til gront salgsjordbruk ---
+// --- Åkeren: rutenett som glir fra brun/overgrodd til grønt salgsjordbruk ---
 const FIELD_DEAD = new THREE.Color('#8a7d4e');
 const FIELD_LIVE = new THREE.Color('#8fae4a');
 function Field({ stage }: { stage: number }) {
@@ -424,7 +424,7 @@ function FieldTile({ x, z, stage, seed }: { x: number; z: number; stage: number;
     );
 }
 
-// --- Gaarden: graa og forfallen ved sammenbrudd, reparert med roykpipe naar folk vender tilbake ---
+// --- Gården: grå og forfallen ved sammenbrudd, reparert med røykpipe når folk vender tilbake ---
 const ROOF_DEAD = new THREE.Color('#6b6656');
 const ROOF_LIVE = new THREE.Color('#5c3326');
 const WALL_DEAD = new THREE.Color('#8d8676');
@@ -437,7 +437,7 @@ function Farm({ stage }: { stage: number }) {
         if (wallRef.current) wallRef.current.color.lerp(stage >= 1 ? WALL_LIVE : WALL_DEAD, Math.min(1, dt * 1.8));
         if (roofRef.current) roofRef.current.color.lerp(stage >= 1 ? ROOF_LIVE : ROOF_DEAD, Math.min(1, dt * 1.8));
         if (tiltRef.current) {
-            // Litt skjevt/forfallent ved stage 0, retter seg opp naar bygda vender tilbake
+            // Litt skjevt/forfallent ved stage 0, retter seg opp når bygda vender tilbake
             tiltRef.current.rotation.z = damp(tiltRef.current.rotation.z, stage >= 1 ? 0 : 0.09, dt, 2.5);
         }
     });
@@ -453,7 +453,7 @@ function Farm({ stage }: { stage: number }) {
                     <meshStandardMaterial ref={roofRef} color={ROOF_DEAD} roughness={0.95} />
                 </mesh>
             </group>
-            {/* roykpipe + roey naar gaarden er bebodd */}
+            {/* røykpipe + røyk når gården er bebodd */}
             <ChimneySmoke show={stage >= 1} />
         </group>
     );
@@ -494,7 +494,7 @@ function ChimneySmoke({ show }: { show: boolean }) {
     );
 }
 
-// --- Hovdinghallen: reiser seg ved stage 2 ---
+// --- Høvdinghallen: reiser seg ved stage 2 ---
 function Hall({ stage }: { stage: number }) {
     const group = useRef<THREE.Group>(null);
     const rise = useRef(0);
@@ -549,7 +549,7 @@ function MarketStall({ stage }: { stage: number }) {
                     <meshStandardMaterial color="#6b4a2a" roughness={0.9} />
                 </mesh>
             ))}
-            {/* fargede handelsvarer paa bordet */}
+            {/* fargede handelsvarer på bordet */}
             {[['#c94f3d', -0.5], ['#d8b24a', 0], ['#3f6b7a', 0.5]].map((v, i) => (
                 <mesh key={i} position={[v[1] as number, 0.68, 0]} castShadow>
                     <boxGeometry args={[0.28, 0.22, 0.5]} />
@@ -565,8 +565,8 @@ function MarketStall({ stage }: { stage: number }) {
     );
 }
 
-// --- Nybyggere: dukker opp naar folk vender tilbake, flere ved handel,
-//     og samler seg ved baaten ved stage 3 ---
+// --- Nybyggere: dukker opp når folk vender tilbake, flere ved handel,
+//     og samler seg ved båten ved stage 3 ---
 const PEOPLE = [
     { home: [4, 5] as [number, number], from: 1 },
     { home: [6, 3] as [number, number], from: 1 },
@@ -603,11 +603,11 @@ function Settler({
     useFrame(({ clock }, dt) => {
         if (!group.current) return;
         const t = clock.getElapsedTime();
-        // dukk opp naar stage naar `from`
+        // dukk opp når stage når `from`
         appear.current = damp(appear.current, stage >= from ? 1 : 0, dt, 2.2);
         group.current.scale.setScalar(appear.current);
         group.current.visible = appear.current > 0.03;
-        // vandre mot baaten ved stage 3
+        // vandre mot båten ved stage 3
         walk.current = damp(walk.current, stage >= 3 ? 1 : 0, dt, 0.5);
         const w = walk.current;
         const x = home[0] + (BOAT_XZ[0] - home[0]) * w;
@@ -634,7 +634,7 @@ function Settler({
     );
 }
 
-// --- Baaten: robaat pa stranda, far mast og seil ved stage 3 og seiler ut ---
+// --- Båten: robåt på stranda, får mast og seil ved stage 3 og seiler ut ---
 function VikingBoat({ stage }: { stage: number }) {
     const group = useRef<THREE.Group>(null);
     const sailRise = useRef(0);
@@ -646,7 +646,7 @@ function VikingBoat({ stage }: { stage: number }) {
         if (!group.current) return;
         // seilet reiser seg ved stage 3
         sailRise.current = damp(sailRise.current, stage >= 3 ? 1 : 0, dt, 1.6);
-        // vent til nybyggerne er om bord for baaten legger ut
+        // vent til nybyggerne er om bord for båten legger ut
         if (stage >= 3) wait.current += dt;
         const leaving = stage >= 3 && wait.current > 2.2;
         departure.current = damp(departure.current, leaving ? 1 : 0, dt, 0.4);
@@ -669,7 +669,7 @@ function VikingBoat({ stage }: { stage: number }) {
                     <meshStandardMaterial color="#4a2f1c" roughness={0.85} />
                 </mesh>
             ))}
-            {/* aarer langs siden (alltid der - det er en robaat) */}
+            {/* årer langs siden (alltid der - det er en robåt) */}
             {[-0.7, 0, 0.7].map((x, i) => (
                 <mesh key={i} position={[x, 0.35, 0.55]} rotation={[Math.PI / 2.4, 0, 0]}>
                     <cylinderGeometry args={[0.03, 0.03, 0.9, 5]} />
@@ -697,12 +697,12 @@ function Sail({ rise }: { rise: React.MutableRefObject<number> }) {
                 <cylinderGeometry args={[0.06, 0.06, 1.8, 6]} />
                 <meshStandardMaterial color="#3a2a1a" roughness={0.9} />
             </mesh>
-            {/* raa (tverrstang) */}
+            {/* rå (tverrstang) */}
             <mesh position={[0, 1.85, 0]} rotation={[Math.PI / 2, 0, 0]}>
                 <cylinderGeometry args={[0.04, 0.04, 1.5, 6]} />
                 <meshStandardMaterial color="#3a2a1a" roughness={0.9} />
             </mesh>
-            {/* seilet, med rode striper */}
+            {/* seilet, med røde striper */}
             <mesh position={[0, 1.25, 0]}>
                 <planeGeometry args={[1.5, 1.2]} />
                 <meshStandardMaterial color="#efe7d6" side={THREE.DoubleSide} roughness={0.9} />

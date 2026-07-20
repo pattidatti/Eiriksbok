@@ -23,16 +23,16 @@ import type { MicroGameProps } from './types';
 
 // Mikrospill til "Mansa Musa og Mali-riket".
 //
-// Lyspaere: Mali laa midt paa veien mellom salt i nord og gull i soer. I soer var
-// salt saa sjeldent at det ble byttet mot like mye gull. Eleven drar en saltlast
-// soervover over Sahara til gullfeltene (der den blir til gull), og drar saa gullet
+// Lyspære: Mali lå midt på veien mellom salt i nord og gull i sør. I sør var
+// salt så sjeldent at det ble byttet mot like mye gull. Eleven drar en saltlast
+// sørover over Sahara til gullfeltene (der den blir til gull), og drar så gullet
 // nordover. Hver gang en last passerer Timbuktu, fylles Malis skattkammer. Mekanikken
 // ER poenget: den som kontrollerte veien mellom salt og gull, ble styrtrik.
 //
 // Mekanikk: Draggable (transport + forvandling). Eleven drar en last langs orkenen og
-// slipper den i maalsonen; lasten forvandles og Malis skatt vokser.
+// slipper den i målsonen; lasten forvandles og Malis skatt vokser.
 
-// Sonene langs ruten (z-akse: nord = negativ, soer = positiv).
+// Sonene langs ruten (z-akse: nord = negativ, sør = positiv).
 const NORTH_Z = -7;
 const SOUTH_Z = 7;
 const SNAP_RADIUS = 3.2;
@@ -184,7 +184,7 @@ function SaharaScene({
             <Hill position={[-11, -0.6, 6]} radius={5.5} height={1.6} color="#cab26f" seed={5} />
             <Hill position={[12, -0.6, 8]} radius={5} height={2.0} color="#d6c084" seed={9} />
 
-            {/* Niger-elva ved Timbuktu (blaa stripe gjennom midten) */}
+            {/* Niger-elva ved Timbuktu (blå stripe gjennom midten) */}
             <mesh position={[0, 0.02, 2.2]} rotation={[-Math.PI / 2, 0, 0.06]} receiveShadow>
                 <planeGeometry args={[30, 2.4]} />
                 <meshStandardMaterial color="#3f88a8" roughness={0.3} metalness={0.15} emissive="#1e4d6b" emissiveIntensity={0.18} />
@@ -203,7 +203,7 @@ function SaharaScene({
             <Animal position={[3, 0, 1]} rotation={[0, -0.6, 0]} kind="ox" color="#b9935a" />
             <Person position={[2.2, 0, 0.4]} rotation={[0, -0.5, 0]} scale={0.9} pose="idle" skin="#8a5a33" body="#e8e0cf" legs="#5a4632" hat="hood" />
 
-            {/* LAST 1: saltet (dras soervover) */}
+            {/* LAST 1: saltet (dras sørover) */}
             {!saltDelivered && (
                 <Draggable
                     position={[0, 0.45, NORTH_Z]}
@@ -247,7 +247,7 @@ function SaharaScene({
             {/* Feiringspartikler ved levering */}
             <Burst position={burstPos} trigger={burst} color="#ffd34d" count={26} spread={3.0} />
 
-            {/* Lett orkenstoev i lufta */}
+            {/* Lett orkenstøv i lufta */}
             <Particles preset="dust" />
         </group>
     );
@@ -271,7 +271,7 @@ function SaltMine() {
     );
 }
 
-// Gullfeltene i soer: gyllen flekk som gloeder sterkere etter levering + gullknuter.
+// Gullfeltene i sør: gyllen flekk som gløder sterkere etter levering + gullknuter.
 function GoldField({ glow }: { glow: boolean }) {
     const mat = useRef<THREE.MeshStandardMaterial>(null);
     useFrame((_, dt) => {
@@ -343,7 +343,7 @@ function Timbuktu({ deliveries }: { deliveries: number }) {
     );
 }
 
-// Saltlasten: en hvit blokk med tau, baaret av en liten kamel-silhuett.
+// Saltlasten: en hvit blokk med tau, båret av en liten kamel-silhuett.
 function SaltLoad() {
     return (
         <group>

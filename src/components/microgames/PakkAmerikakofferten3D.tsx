@@ -13,11 +13,11 @@ import type { MicroGameProps } from './types';
 // alle du var glad i - måtte bli igjen. Eleven kjenner på kroppen hvor lite plass
 // det var, og hvor vondt det var å velge.
 //
-// Mekanikk (sorter-i-3D / velg-under-knapphet): Atte eiendeler ligger rundt en
-// apen amerikakoffert i ei norsk stue pa 1880-tallet. Kofferten har plass til
-// bare fem. Eleven klikker en gjenstand for a pakke den (den glir ned i
-// kofferten), og klikker igjen for a ta den opp. Nar fem er pakket, kan kofferten
-// lukkes - og resten blir staende igjen.
+// Mekanikk (sorter-i-3D / velg-under-knapphet): Åtte eiendeler ligger rundt en
+// åpen amerikakoffert i ei norsk stue på 1880-tallet. Kofferten har plass til
+// bare fem. Eleven klikker en gjenstand for å pakke den (den glir ned i
+// kofferten), og klikker igjen for å ta den opp. Når fem er pakket, kan kofferten
+// lukkes - og resten blir stående igjen.
 
 const CAPACITY = 5;
 
@@ -26,9 +26,9 @@ interface Item {
     name: string;
     why: string;
     color: string;
-    // Plass pa bordet rundt kofferten.
+    // Plass på bordet rundt kofferten.
     shelf: [number, number, number];
-    // Form pa gjenstanden.
+    // Form på gjenstanden.
     shape: 'book' | 'frame' | 'brooch' | 'tools' | 'blanket' | 'sack' | 'wheel' | 'toy';
 }
 
@@ -207,7 +207,7 @@ function PackScene({
     );
 }
 
-// Stuegulv og bakvegg i tommer.
+// Stuegulv og bakvegg i tømmer.
 function Room() {
     return (
         <group>
@@ -219,7 +219,7 @@ function Room() {
                 <boxGeometry args={[26, 7, 0.4]} />
                 <meshStandardMaterial color="#b8966a" roughness={0.95} />
             </mesh>
-            {/* Tommerstokk-striper pa veggen */}
+            {/* Tømmerstokk-striper på veggen */}
             {[0.7, 1.7, 2.7, 3.7, 4.7].map((y) => (
                 <mesh key={y} position={[0, y, -4.0]}>
                     <boxGeometry args={[26, 0.05, 0.05]} />
@@ -235,7 +235,7 @@ function Room() {
     );
 }
 
-// Bordet gjenstandene ligger pa.
+// Bordet gjenstandene ligger på.
 function Table() {
     return (
         <group position={[0, 0, -1.1]}>
@@ -253,12 +253,12 @@ function Table() {
     );
 }
 
-// Amerikakofferten - apen kasse med lokk som lukkes nar reisen starter.
+// Amerikakofferten - åpen kasse med lokk som lukkes når reisen starter.
 function Trunk({ closed, fill }: { closed: boolean; fill: number }) {
     const lid = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
         if (!lid.current) return;
-        // Apent lokk star bakover (~ -2.0 rad), lukket lokk ligger flatt (0).
+        // Åpent lokk står bakover (~ -2.0 rad), lukket lokk ligger flatt (0).
         const target = closed ? 0 : -2.0;
         lid.current.rotation.x = damp(lid.current.rotation.x, target, dt, 4);
     });
@@ -269,7 +269,7 @@ function Trunk({ closed, fill }: { closed: boolean; fill: number }) {
                 <boxGeometry args={[3.4, 1.1, 2.2]} />
                 <meshStandardMaterial color="#6b4326" roughness={0.85} />
             </mesh>
-            {/* Innside (morkere) */}
+            {/* Innside (mørkere) */}
             <mesh position={[0, 0.75, 0]}>
                 <boxGeometry args={[3.0, 0.9, 1.8]} />
                 <meshStandardMaterial color="#3a2616" roughness={1} />
@@ -288,7 +288,7 @@ function Trunk({ closed, fill }: { closed: boolean; fill: number }) {
                     <meshStandardMaterial color="#5c3a22" roughness={0.85} />
                 </mesh>
             </group>
-            {/* Liten merkelapp foran nar noe er pakket */}
+            {/* Liten merkelapp foran når noe er pakket */}
             {fill > 0 && (
                 <mesh position={[0, 0.55, 1.13]}>
                     <planeGeometry args={[0.8, 0.5]} />
@@ -450,7 +450,7 @@ function ItemMesh({
     }
 }
 
-// Foreldrene som blir igjen - to figurer ved doroapningen i bakgrunnen.
+// Foreldrene som blir igjen - to figurer ved døråpningen i bakgrunnen.
 function Parents() {
     const group = useRef<THREE.Group>(null);
     useFrame(({ clock }) => {

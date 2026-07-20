@@ -22,13 +22,13 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill: Gutenbergs presse. Eleven kjenner kjerneideen fra artikkelen paa
-// kroppen: de loese typene settes EN gang, og deretter kan samme side svertes og
-// trykkes igjen og igjen, lynraskt. Mens munken i hjoernet fortsatt sliter med
-// sin foerste haandkopierte side, vokser pressens bunke til mange sider.
-//   1) Sett typene  - klikk metalbokstavene i rett rekkefoelge inn i setterammen
+// Mikrospill: Gutenbergs presse. Eleven kjenner kjerneideen fra artikkelen på
+// kroppen: de løse typene settes EN gang, og deretter kan samme side svertes og
+// trykkes igjen og igjen, lynraskt. Mens munken i hjørnet fortsatt sliter med
+// sin første håndkopierte side, vokser pressens bunke til mange sider.
+//   1) Sett typene  - klikk metalbokstavene i rett rekkefølge inn i setterammen
 //   2) Sverte typene - klikk de to svarte sverteballene
-//   3) Trekk pressen - dra spaken ned saa platen presser papiret mot typene
+//   3) Trekk pressen - dra spaken ned så platen presser papiret mot typene
 //   4) Masseproduser - trykk side etter side og se bunken vokse
 
 type Phase = 'compose' | 'ink' | 'press' | 'mass' | 'done';
@@ -36,7 +36,7 @@ type Phase = 'compose' | 'ink' | 'press' | 'mass' | 'done';
 const WORD = 'BIBEL';
 const TARGET_PAGES = 6;
 
-// Loese typer i stokket rekkefoelge paa settebordet. Fast (ingen RNG) - hver
+// Løse typer i stokket rekkefølge på settebordet. Fast (ingen RNG) - hver
 // brikke har egen id slik at de to B-ene kan skilles fra hverandre.
 const TILES: { id: number; ch: string; pos: [number, number, number] }[] = [
     { id: 0, ch: 'L', pos: [-5.3, 1.05, 1.7] },
@@ -46,7 +46,7 @@ const TILES: { id: number; ch: string; pos: [number, number, number] }[] = [
     { id: 4, ch: 'B', pos: [-4.2, 1.05, 1.2] },
 ];
 
-// Plass i setterammen for hver bokstav i ordet (langs x, paa pressens bed).
+// Plass i setterammen for hver bokstav i ordet (langs x, på pressens bed).
 function slotX(i: number) {
     return -0.8 + i * 0.4;
 }
@@ -56,11 +56,11 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [phase, setPhase] = useState<Phase>('compose');
     const [placedIds, setPlacedIds] = useState<number[]>([]);
     const [inkDabs, setInkDabs] = useState(0);
-    const [pull, setPull] = useState(0); // 0-100 spak-verdi (foerste trykk)
+    const [pull, setPull] = useState(0); // 0-100 spak-verdi (første trykk)
     const [pages, setPages] = useState(0);
     const [massPressing, setMassPressing] = useState(false);
     const [banner, setBanner] = useState<string | null>(
-        'Sett de loese typene: klikk metalbokstavene i rett rekkefoelge.'
+        'Sett de løse typene: klikk metalbokstavene i rett rekkefølge.'
     );
     const [burst, setBurst] = useState(0);
 
@@ -75,7 +75,7 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setPull(0);
         setPages(0);
         setMassPressing(false);
-        setBanner('Sett de loese typene: klikk metalbokstavene i rett rekkefoelge.');
+        setBanner('Sett de løse typene: klikk metalbokstavene i rett rekkefølge.');
     };
 
     // Klikk en bokstavbrikke. Bare den som matcher neste bokstav teller.
@@ -83,7 +83,7 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         if (phase !== 'compose') return;
         if (ch !== expectedChar) {
             sounds.play('incorrect');
-            setBanner('Sett bokstavene i rekkefoelge: B - I - B - E - L.');
+            setBanner('Sett bokstavene i rekkefølge: B - I - B - E - L.');
             return;
         }
         const next = [...placedIds, id];
@@ -91,7 +91,7 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         if (next.length >= WORD.length) {
             sounds.play('advance');
             setPhase('ink');
-            setBanner('Typene staar i rammen. Klikk sverteballene for aa farge dem.');
+            setBanner('Typene står i rammen. Klikk sverteballene for å farge dem.');
         } else {
             sounds.play('pick');
         }
@@ -104,7 +104,7 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         if (next >= 2) {
             sounds.play('advance');
             setPhase('press');
-            setBanner('Legg papiret paa og dra spaken ned for aa trykke foerste side.');
+            setBanner('Legg papiret på og dra spaken ned for å trykke første side.');
         } else {
             sounds.play('correct');
         }
@@ -119,7 +119,7 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             setBurst((b) => b + 1);
             setPull(0);
             setPhase('mass');
-            setBanner('Foerste side er trykt! Typene staar fortsatt. Trykk en side til.');
+            setBanner('Første side er trykt! Typene står fortsatt. Trykk en side til.');
         }
     };
 
@@ -178,7 +178,7 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         />
                     )}
                     <DragHint show={idle} corner="bc">
-                        Klikk bokstaven B for aa begynne
+                        Klikk bokstaven B for å begynne
                     </DragHint>
                 </>
             }
@@ -202,8 +202,8 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <div className="flex flex-col gap-2.5">
                     <StepTracker current={placedCount} total={WORD.length} />
                     <p className="text-sm text-slate-600">
-                        Gutenberg laget bokstavene som loese metalbiter. Klikk dem i rett
-                        rekkefoelge og bygg ordet i rammen: B - I - B - E - L.
+                        Gutenberg laget bokstavene som løse metalbiter. Klikk dem i rett
+                        rekkefølge og bygg ordet i rammen: B - I - B - E - L.
                     </p>
                 </div>
             )}
@@ -212,7 +212,7 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <div className="flex flex-col gap-2.5">
                     <StepTracker current={inkDabs} total={2} />
                     <p className="text-sm text-slate-600">
-                        Klikk de to svarte sverteballene for aa rulle oljebasert trykksverte utover
+                        Klikk de to svarte sverteballene for å rulle oljebasert trykksverte utover
                         typene.
                     </p>
                 </div>
@@ -229,8 +229,8 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         valueLabel={(v) => (v >= 98 ? 'Trykk!' : `${Math.round(v)} %`)}
                     />
                     <p className="text-sm text-slate-600">
-                        Den store treskruen presser platen mot papiret. Dra spaken helt ut for aa
-                        trykke den foerste siden.
+                        Den store treskruen presser platen mot papiret. Dra spaken helt ut for å
+                        trykke den første siden.
                     </p>
                 </div>
             )}
@@ -248,17 +248,17 @@ const GutenbergPresse3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                                 Trykk en side til ({pages} av {TARGET_PAGES})
                             </button>
                             <SceneFact>
-                                Typene staar fortsatt i rammen. Mens munken bruker et helt aar paa
+                                Typene står fortsatt i rammen. Mens munken bruker et helt år på
                                 en bibel, spytter pressen ut side etter side - samme tekst, helt
-                                lik, gang paa gang.
+                                lik, gang på gang.
                             </SceneFact>
                         </>
                     ) : (
                         <WinScreen title="Pressen ruller!" onReplay={reset}>
-                            Du satte typene en eneste gang, og kunne saa trykke den samme siden om
-                            og om igjen. Det som tok en munk et helt aar, klarte pressen paa
-                            minutter. Boeker ble billige, og innen aar 1500 fantes det over 20
-                            millioner av dem i Europa. Naa kunne ingen konge eller kirke stoppe en
+                            Du satte typene en eneste gang, og kunne så trykke den samme siden om
+                            og om igjen. Det som tok en munk et helt år, klarte pressen på
+                            minutter. Bøker ble billige, og innen år 1500 fantes det over 20
+                            millioner av dem i Europa. Nå kunne ingen konge eller kirke stoppe en
                             idé som var trykt i tusen eksemplarer.
                         </WinScreen>
                     )}
@@ -309,7 +309,7 @@ function Workshop({
                 burst={burst}
             />
 
-            {/* Settebordet med loese typer til venstre */}
+            {/* Settebordet med løse typer til venstre */}
             <Table position={[-4.1, 0, 1.8]} width={3.4} depth={2} />
             {phase === 'compose' &&
                 TILES.filter((t) => !placedIds.includes(t.id)).map((t) => (
@@ -330,11 +330,11 @@ function Workshop({
                 </>
             )}
 
-            {/* Utbunke til hoeyre - vokser med antall trykte sider */}
+            {/* Utbunke til høyre - vokser med antall trykte sider */}
             <Table position={[4.2, 0, 1.6]} width={2.4} depth={2} />
             <PaperStack position={[4.2, 0.92, 1.6]} count={pages} />
 
-            {/* Munken i bakgrunnen, fortsatt paa sin ene haandkopierte side */}
+            {/* Munken i bakgrunnen, fortsatt på sin ene håndkopierte side */}
             <Monk position={[0, 0, -4.2]} />
         </group>
     );
@@ -371,7 +371,7 @@ function Press({
 
     return (
         <group>
-            {/* Bed/bord pressen staar paa */}
+            {/* Bed/bord pressen står på */}
             <Table position={[0, 0, 0]} width={3} depth={2.2} />
 
             {/* To stolper */}
@@ -408,7 +408,7 @@ function Press({
                 </mesh>
             </group>
 
-            {/* Setterammen paa bedet med de satte typene */}
+            {/* Setterammen på bedet med de satte typene */}
             <group position={[0, 0.95, 0.05]}>
                 <mesh position={[0, -0.04, 0]} receiveShadow>
                     <boxGeometry args={[2.6, 0.08, 1.4]} />
@@ -458,7 +458,7 @@ function SetType({ x, ch, inked }: { x: number; ch: string; inked: boolean }) {
     );
 }
 
-// En loes type paa settebordet - klikkbar.
+// En løs type på settebordet - klikkbar.
 function LetterTile({
     position,
     ch,
@@ -507,7 +507,7 @@ function LetterTile({
     );
 }
 
-// Sverteball (dauber) - laerpute paa et haandtak.
+// Sverteball (dauber) - lærpute på et håndtak.
 function InkBall({
     position,
     used,
@@ -527,7 +527,7 @@ function InkBall({
         >
             {(s) => (
                 <group>
-                    {/* haandtak */}
+                    {/* håndtak */}
                     <mesh position={[0, 0.32, 0]} castShadow>
                         <cylinderGeometry args={[0.05, 0.06, 0.6, 8]} />
                         <meshStandardMaterial color="#7a5535" roughness={0.9} />
@@ -597,7 +597,7 @@ function PaperStack({ position, count }: { position: [number, number, number]; c
     );
 }
 
-// Munken ved pulten - fortsatt paa sin ene haandkopierte side.
+// Munken ved pulten - fortsatt på sin ene håndkopierte side.
 function Monk({ position }: { position: [number, number, number] }) {
     return (
         <group position={position}>

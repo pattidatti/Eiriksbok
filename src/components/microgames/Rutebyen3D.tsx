@@ -21,18 +21,18 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen om Indusdalen (Mohenjo-daro).
-// Lyspaere: Mohenjo-daro var en av verdens forste PLANLAGTE byer. Gatene gikk
-// rett nord-sor og ost-vest som et sjakkbrett, husene var bygd i samme stil, og
-// under hver gate lop et lukket avlopssystem. Eleven kjenner dette paa kroppen
-// i tre steg: forst dra de skjeve husene inn paa rutenettet saa rette gater
-// vokser fram, sa legg de lukkede avlopene under gatene, og reis til slutt Det
+// Lyspære: Mohenjo-daro var en av verdens første PLANLAGTE byer. Gatene gikk
+// rett nord-sør og øst-vest som et sjakkbrett, husene var bygd i samme stil, og
+// under hver gate løp et lukket avløpssystem. Eleven kjenner dette på kroppen
+// i tre steg: først dra de skjeve husene inn på rutenettet så rette gater
+// vokser fram, så legg de lukkede avløpene under gatene, og reis til slutt Det
 // store badet i sentrum. Mekanikken ER poenget: orden kom fra plan, ikke tilfeldighet.
 
 const T = THEMES.egypt;
 const HOUSE_TOTAL = 5;
 const DRAIN_TOTAL = 4;
 
-// Rutenettet: hver husplass har sin egen rute, saa to draggables aldri
+// Rutenettet: hver husplass har sin egen rute, så to draggables aldri
 // kjemper om samme felt. Sentrum (0,0) er reservert for Det store badet.
 const SLOTS: [number, number][] = [
     [-3.5, -3.5],
@@ -54,8 +54,8 @@ const START: { pos: [number, number]; angle: number }[] = [
 // Husfarger i brent leire (Mohenjo-daro var bygd av like, brente murstein).
 const HOUSE_COLORS = ['#b5734a', '#c08152', '#a9683f', '#bd7b4d', '#b06e44'];
 
-// De fire avlopsstrekkene under gatene. Hvert strekk er enten vannrett (langs x)
-// eller loddrett (langs z). Hotspoten ligger midt paa strekket.
+// De fire avløpsstrekkene under gatene. Hvert strekk er enten vannrett (langs x)
+// eller loddrett (langs z). Hotspoten ligger midt på strekket.
 type Drain = {
     x: number;
     z: number;
@@ -67,7 +67,7 @@ const DRAINS: Drain[] = [
     { x: 0, z: -1.75, len: 9, dir: 'x', hotspot: [0, -1.75] }, // gate mellom rad 1 og 2
     { x: 0, z: 1.75, len: 9, dir: 'x', hotspot: [0, 1.75] }, // gate foran sentrum
     { x: 1.75, z: -0.9, len: 5.7, dir: 'z', hotspot: [1.75, -0.9] }, // tverrgate
-    { x: 0, z: -6, len: 8, dir: 'z', hotspot: [0, -6] }, // hovedavlop ut til elva
+    { x: 0, z: -6, len: 8, dir: 'z', hotspot: [0, -6] }, // hovedavløp ut til elva
 ];
 
 const Rutebyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
@@ -77,7 +77,7 @@ const Rutebyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [bath, setBath] = useState(false);
     const [burst, setBurst] = useState(0);
     const [banner, setBanner] = useState<string | null>(
-        'Dra et skjevt hus inn paa en lysende rute i rutenettet.'
+        'Dra et skjevt hus inn på en lysende rute i rutenettet.'
     );
 
     const placedCount = placed.filter(Boolean).length;
@@ -86,7 +86,7 @@ const Rutebyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const drainsDone = drainCount >= DRAIN_TOTAL;
     const done = bath;
 
-    // Hvilket steg er vi paa (1-3) for stegmaaleren.
+    // Hvilket steg er vi på (1-3) for stegmåleren.
     const step = !gridDone ? 1 : !drainsDone ? 2 : 3;
 
     const placeHouse = (i: number) => {
@@ -98,10 +98,10 @@ const Rutebyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             setBurst((b) => b + 1);
             if (n >= HOUSE_TOTAL) {
                 sounds.play('advance');
-                setBanner('Rette gater! Na legger vi det lukkede avlopet under hver gate.');
+                setBanner('Rette gater! Nå legger vi det lukkede avløpet under hver gate.');
             } else {
                 sounds.play('correct');
-                setBanner('Bra. Husene faar samme stil og retning. Sett neste hus paa plass.');
+                setBanner('Bra. Husene får samme stil og retning. Sett neste hus på plass.');
             }
             return next;
         });
@@ -115,10 +115,10 @@ const Rutebyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             const n = next.filter(Boolean).length;
             if (n >= DRAIN_TOTAL) {
                 sounds.play('advance');
-                setBanner('Rent vann renner ut til elva. Reis na Det store badet i sentrum.');
+                setBanner('Rent vann renner ut til elva. Reis nå Det store badet i sentrum.');
             } else {
                 sounds.play('correct');
-                setBanner('Avlopet er dekket til. Skittent vann renner trygt vekk.');
+                setBanner('Avløpet er dekket til. Skittent vann renner trygt vekk.');
             }
             return next;
         });
@@ -137,7 +137,7 @@ const Rutebyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setPlaced(Array(HOUSE_TOTAL).fill(false));
         setDrained(Array(DRAIN_TOTAL).fill(false));
         setBath(false);
-        setBanner('Dra et skjevt hus inn paa en lysende rute i rutenettet.');
+        setBanner('Dra et skjevt hus inn på en lysende rute i rutenettet.');
     };
 
     const idle = placedCount === 0;
@@ -145,7 +145,7 @@ const Rutebyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Rutebyen: Mohenjo-daro"
-            subtitle="Bygg en av verdens forste planlagte byer: rette gater, lukket avlop og Det store badet"
+            subtitle="Bygg en av verdens første planlagte byer: rette gater, lukket avløp og Det store badet"
             estimatedSeconds={150}
             onRetry={placedCount > 0 || drainCount > 0 || bath ? reset : undefined}
             canvas={{
@@ -160,17 +160,17 @@ const Rutebyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <>
                     <SceneBanner message={banner} wide />
                     <SceneBadge corner="br">
-                        {done ? 'Mohenjo-daro star' : 'Indusdalen ca. 2500 fvt.'}
+                        {done ? 'Mohenjo-daro står' : 'Indusdalen ca. 2500 fvt.'}
                     </SceneBadge>
                     <DataReadout
                         corner="bl"
                         items={[
-                            { label: 'Hus paa rutenett', value: `${placedCount}/${HOUSE_TOTAL}` },
-                            { label: 'Avlop lagt', value: `${drainCount}/${DRAIN_TOTAL}` },
+                            { label: 'Hus på rutenett', value: `${placedCount}/${HOUSE_TOTAL}` },
+                            { label: 'Avløp lagt', value: `${drainCount}/${DRAIN_TOTAL}` },
                         ]}
                     />
                     <DragHint show={idle} corner="bc">
-                        Dra et hus ut paa rutenettet
+                        Dra et hus ut på rutenettet
                     </DragHint>
                 </>
             }
@@ -195,18 +195,18 @@ const Rutebyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         <p className="text-sm text-slate-600 leading-snug">
                             Folket i Indusdalen bygde ikke byene tilfeldig. De{' '}
                             <span className="font-bold text-amber-700">planla</span> dem: rette gater
-                            som et sjakkbrett, like hus, og et skjult avlop under hver gate.{' '}
-                            {step === 1 && 'Dra hvert skjeve hus inn paa en rute saa gatene blir rette.'}
-                            {step === 2 && 'Klikk de gule punktene og legg lokk over avlopet i hver gate.'}
+                            som et sjakkbrett, like hus, og et skjult avløp under hver gate.{' '}
+                            {step === 1 && 'Dra hvert skjeve hus inn på en rute så gatene blir rette.'}
+                            {step === 2 && 'Klikk de gule punktene og legg lokk over avløpet i hver gate.'}
                             {step === 3 && 'Klikk midt i byen og reis Det store badet.'}
                         </p>
                     </>
                 ) : (
                     <WinScreen title="Byen som var planlagt!" onReplay={reset}>
-                        Mohenjo-daro hadde rette gater, like hus av brente murstein og verdens forste
-                        bymessige avlopssystem, lukket under gatene. Mens andre byer vokste vilt og
-                        rotete, ble denne TEGNET forst og bygd etterpaa. Det er derfor arkeologene blir
-                        saa forbloffet: for over 4000 ar siden hadde indusfolket rennende vann og
+                        Mohenjo-daro hadde rette gater, like hus av brente murstein og verdens første
+                        bymessige avløpssystem, lukket under gatene. Mens andre byer vokste vilt og
+                        rotete, ble denne TEGNET først og bygd etterpå. Det er derfor arkeologene blir
+                        så forbløffet: for over 4000 år siden hadde indusfolket rennende vann og
                         kloakk, noe Europa ikke fikk igjen for mye, mye senere.
                     </WinScreen>
                 )}
@@ -242,13 +242,13 @@ function IndusCity({
 }) {
     return (
         <group>
-            {/* Den torre sletta av brent leire */}
+            {/* Den tørre sletta av brent leire */}
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]} receiveShadow>
                 <planeGeometry args={[46, 40]} />
                 <meshStandardMaterial color="#cBa878" roughness={1} />
             </mesh>
 
-            {/* Elva Indus i bakkant - avlopet renner ut hit */}
+            {/* Elva Indus i bakkant - avløpet renner ut hit */}
             <WaterPlane position={[0, 0.0, -12.5]} size={[46, 8]} color={T.water} />
 
             {/* Rutenettet: svake rette gatelinjer (planen ligger der fra start) */}
@@ -264,7 +264,7 @@ function IndusCity({
                 <DrainSegment key={i} drain={d} laid={drained[i]} />
             ))}
 
-            {/* Steg 2: klikkpunkter for aa legge lokk over avlopet */}
+            {/* Steg 2: klikkpunkter for å legge lokk over avløpet */}
             {gridDone &&
                 !drainsDone &&
                 DRAINS.map((d, i) =>
@@ -279,7 +279,7 @@ function IndusCity({
                     )
                 )}
 
-            {/* Husene eleven drar inn paa rutenettet. Hvert hus har sin egen rute. */}
+            {/* Husene eleven drar inn på rutenettet. Hvert hus har sin egen rute. */}
             {START.map((s, i) => (
                 <Draggable
                     key={i}
@@ -310,7 +310,7 @@ function IndusCity({
                 onBuild={onBath}
             />
 
-            {/* Folk fyller byen naar den staar ferdig */}
+            {/* Folk fyller byen når den står ferdig */}
             {bath && (
                 <group>
                     <Person position={[-1.6, 0, 2.4]} body="#7a4a2c" skin="#caa074" pose="walk" />
@@ -327,7 +327,7 @@ function IndusCity({
 }
 
 // Et hus i Mohenjo-daro: en flat-takt boks av brent leire med lav brystning og
-// smale vindusspalter. Starter skjevt og retter seg opp naar det settes paa ruta.
+// smale vindusspalter. Starter skjevt og retter seg opp når det settes på ruta.
 function IndusHouse({
     placed,
     crooked,
@@ -342,7 +342,7 @@ function IndusHouse({
         if (!inner.current) return;
         const targetRot = placed ? 0 : crooked;
         inner.current.rotation.y = damp(inner.current.rotation.y, targetRot, dt, 6);
-        // Husene loftes litt opp i full hoyde naar de er paa plass.
+        // Husene løftes litt opp i full høyde når de er på plass.
         const targetScale = placed ? 1 : 0.92;
         const s = damp(inner.current.scale.y, targetScale, dt, 6);
         inner.current.scale.y = s;
@@ -369,7 +369,7 @@ function IndusHouse({
                 <boxGeometry args={[0.9, 0.16, 0.04]} />
                 <meshStandardMaterial color="#3a2417" roughness={1} />
             </mesh>
-            {/* doraapning */}
+            {/* døråpning */}
             <mesh position={[0, 0.3, 0.86]}>
                 <boxGeometry args={[0.34, 0.6, 0.05]} />
                 <meshStandardMaterial color="#2c1a10" roughness={1} />
@@ -378,7 +378,7 @@ function IndusHouse({
     );
 }
 
-// Et avlopsstrekk under en gate. Foer det legges: en aapen, mork renne.
+// Et avløpsstrekk under en gate. Før det legges: en åpen, mørk renne.
 // Etter: et brent mursteinslokk med rent vann som glimter i kantene.
 function DrainSegment({ drain, laid }: { drain: Drain; laid: boolean }) {
     const water = useRef<THREE.MeshStandardMaterial>(null);
@@ -396,7 +396,7 @@ function DrainSegment({ drain, laid }: { drain: Drain; laid: boolean }) {
     const sizeZ = drain.dir === 'z' ? drain.len : 0.7;
     return (
         <group position={[drain.x, 0, drain.z]}>
-            {/* aapen renne (alltid synlig under) */}
+            {/* åpen renne (alltid synlig under) */}
             <mesh position={[0, 0.0, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
                 <planeGeometry args={[sizeX, sizeZ]} />
                 <meshStandardMaterial color="#4a3525" roughness={1} />
@@ -412,7 +412,7 @@ function DrainSegment({ drain, laid }: { drain: Drain; laid: boolean }) {
                     roughness={0.3}
                 />
             </mesh>
-            {/* mursteinslokk som senkes paa plass */}
+            {/* mursteinslokk som senkes på plass */}
             <group ref={lid} scale={[1, laid ? 1 : 0, 1]}>
                 <mesh position={[0, 0.1, 0]} castShadow>
                     <boxGeometry args={[sizeX, 0.18, sizeZ]} />
@@ -424,7 +424,7 @@ function DrainSegment({ drain, laid }: { drain: Drain; laid: boolean }) {
 }
 
 // Det store badet (the Great Bath): et vanntett, nedsenket basseng med trapp,
-// Mohenjo-daros mest kjente byggverk. Reiser seg og fylles naar byen er ferdig.
+// Mohenjo-daros mest kjente byggverk. Reiser seg og fylles når byen er ferdig.
 function GreatBath({
     built,
     clickable,
@@ -486,7 +486,7 @@ function GreatBath({
     );
 }
 
-// Svake, rette gatelinjer som danner rutenettet. Lyser sterkere naar byen staar.
+// Svake, rette gatelinjer som danner rutenettet. Lyser sterkere når byen står.
 function GridLines({ bright }: { bright: boolean }) {
     const ref = useRef<THREE.Group>(null);
     useFrame((_, dt) => {

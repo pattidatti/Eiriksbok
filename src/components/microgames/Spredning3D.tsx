@@ -20,17 +20,17 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen om bølge- og sprangmodellen. Kjerneideen eleven skal
-// kjenne paa kroppen: et nytt dialekttrekk oppstaar ETT sted og maa REISE utover
-// landet. To modeller gir to helt ulike moenstre:
-//   - Boelgemodellen: trekket brer seg som ringer i vann. Nabo tar det opp etter
-//     nabo. Naere steder foerst, fjerne sist. Ogsaa bygdene.
+// kjenne på kroppen: et nytt dialekttrekk oppstår ETT sted og må REISE utover
+// landet. To modeller gir to helt ulike mønstre:
+//   - Bølgemodellen: trekket brer seg som ringer i vann. Nabo tar det opp etter
+//     nabo. Nære steder først, fjerne sist. Også bygdene.
 //   - Sprangmodellen: trekket HOPPER fra by til by og hopper over bygdene imellom.
 //     Derfor kan to fjerne byer dele et trekk som bygdene mellom dem ikke har.
 
 type Model = 'bolge' | 'sprang';
 type Phase = 'explore' | 'quiz' | 'won';
 
-const DURATION = 4.5; // sekunder for ett fullt loep
+const DURATION = 4.5; // sekunder for ett fullt løp
 
 interface Node {
     id: string;
@@ -39,7 +39,7 @@ interface Node {
     by: boolean; // true = by, false = bygd
 }
 
-// Kilden der trekket oppstaar.
+// Kilden der trekket oppstår.
 const KILDE: [number, number] = [2, 5.5];
 
 const NODES: Node[] = [
@@ -54,7 +54,7 @@ const NODES: Node[] = [
 ];
 
 const dist2 = (a: [number, number], b: [number, number]) => Math.hypot(a[0] - b[0], a[1] - b[1]);
-// Byer sortert etter avstand fra kilden — rekkefoelgen sprangene tar.
+// Byer sortert etter avstand fra kilden — rekkefølgen sprangene tar.
 const BYER = NODES.filter((n) => n.by).sort((a, b) => dist2(KILDE, a.pos) - dist2(KILDE, b.pos));
 const MAX_DIST = Math.max(...NODES.map((n) => dist2(KILDE, n.pos)));
 
@@ -308,7 +308,7 @@ function SpreadScene({ model, running, runKey, burst, showStart, onStart, onCycl
     const pulse = useRef<THREE.Mesh>(null);
     const pulseLight = useRef<THREE.PointLight>(null);
 
-    // Materialer for "lyset" paa hvert sted (glow-toppen).
+    // Materialer for "lyset" på hvert sted (glow-toppen).
     const litMats = useRef<Record<string, THREE.MeshStandardMaterial>>({});
     const litVal = useRef<Record<string, number>>({});
 
@@ -320,7 +320,7 @@ function SpreadScene({ model, running, runKey, burst, showStart, onStart, onCycl
 
     const tmp = useRef(new THREE.Vector3());
 
-    // Kvadratisk bezier for et sprang-hopp (loeftet bue).
+    // Kvadratisk bezier for et sprang-hopp (løftet bue).
     const bezier = (
         p0: [number, number],
         p1: [number, number],
@@ -348,7 +348,7 @@ function SpreadScene({ model, running, runKey, burst, showStart, onStart, onCycl
         }
         const tt = t.current;
 
-        // Maal-lys per sted
+        // Mål-lys per sted
         const targets: Record<string, number> = {};
         if (model === 'bolge') {
             const ringR = tt * MAX_DIST;
@@ -363,7 +363,7 @@ function SpreadScene({ model, running, runKey, burst, showStart, onStart, onCycl
             });
         }
 
-        // Damp lys mot maal
+        // Damp lys mot mål
         NODES.forEach((n) => {
             const cur = litVal.current[n.id] ?? 0;
             const next = damp(cur, targets[n.id], dt, 8);
@@ -379,7 +379,7 @@ function SpreadScene({ model, running, runKey, burst, showStart, onStart, onCycl
             }
         });
 
-        // Boelgeringen
+        // Bølgeringen
         if (ring.current && ringMat.current) {
             const show = model === 'bolge' && running;
             ring.current.visible = show;
@@ -437,7 +437,7 @@ function SpreadScene({ model, running, runKey, burst, showStart, onStart, onCycl
                 />
             ))}
 
-            {/* Boelgeringen (skaleres i useFrame) */}
+            {/* Bølgeringen (skaleres i useFrame) */}
             <mesh
                 ref={ring}
                 position={[KILDE[0], 0.06, KILDE[1]]}
@@ -466,7 +466,7 @@ function SpreadScene({ model, running, runKey, burst, showStart, onStart, onCycl
             </mesh>
             <pointLight ref={pulseLight} color="#a78bfa" distance={6} intensity={2} visible={false} />
 
-            {/* Feiringspartikler ved fullfoert loep */}
+            {/* Feiringspartikler ved fullført løp */}
             <Burst position={[KILDE[0], 1.4, KILDE[1]]} trigger={burst} color="#c7d2fe" count={30} spread={4} />
 
             {/* Start-hotspot over kilden */}
@@ -482,8 +482,8 @@ function SpreadScene({ model, running, runKey, burst, showStart, onStart, onCycl
     );
 }
 
-// Et sted: en liten "sokkel" + en glow-kule paa toppen som lyser naar stedet
-// tar opp trekket. Byer er hoeye taarn, bygder er lave hus.
+// Et sted: en liten "sokkel" + en glow-kule på toppen som lyser når stedet
+// tar opp trekket. Byer er høye tårn, bygder er lave hus.
 function NodeMesh({
     node,
     source = false,
@@ -579,7 +579,7 @@ function ArcLine({ from, to }: { from: [number, number]; to: [number, number] })
     return <primitive object={line} />;
 }
 
-// En lav, uregelmessig "landmasse" for aa gi scenen litt liv (svever mykt).
+// En lav, uregelmessig "landmasse" for å gi scenen litt liv (svever mykt).
 function Landmass() {
     const grp = useIdleMotion({ bob: 0.05, sway: 0.006, speed: 0.6 });
     const blobs = useMemo(() => {
@@ -606,7 +606,7 @@ function Landmass() {
     );
 }
 
-// Deterministisk pseudo-random paa modulnivaa (ingen mutasjon under render).
+// Deterministisk pseudo-random på modulnivå (ingen mutasjon under render).
 function makeRng(seed: number) {
     let s = seed >>> 0;
     return () => {

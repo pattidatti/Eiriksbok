@@ -27,30 +27,30 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill til "Romas grunnleggelse". Eleven bygger Roma slik arkeologien
-// forteller det, ikke slik myten gjoer: ikke en by reist paa en dag av en mann,
-// men sju smaa landsbyer paa hver sin hoeyde ved elven Tiberen som sakte vokser
-// sammen til en by. (Kommentarer i ASCII, all elev-tekst med riktige tegn.)
+// forteller det, ikke slik myten gjør: ikke en by reist på en dag av en mann,
+// men sju små landsbyer på hver sin høyde ved elven Tiberen som sakte vokser
+// sammen til en by. (All tekst med riktige norske tegn.)
 //
-// Lyspaera: stedet var perfekt fordi hoeydene ga forsvar OG elven ga handel.
-// Foerst slaar folk seg ned paa de sju trygge hoeydene. Men sumpen i midten
-// skiller dem. Naar eleven toerrlegger sumpen blir den til Forum, det felles
+// Lyspæra: stedet var perfekt fordi høydene ga forsvar OG elven ga handel.
+// Først slår folk seg ned på de sju trygge høydene. Men sumpen i midten
+// skiller dem. Når eleven tørrlegger sumpen blir den til Forum, det felles
 // torget, og de sju landsbyene smelter sammen til EN by med mur rundt.
 //
 // Mekanikk (kombinerer direkte 3D-klikk + spak):
-//   - Hotspot paa hver av de sju hoeydene: klikk for aa la en landsby slaa seg ned.
-//   - Naar alle sju staar: SceneSlider "Toerrlegg sumpen" senker myrvannet, hever
+//   - Hotspot på hver av de sju høydene: klikk for å la en landsby slå seg ned.
+//   - Når alle sju står: SceneSlider "Tørrlegg sumpen" senker myrvannet, hever
 //     Forum-torget, og reiser bymuren rundt det hele. Da er Roma en by.
 
 interface HillSpec {
     name: string;
-    pos: [number, number]; // x, z paa bakken
+    pos: [number, number]; // x, z på bakken
     leaf: string;
     body: string;
     seed: number;
 }
 
-// De sju klassiske hoeydene, lost gruppert rundt sumpen i midten.
-// Kapitol ligger naer elven i vest (byens borg og marked).
+// De sju klassiske høydene, lost gruppert rundt sumpen i midten.
+// Kapitol ligger nær elven i vest (byens borg og marked).
 const HILLS: HillSpec[] = [
     { name: 'Palatinen', pos: [0.4, 3.0], leaf: '#5f8a3e', body: '#b06a3a', seed: 2 },
     { name: 'Aventin', pos: [3.4, 1.5], leaf: '#6b9146', body: '#a85f34', seed: 5 },
@@ -61,9 +61,9 @@ const HILLS: HillSpec[] = [
     { name: 'Kapitol', pos: [-3.7, 1.1], leaf: '#5b853b', body: '#b97640', seed: 20 },
 ];
 const TOTAL = HILLS.length;
-const HILL_TOP = 1.25; // hoeyden paa flat topp der landsbyen sitter
+const HILL_TOP = 1.25; // høyden på flat topp der landsbyen sitter
 
-// Korte fakta for en 14-aaring, dukker opp underveis.
+// Korte fakta for en 14-åring, dukker opp underveis.
 const FIRST_FACT =
     'Folk slo seg ned på høydene fordi det var lett å forsvare. Fiender måtte angripe oppover. Sagnet sier Romulus bygde her på Palatinen.';
 const ALL_SETTLED_FACT =
@@ -72,7 +72,7 @@ const ALL_SETTLED_FACT =
 const DeSjuHoydene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const sounds = useStepSounds();
     const [settled, setSettled] = useState<boolean[]>(() => HILLS.map(() => false));
-    const [drain, setDrain] = useState(0); // 0-1, hvor toerrlagt sumpen er
+    const [drain, setDrain] = useState(0); // 0-1, hvor tørrlagt sumpen er
     const [won, setWon] = useState(false);
     const [burst, setBurst] = useState(0);
     const [banner, setBanner] = useState<string | null>(
@@ -249,16 +249,16 @@ function RomeScene({
 }) {
     return (
         <group>
-            {/* Toert sletteland langs elven */}
+            {/* Tørt sletteland langs elven */}
             <GroundPlane size={56} depth={50} color="#94a059" />
 
-            {/* Elven Tiberen i vest, med handelsbaater */}
+            {/* Elven Tiberen i vest, med handelsbåter */}
             <River />
 
-            {/* Sumpen i midten som blir toerrlagt til Forum */}
+            {/* Sumpen i midten som blir tørrlagt til Forum */}
             <MarshForum drain={drain} won={won} />
 
-            {/* De sju hoeydene med landsbyer */}
+            {/* De sju høydene med landsbyer */}
             {HILLS.map((hill, i) => (
                 <group key={hill.name} position={[hill.pos[0], 0, hill.pos[1]]}>
                     <HillMound color={hill.leaf} />
@@ -282,13 +282,13 @@ function RomeScene({
                 </group>
             ))}
 
-            {/* Bymuren reiser seg naar byen er samlet */}
+            {/* Bymuren reiser seg når byen er samlet */}
             <CityRampart raised={won} />
         </group>
     );
 }
 
-// En hoeyde: avkortet kjegle med flat topp og litt skog i skraaningen.
+// En høyde: avkortet kjegle med flat topp og litt skog i skråningen.
 function HillMound({ color }: { color: string }) {
     return (
         <group>
@@ -302,7 +302,7 @@ function HillMound({ color }: { color: string }) {
     );
 }
 
-// Landsbyen paa toppen av en hoeyde. Vokser inn naar eleven klikker hoeyden.
+// Landsbyen på toppen av en høyde. Vokser inn når eleven klikker høyden.
 function Village({ hill, grown }: { hill: HillSpec; grown: boolean }) {
     const ref = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -345,7 +345,7 @@ function Village({ hill, grown }: { hill: HillSpec; grown: boolean }) {
     );
 }
 
-// Elven Tiberen i vest med to handelsbaater (salt og varer fra kysten).
+// Elven Tiberen i vest med to handelsbåter (salt og varer fra kysten).
 function River() {
     const mat = useRef<THREE.MeshStandardMaterial>(null);
     useFrame(({ clock }) => {
@@ -372,8 +372,8 @@ function River() {
     );
 }
 
-// Sumpen i midten. Naar drain stiger: vannet synker, Forum-torget hever seg,
-// soeyler og en markedsbod reiser seg, og folk samles paa torget.
+// Sumpen i midten. Når drain stiger: vannet synker, Forum-torget hever seg,
+// søyler og en markedsbod reiser seg, og folk samles på torget.
 function MarshForum({ drain, won }: { drain: number; won: boolean }) {
     const water = useRef<THREE.Group>(null);
     const forum = useRef<THREE.Group>(null);
@@ -417,7 +417,7 @@ function MarshForum({ drain, won }: { drain: number; won: boolean }) {
                 </mesh>
             </group>
 
-            {/* Forum-bygg: soeyler, markedsbod og folk, skalerer inn naar toerrlagt */}
+            {/* Forum-bygg: søyler, markedsbod og folk, skalerer inn når tørrlagt */}
             <group ref={builds} scale={0.0001}>
                 <Column position={[-1.3, 0, -1.2]} height={1.5} radius={0.16} color="#e7dcc4" />
                 <Column position={[-0.5, 0, -1.4]} height={1.5} radius={0.16} color="#e7dcc4" />
@@ -436,7 +436,7 @@ function MarshForum({ drain, won }: { drain: number; won: boolean }) {
     );
 }
 
-// Bymuren rundt hele byen. Reiser seg (skala-Y) naar byen er samlet.
+// Bymuren rundt hele byen. Reiser seg (skala-Y) når byen er samlet.
 const RAMPART_R = 6.7;
 const VERTS = Array.from({ length: 8 }, (_, k) => k * (Math.PI / 4));
 const SEGS = Array.from({ length: 8 }, (_, k) => k * (Math.PI / 4) + Math.PI / 8);

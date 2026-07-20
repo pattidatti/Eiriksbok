@@ -25,12 +25,12 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill for artikkelen "Trelasthandelen".
-// Lyspaere: en stokk maa reise fra skogen ut til Europa for aa bli verdt noe, og
-// paa veien gjor NATUREN det tunge arbeidet gratis - elva baerer stokken ned til
-// kysten, og fossen driver oppgangssaga som skjaerer den til planker. Til slutt
-// kjoper hollenderne plankene. Eleven kjenner ruta paa kroppen i tre grep:
-//   1) Dra en tommerstokk fra skogen ut i elva -> den flyter ned til saga.
-//   2) Slipp vannet paa saga -> hjulet snurrer, bladet skjaerer stokken til planker.
+// Lyspære: en stokk må reise fra skogen ut til Europa for å bli verdt noe, og
+// på veien gjør NATUREN det tunge arbeidet gratis - elva bærer stokken ned til
+// kysten, og fossen driver oppgangssaga som skjærer den til planker. Til slutt
+// kjøper hollenderne plankene. Eleven kjenner ruta på kroppen i tre grep:
+//   1) Dra en tømmerstokk fra skogen ut i elva -> den flyter ned til saga.
+//   2) Slipp vannet på saga -> hjulet snurrer, bladet skjærer stokken til planker.
 //   3) Dra plankestabelen om bord i det hollandske skipet -> det seiler til Amsterdam.
 
 const SKY = '#cfe6f2';
@@ -44,7 +44,7 @@ const COL = {
     leaf: '#3f6b39',
 };
 
-// Verdien stokken er verdt paa hvert steg (samme tall som i signaturkomponenten).
+// Verdien stokken er verdt på hvert steg (samme tall som i signaturkomponenten).
 const VALUE = [3, 15, 30];
 
 type Step = 1 | 2 | 3;
@@ -72,7 +72,7 @@ const Trelastruta3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setResetKey((k) => k + 1);
     };
 
-    // Steg 1: stokken er sluppet i elva (snappet til innlopet ved saga).
+    // Steg 1: stokken er sluppet i elva (snappet til innløpet ved saga).
     const onLogInRiver = () => {
         if (step !== 1) return;
         setStep(2);
@@ -83,7 +83,7 @@ const Trelastruta3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         );
     };
 
-    // Steg 2: slipp vannet paa saghjulet.
+    // Steg 2: slipp vannet på saghjulet.
     const onOpenSluice = () => {
         if (step !== 2 || sawing) return;
         setSawing(true);
@@ -212,7 +212,7 @@ function RouteScene({
     onPlanksAboard: () => void;
 }) {
     const ship = useRef<THREE.Group>(null);
-    // Skipet seiler av garde naar plankene er lastet.
+    // Skipet seiler av gårde når plankene er lastet.
     useFrame((_, dt) => {
         if (ship.current) {
             const targetX = done ? 20 : 6.5;
@@ -224,7 +224,7 @@ function RouteScene({
         <group>
             <GroundPlane size={46} depth={34} color={COL.ground} />
 
-            {/* Elva renner langs X, fra skogen (venstre) til havna (hoyre) */}
+            {/* Elva renner langs X, fra skogen (venstre) til havna (høyre) */}
             <WaterPlane position={[0, 0.06, 1]} size={[24, 3.2]} color={COL.water} />
 
             {/* Skog til venstre */}
@@ -236,7 +236,7 @@ function RouteScene({
             {/* Sagbruket i midten, med foss og vannhjul */}
             <Sawmill sawing={sawing} onOpenSluice={step === 2 && !sawing ? onOpenSluice : undefined} />
 
-            {/* Steg 1: dra stokken fra skogen ut i elva (snapper ved sag-innlopet) */}
+            {/* Steg 1: dra stokken fra skogen ut i elva (snapper ved sag-innløpet) */}
             {step === 1 && (
                 <Draggable
                     position={[-8, 0.4, 4.2]}
@@ -256,7 +256,7 @@ function RouteScene({
                 </Draggable>
             )}
 
-            {/* Steg 2: stokken ligger ved saga og skjaeres */}
+            {/* Steg 2: stokken ligger ved saga og skjæres */}
             {step === 2 && (
                 <group position={[-2.4, 0.35, 1]}>
                     <Log />
@@ -288,7 +288,7 @@ function RouteScene({
                 </group>
             )}
 
-            {/* Kaia og det hollandske skipet til hoyre */}
+            {/* Kaia og det hollandske skipet til høyre */}
             <group position={[6.5, 0, 3.4]}>
                 <mesh position={[0, 0.15, 0]} receiveShadow castShadow>
                     <boxGeometry args={[3, 0.3, 1.4]} />
@@ -304,7 +304,7 @@ function RouteScene({
     );
 }
 
-// --- En rund tommerstokk ---
+// --- En rund tømmerstokk ---
 function Log() {
     return (
         <mesh rotation={[Math.PI / 2, 0, 0]} castShadow>
@@ -369,7 +369,7 @@ function Sawmill({
                 </mesh>
             </group>
 
-            {/* Oppgangssaga: en treramme med sagblad som gaar opp og ned */}
+            {/* Oppgangssaga: en treramme med sagblad som går opp og ned */}
             <group position={[0, 0, 0.6]}>
                 <mesh position={[-0.5, 1.5, 0]} castShadow>
                     <boxGeometry args={[0.12, 2.4, 0.12]} />
@@ -415,11 +415,11 @@ function Sawmill({
                         );
                     })}
                 </group>
-                {/* liten kraftoverforing */}
+                {/* liten kraftoverføring */}
                 <Gear position={[-1.3, 0, 0]} radius={0.4} teeth={10} color={COL.stone} spin={sawing ? -3 : 0} />
             </group>
 
-            {/* Sluse-hotspot: slipp vannet paa hjulet */}
+            {/* Sluse-hotspot: slipp vannet på hjulet */}
             {onOpenSluice && (
                 <Hotspot
                     position={[2, 2.9, 1]}

@@ -18,14 +18,14 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Kvinnekampen: dorene som apnet seg.
+// Kvinnekampen: dørene som åpnet seg.
 //
-// Lyspaere: rettigheter vi tar for gitt - utdanning, egen lonn, stemmerett -
-// var stengte dorer for kvinner. De ble apnet en etter en gjennom flere tiar
-// med kamp. Eleven drar et ar-spak framover og ser dorene svinge opp etter hvert
-// som arstallet passerer hver seier. En kvinnefigur gar gjennom hver apnet dor.
+// Lyspære: rettigheter vi tar for gitt - utdanning, egen lønn, stemmerett -
+// var stengte dører for kvinner. De ble åpnet en etter en gjennom flere tiår
+// med kamp. Eleven drar et år-spak framover og ser dørene svinge opp etter hvert
+// som årstallet passerer hver seier. En kvinnefigur går gjennom hver åpnet dør.
 //
-// Scenen drives av ett tall (year). Hvert delobjekt demper mykt mot et mal
+// Scenen drives av ett tall (year). Hvert delobjekt demper mykt mot et mål
 // utledet av det - ingen ref-lesing i render.
 
 interface DoorDef {
@@ -47,7 +47,7 @@ const DOOR_W = 1.5; // total apningsbredde
 const LEAF_W = DOOR_W / 2;
 const WALL_H = 3.2;
 
-// --- En dor i muren: to dorblad som svinger opp, varmt lys bak, en figur som gar gjennom ---
+// --- En dør i muren: to dørblad som svinger opp, varmt lys bak, en figur som går gjennom ---
 function Door({ x, open, body }: { x: number; open: boolean; body: string }) {
     const left = useRef<THREE.Group>(null);
     const right = useRef<THREE.Group>(null);
@@ -69,7 +69,7 @@ function Door({ x, open, body }: { x: number; open: boolean; body: string }) {
 
     return (
         <group position={[x, 0, 0]}>
-            {/* dorkarm */}
+            {/* dørkarm */}
             <mesh position={[-LEAF_W - 0.12, WALL_H / 2, 0]} castShadow>
                 <boxGeometry args={[0.24, WALL_H, 0.5]} />
                 <meshStandardMaterial color="#b8a888" roughness={0.9} />
@@ -83,7 +83,7 @@ function Door({ x, open, body }: { x: number; open: boolean; body: string }) {
                 <meshStandardMaterial color="#b8a888" roughness={0.9} />
             </mesh>
 
-            {/* varmt lys som strommer ut nar dora apnes */}
+            {/* varmt lys som strømmer ut når døra åpnes */}
             <mesh position={[0, WALL_H / 2, -0.26]}>
                 <planeGeometry args={[DOOR_W, WALL_H - 0.2]} />
                 <meshBasicMaterial
@@ -96,7 +96,7 @@ function Door({ x, open, body }: { x: number; open: boolean; body: string }) {
                 />
             </mesh>
 
-            {/* venstre dorblad (hengsle ved venstre karm) */}
+            {/* venstre dørblad (hengsle ved venstre karm) */}
             <group ref={left} position={[-LEAF_W, 0, 0.12]}>
                 <mesh position={[LEAF_W / 2, WALL_H / 2, 0]} castShadow>
                     <boxGeometry args={[LEAF_W, WALL_H - 0.1, 0.1]} />
@@ -108,7 +108,7 @@ function Door({ x, open, body }: { x: number; open: boolean; body: string }) {
                 </mesh>
             </group>
 
-            {/* hoyre dorblad (hengsle ved hoyre karm) */}
+            {/* høyre dørblad (hengsle ved høyre karm) */}
             <group ref={right} position={[LEAF_W, 0, 0.12]}>
                 <mesh position={[-LEAF_W / 2, WALL_H / 2, 0]} castShadow>
                     <boxGeometry args={[LEAF_W, WALL_H - 0.1, 0.1]} />
@@ -120,7 +120,7 @@ function Door({ x, open, body }: { x: number; open: boolean; body: string }) {
                 </mesh>
             </group>
 
-            {/* kvinnefiguren som gar gjennom den apnede dora */}
+            {/* kvinnefiguren som går gjennom den åpnede døra */}
             <group ref={person} position={[0, 0, 2.4]} visible={false}>
                 <Figure body={body} />
             </group>
@@ -128,7 +128,7 @@ function Door({ x, open, body }: { x: number; open: boolean; body: string }) {
     );
 }
 
-// --- Muren mellom dorene ---
+// --- Muren mellom dørene ---
 function WallPiece({ x, w }: { x: number; w: number }) {
     return (
         <mesh position={[x, WALL_H / 2, 0]} castShadow receiveShadow>
@@ -154,7 +154,7 @@ function DoorsScene({ year, burst }: { year: number; burst: number }) {
                 <meshStandardMaterial color="#f3ead4" roughness={1} />
             </mesh>
 
-            {/* murbiter: ytterst, og mellom hvert dorpar */}
+            {/* murbiter: ytterst, og mellom hvert dørpar */}
             <WallPiece x={-7.6} w={3} />
             <WallPiece x={-3.4} w={1.8} />
             <WallPiece x={0} w={1.8} />

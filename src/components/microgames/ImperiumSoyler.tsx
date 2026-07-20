@@ -18,13 +18,13 @@ import {
 import type { MicroGameProps } from './types';
 
 // Mikrospill for "Hvorfor imperier faller". Speiler signaturkomponenten
-// romlig: riket er en kuppel som hviler paa fire soeyler - Haer, Oekonomi,
-// Legitimitet og Grenser. Eleven klikker soeyler for aa svekke dem.
-//   - mister riket EN soeyle: kuppelen heller, men baerer.
+// romlig: riket er en kuppel som hviler på fire søyler - Hær, Økonomi,
+// Legitimitet og Grenser. Eleven klikker søyler for å svekke dem.
+//   - mister riket EN søyle: kuppelen heller, men bærer.
 //   - mister det TO: den vakler stygt.
-//   - naar den TREDJE ryker: hele kuppelen raser.
-// Lyspaeren: et rike taaler aa miste én stoette, selv to, men det finnes et
-// vippepunkt. Kollaps kommer naar for mange baeresoeyler svikter samtidig.
+//   - når den TREDJE ryker: hele kuppelen raser.
+// Lyspæren: et rike tåler å miste én støtte, selv to, men det finnes et
+// vippepunkt. Kollaps kommer når for mange bæresøyler svikter samtidig.
 
 interface Soyle {
     id: string;
@@ -40,8 +40,8 @@ const SOYLER: Soyle[] = [
     { id: 'grenser', navn: 'Grenser', x: 1.7, z: 1.7 },
 ];
 
-const COL_H = 2.6; // soeylehoeyde
-const KRITISK = 3; // antall svekkede soeyler som velter kuppelen
+const COL_H = 2.6; // søylehøyde
+const KRITISK = 3; // antall svekkede søyler som velter kuppelen
 
 const ImperiumSoyler: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [svekket, setSvekket] = useState<Record<string, boolean>>({});
@@ -161,7 +161,7 @@ function RiketScene({
         <group>
             <GroundPlane size={30} depth={30} color="#a7c47f" />
 
-            {/* Plattform kuppelen og soeylene staar paa */}
+            {/* Plattform kuppelen og søylene står på */}
             <mesh position={[0, -0.05, 0]} receiveShadow>
                 <cylinderGeometry args={[3.4, 3.7, 0.3, 32]} />
                 <meshStandardMaterial color="#d8cfc0" roughness={0.9} />
@@ -170,12 +170,12 @@ function RiketScene({
             {/* Kuppelen */}
             <Dome svekket={svekket} collapse={collapse} burst={burst} />
 
-            {/* Soeylene */}
+            {/* Søylene */}
             {SOYLER.map((s) => (
                 <Pillar key={s.id} soyle={s} svekket={!!svekket[s.id]} collapse={collapse} />
             ))}
 
-            {/* Klikk-punkter oppaa hver staaende soeyle */}
+            {/* Klikk-punkter oppå hver stående søyle */}
             {!collapse &&
                 SOYLER.map((s) =>
                     svekket[s.id] ? null : (
@@ -190,13 +190,13 @@ function RiketScene({
                     )
                 )}
 
-            {/* Stoev naar en soeyle ryker + feiring ved kollaps */}
+            {/* Støv når en søyle ryker + feiring ved kollaps */}
             <Impact preset="dustPuff" trigger={dust.trigger} position={dust.pos} count={20} />
         </group>
     );
 }
 
-// Kuppelen: heller mot de svekkede soeylene, raser ved kollaps.
+// Kuppelen: heller mot de svekkede søylene, raser ved kollaps.
 function Dome({
     svekket,
     collapse,
@@ -212,7 +212,7 @@ function Dome({
         const g = grp.current;
         if (!g) return;
 
-        // Hellingsvektor: summér retningen ut mot hver svekkede soeyle.
+        // Hellingsvektor: summér retningen ut mot hver svekkede søyle.
         let lx = 0;
         let lz = 0;
         for (const s of SOYLER) {
@@ -240,7 +240,7 @@ function Dome({
 
     return (
         <group ref={grp} position={[0, COL_H + 0.05, 0]}>
-            {/* Ringbjelke soeylene baerer */}
+            {/* Ringbjelke søylene bærer */}
             <mesh position={[0, 0.1, 0]} castShadow>
                 <cylinderGeometry args={[2.5, 2.5, 0.35, 32]} />
                 <meshStandardMaterial color="#c9a24a" roughness={0.7} metalness={0.1} />
@@ -254,7 +254,7 @@ function Dome({
                     metalness={0.15}
                 />
             </mesh>
-            {/* Spir paa toppen */}
+            {/* Spir på toppen */}
             <mesh position={[0, 2.4, 0]} castShadow>
                 <coneGeometry args={[0.22, 0.7, 12]} />
                 <meshStandardMaterial color="#8a6d2f" roughness={0.6} />
@@ -264,7 +264,7 @@ function Dome({
     );
 }
 
-// Én søyle. Krymper og tipper naar den svekkes/kollapser.
+// Én søyle. Krymper og tipper når den svekkes/kollapser.
 function Pillar({
     soyle,
     svekket,
@@ -280,7 +280,7 @@ function Pillar({
     useFrame((_, dt) => {
         const g = grp.current;
         if (!g) return;
-        // Svekket soeyle synker ned i grunnen og tipper litt utover.
+        // Svekket søyle synker ned i grunnen og tipper litt utover.
         const ty = nede ? -COL_H * 0.42 : 0;
         const scaleY = nede ? 0.14 : 1;
         const tip = nede ? (soyle.x > 0 ? -0.5 : 0.5) : 0;
@@ -292,7 +292,7 @@ function Pillar({
     return (
         <group position={[soyle.x, 0, soyle.z]}>
             <group ref={grp}>
-                {/* Cylinderen har origo i midten, saa loeft den halve hoeyden opp */}
+                {/* Cylinderen har origo i midten, så løft den halve høyden opp */}
                 <mesh position={[0, COL_H / 2, 0]} castShadow>
                     <cylinderGeometry args={[0.26, 0.3, COL_H, 16]} />
                     <meshStandardMaterial
@@ -306,7 +306,7 @@ function Pillar({
                     <meshStandardMaterial color={svekket ? '#8f8474' : '#e2d8c4'} roughness={0.85} />
                 </mesh>
             </group>
-            {/* Navnelapp under soeylen - alltid synlig */}
+            {/* Navnelapp under søylen - alltid synlig */}
             <Html position={[0, -0.25, 0]} center pointerEvents="none">
                 <div
                     className={`px-2 py-0.5 rounded-md text-[11px] font-semibold whitespace-nowrap shadow ${

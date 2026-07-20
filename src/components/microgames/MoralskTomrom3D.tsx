@@ -20,13 +20,13 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill til artikkelen "Nihilisme i etikk". Lyspaere eleven skal kjenne paa
+// Mikrospill til artikkelen "Nihilisme i etikk". Lyspære eleven skal kjenne på
 // kroppen: i moralsk nihilisme finnes ingen "verdi-sol" som gir moralen lys av
-// seg selv. Slukker du sola, blir verdiene kalde, grae steiner. Men eleven kan
-// sjol tenne dem - og da kommer lyset fra mennesket, ikke fra verden.
-//   - Modus "Sol": en glodende verdi-sol gir orbene varmt lys (objektiv moral).
+// seg selv. Slukker du sola, blir verdiene kalde, grå steiner. Men eleven kan
+// sjøl tenne dem - og da kommer lyset fra mennesket, ikke fra verden.
+//   - Modus "Sol": en glødende verdi-sol gir orbene varmt lys (objektiv moral).
 //   - Modus "Tomrom" (nihilisme): sola slukner, orbene blir steiner.
-//   - I tomrommet kan eleven klikke en orb og tenne den med SITT eget (kjolige)
+//   - I tomrommet kan eleven klikke en orb og tenne den med SITT eget (kjølige)
 //     lys - verdien finnes igjen, men kilden er nye: deg.
 
 type Mode = 'sun' | 'void';
@@ -252,7 +252,7 @@ function VoidScene({ mode, litByMe, burst, onLight }: SceneProps) {
     const orbMats = useRef<THREE.MeshStandardMaterial[]>([]);
     const orbHalos = useRef<THREE.MeshBasicMaterial[]>([]);
 
-    // Forhaandsberegnede posisjoner paa ringen rundt sola.
+    // Forhåndsberegnede posisjoner på ringen rundt sola.
     const orbs = useMemo(
         () =>
             VALUES.map((v, i) => {
@@ -276,7 +276,7 @@ function VoidScene({ mode, litByMe, burst, onLight }: SceneProps) {
         const s = sunLevel.current;
         const k = Math.min(1, dt * 4);
 
-        // Sola: varm og lysende i sol-modus, kald og dod i tomrommet.
+        // Sola: varm og lysende i sol-modus, kald og død i tomrommet.
         if (sunMat.current) {
             tmpColor.current.copy(SUN_GRAY).lerp(WARM, s);
             sunMat.current.color.lerp(tmpColor.current, k);
@@ -292,7 +292,7 @@ function VoidScene({ mode, litByMe, burst, onLight }: SceneProps) {
         if (sunLight.current) sunLight.current.intensity = 0.2 + s * 2.6;
 
         // Orbene: lyser av sola i sol-modus; steiner i tomrommet; men de eleven
-        // har tent lyser med sitt eget, kjolige lys.
+        // har tent lyser med sitt eget, kjølige lys.
         orbs.forEach((orb, i) => {
             const litByStudent = litByMe.has(orb.id);
             const glowByStudent = mode === 'void' && litByStudent;
@@ -320,7 +320,7 @@ function VoidScene({ mode, litByMe, burst, onLight }: SceneProps) {
             }
         });
 
-        // Rolig drift saa verdenen lever.
+        // Rolig drift så verdenen lever.
         if (ring.current) ring.current.rotation.y += dt * 0.06;
     });
 
@@ -360,7 +360,7 @@ function VoidScene({ mode, litByMe, burst, onLight }: SceneProps) {
                                         toneMapped={false}
                                     />
                                 </mesh>
-                                {/* mykt gloed-skall */}
+                                {/* mykt glød-skall */}
                                 <mesh scale={1.7}>
                                     <sphereGeometry args={[0.62, 20, 20]} />
                                     <meshBasicMaterial
@@ -395,7 +395,7 @@ function VoidScene({ mode, litByMe, burst, onLight }: SceneProps) {
                 })}
             </group>
 
-            {/* Feiringspartikler naar eleven tenner en verdi / fullforer */}
+            {/* Feiringspartikler når eleven tenner en verdi / fullfører */}
             <Burst position={[0, SUN_Y, 0]} trigger={burst} color="#bfe3ff" count={30} spread={3.4} />
         </group>
     );
@@ -442,7 +442,7 @@ function SunCore({
     );
 }
 
-// --- Lysende himmelkuppel (kosmisk, men lys: kjolig topp -> varm horisont) ---
+// --- Lysende himmelkuppel (kosmisk, men lys: kjølig topp -> varm horisont) ---
 function SkyDome() {
     const texture = useMemo(() => {
         const c = document.createElement('canvas');
@@ -470,7 +470,7 @@ function SkyDome() {
     );
 }
 
-// Deterministisk pseudo-random paa modulnivaa (samme layout hver render).
+// Deterministisk pseudo-random på modulnivå (samme layout hver render).
 function makeRng(seed: number) {
     let s = seed >>> 0;
     return () => {
@@ -479,7 +479,7 @@ function makeRng(seed: number) {
     };
 }
 
-// --- Svake lyspartikler i lufta (atmosfaere uten aa bli morkt) ---
+// --- Svake lyspartikler i lufta (atmosfære uten å bli mørkt) ---
 function StarMotes() {
     const data = useMemo(() => {
         const rand = makeRng(0x5eed);

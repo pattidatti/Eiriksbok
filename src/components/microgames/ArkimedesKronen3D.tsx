@@ -14,15 +14,15 @@ import {
     microSfx,
 } from './kit';
 
-// Lyspaere-oyeblikk: Arkimedes avslorte juks ved a male hvor mye vann en gjenstand
+// Lyspære-øyeblikk: Arkimedes avslørte juks ved å måle hvor mye vann en gjenstand
 // presset bort. Kronen og gullbarren veier akkurat like mye, men kronen er blandet
-// med lettere solv. Da ma kronen vaere storre — og en storre gjenstand presser bort
+// med lettere sølv. Da må kronen være større — og en større gjenstand presser bort
 // mer vann. Eleven senker begge i hvert sitt kar og SER kronen heve vannet mest.
 
 const GREEK = THEMES.greek;
 
 // To kar, samme tverrsnitt. Vannet starter likt. Gullbarren (rent gull, lite volum)
-// hever vannet litt; kronen (samme vekt, men blandet med solv = storre volum) mer.
+// hever vannet litt; kronen (samme vekt, men blandet med sølv = større volum) mer.
 const BASE_WATER = 1.2;
 const GOLD_RISE = 0.5;
 const CROWN_RISE = 0.95;
@@ -81,7 +81,7 @@ function GoldBar({ y }: { y: number }) {
 }
 
 function Crown({ y }: { y: number }) {
-    // Krone: en apen gullring med takker rundt — storre volum enn gullbarren.
+    // Krone: en åpen gullring med takker rundt — større volum enn gullbarren.
     const spikes = [0, 1, 2, 3, 4, 5, 6, 7];
     const r = 0.72;
     return (

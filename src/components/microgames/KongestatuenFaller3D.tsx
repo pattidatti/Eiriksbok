@@ -8,20 +8,20 @@ import { MicroCanvas, Interactive, Hotspot, Burst, damp } from './kit';
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Kongestatuen faller - et 3D-mikrospill for Uavhengighetserklaeringen.
+// Kongestatuen faller - et 3D-mikrospill for Uavhengighetserklæringen.
 //
-// New York, 9. juli 1776. Erklaeringen leses hoeyt paa Bowling Green. Folket
+// New York, 9. juli 1776. Erklæringen leses høyt på Bowling Green. Folket
 // river ned den forgylte rytterstatuen av kong George III. Blyet ble smeltet om
-// til over 42 000 kuler til revolusjonshaeren.
+// til over 42 000 kuler til revolusjonshæren.
 //
-// Lyspaere: erklaeringens ord ble til handling. Folket rev ned symbolet paa
-// kongemakten og stoepte det om til kuler for sin egen frihet - makten skiftet
+// Lyspære: erklæringens ord ble til handling. Folket rev ned symbolet på
+// kongemakten og støpte det om til kuler for sin egen frihet - makten skiftet
 // fra kronen til folket.
 //
-// Mekanikk: 1) klikk skriftrullen og les erklaeringen (laaser opp handling).
+// Mekanikk: 1) klikk skriftrullen og les erklæringen (låser opp handling).
 // 2) trekk i tauet (klikk statuen eller knappen) tre ganger; for hvert trekk
 // heller statuen mer, til den velter. Scenen leser bare `read` og `pulls` og
-// demper alt mykt mot mal.
+// demper alt mykt mot mål.
 
 const PULLS_TO_FALL = 3;
 
@@ -277,7 +277,7 @@ function Square({
         <group>
             <Ground />
             <Pedestal />
-            {/* Statuen: klikkbar naar erklaeringen er lest og den ikke er veltet */}
+            {/* Statuen: klikkbar når erklæringen er lest og den ikke er veltet */}
             <Interactive
                 position={[0, 2.1, 0]}
                 onSelect={onPullStatue}
@@ -289,7 +289,7 @@ function Square({
             </Interactive>
             <Crowd read={read} />
             <Buildings />
-            {/* Skriftrull-hotspot foer lesing */}
+            {/* Skriftrull-hotspot før lesing */}
             {!read && <Hotspot position={[3.4, 1.2, 2.6]} onSelect={onReadScroll} label="Les erklæringen" />}
         </group>
     );
@@ -304,7 +304,7 @@ function Ground() {
     );
 }
 
-// Stein-sokkel som statuen staar paa.
+// Stein-sokkel som statuen står på.
 function Pedestal() {
     return (
         <group>
@@ -321,18 +321,18 @@ function Pedestal() {
 }
 
 // Forgylt rytterstatue av kong George III. Heller mer for hvert trekk, og
-// velter helt naar pulls naar terskelen. Pivot ligger i statuens fot (Interactive
-// er allerede loeftet til [0,2.1,0], saa vi roterer denne gruppa om sin egen fot).
+// velter helt når pulls når terskelen. Pivot ligger i statuens fot (Interactive
+// er allerede løftet til [0,2.1,0], så vi roterer denne gruppa om sin egen fot).
 function Statue({ pulls }: { pulls: number }) {
     const tilt = useRef<THREE.Group>(null);
 
     useFrame((_, dt) => {
         if (!tilt.current) return;
-        // Mal-vinkel: 0, 0.18, 0.45, deretter velt (~1.5 rad = ligger nede).
+        // Mål-vinkel: 0, 0.18, 0.45, deretter velt (~1.5 rad = ligger nede).
         const target =
             pulls >= 3 ? 1.5 : pulls === 2 ? 0.45 : pulls === 1 ? 0.18 : 0;
         tilt.current.rotation.z = damp(tilt.current.rotation.z, -target, dt, pulls >= 3 ? 3.4 : 5);
-        // Naar den velter, la den ogsaa gli litt utover sokkelen.
+        // Når den velter, la den også gli litt utover sokkelen.
         const slideTarget = pulls >= 3 ? -1.4 : 0;
         tilt.current.position.x = damp(tilt.current.position.x, slideTarget, dt, 2.4);
     });
@@ -385,7 +385,7 @@ function Statue({ pulls }: { pulls: number }) {
     );
 }
 
-// Folkemengden rundt sokkelen. Loeftes/lyser opp naar erklaeringen er lest.
+// Folkemengden rundt sokkelen. Løftes/lyser opp når erklæringen er lest.
 const CROWD = [
     { pos: [-2.6, 0, 2.4] as [number, number, number], color: '#3b5a78' },
     { pos: [2.7, 0, 2.2] as [number, number, number], color: '#6b4a2a' },
@@ -419,7 +419,7 @@ function Citizen({
     useFrame(({ clock }, dt) => {
         if (!arm.current) return;
         const t = clock.getElapsedTime();
-        // Naar erklaeringen er lest: loefter armene og jubler. Ellers stille.
+        // Når erklæringen er lest: løfter armene og jubler. Ellers stille.
         const raise = read ? -2.2 + Math.sin(t * 4 + phase) * 0.4 : -0.2;
         arm.current.rotation.x = damp(arm.current.rotation.x, raise, dt, 5);
     });
@@ -433,7 +433,7 @@ function Citizen({
                 <sphereGeometry args={[0.14, 10, 10]} />
                 <meshStandardMaterial color="#e0b98c" roughness={0.85} />
             </mesh>
-            {/* Armer som loeftes ved jubel */}
+            {/* Armer som løftes ved jubel */}
             <group ref={arm} position={[0, 0.55, 0]}>
                 <mesh position={[0.18, 0.1, 0]} rotation={[0, 0, -0.3]} castShadow>
                     <cylinderGeometry args={[0.05, 0.05, 0.4, 6]} />

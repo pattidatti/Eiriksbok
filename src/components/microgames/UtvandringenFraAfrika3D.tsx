@@ -25,20 +25,20 @@ import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen "Menneskets tidlige historie".
 //
-// Lyspaera eleven skal kjenne paa kroppen: alle mennesker stammer fra Afrika, og
-// vi spredte oss over HELE kloden i loepet av mange titusen aar. Norge kom aller
-// sist - foerst da isen trakk seg tilbake, for rundt 11 000 aar siden. Naar eleven
-// drar tids-spaken framover, ser hun menneskene vandre ut fra Afrika, og hun maa
-// klikke hver verdensdel etter hvert som den naas for aa slaa seg ned. De to siste
-// verdensdelene (Amerika og Norge) naas foerst helt paa slutten av spaken - saa
-// eleven foeler hvor kort Norges historie er mot menneskets 200 000 aar.
+// Lyspæra eleven skal kjenne på kroppen: alle mennesker stammer fra Afrika, og
+// vi spredte oss over HELE kloden i løpet av mange titusen år. Norge kom aller
+// sist - først da isen trakk seg tilbake, for rundt 11 000 år siden. Når eleven
+// drar tids-spaken framover, ser hun menneskene vandre ut fra Afrika, og hun må
+// klikke hver verdensdel etter hvert som den nås for å slå seg ned. De to siste
+// verdensdelene (Amerika og Norge) nås først helt på slutten av spaken - så
+// eleven føler hvor kort Norges historie er mot menneskets 200 000 år.
 
 // ── Tid ──────────────────────────────────────────────────────────────────────
-const START_AGO = 200000; // Homo sapiens oppstaar i Afrika
-const END_AGO = 9000; // spakens hoyre ende
+const START_AGO = 200000; // Homo sapiens oppstår i Afrika
+const END_AGO = 9000; // spakens høyre ende
 const SPAN = START_AGO - END_AGO;
 
-// f (0..1, framover i tid) -> hvor mange aar siden det er naa.
+// f (0..1, framover i tid) -> hvor mange år siden det er nå.
 function agoFromF(f: number) {
     return START_AGO - SPAN * f;
 }
@@ -49,7 +49,7 @@ function formatNum(n: number) {
 }
 
 // ── Verdenskart (flatt, stilisert) ───────────────────────────────────────────
-// Posisjoner i XZ-planet: x = oest/vest, z = nord (negativ) / soer (positiv).
+// Posisjoner i XZ-planet: x = øst/vest, z = nord (negativ) / sør (positiv).
 type Region = {
     id: string;
     name: string;
@@ -114,7 +114,7 @@ const REGIONS: Region[] = [
 
 const REGION_BY_ID: Record<string, Region> = Object.fromEntries(REGIONS.map((r) => [r.id, r]));
 
-// Vandringsruter mellom verdensdelene. Hver rute har et kontrollpunkt saa den
+// Vandringsruter mellom verdensdelene. Hver rute har et kontrollpunkt så den
 // buer som en ekte vandringsbue (Amerika-ruten buer langt nord = Beringstredet).
 type Edge = { from: string; to: string; ctrl: [number, number] };
 const EDGES: Edge[] = [
@@ -343,11 +343,11 @@ function Landmass({ region }: { region: Region }) {
     );
 }
 
-// Innlandsis over Norge/nord. Dekker landet naar det er lenge siden, og trekker
+// Innlandsis over Norge/nord. Dekker landet når det er lenge siden, og trekker
 // seg tilbake (mindre + gjennomsiktig) fram mot i dag. Rent deklarativt: styrt av
-// nowAgo, saa den foelger spaken uten egen animasjons-loop.
+// nowAgo, så den følger spaken uten egen animasjons-loop.
 function IceSheet({ nowAgo }: { nowAgo: number }) {
-    // 1 = full is (>= 20 000 aar siden), 0 = smeltet (<= 10 000 aar siden).
+    // 1 = full is (>= 20 000 år siden), 0 = smeltet (<= 10 000 år siden).
     const cover = THREE.MathUtils.clamp((nowAgo - 10000) / 10000, 0, 1);
     if (cover <= 0.02) return null;
     return (
@@ -384,7 +384,7 @@ function MigrationEdge({ edge, nowAgo }: { edge: Edge; nowAgo: number }) {
         return out;
     }, [from.pos, to.pos, edge.ctrl]);
 
-    // Migrasjon paagaar naar tida er mellom kilde- og maalankomst.
+    // Migrasjon pågår når tida er mellom kilde- og målankomst.
     const active = nowAgo <= from.arrivalAgo && nowAgo > to.arrivalAgo;
     const progress = active
         ? THREE.MathUtils.clamp(
@@ -400,7 +400,7 @@ function MigrationEdge({ edge, nowAgo }: { edge: Edge; nowAgo: number }) {
 
     return (
         <group>
-            {/* Svak, prikkete rute (synlig naar kilden er naadd) */}
+            {/* Svak, prikkete rute (synlig når kilden er nådd) */}
             {reachedSource &&
                 dots.map((p, i) => (
                     <mesh key={i} position={p}>
@@ -426,7 +426,7 @@ function MigrationEdge({ edge, nowAgo }: { edge: Edge; nowAgo: number }) {
     );
 }
 
-// Liten bosetning: et par mennesker, et telt og et glodende baal.
+// Liten bosetning: et par mennesker, et telt og et glødende bål.
 function Settlement() {
     return (
         <group>
@@ -468,7 +468,7 @@ function RegionLabel({
     );
 }
 
-// Lysende himmelkuppel (kjolig topp -> varm horisont).
+// Lysende himmelkuppel (kjølig topp -> varm horisont).
 function SkyDome() {
     const texture = useMemo(() => {
         const c = document.createElement('canvas');

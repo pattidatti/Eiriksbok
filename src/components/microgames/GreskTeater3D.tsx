@@ -19,12 +19,12 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill: bygg et gresk teater inn i en aas, ett trinn av gangen. Eleven
+// Mikrospill: bygg et gresk teater inn i en ås, ett trinn av gangen. Eleven
 // legger ned orkhestra (dansegulvet), reiser tilskuerplassene i en halvsirkel
-// og setter opp skene (scenehuset). Naar alt staar, gaar en skuespiller ut paa
-// gulvet og lyden ringer som boelger helt opp til oeverste rad. Lyspaera:
-// formen paa teateret - en halvsirkel skaaret inn i en aas - var selve grunnen
-// til at EN stemme kunne naa tusenvis av tilskuere.
+// og setter opp skene (scenehuset). Når alt står, går en skuespiller ut på
+// gulvet og lyden ringer som bølger helt opp til øverste rad. Lyspæra:
+// formen på teateret - en halvsirkel skåret inn i en ås - var selve grunnen
+// til at EN stemme kunne nå tusenvis av tilskuere.
 
 const TIERS = 7;
 
@@ -134,7 +134,7 @@ function TheatreScene({
                     <ringGeometry args={[2.45, 2.6, 40]} />
                     <meshStandardMaterial color="#bb9a55" roughness={1} />
                 </mesh>
-                {/* Alteret (thymele) midt paa gulvet */}
+                {/* Alteret (thymele) midt på gulvet */}
                 <mesh position={[0, 0.35, 0]} castShadow>
                     <cylinderGeometry args={[0.28, 0.34, 0.6, 12]} />
                     <meshStandardMaterial color="#efe6cf" roughness={0.9} />
@@ -166,15 +166,15 @@ function TheatreScene({
                 <Skene position={[0, 0, 4.3]} />
             </Placeable>
 
-            {/* Skuespilleren gaar ut naar alt staar */}
+            {/* Skuespilleren går ut når alt står */}
             <Placeable shown={stage >= 3}>
                 <Figure position={[0, 0.06, 0.6]} body="#b8742e" skin="#e6c39a" />
             </Placeable>
 
-            {/* Lyd-boelger som ringer ut over plassene */}
+            {/* Lyd-bølger som ringer ut over plassene */}
             {stage >= 3 && <SoundRings />}
 
-            {/* Byggemarkoerer - kun for det aktive trinnet */}
+            {/* Byggemarkører - kun for det aktive trinnet */}
             {stage === 0 && (
                 <Hotspot
                     position={[0, 0.9, 0]}
@@ -205,7 +205,7 @@ function TheatreScene({
     );
 }
 
-// Mykt skalerer barna inn fra null naar shown blir sann. All animasjon i refs.
+// Mykt skalerer barna inn fra null når shown blir sann. All animasjon i refs.
 function Placeable({ shown, children }: { shown: boolean; children: React.ReactNode }) {
     const ref = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -221,7 +221,7 @@ function Placeable({ shown, children }: { shown: boolean; children: React.ReactN
     );
 }
 
-// Skene - et lavt scenehus med soeyler, vendt mot tilskuerne.
+// Skene - et lavt scenehus med søyler, vendt mot tilskuerne.
 function Skene({ position }: { position: [number, number, number] }) {
     return (
         <group position={position}>
@@ -234,14 +234,14 @@ function Skene({ position }: { position: [number, number, number] }) {
                 <boxGeometry args={[7.4, 0.35, 1.4]} />
                 <meshStandardMaterial color="#d4c7a4" roughness={0.9} />
             </mesh>
-            {/* Soeyler foran */}
+            {/* Søyler foran */}
             {[-2.6, -1.3, 0, 1.3, 2.6].map((x) => (
                 <mesh key={x} position={[x, 1.05, -0.65]} castShadow>
                     <cylinderGeometry args={[0.22, 0.26, 2.1, 12]} />
                     <meshStandardMaterial color="#f1e9d4" roughness={0.85} />
                 </mesh>
             ))}
-            {/* Doeraapning (paraskenion) */}
+            {/* Døråpning (paraskenion) */}
             <mesh position={[0, 0.85, -0.52]}>
                 <boxGeometry args={[1, 1.7, 0.05]} />
                 <meshStandardMaterial color="#7c6a4a" roughness={0.95} />

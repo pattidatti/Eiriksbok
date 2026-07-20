@@ -21,13 +21,13 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill til artikkelen om det portugisiske sjoimperiet.
+// Mikrospill til artikkelen om det portugisiske sjøimperiet.
 //
-// Lyspaere: Portugal var et lite land, men kontrollerte verdenshandelen ved aa
-// plassere befestede handelsstasjoner ved knutepunktene langs sjoveien til India
-// - ikke ved aa erobre store landomraader. Eleven bygger kjeden av festninger
+// Lyspære: Portugal var et lite land, men kontrollerte verdenshandelen ved å
+// plassere befestede handelsstasjoner ved knutepunktene langs sjøveien til India
+// - ikke ved å erobre store landområder. Eleven bygger kjeden av festninger
 // langs ruten, ser ruten lyse opp etappe for etappe og krydderskipet seile
-// videre, og kjenner saaledes thalassokratiet (sjoimperiet) paa kroppen.
+// videre, og kjenner således thalassokratiet (sjøimperiet) på kroppen.
 
 interface SeaNode {
     name: string;
@@ -43,31 +43,31 @@ const NODES: SeaNode[] = [
         name: 'Ceuta',
         year: '1415',
         pos: [-5, 0.12, -4],
-        fact: 'Ceuta i Nord-Afrika ble erobret i 1415. Det var startskuddet. Herfra kunne Portugal sikre skipene sine og laere om handelen sorover.',
+        fact: 'Ceuta i Nord-Afrika ble erobret i 1415. Det var startskuddet. Herfra kunne Portugal sikre skipene sine og lære om handelen sørover.',
     },
     {
         name: 'Elmina',
         year: '1482',
         pos: [-3, 0.12, 1],
-        fact: 'Paa Gullkysten bygde de festningen Elmina. Her byttet de til seg gull, og senere mennesker. Festningen voktet havnen mot andre europeere.',
+        fact: 'På Gullkysten bygde de festningen Elmina. Her byttet de til seg gull, og senere mennesker. Festningen voktet havnen mot andre europeere.',
     },
     {
-        name: 'Kapp det gode haap',
+        name: 'Kapp det gode håp',
         year: '1488',
         pos: [-1.5, 0.12, 5.5],
-        fact: 'I 1488 rundet Bartolomeu Dias sorspissen av Afrika. Naa laa veien til Det indiske hav aapen.',
+        fact: 'I 1488 rundet Bartolomeu Dias sørspissen av Afrika. Nå lå veien til Det indiske hav åpen.',
     },
     {
         name: 'Goa',
         year: '1510',
         pos: [4, 0.12, 1.5],
-        fact: 'I Goa tok Portugal kontroll over krydderkilden. Her kjopte de pepper og kanel direkte, uten arabiske mellomledd.',
+        fact: 'I Goa tok Portugal kontroll over krydderkilden. Her kjøpte de pepper og kanel direkte, uten arabiske mellomledd.',
     },
     {
         name: 'Malakka',
         year: '1511',
         pos: [7.5, 0.12, -1],
-        fact: 'Malakka var porten til krydderoyene. Den som styrte dette sundet, styrte halve verdenshandelen.',
+        fact: 'Malakka var porten til krydderøyene. Den som styrte dette sundet, styrte halve verdenshandelen.',
     },
 ];
 
@@ -79,7 +79,7 @@ const LAND: { pos: [number, number, number]; r: number; color: string }[] = [
     // Iberia / Europa
     { pos: [-6.8, -0.2, -8.2], r: 2.6, color: '#cdb892' },
     { pos: [-4.6, -0.2, -7.4], r: 1.8, color: '#c6b083' },
-    // Afrika (vest- og sorkysten ligger inntil ruten)
+    // Afrika (vest- og sørkysten ligger inntil ruten)
     { pos: [2.2, -0.2, 1.6], r: 3.6, color: '#cdb892' },
     { pos: [0.4, -0.2, 4.6], r: 2.4, color: '#c6b083' },
     { pos: [-0.4, -0.2, 6.3], r: 1.5, color: '#cdb892' },
@@ -87,7 +87,7 @@ const LAND: { pos: [number, number, number]; r: number; color: string }[] = [
     // India
     { pos: [5.8, -0.2, 0.4], r: 2.0, color: '#cdb892' },
     { pos: [6.4, -0.2, 2.0], r: 1.5, color: '#c6b083' },
-    // Sorost-Asia / Malayahalvoya
+    // Sørøst-Asia / Malayahalvøya
     { pos: [9.4, -0.2, -2.8], r: 2.2, color: '#cdb892' },
 ];
 
@@ -105,7 +105,7 @@ const Sjoimperiet3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     };
 
     const place = () => {
-        const idx = placed; // knutepunktet som bygges naa (0-basert)
+        const idx = placed; // knutepunktet som bygges nå (0-basert)
         setFact(NODES[idx].fact);
         const next = idx + 1;
         setPlaced(next);
@@ -120,19 +120,19 @@ const Sjoimperiet3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     };
 
     const banner = won
-        ? 'Sjoimperiet staar! Krydderet flyter hjem til Lisboa.'
-        : `Klikk knutepunktet ved ${NODES[placed].name} for aa bygge festningen.`;
+        ? 'Sjøimperiet står! Krydderet flyter hjem til Lisboa.'
+        : `Klikk knutepunktet ved ${NODES[placed].name} for å bygge festningen.`;
 
     const badge = won ? 'Krydderhandelen sikret' : placed > 0 ? NODES[placed - 1].year : 'Sagres, 1400-tallet';
 
-    // Skipet seiler langs ruten etter hvert som festningene reises. Naar alt er
+    // Skipet seiler langs ruten etter hvert som festningene reises. Når alt er
     // bygd, vender det hjem til Lisboa med last (krydderet flyter tilbake).
     const shipTarget = won ? LISBOA : PATH[Math.min(placed, PATH.length - 1)];
 
     return (
         <MicroGameScaffold
-            title="Bygg sjoimperiet"
-            subtitle="Reis kjeden av festninger langs sjoveien til India og styr krydderhandelen"
+            title="Bygg sjøimperiet"
+            subtitle="Reis kjeden av festninger langs sjøveien til India og styr krydderhandelen"
             estimatedSeconds={150}
             onRetry={placed > 0 ? reset : undefined}
             canvas={{
@@ -156,7 +156,7 @@ const Sjoimperiet3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         ]}
                     />
                     <DragHint show={placed === 0} corner="bc">
-                        Klikk den pulserende ringen for aa bygge
+                        Klikk den pulserende ringen for å bygge
                     </DragHint>
                 </>
             }
@@ -168,17 +168,17 @@ const Sjoimperiet3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <StepTracker current={placed} total={NODES.length} />
                 {!won && (
                     <p className="text-sm text-slate-600">
-                        Portugal var for lite til aa erobre land. I stedet bygde de et sjoimperium:
+                        Portugal var for lite til å erobre land. I stedet bygde de et sjøimperium:
                         en kjede av befestede havner ved knutepunktene. Klikk det neste punktet langs
-                        ruten for aa reise festningen der.
+                        ruten for å reise festningen der.
                     </p>
                 )}
                 {fact && <SceneFact>{fact}</SceneFact>}
                 {won && (
-                    <WinScreen title="Du bygde et sjoimperium!" onReplay={reset}>
-                        Et lite land styrte krydderhandelen ved aa kontrollere knutepunktene langs
-                        sjoveien, ikke ved aa erobre store landomraader. Det kalles et thalassokrati
-                        - et rike bygd paa havet.
+                    <WinScreen title="Du bygde et sjøimperium!" onReplay={reset}>
+                        Et lite land styrte krydderhandelen ved å kontrollere knutepunktene langs
+                        sjøveien, ikke ved å erobre store landområder. Det kalles et thalassokrati
+                        - et rike bygd på havet.
                     </WinScreen>
                 )}
             </div>
@@ -201,7 +201,7 @@ function SeaMap({
 }) {
     return (
         <group>
-            {/* Havet med ekte boelger */}
+            {/* Havet med ekte bølger */}
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0.5, -0.06, 0]} receiveShadow>
                 <planeGeometry args={[34, 30, 48, 48]} />
                 <WaterMaterial color="#3d7fa6" waveHeight={0.08} waveScale={0.5} />
@@ -248,8 +248,8 @@ function SeaMap({
     );
 }
 
-// En etappe av sjoruten. En svak grunnstrek alltid, og en gyllen glod som
-// demper inn naar etappen er sikret av en festning.
+// En etappe av sjøruten. En svak grunnstrek alltid, og en gyllen glød som
+// demper inn når etappen er sikret av en festning.
 function RouteLeg({
     a,
     b,
@@ -291,7 +291,7 @@ function RouteLeg({
     );
 }
 
-// En festning som reiser seg fra havflaten naar den blir bygd.
+// En festning som reiser seg fra havflaten når den blir bygd.
 function Fort({ position, active }: { position: [number, number, number]; active: boolean }) {
     const g = useRef<THREE.Group>(null);
     useFrame((_, dt) => {

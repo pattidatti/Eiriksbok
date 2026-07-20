@@ -23,25 +23,25 @@ import type { MicroGameProps } from './types';
 
 // Karantenelinja: Cuba-krisen 1962 som et geografisk sjakkspill.
 //
-// Lyspaere: hele krisen handlet om geografi. Sovjetiske raketter paa Cuba laa bare
-// 150 km fra USA og kunne naa nesten alle store amerikanske byer paa minutter.
-// Kennedys svar var ogsaa et romlig grep: en ring av krigsskip (karantenen) rundt
-// Cuba for aa stanse flere sovjetiske skip, uten aa starte en atomkrig.
+// Lyspære: hele krisen handlet om geografi. Sovjetiske raketter på Cuba lå bare
+// 150 km fra USA og kunne nå nesten alle store amerikanske byer på minutter.
+// Kennedys svar var også et romlig grep: en ring av krigsskip (karantenen) rundt
+// Cuba for å stanse flere sovjetiske skip, uten å starte en atomkrig.
 //
-// Eleven kjenner dette paa kroppen i tre steg:
-//  1) Oppdag: klikk de skjulte rakettrampene som U-2 flyet fant paa Cuba.
-//  2) Trusselen: dra en spak og se rekkevidden vokse nordover til byene lyser roedt.
-//  3) Karantenen: dra krigsskip paa plass i karantenelinja, og sovjetskipene snur.
+// Eleven kjenner dette på kroppen i tre steg:
+//  1) Oppdag: klikk de skjulte rakettrampene som U-2 flyet fant på Cuba.
+//  2) Trusselen: dra en spak og se rekkevidden vokse nordover til byene lyser rødt.
+//  3) Karantenen: dra krigsskip på plass i karantenelinja, og sovjetskipene snur.
 //
-// Scenen drives av enkel React-tilstand og hvert delobjekt demper mykt mot maal.
+// Scenen drives av enkel React-tilstand og hvert delobjekt demper mykt mot mål.
 
-// Kartet sett skraatt ovenfra. Nord (USA) = negativ Z. Soer (mot kamera) = positiv Z.
+// Kartet sett skrått ovenfra. Nord (USA) = negativ Z. Sør (mot kamera) = positiv Z.
 const CUBA_X = 0.2;
 const CUBA_Z = 2.5;
 const MISSILE_X = [-2.2, 0.4, 2.8];
-const MAX_RADIUS = 14; // verdensenheter naar spaken staar paa topp
+const MAX_RADIUS = 14; // verdensenheter når spaken står på topp
 
-const SLOT_X = 5; // karantenelinja gaar nord-soer oest for Cuba
+const SLOT_X = 5; // karantenelinja går nord-sør øst for Cuba
 const LANES_Z = [0.4, 3, 5.6];
 const STAGE = [
     [-3.4, 0, 9],
@@ -72,7 +72,7 @@ function Landmass() {
                 <boxGeometry args={[22, 0.5, 7]} />
                 <meshStandardMaterial color="#86a85e" roughness={1} />
             </mesh>
-            {/* Florida-halvoeya som strekker seg ned mot Cuba */}
+            {/* Florida-halvøya som strekker seg ned mot Cuba */}
             <mesh position={[-2.6, 0.2, -4.4]} receiveShadow castShadow>
                 <boxGeometry args={[1.5, 0.5, 4]} />
                 <meshStandardMaterial color="#7fa357" roughness={1} />
@@ -81,7 +81,7 @@ function Landmass() {
     );
 }
 
-// --- En by paa fastlandet: lyser roedt naar den kommer i rakettenes rekkevidde ---
+// --- En by på fastlandet: lyser rødt når den kommer i rakettenes rekkevidde ---
 function CityMarker({ city, inRange }: { city: City; inRange: boolean }) {
     const mat = useRef<THREE.MeshStandardMaterial>(null);
     const dot = useRef<THREE.Mesh>(null);
@@ -119,7 +119,7 @@ function CityMarker({ city, inRange }: { city: City; inRange: boolean }) {
     );
 }
 
-// --- Den roede rekkevidde-sirkelen som vokser ut fra Cuba ---
+// --- Den røde rekkevidde-sirkelen som vokser ut fra Cuba ---
 function RangeDisc({ range }: { range: number }) {
     const ref = useRef<THREE.Mesh>(null);
     const mat = useRef<THREE.MeshBasicMaterial>(null);
@@ -153,7 +153,7 @@ function RangeDisc({ range }: { range: number }) {
     );
 }
 
-// --- En rakettrampe paa Cuba: skjult til den oppdages, reiser seg saa ---
+// --- En rakettrampe på Cuba: skjult til den oppdages, reiser seg så ---
 function MissileRamp({ x, revealed }: { x: number; revealed: boolean }) {
     const g = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -168,7 +168,7 @@ function MissileRamp({ x, revealed }: { x: number; revealed: boolean }) {
                 <boxGeometry args={[1.1, 0.16, 1.1]} />
                 <meshStandardMaterial color="#5f6b52" roughness={0.9} />
             </mesh>
-            {/* selve raketten paa skraa */}
+            {/* selve raketten på skrå */}
             <group ref={g} position={[0, 0.16, 0]} scale={[1, 0.001, 1]}>
                 <mesh position={[0, 0.9, 0]} castShadow>
                     <cylinderGeometry args={[0.16, 0.2, 1.8, 12]} />
@@ -183,7 +183,7 @@ function MissileRamp({ x, revealed }: { x: number; revealed: boolean }) {
     );
 }
 
-// --- Amerikansk krigsskip (graa destroyer) ---
+// --- Amerikansk krigsskip (grå destroyer) ---
 function Warship({ sealed }: { sealed?: boolean }) {
     return (
         <group rotation={[0, Math.PI / 2, 0]}>
@@ -203,7 +203,7 @@ function Warship({ sealed }: { sealed?: boolean }) {
                 <cylinderGeometry args={[0.04, 0.04, 0.6, 6]} />
                 <meshStandardMaterial color="#6b757e" />
             </mesh>
-            {/* roedt-hvitt vimpel naar skipet staar i linja */}
+            {/* rødt-hvitt vimpel når skipet står i linja */}
             <mesh position={[-0.1, 1.45, 0]}>
                 <sphereGeometry args={[0.12, 8, 8]} />
                 <meshStandardMaterial
@@ -216,13 +216,13 @@ function Warship({ sealed }: { sealed?: boolean }) {
     );
 }
 
-// --- Sovjetisk fraktskip: naermer seg fra oest, snur naar linja stenges ---
+// --- Sovjetisk fraktskip: nærmer seg fra øst, snur når linja stenges ---
 function Freighter({ z, blocked }: { z: number; blocked: boolean }) {
     const g = useRef<THREE.Group>(null);
     const dir = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
         if (!g.current) return;
-        // staar oest for linja og driver inn; snur ut igjen naar lane er stengt
+        // står øst for linja og driver inn; snur ut igjen når lane er stengt
         const targetX = blocked ? 13.5 : 7.4;
         g.current.position.x = damp(g.current.position.x, targetX, dt, blocked ? 1.6 : 0.7);
         // vugger lett
@@ -247,7 +247,7 @@ function Freighter({ z, blocked }: { z: number; blocked: boolean }) {
                     <boxGeometry args={[0.6, 0.6, 0.7]} />
                     <meshStandardMaterial color="#9aa4ad" roughness={0.6} />
                 </mesh>
-                {/* roed stjerne paa skroget */}
+                {/* rød stjerne på skroget */}
                 <mesh position={[0.2, 0.4, 0.46]}>
                     <circleGeometry args={[0.22, 5]} />
                     <meshStandardMaterial color="#c0392b" emissive="#8a1f15" emissiveIntensity={0.4} />
@@ -286,13 +286,13 @@ function CubaScene({ phase, found, range, sealed, onFind, onSeal }: SceneProps) 
             <WaterPlane position={[0, 0, -1]} size={[34, 28]} color="#2f6f94" />
             <Landmass />
 
-            {/* Cuba: en lang, smal oey */}
+            {/* Cuba: en lang, smal øy */}
             <mesh position={[CUBA_X, 0.18, CUBA_Z]} receiveShadow castShadow>
                 <boxGeometry args={[7.2, 0.5, 1.7]} />
                 <meshStandardMaterial color="#6f9e4e" roughness={1} />
             </mesh>
 
-            {/* byer paa fastlandet */}
+            {/* byer på fastlandet */}
             {CITIES.map((c) => (
                 <CityMarker key={c.id} city={c} inRange={radius >= dist(c.x, c.z)} />
             ))}
@@ -300,7 +300,7 @@ function CubaScene({ phase, found, range, sealed, onFind, onSeal }: SceneProps) 
             {/* rekkevidde-sirkel */}
             <RangeDisc range={range} />
 
-            {/* rakettramper paa Cuba */}
+            {/* rakettramper på Cuba */}
             {MISSILE_X.map((x, i) => (
                 <MissileRamp key={x} x={x} revealed={found[i]} />
             ))}
@@ -331,7 +331,7 @@ function CubaScene({ phase, found, range, sealed, onFind, onSeal }: SceneProps) 
                 </mesh>
             </group>
 
-            {/* karantenelinja: markoer-ringer + skip */}
+            {/* karantenelinja: markør-ringer + skip */}
             {(phase === 'blockade' || phase === 'done') && (
                 <group>
                     {LANES_Z.map((z, i) => (
@@ -355,7 +355,7 @@ function CubaScene({ phase, found, range, sealed, onFind, onSeal }: SceneProps) 
                         <Freighter key={z} z={z} blocked={sealed[i]} />
                     ))}
 
-                    {/* amerikanske krigsskip: dra paa plass (eller laast naar stengt) */}
+                    {/* amerikanske krigsskip: dra på plass (eller låst når stengt) */}
                     {LANES_Z.map((z, i) =>
                         sealed[i] ? (
                             <group key={z} position={[SLOT_X, 0, z]}>

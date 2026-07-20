@@ -23,17 +23,17 @@ import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen "Svartedauden". Et stilisert handelskart over Europa
 // sett ovenfra. Pesten starter ved Svartehavet i 1346, og eleven klikker neste
-// havn langs handelsruta. En mork pest-sky glir langs ruta til byen, husene blir
-// gra, folk faller, graver reiser seg, og dodstallet stiger. Slik foler eleven
-// pa kroppen hvordan Svartedauden fulgte handelsrutene helt til Bergen i 1349.
+// havn langs handelsruta. En mørk pest-sky glir langs ruta til byen, husene blir
+// grå, folk faller, graver reiser seg, og dødstallet stiger. Slik føler eleven
+// på kroppen hvordan Svartedauden fulgte handelsrutene helt til Bergen i 1349.
 //
-// Lyspaera (rett fra artikkelen): pesten spredte seg via handelsrutene fra ost,
-// by for by, og naadde Bergen i 1349. De samme skipene og veiene som baerte
-// rikdom, baerte ogsaa doden. Rundt halvparten av folket i Norge dode.
+// Lyspæra (rett fra artikkelen): pesten spredte seg via handelsrutene fra ost,
+// by for by, og nådde Bergen i 1349. De samme skipene og veiene som bærte
+// rikdom, bærte også døden. Rundt halvparten av folket i Norge døde.
 //
 // Mekanikk (rute + forvandling): klikk den pulserende ringen ved neste havn langs
-// ruta. Bare neste by er klikkbar, saa eleven folger selve ruta. Pest-skyen seiler
-// dit, byen forvandles, og aaret + dodstallet teller oppover.
+// ruta. Bare neste by er klikkbar, så eleven følger selve ruta. Pest-skyen seiler
+// dit, byen forvandles, og året + dødstallet teller oppover.
 
 interface City {
     name: string;
@@ -43,7 +43,7 @@ interface City {
 }
 
 // Byene i historisk rekkefolge langs handelsrutene. Caffa ved Svartehavet er
-// utgangspunktet (pesten var allerede der), saa eleven sprer den videre vestover.
+// utgangspunktet (pesten var allerede der), så eleven sprer den videre vestover.
 const CITIES: City[] = [
     { name: 'Caffa', year: '1346', x: 8.6, z: 0.4 },
     { name: 'Konstantinopel', year: '1347', x: 5.3, z: 1.7 },
@@ -54,20 +54,20 @@ const CITIES: City[] = [
 ];
 const TOTAL = CITIES.length;
 
-// Omtrentlig dodstall i Europa (millioner) etter hvert som pesten naar nye byer.
+// Omtrentlig dødstall i Europa (millioner) etter hvert som pesten når nye byer.
 const DEATHS = [2, 5, 11, 17, 22, 25];
 
-// Korte fakta for en 14-aaring, ett per nytt steg langs ruta.
+// Korte fakta for en 14-åring, ett per nytt steg langs ruta.
 const FACTS = [
     'Fra Svartehavet seilte genovesiske handelsskip vestover. Rotter og lopper med pestsmitte fulgte med lasten.',
-    'Hosten 1347 kom skip med dode og doende sjofolk til Messina paa Sicilia. Naa var pesten i Europa.',
+    'Høsten 1347 kom skip med døde og døende sjøfolk til Messina på Sicilia. Nå var pesten i Europa.',
     'Langs handelsrutene spredte pesten seg videre til travle havnebyer i Frankrike.',
-    'I 1348 naadde pesten England. Den fulgte veiene og elvene innover i landet.',
+    'I 1348 nådde pesten England. Den fulgte veiene og elvene innover i landet.',
     'Et engelsk skip brakte pesten til Bergen i 1349. Herfra spredte Svartedauden seg over hele Norge.',
 ];
 
-// En stilisert lavpoly-utgave av Europa, bygd av flate oyer (landflekker) paa
-// havet. Ikke et noyaktig kart, men det leser som en kyst med havner og hav.
+// En stilisert lavpoly-utgave av Europa, bygd av flate øyer (landflekker) på
+// havet. Ikke et nøyaktig kart, men det leser som en kyst med havner og hav.
 interface Blob {
     x: number;
     z: number;
@@ -100,7 +100,7 @@ const LAND: Blob[] = [
     { x: -1.0, z: -6.0, r: 2.2, s: 8, c: S },
     { x: -3.0, z: -5.2, r: 1.7, s: 7, c: S },
     { x: 0.7, z: -6.7, r: 1.6, s: 7, c: S },
-    // Nord-Afrika lukker Middelhavet i sor
+    // Nord-Afrika lukker Middelhavet i sør
     { x: -4.2, z: 5.4, r: 1.9, s: 7, c: A },
     { x: -0.5, z: 5.7, r: 2.0, s: 7, c: A },
     { x: 3.3, z: 5.4, r: 1.9, s: 7, c: A },
@@ -172,7 +172,7 @@ const Pestrute3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Pestens reise langs handelsrutene"
-            subtitle="Folg Svartedauden fra Svartehavet til Bergen, by for by langs handelsrutene"
+            subtitle="Følg Svartedauden fra Svartehavet til Bergen, by for by langs handelsrutene"
             estimatedSeconds={130}
             onRetry={count > 1 ? reset : undefined}
             canvas={{
@@ -186,14 +186,14 @@ const Pestrute3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <>
                     <SceneBanner message={banner} wide />
                     <SceneBadge corner="br">
-                        {done ? 'Bergen 1349' : `Aar ${year}`}
+                        {done ? 'Bergen 1349' : `År ${year}`}
                     </SceneBadge>
                     {!done && (
                         <DataReadout
                             corner="bl"
                             items={[
                                 { label: 'Rammet', value: `${count} / ${TOTAL}`, unit: 'byer' },
-                                { label: 'Dode i Europa', value: `~${deaths}`, unit: 'mill.' },
+                                { label: 'Døde i Europa', value: `~${deaths}`, unit: 'mill.' },
                             ]}
                         />
                     )}
@@ -219,19 +219,19 @@ const Pestrute3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 {!done ? (
                     <>
                         <p className="text-sm text-slate-600 leading-snug">
-                            Klikk den rode{' '}
+                            Klikk den røde{' '}
                             <span className="font-bold text-rose-700">ringen</span> ved neste havn.
-                            Da folger du pesten langs handelsruta. Byen blir gra, folk dor, og
-                            graver reiser seg. Pesten flytter seg fra by til by helt til den naar
+                            Da følger du pesten langs handelsruta. Byen blir grå, folk dør, og
+                            graver reiser seg. Pesten flytter seg fra by til by helt til den når
                             Bergen.
                         </p>
                         {fact && <SceneFact>{fact}</SceneFact>}
                     </>
                 ) : (
-                    <WinScreen title="Pesten naadde Bergen i 1349." onReplay={reset}>
-                        Pesten fulgte handelsrutene fra Svartehavet til Bergen paa bare tre aar. De
-                        samme skipene og veiene som baerte rikdom mellom byene, baerte ogsaa doden.
-                        I Norge dode rundt halvparten av befolkningen, og mange gaarder ble staaende
+                    <WinScreen title="Pesten nådde Bergen i 1349." onReplay={reset}>
+                        Pesten fulgte handelsrutene fra Svartehavet til Bergen på bare tre år. De
+                        samme skipene og veiene som bærte rikdom mellom byene, bærte også døden.
+                        I Norge døde rundt halvparten av befolkningen, og mange gårder ble stående
                         tomme.
                     </WinScreen>
                 )}
@@ -279,7 +279,7 @@ function Map({
                 <Island key={i} blob={b} />
             ))}
 
-            {/* Litt liv: noen traer paa fastlandet */}
+            {/* Litt liv: noen trær på fastlandet */}
             <Tree position={[2.6, 0.3, -2.4]} leaf="#4f7a34" />
             <Tree position={[-1.4, 0.3, -1.6]} leaf="#4f7a34" />
             <Tree position={[5.0, 0.3, -1.8]} leaf="#4f7a34" />
@@ -299,7 +299,7 @@ function Map({
                 <CityNode key={c.name} city={c} infected={infected[i]} />
             ))}
 
-            {/* Pest-skyen som folger ruta */}
+            {/* Pest-skyen som følger ruta */}
             <PlagueCloud target={cloudTarget} active={count > 1} />
 
             {/* Klikkbar ring ved neste havn langs ruta */}
@@ -313,13 +313,13 @@ function Map({
                 />
             )}
 
-            {/* Mork stovsky-burst naar en by rammes */}
+            {/* Mork stovsky-burst når en by rammes */}
             <Burst position={burstPos} trigger={burst} color="#7f1d1d" count={20} spread={1.8} />
         </group>
     );
 }
 
-// En flat landflekk (lavpoly oy) paa havet.
+// En flat landflekk (lavpoly øy) på havet.
 function Island({ blob }: { blob: Blob }) {
     return (
         <mesh
@@ -334,8 +334,8 @@ function Island({ blob }: { blob: Blob }) {
     );
 }
 
-// Et ledd av handelsruta mellom to byer. Demper fra dempet gull til mork rod naar
-// pesten har naadd fram langs leddet.
+// Et ledd av handelsruta mellom to byer. Demper fra dempet gull til mørk rød når
+// pesten har nådd fram langs leddet.
 const ROUTE_IDLE = new THREE.Color('#d9b066');
 const ROUTE_HOT = new THREE.Color('#9a1f1f');
 function RouteSegment({ a, b, reached }: { a: City; b: City; reached: boolean }) {
@@ -372,8 +372,8 @@ function RouteSegment({ a, b, reached }: { a: City; b: City; reached: boolean })
     );
 }
 
-// En by paa kartet. Frisk: lyse hus, folk paa beina, et tre. Rammet: husene blir
-// graa, folkene faller og forsvinner, graver reiser seg, og en mork pest-dis
+// En by på kartet. Frisk: lyse hus, folk på beina, et tre. Rammet: husene blir
+// grå, folkene faller og forsvinner, graver reiser seg, og en mørk pest-dis
 // legger seg over byen. Alt drives av infected-propen.
 function CityNode({ city, infected }: { city: City; infected: boolean }) {
     const bodyA = useRef<THREE.MeshStandardMaterial>(null);
@@ -405,7 +405,7 @@ function CityNode({ city, infected }: { city: City; infected: boolean }) {
 
     return (
         <group position={[city.x, 0.31, city.z]}>
-            {/* To smaa hus */}
+            {/* To små hus */}
             <group position={[-0.35, 0, 0]}>
                 <mesh position={[0, 0.32, 0]} castShadow>
                     <boxGeometry args={[0.6, 0.64, 0.55]} />
@@ -427,19 +427,19 @@ function CityNode({ city, infected }: { city: City; infected: boolean }) {
                 </mesh>
             </group>
 
-            {/* Folk paa beina (forsvinner naar byen rammes) */}
+            {/* Folk på beina (forsvinner når byen rammes) */}
             <group ref={people} position={[0, 0, -0.5]}>
                 <Person x={-0.2} body="#3f5d8a" />
                 <Person x={0.25} body="#7a4a6a" />
             </group>
 
-            {/* Graver som reiser seg naar byen rammes */}
+            {/* Graver som reiser seg når byen rammes */}
             <group ref={graves} position={[0, 0, 0.6]} scale={[0, 0, 0]}>
                 <Grave x={-0.25} />
                 <Grave x={0.2} tilt={0.18} />
             </group>
 
-            {/* Mork pest-dis over byen */}
+            {/* Mørk pest-dis over byen */}
             <mesh position={[0, 1.05, 0]} scale={[1, 0.5, 1]}>
                 <sphereGeometry args={[1.15, 14, 12]} />
                 <meshStandardMaterial
@@ -454,7 +454,7 @@ function CityNode({ city, infected }: { city: City; infected: boolean }) {
                 />
             </mesh>
 
-            {/* Bynavn (og aar naar byen er rammet) */}
+            {/* Bynavn (og år når byen er rammet) */}
             <Html position={[0, 1.9, 0]} center pointerEvents="none">
                 <div className="px-2 py-0.5 rounded-md bg-slate-900/80 text-white text-[11px] font-bold whitespace-nowrap shadow">
                     {city.name}
@@ -495,7 +495,7 @@ function Grave({ x, tilt = -0.12 }: { x: number; tilt?: number }) {
     );
 }
 
-// Den morke pest-skyen som glir langs handelsruta mot den sist smittede byen.
+// Den mørke pest-skyen som glir langs handelsruta mot den sist smittede byen.
 function PlagueCloud({ target, active }: { target: [number, number]; active: boolean }) {
     const group = useRef<THREE.Group>(null);
     const glow = useRef<THREE.Mesh>(null);

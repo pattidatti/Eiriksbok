@@ -21,24 +21,24 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill til artikkelen om eskatologi. Kjerneideen eleven skal kjenne paa
-// kroppen: SLUTTEN er den samme - en levende verden gaar under - men FORMEN paa
-// tiden avgjor hva slutten betyr.
-//   - Tidshjulet (sirkulaer tid): undergangen er en renselse. Verden fodes paa
-//     ny, gronn og frisk. Ragnarok og hinduismens yugaer.
-//   - Tidspilen (lineaer tid): historien naar ett endelig punktum. En ny himmel
+// Mikrospill til artikkelen om eskatologi. Kjerneideen eleven skal kjenne på
+// kroppen: SLUTTEN er den samme - en levende verden går under - men FORMEN på
+// tiden avgjør hva slutten betyr.
+//   - Tidshjulet (sirkulær tid): undergangen er en renselse. Verden fødes på
+//     ny, grønn og frisk. Ragnarok og hinduismens yugaer.
+//   - Tidspilen (lineær tid): historien når ett endelig punktum. En ny himmel
 //     og en ny jord som varer evig. Kristendom, islam, zoroastrisme.
 // Verden er en liten klode som svever i et lysende kosmos. Den lever gjennom
-// fire faser (skapelse, blomstring, forfall, undergang), og enten fodes paa ny
-// (hjulet) eller forvandles til en straalende, evig ny jord (pilen).
+// fire faser (skapelse, blomstring, forfall, undergang), og enten fødes på ny
+// (hjulet) eller forvandles til en strålende, evig ny jord (pilen).
 
 type Shape = 'wheel' | 'arrow';
 type Phase = 'explore' | 'quiz' | 'won';
 
-const DURATION = 7; // sekunder for ett fullt loep gjennom tiden
+const DURATION = 7; // sekunder for ett fullt løp gjennom tiden
 const PCY = 1.7; // hoyden kloden svever i
-const RING_R = 3.15; // radius paa tidshjulet
-const RING_TILT = 0.42; // helning paa hjulet (3D-dybde)
+const RING_R = 3.15; // radius på tidshjulet
+const RING_TILT = 0.42; // helning på hjulet (3D-dybde)
 const ARROW_X0 = -5.4;
 const ARROW_X1 = 5.4;
 const ARROW_Z = 2.5; // tidspilen ligger foran kloden
@@ -112,7 +112,7 @@ const TidensFormer3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         sounds.play('pick');
     };
 
-    // Et fullt loep er fullført: hjulet snur, eller pilen treffer punktumet.
+    // Et fullt løp er fullført: hjulet snur, eller pilen treffer punktumet.
     const handleCycleEnd = (s: Shape) => {
         setBurst((b) => b + 1);
         if (s === 'arrow') {

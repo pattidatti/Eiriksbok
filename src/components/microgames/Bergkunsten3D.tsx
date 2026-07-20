@@ -20,13 +20,13 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen om helleristninger. Eleven drar SOLA ned mot
-// horisonten. Naar lyset staar hoeyt er berget flatt og figurene usynlige.
-// Men naar sola staar lavt, kaster de grunne hugg-sporene skygge og figurene
+// horisonten. Når lyset står høyt er berget flatt og figurene usynlige.
+// Men når sola står lavt, kaster de grunne hugg-sporene skygge og figurene
 // trer fram - akkurat slik arkeologer faktisk finner helleristninger. Eleven
-// klikker hver figur for aa registrere den.
+// klikker hver figur for å registrere den.
 //
-// Lyspaere: Du ser helleristninger best naar sola staar lavt. Det er derfor de
-// er saa vanskelige aa finne - og hvorfor nye blir oppdaget den dag i dag.
+// Lyspære: Du ser helleristninger best når sola står lavt. Det er derfor de
+// er så vanskelige å finne - og hvorfor nye blir oppdaget den dag i dag.
 
 type Kind = 'baat' | 'sol' | 'elg' | 'jeger' | 'fisk';
 
@@ -37,7 +37,7 @@ interface Figur {
 }
 
 const FIGURER: Figur[] = [
-    { kind: 'baat', pos: [-3.0, 1.1, 0.46], navn: 'Baat' },
+    { kind: 'baat', pos: [-3.0, 1.1, 0.46], navn: 'Båt' },
     { kind: 'sol', pos: [3.0, 1.4, 0.46], navn: 'Solhjul' },
     { kind: 'jeger', pos: [0.1, 1.5, 0.46], navn: 'Jeger' },
     { kind: 'elg', pos: [-2.7, -1.4, 0.46], navn: 'Elg' },
@@ -50,7 +50,7 @@ const GROOVE = new THREE.Color('#2b2720');
 
 const Bergkunsten3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const sounds = useStepSounds();
-    const [lowness, setLowness] = useState(0); // 0 = sola hoeyt, 1 = sola lavt
+    const [lowness, setLowness] = useState(0); // 0 = sola høyt, 1 = sola lavt
     const [found, setFound] = useState<Record<Kind, boolean>>({
         baat: false,
         sol: false,
@@ -66,7 +66,7 @@ const Bergkunsten3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     const foundCount = Object.values(found).filter(Boolean).length;
     const done = foundCount >= TOTAL;
-    // Hvor synlige sporene er: ingenting til sola begynner aa staa lavt.
+    // Hvor synlige sporene er: ingenting til sola begynner å stå lavt.
     const reveal = Math.max(0, Math.min(1, (lowness - 0.15) / 0.7));
     const degrees = Math.round(72 - lowness * 64);
 
@@ -196,7 +196,7 @@ function BergScene({
             <Rock position={[5.0, 0, 1.8]} color="#a59c8b" scale={1.4} />
             <Rock position={[-3.8, 0, 3.4]} color="#928a7b" scale={0.8} />
 
-            {/* Selve berghella - tilt litt bakover saa flata vender mot kamera */}
+            {/* Selve berghella - tilt litt bakover så flata vender mot kamera */}
             <group position={[0, 1.4, 0]} rotation={[-0.32, 0, 0]}>
                 <mesh castShadow receiveShadow>
                     <boxGeometry args={[10.4, 6.2, 0.8]} />
@@ -218,19 +218,19 @@ function BergScene({
     );
 }
 
-// Sola: en glodende kule + et retningslys som synker mot horisonten.
+// Sola: en glødende kule + et retningslys som synker mot horisonten.
 function SunLight({ lowness }: { lowness: number }) {
     const ball = useRef<THREE.Mesh>(null);
     const light = useRef<THREE.DirectionalLight>(null);
     useFrame((_, dt) => {
-        // Hoeyt: rett over og litt foran. Lavt: ute til siden, nesten i horisonten.
+        // Høyt: rett over og litt foran. Lavt: ute til siden, nesten i horisonten.
         const x = damp(ball.current?.position.x ?? 0, -2 - lowness * 7, dt, 4);
         const y = damp(ball.current?.position.y ?? 9, 9 - lowness * 7.4, dt, 4);
         const z = damp(ball.current?.position.z ?? 6, 6 + lowness * 1.5, dt, 4);
         if (ball.current) ball.current.position.set(x, y, z);
         if (light.current) light.current.position.set(x, y, z);
     });
-    // Varmere farge naar sola staar lavt.
+    // Varmere farge når sola står lavt.
     const warm = new THREE.Color('#fff6dd').lerp(new THREE.Color('#ffae52'), lowness);
     return (
         <group>
@@ -243,8 +243,8 @@ function SunLight({ lowness }: { lowness: number }) {
     );
 }
 
-// En hugget figur. Sporene er nesten usynlige naar lyset staar hoeyt
-// (lav opacity), men trer fram naar reveal stiger. Funnet => malt rod.
+// En hugget figur. Sporene er nesten usynlige når lyset står høyt
+// (lav opacity), men trer fram når reveal stiger. Funnet => malt rød.
 function Carving({
     kind,
     position,

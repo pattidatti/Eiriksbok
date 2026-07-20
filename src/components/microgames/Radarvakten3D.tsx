@@ -97,7 +97,7 @@ const Radarvakten3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             onComplete({ score: 1, completed: true, artifact: { found: next } });
         } else {
             setBanner(
-                `Ekko mottatt. Bombefly paa ${km} km. ${BOMBERS.length - next.length} fly er ennaa skjult.`
+                `Ekko mottatt. Bombefly på ${km} km. ${BOMBERS.length - next.length} fly er ennå skjult.`
             );
         }
     };
@@ -153,13 +153,13 @@ const Radarvakten3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-2.5">
                     <p className="text-xs font-bold text-slate-700">1. Sveip</p>
                     <p className="text-[11px] text-slate-500 mt-1 leading-snug">
-                        Dra radarskåla rundt. Den sender ut en usynlig radiostraale.
+                        Dra radarskåla rundt. Den sender ut en usynlig radiostråle.
                     </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-2.5">
                     <p className="text-xs font-bold text-slate-700">2. Treff</p>
                     <p className="text-[11px] text-slate-500 mt-1 leading-snug">
-                        Naar straalen treffer et fly, lyser det svakt opp. Klikk paa det.
+                        Når strålen treffer et fly, lyser det svakt opp. Klikk på det.
                     </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-2.5">

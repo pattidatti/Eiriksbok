@@ -21,18 +21,18 @@ import type { MicroGameProps } from './types';
 // gangen (escapement): oppfinnelsen som slapp tannhjulene fri litt etter litt og
 // gjorde at klokka tikket i et fast tempo.
 //
-// Lyspaere-oeyeblikket: eleven kjenner paa kroppen at den jevne, ukontrollerte
-// kraften fra loddet maa temmes. Foerst henger eleven paa loddet - og hjulet
-// raser vilt av gaarde. Saa setter eleven inn gangen - og det samme hjulet begynner
-// aa tikke jevnt, ett tann om gangen. Til slutt stiller eleven pendelen til riktig
+// Lyspære-øyeblikket: eleven kjenner på kroppen at den jevne, ukontrollerte
+// kraften fra loddet må temmes. Først henger eleven på loddet - og hjulet
+// raser vilt av gårde. Så setter eleven inn gangen - og det samme hjulet begynner
+// å tikke jevnt, ett tann om gangen. Til slutt stiller eleven pendelen til riktig
 // takt: kort pendel = rask klokke, lang pendel = treg klokke.
 //
 // Mekanikk: to Draggable (loddet, gangen) bygger verket steg for steg, og en
-// SceneSlider regulerer pendelens lengde til klokka gaar rett (60 tikk i minuttet).
+// SceneSlider regulerer pendelens lengde til klokka går rett (60 tikk i minuttet).
 
 type Stage = 'weight' | 'loose' | 'run' | 'won';
 
-// Maalposisjoner paa bakken der delene slippes.
+// Målposisjoner på bakken der delene slippes.
 const DRUM_DROP: [number, number] = [-3.2, 0];
 const GANG_DROP: [number, number] = [0, 0];
 
@@ -50,7 +50,7 @@ function tpmFromLength(len: number): number {
     return Math.round(60 / Math.sqrt(len));
 }
 
-// Brassy, varmt klokketaarn-palett (ikke standard groenn aaker).
+// Brassy, varmt klokketårn-palett (ikke standard grønn åker).
 const BRASS = '#c9a24a';
 const BRASS_DARK = '#9c7a2e';
 const STEEL = '#9aa0a6';
@@ -63,7 +63,7 @@ const Gangen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [stage, setStage] = useState<Stage>('weight');
     const [pendLen, setPendLen] = useState(2.2); // starter for langt -> for sakte
     const [banner, setBanner] = useState<string | null>(
-        'Dra det tunge loddet bort under trommelen for aa gi klokka kraft.'
+        'Dra det tunge loddet bort under trommelen for å gi klokka kraft.'
     );
     const [burst, setBurst] = useState(0);
     const winTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -81,7 +81,7 @@ const Gangen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         clearWin();
         setStage('weight');
         setPendLen(2.2);
-        setBanner('Dra det tunge loddet bort under trommelen for aa gi klokka kraft.');
+        setBanner('Dra det tunge loddet bort under trommelen for å gi klokka kraft.');
     };
 
     useEffect(() => () => clearWin(), []);
@@ -91,7 +91,7 @@ const Gangen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         if (dist < 1.9) {
             sounds.play('drop');
             setStage('loose');
-            setBanner('Loddet drar - men uten noe som bremser, raser hjulet vilt av gaarde!');
+            setBanner('Loddet drar - men uten noe som bremser, raser hjulet vilt av gårde!');
         } else {
             setBanner('Dra loddet helt bort under trommelen til venstre.');
         }
@@ -102,7 +102,7 @@ const Gangen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         if (dist < 1.9) {
             sounds.play('advance');
             setStage('run');
-            setBanner('Gangen slipper hjulet fri ett tann om gangen. Naa tikker klokka! Still pendelen til riktig takt.');
+            setBanner('Gangen slipper hjulet fri ett tann om gangen. Nå tikker klokka! Still pendelen til riktig takt.');
         } else {
             setBanner('Dra gangen inn over det store hjulet i midten.');
         }
@@ -133,7 +133,7 @@ const Gangen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Gangen: klokkas hemmelighet"
-            subtitle="Heng paa loddet, sett inn gangen, og still pendelen til klokka gaar rett"
+            subtitle="Heng på loddet, sett inn gangen, og still pendelen til klokka går rett"
             estimatedSeconds={150}
             onRetry={stage !== 'weight' ? reset : undefined}
             canvas={{
@@ -152,7 +152,7 @@ const Gangen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                             corner="bl"
                             items={[
                                 { label: 'Takt', value: tpm, unit: 'tikk/min' },
-                                { label: 'Maal', value: TARGET_TPM, unit: 'tikk/min' },
+                                { label: 'Mål', value: TARGET_TPM, unit: 'tikk/min' },
                             ]}
                         />
                     )}
@@ -173,8 +173,8 @@ const Gangen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         >
             {stage === 'weight' && (
                 <SceneFact>
-                    Loddet henger i et tau rundt trommelen. Tyngdekraften drar det nedover og prover
-                    aa snurre hele verket rundt. Dette er kraften som driver klokka - men den er
+                    Loddet henger i et tau rundt trommelen. Tyngdekraften drar det nedover og prøver
+                    å snurre hele verket rundt. Dette er kraften som driver klokka - men den er
                     ujevn og ute av kontroll.
                 </SceneFact>
             )}
@@ -187,7 +187,7 @@ const Gangen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         hjulet i midten.
                     </p>
                     <SceneFact>
-                        Gangen var hemmeligheten bak de foerste mekaniske klokkene paa 1300-tallet.
+                        Gangen var hemmeligheten bak de første mekaniske klokkene på 1300-tallet.
                         Uten den kunne ingen lage en maskin som holdt jevn tid.
                     </SceneFact>
                 </div>
@@ -205,18 +205,18 @@ const Gangen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         valueLabel={() => `${tpm} tikk/min - ${taktLabel}`}
                     />
                     <SceneFact>
-                        Pendelen bestemmer takten. En kort pendel svinger raskt og klokka gaar for
-                        fort. En lang pendel svinger sakte og klokka gaar for tregt. Still den til
+                        Pendelen bestemmer takten. En kort pendel svinger raskt og klokka går for
+                        fort. En lang pendel svinger sakte og klokka går for tregt. Still den til
                         klokka tikker en gang i sekundet - 60 tikk i minuttet.
                     </SceneFact>
                 </div>
             )}
 
             {stage === 'won' && (
-                <WinScreen title="Klokka gaar rett!" onReplay={reset}>
+                <WinScreen title="Klokka går rett!" onReplay={reset}>
                     Du temmet kraften fra loddet. Gangen slipper hjulet fri ett tann om gangen, og
                     pendelen holder takten jevn. Det var akkurat denne maskinen som tok over for sola
-                    og begynte aa styre naar folk sto opp, jobbet og moettes.
+                    og begynte å styre når folk sto opp, jobbet og møttes.
                 </WinScreen>
             )}
         </MicroGameScaffold>
@@ -248,7 +248,7 @@ function ClockScene({
 
     // All bevegelse drives av disse refene (aldri lest i render).
     const phase = useRef(0); // svinge-faser i hele perioder
-    const tick = useRef(0); // antall fullfoerte tikk
+    const tick = useRef(0); // antall fullførte tikk
     const free = useRef(0); // fri rotasjon i loose-fasen
     const wheelRot = useRef(0);
     const handRot = useRef(0);
@@ -257,7 +257,7 @@ function ClockScene({
     const gangIn = stage === 'run' || stage === 'won';
     const running = stage === 'run' || stage === 'won';
 
-    // Nullstill bevegelsen ved faseskifte saa overgangene ikke hopper.
+    // Nullstill bevegelsen ved faseskifte så overgangene ikke hopper.
     useEffect(() => {
         if (stage === 'loose') {
             free.current = 0;
@@ -282,7 +282,7 @@ function ClockScene({
         const d = Math.min(dt, 0.05);
 
         if (stage === 'loose') {
-            // Ingen brems: hjulet og viseren raser av gaarde.
+            // Ingen brems: hjulet og viseren raser av gårde.
             free.current += 7 * d;
             wheelRot.current = free.current;
             handRot.current = -free.current * 0.6;
@@ -316,7 +316,7 @@ function ClockScene({
             <Frame />
             <Drum />
 
-            {/* Loddet: dras paa plass i weight-fasen, henger etterpaa. */}
+            {/* Loddet: dras på plass i weight-fasen, henger etterpå. */}
             {stage === 'weight' ? (
                 <>
                     <GhostSpot pos={DRUM_DROP} />
@@ -350,7 +350,7 @@ function ClockScene({
                 <EscapeWheel />
             </group>
 
-            {/* Gangen (anchor): dras inn i loose-fasen, vipper etterpaa. */}
+            {/* Gangen (anchor): dras inn i loose-fasen, vipper etterpå. */}
             {stage === 'loose' ? (
                 <>
                     <GhostSpot pos={GANG_DROP} tall />
@@ -383,7 +383,7 @@ function ClockScene({
                 </group>
             )}
 
-            {/* Urskiva med viser til hoeyre. */}
+            {/* Urskiva med viser til høyre. */}
             <group position={[3.4, 2.4, 0.3]}>
                 <ClockFace />
                 <group ref={hand} position={[0, 0, 0.18]}>
@@ -407,7 +407,7 @@ function Floor() {
     );
 }
 
-// Treramme som baerer verket - som innsiden av et taarn-urverk.
+// Treramme som bærer verket - som innsiden av et tårn-urverk.
 function Frame() {
     return (
         <group>
@@ -454,7 +454,7 @@ function WeightBlock() {
                 <cylinderGeometry args={[0.42, 0.5, 1.4, 14]} />
                 <meshStandardMaterial color="#5c6066" metalness={0.6} roughness={0.4} />
             </mesh>
-            {/* krok paa toppen */}
+            {/* krok på toppen */}
             <mesh position={[0, 1.5, 0]}>
                 <torusGeometry args={[0.16, 0.05, 8, 16]} />
                 <meshStandardMaterial color={STEEL} metalness={0.6} roughness={0.4} />
@@ -463,7 +463,7 @@ function WeightBlock() {
     );
 }
 
-// Escape-hjul: en messingplate med skraa tenner langs kanten.
+// Escape-hjul: en messingplate med skrå tenner langs kanten.
 function EscapeWheel() {
     const teeth = Array.from({ length: TEETH }, (_, i) => i);
     const r = 1.1;
@@ -589,7 +589,7 @@ function Hand() {
     );
 }
 
-// Pulserende maalmarkoer paa bakken.
+// Pulserende målmarkør på bakken.
 function GhostSpot({ pos, tall = false }: { pos: [number, number]; tall?: boolean }) {
     const ref = useRef<THREE.Mesh>(null);
     useFrame(({ clock }) => {

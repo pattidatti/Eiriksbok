@@ -22,19 +22,19 @@ import type { MicroGameProps } from './types';
 
 // Mikrospill til "Den usynlige revolusjonen: rent vann og kloakk".
 //
-// Lyspaera (rett fra artikkelen): byene ble friske da de skilte det rene vannet
-// fra det skitne. Eleven ser et tverrsnitt av en syk by paa 1800-tallet. Under
-// bakken siver avfoering fra en utedo ned i grunnvannet og forgifter broennen
-// folk drikker fra. Eleven legger to ror:
-//   1. Et kloakkror som leder avfoeringen vekk -> grunnvannet blir rent igjen.
-//   2. Et rent vannror fra vanntaarnet til husene -> folk slipper aa drikke
-//      fra den skitne broennen.
-// Naar begge rorene ligger, blir folk friske. Mekanikken ER poenget: separasjon
+// Lyspæra (rett fra artikkelen): byene ble friske da de skilte det rene vannet
+// fra det skitne. Eleven ser et tverrsnitt av en syk by på 1800-tallet. Under
+// bakken siver avføring fra en utedo ned i grunnvannet og forgifter brønnen
+// folk drikker fra. Eleven legger to rør:
+//   1. Et kloakkrør som leder avføringen vekk -> grunnvannet blir rent igjen.
+//   2. Et rent vannrør fra vanntårnet til husene -> folk slipper å drikke
+//      fra den skitne brønnen.
+// Når begge rørene ligger, blir folk friske. Mekanikken ER poenget: separasjon
 // av rent og skittent vann er det som reddet flest liv i historien.
 //
-// Mekanikk: Connector (rute/koble A->B). Eleven klikker en node, saa en annen,
-// og et ror tegnes mellom dem. Riktige par lyser groennt; scenen forvandles for
-// hvert riktige ror.
+// Mekanikk: Connector (rute/koble A->B). Eleven klikker en node, så en annen,
+// og et rør tegnes mellom dem. Riktige par lyser grønt; scenen forvandles for
+// hvert riktige rør.
 
 const NODE_UTEDO = 'utedo';
 const NODE_KLOAKK = 'kloakk';
@@ -45,7 +45,7 @@ const DIRTY_WATER = new THREE.Color('#6f7a3a');
 const CLEAN_WATER = new THREE.Color('#3d7fa6');
 
 const START_BANNER =
-    'Byen er syk. Avfoering siver ned i grunnvannet. Klikk to punkter for aa legge et ror mellom dem.';
+    'Byen er syk. Avføring siver ned i grunnvannet. Klikk to punkter for å legge et rør mellom dem.';
 
 const RentVannRorene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const sounds = useStepSounds();
@@ -75,7 +75,7 @@ const RentVannRorene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     const handleConnect = (a: string, b: string, valid: boolean) => {
         if (!valid) {
-            setBanner('Det roret hjelper ikke. Tenk: hvor skal det skitne vekk, og hvor skal det rene komme fra?');
+            setBanner('Det røret hjelper ikke. Tenk: hvor skal det skitne vekk, og hvor skal det rene komme fra?');
             return;
         }
         const pair = [a, b];
@@ -88,9 +88,9 @@ const RentVannRorene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 finish();
             } else {
                 setFact(
-                    'Naa renner avfoeringen vekk i kloakken i stedet for ned i grunnvannet. Broennen blir gradvis renere.'
+                    'Nå renner avføringen vekk i kloakken i stedet for ned i grunnvannet. Brønnen blir gradvis renere.'
                 );
-                setBanner('Bra! Legg naa et rent vannror fra vanntaarnet til husene.');
+                setBanner('Bra! Legg nå et rent vannrør fra vanntårnet til husene.');
             }
         } else if (isClean && !cleanDone) {
             setCleanDone(true);
@@ -99,9 +99,9 @@ const RentVannRorene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 finish();
             } else {
                 setFact(
-                    'Husene faar rent vann rett fra vanntaarnet, og slipper aa drikke fra den skitne broennen.'
+                    'Husene får rent vann rett fra vanntårnet, og slipper å drikke fra den skitne brønnen.'
                 );
-                setBanner('Bra! Legg naa et kloakkror som leder avfoeringen vekk fra byen.');
+                setBanner('Bra! Legg nå et kloakkrør som leder avføringen vekk fra byen.');
             }
         }
     };
@@ -111,7 +111,7 @@ const RentVannRorene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Den usynlige revolusjonen"
-            subtitle="Legg roerene som skilte rent vann fra skittent, og gjoer den syke byen frisk"
+            subtitle="Legg rørene som skilte rent vann fra skittent, og gjør den syke byen frisk"
             estimatedSeconds={140}
             onRetry={healthLevel > 0 ? reset : undefined}
             canvas={{
@@ -132,7 +132,7 @@ const RentVannRorene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         <DataReadout
                             corner="bl"
                             items={[
-                                { label: 'Roer lagt', value: `${healthLevel} / 2` },
+                                { label: 'Rør lagt', value: `${healthLevel} / 2` },
                                 {
                                     label: 'Grunnvann',
                                     value: sewerDone ? 'Rent' : 'Forurenset',
@@ -141,7 +141,7 @@ const RentVannRorene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         />
                     )}
                     <DragHint show={idleHint} corner="bc">
-                        Klikk en gul kule, saa en annen, for aa legge et ror
+                        Klikk en gul kule, så en annen, for å legge et rør
                     </DragHint>
                 </>
             }
@@ -163,20 +163,20 @@ const RentVannRorene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     <>
                         <p className="text-sm text-slate-600 leading-snug">
                             Du ser et tverrsnitt av byen. Under bakken ligger{' '}
-                            <span className="font-bold text-sky-700">grunnvannet</span> som broennen
-                            henter fra. Klikk de gule kulene to og to for aa legge ror: foer det
+                            <span className="font-bold text-sky-700">grunnvannet</span> som brønnen
+                            henter fra. Klikk de gule kulene to og to for å legge rør: før det
                             skitne vekk i en <span className="font-bold">kloakk</span>, og hent inn{' '}
-                            <span className="font-bold">rent vann</span> fra vanntaarnet til husene.
+                            <span className="font-bold">rent vann</span> fra vanntårnet til husene.
                         </p>
                         {fact && <SceneFact>{fact}</SceneFact>}
                     </>
                 ) : (
                     <WinScreen title="Du skilte det rene vannet fra det skitne!" onReplay={reset}>
-                        Dette var nettopp det byene gjorde paa 1800-tallet. De la kloakkror som
-                        foerte avfoeringen langt vekk, og rene vannror som ga trygt drikkevann.
-                        Plutselig kunne folk aapne en kran og drikke uten aa bli syke. Disse
-                        usynlige roerene under gata har trolig reddet flere menneskeliv enn noen
-                        medisin, og likevel tenker vi nesten aldri paa dem.
+                        Dette var nettopp det byene gjorde på 1800-tallet. De la kloakkrør som
+                        førte avføringen langt vekk, og rene vannrør som ga trygt drikkevann.
+                        Plutselig kunne folk åpne en kran og drikke uten å bli syke. Disse
+                        usynlige rørene under gata har trolig reddet flere menneskeliv enn noen
+                        medisin, og likevel tenker vi nesten aldri på dem.
                     </WinScreen>
                 )}
             </div>
@@ -188,8 +188,8 @@ const RentVannRorene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 //  3D-TVERRSNITTET
 // ============================================================
 
-// Niva i bakken (y-verdier).
-const STREET_Y = 1.0; // gatenivaa / bakkeoverflate
+// Nivå i bakken (y-verdier).
+const STREET_Y = 1.0; // gatenivå / bakkeoverflate
 const WATER_Y = -3.0; // grunnvannsbaand
 
 const HOUSE_X = [-2.4, 0.0, 2.4];
@@ -222,16 +222,16 @@ function CrossSection({
                 <boxGeometry args={[20, STREET_Y + 5.6, 1.6]} />
                 <meshStandardMaterial color="#7a5a3a" roughness={1} />
             </mesh>
-            {/* Gatedekke paa toppen */}
+            {/* Gatedekke på toppen */}
             <mesh position={[0, STREET_Y + 0.06, 0.3]} receiveShadow>
                 <boxGeometry args={[20, 0.12, 1.4]} />
                 <meshStandardMaterial color="#9a9189" roughness={0.95} />
             </mesh>
 
-            {/* Grunnvannsbaand - rent eller forurenset */}
+            {/* Grunnvannsbånd - rent eller forurenset */}
             <GroundWater sewerDone={sewerDone} />
 
-            {/* Husene paa gata */}
+            {/* Husene på gata */}
             {HOUSE_X.map((x, i) => (
                 <Building
                     key={i}
@@ -250,16 +250,16 @@ function CrossSection({
                 <Townsfolk key={i} x={p.x} healthLevel={healthLevel} seed={i} />
             ))}
 
-            {/* Broennpumpe i midten: skaft ned i grunnvannet + pumpehode */}
+            {/* Brønnpumpe i midten: skaft ned i grunnvannet + pumpehode */}
             <Pump />
 
             {/* Utedo til venstre med lekkasje ned i grunnvannet */}
             <Cesspit sewerDone={sewerDone} />
 
-            {/* Vanntaarn til hoeyre - den rene kilden */}
+            {/* Vanntårn til høyre - den rene kilden */}
             <WaterTower />
 
-            {/* Roer-leggingen: koble node til node */}
+            {/* Rør-leggingen: koble node til node */}
             <Connector
                 nodes={[
                     { id: NODE_UTEDO, position: [-4.6, 0.4, 0.6], label: 'Utedo' },
@@ -277,7 +277,7 @@ function CrossSection({
                 onComplete={onComplete}
             />
 
-            {/* Feiring naar byen er frisk */}
+            {/* Feiring når byen er frisk */}
             <Burst position={[0, STREET_Y + 1.2, 0.6]} trigger={burst} color="#7ec8ff" count={26} spread={3.2} />
             {done && (
                 <Burst position={[2.5, STREET_Y + 1.0, 0.6]} trigger={burst} color="#9ef0b0" count={18} spread={2.4} />
@@ -286,8 +286,8 @@ function CrossSection({
     );
 }
 
-// Grunnvannsbaandet under bakken. Forurenset (gulgroennt) naar avfoeringen siver
-// ned, klarner mykt til blaatt naar kloakkroret leder det skitne vekk.
+// Grunnvannsbåndet under bakken. Forurenset (gulgrønt) når avføringen siver
+// ned, klarner mykt til blått når kloakkrøret leder det skitne vekk.
 function GroundWater({ sewerDone }: { sewerDone: boolean }) {
     const band = useRef<THREE.MeshStandardMaterial>(null);
     const plume = useRef<THREE.MeshStandardMaterial>(null);
@@ -312,7 +312,7 @@ function GroundWater({ sewerDone }: { sewerDone: boolean }) {
                     emissiveIntensity={0.16}
                 />
             </mesh>
-            {/* Forurensningssky rundt broennen */}
+            {/* Forurensningssky rundt brønnen */}
             <mesh position={[0, WATER_Y, 0.6]}>
                 <boxGeometry args={[6.2, 1.5, 0.5]} />
                 <meshStandardMaterial
@@ -327,7 +327,7 @@ function GroundWater({ sewerDone }: { sewerDone: boolean }) {
     );
 }
 
-// Broennpumpa: et skaft fra gata ned i grunnvannet, med pumpehode og haandtak.
+// Brønnpumpa: et skaft fra gata ned i grunnvannet, med pumpehode og håndtak.
 function Pump() {
     return (
         <group position={[0, 0, 0.7]}>
@@ -336,12 +336,12 @@ function Pump() {
                 <cylinderGeometry args={[0.16, 0.16, STREET_Y - WATER_Y, 10]} />
                 <meshStandardMaterial color="#3a4654" roughness={0.6} metalness={0.3} />
             </mesh>
-            {/* Pumpehode paa gata */}
+            {/* Pumpehode på gata */}
             <mesh position={[0, STREET_Y + 0.5, 0]} castShadow>
                 <boxGeometry args={[0.34, 0.9, 0.34]} />
                 <meshStandardMaterial color="#2f3a45" roughness={0.5} metalness={0.35} />
             </mesh>
-            {/* Haandtak */}
+            {/* Håndtak */}
             <mesh position={[0.32, STREET_Y + 0.8, 0]} rotation={[0, 0, 0.5]} castShadow>
                 <boxGeometry args={[0.6, 0.1, 0.1]} />
                 <meshStandardMaterial color="#5a4632" roughness={0.8} />
@@ -351,7 +351,7 @@ function Pump() {
 }
 
 // Utedo med en lekkasjekolonne som siver ned i grunnvannet. Lekkasjen tones bort
-// naar kloakkroret er lagt.
+// når kloakkrøret er lagt.
 function Cesspit({ sewerDone }: { sewerDone: boolean }) {
     const leak = useRef<THREE.MeshStandardMaterial>(null);
     useFrame((_, dt) => {
@@ -361,7 +361,7 @@ function Cesspit({ sewerDone }: { sewerDone: boolean }) {
     });
     return (
         <group position={[-4.6, 0, 0.5]}>
-            {/* Liten utedo-bod paa gata */}
+            {/* Liten utedo-bod på gata */}
             <mesh position={[0, STREET_Y + 0.55, 0]} castShadow>
                 <boxGeometry args={[0.9, 1.1, 0.9]} />
                 <meshStandardMaterial color="#6b4f33" roughness={0.9} />
@@ -385,7 +385,7 @@ function Cesspit({ sewerDone }: { sewerDone: boolean }) {
     );
 }
 
-// Vanntaarn til hoeyre - den rene kilden roret henter fra.
+// Vanntårn til høyre - den rene kilden røret henter fra.
 function WaterTower() {
     return (
         <group position={[7.2, 0, 0.5]}>

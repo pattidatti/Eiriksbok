@@ -21,11 +21,11 @@ import type { MicroGameProps } from './types';
 
 // Teselskapet i Boston, 16. desember 1773.
 //
-// Lyspaere: kolonistene naektet a betale en skatt de ikke fikk stemme om. I stedet
-// for a losse teen for salg, kastet de hele lasten i havet. Eleven kjenner trassen
-// pa kroppen ved a dra kiste etter kiste over rekka og se dem plaske ned i Boston
-// havn. Handlingen provoserte britene til a stenge havna, og et lite skritt fra
-// protest til apen krig var tatt.
+// Lyspære: kolonistene nektet å betale en skatt de ikke fikk stemme om. I stedet
+// for å losse teen for salg, kastet de hele lasten i havet. Eleven kjenner trassen
+// på kroppen ved å dra kiste etter kiste over rekka og se dem plaske ned i Boston
+// havn. Handlingen provoserte britene til å stenge havna, og et lite skritt fra
+// protest til åpen krig var tatt.
 //
 // Scenen drives av enkel React-tilstand (dumped[]) og hvert delobjekt demper mykt.
 
@@ -36,7 +36,7 @@ const DECK: [number, number][] = [
     [-0.7, 0.4],
     [0.7, 0.4],
 ];
-// Malpunkter ute i havet der teen skal havne.
+// Målpunkter ute i havet der teen skal havne.
 const SPLASH: [number, number][] = [
     [-5.5, -2],
     [0, -5.5],
@@ -132,7 +132,7 @@ function Chest({
     onDump: () => void;
 }) {
     if (dumped) {
-        // teen flyter som en mork flekk pa vannet
+        // teen flyter som en mørk flekk på vannet
         return (
             <mesh position={[splash[0], 0.06, splash[1]]} rotation={[-Math.PI / 2, 0, 0]}>
                 <circleGeometry args={[0.9, 20]} />
@@ -157,7 +157,7 @@ function Chest({
     );
 }
 
-// --- Utkledd "Sons of Liberty"-figur pa dekket ---
+// --- Utkledd "Sons of Liberty"-figur på dekket ---
 function Raider({ x, z }: { x: number; z: number }) {
     return (
         <group position={[x, 1.18, z]} rotation={[0, Math.PI, 0]}>
@@ -197,7 +197,7 @@ function HarborScene({ dumped, dumpChest, dumpCount }: SceneProps) {
                 <Raider key={i} x={r[0]} z={r[1]} />
             ))}
 
-            {/* malpunkt-ringer der teen skal havne */}
+            {/* målpunkt-ringer der teen skal havne */}
             {SPLASH.map((s, i) =>
                 dumped[i] ? null : (
                     <mesh key={`m${i}`} position={[s[0], 0.05, s[1]]} rotation={[-Math.PI / 2, 0, 0]}>
@@ -217,7 +217,7 @@ function HarborScene({ dumped, dumpChest, dumpCount }: SceneProps) {
                 dumped[i] ? <Impact key={`i${i}`} preset="splash" trigger={1} position={[s[0], 0.1, s[1]]} /> : null
             )}
 
-            {/* feiringspartikler nar alt er dumpet */}
+            {/* feiringspartikler når alt er dumpet */}
             <Burst position={[0, 2, 0]} trigger={dumpCount >= DECK.length ? 1 : 0} />
         </group>
     );

@@ -17,20 +17,20 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill: Lynkrigen - samle stotet (Schwerpunkt).
+// Mikrospill: Lynkrigen - samle støtet (Schwerpunkt).
 // Emne: Blitzkrieg, andre verdenskrig. Eleven har seks stridsvogner og en lang
 // forsvarslinje med fem bunkere. Sprer du vognene likt langs hele fronten,
-// bryter du ingen steder og angrepet stanser. Samler du minst fire vogner paa
-// ETT punkt, slaar du hull, kjorer dypt inn bak linja og hele forsvaret faller.
-// Lyspaere: lynkrigen vant ikke ved aa presse likt overalt, men ved aa samle all
-// panserkraft paa ett punkt, slaa hull og kjore raskt gjennom.
+// bryter du ingen steder og angrepet stanser. Samler du minst fire vogner på
+// ETT punkt, slår du hull, kjører dypt inn bak linja og hele forsvaret faller.
+// Lyspære: lynkrigen vant ikke ved å presse likt overalt, men ved å samle all
+// panserkraft på ett punkt, slå hull og kjøre raskt gjennom.
 
 const SECTOR_X = [-8, -4, 0, 4, 8]; // fem bunkere langs fronten
 const LINE_Z = -2.4; // forsvarslinjas dybde
-const BREAK_NEEDED = 4; // vogner som maa samles for aa bryte ett punkt
+const BREAK_NEEDED = 4; // vogner som må samles for å bryte ett punkt
 const TANK_COUNT = 6;
 
-// Startoppstilling for de seks stridsvognene, i reserven bak (sor).
+// Startoppstilling for de seks stridsvognene, i reserven bak (sør).
 const STAGING: [number, number][] = [
     [-7.5, 6],
     [-4.5, 6.4],
@@ -40,9 +40,9 @@ const STAGING: [number, number][] = [
     [7.5, 6.4],
 ];
 
-// Finn hvilket bunker-punkt en vogn horer til ut fra hvor den ble sluppet.
-// Bare vogner som er dratt helt fram mot fronten teller (z <= 2.4), og de maa
-// ligge naer en av de fem bunkerne (|dx| < 2.8). Ellers regnes de som reserve.
+// Finn hvilket bunker-punkt en vogn hører til ut fra hvor den ble sluppet.
+// Bare vogner som er dratt helt fram mot fronten teller (z <= 2.4), og de må
+// ligge nær en av de fem bunkerne (|dx| < 2.8). Ellers regnes de som reserve.
 function sectorForDrop(x: number, z: number): number | null {
     if (z > 2.4) return null;
     let best: number | null = null;
@@ -59,7 +59,7 @@ function sectorForDrop(x: number, z: number): number | null {
 
 const Lynkrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const sounds = useStepSounds();
-    // Hver vogns sluppposisjon (xz) og hvilket punkt den er samlet paa.
+    // Hver vogns sluppposisjon (xz) og hvilket punkt den er samlet på.
     const [placed, setPlaced] = useState<[number, number][]>(() =>
         STAGING.map((p) => [p[0], p[1]])
     );
@@ -274,7 +274,7 @@ function BlitzScene({
                 />
             ))}
 
-            {/* Reserve-etikett-stolpe bak (sor) */}
+            {/* Reserve-etikett-stolpe bak (sør) */}
             <mesh position={[0, 0.02, 6.6]} rotation={[-Math.PI / 2, 0, 0]}>
                 <planeGeometry args={[20, 0.12]} />
                 <meshStandardMaterial color="#8a8f78" />
@@ -316,7 +316,7 @@ function BlitzScene({
     );
 }
 
-// En bunker/skyttergrav-seksjon. Synker og tipper naar den brytes.
+// En bunker/skyttergrav-seksjon. Synker og tipper når den brytes.
 function Bunker({
     x,
     broken,
@@ -340,7 +340,7 @@ function Bunker({
 
     useFrame((_, dt) => {
         tRef.current += dt;
-        // Gjennombruddshullet synker forst; de andre faller som en bolge utover.
+        // Gjennombruddshullet synker først; de andre faller som en bølge utover.
         const active = broken && tRef.current > (isGap ? 0 : delay + 0.15);
         const targetY = active ? -2.4 : 0;
         const targetTilt = active ? (x < 0 ? 0.5 : -0.5) : 0;
@@ -369,7 +369,7 @@ function Bunker({
                 <boxGeometry args={[3.4, 0.7, 1.1]} />
                 <meshStandardMaterial ref={glowRef} color="#4a5570" emissive="#34d399" emissiveIntensity={0} roughness={0.95} />
             </mesh>
-            {/* Bunker-kloss med skyteskaar */}
+            {/* Bunker-kloss med skyteskår */}
             <mesh position={[0, 0.75, -0.1]} castShadow>
                 <boxGeometry args={[1.5, 0.9, 0.9]} />
                 <meshStandardMaterial color="#5b6478" roughness={0.9} />
@@ -385,13 +385,13 @@ function Bunker({
                     <meshStandardMaterial color="#7a6f4a" roughness={1} />
                 </mesh>
             ))}
-            {/* Liten flagg-markor som viser trykket paa dette punktet */}
+            {/* Liten flagg-markør som viser trykket på dette punktet */}
             <TankStack count={count} />
         </group>
     );
 }
 
-// Viser hvor mange vogner som presser paa dette punktet, som smaa merker.
+// Viser hvor mange vogner som presser på dette punktet, som små merker.
 function TankStack({ count }: { count: number }) {
     if (count <= 0) return null;
     return (
@@ -425,7 +425,7 @@ function Tank({ assigned }: { assigned: boolean }) {
                 <boxGeometry args={[1.5, 0.55, 1.9]} />
                 <meshStandardMaterial color={hull} roughness={0.7} metalness={0.25} />
             </mesh>
-            {/* Taarn */}
+            {/* Tårn */}
             <mesh position={[0, 1.02, -0.1]} castShadow>
                 <boxGeometry args={[0.95, 0.5, 1.0]} />
                 <meshStandardMaterial color={hull} roughness={0.6} metalness={0.3} />
@@ -439,8 +439,8 @@ function Tank({ assigned }: { assigned: boolean }) {
     );
 }
 
-// Stridsvogn i angrepsfasen: kjorer mot maal med myk demping. Ved seier ruter den
-// forst fram til hullet, saa dypt inn bak fienden og vifter ut (omringing).
+// Stridsvogn i angrepsfasen: kjører mot mål med myk demping. Ved seier ruter den
+// først fram til hullet, så dypt inn bak fienden og vifter ut (omringing).
 function LaunchTank({
     index,
     start,
@@ -468,7 +468,7 @@ function LaunchTank({
         let tx = pos.current.x;
         let tz = pos.current.z;
         if (result === 'stall') {
-            // Stanser rett sor for linja - bumper borti forsvaret.
+            // Stanser rett sør for linja - bumper borti forsvaret.
             tx = start[0];
             tz = sector !== null ? LINE_Z + 1.0 : Math.min(start[1], 3.2);
         } else if (result === 'win') {
@@ -487,7 +487,7 @@ function LaunchTank({
         pos.current.x = damp(pos.current.x, tx, dt, speed);
         pos.current.z = damp(pos.current.z, tz, dt, speed);
         grp.current.position.set(pos.current.x, 0, pos.current.z);
-        // Pek i kjoreretningen.
+        // Pek i kjøreretningen.
         const wantYaw = Math.atan2(tx - pos.current.x, -(tz - pos.current.z));
         if (Math.abs(tx - pos.current.x) + Math.abs(tz - pos.current.z) > 0.05) {
             yaw.current = damp(yaw.current, wantYaw, dt, 5);
@@ -502,10 +502,10 @@ function LaunchTank({
     );
 }
 
-// Spredte, mork terreng-flekker for at bakken ikke skal se helt flat ut.
+// Spredte, mørk terreng-flekker for at bakken ikke skal se helt flat ut.
 function ScorchField() {
     const spots = useMemo(() => {
-        // Enkel deterministisk pseudo-random paa modulnivaa-fri maate.
+        // Enkel deterministisk pseudo-random på modulnivå-fri måte.
         const out: { x: number; z: number; r: number }[] = [];
         let seed = 1337;
         const rnd = () => {

@@ -17,18 +17,18 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill til "Kappløpet om Afrika". Eleven ER en europeisk diplomat under
-// kappløpet: hen klikker omraade etter omraade paa kartet og planter et flagg
+// kappløpet: hen klikker område etter område på kartet og planter et flagg
 // for en stormakt. Kartet blir raskt et lappeteppe av europeiske farger.
-// Naar hele kontinentet er tatt, faller de rette grensestrekene paa plass -
-// tvers gjennom landsbyene. Lyspaera: Europa kappet til seg hele Afrika bit for
-// bit, og tegnet grensene uten aa spoerre dem som bodde der.
+// Når hele kontinentet er tatt, faller de rette grensestrekene på plass -
+// tvers gjennom landsbyene. Lyspæra: Europa kappet til seg hele Afrika bit for
+// bit, og tegnet grensene uten å spørre dem som bodde der.
 
 interface Power {
     navn: string;
     color: string;
 }
 
-// Rekkefolgen flaggene plantes i - kartet blir et lappeteppe.
+// Rekkefølgen flaggene plantes i - kartet blir et lappeteppe.
 const POWERS: Power[] = [
     { navn: 'Storbritannia', color: '#c0392b' },
     { navn: 'Frankrike', color: '#2563eb' },
@@ -38,7 +38,7 @@ const POWERS: Power[] = [
     { navn: 'Italia', color: '#0e7490' },
 ];
 
-// Seks omraader spredt over "kontinentet".
+// Seks områder spredt over "kontinentet".
 const REGIONS: [number, number][] = [
     [-3.4, -2.6],
     [2.8, -2.9],
@@ -49,7 +49,7 @@ const REGIONS: [number, number][] = [
 ];
 const TOTAL = REGIONS.length;
 
-// Landsbyer (folk) mellom omraadene - de staar stille, men grensene deler dem.
+// Landsbyer (folk) mellom områdene - de står stille, men grensene deler dem.
 const VILLAGES: [number, number][] = [
     [-1.6, -1.4],
     [1.4, 0.4],
@@ -57,7 +57,7 @@ const VILLAGES: [number, number][] = [
     [2.0, -1.2],
 ];
 
-// Rette grensestreker som faller paa plass til slutt.
+// Rette grensestreker som faller på plass til slutt.
 const BORDERS: { pos: [number, number, number]; rot: number; len: number }[] = [
     { pos: [0, 0.06, -0.4], rot: 0, len: 11 },
     { pos: [-0.2, 0.06, 0], rot: Math.PI / 2, len: 10 },
@@ -193,7 +193,7 @@ function Continent({
                 );
             })}
 
-            {/* Landsbyer (folk) - staar stille mellom omraadene */}
+            {/* Landsbyer (folk) - står stille mellom områdene */}
             {VILLAGES.map((v, i) => (
                 <group key={`village-${i}`} position={[v[0], 0, v[1]]}>
                     <Figure body="#8b5e34" skin="#d8a878" />
@@ -202,7 +202,7 @@ function Continent({
                 </group>
             ))}
 
-            {/* Flagg + klikkpunkter for hvert omraade */}
+            {/* Flagg + klikkpunkter for hvert område */}
             {REGIONS.map((r, i) => {
                 const p = flags[i];
                 return (
@@ -225,7 +225,7 @@ function Continent({
             {/* Burst-partikler ved siste plantede flagg */}
             <Burst position={[0, 1.6, 0]} trigger={burst} color="#f8fafc" count={20} spread={2.2} />
 
-            {/* Rette grensestreker faller paa plass naar alt er tatt */}
+            {/* Rette grensestreker faller på plass når alt er tatt */}
             {done &&
                 BORDERS.map((b, i) => (
                     <mesh key={`border-${i}`} position={b.pos} rotation={[0, b.rot, 0]}>

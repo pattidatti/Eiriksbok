@@ -23,29 +23,29 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Berlinmuren: dodsstripen som delte en by.
+// Berlinmuren: dødsstripen som delte en by.
 //
-// Lyspaere: Berlinmuren var ALDRI bare en vegg. Den var et dypt, dodelig system -
-// to murer med en apen "dodsstripe" imellom, vakttarn og lyskastere - som skar
-// rett gjennom en levende by og skilte familier i 28 ar. Eleven kjenner dette pa
-// kroppen ved a (1) stenge de apne overgangene natt til 13. august 1961, (2) dra
-// en spak som bygger dodsstripen lag for lag, og (3) rive muren i 1989 sa de to
-// familiene endelig moter hverandre igjen.
+// Lyspære: Berlinmuren var ALDRI bare en vegg. Den var et dypt, dødelig system -
+// to murer med en åpen "dødsstripe" imellom, vakttårn og lyskastere - som skar
+// rett gjennom en levende by og skilte familier i 28 år. Eleven kjenner dette på
+// kroppen ved å (1) stenge de åpne overgangene natt til 13. august 1961, (2) dra
+// en spak som bygger dødsstripen lag for lag, og (3) rive muren i 1989 så de to
+// familiene endelig møter hverandre igjen.
 //
 // Scenen drives av enkel React-tilstand (phase, sealed, build, down, reunite) og
-// hvert delobjekt demper mykt mot mal utledet av den.
+// hvert delobjekt demper mykt mot mål utledet av den.
 
-// Geometri: muren gar langs X. Vest (mot kamera) = negativ Z, Ost = positiv Z.
+// Geometri: muren går langs X. Vest (mot kamera) = negativ Z, Øst = positiv Z.
 const SEG_X = [-4, -2, 0, 2, 4];
-const GAP_IDX = [1, 2, 3]; // de tre apne overgangene som ma stenges 13. august
+const GAP_IDX = [1, 2, 3]; // de tre åpne overgangene som må stenges 13. august
 const FRONT_Z = -0.9; // frontmuren (vest, med graffiti)
-const INNER_Z = 2.4; // bakmuren (ost) - reiser seg nar dodsstripen bygges
+const INNER_Z = 2.4; // bakmuren (øst) - reiser seg når dødsstripen bygges
 const WEST_Z = -4.2;
 const EAST_Z = 4.6;
 
 type Phase = 'seal' | 'build' | 'fall' | 'done';
 
-// --- En murseksjon: reiser seg, star, eller faller ---
+// --- En murseksjon: reiser seg, står, eller faller ---
 function WallSegment({
     x,
     raised,
@@ -76,12 +76,12 @@ function WallSegment({
                 <boxGeometry args={[1.9, 1.8, 0.34]} />
                 <meshStandardMaterial color="#d8d2c6" roughness={0.95} />
             </mesh>
-            {/* karakteristisk ror pa toppen */}
+            {/* karakteristisk rør på toppen */}
             <mesh position={[0, 1.85, 0]} rotation={[0, 0, Math.PI / 2]} castShadow>
                 <cylinderGeometry args={[0.17, 0.17, 1.9, 12]} />
                 <meshStandardMaterial color="#bdb6a8" roughness={0.8} />
             </mesh>
-            {/* graffiti pa vest-siden (mot kamera) */}
+            {/* graffiti på vest-siden (mot kamera) */}
             <mesh position={[0, 0.95, -0.18]}>
                 <planeGeometry args={[1.5, 1.1]} />
                 <meshStandardMaterial color={graffiti} roughness={0.9} />
@@ -101,7 +101,7 @@ function WallSegment({
     return <group position={[x, 0, FRONT_Z]}>{slab}</group>;
 }
 
-// --- Bakmuren (Hinterlandmauer): en lang, lav mur som vokser fram med dodsstripen ---
+// --- Bakmuren (Hinterlandmauer): en lang, lav mur som vokser fram med dødsstripen ---
 function InnerWall({ build }: { build: number }) {
     const ref = useRef<THREE.Mesh>(null);
     useFrame((_, dt) => {
@@ -116,7 +116,7 @@ function InnerWall({ build }: { build: number }) {
     );
 }
 
-// --- Vakttarn: reiser seg nar dodsstripen er bygd ---
+// --- Vakttårn: reiser seg når dødsstripen er bygd ---
 function WatchTower({ build }: { build: number }) {
     const ref = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -130,7 +130,7 @@ function WatchTower({ build }: { build: number }) {
                 <boxGeometry args={[0.7, 3.2, 0.7]} />
                 <meshStandardMaterial color="#9aa0a6" roughness={0.8} />
             </mesh>
-            {/* vaktbu pa toppen med vindusbelte */}
+            {/* vaktbu på toppen med vindusbelte */}
             <mesh position={[0, 3.55, 0]} castShadow>
                 <boxGeometry args={[1.25, 0.9, 1.25]} />
                 <meshStandardMaterial color="#6f7780" roughness={0.6} />
@@ -148,7 +148,7 @@ function WatchTower({ build }: { build: number }) {
     );
 }
 
-// --- Lyskaster langs dodsstripen ---
+// --- Lyskaster langs dødsstripen ---
 function StripLamp({ x, build }: { x: number; build: number }) {
     const ref = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -173,16 +173,16 @@ function StripLamp({ x, build }: { x: number; build: number }) {
     );
 }
 
-// --- Dodsstripen: en sand-stripe mellom murene som lysner og bredner ---
+// --- Dødsstripen: en sand-stripe mellom murene som lysner og bredner ---
 function DeathStrip({ build }: { build: number }) {
     const ref = useRef<THREE.Mesh>(null);
     const mat = useRef<THREE.MeshStandardMaterial>(null);
     useFrame((_, dt) => {
         if (!ref.current || !mat.current) return;
-        // bredner ostover mens den bygges
+        // bredner østover mens den bygges
         const depth = 1 + build * 2.6;
         ref.current.scale.z = damp(ref.current.scale.z, depth, dt, 2.4);
-        // gra asfalt -> bleik, raket sand
+        // grå asfalt -> bleik, raket sand
         const c = mat.current.color;
         const target = new THREE.Color('#cdbf97').lerp(new THREE.Color('#8b9097'), 1 - build);
         c.lerp(target, Math.min(1, dt * 3));
@@ -200,7 +200,7 @@ function DeathStrip({ build }: { build: number }) {
     );
 }
 
-// --- En liten figur som kan ga mot et mal (Z) ved gjenforening ---
+// --- En liten figur som kan gå mot et mål (Z) ved gjenforening ---
 function Person({
     x,
     homeZ,
@@ -219,7 +219,7 @@ function Person({
         if (!ref.current) return;
         const targetZ = homeZ + (meetZ - homeZ) * reunite;
         ref.current.position.z = damp(ref.current.position.z, targetZ, dt, 2);
-        // lite hopp av glede pa slutten
+        // lite hopp av glede på slutten
         const joy = reunite > 0.9 ? Math.abs(Math.sin(performance.now() * 0.006)) * 0.25 : 0;
         ref.current.position.y = damp(ref.current.position.y, joy, dt, 6);
     });
@@ -270,7 +270,7 @@ function BerlinScene({ phase, sealed, build, down, reunite, smash }: SceneProps)
     const graffiti = ['#e2554b', '#3f8fd0', '#f2b134', '#56b36a', '#b06fd0'];
     return (
         <group>
-            {/* bakke: ost (gra) base + vest (gronn) flekk */}
+            {/* bakke: øst (grå) base + vest (grønn) flekk */}
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]} receiveShadow>
                 <planeGeometry args={[30, 24]} />
                 <meshStandardMaterial color="#9298a0" roughness={1} />
@@ -280,13 +280,13 @@ function BerlinScene({ phase, sealed, build, down, reunite, smash }: SceneProps)
                 <meshStandardMaterial color="#7d9b57" roughness={1} />
             </mesh>
 
-            {/* hus pa hver side */}
+            {/* hus på hver side */}
             <HouseRow z={WEST_Z} cool={false} />
             <HouseRow z={EAST_Z} cool />
             <Tree position={[-6, 0, WEST_Z + 1.4]} />
             <Tree position={[6, 0, WEST_Z + 1.2]} />
 
-            {/* dodsstripe-systemet (vises fra build-fasen) */}
+            {/* dødsstripe-systemet (vises fra build-fasen) */}
             <DeathStrip build={build} />
             <InnerWall build={build} />
             <WatchTower build={build} />
@@ -311,7 +311,7 @@ function BerlinScene({ phase, sealed, build, down, reunite, smash }: SceneProps)
                 );
             })}
 
-            {/* apne overganger: hotspots i seal-fasen */}
+            {/* åpne overganger: hotspots i seal-fasen */}
             {phase === 'seal' &&
                 GAP_IDX.map((idx, j) =>
                     sealed[j] ? null : (
@@ -325,11 +325,11 @@ function BerlinScene({ phase, sealed, build, down, reunite, smash }: SceneProps)
                     )
                 )}
 
-            {/* to familier, en pa hver side */}
+            {/* to familier, en på hver side */}
             <Person x={-0.6} homeZ={WEST_Z + 1.6} meetZ={FRONT_Z - 0.4} reunite={reunite} body="#3f6fa3" />
             <Person x={0.6} homeZ={EAST_Z - 1.6} meetZ={FRONT_Z + 0.5} reunite={reunite} body="#a3553f" />
 
-            {/* feiringspartikler nar muren faller */}
+            {/* feiringspartikler når muren faller */}
             <Burst position={[0, 1.6, FRONT_Z]} trigger={down.filter(Boolean).length} />
         </group>
     );
@@ -342,7 +342,7 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
     const [down, setDown] = useState<boolean[]>([false, false, false, false, false]);
     const [reunite, setReunite] = useState(0);
     const [banner, setBanner] = useState<string | null>(
-        'Natt til 13. august 1961: grensa stenges. Klikk de apne overgangene.'
+        'Natt til 13. august 1961: grensa stenges. Klikk de åpne overgangene.'
     );
     const sound = useStepSounds();
 
@@ -352,7 +352,7 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
         setBuild(0);
         setDown([false, false, false, false, false]);
         setReunite(0);
-        setBanner('Natt til 13. august 1961: grensa stenges. Klikk de apne overgangene.');
+        setBanner('Natt til 13. august 1961: grensa stenges. Klikk de åpne overgangene.');
     };
 
     // Et grep i scenen: enten stenge en overgang (negativ i) eller rive en seksjon.
@@ -366,7 +366,7 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
                 next[j] = true;
                 sound.play('drop');
                 if (next.every(Boolean)) {
-                    setBanner('Grensa er stengt. Na bygges den ut til en dodelig sone.');
+                    setBanner('Grensa er stengt. Nå bygges den ut til en dødelig sone.');
                     setTimeout(() => setPhase('build'), 700);
                 }
                 return next;
@@ -378,7 +378,7 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
                 next[i] = true;
                 sound.play('correct');
                 if (next.every(Boolean)) {
-                    setBanner('Muren er borte. Ost og vest moter hverandre igjen.');
+                    setBanner('Muren er borte. Øst og vest møter hverandre igjen.');
                     setReunite(1);
                     setPhase('done');
                     sound.play('complete');
@@ -391,24 +391,24 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
         }
     };
 
-    // Bygg-fasen: nar spaken nar topps, star muren ferdig - hopp fram til 1989.
+    // Bygg-fasen: når spaken når topps, står muren ferdig - hopp fram til 1989.
     const finishBuild = () => {
-        setBanner('Muren star ferdig: to murer, dodsstripe, vakttarn. 28 ar gar...');
+        setBanner('Muren står ferdig: to murer, dødsstripe, vakttårn. 28 år går...');
         setTimeout(() => {
             setPhase('fall');
-            setBanner('9. november 1989: portene apnes. Klikk og riv muren!');
+            setBanner('9. november 1989: portene åpnes. Klikk og riv muren!');
         }, 1100);
     };
 
     const stepNum = phase === 'seal' ? 1 : phase === 'build' ? 2 : 3;
     const era =
         phase === 'seal' ? '13. august 1961' : phase === 'build' ? '1961 - 1980-tallet' : '9. november 1989';
-    const stripWidth = (1 + build * 2.6) * 12; // grov "meter"-folelse for avlesning
+    const stripWidth = (1 + build * 2.6) * 12; // grov "meter"-følelse for avlesning
 
     return (
         <MicroGameScaffold
-            title="Dodsstripen: muren som delte en by"
-            subtitle="Steng grensa, bygg dodsstripen, og riv den i 1989"
+            title="Dødsstripen: muren som delte en by"
+            subtitle="Steng grensa, bygg dødsstripen, og riv den i 1989"
             estimatedSeconds={150}
             onRetry={reset}
             scene={
@@ -437,8 +437,8 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
                             corner="bl"
                             items={[
                                 { label: 'Murer', value: build > 0.15 ? 2 : 1 },
-                                { label: 'Dodsstripe', value: Math.round(stripWidth), unit: 'm' },
-                                { label: 'Vakttarn', value: build > 0.55 ? 1 : 0 },
+                                { label: 'Dødsstripe', value: Math.round(stripWidth), unit: 'm' },
+                                { label: 'Vakttårn', value: build > 0.55 ? 1 : 0 },
                             ]}
                         />
                     )}
@@ -465,7 +465,7 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
                     )}
                     {phase === 'build' && (
                         <>
-                            <SlidersHorizontal className="w-3.5 h-3.5" /> Bygg dodsstripen
+                            <SlidersHorizontal className="w-3.5 h-3.5" /> Bygg dødsstripen
                         </>
                     )}
                     {(phase === 'fall' || phase === 'done') && (
@@ -478,8 +478,8 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
 
             {phase === 'seal' && (
                 <SceneFact>
-                    Folk som la seg lordag kveld, vaknet sondag morgen til en stengt by. Plutselig
-                    kunne de ikke ga pa jobb, besoke familie eller krysse gata. Steng de tre apne
+                    Folk som la seg lørdag kveld, våknet søndag morgen til en stengt by. Plutselig
+                    kunne de ikke gå på jobb, besøke familie eller krysse gata. Steng de tre åpne
                     overgangene.
                 </SceneFact>
             )}
@@ -499,17 +499,17 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
                         valueLabel={(v) => `${v}%`}
                     />
                     <SceneFact>
-                        Dra spaken og se: piggtraden blir til en betongmur, en bakmur reiser seg, og
-                        mellom dem apner det seg en tom dodsstripe med vakttarn og lyskastere. Muren
-                        var aldri bare en vegg, men et helt dodelig system.
+                        Dra spaken og se: piggtråden blir til en betongmur, en bakmur reiser seg, og
+                        mellom dem åpner det seg en tom dødsstripe med vakttårn og lyskastere. Muren
+                        var aldri bare en vegg, men et helt dødelig system.
                     </SceneFact>
                 </div>
             )}
 
             {phase === 'fall' && (
                 <SceneFact>
-                    Presset fra folket ble for stort. 9. november 1989 strommet titusener til
-                    grensa, og vaktene apnet portene. Klikk hver murseksjon og riv den.
+                    Presset fra folket ble for stort. 9. november 1989 strømmet titusener til
+                    grensa, og vaktene åpnet portene. Klikk hver murseksjon og riv den.
                 </SceneFact>
             )}
 
@@ -518,8 +518,8 @@ export default function Berlinmuren3D({ onComplete }: MicroGameProps) {
                     title="Muren falt - 9. november 1989"
                     onReplay={reset}
                 >
-                    Du kjente det selv: Berlinmuren var ingen enkel vegg, men et dypt, dodelig system
-                    som skar gjennom en levende by i 28 ar. Da den falt, motes ost og vest igjen - og
+                    Du kjente det selv: Berlinmuren var ingen enkel vegg, men et dypt, dødelig system
+                    som skar gjennom en levende by i 28 år. Da den falt, møtes øst og vest igjen - og
                     den kalde krigen gikk mot slutten.
                 </WinScreen>
             )}

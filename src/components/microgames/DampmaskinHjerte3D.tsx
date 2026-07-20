@@ -24,13 +24,13 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen om dampmaskinen. Eleven KJØRER en dampmaskin og
-// kjenner kjernepoenget paa kroppen: Newcomen-maskinen varmer og kjoeler den
-// samme sylinderen hvert eneste slag, saa tre fjerdedeler av kullet gaar tapt.
-// Watts separate kondensator flytter nedkjoelingen ut av sylinderen, saa
+// kjenner kjernepoenget på kroppen: Newcomen-maskinen varmer og kjøler den
+// samme sylinderen hvert eneste slag, så tre fjerdedeler av kullet går tapt.
+// Watts separate kondensator flytter nedkjølingen ut av sylinderen, så
 // sylinderen holder seg gloheit - og det samme kullet pumper mye mer vann.
 //
 // Mekanikk: SceneSlider er maskinspaken (dra opp og ned = ett pumpeslag, bjelken
-// vipper og vannet siger ut av gruva i sanntid), Draggable installerer den blaa
+// vipper og vannet siger ut av gruva i sanntid), Draggable installerer den blå
 // kondensatoren, og scenen forvandles fra Newcomen til Watt.
 
 const T = THEMES.industrial;
@@ -41,22 +41,22 @@ type Stage = 'newcomen' | 'install' | 'watt' | 'won';
 const NEWCOMEN = { coal: 16, water: 8 };
 const WATT = { coal: 4, water: 20 };
 
-// Maal for kondensatoren naar den dras paa plass (ved siden av sylinderen).
+// Mål for kondensatoren når den dras på plass (ved siden av sylinderen).
 const CONDENSER_TARGET: [number, number] = [-3.4, 0.6];
 
 const DampmaskinHjerte3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const sounds = useStepSounds();
     const [stage, setStage] = useState<Stage>('newcomen');
     const [cycle, setCycle] = useState(0); // 0-100, spaken / maskinslaget
-    const [strokes, setStrokes] = useState(0); // fullfoerte slag i Newcomen-fasen
+    const [strokes, setStrokes] = useState(0); // fullførte slag i Newcomen-fasen
     const [coalLeft, setCoalLeft] = useState(100);
     const [mineWater, setMineWater] = useState(100);
     const [banner, setBanner] = useState<string | null>(
-        'Dra spaken helt opp og helt ned for aa kjoere ett pumpeslag.'
+        'Dra spaken helt opp og helt ned for å kjøre ett pumpeslag.'
     );
     const [burst, setBurst] = useState(0);
 
-    const armed = useRef(false); // true naar spaken har vaert hoeyt oppe
+    const armed = useRef(false); // true når spaken har vært høyt oppe
 
     const installed = stage === 'watt' || stage === 'won';
     const mode: 'newcomen' | 'watt' = installed ? 'watt' : 'newcomen';
@@ -68,11 +68,11 @@ const DampmaskinHjerte3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setStrokes(0);
         setCoalLeft(100);
         setMineWater(100);
-        setBanner('Dra spaken helt opp og helt ned for aa kjoere ett pumpeslag.');
+        setBanner('Dra spaken helt opp og helt ned for å kjøre ett pumpeslag.');
         armed.current = false;
     };
 
-    // Et fullfoert pumpeslag: brenn kull, pump litt vann ut av gruva.
+    // Et fullført pumpeslag: brenn kull, pump litt vann ut av gruva.
     const completeStroke = () => {
         if (stage === 'newcomen') {
             const next = strokes + 1;
@@ -83,7 +83,7 @@ const DampmaskinHjerte3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 sounds.play('advance');
                 setStage('install');
                 setBanner(
-                    'Se hvor fort kullet forsvinner! Hvert slag maa varme opp den kalde sylinderen paa nytt.'
+                    'Se hvor fort kullet forsvinner! Hvert slag må varme opp den kalde sylinderen på nytt.'
                 );
             } else {
                 sounds.play('correct');
@@ -105,7 +105,7 @@ const DampmaskinHjerte3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         }
     };
 
-    // Spaken styrer maskinslaget i sanntid. Et slag teller naar spaken foeres
+    // Spaken styrer maskinslaget i sanntid. Et slag teller når spaken føres
     // helt opp (>80) og deretter helt ned igjen (<20).
     const handleCycle = (v: number) => {
         setCycle(v);
@@ -123,10 +123,10 @@ const DampmaskinHjerte3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             setBurst((b) => b + 1);
             setStage('watt');
             setBanner(
-                'Kondensatoren staar paa plass. Naa kjoeler dampen seg ned utenfor sylinderen.'
+                'Kondensatoren står på plass. Nå kjøler dampen seg ned utenfor sylinderen.'
             );
         } else {
-            setBanner('Dra den blaa kondensatoren helt inntil sylinderen.');
+            setBanner('Dra den blå kondensatoren helt inntil sylinderen.');
         }
     };
 
@@ -136,7 +136,7 @@ const DampmaskinHjerte3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Dampmaskinens hjerte"
-            subtitle="Kjoer maskinen, sett inn Watts kondensator, og pump gruva toer"
+            subtitle="Kjør maskinen, sett inn Watts kondensator, og pump gruva tør"
             estimatedSeconds={150}
             onRetry={stage !== 'newcomen' || strokes > 0 || cycle > 0 ? reset : undefined}
             canvas={{
@@ -158,7 +158,7 @@ const DampmaskinHjerte3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                             items={[
                                 { label: 'Kull igjen', value: Math.round(coalLeft), unit: '%' },
                                 {
-                                    label: 'Gruve toer',
+                                    label: 'Gruve tør',
                                     value: Math.round(100 - mineWater),
                                     unit: '%',
                                 },
@@ -189,29 +189,29 @@ const DampmaskinHjerte3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             {pumping && (
                 <div className="flex flex-col gap-3">
                     <SceneSlider
-                        label="Maskinspaken: damp inn opp, kjoel ned"
+                        label="Maskinspaken: damp inn opp, kjøl ned"
                         min={0}
                         max={100}
                         step={1}
                         value={cycle}
                         onChange={handleCycle}
-                        valueLabel={(v) => (v > 50 ? 'Damp slippes inn' : 'Dampen kjoeles ned')}
+                        valueLabel={(v) => (v > 50 ? 'Damp slippes inn' : 'Dampen kjøles ned')}
                     />
                     {stage === 'newcomen' ? (
                         <div className="flex flex-col gap-2.5">
                             <StepTracker current={strokes} total={2} />
                             <SceneFact>
-                                Newcomen sproeyter kaldt vann rett inn i sylinderen for aa lage
-                                vakuum. Da blir hele jernsylinderen kald, og den maa varmes opp
-                                igjen foer neste slag. Tre fjerdedeler av kullet gaar bare til denne
+                                Newcomen sprøyter kaldt vann rett inn i sylinderen for å lage
+                                vakuum. Da blir hele jernsylinderen kald, og den må varmes opp
+                                igjen før neste slag. Tre fjerdedeler av kullet går bare til denne
                                 oppvarmingen.
                             </SceneFact>
                         </div>
                     ) : (
                         <SceneFact>
                             Med den separate kondensatoren holder sylinderen seg gloheit hele tiden.
-                            Det samme kullet pumper naa mye mer vann. Foer spaken ned til gruva er
-                            toer.
+                            Det samme kullet pumper nå mye mer vann. Før spaken ned til gruva er
+                            tør.
                         </SceneFact>
                     )}
                 </div>
@@ -220,21 +220,21 @@ const DampmaskinHjerte3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             {stage === 'install' && (
                 <div className="flex flex-col gap-2.5">
                     <p className="text-sm text-slate-600">
-                        Newcomen-maskinen sloeser kull fordi den kjoeler ned selve sylinderen. Watts
-                        loesning: dra den blaa kondensatoren inntil sylinderen, saa dampen kan
-                        kjoele seg ned i et eget kammer i stedet.
+                        Newcomen-maskinen sløser kull fordi den kjøler ned selve sylinderen. Watts
+                        løsning: dra den blå kondensatoren inntil sylinderen, så dampen kan
+                        kjøle seg ned i et eget kammer i stedet.
                     </p>
                     <SceneFact>
-                        Klikk og dra den blaa tanken nede til venstre helt inntil sylinderen.
+                        Klikk og dra den blå tanken nede til venstre helt inntil sylinderen.
                     </SceneFact>
                 </div>
             )}
 
             {stage === 'won' && (
-                <WinScreen title="Gruva er pumpet toer!" onReplay={reset}>
-                    Den separate kondensatoren flyttet nedkjoelingen ut av sylinderen. Sylinderen
-                    holdt seg varm, og det samme kullet gjorde fire ganger saa mye arbeid. Det var
-                    denne ene ideen som gjorde dampkraft billig nok til aa drive fabrikker, tog og
+                <WinScreen title="Gruva er pumpet tør!" onReplay={reset}>
+                    Den separate kondensatoren flyttet nedkjølingen ut av sylinderen. Sylinderen
+                    holdt seg varm, og det samme kullet gjorde fire ganger så mye arbeid. Det var
+                    denne ene ideen som gjorde dampkraft billig nok til å drive fabrikker, tog og
                     skip.
                 </WinScreen>
             )}
@@ -263,7 +263,7 @@ function EngineScene({
     burst: number;
     onInstall: (pos: THREE.Vector3) => void;
 }) {
-    // Bjelken vipper med slaget: damp inn (cyc hoey) loefter sylindersiden.
+    // Bjelken vipper med slaget: damp inn (cyc høy) løfter sylindersiden.
     const beamAngle = (cyc - 0.5) * 0.34;
     const installed = stage === 'watt' || stage === 'won';
 
@@ -275,7 +275,7 @@ function EngineScene({
             <Boiler />
             <CoalPile amount={coalLeft} />
             <Fire position={[-2, 0.15, 1.2]} scale={mode === 'watt' ? 0.5 : 1.15} />
-            {/* Skorsteinsroeyk - tykkere naar mye kull brenner (Newcomen) */}
+            {/* Skorsteinsrøyk - tykkere når mye kull brenner (Newcomen) */}
             <Smoke
                 origin={[-2.9, 3.4, -0.6]}
                 show
@@ -313,7 +313,7 @@ function EngineScene({
             {/* Gruvesjakten med vann som siger ut */}
             <MineShaft water={mineWater} />
 
-            {/* Kondensatoren: dras paa plass i install-fasen, staar fast etterpaa */}
+            {/* Kondensatoren: dras på plass i install-fasen, står fast etterpå */}
             {stage === 'install' ? (
                 <>
                     <GhostTarget />
@@ -335,12 +335,12 @@ function EngineScene({
             ) : installed ? (
                 <group position={[CONDENSER_TARGET[0], 0, CONDENSER_TARGET[1]]}>
                     <CondenserTank />
-                    {/* roer fra sylinder til kondensator */}
+                    {/* rør fra sylinder til kondensator */}
                     <mesh position={[1.05, 1, 0]} rotation={[0, 0, Math.PI / 2]} castShadow>
                         <cylinderGeometry args={[0.1, 0.1, 1.4, 8]} />
                         <meshStandardMaterial color="#7a7f86" metalness={0.4} roughness={0.5} />
                     </mesh>
-                    {/* dampen kjoeles ned HER naa - hvit damp ut av kondensatoren */}
+                    {/* dampen kjøles ned HER nå - hvit damp ut av kondensatoren */}
                     <Smoke origin={[0, 1.7, 0]} show={cyc < 0.5} count={4} color="#e8eef2" />
                 </group>
             ) : null}
@@ -351,7 +351,7 @@ function EngineScene({
     );
 }
 
-// Murt fyrhus som baerer sylinderen.
+// Murt fyrhus som bærer sylinderen.
 function Boiler() {
     return (
         <group position={[-2, 0, 0.4]}>
@@ -364,7 +364,7 @@ function Boiler() {
                 <boxGeometry args={[0.6, 2.4, 0.6]} />
                 <meshStandardMaterial color="#5a2e22" roughness={0.95} />
             </mesh>
-            {/* ovnsaapning */}
+            {/* ovnsåpning */}
             <mesh position={[0, 0.55, 1.21]}>
                 <boxGeometry args={[1, 0.7, 0.05]} />
                 <meshStandardMaterial color="#2a1a12" roughness={1} />
@@ -402,7 +402,7 @@ function SteamCylinder({ cyc, mode }: { cyc: number; mode: 'newcomen' | 'watt' }
 
     useFrame((_, dt) => {
         if (!mat.current) return;
-        // Newcomen: varm naar damp slippes inn (cyc hoey), kald naar den kjoeles
+        // Newcomen: varm når damp slippes inn (cyc høy), kald når den kjøles
         // ned (cyc lav). Watt: alltid gloheit.
         const target = mode === 'watt' ? 1 : cyc;
         hot.current = damp(hot.current, target, dt, 4);
@@ -434,12 +434,12 @@ function SteamCylinder({ cyc, mode }: { cyc: number; mode: 'newcomen' | 'watt' }
     );
 }
 
-// Gruvesjakt med en vannflate som synker mens den pumpes toer.
+// Gruvesjakt med en vannflate som synker mens den pumpes tør.
 function MineShaft({ water }: { water: number }) {
     const plane = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
         if (!plane.current) return;
-        // 100 = naer toppen, 0 = bunnen.
+        // 100 = nær toppen, 0 = bunnen.
         const y = -1.9 + (water / 100) * 1.7;
         plane.current.position.y = damp(plane.current.position.y, y, dt, 3);
     });
@@ -483,7 +483,7 @@ function MineShaft({ water }: { water: number }) {
     );
 }
 
-// Den blaa kondensatoren - Watts oppfinnelse.
+// Den blå kondensatoren - Watts oppfinnelse.
 function CondenserTank() {
     return (
         <group>
@@ -495,7 +495,7 @@ function CondenserTank() {
                 <cylinderGeometry args={[0.62, 0.62, 0.2, 16]} />
                 <meshStandardMaterial color="#234f78" metalness={0.4} roughness={0.45} />
             </mesh>
-            {/* vannbeholder paa toppen (kaldt vann inn) */}
+            {/* vannbeholder på toppen (kaldt vann inn) */}
             <mesh position={[0, 2.4, 0]} castShadow>
                 <boxGeometry args={[0.5, 0.5, 0.5]} />
                 <meshStandardMaterial color="#7fb6df" metalness={0.2} roughness={0.6} />
@@ -504,7 +504,7 @@ function CondenserTank() {
     );
 }
 
-// Lysende maalmarkoer der kondensatoren skal staa.
+// Lysende målmarkør der kondensatoren skal stå.
 function GhostTarget() {
     const ref = useRef<THREE.Mesh>(null);
     useFrame(({ clock }) => {

@@ -21,12 +21,12 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen "Dyreetikk: Har dyr rettigheter?".
-// Lyspaere-oyeblikket eleven skal kjenne paa kroppen: den moralske sirkelen -
+// Lyspære-øyeblikket eleven skal kjenne på kroppen: den moralske sirkelen -
 // hvem som "teller" moralsk - har flyttet seg utover gjennom historien, og det
-// avgjorende sporsmalet er ikke "kan de tenke?" men "kan de lide?".
-//   - En SceneSlider blaser opp en glodende sirkel rundt mennesket.
-//   - Vesener som havner innenfor lyser opp; utenfor er de gra.
-//   - Grensa gaar der evnen til aa lide slutter (mellom bie og plante/stein).
+// avgjørende spørsmålet er ikke "kan de tenke?" men "kan de lide?".
+//   - En SceneSlider blåser opp en glødende sirkel rundt mennesket.
+//   - Vesener som havner innenfor lyser opp; utenfor er de grå.
+//   - Grensa går der evnen til å lide slutter (mellom bie og plante/stein).
 
 type Phase = 'explore' | 'quiz' | 'won';
 
@@ -41,8 +41,8 @@ interface Being {
     color: string;
 }
 
-// Vesener plassert utover fra mennesket i midten. Radiusen bestemmer naar de
-// kommer innenfor sirkelen. Grensa for "kan lide" gaar mellom bie og plante.
+// Vesener plassert utover fra mennesket i midten. Radiusen bestemmer når de
+// kommer innenfor sirkelen. Grensa for "kan lide" går mellom bie og plante.
 const BEINGS: Being[] = [
     { id: 'hund', label: 'Hund', capacity: 'Kjenner smerte, glede og frykt', r: 2.4, angle: -0.5, sentient: true, kind: 'dog', color: '#b07a4a' },
     { id: 'gris', label: 'Gris', capacity: 'Like smart som en hund, kjenner lidelse', r: 3.7, angle: 0.9, sentient: true, kind: 'pig', color: '#e6a6ac' },
@@ -226,7 +226,7 @@ const DenMoralskeSirkelen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 };
 
 // ============================================================
-//  3D-SCENEN: mennesket i midten, vesener utover, en gloende sirkel
+//  3D-SCENEN: mennesket i midten, vesener utover, en glødende sirkel
 // ============================================================
 
 interface SceneProps {
@@ -276,7 +276,7 @@ function CircleScene({ circleR, burst, selectedId, onInspect }: SceneProps) {
                 <meshStandardMaterial color="#e7eef4" roughness={1} />
             </mesh>
 
-            {/* Den gloende moralske sirkelen (skalert i useFrame) */}
+            {/* Den glødende moralske sirkelen (skalert i useFrame) */}
             <group>
                 <mesh ref={ringMesh} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.04, 0]}>
                     <ringGeometry args={[0.96, 1, 64]} />
@@ -321,7 +321,7 @@ function CircleScene({ circleR, burst, selectedId, onInspect }: SceneProps) {
                     >
                         <group>
                             <BeingMesh kind={b.kind} color={inside ? b.color : '#aab1ba'} />
-                            {/* mykt gloed-skall som lyser naar vesenet er innenfor */}
+                            {/* mykt glød-skall som lyser når vesenet er innenfor */}
                             <mesh position={[0, 0.5, 0]} scale={1.8}>
                                 <sphereGeometry args={[0.6, 18, 18]} />
                                 <meshBasicMaterial
@@ -468,7 +468,7 @@ function BeingMesh({ kind, color }: { kind: Being['kind']; color: string }) {
     }
 }
 
-// --- Lys himmelkuppel (kjolig topp -> varm horisont, aldri mork) ---
+// --- Lys himmelkuppel (kjølig topp -> varm horisont, aldri mørk) ---
 function SkyDome() {
     const texture = useMemo(() => {
         const c = document.createElement('canvas');

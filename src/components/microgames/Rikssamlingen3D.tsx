@@ -22,21 +22,21 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Mikrospill til artikkelen "Rikssamlingen: Da Norge ble ett". Et stilisert kart
-// over kysten sett ovenfra. Hvert kystrike har sin egen smaakonge og sitt eget
+// over kysten sett ovenfra. Hvert kystrike har sin egen småkonge og sitt eget
 // banner. Eleven klikker rikene ett for ett og legger dem under Harald. For hvert
-// rike som faller, reiser en kongsgaard seg, banneret skifter til Haralds gull, og
+// rike som faller, reiser en kongsgård seg, banneret skifter til Haralds gull, og
 // en bit av den gylne kystleia, Nordvegen, lyser opp.
 //
-// Lyspaera (rett fra artikkelen): Norge var ikke ett land, men en rekke frie
-// smaakongedommer langs kysten. Harald samlet dem ved aa ta kontroll over kysten,
-// Nordvegen. Den som raadde over kysten, raadde over handelen og skipene. De siste
-// frie kongene i sorvest ga seg ikke, og det avgjorende slaget sto i Hafrsfjord
-// rundt aar 872.
+// Lyspæra (rett fra artikkelen): Norge var ikke ett land, men en rekke frie
+// småkongedommer langs kysten. Harald samlet dem ved å ta kontroll over kysten,
+// Nordvegen. Den som rådde over kysten, rådde over handelen og skipene. De siste
+// frie kongene i sørvest ga seg ikke, og det avgjørende slaget sto i Hafrsfjord
+// rundt år 872.
 //
-// Mekanikk: i fase 1 klikker eleven de fire rikene i felttogs-rekkefolge (bare det
-// aktive riket lyser og kan klikkes). Et morkt gap blir staaende i kystleia ved
+// Mekanikk: i fase 1 klikker eleven de fire rikene i felttogs-rekkefølge (bare det
+// aktive riket lyser og kan klikkes). Et mørkt gap blir stående i kystleia ved
 // Hafrsfjord, der de frie kongene fortsatt holder stand. I fase 2 klikker eleven
-// Hafrsfjord-slaget: fienden samler flaaten, slaget staar, gapet fylles, og hele
+// Hafrsfjord-slaget: fienden samler flåten, slaget står, gapet fylles, og hele
 // kysten blir en sammenhengende gullvei. Da er Norge ett rike.
 
 interface Place {
@@ -44,12 +44,12 @@ interface Place {
     name: string;
     x: number;
     z: number;
-    freeColor: string; // smaakongens eget banner mens riket er fritt
+    freeColor: string; // småkongens eget banner mens riket er fritt
 }
 
 // Vestfold er Haralds arverike (holdt fra start). Rogaland/Hafrsfjord er
-// slag-noden (tas til slutt). Posisjonene foelger grovt den norske kysten:
-// Vestfold sorost, saa nordover langs vestkysten til Troendelag i nord.
+// slag-noden (tas til slutt). Posisjonene følger grovt den norske kysten:
+// Vestfold sørøst, så nordover langs vestkysten til Trøndelag i nord.
 const VESTFOLD: Place = { id: 'vestfold', name: 'Vestfold', x: 4.6, z: 4.2, freeColor: '#caa028' };
 const HAFRSFJORD: Place = {
     id: 'hafrsfjord',
@@ -58,32 +58,32 @@ const HAFRSFJORD: Place = {
     z: 4.7,
     freeColor: '#7d3b8f',
 };
-// Rikene eleven legger under Harald, i felttogs-rekkefolge (fase 1).
+// Rikene eleven legger under Harald, i felttogs-rekkefølge (fase 1).
 const TARGETS: Place[] = [
     { id: 'agder', name: 'Agder', x: 2.0, z: 5.4, freeColor: '#2f7d4f' },
     { id: 'hordaland', name: 'Hordaland', x: -2.6, z: 2.2, freeColor: '#3a6ea5' },
     { id: 'more', name: 'Møre', x: -2.3, z: -1.4, freeColor: '#a5562f' },
     { id: 'trondelag', name: 'Trøndelag', x: -0.4, z: -4.6, freeColor: '#7a5aa5' },
 ];
-// Hafrsfjord ligger mellom Agder og Hordaland paa den ekte kysten. La leia foelge
-// sor -> nord: Vestfold, Agder, Hafrsfjord, Hordaland, More, Trondelag.
+// Hafrsfjord ligger mellom Agder og Hordaland på den ekte kysten. La leia følge
+// sør -> nord: Vestfold, Agder, Hafrsfjord, Hordaland, Møre, Trøndelag.
 const COAST_LANE: Place[] = [VESTFOLD, TARGETS[0], HAFRSFJORD, TARGETS[1], TARGETS[2], TARGETS[3]];
 
 const TOTAL_STEPS = TARGETS.length + 1; // fire riker + slaget
 
-// Ett kort faktakort for en 14-aaring per rike som faller.
+// Ett kort faktakort for en 14-åring per rike som faller.
 const FACTS = [
-    'Agder ga seg. Harald bygde en kongsgaard her og tok kontroll over kysten, Nordvegen.',
-    'Hordaland kom med. Den som raadde over kysten, raadde over handelen og skipene.',
-    'Moere falt. Harald reiste kongsgaarder langs hele leia for aa holde grepet om makten.',
-    'Troendelag ble hans. Naa manglet bare de frie kongene i sorvest.',
+    'Agder ga seg. Harald bygde en kongsgård her og tok kontroll over kysten, Nordvegen.',
+    'Hordaland kom med. Den som rådde over kysten, rådde over handelen og skipene.',
+    'Møre falt. Harald reiste kongsgårder langs hele leia for å holde grepet om makten.',
+    'Trøndelag ble hans. Nå manglet bare de frie kongene i sørvest.',
 ];
 
 const PROMPTS = [
-    'Klikk Agder for aa legge riket under Harald.',
-    'Klikk Hordaland. Foelg kysten nordover.',
-    'Klikk Moere og knytt vestkysten sammen.',
-    'Klikk Troendelag, det siste riket i nord.',
+    'Klikk Agder for å legge riket under Harald.',
+    'Klikk Hordaland. Følg kysten nordover.',
+    'Klikk Møre og knytt vestkysten sammen.',
+    'Klikk Trøndelag, det siste riket i nord.',
 ];
 
 const Rikssamlingen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
@@ -92,7 +92,7 @@ const Rikssamlingen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [united, setUnited] = useState(0);
     const [battleWon, setBattleWon] = useState(false);
     const [banner, setBanner] = useState<string | null>(
-        'Norge var ikke ett land. Hver kyststripe hadde sin egen smaakonge. Samle dem under Harald.'
+        'Norge var ikke ett land. Hver kyststripe hadde sin egen småkonge. Samle dem under Harald.'
     );
     const [fact, setFact] = useState<string | null>(null);
     const [burst, setBurst] = useState(0);
@@ -112,7 +112,7 @@ const Rikssamlingen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         if (next >= TARGETS.length) {
             sounds.play('advance');
             setBanner(
-                'De siste frie kongene samlet flaaten i Hafrsfjord. Klikk for aa ta det avgjorende slaget.'
+                'De siste frie kongene samlet flåten i Hafrsfjord. Klikk for å ta det avgjørende slaget.'
             );
         } else {
             sounds.play('advance');
@@ -126,7 +126,7 @@ const Rikssamlingen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setBurst((b) => b + 1);
         setBattleWon(true);
         sounds.play('complete');
-        setBanner('Rundt aar 872 vant Harald slaget ved Hafrsfjord. Norge var samlet til ett rike.');
+        setBanner('Rundt år 872 vant Harald slaget ved Hafrsfjord. Norge var samlet til ett rike.');
         setFact(null);
     };
 
@@ -134,7 +134,7 @@ const Rikssamlingen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setUnited(0);
         setBattleWon(false);
         setBanner(
-            'Norge var ikke ett land. Hver kyststripe hadde sin egen smaakonge. Samle dem under Harald.'
+            'Norge var ikke ett land. Hver kyststripe hadde sin egen småkonge. Samle dem under Harald.'
         );
         setFact(null);
         setBurstPos([VESTFOLD.x, 0.6, VESTFOLD.z]);
@@ -152,7 +152,7 @@ const Rikssamlingen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Rikssamlingen: da Norge ble ett"
-            subtitle="Samle smaakongedommene langs kysten under Harald, og vinn det avgjorende slaget i Hafrsfjord."
+            subtitle="Samle småkongedommene langs kysten under Harald, og vinn det avgjørende slaget i Hafrsfjord."
             estimatedSeconds={150}
             onRetry={united > 0 || battleWon ? reset : undefined}
             canvas={{
@@ -204,9 +204,9 @@ const Rikssamlingen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     <>
                         <p className="text-sm text-slate-600 leading-snug">
                             Klikk riket som <span className="font-bold text-amber-700">lyser</span>{' '}
-                            for aa legge det under Harald. For hvert rike du tar, reiser en
-                            kongsgaard seg og en bit av den gylne kystleia, Nordvegen, lyser opp. Men
-                            ett morkt gap blir staaende ved Hafrsfjord, der de frie kongene holder
+                            for å legge det under Harald. For hvert rike du tar, reiser en
+                            kongsgård seg og en bit av den gylne kystleia, Nordvegen, lyser opp. Men
+                            ett mørkt gap blir stående ved Hafrsfjord, der de frie kongene holder
                             stand.
                         </p>
                         {phase1Done && (
@@ -221,12 +221,12 @@ const Rikssamlingen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     </>
                 ) : (
                     <WinScreen
-                        title="Norge ble ett rike fordi Harald tok kontroll over kysten og vant slaget ved Hafrsfjord rundt aar 872."
+                        title="Norge ble ett rike fordi Harald tok kontroll over kysten og vant slaget ved Hafrsfjord rundt år 872."
                         onReplay={reset}
                     >
-                        Norge var foer dette en rekke frie smaakongedommer. Harald samlet dem ved aa
-                        raade over kysten, Nordvegen. Den som kontrollerte kysten, kontrollerte ogsaa
-                        handelen og skipstrafikken. Da de siste frie kongene tapte i Hafrsfjord, laa
+                        Norge var før dette en rekke frie småkongedommer. Harald samlet dem ved å
+                        råde over kysten, Nordvegen. Den som kontrollerte kysten, kontrollerte også
+                        handelen og skipstrafikken. Da de siste frie kongene tapte i Hafrsfjord, lå
                         hele leia under en konge, og kysten ble en sammenhengende gullvei.
                     </WinScreen>
                 )}
@@ -308,7 +308,7 @@ function CoastMap({
                 </Interactive>
             ))}
 
-            {/* Hafrsfjord: slag-noden i sorvest */}
+            {/* Hafrsfjord: slag-noden i sørvest */}
             <HafrsfjordNode
                 active={phase1Done && !battleWon}
                 won={battleWon}
@@ -321,8 +321,8 @@ function CoastMap({
     );
 }
 
-// Norges innland: noen store, flate landflekker paa ostsiden saa kartet leser som
-// ett land som tar form, ikke bare loese oyer.
+// Norges innland: noen store, flate landflekker på østsiden så kartet leser som
+// ett land som tar form, ikke bare løse øyer.
 function Backbone() {
     const blobs = useMemo(
         () => [
@@ -350,9 +350,9 @@ function Backbone() {
     );
 }
 
-// Et kystrike: en kystflekk, et banner som skifter farge naar riket faller, og en
-// kongsgaard som reiser seg. `local` betyr at gruppa allerede er flyttet til stedet
-// av en Interactive-forelder (saa vi ikke dobbelt-posisjonerer).
+// Et kystrike: en kystflekk, et banner som skifter farge når riket faller, og en
+// kongsgård som reiser seg. `local` betyr at gruppa allerede er flyttet til stedet
+// av en Interactive-forelder (så vi ikke dobbelt-posisjonerer).
 function Kingdom({
     place,
     held,
@@ -375,10 +375,10 @@ function Kingdom({
                 <meshStandardMaterial color="#5f8a44" roughness={1} flatShading />
             </mesh>
 
-            {/* Kongsgaard / smaakongens hus */}
+            {/* Kongsgård / småkongens hus */}
             <Longhouse held={held} />
 
-            {/* Banner: smaakongens farge mens fritt, Haralds gull naar samlet */}
+            {/* Banner: småkongens farge mens fritt, Haralds gull når samlet */}
             <KingdomBanner held={held} freeColor={place.freeColor} />
 
             {/* Gull-krone over Vestfold (Haralds arverike) */}
@@ -401,7 +401,7 @@ function Kingdom({
     );
 }
 
-// Et langhus som reiser seg (skala 0 -> 1) naar riket legges under Harald.
+// Et langhus som reiser seg (skala 0 -> 1) når riket legges under Harald.
 function Longhouse({ held }: { held: boolean }) {
     const grow = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -423,8 +423,8 @@ function Longhouse({ held }: { held: boolean }) {
     );
 }
 
-// Banneret over riket. Stanga staar alltid, men kledet skifter farge fra
-// smaakongens egen til Haralds gull naar riket faller.
+// Banneret over riket. Stanga står alltid, men kledet skifter farge fra
+// småkongens egen til Haralds gull når riket faller.
 const HARALD_GOLD = new THREE.Color('#e2b53a');
 function KingdomBanner({ held, freeColor }: { held: boolean; freeColor: string }) {
     const cloth = useRef<THREE.Mesh>(null);
@@ -497,7 +497,7 @@ function CrownMark({ y }: { y: number }) {
     );
 }
 
-// Pulserende ring paa vannet som trekker blikket mot det aktive riket.
+// Pulserende ring på vannet som trekker blikket mot det aktive riket.
 function ActiveRing() {
     const ring = useRef<THREE.Mesh>(null);
     useFrame(({ clock }) => {
@@ -517,9 +517,9 @@ function ActiveRing() {
     );
 }
 
-// Hafrsfjord: de frie sorvest-kongene samler flaaten her. Mens noden er aktiv
-// ligger fiendens langskip i fjorden og en Hotspot ber eleven ta slaget. Naar
-// slaget er vunnet, synker fienden, og en kongsgaard + gull-krone reiser seg.
+// Hafrsfjord: de frie sørvest-kongene samler flåten her. Mens noden er aktiv
+// ligger fiendens langskip i fjorden og en Hotspot ber eleven ta slaget. Når
+// slaget er vunnet, synker fienden, og en kongsgård + gull-krone reiser seg.
 function HafrsfjordNode({
     active,
     won,
@@ -530,7 +530,7 @@ function HafrsfjordNode({
     onBattle: () => void;
 }) {
     const fleet = useRef<THREE.Group>(null);
-    // Flaaten vises naar slaget kan tas, og synker naar det er vunnet.
+    // Flåten vises når slaget kan tas, og synker når det er vunnet.
     useFrame((_, dt) => {
         if (!fleet.current) return;
         const target = active && !won ? 1 : 0.0001;
@@ -547,7 +547,7 @@ function HafrsfjordNode({
                 <meshStandardMaterial color="#5f8a44" roughness={1} flatShading />
             </mesh>
 
-            {/* Fiendens flaate (de frie kongenes skip) */}
+            {/* Fiendens flåte (de frie kongenes skip) */}
             <group ref={fleet}>
                 {[
                     [-0.6, 0.7],
@@ -558,7 +558,7 @@ function HafrsfjordNode({
                 ))}
             </group>
 
-            {/* Naar slaget er vunnet: kongsgaard + krone som de andre rikene */}
+            {/* Når slaget er vunnet: kongsgård + krone som de andre rikene */}
             <Longhouse held={won} />
             <KingdomBanner held={won} freeColor={HAFRSFJORD.freeColor} />
             {won && <CrownMark y={2.0} />}
@@ -587,7 +587,7 @@ function HafrsfjordNode({
     );
 }
 
-// Et lite fiendtlig langskip i fjorden, med rodt skjold paa sida.
+// Et lite fiendtlig langskip i fjorden, med rødt skjold på sida.
 function EnemyShip({ x, z }: { x: number; z: number }) {
     const hull = useRef<THREE.Group>(null);
     useFrame(({ clock }) => {
@@ -612,9 +612,9 @@ function EnemyShip({ x, z }: { x: number; z: number }) {
     );
 }
 
-// Et ledd av kystleia (Nordvegen) mellom to steder. Blaa mens fri, lyser gull naar
-// begge endene ligger under Harald. Gapet ved Hafrsfjord blir staaende morkt til
-// slaget er vunnet, og fyller seg foerst da, saa hele leia blir sammenhengende.
+// Et ledd av kystleia (Nordvegen) mellom to steder. Blå mens fri, lyser gull når
+// begge endene ligger under Harald. Gapet ved Hafrsfjord blir stående mørkt til
+// slaget er vunnet, og fyller seg først da, så hele leia blir sammenhengende.
 const LANE_GOLD = new THREE.Color('#e3c069');
 const LANE_DIM = new THREE.Color('#7fa6c2');
 function Lane({ a, b, gold }: { a: Place; b: Place; gold: boolean }) {

@@ -305,7 +305,7 @@ function NorthHalf({ stage }: { stage: number }) {
             {/* Industrielt Nord: to fabrikker */}
             <Factory position={[-5.5, 0, -2]} />
             <Factory position={[-3, 0, 2.6]} small />
-            {/* En fri arbeider (alltid stoltt staaende, bla) */}
+            {/* En fri arbeider (alltid stolt stående, blå) */}
             <Person position={[-4, 0, 5]} body="#2f5fa6" enslaved={false} stage={stage} phase={0.2} />
             {/* Union-soldater dukker opp ved krig (stage 1) */}
             <Soldier position={[-2.4, 0, -4]} stage={stage} phase={0} />
@@ -315,7 +315,7 @@ function NorthHalf({ stage }: { stage: number }) {
     );
 }
 
-// Sor-halvdelen glir innover mot midten ved stage 3.
+// Sør-halvdelen glir innover mot midten ved stage 3.
 function SouthHalf({ stage }: { stage: number }) {
     const group = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
@@ -333,7 +333,7 @@ function SouthHalf({ stage }: { stage: number }) {
             <Plantation position={[5.5, 0, -2.4]} />
             {/* Bomullsrader */}
             <CottonField />
-            {/* Slavebundne figurer som reises og frigjores ved stage 2 */}
+            {/* Slavebundne figurer som reises og frigjøres ved stage 2 */}
             <Person position={[3.2, 0, 1.5]} body="#8a6a4a" enslaved stage={stage} phase={0.1} />
             <Person position={[4.6, 0, 2.6]} body="#8a6a4a" enslaved stage={stage} phase={0.7} />
             <Person position={[5.8, 0, 1.2]} body="#8a6a4a" enslaved stage={stage} phase={1.3} />
@@ -341,7 +341,7 @@ function SouthHalf({ stage }: { stage: number }) {
     );
 }
 
-// Den lysende sprekken i landet. Glodende ved krig, lukkes ved samling.
+// Den lysende sprekken i landet. Glødende ved krig, lukkes ved samling.
 function Fracture({ stage }: { stage: number }) {
     const matRef = useRef<THREE.MeshStandardMaterial>(null);
     const mesh = useRef<THREE.Mesh>(null);
@@ -356,7 +356,7 @@ function Fracture({ stage }: { stage: number }) {
             mesh.current.visible = mesh.current.scale.x > 0.06;
         }
         if (matRef.current) {
-            // Roed og pulserende under krig (stage 1-2), kjolig ellers
+            // Rød og pulserende under krig (stage 1-2), kjølig ellers
             const target = stage === 1 || stage === 2 ? HOT : COLD;
             matRef.current.color.lerp(target, Math.min(1, dt * 2));
             const pulse = stage === 1 || stage === 2 ? 0.5 + Math.sin(t * 5) * 0.3 : 0.25;
@@ -378,7 +378,7 @@ function Fracture({ stage }: { stage: number }) {
     );
 }
 
-// En person. Slavebundne starter boyd med en lenke, og reiser seg fri ved stage 2.
+// En person. Slavebundne starter bøyd med en lenke, og reiser seg fri ved stage 2.
 function Person({
     position,
     body,
@@ -403,10 +403,10 @@ function Person({
     useFrame(({ clock }, dt) => {
         const t = clock.getElapsedTime();
         if (torso.current) {
-            // Boyd (negativ x-rotasjon) naar bundet, oppreist naar fri
+            // Bøyd (negativ x-rotasjon) når bundet, oppreist når fri
             const targetTilt = freed ? 0 : 0.7;
             torso.current.rotation.x = damp(torso.current.rotation.x, targetTilt, dt, 3);
-            // Liten gledes-vugg naar fri
+            // Liten gledes-vugg når fri
             torso.current.position.y = freed ? Math.abs(Math.sin(t * 2 + phase)) * 0.05 : 0;
         }
         if (chain.current) {
@@ -433,7 +433,7 @@ function Person({
                     <meshStandardMaterial color="#caa07a" roughness={0.8} />
                 </mesh>
             </group>
-            {/* lenke ved foettene (kun bundet) */}
+            {/* lenke ved føttene (kun bundet) */}
             <mesh ref={chain} position={[0, 0.08, 0.22]} visible={enslaved}>
                 <torusGeometry args={[0.16, 0.045, 8, 16]} />
                 <meshStandardMaterial color="#3a3a3a" metalness={0.6} roughness={0.5} />
@@ -442,7 +442,7 @@ function Person({
     );
 }
 
-// En blaa Union-soldat som dukker opp ved krig (stage >= 1).
+// En blå Union-soldat som dukker opp ved krig (stage >= 1).
 function Soldier({
     position,
     stage,
@@ -495,7 +495,7 @@ function Factory({ position, small = false }: { position: [number, number, numbe
     );
 }
 
-// Et hvitt plantasjehus med soyler i Sor.
+// Et hvitt plantasjehus med søyler i Sør.
 function Plantation({ position }: { position: [number, number, number] }) {
     return (
         <group position={position}>
@@ -508,7 +508,7 @@ function Plantation({ position }: { position: [number, number, number] }) {
                 <coneGeometry args={[1.7, 0.7, 4]} />
                 <meshStandardMaterial color="#5c4030" roughness={0.9} />
             </mesh>
-            {/* soyler */}
+            {/* søyler */}
             {[-0.8, 0, 0.8].map((x, i) => (
                 <mesh key={i} position={[x, 0.7, 1.0]} castShadow>
                     <cylinderGeometry args={[0.1, 0.1, 1.4, 8]} />
@@ -519,7 +519,7 @@ function Plantation({ position }: { position: [number, number, number] }) {
     );
 }
 
-// Bomullsrader: smaa hvite dotter paa rekke.
+// Bomullsrader: små hvite dotter på rekke.
 function CottonField() {
     const rows: [number, number, number][] = [];
     for (let cx = 0; cx < 4; cx++) {
@@ -539,7 +539,7 @@ function CottonField() {
     );
 }
 
-// Det amerikanske flagget reiser seg i midten naar unionen samles (stage 3).
+// Det amerikanske flagget reiser seg i midten når unionen samles (stage 3).
 function UnionFlag({ stage }: { stage: number }) {
     const group = useRef<THREE.Group>(null);
     const cloth = useRef<THREE.Mesh>(null);
@@ -565,7 +565,7 @@ function UnionFlag({ stage }: { stage: number }) {
                 <planeGeometry args={[1.4, 0.9]} />
                 <meshStandardMaterial color="#bf2030" side={THREE.DoubleSide} roughness={0.85} />
             </mesh>
-            {/* bla kanton */}
+            {/* blå kanton */}
             <mesh position={[0.25, 2.55, 0.01]}>
                 <planeGeometry args={[0.55, 0.45]} />
                 <meshStandardMaterial color="#27408b" side={THREE.DoubleSide} roughness={0.85} />
