@@ -423,6 +423,10 @@
     "subjectId": "krle",
     "topicId": "religion-og-kultur"
   },
+  "dialekt-spredning": {
+    "subjectId": "norsk",
+    "topicId": "dialekter"
+  },
   "levekaarsgapet-3d": {
     "subjectId": "samfunnskunnskap",
     "topicId": "demografi"

@@ -729,6 +729,22 @@
               ],
               "createdDate": "2026-07-20T00:00:00Z",
               "lastUpdated": "2026-07-20T00:00:00Z"
+            },
+            {
+              "id": "spredning-av-dialekttrekk",
+              "title": "Bølgemodellen og sprangmodellen: Hvordan sprer dialekttrekk seg?",
+              "description": "Et nytt språktrekk må reise for å bli en del av en dialekt. Lær hvordan trekk sprer seg som ringer i vann eller i sprang mellom byene.",
+              "image": "/images/dialekter/placeholder.webp",
+              "tags": [
+                "dialekt",
+                "talemål",
+                "målmerke",
+                "bølgemodellen",
+                "sprangmodellen",
+                "språkendring"
+              ],
+              "createdDate": "2026-07-20T00:00:00Z",
+              "lastUpdated": "2026-07-20T00:00:00Z"
             }
           ]
         },

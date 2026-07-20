@@ -1,0 +1,231 @@
+{
+    "id": "spredning-av-dialekttrekk",
+    "title": "Bølgemodellen og sprangmodellen: Hvordan sprer dialekttrekk seg?",
+    "layout": "rich",
+    "subject": "norsk",
+    "category": "Talemål",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/dialekter/placeholder.webp",
+    "details": [
+        "Et nytt språktrekk oppstår alltid ett sted. For å bli en del av en dialekt må det reise utover landet.",
+        "Bølgemodellen forklarer spredning som ringer i vann: trekket brer seg jevnt fra nabo til nabo.",
+        "Sprangmodellen forklarer at trekket kan hoppe direkte fra by til by og hoppe over bygdene imellom."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "To nabobygder som ligger en fjord fra hverandre, snakker nesten likt. Det er ikke rart. Men noen ganger skjer det motsatte: to byer som ligger flere hundre kilometer fra hverandre, får den samme nye måten å si et ord på, mens alle bygdene som ligger imellom, fortsetter som før. Hvordan kan det henge sammen?"
+        },
+        {
+            "type": "text",
+            "content": "Svaret handler om hvordan et språktrekk sprer seg. Når noen finner på en ny uttale, et nytt ord eller en ny bøyning, starter det alltid ett sted. Skal det bli en del av dialekten til mange, må det reise. Språkforskere bruker to modeller for å forklare hvordan den reisen foregår: bølgemodellen og sprangmodellen. Denne artikkelen bygger videre på det du kan fra [Dialekter: Hvorfor snakker vi så ulikt?](/norsk/dialekter/hva-er-dialekter)."
+        },
+        {
+            "type": "header",
+            "text": "Et språktrekk må reise"
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg at ungdommen i én by begynner å si «å kasta» der de før sa «å kaste». I starten er det bare noen få som gjør det. Så plukker vennene deres det opp, og etter hvert hele byen. Men hvordan kommer trekket seg videre til neste sted? Et slikt lite kjennetegn som skiller én dialekt fra en annen, kaller vi et [målmerke](/norsk/dialekter/hva-er-dialekter). Det er nettopp målmerker som reiser når en dialekt forandrer seg."
+        },
+        {
+            "type": "text",
+            "content": "De to modellene svarer ulikt på hvordan reisen skjer. Den ene sier at trekket sildrer jevnt utover, litt som når du slipper en stein i vannet. Den andre sier at trekket kan ta lange hopp og lande langt unna. Begge har rett — de forklarer bare ulike deler av det samme puslespillet."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva er det som sprer seg?",
+                "icon": "info",
+                "content": "Det er ikke hele dialekter som flytter på seg, men enkelttrekk: en uttale, et ord eller en bøyning. Når mange nok tar opp det samme trekket, endrer dialekten seg litt. Slik er talemålet alltid i bevegelse."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Bølgemodellen: ringer i vann"
+        },
+        {
+            "type": "text",
+            "content": "Bølgemodellen sammenligner språkspredning med ringer i vann. Slipper du en stein i en stille dam, brer bølgene seg jevnt utover i sirkler fra der steinen traff. Slik tenker vi oss at et nytt språktrekk sprer seg fra stedet der det oppsto: først til nabolaget rett rundt, så til nabolaget etter det, og sakte men sikkert videre utover."
+        },
+        {
+            "type": "text",
+            "content": "Det betyr at de stedene som ligger nærmest kilden, får trekket først. Jo lengre unna du kommer, jo senere kommer trekket — og noen ganger dør bølgen ut før den når helt fram. Dette forklarer noe vi kjenner godt igjen i Norge: at dialektene glir gradvis over i hverandre fra bygd til bygd. To nabobygder ligner mye, og forskjellene blir større og større jo lenger fra hverandre stedene ligger. Det er de samme fjellene og fjordene som gjorde dialektene ulike i utgangspunktet, som også styrer hvor lett bølgen ruller videre."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "I bølgemodellen sprer trekket seg jevnt utover fra nabo til nabo. Nære steder får det først, fjerne steder sist.",
+                "author": "Om språkspredning"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Sprangmodellen: når trekket hopper mellom byer"
+        },
+        {
+            "type": "text",
+            "content": "Men bølgemodellen forklarer ikke alt. Noen ganger dukker det samme nye trekket opp i Oslo og i Tromsø omtrent samtidig, mens bygdene mellom dem ikke har det i det hele tatt. Hadde trekket rullet som en bølge, måtte det jo ha passert alle bygdene på veien. Her trenger vi sprangmodellen."
+        },
+        {
+            "type": "text",
+            "content": "Sprangmodellen sier at et språktrekk kan hoppe direkte fra ett sted til et annet uten å ta med seg alt imellom. Og det hopper stort sett mellom byer. Grunnen er enkel: folk i byene har mye kontakt med folk i andre byer. De reiser mellom dem, studerer i dem, ser på de samme TV-programmene og følger de samme folkene på nett. Trekket «sprang» fra by til by fordi det er der menneskene møtes — ikke langs veien mellom dem. Derfor kan store byer langt fra hverandre komme til å ligne hverandre i talemålet, mens de mindre stedene rundt henger igjen."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "To modeller, kort forklart",
+                "icon": "sparkles",
+                "items": [
+                    "Bølgemodellen: trekket brer seg jevnt utover fra nabo til nabo, som ringer i vann. Forklarer myke overganger fra bygd til bygd.",
+                    "Sprangmodellen: trekket hopper direkte fra by til by og hopper over stedene imellom. Forklarer at fjerne byer kan ligne hverandre.",
+                    "De utelukker ikke hverandre. Ofte virker begge samtidig."
+                ]
+            }
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv under. Velg en modell, og slipp et nytt dialekttrekk løs fra Oslo. Se hvordan det samme trekket sprer seg helt forskjellig alt etter hvilken modell som gjelder."
+        },
+        {
+            "type": "component",
+            "name": "SpredningsKart",
+            "props": {
+                "title": "Spredningskartet"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor sprangmodellen betyr mer i dag"
+        },
+        {
+            "type": "text",
+            "content": "For hundre år siden var det tungt å reise i Norge. Folk holdt seg mest til sitt eget område, og da var det bølgemodellen som styrte mest: trekk spredte seg sakte fra nabo til nabo. I dag er alt annerledes. Vi flytter oftere, tar toget og flyet på kryss og tvers, og vi er sammen på nett hele tiden uansett hvor vi bor."
+        },
+        {
+            "type": "text",
+            "content": "Når avstand betyr mindre, blir sprangene viktigere. En ny måte å snakke på kan spre seg fra ungdom i én by til ungdom i en annen by på noen få uker, helt uten å røre bygdene imellom. Mange språkforskere mener det er en av grunnene til at talemålet i de store byene blir likere over hele landet, samtidig som en del gamle bygdedialekter svekkes. Vil du se hvordan slike endringer henger sammen med hele historien til norsk språk, kan du lese om [bokmål og nynorsk](/norsk/sprakhistorie/bokmal-og-nynorsk)."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "dialekt-spredning"
+            }
+        },
+        {
+            "type": "header",
+            "text": "To modeller, ikke enten eller"
+        },
+        {
+            "type": "text",
+            "content": "Det er lett å tro at man må velge én av modellene. Det trenger man ikke. Bølgemodellen og sprangmodellen beskriver to ting som skjer samtidig. Bølgen forklarer de myke overgangene i landskapet: hvorfor nabobygder ligner. Sprangene forklarer hoppene: hvorfor byer langt fra hverandre kan dele et trekk som bygdene imellom ikke har. Sammen gir de et mye bedre bilde av hvordan et språk forandrer seg enn hver av dem gjør alene."
+        },
+        {
+            "type": "text",
+            "content": "Neste gang du hører et nytt ord eller en ny uttale spre seg blant vennene dine, kan du prøve å tenke: kom dette rullende som en bølge fra nabolaget, eller hoppet det hit fra en helt annen kant av landet? Ofte er svaret litt av begge deler."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Forklar med egne ord hva bølgemodellen går ut på.",
+                    "Forklar med egne ord hva sprangmodellen går ut på.",
+                    "Hvorfor får de stedene som ligger nærmest kilden, et nytt trekk først i bølgemodellen?",
+                    "Hvorfor hopper trekk stort sett mellom byer i sprangmodellen?"
+                ],
+                "reflekter": [
+                    "To byer langt fra hverandre får det samme nye trekket, mens bygdene imellom ikke har det. Hvilken modell forklarer dette best, og hvorfor?",
+                    "Artikkelen sier at sprangmodellen betyr mer i dag enn før. Forklar hvorfor, og trekk inn både reising og internett.",
+                    "Hvorfor er det bedre å bruke begge modellene sammen enn å velge bare én av dem?"
+                ],
+                "gaaVidere": [
+                    "Tenk på et ord eller en uttale som har blitt populær blant vennene dine det siste året. Prøv å finne ut om det spredte seg som en bølge eller i et sprang. Skriv noen setninger om hva du tror.",
+                    "Finn et eksempel på et målmerke fra din egen dialekt. Diskuter med en medelev om trekket er vanlig i byene rundt, eller mest i området der du bor.",
+                    "Skriv en kort tekst der du argumenterer for om det gjør noe at bydialektene blir likere over hele landet. Bruk minst ett poeng fra artikkelen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva sammenligner bølgemodellen språkspredning med?",
+                        "options": [
+                            "En bil som kjører fra by til by",
+                            "Ringer i vann som brer seg utover",
+                            "Et fly som lander på en flyplass",
+                            "En bok som blir trykt opp"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Bølgemodellen sammenligner spredning med ringer i vann: trekket brer seg jevnt utover fra der det oppsto."
+                    },
+                    {
+                        "question": "Hva er hovedpoenget i sprangmodellen?",
+                        "options": [
+                            "At trekket sprer seg jevnt til alle nabolag",
+                            "At trekket kan hoppe direkte fra by til by og hoppe over stedene imellom",
+                            "At dialekter aldri forandrer seg",
+                            "At bare bygder får nye trekk"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "I sprangmodellen hopper trekket direkte mellom byer der folk har mye kontakt, og hopper over bygdene imellom."
+                    },
+                    {
+                        "question": "Hvorfor får de nærmeste stedene et trekk først i bølgemodellen?",
+                        "options": [
+                            "Fordi de har flest innbyggere",
+                            "Fordi bølgen når dem før den når stedene lenger unna",
+                            "Fordi de alltid snakker penest",
+                            "Fordi de bestemmer over de andre stedene"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Som ringer i vann når bølgen de nære stedene først, og de fjerne stedene sist."
+                    },
+                    {
+                        "question": "Hvorfor mener mange at sprangmodellen betyr mer i dag enn før?",
+                        "options": [
+                            "Fordi folk reiser mindre nå",
+                            "Fordi vi flytter, reiser og er på nett på tvers av landet, så avstand betyr mindre",
+                            "Fordi fjellene har blitt lavere",
+                            "Fordi alle nå snakker nynorsk"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Når vi flytter, reiser og møtes på nett uansett hvor vi bor, kan trekk lettere hoppe mellom byer langt fra hverandre."
+                    },
+                    {
+                        "question": "Hva er forholdet mellom de to modellene?",
+                        "options": [
+                            "Man må alltid velge én av dem",
+                            "De motsier hverandre helt",
+                            "De beskriver to ting som ofte skjer samtidig",
+                            "Bare bølgemodellen er riktig"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Modellene utelukker ikke hverandre. Bølgen forklarer de myke overgangene, sprangene forklarer hoppene mellom byer, og ofte virker begge samtidig."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Mæhlum, B., & Røyneland, U. (2012). *Det norske dialektlandskapet: Innføring i studiet av dialekter*. Cappelen Damm Akademisk.",
+                    "Skjekkeland, M. (2005). *Dialektar i Noreg: Tradisjon og fornying*. Høyskoleforlaget.",
+                    "Sandøy, H. (1996). *Talemål*. Novus forlag.",
+                    "Store norske leksikon. (2023). *Dialekt*. Hentet fra [https://snl.no/dialekt](https://snl.no/dialekt)",
+                    "Språkrådet. (2023). *Dialektar*. Hentet fra [https://www.sprakradet.no](https://www.sprakradet.no)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
