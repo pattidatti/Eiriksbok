@@ -22,6 +22,7 @@ import { MapCarousel } from './MapCarousel';
 // Lazy-loaded components for better performance
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
+const GrenseTegner = lazy(() => import('./content/interactive/GrenseTegner').then(m => ({ default: m.GrenseTegner })));
 const StilleKilder = lazy(() => import('./content/interactive/StilleKilder').then(m => ({ default: m.StilleKilder })));
 const NasjonsbyggerLab = lazy(() => import('./content/interactive/NasjonsbyggerLab').then(m => ({ default: m.NasjonsbyggerLab })));
 const ViFolelsen = lazy(() => import('./content/interactive/ViFolelsen').then(m => ({ default: m.ViFolelsen })));
@@ -355,6 +356,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ParallelleSivilisasjoner,
     Quiz,
     Oppgaver,
+    GrenseTegner,
     StilleKilder,
     TrelastVerdikjede,
     SolvetsReise,

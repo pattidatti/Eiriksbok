@@ -5993,6 +5993,29 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "kapplopet-om-afrika",
+      "title": "Kappløpet om Afrika",
+      "description": "På et møte i Berlin i 1884 delte europeiske stormakter Afrika mellom seg - uten en eneste afrikaner til stede.",
+      "startDate": 1884,
+      "endDate": 1885,
+      "displayDate": "1884-1885",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "kolonialisering",
+      "link": "/historie/kolonialisering/kapplopet-om-afrika",
+      "tags": [
+        "historie",
+        "kolonialisering",
+        "imperialisme",
+        "afrika",
+        "berlinkonferansen"
+      ],
+      "lat": 2,
+      "lng": 20,
+      "placeLabel": "Afrika",
+      "geoConfidence": "tag"
+    },
+    {
       "id": "dypfryst",
       "title": "Dypfryst",
       "description": "Utgitt av Roald Dahl",

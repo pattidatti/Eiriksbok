@@ -1,5 +1,5 @@
 {
-  "buildId": 1784424996773,
+  "buildId": 1784511138505,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1518,6 +1518,9 @@
     ],
     "fransk-kolonirike": [
       "content/historie/kolonialisering/fransk-kolonirike.json"
+    ],
+    "kapplopet-om-afrika": [
+      "content/historie/kolonialisering/kapplopet-om-afrika.json"
     ],
     "portugisisk-kolonialisering": [
       "content/historie/kolonialisering/portugisisk-kolonialisering.json"
@@ -4096,6 +4099,7 @@
     "historie/kolonialisering/eic": "content/historie/kolonialisering/eic.json",
     "historie/kolonialisering/europa-erobrer-verden": "content/historie/kolonialisering/europa-erobrer-verden.json",
     "historie/kolonialisering/fransk-kolonirike": "content/historie/kolonialisering/fransk-kolonirike.json",
+    "historie/kolonialisering/kapplopet-om-afrika": "content/historie/kolonialisering/kapplopet-om-afrika.json",
     "historie/kolonialisering/portugisisk-kolonialisering": "content/historie/kolonialisering/portugisisk-kolonialisering.json",
     "historie/kolonialisering/spansk-kolonialisering": "content/historie/kolonialisering/spansk-kolonialisering.json",
     "historie/kolonialisering/trekanthandelen": "content/historie/kolonialisering/trekanthandelen.json",
