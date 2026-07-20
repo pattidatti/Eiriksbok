@@ -1,0 +1,421 @@
+{
+    "id": "oversikt",
+    "title": "Historiens store gåter",
+    "layout": "rich",
+    "subject": "historie",
+    "category": "Historiske gåter",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/historiens-store-gater/oversikt-hero.webp",
+    "details": [
+        "Historie er tolkning, ikke en ferdig fasit",
+        "17 av historiens største gåter og stridsspørsmål",
+        "Lær å skille ekte faglig uenighet fra benektelse",
+        "Vei bevisene selv i det interaktive gåtekartet"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk deg at historie ikke er en fasit du kan slå opp bakerst i boka, men en samtale som aldri helt tar slutt. Historie er faget som gransker fortiden ved å lese og tolke kilder - spor som gamle brev, knokler, mynter og ruiner (Store norske leksikon, 2026). Men en kilde forteller ingenting av seg selv. Noen må tolke den, og hver historiker leser med sine egne øyne, sin egen tid og sine egne spørsmål (Store norske leksikon, 2025). Derfor finnes det fortsatt gåter der forskerne rett og slett ikke blir enige - og noen av dem kommer vi kanskje aldri helt til bunns i. Dette emnet handler om nettopp disse gåtene."
+        },
+        {
+            "type": "header",
+            "text": "Fire slags gåter - fire slags uenighet"
+        },
+        {
+            "type": "text",
+            "content": "Uenighet i historie kommer i flere former, og det lønner seg å kjenne forskjellen. Noen gåter er ekte mysterier: vi mangler rett og slett kildene til å vite sikkert. Andre er faglige uenigheter, der forskere tolker de samme sporene på ulikt vis. En tredje type er striden mellom ekte forskning og pseudohistorie - påstander som høres spennende ut, men som ikke tåler kildekritikk. Kildekritikk betyr å vurdere hvem som står bak en opplysning, og hvor mye du kan stole på den (Store norske leksikon, 2026). Den siste typen er den betente striden, der grupper i dag kjemper om hvilken versjon av fortiden som skal gjelde. For historie brukes ikke bare i skolen - fortiden blir tatt i bruk i politikk, filmer og debatter hele tiden (Store norske leksikon, 2020)."
+        },
+        {
+            "type": "text",
+            "content": "Bruk gåtekartet under til å utforske. Filtrer på hvilken slags strid det er, og klikk deg inn på hver enkelt gåte."
+        },
+        {
+            "type": "component",
+            "name": "Gaatekart",
+            "props": {
+                "title": "Gåtekartet",
+                "intro": "Klikk en prikk for å utforske gåten. Fargen viser hvilken slags strid det er.",
+                "mysteries": [
+                    {
+                        "id": "pyramidene",
+                        "title": "Hvordan ble pyramidene egentlig bygd?",
+                        "epoch": "Oldtid",
+                        "year": -2560,
+                        "displayYear": "ca. 2560 f.Kr.",
+                        "type": "pseudo",
+                        "hook": "Løftet egypterne 2,5 millioner steinblokker uten kran eller motor?",
+                        "stake": "Skillet mellom seriøs arkeologi og pseudohistorie som stjeler æren fra dyktige egyptere.",
+                        "disagree": "Arkeologer (ramper og arbeidslag) mot mysterie-industrien (romvesener, tapt teknologi).",
+                        "href": "/historie/historiens-store-gater/pyramidene"
+                    },
+                    {
+                        "id": "bronsealderkollapsen",
+                        "title": "Hva utløste bronsealderens kollaps?",
+                        "epoch": "Oldtid",
+                        "year": -1200,
+                        "displayYear": "ca. 1200 f.Kr.",
+                        "type": "faglig",
+                        "hook": "Nesten alle kulturene rundt Middelhavet falt nesten samtidig. Hvorfor?",
+                        "stake": "Hvor skjøre er egentlig høykulturer? Én årsak eller mange sammen?",
+                        "disagree": "Klima og tørke mot invasjon mot indre systemkollaps.",
+                        "href": "/historie/historiens-store-gater/bronsealderkollapsen"
+                    },
+                    {
+                        "id": "havfolkene",
+                        "title": "Hvem var havfolkene?",
+                        "epoch": "Oldtid",
+                        "year": -1207,
+                        "displayYear": "ca. 1200 f.Kr.",
+                        "type": "ulost",
+                        "hook": "Egyptiske tekster forteller om et mystisk folk som herjet. Ingen vet sikkert hvem de var.",
+                        "stake": "Nøkkelen til bronsealderens fall - eller en syndebukk for noe større?",
+                        "disagree": "Ulike teorier om opphav; noen mener havfolket aldri var ett folk.",
+                        "href": "/historie/historiens-store-gater/havfolkene"
+                    },
+                    {
+                        "id": "atlantis",
+                        "title": "Atlantis - oppdiktet eller ekte minne?",
+                        "epoch": "Oldtid",
+                        "year": -360,
+                        "displayYear": "ca. 360 f.Kr.",
+                        "type": "pseudo",
+                        "hook": "Platon fortalte om en øy som sank i havet. Fantes den?",
+                        "stake": "Hvordan en filosofs tankeeksperiment ble til skattejakt og nasjonalmyte.",
+                        "disagree": "De som leser Platon bokstavelig mot forskere som ser en oppdiktet lignelse.",
+                        "href": "/historie/historiens-store-gater/atlantis"
+                    },
+                    {
+                        "id": "romerrikets-fall",
+                        "title": "Falt Romerriket - og hvorfor?",
+                        "epoch": "Antikken",
+                        "year": 476,
+                        "displayYear": "476 e.Kr.",
+                        "type": "faglig",
+                        "hook": "Falt Roma på én dag i 476 - eller forvitret det sakte over 300 år?",
+                        "stake": "Selve ideen om at sivilisasjoner faller. Speiler vi vår egen frykt inn i fortiden?",
+                        "disagree": "Katastrofe-historikere mot senantikk-skolen (gradvis forvandling).",
+                        "href": "/historie/historiens-store-gater/romerrikets-fall"
+                    },
+                    {
+                        "id": "den-trojanske-krig",
+                        "title": "Var det virkelig en trojansk krig?",
+                        "epoch": "Antikken",
+                        "year": -1250,
+                        "displayYear": "ca. 1250 f.Kr.",
+                        "type": "faglig",
+                        "hook": "Homers Troja - ekte krig eller ren diktning?",
+                        "stake": "Hvor mye sannhet ligger det i gamle sagn og epos?",
+                        "disagree": "Arkeologer som gravde fram Troja mot de som mener krigen er myte.",
+                        "href": "/historie/historiens-store-gater/den-trojanske-krig"
+                    },
+                    {
+                        "id": "alexanders-dod",
+                        "title": "Hvordan døde Aleksander den store?",
+                        "epoch": "Antikken",
+                        "year": -323,
+                        "displayYear": "323 f.Kr.",
+                        "type": "ulost",
+                        "hook": "32 år gammel og verdens mektigste mann - så død på ti dager.",
+                        "stake": "Grensen mellom historisk detektivarbeid og konspirasjon.",
+                        "disagree": "Leger (feber, sykdom) mot forgiftnings-teoretikere.",
+                        "href": "/historie/historiens-store-gater/alexanders-dod"
+                    },
+                    {
+                        "id": "gronlands-gate",
+                        "title": "Hvorfor forsvant de norrøne på Grønland?",
+                        "epoch": "Middelalder",
+                        "year": 1450,
+                        "displayYear": "ca. 1450",
+                        "type": "faglig",
+                        "hook": "I nesten 500 år bodde det nordboere på Grønland. Så var de borte.",
+                        "stake": "Lærdom om klima, tilpasning og kollaps - høyaktuelt i dag.",
+                        "disagree": "Kaldere klima mot manglende tilpasning mot utvandring.",
+                        "href": "/historie/historiens-store-gater/gronlands-gate"
+                    },
+                    {
+                        "id": "hvem-nadde-amerika-forst",
+                        "title": "Hvem nådde Amerika først?",
+                        "epoch": "Middelalder",
+                        "year": 1000,
+                        "displayYear": "ca. år 1000",
+                        "type": "faglig",
+                        "hook": "Columbus? Leiv Eiriksson? Eller noen helt andre, lenge før begge?",
+                        "stake": "Nasjonal stolthet, urfolks historie, og hva det betyr å oppdage.",
+                        "disagree": "Ulike nasjoner og grupper som vil eie førsteplassen.",
+                        "href": "/historie/historiens-store-gater/hvem-nadde-amerika-forst"
+                    },
+                    {
+                        "id": "harald-harfagre-gaten",
+                        "title": "Samlet Harald Hårfagre virkelig Norge?",
+                        "epoch": "Middelalder",
+                        "year": 872,
+                        "displayYear": "ca. 872",
+                        "type": "faglig",
+                        "hook": "Eller er det en fortelling skrevet ned over 300 år senere?",
+                        "stake": "Grunnfortellingen om hvordan Norge ble til.",
+                        "disagree": "Saga-troende mot kildekritiske historikere.",
+                        "href": "/historie/historiens-store-gater/harald-harfagre-gaten"
+                    },
+                    {
+                        "id": "kong-arthur",
+                        "title": "Hvem var kong Arthur?",
+                        "epoch": "Middelalder",
+                        "year": 500,
+                        "displayYear": "ca. 500",
+                        "type": "pseudo",
+                        "hook": "Fantes det en ekte konge bak legenden om sverd og runde bord?",
+                        "stake": "Hvordan nasjoner bygger seg helter de trenger.",
+                        "disagree": "De som søker en historisk kjerne mot de som ser ren legende.",
+                        "href": "/historie/historiens-store-gater/kong-arthur"
+                    },
+                    {
+                        "id": "roanoke",
+                        "title": "Hva skjedde med kolonien Roanoke?",
+                        "epoch": "Nyere tid",
+                        "year": 1590,
+                        "displayYear": "1590",
+                        "type": "ulost",
+                        "hook": "En hel koloni forsvant sporløst. Eneste spor: ordet CROATOAN skåret i en stolpe.",
+                        "stake": "En ekte uløst gåte - og hvordan mangel på svar gror konspirasjoner.",
+                        "disagree": "Assimilering hos urfolk mot sult og angrep mot ukjent skjebne.",
+                        "href": "/historie/historiens-store-gater/roanoke"
+                    },
+                    {
+                        "id": "anastasia",
+                        "title": "Anastasia - gåten DNA løste",
+                        "epoch": "Nyere tid",
+                        "year": 1918,
+                        "displayYear": "1918",
+                        "type": "lost",
+                        "hook": "Overlevde tsardatteren henrettelsen? I tiår dukket det opp Anastasia-er. Så kom DNA-et.",
+                        "stake": "Hvordan vitenskap kan avslutte en gåte - og samtidig drepe en drøm.",
+                        "disagree": "Før DNA: bedragere og troende. Etter DNA: saken lukket.",
+                        "href": "/historie/historiens-store-gater/anastasia"
+                    },
+                    {
+                        "id": "skylda-for-forste-verdenskrig",
+                        "title": "Hvem hadde skylda for første verdenskrig?",
+                        "epoch": "Nyere tid",
+                        "year": 1914,
+                        "displayYear": "1914",
+                        "type": "faglig",
+                        "hook": "Ett skudd i Sarajevo - eller et helt system som var klart til å briste?",
+                        "stake": "Skyldspørsmålet formet fredsavtalen som førte rett mot neste krig.",
+                        "disagree": "Tyskland alene mot alle stormaktene mot systemet selv.",
+                        "href": "/historie/historiens-store-gater/skylda-for-forste-verdenskrig"
+                    },
+                    {
+                        "id": "amelia-earhart",
+                        "title": "Hvor forsvant Amelia Earhart?",
+                        "epoch": "Nyere tid",
+                        "year": 1937,
+                        "displayYear": "1937",
+                        "type": "ulost",
+                        "hook": "Verdens mest berømte kvinnelige flyger forsvant over Stillehavet. Vraket er aldri funnet.",
+                        "stake": "Hvor langt vil vi lete etter svar - og hva fyller vi tomrommet med?",
+                        "disagree": "Styrtet i havet mot strandet på øde øy mot ville teorier.",
+                        "href": "/historie/historiens-store-gater/amelia-earhart"
+                    },
+                    {
+                        "id": "benektelse-eller-uenighet",
+                        "title": "Ekte uenighet eller benektelse?",
+                        "epoch": "Nyere tid",
+                        "year": 1945,
+                        "displayYear": "i dag",
+                        "type": "betent",
+                        "hook": "Noen uenigheter er ikke ekte uenighet i det hele tatt. Hvordan ser du forskjellen?",
+                        "stake": "Å beskytte sannheten uten å sensurere - kjernen i kildekritikk. Holocaust skjedde, punktum.",
+                        "disagree": "Bred faglig konsensus mot benektere i ond tro. Dette er ikke en faglig strid.",
+                        "href": "/historie/historiens-store-gater/benektelse-eller-uenighet"
+                    },
+                    {
+                        "id": "hvem-eier-vikingene",
+                        "title": "Hvem eier vikingene?",
+                        "epoch": "Nyere tid",
+                        "year": 800,
+                        "displayYear": "i dag",
+                        "type": "betent",
+                        "hook": "Vikingsymboler dukker opp på flagg og i grupper vikingene aldri ville kjent seg igjen i.",
+                        "stake": "Når fortiden kapres for å rettferdiggjøre hat i nåtiden.",
+                        "disagree": "Forskere om en mangfoldig vikingtid mot moderne grupper som forenkler den.",
+                        "href": "/historie/historiens-store-gater/hvem-eier-vikingene"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "Oldtid: verdens eldste gåter"
+        },
+        {
+            "type": "text",
+            "content": "De eldste gåtene handler ofte om hvordan noe i det hele tatt var mulig. Hvordan ble [pyramidene bygd](/historie/historiens-store-gater/pyramidene)? Kheopspyramiden krevde nesten 2,5 millioner steinblokker på flere tonn hver, uten kran eller motor (Store norske leksikon, 2025). Seriøse arkeologer strides om ramper og arbeidslag, mens en hel mysterie-industri stjeler æren fra dyktige egyptere med prat om romvesener. Rundt år 1200 f.Kr. kollapset nesten alle de store kulturene rundt Middelhavet nesten samtidig. [Hva utløste bronsealderens kollaps](/historie/historiens-store-gater/bronsealderkollapsen)? De mykenske palassene ble ødelagt, og mulige forklaringer er alt fra plyndrere til jordskjelv (Store norske leksikon, 2026). En av de mistenkte er de mystiske [havfolkene](/historie/historiens-store-gater/havfolkene) - men forskere mener nå de bare var én av flere årsaker, sammen med tørke og hungersnød (Store norske leksikon, 2024). Og hva med [Atlantis](/historie/historiens-store-gater/atlantis), øya som skulle ha sunket i havet? De eldste kildene er to dialoger av filosofen Platon, og de fleste forskere mener sagnet er ren diktning (Store norske leksikon, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "Antikken: myter møter arkeologi"
+        },
+        {
+            "type": "text",
+            "content": "[Falt Romerriket](/historie/historiens-store-gater/romerrikets-fall) på én dag i år 476, da den siste vestromerske keiseren ble avsatt, eller forvitret det sakte gjennom hele senantikken? (Store norske leksikon, 2024). Historikere er uenige om selve ideen om at et rike faller. [Var det virkelig en trojansk krig](/historie/historiens-store-gater/den-trojanske-krig)? Byen Troja finnes - arkeologer har gravd fram ni byer oppå hverandre ved Dardanellene - men om krigen i Homers dikt faktisk skjedde, vet vi ikke sikkert (Store norske leksikon, 2026). Og [hvordan døde Aleksander den store](/historie/historiens-store-gater/alexanders-dod), som erobret et enormt rike og døde bare 32 år gammel? (Store norske leksikon, 2025). Feber, sykdom eller gift - kildene lar oss ikke avgjøre."
+        },
+        {
+            "type": "header",
+            "text": "Middelalder: sagaer og forsvunne folk"
+        },
+        {
+            "type": "text",
+            "content": "[Hvorfor forsvant de norrøne på Grønland](/historie/historiens-store-gater/gronlands-gate)? Fra rundt 985 til 1450 bodde det nordboere der. Så var de borte. Forskere peker på kaldere klima, økonomisk isolasjon og mindre kontakt med Norge og Island (Store norske leksikon, 2026). [Hvem nådde Amerika først](/historie/historiens-store-gater/hvem-nadde-amerika-forst)? En utgravd vikinglandsby på Newfoundland viser at nordboere var i Vinland rundt år 1000, lenge før Columbus (Store norske leksikon, 2024). [Samlet Harald Hårfagre virkelig Norge](/historie/historiens-store-gater/harald-harfagre-gaten)? Det finnes nesten ingen pålitelige kilder fra hans egen tid, og sagaene ble skrevet ned på 1100-tallet eller senere - de må brukes med varsomhet (Store norske leksikon, 2026). Samme problem gjelder [kong Arthur](/historie/historiens-store-gater/kong-arthur): han dukker først opp i skrift rundt 800-tallet, og de fleste historikere avviser at han var en virkelig person (Store norske leksikon, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Nyere tid: gåter i moderne lys"
+        },
+        {
+            "type": "text",
+            "content": "Selv i nyere tid finnes uløste gåter. [Kolonien Roanoke](/historie/historiens-store-gater/roanoke) forsvant sporløst: da lederen John White kom tilbake i 1590, var alle de rundt hundre nybyggerne borte, og eneste spor var ordet CROATOAN skåret i en stolpe (National Park Service, 2025; HISTORY, 2025). [Overlevde tsardatteren Anastasia](/historie/historiens-store-gater/anastasia) henrettelsen i 1918? I tiår dukket det opp kvinner som påsto de var henne - helt til levningene ble funnet og DNA-analyser på 1990-tallet lukket saken (Store norske leksikon, 2024). [Hvem hadde skylda for første verdenskrig](/historie/historiens-store-gater/skylda-for-forste-verdenskrig)? Fredsavtalen la skylden på Tyskland alene, men historikere peker like mye på allianser, militarisme og nasjonalisme (Store norske leksikon, 2024). Og [hvor forsvant flygeren Amelia Earhart](/historie/historiens-store-gater/amelia-earhart) over Stillehavet i 1937? Vraket er aldri funnet (Store norske leksikon, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "Når strid ikke er ekte"
+        },
+        {
+            "type": "text",
+            "content": "Til slutt: ikke all uenighet er ekte. Noen påstander ser ut som en faglig debatt, men er det ikke. [Holocaustbenektelse](/historie/historiens-store-gater/benektelse-eller-uenighet) er det tydeligste eksemplet. Selv om benektere gjerne kaller seg forskere, er dette ikke seriøs historievitenskap, men en pseudo-vitenskapelig framgangsmåte bygd på konspirasjonstro (Store norske leksikon, 2025; Molbæk-Steensig, 2023). At Holocaust skjedde, er ikke omstridt blant historikere - punktum. Å kjenne forskjellen på ekte faglig uenighet og benektelse er selve kjernen i kildekritikk. En annen betent strid handler om [hvem som eier vikingene](/historie/historiens-store-gater/hvem-eier-vikingene). I dag plukker enkelte høyreekstreme grupper ut runer og norrøne symboler til propaganda, i et ekko av nazistenes taktikk - en farlig forvrengning av en fortid som i virkeligheten var langt mer mangfoldig (Korneliussen, 2022)."
+        },
+        {
+            "type": "header",
+            "text": "Vei bevisene selv"
+        },
+        {
+            "type": "text",
+            "content": "Hvordan avgjør historikere hva som er sant når kildene spriker? De teller ikke bevisene - de veier dem. Prøv det selv: dra bevisene ut på vekta og se hvor sikre vi egentlig kan være."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "bevisvekten"
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva menes med at historie er tolkning og ikke bare en fasit?",
+                    "Nevn de fire typene strid som teksten beskriver, og gi ett eksempel på hver.",
+                    "Hva betyr kildekritikk?",
+                    "Hvorfor må historikere bruke sagaene om Harald Hårfagre og kong Arthur med varsomhet?"
+                ],
+                "reflekter": [
+                    "Hvorfor er det viktig å skille en ekte faglig uenighet fra benektelse? Bruk Holocaustbenektelse som eksempel.",
+                    "I mikrospillet Bevisvekten veier du bevis i stedet for å telle dem. Hvorfor tipper vekta selv om ett av bevisene er en saga skrevet 200 år etter hendelsen?",
+                    "Gåten om hvem som eier vikingene handler om nåtiden like mye som fortiden. Forklar hvordan fortiden kan brukes til å påvirke folk i dag.",
+                    "Velg én gåte fra kartet du synes er mest spennende. Er den et ekte mysterium, en faglig uenighet, en ekte-eller-uekte-strid eller en betent strid? Begrunn."
+                ],
+                "gaaVidere": [
+                    "Velg en av de 17 gåtene og lag tre spørsmål du ville stilt hvis du skulle undersøke den selv. Hvilke kilder ville du lett etter?",
+                    "Finn to påstander på nett om et historisk tema. Bruk kildekritikk: hvem står bak, og hvor mye kan du stole på dem?",
+                    "Skriv en kort tekst der du forklarer for en venn hvorfor svaret vi vet ikke sikkert kan være et ærlig og godt svar i historie."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva menes med at historie er tolkning?",
+                        "options": [
+                            "At alt i historie er oppdiktet",
+                            "At historikere leser og tolker kilder, og at tolkningen kan farges av tid og ståsted",
+                            "At bare de eldste kildene teller",
+                            "At historie ikke er et ekte fag"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Historie bygger på tolkning av kilder, og enhver historiker leser med sine egne spørsmål og sin egen tid (Store norske leksikon, 2025)."
+                    },
+                    {
+                        "question": "Hva er kildekritikk?",
+                        "options": [
+                            "Å kritisere alle gamle kilder",
+                            "Å vurdere hvem som står bak en opplysning og hvor mye du kan stole på den",
+                            "Å velge den kilden som er mest spennende",
+                            "Å bare bruke kilder fra internett"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Kildekritikk betyr å vurdere avsenderen og troverdigheten til informasjonen (Store norske leksikon, 2026)."
+                    },
+                    {
+                        "question": "Hvorfor er Holocaustbenektelse IKKE et eksempel på ekte faglig uenighet?",
+                        "options": [
+                            "Fordi det er for gammelt til å diskutere",
+                            "Fordi det er en pseudo-vitenskapelig framgangsmåte bygd på konspirasjonstro, ikke seriøs forskning",
+                            "Fordi historikere ikke bryr seg om nyere tid",
+                            "Fordi det ikke finnes noen kilder fra andre verdenskrig"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Selv om benektere kaller seg forskere, er ikke benektelse seriøs historievitenskap (Store norske leksikon, 2025; Molbæk-Steensig, 2023). At Holocaust skjedde, er ikke omstridt blant historikere."
+                    },
+                    {
+                        "question": "Hva viser den utgravde vikinglandsbyen på Newfoundland?",
+                        "options": [
+                            "At Columbus kom først til Amerika",
+                            "At nordboere var i Amerika rundt år 1000, lenge før Columbus",
+                            "At vikingene aldri forlot Norge",
+                            "At sagaene er helt oppdiktet"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Vinland-funnet ved L'Anse aux Meadows bekrefter at nordboere nådde Nord-Amerika omkring år 1000 (Store norske leksikon, 2024)."
+                    },
+                    {
+                        "question": "Hva er hovedpoenget i mikrospillet Bevisvekten?",
+                        "options": [
+                            "At den som har flest bevis alltid har rett",
+                            "At historikere veier bevis mot hverandre, og at sikkerhet er gradert",
+                            "At bevis ikke betyr noe i historie",
+                            "At bare skriftlige kilder teller"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Bevis veies etter styrke, ikke antall. Selv en godt underbygd påstand blir svært sannsynlig, ikke helt sikker."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Store norske leksikon. (2026). *Historie*. Hentet fra [https://snl.no/historie](https://snl.no/historie)",
+                    "Store norske leksikon. (2026). *Kildekritikk*. Hentet fra [https://snl.no/kildekritikk](https://snl.no/kildekritikk)",
+                    "Store norske leksikon. (2025). *Historiografi*. Hentet fra [https://snl.no/historiografi](https://snl.no/historiografi)",
+                    "Store norske leksikon. (2020). *Historiedidaktikk*. Hentet fra [https://snl.no/historiedidaktikk](https://snl.no/historiedidaktikk)",
+                    "Store norske leksikon. (2025). *Kheopspyramiden*. Hentet fra [https://snl.no/Kheopspyramiden](https://snl.no/Kheopspyramiden)",
+                    "Store norske leksikon. (2026). *Den greske antikkens forhistorie*. Hentet fra [https://snl.no/Den_greske_antikkens_forhistorie](https://snl.no/Den_greske_antikkens_forhistorie)",
+                    "Store norske leksikon. (2024). *Havfolkene*. Hentet fra [https://snl.no/havfolkene](https://snl.no/havfolkene)",
+                    "Store norske leksikon. (2025). *Atlantis*. Hentet fra [https://snl.no/Atlantis](https://snl.no/Atlantis)",
+                    "Store norske leksikon. (2024). *Senantikken*. Hentet fra [https://snl.no/senantikken](https://snl.no/senantikken)",
+                    "Store norske leksikon. (2026). *Troja*. Hentet fra [https://snl.no/Troja](https://snl.no/Troja)",
+                    "Store norske leksikon. (2025). *Aleksander den store*. Hentet fra [https://snl.no/Aleksander_den_store](https://snl.no/Aleksander_den_store)",
+                    "Store norske leksikon. (2026). *Grønlands historie til 1500*. Hentet fra [https://snl.no/Grønlands_historie_til_1500](https://snl.no/Grønlands_historie_til_1500)",
+                    "Store norske leksikon. (2024). *Vinland*. Hentet fra [https://snl.no/Vinland](https://snl.no/Vinland)",
+                    "Store norske leksikon. (2026). *Leiv Eiriksson*. Hentet fra [https://snl.no/Leiv_Eiriksson](https://snl.no/Leiv_Eiriksson)",
+                    "Store norske leksikon. (2026). *Harald Hårfagre*. Hentet fra [https://snl.no/Harald_Hårfagre](https://snl.no/Harald_Hårfagre)",
+                    "Store norske leksikon. (2026). *Arthur - sagnkonge*. Hentet fra [https://snl.no/Arthur_-_sagnkonge](https://snl.no/Arthur_-_sagnkonge)",
+                    "U.S. National Park Service. (2025). *The Lost Colony - Fort Raleigh National Historic Site*. Hentet fra [https://www.nps.gov/fora/learn/historyculture/the-lost-colony.htm](https://www.nps.gov/fora/learn/historyculture/the-lost-colony.htm)",
+                    "HISTORY (A&E Television Networks). (2025). *Roanoke Colony found deserted*. Hentet fra [https://www.history.com/this-day-in-history/august-18/roanoke-colony-deserted](https://www.history.com/this-day-in-history/august-18/roanoke-colony-deserted)",
+                    "Store norske leksikon. (2024). *Anastasia (russisk storfyrstinne)*. Hentet fra [https://snl.no/Anastasia_-_russisk_storfyrstinne](https://snl.no/Anastasia_-_russisk_storfyrstinne)",
+                    "Store norske leksikon. (2024). *Første verdenskrig (1914-1918)*. Hentet fra [https://snl.no/første_verdenskrig](https://snl.no/første_verdenskrig)",
+                    "Store norske leksikon. (2025). *Amelia Earhart*. Hentet fra [https://snl.no/Amelia_Earhart](https://snl.no/Amelia_Earhart)",
+                    "Store norske leksikon. (2025). *Holocaustbenektelse*. Hentet fra [https://snl.no/Holocaustbenektelse](https://snl.no/Holocaustbenektelse)",
+                    "Molbæk-Steensig, S. (2023). *Holocaustbenektelse*. HL-senteret. Hentet fra [https://www.hlsenteret.no/undervisning/kunnskapsbasen/Ulike%20folkemord/folkemord-under-nazismen/ettertid/holocaustbenektelse](https://www.hlsenteret.no/undervisning/kunnskapsbasen/Ulike%20folkemord/folkemord-under-nazismen/ettertid/holocaustbenektelse)",
+                    "Korneliussen, A.-K. (2022). *Høyreekstreme pynter seg med fortida - men det er de ikke alene om*. Institutt for arkeologi, konservering og historie, Universitetet i Oslo. Hentet fra [https://www.hf.uio.no/iakh/forskning/aktuelt/aktuelle-saker/2022/hoyreekstreme-pynter-seg-med-fortida.html](https://www.hf.uio.no/iakh/forskning/aktuelt/aktuelle-saker/2022/hoyreekstreme-pynter-seg-med-fortida.html)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

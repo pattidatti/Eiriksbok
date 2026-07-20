@@ -2531,6 +2531,22 @@
       "title": "Historie",
       "topics": [
         {
+          "id": "historiens-store-gater",
+          "title": "Historiens store gåter",
+          "description": "Historiens uløste mysterier og store stridsspørsmål - der historikere ikke blir enige.",
+          "image": "/images/historiens-store-gater/oversikt-hero.webp",
+          "lessons": [
+            {
+              "id": "oversikt",
+              "title": "Historiens store gåter",
+              "description": "Et interaktivt gåtekart over 17 av historiens største mysterier og kontroverser - og hva som står på spill.",
+              "image": "/images/historiens-store-gater/oversikt-hero.webp",
+              "tags": ["historie", "kildekritikk", "mysterier", "historiebruk"],
+              "createdDate": "2026-07-20T00:00:00Z"
+            }
+          ]
+        },
+        {
           "id": "norgeshistorie",
           "title": "Norgeshistorie",
           "description": "Fra istid til oljealder.",

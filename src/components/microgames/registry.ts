@@ -136,8 +136,18 @@ const Barrikaden1848 = lazy(() => import('./Barrikaden1848'));
 const BakSloret3D = lazy(() => import('./BakSloret3D'));
 const GreskOpproret3D = lazy(() => import('./GreskOpproret3D'));
 const KapplopetOmAfrika3D = lazy(() => import('./KapplopetOmAfrika3D'));
+const Bevisvekten3D = lazy(() => import('./Bevisvekten3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    bevisvekten: {
+        id: 'bevisvekten',
+        title: 'Bevisvekten',
+        description:
+            'Du får én påstand - «vikingene nådde Amerika ca. 500 år før Columbus» - og drar bevis-brikker ut på en skålvekt. Bevis som styrker påstanden legges til høyre, bevis som sår tvil til venstre. Vekta tipper etter samlet vekt, ikke antall: en utgravd vikinglandsby veier tungt, en saga skrevet 200 år senere veier lett. En sikkerhetsmåler viser at påstanden lander tungt på styrker-siden, men aldri på 100 %. Lyspæren: historikere veier bevis mot hverandre i stedet for å telle dem, og sikkerhet er gradert - «svært sannsynlig», ikke «helt sikkert».',
+        estimatedSeconds: 120,
+        loader: () => import('./Bevisvekten3D'),
+        Component: Bevisvekten3D as never,
+    },
     'kapplopet-om-afrika-3d': {
         id: 'kapplopet-om-afrika-3d',
         title: 'Kappløpet om Afrika',

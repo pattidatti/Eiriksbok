@@ -1,5 +1,5 @@
 {
-  "buildId": 1784535629396,
+  "buildId": 1784549812774,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1437,6 +1437,9 @@
     ],
     "ww1-sti": [
       "content/historie/forste-verdenskrig/ww1-sti.json"
+    ],
+    "historiens-store-gater-oversikt": [
+      "content/historie/historiens-store-gater/oversikt.json"
     ],
     "barnearbeid": [
       "content/historie/industriell-revolusjon/barnearbeid.json"
@@ -4084,6 +4087,7 @@
     "historie/forste-verdenskrig/teknologi": "content/historie/forste-verdenskrig/teknologi.json",
     "historie/forste-verdenskrig/tyske-revolusjon": "content/historie/forste-verdenskrig/tyske-revolusjon.json",
     "historie/forste-verdenskrig/ww1-sti": "content/historie/forste-verdenskrig/ww1-sti.json",
+    "historie/historiens-store-gater/oversikt": "content/historie/historiens-store-gater/oversikt.json",
     "historie/industriell-revolusjon/barnearbeid": "content/historie/industriell-revolusjon/barnearbeid.json",
     "historie/industriell-revolusjon/dampmaskinen": "content/historie/industriell-revolusjon/dampmaskinen.json",
     "historie/industriell-revolusjon/dopapirets-historie": "content/historie/industriell-revolusjon/dopapirets-historie.json",

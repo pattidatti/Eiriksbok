@@ -22,6 +22,7 @@ import { MapCarousel } from './MapCarousel';
 // Lazy-loaded components for better performance
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
+const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m => ({ default: m.Gaatekart })));
 const GrenseTegner = lazy(() => import('./content/interactive/GrenseTegner').then(m => ({ default: m.GrenseTegner })));
 const StilleKilder = lazy(() => import('./content/interactive/StilleKilder').then(m => ({ default: m.StilleKilder })));
 const NasjonsbyggerLab = lazy(() => import('./content/interactive/NasjonsbyggerLab').then(m => ({ default: m.NasjonsbyggerLab })));
@@ -326,6 +327,7 @@ const MicroGame = lazy(() => import('./microgames/MicroGameBlock').then(m => ({ 
 
 export const componentRegistry: Record<string, React.ComponentType<any>> = {
     // Core
+    Gaatekart,
     VeienTilFrihet,
     NasjonsbyggerLab,
     ViFolelsen,
