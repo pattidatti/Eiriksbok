@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 294
+      "count": 297
     },
     {
       "tag": "dekolonisering",
@@ -951,6 +951,10 @@
       "count": 14
     },
     {
+      "tag": "kildekritikk",
+      "count": 14
+    },
+    {
       "tag": "reformasjonen",
       "count": 14
     },
@@ -987,10 +991,6 @@
       "count": 12
     },
     {
-      "tag": "kildekritikk",
-      "count": 11
-    },
-    {
       "tag": "atomvåpen",
       "count": 11
     },
@@ -1004,6 +1004,10 @@
     },
     {
       "tag": "forhistorie",
+      "count": 10
+    },
+    {
+      "tag": "arkeologi",
       "count": 10
     },
     {
@@ -1077,10 +1081,6 @@
     {
       "tag": "buddhisme",
       "count": 9
-    },
-    {
-      "tag": "arkeologi",
-      "count": 8
     },
     {
       "tag": "klima",
@@ -1804,6 +1804,10 @@
     },
     {
       "tag": "tidlig-sivilisasjon",
+      "count": 2
+    },
+    {
+      "tag": "pyramider",
       "count": 2
     },
     {
@@ -3324,6 +3328,14 @@
     },
     {
       "tag": "rettsvitenskap",
+      "count": 1
+    },
+    {
+      "tag": "mysterier",
+      "count": 1
+    },
+    {
+      "tag": "historiebruk",
       "count": 1
     },
     {

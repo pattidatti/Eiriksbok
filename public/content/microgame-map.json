@@ -127,6 +127,10 @@
     "subjectId": "historie",
     "topicId": "historiens-store-gater"
   },
+  "pyramidebyggeren-3d": {
+    "subjectId": "historie",
+    "topicId": "historiens-store-gater"
+  },
   "dampmaskin-hjerte-3d": {
     "subjectId": "historie",
     "topicId": "industriell-revolusjon"
@@ -152,10 +156,6 @@
     "topicId": "japans-historie"
   },
   "chinampabyen-3d": {
-    "subjectId": "historie",
-    "topicId": "jordbruk-og-sivilisasjoner"
-  },
-  "pyramidebyggeren-3d": {
     "subjectId": "historie",
     "topicId": "jordbruk-og-sivilisasjoner"
   },

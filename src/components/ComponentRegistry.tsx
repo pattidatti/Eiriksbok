@@ -644,6 +644,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     HekseprosessLogikk,
     NurembergDefense,
     MythVsEvidence: lazy(() => import('./content/interactive/MythVsEvidence').then(m => ({ default: m.MythVsEvidence }))),
+    Byggegaaten: lazy(() => import('./content/interactive/Byggegaaten').then(m => ({ default: m.Byggegaaten }))),
 
     // Handel og infrastruktur
     GlobalProductionDots: lazy(() => import('./content/interactive/infrastruktur/GlobalProductionDots').then(m => ({ default: m.GlobalProductionDots }))),
