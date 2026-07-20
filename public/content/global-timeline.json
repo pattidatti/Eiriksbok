@@ -264,6 +264,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "pyramidene",
+      "title": "Hvordan ble pyramidene bygd?",
+      "description": "Slaver, romvesener eller smart teknologi? Vi tester mytene om pyramidene mot det arkeologene faktisk har funnet.",
+      "startDate": -2560,
+      "endDate": null,
+      "displayDate": "2560 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/pyramidene",
+      "tags": [
+        "historie",
+        "egypt",
+        "kildekritikk",
+        "pyramider",
+        "arkeologi"
+      ],
+      "lat": 26.8,
+      "lng": 30,
+      "placeLabel": "Egypt",
+      "placeCountryId": 818,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "norge-for-vikingene-sub-2",
       "title": "Stridsøksfolket",
       "description": "Indoeuropeisk migrasjon og nye skikker.",
