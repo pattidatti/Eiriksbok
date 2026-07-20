@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import {
@@ -74,7 +74,10 @@ const Leiegaarden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [banner, setBanner] = useState<string | null>(
         'Klikk en familie, og sett den i riktig etasje.'
     );
-    const { ref: shakeRef, shake } = useShake();
+    // Rist trigges via et signal fordi useShake (som kjører useFrame) MÅ leve
+    // inne i Canvas - se ShakeGroup nederst. Å kalle useShake her (utenfor Canvas)
+    // krasjet hele spillet med "Hooks can only be used within the Canvas".
+    const [shakeSignal, setShakeSignal] = useState(0);
 
     const placedCount = placedFamily.filter((f) => f !== null).length;
     const allPlaced = placedCount >= FLOORS;
@@ -98,7 +101,7 @@ const Leiegaarden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         if (placedFamily[floor] !== null) return; // etasjen er opptatt
         const fam = FAMILIES[selected];
         if (fam.correctFloor !== floor) {
-            shake(0.7);
+            setShakeSignal((s) => s + 1);
             sounds.play('incorrect');
             setBanner('Nei. Tenk motsatt av i dag: de rike bor NEDERST, de fattige ØVERST.');
             return;
@@ -168,7 +171,7 @@ const Leiegaarden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 </>
             }
             scene={
-                <group ref={shakeRef}>
+                <ShakeGroup signal={shakeSignal}>
                     <Insula
                         placedFamily={placedFamily}
                         selected={selected}
@@ -180,7 +183,7 @@ const Leiegaarden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         onFloor={placeInFloor}
                         onFire={startFire}
                     />
-                </group>
+                </ShakeGroup>
             }
         >
             <div className="flex flex-col gap-3">
@@ -219,6 +222,18 @@ const Leiegaarden3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 // ============================================================
 //  3D-SCENEN
 // ============================================================
+
+// Rist-gruppe som lever inne i Canvas. useShake kjører useFrame, så den kan bare
+// brukes i en scene-komponent - ikke i det ytre spillet. Trigges når `signal`
+// endres (samme mønster som Burst-triggeren).
+function ShakeGroup({ signal, children }: { signal: number; children: React.ReactNode }) {
+    const { ref, shake } = useShake();
+    useEffect(() => {
+        if (signal > 0) shake(0.7);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [signal]);
+    return <group ref={ref}>{children}</group>;
+}
 
 function Insula({
     placedFamily,

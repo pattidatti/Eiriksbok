@@ -1,6 +1,7 @@
 import React, { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
+import { SeascapeContext, type SeascapeInfo } from './seascapeContext';
 
 // Gjenbrukbare lavpoly-deler for raskt å bygge en levende mikrospill-scene.
 // Alle er billige (få polygoner), kaster/mottar skygge, og tar farger som props
@@ -65,6 +66,48 @@ export function WaterPlane({
                 emissiveIntensity={0.14}
             />
         </mesh>
+    );
+}
+
+// --- Seascape: vannflate + felles vannlinje-kontekst ---
+// Foretrukket måte å legge vann i et mikrospill: i stedet for en løs `WaterPlane`
+// pluss hånd-tunede båt-Y-verdier, wrap sjø-scenen i `<Seascape>` og plasser
+// flytende deler inni. Da har spillet ÉN sannhet for vannlinja (`waterY`) å
+// plassere båter mot, og `Boat` kan i DEV varsle hvis noe havner på land eller
+// flyter/synker. `waterY` er world-Y (default = position[1] + 0.02, samme lille
+// skimmer-offset som `WaterPlane`).
+export function Seascape({
+    position = [0, 0, 0],
+    size = [30, 30],
+    waterY,
+    color = '#3d7fa6',
+    children,
+}: {
+    position?: [number, number, number];
+    size?: [number, number];
+    /** Vannlinje i world-Y. Utelates → position[1] + 0.02. Plasser båter her. */
+    waterY?: number;
+    color?: string;
+    children?: React.ReactNode;
+}) {
+    const [w, d] = size;
+    const [px, py, pz] = position;
+    const surfaceY = waterY ?? py + 0.02;
+    const info = useMemo<SeascapeInfo>(
+        () => ({
+            waterY: surfaceY,
+            bounds: {
+                x: [px - w / 2, px + w / 2],
+                z: [pz - d / 2, pz + d / 2],
+            },
+        }),
+        [surfaceY, px, pz, w, d]
+    );
+    return (
+        <SeascapeContext.Provider value={info}>
+            <WaterPlane position={[px, surfaceY, pz]} size={size} color={color} />
+            {children}
+        </SeascapeContext.Provider>
     );
 }
 

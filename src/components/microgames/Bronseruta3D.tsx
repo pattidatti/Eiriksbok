@@ -226,7 +226,7 @@ function Smie({
             {/* Kobber-barren (naer smia) */}
             {!copperIn && (
                 <Draggable
-                    key={copperKey}
+                    key={`copper-${copperKey}`}
                     position={[4.6, 0, 3.2]}
                     snapPoints={[CRUCIBLE]}
                     snapRadius={2.6}
@@ -245,7 +245,7 @@ function Smie({
             {/* Tinn-barren (langt ute ved baaten) */}
             {!tinIn && (
                 <Draggable
-                    key={tinKey}
+                    key={`tin-${tinKey}`}
                     position={[-4.2, 0, -6.6]}
                     snapPoints={[CRUCIBLE]}
                     snapRadius={2.6}

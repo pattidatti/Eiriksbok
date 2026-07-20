@@ -1,4 +1,7 @@
+import { useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
+import { useSeascape } from './seascapeContext';
 
 // Utvidet bibliotek av lavpoly-scene-deler. Supplerer scene-parts.tsx med
 // uttrykksfulle figurer og flere miljøbyggesteiner, så mikrospill slutter å se
@@ -331,19 +334,56 @@ export function Cart({
 }
 
 // ── Båt (enkelt skrog) ───────────────────────────────────────────────────────
+// ── Båt ──────────────────────────────────────────────────────────────────────
+// KONVENSJON: baugen peker mot **+Z** i båtens lokale ramme. Firkantseilet spenner
+// på tvers (X) og vender forover/bakover (normal ±Z) - altså mot seilretningen,
+// slik et råseil skal, med råa (bommen) langs X over seilet. For å snu båten, bruk
+// `heading` (radianer om Y, tolkes som "hvor peker baugen") eller den rå
+// `rotation`-tuppelen - da vender seilet automatisk riktig vei.
+//
+// Vann: legg båten inni `<Seascape>` og plasser den ved `waterY`. I DEV varsler
+// båten hvis den havner utenfor vannet (på land) eller langt fra vannlinja.
 export function Boat({
     position = [0, 0, 0],
     rotation,
+    heading,
     color = '#6b4a2c',
     sail,
 }: {
     position?: [number, number, number];
     rotation?: [number, number, number];
+    /** Retning baugen peker (radianer om Y). Ignoreres hvis `rotation` er satt. */
+    heading?: number;
     color?: string;
     sail?: string;
 }) {
+    const group = useRef<THREE.Group>(null);
+    const sea = useSeascape();
+    const checked = useRef(false);
+    // DEV-vakthund: kjør én sjekk på første frame (etter at world-matrisene er
+    // oppdatert), varsle ved båt-på-land eller flyter/synker. Gratis i prod.
+    useFrame(() => {
+        if (!import.meta.env.DEV || checked.current || !group.current || !sea.bounds) return;
+        checked.current = true;
+        const p = group.current.getWorldPosition(new THREE.Vector3());
+        const { x, z } = sea.bounds;
+        if (p.x < x[0] || p.x > x[1] || p.z < z[0] || p.z > z[1]) {
+            console.warn(
+                `[kit/Boat] ligger utenfor Seascape-vannet (x=${p.x.toFixed(1)}, z=${p.z.toFixed(
+                    1
+                )}) - båt på land? Vann strekker seg x[${x[0]}..${x[1]}] z[${z[0]}..${z[1]}].`
+            );
+        } else if (Math.abs(p.y - sea.waterY) > 1.5) {
+            console.warn(
+                `[kit/Boat] y=${p.y.toFixed(1)} er langt fra vannlinja ${sea.waterY.toFixed(
+                    2
+                )} - flyter/synker? Plasser båten ved Seascape.waterY.`
+            );
+        }
+    });
+    const rot = rotation ?? (heading !== undefined ? [0, heading, 0] : undefined);
     return (
-        <group position={position} rotation={rotation}>
+        <group ref={group} position={position} rotation={rot as [number, number, number] | undefined}>
             <mesh position={[0, 0.2, 0]} rotation={[0, 0, 0]} castShadow receiveShadow>
                 <cylinderGeometry args={[0.5, 0.32, 2.4, 8, 1, false, 0, Math.PI]} />
                 <meshStandardMaterial color={color} roughness={0.9} side={THREE.DoubleSide} />
@@ -352,6 +392,11 @@ export function Boat({
                 <group position={[0, 0, 0]}>
                     <mesh position={[0, 0.9, 0]} castShadow>
                         <cylinderGeometry args={[0.04, 0.04, 1.6, 6]} />
+                        <meshStandardMaterial color="#4a3320" roughness={0.9} />
+                    </mesh>
+                    {/* Rå (horisontal bom) på tvers - langs X, som seilet spenner. */}
+                    <mesh position={[0, 1.5, 0]} rotation={[0, 0, Math.PI / 2]} castShadow>
+                        <cylinderGeometry args={[0.03, 0.03, 1.15, 6]} />
                         <meshStandardMaterial color="#4a3320" roughness={0.9} />
                     </mesh>
                     <mesh position={[0, 1, 0]} castShadow>

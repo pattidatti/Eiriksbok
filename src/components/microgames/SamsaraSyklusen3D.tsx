@@ -235,7 +235,7 @@ const SamsaraRing: React.FC<{ removedCount: number }> = ({ removedCount }) => {
             <torusGeometry args={[1.55, 0.04, 8, 80]} />
             <meshStandardMaterial
                 color="#6050a0"
-                emissive="#3020608"
+                emissive="#302060"
                 emissiveIntensity={0.4}
                 transparent
                 opacity={0.35}

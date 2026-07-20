@@ -24,6 +24,7 @@ export { toonGradientMap } from './toonGradient';
 export {
     GroundPlane,
     WaterPlane,
+    Seascape,
     Building,
     Tree,
     Figure,
@@ -33,6 +34,9 @@ export {
     Banner,
     Gear,
 } from './scene-parts';
+export { useSeascape, type SeascapeBounds, type SeascapeInfo } from './seascapeContext';
+// Orienterings-hjelpere (unngå "peker feil vei"-feil)
+export { faceAlong, headingToRotation, rotationAlong, type XZ } from './placement';
 // Utvidet del-bibliotek: uttrykksfulle figurer + flere miljøbyggesteiner
 export {
     Person,

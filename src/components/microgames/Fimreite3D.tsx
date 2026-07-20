@@ -178,9 +178,10 @@ function Fjord({
 }) {
     return (
         <group>
-            {/* Bratte fjordsider på hver side av vannet */}
-            <Hill position={[0, 1, -13]} radius={9} height={7} color="#5c6a4f" seed={2} />
-            <Hill position={[0, 1, 13]} radius={9} height={7} color="#4d5c42" seed={5} />
+            {/* Fjordfjell langs den bortre bredden (bak vannet, klar av båtene og
+                kameraet) - rammer fjorden i stedet for å blokkere utsikten. */}
+            <Hill position={[-7, 1, -14]} radius={7} height={5.5} color="#5c6a4f" seed={2} />
+            <Hill position={[7, 1, -15]} radius={8} height={6} color="#4d5c42" seed={5} />
             <WaterPlane position={[0, 0.02, 0]} size={[26, 30]} color={t.water} />
 
             {/* Kong Magnus sin lenkede flåte */}

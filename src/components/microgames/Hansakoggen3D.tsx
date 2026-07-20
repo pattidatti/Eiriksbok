@@ -618,8 +618,10 @@ function Kogge() {
                 <cylinderGeometry args={[0.05, 0.05, 3, 6]} />
                 <meshStandardMaterial color="#4a3320" roughness={0.9} />
             </mesh>
-            {/* Seil - lyst med rød hansastripe */}
-            <group position={[0.2, 2.55, 0]}>
+            {/* Seil - lyst med rød hansastripe. Roteres π/2 om Y så det spenner
+                råa (langs Z) og vender forover mot seilretningen (+X), i stedet
+                for å henge på tvers av sin egen rå. */}
+            <group position={[0.2, 2.55, 0]} rotation={[0, Math.PI / 2, 0]}>
                 <mesh>
                     <planeGeometry args={[2.9, 2.1]} />
                     <meshStandardMaterial color="#efe7d4" roughness={0.95} side={THREE.DoubleSide} />

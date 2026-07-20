@@ -162,6 +162,50 @@ Tre kit-primitiver gir hele klasser av ikke-klikk-mekanikk. Bruk dem framfor end
 
 ---
 
+## Orientering, vann og plassering (korrekt geometri)
+
+De vanligste feilene i auto-genererte spill er ikke bugs - de er **geometri som vender eller ligger
+feil**: master/seil som peker feil vei, båter på land (eller land i sjøen), ting som flyter eller
+synker. Disse ryker rett til elevene fordi natt-PR-ene auto-merges. Følg reglene under, så unngår du
+dem av konstruksjon.
+
+**Hard regel: bygg aldri skrog eller vannflate for hånd.** Bruk kit-delene:
+- **`Boat`** (`kit`) for alle båter. Konvensjon: **baugen peker +Z**, firkantseilet spenner på tvers
+  (X) og vender forover (mot seilretningen). Snu båten med `heading={vinkel}` (radianer om Y, "hvor
+  peker baugen") eller `rotation` - da vender seilet automatisk riktig. Hånd-bygg aldri mast + seil
+  som løse `planeGeometry` med gjettet rotasjon; det er nettopp der "seilet henger på tvers av sin
+  egen rå" oppstår.
+- **`Seascape`** (`kit`) for sjø-scener i stedet for en løs `WaterPlane` + hånd-tunede båt-Y-verdier.
+  `Seascape` eier ÉN vannlinje (`waterY`) og vann-utstrekningen; plasser båter mot `waterY`. I DEV
+  varsler `Boat` i konsollen hvis den havner utenfor vannet (på land) eller langt fra vannlinja.
+
+```tsx
+// Riktig: sjø-scene med Seascape, båt seiler mot havna (+X).
+import { Seascape, Boat, faceAlong } from './kit';
+
+<Seascape position={[0, 0, 0]} size={[30, 24]} waterY={0.05} color={t.water}>
+    <Boat position={[-8, 0.05, 0]} heading={faceAlong([1, 0])} sail="#efe7d4" />
+</Seascape>
+```
+
+- **Orienterings-hjelpere** (`kit/placement`): `faceAlong([dx, dz])`, `headingToRotation(from, to)`,
+  `rotationAlong([dx, dz])`. Regner ut Y-rotasjonen som snur en +Z-vendt del (`Boat`, `Person`,
+  `Animal`) mot en retning eller et mål - bruk dem i stedet for hånd-skrevet `Math.atan2`.
+- **Master loddrett, rå ⟂ kjøl.** En mast er en vertikal `cylinderGeometry` (akse Y, ingen
+  rotasjon). Råa/bommen er horisontal, på tvers av kjølen. Seilet spenner råa og vender langs
+  kjølretningen - ikke motsatt.
+- **Land kun på land, sjø kun i sjøen.** Hold `Tree`/`Building`/`Person` innenfor `GroundPlane` og
+  båter innenfor `Seascape.bounds`. Ikke la vann og land bytte plass i forhold til emnet.
+- **Ingenting flyter eller synker.** Alt som skal stå på bakken har bunnen ved bakkenivå; alt som
+  flyter ligger ved `waterY`. Sjekk i preview at det ikke er luft under eller topp under vann.
+
+**Revider deg selv visuelt før du er ferdig:** `node scripts/audit-microgames.mjs --ids <din-id>`
+rendrer spillet på `/mikrospill/<id>`, tar skjermbilder (front + orbit) til
+`.screenshots/microgames/<id>/` og fanger DEV-vakthundens advarsler. Se på bildene: vender seilet
+mot seilretningen? Ligger båten på vann? Er noe skjevt eller svevende? Rett det før PR åpnes.
+
+---
+
 ## Avanserte lag - gjør spillet unikt, immersivt og vanedannende
 
 Toolkitet har fem lag til som løfter et mikrospill fra «funker» til «wow». Bruk det
@@ -338,6 +382,9 @@ registeret. Du registrerer kun i `registry.ts`.
 - [ ] Lyspære-øyeblikket er tydelig og oppnådd; mekanikken ER pedagogikken
 - [ ] Rik interaksjon - ikke bare en knapperad. Eleven tar i verdenen.
 - [ ] Chromebook-trygt: store nok klikk-/gripeflater (`hitArea`, romslig usynlig gripeboks på draggables)
+- [ ] **Geometri korrekt orientert:** master loddrett, seil vender mot seilretningen, rå ⟂ kjøl. Båter via kit-`Boat` (ikke hånd-bygd skrog)
+- [ ] **Land/sjø riktig:** båter på vann (`Seascape`), land-props på land; ingenting flyter eller synker
+- [ ] **Visuelt revidert:** `node scripts/audit-microgames.mjs --ids <id>` kjørt, skjermbildene sett over, DEV-vakthund uten båt-varsler
 - [ ] Juicy: umiddelbar respons, myke `damp`-overganger, spring-finale (`WinScreen`), reset (`onRetry`)
 - [ ] `onComplete` kalles ved seier
 - [ ] Lazy-registrert i `MICRO_GAMES` med kebab-case `id` = `gameId` i innholdet
