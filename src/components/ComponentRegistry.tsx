@@ -187,6 +187,8 @@ const LovensSmutthull = lazy(() => import('./content/interactive/LovensSmutthull
 const SprakBaneVelger = lazy(() => import('./content/interactive/SprakBaneVelger').then(m => ({ default: m.SprakBaneVelger })));
 const DialektDetektiv = lazy(() => import('./content/interactive/DialektDetektiv').then(m => ({ default: m.DialektDetektiv })));
 const SosiolektSkifteren = lazy(() => import('./content/interactive/SosiolektSkifteren').then(m => ({ default: m.SosiolektSkifteren })));
+const BergensTokjonn = lazy(() => import('./content/interactive/BergensTokjonn').then(m => ({ default: m.BergensTokjonn })));
+const BergensSosiolektPult = lazy(() => import('./content/interactive/BergensSosiolektPult').then(m => ({ default: m.BergensSosiolektPult })));
 const SpredningsKart = lazy(() => import('./content/interactive/SpredningsKart').then(m => ({ default: m.SpredningsKart })));
 const StormaktVagskal = lazy(() => import('./content/interactive/StormaktVagskal').then(m => ({ default: m.StormaktVagskal })));
 const LeonardoNotatbok = lazy(() => import('./content/interactive/LeonardoNotatbok').then(m => ({ default: m.LeonardoNotatbok })));
@@ -512,6 +514,8 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     SprakBaneVelger,
     DialektDetektiv,
     SosiolektSkifteren,
+    BergensTokjonn,
+    BergensSosiolektPult,
     SpredningsKart,
     StormaktVagskal,
     LeonardoNotatbok,

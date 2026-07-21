@@ -1263,6 +1263,14 @@
       "count": 6
     },
     {
+      "tag": "dialekt",
+      "count": 6
+    },
+    {
+      "tag": "talemål",
+      "count": 6
+    },
+    {
       "tag": "bolivar",
       "count": 6
     },
@@ -1523,6 +1531,10 @@
       "count": 4
     },
     {
+      "tag": "sosiolekt",
+      "count": 4
+    },
+    {
       "tag": "ideologi",
       "count": 4
     },
@@ -1599,14 +1611,6 @@
       "count": 4
     },
     {
-      "tag": "dialekt",
-      "count": 4
-    },
-    {
-      "tag": "talemål",
-      "count": 4
-    },
-    {
       "tag": "norsk",
       "count": 4
     },
@@ -1668,6 +1672,10 @@
     },
     {
       "tag": "medisin",
+      "count": 3
+    },
+    {
+      "tag": "språk og identitet",
       "count": 3
     },
     {
@@ -2307,6 +2315,10 @@
       "count": 2
     },
     {
+      "tag": "standardtalemål",
+      "count": 2
+    },
+    {
       "tag": "bokmål",
       "count": 2
     },
@@ -2696,14 +2708,6 @@
     },
     {
       "tag": "debatt",
-      "count": 2
-    },
-    {
-      "tag": "sosiolekt",
-      "count": 2
-    },
-    {
-      "tag": "språk og identitet",
       "count": 2
     },
     {
@@ -3259,7 +3263,15 @@
       "count": 1
     },
     {
-      "tag": "standardtalemål",
+      "tag": "bergensk",
+      "count": 1
+    },
+    {
+      "tag": "grammatisk kjønn",
+      "count": 1
+    },
+    {
+      "tag": "hansaforbundet",
       "count": 1
     },
     {
