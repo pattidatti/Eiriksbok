@@ -1,0 +1,232 @@
+{
+    "id": "kunstig-intelligens-og-etikk",
+    "title": "Kunstig intelligens: Kan en maskin gjøre det rette?",
+    "subject": "krle",
+    "topic": "etikk",
+    "layout": "rich",
+    "year": "1950-2025",
+    "category": "Anvendt etikk",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/etikk/ki-etikk-hero.webp",
+    "details": [
+        "En KI lærer av eksempler, men forstår ikke hva den gjør.",
+        "Skjeve treningsdata kan gjøre at en KI behandler mennesker urettferdig.",
+        "En maskin kan ikke ta ansvar. Menneskene bak må alltid svare for den."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Du har kanskje brukt kunstig intelligens allerede i dag. En chatbot som hjelper deg med leksene, en app som foreslår neste sang, eller et filter som fjerner søppelpost fra innboksen. Kunstig intelligens, ofte forkortet KI, er informasjonsteknologi som justerer sin egen aktivitet og derfor kan virke intelligent (Tidemann mfl., 2026). Men bak den smarte fasaden gjemmer det seg noen vanskelige spørsmål. Ikke tekniske spørsmål om hvordan KI-en virker, men etiske spørsmål om hva som er rett og galt. Kan en maskin ta gode valg? Og hvem har skylden hvis den tar et dårlig et?"
+        },
+        {
+            "type": "image",
+            "src": "/images/etikk/ki-etikk-01.webp",
+            "alt": "Ungdom som chatter med en KI-app på mobilen",
+            "caption": "Mange bruker kunstig intelligens hver dag uten å tenke over det."
+        },
+        {
+            "type": "header",
+            "text": "Hva er kunstig intelligens egentlig?"
+        },
+        {
+            "type": "text",
+            "content": "De fleste KI-er i dag bygger på det som kalles maskinlæring. I stedet for at et menneske skriver inn nøyaktige regler for hva maskinen skal gjøre, lærer maskinen selv ved å studere store mengder eksempler (Velldal, 2025). Vil du lære en KI å kjenne igjen en katt, viser du den ikke en definisjon av en katt. Du viser den tusenvis av kattebilder, helt til den finner mønsteret selv. Eksemplene kalles treningsdata. Denne måten å lære på er kraftig, men den har en svakhet vi skal komme tilbake til: KI-en blir aldri klokere enn dataene den fikk."
+        },
+        {
+            "type": "text",
+            "content": "En viktig ting å forstå er at KI-en ikke vet hva en katt er. Den har aldri klappet en, hørt den male eller skjønt at den er et levende dyr. Den regner bare ut at dette bildet ligner de andre bildene den har fått høre er katter. KI-en flytter på tall, ikke på mening. Det høres kanskje som en liten detalj, men det blir helt avgjørende når vi snakker om ansvar litt lenger ned."
+        },
+        {
+            "type": "header",
+            "text": "Kan en maskin tenke?"
+        },
+        {
+            "type": "text",
+            "content": "Dette spørsmålet er eldre enn du kanskje tror. Allerede i 1950 spurte den britiske matematikeren Alan Turing rett ut: kan maskiner tenke? Han foreslo en test. Hvis du sitter og skriver med noen du ikke ser, og du ikke klarer å avgjøre om det er et menneske eller en maskin, da må vi regne maskinen som like intelligent som mennesket (Hansen, 2023). Mange KI-chatboter i dag ville nok klart en slik test uten problemer."
+        },
+        {
+            "type": "text",
+            "content": "Men betyr det at maskinen forstår? Filosofen John Searle mente nei, og fortalte om et tankeeksperiment kalt det kinesiske rommet. Tenk deg en person som sitter i et rom og får kinesiske tegn inn gjennom en luke. Personen kan ikke kinesisk, men har en tjukk regelbok som sier nøyaktig hvilke tegn hen skal sende ut igjen. Utenfra ser det ut som rommet forstår kinesisk. Men personen inne forstår ingenting, hen følger bare regler (Hansen, 2023). Slik er det med en KI, mente Searle: den flytter på symboler uten å skjønne hva de betyr. Dette skillet, mellom å late som man forstår og faktisk forstå, er viktig å ha med seg videre."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Spørsmålet er ikke om en datamaskin kan late som den forstår, men om den virkelig forstår noe som helst.",
+                "author": "Etter John Searle, «Det kinesiske rommet»"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Skjevhet inn, skjevhet ut"
+        },
+        {
+            "type": "text",
+            "content": "Husk svakheten ved maskinlæring: KI-en blir aldri bedre enn treningsdataen. Er dataene skjeve, blir KI-en skjev. Datatilsynet, som passer på personvernet i Norge, advarer mot at kunstig intelligens kan føre til skjult forskjellsbehandling (Datatilsynet, 2018). Det høres teknisk ut, men betyr noe ganske alvorlig: at en maskin kan behandle grupper av mennesker urettferdig, uten at noen har bestemt det med vilje."
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg en KI som skal sortere jobbsøknader. Den lærer av hvem selskapet ansatte før. Hvis selskapet tidligere for det meste ansatte menn, lærer KI-en at menn er de rette, og luker ut kvinner helt av seg selv. Skjevheten i fortiden blir til en regel for framtiden. Det samme kan skje med en KI i helsevesenet: er en sykdom sjelden i treningsbildene, blir KI-en dårlig til å oppdage den. Prøv det selv i modellen under. Du bygger treningsdataen til en ansikts-KI, og ser hvem den lærer å kjenne igjen, og hvem den bommer på."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "skjevhetsspeilet-3d"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/etikk/ki-etikk-02.webp",
+            "alt": "En robothånd og en menneskehånd strekker seg mot en vektskål",
+            "caption": "Når en KI tar valg som rammer mennesker, blir spørsmålet om ansvar alvorlig."
+        },
+        {
+            "type": "header",
+            "text": "Hvem har ansvaret når KI-en tar feil?"
+        },
+        {
+            "type": "text",
+            "content": "Her kommer et av de vanskeligste spørsmålene i hele KI-etikken. Hvis bruken av en KI skader et menneske, hvem skal holdes ansvarlig? Er det selskapet som solgte teknologien, de som utviklet den, eller ligger skylden i dataene som ble brukt til å trene den opp (Tidemann mfl., 2026)? Det finnes ikke noe enkelt svar, og gode grunner peker i flere retninger samtidig."
+        },
+        {
+            "type": "text",
+            "content": "Men én ting er mange enige om: KI-en selv kan ikke ta ansvaret. Husk det kinesiske rommet. En KI forstår ikke hva den gjør, den har ingen hensikt og ingen samvittighet. Vi kan ikke straffe en maskin eller be den om en ekte unnskyldning. Derfor glir ansvaret alltid tilbake til menneskene bak: de som lagde dataene, bygde KI-en, solgte den og valgte å bruke den. Prøv å felle dommen selv i saken under."
+        },
+        {
+            "type": "component",
+            "name": "KiAnsvarskjeden",
+            "props": {
+                "title": "Hvem har ansvaret?"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hva sier reglene?"
+        },
+        {
+            "type": "text",
+            "content": "Fordi kunstig intelligens kan skade og diskriminere, har myndighetene begynt å lage regler. I 2024 fikk EU en egen KI-lov, ofte kalt KI-forordningen (Tidemann mfl., 2026). Den forbyr blant annet å bruke KI til å manipulere folk til å ta skadelige valg, og setter strenge krav til KI på viktige områder som helse, selvkjørende biler og ansettelser. Den krever også at innhold laget av KI skal merkes, så du vet når du snakker med en maskin. Norge følger de samme reglene, og har hatt lover om personvern og automatiske avgjørelser helt siden 1970-tallet (Tidemann mfl., 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Slik kan du tenke etisk om KI"
+        },
+        {
+            "type": "text",
+            "content": "De etiske verktøyene du allerede kjenner, virker like godt på KI som på alt annet. [Nytteetikken](/krle/etikk/utilitarisme) spør: gir denne KI-en mer godt enn vondt til sammen? En KI som oppdager kreft tidlig, kan redde mange liv. [Pliktetikken](/krle/etikk/pliktetikk) spør noe annet: bryter KI-en noen grunnleggende rettigheter, for eksempel retten til å ikke bli diskriminert, uansett hvor nyttig den er? Og [dygdsetikken](/krle/etikk/dygdsetikk) flytter blikket til menneskene bak og spør: hva ville en klok og ansvarlig utvikler gjort? Ville hen sluppet løs en KI hen ikke hadde testet skikkelig? De samme spørsmålene om [rettferdighet](/krle/etikk/rettferdighetsetikk) møter du igjen når du diskuterer hvordan roboter og KI endrer samfunnet i faget [samfunnskunnskap](/samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer)."
+        },
+        {
+            "type": "text",
+            "content": "Kunstig intelligens er verken god eller ond i seg selv. Den er et speil. Den viser oss hva vi har lært den, og hvilke valg vi mennesker tar. Derfor er det viktigste spørsmålet ikke om maskinene blir smarte nok. Det er om vi mennesker er kloke nok til å bruke dem rett."
+        },
+        {
+            "type": "image",
+            "src": "/images/etikk/ki-etikk-03.webp",
+            "alt": "Ungdom står foran et speil der speilbildet ser ut som en robot",
+            "caption": "En KI speiler oss: den blir det vi lærer den å bli."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "KI-forordningen (EU, 2024)",
+                "content": "I 2024 fikk EU sin første egne lov om kunstig intelligens. Den deler KI inn etter hvor farlig bruken er. Noen bruksmåter er helt forbudt, som å manipulere folk til skadelige valg. KI på områder som helse, selvkjørende biler og ansettelser regnes som høy risiko og får strenge krav. Innhold som er laget av KI, skal merkes. Norge følger de samme reglene."
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva menes med treningsdata, og hvorfor er de så viktige for en KI?",
+                    "Forklar Turing-testen med dine egne ord.",
+                    "Hva prøver John Searle å vise med tankeeksperimentet om det kinesiske rommet?",
+                    "Hvorfor mener teksten at en KI ikke selv kan ta ansvar for et valg?"
+                ],
+                "reflekter": [
+                    "Teksten sier at en KI kan behandle mennesker urettferdig uten at noen har bestemt det med vilje. Forklar hvordan det kan skje.",
+                    "Velg saken om jobbsøknaden. Bruk [nytteetikk](/krle/etikk/utilitarisme) og [pliktetikk](/krle/etikk/pliktetikk) til å vurdere om selskapet burde brukt KI-en.",
+                    "En selvkjørende bil skader en syklist. Hvem synes du bør ha mest ansvar, og hvorfor?",
+                    "Hva mener teksten med at kunstig intelligens er «et speil»?"
+                ],
+                "gaaVidere": [
+                    "Diskuter i klassen: bør en KI få lov til å avgjøre hvem som får hjelp av NAV eller plass på skolen? Begrunn med minst én etisk retning.",
+                    "Skriv en kort tekst der du forklarer én god og én farlig side ved at skoler bruker KI.",
+                    "Undersøk hva KI-forordningen fra 2024 sier, og vurder om reglene er strenge nok."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er maskinlæring?",
+                        "options": [
+                            "At et menneske skriver inn alle reglene maskinen skal følge",
+                            "At maskinen lærer mønstre selv ved å studere mange eksempler",
+                            "At maskinen kobles til internett",
+                            "At maskinen får en menneskelig hjerne"
+                        ],
+                        "answer": "At maskinen lærer mønstre selv ved å studere mange eksempler"
+                    },
+                    {
+                        "question": "Hva prøver tankeeksperimentet om det kinesiske rommet å vise?",
+                        "options": [
+                            "At maskiner er smartere enn mennesker",
+                            "At en maskin kan følge regler uten å forstå hva de betyr",
+                            "At det er lett å lære seg kinesisk",
+                            "At datamaskiner har følelser"
+                        ],
+                        "answer": "At en maskin kan følge regler uten å forstå hva de betyr"
+                    },
+                    {
+                        "question": "Hvorfor kan en KI komme til å behandle mennesker urettferdig?",
+                        "options": [
+                            "Fordi den blir sur",
+                            "Fordi den har lært av skjeve treningsdata",
+                            "Fordi den forstår hva rettferdighet er",
+                            "Fordi den alltid velger tilfeldig"
+                        ],
+                        "answer": "Fordi den har lært av skjeve treningsdata"
+                    },
+                    {
+                        "question": "Hvem kan ifølge teksten IKKE ta ansvar når en KI gjør skade?",
+                        "options": [
+                            "Selskapet som solgte KI-en",
+                            "Utviklerne som bygde den",
+                            "KI-en selv",
+                            "Mennesket som brukte den"
+                        ],
+                        "answer": "KI-en selv"
+                    },
+                    {
+                        "question": "Hva skjedde med reglene for KI i EU i 2024?",
+                        "options": [
+                            "All bruk av KI ble forbudt",
+                            "EU fikk sin første egne lov om kunstig intelligens",
+                            "KI ble gjort gratis for alle",
+                            "Norge sluttet å følge EU-reglene"
+                        ],
+                        "answer": "EU fikk sin første egne lov om kunstig intelligens"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Datatilsynet. (2018). *Anbefalinger for godt personvern i utvikling og bruk av kunstig intelligens*. Hentet 21.07.2026 fra https://www.datatilsynet.no/regelverk-og-verktoy/rapporter-og-utredninger/kunstig-intelligens/anbefalinger/",
+                    "Hansen, M. K. (2023). *Kunstig intelligens – filosofisk diskusjon*. Store norske leksikon. Hentet 21.07.2026 fra https://snl.no/kunstig_intelligens_-_filosofisk_diskusjon",
+                    "Tidemann, A., Arnesen, L. & Velldal, E. (2026). *Kunstig intelligens*. Store norske leksikon. Hentet 21.07.2026 fra https://snl.no/kunstig_intelligens",
+                    "Velldal, E. (2025). *Maskinlæring*. Store norske leksikon. Hentet 21.07.2026 fra https://snl.no/maskinl%C3%A6ring"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

@@ -1,5 +1,5 @@
 {
-  "buildId": 1784635930708,
+  "buildId": 1784643899591,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2016,6 +2016,9 @@
     ],
     "etikk-intro": [
       "content/krle/etikk/intro.json"
+    ],
+    "kunstig-intelligens-og-etikk": [
+      "content/krle/etikk/kunstig-intelligens-og-etikk.json"
     ],
     "naturrett": [
       "content/krle/etikk/naturrett.json"
@@ -4288,6 +4291,7 @@
     "krle/etikk/dygdsetikk": "content/krle/etikk/dygdsetikk.json",
     "krle/etikk/dyreetikk": "content/krle/etikk/dyreetikk.json",
     "krle/etikk/intro": "content/krle/etikk/intro.json",
+    "krle/etikk/kunstig-intelligens-og-etikk": "content/krle/etikk/kunstig-intelligens-og-etikk.json",
     "krle/etikk/naturrett": "content/krle/etikk/naturrett.json",
     "krle/etikk/nihilisme": "content/krle/etikk/nihilisme.json",
     "krle/etikk/non-aggression": "content/krle/etikk/non-aggression.json",

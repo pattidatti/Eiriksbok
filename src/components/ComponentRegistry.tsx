@@ -86,6 +86,7 @@ const RomanExpansionMap = lazy(() => import('./content/interactive/RomanExpansio
 const TrolleyProblem = lazy(() => import('./content/interactive/TrolleyProblem').then(m => ({ default: m.TrolleyProblem })));
 const VeilOfIgnorance = lazy(() => import('./content/interactive/VeilOfIgnorance').then(m => ({ default: m.VeilOfIgnorance })));
 const DyreetikkBrillene = lazy(() => import('./content/interactive/DyreetikkBrillene').then(m => ({ default: m.DyreetikkBrillene })));
+const KiAnsvarskjeden = lazy(() => import('./content/interactive/KiAnsvarskjeden').then(m => ({ default: m.KiAnsvarskjeden })));
 const GoldenMeanSlider = lazy(() => import('./content/interactive/GoldenMeanSlider').then(m => ({ default: m.GoldenMeanSlider })));
 const CategoricalImperativeTester = lazy(() => import('./content/interactive/CategoricalImperativeTester').then(m => ({ default: m.CategoricalImperativeTester })));
 const FilterBubbleSim = lazy(() => import('./content/interactive/FilterBubbleSim').then(m => ({ default: m.FilterBubbleSim })));
@@ -422,6 +423,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     TrolleyProblem,
     VeilOfIgnorance,
     DyreetikkBrillene,
+    KiAnsvarskjeden,
     MaktensFristelse,
     GoldenMeanSlider,
     CategoricalImperativeTester,
