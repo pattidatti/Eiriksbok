@@ -1,0 +1,229 @@
+{
+    "id": "antikythera-mekanismen",
+    "title": "Antikythera-mekanismen - verdens første datamaskin?",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "100 fvt",
+    "category": "Historiens store gåter",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "En bronsemaskin med over 30 tannhjul, laget for rundt 2100 år siden.",
+        "Den kunne vise hvor sola og månen sto, og spå formørkelser år fram i tid.",
+        "Ingen laget noe like avansert igjen før mekaniske klokker over tusen år senere."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "I 1901 dykket noen greske svampfiskere ned til et gammelt skipsvrak utenfor den lille øya Antikythera, mellom Kreta og fastlandet. Blant statuer, krukker og mynter dro de opp en grønn, sammenrustet klump av bronse og tre. Ingen skjønte hva det var. Klumpen ble lagt til side på museet i Athen, som en av mange rare biter fra havbunnen (Greenspan, 2025). Ingen ante at de nettopp hadde funnet den mest gåtefulle maskinen fra hele antikken."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Grønn sammenrustet bronseklump med synlige tannhjul i en glassmonter",
+            "caption": "Det største bevarte stykket av Antikythera-mekanismen. Under rusten skjuler det seg fintannede tannhjul."
+        },
+        {
+            "type": "header",
+            "text": "Klumpen som gjemte en hemmelighet"
+        },
+        {
+            "type": "text",
+            "content": "Et par år senere, i 1902, tok en gresk arkeolog en nærmere titt på klumpen. Da så han noe som ikke ga mening: det stakk fintannede tannhjul ut av bronsen, jevne og presise som i et urverk (Greenspan, 2025). Men dette var jo laget for over to tusen år siden, lenge før noen trodde at mennesker kunne bygge slike maskiner. Hvordan kunne det finnes tannhjul i et vrak fra antikken?"
+        },
+        {
+            "type": "text",
+            "content": "Selve skipet hadde sunket en gang rundt 100 til 60 fvt, og maskinen var trolig laget omtrent da (Edmunds, 2026). Det gjør den rundt 2100 år gammel. Funnet ble en gåte som forskerne skulle bruke over hundre år på å nøste opp, og som fortsatt ikke er helt løst. I dag kan du se restene på Nasjonalt arkeologisk museum i Athen (Wikipedia, u.å.)."
+        },
+        {
+            "type": "header",
+            "text": "Verdens første datamaskin?"
+        },
+        {
+            "type": "text",
+            "content": "Da forskerne endelig fikk se inni klumpen, fant de over 30 tannhjul som grep inn i hverandre (Edmunds, 2026). Hele maskinen var på størrelse med en skoeske og laget av bronse (Kjørstad, 2021). På siden satt en sveiv. Når du vridde på sveiva, satte du alle hjulene i gang på én gang."
+        },
+        {
+            "type": "text",
+            "content": "Nettopp derfor kaller mange den «verdens eldste datamaskin». En datamaskin regner ut svar for deg, og det var akkurat det denne maskinen gjorde: du stilte inn en dato med sveiva, og maskinen regnet ut hvor sola og månen ville stå på himmelen. Den regnet ikke med tall på en skjerm, men med tannhjul som snurret ulikt fort. Ideen om å bruke tannhjul med ulik størrelse for å gjøre utregninger er den samme som ligger bak både gamle klokker og moderne maskiner."
+        },
+        {
+            "type": "header",
+            "text": "Hva maskinen kunne fortelle"
+        },
+        {
+            "type": "text",
+            "content": "På forsiden av maskinen var det en skive med de tolv stjernetegnene. To visere beveget seg rundt: én for sola og én for månen. Vred du sveiva framover, kravlet solviseren sakte rundt, mens måneviseren spant mye fortere. En liten kule viste til og med hvilken månefase det var, fra nymåne til fullmåne (Edmunds, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Det mest imponerende lå på baksiden. Der kunne maskinen spå formørkelser. En solformørkelse skjer bare når sola og månen står på akkurat samme sted på himmelen samtidig, og det gjentar seg i et fast mønster på litt over 18 år. Maskinen holdt styr på dette mønsteret, så den kunne varsle en formørkelse mange år før den skjedde (Edmunds, 2026). Den viste også når de neste [olympiske lekene](/historie/antikkens-hellas/olympiske-leker) skulle holdes, som kom igjen hvert fjerde år (Kjørstad, 2021). For grekerne var himmelen og festene tett knyttet sammen, og maskinen bandt dem sammen i bronse."
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv under. Vri tidshjulet og se hvordan ett eneste tak på sveiva flytter både sola og månen, men månen mye fortere enn sola."
+        },
+        {
+            "type": "component",
+            "name": "AntikytheraDial",
+            "props": {
+                "title": "Vri tidshjulet",
+                "intro": "Dra i sveiva og se maskinen flytte både sola og månen på én gang."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Skinnende rekonstruksjon av bronsemaskinen med mange tannhjul og en sveiv",
+            "caption": "En moderne rekonstruksjon. Tannhjulene griper inn i hverandre slik at én sveiv driver hele maskinen."
+        },
+        {
+            "type": "header",
+            "text": "Gåten: hvordan klarte de det?"
+        },
+        {
+            "type": "text",
+            "content": "Her begynner det egentlige mysteriet. Vi vet at grekerne var dyktige i [vitenskap](/historie/antikkens-hellas/gresk-vitenskap) og matematikk, men ingen visste at de kunne bygge noe så nøyaktig. Tannhjulene var kuttet med tenner på bare rundt én millimeter (Greenspan, 2025). Å lage så små og presise deler for hånd, uten maskiner, er svært vanskelig selv i dag."
+        },
+        {
+            "type": "text",
+            "content": "Enda rarere er det som skjedde etterpå. Etter at maskinen forsvant, laget ingen noe like avansert på over tusen år. Først da mekaniske klokker dukket opp i middelalderens Europa, så verden igjen tannhjul satt sammen på denne måten (Edmunds, 2026). Hvorfor forsvant kunnskapen? En sannsynlig grunn er trist og enkel: da slike maskiner gikk i stykker, ble bronsen ofte smeltet om til noe nytt (Greenspan, 2025). Kunnskapen om hvordan de ble bygd, forsvant sammen med metallet. Kanskje fantes det flere slike maskiner, men denne ene overlevde bare fordi den lå trygt begravd på havbunnen."
+        },
+        {
+            "type": "header",
+            "text": "Slik løste forskerne gåten - bit for bit"
+        },
+        {
+            "type": "text",
+            "content": "Forskerne kunne ikke bare skru maskinen fra hverandre, for den var altfor skjør. I stedet måtte de finne måter å se inni den uten å røre den. Først brukte de røntgen, akkurat som når legen tar bilde av et brukket bein. Senere tok de med tunge CT-skannere til museet og laget detaljerte 3D-bilder av innmaten (Greenspan, 2025). Slik kunne de telle tennene på hvert eneste tannhjul, selv de som lå skjult inne i klumpen."
+        },
+        {
+            "type": "text",
+            "content": "I 2021 la et forskerteam ved University College London fram en komplett digital modell av hvordan maskinen trolig virket. Lederen Tony Freeth sa at modellen deres var den første som passet med alle de fysiske sporene og med teksten som var risset inn på selve maskinen (Kjørstad, 2021). Gåten er altså ikke bare et eventyr. Den blir løst litt etter litt, med tålmodig arbeid og ny teknologi. Vil du kjenne på hvordan maskinen virket, kan du vri sveiva selv i mikrospillet under."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "antikythera-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Så, er gåten løst?"
+        },
+        {
+            "type": "text",
+            "content": "Både ja og nei, og det er nettopp derfor Antikythera-mekanismen hører hjemme blant [Historiens store gåter](/historie/historiens-store-gater/oversikt). Vi vet nå ganske sikkert hva maskinen kunne gjøre, og omtrent hvordan tannhjulene virket sammen. Men vi vet ikke hvem som bygde den, om det fantes flere, eller hvordan grekerne lærte seg å lage noe så nøyaktig. Akkurat som med [pyramidene](/historie/historiens-store-gater/pyramidene) er noe av gåten løst av bevis, mens resten fortsatt er et åpent spørsmål."
+        },
+        {
+            "type": "text",
+            "content": "Det Antikythera-mekanismen lærer oss best, er å ikke undervurdere menneskene i fortiden. De var ikke enklere eller dummere enn oss. En gjeng grekere for over to tusen år siden bygde en maskin som kunne spå himmelen, og så gikk den kunnskapen tapt. Neste gang noen sier at folk i gamle dager ikke kunne få til noe avansert, kan du fortelle om klumpen fra havbunnen som viste seg å være verdens eldste datamaskin."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Forsker studerer et skjermbilde av CT-skanning av tannhjulene inne i mekanismen",
+            "caption": "Med røntgen og CT-skanning kunne forskerne telle tennene på hvert tannhjul uten å røre den skjøre maskinen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor og hvordan ble Antikythera-mekanismen funnet, og i hvilket år?",
+                    "Omtrent hvor mange tannhjul har maskinen, og hvor stor er den?",
+                    "Nevn minst to ting maskinen kunne regne ut eller spå.",
+                    "Hvordan klarte forskerne å se tannhjulene inne i den skjøre klumpen?"
+                ],
+                "reflekter": [
+                    "Hvorfor kaller mange maskinen «verdens eldste datamaskin»? Forklar med egne ord hva den har til felles med en datamaskin.",
+                    "Kunnskapen om å bygge slike maskiner forsvant i over tusen år. Hva forteller det oss om hvordan viktig kunnskap kan gå tapt?",
+                    "Teksten sier at gåten «blir løst litt etter litt». Forklar hvorfor ny teknologi som CT-skanning har vært viktig for å forstå et så gammelt funn.",
+                    "I mikrospillet og tidshjulet går måneviseren mye fortere enn solviseren. Hvorfor er nettopp den forskjellen i fart nøkkelen til å kunne spå en formørkelse?"
+                ],
+                "gaaVidere": [
+                    "Finn et bilde eller en video av en rekonstruksjon av Antikythera-mekanismen. Beskriv hva du ser, og bruk kildekritikk: hvem står bak, og virker kilden til å stole på?",
+                    "Skriv en kort tekst der du forklarer for en venn hvorfor dette funnet overrasket forskerne så mye.",
+                    "Sammenlign Antikythera-mekanismen med en annen av Historiens store gåter, for eksempel pyramidene. Hva har de to gåtene til felles når det gjelder hva vi vet og hva vi fortsatt lurer på?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvordan ble Antikythera-mekanismen funnet?",
+                        "options": [
+                            "Den ble gravd fram i en gammel by",
+                            "Svampfiskere dro den opp fra et skipsvrak i 1901",
+                            "Den ble funnet på et loft i Athen",
+                            "En bonde pløyde den opp av åkeren"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Greske svampfiskere fant den i et skipsvrak utenfor øya Antikythera i 1901 (Greenspan, 2025)."
+                    },
+                    {
+                        "question": "Hva var det som gjorde funnet så overraskende for forskerne?",
+                        "options": [
+                            "Den var laget av gull",
+                            "Den var over hundre meter lang",
+                            "Den hadde presise tannhjul, laget for over 2000 år siden",
+                            "Den kunne snakke"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Det stakk fintannede tannhjul ut av bronsen, noe ingen trodde antikkens mennesker kunne lage (Greenspan, 2025)."
+                    },
+                    {
+                        "question": "Hva kunne maskinen blant annet gjøre?",
+                        "options": [
+                            "Spille musikk",
+                            "Spå sol- og måneformørkelser",
+                            "Male korn til mel",
+                            "Sende meldinger over lange avstander"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Maskinen viste hvor sola og månen sto, og kunne spå formørkelser år fram i tid (Edmunds, 2026)."
+                    },
+                    {
+                        "question": "Hvorfor forsvant kunnskapen om slike maskiner i over tusen år?",
+                        "options": [
+                            "Alle som kunne det, dro til månen",
+                            "Bronsen ble ofte smeltet om når maskinene gikk i stykker",
+                            "Det ble forbudt å lage tannhjul",
+                            "Folk glemte hvordan man teller"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Når slike maskiner gikk i stykker, ble metallet ofte smeltet om til noe nytt, og kunnskapen forsvant med det (Greenspan, 2025)."
+                    },
+                    {
+                        "question": "Hvordan klarte forskerne å studere innmaten uten å ødelegge den skjøre maskinen?",
+                        "options": [
+                            "De skrudde den forsiktig fra hverandre",
+                            "De gjettet ut fra hvordan den så ut",
+                            "De brukte røntgen og CT-skanning",
+                            "De la den i vann"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Med røntgen og senere CT-skanning kunne de lage 3D-bilder og telle tennene på hvert tannhjul (Greenspan, 2025; Kjørstad, 2021)."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Edmunds, M. (2026). *Antikythera mechanism*. Encyclopædia Britannica. Hentet 21.07.2026 fra [britannica.com/topic/Antikythera-mechanism](https://www.britannica.com/topic/Antikythera-mechanism)",
+                    "Greenspan, J. (2025). *How the secrets of an ancient Greek 'computer' were unlocked*. History.com. Hentet 21.07.2026 fra [history.com/articles/antikythera-mechanism-ancient-computer-secrets](https://www.history.com/articles/antikythera-mechanism-ancient-computer-secrets)",
+                    "Kjørstad, E. (2021). *Forskere tror de har skjønt hvordan verdens eldste «datamaskin» virket*. forskning.no. Hentet 21.07.2026 fra [ung.forskning.no/astronomi-kultur/forskere-tror-de-har-skjont-hvordan-verdens-eldste-datamaskin-virket/1829054](https://ung.forskning.no/astronomi-kultur/forskere-tror-de-har-skjont-hvordan-verdens-eldste-datamaskin-virket/1829054)",
+                    "Wikipedia. (u.å.). *Antikythera-mekanismen*. Wikipedia. Hentet 21.07.2026 fra [no.wikipedia.org/wiki/Antikythera-mekanismen](https://no.wikipedia.org/wiki/Antikythera-mekanismen)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
