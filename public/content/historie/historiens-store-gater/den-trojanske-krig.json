@@ -5,7 +5,7 @@
     "year": "1200 fvt",
     "category": "Historiens store gåter",
     "readTime": "10 min lesning",
-    "heroImage": "/images/historiens-store-gater/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/den-trojanske-krig-hero.webp",
     "details": [
         "Sagnet om Troja er over 2500 år gammelt og handler om en ti år lang krig som endte med en list: den store trehesten.",
         "På haugen Hisarlik i Tyrkia gravde arkeologene fram en ekte by som brant i krig rundt 1180 fvt.",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/historiens-store-gater/placeholder.webp",
+            "src": "/images/historiens-store-gater/den-trojanske-krig-01.webp",
             "alt": "En diger trehest på hjul foran høye bymurer i morgenlys",
             "caption": "Trehesten er det mest kjente bildet fra sagnet. Men ingen slik hest er noen gang funnet i bakken."
         },
@@ -71,7 +71,7 @@
         },
         {
             "type": "image",
-            "src": "/images/historiens-store-gater/placeholder.webp",
+            "src": "/images/historiens-store-gater/den-trojanske-krig-02.webp",
             "alt": "Arkeologer graver forsiktig i tørre jordlag med murrester fra en gammel by",
             "caption": "På Hisarlik ligger ni byer oppå hverandre. Krigslaget Troja VIIa er bare ett tynt lag i haugen."
         },

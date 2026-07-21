@@ -6,7 +6,7 @@
     "year": "Fra norrønt til i dag",
     "category": "Dialekter",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/dialekter/malmerker-hero.webp",
     "details": [
         "Et målmerke er et bestemt språktrekk som skiller én dialekt fra en annen.",
         "Tjukk l, palatalisering, apokope og jamvekt er noen av de viktigste målmerkene.",
@@ -31,7 +31,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/malmerker-01.webp",
             "alt": "Ungdommer i samtale på en bussholdeplass i Norge",
             "caption": "Vi gjetter hvor folk kommer fra ved å lytte etter små spor i uttalen deres."
         },
