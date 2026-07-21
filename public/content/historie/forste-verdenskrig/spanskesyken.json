@@ -14,7 +14,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Høsten 1918 var verden endelig i ferd med å puste ut. Første verdenskrig nærmet seg slutten etter fire grusomme år. Men akkurat da freden var i sikte, kom en ny og usynlig fiende. En kraftig influensa spredte seg over hele kloden på noen få måneder. Den fikk navnet spanskesyken, og før den ga seg, hadde den tatt livet av flere mennesker enn hele krigen."
+            "content": "Høsten 1918 var verden endelig i ferd med å puste ut. Første verdenskrig nærmet seg slutten etter fire grusomme år. Men akkurat da freden var i sikte, kom en ny og usynlig fiende. En kraftig influensa spredte seg over hele kloden på noen få måneder. Den fikk navnet spanskesyken, og før den ga seg, hadde den tatt livet av flere mennesker enn hele krigen (Mamelund, 2025)."
         },
         {
             "type": "image",
@@ -36,7 +36,7 @@
         },
         {
             "type": "text",
-            "content": "Men hvorfor het den spanskesyken, når den slett ikke startet i Spania? Svaret henger sammen med [første verdenskrig](/historie/forste-verdenskrig/oversikt). I landene som var med i krigen, ble avisene styrt av staten. Myndighetene ville ikke at fienden skulle få vite hvor svekket hæren var av sykdom, så avisene tidde. Spania var ikke med i krigen. Der kunne avisene skrive fritt om den store epidemien. Derfor trodde mange at sykdommen kom fra Spania, og det misvisende navnet ble hengende."
+            "content": "Men hvorfor het den spanskesyken, når den slett ikke startet i Spania? Svaret henger sammen med [første verdenskrig](/historie/forste-verdenskrig/oversikt). I landene som var med i krigen, ble avisene styrt av staten. Myndighetene ville ikke at fienden skulle få vite hvor svekket hæren var av sykdom, så avisene tidde. Spania var ikke med i krigen. Der kunne avisene skrive fritt om den store epidemien. Derfor trodde mange at sykdommen kom fra Spania, og det misvisende navnet ble hengende (Mamelund, 2025)."
         },
         {
             "type": "header",
@@ -63,7 +63,7 @@
         },
         {
             "type": "text",
-            "content": "Vanlig influensa er farligst for de aller eldste og for små barn. Spanskesyken var annerledes, og det gjorde den ekstra skremmende. Den tok livet av mange unge og friske voksne mellom 20 og 40 år, altså de som ellers var sterkest."
+            "content": "Vanlig influensa er farligst for de aller eldste og for små barn. Spanskesyken var annerledes, og det gjorde den ekstra skremmende. Den tok livet av mange unge og friske voksne mellom 20 og 40 år, altså de som ellers var sterkest (Mamelund, 2025)."
         },
         {
             "type": "text",
@@ -102,7 +102,7 @@
         },
         {
             "type": "text",
-            "content": "Til sammen døde rundt 15 000 mennesker i Norge av spanskesyken. Det er flere enn alle nordmenn som mistet livet i sjøkrigen under første verdenskrig. Mange små bygder mistet flere av sine yngste og sterkeste på kort tid. Noen steder var det ikke nok friske folk igjen til å drive gårdene eller begrave de døde. Sorgen satte dype spor i lokalsamfunn over hele landet, og mange barn vokste opp uten foreldre."
+            "content": "Til sammen døde rundt 15 000 mennesker i Norge av spanskesyken (Mamelund, 1999). Det er flere enn alle nordmenn som mistet livet i sjøkrigen under første verdenskrig (Melien, 2025). Mange små bygder mistet flere av sine yngste og sterkeste på kort tid. Noen steder var det ikke nok friske folk igjen til å drive gårdene eller begrave de døde. Sorgen satte dype spor i lokalsamfunn over hele landet, og mange barn vokste opp uten foreldre."
         },
         {
             "type": "header",
@@ -202,7 +202,19 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Mamelund, S.-E. (2025). *Spanskesyken*. Store medisinske leksikon. Hentet 21.07.2026 fra [sml.snl.no/spanskesyken](https://sml.snl.no/spanskesyken)",
+                    "Mamelund, S.-E. (1999). *Spanskesyken krevde 15 000 norske liv*. Statistisk sentralbyrå. Hentet 21.07.2026 fra [ssb.no](https://www.ssb.no/helse/artikler-og-publikasjoner/spanskesyken-krevde-15-000-norske-liv)",
+                    "Melien, T. J. (2025). *Norges handelsflåte under første verdenskrig*. Store norske leksikon. Hentet 21.07.2026 fra [snl.no/Norges_handelsflåte_under_første_verdenskrig](https://snl.no/Norges_handelsfl%C3%A5te_under_f%C3%B8rste_verdenskrig)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-21T00:00:00Z"
 }
