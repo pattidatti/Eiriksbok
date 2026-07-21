@@ -49,7 +49,7 @@ jobs:
 
           # Markør som begge rutine-promptene legger i PR-body. Den (ikke branch-
           # navnet) avgjør om en PR er en bot-innholds-PR.
-          MARKER='eiriksbok-daily-(content|microgame)'
+          MARKER='eiriksbok-daily-(content|microgame)|eiriksbok-article-remediation'
 
           # På pull_request: kun den utløsende PR-en (gates på body-markør under).
           # Ellers (schedule/dispatch): alle åpne PR-er med markøren i body.
