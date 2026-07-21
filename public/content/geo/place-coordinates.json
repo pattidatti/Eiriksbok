@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 302
+      "count": 303
     },
     {
       "tag": "dekolonisering",
@@ -819,16 +819,16 @@
       "count": 37
     },
     {
+      "tag": "antikken",
+      "count": 36
+    },
+    {
       "tag": "kald-krig",
       "count": 36
     },
     {
       "tag": "nykolonialisme",
       "count": 36
-    },
-    {
-      "tag": "antikken",
-      "count": 35
     },
     {
       "tag": "demokrati",
@@ -907,6 +907,10 @@
       "count": 18
     },
     {
+      "tag": "kildekritikk",
+      "count": 18
+    },
+    {
       "tag": "imperialisme",
       "count": 18
     },
@@ -921,10 +925,6 @@
     {
       "tag": "narrative",
       "count": 18
-    },
-    {
-      "tag": "kildekritikk",
-      "count": 17
     },
     {
       "tag": "kristendom",
@@ -975,6 +975,10 @@
       "count": 13
     },
     {
+      "tag": "arkeologi",
+      "count": 12
+    },
+    {
       "tag": "globalisering",
       "count": 12
     },
@@ -989,10 +993,6 @@
     {
       "tag": "intro",
       "count": 12
-    },
-    {
-      "tag": "arkeologi",
-      "count": 11
     },
     {
       "tag": "atomvåpen",
@@ -1163,6 +1163,10 @@
       "count": 8
     },
     {
+      "tag": "mysterier",
+      "count": 7
+    },
+    {
       "tag": "ytringsfrihet",
       "count": 7
     },
@@ -1216,10 +1220,6 @@
     },
     {
       "tag": "silkeveien",
-      "count": 6
-    },
-    {
-      "tag": "mysterier",
       "count": 6
     },
     {
@@ -1599,6 +1599,14 @@
       "count": 4
     },
     {
+      "tag": "dialekt",
+      "count": 4
+    },
+    {
+      "tag": "talemål",
+      "count": 4
+    },
+    {
       "tag": "norsk",
       "count": 4
     },
@@ -1740,6 +1748,10 @@
     },
     {
       "tag": "dikt",
+      "count": 3
+    },
+    {
+      "tag": "målmerke",
       "count": 3
     },
     {
@@ -2687,15 +2699,11 @@
       "count": 2
     },
     {
-      "tag": "dialekt",
+      "tag": "sosiolekt",
       "count": 2
     },
     {
-      "tag": "talemål",
-      "count": 2
-    },
-    {
-      "tag": "målmerke",
+      "tag": "språk og identitet",
       "count": 2
     },
     {
@@ -3227,14 +3235,6 @@
       "count": 1
     },
     {
-      "tag": "sosiolekt",
-      "count": 1
-    },
-    {
-      "tag": "språk og identitet",
-      "count": 1
-    },
-    {
       "tag": "bølgemodellen",
       "count": 1
     },
@@ -3244,6 +3244,22 @@
     },
     {
       "tag": "språkendring",
+      "count": 1
+    },
+    {
+      "tag": "tjukk l",
+      "count": 1
+    },
+    {
+      "tag": "palatalisering",
+      "count": 1
+    },
+    {
+      "tag": "apokope",
+      "count": 1
+    },
+    {
+      "tag": "standardtalemål",
       "count": 1
     },
     {

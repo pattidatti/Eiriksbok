@@ -1,5 +1,5 @@
 {
-  "buildId": 1784657441421,
+  "buildId": 1784664604001,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2524,6 +2524,9 @@
     "malmerker": [
       "content/norsk/dialekter/malmerker.json"
     ],
+    "sosiolekt": [
+      "content/norsk/dialekter/sosiolekt.json"
+    ],
     "spredning-av-dialekttrekk": [
       "content/norsk/dialekter/spredning-av-dialekttrekk.json"
     ],
@@ -4466,6 +4469,7 @@
     "norsk/analyse/tema-og-budskap": "content/norsk/analyse/tema-og-budskap.json",
     "norsk/dialekter/hva-er-dialekter": "content/norsk/dialekter/hva-er-dialekter.json",
     "norsk/dialekter/malmerker": "content/norsk/dialekter/malmerker.json",
+    "norsk/dialekter/sosiolekt": "content/norsk/dialekter/sosiolekt.json",
     "norsk/dialekter/spredning-av-dialekttrekk": "content/norsk/dialekter/spredning-av-dialekttrekk.json",
     "norsk/eksamen/muntlig-modell": "content/norsk/eksamen/muntlig-modell.json",
     "norsk/eksamen/muntlig": "content/norsk/eksamen/muntlig.json",

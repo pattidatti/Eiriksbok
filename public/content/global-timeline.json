@@ -5033,6 +5033,30 @@
       ]
     },
     {
+      "id": "sosiolekt",
+      "title": "Sosiolekt: Snakker vi ulikt fordi vi er ulike?",
+      "description": "En sosiolekt er talemålet til en sosial gruppe. Lær om østkant og vestkant i Oslo, om standardtalemål, og om hvordan du selv bytter stil etter hvem du er sammen med.",
+      "startDate": 1800,
+      "endDate": null,
+      "displayDate": "1800-tallet",
+      "type": "lesson",
+      "subjectId": "norsk",
+      "topicId": "dialekter",
+      "link": "/norsk/dialekter/sosiolekt",
+      "tags": [
+        "dialekt",
+        "talemål",
+        "sosiolekt",
+        "språk og identitet",
+        "standardtalemål"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "haiti-sub-2",
       "title": "Napoleon slår tilbake",
       "description": "Sender en hær for å gjeninnføre slaveriet.",
@@ -6274,7 +6298,7 @@
       "description": "Skuddene i Sarajevo og veien mot krig.",
       "startDate": 1900,
       "endDate": 1914,
-      "displayDate": "1900–1914",
+      "displayDate": "1900-1914",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "forste-verdenskrig",
