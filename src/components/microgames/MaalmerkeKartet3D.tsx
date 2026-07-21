@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import * as THREE from 'three';
 import {
     MicroGameScaffold,
     Interactive,
@@ -14,24 +15,99 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Målmerke-kartet - et 3D-mikrospill. Norge ligger som et kart foran eleven,
-// delt i fire landsdeler. For hvert målmerke skal eleven klikke landsdelen der
-// trekket er mest hjemme. Lyspæra: målmerkene tegner et kart. Tjukk l i øst,
-// apokope i Trøndelag, palatalisering i nord, «eg» i vest - når du kjenner
-// merkene, hører du hvor en dialekt kommer fra.
+// Målmerke-kartet - et 3D-mikrospill. Norge ligger som et ekte kart-omriss foran
+// eleven, delt i fire landsdeler som til sammen tegner landet: bred sør, smal
+// midje i Trøndelag, og en lang tynn arm opp til Finnmark. For hvert målmerke
+// skal eleven klikke landsdelen der trekket er mest hjemme. Lyspæra: målmerkene
+// tegner et kart. Tjukk l i øst, apokope i Trøndelag, palatalisering i nord,
+// «eg» i vest - når du kjenner merkene, hører du hvor en dialekt kommer fra.
 
 interface Region {
     id: string;
-    position: [number, number, number];
-    size: [number, number, number];
-    rotation?: number;
+    // Polygon i kart-koordinater: x = øst, y = nord (opp på kartet). Landsdelene
+    // deler nøyaktige sømpunkter, så de flyter sammen til ett sammenhengende Norge.
+    shape: [number, number][];
+    // Sentrum (kart-koord) - brukt til partikkel-burst når landsdelen løses.
+    center: [number, number];
+    // Grunnfarge (litt ulik grønn per landsdel) så grensene er synlige.
+    base: string;
 }
 
+// Delte sømpunkter (må stemme mellom naboer):
+//   A0 (0.4,-4.4) sørsplitt-bunn · split-mid (0,-1.6) · P (-0.3,0.6)
+//   W1 (-1.9,1.0) · E1 (2.1,0.2)  = sør/Trøndelag-grense
+//   W2 (0.2,3.2) · E2 (2.6,2.6)   = Trøndelag/Nord-grense
 const REGIONS: Region[] = [
-    { id: 'nordnorge', position: [-1.5, 0.25, -4.1], size: [1.9, 0.5, 4.4], rotation: 0.5 },
-    { id: 'trondelag', position: [0.3, 0.25, -0.5], size: [2.2, 0.5, 2.0] },
-    { id: 'vestlandet', position: [-2.9, 0.25, 1.9], size: [1.8, 0.5, 3.6], rotation: -0.15 },
-    { id: 'ostlandet', position: [1.9, 0.25, 3.1], size: [2.5, 0.5, 2.6] },
+    {
+        id: 'vestlandet',
+        base: '#6fa063',
+        center: [-1.5, -1.4],
+        shape: [
+            [0.4, -4.4],
+            [-0.8, -4.5],
+            [-2.0, -3.9], // sørvest-tippen
+            [-2.6, -3.0],
+            [-2.1, -2.4],
+            [-2.85, -1.6], // fjord-takker på vestkysten
+            [-2.2, -1.0],
+            [-2.9, -0.2],
+            [-2.2, 0.5],
+            [-2.55, 1.15],
+            [-1.9, 1.0], // W1
+            [-0.3, 0.6], // P (sør/Trøndelag-grense)
+            [0.0, -1.6], // split-mid
+        ],
+    },
+    {
+        id: 'ostlandet',
+        base: '#8bb15f',
+        center: [1.35, -1.9],
+        shape: [
+            [0.4, -4.4], // A0
+            [0.0, -1.6], // split-mid
+            [-0.3, 0.6], // P
+            [2.1, 0.2], // E1
+            [2.5, -1.0],
+            [2.75, -2.6], // svenskegrensa
+            [2.1, -3.8], // sørøst-hjørnet (Østfold)
+            [1.0, -4.4],
+        ],
+    },
+    {
+        id: 'trondelag',
+        base: '#7aa869',
+        center: [0.5, 1.7],
+        shape: [
+            [-1.9, 1.0], // W1
+            [-1.5, 1.9],
+            [-1.0, 2.6],
+            [0.2, 3.2], // W2
+            [2.6, 2.6], // E2
+            [2.35, 1.4],
+            [2.1, 0.2], // E1
+            [-0.3, 0.6], // P (tilbake langs sørgrensa)
+        ],
+    },
+    {
+        id: 'nordnorge',
+        base: '#93b86f',
+        center: [2.6, 5.2],
+        shape: [
+            [0.2, 3.2], // W2
+            [0.6, 4.2],
+            [1.2, 5.2],
+            [2.0, 6.0],
+            [2.8, 6.8],
+            [3.6, 7.5],
+            [4.5, 7.85], // Finnmark, nordøst-tippen
+            [4.9, 7.15],
+            [4.0, 6.55],
+            [3.4, 5.8],
+            [3.05, 4.9],
+            [3.2, 3.9],
+            [2.6, 2.6], // E2
+        ],
+    },
 ];
 
 interface Merke {
@@ -49,52 +125,86 @@ const MERKER: Merke[] = [
     { id: 'eg', label: 'Pronomenet «eg»', eksempel: '«eg», ikkje «jeg»', region: 'vestlandet', fasit: 'Vestlandet: «eg», og inga tjukk l' },
 ];
 
-const COLOR: Record<InteractiveState, string> = {
-    idle: '#7c9e6a',
-    hover: '#a7c489',
-    selected: '#a7c489',
-    correct: '#10b981',
-    wrong: '#f43f5e',
-    disabled: '#94a3b8',
-};
+// Farge for hover/valgt/korrekt/feil. Idle henter grunnfargen fra landsdelen.
+function fillFor(state: InteractiveState, base: string): string {
+    switch (state) {
+        case 'hover':
+        case 'selected':
+            return '#c9e79c';
+        case 'correct':
+            return '#10b981';
+        case 'wrong':
+            return '#f43f5e';
+        case 'disabled':
+            return '#94a3b8';
+        default:
+            return base;
+    }
+}
+
+// Bygg én flat, ekstrudert landsdel av polygonet. Shapen tegnes i XY (y = nord),
+// og mesh-en roteres -90° om X så den legger seg flatt med nord mot -Z.
+function useLandGeometry(shape: [number, number][]) {
+    return useMemo(() => {
+        const s = new THREE.Shape();
+        s.moveTo(shape[0][0], shape[0][1]);
+        for (let i = 1; i < shape.length; i++) s.lineTo(shape[i][0], shape[i][1]);
+        s.closePath();
+        const geo = new THREE.ExtrudeGeometry(s, {
+            depth: 0.45,
+            bevelEnabled: true,
+            bevelThickness: 0.06,
+            bevelSize: 0.06,
+            bevelSegments: 1,
+        });
+        geo.computeVertexNormals();
+        return geo;
+    }, [shape]);
+}
 
 function LandZone({
     region,
     state,
-    onSelect,
     highlight,
+    onSelect,
 }: {
     region: Region;
     state: InteractiveState;
-    onSelect: () => void;
     highlight: boolean;
+    onSelect: () => void;
 }) {
-    const color = COLOR[state];
+    const geometry = useLandGeometry(region.shape);
     return (
-        <Interactive
-            position={region.position}
-            rotation={[0, region.rotation ?? 0, 0]}
-            onSelect={onSelect}
-            state={state}
-            hitArea={[region.size[0] + 1, 2, region.size[2] + 1]}
-        >
-            <mesh castShadow receiveShadow>
-                <boxGeometry args={region.size} />
-                <meshStandardMaterial
-                    color={color}
-                    emissive={state === 'correct' ? '#10b981' : highlight ? '#facc15' : '#000000'}
-                    emissiveIntensity={state === 'correct' ? 0.5 : highlight ? 0.4 : 0}
-                    roughness={0.85}
-                />
-            </mesh>
+        <Interactive onSelect={onSelect} state={state === 'idle' ? undefined : state} hoverScale={1}>
+            {(s) => {
+                const glow = s === 'correct' ? '#10b981' : s === 'hover' || highlight ? '#facc15' : '#000000';
+                const glowInt = s === 'correct' ? 0.55 : s === 'hover' ? 0.35 : highlight ? 0.4 : 0;
+                return (
+                    <mesh
+                        geometry={geometry}
+                        rotation={[-Math.PI / 2, 0, 0]}
+                        position={[0, 0.02, 0]}
+                        castShadow
+                        receiveShadow
+                    >
+                        <meshStandardMaterial
+                            color={fillFor(s, region.base)}
+                            emissive={glow}
+                            emissiveIntensity={glowInt}
+                            roughness={0.82}
+                            flatShading
+                        />
+                    </mesh>
+                );
+            }}
         </Interactive>
     );
 }
 
 function NorthArrow() {
-    // Enkel nord-peker: en kjegle som peker mot -Z (nord/oppe på kartet).
+    // Enkel nord-peker ute på havet i nordvest: en kjegle som peker mot -Z (nord).
     return (
-        <group position={[3.6, 0.4, -4.6]}>
+        <group position={[-2.9, 0.5, -5.6]}>
             <mesh rotation={[-Math.PI / 2, 0, 0]}>
                 <coneGeometry args={[0.4, 1.1, 4]} />
                 <meshStandardMaterial color="#e11d48" roughness={0.6} />
@@ -107,6 +217,65 @@ function NorthArrow() {
     );
 }
 
+// R3F-hooker som useShake (via useFrame) må kjøre i en komponent inne i
+// MicroCanvas - derfor er selve kartscenen splittet ut hit, mens
+// MaalmerkeKartet3D (utenfor Canvas) bare eier spilltilstanden.
+function Scene({
+    solvedRegions,
+    wrongRegion,
+    current,
+    hint,
+    burst,
+    burstPos,
+    shakeTrigger,
+    onSelect,
+}: {
+    solvedRegions: string[];
+    wrongRegion: string | null;
+    current: Merke | null;
+    hint: number;
+    burst: number;
+    burstPos: [number, number, number];
+    shakeTrigger: number;
+    onSelect: (regionId: string) => void;
+}) {
+    const { ref: shakeRef, shake } = useShake();
+    const prevShakeTrigger = useRef(shakeTrigger);
+    useEffect(() => {
+        if (shakeTrigger !== prevShakeTrigger.current) {
+            prevShakeTrigger.current = shakeTrigger;
+            shake(0.6);
+        }
+    }, [shakeTrigger, shake]);
+
+    const zoneState = (regionId: string): InteractiveState => {
+        if (solvedRegions.includes(regionId)) return 'correct';
+        if (wrongRegion === regionId) return 'wrong';
+        return 'idle';
+    };
+
+    return (
+        <group ref={shakeRef}>
+            {/* Havet rundt kartet */}
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0.5, -0.05, -1.5]} receiveShadow>
+                <planeGeometry args={[34, 44]} />
+                <meshStandardMaterial color="#8ec5e6" roughness={0.9} />
+            </mesh>
+            {REGIONS.map((r) => (
+                <LandZone
+                    key={r.id}
+                    region={r}
+                    state={zoneState(r.id)}
+                    highlight={hint > 0 && current?.region === r.id && !solvedRegions.includes(r.id)}
+                    onSelect={() => onSelect(r.id)}
+                />
+            ))}
+            <NorthArrow />
+            <Burst position={burstPos} trigger={burst} color="#34d399" count={26} spread={3} />
+        </group>
+    );
+}
+
 const MaalmerkeKartet3D: React.FC<MicroGameProps> = ({ onComplete, onRetry }) => {
     const [step, setStep] = useState(0);
     const [solved, setSolved] = useState<string[]>([]);
@@ -114,7 +283,7 @@ const MaalmerkeKartet3D: React.FC<MicroGameProps> = ({ onComplete, onRetry }) =>
     const [burst, setBurst] = useState(0);
     const [burstPos, setBurstPos] = useState<[number, number, number]>([0, 1, 0]);
     const [done, setDone] = useState(false);
-    const { ref: shakeRef, shake } = useShake();
+    const [shakeTrigger, setShakeTrigger] = useState(0);
     const { play } = useStepSounds();
 
     const current = step < MERKER.length ? MERKER[step] : null;
@@ -127,7 +296,8 @@ const MaalmerkeKartet3D: React.FC<MicroGameProps> = ({ onComplete, onRetry }) =>
         if (solvedRegions.includes(regionId)) return;
         if (regionId === current.region) {
             const region = REGIONS.find((r) => r.id === regionId)!;
-            setBurstPos([region.position[0], 1.4, region.position[2]]);
+            // Kart-sentrum → scene-koordinat: z = -nord.
+            setBurstPos([region.center[0], 1.4, -region.center[1]]);
             setBurst((b) => b + 1);
             play('correct');
             const nextSolved = [...solved, current.id];
@@ -142,7 +312,7 @@ const MaalmerkeKartet3D: React.FC<MicroGameProps> = ({ onComplete, onRetry }) =>
             }
         } else {
             setWrongRegion(regionId);
-            shake(0.6);
+            setShakeTrigger((s) => s + 1);
             play('incorrect');
             setTimeout(() => setWrongRegion((w) => (w === regionId ? null : w)), 500);
         }
@@ -156,12 +326,6 @@ const MaalmerkeKartet3D: React.FC<MicroGameProps> = ({ onComplete, onRetry }) =>
         onRetry?.();
     };
 
-    const zoneState = (regionId: string): InteractiveState => {
-        if (solvedRegions.includes(regionId)) return 'correct';
-        if (wrongRegion === regionId) return 'wrong';
-        return 'idle';
-    };
-
     const banner = done
         ? null
         : current
@@ -171,24 +335,16 @@ const MaalmerkeKartet3D: React.FC<MicroGameProps> = ({ onComplete, onRetry }) =>
     const revealed = MERKER.filter((m) => solved.includes(m.id));
 
     const scene = (
-        <group ref={shakeRef}>
-            {/* Havet rundt kartet */}
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
-                <planeGeometry args={[26, 30]} />
-                <meshStandardMaterial color="#8ec5e6" roughness={0.9} />
-            </mesh>
-            {REGIONS.map((r) => (
-                <LandZone
-                    key={r.id}
-                    region={r}
-                    state={zoneState(r.id)}
-                    onSelect={() => handleClick(r.id)}
-                    highlight={hint > 0 && current?.region === r.id && !solvedRegions.includes(r.id)}
-                />
-            ))}
-            <NorthArrow />
-            <Burst position={burstPos} trigger={burst} color="#34d399" count={26} spread={3} />
-        </group>
+        <Scene
+            solvedRegions={solvedRegions}
+            wrongRegion={wrongRegion}
+            current={current}
+            hint={hint}
+            burst={burst}
+            burstPos={burstPos}
+            shakeTrigger={shakeTrigger}
+            onSelect={handleClick}
+        />
     );
 
     return (
@@ -198,7 +354,7 @@ const MaalmerkeKartet3D: React.FC<MicroGameProps> = ({ onComplete, onRetry }) =>
             estimatedSeconds={110}
             onRetry={reset}
             scene={scene}
-            canvas={{ camera: { position: [0.5, 9.5, 9], fov: 42 }, target: [0, 0, -0.4], background: '#cfe7f5' }}
+            canvas={{ camera: { position: [1.2, 14, 11], fov: 40 }, target: [1.0, 0, -1.4], background: '#cfe7f5' }}
             overlays={
                 <>
                     <SceneBanner message={banner} wide />
