@@ -6,7 +6,7 @@
     "year": "100 fvt",
     "category": "Historiens store gåter",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/antikythera-mekanismen-hero.webp",
     "details": [
         "En bronsemaskin med over 30 tannhjul, laget for rundt 2100 år siden.",
         "Den kunne vise hvor sola og månen sto, og spå formørkelser år fram i tid.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/antikythera-mekanismen-01.webp",
             "alt": "Grønn sammenrustet bronseklump med synlige tannhjul i en glassmonter",
             "caption": "Det største bevarte stykket av Antikythera-mekanismen. Under rusten skjuler det seg fintannede tannhjul."
         },
@@ -73,7 +73,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/antikythera-mekanismen-02.webp",
             "alt": "Skinnende rekonstruksjon av bronsemaskinen med mange tannhjul og en sveiv",
             "caption": "En moderne rekonstruksjon. Tannhjulene griper inn i hverandre slik at én sveiv driver hele maskinen."
         },
@@ -122,7 +122,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/antikythera-mekanismen-03.webp",
             "alt": "Forsker studerer et skjermbilde av CT-skanning av tannhjulene inne i mekanismen",
             "caption": "Med røntgen og CT-skanning kunne forskerne telle tennene på hvert tannhjul uten å røre den skjøre maskinen."
         },
