@@ -186,6 +186,7 @@ const MottreformasjonsVerktoy = lazy(() => import('./content/interactive/Mottref
 const LovensSmutthull = lazy(() => import('./content/interactive/LovensSmutthull').then(m => ({ default: m.LovensSmutthull })));
 const SprakBaneVelger = lazy(() => import('./content/interactive/SprakBaneVelger').then(m => ({ default: m.SprakBaneVelger })));
 const DialektDetektiv = lazy(() => import('./content/interactive/DialektDetektiv').then(m => ({ default: m.DialektDetektiv })));
+const SosiolektSkifteren = lazy(() => import('./content/interactive/SosiolektSkifteren').then(m => ({ default: m.SosiolektSkifteren })));
 const SpredningsKart = lazy(() => import('./content/interactive/SpredningsKart').then(m => ({ default: m.SpredningsKart })));
 const StormaktVagskal = lazy(() => import('./content/interactive/StormaktVagskal').then(m => ({ default: m.StormaktVagskal })));
 const LeonardoNotatbok = lazy(() => import('./content/interactive/LeonardoNotatbok').then(m => ({ default: m.LeonardoNotatbok })));
@@ -510,6 +511,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     LovensSmutthull,
     SprakBaneVelger,
     DialektDetektiv,
+    SosiolektSkifteren,
     SpredningsKart,
     StormaktVagskal,
     LeonardoNotatbok,

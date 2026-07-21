@@ -10,6 +10,7 @@ const Laasesting3D = lazy(() => import('./Laasesting3D'));
 const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
+const OsloSosiolekt3D = lazy(() => import('./OsloSosiolekt3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
 const DelawareKrysning3D = lazy(() => import('./DelawareKrysning3D'));
@@ -719,6 +720,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Hamskiftet3D'),
         Component: Hamskiftet3D as never,
+    },
+    'oslo-sosiolekt-3d': {
+        id: 'oslo-sosiolekt-3d',
+        title: 'Oslo: én by, to talemål',
+        description:
+            'Utforsk hvordan sosial gruppe formet talemålet på hver side av elva i Oslo — østkantmål mot vestkantmål — og se dem nærme seg hverandre hos ungdom i dag.',
+        estimatedSeconds: 150,
+        loader: () => import('./OsloSosiolekt3D'),
+        Component: OsloSosiolekt3D as never,
     },
     'vikingskip-3d': {
         id: 'vikingskip-3d',
