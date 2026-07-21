@@ -141,8 +141,18 @@ const Bevisvekten3D = lazy(() => import('./Bevisvekten3D'));
 const Antikythera3D = lazy(() => import('./Antikythera3D'));
 const DenLangeVinteren3D = lazy(() => import('./DenLangeVinteren3D'));
 const TrojaUtgravning3D = lazy(() => import('./TrojaUtgravning3D'));
+const MaalmerkeKartet3D = lazy(() => import('./MaalmerkeKartet3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'malmerke-kartet-3d': {
+        id: 'malmerke-kartet-3d',
+        title: 'Målmerke-kartet',
+        description:
+            'Norge ligger som et kart foran deg, delt i fire landsdeler. For hvert målmerke skal du klikke landsdelen der trekket er mest kjent: tjukk l i øst, apokope i Trøndelag, palatalisering i nord og pronomenet «eg» i vest. Lyspæren: målmerkene tegner et kart. Når du kjenner de vanligste trekkene, kan du høre hvilken del av landet en dialekt kommer fra.',
+        estimatedSeconds: 110,
+        loader: () => import('./MaalmerkeKartet3D'),
+        Component: MaalmerkeKartet3D as never,
+    },
     'troja-utgravning-3d': {
         id: 'troja-utgravning-3d',
         title: 'Grav ut Troja',
