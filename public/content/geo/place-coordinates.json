@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 301
+      "count": 302
     },
     {
       "tag": "dekolonisering",
@@ -828,7 +828,7 @@
     },
     {
       "tag": "antikken",
-      "count": 34
+      "count": 35
     },
     {
       "tag": "demokrati",
@@ -923,15 +923,15 @@
       "count": 18
     },
     {
+      "tag": "kildekritikk",
+      "count": 17
+    },
+    {
       "tag": "kristendom",
       "count": 17
     },
     {
       "tag": "sivilisasjon",
-      "count": 16
-    },
-    {
-      "tag": "kildekritikk",
       "count": 16
     },
     {
@@ -991,6 +991,10 @@
       "count": 12
     },
     {
+      "tag": "arkeologi",
+      "count": 11
+    },
+    {
       "tag": "atomvåpen",
       "count": 11
     },
@@ -1004,10 +1008,6 @@
     },
     {
       "tag": "forhistorie",
-      "count": 10
-    },
-    {
-      "tag": "arkeologi",
       "count": 10
     },
     {
@@ -1219,6 +1219,10 @@
       "count": 6
     },
     {
+      "tag": "mysterier",
+      "count": 6
+    },
+    {
       "tag": "maktfordeling",
       "count": 6
     },
@@ -1312,10 +1316,6 @@
     },
     {
       "tag": "eskatologi",
-      "count": 5
-    },
-    {
-      "tag": "mysterier",
       "count": 5
     },
     {

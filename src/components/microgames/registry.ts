@@ -140,8 +140,18 @@ const KapplopetOmAfrika3D = lazy(() => import('./KapplopetOmAfrika3D'));
 const Bevisvekten3D = lazy(() => import('./Bevisvekten3D'));
 const Antikythera3D = lazy(() => import('./Antikythera3D'));
 const DenLangeVinteren3D = lazy(() => import('./DenLangeVinteren3D'));
+const TrojaUtgravning3D = lazy(() => import('./TrojaUtgravning3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'troja-utgravning-3d': {
+        id: 'troja-utgravning-3d',
+        title: 'Grav ut Troja',
+        description:
+            'Grav ut haugen Hisarlik lag for lag, akkurat slik arkeologene gjorde. Byen Troja er ikke ett sted, men mange byer stablet oppå hverandre. Fjern det ene jordlaget etter det andre og grav deg forsiktig ned til krigslaget Troja VIIa, der brannspor og pilspisser røper at byen ble ødelagt i kamp rundt 1180 fvt. Lyspæren: et sagn kan peke arkeologene mot et ekte sted, men bare tålmodig graving lag for lag skiller den unge byen fra den gamle, og Schliemann gravde i 1873 altfor fort rett forbi nettopp krigslaget.',
+        estimatedSeconds: 140,
+        loader: () => import('./TrojaUtgravning3D'),
+        Component: TrojaUtgravning3D as never,
+    },
     'den-lange-vinteren-3d': {
         id: 'den-lange-vinteren-3d',
         title: 'Den lange vinteren',

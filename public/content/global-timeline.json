@@ -406,6 +406,31 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "den-trojanske-krig",
+      "title": "Den trojanske krig - skjedde den egentlig?",
+      "description": "Sagnet om trehesten og den brennende byen er over 2500 år gammelt. Arkeologene fant et ekte Troja, men beviser et brannlag i bakken at selve historien skjedde?",
+      "startDate": -1200,
+      "endDate": null,
+      "displayDate": "1200 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/den-trojanske-krig",
+      "tags": [
+        "historie",
+        "antikken",
+        "arkeologi",
+        "kildekritikk",
+        "hellas",
+        "mysterier"
+      ],
+      "lat": 39,
+      "lng": 22,
+      "placeLabel": "Hellas",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "frashokereti",
       "title": "Frashokereti: Zoroastrismens dommedag",
       "description": "Den eldste systematiske forestillingen om en lineær verdensende der det gode seirer over det onde.",
