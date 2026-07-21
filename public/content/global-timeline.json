@@ -663,6 +663,25 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "antikythera-mekanismen",
+      "title": "Antikythera-mekanismen - verdens første datamaskin?",
+      "description": "En 2000 år gammel bronsemaskin med tannhjul som kunne spå formørkelser. Hvordan klarte grekerne det, og hvorfor forsvant kunnskapen i tusen år?",
+      "startDate": -100,
+      "endDate": null,
+      "displayDate": "100 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/antikythera-mekanismen",
+      "tags": [
+        "historie",
+        "antikkens-hellas",
+        "vitenskap",
+        "kildekritikk",
+        "mysterier"
+      ]
+    },
+    {
       "id": "caesar",
       "title": "Julius Cæsar — mannen som knuste republikken",
       "description": "Generalen som krysset Rubicon, knuste 460 år gammelt styre — og ble drept av sine egne venner.",

@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 297
+      "count": 299
     },
     {
       "tag": "dekolonisering",
@@ -879,15 +879,15 @@
       "count": 22
     },
     {
+      "tag": "vitenskap",
+      "count": 22
+    },
+    {
       "tag": "1800-tallet",
       "count": 22
     },
     {
       "tag": "steinalder",
-      "count": 20
-    },
-    {
-      "tag": "vitenskap",
       "count": 20
     },
     {
@@ -931,6 +931,10 @@
       "count": 16
     },
     {
+      "tag": "kildekritikk",
+      "count": 16
+    },
+    {
       "tag": "geopolitikk",
       "count": 16
     },
@@ -948,10 +952,6 @@
     },
     {
       "tag": "jernalder",
-      "count": 14
-    },
-    {
-      "tag": "kildekritikk",
       "count": 14
     },
     {
@@ -1623,6 +1623,10 @@
       "count": 4
     },
     {
+      "tag": "mysterier",
+      "count": 3
+    },
+    {
       "tag": "biografi",
       "count": 3
     },
@@ -1816,6 +1820,10 @@
     },
     {
       "tag": "idrett",
+      "count": 2
+    },
+    {
+      "tag": "antikkens-hellas",
       "count": 2
     },
     {
@@ -3328,10 +3336,6 @@
     },
     {
       "tag": "rettsvitenskap",
-      "count": 1
-    },
-    {
-      "tag": "mysterier",
       "count": 1
     },
     {

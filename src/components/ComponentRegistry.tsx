@@ -645,6 +645,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     NurembergDefense,
     MythVsEvidence: lazy(() => import('./content/interactive/MythVsEvidence').then(m => ({ default: m.MythVsEvidence }))),
     Byggegaaten: lazy(() => import('./content/interactive/Byggegaaten').then(m => ({ default: m.Byggegaaten }))),
+    AntikytheraDial: lazy(() => import('./content/interactive/AntikytheraDial').then(m => ({ default: m.AntikytheraDial }))),
 
     // Handel og infrastruktur
     GlobalProductionDots: lazy(() => import('./content/interactive/infrastruktur/GlobalProductionDots').then(m => ({ default: m.GlobalProductionDots }))),

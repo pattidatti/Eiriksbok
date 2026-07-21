@@ -1,5 +1,5 @@
 {
-  "buildId": 1784586633252,
+  "buildId": 1784597732015,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1437,6 +1437,9 @@
     ],
     "ww1-sti": [
       "content/historie/forste-verdenskrig/ww1-sti.json"
+    ],
+    "antikythera-mekanismen": [
+      "content/historie/historiens-store-gater/antikythera-mekanismen.json"
     ],
     "historiens-store-gater-oversikt": [
       "content/historie/historiens-store-gater/oversikt.json"
@@ -4090,6 +4093,7 @@
     "historie/forste-verdenskrig/teknologi": "content/historie/forste-verdenskrig/teknologi.json",
     "historie/forste-verdenskrig/tyske-revolusjon": "content/historie/forste-verdenskrig/tyske-revolusjon.json",
     "historie/forste-verdenskrig/ww1-sti": "content/historie/forste-verdenskrig/ww1-sti.json",
+    "historie/historiens-store-gater/antikythera-mekanismen": "content/historie/historiens-store-gater/antikythera-mekanismen.json",
     "historie/historiens-store-gater/oversikt": "content/historie/historiens-store-gater/oversikt.json",
     "historie/historiens-store-gater/pyramidene": "content/historie/historiens-store-gater/pyramidene.json",
     "historie/industriell-revolusjon/barnearbeid": "content/historie/industriell-revolusjon/barnearbeid.json",

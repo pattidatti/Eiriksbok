@@ -137,8 +137,18 @@ const BakSloret3D = lazy(() => import('./BakSloret3D'));
 const GreskOpproret3D = lazy(() => import('./GreskOpproret3D'));
 const KapplopetOmAfrika3D = lazy(() => import('./KapplopetOmAfrika3D'));
 const Bevisvekten3D = lazy(() => import('./Bevisvekten3D'));
+const Antikythera3D = lazy(() => import('./Antikythera3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'antikythera-3d': {
+        id: 'antikythera-3d',
+        title: 'Antikythera-mekanismen',
+        description:
+            'Vri sveiva på den 2000 år gamle bronsemaskinen og spå en solformørkelse. Ett tak på sveiva setter alle tannhjulene i gang: solviseren (gull) kryper sakte rundt mens måneviseren (sølv) spinner 13 ganger så fort, fordi hjulene har ulik størrelse. Vri fram til begge viserne møtes i formørkelses-porten øverst - da har du spådd en solformørkelse. Lyspæren: fordi tannhjulene fikk sol og måne til å bevege seg i ulik fart, kunne den greske maskinen regne ut himmelen og spå formørkelser år fram i tid.',
+        estimatedSeconds: 130,
+        loader: () => import('./Antikythera3D'),
+        Component: Antikythera3D as never,
+    },
     bevisvekten: {
         id: 'bevisvekten',
         title: 'Bevisvekten',
