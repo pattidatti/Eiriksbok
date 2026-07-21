@@ -15,7 +15,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Sett deg på en benk på Torgallmenningen i Bergen og lytt. To personer går forbi. Den ene sier: «Jei vet ikke vor dere kjøpte kjøttet.» Den andre svarer: «Eg vet'kje kor dokker sjøpte sjøttet.» Begge er født og oppvokst i Bergen. Begge snakker bergensk. Likevel høres de tydelig ulike ut. For bergensk er ikke én lyd, men et helt landskap av talemål, og i dette landskapet finnes det spor du kan lære å lese. I denne artikkelen skal du bli så god på bergensk at du hører forskjellen på en penbergenser og en gategutt før de har rukket å si tre ord."
+            "content": "Sett deg på en benk på Torgallmenningen i Bergen og lytt. To personer går forbi. Den ene sier: «Jei vet ikke vor dere kjøpte kjøttet.» Den andre svarer: «Eg vet ikkje kor dokkar sjøpte sjøttet.» Begge er født og oppvokst i Bergen. Begge snakker bergensk. Likevel høres de tydelig ulike ut. For bergensk er ikke én lyd, men et helt landskap av talemål, og i dette landskapet finnes det spor du kan lære å lese. I denne artikkelen skal du bli så god på bergensk at du hører forskjellen på en penbergenser og en gategutt før de har rukket å si tre ord."
         },
         {
             "type": "text",
@@ -94,11 +94,11 @@
         },
         {
             "type": "header",
-            "text": "Eg, ikkje og dokker"
+            "text": "Eg, ikkje og dokkar"
         },
         {
             "type": "text",
-            "content": "Bergensk har også sine egne små ord som skiller seg ut. Mange bergensere sier «eg» for «jeg» og «meg» for «meg», slik man gjør ellers på Vestlandet. For «dere» sier de gjerne «dokker», og for «hun» og «henne» kan de bruke gamle former som «hon» og «hinnar» (Skjekkeland, 2026). Spørreordene er også typiske: «kor» betyr «hvor», og «ka» betyr «hva». «Kor hen skal du?» betyr rett og slett «hvor skal du?»."
+            "content": "Bergensk har også sine egne små ord som skiller seg ut. Mange bergensere sier «eg» for «jeg» og «meg» for «meg», slik man gjør ellers på Vestlandet. For «dere» sier de gjerne «dokkar» (noen skriver «dåkkar», etter uttalen), og for «hun» og «henne» kan de bruke gamle former som «hon» og «hinnar» (Skjekkeland, 2026). Spørreordene er også typiske: «kor» betyr «hvor», og «ka» betyr «hva». «Kor hen skal du?» betyr rett og slett «hvor skal du?»."
         },
         {
             "type": "text",
@@ -122,6 +122,34 @@
         },
         {
             "type": "header",
+            "text": "Ord som skrumper inn"
+        },
+        {
+            "type": "text",
+            "content": "Et av de aller tydeligste trekkene ved rask, folkelig bergensk er at ordene skrumper inn. Sluttlyder, og særlig r-en i enden av verb, blir rett og slett svelget (Bergensk dialekt, 2026). «Skal» blir til «ska», «til» blir til «te», «er» blir til «e», og «kommer» blir til «komma». Det gjør at gatebergensk høres kjapt og glidende ut, nesten som om ordene renner over i hverandre."
+        },
+        {
+            "type": "text",
+            "content": "En hel setning kan krympe overraskende mye. Der en penbergenser sier tydelig «Eg vet ikkje når hon kommer», kan en gatebergenser si «E' vet'sje ko'ti' hon komma'» (Bergensk dialekt, 2026). Nesten hvert eneste ord er kortet ned. Dette er ikke slurv eller dårlig språk. Det er et fast mønster i det folkelige talemålet, og det er en stor del av det som gjør gatebergensk til nettopp gatebergensk."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Slik sluker gatebergensk endelsene",
+                "icon": "info",
+                "items": [
+                    "skal blir ska",
+                    "til blir te",
+                    "er blir e",
+                    "er ikke blir e'kje",
+                    "kommer blir komma (r-en faller bort)",
+                    "hva blir ka"
+                ]
+            }
+        },
+        {
+            "type": "header",
             "text": "Penbergensk og gatebergensk"
         },
         {
@@ -130,11 +158,11 @@
         },
         {
             "type": "text",
-            "content": "Penbergensk, som noen også kaller finbergensk, ligger tett opp mot skriftspråket. Det ble historisk brukt av de velstående familiene i byen og høres fortsatt ofte i formelle situasjoner, som på jobb eller i taler. En penbergenser sier «jei» for «jeg», «ikke» for «ikke» og «dere» for «dere». Gatebergensk er det folkelige talemålet fra arbeidsstrøkene. Der sier man «eg», «ikkje» (uttalt nesten som «isje») og «dokker». Mellom disse to ytterpunktene finnes det mange mellomtrinn, fra moderat penbergensk til moderat gatebergensk (Bergensk dialekt, 2026). De fleste bergensere ligger et sted midt imellom."
+            "content": "Penbergensk, som noen også kaller finbergensk, ligger tett opp mot skriftspråket. Det ble historisk brukt av de velstående familiene i byen og høres fortsatt ofte i formelle situasjoner, som på jobb eller i taler. En penbergenser sier «jei» for «jeg», «ikke» for «ikke» og «dere» for «dere». Gatebergensk er det folkelige talemålet fra arbeidsstrøkene. Der sier man «eg», «ikkje» (uttalt nesten som «isje») og «dokkar». En gatebergenser sluker også gjerne endelsene, slik du så over. Mellom disse to ytterpunktene finnes det mange mellomtrinn, fra moderat penbergensk til moderat gatebergensk (Bergensk dialekt, 2026). De fleste bergensere ligger et sted midt imellom."
         },
         {
             "type": "text",
-            "content": "Legg merke til hvordan den samme setningen forandrer seg. Penbergenseren sier: «Jei vet ikke vor dere kjøpte kjøttet.» Gatebergenseren sier: «Eg vet'kje kor dokker sjøpte sjøttet.» Ord for ord er det de samme setningene, men hvert eneste valg sender et lite signal om hvem du er og hvilken gruppe du kjenner deg hjemme i. I verktøyet under kan du bygge din egen bergenser. Skru på hvert trekk for seg, og hør hvordan personen glir fra fin til folkelig."
+            "content": "Legg merke til hvordan den samme setningen forandrer seg. Penbergenseren sier: «Jei vet ikke vor dere kjøpte kjøttet.» Gatebergenseren sier: «Eg vet ikkje kor dokkar sjøpte sjøttet.» Ord for ord er det de samme setningene, men hvert eneste valg sender et lite signal om hvem du er og hvilken gruppe du kjenner deg hjemme i. I verktøyet under kan du bygge din egen bergenser. Skru på hvert trekk for seg, og hør hvordan personen glir fra fin til folkelig."
         },
         {
             "type": "component",
@@ -176,7 +204,8 @@
                     "Skriv om disse ordene til bergensk: sola, boka, jenta, døra.",
                     "Hva er skarre-r, og hvordan lages den lyden?",
                     "Hva menes med kj-sj-sammenfall? Gi ett eksempel.",
-                    "Nevn to ord som skiller penbergensk fra gatebergensk."
+                    "Nevn to ord som skiller penbergensk fra gatebergensk.",
+                    "Gi tre eksempler på at gatebergensk «sluker» endelser (f.eks. skal blir ska)."
                 ],
                 "reflekter": [
                     "Forklar hvorfor hunkjønnet forsvant nettopp i Bergen. Bruk det du har lært om Bryggen og hansakjøpmennene.",
@@ -250,6 +279,17 @@
                         ],
                         "correctIndex": 2,
                         "explanation": "Begge er bergensk. Penbergensk er en finere sosiolekt nær skriftspråket, gatebergensk er det folkelige talemålet. Ingen er «riktigere» enn det andre."
+                    },
+                    {
+                        "question": "Hva mener vi når vi sier at gatebergensk «sluker» endelser?",
+                        "options": [
+                            "At man snakker ekstra tydelig",
+                            "At sluttlyder faller bort, så «skal» blir «ska» og «kommer» blir «komma»",
+                            "At man legger til en ekstra r på slutten av ord",
+                            "At man bruker bare hunkjønn"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "I rask gatebergensk faller sluttlyder bort, særlig r-en i verb. «Skal» blir «ska», «til» blir «te» og «kommer» blir «komma»."
                     }
                 ]
             }

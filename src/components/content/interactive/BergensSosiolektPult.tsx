@@ -25,7 +25,7 @@ const AKSER: Akse[] = [
     { id: 'jeg', label: 'Ordet for «jeg»', pen: 'Jei', gate: 'Eg' },
     { id: 'ikke', label: 'Ordet for «ikke»', pen: 'ikke', gate: 'ikkje' },
     { id: 'hvor', label: 'Ordet for «hvor»', pen: 'vor', gate: 'kor' },
-    { id: 'dere', label: 'Ordet for «dere»', pen: 'dere', gate: 'dokker' },
+    { id: 'dere', label: 'Ordet for «dere»', pen: 'dere', gate: 'dokkar' },
     { id: 'kj', label: 'Kj-lyden', pen: 'kjøtt', gate: 'sjøtt' },
 ];
 
@@ -37,7 +37,7 @@ function byggSetning(valg: Valg): { tekst: string; gate: boolean }[] {
     const jeg = valg.jeg ? 'Eg' : 'Jei';
     const ikke = valg.ikke ? 'ikkje' : 'ikke';
     const hvor = valg.hvor ? 'kor' : 'vor';
-    const dere = valg.dere ? 'dokker' : 'dere';
+    const dere = valg.dere ? 'dokkar' : 'dere';
     const kjopte = valg.kj ? 'sjøpte' : 'kjøpte';
     const kjott = valg.kj ? 'sjøttet' : 'kjøttet';
     return [
