@@ -2168,6 +2168,26 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "gronlands-gate",
+      "title": "Hvorfor forsvant de norrøne på Grønland?",
+      "description": "Norrøne folk bodde på Grønland i nesten 500 år, så var alle borte. Var det kulden, den tapte handelen eller isolasjonen som gjorde ende på dem?",
+      "startDate": 985,
+      "endDate": 1450,
+      "displayDate": "985-1450",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/gronlands-gate",
+      "tags": [
+        "historie",
+        "middelalder",
+        "gronland",
+        "norron",
+        "klima",
+        "mysterier"
+      ]
+    },
+    {
       "id": "kristningen-av-norge",
       "title": "Kristningen: Dåp eller Død",
       "description": "Hvordan Norge gikk fra å blot til Odin til å bygge stavkirker – med sverd i hånd.",

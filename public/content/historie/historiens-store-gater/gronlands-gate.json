@@ -1,0 +1,220 @@
+{
+    "id": "gronlands-gate",
+    "title": "Hvorfor forsvant de norrøne på Grønland?",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "985-1450",
+    "category": "Historiens store gåter",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/historiens-store-gater/gronlands-gate-hero.webp",
+    "details": [
+        "Norrøne folk fra Island og Norge bodde på Grønland i nesten 500 år, fra rundt 985.",
+        "På midten av 1400-tallet var alle borte, og ingen skrev ned hva som skjedde.",
+        "Forskere tror ikke det var én grunn, men flere som virket sammen: kaldere klima, tapt handel og isolasjon."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Den 16. september 1408 sto Sigrid Bjørnsdatter og Torstein Olavsson brud og brudgom i Hvalsøy kirke på Grønland. Gjestene hadde reist langt, kirken var full, og noen skrev ned hva som skjedde. Så ble det stille. Brevene om dette bryllupet er det aller siste vi hører fra de norrøne på Grønland (Folger, 2017). En hel folkegruppe som hadde bodd der i nesten 500 år, forsvant uten at noen fortalte hvorfor. Det er en av de største gåtene i nordisk historie."
+        },
+        {
+            "type": "image",
+            "src": "/images/historiens-store-gater/gronlands-gate-01.webp",
+            "alt": "Ruinene av en steinkirke på en grønn slette ved en fjord på Grønland",
+            "caption": "Hvalsøy kirke står fortsatt som ruin. Bryllupet her i 1408 er den siste beskjeden vi har fra de norrøne på Grønland."
+        },
+        {
+            "type": "header",
+            "text": "Et lite Norge på iskanten"
+        },
+        {
+            "type": "text",
+            "content": "Rundt år 985 seilte Eirik Raude fra Island mot vest med en flåte skip fulle av folk, husdyr og utstyr. Han hadde funnet et nytt land og kalt det Grønland, kanskje for å lokke flere til å bli med (Store norske leksikon, u.å.). Utvandrerne slo seg ned langs de lune fjordene sør på øya. Med tiden vokste to bygder fram: Austerbygd lengst sør, som var størst, og Vesterbygd litt lenger nord. På det meste bodde det trolig et par tusen mennesker der, fordelt på flere hundre gårder (Store norske leksikon, u.å.). Du kan lese mer om hvordan nordboerne fant veien vestover i artikkelen om [vikingenes oppdagelsesreiser](/historie/vikingtiden/oppdagelsesreiser)."
+        },
+        {
+            "type": "text",
+            "content": "De levde nesten som hjemme i Norge og på Island. De holdt kyr, sauer og geiter, dyrket litt, og samlet høy om sommeren for at dyra skulle overleve den lange vinteren. Men Grønland lå på kanten av det mulige. Somrene var korte, og en eneste dårlig høyavling kunne bety at dyra sultet i hjel før våren. Derfor var nordboerne alltid avhengige av noe mer enn gården: rikdommen som lå lenger nord, i det kalde havet."
+        },
+        {
+            "type": "header",
+            "text": "Rikdommen som forsvant"
+        },
+        {
+            "type": "text",
+            "content": "Hver sommer dro menn nordover på lange jaktturer for å drepe hvalross. Det de var ute etter, var støttennene. Hvalrosstann var et dyrt og ettertraktet materiale i Europa, brukt til å skjære ut kors, terninger og fine spillebrikker. I flere hundre år kom nesten all elfenbein som ble solgt i Europa, fra hvalross som ble jaktet av folkene på Grønland. En DNA-studie viste at etter rundt år 1100 stammet så godt som all handelselfenbein i Europa fra den grønlandske hvalrossen (Price Persson, 2018). Dette var nordboernes viktigste inntekt. Med den kjøpte de jern, tømmer og korn som de ikke kunne lage selv."
+        },
+        {
+            "type": "text",
+            "content": "Men på 1200-tallet endret markedet seg. Handelsmenn begynte å hente ekte elefanttann fra Afrika, og den var både større og finere enn hvalrosstann. Prisen på grønlandsk elfenbein falt. Samtidig måtte jegerne reise stadig lenger nord for å finne dyr, og de tok mindre og yngre hvalross enn før. Et forskerteam ved University of Cambridge mener at nordboerne rett og slett tømte de nærmeste jaktområdene, slik at hver tur ga mindre igjen for mer strev (University of Cambridge, 2020). Den ene varen som bandt Grønland til Europa, var i ferd med å bli verdiløs."
+        },
+        {
+            "type": "header",
+            "text": "Da kulden krøp innpå"
+        },
+        {
+            "type": "text",
+            "content": "Fra rundt 1300 ble klimaet gradvis kaldere over hele Nord-Atlanteren. Denne perioden kalles ofte den lille istid. For nordboerne var timingen elendig. Kortere og kaldere somrer betydde mindre høy, og dermed færre dyr som overlevde vinteren. Mer havis langs kysten gjorde det farligere for skip å komme fram. Akkurat da handelen var mest sårbar, ble selve veien til Grønland vanskeligere å seile."
+        },
+        {
+            "type": "text",
+            "content": "Så kom et nytt slag. Da svartedauden herjet på midten av 1300-tallet, døde omtrent halvparten av befolkningen i Norge. Den årlige handelsferden med det store grønlandsskipet, knarren, lot seg ikke lenger holde i gang (Store norske leksikon, u.å.). Skipene sluttet rett og slett å komme. Vesterbygd, den nordligste bygda, ble forlatt allerede på midten av 1300-tallet. Nå satt nordboerne alene på kanten av verden, uten jern, uten tømmer og uten nyheter hjemmefra. Under kan du selv veie de ulike årsakene mot hverandre."
+        },
+        {
+            "type": "component",
+            "name": "ForklaringsVekt",
+            "props": {
+                "title": "Vei årsakene"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/historiens-store-gater/gronlands-gate-02.webp",
+            "alt": "Et forlatt norrønt langhus i snø med en frossen fjord i bakgrunnen",
+            "caption": "Etter hvert som klimaet ble kaldere og skipene sluttet å komme, ble livet på gårdene stadig hardere."
+        },
+        {
+            "type": "header",
+            "text": "Naboene de ikke lærte av"
+        },
+        {
+            "type": "text",
+            "content": "Mens nordboerne strevde, kom et annet folk sørover langs kysten: inuittene, som forskerne kaller Thule-folket. De hadde levd i Arktis i generasjoner og mestret kulden. De jaktet sel og hval fra kajakk med harpun, og de klarte seg helt uten kyr og åkrer. De var på mange måter et levende svar på nordboernes problem."
+        },
+        {
+            "type": "text",
+            "content": "Nordboerne endret nok kostholdet sitt en del. Analyser av skjeletter viser at de spiste stadig mer mat fra havet mot slutten: fra rundt 30 til 40 prosent tidlig i historien, til nesten 80 prosent på det siste, mest sel (Folger, 2017). Men de holdt fast ved gårdslivet og bygde aldri om samfunnet sitt slik inuittene levde. Det finnes ingen tegn på store kamper mellom de to folkene. Nordboerne valgte rett og slett å ikke ta etter naboene sine, selv da det kunne ha reddet dem. Hvorfor, vet vi ikke sikkert. Kanskje var de for stolte av å være bønder og kristne europeere til å leve som dem de så på som fremmede."
+        },
+        {
+            "type": "header",
+            "text": "Dro de, eller døde de?"
+        },
+        {
+            "type": "text",
+            "content": "Her deler forskerne seg i to leirer. Noen, som arkeologen Thomas McGovern, har ment at slutten var brå og brutal: en siste hard vinter eller en storm som tok livet av dem som var igjen. Andre, som forskeren Niels Lynnerup, tror det motsatte. På de forlatte gårdene ser det ryddig ut, som om folk pakket det de ville ha med seg og bare dro (Folger, 2017). Kanskje seilte de siste nordboerne tilbake til Island eller Norge, litt etter litt, helt til ingen var igjen. Slutten kan ha vært stille og udramatisk, ikke en katastrofe. Prøv mikrospillet under og kjenn selv på hvor sakte den lange vinteren lukket seg rundt gården."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "den-lange-vinteren-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Så, hva ble svaret?"
+        },
+        {
+            "type": "text",
+            "content": "Nettopp fordi vi ikke har et sikkert svar, hører Grønlandsgåten hjemme blant [Historiens store gåter](/historie/historiens-store-gater/oversikt). Men gåten er ikke helt uløst heller. De fleste forskere er enige om én ting: det var ingen enkelt grunn. Det var ikke bare kulden, ikke bare den tapte handelen, ikke bare skipene som sluttet å komme. Det var alt sammen på én gang. Et samfunn som allerede levde på kanten, tålte ikke at flere ting gikk galt samtidig."
+        },
+        {
+            "type": "text",
+            "content": "Det er slik det ofte er med de store gåtene. Akkurat som med [Antikythera-mekanismen](/historie/historiens-store-gater/antikythera-mekanismen) og [pyramidene](/historie/historiens-store-gater/pyramidene) blir en del av svaret klarere for hvert nye funn, mens en annen del fortsatt er åpen. Vil du grave dypere i sporene selv, kan du prøve deg som historisk detektiv i saken [Mysteriet på Grønland](/oving/detektiv/greenland-detective). Det Grønlandsgåten lærer oss best, er kanskje dette: virkeligheten har sjelden bare én forklaring. Når noe stort går galt i historien, er det som regel flere årsaker som drar i samme retning på én gang."
+        },
+        {
+            "type": "image",
+            "src": "/images/historiens-store-gater/gronlands-gate-03.webp",
+            "alt": "Arkeologer graver ut en norrøn gårdsruin på en grønn slette på Grønland",
+            "caption": "For hvert nytt utgravningsfunn blir en bit av gåten løst, mens spørsmålet om de dro eller døde, fortsatt står åpent."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Omtrent når slo de norrøne seg ned på Grønland, og hvem ledet de første utvandrerne?",
+                    "Hva var den viktigste eksportvaren til nordboerne, og hva ble den brukt til i Europa?",
+                    "Hva heter perioden med kaldere klima som begynte rundt 1300?",
+                    "Hva er det siste vi vet sikkert om de norrøne på Grønland, og i hvilket år skjedde det?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor prisen på hvalrosstann falt på 1200-tallet, og hvorfor det var så farlig nettopp for nordboerne.",
+                    "Inuittene levde godt i det samme kalde landet. Hvorfor tror du nordboerne likevel ikke tok etter måten de jaktet og levde på?",
+                    "Teksten sier at det ikke var én grunn til at nordboerne forsvant, men flere som virket sammen. Velg to av årsakene og forklar hvordan de kan ha forsterket hverandre.",
+                    "Noen forskere tror nordboerne døde ut, andre tror de bare dro. Hvilket bevis peker mot at de dro frivillig?"
+                ],
+                "gaaVidere": [
+                    "Se for deg at du er en av de siste nordboerne på Grønland vinteren 1440. Skriv en kort dagbokside om hvorfor familien din vurderer å forlate gården.",
+                    "Grønlandsgåten handler om et samfunn som ikke tålte flere kriser på én gang. Finn et eksempel fra vår egen tid der flere problemer treffer et samfunn samtidig, og sammenlign.",
+                    "Bruk kildekritikk: finn en nettside om nordboerne på Grønland, og vurder hvem som står bak og om du kan stole på den. Sammenlign med det du leste her."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvem ledet de første norrøne utvandrerne til Grønland rundt år 985?",
+                        "options": [
+                            "Leiv Eiriksson",
+                            "Eirik Raude",
+                            "Harald Hårfagre",
+                            "Olav den hellige"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Eirik Raude seilte fra Island rundt 985 og grunnla bosetningen på Grønland (Store norske leksikon, u.å.)."
+                    },
+                    {
+                        "question": "Hva var nordboernes viktigste eksportvare?",
+                        "options": [
+                            "Ull og skinn",
+                            "Tørrfisk",
+                            "Hvalrosstann (elfenbein)",
+                            "Sølv"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Hvalrosstann var den viktigste inntekten. Etter år 1100 kom nesten all elfenbein i Europa fra grønlandsk hvalross (Price Persson, 2018)."
+                    },
+                    {
+                        "question": "Hvorfor falt verdien av hvalrosstann på 1200-tallet?",
+                        "options": [
+                            "Folk sluttet å lage kunst",
+                            "Elefanttann fra Afrika kom på markedet",
+                            "Det ble forbudt å jakte hvalross",
+                            "Hvalrossen ble fredet"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Ekte elefanttann fra Afrika var større og finere, og presset prisen på hvalrosstann ned (University of Cambridge, 2020)."
+                    },
+                    {
+                        "question": "Hva skjedde med skipsforbindelsen til Grønland etter svartedauden på midten av 1300-tallet?",
+                        "options": [
+                            "Det kom flere skip enn før",
+                            "Den årlige handelsferden stoppet opp",
+                            "Skipene begynte å frakte gull",
+                            "Grønland fikk sin egen flåte"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Svartedauden halverte folketallet i Norge, og den årlige ferden med grønlandsknarren lot seg ikke opprettholde (Store norske leksikon, u.å.)."
+                    },
+                    {
+                        "question": "Hva er forskerne stort sett enige om når det gjelder hvorfor nordboerne forsvant?",
+                        "options": [
+                            "Det var én tydelig årsak: kulden",
+                            "Inuittene drev dem bort i krig",
+                            "Flere årsaker virket sammen samtidig",
+                            "En vulkan gjorde øya ubeboelig"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Kaldere klima, tapt handel og isolasjon virket sammen. Et samfunn på kanten tålte ikke at flere ting gikk galt på én gang (Folger, 2017)."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Folger, T. (2017). *Why did Greenland's Vikings vanish?* Smithsonian Magazine. Hentet 21.07.2026 fra [smithsonianmag.com/history/why-greenland-vikings-vanished-180962119](https://www.smithsonianmag.com/history/why-greenland-vikings-vanished-180962119/)",
+                    "Price Persson, C. (2018). *Norrøne bosettere på Grønland dominerte elfenbenshandelen, viser DNA*. forskning.no. Hentet 21.07.2026 fra [forskning.no/dna-gronland-middelalderen](https://www.forskning.no/dna-gronland-middelalderen/norrone-bosettere-pa-gronland-dominerte-elfenbenshandelen-viser-dna/1219866)",
+                    "University of Cambridge. (2020). *Over-hunting walruses contributed to the collapse of Norse Greenland*. University of Cambridge. Hentet 21.07.2026 fra [cam.ac.uk/stories/norsewalrus](https://www.cam.ac.uk/stories/norsewalrus)",
+                    "Store norske leksikon. (u.å.). *Grønlands historie til 1500*. Store norske leksikon. Hentet 21.07.2026 fra [snl.no/Grønlands_historie_til_1500](https://snl.no/Gr%C3%B8nlands_historie_til_1500)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

@@ -138,8 +138,18 @@ const GreskOpproret3D = lazy(() => import('./GreskOpproret3D'));
 const KapplopetOmAfrika3D = lazy(() => import('./KapplopetOmAfrika3D'));
 const Bevisvekten3D = lazy(() => import('./Bevisvekten3D'));
 const Antikythera3D = lazy(() => import('./Antikythera3D'));
+const DenLangeVinteren3D = lazy(() => import('./DenLangeVinteren3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'den-lange-vinteren-3d': {
+        id: 'den-lange-vinteren-3d',
+        title: 'Den lange vinteren',
+        description:
+            'Dra i årstallet fra 985 til 1450 og se den norrøne gården på Grønland sakte tømmes: beitet blir hvitt, sauene blir færre, det siste skipet fra Norge blir borte, og til slutt ligger gården tom. Lyspæren: slutten for nordboerne kom ikke som ett brått slag, men som en lang vinter der kaldere klima, tapt handel og isolasjon virket sammen over hundre år.',
+        estimatedSeconds: 90,
+        loader: () => import('./DenLangeVinteren3D'),
+        Component: DenLangeVinteren3D as never,
+    },
     'antikythera-3d': {
         id: 'antikythera-3d',
         title: 'Antikythera-mekanismen',
