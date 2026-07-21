@@ -1,0 +1,243 @@
+{
+    "id": "malmerker",
+    "title": "Målmerker: Sporene som avslører dialekten",
+    "layout": "rich",
+    "subject": "norsk",
+    "year": "Fra norrønt til i dag",
+    "category": "Dialekter",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Et målmerke er et bestemt språktrekk som skiller én dialekt fra en annen.",
+        "Tjukk l, palatalisering, apokope og jamvekt er noen av de viktigste målmerkene.",
+        "Når du kjenner målmerkene, kan du høre hvilken del av landet en person kommer fra."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "En fyr på bussen sier «æ» i stedet for «jeg». En annen sier «eg». Uten å tenke over det har du allerede gjettet hvor de kommer fra. Du gjorde det ved å lytte etter små spor i språket. Slike spor kalles målmerker, og de er nøkkelen til å forstå hvorfor Norge har så mange ulike dialekter. I denne artikkelen skal du lære de viktigste målmerkene, slik at du selv kan bli en dialektdetektiv."
+        },
+        {
+            "type": "header",
+            "text": "Hva er et målmerke?"
+        },
+        {
+            "type": "text",
+            "content": "En dialekt er en variant av et språk som hører til et bestemt geografisk område (Neteland & Opsahl, 2025). Men hva er det egentlig som gjør at dialektene høres forskjellige ut? Svaret er summen av mange små språktrekk. Et målmerke er ett slikt trekk: en bestemt uttale, en bestemt endelse eller et bestemt ord som skiller én dialekt fra en annen. Et enkelt målmerke sier ikke så mye alene, men når du legger flere sammen, tegner de et ganske nøyaktig kart."
+        },
+        {
+            "type": "text",
+            "content": "De norske dialektene er heldigvis så like at vi forstår hverandre nesten uansett hvor vi kommer fra. Forskjellene ligger i detaljene, og det er nettopp disse detaljene som er målmerker. Noen målmerker handler om lyder, andre om endelser på ord, og noen handler om hvilke ord vi velger. I resten av artikkelen skal vi se på de viktigste av dem, ett for ett. Vil du repetere hva en dialekt er før vi går videre, kan du lese [Dialekter: Hvorfor snakker vi så ulikt?](/norsk/dialekter/hva-er-dialekter)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdommer i samtale på en bussholdeplass i Norge",
+            "caption": "Vi gjetter hvor folk kommer fra ved å lytte etter små spor i uttalen deres."
+        },
+        {
+            "type": "header",
+            "text": "Tjukk l: lyden som deler landet i to"
+        },
+        {
+            "type": "text",
+            "content": "Det kanskje mest kjente målmerket er tjukk l. Når noen sier «sol» slik at det nesten høres ut som «såL», eller «bord» som «boL», da bruker de tjukk l. Lyden lages ved at du bøyer tunga bakover og lar tungespissen slå et lite slag mot ganen. Tjukk l finnes på Østlandet og i Trøndelag, men ikke på Vestlandet og i det meste av Nord-Norge (Venås & Skjekkeland, 2026). Bare den ene lyden forteller altså ganske mye om hvor en person hører hjemme."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Et arvestykke fra vikingene",
+                "content": "Tjukk l kommer fra det gamle språket [norrønt](/norsk/sprakhistorie/norront). Lyden dukker opp både der norrønt hadde bokstaven l (som i «dal» og «sol») og der norrønt hadde bokstavene rð (som i «gard» og «jord»). Målmerkene er på den måten levende spor etter et språk som er over tusen år gammelt."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Palatalisering: den myke j-en i nord"
+        },
+        {
+            "type": "text",
+            "content": "Reis nordover, og du møter et helt annet målmerke. I Nord-Norge og Trøndelag smyger det seg ofte inn en myk j-lyd etter enkelte konsonanter. «Mann» blir til «mannj», «kveld» blir til «kvellj», og «redd» blir til «reddj». Dette kalles palatalisering. En gammel trøndersk setning som viser trekket tydelig, er «mannj med hannjhonnj i bannj», altså «mann med hannhund i bånd» (Skjekkeland & Venås, 2026). Legg merke til hvordan den lille j-lyden gjentar seg. Når du hører den, vet du at du er langt nord i landet."
+        },
+        {
+            "type": "header",
+            "text": "Jamvekt og kløyvd infinitiv"
+        },
+        {
+            "type": "text",
+            "content": "Noen målmerker handler ikke om lyder, men om endelser. På Østlandet og i Trøndelag deles verbene i to grupper når de skal stå i infinitiv. Det heter «å værra» og «å leva», men «å skriva» og «å kasta». At noen verb ender på a og andre på e, kalles kløyvd infinitiv, og bak det ligger en gammel regel som heter jamvekt (Venås & Skjekkeland, 2026). Regelen kommer helt fra norrønt: ord som var korte den gangen, oppfører seg fortsatt annerledes enn ord som var lange. På Vestlandet finnes ikke denne todelingen, og der ender alle verbene likt."
+        },
+        {
+            "type": "component",
+            "name": "MaalmerkeMatcher",
+            "props": {
+                "title": "Kjenn igjen målmerket",
+                "intro": "Klikk et eksempel, og klikk så målmerket som passer."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Apokope: når endelsen faller bort"
+        },
+        {
+            "type": "text",
+            "content": "I Trøndelag og deler av Nord-Norge skjer det motsatte av det du kanskje forventer: den siste vokalen forsvinner helt. «Å kaste» blir til «å kast», og «å kjøpe» blir til «å kjøp» (Skjekkeland & Venås, 2026). Dette målmerket heter apokope. Ordene blir korte og hakkete, og de ender på en konsonant. For en som er vant til østlandsk, kan trøndersk derfor virke raskt og knapt. Men det er ikke slurv. Det er en helt fast regel som følger dialekten."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Kart over Norge med de fire dialektområdene markert i ulike farger",
+            "caption": "Målmerkene ligger ikke tilfeldig spredt. De samler seg i store områder som til sammen tegner et dialektkart."
+        },
+        {
+            "type": "header",
+            "text": "Pronomenet som røper deg"
+        },
+        {
+            "type": "text",
+            "content": "Kanskje ingenting røper dialekten din raskere enn ordet for «jeg». I noen dialekter sier man «eg», i andre «æ», «i», «je» eller «jæ». På Vestlandet og Sørlandet er «eg» vanlig, i Trøndelag og Nord-Norge hører du ofte «æ», og inne i Trøndelag finnes former som «i» og «je» (Skjekkeland & Venås, 2026). Dette henger også sammen med skriftspråket vårt, for «eg» er formen i nynorsk mens «jeg» er formen i bokmål. Vil du vite mer om de to skriftspråkene, kan du lese [Bokmål og nynorsk](/norsk/sprakhistorie/bokmal-og-nynorsk)."
+        },
+        {
+            "type": "header",
+            "text": "Fire landsdeler, fire lydbilder"
+        },
+        {
+            "type": "text",
+            "content": "Når språkforskere skal ordne alle dialektene, deler de gjerne landet i fire hovedområder: østlandsk, vestlandsk, trøndersk og nordnorsk (Venås & Skjekkeland, 2026). Tidligere delte man ofte landet i bare to, øst og vest, men i dag er firedelingen mest vanlig. Grensa mellom øst og vest følger blant annet fjellkjeden Langfjella og går mellom Romsdal og Nordmøre. Hvert av de fire områdene har sin egen samling av målmerker, og det er derfor en trønder og en bergenser høres så ulike ut."
+        },
+        {
+            "type": "text",
+            "content": "Et morsomt målmerke som skiller øst fra vest, er selve tonefallet. På Østlandet og i Trøndelag stiger stemmen mot slutten av ordet, mens den på Vestlandet og i Nord-Norge faller. Grensa for dette går omtrent ved Lillesand på Sørlandet. Det er dette tonefallet som gjør at vestlandsk kan høres litt syngende ut for en østlending. I byene blander målmerkene seg ofte sammen, fordi folk flytter og tar med seg trekkene sine. Vil du forstå hvordan et nytt målmerke sprer seg fra ett sted til hele landsdeler, kan du lese om [bølgemodellen og sprangmodellen](/norsk/dialekter/spredning-av-dialekttrekk)."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "malmerke-kartet-3d"
+            }
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Dialekt er noe å være stolt av",
+                "content": "I mange land må folk legge bort dialekten sin i det offentlige rom. Slik er det ikke i Norge. Etter den såkalte dialektbølgen på 1970-tallet ble det vanlig å bruke dialekt over alt, både på skolen, i radioen og i nyhetene (Neteland & Opsahl, 2025). Norge har nemlig ikke noe offisielt standard talemål. Derfor er målmerkene dine ikke feil, men en del av identiteten din."
+            }
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "quote": "Dialekten er den muntlige adressen din. Den forteller hvor du hører til.",
+                "author": "Om norsk talemål"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Nå har du fått med deg de viktigste målmerkene: tjukk l, palatalisering, jamvekt, apokope, tonefall og pronomenformer. Neste gang du hører noen snakke, kan du lytte som en detektiv. Sier de «æ» eller «eg»? Har de tjukk l i «sol»? Faller endingen bort slik at «å kaste» blir «å kast»? Bit for bit setter du sammen sporene, helt til du kan gjette hvilken landsdel personen kommer fra. Det er dette språkforskerne gjør hele tiden, bare med enda flere målmerker i verktøykassa."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En elev som ler og snakker foran klassen i et lyst klasserom",
+            "caption": "I Norge kan du bruke dialekten din over alt. Målmerkene er en del av hvem du er."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er et målmerke? Forklar med egne ord.",
+                    "Beskriv hvordan tjukk l lages, og nevn to landsdeler der den finnes.",
+                    "Hva er forskjellen på palatalisering og apokope? Gi et eksempel på hvert.",
+                    "Hvilke fire hovedområder deler språkforskerne dialektene i?"
+                ],
+                "reflekter": [
+                    "Hvorfor sier vi at målmerkene er «spor etter norrønt»? Bruk tjukk l eller jamvekt som eksempel.",
+                    "Et enkelt målmerke sier lite alene, men flere sammen sier mye. Forklar hvorfor.",
+                    "Hvorfor er det ikke «feil» å snakke dialekt i Norge, slik det kan være i andre land?"
+                ],
+                "gaaVidere": [
+                    "Lytt til hvordan noen hjemme eller på skolen sier ordet for «jeg». Hvilken form bruker de, og hva røper det om hvor de kommer fra?",
+                    "Ta opp en kort lyd av deg selv der du leser tre setninger. Hvilke målmerker kan du høre i din egen dialekt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er et målmerke?",
+                        "options": [
+                            "Et sted der to dialekter møtes",
+                            "Et bestemt språktrekk som skiller én dialekt fra en annen",
+                            "En regel for hvordan man skriver bokmål",
+                            "Et ord som betyr det samme i alle dialekter"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Et målmerke er et konkret språktrekk, for eksempel en uttale eller en endelse, som skiller dialekter fra hverandre."
+                    },
+                    {
+                        "question": "I hvilke landsdeler finner vi tjukk l?",
+                        "options": [
+                            "På Vestlandet og Sørlandet",
+                            "Bare i Nord-Norge",
+                            "På Østlandet og i Trøndelag",
+                            "I hele landet"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Tjukk l finnes på Østlandet og i Trøndelag, men ikke på Vestlandet og i det meste av Nord-Norge."
+                    },
+                    {
+                        "question": "Hva skjer med et ord når det får apokope?",
+                        "options": [
+                            "Det får en ekstra vokal på slutten",
+                            "Den siste vokalen faller bort, som i «å kast»",
+                            "Det får en myk j-lyd inni seg",
+                            "Det uttales med tjukk l"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Apokope betyr at den siste vokalen forsvinner. «Å kaste» blir til «å kast». Trekket er vanlig i Trøndelag."
+                    },
+                    {
+                        "question": "Hva er palatalisering?",
+                        "options": [
+                            "At stemmen stiger mot slutten av ordet",
+                            "At man bruker «eg» i stedet for «jeg»",
+                            "At det smyger seg inn en myk j-lyd, som i «mannj»",
+                            "At verbene deles i to grupper"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Palatalisering er den myke j-lyden som dukker opp i ord som «mannj» og «kvellj» i Nord-Norge og Trøndelag."
+                    },
+                    {
+                        "question": "Hvorfor kan du bruke dialekten din over alt i Norge?",
+                        "options": [
+                            "Fordi loven krever at alle snakker dialekt",
+                            "Fordi Norge ikke har noe offisielt standard talemål og dialekt er godtatt",
+                            "Fordi alle dialekter høres helt like ut",
+                            "Fordi bare bokmål er tillatt i det offentlige"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Norge har ikke noe offisielt standard talemål. Etter dialektbølgen på 1970-tallet ble dialekt vanlig over alt, også i skole og media."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Neteland, R. & Opsahl, T. (2025). *Dialekt*. Store norske leksikon. Hentet 21.07.2026 fra [https://snl.no/dialekt](https://snl.no/dialekt)",
+                    "Venås, K. & Skjekkeland, M. (2026). *Dialekter i Noreg*. Store norske leksikon. Hentet 21.07.2026 fra [https://snl.no/dialekter_i_Noreg](https://snl.no/dialekter_i_Noreg)",
+                    "Venås, K. & Skjekkeland, M. (2026). *Dialekter i Noreg - inndeling*. Store norske leksikon. Hentet 21.07.2026 fra [https://snl.no/dialekter_i_Noreg_-_inndeling](https://snl.no/dialekter_i_Noreg_-_inndeling)",
+                    "Skjekkeland, M. & Venås, K. (2026). *Trøndersk*. Store norske leksikon. Hentet 21.07.2026 fra [https://snl.no/trøndersk](https://snl.no/tr%C3%B8ndersk)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

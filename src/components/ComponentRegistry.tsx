@@ -75,6 +75,7 @@ const BusinessCycleModel = lazy(() => import('./content/interactive/BusinessCycl
 const BusinessCycleGraph = lazy(() => import('./content/interactive/BusinessCycleGraph').then(m => ({ default: m.BusinessCycleGraph })));
 const ProductionModel = lazy(() => import('./content/interactive/ProductionModel').then(m => ({ default: m.ProductionModel })));
 const GrammarRuleCard = lazy(() => import('./content/interactive/GrammarRuleCard').then(m => ({ default: m.GrammarRuleCard })));
+const MaalmerkeMatcher = lazy(() => import('./content/interactive/MaalmerkeMatcher').then(m => ({ default: m.MaalmerkeMatcher })));
 const AthenSparta = lazy(() => import('./content/interactive/AthenSparta').then(m => ({ default: m.AthenSparta })));
 const PeloponnesStrategi = lazy(() => import('./content/interactive/PeloponnesStrategi').then(m => ({ default: m.PeloponnesStrategi })));
 const TextHighlighter = lazy(() => import('./content/interactive/TextHighlighter').then(m => ({ default: m.TextHighlighter })));
@@ -406,6 +407,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     BusinessCycleGraph,
     ProductionModel,
     GrammarRuleCard,
+    MaalmerkeMatcher,
     SymbolMatcher,
     AthenSparta,
     PeloponnesStrategi,
