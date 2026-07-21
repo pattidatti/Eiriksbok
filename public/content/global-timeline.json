@@ -8434,6 +8434,25 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "kunstig-intelligens-og-etikk",
+      "title": "Kunstig intelligens: Kan en maskin gjøre det rette?",
+      "description": "En KI lærer av eksempler, men forstår ingenting. Om skjeve data, diskriminering og hvem som har ansvaret når maskinen tar feil.",
+      "startDate": 1950,
+      "endDate": 2025,
+      "displayDate": "1950-2025",
+      "type": "lesson",
+      "subjectId": "krle",
+      "topicId": "etikk",
+      "link": "/krle/etikk/kunstig-intelligens-og-etikk",
+      "tags": [
+        "etikk",
+        "kunstig intelligens",
+        "teknologi",
+        "ansvar",
+        "diskriminering"
+      ]
+    },
+    {
       "id": "arendt-totalitarisme",
       "title": "Totalitarismens opprinnelse",
       "description": "Hannah Arendt analyserer nazismen og stalinismen.",

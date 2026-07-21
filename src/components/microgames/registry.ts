@@ -128,6 +128,7 @@ const Paaskeoya3D = lazy(() => import('./Paaskeoya3D'));
 const MayaKollaps3D = lazy(() => import('./MayaKollaps3D'));
 const Reconquista3D = lazy(() => import('./Reconquista3D'));
 const DenMoralskeSirkelen3D = lazy(() => import('./DenMoralskeSirkelen3D'));
+const Skjevhetsspeilet3D = lazy(() => import('./Skjevhetsspeilet3D'));
 const ByggKongsberg3D = lazy(() => import('./ByggKongsberg3D'));
 const VeienTilVikingtid3D = lazy(() => import('./VeienTilVikingtid3D'));
 const Hansakoggen3D = lazy(() => import('./Hansakoggen3D'));
@@ -257,6 +258,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./DenMoralskeSirkelen3D'),
         Component: DenMoralskeSirkelen3D as never,
+    },
+    'skjevhetsspeilet-3d': {
+        id: 'skjevhetsspeilet-3d',
+        title: 'Skjevhets-speilet',
+        description:
+            'Tren en ansiktsgjenkjennings-KI ved å klikke ansiktstyper inn i treningsdataen, og kjør den så på alle fire typene. Typene du ga den, lyser grønt (gjenkjent); typene du utelot, lyser rødt (bommet). Lyspæren kommer i hendene: en KI kjenner bare igjen det den har sett før, så skjeve treningsdata gir en KI som behandler mennesker skjevt, uten at noen mente det.',
+        estimatedSeconds: 150,
+        loader: () => import('./Skjevhetsspeilet3D'),
+        Component: Skjevhetsspeilet3D as never,
     },
     'reconquista-3d': {
         id: 'reconquista-3d',
