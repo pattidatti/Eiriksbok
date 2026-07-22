@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 303
+      "count": 305
     },
     {
       "tag": "dekolonisering",
@@ -891,6 +891,10 @@
       "count": 20
     },
     {
+      "tag": "kildekritikk",
+      "count": 20
+    },
+    {
       "tag": "renessansen",
       "count": 20
     },
@@ -904,10 +908,6 @@
     },
     {
       "tag": "islam",
-      "count": 18
-    },
-    {
-      "tag": "kildekritikk",
       "count": 18
     },
     {
@@ -1055,6 +1055,10 @@
       "count": 10
     },
     {
+      "tag": "mysterier",
+      "count": 9
+    },
+    {
       "tag": "keiser",
       "count": 9
     },
@@ -1169,10 +1173,6 @@
     {
       "tag": "jehovas-vitner",
       "count": 8
-    },
-    {
-      "tag": "mysterier",
-      "count": 7
     },
     {
       "tag": "ytringsfrihet",
@@ -2496,6 +2496,14 @@
     },
     {
       "tag": "børskrakk",
+      "count": 2
+    },
+    {
+      "tag": "nyere tid",
+      "count": 2
+    },
+    {
+      "tag": "luftfart",
       "count": 2
     },
     {

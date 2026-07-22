@@ -144,8 +144,18 @@ const Antikythera3D = lazy(() => import('./Antikythera3D'));
 const DenLangeVinteren3D = lazy(() => import('./DenLangeVinteren3D'));
 const TrojaUtgravning3D = lazy(() => import('./TrojaUtgravning3D'));
 const MaalmerkeKartet3D = lazy(() => import('./MaalmerkeKartet3D'));
+const EarhartStillehavet3D = lazy(() => import('./EarhartStillehavet3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'earhart-stillehavet-3d': {
+        id: 'earhart-stillehavet-3d',
+        title: 'Finn Howland',
+        description:
+            'Amelia Earhart skulle finne Howland - en øy bare 2,4 km lang - etter 4000 km over åpent hav. Juster kursen med spaken og se hvor mange kilometer du bommer for hver lille grad du er feil. Lyspæren: en feil på bare én grad bommer med rundt 70 km, og øya er en prikk i havet. Uten radiopeiling var oppgaven nesten umulig, og derfor er forsvinningen fortsatt en gåte.',
+        estimatedSeconds: 90,
+        loader: () => import('./EarhartStillehavet3D'),
+        Component: EarhartStillehavet3D as never,
+    },
     'malmerke-kartet-3d': {
         id: 'malmerke-kartet-3d',
         title: 'Målmerke-kartet',
