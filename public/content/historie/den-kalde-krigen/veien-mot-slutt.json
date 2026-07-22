@@ -3,16 +3,16 @@
     "title": "Veien mot slutten: Sovjetunionens sammenbrudd",
     "subject": "historie",
     "layout": "rich",
-    "year": "1985–1991",
+    "year": "1985-1991",
     "category": "Kald krig / Slutten",
     "readTime": "15 min lesning",
     "heroImage": "/images/historie/den-kalde-krigen/veien_mot_slutten_hero.webp",
     "details": [
         "Hvordan den kalde krigen endte uten en stor krig.",
-        "Mikhail Gorbatsjovs fors\u00f8k p\u00e5 \u00e5 reformere det sovjetiske systemet.",
-        "Revolusjonene i \u00d8st-Europa i 1989.",
+        "Mikhail Gorbatsjovs forsøk på å reformere det sovjetiske systemet.",
+        "Revolusjonene i Øst-Europa i 1989.",
         "Tysklands gjenforening og murens fall.",
-        "Oppl\u00f8sningen av Sovjetunionen i 1991."
+        "Oppløsningen av Sovjetunionen i 1991."
     ],
     "timeline": [
         {
@@ -23,20 +23,20 @@
         {
             "year": "1991",
             "title": "Sovjetunionens fall",
-            "description": "Unionen oppl\u00f8ses; den kalde krigen er offisielt over."
+            "description": "Unionen oppløses; den kalde krigen er offisielt over."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "P\u00e5 begynnelsen av 1980-tallet virket [den kalde krigen](/historie/den-kalde-krigen/oversikt) fastl\u00e5st. Supermaktene rustet opp som aldri f\u00f8r, og spenningen var h\u00f8y. Men bak den sterke fasaden var Sovjetunionen i dyp krise. \u00d8konomien stagnerte, teknologien hang etter, og befolkningen var lei av varemangel og mangel p\u00e5 frihet.\n\nF\u00e5 kunne forutsi at hele \u00d8stblokken og Sovjetunionen selv ville kollapse i l\u00f8pet av bare seks \u00e5r. Det som skjedde mellom 1985 og 1991 er en av de mest dramatiske omveltningene i historien \u2013 en revolusjon som endret verdenskartet uten at det ble skutt et eneste skudd mellom supermaktene."
+            "content": "På begynnelsen av 1980-tallet virket [den kalde krigen](/historie/den-kalde-krigen/oversikt) fastlåst. Supermaktene rustet opp som aldri før, og spenningen var høy. Men bak den sterke fasaden var Sovjetunionen i dyp krise. Økonomien stagnerte, teknologien hang etter, og befolkningen var lei av varemangel og mangel på frihet.\n\nFå kunne forutsi at hele Østblokken og Sovjetunionen selv ville kollapse i løpet av bare seks år. Det som skjedde mellom 1985 og 1991 er en av de mest dramatiske omveltningene i historien - en revolusjon som endret verdenskartet uten at det brøt ut direkte krig mellom supermaktene (Petersen, 2026)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Mikhail Gorbatsjov",
-                "content": "I 1985 ble Mikhail Gorbatsjov leder for Sovjetunionen. Han var yngre og mer moderne enn sine forgjengere. Gorbatsjov \u00f8nsket ikke \u00e5 avskaffe kommunismen, men \u00e5 redde den gjennom reformer. Han inns\u00e5 at Sovjetunionen ikke lenger hadde r\u00e5d til v\u00e5penkappl\u00f8pet hvis folket skulle f\u00e5 det bedre."
+                "content": "I 1985 ble Mikhail Gorbatsjov leder for Sovjetunionen. Han var yngre og mer moderne enn sine forgjengere. Gorbatsjov ønsket ikke å avskaffe kommunismen, men å redde den gjennom reformer. Han innså at Sovjetunionen ikke lenger hadde råd til våpenkappløpet hvis folket skulle få det bedre."
             }
         },
         {
@@ -45,15 +45,15 @@
         },
         {
             "type": "text",
-            "content": "Gorbatsjov lanserte to slagord som skulle forandre alt:\n\n1.  Glasnost (\u00c5penhet): Han tillot mer ytringsfrihet, kritikk av myndighetene og en friere presse. Han h\u00e5pet at \u00e5penhet ville bidra til \u00e5 bekjempe korrupsjon og ineffektivitet.\n2.  Perestrojka (Omstrukturering): Han fors\u00f8kte \u00e5 modernisere \u00f8konomien ved \u00e5 innf\u00f8re elementer av markeds\u00f8konomi og gi bedriftene mer selvstendighet.\n\nProblemet var at reformene kom for sent og ble utf\u00f8rt halvhjertet. I stedet for \u00e5 fikse systemet, ga de folk muligheten til \u00e5 uttrykke hvor misf\u00f8rde de faktisk var. Da lokket p\u00e5 kjelen ble tatt av, begynte alt \u00e5 koke over."
+            "content": "Gorbatsjov lanserte to slagord som skulle forandre alt (Egge & Holm-Hansen, 2025):\n\n1.  Glasnost (Åpenhet): Han tillot mer ytringsfrihet, kritikk av myndighetene og en friere presse. Han håpet at åpenhet ville bidra til å bekjempe korrupsjon og ineffektivitet.\n2.  Perestrojka (Omstrukturering): Han forsøkte å modernisere økonomien ved å innføre elementer av markedsøkonomi og gi bedriftene mer selvstendighet.\n\nProblemet var at reformene kom for sent og ble utført halvhjertet. I stedet for å fikse systemet, ga de folk muligheten til å uttrykke hvor misfornøyde de faktisk var. Da lokket på kjelen ble tatt av, begynte alt å koke over."
         },
         {
             "type": "header",
-            "text": "1989: Revolusjons\u00e5ret"
+            "text": "1989: Revolusjonsåret"
         },
         {
             "type": "text",
-            "content": "Gorbatsjov gjorde en historisk endring i utenrikspolitikken: Han forkastet Bresjnev-doktrinen. Han ga beskjed til de \u00f8steuropeiske lederne om at de ikke lenger kunne regne med sovjetiske tanks hvis de møtte motstand fra eget folk. Dette sendte sjokkb\u00f8lger gjennom \u00d8stblokken.\n\nI Polen vant fagforbundet Solidaritet det f\u00f8rste frie valget. I Ungarn begynte myndighetene \u00e5 fjerne piggtr\u00e5den mot \u00d8sterrike. Dette f\u00f8rte til en massevandring av \u00f8sttyskere via Ungarn til vesten, noe som til slutt tvang frem [murens fall i Berlin](/historie/den-kalde-krigen/berlinmuren) 9. november 1989. Gjennom hele h\u00f8sten 1989 falt det ene kommunistregimet etter det andre i det som ble kalt 'fl\u00f8yelsrevolusjoner' \u2013 fredelige maktovertagelser drevet av folkemassene."
+            "content": "Gorbatsjov gjorde en historisk endring i utenrikspolitikken: Han forkastet Bresjnev-doktrinen. Han ga beskjed til de østeuropeiske lederne om at de ikke lenger kunne regne med sovjetiske tanks hvis de møtte motstand fra eget folk. Dette sendte sjokkbølger gjennom Østblokken.\n\nI Polen vant fagforbundet Solidaritet det første frie valget. I Ungarn begynte myndighetene å fjerne piggtråden mot Østerrike. Dette førte til en massevandring av østtyskere via Ungarn til vesten, noe som til slutt tvang frem [murens fall i Berlin](/historie/den-kalde-krigen/berlinmuren) 9. november 1989 (Dypvik, 2026). Gjennom hele høsten 1989 falt det ene kommunistregimet etter det andre i det som ble kalt 'fløyelsrevolusjoner' - fredelige maktovertagelser drevet av folkemassene."
         },
         {
             "type": "header",
@@ -61,7 +61,7 @@
         },
         {
             "type": "text",
-            "content": "Murens fall f\u00f8rte raskt til krav om at Tyskland m\u00e5tte bli ett land igjen. Mange i Europa, s\u00e6rlig i Frankrike og Storbritannia, var skeptiske til et stort og mektig Tyskland. Men med st\u00f8tte fra USA og etter t\u00f8ffe forhandlinger med Gorbatsjov, ble Tyskland offisielt gjenforent 3. oktober 1990. Det var et enormt symbolsk \u00f8yeblikk som viste at splittelsen av Europa var over."
+            "content": "Murens fall førte raskt til krav om at Tyskland måtte bli ett land igjen. Mange i Europa, særlig i Frankrike og Storbritannia, var skeptiske til et stort og mektig Tyskland. Men med støtte fra USA og etter tøffe forhandlinger med Gorbatsjov, ble Tyskland offisielt gjenforent 3. oktober 1990 (Julsrud & Oldervoll, 2025). Det var et enormt symbolsk øyeblikk som viste at splittelsen av Europa var over."
         },
         {
             "type": "component",
@@ -88,22 +88,22 @@
                     {
                         "date": "1989",
                         "title": "Murens fall",
-                        "description": "9. november \u00e5pnes grensene i Berlin."
+                        "description": "9. november åpnes grensene i Berlin."
                     },
                     {
                         "date": "1990",
                         "title": "Tysk samling",
-                        "description": "\u00d8st- og Vest-Tyskland blir \u00e9n stat."
+                        "description": "Øst- og Vest-Tyskland blir én stat."
                     },
                     {
                         "date": "1991",
                         "title": "August-kuppet",
-                        "description": "Hardlinere fors\u00f8ker \u00e5 avsette Gorbatsjov, men mislykkes."
+                        "description": "Hardlinere forsøker å avsette Gorbatsjov, men mislykkes."
                     },
                     {
                         "date": "1991",
-                        "title": "Sovjetunionen oppl\u00f8ses",
-                        "description": "25. desember trekker Gorbatsjov seg; USSR opph\u00f8rer \u00e5 eksistere."
+                        "title": "Sovjetunionen oppløses",
+                        "description": "25. desember trekker Gorbatsjov seg; USSR opphører å eksistere."
                     }
                 ]
             }
@@ -114,15 +114,15 @@
         },
         {
             "type": "text",
-            "content": "Selv om satellittstatene var borte, fors\u00f8kte Gorbatsjov \u00e5 holde sammen selve Sovjetunionen. Men nasjonalistiske bevegelser i republikker som Litauen, Estland, Latvia og Ukraina krevde uavhengighet. I august 1991 fors\u00f8kte konservative kommunister ett siste desperat kupp for \u00e5 stoppe utviklingen, men kuppet kollapset i l\u00f8pet av dager p\u00e5 grunn av folkelig motstand ledet av Boris Jeltsin.\n\nKuppfors\u00f8ket ble spikeren i kista. Den 25. desember 1991 holdt Gorbatsjov sin avskjedstale p\u00e5 TV, og det sovjetiske flagget ble firet fra Kreml for siste gang. Sovjetunionen ble erstattet av 15 uavhengige stater. Den kalde krigen var offisielt over."
+            "content": "Selv om satellittstatene var borte, forsøkte Gorbatsjov å holde sammen selve Sovjetunionen. Men nasjonalistiske bevegelser i republikker som Litauen, Estland, Latvia og Ukraina krevde uavhengighet. I august 1991 forsøkte konservative kommunister ett siste desperat kupp for å stoppe utviklingen, men kuppet kollapset i løpet av dager på grunn av folkelig motstand ledet av Boris Jeltsin.\n\nKuppforsøket ble spikeren i kista. Den 25. desember 1991 holdt Gorbatsjov sin avskjedstale på TV, og det sovjetiske flagget ble firet fra Kreml for siste gang (Egge & Holm-Hansen, 2025). Sovjetunionen ble erstattet av 15 uavhengige stater. Den kalde krigen var offisielt over."
         },
         {
             "type": "header",
-            "text": "Hva l\u00e6rte vi?"
+            "text": "Hva lærte vi?"
         },
         {
             "type": "text",
-            "content": "Den kalde krigen formet verden vi lever i i dag. Den f\u00f8rte til FN-systemet, NATO, EU-integrasjon og et enormt teknologisk sprang. Men den etterlot ogs\u00e5 dype s\u00e5r, atomv\u00e5pen som fremdeles eksisterer, og ul\u00f8ste konflikter i Midt\u00f8sten og Asia. Mest av alt viste den at selv de dypeste ideologiske skiller kan overvinnes fredelig hvis lederne er villige til \u00e5 snakke sammen og reformere seg."
+            "content": "Den kalde krigen formet verden vi lever i i dag. Den førte til FN-systemet, NATO, EU-integrasjon og et enormt teknologisk sprang. Men den etterlot også dype sår, atomvåpen som fremdeles eksisterer, og uløste konflikter i Midtøsten og Asia. Mest av alt viste den at selv de dypeste ideologiske skiller kan overvinnes fredelig hvis lederne er villige til å snakke sammen og reformere seg."
         },
         {
             "type": "component",
@@ -153,7 +153,7 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hvilket ord betyr '\u00e5penhet' og var Gorbatsjovs slagord for politisk frihet?",
+                        "question": "Hvilket ord betyr 'åpenhet' og var Gorbatsjovs slagord for politisk frihet?",
                         "options": [
                             "Perestrojka",
                             "Glasnost",
@@ -163,7 +163,7 @@
                         "answer": "Glasnost"
                     },
                     {
-                        "question": "Hvilket land startet revolusjonsb\u00f8lgen i 1989 gjennom fagforeningen Solidaritet?",
+                        "question": "Hvilket land startet revolusjonsbølgen i 1989 gjennom fagforeningen Solidaritet?",
                         "options": [
                             "Tyskland",
                             "Ungarn",
@@ -173,7 +173,7 @@
                         "answer": "Polen"
                     },
                     {
-                        "question": "N\u00e5r ble Tyskland offisielt gjenforent til ett land?",
+                        "question": "Når ble Tyskland offisielt gjenforent til ett land?",
                         "options": [
                             "1945",
                             "1961",
@@ -183,15 +183,27 @@
                         "answer": "1990"
                     },
                     {
-                        "question": "Hva skjedde med Sovjetunionen i l\u00f8pet av 1991?",
+                        "question": "Hva skjedde med Sovjetunionen i løpet av 1991?",
                         "options": [
                             "De vant den kalde krigen",
                             "De ble angrepet av USA",
-                            "De ble oppl\u00f8st i 15 uavhengige stater",
+                            "De ble oppløst i 15 uavhengige stater",
                             "De byttet navn til Warszawapakten"
                         ],
-                        "answer": "De ble oppl\u00f8st i 15 uavhengige stater"
+                        "answer": "De ble oppløst i 15 uavhengige stater"
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Dypvik, A. S. (2026). *Berlinmuren*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Berlinmuren](https://snl.no/Berlinmuren)",
+                    "Egge, Å. & Holm-Hansen, J. (2025). *Mikhail Gorbatsjov*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Mikhail_Gorbatsjov](https://snl.no/Mikhail_Gorbatsjov)",
+                    "Julsrud, O. & Oldervoll, J. (2025). *Tysklands samtidshistorie*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Tysklands_samtidshistorie](https://snl.no/Tysklands_samtidshistorie)",
+                    "Petersen, T. (2026). *den kalde krigen*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/den_kalde_krigen](https://snl.no/den_kalde_krigen)"
                 ]
             }
         }
@@ -199,7 +211,7 @@
     "quiz": [
         {
             "id": "q1",
-            "question": "Hvilket ord betyr '\u00e5penhet' og var Gorbatsjovs slagord for politisk frihet?",
+            "question": "Hvilket ord betyr 'åpenhet' og var Gorbatsjovs slagord for politisk frihet?",
             "options": [
                 "Perestrojka",
                 "Glasnost",
@@ -210,7 +222,7 @@
         },
         {
             "id": "q2",
-            "question": "Hvilket land startet revolusjonsb\u00f8lgen i 1989 gjennom fagforeningen Solidaritet?",
+            "question": "Hvilket land startet revolusjonsbølgen i 1989 gjennom fagforeningen Solidaritet?",
             "options": [
                 "Tyskland",
                 "Ungarn",
@@ -221,7 +233,7 @@
         },
         {
             "id": "q3",
-            "question": "N\u00e5r ble Tyskland offisielt gjenforent til ett land?",
+            "question": "Når ble Tyskland offisielt gjenforent til ett land?",
             "options": [
                 "1945",
                 "1961",
@@ -232,16 +244,16 @@
         },
         {
             "id": "q4",
-            "question": "Hva skjedde med Sovjetunionen i l\u00f8pet av 1991?",
+            "question": "Hva skjedde med Sovjetunionen i løpet av 1991?",
             "options": [
                 "De vant den kalde krigen",
                 "De ble angrepet av USA",
-                "De ble oppl\u00f8st i 15 uavhengige stater",
+                "De ble oppløst i 15 uavhengige stater",
                 "De byttet navn til Warszawapakten"
             ],
             "correctAnswer": 2
         }
     ],
     "createdDate": "2023-12-21T12:45:00Z",
-    "lastUpdated": "2023-12-21T12:45:00Z"
+    "lastUpdated": "2026-07-22T00:00:00Z"
 }
