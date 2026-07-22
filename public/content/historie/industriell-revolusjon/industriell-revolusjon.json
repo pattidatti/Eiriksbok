@@ -22,11 +22,11 @@
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg at du er ti år gammel og lever i England i 1760. Hjemmet ditt er en liten stue der mor spinner ull ved vinduet, far rister ut frø av lin på låven, og lillesøster passer geita. Det dere ikke lager selv, har dere ikke. Strømmen kommer ikke i en stikkontakt — den finnes ikke. Lyset om kvelden er en talglampe. Hverdagen din ligner mer på besteforeldrenes barndom enn på din egen voksne tid. I løpet av de neste åtti årene skal alt dette snus på hodet."
+            "content": "Tenk deg at du er ti år gammel og lever i England i 1760. Hjemmet ditt er en liten stue der mor spinner ull ved vinduet, far rister ut frø av lin på låven, og lillesøster passer geita. Det dere ikke lager selv, har dere ikke. Strømmen kommer ikke i en stikkontakt - den finnes ikke. Lyset om kvelden er en talglampe. Hverdagen din ligner mer på besteforeldrenes barndom enn på din egen voksne tid. I løpet av de neste åtti årene skal alt dette snus på hodet."
         },
         {
             "type": "text",
-            "content": "Den industrielle revolusjonen er navnet på denne snuoperasjonen. Den begynte i England rundt 1760, spredte seg til resten av Europa og USA, og gjorde slutt på en verden der nesten all energi kom fra muskler, vind og vann. Til Norge kom forandringen omtrent femti år senere, da bønder ble til arbeidere i det vi kaller [Hamskiftet](/historie/norge-i-moderne-tid/hamskiftet). I stedet for husflid kom dampmaskiner, fabrikker, jernbaner og store byer. Det var ikke bare nye maskiner som kom, selve livet til vanlige folk ble bygd om fra grunnen av."
+            "content": "Den industrielle revolusjonen er navnet på denne snuoperasjonen. Den begynte i England rundt 1760, spredte seg til resten av Europa og USA, og gjorde slutt på en verden der nesten all energi kom fra muskler, vind og vann (Schrumpf mfl., 2024). Til Norge kom forandringen omtrent femti år senere, da bønder ble til arbeidere i det vi kaller [Hamskiftet](/historie/norge-i-moderne-tid/hamskiftet). I stedet for husflid kom dampmaskiner, fabrikker, jernbaner og store byer. Det var ikke bare nye maskiner som kom, selve livet til vanlige folk ble bygd om fra grunnen av."
         },
         {
             "type": "header",
@@ -40,7 +40,7 @@
         {
             "type": "list",
             "items": [
-                "Mye kull i bakken — og kullet lå nær overflaten, så det var billig å hente opp.",
+                "Mye kull i bakken - og kullet lå nær overflaten, så det var billig å hente opp.",
                 "Et stort kolonirike som ga England både råvarer (bomull fra India og Amerika) og store markeder å selge til. Selskaper som [Det britiske ostindiske kompani](/historie/kolonialisering/eic) styrte mye av denne handelen.",
                 "Banker og lover som beskyttet eierskap, så investorer turte å satse penger på risikable oppfinnelser.",
                 "En stor gruppe arbeidsfolk på landsbygda som hadde mistet jorda si etter at adelen gjerdet inn fellesarealer."
@@ -57,7 +57,7 @@
                 "title": "Nøkkelhendelser i den første industrielle revolusjonen",
                 "compact": true,
                 "events": [
-                    { "year": 1709, "description": "Abraham Darby smelter jern med koks i stedet for trekull — lager billig støpejern." },
+                    { "year": 1709, "description": "Abraham Darby smelter jern med koks i stedet for trekull - lager billig støpejern." },
                     { "year": 1733, "description": "John Kay finner opp den flyvende skyttelen og firedobler hastigheten på veving." },
                     { "year": 1769, "description": "James Watt tar patent på den separate kondensatoren og gjør dampmaskinen virkelig kraftig." },
                     { "year": 1779, "description": "Verdens første jernbro bygges over Severn-elven og viser at jern kan bære enorme laster." },
@@ -78,14 +78,14 @@
         },
         {
             "type": "text",
-            "content": "Dampmaskinen var som en lommeflaske med energi. Du putter kull i den ene enden og får mekanisk arbeid ut i den andre — uansett om det blåser eller ikke, uansett om du står ved en elv eller midt i en by. Nå kunne en fabrikk plasseres der det var arbeidsfolk og kunder, ikke der det fantes en foss. Et lokomotiv kunne dra hundre tonn varer uten å bli sliten."
+            "content": "Dampmaskinen var som en lommeflaske med energi. Du putter kull i den ene enden og får mekanisk arbeid ut i den andre - uansett om det blåser eller ikke, uansett om du står ved en elv eller midt i en by. Nå kunne en fabrikk plasseres der det var arbeidsfolk og kunder, ikke der det fantes en foss. Et lokomotiv kunne dra hundre tonn varer uten å bli sliten."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hvor sterk var Watts dampmaskin?",
-                "content": "James Watt målte motorens styrke i hestekrefter for at kjøpere skulle skjønne det. En tidlig Watt-maskin tilsvarte rundt ti hester som jobbet samtidig — døgnet rundt, uten mat eller hvile. På 1820-tallet bygde man maskiner på 100 hestekrefter. I dag har en vanlig liten bil omtrent like mange. Vil du selv prøve å hjelpe Watt å fullføre den separate kondensatoren? Spill [Watts laboratorium](/oving/spill/watt-lab)."
+                "content": "James Watt målte motorens styrke i hestekrefter for at kjøpere skulle skjønne det. En tidlig Watt-maskin tilsvarte rundt ti hester som jobbet samtidig - døgnet rundt, uten mat eller hvile. På 1820-tallet bygde man maskiner på 100 hestekrefter. I dag har en vanlig liten bil omtrent like mange. Vil du selv prøve å hjelpe Watt å fullføre den separate kondensatoren? Spill [Watts laboratorium](/oving/spill/watt-lab)."
             }
         },
         {
@@ -123,7 +123,7 @@
                     },
                     {
                         "label": "Hva tjener du?",
-                        "left": "Det du klarer å selge — varierer mye",
+                        "left": "Det du klarer å selge - varierer mye",
                         "right": "Lønn per time eller per stykk"
                     },
                     {
@@ -146,7 +146,7 @@
         },
         {
             "type": "text",
-            "content": "Da fabrikkene trakk arbeidsfolk inn til byene, vokste byene raskere enn noen gang. Manchester hadde 25 000 innbyggere i 1772. Sytti år senere bodde det 350 000 mennesker der — fjorten ganger flere. Liverpool, Birmingham og London opplevde det samme. Men byene var ikke bygd for så mange. Folk presset seg sammen i kjellere og leiegårder. Avløpet rant i åpne renner. Kolera og tyfus drepte tusenvis hver gang det brøt ut."
+            "content": "Da fabrikkene trakk arbeidsfolk inn til byene, vokste byene raskere enn noen gang. Manchester hadde 25 000 innbyggere i 1772. Sytti år senere bodde det 350 000 mennesker der - fjorten ganger flere (Pihl & Jørstad, 2026). Liverpool, Birmingham og London opplevde det samme. Men byene var ikke bygd for så mange. Folk presset seg sammen i kjellere og leiegårder. Avløpet rant i åpne renner. Kolera og tyfus drepte tusenvis hver gang det brøt ut."
         },
         {
             "type": "image",
@@ -173,7 +173,7 @@
         },
         {
             "type": "text",
-            "content": "Ikke alle var begeistret. I 1811 begynte en gruppe vevere i Nottingham å bryte seg inn i fabrikker og knuse de nye maskinene. De kalte seg luddittene etter en figur som het Ned Ludd. Dommerne hengte mange av dem. Mange spør seg det samme i dag når kunstig intelligens tar over arbeid, en frykt du kan utforske videre i [Robotene kommer](/samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer). Andre prøvde å organisere seg i fagforeninger for å kreve bedre lønn og kortere dager. I starten var fagforeninger ulovlige, men sakte men sikkert vant arbeiderne fram med kravene sine."
+            "content": "Ikke alle var begeistret. I 1811 begynte en gruppe vevere i Nottingham-området å bryte seg inn i fabrikker og knuse de nye maskinene. De kalte seg luddittene etter Ned Ludd, en skikkelse som kanskje var oppdiktet (Greve, 2025). Dommerne hengte mange av dem. Mange spør seg det samme i dag når kunstig intelligens tar over arbeid, en frykt du kan utforske videre i [Robotene kommer](/samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer). Andre prøvde å organisere seg i fagforeninger for å kreve bedre lønn og kortere dager. I starten var fagforeninger ulovlige, men sakte men sikkert vant arbeiderne fram med kravene sine."
         },
         {
             "type": "text",
@@ -186,7 +186,7 @@
         },
         {
             "type": "text",
-            "content": "Den industrielle revolusjonen er den største endringen i hvordan mennesker lever siden landbruket ble oppfunnet for tolv tusen år siden. Den gjorde noen få land enormt rike og la grunnlaget for biler, fly, antibiotika og internett. Samtidig skapte den en ny fattigdom i byene, brente kull i mengder vi merker som klimakrise i dag, og ga europeiske stater den militære overlegenheten som drev kolonialiseringen videre. Verden vi lever i — på godt og vondt — ble formet i disse åtti årene."
+            "content": "Den industrielle revolusjonen er den største endringen i hvordan mennesker lever siden landbruket ble oppfunnet for tolv tusen år siden. Den gjorde noen få land enormt rike og la grunnlaget for biler, fly, antibiotika og internett. Samtidig skapte den en ny fattigdom i byene, brente kull i mengder vi merker som klimakrise i dag, og ga europeiske stater den militære overlegenheten som drev kolonialiseringen videre. Verden vi lever i - på godt og vondt - ble formet i disse åtti årene."
         },
         {
             "type": "component",
@@ -273,7 +273,19 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Schrumpf, E., Bull, E. & Tvedt, K. A. (2024). *Den industrielle revolusjon*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/den_industrielle_revolusjon](https://snl.no/den_industrielle_revolusjon)",
+                    "Pihl, R. & Jørstad, J. (2026). *Manchester*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Manchester](https://snl.no/Manchester)",
+                    "Greve, T. (2025). *Ludditter*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/ludditter](https://snl.no/ludditter)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-22"
 }
