@@ -28,7 +28,7 @@
         },
         {
             "type": "text",
-            "content": "For å skjønne hva Watt gjorde, må vi se på maskinen som fantes før. I 1712 bygde en britisk smed som het Thomas Newcomen den første brukbare dampmaskinen. Den ble brukt til å pumpe vann ut av kullgruver. Maskinen virket slik: man kokte vann i en kjele, slapp dampen inn i en stor sylinder, og sprøytet så kaldt vann inn for å kjøle ned dampen. Når dampen kondenserte til væske, ble det vakuum inne i sylinderen, og lufttrykket utenfor presset stempelet ned. Stempelet trakk i en pumpestang. Så åpnet ventilen igjen, og det hele begynte på nytt."
+            "content": "For å skjønne hva Watt gjorde, må vi se på maskinen som fantes før. I 1712 bygde en britisk smed som het Thomas Newcomen den første brukbare dampmaskinen (Johnson, 2022). Den ble brukt til å pumpe vann ut av kullgruver. Maskinen virket slik: man kokte vann i en kjele, slapp dampen inn i en stor sylinder, og sprøytet så kaldt vann inn for å kjøle ned dampen. Når dampen kondenserte til væske, ble det vakuum inne i sylinderen, og lufttrykket utenfor presset stempelet ned. Stempelet trakk i en pumpestang. Så åpnet ventilen igjen, og det hele begynte på nytt."
         },
         {
             "type": "text",
@@ -40,7 +40,7 @@
         },
         {
             "type": "text",
-            "content": "Watts idé var rett og slett genial: hva om dampen i stedet kunne ledes inn i et eget kammer ved siden av, og kondenseres der? Da kunne hovedsylinderen holde seg varm hele tiden. Han kalte det egne kammeret en separat kondensator. Resultatet ble forbløffende. En Watt-maskin brukte bare en fjerdedel så mye kull som en Newcomen-maskin for å gjøre samme arbeid. Det betydde at den kunne stå på steder uten egen kullgruve under seg. Den kunne plasseres hvor som helst."
+            "content": "Watts idé var rett og slett genial: hva om dampen i stedet kunne ledes inn i et eget kammer ved siden av, og kondenseres der? Da kunne hovedsylinderen holde seg varm hele tiden. Han kalte det egne kammeret en separat kondensator (Encyclopaedia Britannica, 2026). Resultatet ble forbløffende. En Watt-maskin brukte bare en fjerdedel så mye kull som en Newcomen-maskin for å gjøre samme arbeid. Det betydde at den kunne stå på steder uten egen kullgruve under seg. Den kunne plasseres hvor som helst."
         },
         {
             "type": "component",
@@ -84,7 +84,7 @@
         },
         {
             "type": "text",
-            "content": "Watt var en oppfinner, men ikke en forretningsmann. Han hadde få penger og brukte nesten ti år på å få maskinen til å virke i full størrelse. I 1775 møtte han Matthew Boulton, en rik fabrikkeier fra byen Birmingham. Boulton hadde en stor metallfabrikk og en visjon: han ville selge dampmaskiner til hele verden. De to inngikk et partnerskap. Boulton dekket utgiftene, ga Watt verksted og verktøy, og fikset patentene. Watt kunne endelig konsentrere seg om å oppfinne. Sammen bygde de firmaet Boulton & Watt, som leverte over 450 dampmaskiner mellom 1775 og 1800."
+            "content": "Watt var en oppfinner, men ikke en forretningsmann. Han hadde få penger og brukte nesten ti år på å få maskinen til å virke i full størrelse. I 1775 gikk han i kompaniskap med Matthew Boulton, en rik fabrikkeier fra byen Birmingham (Grøn, 2024). Boulton hadde en stor metallfabrikk og en visjon: han ville selge dampmaskiner til hele verden. De to inngikk et partnerskap. Boulton dekket utgiftene, ga Watt verksted og verktøy, og fikset patentene. Watt kunne endelig konsentrere seg om å oppfinne. Sammen bygde de firmaet Boulton & Watt, som leverte over 450 dampmaskiner mellom 1775 og 1800."
         },
         {
             "type": "header",
@@ -242,7 +242,19 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (2026). *Steam engine*. Encyclopædia Britannica. Hentet 22.07.2026 fra [britannica.com/technology/steam-engine](https://www.britannica.com/technology/steam-engine)",
+                    "Grøn, Ø. (2024). *James Watt*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/James_Watt](https://snl.no/James_Watt)",
+                    "Johnson, D. G. (2022). *Dampmaskin*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/dampmaskin](https://snl.no/dampmaskin)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-22T00:00:00Z"
 }

@@ -41,7 +41,7 @@
         },
         {
             "type": "text",
-            "content": "Kypros har alltid vært hjem for to folk: gresk-kyprioter (om lag 78 prosent av befolkningen) og tyrkisk-kyprioter (om lag 18 prosent). I årtusener levde de side om side, blandet i byer og landsbyer over hele øya.\n\nI 1878 overtok Storbritannia Kypros fra Det osmanske riket. I 1960 ble Kypros selvstendig – men med en komplisert grunnlov som garanterte begge folkegrupper representasjon i regjering. Det var et forsøk på å bygge en felles stat. Det gikk ikke lenge."
+            "content": "Kypros har alltid vært hjem for to folk: gresk-kyprioter, som utgjør om lag 78 prosent av befolkningen, og tyrkisk-kyprioter, som utgjør om lag 18 prosent (Thuesen mfl., 2026). I årtusener levde de side om side, blandet i byer og landsbyer over hele øya.\n\nI 1878 overtok Storbritannia Kypros fra Det osmanske riket. I 1960 ble Kypros selvstendig - men med en komplisert grunnlov som garanterte begge folkegrupper representasjon i regjering. Det var et forsøk på å bygge en felles stat. Det gikk ikke lenge."
         },
         {
             "type": "header",
@@ -49,7 +49,7 @@
         },
         {
             "type": "text",
-            "content": "15. juli 1974 gjennomførte greske militærjuntaen et kupp på Kypros. Målet var å forene øya med Hellas – det som kalles enosis. President Makarios ble styrtet.\n\nFem dager seinere invaderte den tyrkiske hæren nordkysten av Kypros – med den offisielle begrunnelsen om å beskytte tyrkisk-kyprioter mot den greske militærjuntaen. To måneder med krig og invasjon fulgte. Da våpenhvilen kom i august, kontrollerte Tyrkia 37 prosent av øya – den nordlige delen.\n\nDet som skjedde etterpå, var det største folkeflyttings-traumaet i Kypros sin moderne historie: Over 160 000 gresk-kyprioter flyktet sørover. Over 45 000 tyrkisk-kyprioter flyktet nordover. Naboer som hadde levd side om side i generasjoner, forlot hjem, jorder og graver i løpet av uker."
+            "content": "15. juli 1974 gjennomførte den greske militærjuntaen et kupp på Kypros. Målet var å forene øya med Hellas - det som kalles enosis. President Makarios ble styrtet.\n\nFem dager seinere invaderte den tyrkiske hæren nordkysten av Kypros - med den offisielle begrunnelsen om å beskytte tyrkisk-kyprioter mot den greske militærjuntaen. To måneder med krig og invasjon fulgte. Da våpenhvilen kom i august, kontrollerte Tyrkia rundt 37 prosent av øya - den nordlige delen (Thuesen mfl., 2026).\n\nDet som skjedde etterpå, var det største folkeflyttings-traumaet i Kypros sin moderne historie: Over 160 000 gresk-kyprioter flyktet sørover. Over 45 000 tyrkisk-kyprioter flyktet nordover (Iversen, 2026). Naboer som hadde levd side om side i generasjoner, forlot hjem, jorder og graver i løpet av uker."
         },
         {
             "type": "image",
@@ -122,7 +122,7 @@
         },
         {
             "type": "text",
-            "content": "I 2003 åpnet grensen mellom nord og sør for første gang på 29 år. Eldre kyprioter krysset for å se husene de hadde forlatt som unge. Noen fant alt som de hadde etterlatt seg. Andre fant fremmede familier som nå bodde der.\n\nI 2004 stemte innbyggerne på Kypros om en FN-plan for gjenforening. Tyrkisk-kyprioter stemte ja. Gresk-kyprioter stemte nei – 76 prosent mot. Kort etter trådte Kypros inn i EU: En delt øy i en union som skulle stå for samling. Ironien er ikke til å ta feil av.\n\nForhandlingene fortsetter i dag, uten resultat. Kypros er det eneste EU-landet med en fremmed militærmakt stasjonert på territoriet, og den eneste delte hovedstaden i Europa. Som [Berlinmuren](/historie/den-kalde-krigen/berlinmuren) minner oss om – slike skillelinjer kan falle raskt. Men som [Peace Lines i Belfast](/historie/den-kalde-krigen/peace-lines-belfast) minner oss om – de kan også stå i generasjoner."
+            "content": "I 2003 åpnet grensen mellom nord og sør for første gang på 29 år (Thuesen & Lundbo, 2026). Eldre kyprioter krysset for å se husene de hadde forlatt som unge. Noen fant alt som de hadde etterlatt seg. Andre fant fremmede familier som nå bodde der.\n\nI 2004 stemte innbyggerne på Kypros om en FN-plan for gjenforening. Tyrkisk-kyprioter stemte ja. Gresk-kyprioter stemte nei - 76 prosent mot (Iversen, 2026). Kort etter trådte Kypros inn i EU: En delt øy i en union som skulle stå for samling. Ironien er ikke til å ta feil av.\n\nForhandlingene fortsetter i dag, uten resultat. Kypros er det eneste EU-landet med en fremmed militærmakt stasjonert på territoriet, og den eneste delte hovedstaden i Europa. Som [Berlinmuren](/historie/den-kalde-krigen/berlinmuren) minner oss om - slike skillelinjer kan falle raskt. Men som [Peace Lines i Belfast](/historie/den-kalde-krigen/peace-lines-belfast) minner oss om - de kan også stå i generasjoner."
         },
         {
             "type": "component",
@@ -347,6 +347,17 @@
             "type": "component",
             "name": "CyprusPeaceTalks",
             "props": {}
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Iversen, J. (2026). *Kypros*. FN-sambandet. Hentet 22.07.2026 fra [fn.no/konflikter/kypros](https://www.fn.no/konflikter/kypros)",
+                    "Thuesen, N. P., Lundbo, S. & Fosshagen, K. (2026). *Kypros*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Kypros](https://snl.no/Kypros)",
+                    "Thuesen, N. P. & Lundbo, S. (2026). *Nord-Kypros*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Nord-Kypros](https://snl.no/Nord-Kypros)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -396,5 +407,5 @@
         }
     ],
     "createdDate": "2026-04-08T00:00:00Z",
-    "lastUpdated": "2026-04-08T00:00:00Z"
+    "lastUpdated": "2026-07-22T00:00:00Z"
 }
