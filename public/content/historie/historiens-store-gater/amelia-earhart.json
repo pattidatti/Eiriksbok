@@ -1,0 +1,206 @@
+{
+    "id": "amelia-earhart",
+    "title": "Hvor forsvant Amelia Earhart?",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "1937",
+    "category": "Historiens store gåter",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/historiens-store-gater/amelia-earhart-hero.webp",
+    "details": [
+        "Den 2. juli 1937 forsvant Amelia Earhart over Stillehavet på vei til den bittesmå øya Howland.",
+        "USAs største luft- og sjøsøk fant aldri flyet, og hun ble erklært død i 1939.",
+        "Tre teorier kjemper fortsatt: at hun krasjet og sank, strandet på Nikumaroro, eller ble tatt til fange.",
+        "En ekte uløst gåte lærer oss å skille sikre bevis fra spennende gjetting."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Klokka var over åtte om morgenen den 2. juli 1937, et sted høyt over Stillehavet. «En halv time drivstoff igjen, og ingen land i sikte», meldte Amelia Earhart på radioen (HISTORY.com Editors, 2025). Kort etter ble det stille. Verdens mest berømte kvinnelige flyger forsvant sporløst, og nesten hundre år senere vet vi fortsatt ikke sikkert hva som skjedde med henne."
+        },
+        {
+            "type": "image",
+            "src": "/images/historiens-store-gater/amelia-earhart-01.webp",
+            "alt": "Amelia Earhart står foran et sølvfarget propellfly på en flyplass på 1930-tallet",
+            "caption": "Amelia Earhart ble et forbilde for jenter over hele verden. Her foran flytypen hun brukte på den siste reisen."
+        },
+        {
+            "type": "header",
+            "text": "Kvinnen som fløy inn i historien"
+        },
+        {
+            "type": "text",
+            "content": "Amelia Earhart ble født i USA i 1897 (Tandberg & Jarslett, 2025). Hun vokste opp i en tid da mange mente at flyging var noe for menn. Earhart var uenig. Allerede i 1928 ble hun den første kvinnen som krysset Atlanterhavet i fly, den gangen som passasjer (Tandberg & Jarslett, 2025). Men hun ville gjøre det selv. I 1932 ble hun den første kvinnen som fløy alene over Atlanterhavet, fra Canada til Nord-Irland, på nesten femten timer (Tandberg & Jarslett, 2025). Tre år senere fløy hun alene fra Hawaii til California, over et hav der flere piloter før henne hadde omkommet. Hver rekord gjorde henne mer berømt. Hun ble et levende bevis på at kvinner kunne gjøre akkurat det samme som menn, og navnet hennes sto i avisene over hele verden. Nettopp derfor ble forsvinningen hennes en verdensnyhet."
+        },
+        {
+            "type": "header",
+            "text": "Den siste etappen"
+        },
+        {
+            "type": "text",
+            "content": "Sommeren 1937 ga Earhart seg i kast med sitt største prosjekt: å fly rundt hele jordkloden, en tur på rundt 46 000 kilometer langs ekvator (Tandberg & Jarslett, 2025). Med seg hadde hun navigatøren Fred Noonan og et sølvfarget fly, en Lockheed Electra (HISTORY.com Editors, 2025). Bit for bit krysset de kloden. Så, den 2. juli, lettet de fra byen Lae på Ny-Guinea for den vanskeligste etappen av alle: nesten 4000 kilometer over åpent hav til en bitte liten øy som het Howland (Gonzalez, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "Howland er ikke stort. Øya er bare 2,4 kilometer lang og 0,8 kilometer bred, og hever seg knapt seks meter over havet (Encyclopædia Britannica, u.å.). Den ligger langt ute i Stillehavet, rundt 2600 kilometer sørvest for Hawaii (Encyclopædia Britannica, u.å.). Å finne en så liten flekk etter mange timer over ensformig hav var nesten som å treffe blink med bind for øynene. Noonan navigerte etter solen, klokka og fart, men bare en liten feil ville føre dem langt bort fra målet. Et kystvaktskip, Itasca, lå ved Howland og sendte røyksignaler og radiobeskjeder for å lose dem inn (HISTORY.com Editors, 2025). Men radioforbindelsen som skulle peile flyet inn, virket ikke som den skulle, og de to fant aldri hverandre (Gonzalez, u.å.). Prøv selv hvor små marginene var i mikrospillet under."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "earhart-stillehavet-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Da radioen stilnet"
+        },
+        {
+            "type": "text",
+            "content": "Etter hvert som timene gikk, ble meldingene fra Earhart mer og mer bekymrede. Hun fortalte at drivstoffet holdt på å ta slutt, og at hun ikke så land noe sted (HISTORY.com Editors, 2025). Så forsvant stemmen hennes for godt. USAs kystvakt og marine satte i gang det som ble det dyreste luft- og sjøsøket i amerikansk historie fram til da (Gonzalez, u.å.). Skip og fly finkjemmet enorme havområder rundt Howland i dagevis. De fant ingenting: ikke et vrak, ikke en oljeflekk, ikke en livbåt. Til slutt måtte de gi opp. Halvannet år senere, i 1939, ble Amelia Earhart offisielt erklært død (Gonzalez, u.å.). En kvinne som hadde satt rekord etter rekord, var plutselig bare borte, uten en eneste bit av et svar."
+        },
+        {
+            "type": "image",
+            "src": "/images/historiens-store-gater/amelia-earhart-02.webp",
+            "alt": "Et gammelt kystvaktskip søker over et vidt, tomt Stillehav under en overskyet himmel",
+            "caption": "Det store søket dekket enorme havområder, men fant aldri et eneste spor av flyet."
+        },
+        {
+            "type": "header",
+            "text": "Tre teorier, ingen fasit"
+        },
+        {
+            "type": "text",
+            "content": "Når vi ikke finner svar, begynner vi å gjette. Et tomrom uten fakta fylles fort med historier, noen mer sannsynlige enn andre. Rundt Earhart-gåten har det vokst fram tre hovedteorier, og de illustrerer godt hvordan historikere må veie ulike spor mot hverandre. Den første, og den de fleste forskere støtter, er enkel: flyet gikk tomt for drivstoff og styrtet i havet, der det sank til bunns (Gonzalez, u.å.). Det passer med de siste radiomeldingene, og det forklarer hvorfor ingen fant noe på overflaten."
+        },
+        {
+            "type": "text",
+            "content": "Den andre teorien peker mot en annen øy, Nikumaroro, noen mil unna. Kanskje klarte de å nødlande der og overleve en stund som skipbrudne. I 1940 fant folk faktisk menneskeknokler på øya, ved en gammel bålplass (Hartigan, 2018). En lege mente den gang at det måtte være en mann. Men i 2018 gikk en forsker gjennom de samme målene på nytt og konkluderte med at knoklene passet Earhart bedre enn 99 av 100 andre mennesker (Hartigan, 2018). Det er et sterkt spor, men ikke et sikkert bevis. Den tredje teorien er løsere: at Earhart egentlig var en hemmelig amerikansk spion som ble tatt til fange av Japan (Gonzalez, u.å.). Det finnes lite som holder for denne, men den lever likevel videre i bøker og filmer. Under kan du selv veie sporene mot hverandre."
+        },
+        {
+            "type": "component",
+            "name": "EarhartSpor",
+            "props": {
+                "title": "Vei sporene etter Earhart"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor gåten lever videre"
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som skjedde da du sorterte sporene: to av teoriene ble ganske sterke, men ingen av dem nådde helt fram til et sikkert svar. Det er selve kjernen i gåten. Så lenge ingen finner vraket av flyet eller kroppene igjen, kan vi ikke være helt sikre. Nettopp derfor hører Earhart-saken hjemme blant [Historiens store gåter](/historie/historiens-store-gater/oversikt)."
+        },
+        {
+            "type": "text",
+            "content": "Saken ligner på andre uløste forsvinninger, som [de norrøne som forsvant fra Grønland](/historie/historiens-store-gater/gronlands-gate): når kildene tier, må vi tolke de sporene vi har, og være ærlige om hva vi ikke vet. Og akkurat som med [Antikythera-mekanismen](/historie/historiens-store-gater/antikythera-mekanismen) kan et nytt funn når som helst skyve gåten et lite steg videre. Den dag i dag drar ekspedisjoner ut i Stillehavet for å lete, både i havdypet ved Howland og på stranden ved Nikumaroro. Det Earhart-gåten lærer oss best, er kanskje dette: et ærlig «vi vet ikke sikkert» er et bedre svar enn en spennende historie som ikke tåler kildekritikk."
+        },
+        {
+            "type": "image",
+            "src": "/images/historiens-store-gater/amelia-earhart-03.webp",
+            "alt": "En øde, flat korall-øy med hvit strand og noen palmer midt i et blått hav",
+            "caption": "Øya Nikumaroro. Var det her Earhart og Noonan strandet? Forskerne er fortsatt uenige."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilken dato forsvant Amelia Earhart, og hvor var hun på vei?",
+                    "Hva var Earhart kjent for før den siste reisen? Nevn minst én bragd.",
+                    "Hvor stor er øya Howland, og hvorfor gjorde størrelsen den så vanskelig å finne?",
+                    "Hva fant folk på øya Nikumaroro i 1940?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor selv en liten feil i kursen kunne føre til at flyet bommet på Howland med mange kilometer.",
+                    "Knoklene fra Nikumaroro blir kalt et sterkt spor, men ikke et sikkert bevis. Hva er forskjellen på et spor og et sikkert bevis?",
+                    "I signaturkomponenten ble to teorier sterke, men ingen nådde helt fram. Hvorfor er det umulig å være helt sikker uten å finne vraket?",
+                    "Hvorfor tror du den løse teorien om at Earhart var spion, lever videre selv om det finnes lite som støtter den?"
+                ],
+                "gaaVidere": [
+                    "Skriv en kort logg fra cockpiten slik du forestiller deg de siste timene før radioen stilnet.",
+                    "Søk opp én nettside om Earhart-gåten. Bruk kildekritikk: hvem står bak siden, og hvor mye kan du stole på den?",
+                    "Earhart-saken viser at et ærlig «vi vet ikke» kan være et godt svar. Finn et annet spørsmål, i historie eller i nyhetene, der det beste svaret foreløpig er «vi vet ikke sikkert»."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvor var Amelia Earhart på vei da hun forsvant 2. juli 1937?",
+                        "options": [
+                            "Fra Hawaii til California",
+                            "Fra Lae på Ny-Guinea til øya Howland",
+                            "Over Atlanterhavet mot Nord-Irland",
+                            "Fra Nikumaroro til Japan"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Den siste etappen gikk fra Lae på Ny-Guinea, nesten 4000 kilometer over åpent hav til den lille øya Howland (Gonzalez, u.å.)."
+                    },
+                    {
+                        "question": "Hvorfor var Howland så vanskelig å finne fra lufta?",
+                        "options": [
+                            "Øya var dekket av tåke hele året",
+                            "Øya lå i et forbudt luftrom",
+                            "Øya er bare rundt 2,4 kilometer lang og hever seg knapt over havet",
+                            "Øya flyttet på seg med havstrømmene"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Howland er bare 2,4 kilometer lang og 0,8 kilometer bred, og hever seg knapt seks meter over havet (Encyclopædia Britannica, u.å.)."
+                    },
+                    {
+                        "question": "Hva er den teorien de fleste forskere støtter?",
+                        "options": [
+                            "At flyet gikk tomt for drivstoff og sank i havet",
+                            "At Earhart ble tatt til fange av Japan",
+                            "At hun landet trygt og skiftet navn",
+                            "At flyet ble truffet av lynet"
+                        ],
+                        "correctIndex": 0,
+                        "explanation": "Den mest støttede teorien er at flyet gikk tomt for drivstoff og styrtet i havet, der det sank (Gonzalez, u.å.). Det passer med de siste radiomeldingene."
+                    },
+                    {
+                        "question": "Hva viste re-analysen av knoklene fra Nikumaroro i 2018?",
+                        "options": [
+                            "At knoklene helt sikkert tilhørte en mann",
+                            "At målene passet Earhart bedre enn 99 av 100 andre mennesker",
+                            "At knoklene var mye eldre enn 1937",
+                            "At det ikke var menneskeknokler i det hele tatt"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "En forsker gikk gjennom de gamle målene på nytt i 2018 og fant at de passet Earhart bedre enn 99 % av folk. Et sterkt spor, men ikke et sikkert bevis (Hartigan, 2018)."
+                    },
+                    {
+                        "question": "Hva er hovedpoenget artikkelen vil lære oss om uløste gåter?",
+                        "options": [
+                            "At den mest spennende historien alltid er sann",
+                            "At vi aldri kan lære noe av historien",
+                            "At et ærlig «vi vet ikke sikkert» kan være bedre enn en historie som ikke tåler kildekritikk",
+                            "At bare øyenvitner teller som bevis"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Så lenge vraket ikke er funnet, er saken uløst. Å være ærlig om hva vi ikke vet, er kjernen i god kildekritikk."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Tandberg, E. & Jarslett, Y. (2025). *Amelia Earhart*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Amelia_Earhart](https://snl.no/Amelia_Earhart)",
+                    "Gonzalez, N. (u.å.). *The Disappearance of Amelia Earhart*. Encyclopædia Britannica. Hentet 22.07.2026 fra [britannica.com](https://www.britannica.com/story/the-disappearance-of-amelia-earhart)",
+                    "HISTORY.com Editors. (2025). *Amelia Earhart disappears*. HISTORY. Hentet 22.07.2026 fra [history.com](https://www.history.com/this-day-in-history/july-2/amelia-earhart-disappears)",
+                    "Hartigan, R. (2018). *Amelia Earhart's Bones May Have Been Discovered in 1940*. National Geographic. Hentet 22.07.2026 fra [nationalgeographic.com](https://www.nationalgeographic.com/history/article/amelia-earhart-bones-forensic-analysis)",
+                    "Encyclopædia Britannica. (u.å.). *Howland Island*. Encyclopædia Britannica. Hentet 22.07.2026 fra [britannica.com/place/Howland-Island](https://www.britannica.com/place/Howland-Island)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

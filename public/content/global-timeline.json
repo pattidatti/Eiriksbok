@@ -7247,6 +7247,25 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "amelia-earhart",
+      "title": "Hvor forsvant Amelia Earhart?",
+      "description": "I 1937 forsvant verdens mest berømte kvinnelige flyger over Stillehavet på vei til en bittesmå øy. Nesten hundre år senere kjemper tre teorier fortsatt om svaret.",
+      "startDate": 1937,
+      "endDate": null,
+      "displayDate": "1937",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/amelia-earhart",
+      "tags": [
+        "historie",
+        "nyere tid",
+        "kildekritikk",
+        "mysterier",
+        "luftfart"
+      ]
+    },
+    {
       "id": "konsentrasjonsleirene-sub-2",
       "title": "Krystallnatten",
       "description": "Massivt pogrom mot jøder; tusenvis sendes til leire.",
@@ -10308,7 +10327,7 @@
       "description": "Sovjetunionens fall og krigens slutt.",
       "startDate": 1985,
       "endDate": 1991,
-      "displayDate": "1985–1991",
+      "displayDate": "1985-1991",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "den-kalde-krigen",
