@@ -6,7 +6,7 @@
     "category": "Talemål",
     "year": "Fra hansatiden til i dag",
     "readTime": "11 min lesning",
-    "heroImage": "/images/dialekter/placeholder.webp",
+    "heroImage": "/images/dialekter/bergensk-hero.webp",
     "details": [
         "Bergensk er en av de svært få norske dialektene uten hunkjønn. Bergenseren sier solen og boken, ikke sola og boka.",
         "Skarre-r-en, kj-lyden som blir sj-lyd og massevis av tyske ord kom til byen gjennom hansakjøpmennene på Bryggen.",
@@ -76,7 +76,7 @@
         },
         {
             "type": "image",
-            "src": "/images/dialekter/placeholder.webp",
+            "src": "/images/dialekter/bergensk-01.webp",
             "alt": "Bryggen i Bergen med de gamle trehusene speilet i vannet",
             "caption": "På Bryggen bodde hansakjøpmennene i flere hundre år. Kontakten med tysk og resten av Europa formet både grammatikken, lydene og ordforrådet i bergensk."
         },

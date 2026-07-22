@@ -766,7 +766,7 @@
               "id": "sosiolekt",
               "title": "Sosiolekt: Snakker vi ulikt fordi vi er ulike?",
               "description": "En sosiolekt er talemålet til en sosial gruppe. Lær om østkant og vestkant i Oslo, om standardtalemål, og om hvordan du selv bytter stil etter hvem du er sammen med.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/dialekter/sosiolekt-hero.webp",
               "tags": [
                 "dialekt",
                 "talemål",
@@ -781,7 +781,7 @@
               "id": "bergensk",
               "title": "Bergensk: Byen med sin egen språklyd",
               "description": "Bergensk er en av de få dialektene uten hunkjønn. Lær skarre-r, kj-sj-sammenfall og hansa-ordene, og hør forskjellen på penbergensk og gatebergensk.",
-              "image": "/images/dialekter/placeholder.webp",
+              "image": "/images/dialekter/bergensk-hero.webp",
               "tags": [
                 "dialekt",
                 "talemål",
@@ -797,7 +797,7 @@
               "id": "etnolekt",
               "title": "Etnolekt og multietnolekt: Språket som viser hvem du henger med",
               "description": "En etnolekt viser hvilken gruppe du hører til. En multietnolekt er ett felles ungdomsspråk bygd av lånord fra mange språk. Lær hva «kebabnorsk» egentlig er, og hvorfor det ikke er dårlig norsk.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/dialekter/etnolekt-hero.webp",
               "tags": [
                 "dialekt",
                 "talemål",

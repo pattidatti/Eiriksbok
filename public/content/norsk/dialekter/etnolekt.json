@@ -6,7 +6,7 @@
     "category": "Talemål",
     "year": "1990-tallet",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/dialekter/etnolekt-hero.webp",
     "details": [
         "En etnolekt er den felles måten en etnisk gruppe snakker et språk på. Den signaliserer at du hører til gruppen.",
         "En multietnolekt er ett felles ungdomsspråk bygd av lånord fra mange språk. Den mest kjente i Norge blir kalt «kebabnorsk».",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/etnolekt-01.webp",
             "alt": "To ungdommer prater sammen på en buss i Oslo",
             "caption": "Samme by, men et talemål med ord fra mange språk. Denne måten å snakke på har vokst fram blant ungdom i flerkulturelle bydeler."
         },
@@ -87,7 +87,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/etnolekt-02.webp",
             "alt": "Ungdom med ulik bakgrunn samlet på et torg i en by",
             "caption": "Multietnolekten vokser fram der ungdom med mange forskjellige bakgrunner møtes. Ordene kommer fra mange språk, men blir til ett felles talemål."
         },
@@ -136,7 +136,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/etnolekt-03.webp",
             "alt": "En ungdom som snakker med venner og med en laerer i to ulike situasjoner",
             "caption": "Den som snakker multietnolekt, kan også bytte til vanlig norsk. Å eie flere talemål og velge mellom dem er en styrke."
         },

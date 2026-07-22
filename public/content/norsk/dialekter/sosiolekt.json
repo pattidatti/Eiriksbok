@@ -6,7 +6,7 @@
     "category": "Talemål",
     "year": "1800-tallet",
     "readTime": "8 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/dialekter/sosiolekt-hero.webp",
     "details": [
         "En sosiolekt er talemålet til en sosial gruppe. Her er det ikke stedet som skiller folk, men bakgrunn, utdanning og miljø.",
         "I mange norske byer finnes det minst to sosiolekter. Oslo øst og vest er det tydeligste eksempelet.",
@@ -23,7 +23,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/sosiolekt-01.webp",
             "alt": "To ungdommer på en trikk i Oslo som prater sammen",
             "caption": "Samme by, samme trikk, men litt ulikt talemål. En sosiolekt skiller sosiale grupper, ikke geografiske områder."
         },
@@ -78,7 +78,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/sosiolekt-02.webp",
             "alt": "Gammel fabrikkbygning ved Akerselva i Oslo på 1800-tallet",
             "caption": "Da industrien vokste på 1800-tallet, flyttet folk sammen etter hvor de jobbet og hvor mye de tjente. Talemålene fulgte skillet."
         },
