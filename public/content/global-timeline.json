@@ -10491,6 +10491,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "etnolekt",
+      "title": "Etnolekt og multietnolekt: Språket som viser hvem du henger med",
+      "description": "En etnolekt viser hvilken gruppe du hører til. En multietnolekt er ett felles ungdomsspråk bygd av lånord fra mange språk. Lær hva «kebabnorsk» egentlig er, og hvorfor det ikke er dårlig norsk.",
+      "startDate": 1990,
+      "endDate": null,
+      "displayDate": "1990-tallet",
+      "type": "lesson",
+      "subjectId": "norsk",
+      "topicId": "dialekter",
+      "link": "/norsk/dialekter/etnolekt",
+      "tags": [
+        "dialekt",
+        "talemål",
+        "etnolekt",
+        "multietnolekt",
+        "språk og identitet",
+        "kebabnorsk"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "siste-skanse-sub-2",
       "title": "Nelson Mandela løslates",
       "description": "Begynnelsen på slutten for Apartheid.",

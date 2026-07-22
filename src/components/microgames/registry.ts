@@ -11,6 +11,7 @@ const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
 const OsloSosiolekt3D = lazy(() => import('./OsloSosiolekt3D'));
+const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
 const DelawareKrysning3D = lazy(() => import('./DelawareKrysning3D'));
@@ -729,6 +730,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./OsloSosiolekt3D'),
         Component: OsloSosiolekt3D as never,
+    },
+    'multietnolekt-gata-3d': {
+        id: 'multietnolekt-gata-3d',
+        title: 'Multietnolekt-gata: én gate, mange språk',
+        description:
+            'Hent ordene fra tre språkhus — arabisk, urdu og punjabi, og engelsk — inn til det felles torget, og se hvordan lånord fra mange språk blir til ett felles ungdomsspråk.',
+        estimatedSeconds: 140,
+        loader: () => import('./MultietnolektGata3D'),
+        Component: MultietnolektGata3D as never,
     },
     'vikingskip-3d': {
         id: 'vikingskip-3d',
