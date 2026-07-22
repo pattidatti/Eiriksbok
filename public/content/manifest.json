@@ -2674,6 +2674,21 @@
               ],
               "createdDate": "2026-07-21T00:00:00Z",
               "lastUpdated": "2026-07-21T20:48:38+02:00"
+            },
+            {
+              "id": "amelia-earhart",
+              "title": "Hvor forsvant Amelia Earhart?",
+              "description": "I 1937 forsvant verdens mest berømte kvinnelige flyger over Stillehavet på vei til en bittesmå øy. Nesten hundre år senere kjemper tre teorier fortsatt om svaret.",
+              "image": "/images/historiens-store-gater/amelia-earhart-hero.webp",
+              "tags": [
+                "historie",
+                "nyere tid",
+                "kildekritikk",
+                "mysterier",
+                "luftfart"
+              ],
+              "createdDate": "2026-07-22T00:00:00Z",
+              "lastUpdated": "2026-07-22T20:53:26.906Z"
             }
           ]
         },
@@ -3878,7 +3893,7 @@
                 "symbol"
               ],
               "createdDate": "2025-12-21T13:37:14+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-22T22:53:23+02:00"
             },
             {
               "id": "veien-mot-slutt",

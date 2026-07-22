@@ -661,6 +661,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Byggegaaten: lazy(() => import('./content/interactive/Byggegaaten').then(m => ({ default: m.Byggegaaten }))),
     AntikytheraDial: lazy(() => import('./content/interactive/AntikytheraDial').then(m => ({ default: m.AntikytheraDial }))),
     ForklaringsVekt: lazy(() => import('./content/interactive/ForklaringsVekt').then(m => ({ default: m.ForklaringsVekt }))),
+    EarhartSpor: lazy(() => import('./content/interactive/EarhartSpor').then(m => ({ default: m.EarhartSpor }))),
 
     // Handel og infrastruktur
     GlobalProductionDots: lazy(() => import('./content/interactive/infrastruktur/GlobalProductionDots').then(m => ({ default: m.GlobalProductionDots }))),
