@@ -82,6 +82,7 @@ const MatreglerBord3D = lazy(() => import('./MatreglerBord3D'));
 const Rikssamlingen3D = lazy(() => import('./Rikssamlingen3D'));
 const RismarkOgMakt3D = lazy(() => import('./RismarkOgMakt3D'));
 const Berlinmuren3D = lazy(() => import('./Berlinmuren3D'));
+const FluktenOverMuren3D = lazy(() => import('./FluktenOverMuren3D'));
 const Falltaarnet3D = lazy(() => import('./Falltaarnet3D'));
 const JapanMirakelBy3D = lazy(() => import('./JapanMirakelBy3D'));
 const StormingenAvBastillen3D = lazy(() => import('./StormingenAvBastillen3D'));
@@ -631,6 +632,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Berlinmuren3D'),
         Component: Berlinmuren3D as never,
+    },
+    'flukten-over-muren': {
+        id: 'flukten-over-muren',
+        title: 'Flukten over Muren',
+        description:
+            'Førstepersons natt-flukt over dødsstripa i Berlin: hold inne for å løpe mot lyset i Vest-Berlin, frys når lyskasterne sveiper mot deg, og hold deg unna patruljevakta. Signalgjerde, alarmnivå og daggry-nedtelling - eleven kjenner på kroppen hvorfor stripa var konstruert for at ingen skulle komme over.',
+        estimatedSeconds: 150,
+        loader: () => import('./FluktenOverMuren3D'),
+        Component: FluktenOverMuren3D as never,
     },
     'rikssamlingen-3d': {
         id: 'rikssamlingen-3d',

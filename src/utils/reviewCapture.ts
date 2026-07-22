@@ -6,6 +6,7 @@ import { useReviewStore } from '../stores/useReviewStore';
 import type { ConceptItem } from '../hooks/useConcepts';
 import type { QuizQuestion } from '../types';
 import { djb2Hash, normalizeText, slugifyTerm, todayLocal } from './reviewScheduler';
+import { getQuizCorrectAnswer } from './quizUtils';
 
 const conceptId = (term: string) => `concept:${slugifyTerm(term)}`;
 export const quizItemId = (question: string) => `quiz:${djb2Hash(normalizeText(question))}`;
@@ -56,10 +57,7 @@ export const captureQuizAnswer = (question: QuizQuestion, wasCorrect: boolean) =
             return;
         }
         // Frys en kopi av spørsmålet slik at øvelsen kan gjenskapes senere
-        const answer =
-            typeof question.correctAnswer === 'number'
-                ? question.options[question.correctAnswer]
-                : question.answer || '';
+        const answer = getQuizCorrectAnswer(question);
         if (!answer) return;
         store.addItem(
             {

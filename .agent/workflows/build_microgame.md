@@ -7,7 +7,8 @@ description: Lag et rikt, direkte-interaktivt 3D-mikrospill som kjører inline i
 Bruk denne skillet når du skal lage et **mikrospill** - et lett, selvstendig 3D-spill som kjører
 **inline** i en artikkel eller et læringsstisteg. Et mikrospill er en kort, romlig "aha"-opplevelse
 på 1-3 minutter der eleven **interagerer direkte med en 3D-verden**: klikker objekter, drar dem på
-plass, justerer en spak, og ser verdenen forvandle seg.
+plass, justerer en spak - eller løper, sikter, forsvarer og flykter i sanntid. Målet er at eleven
+blir SUGD INN i 3D-opplevelsen, ikke at de betrakter en modell.
 
 ---
 
@@ -45,6 +46,32 @@ hverandre"). Det er ÉN gyldig byggekloss, men ikke målet. Sikt høyere:
   `VikingShip3D` bygger eleven skipet selv - klinker bordganger, reiser masten, og morfer skroget
   mellom langskip og knarr - og kjenner dermed på kroppen hvorfor klinkbygging + kjøl gjorde det
   samme håndverket til både krigsskip og handelsskip.
+- **Lag et SPILL, ikke en utstilling.** Et diorama eleven klikker riktige ting i er en quiz med
+  3D-pynt. Et spill har minst ett av disse: sanntid (verden beveger seg uansett hva eleven gjør),
+  press (tid, fare, ressurs som må doseres), og KONSEKVENS av å feile (en ekte fail-state med
+  "prøv igjen", ikke bare manglende poeng). De to referansespillene `IngenmanslandMG` (forsvar
+  stillingen mot bølger av soldater) og `FluktenOverMuren3D` (kryss dødsstripa i førsteperson,
+  frys når lyskasterne jakter) har alle tre - og det er derfor de suger eleven inn.
+
+### Velg opplevelses-arketype FØR mekanikk
+
+Bestem først hva slags OPPLEVELSE emnet fortjener, deretter hvilke primitiver som bygger den.
+Minst annenhver artikkel bør få en sanntids-form - ikke fordi action alltid er riktig, men fordi
+rolig manipulasjon er default-fella generatoren faller i:
+
+| Opplevelse | Eleven er... | Kjerne-primitiver | Eksempel |
+|---|---|---|---|
+| **Forsvar posisjonen** | inne i scenen, under angrep | `PovCamera` + `AimPlane` + `Mover` + `useWaveFlow` | `IngenmanslandMG` |
+| **Kryss/flukt under press** | på vei gjennom fiendtlig terreng | `PovCamera` + `useMeter` + `useGameClock` + `LoseScreen` | `FluktenOverMuren3D` |
+| **Overlev/hold ut** | presset av et miljø som eskalerer | `useGameClock` + `useMeter` + `useRandomPulse` | (åpen) |
+| **Reager i tide** | vaktpost/operatør som må time riktig | `useGameClock` + `Mover` + `ScreenFlash` | (åpen) |
+| **Bygg/monter** | håndverker | `Draggable` + `Hotspot` + `Rotatable` | `VikingShip3D` |
+| **Styr/naviger** | fører av noe (skip, vogn, maskin) | `Rotatable`/`SceneSlider` + `Mover` + `DataReadout` | (åpen) |
+| **Utforsk/avdekk** | oppdager | `Hotspot` + `Interactive` + `CameraRig` | `TrojaUtgravning3D` |
+| **Morf-og-se** | tenker som sammenligner modeller | `CompareToggle` + `SceneSlider` | `TidensFormer3D` |
+
+Regel: **klikk-på-N-riktige-ting i et stillestående diorama er IKKE en gyldig arketype lenger.**
+Hvis utkastet ditt koker ned til det, velg en arketype fra tabellen og bygg om.
 
 ### Knapper og 3D-klikk utelukker ikke hverandre
 
@@ -62,6 +89,24 @@ malplassert ut. **Bestem iscenesettelsen før du fyller den med deler:** hva er 
 for dette emnet? En klode som svever i kosmos? Et objekt i et tomt rom? En lysstråle i mørket? Velg
 staging som bærer emnet, så blir resten immersivt nesten gratis. Se `TidensFormer3D` - eskatologi som
 en levende klode i et lysende kosmos, ikke en haug på en plen.
+
+### Velg kameraperspektiv bevisst
+
+Kameraet avgjør om eleven er TILSKUER eller DELTAKER. Tre gyldige valg - velg med hensikt:
+
+1. **Førsteperson (`PovCamera`, controls av):** eleven ER i scenen. Bruk når emnet handler om å
+   oppleve noe på kroppen: sitte bak maskingeværet, krysse dødsstripa, stå i folkemengden. Dette er
+   det sterkeste innlevelses-verktøyet i kassa - og var lenge nesten ubrukt. En CSS-silhuett i
+   bunnkanten (et gevær, hender, en åre) forsterker kroppsfølelsen (se `IngenmanslandMG`).
+2. **Cinematisk/styrt (`CameraRig`, controls av):** innflyvning, fokus-pull, klatre-over-finale.
+   Bruk til åpning og payoff.
+3. **Orbit-diorama (default):** riktig når eleven skal manipulere og betrakte et objekt/landskap.
+   Men vit at dette er tilskuer-modus - ikke velg det av vane.
+
+**Scene-stemning følger emnet, ikke UI-et.** Rammen (scaffold) er alltid lys - men selve 3D-scenen
+kan være natt, tåke eller uvær når emnet krever det (flukt om natten, skyttergraver, storm). Både
+`IngenmanslandMG` og `FluktenOverMuren3D` har mørke scener i lys ramme - det er riktig. Det
+"Lys stil alltid"-regelen forbyr, er mørk UI/ramme og grunnløs grimdark, ikke natt i historien.
 
 ---
 
@@ -128,6 +173,63 @@ Tre kit-primitiver gir hele klasser av ikke-klikk-mekanikk. Bruk dem framfor end
   <AimLauncher position={[0,0.6,6]} targets={[{id:'mur',position:[0,1.2,-10],radius:1.4}]}
       onHit={score} onMiss={shake}><CatapultMesh /></AimLauncher>
   ```
+
+### Sanntidslaget - action, press og konsekvens
+
+Destillert fra `IngenmanslandMG` og `FluktenOverMuren3D`. Dette er primitivene som gir et
+mikrospill PULS. De er like Chromebook-trygge som resten av kitet (analog input = hold + dra,
+ingen tastatur nødvendig, ingen fysikkmotor).
+
+**I scenen (3D):**
+- **`PovCamera`** - førstepersonskamera med pust (i ro) og løpe-bob (i bevegelse). Statisk post
+  via `position`, eller bevegelig via `positionRef` (spillet muterer refen i `useFrame` - ingen
+  re-render). Krever `canvas={{ controls: false }}`.
+  ```tsx
+  const camPos = useRef<[number, number, number]>([0, 1.6, 16]);
+  <PovCamera positionRef={camPos} lookAhead={[0, -0.28, -7]} moving={isRunning} />
+  ```
+- **`AimPlane`** - usynlig flate som fanger "hold inne + sikt" over hele scenen: `onHoldChange`
+  (avtrekker/løp), `onAim` (pekerposisjon i %, klar for `useCrosshair`), `hideCursor`, og
+  `followCamera` når kameraet selv flytter seg. Globale pointerup/blur-lyttere slipper alltid holdet.
+- **`Mover`** - enhet som beveger seg fra A til B i sanntid: gang-bob, `onArrive` (konsekvens!),
+  `onMove` (ref-trygg posisjon per frame for nærhets-/aggro-logikk), `hitArea` + `onHover`
+  (siktemål), og død-animasjon (`state="dying"`, `deathStyle="fall|sink|pop"`, `onDeathDone`).
+  Putt en kit-`Person`/`Boat`/`Cart` som barn. Ping-pong-patrulje: bytt `from`/`to` i `onArrive`.
+- **`Explosion`** - prosedyreanimert nedslag (glød + sjokkring + røyk + partikler), paletter
+  `fire|dust|spark`. Mount ved nedslag, unmount etter ~2,6 s.
+
+**Tilstand (DOM-siden, ref-trygge mot useFrame):**
+- **`useGameClock({ seconds, running, onExpire })`** - nedtelling: "nå muren før daggry",
+  "hold stillingen i 90 sekunder". Vis med `TimerPill`.
+- **`useMeter({ drainPerSecond, overloadAt, recoverTo, onOverload })`** - ressurs under press:
+  løpsvarme, alarmnivå, utholdenhet, panikk. `add()` er trygg fra `useFrame` OG klikk.
+  `onOverload` fyrer ÉN gang når måleren bikker - koble fail-staten dit. Vis med `MeterBar`,
+  kjenn den med `DangerVignette`. Doserings-valget ("tør jeg fortsette?") er spillets hjerte.
+- **`useRandomPulse({ running, minDelayMs, maxDelayMs, onPulse })`** - uforutsigbare hendelser
+  (artilleri, lyn, patruljer). Miljøet skal være fiendtlig uavhengig av elevens handlinger.
+- **`useWaveFlow({ totalWaves, onWave, onFinished })`** - bølgeprogresjon uten dobbel-fyring:
+  spillet kaller `notifyCleared()` når bølgen er tom.
+
+**Overlays (2D):**
+- **`useCrosshair()` + `Crosshair`** - eget sikte (`mil` eller `dot`), ref-basert (0 re-render).
+- **`ScreenFlash`** - munningsglimt/skade/lysglimt; fyres når `trigger`-telleren øker.
+- **`DangerVignette level={0..1}`** - rød puls fra kantene; koble til `useMeter.value` så eleven
+  FØLER faren uten å lese tall.
+- **`TimerPill`** / **`MeterBar`** - tid og ressurs, synlig og lesbart.
+- **`LoseScreen`** - speilbildet av `WinScreen`: saklig, lærerik fail-state med "Prøv igjen".
+  **Et sanntidsspill uten tap-tilstand er ikke ferdig.** Formuler tapet historisk ("Vaktene hadde
+  ordre om å..."), aldri hånlig.
+
+**Sanntids-mønsteret** (se `FluktenOverMuren3D` for helheten):
+1. All per-frame-logikk bor i én scene-komponent med refs (`posRef`, `movingRef`); DOM-staten er
+   grov (`idle | playing | caught | won`).
+2. Remount scenen per forsøk med `key={attempt}` - da nullstiller refs og enheter seg selv.
+3. Deteksjon/nærhet regnes i scene-`useFrame` og rapporteres via ref-trygge callbacks
+   (`meter.add`, `onReach`); aldri setState per frame.
+4. Fiender/farer skal ikke være allvitende: la dem reagere på det de faktisk "ser" (spilleren i
+   en lyskjegle, nær en vakt) - det gjør spillet lesbart og rettferdig.
+5. Balans-krav: en som ignorerer mekanikken skal TAPE, en som bruker den skal VINNE. Verifiser
+   begge med selvspill (se sjekklista).
 
 ### Input-widgets under vinduet
 - **`ChoiceRow`** - vannrett rad med valgkort (done/active/locked). **`StepTracker`** - "Steg X av N".
@@ -292,7 +394,12 @@ som tjener læringsmålet - ikke alt på en gang.
 - **`prefers-reduced-motion`** respekteres (ingen auto-rotasjon). Kontrollene under vinduet er tastatur-tilgjengelige; gi alltid en knapp/slider-vei i tillegg til rene 3D-klikk der det er mulig.
 
 ### Mekanikk-arketyper - bryt ut av «klikk tre ting»
-Velg en form som matcher emnet, ikke alltid den samme:
+Velg en form som matcher emnet, ikke alltid den samme. (Se også opplevelses-arketypene øverst -
+de fire sanntidsformene der er likestilte med disse, og skal velges MINST like ofte.)
+- **Forsvar posisjonen** (IngenmanslandMG): fiender kommer i bølger, eleven sikter/holder/doserer. (`PovCamera` + `AimPlane` + `Mover` + `useWaveFlow`)
+- **Kryss under press** (FluktenOverMuren3D): kom deg gjennom et fiendtlig rom, frys/løp-rytme, alarm og tid. (`PovCamera` + `useMeter` + `useGameClock`)
+- **Overlev/hold ut:** miljøet eskalerer (`useRandomPulse`), eleven prioriterer ressurser til tiden er ute.
+- **Reager i tide:** vent, les mønsteret, handle i riktig øyeblikk - straff for både for tidlig og for sent.
 - **Bygg/monter** (VikingShip): dra deler på plass, klikk for å føye til, se det reise seg. (`Draggable` + `Hotspot`)
 - **Rute/naviger:** legg en vei/forbindelse fra A til B (handelsrute, kabel, akvedukt). (`Connector`)
 - **Vri/still-inn:** drei et ratt/spak/solur til riktig vinkel. (`Rotatable`)
@@ -335,6 +442,13 @@ Velg en form som matcher emnet, ikke alltid den samme:
   fler-stegs), men hold hver enkelt åpenbar. Mekanikken skal være læringsmålet, ikke pynt.
 - **Norsk for en 14-åring.** Korte setninger. Riktige tegn (å, ø, æ). Ingen em-dash/tankestrek.
 - **Unik mekanikk.** Ikke kopier et eksisterende spills mekanikk; bygg en ny, tilpasset læringsmålet.
+- **Primærinteraksjonen skjer i 3D-vinduet.** DOM-knapper/slidere under vinduet er STØTTE, aldri
+  hovedspillet. Hvis 3D-scenen bare illustrerer valg som tas i knapper, er det ikke et mikrospill.
+- **Noe må stå på spill.** Sanntidsformer krever ekte fail-state (`LoseScreen` + prøv igjen).
+  Rolige manipulasjonsformer krever som minimum synlig konsekvens av feil valg (noe velter,
+  kollapser, går tapt) - ikke bare fravær av suksess.
+- **Kamera med hensikt.** Velg tilskuer (orbit) eller deltaker (`PovCamera`) bevisst - se
+  kamera-seksjonen. Førsteperson skal ikke lenger være unntaket.
 - **Chromebook-først (~1366×768).** Toolkitet løser trackpad-utfordringen: `Hotspot` gir store mål,
   `Interactive`/`Draggable` har generøse klikk-/gripeflater og hover-cursor. Du kan derfor trygt
   bruke direkte 3D-interaksjon - men gi alltid store nok mål, og vurder en knapp/slider under vinduet
@@ -374,13 +488,32 @@ registeret. Du registrerer kun i `registry.ts`.
 
 ---
 
+## Sug-rubrikken - selvevaluering FØR PR
+
+Gi spillet 0-2 poeng per akse. **Under 7 av 10 totalt: bygg om før du åpner PR.** En artikkel uten
+mikrospill er bedre enn en med et 5-poengs-spill.
+
+| Akse | 0 | 1 | 2 |
+|---|---|---|---|
+| **Innlevelse** | Statisk diorama, tilskuer | Levende scene, atmosfære, lyd | Eleven er I scenen (`PovCamera`/styrt kamera) eller scenen reagerer kroppslig på eleven |
+| **Puls** | Verden venter på klikk | Noe beveger seg uavhengig av eleven | Sanntid + press (tid/fare/ressurs) som tvinger valg |
+| **Konsekvens** | Kan ikke feile | Feil gir synlig negativ respons | Ekte fail-state med gjenstart, og suksess føles fortjent |
+| **Ferdighet** | Ren gjenkjenning (velg riktig) | Presisjon/timing i enkeltgrep | Rytme/dosering/sikte som kan MESTRES og forbedres |
+| **Unikhet** | Ligner et eksisterende spill i biblioteket | Egen vri på kjent form | Egen mekanikk skreddersydd til emnet |
+
 ## Sjekkliste før du er ferdig
 
+- [ ] Opplevelses-arketype valgt bevisst (tabellen øverst) - ikke defaultet til klikk-diorama
+- [ ] Sug-rubrikken kjørt ærlig: minst 7 av 10
 - [ ] Iscenesettelsen matcher emnet (ikke standard grønn-åker-diorama uten grunn)
-- [ ] Bygd på `kit/` (`MicroGameScaffold` + minst én direkte 3D-interaksjon: `Interactive`/`Hotspot`/`Draggable`)
+- [ ] Bygd på `kit/` (`MicroGameScaffold` + minst én direkte 3D-interaksjon: `Interactive`/`Hotspot`/`Draggable`/`AimPlane`/`Mover`)
 - [ ] Lys ramme, 3D-vindu i full bredde, kontroller under vinduet (ikke oppå scenen)
 - [ ] Lyspære-øyeblikket er tydelig og oppnådd; mekanikken ER pedagogikken
 - [ ] Rik interaksjon - ikke bare en knapperad. Eleven tar i verdenen.
+- [ ] Sanntidsspill: fail-state finnes (`LoseScreen`), og balansen er SELVSPILT med Playwright:
+      en bot som ignorerer mekanikken taper, en som bruker den vinner. Legg et midlertidig
+      selvspill-skript i `.screenshots/` (se `FluktenOverMuren3D`-mønsteret: DEV-gated
+      `window.__<id>Debug` med samme info som eleven ser, bot leser den og spiller). Slett etterpå.
 - [ ] Chromebook-trygt: store nok klikk-/gripeflater (`hitArea`, romslig usynlig gripeboks på draggables)
 - [ ] **Geometri korrekt orientert:** master loddrett, seil vender mot seilretningen, rå ⟂ kjøl. Båter via kit-`Boat` (ikke hånd-bygd skrog)
 - [ ] **Land/sjø riktig:** båter på vann (`Seascape`), land-props på land; ingenting flyter eller synker
@@ -393,6 +526,17 @@ registeret. Du registrerer kun i `registry.ts`.
 - [ ] `npx tsc -b` + `npm run lint` rent
 
 **Referanse-standard:**
+- `src/components/microgames/FluktenOverMuren3D.tsx` - **sanntids-referansen**. Førstepersons
+  flukt over dødsstripa: `PovCamera` (positionRef + løpe-bob), `AimPlane` (hold = løp, peker =
+  styring, followCamera), jaktende lyskastere som bare ser BEVEGELSE (lesbar, rettferdig fare),
+  `Mover`-patruljevakt med `onMove`-nærhet, `useMeter`-alarm med `onOverload`-fail,
+  `useGameClock`-daggry, `DangerVignette`/`TimerPill`/`MeterBar`/`LoseScreen`, kamera-finale over
+  muren, og selvspill-verifisert balanse (blind bot tas på ~5 s, seende bot vinner). Bruk denne
+  som mal for alle sanntids-/action-former.
+- `src/components/microgames/IngenmanslandMG.tsx` - **forsvar posisjonen-referansen**: førsteperson
+  bak maskingeværet, bølger av `Mover`-lignende soldater, rate-basert skyting, løpsvarme-dosering,
+  artilleri via tilfeldige pulser, gradert `useShake` + munningsglimt. (Bygget før action-kitet -
+  nye spill bruker kit-primitivene i stedet for å hånd-rulle.)
 - `src/components/microgames/VikingShip3D.tsx` - **flaggskipet**. Viser hele bredden av toolkitet:
   `Draggable` (dra kjølen på plass), `Hotspot` (klink bordgangene, reis masten), `SceneSlider` (morf
   langskip ↔ knarr), fler-stegs forvandling, `CameraRig` (cinematisk innflyvning), `useAmbience`

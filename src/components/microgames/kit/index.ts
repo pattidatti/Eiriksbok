@@ -64,6 +64,23 @@ export { Burst } from './Burst';
 export { Particles, type AmbientParticlePreset } from './Particles';
 export { Impact, type ImpactPreset } from './Impact';
 export { useScore } from './useScore';
+export { Explosion } from './Explosion';
+
+// Action-laget: sanntid, press, konsekvens og innlevelse.
+// Destillert fra IngenmanslandMG - se build_microgame.md §"Sanntidslaget".
+export { useGameClock, useMeter, useRandomPulse } from './pressure';
+export { PovCamera, AimPlane } from './PovCamera';
+export { Mover, type MoverState } from './Mover';
+export { useWaveFlow } from './useWaveFlow';
+export { useCrosshair } from './useCrosshair';
+export {
+    Crosshair,
+    ScreenFlash,
+    DangerVignette,
+    TimerPill,
+    MeterBar,
+    LoseScreen,
+} from './action';
 
 // Lyd & kamera (immersjon)
 export { microSfx, type StepSoundEvent } from './sound';
