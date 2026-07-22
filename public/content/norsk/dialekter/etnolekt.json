@@ -1,0 +1,243 @@
+{
+    "id": "etnolekt",
+    "title": "Etnolekt og multietnolekt: Språket som viser hvem du henger med",
+    "layout": "rich",
+    "subject": "norsk",
+    "category": "Talemål",
+    "year": "1990-tallet",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "En etnolekt er den felles måten en etnisk gruppe snakker et språk på. Den signaliserer at du hører til gruppen.",
+        "En multietnolekt er ett felles ungdomsspråk bygd av lånord fra mange språk. Den mest kjente i Norge blir kalt «kebabnorsk».",
+        "Multietnolekten er ikke dårlig norsk. Den er et levende talemål som viser hvilket miljø du hører til, ikke hvor du kommer fra."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "To ungdommer står på en buss på vei hjem fra skolen i Oslo. «Jalla, baja, vi er sent ute», sier den ene. «Slapp av, den bussen er tært», svarer den andre og ler. En voksen ved siden av skjønner nesten alt, men ikke helt. Ordene «jalla», «baja» og «tært» står ikke i norske skolebøker. Likevel forstår de to hverandre helt fint. De snakker en variant av norsk som har vokst fram i de flerkulturelle bydelene, og som forteller noe viktig om hvem de er og hvem de henger med."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To ungdommer prater sammen på en buss i Oslo",
+            "caption": "Samme by, men et talemål med ord fra mange språk. Denne måten å snakke på har vokst fram blant ungdom i flerkulturelle bydeler."
+        },
+        {
+            "type": "text",
+            "content": "For å forstå hva de driver med, trenger vi to begreper: etnolekt og multietnolekt. Begge handler om at måten vi snakker på henger sammen med hvem vi er sammen med. En etnolekt er den felles måten en etnisk gruppe snakker et språk på (Neteland, 2025). Tenk på det som et lite kjennemerke: når du snakker på en bestemt måte, viser du samtidig at du hører til en bestemt gruppe."
+        },
+        {
+            "type": "header",
+            "text": "Hva er en etnolekt?"
+        },
+        {
+            "type": "text",
+            "content": "En etnolekt er ikke bare at én person snakker litt rart. Tre ting må være på plass før vi kaller noe en etnolekt (Neteland, 2025). For det første må språktrekkene være felles for hele gruppen, ikke bare hos ett menneske. For det andre må trekkene gå videre til neste generasjon, slik at også barna bruker dem. For det tredje bruker folk etnolekten til å vise at de hører til gruppen. Ofte oppstår trekkene fordi de første i gruppen lærte norsk som andrespråk. Da kan uttale, tonefall og ordvalg bli farget av morsmålet, og noen av disse trekkene lever videre."
+        },
+        {
+            "type": "text",
+            "content": "Vi trenger ikke gå til de nye bydelene for å finne etnolekter i Norge. Blant samer og kvener finnes det egne måter å snakke norsk på (Neteland, 2025). Noen bruker en slik etnolekt nettopp for å signalisere at de hører til samisk eller kvensk kultur, selv om selve språket kan ha blitt svekket gjennom fornorskingen. Talemålet blir da et bånd til bakgrunnen og historien. Vil du lese mer om hvordan talemål kan skille grupper i samme by, kan du se på artikkelen om [sosiolekt](/norsk/dialekter/sosiolekt)."
+        },
+        {
+            "type": "header",
+            "text": "Fra én gruppe til mange: multietnolekten"
+        },
+        {
+            "type": "text",
+            "content": "I de store byene har det vokst fram noe litt annet. En multietnolekt er en språkvariant med trekk fra mange ulike språk (Neteland, 2025). Forstavelsen «multi» betyr «flere», og det er nettopp poenget: dette er ikke knyttet til én etnisk gruppe, men til ungdom med mange forskjellige bakgrunner som møtes (Neteland & Skjekkeland, 2026). Den norske multietnolekten vokste fram fra 1990-tallet, særlig i flerkulturelle bydeler på Oslo øst (Neteland & Skjekkeland, 2026). Ordboka NAOB forklarer det slik: en multietnolekt oppstår når folk med ulik språklig og kulturell bakgrunn tar i bruk og snakker et nytt språk sammen (Det Norske Akademi for Språk og Litteratur, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Under kan du selv avkode noen av ordene. Trykk på hvert ord og se hva det betyr og hvilket språk det kommer fra. Legg merke til hvor mange ulike språk som gjemmer seg i en helt vanlig samtale."
+        },
+        {
+            "type": "component",
+            "name": "EtnolektDekoder",
+            "props": {
+                "title": "Avkod multietnolekten",
+                "intro": "Trykk på hvert ord for å se hva det betyr og hvilket språk det kommer fra."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Ord fra hele verden"
+        },
+        {
+            "type": "text",
+            "content": "Det tydeligste kjennetegnet på multietnolekten er lånordene. Mange av dem kommer fra urdu og punjabi, som mange med pakistansk bakgrunn snakker. «Baja» betyr kompis, og «tært» betyr kul eller fin (Neteland & Skjekkeland, 2026). Andre ord kommer fra arabisk, og noen fra persisk, berbisk, spansk, engelsk og språk fra Balkan (Neteland & Skjekkeland, 2026). Engelsk er ekstra viktig, fordi ungdom møter engelsk overalt i musikk, spill og videoer. Resultatet er en ordbok som ingen enkelt gruppe eier alene. Ordene kommer fra hele verden, men blir til ett felles ungdomsspråk."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Kjennetegn på multietnolekten",
+                "icon": "info",
+                "items": [
+                    "Lånord fra mange språk: urdu og punjabi, arabisk, engelsk, persisk, spansk og flere.",
+                    "En stakkato, hakkete rytme i setningene.",
+                    "Ofte en annen ordrekkefølge enn i standard norsk, for eksempel «i går eg ikkje gjekk».",
+                    "Brukes mest av ungdom, og forteller hvilket miljø du hører til."
+                ]
+            }
+        },
+        {
+            "type": "text",
+            "content": "Men multietnolekten er mer enn bare ord. Den har også en egen rytme. Mange beskriver den som stakkato, altså litt hakkete og med tydelige trykk (Lund, 2021). I tillegg bytter den ofte om på ordrekkefølgen. På standard norsk sier vi «i går gikk jeg ikke», med verbet på plass nummer to. I multietnolekten kan det bli «i går eg ikkje gjekk», der verbet flytter seg (Neteland & Skjekkeland, 2026). Dette er ikke tilfeldige feil. Det er faste mønstre som mange bruker likt, akkurat slik en dialekt har sine faste [målmerker](/norsk/dialekter/malmerker)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom med ulik bakgrunn samlet på et torg i en by",
+            "caption": "Multietnolekten vokser fram der ungdom med mange forskjellige bakgrunner møtes. Ordene kommer fra mange språk, men blir til ett felles talemål."
+        },
+        {
+            "type": "header",
+            "text": "«Kebabnorsk» — et navn med en bismak"
+        },
+        {
+            "type": "text",
+            "content": "Du har kanskje hørt et annet ord for dette talemålet: «kebabnorsk». Det er kallenavnet på den norske multietnolekten (Lund, 2021). Navnet spiller på kebab, en rett mange forbinder med innvandring, og det er egentlig bygd på en stereotypi om hvem som snakker slik. Derfor liker ikke alle navnet. Det kan høres ut som om dette er dårlig eller morsomt norsk, og det er urettferdig mot dem som bruker det hver dag."
+        },
+        {
+            "type": "text",
+            "content": "En vanlig misforståelse er at bare ungdom med innvandrerbakgrunn snakker slik. Det stemmer ikke. Multietnolekten brukes også av ungdom uten innvandrerbakgrunn, som tar den i bruk for å være en del av gjengen og miljøet (Neteland & Skjekkeland, 2026). Talemålet handler altså ikke om hudfarge eller hvor foreldrene dine er født. Det handler om hvilket sosialt miljø du hører til. Prøv det ut i spillet under: hent ordene fra hvert språkhus inn til det felles torget, og se hvordan mange språk blir til ett."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "multietnolekt-gata-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Er det egentlig dårlig norsk?"
+        },
+        {
+            "type": "text",
+            "content": "Svaret er nei. Multietnolekten er et levende talemål med sine egne regler, akkurat som andre dialekter og talemål i Norge. Fordi den ikke er knyttet til ett bestemt sted eller én bestemt etnisitet, men uttrykker tilhørighet til et sosialt miljø, mener noen forskere at den best kan forstås som en [sosiolekt](/norsk/dialekter/sosiolekt), altså talemålet til en sosial gruppe (Lund, 2021). Uansett hva vi kaller den, følger den mønstre og forteller en historie om hvem folk er."
+        },
+        {
+            "type": "text",
+            "content": "De som bruker multietnolekten, kan også snakke helt vanlig norsk når de vil. En elev kan snakke multietnolekt med kompisene i friminuttet og bytte til et mer skriftnært talemål på et jobbintervju. Det viser at multietnolekten er én måte å snakke på blant flere, ikke et tegn på at noen ikke kan norsk. Å eie flere talemål og velge mellom dem er faktisk en styrke."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Ordene kommer fra mange språk, men blir til ett felles ungdomsspråk.",
+                "author": "Om multietnolekt og tilhørighet"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Språk er aldri ferdig. Det forandrer seg hele tiden, og nye talemål oppstår der folk møtes på nye måter. Multietnolekten er et ferskt eksempel på nettopp dette: et talemål som ble til da mennesker fra hele verden flyttet sammen i de samme bydelene. Vil du se hvordan nye språktrekk sprer seg videre utover, kan du lese om [bølgemodellen og sprangmodellen](/norsk/dialekter/spredning-av-dialekttrekk). Og vil du vite mer om hvorfor vi i det hele tatt snakker så ulikt, finner du svar i artikkelen om [dialekter i Norge](/norsk/dialekter/hva-er-dialekter)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En ungdom som snakker med venner og med en laerer i to ulike situasjoner",
+            "caption": "Den som snakker multietnolekt, kan også bytte til vanlig norsk. Å eie flere talemål og velge mellom dem er en styrke."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Forklar med egne ord hva en etnolekt er.",
+                    "Hva må være på plass før vi kan kalle noe en etnolekt? Nevn de tre tingene.",
+                    "Hva betyr forstavelsen «multi», og hvorfor passer den så godt på multietnolekten?",
+                    "Nevn to kjennetegn på den norske multietnolekten."
+                ],
+                "reflekter": [
+                    "Forklar forskjellen på en etnolekt og en multietnolekt. Hvorfor er ikke multietnolekten knyttet til bare én gruppe?",
+                    "Artikkelen sier at navnet «kebabnorsk» har en bismak. Forklar hvorfor noen ikke liker navnet.",
+                    "Hvorfor er det feil å tro at bare ungdom med innvandrerbakgrunn snakker multietnolekt? Bruk et poeng fra teksten.",
+                    "Artikkelen sier at multietnolekten ikke er dårlig norsk. Er du enig? Begrunn svaret ditt."
+                ],
+                "gaaVidere": [
+                    "Lag en liten ordliste med fem ord fra multietnolekten. Finn ut hvilket språk hvert ord kommer fra, og hva det betyr.",
+                    "Legg merke til ditt eget talemål i en dag. Bruker du ord eller uttrykk som kommer fra andre språk enn norsk? Skriv ned tre eksempler.",
+                    "Skriv fem til seks setninger der du argumenterer for om det er greit å bruke kallenavnet «kebabnorsk». Bruk minst ett argument fra artikkelen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er en etnolekt?",
+                        "options": [
+                            "Et helt eget språk som ikke er norsk",
+                            "Den felles måten en etnisk gruppe snakker et språk på",
+                            "En regel i nynorsk grammatikk",
+                            "Talemålet i et bestemt geografisk område"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "En etnolekt er den felles måten en etnisk gruppe snakker et språk på, og den signaliserer at du hører til gruppen."
+                    },
+                    {
+                        "question": "Hva betyr «multi» i multietnolekt?",
+                        "options": [
+                            "Flere",
+                            "Ung",
+                            "By",
+                            "Feil"
+                        ],
+                        "correctIndex": 0,
+                        "explanation": "«Multi» betyr «flere». En multietnolekt har trekk fra mange ulike språk, ikke bare fra én gruppe."
+                    },
+                    {
+                        "question": "Hvor og når vokste den norske multietnolekten særlig fram?",
+                        "options": [
+                            "På bygda på 1800-tallet",
+                            "I flerkulturelle bydeler på Oslo øst fra 1990-tallet",
+                            "I Bergen på 1600-tallet",
+                            "Bare på internett etter 2020"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Multietnolekten vokste fram fra 1990-tallet, særlig i flerkulturelle bydeler på Oslo øst."
+                    },
+                    {
+                        "question": "Hvem snakker multietnolekt?",
+                        "options": [
+                            "Bare ungdom med innvandrerbakgrunn",
+                            "Bare voksne",
+                            "Ungdom med mange ulike bakgrunner, også uten innvandrerbakgrunn",
+                            "Bare folk som ikke kan norsk"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Multietnolekten brukes av ungdom med mange ulike bakgrunner, også av ungdom uten innvandrerbakgrunn som vil være en del av miljøet."
+                    },
+                    {
+                        "question": "Er multietnolekten dårlig norsk?",
+                        "options": [
+                            "Ja, det er bare feil",
+                            "Nei, det er et levende talemål med egne mønstre",
+                            "Ja, fordi den bruker lånord",
+                            "Det finnes ikke som talemål"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Multietnolekten er ikke dårlig norsk. Den er et levende talemål med egne regler, og de som bruker den kan også snakke vanlig norsk."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Neteland, R. (2025). *Etnolekt*. Store norske leksikon. Hentet 22.07.2026 fra [https://snl.no/etnolekt](https://snl.no/etnolekt)",
+                    "Neteland, R., & Skjekkeland, M. (2026). *Multietnolekt*. Store norske leksikon. Hentet 22.07.2026 fra [https://snl.no/multietnolekt](https://snl.no/multietnolekt)",
+                    "Lund, C. (2021). *Sosiale forskjeller i språket*. NDLA. Hentet 22.07.2026 fra [https://ndla.no/nb/r/norsk-pb/sosiale-forskjeller-i-spraket/4e4768cd52](https://ndla.no/nb/r/norsk-pb/sosiale-forskjeller-i-spraket/4e4768cd52)",
+                    "Det Norske Akademi for Språk og Litteratur. (2026). *Multietnolekt*. Det Norske Akademis ordbok. Hentet 22.07.2026 fra [https://naob.no/ordbok/multietnolekt](https://naob.no/ordbok/multietnolekt)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

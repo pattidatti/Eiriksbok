@@ -1115,6 +1115,14 @@
       "count": 8
     },
     {
+      "tag": "dialekt",
+      "count": 8
+    },
+    {
+      "tag": "talemål",
+      "count": 8
+    },
+    {
       "tag": "frihet",
       "count": 8
     },
@@ -1263,14 +1271,6 @@
       "count": 6
     },
     {
-      "tag": "dialekt",
-      "count": 6
-    },
-    {
-      "tag": "talemål",
-      "count": 6
-    },
-    {
       "tag": "bolivar",
       "count": 6
     },
@@ -1348,6 +1348,10 @@
     },
     {
       "tag": "natur",
+      "count": 5
+    },
+    {
+      "tag": "språk og identitet",
       "count": 5
     },
     {
@@ -1672,10 +1676,6 @@
     },
     {
       "tag": "medisin",
-      "count": 3
-    },
-    {
-      "tag": "språk og identitet",
       "count": 3
     },
     {
@@ -2580,6 +2580,18 @@
     },
     {
       "tag": "tiananmen",
+      "count": 2
+    },
+    {
+      "tag": "etnolekt",
+      "count": 2
+    },
+    {
+      "tag": "multietnolekt",
+      "count": 2
+    },
+    {
+      "tag": "kebabnorsk",
       "count": 2
     },
     {
