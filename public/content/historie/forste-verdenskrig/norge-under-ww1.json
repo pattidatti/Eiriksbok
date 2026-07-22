@@ -13,7 +13,7 @@
     "content": [
         {
             "type": "text",
-            "value": "Da krigen brøt ut i 1914, erklærte Norge seg strengt nøytralt. 'Vi skal verne om vår nøytralitet med jernhard konsekvens', sa statsminister Gunnar Knudsen. Men for en nasjon som levde av havet, var isolasjon en umulighet. Norge hadde verdens fjerde største handelsflåte, og begge de krigførende partene var avhengige av norsk fraktkapasitet. I løpet av fire år skulle Norge balansere på en knivsegg mellom stormaktene, en balansegang som kostet dyrt i både menneskeliv og moral."
+            "value": "Da krigen brøt ut i 1914, erklærte Norge seg strengt nøytralt, og regjeringen til statsminister Gunnar Knudsen holdt fast ved nøytraliteten gjennom hele krigen (Tvedt, 2025). Men for en nasjon som levde av havet, var isolasjon en umulighet. Norge hadde verdens fjerde største handelsflåte (Melien, 2025), og begge de krigførende partene var avhengige av norsk fraktkapasitet. I løpet av fire år skulle Norge balansere på en knivsegg mellom stormaktene, en balansegang som kostet dyrt i både menneskeliv og moral."
         },
         {
             "type": "header",
@@ -21,7 +21,7 @@
         },
         {
             "type": "text",
-            "value": "I teorien handlet Norge med både Tyskland og Storbritannia. I praksis var vi avhengige av britene. Storbritannia kontrollerte kullforsyningen som de norske dampskipene trengte for å gå. Britene stilte et ultimatum: Hvis dere vil ha kull, må dere seile for oss og stoppe eksporten av fisk og kobber til Tyskland.\n\nNorge bøyde av. Vi ble det historikerne kaller 'Den nøytrale allierte'. Vi seilte med livsviktige forsyninger for Ententen, mens vi offisielt latet som vi ikke valgte side. Dette gjorde norske skip til legitime mål for tyske ubåter."
+            "value": "I teorien handlet Norge med både Tyskland og Storbritannia. I praksis var vi avhengige av britene. Storbritannia kontrollerte kullforsyningen som de norske dampskipene trengte for å gå. Britene stilte et ultimatum: Hvis dere vil ha kull, må dere seile for oss og stoppe eksporten av fisk og kobber til Tyskland.\n\nNorge bøyde av. Vi ble det historikerne kaller 'Den nøytrale allierte' (Tvedt, 2025). Vi seilte med livsviktige forsyninger for Ententen, mens vi offisielt latet som vi ikke valgte side. Dette gjorde norske skip til legitime mål for tyske ubåter."
         },
         {
             "type": "header",
@@ -29,7 +29,7 @@
         },
         {
             "type": "text",
-            "value": "Mens Norge tjente penger, betalte sjøfolkene prisen. Tyskland erklærte 'uinnskrenket ubåtkrig' i 1917, noe som betydde at de senket ethvert skip som nærmet seg Storbritannia, uavhengig av flagg. Norske skip ble torpedert uten varsel. Mannskapene i livbåtene ble ofte overlatt til seg selv i iskalde bølger langt til havs.\n\nTotalt mistet over 2000 norske sjøfolk livet, og nesten halvparten av den norske flåten ble senket. Mange sjøfolk som overlevde, slet med 'torpedonervene' (en variant av granatsjokk) resten av livet. Langs hele kysten satt enker igjen, mens rederne i byene hevet forsikringspengene."
+            "value": "Mens Norge tjente penger, betalte sjøfolkene prisen. Tyskland erklærte 'uinnskrenket ubåtkrig' i 1917, noe som betydde at de senket ethvert skip som nærmet seg Storbritannia, uavhengig av flagg (Brazier & Kirkhusmo, 2024). Norske skip ble torpedert uten varsel. Mannskapene i livbåtene ble ofte overlatt til seg selv i iskalde bølger langt til havs.\n\nTotalt mistet over 2000 norske sjøfolk livet, og nesten halvparten av den norske flåten ble senket (Melien, 2025). Mange sjøfolk som overlevde, slet med 'torpedonervene' (en variant av granatsjokk) resten av livet. Langs hele kysten satt enker igjen, mens rederne i byene hevet forsikringspengene."
         },
         {
             "type": "image",
@@ -65,7 +65,7 @@
         },
         {
             "type": "text",
-            "value": "Men festen var ikke for alle. Mens spekulantene ble rike, førte krigen til at prisene på mat og brensel steg drastisk ('Dyrtid'). Vanlige arbeidere fikk det verre. Kjøtt og mel ble rasjonert. Forskjellen mellom de nyrike og de fattige ble provoserende synlig. Dette skapte en dyp bitterhet i arbeiderklassen, som førte til store demonstrasjoner i 1917 (Dyrtidsdemonstrasjonene). Inspirert av den russiske revolusjon begynte den norske arbeiderbevegelsen å radikaliseres, noe som skulle prege norsk politikk i mellomkrigstiden."
+            "value": "Men festen var ikke for alle. Mens spekulantene ble rike, førte krigen til at prisene på mat og brensel steg drastisk ('Dyrtid'). Vanlige arbeidere fikk det verre. Kjøtt og mel ble rasjonert. Forskjellen mellom de nyrike og de fattige ble provoserende synlig. Dette skapte en dyp bitterhet i arbeiderklassen, som førte til store demonstrasjoner i 1917 (Dyrtidsdemonstrasjonene). Inspirert av den russiske revolusjon begynte den norske arbeiderbevegelsen å radikaliseres, noe som skulle prege norsk politikk i mellomkrigstiden (Tvedt, 2025)."
         },
         {
             "type": "image",
@@ -78,7 +78,7 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva erklærte Norge seg da krigen brøt ut i 1914, og hva sa statsminister Gunnar Knudsen om det?",
+                    "Hva erklærte Norge seg da krigen brøt ut i 1914, og hvem var statsminister i Norge gjennom hele krigen?",
                     "Hvilket ultimatum stilte britene til Norge for at de norske dampskipene skulle få kull?",
                     "Omtrent hvor mange norske sjøfolk mistet livet, og hvor stor del av flåten ble senket?",
                     "Hva var 'Jobbetiden', og hvordan kunne verdien på et skip endre seg på få uker?"
@@ -93,6 +93,17 @@
                     "Skriv et kort dagbokinnlegg (5-8 setninger) fra en norsk sjømann som nettopp har overlevd en torpedering og sitter i en livbåt.",
                     "Diskuter i klassen: Er det greit å tjene store penger på en krig andre dør i? Bruk 'blodpenger' fra Jobbetiden som eksempel.",
                     "Teksten sier at radikaliseringen av arbeiderbevegelsen preget mellomkrigstiden. Finn ett eksempel i dag på at store forskjeller mellom rike og fattige skaper politisk uro."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brazier, E., & Kirkhusmo, A. (2024). *Første verdenskrig*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/første_verdenskrig](https://snl.no/første_verdenskrig)",
+                    "Melien, T. J. (2025). *Norges handelsflåte under første verdenskrig*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Norges_handelsflåte_under_første_verdenskrig](https://snl.no/Norges_handelsflåte_under_første_verdenskrig)",
+                    "Tvedt, K. A. (2025). *Norges historie fra 1905 til 1939*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Norges_historie_fra_1905_til_1939](https://snl.no/Norges_historie_fra_1905_til_1939)"
                 ]
             }
         }
@@ -131,5 +142,6 @@
             ],
             "correctAnswer": 2
         }
-    ]
+    ],
+    "lastUpdated": "2026-07-22T00:00:00Z"
 }
