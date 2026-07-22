@@ -21,7 +21,7 @@
         },
         {
             "type": "text",
-            "value": "I havnebyen Kiel sa matrosene stopp. 'Vi vil ikke dø for en tapt sak!' 29. oktober 1918 nektet de å adlyde ordre, slukket kjelene på skipene og arresterte offiserene sine. Opprøret spredte seg som ild i tørt gress over hele Tyskland. Arbeidere og soldater dannet revolusjonære råd (inspirert av russerne), og røde flagg vaiet fra rådhusene i Berlin, München og Hamburg."
+            "content": "Matrosene sa stopp. 'Vi vil ikke dø for en tapt sak!' Da ordren om å seile ut kom, nektet mannskaper i Wilhelmshaven å adlyde 29. oktober 1918, og opprøret spredte seg til marinebasen i Kiel i dagene etter (Tøllefsen, 2026). Der slukket matrosene kjelene på skipene og arresterte offiserene sine. Opprøret bredte seg videre som ild i tørt gress over hele Tyskland. Arbeidere og soldater dannet revolusjonære råd (inspirert av russerne), og røde flagg vaiet fra rådhusene i Berlin, München og Hamburg."
         },
         {
             "type": "header",
@@ -29,7 +29,7 @@
         },
         {
             "type": "text",
-            "value": "Keiser Wilhelm II, selve symbolet på det gamle Tyskland, mistet støtten fra hæren. Den 9. november abdiserte han og flyktet i eksil til Nederland, hvor han ble boende resten av livet og hugget ved. Samme dag ble 'Den tyske republikk' proklamert fra en balkong i Riksdagsbygningen i Berlin. Det tyske keiserriket var historie."
+            "content": "Keiser Wilhelm II, selve symbolet på det gamle Tyskland, mistet støtten fra hæren. Den 9. november abdiserte han og flyktet i eksil til Nederland, hvor han ble boende resten av livet (Hobson, 2026). Samme dag ble 'Den tyske republikk' proklamert fra en balkong i Riksdagsbygningen i Berlin. Det tyske keiserriket var historie."
         },
         {
             "type": "header",
@@ -37,7 +37,7 @@
         },
         {
             "type": "text",
-            "value": "Den nye sivile regjeringen hadde ingen tid til å feire. De måtte signere en smertefull våpenhvile i en togvogn i skogen i Compiègne den 11. november 1918 kl. 11:00. Krigen var over, men i Tyskland fortsatte kampene i gatene mellom kommunister og høyreorienterte frikorps. Den nye Weimar-republikken ble født i blod og kaos."
+            "content": "Den nye sivile regjeringen hadde ingen tid til å feire. De måtte signere en smertefull våpenhvile i en togvogn i skogen i Compiègne den 11. november 1918 kl. 11:00 (Brazier et al., 2024). Krigen var over, men i Tyskland fortsatte kampene i gatene mellom kommunister og høyreorienterte frikorps. Den nye Weimar-republikken ble født i blod og kaos."
         },
         {
             "type": "component",
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "value": "Det mest skjebnesvangre som skjedde høsten 1918, var skapelsen av 'Dolkesjøtlegenden' (Dolchstoßlegende). Fordi krigen sluttet mens tyske soldater fortsatt sto på fransk jord, og fordi sensuren hadde holdt sannheten om nederlaget skjult for folket, oppsto en myte: 'Den tyske hæren ble ikke overvunnet i felt (på slagmarken), men ble dolket i ryggen av forrædere hjemme'.\n\nHvem var disse forræderne? Ifølge høyre-ekstreme var det sosialistene, kommunistene og jødene. Denne løgnen ble en sentral del av propagandaen til Adolf Hitler og nazistene. De brukte bitterheten over nederlaget og 'November-forbryterne' som signerte freden, til å bygge sin vei til makten."
+            "content": "Det mest skjebnesvangre som skjedde høsten 1918, var skapelsen av 'Dolkesjøtlegenden' (Dolchstoßlegende). Fordi krigen sluttet mens tyske soldater fortsatt sto på fransk jord, og fordi sensuren hadde holdt sannheten om nederlaget skjult for folket, oppsto en myte: 'Den tyske hæren ble ikke overvunnet i felt (på slagmarken), men ble dolket i ryggen av forrædere hjemme' (Hatlehol, 2025).\n\nHvem var disse forræderne? Ifølge høyre-ekstreme var det sosialistene, kommunistene og jødene. Denne løgnen ble en sentral del av propagandaen til Adolf Hitler og nazistene. De brukte bitterheten over nederlaget og 'November-forbryterne' som signerte freden, til å bygge sin vei til makten."
         },
         {
             "type": "component",
@@ -77,8 +77,21 @@
                     "Finn ut mer om Rosa Luxemburg eller Karl Liebknecht. Hvem var de, hva kjempet de for, og hvorfor ble de drept?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Tøllefsen, T. O. (2026). *Weimarrepublikken*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Weimarrepublikken](https://snl.no/Weimarrepublikken)",
+                    "Hobson, R. (2026). *Vilhelm 2. - tysk keiser 1888-1918*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no](https://snl.no/Vilhelm_2._-_tysk_keiser_1888-1918)",
+                    "Hatlehol, G. D. (2025). *Dolkestøtlegenden*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/dolkestøtlegenden](https://snl.no/dolkest%C3%B8tlegenden)",
+                    "Brazier, E., Kirkhusmo, A. & Lima, G. (2024). *Første verdenskrig - fredsslutningene*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no](https://snl.no/første_verdenskrig_-_fredsslutningene)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-07-22",
     "quiz": [
         {
             "id": "tyske-rev-1",

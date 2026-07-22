@@ -22,11 +22,11 @@
         },
         {
             "type": "header",
-            "text": "Feburar: Tsaren faller"
+            "text": "Februar: Tsaren faller"
         },
         {
             "type": "text",
-            "value": "I mars 1917 (februar etter gammel russisk kalender) renner begeret over. Det startet som brødopptøyer blant kvinnelige tekstilarbeidere på kvinnedagen. Snart sluttet soldatene seg til demonstrantene i stedet for å skyte på dem. Uten hærens støtte var Tsaren maktesløs. Han abdiserte, og 300 år med Romanov-styre var over på en uke. En provisorisk regjering overtok, men de gjorde én fatal feil: De valgte å fortsette den upopulære krigen for å ære alliansen med Frankrike og Storbritannia."
+            "content": "I mars 1917 (februar etter gammel russisk kalender) renner begeret over. Det startet som brødopptøyer blant kvinnelige tekstilarbeidere på kvinnedagen. Snart sluttet soldatene seg til demonstrantene i stedet for å skyte på dem. Uten hærens støtte var Tsaren maktesløs. Han abdiserte, og 300 år med Romanov-styre var over på en uke. En provisorisk regjering overtok, men de gjorde én fatal feil: De valgte å fortsette den upopulære krigen for å ære alliansen med Frankrike og Storbritannia (Egge & Mjør, 2026)."
         },
         {
             "type": "header",
@@ -34,7 +34,19 @@
         },
         {
             "type": "text",
-            "value": "Tyskland så en sjanse til å slå Russland ut av krigen innenfra. De arrangerte en hemmelig togreise for Vladimir Lenin, lederen for de radikale bolsjevikene, fra eksil i Sveits tvers gjennom Tyskland og til Russland. Håpet var at han skulle skape kaos. Det fungerte over all forventning.\n\nLenin ankom med et program som var like enkelt som det var genialt: 'Brød, Fred og Land'.\n\n*   **Brød** til de sultne i byene.\n*   **Fred** til soldatene som døde i skyttergravene.\n*   **Land** til bøndene som trålte under jordeierne.\n\nIngen andre partier våget å love fred for enhver pris. Bolsjevikenes popularitet eksploderte. I november (oktober) 1917 stormet bolsjevikene Vinterpalasset og grep makten i et nesten ublodig kupp. Verdens første kommunistiske stat var født."
+            "content": "Tyskland så en sjanse til å slå Russland ut av krigen innenfra. De arrangerte en hemmelig togreise for Vladimir Lenin, lederen for de radikale bolsjevikene, fra eksil i Sveits tvers gjennom Tyskland og til Russland (Goplen & Mjør, 2025). Håpet var at han skulle skape kaos. Det fungerte over all forventning.\n\nLenin ankom med et program som var like enkelt som det var genialt: 'Brød, Fred og Land'."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Brød til de sultne i byene.",
+                "Fred til soldatene som døde i skyttergravene.",
+                "Land til bøndene som trålte under jordeierne."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Ingen andre partier våget å love fred for enhver pris. Bolsjevikenes popularitet eksploderte. I november (oktober) 1917 stormet bolsjevikene Vinterpalasset og grep makten i et nesten ublodig kupp. Verdens første kommunistiske stat var født (Egge & Mjør, 2026)."
         },
         {
             "type": "image",
@@ -62,7 +74,7 @@
         },
         {
             "type": "text",
-            "value": "Lenin holdt sitt løfte om fred, men prisen var høy. I mars 1918 signerte Russland fredsavtalen i Brest-Litovsk med Tyskland. Russland måtte gi fra seg enorme landområder: Polen, Baltikum, Finland og Ukraina – områder som inneholdt en tredjedel av Russlands befolkning og mesteparten av industrien.\n\nFor Tyskland var dette en triumf. Nå kunne de flytte hundretusener av soldater fra østfronten til vestfronten for et siste, avgjørende støt mot Frankrike. For de vestallierte (Ententen) ble bolsjevikene sett på som forrædere. Dette la grunnlaget for mistilliten mellom Vesten og Sovjetunionen som skulle prege hele det 20. århundret."
+            "content": "Lenin holdt sitt løfte om fred, men prisen var høy. I mars 1918 signerte Russland fredsavtalen i Brest-Litovsk med Tyskland. Russland måtte gi fra seg enorme landområder: Polen, Baltikum, Finland og Ukraina - områder som inneholdt en tredjedel av Russlands befolkning og mesteparten av industrien (Encyclopaedia Britannica, u.å.).\n\nFor Tyskland var dette en triumf. Nå kunne de flytte hundretusener av soldater fra østfronten til vestfronten for et siste, avgjørende støt mot Frankrike. For de vestallierte (Ententen) ble bolsjevikene sett på som forrædere. Dette la grunnlaget for mistilliten mellom Vesten og Sovjetunionen som skulle prege hele det 20. århundret."
         },
         {
             "type": "component",
@@ -94,8 +106,20 @@
                     "Diskuter i klassen: Var det riktig av bolsjevikene å love fred for enhver pris, selv om Russland måtte gi fra seg en tredjedel av befolkningen og mesteparten av industrien?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Egge, Å. & Mjør, K. J. (2026). *Den russiske revolusjon*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Den_russiske_revolusjon](https://snl.no/Den_russiske_revolusjon)",
+                    "Goplen, Å. & Mjør, K. J. (2025). *Vladimir Lenin*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Vladimir_Lenin](https://snl.no/Vladimir_Lenin)",
+                    "Encyclopaedia Britannica. (u.å.). *Treaties of Brest-Litovsk*. Hentet 22.07.2026 fra [britannica.com](https://www.britannica.com/event/treaties-of-Brest-Litovsk)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-07-22",
     "quiz": [
         {
             "id": "russiske-rev-1",

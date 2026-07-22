@@ -13,7 +13,7 @@
     "content": [
         {
             "type": "text",
-            "value": "Første verdenskrig markerte et veiskille i historien. Tidligere kriger hadde ofte vært utkjempet av profesjonelle hærer på avgrensede slagmarker, mens livet ellers gikk sin gang for de fleste. Denne krigen var annerledes. Det var den første 'totale krigen'.\n\nTotal krig betydde at hele nasjonens ressurser – industri, økonomi, landbruk og befolkning – ble mobilisert for seier. Skillet mellom soldat og sivil ble visket ut. Fabrikkarbeideren som laget granaten var like viktig for krigsinnsatsen som soldaten som fyrte den av. Og fordi de sivile var blitt en del av krigsmaskineriet, ble de også legitime mål."
+            "content": "Første verdenskrig markerte et veiskille i historien. Tidligere kriger hadde ofte vært utkjempet av profesjonelle hærer på avgrensede slagmarker, mens livet ellers gikk sin gang for de fleste. Denne krigen var annerledes. Det var den første 'totale krigen' (Brazier & Kirkhusmo, 2024).\n\nTotal krig betydde at hele nasjonens ressurser - industri, økonomi, landbruk og befolkning - ble mobilisert for seier. Skillet mellom soldat og sivil ble visket ut. Fabrikkarbeideren som laget granaten var like viktig for krigsinnsatsen som soldaten som fyrte den av. Og fordi de sivile var blitt en del av krigsmaskineriet, ble de også legitime mål."
         },
         {
             "type": "header",
@@ -21,7 +21,7 @@
         },
         {
             "type": "text",
-            "value": "Med millioner av menn sendt til fronten, oppsto det en akutt mangel på arbeidskraft. Løsningen ble kvinnene. Før 1914 var kvinner i stor grad henvist til hjemmet eller lavtlønte serviceyrker. Nå overtok de jobber som tidligere var 'forbeholdt menn'.\n\nDe ble trikkeførere, politikonstabler, bønder ('Land Army') og ikke minst fabrikkarbeidere. I ammunisjonsfabrikkene sto kvinner – kalt 'Munitionettes' – og fylte granater med sprengstoff 12 timer om dagen. Arbeidet var farlig. Eksplosjoner var vanlige, og de giftige kjemikaliene gjorde at huden og håret deres ble gult, noe som ga dem kallenavnet 'Canary Girls' (kanarifugler)."
+            "content": "Med millioner av menn sendt til fronten, oppsto det en akutt mangel på arbeidskraft. Løsningen ble kvinnene. Før 1914 var kvinner i stor grad henvist til hjemmet eller lavtlønte serviceyrker. Nå overtok hundretusener av kvinner jobber som tidligere var 'forbeholdt menn' (Lønnå, 2026).\n\nDe ble trikkeførere, politikonstabler, bønder ('Land Army') og ikke minst fabrikkarbeidere. I ammunisjonsfabrikkene sto kvinner - kalt 'Munitionettes' - og fylte granater med sprengstoff 12 timer om dagen. Arbeidet var farlig. Eksplosjoner var vanlige, og de giftige kjemikaliene gjorde at huden og håret deres ble gult, noe som ga dem kallenavnet 'Canary Girls' (kanarifugler)."
         },
         {
             "type": "gallery",
@@ -51,7 +51,7 @@
         },
         {
             "type": "text",
-            "value": "Storbritannia brukte sin mektige marine til å strupe Tysklands forsyninger. De opprettet en blokade i Nordsjøen som stanset all import av mat og gjødsel. Effekten var knusende. Uten kunstgjødsel sviktet avlingene, og uten import ble butikkhyllene tomme.\n\nVinteren 1916-1917 ble kjent som 'Kålrotvinteren' i Tyskland, fordi kålrot – som vanligvis var dyrefôr – ble hovednæringsmidlet. Erstatningsprodukter ('Ersatz') ble hverdagskost: brød laget av sagflis og potetskrell, kaffe laget av brente nøtter. Det anslås at over 700 000 tyske sivile døde av underernæring og sykdom som følge av blokaden. Dette var krigføring rettet direkte mot barn, gamle og kvinner."
+            "content": "Storbritannia brukte sin mektige marine til å strupe Tysklands forsyninger. De opprettet en blokade i Nordsjøen som stanset det meste av importen av mat og gjødsel (Schlenoff, 2017). Effekten var knusende. Uten kunstgjødsel sviktet avlingene, og uten import ble butikkhyllene tomme.\n\nVinteren 1916-1917 ble kjent som 'Kålrotvinteren' i Tyskland, fordi kålrot - som vanligvis var dyrefôr - ble hovednæringsmidlet. Erstatningsprodukter ('Ersatz') ble hverdagskost: brød laget av sagflis og potetskrell, kaffe laget av brente nøtter. Anslagene varierer, men flere hundre tusen tyske sivile - kanskje over 700 000 - døde av underernæring og sykdom som følge av blokaden. Dette var krigføring rettet direkte mot barn, gamle og kvinner."
         },
         {
             "type": "image",
@@ -116,8 +116,20 @@
                     "Blokaden brukte sult som våpen mot vanlige mennesker. Undersøk om det finnes eksempler i dag der mat, medisiner eller forsyninger holdes tilbake for å presse en befolkning, og forklar hva du finner."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brazier, E. & Kirkhusmo, A. (2024). *Første verdenskrig*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/første_verdenskrig](https://snl.no/første_verdenskrig)",
+                    "Lønnå, E. (2026). *Kvinnebevegelsens historie fra første verdenskrig til 1980*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no](https://snl.no/Kvinnebevegelsens_historie_fra_første_verdenskrig_til_1980)",
+                    "Schlenoff, D. (2017). *Starvation and Propaganda as Weapons of War, 1917*. Scientific American. Hentet 22.07.2026 fra [scientificamerican.com](https://www.scientificamerican.com/blog/anecdotes-from-the-archive/starvation-and-propaganda-as-weapons-of-war-1917/)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-07-22",
     "quiz": [
         {
             "id": "hjemmefront-1",
