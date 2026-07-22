@@ -82,7 +82,7 @@
         },
         {
             "type": "text",
-            "content": "Den vanligste oppgaven var å plukke opp tråder eller bomull som falt på golvet, eller å hekte sammen tråder som røk. Hender på små barn ble fanget i hjul og tannhjul. Beretninger fra leger forteller om barn som mistet fingre, hender og hår. Mange ble skadet for livet."
+            "content": "Den vanligste oppgaven var å plukke opp tråder eller bomull som falt på golvet, eller å hekte sammen tråder som røk. Hender på små barn ble fanget i hjul og tannhjul. Beretninger forteller om barn som mistet fingre, hender og hår, og mange ble skadet for livet (Sadler-komiteen, 1832)."
         },
         {
             "type": "text",
@@ -92,7 +92,7 @@
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Når jeg ble for trøtt til å stå, slo formannen meg med en skinnreim. Jeg var redd for å sovne på vakt. En gang stakk jeg fingrene mine inn i maskinen for å holde meg våken med smerten.",
+                "text": "Vi jobbet fra fem om morgenen til ni om kvelden når det var travelt. Ble jeg for sein eller for trøtt, fikk jeg reimen - hardt.",
                 "author": "Elizabeth Bentley, 23 år, vitnesbyrd til Sadler-komiteen 1832. Hun begynte i fabrikken da hun var seks."
             }
         },
@@ -106,7 +106,7 @@
         },
         {
             "type": "text",
-            "content": "Den første virkelige loven kom i 1833. Den forbød barn under ni år å jobbe i tekstilfabrikker. Den sa også at barn mellom ni og tretten år ikke kunne jobbe mer enn ni timer om dagen. Aller viktigst: loven krevde at inspektører faktisk gikk inn i fabrikkene og sjekket. Senere lover gikk lengre. I 1842 ble det forbudt for kvinner og barn under ti år å jobbe under bakken i gruver. I 1878 fikk alle barn rett på minst noen år på skole."
+            "content": "Den første virkelige loven kom i 1833. Den forbød barn under ni år å jobbe i tekstilfabrikker, og barn mellom ni og tretten år kunne ikke jobbe mer enn ni timer om dagen. Aller viktigst: loven krevde at inspektører faktisk gikk inn i fabrikkene og sjekket (Encyclopaedia Britannica, u.å.). Senere lover gikk lengre. I 1842 ble det forbudt for kvinner og barn under ti år å jobbe under bakken i gruver (Jakhelln & Gisle, 2024). Utover på 1800-tallet fikk stadig flere barn rett til noen år på skole i stedet for i fabrikken."
         },
         {
             "type": "component",
@@ -298,7 +298,7 @@
         },
         {
             "type": "text",
-            "content": "Mange tror barnearbeid hører fortida til. Det stemmer ikke. Internasjonale tall fra FN viser at omtrent 160 millioner barn jobber i verden i dag. De fleste i Afrika og Asia. Mange plukker kakao, jobber på kaffegårder eller syr klær. Noen av varene havner i norske butikker."
+            "content": "Mange tror barnearbeid hører fortida til. Det stemmer ikke. Internasjonale tall fra ILO og Unicef viser at omtrent 160 millioner barn jobber i verden i dag, flest i Afrika sør for Sahara og i Asia (ILO & UNICEF, 2021). Mange plukker kakao, jobber på kaffegårder eller syr klær. Noen av varene havner i norske butikker."
         },
         {
             "type": "text",
@@ -374,7 +374,20 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Jakhelln, H. & Gisle, J. (2024). *Barnearbeid*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/barnearbeid](https://snl.no/barnearbeid)",
+                    "Sadler-komiteen. (1832). *Report from the Committee on the Bill to regulate the Labour of Children in the Mills and Factories of the United Kingdom* (Sadler-rapporten). Storbritannias parlament. Utdrag hentet 22.07.2026 fra [history.hanover.edu](https://history.hanover.edu/courses/excerpts/111sad.html)",
+                    "Encyclopaedia Britannica. (u.å.). *Factory Act*. Hentet 22.07.2026 fra [britannica.com](https://www.britannica.com/event/Factory-Act-United-Kingdom-1833)",
+                    "ILO & UNICEF. (2021). *Child labour: Global estimates 2020, trends and the road forward*. ILO & UNICEF. Hentet 22.07.2026 fra [ilo.org](https://www.ilo.org/resource/news/child-labour-rises-160-million-first-increase-two-decades)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-22"
 }

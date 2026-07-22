@@ -40,7 +40,7 @@
         },
         {
             "type": "text",
-            "content": "I England hadde gruveindustrien siden 1700-tallet brukt små vogner på tresleder for å frakte kull. Etter at [James Watt forbedret dampmaskinen](/historie/industriell-revolusjon/dampmaskinen), begynte ingeniører å spørre: hva om vi setter en dampmaskin på hjul, og lar den dra vognene selv? Den første som klarte det skikkelig var George Stephenson, en ingeniør som hadde lært seg å lese først som voksen. I 1825 åpnet han verdens første offentlige jernbane mellom Stockton og Darlington. Lokomotivet hans dro 80 tonn varer i 25 km i timen - utenkelig fart for sin tid."
+            "content": "I England hadde gruveindustrien siden 1700-tallet brukt små vogner på tresleder for å frakte kull. Etter at [James Watt forbedret dampmaskinen](/historie/industriell-revolusjon/dampmaskinen), begynte ingeniører å spørre: hva om vi setter en dampmaskin på hjul, og lar den dra vognene selv? Den første som klarte det skikkelig var George Stephenson, en ingeniør som hadde lært seg å lese først som voksen. I 1825 åpnet han verdens første offentlige jernbane mellom Stockton og Darlington (Wisting, 2026). Lokomotivet hans dro rundt 80 tonn varer i om lag 25 km i timen - utenkelig fart for sin tid."
         },
         {
             "type": "text",
@@ -81,7 +81,7 @@
         },
         {
             "type": "text",
-            "content": "I 1847 vedtok de britiske jernbaneselskapene at alle stasjoner skulle bruke samme tid: Greenwich Mean Time. I 1884 ble verden delt inn i 24 tidssoner. Den moderne klokken - den som styrer skoletimer, arbeidsskift og fly-avganger - er en jernbanens oppfinnelse. Klokken ble plutselig viktigere enn sola."
+            "content": "I 1847 vedtok de britiske jernbaneselskapene at alle stasjoner skulle bruke samme tid: Greenwich Mean Time. I 1884 samlet en internasjonal konferanse i Washington seg om at Greenwich-meridianen skulle være verdens nullpunkt for tid, grunnlaget for de 24 tidssonene vi deler kloden inn i i dag (Kristiansen mfl., 2025). Den moderne klokken - den som styrer skoletimer, arbeidsskift og fly-avganger - er en jernbanens oppfinnelse. Klokken ble plutselig viktigere enn sola."
         },
         {
             "type": "component",
@@ -112,11 +112,11 @@
         },
         {
             "type": "text",
-            "content": "Norge fikk sin første jernbane i 1854. Hovedbanen gikk fra Christiania (det som i dag er Oslo) til Eidsvoll, og var bygget for å frakte tømmer fra Mjøsa-traktene ned til hovedstaden. Banen var bare 68 km lang, men den endret kornpriser og brennevinspriser i hele Østlandet. Plutselig kunne en bonde i Hedmark selge avlingen sin i Oslo uten å miste halvparten av verdien til transportkostnader."
+            "content": "Norge fikk sin første jernbane i 1854. Hovedbanen gikk fra Christiania (det som i dag er Oslo) til Eidsvoll, og var bygget for å frakte tømmer fra Mjøsa-traktene ned til hovedstaden (Wisting & Aspenberg, 2025). Banen var bare 68 km lang, men den endret kornpriser og brennevinspriser i hele Østlandet. Plutselig kunne en bonde i Hedmark selge avlingen sin i Oslo uten å miste halvparten av verdien til transportkostnader."
         },
         {
             "type": "text",
-            "content": "Det største norske jernbaneprosjektet kom i 1909, da Bergensbanen åpnet etter 14 års bygging. Den krysset Hardangervidda i opptil 1237 meters høyde, gjennom 178 tunneler og over 300 broer. Banen knyttet for første gang Bergen og Oslo sammen med en reise på under ett døgn. Før det hadde turen tatt nesten en uke med båt rundt kysten eller en knallhard ferd over fjellet."
+            "content": "Det største norske jernbaneprosjektet kom i 1909, da Bergensbanen åpnet etter 14 års bygging. Den krysset Hardangervidda i opptil 1237 meters høyde, gjennom nesten 200 tunneler (Wisting, 2025). Banen knyttet for første gang Bergen og Oslo sammen med en reise på under ett døgn. Før det hadde turen tatt nesten en uke med båt rundt kysten eller en knallhard ferd over fjellet."
         },
         {
             "type": "component",
@@ -224,7 +224,20 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Wisting, T. (2026). *Jernbane*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/jernbane](https://snl.no/jernbane)",
+                    "Wisting, T. & Aspenberg, N. C. (2025). *Hovedbanen*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Hovedbanen](https://snl.no/Hovedbanen)",
+                    "Wisting, T. (2025). *Bergensbanen*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Bergensbanen](https://snl.no/Bergensbanen)",
+                    "Kristiansen, J. R., Ringnes, T. & Aksnes, K. (2025). *Tidssone*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/tidssone](https://snl.no/tidssone)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-22"
 }
