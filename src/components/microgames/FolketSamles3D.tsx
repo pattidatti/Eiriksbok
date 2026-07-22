@@ -111,7 +111,7 @@ const FolketSamles3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 {/* 3D-scenen i full bredde */}
                 <div
                     className="relative w-full bg-gradient-to-b from-[#cfe3f5] via-[#e2ecf2] to-[#e9e2d0] overflow-hidden"
-                    style={{ aspectRatio: '16/9', minHeight: 300 }}
+                    style={{ aspectRatio: '16 / 10.8', minHeight: 360 }}
                 >
                     <MicroCanvas
                         idle={idle}

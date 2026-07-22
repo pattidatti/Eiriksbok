@@ -115,7 +115,7 @@ const Hamskiftet3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 {/* --- 3D-scenen (full bredde) --- */}
                 <div
                     className="relative w-full bg-gradient-to-b from-[#bfe0f2] via-[#dceaf0] to-[#e9ddc4] overflow-hidden"
-                    style={{ aspectRatio: '16/9', minHeight: 300 }}
+                    style={{ aspectRatio: '16 / 10.8', minHeight: 360 }}
                 >
                     <MicroCanvas
                         idle={idle}

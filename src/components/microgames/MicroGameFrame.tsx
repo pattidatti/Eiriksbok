@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Gamepad2, Clock, RotateCcw } from 'lucide-react';
+import { Gamepad2, RotateCcw } from 'lucide-react';
 
 interface MicroGameFrameProps {
     title: string;
@@ -18,8 +18,6 @@ interface MicroGameFrameProps {
 // læringsstien — ingen brå dark-mode-skifte mellom steg.
 export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
     title,
-    subtitle,
-    estimatedSeconds,
     onRetry,
     children,
     bleed = false,
@@ -30,29 +28,20 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
             animate={{ opacity: 1, y: 0 }}
             className="bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden shadow-sm"
         >
-            <header className="flex items-center justify-between gap-3 px-3.5 py-1.5 border-b border-slate-200 bg-white/60">
-                <div className="flex items-center gap-2 min-w-0">
-                    <div className="w-6 h-6 rounded-md bg-slate-700 text-white flex items-center justify-center shadow-sm flex-shrink-0">
+            <header className="flex items-start justify-between gap-3 px-3.5 py-2 border-b border-slate-200 bg-white/60">
+                <div className="flex items-start gap-2 min-w-0">
+                    <div className="w-6 h-6 mt-0.5 rounded-md bg-slate-700 text-white flex items-center justify-center shadow-sm flex-shrink-0">
                         <Gamepad2 className="w-3.5 h-3.5" />
                     </div>
-                    <div className="flex items-baseline gap-2 min-w-0">
-                        <h3 className="text-sm font-bold leading-tight text-slate-900 truncate">
+                    {/* Tittelen får aldri truncate - den brytes heller til to linjer
+                        slik at hele navnet alltid er lesbart. */}
+                    <div className="min-w-0">
+                        <h3 className="text-sm font-bold leading-snug text-slate-900 [text-wrap:balance] line-clamp-2">
                             {title}
                         </h3>
-                        {subtitle && (
-                            <p className="hidden sm:block text-xs text-slate-500 truncate">{subtitle}</p>
-                        )}
                     </div>
                 </div>
                 <div className="flex items-center gap-1.5 flex-shrink-0">
-                    {estimatedSeconds !== undefined && (
-                        <span className="hidden md:inline-flex items-center gap-1 text-xs text-slate-500">
-                            <Clock className="w-3 h-3" />
-                            {estimatedSeconds < 60
-                                ? `${estimatedSeconds}s`
-                                : `${Math.round(estimatedSeconds / 60)} min`}
-                        </span>
-                    )}
                     {onRetry && (
                         <button
                             onClick={onRetry}

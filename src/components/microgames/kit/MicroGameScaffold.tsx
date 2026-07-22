@@ -44,8 +44,8 @@ export const MicroGameScaffold: React.FC<MicroGameScaffoldProps> = ({
     canvas,
     overlays,
     children,
-    aspectRatio = '16/10',
-    minHeight = 340,
+    aspectRatio = '16/12',
+    minHeight = 408,
     containerClassName = 'bg-gradient-to-b from-[#bfe0f2] via-[#dceaf0] to-[#e9ddc4]',
 }) => {
     return (
