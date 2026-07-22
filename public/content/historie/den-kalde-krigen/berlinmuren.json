@@ -1,42 +1,42 @@
 {
     "id": "berlinmuren",
-    "title": "Berlinmuren: Symbolet p\u00e5 en delt verden",
+    "title": "Berlinmuren: Symbolet på en delt verden",
     "subject": "historie",
     "layout": "rich",
-    "year": "1961–1989",
+    "year": "1961-1989",
     "category": "Kald krig / Europa",
     "readTime": "15 min lesning",
     "heroImage": "/images/lessons/den-kalde-krigen/berlinmuren.webp",
     "details": [
         "Muren som delte Berlin i to fra 1961 til 1989.",
-        "Bygget av \u00d8st-Tyskland for \u00e5 stoppe flukten til vesten.",
-        "Kjent som 'den antifascistiske beskyttelsesmuren' i \u00f8st.",
-        "Et brennpunkt for dramatiske fluktfors\u00f8k og politisk spenning.",
-        "Murens fall i 1989 markerte begynnelsen p\u00e5 slutten for den kalde krigen."
+        "Bygget av Øst-Tyskland for å stoppe flukten til vesten.",
+        "Kjent som 'den antifascistiske beskyttelsesmuren' i øst.",
+        "Et brennpunkt for dramatiske fluktforsøk og politisk spenning.",
+        "Murens fall i 1989 markerte begynnelsen på slutten for den kalde krigen."
     ],
     "timeline": [
         {
             "year": "1961",
             "title": "Berlinmuren bygges",
-            "description": "Grensene i Berlin stenges br\u00e5tt natt til 13. august."
+            "description": "Grensene i Berlin stenges brått natt til 13. august."
         },
         {
             "year": "1989",
             "title": "Berlinmurens fall",
-            "description": "Presset fra befolkningen f\u00f8rer til at portene \u00e5pnes 9. november."
+            "description": "Presset fra befolkningen fører til at portene åpnes 9. november."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "I l\u00f8pet av [den kalde krigen](/historie/den-kalde-krigen/oversikt) fantes det ingen mer brutal og synlig p\u00e5minnelse om konflikten enn Berlinmuren. I 28 \u00e5r skar denne muren gjennom hjertet av en storby, skilte naboer, venner og familier, og markerte den absolutte grensen mellom frihet og diktatur.\n\nBerlin var en unik by. Den l\u00e5 dypt inne i det sovjetiskkontrollerte \u00d8st-Tyskland, men byens vestlige sektorer var en demokratisk '\u00f8y' st\u00f8ttet av USA, Storbritannia og Frankrike. For titusenvis av mennesker ble Vest-Berlin veien ut til et annet liv."
+            "content": "I løpet av [den kalde krigen](/historie/den-kalde-krigen/oversikt) fantes det ingen mer brutal og synlig påminnelse om konflikten enn Berlinmuren. I 28 år skar denne muren gjennom hjertet av en storby, skilte naboer, venner og familier, og markerte den absolutte grensen mellom frihet og diktatur.\n\nBerlin var en unik by. Den lå dypt inne i det sovjetiskkontrollerte Øst-Tyskland, men byens vestlige sektorer var en demokratisk 'øy' støttet av USA, Storbritannia og Frankrike. For titusenvis av mennesker ble Vest-Berlin veien ut til et annet liv."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hvorfor ble muren bygget?",
-                "content": "Mellom 1949 og 1961 flyktet over 2,5 millioner mennesker fra \u00d8st-Tyskland til Vesten gjennom Berlin. Det var ofte de best utdannede – leger, ingeni\u00f8rer og l\u00e6rere – som dro. Denne 'hjerneflukten' truet med \u00e5 ruinere den \u00f8sttyske staten fullstendig. Lederen Walter Ulbricht m\u00e5tte enten forbedre landet, eller stenge grensene. Han valgte det siste."
+                "content": "Mellom 1949 og 1961 flyktet over 2,5 millioner mennesker fra Øst-Tyskland til Vesten gjennom Berlin. Det var ofte de best utdannede - leger, ingeniører og lærere - som dro. Denne 'hjerneflukten' truet med å ruinere den østtyske staten fullstendig. Lederen Walter Ulbricht måtte enten forbedre landet, eller stenge grensene. Han valgte det siste."
             }
         },
         {
@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "P\u00e5 natten til s\u00f8ndag 13. august 1961 rykket \u00f8sttyske soldater og arbeidere ut. De rulle ut pigger\u00e5d og sperret gater. Folk som v\u00e5knet neste morgen, oppdaget at de ikke lenger kunne g\u00e5 p\u00e5 jobb, bes\u00f8ke familie eller krysse gaten til den andre siden av byen.\n\nI l\u00f8pet av dager og uker ble piggtr\u00e5den erstattet av betongvegger. Hus som l\u00e5 langs grensen ble murt igjen, og beboerne ble tvangsevakuert. Muren var ikke bare \u00e9n vegg, men et komplekst system av to murer med et tomt omr\u00e5de imellom – kjent som 'd\u00f8dsstripen' – med vaktt\u00e5rn, automatiske skytev\u00e5pen og vaktbikkjer."
+            "content": "På natten til søndag 13. august 1961 rykket østtyske soldater og arbeidere ut. De rulle ut piggeråd og sperret gater. Folk som våknet neste morgen, oppdaget at de ikke lenger kunne gå på jobb, besøke familie eller krysse gaten til den andre siden av byen (Dypvik, 2026).\n\nI løpet av dager og uker ble piggtråden erstattet av betongvegger. Hus som lå langs grensen ble murt igjen, og beboerne ble tvangsevakuert. Muren var ikke bare én vegg, men et komplekst system av to murer med et tomt område imellom - kjent som 'dødsstripen' - med vakttårn, automatiske skytevåpen og vaktbikkjer (Encyclopaedia Britannica, 2026)."
         },
         {
             "type": "component",
@@ -60,15 +60,15 @@
         },
         {
             "type": "text",
-            "content": "Berlin ble det symbolske sentrum for kampen mellom demokrati og kommunisme. I 1963 bes\u00f8kte president John F. Kennedy byen. Foran Sch\u00f8neberg rådhus holdt han sin ber\u00f8mte tale der han sa: 'Alle frie menn, uansett hvor de bor, er borgere av Berlin, og derfor, som en fri mann, sier jeg med stolthet: Ich bin ein Berliner.'\n\nHan anerkjente muren som et fryktelig bevis p\u00e5 at det kommunistiske systemet hadde mislyktes: 'Demokrati er ikke perfekt, men vi har aldri m\u00e5ttet bygge en mur for \u00e5 holde v\u00e5rt folk inne'."
+            "content": "Berlin ble det symbolske sentrum for kampen mellom demokrati og kommunisme. I 1963 besøkte president John F. Kennedy byen. Foran Schøneberg rådhus holdt han sin berømte tale der han sa: 'Alle frie menn, uansett hvor de bor, er borgere av Berlin, og derfor, som en fri mann, sier jeg med stolthet: Ich bin ein Berliner.'\n\nHan anerkjente muren som et fryktelig bevis på at det kommunistiske systemet hadde mislyktes: 'Demokrati er ikke perfekt, men vi har aldri måttet bygge en mur for å holde vårt folk inne' (Jahr & Sirevåg, 2025)."
         },
         {
             "type": "header",
-            "text": "Flukt og d\u00f8d langs grensen"
+            "text": "Flukt og død langs grensen"
         },
         {
             "type": "text",
-            "content": "Til tross for de enorme farene fors\u00f8kte tusenvis av mennesker \u00e5 flykte over muren. De brukte utrolig kreativitet: De gravde lange tunneler under muren, fl\u00f8 over i hjemmelagde luftballonger, gjemte seg i spesialbygde biler, og noen sv\u00f8mte gjennom kanalene.\n\nMen prisen var h\u00f8y. Grensevaktene hadde ordre om \u00e5 skyte alle som fors\u00f8kte \u00e5 flykte. Det er ansl\u00e5tt at minst 140 mennesker ble drept ved Berlinmuren. En av de mest hjerteskj\u00e6rende historiene var Peter Fechter, en 18 \u00e5r gammel gutt som ble skutt og ble liggende \u00e5 bl\u00f8 i hjel i d\u00f8dsstripen mens verden s\u00e5 p\u00e5 uten \u00e5 kunne hjelpe."
+            "content": "Til tross for de enorme farene forsøkte tusenvis av mennesker å flykte over muren. De brukte utrolig kreativitet: De gravde lange tunneler under muren, flø over i hjemmelagde luftballonger, gjemte seg i spesialbygde biler, og noen svømte gjennom kanalene.\n\nMen prisen var høy. Grensevaktene hadde ordre om å skyte alle som forsøkte å flykte. Det er anslått at minst 136 mennesker ble drept ved Berlinmuren (Dypvik, 2026). En av de mest hjerteskjærende historiene var Peter Fechter, en 18 år gammel gutt som ble skutt og ble liggende å blø i hjel i dødsstripen mens verden så på uten å kunne hjelpe (Chronik der Mauer, u.å.)."
         },
         {
             "type": "component",
@@ -84,8 +84,8 @@
                     },
                     {
                         "date": "1953",
-                        "title": "Oppr\u00f8ret i juni",
-                        "description": "\u00d8st-berlinske arbeidere gj\u00f8r oppr\u00f8r; sl\u00e5s ned av tanks."
+                        "title": "Opprøret i juni",
+                        "description": "Øst-berlinske arbeidere gjør opprør; slås ned av tanks."
                     },
                     {
                         "date": "1961",
@@ -116,7 +116,7 @@
         },
         {
             "type": "text",
-            "content": "P\u00e5 1980-tallet begynte presset mot muren \u00e5 øke. I 1987 holdt president Ronald Reagan en tale foran Brandenburger Tor. Han henvendte seg direkte til den nye sovjetiske lederen Mikhail Gorbatsjov: 'General Secretary Gorbachev, if you seek peace... come here to this gate! Mr. Gorbachev, open this gate! Mr. Gorbachev, tear down this wall!'\n\nSamtidig vokste protestbevegelsene i land som Polen og \u00d8st-Tyskland. Folk krevde reformer, og for f\u00f8rste gang var ikke Sovjetunionen villig til \u00e5 bruke milit\u00e6r makt for \u00e5 stoppe dem."
+            "content": "På 1980-tallet begynte presset mot muren å øke. I 1987 holdt president Ronald Reagan en tale foran Brandenburger Tor. Han henvendte seg direkte til den nye sovjetiske lederen Mikhail Gorbatsjov: 'General Secretary Gorbachev, if you seek peace... come here to this gate! Mr. Gorbachev, open this gate! Mr. Gorbachev, tear down this wall!'\n\nSamtidig vokste protestbevegelsene i land som Polen og Øst-Tyskland. Folk krevde reformer, og for første gang var ikke Sovjetunionen villig til å bruke militær makt for å stoppe dem."
         },
         {
             "type": "header",
@@ -124,7 +124,7 @@
         },
         {
             "type": "text",
-            "content": "Murens fall skjedde nesten ved en feiltakelse. Under en kluntete pressekonferanse sa en \u00f8sttysk talsmann, G\u00fcnter Schabowski, at visumreglene var endret og at folk kunne reise 'umiddelbart'. Da journalister spurte n\u00e5r det tr\u00e5dte i kraft, svarte han: 'S\u00e5 vidt jeg vet... med en gang'.\n\nTitusenvis av \u00f8st-berlinere str\u00f8mmet til grenseovergangene. Vaktene, som ikke hadde f\u00e5tt noen nye ordrer, ble overveldet av folkemassene og valgte til slutt \u00e5 \u00e5pne portene. Folk fra \u00f8st og vest m\u00f8ttes i en enorm fest p\u00e5 toppen av muren. Verden s\u00e5 p\u00e5 med t\u00e5rer i \u00f8ynene; den kalde krigen var i ferd med \u00e5 avsluttes i det som ble [Veien mot slutten](/historie/den-kalde-krigen/veien-mot-slutt)."
+            "content": "Murens fall skjedde nesten ved en feiltakelse. Under en kluntete pressekonferanse sa en østtysk talsmann, Günter Schabowski, at visumreglene var endret og at folk kunne reise 'umiddelbart'. Da journalister spurte når det trådte i kraft, svarte han: 'Så vidt jeg vet... med en gang'.\n\nTitusenvis av øst-berlinere strømmet til grenseovergangene. Vaktene, som ikke hadde fått noen nye ordrer, ble overveldet av folkemassene og valgte til slutt å åpne portene. Folk fra øst og vest møttes i en enorm fest på toppen av muren. Verden så på med tårer i øynene; den kalde krigen var i ferd med å avsluttes i det som ble [Veien mot slutten](/historie/den-kalde-krigen/veien-mot-slutt)."
         },
         {
             "type": "video",
@@ -165,7 +165,7 @@
             "props": {
                 "questions": [
                     {
-                        "question": "N\u00e5r ble Berlinmuren bygget?",
+                        "question": "Når ble Berlinmuren bygget?",
                         "options": [
                             "1945",
                             "1953",
@@ -175,17 +175,17 @@
                         "answer": "1961"
                     },
                     {
-                        "question": "Hva var hoved\u00e5rsaken til at \u00d8st-Tyskland bygde muren?",
+                        "question": "Hva var hovedårsaken til at Øst-Tyskland bygde muren?",
                         "options": [
-                            "For \u00e5 hindre invasjon fra USA",
-                            "For \u00e5 stoppe folk fra \u00e5 flykte til vesten",
-                            "For \u00e5 lage en stor turistattraksjon",
-                            "For \u00e5 spare str\u00f8m"
+                            "For å hindre invasjon fra USA",
+                            "For å stoppe folk fra å flykte til vesten",
+                            "For å lage en stor turistattraksjon",
+                            "For å spare strøm"
                         ],
-                        "answer": "For \u00e5 stoppe folk fra \u00e5 flykte til vesten"
+                        "answer": "For å stoppe folk fra å flykte til vesten"
                     },
                     {
-                        "question": "Hvilken amerikansk president sa de ber\u00f8mte ordene 'Ich bin ein Berliner'?",
+                        "question": "Hvilken amerikansk president sa de berømte ordene 'Ich bin ein Berliner'?",
                         "options": [
                             "Franklin D. Roosevelt",
                             "John F. Kennedy",
@@ -195,7 +195,7 @@
                         "answer": "John F. Kennedy"
                     },
                     {
-                        "question": "N\u00e5r falt Berlinmuren?",
+                        "question": "Når falt Berlinmuren?",
                         "options": [
                             "13. august 1961",
                             "4. juli 1976",
@@ -206,12 +206,24 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Dypvik, A. S. (2026). *Berlinmuren*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Berlinmuren](https://snl.no/Berlinmuren)",
+                    "Encyclopaedia Britannica. (2026). *Berlin Wall*. Hentet 22.07.2026 fra [britannica.com](https://www.britannica.com/topic/Berlin-Wall)",
+                    "Jahr, I. & Sirevåg, T. (2025). *John F. Kennedy*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/John_F._Kennedy](https://snl.no/John_F._Kennedy)",
+                    "Chronik der Mauer. (u.å.). *Peter Fechter*. Bundeszentrale für politische Bildung, Deutschlandradio & Zentrum für Zeithistorische Forschung. Hentet 22.07.2026 fra [chronik-der-mauer.de](https://www.chronik-der-mauer.de/en/victims/180502/fechter-peter)"
+                ]
+            }
         }
     ],
     "quiz": [
         {
             "id": "q1",
-            "question": "N\u00e5r ble Berlinmuren bygget?",
+            "question": "Når ble Berlinmuren bygget?",
             "options": [
                 "1945",
                 "1953",
@@ -222,18 +234,18 @@
         },
         {
             "id": "q2",
-            "question": "Hva var hoved\u00e5rsaken til at \u00d8st-Tyskland bygde muren?",
+            "question": "Hva var hovedårsaken til at Øst-Tyskland bygde muren?",
             "options": [
-                "For \u00e5 hindre invasjon fra USA",
-                "For \u00e5 stoppe folk fra \u00e5 flykte til vesten",
-                "For \u00e5 lage en stor turistattraksjon",
-                "For \u00e5 spare str\u00f8m"
+                "For å hindre invasjon fra USA",
+                "For å stoppe folk fra å flykte til vesten",
+                "For å lage en stor turistattraksjon",
+                "For å spare strøm"
             ],
             "correctAnswer": 1
         },
         {
             "id": "q3",
-            "question": "Hvilken amerikansk president sa de ber\u00f8mte ordene 'Ich bin ein Berliner'?",
+            "question": "Hvilken amerikansk president sa de berømte ordene 'Ich bin ein Berliner'?",
             "options": [
                 "Franklin D. Roosevelt",
                 "John F. Kennedy",
@@ -244,7 +256,7 @@
         },
         {
             "id": "q4",
-            "question": "N\u00e5r falt Berlinmuren?",
+            "question": "Når falt Berlinmuren?",
             "options": [
                 "13. august 1961",
                 "4. juli 1976",
@@ -255,5 +267,5 @@
         }
     ],
     "createdDate": "2023-12-21T12:40:00Z",
-    "lastUpdated": "2023-12-21T12:40:00Z"
+    "lastUpdated": "2026-07-22T00:00:00Z"
 }

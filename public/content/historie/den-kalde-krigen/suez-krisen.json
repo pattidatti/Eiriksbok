@@ -8,23 +8,23 @@
     "readTime": "12 min lesning",
     "heroImage": "/images/historie/den-kalde-krigen/suez_krisen_hero.webp",
     "details": [
-        "En krise som markerte slutten p\u00e5 britisk og fransk stormaktsstatus.",
-        "Utl\u00f8st av Egypts nasjonalisering av Suezkanalen.",
+        "En krise som markerte slutten på britisk og fransk stormaktsstatus.",
+        "Utløst av Egypts nasjonalisering av Suezkanalen.",
         "En uvanlig allianse mellom Israel, Storbritannia og Frankrike.",
-        "USA og Sovjetunionen sto for en gang skyld p\u00e5 samme side mot invasjonen.",
-        "F\u00f8rte til opprettelsen av FNs f\u00f8rste fredsbevarende styrker."
+        "USA og Sovjetunionen sto for en gang skyld på samme side mot invasjonen.",
+        "Førte til opprettelsen av FNs første fredsbevarende styrker."
     ],
     "timeline": [
         {
             "year": "1956",
             "title": "Suez-krisen",
-            "description": "Nasjonaliseringen av kanalen utl\u00f8ser internasjonal krise."
+            "description": "Nasjonaliseringen av kanalen utløser internasjonal krise."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "Suez-krisen i 1956 er et av de mest fascinerende og avgj\u00f8rende \u00f8yeblikkene i [den kalde krigen](/historie/den-kalde-krigen/oversikt). Det var en konflikt der fortiden m\u00f8tte fremtiden: Gamle kolonimakter som Storbritannia og Frankrike fors\u00f8kte \u00e5 hevde sin makt i en verden som n\u00e5 ble dominert av de nye supermaktene USA og Sovjetunionen.\n\nKrisen handlet om kontroll over Suezkanalen \u2013 den menneskebygde vannveien i Egypt som knytter Middelhavet til R\u00f8dehavet. For Europa var kanalen en livslinje, s\u00e6rlig for transport av olje fra de arabiske landene. Men for Egypt var den et symbol p\u00e5 vestlig dominans som de \u00f8nsket \u00e5 riste av seg."
+            "content": "Suez-krisen i 1956 er et av de mest fascinerende og avgjørende øyeblikkene i [den kalde krigen](/historie/den-kalde-krigen/oversikt). Det var en konflikt der fortiden møtte fremtiden: Gamle kolonimakter som Storbritannia og Frankrike forsøkte å hevde sin makt i en verden som nå ble dominert av de nye supermaktene USA og Sovjetunionen.\n\nKrisen handlet om kontroll over Suezkanalen - den menneskebygde vannveien i Egypt som knytter Middelhavet til Rødehavet (Store norske leksikon, 2026). For Europa var kanalen en livslinje, særlig for transport av olje fra de arabiske landene. Men for Egypt var den et symbol på vestlig dominans som de ønsket å riste av seg."
         },
         {
             "type": "image",
@@ -42,16 +42,16 @@
             "name": "FactBox",
             "props": {
                 "title": "Suezkanalens betydning",
-                "content": "Kanalen ble \u00e5pnet i 1869 og forkortet sj\u00f8veien mellom Europa og Asia med flere tusen kilometer. P\u00e5 1950-tallet gikk to tredjedeler av Europas oljeforsyning gjennom kanalen. Den ble eid og drevet av 'Suez Canal Company', der britiske og franske aksjon\u00e6rer hadde flertallet."
+                "content": "Kanalen ble åpnet i 1869 og forkortet sjøveien mellom Europa og Asia med flere tusen kilometer. På 1950-tallet gikk to tredjedeler av Europas oljeforsyning gjennom kanalen. Den ble eid og drevet av 'Suez Canal Company', der britiske og franske aksjonærer hadde flertallet."
             }
         },
         {
             "type": "header",
-            "text": "Nasser og dr\u00f8mmen om et fritt Egypt"
+            "text": "Nasser og drømmen om et fritt Egypt"
         },
         {
             "type": "text",
-            "content": "I 1952 tok en gruppe offiserer makten i Egypt, og snart steg Gamal Abdel Nasser frem som landets ubestridte leder. Nasser var en karismatisk nasjonalist som dr\u00f8mte om \u00e5 forene den arabiske verden og gj\u00f8re regionen uavhengig av de gamle kolonimaktene.\n\nFor \u00e5 modernisere Egypt ønsket Nasser \u00e5 bygge den gigantiske Assuan-demningen i Nilen. Han trengte penger, og da USA og Storbritannia trakk tilbake sine l\u00e5netilbud fordi Nasser n\u00e6rmet seg \u00d8stblokken, svarte han med et sjokk: Den 26. juli 1956 kunngjorde han at Egypt ville nasjonalisere Suezkanalen. Inntektene fra kanalen skulle brukes til \u00e5 betale for demningen."
+            "content": "I 1952 tok en gruppe offiserer makten i Egypt, og snart steg Gamal Abdel Nasser frem som landets ubestridte leder. Nasser var en karismatisk nasjonalist som drømte om å forene den arabiske verden og gjøre regionen uavhengig av de gamle kolonimaktene.\n\nFor å modernisere Egypt ønsket Nasser å bygge den gigantiske Assuan-demningen i Nilen. Han trengte penger, og da USA og Storbritannia trakk tilbake sine lånetilbud fordi Nasser nærmet seg Østblokken (Encyclopaedia Britannica, 2026), svarte han med et sjokk: Den 26. juli 1956 kunngjorde han at Egypt ville nasjonalisere Suezkanalen (Leraand, 2024). Inntektene fra kanalen skulle brukes til å betale for demningen."
         },
         {
             "type": "image",
@@ -61,11 +61,11 @@
         },
         {
             "type": "header",
-            "text": "Den hemmelige planen: Protokollen fra S\u00e8vres"
+            "text": "Den hemmelige planen: Protokollen fra Sèvres"
         },
         {
             "type": "text",
-            "content": "Storbritannias statsminister Anthony Eden og den franske regjeringen ble rasende. De s\u00e5 p\u00e5 Nasser som en trussel p\u00e5 linje med Hitler og fryktet at han ville strupe oljetilf\u00f8rselen. Siden de ikke hadde juridisk rett til \u00e5 angripe Egypt bare fordi de nasjonaliserte kanalen, p\u00f8nsket de ut en hemmelig plan sammen med Israel.\n\nPlanen, skrevet ned i den s\u00e5kalte S\u00e8vres-protokollen, var slik: Israel skulle invadere Sinai-halv\u00f8ya og rykke frem mot kanalen. Storbritannia og Frankrike skulle da sende Egypt og Israel et ultimatum om \u00e5 trekke seg tilbake fra kanalsonen 'for \u00e5 beskytte skipstrafikken'. N\u00e5r Nasser (som forventet) nektet \u00e5 trekke seg tilbake fra sitt eget territorium, ville britiske og franske styrker intervenere og ta kontroll over kanalen."
+            "content": "Storbritannias statsminister Anthony Eden og den franske regjeringen ble rasende. De så på Nasser som en trussel på linje med Hitler og fryktet at han ville strupe oljetilførselen. Siden de ikke hadde juridisk rett til å angripe Egypt bare fordi de nasjonaliserte kanalen, pønsket de ut en hemmelig plan sammen med Israel.\n\nPlanen, skrevet ned i den såkalte Sèvres-protokollen, var slik: Israel skulle invadere Sinai-halvøya og rykke frem mot kanalen. Storbritannia og Frankrike skulle da sende Egypt og Israel et ultimatum om å trekke seg tilbake fra kanalsonen 'for å beskytte skipstrafikken'. Når Nasser (som forventet) nektet å trekke seg tilbake fra sitt eget territorium, ville britiske og franske styrker intervenere og ta kontroll over kanalen."
         },
         {
             "type": "image",
@@ -79,7 +79,7 @@
         },
         {
             "type": "text",
-            "content": "Den 29. oktober 1956 angrep Israel, og kort tid etter fulgte de britiske og franske angrepene. Milit\u00e6rt sett var operasjonen en suksess; det egyptiske luftforsvaret ble knust, og fallskjermjegere tok kontroll over viktige punkter ved kanalen. Men politisk sett ble det en katastrofe.\n\nVerden ble rystet av at to stormakter og Israel gikk til krig mot et utviklingsland p\u00e5 et slikt grunnlag. S\u00e6rlig timing var d\u00e5rlig: Samtidig som invasjonen skjedde, holdt Sovjetunionen p\u00e5 med \u00e5 sl\u00e5 ned oppstanden i Ungarn. Ved \u00e5 angripe Egypt, ga Storbritannia og Frankrike Sovjetunionen en perfekt mulighet til \u00e5 flytte verdens oppmerksomhet bort fra Ungarn."
+            "content": "Den 29. oktober 1956 angrep Israel, og kort tid etter fulgte de britiske og franske angrepene. Militært sett var operasjonen en suksess; det egyptiske luftforsvaret ble knust, og fallskjermjegere tok kontroll over viktige punkter ved kanalen. Men politisk sett ble det en katastrofe.\n\nVerden ble rystet av at to stormakter og Israel gikk til krig mot et utviklingsland på et slikt grunnlag. Særlig timing var dårlig: Samtidig som invasjonen skjedde, holdt Sovjetunionen på med å slå ned oppstanden i Ungarn. Ved å angripe Egypt, ga Storbritannia og Frankrike Sovjetunionen en perfekt mulighet til å flytte verdens oppmerksomhet bort fra Ungarn."
         },
         {
             "type": "image",
@@ -93,7 +93,7 @@
         },
         {
             "type": "text",
-            "content": "Den st\u00f8rste overraskelsen var reaksjonen fra USA. President Dwight D. Eisenhower ble rasende over at hans n\u00e6rmeste allierte hadde startet en krig bak hans rygg, s\u00e6rlig rett f\u00f8r et amerikansk presidentvalg. USA fryktet at krigen ville drive hele den arabiske verden rett i armene p\u00e5 Sovjetunionen.\n\nUSA valgte \u00e5 legge knallhardt \u00f8konomisk press p\u00e5 Storbritannia ved \u00e5 true med \u00e5 selge britiske pund, noe som kunne f\u00f8re til at den britiske \u00f8konomien kollapset. Samtidig truet Sovjetunionens leder, Nikita Khrusjtsjov, med atomangrep mot London og Paris hvis de ikke trakk seg ut. Under dette doble presset hadde Storbritannia og Frankrike ikke noe annet valg enn \u00e5 be om v\u00e5penhvile og trekke seg ut i van\u00e6re."
+            "content": "Den største overraskelsen var reaksjonen fra USA. President Dwight D. Eisenhower ble rasende over at hans nærmeste allierte hadde startet en krig bak hans rygg, særlig rett før et amerikansk presidentvalg. USA fryktet at krigen ville drive hele den arabiske verden rett i armene på Sovjetunionen.\n\nUSA valgte å legge knallhardt økonomisk press på Storbritannia ved å true med å selge britiske pund, noe som kunne føre til at den britiske økonomien kollapset. Samtidig truet Sovjetunionen med rakettangrep mot London og Paris hvis de ikke trakk seg ut. Under dette doble presset hadde Storbritannia og Frankrike ikke noe annet valg enn å be om våpenhvile og trekke seg ut i vanære."
         },
         {
             "type": "video",
@@ -104,19 +104,19 @@
             "type": "component",
             "name": "Comparison",
             "props": {
-                "title": "Partenes m\u00e5l og resultater",
+                "title": "Partenes mål og resultater",
                 "leftTitle": "Storbritannia & Frankrike",
                 "rightTitle": "Egypt & Nasser",
                 "items": [
                     {
-                        "label": "M\u00e5l",
-                        "left": "Gjeninnf\u00f8re kontroll over kanalen og fjerne Nasser.",
+                        "label": "Mål",
+                        "left": "Gjeninnføre kontroll over kanalen og fjerne Nasser.",
                         "right": "Nasjonalisere kanalen og hevde suverenitet."
                     },
                     {
-                        "label": "Milit\u00e6r innsats",
-                        "left": "Seier p\u00e5 slagmarken.",
-                        "right": "Nederlag p\u00e5 slagmarken."
+                        "label": "Militær innsats",
+                        "left": "Seier på slagmarken.",
+                        "right": "Nederlag på slagmarken."
                     },
                     {
                         "label": "Politisk utfall",
@@ -124,8 +124,8 @@
                         "right": "Stor politisk triumf; Nasser ble en helt."
                     },
                     {
-                        "label": "Status etterp\u00e5",
-                        "left": "Avhengig av amerikansk st\u00f8tte.",
+                        "label": "Status etterpå",
+                        "left": "Avhengig av amerikansk støtte.",
                         "right": "Leder for den pan-arabiske bevegelsen."
                     }
                 ]
@@ -137,7 +137,7 @@
         },
         {
             "type": "text",
-            "content": "Suez-krisen endret det geopolitiske kartet for alltid. Den markerte det endelige punktumet for Storbritannia og Frankrike som globale stormakter som kunne handle uavhengig av USA. Fra n\u00e5 av var det supermaktene som la premissene.\n\nKrisen f\u00f8rte ogs\u00e5 til opprettelsen av UNEF (United Nations Emergency Force), verdens f\u00f8rste fredsbevarende FN-styrke, etter et forslag fra den kanadiske politikeren Lester B. Pearson. Styrken skulle st\u00e5 i Sinai for \u00e5 holde partene fra hverandre. I Midt\u00f8sten ble Nasser en ubestridt helt, og b\u00f8lgen av dekolonialisering i Afrika og Asia skExposure fart."
+            "content": "Suez-krisen endret det geopolitiske kartet for alltid. Den markerte det endelige punktumet for Storbritannia og Frankrike som globale stormakter som kunne handle uavhengig av USA. Fra nå av var det supermaktene som la premissene.\n\nKrisen førte også til opprettelsen av UNEF (United Nations Emergency Force), verdens første fredsbevarende FN-styrke, etter et forslag fra den kanadiske politikeren Lester B. Pearson (NobelPrize.org, u.å.). Styrken skulle stå i Sinai for å holde partene fra hverandre. I Midtøsten ble Nasser en ubestridt helt, og bølgen av dekolonialisering i Afrika og Asia skjøt fart."
         },
         {
             "type": "image",
@@ -184,7 +184,7 @@
                         "answer": "Gamal Abdel Nasser"
                     },
                     {
-                        "question": "Hvilken hendelse utl\u00f8ste krisen?",
+                        "question": "Hvilken hendelse utløste krisen?",
                         "options": [
                             "Invasjonen av Sinai",
                             "Nasjonaliseringen av Suezkanalen",
@@ -194,7 +194,7 @@
                         "answer": "Nasjonaliseringen av Suezkanalen"
                     },
                     {
-                        "question": "Hvilke tre land inngikk en hemmelig allianse for \u00e5 angripe Egypt?",
+                        "question": "Hvilke tre land inngikk en hemmelig allianse for å angripe Egypt?",
                         "options": [
                             "USA, S-Arabia og Jordan",
                             "Storbritannia, Frankrike og Israel",
@@ -206,13 +206,25 @@
                     {
                         "question": "Hva markerte Suez-krisen for Storbritannia og Frankrike?",
                         "options": [
-                            "Starten p\u00e5 et nytt imperium",
-                            "Slutten p\u00e5 deres status som globale stormakter",
-                            "En stor \u00f8konomisk boom",
-                            "At de ble n\u00e6rere venner med Sovjetunionen"
+                            "Starten på et nytt imperium",
+                            "Slutten på deres status som globale stormakter",
+                            "En stor økonomisk boom",
+                            "At de ble nærere venner med Sovjetunionen"
                         ],
-                        "answer": "Slutten p\u00e5 deres status som globale stormakter"
+                        "answer": "Slutten på deres status som globale stormakter"
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Leraand, D. (2024). *Suezkrisen*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Suezkrisen](https://snl.no/Suezkrisen)",
+                    "Store norske leksikon. (2026). *Suezkanalen*. Hentet 22.07.2026 fra [snl.no/Suezkanalen](https://snl.no/Suezkanalen)",
+                    "Encyclopaedia Britannica. (2026). *Suez Crisis*. Hentet 22.07.2026 fra [britannica.com](https://www.britannica.com/event/Suez-Crisis)",
+                    "NobelPrize.org. (u.å.). *Lester Bowles Pearson - Facts*. Nobel Prize Outreach. Hentet 22.07.2026 fra [nobelprize.org](https://www.nobelprize.org/prizes/peace/1957/pearson/facts/)"
                 ]
             }
         }
@@ -231,7 +243,7 @@
         },
         {
             "id": "q2",
-            "question": "Hvilken hendelse utl\u00f8ste krisen?",
+            "question": "Hvilken hendelse utløste krisen?",
             "options": [
                 "Invasjonen av Sinai",
                 "Nasjonaliseringen av Suezkanalen",
@@ -242,7 +254,7 @@
         },
         {
             "id": "q3",
-            "question": "Hvilke tre land inngikk en hemmelig allianse for \u00e5 angripe Egypt?",
+            "question": "Hvilke tre land inngikk en hemmelig allianse for å angripe Egypt?",
             "options": [
                 "USA, S-Arabia og Jordan",
                 "Storbritannia, Frankrike og Israel",
@@ -255,14 +267,14 @@
             "id": "q4",
             "question": "Hva markerte Suez-krisen for Storbritannia og Frankrike?",
             "options": [
-                "Starten p\u00e5 et nytt imperium",
-                "Slutten p\u00e5 deres status som globale stormakter",
-                "En stor \u00f8konomisk boom",
-                "At de ble n\u00e6rere venner med Sovjetunionen"
+                "Starten på et nytt imperium",
+                "Slutten på deres status som globale stormakter",
+                "En stor økonomisk boom",
+                "At de ble nærere venner med Sovjetunionen"
             ],
             "correctAnswer": 1
         }
     ],
     "createdDate": "2023-12-21T12:00:00Z",
-    "lastUpdated": "2023-12-21T12:00:00Z"
+    "lastUpdated": "2026-07-22T00:00:00Z"
 }
