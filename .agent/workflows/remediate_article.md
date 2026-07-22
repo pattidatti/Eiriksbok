@@ -1,3 +1,11 @@
+## KRITISKE KRAV (les FØRST)
+
+1. NORSKE TEGN: Skriv alltid ekte å, ø, æ (og Å, Ø, Æ) direkte i all tekst du redigerer eller legger til. ALDRI aa/oe/ae. Rett mojibake (Ã¦ Ã¸ Ã¥) til æ ø å der du ser det.
+2. Git-repoet (github.com/pattidatti/Eiriksbok) er sjekket ut i arbeidsmappen. Finn dagens dato med `date +"%Y-%m-%d"` - den brukes som hentedato i Kildeliste.
+3. Fabriker ALDRI en kilde eller en henvisning. Usikker på forfatter/år? Slå det opp med WebFetch mot den faktiske siden. Får du det ikke bekreftet, dropp kilden.
+
+---
+
 # Rutine: Kildebelegging av eksisterende artikler (`eiriksbok-article-remediation`)
 
 Du er en historie-/fagredaktør for den norske digitale læreboka Eiriksbok. Oppgaven din er å
@@ -18,11 +26,9 @@ belegge en påstand, følg den konservative opptrappingen under - ikke gjett, og
 ## Arbeidsområde (juster ved behov)
 
 ```
-SCOPE="public/content/historie/forste-verdenskrig"   # start: fullfør pilot-emnet
-# Når et emne er ferdig (grep under returnerer tomt), utvid til hele faget:
-# SCOPE="public/content/historie"
-# Rekkefølge etter etterslep/risiko: musikk og samfunnskunnskap (0 stier) er lavrisiko;
-# historie er størst og mest sti-koblet.
+SCOPE="public/content/historie"   # hele historie-faget (~222 artikler igjen per 2026-07-22)
+# Når historie er ferdig (grep under returnerer tomt), bytt til neste fag ved å endre denne linjen:
+# musikk og samfunnskunnskap har 0 sti-kobling (lavrisiko), deretter norsk og krle.
 ```
 
 ---
@@ -206,6 +212,15 @@ npm run build 2>&1 | tail -30                           # tsc + vite må passere
 ```
 
 Alle må være grønne. Feiler noe: fiks og kjør på nytt. IKKE publiser en batch som ikke bygger.
+
+Merk: scan:content kan regenerere manifest-datoer og andre genererte filer som IKKE er dine. Stage KUN de artikkel-/sti-filene du faktisk endret + evt. content-index.json. Sveip aldri inn urelatert drift eller andre filer i working tree.
+
+**4c. Tegn-sjekk (obligatorisk, MÅ være tom).** For hver redigert artikkel, sjekk manglende norske tegn i SYNLIG tekst - men IKKE i filstier/URL-er (bildefilnavn som `kalrotvinteren.webp` og lenke-URL-er skal ALDRI endres):
+```bash
+grep -nEi '\b(paa|naar|gaar|staar|faar|blaa|graa|smaa|gjoer|hoey|roed|groen|noed|oey|vaere|laere|foerste|stoerre|innfoert|gjennomfoert|sjoe)\b' <artikkel.json> \
+  | grep -vE '"(src|url|href|image|heroImage)"|https?://|\.(webp|png|jpg|svg)'
+```
+Gir det treff i synlig tekst: rett til å/ø/æ (f.eks. «foerste» → «første»). Ignorer treff i bildefilnavn/URL-er.
 
 ---
 
