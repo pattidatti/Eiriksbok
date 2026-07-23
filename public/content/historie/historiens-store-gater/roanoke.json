@@ -5,7 +5,7 @@
     "year": "1587-1590",
     "category": "Historiens store gåter",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/roanoke-hero.webp",
     "details": [
         "I 1587 grunnla 117 engelskmenn kolonien Roanoke. Tre år senere var alle sammen sporløst borte.",
         "Det eneste sporet var ett ord skåret i en stolpe: CROATOAN - navnet på en øy og et folk i nærheten.",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/roanoke-01.webp",
             "alt": "Tom trelandsby i tåke med et ord skåret inn i en høy trestolpe",
             "caption": "Da John White kom tilbake, var kolonien borte. Det eneste sporet var ordet CROATOAN skåret i en stolpe."
         },
@@ -63,7 +63,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/roanoke-02.webp",
             "alt": "Arkeolog holder en rusten metallgjenstand gravd opp av lys sandjord",
             "caption": "Engelske gjenstander funnet i urfolkets landsbyer styrker teorien om at kolonistene flyttet inn til dem."
         },
@@ -92,7 +92,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/roanoke-03.webp",
             "alt": "Rolig kystlandskap med gress og grått hav i dis om morgenen",
             "caption": "I dag er stedet et minnesmerke. Arkeologer graver fortsatt etter svaret."
         },
