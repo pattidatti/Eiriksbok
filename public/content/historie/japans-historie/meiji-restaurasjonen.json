@@ -14,7 +14,7 @@
     "content": [
         {
             "type": "text",
-            "content": "En sommerdag i 1853 dukket det opp fire svarte skip i bukta utenfor Tokyo. De spydde svart røyk, og de var større enn noe japanerne hadde sett. Om bord var den amerikanske offiseren Matthew Perry. Han hadde med seg ett enkelt budskap: Japan måtte åpne havnene sine for handel, ellers ville kanonene snakke. Japanerne hadde nesten ingenting å stille opp med. Skipene deres var små trebåter. Kanonene deres var gamle."
+            "content": "En sommerdag i 1853 dukket det opp fire svarte skip i bukta utenfor Tokyo. De spydde svart røyk, og de var større enn noe japanerne hadde sett. Om bord var den amerikanske offiseren Matthew Perry. Han hadde med seg ett enkelt budskap: Japan måtte åpne havnene sine for handel, ellers ville kanonene snakke. Japanerne hadde nesten ingenting å stille opp med. Skipene deres var små trebåter. Kanonene deres var gamle (Filseth & Henne, 2024)."
         },
         {
             "type": "image",
@@ -32,7 +32,7 @@
         },
         {
             "type": "text",
-            "content": "I hundrevis av år hadde den virkelige makten ligget hos shogunen, den øverste krigsherren. Keiseren var bare et symbol uten makt. Men nå fikk shogunen skylda for at landet var blitt så svakt. I 1868 gjorde en gruppe yngre samuraier opprør, styrtet shogunen og ga makten tilbake til den unge keiseren Meiji. Dette kaller vi Meiji-restaurasjonen. Ordet restaurasjon betyr å sette noe tilbake slik det var før."
+            "content": "I hundrevis av år hadde den virkelige makten ligget hos shogunen, den øverste krigsherren. Keiseren var bare et symbol uten makt. Men nå fikk shogunen skylda for at landet var blitt så svakt. I 1868 gjorde en gruppe yngre samuraier opprør, styrtet shogunen og ga makten tilbake til den unge keiseren Meiji. Dette kaller vi Meiji-restaurasjonen (Filseth & Henne, 2024). Ordet restaurasjon betyr å sette noe tilbake slik det var før."
         },
         {
             "type": "text",
@@ -98,11 +98,11 @@
         },
         {
             "type": "text",
-            "content": "Forandringen kostet. Bøndene måtte betale høye skatter for å finansiere fabrikkene og hæren. Mange jobbet lange dager i de nye fabrikkene for lav lønn. Og ikke alle fikk være med på å bestemme, selv om Japan fikk en grunnlov i 1889. Keiseren og en liten elite satt fortsatt med mesteparten av makten."
+            "content": "Forandringen kostet. Bøndene måtte betale høye skatter for å finansiere fabrikkene og hæren. Mange jobbet lange dager i de nye fabrikkene for lav lønn. Og ikke alle fikk være med på å bestemme, selv om Japan fikk en grunnlov i 1889 (Filseth & Henne, 2024). Keiseren og en liten elite satt fortsatt med mesteparten av makten."
         },
         {
             "type": "text",
-            "content": "Men resultatet var likevel oppsiktsvekkende. På bare én generasjon var Japan blitt en moderne industrinasjon. Og landet brukte den nye styrken sin slik stormaktene gjorde: til å erobre. Japan vant en krig mot Kina i 1895, og i 1905 slo de til og med det store Russland. Det var første gang på lenge at et asiatisk land beseiret en europeisk stormakt. Den samme veksten og krigsviljen førte etter hvert Japan inn i [andre verdenskrig](/historie/andre-verdenskrig/oversikt)."
+            "content": "Men resultatet var likevel oppsiktsvekkende. På bare én generasjon var Japan blitt en moderne industrinasjon. Og landet brukte den nye styrken sin slik stormaktene gjorde: til å erobre. Japan vant en krig mot Kina i 1895 (Jacob, 2024), og i 1905 slo de til og med det store Russland (Filseth, 2025). Det var første gang på lenge at et asiatisk land beseiret en europeisk stormakt. Den samme veksten og krigsviljen førte etter hvert Japan inn i [andre verdenskrig](/historie/andre-verdenskrig/oversikt)."
         },
         {
             "type": "image",
@@ -188,7 +188,19 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Filseth, G. (2025). *Den russisk-japanske krig*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Den_russisk-japanske_krig](https://snl.no/Den_russisk-japanske_krig)",
+                    "Filseth, G. & Henne, H. (2024). *Japans historie*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Japans_historie](https://snl.no/Japans_historie)",
+                    "Jacob, F. (2024). *Oversikt over Japans historie*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Oversikt_over_Japans_historie](https://snl.no/Oversikt_over_Japans_historie)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-23"
 }

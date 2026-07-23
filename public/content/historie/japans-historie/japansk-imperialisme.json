@@ -52,7 +52,7 @@
         },
         {
             "type": "text",
-            "content": "På papiret var dette en umulig kamp. Kina var mange ganger større enn Japan og hadde mye flere folk. Men Kina hadde ikke modernisert seg. Den japanske hæren og marinen var nye, godt trente og godt utstyrte, mens de kinesiske styrkene var gammeldagse. Japan vant raskt og knusende. Som seierherre fikk Japan øya Taiwan, sin første koloni. Verden begynte å legge merke til den nye stormakten i øst."
+            "content": "På papiret var dette en umulig kamp. Kina var mange ganger større enn Japan og hadde mye flere folk. Men Kina hadde ikke modernisert seg. Den japanske hæren og marinen var nye, godt trente og godt utstyrte, mens de kinesiske styrkene var gammeldagse. Japan vant raskt og knusende. Som seierherre fikk Japan øya Taiwan, sin første koloni (Jacob, 2024). Verden begynte å legge merke til den nye stormakten i øst."
         },
         {
             "type": "text",
@@ -71,11 +71,11 @@
         },
         {
             "type": "text",
-            "content": "Den neste rivalen var mye farligere. Russland var en europeisk stormakt som også ville inn i samme område. Russerne bygde jernbane gjennom Mandsjuria i Nord-Kina og leide en viktig havn der, Port Arthur. Japan følte seg presset, og i 1904 angrep japanske skip den russiske flåten ved Port Arthur uten forvarsel."
+            "content": "Den neste rivalen var mye farligere. Russland var en europeisk stormakt som også ville inn i samme område. Russerne bygde jernbane gjennom Mandsjuria i Nord-Kina og leide en viktig havn der, Port Arthur. Japan følte seg presset, og i 1904 angrep japanske skip den russiske flåten ved Port Arthur uten forvarsel (Filseth, 2025)."
         },
         {
             "type": "text",
-            "content": "Krigen ble hard. På land kjempet store hærer om byer og festninger i Mandsjuria, og titusener av soldater døde. Til sjøs hadde Japan overtaket. For å snu krigen sendte tsaren sin store Østersjøflåte fra Europa. Reisen tok et halvt år, hele veien rundt Afrika og Asia. Da den endelig nådde fram, var mannskapet utslitt, og den moderne japanske flåten ventet på dem i Tsushimastredet."
+            "content": "Krigen ble hard. På land kjempet store hærer om byer og festninger i Mandsjuria, og titusener av soldater døde. Til sjøs hadde Japan overtaket. For å snu krigen sendte tsaren sin store Østersjøflåte fra Europa. Reisen tok et halvt år, hele veien rundt Afrika og Asia. Da den endelig nådde fram, var mannskapet utslitt, og den moderne japanske flåten ventet på dem i Tsushimastredet (Lindstrøm, 2025)."
         },
         {
             "type": "image",
@@ -85,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "Slaget endte i en total japansk seier. USAs president hjalp til med å forhandle fram en fred i 1905. Japan fikk den sørlige delen av øya Sakhalin og fri rett til å styre over Korea. Men det viktigste var ikke landområdene. Det viktigste var beskjeden hele verden nå hadde fått: en europeisk stormakt kunne beseires."
+            "content": "Slaget endte i en total japansk seier. USAs president hjalp til med å forhandle fram en fred i 1905. Japan fikk den sørlige delen av øya Sakhalin og fri rett til å styre over Korea (Filseth, 2025). Men det viktigste var ikke landområdene. Det viktigste var beskjeden hele verden nå hadde fått: en europeisk stormakt kunne beseires."
         },
         {
             "type": "text",
@@ -104,7 +104,7 @@
         },
         {
             "type": "text",
-            "content": "For Japan var seieren en triumf. For naboene var den en tragedie. Etter krigen mot Russland strammet Japan grepet om Korea, og i 1910 ble landet en japansk koloni. De neste 35 årene styrte Japan Korea hardt. Koreanere måtte bruke japansk språk på skolen, ta japanske navn og arbeide for den japanske staten."
+            "content": "For Japan var seieren en triumf. For naboene var den en tragedie. Etter krigen mot Russland strammet Japan grepet om Korea, og i 1910 ble landet en japansk koloni (Jacob, 2024). De neste 35 årene styrte Japan Korea hardt. Koreanere måtte bruke japansk språk på skolen, ta japanske navn og arbeide for den japanske staten."
         },
         {
             "type": "text",
@@ -196,7 +196,19 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Filseth, G. (2025). *Den russisk-japanske krig*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Den_russisk-japanske_krig](https://snl.no/Den_russisk-japanske_krig)",
+                    "Jacob, F. (2024). *Oversikt over Japans historie*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Oversikt_over_Japans_historie](https://snl.no/Oversikt_over_Japans_historie)",
+                    "Lindstrøm, A. T. (2025). *Tsushima*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Tsushima](https://snl.no/Tsushima)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-23"
 }
