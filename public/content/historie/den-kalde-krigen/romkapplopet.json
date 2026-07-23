@@ -1,47 +1,47 @@
 {
     "id": "romkapplopet",
-    "title": "Romkappl\u00f8pet: Veien mot stjernene og m\u00e5nen",
+    "title": "Romkappløpet: Veien mot stjernene og månen",
     "subject": "historie",
     "layout": "rich",
-    "year": "1957–1975",
+    "year": "1957-1975",
     "category": "Kald krig / Teknologi",
     "readTime": "12 min lesning",
     "heroImage": "/images/lessons/den-kalde-krigen/romkapplopet.webp",
     "details": [
-        "En teknologisk og ideologisk kamp om \u00e5 v\u00e6re f\u00f8rst i verdensrommet.",
+        "En teknologisk og ideologisk kamp om å være først i verdensrommet.",
         "Startet med den sovjetiske satellitten Sputnik i 1957.",
-        "Handlet like mye om v\u00e5penteknologi (raketter) som utforskning.",
-        "Kulminerte med den amerikanske m\u00e5nelandingen i 1969.",
+        "Handlet like mye om våpenteknologi (raketter) som utforskning.",
+        "Kulminerte med den amerikanske månelandingen i 1969.",
         "Bidro til enorme teknologiske fremskritt som vi bruker i dag."
     ],
     "timeline": [
         {
             "year": "1957",
             "title": "Sputnik 1",
-            "description": "Verdens f\u00f8rste kunstige satellitt skytes opp."
+            "description": "Verdens første kunstige satellitt skytes opp."
         },
         {
             "year": "1961",
-            "title": "F\u00f8rste menneske i rommet",
-            "description": "Yuri Gagarin fullf\u00f8rer et kretsl\u00f8p rundt jorda."
+            "title": "Første menneske i rommet",
+            "description": "Yuri Gagarin fullfører et kretsløp rundt jorda."
         },
         {
             "year": "1969",
-            "title": "M\u00e5nelandingen",
-            "description": "Apollo 11 lander p\u00e5 m\u00e5nen; USA vinner kappl\u00f8pet."
+            "title": "Månelandingen",
+            "description": "Apollo 11 lander på månen; USA vinner kappløpet."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "Under [den kalde krigen](/historie/den-kalde-krigen/oversikt) var verdensrommet den ultimate arenaen for \u00e5 vise hvilken ideologi som var overlegen. For USA og Sovjetunionen handlet ikke romfart bare om vitenskapelig nysgjerrighet; det handlet om prestisje, propaganda og milit\u00e6r makt. Hvis du kunne sende en satellitt rundt jorden eller en mann til m\u00e5nen, beviste du ogs\u00e5 at du hadde de kraftigste rakettene \u2013 raketter som ogs\u00e5 kunne b\u00e6re [atomv\u00e5pen](/historie/den-kalde-krigen/atomvapenkapplopet).\n\nDet som startet som et dypt traume for USA, endte som en av menneskehetens st\u00f8rste triumfer. I l\u00f8pet av f\u00e5 ti\u00e5r gikk vi fra \u00e5 se opp p\u00e5 m\u00e5nen med undring, til \u00e5 faktisk sette fotavtrykk i st\u00f8vet der."
+            "content": "Under [den kalde krigen](/historie/den-kalde-krigen/oversikt) var verdensrommet den ultimate arenaen for å vise hvilken ideologi som var overlegen. For USA og Sovjetunionen handlet ikke romfart bare om vitenskapelig nysgjerrighet; det handlet om prestisje, propaganda og militær makt. Hvis du kunne sende en satellitt rundt jorden eller en mann til månen, beviste du også at du hadde de kraftigste rakettene - raketter som også kunne bære [atomvåpen](/historie/den-kalde-krigen/atomvapenkapplopet).\n\nDet som startet som et dypt traume for USA, endte som en av menneskehetens største triumfer. I løpet av få tiår gikk vi fra å se opp på månen med undring, til å faktisk sette fotavtrykk i støvet der."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "V-2: Rakettenes felles opphav",
-                "content": "B\u00e5de det amerikanske og det sovjetiske romprogrammet bygde p\u00e5 tysk teknologi fra andre verdenskrig. Etter Nazi-Tysklands fall kjempet supermaktene om \u00e5 f\u00e5 tak i de beste tyske rakettene og forskerne. Den viktigste var Wernher von Braun, som ble hjernen bak det amerikanske m\u00e5neprogrammet."
+                "content": "Både det amerikanske og det sovjetiske romprogrammet bygde på tysk teknologi fra andre verdenskrig. Etter Nazi-Tysklands fall kjempet supermaktene om å få tak i de beste tyske rakettene og forskerne. Den viktigste var Wernher von Braun, som ble hjernen bak det amerikanske måneprogrammet."
             }
         },
         {
@@ -50,23 +50,23 @@
         },
         {
             "type": "text",
-            "content": "Den 4. oktober 1957 skjedde det som rystet USA i grunnvollene. Sovjetunionen skjøt opp Sputnik 1, verdens f\u00f8rste kunstige satellitt. Den var ikke st\u00f8rre enn en basketball, men signalene den sendte ut – et enkelt 'biip-biip' – ble h\u00f8rt over hele verden.\n\nFor amerikanerne var dette et teknologisk Pearl Harbor. Det beviste at Sovjetunionen l\u00e5 foran i rakettutviklingen. Hvis de kunne sende en satellitt i bane rundt jorden, kunne de ogs\u00e5 sende atomraketter mot amerikanske byer. Dette f\u00f8rte til en enorm satsing p\u00e5 utdanning og vitenskap i USA, og opprettelsen av NASA i 1958."
+            "content": "Den 4. oktober 1957 skjedde det som rystet USA i grunnvollene. Sovjetunionen skjøt opp Sputnik 1, verdens første kunstige satellitt (Birkeland & Tandberg, 2025). Den var ikke større enn en basketball, men signalene den sendte ut - et enkelt 'biip-biip' - ble hørt over hele verden.\n\nFor amerikanerne var dette et teknologisk Pearl Harbor. Det beviste at Sovjetunionen lå foran i rakettutviklingen. Hvis de kunne sende en satellitt i bane rundt jorden, kunne de også sende atomraketter mot amerikanske byer. Dette førte til en enorm satsing på utdanning og vitenskap i USA, og opprettelsen av NASA i 1958."
         },
         {
             "type": "header",
-            "text": "Yuri Gagarin og de f\u00f8rste seirene"
+            "text": "Yuri Gagarin og de første seirene"
         },
         {
             "type": "text",
-            "content": "Sovjetunionen fortsatte \u00e5 vinne de f\u00f8rste etappene. De sendte den f\u00f8rste hunden (Laika) i bane, de tok de f\u00f8rste bildene av m\u00e5nens baksiden, og den 12. april 1961 skjedde det utrolige: [Yuri Gagarin](/persongalleri/yuri-gagarin) ble det f\u00f8rste mennesket i verdensrommet.\n\nGagarin ble en global kjendis og det ultimate beviset p\u00e5 sovjetisk suksess. USA svarte med Alan Shepard bare uker senere, men det var tydelig at de l\u00e5 etter. President [John F. Kennedy](/persongalleri/john-f-kennedy) inns\u00e5 at USA trengte et m\u00e5l som var så ambisi\u00f8st at det ville overskygge alt Sovjet hadde gjort."
+            "content": "Sovjetunionen fortsatte å vinne de første etappene. De sendte den første hunden (Laika) i bane, de tok de første bildene av månens baksiden, og den 12. april 1961 skjedde det utrolige: [Yuri Gagarin](/persongalleri/yuri-gagarin) ble det første mennesket i verdensrommet (Tantillo & Tandberg, 2026).\n\nGagarin ble en global kjendis og det ultimate beviset på sovjetisk suksess. USA svarte med Alan Shepard bare uker senere, men det var tydelig at de lå etter. President [John F. Kennedy](/persongalleri/john-f-kennedy) innså at USA trengte et mål som var så ambisiøst at det ville overskygge alt Sovjet hadde gjort."
         },
         {
             "type": "header",
-            "text": "M\u00e5neprogrammet: 'Vi velger \u00e5 dra til m\u00e5nen'"
+            "text": "Måneprogrammet: 'Vi velger å dra til månen'"
         },
         {
             "type": "text",
-            "content": "I mai 1961 holdt Kennedy en historisk tale der han utfordret nasjonen: USA skulle lande et menneske p\u00e5 m\u00e5nen og bringe ham trygt tilbake til jorden innen ti\u00e5ret var ute. Det var et nesten umulig m\u00e5l p\u00e5 den tiden, men det satte i gang en mobilisering av ressurser uten sidestykke i fredstid.\n\nAmerikanerne utviklet Apollo-programmet. De bygde Saturn V-raketten, den kraftigste maskinen som noensinne er laget. De m\u00e5tte finne opp alt fra skjermede datamaskiner til romdrakter og m\u00e5nelandingsfart\u00f8y. Milliarder av dollar ble investert, og over 400 000 mennesker jobbet mot det samme m\u00e5let."
+            "content": "I mai 1961 holdt Kennedy en historisk tale der han utfordret nasjonen: USA skulle lande et menneske på månen og bringe ham trygt tilbake til jorden innen tiåret var ute. Det var et nesten umulig mål på den tiden, men det satte i gang en mobilisering av ressurser uten sidestykke i fredstid.\n\nAmerikanerne utviklet Apollo-programmet. De bygde Saturn V-raketten, den kraftigste maskinen som noensinne er laget. De måtte finne opp alt fra skjermede datamaskiner til romdrakter og månelandingsfartøy. Milliarder av dollar ble investert, og over 400 000 mennesker jobbet mot det samme målet."
         },
         {
             "type": "component",
@@ -79,43 +79,43 @@
             "type": "component",
             "name": "TimelineComponent",
             "props": {
-                "title": "Milep\u00e6ler i romkappl\u00f8pet",
+                "title": "Milepæler i romkappløpet",
                 "compact": true,
                 "events": [
                     {
                         "date": "1957",
                         "title": "Sputnik 1",
-                        "description": "Verdens f\u00f8rste satellitt skytes opp av Sovjetunionen."
+                        "description": "Verdens første satellitt skytes opp av Sovjetunionen."
                     },
                     {
                         "date": "1961",
                         "title": "Yuri Gagarin",
-                        "description": "F\u00f8rste menneske i bane rundt jorden."
+                        "description": "Første menneske i bane rundt jorden."
                     },
                     {
                         "date": "1961",
-                        "title": "Kennedys l\u00f8fte",
-                        "description": "USA lover \u00e5 n\u00e5 m\u00e5nen innen f\u00f8r 1970."
+                        "title": "Kennedys løfte",
+                        "description": "USA lover å nå månen innen før 1970."
                     },
                     {
                         "date": "1963",
                         "title": "Valentina Teresjkova",
-                        "description": "F\u00f8rste kvinne i verdensrommet (Sovjet)."
+                        "description": "Første kvinne i verdensrommet (Sovjet)."
                     },
                     {
                         "date": "1965",
                         "title": "Alexei Leonov",
-                        "description": "F\u00f8rste menneske som g\u00e5r i verdensrommet (spacewalk)."
+                        "description": "Første menneske som går i verdensrommet (spacewalk)."
                     },
                     {
                         "date": "1968",
                         "title": "Apollo 8",
-                        "description": "F\u00f8rste bemannede ferd rundt m\u00e5nen."
+                        "description": "Første bemannede ferd rundt månen."
                     },
                     {
                         "date": "1969",
                         "title": "Apollo 11",
-                        "description": "Neil Armstrong og Buzz Aldrin lander p\u00e5 m\u00e5nen."
+                        "description": "Neil Armstrong og Buzz Aldrin lander på månen."
                     }
                 ]
             }
@@ -131,7 +131,7 @@
         },
         {
             "type": "text",
-            "content": "Kulminasjonen av kappl\u00f8pet skjedde da Apollo 11 landet i Stillhetens hav p\u00e5 m\u00e5nen. Over 600 millioner mennesker fulgte direktesendingen p\u00e5 TV da [Neil Armstrong](/persongalleri/armstrong) klatret ned stigen og sa de ikoniske ordene: 'That's one small step for [a] man, one giant leap for mankind.'\n\nSovjetunionen hadde ogs\u00e5 et m\u00e5neprogram, men deres gigantiske N1-rakett eksploderte under testene, og de klarte aldri \u00e5 ta igjen amerikanerne. Med Apollo 11 ble det tydelig at USA hadde vunnet den absolutte prestisjeseieren i romkappl\u00f8pet."
+            "content": "Kulminasjonen av kappløpet skjedde da Apollo 11 landet i Stillhetens hav på månen. Over 600 millioner mennesker fulgte direktesendingen på TV da [Neil Armstrong](/persongalleri/armstrong) klatret ned stigen og sa de ikoniske ordene: 'That's one small step for [a] man, one giant leap for mankind' (Tantillo, 2025).\n\nSovjetunionen hadde også et måneprogram, men deres gigantiske N1-rakett eksploderte under testene, og de klarte aldri å ta igjen amerikanerne. Med Apollo 11 ble det tydelig at USA hadde vunnet den absolutte prestisjeseieren i romkappløpet."
         },
         {
             "type": "header",
@@ -139,7 +139,7 @@
         },
         {
             "type": "text",
-            "content": "Selv om kappl\u00f8pet var intenst, f\u00f8rte det ogs\u00e5 til øyeblikk av samarbeid. I 1975 møttes et amerikansk Apollo-fart\u00f8y og et sovjetisk Sojuz-fart\u00f8y i verdensrommet. Astronautene og kosmonautene hilst hverandre med et håndtrykk gjennom luken. Dette ble et symbol p\u00e5 avspenningen (d\u00e9tente) mellom supermaktene.\n\nI dag er arven etter romkappl\u00f8pet synlig overalt. Satellitter gir oss GPS, v\u00e6rvarsling og internett. Teknologien utviklet for m\u00e5nereisen har f\u00f8rt til alt fra r\u00f8ykvarslere til tr\u00e5dl\u00f8se verkt\u00f8y og moderne medisinske skannere."
+            "content": "Selv om kappløpet var intenst, førte det også til øyeblikk av samarbeid. I 1975 møttes et amerikansk Apollo-fartøy og et sovjetisk Sojuz-fartøy i verdensrommet. Astronautene og kosmonautene hilst hverandre med et håndtrykk gjennom luken. Dette ble et symbol på avspenningen (détente) mellom supermaktene.\n\nI dag er arven etter romkappløpet synlig overalt. Satellitter gir oss GPS, værvarsling og internett. Teknologien utviklet for månereisen har ført til alt fra røykvarslere til trådløse verktøy og moderne medisinske skannere."
         },
         {
             "type": "component",
@@ -170,7 +170,7 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hva het historiens f\u00f8rste kunstige satellitt?",
+                        "question": "Hva het historiens første kunstige satellitt?",
                         "options": [
                             "Apollo 1",
                             "Sputnik 1",
@@ -180,7 +180,7 @@
                         "answer": "Sputnik 1"
                     },
                     {
-                        "question": "Hvem ble det f\u00f8rste mennesket i verdensrommet i 1961?",
+                        "question": "Hvem ble det første mennesket i verdensrommet i 1961?",
                         "options": [
                             "Neil Armstrong",
                             "Buzz Aldrin",
@@ -190,7 +190,7 @@
                         "answer": "Yuri Gagarin"
                     },
                     {
-                        "question": "Hva var m\u00e5let Kennedy satte for USA i sin tale i 1961?",
+                        "question": "Hva var målet Kennedy satte for USA i sin tale i 1961?",
                         "options": [
                             "Å bygge den største atomraketten",
                             "Å lande på Mars",
@@ -200,7 +200,7 @@
                         "answer": "Å lande på månen innen tiåret var ute"
                     },
                     {
-                        "question": "N\u00e5r landet de f\u00f8rste menneskene p\u00e5 m\u00e5nen?",
+                        "question": "Når landet de første menneskene på månen?",
                         "options": [
                             "1957",
                             "1962",
@@ -211,12 +211,23 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Birkeland, R. & Tandberg, E. (2025). *Sputnik*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Sputnik](https://snl.no/Sputnik)",
+                    "Tantillo, M. V. & Tandberg, E. (2026). *Jurij Gagarin*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Jurij_Gagarin](https://snl.no/Jurij_Gagarin)",
+                    "Tantillo, M. V. (2025). *Den første månelandingen*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/månelandingen](https://snl.no/månelandingen)"
+                ]
+            }
         }
     ],
     "quiz": [
         {
             "id": "q1",
-            "question": "Hvilket land skaut opp den f\u00f8rste kunstige satellitten, Sputnik 1?",
+            "question": "Hvilket land skaut opp den første kunstige satellitten, Sputnik 1?",
             "options": [
                 "USA",
                 "Sovjetunionen",
@@ -227,7 +238,7 @@
         },
         {
             "id": "q2",
-            "question": "Hva het det f\u00f8rste mennesket i verdensrommet?",
+            "question": "Hva het det første mennesket i verdensrommet?",
             "options": [
                 "Neil Armstrong",
                 "Buzz Aldrin",
@@ -238,7 +249,7 @@
         },
         {
             "id": "q3",
-            "question": "Hvilket romprogram f\u00f8rte de f\u00f8rste menneskene til m\u00e5nen?",
+            "question": "Hvilket romprogram førte de første menneskene til månen?",
             "options": [
                 "Sputnik",
                 "Gemini",
@@ -249,7 +260,7 @@
         },
         {
             "id": "q4",
-            "question": "Hva het hunden som ble det f\u00f8rste dyret i bane rundt jorda?",
+            "question": "Hva het hunden som ble det første dyret i bane rundt jorda?",
             "options": [
                 "Laika",
                 "Belka",
@@ -260,5 +271,5 @@
         }
     ],
     "createdDate": "2023-12-21T12:20:00Z",
-    "lastUpdated": "2023-12-21T12:20:00Z"
+    "lastUpdated": "2026-07-23T00:00:00Z"
 }
