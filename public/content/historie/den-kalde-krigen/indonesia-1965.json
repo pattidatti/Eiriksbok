@@ -37,7 +37,7 @@
         },
         {
             "type": "text",
-            "content": "Indonesia er et enormt øyrike i Sørøst-Asia, rikt på olje, gummi og andre ressurser. Etter å ha [løsrevet seg](/historie/dekolonisering/sorost-asia) fra Nederland i 1949 ble landet ledet av Sukarno. Han ville styre uavhengig av både USA og Sovjetunionen, og landet hadde et av verdens største kommunistpartier, kalt PKI."
+            "content": "Indonesia er et enormt øyrike i Sørøst-Asia, rikt på olje, gummi og andre ressurser. Etter å ha [løsrevet seg](/historie/dekolonisering/sorost-asia) fra Nederland i 1949 ble landet ledet av Sukarno. Han ville styre uavhengig av både USA og Sovjetunionen, og landet hadde et av verdens største kommunistpartier, kalt PKI (Vikør & Filseth, 2025)."
         },
         {
             "type": "text",
@@ -57,7 +57,7 @@
         },
         {
             "type": "text",
-            "content": "I oktober 1965 skjedde det et mislykket kuppforsøk der noen offiserer ble drept. Hæren, ledet av general Suharto, ga raskt hele kommunistpartiet skylden. Det ble startskuddet for noe forferdelig."
+            "content": "I oktober 1965 skjedde det et mislykket kuppforsøk der noen offiserer ble drept. Hæren, ledet av general Suharto, ga raskt hele kommunistpartiet skylden (Filseth, 2025). Det ble startskuddet for noe forferdelig."
         },
         {
             "type": "header",
@@ -65,11 +65,11 @@
         },
         {
             "type": "text",
-            "content": "I månedene som fulgte ble mennesker som ble mistenkt for å være kommunister, jaktet på og drept over hele landet. Det var ikke bare politikere, men også vanlige bønder, lærere og fagforeningsfolk. Anslagene varierer, men de fleste forskere mener at mellom 500 000 og over en million mennesker ble drept."
+            "content": "I månedene som fulgte ble mennesker som ble mistenkt for å være kommunister, jaktet på og drept over hele landet. Det var ikke bare politikere, men også vanlige bønder, lærere og fagforeningsfolk. Anslagene varierer, men de fleste forskere mener at mellom 500 000 og over en million mennesker ble drept (Vikør & Filseth, 2025)."
         },
         {
             "type": "text",
-            "content": "Det som gjør historien enda mørkere, er at flere vestlige land visste hva som foregikk, og likevel støttet det som skjedde. USA ga blant annet hæren lister med navn på mistenkte. For Vesten var Suharto en alliert som kunne stanse kommunismen."
+            "content": "Det som gjør historien enda mørkere, er at flere vestlige land visste hva som foregikk, og likevel støttet det som skjedde. USA ga blant annet hæren lister med navn på mistenkte (Simpson, 2017). For Vesten var Suharto en alliert som kunne stanse kommunismen."
         },
         {
             "type": "text",
@@ -144,6 +144,17 @@
                     "Artikkelen nevner at det samme mønsteret ble sett i Iran og Chile. Velg ett av disse landene, finn ut hva som skjedde der, og forklar hva de tre historiene har til felles."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Vikør, L. S. & Filseth, G. (2025). *Indonesias historie*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Indonesias_historie](https://snl.no/Indonesias_historie)",
+                    "Filseth, G. (2025). *Suharto*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Suharto](https://snl.no/Suharto)",
+                    "Simpson, B. (2017). *Indonesia Mass Murder 1965: US Embassy Files* (National Security Archive Briefing Book No. 607). National Security Archive, George Washington University. Hentet 23.07.2026 fra [nsarchive.gwu.edu](https://nsarchive.gwu.edu/briefing-book/indonesia/2017-10-17/indonesia-mass-murder-1965-us-embassy-files)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -193,5 +204,5 @@
         }
     ],
     "createdDate": "2026-05-31T00:00:00Z",
-    "lastUpdated": "2026-05-31T00:00:00Z"
+    "lastUpdated": "2026-07-23T00:00:00Z"
 }
