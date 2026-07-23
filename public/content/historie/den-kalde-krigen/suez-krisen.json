@@ -12,6 +12,7 @@
         "Utløst av Egypts nasjonalisering av Suezkanalen.",
         "En uvanlig allianse mellom Israel, Storbritannia og Frankrike.",
         "USA og Sovjetunionen sto for en gang skyld på samme side mot invasjonen.",
+        "Sovjetunionen antydet at raketter kunne ramme London og Paris.",
         "Førte til opprettelsen av FNs første fredsbevarende styrker."
     ],
     "timeline": [
@@ -93,7 +94,23 @@
         },
         {
             "type": "text",
-            "content": "Den største overraskelsen var reaksjonen fra USA. President Dwight D. Eisenhower ble rasende over at hans nærmeste allierte hadde startet en krig bak hans rygg, særlig rett før et amerikansk presidentvalg. USA fryktet at krigen ville drive hele den arabiske verden rett i armene på Sovjetunionen.\n\nUSA valgte å legge knallhardt økonomisk press på Storbritannia ved å true med å selge britiske pund, noe som kunne føre til at den britiske økonomien kollapset. Samtidig truet Sovjetunionens leder, Nikita Khrusjtsjov, med å gripe inn militært til fordel for Egypt hvis de ikke trakk seg ut. Under dette doble presset hadde Storbritannia og Frankrike ikke noe annet valg enn å be om våpenhvile og trekke seg ut i vanære (Leraand, 2024b)."
+            "content": "Den største overraskelsen var reaksjonen fra USA. President Dwight D. Eisenhower ble rasende over at hans nærmeste allierte hadde startet en krig bak hans rygg, særlig rett før et amerikansk presidentvalg. USA fryktet at krigen ville drive hele den arabiske verden rett i armene på Sovjetunionen.\n\nUSA valgte å legge knallhardt økonomisk press på Storbritannia ved å true med å selge britiske pund, noe som kunne føre til at den britiske økonomien kollapset."
+        },
+        {
+            "type": "header",
+            "text": "Brevene som skremte Europa"
+        },
+        {
+            "type": "text",
+            "content": "Samtidig kom en iskald beskjed fra Moskva. Kvelden 5. november 1956 sendte Sovjetunionens statsminister Nikolaj Bulganin brev til lederne i Storbritannia, Frankrike og Israel. Til den britiske statsministeren Anthony Eden skrev han omtrent dette:\n\n«Hvilken situasjon ville Storbritannia vært i hvis landet ble angrepet av sterkere stater med alle typer moderne ødeleggelsesvåpen? Slike land trenger ikke sende krigsskip eller fly til Storbritannias kyster. De kan bruke andre midler, for eksempel rakettvåpen.»\n\nFrankrikes statsminister Guy Mollet fikk et nesten likt brev (Keesing's Record of World Events, 1956). Bulganin skrev aldri ordet atombombe, men alle skjønte hva han mente: Sovjetunionen antydet at raketter med atomvåpen kunne ramme London og Paris.\n\nUnder dette doble presset, pengepress fra USA og rakettrusler fra Sovjetunionen, hadde Storbritannia og Frankrike ikke noe annet valg enn å be om våpenhvile og trekke seg ut i vanære (Leraand, 2024b)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Bløffen fra Moskva",
+                "content": "Rakettrusselen var mer skremsel enn alvor. Brevene kom først da pengepresset fra USA i praksis hadde avgjort krisen, og britene alt var i ferd med å avblåse invasjonen. Trusselen endret derfor lite. Men Nikita Khrusjtsjov, den sterke mannen bak Bulganin, trakk sin egen konklusjon: Atomtrusler virker. Den lærdommen tok han med seg videre i den kalde krigen (Burr & Kimball, 2022)."
+            }
         },
         {
             "type": "video",
@@ -153,13 +170,15 @@
                     "Hva var det Nasser kunngjorde 26. juli 1956, og hva skulle inntektene fra kanalen brukes til?",
                     "Beskriv kort hva Sèvres-protokollen gikk ut på. Hvilken rolle skulle Israel spille i planen?",
                     "Hvorfor ble USA og president Eisenhower rasende, og hvilket økonomisk pressmiddel brukte USA mot Storbritannia?",
+                    "Hva sto det i brevene Bulganin sendte til Storbritannia og Frankrike 5. november 1956?",
                     "Hva var UNEF, og hvem foreslo å opprette denne styrken?"
                 ],
                 "reflekter": [
                     "Teksten sier at invasjonen militært var en suksess, men politisk en katastrofe. Forklar hvordan begge deler kan være sant samtidig.",
                     "Hvorfor var timingen med opprøret i Ungarn så uheldig for Storbritannia og Frankrike? Bruk teksten til å forklare hvordan Sovjetunionen kunne utnytte situasjonen.",
                     "Se på Comparison-tabellen: Egypt tapte på slagmarken, men vant politisk. Hvordan kan et land tape en krig militært og likevel komme ut som seierherre?",
-                    "Hvorfor tror du Storbritannia og Frankrike måtte lage en hemmelig plan i stedet for å angripe Egypt åpent? Hva sier det om folkeretten på den tiden?"
+                    "Hvorfor tror du Storbritannia og Frankrike måtte lage en hemmelig plan i stedet for å angripe Egypt åpent? Hva sier det om folkeretten på den tiden?",
+                    "Bulganin sa aldri rett ut at Sovjetunionen ville angripe London og Paris med atomvåpen. Han stilte det som et spørsmål. Hvorfor tror du han formulerte trusselen på den måten? Hva kan et land oppnå med en skjult trussel?"
                 ],
                 "gaaVidere": [
                     "Suezkanalen er fortsatt en av verdens viktigste vannveier. Undersøk en nyere hendelse der kanalen ble stengt eller blokkert, og skriv noen setninger om hvordan det påvirket verdenshandelen.",
@@ -212,6 +231,16 @@
                             "At de ble nærere venner med Sovjetunionen"
                         ],
                         "answer": "Slutten på deres status som globale stormakter"
+                    },
+                    {
+                        "question": "Hva antydet Sovjetunionen i brevene til Storbritannia og Frankrike 5. november 1956?",
+                        "options": [
+                            "At de ville stenge Suezkanalen",
+                            "At raketter kunne ramme London og Paris",
+                            "At de ville slutte å selge olje til Europa",
+                            "At de ville melde seg ut av FN"
+                        ],
+                        "answer": "At raketter kunne ramme London og Paris"
                     }
                 ]
             }
@@ -221,6 +250,8 @@
             "name": "Kildeliste",
             "props": {
                 "sources": [
+                    "Burr, W. & Kimball, J. (2022). *Nuclear threats and alerts: Looking at the Cold War background*. Arms Control Today. Hentet 23.07.2026 fra [armscontrol.org](https://www.armscontrol.org/act/2022-04/features/nuclear-threats-and-alerts-looking-cold-war-background)",
+                    "Keesing's Record of World Events. (1956). *Marshal Bulganin's messages to President Eisenhower, Sir Anthony Eden, M. Mollet, and Mr. Ben-Gurion on Middle East situation*. Volum X, s. 15217. Hentet 23.07.2026 fra [web.stanford.edu](https://web.stanford.edu/group/tomzgroup/pmwiki/uploads/200-1956-11-KS-f-LIZ.pdf)",
                     "Leraand, D. (2024a). *Gamal Abdel Nasser*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Gamal_Abdel_Nasser](https://snl.no/Gamal_Abdel_Nasser)",
                     "Leraand, D. (2024b). *Suezkrisen*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Suezkrisen](https://snl.no/Suezkrisen)",
                     "Sirevåg, T. (2026). *Lester Bowles Pearson*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Lester_Bowles_Pearson](https://snl.no/Lester_Bowles_Pearson)",
@@ -271,6 +302,17 @@
                 "Slutten på deres status som globale stormakter",
                 "En stor økonomisk boom",
                 "At de ble nærere venner med Sovjetunionen"
+            ],
+            "correctAnswer": 1
+        },
+        {
+            "id": "q5",
+            "question": "Hva antydet Sovjetunionen i brevene til Storbritannia og Frankrike 5. november 1956?",
+            "options": [
+                "At de ville stenge Suezkanalen",
+                "At raketter kunne ramme London og Paris",
+                "At de ville slutte å selge olje til Europa",
+                "At de ville melde seg ut av FN"
             ],
             "correctAnswer": 1
         }
