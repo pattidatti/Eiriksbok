@@ -6,16 +6,17 @@
     "category": "Vest-Afrika",
     "readTime": "9 min lesning",
     "heroImage": "/images/afrikanske-riker/mansa-musa-og-mali-hero.webp",
+    "lastUpdated": "2026-07-23",
     "details": [
         "Mali var et av verdens rikeste riker på 1300-tallet",
         "Rikdommen kom fra handel med gull og salt over Sahara",
-        "Kongen Mansa Musa var trolig den rikeste personen som noen gang har levd",
+        "Kongen Mansa Musa regnes som en av de rikeste herskerne verden har sett",
         "Byen Timbuktu ble et berømt sted for bøker og lærdom"
     ],
     "content": [
         {
             "type": "text",
-            "content": "I år 1324 dro en konge ut på en reise som folk snakket om i hundrevis av år etterpå. Mansa Musa, kongen av Mali i Vest-Afrika, var på vei til Mekka. Med seg hadde han tusenvis av mennesker og hundrevis av kameler lastet med gull. Da følget stoppet i Kairo i Egypt, ga Mansa Musa bort så mye gull til fattige og kjøpmenn at gullet mistet verdien sin i byen i over ti år. Aldri før hadde folk i Egypt sett en så rik mann. Men hvem var han, og hvordan kunne et rike sør for Sahara bli så rikt?"
+            "content": "I år 1324 dro en konge ut på en reise som folk snakket om i hundrevis av år etterpå. Mansa Musa, kongen av Mali i Vest-Afrika, var på vei til Mekka. Med seg hadde han tusenvis av mennesker og hundrevis av kameler lastet med gull. Da følget stoppet i Kairo i Egypt, ga Mansa Musa bort så mye gull til fattige og kjøpmenn at gullprisen i byen falt kraftig (Eriksen & Benjaminsen, 2024). Aldri før hadde folk i Egypt sett en så rik mann. Men hvem var han, og hvordan kunne et rike sør for Sahara bli så rikt?"
         },
         {
             "type": "image",
@@ -60,7 +61,7 @@
         },
         {
             "type": "text",
-            "content": "Den mest berømte byen i Mali var Timbuktu. Den lå der ørkenen møtte elva Niger, og var et perfekt sted for handel. Men Timbuktu ble kjent for noe mer enn gull. Byen ble et av de viktigste stedene for lærdom i hele den muslimske verden. Tusenvis av studenter kom dit for å studere, og byen hadde store skoler ved moskeene."
+            "content": "Den mest berømte byen i Mali var Timbuktu. Den lå der ørkenen møtte elva Niger, og var et perfekt sted for handel. Men Timbuktu ble kjent for noe mer enn gull. Byen ble et av de viktigste stedene for lærdom i hele den muslimske verden, med lærde menn og store samlinger av håndskrevne bøker ved moskeene (Benjaminsen & Hansen, 2026)."
         },
         {
             "type": "text",
@@ -78,11 +79,11 @@
         },
         {
             "type": "text",
-            "content": "Mansa Musa var konge i Mali fra rundt 1312 til 1337. Ordet mansa betyr konge på språket mandinka. Han var muslim, slik mange i Mali var blitt, og derfor ville han dra på pilegrimsreise til Mekka, akkurat som troende muslimer gjorde da islam først spredte seg. Du kan lese om hvordan religionen oppsto i artikkelen om [islams fødsel](/historie/midtoesten/islams-fodsel)."
+            "content": "Mansa Musa var konge i Mali fra rundt 1312 til 1337 (Eriksen & Benjaminsen, 2024). Ordet mansa var kongenes egen tittel og betyr konge. Han var muslim, slik mange i Mali var blitt, og derfor ville han dra på pilegrimsreise til Mekka, akkurat som troende muslimer gjorde da islam først spredte seg. Du kan lese om hvordan religionen oppsto i artikkelen om [islams fødsel](/historie/midtoesten/islams-fodsel)."
         },
         {
             "type": "text",
-            "content": "Reisen i 1324 var enorm. Kildene forteller om titusener av mennesker og store mengder gull. På veien hjem fikk Mansa Musa bygd nye moskeer og skoler i byene sine. Etter reisen ble Mali tegnet inn på kart i Europa. På et berømt kart fra 1375 sitter Mansa Musa med en gullklump i hånden og en krone på hodet. For første gang forsto europeerne at det fantes et mektig og rikt rike sør for Sahara. Bær du salt og gull over ørkenen i spillet under, og se hvordan Mali ble rikt på å eie veien."
+            "content": "Reisen i 1324 var enorm. Kildene forteller om titusener av mennesker og store mengder gull. På veien hjem fikk Mansa Musa bygd nye moskeer og skoler i byene sine. Etter reisen ble Mali tegnet inn på kart i Europa. På et berømt kart fra rundt 1375 sitter Mansa Musa på en trone med en gullklump i hånden og en krone på hodet (Store norske leksikon, 2024). For første gang forsto europeerne at det fantes et mektig og rikt rike sør for Sahara. Bær du salt og gull over ørkenen i spillet under, og se hvordan Mali ble rikt på å eie veien."
         },
         {
             "type": "component",
@@ -133,7 +134,7 @@
                 ],
                 "reflekter": [
                     "Teksten sammenligner Mali med en bompengestasjon. Forklar med egne ord hvorfor den sammenligningen passer.",
-                    "Da Mansa Musa ga bort store mengder gull i Kairo i 1324, falt verdien av gull i byen i over ti år. Forklar hvorfor så mye gull på ett sted kunne gjøre gullet mindre verdt.",
+                    "Da Mansa Musa ga bort store mengder gull i Kairo i 1324, falt gullprisen i byen kraftig. Forklar hvorfor så mye gull på ett sted kunne gjøre gullet mindre verdt.",
                     "Artikkelen sier at en bok i Timbuktu noen ganger kunne være verdt mer enn gull. Hva forteller det oss om hva folk i Mali satte høyt?",
                     "Hvorfor mener teksten at historien om Mali motbeviser tanken om at Afrika ikke hadde noen stor historie før europeerne kom?"
                 ],
@@ -180,14 +181,25 @@
                     {
                         "question": "Hva skjedde da Mansa Musa ga bort gull i Kairo i 1324?",
                         "options": [
-                            "Gullet mistet verdien sin i byen i flere år",
+                            "Gullprisen i byen falt kraftig",
                             "Han ble kastet ut av byen",
                             "Folk nektet å ta imot gullet",
                             "Byen ble ødelagt"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Han ga bort så mye gull at det ble for mye av det i byen, og verdien falt i over ti år."
+                        "explanation": "Han ga bort så mye gull at det ble for mye av det i byen, og gullprisen falt kraftig."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Eriksen, T. L., & Benjaminsen, T. A. (2024). *Maliriket*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Maliriket](https://snl.no/Maliriket)",
+                    "Benjaminsen, T. A., & Hansen, K. F. (2026). *Timbuktu*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Timbuktu](https://snl.no/Timbuktu)",
+                    "Store norske leksikon. (2024). *Musa (hersker)*. Hentet 23.07.2026 fra [snl.no/Musa_-_hersker](https://snl.no/Musa_-_hersker)"
                 ]
             }
         }
