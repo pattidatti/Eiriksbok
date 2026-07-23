@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "I 1970 vant Salvador Allende presidentvalget. Han var sosialist og lovet å gi landets rikdom tilbake til folket. Det viktigste grepet hans var å nasjonalisere kobbergruvene, akkurat som Mossadeq hadde gjort med oljen i Iran. Nå skulle kobberpengene gå til skoler, sykehus og vanlige chilenere, ikke til selskaper i USA."
+            "content": "I 1970 vant Salvador Allende presidentvalget (Bull, 2025). Han var sosialist og lovet å gi landets rikdom tilbake til folket. Det viktigste grepet hans var å nasjonalisere kobbergruvene, akkurat som Mossadeq hadde gjort med oljen i Iran. Nå skulle kobberpengene gå til skoler, sykehus og vanlige chilenere, ikke til selskaper i USA."
         },
         {
             "type": "text",
@@ -69,7 +69,7 @@
         },
         {
             "type": "text",
-            "content": "USA ville ikke sende soldater. I stedet startet de en lydløs krig mot Chiles økonomi. De stanset alle lån, slik at landet ikke fikk kjøpt deler og varer. De betalte i hemmelighet lastebilsjåfører for å streike, så maten ikke nådde frem til butikkene. De presset ned prisen på kobber, og de ga penger til aviser som spredte frykt og uro."
+            "content": "USA ville ikke sende soldater. I stedet startet de en lydløs krig mot Chiles økonomi. De stanset alle lån, slik at landet ikke fikk kjøpt deler og varer. De betalte i hemmelighet lastebilsjåfører for å streike, så maten ikke nådde frem til butikkene. De presset ned prisen på kobber, og de ga penger til aviser som spredte frykt og uro (Buvollen mfl., 2024)."
         },
         {
             "type": "text",
@@ -100,11 +100,11 @@
         },
         {
             "type": "text",
-            "content": "Etter to år med kaos lå Chiles økonomi i ruiner. Da slo militæret til. Om morgenen 11. september 1973 omringet hæren presidentpalasset og bombet det. President Allende nektet å overgi seg og døde inne i palasset. General Augusto Pinochet tok makten."
+            "content": "Etter to år med kaos lå Chiles økonomi i ruiner. Da slo militæret til. Om morgenen 11. september 1973 omringet hæren presidentpalasset og bombet det. President Allende nektet å overgi seg og døde inne i palasset. General Augusto Pinochet tok makten (Opsvik, 2025)."
         },
         {
             "type": "text",
-            "content": "Pinochet styrte Chile som diktator i 17 år. I dagene etter kuppet ble den store nasjonalstadionet i hovedstaden gjort om til en fengsel. Tusenvis av mennesker som var uenige med Pinochet ble samlet der, og mange ble torturert eller drept. Over 3000 chilenere ble drept eller forsvant sporløst i årene som fulgte. De kalles fortsatt 'de forsvunne', og mange familier vet den dag i dag ikke hva som skjedde med dem."
+            "content": "Pinochet styrte Chile som diktator i 17 år. I dagene etter kuppet ble den store nasjonalstadionet i hovedstaden gjort om til en fengsel. Tusenvis av mennesker som var uenige med Pinochet ble samlet der, og mange ble torturert eller drept. Over 3000 chilenere ble drept eller forsvant sporløst i årene som fulgte (Opsvik, 2025). De kalles fortsatt 'de forsvunne', og mange familier vet den dag i dag ikke hva som skjedde med dem."
         },
         {
             "type": "text",
@@ -146,6 +146,17 @@
                     "USA nektet lenge for å ha blandet seg inn i Chile, helt til hemmelige dokumenter ble offentliggjort. Skriv noen setninger om hvorfor det er viktig at historikere får tilgang til gamle arkiver.",
                     "Diskuter med en partner: Er økonomisk krigføring, der man kveler et lands økonomi i stedet for å invadere, mer eller mindre alvorlig enn en vanlig krig? Begrunn svaret.",
                     "Finn ut om et land som i dag er rammet av økonomiske sanksjoner eller boikott. Ligner det på det USA gjorde mot Chile, eller er det forskjellig?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bull, B. (2025). *Salvador Allende*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Salvador_Allende](https://snl.no/Salvador_Allende)",
+                    "Buvollen, H. P., Julsrud, O. & Opsvik, T. (2024). *Chiles historie*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Chiles_historie](https://snl.no/Chiles_historie)",
+                    "Opsvik, T. (2025). *Augusto Pinochet*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Augusto_Pinochet](https://snl.no/Augusto_Pinochet)"
                 ]
             }
         }
@@ -197,5 +208,5 @@
         }
     ],
     "createdDate": "2026-05-31T00:00:00Z",
-    "lastUpdated": "2026-05-31T00:00:00Z"
+    "lastUpdated": "2026-07-23T00:00:00Z"
 }
