@@ -3,7 +3,7 @@
     "title": "Berlinmuren: Symbolet på en delt verden",
     "subject": "historie",
     "layout": "rich",
-    "year": "1961–1989",
+    "year": "1961-1989",
     "category": "Kald krig / Europa",
     "readTime": "15 min lesning",
     "heroImage": "/images/lessons/den-kalde-krigen/berlinmuren.webp",
@@ -36,7 +36,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Hvorfor ble muren bygget?",
-                "content": "Mellom 1949 og 1961 flyktet over 2,5 millioner mennesker fra Øst-Tyskland til Vesten gjennom Berlin. Det var ofte de best utdannede – leger, ingeniører og lærere – som dro. Denne 'hjerneflukten' truet med å ruinere den østtyske staten fullstendig. Lederen Walter Ulbricht måtte enten forbedre landet, eller stenge grensene. Han valgte det siste."
+                "content": "Mellom 1949 og 1961 flyktet over 2,5 millioner mennesker fra Øst-Tyskland til Vesten gjennom Berlin. Det var ofte de best utdannede - leger, ingeniører og lærere - som dro. Denne 'hjerneflukten' truet med å ruinere den østtyske staten fullstendig. Lederen Walter Ulbricht måtte enten forbedre landet, eller stenge grensene. Han valgte det siste."
             }
         },
         {
@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "På natten til søndag 13. august 1961 rykket østtyske soldater og arbeidere ut. De rulle ut piggeråd og sperret gater. Folk som våknet neste morgen, oppdaget at de ikke lenger kunne gå på jobb, besøke familie eller krysse gaten til den andre siden av byen.\n\nI løpet av dager og uker ble piggtråden erstattet av betongvegger. Hus som lå langs grensen ble murt igjen, og beboerne ble tvangsevakuert. Muren var ikke bare én vegg, men et komplekst system av to murer med et tomt område imellom – kjent som 'dødsstripen' – med vakttårn, automatiske skytevåpen og vaktbikkjer."
+            "content": "På natten til søndag 13. august 1961 rykket østtyske soldater og arbeidere ut. De rullet ut piggtråd og sperret gater. Folk som våknet neste morgen, oppdaget at de ikke lenger kunne gå på jobb, besøke familie eller krysse gaten til den andre siden av byen (Dypvik, 2026).\n\nI løpet av dager og uker ble piggtråden erstattet av betongvegger. Hus som lå langs grensen ble murt igjen, og beboerne ble tvangsevakuert. Muren var ikke bare én vegg, men et komplekst system av to murer med et tomt område imellom - kjent som 'dødsstripen' - med vakttårn, automatiske skytevåpen og vaktbikkjer (Encyclopaedia Britannica, 2026)."
         },
         {
             "type": "component",
@@ -60,7 +60,7 @@
         },
         {
             "type": "text",
-            "content": "Berlin ble det symbolske sentrum for kampen mellom demokrati og kommunisme. I 1963 besøkte president John F. Kennedy byen. Foran Schøneberg rådhus holdt han sin berømte tale der han sa: 'Alle frie menn, uansett hvor de bor, er borgere av Berlin, og derfor, som en fri mann, sier jeg med stolthet: Ich bin ein Berliner.'\n\nHan anerkjente muren som et fryktelig bevis på at det kommunistiske systemet hadde mislyktes: 'Demokrati er ikke perfekt, men vi har aldri måttet bygge en mur for å holde vårt folk inne'."
+            "content": "Berlin ble det symbolske sentrum for kampen mellom demokrati og kommunisme. I 1963 besøkte president John F. Kennedy byen. Foran Schøneberg rådhus holdt han sin berømte tale der han sa: 'Alle frie menn, uansett hvor de bor, er borgere av Berlin, og derfor, som en fri mann, sier jeg med stolthet: Ich bin ein Berliner.'\n\nHan anerkjente muren som et fryktelig bevis på at det kommunistiske systemet hadde mislyktes: 'Demokrati er ikke perfekt, men vi har aldri måttet bygge en mur for å holde vårt folk inne' (Jahr & Sirevåg, 2025)."
         },
         {
             "type": "header",
@@ -68,7 +68,7 @@
         },
         {
             "type": "text",
-            "content": "Til tross for de enorme farene forsøkte tusenvis av mennesker å flykte over muren. De brukte utrolig kreativitet: De gravde lange tunneler under muren, flø over i hjemmelagde luftballonger, gjemte seg i spesialbygde biler, og noen svømte gjennom kanalene.\n\nMen prisen var høy. Grensevaktene hadde ordre om å skyte alle som forsøkte å flykte. Det er anslått at minst 140 mennesker ble drept ved Berlinmuren. En av de mest hjerteskjærende historiene var Peter Fechter, en 18 år gammel gutt som ble skutt og ble liggende å blø i hjel i dødsstripen mens verden så på uten å kunne hjelpe."
+            "content": "Til tross for de enorme farene forsøkte tusenvis av mennesker å flykte over muren. De brukte utrolig kreativitet: De gravde lange tunneler under muren, fløy over i hjemmelagde luftballonger, gjemte seg i spesialbygde biler, og noen svømte gjennom kanalene.\n\nMen prisen var høy. Grensevaktene hadde ordre om å skyte alle som forsøkte å flykte. Det er anslått at minst 136 mennesker ble drept ved Berlinmuren (Dypvik, 2026). En av de mest hjerteskjærende historiene var Peter Fechter, en 18 år gammel gutt som ble skutt og ble liggende å blø i hjel i dødsstripen mens verden så på uten å kunne hjelpe (Chronik der Mauer, u.å.)."
         },
         {
             "type": "component",
@@ -213,6 +213,18 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Dypvik, A. S. (2026). *Berlinmuren*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/Berlinmuren](https://snl.no/Berlinmuren)",
+                    "Encyclopaedia Britannica. (2026). *Berlin Wall*. Hentet 22.07.2026 fra [britannica.com](https://www.britannica.com/topic/Berlin-Wall)",
+                    "Jahr, I. & Sirevåg, T. (2025). *John F. Kennedy*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/John_F._Kennedy](https://snl.no/John_F._Kennedy)",
+                    "Chronik der Mauer. (u.å.). *Peter Fechter*. Bundeszentrale für politische Bildung, Deutschlandradio & Zentrum für Zeithistorische Forschung. Hentet 22.07.2026 fra [chronik-der-mauer.de](https://www.chronik-der-mauer.de/en/victims/180502/fechter-peter)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -262,5 +274,5 @@
         }
     ],
     "createdDate": "2023-12-21T12:40:00Z",
-    "lastUpdated": "2023-12-21T12:40:00Z"
+    "lastUpdated": "2026-07-22T00:00:00Z"
 }
