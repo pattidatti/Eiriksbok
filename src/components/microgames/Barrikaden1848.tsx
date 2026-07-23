@@ -105,7 +105,7 @@ const Barrikaden1848: React.FC<MicroGameProps> = ({ onComplete }) => {
                 {/* 3D-scenen i full bredde */}
                 <div
                     className="relative w-full bg-gradient-to-b from-[#d9c9a8] via-[#e6dcc4] to-[#cbb890] overflow-hidden"
-                    style={{ aspectRatio: '16/9', minHeight: 300 }}
+                    style={{ aspectRatio: '16 / 10.8', minHeight: 360 }}
                 >
                     <MicroCanvas
                         idle={idle}

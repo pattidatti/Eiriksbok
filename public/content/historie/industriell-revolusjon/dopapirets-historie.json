@@ -7,14 +7,14 @@
     "readTime": "7 min lesning",
     "heroImage": "/images/industriell-revolusjon/dopapirets-historie-hero.webp",
     "details": [
-        "Nordmenn bruker rundt ni kilo dopapir per person i året, og forbruket har mangedoblet seg siden 1970-tallet",
+        "Romerne delte på én svamp på en stokk (tersorium) på de offentlige toalettene - og skylte den i eddik mellom hver bruker",
         "Kineserne brukte papir til hygiene allerede på 500-600-tallet - over 1000 år før resten av verden",
         "Det første kommersielle dopapiret ble solgt i USA i 1857, lenge etter industrialiseringen startet"
     ],
     "content": [
         {
             "type": "text",
-            "content": "En gjennomsnittlig nordmann bruker rundt ni kilo dopapir i året. Du finner det på badet, på jobben, på skolen - det er bare der. Men så sent som i 1857 fantes det ikke kommersielt dopapir i verden. Hva brukte folk da? Svaret er både fascinerende og litt ubehagelig."
+            "content": "Dopapir er en av de mest selvfølgelige tingene i hverdagen vår. Du finner det på badet, på jobben, på skolen - det er bare der. Men så sent som i 1857 fantes det ikke kommersielt dopapir i verden. Hva brukte folk da? Svaret er både fascinerende og litt ubehagelig."
         },
         {
             "type": "image",
@@ -28,11 +28,11 @@
         },
         {
             "type": "text",
-            "content": "I det gamle Roma fantes det offentlige latriner - lange stenbenkene med hull i, bygd over rennende vann. Romerne var faktisk ganske hygieniske: de skylte bort avfall med vann, og hadde et system for å holde det rent. Men til selve hygienen brukte de noe som gjerne får folk til å sette kaffen ned: en svamp på en lang stokk, kalt tersorium. Den ble skylt i saltvann eller eddik etter bruk, og deretter lagt i en bøtte for neste bruker («Toilet paper», 2026). En fellessponge for alle."
+            "content": "I det gamle Roma fantes det offentlige latriner - lange stenbenkene med hull i, bygd over rennende vann. Romerne var faktisk ganske hygieniske: de skylte bort avfall med vann, og hadde et system for å holde det rent. Men til selve hygienen brukte de noe som gjerne får folk til å sette kaffen ned: en svamp på en lang stokk, kalt tersorium. Den ble skylt i saltvann eller eddik etter bruk, og deretter lagt i en bøtte for neste bruker. En fellessponge for alle (Blakemore, 2020)."
         },
         {
             "type": "text",
-            "content": "Grekerne hadde en annen løsning. De brukte flate steiner og lerskår - en praksis som avslørte noe interessant: det greske ordet for disse steinene var ostraka. Det er det samme ordet de brukte når de stemte bort politikere de ikke likte. På ostrakisering-dagen riste borgerne navnet på en upopulær politiker på et leirskår - og brukte deretter skåret til noe annet. Historien sier ikke om politikernes navn forsvant i kloakken, men det er fristende å tenke seg at det hadde en slags poetisk rettferdighet."
+            "content": "Grekerne hadde en annen løsning. De brukte flate steiner og potteskår (Blakemore, 2020). Slike leirskår kalte grekerne ostraka - det samme ordet vi kjenner igjen i «ostrakisme», da athenerne risset navnet på en upopulær politiker i et leirskår for å stemme ham i eksil. At de samme skårene kunne ende opp begge steder, er en tanke det er vanskelig å riste av seg."
         },
         {
             "type": "header",
@@ -40,11 +40,11 @@
         },
         {
             "type": "text",
-            "content": "Mens romerne og grekerne syslet med svamper og steiner, oppfant en kinesisk hoffmann ved navn Cai Lun noe revolusjonerende rundt år 105 e.Kr.: papir laget av bark, hamp og filler (Bøhmer, 2026). Teknologien spredte seg gradvis gjennom det kinesiske riket. Allerede på 500-600-tallet brukte kinesiske hoffmenn papirark til hygiene, og under Ming-dynastiet ble det laget mykt, parfymert papir til keiserfamilien (Rosvold, 2025). Kildene forteller om så mye som 720 000 hygieniske papirark i året til bruk ved hoffet («Toilet paper», 2026)."
+            "content": "Mens romerne og grekerne syslet med svamper og steiner, oppfant en kinesisk hoffmann ved navn Cai Lun noe revolusjonerende rundt år 105 e.Kr.: papir laget av bark, hamp og filler (Bøhmer, 2026). Teknologien spredte seg gradvis gjennom det kinesiske riket, og allerede på 500-600-tallet begynte kinesiske hoffmenn å bruke papirark til hygiene (Ponti, 2025). Ved det keiserlige hoffet ble det på 1300-tallet produsert tusenvis av parfymerte papirark til den keiserlige familien."
         },
         {
             "type": "text",
-            "content": "Europa fikk ikke vite om dette på mange hundre år. Papirproduksjonen spredte seg vestover langs silkeveien, men ideen om å bruke papir til hygiene kom aldri med. Mens kineserne hadde papir på badet i middelalderen, kløvet europeerne seg videre med mose, høy og lapper av stoff - og hadde ikke peiling på at de gikk glipp av noe."
+            "content": "Europa fikk ikke vite om dette på mange hundre år. Papirproduksjonen spredte seg gradvis vestover mot Midtøsten og Europa, men ideen om å bruke papir til hygiene kom aldri med. Mens kineserne hadde papir på badet i middelalderen, klarte europeerne seg videre med mose, høy og lapper av stoff - og hadde ikke peiling på at de gikk glipp av noe."
         },
         {
             "type": "component",
@@ -57,11 +57,11 @@
         },
         {
             "type": "text",
-            "content": "At papir i det hele tatt ble billig nok til daglig bruk, skyldtes [den industrielle revolusjonen](/historie/industriell-revolusjon/industriell-revolusjon). Det var amerikaneren Joseph Gayetty som i 1857 lanserte verdens første kommersielle hygienepapir (Rosvold, 2025). Han kalte det Gayetty's Medicated Paper og solgte det i pakker med flate ark, hvert merket med hans eget navn. Gayetty markedsførte produktet som medisinsk nødvendig og hevdet det forebygget hemoroider. Salget var skuffende - folk forsto ikke hvorfor de skulle betale for noe de like godt kunne få gratis fra nærmeste avis."
+            "content": "At papir i det hele tatt ble billig nok til daglig bruk, skyldtes [den industrielle revolusjonen](/historie/industriell-revolusjon/industriell-revolusjon). Det var amerikaneren Joseph Gayetty som i 1857 lanserte verdens første kommersielle hygienepapir. Han kalte det Gayetty's Medicated Paper, solgte det i pakker med 500 flate ark til 50 cent, og hadde trykket sitt eget navn på hvert eneste ark (Ponti, 2025). Gayetty markedsførte produktet som medisinsk nødvendig og hevdet det forebygget hemoroider. Salget var skuffende - folk forsto ikke hvorfor de skulle betale for noe de like godt kunne få gratis fra nærmeste avis."
         },
         {
             "type": "text",
-            "content": "Gjennombruddet kom i 1890, da brødrene Scott - Clarence og E. Irvin Scott - begynte å selge toalettpapiret på ruller («Toilet paper», 2026). De var flaue over produktet og markedsførte det anonymt, under andre merkevarers navn. Men ideen slo an. Papirfabrikkene som spydde ut ruller på rad og rekke, ble drevet av [dampmaskinen](/historie/industriell-revolusjon/dampmaskinen), den samme oppfinnelsen som hadde gjort fabrikker mulig overalt. I 1891 tok en oppfinner ved navn Seth Wheeler patent på den perforerte papirrulle - og i patenttegningene er det tydelig at papiret skal henge med enden over, ikke under. Striden om riktig retning er teknisk sett løst siden 1891."
+            "content": "Gjennombruddet kom i 1890, da brødrene Scott - Clarence og E. Irvin Scott - begynte å selge toalettpapiret på ruller. De var flaue over produktet og markedsførte det anonymt, under andre merkevarers navn. Men ideen slo an. Papirfabrikkene som spydde ut ruller på rad og rekke, ble drevet av [dampmaskinen](/historie/industriell-revolusjon/dampmaskinen), den samme oppfinnelsen som hadde gjort fabrikker mulig overalt. I 1891 tok en oppfinner ved navn Seth Wheeler patent på den perforerte papirrulle - og i patenttegningene er det tydelig at papiret skal henge med enden over, ikke under (Schneider, 2015). Striden om riktig retning er teknisk sett løst siden 1891."
         },
         {
             "type": "component",
@@ -85,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "USA er på verdenstoppen med rundt 141 ruller dopapir per person i året, mens en gjennomsnittlig kineser bruker rundt 49 (QS Supplies, 2022). Nordmenn bruker på sin side rundt ni kilo dopapir hver i året, og forbruket har mangedoblet seg siden 1970-tallet (Statistisk sentralbyrå, gjengitt i Telemarksavisa, 2007). Hva vi bruker som hygieneredskap sier mer om vår kultur og velstand enn vi kanskje liker å innrømme. Se artikkelen om [hverdagslivet i Roma](/historie/romerriket/hverdagsliv-i-roma) for mer om romernes overraskende moderne tilnærming til sanitær infrastruktur."
+            "content": "I dag bruker rike land enorme mengder dopapir, mens mange andre steder i verden klarer seg med helt andre løsninger. Hva vi bruker som hygieneredskap sier mer om vår kultur og velstand enn vi kanskje liker å innrømme. Se artikkelen om [hverdagslivet i Roma](/historie/romerriket/hverdagsliv-i-roma) for mer om romernes overraskende moderne tilnærming til sanitær infrastruktur."
         },
         {
             "type": "component",
@@ -132,12 +132,12 @@
                 ],
                 "reflekter": [
                     "Forklar hvorfor toalettpapir først ble billig nok til daglig bruk etter den industrielle revolusjonen. Hva var det ved dampmaskinen og fabrikkene som gjorde det mulig?",
-                    "Kineserne brukte papir til hygiene over 1000 år før europeerne. Hvorfor tror du ideen ikke fulgte med papiret vestover langs silkeveien, selv om selve papirproduksjonen gjorde det?",
+                    "Kineserne brukte papir til hygiene over 1000 år før europeerne. Hvorfor tror du ideen ikke fulgte med papiret vestover mot Europa, selv om selve papirproduksjonen gjorde det?",
                     "Scott-brødrene var flaue over produktet sitt og markedsførte det anonymt. Hva sier det om hvordan folk så på toalettpapir på den tiden?",
                     "Under depresjonen på 1930-tallet og under koronapandemien i 2020 hamstret folk toalettpapir. Hvorfor tror du nettopp toalettpapir ble et symbol når folk ble redde?"
                 ],
                 "gaaVidere": [
-                    "USA er på verdenstoppen med rundt 141 ruller dopapir i året, mens en kineser bruker rundt 49. Diskuter med en partner hva slike forskjeller kan fortelle om kultur og velstand.",
+                    "Rike land bruker ofte mye mer dopapir enn fattigere land. Diskuter med en partner hva slike forskjeller kan fortelle om kultur og velstand.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan en helt vanlig hverdagsvare, som du nesten ikke tenker på, har en historie som henger sammen med store hendelser som industrialisering og kriser.",
                     "Finn en annen hverdagsting du bruker daglig, og undersøk kort når og hvordan den ble vanlig i norske hjem. Ble den, som toalettpapiret, først en luksusvare?"
                 ]
@@ -200,15 +200,14 @@
             "name": "Kildeliste",
             "props": {
                 "sources": [
-                    "Rosvold, K. A. (2025). *Toalettpapir*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/toalettpapir](https://snl.no/toalettpapir)",
-                    "Bøhmer, E. (2026). *Papir*. Store norske leksikon. Hentet 22.07.2026 fra [snl.no/papir](https://snl.no/papir)",
-                    "«Toilet paper». (2026). I *Wikipedia*. Hentet 22.07.2026 fra [en.wikipedia.org](https://en.wikipedia.org/wiki/Toilet_paper)",
-                    "QS Supplies. (2022). *World Toilet Paper Consumption, Visualised*. Hentet 22.07.2026 fra [qssupplies.co.uk](https://www.qssupplies.co.uk/world-toilet-paper-consumed-visualised.html)",
-                    "Statistisk sentralbyrå. (2007). Tall gjengitt i *Nordmenn bruker 9,3 kilo dopapir*. Telemarksavisa. Hentet 22.07.2026 fra [ta.no](https://www.ta.no/grenland/nordmenn-bruker-9-3-kilo-dopapir/s/1-111-2614077)"
+                    "Blakemore, E. (2020). *What did people do before toilet paper?*. National Geographic. Hentet 23.07.2026 fra [nationalgeographic.com](https://www.nationalgeographic.com/history/article/what-people-do-before-toilet-paper)",
+                    "Bøhmer, E. (2026). *Papir*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/papir](https://snl.no/papir)",
+                    "Ponti, C. (2025). *All the Ways We've Wiped: The History of Toilet Paper and What Came Before*. History. Hentet 23.07.2026 fra [history.com](https://www.history.com/articles/toilet-paper-hygiene-ancient-rome-china)",
+                    "Schneider, C. (2015). *The Proper Way to Hang a Roll of Toilet Paper*. Mental Floss. Hentet 23.07.2026 fra [mentalfloss.com](https://mentalfloss.com/article/67036/proper-way-hang-roll-toilet-paper)"
                 ]
             }
         }
     ],
     "timeline": [],
-    "lastUpdated": "2026-07-22T00:00:00Z"
+    "lastUpdated": "2026-07-23T00:00:00Z"
 }

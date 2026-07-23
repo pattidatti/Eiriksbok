@@ -82,6 +82,7 @@ const MatreglerBord3D = lazy(() => import('./MatreglerBord3D'));
 const Rikssamlingen3D = lazy(() => import('./Rikssamlingen3D'));
 const RismarkOgMakt3D = lazy(() => import('./RismarkOgMakt3D'));
 const Berlinmuren3D = lazy(() => import('./Berlinmuren3D'));
+const FluktenOverMuren3D = lazy(() => import('./FluktenOverMuren3D'));
 const Falltaarnet3D = lazy(() => import('./Falltaarnet3D'));
 const JapanMirakelBy3D = lazy(() => import('./JapanMirakelBy3D'));
 const StormingenAvBastillen3D = lazy(() => import('./StormingenAvBastillen3D'));
@@ -145,8 +146,18 @@ const DenLangeVinteren3D = lazy(() => import('./DenLangeVinteren3D'));
 const TrojaUtgravning3D = lazy(() => import('./TrojaUtgravning3D'));
 const MaalmerkeKartet3D = lazy(() => import('./MaalmerkeKartet3D'));
 const EarhartStillehavet3D = lazy(() => import('./EarhartStillehavet3D'));
+const RoanokeSporet3D = lazy(() => import('./RoanokeSporet3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'roanoke-sporet-3d': {
+        id: 'roanoke-sporet-3d',
+        title: 'Sporet etter kolonien',
+        description:
+            'Du er John White, tilbake ved kolonien Roanoke i 1590 - og alle er borte. Let deg gjennom den tause, taakelagte plassen: palisadestolpen med ordet CROATOAN, treet, de tomme husene og jorda uten graver. For hvert spor du finner, letter taaken litt. Naar alt er undersoekt, maa du velge hvilket spor som er sterkest aa foelge. Lyspaeren: naar en gaate ikke har fasit, foelger vi det sterkeste sporet uten aa late som vi vet mer enn vi gjoer.',
+        estimatedSeconds: 150,
+        loader: () => import('./RoanokeSporet3D'),
+        Component: RoanokeSporet3D as never,
+    },
     'earhart-stillehavet-3d': {
         id: 'earhart-stillehavet-3d',
         title: 'Finn Howland',
@@ -641,6 +652,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Berlinmuren3D'),
         Component: Berlinmuren3D as never,
+    },
+    'flukten-over-muren': {
+        id: 'flukten-over-muren',
+        title: 'Flukten over Muren',
+        description:
+            'Førstepersons natt-flukt over dødsstripa i Berlin: hold inne for å løpe mot lyset i Vest-Berlin, frys når lyskasterne sveiper mot deg, og hold deg unna patruljevakta. Signalgjerde, alarmnivå og daggry-nedtelling - eleven kjenner på kroppen hvorfor stripa var konstruert for at ingen skulle komme over.',
+        estimatedSeconds: 150,
+        loader: () => import('./FluktenOverMuren3D'),
+        Component: FluktenOverMuren3D as never,
     },
     'rikssamlingen-3d': {
         id: 'rikssamlingen-3d',

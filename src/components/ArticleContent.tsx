@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Volume2, ChevronDown, Info, CheckCircle2, XCircle, Pause, Play, Square } from 'lucide-react';
+import { Volume2, ChevronDown, Info, CheckCircle2, XCircle, Pause, Play, Square, PenLine } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { getComponent } from './ComponentRegistry';
 import { useGlossary } from '../context/GlossaryContext';
@@ -121,6 +121,19 @@ const RevealBlock: React.FC<{ imageOnly?: boolean; children: React.ReactNode }> 
     );
 };
 
+// Sluttsonen «Jobb med stoffet»: den sammenhengende halen av etterarbeid-blokker
+// (Oppgaver, Quiz, Kildeliste) får en felles seksjonsskillelinje, slik at
+// overgangen fra brødtekst til etterarbeid blir tydelig i stedet for at kortene
+// flyter rett ut av artikkelen.
+const ETTERARBEID_NAVN = new Set(['Oppgaver', 'Quiz', 'Kildeliste']);
+const isEtterarbeidBlock = (block: ContentBlock): boolean => {
+    const b = block as { type?: string; name?: string; component?: string };
+    const type = b.type || b.name;
+    if (type === 'quiz') return true;
+    const name = type === 'component' ? b.name || b.component : type;
+    return name !== undefined && ETTERARBEID_NAVN.has(name);
+};
+
 interface ArticleContentProps {
     content: ContentBlock[];
     concepts?: Concept[];
@@ -183,6 +196,16 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
     }, [explicitConcepts, globalEntries]);
 
     const displayContent = fullContent || content;
+
+    // Første indeks i den sammenhengende etterarbeid-halen, eller -1 om den
+    // mangler. Billig O(hale)-løkke, trenger ikke memoisering.
+    let etterarbeidStart = displayContent.length;
+    while (etterarbeidStart > 0 && isEtterarbeidBlock(displayContent[etterarbeidStart - 1])) {
+        etterarbeidStart--;
+    }
+    if (etterarbeidStart === 0 || etterarbeidStart === displayContent.length) {
+        etterarbeidStart = -1;
+    }
 
     return (
         <div className={`article-content min-w-0 ${isTool ? 'w-full max-w-none' : 'max-w-5xl mx-auto'}`}>
@@ -623,9 +646,21 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                 const blockKind = block as { type?: string; name?: string };
                 const isImageBlock = (blockKind.type || blockKind.name) === 'image';
                 return (
-                    <RevealBlock key={index} imageOnly={isImageBlock}>
-                        {rendered}
-                    </RevealBlock>
+                    <React.Fragment key={index}>
+                        {index === etterarbeidStart && (
+                            <div className="mt-16 mb-2 flex items-center gap-4">
+                                <div className="h-px flex-1 bg-gradient-to-r from-transparent to-slate-300" />
+                                <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                                    <PenLine size={14} />
+                                    Jobb med stoffet
+                                </span>
+                                <div className="h-px flex-1 bg-gradient-to-l from-transparent to-slate-300" />
+                            </div>
+                        )}
+                        <RevealBlock imageOnly={isImageBlock}>
+                            {rendered}
+                        </RevealBlock>
+                    </React.Fragment>
                 );
             })}
         </div >

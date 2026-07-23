@@ -23,6 +23,8 @@ export interface QuizQuestion {
     options: string[];
     answer?: string;
     correctAnswer?: number; // Index of correct answer
+    correctIndex?: number; // Alias for correctAnswer (brukes av mye innholds-JSON)
+    explanation?: string; // Kort fasit-forklaring vist etter svar
     sourceUrl?: string;
     sourceTitle?: string;
     type?: 'multiple_choice' | 'boolean' | 'sorting';

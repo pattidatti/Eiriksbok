@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 305
+      "count": 306
     },
     {
       "tag": "dekolonisering",
@@ -887,11 +887,11 @@
       "count": 22
     },
     {
-      "tag": "steinalder",
-      "count": 20
+      "tag": "kildekritikk",
+      "count": 21
     },
     {
-      "tag": "kildekritikk",
+      "tag": "steinalder",
       "count": 20
     },
     {
@@ -1015,6 +1015,10 @@
       "count": 10
     },
     {
+      "tag": "mysterier",
+      "count": 10
+    },
+    {
       "tag": "klima",
       "count": 10
     },
@@ -1053,10 +1057,6 @@
     {
       "tag": "demografi",
       "count": 10
-    },
-    {
-      "tag": "mysterier",
-      "count": 9
     },
     {
       "tag": "keiser",
@@ -1704,6 +1704,10 @@
     },
     {
       "tag": "totalitarisme",
+      "count": 3
+    },
+    {
+      "tag": "nyere tid",
       "count": 3
     },
     {
@@ -2496,10 +2500,6 @@
     },
     {
       "tag": "børskrakk",
-      "count": 2
-    },
-    {
-      "tag": "nyere tid",
       "count": 2
     },
     {
@@ -3404,6 +3404,10 @@
     },
     {
       "tag": "historiebruk",
+      "count": 1
+    },
+    {
+      "tag": "kolonisering",
       "count": 1
     },
     {

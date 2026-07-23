@@ -118,7 +118,7 @@ const VeienTilVikingtid3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 {/* --- 3D-scenen (full bredde) --- */}
                 <div
                     className="relative w-full bg-gradient-to-b from-[#a9c9dd] via-[#cfe0e6] to-[#dcd2b6] overflow-hidden"
-                    style={{ aspectRatio: '16/9', minHeight: 300 }}
+                    style={{ aspectRatio: '16 / 10.8', minHeight: 360 }}
                 >
                     <MicroCanvas
                         idle={idle}

@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "På natten til søndag 13. august 1961 rykket østtyske soldater og arbeidere ut. De rulle ut piggeråd og sperret gater. Folk som våknet neste morgen, oppdaget at de ikke lenger kunne gå på jobb, besøke familie eller krysse gaten til den andre siden av byen (Dypvik, 2026).\n\nI løpet av dager og uker ble piggtråden erstattet av betongvegger. Hus som lå langs grensen ble murt igjen, og beboerne ble tvangsevakuert. Muren var ikke bare én vegg, men et komplekst system av to murer med et tomt område imellom - kjent som 'dødsstripen' - med vakttårn, automatiske skytevåpen og vaktbikkjer (Encyclopaedia Britannica, 2026)."
+            "content": "På natten til søndag 13. august 1961 rykket østtyske soldater og arbeidere ut. De rullet ut piggtråd og sperret gater. Folk som våknet neste morgen, oppdaget at de ikke lenger kunne gå på jobb, besøke familie eller krysse gaten til den andre siden av byen (Dypvik, 2026).\n\nI løpet av dager og uker ble piggtråden erstattet av betongvegger. Hus som lå langs grensen ble murt igjen, og beboerne ble tvangsevakuert. Muren var ikke bare én vegg, men et komplekst system av to murer med et tomt område imellom - kjent som 'dødsstripen' - med vakttårn, automatiske skytevåpen og vaktbikkjer (Encyclopaedia Britannica, 2026)."
         },
         {
             "type": "component",
@@ -68,7 +68,14 @@
         },
         {
             "type": "text",
-            "content": "Til tross for de enorme farene forsøkte tusenvis av mennesker å flykte over muren. De brukte utrolig kreativitet: De gravde lange tunneler under muren, flø over i hjemmelagde luftballonger, gjemte seg i spesialbygde biler, og noen svømte gjennom kanalene.\n\nMen prisen var høy. Grensevaktene hadde ordre om å skyte alle som forsøkte å flykte. Det er anslått at minst 136 mennesker ble drept ved Berlinmuren (Dypvik, 2026). En av de mest hjerteskjærende historiene var Peter Fechter, en 18 år gammel gutt som ble skutt og ble liggende å blø i hjel i dødsstripen mens verden så på uten å kunne hjelpe (Chronik der Mauer, u.å.)."
+            "content": "Til tross for de enorme farene forsøkte tusenvis av mennesker å flykte over muren. De brukte utrolig kreativitet: De gravde lange tunneler under muren, fløy over i hjemmelagde luftballonger, gjemte seg i spesialbygde biler, og noen svømte gjennom kanalene.\n\nMen prisen var høy. Grensevaktene hadde ordre om å skyte alle som forsøkte å flykte. Det er anslått at minst 136 mennesker ble drept ved Berlinmuren (Dypvik, 2026). En av de mest hjerteskjærende historiene var Peter Fechter, en 18 år gammel gutt som ble skutt og ble liggende å blø i hjel i dødsstripen mens verden så på uten å kunne hjelpe (Chronik der Mauer, u.å.)."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "flukten-over-muren"
+            }
         },
         {
             "type": "component",

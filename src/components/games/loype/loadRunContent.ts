@@ -1,10 +1,11 @@
 // Laster quiz-spørsmål til Kunnskapsløypa. Følger QuizPage-mønsteret
 // (manifest-iterasjon + fetchLesson), men sampler leksjoner seedet for å
-// begrense fetch-fan-out, og normaliserer de to svarformatene som finnes
-// i innholdet (answer-streng vs correctAnswer-indeks - se Quiz.tsx).
+// begrense fetch-fan-out, og normaliserer svarformatene som finnes i
+// innholdet (answer-streng vs correctAnswer/correctIndex - se quizUtils.ts).
 
 import type { Manifest, QuizQuestion } from '../../../types';
 import { fetchLesson } from '../../../utils/contentLoader';
+import { getQuizCorrectAnswer } from '../../../utils/quizUtils';
 import { djb2Hash, mulberry32, shuffleWith } from '../../../utils/reviewScheduler';
 import type { LoypeQuizQuestion } from './challengeBuilder';
 import type { SubjectChoice } from './types';
@@ -26,8 +27,7 @@ const normalizeQuestion = (
 ): LoypeQuizQuestion | null => {
     if (!q.question || !Array.isArray(q.options) || q.options.length < 3) return null;
     if (q.type === 'sorting') return null;
-    const answer =
-        typeof q.correctAnswer === 'number' ? q.options[q.correctAnswer] : (q.answer ?? '');
+    const answer = getQuizCorrectAnswer(q);
     if (!answer || !q.options.includes(answer)) return null;
     const options = Array.from(new Set(q.options));
     if (options.length < 3) return null;

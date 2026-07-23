@@ -2,14 +2,37 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import type { QuizQuestion } from '../types';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, CheckCircle2, XCircle, RotateCcw, ExternalLink } from 'lucide-react';
+import { Flame, CheckCircle2, XCircle, RotateCcw, ExternalLink, Target } from 'lucide-react';
 import { captureQuizAnswer } from '../utils/reviewCapture';
+import { getQuizCorrectAnswer } from '../utils/quizUtils';
 import { useProgressStore } from '../features/progress/useProgressStore';
 import { correctPop, wrongShake, celebrateCompletion } from './ui/answerFeedback';
 
 interface QuizProps {
     questions: QuizQuestion[];
 }
+
+// Felles kortskall som matcher Oppgaver-kortet, slik at sluttsonen i artikler
+// («Jobb med stoffet») får ett sammenhengende kortspråk: samme bredde, radius,
+// bakgrunn og header-oppsett.
+const QuizShell = ({
+    headerRight,
+    children,
+}: {
+    headerRight?: React.ReactNode;
+    children: React.ReactNode;
+}) => (
+    <section className="my-8 rounded-xl border border-slate-200 bg-white/80 p-4 shadow-sm sm:p-5">
+        <header className="mb-4 flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+                <Target size={18} className="text-slate-700" />
+                <h3 className="text-lg font-bold tracking-tight text-slate-900">Test deg selv</h3>
+            </div>
+            {headerRight}
+        </header>
+        {children}
+    </section>
+);
 
 const shuffle = (options: string[]) => {
     const shuffled = [...options];
@@ -38,12 +61,7 @@ export const Quiz = ({ questions }: QuizProps) => {
         setSelectedOption(option);
     };
 
-    const getCorrectAnswer = (q: QuizQuestion) => {
-        if (typeof q.correctAnswer === 'number') {
-            return q.options[q.correctAnswer];
-        }
-        return q.answer || '';
-    };
+    const getCorrectAnswer = getQuizCorrectAnswer;
 
     // Vern mot dobbeltklikk: «Neste» rendres på samme sted som «Svar»
     // forsvinner fra, så et raskt dobbeltklikk hoppet ellers rett forbi
@@ -109,11 +127,12 @@ export const Quiz = ({ questions }: QuizProps) => {
                     ? 'Godt forsøk! Prøv en runde til.'
                     : 'Les gjennom stoffet en gang til, så sitter det.';
         return (
+            <QuizShell>
             <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 12 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-                className="mt-12 max-w-xl mx-auto bg-white/70 backdrop-blur rounded-2xl border border-slate-200 shadow-sm p-8 text-center"
+                className="mx-auto max-w-xl px-4 py-6 text-center"
             >
                 <motion.div
                     initial={{ scale: 0, rotate: -20 }}
@@ -155,6 +174,7 @@ export const Quiz = ({ questions }: QuizProps) => {
                     Prøv igjen
                 </motion.button>
             </motion.div>
+            </QuizShell>
         );
     }
 
@@ -166,33 +186,35 @@ export const Quiz = ({ questions }: QuizProps) => {
     const progress = (currentQuestion + (isAnswered ? 1 : 0)) / questions.length;
 
     return (
-        <div className="mt-12 max-w-xl mx-auto">
-            {/* Fremdrift + streak */}
-            <div className="flex items-end justify-between mb-2 px-1">
-                <span className="text-sm font-semibold text-slate-500">
-                    Spørsmål {currentQuestion + 1} av {questions.length}
-                </span>
-                <div className="flex items-center gap-1.5">
-                    <motion.span
-                        key={streak}
-                        animate={
-                            streak > 0
-                                ? { scale: [1, 1.35, 1], rotate: [0, 8, -8, 0] }
-                                : undefined
-                        }
-                        transition={{ duration: 0.35 }}
-                    >
-                        <Flame
-                            className={`w-4 h-4 ${streak > 0 ? 'text-amber-500' : 'text-slate-300'}`}
-                        />
-                    </motion.span>
-                    <span
-                        className={`text-sm font-bold ${streak > 2 ? 'text-amber-500' : streak > 0 ? 'text-slate-700' : 'text-slate-400'}`}
-                    >
-                        {streak} på rad
+        <QuizShell
+            headerRight={
+                <div className="flex items-center gap-3">
+                    <span className="text-sm font-semibold text-slate-500">
+                        Spørsmål {currentQuestion + 1} av {questions.length}
                     </span>
+                    <div className="flex items-center gap-1.5">
+                        <motion.span
+                            key={streak}
+                            animate={
+                                streak > 0
+                                    ? { scale: [1, 1.35, 1], rotate: [0, 8, -8, 0] }
+                                    : undefined
+                            }
+                            transition={{ duration: 0.35 }}
+                        >
+                            <Flame
+                                className={`w-4 h-4 ${streak > 0 ? 'text-amber-500' : 'text-slate-300'}`}
+                            />
+                        </motion.span>
+                        <span
+                            className={`text-sm font-bold ${streak > 2 ? 'text-amber-500' : streak > 0 ? 'text-slate-700' : 'text-slate-400'}`}
+                        >
+                            {streak} på rad
+                        </span>
+                    </div>
                 </div>
-            </div>
+            }
+        >
             <div className="h-2 bg-slate-200/70 rounded-full overflow-hidden mb-6">
                 <motion.div
                     className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
@@ -202,7 +224,7 @@ export const Quiz = ({ questions }: QuizProps) => {
                 />
             </div>
 
-            <div className="bg-white/70 backdrop-blur rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
+            <div className="mx-auto max-w-xl py-2">
                 <p className="text-lg sm:text-xl font-semibold text-slate-900 text-center leading-snug mb-6">
                     {question.question}
                 </p>
@@ -263,6 +285,11 @@ export const Quiz = ({ questions }: QuizProps) => {
                                     Riktig svar: <span className="font-bold">{correctAnswer}</span>
                                 </>
                             )}
+                            {question.explanation && (
+                                <p className="mt-1 font-normal opacity-90">
+                                    {question.explanation}
+                                </p>
+                            )}
                             {question.sourceUrl && (
                                 <a
                                     href={question.sourceUrl}
@@ -302,6 +329,6 @@ export const Quiz = ({ questions }: QuizProps) => {
                     </motion.button>
                 )}
             </div>
-        </div>
+        </QuizShell>
     );
 };

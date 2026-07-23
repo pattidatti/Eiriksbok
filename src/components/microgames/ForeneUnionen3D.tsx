@@ -109,7 +109,7 @@ const ForeneUnionen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 {/* --- 3D-scenen (full bredde) --- */}
                 <div
                     className="relative w-full bg-gradient-to-b from-[#cfe0f2] via-[#e3e8ee] to-[#d8cdb6] overflow-hidden"
-                    style={{ aspectRatio: '16/9', minHeight: 300 }}
+                    style={{ aspectRatio: '16 / 10.8', minHeight: 360 }}
                 >
                     <MicroCanvas
                         idle={idle}
