@@ -3936,6 +3936,25 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "roanoke",
+      "title": "Hva skjedde med kolonien Roanoke?",
+      "description": "I 1587 forsvant en hel engelsk koloni sporløst og etterlot bare ett ord: CROATOAN. Vei sporene mot tre forklaringer og oppdag hvordan historikere jobber når det ikke finnes fasit.",
+      "startDate": 1587,
+      "endDate": 1590,
+      "displayDate": "1587-1590",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/roanoke",
+      "tags": [
+        "historie",
+        "nyere tid",
+        "kildekritikk",
+        "mysterier",
+        "kolonisering"
+      ]
+    },
+    {
       "id": "den-spanske-armada-1588",
       "title": "Den spanske armada",
       "description": "Filip II invaderer England med religiøs og politisk legitimering.",

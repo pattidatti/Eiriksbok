@@ -1,0 +1,194 @@
+{
+    "id": "roanoke",
+    "title": "Hva skjedde med kolonien Roanoke?",
+    "layout": "rich",
+    "year": "1587-1590",
+    "category": "Historiens store gåter",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "I 1587 grunnla 117 engelskmenn kolonien Roanoke. Tre år senere var alle sammen sporløst borte.",
+        "Det eneste sporet var ett ord skåret i en stolpe: CROATOAN - navnet på en øy og et folk i nærheten.",
+        "Ingen har bevist hva som skjedde, men de fleste sporene peker mot at kolonistene flyttet inn til urfolket."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "En augustdag i 1590 gikk en engelsk mann i land på en liten øy utenfor kysten av det som i dag er delstaten North Carolina i USA. Han het John White, og han hadde reist over hele Atlanterhavet for å finne igjen familien sin. Men leiren var tom. Ingen mennesker. Ingen barn. Bare stille, forlatte hus - og ett eneste ord skåret inn i en stolpe: CROATOAN."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tom trelandsby i tåke med et ord skåret inn i en høy trestolpe",
+            "caption": "Da John White kom tilbake, var kolonien borte. Det eneste sporet var ordet CROATOAN skåret i en stolpe."
+        },
+        {
+            "type": "text",
+            "content": "Tre år tidligere, i 1587, hadde White ledet 117 menn, kvinner og barn til øya Roanoke (National Park Service, 2025). De var noen av de aller første engelskmennene som prøvde å bygge seg et nytt liv i Amerika. England ville ha en fast base på den andre siden av havet, både for handel og for å hindre at Spania fikk hele den nye verden for seg selv. Egentlig skulle kolonistene slå seg ned lenger nord, ved Chesapeake-bukta, men de endte opp på Roanoke. Livet der ble hardt fra første stund: maten var knapp, og forholdet til noen av naboene ble raskt anspent. Bare noen dager før White reiste tilbake til England, ble barnebarnet hans født. Hun het Virginia Dare og var det første engelske barnet født i Amerika (Hogeback, u.å.)."
+        },
+        {
+            "type": "header",
+            "text": "Han dro etter forsyninger - og kom for sent tilbake"
+        },
+        {
+            "type": "text",
+            "content": "Kolonien manglet mat og utstyr. Noen måtte reise hjem til England for å hente mer, og valget falt på White selv. Han lovte å komme raskt tilbake. Men da han kom fram, var England i krig. Den store spanske armadaen truet med å angripe, og alle skip ble holdt igjen til forsvaret (Britannica-redaksjonen, 2026). White ble sittende fast i tre lange år før han endelig fikk seile vestover igjen."
+        },
+        {
+            "type": "text",
+            "content": "Da han omsider kom tilbake i august 1590, var alt forandret. Husene stod, men folket var vekk. På en stolpe i palisaden fant han ordet CROATOAN, og på et tre stod bokstavene CRO (Britannica-redaksjonen, 2026). Dette var ikke tilfeldig. Før White dro, hadde han og kolonistene laget en avtale: hvis de måtte flytte, skulle de skjære inn navnet på det nye stedet. Og hvis de ble tvunget bort i fare, skulle de i tillegg skjære et kors. Korset var ikke der. At det manglet et slikt nødtegn, tydet på at kolonistene ikke dro i panikk (Spivack, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "White ville lete videre på øya Croatoan, som lå like i nærheten. Men en kraftig storm tvang skipene hans til å snu. Han fikk aldri lett etter dem. Han fikk aldri se familien sin igjen. Og siden den gang har ingen klart å bevise hva som virkelig skjedde med kolonistene (Britannica-redaksjonen, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Ett ord, tre forklaringer"
+        },
+        {
+            "type": "text",
+            "content": "Når en gåte ikke har en fasit, er det fristende å gripe den villeste historien. Roanoke har blitt forklart med alt fra spøkelser til bortføring av romvesener. Men en historiker gjør noe annet: hun samler spor og veier dem mot hverandre. Akkurat som med sagnet om [den trojanske krig](/historie/historiens-store-gater/den-trojanske-krig) handler det ikke om å finne den kuleste teorien, men den som flest spor peker mot. Tre forklaringer er mer sannsynlige enn alle de andre. Prøv selv å veie sporene."
+        },
+        {
+            "type": "component",
+            "name": "SporTavlen",
+            "props": {
+                "title": "Spor-tavlen: hva skjedde med kolonistene?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Forklaringen med mest støtte er at kolonistene flyttet inn til urfolket på Croatoan-øya, som i dag heter Hatteras (Spivack, 2025). Historikeren Kathleen DuVal peker på at kolonistene ikke kunne overleve alene - de trengte hjelp fra folk som kjente landet (Spivack, 2025). Arkeologer har gravd fram engelske ting midt i landsbyene der urfolket bodde: håndtaket fra et sverd, biter av engelsk glass, og i 2025 to hauger med jernrester som kan komme fra en smie (Spivack, 2025). Slikt havner ikke der av seg selv."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Arkeolog holder en rusten metallgjenstand gravd opp av lys sandjord",
+            "caption": "Engelske gjenstander funnet i urfolkets landsbyer styrker teorien om at kolonistene flyttet inn til dem."
+        },
+        {
+            "type": "text",
+            "content": "Den andre forklaringen handler om sult. Forskere har målt tykkelsen på årringene i eldgamle trær, for ringene avslører hvordan været var langt tilbake i tid. Tynne ringer betyr dårlige år. Målingene viser noe dramatisk: årene 1587 til 1589 var den verste tørken i området på 800 år (College of William & Mary, 1998). Uten regn slo avlingene feil. Kolonistene hadde lite mat fra før, og da naboene deres også sultet, ble det strid om det som var igjen (College of William & Mary, 1998). Kanskje drev sulten dem bort fra Roanoke."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "roanoke-sporet-3d"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Den tredje forklaringen er at kolonistene ble angrepet og drept, enten av fiendtlige stammer eller av spanske soldater lenger sør. Men her stopper sporene opp. Hadde over hundre mennesker blitt drept på stedet, ville arkeologene ventet å finne graver eller skjeletter. De har aldri funnet noen. Forskerne er heller ikke enige om de nyeste funnene: noen mener smie-sporene mangler avfallet en ekte smie ville etterlatt, og at funnene ennå ikke er godkjent av andre fagfolk (Spivack, 2025). Slik er ekte forskning - den krangler seg fram til svaret."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor gåten fortsatt lever"
+        },
+        {
+            "type": "text",
+            "content": "Mangel på svar er farlig føde for ville påstander. Nettopp fordi ingen vet sikkert, har Roanoke blitt til bøker, TV-serier og tusenvis av konspirasjoner. Det samme ser vi når folk nekter å tro på seriøs forskning om [pyramidene i Egypt](/historie/historiens-store-gater/pyramidene): et tomrom i kunnskapen fylles fort med fantasi. Roanoke var også en tidlig del av det store [kappløpet der europeiske land erobret verden](/historie/kolonialisering/europa-erobrer-verden). Møtet mellom engelskmenn og urfolk er en viktig del av den historien - uansett hva som til slutt skjedde med de savnede kolonistene."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Rolig kystlandskap med gress og grått hav i dis om morgenen",
+            "caption": "I dag er stedet et minnesmerke. Arkeologer graver fortsatt etter svaret."
+        },
+        {
+            "type": "text",
+            "content": "Så hva skjedde egentlig med kolonien Roanoke? Det ærlige svaret er at vi ikke vet det helt sikkert. Men når vi legger alle sporene ved siden av hverandre, peker de fleste samme vei: folket dro rolig av sted, tok med seg tingene sine, og etterlot ett ord om hvor de var på vei. Det beviser ingenting - men det er det sterkeste sporet vi har. Og å tørre å si 'vi vet ikke sikkert, men dette er mest sannsynlig' er ikke en svakhet. Det er nettopp slik god historie skal gjøres."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "I hvilket år ble kolonien Roanoke grunnlagt, og hvor mange mennesker var med?",
+                    "Hva var det eneste sporet John White fant da han kom tilbake i 1590?",
+                    "Hvorfor ble White forsinket i tre år i England?",
+                    "Hvem var Virginia Dare?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor det at White ikke fant noe kors, styrker teorien om at kolonistene dro frivillig.",
+                    "Hvordan kan årringer i gamle trær fortelle oss om været for over 400 år siden?",
+                    "Hvorfor mener mange forskere at teorien om at alle ble drept, er den svakeste? Bruk ordet 'graver' i svaret ditt.",
+                    "Hva menes med at 'mangel på svar er farlig føde for ville påstander'?"
+                ],
+                "gaaVidere": [
+                    "Diskuter to og to: Er det greit at en historiker svarer 'vi vet ikke sikkert'? Eller bør hun alltid gi ett klart svar? Begrunn.",
+                    "Velg den teorien du synes har best støtte. Skriv en kort tekst der du forklarer hvilke spor som peker mot den, og hvorfor du likevel ikke kan være helt sikker.",
+                    "Finn et mysterium fra nyhetene eller nettet der folk har laget konspirasjoner fordi ingen vet sikkert. Forklar hva det har til felles med Roanoke."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvilket ord fant John White skåret inn i en stolpe?",
+                        "options": ["CROATOAN", "VIRGINIA", "ENGLAND", "ARMADA"],
+                        "correctAnswer": 0
+                    },
+                    {
+                        "question": "Hvorfor ble White forsinket i tre år før han kom tilbake?",
+                        "options": [
+                            "Han ble alvorlig syk",
+                            "Den spanske armadaen og krig holdt alle skip igjen",
+                            "Han gikk tom for penger",
+                            "Skipet hans forliste på veien"
+                        ],
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hvilken forklaring har MEST støtte fra sporene?",
+                        "options": [
+                            "At de ble drept av spanske soldater",
+                            "At de flyttet inn til urfolket på Croatoan",
+                            "At de seilte hjem til England",
+                            "At de alle sultet i hjel akkurat på Roanoke"
+                        ],
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hva viste årringene i gamle trær om årene 1587 til 1589?",
+                        "options": [
+                            "At det var uvanlig mye regn",
+                            "At det var den verste tørken på 800 år",
+                            "At en enorm storm herjet",
+                            "At ingenting spesielt skjedde med været"
+                        ],
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hva er hovedpoenget når vi spør hva som skjedde med Roanoke?",
+                        "options": [
+                            "At vi vet helt nøyaktig hva som skjedde",
+                            "At alle teoriene er nøyaktig like gode",
+                            "At sporene peker mot Croatoan, men ingen har bevist det",
+                            "At gåten er umulig å utforske"
+                        ],
+                        "correctAnswer": 2
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Britannica-redaksjonen. (2026). *Lost Colony*. Encyclopædia Britannica. Hentet 23.07.2026 fra https://www.britannica.com/place/Lost-Colony",
+                    "Hogeback, J. (u.å.). *The lost colony of Roanoke*. Encyclopædia Britannica. Hentet 23.07.2026 fra https://www.britannica.com/story/the-lost-colony-of-roanoke",
+                    "National Park Service. (2025). *The lost colony*. Fort Raleigh National Historic Site. Hentet 23.07.2026 fra https://www.nps.gov/fora/learn/historyculture/the-lost-colony.htm",
+                    "Spivack, E. (2025). *Did the Lost Colony of Roanoke disappear or just assimilate?* History. Hentet 23.07.2026 fra https://www.history.com/articles/lost-colony-roanoke-assimilation",
+                    "College of William & Mary. (1998). *Extreme droughts played major role in tragedies at Jamestown og «Lost Colony»*. ScienceDaily. Hentet 23.07.2026 fra https://www.sciencedaily.com/releases/1998/04/980428075409.htm"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
