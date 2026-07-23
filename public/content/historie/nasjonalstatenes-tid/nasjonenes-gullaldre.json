@@ -1,0 +1,360 @@
+{
+    "id": "nasjonenes-gullaldre",
+    "title": "Nasjonenes gullaldre: Fortiden landene bygger på",
+    "layout": "rich",
+    "year": "1776-1949",
+    "category": "Nasjonalstatenes tid",
+    "readTime": "12 min lesning",
+    "heroImage": "/images/nasjonalstatenes-tid/nasjonenes-gullaldre-hero.webp",
+    "details": [
+        "Alle nasjoner velger seg en gullalder - en fortid de er ekstra stolte av",
+        "Fortellingen om gullalderen sier mest om hva landet vil være i dag",
+        "Det fortellingen løfter fram, kaster samtidig skygge over noe annet",
+        "Norge gjorde det samme på 1800-tallet med vikingtiden og 1814"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk på 17. mai. Bunader, flagg og taler om 1814. Eller tenk på vikingskipene i Oslo, som står i sitt eget museum som nasjonale skatter. Norge fant seg en fortid på 1800-tallet: frie bønder, tøffe vikinger og en grunnlov skrevet i all hast på Eidsvoll. Men her er det rare: dette er ikke spesielt norsk. Nesten alle land i verden har gjort akkurat det samme. De har valgt seg en storhetstid fra historien, pusset den blank og satt den på veggen som et speil. I denne artikkelen skal vi reise verden rundt og se hvilke fortellinger landene faller tilbake på - og hva de fortellingene skjuler."
+        },
+        {
+            "type": "image",
+            "src": "/images/nasjonalstatenes-tid/nasjonenes-gullaldre-01.webp",
+            "alt": "Montasje av nasjonale monumenter fra flere land i gyllent kveldslys",
+            "caption": "Monumenter forteller hvilken fortid et land vil huske. Hvert land har valgt sin."
+        },
+        {
+            "type": "header",
+            "text": "Hva er en gullalder?"
+        },
+        {
+            "type": "text",
+            "content": "En gullalder er en periode i historien som et land ser tilbake på som sin storhetstid. Det kan være en tid da landet var mektig, fritt, rikt eller spesielt modig. Men en gullalder er aldri bare historie. Den er et utvalg. Historien til et land er full av alt mulig: seire og nederlag, helter og bødler, storhet og skam. Når et land lager sin store fortelling, plukker det ut noen biter og lar resten ligge. Det som løftes opp i lyset, kaster samtidig skygge over det som ikke passer inn."
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor gjør land dette? Fordi en felles fortelling limer folk sammen. Som du kanskje har lest i artikkelen [Hva er nasjonalisme?](/historie/nasjonalstatenes-tid/hva-er-nasjonalisme), er en nasjon et fellesskap av mennesker som føler at de hører sammen. Den følelsen må bygges, og fortiden er det viktigste byggematerialet. Nasjonsbygging handler derfor nesten alltid om å fortelle: dette var vi en gang, og derfor er vi noe stort nå. Fortellingene kommer i noen faste typer:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Revolusjonsfortellinger: landet ble født da folket reiste seg (USA, Frankrike)",
+                "Arvede antikker: landet står på skuldrene til et eldgammelt rike (Hellas, Egypt, Mexico)",
+                "Tapte imperier: landet var en gang stort og skal reise seg igjen (Russland, Tyrkia, Kina)",
+                "Gammel sjel: landet moderniserer seg, men beholder sin gamle kjerne (Japan)"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Før vi ser på de virkelige landene, kan du prøve selv. I verkstedet under er du rådgiver for et helt nytt land som trenger sin nasjonale fortelling. Legg merke til hva som skjer for hvert valg du tar."
+        },
+        {
+            "type": "component",
+            "name": "MytenesVerksted",
+            "props": {
+                "title": "Mytenes verksted"
+            }
+        },
+        {
+            "type": "header",
+            "text": "USA: 1776 og grunnleggerne"
+        },
+        {
+            "type": "text",
+            "content": "USA er et ungt land, men fortellingen om fødselen er desto sterkere. I 1776 erklærte de amerikanske koloniene seg uavhengige fra Storbritannia med ordene om at alle mennesker er skapt like. Mennene bak, som George Washington, Thomas Jefferson og Benjamin Franklin, kalles founding fathers - grunnleggerne. De dyrkes nesten som helgener. [Uavhengighetserklæringen](/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen) og [grunnloven](/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven) oppbevares i Washington bak skuddsikkert glass, som hellige tekster i et tempel."
+        },
+        {
+            "type": "text",
+            "content": "Den amerikanske gullalderen er altså ikke en konge eller et imperium, men et øyeblikk: øyeblikket da et folk valgte friheten. Politikere fra begge sider bruker fortsatt grunnleggerne som dommere i dagens debatter. Spørsmålet «hva ville grunnleggerne ment?» kan avgjøre saker i USAs høyesterett den dag i dag. Men fortellingen har skygger. Mange av de samme grunnleggerne som skrev at alle mennesker er skapt like, eide selv slaver. Den delen av historien fikk lenge ligge i mørket."
+        },
+        {
+            "type": "header",
+            "text": "Frankrike: Revolusjonen som aldri slutter"
+        },
+        {
+            "type": "text",
+            "content": "Frankrike har hatt konger i over tusen år, men landets store fortelling handler om da folket kastet dem. [Den franske revolusjonen i 1789](/historie/den-franske-revolusjon/intro) er selve grunnmuren i fransk identitet. Mottoet fra revolusjonen, frihet, likhet og brorskap, står fortsatt hugget inn over inngangen til skoler og rådhus i hele Frankrike. Nasjonaldagen 14. juli feirer stormingen av Bastillen, og nasjonalsangen Marseillaisen er en revolusjonssang."
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til forskjellen fra USA: amerikanerne dyrker personene, franskmennene dyrker ideene. Frankrike ser på seg selv som landet som ga verden menneskerettighetene og folkestyret. Derfor føles det ekstra alvorlig for franskmenn når noen truer republikken - det er ikke bare et angrep på staten, men på selve fortellingen. Også her finnes skygger: revolusjonen var også et blodbad, der titusener ble henrettet under skrekkveldet. Festtalene stopper som regel før giljotinen."
+        },
+        {
+            "type": "header",
+            "text": "Hellas: Landet som arvet antikken"
+        },
+        {
+            "type": "text",
+            "content": "Hellas er noe så merkelig som et ungt land med en av verdens eldste gullaldre. Den moderne greske staten ble født i 1830, etter [frigjøringskrigen mot Det osmanske riket](/historie/nasjonalstatenes-tid/gresk-frigjoringskrig). Men fortellingen landet bygde på, var over to tusen år gammel: [antikkens Hellas](/historie/antikkens-hellas), med Athen, demokratiet, filosofene og Olympiske leker. Det nye landet sa: vi er barnebarna til Sokrates og Perikles."
+        },
+        {
+            "type": "text",
+            "content": "Denne fortellingen var genial, for hele Europa var allerede forelsket i antikken. Diktere og studenter fra England, Frankrike og Tyskland reiste til Hellas for å kjempe frivillig i frigjøringskrigen, fordi de følte at de reddet demokratiets vugge. Akropolis i Athen ble nasjonens symbol og renset for alt som var bygget der i osmansk tid. Skyggen i fortellingen: menneskene som bodde i Hellas i 1830, levde i et helt annet samfunn enn antikkens Athen, og det gamle demokratiet hadde bare gjeldt for et lite mindretall frie menn. Men som symbol var antikken uslåelig."
+        },
+        {
+            "type": "header",
+            "text": "Egypt: I faraoenes skygge"
+        },
+        {
+            "type": "text",
+            "content": "Egypt viser hvor mektig en eldgammel fortid kan være. Dagens Egypt er et arabisktalende, muslimsk land. Likevel bygger det mye av sin identitet på faraoene, som levde tusenvis av år før islam fantes. Pyramidene og sfinksen pryder pengesedler og pass, og da Egypt åpnet et gigantisk nytt museum ved pyramidene, ble mumiene til de gamle kongene kjørt gjennom Kairo i en høytidelig parade, som om de var statsoverhoder. Fortellingen sier: vi er verdens eldste sivilisasjon. Den gir stolthet, turisme og en følelse av å være noe helt eget i den arabiske verden - selv om dagens egyptere lever med et helt annet språk og en helt annen tro enn faraoene."
+        },
+        {
+            "type": "image",
+            "src": "/images/nasjonalstatenes-tid/nasjonenes-gullaldre-02.webp",
+            "alt": "Parthenon på Akropolis i Athen i varmt morgenlys med turister som ser opp",
+            "caption": "Akropolis ble symbolet på det nye Hellas - en 2000 år gammel gullalder for et splitter nytt land."
+        },
+        {
+            "type": "header",
+            "text": "Mexico: Ørnen på kaktusen"
+        },
+        {
+            "type": "text",
+            "content": "Se på Mexicos flagg. Midt i det står en ørn på en kaktus med en slange i nebbet. Det er ikke pynt - det er en eldgammel myte. Aztekerne fortalte at gudene ba dem vandre til de så nettopp dette synet: en ørn på en kaktus. Der bygde de hovedstaden Tenochtitlán, som i dag er Mexico by. Da Mexico rev seg løs fra Spania på 1800-tallet, valgte det nye landet aztekernes tegn som sitt merke. Fortellingen sier: vi er ikke bare et tidligere spansk koloniland, vi er arvtakerne etter [Amerikas store sivilisasjoner](/historie/jordbruk-og-sivilisasjoner/amerikas-sivilisasjoner). Skyggen er at fortellingen lenge passet dårlig med hvordan urfolk faktisk ble behandlet i Mexico. Det er lettere å hylle aztekerne i flagget enn å gi deres etterkommere like rettigheter."
+        },
+        {
+            "type": "header",
+            "text": "Kina: Midtens rike og de hundre ydmykelsenes år"
+        },
+        {
+            "type": "text",
+            "content": "Kina kaller seg selv Zhongguo - Midtens rike. Navnet forteller alt om fortellingen: Kina var i årtusener sentrum i sin egen verden, med [mektige dynastier](/historie/kinas-historie/dynastiene), silkeveien og oppfinnelser som papir, krutt og kompass. Denne enorme fortiden er Kinas gullalder. Men den kinesiske fortellingen har en spesiell vri: den bygger like mye på et sår."
+        },
+        {
+            "type": "text",
+            "content": "Perioden fra [opiumskrigene](/historie/kinas-historie/opiumskrigene) i 1839 til 1949 kalles i Kina de hundre ydmykelsenes år. Da tvang Storbritannia, Frankrike, Japan og andre stormakter Kina i kne, tok landområder og styrte kinesiske havnebyer. Dagens kinesiske ledere bruker denne fortellingen hele tiden: Kina var stort, Kina ble ydmyket, og nå reiser Kina seg igjen. Såret og gullalderen jobber sammen. Storhetstiden viser hva Kina egentlig er, ydmykelsen viser hva som aldri skal skje igjen. Det er en av verdens sterkeste nasjonale fortellinger - og den brukes også til å kreve at kinesere stiller seg bak staten uten å mukke."
+        },
+        {
+            "type": "header",
+            "text": "Russland: Den evige stormakten"
+        },
+        {
+            "type": "text",
+            "content": "Russlands fortelling handler om å være stor. Landet peker tilbake på Kiev-riket i middelalderen som sin vugge, på tsar Peter den store som bygde et imperium, og på seieren over Hitler i andre verdenskrig, som i Russland kalles den store fedrelandskrigen. Seiersdagen 9. mai feires fortsatt med enorme militærparader på Den røde plass. Fortellingen sier: Russland har alltid vært en stormakt, omringet av fiender, og har alltid reist seg."
+        },
+        {
+            "type": "text",
+            "content": "Denne fortellingen er ikke bare historie - den brukes som våpen i dag. Da Russland gikk til fullskala krig mot Ukraina i 2022, begrunnet president Putin det blant annet med historien: han hevdet at Ukraina egentlig hører til Russland, fordi Kiev-riket var begge landenes vugge. Ukrainerne svarer med sin egen fortelling om det samme riket. Slik ble en tusen år gammel middelalderstat plutselig et argument i en moderne krig. Det viser hvor farlig kampen om fortiden kan bli: den som eier fortellingen, kan bruke den til å kreve land og liv."
+        },
+        {
+            "type": "header",
+            "text": "Tyrkia: Sultanenes lange skygge"
+        },
+        {
+            "type": "text",
+            "content": "Tyrkia ble grunnlagt i 1923 på ruinene av [Det osmanske riket](/historie/osmanske-riket), et imperium som på sitt største strakte seg over tre kontinenter. Landsfaderen Atatürk ville egentlig bort fra den osmanske fortiden. Han laget en moderne, vestvendt republikk og fortalte at det nye Tyrkia begynte med ham. Men de siste tiårene har fortellingen snudd. Dagens ledere løfter fram sultanene og osmansk storhetstid igjen: påkostede TV-serier om osmanske erobrere går for fulle hus, og gamle osmanske symboler dukker opp i politikken. Historikere kaller det ny-osmanisme, ideen om at Tyrkia igjen skal være stormakten i sin gamle region. Samme land, to gullaldre - og en dragkamp om hvilken av dem som skal gjelde."
+        },
+        {
+            "type": "header",
+            "text": "Japan: Gammel sjel, ny maskin"
+        },
+        {
+            "type": "text",
+            "content": "På 1800-tallet ble Japan tvunget til å åpne seg for verden, og landet gjorde noe helt uvanlig: det moderniserte seg i rekordfart. I løpet av noen tiår etter [Meiji-restaurasjonen i 1868](/historie/japans-historie/meiji-restaurasjonen) fikk Japan jernbaner, fabrikker, moderne hær og skolevesen. Men det interessante er hvordan forandringen ble fortalt. Den ble ikke kalt en revolusjon, men en restaurasjon - en tilbakeføring. Keiseren, som ifølge myten stammet fra solgudinnen i en ubrutt linje tusenvis av år tilbake, ble satt i sentrum igjen."
+        },
+        {
+            "type": "text",
+            "content": "Japan fortalte altså at landet ble mer japansk av å modernisere seg. Samuraienes æreskodeks ble omformet til en nasjonal ånd som alle japanere skulle dele, og eldgamle tradisjoner ble løftet fram samtidig som landet bygde dampskip og telegraflinjer. Ny maskin, gammel sjel. Det ga moderniseringen en enorm kraft, men fortellingen om det guddommelige keiserriket ble senere også brukt til å rettferdiggjøre brutale erobringskriger i Asia. Etter nederlaget i 1945 måtte Japan bygge en helt ny fortelling - om fred, teknologi og gjenreisning."
+        },
+        {
+            "type": "text",
+            "content": "Nå har du sett ni land og fortellingene deres. I spillet under må du bruke det du har lært: fire land trenger hver sin minnebro til riktig gullalder - før øyene synker i glemselens tåke."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "broen-til-fortiden-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Når gullalderen blir farlig"
+        },
+        {
+            "type": "text",
+            "content": "En felles fortelling kan samle et folk. Men den samme fortellingen kan bli et våpen. Det tydeligste eksempelet er Italia på 1920- og 30-tallet. Diktatoren Mussolini lovet å gjenreise Romerriket. Han brukte romerske symboler, romersk hilsen og romerske ørner, og fortalte italienerne at de var arvtakere etter verdens største imperium - og derfor hadde rett til å erobre andre land. Gullalderen ble en unnskyldning for krig. Det samme mønsteret så du hos Russland over: når en leder sier at landet en gang var stort og har rett til å bli stort igjen, bør alarmen gå."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Den som kontrollerer fortiden, kontrollerer framtiden. Den som kontrollerer nåtiden, kontrollerer fortiden.",
+                "author": "George Orwell i romanen 1984 (1949). Orwell advarte mot stater som omskriver historien for å styre folket."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Orwell satte ord på det denne artikkelen handler om. Fortellingen om fortiden er aldri nøytral. Noen har valgt den ut, og valget tjener som regel noen mer enn andre. Det betyr ikke at nasjonale fortellinger er løgn - vikingene fantes, Bastillen ble stormet, pyramidene står der. Men utvalget, vinklingen og bruken er alltid menneskeskapt. Derfor er det lurt å spørre: hvem tjener på akkurat denne fortellingen? Hva blir vi bedt om å glemme? Det er samme spørsmål du lærer å stille i [Hvem skriver historien?](/samfunnskunnskap/ideer-og-verdenssyn/km-3-historieframstilling)"
+        },
+        {
+            "type": "header",
+            "text": "Hva med Norge?"
+        },
+        {
+            "type": "text",
+            "content": "Nå kan vi snu speilet hjem. Norge på 1800-tallet var et fattig land i union med Sverige, uten konge, uten hovedstad av betydning og uten eget skriftspråk. Landet trengte en fortelling, og fant den to steder: i [vikingtiden](/historie/vikingtiden) og i grunnloven fra 1814. Malere dro til fjells, eventyrsamlere dro til bygdene, og [nasjonalromantikken](/norsk/litteraturhistorie/nasjonalromantikken) skapte bildet av det egentlige Norge: frie bønder, dype fjorder og modige sjøfolk i rett linje fra vikingene. Da vikingskipene ble gravd fram rundt 1900, ble de nasjonale relikvier nesten over natten."
+        },
+        {
+            "type": "text",
+            "content": "Fortellingen virket. Den bygde selvtilliten som førte til [unionsoppløsningen i 1905](/historie/norge-i-moderne-tid/unionsopplosningen-1905), og den lever fortsatt i bunader, 17. mai-tog og vikingserier. Norge har også sine skygger som lenge ble holdt utenfor fortellingen: [fornorskingen av samene](/historie/norge-i-moderne-tid/fornorskingen-av-samene) passet dårlig inn i bildet av det frie, gode Norge. Neste gang du ser et vikingskip eller hører en 17. mai-tale, vet du hva du ser på: ikke bare historie, men en fortelling noen har valgt. Akkurat som i USA, Frankrike, Hellas, Egypt, Mexico, Kina, Russland, Tyrkia og Japan."
+        },
+        {
+            "type": "image",
+            "src": "/images/nasjonalstatenes-tid/nasjonenes-gullaldre-03.webp",
+            "alt": "Osebergskipet i museum med besøkende som betrakter det i dempet belysning",
+            "caption": "Vikingskipene ble gravd fram akkurat da Norge trengte dem mest - som bevis på en norsk gullalder."
+        },
+        {
+            "type": "component",
+            "name": "TimelineComponent",
+            "props": {
+                "title": "Gullaldrene tas i bruk",
+                "compact": true,
+                "events": [
+                    {
+                        "year": 1776,
+                        "description": "USA erklærer seg uavhengig - fortellingen om grunnleggerne fødes."
+                    },
+                    {
+                        "year": 1789,
+                        "description": "Den franske revolusjonen blir Frankrikes grunnfortelling."
+                    },
+                    {
+                        "year": 1830,
+                        "description": "Det nye Hellas bygger på antikken, 2000 år etter Sokrates."
+                    },
+                    {
+                        "year": 1868,
+                        "description": "Japan moderniserer lynraskt - fortalt som en reise tilbake til keiseren."
+                    },
+                    {
+                        "year": 1905,
+                        "description": "Norges nasjonale fortelling topper seg med unionsoppløsningen."
+                    },
+                    {
+                        "year": 1922,
+                        "description": "Mussolini lover å gjenreise Romerriket - gullalder som våpen."
+                    },
+                    {
+                        "year": 1949,
+                        "description": "Folkerepublikken Kina grunnlegges - de hundre ydmykelsenes år erklæres over."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en gullalder i et lands fortelling? Forklar med egne ord.",
+                    "Hvilken fortid bygger USA sin nasjonale fortelling på, og hvilken bygger Frankrike på?",
+                    "Hva menes med de hundre ydmykelsenes år i Kina?",
+                    "Hvorfor kalles forandringen i Japan i 1868 en restaurasjon og ikke en revolusjon?"
+                ],
+                "reflekter": [
+                    "Hellas i 1830 og Egypt i dag bygger begge på riker som er flere tusen år gamle. Hvorfor tror du eldgamle gullaldre er så fristende for moderne land?",
+                    "Kinas fortelling bygger både på en storhetstid og på et sår. Hva gjør en sår-fortelling med et folk som en ren heltefortelling ikke gjør?",
+                    "Artikkelen sier at det fortellingen løfter fram, kaster skygge over noe annet. Velg to land fra artikkelen og forklar hva fortellingen deres skjuler.",
+                    "Hvorfor bør alarmen gå når en leder sier at landet en gang var stort og har rett til å bli stort igjen?"
+                ],
+                "gaaVidere": [
+                    "Undersøk et land som ikke er med i artikkelen (for eksempel India, Iran, Etiopia eller Storbritannia). Hvilken fortid bygger det sin fortelling på? Presenter funnene for klassen.",
+                    "Skriv en kort tale for Norges nasjonaldag der du bevisst løfter fram en helt annen del av norsk historie enn vikingtid og 1814. Hva skjer med fortellingen om Norge?",
+                    "Diskuter i klassen: Går det an å ha en samlende nasjonal fortelling som ikke skjuler noe? Begrunn svaret."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er en gullalder i en nasjons fortelling?",
+                        "options": [
+                            "Den perioden i historien da landet hadde mest gull",
+                            "En utvalgt storhetstid som landet bygger sin identitet på",
+                            "En nøyaktig, vitenskapelig beskrivelse av landets fortid",
+                            "De hundre første årene etter at et land ble grunnlagt"
+                        ],
+                        "answer": 1,
+                        "explanation": "En gullalder er en utvalgt periode landet ser tilbake på som sin storhetstid. Den er alltid et utvalg: noe løftes fram, og noe annet legges i skyggen."
+                    },
+                    {
+                        "question": "Hva er spesielt med Hellas som nasjonalstat?",
+                        "options": [
+                            "Landet er like gammelt som antikken",
+                            "Landet har aldri hatt en gullalder",
+                            "Et ungt land fra 1830 bygde på en over 2000 år gammel gullalder",
+                            "Landet bygger fortellingen sin på Det osmanske riket"
+                        ],
+                        "answer": 2,
+                        "explanation": "Den greske staten ble født i 1830, men fortellingen den bygde på var antikkens Hellas med Athen, demokratiet og filosofene, over to tusen år tidligere."
+                    },
+                    {
+                        "question": "Hva kalles perioden 1839-1949 i Kina?",
+                        "options": [
+                            "Midtens rike",
+                            "Den store fedrelandskrigen",
+                            "De hundre ydmykelsenes år",
+                            "Kulturrevolusjonen"
+                        ],
+                        "answer": 2,
+                        "explanation": "Perioden da fremmede stormakter tvang Kina i kne, kalles de hundre ydmykelsenes år. Fortellingen brukes i dag som en advarsel: aldri igjen."
+                    },
+                    {
+                        "question": "Hvorfor ble moderniseringen av Japan i 1868 kalt en restaurasjon?",
+                        "options": [
+                            "Fordi gamle bygninger ble pusset opp over hele landet",
+                            "Fordi forandringen ble fortalt som en tilbakeføring til keiseren og det ekte japanske",
+                            "Fordi Japan gikk tilbake til å være et stengt land",
+                            "Fordi samuraiene tok tilbake makten fra keiseren"
+                        ],
+                        "answer": 1,
+                        "explanation": "Japan moderniserte seg lynraskt, men fortalte det som en tilbakeføring: keiseren ble satt i sentrum igjen, og landet skulle bli mer japansk, ikke mindre."
+                    },
+                    {
+                        "question": "Hva viser ørnen på kaktusen i Mexicos flagg?",
+                        "options": [
+                            "En eldgammel aztekisk myte om hvor hovedstaden skulle bygges",
+                            "Et symbol som spanjolene tok med seg til Mexico",
+                            "Nasjonalfuglen som lever i den meksikanske ørkenen",
+                            "Et minne om uavhengighetskrigen mot Spania"
+                        ],
+                        "answer": 0,
+                        "explanation": "Aztekerne fortalte at gudene ba dem bygge byen sin der de så en ørn på en kaktus. Der ligger Mexico by i dag, og myten står midt i flagget."
+                    },
+                    {
+                        "question": "Hva gjorde Mussolini med fortellingen om Romerriket?",
+                        "options": [
+                            "Han forbød italienerne å snakke om det",
+                            "Han brukte den som unnskyldning for å erobre andre land",
+                            "Han ga museene ansvar for å forske på den",
+                            "Han byttet den ut med en fortelling om renessansen"
+                        ],
+                        "answer": 1,
+                        "explanation": "Mussolini fortalte at italienerne var arvtakere etter Romerriket og derfor hadde rett til et nytt imperium. Gullalderen ble et våpen for krig."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Filseth, G. & Henne, H. (2024). *Japans historie*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Japans_historie](https://snl.no/Japans_historie)",
+                    "Godbolt, J. & Sirevåg, T. (2026). *USAs historie før 1783*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/USAs_historie](https://snl.no/USAs_historie)",
+                    "Knudsen, O. F. (2024). *Nasjonalisme*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/nasjonalisme](https://snl.no/nasjonalisme)",
+                    "Knudsen, O. F. & Ryste, M. E. (2024). *Nasjonalstat*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/nasjonalstat](https://snl.no/nasjonalstat)",
+                    "Spira, I. & Torheim-Sandvik, O. (2024). *Kinas historie*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Kinas_historie](https://snl.no/Kinas_historie)",
+                    "Østberg, K. P. & Tønnesson, K. (2025). *Den franske revolusjon*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Den_franske_revolusjon](https://snl.no/Den_franske_revolusjon)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

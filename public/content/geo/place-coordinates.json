@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 306
+      "count": 307
     },
     {
       "tag": "dekolonisering",
@@ -871,6 +871,10 @@
       "count": 24
     },
     {
+      "tag": "1800-tallet",
+      "count": 24
+    },
+    {
       "tag": "musikk",
       "count": 24
     },
@@ -879,16 +883,12 @@
       "count": 23
     },
     {
+      "tag": "kildekritikk",
+      "count": 22
+    },
+    {
       "tag": "vitenskap",
       "count": 22
-    },
-    {
-      "tag": "1800-tallet",
-      "count": 22
-    },
-    {
-      "tag": "kildekritikk",
-      "count": 21
     },
     {
       "tag": "steinalder",
@@ -987,12 +987,20 @@
       "count": 12
     },
     {
+      "tag": "nasjonalisme",
+      "count": 12
+    },
+    {
       "tag": "grammatikk",
       "count": 12
     },
     {
       "tag": "intro",
       "count": 12
+    },
+    {
+      "tag": "mysterier",
+      "count": 11
     },
     {
       "tag": "atomvåpen",
@@ -1015,10 +1023,6 @@
       "count": 10
     },
     {
-      "tag": "mysterier",
-      "count": 10
-    },
-    {
       "tag": "klima",
       "count": 10
     },
@@ -1036,10 +1040,6 @@
     },
     {
       "tag": "rettigheter",
-      "count": 10
-    },
-    {
-      "tag": "nasjonalisme",
       "count": 10
     },
     {
@@ -1072,6 +1072,10 @@
     },
     {
       "tag": "opplysningstid",
+      "count": 9
+    },
+    {
+      "tag": "identitet",
       "count": 9
     },
     {
@@ -1188,10 +1192,6 @@
     },
     {
       "tag": "opplysningstiden",
-      "count": 7
-    },
-    {
-      "tag": "identitet",
       "count": 7
     },
     {
@@ -1507,6 +1507,10 @@
       "count": 4
     },
     {
+      "tag": "gullalder",
+      "count": 4
+    },
+    {
       "tag": "selvstendighet",
       "count": 4
     },
@@ -1516,6 +1520,10 @@
     },
     {
       "tag": "galileo",
+      "count": 4
+    },
+    {
+      "tag": "nyere tid",
       "count": 4
     },
     {
@@ -1671,6 +1679,10 @@
       "count": 3
     },
     {
+      "tag": "verden",
+      "count": 3
+    },
+    {
       "tag": "moral",
       "count": 3
     },
@@ -1704,10 +1716,6 @@
     },
     {
       "tag": "totalitarisme",
-      "count": 3
-    },
-    {
-      "tag": "nyere tid",
       "count": 3
     },
     {
@@ -2163,10 +2171,6 @@
       "count": 2
     },
     {
-      "tag": "gullalder",
-      "count": 2
-    },
-    {
       "tag": "christian-iii",
       "count": 2
     },
@@ -2224,6 +2228,10 @@
     },
     {
       "tag": "bergverk",
+      "count": 2
+    },
+    {
+      "tag": "kolonisering",
       "count": 2
     },
     {
@@ -3059,10 +3067,6 @@
       "count": 1
     },
     {
-      "tag": "verden",
-      "count": 1
-    },
-    {
       "tag": "jøder",
       "count": 1
     },
@@ -3404,10 +3408,6 @@
     },
     {
       "tag": "historiebruk",
-      "count": 1
-    },
-    {
-      "tag": "kolonisering",
       "count": 1
     },
     {

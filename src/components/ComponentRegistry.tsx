@@ -29,6 +29,7 @@ const GrenseTegner = lazy(() => import('./content/interactive/GrenseTegner').the
 const StilleKilder = lazy(() => import('./content/interactive/StilleKilder').then(m => ({ default: m.StilleKilder })));
 const NasjonsbyggerLab = lazy(() => import('./content/interactive/NasjonsbyggerLab').then(m => ({ default: m.NasjonsbyggerLab })));
 const ViFolelsen = lazy(() => import('./content/interactive/ViFolelsen').then(m => ({ default: m.ViFolelsen })));
+const MytenesVerksted = lazy(() => import('./content/interactive/MytenesVerksted').then(m => ({ default: m.MytenesVerksted })));
 const Revolusjonsbolgen1848 = lazy(() => import('./content/interactive/Revolusjonsbolgen1848').then(m => ({ default: m.Revolusjonsbolgen1848 })));
 const TrelastVerdikjede = lazy(() => import('./content/interactive/TrelastVerdikjede').then(m => ({ default: m.TrelastVerdikjede })));
 const SolvetsReise = lazy(() => import('./content/interactive/SolvetsReise').then(m => ({ default: m.SolvetsReise })));
@@ -341,6 +342,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     VeienTilFrihet,
     NasjonsbyggerLab,
     ViFolelsen,
+    MytenesVerksted,
     Revolusjonsbolgen1848,
     GovernmentExplorer,
     HistoryLongLines,

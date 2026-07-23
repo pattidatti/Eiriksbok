@@ -1039,6 +1039,19 @@
     "subject": "historie"
   },
   {
+    "id": "gullalder",
+    "term": "Gullalder",
+    "definition": "En periode i historien som et land eller en kultur ser tilbake på som sin storhetstid. En gullalder er alltid et utvalg: noe fra fortiden løftes fram, mens annet legges i skyggen.",
+    "type": "concept",
+    "tags": [
+      "nasjonalisme",
+      "identitet",
+      "historiebruk"
+    ],
+    "subject": "historie",
+    "topic": "nasjonalstatenes-tid"
+  },
+  {
     "id": "gullstandard",
     "term": "Gullstandard",
     "aliases": [
@@ -2140,6 +2153,19 @@
     "subject": "historie",
     "topic": "forste-verdenskrig",
     "tags": []
+  },
+  {
+    "id": "nasjonsbygging",
+    "term": "Nasjonsbygging",
+    "definition": "Arbeidet med å få innbyggerne i et land til å føle seg som ett folk. Verktøyene er ofte felles språk, skole, symboler og en felles fortelling om fortiden.",
+    "type": "concept",
+    "tags": [
+      "nasjonalisme",
+      "identitet",
+      "1800-tallet"
+    ],
+    "subject": "historie",
+    "topic": "nasjonalstatenes-tid"
   },
   {
     "id": "naturalhandel",

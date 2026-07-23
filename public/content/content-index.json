@@ -1,5 +1,5 @@
 {
-  "buildId": 1784770530483,
+  "buildId": 1784826833756,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -349,6 +349,9 @@
     "concept-gulag": [
       "content/concepts/gulag.json"
     ],
+    "concept-gullalder": [
+      "content/concepts/gullalder.json"
+    ],
     "concept-gullstandard": [
       "content/concepts/gullstandard.json"
     ],
@@ -669,6 +672,9 @@
     ],
     "concept-nasjonalisme": [
       "content/concepts/nasjonalisme.json"
+    ],
+    "concept-nasjonsbygging": [
+      "content/concepts/nasjonsbygging.json"
     ],
     "concept-naturalhandel": [
       "content/concepts/naturalhandel.json"
@@ -1708,6 +1714,9 @@
     ],
     "hva-er-nasjonalisme": [
       "content/historie/nasjonalstatenes-tid/hva-er-nasjonalisme.json"
+    ],
+    "nasjonenes-gullaldre": [
+      "content/historie/nasjonalstatenes-tid/nasjonenes-gullaldre.json"
     ],
     "revolusjonene-1848": [
       "content/historie/nasjonalstatenes-tid/revolusjonene-1848.json"
@@ -3757,6 +3766,7 @@
     "concepts/good-friday-agreement.json/good-friday-agreement": "content/concepts/good-friday-agreement.json",
     "concepts/group-areas-act.json/group-areas-act": "content/concepts/group-areas-act.json",
     "concepts/gulag.json/gulag": "content/concepts/gulag.json",
+    "concepts/gullalder.json/gullalder": "content/concepts/gullalder.json",
     "concepts/gullstandard.json/gullstandard": "content/concepts/gullstandard.json",
     "concepts/gurdwara.json/gurdwara": "content/concepts/gurdwara.json",
     "concepts/guru-gobind-singh.json/guru-gobind-singh": "content/concepts/guru-gobind-singh.json",
@@ -3864,6 +3874,7 @@
     "concepts/nasjonalisere.json/nasjonalisere": "content/concepts/nasjonalisere.json",
     "concepts/nasjonalisering.json/nasjonalisering": "content/concepts/nasjonalisering.json",
     "concepts/nasjonalisme.json/nasjonalisme": "content/concepts/nasjonalisme.json",
+    "concepts/nasjonsbygging.json/nasjonsbygging": "content/concepts/nasjonsbygging.json",
     "concepts/naturalhandel.json/naturalhandel": "content/concepts/naturalhandel.json",
     "concepts/naturrett.json/naturrett": "content/concepts/naturrett.json",
     "concepts/nazisme.json/nazisme": "content/concepts/nazisme.json",
@@ -4210,6 +4221,7 @@
     "historie/midtoesten/sykes-picot": "content/historie/midtoesten/sykes-picot.json",
     "historie/nasjonalstatenes-tid/gresk-frigjoringskrig": "content/historie/nasjonalstatenes-tid/gresk-frigjoringskrig.json",
     "historie/nasjonalstatenes-tid/hva-er-nasjonalisme": "content/historie/nasjonalstatenes-tid/hva-er-nasjonalisme.json",
+    "historie/nasjonalstatenes-tid/nasjonenes-gullaldre": "content/historie/nasjonalstatenes-tid/nasjonenes-gullaldre.json",
     "historie/nasjonalstatenes-tid/revolusjonene-1848": "content/historie/nasjonalstatenes-tid/revolusjonene-1848.json",
     "historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland": "content/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland.json",
     "historie/norgeshistorie/22-juli-2011": "content/historie/norgeshistorie/22-juli-2011.json",

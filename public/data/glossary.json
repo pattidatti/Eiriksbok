@@ -292,6 +292,18 @@
     "type": "concept"
   },
   {
+    "term": "Birkebeiner",
+    "definition": "En politisk og militær gruppe i den norske borgerkrigstiden. Navnet var opprinnelig en hån fra fiendene, som mente birkebeinerne var så fattige at de bandt bjørkebark rundt leggene. Sverre Sigurdsson ble deres leder i 1177 og brukte hæren til å bli Norges konge.",
+    "type": "concept",
+    "tags": [
+      "middelalder",
+      "borgerkrig",
+      "hær"
+    ],
+    "subject": "historie",
+    "link": "/historie/norsk-middelalder/sverre-sigurdsson"
+  },
+  {
     "term": "Bitterhet",
     "definition": "Vedvarende vrede over urett man har opplevd. Tyskland etter Versailles-freden var preget av nasjonal bitterhet.",
     "type": "concept"
@@ -362,6 +374,14 @@
       "samfunn"
     ],
     "subject": "historie"
+  },
+  {
+    "id": "bolgemodellen",
+    "term": "Bølgemodellen",
+    "definition": "En modell for hvordan et språktrekk sprer seg. Trekket brer seg jevnt utover fra der det oppsto, som ringer i vann: fra nabo til nabo. Nære steder får trekket først, fjerne steder sist. Forklarer de myke overgangene mellom nabodialekter.",
+    "subject": "norsk",
+    "type": "concept",
+    "link": "/norsk/dialekter/spredning-av-dialekttrekk"
   },
   {
     "term": "Børskrakket 1929",
@@ -992,6 +1012,19 @@
       "undertrykkelse"
     ],
     "subject": "historie"
+  },
+  {
+    "term": "Gullalder",
+    "definition": "En periode i historien som et land eller en kultur ser tilbake på som sin storhetstid. En gullalder er alltid et utvalg: noe fra fortiden løftes fram, mens annet legges i skyggen.",
+    "type": "concept",
+    "tags": [
+      "nasjonalisme",
+      "identitet",
+      "historiebruk"
+    ],
+    "subject": "historie",
+    "topic": "nasjonalstatenes-tid",
+    "link": "/historie/sveriges-historie/stormaktstiden"
   },
   {
     "term": "Gullstandard",
@@ -2063,6 +2096,18 @@
     "type": "concept"
   },
   {
+    "term": "Nasjonsbygging",
+    "definition": "Arbeidet med å få innbyggerne i et land til å føle seg som ett folk. Verktøyene er ofte felles språk, skole, symboler og en felles fortelling om fortiden.",
+    "type": "concept",
+    "tags": [
+      "nasjonalisme",
+      "identitet",
+      "1800-tallet"
+    ],
+    "subject": "historie",
+    "topic": "nasjonalstatenes-tid"
+  },
+  {
     "id": "naturalhandel",
     "term": "Naturalhandel (Byttehandel)",
     "definition": "En økonomisk ordning der man bytter varer eller tjenester direkte mot hverandre uten å bruke penger som mellomledd.",
@@ -2817,6 +2862,13 @@
     ],
     "subject": "historie",
     "topic": "kinas-historie"
+  },
+  {
+    "id": "sprangmodellen",
+    "term": "Sprangmodellen",
+    "definition": "En modell for hvordan et språktrekk sprer seg. Trekket hopper direkte fra by til by, der folk har mye kontakt, og hopper over bygdene imellom. Forklarer hvorfor byer langt fra hverandre kan dele et trekk som stedene mellom dem ikke har.",
+    "subject": "norsk",
+    "type": "concept"
   },
   {
     "term": "Squadristi",
@@ -5174,6 +5226,20 @@
     "lifespan": "1808 - 1887"
   },
   {
+    "term": "Magnus Erlingsson",
+    "definition": "Norsk konge (1163-1184), kronet av kirken bare sju år gammel. Faren, Erling Skakke, styrte riket for ham. Magnus kjempet i sju år mot Sverre Sigurdsson og birkebeinerne, og døde da hans lenkede flåte gikk under i slaget ved Fimreite i 1184.",
+    "type": "person",
+    "tags": [
+      "norge",
+      "middelalder",
+      "borgerkrig",
+      "konge"
+    ],
+    "subject": "historie",
+    "lifespan": "ca. 1156 - 1184",
+    "link": "/historie/norsk-middelalder/sverre-sigurdsson"
+  },
+  {
     "term": "Magnus Lagabøte",
     "definition": "Konge av Norge (1263–1280). Han er best kjent for Landsloven av 1274, den første felles lovboken for hele landet, som erstattet de gamle landskapslovene.",
     "type": "person",
@@ -6107,6 +6173,21 @@
     ],
     "subject": "historie",
     "lifespan": "1866 - 1925"
+  },
+  {
+    "term": "Sverre Sigurdsson",
+    "definition": "Norsk konge (1177-1202) som begynte som prest på Færøyene. Han hevdet å være sønn av kong Sigurd Munn, ble leder for birkebeinerne i 1177, og ble Norges enekonge etter å ha beseiret Magnus Erlingsson i slaget ved Fimreite i 1184. Han var i konflikt med kirken hele sitt liv og ble bannlyst av erkebiskopen.",
+    "type": "person",
+    "tags": [
+      "norge",
+      "middelalder",
+      "borgerkrig",
+      "birkebeinere",
+      "konge"
+    ],
+    "subject": "historie",
+    "lifespan": "ca. 1151 - 1202",
+    "link": "/historie/norsk-middelalder/sverre-sigurdsson"
   },
   {
     "term": "Tarjei Vesaas",

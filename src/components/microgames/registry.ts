@@ -78,6 +78,7 @@ const Gangen3D = lazy(() => import('./Gangen3D'));
 const EuropaBroen3D = lazy(() => import('./EuropaBroen3D'));
 const SkjulteSymboler3D = lazy(() => import('./SkjulteSymboler3D'));
 const FestensLys3D = lazy(() => import('./FestensLys3D'));
+const BroenTilFortiden3D = lazy(() => import('./BroenTilFortiden3D'));
 const MatreglerBord3D = lazy(() => import('./MatreglerBord3D'));
 const Rikssamlingen3D = lazy(() => import('./Rikssamlingen3D'));
 const RismarkOgMakt3D = lazy(() => import('./RismarkOgMakt3D'));
@@ -1417,6 +1418,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./SmiDetTyskeRiket3D'),
         Component: SmiDetTyskeRiket3D as never,
+    },
+    'broen-til-fortiden-3d': {
+        id: 'broen-til-fortiden-3d',
+        title: 'Broen til fortiden',
+        description:
+            'Byen til høyre er nåtiden. Tre øyer fra landets fortid synker sakte i glemselens tåke, og bare én av dem er gullalderen landet holder festtaler om. Klikk riktig øy og se minnebroen av lys bygge seg over til den - velger du feil, knekker broen og tiden renner ut. Fire land skal ha hver sin bro: USA, Frankrike, Kina og Japan. Lyspæren: en nasjonal fortelling er en bro noen VELGER å bygge til en bestemt fortid, mens resten synker i glemsel.',
+        estimatedSeconds: 180,
+        loader: () => import('./BroenTilFortiden3D'),
+        Component: BroenTilFortiden3D as never,
     },
     'vend-mot-mekka': {
         id: 'vend-mot-mekka',
