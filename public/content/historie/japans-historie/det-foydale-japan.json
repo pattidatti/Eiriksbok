@@ -32,7 +32,7 @@
         },
         {
             "type": "text",
-            "content": "Den virkelige makten lå hos shogunen. Ordet shogun betyr noe slikt som øverste general. Shogunen var den sterkeste krigsherren i landet, og han styrte i keiserens navn. Han hadde sin egen regjering og bestemte over lover, skatter og krig. Keiseren ga ham bare tittelen. Mye av dette minner om [middelalderen i Europa](/historie/middelalderen/middelalderen), der konger ga land til riddere mot at de lovet troskap og krigstjeneste."
+            "content": "Den virkelige makten lå hos shogunen. Ordet shogun betyr noe slikt som øverste general. Shogunen var den sterkeste krigsherren i landet, og han styrte i keiserens navn. Han hadde sin egen regjering og bestemte over lover, skatter og krig. Keiseren ga ham bare tittelen (Gundersen, 2024). Mye av dette minner om [middelalderen i Europa](/historie/middelalderen/middelalderen), der konger ga land til riddere mot at de lovet troskap og krigstjeneste."
         },
         {
             "type": "header",
@@ -44,7 +44,7 @@
         },
         {
             "type": "text",
-            "content": "Samuraiene var mer enn soldater. De fulgte et sett med leveregler vi kaller bushido, som betyr krigerens vei. Bushido handlet om mot, troskap og ære. En samurai skulle heller dø enn å bli vanæret. De hadde også rett til å bære to sverd, noe ingen andre fikk lov til. Sverdene viste alle hvem de var."
+            "content": "Samuraiene var mer enn soldater. De fulgte et sett med leveregler vi kaller bushido, som betyr krigerens vei. Bushido handlet om mot, troskap og ære. En samurai skulle heller dø enn å bli vanæret. De hadde også rett til å bære to sverd, noe ingen andre fikk lov til. Sverdene viste alle hvem de var (Gundersen, 2025)."
         },
         {
             "type": "text",
@@ -92,7 +92,7 @@
         },
         {
             "type": "text",
-            "content": "I år 1603 vant familien Tokugawa kampen om å bli shogun. De skulle styre Japan i over 250 år. Etter mange hundre år med kriger mellom daimyoene ga Tokugawa-shogunene landet noe det sjelden hadde hatt: fred."
+            "content": "I år 1603 vant familien Tokugawa kampen om å bli shogun. De skulle styre Japan i over 250 år (Filseth & Henne, 2024). Etter mange hundre år med kriger mellom daimyoene ga Tokugawa-shogunene landet noe det sjelden hadde hatt: fred."
         },
         {
             "type": "text",
@@ -104,7 +104,7 @@
         },
         {
             "type": "text",
-            "content": "Men de var redde for å miste kontrollen. Derfor stengte de landet for omverdenen. Nesten ingen fikk reise inn, og japanere fikk ikke reise ut. Denne politikken kalles sakoku, som betyr det lukkede landet. I over 200 år levde Japan nesten helt for seg selv. Landet var sjelden truet utenfra. To ganger på 1200-tallet prøvde [det mongolske riket](/historie/middelalderen/mongolske-riket) å invadere, men begge gangene blåste kraftige stormer vekk flåten deres. Japanerne kalte stormene kamikaze, som betyr guddommelig vind."
+            "content": "Men de var redde for å miste kontrollen. Derfor stengte de landet for omverdenen. Nesten ingen fikk reise inn, og japanere fikk ikke reise ut. Denne politikken kalles sakoku, som betyr det lukkede landet. I over 200 år levde Japan nesten helt for seg selv. Landet var sjelden truet utenfra. To ganger på 1200-tallet prøvde [det mongolske riket](/historie/middelalderen/mongolske-riket) å invadere, men begge gangene blåste kraftige stormer vekk flåten deres. Japanerne kalte stormene kamikaze, som betyr guddommelig vind (Filseth & Henne, 2024)."
         },
         {
             "type": "header",
@@ -216,7 +216,19 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Filseth, G. & Henne, H. (2024). *Japans historie*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Japans_historie](https://snl.no/Japans_historie)",
+                    "Gundersen, D. (2024). *Shogun*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/shogun](https://snl.no/shogun)",
+                    "Gundersen, D. (2025). *Samurai*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/samurai](https://snl.no/samurai)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-23"
 }
