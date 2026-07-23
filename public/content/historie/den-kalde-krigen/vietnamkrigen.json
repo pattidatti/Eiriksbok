@@ -1,24 +1,24 @@
 {
     "id": "vietnamkrigen",
-    "title": "Vietnamkrigen: Supermakten som m\u00f8tte veggen i jungelen",
+    "title": "Vietnamkrigen: Supermakten som møtte veggen i jungelen",
     "subject": "historie",
     "layout": "rich",
-    "year": "1955–1975",
+    "year": "1955-1975",
     "category": "Kald krig / Asia",
     "readTime": "18 min lesning",
     "heroImage": "/images/historie/den-kalde-krigen/vietnamkrigen_hero.webp",
     "details": [
-        "En av de lengste og mest kontroversielle krigene i det 20. \u00e5rhundre.",
-        "Kjempet mellom det kommunistiske Nord-Vietnam og det USA-st\u00f8ttede S\u00f8r-Vietnam.",
-        "Preget av geriljakrigf\u00f8ring og bruk av moderne teknologi i jungelen.",
-        "Utl\u00f8ste enorme protestbevegelser i USA og Europa.",
+        "En av de lengste og mest kontroversielle krigene i det 20. århundre.",
+        "Kjempet mellom det kommunistiske Nord-Vietnam og det USA-støttede Sør-Vietnam.",
+        "Preget av geriljakrigføring og bruk av moderne teknologi i jungelen.",
+        "Utløste enorme protestbevegelser i USA og Europa.",
         "Endte med at USA trakk seg ut og Nord-Vietnam vant krigen."
     ],
     "timeline": [
         {
             "year": "1964",
             "title": "Tonkinbukta-episoden",
-            "description": "USA trapper opp sitt milit\u00e6re engasjement i Vietnam."
+            "description": "USA trapper opp sitt militære engasjement i Vietnam."
         },
         {
             "year": "1975",
@@ -29,14 +29,14 @@
     "content": [
         {
             "type": "text",
-            "content": "Ingen annen konflikt har satt dypere spor i moderne amerikansk historie enn Vietnamkrigen. For USA handlet det om \u00e5 stoppe kommunismens spredning i Asia (se [oversikt over oppdemming](/historie/den-kalde-krigen/oversikt)), mens det for many vietnamesere handlet om nasjonal frigj\u00f8ring fra fremmede makter. Krigen involverte millioner av soldater, krevde enorme menneskeliv og splittet nasjoner internt.\n\nDet som startet som en lokal konflikt etter at de franske koloniherrene ble drevet ut i 1954, eskalerte til en global styrkepr\u00f8ve mellom [\u00d8st og Vest](/historie/den-kalde-krigen/oversikt). Det var en krig uten klare fronter, kjempet i tette jungler og ris\u00e5krer, der den mest avanserte teknologien ble utfordret av enkle, men effektive geriljametoder."
+            "content": "Ingen annen konflikt har satt dypere spor i moderne amerikansk historie enn Vietnamkrigen. For USA handlet det om å stoppe kommunismens spredning i Asia (se [oversikt over oppdemming](/historie/den-kalde-krigen/oversikt)), mens det for mange vietnamesere handlet om nasjonal frigjøring fra fremmede makter. Krigen involverte millioner av soldater, krevde enorme menneskeliv og splittet nasjoner internt.\n\nDet som startet som en lokal konflikt etter at de franske koloniherrene ble drevet ut i 1954, eskalerte til en global styrkeprøve mellom [Øst og Vest](/historie/den-kalde-krigen/oversikt) (Tønnesson, 2025). Det var en krig uten klare fronter, kjempet i tette jungler og risåkrer, der den mest avanserte teknologien ble utfordret av enkle, men effektive geriljametoder."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Dominoteorien",
-                "content": "Dette var hovedbegrunnelsen for USAs engasjement i Vietnam. Amerikanske politikere fryktet at hvis S\u00f8r-Vietnam falt til kommunismen, ville nabolandene (Laos, Kambodsja, Thailand) falle som dominobrikker rett etterp\u00e5. Dette gjorde at de s\u00e5 p\u00e5 den lille nasjonen Vietnam som avgj\u00f8rende for hele verdens sikkerhet."
+                "content": "Dette var hovedbegrunnelsen for USAs engasjement i Vietnam. Amerikanske politikere fryktet at hvis Sør-Vietnam falt til kommunismen, ville nabolandene (Laos, Kambodsja, Thailand) falle som dominobrikker rett etterpå. Dette gjorde at de så på den lille nasjonen Vietnam som avgjørende for hele verdens sikkerhet."
             }
         },
         {
@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "P\u00e5 1950-tallet og tidlig 60-tall sendte USA bare 'milit\u00e6re r\u00e5dgivere' og penger til S\u00f8r-Vietnam. Men situasjonen ble stadig mer ustabil. I 1964 rapporte den amerikanske marinen at deres skip hadde blitt angrepet av nordvietnamesiske torpedob\u00e5ter i Tonkin-bukta. Selv om detaljene rundt angrepet var uklare, brukte president Lyndon B. Johnson hendelsen til \u00e5 f\u00e5 Kongressen med p\u00e5 'Tonkin-resolusjonen'.\n\nDette ga presidenten nesten ubegrenset makt til \u00e5 f\u00f8re krig i S\u00f8r\u00f8st-Asia uten en formell krigserkl\u00e6ring. Kort tid etter startet USA massive bombeangrep mot Nord-Vietnam (Operation Rolling Thunder), og i 1965 ble de f\u00f8rste regul\u00e6re bakkestyrkene landsatt ved Da Nang."
+            "content": "På 1950-tallet og tidlig 60-tall sendte USA bare 'militære rådgivere' og penger til Sør-Vietnam. Men situasjonen ble stadig mer ustabil. I 1964 rapporterte den amerikanske marinen at deres skip hadde blitt angrepet av nordvietnamesiske torpedobåter i Tonkin-bukta. Selv om detaljene rundt angrepet var uklare, brukte president Lyndon B. Johnson hendelsen til å få Kongressen med på 'Tonkin-resolusjonen'.\n\nDette ga presidenten nesten ubegrenset makt til å føre krig i Sørøst-Asia uten en formell krigserklæring. Kort tid etter startet USA massive bombeangrep mot Nord-Vietnam (Operation Rolling Thunder), og i 1965 ble de første regulære bakkestyrkene landsatt ved Da Nang (Tønnesson, 2025)."
         },
         {
             "type": "header",
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "content": "USA sto overfor en fiende som var sv\u00e6rt vanskelig \u00e5 bekjempe: Viet Cong (S\u00f8r-Vietnams nasjonale frigj\u00f8ringsfront). Viet Cong var geriljasoldater som levde blant sivilbefolkningen og brukte et enormt nettverk av underjordiske tunneler og sofistikerte feller.\n\nNord-Vietnam sendte forsyninger og soldater s\u00f8rover gjennom Ho Chi Minh-stien, et nettverk av veier gjennom jungelen i nabolandene Laos og Kambodsja. USA svarte med 'Search and Destroy'-oppdrag, der de fors\u00f8kte \u00e5 tvinne fienden ut i \u00e5pent lende. For \u00e5 \u00f8delegge jungelen som ga fienden skjul, brukte de kjemiske midler som Agent Orange og napalm (brennende gel\u00e9), noe som fikk fryktelige konsekvenser for b\u00e5de naturen og menneskene."
+            "content": "USA sto overfor en fiende som var svært vanskelig å bekjempe: Viet Cong (Sør-Vietnams nasjonale frigjøringsfront). Viet Cong var geriljasoldater som levde blant sivilbefolkningen og brukte et enormt nettverk av underjordiske tunneler og sofistikerte feller.\n\nNord-Vietnam sendte forsyninger og soldater sørover gjennom Ho Chi Minh-stien, et nettverk av veier gjennom jungelen i nabolandene Laos og Kambodsja. USA svarte med 'Search and Destroy'-oppdrag, der de forsøkte å tvinge fienden ut i åpent lende. For å ødelegge jungelen som ga fienden skjul, brukte de kjemiske midler som Agent Orange og napalm (brennende gelé), noe som fikk fryktelige konsekvenser for både naturen og menneskene (Solberg, 2026)."
         },
         {
             "type": "header",
@@ -61,7 +61,7 @@
         },
         {
             "type": "text",
-            "content": "Fram til 1968 hadde den amerikanske regjeringen forsikret folket om at krigen snart var vunnet. Men under den vietnamesiske nytt\u00e5rsfeiringen, Tet, satte Nord-Vietnam og Viet Cong i gang et massivt, koordinert angrep p\u00e5 over 100 byer og milit\u00e6rbaser i s\u00f8r.\n\nMilit\u00e6rt sett ble offensiven sl\u00e5tt tilbake med store tap for kommunistene, men politisk sett var det en enorm seier for dem. Bilder av kamper inne i den amerikanske ambassaden i Saigon n\u00e5dde stuen til millioner av amerikanere via TV. Tilliten til myndighetene brast; det ble klart at fienden var langt fra beseiret. President Johnson valgte \u00e5 ikke stille til gjenvalg, og motstanden mot krigen eksploderte."
+            "content": "Fram til 1968 hadde den amerikanske regjeringen forsikret folket om at krigen snart var vunnet. Men under den vietnamesiske nyttårsfeiringen, Tet, satte Nord-Vietnam og Viet Cong i gang et massivt, koordinert angrep på over 100 byer og militærbaser i sør (Tønnesson & Filseth, 2024).\n\nMilitært sett ble offensiven slått tilbake med store tap for kommunistene, men politisk sett var det en enorm seier for dem. Bilder av kamper inne i den amerikanske ambassaden i Saigon nådde stuen til millioner av amerikanere via TV. Tilliten til myndighetene brast; det ble klart at fienden var langt fra beseiret. President Johnson valgte å ikke stille til gjenvalg, og motstanden mot krigen eksploderte."
         },
         {
             "type": "header",
@@ -69,13 +69,13 @@
         },
         {
             "type": "text",
-            "content": "Vietnamkrigen var den f\u00f8rste 'TV-krigen'. Brutale bilder av d\u00f8de soldater og lidelser hos sivilbefolkningen skapte et voldsomt engasjement, s\u00e6rlig blant ungdom og studenter. Store demonstrasjoner preget Washington og andre byer verden over. Mottoet 'Make Love, Not War' ble et symbol p\u00e5 motkulturen.\n\nDa Richard Nixon overtok som president i 1969, lanserte han planen om vietnamisering. USA skulle gradvis trekke ut sine egne soldater og overlate ansvaret for krigen til S\u00f8r-Vietnams egen h\u00e6r, mens de selv fortsatte med massiv flyst\u00f8tte. Samtidig utvidet han krigen i hemmelighet til Kambodsja, noe som f\u00f8rte til enda flere protester."
+            "content": "Vietnamkrigen var den første 'TV-krigen'. Brutale bilder av døde soldater og lidelser hos sivilbefolkningen skapte et voldsomt engasjement, særlig blant ungdom og studenter. Store demonstrasjoner preget Washington og andre byer verden over. Mottoet 'Make Love, Not War' ble et symbol på motkulturen.\n\nDa Richard Nixon overtok som president i 1969, lanserte han planen om vietnamisering. USA skulle gradvis trekke ut sine egne soldater og overlate ansvaret for krigen til Sør-Vietnams egen hær, mens de selv fortsatte med massiv flystøtte. Samtidig utvidet han krigen i hemmelighet til Kambodsja, noe som førte til enda flere protester."
         },
         {
             "type": "component",
             "name": "Comparison",
             "props": {
-                "title": "Krigf\u00f8ring og taktikk",
+                "title": "Krigføring og taktikk",
                 "leftTitle": "USA & Allierte",
                 "rightTitle": "Nord-Vietnam & Viet Cong",
                 "items": [
@@ -90,13 +90,13 @@
                         "right": "Geriljakrig; tunneler; bakholdsangrep."
                     },
                     {
-                        "label": "M\u00e5l",
+                        "label": "Mål",
                         "left": "Hindre kommunistisk maktovertakelse.",
                         "right": "Nasjonal samling; drive ut utlendinger."
                     },
                     {
-                        "label": "S\u00e5rbarhet",
-                        "left": "Hjemlig opinion; d\u00e5rlig moral blant soldater.",
+                        "label": "Sårbarhet",
+                        "left": "Hjemlig opinion; dårlig moral blant soldater.",
                         "right": "Enorme menneskelige tap (godtatt av ledelsen)."
                     }
                 ]
@@ -108,7 +108,7 @@
         },
         {
             "type": "text",
-            "content": "I 1973 undertegnet USA, S\u00f8r-Vietnam og Nord-Vietnam en fredsavtale i Paris, og de siste amerikanske kampsoldatene dro hjem. Men krigen mellom de vietnamesiske partene fortsatte. Uten amerikansk st\u00f8tte var S\u00f8r-Vietnam sjansel\u00f8s.\n\nV\u00e5ren 1975 rykket nordvietnamesiske styrker raskt s\u00f8rover. Den 30. april 1975 rullet nordvietnamesiske tanks inn i Saigons gater og rammet portene til presidentpalasset. Bildene av helikoptere som evakuerte de siste amerikanerne fra taket av ambassaden ble symbolet p\u00e5 et smertefullt nederlag. Vietnam ble gjenforent som \u00e9n kommunistisk stat."
+            "content": "I 1973 undertegnet USA, Sør-Vietnam og Nord-Vietnam en fredsavtale i Paris, og de siste amerikanske kampsoldatene dro hjem. Men krigen mellom de vietnamesiske partene fortsatte. Uten amerikansk støtte var Sør-Vietnam sjanseløs.\n\nVåren 1975 rykket nordvietnamesiske styrker raskt sørover. Den 30. april 1975 rullet nordvietnamesiske tanks inn i Saigons gater og rammet portene til presidentpalasset. Bildene av helikoptere som evakuerte de siste amerikanerne fra taket av ambassaden ble symbolet på et smertefullt nederlag. Vietnam ble gjenforent som én kommunistisk stat."
         },
         {
             "type": "component",
@@ -139,7 +139,7 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hva het teorien om at hvis ett land ble kommunistisk, ville nabolandene f\u00f8lge etter?",
+                        "question": "Hva het teorien om at hvis ett land ble kommunistisk, ville nabolandene følge etter?",
                         "options": [
                             "Smitteeffekten",
                             "Dominoteorien",
@@ -149,7 +149,7 @@
                         "answer": "Dominoteorien"
                     },
                     {
-                        "question": "Hva het geriljabevegelsen i S\u00f8r-Vietnam som kjempet mot USA?",
+                        "question": "Hva het geriljabevegelsen i Sør-Vietnam som kjempet mot USA?",
                         "options": [
                             "Khmer Rouge",
                             "Viet Cong",
@@ -162,7 +162,7 @@
                         "question": "Hvilken hendelse i 1968 ble vendepunktet for den amerikanske opinionen?",
                         "options": [
                             "Cuba-krisen",
-                            "M\u00e5nelandingen",
+                            "Månelandingen",
                             "Tet-offensiven",
                             "Fredsavtalen i Paris"
                         ],
@@ -172,7 +172,7 @@
                         "question": "Hvordan endte Vietnamkrigen i 1975?",
                         "options": [
                             "USA vant og delte landet i to",
-                            "S\u00f8r-Vietnam overtok Nord-Vietnam",
+                            "Sør-Vietnam overtok Nord-Vietnam",
                             "Saigon falt, og landet ble samlet under kommunistisk styre",
                             "FN overtok styringen av landet"
                         ],
@@ -180,12 +180,23 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Solberg, S. Ø. (2026). *agent orange*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/agent_orange](https://snl.no/agent_orange)",
+                    "Tønnesson, S. (2025). *Vietnamkrigen*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Vietnamkrigen](https://snl.no/Vietnamkrigen)",
+                    "Tønnesson, S. & Filseth, G. (2024). *Tet-offensiven*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Tet-offensiven](https://snl.no/Tet-offensiven)"
+                ]
+            }
         }
     ],
     "quiz": [
         {
             "id": "q1",
-            "question": "Hva het teorien om at hvis ett land ble kommunistisk, ville nabolandene f\u00f8lge etter?",
+            "question": "Hva het teorien om at hvis ett land ble kommunistisk, ville nabolandene følge etter?",
             "options": [
                 "Smitteeffekten",
                 "Dominoteorien",
@@ -196,7 +207,7 @@
         },
         {
             "id": "q2",
-            "question": "Hva het geriljabevegelsen i S\u00f8r-Vietnam som kjempet mot USA?",
+            "question": "Hva het geriljabevegelsen i Sør-Vietnam som kjempet mot USA?",
             "options": [
                 "Khmer Rouge",
                 "Viet Cong",
@@ -210,7 +221,7 @@
             "question": "Hvilken hendelse i 1968 ble vendepunktet for den amerikanske opinionen?",
             "options": [
                 "Cuba-krisen",
-                "M\u00e5nelandingen",
+                "Månelandingen",
                 "Tet-offensiven",
                 "Fredsavtalen i Paris"
             ],
@@ -221,7 +232,7 @@
             "question": "Hvordan endte Vietnamkrigen i 1975?",
             "options": [
                 "USA vant og delte landet i to",
-                "S\u00f8r-Vietnam overtok Nord-Vietnam",
+                "Sør-Vietnam overtok Nord-Vietnam",
                 "Saigon falt, og landet ble samlet under kommunistisk styre",
                 "FN overtok styringen av landet"
             ],
@@ -229,5 +240,5 @@
         }
     ],
     "createdDate": "2023-12-21T12:15:00Z",
-    "lastUpdated": "2023-12-21T12:15:00Z"
+    "lastUpdated": "2026-07-23T00:00:00Z"
 }

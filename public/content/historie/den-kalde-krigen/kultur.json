@@ -3,76 +3,76 @@
     "title": "Kultur og propaganda: Kampen om hjerter og sinn",
     "subject": "historie",
     "layout": "rich",
-    "year": "1945–1991",
+    "year": "1945-1991",
     "category": "Kald krig / Samfunn",
     "readTime": "12 min lesning",
     "heroImage": "/images/lessons/den-kalde-krigen/kultur.webp",
     "details": [
         "Hvordan den kalde krigen preget film, musikk, sport og dagligliv.",
-        "Bruken av propaganda for \u00e5 vise eget systems overlegenhet.",
-        "Kj\u00f8kkendebatten: Forbruksvarer som politiske argumenter.",
-        "Sport som 'krig uten v\u00e5pen' (OL og hockey).",
+        "Bruken av propaganda for å vise eget systems overlegenhet.",
+        "Kjøkkendebatten: Forbruksvarer som politiske argumenter.",
+        "Sport som 'krig uten våpen' (OL og hockey).",
         "Vestlig popkultur som en undergravende kraft bak jernteppet."
     ],
     "content": [
         {
             "type": "text",
-            "content": "Den kalde krigen ble ikke bare kjempet med raketter og spioner; den foregikk ogs\u00e5 i kinosaler, p\u00e5 idrettsbaner og i folks egne stuer. Begge supermakter brukte enorme ressurser p\u00e5 \u00e5 overbevise verden \u2013 og sin egen befolkning \u2013 om at deres system var det beste, mest rettferdige og mest suksessrike (se [oversikt over ideologier](/historie/den-kalde-krigen/oversikt)).\n\nDette var en kamp om 'soft power' (myk makt). Ved \u00e5 eksportere filmer, musikk og livsstil fors\u00f8kte de \u00e5 vinne folkets lojalitet. Mens USA solgte dr\u00f8mmen om individuell frihet og overflod, fremhevet Sovjetunionen kollektiv styrke, disiplin og mangel p\u00e5 fattigdom."
+            "content": "Den kalde krigen ble ikke bare kjempet med raketter og spioner; den foregikk også i kinosaler, på idrettsbaner og i folks egne stuer. Begge supermakter brukte enorme ressurser på å overbevise verden - og sin egen befolkning - om at deres system var det beste, mest rettferdige og mest suksessrike (se [oversikt over ideologier](/historie/den-kalde-krigen/oversikt)).\n\nDette var en kamp om 'soft power' (myk makt). Ved å eksportere filmer, musikk og livsstil forsøkte de å vinne folkets lojalitet. Mens USA solgte drømmen om individuell frihet og overflod, fremhevet Sovjetunionen kollektiv styrke, disiplin og mangel på fattigdom (Petersen, 2026)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Rock 'n' Roll som v\u00e5pen",
-                "content": "Amerikansk musikk og mote, s\u00e6rlig rock 'n' roll og olabukser (jeans), ble utrolig popul\u00e6rt blant ungdom i \u00d8st-Europa. Sovjetlederne s\u00e5 p\u00e5 dette som farlig 'smittsom' p\u00e5virkning som kunne f\u00f8re til oppr\u00f8rskhet. \u00c5 h\u00f8re p\u00e5 Beatles eller eie et par ekte Levi's-bukser ble en form for stille protest mot regimet."
+                "title": "Rock 'n' Roll som våpen",
+                "content": "Amerikansk musikk og mote, særlig rock 'n' roll og olabukser (jeans), ble utrolig populært blant ungdom i Øst-Europa. Sovjetlederne så på dette som farlig 'smittsom' påvirkning som kunne føre til opprørskhet. Å høre på Beatles eller eie et par ekte Levi's-bukser ble en form for stille protest mot regimet."
             }
         },
         {
             "type": "header",
-            "text": "Hollywood vs. Mosfilm: Krigen p\u00e5 lerretet"
+            "text": "Hollywood vs. Mosfilm: Krigen på lerretet"
         },
         {
             "type": "text",
-            "content": "Film var kanskje det mektigste verkt\u00f8yet for propaganda. I vesten dukket karakterer som James Bond opp – den elegante britiske spionen som alltid lurte de skumle sovjetiske agentene. Filmer som *Rocky IV*, der den amerikanske bokseren Rocky Balboa beseirer den sovjetiske 'maskinen' Ivan Drago, var klassiske eksempler p\u00e5 hvordan popul\u00e6rkultur reflekterte konflikten.\n\nI Sovjetunionen ble filmproduksjonen strengt kontrollert av staten. De produserte storsl\u00e5tte epos som hyllet arbeiderklassen og fedrelandskj\u00e6rligheten, samtidig som de skildret vestlig kapitalisme som korrupt, dekadent og styrt av rike kynikere. Begge sider skapte fiendebilder som holdt liv i mistilliten mellom folkene."
+            "content": "Film var kanskje det mektigste verktøyet for propaganda. I vesten dukket karakterer som James Bond opp - den elegante britiske spionen som alltid lurte de skumle sovjetiske agentene. Filmer som *Rocky IV*, der den amerikanske bokseren Rocky Balboa beseirer den sovjetiske 'maskinen' Ivan Drago, var klassiske eksempler på hvordan populærkultur reflekterte konflikten.\n\nI Sovjetunionen ble filmproduksjonen strengt kontrollert av staten. De produserte storslåtte epos som hyllet arbeiderklassen og fedrelandskjærligheten, samtidig som de skildret vestlig kapitalisme som korrupt, dekadent og styrt av rike kynikere. Begge sider skapte fiendebilder som holdt liv i mistilliten mellom folkene."
         },
         {
             "type": "header",
-            "text": "Kj\u00f8kkendebatten: Livsstil som bevis"
+            "text": "Kjøkkendebatten: Livsstil som bevis"
         },
         {
             "type": "text",
-            "content": "I 1959 skjedde en uvanlig ordveksling mellom USAs visepresident Richard Nixon og Sovjets leder Nikita Khrusjtsjov. Den fant sted foran en utstilling av et moderne amerikansk kj\u00f8kken i Moskva, og ble kjent som Kj\u00f8kkendebatten.\n\nNixon argumenterte for at kapitalismen var best fordi den ga vanlige arbeidere råd til moderne apparater som vaskemaskiner og farge-TV. Khrusjtsjov fnyste av dette og mente at sovjetiske borgere hadde viktigere ting å tenke på, som utdanning og bolig til alle. Debatten viste at den kalde krigen handlet like mye om hvem som hadde den beste levestandarden som hvem som hadde flest raketter."
+            "content": "I 1959 skjedde en uvanlig ordveksling mellom USAs visepresident Richard Nixon og Sovjets leder Nikita Khrusjtsjov. Den fant sted foran en utstilling av et moderne amerikansk kjøkken i Moskva, og ble kjent som Kjøkkendebatten (HISTORY, 2025).\n\nNixon argumenterte for at kapitalismen var best fordi den ga vanlige arbeidere råd til moderne apparater som vaskemaskiner og farge-TV. Khrusjtsjov fnyste av dette og mente at sovjetiske borgere hadde viktigere ting å tenke på, som utdanning og bolig til alle. Debatten viste at den kalde krigen handlet like mye om hvem som hadde den beste levestandarden som hvem som hadde flest raketter."
         },
         {
             "type": "header",
-            "text": "Sport: Krig uten v\u00e5pen"
+            "text": "Sport: Krig uten våpen"
         },
         {
             "type": "text",
-            "content": "Idrettsarenaen ble en symbolsk slagmark. Olympiske leker ble brukt for \u00e5 vise nasjonal styrke. Da USA boikottet OL i Moskva i 1980 i protest mot invasjonen av Afghanistan, svarte Sovjetunionen med \u00e5 boikotte OL i Los Angeles i 1984.\n\nUnderholdningsverdien n\u00e5dde toppen i ishockeykamper. 'Miracle on Ice' i 1980, der et amerikansk amat\u00f8rlag slo det uovervinnelige sovjetiske h\u00e6rlaget, ble feiret som om USA hadde vunnet en ekte krig. For begge sider var en seier p\u00e5 banen en seier for deres ideologiske system."
+            "content": "Idrettsarenaen ble en symbolsk slagmark. Olympiske leker ble brukt for å vise nasjonal styrke. Da USA boikottet OL i Moskva i 1980 i protest mot invasjonen av Afghanistan, svarte Sovjetunionen med å boikotte OL i Los Angeles i 1984 (Tvedt mfl., 2025).\n\nUnderholdningsverdien nådde toppen i ishockeykamper. 'Miracle on Ice' i 1980, der et amerikansk amatørlag slo det uovervinnelige sovjetiske hærlaget, ble feiret som om USA hadde vunnet en ekte krig. For begge sider var en seier på banen en seier for deres ideologiske system."
         },
         {
             "type": "component",
             "name": "Comparison",
             "props": {
-                "title": "Hverdagslivet: Vest vs. \u00d8st",
+                "title": "Hverdagslivet: Vest vs. Øst",
                 "leftTitle": "Vestlig hverdag",
                 "rightTitle": "Sovjetisk hverdag",
                 "items": [
                     {
                         "label": "Forbruk",
                         "left": "Stort utvalg av varer; reklame.",
-                        "right": "Smalere utvalg; ofte varemangel og k\u00f8er."
+                        "right": "Smalere utvalg; ofte varemangel og køer."
                     },
                     {
                         "label": "Informasjon",
-                        "left": "Fri presse; mange kanaler; f\u00e5 forbud.",
+                        "left": "Fri presse; mange kanaler; få forbud.",
                         "right": "Sensurert presse; statskontrollert TV."
                     },
                     {
                         "label": "Reise",
-                        "left": "Stor frihet til \u00e5 reise hvor man vil.",
-                        "right": "Sv\u00e6rt vanskelig \u00e5 f\u00e5 utreisevisum til vesten."
+                        "left": "Stor frihet til å reise hvor man vil.",
+                        "right": "Svært vanskelig å få utreisevisum til vesten."
                     },
                     {
                         "label": "Goder",
@@ -84,11 +84,11 @@
         },
         {
             "type": "header",
-            "text": "Propagandaens m\u00f8rke side"
+            "text": "Propagandaens mørke side"
         },
         {
             "type": "text",
-            "content": "Selv om mye av kulturutvekslingen var harml\u00f8s underholdning, hadde propagandaen ogs\u00e5 en m\u00f8rkere side. Det skapte fordommer og fremmedfrykt. Barn i USA ble l\u00e6rt opp til \u00e5 'duck and cover' (dukke og dekke seg) i tilfelle atomangrep, mens sovjetiske barn ble fortalt at amerikanske imperialister \u00f8nsket \u00e5 sulte dem ut.\n\nSamfunnene ble preget av overv\u00e5king. I USA f\u00f8rte McCarthyismen p\u00e5 50-tallet til en 'heksejakt' p\u00e5 p\u00e5st\u00e5tte kommunister, mens innbyggerne i \u00f8st levde under konstant overv\u00e5king fra hemmelig politi som Stasi (i \u00d8st-Tyskland)."
+            "content": "Selv om mye av kulturutvekslingen var harmløs underholdning, hadde propagandaen også en mørkere side. Det skapte fordommer og fremmedfrykt. Barn i USA ble lært opp til å 'duck and cover' (dukke og dekke seg) i tilfelle atomangrep, mens sovjetiske barn ble fortalt at amerikanske imperialister ønsket å sulte dem ut.\n\nSamfunnene ble preget av overvåking. I USA førte McCarthyismen på 50-tallet til en 'heksejakt' på påståtte kommunister (Jahr, 2025), mens innbyggerne i øst levde under konstant overvåking fra hemmelig politi som Stasi i Øst-Tyskland (Store norske leksikon, 2024)."
         },
         {
             "type": "component",
@@ -119,17 +119,17 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hva ble Nixon og Khrusjtsjovs ber\u00f8mte diskusjon i 1959 kalt?",
+                        "question": "Hva ble Nixon og Khrusjtsjovs berømte diskusjon i 1959 kalt?",
                         "options": [
                             "Badekardebatten",
-                            "Kj\u00f8kkendebatten",
+                            "Kjøkkendebatten",
                             "Stuedebatten",
                             "Hagedebatten"
                         ],
-                        "answer": "Kj\u00f8kkendebatten"
+                        "answer": "Kjøkkendebatten"
                     },
                     {
-                        "question": "Hvilken vestlig ungdomskultur ble sett p\u00e5 som 'farlig' bak jernteppet?",
+                        "question": "Hvilken vestlig ungdomskultur ble sett på som 'farlig' bak jernteppet?",
                         "options": [
                             "Opera",
                             "Folkedans",
@@ -141,7 +141,7 @@
                     {
                         "question": "Hvorfor boikottet mange land OL i Moskva i 1980?",
                         "options": [
-                            "P\u00e5 grunn av d\u00e5rlig v\u00e6r",
+                            "På grunn av dårlig vær",
                             "I protest mot invasjonen av Afghanistan",
                             "Fordi billettene var for dyre",
                             "Fordi de ikke likte russisk mat"
@@ -149,7 +149,7 @@
                         "answer": "I protest mot invasjonen av Afghanistan"
                     },
                     {
-                        "question": "Hva het det hemmelige politiet i \u00d8st-Tyskland som overv\u00e5ket innbyggerne?",
+                        "question": "Hva het det hemmelige politiet i Øst-Tyskland som overvåket innbyggerne?",
                         "options": [
                             "KGB",
                             "CIA",
@@ -160,23 +160,36 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "HISTORY. (2025). *Nixon and Khrushchev have a \"kitchen debate\"*. HISTORY. Hentet 23.07.2026 fra [history.com](https://www.history.com/this-day-in-history/july-24/nixon-and-khrushchev-have-a-kitchen-debate)",
+                    "Jahr, I. (2025). *Joseph McCarthy*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Joseph_McCarthy](https://snl.no/Joseph_McCarthy)",
+                    "Petersen, T. (2026). *den kalde krigen*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/den_kalde_krigen](https://snl.no/den_kalde_krigen)",
+                    "Store norske leksikon. (2024). *Stasi*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Stasi](https://snl.no/Stasi)",
+                    "Tvedt, K. A., Kraggerud, E., Goksøyr, M., Bryhn, R. & Sundby, J. (2025). *OL - olympiske leker*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/OL_-_olympiske_leker](https://snl.no/OL_-_olympiske_leker)"
+                ]
+            }
         }
     ],
     "quiz": [
         {
             "id": "q1",
-            "question": "Hva ble den b\u00e5de politiske og kulturelle grensen i Europa kalt?",
+            "question": "Hva ble den både politiske og kulturelle grensen i Europa kalt?",
             "options": [
                 "Berlinmuren",
                 "Jernteppet",
-                "Piggtr\u00e5dgjerdet",
+                "Piggtrådgjerdet",
                 "Frihetslinjen"
             ],
             "correctAnswer": 1
         },
         {
             "id": "q2",
-            "question": "Hvilken fiktiv spion ble et ikon for vestlig popul\u00e6rkultur under den kalde krigen?",
+            "question": "Hvilken fiktiv spion ble et ikon for vestlig populærkultur under den kalde krigen?",
             "options": [
                 "Sherlock Holmes",
                 "James Bond",
@@ -187,21 +200,21 @@
         },
         {
             "id": "q3",
-            "question": "Hva var 'Radio Free Europe' et eksempel p\u00e5?",
+            "question": "Hva var 'Radio Free Europe' et eksempel på?",
             "options": [
                 "Musikkkanal",
                 "Propagandasender",
-                "V\u00e6rvarsling",
-                "N\u00f8dsamband"
+                "Værvarsling",
+                "Nødsamband"
             ],
             "correctAnswer": 1
         },
         {
             "id": "q4",
-            "question": "Hva preget ofte hverdagen for folk i \u00d8stblokken sammenlignet med Vesten?",
+            "question": "Hva preget ofte hverdagen for folk i Østblokken sammenlignet med Vesten?",
             "options": [
                 "Overflod av varer",
-                "Varemangel og k\u00f8er",
+                "Varemangel og køer",
                 "Ingen TV-kanaler",
                 "Full ytringsfrihet"
             ],
@@ -209,5 +222,5 @@
         }
     ],
     "createdDate": "2023-12-21T12:30:00Z",
-    "lastUpdated": "2023-12-21T12:30:00Z"
+    "lastUpdated": "2026-07-23T00:00:00Z"
 }

@@ -3,33 +3,33 @@
     "title": "Koreakrigen 1950-1953: Den glemte krigen som aldri tok slutt",
     "subject": "historie",
     "layout": "rich",
-    "year": "1950–1953",
+    "year": "1950-1953",
     "category": "Kald krig / Asia",
     "readTime": "12 min lesning",
     "heroImage": "/images/lessons/den-kalde-krigen/koreakrigen.webp",
     "details": [
-        "Den f\u00f8rste store milit\u00e6re konflikten etter andre verdenskrig.",
-        "En krig mellom det sovjetst\u00f8ttede Nord-Korea og det USA-st\u00f8ttede S\u00f8r-Korea.",
-        "Markerte f\u00f8rste gang FN grep inn milit\u00e6rt i en konflikt.",
-        "Krigshandlingene endte med v\u00e5penhvile, ikke en fredsavtale.",
+        "Den første store militære konflikten etter andre verdenskrig.",
+        "En krig mellom det sovjetstøttede Nord-Korea og det USA-støttede Sør-Korea.",
+        "Markerte første gang FN grep inn militært i en konflikt.",
+        "Krigshandlingene endte med våpenhvile, ikke en fredsavtale.",
         "Korea er fremdeles delt ved den 38. breddegrad."
     ],
     "timeline": [
         {
             "year": "1950",
             "title": "Koreakrigen starter",
-            "description": "Nord-Korea invaderer S\u00f8r-Korea."
+            "description": "Nord-Korea invaderer Sør-Korea."
         },
         {
             "year": "1953",
-            "title": "V\u00e5penhvile i Korea",
+            "title": "Våpenhvile i Korea",
             "description": "Krigen pauses, men en formell fredsavtale mangler."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "Koreakrigen blir ofte kalt 'den glemte krigen', klemt inne mellom heroismen i andre verdenskrig og de dype traumene fra [Vietnamkrigen](/historie/den-kalde-krigen/vietnamkrigen). Men for verden i 1950 var krigen alt annet enn ubetydelig. Den var det f\u00f8rste tegnet p\u00e5 at [den kalde krigen](/historie/den-kalde-krigen/oversikt) kunne bli brennhet, og den satte rammene for hvordan supermaktene skulle kjempe om innflytelse i ti\u00e5rene som fulgte.\n\nKonflikten utspant seg p\u00e5 den koreanske halv\u00f8ya, som hadde v\u00e6rt okkupert av Japan fram til 1945. Etter krigen ble landet delt langs den 38. breddegrad: Sovjetunionen tok kontroll over nord, mens USA tok kontroll over s\u00f8r. Det som skulle v\u00e6re en midlertidig ordning, ble raskt permanent n\u00e5r to rivaliserende regjeringer ble opprettet: det kommunistiske Nord-Korea og det vestlig-orienterte S\u00f8r-Korea."
+            "content": "Koreakrigen blir ofte kalt 'den glemte krigen', klemt inne mellom heroismen i andre verdenskrig og de dype traumene fra [Vietnamkrigen](/historie/den-kalde-krigen/vietnamkrigen). Men for verden i 1950 var krigen alt annet enn ubetydelig. Den var det første tegnet på at [den kalde krigen](/historie/den-kalde-krigen/oversikt) kunne bli brennhet, og den satte rammene for hvordan supermaktene skulle kjempe om innflytelse i tiårene som fulgte.\n\nKonflikten utspant seg på den koreanske halvøya, som hadde vært okkupert av Japan fram til 1945. Etter krigen ble landet delt langs den 38. breddegrad: Sovjetunionen tok kontroll over nord, mens USA tok kontroll over sør. Det som skulle være en midlertidig ordning, ble raskt permanent når to rivaliserende regjeringer ble opprettet: det kommunistiske Nord-Korea og det vestlig-orienterte Sør-Korea (Helgesen, 2026; FN-sambandet, 2025)."
         },
         {
             "type": "component",
@@ -40,17 +40,17 @@
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "FNs f\u00f8rste krig",
-                "content": "Da Nord-Korea angrep, vedtok FNs sikkerhetsr\u00e5d \u00e5 sende en internasjonal styrke for \u00e5 hjelpe S\u00f8r-Korea. Dette var mulig fordi Sovjetunionen p\u00e5 det tidspunktet boikottet Sikkerhetsr\u00e5det og dermed ikke kunne bruke veto. Selve styrken ble ledet av USA, men hele 16 medlemsland (inkludert Norge med feltsykehuset NORMASH) bidro med soldater eller medisinsk hjelp."
+                "title": "FNs første krig",
+                "content": "Da Nord-Korea angrep, vedtok FNs sikkerhetsråd å sende en internasjonal styrke for å hjelpe Sør-Korea. Dette var mulig fordi Sovjetunionen på det tidspunktet boikottet Sikkerhetsrådet og dermed ikke kunne bruke veto. Selve styrken ble ledet av USA, men hele 16 medlemsland (inkludert Norge med feltsykehuset NORMASH) bidro med soldater eller medisinsk hjelp."
             }
         },
         {
             "type": "header",
-            "text": "Invasjonen og d\u00f8dskampen ved Pusan"
+            "text": "Invasjonen og dødskampen ved Pusan"
         },
         {
             "type": "text",
-            "content": "Den 25. juni 1950 krysset nordkoreanske styrker den 38. breddegrad i et massivt overraskelsesangrep. Med sovjetiske tanks og utstyr feide de s\u00f8rover. Det s\u00f8rkoreanske forsvaret kollapset nesten umiddelbart, og Seoul falt i l\u00f8pet av dager.\n\nAmerikanske og s\u00f8rkoreanske styrker ble presset helt ned til det s\u00f8r\u00f8stlige hj\u00f8rnet av halv\u00f8ya, et omr\u00e5de kjent som Pusan-perimeteret. Her klorte de seg fast mens FN-styrkene samlet opp krefter. Verden ventet p\u00e5 at de siste s\u00f8rkoreanske forsvarslinjene skulle briste, men i september skjedde noe som endret alt."
+            "content": "Den 25. juni 1950 krysset nordkoreanske styrker den 38. breddegrad i et massivt overraskelsesangrep. Med sovjetiske tanks og utstyr feide de sørover. Det sørkoreanske forsvaret kollapset nesten umiddelbart, og Seoul falt i løpet av dager (Helgesen, 2026).\n\nAmerikanske og sørkoreanske styrker ble presset helt ned til det sørøstlige hjørnet av halvøya, et område kjent som Pusan-perimeteret. Her klorte de seg fast mens FN-styrkene samlet opp krefter. Verden ventet på at de siste sørkoreanske forsvarslinjene skulle briste, men i september skjedde noe som endret alt."
         },
         {
             "type": "image",
@@ -63,15 +63,15 @@
         },
         {
             "type": "text",
-            "content": "Den amerikanske generalen Douglas MacArthur iverksatte en av de dristigste milit\u00e6re operasjonene i historien. I stedet for \u00e5 kjempe seg ut av Pusan, landet han FN-styrker dypt bak fiendens linjer ved havnebyen Inchon, n\u00e6r Seoul. Angrepet kom som et fullstendig sjokk p\u00e5 nordkoreanerne.\n\nNord-Koreas forsyningslinjer ble kuttet, og h\u00e6ren deres i s\u00f8r m\u00e5tte flykte i kaos. FN-styrkene gjenerobret Seoul og presset nordkoreanerne helt opp mot grensen til Kina ved Yalu-elven. Det s\u00e5 ut som krigen var vunnet, og MacArthur snakket om at soldatene skulle v\u00e6re 'hjemme til jul'. Men de hadde undervurdert naboen i nord."
+            "content": "Den amerikanske generalen Douglas MacArthur iverksatte en av de dristigste militære operasjonene i historien. I stedet for å kjempe seg ut av Pusan, landet han FN-styrker dypt bak fiendens linjer ved havnebyen Inchon, nær Seoul. Angrepet kom som et fullstendig sjokk på nordkoreanerne.\n\nNord-Koreas forsyningslinjer ble kuttet, og hæren deres i sør måtte flykte i kaos. FN-styrkene gjenerobret Seoul og presset nordkoreanerne helt opp mot grensen til Kina ved Yalu-elven. Det så ut som krigen var vunnet, og MacArthur snakket om at soldatene skulle være 'hjemme til jul'. Men de hadde undervurdert naboen i nord."
         },
         {
             "type": "header",
-            "text": "Kina sl\u00e5r tilbake"
+            "text": "Kina slår tilbake"
         },
         {
             "type": "text",
-            "content": "Kina, som nylig hadde blitt kommunistisk under Mao Zedong, s\u00e5 p\u00e5 FN-styrkenes fremmarsj som en direkte trussel mot sin egen sikkerhet. I november 1950 krysset hundretusener av kinesiske 'frivillige' soldater grensen. I bitende kulde og med overveldende antall drev de FN-styrkene tilbake s\u00f8rover.\n\nDet utviklet seg til en brutal utmattelseskrig. Frontlinjen stabiliserte seg etter hvert rundt den 38. breddegrad, der krigen hadde startet. De neste to \u00e5rene besto av blodige slag om sm\u00e5 fjeltopper, uten at noen av sidene klarte \u00e5 vinne avgj\u00f8rende terreng."
+            "content": "Kina, som nylig hadde blitt kommunistisk under Mao Zedong, så på FN-styrkenes fremmarsj som en direkte trussel mot sin egen sikkerhet. I november 1950 krysset hundretusener av kinesiske 'frivillige' soldater grensen. I bitende kulde og med overveldende antall drev de FN-styrkene tilbake sørover.\n\nDet utviklet seg til en brutal utmattelseskrig. Frontlinjen stabiliserte seg etter hvert rundt den 38. breddegrad, der krigen hadde startet. De neste to årene besto av blodige slag om små fjeltopper, uten at noen av sidene klarte å vinne avgjørende terreng."
         },
         {
             "type": "header",
@@ -79,30 +79,30 @@
         },
         {
             "type": "text",
-            "content": "Inne i den amerikanske ledelsen raste en annen konflikt. General MacArthur \u00f8nsket \u00e5 utvide krigen til Kina og foreslo til og med bruk av atomv\u00e5pen. President Harry S. Truman nektet. Han fryktet at en eskalering ville f\u00f8re til en tredje verdenskrig med Sovjetunionen.\n\nTruman holdt fast p\u00e5 prinsippet om 'begrenset krig' – m\u00e5let var \u00e5 redde S\u00f8r-Korea, ikke \u00e5 starte en global apokalypse. Da MacArthur offentlig kritiserte presidentens strategi, fikk han sparken. Dette var en viktig p\u00e5minnelse i et demokrati om at de sivile lederne har kontrollen over milit\u00e6ret."
+            "content": "Inne i den amerikanske ledelsen raste en annen konflikt. General MacArthur ønsket å utvide krigen til Kina og foreslo til og med bruk av atomvåpen. President Harry S. Truman nektet. Han fryktet at en eskalering ville føre til en tredje verdenskrig med Sovjetunionen.\n\nTruman holdt fast på prinsippet om 'begrenset krig' - målet var å redde Sør-Korea, ikke å starte en global apokalypse. Da MacArthur offentlig kritiserte presidentens strategi, fikk han sparken (Sirevåg, 2025). Dette var en viktig påminnelse i et demokrati om at de sivile lederne har kontrollen over militæret."
         },
         {
             "type": "component",
             "name": "Comparison",
             "props": {
-                "title": "Nord-Korea vs. S\u00f8r-Korea i dag",
+                "title": "Nord-Korea vs. Sør-Korea i dag",
                 "leftTitle": "Nord-Korea (DPRK)",
-                "rightTitle": "S\u00f8r-Korea (ROK)",
+                "rightTitle": "Sør-Korea (ROK)",
                 "items": [
                     {
                         "label": "Styreform",
-                        "left": "Totalit\u00e6rt diktatur (arvelig)",
+                        "left": "Totalitært diktatur (arvelig)",
                         "right": "Liberalt demokrati"
                     },
                     {
-                        "label": "\u00d8konomi",
-                        "left": "Sentralstyrt plan\u00f8konomi; isolert",
-                        "right": "Moderne markeds\u00f8konomi; global leder"
+                        "label": "Økonomi",
+                        "left": "Sentralstyrt planøkonomi; isolert",
+                        "right": "Moderne markedsøkonomi; global leder"
                     },
                     {
                         "label": "Levestandard",
                         "left": "Lav; periodisk matmangel",
-                        "right": "H\u00f8y; avansert teknologi og kultur (K-pop)"
+                        "right": "Høy; avansert teknologi og kultur (K-pop)"
                     },
                     {
                         "label": "Allianser",
@@ -114,11 +114,11 @@
         },
         {
             "type": "header",
-            "text": "V\u00e5penhvile uten fred"
+            "text": "Våpenhvile uten fred"
         },
         {
             "type": "text",
-            "content": "Etter tre \u00e5r med krig og millioner av d\u00f8de (b\u00e5de soldater og sivile), ble det undertegnet en v\u00e5penhvileavtale 27. juli 1953. Grensen ble lagt n\u00e6r den opprinnelige 38. breddegrad, beskyttet av en bred demilitarisert sone (DMZ) som fremdeles er en av verdens mest bevoktede grenser.\n\nTeknisk sett er Nord- og S\u00f8r-Korea fremdeles i krig, ettersom det aldri ble undertegnet en formell fredsavtale. Krigen befestet delingen av Asia i to ideologiske blokker og f\u00f8rte til en enorm opprustning i USA, som n\u00e5 s\u00e5 p\u00e5 seg selv som verdens 'politi'."
+            "content": "Etter tre år med krig og millioner av døde (både soldater og sivile), ble det undertegnet en våpenhvileavtale 27. juli 1953. Grensen ble lagt nær den opprinnelige 38. breddegrad, beskyttet av en bred demilitarisert sone (DMZ) som fremdeles er en av verdens mest bevoktede grenser.\n\nTeknisk sett er Nord- og Sør-Korea fremdeles i krig, ettersom det aldri ble undertegnet en formell fredsavtale. Krigen befestet delingen av Asia i to ideologiske blokker og førte til en enorm opprustning i USA, som nå så på seg selv som verdens 'politi'."
         },
         {
             "type": "component",
@@ -149,7 +149,7 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Langs hvilken breddegrad ble Korea delt i nord og s\u00f8r?",
+                        "question": "Langs hvilken breddegrad ble Korea delt i nord og sør?",
                         "options": [
                             "10. breddegrad",
                             "38. breddegrad",
@@ -159,7 +159,7 @@
                         "answer": "38. breddegrad"
                     },
                     {
-                        "question": "Hvilket land grep inn med hundretusener av soldater p\u00e5 Nord-Koreas side?",
+                        "question": "Hvilket land grep inn med hundretusener av soldater på Nord-Koreas side?",
                         "options": [
                             "Japan",
                             "Vietnam",
@@ -179,15 +179,26 @@
                         "answer": "Douglas MacArthur"
                     },
                     {
-                        "question": "Hva er dagens status for forholdet mellom Nord- og S\u00f8r-Korea?",
+                        "question": "Hva er dagens status for forholdet mellom Nord- og Sør-Korea?",
                         "options": [
                             "De er gjenforent",
                             "De har en fredsavtale",
-                            "De har en v\u00e5penhvile, men er teknisk i krig",
+                            "De har en våpenhvile, men er teknisk i krig",
                             "De er i aktiv krig hver dag"
                         ],
-                        "answer": "De har en v\u00e5penhvile, men er teknisk i krig"
+                        "answer": "De har en våpenhvile, men er teknisk i krig"
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "FN-sambandet. (2025). *Korea*. FN-sambandet. Hentet 23.07.2026 fra [fn.no/konflikter/korea](https://fn.no/konflikter/korea)",
+                    "Helgesen, G. (2026). *Koreakrigen*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Koreakrigen](https://snl.no/Koreakrigen)",
+                    "Sirevåg, T. (2025). *Douglas MacArthur*. Store norske leksikon. Hentet 23.07.2026 fra [snl.no/Douglas_MacArthur](https://snl.no/Douglas_MacArthur)"
                 ]
             }
         }
@@ -195,7 +206,7 @@
     "quiz": [
         {
             "id": "q1",
-            "question": "Langs hvilken breddegrad ble Korea delt i nord og s\u00f8r?",
+            "question": "Langs hvilken breddegrad ble Korea delt i nord og sør?",
             "options": [
                 "10. breddegrad",
                 "38. breddegrad",
@@ -206,7 +217,7 @@
         },
         {
             "id": "q2",
-            "question": "Hvilket land grep inn med hundretusener av soldater p\u00e5 Nord-Koreas side?",
+            "question": "Hvilket land grep inn med hundretusener av soldater på Nord-Koreas side?",
             "options": [
                 "Japan",
                 "Vietnam",
@@ -228,16 +239,16 @@
         },
         {
             "id": "q4",
-            "question": "Hva er dagens status for forholdet mellom Nord- og S\u00f8r-Korea?",
+            "question": "Hva er dagens status for forholdet mellom Nord- og Sør-Korea?",
             "options": [
                 "De er gjenforent",
                 "De har en fredsavtale",
-                "De har en v\u00e5penhvile, men er teknisk i krig",
+                "De har en våpenhvile, men er teknisk i krig",
                 "De er i aktiv krig hver dag"
             ],
             "correctAnswer": 2
         }
     ],
     "createdDate": "2023-12-21T12:10:00Z",
-    "lastUpdated": "2023-12-21T12:10:00Z"
+    "lastUpdated": "2026-07-23T00:00:00Z"
 }
