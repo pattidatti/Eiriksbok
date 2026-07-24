@@ -23,7 +23,7 @@
     },
     {
       "type": "text",
-      "content": "Etter åtte års brutal [krig mot Iran](/historie/midtoesten/iran-revolusjonen) (1980-1988) var Irak nesten konkurs. Saddam hadde brukt opp landets oljepenger og lånt store summer fra nabolandene. Kuwait hadde gitt Irak lån under krigen, og Saddam mente nå at Kuwait takket for lite. Han anklaget Kuwait for å pumpe olje fra et felt han hevdet lå under iraksk jord - Rumaila-feltet, som strekker seg over grensen mellom de to landene. Saddam krevde at gjelden ble slettet og at oljeprisene ble hevet. Kuwait nektet."
+      "content": "Etter åtte års brutal [krig mot Iran](/historie/midtoesten/iran-revolusjonen) (1980-1988) var Irak nesten konkurs. Saddam hadde brukt opp landets oljepenger og lånt store summer fra nabolandene. Kuwait hadde gitt Irak lån under krigen, og Saddam mente nå at Kuwait takket for lite. Han anklaget Kuwait for å pumpe olje fra et felt han hevdet lå under iraksk jord - Rumaila-feltet, som strekker seg over grensen mellom de to landene. Saddam krevde at gjelden ble slettet og at oljeprisene ble hevet. Kuwait nektet (Leraand, 2024a)."
     },
     {
       "type": "text",
@@ -49,7 +49,7 @@
     },
     {
       "type": "text",
-      "content": "FNs sikkerhetsråd handlet raskt. De krevde at Irak trakk seg ut. Da Saddam nektet, godkjente FN militær makt for å frigjøre Kuwait - et klart mandat som ga koalisjonen legitimitet. 35 land stilte opp. USA ledet, og Saudi-Arabia stilte sin jord til rådighet som base for angrepet. Koalisjonen samlet rundt 700 000 soldater i regionen i løpet av høsten 1990."
+      "content": "FNs sikkerhetsråd handlet raskt. De krevde at Irak trakk seg ut. Da Saddam nektet, godkjente FN militær makt for å frigjøre Kuwait - et klart mandat som ga koalisjonen legitimitet. 35 land stilte opp. USA ledet, og Saudi-Arabia stilte sin jord til rådighet som base for angrepet. Koalisjonen samlet flere hundre tusen soldater i regionen i løpet av høsten 1990 (Leraand, 2024a)."
     },
     {
       "type": "text",
@@ -98,7 +98,7 @@
     },
     {
       "type": "text",
-      "content": "Etter 100 timer erklærte president George H.W. Bush våpenhvile. Kuwait var fritt. Men nå kom det store spørsmålet: skulle koalisjonen fortsette til Bagdad og fjerne Saddam?"
+      "content": "Etter 100 timer erklærte president George H.W. Bush våpenhvile (Leraand, 2024a). Kuwait var fritt. Men nå kom det store spørsmålet: skulle koalisjonen fortsette til Bagdad og fjerne Saddam?"
     },
     {
       "type": "component",
@@ -183,7 +183,7 @@
     },
     {
       "type": "text",
-      "content": "I mars 2003 invaderte USA og Storbritannia Irak - uten FN-mandat denne gangen. Strategien het \"sjokk og ærefrykt\": så massivt og raskt at irakisk motstand brøt ned. Bagdad falt på tre uker. Saddam flyktet og ble fanget i et jordskjul i desember 2003. Han ble henrettet i 2006."
+      "content": "I mars 2003 invaderte USA og Storbritannia Irak - uten FN-mandat denne gangen (Leraand, 2024b). Strategien het \"sjokk og ærefrykt\": så massivt og raskt at irakisk motstand brøt ned. Bagdad falt på tre uker. Saddam flyktet og ble fanget i et jordskjul i desember 2003. Han ble henrettet i 2006 (Aarseth, 2024)."
     },
     {
       "type": "component",
@@ -215,7 +215,7 @@
     },
     {
       "type": "text",
-      "content": "Masseødeleggelsesvåpnene dukket aldri opp. Irak hadde ikke dem. Begrunnelsen for krigen falt bort. USA ble sittende i et land de ikke hadde planlagt for - uten fungerende statsapparat, med etniske og religiøse grupper som hadde hatefulle historier seg imellom, og med en befolkning som fort gikk fra lettelse over Saddams fall til sinne over okkupasjonen."
+      "content": "Masseødeleggelsesvåpnene dukket aldri opp. Irak hadde ikke dem (Leraand, 2024b). Begrunnelsen for krigen falt bort. USA ble sittende i et land de ikke hadde planlagt for - uten fungerende statsapparat, med etniske og religiøse grupper som hadde hatefulle historier seg imellom, og med en befolkning som fort gikk fra lettelse over Saddams fall til sinne over okkupasjonen."
     },
     {
       "type": "text",
@@ -313,7 +313,19 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Aarseth, M. B. (2024). *Saddam Hussein*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Saddam_Hussein](https://snl.no/Saddam_Hussein)",
+          "Leraand, D. (2024a). *Golfkrigen 1990-1991*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Golfkrigen_1990–1991](https://snl.no/Golfkrigen_1990–1991)",
+          "Leraand, D. (2024b). *Irak-krigen 2003*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Irak-krigen_2003](https://snl.no/Irak-krigen_2003)"
+        ]
+      }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-07-24"
 }
