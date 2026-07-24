@@ -4,7 +4,7 @@
   "subject": "historie",
   "topic": "andre-verdenskrig",
   "layout": "rich",
-  "year": "1919–1939",
+  "year": "1919-1939",
   "category": "Bakgrunn",
   "readTime": "20 min lesning",
   "heroImage": "/images/historie/andre-verdenskrig/bakgrunn_hero.webp",
@@ -19,7 +19,7 @@
   "content": [
     {
       "type": "text",
-      "content": "Man sier ofte at kimen til andre verdenskrig ble lagt i fredsoppgjøret etter den første. Versailles-traktaten fra 1919 etterlot Tyskland ydmyket, økonomisk ruinert og politisk ustabilt. Mange tyskere følte at de var blitt urettferdig behandlet, og drømte om revansj. I dette klimaet av misnøye og desperasjon kunne ekstreme politiske bevegelser vokse frem, og fremst blant dem var nazismen ledet av Adolf Hitler."
+      "content": "Man sier ofte at kimen til andre verdenskrig ble lagt i fredsoppgjøret etter den første. Versailles-traktaten fra 1919 tok landområder fra Tyskland, påla landet store krigserstatninger og satte strenge grenser for det tyske militæret (Hatlehol, 2025a). Mange tyskere følte at de var blitt urettferdig behandlet, og drømte om revansj. I dette klimaet av misnøye og desperasjon kunne ekstreme politiske bevegelser vokse frem, og fremst blant dem var nazismen ledet av Adolf Hitler."
     },
     {
       "type": "header",
@@ -27,7 +27,7 @@
     },
     {
       "type": "text",
-      "content": "Adolf Hitler, en østerriksk krigsveteran fra første verdenskrig, ble leder for det lille nasjonalsosialistiske tyske arbeiderparti (NSDAP) på 1920-tallet. Hans budskap var enkelt og brutalt: Tyskland var ikke blitt beseiret på slagmarken, men forrådt av jøder og sosialister hjemme (dolkesjøtlegenden). Han lovet å rive i stykker Versailles-traktaten, gjenreise Tysklands ære og skaffe det tyske folket «Lebensraum» (livsrom) i øst.\n\nLenken til [Konsekvenser av første verdenskrig](/historie/forste-verdenskrig/konsekvenser) er tydelig her. Den økonomiske krisen i 1929 kastet Tyskland ut i massearbeidsledighet, og velgerne strømmet til Hitler. I januar 1933 ble han utnevnt til rikskansler. I løpet av få måneder avskaffet han demokratiet, forbød andre partier og opprettet et brutalt diktatur. Nå begynte han systematisk å bryte vilkårene i Versailles-traktaten ved å bygge opp militæret igjen."
+      "content": "Adolf Hitler var født i Østerrike og hadde vært soldat i den bayerske hæren under første verdenskrig. I 1921 ble han leder for det lille nasjonalsosialistiske tyske arbeiderpartiet (NSDAP) (Dypvik, 2026). Hans budskap var enkelt og brutalt: Tyskland var ikke blitt beseiret på slagmarken, men forrådt hjemmefra. Nazistenes utgave av denne dolkestøtlegenden var sterkt antisemittisk og påstod at en jødisk sammensvergelse hadde sviktet den tyske hæren (Hatlehol, 2025b). Han lovet å rive i stykker Versailles-traktaten, gjenreise Tysklands ære og skaffe det tyske folket «Lebensraum» (livsrom) i øst (Dypvik, 2026).\n\nLenken til [Konsekvenser av første verdenskrig](/historie/forste-verdenskrig/konsekvenser) er tydelig her. Børskrakket i 1929 og den økonomiske krisen som fulgte, kastet Tyskland ut i massearbeidsledighet, og velgerne strømmet til Hitler. 30. januar 1933 ble han utnevnt til rikskansler (Dypvik, 2026). I løpet av få måneder avskaffet han demokratiet, forbød andre partier og opprettet et brutalt diktatur. Nå begynte han systematisk å bryte vilkårene i Versailles-traktaten: i 1935 innførte han verneplikt igjen, noe traktaten forbød (Hatlehol, 2025a)."
     },
     {
       "type": "header",
@@ -35,13 +35,13 @@
     },
     {
       "type": "text",
-      "content": "Folkeforbundet var opprettet for å bevare freden, men på 1930-tallet viste organisasjonen seg å være tannløs. Da Japan invaderte Mandsjuria i Kina i 1931, protesterte Folkeforbundet, men gjorde ingenting konkret. Japan meldte seg bare ut. Da Italias diktator Mussolini invaderte Etiopia i 1935, skjedde det samme.\n\nHitler observerte dette nøye. Han innså at demokratiene i vest – Storbritannia og Frankrike – var krigstrette og ville gå langt for å unngå en ny storkrig. Han begynte en serie med dristige trekk:"
+      "content": "Folkeforbundet var opprettet for å bevare freden, men på 1930-tallet viste organisasjonen seg å være tannløs. Da Japan invaderte Mandsjuria i Kina i 1931, ble det tydelig at Folkeforbundet ikke strakk til når stormaktenes interesser stod på spill. Japan meldte seg ut av forbundet i 1933. Da Italias diktator Mussolini invaderte Etiopia i 1935, gikk det enda dårligere: forbundet innførte økonomiske straffetiltak, men de virket ikke, og til slutt måtte organisasjonen gi opp (Greve & Stachurska-Kounta, 2025).\n\nHitler observerte dette nøye. Han innså at demokratiene i vest - Storbritannia og Frankrike - var krigstrette og ville gå langt for å unngå en ny storkrig. Han begynte en serie med dristige trekk:"
     },
     {
       "type": "list",
       "ordered": true,
       "items": [
-        "I 1936 sendte han tropper inn i Rhinland, en demilitarisert sone grensen mot Frankrike.",
+        "I 1936 sendte han tropper inn i Rhinland, en demilitarisert sone ved grensen mot Frankrike.",
         "I 1938 gjennomførte han «Anschluss», innlemmelsen av Østerrike i Tyskland.",
         "Høsten 1938 krevde han Sudetland, et område i Tsjekkoslovakia der det bodde mange tyskere."
       ]
@@ -54,16 +54,16 @@
       "type": "list",
       "ordered": false,
       "items": [
-        "1933: Hitler tar makten – Blir rikskansler og avvikler demokratiet.",
-        "1935: Opprustning – Gjeninnfører verneplikt i strid med Versailles.",
-        "1936: Rhinland – Tyske tropper marsjerer inn i sonen.",
-        "1938: Anschluss – Østerrike innlemmes i Tyskland.",
-        "1939: Polen invaderes – Andre verdenskrig starter."
+        "1933: Hitler tar makten - Blir rikskansler og avvikler demokratiet.",
+        "1935: Opprustning - Gjeninnfører verneplikt i strid med Versailles.",
+        "1936: Rhinland - Tyske tropper marsjerer inn i sonen.",
+        "1938: Anschluss - Østerrike innlemmes i Tyskland.",
+        "1939: Polen invaderes - Andre verdenskrig starter."
       ]
     },
     {
       "type": "text",
-      "content": "Storbritannias statsminister Neville Chamberlain førte en politikk kjent som «appeasement» (ettergivenhet). Tanken var at hvis man ga Hitler det han rimeligvis kunne kreve (som å samle alle tyskere i ett rike), ville han bli fornøyd og freden ville bli bevart. Under München-avtalen i 1938 ga Storbritannia og Frankrike Hitler lov til å ta Sudetland, mot at han lovet å ikke kreve mer. Chamberlain kom hjem og proklamerte «Peace for our time».\n\nMen Hitler hadde ingen planer om å stoppe. Allerede i mars 1939 brøt han avtalen og okkuperte resten av Tsjekkoslovakia. Nå forsto endelig vestmaktene at Hitler ikke kunne stoles på, og at krig var uunngåelig. De ga en garanti til Polen: Hvis Tyskland angriper dere, vil vi hjelpe."
+      "content": "Storbritannias statsminister Neville Chamberlain førte en politikk kjent som «appeasement» (ettergivenhet). Tanken var at hvis man ga Hitler det han rimeligvis kunne kreve (som å samle alle tyskere i ett rike), ville han bli fornøyd og freden ville bli bevart. Under München-avtalen i september 1938 ga Storbritannia og Frankrike Hitler lov til å ta Sudetland, mot at han lovet å ikke kreve mer. Chamberlain ble hyllet som fredens redningsmann da han kom hjem med avtalen som skulle sikre «fred i vår tid» (Greve, 2026).\n\nMen Hitler hadde ingen planer om å stoppe. Allerede i mars 1939 brøt han avtalen og okkuperte resten av Tsjekkoslovakia (Hatlehol, 2025a). Nå forsto endelig vestmaktene at Hitler ikke kunne stoles på, og at krig var uunngåelig. Polen avviste de tyske kravene og fikk garantier fra Storbritannia og Frankrike: Hvis Tyskland angriper dere, vil vi hjelpe (Seim & Lundbo, 2025)."
     },
     {
       "type": "header",
@@ -71,7 +71,7 @@
     },
     {
       "type": "text",
-      "content": "Det siste hinderet for Hitler var Sovjetunionen. En krig mot Polen kunne provosere russerne. I et sjokkerende diplomatisk trekk inngikk erke-fiendene Tyskland (nazister) og Sovjetunionen (kommunister) en ikke-angrepspakt i august 1939, kjent som Molotov-Ribbentrop-pakten. Offisielt lovet de å ikke angripe hverandre. I en hemmelig tilleggsprotokoll delte de Øst-Europa mellom seg: Tyskland skulle få vestre Polen, mens Sovjetunionen skulle få østre Polen, Finland og de baltiske statene.\n\nMed ryggen fri i øst ga Hitler ordren. 1. september 1939 rullet tyske stridsvogner over grensen til Polen. Det ble krigens [casus belli](/samfunnskunnskap/ideer-og-verdenssyn/casus-belli). To dager senere erklærte Storbritannia og Frankrike krig. Katastrofen var et faktum. I tidsreisen [Veien mot mørket](/oving/tidsreise/mellomkrigstiden-del1) kan du selv ta de politiske valgene som ledet dit."
+      "content": "Det siste hinderet for Hitler var Sovjetunionen. En krig mot Polen kunne provosere russerne. I et sjokkerende diplomatisk trekk inngikk erke-fiendene Tyskland (nazister) og Sovjetunionen (kommunister) en ikke-angrepspakt 23. august 1939, kjent som Molotov-Ribbentrop-pakten (Hatlehol, 2025a). Offisielt lovet de å ikke angripe hverandre. I en hemmelig tilleggsprotokoll delte de Øst-Europa mellom seg: Tyskland skulle få Vest-Polen, mens Sovjetunionen skulle få Øst-Polen, Finland, de baltiske landene og Bessarabia, et område som i dag ligger i Moldova og Ukraina (Enstad, 2025).\n\nMed ryggen fri i øst ga Hitler ordren. 1. september 1939 rullet tyske stridsvogner over grensen til Polen. Det ble krigens [casus belli](/samfunnskunnskap/ideer-og-verdenssyn/casus-belli). To dager senere, 3. september, erklærte Storbritannia og Frankrike krig (Hatlehol, 2025a). Katastrofen var et faktum. I tidsreisen [Veien mot mørket](/oving/tidsreise/mellomkrigstiden-del1) kan du selv ta de politiske valgene som ledet dit."
     },
     {
         "type": "component",
@@ -94,8 +94,23 @@
                 "Diskuter med en partner: Finnes det situasjoner i verden i dag der land gir etter for en aggressiv stat for å unngå konflikt? Er det klokt eller farlig?"
             ]
         }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Dypvik, A. S. (2026). *Adolf Hitler*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Adolf_Hitler](https://snl.no/Adolf_Hitler)",
+          "Enstad, J. D. (2025). *Østfronten*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Østfronten](https://snl.no/%C3%98stfronten)",
+          "Greve, T. (2026). *Neville Chamberlain*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Neville_Chamberlain](https://snl.no/Neville_Chamberlain)",
+          "Greve, T. & Stachurska-Kounta, M. (2025). *Folkeforbundet*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Folkeforbundet](https://snl.no/Folkeforbundet)",
+          "Hatlehol, G. D. (2025a). *Andre verdenskrig*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/andre_verdenskrig](https://snl.no/andre_verdenskrig)",
+          "Hatlehol, G. D. (2025b). *Dolkestøtlegenden*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/dolkestøtlegenden](https://snl.no/dolkest%C3%B8tlegenden)",
+          "Seim, J. & Lundbo, S. (2025). *Polens historie*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Polens_historie](https://snl.no/Polens_historie)"
+        ]
+      }
     }
   ],
   "createdDate": "2023-01-01T12:00:00Z",
-  "lastUpdated": "2025-12-21T15:10:00Z"
+  "lastUpdated": "2026-07-24T00:00:00Z"
 }

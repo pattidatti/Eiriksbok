@@ -4,7 +4,7 @@
   "subject": "historie",
   "topic": "andre-verdenskrig",
   "layout": "rich",
-  "year": "1945–1991",
+  "year": "1945-1991",
   "category": "Konsekvenser",
   "readTime": "20 min lesning",
   "heroImage": "/images/historie/andre-verdenskrig/konsekvenser_hero.webp",
@@ -27,7 +27,7 @@
     },
     {
       "type": "text",
-      "content": "Krigens store vinnere var USA og Sovjetunionen. De gamle europeiske stormaktene, Storbritannia, Frankrike og Tyskland, var enten knust eller økonomisk utslitt. USA og Sovjetunionen sto for to helt ulike ideologier: kapitalistisk demokrati i vest og kommunistisk diktatur i øst. Mistilliten mellom dem vokste raskt.\n\nStalin sørget for å installere kommunistiske lydriker i landene den røde armé hadde frigjort i Øst-Europa (Polen, Ungarn, Tsjekkoslovakia, etc.). Tyskland ble delt i to: Vest-Tyskland (alliert med USA) og Øst-Tyskland (kontrollert av Sovjet). Den britiske statsministeren Winston Churchill erklærte i 1946 at et «jernteppe» hadde senket seg over Europa. Verden var delt i to blokker, og en langvarig maktkamp var i gang."
+      "content": "Krigens store vinnere var USA og Sovjetunionen. Etter krigen var det ingen andre land som kunne måle seg med dem, verken militært eller politisk (Petersen, 2026a). De gamle europeiske stormaktene, Storbritannia, Frankrike og Tyskland, var enten knust eller økonomisk utslitt. USA og Sovjetunionen sto for to helt ulike ideologier: kapitalistisk demokrati i vest og kommunistisk diktatur i øst. Mistilliten mellom dem vokste raskt.\n\nI landene den røde armé hadde frigjort i Øst-Europa, som Polen, Ungarn og Tsjekkoslovakia, satt lokale kommunister i regjering, men det var sovjetiske okkupasjonssoldater som hadde den virkelige makten (Petersen, 2026a). Tyskland ble delt i to: Vest-Tyskland (alliert med USA) og Øst-Tyskland (kontrollert av Sovjet). Den britiske statsministeren Winston Churchill brukte i 1946 for første gang ordet «jernteppe» om delingen av Europa, i en tale i Fulton i USA (Petersen, 2026b). Verden var delt i to blokker, og en langvarig maktkamp var i gang."
     },
     {
       "type": "component",
@@ -58,7 +58,7 @@
     },
     {
       "type": "text",
-      "content": "For å unngå feilene fra Folkeforbundet, ble De forente nasjoner (FN) grunnlagt i San Francisco i 1945. Målet var å sikre verdensfreden gjennom internasjonalt samarbeid. I kjølvannet av Holocausts redsler vedtok FN i 1948 Verdenserklæringen om menneskerettighetene. For første gang ble det slått fast at alle mennesker har visse rettigheter som ingen stat kan ta fra dem. Begreper som «forbrytelser mot menneskeheten» og «folkemord» ble del av internasjonal lov, og naziledere ble stilt for retten og dømt under Nürnbergprosessene."
+      "content": "For å unngå feilene fra Folkeforbundet møttes statene i San Francisco våren 1945 og forhandlet fram FN-pakten. De forente nasjoner (FN) ble til, og det viktigste målet var å bevare internasjonal fred og sikkerhet (Knudsen mfl., 2025). I kjølvannet av krigens overgrep mot sivile og folkemordet på jøder og andre minoriteter vedtok FN 10. desember 1948 Verdenserklæringen om menneskerettighetene (FN-sambandet, 2025). For første gang ble det slått fast at alle mennesker har visse rettigheter som ingen stat kan ta fra dem. Naziledere ble stilt for retten under Nürnbergprosessene, blant annet tiltalt for «forbrytelser mot menneskeheten». Tolv av dem ble dømt til døden, mens sju fikk fengselsstraff (Sæveraas, 2025)."
     },
     {
       "type": "header",
@@ -66,7 +66,7 @@
     },
     {
       "type": "text",
-      "content": "Krigen ble dødsstøtet for de europeiske kolonirikene. Storbritannia og Frankrike var for svake til å holde på sine imperier, og myten om den hvite manns overlegenhet var knust. Soldater fra India og Afrika hadde kjempet og dødd for frihet i Europa, og nå krevde de frihet hjemme. I årene etter krigen ble store land som India (1947), Indonesia (1949) og en rekke afrikanske stater selvstendige. Denne avkoloniseringen endret verdenskartet totalt."
+      "content": "Krigen ble dødsstøtet for de europeiske kolonirikene. Storbritannia og Frankrike hadde lidd store tap av både mennesker og materiell, og anseelsen deres fikk seg en knekk da Japan raskt tok de europeiske koloniene i Sørøst-Asia i 1942 (Eriksen, 2026). Millioner av indere og afrikanere hadde kjempet i krigen og håpet på reformer eller selvstyre som takk for innsatsen. I årene etter krigen ble store land som India (1947), Indonesia (1949) og en rekke afrikanske stater selvstendige (Eriksen, 2026). Denne avkoloniseringen endret verdenskartet totalt."
     },
     {
       "type": "header",
@@ -74,7 +74,7 @@
     },
     {
       "type": "text",
-      "content": "USA innså at fattigdom og nød var grobunn for kommunisme og ekstremisme. I 1948 lanserte utenriksminister George Marshall en enorm økonomisk hjelpepakke for å gjenreise Europa. Marshallhjelpen ga milliarder av dollar til gjenoppbygging av industri og infrastruktur i Vest-Europa. Dette bidro til en rask økonomisk vekst og styrket samholdet mellom de vestlige landene, men det forsterket også splittelsen med Sovjetunionen, som nektet østblokklandene å ta imot hjelpen."
+      "content": "USA innså at fattigdom og nød var grobunn for kommunisme og ekstremisme. Utenriksminister George Marshall la fram tanken om en stor hjelpepakke i en tale ved Harvard-universitetet 5. juni 1947, og Kongressen vedtok planen i april 1948 (Pharo, 2026). Fra 1948 til utgangen av 1951 overførte USA 13,2 milliarder dollar til Europa i lån og gaver, som gikk til å bygge opp igjen industri og infrastruktur. Seksten land tok imot hjelpen, blant dem Norge (Pharo, 2026). Dette bidro til en rask økonomisk vekst og styrket samholdet mellom de vestlige landene, men det forsterket også splittelsen med Sovjetunionen. Sovjet brøt forhandlingene i Paris og presset Polen og Tsjekkoslovakia til å takke nei til invitasjonen."
     },
     {
       "type": "header",
@@ -82,7 +82,7 @@
     },
     {
       "type": "text",
-      "content": "For Norge førte krigen til et brudd med den gamle nøytralitetspolitikken. Erfaringen fra 9. april 1940 viste at nøytralitet ikke beskytter mot en aggressiv stormakt. Norge valgte derfor å søke sikkerhet i allianse med vestmaktene, og ble et av de stiftende medlemmene i forsvarsalliansen NATO i 1949. Landet gikk inn i en periode med sterk statlig styring og oppbygging av velferdsstaten, ofte under mottoet «Aldri mer 9. april»."
+      "content": "For Norge førte krigen til et brudd med den gamle nøytralitetspolitikken. Erfaringen fra 9. april 1940 viste at nøytralitet ikke beskytter mot en aggressiv stormakt. Norge valgte derfor å søke sikkerhet i allianse med vestmaktene, og var med da forsvarsalliansen NATO ble grunnlagt med Atlanterhavspakten 4. april 1949 (Cooper & Hilde, 2026). Landet gikk inn i en periode med sterk statlig styring og oppbygging av velferdsstaten, ofte under mottoet «Aldri mer 9. april»."
     },
     {
         "type": "component",
@@ -92,11 +92,11 @@
                 "Hvilke to land ble de store vinnerne etter andre verdenskrig, og hvilke ideologier sto de for?",
                 "Hva mente Winston Churchill med at et «jernteppe» hadde senket seg over Europa i 1946?",
                 "Hvorfor ble FN grunnlagt i 1945, og hva vedtok FN i 1948 for å beskytte enkeltmennesket?",
-                "Hva var Marshallhjelpen, og hvilke land fikk lov til å ta imot den?"
+                "Hva var Marshallhjelpen, og hvilke to land ble presset av Sovjetunionen til å takke nei til den?"
             ],
             "reflekter": [
                 "Forklar hvorfor USA mente at fattigdom og nød i Europa kunne føre til mer kommunisme, og hvordan Marshallhjelpen skulle stoppe dette.",
-                "Krigen ble kalt «dødsstøtet» for de europeiske kolonirikene. Forklar hvordan soldater fra India og Afrika var med på å svekke myten om den hvite manns overlegenhet.",
+                "Krigen ble kalt «dødsstøtet» for de europeiske kolonirikene. Forklar hvordan innsatsen til millioner av indiske og afrikanske soldater gjorde det vanskeligere for Storbritannia og Frankrike å holde på koloniene sine.",
                 "Hvorfor valgte Norge å gi opp nøytralitetspolitikken og bli med i NATO i 1949? Bruk erfaringen fra 9. april 1940 i svaret ditt.",
                 "Sammenlign Vestblokken og Østblokken slik artikkelen beskriver dem. Hvilke forskjeller i styresett og økonomi gjorde det vanskelig for de to sidene å stole på hverandre?"
             ],
@@ -106,8 +106,24 @@
                 "Diskuter med en partner: Var det klokt av USA å bruke milliarder på å gjenreise Vest-Europa, eller burde pengene vært brukt på noe annet? Argumenter for begge sider."
             ]
         }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Cooper, C. G. & Hilde, P. S. (2026). *NATO*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/NATO](https://snl.no/NATO)",
+          "Eriksen, T. L. (2026). *Avkolonisering*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/avkolonisering](https://snl.no/avkolonisering)",
+          "FN-sambandet. (2025). *FNs verdenserklæring om menneskerettigheter*. Hentet 24.07.2026 fra [fn.no](https://www.fn.no/om-fn/avtaler/menneskerettigheter/fns-verdenserklaering-om-menneskerettigheter)",
+          "Knudsen, O. F., Ravndal, E. J. & FN-sambandet. (2025). *FN (Forente nasjoner)*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Forente_nasjoner](https://snl.no/Forente_nasjoner)",
+          "Petersen, T. (2026a). *Den kalde krigen*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/den_kalde_krigen](https://snl.no/den_kalde_krigen)",
+          "Petersen, T. (2026b). *Jernteppet*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/jernteppet](https://snl.no/jernteppet)",
+          "Pharo, H. (2026). *Marshallplanen*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Marshallplanen](https://snl.no/Marshallplanen)",
+          "Sæveraas, T. E. (2025). *Nürnbergprosessen*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Nürnbergprosessen](https://snl.no/N%C3%BCrnbergprosessen)"
+        ]
+      }
     }
   ],
   "createdDate": "2025-12-21T15:40:00Z",
-  "lastUpdated": "2025-12-21T15:40:00Z"
+  "lastUpdated": "2026-07-24T00:00:00Z"
 }
