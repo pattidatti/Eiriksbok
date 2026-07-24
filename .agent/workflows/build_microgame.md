@@ -280,6 +280,11 @@ dem av konstruksjon.
 - **`Seascape`** (`kit`) for sjø-scener i stedet for en løs `WaterPlane` + hånd-tunede båt-Y-verdier.
   `Seascape` eier ÉN vannlinje (`waterY`) og vann-utstrekningen; plasser båter mot `waterY`. I DEV
   varsler `Boat` i konsollen hvis den havner utenfor vannet (på land) eller langt fra vannlinja.
+- **`Shoreline`** (`kit`) for scener med BÅDE land og hav (havn, kyst, elvebredd): den eier
+  kystlinja (`splitX`) og legger land og vann på hver sin side - de kan aldri overlappe. Legg aldri
+  en hånd-plassert `WaterPlane` delvis over land; det var slik Hansakoggen fikk hus i sjøen.
+- **`FlatRing`** (`kit`) for alle ringer som skal LIGGE (markører, gulvskiller, arenaringer). Rå
+  `torusGeometry` står i XY-planet som standard og blir en stående bøyle uten eksplisitt rotasjon.
 
 ```tsx
 // Riktig: sjø-scene med Seascape, båt seiler mot havna (+X).
@@ -328,17 +333,21 @@ Sjekk hver av disse eksplisitt i din egen kode FØR du rendrer:
 9. **Norsk:** å/ø/æ overalt (aldri aa/oe/ae), aldri tankestrek - bruk bindestrek. Gjelder også
    registry-beskrivelsen.
 
-### Obligatorisk selv-verifisering (før PR åpnes)
+### Obligatorisk selv-verifisering: FIKS-TIL-GRØNN-LØKKE (før PR åpnes)
+
+Målet er ikke å "bestå en sjekk" - det er at spillet er RIKTIG første gang det når en elev.
+Verifiseringen er derfor en løkke, ikke et punkt:
 
 1. Kjør `node scripts/audit-microgames.mjs --ids <din-id> --strict`. Den rendrer spillet på
    `/mikrospill/<id>` (og ekspanderer rammen), tar skjermbilder til `.screenshots/microgames/<id>/`,
-   fanger konsollvarsler OG kjører den mekaniske scene-revisjonen (modell utenfor utsnittet,
-   begravd geometri). **Exit-kode 1 = du er ikke ferdig.**
+   fanger konsollvarsler OG kjører den mekaniske scene-revisjonen (innramming, begravd geometri).
 2. SE på skjermbildene med egne øyne mot feilklassene over - fra flere frames, ikke ett.
 3. Spill gjennom til målskjermen (klikk/dra i Playwright eller manuelt) - inkludert minst ett
    FEIL svar/slipp der spillet har det.
-4. CI-porten `.github/workflows/microgame-audit.yml` kjører samme audit på PR-en og blokkerer
-   auto-merge hvis noe flagges - så det du hopper over her, stopper deg der.
+4. **Fant du noe (exit 1, vakthund-varsel, eller noe som ser galt ut på bildene): fiks det og gå
+   til punkt 1 igjen. Gjenta til alt er grønt OG ser riktig ut.** Åpne aldri PR med kjente funn -
+   CI-porten `.github/workflows/microgame-audit.yml` kjører samme audit og er kun et sikkerhetsnett
+   som aldri skal trenge å slå ut.
 
 ---
 

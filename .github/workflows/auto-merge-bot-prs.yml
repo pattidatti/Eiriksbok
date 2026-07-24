@@ -99,6 +99,49 @@ jobs:
               echo "PR #$PR er CONFLICTING - varslet, hopper over"; echo "::endgroup::"; continue
             fi
 
+            # Rører PR-en mikrospill, kjører Mikrospill-audit-workflowen på den.
+            # Vent på resultatet (maks ~12 min): grønn -> merge som vanlig,
+            # rød -> IKKE merge stille; kommenter funnene så neste rutinekjøring
+            # (eller et menneske) fikser spillet. Uten denne ventingen merger vi
+            # før sjekken er ferdig, og porten er dekorativ.
+            # Rører PR-en mikrospill-filer, SKAL det finnes en audit-sjekk -
+            # "ingen sjekk ennå" betyr da "venter", ikke "fritt fram".
+            MGFILES=$(gh pr view "$PR" --repo "$REPO" --json files -q '.files[].path' 2>/dev/null \
+              | grep -c '^src/components/microgames/' || true)
+            AUDIT="NONE"
+            for i in $(seq 1 24); do
+              # NB: gh pr checks returnerer exit 1 når sjekker feiler - hent
+              # derfor med `|| true` og tolk separat, ellers ser en RØD sjekk
+              # ut som "ingen sjekk" (og merges). Tabellformat: navn<TAB>status
+              # der status er pass/fail/pending/skipping.
+              CHECKS=$(gh pr checks "$PR" --repo "$REPO" 2>/dev/null || true)
+              AUDITLINES=$(printf '%s\n' "$CHECKS" | grep -i 'audit' || true)
+              if [ -z "$AUDITLINES" ]; then
+                AUDIT="NONE"
+              elif printf '%s\n' "$AUDITLINES" | grep -qiE '(^|[[:space:]])fail'; then
+                AUDIT="FAILURE"
+              elif printf '%s\n' "$AUDITLINES" | grep -qiE '(^|[[:space:]])(pending|queued|in_progress|expected)'; then
+                AUDIT="PENDING"
+              else
+                AUDIT="SUCCESS"
+              fi
+              if [ "$AUDIT" = "NONE" ] && [ "${MGFILES:-0}" -gt 0 ]; then
+                AUDIT="PENDING"
+              fi
+              echo "PR #$PR: audit=$AUDIT (forsøk $i)"
+              [ "$AUDIT" != "PENDING" ] && break
+              sleep 30
+            done
+            if [ "$AUDIT" = "FAILURE" ]; then
+              gh pr comment "$PR" --repo "$REPO" --body \
+                "Auto-merge venter: Mikrospill-audit fant feil i dette spillet (se sjekken for skjermbilder og funn). Fiks funnene og push til branchen - da merges PR-en automatisk når sjekken er grønn. Målet er at spillet er riktig FØR det når elevene."
+              echo "PR #$PR: audit rød - varslet, hopper over"; echo "::endgroup::"; continue
+            fi
+            if [ "$AUDIT" = "PENDING" ]; then
+              echo "PR #$PR: audit fortsatt ikke ferdig - prøver igjen ved neste kjøring"
+              echo "::endgroup::"; continue
+            fi
+
             # Direkte squash-merge (IKKE --auto). Verifiser at den faktisk ble merget.
             gh pr merge "$PR" --repo "$REPO" --squash --delete-branch 2>&1 | tail -3 || true
             SHA=$(gh pr view "$PR" --repo "$REPO" --json mergeCommit -q '.mergeCommit.oid // empty')

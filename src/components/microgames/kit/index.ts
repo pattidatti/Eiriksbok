@@ -25,6 +25,8 @@ export {
     GroundPlane,
     WaterPlane,
     Seascape,
+    Shoreline,
+    FlatRing,
     Building,
     Tree,
     Figure,

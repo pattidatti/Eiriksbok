@@ -45,6 +45,31 @@ export function GroundPlane({
     );
 }
 
+// --- Flat ring PÅ bakken (markør, gulvskille, arena-ring) ---
+// Ligger alltid ned. Bruk denne i stedet for rå torusGeometry - torus står i
+// XY-planet som standard, og "stående gulvringer" var en gjenganger-feil
+// (Colosseums etasjeringer sto som bøyler rundt bygget).
+export function FlatRing({
+    position = [0, 0.01, 0],
+    radius = 1,
+    tube = 0.06,
+    color = '#e3b23c',
+    segments = 32,
+}: {
+    position?: [number, number, number];
+    radius?: number;
+    tube?: number;
+    color?: string;
+    segments?: number;
+}) {
+    return (
+        <mesh position={position} rotation={[Math.PI / 2, 0, 0]}>
+            <torusGeometry args={[radius, tube, 8, segments]} />
+            <meshStandardMaterial color={color} roughness={0.7} />
+        </mesh>
+    );
+}
+
 // --- Vannflate med svak skimring ---
 export function WaterPlane({
     position = [0, 0.02, 0],
@@ -114,6 +139,67 @@ export function Seascape({
     return (
         <SeascapeContext.Provider value={info}>
             <WaterPlane position={[px, surfaceY, pz]} size={size} color={color} />
+            {children}
+        </SeascapeContext.Provider>
+    );
+}
+
+// --- Shoreline: land/hav-scene med ÉN sannhet for kystlinja ---
+// Hansakoggen-fellen: hånd-lagt WaterPlane som dekket hele land-siden, med hus
+// "i sjøen" og skip oppå kaia. Shoreline eier skillet: land på den ene siden av
+// `splitX`, hav på den andre - de kan aldri overlappe. Registrerer vann-bounds i
+// SeascapeContext, så kit-Boat sin DEV-vakthund (båt på land / feil vannlinje)
+// virker. Plasser landting med x på landsiden og båter mot `waterY` på havsiden.
+export function Shoreline({
+    splitX = 0,
+    size = [44, 40],
+    waterY = 0.02,
+    landColor = '#7aa84f',
+    seaColor = '#3d7fa6',
+    landSide = 'west',
+    children,
+}: {
+    /** Kystlinjas x-koordinat: land på én side, hav på den andre. */
+    splitX?: number;
+    /** Total [bredde (x), dybde (z)] for hele scenen, sentrert rundt x=0/z=0. */
+    size?: [number, number];
+    /** Vannlinje i world-Y. Plasser båter her. */
+    waterY?: number;
+    landColor?: string;
+    seaColor?: string;
+    /** 'west' = land der x < splitX (default), 'east' = land der x > splitX. */
+    landSide?: 'west' | 'east';
+    children?: React.ReactNode;
+}) {
+    const [w, d] = size;
+    const west = landSide === 'west';
+    const landW = west ? splitX + w / 2 : w / 2 - splitX;
+    const seaW = w - landW;
+    const landCx = west ? splitX - landW / 2 : splitX + landW / 2;
+    const seaCx = west ? splitX + seaW / 2 : splitX - seaW / 2;
+    const info = useMemo<SeascapeInfo>(
+        () => ({
+            waterY,
+            bounds: {
+                x: west ? [splitX, splitX + seaW] : [splitX - seaW, splitX],
+                z: [-d / 2, d / 2],
+            },
+        }),
+        [waterY, splitX, seaW, west, d]
+    );
+    return (
+        <SeascapeContext.Provider value={info}>
+            {/* Landflate (kun på landsiden) */}
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[landCx, -0.02, 0]} receiveShadow>
+                <planeGeometry args={[landW, d]} />
+                <meshStandardMaterial color={landColor} roughness={1} />
+            </mesh>
+            {/* Havbunn under vannet (så kanten aldri viser bakgrunnen) */}
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[seaCx, -0.06, 0]}>
+                <planeGeometry args={[seaW, d]} />
+                <meshStandardMaterial color="#2d5d7a" roughness={1} />
+            </mesh>
+            <WaterPlane position={[seaCx, waterY, 0]} size={[seaW, d]} color={seaColor} />
             {children}
         </SeascapeContext.Provider>
     );
