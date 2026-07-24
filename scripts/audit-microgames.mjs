@@ -139,8 +139,19 @@ for (const id of ids) {
             await page.screenshot({ path: path.join(dir, `frame-${f + 1}.png`) });
             if (f < FRAMES - 1) await page.waitForTimeout(gapMs);
         }
+
+        // Mekanisk selvrevisjon fra kit/MicroCanvas (modell utenfor utsnittet,
+        // begravd geometri). Finnes bare når spillet har en MicroCanvas.
+        entry.sceneWarnings = await page
+            .evaluate(() => (window.__microSceneAudit ? window.__microSceneAudit() : []))
+            .catch(() => []);
+
         entry.ok = true;
-        console.log(`✓ ${id}  (${warnings.length} advarsler, ${errors.length} feil)`);
+        console.log(
+            `✓ ${id}  (${warnings.length} advarsler, ${errors.length} feil, ${
+                (entry.sceneWarnings ?? []).length
+            } scene-funn)`
+        );
     } catch (e) {
         entry.error = String(e.message || e);
         console.log(`✗ ${id}  ${entry.error}`);
@@ -158,7 +169,11 @@ for (const id of ids) {
 
 // Ranger etter mistanke: flest (feil, så advarsler) øverst, deretter render-feil.
 summary.sort((a, b) => {
-    const score = (x) => (x.ok ? 0 : 1000) + x.errors.length * 10 + x.warnings.length;
+    const score = (x) =>
+        (x.ok ? 0 : 1000) +
+        x.errors.length * 10 +
+        x.warnings.length +
+        (x.sceneWarnings?.length ?? 0) * 5;
     return score(b) - score(a);
 });
 mkdirSync(outDir, { recursive: true });
@@ -173,7 +188,23 @@ if (serverProc) {
     }
 }
 
-const flagged = summary.filter((s) => !s.ok || s.errors.length || s.warnings.length);
+const flagged = summary.filter(
+    (s) => !s.ok || s.errors.length || s.warnings.length || (s.sceneWarnings?.length ?? 0)
+);
 console.log(`\nFerdig. Skjermbilder i ${outDir}`);
-console.log(`${flagged.length}/${summary.length} spill flagget (render-feil eller konsoll-varsler).`);
+console.log(
+    `${flagged.length}/${summary.length} spill flagget (render-feil, konsoll-varsler eller scene-funn).`
+);
 console.log('Se _audit-summary.json (rangert) og gå gjennom skjermbildene for de øverste.');
+for (const s of flagged) {
+    for (const w of s.sceneWarnings ?? []) console.log(`  ${s.id}: ${w}`);
+    for (const w of s.warnings) console.log(`  ${s.id}: ${w}`);
+    for (const e of s.errors) console.log(`  ${s.id}: FEIL ${e}`);
+}
+
+// --strict: brukes av CI-porten (.github/workflows/microgame-audit.yml). Et
+// flagget spill skal STOPPE auto-merge - det er hele poenget med porten.
+if (args.includes('--strict') && flagged.length) {
+    console.error(`\n--strict: ${flagged.length} spill flagget - feiler.`);
+    process.exit(1);
+}

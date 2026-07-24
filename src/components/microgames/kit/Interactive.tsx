@@ -63,6 +63,17 @@ export const Interactive: React.FC<InteractiveProps> = ({
         };
     }, []);
 
+    // Blir noden disabled MENS musa svever over den, fyres aldri pointerOut -
+    // nullstill hover og cursor selv, ellers henger pekefingeren igjen.
+    useEffect(() => {
+        if (disabled && hovered) {
+            setHovered(false);
+            onHover?.(false);
+            document.body.style.cursor = '';
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [disabled]);
+
     useFrame((_, dt) => {
         if (!group.current) return;
         const targetScale = (lifted ? hoverScale : 1) * scale;
@@ -83,22 +94,30 @@ export const Interactive: React.FC<InteractiveProps> = ({
             position={position}
             rotation={rotation}
             onClick={(e: ThreeEvent<MouseEvent>) => {
-                e.stopPropagation();
+                // Disabled: IKKE stopPropagation - da svelger en død node klikk
+                // som var ment for en aktiv nabo bak den (Azincourt-fellen).
                 if (disabled) return;
+                e.stopPropagation();
                 if (sound) microSfx.play(sound);
                 onSelect?.();
             }}
             onPointerOver={(e: ThreeEvent<PointerEvent>) => {
+                if (disabled) return;
                 e.stopPropagation();
                 setHover(true);
             }}
             onPointerOut={(e: ThreeEvent<PointerEvent>) => {
+                if (disabled) return;
                 e.stopPropagation();
                 setHover(false);
             }}
         >
             {hitArea && (
-                <mesh>
+                <mesh
+                    // Disabled node skal være usynlig for raycasteren, ellers
+                    // skygger den store klikkflata for naboene.
+                    raycast={disabled ? () => null : undefined}
+                >
                     <boxGeometry args={hitArea} />
                     <meshBasicMaterial transparent opacity={0} depthWrite={false} />
                 </mesh>

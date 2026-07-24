@@ -301,10 +301,44 @@ import { Seascape, Boat, faceAlong } from './kit';
 - **Ingenting flyter eller synker.** Alt som skal stå på bakken har bunnen ved bakkenivå; alt som
   flyter ligger ved `waterY`. Sjekk i preview at det ikke er luft under eller topp under vann.
 
-**Revider deg selv visuelt før du er ferdig:** `node scripts/audit-microgames.mjs --ids <din-id>`
-rendrer spillet på `/mikrospill/<id>`, tar skjermbilder (front + orbit) til
-`.screenshots/microgames/<id>/` og fanger DEV-vakthundens advarsler. Se på bildene: vender seilet
-mot seilretningen? Ligger båten på vann? Er noe skjevt eller svevende? Rett det før PR åpnes.
+### Feilklassene fra storrevisjonen 2026-07-24 (36 av 41 spill hadde minst én)
+
+Sjekk hver av disse eksplisitt i din egen kode FØR du rendrer:
+
+1. **Svevende/begravde objekter.** Alt fluktes mot faktisk underlag: bunn = underlagets topp.
+   NB: `GroundPlane` ligger på y=-0.02; flukt mot 0-planet. Objekter oppå øyer/plattformer skal
+   stå på PLATÅHØYDEN, ikke y=0.
+2. **Three.js-defaults:** `cylinderGeometry` står langs Y, `torusGeometry` står i XY-planet,
+   `planeGeometry` står vertikalt. Alt som skal LIGGE (ringer, skrog, akslinger, gulvflater) må
+   roteres eksplisitt.
+3. **Vann-utstrekning:** regn ut WaterPlane/Seascape sine x/z-intervaller og sammenlign med hver
+   bygning/rekvisitt. Vann skal aldri dekke land-props, og båter skal ha litt dypgang - aldri stå
+   oppå kai eller sveve over vannflata.
+4. **`scale.y = 0` skjuler IKKE en boks** - den tegnes som et flatt kort. Bruk `visible={false}` +
+   sett `visible` i takt med skalaen.
+5. **Kamera:** hele modellen i utsnittet, og det FØRSTE oppgave-elementet synlig, uklippet og ikke
+   gjemt bak annen geometri fra startkameraet. Med `controls: false` sikter kameraet nå mot
+   `target` - men verifiser innramming visuelt.
+6. **Soft-lock:** `SceneQuiz` er engangs. Kall `onComplete` uansett svar (f.eks. score 1 ved
+   riktig, 0.7 ved feil) - aldri kun ved riktig.
+7. **Tettstilte klikkemål:** gi kun det AKTIVE målet stor `hitArea` (kit-`Interactive` slipper nå
+   raycasts gjennom disabled noder, men store permanente hitAreas skygger fortsatt visuelt).
+8. **`WinScreen` skal i scaffoldens `children`** (kontrollfeltet under vinduet) - aldri i
+   `overlays`, der klippes den usynlig bort.
+9. **Norsk:** å/ø/æ overalt (aldri aa/oe/ae), aldri tankestrek - bruk bindestrek. Gjelder også
+   registry-beskrivelsen.
+
+### Obligatorisk selv-verifisering (før PR åpnes)
+
+1. Kjør `node scripts/audit-microgames.mjs --ids <din-id> --strict`. Den rendrer spillet på
+   `/mikrospill/<id>` (og ekspanderer rammen), tar skjermbilder til `.screenshots/microgames/<id>/`,
+   fanger konsollvarsler OG kjører den mekaniske scene-revisjonen (modell utenfor utsnittet,
+   begravd geometri). **Exit-kode 1 = du er ikke ferdig.**
+2. SE på skjermbildene med egne øyne mot feilklassene over - fra flere frames, ikke ett.
+3. Spill gjennom til målskjermen (klikk/dra i Playwright eller manuelt) - inkludert minst ett
+   FEIL svar/slipp der spillet har det.
+4. CI-porten `.github/workflows/microgame-audit.yml` kjører samme audit på PR-en og blokkerer
+   auto-merge hvis noe flagges - så det du hopper over her, stopper deg der.
 
 ---
 

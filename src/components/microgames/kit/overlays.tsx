@@ -188,6 +188,9 @@ export function ScoreHUD({
 }
 
 // Vinn-skjerm med trofé, tittel, brødtekst og reset (+ valgfri "gå videre").
+// Skal ligge i scaffoldens `children` (kontrollfeltet under vinduet) - IKKE i
+// `overlays`: der er den en flow-div inne i overflow-hidden-canvasen og klippes
+// usynlig bort (Argumentbroen-fellen). DEV-vakthunden under sier ifra.
 export function WinScreen({
     title,
     children,
@@ -199,8 +202,17 @@ export function WinScreen({
     onReplay?: () => void;
     onNext?: () => void;
 }) {
+    const guard = React.useRef<HTMLDivElement>(null);
+    React.useEffect(() => {
+        if (import.meta.env.DEV && guard.current?.closest('[data-mg-overlays]')) {
+            console.warn(
+                '[kit/WinScreen] er montert i `overlays` og klippes bort av canvasen - flytt den til scaffoldens children.'
+            );
+        }
+    }, []);
     return (
         <motion.div
+            ref={guard}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: 'spring', stiffness: 240, damping: 22 }}

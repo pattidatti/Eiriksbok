@@ -21,6 +21,9 @@ interface MicroGameBlockProps {
 
 export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockProps) {
     const entry = gameId ? getMicroGame(gameId) : undefined;
+    // Flere spill kaller onComplete både ved seier og i WinScreen "Gå videre" -
+    // dedupliser så én seier aldri gir dobbel XP. (Må stå før early return.)
+    const completedOnce = React.useRef(false);
 
     if (!entry) {
         return (
@@ -40,6 +43,10 @@ export function MicroGameBlock({ gameId, onComplete, ...rest }: MicroGameBlockPr
     // sin egen vinn/feedback-skjerm; vi rapporterer fullføring til «Min læring»
     // og kaller ev. onComplete sendt inn for analytics.
     const handleComplete = (result: MicroGameResult) => {
+        if (result.completed) {
+            if (completedOnce.current) return;
+            completedOnce.current = true;
+        }
         useProgressStore.getState().recordActivity({
             kind: 'microgame-played',
             activityId: `microgame/${gameId}`,

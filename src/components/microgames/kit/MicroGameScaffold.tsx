@@ -70,7 +70,9 @@ export const MicroGameScaffold: React.FC<MicroGameScaffoldProps> = ({
                             boxShadow: 'inset 0 0 90px 10px rgba(15,23,42,0.18)',
                         }}
                     />
-                    {overlays}
+                    {/* data-mg-overlays: lar kit-komponenter (WinScreen) oppdage at
+                        de feilaktig er montert inne i canvas-vinduet og varsle. */}
+                    <div data-mg-overlays="">{overlays}</div>
                 </div>
 
                 {/* Kontroller under vinduet */}

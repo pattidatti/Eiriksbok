@@ -20,17 +20,25 @@ function variate(seed: number | undefined, spread: number): number {
 }
 
 // --- Bakkeplan ---
+// NB: ligger på y = -0.02 (position[1]-offset), ikke 0 - flukt ting mot 0-planet,
+// ikke mot denne. `position` lar delte land/hav-scener legge bakken der landet er.
 export function GroundPlane({
     size = 44,
     depth = 34,
     color = '#7aa84f',
+    position = [0, 0, 0],
 }: {
     size?: number;
     depth?: number;
     color?: string;
+    position?: [number, number, number];
 }) {
     return (
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]} receiveShadow>
+        <mesh
+            rotation={[-Math.PI / 2, 0, 0]}
+            position={[position[0], position[1] - 0.02, position[2]]}
+            receiveShadow
+        >
             <planeGeometry args={[size, depth]} />
             <meshStandardMaterial color={color} roughness={1} />
         </mesh>

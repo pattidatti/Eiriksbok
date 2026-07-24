@@ -1,0 +1,48 @@
+# CI-port for mikrospill: rendrer berørte spill headless og feiler PR-en ved
+# konsollfeil, kit-vakthund-varsler eller scene-funn (modell utenfor utsnittet,
+# begravd geometri). Stopper auto-merge av cron-genererte spill med kjente
+# feilklasser - i stedet for at de oppdages ved manuell etterrevisjon.
+name: Mikrospill-audit
+
+on:
+  pull_request:
+    paths:
+      - 'src/components/microgames/**'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Installer avhengigheter
+        run: npm ci
+
+      - name: Installer Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Finn berørte spill-id-er
+        id: ids
+        run: |
+          BASE=$(git merge-base "origin/${{ github.base_ref }}" HEAD)
+          node scripts/changed-microgame-ids.mjs "$BASE" >> "$GITHUB_OUTPUT"
+
+      - name: Kjør audit (strict)
+        if: steps.ids.outputs.ids != ''
+        run: node scripts/audit-microgames.mjs --ids "${{ steps.ids.outputs.ids }}" --strict --frames 3
+
+      - name: Last opp skjermbilder ved feil
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: microgame-audit-skjermbilder
+          path: .screenshots/microgames
+          retention-days: 7

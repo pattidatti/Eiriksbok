@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls, PerformanceMonitor, ContactShadows } from '@react-three/drei';
 import { useReducedMotion } from 'framer-motion';
+import * as THREE from 'three';
 
 // Standardisert R3F-Canvas for mikrospill. Kapsler lyssetting, skygger, fog,
 // bakgrunn og en trygg OrbitControls-preset slik at ALLE mikrospill får samme
@@ -79,6 +80,99 @@ export interface MicroCanvasProps {
     shadowY?: number;
 }
 
+// Uten OrbitControls er det ingen som sikter kameraet - da må vi selv rette det
+// mot `target`, ellers ignoreres proppen stille og scenen ligger skjevt i bildet.
+function StaticCameraAim({ target }: { target: [number, number, number] }) {
+    const camera = useThree((s) => s.camera);
+    useEffect(() => {
+        camera.lookAt(target[0], target[1], target[2]);
+    }, [camera, target]);
+    return null;
+}
+
+// Mekanisk selvrevisjon: eksponerer window.__microSceneAudit() som harnessen
+// (scripts/audit-microgames.mjs) og CI-porten kaller. Fanger de to vanligste
+// feilklassene fra storrevisjonen 2026-07-24 maskinelt: modell utenfor
+// kamerautsnittet og geometri langt under origo (begravd). Terreng-/vannplan
+// (svært brede mesh) holdes utenfor målingen.
+function SceneAuditProbe() {
+    const scene = useThree((s) => s.scene);
+    const camera = useThree((s) => s.camera);
+    useEffect(() => {
+        const w = window as unknown as { __microSceneAudit?: () => string[] };
+        w.__microSceneAudit = () => {
+            const warnings: string[] = [];
+            const model = new THREE.Box3();
+            const tmp = new THREE.Box3();
+            let meshCount = 0;
+            scene.updateMatrixWorld(true);
+            scene.traverse((o) => {
+                const m = o as THREE.Mesh;
+                if (!m.isMesh || !m.visible || !m.geometry) return;
+                meshCount++;
+                tmp.setFromObject(m);
+                if (tmp.isEmpty()) return;
+                // Parkerte pool-objekter (partikler o.l. gjemmes ofte på y≈-999)
+                // er ikke scene-innhold - hold dem utenfor målingen.
+                if (tmp.max.y < -50) return;
+                const sx = tmp.max.x - tmp.min.x;
+                const sz = tmp.max.z - tmp.min.z;
+                if (sx > 26 || sz > 26) return; // bakke/hav - ikke "modellen"
+                model.union(tmp);
+            });
+            if (meshCount === 0) {
+                warnings.push('[scene-audit] ingen synlige mesh i scenen');
+                return warnings;
+            }
+            if (!model.isEmpty()) {
+                // Terskel -5: noen spill senker innhold bevisst (skip som synker
+                // i Fimreite ligger på ~-4.5). Sjekken skal kun ta det groteske.
+                if (model.min.y < -5) {
+                    warnings.push(
+                        `[scene-audit] geometri ned til y=${model.min.y.toFixed(1)} - begravd under bakken?`
+                    );
+                }
+                // Punktprøve: prosjiser et 3x3x3-rutenett over modellboksen og
+                // tell andelen som lander i utsnittet. (Boks-hjørner/-areal er
+                // upålitelig: punkter nær kameraet eksploderer i projeksjonen.)
+                let inside = 0;
+                const p = new THREE.Vector3();
+                for (let ix = 0; ix < 3; ix++)
+                    for (let iy = 0; iy < 3; iy++)
+                        for (let iz = 0; iz < 3; iz++) {
+                            p.set(
+                                model.min.x + ((model.max.x - model.min.x) * ix) / 2,
+                                model.min.y + ((model.max.y - model.min.y) * iy) / 2,
+                                model.min.z + ((model.max.z - model.min.z) * iz) / 2
+                            ).project(camera);
+                            if (p.z < 1 && Math.abs(p.x) <= 1.1 && Math.abs(p.y) <= 1.1)
+                                inside++;
+                        }
+                const visibleFrac = inside / 27;
+                (window as unknown as { __microSceneAuditDebug?: unknown }).__microSceneAuditDebug =
+                    {
+                        box: { min: model.min.toArray(), max: model.max.toArray() },
+                        visibleFrac,
+                        meshCount,
+                        camPos: camera.position.toArray(),
+                    };
+                // Terskel 0.45: kalibrert 2026-07-24 mot 8 friske spill
+                // (0.56-1.0) og et bortvendt-kamera-sabotasjespill (0.33).
+                if (visibleFrac < 0.45) {
+                    warnings.push(
+                        `[scene-audit] bare ${inside}/27 prøvepunkter i modellen ligger i kamerautsnittet - feil innramming?`
+                    );
+                }
+            }
+            return warnings;
+        };
+        return () => {
+            delete w.__microSceneAudit;
+        };
+    }, [scene, camera]);
+    return null;
+}
+
 export const MicroCanvas: React.FC<MicroCanvasProps> = ({
     children,
     camera = { position: [13, 9.5, 13], fov: 38 },
@@ -112,6 +206,14 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
     const [dpr, setDpr] = useState<number | [number, number]>(1);
     // Respekter prefers-reduced-motion: ingen auto-rotasjon for de som ber om ro.
     const reduce = useReducedMotion();
+
+    // DEV-vakthund: idle-rotasjon virker bare med OrbitControls - si det høyt i
+    // stedet for å ignorere proppen stille.
+    useEffect(() => {
+        if (import.meta.env.DEV && !controls && idle) {
+            console.warn('[kit/MicroCanvas] idle (auto-rotasjon) krever controls: true - ignoreres.');
+        }
+    }, [controls, idle]);
 
     // Frys render-loopen når spillet er utenfor skjermen. Alle mikrospill bruker
     // useFrame (kontinuerlig animasjon), så uten dette maler hvert mountet spill
@@ -179,7 +281,7 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
                     />
                 )}
 
-                {controls && (
+                {controls ? (
                     <OrbitControls
                         makeDefault
                         enableZoom={enableZoom}
@@ -190,7 +292,10 @@ export const MicroCanvas: React.FC<MicroCanvasProps> = ({
                         autoRotateSpeed={autoRotateSpeed}
                         target={target}
                     />
+                ) : (
+                    <StaticCameraAim target={target} />
                 )}
+                <SceneAuditProbe />
             </Canvas>
         </div>
     );
