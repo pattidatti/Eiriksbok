@@ -12,6 +12,7 @@
     "Irak, Syria, Jordan og Libanon er alle kunstige stater skapt av Sykes-Picot og etterfølgende avtaler."
   ],
   "externalUrl": "https://snl.no/Sykes-Picot-avtalen",
+  "lastUpdated": "2026-07-24",
   "content": [
     {
       "type": "text",
@@ -23,7 +24,7 @@
     },
     {
       "type": "text",
-      "content": "For å forstå Sykes-Picot, må du forstå hva som fantes der fra for. Det osmanske riket hadde i hundrevis av ar styrt et enormt område - fra dagens Tyrkia og gjennom hele Midtøsten og ned til Arabia. Riket var mangfoldig: arabere, kurder, armenere, jøder, kristne og muslimer levde side om side under osmansk styre. Det var konflikter, men det fantes ingen \"Irak\" eller \"Syria\" - bare osmanske provinser."
+      "content": "For å forstå Sykes-Picot, må du forstå hva som fantes der fra for. Det osmanske riket hadde i hundrevis av år styrt et enormt område - fra dagens Tyrkia og gjennom hele Midtøsten og ned til Arabia. Riket var mangfoldig: arabere, kurder, armenere, jøder, kristne og muslimer levde side om side under osmansk styre. Det var konflikter, men det fantes ingen \"Irak\" eller \"Syria\" - bare osmanske provinser."
     },
     {
       "type": "text",
@@ -41,7 +42,7 @@
     },
     {
       "type": "text",
-      "content": "Mellom 1915 og 1916 brevvekslet den britiske høykommissæren Henry McMahon med Husain bin Ali, den mektige sherif-lederen i Mekka. Britene lovet araberne: kjemp mot osmanerne, og dere skal få selvstyre og egne stater etter krigen. Husain trodde dem. Han startet det store arabiske opprøret i 1916 og ledet tusenvis av arabiske krigere mot osmanerne - delvis koordinert med den berømte T.E. Lawrence, bedre kjent som Lawrence av Arabia."
+      "content": "Mellom 1915 og 1916 brevvekslet den britiske høykommissæren Henry McMahon med Husain bin Ali, den mektige sherif-lederen i Mekka. Britene lovet araberne: kjemp mot osmanerne, og dere skal få selvstyre og egne stater etter krigen (Nordenson, 2026). Husain trodde dem. Han startet det store arabiske opprøret i 1916 og ledet tusenvis av arabiske krigere mot osmanerne - delvis koordinert med den berømte T.E. Lawrence, bedre kjent som Lawrence av Arabia."
     },
     {
       "type": "text",
@@ -53,7 +54,7 @@
     },
     {
       "type": "text",
-      "content": "Mens araberne kjempet i ørkenen, møttes Sykes og Picot i hemmelighet. Avtalen de inngikk i mai 1916 var enkel og brutal: Storbritannia og Frankrike skulle dele Midtøsten mellom seg nar osmanerne var beseiret. Frankrike fikk Syria og Libanon. Storbritannia fikk Irak og Palestina. Araberne - som ble lovet selvstyre - ble ikke spurt."
+      "content": "Mens araberne kjempet i ørkenen, møttes Sykes og Picot i hemmelighet. Avtalen de inngikk i mai 1916 var enkel og brutal: Storbritannia og Frankrike skulle dele Midtøsten mellom seg når osmanerne var beseiret. Frankrike fikk Syria og Libanon, Storbritannia fikk Irak og Palestina (Nordenson & Leraand, 2025). Araberne - som ble lovet selvstyre - ble ikke spurt."
     },
     {
       "type": "component",
@@ -70,7 +71,7 @@
     },
     {
       "type": "text",
-      "content": "I 1917 kom enda et løfte - dette gangen til en helt annen gruppe. Storbritannias utenriksminister Arthur James Balfour sendte et brev til den sionistiske lederen Lord Rothschild. I brevet lovet han at Storbritannia skulle støtte opprettelsen av et [jødisk nasjonalt hjemsted](/historie/midtoesten/israel-og-palestina) i Palestina. Palestina var allerede befolket - av arabere, jøder og kristne som hadde bodd der i generasjoner. Nå var det lovet bort to ganger."
+      "content": "I 1917 kom enda et løfte - dette gangen til en helt annen gruppe. Storbritannias utenriksminister Arthur James Balfour sendte et brev til den sionistiske lederen Lord Rothschild. I brevet lovet han at Storbritannia skulle støtte opprettelsen av et [jødisk nasjonalt hjemsted](/historie/midtoesten/israel-og-palestina) i Palestina (Leraand, 2024). Palestina var allerede befolket - av arabere, jøder og kristne som hadde bodd der i generasjoner. Nå var det lovet bort to ganger."
     },
     {
       "type": "image",
@@ -84,7 +85,7 @@
     },
     {
       "type": "text",
-      "content": "Krigen sluttet i 1918 og osmanerne tapte. Ved Paris-fredskonferansen i 1919 og San Remo-konferansen i 1920 ble Sykes-Picot gjort om til virkelighet. Det nye Folkeforbundet opprettet et '[mandatsystem](/historie/dekolonisering/midtosten-mandater)' - et pent ord for det som i praksis var kolonistyre. Storbritannia fikk mandat over Irak og Palestina. Frankrike fikk mandat over Syria og Libanon. Araberne, som hadde kjempet for sin frihet, fikk ingenting."
+      "content": "Krigen sluttet i 1918 og osmanerne tapte. Ved Paris-fredskonferansen i 1919 og San Remo-konferansen i 1920 ble Sykes-Picot gjort om til virkelighet. Det nye Folkeforbundet opprettet et '[mandatsystem](/historie/dekolonisering/midtosten-mandater)' - et pent ord for det som i praksis var kolonistyre. Storbritannia fikk mandat over Irak og Palestina. Frankrike fikk mandat over Syria og Libanon (Nordenson, 2026). Araberne, som hadde kjempet for sin frihet, fikk ingenting."
     },
     {
       "type": "component",
@@ -122,12 +123,12 @@
       "name": "ScenarioRoleplay",
       "props": {
         "title": "Du tegner grensene",
-        "intro": "Det er 1919. Du er britisk diplomat ved Paris-fredskonferansen. Du skal hjelpe til med å bestemme grensene i det tidligere osmanske riket. Tre grupper venter pa svar.",
+        "intro": "Det er 1919. Du er britisk diplomat ved Paris-fredskonferansen. Du skal hjelpe til med å bestemme grensene i det tidligere osmanske riket. Tre grupper venter på svar.",
         "startId": "start",
         "scenarios": [
           {
             "id": "start",
-            "text": "Tre delegasjoner vil møte deg. Den arabiske nasjonalistlederen Faisal krever at løftene fra Husain-McMahon-brevene holdes og at araberne far én stor arabisk stat. Den sionistiske lederen Chaim Weizmann ber om at Balfour-erklæringen bekreftes og at jødene far et hjemland i Palestina. Den franske diplomaten Picot minner deg om den hemmelige avtalen - Frankrike har krav pa Syria. Hvem møter du først?",
+            "text": "Tre delegasjoner vil møte deg. Den arabiske nasjonalistlederen Faisal krever at løftene fra Husain-McMahon-brevene holdes og at araberne får én stor arabisk stat. Den sionistiske lederen Chaim Weizmann ber om at Balfour-erklæringen bekreftes og at jødene får et hjemland i Palestina. Den franske diplomaten Picot minner deg om den hemmelige avtalen - Frankrike har krav på Syria. Hvem møter du først?",
             "options": [
               {
                 "label": "Møt den arabiske delegasjonen",
@@ -152,7 +153,7 @@
                 "nextId": "araberne_sannhet"
               },
               {
-                "label": "Unngå svaret og si at forhandlingene pagar",
+                "label": "Unngå svaret og si at forhandlingene pågår",
                 "nextId": "araberne_unnvike"
               }
             ]
@@ -163,51 +164,51 @@
           },
           {
             "id": "araberne_unnvike",
-            "text": "Faisal drar hjem med håpet i behold. Men nar realiteten avdekkes - at Frankrike overtar Syria og Storbritannia Irak og Palestina - starter det arabiske opprøret. Araberne lar seg ikke styre av Europa uten kamp. Mandatsystemet blir innledet med blod."
+            "text": "Faisal drar hjem med håpet i behold. Men når realiteten avdekkes - at Frankrike overtar Syria og Storbritannia Irak og Palestina - starter det arabiske opprøret. Araberne lar seg ikke styre av Europa uten kamp. Mandatsystemet blir innledet med blod."
           },
           {
             "id": "sionistene",
-            "text": "Weizmann argumenterer rolig og bestemt: 'Balfour-erklæringen er et britisk statsløfte. Jødene har ikke hatt et hjemland siden romertiden. Palestina er vart historiske hjemland.' Men hundretusener av arabere bor allerede i Palestina. Hva sier du?",
+            "text": "Weizmann argumenterer rolig og bestemt: 'Balfour-erklæringen er et britisk statsløfte. Jødene har ikke hatt et hjemland siden romertiden. Palestina er vårt historiske hjemland.' Men hundretusener av arabere bor allerede i Palestina. Hva sier du?",
             "options": [
               {
                 "label": "Bekreft Balfour-erklæringen fullt ut",
                 "nextId": "sionistene_ja"
               },
               {
-                "label": "Si at arabernes rettigheter ogsa ma respekteres",
+                "label": "Si at arabernes rettigheter også må respekteres",
                 "nextId": "sionistene_kavet"
               }
             ]
           },
           {
             "id": "sionistene_ja",
-            "text": "Du bekrefter løftet. Jødisk innvandring til Palestina øker kraftig i arene som følger. Arabiske palestinere protesterer. Britene klarer ikke a holde begge løftene sine. Konflikten som starter her vil vare i over hundre ar."
+            "text": "Du bekrefter løftet. Jødisk innvandring til Palestina øker kraftig i årene som følger. Arabiske palestinere protesterer. Britene klarer ikke å holde begge løftene sine. Konflikten som starter her vil vare i over hundre år."
           },
           {
             "id": "sionistene_kavet",
-            "text": "Du prøver a balansere. Men 'nasjonalt hjemsted' og 'arabernes sivile og religiøse rettigheter skal ikke krenkes' er løfter som er umulige a oppfylle samtidig. Palestina-konflikten begynner her - ikke i 1948, men i løftene fra 1917 og 1919."
+            "text": "Du prøver å balansere. Men 'nasjonalt hjemsted' og 'arabernes sivile og religiøse rettigheter skal ikke krenkes' er løfter som er umulige å oppfylle samtidig. Palestina-konflikten begynner her - ikke i 1948, men i løftene fra 1917 og 1919."
           },
           {
             "id": "frankrike",
-            "text": "Picot er iskald: 'Sykes-Picot er undertegnet. Frankrike har krav pa Syria og Libanon. Dette er ikke forhandlingsbart.' Faisal har allerede satt seg selv opp som leder i Damaskus. Hva anbefaler du din regjering?",
+            "text": "Picot er iskald: 'Sykes-Picot er undertegnet. Frankrike har krav på Syria og Libanon. Dette er ikke forhandlingsbart.' Faisal har allerede satt seg selv opp som leder i Damaskus. Hva anbefaler du din regjering?",
             "options": [
               {
                 "label": "La Faisal beholde Syria - bryt avtalen med Frankrike",
                 "nextId": "frankrike_nei"
               },
               {
-                "label": "Hold Sykes-Picot - Frankrike far Syria",
+                "label": "Hold Sykes-Picot - Frankrike får Syria",
                 "nextId": "frankrike_ja"
               }
             ]
           },
           {
             "id": "frankrike_nei",
-            "text": "Frankrike aksepterer ikke dette. Alliansen mellom Storbritannia og Frankrike er viktigere enn arabernes krav. Storbritannia bøyer seg. Franske styrker marsjerer inn i Damaskus i 1920 og driver Faisal ut. Han far i stedet den britiskkontrollerte tronen i Irak."
+            "text": "Frankrike aksepterer ikke dette. Alliansen mellom Storbritannia og Frankrike er viktigere enn arabernes krav. Storbritannia bøyer seg. Franske styrker marsjerer inn i Damaskus i 1920 og driver Faisal ut. Han får i stedet den britiskkontrollerte tronen i Irak."
           },
           {
             "id": "frankrike_ja",
-            "text": "Sykes-Picot-avtalen holdes. Frankrike overtar Syria og Libanon, Storbritannia far Irak og Palestina. Araberne far ingenting av det de ble lovet. Denne beslutningen former Midtøsten for hundre ar framover - med konsekvenser verden sliter med enna."
+            "text": "Sykes-Picot-avtalen holdes. Frankrike overtar Syria og Libanon, Storbritannia får Irak og Palestina. Araberne får ingenting av det de ble lovet. Denne beslutningen former Midtøsten for hundre år framover - med konsekvenser verden sliter med enna."
           }
         ]
       }
@@ -218,21 +219,21 @@
     },
     {
       "type": "text",
-      "content": "Det er ikke overdrevet a si at mange av Midtøstens mest fastlaste konflikter har sin rot i det som skjedde i 1916 til 1923. Irak er et land der sjia, sunni og kurdere ble tvunget sammen - uten eget valg. Syrias grenser ble trukket for a passe franske interesser, ikke for a speile befolkningens ønsker. Libanon fikk en grense som skapte en stat der kristne maronitter, sjiamuslimer og sunnimuslimer deltes om makt pa en mate som gjentatte ganger har ført til borgerkrig."
+      "content": "Det er ikke overdrevet å si at mange av Midtøstens mest fastlåste konflikter har sin rot i det som skjedde i 1916 til 1923. Irak er et land der sjia, sunni og kurdere ble tvunget sammen - uten eget valg. Syrias grenser ble trukket for å passe franske interesser, ikke for å speile befolkningens ønsker. Libanon fikk en grense som skapte en stat der kristne maronitter, sjiamuslimer og sunnimuslimer deltes om makt på en måte som gjentatte ganger har ført til borgerkrig."
     },
     {
       "type": "text",
-      "content": "Palestina-konflikten - kanskje verdens mest kjente uløste konflikt - har sin direkte opprinnelse i de motstridende løftene britene ga til arabere og jøder mellom 1915 og 1917. Da staten Israel ble opprettet i 1948, var det første skuddet avfyrt av en linjal mot et kart tretti ar tidligere."
+      "content": "Palestina-konflikten - kanskje verdens mest kjente uløste konflikt - har sin direkte opprinnelse i de motstridende løftene britene ga til arabere og jøder mellom 1915 og 1917. Da staten Israel ble opprettet i 1948, var det første skuddet avfyrt av en linjal mot et kart tretti år tidligere."
     },
     {
       "type": "text",
-      "content": "Det finnes historikere som mener Sykes-Picot får for mye skyld - at Midtøstens problemer er mer sammensatte enn én avtale. Det er sant at grenser aldri forteller hele historien. Men det er vanskelig a se for seg at Irak, Syria eller Libanon ville hatt de samme konfliktnivane om befolkningene selv hadde fatt tegne sine grenser. Sykes og Picot satte millioner av mennesker inn i statskasser de aldri ba om - og regningen betales fortsatt."
+      "content": "Det finnes historikere som mener Sykes-Picot får for mye skyld - at Midtøstens problemer er mer sammensatte enn én avtale. Det er sant at grenser aldri forteller hele historien. Men det er vanskelig å se for seg at Irak, Syria eller Libanon ville hatt de samme konfliktnivåene om befolkningene selv hadde fått tegne sine grenser. Sykes og Picot satte millioner av mennesker inn i statskasser de aldri ba om - og regningen betales fortsatt."
     },
     {
       "type": "image",
       "src": "/images/midtoesten/sykes-picot-03.webp",
       "alt": "Moderne Midtøsten med landegrenser",
-      "caption": "Grensene i Midtøsten i dag speiler fortsatt de linjene europeiske diplomater trakk for over hundre ar siden."
+      "caption": "Grensene i Midtøsten i dag speiler fortsatt de linjene europeiske diplomater trakk for over hundre år siden."
     },
     {
         "type": "component",
@@ -266,12 +267,12 @@
             "question": "Hva var Sykes-Picot-avtalen?",
             "options": [
               "En offentlig fredsavtale mellom araberne og osmanerne",
-              "En hemmelig britisk-fransk avtale om a dele Midtøsten",
-              "En avtale om a gi araberne selvstyre etter krigen",
+              "En hemmelig britisk-fransk avtale om å dele Midtøsten",
+              "En avtale om å gi araberne selvstyre etter krigen",
               "En militær allianse mellom Frankrike og Arabia"
             ],
             "answer": 1,
-            "explanation": "Sykes-Picot var en hemmelig avtale fra 1916 der Storbritannia og Frankrike avtalte a dele Det osmanske rikets arabiske provinser mellom seg nar krigen var over."
+            "explanation": "Sykes-Picot var en hemmelig avtale fra 1916 der Storbritannia og Frankrike avtalte å dele Det osmanske rikets arabiske provinser mellom seg når krigen var over."
           },
           {
             "question": "Hva lovet britene araberne gjennom Husain-McMahon-korrespondansen?",
@@ -282,7 +283,7 @@
               "At Frankrike skulle styre Syria for dem"
             ],
             "answer": 2,
-            "explanation": "I brevvekslingen mellom McMahon og Husain lovet britene arabisk selvstyre etter krigen, som motiverte araberne til a starte opprøret mot osmanerne - et løfte som ble brutt av Sykes-Picot."
+            "explanation": "I brevvekslingen mellom McMahon og Husain lovet britene arabisk selvstyre etter krigen, som motiverte araberne til å starte opprøret mot osmanerne - et løfte som ble brutt av Sykes-Picot."
           },
           {
             "question": "Hvilken folkegruppe ble delt mellom fire land som følge av Sykes-Picot og mandatsystemet?",
@@ -306,6 +307,17 @@
             "answer": 1,
             "explanation": "Balfour-erklæringen var et brev der britisk utenriksminister Balfour lovet støtte til et jødisk nasjonalt hjemsted i Palestina - et løfte som kolliderte direkte med løftene gitt til araberne."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Nordenson, J. & Leraand, D. (2025). *Sykes-Picot-avtalen*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Sykes-Picot-avtalen](https://snl.no/Sykes-Picot-avtalen)",
+          "Leraand, D. (2024). *Balfour-erklæringen*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Balfour-erklæringen](https://snl.no/Balfour-erkl%C3%A6ringen)",
+          "Nordenson, J. (2026). *Oppdelingen av Midtøsten etter første verdenskrig*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Oppdelingen-av-Midtøsten](https://snl.no/Oppdelingen_av_Midt%C3%B8sten_etter_f%C3%B8rste_verdenskrig)"
         ]
       }
     }

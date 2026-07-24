@@ -12,6 +12,7 @@
     "Splittelsen mellom sunni og shia oppsto etter Muhammeds død i 632, da striden om etterfølgelsen startet."
   ],
   "externalUrl": "https://snl.no/islam",
+  "lastUpdated": "2026-07-24",
   "content": [
     {
       "type": "text",
@@ -90,7 +91,7 @@
     },
     {
       "type": "text",
-      "content": "I Medina fungerte Muhammed som både religiøs leder og politisk leder. Han forhandlet avtaler mellom stridende stammer, bygde opp et administrativt system og ledet militære kampanjer. I år 630 marsjerte han tilbake til Mekka med en hær, inntok byen nesten uten blodsutgytelse og ryddet Ka'baen for gudestattuer. De fleste arabiske stammer anerkjente ham som leder. Da han døde i 632, hadde han forent det meste av Arabia under ett styre for første gang i historien."
+      "content": "I Medina fungerte Muhammed som både religiøs leder og politisk leder. Han forhandlet avtaler mellom stridende stammer, bygde opp et administrativt system og ledet militære kampanjer. I år 630 marsjerte han tilbake til Mekka med en hær, inntok byen nesten uten blodsutgytelse og ryddet Ka'baen for gudestattuer. De fleste arabiske stammer anerkjente ham som leder. Da han døde i 632, hadde han forent det meste av Arabia under ett styre for første gang i historien (Vogt, 2025)."
     },
     {
       "type": "image",
@@ -104,7 +105,7 @@
     },
     {
       "type": "text",
-      "content": "Muhammed etterlot seg ingen klar etterfølger, og spørsmålet om hvem som skulle lede det muslimske samfunnet etter ham, skapte umiddelbar strid. De fire første lederne - kalt de rettledede kalifene - styrte fra 632 til 661."
+      "content": "Muhammed etterlot seg ingen klar etterfølger, og spørsmålet om hvem som skulle lede det muslimske samfunnet etter ham, skapte umiddelbar strid. De fire første lederne - kalt de rettledede kalifene - styrte fra 632 til 661 (Vogt, 2019)."
     },
     {
       "type": "list",
@@ -117,7 +118,7 @@
     },
     {
       "type": "text",
-      "content": "På bare to tiår rev muslimske hærer ned det vestromerske Persia og tok store deler fra Bysants. Det gikk forbausende raskt - delvis fordi begge stormaktene var utmattet av tiår med krig mot hverandre, delvis fordi mange lokale befolkninger ikke kjempet hardt for sine gamle herrer."
+      "content": "På bare to tiår rev muslimske hærer ned det persiske Sasanideriket og tok store deler fra Bysants. Det gikk forbausende raskt - delvis fordi begge stormaktene var utmattet av tiår med krig mot hverandre, delvis fordi mange lokale befolkninger ikke kjempet hardt for sine gamle herrer."
     },
     {
       "type": "header",
@@ -129,7 +130,7 @@
     },
     {
       "type": "text",
-      "content": "Da Ali ble drept i 661, og hans sønn Husayn senere ble massakrert i slaget ved Karbala i 680, ble disse hendelsene til hellige martyrfortellinger for shia-islam. Sorgen over Husayns død markeres fremdeles av hundremillioner shia-muslimer hvert år. Det som startet som en arvefølgestrid, ble over generasjoner til dype religiøse og kulturelle forskjeller."
+      "content": "Da Ali ble drept i 661, og hans sønn Husayn senere ble massakrert i slaget ved Karbala i 680, ble disse hendelsene til hellige martyrfortellinger for shia-islam (Vogt, 2024). Sorgen over Husayns død markeres fremdeles av hundremillioner shia-muslimer hvert år. Det som startet som en arvefølgestrid, ble over generasjoner til dype religiøse og kulturelle forskjeller."
     },
     {
       "type": "component",
@@ -150,7 +151,7 @@
     },
     {
       "type": "text",
-      "content": "Etter Alis død tok Muawiya, en politiker fra Mekka, makten og grunnla Umayyadedynastiet. Maktsete ble flyttet fra Arabia til Damaskus i Syria. Under Umayyadene ble det islamske riket et ekte verdensrike. I år 711 krysset muslimske hærer Gibraltarstredet og inntok nesten hele den iberiske halvøya på noen få år. Mot øst nådde riket til Indus-elven i dagens Pakistan."
+      "content": "Etter Alis død tok Muawiya, en politiker fra Mekka, makten og grunnla Umayyadedynastiet. Maktsete ble flyttet fra Arabia til Damaskus i Syria. Under Umayyadene ble det islamske riket et ekte verdensrike. I år 711 krysset muslimske hærer Gibraltarstredet og inntok nesten hele den iberiske halvøya på noen få år. Mot øst nådde riket til Indus-elven i dagens Pakistan (Vikør, 2025)."
     },
     {
       "type": "text",
@@ -234,6 +235,18 @@
             "answer": 3,
             "explanation": "Da Muawiya grunnla Umayyadedynastiet etter 661, flyttet han maktsetet fra Arabia til Damaskus i Syria. Dette markerte at det islamske riket hadde vokst fra et arabisk stammesamfunn til et ekte verdensrike."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Vikør, K. S. (2025). *Umayyadane*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Umayyadane](https://snl.no/Umayyadane)",
+          "Vogt, K. (2019). *De rettledede kalifer*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/de_rettledede_kalifer](https://snl.no/de_rettledede_kalifer)",
+          "Vogt, K. (2024). *Sunni- og sjiaislam*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/sunni-_og_sjiaislam](https://snl.no/sunni-_og_sjiaislam)",
+          "Vogt, K. (2025). *Muhammad*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Muhammad](https://snl.no/Muhammad)"
         ]
       }
     }
