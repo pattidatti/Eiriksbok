@@ -100,8 +100,8 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
         }
     }, [lesson, subjectId, topicId, subTopicId, addToHistory]);
 
-    // Optimized: Derive lessonImage directly without effect
-    const lessonImage = useMemo(() => {
+    // Manifest-oppføringen for denne leksjonen (bilde, datoer, tags)
+    const manifestEntry = useMemo(() => {
         if (!manifest || !subjectId || !topicId || !lessonId) return undefined;
 
         const subject = manifest.subjects.find(s => s.id === subjectId);
@@ -117,10 +117,11 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
             foundLesson = topic.lessons.find((l: any) => l.id === lessonId);
         }
 
-        if (foundLesson?.image) return foundLesson.image;
-        if (topicImg) return topicImg;
-        return undefined;
+        return { lesson: foundLesson, topicImage: topicImg };
     }, [manifest, subjectId, topicId, subTopicId, lessonId]);
+
+    // Optimized: Derive lessonImage directly without effect
+    const lessonImage = manifestEntry?.lesson?.image || manifestEntry?.topicImage || undefined;
 
     // Forrige/Neste-navigasjon: utled naboleksjonene fra manifest-rekkefølgen
     const lessonNav = useMemo((): LessonNav => {
@@ -238,6 +239,9 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
             fact: lesson.fact,
             mapData: lesson.mapData,
             tags: lesson.tags,
+            // Artikkel-JSON vinner over den git-utledede datoen i manifestet
+            lastUpdated: lesson.lastUpdated || manifestEntry?.lesson?.lastUpdated,
+            factChecked: lesson.factChecked,
             subjectId: subjectId,
             topicId: topicId,
             learningPaths: relevantLearningPaths,
@@ -245,7 +249,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
             learningPathV2Data: lesson.learningPathV2Data,
             lessonPlan: lesson.lessonPlan
         };
-    }, [lesson, lessonImage, subjectId, topicId, relevantLearningPaths]);
+    }, [lesson, lessonImage, subjectId, topicId, relevantLearningPaths, manifestEntry]);
 
 
     // --- Loading & Error States (After all hooks) ---

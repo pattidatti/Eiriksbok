@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BookOpen, Map, ChevronDown, ChevronUp, Volume2, Pause, Play, Square } from 'lucide-react';
+import { BookOpen, Map, ChevronDown, ChevronUp, Volume2, Pause, Play, Square, History, ShieldCheck } from 'lucide-react';
 import { TimelineComponent } from './TimelineComponent';
+import { formatNorwegianDate } from '../utils/dateUtils';
 import type { SidebarConfig } from '../types';
 
 interface RichSidebarProps {
@@ -26,6 +27,8 @@ interface RichSidebarProps {
         year: string;
         readTime: string;
         category: string;
+        lastUpdated?: string;
+        factChecked?: string;
     };
 }
 
@@ -73,6 +76,9 @@ const ExpandableSection: React.FC<{ title: string; children: React.ReactNode; de
 };
 
 export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, timelineEvents, relatedArticles, mapData, tags, config, learningPaths, audioState, metadata }) => {
+    const lastUpdatedText = formatNorwegianDate(metadata?.lastUpdated);
+    const factCheckedText = formatNorwegianDate(metadata?.factChecked);
+
     return (
         <div className="space-y-8">
             <div className="sticky top-8">
@@ -148,6 +154,35 @@ export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, ti
                         </div>
                     )}
                 </div>
+
+                {/* Sist oppdatert / faktasjekket - i klartekst, også på mobil */}
+                {(lastUpdatedText || factCheckedText) && (
+                    <div className="mb-8 space-y-1 text-xs text-slate-500">
+                        {lastUpdatedText && (
+                            <p className="flex items-center gap-1.5">
+                                <History className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                                <span>
+                                    Sist oppdatert{' '}
+                                    <time dateTime={metadata!.lastUpdated} className="font-semibold text-slate-600">
+                                        {lastUpdatedText}
+                                    </time>
+                                </span>
+                            </p>
+                        )}
+                        {factCheckedText && (
+                            <p className="flex items-center gap-1.5">
+                                <ShieldCheck className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                                <span>
+                                    Faktasjekket{' '}
+                                    <time dateTime={metadata!.factChecked} className="font-semibold text-slate-600">
+                                        {factCheckedText}
+                                    </time>
+                                </span>
+                            </p>
+                        )}
+                    </div>
+                )}
+
                 {learningPaths && learningPaths.length > 0 && (
                     <div className="space-y-3 mb-8">
                         {learningPaths.map(path => (
