@@ -6,12 +6,13 @@
   "category": "Midtøsten",
   "readTime": "9 min lesning",
   "heroImage": "/images/midtoesten/krigen-mot-terror-hero.webp",
+  "lastUpdated": "2026-07-24",
   "details": [
     "11. september 2001 drepte 19 kaprer fra al-Qaida nesten 3000 mennesker i USA.",
     "USA invaderte Afghanistan i oktober 2001 og Irak i mars 2003 - to svært ulike operasjoner med ulike resultat.",
     "Da USA trakk seg ut av Afghanistan i 2021, var Taliban tilbake ved makten - som om krigen aldri hadde skjedd."
   ],
-  "externalUrl": "https://snl.no/11._september-angrepene",
+  "externalUrl": "https://snl.no/Terrorangrepet_i_USA_11._september_2001",
   "content": [
     {
       "type": "text",
@@ -19,7 +20,7 @@
     },
     {
       "type": "text",
-      "content": "Totalt kapret 19 menn fire passasjerfly den morgenen. To fly ble styrtet inn i World Trade Center i New York. Et tredje traff Pentagon - USA sitt forsvarsdepartement utenfor Washington. Det fjerde, United Airlines flight 93, krasjet i en åker i Pennsylvania etter at passasjerene prøvde å ta tilbake kontrollen. Nesten 3000 mennesker mistet livet. Det var det dødeligste terrorangrepet i historien."
+      "content": "Totalt kapret 19 menn fire passasjerfly den morgenen. To fly ble styrtet inn i World Trade Center i New York. Et tredje traff Pentagon - USA sitt forsvarsdepartement utenfor Washington. Det fjerde, United Airlines flight 93, krasjet i en åker i Pennsylvania etter at passasjerene prøvde å ta tilbake kontrollen. Nesten 3000 mennesker mistet livet. Det var det dødeligste terrorangrepet i historien (Notaker, 2024)."
     },
     {
       "type": "image",
@@ -49,7 +50,7 @@
     },
     {
       "type": "text",
-      "content": "I oktober 2001 invaderte USA og allierte styrker Afghanistan. Oppdraget var klart: fjerne Taliban-regimet som beskyttet al-Qaida, og ta bin Laden. Taliban falt overraskende raskt. Innen desember kontrollerte USA Kabul og de store byene. Bin Laden flyktet til fjellene ved Tora Bora nær grensen til Pakistan - og slapp unna. Det skulle ta ti år før han ble drept av amerikanske spesialstyrker i Pakistan i 2011."
+      "content": "I oktober 2001 invaderte USA og allierte styrker Afghanistan. Oppdraget var klart: fjerne Taliban-regimet som beskyttet al-Qaida, og ta bin Laden. Taliban falt overraskende raskt. Innen desember kontrollerte USA Kabul og de store byene. Bin Laden flyktet til fjellene ved Tora Bora nær grensen til Pakistan - og slapp unna. Det skulle ta ti år før han ble drept av amerikanske spesialstyrker i Pakistan i 2011 (Skare, 2025)."
     },
     {
       "type": "image",
@@ -63,7 +64,7 @@
     },
     {
       "type": "text",
-      "content": "I mars 2003 invaderte USA Irak - og denne gangen var verden langt mindre enig. Bush-administrasjonen hevdet at Iraks diktator Saddam Hussein hadde masseødeleggelsesvapen og samarbeidet med al-Qaida. Begge påstandene viste seg å være feil. Det fantes ingen masseødeleggelsesvapen. Det fantes ingen reell kobling mellom Saddam og al-Qaida - faktisk var Saddam en erkefiende av islamistgrupper som al-Qaida."
+      "content": "I mars 2003 invaderte USA Irak - og denne gangen var verden langt mindre enig. Bush-administrasjonen hevdet at Iraks diktator Saddam Hussein hadde masseødeleggelsesvåpen og samarbeidet med al-Qaida. Begge påstandene viste seg å være feil. Det fantes ingen masseødeleggelsesvåpen. Det fantes ingen reell kobling mellom Saddam og al-Qaida - faktisk var Saddam en erkefiende av islamistgrupper som al-Qaida (Leraand, 2024)."
     },
     {
       "type": "text",
@@ -85,7 +86,7 @@
           {
             "label": "Begrunnelse",
             "left": "Al-Qaida opererte fra Afghanistan med Taliban-regimets velsignelse.",
-            "right": "Påstander om masseødeleggelsesvapen og al-Qaida-kobling - begge viste seg å være feil."
+            "right": "Påstander om masseødeleggelsesvåpen og al-Qaida-kobling - begge viste seg å være feil."
           },
           {
             "label": "Militært resultat",
@@ -118,7 +119,7 @@
       "name": "FactBox",
       "props": {
         "title": "Krigen mot terror i tall",
-        "content": "Omtrent 900 000 mennesker ble drept direkte og indirekte i krigene i Afghanistan, Irak og Pakistan etter 2001 - inkludert titusener av sivile. USA brukte anslagsvis 8000 milliarder dollar totalt. Rundt 38 millioner mennesker ble drevet på flukt i Afghanistan, Irak, Pakistan og Syria som en direkte følge av krigene. Afghanistan-krigen alene kostet USA over 2300 milliarder dollar og varte i 20 år - den lengste krigen i amerikansk historie."
+        "content": "Minst 900 000 mennesker ble drept direkte i krigene i Afghanistan, Irak og Pakistan etter 2001 - inkludert titusener av sivile. Langt flere døde indirekte av sult, sykdom og ødelagte samfunn. USA brukte anslagsvis 8000 milliarder dollar totalt. Rundt 38 millioner mennesker ble drevet på flukt som en direkte følge av krigene. Afghanistan-krigen alene kostet USA over 2300 milliarder dollar og varte i 20 år - den lengste krigen i amerikansk historie."
       }
     },
     {
@@ -127,7 +128,7 @@
     },
     {
       "type": "text",
-      "content": "I august 2021 gjennomførte USA den siste tilbaketrekningen fra Afghanistan. Bilder fra Kabul flyplass viste desperate afghanske borgere som klamret seg til hjulene på avreisende amerikanske militærfly. Taliban marsjerte inn i Kabul uten kamp. Det var de samme Taliban som hadde styrt Afghanistan i 1996, og som ble styrtet i 2001. Etter 20 år, 2300 milliarder dollar og tusenvis av liv - var alt tilbake til utgangspunktet."
+      "content": "I august 2021 gjennomførte USA den siste tilbaketrekningen fra Afghanistan. Bilder fra Kabul flyplass viste desperate afghanske borgere som klamret seg til hjulene på avreisende amerikanske militærfly. Taliban marsjerte inn i Kabul uten kamp (Johannessen & Likuski, 2022). Det var de samme Taliban som hadde styrt Afghanistan i 1996, og som ble styrtet i 2001. Etter 20 år, over 2300 milliarder dollar og tusenvis av liv - var alt tilbake til utgangspunktet (Costs of War, 2021)."
     },
     {
       "type": "text",
@@ -180,41 +181,54 @@
               "Den islamske staten (IS)"
             ],
             "answer": 1,
-            "explanation": "Al-Qaida, ledet av Osama bin Laden, planla og gjennomforte angrepene. Taliban ga al-Qaida beskyttelse i Afghanistan, men stod ikke direkte bak angrepene."
+            "explanation": "Al-Qaida, ledet av Osama bin Laden, planla og gjennomførte angrepene. Taliban ga al-Qaida beskyttelse i Afghanistan, men stod ikke direkte bak angrepene."
           },
           {
-            "question": "Hvilken av disse pastandene om Irak-krigen i 2003 viste seg a vaere riktig?",
+            "question": "Hvilken av disse påstandene om Irak-krigen i 2003 viste seg å være riktig?",
             "options": [
-              "Irak hadde masseodeleggelsesvapen",
+              "Irak hadde masseødeleggelsesvåpen",
               "Saddam Hussein samarbeidet aktivt med al-Qaida",
-              "Verken masseodeleggelsesvapen eller al-Qaida-kobling fantes",
+              "Verken masseødeleggelsesvåpen eller al-Qaida-kobling fantes",
               "FN godkjente invasjonen"
             ],
             "answer": 2,
-            "explanation": "Begge de viktigste begrunnelsene for Irak-krigen viste seg a vaere feil. Det fantes ingen masseodeleggelsesvapen, og det fantes ingen reell kobling mellom Saddam Hussein og al-Qaida."
+            "explanation": "Begge de viktigste begrunnelsene for Irak-krigen viste seg å være feil. Det fantes ingen masseødeleggelsesvåpen, og det fantes ingen reell kobling mellom Saddam Hussein og al-Qaida."
           },
           {
             "question": "Hva skjedde i Afghanistan i august 2021?",
             "options": [
               "USA vant krigen og opprettet et stabilt demokrati",
-              "Al-Qaida tok makten pa nytt",
+              "Al-Qaida tok makten på nytt",
               "Taliban rykket inn i Kabul etter at USA trakk seg ut",
               "Afghanistan ble delt i to stater"
             ],
             "answer": 2,
-            "explanation": "Etter 20 ar og over 2300 milliarder dollar trakk USA seg ut i 2021. Taliban marsjerte inn i Kabul uten kamp og tok makten - de samme Taliban som hadde styrt landet for 2001."
+            "explanation": "Etter 20 år og over 2300 milliarder dollar trakk USA seg ut i 2021. Taliban marsjerte inn i Kabul uten kamp og tok makten - de samme Taliban som hadde styrt landet før 2001."
           },
           {
-            "question": "Hvilke hendelser svekket USA sitt omdamme under krigen mot terror?",
+            "question": "Hvilke hendelser svekket USA sitt omdømme under krigen mot terror?",
             "options": [
-              "Drapet pa Osama bin Laden og tilbaketrekningen fra Afghanistan",
-              "Mishandling av fanger i Abu Ghraib og fengsling uten rettssak pa Guantanamo",
+              "Drapet på Osama bin Laden og tilbaketrekningen fra Afghanistan",
+              "Mishandling av fanger i Abu Ghraib og fengsling uten rettssak på Guantanamo",
               "Invasjonen av Afghanistan og bombing av Tora Bora",
               "Opprettelsen av Nato-koalisjonen og artikkel 5"
             ],
             "answer": 1,
-            "explanation": "Bildene fra Abu Ghraib-fengselet og forholdene pa Guantanamo-basen sjokkerte verden. USA hadde startet krigen med verdens sympati etter 11. september, men tapte mye av den gjennom disse handlingene."
+            "explanation": "Bildene fra Abu Ghraib-fengselet og forholdene på Guantanamo-basen sjokkerte verden. USA hadde startet krigen med verdens sympati etter 11. september, men tapte mye av den gjennom disse handlingene."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Costs of War. (2021). *Costs of the 20-year war on terror: $8 trillion and 900,000 deaths*. Watson Institute, Brown University. Hentet 24.07.2026 fra [brown.edu/news/2021-09-01/costsofwar](https://www.brown.edu/news/2021-09-01/costsofwar)",
+          "Johannessen, B. & Likuski, A. (2022). *Krigen i Afghanistan*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Krigen_i_Afghanistan](https://snl.no/Krigen_i_Afghanistan)",
+          "Leraand, D. (2024). *Irak-krigen*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Irak-krigen](https://snl.no/Irak-krigen)",
+          "Notaker, H. (2024). *Terrorangrepet i USA 11. september 2001*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Terrorangrepet_i_USA_11._september_2001](https://snl.no/Terrorangrepet_i_USA_11._september_2001)",
+          "Skare, E. (2025). *Osama bin Laden*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Osama_bin_Laden](https://snl.no/Osama_bin_Laden)"
         ]
       }
     }
