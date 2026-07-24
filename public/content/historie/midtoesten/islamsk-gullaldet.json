@@ -12,6 +12,7 @@
     "Algebra, algoritme og alkohol er alle arabiske ord - og det er ingen tilfeldighet."
   ],
   "externalUrl": "https://snl.no/islamsk_gullaldar",
+  "lastUpdated": "2026-07-24",
   "content": [
     {
       "type": "text",
@@ -23,7 +24,7 @@
     },
     {
       "type": "text",
-      "content": "Etter profeten Muhammeds død i 632 spredte islam seg raskt over store deler av verden. Det første store islamske dynastiet het Umayyadene og styrte fra Damaskus. Men i 750 kom en revolusjon. En ny herskerslekt, Abbasidene, tok makten og flyttet tyngdepunktet østover. De grunnla en splitter ny by midt i Mesopotamia - der elvene Tigris og Eufrat renner nær hverandre. Den nye hovedstaden fikk navnet Bagdad, og den ble bygd opp fra grunnen av fra år 762."
+      "content": "Etter profeten Muhammeds død i 632 spredte islam seg raskt over store deler av verden. Det første store islamske dynastiet het Umayyadene og styrte fra Damaskus. Men i 750 kom en revolusjon. En ny herskerslekt, Abbasidene, tok makten og flyttet tyngdepunktet østover. De grunnla en splitter ny by midt i Mesopotamia - der elvene Tigris og Eufrat renner nær hverandre. Den nye hovedstaden fikk navnet Bagdad, og den ble bygd opp fra grunnen av fra år 762 (Becker Aarseth, 2026)."
     },
     {
       "type": "text",
@@ -53,11 +54,11 @@
     },
     {
       "type": "text",
-      "content": "Muhammad ibn Musa al-Khwarizmi var matematiker ved Visdomshuset rundt år 820. Han skrev en bok der han systematiserte metoder for å løse ligninger. Tittelen på boken inneholdt ordet al-jabr - og det er derfra vi har fatt ordet algebra. Selve navnet hans, latinisert til Algoritmi, ga oss et annet ord vi bruker daglig: algoritme. En algoritme er rett og slett en steg-for-steg-fremgangsmåte for å løse et problem - noe datamaskiner bruker milliarder av ganger per sekund."
+      "content": "Muhammad ibn Musa al-Khwarizmi var matematiker ved Visdomshuset rundt år 820. Han skrev en bok der han systematiserte metoder for å løse ligninger. Tittelen på boken inneholdt ordet al-jabr - og det er derfra vi har fått ordet algebra. Selve navnet hans, latinisert til Algoritmi, ga oss et annet ord vi bruker daglig: algoritme (Siegmund-Schultze, 2024). En algoritme er rett og slett en steg-for-steg-fremgangsmåte for å løse et problem - noe datamaskiner bruker milliarder av ganger per sekund."
     },
     {
       "type": "text",
-      "content": "Ibn Sina, kjent i Europa som Avicenna, levde fra 980 til 1037. Han skrev en legebok kalt Medisinens kanon som ble brukt som standardverk ved europeiske universiteter i over 600 år. Al-Biruni kartla jordens omkretsens med overraskende presisjon og beskrev India med en grundighet ingen europeere kunne matche. Muhammad al-Idrisi tegnet på 1100-tallet et verdenskart for den normanniske kongen Roger II av Sicilia - et av de mest nøyaktige kartene fra middelalderen."
+      "content": "Ibn Sina, kjent i Europa som Avicenna, levde fra 980 til 1037. Han skrev en legebok kalt Medisinens kanon som ble brukt som standardverk ved europeiske universiteter i flere hundre år (Tjønneland, 2024). Al-Biruni kartla jordens omkretsens med overraskende presisjon og beskrev India med en grundighet ingen europeere kunne matche. Muhammad al-Idrisi tegnet på 1100-tallet et verdenskart for den normanniske kongen Roger II av Sicilia - et av de mest nøyaktige kartene fra middelalderen."
     },
     {
       "type": "component",
@@ -108,7 +109,7 @@
     },
     {
       "type": "text",
-      "content": "I 1258 kom katastrofen. Mongolene under Hulagu Khan, et barnebarn av Djengis Khan, beleiret Bagdad med en enorm hær. Etter noen uker falt byen. Det som fulgte var en av historiens mest brutale plyndringer. Abbasid-kalifen ble drept. Hundretusener av innbyggere mistet livet. Og bibliotekene - de fantastiske samlingene av kunnskap fra Visdomshuset og andre steder - ble kastet i elven Tigris."
+      "content": "I 1258 kom katastrofen. Mongolene under Hulagu Khan, et barnebarn av Djengis Khan, beleiret Bagdad med en enorm hær (Thordarson, 2024). Etter noen uker falt byen. Det som fulgte var en av historiens mest brutale plyndringer. Abbasid-kalifen ble drept. Hundretusener av innbyggere mistet livet. Og bibliotekene - de fantastiske samlingene av kunnskap fra Visdomshuset og andre steder - ble kastet i elven Tigris."
     },
     {
       "type": "text",
@@ -209,6 +210,18 @@
             "answer": 1,
             "explanation": "Tallsystemet ble opprinnelig utviklet i India. Islamske lærde tok det med seg vestover og introduserte det for Europa, der det erstattet romertallene."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Becker Aarseth, M. (2026). *Bagdad*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Bagdad](https://snl.no/Bagdad)",
+          "Siegmund-Schultze, R. (2024). *Mohamed Ibn Musa al-Khwarizmî*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/al-Khwarizmî](https://snl.no/Mohamed_Ibn_Musa_al-Khwarizm%C3%AE)",
+          "Thordarson, F. (2024). *Hulagu*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Hulagu](https://snl.no/Hulagu)",
+          "Tjønneland, E. (2024). *Avicenna*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Avicenna](https://snl.no/Avicenna)"
         ]
       }
     }
