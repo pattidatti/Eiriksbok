@@ -1,0 +1,434 @@
+{
+  "id": "iran-usa-krigen",
+  "title": "Krigen mellom USA og Iran",
+  "layout": "rich",
+  "year": "2026",
+  "category": "Midtøsten",
+  "readTime": "13 min lesning",
+  "heroImage": "/images/midtoesten/iran-usa-krigen-hero.webp",
+  "factChecked": "2026-07-24",
+  "details": [
+    "Krigen begynte 28. februar 2026. USA og Israel gjennomførte nesten 900 angrep på tolv timer, og Irans øverste leder Ali Khamenei ble drept.",
+    "Iran erklærte Hormuzstredet stengt. Der fraktes rundt en femtedel av verdens olje, og oljeprisen steg med over 50 prosent på to måneder.",
+    "Dødstallene er omstridte. Iran, USA og uavhengige forskere oppgir svært ulike tall, og AI-lagde krigsvideoer sprer seg raskt i sosiale medier."
+  ],
+  "externalUrl": "https://snl.no/Konflikten_mellom_Iran_og_Israel",
+  "tags": [
+    "midtosten",
+    "iran",
+    "usa",
+    "olje"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Denne artikkelen handler om en krig som pågår mens du leser. Den brøt ut natt til 28. februar 2026, da USA og Israel angrep Iran. Siden da har den spredt seg til Libanon, til Gulfen, til Jordan og til havet utenfor. Den har sendt oljeprisen til himmels, gjort bensin dyrere i Norge og fylt sosiale medier med videoer det er umulig å vite om er ekte. Fordi krigen ikke er over, finnes det ingen fasit ennå. Derfor handler denne artikkelen om to ting: hva som faktisk har skjedd, og hvordan du kan lese nyhetene om det uten å bli lurt."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor USA og Iran er fiender"
+    },
+    {
+      "type": "text",
+      "content": "Fiendskapet er over 70 år gammelt, og det begynte med olje. I 1951 bestemte Irans folkevalgte statsminister Mohammad Mosaddeq at oljen skulle tilhøre iranerne selv, ikke det britiske oljeselskapet som hadde tjent på den i tiår. I august 1953 bidro den amerikanske etterretningstjenesten CIA og britisk etterretning til å styrte ham. Kongen, sjahen, fikk nesten all makt, og vestlige selskaper fikk oljen tilbake. Mange iranere har aldri glemt det: første gang landet deres valgte sin egen leder, ble han fjernet av utlendinger."
+    },
+    {
+      "type": "text",
+      "content": "I 1979 kom regningen. Folk gjorde opprør mot sjahen, og han flyktet. Ayatollah Khomeini opprettet Den islamske republikken Iran, og samme høst tok iranske studenter 52 amerikanere som gisler i den amerikanske ambassaden i Teheran. De ble holdt i 444 dager. Hele historien står i artikkelen om [revolusjonen i 1979](/historie/midtoesten/iran-revolusjonen). Etterpå hadde landene knapt kontakt. USA innførte sanksjoner, altså straffetiltak som gjør det vanskelig for et land å handle med omverdenen. Iran bygde i stedet opp allierte grupper i regionen, som Hizbollah i Libanon."
+    },
+    {
+      "type": "text",
+      "content": "Den siste store striden handler om atomprogrammet. Iran sier programmet er fredelig, men mange land frykter at kunnskapen kan brukes til atomvåpen. I 2015 kom atomavtalen JCPOA: Iran godtok strenge grenser og kontroller mot at sanksjoner ble fjernet. I mai 2018 trakk USA seg fra avtalen. Sanksjonene kom tilbake, og Iran brøt gradvis grensene i avtalen. I juni 2025 bombet Israel og USA iranske atomanlegg i en tolv dager lang krig. Åtte måneder senere begynte krigen vi står i nå."
+    },
+    {
+      "type": "component",
+      "name": "TimelineComponent",
+      "props": {
+        "title": "Fra kuppet i 1953 til krigen i dag",
+        "compact": true,
+        "events": [
+          {
+            "date": "1953",
+            "title": "Kuppet mot Mosaddeq",
+            "description": "CIA og britisk etterretning bidrar til å styrte Irans folkevalgte statsminister. Sjahen får nesten all makt."
+          },
+          {
+            "date": "1979",
+            "title": "Revolusjonen og gisselkrisen",
+            "description": "Sjahen styrtes. Studenter holder 52 amerikanere som gisler i 444 dager.",
+            "link": "/historie/midtoesten/iran-revolusjonen"
+          },
+          {
+            "date": "2015",
+            "title": "Atomavtalen JCPOA",
+            "description": "Iran og seks stormakter blir enige: grenser for atomprogrammet mot at sanksjoner fjernes."
+          },
+          {
+            "date": "2018",
+            "title": "USA går ut av avtalen",
+            "description": "President Trump trekker USA fra atomavtalen. Sanksjonene kommer tilbake."
+          },
+          {
+            "date": "Juni 2025",
+            "title": "Tolvdagerskrigen",
+            "description": "Israel og USA bomber iranske atomanlegg. Iran svarer med raketter mot Israel."
+          },
+          {
+            "date": "28. feb. 2026",
+            "title": "Krigen bryter ut",
+            "description": "USA og Israel gjennomfører nesten 900 angrep på tolv timer. Ali Khamenei blir drept."
+          },
+          {
+            "date": "4. mars 2026",
+            "title": "Hormuzstredet stenges",
+            "description": "Iran erklærer stredet stengt og angriper skip som prøver å passere."
+          },
+          {
+            "date": "8. april 2026",
+            "title": "Første våpenhvile",
+            "description": "Pakistan megler fram en to ukers våpenhvile. Den holder ikke lenge."
+          },
+          {
+            "date": "17. juni 2026",
+            "title": "Islamabad-memorandumet",
+            "description": "USA og Iran signerer en avtale som skal gi 60 dager til å forhandle fram en fred."
+          },
+          {
+            "date": "8. juli 2026",
+            "title": "Avtalen kollapser",
+            "description": "Trump erklærer våpenhvilen for over etter angrep på skip i Hormuzstredet."
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Natten krigen begynte"
+    },
+    {
+      "type": "text",
+      "content": "Den 28. februar 2026 satte USA og Israel i gang et angrep de hadde planlagt lenge. USA kalte det Operation Epic Fury. Israel kalte det Operation Roaring Lion, altså den brølende løven. På tolv timer ble nesten 900 mål i Iran bombet: rakettlagre, luftvern, militærbaser og ledelsen i landet (Britannica, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "I den første bølgen ble Irans øverste leder, ayatollah Ali Khamenei, drept sammen med dusinvis av andre toppfolk (Store norske leksikon, 2026). Khamenei hadde styrt Iran siden 1989. At en statsleder blir drept i et angrep er svært uvanlig, og det gjorde krigen personlig for mange iranere, også for dem som ikke likte regimet. Angrepene rammet også sivile. Britannica skriver at rundt 170 mennesker ble drept da en rakett traff en jenteskole ved siden av en marinebase nær Bandar Abbas."
+    },
+    {
+      "type": "text",
+      "content": "Iran svarte med det de kalte Operation True Promise IV: hundrevis av raketter og tusenvis av droner mot Israel, mot amerikanske baser og mot land som samarbeider med USA. Samtidig måtte landet skaffe seg en ny leder på få dager. Ali Larijani styrte først i praksis, før Ekspertforsamlingen i begynnelsen av mars utpekte Mojtaba Khamenei, sønnen til den drepte lederen. Larijani ble selv drept 17. mars. Revolusjonsgarden, Irans mektigste militære styrke, har fått stadig mer å si om hvordan landet styres under krigen (Britannica, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Krigen sprer seg utover"
+    },
+    {
+      "type": "text",
+      "content": "Allerede 2. mars sendte Hizbollah i Libanon raketter og droner mot Israel. Hizbollah er en libanesisk militsgruppe og et politisk parti som lenge har fått våpen og penger fra Iran. Israel svarte med kraftige luftangrep over hele Libanon, også mot Beirut, og ba folk flykte fra store områder. Innen slutten av mars hadde over 1,1 million libanesere forlatt hjemmene sine, omtrent hver sjette innbygger i landet. Den 17. mars gikk israelske soldater inn i Sør-Libanon. En egen våpenhvile ble kunngjort 16. april, men skytingen fortsatte i perioder også etterpå (Britannica, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Iran angrep også naboland som huser amerikanske baser. Den 2. mars traff droner Ras Tanura i Saudi-Arabia, et av verdens største oljeraffinerier. Skadene ble små, men anlegget stanset driften, og oljeprisen hoppet med en gang. Senere ble mål i Abu Dhabi, Dubai, Doha, Manama og Kuwait rammet. Dette snudde opp ned på et mønster som hadde vart i tiår: Saudi-Arabia og Iran slåss gjennom andre, i det som kalles en proxy-krig. Nå slåss de direkte. Du kan lese mer om det gamle mønsteret i [Midtøsten i dag](/historie/midtoesten/midtoesten-i-dag). I juli ble også amerikanske baser i Jordan truffet. To amerikanske soldater ble drept 17. juli, og Pentagon opplyste at nesten 100 amerikanere var såret på to uker (NPR, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Hormuzstredet: krigens sterkeste våpen"
+    },
+    {
+      "type": "text",
+      "content": "Irans mest effektive våpen var ikke en rakett. Det var geografi. Hormuzstredet er en smal passasje mellom Iran og Oman. På det trangeste er den bare rundt 33 kilometer bred. Gjennom den fraktes rundt en femtedel av all olje verden bruker. Den 4. mars erklærte Iran stredet stengt og begynte å angripe skip som prøvde å passere. Skipstrafikken falt med over 90 prosent."
+    },
+    {
+      "type": "text",
+      "content": "USA svarte med en marineblokade mot skip som hadde vært innom iranske havner. Blokaden ble opphevet da avtalen i juni kom på plass, men partene tolket den ulikt: USA mente Iran hadde lovet fri ferdsel, Iran mente avtalen ga dem rett til å bestemme ruter og kreve avgifter. Den uenigheten er en viktig grunn til at freden brøt sammen. I juli 2026 anslo analytikere i Goldman Sachs at bare 10 til 15 prosent av de normale oljevolumene kom gjennom stredet (Nettavisen, 2026)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Hormuzstredet - verdens trangeste flaskehals",
+        "items": [
+          {
+            "label": "Hvor er det?",
+            "value": "Mellom Iran i nord og Oman og De forente arabiske emirater i sør. Det binder Persiabukta sammen med resten av havet."
+          },
+          {
+            "label": "Hvorfor er det så viktig?",
+            "value": "Rundt en femtedel av verdens olje og en stor del av verdens flytende naturgass fraktes gjennom det. Det finnes nesten ingen alternative ruter."
+          },
+          {
+            "label": "Hva skjedde i 2026?",
+            "value": "Iran erklærte stredet stengt 4. mars. Skipstrafikken falt over 90 prosent, og oljeprisen steg fra rundt 70 til over 110 dollar fatet."
+          },
+          {
+            "label": "Hvem taper mest?",
+            "value": "Land som må importere olje og gass. Land som selger olje, som Norge, Russland og Iran selv, tjener på at prisen går opp."
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Forsøkene på fred"
+    },
+    {
+      "type": "text",
+      "content": "Krigen har hatt flere pauser. Den 8. april meglet Pakistan fram en våpenhvile på to uker. Noen dager senere møttes USAs visepresident JD Vance og lederen for Irans nasjonalforsamling i Islamabad. Det var det høyeste direkte møtet mellom USA og Iran siden revolusjonen i 1979. Møtet førte ikke fram, og USA innførte i stedet blokaden av Hormuzstredet."
+    },
+    {
+      "type": "text",
+      "content": "Den 17. juni signerte presidentene i USA og Iran det som kalles Islamabad-memorandumet. Et memorandum er ikke en ferdig fredsavtale, men en skriftlig enighet om hva partene skal forhandle om. Avtalen ga 60 dager til å bli enige om atomprogrammet, og lovet stans i kampene i Libanon, færre amerikanske styrker i regionen og lettelser i sanksjonene. Så sprakk det. Den 6. og 7. juli angrep Revolusjonsgarden tre handelsskip i Hormuzstredet, og 8. juli erklærte president Trump våpenhvilen for over. I ukene etter gjennomførte amerikanske styrker over 300 angrep mot iranske mål, blokaden kom tilbake 14. juli, og 18. juli sa Iran at de ikke lenger anså seg bundet av avtalen (Britannica, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Akkurat nå, i slutten av juli 2026, pågår kampene fortsatt. Amerikanske fly bomber iranske mål natt etter natt, og Iran skyter mot baser i Jordan og Bahrain. Samtidig snakker partene sammen igjen, men indirekte: Qatar og Pakistan går mellom dem i hovedstaden Doha. Der har de blant annet diskutert skipsfarten gjennom Hormuz og frigivelse av iranske penger som står frosne i utenlandske banker. Meglerne har foreslått en ti dagers stans i kampene som et første skritt (Al Jazeera, 2026). Ingen vet ennå om det lykkes."
+    },
+    {
+      "type": "header",
+      "text": "Hvem teller de døde?"
+    },
+    {
+      "type": "text",
+      "content": "Når du leser om krigen, vil du møte mange forskjellige dødstall. Det er ikke fordi noen nødvendigvis lyver, men fordi tallene måler ulike ting og kommer fra kilder med ulike interesser. Irans helsedepartement oppga i mai at minst 3 468 mennesker var drept i landet fra 28. februar til 8. april. Irans FN-ambassadør sa senere at minst 1 332 sivile var drept. Amerikanske og israelske anslag over iranske soldater går langt høyere. Uavhengige forskere sier at det er svært vanskelig å telle presist, blant annet fordi journalister slipper dårlig til."
+    },
+    {
+      "type": "text",
+      "content": "Poenget er ikke at ingen tall er til å stole på. Poenget er at et tall alltid har en avsender. Når du møter et dødstall, bør du kunne svare på tre spørsmål: hvem har talt, hva har de talt, og hva tjener de på tallet? En regjering som er i krig, har grunn til å nedtone egne tap. Et land som vil vise at angrepene virker, har grunn til å oppgi høye tall for fienden. Det betyr ikke at alle lyver like mye, men det er en god grunn til å lese med åpne øyne."
+    },
+    {
+      "type": "component",
+      "name": "BiasLens",
+      "props": {
+        "title": "Fire kilder, fire ulike tall - klikk for å sammenligne",
+        "sources": [
+          {
+            "name": "Irans helsedepartement",
+            "type": "Myndighet i et land som er i krig",
+            "stance": "Part i konflikten",
+            "content": "Oppga 5. mai at minst 3 468 mennesker ble drept i Iran mellom 28. februar og 8. april 2026. Tallet skiller ikke tydelig mellom sivile og soldater."
+          },
+          {
+            "name": "Irans FN-ambassadør",
+            "type": "Diplomat, samme land",
+            "stance": "Part i konflikten",
+            "content": "Sa at minst 1 332 iranske sivile er drept. Lavere tall enn helsedepartementet, fordi det bare gjelder sivile - og fordi det ble oppgitt i en politisk sammenheng i FN."
+          },
+          {
+            "name": "USA og Israels militære anslag",
+            "type": "Motparten i krigen",
+            "stance": "Part i konflikten",
+            "content": "Anslår at over 6 000 iranske soldater er drept og rundt 15 000 såret. Høye tall for fiendens tap kan brukes til å vise at egne angrep virker."
+          },
+          {
+            "name": "Uavhengige forskere og granskere",
+            "type": "Utenfor konflikten",
+            "stance": "Nyansert, men usikker",
+            "content": "Anslår mellom 1 030 og 2 362 sivile drepte, og understreker at tallet er usikkert fordi journalister slipper dårlig til og mange døde ikke kunne identifiseres."
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "content": "Dødstall er ikke det eneste som er omstridt. Dette er også den første store krigen der kunstig intelligens brukes systematisk til å lage falske bilder og videoer. Bare i løpet av de to første ukene fikk AI-lagde krigsvideoer titalls millioner visninger i sosiale medier (CNN, 2026). Det har sirkulert falske klipp av raketter over Tel Aviv, av folk som flykter fra en flyplass, og av amerikanske soldater tatt til fange. New York Times fant over 110 ulike dypforfalskninger med et pro-iransk budskap, mens andre falske klipp går motsatt vei. Plattformen X innførte 3. mars regler mot å tjene penger på umerkede AI-bilder fra krig, og redaksjoner som BBC Verify jobber nå på heltid med å sjekke om bilder er ekte."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Slik sjekker du en krigsnyhet på ett minutt",
+        "variant": "grid",
+        "items": [
+          {
+            "label": "Hvem er kilden?",
+            "value": "Står det hvem som har sagt eller talt dette? En regjering, en hjelpeorganisasjon, en anonym konto? Uten avsender er tallet verdiløst."
+          },
+          {
+            "label": "Er kilden part i krigen?",
+            "value": "Begge sider vil vinne. Det betyr ikke at de lyver om alt, men at du bør lete etter en kilde til som sier det samme."
+          },
+          {
+            "label": "Er bildet ekte?",
+            "value": "Se etter merkelige hender, tekst som flyter ut og skygger som ikke stemmer. Søk på bildet, og sjekk om store redaksjoner har brukt det."
+          },
+          {
+            "label": "Hva mangler?",
+            "value": "En video viser ett hjørne av virkeligheten. Spør hva som er utenfor rammen, og hvorfor akkurat dette klippet ble delt."
+          },
+          {
+            "label": "Hvem vinner på at du deler?",
+            "value": "Innhold som gjør deg sint sprer seg raskest. Det er nettopp derfor det lages. Vent noen timer før du deler."
+          },
+          {
+            "label": "Hva sier flere kilder?",
+            "value": "Sammenlign minst tre nyhetssteder fra ulike land. Der de er enige, er du på tryggere grunn."
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hva krigen betyr for Norge"
+    },
+    {
+      "type": "text",
+      "content": "Norge er ikke part i krigen, men merker den likevel hver eneste dag. Grunnen er enkel: Norge lever av å selge olje og gass, og prisen på olje og gass settes av hva som skjer i verden. Da Hormuzstredet ble stengt, forsvant en stor del av verdens oljeforsyning på noen dager. Da stiger prisen på den oljen som fortsatt er tilgjengelig, og mye av den kommer fra Nordsjøen. Sammenhengen mellom olje, penger og makt er tema i artikkelen [olje og makt](/historie/midtoesten/olje-og-makt)."
+    },
+    {
+      "type": "text",
+      "content": "Tallene viser hvor kraftig utslaget ble. Statistisk sentralbyrå melder at oljeprisen i mars 2026 lå på 1 014 kroner fatet, og at handelsoverskuddet - forskjellen mellom det Norge selger og det Norge kjøper fra utlandet - endte på 97,5 milliarder kroner den måneden. I april steg prisen videre til 1 067 kroner fatet, det høyeste siden juli 2022. Da hadde oljeprisen steget med over 50 prosent siden krigen brøt ut (SSB, 2026a). Norge tjente altså enormt på en krig landet ikke deltar i."
+    },
+    {
+      "type": "text",
+      "content": "Så kom en påminnelse om hvor fort dette snur. Da Islamabad-memorandumet ble signert i juni og blokaden opphevet, falt oljeprisen tilbake til 731 kroner fatet, og handelsoverskuddet sank til 62 milliarder kroner (SSB, 2026b). Etter at avtalen brøt sammen i juli, steg prisene igjen. Markedet reagerer altså ikke bare på hvor mye olje som faktisk fraktes, men på hva folk tror kommer til å skje."
+    },
+    {
+      "type": "text",
+      "content": "For vanlige nordmenn kom regningen på bensinstasjonen. Dyrere råolje betyr dyrere bensin og diesel. Våren 2026 vedtok Stortinget, mot regjeringens vilje, å fjerne veibruksavgiften på bensin og diesel fra 1. april til 1. september. Bensinprisen falt med rundt 4,40 kroner literen, dieselprisen med rundt 2,85 kroner. I juli meldte Nettavisen at verdens dieselbeholdninger var på det laveste nivået siden 2003, og statsminister Jonas Gahr Støre åpnet for at det kan bli nødvendig å spare på drivstoff (Nettavisen, 2026). Her ligger et dilemma: staten får rekordinntekter av krigen, samtidig som familier betaler mer for å fylle tanken."
+    },
+    {
+      "type": "component",
+      "name": "Comparison",
+      "props": {
+        "title": "Skyggekrig og åpen krig",
+        "leftTitle": "Før 2026: skyggekrigen",
+        "rightTitle": "2026: den åpne krigen",
+        "items": [
+          {
+            "label": "Hvem slåss",
+            "left": "Iran og USA slåss gjennom andre: militsgrupper, opprørere og allierte regjeringer",
+            "right": "Iranske og amerikanske styrker angriper hverandre direkte, med fly, raketter og droner"
+          },
+          {
+            "label": "Saudi-Arabia og Iran",
+            "left": "Støtter hver sin side i Jemen og Syria, men skyter ikke på hverandre",
+            "right": "Iranske droner treffer saudiske oljeanlegg, og Saudi-Arabia står på USAs side"
+          },
+          {
+            "label": "Hormuzstredet",
+            "left": "Iran truer med å stenge stredet, men gjør det aldri",
+            "right": "Stredet erklæres stengt 4. mars. Skipstrafikken faller over 90 prosent"
+          },
+          {
+            "label": "Oljeprisen",
+            "left": "Mellom 60 og 70 dollar fatet, med små hopp ved uro",
+            "right": "Over 110 dollar fatet på det verste, med kraftige svingninger etter hver nyhet"
+          },
+          {
+            "label": "Konsekvenser i Norge",
+            "left": "Merkes mest i nyhetsbildet og i debatten om flyktninger",
+            "right": "Rekordinntekter til staten, dyrere drivstoff og debatt om avgiftskutt"
+          }
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor dette angår deg"
+    },
+    {
+      "type": "text",
+      "content": "Det er lett å tenke at en krig i Midtøsten skjer langt borte. Men denne krigen viser hvor tett verden henger sammen. En smal stripe hav mellom Iran og Oman påvirker hva du betaler for en flybillett, hva foreldrene dine betaler for bensin, og hvor mye penger den norske staten har å bruke på skoler og sykehus. Historien bak krigen er heller ikke ny: den handler om olje, om utenlandsk innblanding og om et fiendskap som har fått vokse siden 1953. De samme mønstrene finner du igjen i [Golfkrigene](/historie/midtoesten/golfkrigene)."
+    },
+    {
+      "type": "text",
+      "content": "Krigen er ikke over, og alt som står her kan bli endret av det som skjer neste uke. Det er ikke en svakhet ved artikkelen. Det er slik samtidshistorie er. Historikere som skriver om 1953, vet hvordan det gikk. Vi som leser om 2026, vet det ikke. Derfor er den viktigste ferdigheten du tar med deg herfra ikke å huske datoer, men å vite hvordan du finner ut hva som faktisk stemmer, mens det står på."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva skjedde i Iran i 1953, og hvorfor har mange iranere ikke glemt det?",
+          "Hva var atomavtalen JCPOA fra 2015, og hva skjedde med den i 2018?",
+          "Hva skjedde natt til 28. februar 2026, og hvem ble drept i det første angrepet?",
+          "Hvorfor er Hormuzstredet så viktig, og hva skjedde med skipstrafikken der etter 4. mars 2026?"
+        ],
+        "reflekter": [
+          "Artikkelen viser fire kilder som oppgir svært ulike dødstall. Forklar med egne ord hvorfor tallene spriker, og hva du bør spørre om når du møter et dødstall i en nyhetssak.",
+          "Sammenlign skyggekrig og åpen krig ved hjelp av tabellen i artikkelen. Hva er den viktigste forskjellen for vanlige mennesker som bor i regionen, tror du?",
+          "Oljeprisen falt da memorandumet ble signert i juni, og steg igjen da det brøt sammen i juli. Hva forteller dette om hvordan markedet reagerer på nyheter?",
+          "Norge tjener store summer på en krig landet ikke er part i. Er det problematisk? Argumenter for og imot."
+        ],
+        "gaaVidere": [
+          "Finn tre nyhetssaker om samme hendelse i krigen, gjerne fra ulike land. Skriv ned hvilke tall og ord hver av dem bruker, og forklar hvor de er uenige.",
+          "Lag din egen sjekkliste på fem punkter for hvordan du vurderer om et krigsbilde i sosiale medier er ekte. Test den på tre innlegg du finner.",
+          "Skriv et kort innlegg (5-8 setninger) der du tar stilling til om Stortinget gjorde rett i å kutte drivstoffavgiftene våren 2026.",
+          "Les artikkelen om [revolusjonen i 1979](/historie/midtoesten/iran-revolusjonen) og forklar i en kort tekst hvordan hendelsene den gang henger sammen med krigen i dag."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva skjedde i Iran i 1953?",
+            "options": [
+              "Iran ble angrepet av Irak",
+              "Irans folkevalgte statsminister ble styrtet med hjelp fra CIA og britisk etterretning",
+              "Ayatollah Khomeini tok makten",
+              "Iran signerte sin første atomavtale"
+            ],
+            "answer": 1,
+            "explanation": "Mohammad Mosaddeq hadde nasjonalisert oljen i 1951. I august 1953 bidro CIA og britisk etterretning til å styrte ham, og sjahen fikk nesten all makt. Mange iranere ser dette som starten på fiendskapet med USA."
+          },
+          {
+            "question": "Hvorfor er Hormuzstredet så viktig i denne krigen?",
+            "options": [
+              "Det er verdens travleste passasjerhavn",
+              "Det er den eneste veien inn til Israel",
+              "Rundt en femtedel av verdens olje fraktes gjennom det",
+              "Det er hovedkvarteret til den amerikanske marinen"
+            ],
+            "answer": 2,
+            "explanation": "Hormuzstredet er en smal passasje mellom Iran og Oman der rundt en femtedel av verdens olje fraktes ut. Da Iran erklærte stredet stengt 4. mars 2026, falt skipstrafikken over 90 prosent og oljeprisen skjøt i været."
+          },
+          {
+            "question": "Hvorfor spriker dødstallene fra krigen så mye?",
+            "options": [
+              "Fordi ingen forsøker å telle",
+              "Fordi kildene måler ulike ting, har ulike interesser, og fordi det er vanskelig å kontrollere tallene",
+              "Fordi FN nekter å offentliggjøre tall",
+              "Fordi tallene bare oppdateres én gang i året"
+            ],
+            "answer": 1,
+            "explanation": "Irans helsedepartement, Irans FN-ambassadør, amerikanske militære anslag og uavhengige forskere oppgir ulike tall. De teller ulike grupper, har ulike interesser i konflikten, og journalister slipper dårlig til der kampene foregår."
+          },
+          {
+            "question": "Hvordan har krigen påvirket norsk økonomi?",
+            "options": [
+              "Norge har tapt penger fordi eksporten stanset",
+              "Oljeprisen steg over 50 prosent, og staten fikk rekordinntekter",
+              "Norge har ikke merket noe til krigen",
+              "Norge måtte importere olje fra Iran"
+            ],
+            "answer": 1,
+            "explanation": "Ifølge SSB steg oljeprisen med over 50 prosent fra krigsutbruddet i februar til april 2026, og handelsoverskuddet endte på 97,5 milliarder kroner i mars. Samtidig ble bensin og diesel dyrere for norske forbrukere."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Al Jazeera. (2026, 2. juli). *US-Iran talks in Doha: What were the outcomes and what's next?* Hentet 24.07.2026 fra [aljazeera.com](https://www.aljazeera.com/news/2026/7/2/us-iran-talks-in-doha-what-were-the-outcomes-and-whats-next)",
+          "Britannica. (2026). *2026 Iran war*. Encyclopaedia Britannica. Hentet 24.07.2026 fra [britannica.com/event/2026-Iran-war](https://www.britannica.com/event/2026-Iran-war)",
+          "Britannica. (u.å.). *1953 coup in Iran*. Encyclopaedia Britannica. Hentet 24.07.2026 fra [britannica.com/event/1953-coup-in-Iran](https://www.britannica.com/event/1953-coup-in-Iran)",
+          "CNN. (2026, 11. mars). *Fake, AI-generated images and videos of the Iran war are spreading on social media*. Hentet 24.07.2026 fra [cnn.com](https://www.cnn.com/2026/03/11/politics/fake-ai-images-videos-iran-war)",
+          "Det europeiske råd. (u.å.). *Iran's nuclear agreement (JCPOA)*. Hentet 24.07.2026 fra [consilium.europa.eu](https://www.consilium.europa.eu/en/policies/jcpoa-iran-restrictive-measures/)",
+          "Federal Reserve Bank of Dallas. (2026, 20. mars). *What the closure of the Strait of Hormuz means for the global economy*. Hentet 24.07.2026 fra [dallasfed.org](https://www.dallasfed.org/research/economics/2026/0320)",
+          "Nettavisen. (2026). *Dieselkrise: Laveste på 23 år og prissjokk etter Iran-krig*. Hentet 24.07.2026 fra [nettavisen.no](https://www.nettavisen.no/okonomi/dieselkrise-laveste-pa-23-ar-og-prissjokk-etter-iran-krig/s/5-95-3074545)",
+          "NPR. (2026, 22. juli). *U.S.-Iran attacks continue as tensions mount on the Red Sea*. Hentet 24.07.2026 fra [npr.org](https://www.npr.org/2026/07/22/nx-s1-5902843/us-iran-updates)",
+          "Regjeringen. (2026). *Oppfølging av Stortingets vedtak om reduksjon i avgifter på drivstoff*. Hentet 24.07.2026 fra [regjeringen.no](https://www.regjeringen.no/no/aktuelt/oppfolging-av-stortingets-vedtak-om-reduksjon-i-avgifter-pa-drivstoff/id3155277/)",
+          "SSB. (2026a). *Nok en rekordmåned for oljeeksporten*. Statistisk sentralbyrå. Hentet 24.07.2026 fra [ssb.no](https://www.ssb.no/utenriksokonomi/utenrikshandel/statistikk/utenrikshandel-med-varer/artikler/nok-en-rekordmaned-for-oljeeksporten)",
+          "SSB. (2026b). *Handelsoverskuddet økte i juni*. Statistisk sentralbyrå. Hentet 24.07.2026 fra [ssb.no](https://www.ssb.no/utenriksokonomi/utenrikshandel/statistikk/utenrikshandel-med-varer/artikler/handelsoverskuddet-okte-i-juni)",
+          "Store norske leksikon. (2026). *Konflikten mellom Iran og Israel*. Hentet 24.07.2026 fra [snl.no/Konflikten_mellom_Iran_og_Israel](https://snl.no/Konflikten_mellom_Iran_og_Israel)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

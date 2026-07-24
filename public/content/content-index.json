@@ -1,5 +1,5 @@
 {
-  "buildId": 1784856688839,
+  "buildId": 1784933644291,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1684,6 +1684,9 @@
     ],
     "iran-revolusjonen": [
       "content/historie/midtoesten/iran-revolusjonen.json"
+    ],
+    "iran-usa-krigen": [
+      "content/historie/midtoesten/iran-usa-krigen.json"
     ],
     "islams-fodsel": [
       "content/historie/midtoesten/islams-fodsel.json"
@@ -4214,6 +4217,7 @@
     "historie/midtoesten/arabisk-var": "content/historie/midtoesten/arabisk-var.json",
     "historie/midtoesten/golfkrigene": "content/historie/midtoesten/golfkrigene.json",
     "historie/midtoesten/iran-revolusjonen": "content/historie/midtoesten/iran-revolusjonen.json",
+    "historie/midtoesten/iran-usa-krigen": "content/historie/midtoesten/iran-usa-krigen.json",
     "historie/midtoesten/islams-fodsel": "content/historie/midtoesten/islams-fodsel.json",
     "historie/midtoesten/islamsk-gullaldet": "content/historie/midtoesten/islamsk-gullaldet.json",
     "historie/midtoesten/israel-og-palestina": "content/historie/midtoesten/israel-og-palestina.json",

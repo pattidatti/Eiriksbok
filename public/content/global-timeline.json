@@ -11697,6 +11697,28 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "midtoesten-i-dag-sub-0",
+      "title": "Assad-regimet faller",
+      "description": "Etter nesten fjorten år med borgerkrig kollapser regimet i Syria på elleve dager. Bashar al-Assad flykter til Moskva, og opprørslederen Ahmed al-Sharaa overtar som overgangspresident.",
+      "startDate": 2024,
+      "endDate": null,
+      "displayDate": "2024",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "midtoesten",
+      "link": "/historie/midtoesten/midtoesten-i-dag",
+      "tags": [
+        "midtosten",
+        "is",
+        "iran"
+      ],
+      "lat": 32,
+      "lng": 53,
+      "placeLabel": "Iran",
+      "placeCountryId": 364,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "aldri-godt-nok",
       "title": "Aldri godt nok",
       "description": "Utgitt av Karolina",
@@ -11754,6 +11776,28 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "midtoesten-i-dag-sub-1",
+      "title": "Våpenhvile i Gaza",
+      "description": "En amerikansk fredsplan i tjue punkter fører til våpenhvile i oktober 2025. Den brytes gjentatte ganger, og gjenoppbyggingen av Gaza har knapt begynt.",
+      "startDate": 2025,
+      "endDate": null,
+      "displayDate": "2025",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "midtoesten",
+      "link": "/historie/midtoesten/midtoesten-i-dag",
+      "tags": [
+        "midtosten",
+        "is",
+        "iran"
+      ],
+      "lat": 32,
+      "lng": 53,
+      "placeLabel": "Iran",
+      "placeCountryId": 364,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "ki-botox",
       "title": "KI er Botox for hjernen",
       "description": "Utgitt av Andreas Birger Johansen",
@@ -11769,6 +11813,73 @@
       "placeLabel": "Norge",
       "placeCountryId": 578,
       "geoConfidence": "guess"
+    },
+    {
+      "id": "iran-usa-krigen-utbrudd",
+      "title": "Krigen mellom USA/Israel og Iran bryter ut",
+      "description": "USA og Israel gjennomfører nesten 900 angrep mot Iran på tolv timer. Irans øverste leder Ali Khamenei blir drept.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "28. februar 2026",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "midtoesten",
+      "link": "/historie/midtoesten/iran-usa-krigen",
+      "tags": [
+        "midtosten",
+        "iran",
+        "usa",
+        "krig"
+      ],
+      "lat": 32,
+      "lng": 53,
+      "placeLabel": "Iran",
+      "placeCountryId": 364,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "hormuz-stengt-2026",
+      "title": "Iran stenger Hormuzstredet",
+      "description": "Iran erklærer stredet stengt og angriper skip som passerer. Skipstrafikken faller over 90 prosent, og oljeprisen skyter i været.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "4. mars 2026",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "midtoesten",
+      "link": "/historie/midtoesten/iran-usa-krigen",
+      "tags": [
+        "midtosten",
+        "iran",
+        "olje"
+      ],
+      "lat": 32,
+      "lng": 53,
+      "placeLabel": "Iran",
+      "placeCountryId": 364,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "islamabad-memorandumet",
+      "title": "Islamabad-memorandumet",
+      "description": "USA og Iran signerer en avtale som gir 60 dager til å forhandle fram fred. Den bryter sammen i juli 2026.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "17. juni 2026",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "midtoesten",
+      "link": "/historie/midtoesten/iran-usa-krigen",
+      "tags": [
+        "midtosten",
+        "iran",
+        "usa"
+      ],
+      "lat": 32,
+      "lng": 53,
+      "placeLabel": "Iran",
+      "placeCountryId": 364,
+      "geoConfidence": "tag"
     },
     {
       "id": "hvordan-drofte",
@@ -11792,6 +11903,29 @@
       "placeLabel": "Norge",
       "placeCountryId": 578,
       "geoConfidence": "guess"
+    },
+    {
+      "id": "iran-usa-krigen",
+      "title": "Krigen mellom USA og Iran",
+      "description": "Krigen som brøt ut 28. februar 2026 - og hvordan du leser nyhetene om den kritisk.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "midtoesten",
+      "link": "/historie/midtoesten/iran-usa-krigen",
+      "tags": [
+        "midtosten",
+        "iran",
+        "usa",
+        "olje"
+      ],
+      "lat": 32,
+      "lng": 53,
+      "placeLabel": "Iran",
+      "placeCountryId": 364,
+      "geoConfidence": "tag"
     },
     {
       "id": "solvknapper",
