@@ -24,12 +24,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          # Matcher lokal utvikling (Node 22). Node 20 gikk ut av support i
+          # april 2026, og runneren tvang actionene over på Node 24 uansett.
+          node-version: 22
           cache: 'npm'
 
       - name: Install dependencies
@@ -39,7 +41,9 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        # v5 er den som drar med seg upload-artifact v7; eldre versjoner bruker
+        # upload-artifact v4, som var det annotasjonen klaget på.
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
 
@@ -53,4 +57,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
