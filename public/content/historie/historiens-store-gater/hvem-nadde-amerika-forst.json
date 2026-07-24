@@ -5,7 +5,7 @@
     "year": "1000-1492",
     "category": "Historiens store gåter",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/hvem-nadde-amerika-forst-hero.webp",
     "details": [
         "Nordboerne nådde Nord-Amerika rundt år 1000, nesten 500 år før Columbus.",
         "Beviset er en utgravd boplass på Newfoundland, datert til nøyaktig år 1021.",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/hvem-nadde-amerika-forst-01.webp",
             "alt": "Et norrønt handelsskip med firkantseil på grått og opprørt Atlanterhav",
             "caption": "Nordboerne krysset det åpne havet i vest lenge før noen andre europeere."
         },
@@ -52,7 +52,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/hvem-nadde-amerika-forst-02.webp",
             "alt": "Arkeologiske tufter av torvhus på en grønn kyst ved havet på Newfoundland",
             "caption": "Hustuftene på L'Anse aux Meadows gjorde sagaenes fortelling til et bevis."
         },
