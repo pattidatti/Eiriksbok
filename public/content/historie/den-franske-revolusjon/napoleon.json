@@ -29,7 +29,7 @@
         },
         {
             "type": "text",
-            "content": "Den 9. november 1799 marsjerte Napoleon inn i nasjonalforsamlingen med soldatene sine og tvang frem et nytt styre. Han kalte seg førstekonsul. Tre menn skulle styre Frankrike, men i praksis var det Napoleon alene som bestemte. Han ryddet opp i et land i ruiner. Banken stod på randen av kollaps, og veiene var fulle av røvere. Napoleon bygget nye veier, startet skoler og opprettet en sentralbank. Det viktigste var en stor lovbok som ble samlet i 1804 og fikk navnet Code Civil. Lovboken sa at alle borgere var like for loven. Adelens privilegier var borte. Bønder kunne eie sin egen jord. Sønner kunne ikke lenger arve alt fordi de var førstefødte. Lovboken spredte seg til mange land i Europa og lever videre i moderne rett."
+            "content": "Den 9. november 1799 marsjerte Napoleon inn i nasjonalforsamlingen med soldatene sine og tvang frem et nytt styre. Han kalte seg førstekonsul. Tre menn skulle styre Frankrike, men i praksis var det Napoleon alene som bestemte (Greve, 2026). Han ryddet opp i et land i ruiner. Banken stod på randen av kollaps, og veiene var fulle av røvere. Napoleon bygget nye veier, startet skoler og opprettet en sentralbank. Det viktigste var en stor lovbok som ble samlet i 1804 og fikk navnet Code Civil. Lovboken sa at alle borgere var like for loven. Adelens privilegier var borte. Bønder kunne eie sin egen jord. Sønner kunne ikke lenger arve alt fordi de var førstefødte. Lovboken spredte seg til mange land i Europa og lever videre i moderne rett."
         },
         {
             "type": "text",
@@ -67,7 +67,7 @@
         },
         {
             "type": "text",
-            "content": "Sommeren 1812 marsjerte Napoleon østover med over 600 000 soldater. Målet var Moskva. Russerne nektet å møte ham i ett stort slag. I stedet trakk de seg tilbake og brente alt på veien. Da Napoleon endelig nådde Moskva, fant han en tom og brennende by. Vinteren kom tidlig. På hjemveien sank temperaturen til 30 minusgrader. Soldater frøs i hjel i tusenvis. Av de 600 000 kom bare rundt 100 000 tilbake."
+            "content": "Sommeren 1812 marsjerte Napoleon østover med over 600 000 soldater. Målet var Moskva. Russerne nektet å møte ham i ett stort slag. I stedet trakk de seg tilbake og brente alt på veien. Da Napoleon endelig nådde Moskva, fant han en tom og brennende by. Vinteren kom tidlig. På hjemveien sank temperaturen til 30 minusgrader. Soldater frøs i hjel i tusenvis. Av de 600 000 kom bare rundt 100 000 tilbake (Encyclopaedia Britannica, 2026)."
         },
         {
             "type": "image",
@@ -98,7 +98,7 @@
         },
         {
             "type": "text",
-            "content": "Napoleons hær er borte. Imperiet hans er borte. Men Code Civil lever fortsatt. I Frankrike, Belgia, Nederland, Italia, Spania, Romania og deler av Tyskland bygger moderne lov på Napoleons bok fra 1804. Tanken om at alle borgere er like for loven, uavhengig av familie og fødsel, kom fra opplysningstiden, men det var Napoleon som skrev den ned og spredte den med soldater og lovbøker. Det er det største paradokset i historien hans: en enehersker som spredte borgerrettigheter."
+            "content": "Napoleons hær er borte. Imperiet hans er borte. Men Code Civil lever fortsatt. I Frankrike, Belgia, Nederland, Italia, Spania, Romania og deler av Tyskland bygger moderne lov på Napoleons bok fra 1804 (Sandvik & Gisle, 2024). Tanken om at alle borgere er like for loven, uavhengig av familie og fødsel, kom fra opplysningstiden, men det var Napoleon som skrev den ned og spredte den med soldater og lovbøker. Det er det største paradokset i historien hans: en enehersker som spredte borgerrettigheter."
         },
         {
             "type": "list",
@@ -187,7 +187,19 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (2026). *French invasion of Russia*. Hentet 24.07.2026 fra [britannica.com](https://www.britannica.com/event/French-invasion-of-Russia)",
+                    "Greve, T. (2026). *Napoleon 1. Bonaparte*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Napoleon_1._Bonaparte](https://snl.no/Napoleon_1._Bonaparte)",
+                    "Sandvik, G. & Gisle, J. (2024). *Code*. Store norske leksikon. Hentet 24.07.2026 fra [snl.no/Code](https://snl.no/Code)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-24"
 }
