@@ -20,17 +20,17 @@ const CONFLICTS: Conflict[] = [
         id: 'jemen',
         label: 'Jemen',
         position: { top: '72%', left: '20%' },
-        saudi: { side: 'Jemens regjering', support: 'Leder militærkoalisjon, bomber Houthi-omrader' },
-        iran: { side: 'Houthi-opprørerne', support: 'Vapen, rakketter, militær radvgiving' },
-        outcome: 'Verdens verste humanitære krise. Millioner sulter. Begge parter nekter a gi seg.',
+        saudi: { side: 'Jemens regjering', support: 'Ledet militærkoalisjon, bombet Houthi-områder' },
+        iran: { side: 'Houthi-opprørerne', support: 'Våpen, raketter, militær rådgivning' },
+        outcome: 'Verdens verste humanitære krise. Frontlinjene har stått stille siden 2022, men over 22 millioner jemenitter trenger nødhjelp i 2026.',
     },
     {
         id: 'syria',
         label: 'Syria',
         position: { top: '25%', left: '32%' },
-        saudi: { side: 'Opprørsgrupper', support: 'Finansiering og vapen til sunni-opprørere' },
+        saudi: { side: 'Opprørsgrupper', support: 'Finansiering og våpen til sunni-opprørere' },
         iran: { side: 'Assad-regimet', support: 'Iranske soldater, Hizbollah-styrker, penger' },
-        outcome: 'Assad vant med iransk og russisk hjelp. 300 000 drept, 13 millioner pa flukt.',
+        outcome: 'Assad holdt seg ved makten i nesten fjorten år, men regimet falt i desember 2024. Over 528 000 drept. Iran mistet fotfestet sitt i landet.',
     },
     {
         id: 'libanon',
@@ -38,14 +38,14 @@ const CONFLICTS: Conflict[] = [
         position: { top: '22%', left: '62%' },
         saudi: null,
         iran: { side: 'Hizbollah', support: 'Militær trening, raketter, finansiering siden 1982' },
-        outcome: 'Hizbollah er i dag sterkere enn den libanesiske hæren. Iran har effektivt en proxy pa Israels grense.',
+        outcome: 'Hizbollah ble sterkere enn den libanesiske hæren. I mars 2026 gikk gruppa til angrep på Israel, og over én million libanesere måtte flykte.',
     },
     {
         id: 'irak',
         label: 'Irak',
         position: { top: '35%', left: '65%' },
         saudi: { side: 'Sunni-grupper', support: 'Finansiering og diplomatisk støtte' },
-        iran: { side: 'Shia-militser', support: 'Trening, vapen og direkte kommando via Revolusjonsgarden' },
+        iran: { side: 'Shia-militser', support: 'Trening, våpen og direkte kommando via Revolusjonsgarden' },
         outcome: 'Irak er formelt alliert med USA, men Iran har stor innflytelse over de mest bevæpnede gruppene i landet.',
     },
 ];
@@ -69,7 +69,7 @@ export function ProxyKrigWebben({ title = 'Saudi-Arabia og Iran: skyggekonflikte
                 <Network className="w-5 h-5 text-indigo-500 flex-shrink-0" />
                 <div>
                     <h3 className="font-semibold text-slate-800 text-sm">{title}</h3>
-                    <p className="text-xs text-slate-500 mt-0.5">Klikk pa en konflikt for a se hvem som støtter hvem</p>
+                    <p className="text-xs text-slate-500 mt-0.5">Klikk på en konflikt for å se hvem som støtter hvem</p>
                 </div>
             </div>
 
@@ -202,7 +202,7 @@ export function ProxyKrigWebben({ title = 'Saudi-Arabia og Iran: skyggekonflikte
                             exit={{ opacity: 0 }}
                             className="text-center text-xs text-slate-400 py-2"
                         >
-                            Klikk pa en konflikt i kartet
+                            Klikk på en konflikt i kartet
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -217,7 +217,7 @@ export function ProxyKrigWebben({ title = 'Saudi-Arabia og Iran: skyggekonflikte
                             className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2.5"
                         >
                             <p className="text-xs text-emerald-800 font-medium leading-relaxed">
-                                Mønsteret er klart: Saudi-Arabia og Iran kjemper aldri direkte mot hverandre. De kjemper gjennom andre. Og det er folket i Jemen, Syria, Libanon og Irak som betaler prisen.
+                                Mønsteret er klart: i tiår kjempet Saudi-Arabia og Iran aldri direkte mot hverandre. De kjempet gjennom andre, og det var folket i Jemen, Syria, Libanon og Irak som betalte prisen. I 2026 brøt mønsteret sammen - da havnet de to landene på hver sin side i en åpen krig.
                             </p>
                         </motion.div>
                     )}

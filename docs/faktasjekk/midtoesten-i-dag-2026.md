@@ -3,8 +3,14 @@
 **Fil:** `public/content/historie/midtoesten/midtoesten-i-dag.json`
 **Utløst av:** issue #221 — artikkelen inneholder motsagte fakta og må innholdsoppdateres
 før den kildebelegges.
-**Status:** Forslag. Ikke anvendt. Krever menneskelig godkjenning.
+**Status:** ANVENDT 24. juli 2026. Dokumentet står igjen som begrunnelse og kildegrunnlag.
 **Undersøkt:** 24. juli 2026
+
+> Alle forslagene under er gjennomført. I tillegg ble det gjort tre ting som ikke sto i det
+> opprinnelige forslaget: `arabisk-var.json` fikk full språkvask (fila hadde over 40 ødelagte
+> norske tegn og en rekke skrivefeil), komponenten `ProxyKrigWebben` ble oppdatert fordi den
+> påsto at Saudi-Arabia og Iran «aldri kjemper direkte mot hverandre», og det ble skrevet en
+> egen artikkel om krigen mellom USA og Iran: `iran-usa-krigen.json`.
 
 ---
 

@@ -4,18 +4,19 @@
   "layout": "rich",
   "year": "2011 - i dag",
   "category": "Midtøsten",
-  "readTime": "9 min lesning",
+  "readTime": "12 min lesning",
   "heroImage": "/images/midtoesten/midtoesten-i-dag-hero.webp",
+  "factChecked": "2026-07-24",
   "details": [
-    "I 2024 pågikk aktive militære konflikter i Syria, Jemen, Libya og Israel-Gaza.",
-    "IS mistet sitt fysiske \"kalifat\" i 2019, men ideologien lever videre og inspirerer angrep over hele verden.",
-    "Iran og Saudi-Arabia kjemper om innflytelse i hele Midtøsten - en proxy-krig som preger alle konflikter."
+    "Assad-regimet i Syria falt i desember 2024, etter nesten fjorten år med borgerkrig.",
+    "I februar 2026 gikk skyggekrigen mellom Iran og USA over i åpen krig, og Hormuzstredet ble stengt.",
+    "IS mistet sitt fysiske \"kalifat\" i 2019, men FN anslår at rundt 3 000 krigere fortsatt er aktive i Syria og Irak."
   ],
   "externalUrl": "https://snl.no/Midtosten",
   "content": [
     {
       "type": "text",
-      "content": "Seks aktive militærkonflikter i én region. Millioner på flukt. Byer bombet til grus. Når du leser nyheter om Midtøsten, er det lett å tenke at krig er regionens naturlige tilstand - at folk der bare slåss fordi de alltid har gjort det. Den tanken er feil. Det som skjer i Midtøsten i dag er resultatet av 100 år med spesifikke valg: kolonigrenser trukket med linjal, diktatorer støttet for oljens skyld, og invasjoner som ødela stater uten å bygge nye. Historien forklarer - om den ikke unnskylder."
+      "content": "Krig i Iran. En våpenhvile i Gaza som brytes nesten daglig. Et Syria uten Assad. Et Hormuzstrede der skip ikke slipper fritt gjennom. Når du leser nyheter om Midtøsten, er det lett å tenke at krig er regionens naturlige tilstand - at folk der bare slåss fordi de alltid har gjort det. Den tanken er feil. Det som skjer i Midtøsten i dag er resultatet av 100 år med spesifikke valg: kolonigrenser trukket med linjal, diktatorer støttet for oljens skyld, og invasjoner som ødela stater uten å bygge nye. Historien forklarer - om den ikke unnskylder."
     },
     {
       "type": "header",
@@ -23,21 +24,29 @@
     },
     {
       "type": "text",
-      "content": "I 2014 erklærte den islamistiske gruppen IS et eget «kalifat» på størrelse med Storbritannia, på tvers av Syria og Irak. De kontrollerte byer, tok skatter, hadde en hær - og spredte terror i hele verden. I 2019 mistet de det siste territoriet. Men IS finnes fortsatt. Organisasjonen har gått fra å være en stat til å bli en bevegelse - uten fast landområde, men med celler i Afrika, Sørøst-Asia og Europa. Ideologien som drev IS rekrutterte folk fra over 100 land, inkludert Norge. Den ideologien er ikke borte fordi et flagg ble tatt ned."
+      "content": "I 2014 erklærte den islamistiske gruppen IS et eget «kalifat» på størrelse med Storbritannia, på tvers av Syria og Irak. De kontrollerte byer, tok skatter, hadde en hær - og spredte terror i hele verden. I 2019 mistet de det siste territoriet. Men IS finnes fortsatt. Organisasjonen har gått fra å være en stat til å bli en bevegelse - uten fast landområde, men med celler i Afrika, Sørøst-Asia og Europa. FN anslår at rundt 3 000 IS-krigere fremdeles er aktive i Syria og Irak (Soufan Center, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Da Assad falt i 2024, ble ansvaret for fengslene der tusenvis av IS-fanger sitter overført til nye syriske styrker. Vinteren 2026 forsøkte fanger å bryte seg ut. Samtidig har amerikanske soldater forlatt Syria, og de skal ut av Irak i løpet av 2026. Ideologien som drev IS rekrutterte folk fra over 100 land, inkludert Norge. Den ideologien er ikke borte fordi et flagg ble tatt ned."
     },
     {
       "type": "image",
       "src": "/images/midtoesten/midtoesten-i-dag-01.webp",
       "alt": "Kart over Midtøsten med konfliktområder markert",
-      "caption": "Midtøsten i 2024: Aktive konflikter preger store deler av regionen."
+      "caption": "Midtøsten i 2026: Aktive konflikter preger store deler av regionen."
     },
     {
       "type": "header",
-      "text": "Den store proxy-krigen: Saudi-Arabia mot Iran"
+      "text": "Saudi-Arabia mot Iran: fra skyggekrig til åpen krig"
     },
     {
       "type": "text",
-      "content": "Bak de fleste konfliktene i Midtøsten finner du den samme skillelinjen: Saudi-Arabia mot Iran. Saudi-Arabia er et sunnimuslimsk kongedømme med enorme oljeinntekter og nære bånd til USA. Iran er en shiamuslimsk republikk som har vært isolert fra Vesten siden [revolusjonen i 1979](/historie/midtoesten/iran-revolusjonen). Begge ønsker å dominere regionen - og begge gjør det ved å støtte ulike sider i andres kriger. I Jemen støtter Saudi-Arabia regjeringen, Iran støtter Houthi-opprørerne. I Syria støttet Iran Assad, Saudi-Arabia støttet opprørere. I Libanon støtter Iran Hizbollah. Denne konkurransen kalles en proxy-krig - de slåss gjennom andre, ikke mot hverandre direkte."
+      "content": "Bak de fleste konfliktene i Midtøsten finner du den samme skillelinjen: Saudi-Arabia mot Iran. Saudi-Arabia er et sunnimuslimsk kongedømme med enorme oljeinntekter og nære bånd til USA. Iran er en shiamuslimsk republikk som har vært isolert fra Vesten siden [revolusjonen i 1979](/historie/midtoesten/iran-revolusjonen). Begge vil dominere regionen. I mange år gjorde de det uten å slåss mot hverandre direkte. De støttet hver sin side i andres kriger: Saudi-Arabia støttet regjeringen i Jemen, Iran støttet Houthi-opprørerne. I Syria støttet Iran Assad, Saudi-Arabia støttet opprørere. I Libanon støtter Iran Hizbollah. Denne måten å krige på kalles en proxy-krig - du slåss gjennom andre."
+    },
+    {
+      "type": "text",
+      "content": "I 2023 skjedde det som så ut som et vendepunkt: Kina fikk Saudi-Arabia og Iran til å gjenopprette forbindelsene. Mange håpet at skyggekrigen var over. Den avtalen holdt ikke."
     },
     {
       "type": "component",
@@ -49,8 +58,28 @@
       "name": "FactBox",
       "props": {
         "title": "Hva er en proxy-krig?",
-        "content": "En proxy-krig er en konflikt der to stormakter støtter hver sin side uten å kjempe mot hverandre direkte. Iran og Saudi-Arabia har ikke erklært krig mot hverandre, men bruker penger, våpen og rådgivere til å påvirke konflikter i Jemen, Syria, Irak og Libanon. Resultatet er at disse landenes egne konflikter forlenges og forverres."
+        "content": "En proxy-krig er en konflikt der to stormakter støtter hver sin side uten å kjempe mot hverandre direkte. I flere tiår var dette mønsteret i Midtøsten: Iran og Saudi-Arabia erklærte aldri krig mot hverandre, men brukte penger, våpen og rådgivere til å påvirke konflikter i Jemen, Syria, Irak og Libanon. Resultatet var at disse landenes egne konflikter ble lengre og verre. I 2026 brøt mønsteret sammen - da ble skyggekrigen til en åpen krig."
       }
+    },
+    {
+      "type": "header",
+      "text": "2026: Krigen kommer ut av skyggen"
+    },
+    {
+      "type": "text",
+      "content": "Den 28. februar 2026 angrep USA og Israel Iran direkte. På tolv timer ble nesten 900 mål bombet. Irans øverste leder, Ali Khamenei, ble drept i det første angrepet (Britannica, 2026). Iran svarte med raketter og droner mot amerikanske baser og mot naboland. Saudi-Arabia, som i årevis hadde holdt seg til skyggekrigen, ble truffet av titalls raketter og hundrevis av droner - og svarte med egne angrep mot iranske utskytningsramper. Krigen var ikke lenger en proxy-krig. Den var direkte."
+    },
+    {
+      "type": "text",
+      "content": "To dager senere gikk Hizbollah i Libanon til angrep på Israel. Israel svarte med bombing over hele Libanon og sendte soldater inn i sør. Over én million libanesere måtte flykte fra hjemmene sine i løpet av noen uker."
+    },
+    {
+      "type": "text",
+      "content": "Iran brukte også et helt annet våpen: geografien. Hormuzstredet er en smal passasje mellom Iran og Oman der rundt en femtedel av verdens olje og gass fraktes ut. Iran stengte stredet for skip som ikke fulgte iranske regler. Oljeprisen skjøt i været. Flere våpenhviler er forsøkt - én i april, og en avtale i juni - men i juli 2026 er krigen i gang igjen. Qatar og Pakistan prøver å få partene tilbake til forhandlingsbordet. Du kan lese mer i artikkelen om [krigen mellom USA og Iran](/historie/midtoesten/iran-usa-krigen)."
+    },
+    {
+      "type": "text",
+      "content": "Hvor mange som har mistet livet, er omstridt. Iranske myndigheter oppgir rundt 3 500 døde. Internasjonale organisasjoner mener tallet er høyere. Når du leser nyheter fra en pågående krig, er det alltid verdt å spørre hvem som teller - og hvorfor de teller som de gjør."
     },
     {
       "type": "header",
@@ -58,21 +87,33 @@
     },
     {
       "type": "text",
-      "content": "Jemen er et av verdens fattigste land - og siden 2015 har det vært rammet av det FN kaller verdens største humanitære krise. Saudi-Arabia leder en militærkoalisjon som bomber Houthi-opprørerne fra luften. Iran støtter Houthiene med våpen. I midten sitter Jemens sivile befolkning: over 20 000 luftangrep, millioner på randen av sult, og sykdommer som kolera som drepte tusenvis. Konflikten får lite norsk mediedekning - dels fordi den ikke involverer vestlige soldater, dels fordi den er komplisert. Men for Jemens 35 millioner innbyggere er det like fullt en katastrofe."
-    },
-    {
-      "type": "header",
-      "text": "Syria: Vunnet krig, ødelagt land"
+      "content": "Jemen er et av verdens fattigste land - og siden 2015 har det vært rammet av det FN kaller verdens største humanitære krise. Saudi-Arabia ledet i årevis en militærkoalisjon som bombet Houthi-opprørerne fra luften, mens Iran støttet Houthiene med våpen. Siden 2022 har frontlinjene stort sett stått stille, men krisen har ikke blitt mindre. I 2026 trenger over 22 millioner jemenitter nødhjelp - omtrent halve befolkningen. 18,3 millioner har ikke nok mat, og FNs hjelpeplan for landet er bare 19 prosent finansiert (Security Council Report, 2026)."
     },
     {
       "type": "text",
-      "content": "Da den arabiske våren kom til Syria i 2011, protesterte folk mot president Bashar al-Assad. Han svarte med vold. Borgerkrigen som fulgte drepte over 300 000 mennesker og drev 13 millioner på flukt - halvparten av landets befolkning. Assad vant krigen, støttet av Russlands bomber og Irans tropper. Men han styrer nå et land i ruiner. Økonomi, infrastruktur og tillit er ødelagt. Millioner av syrere bor fremdeles i naboland som Tyrkia, Libanon og Jordan - eller i Europa. Mange norske syrere vet ikke om de noen gang kan reise hjem."
+      "content": "Verdens matvareprogram har måttet stanse arbeidet sitt i de områdene Houthiene styrer. Houthiene har på sin side angrepet skip i Rødehavet og skutt raketter mot Israel. Konflikten får lite norsk mediedekning - dels fordi den ikke involverer vestlige soldater, dels fordi den er komplisert. For jemenittene er den like fullt en katastrofe."
+    },
+    {
+      "type": "header",
+      "text": "Syria: Diktatoren falt"
+    },
+    {
+      "type": "text",
+      "content": "Da den arabiske våren kom til Syria i 2011, protesterte folk mot president Bashar al-Assad. Han svarte med vold. Borgerkrigen som fulgte varte i nesten fjorten år. I desember 2024 gikk det fort: på elleve dager kollapset regimet, og Assad flyktet til Moskva. Fengselsdørene på Sednaya, stedet mange kalte «menneskeslakteriet», ble slått opp, og folk som hadde vært borte i årevis kom ut i dagslys."
+    },
+    {
+      "type": "text",
+      "content": "Da arkivene og massegravene ble åpnet, ble omfanget synlig. Den syriske menneskerettighetsorganisasjonen SOHR anslår nå at over 528 000 mennesker mistet livet, og at over 64 000 av dem døde i Assads fengsler (SOHR, 2026). Over 110 000 mennesker er fortsatt savnet."
+    },
+    {
+      "type": "text",
+      "content": "Etter fallet overtok opprørslederen Ahmed al-Sharaa som overgangspresident. Han skal lede landet fram til en ny grunnlov. Oppgaven er enorm: økonomien er ødelagt, det er strid mellom folkegrupper, og flere væpnede grupper nekter å legge ned våpnene. Samtidig har over tre millioner syrere reist hjem - 1,2 millioner fra utlandet og 1,9 millioner som var på flukt inne i Syria (UNHCR, 2026). Mange av dem kommer hjem til hus som er borte, eller uten papirene som beviser at huset var deres. FN venter at ytterligere én million kan vende tilbake i 2026."
     },
     {
       "type": "image",
       "src": "/images/midtoesten/midtoesten-i-dag-02.webp",
       "alt": "Ruiner i en syrisk by etter borgerkrigen",
-      "caption": "Syria etter borgerkrigen: Assad vant militært, men landet er i ruiner."
+      "caption": "Syria etter borgerkrigen: regimet falt i desember 2024, men byene er fortsatt i ruiner."
     },
     {
       "type": "header",
@@ -80,7 +121,11 @@
     },
     {
       "type": "text",
-      "content": "Den 7. oktober 2023 angrep Hamas Israel fra Gaza - og drepte rundt 1200 mennesker i det dødeligste angrepet mot jøder siden Holocaust. Israel svarte med en massiv militæroffensiv i Gaza. Innen 2024 var over 30 000 palestinere drept og store deler av Gaza jevnet med jorden. Konflikten mellom israelere og palestinere er ikke ny - den handler om land, stat og identitet, og går tilbake til Israels opprettelse i 1948 og de [palestinske flyktningene](/historie/midtoesten/israel-og-palestina) som fulgte. Angrepet i 2023 var en ny og ekstrem eskalering, men røttene er dype. Du kan lese mer om bakgrunnen i artikkelen om [Sykes-Picot og kolonitiden](/historie/midtoesten/sykes-picot)."
+      "content": "Den 7. oktober 2023 angrep Hamas Israel fra Gaza - og drepte rundt 1200 mennesker i det dødeligste angrepet mot jøder siden Holocaust. Israel svarte med en massiv militæroffensiv i Gaza. I oktober 2025 kom en våpenhvile på plass etter en amerikansk fredsplan i tjue punkter. Men våpenhvilen har vært skjør: kampene har blusset opp igjen mange ganger, og helsemyndighetene i Gaza har registrert over 73 000 drepte siden krigen begynte (WAFA, 2026). Store deler av Gaza er jevnet med jorden, og gjenoppbyggingen har knapt begynt."
+    },
+    {
+      "type": "text",
+      "content": "Konflikten mellom israelere og palestinere er ikke ny - den handler om land, stat og identitet, og går tilbake til Israels opprettelse i 1948 og de [palestinske flyktningene](/historie/midtoesten/israel-og-palestina) som fulgte. Angrepet i 2023 var en ny og ekstrem eskalering, men røttene er dype. Du kan lese mer om bakgrunnen i artikkelen om [Sykes-Picot og kolonitiden](/historie/midtoesten/sykes-picot)."
     },
     {
       "type": "header",
@@ -88,7 +133,7 @@
     },
     {
       "type": "text",
-      "content": "Midtøsten er ikke lenger bare et slagfelt for USA og lokale makter. Russland kom inn i Syria i 2015 - og viste at det ville bruke militærmakt for å beholde allierte. Tyrkia, som er NATO-medlem, har soldater i Syria og Libya, og bruker Midtøsten for å fremme egne interesser. Kina holder seg unna kriger, men investerer tungt i regionen gjennom sin Belte og vei-initiativ. I 2023 meglte Kina en historisk normalisering av forholdet mellom Saudi-Arabia og Iran - noe som viste at amerikansk dominans i regionen ikke lenger er selvfølgelig."
+      "content": "Midtøsten er ikke lenger bare et slagfelt for USA og lokale makter. Russland kom inn i Syria i 2015 for å redde Assad - og mistet mye av posisjonen sin da han falt i 2024. Tyrkia, som er NATO-medlem, har soldater i Syria og Libya og bruker Midtøsten for å fremme egne interesser. Kina holder seg unna kriger, men investerer tungt i regionen gjennom Belte og vei-initiativet. I 2023 fikk Kina Saudi-Arabia og Iran til å gjenopprette forbindelsene - et tegn på at amerikansk dominans ikke lenger var selvfølgelig. Tre år senere sto de to landene på hver sin side i en åpen krig. Det sier noe om hvor raskt alliansene i regionen kan snu."
     },
     {
       "type": "component",
@@ -96,7 +141,7 @@
       "props": {
         "title": "Midtøsten 1920 og i dag",
         "leftTitle": "1920: Etter Sykes-Picot",
-        "rightTitle": "2024: Situasjonen i dag",
+        "rightTitle": "2026: Situasjonen i dag",
         "items": [
           {
             "label": "Grenser",
@@ -106,7 +151,7 @@
           {
             "label": "Stormaktspåvirkning",
             "left": "Frankrike og Storbritannia kontrollerer regionen direkte som kolonimakter",
-            "right": "USA, Russland, Kina, Iran og Saudi-Arabia konkurrerer om innflytelse - ingen dominerer alene"
+            "right": "USA, Russland, Kina, Tyrkia, Iran og Saudi-Arabia konkurrerer om innflytelse - og i 2026 endte konkurransen i åpen krig"
           },
           {
             "label": "Demokrati",
@@ -116,7 +161,7 @@
           {
             "label": "Religiøs konflikt",
             "left": "Religionsforskjeller brukes av kolonimakter for å splitte og herske",
-            "right": "Sunni-shia-rivaliseringen mellom Saudi-Arabia og Iran preger nesten alle konflikter"
+            "right": "Sunni-shia-rivaliseringen preger fortsatt regionen, men i 2026 handler krigen like mye om stat mot stat som om religion"
           }
         ]
       }
@@ -127,7 +172,11 @@
     },
     {
       "type": "text",
-      "content": "Midtøsten er ikke langt unna for Norge. Norsk økonomi er bygget på olje - og oljeprisen settes i stor grad av hva som skjer i Saudi-Arabia og Gulf-statene. Flyktningkrisen i 2015 brakte hundretusener av syrere til Europa, og rundt 40 000 til Norge. Norske soldater har tjenestegjort i Afghanistan og Irak. Og terrorangrep inspirert av IS-ideologi har rammet Europa - også norske mål. Norge er heller ikke nøytral: vi er NATO-allierte med USA og selger våpen til Saudi-Arabia, en av de stridende partene i Jemen."
+      "content": "Midtøsten er ikke langt unna for Norge. Norsk økonomi er bygget på olje - og oljeprisen settes i stor grad av hva som skjer i Gulfen. Det ble tydelig i 2026: da Hormuzstredet ble stengt, steg prisen på nordsjøolje til over 120 dollar fatet. Norge eksporterte råolje for 57,4 milliarder kroner i mars 2026 alene, nesten 68 prosent mer enn året før (SSB, 2026). Norge tjente altså enorme summer på en krig vi ikke er part i, mens andre land fikk drivstoffmangel."
+    },
+    {
+      "type": "text",
+      "content": "Flyktningkrisen i 2015 brakte hundretusener av syrere til Europa, og rundt 40 000 til Norge. Nå diskuteres det om noen av dem kan reise tilbake til et Syria uten Assad. Norske soldater har tjenestegjort i Afghanistan og Irak, og terrorangrep inspirert av IS-ideologi har rammet Europa. Norge er heller ikke nøytral: vi er NATO-allierte med USA, vi anerkjente Palestina som stat i mai 2024 (Regjeringen, 2024), og vi har siden 2018 nektet å gi nye lisenser for eksport av forsvarsmateriell til Saudi-Arabia (NRK, 2018)."
     },
     {
       "type": "image",
@@ -166,10 +215,10 @@
           },
           {
             "id": "a4",
-            "text": "Vestlige land tjener milliarder på våpensalg til Saudi-Arabia, som bruker disse i Jemen-krigen.",
-            "strength": 4,
+            "text": "Angrepet på Iran i 2026 gjorde en skyggekrig om til en åpen krig som rammet sivile i mange land.",
+            "strength": 5,
             "type": "mercy",
-            "response": "Våpensalg skjer med eksportkontroll. Saudi-Arabia er et suverent land som selv velger sine konflikter."
+            "response": "Iran hadde i årevis bygget militser i fire naboland. Noen måtte til slutt sette en grense."
           },
           {
             "id": "a5",
@@ -195,30 +244,30 @@
     },
     {
       "type": "text",
-      "content": "Midtøsten er ikke et sted der folk er «skapt for krig». Det er et område der dårlige grenser, utenlandsk innblanding og manglende demokratiutvikling har stablet opp konflikter i generasjoner. Mange av de som bor der ønsker det samme som folk flest: trygghet, arbeid og en fremtid for barna sine. Det finnes også tegn til håp. Jemen-krigen har sett forsiktige fredsforhandlinger. Sudan og Marokko har normalisert forholdet til Israel. Unge arabere bruker sosiale medier til å utfordre korrupte ledere. Historien i Midtøsten er ikke ferdigskrevet - og å forstå hva som skapte kaoset er første skritt mot å endre det."
+      "content": "Midtøsten er ikke et sted der folk er «skapt for krig». Det er et område der dårlige grenser, utenlandsk innblanding og manglende demokratiutvikling har stablet opp konflikter i generasjoner. Mange av dem som bor der ønsker det samme som folk flest: trygghet, arbeid og en fremtid for barna sine. Det finnes også tegn til håp. Millioner av syrere har reist hjem for første gang på over ti år. Våpenhvilen i Gaza holder, om enn så vidt. Unge arabere bruker sosiale medier til å utfordre korrupte ledere. Men 2026 viste også hvor fort det kan gå den andre veien: en skyggekrig som hadde vart i tiår, ble til åpen krig på én natt. Historien i Midtøsten er ikke ferdigskrevet - og å forstå hva som skapte kaoset er første skritt mot å endre det."
     },
     {
-        "type": "component",
-        "name": "Oppgaver",
-        "props": {
-            "forstaa": [
-                "Hva skjedde med IS i 2019, og hvordan endret organisasjonen seg etterpå?",
-                "Forklar hva en proxy-krig er, og gi et eksempel fra teksten på hvordan Saudi-Arabia og Iran støtter hver sin side.",
-                "Hvorfor kaller FN krigen i Jemen verdens største humanitære krise? Nevn minst to konkrete tall eller forhold fra teksten.",
-                "Hva startet borgerkrigen i Syria i 2011, og hva ble resultatet for landet og befolkningen?"
-            ],
-            "reflekter": [
-                "Teksten sier at tanken om at folk i Midtøsten «bare slåss fordi de alltid har gjort det» er feil. Hvilke tre historiske valg trekker artikkelen fram som forklaring i stedet?",
-                "Sammenlign Midtøsten i 1920 og i dag ut fra Comparison-boksen. Hva har endret seg med stormaktenes rolle, og hva har holdt seg likt med grensene?",
-                "Assad «vant» borgerkrigen i Syria, men teksten kaller det en vunnet krig i et ødelagt land. Hva mener artikkelen med det, og kan en krig egentlig vinnes slik?",
-                "Kina meglet i 2023 fram en normalisering mellom Saudi-Arabia og Iran. Hvorfor mener teksten at dette viser at amerikansk dominans i regionen ikke lenger er selvfølgelig?"
-            ],
-            "gaaVidere": [
-                "Artikkelen sier at Norge «heller ikke er nøytral» fordi vi er NATO-allierte med USA og selger våpen til Saudi-Arabia. Skriv et kort avsnitt der du tar stilling til om Norge bør selge våpen til land som er i krig.",
-                "Jemen-krigen får lite dekning i norske medier. Diskuter i par hvorfor noen konflikter havner på forsiden mens andre blir «glemte kriser».",
-                "Velg én av dagens konflikter fra artikkelen og finn en fersk nyhetssak om den. Hvordan stemmer det du leser med bildet teksten gir?"
-            ]
-        }
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva skjedde med IS i 2019, og hvordan endret organisasjonen seg etterpå?",
+          "Forklar hva en proxy-krig er, og gi et eksempel fra teksten på hvordan Saudi-Arabia og Iran støttet hver sin side.",
+          "Hvorfor kaller FN krigen i Jemen verdens største humanitære krise? Nevn minst to konkrete tall eller forhold fra teksten.",
+          "Hva startet borgerkrigen i Syria i 2011, og hva skjedde med Assad-regimet til slutt?"
+        ],
+        "reflekter": [
+          "Teksten sier at tanken om at folk i Midtøsten «bare slåss fordi de alltid har gjort det» er feil. Hvilke tre historiske valg trekker artikkelen fram som forklaring i stedet?",
+          "Sammenlign Midtøsten i 1920 og i dag ut fra Comparison-boksen. Hva har endret seg med stormaktenes rolle, og hva har holdt seg likt med grensene?",
+          "Assad-regimet falt i desember 2024, etter at det hadde overlevd nesten fjorten år med krig. Hva forteller artikkelen om hvorfor det gikk så fort til slutt, og hva er de største utfordringene for Syria nå?",
+          "I 2023 fikk Kina Saudi-Arabia og Iran til å gjenopprette forbindelsene. I 2026 sto de på hver sin side i en åpen krig. Hva sier dette om hvor holdbare avtaler mellom rivaler er?"
+        ],
+        "gaaVidere": [
+          "Da Hormuzstredet ble stengt i 2026, tjente Norge store summer på høyere oljepris. Skriv et kort avsnitt der du tar stilling til om det er problematisk å tjene penger på en krig man ikke er part i.",
+          "Jemen-krigen får lite dekning i norske medier. Diskuter i par hvorfor noen konflikter havner på forsiden mens andre blir «glemte kriser».",
+          "Artikkelen sier at dødstallene fra Iran-krigen er omstridte. Finn to nyhetssaker om samme hendelse fra ulike land. Oppgir de samme tall? Hvem er kilden i hver sak?"
+        ]
+      }
     },
     {
       "type": "component",
@@ -234,7 +283,18 @@
               "En krig som bare vises på internett"
             ],
             "answer": 1,
-            "explanation": "En proxy-krig er når to makter - som Iran og Saudi-Arabia - støtter hver sin side i andres konflikter, uten å erklære krig mot hverandre direkte."
+            "explanation": "En proxy-krig er når to makter - som Iran og Saudi-Arabia - støtter hver sin side i andres konflikter, uten å erklære krig mot hverandre direkte. Slik var mønsteret i Midtøsten helt fram til 2026."
+          },
+          {
+            "question": "Hva skjedde med Assad-regimet i Syria?",
+            "options": [
+              "Det vant borgerkrigen og styrer landet i dag",
+              "Det falt i desember 2024, og Assad flyktet til Moskva",
+              "Det ble avsatt av FN i 2019",
+              "Assad gikk av frivillig etter et valg"
+            ],
+            "answer": 1,
+            "explanation": "Etter nesten fjorten år med borgerkrig kollapset regimet på elleve dager i desember 2024. Assad flyktet til Moskva, og opprørslederen Ahmed al-Sharaa overtok som overgangspresident."
           },
           {
             "question": "Hvilken krise beskrives som verdens største humanitære katastrofe?",
@@ -245,7 +305,7 @@
               "IS-krigen i Irak"
             ],
             "answer": 2,
-            "explanation": "FN har kalt Jemen-krigen verdens største humanitære krise. Millioner er på randen av sult og landet er nesten fullstendig ødelagt etter år med bombing."
+            "explanation": "FN har kalt Jemen-krigen verdens største humanitære krise. I 2026 trenger over 22 millioner mennesker nødhjelp - omtrent halve befolkningen."
           },
           {
             "question": "Hva skjedde med IS etter at de mistet territoriet sitt i 2019?",
@@ -256,7 +316,18 @@
               "De dannet en ny stat i Libya"
             ],
             "answer": 2,
-            "explanation": "IS mistet sitt fysiske «kalifat» i 2019, men organisasjonen lever videre som en desentralisert bevegelse med celler i Afrika, Asia og Europa. Ideologien sprer seg fortsatt."
+            "explanation": "IS mistet sitt fysiske «kalifat» i 2019, men organisasjonen lever videre som en desentralisert bevegelse. FN anslår at rundt 3 000 krigere fortsatt er aktive i Syria og Irak."
+          },
+          {
+            "question": "Hvorfor er Hormuzstredet så viktig?",
+            "options": [
+              "Det er verdens lengste elv",
+              "Rundt en femtedel av verdens olje og gass fraktes gjennom det",
+              "Det er grensen mellom Israel og Libanon",
+              "Det er der FNs hovedkvarter i regionen ligger"
+            ],
+            "answer": 1,
+            "explanation": "Hormuzstredet er en smal passasje mellom Iran og Oman. Rundt en femtedel av verdens olje og gass går gjennom det. Da Iran stengte stredet i 2026, steg oljeprisen kraftig over hele verden."
           },
           {
             "question": "Hvilken avtale fra 1916 la grunnlaget for mange av dagens konflikter i Midtøsten?",
@@ -271,7 +342,36 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Britannica. (2026). *2026 Iran war*. [Encyclopædia Britannica](https://www.britannica.com/event/2026-Iran-war)",
+          "House of Commons Library. (2026). *Syria one year after Assad: Forming an interim government*. [UK Parliament](https://commonslibrary.parliament.uk/research-briefings/cbp-10430/)",
+          "NRK. (2018, 9. november). *Norge vil ikke selge forsvarsmateriell til Saudi-Arabia*. [NRK](https://www.nrk.no/norge/norge-vil-ikke-selge-forsvarsmateriell-til-saudi-arabia-1.14287139)",
+          "Regjeringen. (2024, 28. mai). *I dag anerkjenner Norge Palestina*. [Regjeringen.no](https://www.regjeringen.no/no/aktuelt/i-dag-anerkjenner-norge-palestina/id3040890/)",
+          "Security Council Report. (2026, april). *Yemen: Briefing and consultations*. [Security Council Report](https://www.securitycouncilreport.org/whatsinblue/2026/04/yemen-briefing-and-consultations-44.php)",
+          "Syrian Observatory for Human Rights. (2026). *Final death toll of Syria's civil war exceeds 528,500*, gjengitt i [Daily Sabah](https://www.dailysabah.com/world/syrian-crisis/final-death-toll-of-syrias-civil-war-exceeds-528500-monitor)",
+          "SSB. (2026). *Konflikten i Midtøsten ga høyt handelsoverskudd*. [Statistisk sentralbyrå](https://www.ssb.no/utenriksokonomi/utenrikshandel/statistikk/utenrikshandel-med-varer/artikler/Konflikten-i_midtøsten-ga-høyt-handelsoverskudd)",
+          "The Soufan Center. (2026, 23. juni). *Not resurgence, but recalibration: ISIS in Syria*. [The Soufan Center](https://thesoufancenter.org/intelbrief-2026-june-23/)",
+          "UNHCR. (2026). *Historic return of displaced Syrians presents opportunity and urgent challenges*. [UNHCR](https://www.unhcr.org/us/news/press-releases/unhcr-historic-return-displaced-syrians-presents-opportunity-and-urgent)",
+          "WAFA. (2026, juli). *Gaza death toll rises amid continued ceasefire breaches*. [WAFA](https://english.wafa.ps/Pages/Details/172498)"
+        ]
+      }
     }
   ],
-  "timeline": []
+  "timeline": [
+    {
+      "year": "2024",
+      "title": "Assad-regimet faller",
+      "description": "Etter nesten fjorten år med borgerkrig kollapser regimet i Syria på elleve dager. Bashar al-Assad flykter til Moskva, og opprørslederen Ahmed al-Sharaa overtar som overgangspresident."
+    },
+    {
+      "year": "2025",
+      "title": "Våpenhvile i Gaza",
+      "description": "En amerikansk fredsplan i tjue punkter fører til våpenhvile i oktober 2025. Den brytes gjentatte ganger, og gjenoppbyggingen av Gaza har knapt begynt."
+    }
+  ]
 }
