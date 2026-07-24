@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 307
+      "count": 309
     },
     {
       "tag": "dekolonisering",
@@ -859,8 +859,16 @@
       "count": 25
     },
     {
+      "tag": "vikingtiden",
+      "count": 25
+    },
+    {
       "tag": "delte-samfunn",
       "count": 25
+    },
+    {
+      "tag": "kildekritikk",
+      "count": 24
     },
     {
       "tag": "etikk",
@@ -877,14 +885,6 @@
     {
       "tag": "musikk",
       "count": 24
-    },
-    {
-      "tag": "vikingtiden",
-      "count": 23
-    },
-    {
-      "tag": "kildekritikk",
-      "count": 22
     },
     {
       "tag": "vitenskap",
@@ -971,6 +971,10 @@
       "count": 14
     },
     {
+      "tag": "mysterier",
+      "count": 13
+    },
+    {
       "tag": "folkemord",
       "count": 13
     },
@@ -997,10 +1001,6 @@
     {
       "tag": "intro",
       "count": 12
-    },
-    {
-      "tag": "mysterier",
-      "count": 11
     },
     {
       "tag": "atomvåpen",
@@ -2004,6 +2004,10 @@
     },
     {
       "tag": "olav-den-hellige",
+      "count": 2
+    },
+    {
+      "tag": "oppdagelsesreiser",
       "count": 2
     },
     {
