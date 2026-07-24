@@ -334,12 +334,13 @@ const ColosseumLevel: React.FC<ColosseumLevelProps> = ({ level, state, onSelect,
                     />
                 </mesh>
 
-                {/* Bunn/topp-ringer (gulvskille) */}
-                <mesh position={[0, -level.height / 2 + 0.05, 0]}>
+                {/* Bunn/topp-ringer (gulvskille). Torus ligger i XY-planet som
+                    standard - må roteres om X for å ligge vannrett rundt etasjen. */}
+                <mesh position={[0, -level.height / 2 + 0.05, 0]} rotation={[Math.PI / 2, 0, 0]}>
                     <torusGeometry args={[level.radiusOuter, 0.08, 8, 48]} />
                     <meshStandardMaterial color="#9c7e51" roughness={0.7} />
                 </mesh>
-                <mesh position={[0, level.height / 2 - 0.05, 0]}>
+                <mesh position={[0, level.height / 2 - 0.05, 0]} rotation={[Math.PI / 2, 0, 0]}>
                     <torusGeometry args={[level.radiusOuter, 0.08, 8, 48]} />
                     <meshStandardMaterial color="#9c7e51" roughness={0.7} />
                 </mesh>

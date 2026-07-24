@@ -143,8 +143,8 @@ export default function ArkimedesKronen3D({ onComplete, onRetry }: MicroGameProp
 
     const goldLevel = BASE_WATER + GOLD_RISE * f;
     const crownLevel = BASE_WATER + CROWN_RISE * f;
-    // gjenstandene synker fra over vannet og ned i karet
-    const objY = 2.9 - 1.9 * f;
+    // gjenstandene synker fra over vannet helt ned til karbunnen (ikke sveve midt i vannet)
+    const objY = 2.9 - 2.5 * f;
 
     const goldDisplaced = Math.round(GOLD_RISE * 100 * f);
     const crownDisplaced = Math.round(CROWN_RISE * 100 * f);
@@ -182,8 +182,8 @@ export default function ArkimedesKronen3D({ onComplete, onRetry }: MicroGameProp
                     <DataReadout
                         corner="bl"
                         items={[
-                            { label: 'Rent gull', value: goldDisplaced, unit: 'L' },
-                            { label: 'Kronen', value: crownDisplaced, unit: 'L' },
+                            { label: 'Rent gull', value: goldDisplaced, unit: 'mL' },
+                            { label: 'Kronen', value: crownDisplaced, unit: 'mL' },
                         ]}
                     />
                     <DragHint show={depth < 5} corner="bc">
@@ -214,13 +214,11 @@ export default function ArkimedesKronen3D({ onComplete, onRetry }: MicroGameProp
                         answerIndex={0}
                         explanation="Riktig! Lik vekt, men kronen tar mer plass. En større gjenstand presser bort mer vann. Slik avslørte Arkimedes at gullsmeden hadde jukset."
                         onResult={(correct) => {
-                            if (correct) {
-                                setAnswered(true);
-                                microSfx.play('complete');
-                                onComplete({ score: 1, completed: true });
-                            } else {
-                                microSfx.play('incorrect');
-                            }
+                            // SceneQuiz låser seg etter ett svar og viser fasit - spillet må
+                            // derfor fullføre uansett, med lavere score ved feil svar.
+                            setAnswered(true);
+                            microSfx.play(correct ? 'complete' : 'incorrect');
+                            onComplete({ score: correct ? 1 : 0.7, completed: true });
                         }}
                     />
                 </div>

@@ -28,6 +28,13 @@ import type { MicroGameProps } from './types';
 
 const TIERS = 7;
 
+// Åsen (halv frustum) som tilskuerradene hviler på. Stigningen matcher radene:
+// rad i ligger ved radius 3.5 + 0.78i og høyde 0.4 + 0.62i.
+const HILL_R_BOT = 3.31;
+const HILL_R_TOP = 8.6;
+const HILL_H = 4.2;
+const HILL_SLOPE = HILL_H / (HILL_R_TOP - HILL_R_BOT);
+
 const GreskTeater3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const sounds = useStepSounds();
     const { stage, advance, reset, atEnd } = useStage(3);
@@ -143,6 +150,14 @@ function TheatreScene({
 
             {/* Theatron - tilskuerplassene i en stigende halvsirkel (del 2) */}
             <Placeable shown={stage >= 2}>
+                {/* Åsen radene er skåret inn i - uten den svever radene i lufta.
+                    Skrå halvkjegle (frustum) som følger radenes stigning. */}
+                <mesh position={[0, HILL_H / 2, 0]} receiveShadow>
+                    <cylinderGeometry
+                        args={[HILL_R_TOP, HILL_R_BOT, HILL_H, 48, 1, false, Math.PI / 2, Math.PI]}
+                    />
+                    <meshStandardMaterial color="#8aa25f" roughness={1} side={THREE.DoubleSide} />
+                </mesh>
                 {Array.from({ length: TIERS }).map((_, i) => {
                     const r = 3.5 + i * 0.78;
                     const y = 0.4 + i * 0.62;
@@ -264,6 +279,9 @@ function SoundRings() {
             const phase = (t.current + i / RING_COUNT) % 1;
             const scale = 0.4 + phase * 9;
             child.scale.set(scale, scale, scale);
+            // Klatre opp åssiden i takt med radene (lokal +z = verdens +y her),
+            // så bølgene ruller opp over tilskuerplassene i stedet for inn i åsen.
+            child.position.z = Math.max(0, HILL_SLOPE * (scale - HILL_R_BOT) + 0.2);
             const mat = (child as THREE.Mesh).material as THREE.MeshBasicMaterial;
             mat.opacity = 0.5 * (1 - phase);
         });

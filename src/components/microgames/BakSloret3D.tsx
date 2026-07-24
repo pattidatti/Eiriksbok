@@ -18,14 +18,14 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill: Bak uvitenhetens slor. En liten landsby med tre livsstasjoner
-// (topp, midten, bunnen) star bak et frostet slor. Eleven velger EN samfunnsregel
-// ved a klikke en av tre steintavler foran sloret - husene vokser og krymper etter
-// regelen. Sa trekker eleven sloret til side, og et sokelys faller pa en TILFELDIG
-// figur: "dette ble deg". Fordi du ikke kan styre hvem du blir, lonner det seg a
+// Mikrospill: Bak uvitenhetens slør. En liten landsby med tre livsstasjoner
+// (topp, midten, bunnen) står bak et frostet slør. Eleven velger EN samfunnsregel
+// ved å klikke en av tre steintavler foran sløret - husene vokser og krymper etter
+// regelen. Så trekker eleven sløret til side, og et søkelys faller på en TILFELDIG
+// figur: "dette ble deg". Fordi du ikke kan styre hvem du blir, lønner det seg å
 // velge regelen der selv den nederste plassen er best mulig.
-// Lyspare: bak sloret vet du ikke hvem du blir, sa du velger reglene som gjor livet
-// trygt selv for den som far minst (Rawls sitt differanseprinsipp).
+// Lyspære: bak sløret vet du ikke hvem du blir, så du velger reglene som gjør livet
+// trygt selv for den som får minst (Rawls sitt differanseprinsipp).
 
 type Phase = 'idle' | 'ruled' | 'revealed';
 type TierId = 'topp' | 'midten' | 'bunnen';
@@ -49,14 +49,14 @@ const RULES: Rule[] = [
     {
         id: 'likt',
         label: 'Alt helt likt',
-        blurb: 'Alle far akkurat det samme',
+        blurb: 'Alle får akkurat det samme',
         color: '#3b82f6',
         dist: { topp: 5, midten: 5, bunnen: 5 },
     },
     {
         id: 'rawls',
-        label: 'Loft de svakeste',
-        blurb: 'Forskjell er lov om den loft de nederste',
+        label: 'Løft de svakeste',
+        blurb: 'Forskjell er lov om den løfter de nederste',
         color: '#10b981',
         dist: { topp: 8, midten: 6, bunnen: 4 },
     },
@@ -65,7 +65,7 @@ const RULES: Rule[] = [
 const STATIONS: { id: TierId; label: string; x: number; house: string; roof: string }[] = [
     { id: 'bunnen', label: 'Nederst', x: -4.4, house: '#8a7b6a', roof: '#5c5044' },
     { id: 'midten', label: 'I midten', x: 0, house: '#c08a4a', roof: '#7a5630' },
-    { id: 'topp', label: 'Pa toppen', x: 4.4, house: '#d9b25a', roof: '#8a6f2e' },
+    { id: 'topp', label: 'På toppen', x: 4.4, house: '#d9b25a', roof: '#8a6f2e' },
 ];
 
 const valueToHeight = (v: number) => 0.5 + v * 0.14;
@@ -76,7 +76,7 @@ const BakSloret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [ruleId, setRuleId] = useState<string | null>(null);
     const [assigned, setAssigned] = useState<TierId | null>(null);
     const [banner, setBanner] = useState<string | null>(
-        'Klikk en steintavle for a velge samfunnsregelen.'
+        'Klikk en steintavle for å velge samfunnsregelen.'
     );
     const [burst, setBurst] = useState(0);
 
@@ -94,7 +94,7 @@ const BakSloret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         sounds.play('pick');
         setRuleId(id);
         setPhase('ruled');
-        setBanner('Reglene er satt. Trekk na sloret til side og se hvem du ble.');
+        setBanner('Reglene er satt. Trekk nå sløret til side og se hvem du ble.');
     };
 
     const lift = () => {
@@ -105,7 +105,7 @@ const BakSloret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setBurst((b) => b + 1);
         sounds.play('complete');
         const st = STATIONS.find((s) => s.id === roll)!;
-        setBanner(`Sloret er borte. Du ble: ${st.label}.`);
+        setBanner(`Sløret er borte. Du ble: ${st.label}.`);
         onComplete({ score: 1, completed: true, artifact: { ruleId: rule.id, assigned: roll } });
     };
 
@@ -113,13 +113,13 @@ const BakSloret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setPhase('idle');
         setRuleId(null);
         setAssigned(null);
-        setBanner('Klikk en steintavle for a velge samfunnsregelen.');
+        setBanner('Klikk en steintavle for å velge samfunnsregelen.');
     };
 
     return (
         <MicroGameScaffold
-            title="Bak uvitenhetens slor"
-            subtitle="Velg en regel for samfunnet mens sloret skjuler hvem du blir. Trekk det sa til side."
+            title="Bak uvitenhetens slør"
+            subtitle="Velg en regel for samfunnet mens sløret skjuler hvem du blir. Trekk det så til side."
             estimatedSeconds={120}
             onRetry={phase !== 'idle' ? reset : undefined}
             canvas={{
@@ -132,7 +132,7 @@ const BakSloret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <>
                     <SceneBanner message={banner} wide />
                     <SceneBadge corner="br">
-                        {phase === 'revealed' ? 'Dette ble deg' : 'Uvitenhetens slor'}
+                        {phase === 'revealed' ? 'Dette ble deg' : 'Uvitenhetens slør'}
                     </SceneBadge>
                     <DataReadout
                         corner="bl"
@@ -156,7 +156,7 @@ const BakSloret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 />
             }
         >
-            {/* Kontroller under vinduet: regelvalg + trekk sloret */}
+            {/* Kontroller under vinduet: regelvalg + trekk sløret */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {RULES.map((r) => {
                     const on = r.id === ruleId;
@@ -195,7 +195,7 @@ const BakSloret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         : 'bg-slate-100 text-slate-400 cursor-not-allowed'
                 }`}
             >
-                Trekk sloret til side
+                Trekk sløret til side
             </button>
 
             {phase === 'revealed' && rule && assigned && (
@@ -203,8 +203,8 @@ const BakSloret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     <WinScreen title={`Du ble ${STATIONS.find((s) => s.id === assigned)!.label.toLowerCase()}!`} onReplay={reset}>
                         Livskvaliteten din ble {myScore} av 10.{' '}
                         {rule.id === fairestId
-                            ? 'Du valgte regelen der selv den nederste plassen er best mulig. Det er nettopp slik Rawls mente en klok person ville valgt bak sloret.'
-                            : 'Legg merke til regelen «Loft de svakeste»: der er den nederste plassen best mulig. Nar du ikke vet hvem du blir, er det det tryggeste valget. Prov igjen og kjenn pa forskjellen.'}
+                            ? 'Du valgte regelen der selv den nederste plassen er best mulig. Det er nettopp slik Rawls mente en klok person ville valgt bak sløret.'
+                            : 'Legg merke til regelen «Løft de svakeste»: der er den nederste plassen best mulig. Når du ikke vet hvem du blir, er det det tryggeste valget. Prøv igjen og kjenn på forskjellen.'}
                     </WinScreen>
                 </div>
             )}
@@ -244,13 +244,13 @@ function VillageScene({
                 />
             ))}
 
-            {/* Sokelys som faller pa "deg" */}
+            {/* Søkelys som faller på "deg" */}
             <Spotlight assigned={assigned} revealed={phase === 'revealed'} />
 
-            {/* Frostet slor foran landsbyen */}
+            {/* Frostet slør foran landsbyen */}
             <Veil phase={phase} />
 
-            {/* Regel-tavler foran sloret (alltid klikkbare) */}
+            {/* Regel-tavler foran sløret (alltid klikkbare) */}
             {RULES.map((r, i) => (
                 <RuleStone
                     key={r.id}
@@ -266,8 +266,8 @@ function VillageScene({
     );
 }
 
-// En livsstasjon: et hus som damper mot en hoyde utledet av livskvaliteten,
-// pluss en figur ved siden av. Lyser gyllent nar den er "deg".
+// En livsstasjon: et hus som damper mot en høyde utledet av livskvaliteten,
+// pluss en figur ved siden av. Lyser gyllent når den er "deg".
 function Station({
     station,
     value,
@@ -299,7 +299,7 @@ function Station({
 
     return (
         <group position={[station.x, 0, -3]}>
-            {/* markorring pa bakken som lyser nar dette er deg */}
+            {/* markørring på bakken som lyser når dette er deg */}
             <mesh position={[0, 0.03, 1.6]} rotation={[-Math.PI / 2, 0, 0]}>
                 <torusGeometry args={[1.05, 0.09, 10, 40]} />
                 <meshStandardMaterial
@@ -311,7 +311,7 @@ function Station({
                 />
             </mesh>
 
-            {/* huset - scale.y dampes for a vokse/krympe */}
+            {/* huset - scale.y dampes for å vokse/krympe */}
             <group ref={houseGrp} scale={[1, 1, 1]}>
                 <Building
                     position={[0, 0, 0]}
@@ -349,7 +349,7 @@ function Station({
     );
 }
 
-// Sokelys: en myk lyskjegle + punktlys som glir bort til den tildelte stasjonen.
+// Søkelys: en myk lyskjegle + punktlys som glir bort til den tildelte stasjonen.
 function Spotlight({ assigned, revealed }: { assigned: TierId | null; revealed: boolean }) {
     const grp = useRef<THREE.Group>(null);
     const coneMat = useRef<THREE.MeshBasicMaterial>(null);
@@ -382,9 +382,9 @@ function Spotlight({ assigned, revealed }: { assigned: TierId | null; revealed: 
     );
 }
 
-// Det frostede sloret: et halvgjennomsiktig plan som henger foran landsbyen.
-// Nar eleven trekker det, damper det oppover og blir gjennomsiktig. Raycast er
-// slatt av sa klikk gar rett gjennom til regel-tavlene.
+// Det frostede sløret: et halvgjennomsiktig plan som henger foran landsbyen.
+// Når eleven trekker det, damper det oppover og blir gjennomsiktig. Raycast er
+// slått av så klikk går rett gjennom til regel-tavlene.
 function Veil({ phase }: { phase: Phase }) {
     const grp = useRef<THREE.Group>(null);
     const mat = useRef<THREE.MeshStandardMaterial>(null);
@@ -418,7 +418,7 @@ function Veil({ phase }: { phase: Phase }) {
     );
 }
 
-// En klikkbar steintavle som setter samfunnsregelen. Star foran sloret.
+// En klikkbar steintavle som setter samfunnsregelen. Står foran sløret.
 function RuleStone({
     rule,
     x,
@@ -438,8 +438,9 @@ function RuleStone({
         }
     });
 
+    // z=4.6: nærmere landsbyen enn før (6.4) så tavlene ikke kuttes av nederst i bildet
     return (
-        <group position={[x, 0, 6.4]}>
+        <group position={[x, 0, 4.6]}>
             <Interactive onSelect={onSelect} state={on ? 'selected' : 'idle'} hitArea={[1.9, 2, 1.4]}>
                 {(s) => (
                     <group>

@@ -388,7 +388,9 @@ const DemokratiLysene3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             canvas={{
                 idle: false,
                 controls: false,
-                camera: { position: [-1.7, 0.5, 12.6], fov: 52 },
+                // Litt lenger bak enn 12.6 så Irland/Portugal helt til venstre
+                // ikke klippes av billedkanten.
+                camera: { position: [-1.7, 0.5, 13.8], fov: 52 },
                 background: '#c9dcef',
                 fog: null,
                 contactShadows: false,

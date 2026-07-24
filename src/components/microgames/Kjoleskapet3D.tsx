@@ -508,8 +508,8 @@ function FridgeCabinet({
                 <boxGeometry args={[W - 0.4, 0.06, D - 0.5]} />
                 <meshStandardMaterial color="#dfe6ec" transparent opacity={0.8} roughness={0.6} />
             </mesh>
-            {/* mat: melkekartong + eple + en bolle */}
-            <group position={[-0.55, 0.35, 0.15]}>
+            {/* mat: melkekartong + eple + en bolle - alt hviler på hylle/gulv */}
+            <group position={[-0.55, 0.23, 0.15]}>
                 <mesh castShadow>
                     <boxGeometry args={[0.42, 0.7, 0.42]} />
                     <meshStandardMaterial color="#f8fafc" roughness={0.7} />
@@ -519,11 +519,11 @@ function FridgeCabinet({
                     <meshStandardMaterial color="#dbe4ec" roughness={0.7} />
                 </mesh>
             </group>
-            <mesh position={[0.35, 0.22, 0.2]} castShadow>
+            <mesh position={[0.35, 0.12, 0.2]} castShadow>
                 <sphereGeometry args={[0.24, 14, 14]} />
                 <meshStandardMaterial color="#d1442f" roughness={0.6} />
             </mesh>
-            <mesh position={[0.62, -0.62, 0.15]} castShadow>
+            <mesh position={[0.62, -1.69, 0.15]} castShadow>
                 <cylinderGeometry args={[0.4, 0.32, 0.28, 16]} />
                 <meshStandardMaterial color="#e2b23a" roughness={0.6} />
             </mesh>
@@ -621,7 +621,8 @@ function StationObject({
                             />
                         </mesh>
                     ))}
-                    {running && <HeatArrows dir={[-0.9, 0, 0]} color="#38bdf8" />}
+                    {/* Kulden strømmer INN i kjøleskapet, mot maten - ikke ut i rommet */}
+                    {running && <HeatArrows dir={[0.9, 0, 0]} color="#38bdf8" />}
                 </group>
             )}
 

@@ -83,7 +83,7 @@ const LAYERS: LayerSpec[] = [
 
 const TARGET = 3; // indeksen til krigslaget Troja VIIa
 const H = 0.6; // høyden på hvert lag
-const BASE_Y = 0.35; // senter-y for det nederste laget (Troja II)
+const BASE_Y = 0.28; // senter-y for nederste lag; bunnen flukter med GroundPlane (y -0.02)
 const N = LAYERS.length;
 
 // y-senter for laget med array-indeks i (0 = øverst). Nederste lag ligger lavest.
@@ -324,9 +324,10 @@ function LayerSlab({
                     <Arrowhead position={[-1.3, 0, 0.9]} rot={0.6} />
                     <Arrowhead position={[0.7, 0, -0.4]} rot={-0.9} />
                     <Arrowhead position={[1.6, 0, 1.1]} rot={1.7} />
-                    {/* askestripe langs framkanten */}
-                    <mesh position={[0, -H / 2 + 0.03, depth / 2 - 0.02]}>
-                        <boxGeometry args={[width, 0.08, 0.04]} />
+                    {/* askestripe langs framkanten - stikker litt utenfor flaten
+                        slik at den ikke z-fighter med lagets front */}
+                    <mesh position={[0, -H / 2 + 0.03, depth / 2 + 0.01]}>
+                        <boxGeometry args={[width, 0.08, 0.06]} />
                         <meshStandardMaterial color="#2f231b" roughness={1} />
                     </mesh>
                 </group>

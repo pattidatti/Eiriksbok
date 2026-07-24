@@ -43,7 +43,10 @@ const FISH_TOTAL = 3;
 // Steder på kaia (x, z) - brukes til snap og plassering.
 const KONTOR: [number, number] = [-4.6, -3.1];
 const KONGE: [number, number] = [-4.6, 3.2];
-const CHEST_START: [number, number, number] = [0.2, 0.55, 0];
+// Koggen ligger PÅ VANNET langs kaikanten (kaia ender ved x≈1.0, skroget er
+// 4.2 langt) - ikke oppå kaia.
+const SHIP_X = 3.2;
+const CHEST_START: [number, number, number] = [SHIP_X + 0.2, 0.55, 0];
 
 // Startposisjoner for de tre tørrfisk-stablene på kaia.
 const FISH_STARTS: [number, number, number][] = [
@@ -319,10 +322,11 @@ function Harbor({
         }
 
         // Koggen glir ut mot havet (+X) og tilbake.
-        const targetX = prog.current * 16;
+        const targetX = SHIP_X + prog.current * 14;
         ship.current.position.x = damp(ship.current.position.x, targetX, dt, 3);
         const sailing = prog.current > 0.02;
-        ship.current.position.y = 0.05 + Math.sin(clock * 1.1) * (sailing ? 0.05 : 0.02);
+        // Baseline -0.12 gir skroget synlig dypgang i vannflata (y=0.02).
+        ship.current.position.y = -0.12 + Math.sin(clock * 1.1) * (sailing ? 0.05 : 0.02);
         ship.current.rotation.z = Math.sin(clock * 1.3) * (sailing ? 0.05 : 0.02);
     });
 
@@ -331,9 +335,10 @@ function Harbor({
 
     return (
         <group>
-            {/* Land/kai på venstre side, hav på høyre. */}
+            {/* Land/kai på venstre side, hav på høyre. Vannet starter ved
+                kaikanten (x≈1) - lenger inn og det flommer over land og hus. */}
             <GroundPlane size={44} depth={40} color={t.ground} />
-            <WaterPlane position={[9, 0.02, 0]} size={[34, 40]} color={t.water} />
+            <WaterPlane position={[13.5, 0.02, 0]} size={[25, 40]} color={t.water} />
 
             {/* Trekai langs vannkanten der koggen ligger. */}
             <Quay />
@@ -347,7 +352,7 @@ function Harbor({
             <KingCorner position={[KONGE[0], 0, KONGE[1]]} highlight={phase === 'split'} />
 
             {/* Koggen med last. */}
-            <group ref={ship} position={[0, 0.05, 0]}>
+            <group ref={ship} position={[SHIP_X, -0.12, 0]}>
                 <Kogge />
                 {/* Last på dekk: tørrfisk før reisen, korn + sølv etter. */}
                 {!returned ? (
@@ -376,11 +381,11 @@ function Harbor({
                     key={`${loaded}-${i}`}
                     position={start}
                     planeY={0}
-                    bounds={{ minX: -8, maxX: 2.4, minZ: -4, maxZ: 4 }}
+                    bounds={{ minX: -8, maxX: SHIP_X + 2.2, minZ: -4, maxZ: 4 }}
                     liftY={0.5}
                     dropFx="dustPuff"
                     onDrop={(pos) => {
-                        const dist = Math.hypot(pos.x - 0, pos.z - 0);
+                        const dist = Math.hypot(pos.x - SHIP_X, pos.z - 0);
                         if (dist < 2.8) onLoadFish();
                     }}
                 >
@@ -399,7 +404,7 @@ function Harbor({
                     key={`chest-${chestKey}`}
                     position={CHEST_START}
                     planeY={0.55}
-                    bounds={{ minX: -6, maxX: 2, minZ: -4.5, maxZ: 4.5 }}
+                    bounds={{ minX: -6, maxX: SHIP_X + 2, minZ: -4.5, maxZ: 4.5 }}
                     liftY={0.4}
                     snapPoints={[KONTOR]}
                     snapRadius={2.6}

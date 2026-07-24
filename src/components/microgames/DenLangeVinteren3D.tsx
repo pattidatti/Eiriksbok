@@ -37,9 +37,11 @@ const SHEEP_SPOTS: [number, number][] = [
     [-2, 5.5],
     [7, 2],
 ];
+// Åpen mark foran/mellom husene, slik at figurene faktisk synes fra kameraet
+// (tidligere sto den ene inni langhuset og den andre gjemt bak taket).
 const PEOPLE_SPOTS: [number, number][] = [
-    [-2.6, 1.6],
-    [1.4, 2.4],
+    [-0.8, 2.2],
+    [3.4, 1.8],
 ];
 
 function Pasture({ t }: { t: number }) {
@@ -53,9 +55,11 @@ function Pasture({ t }: { t: number }) {
         m.color.g = damp(m.color.g, summer.g + (winter.g - summer.g) * t, dt, 2.5);
         m.color.b = damp(m.color.b, summer.b + (winter.b - summer.b) * t, dt, 2.5);
     });
+    // Planet strekker seg inn under fjordvannet (til z -12) så det ikke blir en
+    // synlig bakgrunnsstripe mellom beitet og vannkanten.
     return (
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]} receiveShadow>
-            <planeGeometry args={[40, 18]} />
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, -1.5]} receiveShadow>
+            <planeGeometry args={[40, 21]} />
             <meshStandardMaterial ref={matRef} color="#6f9a4a" roughness={1} />
         </mesh>
     );

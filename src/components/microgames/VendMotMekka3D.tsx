@@ -82,10 +82,10 @@ export default function VendMotMekka3D({ onComplete }: MicroGameProps) {
             onRetry={won || offDeg < 40 ? reset : undefined}
             canvas={{
                 idle,
-                camera: { position: [0, 6.5, 11], fov: 44 },
+                camera: { position: [0, 8, 13.5], fov: 44 },
                 background: '#ecdfc4',
                 fog: { color: '#ecdfc4', near: 26, far: 55 },
-                target: [0, 1.2, -2],
+                target: [0, 0.6, -1],
                 light: 'golden',
             }}
             overlays={

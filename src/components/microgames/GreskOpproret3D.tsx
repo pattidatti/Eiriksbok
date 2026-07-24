@@ -7,7 +7,6 @@ import {
     DataReadout,
     WinScreen,
     Hotspot,
-    GroundPlane,
     WaterPlane,
     Building,
     Hill,
@@ -118,7 +117,7 @@ const GreskOpproret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         ? 'Hele Hellas står i opprør!'
         : lit.size === 0
           ? 'Tenn det første bålet på Peloponnes'
-          : `Opprøret sprer seg — tenn nabobålene (${lit.size}/${BEACONS.length})`;
+          : `Opprøret sprer seg - tenn nabobålene (${lit.size}/${BEACONS.length})`;
 
     return (
         <MicroGameScaffold
@@ -138,7 +137,7 @@ const GreskOpproret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             overlays={
                 <>
                     <SceneBanner message={banner} wide />
-                    <SceneBadge corner="br">1821–1832</SceneBadge>
+                    <SceneBadge corner="br">1821-1832</SceneBadge>
                     <DataReadout
                         corner="bl"
                         items={[{ label: 'Bål tent', value: lit.size, unit: `/ ${BEACONS.length}` }]}
@@ -162,9 +161,9 @@ const GreskOpproret3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             {won && (
                 <WinScreen title="Et helt folk reiste seg." onReplay={reset}>
                     Den greske frigjøringskrigen var ingen enkelt slagmark. Fra Peloponnes i 1821
-                    spredte opprøret seg område for område — ut til øyene og opp på fastlandet — helt
-                    til hele landet sto i brann og osmanene mistet kontrollen. I 1832 ble Hellas en
-                    fri og selvstendig stat.
+                    spredte opprøret seg område for område - ut til øyene og opp på fastlandet -
+                    helt til hele landet sto i brann og osmanene mistet kontrollen. I 1832 ble
+                    Hellas en fri og selvstendig stat.
                 </WinScreen>
             )}
         </MicroGameScaffold>
@@ -184,22 +183,39 @@ function RevoltScene({
 }) {
     return (
         <group>
-            {/* Land og hav */}
-            <GroundPlane size={40} depth={30} color="#cdbb84" />
-            <WaterPlane position={[0, -0.05, 7.5]} size={[44, 16]} color="#4f9dd6" />
+            {/* Egeerhavet dekker hele scenen - landmassene reiser seg fra havet */}
+            <WaterPlane position={[0, -0.02, 0]} size={[44, 32]} color="#4f9dd6" />
+            {/* Fastlandet i nord som horisontlinje */}
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, -10.6]} receiveShadow>
+                <planeGeometry args={[44, 12]} />
+                <meshStandardMaterial color="#c6b47e" roughness={1} />
+            </mesh>
 
             {beacons.map((b, i) => {
                 const on = lit.has(b.id);
                 const ready = isReady(b);
                 const [x, z] = b.pos;
+                // Litt ulik topphøyde per landmasse så overlappende flater aldri z-fighter.
+                const topY = 0.1 + i * 0.012;
                 return (
                     <group key={b.id} position={[x, 0, z]}>
+                        {/* Landmasse (øy/halvøy) som stikker opp av havet */}
+                        <mesh position={[0, topY - 0.08, 0]} receiveShadow>
+                            <cylinderGeometry args={[2.3, 2.7, 0.16, 10]} />
+                            <meshStandardMaterial color="#cdbb84" roughness={1} />
+                        </mesh>
                         {/* Fjell + stein */}
-                        <Hill position={[0, 0, 0]} radius={1.5} height={1.35} color={HILL_COLORS[i % 3]} seed={i + 2} />
-                        <Rock position={[0.9, 0.15, 0.6]} color="#9a9186" scale={0.5} />
+                        <Hill
+                            position={[0, topY, 0]}
+                            radius={1.5}
+                            height={1.35}
+                            color={HILL_COLORS[i % 3]}
+                            seed={i + 2}
+                        />
+                        <Rock position={[0.9, topY + 0.05, 0.6]} color="#9a9186" scale={0.5} />
                         {/* Landsby ved foten */}
                         <Building
-                            position={[1.4, 0, 1.3]}
+                            position={[1.4, topY, 1.3]}
                             body={on ? '#e7d6a6' : '#c9bfa6'}
                             roof={on ? '#b4462f' : '#8f8776'}
                             w={0.7}
@@ -207,15 +223,15 @@ function RevoltScene({
                             d={0.7}
                             seed={i}
                         />
-                        {/* Bål på toppen */}
-                        <group position={[0, 1.3, 0]}>
+                        {/* Bål på toppen (basen såvidt inn i fjellet så flammen aldri svever) */}
+                        <group position={[0, topY + 1.2, 0]}>
                             <Fire position={[0, 0, 0]} scale={on ? 0.9 : 0.6} lit={on} />
                             <Smoke origin={[0, 0.8, 0]} show={on} count={5} color="#7a7168" />
                         </group>
                         {/* Klikkbar markør når bålet kan tennes */}
                         {ready && (
                             <Hotspot
-                                position={[0, 2.1, 0]}
+                                position={[0, topY + 2.0, 0]}
                                 onSelect={() => onLight(b)}
                                 label={b.start && lit.size === 0 ? 'Start opprøret' : 'Tenn bålet'}
                                 color="#f59e0b"

@@ -143,10 +143,13 @@ const TheodosianWalls3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             onRetry={Object.keys(answered).length > 0 || phase !== 'inspect' ? handleRetry : undefined}
             canvas={{
                 idle,
-                camera: { position: [9, 6.5, 8.5], fov: 40 },
+                // Start på utsiden (angriperens side, -X): der ligger vollgraven som
+                // spørsmål 1 ber eleven finne. Trukket langt nok ut til at hele
+                // trippelmuren får plass i utsnittet.
+                camera: { position: [-11.5, 8.5, 11], fov: 42 },
                 background: '#e9f1f4',
                 fog: { near: 24, far: 48 },
-                target: [0, 1, 0],
+                target: [-1, 1, 0],
             }}
             containerClassName="bg-gradient-to-b from-[#eaf2f6] to-[#cfe0d9]"
             overlays={<DragHint show={idle}>Dra for å rotere - klikk delene</DragHint>}
@@ -372,12 +375,14 @@ const MoatPart: React.FC<Omit<ClickablePartProps, 'children'>> = (props) => {
     const water = stateColor(props.state, '#3f6f8f');
     return (
         <ClickablePart {...props}>
-            <mesh position={[MOAT_X, -0.35, 0]} receiveShadow>
+            {/* Jordboksen er tett - toppen dens må ligge UNDER vannflata,
+                ellers skjuler den vannet helt. */}
+            <mesh position={[MOAT_X, -0.45, 0]} receiveShadow>
                 <boxGeometry args={[2.0, 0.7, WALL_LEN]} />
                 <meshStandardMaterial color="#7d6a45" roughness={1} />
             </mesh>
-            <mesh position={[MOAT_X, -0.12, 0]}>
-                <boxGeometry args={[1.8, 0.18, WALL_LEN - 0.3]} />
+            <mesh position={[MOAT_X, -0.05, 0]}>
+                <boxGeometry args={[1.8, 0.1, WALL_LEN - 0.3]} />
                 <meshStandardMaterial
                     color={water}
                     roughness={0.25}

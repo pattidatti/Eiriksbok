@@ -134,9 +134,11 @@ const HimmelensMandat3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             onRetry={moved || dynasty > 0 ? reset : undefined}
             canvas={{
                 idle: !moved,
-                camera: { position: [0, 8, 15], fov: 40 },
+                // Trukket langt nok tilbake til at BÅDE kornlageret og skattekista
+                // (klikkemålene, z=5.2) og solen/strålen er i bildet fra start.
+                camera: { position: [0, 9.5, 21], fov: 42 },
                 background: '#e6efe6',
-                target: [0, 3, 0],
+                target: [0, 2.6, 0],
                 light: 'golden',
             }}
             overlays={
@@ -325,8 +327,10 @@ function MandateBeam({ vis }: { vis: number }) {
             beam.current.scale.y = 0.06 + u * 1;
             beam.current.scale.x = beam.current.scale.z = 0.6 + u * 0.5;
         }
-        if (beamMat.current) beamMat.current.opacity = 0.08 + u * 0.5;
-        if (sunMat.current) sunMat.current.emissiveIntensity = 0.5 + u * 2.4;
+        // Holdes moderat så gløden forblir GYLLEN - høye verdier + additiv
+        // blending over lys himmel brenner ut til rent hvitt.
+        if (beamMat.current) beamMat.current.opacity = 0.05 + u * 0.32;
+        if (sunMat.current) sunMat.current.emissiveIntensity = 0.4 + u * 1.1;
         if (halo.current) halo.current.scale.setScalar(0.6 + u * 0.9);
     });
     return (
@@ -344,7 +348,7 @@ function MandateBeam({ vis }: { vis: number }) {
                     />
                 </mesh>
                 <group ref={halo}>
-                    <GlowHalo color="#ffdd88" size={1.6} opacity={0.55} />
+                    <GlowHalo color="#ffcf5a" size={1.4} opacity={0.3} />
                 </group>
             </group>
             {/* Selve strålen ned mot palasstaket */}
@@ -355,7 +359,7 @@ function MandateBeam({ vis }: { vis: number }) {
                         ref={beamMat}
                         color="#ffe6a0"
                         emissive="#ffd25a"
-                        emissiveIntensity={1.4}
+                        emissiveIntensity={0.8}
                         transparent
                         opacity={0.5}
                         side={THREE.DoubleSide}
@@ -410,8 +414,9 @@ function PalaceHill({ vis }: { vis: number }) {
                     <boxGeometry args={[4, 1.7, 2.2]} />
                     <meshStandardMaterial color="#c0392b" roughness={0.75} />
                 </mesh>
-                {/* Nedre buede tak */}
-                <mesh position={[0, 2.5, 0]} castShadow>
+                {/* Nedre buede tak - rotert 45 grader så pyramidens sider
+                    flukter med veggene (4-segments kjegle starter på hjørne) */}
+                <mesh position={[0, 2.5, 0]} rotation={[0, Math.PI / 4, 0]} castShadow>
                     <coneGeometry args={[3.6, 1, 4]} />
                     <meshStandardMaterial
                         ref={roofMat}
@@ -423,7 +428,7 @@ function PalaceHill({ vis }: { vis: number }) {
                     />
                 </mesh>
                 {/* Øvre tak */}
-                <mesh position={[0, 3.35, 0]} castShadow>
+                <mesh position={[0, 3.35, 0]} rotation={[0, Math.PI / 4, 0]} castShadow>
                     <coneGeometry args={[2.3, 0.9, 4]} />
                     <meshStandardMaterial color="#e3b23c" roughness={0.5} metalness={0.2} />
                 </mesh>

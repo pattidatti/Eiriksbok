@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Crown, Sparkles } from 'lucide-react';
@@ -36,12 +36,16 @@ interface Kingdom {
 }
 
 // Danmark sitter høyest og midt i ringen - makten lå i Danmark.
+// home-y = 0.75 løfter krona opp på steinsokkelen (sokkelen står på bakken,
+// y 0..0.6) - med y = 0 lå kronene halvveis nedsunket i gresset og soklene
+// var helt begravd. Radius ~5 holder soklene utenfor plattformen og alle tre
+// kronene innenfor kamerautsnittet.
 const KINGDOMS: Kingdom[] = [
     {
         id: 'dk',
         name: 'Danmark',
         gem: '#d24b54',
-        home: [-4.6, 0, 3.2],
+        home: [-4.4, 0.75, 2.9],
         slot: [0, 3.05, 0.2],
         fact: 'Danmark var det rikeste riket. Unionskongen styrte fra Danmark, og derfor lå makten her.',
     },
@@ -49,7 +53,7 @@ const KINGDOMS: Kingdom[] = [
         id: 'no',
         name: 'Norge',
         gem: '#5688c7',
-        home: [0, 0, 5.4],
+        home: [0, 0.75, 5.0],
         slot: [-1.35, 2.35, -0.7],
         fact: 'Norge var svekket etter svartedauden. Som det minste riket ble Norge den svake parten i unionen.',
     },
@@ -57,7 +61,7 @@ const KINGDOMS: Kingdom[] = [
         id: 'se',
         name: 'Sverige',
         gem: '#f2c200',
-        home: [4.6, 0, 3.2],
+        home: [4.4, 0.75, 2.9],
         slot: [1.35, 2.35, -0.7],
         fact: 'Den svenske adelen likte ikke å bli styrt fra Danmark. Sverige gjorde opprør gang på gang.',
     },
@@ -132,7 +136,7 @@ export default function KalmarKronene3D({ onComplete }: MicroGameProps) {
             onRetry={placed.length > 0 ? reset : undefined}
             canvas={{
                 idle,
-                camera: { position: [0, 6.5, 12], fov: 42 },
+                camera: { position: [0, 7.2, 13.5], fov: 42 },
                 background: '#cfe4f2',
                 fog: { color: '#d6e6f0', near: 28, far: 52 },
                 target: [0, 1.6, 0],
@@ -396,9 +400,19 @@ function BondBeam({ show }: { show: boolean }) {
             matRef.current.opacity = damp(matRef.current.opacity, show ? 0.8 : 0, dt, 2);
         }
     });
-    // Midt mellom dk-slot (0, 3.05, 0.2) og no-slot (-1.35, 2.35, -0.7)
+    // Midt mellom dk-slot (0, 3.05, 0.2) og no-slot (-1.35, 2.35, -0.7).
+    // Sylinderen står langs Y som default - roter den så aksen peker langs
+    // linja mellom de to kronene (hånd-satte Euler-vinkler traff ikke).
+    const quat = useMemo(
+        () =>
+            new THREE.Quaternion().setFromUnitVectors(
+                new THREE.Vector3(0, 1, 0),
+                new THREE.Vector3(-1.35, -0.7, -0.9).normalize()
+            ),
+        []
+    );
     return (
-        <mesh position={[-0.68, 2.7, -0.25]} rotation={[0, 0.6, 0.5]}>
+        <mesh position={[-0.68, 2.7, -0.25]} quaternion={quat}>
             <cylinderGeometry args={[0.05, 0.05, 1.7, 8]} />
             <meshBasicMaterial
                 ref={matRef}

@@ -63,8 +63,8 @@ const FACTS = [
     'Vannet renner ut til åkeren, og den tørre jorda blir grønn. Nå kan bonden dyrke bygg her.',
     'Flere kanaler gir mer mat. Men kanalene gror fort igjen, så de må holdes ved like hele tiden.',
     'For å grave og passe alle kanalene måtte mange mennesker samarbeide. Det bandt folk sammen.',
-    'Matoverskuddet gjør at ikke alle trenger å dyrke jorda. Noen kan bli handverkere, prester eller skrivere.',
-    'Nok mat på ett sted lar tusenvis bo tett sammen. Slik vokser den forste byen fram.',
+    'Matoverskuddet gjør at ikke alle trenger å dyrke jorda. Noen kan bli håndverkere, prester eller skrivere.',
+    'Nok mat på ett sted lar tusenvis bo tett sammen. Slik vokser den første byen fram.',
 ];
 
 const DRY_SOIL = new THREE.Color('#a17c45');
@@ -128,7 +128,7 @@ const Kanalbyggeren3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Grav kanalene i Sumer"
-            subtitle="Led vannet fra Eufrat og Tigris ut til de tørre åkrene - og se den forste byen reise seg"
+            subtitle="Led vannet fra Eufrat og Tigris ut til de tørre åkrene - og se den første byen reise seg"
             estimatedSeconds={130}
             onRetry={count > 0 ? reset : undefined}
             canvas={{
@@ -191,7 +191,7 @@ const Kanalbyggeren3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         Du styrte vannet fra elvene ut til åkrene. Elvene flommet til feil tid og
                         kunne være farlige, så bøndene måtte grave kanaler for å styre vannet selv.
                         Det krevde at mange mennesker samarbeidet. Samarbeidet, og maten kanalene ga,
-                        er en av hovedgrunnene til at verdens forste byer vokste fram nettopp her i
+                        er en av hovedgrunnene til at verdens første byer vokste fram nettopp her i
                         Mesopotamia.
                     </WinScreen>
                 )}
@@ -236,13 +236,14 @@ function Plain({
             {/* Byen i midten - vokser for hver vannet åker */}
             <CityCenter progress={progress} />
 
-            {/* Litt liv langs elvebreddene */}
-            <Tree position={[-RIVER_EDGE - 0.2, 0, 6.5]} leaf="#5a7a36" />
-            <Tree position={[RIVER_EDGE + 0.2, 0, -6.2]} leaf="#5a7a36" />
+            {/* Litt liv langs elvebreddene - på land, med klaring til vannet
+                (elvene dekker x 5.8..8.2; trær/figurer sto tidligere uti vannet) */}
+            <Tree position={[-5.2, 0, 6.8]} leaf="#5a7a36" />
+            <Tree position={[5.2, 0, -6.6]} leaf="#5a7a36" />
             <Rock position={[-2.0, 0, 6.4]} color="#c3b48c" scale={0.9} />
             <Rock position={[2.4, 0, -6.0]} color="#bcad85" scale={1.1} />
-            <Figure position={[-5.6, 0, 4.4]} body="#7a5a36" skin="#d8a878" />
-            <Figure position={[5.5, 0, -1.4]} body="#6b5436" skin="#c79468" />
+            <Figure position={[-3.0, 0, 4.9]} body="#7a5a36" skin="#d8a878" />
+            <Figure position={[3.4, 0, -5.6]} body="#6b5436" skin="#c79468" />
 
             {/* Hotspots over de tørre åkrene */}
             {!done &&
@@ -359,6 +360,9 @@ function CityCenter({ progress }: { progress: number }) {
 }
 
 // Ett trinn i zigguraten. Vokser oppover fra sin egen base via scale.y.
+// Skjules helt når skalaen er ~0: en boks med scale.y = 0 tegnes fortsatt som
+// et flatt, svevende plan (og z-fighter mot fundamentet), så uten visible-vakt
+// hang alle trinnene synlig i lufta før eleven hadde gravd noe.
 function Tier({
     y,
     w,
@@ -374,10 +378,12 @@ function Tier({
 }) {
     const g = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
-        if (g.current) g.current.scale.y = damp(g.current.scale.y, show, dt, 3);
+        if (!g.current) return;
+        g.current.scale.y = damp(g.current.scale.y, show, dt, 3);
+        g.current.visible = g.current.scale.y > 0.02;
     });
     return (
-        <group ref={g} position={[0, y, 0]} scale={[1, 0, 1]}>
+        <group ref={g} position={[0, y, 0]} scale={[1, 0, 1]} visible={false}>
             <mesh position={[0, h / 2, 0]} castShadow receiveShadow>
                 <boxGeometry args={[w, h, w]} />
                 <meshStandardMaterial color={color} roughness={0.92} flatShading />
@@ -393,10 +399,11 @@ function Shrine({ y, show }: { y: number; show: number }) {
         if (g.current) {
             const s = damp(g.current.scale.x, show, dt, 4);
             g.current.scale.set(s, s, s);
+            g.current.visible = s > 0.02;
         }
     });
     return (
-        <group ref={g} position={[0, y, 0]} scale={[0, 0, 0]}>
+        <group ref={g} position={[0, y, 0]} scale={[0, 0, 0]} visible={false}>
             <mesh position={[0, 0.3, 0]} castShadow>
                 <boxGeometry args={[0.7, 0.6, 0.7]} />
                 <meshStandardMaterial color="#e6c98a" roughness={0.9} />

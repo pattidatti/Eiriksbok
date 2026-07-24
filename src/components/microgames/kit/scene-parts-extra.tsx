@@ -384,9 +384,13 @@ export function Boat({
     const rot = rotation ?? (heading !== undefined ? [0, heading, 0] : undefined);
     return (
         <group ref={group} position={position} rotation={rot as [number, number, number] | undefined}>
-            <mesh position={[0, 0.2, 0]} rotation={[0, 0, 0]} castShadow receiveShadow>
-                <cylinderGeometry args={[0.5, 0.32, 2.4, 8, 1, false, 0, Math.PI]} />
-                <meshStandardMaterial color={color} roughness={0.9} side={THREE.DoubleSide} />
+            {/* Skroget ligger langs Z (baug mot +Z, radius 0.5 - akterenden er smalere).
+                Lukket sylinder, ikke åpen halvskål: et åpent skrog stikker under det
+                ugjennomsiktige vannplanet og ser "vannfylt" ut ovenfra. Senter ved
+                y=0.35 gir ~0.15 dypgang og synlig fribord. */}
+            <mesh position={[0, 0.35, 0]} rotation={[Math.PI / 2, 0, 0]} castShadow receiveShadow>
+                <cylinderGeometry args={[0.5, 0.32, 2.4, 8]} />
+                <meshStandardMaterial color={color} roughness={0.9} />
             </mesh>
             {sail && (
                 <group position={[0, 0, 0]}>

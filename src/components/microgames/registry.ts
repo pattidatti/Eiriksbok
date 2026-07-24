@@ -155,7 +155,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'roanoke-sporet-3d',
         title: 'Sporet etter kolonien',
         description:
-            'Du er John White, tilbake ved kolonien Roanoke i 1590 - og alle er borte. Let deg gjennom den tause, taakelagte plassen: palisadestolpen med ordet CROATOAN, treet, de tomme husene og jorda uten graver. For hvert spor du finner, letter taaken litt. Naar alt er undersoekt, maa du velge hvilket spor som er sterkest aa foelge. Lyspaeren: naar en gaate ikke har fasit, foelger vi det sterkeste sporet uten aa late som vi vet mer enn vi gjoer.',
+            'Du er John White, tilbake ved kolonien Roanoke i 1590 - og alle er borte. Let deg gjennom den tause, tåkelagte plassen: palisadestolpen med ordet CROATOAN, treet, de tomme husene og jorda uten graver. For hvert spor du finner, letter tåken litt. Når alt er undersøkt, må du velge hvilket spor som er sterkest å følge. Lyspæren: når en gåte ikke har fasit, følger vi det sterkeste sporet uten å late som vi vet mer enn vi gjør.',
         estimatedSeconds: 150,
         loader: () => import('./RoanokeSporet3D'),
         Component: RoanokeSporet3D as never,
@@ -414,9 +414,9 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
     },
     'hundreaarskrigen-3d': {
         id: 'hundreaarskrigen-3d',
-        title: 'Hundreaarskrigen: krigen som svingte',
+        title: 'Hundreårskrigen: krigen som svingte',
         description:
-            'Et kart over Frankrike sett ovenfra. Hundreaarskrigen mellom England og Frankrike svingte fram og tilbake i over hundre aar. Klikk de tre store engelske seirene i rekkefolge - Crecy 1346, Poitiers 1356 og Azincourt 1415 - og se landet farges roedt mens fronten presser sorover, til bare byen Orleans holder stand, beleiret. Send saa Jeanne d&apos;Arc til Orleans i 1429: hun loefter beleiringen, det franske blaa skyller tilbake over kartet, og Frankrike vinner krigen i 1453. Lyspaeren: krigen var ikke ett slag, men en serie kriger som svingte fram og tilbake. England vant slag etter slag med langbuene sine, helt til en ung bondejente snudde alt ved Orleans og ga franskmennene troen tilbake.',
+            'Et kart over Frankrike sett ovenfra. Hundreårskrigen mellom England og Frankrike svingte fram og tilbake i over hundre år. Klikk de tre store engelske seirene i rekkefølge - Crécy 1346, Poitiers 1356 og Azincourt 1415 - og se landet farges rødt mens fronten presser sørover, til bare byen Orléans holder stand, beleiret. Send så Jeanne d\'Arc til Orléans i 1429: hun løfter beleiringen, det franske blå skyller tilbake over kartet, og Frankrike vinner krigen i 1453. Lyspæren: krigen var ikke ett slag, men en serie kriger som svingte fram og tilbake. England vant slag etter slag med langbuene sine, helt til en ung bondejente snudde alt ved Orléans og ga franskmennene troen tilbake.',
         estimatedSeconds: 150,
         loader: () => import('./Hundreaarskrigen3D'),
         Component: Hundreaarskrigen3D as never,
@@ -479,7 +479,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'stromveien-3d',
         title: 'Strommen kommer inn i huset',
         description:
-            'Det er kveld og den norske dalen er mork. Slipp vannet los i fossen med en spak, sa fossen driver generatoren i kraftverket. Strekk sa ledningen ved a klikke punktene etter tur fra kraftverket via to stolper helt fram til huset, og skru til slutt pa lyset - sa vinduer, lyspaere og gatelys lyser opp dalen. Dra vannforingen ned igjen, og lyset svekkes. Lyspaeren: ei paere alene gir ikke lys. Strommen ma ha en hel vei a ga, fra fossen som lager den, gjennom ledningene, helt inn i taket ditt. Det var dette Edison forstod da han bygde hele systemet, ikke bare paera.',
+            'Det er kveld og den norske dalen er mørk. Slipp vannet løs i fossen med en spak, så fossen driver generatoren i kraftverket. Strekk så ledningen ved å klikke punktene etter tur fra kraftverket via to stolper helt fram til huset, og skru til slutt på lyset - så vinduer, lyspære og gatelys lyser opp dalen. Dra vannføringen ned igjen, og lyset svekkes. Lyspæren: ei pære alene gir ikke lys. Strømmen må ha en hel vei å gå, fra fossen som lager den, gjennom ledningene, helt inn i taket ditt. Det var dette Edison forstod da han bygde hele systemet, ikke bare pæra.',
         estimatedSeconds: 150,
         loader: () => import('./Stromveien3D'),
         Component: Stromveien3D as never,
@@ -497,7 +497,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'trekanthandelen-3d',
         title: 'Den dodelige trekanten',
         description:
-            'Dra handelsskipet rundt de tre hjornene i den atlantiske trekant-handelen, og se hvorfor systemet aldri lot skipet seile tomt. Etappe 1: ferdigvarer fra Europa til Vest-Afrika. Etappe 2, Midtpassasjen: skipet frakter mennesker, stuet sammen under dekk, ingen feiring, bare det morke faktumet om hva systemet gjorde. Etappe 3: sukker og bomull tilbake til Europa. For hver etappe tegnes en linje, til trekanten er sluttet. Lyspaeren: hver etappe ga profitt og betalte for den neste, og hele kretslopet hvilte pa Midtpassasjen, der mennesker ble behandlet som last.',
+            'Dra handelsskipet rundt de tre hjørnene i den atlantiske trekant-handelen, og se hvorfor systemet aldri lot skipet seile tomt. Etappe 1: ferdigvarer fra Europa til Vest-Afrika. Etappe 2, Midtpassasjen: skipet frakter mennesker, stuet sammen under dekk, ingen feiring, bare det mørke faktumet om hva systemet gjorde. Etappe 3: sukker og bomull tilbake til Europa. For hver etappe tegnes en linje, til trekanten er sluttet. Lyspæren: hver etappe ga profitt og betalte for den neste, og hele kretsløpet hvilte på Midtpassasjen, der mennesker ble behandlet som last.',
         estimatedSeconds: 170,
         loader: () => import('./Trekanthandelen3D'),
         Component: Trekanthandelen3D as never,
@@ -506,7 +506,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'rutebyen-mohenjo-daro',
         title: 'Rutebyen: Mohenjo-daro',
         description:
-            'Bygg en av verdens forste planlagte byer i tre steg. Dra de skjeve husene inn paa rutenettet saa rette gater vokser fram som et sjakkbrett, klikk deg gjennom gatene og legg lokk over det lukkede avlopet under hver gate, og reis til slutt Det store badet i sentrum. Lyspaeren: Mohenjo-daro vokste ikke vilt og tilfeldig, den ble TEGNET forst og bygd etterpaa, med rette gater, like hus og verdens forste bymessige kloakk for over 4000 ar siden.',
+            'Bygg en av verdens første planlagte byer i tre steg. Dra de skjeve husene inn på rutenettet så rette gater vokser fram som et sjakkbrett, klikk deg gjennom gatene og legg lokk over det lukkede avløpet under hver gate, og reis til slutt Det store badet i sentrum. Lyspæren: Mohenjo-daro vokste ikke vilt og tilfeldig, den ble TEGNET først og bygd etterpå, med rette gater, like hus og verdens første bymessige kloakk for over 4000 år siden.',
         estimatedSeconds: 150,
         loader: () => import('./Rutebyen3D'),
         Component: Rutebyen3D as never,
@@ -596,7 +596,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'japansk-imperium-3d',
         title: 'Det japanske imperiet vokser',
         description:
-            'Et stilisert kart over Ost-Asia der Japans oyer alt ligger roede i ost. Legg nabolandene under Japan i historisk rekkefolge: ta Taiwan fra Kina (1895), senk den russiske flaaten i sjoeslaget ved Tsushima (1905), og gjor Korea til koloni (1910). For hvert land som faller blir det roedt og en roed imperie-lenke fra Japan lyser opp. Lyspaeren: Meiji-Japan brukte sin nye industri og haer til aa bli et imperium, og i 1905 ble det forste asiatiske landet i moderne tid som slo en europeisk stormakt.',
+            'Et stilisert kart over Øst-Asia der Japans øyer alt ligger røde i øst. Legg nabolandene under Japan i historisk rekkefølge: ta Taiwan fra Kina (1895), senk den russiske flåten i sjøslaget ved Tsushima (1905), og gjør Korea til koloni (1910). For hvert land som faller blir det rødt og en rød imperie-lenke fra Japan lyser opp. Lyspæren: Meiji-Japan brukte sin nye industri og hær til å bli et imperium, og i 1905 ble det første asiatiske landet i moderne tid som slo en europeisk stormakt.',
         estimatedSeconds: 140,
         loader: () => import('./JapanskImperium3D'),
         Component: JapanskImperium3D as never,
@@ -614,7 +614,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'stormingen-av-bastillen-3d',
         title: 'Stormingen av Bastillen',
         description:
-            'Festningen Bastillen ruver over gatene i Paris den 14. juli 1789, og en folkemengde presser pa nedenfor. Kapp de to kjettingene sa vindebrua dundrer ned og folket stromer inn, rull sa de fem kanonene fra avhopperne i stilling foran porten, og krev til slutt overgivelse sa det hvite flagget gar opp, de fa fangene gar fri og trikoloren heises. Lyspaeren: det var vanlige parisere, ikke kongen, som tok en kongelig festning med makt, og de kom egentlig for kruttet, ikke for fangene.',
+            'Festningen Bastillen ruver over gatene i Paris den 14. juli 1789, og en folkemengde presser på nedenfor. Kapp de to kjettingene så vindebrua dundrer ned og folket strømmer inn, rull så de fem kanonene fra avhopperne i stilling foran porten, og krev til slutt overgivelse så det hvite flagget går opp, de få fangene går fri og trikoloren heises. Lyspæren: det var vanlige parisere, ikke kongen, som tok en kongelig festning med makt, og de kom egentlig for kruttet, ikke for fangene.',
         estimatedSeconds: 150,
         loader: () => import('./StormingenAvBastillen3D'),
         Component: StormingenAvBastillen3D as never,
@@ -623,7 +623,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'teselskapet-3d',
         title: 'Teselskapet i Boston',
         description:
-            'Boston havn, natt til 16. desember 1773. Tre skip ligger fulle av te som britene har lagt skatt pa. Dra tekiste etter tekiste over rekka og se dem plaske ned i havet. Lyspaeren: kolonistene naektet a betale en skatt de ikke fikk stemme om, og valgte heller a odelegge teen enn a gi etter. Britene svarte med a stenge havna, og protesten forte et langt skritt naermere apen krig.',
+            'Boston havn, natt til 16. desember 1773. Tre skip ligger fulle av te som britene har lagt skatt på. Dra tekiste etter tekiste over rekka og se dem plaske ned i havet. Lyspæren: kolonistene nektet å betale en skatt de ikke fikk stemme om, og valgte heller å ødelegge teen enn å gi etter. Britene svarte med å stenge havna, og protesten førte et langt skritt nærmere åpen krig.',
         estimatedSeconds: 110,
         loader: () => import('./Teselskapet3D'),
         Component: Teselskapet3D as never,
@@ -648,9 +648,9 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
     },
     'berlinmuren-3d': {
         id: 'berlinmuren-3d',
-        title: 'Dodsstripen: muren som delte en by',
+        title: 'Dødsstripen: muren som delte en by',
         description:
-            'En skive av Berlin med hus pa hver side av grensa. Steng de apne overgangene natt til 13. august 1961, dra sa en spak som bygger ut dodsstripen lag for lag - to murer, en tom sandsone, vakttarn og lyskastere - og riv til slutt muren i 1989 sa de to familiene moter hverandre igjen. Lyspaeren: Berlinmuren var aldri bare en vegg, men et dypt, dodelig system som skar gjennom en levende by i 28 ar.',
+            'En skive av Berlin med hus på hver side av grensa. Steng de åpne overgangene natt til 13. august 1961, dra så en spak som bygger ut dødsstripen lag for lag - to murer, en tom sandsone, vakttårn og lyskastere - og riv til slutt muren i 1989 så de to familiene møter hverandre igjen. Lyspæren: Berlinmuren var aldri bare en vegg, men et dypt, dødelig system som skar gjennom en levende by i 28 år.',
         estimatedSeconds: 150,
         loader: () => import('./Berlinmuren3D'),
         Component: Berlinmuren3D as never,
@@ -668,7 +668,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'rikssamlingen-3d',
         title: 'Rikssamlingen: da Norge ble ett',
         description:
-            'Et stilisert kystkart der hvert rike har sin egen smaakonge. Klikk rikene ett for ett og legg dem under Harald, og se kystleia Nordvegen lyse opp i gull. Et morkt gap blir staaende ved Hafrsfjord til du tar det avgjorende slaget rundt aar 872. Lyspaeren: Norge ble ett rike fordi Harald tok kontroll over kysten og vant i Hafrsfjord.',
+            'Et stilisert kystkart der hvert rike har sin egen småkonge. Klikk rikene ett for ett og legg dem under Harald, og se kystleia Nordvegen lyse opp i gull. Et mørkt gap blir stående ved Hafrsfjord til du tar det avgjørende slaget rundt år 872. Lyspæren: Norge ble ett rike fordi Harald tok kontroll over kysten og vant i Hafrsfjord.',
         estimatedSeconds: 150,
         loader: () => import('./Rikssamlingen3D'),
         Component: Rikssamlingen3D as never,
@@ -848,7 +848,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'laasesting-3d',
         title: 'Laasesting: maskinen med to traader',
         description:
-            'Tre symaskinen og sy en soem i 3D: dra spolen med undertraaden paa plass, og vugg svinghjulet saa naala foerer den blaa overtraaden ned og kroken laaser den fast i den oransje undertraaden. Oppdag hvorfor symaskinen bruker to traader.',
+            'Tre symaskinen og sy en søm i 3D: dra spolen med undertråden på plass, og vugg svinghjulet så nåla fører den blå overtråden ned og kroken låser den fast i den oransje undertråden. Oppdag hvorfor symaskinen bruker to tråder.',
         estimatedSeconds: 120,
         loader: () => import('./Laasesting3D'),
         Component: Laasesting3D as never,
@@ -857,7 +857,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'dampmaskin-hjerte-3d',
         title: 'Dampmaskinens hjerte',
         description:
-            'Kjoer en dampmaskin i 3D: pump gruva med spaken, sett inn Watts separate kondensator, og kjenn paa kroppen hvorfor den holdt sylinderen varm og sparte tre fjerdedeler av kullet.',
+            'Kjør en dampmaskin i 3D: pump gruva med spaken, sett inn Watts separate kondensator, og kjenn på kroppen hvorfor den holdt sylinderen varm og sparte tre fjerdedeler av kullet.',
         estimatedSeconds: 150,
         loader: () => import('./DampmaskinHjerte3D'),
         Component: DampmaskinHjerte3D as never,
@@ -882,9 +882,9 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
     },
     'olympia-diskos-3d': {
         id: 'olympia-diskos-3d',
-        title: 'Diskos paa Olympia',
+        title: 'Diskos på Olympia',
         description:
-            'Kast diskos paa Olympias hellige stadion i 3D: still inn vinkel og kraft, se kastebanen, og slaa rekorden for aa vinne olivenkransen. Oppdag at diskosen flyr lengst ved rundt 45 grader.',
+            'Kast diskos på Olympias hellige stadion i 3D: still inn vinkel og kraft, se kastebanen, og slå rekorden for å vinne olivenkransen. Oppdag at diskosen flyr lengst ved rundt 45 grader.',
         estimatedSeconds: 140,
         loader: () => import('./OlympiaDiskos3D'),
         Component: OlympiaDiskos3D as never,
@@ -893,7 +893,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'gresk-teater-3d',
         title: 'Bygg det greske teateret',
         description:
-            'Sett sammen et gresk teater i 3D: legg ned orkhestra (dansegulvet), reis tilskuerplassene i en halvsirkel og bygg skene (scenehuset). Se hvordan formen baerer lyden helt opp til oeverste rad.',
+            'Sett sammen et gresk teater i 3D: legg ned orkhestra (dansegulvet), reis tilskuerplassene i en halvsirkel og bygg skene (scenehuset). Se hvordan formen bærer lyden helt opp til øverste rad.',
         estimatedSeconds: 150,
         loader: () => import('./GreskTeater3D'),
         Component: GreskTeater3D as never,
@@ -1001,7 +1001,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'ansiktene-i-mengden-3d',
         title: 'Ansiktene i mengden',
         description:
-            'En gruppe er gjort om til gra, ansiktslose skikkelser med et propaganda-symbol over seg - "dem". Klikk hver skikkelse og se enkeltmennesket bak: egen farge, ansikt og detalj. Etter hvert som ansiktene kommer fram, smuldrer propagandaen og muren mellom "oss" og "dem" synker. Lyspaeren: det er vanskelig a hate dem du ser som mennesker.',
+            'En gruppe er gjort om til grå, ansiktsløse skikkelser med et propaganda-symbol over seg - "dem". Klikk hver skikkelse og se enkeltmennesket bak: egen farge, ansikt og detalj. Etter hvert som ansiktene kommer fram, smuldrer propagandaen og muren mellom "oss" og "dem" synker. Lyspæren: det er vanskelig å hate dem du ser som mennesker.',
         estimatedSeconds: 110,
         loader: () => import('./AnsikteneIMengden3D'),
         Component: AnsikteneIMengden3D as never,
@@ -1118,7 +1118,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'testudo-3d',
         title: 'Bygg skilpadda (testudo)',
         description:
-            'Bygg den romerske skilpadda i 3D: klikk legionaerene saa ytterringen reiser skjoldveggene og de fire i midten legger taket over hodet. Slipp saa pilregnet loes og se pilene klatre av skallet. Lyspaeren: en mann alene er saarbar, men hver manns skjold paa rett plass gjoer troppen til en bevegelig festning.',
+            'Bygg den romerske skilpadda i 3D: klikk legionærene så ytterringen reiser skjoldveggene og de fire i midten legger taket over hodet. Slipp så pilregnet løs og se pilene klatre av skallet. Lyspæren: en mann alene er sårbar, men hver manns skjold på rett plass gjør troppen til en bevegelig festning.',
         estimatedSeconds: 150,
         loader: () => import('./Testudo3D'),
         Component: Testudo3D as never,
@@ -1217,7 +1217,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'pestrute-3d',
         title: 'Pestens reise langs handelsrutene',
         description:
-            'Folg Svartedauden fra Svartehavet til Bergen i 3D: klikk neste havn langs handelsruta og se pesten gli fra by til by, husene bli graa, folk falle og dodstallet stige. Lyspaera: de samme handelsrutene som baerte rikdom, baerte ogsaa doden helt til Norge i 1349.',
+            'Følg Svartedauden fra Svartehavet til Bergen i 3D: klikk neste havn langs handelsruta og se pesten gli fra by til by, husene bli grå, folk falle og dødstallet stige. Lyspæra: de samme handelsrutene som bar rikdom, bar også døden helt til Norge i 1349.',
         estimatedSeconds: 130,
         loader: () => import('./Pestrute3D'),
         Component: Pestrute3D as never,

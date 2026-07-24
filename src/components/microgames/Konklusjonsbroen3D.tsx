@@ -150,7 +150,10 @@ const Konklusjonsbroen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             estimatedSeconds={150}
             onRetry={planks.length > 0 || phase !== 'build' ? reset : undefined}
             canvas={{
-                idle: phase === 'build',
+                // Ingen idle-rotasjon: scenen er en retningskomposisjon
+                // (spørsmål til venstre -> konklusjon til høyre), og drift i
+                // build-fasen etterlot kamera skjevt før kryssingen.
+                idle: false,
                 camera: { position: [0, 5.5, 14], fov: 42 },
                 background: '#d3e7f2',
                 target: [0, 0.5, 0],
@@ -265,7 +268,7 @@ function BridgeScene({
                 />
             )}
 
-            <Burst position={[7.2, 1.6, 0]} trigger={burst} color="#ffe9a8" count={34} spread={4} />
+            <Burst position={[6.4, 1.6, 0]} trigger={burst} color="#ffe9a8" count={34} spread={4} />
         </group>
     );
 }
@@ -361,7 +364,13 @@ function Cart({
     const lastPhase = useRef<Phase>('build');
 
     const START_X = -7.2;
-    const END_X = 7.2;
+    // Stopper litt inne på målplatformen så vogna ikke klippes av høyre
+    // billedkant fra startkameraet.
+    const END_X = 6.4;
+    // Hjulsenter ligger 0.35 under gruppa og hjulradius er 0.32: med gruppe-y
+    // 0.69 står hjula på platformtoppen (0.02), med 0.8 på planketoppen (0.13).
+    const Y_PLATFORM = 0.69;
+    const Y_BRIDGE = 0.8;
 
     useFrame((_, dt) => {
         if (!grp.current) return;
@@ -376,16 +385,20 @@ function Cart({
 
         if (phase === 'ready') {
             progress.current = START_X;
-            grp.current.position.set(START_X, 1, 0);
+            grp.current.position.set(START_X, Y_PLATFORM, 0);
             grp.current.rotation.z = 0;
             return;
         }
         if (phase === 'build') {
-            grp.current.position.set(START_X, 1, 0);
+            // Nullstill også rotasjonen - etter et fall står vogna ellers
+            // veltet igjen på startplatformen.
+            grp.current.position.set(START_X, Y_PLATFORM, 0);
+            grp.current.rotation.z = 0;
             return;
         }
         if (phase === 'won') {
-            grp.current.position.set(END_X, 1, 0);
+            grp.current.position.set(END_X, Y_PLATFORM, 0);
+            grp.current.rotation.z = 0;
             return;
         }
 
@@ -400,10 +413,11 @@ function Cart({
                 }
                 return;
             }
-            // Rull framover.
+            // Rull framover. På broa (|x| < 5) står hjula på planketoppen,
+            // på platformene litt lavere.
             progress.current = Math.min(END_X, progress.current + dt * 4.5);
             grp.current.position.x = progress.current;
-            grp.current.position.y = 1;
+            grp.current.position.y = Math.abs(progress.current) < 5 ? Y_BRIDGE : Y_PLATFORM;
             // Treff på råtten planke?
             if (failX !== null && progress.current >= failX) {
                 falling.current = true;
@@ -415,7 +429,7 @@ function Cart({
     });
 
     return (
-        <group ref={grp} position={[START_X, 1, 0]}>
+        <group ref={grp} position={[START_X, Y_PLATFORM, 0]}>
             {/* hjul */}
             {[-0.5, 0.5].map((zx) => (
                 <mesh key={zx} position={[zx, -0.35, 0]} rotation={[Math.PI / 2, 0, 0]} castShadow>

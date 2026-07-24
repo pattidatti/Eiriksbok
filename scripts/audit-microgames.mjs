@@ -110,6 +110,13 @@ for (const id of ids) {
             waitUntil: 'domcontentloaded',
             timeout: 30000,
         });
+        // MicroGameFrame starter kollapset - uten dette klikket avbildes bare det
+        // lukkede kortet, og hele den visuelle revisjonen er blind.
+        try {
+            await page.getByText('Spill', { exact: true }).first().click({ timeout: 4000 });
+        } catch {
+            /* allerede ekspandert / annen ramme */
+        }
         // Noen mikrospill er 2D (MicroGameFrame, ingen canvas). Manglende canvas er
         // derfor ikke nødvendigvis en feil - vi tar skjermbilde uansett (DOM-en
         // rendrer). Et 3D-spill som krasjer har også ingen canvas, men da fanges

@@ -97,9 +97,12 @@ const ImperiumSoyler: React.FC<MicroGameProps> = ({ onComplete }) => {
             canvas={{
                 idle: false,
                 controls: true,
-                camera: { position: [7.5, 5.5, 8], fov: 40 },
+                // Litt ute av diagonalen slik at ingen søyle gjemmer seg bak en annen,
+                // og lavt nok til at sikten går UNDER kuppelen inn i søylegangen,
+                // slik at alle fire klikk-ringene er synlige samtidig.
+                camera: { position: [10.2, 4.6, 5.6], fov: 40 },
                 background: '#dbeafe',
-                target: [0, 1.6, 0],
+                target: [0, 2.0, 0],
             }}
             overlays={
                 <>
@@ -175,13 +178,14 @@ function RiketScene({
                 <Pillar key={s.id} soyle={s} svekket={!!svekket[s.id]} collapse={collapse} />
             ))}
 
-            {/* Klikk-punkter oppå hver stående søyle */}
+            {/* Klikk-punkter rundt midten av hver stående søyle - under ringbjelken,
+                slik at ringene ikke skjærer inn i kuppelen */}
             {!collapse &&
                 SOYLER.map((s) =>
                     svekket[s.id] ? null : (
                         <Hotspot
                             key={s.id}
-                            position={[s.x, COL_H + 0.15, s.z]}
+                            position={[s.x, COL_H * 0.55, s.z]}
                             radius={0.45}
                             label={`Svekk ${s.navn}`}
                             color="#f43f5e"

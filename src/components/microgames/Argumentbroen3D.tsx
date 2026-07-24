@@ -131,9 +131,10 @@ function Chasm() {
                 <boxGeometry args={[5, 0.2, 6]} />
                 <meshStandardMaterial color="#f1f5f9" />
             </mesh>
-            {/* Mørk kløft */}
+            {/* Mørk kløft - like bred som gapet mellom gulvflatene (x -3..3),
+                ellers blir det synlige sprekker rett ned til bakgrunnen */}
             <mesh position={[0, -0.5, 0]}>
-                <boxGeometry args={[4.6, 0.8, 6]} />
+                <boxGeometry args={[6, 0.8, 6]} />
                 <meshStandardMaterial color="#cbd5e1" />
             </mesh>
         </group>
@@ -154,9 +155,10 @@ function Bridge({ visible }: { visible: boolean }) {
 
     return (
         <group ref={groupRef} scale={[0, 1, 1]}>
+            {/* Plankene må nå helt over gapet (x -3..3) og hvile på begge kantene */}
             {[-0.8, 0, 0.8].map((z, i) => (
                 <mesh key={i} position={[0, 0.05, z]}>
-                    <boxGeometry args={[4.4, 0.1, 0.7]} />
+                    <boxGeometry args={[6.4, 0.1, 0.7]} />
                     <meshStandardMaterial
                         color="#fbbf24"
                         emissive="#fbbf24"
@@ -302,7 +304,7 @@ export default function Argumentbroen3D({ onComplete }: MicroGameProps) {
                 }
             }, 2400);
         } else {
-            play('advance');
+            play('incorrect');
             setWrongPlank(i);
             setBanner('Denne planken bærer ikke argumentet over kløften - prøv igjen.');
             setTimeout(() => {
@@ -366,20 +368,24 @@ export default function Argumentbroen3D({ onComplete }: MicroGameProps) {
                             { label: 'Runde', value: `${roundIndex + 1} / ${ROUNDS.length}` },
                         ]}
                     />
-                    {allDone && (
-                        <WinScreen
-                            title="Broen holder! Du forstår hva en forklaring gjør i et argument."
-                            onReplay={reset}
-                        />
-                    )}
                 </>
             }
         >
-            <p className="px-1 py-1 text-sm leading-relaxed text-slate-600">
-                Klikk planken i lufta som forklarer{' '}
-                <span className="font-semibold text-slate-800">hvorfor</span> belegget støtter
-                påstanden. Den riktige planken blir broen mellom de to tårnene.
-            </p>
+            {allDone ? (
+                <WinScreen
+                    title="Broen holder! Du forstår hva en forklaring gjør i et argument."
+                    onReplay={reset}
+                >
+                    Uten forklaringen henger påstand og belegg i lufta på hver sin side av
+                    tomrommet. Det er forklaringen som bærer argumentet over kløften.
+                </WinScreen>
+            ) : (
+                <p className="px-1 py-1 text-sm leading-relaxed text-slate-600">
+                    Klikk planken i lufta som forklarer{' '}
+                    <span className="font-semibold text-slate-800">hvorfor</span> belegget støtter
+                    påstanden. Den riktige planken blir broen mellom de to tårnene.
+                </p>
+            )}
         </MicroGameScaffold>
     );
 }

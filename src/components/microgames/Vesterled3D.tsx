@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import {
@@ -40,6 +40,18 @@ const LANDFALLS: Landfall[] = [
     { id: 'gronland', name: 'Grønland', pos: [-2, WATER_Y, 3], legKm: 1400, fact: 'Grønland: Eirik Raude grunnla bosetninger her rundt 985.' },
     { id: 'vinland', name: 'Vinland', pos: [-8.5, WATER_Y, -1.5], legKm: 1800, fact: 'Vinland! Leiv Eiriksson nådde Nord-Amerika rundt år 1000 - lenge før Columbus.' },
 ];
+
+// Båten ankrer på vannet like utenfor øya (øyene er ~2.2 i radius), på den siden
+// den kommer inn fra - da krysser seilasen aldri land. Norge (start) ankrer på
+// avreisesiden, mot Island.
+const ANCHOR_OFFSET = 3.8;
+const ANCHORS: [number, number, number][] = LANDFALLS.map((lf, i) => {
+    const other = i === 0 ? LANDFALLS[1].pos : LANDFALLS[i - 1].pos;
+    const dx = other[0] - lf.pos[0];
+    const dz = other[2] - lf.pos[2];
+    const len = Math.hypot(dx, dz) || 1;
+    return [lf.pos[0] + (dx / len) * ANCHOR_OFFSET, WATER_Y, lf.pos[2] + (dz / len) * ANCHOR_OFFSET];
+});
 
 const Vesterled3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     // Hvilket land båten hviler ved (0..3), og hvor den seiler (null = i ro).
@@ -86,8 +98,11 @@ const Vesterled3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     // Retningen båten peker: langs inneværende etappe (ellers behold forrige).
     const heading = (() => {
-        const from = LANDFALLS[atIndex].pos;
-        const to = LANDFALLS[targetIndex ?? Math.min(atIndex + 1, LANDFALLS.length - 1)].pos;
+        const next = targetIndex ?? atIndex + 1;
+        const [from, to] =
+            next < LANDFALLS.length
+                ? [ANCHORS[atIndex], ANCHORS[next]]
+                : [ANCHORS[atIndex - 1], ANCHORS[atIndex]];
         return faceAlong([to[0] - from[0], to[2] - from[2]]);
     })();
 
@@ -178,12 +193,13 @@ function RouteScene({
     const arrivedRef = useRef(false);
 
     // Nullstill "har ankommet"-vakten hver gang en ny etappe starter.
-    if (targetIndex !== null && arrivedRef.current) arrivedRef.current = false;
+    useEffect(() => {
+        if (targetIndex !== null) arrivedRef.current = false;
+    }, [targetIndex]);
 
     useFrame((_, dt) => {
         if (!boat.current) return;
-        const dest =
-            targetIndex !== null ? LANDFALLS[targetIndex].pos : LANDFALLS[atIndex].pos;
+        const dest = targetIndex !== null ? ANCHORS[targetIndex] : ANCHORS[atIndex];
         boat.current.position.x = damp(boat.current.position.x, dest[0], dt, 0.9);
         boat.current.position.z = damp(boat.current.position.z, dest[2], dt, 0.9);
         boat.current.position.y = WATER_Y;
@@ -213,7 +229,7 @@ function RouteScene({
                 ))}
 
                 {/* Båten */}
-                <group ref={boat} position={LANDFALLS[0].pos}>
+                <group ref={boat} position={ANCHORS[0]}>
                     <Boat heading={heading} sail="#efe7d4" color="#6b4a2c" />
                 </group>
 

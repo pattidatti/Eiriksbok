@@ -14,7 +14,6 @@ import {
     CompareToggle,
     Burst,
     damp,
-    useIdleMotion,
 } from './kit';
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
@@ -113,7 +112,7 @@ const Spredning3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         setSeen((p) => ({ ...p, [m]: true }));
         setBanner(
             m === 'bolge'
-                ? 'Alle stedene tok opp trekket — nære først, fjerne sist. Også bygdene.'
+                ? 'Alle stedene tok opp trekket - nære først, fjerne sist. Også bygdene.'
                 : 'Byene lyser, bygdene imellom er hoppet over. Byene deler et trekk bygdene ikke har.'
         );
         sounds.play(m === 'bolge' ? 'advance' : 'complete');
@@ -136,7 +135,7 @@ const Spredning3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     return (
         <MicroGameScaffold
             title="Slik reiser et dialekttrekk"
-            subtitle="Samme land, samme kilde — men modellen avgjør hvem som får trekket"
+            subtitle="Samme land, samme kilde - men modellen avgjør hvem som får trekket"
             estimatedSeconds={140}
             onRetry={touched || phase !== 'explore' ? reset : undefined}
             canvas={{
@@ -204,7 +203,7 @@ const Spredning3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                             <>
                                 <span className="font-bold text-slate-800">Bølgemodellen:</span>{' '}
                                 trekket brer seg jevnt utover fra kilden, som ringer i vann. Nabo tar
-                                det opp etter nabo — også bygdene. De nære stedene får det først, de
+                                det opp etter nabo - også bygdene. De nære stedene får det først, de
                                 fjerne sist.
                             </>
                         ) : (
@@ -226,7 +225,7 @@ const Spredning3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                             }}
                             className="self-start inline-flex items-center gap-1.5 px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-bold hover:bg-emerald-700 transition"
                         >
-                            Du har sett begge — sjekk forståelsen
+                            Du har sett begge - sjekk forståelsen
                         </button>
                     ) : (
                         <p className="text-xs text-slate-500">
@@ -240,8 +239,8 @@ const Spredning3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <SceneQuiz
                     question="To fjerne byer, Oslo og Tromsø, får det samme nye trekket, mens bygdene mellom dem ikke har det. Hvilken modell forklarer dette best?"
                     options={[
-                        'Sprangmodellen — trekket hopper fra by til by',
-                        'Bølgemodellen — trekket brer seg jevnt utover',
+                        'Sprangmodellen - trekket hopper fra by til by',
+                        'Bølgemodellen - trekket brer seg jevnt utover',
                         'Begge forklarer det like godt',
                         'Ingen av dem',
                     ]}
@@ -255,7 +254,7 @@ const Spredning3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <WinScreen title="Du forstår hvordan trekk reiser!" onReplay={reset}>
                     Bølgemodellen forklarer de myke overgangene fra bygd til bygd. Sprangmodellen
                     forklarer hvorfor byer langt fra hverandre kan ligne, mens bygdene imellom henger
-                    igjen. De to modellene virker samtidig — og i dag hopper trekk stadig oftere i
+                    igjen. De to modellene virker samtidig - og i dag hopper trekk stadig oftere i
                     sprang.
                 </WinScreen>
             )}
@@ -469,10 +468,10 @@ function SpreadScene({ model, running, runKey, burst, showStart, onStart, onCycl
             {/* Feiringspartikler ved fullført løp */}
             <Burst position={[KILDE[0], 1.4, KILDE[1]]} trigger={burst} color="#c7d2fe" count={30} spread={4} />
 
-            {/* Start-hotspot over kilden */}
+            {/* Start-hotspot rundt kildens lys (under bynavnet, så de ikke overlapper) */}
             {showStart && (
                 <Hotspot
-                    position={[KILDE[0], 2.6, KILDE[1]]}
+                    position={[KILDE[0], 1.88, KILDE[1]]}
                     onSelect={onStart}
                     label="Slipp trekket løs"
                     radius={0.5}
@@ -579,9 +578,9 @@ function ArcLine({ from, to }: { from: [number, number]; to: [number, number] })
     return <primitive object={line} />;
 }
 
-// En lav, uregelmessig "landmasse" for å gi scenen litt liv (svever mykt).
+// En lav, uregelmessig "landmasse". Statisk: bob/sway senket land-randen under
+// havplanet (0.02 klaring x 13 i radius) så halve kartet så ut som sjø.
 function Landmass() {
-    const grp = useIdleMotion({ bob: 0.05, sway: 0.006, speed: 0.6 });
     const blobs = useMemo(() => {
         const rand = makeRng(77);
         return Array.from({ length: 22 }, () => ({
@@ -591,7 +590,7 @@ function Landmass() {
         }));
     }, []);
     return (
-        <group ref={grp}>
+        <group>
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
                 <circleGeometry args={[13, 40]} />
                 <meshStandardMaterial color="#d7e8cf" roughness={1} />

@@ -63,8 +63,8 @@ const NODES: ImperialNode[] = [
     {
         id: 'taiwan',
         name: 'Taiwan',
-        x: -1.8,
-        z: 6.0,
+        x: -1.9,
+        z: 5.2,
         kind: 'claim',
         badge: '1895',
         fact: 'Japan slo det mye større Kina i krig og tok øya Taiwan. Verden ble overrasket over den nye stormakten.',
@@ -150,10 +150,10 @@ const JapanskImperium3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             onRetry={step > 0 ? reset : undefined}
             canvas={{
                 idle,
-                camera: { position: [0.5, 17, 12], fov: 40 },
+                camera: { position: [0.5, 18, 13.5], fov: 40 },
                 background: '#cfe6f2',
                 fog: { near: 36, far: 74 },
-                target: [1, 0, 1],
+                target: [0.8, 0, 1.6],
             }}
             overlays={
                 <>
@@ -385,10 +385,9 @@ function BattleNode({
     const fleet = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
         if (!fleet.current) return;
-        const target = active && !owned ? 1 : 0.0001;
-        const s = damp(fleet.current.scale.x, target, dt, 4);
-        fleet.current.scale.setScalar(s);
-        fleet.current.position.y = owned ? damp(fleet.current.position.y, -0.7, dt, 3) : 0;
+        // Flåten ligger synlig i stredet til slaget er tatt - så synker den
+        // sakte under vannflata i stedet for å forsvinne brått.
+        fleet.current.position.y = damp(fleet.current.position.y, owned ? -1.2 : 0, dt, 0.8);
     });
 
     return (
@@ -404,8 +403,17 @@ function BattleNode({
                 ))}
             </group>
 
-            {/* Når slaget er vunnet: japansk flagg heises her */}
-            {owned && <SunFlag held />}
+            {/* Tsushima-øya: gir flagget fast grunn i stredet */}
+            <group position={[0.1, 0, -0.75]}>
+                <Landmass x={0} z={0} r={0.55} owned={owned} local />
+            </group>
+            {/* Når slaget er vunnet: japansk flagg heises midt på øya
+                (kompenserer for SunFlag sin interne offset på [0.4, 0.4]) */}
+            {owned && (
+                <group position={[-0.3, 0, -1.15]}>
+                    <SunFlag held />
+                </group>
+            )}
 
             {/* Slag-Hotspot mens noden er aktiv */}
             {active && !owned && (
@@ -439,7 +447,9 @@ function RussianShip({ x, z }: { x: number; z: number }) {
         hull.current.rotation.z = Math.sin(clock.getElapsedTime() * 1.8 + x) * 0.06;
     });
     return (
-        <group position={[x, 0.34, z]} ref={hull}>
+        // Gruppa ligger ved vannlinja (y=0) slik at skroget får litt dypgang
+        // i stedet for å sveve over havflata.
+        <group position={[x, -0.12, z]} ref={hull}>
             <mesh position={[0, 0.18, 0]} castShadow>
                 <boxGeometry args={[0.85, 0.24, 0.36]} />
                 <meshStandardMaterial color="#566273" roughness={0.7} metalness={0.2} />

@@ -21,7 +21,7 @@ import {
 import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
-// Mikrospill til artikkelen "Hundreaarskrigen". Et stilisert kart over Frankrike
+// Mikrospill til artikkelen "Hundreårskrigen". Et stilisert kart over Frankrike
 // sett ovenfra. Krigen mellom England og Frankrike svingte fram og tilbake i over
 // hundre år. Eleven spiller arven: først klikker hen tre store engelske seire
 // (Crecy 1346, Poitiers 1356, Azincourt 1415) som farger landet rødt og presser
@@ -29,7 +29,7 @@ import type { MicroGameProps } from './types';
 // eleven klikker Jeanne d'Arc, som løfter beleiringen av Orleans i 1429. Da snur
 // krigen, det franske blå skyller tilbake over kartet, og Frankrike vinner i 1453.
 //
-// Lyspæra (rett fra artikkelen): Hundreaarskrigen var ikke ett slag, men en serie
+// Lyspæra (rett fra artikkelen): Hundreårskrigen var ikke ett slag, men en serie
 // kriger som svingte fram og tilbake i over hundre år. England vant slag etter
 // slag, helt til en ung bondejente, Jeanne d'Arc, snudde krigen ved Orleans og ga
 // franskmennene troen tilbake.
@@ -41,7 +41,7 @@ interface Place {
     z: number;
 }
 
-// Engelske seier-noder i historisk rekkefolge (fase 1).
+// Engelske seier-noder i historisk rekkefølge (fase 1).
 const BATTLES: Place[] = [
     { id: 'crecy', name: 'Crécy 1346', x: 0.6, z: -3.4 },
     { id: 'poitiers', name: 'Poitiers 1356', x: -1.9, z: 0.6 },
@@ -84,6 +84,9 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     const winBattle = (id: string) => {
         if (!activeBattle || id !== activeBattle.id) return;
+        // Klikkflaten under pekeren forsvinner når noden er vunnet - nullstill
+        // cursoren så den ikke blir stående som pekefinger over tomt kart.
+        document.body.style.cursor = '';
         setBurstPos([activeBattle.x, 0.7, activeBattle.z]);
         setBurstColor('#d9483b');
         setBurst((b) => b + 1);
@@ -93,7 +96,7 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
         sounds.play('advance');
         if (next >= BATTLES.length) {
             setBanner(
-                'England hadde vunnet alt. Bare Orleans holdt stand, beleiret. Klikk Jeanne d’Arc for å snu krigen.'
+                'England hadde vunnet alt. Bare Orléans holdt stand, beleiret. Klikk Jeanne d’Arc for å snu krigen.'
             );
         } else {
             setBanner(PROMPTS[next]);
@@ -102,13 +105,14 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     const liftSiege = () => {
         if (!phase1Done || jeanne) return;
+        document.body.style.cursor = '';
         setBurstPos([ORLEANS.x, 0.8, ORLEANS.z]);
         setBurstColor('#4f74c8');
         setBurst((b) => b + 1);
         setJeanne(true);
         sounds.play('complete');
         setBanner(
-            'Jeanne d’Arc løftet beleiringen av Orleans i 1429. Krigen snudde, og i 1453 vant Frankrike.'
+            'Jeanne d’Arc løftet beleiringen av Orléans i 1429. Krigen snudde, og i 1453 vant Frankrike.'
         );
         setFact(null);
     };
@@ -134,8 +138,8 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     return (
         <MicroGameScaffold
-            title="Hundreaarskrigen: krigen som svingte"
-            subtitle="Følg de engelske seirene som farger Frankrike rødt, og se Jeanne d&apos;Arc snu krigen ved Orleans."
+            title="Hundreårskrigen: krigen som svingte"
+            subtitle="Følg de engelske seirene som farger Frankrike rødt, og se Jeanne d&apos;Arc snu krigen ved Orléans."
             estimatedSeconds={150}
             onRetry={enWon > 0 || jeanne ? reset : undefined}
             canvas={{
@@ -187,26 +191,26 @@ const Hundreaarskrigen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                             Klikk slaget som{' '}
                             <span className="font-bold text-rose-700">lyser</span>. For hver engelske
                             seier farges et stykke av Frankrike rødt og fronten presser sørover. Til
-                            slutt holder bare Orleans stand. Da kan Jeanne d&apos;Arc snu alt.
+                            slutt holder bare Orléans stand. Da kan Jeanne d&apos;Arc snu alt.
                         </p>
                         {phase1Done && (
                             <button
                                 onClick={liftSiege}
                                 className="self-start inline-flex items-center gap-2 rounded-xl border-2 border-blue-400 bg-blue-100 px-4 py-2 text-sm font-bold text-blue-800 transition hover:bg-blue-200 hover:border-blue-500"
                             >
-                                Send Jeanne d&apos;Arc til Orleans (1429)
+                                Send Jeanne d&apos;Arc til Orléans (1429)
                             </button>
                         )}
                         {fact && <SceneFact>{fact}</SceneFact>}
                     </>
                 ) : (
                     <WinScreen
-                        title="Hundreaarskrigen svingte fram og tilbake i over hundre år, helt til Jeanne d&apos;Arc snudde den ved Orleans og Frankrike vant i 1453."
+                        title="Hundreårskrigen svingte fram og tilbake i over hundre år, helt til Jeanne d&apos;Arc snudde den ved Orléans og Frankrike vant i 1453."
                         onReplay={reset}
                     >
                         England vant slag etter slag med langbuene sine, og rundt 1420 så det ut som
                         Frankrike var ferdig. Men en ung bondejente, Jeanne d&apos;Arc, løftet
-                        beleiringen av Orleans i 1429 og ga franskmennene troen tilbake. Etter det tok
+                        beleiringen av Orléans i 1429 og ga franskmennene troen tilbake. Etter det tok
                         Frankrike landet sitt tilbake bit for bit, og i 1453 var krigen over.
                     </WinScreen>
                 )}
@@ -269,13 +273,16 @@ function WarMap({
             {/* Paris: fast by midt i landet */}
             <Town place={PARIS} color="#d8d2c4" label />
 
-            {/* De tre engelske slag-nodene */}
+            {/* De tre engelske slag-nodene. Bare den aktive noden får den store
+                usynlige klikkflaten: nodene står så tett at en deaktivert nabos
+                hitArea ellers skygger for den aktive (Azincourt ble uklikkbar
+                fordi Crécy-boksen fanget strålen først og stoppet den). */}
             {BATTLES.map((p) => (
                 <Interactive
                     key={p.id}
                     onSelect={() => onWinBattle(p.id)}
                     disabled={p.id !== activeId}
-                    hitArea={[2.6, 2.4, 2.6]}
+                    hitArea={p.id === activeId ? [2.6, 2.4, 2.6] : undefined}
                     position={[p.x, 0, p.z]}
                 >
                     <BattleNode
@@ -295,7 +302,7 @@ function WarMap({
     );
 }
 
-// Frankrikes landmasse: noen store, flate landflekker. Far en svak fransk blå-grønn
+// Frankrikes landmasse: noen store, flate landflekker. Har en svak fransk blå-grønn
 // grunntone, og lyser litt sterkere blått når Frankrike vinner.
 function FranceLand({ frenchVictory }: { frenchVictory: boolean }) {
     const blobs = useMemo(
@@ -311,7 +318,7 @@ function FranceLand({ frenchVictory }: { frenchVictory: boolean }) {
     return (
         <group>
             {blobs.map((b, i) => (
-                <LandBlob key={i} blob={b} frenchVictory={frenchVictory} />
+                <LandBlob key={i} blob={b} index={i} frenchVictory={frenchVictory} />
             ))}
         </group>
     );
@@ -319,9 +326,11 @@ function FranceLand({ frenchVictory }: { frenchVictory: boolean }) {
 
 function LandBlob({
     blob,
+    index,
     frenchVictory,
 }: {
     blob: { x: number; z: number; r: number; s: number };
+    index: number;
     frenchVictory: boolean;
 }) {
     const mat = useRef<THREE.MeshStandardMaterial>(null);
@@ -331,15 +340,20 @@ function LandBlob({
         if (!mat.current) return;
         mat.current.color.lerp(frenchVictory ? win : base, Math.min(1, dt * 2));
     });
+    // Liten y-forskyvning per flak så toppflatene ikke er koplanare (z-fighting).
     return (
-        <mesh position={[blob.x, 0.12, blob.z]} rotation={[0, (blob.x + blob.z) * 0.6, 0]} receiveShadow>
+        <mesh
+            position={[blob.x, 0.12 + index * 0.005, blob.z]}
+            rotation={[0, (blob.x + blob.z) * 0.6, 0]}
+            receiveShadow
+        >
             <cylinderGeometry args={[blob.r * 0.92, blob.r, 0.26, blob.s]} />
             <meshStandardMaterial ref={mat} color="#5f8a52" roughness={1} flatShading />
         </mesh>
     );
 }
 
-// En territorie-flekk rundt en slag-node. Nær den engelske siden vinner her, lyser
+// En territorie-flekk rundt en slag-node. Når den engelske siden vinner her, lyser
 // flekken rødt. Når Jeanne snur krigen, skifter alle flekkene til fransk blå.
 const RED = new THREE.Color('#c4392f');
 const BLUE = new THREE.Color('#3f63b3');
@@ -358,6 +372,8 @@ function RegionPatch({
         if (!mat.current) return;
         const target = french ? BLUE : english ? RED : NEUTRAL;
         mat.current.color.lerp(target, Math.min(1, dt * 3));
+        // Emissive må følge målet - rød glød over blå farge ga rosa flekker ved seier.
+        mat.current.emissive.lerp(target, Math.min(1, dt * 3));
         mat.current.opacity = damp(mat.current.opacity, english || french ? 0.8 : 0.18, dt, 3);
         mat.current.emissiveIntensity = damp(
             mat.current.emissiveIntensity,
@@ -367,8 +383,10 @@ function RegionPatch({
         );
     });
     return (
-        <mesh position={[place.x, 0.21, place.z]} rotation={[-Math.PI / 2, 0, place.x]}>
-            <circleGeometry args={[2.1, 24]} />
+        // y=0.30: må ligge over landflakenes topp (maks ~0.27), ellers skjules fargen av landet
+        <mesh position={[place.x, 0.3, place.z]} rotation={[-Math.PI / 2, 0, place.x]}>
+            {/* r=1.9 så flekkene holder seg innenfor kystlinja (2.1 stakk ut i havet i nord) */}
+            <circleGeometry args={[1.9, 24]} />
             <meshStandardMaterial
                 ref={mat}
                 color="#6f9a5e"

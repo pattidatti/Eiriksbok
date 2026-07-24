@@ -275,7 +275,10 @@ function ShipYard({
         const tz = launched ? -4 : 0;
         ship.current.position.x = damp(ship.current.position.x, tx, dt, 0.6);
         ship.current.position.z = damp(ship.current.position.z, tz, dt, 0.6);
-        ship.current.position.y = damp(ship.current.position.y, launched ? 0.15 : 0, dt, 1.2);
+        // Skipet må NED til vannlinja (0.02): kjølbunnen ligger på y+0.29, så
+        // y=-0.41 gir kjølen dypgang og første bordgang i vannflata. Senkes
+        // saktere enn det glir, så det ser ut som en slipp ned mot fjorden.
+        ship.current.position.y = damp(ship.current.position.y, launched ? -0.41 : 0, dt, 0.5);
         // Bølgevugg når det flyter.
         const t = performance.now() / 1000;
         ship.current.rotation.z = launched ? Math.sin(t * 1.5) * 0.04 : 0;
@@ -410,9 +413,12 @@ function Stems() {
         <>
             {[1, -1].map((dir) => (
                 <group key={dir}>
+                    {/* Lener UTOVER (positiv vinkel), slik at toppen treffer
+                        krøllen ved z = +-(HALF_LEN + 0.45) i stedet for at
+                        krøllen svever løsrevet i lufta */}
                     <mesh
                         position={[0, 0.7, dir * (HALF_LEN - 0.1)]}
-                        rotation={[dir * -0.7, 0, 0]}
+                        rotation={[dir * 0.7, 0, 0]}
                         castShadow
                     >
                         <boxGeometry args={[0.3, 1.7, 0.3]} />
@@ -559,8 +565,9 @@ function MastAndSail() {
                 <cylinderGeometry args={[0.07, 0.09, 2.6, 8]} />
                 <meshStandardMaterial color="#6b4a2a" roughness={0.85} />
             </mesh>
-            {/* rå (horisontal bom) */}
-            <mesh position={[0, 2.3, 0]} rotation={[Math.PI / 2, 0, 0]} castShadow>
+            {/* rå (horisontal bom) - roteres om Z slik at den ligger langs X,
+                tvers av skipet, samme retning som seilet spenner */}
+            <mesh position={[0, 2.3, 0]} rotation={[0, 0, Math.PI / 2]} castShadow>
                 <cylinderGeometry args={[0.05, 0.05, 2.6, 6]} />
                 <meshStandardMaterial color="#5c3f26" roughness={0.85} />
             </mesh>

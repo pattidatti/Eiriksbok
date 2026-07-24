@@ -482,10 +482,11 @@ function RubblePile({ x, z, stage, seed }: { x: number; z: number; stage: number
 
 // --- Fabrikkrekke med pipe + røyk: reiser seg ved stage 1 ---
 function FactoryRow({ stage }: { stage: number }) {
+    // På land (kaia ligger ved x=-8) og klar av togskinnen ved z=7.
     const positions: [number, number][] = [
-        [-9, 6],
-        [-6.5, 7],
-        [-11, 4.5],
+        [-7.2, 4.8],
+        [-5.4, 3.6],
+        [-7.2, 2.2],
     ];
     return (
         <group>
@@ -583,15 +584,21 @@ function CargoShip({ stage }: { stage: number }) {
         sail.current = damp(sail.current, stage >= 2 ? 1 : 0, dt, 0.5);
         const p = sail.current;
         if (group.current) {
-            // Glir inn fra venstre (-X) til kaia
-            group.current.position.x = -24 + 8 * p;
-            group.current.position.z = 4;
+            // Glir inn langs kaia (fra det fjerne mot kamera) og legger til
+            // synlig i bildeutsnittet, med litt dypgang i vannet.
+            group.current.position.x = -9.3;
+            group.current.position.z = -13 + 14 * p;
             group.current.rotation.z = Math.sin(clock.getElapsedTime() * 1.2) * 0.03;
             group.current.visible = p > 0.01;
         }
     });
     return (
-        <group ref={group} position={[-24, 0.2, 4]} visible={false}>
+        <group
+            ref={group}
+            position={[-9.3, -0.05, -13]}
+            rotation={[0, -Math.PI / 2, 0]}
+            visible={false}
+        >
             {/* skrog */}
             <mesh position={[0, 0.3, 0]} castShadow>
                 <boxGeometry args={[4.5, 0.7, 1.3]} />
@@ -626,7 +633,7 @@ function BulletTrain({ stage }: { stage: number }) {
             t.current += dt * 0.18;
             const p = (t.current % 1.4) / 1.4; // gjentar
             if (train.current) {
-                train.current.position.x = -18 + 36 * p;
+                train.current.position.x = -5 + 21.5 * p;
                 train.current.visible = true;
             }
         } else if (train.current) {
@@ -635,13 +642,14 @@ function BulletTrain({ stage }: { stage: number }) {
     });
     return (
         <group position={[0, 0, railZ]}>
+            {/* Skinnen ligger på bakken og stopper ved kaia (x=-8), ikke ute i vannet */}
             {stage >= 3 && (
-                <mesh position={[0, 0.5, 0]} receiveShadow>
-                    <boxGeometry args={[40, 0.3, 0.6]} />
+                <mesh position={[6, 0.15, 0]} receiveShadow>
+                    <boxGeometry args={[28, 0.3, 0.6]} />
                     <meshStandardMaterial color="#8a9098" metalness={0.4} roughness={0.6} />
                 </mesh>
             )}
-            <group ref={train} visible={false} position={[-18, 1.0, 0]}>
+            <group ref={train} visible={false} position={[-5, 0.75, 0]}>
                 {/* nese */}
                 <mesh position={[2.3, 0, 0]} rotation={[0, 0, -Math.PI / 2]} castShadow>
                     <coneGeometry args={[0.45, 1.4, 12]} />

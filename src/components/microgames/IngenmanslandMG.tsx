@@ -7,7 +7,7 @@ import { useStepSounds } from '../../hooks/useStepSounds';
 import type { MicroGameProps } from './types';
 
 // Pedagogisk kjerne: eleven opplever maskingeværets kraft OG begrensning.
-// Hold inne for å skyte kontinuerlig — uansett skytes det alltid for mange.
+// Hold inne for å skyte kontinuerlig - uansett er det alltid for mange.
 
 const WAVES = [5, 7, 9];
 const TOTAL = WAVES.reduce((a, b) => a + b, 0);
@@ -50,7 +50,9 @@ function ExplosionEffect({ x, z }: { x: number; z: number }) {
     const [burst, setBurst] = useState(0);
 
     useEffect(() => {
-        setBurst(1);
+        // Asynkront, ikke synkront i effekt-kroppen - avfyrer bursten ved mount.
+        const t = setTimeout(() => setBurst(1), 0);
+        return () => clearTimeout(t);
     }, []);
 
     useFrame((state) => {
@@ -148,14 +150,16 @@ function Battlefield() {
                     <meshStandardMaterial color="#7a6b4a" roughness={0.95} />
                 </mesh>
             ))}
+            {/* Granatkratere - må ligge SÅ VIDT over bakkeplanet (y=0), ellers
+                blir de begravd og usynlige */}
             {(
                 [
-                    [-3.5, -0.1, -6],
-                    [4.5, -0.1, -11],
-                    [-1, -0.1, -16],
-                    [5.5, -0.1, -9],
-                    [-5.5, -0.1, -13],
-                    [1.5, -0.1, -19],
+                    [-3.5, 0.01, -6],
+                    [4.5, 0.01, -11],
+                    [-1, 0.01, -16],
+                    [5.5, 0.01, -9],
+                    [-5.5, 0.01, -13],
+                    [1.5, 0.01, -19],
                 ] as [number, number, number][]
             ).map(([x, y, z], i) => (
                 <mesh key={i} position={[x, y, z]} rotation={[-Math.PI / 2, 0, 0]}>
@@ -175,14 +179,16 @@ function Battlefield() {
                     </mesh>
                 </group>
             ))}
+            {/* Døde trestammer - sylinderen er sentrert, så y = halve høyden
+                for at stammen skal stå PÅ bakken, ikke halvveis begravd */}
             {(
                 [
-                    [-8, 0, -9],
-                    [7.5, 0, -14],
-                    [-6, 0, -17],
-                ] as [number, number, number][]
-            ).map(([x, y, z], i) => (
-                <mesh key={i} position={[x, y, z]} castShadow>
+                    [-8, -9],
+                    [7.5, -14],
+                    [-6, -17],
+                ] as [number, number][]
+            ).map(([x, z], i) => (
+                <mesh key={i} position={[x, (1.2 + i * 0.4) / 2, z]} castShadow>
                     <cylinderGeometry args={[0.2, 0.28, 1.2 + i * 0.4, 6]} />
                     <meshStandardMaterial color="#2e1f0f" roughness={1} />
                 </mesh>
@@ -279,7 +285,7 @@ function SoldierMesh({ id, x, startZ, status, onHover, onReach, onDeathDone }: S
     );
 }
 
-// Scene-rot (inni Canvas) — all spill-logikk bor her
+// Scene-rot (inni Canvas) - all spill-logikk bor her
 interface SceneProps {
     soldiers: Soldier[];
     gameState: 'idle' | 'playing' | 'done';
@@ -304,7 +310,7 @@ function BattlefieldScene({
     const { gl } = useThree();
     const { ref: shakeRef, shake } = useShake(0.38, 0.08, 2.4);
 
-    // Mutable refs — unngår stale-closure og re-render
+    // Mutable refs - unngår stale-closure og re-render
     const hoveredIdRef = useRef<number | null>(null);
     const shotIdsRef = useRef<Set<number>>(new Set());
     const isFiringRef = useRef(false);
@@ -346,6 +352,9 @@ function BattlefieldScene({
     useEffect(() => {
         if (gameState !== 'playing') return;
         const canvas = gl.domElement;
+        // Canvas-elementet er et eksternt DOM-system; cursor-styring i en effekt
+        // er riktig bruk selv om verdien kommer fra en hook.
+        // eslint-disable-next-line react-hooks/immutability
         canvas.style.cursor = 'none';
         return () => {
             canvas.style.cursor = '';
@@ -408,7 +417,7 @@ function BattlefieldScene({
         <group ref={shakeRef}>
             <CameraSetup />
 
-            {/* Stor usynlig bakgrunnsflate — fanger pointerDown + move for skyting og sikte */}
+            {/* Stor usynlig bakgrunnsflate - fanger pointerDown + move for skyting og sikte */}
             <mesh
                 position={[0, 2, -20]}
                 onPointerDown={() => {
@@ -469,6 +478,8 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
     const [reached, setReached] = useState(0);
     const [heat, setHeat] = useState(0);
     const [flashing, setFlashing] = useState(false);
+    // Teller som remonterer glimt-elementet per skudd (ren erstatning for Date.now-key)
+    const [flashTick, setFlashTick] = useState(0);
     const [banner, setBanner] = useState<string | null>(null);
     const [gameState, setGameState] = useState<'idle' | 'playing' | 'done'>('idle');
 
@@ -476,7 +487,7 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
     const heatRef = useRef(0);
     const transRef = useRef(false);
 
-    // Crosshair — direkte DOM-manipulasjon (unngår re-render per frame)
+    // Crosshair - direkte DOM-manipulasjon (unngår re-render per frame)
     const crosshairRef = useRef<HTMLDivElement>(null);
     const handleCrosshairMove = useCallback((x: number, y: number) => {
         if (crosshairRef.current) {
@@ -489,6 +500,7 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
     const flashTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const handleMuzzleFlash = useCallback(() => {
         setFlashing(true);
+        setFlashTick((t) => t + 1);
         if (flashTimeoutRef.current) clearTimeout(flashTimeoutRef.current);
         flashTimeoutRef.current = setTimeout(() => setFlashing(false), 75);
     }, []);
@@ -527,7 +539,7 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
         setWave(1);
         setKills(0);
         setReached(0);
-        setBanner('Bølge 1 av 3 — hold inne for å skyte!');
+        setBanner('Bølge 1 av 3 - hold inne for å skyte!');
         setTimeout(() => setBanner(null), 2500);
         spawnWave(0);
     };
@@ -570,7 +582,8 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
                 onComplete({ score: kills / TOTAL, completed: true });
             }, 0);
         } else {
-            setBanner('Neste bølge...');
+            // Asynkront (ikke synkront i effekt-kroppen) for å unngå kaskade-render
+            setTimeout(() => setBanner('Neste bølge...'), 0);
             setTimeout(() => {
                 setWave(nextWave);
                 setBanner(`Bølge ${nextWave} av ${WAVES.length}`);
@@ -594,15 +607,15 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
 
     const scoreMsg =
         kills >= TOTAL * 0.85
-            ? `Fremragende — ${kills} av ${TOTAL} stoppet!`
+            ? `Fremragende - ${kills} av ${TOTAL} stoppet!`
             : kills >= TOTAL * 0.55
-            ? `Godt forsvar — ${kills} av ${TOTAL} stoppet.`
-            : `${kills} av ${TOTAL} stoppet — mange nådde frem.`;
+            ? `Godt forsvar - ${kills} av ${TOTAL} stoppet.`
+            : `${kills} av ${TOTAL} stoppet - mange nådde frem.`;
 
     return (
         <MicroGameScaffold
             title="Maskingevær ved Somme"
-            subtitle="Hold inne museknappen og sikt mot soldatene — du skyter kontinuerlig"
+            subtitle="Hold inne museknappen og sikt mot soldatene - du skyter kontinuerlig"
             estimatedSeconds={130}
             onRetry={gameState !== 'idle' ? reset : undefined}
             canvas={{
@@ -618,7 +631,7 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
             containerClassName="bg-gradient-to-b from-[#3a3d4a] to-[#22242e]"
             overlays={
                 <>
-                    {/* Militært sikte — oppdateres via DOM-ref (ingen re-render) */}
+                    {/* Militært sikte - oppdateres via DOM-ref (ingen re-render) */}
                     {gameState === 'playing' && (
                         <div
                             ref={crosshairRef}
@@ -646,7 +659,7 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
                     <AnimatePresence>
                         {flashing && (
                             <motion.div
-                                key={`f-${Date.now()}`}
+                                key={`f-${flashTick}`}
                                 initial={{ opacity: 1 }}
                                 animate={{ opacity: 0 }}
                                 transition={{ duration: 0.08 }}
@@ -719,7 +732,7 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
                 <div>
                     <div className="flex items-center justify-between mb-1">
                         <span className="text-xs font-semibold text-slate-600">
-                            Løpsvarme — Bølge {wave} av {WAVES.length}
+                            Løpsvarme - Bølge {wave} av {WAVES.length}
                         </span>
                         <span
                             className={`text-xs font-bold ${
@@ -747,7 +760,7 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
                         />
                     </div>
                     <p className="text-[11px] text-slate-400 mt-1">
-                        Hold inne og sikt — skyt saktere for å kjøle ned
+                        Hold inne og sikt - skyt saktere for å kjøle ned
                     </p>
                 </div>
             )}
@@ -758,7 +771,7 @@ const IngenmanslandMG: React.FC<MicroGameProps> = ({ onComplete }) => {
                     onReplay={reset}
                     onNext={() => onComplete({ score: kills / TOTAL, completed: true })}
                 >
-                    Den 1. juli 1916 led de britiske styrkene 57 470 tap — drept og såret — på én
+                    Den 1. juli 1916 led de britiske styrkene 57 470 tap - drept og såret - på én
                     dag ved Somme. Maskingeværet var dødelig, men angrepsbølgene sluttet aldri. Slik
                     stivnet Vestfronten i fire år.
                 </WinScreen>

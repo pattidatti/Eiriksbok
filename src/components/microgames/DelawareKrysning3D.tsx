@@ -79,9 +79,11 @@ const DelawareKrysning3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             onRetry={count > 0 || won ? reset : undefined}
             canvas={{
                 idle: false,
-                camera: { position: [0, 11, 15], fov: 42 },
+                // Litt høyere kamera og mål lenger fram, så robåtene på den nære
+                // bredden (første oppgave-element) er helt innenfor utsnittet.
+                camera: { position: [0, 12, 15.5], fov: 42 },
                 background: '#c3d4de',
-                target: [0, 0.4, 0],
+                target: [0, 0, 1.5],
             }}
             overlays={
                 <>
@@ -105,8 +107,8 @@ const DelawareKrysning3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-center">
                         <p className="text-sm text-emerald-800 leading-relaxed">
                             Hele hæren er over! I grålysningen overrasket Washington fienden i
-                            Trenton og vant. Etter måneder med nederlag ga det dristige julenatt
-                            angrepet nytt håp. Washington vant ikke fordi han var forsiktig, men
+                            Trenton og vant. Etter måneder med nederlag ga det dristige
+                            julenattangrepet nytt håp. Washington vant ikke fordi han var forsiktig, men
                             fordi han våget det ingen andre trodde var mulig.
                         </p>
                     </div>
@@ -165,7 +167,9 @@ function RiverScene({
             {/* Båtene: dra dem over hvis de ikke er landet, ellers stå på bredden */}
             {landed.map((isLanded, i) =>
                 isLanded ? (
-                    <group key={`landed-${i}`} position={[LAND_X[i], 0.15, LAND_Z + 0.4]}>
+                    // y=0.03: skrogbunnen (0.1 - 0.15 under gruppa) flukter da med
+                    // bakken/vannflata i stedet for å sveve over den
+                    <group key={`landed-${i}`} position={[LAND_X[i], 0.03, LAND_Z + 0.4]}>
                         <RowBoat lead={i === 1} />
                     </group>
                 ) : (
@@ -182,7 +186,7 @@ function RiverScene({
                             <boxGeometry args={[2.6, 1.4, 3.4]} />
                             <meshBasicMaterial transparent opacity={0} depthWrite={false} />
                         </mesh>
-                        <group position={[0, 0.15, 0]}>
+                        <group position={[0, 0.03, 0]}>
                             <RowBoat lead={i === 1} />
                         </group>
                     </Draggable>
@@ -277,7 +281,7 @@ function IceFloes() {
             {floes.map(([x, z], i) => (
                 <mesh
                     key={i}
-                    position={[x, 0.09, z]}
+                    position={[x, 0.035, z]}
                     rotation={[-Math.PI / 2, 0, i * 0.7]}
                     receiveShadow
                 >

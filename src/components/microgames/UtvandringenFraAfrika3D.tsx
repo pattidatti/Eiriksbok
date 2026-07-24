@@ -302,7 +302,8 @@ function WorldScene({ nowAgo, settled, onSettle, burst, burstAt }: SceneProps) {
                 const isSettled = settled.includes(r.id);
                 const reached = nowAgo <= r.arrivalAgo;
                 return (
-                    <group key={r.id} position={[r.pos[0], 0, r.pos[1]]}>
+                    // y=0.15 = landskivens topp, så bosetninger står PÅ landet
+                    <group key={r.id} position={[r.pos[0], 0.15, r.pos[1]]}>
                         <RegionLabel name={r.name} reached={reached} settled={isSettled} />
                         {isSettled ? (
                             <Settlement />
@@ -327,14 +328,10 @@ function WorldScene({ nowAgo, settled, onSettle, burst, burstAt }: SceneProps) {
 function Landmass({ region }: { region: Region }) {
     return (
         <group position={[region.pos[0], 0.04, region.pos[1]]}>
+            {/* Flate skiver: sylinderens Y-akse peker alt opp - ingen rotasjon,
+                ellers står landmassen på høykant som en mynt. */}
             {region.blobs.map((b, i) => (
-                <mesh
-                    key={i}
-                    position={[b.dx, 0, b.dz]}
-                    scale={[b.sx, 1, b.sz]}
-                    rotation={[-Math.PI / 2, 0, 0]}
-                    receiveShadow
-                >
+                <mesh key={i} position={[b.dx, 0, b.dz]} scale={[b.sx, 1, b.sz]} receiveShadow>
                     <cylinderGeometry args={[1, 1, 0.22, 9]} />
                     <ToonMaterial color={region.land} />
                 </mesh>
@@ -354,7 +351,6 @@ function IceSheet({ nowAgo }: { nowAgo: number }) {
         <mesh
             position={[-0.6, 0.16, -4.6 + (1 - cover) * 1.4]}
             scale={[3.2, 1, 1.4 + cover * 1.2]}
-            rotation={[-Math.PI / 2, 0, 0]}
         >
             <cylinderGeometry args={[1, 1, 0.3, 10]} />
             <meshStandardMaterial

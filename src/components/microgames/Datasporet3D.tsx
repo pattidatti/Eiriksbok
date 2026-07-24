@@ -108,7 +108,7 @@ const Datasporet3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         items={[
                             { label: 'Spor samlet', value: count },
                             {
-                                label: 'Profilkonfidans (%)',
+                                label: 'Profil komplett (%)',
                                 value: Math.round((count / total) * 100),
                             },
                         ]}
@@ -235,8 +235,8 @@ function PersonFigure({ collectedCount }: { collectedCount: number }) {
 
     return (
         <group>
-            {/* Kropp */}
-            <mesh position={[0, 0.9, 0]} castShadow>
+            {/* Kropp - kapselen er 1.6 høy totalt, senter 0.8 gir bunn på gulvet (y=0) */}
+            <mesh position={[0, 0.8, 0]} castShadow>
                 <capsuleGeometry args={[0.3, 1.0, 4, 10]} />
                 <meshStandardMaterial
                     ref={bodyRef}
@@ -246,8 +246,8 @@ function PersonFigure({ collectedCount }: { collectedCount: number }) {
                     roughness={0.5}
                 />
             </mesh>
-            {/* Hode */}
-            <mesh position={[0, 2.15, 0]} castShadow>
+            {/* Hode - bunnen (y ≈ 1.57) møter kapseltoppen (1.6) så hodet ikke svever */}
+            <mesh position={[0, 1.9, 0]} castShadow>
                 <sphereGeometry args={[0.33, 14, 14]} />
                 <meshStandardMaterial
                     ref={headRef}

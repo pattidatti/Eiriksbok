@@ -325,7 +325,8 @@ function SouthHalf({ stage }: { stage: number }) {
     });
     return (
         <group ref={group} position={[1.1, 0, 0]}>
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[4.2, 0, 0]} receiveShadow>
+            {/* Ligger 0.01 under Nord-planet så overlappen ved samling ikke z-fighter */}
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[4.2, -0.01, 0]} receiveShadow>
                 <planeGeometry args={[9, 18]} />
                 <meshStandardMaterial color="#caa85f" roughness={1} />
             </mesh>
@@ -350,9 +351,10 @@ function Fracture({ stage }: { stage: number }) {
     useFrame(({ clock }, dt) => {
         const t = clock.getElapsedTime();
         if (mesh.current) {
-            // Bredden krymper til null ved stage 3
-            const w = stage >= 3 ? 0.02 : 0.55;
-            mesh.current.scale.x = damp(mesh.current.scale.x, w / 0.55, dt, 2.2);
+            // Bredden krymper til null ved stage 3. 1.7 dekker hele gapet mellom
+            // landhalvdelene (1.6) så bakgrunnen aldri skinner gjennom.
+            const w = stage >= 3 ? 0.02 : 1.7;
+            mesh.current.scale.x = damp(mesh.current.scale.x, w / 1.7, dt, 2.2);
             mesh.current.visible = mesh.current.scale.x > 0.06;
         }
         if (matRef.current) {
@@ -366,7 +368,7 @@ function Fracture({ stage }: { stage: number }) {
     });
     return (
         <mesh ref={mesh} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.05, 0]}>
-            <planeGeometry args={[0.55, 18]} />
+            <planeGeometry args={[1.7, 18]} />
             <meshStandardMaterial
                 ref={matRef}
                 color="#6b8bd6"
@@ -433,8 +435,13 @@ function Person({
                     <meshStandardMaterial color="#caa07a" roughness={0.8} />
                 </mesh>
             </group>
-            {/* lenke ved føttene (kun bundet) */}
-            <mesh ref={chain} position={[0, 0.08, 0.22]} visible={enslaved}>
+            {/* lenke ved føttene (kun bundet) - ligger flatt på bakken */}
+            <mesh
+                ref={chain}
+                position={[0, 0.08, 0.22]}
+                rotation={[-Math.PI / 2, 0, 0]}
+                visible={enslaved}
+            >
                 <torusGeometry args={[0.16, 0.045, 8, 16]} />
                 <meshStandardMaterial color="#3a3a3a" metalness={0.6} roughness={0.5} />
             </mesh>
@@ -524,7 +531,7 @@ function CottonField() {
     const rows: [number, number, number][] = [];
     for (let cx = 0; cx < 4; cx++) {
         for (let cz = 0; cz < 4; cz++) {
-            rows.push([2.6 + cx * 0.9, 0.18, 4.2 + cz * 0.7]);
+            rows.push([2.6 + cx * 0.9, 0.13, 4.2 + cz * 0.7]);
         }
     }
     return (

@@ -30,13 +30,15 @@ import type { MicroGameProps } from './types';
 const TOTAL = 5;
 
 // Hvor de tomme hageplassene ligger ute på innsjøen (xz). Hver chinampa har
-// sin egen plass, så to draggables aldri kjemper om samme rute.
+// sin egen plass, så to draggables aldri kjemper om samme rute. Alle plassene
+// ligger klart utenfor øyas fot (sekskant, radius 5.0 ved bunnen, senter z -1.2)
+// og unna demningene, så hagene aldri skjærer inn i land.
 const SLOTS: [number, number][] = [
-    [-3.4, 0.8],
-    [3.4, 0.8],
-    [-2.4, 3.2],
-    [2.4, 3.2],
-    [0, 4.6],
+    [-5.4, 2.6],
+    [-2.6, 4.6],
+    [0, 5.9],
+    [2.6, 4.6],
+    [5.4, 2.6],
 ];
 
 // Startplassene ved kanobrygga foran i bildet.
@@ -108,17 +110,17 @@ const Chinampabyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             onRetry={placed > 0 ? reset : undefined}
             canvas={{
                 idle,
-                camera: { position: [0, 9.5, 12.5], fov: 42 },
+                camera: { position: [0, 11.5, 15], fov: 44 },
                 background: '#bfe3ef',
-                fog: { near: 24, far: 52 },
-                target: [0, 0.4, 1],
+                fog: { near: 26, far: 56 },
+                target: [0, 0.2, 1.8],
             }}
             containerClassName="bg-gradient-to-b from-[#bfe3ef] via-[#cfeaf0] to-[#9ec6cf]"
             overlays={
                 <>
                     <SceneBanner message={banner} wide />
                     <SceneBadge corner="br">
-                        {done ? 'Tenochtitlán står' : 'Tenochtitlán — ca. 1500'}
+                        {done ? 'Tenochtitlán står' : 'Tenochtitlán - ca. 1500'}
                     </SceneBadge>
                     <DataReadout
                         corner="bl"
@@ -147,7 +149,7 @@ const Chinampabyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                         <StepTracker current={placed} total={TOTAL} />
                         <p className="text-sm text-slate-600 leading-snug">
                             Aztekerne hadde lite tørt land. Derfor bygde de{' '}
-                            <span className="font-bold text-emerald-700">chinampas</span> — frodige
+                            <span className="font-bold text-emerald-700">chinampas</span> - frodige
                             hager av slam og siv rett på innsjøen. Dra hver hage ut til en ring. For
                             hver hage du planter, får byen mer mat, og flere mennesker kan bo der.
                         </p>
@@ -155,7 +157,7 @@ const Chinampabyen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 ) : (
                     <WinScreen title="Byen på vannet lever!" onReplay={reset}>
                         Med rad på rad av flytende hager fødde aztekerne en by på rundt 200 000
-                        mennesker — større enn nesten alle byer i Europa på samme tid. Maten kom
+                        mennesker - større enn nesten alle byer i Europa på samme tid. Maten kom
                         ikke fra erobring, men fra smart jordbruk på vannet. Slik blir det tydelig:
                         det er overskudd av mat som gjør store byer og riker mulig.
                     </WinScreen>
@@ -196,14 +198,19 @@ function LakeCity({
                 {BUILDINGS.map((b, i) => (
                     <GrowingBuilding key={i} {...b} growth={growth} />
                 ))}
-                {/* Folk dukker opp på torget når byen vokser */}
-                {growth > 0.35 && <Figure position={[-1.4, 0, 1.3]} body="#7a3f2c" skin="#d8a878" />}
-                {growth > 0.6 && <Figure position={[1.3, 0, 1.4]} body="#5c4a8a" skin="#e0b98c" />}
-                {growth > 0.85 && <Figure position={[0.2, 0, 1.8]} body="#8a6d2c" skin="#c79468" />}
+                {/* Folk dukker opp på torget når byen vokser (øyplatået ligger på y 0.2) */}
+                {growth > 0.35 && (
+                    <Figure position={[-1.4, 0.2, 1.3]} body="#7a3f2c" skin="#d8a878" />
+                )}
+                {growth > 0.6 && <Figure position={[1.3, 0.2, 1.4]} body="#5c4a8a" skin="#e0b98c" />}
+                {growth > 0.85 && (
+                    <Figure position={[0.2, 0.2, 1.8]} body="#8a6d2c" skin="#c79468" />
+                )}
             </group>
 
-            {/* Demninger/veier (causeways) fra øya ut mot land */}
-            <Causeway from={[0, -2.8]} to={[0, 8.5]} />
+            {/* Demninger/veier (causeways) fra øya ut mot land. Den søndre stopper
+                før hageplassene og kanobrygga, så ingen hage havner oppå stein. */}
+            <Causeway from={[0, -2.8]} to={[0, 4.6]} />
             <Causeway from={[-2.4, -1.2]} to={[-9, -1.2]} />
             <Causeway from={[2.4, -1.2]} to={[9, -1.2]} />
 
@@ -213,11 +220,12 @@ function LakeCity({
             )}
 
             {/* De flytende hagene eleven drar ut. Hver har sin egen plass. */}
+            {/* Flåten ligger med litt dypgang: bunnen (y 0) så vidt under vannflata (y 0.02) */}
             {SHORE.map((s, i) => (
                 <Draggable
                     key={i}
-                    position={[s[0], 0.06, s[1]]}
-                    planeY={0.06}
+                    position={[s[0], 0, s[1]]}
+                    planeY={0}
                     snapPoints={[SLOTS[i]]}
                     snapRadius={2.4}
                     liftY={0.5}
@@ -314,7 +322,7 @@ function GrowingBuilding({
         const target = Math.max(0.05, maxH * growth);
         const h = damp(ref.current.scale.y, target, dt, 4);
         ref.current.scale.y = h;
-        ref.current.position.y = h / 2; // foten blir stående på bakken
+        ref.current.position.y = 0.2 + h / 2; // foten blir stående på øyplatået (y 0.2)
     });
     return (
         <mesh ref={ref} position={[x, 0, z]} castShadow receiveShadow>

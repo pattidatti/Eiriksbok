@@ -25,7 +25,9 @@ import type { MicroGameProps } from './types';
 const NORGE_X = -5.4;
 const EU_X = 5.2;
 const BRIDGE_START = -3.7;
-const BRIDGE_END = 3.5;
+// Slutter på 3.0 så dekket lander på EU-øya (kant ved x≈1.8) uten å skjære
+// inn i bygningsringen (nærmeste bygg begynner ved x≈3.0).
+const BRIDGE_END = 3.0;
 const BRIDGE_Y = 0.5;
 const SPAN = BRIDGE_END - BRIDGE_START;
 
@@ -162,7 +164,7 @@ const EuropaBroen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                     <WinScreen title="Du har sett hele skalaen!" onReplay={reset}>
                         Jo lenger ut mot EU du dro spaken, jo mer marked og innflytelse fikk Norge,
                         men jo mindre selvstyre. Ved EØS-punktet var markedet nesten åpent og reglene
-                        daler ned over Norge, mens stolen ved bordet stod tom. Det er kjernen i EØS:
+                        dalte ned over Norge, mens stolen ved bordet stod tom. Det er kjernen i EØS:
                         Norge følger EUs regler uten å være med og stemme over dem.
                     </WinScreen>
                 </div>
@@ -235,8 +237,10 @@ function NorgeOya({ coop }: { coop: number }) {
 }
 
 function House({ x, z, color }: { x: number; z: number; color: string }) {
+    // Øytoppen ligger på y=0.35; huskroppen er 0.6 høy, så senteret må opp på
+    // 0.65 for at huset skal stå PÅ øya i stedet for halvt begravd i den.
     return (
-        <group position={[x, 0.35, z]}>
+        <group position={[x, 0.65, z]}>
             <mesh castShadow>
                 <boxGeometry args={[0.7, 0.6, 0.7]} />
                 <meshStandardMaterial color={color} roughness={0.9} />
@@ -270,14 +274,14 @@ function EUmarked({ coop }: { coop: number }) {
                     <meshStandardMaterial color="#3b5bb5" roughness={0.7} />
                 </mesh>
             ))}
-            {/* EUs bord */}
-            <mesh position={[0, 0.55, 0]} castShadow>
+            {/* EUs bord - bunnen skal hvile på øytoppen (y=0.35), ikke sveve */}
+            <mesh position={[0, 0.41, 0]} castShadow>
                 <cylinderGeometry args={[1.05, 1.05, 0.12, 24]} />
                 <meshStandardMaterial color="#f4d35e" emissive="#f59e0b" emissiveIntensity={0.2} roughness={0.5} />
             </mesh>
             {/* andre medlemmers stoler (blå) */}
             {Array.from({ length: 6 }, (_, i) => ((i + 0.5) / 7) * Math.PI * 2).map((a, i) => (
-                <mesh key={i} position={[Math.cos(a) * 1.3, 0.75, Math.sin(a) * 1.3]} castShadow>
+                <mesh key={i} position={[Math.cos(a) * 1.3, 0.55, Math.sin(a) * 1.3]} castShadow>
                     <boxGeometry args={[0.22, 0.4, 0.22]} />
                     <meshStandardMaterial color="#1d3a8a" />
                 </mesh>
@@ -300,14 +304,14 @@ function NorskStol({ coop }: { coop: number }) {
             mat.current.emissiveIntensity = damp(mat.current.emissiveIntensity, med * 0.6, dt, 5);
         }
         if (grp.current) {
-            const y = damp(grp.current.position.y, 0.75 + med * 0.25, dt, 5);
+            const y = damp(grp.current.position.y, 0.55 + med * 0.25, dt, 5);
             grp.current.position.set(Math.cos(a) * 1.3, y, Math.sin(a) * 1.3);
             const s = damp(grp.current.scale.x, 0.8 + med * 0.6, dt, 5);
             grp.current.scale.setScalar(s);
         }
     });
     return (
-        <group ref={grp} position={[Math.cos(a) * 1.3, 0.75, Math.sin(a) * 1.3]}>
+        <group ref={grp} position={[Math.cos(a) * 1.3, 0.55, Math.sin(a) * 1.3]}>
             <mesh castShadow>
                 <boxGeometry args={[0.24, 0.42, 0.24]} />
                 <meshStandardMaterial ref={mat} color="#9aa6bd" emissive="#d4322a" emissiveIntensity={0} />
@@ -335,8 +339,8 @@ function Bro({ coop }: { coop: number }) {
                 <boxGeometry args={[1, 0.16, 1.5]} />
                 <meshStandardMaterial color="#caa472" roughness={0.9} />
             </mesh>
-            {/* pilarer */}
-            {[-2, 0.6, 3].map((x, i) => (
+            {/* pilarer - alle står i åpent vann mellom øyene */}
+            {[-2, -0.2, 1.5].map((x, i) => (
                 <BroPilar key={i} x={x} coop={coop} />
             ))}
         </group>
@@ -402,7 +406,8 @@ function RegelTavle({ index, coop }: { index: number; coop: number }) {
         // hver tavle daler ned etter hvert som samarbeidet stiger
         const trigger = 0.35 + index * 0.18;
         const ned = smooth(coop, trigger, trigger + 0.12);
-        const y = damp(m.current.position.y, 2.8 - ned * 1.4, dt, 4);
+        // Stopper på 1.6 så tavlene svever over hustakene (takspiss ≈ 1.38)
+        const y = damp(m.current.position.y, 2.9 - ned * 1.3, dt, 4);
         m.current.position.y = y;
         const mat = (m.current.children[0] as THREE.Mesh).material as THREE.MeshStandardMaterial;
         mat.opacity = damp(mat.opacity, ned > 0.05 ? 0.95 : 0, dt, 5);

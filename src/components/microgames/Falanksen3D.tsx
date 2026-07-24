@@ -39,7 +39,9 @@ const PLACE_FACTS = [
     'Rekka er full. Nå er det en levende mur av bronse og spyd, ikke fem enkeltmenn.',
 ];
 
-const spacing = (gap: number) => 0.92 + gap * 1.35;
+// Ved gap <= TIGHT_GAP (tett skjoldmur) skal skjoldene (diameter 1.04) faktisk
+// overlappe hverandre visuelt, derfor er senteravstanden <= 1.03 ved terskelen.
+const spacing = (gap: number) => 0.72 + gap * 1.55;
 const hopliteX = (i: number, gap: number) => (i - (N - 1) / 2) * spacing(gap);
 
 const Falanksen3D: React.FC<MicroGameProps> = ({ onComplete }) => {
@@ -270,12 +272,12 @@ function Hoplite({ index, gap }: { index: number; gap: number }) {
                 <boxGeometry args={[0.06, 0.16, 0.34]} />
                 <meshStandardMaterial color="#8a2f24" roughness={0.7} />
             </mesh>
-            {/* rundt bronseskjold mot fienden (+Z) */}
-            <mesh position={[0, 0.62, SHIELD_R - 0.05]} castShadow>
+            {/* rundt bronseskjold mot fienden (+Z) - sylinder roteres så skiva står oppreist */}
+            <mesh position={[0, 0.62, SHIELD_R - 0.05]} rotation={[Math.PI / 2, 0, 0]} castShadow>
                 <cylinderGeometry args={[SHIELD_R, SHIELD_R, 0.1, 24]} />
                 <meshStandardMaterial color="#c98f2e" metalness={0.55} roughness={0.35} />
             </mesh>
-            <mesh position={[0, 0.62, SHIELD_R + 0.01]}>
+            <mesh position={[0, 0.62, SHIELD_R + 0.01]} rotation={[Math.PI / 2, 0, 0]}>
                 <cylinderGeometry args={[0.14, 0.14, 0.12, 16]} />
                 <meshStandardMaterial color="#8a5a1f" metalness={0.5} roughness={0.4} />
             </mesh>
@@ -338,8 +340,8 @@ function Attackers({
                         <sphereGeometry args={[0.16, 12, 12]} />
                         <meshStandardMaterial color="#cda884" roughness={0.8} />
                     </mesh>
-                    {/* skjold mot grekerne (-Z) */}
-                    <mesh position={[0, 0.55, -0.42]} castShadow>
+                    {/* skjold mot grekerne (-Z) - sylinder roteres så skiva står oppreist */}
+                    <mesh position={[0, 0.55, -0.42]} rotation={[Math.PI / 2, 0, 0]} castShadow>
                         <cylinderGeometry args={[0.42, 0.42, 0.09, 18]} />
                         <meshStandardMaterial color="#5a6577" metalness={0.4} roughness={0.5} />
                     </mesh>

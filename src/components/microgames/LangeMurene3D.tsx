@@ -154,8 +154,9 @@ function Scene({
     return (
         <group>
             <GroundPlane size={46} depth={30} color={T.ground} />
-            {/* Havet til høyre for havna */}
-            <WaterPlane position={[PORT_X + 6, 0.02, 0]} size={[16, 24]} color={T.water} />
+            {/* Havet til høyre for havna - kystlinja ligger ved brygga, så
+                pakkhusene står på land og bare brygga stikker ut over vannet */}
+            <WaterPlane position={[PORT_X + 8, 0.02, 0]} size={[16, 24]} color={T.water} />
 
             {/* Byen Athen til venstre, med et tempel på en liten høyde */}
             <City />
@@ -176,7 +177,7 @@ function Scene({
             {/* Kornskipet som seiler inn i havna */}
             <GrainShip supplying={supplying} />
 
-            {/* Spartas hær utenfor nordmuren – kommer aldri inn */}
+            {/* Spartas hær utenfor nordmuren - kommer aldri inn */}
             <SpartanArmy />
 
             {/* Litt natur bak byen */}
@@ -205,11 +206,13 @@ function WallSection({ x, z, raised }: { x: number; z: number; raised: boolean }
     const grp = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
         if (!grp.current) return;
-        // Skjult under bakken (y ~ -1.9) til det reises, så damper det opp til 0.
-        grp.current.position.y = damp(grp.current.position.y, raised ? 0 : -1.9, dt, 4);
+        // Skjult under bakken til det reises, så damper det opp til 0. Muren er
+        // 1.8 høy + tinner på toppen (~2.1 totalt), så -2.4 gjemmer alt.
+        grp.current.position.y = damp(grp.current.position.y, raised ? 0 : -2.4, dt, 4);
+        grp.current.visible = grp.current.position.y > -2.3;
     });
     return (
-        <group ref={grp} position={[x, -1.9, z]}>
+        <group ref={grp} position={[x, -2.4, z]}>
             <Wall
                 position={[0, 0, 0]}
                 length={3}
@@ -320,13 +323,16 @@ function GrainShip({ supplying }: { supplying: boolean }) {
     const grp = useRef<THREE.Group>(null);
     useFrame((_, dt) => {
         if (!grp.current) return;
-        const targetX = supplying ? PORT_X + 3.2 : PORT_X + 12;
-        grp.current.position.x = damp(grp.current.position.x, targetX, dt, 0.7);
+        // Legger til langs brygga (sørsida, mot kamera) - ikke oppå den.
+        const targetX = supplying ? PORT_X + 1.6 : PORT_X + 12;
+        grp.current.position.x = damp(grp.current.position.x, targetX, dt, 0.9);
         const t = performance.now() / 1000;
         grp.current.rotation.z = Math.sin(t * 1.3) * 0.04;
     });
     return (
-        <group ref={grp} position={[PORT_X + 12, 0.25, 0]} rotation={[0, -Math.PI / 2, 0]}>
+        // Gruppa står ved vannlinja (y=0.02): kit-Boat har skrogsenteret på
+        // lokal y=0.35, som gir ~0.15 dypgang og synlig fribord.
+        <group ref={grp} position={[PORT_X + 12, 0.02, 3.0]} rotation={[0, -Math.PI / 2, 0]}>
             <Boat color="#6b4a2c" sail="#efe7d4" />
         </group>
     );

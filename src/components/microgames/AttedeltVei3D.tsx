@@ -132,10 +132,12 @@ const AttedeltVei3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             canvas={{
                 idle,
                 autoRotateSpeed: 0.25,
+                // NB: uten controls ser kameraet mot origo - hjulet må derfor
+                // ligge sentrert rundt y=0 for å fylle utsnittet.
                 camera: { position: [0, 1.6, 12], fov: 40 },
                 background: '#c2d0ee',
                 fog: { color: '#d4ddf0', near: 24, far: 80 },
-                target: [0, 1.4, 0],
+                target: [0, 0, 0],
                 contactShadows: false,
                 controls: false,
             }}
@@ -240,7 +242,9 @@ function WheelScene({ lit, phase, balance, burst, onLight, onRolled }: SceneProp
             spin.current += dt * 1.7;
             roll.current += dt;
             wheel.current.position.x = damp(wheel.current.position.x, -1.6, dt, 0.7);
-            wheel.current.rotation.z = -spin.current;
+            // Ruller mot venstre (-x) => positiv z-rotasjon, ellers spinner
+            // hjulet «baklengs» i forhold til bevegelsen.
+            wheel.current.rotation.z = spin.current;
             if (roll.current > 1.3) onRolled();
         } else {
             wheel.current.rotation.z = damp(wheel.current.rotation.z, wob, dt, 8);
@@ -253,8 +257,8 @@ function WheelScene({ lit, phase, balance, burst, onLight, onRolled }: SceneProp
             <SkyDome />
             <StarMotes />
 
-            {/* Svevende hjul */}
-            <group ref={float} position={[0, 1.4, 0]}>
+            {/* Svevende hjul - sentrert rundt origo (dit kameraet faktisk ser) */}
+            <group ref={float} position={[0, 0, 0]}>
                 <group ref={wheel}>
                     <DharmaWheel lit={lit} />
                     <Burst position={[0, 0, 0.4]} trigger={burst} color="#fff0c4" count={40} spread={3.6} />
@@ -270,7 +274,7 @@ function WheelScene({ lit, phase, balance, burst, onLight, onRolled }: SceneProp
                     return (
                         <Hotspot
                             key={s.id}
-                            position={[Math.cos(a) * r, 1.4 + Math.sin(a) * r, 0.3]}
+                            position={[Math.cos(a) * r, Math.sin(a) * r, 0.3]}
                             onSelect={() => onLight(s.id)}
                             label={s.name}
                             radius={0.34}

@@ -1,5 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 import {
     MicroGameScaffold,
@@ -42,14 +43,14 @@ const BRIKKER: Brikke[] = [
         tekst: 'Utgravd vikinglandsby på Newfoundland (L’Anse aux Meadows)',
         side: 'styrker',
         vekt: 30,
-        start: [-4, 0, 4.5],
+        start: [-3.5, 0, 4.5],
     },
     {
         id: 'karbon',
         tekst: 'Karbondatering av funnene peker på ca. år 1000',
         side: 'styrker',
         vekt: 26,
-        start: [-2, 0, 5],
+        start: [-1.8, 0, 5],
     },
     {
         id: 'saga',
@@ -63,14 +64,14 @@ const BRIKKER: Brikke[] = [
         tekst: 'Bosetningen ble aldri varig - vikingene ble ikke værende',
         side: 'tvil',
         vekt: 12,
-        start: [2, 0, 5],
+        start: [1.8, 0, 5],
     },
     {
         id: 'sent',
         tekst: 'Sagaene ble skrevet ned over 200 år etter reisene',
         side: 'tvil',
         vekt: 9,
-        start: [4, 0, 4.5],
+        start: [3.5, 0, 4.5],
     },
 ];
 
@@ -103,6 +104,11 @@ const Bevisvekten3D: React.FC<MicroGameProps> = ({ onComplete }) => {
     const sikkerhet = totalVekt > 0 ? Math.round((styrkerVekt / totalVekt) * 100) : 50;
 
     const place = (b: Brikke, pos: THREE.Vector3) => {
+        // Slipp på bordet eller midt mellom skålene teller ikke som plassering.
+        if (pos.z > 2.8 || Math.abs(pos.x) < 0.8) {
+            setBanner('Legg beviset på en av skålene: venstre for tvil, høyre for styrker.');
+            return;
+        }
         const side: Side = pos.x < 0 ? 'tvil' : 'styrker';
         sounds.play('drop');
         setPlacements((p) => {
@@ -156,7 +162,8 @@ const Bevisvekten3D: React.FC<MicroGameProps> = ({ onComplete }) => {
             overlays={
                 <>
                     <SceneBanner message={banner} wide />
-                    <SceneBadge corner="tl">{CLAIM}</SceneBadge>
+                    {/* br så påstanden ikke ligger oppå den brede banneren øverst */}
+                    <SceneBadge corner="br">{CLAIM}</SceneBadge>
                     <DragHint show={placedCount === 0 && introDone}>
                         Dra et bevis mot venstre (tvil) eller høyre (styrker)
                     </DragHint>
@@ -185,7 +192,7 @@ const Bevisvekten3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                                 liftY={0.6}
                                 onDrop={(pos) => place(b, pos)}
                             >
-                                <EvidenceTile side={b.side} />
+                                <EvidenceTile brikke={b} />
                             </Draggable>
                         ) : null
                     )}
@@ -307,20 +314,20 @@ function ScaleScene({
 
             {/* Venstre skål (tvil, gul) */}
             <group ref={leftPan} position={[-PAN_X, BEAM_Y - 1.6, 0]}>
-                <Pan color="#f59e0b" label="TVIL" />
-                <StackedTiles brikker={onPan('tvil')} />
+                <Pan color="#f59e0b" label="Tvil" />
+                <StackedTiles brikker={onPan('tvil')} side="tvil" />
             </group>
 
             {/* Høyre skål (styrker, grønn) */}
             <group ref={rightPan} position={[PAN_X, BEAM_Y - 1.6, 0]}>
-                <Pan color="#10b981" label="STYRKER" />
-                <StackedTiles brikker={onPan('styrker')} />
+                <Pan color="#10b981" label="Styrker" />
+                <StackedTiles brikker={onPan('styrker')} side="styrker" />
             </group>
         </group>
     );
 }
 
-function Pan({ color }: { color: string; label: string }) {
+function Pan({ color, label }: { color: string; label: string }) {
     return (
         <group>
             <mesh castShadow receiveShadow>
@@ -331,18 +338,48 @@ function Pan({ color }: { color: string; label: string }) {
                 <cylinderGeometry args={[1.3, 1.3, 0.06, 24, 1, true]} />
                 <meshStandardMaterial color={color} roughness={0.5} side={THREE.DoubleSide} />
             </mesh>
+            {/* skål-etikett så eleven ser hvilken side som er hva */}
+            <Html center position={[0, -0.45, 0.9]} style={{ pointerEvents: 'none' }}>
+                <span
+                    style={{
+                        fontSize: '13px',
+                        fontWeight: 800,
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        color: '#334155',
+                        background: 'rgba(255,255,255,0.85)',
+                        borderRadius: '6px',
+                        padding: '1px 8px',
+                        whiteSpace: 'nowrap',
+                    }}
+                >
+                    {label}
+                </span>
+            </Html>
         </group>
     );
 }
 
-function StackedTiles({ brikker }: { brikker: Brikke[] }) {
+// Tykkelsen på en brikke speiler vekta: tunge bevis er tykke plater.
+function tileHeight(vekt: number) {
+    return 0.14 + vekt * 0.009;
+}
+
+function StackedTiles({ brikker, side }: { brikker: Brikke[]; side: Side }) {
+    // Regn ut senterhøyden for hver brikke i stabelen (start rett over skålbunnen).
+    const centers: number[] = [];
+    brikker.reduce((y, b) => {
+        const h = tileHeight(b.vekt);
+        centers.push(y + h / 2);
+        return y + h + 0.04;
+    }, 0.12);
     return (
         <>
             {brikker.map((b, i) => (
-                <mesh key={b.id} position={[0, 0.2 + i * 0.24, 0]} castShadow>
-                    <boxGeometry args={[1.1, 0.2, 1.1]} />
+                <mesh key={b.id} position={[0, centers[i], 0]} castShadow>
+                    <boxGeometry args={[1.1, tileHeight(b.vekt), 1.1]} />
                     <meshStandardMaterial
-                        color={b.side === 'styrker' ? '#34d399' : '#fbbf24'}
+                        color={side === 'styrker' ? '#34d399' : '#fbbf24'}
                         roughness={0.7}
                     />
                 </mesh>
@@ -351,8 +388,10 @@ function StackedTiles({ brikker }: { brikker: Brikke[] }) {
     );
 }
 
-// Bevis-brikke på bordet (før plassering).
-function EvidenceTile({ side }: { side: Side }) {
+// Bevis-brikke på bordet (før plassering). Nøytral farge - det er ELEVEN som
+// skal avgjøre hvilken side beviset hører til, så fargen røper ingenting.
+function EvidenceTile({ brikke }: { brikke: Brikke }) {
+    const h = tileHeight(brikke.vekt);
     return (
         <group>
             {/* usynlig, romslig gripeflate for trackpad */}
@@ -360,18 +399,30 @@ function EvidenceTile({ side }: { side: Side }) {
                 <boxGeometry args={[1.6, 1.2, 1.6]} />
                 <meshBasicMaterial transparent opacity={0} depthWrite={false} />
             </mesh>
-            <mesh position={[0, 0.3, 0]} castShadow>
-                <boxGeometry args={[1.2, 0.4, 1.2]} />
-                <meshStandardMaterial
-                    color={side === 'styrker' ? '#6ee7b7' : '#fcd34d'}
-                    roughness={0.6}
-                />
+            <mesh position={[0, 0.1 + h / 2, 0]} castShadow>
+                <boxGeometry args={[1.2, h, 1.2]} />
+                <meshStandardMaterial color="#e7ddc4" roughness={0.6} />
             </mesh>
-            {/* liten spørsmåls-markør så den ser gripbar ut */}
-            <mesh position={[0, 0.58, 0]}>
-                <sphereGeometry args={[0.12, 12, 12]} />
-                <meshStandardMaterial color="#334155" />
-            </mesh>
+            {/* bevis-teksten på et lite kort over brikka */}
+            <Html center position={[0, 1.15, 0]} style={{ pointerEvents: 'none' }}>
+                <div
+                    style={{
+                        width: '124px',
+                        fontSize: '10px',
+                        lineHeight: 1.25,
+                        fontWeight: 600,
+                        textAlign: 'center',
+                        color: '#1e293b',
+                        background: 'rgba(255,255,255,0.92)',
+                        border: '1px solid #cbd5e1',
+                        borderRadius: '8px',
+                        padding: '4px 6px',
+                        boxShadow: '0 2px 6px rgba(15,23,42,0.15)',
+                    }}
+                >
+                    {brikke.tekst}
+                </div>
+            </Html>
         </group>
     );
 }

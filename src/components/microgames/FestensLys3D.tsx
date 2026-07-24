@@ -57,7 +57,7 @@ const CELEBRATIONS: Celebration[] = [
         name: 'Hanukka',
         religion: 'Jødedom',
         glow: '#7aa6ff',
-        fact: 'Hanukka er den jødiske lysfesten. Hver kveld tennes et nytt lys i den åtte-armede staken.',
+        fact: 'Hanukka er den jødiske lysfesten. Hver kveld tennes et nytt lys i staken, til alle åtte lysene og hjelpelyset i midten brenner.',
         lights: L,
     },
     {
@@ -325,6 +325,12 @@ function Candle({
     );
 }
 
+// Bordplatens overflate i world-y. Alt av senterpynt skal STÅ på denne, ikke sveve.
+const TABLE_TOP = -0.07;
+
+// Gull som leses som gull også i det dunkle rommet (lav metalness + svak emissive).
+const GOLD = { color: '#d9b45c', metalness: 0.35, roughness: 0.35 };
+
 // Ulik senterpynt per høytid - billig, men gjenkjennelig.
 function Centerpiece({ celeb }: { celeb: Celebration }) {
     const grp = useRef<THREE.Group>(null);
@@ -333,15 +339,20 @@ function Centerpiece({ celeb }: { celeb: Celebration }) {
     });
 
     if (celeb.id === 'jul') {
+        // juletre med stamme, står på bordet
         return (
-            <group>
-                {[0.0, 0.45, 0.85].map((y, i) => (
-                    <mesh key={i} position={[0, 0.5 + y, 0]} castShadow>
+            <group position={[0, TABLE_TOP, 0]}>
+                <mesh position={[0, 0.1, 0]} castShadow>
+                    <cylinderGeometry args={[0.08, 0.1, 0.2, 8]} />
+                    <meshStandardMaterial color="#5e3720" roughness={0.9} />
+                </mesh>
+                {[0.0, 0.42, 0.8].map((y, i) => (
+                    <mesh key={i} position={[0, 0.3 + y, 0]} castShadow>
                         <coneGeometry args={[0.7 - i * 0.18, 0.5, 12]} />
                         <meshStandardMaterial color="#2f7d4f" roughness={0.8} />
                     </mesh>
                 ))}
-                <mesh position={[0, 1.55, 0]}>
+                <mesh position={[0, 1.42, 0]}>
                     <sphereGeometry args={[0.12, 8, 8]} />
                     <meshStandardMaterial color="#ffd24a" emissive="#ffb000" emissiveIntensity={0.8} />
                 </mesh>
@@ -350,56 +361,68 @@ function Centerpiece({ celeb }: { celeb: Celebration }) {
     }
 
     if (celeb.id === 'hanukka') {
-        // ni-armet stake (menorah): midtstamme + armer i ulik høyde
-        const arms = [-2, -1, 0, 1, 2];
+        // hanukkia: fot + stamme + tverrbjelke med ni lys, shamash-lyset i midten er høyest
+        const arms = [-4, -3, -2, -1, 0, 1, 2, 3, 4];
         return (
-            <group position={[0, 0.45, 0]}>
-                <mesh position={[0, 0.1, 0]}>
-                    <boxGeometry args={[1.6, 0.1, 0.18]} />
-                    <meshStandardMaterial color="#caa24a" metalness={0.6} roughness={0.3} />
+            <group position={[0, TABLE_TOP, 0]}>
+                <mesh position={[0, 0.04, 0]} castShadow>
+                    <cylinderGeometry args={[0.16, 0.22, 0.08, 12]} />
+                    <meshStandardMaterial {...GOLD} emissive="#4a3a10" emissiveIntensity={0.3} />
+                </mesh>
+                <mesh position={[0, 0.24, 0]}>
+                    <cylinderGeometry args={[0.045, 0.045, 0.4, 8]} />
+                    <meshStandardMaterial {...GOLD} emissive="#4a3a10" emissiveIntensity={0.3} />
+                </mesh>
+                <mesh position={[0, 0.46, 0]} castShadow>
+                    <boxGeometry args={[1.5, 0.08, 0.12]} />
+                    <meshStandardMaterial {...GOLD} emissive="#4a3a10" emissiveIntensity={0.3} />
                 </mesh>
                 {arms.map((a) => {
-                    const h = 0.6 + Math.abs(a) * 0.0;
+                    const h = a === 0 ? 0.34 : 0.22;
                     return (
-                        <mesh key={a} position={[a * 0.32, 0.1 + h / 2, 0]}>
-                            <cylinderGeometry args={[0.05, 0.05, h, 10]} />
-                            <meshStandardMaterial color="#caa24a" metalness={0.6} roughness={0.3} />
+                        <mesh key={a} position={[a * 0.17, 0.5 + h / 2, 0]} castShadow>
+                            <cylinderGeometry args={[0.032, 0.038, h, 8]} />
+                            <meshStandardMaterial color="#f4ecd8" roughness={0.6} />
                         </mesh>
                     );
                 })}
-                <mesh position={[0, 0.85, 0]}>
-                    <sphereGeometry args={[0.07, 8, 8]} />
-                    <meshStandardMaterial color="#ffd24a" emissive="#ffb000" emissiveIntensity={0.6} />
-                </mesh>
             </group>
         );
     }
 
     if (celeb.id === 'divali') {
-        // rangoli: en flat gull-ring med en liten kuppel-lampe i midten
+        // rangoli: en flat gull-ring som ligger på duken, med en liten diya-lampe i midten
         return (
-            <group ref={grp} position={[0, 0.5, 0]}>
-                <mesh rotation={[-Math.PI / 2, 0, 0]}>
+            <group ref={grp} position={[0, TABLE_TOP, 0]}>
+                <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.07, 0]}>
                     <torusGeometry args={[0.55, 0.07, 12, 36]} />
-                    <meshStandardMaterial color="#d98a2b" metalness={0.4} roughness={0.4} />
+                    <meshStandardMaterial color="#d98a2b" metalness={0.3} roughness={0.4} />
                 </mesh>
-                <mesh position={[0, 0.1, 0]}>
+                <mesh position={[0, 0, 0]}>
                     <sphereGeometry args={[0.22, 16, 16, 0, Math.PI * 2, 0, Math.PI / 2]} />
-                    <meshStandardMaterial color="#caa24a" metalness={0.5} roughness={0.3} />
+                    <meshStandardMaterial {...GOLD} emissive="#4a3a10" emissiveIntensity={0.3} />
                 </mesh>
             </group>
         );
     }
 
-    // eid: stående måne-ring + en liten stjerne
+    // id: halvmåne på en liten stang med fot, som en høytidslampe, og stjerne i måne-gapet
     return (
-        <group position={[0, 0.7, 0]}>
-            <mesh rotation={[0, 0, 0.4]}>
-                <torusGeometry args={[0.5, 0.09, 12, 32]} />
-                <meshStandardMaterial color="#caa24a" metalness={0.6} roughness={0.3} />
+        <group position={[0, TABLE_TOP, 0]}>
+            <mesh position={[0, 0.03, 0]} castShadow>
+                <cylinderGeometry args={[0.16, 0.2, 0.06, 12]} />
+                <meshStandardMaterial {...GOLD} emissive="#4a3a10" emissiveIntensity={0.3} />
             </mesh>
-            <mesh position={[0.55, 0.5, 0]}>
-                <sphereGeometry args={[0.12, 8, 8]} />
+            <mesh position={[0, 0.35, 0]}>
+                <cylinderGeometry args={[0.035, 0.035, 0.6, 8]} />
+                <meshStandardMaterial {...GOLD} emissive="#4a3a10" emissiveIntensity={0.3} />
+            </mesh>
+            <mesh position={[0, 0.85, 0]} rotation={[0, 0, Math.PI * 0.55]}>
+                <torusGeometry args={[0.42, 0.08, 12, 32, Math.PI * 1.55]} />
+                <meshStandardMaterial {...GOLD} emissive="#4a3a10" emissiveIntensity={0.3} />
+            </mesh>
+            <mesh position={[0.26, 1.14, 0]}>
+                <sphereGeometry args={[0.09, 8, 8]} />
                 <meshStandardMaterial color="#ffe082" emissive="#ffc04a" emissiveIntensity={0.7} />
             </mesh>
         </group>
