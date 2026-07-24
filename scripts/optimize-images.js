@@ -2,7 +2,9 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-const CONTENT_DIR = 'public/content';
+// Sveip hele public/ - bildene ligger i public/images (1300+), ikke bare i
+// public/content. Filteret nedenfor plukker uansett kun .webp.
+const SWEEP_ROOTS = ['public'];
 const STANDARDS = {
     MAP_WIDTH: 2560,
     IMAGE_WIDTH: 1600,
@@ -27,8 +29,10 @@ function getAllFiles(dirPath, arrayOfFiles) {
 }
 
 async function optimize() {
-    console.log(`🚀 Starting project-wide image optimization sweep in ${CONTENT_DIR}...`);
-    const files = getAllFiles(CONTENT_DIR).filter(f => f.endsWith('.webp'));
+    console.log(`🚀 Starting project-wide image optimization sweep in ${SWEEP_ROOTS.join(', ')}...`);
+    const files = SWEEP_ROOTS.filter(root => fs.existsSync(root))
+        .flatMap(root => getAllFiles(root))
+        .filter(f => f.endsWith('.webp'));
     console.log(`🔍 Found ${files.length} WebP files.`);
 
     let optimizedCount = 0;
