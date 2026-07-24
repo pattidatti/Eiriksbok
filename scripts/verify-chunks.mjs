@@ -32,7 +32,12 @@ for (const route of ROUTES) {
         if (u.startsWith('/assets/') && u.endsWith('.js')) chunks.add(u.split('/').pop());
     });
     page.on('console', (m) => {
-        if (m.type() === 'error') errors.push(m.text().slice(0, 160));
+        // GitHub Pages serverer 404.html med status 404 for alle SPA-dyplenker
+        // (copy-404.js-monsteret). Siden rendrer normalt; konsoll-stoyen fra
+        // selve dokumentforespørselen er forventet og skal ikke telle som feil.
+        const isSpaFallback404 =
+            m.text().includes('status of 404') && route.path !== '/';
+        if (m.type() === 'error' && !isSpaFallback404) errors.push(m.text().slice(0, 160));
     });
     page.on('pageerror', (e) => errors.push('PAGEERROR: ' + e.message.slice(0, 160)));
 
