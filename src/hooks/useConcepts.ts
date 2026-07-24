@@ -27,7 +27,12 @@ export const useConcepts = () => {
                     ? import.meta.env.BASE_URL
                     : `${import.meta.env.BASE_URL}/`;
 
-                const response = await fetch(`${basePath}data/concepts.json?t=${new Date().getTime()}`);
+                // Prod: ingen cache-busting - 'no-cache' revaliderer med ETag (304 hvis uendret)
+                const url = import.meta.env.DEV
+                    ? `${basePath}data/concepts.json?v=${Date.now()}`
+                    : `${basePath}data/concepts.json`;
+
+                const response = await fetch(url, { cache: 'no-cache' });
                 if (response.ok) {
                     const data = await response.json();
 
