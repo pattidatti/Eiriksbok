@@ -14,6 +14,7 @@ const OsloSosiolekt3D = lazy(() => import('./OsloSosiolekt3D'));
 const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
+const Vesterled3D = lazy(() => import('./Vesterled3D'));
 const DelawareKrysning3D = lazy(() => import('./DelawareKrysning3D'));
 const LeonardoFlygemaskin3D = lazy(() => import('./LeonardoFlygemaskin3D'));
 const DeSjuHoydene3D = lazy(() => import('./DeSjuHoydene3D'));
@@ -779,6 +780,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./VikingShip3D'),
         Component: VikingShip3D as never,
+    },
+    'vesterled-3d': {
+        id: 'vesterled-3d',
+        title: 'Vesterled: sjøveien til Amerika',
+        description:
+            'Seil den norrøne ruten vestover i 3D. Hopp fra land til land - Norge, Island, Grønland, Vinland - og se hvordan nordboerne nådde Amerika uten å krysse hele Atlanteren i ett sprang.',
+        estimatedSeconds: 110,
+        loader: () => import('./Vesterled3D'),
+        Component: Vesterled3D as never,
     },
     'leonardo-flygemaskin-3d': {
         id: 'leonardo-flygemaskin-3d',

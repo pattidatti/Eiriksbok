@@ -2236,6 +2236,25 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "hvem-nadde-amerika-forst",
+      "title": "Hvem nådde Amerika først?",
+      "description": "Columbus fikk lenge æren, men nordboerne var i Amerika nesten 500 år før ham. Vei sagaene mot funnene i bakken, avslør en forfalskning, og seil den norrøne ruten vestover selv.",
+      "startDate": 1000,
+      "endDate": 1492,
+      "displayDate": "1000-1492",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/hvem-nadde-amerika-forst",
+      "tags": [
+        "historie",
+        "vikingtiden",
+        "kildekritikk",
+        "mysterier",
+        "oppdagelsesreiser"
+      ]
+    },
+    {
       "id": "boktrykkerkunsten-sub-0",
       "title": "Tidlige eksperimenter",
       "description": "Kineseren Bi Sheng eksperimenterer med løse typer i keramikk.",
@@ -9051,7 +9070,7 @@
       "description": "Kampen om stjernene: Sputnik og Apollo.",
       "startDate": 1957,
       "endDate": 1975,
-      "displayDate": "1957–1975",
+      "displayDate": "1957-1975",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "den-kalde-krigen",

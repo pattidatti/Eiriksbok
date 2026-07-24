@@ -23,6 +23,7 @@ import { MapCarousel } from './MapCarousel';
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
 const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m => ({ default: m.Gaatekart })));
+const AmerikaBevisSortering = lazy(() => import('./content/interactive/AmerikaBevisSortering').then(m => ({ default: m.AmerikaBevisSortering })));
 const TrojaMyteEllerFunn = lazy(() => import('./content/interactive/TrojaMyteEllerFunn').then(m => ({ default: m.TrojaMyteEllerFunn })));
 const SporTavlen = lazy(() => import('./content/interactive/SporTavlen').then(m => ({ default: m.SporTavlen })));
 const GrenseTegner = lazy(() => import('./content/interactive/GrenseTegner').then(m => ({ default: m.GrenseTegner })));
@@ -372,6 +373,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ParallelleSivilisasjoner,
     Quiz,
     Oppgaver,
+    AmerikaBevisSortering,
     GrenseTegner,
     StilleKilder,
     TrelastVerdikjede,
