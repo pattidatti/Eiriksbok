@@ -1,5 +1,5 @@
 {
-  "buildId": 1784966064299,
+  "buildId": 1784967562849,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1449,6 +1449,9 @@
     ],
     "antikythera-mekanismen": [
       "content/historie/historiens-store-gater/antikythera-mekanismen.json"
+    ],
+    "atlantis": [
+      "content/historie/historiens-store-gater/atlantis.json"
     ],
     "den-trojanske-krig": [
       "content/historie/historiens-store-gater/den-trojanske-krig.json"
@@ -4139,6 +4142,7 @@
     "historie/forste-verdenskrig/ww1-sti": "content/historie/forste-verdenskrig/ww1-sti.json",
     "historie/historiens-store-gater/amelia-earhart": "content/historie/historiens-store-gater/amelia-earhart.json",
     "historie/historiens-store-gater/antikythera-mekanismen": "content/historie/historiens-store-gater/antikythera-mekanismen.json",
+    "historie/historiens-store-gater/atlantis": "content/historie/historiens-store-gater/atlantis.json",
     "historie/historiens-store-gater/den-trojanske-krig": "content/historie/historiens-store-gater/den-trojanske-krig.json",
     "historie/historiens-store-gater/gronlands-gate": "content/historie/historiens-store-gater/gronlands-gate.json",
     "historie/historiens-store-gater/hvem-nadde-amerika-forst": "content/historie/historiens-store-gater/hvem-nadde-amerika-forst.json",

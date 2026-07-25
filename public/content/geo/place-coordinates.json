@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 309
+      "count": 311
     },
     {
       "tag": "dekolonisering",
@@ -815,12 +815,12 @@
       "count": 39
     },
     {
-      "tag": "religion",
-      "count": 37
+      "tag": "antikken",
+      "count": 38
     },
     {
-      "tag": "antikken",
-      "count": 36
+      "tag": "religion",
+      "count": 37
     },
     {
       "tag": "kald-krig",
@@ -851,6 +851,10 @@
       "count": 28
     },
     {
+      "tag": "kildekritikk",
+      "count": 26
+    },
+    {
       "tag": "verdensorden",
       "count": 26
     },
@@ -865,10 +869,6 @@
     {
       "tag": "delte-samfunn",
       "count": 25
-    },
-    {
-      "tag": "kildekritikk",
-      "count": 24
     },
     {
       "tag": "etikk",
@@ -951,6 +951,10 @@
       "count": 16
     },
     {
+      "tag": "mysterier",
+      "count": 15
+    },
+    {
       "tag": "konflikt",
       "count": 15
     },
@@ -969,10 +973,6 @@
     {
       "tag": "skrivehjelp",
       "count": 14
-    },
-    {
-      "tag": "mysterier",
-      "count": 13
     },
     {
       "tag": "folkemord",
@@ -1860,6 +1860,10 @@
     },
     {
       "tag": "idrett",
+      "count": 2
+    },
+    {
+      "tag": "pseudovitenskap",
       "count": 2
     },
     {

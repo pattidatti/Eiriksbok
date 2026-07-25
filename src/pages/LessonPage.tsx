@@ -195,9 +195,6 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
         showTools: true
     }), [isHistory]);
 
-    // Construct fallback URL for ArticleContent
-    const fallbackUrl = `${window.location.origin}${import.meta.env.BASE_URL.replace(/\/$/, '')}/content/${subjectId}/${topicId}${subTopicId ? `/${subTopicId}` : ''}/${lessonId}.json`;
-
     // Gather relevant learning paths from the manifest
     const relevantLearningPaths = useMemo(() => {
         const subject = manifest?.subjects.find(s => s.id === subjectId);
@@ -305,7 +302,6 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                         content={lesson.content || []}
                         concepts={lesson.concepts}
                         isTool={true}
-                        fallbackUrl={fallbackUrl}
                     />
                 </div>
             </div>
@@ -340,7 +336,6 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                 <InteractiveArticle
                     key={`${lesson.id}-${lesson.layout}-${lesson.learningPathData ? 'lp' : 'std'}`}
                     event={articleData}
-                    fallbackUrl={fallbackUrl}
                     sidebarConfig={sidebarConfig}
                     lessonNav={lessonNav}
                 />
@@ -360,7 +355,6 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                         category: timelineEvent.category || 'Historie',
                         readTime: timelineEvent.readTime || '3 min',
                     } as any}
-                    fallbackUrl={fallbackUrl}
                     sidebarConfig={sidebarConfig}
                 />
             </ErrorBoundary>

@@ -201,7 +201,11 @@ export async function fetchLesson(subject: string, topic: string, lessonId: stri
             // Use smart caching strategy (deterministic buildId in prod, fresh in dev)
             const fetchUrl = finalUrl.includes('?') ? finalUrl : `${finalUrl}?${getVersionQuery()}`;
 
-            const r = await fetchWithTimeout(fetchUrl, { cache: 'default' });
+            // 'no-cache' revaliderer med ETag (304 og 0 bytes når ingenting er
+            // endret). Med 'default' serverte nettleseren fra egen cache i inntil
+            // 10 minutter (max-age=600 fra GitHub Pages), slik at en rettelse
+            // publisert midt i en time ikke nådde eleven.
+            const r = await fetchWithTimeout(fetchUrl, { cache: 'no-cache' });
             if (!r.ok) {
                 console.warn(`[ContentLoader] ${sourceTier} fetch failed: ${fetchUrl} (${r.status})`);
                 return null;

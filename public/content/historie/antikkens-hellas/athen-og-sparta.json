@@ -7,20 +7,20 @@
     "readTime": "9 min lesning",
     "heroImage": "/images/antikkens-hellas/athen-og-sparta-hero.webp",
     "details": [
-        "Hellas var ikke ett land, men hundrevis av selvstendige bystater",
+        "Hellas var ikke ett land, men over tusen selvstendige bystater",
         "Athen valgte demokrati og kultur, Sparta valgte disiplin og hær",
         "Begge formet hvordan vi tenker om frihet og fellesskap i dag"
     ],
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg at du står på en høyde i Hellas for rundt 2500 år siden. Under deg ligger en by med murer, et torg og et tempel på toppen av en klippe. Bak fjellene ligger en annen by, og bak den igjen en tredje. Hver by har sin egen hær, sine egne lover og sin egen mening om hvordan livet skal leves. Hellas var ikke ett land. Det var hundrevis av små, selvstendige byer som styrte seg selv."
+            "content": "Tenk deg at du står på en høyde i Hellas for rundt 2500 år siden. Under deg ligger en by med murer, et torg og et tempel på toppen av en klippe. Bak fjellene ligger en annen by, og bak den igjen en tredje. Hver by har sin egen hær, sine egne lover og sin egen mening om hvordan livet skal leves. Hellas var ikke ett land. Det var mange små, selvstendige byer som styrte seg selv. I klassisk tid fantes det minst tusen slike bystater: rundt 600 i selve Hellas og omtrent 400 kolonier utenfor (Steen mfl., 2025b)."
         },
         {
             "type": "image",
             "src": "/images/antikkens-hellas/athen-og-sparta-01.webp",
-            "alt": "Gresk bystat med tempel pa en klippe over husene",
-            "caption": "En gresk bystat hadde ofte et tempel hoyt oppe pa en klippe, kalt akropolis."
+            "alt": "Gresk bystat med tempel på en klippe over husene",
+            "caption": "En gresk bystat hadde ofte et tempel høyt oppe på en klippe, kalt akropolis."
         },
         {
             "type": "header",
@@ -28,7 +28,7 @@
         },
         {
             "type": "text",
-            "content": "En slik by med landet rundt kalte grekerne en polis, altså en bystat. Folk i en polis snakket samme språk og dyrket de samme gudene som naboene sine, men de så på seg selv som athenere eller spartanere, ikke som grekere. Hver by hadde sin egen hær, sine egne mynter og sine egne regler. De konkurrerte, handlet og kranglet med hverandre. Av og til gikk de til krig, og av og til feiret de fester sammen, som de første olympiske lekene."
+            "content": "En slik by med landet rundt kalte grekerne en polis, altså en bystat. En polis var en uavhengig stat med sine egne styringsorganer og sine egne sosiale og religiøse ordninger (Steen mfl., 2025b). Folk i en polis snakket samme språk og dyrket de samme gudene som naboene sine, men de så på seg selv som athenere eller spartanere, ikke som grekere. Styret var ikke likt overalt, men de fleste byene hadde de samme grunnelementene: en folkeforsamling og et råd (Steen mfl., 2025b). De konkurrerte, handlet og kranglet med hverandre. Av og til gikk de til krig, og av og til feiret de fester sammen, som de olympiske lekene."
         },
         {
             "type": "text",
@@ -40,17 +40,17 @@
         },
         {
             "type": "text",
-            "content": "I Athen fikk vanlige menn være med å bestemme. Alle frie menn over 18 år kunne møte i folkeforsamlingen, holde tale og stemme på lovene. Mange av oppgavene i byen ble fordelt ved loddtrekning, så også en enkel bonde kunne ende opp med viktig ansvar. Dette kalte de demokrati, som betyr folkestyre. Det var ikke et demokrati slik vi kjenner det i dag, for kvinner og slaver fikk ikke være med. Men tanken om at folket selv skal styre, ble født her. Den lever videre i måten vi velger ledere på i dag, noe du kan utforske i [Demokratiets mange ansikter](/samfunnskunnskap/styringsformer/demokrati-ansikter)."
+            "content": "I Athen fikk vanlige menn være med å bestemme. Menn som var borgere i byen, kunne møte i folkeforsamlingen, holde tale og stemme over lovene. Tanken bak var at makten skulle ligge hos fellesskapet av borgere, ikke hos noen få eksperter. Derfor ble embetsmenn og medlemmer av rådene valgt ut ved loddtrekning, ett år av gangen (Mæhle mfl., 2022). Hvert år ble folkerådet fylt med 500 borgere, folkedomstolen med 6000 og de fleste embetene med rundt 600, alle trukket ut ved lodd (Mæhle, 2022). Slik kunne også en enkel bonde ende opp med viktig ansvar. Dette kalte de demokrati, som betyr folkestyre. Det var ikke et demokrati slik vi kjenner det i dag, for kvinner, slaver og fastboende utlendinger var utelukket fra politikken (Mæhle mfl., 2022). Men tanken om at folket selv skal styre, ble født her. Den lever videre i måten vi velger ledere på i dag, noe du kan utforske i [Demokratiets mange ansikter](/samfunnskunnskap/styringsformer/demokrati-ansikter)."
         },
         {
             "type": "text",
-            "content": "Athen var også et sted for ideer og kunst. Her ble det bygd store templer som Parthenon, skrevet skuespill og stilt vanskelige spørsmål om livet. Tenkere som Sokrates og Platon gikk rundt på torget og diskuterte hva som er rett og galt. Du møter dem igjen i [Antikkens visjoner](/samfunnskunnskap/styringsformer/antikken-visjoner)."
+            "content": "Athen var også et sted for ideer og kunst. Her ble det bygd store templer, skrevet skuespill og stilt vanskelige spørsmål om livet. Akropolis-klippen med Parthenon og de andre byggverkene kom på UNESCOs verdensarvliste i 1987 (Tsakos mfl., 2026). Tenkere som Sokrates og Platon gikk rundt på torget og diskuterte hva som er rett og galt. Du møter dem igjen i [Antikkens visjoner](/samfunnskunnskap/styringsformer/antikken-visjoner)."
         },
         {
             "type": "image",
             "src": "/images/antikkens-hellas/athen-og-sparta-02.webp",
-            "alt": "Folkeforsamling i Athen der menn stemmer pa torget",
-            "caption": "I folkeforsamlingen i Athen kunne frie menn holde tale og stemme pa lovene."
+            "alt": "Folkeforsamling i Athen der menn stemmer på torget",
+            "caption": "I folkeforsamlingen i Athen kunne borgerne holde tale og stemme over lovene."
         },
         {
             "type": "header",
@@ -58,11 +58,11 @@
         },
         {
             "type": "text",
-            "content": "Sparta valgte en helt annen vei. Her var ikke målet en allsidig borger, men en sterk soldat. Guttene ble tatt fra familien som sjuåringer og sendt til en hard militærleir. Der fikk de lite mat, mye trening og streng oppdragelse. De lærte å tåle smerte, adlyde ordre og aldri gi opp. En spartaner var soldat hele livet."
+            "content": "Sparta valgte en helt annen vei. Alle spartanske gutter gikk gjennom en felles oppdragelse som ble kalt agogen, fra de var rundt sju år til de var 29 (Mæhle, 2024). De første årene bodde de fortsatt hjemme. Først da de fylte tolv, ble agogen en internatskole der guttene ble tatt fra familien. Der lærte de å tåle smerte, adlyde ordre og aldri gi opp, men de fikk også undervisning i skriving, regning, musikk og dans (Mæhle, 2024). Oppdragelsen var altså både litt mindre brutal og mye mer allsidig enn filmer og dataspill gjerne viser. Målet var likevel klart: en spartaner var soldat nesten hele livet."
         },
         {
             "type": "text",
-            "content": "Sparta ble ikke styrt av folket, men av noen få. To konger ledet hæren, mens et råd av eldre menn og fem oppsynsmenn bestemte det meste. Vanlige folk hadde lite de skulle ha sagt. Til gjengjeld fikk kvinnene i Sparta mer frihet enn i andre greske byer. De fikk trene, eie jord og si sin mening høyt, fordi byen trengte sterke mødre til å føde sterke soldater."
+            "content": "Sparta ble ikke styrt av folket, men av noen få. To konger fra hver sin familie var øverstkommanderende i hæren og faste medlemmer av rådet. Gerusiet, eldrerådet, hadde 28 medlemmer over 60 år som drøftet de viktige sakene, og fem eforer ble valgt for ett år om gangen og styrte rettsvesen og hærens forsyninger (Mæhle, 2024). Vanlige folk hadde lite de skulle ha sagt. Kvinnene sto formelt utenfor staten, men det hevdes at de var friere enn kvinner i andre greske byer: de hadde sin egen versjon av agogen med fysisk trening, de giftet seg senere, og de kunne arve og rå over sin egen eiendom (Mæhle, 2024)."
         },
         {
             "type": "text",
@@ -81,7 +81,7 @@
         },
         {
             "type": "text",
-            "content": "Så lenge perserne truet, sto Athen og Sparta sammen. Men da faren var borte, vokste mistroen. Athen ble rikt og mektig på sjøen og samlet mange mindre byer rundt seg. Sparta fryktet at naboen skulle bli for sterk og samlet sine egne venner mot Athen. Til slutt brøt det ut en lang og blodig krig mellom de to gruppene. Den varte i nesten tretti år. Athen mistet flåten sin, og krigen svekket hele Hellas. Ingen av byene gikk styrket ut av den, og det gjorde det lettere for andre å ta over senere."
+            "content": "Så lenge perserne truet, sto Athen og Sparta sammen. Men da faren var borte, vokste mistroen. Athen ble rikt og mektig på sjøen og samlet mange mindre byer rundt seg i det attiske sjøforbundet. Sparta fryktet at naboen skulle bli for sterk og samlet sine egne venner i det peloponnesiske forbundet. Til slutt brøt det ut en lang og blodig krig mellom de to gruppene. Peloponneskrigen varte fra 431 til 404 fvt., altså i nesten tretti år (Andersen mfl., 2025). Nederlaget i sjøslaget ved Aigospotamoi i 405 ble avgjørende: Athen måtte overgi seg og godta fredsvilkår som gjorde slutt på byens herredømme til sjøs (Andersen mfl., 2025). Krigen ble et skille i gresk historie. Etterpå braket det løs med indre strid mellom de som ville ha fåmannsstyre og de som ville ha folkestyre, i by etter by."
         },
         {
             "type": "header",
@@ -89,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Grekerne kjempet på en spesiell måte. Soldatene het hoplitter, og de bar et tungt rundt skjold og et langt spyd. De stilte seg opp tett i tett i en lang rekke som ble kalt en falanks. Hemmeligheten var enkel: hver manns skjold dekket ikke bare ham selv, men også naboen ved siden av. Så lenge rekka holdt seg tett, var den nesten umulig å bryte. Men ble det luker i rekka, kunne fienden trenge inn. Prøv selv å bygge en falanks og se hva som skjer når skjoldmuren er tett, og hva som skjer når den sprekker opp."
+            "content": "Grekerne kjempet på en spesiell måte. Soldatene het hoplitter. De var tungt bevæpnet, med hjelm, brystbeskyttelse og beinskinner, et stort rundt skjold på venstre arm og et spyd som hovedvåpen i høyre hånd (Mæhle, 2026). De stilte seg opp tett i tett i flere rekker i en formasjon som ble kalt en falanks. Hemmeligheten var enkel: hver manns skjold dekket ham selv og delvis også sidemannen (Mæhle, 2026). Så lenge rekka holdt seg tett, kunne hele falanksen flyttes som én enhet, og den var nesten umulig å bryte. Men ble det luker i rekka, kunne fienden trenge inn. Prøv selv å bygge en falanks og se hva som skjer når skjoldmuren er tett, og hva som skjer når den sprekker opp."
         },
         {
             "type": "component",
@@ -104,17 +104,17 @@
         },
         {
             "type": "text",
-            "content": "Selv om byene kranglet seg svake, levde de greske ideene videre. Kongen Aleksander den store samlet grekerne og spredte språket, kunsten og tankene deres helt til India. Du kan følge det eventyret i [Aleksander den store](/historie/perserriket/aleksander-den-store). Senere overtok romerne mye av den greske kulturen og førte den videre til resten av Europa."
+            "content": "Selv om byene kranglet seg svake, levde de greske ideene videre. På et møte i Korint utpekte grekerne Aleksander den store til leder for felttoget mot perserne, og mellom 327 og 325 fvt. kom hæren hans helt til India (Steen mfl., 2025a). Etter at han døde, ble de øverste laga i Vest-Asia og Egypt knyttet til gresk kultur i lang tid framover, og mange tok i bruk det greske språket (Steen mfl., 2025a). Du kan følge det eventyret i [Aleksander den store](/historie/perserriket/aleksander-den-store). Senere overtok romerne mye av den greske kulturen og førte den videre til resten av Europa."
         },
         {
             "type": "text",
-            "content": "Derfor er Athen og Sparta mer enn gamle ruiner. Ordet demokrati kommer fra Athen. Når noen svarer kort og treffende, sier vi at de er lakoniske, etter landskapet rundt Sparta. De to byene stilte et spørsmål vi fortsatt strever med: skal et samfunn satse mest på frihet og ideer, eller på orden og styrke? Grekerne ga to ulike svar, og vi diskuterer dem ennå."
+            "content": "Derfor er Athen og Sparta mer enn gamle ruiner. Ordet demokrati kommer fra Athen. Når noen svarer kort og treffende, sier vi at de er lakoniske. Ordet kommer fra gresk lakonikos, av lakon, som betyr en person fra Lakonia, landskapet rundt Sparta, der unge menn ble trent opp til å svare nettopp så kortfattet (Persvold, 2025). De to byene stilte et spørsmål vi fortsatt strever med: skal et samfunn satse mest på frihet og ideer, eller på orden og styrke? Grekerne ga to ulike svar, og vi diskuterer dem ennå."
         },
         {
             "type": "image",
             "src": "/images/antikkens-hellas/athen-og-sparta-03.webp",
             "alt": "Ruiner av Parthenon-tempelet i Athen i solnedgang",
-            "caption": "Parthenon star fortsatt i Athen og minner oss om arven fra antikkens Hellas."
+            "caption": "Parthenon står fortsatt i Athen og minner oss om arven fra antikkens Hellas."
         },
         {
             "type": "component",
@@ -123,14 +123,14 @@
                 "forstaa": [
                     "Hva var en polis, og hvorfor så folk på seg selv som athenere eller spartanere i stedet for grekere?",
                     "Hvem fikk være med å bestemme i folkeforsamlingen i Athen, og hvem ble holdt utenfor?",
-                    "Hva skjedde med spartanske gutter da de var sju år, og hva var målet med oppdragelsen deres?",
+                    "Når begynte agogen for spartanske gutter, når ble de tatt fra familien, og hva lærte de der?",
                     "Hvorfor var falanksen så sterk, og hva skjedde hvis det ble luker i rekka?"
                 ],
                 "reflekter": [
                     "Athen satset på folkestyre og kunst, mens Sparta satset på disiplin og hær. Forklar hvorfor to byer som lå så nær hverandre, kunne velge så ulike måter å leve på.",
-                    "Kvinner i Sparta fikk mer frihet enn kvinner i Athen. Forklar hvorfor byen ga dem denne friheten, og hva det sier om hva Sparta satte høyest.",
+                    "Kvinner i Sparta kunne trene, gifte seg senere og rå over sin egen eiendom, selv om de sto utenfor politikken. Forklar hva denne friheten kan ha betydd for Sparta som samfunn.",
                     "Så lenge perserne truet, sto Athen og Sparta sammen, men etterpå gikk de til krig. Forklar hvorfor felles fiende samlet dem, og hvorfor freden gjorde dem til rivaler igjen.",
-                    "Krigen mellom Athen og Sparta svekket hele Hellas og gjorde det lettere for andre å ta over. Var det verdt det for Sparta å knuse rivalen sin? Argumenter for svaret ditt."
+                    "Peloponneskrigen ble et skille i gresk historie, og etterpå kom det indre strid mellom fåmannsstyre og folkestyre i by etter by. Var det verdt det for Sparta å knuse rivalen sin? Argumenter for svaret ditt."
                 ],
                 "gaaVidere": [
                     "Teksten sier at tanken om at folket selv skal styre, ble født i Athen. Finn ett eksempel på hvordan vi bruker denne tanken i Norge i dag, og forklar likheten.",
@@ -188,15 +188,33 @@
                         "question": "Hvordan hadde kvinner det i Sparta sammenlignet med Athen?",
                         "options": [
                             "De hadde mindre frihet enn i Athen",
-                            "De fikk trene, eie jord og si sin mening, og var friere enn i de fleste greske byer",
+                            "De kunne trene, arve og rå over egen eiendom, og var friere enn kvinner i de fleste greske byer",
                             "De fikk stemme i folkeforsamlingen",
                             "De ble soldater i hæren"
                         ],
-                        "answer": "De fikk trene, eie jord og si sin mening, og var friere enn i de fleste greske byer"
+                        "answer": "De kunne trene, arve og rå over egen eiendom, og var friere enn kvinner i de fleste greske byer"
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, Ø., Steen, T. & Mæhle, I. B. (2025). *Peloponneskrigen*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Peloponneskrigen](https://snl.no/peloponnesiske_krig)",
+                    "Mæhle, I. B. (2022). *Loddtrekning i den greske antikken*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/loddtrekning_i_den_greske_antikken](https://snl.no/loddtrekning_i_den_greske_antikken)",
+                    "Mæhle, I. B. (2024). *Sparta*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Sparta](https://snl.no/Sparta)",
+                    "Mæhle, I. B. (2026). *Hoplitt*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/hoplitt](https://snl.no/hoplitt)",
+                    "Mæhle, I. B., Østby, E. & Steen, T. (2022). *Det athenske demokratiet*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Det_athenske_demokratiet](https://snl.no/Det_athenske_demokratiet)",
+                    "Persvold, A. Z. (2025). *Lakonisk*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/lakonisk](https://snl.no/lakonisk)",
+                    "Steen, T., Amundsen, L. & Østby, E. (2025a). *Aleksander den store*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Aleksander_den_store](https://snl.no/Aleksander_den_store)",
+                    "Steen, T., Mæhle, I. B. & Østby, E. (2025b). *Polis*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/polis](https://snl.no/polis)",
+                    "Tsakos, A., Thorsen, K. des B., Skatvik, F. & Lundbo, S. (2026). *Athen*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Athen](https://snl.no/Athen)"
                 ]
             }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-25T00:00:00Z"
 }

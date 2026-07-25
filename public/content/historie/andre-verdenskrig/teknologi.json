@@ -4,15 +4,15 @@
   "subject": "historie",
   "topic": "andre-verdenskrig",
   "layout": "rich",
-  "year": "1939–1945",
+  "year": "1939-1945",
   "category": "Teknologi",
   "readTime": "15 min lesning",
   "heroImage": "/images/historie/andre-verdenskrig/teknologi_hero.webp",
   "details": [
-    "Radar var avgjørende for luftkrigen.",
-    "Datamaskiner ble utviklet for kodeknekking (Enigma).",
-    "Jetmotorer og raketter (V2) så dagens lys.",
-    "Penicillin reddet tusenvis av liv.",
+    "Radar spilte en viktig rolle i luftkrigen.",
+    "Verdens første elektroniske datamaskin ble bygd for kodeknekking.",
+    "Jetfly og raketter (V-2) så dagens lys.",
+    "Penicillin ble masseprodusert og prioritert til de allierte styrkene.",
     "Atombomben endret verden for alltid."
   ],
   "timeline": [],
@@ -27,7 +27,7 @@
     },
     {
       "type": "text",
-      "content": "En av de viktigste oppfinnelsene var radar (Radio Detection and Ranging). Teknologien bruker radiobølger til å oppdage gjenstander på lang avstand. Radar var helt avgjørende for at britene vant Slaget om Storbritannia i 1940. De kunne se de tyske bombeflyene lenge før de nådde kysten, og sende opp jagerflyene sine på nøyaktig rett tid og sted. Uten radar ville trolig Storbritannia ha tapt luftkrigen.\n\nUte på havet ble radar og sonar (lydbølger under vann) brukt til å jakte på tyske ubåter. Krigen førte også til utviklingen av de første elektroniske mottiltakene, som å slippe ut strimler av aluminiumfolie fra fly (kalt «chaff») for å forvirre fiendens radar."
+      "content": "En av de viktigste oppfinnelsene var radar. Navnet kommer fra det engelske «radio detection and ranging», og teknologien bruker radiobølger til å måle retning og avstand til ting langt unna (Kjerstad, 2026a). Briten Robert Watson-Watt viste fram den første britiske radarstasjonen for flyvarsling allerede i 1935. Kjeden av slike stasjoner, kalt Chain Home, kom til å spille en viktig rolle i Slaget om Storbritannia i 1940 (Kjerstad, 2026a). Britene kunne se de tyske bombeflyene lenge før de nådde kysten, og sende opp jagerflyene sine til rett tid og rett sted.\n\nUte på havet ble sonar brukt til å jakte på ubåter. Sonar sender ut lydsignaler under vann og lytter etter ekkoet som kommer tilbake fra en gjenstand. Moderne sonar ble nettopp utviklet som svar på ubåttrusselen under første og andre verdenskrig (Kjerstad, 2026b). I begynnelsen måtte mannskapet sitte og lytte til lydene selv, før skjermer og skrivere etter hvert overtok."
     },
     {
       "type": "component",
@@ -40,7 +40,7 @@
     },
     {
       "type": "text",
-      "content": "Informasjon var makt. Tyskerne brukte en avansert krypteringsmaskin kalt Enigma for å sende hemmelige meldinger til sine tropper og ubåter. De trodde koden var umulig å knekke. Men polske matematikere, og senere britiske eksperter ved Bletchley Park, klarte det umulige. Den britiske matematikeren Alan Turing spilte en nøkkelrolle ved å utvikle en elektromekanisk maskin som kunne teste tusenvis av kombinasjoner raskt.\n\nArbeidet ved Bletchley Park førte til utviklingen av Colossus, verdens første programmerbare elektroniske datamaskin. Evnen til å lese fiendens meldinger (kalt «Ultra»-etterretning) ga de allierte en enorm fordel, for eksempel ved å vite hvor tyske ubåter befant seg. Det sies at dette forkortet krigen med to år."
+      "content": "Informasjon var makt. Tyskerne brukte en avansert krypteringsmaskin kalt Enigma for å sende hemmelige meldinger til troppene og ubåtene sine. Britene hadde hovedkvarteret sitt for kodeknekking på Bletchley Park utenfor London, der 12 000 mennesker jobbet i dypeste hemmelighet. Med hjelp fra polske og britiske matematikere, blant dem Alan Turing, klarte de allierte til slutt å knekke de tyske Enigma-meldingene rutinemessig (Øverby, 2026). Turing sto sentralt i arbeidet med å knekke to tyske kodemaskiner, Enigma og Lorenz, og maskinell behandling av data var avgjørende for at det gikk (Nordal, 2024).\n\nResultatene var enorme. Tidlig i 1942 kunne britene lese rundt 39 000 tyske kodede meldinger i måneden, og senere steg tallet til 84 000 (Nordal, 2024). Å vite hva fienden planla, for eksempel hvor de tyske ubåtene befant seg, var trolig av stor betydning for utfallet av krigen (Øverby, 2026). Arbeidet førte også til at verdens første elektroniske datamaskin, Colossus, ble tatt i bruk i desember 1943 for å knekke det tyske Lorenz-systemet (Øverby, 2026). Her ble grunnlaget lagt for den moderne databehandlingen vi bruker i dag."
     },
     {
       "type": "header",
@@ -48,7 +48,7 @@
     },
     {
       "type": "text",
-      "content": "Flyene utviklet seg enormt fra 1939 til 1945. De ble raskere, fløy høyere og kunne bære tyngre bombelaster. Mot slutten av krigen introduserte Tyskland verdens første operative jetjager, Messerschmitt Me 262. Den var mye raskere enn allierte propellfly, men kom for sent og i for lite antall til å endre krigens gang.\n\nTyskland utviklet også verdens første ballistiske rakett, V2. Denne raketten kunne fly i overlydshastighet til kanten av verdensrommet før den stupte ned mot mål i London eller Antwerpen. Det var umulig å forsvare seg mot den. V2-teknologien ble etter krigen ryggraden i både det amerikanske og det sovjetiske romprogrammet."
+      "content": "Flyene utviklet seg enormt fra 1939 til 1945. De ble raskere, fløy høyere og kunne bære tyngre bombelaster. Mot slutten av krigen tok Tyskland i bruk Messerschmitt Me 262, verdens første jetfly som ble satt inn i vanlig tjeneste. Den fløy første gang med jetmotorer i 1942 og kom i tjeneste i oktober 1944, med en toppfart på 880 kilometer i timen (Jarslett, 2023). Det var mye raskere enn de allierte propellflyene. Men den kom for sent: over 1 400 ble bygd, og svært mange av dem ble aldri tatt i bruk fordi Tyskland manglet drivstoff og erfarne piloter (Jarslett, 2023).\n\nTyskland utviklet også det ballistiske missilet V-2. Raketten fløy i overlydsfart, rundt 5 580 kilometer i timen, og kunne nå mål inntil 350 kilometer unna (Jarslett, 2024). Den kom så fort og så høyt at det ikke fantes noen måte å skyte den ned på. London og Antwerpen ble hardest rammet: rundt 1 190 V-2-raketter ble sendt mot London, og 517 av dem traff og drepte omtrent 3 000 mennesker (Jarslett, 2024). Etter krigen ble V-2 en forløper for bærerakettene som brakte mennesker og satellitter ut i rommet."
     },
     {
       "type": "header",
@@ -56,7 +56,7 @@
     },
     {
       "type": "text",
-      "content": "Ikke all teknologi handlet om å drepe. En av de viktigste medisinske gjennombruddene var masseproduksjonen av penicillin, verdens første antibiotika. Før dette kunne selv små sårskader føre til dødelige infeksjoner. Penicillin reddet livet til hundretusener av allierte soldater som ellers ville dødd av koldbrann eller blodforgiftning. Dette ga de allierte en stor fordel, da Tyskland ikke hadde tilgang på like effektive medisiner."
+      "content": "Ikke all teknologi handlet om å drepe. Et av de viktigste medisinske gjennombruddene var masseproduksjonen av penicillin. Alexander Fleming oppdaget stoffet, og han beskrev den bakteriedrepende virkningen allerede i 1928. Penicillin fikk stor betydning for hvordan vi behandler infeksjoner i dag (Bratlie mfl., 2026). Før slike medisiner kunne selv små sårskader føre til dødelige infeksjoner.\n\nI 1942 og 1943 var etterspørselen etter penicillin stor, men fabrikkene klarte ikke å lage nok. Derfor ble forsyningene prioritert til militært bruk og til de allierte styrkene (Bratlie mfl., 2026). Først tidlig i 1944 økte produksjonen kraftig, og i 1945 ble penicillin tilgjengelig for vanlige folk."
     },
     {
       "type": "header",
@@ -64,14 +64,14 @@
     },
     {
       "type": "text",
-      "content": "Det største og mest skremmende vitenskapelige prosjektet under krigen var det amerikanske Manhattan-prosjektet. Drevet av frykten for at Hitler skulle utvikle en atombombe først, samlet USA verdens fremste fysikere for å utnytte kjernekraften i et våpen. Resultatet var en bombe med en sprengkraft som tilsvarte tusenvis av tonn med vanlig sprengstoff.\n\nBombene over Hiroshima og Nagasaki i 1945 drepte over 200 000 mennesker, de fleste momentant eller i løpet av kort tid. Dette var første og eneste gang atomvåpen er brukt i krig. Oppfinnelsen endret verdenspolitikken fundamentalt og skapte en terrorbalanse som preget hele den kalde krigen."
+      "content": "Det største og mest skremmende vitenskapelige prosjektet under krigen var det amerikanske Manhattan-prosjektet. Det var et samarbeid mellom forskere fra USA, Storbritannia og Canada, og det kostet to milliarder dollar midt under krigen (Sirevåg, 2025). Målet var å utnytte kraften i atomkjernen i et våpen.\n\nDen 6. august 1945 slapp B-29-flyet «Enola Gay» bomben «Little Boy» over Hiroshima klokka 08.15. Sprengkraften tilsvarte rundt 15 000 tonn dynamitt. Omtrent 70 000 mennesker døde med det samme, og ved slutten av året hadde 140 000 dødd av bomben (Gundersen, 2024). Tre dager senere, 9. august, ble «Fat Man» sluppet over Nagasaki. Omkring 40 000 ble drept momentant, og ved årsskiftet hadde en tredjedel av byens befolkning omkommet på grunn av bomben (Gundersen, 2025).\n\nDette var første og eneste gang atomvåpen er brukt i krig. Oppfinnelsen endret verdenspolitikken fundamentalt og skapte en terrorbalanse som preget hele den kalde krigen."
     },
     {
       "type": "component",
       "component": "FactBox",
       "props": {
         "title": "Visste du at?",
-        "content": "Robert Oppenheimer, lederen for prosjektet, siterte et hinduistisk skriftsted da han så den første prøvesprengningen: **Nav har jeg blitt døden, ødelegger av verdener.**"
+        "content": "Fysikeren Robert Oppenheimer var vitenskapelig leder i Los Alamos og fikk hovedansvaret for å utvikle fisjonsbomben. Det var et prosjekt der fysikk, kjemi, ingeniørfag og metallurgi måtte spille sammen, og han klarte å styre det hele i havn (Holtebekk mfl., 2025)."
       }
     },
     {
@@ -79,25 +79,44 @@
         "name": "Oppgaver",
         "props": {
             "forstaa": [
-                "Hva ble radar brukt til, og hvorfor var det så viktig for at britene vant Slaget om Storbritannia i 1940?",
+                "Hva ble radar brukt til, og hvorfor spilte det en viktig rolle i Slaget om Storbritannia i 1940?",
                 "Hva var Enigma, og hvem klarte til slutt å knekke koden ved Bletchley Park?",
-                "Hva var V2, og hva gjorde denne raketten nesten umulig å forsvare seg mot?",
-                "Hvorfor reddet masseproduksjonen av penicillin livet til så mange soldater?"
+                "Hva var V-2, og hva gjorde denne raketten nesten umulig å forsvare seg mot?",
+                "Hvorfor ble penicillin prioritert til militæret og de allierte styrkene i 1942 og 1943?"
             ],
             "reflekter": [
                 "Forklar med egne ord hvorfor teksten sier at seieren avhengte like mye av ingeniører og vitenskapsmenn som av soldater.",
-                "Colossus regnes som verdens første programmerbare elektroniske datamaskin. Hvorfor tror du krig kan drive fram teknologi så raskt?",
+                "Colossus regnes som verdens første elektroniske datamaskin, og den ble bygd for å knekke koder. Hvorfor tror du krig kan drive fram teknologi så raskt?",
                 "Sammenlign atombomben og penicillin. Begge var store gjennombrudd, men på hvilken måte var de helt forskjellige for menneskene?",
-                "Me 262 og V2 var avanserte, men kom for sent til å endre krigen. Hva forteller det oss om at det ikke bare er teknologien som avgjør, men også når og hvor mye man har av den?"
+                "Me 262 og V-2 var avanserte, men kom for sent til å endre krigen. Hva forteller det oss om at det ikke bare er teknologien som avgjør, men også når og hvor mye man har av den?"
             ],
             "gaaVidere": [
-                "V2-teknologien ble senere ryggraden i romprogrammene. Finn et eksempel på teknologi vi bruker i dag som opprinnelig ble utviklet for krig, og skriv noen setninger om det.",
+                "V-2 ble en forløper for bærerakettene vi bruker i romfarten. Finn et eksempel på teknologi vi bruker i dag som opprinnelig ble utviklet for krig, og skriv noen setninger om det.",
                 "Skriv en kort tekst (5-8 setninger) om atombomben over Hiroshima og Nagasaki: Mener du det kan forsvares å bruke et slikt våpen for å avslutte en krig raskere? Begrunn svaret ditt.",
                 "Diskuter med en partner: Er det galt at vitenskapsfolk lager våpen, eller har de ikke noe valg når fienden også prøver? Bruk Manhattan-prosjektet som eksempel."
             ]
         }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bratlie, S., Øye, I. & Alnæs, M. (2026). *Penicillin*. Store medisinske leksikon. Hentet 25.07.2026 fra [sml.snl.no/penicillin](https://sml.snl.no/penicillin)",
+          "Gundersen, D. (2024). *Hiroshima*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Hiroshima](https://snl.no/Hiroshima)",
+          "Gundersen, D. (2025). *Nagasaki*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Nagasaki](https://snl.no/Nagasaki)",
+          "Holtebekk, T., Hansen, J. P. & Linder, J. (2025). *Robert Oppenheimer*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Robert_Oppenheimer](https://snl.no/Robert_Oppenheimer)",
+          "Jarslett, Y. (2023). *Messerschmitt Me 262*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Messerschmitt_Me_262](https://snl.no/Messerschmitt_Me_262)",
+          "Jarslett, Y. (2024). *V-2*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/V-2](https://snl.no/V-2)",
+          "Kjerstad, N. (2026a). *Radar*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/radar](https://snl.no/radar)",
+          "Kjerstad, N. (2026b). *Sonar*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/sonar](https://snl.no/sonar)",
+          "Nordal, O. (2024). *Alan Turing*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Alan_Turing](https://snl.no/Alan_Turing)",
+          "Sirevåg, T. (2025). *Manhattan-prosjektet*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Manhattan-prosjektet](https://snl.no/Manhattan-prosjektet)",
+          "Øverby, H. (2026). *Kryptografi*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/kryptografi](https://snl.no/kryptografi)"
+        ]
+      }
     }
   ],
   "createdDate": "2025-12-21T15:30:00Z",
-  "lastUpdated": "2025-12-21T15:30:00Z"
+  "lastUpdated": "2026-07-25T00:00:00Z"
 }

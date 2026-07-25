@@ -128,6 +128,7 @@ const Gjeldshavna3D = lazy(() => import('./Gjeldshavna3D'));
 const ImperiumSoyler = lazy(() => import('./ImperiumSoyler'));
 const HimmelensMandat3D = lazy(() => import('./HimmelensMandat3D'));
 const VendMotMekka3D = lazy(() => import('./VendMotMekka3D'));
+const AtlantisRingbyen3D = lazy(() => import('./AtlantisRingbyen3D'));
 const Trelastruta3D = lazy(() => import('./Trelastruta3D'));
 const Paaskeoya3D = lazy(() => import('./Paaskeoya3D'));
 const MayaKollaps3D = lazy(() => import('./MayaKollaps3D'));
@@ -1456,6 +1457,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 110,
         loader: () => import('./VendMotMekka3D'),
         Component: VendMotMekka3D as never,
+    },
+    'atlantis-ringbyen': {
+        id: 'atlantis-ringbyen',
+        title: 'Bygg Platons Atlantis',
+        description:
+            'Reis ringbyen nøyaktig slik Platon beskrev den: borgen med Poseidon-tempelet i midten, ringer av land og vann annenhver gang, broer inn til borgen og en kanal ut til havet. Byen blir vakker og overbevisende - helt til du vipper bryteren fra «Platons tekst» til «Det arkeologene finner». Da skjelver havet, og hele byen synker og blir borte. Lyspæren: en fortelling kan være aldri så detaljert og likevel ikke ha ett eneste spor utenfor teksten den kom fra.',
+        estimatedSeconds: 150,
+        loader: () => import('./AtlantisRingbyen3D'),
+        Component: AtlantisRingbyen3D as never,
     },
 };
 
