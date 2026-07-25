@@ -8,20 +8,20 @@
     "readTime": "12 min lesning",
     "heroImage": "/images/historie/dekolonisering/haiti_hero.webp",
     "details": [
-        "Det eneste vellykkede slaveopprøret i historien.",
+        "Det eneste slaveopprøret i historien som skapte et eget land.",
         "Inspirert av den franske revolusjon.",
-        "Skapte verdens første svarte republikk."
+        "Det første landet som forbød både slavehandel og slaveri helt."
     ],
     "timeline": [
         {
             "year": "1791",
             "title": "Slaveopprøret starter",
-            "description": "Voodoo-seremonien ved Bois Caïman tenner gnisten."
+            "description": "Over 100 000 slaver reiser seg i nord i august, etter en seremoni ved Bois Caïman."
         },
         {
             "year": "1794",
             "title": "Frankrike avskaffer slaveriet",
-            "description": "Et forsøk på å beholde kontrollen over kolonien."
+            "description": "Styret i Paris bekrefter at slaveriet oppheves i koloniene."
         },
         {
             "year": "1802",
@@ -37,7 +37,7 @@
     "content": [
         {
             "type": "text",
-            "content": "På slutten av 1700-tallet var den franske kolonien Saint-Domingue (senere Haiti) verdens rikeste koloni. Den produserte mer sukker og kaffe enn hele USA til sammen. Men rikdommen var bygget på brutalitet. 500 000 slaver levde under grusomme forhold, styrt av en liten elite hvite plantasjeeiere.\n\nDa den franske revolusjonen brøt ut i 1789 med slagordet «Frihet, likhet og brorskap», spurte slavene på Saint-Domingue: «Gjelder ikke dette oss også?»"
+            "content": "På slutten av 1700-tallet var den franske kolonien Saint-Domingue (senere Haiti) kanskje den rikeste kolonien i verden. Herfra kom rundt 40 prosent av alt sukkeret og 60 prosent av all kaffen som ble sendt til Europa (Colonial Williamsburg Foundation, 2026). Men rikdommen var bygd på brutalitet. Rundt 1789 bodde det om lag en halv million slaver i kolonien, mot 40 000 hvite og 25 000 med blandet bakgrunn (Buvollen mfl., 2024). Slavene levde under grusomme forhold, styrt av en liten elite av hvite plantasjeeiere.\n\nDa den franske revolusjonen brøt ut i 1789 med slagordet «Frihet, likhet og brorskap», spurte slavene på Saint-Domingue: «Gjelder ikke dette oss også?» I august 1791 reiste over 100 000 av dem seg i den nordlige delen av kolonien (Buvollen mfl., 2024)."
         },
         {
             "type": "header",
@@ -45,14 +45,14 @@
         },
         {
             "type": "text",
-            "content": "Opprøret ble ledet av Toussaint Louverture, en tidligere slave som viste seg å være et militært geni. Han organiserte en disiplinert hær som beseiret både spanske, britiske og til slutt franske styrker. Toussaint ønsket til å begynne med ikke totalt brudd med Frankrike, men krevde at slaveriet skulle opphøre og at svarte skulle behandles som likeverdige borgere."
+            "content": "En av lederne var Toussaint Louverture. Han ble født som slave, men steg til å bli general og leder for de svarte i kolonien (Yri, 2025; Hazareesingh, 2021). Under ledelse av blant andre ham kjempet slavene et helt tiår mot franskmenn, briter og spanjoler, og i 1801 kontrollerte Louverture hele øya (Buvollen mfl., 2024). Han er blitt kalt «den svarte Spartacus», etter gladiatoren som ledet slaveopprøret mot Roma (Hazareesingh, 2021). Først ble han fransk guvernør, men han gjorde seg raskt uavhengig og innførte en republikansk grunnlov (Yri, 2025)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Napoleons nederlag",
-                "content": "Napoleon Bonaparte likte ikke tanken på en styrtrik koloni styrt av eks-slaver. Han sendte 30 000 soldater for å knuse opprøret. Men de franske soldatene møtte to fiender: En innbitt geriljalyrmé og gulfeber. Tusenvis døde av sykdom, og hæren kollapset."
+                "content": "Napoleon Bonaparte ville ha kontrollen over den styrtrike kolonien tilbake. I 1802 sendte han rundt 40 000 soldater og sjøfolk over Atlanteren, ledet av svogeren sin, general Leclerc. De møtte to fiender: en hær som brente jorda og drev geriljakrig, og gulfeber. Sykdommen herjet den franske hæren sommeren 1802, og Leclerc døde selv av gulfeber i november samme år (Girard, 2024)."
             }
         },
         {
@@ -61,7 +61,11 @@
         },
         {
             "type": "text",
-            "content": "Haiti ble uavhengig i 1804, men verden tilga aldri slaveopprøret. USA og europeiske makter nektet å anerkjenne den nye nasjonen av frykt for at opprøret skulle spre seg til deres egne slaver. I 1825 sendte Frankrike krigsskip og krevde en gigantisk erstatningssum for «tapt eiendom» (tapte slaver og plantasjer) for å anerkjenne Haiti.\n\nHaiti måtte ta opp enorme lån for å betale. Dette lammet landets økonomi i over hundre år og er en direkte årsak til at Haiti i dag er et av verdens fattigste land."
+            "content": "1. januar 1804 var franskmennene beseiret, og Jean-Jacques Dessalines proklamerte uavhengighet under det gamle navnet Haiti (Buvollen mfl., 2024). Haiti er det eneste landet i verden som ble til gjennom et slaveopprør som lyktes (Colonial Williamsburg Foundation, 2026), og det første landet som forbød både slavehandel og slaveri helt (Buvollen mfl., 2024). Men verden tilga aldri opprøret: etter 1804 nektet de andre statene å opprette diplomatiske forbindelser med Haiti (Gaillard-Pourchet, 2023)."
+        },
+        {
+            "type": "text",
+            "content": "I juli 1825 kom en fransk flåtestyrke med over 500 kanoner og trusler om å blokkere havnene til Haiti. Da skrev president Jean Pierre Boyer under: Haiti skulle betale Frankrike 150 millioner franc i erstatning for det plantasjeeierne hadde «tapt» - minst ti ganger så mye som hele statens årlige inntekter (Gaillard-Pourchet, 2023).\n\nFor å klare første avdrag måtte Haiti låne 30 millioner franc i en fransk bank (Gaillard-Pourchet, 2023). Gjelden var ikke helt nedbetalt før i 1947, og med renter endte haitierne opp med å betale mer enn det dobbelte av det plantasjeeierne hadde krevd (Daut, 2020). Forskere kobler gjelden direkte til at Haiti gjennom hele 1900-tallet manglet penger til skole, helsestell og veier (Daut, 2020)."
         },
         {
             "type": "component",
@@ -77,13 +81,13 @@
             "props": {
                 "forstaa": [
                     "Hva het den franske kolonien før den ble Haiti, og hva var den kjent for på slutten av 1700-tallet?",
-                    "Hvem var Toussaint Louverture, og hva krevde han til å begynne med av Frankrike?",
-                    "Hvilke to fiender møtte Napoleons 30 000 soldater da de kom for å knuse opprøret?",
+                    "Hvem var Toussaint Louverture, og hva oppnådde han i kampen mot de europeiske stormaktene?",
+                    "Hvilke to fiender møtte den store franske hæren som kom i 1802?",
                     "Hva krevde Frankrike av Haiti i 1825 for å anerkjenne landet som selvstendig?"
                 ],
                 "reflekter": [
                     "Slavene på Saint-Domingue spurte om slagordet «Frihet, likhet og brorskap» også gjaldt dem. Forklar hvorfor den franske revolusjonen ble en gnist for opprøret deres.",
-                    "USA og europeiske land nektet å anerkjenne Haiti av frykt for at opprøret skulle spre seg. Hva forteller denne frykten oss om hvordan slaveriet holdt seg oppe i andre land?",
+                    "Etter 1804 nektet andre stater å opprette diplomatiske forbindelser med Haiti. Hvorfor tror du land som fortsatt hadde slaveri, var redde for et land grunnlagt av tidligere slaver?",
                     "Teksten kaller Haiti-revolusjonen «den glemte revolusjonen». Hvorfor tror du dette opprøret er mindre kjent enn den franske og den amerikanske revolusjonen?",
                     "Forklar hvordan erstatningskravet fra 1825 kan være en direkte årsak til at Haiti er fattig i dag, selv om opprøret lyktes."
                 ],
@@ -91,6 +95,21 @@
                     "Toussaint sa at selv om de felte ham, ville frihetens tre vokse opp igjen fra røttene. Skriv noen setninger om hva du tror han mente med dette bildet.",
                     "Diskuter i klassen: Bør Frankrike i dag betale tilbake pengene Haiti måtte gi for sin egen frihet? Finn argumenter for og mot.",
                     "Finn ut hvordan Haiti har det i dag. Kan du se spor av historien fra denne artikkelen i landets situasjon nå?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Buvollen, H. P., Yri, J. S. & Kjærheim, H. (2024). *Haitis historie*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Haitis_historie](https://snl.no/Haitis_historie)",
+                    "Colonial Williamsburg Foundation. (2026). *Haiti (Saint-Domingue)*. Slavery and Remembrance. Hentet 25.07.2026 fra [slaveryandremembrance.org](https://slaveryandremembrance.org/articles/article/?id=A0111)",
+                    "Daut, M. L. (2020). *When France extorted Haiti - the greatest heist in history*. The Conversation. Hentet 25.07.2026 fra [theconversation.com](https://theconversation.com/when-france-extorted-haiti-the-greatest-heist-in-history-137949)",
+                    "Gaillard-Pourchet, G.-K. (2023). *Haiti's independence debt. The slave as a unit of account (1794-1922)*. Bibliothèque nationale de France, Patrimoines Partagés. Hentet 25.07.2026 fra [heritage.bnf.fr](https://heritage.bnf.fr/france-ameriques/en/haitis-independence-debt-slave-unit-account-1794-1922)",
+                    "Girard, P. (2024). *The 1802 Expedition to Saint-Domingue (Haiti) and the Louisiana Purchase*. Bibliothèque nationale de France, Patrimoines Partagés. Hentet 25.07.2026 fra [heritage.bnf.fr](https://heritage.bnf.fr/france-ameriques/en/1802-expedition-saint-domingue-haiti-and-louisiana-purchase)",
+                    "Hazareesingh, S. (2021). *Black Spartacus: The Epic Life of Toussaint Louverture*. Penguin.",
+                    "Yri, J. S. (2025). *Toussaint Louverture*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Toussaint_Louverture](https://snl.no/Toussaint_Louverture)"
                 ]
             }
         }
@@ -120,5 +139,6 @@
         }
     ],
     "createdDate": "2026-01-16T10:05:00Z",
-    "lastUpdated": "2026-01-16T10:05:00Z"
+    "lastUpdated": "2026-07-25T00:00:00Z",
+    "factChecked": "2026-07-25"
 }

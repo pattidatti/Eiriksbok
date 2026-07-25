@@ -8,7 +8,7 @@
     "readTime": "9 min lesning",
     "heroImage": "/images/historie/dekolonisering/guatemala-1954_hero.webp",
     "details": [
-        "Ett amerikansk fruktselskap eide nesten alt i Guatemala.",
+        "Ett amerikansk fruktselskap kontrollerte jord, jernbane, skip og telegraf i Guatemala.",
         "Da presidenten ga jord til fattige bønder, falt hammeren.",
         "CIA-kuppet i 1954 utløste 36 år med borgerkrig."
     ],
@@ -37,7 +37,7 @@
         },
         {
             "type": "text",
-            "content": "Guatemala er et lite land i Mellom-Amerika. På 1950-tallet ble landet ofte kalt en bananrepublikk. Uttrykket brukes om et land der ett selskap eller én vare styrer nesten alt. I Guatemala var selskapet det amerikanske United Fruit Company, og varen var bananer."
+            "content": "Guatemala er et lite land i Mellom-Amerika. På 1950-tallet ble landet ofte kalt en bananrepublikk. Uttrykket brukes om et land som lever av å selge én eneste vare, og som i praksis styres av utenlandske selskaper (Pai Raikar, u.å.). I Guatemala var selskapet det amerikanske United Fruit Company, og varen var bananer."
         },
         {
             "type": "header",
@@ -45,11 +45,11 @@
         },
         {
             "type": "text",
-            "content": "United Fruit var ikke et vanlig firma. Det eide enorme landområder, nesten all jernbane, den viktigste havna, og til og med posten og telegrafen. Selskapet var rett og slett mektigere enn den guatemalanske staten. Folk kalte det bare 'el pulpo', blekkspruten, fordi armene nådde inn overalt."
+            "content": "United Fruit var ikke et vanlig firma. Det eide enorme landområder, og det bygde og kontrollerte jernbanen, skipsfarten og telegrafnettet (Pai Raikar, u.å.). I Guatemala satt selskapet på rundt 240 000 hektar jord, og det aller meste av den lå ubrukt (González, 2011). Folk kalte det bare «el pulpo», blekkspruten, fordi armene nådde inn overalt (Ramirez Cabal, 2023)."
         },
         {
             "type": "text",
-            "content": "Selskapet betalte nesten ingen skatt og kunne presse priser og lønninger slik det selv ville. For en vanlig guatemalaner var det nesten umulig å leve uten på et eller annet vis å være avhengig av blekkspruten. Når ett firma eier både jorda, toget og havna, eier det egentlig hele landet."
+            "content": "Med jord, tog, skip og telegraf i samme hånd - og med tette forbindelser inn i USAs politiske ledelse - var selskapet en makt den guatemalanske staten ikke kunne måle seg med (Ekern, 2024). Selskapet oppgav selv en svært lav verdi på jorda si i papirene til myndighetene, slik at skatten ble lav (González, 2011). For en vanlig guatemalaner var det nesten umulig å leve uten på et eller annet vis å være avhengig av blekkspruten. Når ett firma eier både jorda, toget og skipene, sitter det med nøklene til hele landet."
         },
         {
             "type": "text",
@@ -68,22 +68,22 @@
         },
         {
             "type": "text",
-            "content": "I 1951 fikk Guatemala en folkevalgt president som het Jacobo Árbenz. Han så et urettferdig land: noen få rike eide nesten all jorda, mens fattige bønder ikke hadde noe. Derfor satte han i gang en jordreform. Staten skulle kjøpe opp jord som lå ubrukt, og gi den til bøndene."
+            "content": "I mars 1951 overtok Jacobo Árbenz som folkevalgt president i Guatemala (Encyclopaedia Britannica, u.å.). Han så et urettferdig land: noen få rike eide nesten all jorda, mens fattige bønder ikke hadde noe. Derfor satte han i gang en jordreform. Loven fra 1952 sa at staten kunne overta store eiendommer som lå ubrukt, og gi jorda videre til fattige bønder (González, 2011)."
         },
         {
             "type": "text",
-            "content": "Árbenz var ikke alene. Han var en del av det mange kaller Guatemalas 'ti års vår', fra 1944 til 1954. For første gang hadde landet frie valg, ytringsfrihet og et håp om et bedre liv for vanlige folk. Jordreformen ga jord til rundt en halv million fattige mennesker. For dem var Árbenz en helt."
+            "content": "Árbenz var ikke alene. Han var en del av tiåret 1944-1954, som i Guatemala kalles Revolusjonen. Det begynte da diktatoren Ubico ble styrtet etter store protester, og læreren Juan José Arévalo vant valget med 86 prosent av stemmene. Både Arévalo og Árbenz ville modernisere landet, og jordreformen sto i sentrum (Ekern, 2024). Bare i 1953 ble nær 90 000 hektar plantasjejord tatt fra United Fruit Company (Ekern, 2024). For de fattige bøndene som fikk jord, var Árbenz en helt."
         },
         {
             "type": "text",
-            "content": "Problemet for United Fruit var at selskapet med vilje lot mesteparten av jorda si ligge brakk. Nå skulle staten overta den ubrukte jorda. Árbenz tilbød seg å betale, men han baserte prisen på den lave verdien selskapet selv hadde oppgitt for å slippe skatt. United Fruit følte seg lurt og raste."
+            "content": "Problemet for United Fruit var at mesteparten av jorda selskapet eide, lå ubrukt (González, 2011). Nå skulle staten overta nettopp den ubrukte jorda. Árbenz tilbød 1,2 millioner dollar, og prisen bygde på den lave verdien selskapet selv hadde oppgitt til skattemyndighetene. United Fruit forlangte 16 millioner (González, 2011). Selskapet følte seg lurt og raste."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Brødrene som satt på begge sider",
-                "content": "United Fruit hadde mektige venner. USAs utenriksminister John Foster Dulles og CIA-sjefen Allen Dulles var brødre - og begge hadde tette bånd til selskapet. Det er vanskelig å tenke seg bedre kontakter når man vil ha hjelp fra den amerikanske staten."
+                "content": "United Fruit hadde mektige venner. USAs utenriksminister John Foster Dulles og CIA-sjefen Allen Dulles var brødre - og begge hadde tidligere vært partnere i advokatfirmaet som var United Fruits viktigste i Washington. Det var de to som overbeviste president Eisenhower om at Árbenz måtte fjernes (González, 2011)."
             }
         },
         {
@@ -92,11 +92,11 @@
         },
         {
             "type": "text",
-            "content": "United Fruit startet en kampanje for å overbevise USA om at Árbenz var en farlig kommunist. Det var en overdrivelse, men i den kalde krigen var ordet 'kommunist' nok til å utløse alarm. President Eisenhower ga CIA ordre om å fjerne Árbenz, i en hemmelig operasjon."
+            "content": "En kampanje malte Árbenz som en farlig kommunist. Han hadde støtte fra kommunister, men de amerikanske påstandene om bånd til Sovjetunionen ble aldri underbygget (Encyclopaedia Britannica, u.å.). I den kalde krigen var ordet «kommunist» likevel nok til å utløse alarm. I august 1953 ble den hemmelige operasjonen PBSUCCESS godkjent, med 2,7 millioner dollar til psykologisk krigføring og politisk press (Doyle & Kornbluh, 1997)."
         },
         {
             "type": "text",
-            "content": "CIA brukte ikke en stor hær. De brukte triks. De satte opp en hemmelig radiostasjon som lot som den sendte fra opprørere inne i landet, og spredte løgner om at en mektig hær var på vei mot hovedstaden. De fløy noen få fly som slapp småbomber for å skape frykt. Det hele var et skuespill, men det virket. Hæren mistet motet, og Árbenz trakk seg sommeren 1954."
+            "content": "CIA brukte ikke en stor hær. De brukte triks. En hemmelig radiostasjon kalt «Frihetens stemme» sendte som om den var opprørere inne i Guatemala, og fortalte om en landsomfattende reisning mot regjeringen (Holly, 2003). CIA fløy også egne fly over landet (González, 2011). Det hele var i stor grad et skuespill, men det virket. Presset ble for stort, og Árbenz trakk seg 27. juni 1954 (Encyclopaedia Britannica, u.å.). CIA satte oberst Carlos Castillo Armas inn i hans sted (Doyle & Kornbluh, 1997)."
         },
         {
             "type": "component",
@@ -112,19 +112,19 @@
         },
         {
             "type": "text",
-            "content": "Mannen USA satte inn i stedet, oberst Castillo Armas, rev opp jordreformen umiddelbart og ga selskapet alt tilbake. Jorda gikk fra fattige bønder til blekkspruten igjen. Men freden var borte. Guatemala falt ned i en borgerkrig som varte i 36 år, fra 1960 til 1996. Rundt 200 000 mennesker mistet livet, de fleste fattige og urfolk."
+            "content": "Under Castillo Armas ble reformene fra Revolusjonen rullet tilbake (Ekern, 2024). Jorda gikk fra fattige bønder til blekkspruten igjen. Men freden var borte. Guatemala falt ned i en borgerkrig som varte i 36 år, fra 1960 til 1996. Opp mot 200 000 mennesker ble drept, og 83 prosent av ofrene var mayaer, urfolket i landet. Staten selv sto bak 93 prosent av menneskerettsbruddene (International Commission on Missing Persons, 2026)."
         },
         {
             "type": "text",
-            "content": "En ung argentinsk lege ved navn Che Guevara var i Guatemala akkurat da kuppet skjedde. Det han så, overbeviste ham om at fredelig forandring var umulig, og var med på å gjøre ham til revolusjonær. Slik kan ett kupp i ett lite land sette spor i hele verdenshistorien."
+            "content": "En ung argentinsk lege ved navn Che Guevara kom til Guatemala i desember 1953 og var der da kuppet skjedde. De ni månedene i landet styrket troen hans på marxismen og på at revolusjon var nødvendig (Underlid, 2026). Slik kan ett kupp i ett lite land sette spor i hele verdenshistorien."
         },
         {
             "type": "text",
-            "content": "Det er det samme mønsteret som i [Iran](/historie/den-kalde-krigen/operasjon-ajax) og [Chile](/historie/den-kalde-krigen/chile-1973): en folkevalgt leder ville dele landets rikdom mer rettferdig, og ble fjernet fordi det truet vestlige interesser. Forskjellen er at i Guatemala var det et privat selskap som dro i trådene. Mange år senere, i 1999, innrømmet USAs president Bill Clinton at den amerikanske støtten til volden i Guatemala hadde vært feil. Men da var skaden for lengst skjedd."
+            "content": "Det er det samme mønsteret som i [Iran](/historie/den-kalde-krigen/operasjon-ajax) og [Chile](/historie/den-kalde-krigen/chile-1973): en folkevalgt leder ville dele landets rikdom mer rettferdig, og ble fjernet fordi det truet vestlige interesser. Forskjellen er at i Guatemala var det et privat selskap som dro i trådene. Mange år senere, i 1999, sa USAs president Bill Clinton rett ut at amerikansk støtte til militære styrker og etterretningsenheter som drev vold og undertrykking, hadde vært feil - og at USA ikke må gjenta den feilen (Clinton, 1999). Men da var skaden for lengst skjedd."
         },
         {
             "type": "text",
-            "content": "Som alltid bør vi være kildekritiske. United Fruit malte Árbenz som en kommunist for å få viljen sin, og den versjonen ble lenge den offisielle. Først senere, da hemmelige dokumenter kom frem, ble det tydelig hvor stor rolle selskapet og CIA hadde spilt. Det minner oss om å spørre: hvem tjente på historien vi fikk høre?"
+            "content": "Som alltid bør vi være kildekritiske. United Fruit malte Árbenz som en kommunist for å få viljen sin, og den versjonen ble lenge den offisielle. Først senere, da hemmelige amerikanske dokumenter ble frigitt, ble det tydelig hvor stor rolle selskapet og CIA hadde spilt (Doyle & Kornbluh, 1997). Det minner oss om å spørre: hvem tjente på historien vi fikk høre?"
         },
         {
             "type": "component",
@@ -132,20 +132,38 @@
             "props": {
                 "forstaa": [
                     "Hva betyr uttrykket bananrepublikk, og hvorfor passet det på Guatemala i 1950-årene?",
-                    "Hvilke ting eide United Fruit Company i Guatemala? Nevn minst tre.",
+                    "Hvilke ting eide og kontrollerte United Fruit Company i Guatemala? Nevn minst tre.",
                     "Hva gikk president Árbenz sin jordreform ut på, og hvem skulle få jorda?",
                     "Hvordan klarte CIA å få Árbenz til å trekke seg i 1954, uten å bruke en stor hær?"
                 ],
                 "reflekter": [
                     "Selskapet ble kalt el pulpo, blekkspruten. Forklar hvorfor det kallenavnet passet så godt.",
-                    "Árbenz tilbød seg å betale for jorda ut fra den lave verdien United Fruit selv hadde oppgitt for å slippe skatt. Hvorfor følte selskapet seg lurt, og hva sier dette om hvordan selskapet hadde oppført seg tidligere?",
-                    "Hvorfor var ordet kommunist nok til å utløse alarm i USA på 1950-tallet, selv om det var en overdrivelse i Árbenz sitt tilfelle?",
+                    "Árbenz tilbød seg å betale for jorda ut fra den lave verdien United Fruit selv hadde oppgitt til skattemyndighetene. Hvorfor følte selskapet seg lurt, og hva sier dette om hvordan selskapet hadde oppført seg tidligere?",
+                    "Hvorfor var ordet kommunist nok til å utløse alarm i USA på 1950-tallet, selv om påstandene om bånd til Sovjetunionen aldri ble underbygget?",
                     "Teksten sammenligner Guatemala med Iran og Chile. Hva var det samme mønsteret i alle tre landene, og hva var forskjellen i Guatemala?"
                 ],
                 "gaaVidere": [
                     "Skriv en kort tekst på fem til seks setninger der du forklarer hvordan ett fruktselskap kunne bli mektigere enn selve staten. Bruk eksempler fra artikkelen.",
                     "Til slutt spør teksten: hvem tjente på historien vi fikk høre? Diskuter med en klassekamerat hvorfor det er viktig å være kildekritisk når mektige selskaper eller stater forteller sin egen versjon av det som skjedde.",
                     "I 1999 innrømmet president Clinton at den amerikanske støtten til volden i Guatemala hadde vært feil. Finn et annet eksempel fra nyere tid der et land eller selskap har beklaget noe de gjorde mange år tidligere, og vurder om en unnskyldning er nok når skaden allerede er skjedd."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Clinton, W. J. (1999). *Remarks in a Roundtable Discussion on Peace Efforts in Guatemala City*. The American Presidency Project, UC Santa Barbara. Hentet 25.07.2026 fra [presidency.ucsb.edu](https://www.presidency.ucsb.edu/documents/remarks-roundtable-discussion-peace-efforts-guatemala-city)",
+                    "Doyle, K. & Kornbluh, P. (1997). *CIA and Assassinations: The Guatemala 1954 Documents* (Electronic Briefing Book No. 4). National Security Archive. Hentet 25.07.2026 fra [nsarchive2.gwu.edu](https://nsarchive2.gwu.edu/NSAEBB/NSAEBB4/)",
+                    "Ekern, S. (2024). *Guatemalas historie*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Guatemalas_historie](https://snl.no/Guatemalas_historie)",
+                    "Encyclopaedia Britannica. (u.å.). *Jacobo Árbenz*. Hentet 25.07.2026 fra [britannica.com](https://www.britannica.com/biography/Jacobo-Arbenz)",
+                    "González, J. (2011). *Harvest of Empire: A History of Latinos in America* (revidert utgave). Penguin Books. Utdrag hentet 25.07.2026 fra [democracynow.org](https://www.democracynow.org/books/harvest_of_empire/excerpt)",
+                    "Holly, S. K. (Red.). (2003). *Foreign Relations of the United States, 1952-1954, Guatemala* (dokument 224: telegram fra CIA til CIA-stasjoner, 23. juni 1954). U.S. Department of State, Office of the Historian. Hentet 25.07.2026 fra [history.state.gov](https://history.state.gov/historicaldocuments/frus1952-54Guat/d224)",
+                    "International Commission on Missing Persons. (2026). *Guatemala*. Hentet 25.07.2026 fra [icmp.int](https://icmp.int/the-missing/where-are-the-missing/guatemala/)",
+                    "Pai Raikar, S. (u.å.). *Banana republic*. Encyclopaedia Britannica. Hentet 25.07.2026 fra [britannica.com](https://www.britannica.com/topic/banana-republic)",
+                    "Ramirez Cabal, M. (2023). *The Dark Side of Bananas: Imperialism, Non-State Actors, and Power*. Harvard International Review. Hentet 25.07.2026 fra [hir.harvard.edu](https://hir.harvard.edu/the-dark-side-of-bananas-imperialism-non-state-actors-and-power/)",
+                    "Underlid, E. S. (2026). *Che Guevara*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Che_Guevara](https://snl.no/Che_Guevara)"
                 ]
             }
         }
@@ -188,7 +206,7 @@
             "id": "q4",
             "question": "Hva ble resultatet av kuppet for Guatemala?",
             "options": [
-                "36 år med borgerkrig og rundt 200 000 døde",
+                "36 år med borgerkrig og opp mot 200 000 døde",
                 "Varig fred og velstand",
                 "Landet ble rikt på bananer",
                 "United Fruit forlot landet"
@@ -197,5 +215,6 @@
         }
     ],
     "createdDate": "2026-05-31T00:00:00Z",
-    "lastUpdated": "2026-05-31T00:00:00Z"
+    "lastUpdated": "2026-07-25T00:00:00Z",
+    "factChecked": "2026-07-25"
 }
