@@ -836,11 +836,15 @@
     },
     {
       "tag": "middelalder",
-      "count": 30
+      "count": 32
     },
     {
       "tag": "oppfinnelser",
       "count": 29
+    },
+    {
+      "tag": "kildekritikk",
+      "count": 28
     },
     {
       "tag": "imperium",
@@ -849,10 +853,6 @@
     {
       "tag": "revolusjon",
       "count": 28
-    },
-    {
-      "tag": "kildekritikk",
-      "count": 26
     },
     {
       "tag": "verdensorden",
@@ -1912,6 +1912,18 @@
     },
     {
       "tag": "språkfamilie",
+      "count": 2
+    },
+    {
+      "tag": "historiens-store-gater",
+      "count": 2
+    },
+    {
+      "tag": "legende",
+      "count": 2
+    },
+    {
+      "tag": "britannia",
       "count": 2
     },
     {

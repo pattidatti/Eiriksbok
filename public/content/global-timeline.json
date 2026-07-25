@@ -1295,6 +1295,25 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "kong-arthur",
+      "title": "Kong Arthur - hvem var mannen bak legenden?",
+      "description": "Arthur skal ha levd rundt år 500, men navnet hans dukker ikke opp før på 800-tallet - og jo lenger unna kildene er, jo mer vet de.",
+      "startDate": 500,
+      "endDate": null,
+      "displayDate": "500",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/kong-arthur",
+      "tags": [
+        "historiens-store-gater",
+        "kildekritikk",
+        "middelalder",
+        "legende",
+        "britannia"
+      ]
+    },
+    {
       "id": "wergild",
       "title": "Wergild - drapets pris",
       "description": "I tidlig middelalder hadde drap en fast pris. Den varierte etter offerets status, og avslørte hierarkiet ned til siste sølvmynt.",
