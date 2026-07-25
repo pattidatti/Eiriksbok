@@ -194,17 +194,43 @@ function reviewViaCli(id) {
         console.error(`${id}: claude-CLI feilet - ${String(e.message).slice(0, 200)}`);
         return null;
     }
-    const m = out.match(/\{[\s\S]*\}/);
-    if (!m) {
-        console.error(`${id}: fikk ikke JSON fra CLI-en`);
-        return null;
+    return parseJson(out, id, 'CLI-en');
+}
+
+// Felles JSON-uttrekk. Modellen svarer av og til med prosa rundt objektet, eller
+// pakker det i en ```json-blokk. Et grådig /\{[\s\S]*\}/ knakk på begge, og ga
+// bare «fikk ikke JSON» uten å vise hva som faktisk kom - ubrukelig å feilsøke.
+function parseJson(raw, id, kilde) {
+    const text = String(raw ?? '').trim();
+    const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
+    const candidates = [];
+    if (fenced) candidates.push(fenced[1].trim());
+    // Skann etter det første balanserte {...}-objektet.
+    const start = text.indexOf('{');
+    if (start !== -1) {
+        let depth = 0;
+        for (let i = start; i < text.length; i++) {
+            if (text[i] === '{') depth++;
+            else if (text[i] === '}' && --depth === 0) {
+                candidates.push(text.slice(start, i + 1));
+                break;
+            }
+        }
     }
-    try {
-        return { ...JSON.parse(m[0]), id };
-    } catch {
-        console.error(`${id}: ugyldig JSON fra CLI-en`);
-        return null;
+    for (const c of candidates) {
+        try {
+            const o = JSON.parse(c);
+            if (o && typeof o === 'object') return { ...o, id };
+        } catch {
+            /* prøv neste kandidat */
+        }
     }
+    console.error(
+        `${id}: fant ikke gyldig JSON fra ${kilde}. Rå-svar (første 300 tegn):\n  ${
+            text.slice(0, 300).replace(/\n/g, '\n  ') || '(tomt)'
+        }`
+    );
+    return null;
 }
 
 // Backend 2: messages-API. Fakturert per kall - kun når du eksplisitt ber om det.
@@ -243,18 +269,7 @@ async function reviewViaApi(id) {
         return null;
     }
     const data = await res.json();
-    const text = (data.content ?? []).map((b) => b.text ?? '').join('');
-    const m = text.match(/\{[\s\S]*\}/);
-    if (!m) {
-        console.error(`${id}: fikk ikke JSON tilbake`);
-        return null;
-    }
-    try {
-        return { ...JSON.parse(m[0]), id };
-    } catch {
-        console.error(`${id}: ugyldig JSON`);
-        return null;
-    }
+    return parseJson((data.content ?? []).map((b) => b.text ?? '').join(''), id, 'API-et');
 }
 
 const reviewGame = (id) =>
