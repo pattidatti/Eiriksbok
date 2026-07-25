@@ -35,6 +35,7 @@ import {
     tennGlimt,
     tegnFartsstriper,
     tegnPartikler,
+    tegnSjokkbolge,
     type Effekter,
 } from './kjedeEffekter';
 
@@ -46,6 +47,14 @@ export interface HudSnapshot {
     forsprang: number;
     tenkeandel: number;
     fase: string;
+    /** Teksten i steinen under føttene - premisset eleven resonnerer fra. */
+    arsak: string;
+    /**
+     * Påstandene som svever akkurat nå, på formen «2: Kongen stenger ...».
+     * Finnes bare for skjermlesere: all fagtekst i spillet er tegnet i kanvas
+     * og dermed usynlig for hjelpemidler, markering og oversettelse.
+     */
+    valg: string[];
 }
 
 interface Props {
@@ -185,6 +194,76 @@ const tegnMiddelalderSilhuett = (ctx: CanvasRenderingContext2D, x: number, base:
     ctx.fill();
 };
 
+/** Industriby: fabrikkhall med saginndelt tak, pipe og gassbeholder. */
+const tegnIndustriSilhuett = (
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    base: number,
+    r: number
+) => {
+    ctx.beginPath();
+    if (r < 0.34) {
+        // Fabrikkhall med sagtakk og pipe
+        ctx.rect(x, base - 34, 62, 34);
+        for (let i = 0; i < 3; i++) {
+            ctx.moveTo(x + i * 21, base - 34);
+            ctx.lineTo(x + i * 21, base - 48);
+            ctx.lineTo(x + i * 21 + 21, base - 34);
+        }
+        ctx.rect(x + 66, base - 96, 13, 96);
+    } else if (r < 0.66) {
+        // Enslig, høy skorstein med sokkel
+        ctx.rect(x + 4, base - 18, 30, 18);
+        ctx.moveTo(x + 12, base - 18);
+        ctx.lineTo(x + 15, base - 112);
+        ctx.lineTo(x + 26, base - 112);
+        ctx.lineTo(x + 29, base - 18);
+    } else {
+        // Gassbeholder med ribber
+        ctx.rect(x + 2, base - 52, 58, 52);
+        for (let i = 1; i < 4; i++) ctx.rect(x + 2, base - 52 + i * 13, 58, 3);
+        ctx.rect(x + 12, base - 60, 38, 8);
+    }
+    ctx.closePath();
+    ctx.fill();
+};
+
+/** Moderne by: høyblokk, lavblokk og byggekran. */
+const tegnModerneSilhuett = (
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    base: number,
+    r: number
+) => {
+    ctx.beginPath();
+    if (r < 0.36) {
+        // Høyblokk med vindusraster
+        ctx.rect(x + 6, base - 104, 44, 104);
+        ctx.rect(x + 50, base - 62, 22, 62);
+    } else if (r < 0.68) {
+        // Lav kontorblokk med tekniske rom på taket
+        ctx.rect(x, base - 40, 74, 40);
+        ctx.rect(x + 12, base - 50, 18, 10);
+        ctx.rect(x + 44, base - 47, 14, 7);
+    } else {
+        // Byggekran
+        ctx.rect(x + 22, base - 88, 7, 88);
+        ctx.rect(x - 6, base - 92, 76, 6);
+        ctx.rect(x + 60, base - 86, 4, 22);
+    }
+    ctx.closePath();
+    ctx.fill();
+};
+
+const SILHUETTER: Record<
+    Kulisse,
+    (ctx: CanvasRenderingContext2D, x: number, base: number, r: number) => void
+> = {
+    middelalder: tegnMiddelalderSilhuett,
+    industri: tegnIndustriSilhuett,
+    moderne: tegnModerneSilhuett,
+};
+
 const tegnNaer = (
     ctx: CanvasRenderingContext2D,
     camX: number,
@@ -213,10 +292,14 @@ const tegnNaer = (
     const steg = 260;
     const antall = Math.ceil(viewW / steg) + 3;
     const first = Math.floor((off - 300) / steg);
+    // Hver kulisse har sitt eget sett med former. Feltet ble validert lenge før
+    // det ble tegnet, så en industri-kjede løp forbi kirketårn og borgtinder.
+    const tegnSilhuett = SILHUETTER[kulisse] ?? tegnMiddelalderSilhuett;
+    const frøskift = kulisse === 'middelalder' ? 0 : kulisse === 'industri' ? 11 : 23;
     for (let i = first; i < first + antall; i++) {
-        const r = hash01(i * 3.7 + (kulisse === 'middelalder' ? 0 : 11));
+        const r = hash01(i * 3.7 + frøskift);
         if (r > 0.78) continue;
-        tegnMiddelalderSilhuett(ctx, i * steg - off + hash01(i + 5) * 90, base - 16, r);
+        tegnSilhuett(ctx, i * steg - off + hash01(i + 5) * 90, base - 16, r / 0.78);
     }
 };
 
@@ -227,8 +310,9 @@ const tegnNaer = (
 const tegnLenke = (
     ctx: CanvasRenderingContext2D,
     x0: number,
+    y0: number,
     x1: number,
-    y: number,
+    y1: number,
     glimtX: number | null
 ) => {
     const mid = (x0 + x1) / 2;
@@ -237,8 +321,8 @@ const tegnLenke = (
     ctx.lineCap = 'round';
     ctx.strokeStyle = 'rgba(168, 142, 92, 0.55)';
     ctx.beginPath();
-    ctx.moveTo(x0, y);
-    ctx.quadraticCurveTo(mid, y + 34, x1, y);
+    ctx.moveTo(x0, y0);
+    ctx.quadraticCurveTo(mid, Math.max(y0, y1) + 34, x1, y1);
     ctx.stroke();
 
     if (glimtX !== null) {
@@ -261,7 +345,7 @@ const tegnLenke = (
  */
 const tegnGlimtkule = (ctx: CanvasRenderingContext2D, x: number, y: number, styrke: number) => {
     ctx.save();
-    const r = 72 * styrke;
+    const r = 96 * styrke;
     const g = ctx.createRadialGradient(x, y, 0, x, y, r);
     g.addColorStop(0, `rgba(255, 255, 255, ${styrke})`);
     g.addColorStop(0.18, `rgba(255, 244, 198, ${0.95 * styrke})`);
@@ -792,7 +876,8 @@ export const KjedeCanvas: React.FC<Props> = ({
                 const x = segmentX(i);
                 tegnPilar(ctx, x, GROUND_TOP);
                 if (i > forste) {
-                    tegnLenke(ctx, x - GAP_W, x, GROUND_TOP + SLAB_H / 2, glimtX);
+                    const ly = GROUND_TOP + SLAB_H / 2;
+                    tegnLenke(ctx, x - GAP_W, ly, x, ly, glimtX);
                 }
                 tegnStein(ctx, x, GROUND_TOP, bakkeTekst(w.kjede, i), {
                     gyllen: i > 0,
@@ -807,7 +892,21 @@ export const KjedeCanvas: React.FC<Props> = ({
                 // Fjellet vokser fram under den steinen som lander, før alle
                 // valgsteinene, slik at det aldri maler over en som faller
                 const lander = w.valg.find((s) => s.tilstand === 'senkes');
-                if (lander) tegnPilar(ctx, sx, lander.y, lander.anim);
+                if (lander) {
+                    tegnPilar(ctx, sx, lander.y, lander.anim);
+                    // Kjettingen strekkes ut mens steinen synker på plass.
+                    // Uten den var kjeden borte i de 0,45 sekundene landingen
+                    // varer - altså nøyaktig i belønningsøyeblikket, der
+                    // glimtet løp over et tomt gap.
+                    tegnLenke(
+                        ctx,
+                        sx - GAP_W,
+                        GROUND_TOP + SLAB_H / 2,
+                        sx,
+                        lander.y + SLAB_H / 2,
+                        glimtX
+                    );
+                }
                 const rekkefolge = [
                     ...w.valg.filter((s) => s.tilstand === 'smuldrer'),
                     ...w.valg.filter((s) => s.tilstand !== 'smuldrer'),
@@ -837,6 +936,9 @@ export const KjedeCanvas: React.FC<Props> = ({
                 ctx.fill();
             }
 
+            // Trykkbølgen fra nedslaget, langs steinflaten og under figuren
+            if (!reducedMotion) tegnSjokkbolge(ctx, eff, GROUND_TOP + 4);
+
             // Figuren
             const lener = w.fase === 'tenk';
             tegnFigur(
@@ -853,8 +955,18 @@ export const KjedeCanvas: React.FC<Props> = ({
 
             // Glimtkula løper langs kjeden helt øverst i verdenslaget
             if (glimtX !== null && glimtP !== null) {
-                const styrke = Math.sin(glimtP * Math.PI);
-                tegnGlimtkule(ctx, glimtX, GROUND_TOP + SLAB_H / 2, styrke);
+                // Rask opptenning, lang platåtid, myk utfading. Den gamle
+                // sin(p*PI) var nær null i begge ender, så pulsen var svak
+                // akkurat idet den forlot årsaken og idet den traff virkningen.
+                const styrke = clamp01(Math.sin(glimtP * Math.PI) * 1.75);
+                const y = GROUND_TOP + SLAB_H / 2;
+                // Hale: noen svakere ekko bakover langs banen gjør farten synlig
+                for (let i = 4; i >= 1; i--) {
+                    const bakP = clamp01(glimtP - i * 0.045);
+                    const bakX = eff.glimtFra + (eff.glimtTil - eff.glimtFra) * easeUt(bakP);
+                    tegnGlimtkule(ctx, bakX, y, styrke * (0.13 * (5 - i)) * 0.5);
+                }
+                tegnGlimtkule(ctx, glimtX, y, styrke);
             }
 
             ctx.restore();
@@ -873,6 +985,15 @@ export const KjedeCanvas: React.FC<Props> = ({
                     tenkeandel:
                         w.fase === 'tenk' ? clamp01(1 - w.faseT / w.effekter.tenketid) : 0,
                     fase: w.fase,
+                    arsak: bakkeTekst(w.kjede, w.segment),
+                    valg:
+                        w.fase === 'tenk' && w.valg
+                            ? w.valg
+                                  .filter((v) => v.tilstand === 'svever')
+                                  // Punktum strippes: teksten settes sammen med
+                                  // skilletegn under, og «England.. 2:» leses rart
+                                  .map((v) => `${v.row + 1}: ${v.tekst.replace(/\.$/, '')}`)
+                            : [],
                 });
             }
         };

@@ -41,10 +41,25 @@ export const RUN_MAX = 400;
 
 /** Glemselen går i konstant fart. Den er tregere enn grunnfarten med vilje:
  *  en ren runde skal trekke fra, ikke bare så vidt holde unna. */
-export const FOG_SPEED = 168;
+export const FOG_SPEED = 205;
 export const FOG_START_LEAD = 1150;
 /** Tas du igjen når tåka er nærmere enn dette, er runden slutt. */
 export const FOG_CATCH_MARGIN = 40;
+
+/**
+ * Straffen for å ta feil: Glemselen rykker fram med ett fast byks.
+ *
+ * Dette er hele kostnaden ved et feilsvar, og den er bevisst løsrevet fra tid.
+ * Før betalte eleven i sekunder, og da ble spillet snudd på hodet: den som
+ * grublet i fire sekunder og leste hele forklaringen i feilsporet tapte
+ * terreng, mens den som gjettet raskt og trykket seg forbi forklaringen var
+ * praktisk talt uangripelig. Målt i en runde med tre av seks feil lå
+ * forsprang-bjelken fortsatt på 95 prosent.
+ *
+ * Nå står tåka stille både mens eleven tenker og mens hun leser forklaringen.
+ * Å tenke og å lese er gratis. Det som koster, er å ta feil.
+ */
+export const FOG_SURGE = 430;
 
 /** Tenkeøyeblikket måles i ekte sekunder. */
 export const THINK_MAX = 4.0;

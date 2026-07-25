@@ -29,6 +29,8 @@ const TOM_SNAPSHOT: HudSnapshot = {
     forsprang: 1,
     tenkeandel: 0,
     fase: 'lop',
+    arsak: '',
+    valg: [],
 };
 
 const KjedereaksjonenPage: React.FC = () => {
@@ -245,6 +247,8 @@ const KjedereaksjonenPage: React.FC = () => {
                     <KjedeOverlay
                         fase={snapshot.fase}
                         tenkeandel={snapshot.tenkeandel}
+                        arsak={snapshot.arsak}
+                        valg={snapshot.valg}
                         aktivFeil={aktivFeil}
                         tilbudte={tilbudte}
                         onVelgDrivkraft={onVelgDrivkraft}

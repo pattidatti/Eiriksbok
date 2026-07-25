@@ -4,7 +4,7 @@
 // ut av trøbbel, tro gir retning før du vet svaret.
 
 import type { Drivkraft, DrivkraftId } from '../../../types/kjede';
-import { FEILSPOR_DUR, FOG_SPEED, THINK_MAX } from '../../../utils/kjedeFysikk';
+import { FEILSPOR_DUR, FOG_SPEED, FOG_SURGE, THINK_MAX } from '../../../utils/kjedeFysikk';
 
 export const DRIVKREFTER: Record<DrivkraftId, Drivkraft> = {
     makt: {
@@ -22,7 +22,10 @@ export const DRIVKREFTER: Record<DrivkraftId, Drivkraft> = {
     okonomi: {
         id: 'okonomi',
         navn: 'Økonomi',
-        effekt: 'Et fall i feilsporet koster halve tiden.',
+        // Virket før på tiden i feilsporet. Nå står Glemselen stille mens
+        // eleven leser, så tid der nede koster ingenting - drivkraften måtte
+        // flyttes over på det som faktisk er straffen: bykset.
+        effekt: 'Et feilsvar gir Glemselen halvt byks.',
         begrunnelse: 'Rikdom kjøper deg ut av trøbbel.',
     },
     religion: {
@@ -40,13 +43,16 @@ export interface DrivkraftEffekter {
     tenketid: number;
     tåkefart: number;
     feilsporTid: number;
+    /** Hvor langt Glemselen rykker fram når eleven tar feil. */
+    overtrampByks: number;
     fjernEttGaltSvar: boolean;
 }
 
 export const beregnEffekter = (valgte: DrivkraftId[]): DrivkraftEffekter => ({
     tenketid: THINK_MAX + (valgte.includes('makt') ? 2 : 0),
     tåkefart: FOG_SPEED * (valgte.includes('natur') ? 0.8 : 1),
-    feilsporTid: FEILSPOR_DUR * (valgte.includes('okonomi') ? 0.5 : 1),
+    feilsporTid: FEILSPOR_DUR,
+    overtrampByks: FOG_SURGE * (valgte.includes('okonomi') ? 0.5 : 1),
     fjernEttGaltSvar: valgte.includes('religion'),
 });
 

@@ -10,6 +10,8 @@ import { DRIVKREFTER } from './drivkrefter';
 interface Props {
     fase: string;
     tenkeandel: number;
+    arsak: string;
+    valg: string[];
     aktivFeil: KjedeFeil | null;
     tilbudte: DrivkraftId[] | null;
     onVelgDrivkraft: (id: DrivkraftId) => void;
@@ -18,11 +20,30 @@ interface Props {
 export const KjedeOverlay: React.FC<Props> = ({
     fase,
     tenkeandel,
+    arsak,
+    valg,
     aktivFeil,
     tilbudte,
     onVelgDrivkraft,
 }) => (
     <>
+        {/*
+          Hele spillet er tegnet i kanvas, så årsaken og de tre påstandene er
+          usynlige for skjermlesere. Her speiles de i DOM-en. Teksten endrer seg
+          bare når et nytt ledd dukker opp, ikke for hver ramme, så aria-live
+          leser opp én gang per valg.
+        */}
+        <div className="sr-only" role="status" aria-live="polite">
+            {fase === 'tenk' && valg.length > 0 && (
+                <p>
+                    {`Du står på: ${arsak} Hva skjedde så? ${valg.join('. ')}`}
+                </p>
+            )}
+            {(fase === 'feilspor' || fase === 'klatre') && aktivFeil && (
+                <p>{`Feil. ${aktivFeil.tekst} ${aktivFeil.hvorfor}`}</p>
+            )}
+        </div>
+
         <AnimatePresence>
             {fase === 'tenk' && (
                 <motion.div

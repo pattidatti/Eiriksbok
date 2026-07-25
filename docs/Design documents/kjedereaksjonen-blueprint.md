@@ -84,6 +84,9 @@ rakk å bygge. Ingen «game over»-skjerm uten innhold.
 Dette er hele straffesystemet. Ingen liv, ingen hjerter, ingen instadød. Kravet
 er å tenke raskt, ikke å hoppe presist.
 
+> Straffemodellen er senere lagt om: å tenke og å lese koster ingenting, og et
+> feilsvar koster ett fast byks. Se §13.1 for hvorfor og for tallene.
+
 ### 3.3 Drivkrefter (RPG-laget)
 
 Etter hver fullførte kjede velger eleven én av tre **drivkrefter**. De er de
@@ -100,6 +103,9 @@ evne som speiler hva drivkraften gjør i virkeligheten:
 
 Drivkreftene varer ut økten (3 kjeder på rad = en «ferd»). De lagres ikke på
 tvers av økter i v1.
+
+> Slik de faktisk ble: Teknologi er droppet (§10), og Økonomi virker på bykset i
+> stedet for på tiden i feilsporet (§13.1).
 
 ### 3.4 Sluttbildet: broen
 
@@ -447,19 +453,92 @@ Tre grep, alle i `KjedeCanvas.tsx`:
    kan forankres i verdens-Y. Før dette gled horisonten fra landstripen på
    skjermer der bredden bestemmer skalaen.
 
-### 12.3 Fortsatt åpent
+### 12.3 Hva som sto igjen
 
-- **Kjettingen mangler i cirka 0,45 sekunder** av belønningsøyeblikket. Lenken
-  tegnes bare mellom bakkesteiner, og den landende steinen er teknisk sett
-  fortsatt en valgstein til `w.segment` øker. Glimtet starter derfor over et
-  tomt gap før kjeden dukker opp under det.
-- **Glemselen truer ikke.** Med `RUN_BASE` 245 mot `FOG_SPEED` 168 og 1150 px
-  forsprang i gave lå forsprang-bjelken på 90-100 prosent gjennom en runde med
-  tre av seks feil. Bør tunes, men først når det finnes flere kjeder å tune mot.
-- **`kulisse` er validert, men ikke implementert.** `tegnNaer` bruker feltet
-  bare til å bytte hash-frø; det finnes bare middelaldersilhuetter. En
-  industri-kjede vil løpe forbi kirketårn og borgtinder.
-- **All fagtekst bor i kanvaset**: ingen markering, ingen skjermleser, ingen
-  nettleser-zoom. På 1366x768 blir skalaen 0,81, så 21px-fonten rendres som
-  cirka 17px.
-- **Sju kjeder gjenstår** av de åtte §4.3 beskriver.
+Se §13. Alt i denne listen ble tatt i poleringspasset, unntatt de sju kjedene
+som gjenstår å forfatte.
+
+---
+
+## 13. Tredje passet: poleringen
+
+### 13.1 Glemselen straffet feil ferdighet
+
+Det som så ut som «tåka er for svak» var noe verre. Straffen var målt i tid, og
+tid var akkurat det eleven brukte på å tenke og lese. En elev som grublet i fire
+sekunder per valg og leste hele forklaringen i feilsporet tapte terreng, mens en
+som gjettet raskt og trykket seg forbi forklaringen var praktisk talt uangripelig.
+Målt i en runde med tre av seks feil lå forsprang-bjelken fortsatt på 95 prosent.
+Spillet belønnet altså det motsatte av det det skulle trene.
+
+Straffen er nå løsrevet fra tid:
+
+- Glemselen står **stille** både i tenkeøyeblikket og i feilsporet. Å tenke og å
+  lese er gratis, uten forbehold.
+- Et feilsvar gir ett fast byks framover (`FOG_SURGE`, 430 px), like stort
+  uansett hvor lenge eleven blir liggende og lese forklaringen.
+- `FOG_SPEED` opp fra 168 til 205, siden tåka nå har færre sekunder å ta innpå i.
+- Å bli tatt vurderes bare mens figuren står på beina. Ellers kunne bykset
+  avslutte runden i selve trykkøyeblikket, og eleven ville sett endeskjermen
+  uten å ha sett steinen svikte under seg.
+
+Drivkraften Økonomi virket på tiden i feilsporet, som nå er gratis. Den er
+flyttet over på det som faktisk er straffen: den halverer bykset.
+
+Balansen er simulert gjennom den ekte simuleringen, med start-forsprang 1150 px:
+
+| Feil av 6 | Utfall | Minste forsprang |
+|---|---|---|
+| 0 | i mål | 1151 px |
+| 1 | i mål | 793 px |
+| 2 | i mål | 434 px |
+| 3 | i mål | 75 px |
+| 4 | tatt | - |
+
+Tallene er identiske enten eleven bruker 0,4 eller 3,9 sekunder på hvert valg.
+Det er hele poenget. Rundene over bommer på de **første** leddene, altså verste
+tilfelle: da rekker streaken aldri å bygge seg opp. Ren gjetting med tre
+alternativer gir to riktige av seks, altså fire feil, og blir tatt.
+
+### 13.2 Belønningsøyeblikket
+
+- **Kjettingen strekkes ut mens steinen synker.** Lenken ble bare tegnet mellom
+  bakkesteiner, og den landende steinen er teknisk sett en valgstein til
+  `w.segment` øker. Kjeden var derfor borte i de 0,45 sekundene landingen varer,
+  altså nøyaktig i belønningsøyeblikket. `tegnLenke` tar nå en egen y i hver
+  ende, så kjettingen henger etter steinen ned på plass.
+- **Glimtet går fra årsak til virkning.** Pulsen startet 196 px til venstre for
+  forrige stein, i løse lufta bak eleven, og siden styrken toppet på midten av
+  banen havnet den lyseste delen oppå steinen hun allerede sto på. Nå går den fra
+  midten av årsak-steinen til midten av virkning-steinen, med en hale bak seg og
+  en styrkekurve som holder seg oppe i stedet for å toppe i ett punkt.
+- **Nedslaget har fått en trykkbølge.** Støvet alene leste som en rad prikker
+  langs steinkanten. `tegnSjokkbolge()` skyter en flat ring utover langs flaten,
+  støvet er kraftigere og mer ugjennomsiktig, og rystelsen er opp fra 11 til 16.
+
+### 13.3 Kulissene finnes nå
+
+`kulisse` ble validert lenge før det ble tegnet: `tegnNaer` brukte feltet bare
+til å bytte hash-frø, så en industri-kjede ville løpt forbi kirketårn og
+borgtinder. `industri` (fabrikkhaller med sagtakk, skorsteiner, gassbeholdere)
+og `moderne` (høyblokker, kontorbygg, byggekran) er nå egne sett. Verifisert ved
+å kjøre midlertidige testkjeder i hver kulisse.
+
+### 13.4 Fagteksten finnes utenfor kanvaset
+
+All tekst i spillet var tegnet i kanvas og dermed usynlig for skjermlesere,
+markering og oversettelse. Det er et reelt problem i en lærebok.
+`KjedeOverlay` speiler nå årsaken, de tre påstandene med tallene sine, og
+forklaringen i feilsporet i et `sr-only`-område med `aria-live="polite"`.
+Teksten endrer seg bare når et nytt ledd dukker opp, ikke per ramme, så den
+leses opp én gang per valg.
+
+### 13.5 Fortsatt åpent
+
+- **Sju kjeder gjenstår** av de åtte §4.3 beskriver. Dette er fortsatt det
+  klart største løftet: motoren tåler mer innhold enn den har.
+- **Kanvasteksten er liten på Chromebook.** Skalaen blir 0,81 på 1366x768, så
+  21px-fonten rendres som cirka 17px. Skjermleser-speilet i §13.4 dekker
+  hjelpemidler, men ikke en elev som bare synes det er smått.
+- **Tuningen i §13.1 er simulert, ikke observert.** Tallene bør sjekkes mot ekte
+  elever før de låses.

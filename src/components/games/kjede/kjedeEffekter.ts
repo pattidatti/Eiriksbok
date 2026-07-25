@@ -43,6 +43,9 @@ export interface Effekter {
      */
     glimtFra: number;
     glimtTil: number;
+    /** Sekunder siden trykkbølgen fra nedslaget startet, null når den ikke går. */
+    sjokk: number | null;
+    sjokkX: number;
 }
 
 export const nyeEffekter = (): Effekter => ({
@@ -53,9 +56,12 @@ export const nyeEffekter = (): Effekter => ({
     glimt: null,
     glimtFra: 0,
     glimtTil: 0,
+    sjokk: null,
+    sjokkX: 0,
 });
 
 export const GLIMT_VARIGHET = 0.95;
+export const SJOKK_VARIGHET = 0.5;
 
 /** Fartsstripene lever i juvet mellom landkanten og bunnen av bildet. */
 const STRIPE_Y_MIN = 392;
@@ -92,8 +98,13 @@ export const stoevSprut = (e: Effekter, x: number, y: number, rng: () => number,
  */
 export const tennGlimt = (e: Effekter, venstreX: number) => {
     e.glimt = 0;
-    e.glimtFra = venstreX - PITCH - SLAB_W * 0.35;
-    e.glimtTil = venstreX + SLAB_W;
+    // Fra midten av årsak-steinen til midten av virkning-steinen. Før startet
+    // pulsen 196 px til venstre for forrige stein, altså i løse lufta bak
+    // eleven, og den lyseste delen av banen (styrken topper på midten) havnet
+    // oppå steinen hun allerede sto på i stedet for over gapet. Nå går den
+    // synlig fra årsak til virkning, som er hele metaforen.
+    e.glimtFra = venstreX - PITCH + SLAB_W / 2;
+    e.glimtTil = venstreX + SLAB_W / 2;
 };
 
 /**
@@ -112,9 +123,9 @@ export const steinSlam = (e: Effekter, venstreX: number, rng: () => number) => {
         e.partikler.push({
             x: venstreX + t * SLAB_W + tilfeldig(rng, -14, 14),
             y: y + tilfeldig(rng, -2, 14),
-            vx: utover * tilfeldig(rng, 150, 330),
-            vy: tilfeldig(rng, -95, -18),
-            r: tilfeldig(rng, 7, 18),
+            vx: utover * tilfeldig(rng, 220, 430),
+            vy: tilfeldig(rng, -125, -22),
+            r: tilfeldig(rng, 10, 24),
             liv,
             maksLiv: liv,
             rot: 0,
@@ -137,8 +148,10 @@ export const steinSlam = (e: Effekter, venstreX: number, rng: () => number) => {
             flis: true,
         });
     }
-    e.rystelse = Math.max(e.rystelse, 11);
+    e.rystelse = Math.max(e.rystelse, 16);
     e.klem = 1;
+    e.sjokk = 0;
+    e.sjokkX = venstreX + SLAB_W / 2;
 };
 
 /** Når en gal stein smuldrer bort under føttene. */
@@ -214,6 +227,35 @@ export const oppdaterEffekter = (e: Effekter, dt: number, fartsandel: number, vi
         e.glimt += dt;
         if (e.glimt > GLIMT_VARIGHET) e.glimt = null;
     }
+    if (e.sjokk !== null) {
+        e.sjokk += dt;
+        if (e.sjokk > SJOKK_VARIGHET) e.sjokk = null;
+    }
+};
+
+/**
+ * Trykkbølgen fra nedslaget: en flat ring som skyter utover langs steinflaten.
+ * Støvet alene leste som en rad prikker langs kanten - ringen er det som gjør
+ * at slaget kjennes i kroppen.
+ */
+export const tegnSjokkbolge = (ctx: CanvasRenderingContext2D, e: Effekter, y: number) => {
+    if (e.sjokk === null) return;
+    const t = clamp01(e.sjokk / SJOKK_VARIGHET);
+    const rx = 60 + t * 430;
+    const ry = 10 + t * 46;
+    const a = (1 - t) * (1 - t) * 0.5;
+    ctx.save();
+    ctx.strokeStyle = `rgba(255, 252, 240, ${a})`;
+    ctx.lineWidth = 7 * (1 - t) + 1.5;
+    ctx.beginPath();
+    ctx.ellipse(e.sjokkX, y, rx, ry, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.strokeStyle = `rgba(176, 152, 108, ${a * 0.55})`;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(e.sjokkX, y, rx * 0.82, ry * 0.82, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
 };
 
 export const tegnPartikler = (ctx: CanvasRenderingContext2D, e: Effekter) => {
@@ -231,8 +273,8 @@ export const tegnPartikler = (ctx: CanvasRenderingContext2D, e: Effekter) => {
             // Myk sky som vokser og tynnes ut, ikke en hard prikk
             const r = p.r * (2.2 - a * 1.1);
             const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
-            g.addColorStop(0, `rgba(200, 184, 152, ${a * 0.5})`);
-            g.addColorStop(0.6, `rgba(203, 189, 160, ${a * 0.26})`);
+            g.addColorStop(0, `rgba(184, 165, 130, ${a * 0.66})`);
+            g.addColorStop(0.6, `rgba(193, 177, 145, ${a * 0.34})`);
             g.addColorStop(1, 'rgba(206, 194, 168, 0)');
             ctx.globalAlpha = 1;
             ctx.fillStyle = g;

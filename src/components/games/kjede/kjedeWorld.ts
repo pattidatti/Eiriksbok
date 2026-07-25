@@ -241,6 +241,9 @@ export const velg = (w: KjedeVerden, row: number) => {
         w.aktivFeil = feil ?? { tekst: stein.tekst, hvorfor: '' };
         resultat.valgtFeil = w.aktivFeil;
         w.streak = 0;
+        // Hele straffen for å ta feil, betalt med én gang og uavhengig av hvor
+        // lenge eleven blir liggende i feilsporet og lese
+        w.fogX += w.effekter.overtrampByks;
         w.hendelser.push({ type: 'feil', hvorfor: w.aktivFeil.hvorfor });
     }
     w.resultater.push(resultat);
@@ -331,7 +334,12 @@ export const stegVerden = (w: KjedeVerden, dtRaw: number) => {
     const skala = w.fase === 'tenk' ? THINK_TIME_SCALE : 1;
     const vdt = dt * skala;
 
-    w.fogX += w.effekter.tåkefart * vdt;
+    // Glemselen står stille mens eleven tenker og mens hun leser forklaringen i
+    // feilsporet. Å tenke og å lese skal aldri koste terreng - straffen for et
+    // feilsvar er bykset i `velg()`, og det er like stort uansett hvor lenge
+    // eleven blir liggende nede og lese. Se FOG_SURGE i kjedeFysikk.ts.
+    const taakenGaar = w.fase !== 'tenk' && w.fase !== 'feilspor';
+    if (taakenGaar) w.fogX += w.effekter.tåkefart * vdt;
     animerSteiner(w, vdt);
 
     switch (w.fase) {
@@ -451,8 +459,13 @@ export const stegVerden = (w: KjedeVerden, dtRaw: number) => {
         }
     }
 
-    // Glemselen tar deg igjen
-    if (w.fase !== 'mal' && w.fogX > w.playerX - FOG_CATCH_MARGIN) {
+    // Glemselen tar deg igjen. Bare mens figuren står på beina: bykset fra et
+    // feilsvar kan ellers avslutte runden i selve trykkøyeblikket, og eleven
+    // ville sett endeskjermen uten å ha sett steinen svikte under seg. Å bli
+    // tatt skal alltid skje mens hun løper, der det leser som at tåka innhentet
+    // henne.
+    const kanTas = w.fase === 'lop' || w.fase === 'landing';
+    if (kanTas && w.fogX > w.playerX - FOG_CATCH_MARGIN) {
         w.fase = 'tatt';
         w.hendelser.push({ type: 'ferdig', fullfort: false });
     }
