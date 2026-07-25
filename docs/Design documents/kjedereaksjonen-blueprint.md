@@ -131,15 +131,27 @@ en samling løsrevne spørsmål, den må faktisk henge sammen.
     "start": "Norge i 1348: rundt 350 000 mennesker, og nesten alle er bønder.",
     "ledd": [
         {
-            "tekst": "Svartedauden kommer til Bergen i 1349 og dreper omtrent halvparten av folket.",
+            "tekst": "Pesten kommer til Bergen i 1349 med et handelsskip fra England.",
             "feil": [
                 {
-                    "tekst": "Kongen forbyr handel med utlandet.",
-                    "hvorfor": "Ingen visste hva som spredte pesten. Handelen fortsatte som før."
+                    "tekst": "Kongen stenger grensene i tide, og pesten når aldri fram til Norge.",
+                    "hvorfor": "Ingen visste hva som spredte pesten. Skipene fikk seile inn som før."
                 },
                 {
-                    "tekst": "Folk flytter inn til byene for å få hjelp.",
-                    "hvorfor": "Det motsatte skjedde. Byene var farligst, og de som kunne, flyktet ut."
+                    "tekst": "Pesten starter i Norge og sprer seg derfra ut i resten av Europa.",
+                    "hvorfor": "Smitten gikk motsatt vei. Pesten herjet i Europa lenge før den nådde oss."
+                },
+                {
+                    "tekst": "Legene finner en kur mot pesten i løpet av det første året.",
+                    "hvorfor": "Ingen kjente til bakterier. Legene trodde pesten kom av dårlig luft."
+                },
+                {
+                    "tekst": "Bergen slipper unna fordi byen ligger så langt mot nord.",
+                    "hvorfor": "Bergen var en travel handelsby. Skipene tok smitten med seg rett dit."
+                },
+                {
+                    "tekst": "Folk i Bergen skjønner raskt at rottene bærer smitten.",
+                    "hvorfor": "At lopper på rotter spredte pesten, ble først kjent over 500 år senere."
                 }
             ],
             "link": "/historie/middelalderen/svartedauden"
@@ -159,10 +171,34 @@ en samling løsrevne spørsmål, den må faktisk henge sammen.
 - `link` er valgfri per ledd, og peker til artikkelen leddet bygger på.
 - Kjedelengde: 5 til 8 ledd. Kortere føles tynt, lengre sprenger konsentrasjonen.
 
+### 4.1.1 Feilbunken: 4-6 alternativer, to trekkes
+
+Hvert ledd har **4-6** feilalternativer, men spillet tegner bare tre steiner.
+`trekkFeil()` i `kjedeWorld.ts` trekker to av dem per runde, ut fra rundens frø.
+
+Det gjør to ting på én gang:
+
+1. **Samme kjede gir en ny runde.** Med 2 faste feilsvar hadde eleven pugget
+   svarene etter to gjennomspillinger, mens metalaget (rekorder, lengste rekke,
+   drivkrefter) forutsetter gjenspilling. Med fem alternativer per ledd er det
+   flere tusen ulike runder i én kjede.
+2. **Lengden røper ikke lenger fasiten.** Trekningen tar ett alternativ som er
+   minst like langt som fasiten og ett som er høyst like langt. Da er det
+   riktige svaret aldri verken det lengste eller det korteste på skjermen.
+
+Punkt 2 kom av et målt problem: i den første versjonen av Svartedauden-kjeden
+var fasiten det lengste alternativet i fem av seks ledd. En elev kunne score
+5 av 6 uten å kunne noe historie, bare ved å velge den lengste setningen.
+
 ### 4.2 Validering
 
 `scripts/validate-kjeder.mjs` (kjøres i `scan:content`) sjekker:
-- 5-8 ledd, nøyaktig 2 feilalternativer per ledd
+- 5-8 ledd, 4-6 feilalternativer per ledd
+- ingen dupliserte feilalternativer innenfor et ledd
+- **lengdebalanse**, som holder trekningen over ærlig:
+  - minst 2 feilalternativer er like lange som eller lengre enn fasiten
+  - minst 2 er like lange som eller kortere enn fasiten
+  - ingen feilalternativ skiller seg mer enn 15 tegn fra fasiten
 - alle `link` finnes i manifestet (gjenbruker logikken fra
   `scripts/check-internal-links.cjs`)
 - ingen ledd-tekst over 90 tegn, ellers blir plattformen uleselig i fart
@@ -366,3 +402,64 @@ under ett sekund skal vurderes.
 Merk også: headless Chromium svarte lenge `reduce` på `prefers-reduced-motion` i
 oppsettet som ble brukt. Sett `reducedMotion: 'no-preference'` eksplisitt på
 Playwright-konteksten, ellers tester man aldri spillet slik elevene ser det.
+
+---
+
+## 12. Andre passet: ærlige valg og et synlig juv
+
+En gjennomspilling med opptak avdekket to ting som lå under juice-laget og som
+ingen mengde polering kunne skjule.
+
+### 12.1 Fasiten kunne gjettes på formen
+
+Målt i den ferdige kjeden: det riktige svaret var det lengste alternativet i
+fem av seks ledd (63 mot 45/37, 56 mot 42/30, 59 mot 33/47, 65 mot 49/33,
+69 mot 42/32). Det er den klassiske flervalgs-lekkasjen, og den undergraver
+hele påstanden om at spillet trener årsaksresonnering.
+
+Løsningen ble strukturell i stedet for redaksjonell, se §4.1.1: bunken utvidet
+til fem alternativer per ledd, og trekningen tar ett fra hver lengdebøtte.
+Validatoren håndhever forutsetningen, så feilen ikke kan komme tilbake i de sju
+kjedene som gjenstår.
+
+Verifisert ved å kjøre 300 runder gjennom den ekte simuleringen: alle fem
+feilalternativer per ledd dukker opp over tid, det tegnes alltid nøyaktig tre
+steiner, fasiten er alltid med, og fasiten er aldri verken lengst eller kortest.
+
+### 12.2 Juvet fantes bare i koden
+
+«Årsaken er steinen under deg, virkningen er hullet foran deg» var sant i
+simuleringen og usynlig på skjermen. Bakken, gapet og juvet hadde nesten samme
+lyse blågrå farge, så figuren så ut til å gå over et flatt jorde mellom to
+beige tekstbokser. Uten synlig stup finnes det ingen grunn til at et feil svar
+skal kjennes farlig.
+
+Tre grep, alle i `KjedeCanvas.tsx`:
+
+1. **`tegnPilar()`** gir hver bakkestein et fjell å stå på. Søylen smalner
+   nedover og tones ut i disen, så juvet får dybde uten å få en bunn. En
+   valgstein som senker seg på plass får fjellet sitt tegnet fram i takt med
+   landingen (`alpha = stein.anim`).
+2. **Juv-gradienten** er mørkest like over steinhøyden, så steinene får noe å
+   stå mot, og lysner nedover. Paletten holder seg lys: trusselen er fortsatt
+   Glemselen, ikke avgrunnen.
+3. **Himmel og tåke tegnes nå inne i `dy`-forskyvningen**, slik at gradientene
+   kan forankres i verdens-Y. Før dette gled horisonten fra landstripen på
+   skjermer der bredden bestemmer skalaen.
+
+### 12.3 Fortsatt åpent
+
+- **Kjettingen mangler i cirka 0,45 sekunder** av belønningsøyeblikket. Lenken
+  tegnes bare mellom bakkesteiner, og den landende steinen er teknisk sett
+  fortsatt en valgstein til `w.segment` øker. Glimtet starter derfor over et
+  tomt gap før kjeden dukker opp under det.
+- **Glemselen truer ikke.** Med `RUN_BASE` 245 mot `FOG_SPEED` 168 og 1150 px
+  forsprang i gave lå forsprang-bjelken på 90-100 prosent gjennom en runde med
+  tre av seks feil. Bør tunes, men først når det finnes flere kjeder å tune mot.
+- **`kulisse` er validert, men ikke implementert.** `tegnNaer` bruker feltet
+  bare til å bytte hash-frø; det finnes bare middelaldersilhuetter. En
+  industri-kjede vil løpe forbi kirketårn og borgtinder.
+- **All fagtekst bor i kanvaset**: ingen markering, ingen skjermleser, ingen
+  nettleser-zoom. På 1366x768 blir skalaen 0,81, så 21px-fonten rendres som
+  cirka 17px.
+- **Sju kjeder gjenstår** av de åtte §4.3 beskriver.

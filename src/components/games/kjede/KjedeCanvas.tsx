@@ -108,22 +108,40 @@ const wrapCached = (ctx: CanvasRenderingContext2D, text: string, maxW: number): 
 
 /** Der landet slutter og juvet begynner. Steinene svever over dette. */
 const KANT_Y = 366;
+/** Hvor langt ned juv-gradienten er definert. Under dette er det bare dis. */
+const JUV_BUNN = GROUND_TOP + 320;
 
-const tegnHimmel = (ctx: CanvasRenderingContext2D, viewW: number, viewH: number) => {
-    const g = ctx.createLinearGradient(0, 0, 0, KANT_Y);
+const tegnHimmel = (
+    ctx: CanvasRenderingContext2D,
+    viewW: number,
+    viewH: number,
+    dy: number
+) => {
+    const topp = -dy;
+    const g = ctx.createLinearGradient(0, topp, 0, KANT_Y);
     g.addColorStop(0, '#d4e6f6');
     g.addColorStop(0.6, '#eaf1f7');
     g.addColorStop(1, '#f7f1e4');
     ctx.fillStyle = g;
-    ctx.fillRect(0, 0, viewW, KANT_Y);
+    ctx.fillRect(0, topp, viewW, KANT_Y - topp);
 
-    // Juvet under kanten: dis som lysner nedover, aldri en bunn
-    const juv = ctx.createLinearGradient(0, KANT_Y, 0, viewH);
-    juv.addColorStop(0, '#c2d2de');
-    juv.addColorStop(0.45, '#dde5ec');
-    juv.addColorStop(1, '#eef2f6');
+    // Juvet. Mørkest like over steinhøyden, så steinene får noe å stå MOT, og
+    // lysere nedover til det bare er dis igjen. Dybden skal leses som «langt
+    // ned», ikke som «mørkt» - trusselen i dette spillet er Glemselen, ikke
+    // avgrunnen, og paletten holder seg lys.
+    const juv = ctx.createLinearGradient(0, KANT_Y, 0, JUV_BUNN);
+    juv.addColorStop(0, '#c3d5e2');
+    juv.addColorStop(0.22, '#a6bccd');
+    juv.addColorStop(0.55, '#c3d1dd');
+    juv.addColorStop(1, '#e7edf2');
     ctx.fillStyle = juv;
-    ctx.fillRect(0, KANT_Y, viewW, viewH - KANT_Y);
+    ctx.fillRect(0, KANT_Y, viewW, JUV_BUNN - KANT_Y);
+
+    const bunn = viewH - dy;
+    if (bunn > JUV_BUNN) {
+        ctx.fillStyle = '#e7edf2';
+        ctx.fillRect(0, JUV_BUNN, viewW, bunn - JUV_BUNN);
+    }
 };
 
 /** Fjerne åser. Samme lag for alle epoker - horisonten forandrer seg ikke. */
@@ -258,6 +276,60 @@ const tegnGlimtkule = (ctx: CanvasRenderingContext2D, x: number, y: number, styr
     ctx.beginPath();
     ctx.arc(x, y, 7 * styrke, 0, Math.PI * 2);
     ctx.fill();
+    ctx.restore();
+};
+
+/** Hvor langt ned fjellet under en bakkestein rekker før det mister seg i disen. */
+const PILAR_H = 180;
+
+/**
+ * Fjellet bakkesteinen står på.
+ *
+ * Uten dette leser hele banen som et flatt jorde med tekstbokser oppå, og
+ * «årsaken er steinen under deg, virkningen er hullet foran deg» blir en
+ * påstand eleven aldri ser. Søylen smalner nedover og tones ut i disen, så
+ * juvet får dybde uten å få en bunn.
+ *
+ * `alpha` brukes når en valgstein senker seg på plass: fjellet vokser fram
+ * under den i takt med at den lander.
+ */
+const tegnPilar = (ctx: CanvasRenderingContext2D, x: number, steinY: number, alpha = 1) => {
+    if (alpha <= 0.01) return;
+    const topp = steinY + SLAB_H;
+    const halvTopp = SLAB_W / 2 - 16;
+    const halvBunn = SLAB_W * 0.17;
+    const midt = x + SLAB_W / 2;
+
+    ctx.save();
+    ctx.globalAlpha = alpha;
+
+    ctx.beginPath();
+    ctx.moveTo(midt - halvTopp, topp);
+    ctx.lineTo(midt + halvTopp, topp);
+    ctx.lineTo(midt + halvBunn, topp + PILAR_H);
+    ctx.lineTo(midt - halvBunn, topp + PILAR_H);
+    ctx.closePath();
+
+    const g = ctx.createLinearGradient(0, topp, 0, topp + PILAR_H);
+    g.addColorStop(0, 'rgba(150, 138, 116, 0.85)');
+    g.addColorStop(0.35, 'rgba(158, 156, 152, 0.52)');
+    g.addColorStop(0.72, 'rgba(180, 190, 200, 0.22)');
+    g.addColorStop(1, 'rgba(205, 216, 226, 0)');
+    ctx.fillStyle = g;
+    ctx.fill();
+
+    // Skyggesiden gir søylen volum, ellers leser den som en flat trekant
+    const s = ctx.createLinearGradient(midt, 0, midt + halvTopp, 0);
+    s.addColorStop(0, 'rgba(92, 82, 66, 0)');
+    s.addColorStop(1, 'rgba(92, 82, 66, 0.26)');
+    ctx.fillStyle = s;
+    ctx.fill();
+
+    // Mørk stripe rett under steinen: nå sitter den PÅ fjellet i stedet for å
+    // sveve foran det
+    ctx.fillStyle = 'rgba(84, 72, 54, 0.32)';
+    ctx.fillRect(midt - halvTopp, topp, halvTopp * 2, 7);
+
     ctx.restore();
 };
 
@@ -413,10 +485,12 @@ const tegnTaake = (
     fogScreenX: number,
     t: number,
     viewW: number,
-    viewH: number
+    viewH: number,
+    dy: number
 ) => {
     if (fogScreenX <= -280) return;
     const kant = Math.min(fogScreenX, viewW + 40);
+    const topp = -dy;
 
     // Fargen forsvinner bak tåka - selve metaforen. Metningen tones ut over en
     // sone i stedet for å kuttes rett av, ellers leser kanten som en skjøt i
@@ -428,9 +502,9 @@ const tegnTaake = (
         m.addColorStop(0, 'hsla(0, 0%, 50%, 1)');
         m.addColorStop(1, 'hsla(0, 0%, 50%, 0)');
         ctx.fillStyle = 'hsl(0, 0%, 50%)';
-        ctx.fillRect(0, 0, Math.max(0, kant - 220), viewH);
+        ctx.fillRect(0, topp, Math.max(0, kant - 220), viewH);
         ctx.fillStyle = m;
-        ctx.fillRect(Math.max(0, kant - 220), 0, Math.min(220, kant), viewH);
+        ctx.fillRect(Math.max(0, kant - 220), topp, Math.min(220, kant), viewH);
         ctx.restore();
     }
 
@@ -439,12 +513,12 @@ const tegnTaake = (
     g.addColorStop(0.65, 'rgba(224, 227, 232, 0.42)');
     g.addColorStop(1, 'rgba(224, 227, 232, 0)');
     ctx.fillStyle = g;
-    ctx.fillRect(Math.min(0, kant - 300), 0, Math.max(0, kant + 40), viewH);
+    ctx.fillRect(Math.min(0, kant - 300), topp, Math.max(0, kant + 40), viewH);
 
     ctx.fillStyle = 'rgba(238, 240, 243, 0.3)';
     for (let i = 0; i < 5; i++) {
         const r = 70 + hash01(i) * 60;
-        const y = 80 + hash01(i + 9) * (viewH - 160) + Math.sin(t * 0.6 + i) * 18;
+        const y = topp + 80 + hash01(i + 9) * (viewH - 160) + Math.sin(t * 0.6 + i) * 18;
         ctx.beginPath();
         ctx.arc(kant - 40 - hash01(i + 3) * 130, y, r, 0, Math.PI * 2);
         ctx.fill();
@@ -690,9 +764,12 @@ export const KjedeCanvas: React.FC<Props> = ({
 
             const { skala, dy, wLog, hLog } = transformRef.current;
             ctx.setTransform(skala * dpr, 0, 0, skala * dpr, 0, 0);
-            tegnHimmel(ctx, wLog, hLog);
             ctx.save();
             ctx.translate(0, dy);
+            // Himmelen tegnes inne i dy-forskyvningen, slik at gradientene kan
+            // forankres i verdens-Y. Ellers glir horisonten fra landstripen på
+            // skjermer der bredden bestemmer skalaen.
+            tegnHimmel(ctx, wLog, hLog, dy);
 
             // Ved redusert bevegelse står parallaksen stille i stedet for å gli
             const bakgrunnX = reducedMotion ? 0 : camX;
@@ -708,10 +785,12 @@ export const KjedeCanvas: React.FC<Props> = ({
             const glimtPaa = (senterX: number) =>
                 glimtX === null ? 0 : clamp01(1 - Math.abs(senterX - glimtX) / 230);
 
-            // Bakkesteinene eleven allerede har bygget
+            // Bakkesteinene eleven allerede har bygget. Fjellet under tegnes
+            // først, så steinen legger seg oppå sin egen søyle.
             const forste = Math.max(0, w.segment - 3);
             for (let i = forste; i <= w.segment; i++) {
                 const x = segmentX(i);
+                tegnPilar(ctx, x, GROUND_TOP);
                 if (i > forste) {
                     tegnLenke(ctx, x - GAP_W, x, GROUND_TOP + SLAB_H / 2, glimtX);
                 }
@@ -725,6 +804,10 @@ export const KjedeCanvas: React.FC<Props> = ({
             // seg oppå det riktige svaret på vei ned.
             if (w.valg) {
                 const sx = segmentX(w.segment + 1);
+                // Fjellet vokser fram under den steinen som lander, før alle
+                // valgsteinene, slik at det aldri maler over en som faller
+                const lander = w.valg.find((s) => s.tilstand === 'senkes');
+                if (lander) tegnPilar(ctx, sx, lander.y, lander.anim);
                 const rekkefolge = [
                     ...w.valg.filter((s) => s.tilstand === 'smuldrer'),
                     ...w.valg.filter((s) => s.tilstand !== 'smuldrer'),
@@ -776,7 +859,7 @@ export const KjedeCanvas: React.FC<Props> = ({
 
             ctx.restore();
 
-            tegnTaake(ctx, w.fogX - camX, naa / 1000, wLog, hLog);
+            tegnTaake(ctx, w.fogX - camX, naa / 1000, wLog, hLog, dy);
             ctx.restore();
 
             // HUD-snapshot cirka 10 ganger i sekundet

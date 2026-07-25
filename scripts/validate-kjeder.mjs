@@ -7,7 +7,10 @@
 //
 // Reglene finnes fordi hver av dem har en konkret konsekvens i spillet:
 //   - 5-8 ledd:        kortere føles tynt, lengre sprenger konsentrasjonen
-//   - 2 feil per ledd: spillet tegner nøyaktig tre steiner over gapet
+//   - 4-6 feil per
+//     ledd:            spillet tegner tre steiner, men trekker de to gale fra
+//                      en større bunke, slik at samme kjede gir en ny runde
+//   - lengdebalanse:   se KOMMENTAR under LENGDE_SLINGRING
 //   - <= 90 tegn:      lengre tekst blir uleselig på en stein i fart
 //   - <= 20 ord i
 //     «hvorfor»:       eleven leser den mens hun ligger i feilsporet
@@ -29,6 +32,21 @@ const MAX_TEGN = 90;
 const MAX_ORD_HVORFOR = 20;
 const MIN_LEDD = 5;
 const MAX_LEDD = 8;
+const MIN_FEIL = 4;
+const MAX_FEIL = 6;
+/**
+ * Lengdebalanse. Fasiten skal ikke kunne kjennes igjen på formen.
+ *
+ * `kjedeWorld.trekkFeil` trekker ett feilalternativ som er minst like langt som
+ * fasiten og ett som er høyst like langt, så det riktige svaret aldri er verken
+ * lengst eller kortest på skjermen. For at trekningen skal ha noe å velge i må
+ * hver bøtte ha minst to kandidater - derfor MIN_PER_BOTTE.
+ *
+ * LENGDE_SLINGRING tar resten: selv innenfor riktig bøtte skal ingen påstand
+ * skille seg ut som påfallende lang eller kort.
+ */
+const MIN_PER_BOTTE = 2;
+const LENGDE_SLINGRING = 15;
 const KULISSER = new Set(['middelalder', 'industri', 'moderne']);
 // Tegn som avslører at norsk tekst har blitt mishandlet av en encoding et sted
 const BRUTNE_TEGN = /Ã¦|Ã¸|Ã¥|Ã†|Ã˜|Ã…|�/;
@@ -112,11 +130,49 @@ for (const filnavn of filer) {
     ledd.forEach((l, i) => {
         sjekkTekst(l.tekst, `ledd ${i + 1}`);
         const gale = Array.isArray(l.feil) ? l.feil : [];
-        if (gale.length !== 2) {
-            meld(fil, `ledd ${i + 1}: har ${gale.length} feilalternativer, må ha nøyaktig 2`);
+        if (gale.length < MIN_FEIL || gale.length > MAX_FEIL) {
+            meld(
+                fil,
+                `ledd ${i + 1}: har ${gale.length} feilalternativer, må ha ${MIN_FEIL}-${MAX_FEIL}`
+            );
         }
+
+        const sett = new Set();
+        for (const f of gale) {
+            const t = String(f?.tekst ?? '').trim();
+            if (t && sett.has(t)) meld(fil, `ledd ${i + 1}: feilalternativet «${t}» er duplisert`);
+            sett.add(t);
+        }
+
+        // Lengdebalanse - se kommentaren ved LENGDE_SLINGRING
+        const fasitLengde = String(l.tekst ?? '').length;
+        if (fasitLengde) {
+            const lengder = gale.map((f) => String(f?.tekst ?? '').length);
+            const lengre = lengder.filter((n) => n >= fasitLengde).length;
+            const kortere = lengder.filter((n) => n <= fasitLengde).length;
+            if (lengre < MIN_PER_BOTTE) {
+                meld(
+                    fil,
+                    `ledd ${i + 1}: bare ${lengre} feilalternativ(er) er like lange som eller lengre enn fasiten (${fasitLengde} tegn), trenger ${MIN_PER_BOTTE}`
+                );
+            }
+            if (kortere < MIN_PER_BOTTE) {
+                meld(
+                    fil,
+                    `ledd ${i + 1}: bare ${kortere} feilalternativ(er) er like lange som eller kortere enn fasiten (${fasitLengde} tegn), trenger ${MIN_PER_BOTTE}`
+                );
+            }
+        }
+
         gale.forEach((f, j) => {
             sjekkTekst(f.tekst, `ledd ${i + 1} feil ${j + 1}`);
+            const avvik = Math.abs(String(f?.tekst ?? '').length - fasitLengde);
+            if (fasitLengde && avvik > LENGDE_SLINGRING) {
+                meld(
+                    fil,
+                    `ledd ${i + 1} feil ${j + 1}: ${avvik} tegn fra fasiten, maks ${LENGDE_SLINGRING} (lengden røper svaret)`
+                );
+            }
             const ord = String(f.hvorfor ?? '').trim().split(/\s+/).filter(Boolean).length;
             if (ord === 0) meld(fil, `ledd ${i + 1} feil ${j + 1}: mangler «hvorfor»`);
             else if (ord > MAX_ORD_HVORFOR) {

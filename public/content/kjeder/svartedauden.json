@@ -14,12 +14,24 @@
             "link": "/historie/middelalderen/svartedauden",
             "feil": [
                 {
-                    "tekst": "Kongen stenger grensene og holder pesten ute.",
+                    "tekst": "Kongen stenger grensene i tide, og pesten når aldri fram til Norge.",
                     "hvorfor": "Ingen visste hva som spredte pesten. Skipene fikk seile inn som før."
                 },
                 {
-                    "tekst": "Legene finner en kur i løpet av året.",
+                    "tekst": "Legene finner en kur mot pesten i løpet av det første året.",
                     "hvorfor": "Ingen kjente til bakterier. Legene trodde pesten kom av dårlig luft."
+                },
+                {
+                    "tekst": "Pesten starter i Norge og sprer seg derfra ut i resten av Europa.",
+                    "hvorfor": "Smitten gikk motsatt vei. Pesten herjet i Europa lenge før den nådde oss."
+                },
+                {
+                    "tekst": "Bergen slipper unna fordi byen ligger så langt mot nord.",
+                    "hvorfor": "Bergen var en travel handelsby. Skipene tok smitten med seg rett dit."
+                },
+                {
+                    "tekst": "Folk i Bergen skjønner raskt at rottene bærer smitten.",
+                    "hvorfor": "At lopper på rotter spredte pesten, ble først kjent over 500 år senere."
                 }
             ]
         },
@@ -28,12 +40,24 @@
             "link": "/historie/middelalderen/svartedauden",
             "feil": [
                 {
-                    "tekst": "Folk flytter inn til byene for å få hjelp.",
+                    "tekst": "Folk flytter inn til byene for å få hjelp av legene og kirken.",
                     "hvorfor": "Det motsatte skjedde. Byene var farligst, for der bodde folk tettest."
                 },
                 {
-                    "tekst": "Bare de fattigste blir rammet.",
+                    "tekst": "Bare de fattigste blir rammet, for de bor trangest.",
                     "hvorfor": "Pesten skilte ikke på folk. Både prester, biskoper og rike kjøpmenn døde."
+                },
+                {
+                    "tekst": "De fleste blir syke, men nesten alle blir friske igjen etterpå.",
+                    "hvorfor": "De aller fleste som fikk pesten, døde av den i løpet av noen dager."
+                },
+                {
+                    "tekst": "Pesten tar flere liv på landsbygda enn inne i byene.",
+                    "hvorfor": "Smitten trengte folk tett i tett. Byene ble hardest rammet."
+                },
+                {
+                    "tekst": "Norge mister rundt en tiendedel av folketallet sitt.",
+                    "hvorfor": "Tapet var langt større. Rundt halvparten av alle i landet døde."
                 }
             ]
         },
@@ -42,12 +66,24 @@
             "link": "/historie/middelalderen/svartedauden",
             "feil": [
                 {
-                    "tekst": "Bøndene rydder ny jord i utmarka.",
-                    "hvorfor": "Ingen trengte mer jord. Halvparten av gårdene som fantes sto allerede tomme."
+                    "tekst": "Bøndene rydder ny jord i utmarka for å få mer mat.",
+                    "hvorfor": "Ingen trengte mer jord. Halvparten av gårdene sto allerede tomme."
                 },
                 {
-                    "tekst": "Kongen selger de tomme gårdene til utlendinger.",
+                    "tekst": "Kongen selger de tomme gårdene til rike utlendinger.",
                     "hvorfor": "Det fantes ingen kjøpere. En gård uten folk til å drive den var verdiløs."
+                },
+                {
+                    "tekst": "Gårdene blir slått sammen til noen få, men svært store bruk.",
+                    "hvorfor": "Ingen hadde folk til å drive større bruk. Jorda ble liggende brakk."
+                },
+                {
+                    "tekst": "Kirken tar over de tomme gårdene og driver dem selv.",
+                    "hvorfor": "Kirken mistet også folkene sine. Mange kirker sto uten prest i årevis."
+                },
+                {
+                    "tekst": "Folk fra Danmark flytter inn og overtar de gårdene som står tomme.",
+                    "hvorfor": "Pesten herjet i Danmark også. Ingen steder i Europa hadde folk til overs."
                 }
             ]
         },
@@ -56,12 +92,24 @@
             "link": "/historie/middelalderen/svartedauden",
             "feil": [
                 {
-                    "tekst": "Herremennene tvinger bøndene til å jobbe hardere.",
-                    "hvorfor": "De prøvde, men bonden kunne bare gå til en annen gård. Det var folk det manglet."
+                    "tekst": "Herremennene tvinger bøndene til å jobbe enda hardere enn før.",
+                    "hvorfor": "De prøvde, men bonden kunne bare gå til en annen gård. Det manglet folk."
                 },
                 {
-                    "tekst": "Bøndene mister rettighetene sine.",
+                    "tekst": "Bøndene mister alle rettighetene sine og blir livegne under herren.",
                     "hvorfor": "Bøndene fikk mer å si. Når det er få arbeidsfolk, blir arbeidet verdt mer."
+                },
+                {
+                    "tekst": "Bøndene må betale mye høyere leie for å få bli på gården.",
+                    "hvorfor": "Leia falt kraftig. Eierne var glade til om noen i det hele tatt ville bo der."
+                },
+                {
+                    "tekst": "Alle bøndene flytter inn til byene, der det nå finnes ledig arbeid.",
+                    "hvorfor": "Byene var hardest rammet og krympet. Det var på gårdene det var jord å ta."
+                },
+                {
+                    "tekst": "Kongen bestemmer hvem som skal overta hver eneste tomme gård.",
+                    "hvorfor": "Kongemakten var svekket. Den hadde verken folk eller penger til å styre slikt."
                 }
             ]
         },
@@ -74,8 +122,20 @@
                     "hvorfor": "Han prøvde. Men det hjelper lite å skattlegge gårder der det ikke bor noen."
                 },
                 {
-                    "tekst": "Kirken betaler skatten for bøndene.",
+                    "tekst": "Kirken betaler skatten for bøndene sine.",
                     "hvorfor": "Kirken mistet inntektene sine også. Mange kirker sto uten prest i årevis."
+                },
+                {
+                    "tekst": "Kongen tjener mer fordi jorda blir bedre.",
+                    "hvorfor": "Bedre jord hjalp lite når det ikke fantes folk til å dyrke den."
+                },
+                {
+                    "tekst": "Skatten holder seg helt lik som før pesten kom.",
+                    "hvorfor": "Skatt kommer fra folk. Med halvparten så mange falt inntektene som en stein."
+                },
+                {
+                    "tekst": "Kongen henter pengene han mangler fra utlandet.",
+                    "hvorfor": "Ingen ville låne til en konge uten inntekter. Resten av Europa var også rammet."
                 }
             ]
         },
@@ -84,12 +144,24 @@
             "link": "/historie/middelalderen/middelalderen",
             "feil": [
                 {
-                    "tekst": "Norge samler seg og blir sterkere enn før.",
+                    "tekst": "Norge samler seg igjen etter pesten, og blir sterkere enn noen gang før.",
                     "hvorfor": "Folketallet brukte over 200 år på å ta seg inn. Norge var svakt hele veien."
                 },
                 {
-                    "tekst": "Sverige tar over Norge med makt.",
+                    "tekst": "Sverige går til krig mot Norge og tar over landet med makt.",
                     "hvorfor": "Ingen erobret Norge. Kongeslekten døde ut, og arven gikk til Danmark."
+                },
+                {
+                    "tekst": "Norge bryter ut av alle unioner og styrer seg helt selv.",
+                    "hvorfor": "Det motsatte skjedde. Norge ble styrt fra København i over 400 år."
+                },
+                {
+                    "tekst": "Kongen i Norge tar over Danmark og styrer begge landene.",
+                    "hvorfor": "Norge var den svake parten. Makten og pengene lå i Danmark, ikke her."
+                },
+                {
+                    "tekst": "Norge blir delt opp i to egne riker, med hver sin konge i nord og sør.",
+                    "hvorfor": "Norge ble aldri delt. Landet ble derimot en mindre del av et større rike."
                 }
             ]
         }

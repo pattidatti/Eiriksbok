@@ -126,12 +126,52 @@ export const opprettVerden = (kjede: Kjede, seed: number): KjedeVerden => ({
 /** Leddet eleven er på vei inn i akkurat nå. */
 const kommendeLedd = (w: KjedeVerden) => w.kjede.ledd[w.segment];
 
+/**
+ * Trekker de to feilalternativene eleven møter denne runden.
+ *
+ * Ett fra hver lengdebøtte: ett som er minst like langt som fasiten, og ett som
+ * er høyst like langt. Dermed er det riktige svaret aldri verken det lengste
+ * eller det korteste på skjermen. Uten den regelen var fasiten det lengste
+ * alternativet i fem av seks ledd i den første kjeden, og en elev kunne score
+ * uten å kunne noe historie. `validate-kjeder.mjs` sikrer at begge bøttene har
+ * minst to kandidater, så trekningen faktisk varierer mellom runder.
+ */
+const trekkFeil = (ledd: Kjede['ledd'][number], rng: () => number): KjedeFeil[] => {
+    const fasitLengde = ledd.tekst.length;
+    const lengre = shuffleWith(
+        ledd.feil.filter((f) => f.tekst.length >= fasitLengde),
+        rng
+    );
+    const kortere = shuffleWith(
+        ledd.feil.filter((f) => f.tekst.length <= fasitLengde),
+        rng
+    );
+    const valgt: KjedeFeil[] = [];
+    if (lengre[0]) valgt.push(lengre[0]);
+    // Et alternativ med nøyaktig samme lengde ligger i begge bøttene
+    const kort = kortere.find((f) => f !== valgt[0]);
+    if (kort) valgt.push(kort);
+    // Skulle en kjede slippe gjennom med tom bøtte, fyll opp i stedet for å
+    // tegne færre steiner enn spillet forventer
+    if (valgt.length < 2) {
+        for (const f of shuffleWith(ledd.feil, rng)) {
+            if (valgt.length >= 2) break;
+            if (!valgt.includes(f)) valgt.push(f);
+        }
+    }
+    return valgt;
+};
+
 const byggValg = (w: KjedeVerden): Valgstein[] => {
     const ledd = kommendeLedd(w);
     const rng = mulberry32(djb2Hash(`${w.seed}:${w.kjede.id}:${w.segment}`));
     const kandidater: Omit<Valgstein, 'row' | 'tilstand' | 'anim' | 'y'>[] = [
         { tekst: ledd.tekst, riktig: true },
-        ...ledd.feil.map((f) => ({ tekst: f.tekst, riktig: false, hvorfor: f.hvorfor })),
+        ...trekkFeil(ledd, rng).map((f) => ({
+            tekst: f.tekst,
+            riktig: false,
+            hvorfor: f.hvorfor,
+        })),
     ];
     const stokket = shuffleWith(kandidater, rng);
     const steiner = stokket.map((k, row) => ({
