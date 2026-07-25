@@ -122,6 +122,11 @@
       "text": "Krigen sprer seg utover"
     },
     {
+      "type": "component",
+      "name": "Kjedereaksjonen",
+      "props": {}
+    },
+    {
       "type": "text",
       "content": "Allerede 2. mars sendte Hizbollah i Libanon raketter og droner mot Israel. Hizbollah er en libanesisk militsgruppe og et politisk parti som lenge har fått våpen og penger fra Iran. Israel svarte med kraftige luftangrep over hele Libanon, også mot Beirut, og ba folk flykte fra store områder. Innen slutten av mars hadde over 1,1 million libanesere forlatt hjemmene sine, omtrent hver sjette innbygger i landet. Den 17. mars gikk israelske soldater inn i Sør-Libanon. En egen våpenhvile ble kunngjort 16. april, men skytingen fortsatte i perioder også etterpå (Britannica, 2026)."
     },
@@ -164,6 +169,13 @@
             "value": "Land som må importere olje og gass. Land som selger olje, som Norge, Russland og Iran selv, tjener på at prisen går opp."
           }
         ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "hormuz-flaskehalsen-3d"
       }
     },
     {

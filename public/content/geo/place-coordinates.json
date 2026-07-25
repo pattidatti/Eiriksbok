@@ -791,11 +791,11 @@
       "count": 73
     },
     {
-      "tag": "økonomi",
-      "count": 68
+      "tag": "krig",
+      "count": 69
     },
     {
-      "tag": "krig",
+      "tag": "økonomi",
       "count": 68
     },
     {
@@ -931,6 +931,10 @@
       "count": 17
     },
     {
+      "tag": "olje",
+      "count": 17
+    },
+    {
       "tag": "sivilisasjon",
       "count": 16
     },
@@ -948,10 +952,6 @@
     },
     {
       "tag": "konflikt",
-      "count": 15
-    },
-    {
-      "tag": "olje",
       "count": 15
     },
     {
@@ -1604,6 +1604,10 @@
     },
     {
       "tag": "1989",
+      "count": 4
+    },
+    {
+      "tag": "is",
       "count": 4
     },
     {
@@ -2644,10 +2648,6 @@
     },
     {
       "tag": "polarisering",
-      "count": 2
-    },
-    {
-      "tag": "is",
       "count": 2
     },
     {
