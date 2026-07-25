@@ -627,6 +627,25 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "atlantis",
+      "title": "Atlantis - fantes øya som sank?",
+      "description": "Alt vi vet om Atlantis kommer fra to tekster av Platon. Følg kildekjeden bakover, bygg ringbyen slik han beskrev den, og se hva arkeologene finner igjen av den.",
+      "startDate": -360,
+      "endDate": null,
+      "displayDate": "360 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/atlantis",
+      "tags": [
+        "historie",
+        "kildekritikk",
+        "mysterier",
+        "antikken",
+        "pseudovitenskap"
+      ]
+    },
+    {
       "id": "aristoteles-etikk",
       "title": "Den nikomakiske etikk",
       "description": "Aristoteles definerer dygdsetikken og den gylne middelvei.",
