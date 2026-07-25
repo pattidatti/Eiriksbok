@@ -8382,7 +8382,7 @@
       "description": "Passbøker, townships og 27 år i fengsel – slik delte apartheid Sør-Afrika.",
       "startDate": 1948,
       "endDate": 1994,
-      "displayDate": "1948–1994",
+      "displayDate": "1948-1994",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "dekolonisering",
@@ -9513,7 +9513,7 @@
     {
       "id": "frigjoringskrigene-sub-3",
       "title": "Évian-avtalen",
-      "description": "Algerie blir uavhengig. 900 000 franskmenn flykter.",
+      "description": "Algerie blir uavhengig. Rundt en million europeere forlater landet.",
       "startDate": 1962,
       "endDate": null,
       "displayDate": "1962",

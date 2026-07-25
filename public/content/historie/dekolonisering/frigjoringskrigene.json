@@ -31,13 +31,13 @@
         {
             "year": "1962",
             "title": "Évian-avtalen",
-            "description": "Algerie blir uavhengig. 900 000 franskmenn flykter."
+            "description": "Algerie blir uavhengig. Rundt en million europeere forlater landet."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "Mens Storbritannia ofte ga slipp på koloniene sine gjennom forhandlinger (som i India og Ghana), valgte Frankrike en annen vei: De kjempet med nebb og klør for å beholde imperiet. Det førte til to av det 20. århundrets mest brutale kriger: Vietnam og Algerie."
+            "content": "Mens Storbritannia ofte ga slipp på koloniene sine gjennom forhandlinger - India ble selvstendig i 1947, Ghana i 1957 - valgte Frankrike en annen vei i Indokina og Algerie: De kjempet med nebb og klør for å beholde imperiet (Eriksen, 2026). Det førte til to av det 20. århundrets mest brutale kriger: Vietnam og Algerie."
         },
         {
             "type": "header",
@@ -45,7 +45,19 @@
         },
         {
             "type": "text",
-            "content": "For Frankrike handlet det om ære. Etter å ha blitt ydmyket av Tyskland under andre verdenskrig, ønsket de å bevise at de fortsatt var en stormakt. I tillegg var Algerie spesielt: Det var ikke bare en koloni, men juridisk sett en del av Frankrike. Over en million europeere (kalt *pieds-noirs* eller svartføtter) bodde der."
+            "content": "For Frankrike handlet det om ære. Etter å ha blitt ydmyket av Tyskland under andre verdenskrig, ønsket de å bevise at de fortsatt var en stormakt. I tillegg var Algerie spesielt: Det var formelt sett ikke en koloni, men et område som lå under Frankrike som en del av den franske republikken. I 1954 bodde det nesten en million europeere der, kalt *pieds-noirs* eller svartføtter. Rundt sju av ti av dem var født i Algerie - for dem var landet hjemme (Leraand, 2019)."
+        },
+        {
+            "type": "header",
+            "text": "Nederlaget i Indokina"
+        },
+        {
+            "type": "text",
+            "content": "Først kom Indokina. I 1946 gikk Viet Minh-styrkene til angrep i Hanoi, og dermed startet en krig som varte i nesten åtte år. Frankrike ville tilbake til koloniene sine i Sørøst-Asia, men Ho Chi Minh og Viet Minh nektet å gi slipp på selvstendigheten (Store norske leksikon, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Det hele endte ved fjellfestningen Dien Bien Phu i Nord-Vietnam. I mars 1954 omringet vietnamesiske tropper under general Vo Nguyen Giap festningen og angrep med tungt artilleri. Rundt 40 000 vietnamesiske soldater sto mot omtrent 14 000 franske. Etter store tap kapitulerte franskmennene 7. mai 1954, og det betydde slutten for det franske koloniveldet i Indokina (Store norske leksikon, 2025). Samme år begynte krigen i Algerie."
         },
         {
             "type": "header",
@@ -53,7 +65,19 @@
         },
         {
             "type": "text",
-            "content": "Frigjøringsbevegelsen FLN visste at de ikke kunne slå den franske hæren i åpne slag. I stedet startet de en urban geriljakrig. De plasserte bomber på kafeer og kinoer der de hvite bosetterne holdt til. Frankrike svarte med massiv brutalitet. Fallskjermjegerne brukte systematisk tortur for å avsløre FLNs nettverk. Frankrike vant militært i Algerie, men tapte moralsk og politisk. Verden (og den franske befolkningen hjemme) vendte seg mot krigen."
+            "content": "Frigjøringsbevegelsen FLN ble stiftet i 1954 og startet frigjøringskrigen 1. november samme år (Andersen & Leraand, 2024). De visste at de ikke kunne slå den franske hæren i åpne slag. I stedet kombinerte de geriljakrig med terroraksjoner, og fra slutten av 1956 førte de kampen inn i byene. Fra januar 1957 raste slaget om Alger, og til slutt ble FLN drevet ut av hovedstaden (Leraand, 2019).\n\nFrankrike hadde på det meste en halv million soldater i Algerie, og krigføringen var brutal, med tortur og geriljataktikk (Jære, 2024). Frankrike vant altså slaget om Alger militært, men tapte moralsk og politisk. Til å begynne med var den franske opinionen imot at Algerie skulle bli selvstendig. Det snudde da det kom fram at mennesker ble torturert og menneskerettigheter brutt (Jære, 2024)."
+        },
+        {
+            "type": "header",
+            "text": "Évian 1962: Slutten"
+        },
+        {
+            "type": "text",
+            "content": "Charles de Gaulle ble president i 1959 og gikk inn for fredsforhandlinger. 18. mars 1962 ble våpenhvileavtalen undertegnet i den franske byen Évian, og makten ble overført til Algerie (Leraand, 2019). Krigen hadde vart i åtte år. FLN har hevdet at over én million algeriere mistet livet; franske kilder anslår mellom 300 000 og 500 000 (Andersen & Leraand, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Da freden kom, pakket nesten hele den europeiske befolkningen og dro. Rundt en million europeere forlot Algerie og reiste til Frankrike (Leraand, 2019). For dem som var født i Algerie, betydde det å «reise hjem» til et land de knapt kjente."
         },
         {
             "type": "component",
@@ -87,20 +111,33 @@
             "props": {
                 "forstaa": [
                     "Hva var forskjellen på måten Storbritannia og Frankrike behandlet koloniene sine på, ifølge teksten?",
-                    "Hva ble de over en million europeerne som bodde i Algerie kalt?",
+                    "Hva ble de nesten en million europeerne som bodde i Algerie kalt?",
                     "Hvorfor kunne ikke frigjøringsbevegelsen FLN slå den franske hæren i åpne slag, og hva gjorde de i stedet?",
-                    "Teksten sier at Frankrike vant militært i Algerie, men tapte på en annen måte. Hvordan tapte de?"
+                    "Teksten sier at Frankrike vant militært, men tapte på en annen måte. Hvordan tapte de?"
                 ],
                 "reflekter": [
                     "Forklar hvorfor æren var så viktig for Frankrike etter andre verdenskrig. Hvordan hang ydmykelsen fra Tyskland sammen med at de nektet å gi slipp på koloniene?",
-                    "Algerie var juridisk sett en del av Frankrike, ikke bare en koloni. Hvorfor gjorde nettopp det krigen der ekstra vanskelig å gi opp?",
+                    "Algerie var formelt sett en del av den franske republikken, ikke bare en koloni. Hvorfor gjorde nettopp det krigen der ekstra vanskelig å gi opp?",
                     "Sammenlign de to krigene: Vietnam endte med et militært nederlag ved Dien Bien Phu, mens Algerie endte med et politisk nederlag. Hva er forskjellen på disse to måtene å tape en krig på?",
-                    "FLN plasserte bomber på kafeer og kinoer, og Frankrike svarte med systematisk tortur. Kan noen av sidene forsvare det de gjorde? Argumenter for hvorfor det er vanskelig å kalle noen av partene helt uskyldige."
+                    "FLN brukte terroraksjoner i byene, og Frankrike svarte med tortur. Kan noen av sidene forsvare det de gjorde? Argumenter for hvorfor det er vanskelig å kalle noen av partene helt uskyldige."
                 ],
                 "gaaVidere": [
-                    "Teksten sier verden vendte seg mot krigen da tortur ble kjent. Finn et eksempel fra en nyere konflikt der bilder eller nyheter fikk folk hjemme til å snu seg mot sitt eget lands krig.",
+                    "Teksten sier at den franske opinionen snudde da det kom fram at mennesker ble torturert. Finn et eksempel fra en nyere konflikt der bilder eller nyheter fikk folk hjemme til å snu seg mot sitt eget lands krig.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor en hær kan vinne alle slagene og likevel tape krigen. Bruk Algerie som eksempel.",
-                    "Diskuter med en partner: Da Algerie ble uavhengig i 1962, flyktet 900 000 franskmenn fra landet. Hva slags problemer tror dere det skaper når så mange mennesker må forlate hjemmet sitt på kort tid?"
+                    "Diskuter med en partner: Da Algerie ble uavhengig i 1962, forlot rundt en million europeere landet. Hva slags problemer tror dere det skaper når så mange mennesker må forlate hjemmet sitt på kort tid?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, R. B. & Leraand, D. (2024). *FLN*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/FLN](https://snl.no/FLN)",
+                    "Eriksen, T. L. (2026). *Avkolonisering*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/avkolonisering](https://snl.no/avkolonisering)",
+                    "Jære, L. (2024). *Frankrikes doble selvbilde*. Universitetet i Oslo, Institutt for litteratur, områdestudier og europeiske språk. Hentet 25.07.2026 fra [hf.uio.no](https://www.hf.uio.no/ilos/forskning/aktuelt/aktuelle-saker/2024/frankrikes-doble-selvbilde.html)",
+                    "Leraand, D. (2019). *Algeries nyere historie*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Algeries_nyere_historie](https://snl.no/Algeries_nyere_historie)",
+                    "Store norske leksikon. (2025). *Dien Bien Phu*. Hentet 25.07.2026 fra [snl.no/Dien_Bien_Phu](https://snl.no/Dien_Bien_Phu)"
                 ]
             }
         }
@@ -130,5 +167,5 @@
         }
     ],
     "createdDate": "2026-01-16T10:35:00Z",
-    "lastUpdated": "2026-01-16T10:35:00Z"
+    "lastUpdated": "2026-07-25T00:00:00Z"
 }

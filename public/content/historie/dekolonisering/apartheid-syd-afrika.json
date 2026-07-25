@@ -3,7 +3,7 @@
     "title": "Apartheid: Et samfunn delt i lov",
     "subject": "historie",
     "layout": "rich",
-    "year": "1948–1994",
+    "year": "1948-1994",
     "category": "Sør-Afrika / Delte samfunn",
     "readTime": "13 min lesning",
     "heroImage": "/images/lessons/dekolonisering/apartheid-syd-afrika.webp",
@@ -11,15 +11,15 @@
         "Apartheid betyr «atskillelse» på afrikaans.",
         "Over 3,5 millioner mennesker ble tvangsflyttet under apartheid.",
         "Sharpeville-massakren 1960: 69 ubevæpnede demonstranter drept.",
-        "Nelson Mandela satt fengslet i 27 år – og ble president i 1994.",
-        "Apartheid ble offisielt avviklet 27. april 1994 – Sør-Afrikas første frie valg."
+        "Nelson Mandela satt fengslet i 27 år - og ble president i 1994.",
+        "Apartheid ble offisielt avviklet 27. april 1994 - Sør-Afrikas første frie valg."
     ],
     "timeline": [],
     "externalUrl": "https://snl.no/apartheid",
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg at du våkner og din hudfarge bestemmer hvilken buss du kan ta, hvilken skole du kan gå på, hvilken strand du kan bade på, hvem du kan gifte deg med, og hvilken del av byen du kan bo i. I Sør-Afrika mellom 1948 og 1994 var ikke dette et tankeksperiment. Det var loven.\n\nApartheid – ordet betyr «atskillelse» på afrikaans – var et system der raselovene gjennomsyret absolutt alle sider av livet. Det ligner på [segregering i USA](/historie/dekolonisering/jim-crow-lovene), men var mer systematisk og omfattende. Og som [Peace Lines i Belfast](/historie/den-kalde-krigen/peace-lines-belfast), viser det hva som skjer når splittelse ikke bare er sosial – men lovfestet."
+            "content": "Tenk deg at du våkner og din hudfarge bestemmer hvilken buss du kan ta, hvilken skole du kan gå på, hvilken strand du kan bade på, hvem du kan gifte deg med, og hvilken del av byen du kan bo i. I Sør-Afrika mellom 1948 og 1994 var ikke dette et tankeksperiment. Det var loven.\n\nApartheid - ordet betyr «atskillelse» på afrikaans - var et system der raselovene gjennomsyret absolutt alle sider av livet. Det begynte for alvor da National Party vant valget i 1948 og gjorde raseskillet til lov (Tjønneland, 2025a). Det ligner på [segregering i USA](/historie/dekolonisering/jim-crow-lovene), men var mer systematisk og omfattende. Og som [Peace Lines i Belfast](/historie/den-kalde-krigen/peace-lines-belfast), viser det hva som skjer når splittelse ikke bare er sosial - men lovfestet."
         },
         {
             "type": "component",
@@ -35,7 +35,7 @@
         },
         {
             "type": "text",
-            "content": "Det første apartheidregimet måtte gjøre, var å bestemme hvem som var hva. Population Registration Act av 1950 delte alle inn i fire rasegrupper. Men hva om noen var vanskelig å klassifisere? Da brukte myndighetene en «blyanttest»: Dersom en blyant ble stukket inn i håret og falt ut av seg selv, var du hvit. Om den ble sittende, var du svart eller farget.\n\nFamilier ble splittet. Søsken ble klassifisert ulikt. En person som ble klassifisert som «Farget» – en mellomkategori – hadde noe flere rettigheter enn en som ble klassifisert som svart, men langt færre enn hvite. Klassifiseringen bestemte resten av livet ditt. Det fantes klageprosesser for å skifte klassifisering, og hvert år ble noen hundre mennesker offisielt «reklassifisert» – enten oppover eller nedover i det rasehierarkiet staten hadde bygget."
+            "content": "Det første apartheidregimet måtte gjøre, var å bestemme hvem som var hva. Population Registration Act av 1950 delte alle inn i fire rasegrupper (Tjønneland, 2025a). Men hva om noen var vanskelig å plassere? Da satt en tjenestemann og vurderte utseendet ditt: hudfarge, hår, øyne, nesebor og tannkjøtt. De så også på hvilket språk du snakket og hva slags jobb du hadde (McKenna, u.å.). Et helt liv ble avgjort av et blikk over et skrivebord.\n\nFamilier ble splittet. Søsken kunne bli klassifisert ulikt, og da kunne de ikke lenger bo sammen, fordi Group Areas Act sendte dem til hver sin bydel (McKenna, u.å.). En person som ble klassifisert som «Farget» - en mellomkategori - hadde noe flere rettigheter enn en som ble klassifisert som svart, men langt færre enn hvite. Klassifiseringen bestemte resten av livet ditt. Den som var uenig, kunne klage og be om å bli omklassifisert, men bare en liten andel prøvde seg (McKenna, u.å.)."
         },
         {
             "type": "header",
@@ -43,7 +43,7 @@
         },
         {
             "type": "text",
-            "content": "Group Areas Act tvang svarte sørafrikanere til å bo i egne boområder – townships – langt fra bysentrene. Soweto (South Western Townships) utenfor Johannesburg ble verdens største township. I Soweto bodde over en million mennesker i boliger uten strøm og rennende vann, mens hvite familier noen kilometer unna levde i velstand.\n\nFor å komme seg til jobb i den hvite delen av byen måtte alle svarte bære et passbok – et grønt hefte med foto, fingeravtrykk, arbeidstillatelse og adressebekreftelse. Uten passbok kunne du arresteres på stedet. Hundretusener av mennesker ble arrestert hvert år for passbokovertredelser. Systemet var designet for å kontrollere arbeidskraft: Svarte sørafrikanere fikk bare oppholde seg i hvite områder dersom de tjenestegjorde hvite."
+            "content": "Group Areas Act tvang svarte sørafrikanere til å bo i egne boområder - townships - langt fra bysentrene. Dette var ikke bare papirarbeid: over 3,5 millioner mennesker ble tvangsflyttet fra hjemmene sine (South African History Online, 2026a). Soweto - en forkortelse for South-West Township - utenfor Johannesburg vokste til å bli et av landets aller største boområder, med langt over en million innbyggere (Tjønneland, 2025b). Mange bodde i enkle hus uten strøm og rennende vann, mens hvite familier noen kilometer unna levde i velstand.\n\nFor å komme seg til jobb i den hvite delen av byen måtte alle svarte bære et passbok - et hefte med foto, fingeravtrykk, arbeidstillatelse og adressebekreftelse. Uten passbok kunne du arresteres på stedet. Gjennom apartheidtiden ble over ti millioner mennesker arrestert og dømt for brudd på pass- og bosettingslovene (Tjønneland, 2024). Systemet var laget for å kontrollere arbeidskraft: Svarte sørafrikanere fikk bare oppholde seg i hvite områder dersom de arbeidet for hvite."
         },
         {
             "type": "component",
@@ -75,12 +75,12 @@
                     {
                         "date": "1976",
                         "title": "Soweto-opprøret",
-                        "description": "Skoleelever i Soweto protesterer mot afrikaans som undervisningsspråk. Politiet skyter. Hector Pieterson (13) dør."
+                        "description": "Skoleelever i Soweto protesterer mot afrikaans som undervisningsspråk. Politiet skyter. Hector Pieterson (12) dør."
                     },
                     {
                         "date": "1990",
                         "title": "Mandela løslates",
-                        "description": "Etter 27 år i fengsel går Nelson Mandela ut av Victor Verster-fengslet."
+                        "description": "Etter 27 år i fengsel blir Nelson Mandela løslatt."
                     },
                     {
                         "date": "1994",
@@ -96,7 +96,7 @@
         },
         {
             "type": "text",
-            "content": "21. mars 1960 samlet tusenvis av mennesker seg i Sharpeville utenfor Johannesburg for å protestere mot passlovene. De hadde med seg passboker – ikke for å vise dem frem, men for å brenne dem. De ville bli arrestert uten bøker, og slik tette fengslene og vise at systemet var uholdbart.\n\nPolitiet åpnet ild. 69 mennesker ble drept – de fleste skutt i ryggen mens de flyktet. Over 180 ble skadet. Bildene av de døde gikk verden rundt. Afrikansk nasjonalkongress (ANC) ble forbudt. Og Nelson Mandela, som til da hadde trodd på fredelig motstand, bestemte seg for at det ikke lenger var nok.\n\nSeksten år seinere, i 1976, gikk skoleelever i Soweto ut i gatene for å protestere mot et vedtak om at undervisningen i svarte skoler skulle skje på afrikaans – kolonistenes språk, hatet som undertrykkernes tungemål. Politiet skjøt også denne gangen. Et av de første ofrene var 13 år gamle Hector Pieterson. Fotografiet av ham, båret av en eldre gutt mens søsteren løper ved siden av, ble et av historiens mest kjente bilder."
+            "content": "21. mars 1960 samlet tusenvis av mennesker seg i Sharpeville utenfor Johannesburg for å protestere mot passlovene. De hadde med seg passboker - ikke for å vise dem frem, men for å brenne dem. De ville bli arrestert uten bøker, og slik tette fengslene og vise at systemet var uholdbart.\n\nPolitiet åpnet ild. 69 mennesker ble drept (Leraand & Tjønneland, 2026). Den offisielle granskingen slo fast at 180 ble alvorlig såret, og vitner fortalte at mange ble skutt i ryggen mens de flyktet (South African History Online, 2026b). Bildene av de døde gikk verden rundt. I april 1960 forbød myndighetene Afrikansk nasjonalkongress (ANC), og ANC-ledelsen bestemte seg for at fredelig motstand ikke lenger var nok. Året etter opprettet de en væpnet gren (Leraand & Tjønneland, 2026).\n\nSeksten år seinere, i 1976, gikk skoleelever i Soweto ut i gatene for å protestere mot et vedtak om at undervisningen i svarte skoler skulle skje på afrikaans - språket til dem som styrte, hatet som undertrykkernes tungemål. Politiet skjøt også denne gangen. Et av de første ofrene var 12 år gamle Hector Pieterson (Leong, 2026). Fotografiet av ham, båret av en eldre gutt mens søsteren løper ved siden av, ble et av historiens mest kjente bilder. I løpet av året ble flere hundre mennesker drept i Soweto, og opprøret spredte seg til store deler av landet (Tjønneland, 2025b)."
         },
         {
             "type": "component",
@@ -111,20 +111,20 @@
                         "text": "Det ryktes at elevene ved nærliggende skoler planlegger en stor demonstrasjon mot afrikaans-påbudet. Din beste venn vil dra. Han sier: «Det er nå eller aldri. Hvis vi ikke sier ifra, gjør ingen det».\n\nHva gjør du?",
                         "options": [
                             { "label": "Bli med i demonstrasjonen", "nextId": "demonstrasjon" },
-                            { "label": "Hold deg hjemme – det er for farlig", "nextId": "hjemme" }
+                            { "label": "Hold deg hjemme - det er for farlig", "nextId": "hjemme" }
                         ]
                     },
                     {
                         "id": "demonstrasjon",
                         "text": "Du og vennen din slutter deg til hundrevis av elever som marsjerer gjennom Soweto. Det er sang og plakater. Stemningen er sterk.\n\nSå kommer politibiler. Noen kaster stein. Du hører skudd.\n\nDu kaster deg ned bak en mur. Når du titter frem, ser du en gutt ligge på bakken. Han er ikke mye eldre enn deg.",
                         "options": [
-                            { "label": "Løp dit – han trenger hjelp", "nextId": "hjelp" },
-                            { "label": "Løp hjem – det er for farlig", "nextId": "flykt" }
+                            { "label": "Løp dit - han trenger hjelp", "nextId": "hjelp" },
+                            { "label": "Løp hjem - det er for farlig", "nextId": "flykt" }
                         ]
                     },
                     {
                         "id": "hjelp",
-                        "text": "Du og en eldre gutt løfter den skadde tenåringen. Dere bærer ham mot en bil. Noen tar bilder. Du vet ikke at det bildet skal bli en av historiens mest kjente fotografier, og at gutten – Hector Pieterson – allerede er borte.\n\nDenne dagen forandret Sør-Afrika. Bildene gikk verden rundt. Verden fikk se hva apartheid egentlig var.",
+                        "text": "Du og en eldre gutt løfter den skadde tenåringen. Dere bærer ham mot en bil. Noen tar bilder. Du vet ikke at det bildet skal bli en av historiens mest kjente fotografier, og at gutten - Hector Pieterson - allerede er borte.\n\nDenne dagen forandret Sør-Afrika. Bildene gikk verden rundt. Verden fikk se hva apartheid egentlig var.",
                         "options": []
                     },
                     {
@@ -134,7 +134,7 @@
                     },
                     {
                         "id": "hjemme",
-                        "text": "Du holder deg hjemme. Du er nervøs hele dagen.\n\nPå ettermiddagen hører du skudd i det fjerne. Vennen din kommer ikke hjem til avtalt tid. Timer seinere ringer det på døren – det er en nabo. Vennen din er på sykehus. Han ble truffet, men overlever.\n\nDen dagen forandret noe i deg. Du skjønte at å ikke ta et valg også er et valg.",
+                        "text": "Du holder deg hjemme. Du er nervøs hele dagen.\n\nPå ettermiddagen hører du skudd i det fjerne. Vennen din kommer ikke hjem til avtalt tid. Timer seinere ringer det på døren - det er en nabo. Vennen din er på sykehus. Han ble truffet, men overlever.\n\nDen dagen forandret noe i deg. Du skjønte at å ikke ta et valg også er et valg.",
                         "options": []
                     }
                 ]
@@ -146,15 +146,15 @@
         },
         {
             "type": "text",
-            "content": "I 1964 ble Nelson Mandela og syv andre ANC-ledere dømt til livsvarig fengsel for sabotasje mot apartheid-staten. Han ble sendt til Robben Island, en fengselsfestning i havet utenfor Cape Town. I 18 år knuste han stein i et steinbrudd. Han fikk én besøk i halvåret, og brevene hans ble sensurert.\n\nMen Mandela satt ikke i stillhet. Fra fengselet ledet han ANC gjennom beskjeder smuglet ut av fengselsmurene. Og ute i verden vokste bevegelsen mot apartheid: Handelsembargo, idrettsbojkott, kulturell isolasjon. Sør-Afrika ble mer og mer ensomme i verden.\n\nFeb 1990: Etter 27 år gikk Nelson Mandela ut av Victor Verster-fengslet. Håret hadde blitt grått, men blikket var det samme. Fire år seinere, 27. april 1994, sto millioner av sørafrikanere i kø for å stemme for første gang i livet. Valget varte i dager. Mandela ble president."
+            "content": "I 1964 ble Nelson Mandela dømt til livsvarig fengsel for sabotasje mot apartheidstaten, sammen med flere andre ANC-ledere, blant dem Walter Sisulu og Govan Mbeki. Han ble sendt til Robben Island, en fengselsøy i havet utenfor Cape Town, og satt der i 18 år før han ble flyttet til Pollsmoor-fengselet på fastlandet (Leraand mfl., 2025).\n\nMen Mandela ble ikke glemt. Ute i verden vokste bevegelsen mot apartheid: handelsboikott, idrettsboikott, kulturell isolasjon. Sør-Afrika ble mer og mer alene i verden.\n\nEtter stort press hjemmefra og fra utlandet, og med apartheidregimet i politisk krise, ble Nelson Mandela løslatt i 1990, etter 27 år bak murene (Leraand mfl., 2025). Håret hadde blitt grått, men blikket var det samme. Fire år seinere, 27. april 1994, sto millioner av sørafrikanere i kø for å stemme i landets første frie, demokratiske valg (Tjønneland, 2024). Mandela ble president."
         },
         {
             "type": "header",
-            "text": "Endt – men ikke over"
+            "text": "Endt - men ikke over"
         },
         {
             "type": "text",
-            "content": "Apartheid tok slutt i 1994. Men det tok ikke slutt på ulikheten. Soweto finnes fortsatt. Townships finnes fortsatt. Sør-Afrika har i dag en av verdens høyeste inntektsforskjeller mellom fattig og rik – og grensen mellom fattig og rik følger i stor grad fortsatt de gamle rasegrensene.\n\nDette er det apartheidlignende systemer alltid etterlater seg: Lovene kan oppheves over natten, men de strukturene som ble bygget over generasjoner – hvem som eier land, hvem som fikk utdannelse, hvem som fikk bygge kapital – de tar generasjoner å jevne ut. Som i Belfast, som i USA, som på Kypros: Det er lettere å ta ned en mur enn å ta bort det muren etterlot seg i hodene til folk."
+            "content": "Apartheid tok slutt i 1994. Men det tok ikke slutt på ulikheten. Soweto finnes fortsatt. Townships finnes fortsatt. Selv om apartheidtiden er over, er det fremdeles store sosiale og økonomiske forskjeller mellom folkegruppene i Sør-Afrika: hvite har i snitt klart høyere inntekt og formue enn folk med mørkere hud, og arbeidsledigheten er høy (FN-sambandet, 2022).\n\nDette er det apartheidlignende systemer alltid etterlater seg: Lovene kan oppheves over natten, men de strukturene som ble bygget over generasjoner - hvem som eier land, hvem som fikk utdannelse, hvem som fikk bygge kapital - de tar generasjoner å jevne ut. Som i Belfast, som i USA, som på Kypros: Det er lettere å ta ned en mur enn å ta bort det muren etterlot seg i hodene til folk."
         },
         {
             "type": "component",
@@ -167,13 +167,13 @@
                     "Hvor lenge satt Nelson Mandela i fengsel, og på hvilken øy sonet han mesteparten av tiden?"
                 ],
                 "reflekter": [
-                    "Forklar hvordan Population Registration Act og «blyanttesten» kunne splitte en familie ved at søsken ble klassifisert ulikt.",
-                    "Teksten sier at passbok-systemet var «designet for å kontrollere arbeidskraft». Forklar med egne ord hvordan systemet knyttet svarte sørafrikaneres bevegelsesfrihet til at de tjenestegjorde hvite.",
+                    "Forklar hvordan Population Registration Act og måten tjenestemennene vurderte utseendet på, kunne splitte en familie ved at søsken ble klassifisert ulikt.",
+                    "Teksten sier at passbok-systemet var «laget for å kontrollere arbeidskraft». Forklar med egne ord hvordan systemet knyttet svarte sørafrikaneres bevegelsesfrihet til at de arbeidet for hvite.",
                     "I Soweto i 1976 protesterte elevene fordi undervisningen skulle skje på afrikaans. Hvorfor ble nettopp språket en så sterk grunn til opprør?",
                     "Artikkelen sier at apartheid tok slutt i 1994, men at ulikheten ikke tok slutt. Forklar hvorfor lover kan oppheves over natten, mens strukturene de skapte tar generasjoner å jevne ut."
                 ],
                 "gaaVidere": [
-                    "Sør-Afrika har i dag noen av verdens største inntektsforskjeller, og grensen mellom fattig og rik følger fortsatt gamle rasegrenser. Finn ut hvordan Sør-Afrika ser ut i dag, og skriv noen setninger om hva som har endret seg og hva som ikke har det.",
+                    "Det er fremdeles store økonomiske forskjeller mellom folkegruppene i Sør-Afrika. Finn ut hvordan landet ser ut i dag, og skriv noen setninger om hva som har endret seg og hva som ikke har det.",
                     "Skriv en kort tekst (5-8 setninger) der du sammenligner apartheid med Jim Crow-lovene i USA. Hva var likt, og hva gjorde apartheid mer systematisk?",
                     "Diskuter med en partner: Bildet av Hector Pieterson gikk verden rundt og forandret hvordan verden så på apartheid. Hvorfor kan ett enkelt bilde få så stor makt?"
                 ]
@@ -226,6 +226,24 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "FN-sambandet. (2022). *Sør-Afrika*. Hentet 25.07.2026 fra [fn.no/land/soer-afrika](https://www.fn.no/land/soer-afrika)",
+                    "Leong, E. (2026). *Hector Pieterson*. Encyclopaedia Britannica. Hentet 25.07.2026 fra [britannica.com](https://www.britannica.com/biography/Hector-Pieterson)",
+                    "Leraand, D., Millstein, M. & Kjølås, H. (2025). *Nelson Mandela*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Nelson_Mandela](https://snl.no/Nelson_Mandela)",
+                    "Leraand, D. & Tjønneland, E. (2026). *ANC - African National Congress*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/ANC](https://snl.no/ANC_-_African_National_Congress)",
+                    "McKenna, A. (u.å.). *Population Registration Act*. Encyclopaedia Britannica. Hentet 25.07.2026 fra [britannica.com](https://www.britannica.com/topic/Population-Registration-Act)",
+                    "South African History Online. (2026a). *Forced removals in South Africa*. Hentet 25.07.2026 fra [sahistory.org.za](https://sahistory.org.za/article/forced-removals-south-africa)",
+                    "South African History Online. (2026b). *Sharpeville massacre, 21 March 1960*. Hentet 25.07.2026 fra [sahistory.org.za](https://www.sahistory.org.za/article/sharpeville-massacre-21-march-1960)",
+                    "Tjønneland, E. (2024). *Sør-Afrikas historie*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Sør-Afrikas_historie](https://snl.no/S%C3%B8r-Afrikas_historie)",
+                    "Tjønneland, E. (2025a). *Apartheid*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/apartheid](https://snl.no/apartheid)",
+                    "Tjønneland, E. (2025b). *Soweto*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Soweto](https://snl.no/Soweto)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -265,5 +283,5 @@
         }
     ],
     "createdDate": "2026-04-08T00:00:00Z",
-    "lastUpdated": "2026-04-08T00:00:00Z"
+    "lastUpdated": "2026-07-25T00:00:00Z"
 }
