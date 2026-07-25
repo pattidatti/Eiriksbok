@@ -5,7 +5,7 @@
     "year": "360 fvt",
     "category": "Historiens store gåter",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/atlantis-hero.webp",
     "details": [
         "Alt vi vet om Atlantis, kommer fra to tekster av den greske filosofen Platon. Ingen andre kilder nevner øya.",
         "Platon beskrev en ringby med borg, kanaler og et tempel for havguden Poseidon - og lot den synke i havet på ett døgn.",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/atlantis-01.webp",
             "alt": "Ringformet antikk by med kanaler sett fra lufta over havet",
             "caption": "Slik beskrev Platon hovedstaden i Atlantis: ringer av land og vann rundt en borg midt i byen."
         },
@@ -127,7 +127,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/atlantis-02.webp",
             "alt": "Utgravd bronsealderby med gater og steinhus under askelag",
             "caption": "Akrotiri på Santorini ble begravd i aske. Her kan arkeologene faktisk grave og finne noe."
         },
@@ -157,7 +157,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/atlantis-03.webp",
             "alt": "Tom havflate med rolige bølger under lys himmel",
             "caption": "Der Atlantis skulle ha ligget, finner vi bare hav. Det er også et svar."
         },
