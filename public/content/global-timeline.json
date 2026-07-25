@@ -7233,7 +7233,7 @@
       "description": "Holocaust og det industrielle massemordet.",
       "startDate": 1933,
       "endDate": 1945,
-      "displayDate": "1933–1945",
+      "displayDate": "1933-1945",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "andre-verdenskrig",
@@ -7441,7 +7441,7 @@
       "description": "Fra Blitzkrieg til atombomben.",
       "startDate": 1939,
       "endDate": 1945,
-      "displayDate": "1939–1945",
+      "displayDate": "1939-1945",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "andre-verdenskrig",
@@ -7465,6 +7465,23 @@
       "tags": [
         "teknologi",
         "våpen"
+      ]
+    },
+    {
+      "id": "konsentrasjonsleirene-sub-4",
+      "title": "Aktion T4",
+      "description": "Eutanasi-programmet som ble en forløper til gasskamrene.",
+      "startDate": 1939,
+      "endDate": 1941,
+      "displayDate": "1939-1941",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "andre-verdenskrig",
+      "link": "/historie/andre-verdenskrig/konsentrasjonsleirene",
+      "tags": [
+        "holocaust",
+        "folkemord",
+        "auschwitz"
       ]
     },
     {
@@ -7551,23 +7568,6 @@
       "placeLabel": "Indonesia",
       "placeCountryId": 360,
       "geoConfidence": "tag"
-    },
-    {
-      "id": "konsentrasjonsleirene-sub-4",
-      "title": "Aktion T4",
-      "description": "Eutanasi-programmet som ble en forløper til gasskamrene.",
-      "startDate": 1941,
-      "endDate": null,
-      "displayDate": "1941",
-      "type": "sub-event",
-      "subjectId": "historie",
-      "topicId": "andre-verdenskrig",
-      "link": "/historie/andre-verdenskrig/konsentrasjonsleirene",
-      "tags": [
-        "holocaust",
-        "folkemord",
-        "auschwitz"
-      ]
     },
     {
       "id": "stalingrad",
