@@ -4,7 +4,7 @@
   "subject": "historie",
   "topic": "andre-verdenskrig",
   "layout": "rich",
-  "year": "1939–1945",
+  "year": "1939-1945",
   "category": "Krigføring",
   "readTime": "25 min lesning",
   "heroImage": "/images/historie/andre-verdenskrig/krigens_lop_hero.webp",
@@ -19,7 +19,7 @@
   "content": [
     {
       "type": "text",
-      "content": "Andre verdenskrig kan grovt deles inn i to faser: Aksemaktenes fremmarsj (1939–1942) og de alliertes motoffensiv (1943–1945). Krigen startet som en europeisk konflikt, men utvidet seg raskt til en global brann som involverte kamper på alle verdenshav og kontinenter unntatt Antarktis."
+      "content": "Andre verdenskrig kan grovt deles inn i to faser: Aksemaktenes fremmarsj (1939-1942) og de alliertes motoffensiv (1943-1945). Krigen startet som en europeisk konflikt, men utvidet seg raskt til en global brann som involverte kamper på alle verdenshav og kontinenter unntatt Antarktis."
     },
     {
       "type": "header",
@@ -27,7 +27,7 @@
     },
     {
       "type": "text",
-      "content": "Da Tyskland invaderte Polen 1. september 1939, demonstrerte de en ny og skremmende form for krigføring: Blitzkrieg (lynkrig). I stedet for skyttergravenes stillstand, brukte tyskerne raske stridsvogner støttet av stupbombefly for å slå hull i fiendens linjer og skape kaos. Polen falt på under en måned.\n\nVåren 1940 vendte Hitler blikket mot vest. 9. april ble Danmark og Norge invadert for å sikre baser og jernmalmtransport. I mai angrep tyskerne Nederland, Belgia og Frankrike. Til alles sjokk kollapset den franske hæren, som ble regnet som en av verdens sterkeste, på bare seks uker. Britiske styrker måtte evakueres i all hast fra strendene ved Dunkerque. Hitler var nå herre over nesten hele det kontinentale Europa."
+      "content": "Da Tyskland invaderte Polen 1. september 1939, demonstrerte de en ny og skremmende form for krigføring: Blitzkrieg (lynkrig). I stedet for skyttergravenes stillstand brukte tyskerne motoriserte avdelinger, stridsvogner og sterk flystøtte til å slå hull i fiendens linjer og ødelegge evnen hans til å lede og forsyne styrkene sine (Høiback, 2025). Polen var slått i løpet av noen få uker - men Sovjetunionen angrep også fra øst, og det bidro til den raske tyske seieren (Høiback, 2025).\n\nVåren 1940 vendte Hitler blikket mot vest. 9. april ble Danmark og Norge invadert. Tyskland ville ha baser for krigsskip med tilgang til Atlanterhavet, og kontroll over den svenske jernmalmen som ble skipet ut over Narvik (Grimnes, 2026). I mai angrep tyskerne Nederland, Belgia og Frankrike. Til alles sjokk kollapset den franske hæren, som ble regnet som en av verdens sterkeste, på seks uker: Paris falt 14. juni, og våpenhvilen ble undertegnet 22. juni 1940 (Hatlehol, 2025a). Britiske styrker måtte evakueres i all hast fra strendene ved Dunkerque. Hitler var nå herre over nesten hele det kontinentale Europa."
     },
     {
       "type": "component",
@@ -40,7 +40,7 @@
     },
     {
       "type": "text",
-      "content": "Storbritannia sto nå alene. Hitler planla en invasjon (Operasjon Sjøløve), men han måtte først kontrollere luftrommet. Sommeren og høsten 1940 kjempet det britiske flyvåpenet (RAF) en desperat kamp mot det tyske Luftwaffe over Sør-England. Takket være radarteknologi og modige piloter klarte britene å påføre tyskerne store tap. Hitler måtte utsette invasjonen på ubestemt tid. Dette var hans første store nederlag."
+      "content": "Storbritannia sto nå alene. I juli 1940 ga Hitler ordre om å forberede en landgang (Operasjon Sjøløve), men han måtte først kontrollere luftrommet. Sommeren og høsten 1940 kjempet det britiske flyvåpenet (RAF) en desperat kamp mot det tyske Luftwaffe over Sør-England. Britene hadde bare rundt 640 jagerfly, mens Luftwaffe rådde over nesten 2800 fly (Sæveraas, 2025). Likevel tapte tyskerne flest: 1099 fly mot RAFs 678 jagere. De britiske radarstasjonene og varslingssystemet spilte en stor rolle i utfallet (Sæveraas, 2025). 17. september 1940 bestemte Hitler seg for å utsette invasjonen på ubestemt tid (Sæveraas, 2025). Dette var hans første store nederlag."
     },
     {
       "type": "header",
@@ -48,7 +48,7 @@
     },
     {
       "type": "text",
-      "content": "I 1941 tok krigen to dramatiske vendinger. Den 22. juni brøt Hitler pakten med Stalin og invaderte Sovjetunionen med tre millioner soldater. Operasjon Barbarossa var historiens største invasjon. Tyskerne trengte dypt inn i Russland og sto ved portene til Moskva samme vinter, men ble stoppet av den russiske vinteren og innbitt sovjetisk motstand.\n\nDen 7. desember 1941 gjennomførte Japan et overraskelsesangrep på den amerikanske flåtebasen Pearl Harbor på Hawaii. USA, som frem til da hadde vært nøytrale, ble med dette kastet inn i krigen. Nå sto verdens mektigste industrimakt på de alliertes side."
+      "content": "I 1941 tok krigen to dramatiske vendinger. Den 22. juni brøt Hitler pakten med Stalin og satte inn en invasjonshær på tre millioner soldater mot Sovjetunionen (Hatlehol, 2025a). Operasjon Barbarossa gikk fram på tre fronter, mot Leningrad, Moskva og Ukraina. Tyskerne trengte dypt inn i Sovjetunionen og sto ved portene til Moskva samme vinter, men ble stoppet av vinterkulda og innbitt sovjetisk motstand. Lynkrigen virket ikke lenger: mot en motstander med nok ressurser og nok land å trekke seg tilbake i, rakk ikke det tyske stormløpet fram (Høiback, 2025).\n\nDen 7. desember 1941 gjennomførte Japan et overraskelsesangrep på den amerikanske flåtebasen Pearl Harbor på Hawaii. Angrepet var den direkte foranledningen til at USA kom med i andre verdenskrig, og allerede dagen etter vedtok Kongressen nesten enstemmig å erklære Japan krig (Hatlehol, 2025b). Nå sto verdens mektigste industrimakt på de alliertes side."
     },
     {
       "type": "header",
@@ -56,16 +56,16 @@
     },
     {
       "type": "text",
-      "content": "Krigen snudde i løpet av en periode på seks måneder:"
+      "content": "Krigen snudde i en serie avgjørende slag. Verst av dem alle var Stalingrad: den tyske 6. armé ble omringet i den sønderbombede byen, og restene kapitulerte 2. februar 1943. Rundt 113 000 soldater gikk i sovjetisk fangenskap, blant dem feltmarskalk Friedrich Paulus (Rønning & Mjør, 2025). Etter Stalingrad var det klart at Tysklands angrepskraft hadde passert toppunktet, og at Nazi-Tyskland trolig kom til å tape krigen (Rønning & Mjør, 2025)."
     },
     {
       "type": "list",
       "ordered": false,
       "items": [
-        "Juni 1942: Midway – Japan mister initiativet i Stillehavet.",
-        "Okt 1942: El Alamein – Britisk seier i Nord-Afrika.",
-        "Feb 1943: Stalingrad – Tysklands første store nederlag.",
-        "Juni 1944: D-dagen – Invasjonen av Normandie."
+        "Juni 1942: Midway - Japan mister initiativet i Stillehavet.",
+        "Okt-nov 1942: El Alamein - britisk seier i Nord-Afrika.",
+        "Feb 1943: Stalingrad - Tysklands første store nederlag på Østfronten.",
+        "Juni 1944: D-dagen - invasjonen av Normandie."
       ]
     },
     {
@@ -74,7 +74,7 @@
     },
     {
       "type": "text",
-      "content": "De allierte begynte nå å frigjøre Europa. Først invaderte de Italia i 1943, noe som førte til Mussolinis fall. Deretter kom den store invasjonen av Frankrike. D-dagen, 6. juni 1944, gikk allierte styrker i land på strendene i Normandie. Det var den største amfibiske operasjonen i historien. Tyskerne ble nå presset fra to kanter: av amerikanere og briter fra vest, og av den røde armé fra øst."
+      "content": "De allierte begynte nå å frigjøre Europa. Først invaderte de Italia i 1943, noe som førte til Mussolinis fall. Deretter kom den store invasjonen av Frankrike. D-dagen, 6. juni 1944, gikk allierte styrker i land på strendene i Normandie og sikret seg et brohode (Hatlehol, 2025a). Tyskerne ble nå presset fra to kanter: av amerikanere og briter fra vest, og av Den røde armé fra øst."
     },
     {
       "type": "header",
@@ -82,7 +82,7 @@
     },
     {
       "type": "text",
-      "content": "Våren 1945 kollapset Det tredje riket. Sovjetiske styrker kjempet seg inn i Berlins gater. I en bunker under rikskanselliet begikk Adolf Hitler selvmord 30. april. Tyskland kapitulerte betingelsesløst 8. mai 1945 (Frigjøringsdagen).\n\nI Asia fortsatte fanatiske japanske styrker å kjempe, til tross for at de var i ferd med å tape. USA fryktet at en invasjon av Japan ville koste hundretusener av amerikanske liv. President Harry S. Truman tok avgjørelsen om å bruke det nye atomvåpenet. 6. august falt den første bomben over Hiroshima, og 9. august falt den andre over Nagasaki. Japan kapitulerte 15. august, og andre verdenskrig var over."
+      "content": "Våren 1945 kollapset Det tredje riket. Sovjetiske styrker kjempet seg inn i Berlins gater. I en bunker under rikskanselliet begikk Adolf Hitler selvmord 30. april (Hatlehol, 2025a). Tyskland kapitulerte betingelsesløst 7.-8. mai 1945, og i Norge er 8. mai Frigjøringsdagen (Hatlehol, 2025a).\n\nI Asia fortsatte japanske styrker å kjempe, til tross for at de var i ferd med å tape. USA fryktet at en invasjon av Japan ville koste hundretusener av amerikanske liv. President Harry S. Truman tok avgjørelsen om å bruke det nye atomvåpenet. 6. august falt den første bomben over Hiroshima, og 9. august falt den andre over Nagasaki. Japan kapitulerte i midten av august, og den formelle overgivelsen ble undertegnet 2. september 1945 (Hatlehol, 2025a)."
     },
     {
         "type": "component",
@@ -106,8 +106,22 @@
                 "Diskuter i klassen: Bør atombombene over Hiroshima og Nagasaki forstås som det som avsluttet krigen, eller som en menneskelig katastrofe? Kan begge deler være sant samtidig?"
             ]
         }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Grimnes, O. K. (2026). *Norge under andre verdenskrig*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Norge_under_andre_verdenskrig](https://snl.no/Norge_under_andre_verdenskrig)",
+          "Hatlehol, G. D. (2025a). *Andre verdenskrig*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/andre_verdenskrig](https://snl.no/andre_verdenskrig)",
+          "Hatlehol, G. D. (2025b). *Pearl Harbor*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Pearl_Harbor](https://snl.no/Pearl_Harbor)",
+          "Høiback, H. (2025). *Blitzkrieg*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/blitzkrieg](https://snl.no/blitzkrieg)",
+          "Rønning, O. M. & Mjør, K. J. (2025). *Stalingrad*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Stalingrad](https://snl.no/Stalingrad)",
+          "Sæveraas, T. E. (2025). *Slaget om Storbritannia*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Slaget_om_Storbritannia](https://snl.no/Slaget_om_Storbritannia)"
+        ]
+      }
     }
   ],
   "createdDate": "2025-12-21T15:20:00Z",
-  "lastUpdated": "2025-12-21T15:20:00Z"
+  "lastUpdated": "2026-07-25T00:00:00Z"
 }
