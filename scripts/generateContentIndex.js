@@ -43,7 +43,11 @@ function scanDirectory(dir) {
                 'kultur', 'opptakt', 'krigens-lop', 'frelse', 'bønn', 'bonn',
                 'grunnleggere', 'gudsbilde', 'hellige-tekster', 'overgangsriter',
                 'sentrale-trekk', 'artikkel', 'skapelse', 'berlinmuren', 'svartedauden',
-                'arbeidsspesialisering', 'urbanisering'
+                'arbeidsspesialisering', 'urbanisering',
+                // Maskingenererte oversiktsfiler heter ofte index.json. Uten
+                // forelder-kontekst ville den første få nøkkelen «index», og
+                // den neste - i en helt annen mappe - ville kollidert med den.
+                'index'
             ];
 
             const filenameNoExt = path.basename(file, '.json').toLowerCase();
