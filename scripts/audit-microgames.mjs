@@ -94,8 +94,12 @@ const summary = [];
 // «/», men på en kald kjøring (CI, tomt node_modules/.vite) må Vite transformere
 // hele modultreet ved første sidelast. Uten oppvarming betaler det FØRSTE spillet
 // i lista den regningen og ryker på 30s-timeouten - uansett hvilket spill det er.
+// NB: vent til nettverket er stille før løkka. Navigerer vi videre mens
+// main.tsx fortsatt henter manifest/registry, avbrytes de kallene, og
+// «Failed to fetch» blir feilaktig bokført på det første spillet.
 try {
-    await page.goto(baseUrl, { waitUntil: 'domcontentloaded', timeout: 180000 });
+    await page.goto(baseUrl, { waitUntil: 'load', timeout: 180000 });
+    await page.waitForLoadState('networkidle', { timeout: 60000 });
 } catch {
     /* oppvarming er best effort - la spill-løkka rapportere ekte feil */
 }
