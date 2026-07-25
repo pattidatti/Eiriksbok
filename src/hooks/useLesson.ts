@@ -15,6 +15,14 @@ export const useLesson = (subjectId: string, topicId: string, lessonId: string, 
         staleTime: 0,
         refetchOnWindowFocus: true,
         refetchOnReconnect: true,
+        // Eleven som blir sittende på artikkelen uten å navigere eller bytte
+        // fane får den likevel oppdatert. Revalideringen koster ~110 bytes, og
+        // React Query gjenbruker objektet når innholdet er uendret, så det
+        // utløser ingen re-render i normaltilfellet.
+        // refetchIntervalInBackground er bevisst ikke satt: React Query pauser
+        // da intervallet når fanen er skjult, og refetchOnWindowFocus tar seg
+        // av oppdateringen når eleven kommer tilbake.
+        refetchInterval: 1000 * 60,
         gcTime: 1000 * 60 * 60 * 24, // 24 hours
         // Ikke retry når leksjonen beviselig ikke finnes - kun ved nettverksfeil
         retry: (failureCount, error) =>
