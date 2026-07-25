@@ -6,7 +6,7 @@
     "year": "500",
     "category": "Historiens store gåter",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/kong-arthur-hero.webp",
     "details": [
         "Arthur skal ha levd rundt år 500, men navnet hans dukker ikke opp i noen kilde før på 800-tallet.",
         "Jo lenger unna år 500 kildene er skrevet, jo flere detaljer «vet» de om ham.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/kong-arthur-01.webp",
             "alt": "Tåkelagt britisk landskap med rester av en trefort på en høyde",
             "caption": "Britannia rundt år 500. Dette er landskapet Arthur skal ha kjempet i - men ingen kilde fra tiden nevner ham."
         },
@@ -97,7 +97,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/kong-arthur-02.webp",
             "alt": "Munker graver i klosterhagen mens pilegrimer ser på",
             "caption": "Glastonbury 1191. Funnet av «Arthurs grav» kom sju år etter brannen, akkurat da klosteret trengte penger."
         },
@@ -159,7 +159,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/kong-arthur-03.webp",
             "alt": "Stor borg i tåke over et lite ruinfundament i forgrunnen",
             "caption": "Camelot i horisonten, og det lille som faktisk finnes av spor i forgrunnen. Legenden er stor. Grunnlaget er tynt."
         },
