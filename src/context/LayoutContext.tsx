@@ -26,6 +26,7 @@ const FULL_WIDTH_PATHS = [
     '/oving/spill/',
     '/musikk/gitarstudio',
     '/himmel',
+    '/oving/kjedereaksjonen',
 ];
 
 export const LayoutProvider: React.FC<{ children: ReactNode }> = ({ children }) => {

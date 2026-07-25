@@ -1,0 +1,97 @@
+{
+    "id": "svartedauden",
+    "title": "Svartedauden",
+    "subjectId": "historie",
+    "topicId": "middelalderen",
+    "epoke": "Middelalderen",
+    "kulisse": "middelalder",
+    "ingress": "Ett skip la til kai i Bergen. Følg sporet fra pesten til unionen med Danmark.",
+    "start": "Norge i 1348: rundt 350 000 mennesker, og nesten alle lever av jorda.",
+    "slutt": "Det tok over 200 år før Norge var like folkerikt som i 1348.",
+    "ledd": [
+        {
+            "tekst": "Pesten kommer til Bergen i 1349 med et handelsskip fra England.",
+            "link": "/historie/middelalderen/svartedauden",
+            "feil": [
+                {
+                    "tekst": "Kongen stenger grensene og holder pesten ute.",
+                    "hvorfor": "Ingen visste hva som spredte pesten. Skipene fikk seile inn som før."
+                },
+                {
+                    "tekst": "Legene finner en kur i løpet av året.",
+                    "hvorfor": "Ingen kjente til bakterier. Legene trodde pesten kom av dårlig luft."
+                }
+            ]
+        },
+        {
+            "tekst": "Omtrent halvparten av alle i Norge dør i løpet av få år.",
+            "link": "/historie/middelalderen/svartedauden",
+            "feil": [
+                {
+                    "tekst": "Folk flytter inn til byene for å få hjelp.",
+                    "hvorfor": "Det motsatte skjedde. Byene var farligst, for der bodde folk tettest."
+                },
+                {
+                    "tekst": "Bare de fattigste blir rammet.",
+                    "hvorfor": "Pesten skilte ikke på folk. Både prester, biskoper og rike kjøpmenn døde."
+                }
+            ]
+        },
+        {
+            "tekst": "Tusenvis av gårder blir stående tomme. De kalles ødegårder.",
+            "link": "/historie/middelalderen/svartedauden",
+            "feil": [
+                {
+                    "tekst": "Bøndene rydder ny jord i utmarka.",
+                    "hvorfor": "Ingen trengte mer jord. Halvparten av gårdene som fantes sto allerede tomme."
+                },
+                {
+                    "tekst": "Kongen selger de tomme gårdene til utlendinger.",
+                    "hvorfor": "Det fantes ingen kjøpere. En gård uten folk til å drive den var verdiløs."
+                }
+            ]
+        },
+        {
+            "tekst": "De som overlever kan velge den beste jorda og kreve bedre vilkår.",
+            "link": "/historie/middelalderen/svartedauden",
+            "feil": [
+                {
+                    "tekst": "Herremennene tvinger bøndene til å jobbe hardere.",
+                    "hvorfor": "De prøvde, men bonden kunne bare gå til en annen gård. Det var folk det manglet."
+                },
+                {
+                    "tekst": "Bøndene mister rettighetene sine.",
+                    "hvorfor": "Bøndene fikk mer å si. Når det er få arbeidsfolk, blir arbeidet verdt mer."
+                }
+            ]
+        },
+        {
+            "tekst": "Kongen får inn langt mindre skatt enn før.",
+            "link": "/historie/middelalderen/svartedauden",
+            "feil": [
+                {
+                    "tekst": "Kongen setter opp skatten og får inn like mye.",
+                    "hvorfor": "Han prøvde. Men det hjelper lite å skattlegge gårder der det ikke bor noen."
+                },
+                {
+                    "tekst": "Kirken betaler skatten for bøndene.",
+                    "hvorfor": "Kirken mistet inntektene sine også. Mange kirker sto uten prest i årevis."
+                }
+            ]
+        },
+        {
+            "tekst": "Norge blir for fattig til å stå alene, og havner i union med Danmark.",
+            "link": "/historie/middelalderen/middelalderen",
+            "feil": [
+                {
+                    "tekst": "Norge samler seg og blir sterkere enn før.",
+                    "hvorfor": "Folketallet brukte over 200 år på å ta seg inn. Norge var svakt hele veien."
+                },
+                {
+                    "tekst": "Sverige tar over Norge med makt.",
+                    "hvorfor": "Ingen erobret Norge. Kongeslekten døde ut, og arven gikk til Danmark."
+                }
+            ]
+        }
+    ]
+}
