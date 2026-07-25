@@ -16,7 +16,7 @@
         {
             "year": "1947",
             "title": "UGCC dannes",
-            "description": "Det første nasjonalistpartiet i Gullkysten."
+            "description": "Nasjonalistpartiet UGCC dannes i Gullkysten. Nkrumah bryter ut året etter og starter partiet CPP."
         },
         {
             "year": "1957",
@@ -26,7 +26,7 @@
         {
             "year": "1963",
             "title": "OAU opprettes",
-            "description": "Organisasjonen for afrikansk enhet grunnlegges i Addis Abeba."
+            "description": "Organisasjonen for afrikansk enhet stiftes 25. mai i Addis Abeba."
         },
         {
             "year": "1966",
@@ -37,7 +37,7 @@
     "content": [
         {
             "type": "text",
-            "content": "6. mars 1957 var en merkedag. Det britiske flagget ble firt i Accra, og flagget til det nye landet Ghana gikk til topps. Det var det første landet i Afrika sør for Sahara som brøt lenkene til kolonimakten. Mannen bak triumfen var Kwame Nkrumah."
+            "content": "6. mars 1957 var en merkedag. Det britiske flagget ble firt i Accra, og flagget til det nye landet Ghana gikk til topps. Kolonien Gullkysten var blitt Ghana - den første av de europeiske koloniene sør for Sahara som ble en fri stat (Leraand, 2025a). Mannen bak triumfen var Kwame Nkrumah."
         },
         {
             "type": "header",
@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "Nkrumahs motto var: «Søk først det politiske kongeriket, så skal alt annet gis dere.» Han mente at økonomisk utvikling var umulig uten politisk frihet. Han var inspirert av Pan-Afrikanismen, en idé om at alle afrikanere (både på kontinentet og i diasporaen) hørte sammen og burde forenes."
+            "content": "Nkrumahs motto var: «Søk først det politiske kongeriket, så skal alt annet gis dere.» Tanken var at politisk frihet måtte komme først. Uten selvstyre var det umulig å bygge landet økonomisk (Mazrui, 1993). Han var inspirert av panafrikanismen, ideen om at alle med afrikansk bakgrunn hører sammen og bør stå samlet - både de som bor på kontinentet og de som lever spredt rundt i verden (Kuryla, 2026). Kvelden Ghana ble fritt, sa han det slik til folket sitt (Johnson, 2022):"
         },
         {
             "type": "component",
@@ -61,7 +61,11 @@
         },
         {
             "type": "text",
-            "content": "Nkrumah drømte om et «United States of Africa», et sterkt kontinent som kunne stå imot press fra både USA og Sovjetunionen. Han brukte Ghanas penger på å støtte frigjøringsbevegelser i andre land (som Guinea og Kongo).\n\nMen hjemme i Ghana gikk det dårligere. For å gjennomføre sine visjoner, gjorde Nkrumah seg selv til diktator og knuste opposisjonen. I 1966, mens han var på besøk i Kina, ble han styrtet i et militærkupp (sannsynligvis med hjelp fra CIA). Drømmen om et forent Afrika levde videre, men veien dit ble lengre enn han trodde."
+            "content": "Nkrumah drømte om «United States of Africa» - Afrikas forente stater - et kontinent som var sterkt nok til å stå imot press fra både USA og Sovjetunionen. Ghana ble et arnested for panafrikansk tenkning, og landet holdt kongresser der frigjøringsbevegelser fra hele Afrika møttes (Leraand, 2025a). Nkrumah prøvde også å slå Ghana sammen med Guinea og Mali til én union. Avtalen ble underskrevet, men noen virkelig sammenslåing kom det aldri (Leraand & Tvedt, 2024). I 1963 ble Organisasjonen for afrikansk enhet stiftet i Addis Abeba, og der var Nkrumah en av de sterkeste pådriverne (Leraand, 2025b)."
+        },
+        {
+            "type": "text",
+            "content": "Men hjemme i Ghana gikk det dårligere. For å få viljen sin slo Nkrumah ned opposisjonen. I 1964 ble landet en ettpartistat der bare hans eget parti, CPP, var lovlig, og styret hans ble et diktatur (Eriksen, 2025; Leraand, 2025a). I februar 1966, mens han var på besøk i Kina, grep militæret makten (Eriksen, 2025).\n\nHistorikere er uenige om hvor stor rolle USA spilte. Frigitte amerikanske dokumenter viser at Det hvite hus var svært godt fornøyd med at Nkrumah forsvant - en rådgiver kalte kuppet «et lykketreff» og skrev at det nye militærstyret var påfallende vestligvennlig. At CIA selv styrte kuppet, er derimot ikke bevist (U.S. Department of State, 2003). Drømmen om et forent Afrika levde videre, men veien dit ble lengre enn Nkrumah trodde."
         },
         {
             "type": "component",
@@ -70,19 +74,35 @@
                 "forstaa": [
                     "Hvilken dato ble Ghana selvstendig, og hva het kolonien før den ble til Ghana?",
                     "Hvorfor var uavhengigheten til Ghana i 1957 spesiell for Afrika sør for Sahara?",
-                    "Hva gikk ideen om Pan-Afrikanismen ut på, ifølge teksten?",
+                    "Hva gikk ideen om panafrikanismen ut på, ifølge teksten?",
                     "Hva skjedde med Kwame Nkrumah i 1966, og hvor var han da det skjedde?"
                 ],
                 "reflekter": [
                     "Nkrumahs motto var «Søk først det politiske kongeriket, så skal alt annet gis dere.» Forklar hva han mente med dette, og hvorfor han satte politisk frihet foran økonomisk utvikling.",
-                    "Nkrumah brukte Ghanas penger på å støtte frigjøringsbevegelser i andre land som Guinea og Kongo. Hvorfor gjorde han det, når det kanskje gikk dårligere hjemme i Ghana?",
-                    "Teksten sier at Nkrumah gjorde seg selv til diktator for å gjennomføre visjonene sine. Diskuter om det kan være riktig å knuse opposisjonen for å nå et stort mål. Begrunn svaret ditt.",
+                    "Nkrumah prøvde å slå Ghana sammen med Guinea og Mali, og gjorde Ghana til et samlingssted for frigjøringsbevegelser i hele Afrika. Hvorfor brukte han krefter på andre land, når det gikk dårligere hjemme i Ghana?",
+                    "Teksten forteller at Nkrumah slo ned opposisjonen og gjorde Ghana til en ettpartistat. Diskuter om det kan være riktig å knuse opposisjonen for å nå et stort mål. Begrunn svaret ditt.",
                     "Hvorfor ville Nkrumah at Afrika skulle stå samlet mot press fra både USA og Sovjetunionen? Hva kunne et forent Afrika oppnå som enkeltland ikke kunne?"
                 ],
                 "gaaVidere": [
                     "Skriv en kort tekst (3-5 setninger) der du forklarer hvorfor drømmen om Afrikas Forente Stater var vanskeligere å gjennomføre enn Nkrumah trodde.",
-                    "Teksten nevner at kuppet mot Nkrumah sannsynligvis skjedde med hjelp fra CIA. Diskuter i klassen hvorfor en stormakt som USA kunne være interessert i hvem som styrte et land i Afrika.",
+                    "Teksten forteller at USA var godt fornøyd med at Nkrumah ble styrtet, men at det ikke er bevist at CIA sto bak kuppet. Diskuter i klassen hvorfor en stormakt som USA kunne være interessert i hvem som styrte et land i Afrika.",
                     "Finn ut om Den afrikanske union (etterfølgeren til OAU fra 1963) i dag. Hvordan lever tanken om afrikansk enhet videre nå?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Eriksen, T. L. (2025). *Kwame Nkrumah*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Kwame_Nkrumah](https://snl.no/Kwame_Nkrumah)",
+                    "Johnson, E. (2022). *How Kwame Nkrumah's midnight speech set a tradition for marking the moment of liberation*. The Conversation. Hentet 25.07.2026 fra [theconversation.com](https://theconversation.com/how-kwame-nkrumahs-midnight-speech-set-a-tradition-for-marking-the-moment-of-liberation-178609)",
+                    "Kuryla, P. (2026). *Pan-Africanism*. Encyclopaedia Britannica. Hentet 25.07.2026 fra [britannica.com](https://www.britannica.com/topic/Pan-Africanism)",
+                    "Leraand, D. (2025a). *Ghanas historie*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Ghanas_historie](https://snl.no/Ghanas_historie)",
+                    "Leraand, D. (2025b). *Organisasjonen for afrikansk enhet*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Organisasjonen_for_afrikansk_enhet](https://snl.no/Organisasjonen_for_afrikansk_enhet)",
+                    "Leraand, D. & Tvedt, K. A. (2024). *Guineas historie*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Guineas_historie](https://snl.no/Guineas_historie)",
+                    "Mazrui, A. A. (1993). *Seek ye first the political kingdom*. I A. A. Mazrui & C. Wondji (Red.), General History of Africa VIII: Africa since 1935. UNESCO / Heinemann. Hentet 25.07.2026 fra [archive.org](https://archive.org/details/unescogeneralhis08alim)",
+                    "U.S. Department of State. (2003). *Memorandum From the President's Acting Special Assistant for National Security Affairs (Komer) to President Johnson, March 12, 1966*. I Foreign Relations of the United States, 1964-1968, Volume XXIV, Africa (dokument 260). Office of the Historian. Hentet 25.07.2026 fra [history.state.gov](https://history.state.gov/historicaldocuments/frus1964-68v24/d260)"
                 ]
             }
         }
@@ -112,5 +132,6 @@
         }
     ],
     "createdDate": "2026-01-16T10:30:00Z",
-    "lastUpdated": "2026-01-16T10:30:00Z"
+    "lastUpdated": "2026-07-25T00:00:00Z",
+    "factChecked": "2026-07-25"
 }
