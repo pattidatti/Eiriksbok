@@ -15,6 +15,14 @@ export interface PropPlacement {
     solid: boolean;
     /** Kollisjonsboks i piksler, sentrert på foten av objektet. */
     treff?: { w: number; h: number; dy: number };
+    /** Hvilken av variantene som brukes. 130 identiske trær leser som fyllmasse. */
+    variant: number;
+    /** Speilvendt? Gratis dobling av variasjonen. */
+    flip: boolean;
+    /** Liten størrelsesvariasjon, så skogen ikke er klippet av samme mal. */
+    skala: number;
+    /** Svak fargeforskyvning, samme grunn. */
+    tint: number;
 }
 
 export interface WorldMap {
@@ -54,9 +62,6 @@ export function byggNordvik(): WorldMap {
                 flis = 'vann';
             } else if (x < sandKant) {
                 flis = 'sand';
-            } else {
-                const r = rng();
-                flis = r > 0.82 ? 'gress-3' : r > 0.55 ? 'gress-2' : 'gress';
             }
             terreng[y][x] = flis;
             blokkert[y][x] = flis === 'vann';
@@ -123,9 +128,7 @@ export function byggNordvik(): WorldMap {
     // ── Åkerlapper sør for bygda ────────────────────────────────────────────
     for (let y = 36; y < 42; y++) {
         for (let x = 24; x < 34; x++) {
-            if (terreng[y][x] === 'gress' || terreng[y][x] === 'gress-2' || terreng[y][x] === 'gress-3') {
-                terreng[y][x] = 'aker';
-            }
+            if (terreng[y][x] === 'gress') terreng[y][x] = 'aker';
         }
     }
 
@@ -158,13 +161,17 @@ export function byggNordvik(): WorldMap {
                 if (tx < 1 || ty < 1 || tx >= W - 1 || ty >= H - 1) return false;
                 if (opptatt.has(`${tx},${ty}`)) return false;
                 const t = terreng[ty][tx];
-                if (t === 'vann' || t === 'stein' || t === 'sti') return false;
+                // Trær midt i åkeren ser ut som en feil, for det er det.
+                if (t === 'vann' || t === 'stein' || t === 'sti' || t === 'aker') return false;
             }
         }
         return true;
     };
 
     // ── Bygninger ───────────────────────────────────────────────────────────
+    /** Standardverdier for et objekt uten variasjon (bygninger, kaier). */
+    const fast = { variant: 0, flip: false, skala: 1, tint: 0 };
+
     const bygg = (
         kind: PropPlacement['kind'],
         tx: number,
@@ -173,7 +180,7 @@ export function byggNordvik(): WorldMap {
         h: number,
         treff: { w: number; h: number; dy: number }
     ) => {
-        props.push({ kind, x: tx * 16 + 8, y: ty * 16 + 8, solid: true, treff });
+        props.push({ kind, x: tx * 16 + 8, y: ty * 16 + 8, solid: true, treff, ...fast });
         merk(tx - Math.floor(w / 2), ty - Math.floor(h / 2), w, h);
         for (let dy = -Math.floor(h / 2); dy <= Math.floor(h / 2); dy++) {
             for (let dx = -Math.floor(w / 2); dx <= Math.floor(w / 2); dx++) {
@@ -192,15 +199,15 @@ export function byggNordvik(): WorldMap {
     // Kai og skip i fjorden - ren pynt, men det gir stedet en grunn til å hete Nordvik.
     for (let x = 4; x < 9; x++) {
         if (terreng[41] && terreng[41][x]) {
-            props.push({ kind: 'kai', x: x * 16 + 8, y: 41 * 16 + 8, solid: false });
+            props.push({ kind: 'kai', x: x * 16 + 8, y: 41 * 16 + 8, solid: false, ...fast });
             blokkert[41][x] = false;
         }
     }
-    props.push({ kind: 'langskip', x: 3 * 16, y: 44 * 16, solid: false });
+    props.push({ kind: 'langskip', x: 3 * 16, y: 44 * 16, solid: false, ...fast });
 
     // Gjerde rundt åkrene
     for (let x = 24; x < 34; x += 1) {
-        props.push({ kind: 'gjerde', x: x * 16 + 8, y: 35 * 16 + 12, solid: false });
+        props.push({ kind: 'gjerde', x: x * 16 + 8, y: 35 * 16 + 12, solid: false, ...fast });
     }
 
     // ── Skog, busker og steiner ─────────────────────────────────────────────
@@ -208,6 +215,7 @@ export function byggNordvik(): WorldMap {
         kind: PropPlacement['kind'],
         antall: number,
         treff: { w: number; h: number; dy: number } | undefined,
+        varianter: number,
         omrade?: (x: number, y: number) => boolean
     ) => {
         let plassert = 0;
@@ -222,10 +230,15 @@ export function byggNordvik(): WorldMap {
             if (terreng[y][x + 1] === 'sti' || terreng[y][x - 1] === 'sti') continue;
             props.push({
                 kind,
-                x: x * 16 + 8,
-                y: y * 16 + 8,
+                // Litt slark i plasseringen, så objektene ikke står i rutenett.
+                x: x * 16 + 8 + Math.round((rng() - 0.5) * 6),
+                y: y * 16 + 8 + Math.round((rng() - 0.5) * 4),
                 solid: treff !== undefined,
                 treff,
+                variant: Math.floor(rng() * varianter),
+                flip: rng() > 0.5,
+                skala: 0.9 + rng() * 0.22,
+                tint: Math.round((rng() - 0.5) * 22),
             });
             // Bevisst ikke `blokkert` her: et tre stopper deg med sin egen
             // lille stamme-boks. Merket vi hele ruta som sperret, ville en skog
@@ -235,9 +248,9 @@ export function byggNordvik(): WorldMap {
         }
     };
 
-    strø('tre', 130, { w: 10, h: 8, dy: 12 }, (x, y) => y < 18 || y > 38 || x > 44);
-    strø('busk', 60, undefined);
-    strø('stein', 34, { w: 12, h: 8, dy: 4 });
+    strø('tre', 130, { w: 10, h: 8, dy: 12 }, 3, (x, y) => y < 18 || y > 38 || x > 44);
+    strø('busk', 60, undefined, 2);
+    strø('stein', 34, { w: 12, h: 8, dy: 4 }, 3);
 
     // ── Hvor fiender får dukke opp ──────────────────────────────────────────
     const spawnRuter: [number, number][] = [];

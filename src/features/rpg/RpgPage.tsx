@@ -10,9 +10,11 @@ import { useLayout } from '../../context/LayoutContext';
 import { CharacterCreator } from './components/CharacterCreator';
 import { DialogOverlay, LandmarkOverlay } from './components/DialogOverlay';
 import { Hud } from './components/Hud';
-import { InventoryPanel, PauseMeny, QuestLog } from './components/Panels';
+import { Atmosfare, Skjermkontroll } from './components/Skjermkontroll';
+import { harBeroring } from './engine/enhet';
+import { ButikkPanel, InventoryPanel, PauseMeny, QuestLog } from './components/Panels';
 import { Meldingsskjerm, QuizChallenge } from './components/QuizChallenge';
-import { NORDVIK_BOSS_QUESTIONS } from './data/nordvik';
+import { NORDVIK_BOSS_QUESTIONS, NORDVIK_NPCS } from './data/nordvik';
 import { resumeAudio } from './engine/audio';
 import { fraSpill, tilSpill } from './engine/bridge';
 import { byggNordvikQuester, lastQuestBank } from './engine/quests';
@@ -24,6 +26,7 @@ import type { CharacterDraft, QuestDef } from './types';
 type Overlegg =
     | { type: 'ingen' }
     | { type: 'dialog'; npcId: string }
+    | { type: 'butikk'; npcId: string }
     | { type: 'landemerke'; landmarkId: string }
     | { type: 'utfordring'; quest: QuestDef }
     | { type: 'boss'; runde: number }
@@ -44,6 +47,7 @@ export default function RpgPage() {
     const lagKarakter = useRpgStore((s) => s.lagKarakter);
     const slettAlt = useRpgStore((s) => s.slettAlt);
     const startQuest = useRpgStore((s) => s.startQuest);
+    const questForsok = useRpgStore((s) => s.questForsok);
 
     const [klar, setKlar] = useState(false);
     const [feil, setFeil] = useState<string | null>(null);
@@ -51,6 +55,9 @@ export default function RpgPage() {
     const [overlegg, setOverlegg] = useState<Overlegg>({ type: 'ingen' });
     const [hint, setHint] = useState<string | null>(null);
     const [sonetittel, setSonetittel] = useState<{ tittel: string; undertittel: string } | null>(null);
+    const [himmel, setHimmel] = useState<string | null>(null);
+    const [kompass, setKompass] = useState<{ vinkel: number; avstand: number; navn: string } | null>(null);
+    const [touch] = useState(harBeroring);
 
     const scene = useCallback((): WorldScene | null => {
         const game = spillRef.current?.game;
@@ -112,7 +119,12 @@ export default function RpgPage() {
     // ── Hendelser fra spillet ───────────────────────────────────────────────
     useEffect(() => {
         const av = [
-            fraSpill.on('dialog', ({ npcId }) => setOverlegg({ type: 'dialog', npcId })),
+            fraSpill.on('dialog', ({ npcId }) => {
+                const npc = NORDVIK_NPCS.find((n) => n.id === npcId);
+                setOverlegg(npc?.handler ? { type: 'butikk', npcId } : { type: 'dialog', npcId });
+            }),
+            fraSpill.on('atmosfare', ({ himmel: h }) => setHimmel(h)),
+            fraSpill.on('kompass', (k) => setKompass(k)),
             fraSpill.on('landmark', ({ landmarkId }) => setOverlegg({ type: 'landemerke', landmarkId })),
             fraSpill.on('bossSporsmal', ({ runde }) => setOverlegg({ type: 'boss', runde })),
             fraSpill.on('hint', ({ tekst }) => setHint(tekst)),
@@ -187,6 +199,8 @@ export default function RpgPage() {
             {/* Phaser tegner her */}
             <div ref={containerRef} className="absolute inset-0" />
 
+            {character && klar && <Atmosfare himmel={himmel} />}
+
             {!character && klar && <CharacterCreator onFerdig={startNyttSpill} />}
 
             {!klar && (
@@ -199,10 +213,13 @@ export default function RpgPage() {
                 <>
                     <Hud
                         hint={overlegg.type === 'ingen' ? hint : null}
+                        kompass={kompass}
                         onApneSekk={() => apnePanel({ type: 'sekk' })}
                         onApneLogg={() => apnePanel({ type: 'logg' })}
                         onPause={() => apnePanel({ type: 'pause' })}
                     />
+
+                    {touch && overlegg.type === 'ingen' && <Skjermkontroll />}
 
                     {sonetittel && (
                         <div className="pointer-events-none absolute inset-x-0 top-1/3 z-30 text-center">
@@ -231,6 +248,8 @@ export default function RpgPage() {
                 />
             )}
 
+            {overlegg.type === 'butikk' && <ButikkPanel npcId={overlegg.npcId} onLukk={lukk} />}
+
             {overlegg.type === 'landemerke' && (
                 <LandmarkOverlay landmarkId={overlegg.landmarkId} onLukk={lukk} />
             )}
@@ -241,6 +260,7 @@ export default function RpgPage() {
                     innsats={`Belønning: ${overlegg.quest.belonning.xp} XP og ${overlegg.quest.belonning.solv} sølv`}
                     question={overlegg.quest.question}
                     hint={overlegg.quest.hint}
+                    forsok={questForsok[overlegg.quest.id] ?? 0}
                     onSvar={(riktig) => {
                         tilSpill.emit('svar', { questId: overlegg.quest.id, riktig });
                         setOverlegg({ type: 'ingen' });
@@ -297,7 +317,7 @@ export default function RpgPage() {
             {overlegg.type === 'seier' && (
                 <Meldingsskjerm
                     tittel="Glemselen er felt"
-                    tekst="Navnene kommer tilbake til folk i Nordvik. Bygda husker igjen — og du kan fortsatt gå rundt her så lenge du vil."
+                    tekst="Navnene kommer tilbake til folk i Nordvik. Bygda husker igjen, og du kan fortsatt gå rundt her så lenge du vil."
                     knapp="Fortsett å utforske"
                     onKlikk={() => {
                         setOverlegg({ type: 'ingen' });

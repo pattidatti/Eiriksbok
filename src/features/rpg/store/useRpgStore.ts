@@ -12,6 +12,7 @@ import { useProgressStore } from '../../progress/useProgressStore';
 import { CLASS_BY_ID, levelFromXp, statsAt, xpForLevel } from '../data/classes';
 import { ITEM_BY_ID, equipmentBonus } from '../data/items';
 import { SPELL_BY_ID, newlyUnlockedSpells } from '../data/spells';
+import { sfx } from '../engine/audio';
 import type { CharacterDraft, ItemSlot, QuestDef } from '../types';
 
 export interface RpgState {
@@ -24,6 +25,8 @@ export interface RpgState {
     utstyr: Record<ItemSlot, string | null>;
     spells: string[];
     quester: Record<string, 'aktiv' | 'ferdig'>;
+    /** Hvor mange ganger eleven har bommet på hvert oppdrag. */
+    questForsok: Record<string, number>;
     riktigeSvar: number;
     galeSvar: number;
     lest: string[];
@@ -44,6 +47,7 @@ export interface RpgState {
     taAv: (slot: ItemSlot) => void;
     startQuest: (questId: string) => void;
     fullforQuest: (quest: QuestDef, riktig: boolean) => void;
+    kjop: (itemId: string) => boolean;
     lerSpell: (spellId: string) => void;
     markerLest: (landmarkId: string) => void;
     felleBoss: (bossId: string) => void;
@@ -84,6 +88,7 @@ export const useRpgStore = create<RpgState>()(
             utstyr: { ...TOM_UTSTYR },
             spells: [],
             quester: {},
+            questForsok: {},
             riktigeSvar: 0,
             galeSvar: 0,
             lest: [],
@@ -104,6 +109,7 @@ export const useRpgStore = create<RpgState>()(
                     utstyr: { ...TOM_UTSTYR, vapen: klasse.startWeapon },
                     spells: [klasse.startSpell],
                     quester: {},
+                    questForsok: {},
                     riktigeSvar: 0,
                     galeSvar: 0,
                     lest: [],
@@ -123,6 +129,7 @@ export const useRpgStore = create<RpgState>()(
                     utstyr: { ...TOM_UTSTYR },
                     spells: [],
                     quester: {},
+                    questForsok: {},
                     riktigeSvar: 0,
                     galeSvar: 0,
                     lest: [],
@@ -157,6 +164,7 @@ export const useRpgStore = create<RpgState>()(
                     // Nytt nivå fyller opp liv og kraft - en liten pause i kampen.
                     const maks = maksVerdier({ ...state, xp: nyXp });
                     set({ hp: maks.hp, mana: maks.mana });
+                    sfx.nivaOpp();
                     get().varsle(`Nivå ${nyttNiva}! Liv og kraft fylt opp.`, 'niva');
                 }
             },
@@ -199,6 +207,19 @@ export const useRpgStore = create<RpgState>()(
                 set({ quester: { ...state.quester, [questId]: 'aktiv' } });
             },
 
+            /**
+             * Et galt svar skal koste noe.
+             *
+             * Før kunne eleven gjette i blinde: oppdraget ble stående aktivt,
+             * fasiten og forklaringen ble vist uansett, og alternativene lå i
+             * samme rekkefølge. Optimal strategi var å trykke tilfeldig, lese
+             * fasiten og svare riktig - hele læringsmekanikken kunne omgås på
+             * under et minutt.
+             *
+             * Nå: første bom gir ikke fasiten, bare hintet om hvor svaret står.
+             * Andre bom lukker oppdraget uten belønning, men gir forklaringen -
+             * for eleven skal alltid gå derfra med å ha lært noe.
+             */
             fullforQuest: (quest, riktig) => {
                 const state = get();
                 if (riktig) {
@@ -206,9 +227,12 @@ export const useRpgStore = create<RpgState>()(
                         quester: { ...state.quester, [quest.id]: 'ferdig' },
                         riktigeSvar: state.riktigeSvar + 1,
                     });
-                    get().giXp(quest.belonning.xp);
-                    get().giSolv(quest.belonning.solv);
-                    if (quest.belonning.itemId) get().leggISekk(quest.belonning.itemId);
+                    // Full belønning bare når hun traff på første forsøk.
+                    const forsok = state.questForsok[quest.id] ?? 0;
+                    const andel = forsok === 0 ? 1 : 0.5;
+                    get().giXp(Math.round(quest.belonning.xp * andel));
+                    get().giSolv(Math.round(quest.belonning.solv * andel));
+                    if (forsok === 0 && quest.belonning.itemId) get().leggISekk(quest.belonning.itemId);
                     if (quest.belonning.spellId) get().lerSpell(quest.belonning.spellId);
 
                     // Nye besvergelser kan ha blitt låst opp av at telleren steg.
@@ -225,9 +249,29 @@ export const useRpgStore = create<RpgState>()(
                         score: 1,
                         title: `Minnevokteren: ${quest.title}`,
                     });
-                } else {
-                    set({ galeSvar: state.galeSvar + 1 });
+                    return;
                 }
+
+                const forsok = (state.questForsok[quest.id] ?? 0) + 1;
+                set({
+                    galeSvar: state.galeSvar + 1,
+                    questForsok: { ...state.questForsok, [quest.id]: forsok },
+                });
+                if (forsok >= 2) {
+                    set({ quester: { ...get().quester, [quest.id]: 'ferdig' } });
+                    get().varsle('Oppdraget lukkes. Les forklaringen - den sitter neste gang.', 'darlig');
+                } else {
+                    get().varsle('Ikke helt. Gå og finn svaret, så prøver vi igjen.', 'darlig');
+                }
+            },
+
+            kjop: (itemId) => {
+                const item = ITEM_BY_ID[itemId];
+                const state = get();
+                if (!item?.pris || state.solv < item.pris) return false;
+                set({ solv: state.solv - item.pris, sekk: [...state.sekk, itemId] });
+                get().varsle(`Kjøpt: ${item.name}.`, 'bra');
+                return true;
             },
 
             lerSpell: (spellId) => {
@@ -274,8 +318,42 @@ export const useRpgStore = create<RpgState>()(
         }),
         {
             name: 'rpg-minnevokteren-v1',
-            // Varsler er flyktige - de skal ikke overleve en omlasting.
-            partialize: (state) => ({ ...state, varsler: [] }) as RpgState,
+            version: 2,
+            // Bare data lagres. Før ble hele staten - inkludert alle
+            // handlingene - sendt gjennom serialiseringen.
+            partialize: (state) =>
+                ({
+                    character: state.character,
+                    xp: state.xp,
+                    hp: state.hp,
+                    mana: state.mana,
+                    solv: state.solv,
+                    sekk: state.sekk,
+                    utstyr: state.utstyr,
+                    spells: state.spells,
+                    quester: state.quester,
+                    questForsok: state.questForsok,
+                    riktigeSvar: state.riktigeSvar,
+                    galeSvar: state.galeSvar,
+                    lest: state.lest,
+                    bosser: state.bosser,
+                    sisteSone: state.sisteSone,
+                }) as unknown as RpgState,
+            migrate: (lagret) => {
+                const s = (lagret ?? {}) as Partial<RpgState>;
+                return { ...s, questForsok: s.questForsok ?? {} } as RpgState;
+            },
+            onRehydrateStorage: () => (state) => {
+                if (!state) return;
+                // Lukket eleven fanen mellom at hun døde og at hun trykket
+                // «Reis deg», ble hp lagret som 0. Da våknet hun neste gang med
+                // null liv og ingen dødsskjerm å komme seg ut av.
+                if (state.hp <= 0) {
+                    const maks = maksVerdier(state);
+                    state.hp = maks.hp;
+                    state.mana = maks.mana;
+                }
+            },
         }
     )
 );

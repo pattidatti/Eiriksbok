@@ -3,7 +3,7 @@ import { makeRng } from '../engine/pixels';
 import type { BankQuestion } from '../types';
 import { KildeLenke, Ramme } from './DialogOverlay';
 
-/** Stokker 0..n-1 med en seed utledet av teksten, så rekkefølgen er stabil. */
+/** Stokker 0..n-1 med en seed utledet av teksten, så rekkefølgen er forutsigbar. */
 function stokk(n: number, seed: string): number[] {
     let tall = 0;
     for (let i = 0; i < seed.length; i++) tall = (tall * 31 + seed.charCodeAt(i)) >>> 0;
@@ -24,6 +24,12 @@ interface Props {
     question: BankQuestion;
     /** Vises mens eleven tenker - hvor svaret finnes. */
     hint?: string;
+    /**
+     * Hvor mange ganger eleven alt har bommet på dette spørsmålet. Første bom
+     * avslører ikke fasiten - da ville det å gjette vært gratis, og det var
+     * nettopp slik hele læringsmekanikken kunne omgås på under et minutt.
+     */
+    forsok?: number;
     onSvar: (riktig: boolean) => void;
 }
 
@@ -31,19 +37,22 @@ interface Props {
  * Kunnskapsutfordringen. Dette er selve «kampen» mot uvitenhet: eleven svarer,
  * får se om det stemte, og får alltid en forklaring - også når hun bommer.
  */
-export function QuizChallenge({ tittel, innsats, question, hint, onSvar }: Props) {
+export function QuizChallenge({ tittel, innsats, question, hint, forsok = 0, onSvar }: Props) {
     const [valgt, setValgt] = useState<number | null>(null);
     const [vist, setVist] = useState(false);
 
     // Alternativene stokkes, ellers ligger fasiten ofte først i innholdet.
-    // Rekkefølgen utledes av spørsmåls-id-en, så den er stabil gjennom
-    // rendringer, men forskjellig fra spørsmål til spørsmål.
-    const rekkefolge = useMemo(() => stokk(question.options.length, question.id), [
+    // Seeden inkluderer forsøksnummeret, så et nytt forsøk gir ny rekkefølge -
+    // ellers kunne eleven bare huske posisjonen fra forrige gang.
+    const rekkefolge = useMemo(() => stokk(question.options.length, `${question.id}#${forsok}`), [
         question.options.length,
         question.id,
+        forsok,
     ]);
 
     const riktig = valgt === question.correct;
+    /** Fasiten vises ved riktig svar, eller når eleven har brukt opp forsøkene. */
+    const avslor = riktig || forsok >= 1;
 
     const velg = useCallback(
         (i: number) => {
@@ -87,7 +96,7 @@ export function QuizChallenge({ tittel, innsats, question, hint, onSvar }: Props
                         const erValgt = i === valgt;
                         let stil =
                             'border-white/15 bg-white/5 hover:border-white/40 hover:bg-white/10';
-                        if (vist && erFasit) stil = 'border-emerald-400/70 bg-emerald-500/15';
+                        if (vist && erFasit && avslor) stil = 'border-emerald-400/70 bg-emerald-500/15';
                         else if (vist && erValgt) stil = 'border-rose-500/70 bg-rose-600/15';
                         else if (vist) stil = 'border-white/10 bg-white/[0.03] opacity-55';
 
@@ -117,13 +126,35 @@ export function QuizChallenge({ tittel, innsats, question, hint, onSvar }: Props
                                 riktig ? 'text-emerald-300' : 'text-rose-300'
                             }`}
                         >
-                            {riktig ? 'Riktig!' : 'Ikke helt.'}
+                            {riktig ? 'Riktig!' : avslor ? 'Ikke denne heller.' : 'Ikke helt.'}
                         </p>
-                        {question.explanation && (
+
+                        {avslor ? (
+                            <>
+                                {!riktig && (
+                                    <p className="mt-1 text-[15px] leading-relaxed text-emerald-200">
+                                        Riktig svar: {question.options[question.correct]}
+                                    </p>
+                                )}
+                                {question.explanation ? (
+                                    <p className="mt-1 text-[15px] leading-relaxed text-slate-200">
+                                        {question.explanation}
+                                    </p>
+                                ) : (
+                                    // 366 av 954 spørsmål i banken har ingen forklaring.
+                                    // Da får eleven i det minste vite hvor hun kan lese videre.
+                                    <p className="mt-1 text-[15px] leading-relaxed text-slate-300">
+                                        Dette står forklart i «{question.lessonTitle}».
+                                    </p>
+                                )}
+                            </>
+                        ) : (
                             <p className="mt-1 text-[15px] leading-relaxed text-slate-200">
-                                {question.explanation}
+                                {hint ?? 'Svaret finnes et sted i bygda.'} Gå og finn det, så kan du
+                                prøve én gang til.
                             </p>
                         )}
+
                         <p className="mt-3 text-sm text-slate-400">
                             Vil du lese mer? <KildeLenke href={question.link} tittel={question.lessonTitle} />
                         </p>
@@ -133,7 +164,7 @@ export function QuizChallenge({ tittel, innsats, question, hint, onSvar }: Props
                             onClick={() => onSvar(riktig)}
                             className="mt-4 w-full rounded-xl bg-amber-400 px-5 py-3 font-display text-base font-bold text-slate-900 transition hover:bg-amber-300"
                         >
-                            Videre
+                            {riktig || avslor ? 'Videre' : 'Gå og let'}
                         </button>
                     </div>
                 )}

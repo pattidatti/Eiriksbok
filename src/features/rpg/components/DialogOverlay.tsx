@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NORDVIK_LANDMARKS, NORDVIK_NPCS } from '../data/nordvik';
+import { sfx } from '../engine/audio';
 import { useRpgStore } from '../store/useRpgStore';
 import type { QuestDef } from '../types';
 
@@ -22,6 +23,7 @@ export function DialogOverlay({ npcId, quester, onLukk, onTaOppdrag, onSvarPa }:
     const [replikk] = useState(() =>
         npc ? npc.smalltalk[Math.floor(Math.random() * npc.smalltalk.length)] : ''
     );
+    const [visKunnskap, setVisKunnskap] = useState(false);
 
     const aktiv = quester.find((q) => q.giverId === npcId && status[q.id] === 'aktiv') ?? null;
     const ny = quester.find((q) => q.giverId === npcId && !status[q.id]) ?? null;
@@ -45,18 +47,30 @@ export function DialogOverlay({ npcId, quester, onLukk, onTaOppdrag, onSvarPa }:
 
             <p className="mb-4 text-[15px] leading-relaxed text-slate-100">«{replikk}»</p>
 
+            {/*
+                Kunnskapen ligger bak et klikk, ikke oppslått ved siden av
+                svarknappen. Før sto fasiten i klartekst rett over «Jeg vet
+                svaret», så letingen falt bort selv der svaret faktisk fantes.
+            */}
             {npc.kunnskap && npc.kunnskap.length > 0 && (
                 <section className="mb-4 rounded-xl border border-sky-400/25 bg-sky-400/5 p-3">
-                    <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-sky-300">
-                        Dette vet {npc.name.split(' ')[0]}
-                    </h3>
-                    <ul className="space-y-2 text-sm leading-relaxed text-slate-200">
-                        {npc.kunnskap.map((k) => (
-                            <li key={k} className="border-l-2 border-sky-400/40 pl-3">
-                                {k}
-                            </li>
-                        ))}
-                    </ul>
+                    <button
+                        type="button"
+                        onClick={() => setVisKunnskap((v) => !v)}
+                        className="flex w-full items-center justify-between text-xs font-semibold uppercase tracking-widest text-sky-300"
+                    >
+                        <span>Spør {npc.name.split(' ')[0]} ut</span>
+                        <span aria-hidden>{visKunnskap ? '−' : '+'}</span>
+                    </button>
+                    {visKunnskap && (
+                        <ul className="mt-2 space-y-2 text-sm leading-relaxed text-slate-200">
+                            {npc.kunnskap.map((k) => (
+                                <li key={k.tekst} className="border-l-2 border-sky-400/40 pl-3">
+                                    {k.tekst}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
                 </section>
             )}
 
@@ -105,6 +119,7 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
     const forste = lm ? !lest.includes(lm.id) : false;
 
     useEffect(() => {
+        sfx.apne();
         if (lm && forste) markerLest(lm.id);
         // Skal bare kjøre når landemerket åpnes.
         // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -5,12 +5,14 @@ import { tilSpill } from '../engine/bridge';
 
 interface Props {
     hint: string | null;
+    /** Retningen til det aktive oppdragets kilde. */
+    kompass: { vinkel: number; avstand: number; navn: string } | null;
     onApneSekk: () => void;
     onApneLogg: () => void;
     onPause: () => void;
 }
 
-export function Hud({ hint, onApneSekk, onApneLogg, onPause }: Props) {
+export function Hud({ hint, kompass, onApneSekk, onApneLogg, onPause }: Props) {
     const store = useRpgStore();
     const maks = maksVerdier(store);
     const fremgang = nivaFremgang(store.xp);
@@ -46,6 +48,25 @@ export function Hud({ hint, onApneSekk, onApneLogg, onPause }: Props) {
                 <Merke tekst={`${store.riktigeSvar} riktige`} />
             </div>
 
+            {/*
+                Kompasset. Kartet er 64x48 ruter, men eleven ser bare ~28x16 av
+                gangen. Uten en pil å følge er det å finne fem personer i en skog
+                med 130 trær ren leting på måfå.
+            */}
+            {kompass && (
+                <div className="absolute left-1/2 top-3 flex -translate-x-1/2 items-center gap-2 rounded-full bg-slate-900/85 px-3 py-1.5 ring-1 ring-white/15">
+                    <span
+                        className="text-amber-300"
+                        style={{ transform: `rotate(${kompass.vinkel + 90}deg)` }}
+                        aria-hidden
+                    >
+                        ▲
+                    </span>
+                    <span className="text-xs font-semibold text-slate-100">{kompass.navn}</span>
+                    <span className="text-[11px] text-slate-400">{Math.round(kompass.avstand / 16)} ruter</span>
+                </div>
+            )}
+
             {/* Knapperad */}
             <div className="pointer-events-auto absolute right-3 top-14 flex gap-2">
                 <Knapp onClick={onApneSekk} tekst="Sekk" tast="I" />
@@ -64,7 +85,7 @@ export function Hud({ hint, onApneSekk, onApneLogg, onPause }: Props) {
                             key={id}
                             type="button"
                             onClick={() => tilSpill.emit('besvergelse', { spellId: id })}
-                            title={`${spell.name} — ${spell.beskrivelse}`}
+                            title={`${spell.name} - ${spell.beskrivelse}`}
                             className={`relative h-14 w-14 rounded-xl border-2 bg-slate-900/85 transition ${
                                 harRaad
                                     ? 'border-white/25 hover:border-white/60'

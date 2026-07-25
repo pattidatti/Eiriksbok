@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
+import { NORDVIK_NPCS } from '../data/nordvik';
 import { SPELL_BY_ID } from '../data/spells';
 import { ZONES } from '../data/zones';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
@@ -246,42 +248,144 @@ export function PauseMeny({
                     </button>
                 </div>
 
-                <h3 className="mb-3 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
-                    Verden
-                </h3>
-                <div className="grid gap-2 sm:grid-cols-2">
-                    {ZONES.map((z) => {
-                        const apen = z.spillbar && niva >= z.krevesNiva;
-                        return (
-                            <div
-                                key={z.id}
-                                className={`rounded-xl border p-3 ${
-                                    apen
-                                        ? 'border-emerald-400/40 bg-emerald-500/10'
-                                        : 'border-white/10 bg-white/5 opacity-70'
-                                }`}
-                            >
-                                <div className="flex items-baseline justify-between gap-2">
-                                    <p className="font-display font-semibold text-slate-100">{z.title}</p>
-                                    <span className="text-[10px] uppercase tracking-wider text-slate-400">
-                                        {z.era}
-                                    </span>
-                                </div>
-                                <p className="mt-0.5 text-xs leading-snug text-slate-400">{z.pitch}</p>
-                                <p className="mt-1.5 text-[11px] font-semibold">
-                                    {apen ? (
-                                        <span className="text-emerald-300">Åpen</span>
-                                    ) : z.spillbar ? (
-                                        <span className="text-amber-300">Krever nivå {z.krevesNiva}</span>
-                                    ) : (
-                                        <span className="text-slate-500">Kommer</span>
-                                    )}
-                                </p>
-                            </div>
-                        );
-                    })}
-                </div>
+                <VerdensKart niva={niva} />
             </div>
         </div>
+    );
+}
+
+/**
+ * Verdenskartet. Ti kort merket «Kommer» rett i ansiktet på eleven leser som et
+ * uferdig spill. Her vises den ene ferdige sonen som det den er, og resten
+ * ligger sammenrullet bak en knapp - som et løfte hun kan velge å se, ikke en
+ * liste over det som mangler.
+ */
+function VerdensKart({ niva }: { niva: number }) {
+    const [visAlle, setVisAlle] = useState(false);
+    const apne = ZONES.filter((z) => z.spillbar);
+    const kommer = ZONES.filter((z) => !z.spillbar);
+
+    return (
+        <>
+            <h3 className="mb-3 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
+                Verden
+            </h3>
+            <div className="grid gap-2 sm:grid-cols-2">
+                {apne.map((z) => (
+                    <div
+                        key={z.id}
+                        className={`rounded-xl border p-3 ${
+                            niva >= z.krevesNiva
+                                ? 'border-emerald-400/40 bg-emerald-500/10'
+                                : 'border-white/10 bg-white/5 opacity-70'
+                        }`}
+                    >
+                        <div className="flex items-baseline justify-between gap-2">
+                            <p className="font-display font-semibold text-slate-100">{z.title}</p>
+                            <span className="text-[10px] uppercase tracking-wider text-slate-400">
+                                {z.era}
+                            </span>
+                        </div>
+                        <p className="mt-0.5 text-xs leading-snug text-slate-400">{z.pitch}</p>
+                        <p className="mt-1.5 text-[11px] font-semibold">
+                            {niva >= z.krevesNiva ? (
+                                <span className="text-emerald-300">Åpen</span>
+                            ) : (
+                                <span className="text-amber-300">Krever nivå {z.krevesNiva}</span>
+                            )}
+                        </p>
+                    </div>
+                ))}
+            </div>
+
+            <button
+                type="button"
+                onClick={() => setVisAlle((v) => !v)}
+                className="mx-auto mt-4 block rounded-lg border border-white/15 px-4 py-2 text-xs font-semibold text-slate-300 transition hover:bg-white/5"
+            >
+                {visAlle
+                    ? 'Skjul resten av verden'
+                    : `Se hva som ligger lenger ute (${kommer.length} steder)`}
+            </button>
+
+            {visAlle && (
+                <ul className="mx-auto mt-3 max-w-xl space-y-1.5">
+                    {kommer.map((z) => (
+                        <li key={z.id} className="rounded-lg bg-white/5 px-3 py-2 text-sm">
+                            <span className="font-semibold text-slate-200">{z.title}</span>
+                            <span className="ml-2 text-[11px] uppercase tracking-wider text-slate-500">
+                                {z.era}
+                            </span>
+                            <p className="text-xs text-slate-400">{z.pitch}</p>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </>
+    );
+}
+
+/** Bera Kremmers bod. Grunnen til at sølvet i sekken betyr noe. */
+export function ButikkPanel({ npcId, onLukk }: { npcId: string; onLukk: () => void }) {
+    const npc = NORDVIK_NPCS.find((n) => n.id === npcId);
+    const solv = useRpgStore((s) => s.solv);
+    const sekk = useRpgStore((s) => s.sekk);
+    const utstyr = useRpgStore((s) => s.utstyr);
+    const kjop = useRpgStore((s) => s.kjop);
+    if (!npc?.handler) return null;
+
+    const eier = (id: string) => sekk.includes(id) || Object.values(utstyr).includes(id);
+
+    return (
+        <Ramme onLukk={onLukk}>
+            <header className="mb-3 flex items-baseline justify-between gap-3">
+                <div>
+                    <h2 className="font-display text-2xl font-bold text-amber-200">{npc.name}</h2>
+                    <p className="text-xs uppercase tracking-widest text-slate-400">{npc.role}</p>
+                </div>
+                <span className="shrink-0 rounded-full bg-amber-300/15 px-3 py-1 text-sm font-semibold text-amber-200">
+                    {solv} sølv
+                </span>
+            </header>
+
+            <p className="mb-4 text-[15px] leading-relaxed text-slate-100">«{npc.handler.velkomst}»</p>
+
+            <ul className="space-y-2">
+                {npc.handler.varer.map((id) => {
+                    const item = ITEM_BY_ID[id];
+                    if (!item?.pris) return null;
+                    const harRaad = solv >= item.pris;
+                    const alt = eier(id);
+                    return (
+                        <li
+                            key={id}
+                            className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 p-3"
+                        >
+                            <div className="min-w-0">
+                                <p className="font-semibold" style={{ color: RARITY_COLOR[item.rarity] }}>
+                                    {item.name}
+                                </p>
+                                <p className="truncate text-xs text-slate-400">{item.flavor}</p>
+                                <p className="mt-0.5 text-[11px] text-slate-300">
+                                    {item.weapon
+                                        ? `${item.weapon.skade} skade · ${item.weapon.rekkevidde} rekkevidde`
+                                        : Object.entries(item.stats)
+                                              .map(([k, v]) => `+${v} ${k}`)
+                                              .join(' · ')}
+                                </p>
+                            </div>
+                            <button
+                                type="button"
+                                disabled={!harRaad || alt}
+                                onClick={() => kjop(id)}
+                                className="shrink-0 rounded-lg bg-amber-400 px-3 py-2 text-xs font-bold text-slate-900 transition enabled:hover:bg-amber-300 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-slate-400"
+                            >
+                                {alt ? 'Har den' : `${item.pris} sølv`}
+                            </button>
+                        </li>
+                    );
+                })}
+            </ul>
+        </Ramme>
     );
 }

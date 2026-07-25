@@ -23,6 +23,8 @@ export const SPELLS: SpellDef[] = [
         skade: 20,
         nedkjoling: 850,
         farge: 0x7fd4ff,
+        // Den sa at den boret seg gjennom. Nå gjør den det også.
+        piercing: true,
         beskrivelse: 'En brennende rune som borer seg gjennom det den treffer.',
     },
     {

@@ -65,10 +65,18 @@ export const DEFAULT_APPEARANCE: AppearanceChoice = { skin: 0, hair: 0, hairColo
 
 // ─── Nivåkurve ──────────────────────────────────────────────────────────────
 
-/** XP som kreves for å nå et gitt nivå. Mykt stigende, ingen vegg. */
+/**
+ * XP som kreves for å nå et gitt nivå.
+ *
+ * Kurven er lagt slik at alt innholdet i Nordvik - 20 oppdrag, 6 landemerker og
+ * bossen, til sammen rundt 1000 XP - fører eleven helt til toppnivået for
+ * sonen. Før krevde nivå 20 nesten 5800 XP, altså flere hundre monsterdrap
+ * etter at alt det håndlagde innholdet var brukt opp. Et tak som bare kan nås
+ * ved å slite er ikke et mål, det er en straff.
+ */
 export function xpForLevel(level: number): number {
     if (level <= 1) return 0;
-    return Math.round(60 * Math.pow(level - 1, 1.55));
+    return Math.round(22 * Math.pow(level - 1, 1.55));
 }
 
 export function levelFromXp(xp: number): number {
@@ -77,7 +85,8 @@ export function levelFromXp(xp: number): number {
     return level;
 }
 
-export const MAX_LEVEL = 20;
+/** Toppnivået for Nordvik. Nye soner løfter dette taket. */
+export const MAX_LEVEL = 12;
 
 /** Fulle kjernestats for en klasse på et gitt nivå. */
 export function statsAt(classId: ClassId, level: number) {

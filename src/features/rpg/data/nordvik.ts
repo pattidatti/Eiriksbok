@@ -25,8 +25,14 @@ export const NORDVIK_NPCS: NpcDef[] = [
             'Spis noe. Du ser ut som en som har gått langt.',
         ],
         kunnskap: [
-            'Nøklene jeg bærer i beltet er tegnet på makten og ansvaret mitt over gården. Husfrua styrer alt innenfor dørstokken.',
-            'Vi har treller her. De er ufrie og har ingen rettigheter i det hele tatt. Slik er det - men jeg liker det ikke.',
+            {
+                tekst: 'Nøklene jeg bærer i beltet er tegnet på makten og ansvaret mitt over gården. Husfrua styrer alt innenfor dørstokken.',
+                stikkord: ['nøkl'],
+            },
+            {
+                tekst: 'Vi har treller her. De er ufrie og har ingen rettigheter i det hele tatt. Slik er det - men jeg liker det ikke.',
+                stikkord: ['trell', 'ufri'],
+            },
         ],
     },
     {
@@ -41,9 +47,18 @@ export const NORDVIK_NPCS: NpcDef[] = [
             'Faren min bygde etter øyemål. Jeg bygger etter øyemål. Det holder.',
         ],
         kunnskap: [
-            'Vi legger bordene over hverandre, som takstein på et tak. Det kalles klinkbygging. Det gjør skroget både lett og sterkt.',
-            'Skipet stikker knapt ned i vannet. Grunt dypgående, kaller vi det. Derfor kan vi seile langt opp elvene og komme brått på folk.',
-            'Det siste og viktigste steget var seilet. Da båtene fikk seil, kunne vi krysse åpent hav. Før det holdt vi oss langs land.',
+            {
+                tekst: 'Vi legger bordene over hverandre, som takstein på et tak. Det kalles klinkbygging. Det gjør skroget både lett og sterkt.',
+                stikkord: ['klinkbygg', 'over hverandre'],
+            },
+            {
+                tekst: 'Skipet stikker knapt ned i vannet. Grunt dypgående, kaller vi det. Derfor kan vi seile langt opp elvene og komme brått på folk.',
+                stikkord: ['dypgående', 'elver'],
+            },
+            {
+                tekst: 'Det siste og viktigste steget var seilet. Da båtene fikk seil, kunne vi krysse åpent hav. Før det holdt vi oss langs land.',
+                stikkord: ['seil'],
+            },
         ],
     },
     {
@@ -58,9 +73,18 @@ export const NORDVIK_NPCS: NpcDef[] = [
             'Si det høyt. Det du sier høyt, glemmer du seinere.',
         ],
         kunnskap: [
-            'Tinget er en hellig plass. Der diskuterer vi, der dømmer vi, og der vedtar vi lovene våre.',
-            'På Island grunnla de et ting for hele øya i år 930. De kaller det Alltinget.',
-            'I 1024 kom Kristenretten. Nye lover bygget på kristne verdier - blant annet ble det forbudt å sette ut barn.',
+            {
+                tekst: 'Tinget er en hellig plass. Der diskuterer vi, der dømmer vi, og der vedtar vi lovene våre.',
+                stikkord: ['tinget'],
+            },
+            {
+                tekst: 'På Island grunnla de et ting for hele øya i år 930. De kaller det Alltinget.',
+                stikkord: ['alltinget', '930'],
+            },
+            {
+                tekst: 'I 1024 kom Kristenretten. Nye lover bygget på kristne verdier - blant annet ble det forbudt å sette ut barn.',
+                stikkord: ['kristenrett', '1024'],
+            },
         ],
     },
     {
@@ -75,8 +99,14 @@ export const NORDVIK_NPCS: NpcDef[] = [
             'Tro meg eller la være. Havet bryr seg ikke om hva du tror.',
         ],
         kunnskap: [
-            'Vi kalte det Vinland fordi det vokste ville druer der. Vin-land. Enkelt, egentlig.',
-            'Harald Hårfagre vant ikke i Hafrsfjord alene. Han allierte seg med ladejarlene fra Trøndelag.',
+            {
+                tekst: 'Vi kalte det Vinland fordi det vokste ville druer der. Vin-land. Enkelt, egentlig.',
+                stikkord: ['vinland', 'druer'],
+            },
+            {
+                tekst: 'Harald Hårfagre vant ikke i Hafrsfjord alene. Han allierte seg med ladejarlene fra Trøndelag.',
+                stikkord: ['ladejarl', 'hafrsfjord', 'hårfagre'],
+            },
         ],
     },
     {
@@ -91,10 +121,35 @@ export const NORDVIK_NPCS: NpcDef[] = [
             'Om hundre år vet folk hva som skjedde her. Fordi jeg satt her og skrev.',
         ],
         kunnskap: [
-            'Århundrene før vikingtiden kaller vi merovingertiden - eller «de stille århundrene». Nesten ingen skrev noe ned da.',
-            'Derfor vet vi så lite om den tida: vi må grave i jorda og bruke arkeologi i stedet for tekster.',
-            'Det begynte med en katastrofe. I år 536 kom det en klimakatastrofe. Sola ble borte bak et slør, avlingene sviktet, og svært mange døde.',
+            {
+                tekst: 'Århundrene før vikingtiden kaller vi merovingertiden - eller «de stille århundrene». Nesten ingen skrev noe ned da.',
+                stikkord: ['stille århundre', 'merovinger'],
+            },
+            {
+                tekst: 'Derfor vet vi så lite om den tida: vi må grave i jorda og bruke arkeologi i stedet for tekster.',
+                stikkord: ['arkeologi', 'skrev noe ned'],
+            },
+            {
+                tekst: 'Det begynte med en katastrofe. I år 536 kom det en klimakatastrofe. Sola ble borte bak et slør, avlingene sviktet, og svært mange døde.',
+                stikkord: ['536', 'klimakatastrofe'],
+            },
         ],
+    },
+    {
+        id: 'bera',
+        name: 'Bera Kremmer',
+        role: 'Hun som selger det andre har glemt',
+        tile: [21, 31],
+        palette: { tunic: '#8a5a2f', trim: '#e8c96a', hair: '#3a2a1a' },
+        smalltalk: [
+            'Sølv er sølv. Men det du kan, tar ingen fra deg.',
+            'Jeg selger ikke svar. Bare ting som gjør det lettere å lete.',
+            'Har du sølv, har jeg noe du trenger.',
+        ],
+        handler: {
+            velkomst: 'Kom nærmere. Jeg har både det som verner og det som leger.',
+            varer: ['vadmelskjortel', 'lerbrynje', 'ringbrynje', 'tingspyd', 'runestav', 'kvernstein'],
+        },
     },
 ];
 
@@ -104,7 +159,8 @@ export const NORDVIK_LANDMARKS: LandmarkDef[] = [
         kind: 'runestein',
         tile: [22, 34],
         title: 'Runesteinen ved veien',
-        text: 'Her går Nordvegen — veien mot nord. Det er derfor landet heter Noreg: «veien mot nord».',
+        text: 'Her går Nordvegen - veien mot nord. Det er derfor landet heter Noreg: «veien mot nord».',
+        stikkord: ['norge', 'nordvegen'],
     },
     {
         id: 'runestein-hallen',
@@ -112,6 +168,7 @@ export const NORDVIK_LANDMARKS: LandmarkDef[] = [
         tile: [34, 30],
         title: 'Steinen foran hallen',
         text: 'Reist for høvdingen som samlet mange under ett tak. De store hallene, som den på Borg i Lofoten, forteller oss at makten var samlet hos færre og sterkere høvdinger enn før.',
+        stikkord: ['hallene', 'borg i lofoten'],
     },
     {
         id: 'skilt-smia',
@@ -119,6 +176,7 @@ export const NORDVIK_LANDMARKS: LandmarkDef[] = [
         tile: [12, 24],
         title: 'Innskrift over smiedøra',
         text: 'Jern og seil. To ting gjorde ferden mulig: bedre jernredskaper og langskip med seil.',
+        stikkord: ['jernredskaper', 'teknologisk'],
     },
     {
         id: 'runestein-stamford',
@@ -126,6 +184,7 @@ export const NORDVIK_LANDMARKS: LandmarkDef[] = [
         tile: [52, 18],
         title: 'Den siste steinen',
         text: 'For dem som ikke kom hjem fra England i 1066. Slaget ved Stamford Bridge regnes tradisjonelt som slutten på vikingtiden.',
+        stikkord: ['stamford', '1066'],
     },
     {
         id: 'baal-tinget',

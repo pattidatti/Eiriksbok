@@ -90,6 +90,8 @@ export interface ItemDef {
     /** Kort, muntlig forklaring - vises i sekken. */
     flavor: string;
     stats: Partial<CoreStats>;
+    /** Hva Bera Kremmer tar for den. Uten pris er den ikke til salgs. */
+    pris?: number;
     /** Bare for våpen: form og rekkevidde på slaget. */
     weapon?: {
         skade: number;
@@ -125,6 +127,8 @@ export interface SpellDef {
     nedkjoling: number;
     farge: number;
     beskrivelse: string;
+    /** Går prosjektilet gjennom fienden i stedet for å stoppe i den? */
+    piercing?: boolean;
     /** Kunnskapskravet: låses opp når eleven har svart riktig på så mange spørsmål. */
     krevesRiktige?: number;
 }
@@ -175,6 +179,8 @@ export interface QuestDef {
     source: QuestSource;
     /** NPC-en som gir questen. */
     giverId: string;
+    /** Hvor svaret står. Brukes av hintet og av kompasset i HUD-en. */
+    kilde: Kilde | null;
     belonning: {
         xp: number;
         solv: number;
@@ -195,8 +201,32 @@ export interface ZoneDef {
     krevesNiva: number;
     /** Klar til å spilles? Sone 1 er ferdig, resten kommer. */
     spillbar: boolean;
-    /** Fargetema for kart og HUD. */
-    tema: { gress: string; stein: string; vann: string; himmel: string };
+    /**
+     * Fargetema. Alt terreng og alt tømmer hentes herfra - ingen hardkodede
+     * farger i tileforge. Det er dette som gjør at en ny sone får sin egen
+     * identitet uten at noen må tegne ny grafikk: trærne i Mesopotamia skal
+     * ikke være fjordgrønne, og husene i Dampbyen ikke vikingbrune.
+     */
+    tema: ZoneTema;
+}
+
+export interface ZoneTema {
+    gress: string;
+    stein: string;
+    vann: string;
+    /** Lyset i lufta. Legges som en svak tone over hele scenen. */
+    himmel: string;
+    sand: string;
+    /** Tråkket jord - stier og plasser. */
+    jord: string;
+    /** Dyrket mark. */
+    aker: string;
+    /** Bygningstømmer, kaier, gjerder. */
+    tommer: string;
+    /** Taket på husene. */
+    tak: string;
+    /** Løvverket i trær og busker. */
+    lov: string;
 }
 
 export interface NpcDef {
@@ -209,7 +239,22 @@ export interface NpcDef {
     /** Det NPC-en sier når du snakker uten aktiv quest. */
     smalltalk: string[];
     /** Faktaopplysninger NPC-en gir - dette er «svarene i verden». */
-    kunnskap?: string[];
+    kunnskap?: KunnskapsBit[];
+    /** Handelsmann? Da åpner samtalen en bod i stedet for et oppdrag. */
+    handler?: { varer: string[]; velkomst: string };
+}
+
+/**
+ * Én ting en NPC eller et landemerke faktisk vet.
+ *
+ * `stikkord` er det som binder verden til spørsmålsbanken: et spørsmål regnes
+ * som besvart her hvis ett av stikkordene finnes i spørsmålet eller i fasiten.
+ * Det er dette som gjør at løftet «svaret finnes et sted på kartet» holder for
+ * alle oppdrag, ikke bare de håndskrevne tre.
+ */
+export interface KunnskapsBit {
+    tekst: string;
+    stikkord: string[];
 }
 
 export interface LandmarkDef {
@@ -219,6 +264,15 @@ export interface LandmarkDef {
     title: string;
     /** Teksten eleven leser - inneholder svar på minst ett spørsmål. */
     text: string;
+    /** Hvilke spørsmål teksten svarer på. Se KunnskapsBit. */
+    stikkord?: string[];
+}
+
+/** Hvor svaret på et spørsmål faktisk står i verden. */
+export interface Kilde {
+    type: 'npc' | 'landemerke';
+    id: string;
+    navn: string;
 }
 
 // ─── Lagret spill ───────────────────────────────────────────────────────────

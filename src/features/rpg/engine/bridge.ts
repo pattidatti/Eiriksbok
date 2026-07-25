@@ -21,6 +21,10 @@ export interface SceneEvents {
     seier: Record<string, never>;
     /** Sonetittel når eleven går inn i et område. */
     sone: { tittel: string; undertittel: string };
+    /** Sonens lys, så React kan legge himmeltone og vignett oppå lerretet. */
+    atmosfare: { himmel: string };
+    /** Retningen til nærmeste mål, til kompasset i HUD-en. */
+    kompass: { vinkel: number; avstand: number; navn: string } | null;
 }
 
 export interface UiEvents {
@@ -36,6 +40,10 @@ export interface UiEvents {
     besvergelse: { spellId: string };
     /** Start på nytt etter død. */
     gjenoppliv: Record<string, never>;
+    /** Styrestikke på skjerm. x og y er -1..1. */
+    styring: { x: number; y: number };
+    /** Knapp på skjermkontrollen. */
+    knapp: { navn: 'angrep' | 'rull' | 'bruk' };
 }
 
 class Emitter<Events> {
@@ -69,7 +77,3 @@ export const fraSpill = new Emitter<SceneEvents>();
 /** Grensesnittet sier ifra til scenen. */
 export const tilSpill = new Emitter<UiEvents>();
 
-export function nullstillBro(): void {
-    fraSpill.clear();
-    tilSpill.clear();
-}

@@ -62,6 +62,7 @@ export const ITEMS: ItemDef[] = [
         rarity: 'god',
         flavor: 'Båret av en som pleide å ta ordet på tinget.',
         stats: {},
+        pris: 120,
         weapon: { skade: 12, hastighet: 400, rekkevidde: 54, bue: 55, art: 'spyd' },
     },
     {
@@ -71,6 +72,7 @@ export const ITEMS: ItemDef[] = [
         rarity: 'sjelden',
         flavor: 'Tegnene langs skaftet lyser når du sier noe sant.',
         stats: { visdom: 4, mana: 20 },
+        pris: 200,
         weapon: { skade: 8, hastighet: 380, rekkevidde: 42, bue: 90, art: 'stav' },
     },
     {
@@ -80,7 +82,7 @@ export const ITEMS: ItemDef[] = [
         rarity: 'episk',
         flavor: 'Den slår ikke ned. Den slår fast.',
         stats: { styrke: 5, vern: 2 },
-        weapon: { skade: 26, hastighet: 700, rekkevidde: 36, bue: 150, art: 'hammer' },
+        weapon: { skade: 30, hastighet: 620, rekkevidde: 36, bue: 150, art: 'hammer' },
     },
 
     // ── Rustning ────────────────────────────────────────────────────────────
@@ -91,6 +93,7 @@ export const ITEMS: ItemDef[] = [
         rarity: 'vanlig',
         flavor: 'Ull. Varm. Stopper regn, ikke sverd.',
         stats: { vern: 1 },
+        pris: 30,
     },
     {
         id: 'lerbrynje',
@@ -99,6 +102,7 @@ export const ITEMS: ItemDef[] = [
         rarity: 'god',
         flavor: 'Kokt lær. Lett nok til å løpe i.',
         stats: { vern: 4, hp: 15 },
+        pris: 90,
     },
     {
         id: 'ringbrynje',
@@ -107,6 +111,7 @@ export const ITEMS: ItemDef[] = [
         rarity: 'sjelden',
         flavor: 'Tusenvis av små ringer, hektet i hverandre for hånd.',
         stats: { vern: 8, hp: 30 },
+        pris: 220,
     },
     {
         id: 'glemselskappen',
@@ -125,6 +130,7 @@ export const ITEMS: ItemDef[] = [
         rarity: 'vanlig',
         flavor: 'Hull i midten, snor gjennom. Bestemor sa den hjalp.',
         stats: { hp: 10 },
+        pris: 45,
     },
     {
         id: 'skaldering',
