@@ -7,6 +7,7 @@
     "category": "Dansketiden",
     "readTime": "9 min lesning",
     "heroImage": "/images/dansketiden/christian-iv-hero.webp",
+    "lastUpdated": "2026-07-25",
     "details": [
         "Christian IV var konge over Danmark og Norge i 60 år, fra 1588 til 1648.",
         "I 1624 grunnla han gruvebyen Kongsberg etter at det ble funnet sølv i fjellet.",
@@ -15,7 +16,7 @@
     "content": [
         {
             "type": "text",
-            "content": "I 1623 gjette to barn en flokk okser i skogen ved Sandsvær, sør i Norge. En av oksene skrapte med hoven i bakken, og der glitret det. Barna hadde funnet sølv, rent sølv, midt i den norske skogen. Nyheten reiste helt til kongen i København. Kongen het Christian IV, og han skjønte straks hva funnet betydde. Sølv var det samme som penger, og penger var det samme som makt. Året etter, i 1624, grunnla han en helt ny by akkurat der. Byen fikk navnet Kongsberg."
+            "content": "Sommeren 1623 var to gjeterbarn ute med dyra i skogen ved Sandsvær, sør i Norge (Berg, 2024). Sagnet forteller at en okse skrapte med hoven i bakken, og at det glitret der. Barna hadde funnet sølv, rent sølv, midt i den norske skogen. Nyheten reiste helt til kongen i København. Kongen het Christian IV, og han skjønte straks hva funnet betydde. Sølv var det samme som penger, og penger var det samme som makt. Året etter, i 1624, grunnla han en helt ny by akkurat der. Byen fikk navnet Kongsberg (Thorsnæs & Lauritzen, 2026)."
         },
         {
             "type": "image",
@@ -29,11 +30,11 @@
         },
         {
             "type": "text",
-            "content": "Christian IV ble født i 1577 og satt på tronen i hele 60 år. Ingen annen konge har styrt Danmark og Norge så lenge. På denne tiden var Norge ikke et eget land med egen konge. Norge hadde vært under Danmark helt siden [Kalmarunionen](/historie/norgeshistorie/kalmarunionen) på slutten av 1300-tallet. Kongen bodde i København, og han bestemte over begge landene. Norge hadde ikke lenger eget råd eller egen regjering, og de viktigste beslutningene ble tatt i Danmark."
+            "content": "Christian IV ble født i 1577 og satt på tronen fra 1588 til 1648, i hele 60 år (Rian et al., 2026). Ingen annen konge har styrt Danmark og Norge så lenge. På denne tiden var Norge ikke et eget land med egen konge. Norge hadde vært under Danmark helt siden [Kalmarunionen](/historie/norgeshistorie/kalmarunionen) på slutten av 1300-tallet. Kongen bodde i København, og han bestemte over begge landene. Norge hadde ikke lenger eget råd eller egen regjering, og de viktigste beslutningene ble tatt i Danmark."
         },
         {
             "type": "text",
-            "content": "De fleste danske kongene brydde seg lite om Norge. Christian IV var annerledes. Han reiste til Norge nesten tretti ganger. Han klatret ned i gruver, tegnet opp nye byer og ga ordre om hva som skulle bygges. For ham var Norge ikke et glemt hjørne, men et land fullt av verdier han kunne bruke: sølv i fjellet, kobber i berget og endeløse skoger."
+            "content": "De fleste danske kongene brydde seg lite om Norge. Christian IV var annerledes. Han var den dansk-norske kongen som brydde seg mest om Norge, og han reiste hit rundt 25 ganger (Rian et al., 2026). Han klatret ned i gruver, tegnet opp nye byer og ga ordre om hva som skulle bygges. For ham var Norge ikke et glemt hjørne, men et land fullt av verdier han kunne bruke: sølv i fjellet, kobber i berget og endeløse skoger."
         },
         {
             "type": "header",
@@ -41,18 +42,18 @@
         },
         {
             "type": "text",
-            "content": "Sølvet ved Kongsberg lå ikke oppe i dagen. Det lå i smale årer dypt inne i harde fjell. For å komme til det måtte arbeiderne hakke seg meter etter meter inn i berget. Gruvene ble stadig dypere, helt ned til flere hundre meter under bakken. Der nede var det kaldt, mørkt og farlig. Vann rant inn, og luften var tung. Likevel kom folk fra hele Europa for å jobbe her, for kongen betalte for arbeidet."
+            "content": "Sølvet ved Kongsberg lå ikke oppe i dagen. Det lå i smale årer dypt inne i harde fjell. For å komme til det måtte arbeiderne hakke seg meter etter meter inn i berget. Gruvene ble stadig dypere. Kongens gruve gikk til slutt mer enn tusen meter ned under bakken (Berg, 2024). Der nede var det kaldt, mørkt og farlig. Vann rant inn, og luften var tung. Likevel kom det folk utenfra for å jobbe her. Tyske bergmenn fra Sachsen og Harz ble hentet inn fordi de kunne faget (Berg, 2024)."
         },
         {
             "type": "text",
-            "content": "Sølvverket ved Kongsberg ble den største arbeidsplassen i Norge. På det meste jobbet det flere tusen mennesker der. Arbeidsdagen var lang og hard. Nede i gruvene lyste arbeiderne seg fram med små talglys, og de bar malmen ut på ryggen eller kjørte den i vogner på skinner. Selv barn jobbet i verket, ofte med å sortere stein. Gruvedriften varte i mer enn trehundre år, helt fram til 1958. Ingen annen bedrift i Norge har holdt det gående så lenge."
+            "content": "Sølvverket ved Kongsberg ble den største gruva i landet målt i arbeid. På det meste, i 1770, jobbet det over 4000 mennesker der (Berg, 2024). Arbeidsdagen var lang og hard. Barn var en stor del av arbeidsstokken: på slutten av 1700-tallet var omkring en tredel av arbeiderne barn og ungdom, og de jobbet særlig med å knuse og vaske malmen oppe i dagen (Berg, 2026). Gruvedriften varte i 335 år, fra 1623 helt fram til 1958 (Berg, 2024)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hvordan sprakk de fjellet?",
-                "content": "Før dynamitten fantes, hadde ikke gruvearbeiderne noe sprengstoff. I stedet brukte de ild. De stablet store bål inntil fjellveggen og lot dem brenne hele natten. Varmen fikk steinen til å utvide seg og sprekke opp. Neste morgen kunne arbeiderne hakke løs det som hadde løsnet. Denne måten kaltes fyrsetting. Den var langsom og fylte gangene med røyk, men den var det eneste som virket mot det harde berget."
+                "content": "Før krutt og dynamitt kom i vanlig bruk, hadde ikke gruvearbeiderne noe sprengstoff. I stedet brukte de ild. De fyrte opp et kraftig bål mot fjellveggen, og varmen fikk berget til å slå sprekker. Etterpå kunne arbeiderne hakke løs det som hadde løsnet. Denne måten kaltes fyrsetting (Selbekk, 2024). Den var langsom og fylte gangene med røyk, men den virket mot det harde berget."
             }
         },
         {
@@ -72,7 +73,7 @@
         },
         {
             "type": "text",
-            "content": "Der det før bare var skog, vokste det nå fram en hel by. Sølvet trakk folk til dalen som en magnet. Først kom gruvearbeiderne, og de trengte hus. Så kom smelterne som renset malmen, og myntslagerne som lagde mynter. Rundt dem kom kjøpmenn, håndverkere og prester. På 1700-tallet var Kongsberg blitt en av de aller største byene i Norge, nesten like stor som Bergen. Alt sammen sprang ut av én sølvåre i fjellet. Bygg byen selv i spillet under, og se den vokse fram steg for steg."
+            "content": "Der det før bare var skog, vokste det nå fram en hel by. Sølvet trakk folk til dalen som en magnet. Først kom gruvearbeiderne, og de trengte hus. Så kom smelterne som renset malmen, og myntslagerne som lagde mynter. Rundt dem kom kjøpmenn, håndverkere og prester. I siste halvdel av 1700-tallet var Kongsberg blitt Norges nest største by etter Bergen, med rundt 8000 innbyggere i 1769 (Thorsnæs & Lauritzen, 2026). Alt sammen sprang ut av én sølvåre i fjellet. Bygg byen selv i spillet under, og se den vokse fram steg for steg."
         },
         {
             "type": "component",
@@ -93,15 +94,15 @@
         },
         {
             "type": "text",
-            "content": "Kongsberg var ikke det eneste Christian IV bygde. I 1624 brant hele Oslo ned til grunnen. I stedet for å bygge byen opp igjen på samme sted, flyttet kongen den. Han la den nye byen tett inntil festningen Akershus, med rette, brede gater i et rutemønster. Den nye byen kalte han Christiania, etter seg selv. I dag heter den Oslo igjen, men de rette gatene i sentrum er fortsatt de kongen tegnet opp."
+            "content": "Kongsberg var ikke det eneste Christian IV bygde. I 1624 brant Oslo, og i stedet for å bygge byen opp igjen på samme sted, flyttet kongen den (Rian et al., 2026). Han la den nye byen tett inntil festningen Akershus, med rette, brede gater i et rutemønster. Den nye byen kalte han Christiania, etter seg selv. I dag heter den Oslo igjen, men de rette gatene i sentrum er fortsatt de kongen tegnet opp."
         },
         {
             "type": "text",
-            "content": "Kongen grunnla flere byer. I 1641 startet han Kristiansand helt sør i landet. Han satte også i gang kobbergruver, blant annet på Røros. Og han visste godt at Norges skoger var verdt en formue. Trærne ble til planker som ble solgt til hele Europa. Du kan lese mer om det i artikkelen om [trelasthandelen](/historie/dansketiden/trelasthandelen). Sølv, kobber og tømmer gjorde til sammen Norge til en gullgruve for den danske kongen. For å styre alt dette bygde kongen opp et helt system av embetsmenn, bergmestere og soldater rundt om i landet."
+            "content": "Kongen grunnla flere byer. I 1641 startet han Kristiansand helt sør i landet (Rian et al., 2026). I hans tid kom også kobberet i gang: på Røros startet driften i 1644, og verket fikk store privilegier to år senere (Berg et al., 2024). Og han visste godt at Norges skoger var verdt en formue. Trærne ble til planker som ble solgt til hele Europa. Du kan lese mer om det i artikkelen om [trelasthandelen](/historie/dansketiden/trelasthandelen). Sølv, kobber og tømmer gjorde til sammen Norge til en gullgruve for den danske kongen. For å styre alt dette bygde kongen opp et helt system av embetsmenn, bergmestere og soldater rundt om i landet."
         },
         {
             "type": "text",
-            "content": "Men Christian IV var også en krigerkonge, og her gikk det verre. Han førte flere kriger mot Sverige og tapte mye land og mange penger. I et sjøslag i 1644 mistet han synet på det ene øyet av en granatsplint, men han ble stående og lede skipet videre. Krigene tømte kongens kasse, og det var en av grunnene til at han var så glad i det norske sølvet. Tiden hans hadde også en mørk side for vanlige folk. Det var i disse årene at frykten for hekser var på sitt sterkeste, slik du kan lese om i artikkelen om [hekseprosessene](/historie/lov-og-rett/hekseprosessene)."
+            "content": "Men Christian IV var også en krigerkonge, og her gikk det verre. Han førte flere kriger mot Sverige og tapte mye land og mange penger. I sjøslaget ved Kolberger Heide i 1644 mistet han synet på det høyre øyet (Rian et al., 2026). Krigene tømte kongens kasse, og det var en av grunnene til at han var så glad i det norske sølvet. Tiden hans hadde også en mørk side for vanlige folk. Det var i disse årene at frykten for hekser var på sitt sterkeste, slik du kan lese om i artikkelen om [hekseprosessene](/historie/lov-og-rett/hekseprosessene)."
         },
         {
             "type": "image",
@@ -115,7 +116,7 @@
         },
         {
             "type": "text",
-            "content": "Da Christian IV døde i 1648, hadde han satt dype spor i Norge. Byene han grunnla, står fortsatt. Sølvverket på Kongsberg holdt det gående i over trehundre år, og der lager staten fortsatt alle norske mynter den dag i dag. Kongen hadde vist noe viktig: selv om Norge ble styrt fra København, var landet fullt av verdier som gjorde det verdt å bry seg om."
+            "content": "Da Christian IV døde i 1648, hadde han satt dype spor i Norge. Byene han grunnla, står fortsatt. Sølvverket på Kongsberg holdt det gående i over trehundre år, og fremdeles er det på Kongsberg norske mynter blir laget (Norges Bank, u.å.). Kongen hadde vist noe viktig: selv om Norge ble styrt fra København, var landet fullt av verdier som gjorde det verdt å bry seg om."
         },
         {
             "type": "text",
@@ -134,7 +135,7 @@
                 ],
                 "reflekter": [
                     "Teksten sier at sølv var det samme som makt. Forklar med egne ord hvordan et funn i fjellet kunne gi kongen mer makt.",
-                    "Hvorfor tror du folk fra hele Europa var villige til å jobbe i de kalde og farlige gruvene ved Kongsberg?",
+                    "Hvorfor tror du erfarne bergmenn helt fra Tyskland var villige til å reise til de kalde og farlige gruvene ved Kongsberg?",
                     "Christian IV brydde seg mye mer om Norge enn de fleste danske kongene. Hvorfor gjorde han det, tror du?",
                     "Kongen brukte mye av sølvet på kriger han tapte. Var det en klok bruk av pengene? Begrunn svaret."
                 ],
@@ -200,6 +201,21 @@
                         ],
                         "answer": "I mer enn trehundre år, helt til 1958"
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, B. I. (2024). *Kongsberg sølvverk*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Kongsberg_sølvverk](https://snl.no/Kongsberg_s%C3%B8lvverk)",
+                    "Berg, B. I. (2026). *Michael Heltzen*. Norsk biografisk leksikon. Hentet 25.07.2026 fra [nbl.snl.no/Michael_Heltzen](https://nbl.snl.no/Michael_Heltzen)",
+                    "Berg, B. I., Gvein, Ø. & Indseth, A. (2024). *Røros kobberverk*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Røros_kobberverk](https://snl.no/R%C3%B8ros_kobberverk)",
+                    "Norges Bank. (u.å.). *Sedler og mynter*. Hentet 25.07.2026 fra [norges-bank.no](https://www.norges-bank.no/tema/Sedler-og-mynter/)",
+                    "Rian, Ø., Mardal, M. A. & Weidling, T. R. (2026). *Christian 4.*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Christian_4](https://snl.no/Christian_4)",
+                    "Selbekk, R. S. (2024). *Fyrsetting*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/fyrsetting](https://snl.no/fyrsetting)",
+                    "Thorsnæs, G. & Lauritzen, P. R. (2026). *Kongsberg - kommune i Buskerud*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Kongsberg](https://snl.no/Kongsberg)"
                 ]
             }
         }

@@ -7,8 +7,9 @@
     "category": "Dansketiden",
     "readTime": "9 min lesning",
     "heroImage": "/images/dansketiden/trelasthandelen-hero.webp",
+    "lastUpdated": "2026-07-25",
     "details": [
-        "Oppgangssaga kom til Norge rundt 1500 og gjorde det mulig å skjære billige planker i store mengder.",
+        "Oppgangssaga kom til Norge tidlig på 1500-tallet og gjorde det mulig å skjære billige planker i store mengder.",
         "Elva fraktet tømmeret gratis, og fossen drev sagene, så Norge kunne selge trelast billig til resten av Europa.",
         "Hollenderne kjøpte enorme mengder, og kystbyer som Skien, Drammen og Halden vokste fram rundt sagbrukene."
     ],
@@ -41,11 +42,11 @@
         },
         {
             "type": "text",
-            "content": "Det første trikset var tømmerfløting. Om våren, når snøen smeltet og elvene ble store og sterke, kastet folk stokkene ut i vannet. Strømmen bar dem av gårde, mil etter mil, helt ned til kysten. Menn som ble kalt fløtere fulgte med og løste opp stokker som satte seg fast, men selve det tunge løftet gjorde elva helt gratis. Ingen hest, ingen kjerre, ingen lønn."
+            "content": "Det første trikset var tømmerfløting. Om våren, når snøen smeltet og elvene ble store og sterke, kastet folk stokkene ut i vannet. Strømmen bar dem av gårde, mil etter mil, helt ned til kysten. Menn som ble kalt fløtere brukte lange haker til å løse opp stokker som satte seg fast, men selve det tunge løftet gjorde elva. Før jernbanen og lastebilen kom, var fløting den eneste overkommelige måten å få tømmer fra skogene i innlandet ned til sagbrukene ved kysten (Bækkelund, 2026)."
         },
         {
             "type": "text",
-            "content": "Det andre trikset var oppgangssaga. Rundt år 1500 kom denne oppfinnelsen til Norge, og den forandret alt. Et sagblad ble spent opp i en treramme, og et vannhjul ved fossen dro ramma opp og ned mens stokken sakte ble matet inn. Slik skar maskinen stokken til jevne planker mye raskere enn noen mann klarte med øks. Kraften kom fra det samme fallende vannet som drev [vann- og vindmøllene](/historie/teknologi-og-hverdagsliv/vann-og-vindmolla). Plutselig kunne Norge lage billige planker i store mengder, og elva sto klar til å frakte dem ut. To gaver fra naturen møttes, og en hel næring ble født."
+            "content": "Det andre trikset var oppgangssaga. Tidlig på 1500-tallet kom denne oppfinnelsen til Norge, og den forandret alt (Johannessen, 2024). Et sagblad ble spent opp loddrett i en ramme, og vannkraft dro ramma opp og ned mens stokken sakte ble matet inn. Det var et stort framskritt fra å sage for hånd (Tronstad, 2024). Kraften kom fra det samme fallende vannet som drev [vann- og vindmøllene](/historie/teknologi-og-hverdagsliv/vann-og-vindmolla). Plutselig kunne Norge lage billige planker i store mengder, og elva sto klar til å frakte dem ut. Sammen med økende etterspørsel etter trelast i Vest-Europa ga dette næringen sterk vekst fra 1500-tallet (Nyrud, 2026)."
         },
         {
             "type": "component",
@@ -70,7 +71,7 @@
         },
         {
             "type": "text",
-            "content": "Den viktigste kunden var Nederland, og perioden da hollenderne kom for fullt, blir ofte kalt hollendertida. Nederland var på 1600-tallet et av verdens rikeste land, med en enorm handelsflåte. Men landet var flatt, vått og nesten uten skog. Hollenderne trengte tre til alt: til å bygge skip, til husene sine, og til de tusenvis av stolpene de banket ned i den bløte grunnen for at Amsterdam ikke skulle synke. Alt dette treet måtte de kjøpe utenfra, og Norge lå nærmest med kysten full av sagbruk. Hollandske skip kom i hopetall, og norsk trelast ble solgt videre til England, Danmark, Frankrike og Skottland."
+            "content": "Den viktigste kunden var Nederland, og perioden da hollenderne kom for fullt, blir ofte kalt hollendertida. Nederland var hovedmarkedet i den første delen av perioden (Hutchison & Rudi, 2025), og eksporten dekket først behovet i Nederland og senere i England og Skottland (Weidling & Njåstad, 2025). Men Nederland var flatt, vått og nesten uten skog. Hollenderne trengte tre til alt: til å bygge skip, til husene sine, og til å stå på. Amsterdam ligger på myrlendt grunn, og husene der ble reist på lange trestolper som ble drevet ned gjennom den bløte jorda til de nådde fast sand (J. Paul Getty Trust, u.å.). Alt dette treet måtte de kjøpe utenfra, og Norge lå nærmest med kysten full av sagbruk."
         },
         {
             "type": "image",
@@ -84,11 +85,11 @@
         },
         {
             "type": "text",
-            "content": "Der elvene møtte havet og fossene ga kraft, vokste det fram byer. Skien, Drammen, Halden, Arendal, Kragerø og Larvik ble alle bygd opp rundt trelasten. En elv som førte tømmer ned fra store skoger, en foss til å drive sagene, og en trygg havn der skipene kunne legge til, var alt en by trengte for å blomstre. Rundt sagbrukene samlet det seg arbeidere, kjøpmenn, sjøfolk og håndverkere. På denne måten var det ikke bare skogen, men også fossen som bestemte hvor folk bosatte seg."
+            "content": "Der elvene møtte havet og fossene ga kraft, vokste det fram nye ladesteder og byer (Weidling & Njåstad, 2025). Skien, Drammen, Halden, Arendal, Kragerø og Larvik ble alle bygd opp rundt trelasten. I Skien ga fossene og havna grunnlag for sagbruk og trelasthandel, og byen ble en av landets ledende trelastbyer (Thorsnæs & Lundbo, 2026). En elv som førte tømmer ned fra store skoger, en foss til å drive sagene, og en trygg havn der skipene kunne legge til, var alt en by trengte for å blomstre. Rundt sagbrukene samlet det seg arbeidere, kjøpmenn, sjøfolk og håndverkere. På denne måten var det ikke bare skogen, men også fossen som bestemte hvor folk bosatte seg."
         },
         {
             "type": "text",
-            "content": "Handelen brakte også penger ut på landsbygda. Bøndene som eide skog, kunne tjene kontanter på å hogge og fløte tømmer om vinteren, i tillegg til det de dyrket. For mange familier ble skogen en ekstra inntekt som gjorde livet litt tryggere i en ellers fattig tid."
+            "content": "Handelen nådde også ut på landsbygda. Bøndene som eide skog, hogg gjerne trærne på seinhøsten og fraktet dem videre om vinteren (Hutchison & Rudi, 2025). For mange familier ble skogen en ekstra inntekt ved siden av det de dyrket, og det gjorde livet litt tryggere i en ellers fattig tid."
         },
         {
             "type": "header",
@@ -96,11 +97,11 @@
         },
         {
             "type": "text",
-            "content": "Da det ble tydelig hvor mye penger som lå i trelasten, ville kongen i København ha sin del. I 1688 innførte styret de såkalte sagbruksprivilegiene. Nå fikk bare et bestemt antall utvalgte sagbruk lov til å skjære planker for salg til utlandet. Mange små bondesager ble stengt. Kongen kunne dermed kreve inn avgifter lettere og styre handelen. Dette passet godt inn i et samfunn der [kongen hadde fått nesten all makt](/samfunnskunnskap/styringsformer/monarkiet) etter at eneveldet ble innført i 1660."
+            "content": "Da det ble tydelig hvor mye penger som lå i trelasten, ville kongen i København ha sin del. Ved et kongelig reskript 6. oktober 1688 fikk 664 sager sør for fjellet såkalte sagbruksprivilegier, og hver av dem fikk tildelt en fast mengde tømmer de kunne skjære i året. Alle andre sager skulle legges ned eller bare sage til bygdas eget behov (Mardal, 2024). Slik kunne kongen styre handelen og kreve inn avgifter lettere. Dette passet godt inn i et samfunn der [kongen hadde fått nesten all makt](/samfunnskunnskap/styringsformer/monarkiet) etter at eneveldet ble innført i 1660 (Weidling & Njåstad, 2025)."
         },
         {
             "type": "text",
-            "content": "Følgen var at rikdommen samlet seg hos en liten gruppe. De store trelasthandlerne i byene ble så velstående at folk kalte dem plankeadelen. De var ikke ekte adel, men de levde like flott, bygde store hus og bestemte mye i byene sine. Samtidig ble skogen nær kysten hogd så hardt at mange steder begynte å gå tom for tømmer i nærheten, og sagbrukene måtte hente tre lenger og lenger inne i landet."
+            "content": "Følgen var at rikdommen samlet seg hos en liten gruppe. De som satt på privilegiene, ble gjerne kalt plankeadelen (Hutchison & Rudi, 2025). De var ikke ekte adel, men de levde flott, bygde store hus og bestemte mye i byene sine. Samtidig ble skogen nær kysten hogd hardt. Kysten på Vestlandet var i praksis snauhogd i løpet av 1500-tallet og tidlig på 1600-tallet (Hutchison & Rudi, 2025), og sagbrukene måtte hente tre lenger og lenger inne i landet."
         },
         {
             "type": "component",
@@ -115,7 +116,7 @@
         },
         {
             "type": "text",
-            "content": "Trelasthandelen bandt Norge tett til resten av Europa. Prisene i Amsterdam og London bestemte plutselig hvordan det gikk i en liten by på Sørlandet. Da England og Frankrike var i krig og trengte skip, steg prisene og norske kjøpmenn tjente godt. Da handelen stanset, ble det tunge tider. Under Napoleonskrigene stengte britiske krigsskip sjøveien i 1807, og eksporten stupte. Da kjente hele kysten hvor avhengig den var blitt av å selge tre."
+            "content": "Trelasthandelen bandt Norge tett til resten av Europa. Prisene i Amsterdam og London bestemte plutselig hvordan det gikk i en liten by på Sørlandet. Da England og Frankrike var i krig og trengte skip, steg prisene og norske kjøpmenn tjente godt. Da handelen stanset, ble det tunge tider. Under Napoleonskrigene kom Danmark-Norge i krig med Storbritannia i 1807. Krigen var ødeleggende for norsk handel og stanset trelasteksporten (Weidling & Njåstad, 2025). Da kjente hele kysten hvor avhengig den var blitt av å selge tre."
         },
         {
             "type": "text",
@@ -133,7 +134,7 @@
             "props": {
                 "forstaa": [
                     "Hvorfor var en tømmerstokk langt inne i skogen verdt nesten ingenting?",
-                    "Hva var tømmerfløting, og hvorfor gjorde elva denne jobben gratis?",
+                    "Hva var tømmerfløting, og hvorfor var elva en så billig måte å frakte tømmer på?",
                     "Hva var en oppgangssag, og hva drev den?",
                     "Hvorfor kjøpte hollenderne så mye tre fra Norge?",
                     "Hva var sagbruksprivilegiene fra 1688?"
@@ -206,6 +207,23 @@
                         ],
                         "answer": "Fordi de hadde elv til tømmer, foss til sagene og havn til skipene"
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bækkelund, B. (2026). *Tømmerfløting*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/tømmerfløting](https://snl.no/t%C3%B8mmerfl%C3%B8ting)",
+                    "Hutchison, R. & Rudi, I. B. (2025). *Trelasthandel*. NDLA. Hentet 25.07.2026 fra [ndla.no](https://ndla.no/r/historie-vg2/trelasthandel/bad0a3fc05)",
+                    "J. Paul Getty Trust. (u.å.). *Building construction: Amsterdam*. Getty Conservation Institute. Hentet 25.07.2026 fra [getty.edu](https://www.getty.edu/conservation/publications_resources/teaching/case/olita/building/construction_building.html)",
+                    "Johannessen, F. E. (2024). *Nye næringer: trelast og bergverk*. Norgeshistorie, Universitetet i Oslo. Hentet 25.07.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/kirkestat/1105-nye-naringer-trelast-og-bergverk.html)",
+                    "Mardal, M. A. (2024). *Sagbruksprivilegier*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/sagbruksprivilegier](https://snl.no/sagbruksprivilegier)",
+                    "Nyrud, A. Q. (2026). *Trelasthandel*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/trelasthandel](https://snl.no/trelasthandel)",
+                    "Thorsnæs, G. & Lundbo, S. (2026). *Skien*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Skien](https://snl.no/Skien)",
+                    "Tronstad, S. (2024). *Oppgangssag*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/oppgangssag](https://snl.no/oppgangssag)",
+                    "Weidling, T. R. & Njåstad, M. (2025). *Norge under dansk styre - 1537-1814*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Norge_under_dansk_styre_-_1537-1814](https://snl.no/Norge_under_dansk_styre_-_1537-1814)"
                 ]
             }
         }
