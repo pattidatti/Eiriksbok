@@ -139,7 +139,6 @@ interface ArticleContentProps {
     concepts?: Concept[];
     activeBlockIndex?: number;
     onBlockClick?: (index: number) => void;
-    fallbackUrl?: string;
     isTool?: boolean;
     audioControls?: {
         isPlaying: boolean;
@@ -149,31 +148,10 @@ interface ArticleContentProps {
     };
 }
 
-export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ content, concepts: explicitConcepts, activeBlockIndex, onBlockClick, fallbackUrl, isTool = false, audioControls }) => {
+export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ content, concepts: explicitConcepts, activeBlockIndex, onBlockClick, isTool = false, audioControls }) => {
     const { entries: globalEntries } = useGlossary();
 
     if (!content || !Array.isArray(content)) return null;
-
-    // URL-safe (legacy) fallback logic
-    // DEBUG: Fallback fetch if content is truncated
-    const [fullContent, setFullContent] = React.useState<ContentBlock[] | null>(null);
-    const fetchInFlightRef = React.useRef(false);
-
-    React.useEffect(() => {
-        if (content.length < 25 && !fullContent && fallbackUrl && !fetchInFlightRef.current) {
-            fetchInFlightRef.current = true;
-            fetch(fallbackUrl + '?t=' + Date.now())
-                .then(res => res.json())
-                .then(data => {
-                    console.log('ArticleContent: Fetched full content, length:', data.content.length);
-                    setFullContent(data.content);
-                })
-                .catch(err => {
-                    console.error('ArticleContent: Fetch failed', err);
-                    fetchInFlightRef.current = false;
-                });
-        }
-    }, [content, fallbackUrl, fullContent]);
 
     // OPTIMIZATION: Memoize concept merging to avoid O(N*M) loop on every render.
     // Use a Set for O(1) lookups instead of .some().
@@ -195,7 +173,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
         return merged;
     }, [explicitConcepts, globalEntries]);
 
-    const displayContent = fullContent || content;
+    const displayContent = content;
 
     // Første indeks i den sammenhengende etterarbeid-halen, eller -1 om den
     // mangler. Billig O(hale)-løkke, trenger ikke memoisering.

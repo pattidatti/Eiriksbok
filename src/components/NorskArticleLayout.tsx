@@ -17,10 +17,9 @@ interface NorskArticleLayoutProps {
     };
     relatedLessons?: { title: string; url: string }[];
     onClose: () => void;
-    fallbackUrl?: string;
 }
 
-export const NorskArticleLayout: React.FC<NorskArticleLayoutProps> = ({ article, relatedLessons, onClose, fallbackUrl }) => {
+export const NorskArticleLayout: React.FC<NorskArticleLayoutProps> = ({ article, relatedLessons, onClose }) => {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -96,7 +95,7 @@ export const NorskArticleLayout: React.FC<NorskArticleLayoutProps> = ({ article,
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     {/* Main Text */}
                     <div className="lg:col-span-8 font-serif text-lg leading-loose text-slate-800">
-                        <ArticleContent content={article.content} fallbackUrl={fallbackUrl} />
+                        <ArticleContent content={article.content} />
                     </div>
 
                     {/* Sidebar / Metadata */}

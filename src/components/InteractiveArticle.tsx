@@ -55,7 +55,6 @@ export type ArticleData = {
 
 interface InteractiveArticleProps {
     event: ArticleData;
-    fallbackUrl?: string;
     sidebarConfig?: SidebarConfig;
     lessonNav?: LessonNav;
 }
@@ -76,7 +75,7 @@ const FactBox: React.FC<{ content: string }> = React.memo(({ content }) => (
 
 
 
-export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, fallbackUrl, sidebarConfig, lessonNav }) => {
+export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, sidebarConfig, lessonNav }) => {
     const navigate = useNavigate();
     const { events: globalEvents } = useGlobalTimeline();
     const { speak, pause, resume, cancel, playBlock, isPlaying, isPaused, hasVoice, activeBlockIndex, rate, setRate } = useTTS();
@@ -367,7 +366,6 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, f
                                     concepts={event.concepts}
                                     activeBlockIndex={activeContentIndex}
                                     onBlockClick={handleBlockClick}
-                                    fallbackUrl={fallbackUrl}
                                     isTool={event.layout === 'tool'}
                                     audioControls={isPlaying ? {
                                         isPlaying,
