@@ -88,7 +88,8 @@ Alt innhold i Eiriksbok skal være forståelig for en gjennomsnittlig 14-åring.
 │   │   └── ...                # Layout, navigation, modals
 │   ├── features/
 │   │   ├── music/             # Music subject feature module
-│   │   └── infrastruktur/     # Infrastruktur-Atlas (samfunnskunnskap)
+│   │   ├── infrastruktur/     # Infrastruktur-Atlas (samfunnskunnskap)
+│   │   └── rpg/               # Minnevokteren - 2D-rollespill (Phaser, prosedyral grafikk). Se features/rpg/README.md
 │   ├── games/
 │   │   ├── engine/            # Mini-spillmotor (Three.js + Rapier3D). Underkataloger: systems/, builders/, declarative/, dsl/, prefabs/, shaders/, settings/, utils/. API + fallgruver: BUILD_GAME_GUIDE.md
 │   │   ├── demo-world/        # Lysalvendalen — referanse-showcase for alle motor-features
@@ -191,6 +192,7 @@ The app uses a manifest-driven routing system:
 /oving/tidsreise/:scenarioId    Time travel scenario
 /oving/spill                    Mini-spill galleri (historiske 3D-spill)
 /oving/spill/:gameId            Enkelt mini-spill (f.eks. /oving/spill/watt-lab)
+/oving/rpg                      Minnevokteren — 2D-rollespill i sanntid (Phaser)
 /oving/kompetansemal            Kompetansemål-oversikt
 
 /quiz-battle                    Multiplayer quiz lobby
@@ -576,6 +578,7 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 | `scripts/sync-manifest-dates.js` | Syncs `createdDate` in manifest |
 | `scripts/generate-timeline.js` | Rebuilds `global-timeline.json` + geo-beriker events (lat/lng/placeCountryId) |
 | `scripts/generate-place-coordinates.js` | Genererer `geo/place-coordinates.json` (tag → koordinat-ordbok for `/atlas`) |
+| `scripts/generate-quest-bank.mjs` | Bygger `public/data/rpg/quest-bank.json` fra Quiz-komponentene i artiklene (spørsmålsbanken til rollespillet) |
 | `scripts/scan-concepts.js` | Scans articles for potential new concept terms |
 | `scripts/optimize-images.js` | Converts images to WebP |
 | `scripts/copy-404.js` | Copies `index.html` to `404.html` for SPA routing on static hosts |

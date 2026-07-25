@@ -6,6 +6,14 @@ import { DailyReviewCard } from '../components/review/DailyReviewCard';
 export const PracticePage: React.FC = () => {
     const modules = [
         {
+            id: 'minnevokteren',
+            title: 'Minnevokteren',
+            description: 'Rollespill i sanntid. Lag din egen figur, slåss mot tåka som spiser det folk husker, og løs oppdrag der svaret ligger gjemt i verden.',
+            icon: Swords,
+            color: 'bg-slate-800',
+            link: '/oving/rpg'
+        },
+        {
             id: 'kompetansemal',
             title: 'Kompetansemål',
             description: 'Se hvilke LK20-mål artikler, læringsstier og spill underbygger.',

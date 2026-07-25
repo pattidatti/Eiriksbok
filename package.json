@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://bok.haaland.de/",
   "scripts": {
-    "scan:content": "node scripts/generateContentIndex.js && node scripts/sync-manifest-dates.js && node scripts/generateDetectiveIndex.js && node scripts/generate-place-coordinates.js && node scripts/generate-timeline.js && node scripts/generate-timeline-images.mjs && node scripts/generate-microgame-map.mjs && node scripts/generate-comparison-manifest.mjs && node scripts/validate-kjeder.mjs",
+    "scan:content": "node scripts/generateContentIndex.js && node scripts/sync-manifest-dates.js && node scripts/generateDetectiveIndex.js && node scripts/generate-place-coordinates.js && node scripts/generate-timeline.js && node scripts/generate-timeline-images.mjs && node scripts/generate-microgame-map.mjs && node scripts/generate-comparison-manifest.mjs && node scripts/generate-quest-bank.mjs && node scripts/validate-kjeder.mjs",
     "dev": "npm run scan:content && vite",
     "build": "npm run gen-version && npm run scan:content && npm run optimize-images && tsc -b && vite build && node scripts/copy-404.js",
     "lint": "eslint .",
@@ -42,6 +42,7 @@
     "fuse.js": "^7.1.0",
     "html2canvas": "^1.4.1",
     "lucide-react": "^0.555.0",
+    "phaser": "^3.90.0",
     "react": "^19.2.0",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.2.0",
