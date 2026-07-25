@@ -2,12 +2,22 @@
 # konsollfeil, kit-vakthund-varsler eller scene-funn (modell utenfor utsnittet,
 # begravd geometri). Stopper auto-merge av cron-genererte spill med kjente
 # feilklasser - i stedet for at de oppdages ved manuell etterrevisjon.
+#
+# Porten RAPPORTERER funnene sine som PR-kommentar. Tidligere sa auto-merge-boten
+# bare «audit fant feil i dette spillet» uten å vise noe, og tok feil to ganger på
+# rad på PR #246 (begge gangene var det harnessen på kald runner, ikke spillet).
+# Derfor: exit 1 = spillet har feil, exit 2 = auditen kunne ikke kjøre. Begge
+# holder porten rød, men de meldes ulikt.
 name: Mikrospill-audit
 
 on:
   pull_request:
     paths:
       - 'src/components/microgames/**'
+
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
   audit:
@@ -35,14 +45,82 @@ jobs:
           BASE=$(git merge-base "origin/${{ github.base_ref }}" HEAD)
           node scripts/changed-microgame-ids.mjs "$BASE" >> "$GITHUB_OUTPUT"
 
+      # Feiler IKKE jobben her - vi vil poste funnene før porten settes rød.
+      # Exit-koden bæres videre til «Sett portstatus» nederst.
       - name: Kjør audit (strict)
+        id: audit
         if: steps.ids.outputs.ids != ''
-        run: node scripts/audit-microgames.mjs --ids "${{ steps.ids.outputs.ids }}" --strict --frames 3
+        env:
+          IDS: ${{ steps.ids.outputs.ids }}
+        run: |
+          set +e
+          node scripts/audit-microgames.mjs --ids "$IDS" --strict --frames 3
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
 
-      - name: Last opp skjermbilder ved feil
-        if: failure()
+      # MERK: ingen visuell AI-vurdering her, med vilje. Den ville kostet
+      # API-kreditt per natt, og natt-rutinen som bygger spillet er selv en
+      # Claude Code-agent på abonnement - den har allerede skjermbildene og kan se
+      # på dem gratis. Den visuelle vurderingen er derfor rutinens ansvar FØR
+      # PR-en åpnes (se «Visuell egenrevisjon» i .agent/workflows/build_microgame.md).
+      # Denne porten holder seg til det maskinelle, som er gratis og deterministisk.
+      #
+      # Trenger du en visuell gjennomgang av MANGE spill på én gang (der et
+      # menneske ikke kan se på 145 x 4 bilder), finnes scripts/review-microgame-shots.mjs
+      # som et manuelt verktøy. Det er bevisst ikke koblet til CI.
+
+      - name: Kommenter funnene på PR-en
+        if: steps.ids.outputs.ids != ''
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          MARKER='<!-- mikrospill-audit -->'
+          BODY="$MARKER"$'\n'
+          if [ -s .screenshots/microgames/_findings.md ]; then
+            BODY="$BODY"$'\n'"$(cat .screenshots/microgames/_findings.md)"
+          fi
+          if [ -s .screenshots/microgames/_review.md ]; then
+            BODY="$BODY"$'\n\n'"$(cat .screenshots/microgames/_review.md)"
+          fi
+          BODY="$BODY"$'\n\n'"[Kjøringen med skjermbilder]($RUN_URL)"
+
+          # Én klebrig kommentar som oppdateres, ikke en ny per push.
+          # NB: ikke --paginate her - med -q kjører jq per SIDE, så et flersidig
+          # svar kan gi flere/tomme treff i $ID. per_page=100 er rikelig når vi
+          # oppdaterer samme kommentar. head -n1 er belte-og-bukseseler.
+          ID=$(gh api "repos/$REPO/issues/$PR/comments?per_page=100" \
+                 -q ".[] | select(.body | contains(\"$MARKER\")) | .id" \
+               | head -n1)
+          if [ -n "$ID" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$ID" -f body="$BODY" >/dev/null
+            echo "Oppdaterte kommentar $ID"
+          else
+            gh api -X POST "repos/$REPO/issues/$PR/comments" -f body="$BODY" >/dev/null
+            echo "Postet ny kommentar"
+          fi
+
+      - name: Last opp skjermbilder
+        if: steps.ids.outputs.ids != ''
         uses: actions/upload-artifact@v7
         with:
           name: microgame-audit-skjermbilder
           path: .screenshots/microgames
           retention-days: 7
+
+      # Exit 1 = funn i spillet. Exit 2 = auditen kunne ikke kjøre (infrastruktur).
+      # Begge holder porten rød: et urevidert spill skal ikke nå elevene.
+      - name: Sett portstatus
+        if: steps.ids.outputs.ids != ''
+        env:
+          CODE: ${{ steps.audit.outputs.code }}
+        run: |
+          case "$CODE" in
+            0) echo "Audit grønn." ;;
+            2) echo "::error::Auditen kunne ikke kjøre (infrastruktur, ikke spillet). Kjør sjekken på nytt."; exit 1 ;;
+            *) echo "::error::Mikrospill-audit fant funn i spillet - se PR-kommentaren."; exit 1 ;;
+          esac

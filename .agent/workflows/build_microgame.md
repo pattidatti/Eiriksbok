@@ -568,6 +568,64 @@ mikrospill er bedre enn en med et 5-poengs-spill.
 - [ ] Testet inline i en ekte artikkel på ~1366×768 (hele flyten gjennomspilt)
 - [ ] `npx tsc -b` + `npm run lint` rent
 
+---
+
+## CI-porten - slik leser du en rød Mikrospill-audit
+
+Rører PR-en `src/components/microgames/**`, kjører `.github/workflows/microgame-audit.yml`.
+Den rendrer de berørte spillene (endret spill + et røyk-utvalg hvis `kit/` eller `registry.ts`
+er rørt) og **poster en kommentar på PR-en som siterer funnene sine**. Les kommentaren - ikke gjett.
+
+Porten skiller to ting, og forskjellen bestemmer hva du skal gjøre:
+
+| Melding | Betyr | Hva du gjør |
+|---|---|---|
+| «fant funn i spillet» (exit 1) | Ekte funn: konsollfeil, båt-vakthund, begravd geometri, modell utenfor utsnittet | Fiks spillet og push til branchen. Auto-merge går når sjekken er grønn. |
+| «kunne ikke kjøre» (exit 2) | Harness-/infrastruktur-feil: kald Vite-transform, avbrutt bootstrap-fetch, død dev-server | **Ikke rør spillet.** Kjør sjekken på nytt. Går den igjen, er det harnessen som må fikses. |
+
+Begge holder porten rød, for et urevidert spill skal ikke nå elevene. Men de har ulik årsak.
+
+**Bakgrunn (PR #246, 25.07.2026):** første PR som noensinne trigget porten ble flagget to ganger
+på rad, og begge gangene var det harnessen på en kald runner - ikke spillet. Først røk
+`page.goto` på 30s-timeouten fordi Vite måtte transformere hele modultreet ved første sidelast;
+så ble avbrutte manifest-/registry-fetch bokført som «Failed to fetch» på spillet. Lærdommene er
+bygget inn nå: harnessen varmer opp dev-serveren og venter på `networkidle`, det endrede spillet
+legges **sist** i lista (så det ikke betaler oppstartsregningen), infrastruktur-funn retryes én
+gang, og porten klassifiserer i stedet for å påstå. Kjører du auditen lokalt: en varm
+`node_modules/.vite` skjuler nettopp denne feilklassen, så verifiser kaldt hvis du endrer harnessen.
+
+Porten sjekker BARE det maskinelle. Den vurderer ikke om spillet er godt - det er ditt ansvar
+før PR-en åpnes, se neste seksjon.
+
+---
+
+## Visuell egenrevisjon - obligatorisk før PR
+
+Den mekaniske porten fanger krasj, begravd geometri og båt-på-land. Den kan ikke se om scenen er
+stygg, om iscenesettelsen bommer på emnet, eller om spillet er kjedelig. **Det må du gjøre, og du
+skal gjøre det med egne øyne - ikke anta.**
+
+Rekkefølgen som faktisk avdekker noe:
+
+1. `node scripts/audit-microgames.mjs --ids <din-id> --frames 4`
+2. **Åpne alle fire rammene og se på dem.** Ikke bare den første. Nesten alle spill auto-roterer,
+   så én ramme kan tilfeldigvis skjule at modellen står halvveis utenfor utsnittet.
+3. Spill gjennom spillet med Playwright: fra start til `WinScreen`, og for sanntidsspill også til
+   `LoseScreen`. Ta skjermbilde i hver fase, og se på dem.
+4. Score mot sug-rubrikken over, ærlig. Under 7 av 10: bygg om.
+5. **Skriv scorene i PR-body-en** sammen med hva du faktisk observerte i rammene.
+
+Punkt 5 er poenget. En PR som bare sier «verifisert med Playwright» er ikke etterprøvbar - PR #246
+sa nettopp det, og det var sant, men ingen kunne se hva som var sett. Skriv hva du så.
+
+Dette gjøres av rutinen/agenten som bygger spillet, ikke i CI. Grunnen er kostnad: en AI-vurdering
+i GitHub Actions ville krevd API-kreditt per natt, mens agenten som bygger spillet allerede har
+skjermbildene og kan se på dem uten ekstra kostnad. Trenger du å gå gjennom MANGE spill på én gang
+(der ingen kan se på 145 x 4 bilder), finnes `scripts/review-microgame-shots.mjs` som et manuelt
+verktøy - bevisst ikke koblet til CI.
+
+---
+
 **Referanse-standard:**
 - `src/components/microgames/FluktenOverMuren3D.tsx` - **sanntids-referansen**. Førstepersons
   flukt over dødsstripa: `PovCamera` (positionRef + løpe-bob), `AimPlane` (hold = løp, peker =

@@ -104,7 +104,25 @@ try {
     /* oppvarming er best effort - la spill-løkka rapportere ekte feil */
 }
 
-for (const id of ids) {
+// Feil som IKKE er spillets skyld: kald Vite-transform, avbrutte bootstrap-fetch,
+// død dev-server. Historikk: PR #246 ble flagget to ganger på slike - først
+// «page.goto: Timeout», så «Failed to fetch» på manifest/registry - og
+// bot-kommentaren meldte begge som «feil i dette spillet». De skal retryes og,
+// hvis de vedvarer, rapporteres som «auditen kunne ikke kjøre» (exit 2) - ikke
+// som en geometrifeil eleven ville sett.
+// Mønsteret er bevisst SMALT. Feiler det, skal det feile mot å flagge: en falsk
+// positiv koster en ny kjøring, en falsk negativ slipper et ødelagt spill ut til
+// elevene. Derfor:
+// - «page.goto: Timeout», ikke generell «Timeout Nms exceeded» - sistnevnte ville
+//   også dekket en canvas som aldri kommer, og det ER en ekte spillfeil.
+// - «Failed to fetch» kun sammen med bootstrap-kontekst (contentLoader/manifest/
+//   registry). Et spill som ikke får lastet SINE egne data skal flagges.
+const INFRA_RE =
+    /page\.goto: (Timeout|net::ERR_)|net::ERR_CONNECTION|ECONNREFUSED|Error loading (manifest|registry)|ContentRegistry\].*Failed to fetch|contentLoader\.ts|Target (page|closed)|browser has been closed/i;
+
+const isInfra = (t) => INFRA_RE.test(String(t));
+
+async function auditGame(id) {
     const warnings = [];
     const errors = [];
     const onConsole = (m) => {
@@ -161,14 +179,8 @@ for (const id of ids) {
             .catch(() => []);
 
         entry.ok = true;
-        console.log(
-            `✓ ${id}  (${warnings.length} advarsler, ${errors.length} feil, ${
-                (entry.sceneWarnings ?? []).length
-            } scene-funn)`
-        );
     } catch (e) {
         entry.error = String(e.message || e);
-        console.log(`✗ ${id}  ${entry.error}`);
     } finally {
         // Filtrer bort kjent, spill-uavhengig støy (Firebase-presence o.l.).
         const noise =
@@ -178,16 +190,53 @@ for (const id of ids) {
         page.off('console', onConsole);
         page.off('pageerror', onPageError);
     }
+
+    // Del funnene i infrastruktur (ikke spillets skyld) og ekte spillfunn.
+    entry.infraFindings = [entry.error, ...entry.errors].filter(Boolean).filter(isInfra);
+    entry.errors = entry.errors.filter((e) => !isInfra(e));
+    if (entry.error && isInfra(entry.error)) delete entry.error;
+    entry.gameFindings =
+        (entry.error ? 1 : 0) +
+        entry.errors.length +
+        entry.warnings.length +
+        (entry.sceneWarnings?.length ?? 0);
+    return entry;
+}
+
+for (const id of ids) {
+    // Retry én gang når FØRSTE forsøk bare ga infrastruktur-funn. En kald runner
+    // skal ikke få se ut som et ødelagt spill (PR #246). Vedvarer det, rapporteres
+    // det som infrastruktur - ikke som spillfeil.
+    let entry = await auditGame(id);
+    if (entry.infraFindings.length && entry.gameFindings === 0) {
+        console.log(`… ${id}  infrastruktur-funn på forsøk 1 - prøver én gang til`);
+        entry = await auditGame(id);
+    }
+
+    // NB: logg de FILTRERTE tallene. Tidligere ble de ufiltrerte brukt her, så et
+    // reint spill kunne stå som «✓ vesterled-3d (4 advarsler)» der alle fire var
+    // Firebase-støy - og et menneske jaktet på et problem som ikke fantes.
+    const nScene = (entry.sceneWarnings ?? []).length;
+    if (entry.error) console.log(`✗ ${entry.id}  ${entry.error}`);
+    else if (entry.infraFindings.length && entry.gameFindings === 0)
+        console.log(`⚠ ${entry.id}  auditen kunne ikke kjøre (infrastruktur, ikke spillet)`);
+    else
+        console.log(
+            `${entry.gameFindings ? '✗' : '✓'} ${entry.id}  (${entry.warnings.length} advarsler, ${
+                entry.errors.length
+            } feil, ${nScene} scene-funn)`
+        );
     summary.push(entry);
 }
 
-// Ranger etter mistanke: flest (feil, så advarsler) øverst, deretter render-feil.
+// Ranger etter mistanke: ekte render-feil øverst, så feil, scene-funn, advarsler.
+// Infrastruktur-funn teller IKKE - de sier ingenting om spillet.
 summary.sort((a, b) => {
     const score = (x) =>
-        (x.ok ? 0 : 1000) +
+        (x.error ? 1000 : 0) +
         x.errors.length * 10 +
-        x.warnings.length +
-        (x.sceneWarnings?.length ?? 0) * 5;
+        (x.sceneWarnings?.length ?? 0) * 5 +
+        x.warnings.length;
     return score(b) - score(a);
 });
 mkdirSync(outDir, { recursive: true });
@@ -202,23 +251,64 @@ if (serverProc) {
     }
 }
 
-const flagged = summary.filter(
-    (s) => !s.ok || s.errors.length || s.warnings.length || (s.sceneWarnings?.length ?? 0)
-);
+const flagged = summary.filter((s) => s.gameFindings > 0);
+const infraOnly = summary.filter((s) => s.gameFindings === 0 && s.infraFindings.length);
 console.log(`\nFerdig. Skjermbilder i ${outDir}`);
 console.log(
     `${flagged.length}/${summary.length} spill flagget (render-feil, konsoll-varsler eller scene-funn).`
 );
+if (infraOnly.length)
+    console.log(
+        `${infraOnly.length}/${summary.length} spill kunne ikke revideres (infrastruktur, ikke spillet).`
+    );
 console.log('Se _audit-summary.json (rangert) og gå gjennom skjermbildene for de øverste.');
-for (const s of flagged) {
-    for (const w of s.sceneWarnings ?? []) console.log(`  ${s.id}: ${w}`);
-    for (const w of s.warnings) console.log(`  ${s.id}: ${w}`);
-    for (const e of s.errors) console.log(`  ${s.id}: FEIL ${e}`);
-}
 
-// --strict: brukes av CI-porten (.github/workflows/microgame-audit.yml). Et
-// flagget spill skal STOPPE auto-merge - det er hele poenget med porten.
-if (args.includes('--strict') && flagged.length) {
-    console.error(`\n--strict: ${flagged.length} spill flagget - feiler.`);
-    process.exit(1);
+// Bygg funnlista én gang, både til stdout og til PR-kommentaren. Porten skal
+// SITERE funnene sine - tidligere påsto bot-kommentaren «fant feil i dette
+// spillet» uten å vise noe, og tok feil to ganger på rad (PR #246).
+const lines = [];
+for (const s of flagged) {
+    if (s.error) lines.push(`- \`${s.id}\`: rendret ikke - ${s.error}`);
+    for (const w of s.sceneWarnings ?? []) lines.push(`- \`${s.id}\`: ${w}`);
+    for (const w of s.warnings) lines.push(`- \`${s.id}\`: ${w}`);
+    for (const e of s.errors) lines.push(`- \`${s.id}\`: FEIL ${e}`);
+}
+for (const l of lines) console.log('  ' + l.replace(/^- /, '').replace(/`/g, ''));
+
+const md = flagged.length
+    ? [
+          `**Mikrospill-audit: ${flagged.length} av ${summary.length} spill flagget.**`,
+          '',
+          ...lines,
+          '',
+          'Skjermbilder ligger som artifact på kjøringen. Fiks funnene og push til branchen - da merges PR-en automatisk når sjekken er grønn.',
+      ].join('\n')
+    : infraOnly.length
+      ? [
+            `**Mikrospill-audit kunne ikke fullføres** for ${infraOnly.length} av ${summary.length} spill. Dette er harness-/infrastruktur-feil, ikke funn i spillet:`,
+            '',
+            ...infraOnly.flatMap((s) =>
+                s.infraFindings.map((f) => `- \`${s.id}\`: ${f.split('\n')[0]}`)
+            ),
+            '',
+            'Kjør sjekken på nytt. Går den igjen, er det harnessen som må fikses - ikke spillet.',
+        ].join('\n')
+      : `**Mikrospill-audit grønn** - ${summary.length} spill revidert, ingen funn.`;
+writeFileSync(path.join(outDir, '_findings.md'), md + '\n');
+
+// --strict: brukes av CI-porten (.github/workflows/microgame-audit.yml).
+// Exit 1 = spillet har feil (fiks spillet). Exit 2 = auditen kunne ikke kjøre
+// (fiks harnessen/kjør på nytt). Begge holder porten rød, for et urevidert spill
+// skal ikke merges - men de skal ikke meldes med samme diagnose.
+if (args.includes('--strict')) {
+    if (flagged.length) {
+        console.error(`\n--strict: ${flagged.length} spill flagget - feiler.`);
+        process.exit(1);
+    }
+    if (infraOnly.length) {
+        console.error(
+            `\n--strict: ${infraOnly.length} spill kunne ikke revideres (infrastruktur) - feiler med exit 2.`
+        );
+        process.exit(2);
+    }
 }

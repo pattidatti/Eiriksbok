@@ -133,8 +133,13 @@ jobs:
               sleep 30
             done
             if [ "$AUDIT" = "FAILURE" ]; then
+              # IKKE diagnostiser her. Denne workflowen ser bare at sjekken er rød,
+              # ikke HVORFOR. På PR #246 påsto denne kommentaren «fant feil i dette
+              # spillet» to ganger, mens årsaken begge gangene var harnessen på en
+              # kald runner. Mikrospill-audit poster selv en kommentar som siterer
+              # de faktiske funnene og skiller spillfeil fra infrastruktur.
               gh pr comment "$PR" --repo "$REPO" --body \
-                "Auto-merge venter: Mikrospill-audit fant feil i dette spillet (se sjekken for skjermbilder og funn). Fiks funnene og push til branchen - da merges PR-en automatisk når sjekken er grønn. Målet er at spillet er riktig FØR det når elevene."
+                "Auto-merge venter: Mikrospill-audit er rød. Se audit-kommentaren på denne PR-en for de faktiske funnene (den skiller funn i spillet fra harness-/infrastruktur-feil). Er det funn i spillet: fiks og push til branchen, da merges PR-en automatisk når sjekken er grønn. Er det infrastruktur: kjør sjekken på nytt."
               echo "PR #$PR: audit rød - varslet, hopper over"; echo "::endgroup::"; continue
             fi
             if [ "$AUDIT" = "PENDING" ]; then

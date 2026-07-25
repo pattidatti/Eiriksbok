@@ -33,7 +33,12 @@ const diff = execSync(`git diff --name-only ${base}...HEAD`, { cwd: root, encodi
     .split('\n')
     .filter(Boolean);
 
-const ids = new Set();
+// NB på rekkefølge: det ENDREDE spillet skal ikke stå først. Første spill i lista
+// betaler oppstartskostnaden på en kald runner (Vite-transform av modultreet), og
+// da blir nettopp spillet som er under revisjon falskt flagget - slik PR #246 ble.
+// Oppvarmingen i audit-harnessen dekker det meste, retry dekker resten; dette er
+// tredje lag: legg røyk-utvalget først, det endrede spillet sist.
+const changedIds = new Set();
 let sharedChanged = false;
 for (const f of diff) {
     if (!f.startsWith('src/components/microgames/')) continue;
@@ -44,9 +49,10 @@ for (const f of diff) {
     }
     const baseName = rest.replace(/\.tsx?$/, '');
     const id = fileToId.get(baseName);
-    if (id) ids.add(id);
+    if (id) changedIds.add(id);
 }
 
+const ids = new Set();
 if (sharedChanged) {
     // Røyk-utvalg med bredde: sjøscener (Boat/Seascape), drag, klikk, slider, quiz.
     const SMOKE = [
@@ -62,4 +68,13 @@ if (sharedChanged) {
     for (const id of SMOKE) if (fileToId.size === 0 || regSrc.includes(`'${id}'`)) ids.add(id);
 }
 
+// Endrede spill sist (se kommentaren over). Er det ingen røyk-runde, står de
+// alene - da tar harnessens oppvarming + retry jobben.
+for (const id of changedIds) ids.add(id);
+
 console.log(`ids=${[...ids].join(',')}`);
+// Egen liste med BARE de endrede spillene. Den mekaniske auditen kjører på hele
+// røyk-utvalget (en kit-endring kan ødelegge et gammelt spill), men den visuelle
+// egenrevisjonen gjelder bare det du faktisk har laget - det er ingen vits i å
+// vurdere estetikken på uendrede spill på nytt.
+console.log(`changed=${[...changedIds].join(',')}`);
