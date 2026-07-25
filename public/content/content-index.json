@@ -1,5 +1,5 @@
 {
-  "buildId": 1784977264930,
+  "buildId": 1784977811128,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2023,8 +2023,8 @@
     "detective-vardo": [
       "content/interactive/detective/vardo.json"
     ],
-    "index": [
-      "content/kjeder/index.json"
+    "kjede-oversikt": [
+      "content/kjeder/kjede-oversikt.json"
     ],
     "kjeder-svartedauden": [
       "content/kjeder/svartedauden.json"
@@ -4341,7 +4341,7 @@
     "interactive/detective/detective-svartedauden": "content/interactive/detective/svartedauden.json",
     "interactive/detective/detective-tungtvann": "content/interactive/detective/tungtvann.json",
     "interactive/detective/detective-vardo": "content/interactive/detective/vardo.json",
-    "kjeder/index.json/index": "content/kjeder/index.json",
+    "kjeder/kjede-oversikt.json/kjede-oversikt": "content/kjeder/kjede-oversikt.json",
     "kjeder/svartedauden.json/svartedauden": "content/kjeder/svartedauden.json",
     "kompetansemal/historie-10-trinn.json/historie-10-trinn": "content/kompetansemal/historie-10-trinn.json",
     "kompetansemal/krle-10-trinn.json/krle-10-trinn": "content/kompetansemal/krle-10-trinn.json",

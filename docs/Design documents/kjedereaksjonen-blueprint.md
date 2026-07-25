@@ -169,7 +169,10 @@ en samling løsrevne spørsmål, den må faktisk henge sammen.
 - `subjectId`/`topicId` finnes i manifestet
 - ingen brutte norske tegn
 
-Den genererer `public/content/kjeder/index.json` som spillet laster først.
+Den genererer `public/content/kjeder/kjede-oversikt.json` som spillet laster
+først. Filen heter bevisst ikke `index.json`: innholdsskanneren utleder nøkler
+fra filnavn, og «index» er generisk nok til å kollidere med neste index.json
+noen legger inn et annet sted i `public/content/`.
 
 ### 4.3 Innhold i v1
 
@@ -221,7 +224,7 @@ Nye filer:
   src/utils/kjedeFysikk.ts                       Ren fysikk: gravitasjon, hopp, kamera
   src/components/games/kjede/kjedeReducer.ts     Tilstandsmaskin for en ferd
   src/components/games/kjede/drivkrefter.ts      Definisjoner + effekter
-  src/components/games/kjede/loadKjeder.ts       Henter index.json + valgt kjede
+  src/components/games/kjede/loadKjeder.ts       Henter kjede-oversikt.json + kjede
   src/components/games/kjede/KjedeCanvas.tsx     rAF-løkke, render, input
   src/components/games/kjede/KjedeHud.tsx        Fart, streak, drivkrefter, mute
   src/components/games/kjede/KjedeSetup.tsx      Velg fag/kjede, forklaring

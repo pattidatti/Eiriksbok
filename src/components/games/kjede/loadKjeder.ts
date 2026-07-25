@@ -1,10 +1,10 @@
-// Henter kjedene fra `public/content/kjeder/`. `index.json` genereres av
+// Henter kjedene fra `public/content/kjeder/`. `kjede-oversikt.json` genereres av
 // `scripts/validate-kjeder.mjs` som del av `npm run scan:content`.
 
 import type { Kjede, KjedeIndexEntry } from '../../../types/kjede';
 
 export const hentKjedeIndeks = async (): Promise<KjedeIndexEntry[]> => {
-    const res = await fetch('/content/kjeder/index.json');
+    const res = await fetch('/content/kjeder/kjede-oversikt.json');
     if (!res.ok) throw new Error('Fant ikke kjede-indeksen');
     const data = (await res.json()) as { kjeder: KjedeIndexEntry[] };
     return data.kjeder ?? [];

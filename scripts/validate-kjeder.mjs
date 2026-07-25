@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Validerer årsakskjedene for Kjedereaksjonen (`/oving/kjedereaksjonen`) og
-// genererer public/content/kjeder/index.json.
+// genererer public/content/kjeder/kjede-oversikt.json.
 //
 // Kjøres som del av `npm run scan:content`. Exit-kode 1 ved feil, så en ugyldig
 // kjede aldri når elevene.
@@ -20,6 +20,10 @@ import { fileURLToPath } from 'node:url';
 const REPO = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const KJEDER_DIR = path.join(REPO, 'public', 'content', 'kjeder');
 const MANIFEST = path.join(REPO, 'public', 'content', 'manifest.json');
+// Bevisst ikke «index.json»: innholdsskanneren utleder nøkler fra filnavn, og
+// et så generisk navn havner i den flate indeksen som bare «index» - klart til
+// å kollidere med neste index.json noen legger inn et helt annet sted.
+const OVERSIKT_FIL = 'kjede-oversikt.json';
 
 const MAX_TEGN = 90;
 const MAX_ORD_HVORFOR = 20;
@@ -60,7 +64,7 @@ for (const fag of manifest.subjects ?? []) {
 // --- Valider hver kjede ---------------------------------------------------
 const filer = fs
     .readdirSync(KJEDER_DIR)
-    .filter((f) => f.endsWith('.json') && f !== 'index.json')
+    .filter((f) => f.endsWith('.json') && f !== OVERSIKT_FIL)
     .sort();
 
 const indeks = [];
@@ -146,8 +150,8 @@ if (feil.length) {
 }
 
 fs.writeFileSync(
-    path.join(KJEDER_DIR, 'index.json'),
+    path.join(KJEDER_DIR, OVERSIKT_FIL),
     `${JSON.stringify({ kjeder: indeks }, null, 4)}\n`,
     'utf8'
 );
-console.log(`kjeder: ${indeks.length} kjede(r) validert -> kjeder/index.json`);
+console.log(`kjeder: ${indeks.length} kjede(r) validert -> kjeder/${OVERSIKT_FIL}`);
