@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Flame, Swords, RotateCcw } from 'lucide-react';
 
 // Signaturkomponent for artikkelen om de olympiske lekene i antikken.
-// Lyspaere-oyeblikk: hver fjerde aar la de greske bystatene ned vaapnene saa
-// alle kunne reise trygt til lekene i Olympia. Sporten skapte fred og en felles
-// gresk identitet. Eleven tenner den hellige ilden og ser krigen mellom
-// bystatene stilne, mens utoverne reiser trygt til Olympia.
+// Lyspære-øyeblikk: den hellige våpenhvilen stoppet ikke krigene mellom
+// bystatene, men den fredet Olympia og ga utøvere og tilskuere trygg ferdsel
+// gjennom alle bystatene. Eleven tenner den hellige ilden og ser de trygge
+// veiene åpne seg fram til Olympia, mens rivaliseringen fortsetter rundt dem.
 
 interface OlympiskFredProps {
     title?: string;
@@ -35,7 +35,7 @@ const RIVALRIES: [string, string][] = [
 const OLYMPIA = { x: 52, y: 50 };
 const cityById = (id: string) => CITIES.find((c) => c.id === id)!;
 
-export function OlympiskFred({ title = 'Den hellige vaapenhvilen' }: OlympiskFredProps) {
+export function OlympiskFred({ title = 'Den hellige våpenhvilen' }: OlympiskFredProps) {
     const [phase, setPhase] = useState<Phase>('krig');
 
     const handleReset = () => setPhase('krig');
@@ -48,7 +48,7 @@ export function OlympiskFred({ title = 'Den hellige vaapenhvilen' }: OlympiskFre
                 <div>
                     <h3 className="font-semibold text-slate-800">{title}</h3>
                     <p className="text-sm text-slate-500">
-                        Tenn den hellige ilden og se hva som skjer med krigen mellom bystatene.
+                        Tenn den hellige ilden og se hva som skjer med veiene til Olympia.
                     </p>
                 </div>
             </div>
@@ -190,7 +190,7 @@ export function OlympiskFred({ title = 'Den hellige vaapenhvilen' }: OlympiskFre
                             exit={{ opacity: 0 }}
                             className="px-4 py-3 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 text-sm"
                         >
-                            Bystatene ligger i krig med hverandre. Det er farlig aa reise mellom dem.
+                            Bystatene ligger i krig med hverandre. Det er farlig å reise mellom dem.
                             Hvordan kan alle samles trygt til lekene?
                         </motion.div>
                     ) : (
@@ -201,9 +201,10 @@ export function OlympiskFred({ title = 'Den hellige vaapenhvilen' }: OlympiskFre
                             exit={{ opacity: 0 }}
                             className="px-4 py-3 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm"
                         >
-                            Ekecheiria: den hellige vaapenhvilen. Naar ilden er tent, legger
-                            bystatene ned vaapnene. Naa reiser utovere og tilskuere trygt til
-                            Olympia, og fiender feirer den samme festen side om side.
+                            Ekecheiria: den hellige våpenhvilen. Krigene mellom bystatene tok ikke
+                            slutt, men Olympia var fredet, og utøvere og tilskuere fikk trygg
+                            ferdsel gjennom alle bystatene. Fiender feiret den samme festen side om
+                            side.
                         </motion.div>
                     )}
                 </AnimatePresence>

@@ -29,7 +29,7 @@
         },
         {
             "type": "text",
-            "content": "I de fleste gamle kulturer forklarte man verden med fortellinger om gudene. Når det tordnet, var en gud sint. Når avlingen slo feil, var gudene misfornøyde. Du kan lese mer om denne tankegangen i artikkelen om [de greske gudene](/historie/antikkens-hellas/greske-guder). Men i en gresk by som het Milet, omkring år 600 før vår tidsregning, dukket det opp noen som tenkte nytt. En mann ved navn Thales spurte ikke hvilken gud som lå bak. Han spurte: hva er alt egentlig laget av? Han prøvde å svare uten å nevne gudene i det hele tatt."
+            "content": "I de fleste gamle kulturer forklarte man verden med fortellinger om gudene. Når det tordnet, var en gud sint. Når avlingen slo feil, var gudene misfornøyde. Du kan lese mer om denne tankegangen i artikkelen om [de greske gudene](/historie/antikkens-hellas/greske-guder). Men i en gresk by som het Milet, omkring år 600 før vår tidsregning, dukket det opp noen som tenkte nytt. En mann ved navn Thales spurte ikke hvilken gud som lå bak. Han spurte: hva er alt egentlig laget av? Ifølge Fossheim (2025) ser Thales ut til å være den første som leter etter og foreslår naturlige forklaringer på det som skjer i naturen, i motsetning til de eldre fortellingene om gudene."
         },
         {
             "type": "text",
@@ -41,7 +41,7 @@
         },
         {
             "type": "text",
-            "content": "Grekerne oppdaget noe forbløffende: verden ser ut til å følge regler man kan skrive ned med tall. Pytagoras og elevene hans studerte former og figurer, og fant mønstre som gjelder for alle trekanter, overalt og til alle tider. Senere samlet Eukleides reglene for geometri i en bok som ble brukt i skolen i over to tusen år."
+            "content": "Grekerne oppdaget noe forbløffende: verden ser ut til å følge regler man kan skrive ned med tall. Pytagoras og elevene hans knyttet tall til alt de så, og navnet hans henger fortsatt ved Pytagoras' setning, en regel som gjelder for alle rettvinklede trekanter (Aubert & Siegmund-Schultze, 2025b). Senere samlet Euklid reglene for geometri i verket Elementer. Der bygges hele matematikken opp fra noen få grunnsetninger som alt annet utledes fra, og boka ble brukt som lærebok i skolen i mange land helt inn i moderne tid (Aubert, 2025)."
         },
         {
             "type": "text",
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "content": "Det fineste eksemplet på gresk vitenskap er kanskje Eratosthenes. Han bodde i byen Alexandria og hadde hørt at i en by langt sør, samme dag hvert år, sto sola rett over hodet ved middagstid. Da kastet en pinne der ingen skygge. Men samme dag og samme time kastet en pinne i Alexandria en liten skygge. Eratosthenes skjønte at den skyggen kunne fortelle ham hvor stor hele jorda var. Prøv det selv nedenfor."
+            "content": "Det fineste eksemplet på gresk vitenskap er kanskje Eratosthenes. Han arbeidet som bibliotekar ved det store biblioteket i Alexandria (Aubert & Mæhlum, 2025), og han hadde hørt at i en by langt sør, samme dag hvert år, sto sola rett over hodet ved middagstid. Da kastet en pinne der ingen skygge. Men samme dag og samme time kastet en pinne i Alexandria en liten skygge. Eratosthenes skjønte at den skyggen kunne fortelle ham hvor stor hele jorda var. Prøv det selv nedenfor."
         },
         {
             "type": "component",
@@ -65,7 +65,7 @@
         },
         {
             "type": "text",
-            "content": "Skyggen i Alexandria sto i en vinkel på rundt 7,2 grader. Det er nøyaktig en femtidel av en hel sirkel. Eratosthenes visste omtrent hvor langt det var mellom de to byene, og ganget den avstanden med femti. Svaret han fikk, var nær 40 000 kilometer. Det er nesten akkurat riktig. Tenk på det: uten å reise rundt jorda, bare med en pinne, en skygge og litt geometri, regnet han ut størrelsen på hele planeten."
+            "content": "Skyggemålingen i Alexandria viste en solvinkel som lå en femtidel av en hel sirkel unna loddrett, altså 7,2 grader. Eratosthenes anslo avstanden mellom de to byene og ganget den med femti. Svaret hans bommet med bare rundt ti prosent på jordas virkelige omkrets (Aubert & Mæhlum, 2025). Tenk på det: uten å reise rundt jorda, bare med en pinne, en skygge og litt geometri, kom han så nær størrelsen på hele planeten."
         },
         {
             "type": "header",
@@ -73,7 +73,7 @@
         },
         {
             "type": "text",
-            "content": "Den mest kjente greske vitenskapsmannen var nok Arkimedes fra byen Syrakus. Han var både matematiker og oppfinner. Han forsto hvordan en vektstang virker, og skal ha sagt at hvis han bare fikk et fast punkt å stå på, kunne han flytte hele jorda. Men den mest berømte historien handler om en gullkrone."
+            "content": "Den mest kjente greske vitenskapsmannen var nok Arkimedes, som ble født i Syrakus på Sicilia. Han var både matematiker og oppfinner. Han studerte hvordan en vektstang virker, og uttalte at hvis han bare fikk et fast punkt å stå på, skulle han flytte jorda (Aubert & Siegmund-Schultze, 2025a). Men den mest berømte historien handler om en gullkrone."
         },
         {
             "type": "image",
@@ -83,7 +83,7 @@
         },
         {
             "type": "text",
-            "content": "Kongen hadde fått laget en krone av rent gull, men mistenkte at gullsmeden hadde jukset og blandet inn billigere sølv. Hvordan kunne man finne det ut uten å ødelegge kronen? Arkimedes fant svaret da han satte seg i badekaret og så vannet stige. En gjenstand presser bort like mye vann som sin egen størrelse. Like tungt gull og sølv tar ikke like mye plass, fordi sølv er lettere. Prøv hans metode i mikrospillet under."
+            "content": "Kong Hieron hadde fått laget en krone av rent gull, men mistenkte at gullsmeden hadde jukset og blandet inn billigere sølv. Hvordan kunne man finne det ut uten å ødelegge kronen? Arkimedes fant loven for hvordan gjenstander får oppdrift i væske, og brukte den til å regne ut hvor mye gull og sølv det var i kronen. Etter tradisjonen fikk han ideen mens han satt i badekaret (Aubert & Siegmund-Schultze, 2025a). En gjenstand presser bort like mye vann som sin egen størrelse. Like tungt gull og sølv tar ikke like mye plass, fordi sølv er lettere. Prøv hans metode i mikrospillet under."
         },
         {
             "type": "component",
@@ -102,7 +102,7 @@
         },
         {
             "type": "text",
-            "content": "Den samme tankegangen forandret også legekunsten. Før mente mange at sykdom var en straff fra gudene. Legen Hippokrates og elevene hans var uenige. De mente at sykdom har naturlige årsaker, og at en lege skal se nøye på pasienten, skrive ned hva som skjer, og lære av det. Tanken om at kroppen følger naturlover, og ikke gudenes humør, kom fra de samme greske miljøene som filosofen [Aristoteles](/krle/filosofi/aristoteles) vokste opp i. Aristoteles selv samlet kunnskap om dyr, planter og stjerner, og prøvde å ordne alt han så i system."
+            "content": "Den samme tankegangen forandret også legekunsten. Legen Hippokrates og elevene hans forklarte sykdom ut fra naturfilosofiens ideer om årsaker, ikke ut fra gudenes vilje. Skriftene deres understreker hvor viktig det er å gjøre nøkterne iakttakelser ved sykesengen, og de tar avstand fra all diagnostikk som bare er gjetning (Skålevåg, 2025). Tanken om at kroppen følger naturlover, og ikke gudenes humør, kom fra de samme greske miljøene som filosofen [Aristoteles](/krle/filosofi/aristoteles) vokste opp i. Aristoteles selv samlet kunnskap om dyr, planter og stjerner, og prøvde å ordne alt han så i system."
         },
         {
             "type": "header",
@@ -110,11 +110,11 @@
         },
         {
             "type": "text",
-            "content": "Den greske måten å tenke på spredte seg vidt. Da [Aleksander den store](/historie/perserriket/aleksander-den-store) erobret store deler av verden, fulgte gresk språk og lærdom med, og byen Alexandria ble et senter for forskning med et enormt bibliotek. Mye gresk kunnskap ble senere glemt i Europa, men ble tatt vare på av lærde i den arabiske verden. Da bøkene kom tilbake til Europa under [renessansen](/historie/renessansen/oversikt), tente de en ny interesse for vitenskap."
+            "content": "Den greske måten å tenke på spredte seg vidt. Da [Aleksander den store](/historie/perserriket/aleksander-den-store) erobret store deler av verden, fulgte gresk kultur med helt til India og Sentral-Asia. I Alexandria bygde herskerne opp et forskningsmiljø der all tilgjengelig gresk litteratur ble samlet i et enormt bibliotek (Andersen mfl., 2025). Senere ble den greske og hellenistiske vitenskapen tatt vare på og utviklet videre av lærde som skrev på arabisk, og de arabiske bøkene fikk stor betydning for filosofien og naturvitenskapen i Europa i middelalderen (Mejdell, 2024). Under [renessansen](/historie/renessansen/oversikt) vokste det fram en helt ny beundring for antikkens tenkning."
         },
         {
             "type": "text",
-            "content": "Grekerne hadde ikke alltid rett. De trodde for eksempel at jorda var sentrum i universet. Men de ga oss noe enda viktigere enn riktige svar: en måte å lete etter svar på. Still spørsmål. Mål og observer. Bygg beviset steg for steg. La fornuften, ikke frykten, forklare verden. Hver gang en forsker i dag tester en idé mot virkeligheten, bruker de et redskap som ble formet i Hellas for over to tusen år siden."
+            "content": "Grekerne hadde ikke alltid rett. I det verdensbildet de fleste av dem bygde videre på, lå jorda i sentrum av universet, med sola og planetene i baner rundt (Hammerstrøm, 2025). Men de ga oss noe enda viktigere enn riktige svar: en måte å lete etter svar på. Still spørsmål. Mål og observer. Bygg beviset steg for steg. La fornuften, ikke frykten, forklare verden. Hver gang en forsker i dag tester en idé mot virkeligheten, bruker de et redskap som ble formet i Hellas for over to tusen år siden."
         },
         {
             "type": "image",
@@ -181,7 +181,7 @@
                             "Han gjettet"
                         ],
                         "correctIndex": 2,
-                        "explanation": "Skyggen sto i en vinkel på rundt 7,2 grader, en femtidel av en sirkel. Avstanden mellom byene ganget med femti ga nesten 40 000 km."
+                        "explanation": "Skyggen sto i en vinkel på rundt 7,2 grader, en femtidel av en sirkel. Avstanden mellom byene ganget med femti ga et svar som bare bommet med rundt ti prosent på jordas virkelige omkrets."
                     },
                     {
                         "question": "Hvorfor presset den falske kronen bort mer vann enn rent gull med samme vekt?",
@@ -207,7 +207,25 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, Ø., Steen, T. & Østby, E. (2025). *Hellenismen*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/hellenismen](https://snl.no/hellenismen)",
+                    "Aubert, K. E. (2025). *Euklid - gresk matematiker*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Euklid](https://snl.no/Euklid_-_gresk_matematiker)",
+                    "Aubert, K. E. & Mæhlum, L. (2025). *Eratosthenes*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Eratosthenes](https://snl.no/Eratosthenes)",
+                    "Aubert, K. E. & Siegmund-Schultze, R. (2025a). *Arkimedes*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Arkimedes](https://snl.no/Arkimedes)",
+                    "Aubert, K. E. & Siegmund-Schultze, R. (2025b). *Pytagoras*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Pytagoras](https://snl.no/Pytagoras)",
+                    "Fossheim, H. (2025). *Thales fra Milet*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Thales_fra_Milet](https://snl.no/Thales_fra_Milet)",
+                    "Hammerstrøm, M. (2025). *Det ptolemeiske verdensbilde*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/det_ptolemeiske_verdensbilde](https://snl.no/det_ptolemeiske_verdensbilde)",
+                    "Mejdell, G. (2024). *Arabisk litteratur*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/arabisk_litteratur](https://snl.no/arabisk_litteratur)",
+                    "Skålevåg, S. A. (2025). *Hippokrates*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Hippokrates](https://snl.no/Hippokrates)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-25"
 }
