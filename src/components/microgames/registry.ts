@@ -150,8 +150,18 @@ const TrojaUtgravning3D = lazy(() => import('./TrojaUtgravning3D'));
 const MaalmerkeKartet3D = lazy(() => import('./MaalmerkeKartet3D'));
 const EarhartStillehavet3D = lazy(() => import('./EarhartStillehavet3D'));
 const RoanokeSporet3D = lazy(() => import('./RoanokeSporet3D'));
+const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'hormuz-flaskehalsen-3d': {
+        id: 'hormuz-flaskehalsen-3d',
+        title: 'Flaskehalsen i Hormuz',
+        description:
+            'Mars 2026: Iran har erklært Hormuzstredet stengt. Du er los og skal få fem tankskip fra Persiabukta og ut i åpent hav. Hold inne for å kjøre og pek dit du vil styre. Ute i bukta er det plass nok, men inne i stredet krymper den åpne lanen fra over hundre kilometer til 33, og der ligger brennende vrak og iranske angrepsbåter på tvers. En live-avlesning viser bredden i kilometer, oljeprisen i dollar per fat og hva bensinen koster i Norge. Hvert skip du får gjennom presser prisen ned, hvert skip du mister presser den opp. Lyspæren kommer i hendene: et sund som bare er 33 kilometer bredt på det trangeste bestemmer hva verden betaler for olje, og dermed hva foreldrene dine betaler for bensin.',
+        estimatedSeconds: 170,
+        loader: () => import('./HormuzFlaskehalsen3D'),
+        Component: HormuzFlaskehalsen3D as never,
+    },
     'roanoke-sporet-3d': {
         id: 'roanoke-sporet-3d',
         title: 'Sporet etter kolonien',

@@ -78,6 +78,12 @@ export interface Lesson {
     layout?: 'standard' | 'rich' | 'tool' | 'learning-path' | 'learning-path-v2';
     year?: string;
     category?: string;
+    // Dato for siste endring av artikkelen. Settes normalt automatisk i manifest.json
+    // av scripts/sync-manifest-dates.js (git-dato); kan overstyres i artikkel-JSON.
+    lastUpdated?: string;
+    // Dato da innholdet sist ble faktasjekket. Settes manuelt i artikkel-JSON og er
+    // det viktigste signalet for tidssensitive artikler (ISO-dato, f.eks. "2026-07-24").
+    factChecked?: string;
     // Legacy fields for backward compatibility
     concepts?: Concept[];
     context?: Context;

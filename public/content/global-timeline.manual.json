@@ -1,6 +1,45 @@
 {
   "events": [
     {
+      "id": "iran-usa-krigen-utbrudd",
+      "title": "Krigen mellom USA/Israel og Iran bryter ut",
+      "description": "USA og Israel gjennomfører nesten 900 angrep mot Iran på tolv timer. Irans øverste leder Ali Khamenei blir drept.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "28. februar 2026",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "midtoesten",
+      "link": "/historie/midtoesten/iran-usa-krigen",
+      "tags": ["midtosten", "iran", "usa", "krig"]
+    },
+    {
+      "id": "hormuz-stengt-2026",
+      "title": "Iran stenger Hormuzstredet",
+      "description": "Iran erklærer stredet stengt og angriper skip som passerer. Skipstrafikken faller over 90 prosent, og oljeprisen skyter i været.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "4. mars 2026",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "midtoesten",
+      "link": "/historie/midtoesten/iran-usa-krigen",
+      "tags": ["midtosten", "iran", "olje"]
+    },
+    {
+      "id": "islamabad-memorandumet",
+      "title": "Islamabad-memorandumet",
+      "description": "USA og Iran signerer en avtale som gir 60 dager til å forhandle fram fred. Den bryter sammen i juli 2026.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "17. juni 2026",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "midtoesten",
+      "link": "/historie/midtoesten/iran-usa-krigen",
+      "tags": ["midtosten", "iran", "usa"]
+    },
+    {
       "id": "iran-contra-avsloering",
       "title": "Iran-Contra-skandalen avslores",
       "description": "Det libanesiske bladet Al-Shiraa avslorer at USA hemmelig solgte missiler til Iran og brukte pengene til å finansiere Contra-geriljaen i Nicaragua, i strid med Kongressens Boland-tillegg.",

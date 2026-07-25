@@ -294,6 +294,11 @@ Location: `public/content/[subjectId]/[topicId]/[lessonId].json`
 - **Never use bold text** (`**word**`) inside `text` blocks. The concepts system handles term highlighting.
 - **Never use markdown lists** (`- item`) inside `text` blocks. Use `{ "type": "list", "items": [...] }`.
 - `"layout": "rich"` activates the immersive sidebar with timeline, maps, and TOC.
+- Sidebaren viser «Sist oppdatert» i klartekst. Datoen hentes automatisk fra `lastUpdated`
+  i `manifest.json` (satt av `scripts/sync-manifest-dates.js` ut fra git-historikken).
+  Tidssensitive artikler bør i tillegg ha `"factChecked": "2026-07-24"` på toppnivå — da
+  vises også en «Faktasjekket»-linje. Git-datoen sier når fila sist ble rørt;
+  `factChecked` sier når et menneske sist kontrollerte at innholdet stemmer.
 - `timeline` array should always be `[]` — all events go in `global-timeline.json`.
 - `TimelineComponent` inside articles must always have `compact: true` in props.
 

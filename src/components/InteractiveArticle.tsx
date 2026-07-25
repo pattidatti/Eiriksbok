@@ -40,6 +40,8 @@ export type ArticleData = {
     url?: string;
     readTime: string;
     heroImage?: string;
+    lastUpdated?: string;
+    factChecked?: string;
 
     fact?: string;
     mapData?: MapData;
@@ -155,8 +157,10 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
     const metadata = useMemo(() => ({
         year: event.year,
         readTime: event.readTime,
-        category: event.category
-    }), [event.year, event.readTime, event.category]);
+        category: event.category,
+        lastUpdated: event.lastUpdated,
+        factChecked: event.factChecked
+    }), [event.year, event.readTime, event.category, event.lastUpdated, event.factChecked]);
 
     // Determine active content block for highlighting
     const activeContentIndex = activeBlockIndex !== -1 ? speechData.mapSpeechToContent[activeBlockIndex] : undefined;

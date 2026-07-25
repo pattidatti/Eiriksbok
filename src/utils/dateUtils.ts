@@ -35,6 +35,22 @@ export const formatRelativeTimeNo = (at: number, now: number = Date.now()): stri
     return diffYears === 1 ? 'for 1 år siden' : `for ${diffYears} år siden`;
 };
 
+// Absolutt dato på norsk i klartekst: "24. juli 2026". Brukes til «Sist oppdatert»
+// og «Faktasjekket» i artikkel-sidebaren. Returnerer null ved ugyldig/manglende dato,
+// slik at kallstedet bare kan la være å vise linjen.
+export const formatNorwegianDate = (value?: string | number | null): string | null => {
+    if (value === undefined || value === null || value === '') return null;
+
+    const date = new Date(value);
+    if (isNaN(date.getTime())) return null;
+
+    return new Intl.DateTimeFormat('nb-NO', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+    }).format(date);
+};
+
 // Helper to parse year strings like "1918–1939", "1885", "550 fvt", "-500-476", "August 1945", "6. juni 1944"
 export const parseYearRange = (yearStr: string): { start: number, end: number } => {
     if (!yearStr) return { start: 0, end: 0 };
