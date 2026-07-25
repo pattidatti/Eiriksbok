@@ -1,0 +1,262 @@
+{
+    "id": "atlantis",
+    "title": "Atlantis - fantes øya som sank?",
+    "layout": "rich",
+    "year": "360 fvt",
+    "category": "Historiens store gåter",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Alt vi vet om Atlantis, kommer fra to tekster av den greske filosofen Platon. Ingen andre kilder nevner øya.",
+        "Platon beskrev en ringby med borg, kanaler og et tempel for havguden Poseidon - og lot den synke i havet på ett døgn.",
+        "Det finnes ingen vitenskapelige bevis for at Atlantis har eksistert, men på Santorini sank det faktisk en øy i bronsealderen."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Du har hørt om Atlantis. En rik og mektig øy langt ute i havet, med praktfulle byer og en flåte som skremte hele Middelhavet. Så kom katastrofen, og hele øya forsvant under vann. Historien dukker opp i filmer, dataspill og tegneserier, og de fleste kjenner den uten å ha lest den noe sted.\n\nDet er akkurat der gåten begynner. For nesten alt du har hørt, kan spores tilbake til én eneste person: den greske filosofen Platon. Ingen andre fra antikken skriver om Atlantis før ham. Ingen egyptisk tekst, ingen gresk historiker, ingen arkeolog. Bare Platon."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ringformet antikk by med kanaler sett fra lufta over havet",
+            "caption": "Slik beskrev Platon hovedstaden i Atlantis: ringer av land og vann rundt en borg midt i byen."
+        },
+        {
+            "type": "header",
+            "text": "Hva Platon faktisk skrev"
+        },
+        {
+            "type": "text",
+            "content": "De eldste kildene til Atlantis er to tekster av Platon: dialogene Timaios og Kritias (Løøv, 2025). En dialog er en samtale mellom flere personer, skrevet ned som et skuespill. I disse samtalene forteller Platon om en øy eller et helt kontinent som skal ha sunket i havet.\n\nIfølge fortellingen eksisterte Atlantis rundt 9000 år før Platons egen tid. Havguden Poseidon rådde over øya, og sønnen hans Atlas ble stamfar til folket der, atlantidene. Atlas grunnla hovedstaden, og byen hadde en helt spesiell form: striper av land og kanaler lå i ringer rundt en borg i midten. Riket vokste seg så mektig at det strakte herredømmet sitt helt til Italia og Egypt (Løøv, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Så snudde alt. Jordskjelv og oversvømmelser rammet Atlantis, og i løpet av bare ett døgn sank hele øya i havet (Løøv, 2025). Ingen overlevende, ingen ruiner, ingenting igjen å se."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hvem var Platon?",
+                "content": "Platon levde fra 428 til 347 fvt og regnes som en av de aller viktigste tenkerne i vestlig filosofi. Nesten alt vi har fra ham, er dialoger - samtaler der læreren hans Sokrates ofte er hovedperson. Platon fant gjerne opp fortellinger for å få fram et filosofisk poeng. Den mest kjente er hulelignelsen, der han dikter opp fanger som sitter lenket i en hule og ser skygger på veggen, for å forklare hvordan han mener vi mennesker oppfatter virkeligheten (Fossheim, 2026)."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvor kom historien fra?"
+        },
+        {
+            "type": "text",
+            "content": "Platon påstår ikke at han fant på Atlantis selv. Han bygger, sier han, på en 8000 år gammel egyptisk overlevering som athenaren Solon tok med seg hjem til Athen (Løøv, 2025). Solon levde rundt 630 til 560 fvt og var lovgiver og statsmann i Athen. Han ble regnet blant Hellas' sju vise menn (Mæhle, 2025).\n\nRegn litt på det. Solon døde rundt 560 fvt. Platon ble født i 428 fvt (Fossheim, 2026). Det gikk altså mer enn 130 år fra Solon var borte til Platon i det hele tatt kom til verden, og enda flere år før han skrev noe ned. I mellomtiden må historien ha gått fra munn til munn.\n\nFølg kjeden bakover selv, ledd for ledd, og se hvor langt unna hendelsen vi ender."
+        },
+        {
+            "type": "component",
+            "name": "Kildekjeden",
+            "props": {
+                "title": "Kildekjeden til Atlantis",
+                "prompt": "Klikk deg bakover, ledd for ledd, og se hvor langt unna hendelsen vi havner.",
+                "claim": "Påstanden vi sporer: «Det lå en gang en mektig øy som het Atlantis, og den sank i havet.»",
+                "meterLabel": "Hvor nær er vi hendelsen?",
+                "steps": [
+                    {
+                        "who": "Oss i dag",
+                        "when": "nå",
+                        "what": "Vi kjenner Atlantis fra filmer, spill og bøker. Men hvor kommer det fra?",
+                        "trust": 100
+                    },
+                    {
+                        "who": "Platon",
+                        "when": "428-347 fvt",
+                        "what": "Han skrev fortellingen ned i dialogene Timaios og Kritias. Dette er de eldste kildene vi har.",
+                        "trust": 72
+                    },
+                    {
+                        "who": "Muntlig i Athen",
+                        "when": "over 130 år",
+                        "what": "Fra Solon døde til Platon ble født, gikk historien fra munn til munn. Ingen av disse fortellingene finnes skrevet ned.",
+                        "trust": 44
+                    },
+                    {
+                        "who": "Solon",
+                        "when": "ca. 630-560 fvt",
+                        "what": "Den athenske lovgiveren skal ha tatt fortellingen med seg hjem. Vi har ingen tekst fra Solon om Atlantis.",
+                        "trust": 22
+                    },
+                    {
+                        "who": "Egyptiske prester",
+                        "when": "ifølge Platon",
+                        "what": "Kjeden ender i en overlevering vi bare kjenner fordi Platon nevner den. Ingen egyptisk kilde bekrefter den.",
+                        "trust": 6
+                    }
+                ],
+                "verdict": "Kjeden ender der den startet: hos Platon.",
+                "verdictNote": "Hvert ledd bakover hviler bare på Platons egen tekst. Mange ledd er ikke det samme som mange kilder - det er én kilde fortalt om igjen."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hva ville en historiker spurt om?"
+        },
+        {
+            "type": "text",
+            "content": "Kildekritikk er å vurdere kilder og hvor troverdige de er. Enklest sagt handler det om to spørsmål: Hvem er kilden? Og hvor troverdig er det som blir sagt akkurat her? Historikere og journalister vurderer kilder etter fire krav: troverdighet, objektivitet, nøyaktighet og egnethet (Orgeret & Hatlen, 2026). Et viktig kvalitetskrav er at flere uavhengige kilder sier det samme.\n\nAtlantis stryker på nettopp det kravet. Vi har ikke flere uavhengige kilder. Vi har én tekst, skrevet av en filosof som brukte oppdiktede fortellinger som en fast del av metoden sin, om hendelser som skal ha skjedd tusenvis av år før han selv levde. Konklusjonen forskerne trekker, er tydelig: det finnes ingen vitenskapelige bevis for at Atlantis faktisk har eksistert (Løøv, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "Bygg byen, og se hva som blir igjen"
+        },
+        {
+            "type": "text",
+            "content": "Platon var ingen slurvete forteller. Beskrivelsen hans er så detaljert at du kan bygge byen etter den. Prøv selv: reis borgen, legg ringene, bygg broene og åpne kanalen ut til havet. Vipp så bryteren over til det arkeologene faktisk finner."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "atlantis-ringbyen"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Men en øy sank faktisk"
+        },
+        {
+            "type": "text",
+            "content": "Her blir gåten interessant. For i bronsealderen sank det virkelig en øy i Middelhavet.\n\nPå Santorini i Hellas var det et voldsomt vulkanutbrudd for rundt 3500 år siden. Utbruddet ødela den opprinnelige øya, og en del av den sank i havet. Byen Akrotiri ble begravd i aske, og nettopp derfor er den bevart: arkeologene har gravd fram hele gater med hus i to etasjer eller mer. Utbruddet blir knyttet til det brå sammenbruddet i den minoiske kulturen, som også kan spores på naboøya Kreta (Lundbo, 2026).\n\nDen minoiske kulturen blomstret på Kreta fra omkring 2000 til 1400 fvt. Minoerne bygde store palasser og drev handel over hele det østlige Middelhavet, blant annet med den såkalte Kamares-keramikken fra rundt 1800 fvt (Steen, 2026). En rik sjøfartskultur som fikk en brå slutt, og en øy som virkelig sank - det ligner unektelig på Platons fortelling."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Utgravd bronsealderby med gater og steinhus under askelag",
+            "caption": "Akrotiri på Santorini ble begravd i aske. Her kan arkeologene faktisk grave og finne noe."
+        },
+        {
+            "type": "text",
+            "content": "Men se på forskjellen. På Santorini kan forskerne grave i bakken og hente opp hus, keramikk og askelag. Om Atlantis har vi ingenting å grave i, fordi ingen vet hvor vi skulle grave.\n\nDet har ikke stoppet folk fra å prøve. Atlantis har blitt plassert i Sverige av Olof Rudbeck mellom 1679 og 1702, i Helgolandbukta av Jürgen Spanuth i 1962, og i Kreta-området av Angelos Galanopoulos på 1960-tallet. Santorini blir også trukket fram, med vulkanutbruddet rundt 1520 fvt (Løøv, 2025). At samme øy er blitt funnet i Sverige, i Nordsjøen og i Hellas, sier egentlig mest om leterne. Når et svar kan plasseres nesten hvor som helst, er det et tegn på at kildene er for tynne til å peke noe sted i det hele tatt."
+        },
+        {
+            "type": "header",
+            "text": "Når en gåte ikke er en ekte gåte"
+        },
+        {
+            "type": "text",
+            "content": "Atlantis lever videre i dag, men først og fremst innenfor nyreligiøsitet, gjennom skikkelser som Helena P. Blavatsky og Edgar Cayce (Løøv, 2025). Mye av det som skrives om Atlantis, ser ut som forskning uten å være det.\n\nDet finnes et ord for dette: pseudovitenskap. Det er undersøkelser som blir presentert som vitenskap, men som ikke oppfyller vanlige krav til vitenskapelighet. Kjennetegnet er at de ikke følger vitenskapens prinsipper for hypotesetesting, og at påstandene ofte er laget slik at de ikke kan motbevises. Noen slike felt har til og med egne tidsskrifter og konferanser som ser akademiske ut på overflaten (Ystenes & Kjøll, 2025).\n\nDet er verdt å holde de to fra hverandre. Ekte faglig uenighet finnes overalt i historiefaget: forskere strides om [hvordan pyramidene ble bygd](/historie/historiens-store-gater/pyramidene), og om [den trojanske krig](/historie/historiens-store-gater/den-trojanske-krig) virkelig skjedde. De uenighetene handler om hvordan ekte funn skal tolkes. Atlantis-jakten handler om noe annet: å lete etter funn som skal passe til en fortelling man har bestemt seg for på forhånd."
+        },
+        {
+            "type": "text",
+            "content": "Det gjør ikke Atlantis uinteressant. Tvert imot er fortellingen en av de beste øvingsoppgavene et historiefag kan få. Den lærer deg å skille mellom «dette høres spennende ut» og «dette kan etterprøves». Den samme øvelsen trenger du når du møter påstander om [bronsealderens kollaps](/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps), eller når du leser noe som helst annet blant [historiens store gåter](/historie/historiens-store-gater/oversikt)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Hvem er kilden, og hvor nær var hen det som skjedde?",
+                "Finnes det flere uavhengige kilder som sier det samme?",
+                "Hva slags spor ville vi faktisk funnet hvis påstanden var sann - og har noen funnet dem?"
+            ]
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tom havflate med rolige bølger under lys himmel",
+            "caption": "Der Atlantis skulle ha ligget, finner vi bare hav. Det er også et svar."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke to tekster av Platon er de eldste kildene til Atlantis?",
+                    "Hvordan så hovedstaden i Atlantis ut, ifølge Platon?",
+                    "Hvem var Solon, og hvilken rolle spiller han i historien om hvor fortellingen kom fra?",
+                    "Hva skjedde på Santorini i bronsealderen, og hva fant arkeologene i Akrotiri?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor mange ledd i en fortellerkjede ikke er det samme som mange uavhengige kilder.",
+                    "Platon diktet gjerne opp fortellinger for å få fram et poeng, som i hulelignelsen. Hvorfor er det viktig å vite dette når vi vurderer Atlantis?",
+                    "Atlantis er blitt plassert både i Sverige, i Nordsjøen og i Hellas. Hva forteller den spredningen oss om kildegrunnlaget?",
+                    "Sammenlign Santorini og Atlantis. Hvorfor kan forskerne si noe sikkert om det ene stedet, men ikke om det andre?"
+                ],
+                "gaaVidere": [
+                    "Diskuter to og to: hva er forskjellen på ekte faglig uenighet og pseudovitenskap? Bruk pyramidene og Atlantis som eksempler.",
+                    "Finn en påstand om fortiden på nettet eller i sosiale medier. Bruk de tre spørsmålene fra artikkelen, og skriv en kort vurdering av hvor troverdig påstanden er.",
+                    "Skriv en kort tekst der du forklarer for en venn hvorfor Atlantis er spennende selv om øya sannsynligvis aldri fantes."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvor kommer de eldste kildene til Atlantis fra?",
+                        "options": [
+                            "Egyptiske tempelvegger",
+                            "Dialogene Timaios og Kritias av Platon",
+                            "Utgravninger på Kreta",
+                            "Homers dikt om Troja"
+                        ],
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hvordan skal Atlantis ha gått under, ifølge fortellingen?",
+                        "options": [
+                            "Byen ble erobret av grekerne",
+                            "Folket flyttet vekk da jorda ble ufruktbar",
+                            "Jordskjelv og oversvømmelser senket øya i løpet av ett døgn",
+                            "En vulkan begravde byen i aske"
+                        ],
+                        "correctAnswer": 2
+                    },
+                    {
+                        "question": "Hvorfor stryker Atlantis på kildekritikken?",
+                        "options": [
+                            "Teksten er for kort til å si noe",
+                            "Platon skrev på et språk ingen forstår i dag",
+                            "Alt hviler på én kilde, uten uavhengig bekreftelse",
+                            "Fortellingen er skrevet ned altfor kort tid etter hendelsen"
+                        ],
+                        "correctAnswer": 2
+                    },
+                    {
+                        "question": "Hva fant arkeologene i Akrotiri på Santorini?",
+                        "options": [
+                            "Hele gater med hus i to etasjer, bevart under aske",
+                            "Restene av ringbyen Platon beskrev",
+                            "Et tempel for havguden Poseidon",
+                            "Ingenting - stedet er aldri gravd ut"
+                        ],
+                        "correctAnswer": 0
+                    },
+                    {
+                        "question": "Hva kjennetegner pseudovitenskap?",
+                        "options": [
+                            "Den blir alltid utført av folk uten utdanning",
+                            "Den handler bare om fortiden",
+                            "Den bruker for mange kilder",
+                            "Den ser ut som vitenskap, men følger ikke vitenskapens krav til hypotesetesting"
+                        ],
+                        "correctAnswer": 3
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Fossheim, H. (2026). *Platon*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Platon](https://snl.no/Platon)",
+                    "Lundbo, S. (2026). *Santorini*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Santorini](https://snl.no/Santorini)",
+                    "Løøv, M. (2025). *Atlantis*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Atlantis](https://snl.no/Atlantis)",
+                    "Mæhle, I. B. (2025). *Solon*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Solon](https://snl.no/Solon)",
+                    "Orgeret, K. S. & Hatlen, J. F. (2026). *Kildekritikk*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/kildekritikk](https://snl.no/kildekritikk)",
+                    "Steen, T. (2026). *Minoisk kultur*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/minoisk_kultur](https://snl.no/minoisk_kultur)",
+                    "Ystenes, M. & Kjøll, G. (2025). *Pseudovitenskap*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/pseudovitenskap](https://snl.no/pseudovitenskap)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
