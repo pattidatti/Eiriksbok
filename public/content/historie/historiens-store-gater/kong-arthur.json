@@ -1,0 +1,264 @@
+{
+    "id": "kong-arthur",
+    "title": "Kong Arthur - hvem var mannen bak legenden?",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "500",
+    "category": "Historiens store gåter",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Arthur skal ha levd rundt år 500, men navnet hans dukker ikke opp i noen kilde før på 800-tallet.",
+        "Jo lenger unna år 500 kildene er skrevet, jo flere detaljer «vet» de om ham.",
+        "Moderne historikere avviser at Arthur var en virkelig person, men som fortelling har han formet Europa i tusen år."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Sverdet i steinen. Det runde bordet. Trollmannen Merlin, borgen Camelot og jakten på den hellige gral. Du har møtt kong Arthur i filmer, spill og bøker uten kanskje å tenke over hvor han kommer fra. Men reis tilbake til tiden han skal ha levd i, rundt år 500, og du finner ingenting. Ingen kongegrav. Ingen mynt med ansiktet hans. Ingen tekst som nevner navnet. Ikke en eneste linje."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tåkelagt britisk landskap med rester av en trefort på en høyde",
+            "caption": "Britannia rundt år 500. Dette er landskapet Arthur skal ha kjempet i - men ingen kilde fra tiden nevner ham."
+        },
+        {
+            "type": "header",
+            "text": "Tiden Arthur skal ha levd i"
+        },
+        {
+            "type": "text",
+            "content": "På 400-tallet trakk romerne soldatene sine ut av Britannia. [Vestromerriket var på vei mot sammenbrudd](/historie/romerriket/vestromerrikets-fall), og øya måtte klare seg selv. Fra kysten kom saksere, angler og jyder over Nordsjøen. Noen kom som leiesoldater, andre som nybyggere. Det ble uro, kamper og nye grenser."
+        },
+        {
+            "type": "text",
+            "content": "Dette er en av de mørkeste periodene i britisk historie. Ikke fordi den var verre enn andre tider, men fordi nesten ingen skrev noe ned. Den viktigste teksten vi har, er skrevet av munken Gildas rundt år 540. Han forteller om et stort slag ved et sted som heter Mons Badonicus, omtrent år 500, der britene slo tilbake angriperne. Men Gildas nevner ikke Arthur (Britannica, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Tenk over hvor merkelig det er. Gildas levde nærmest slaget i tid. Hvis en berømt konge hadde ledet britene til seier bare noen tiår tidligere, ville en munk som skrev om nettopp det slaget, sannsynligvis nevnt ham. Stillheten hos Gildas er den første og viktigste ledetråden i denne gåten."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hva er en primærkilde?",
+                "content": "En primærkilde er laget i den tiden vi undersøker, av noen som var der eller levde tett på. Et brev, en mynt, en gravstein. En sekundærkilde er laget senere, av noen som bygger på andres fortellinger. For Arthur finnes det ingen primærkilder i det hele tatt. Alt vi har, er tekster skrevet flere hundre år etterpå."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Kilde for kilde vokser han fram"
+        },
+        {
+            "type": "text",
+            "content": "Rundt år 830, altså mer enn tre hundre år etter at Arthur skal ha levd, dukker navnet endelig opp. Det skjer i det walisisk-latinske verket Historia Brittonum. Der er Arthur en hærfører som vinner tolv slag mot sakserne, med seier ved Mons Badonicus til slutt (Britannica, 2026). Legg merke til at han ikke er konge her. Han er en dyktig kriger som leder andres hærer."
+        },
+        {
+            "type": "text",
+            "content": "Rundt 970 kommer den walisiske årboka Annales Cambriae. Nå får Arthur årstall: Badon i 516 og slaget ved Camlann i 537, «der Arthur og Medraut falt» (Britannica, 2026). Plutselig har fortellingen en fiende og en dødsdato. Men husk: dette er skrevet over fire hundre år etter hendelsene."
+        },
+        {
+            "type": "text",
+            "content": "Det store spranget kommer rundt 1135. Da skriver Geoffrey of Monmouth verket Historia Regum Britanniae. Han påstår at han bare oversetter en gammel walisisk bok. Forskning viser at det ikke stemmer. Verket er en blanding av keltiske sagn, klassiske myter, stoff fra Historia Brittonum og Gildas, og Geoffreys egen frie fantasi (Lunga, 2026). Hos Geoffrey er Arthur ikke lenger en hærfører, men en mektig konge med et helt rike. Trollmannen Merlin kommer inn her. Boka ble en enorm suksess i hele Europa, og over 200 håndskrevne eksemplarer finnes fortsatt i dag (Lunga, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Så tar de franske dikterne over. Fra Wales gikk fortellingene via Bretagne til resten av Europa, blant annet gjennom Chrétien de Troyes (Oftedal et al., 2026). Rundt 1180 skriver han om den hellige gral for aller første gang, i fortellingen om ridderen Perceval (Store norske leksikon, 2024a). Nå handler Arthur-sagnene om høviske riddere, ære og kjærlighet. Det runde bordet hører også til denne verdenen: at bordet var rundt, skulle vise at alle som satt der, var like (Store norske leksikon, 2024b)."
+        },
+        {
+            "type": "text",
+            "content": "Til slutt, i 1485, samler engelskmannen Thomas Malory alt sammen til den versjonen vi kjenner (Oftedal et al., 2026). Det er i praksis Malorys Arthur som går igjen i moderne filmer og spill. Nesten tusen år etter at han skal ha levd."
+        },
+        {
+            "type": "component",
+            "name": "LegendensVekst",
+            "props": {
+                "title": "Legenden vokser",
+                "prompt": "Klikk kildene i rekkefølge og se hva hver av dem legger til.",
+                "baseYear": 500,
+                "baseLabel": "Arthur skal ha levd rundt år 500",
+                "verdict": "Jo lenger bort fra år 500 vi kommer, jo mer «vet» kildene.",
+                "verdictNote": "Slik virker ikke ekte kunnskap. Et vitne som var der, vet mest, og det blir tynnere jo lenger unna du kommer. Her er det motsatt: den som er lengst unna, forteller mest. Det er kjennetegnet på en legende som vokser."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Da munkene «fant» graven"
+        },
+        {
+            "type": "text",
+            "content": "I 1184 brant klosteret i Glastonbury i Sør-England. Kirka, bøkene og de hellige relikviene gikk tapt, og munkene stod uten penger til å bygge opp igjen. Sju år senere, i 1191, kunngjorde de en oppsiktsvekkende nyhet: de hadde funnet graven til kong Arthur og dronning Guinevere på klosterets område."
+        },
+        {
+            "type": "text",
+            "content": "Nyheten virket. Pilegrimer og rike beskyttere kom til Glastonbury, og med dem kom pengene. I dag har arkeologer gått gjennom de gamle utgravningene på nytt. Undersøkelsen ledet av Roberta Gilchrist ved University of Reading viste at det påståtte gravstedet bare var en grop i en kirkegård, datert til et sted mellom 1000-tallet og 1400-tallet. Munkene bygde til og med bevisst gammeldagse detaljer inn i den nye kirka, for å få stedet til å virke eldre enn det var (Urbanus, 2016)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Munker graver i klosterhagen mens pilegrimer ser på",
+            "caption": "Glastonbury 1191. Funnet av «Arthurs grav» kom sju år etter brannen, akkurat da klosteret trengte penger."
+        },
+        {
+            "type": "text",
+            "content": "Dette er verdt å merke seg. Det som ser ut som et bevis, kan være laget nettopp fordi noen trengte et bevis. Spør alltid: hvem tjente på at dette ble funnet?"
+        },
+        {
+            "type": "header",
+            "text": "Gå veien selv"
+        },
+        {
+            "type": "text",
+            "content": "Under kan du gå strekningen fra år 500 og framover. For hver kilde du passerer, vokser Camelot i horisonten. Følg med på telleren nederst til venstre mens du går."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "legendens-vei"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Arthur kom helt til Norge"
+        },
+        {
+            "type": "text",
+            "content": "På 1200-tallet nådde ridderfortellingene Norge. Kong Håkon Håkonsson sørget for å få innført en helt ny sjanger her hjemme, riddersagaene, som i hovedsak ble oversatt fra fransk (Store norske leksikon, 2025). Norske og islandske lesere møtte dermed den samme høviske verdenen som resten av Europa. Mange hundre år senere gjenfortalte Sigrid Undset fortellingene på norsk i boka «Fortellinger om kong Artur og ridderne av det runde bord» fra 1915 (Oftedal et al., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "En fortelling uten en eneste håndfast kilde reiste altså fra Wales til Frankrike, videre til England og helt opp til Norge, og den lever fortsatt. Det sier noe om hvor sterk en god historie kan være."
+        },
+        {
+            "type": "header",
+            "text": "Så hvem var kong Arthur?"
+        },
+        {
+            "type": "text",
+            "content": "Svaret fra fagfolk er tydelig: moderne historikere avviser at Arthur var en historisk person (Oftedal et al., 2026). Det er ikke det samme som at forskerne har bevist at han aldri fantes. Men ingen har klart å vise at han fantes, og det er kildene som må bære påstanden, ikke omvendt."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig er Arthur virkelig på en annen måte. For de keltiske folkene i Wales og Bretagne ble han et symbol på frihet og på håpet om at noen skulle komme og ta landet tilbake (Oftedal et al., 2026). Senere plukket engelske konger ham opp som sin egen helt. Arthur viser hvordan folk og land bygger seg de heltene de trenger. Det er en av grunnene til at han er verdt å studere selv om han sannsynligvis aldri levde."
+        },
+        {
+            "type": "text",
+            "content": "Arthur står ikke alene. [Atlantis](/historie/historiens-store-gater/atlantis) hviler også på én enkelt kilde, mens [den trojanske krigen](/historie/historiens-store-gater/den-trojanske-krig) har en ekte by, men en usikker krig. Alle tre er del av [historiens store gåter](/historie/historiens-store-gater/oversikt), der jobben din er å veie bevisene selv."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Sjekk avstanden i tid: hvor lenge etter hendelsen ble kilden skrevet?",
+                "Sjekk om detaljene vokser: får fortellingen mer stoff jo lengre unna kilden er?",
+                "Sjekk om kildene er uavhengige: bygger de på hverandre, eller står de på egne bein?",
+                "Sjekk hvem som tjener på fortellingen: en konge, et kloster, en nasjon?"
+            ]
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Stor borg i tåke over et lite ruinfundament i forgrunnen",
+            "caption": "Camelot i horisonten, og det lille som faktisk finnes av spor i forgrunnen. Legenden er stor. Grunnlaget er tynt."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skriver Gildas om rundt år 540, og hvem nevner han ikke?",
+                    "I hvilket verk dukker navnet Arthur opp for aller første gang, og omtrent når?",
+                    "Hva gjorde Geoffrey of Monmouth med Arthur-fortellingen rundt 1135?",
+                    "Hva skjedde i Glastonbury i 1184 og i 1191?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor det er et problem at detaljene om Arthur øker jo lenger unna år 500 kildene er skrevet.",
+                    "Geoffrey påsto at han oversatte en gammel bok. Hvorfor er det viktig for oss at forskningen har vist at det ikke stemmer?",
+                    "Historikere sier ikke at Arthur er bevist oppdiktet, bare at han ikke er bevist virkelig. Hva er forskjellen på disse to påstandene?",
+                    "Hvorfor kan spørsmålet «hvem tjente på dette funnet?» hjelpe oss å vurdere graven i Glastonbury?"
+                ],
+                "gaaVidere": [
+                    "Diskuter to og to: hvorfor tror dere folk fortsetter å lage filmer og spill om Arthur, selv når historikerne sier at han ikke fantes?",
+                    "Finn en påstand om fortiden i sosiale medier. Bruk de fire sjekkpunktene fra artikkelen, og skriv en kort vurdering av hvor troverdig den er.",
+                    "Skriv en kort tekst der du sammenligner Arthur og Atlantis. Hva er likt i kildegrunnlaget, og hva er ulikt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er problemet med Gildas som kilde til Arthur?",
+                        "options": [
+                            "Han skrev flere hundre år etter slaget",
+                            "Han skriver om slaget ved Badon, men nevner ikke Arthur",
+                            "Teksten hans er gått tapt",
+                            "Han hevder at Arthur var trollmann"
+                        ],
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hvor dukker navnet Arthur opp for aller første gang?",
+                        "options": [
+                            "Hos Gildas, rundt 540",
+                            "I Annales Cambriae, rundt 970",
+                            "I Historia Brittonum, rundt 830",
+                            "Hos Thomas Malory, i 1485"
+                        ],
+                        "correctAnswer": 2
+                    },
+                    {
+                        "question": "Hva gjorde Geoffrey of Monmouth med fortellingen rundt 1135?",
+                        "options": [
+                            "Han gjorde Arthur til en mektig konge og tok inn Merlin",
+                            "Han avviste at Arthur hadde levd",
+                            "Han fant Arthurs grav",
+                            "Han oversatte en ekte walisisk bok ord for ord"
+                        ],
+                        "correctAnswer": 0
+                    },
+                    {
+                        "question": "Hvorfor er funnet av «Arthurs grav» i Glastonbury i 1191 mistenkelig?",
+                        "options": [
+                            "Graven lå i feil land",
+                            "Munkene trengte penger etter brannen i 1184, og funnet trakk pilegrimer",
+                            "Ingen hadde hørt om Arthur på den tiden",
+                            "Kirka nektet å tro på funnet"
+                        ],
+                        "correctAnswer": 1
+                    },
+                    {
+                        "question": "Hva er hovedpoenget når vi ser på Arthur-kildene samlet?",
+                        "options": [
+                            "Mange kilder betyr at fortellingen er godt bevist",
+                            "Detaljene øker jo lenger unna hendelsen kildene er skrevet",
+                            "De eldste kildene forteller mest",
+                            "Alle kildene er skrevet i Arthurs egen levetid"
+                        ],
+                        "correctAnswer": 1
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Britannica. (2026). *Arthur. Legendary king of Britain*. Encyclopaedia Britannica. Hentet 25.07.2026 fra [britannica.com](https://www.britannica.com/topic/Arthur-legendary-king-of-Britain)",
+                    "Lunga, P. S. (2026). *Geoffrey of Monmouth*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Geoffrey_of_Monmouth](https://snl.no/Geoffrey_of_Monmouth)",
+                    "Oftedal, M., Halvorsen, A. & Lunga, P. S. (2026). *Arthur - sagnkonge*. Store norske leksikon. Hentet 25.07.2026 fra [snl.no/Arthur_-_sagnkonge](https://snl.no/Arthur_-_sagnkonge)",
+                    "Store norske leksikon. (2024a). *Gral*. Hentet 25.07.2026 fra [snl.no/gral](https://snl.no/gral)",
+                    "Store norske leksikon. (2024b). *Ridderne av det runde bord*. Hentet 25.07.2026 fra [snl.no/Ridderne_av_det_runde_bord](https://snl.no/Ridderne_av_det_runde_bord)",
+                    "Store norske leksikon. (2025). *Norrøn litteratur*. Hentet 25.07.2026 fra [snl.no/norrøn_litteratur](https://snl.no/norrøn_litteratur)",
+                    "Urbanus, J. (2016). *Legends of Glastonbury Abbey*. Archaeology Magazine. Hentet 25.07.2026 fra [archaeology.org](https://archaeology.org/issues/march-april-2016/digs-discoveries/trenches-england-glastonbury-abbey/)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

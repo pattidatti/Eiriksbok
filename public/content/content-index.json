@@ -1,5 +1,5 @@
 {
-  "buildId": 1784967562849,
+  "buildId": 1784969818669,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1461,6 +1461,9 @@
     ],
     "hvem-nadde-amerika-forst": [
       "content/historie/historiens-store-gater/hvem-nadde-amerika-forst.json"
+    ],
+    "kong-arthur": [
+      "content/historie/historiens-store-gater/kong-arthur.json"
     ],
     "historiens-store-gater-oversikt": [
       "content/historie/historiens-store-gater/oversikt.json"
@@ -4146,6 +4149,7 @@
     "historie/historiens-store-gater/den-trojanske-krig": "content/historie/historiens-store-gater/den-trojanske-krig.json",
     "historie/historiens-store-gater/gronlands-gate": "content/historie/historiens-store-gater/gronlands-gate.json",
     "historie/historiens-store-gater/hvem-nadde-amerika-forst": "content/historie/historiens-store-gater/hvem-nadde-amerika-forst.json",
+    "historie/historiens-store-gater/kong-arthur": "content/historie/historiens-store-gater/kong-arthur.json",
     "historie/historiens-store-gater/oversikt": "content/historie/historiens-store-gater/oversikt.json",
     "historie/historiens-store-gater/pyramidene": "content/historie/historiens-store-gater/pyramidene.json",
     "historie/historiens-store-gater/roanoke": "content/historie/historiens-store-gater/roanoke.json",

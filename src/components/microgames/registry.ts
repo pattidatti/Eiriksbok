@@ -33,6 +33,7 @@ const Vannmolla3D = lazy(() => import('./Vannmolla3D'));
 const Kjoleskapet3D = lazy(() => import('./Kjoleskapet3D'));
 const Radarvakten3D = lazy(() => import('./Radarvakten3D'));
 const Konklusjonsbroen3D = lazy(() => import('./Konklusjonsbroen3D'));
+const LegendensVei3D = lazy(() => import('./LegendensVei3D'));
 const MonumentTorget3D = lazy(() => import('./MonumentTorget3D'));
 const Teknologibolgen3D = lazy(() => import('./Teknologibolgen3D'));
 const Nyheitsbobla3D = lazy(() => import('./Nyheitsbobla3D'));
@@ -1466,6 +1467,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./AtlantisRingbyen3D'),
         Component: AtlantisRingbyen3D as never,
+    },
+    'legendens-vei': {
+        id: 'legendens-vei',
+        title: 'Legendens vei',
+        description:
+            'Du står på veien i året 500, der kong Arthur skal ha levd. Hold inne museknappen og gå framover i tid, forbi de seks kildene som forteller om ham. For hver kildestein du passerer, vokser Camelot i horisonten fra en liten trefort til en full borg med tårn, bannere og gral - mens telleren "Bevis fra år 500" blir stående på null. Underveis ligger et gyllent kors i Glastonbury og lokker. Lyspæren: jo lenger unna hendelsen en kilde er skrevet, jo mer "vet" den om Arthur, og det er kjennetegnet på en legende som vokser.',
+        estimatedSeconds: 150,
+        loader: () => import('./LegendensVei3D'),
+        Component: LegendensVei3D as never,
     },
 };
 
