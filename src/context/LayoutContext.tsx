@@ -24,6 +24,7 @@ const FULL_WIDTH_PATHS = [
     '/infrastruktur-atlas',
     '/samfunnskunnskap/okonomi/verden',
     '/oving/spill/',
+    '/oving/rpg',
     '/musikk/gitarstudio',
     '/himmel',
 ];
