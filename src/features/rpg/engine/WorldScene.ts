@@ -14,11 +14,13 @@ import {
     NORDVIK_BOSS_QUESTIONS,
 } from '../data/nordvik';
 import { SPELL_BY_ID } from '../data/spells';
+import { KAMP, MANOVER_NAVN, vaapenKamp } from '../data/vaapen';
 import { ZONE_BY_ID } from '../data/zones';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
 import type { EnemyDef, QuestDef } from '../types';
 import { sfx, startMusikk, stopMusikk } from './audio';
 import { fraSpill, tilSpill } from './bridge';
+import { Kamp } from './kamp';
 import { hexToNum, numToHex } from './pixels';
 import { aktivQuestFor, nesteQuestFor } from './quests';
 import {
@@ -26,11 +28,13 @@ import {
     FIENDE_RAMMER,
     GLYF,
     POSITUR_LENGDE,
+    SKJOLD_RAMMER,
     TILE,
     forgeEffects,
     forgeEnemy,
     forgeHumanoid,
     forgeLootIcons,
+    forgeSkjold,
     forgeTallfont,
     forgeWeapon,
     glyfIndex,
@@ -115,6 +119,14 @@ export class WorldScene extends Phaser.Scene {
     private kart!: WorldMap;
     private spiller!: Sprite;
     private vapenSprite!: Phaser.GameObjects.Image;
+    /** Skjoldet er eget lag, så slitasjen synes uten å smi helten på nytt. */
+    private skjoldSprite!: Phaser.GameObjects.Image;
+    /** Pust, gard, parade, skjoldslitasje og kombo. All logikk ligger i kamp.ts. */
+    private kamp = new Kamp();
+    /** Hvor lenge garden vises i «presset» ramme etter at noe traff skjoldet. */
+    private gardPress = 0;
+    /** Kamptilstanden sendes til HUD-en et titalls ganger i sekundet, ikke 60. */
+    private kampUiTimer = 0;
     private retning: Dir = 'ned';
     /** Hvilken animasjon helten spiller, og hvor langt hun er kommet i den. */
     private positur: Positur = 'idle';
@@ -175,7 +187,13 @@ export class WorldScene extends Phaser.Scene {
     /** Styrestikke på skjerm (nettbrett). Settes fra React over broen. */
     private touchAkse = { x: 0, y: 0 };
     /** Knappetrykk fra skjermkontrollen, tømmes når de er lest. */
-    private touchTrykk = new Set<'angrep' | 'rull' | 'bruk'>();
+    private touchTrykk = new Set<'angrep' | 'rull' | 'bruk' | 'gard'>();
+    /**
+     * Garden er en veksling på berøringsskjerm, ikke et hold: tommelen kan ikke
+     * holde og trykke samtidig. Og fordi paraden *er* reisningen, blir trykket på
+     * nettbrett nøyaktig samme ferdighet som tastetrykket.
+     */
+    private touchGard = false;
 
     constructor() {
         super('nordvik');
@@ -192,6 +210,7 @@ export class WorldScene extends Phaser.Scene {
         forgeTiles(this, tema);
         forgeProps(this, tema);
         forgeEffects(this);
+        forgeSkjold(this);
         forgeTallfont(this);
         forgeLootIcons(this);
         for (const def of ENEMIES) forgeEnemy(this, def);
@@ -445,6 +464,8 @@ export class WorldScene extends Phaser.Scene {
             .setOrigin(0.1, 0.5)
             .setVisible(false);
 
+        this.skjoldSprite = this.add.image(this.spiller.x, this.spiller.y, 'skjold', 0).setVisible(false);
+
         this.physics.add.collider(this.spiller, this.data.get('vegger'));
         this.physics.add.collider(this.spiller, this.data.get('propKropper'));
         this.physics.world.setBounds(0, 0, this.kart.bredde * TILE, this.kart.hoyde * TILE);
@@ -518,6 +539,11 @@ export class WorldScene extends Phaser.Scene {
         } else if (this.slagIgjen > 0) {
             positur = 'slag';
             fart = this.slagVarighet / POSITUR_LENGDE.slag;
+        } else if (this.kamp.gardOppe) {
+            // Garden står stille i ramma. Den andre ramma er skjoldet presset, og
+            // den settes eksplisitt nedenfor - ikke av en animasjonsklokke.
+            positur = 'gard';
+            fart = Number.POSITIVE_INFINITY;
         } else if (gaar) {
             positur = 'gang';
             fart = 120;
@@ -542,6 +568,8 @@ export class WorldScene extends Phaser.Scene {
                 }
             }
         }
+
+        if (positur === 'gard') this.posFase = this.gardPress > 0 ? 1 : 0;
 
         const frame = heltFrame(this.retning, this.positur, this.posFase);
         if (frame !== this.forrigeFrame) {
@@ -792,7 +820,9 @@ export class WorldScene extends Phaser.Scene {
                 this.touchAkse.y = y;
             }),
             tilSpill.on('knapp', ({ navn }) => {
-                this.touchTrykk.add(navn);
+                // Garden veksles, resten er trykk som leses og tømmes samme bilde.
+                if (navn === 'gard') this.touchGard = !this.touchGard;
+                else this.touchTrykk.add(navn);
             }),
             tilSpill.on('svar', ({ questId, riktig }) => {
                 this.settLaast(false);
@@ -876,8 +906,21 @@ export class WorldScene extends Phaser.Scene {
         this.oppdaterSpawn(delta);
         this.oppdaterAtmosfare(delta);
         this.oppdaterKompass(delta);
+        this.oppdaterKampUi(delta);
         // Skjermknappene leses én gang per bilde og tømmes så.
         this.touchTrykk.clear();
+    }
+
+    /**
+     * Kamptilstanden til HUD-en. Pusten endrer seg hvert bilde, men React trenger
+     * den ikke oftere enn øyet ser - 11 ganger i sekundet holder, og da slipper vi
+     * en gjentegning per bilde.
+     */
+    private oppdaterKampUi(delta: number) {
+        this.kampUiTimer -= delta;
+        if (this.kampUiTimer > 0) return;
+        this.kampUiTimer = 90;
+        fraSpill.emit('kamp', this.kamp.snapshot());
     }
 
     /**
@@ -959,33 +1002,61 @@ export class WorldScene extends Phaser.Scene {
         const enhet = utslag > 0.001 ? { x: dx / Math.hypot(dx, dy), y: dy / Math.hypot(dx, dy) } : { x: 0, y: 0 };
 
         const ruller = this.rullIgjen > 0;
+        const touch = this.touchTrykk;
+
+        // ── Garden ──────────────────────────────────────────────────────────
+        // Shift i ro reiser skjoldet, Shift i bevegelse ruller. De to kan dele
+        // tast fordi rullen alltid har krevd bevegelse - da er det aldri
+        // tvetydig hva eleven mente. Holder hun Shift gjennom rullen, reiser
+        // garden seg i det rullen slutter.
+        //
+        // Å svinge senker garden. Angrepet skal koste noe mer enn pust: det
+        // åpner deg, og det er derfor paraden er verdt å lære.
+        const gardHoldt = this.taster.rull.isDown || Boolean(pad?.R1) || this.touchGard;
+        this.kamp.settGardOnsket(
+            gardHoldt && !ruller && this.stotIgjen === 0 && this.slagIgjen === 0 && this.kamp.harSkjold
+        );
+        this.kamp.tikk(delta);
+        const gard = this.kamp.gardOppe;
+        if (this.kamp.lesKollaps()) {
+            sfx.galt();
+            this.flytTekst(this.spiller.x, this.spiller.y - 28, 'Tom for pust!', '#ff9d6a');
+        }
+
         if (!ruller && this.stotIgjen === 0) {
-            // Angrepet forplikter: eleven går saktere mens hun svinger.
-            const bremse = this.slagIgjen > 0 ? 0.4 : 1;
+            // Angrepet forplikter: eleven går saktere mens hun svinger, og bak
+            // et reist skjold går hun i skjoldgang.
+            const bremse = this.slagIgjen > 0 ? 0.4 : gard ? KAMP.gardFart : 1;
             this.spiller.setVelocity(
                 enhet.x * SPILLER_FART * utslag * bremse,
                 enhet.y * SPILLER_FART * utslag * bremse
             );
 
+            // Retningen settes også under gard, så eleven kan snu seg mot en
+            // fiende bak uten å slippe skjoldet.
             if (utslag > 0.001 && this.slagIgjen === 0) {
                 this.retning =
                     Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 'venstre' : 'hoyre') : dy < 0 ? 'opp' : 'ned';
             }
         }
+        this.gardPress = Math.max(0, this.gardPress - delta);
         this.oppdaterHeltRamme(delta, !ruller && utslag > 0.001 && this.slagIgjen === 0);
-
-        const touch = this.touchTrykk;
+        this.oppdaterSkjold();
 
         // Rull - kort fartsøkning med usårbarhet
         const rullTrykk =
             Phaser.Input.Keyboard.JustDown(this.taster.rull) || this.padKant(pad, 'B') || touch.has('rull');
         if (rullTrykk && this.rullNedkjoling === 0 && utslag > 0.001) {
-            this.spiller.setVelocity(enhet.x * RULL_FART, enhet.y * RULL_FART);
+            // Uten pust blir rullen en stavring: kortere, og uten usårbarhet.
+            const { stavring } = this.kamp.rull();
+            const fart = stavring ? RULL_FART * KAMP.stavringFaktor : RULL_FART;
+            this.spiller.setVelocity(enhet.x * fart, enhet.y * fart);
             this.rullIgjen = RULL_MS;
             this.rullNedkjoling = RULL_NEDKJOLING;
-            this.usarbarIgjen = Math.max(this.usarbarIgjen, RULL_MS + 60);
+            if (!stavring) this.usarbarIgjen = Math.max(this.usarbarIgjen, RULL_MS + 60);
             sfx.rull();
-            this.stovsky(this.spiller.x, this.spiller.y + 6, 6);
+            this.stovsky(this.spiller.x, this.spiller.y + 6, stavring ? 3 : 6);
+            if (stavring) this.flytTekst(this.spiller.x, this.spiller.y - 26, 'Tungt...', '#9fb0c8');
         }
 
         // Angrep. Trykket huskes en kort stund, så et litt tidlig trykk rett
@@ -995,7 +1066,9 @@ export class WorldScene extends Phaser.Scene {
         if (angrepTrykk) this.angrepBuffer = INPUT_BUFFER_MS;
         if (this.angrepBuffer > 0 && this.angrepNedkjoling === 0 && !ruller) {
             this.angrepBuffer = 0;
-            this.slaa();
+            // Slår hun bak et reist skjold, er det våpenets manøver.
+            if (gard) this.manover();
+            else this.slaa();
         }
 
         // Besvergelser 1-4
@@ -1015,9 +1088,20 @@ export class WorldScene extends Phaser.Scene {
     private slaa() {
         const store = useRpgStore.getState();
         const vapen = ITEM_BY_ID[store.utstyr.vapen ?? 'ovingssverd']?.weapon;
+        const vk = vaapenKamp(vapen?.art);
         const rekkevidde = vapen?.rekkevidde ?? 30;
         const bue = ((vapen?.bue ?? 100) * Math.PI) / 180;
-        const hastighet = vapen?.hastighet ?? 400;
+        const basisHastighet = vapen?.hastighet ?? 400;
+
+        // Pusten, komboen og slitenheten avgjøres i kamp.ts. Null tilbake betyr
+        // at hun står bundet i etterslep etter et bommet tredje slag.
+        const sving = this.kamp.slaa(vk, basisHastighet * 0.7);
+        if (!sving) {
+            sfx.skjold();
+            return;
+        }
+
+        const hastighet = basisHastighet * sving.hastighetFaktor;
         this.angrepNedkjoling = hastighet;
         this.slagIgjen = hastighet * 0.7;
         this.slagVarighet = hastighet * 0.7;
@@ -1067,8 +1151,11 @@ export class WorldScene extends Phaser.Scene {
         // en tung hammer like mye ut av styrke - før favoriserte et flatt
         // tillegg per slag de raske våpnene stadig mer med nivå, og den episke
         // bossbelønningen var en nedgradering.
+        // Styrken skaleres på våpenets *egen* hastighet, ikke på den slitne -
+        // ellers ville et trett slag gitt mer styrkebonus enn et uthvilt.
         const stats = maksVerdier(store);
-        const grunnskade = (vapen?.skade ?? 8) + stats.styrke * (hastighet / 400);
+        const grunnskade =
+            ((vapen?.skade ?? 8) + stats.styrke * (basisHastighet / 400)) * sving.skadeFaktor;
         let traff = false;
         for (const fiende of this.fiender) {
             if (fiende.dodd) continue;
@@ -1081,15 +1168,106 @@ export class WorldScene extends Phaser.Scene {
 
             const kritisk = Math.random() < 0.12;
             const skade = Math.round(grunnskade * (kritisk ? 2 : 1) * Phaser.Math.FloatBetween(0.9, 1.15));
-            this.skadFiende(fiende, skade, kritisk, vinkelTil);
+            // Tredje slag i komboen kaster dobbelt så hardt.
+            this.skadFiende(fiende, skade, kritisk, vinkelTil, sving.trinn === 3 ? 2 : 1);
             traff = true;
         }
 
+        // Bommer hun på det tredje slaget, står hun i etterslep uten gard.
+        this.kamp.etterSlag(sving.trinn, traff);
+
         if (traff) {
-            // Kort frys gjør at slaget kjennes i hendene.
-            this.hitstop(60);
-            this.cameras.main.shake(90, 0.0035);
+            // Hitstop etter vekt. Ett tall for alt gjør at ingenting føles tungt.
+            const tungt = vk.tungt || sving.trinn === 3;
+            this.hitstop(tungt ? KAMP.hitstopTungt : KAMP.hitstopLett);
+            this.cameras.main.shake(90, tungt ? 0.005 : 0.0035);
+        } else if (sving.trinn === 3) {
+            this.stovsky(this.spiller.x, this.spiller.y + 6, 4);
         }
+    }
+
+    /**
+     * Våpenets særmanøver, slått bak et reist skjold. Hvert våpen har én, og den
+     * er et historisk faktum: skjeggøksa haker skjoldet ned, spydet stikker
+     * gjennom rekka, og den som ikke har noe av det, slår med skjoldbulen.
+     */
+    private manover() {
+        const store = useRpgStore.getState();
+        const vapen = ITEM_BY_ID[store.utstyr.vapen ?? 'ovingssverd']?.weapon;
+        const vk = vaapenKamp(vapen?.art);
+
+        if (!this.kamp.manover()) {
+            this.flytTekst(this.spiller.x, this.spiller.y - 28, 'Ikke pust nok', '#9fb0c8');
+            return;
+        }
+
+        const vinkel = this.retningsVinkel();
+        const rekkevidde = (vapen?.rekkevidde ?? 30) * (vk.manover === 'stikk-gjennom' ? 1.35 : 0.8);
+        const bue = vk.manover === 'stikk-gjennom' ? Math.PI / 6 : Math.PI / 2;
+
+        this.angrepNedkjoling = 520;
+        this.slagIgjen = 320;
+        this.slagVarighet = 320;
+        this.gardPress = 140;
+        sfx.sving();
+
+        const stats = maksVerdier(store);
+        let traff = false;
+        for (const fiende of this.fiender) {
+            if (fiende.dodd) continue;
+            const dx = fiende.sprite.x - this.spiller.x;
+            const dy = fiende.sprite.y - 4 - (this.spiller.y - 4);
+            const avstand = Math.hypot(dx, dy);
+            if (avstand > rekkevidde + (fiende.def.storrelse ?? 1) * 8) continue;
+            const vinkelTil = Math.atan2(dy, dx);
+            if (Math.abs(Phaser.Math.Angle.Wrap(vinkelTil - vinkel)) > bue / 2) continue;
+
+            // Skjoldstøtet gjør lite skade og mye støt - det er en åpner, ikke et
+            // drapsslag. Haket og stikket biter.
+            const skade =
+                vk.manover === 'skjoldstot'
+                    ? Math.max(2, Math.round(stats.styrke * 0.6))
+                    : Math.round(((vapen?.skade ?? 8) + stats.styrke) * 1.25);
+            this.skadFiende(fiende, skade, false, vinkelTil, vk.manover === 'skjoldstot' ? 2.4 : 1.4);
+            traff = true;
+        }
+
+        this.flytTekst(this.spiller.x, this.spiller.y - 30, MANOVER_NAVN[vk.manover], '#cfd8c0');
+        if (traff) {
+            this.hitstop(KAMP.hitstopTungt);
+            this.cameras.main.shake(110, 0.005);
+        }
+    }
+
+    /**
+     * Skjoldet følger retningen hun vender, og slitasjen vises på sprite-en før
+     * bruddet kommer. Er det en teller eleven kan se, er det spenning - er det
+     * tilfeldig, føles det urettferdig.
+     */
+    private oppdaterSkjold() {
+        if (!this.kamp.gardOppe) {
+            this.skjoldSprite.setVisible(false);
+            return;
+        }
+        const andel = this.kamp.skjoldHelse / Math.max(1, this.kamp.skjoldMaks);
+        const ramme = andel > 0.99 ? 0 : andel > 0.66 ? 1 : andel > 0.33 ? 2 : 3;
+        // Figurens origo står ved føttene, så skjoldet må løftes opp til brystet.
+        // Ligger det lavere, dekker det bakken i stedet for henne.
+        const [ox, oy] =
+            this.retning === 'ned'
+                ? [-5, 1]
+                : this.retning === 'opp'
+                  ? [5, -2]
+                  : this.retning === 'venstre'
+                    ? [-6, 0]
+                    : [6, 0];
+        // Presset skyver skjoldet ett piksel ut i det noe treffer det.
+        const press = this.gardPress > 0 ? Math.sign(ox) : 0;
+        this.skjoldSprite
+            .setVisible(true)
+            .setFrame(Math.min(SKJOLD_RAMMER - 1, ramme))
+            .setPosition(this.spiller.x + ox + press, this.spiller.y - 9 + oy)
+            .setDepth(this.retning === 'opp' ? this.spiller.y - 3 : this.spiller.y + 3);
     }
 
     /** Fargen fienden skal ha akkurat nå, uten at treff og varsel slår hverandre ut. */
@@ -1098,7 +1276,13 @@ export class WorldScene extends Phaser.Scene {
         else fiende.sprite.setTint(fiende.onsketTint);
     }
 
-    private skadFiende(fiende: Fiende, skade: number, kritisk: boolean, vinkel: number) {
+    private skadFiende(
+        fiende: Fiende,
+        skade: number,
+        kritisk: boolean,
+        vinkel: number,
+        kraftFaktor = 1
+    ) {
         // Bossen har skjold som bare kunnskap river ned.
         if (fiende.def.kind === 'boss' && fiende.skjold > 0) {
             this.flytTekst(fiende.sprite.x, fiende.sprite.y - 24, 'Beskyttet!', '#9fb0c8');
@@ -1134,10 +1318,10 @@ export class WorldScene extends Phaser.Scene {
 
         // Tilbakestøt. Uten en egen tilstand overskrev AI-en farten allerede
         // neste bilde, og treffet flyttet fienden under to piksler.
-        const kraft = kritisk ? 260 : 170;
+        const kraft = (kritisk ? 260 : 170) * kraftFaktor;
         fiende.sprite.setVelocity(Math.cos(vinkel) * kraft, Math.sin(vinkel) * kraft);
         fiende.tilstand = 'stotet';
-        fiende.timer = kritisk ? STOT_MS * 1.6 : STOT_MS;
+        fiende.timer = (kritisk ? STOT_MS * 1.6 : STOT_MS) * Math.max(1, kraftFaktor * 0.8);
         fiende.onsketTint = null;
         this.visHelsestolpe(fiende);
     }
@@ -1255,6 +1439,10 @@ export class WorldScene extends Phaser.Scene {
     private gjenoppliv() {
         const store = useRpgStore.getState();
         store.hvil();
+        // Nytt skjold og full pust. Døden skal koste tid og sølv, ikke gjøre neste
+        // forsøk umulig fordi skjoldet lå i splinter.
+        this.kamp.hvil();
+        this.touchGard = false;
         this.avsluttSkjold();
         // Litt sølv går tapt - nok til å svi, ikke nok til å ødelegge.
         const tap = Math.floor(store.solv * 0.15);
@@ -1609,17 +1797,106 @@ export class WorldScene extends Phaser.Scene {
         }
         // Nærkamp: sjekk at eleven fortsatt er innenfor når slaget lander.
         if (avstand <= def.rekkevidde + 8) {
+            // Skjoldet får si sitt først. Vinkelen er retningen fra eleven *mot*
+            // den som slår, så et angrep i ryggen aldri kan blokkeres.
+            const utfall = this.kamp.vurderTreff({
+                vinkelTilAngriper: Math.atan2(
+                    fiende.sprite.y - this.spiller.y,
+                    fiende.sprite.x - this.spiller.x
+                ),
+                retningsVinkel: this.retningsVinkel(),
+                tungt: def.skade >= 12,
+            });
+
+            if (utfall.art === 'parade') {
+                this.parade(fiende);
+                return;
+            }
+            if (utfall.art === 'blokk') {
+                this.blokk(fiende, utfall.skjoldBrast);
+                return;
+            }
+
             const forSkade = useRpgStore.getState().hp;
             this.skadSpiller(def.skade);
             // Bare støt eleven hvis treffet faktisk gikk gjennom. Ellers ble
             // farten uansett overskrevet av input allerede neste bilde.
             if (useRpgStore.getState().hp < forSkade) {
+                this.kamp.meldTreff();
                 const v = Math.atan2(this.spiller.y - fiende.sprite.y, this.spiller.x - fiende.sprite.x);
                 this.spiller.setVelocity(Math.cos(v) * 190, Math.sin(v) * 190);
                 this.stotIgjen = STOT_MS;
             }
         }
         this.pikselSprut(fiende.sprite.x, fiende.sprite.y - 6, def.farge, 5);
+    }
+
+    /**
+     * Perfekt parade. Belønningen må være umulig å overse - det er dette
+     * øyeblikket hele kampsystemet er bygget rundt, og eleven skal ville ha det
+     * igjen med én gang.
+     */
+    private parade(fiende: Fiende) {
+        this.gardPress = 200;
+        sfx.skjold();
+        sfx.kritisk();
+        this.hitstop(KAMP.hitstopParade);
+        this.cameras.main.flash(70, 255, 255, 245);
+        this.cameras.main.shake(90, 0.004);
+        this.flytTekst(this.spiller.x, this.spiller.y - 30, 'Parade!', '#fff2b0', 15);
+        this.pikselSprut(this.skjoldSprite.x, this.skjoldSprite.y, 0xfff2b0, 14);
+
+        // Angriperen mister balansen: full åpning.
+        const v = Math.atan2(fiende.sprite.y - this.spiller.y, fiende.sprite.x - this.spiller.x);
+        fiende.sprite.setVelocity(Math.cos(v) * 240, Math.sin(v) * 240);
+        fiende.tilstand = 'stotet';
+        fiende.timer = STOT_MS * 3;
+        fiende.onsketTint = null;
+        this.settFiendeTint(fiende);
+    }
+
+    /** Vanlig blokk: skjoldet tok det, men det kostet pust og en flis av kanten. */
+    private blokk(fiende: Fiende, brast: boolean) {
+        this.gardPress = 160;
+        sfx.skjold();
+        this.cameras.main.shake(70, 0.003);
+        const v = Math.atan2(this.spiller.y - fiende.sprite.y, this.spiller.x - fiende.sprite.x);
+        this.skjoldFlis(this.skjoldSprite.x, this.skjoldSprite.y, v, brast ? 12 : 4);
+
+        // Litt støt, så et blokkert slag fortsatt flytter eleven. Uten det står
+        // hun som en vegg, og blokken mister vekt.
+        this.spiller.setVelocity(Math.cos(v) * 70, Math.sin(v) * 70);
+
+        if (brast) {
+            sfx.dod();
+            this.hitstop(KAMP.hitstopTungt);
+            this.cameras.main.shake(220, 0.008);
+            this.flytTekst(this.spiller.x, this.spiller.y - 30, 'Skjoldet brast!', '#ff9d6a', 15);
+            useRpgStore.getState().varsle('Skjoldet gikk i to. Nå står du bar.', 'darlig');
+            // Et kort pusterom, ellers lander neste slag i samme sekund som
+            // skjoldet forsvant, og det leser som en straff for å ha blokkert.
+            this.usarbarIgjen = Math.max(this.usarbarIgjen, 420);
+        }
+    }
+
+    /** Treflis av skjoldkanten, langs blokkvinkelen. Gjør slitasjen synlig. */
+    private skjoldFlis(x: number, y: number, vinkel: number, antall: number) {
+        for (let i = 0; i < antall; i++) {
+            const p = this.hentPartikkel('fx-flis');
+            const v = vinkel + Phaser.Math.FloatBetween(-0.9, 0.9);
+            const fart = Phaser.Math.Between(30, 90);
+            p.setPosition(x, y).setDepth(19000).setAngle(Phaser.Math.Between(0, 360));
+            this.tweens.add({
+                targets: p,
+                x: x + Math.cos(v) * fart,
+                y: y + Math.sin(v) * fart + 14,
+                angle: p.angle + Phaser.Math.Between(-180, 180),
+                alpha: 0,
+                duration: Phaser.Math.Between(320, 520),
+                ease: 'Quad.Out',
+                onComplete: () => this.slippPartikkel(p),
+            });
+        }
     }
 
     private oppdaterSpawn(delta: number) {

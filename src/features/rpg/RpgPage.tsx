@@ -17,6 +17,7 @@ import { Meldingsskjerm, QuizChallenge } from './components/QuizChallenge';
 import { NORDVIK_BOSS_QUESTIONS, NORDVIK_NPCS } from './data/nordvik';
 import { resumeAudio } from './engine/audio';
 import { fraSpill, tilSpill } from './engine/bridge';
+import type { KampSnapshot } from './engine/kamp';
 import { byggNordvikQuester, lastQuestBank } from './engine/quests';
 import type { SpillHandle } from './engine/boot';
 import type { WorldScene } from './engine/WorldScene';
@@ -57,6 +58,8 @@ export default function RpgPage() {
     const [sonetittel, setSonetittel] = useState<{ tittel: string; undertittel: string } | null>(null);
     const [himmel, setHimmel] = useState<string | null>(null);
     const [kompass, setKompass] = useState<{ vinkel: number; avstand: number; navn: string } | null>(null);
+    /** Pust, gard og skjoldslitasje. Kommer fra scenen ~11 ganger i sekundet. */
+    const [kamp, setKamp] = useState<KampSnapshot | null>(null);
     const [touch] = useState(harBeroring);
 
     const scene = useCallback((): WorldScene | null => {
@@ -125,6 +128,7 @@ export default function RpgPage() {
             }),
             fraSpill.on('atmosfare', ({ himmel: h }) => setHimmel(h)),
             fraSpill.on('kompass', (k) => setKompass(k)),
+            fraSpill.on('kamp', (k) => setKamp(k)),
             fraSpill.on('landmark', ({ landmarkId }) => setOverlegg({ type: 'landemerke', landmarkId })),
             fraSpill.on('bossSporsmal', ({ runde }) => setOverlegg({ type: 'boss', runde })),
             fraSpill.on('hint', ({ tekst }) => setHint(tekst)),
@@ -214,12 +218,15 @@ export default function RpgPage() {
                     <Hud
                         hint={overlegg.type === 'ingen' ? hint : null}
                         kompass={kompass}
+                        kamp={kamp}
                         onApneSekk={() => apnePanel({ type: 'sekk' })}
                         onApneLogg={() => apnePanel({ type: 'logg' })}
                         onPause={() => apnePanel({ type: 'pause' })}
                     />
 
-                    {touch && overlegg.type === 'ingen' && <Skjermkontroll />}
+                    {touch && overlegg.type === 'ingen' && (
+                        <Skjermkontroll gardOppe={kamp?.gardOppe ?? false} />
+                    )}
 
                     {sonetittel && (
                         <div className="pointer-events-none absolute inset-x-0 top-1/3 z-30 text-center">

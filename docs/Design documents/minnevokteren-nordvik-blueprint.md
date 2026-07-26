@@ -1085,10 +1085,16 @@ og av det som ryker først i systemer som dette.
     forsvinner 273 år med konsekvens ved kapittelskifte.
 13. **Ingen lenker ut av spillet under en handling.** Artikkellenken hører hjemme i
     Minnetreet og i mellomspillene, ikke i en kamp.
-14. **Gard og rull deler tast, så rekkefølgen avgjør.** Rullen må evalueres først i
-    `oppdaterSpiller`, garden må ikke kunne reises mens `rullIgjen > 0`, og garden må
-    kreve 120 ms holdt Shift før den reiser seg. Uten den terskelen reiser et rulletrykk
-    fra stillestående skjoldet i én ramme, og paraden fyrer på et uhell.
+14. **Gard og rull deler tast, så rekkefølgen avgjør.** Garden må ikke kunne reises mens
+    `rullIgjen > 0`, ellers reiser et rulletrykk skjoldet midt i rullen.
+
+    Planen foreslo også en terskel på 120 ms holdt Shift før garden reiser seg. Den ble
+    forkastet under bygging, og det var riktig: reisningen *er* paraden, så en terskel
+    gjør et velplassert kjapt trykk verdiløst - og et kort trykk koster ingenting, det
+    er bare en parade som ikke traff noe. Det som må hindres, er hamring på tasten. Det
+    løses i stedet av `KAMP.gardHvile` (260 ms før skjoldet kan reises igjen etter at det
+    er senket). Da kan ikke eleven holde seg i et evig paradevindu, og timing lønner seg
+    fortsatt.
 15. **`KOLONNER` og `POSITUR_LENGDE` må endres i takt.** 12 → 14 kolonner, `START.gard`
     = 12, og `'gard'` inn i posituren-lista i `spriteforge.ts:317`. Glemmer du lista,
     finnes rammene i typen men blir aldri tegnet, og garden vises som idle.

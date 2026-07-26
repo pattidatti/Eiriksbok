@@ -28,12 +28,23 @@ const FIG_H = 22;
 export const FIG_ORIGIN_Y = (0.85 * FIG_H + 1) / CELL_H;
 
 export type Dir = 'ned' | 'venstre' | 'hoyre' | 'opp';
-export type Positur = 'idle' | 'gang' | 'slag' | 'rull';
+export type Positur = 'idle' | 'gang' | 'slag' | 'rull' | 'gard';
 
-const KOLONNER = 12;
+/**
+ * Rammer per retning. Endres denne, må `START` og `POSITUR_LENGDE` og lista i
+ * `forgeHumanoid` endres i samme åndedrag - ellers finnes rammene i typen, men
+ * blir aldri tegnet, og garden vises som idle.
+ */
+const KOLONNER = 14;
 const RAD: Record<Dir, number> = { ned: 0, opp: 1, venstre: 2, hoyre: 3 };
-const START: Record<Positur, number> = { idle: 0, gang: 2, slag: 6, rull: 9 };
-export const POSITUR_LENGDE: Record<Positur, number> = { idle: 2, gang: 4, slag: 3, rull: 3 };
+const START: Record<Positur, number> = { idle: 0, gang: 2, slag: 6, rull: 9, gard: 12 };
+export const POSITUR_LENGDE: Record<Positur, number> = {
+    idle: 2,
+    gang: 4,
+    slag: 3,
+    rull: 3,
+    gard: 2,
+};
 
 /** Rammenummeret for en gitt retning, positur og fase. */
 export function heltFrame(dir: Dir, positur: Positur, fase: number): number {
@@ -91,6 +102,12 @@ const STILLINGER: Record<Positur, Stilling[]> = {
     ],
     // Tre rammer der figuren krøller seg mer og mer sammen.
     rull: [S({ krup: 2, torso: 2 }), S({ krup: 4, torso: 4 }), S({ krup: 2, torso: 2 })],
+    // Gard: skjoldarmen opp og inn, kroppen bak den, vekten litt tilbake. Andre
+    // ramma er den presset - den vises i det øyeblikket noe treffer skjoldet.
+    gard: [
+        S({ lut: -1, armV: 2, armH: -1, torso: -1, krup: 1 }),
+        S({ lut: -2, armV: 3, armH: -1, torso: -1, krup: 2 }),
+    ],
 };
 
 function addSheet(
@@ -299,7 +316,7 @@ function drawHair(p: Painter, style: string, color: string, dir: Dir, hodeY: num
 }
 
 /**
- * Tegner alle 48 rammene til en figur inn i én tekstur.
+ * Tegner alle 56 rammene til en figur inn i én tekstur.
  * Rader = retning (ned, opp, venstre, høyre), kolonner = positur.
  */
 export function forgeHumanoid(scene: Phaser.Scene, key: string, look: HeroLook): void {
@@ -314,7 +331,7 @@ export function forgeHumanoid(scene: Phaser.Scene, key: string, look: HeroLook):
         // Høyre er venstre speilvendt, så den tegnes i en egen celle og snus.
         const tegnDir: Dir = dir === 'hoyre' ? 'venstre' : dir;
         let kol = 0;
-        (['idle', 'gang', 'slag', 'rull'] as Positur[]).forEach((positur) => {
+        (['idle', 'gang', 'slag', 'rull', 'gard'] as Positur[]).forEach((positur) => {
             for (const st of STILLINGER[positur]) {
                 const celle = createPainter(CELL_W, CELL_H, 1, 1);
                 drawHumanoid(celle, tegnDir, st, look, hair, skin);
@@ -512,6 +529,82 @@ export function forgeWeapon(scene: Phaser.Scene, art: WeaponArt, tint: string): 
     }
     p.outline();
     addCanvas(scene, key, p);
+}
+
+// ─── Skjold ─────────────────────────────────────────────────────────────────
+// Skjoldet er et eget sprite-lag, ikke bakt inn i helte-arket. Grunnen er
+// slitasjen: den skal synes før bruddet, og med fire slitasjetrinn i en egen
+// tekstur koster det fire små celler i stedet for 56 nye figurrammer.
+
+/** Helt, hakket, halvveis, nesten borte. */
+export const SKJOLD_RAMMER = 4;
+
+export function forgeSkjold(scene: Phaser.Scene, maling = '#8b2f4a'): void {
+    const W = 15;
+    const H = 15;
+    const R = 6.4;
+    const ark = createPainter(W * SKJOLD_RAMMER, H);
+    const tre = '#c9a86a';
+    const treMork = ramp(tre, -2);
+    const jern = '#9aa3ad';
+    const jernLys = ramp(jern, 2);
+
+    // Hakkene sitter på faste vinkler. De skal *ikke* være tilfeldige per
+    // spillomgang: eleven skal kjenne igjen et halvt oppbrukt skjold.
+    const hakkVinkler = [-38, 142, 74, -108, 20, -160, 108, 250];
+
+    for (let f = 0; f < SKJOLD_RAMMER; f++) {
+        const c = createPainter(W, H, 1, 1);
+
+        for (let y = 0; y < 14; y++) {
+            for (let x = 0; x < 14; x++) {
+                const dx = x - 6.5;
+                const dy = y - 6.5;
+                const d = Math.hypot(dx, dy);
+                if (d > R) continue;
+                let farge: string;
+                if (d > R - 1.1) farge = jern; // jernkanten
+                else if (d < 2.1) farge = d < 1.2 ? jernLys : jern; // skjoldbulen
+                else if (dy < -0.5 && dx > -0.5) farge = maling; // malt felt
+                else farge = x % 3 === 0 ? treMork : tre; // bordene
+                c.px(x, y, farge);
+            }
+        }
+
+        // Slitasjen: hvert trinn biter to hakk av kanten, og fra trinn to går det
+        // en sprekk innover. Fjernes pikslene før konturen legges, får hakket
+        // sin egen mørke kant og leser som skade i stedet for som støy.
+        const hakk = f * 2;
+        for (let i = 0; i < hakk; i++) {
+            const rad = (hakkVinkler[i % hakkVinkler.length] * Math.PI) / 180;
+            for (let r = R - 2.2; r <= R; r += 0.6) {
+                for (let s = -0.5; s <= 0.5; s += 0.5) {
+                    c.ctx.clearRect(
+                        Math.round(6.5 + Math.cos(rad + s * 0.16) * r),
+                        Math.round(6.5 + Math.sin(rad + s * 0.16) * r),
+                        1,
+                        1
+                    );
+                }
+            }
+        }
+        if (f >= 2) {
+            const rad = (hakkVinkler[0] * Math.PI) / 180;
+            for (let r = 2.2; r <= R; r += 0.5) {
+                c.px(6.5 + Math.cos(rad) * r, 6.5 + Math.sin(rad) * r, '#3a2a18');
+            }
+        }
+
+        c.outline();
+        ark.ctx.drawImage(c.canvas, f * W, 0);
+    }
+
+    addSheet(scene, 'skjold', ark.canvas, W, H, SKJOLD_RAMMER, 1);
+
+    // Treflisen som spretter av kanten når skjoldet tar imot.
+    const flis = createPainter(3, 2);
+    flis.rect(0, 0, 3, 2, tre);
+    addCanvas(scene, 'fx-flis', flis);
 }
 
 // ─── Effekter ───────────────────────────────────────────────────────────────

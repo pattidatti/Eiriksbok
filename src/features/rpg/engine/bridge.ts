@@ -2,6 +2,8 @@
 // (liv, sekk, quester) leser begge sider rett fra useRpgStore - broen brukes
 // bare til hendelser: «åpne denne dialogen», «eleven svarte riktig».
 
+import type { KampSnapshot } from './kamp';
+
 type Handler<T> = (payload: T) => void;
 
 export interface SceneEvents {
@@ -25,6 +27,12 @@ export interface SceneEvents {
     atmosfare: { himmel: string };
     /** Retningen til nærmeste mål, til kompasset i HUD-en. */
     kompass: { vinkel: number; avstand: number; navn: string } | null;
+    /**
+     * Pust, gard og skjoldslitasje. Sendes et titalls ganger i sekundet, ikke 60:
+     * pusten endrer seg hele tiden, og en store-skriving per bilde ville tegnet
+     * HUD-en på nytt like ofte.
+     */
+    kamp: KampSnapshot;
 }
 
 export interface UiEvents {
@@ -42,8 +50,11 @@ export interface UiEvents {
     gjenoppliv: Record<string, never>;
     /** Styrestikke på skjerm. x og y er -1..1. */
     styring: { x: number; y: number };
-    /** Knapp på skjermkontrollen. */
-    knapp: { navn: 'angrep' | 'rull' | 'bruk' };
+    /**
+     * Knapp på skjermkontrollen. `gard` er en veksling, ikke et hold - tommelen
+     * kan ikke holde skjoldet og slå samtidig.
+     */
+    knapp: { navn: 'angrep' | 'rull' | 'bruk' | 'gard' };
 }
 
 class Emitter<Events> {

@@ -2,17 +2,20 @@ import { SPELL_BY_ID } from '../data/spells';
 import { maksVerdier, nivaFremgang, useRpgStore } from '../store/useRpgStore';
 import { numToHex } from '../engine/pixels';
 import { tilSpill } from '../engine/bridge';
+import type { KampSnapshot } from '../engine/kamp';
 
 interface Props {
     hint: string | null;
     /** Retningen til det aktive oppdragets kilde. */
     kompass: { vinkel: number; avstand: number; navn: string } | null;
+    /** Pust, gard og skjoldslitasje. Null før scenen har sendt sitt første bilde. */
+    kamp: KampSnapshot | null;
     onApneSekk: () => void;
     onApneLogg: () => void;
     onPause: () => void;
 }
 
-export function Hud({ hint, kompass, onApneSekk, onApneLogg, onPause }: Props) {
+export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Props) {
     const store = useRpgStore();
     const maks = maksVerdier(store);
     const fremgang = nivaFremgang(store.xp);
@@ -31,7 +34,23 @@ export function Hud({ hint, kompass, onApneSekk, onApneLogg, onPause }: Props) {
                     </span>
                 </div>
                 <Stolpe verdi={store.hp} maks={maks.hp} farge="#e0483f" bak="#3a1512" merkelapp="Liv" />
+                {/*
+                    Pusten. Den rister rødt når den bunner ut - eleven må kjenne
+                    at hun er tom, ikke lese det. Uten pust kan hun ikke blokkere,
+                    og slagene blir trege.
+                */}
+                {kamp && (
+                    <Stolpe
+                        verdi={kamp.pust}
+                        maks={kamp.maksPust}
+                        farge={kamp.tom ? '#e0483f' : '#7ad0b0'}
+                        bak="#122a24"
+                        merkelapp="Pust"
+                        rister={kamp.tom}
+                    />
+                )}
                 <Stolpe verdi={store.mana} maks={maks.mana} farge="#4aa3e0" bak="#122a3a" merkelapp="Kraft" />
+                {kamp && <Skjoldmerke kamp={kamp} />}
                 <Stolpe
                     verdi={fremgang.inn}
                     maks={fremgang.spenn}
@@ -137,6 +156,45 @@ export function Hud({ hint, kompass, onApneSekk, onApneLogg, onPause }: Props) {
     );
 }
 
+/**
+ * Skjoldet: én rute per treff det tåler. Slitasjen skal være en teller eleven kan
+ * se, ikke en terning - er den tilfeldig, føles bruddet urettferdig; er den
+ * synlig, er den spenning.
+ */
+function Skjoldmerke({ kamp }: { kamp: KampSnapshot }) {
+    if (kamp.skjoldMaks <= 0) return null;
+    const brukket = kamp.skjoldHelse <= 0;
+    return (
+        <div className="flex items-center gap-1.5 pt-0.5" title={kamp.skjoldNavn}>
+            <span
+                className={`text-[10px] font-bold uppercase tracking-wider ${
+                    brukket ? 'text-rose-300' : kamp.gardOppe ? 'text-amber-200' : 'text-slate-400'
+                }`}
+            >
+                {brukket ? 'Bart' : 'Skjold'}
+            </span>
+            <div className="flex gap-[3px]">
+                {Array.from({ length: kamp.skjoldMaks }, (_, i) => (
+                    <span
+                        key={i}
+                        className={`h-2.5 w-1.5 rounded-[1px] ring-1 ring-black/50 ${
+                            i < kamp.skjoldHelse ? '' : 'opacity-25'
+                        }`}
+                        style={{
+                            background:
+                                i < kamp.skjoldHelse
+                                    ? kamp.gardOppe
+                                        ? '#e8c96a'
+                                        : '#c9a86a'
+                                    : '#3a2a18',
+                        }}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+}
+
 function Stolpe({
     verdi,
     maks,
@@ -144,6 +202,7 @@ function Stolpe({
     bak,
     merkelapp,
     tynn,
+    rister,
 }: {
     verdi: number;
     maks: number;
@@ -151,11 +210,14 @@ function Stolpe({
     bak: string;
     merkelapp: string;
     tynn?: boolean;
+    rister?: boolean;
 }) {
     const andel = Math.max(0, Math.min(1, verdi / Math.max(1, maks)));
     return (
         <div
-            className={`relative w-full overflow-hidden rounded-full ring-1 ring-black/40 ${tynn ? 'h-2' : 'h-4'}`}
+            className={`relative w-full overflow-hidden rounded-full ring-1 ring-black/40 ${tynn ? 'h-2' : 'h-4'} ${
+                rister ? 'animate-[hudRist_240ms_ease-in-out_infinite]' : ''
+            }`}
             style={{ background: bak }}
             role="progressbar"
             aria-label={merkelapp}

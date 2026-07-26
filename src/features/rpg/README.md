@@ -74,15 +74,57 @@ components/              Karakterskaper, HUD, dialog, kunnskapsutfordring, sekk,
 | Tast | Handling |
 |---|---|
 | WASD / piltaster | Gå |
-| Mellomrom | Slå |
-| Shift | Rull (kort usårbarhet) |
+| Mellomrom | Slå (kombo 1-2-3) |
+| **Shift holdt, i ro** | Reis garden |
+| **Shift trykket, i bevegelse** | Rull (kort usårbarhet) |
+| **Retning under gard** | Vend garden, skjoldgang i 45 % fart |
+| **Shift + mellomrom** | Våpenets manøver (hak / stikk / skjoldstøt) |
 | E | Snakk / les / åpne |
 | 1-4 | Besvergelser |
 | I / L / Esc | Sekk / oppdrag / meny |
 
-Håndkontroll støttes (venstre stikke går, A slår, B ruller, X kaster første
-besvergelse, Y samhandler). På berøringsskjerm vises `Skjermkontroll` med
-analog styrestikke og knapper - uten den er spillet uspillbart på nettbrett.
+Shift betyr to ting, og det er ikke tvetydig: rullen har alltid krevd bevegelse
+(`utslag > 0.001` i `oppdaterSpiller`), så «Shift i ro» kan bare være garden.
+Holder eleven Shift gjennom en rull, reiser garden seg i det rullen slutter.
+
+Håndkontroll støttes (venstre stikke går, A slår, B ruller, **RB holdt** er gard,
+RB+A er manøver, X kaster første besvergelse, Y samhandler). På berøringsskjerm
+vises `Skjermkontroll` med analog styrestikke og knapper - uten den er spillet
+uspillbart på nettbrett. Der er garden en **veksling**, ikke et hold: tommelen kan
+ikke holde skjoldet og slå samtidig.
+
+## Kampsystemet
+
+Kampen bygger på skjoldet, ikke sverdet. All logikk ligger i `engine/kamp.ts`
+(ren tilstand, ingen Phaser), alle tallene i `data/vaapen.ts`, og `WorldScene`
+gjør bare inndata, treffgeometri og effekter. Kjerneregelen:
+
+> Står du bak et reist skjold når slaget kommer, blokkerer du.
+> Reiser du skjoldet i det slaget kommer, parerer du.
+
+Derfor måles paradevinduet fra rammen garden reiser seg (`sidenReist`), ikke fra
+tastetrykket. Blokk koster pust og hakker skjoldet; parade koster ingenting og
+kaster angriperen ut av balanse. Det gjør det å gjemme seg bak skjoldet til den
+dårlige strategien uten at vi trenger å straffe den.
+
+- **Pust** er utholdenhet: slag, blokk, rull og manøver koster, garden drenerer
+  6 i sekundet, og gjenvinningen starter 700 ms etter siste handling. Tom pust tar
+  aldri en handling fra eleven - den svekker den (trege slag, stavring i stedet
+  for rull, og garden faller).
+- **Skjoldet** er en forbruksvare med synlig slitasje: fire rammer i en egen
+  tekstur (`forgeSkjold`), ett hakk per blokk, brudd på null. Slitasjen er en
+  teller eleven kan se, aldri en terning - er den tilfeldig, føles bruddet urettferdig.
+- **Dekningen er retningsbestemt.** 120 grader rundt blikkretningen. Angrep fra
+  siden og bakfra går rett gjennom, og det er derfor rekka finnes.
+- **Garden kan ikke hamres.** `KAMP.gardHvile` holder skjoldet nede i 260 ms etter
+  at det er senket, så eleven ikke kan ligge i et evig paradevindu.
+
+Kamptilstanden sendes til HUD-en over broen (`fraSpill.emit('kamp', …)`) elleve
+ganger i sekundet, ikke 60 - en store-skriving per bilde ville tegnet HUD-en på
+nytt like ofte. Pust- og livsstolpene har `aria-valuenow`, som er det
+`scripts/verify-rpg-kamp.mjs` leser når den driver kampen i en ekte nettleser.
+
+Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blueprint.md`.
 
 ## Ting som er lett å ødelegge igjen
 

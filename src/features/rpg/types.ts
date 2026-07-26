@@ -107,6 +107,48 @@ export interface ItemDef {
 
 export type WeaponArt = 'sverd' | 'oks' | 'stav' | 'spyd' | 'hammer';
 
+// ─── Kamp: skjold, pust, manøvrer ───────────────────────────────────────────
+// Kampsystemet bygger på skjoldet, ikke sverdet. Se
+// docs/Design documents/minnevokteren-nordvik-blueprint.md §5.
+
+/** Den historiske særmanøveren til et våpen. Ett grep per våpenart. */
+export type Manover =
+    /** Skjeggøksa kroker motstanderens skjold og river det ned. */
+    | 'hak'
+    /** Spydet stikker gjennom rekka - lang rekkevidde, smal bue. */
+    | 'stikk-gjennom'
+    /** Skjoldbulen som knyttneve. Alle har den, ingen velger den først. */
+    | 'skjoldstot';
+
+/** Hvor godt våpenet virker i formasjon. Brukes av skjoldborgen i kap. 4. */
+export type RekkeVerdi = 'god' | 'brukbar' | 'ubrukelig';
+
+/** Kampegenskapene til en våpenart. Ligger på arten, ikke på hver gjenstand. */
+export interface VaapenKamp {
+    /** Pust ett slag koster. */
+    pust: number;
+    manover: Manover;
+    iRekke: RekkeVerdi;
+    /** Tungt slag = lengre hitstop og dyrere å blokkere. */
+    tungt: boolean;
+}
+
+/**
+ * Skjoldet er en forbruksvare, ikke en statoppgradering. Lindetre, tynt, bygget
+ * for å ta imot og splintres.
+ */
+export interface SkjoldDef {
+    id: string;
+    navn: string;
+    /** Treff det tåler. Går ned ved blokk, ikke ved perfekt parade. */
+    helse: number;
+    /** Grader det dekker. Rundskjold 120, ikke 360. */
+    dekning: number;
+    /** Ekstra pust hver blokk koster. */
+    tyngde: number;
+    flavor: string;
+}
+
 export interface LootDrop {
     itemId: string;
     /** 0-1. */

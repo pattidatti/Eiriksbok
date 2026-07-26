@@ -495,3 +495,31 @@ body.dyslexia-mode h6 {
     animation: none;
   }
 }
+
+/*
+  Minnevokteren: pustestolpen rister når pusten bunner ut. Eleven skal kjenne at
+  hun er tom, ikke lese det. Bevisst liten - stolpen er 4px høy, og to piksler
+  sidelengs er tydelig nok på 1366x768.
+*/
+@keyframes hudRist {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-2px);
+  }
+
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  [class*="hudRist"] {
+    animation: none;
+  }
+}

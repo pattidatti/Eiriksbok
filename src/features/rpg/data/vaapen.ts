@@ -1,0 +1,137 @@
+// Skjold, våpenmanøvrer og alle tallene i kampsystemet.
+//
+// Tallene ligger her og ikke i `kamp.ts` av én grunn: de skal justeres av noen
+// som prøvespiller, uten å lese logikk. Blueprintens §5.8 er kilden, og alt her
+// er startverdier å justere *ned* fra.
+
+import type { Manover, SkjoldDef, VaapenKamp, WeaponArt } from '../types';
+
+// ─── Skjold ─────────────────────────────────────────────────────────────────
+
+export const SKJOLD: SkjoldDef[] = [
+    {
+        id: 'treningsskjold',
+        navn: 'Treningsskjold',
+        helse: 5,
+        dekning: 120,
+        tyngde: 2,
+        flavor: 'Tyngre enn det trenger å være. Det er meningen.',
+    },
+    {
+        id: 'rundskjold',
+        navn: 'Rundskjold av lindetre',
+        helse: 7,
+        dekning: 120,
+        tyngde: 0,
+        flavor: 'Lindetre er lett og sprekker pent. Det siste er en fordel.',
+    },
+    {
+        id: 'jernskodd-rundskjold',
+        navn: 'Jernskodd rundskjold',
+        helse: 9,
+        dekning: 120,
+        tyngde: 3,
+        flavor: 'Jernkant hele veien rundt. Du kjenner den i armen etter tre slag.',
+    },
+];
+
+export const SKJOLD_BY_ID: Record<string, SkjoldDef> = Object.fromEntries(
+    SKJOLD.map((s) => [s.id, s])
+);
+
+export const START_SKJOLD = 'treningsskjold';
+
+// ─── Våpenartene ────────────────────────────────────────────────────────────
+// Kampegenskapene henger på arten, ikke på hver enkelt gjenstand. Da får et nytt
+// sverd i `items.ts` riktig oppførsel uten at noen må huske å fylle ut fire felt.
+
+export const VAAPEN_KAMP: Record<WeaponArt, VaapenKamp> = {
+    // Sverd var status og formue. Ingen svakhet, og ingen egen manøver - den som
+    // har sverd, har allerede fordelen.
+    sverd: { pust: 12, manover: 'skjoldstot', iRekke: 'brukbar', tungt: false },
+    // Skjeggøksa var designet for å kroke skjold. Derfor haket.
+    oks: { pust: 14, manover: 'hak', iRekke: 'ubrukelig', tungt: true },
+    // Det vanlige våpenet. Sterkt i formasjon, svakt alene.
+    spyd: { pust: 11, manover: 'stikk-gjennom', iRekke: 'god', tungt: false },
+    hammer: { pust: 18, manover: 'skjoldstot', iRekke: 'ubrukelig', tungt: true },
+    stav: { pust: 10, manover: 'skjoldstot', iRekke: 'ubrukelig', tungt: false },
+};
+
+export const MANOVER_NAVN: Record<Manover, string> = {
+    hak: 'Hak',
+    'stikk-gjennom': 'Stikk',
+    skjoldstot: 'Skjoldstøt',
+};
+
+// ─── Tallene ────────────────────────────────────────────────────────────────
+
+export const KAMP = {
+    /**
+     * Maks pust. Stiger ikke med nivå: pust er menneskelig, og en sytten år
+     * gammel gutt puster ikke bedre enn en huskarl.
+     */
+    maksPust: 100,
+
+    /** Pust per sekund, når hun har fått stå i fred. */
+    gjenvinning: 22,
+    /**
+     * Hvor lenge etter siste handling og siste treff gjenvinningen starter.
+     * Denne pausen er grunnen til at eleven må ut av rekkevidde for å puste, og
+     * den bevegelsen ut og inn er hele rytmen i kampen.
+     */
+    hvilePause: 700,
+    /** Pust per sekund garden koster å holde oppe. Ingen gjenvinning samtidig. */
+    gardDrenering: 6,
+
+    /** Pust komboens tre trinn koster, ganget med våpenets grunnkostnad. */
+    komboFaktor: [1, 1.15, 1.65],
+    /** Neste slag må starte innen dette etter at forrige er ferdig. */
+    komboVindu: 320,
+    /** Bommer hun på tredje slag, står hun så lenge i etterslep. */
+    komboEtterslep: 400,
+
+    /** Pust en blokk koster, før skjoldets tyngde legges til. */
+    blokkPust: 8,
+    blokkPustTungt: 18,
+    /** Paraden koster ingenting - og gir dette tilbake. */
+    paradeGevinst: 15,
+    rullPust: 15,
+    manoverPust: 22,
+
+    /**
+     * Paradevinduet, målt fra rammen garden reiser seg. Gavmildt med vilje: er
+     * det for stramt, slutter eleven å prøve, og da er hele systemet borte.
+     */
+    paradeVindu: 180,
+    /**
+     * Hvor lenge skjoldet må ligge nede før det kan reises igjen. Uten denne kan
+     * eleven hamre på tasten og få et evig paradevindu.
+     */
+    gardHvile: 260,
+    /** Sektoren skjoldet dekker, i grader til hver side av retningen hun vender. */
+    dekningHalv: 60,
+
+    /** Skjoldhakk per blokk. Parade hakker ikke. */
+    hakkLett: 1,
+    hakkTungt: 2,
+
+    /** Sliten: slaget går likevel, men det er tregt og svakt. */
+    slitenSkade: 0.6,
+    slitenHastighet: 1.35,
+    /** Rull uten pust blir en stavring: kortere, og uten usårbarhet. */
+    stavringFaktor: 0.6,
+
+    /** Skjoldgang - farten mens garden er oppe. */
+    gardFart: 0.45,
+
+    /** Hitstop etter vekt. Ett tall for alt gjør at ingenting føles tungt. */
+    hitstopLett: 40,
+    hitstopTungt: 90,
+    hitstopParade: 160,
+    hitstopDrap: 140,
+} as const;
+
+/** Kampegenskapene til et våpen, med sverd som fallback. */
+export function vaapenKamp(art: WeaponArt | undefined): VaapenKamp {
+    return VAAPEN_KAMP[art ?? 'sverd'] ?? VAAPEN_KAMP.sverd;
+}

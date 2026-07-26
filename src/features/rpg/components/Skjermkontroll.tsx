@@ -34,7 +34,7 @@ const STIKKE_R = 52;
  * Styrestikke og knapper. Stikka gir analogt utslag, så eleven kan snike seg
  * fram like godt som å løpe.
  */
-export function Skjermkontroll() {
+export function Skjermkontroll({ gardOppe }: { gardOppe: boolean }) {
     const [aktiv, setAktiv] = useState(false);
     const [knott, setKnott] = useState({ x: 0, y: 0 });
     const baseRef = useRef<HTMLDivElement | null>(null);
@@ -95,10 +95,17 @@ export function Skjermkontroll() {
                 />
             </div>
 
+            {/*
+                Garden er en veksling her, ikke et hold: tommelen kan ikke holde
+                skjoldet og slå samtidig. Og fordi paraden *er* reisningen, blir
+                trykket nøyaktig den samme ferdigheten som på tastatur - «trykk i
+                det slaget kommer». Med skjoldet oppe blir «Slå» våpenets manøver.
+            */}
             <div className="pointer-events-auto absolute bottom-6 right-6 flex items-end gap-3">
                 <Knapp navn="bruk" tekst="Snakk" farge="sky" />
                 <Knapp navn="rull" tekst="Rull" farge="slate" />
-                <Knapp navn="angrep" tekst="Slå" farge="amber" stor />
+                <Knapp navn="gard" tekst="Skjold" farge="tre" nede={gardOppe} />
+                <Knapp navn="angrep" tekst={gardOppe ? 'Manøver' : 'Slå'} farge="amber" stor />
             </div>
         </div>
     );
@@ -109,28 +116,34 @@ function Knapp({
     tekst,
     farge,
     stor,
+    nede,
 }: {
-    navn: 'angrep' | 'rull' | 'bruk';
+    navn: 'angrep' | 'rull' | 'bruk' | 'gard';
     tekst: string;
-    farge: 'amber' | 'slate' | 'sky';
+    farge: 'amber' | 'slate' | 'sky' | 'tre';
     stor?: boolean;
+    /** Vekslingsknapper viser om de står på. Tilstanden kommer fra scenen. */
+    nede?: boolean;
 }) {
     const stil =
         farge === 'amber'
             ? 'border-amber-300/70 bg-amber-400/25 text-amber-100'
             : farge === 'sky'
               ? 'border-sky-300/60 bg-sky-400/20 text-sky-100'
-              : 'border-white/25 bg-white/10 text-slate-100';
+              : farge === 'tre'
+                ? 'border-[#c9a86a]/70 bg-[#c9a86a]/20 text-[#f0dcb0]'
+                : 'border-white/25 bg-white/10 text-slate-100';
     return (
         <button
             type="button"
+            aria-pressed={nede}
             onPointerDown={(e) => {
                 e.preventDefault();
                 tilSpill.emit('knapp', { navn });
             }}
             className={`grid touch-none place-items-center rounded-full border-2 font-display font-bold backdrop-blur-sm active:scale-95 ${stil} ${
                 stor ? 'h-20 w-20 text-sm' : 'h-14 w-14 text-xs'
-            }`}
+            } ${nede ? 'scale-95 ring-2 ring-amber-200/80' : ''}`}
         >
             {tekst}
         </button>
