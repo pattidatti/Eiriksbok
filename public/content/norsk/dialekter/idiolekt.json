@@ -6,7 +6,7 @@
     "category": "Talemål",
     "year": "Hele livet ditt",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/dialekter/idiolekt-hero.webp",
     "details": [
         "En idiolekt er måten ett enkelt menneske snakker på. Dialekt og sosiolekt handler om grupper, idiolekten handler om deg.",
         "Idiolekten din er formet av hele livshistorien din: hvor du vokste opp, hvem du har vært sammen med, og hva du har lært.",
@@ -23,7 +23,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/idiolekt-01.webp",
             "alt": "En språkforsker som studerer en bunke brev på et skrivebord",
             "caption": "Hundre brev, én skribent. Språket i tekstene lignet for mye på hverandre til at det kunne være tilfeldig."
         },
@@ -82,7 +82,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/idiolekt-02.webp",
             "alt": "En ungdom omgitt av snakkebobler fra familie venner og skole",
             "caption": "Hvert menneske du snakker med, legger igjen noe i språket ditt. Til sammen blir det idiolekten din."
         },
@@ -151,7 +151,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/idiolekt-03.webp",
             "alt": "Mange ulike mennesker på et torg med snakkebobler over hodene",
             "caption": "Hver av oss har sin egen idiolekt. Det vi har til felles, kaller vi norsk."
         },
