@@ -21,7 +21,7 @@
         {
             "year": "1930",
             "title": "Saltmarsjen",
-            "description": "Gandhi går 40 mil for å lage ulovlig salt."
+            "description": "Gandhi går 385 kilometer til havet for å lage ulovlig salt."
         },
         {
             "year": "1942",
@@ -37,7 +37,7 @@
     "content": [
         {
             "type": "text",
-            "content": "India ble kalt «juvelen i kronen» i det britiske imperiet. Det var den rikeste og mest folkerike kolonien. Hvordan kunne en liten øy i Nord-Europa styre 300 millioner mennesker? Svaret var splitt og hersk, og militær overmakt. Men en mann i lendeklede skulle vise at det fantes en annen makt: Sannhetens makt."
+            "content": "India ble kalt «juvelen i kronen» i det britiske imperiet. Det var den rikeste og mest folkerike kolonien. Fra 1858 gikk India over fra å være styrt av Det ostindiske kompaniet til å bli en koloni under den britiske kronen, ledet av en visekonge (Kristiansen mfl., 2024a). Hvordan kunne en liten øy i Nord-Europa styre flere hundre millioner mennesker? Svaret var splitt og hersk, og militær overmakt. Men en mann i lendeklede skulle vise at det fantes en annen makt: Sannhetens makt."
         },
         {
             "type": "header",
@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "Mahatma Gandhi var utdannet advokat i London, men kastet dressen for å lede frigjøringskampen. Hans våpen var ikke-vold (ahimsa) og sivil ulydighet. Hvis lovene var urettferdige, skulle man bryte dem åpenlyst og ta straffen med verdighet.\n\nDet mest berømte eksempelet var Saltmarsjen i 1930. Britene hadde monopol på salt og skattla det hardt. Gandhi marsjerte til havet og plukket opp en neve salt. Tusenvis fulgte ham. Britene fengslet 60 000 mennesker, men de kunne ikke fengsle en hel nasjon. Verdensopinionen snudde seg mot britene."
+            "content": "Mahatma Gandhi reiste i 1888 til England for å studere jus og ble advokat, men kastet dressen for å lede frigjøringskampen (Kristiansen mfl., 2024b). Hans våpen var ikke-vold (ahimsa) og sivil ulydighet. Ahimsa er et gammelt indisk ord som betyr «ikke-skade». Takket være Gandhi ble det et politisk begrep vi i dag kaller ikkevold (Jacobsen, 2025). Satyagraha betyr «å holde fast ved sannheten», og Gandhi brukte det om en aktiv og uredd ikke-vold (Kristiansen mfl., 2024b). Hvis lovene var urettferdige, skulle man bryte dem åpenlyst og ta straffen med verdighet.\n\nDet mest berømte eksempelet var Saltmarsjen i 1930. Britene hadde lenge hatt monopol på salt, og indere måtte kjøpe dyrt salt med høy skatt (Pletcher, u.å.). Gandhi gikk 385 kilometer til havet og plukket opp en neve salt. Tusenvis fulgte ham. Ved utgangen av året satt rundt 60 000 mennesker i fengsel, men britene kunne ikke fengsle en hel nasjon (Kristiansen mfl., 2024b; Pletcher, u.å.). Verdensopinionen snudde seg mot britene."
         },
         {
             "type": "header",
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "content": "Etter andre verdenskrig var Storbritannia blakk og utslitt. De innså at de måtte gi India frihet. Men India var delt religiøst. Muslimene, ledet av Muhammad Ali Jinnah, fryktet å bli en undertrykt minoritet i et hindu-dominert India. De krevde sin egen stat: Pakistan.\n\nResultatet ble en tragedie. Da britene trakk streken (Radcliffe Line) i 1947, måtte 15 millioner mennesker flykte over de nye grensene. Hinduer flyktet til India, muslimer til Pakistan. I kaoset ble opp mot en million mennesker drept. Gandhi selv ble myrdet året etter av en hindu-nasjonalist som mente han var for snill mot muslimene."
+            "content": "Etter andre verdenskrig var Storbritannia blakk og utslitt. De innså at de måtte gi India frihet. Men India var delt religiøst. Muslimene, ledet av Muhammad Ali Jinnah, fryktet å bli en undertrykt minoritet i et hindu-dominert India. Partiet hans, Muslim League, krevde at alle provinsene der muslimene var i flertall, skulle bli en egen stat: Pakistan (Kristiansen mfl., 2024a).\n\nResultatet ble en tragedie. Grensen ble tegnet av briten Cyril Radcliffe, som aldri hadde vært i India før, og den fikk navnet Radcliffe-linjen (Kulik, 2026). Da streken ble trukket i 1947, måtte rundt 15 millioner mennesker flykte over de nye grensene. Hinduer flyktet til India, muslimer til Pakistan. Hvor mange som ble drept i kaoset, vet ingen sikkert: anslagene spenner fra 200 000 til to millioner (Kulik, 2026). Gandhi selv ble myrdet i Delhi 30. januar 1948 av en fanatisk hindunasjonalist som mente han var for snill mot muslimene (Kristiansen mfl., 2024b)."
         },
         {
             "type": "component",
@@ -89,18 +89,31 @@
                     "Hva betyr ordene ahimsa og satyagraha, og hvordan brukte Gandhi disse ideene i frigjøringskampen?",
                     "Hva skjedde under Saltmarsjen i 1930, og hvorfor var salt et smart valg for Gandhi å protestere mot?",
                     "Hvorfor krevde Muhammad Ali Jinnah og muslimene sin egen stat, Pakistan?",
-                    "Hva var Radcliffe Line, og hva skjedde med menneskene da britene trakk denne streken i 1947?"
+                    "Hva var Radcliffe-linjen, og hva skjedde med menneskene da britene trakk denne streken i 1947?"
                 ],
                 "reflekter": [
                     "Gandhi mente man skulle bryte urettferdige lover åpenlyst og ta straffen med verdighet. Forklar hvorfor denne metoden kunne snu verdensopinionen mot britene selv om Gandhi selv ikke brukte vold.",
                     "Britene fengslet 60 000 mennesker under Saltmarsjen, men klarte likevel ikke å stoppe bevegelsen. Hva sier dette om hvorfor makt bygget på frykt kan svikte?",
                     "Sammenlign Gandhis og Jinnahs visjoner for India ut fra Comparison-tabellen. Hvilken av de to synene tror du var vanskeligst å gjennomføre i praksis, og hvorfor?",
-                    "Frigjøringen kalles i artikkelen en blodig fødsel fordi opp mot en million mennesker ble drept. Hvordan kan en frihetskamp bygget på ikke-vold likevel ende i så mye vold?"
+                    "Frigjøringen kalles i artikkelen en blodig fødsel fordi flere hundre tusen mennesker ble drept. Hvordan kan en frihetskamp bygget på ikke-vold likevel ende i så mye vold?"
                 ],
                 "gaaVidere": [
                     "Gandhis ikke-voldelige metoder inspirerte senere ledere i andre land. Finn et eksempel på en bevegelse eller person i nyere tid som har brukt sivil ulydighet, og forklar kort hva de kjempet for.",
                     "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en ung person i India i 1947 som må flykte over den nye grensen. Hva ser du, og hva tenker du?",
                     "Diskuter med en partner: Er ikke-vold alltid den beste måten å kjempe mot urett på, eller finnes det situasjoner der det ikke fungerer? Bruk eksempler fra artikkelen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Jacobsen, K. A. (2025). *Ahimsa*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/ahimsa](https://snl.no/ahimsa)",
+                    "Kristiansen, K., Filseth, G. & Waldrop, A. (2024a). *Indias historie*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Indias_historie](https://snl.no/Indias_historie)",
+                    "Kristiansen, K., Filseth, G. & Haugan, S. (2024b). *Mahatma Gandhi*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Mahatma_Gandhi](https://snl.no/Mahatma_Gandhi)",
+                    "Kulik, R. M. (2026). *Partition of India*. Encyclopaedia Britannica. Hentet 26.07.2026 fra [britannica.com/event/Partition-of-India](https://www.britannica.com/event/Partition-of-India)",
+                    "Pletcher, K. (u.å.). *Salt March*. Encyclopaedia Britannica. Hentet 26.07.2026 fra [britannica.com/event/Salt-March](https://www.britannica.com/event/Salt-March)"
                 ]
             }
         }
@@ -130,5 +143,5 @@
         }
     ],
     "createdDate": "2026-01-16T10:20:00Z",
-    "lastUpdated": "2026-01-16T10:20:00Z"
+    "lastUpdated": "2026-07-26T00:00:00Z"
 }

@@ -3,7 +3,7 @@
     "title": "Jim Crow: «Separate but equal»",
     "subject": "historie",
     "layout": "rich",
-    "year": "1877–1965",
+    "year": "1877-1965",
     "category": "USA / Delte samfunn",
     "readTime": "11 min lesning",
     "heroImage": "/images/lessons/dekolonisering/jim-crow-lovene.webp",
@@ -12,21 +12,21 @@
         "«Separate but equal» ble slått fast av Høyesterett i Plessy mot Ferguson (1896).",
         "Rosa Parks nektet å gi fra seg bussplassen sin 1. desember 1955.",
         "Martin Luther Kings «I have a dream»-tale ble holdt 28. august 1963.",
-        "Civil Rights Act av 1964 opphevet Jim Crow-lovene – nesten 100 år etter slaveriets avskaffelse."
+        "Civil Rights Act av 1964 opphevet Jim Crow-lovene - nesten 100 år etter slaveriets avskaffelse."
     ],
     "timeline": [],
-    "externalUrl": "https://snl.no/Jim_Crow-lovene",
+    "externalUrl": "https://snl.no/Jim_Crow",
     "content": [
         {
             "type": "text",
-            "content": "Vannfontenen er merket «Colored». Den andre, ti meter borte, er merket «White». Vannet er det samme. Menneskene er det samme. Men loven sier at de ikke kan dele den.\n\nI USA etter borgerkrigen ble slaveriet avskaffet i 1865. Men i de sørlige statene ble friheten raskt innskrenket gjennom lover som skapte et system nesten like totalt som det man hadde under slaveriet. Disse lovene kalles Jim Crow-lovene – og de delte et samfunn ikke med murer av betong, slik som i [Belfast](/historie/den-kalde-krigen/peace-lines-belfast) eller [Sør-Afrika](/historie/dekolonisering/apartheid-syd-afrika), men med skilt, regler og vold."
+            "content": "Vannfontenen er merket «Colored». Den andre, ti meter borte, er merket «White». Vannet er det samme. Menneskene er det samme. Men loven sier at de ikke kan dele den.\n\nI USA etter borgerkrigen ble slaveriet avskaffet i 1865. Men i de sørlige statene ble friheten raskt innskrenket gjennom lover som skapte et system nesten like totalt som det man hadde under slaveriet. På 1890-tallet var segregeringen lovfestet i sørstatene, og fram til 1950-tallet hadde 17 sørstater og hovedstaden Washington egne skoler for svarte og hvite (Godbolt & Mæhlum, 2025). Disse lovene kalles Jim Crow-lovene - og de delte et samfunn ikke med murer av betong, slik som i [Belfast](/historie/den-kalde-krigen/peace-lines-belfast) eller [Sør-Afrika](/historie/dekolonisering/apartheid-syd-afrika), men med skilt, regler og vold."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hvem var Jim Crow?",
-                "content": "«Jim Crow» var opprinnelig en karikaturfigur fra minstrel-show på 1800-tallet – en nedsettende fremstilling av svarte amerikanere. Navnet ble brukt om det samlede systemet av rasesegregering i sørstatene etter 1877. Jim Crow-lovene bestemte alt: hvem som kunne stemme, hvilken skole man kunne gå på, hvilken inngang man kunne bruke, hvem man kunne gifte seg med. Det var ikke ett sett lover – det var hundrevis av enkeltlover vedtatt i stat etter stat."
+                "content": "«Jim Crow» kom fra sangen «Jump Jim Crow», som den hvite artisten Thomas Rice framførte med sotet ansikt fra rundt 1828. Figuren var en nedsettende karikatur av svarte amerikanere, og navnet ble senere brukt om hele systemet av rasesegregering i sørstatene (Godbolt & Mæhlum, 2025). Jim Crow-lovene bestemte alt: hvem som kunne stemme, hvilken skole man kunne gå på, hvilken inngang man kunne bruke, hvem man kunne gifte seg med. Det var ikke ett sett lover - det var hundrevis av enkeltlover vedtatt i stat etter stat."
             }
         },
         {
@@ -35,7 +35,7 @@
         },
         {
             "type": "text",
-            "content": "I 1892 kjøpte Homer Plessy – en mann som var sju åttendedeler hvit og en åttendedel svart – en togbillett i Louisiana og satte seg i en hvit vogn. Han ble arrestert. Saken gikk helt til USAs høyesterett.\n\nI 1896 avsa Høyesterett sin kjennelse: «Separate but equal» – atskilte fasiliteter var lovlig, så lenge de var likeverdige. Dommer John Marshall Harlan avga en dissens som ble profetisk: «Vår grunnlov er fargeblind... Men det er grunn til å tro at denne avgjørelsen vil hindre forsoning mellom rasene og vil gi oppmuntring til den mer aggressive typen hvite, som mener at dominansen er for dem å hevde.»\n\nHøyesterett-avgjørelsen ga grønt lys for segregering i nesten 60 år. I praksis var fasiliteter aldri «like». Svarte skoler fikk brukte lærebøker, utslitte bygninger og halvparten av budsjettet."
+            "content": "I 1892 kjøpte Homer Plessy - en mann som var sju åttendedeler hvit og en åttendedel svart - en togbillett i Louisiana og satte seg i en hvit vogn. Han ble arrestert. Saken gikk helt til USAs høyesterett.\n\nI 1896 avsa Høyesterett sin kjennelse: «Separate but equal» - atskilte tilbud var lovlig, så lenge de var likeverdige (Urofsky, 2026). Dommer John Marshall Harlan var uenig og skrev en dissens som ble profetisk: «Vår grunnlov er fargeblind, og den verken kjenner eller tåler klasser blant borgerne.» Han advarte om at avgjørelsen ville egge til nye overgrep mot svarte borgeres rettigheter, og at ingenting kunne vekke mer rasehat og mistillit mellom folkegruppene enn lover som bygde på at svarte var for underlegne til å sitte i samme togvogn som hvite (Harlan, 1896).\n\nHøyesterett-avgjørelsen ga grønt lys for segregering i nesten 60 år, helt til Brown mot Board of Education snudde den i 1954. I praksis var tilbudene aldri «like»: Høyesterett så bort fra at fasilitetene for svarte var dårligere enn de som var ment for hvite (Urofsky, 2026). Svarte skoler fikk brukte lærebøker, utslitte bygninger og langt mindre penger."
         },
         {
             "type": "header",
@@ -43,7 +43,7 @@
         },
         {
             "type": "text",
-            "content": "Jim Crow var ikke bare skilt ved vannfontener. Det var et helhetlig system av kontroll:\n\nI «sundown towns» – byer over hele USA, ikke bare i sør – måtte svarte amerikanere forlate bygrensen innen solnedgang. Ellers risikerte de vold eller arrest. Velgersystemet var rigget: Svarte menn hadde teknisk sett stemmerett, men lokale myndigheter krevde at de besto «lesbarhetstester» de hvite ble spart for, betalte avgifter de ikke hadde råd til, eller ventet i køer som aldri ble ferdig.\n\nOg bak alt lå trusselen om vold. Mellom 1877 og 1950 ble over 4 000 svarte amerikanere lynsjert – hengt, brent eller drept av pøbler, nesten alltid uten at noen ble straffeforfulgt."
+            "content": "Jim Crow var ikke bare skilt ved vannfontener. Det var et helhetlig system av kontroll:\n\nI «sundown towns» - byer over hele USA, og faktisk flest utenfor sørstatene - måtte svarte amerikanere være ute av bygrensen innen solnedgang. Ellers risikerte de vold eller arrest (Loewen, 2018). Velgersystemet var rigget: Sørstatene innførte skjeve lesetester, strenge krav om å eie eiendom og kompliserte valgavgifter, nettopp for å hindre svarte i å stemme (Urofsky, 2026).\n\nOg bak alt lå trusselen om vold. I tolv sørstater er det dokumentert 4 075 lynsjinger av svarte amerikanere mellom 1877 og 1950. De som deltok, ble hyllet og slapp unna straff (Equal Justice Initiative, 2017)."
         },
         {
             "type": "component",
@@ -96,14 +96,14 @@
         },
         {
             "type": "text",
-            "content": "1. desember 1955. Rosa Parks, 42 år, syerske, sitter på bussen i Montgomery, Alabama etter en lang arbeidsdag. Bussen er full. En hvit passasjer vil ha plassen hennes. Sjåføren ber henne reise seg. Hun nekter.\n\nParks ble arrestert. Men det var ikke spontant. Parks var aktiv i NAACP – en borgerrettsorganisasjon – og hadde trent i borgerrettskamp. Det var ikke slik at hun var for sliten til å reise seg, slik historien av og til forteller det. Hun var sliten – men hun var sliten av å gi etter.\n\nBoikotten som fulgte varte i 381 dager. Svarte amerikanere i Montgomery – 75 prosent av bussselskapets kunder – gikk til fots, syklet, eller samkjørte. En ung baptist-pastor ble talsmann for boikotten: Martin Luther King Jr. Montgomery Bus Boycott ble vendepunktet som viste at ikke-voldelig motstand virket."
+            "content": "1. desember 1955. Rosa Parks, 42 år, syerske, sitter på bussen i Montgomery, Alabama etter en lang arbeidsdag. Bussen er full. En hvit passasjer vil ha plassen hennes. Sjåføren ber henne reise seg. Hun nekter (Notaker, 2025).\n\nParks ble arrestert. Men det var ikke spontant. Hun hadde vært medlem av borgerrettsorganisasjonen NAACP helt siden 1943 (Notaker, 2025). Det var ikke slik at hun var for sliten til å reise seg, slik historien av og til forteller det. Hun var sliten - men hun var sliten av å gi etter.\n\nBoikotten som fulgte varte i 381 dager, fra 5. desember 1955 til 20. desember 1956. Svarte amerikanere i Montgomery utgjorde rundt 75 prosent av bussenes passasjerer, og nå gikk de til fots, syklet eller samkjørte (Encyclopaedia Britannica, 2026b). En ung baptistpastor ble talsmann for boikotten: Martin Luther King Jr. Montgomery Bus Boycott ble vendepunktet som viste at ikke-voldelig motstand virket.\n\nFire år senere, 1. februar 1960, satte fire svarte studenter seg ned ved lunchbaren på Woolworths i Greensboro, North Carolina, og ba høflig om å bli servert. De ble nektet, men ble sittende til stengetid og kom tilbake dagen etter med enda flere (Ray, u.å.)."
         },
         {
             "type": "component",
             "name": "ScenarioRoleplay",
             "props": {
                 "title": "Lunch counter sit-in, Greensboro 1960",
-                "intro": "Du er 18 år og student i Greensboro, North Carolina, i 1960. Fire studenter fra din skole har akkurat satt seg ned ved lunchbaren på Woolworths varehus – en bar kun for hvite. De nekter å flytte seg.",
+                "intro": "Du er 18 år og student i Greensboro, North Carolina, 1. februar 1960. Fire svarte studenter har akkurat satt seg ned ved lunchbaren på Woolworths varehus - en bar kun for hvite - og bedt høflig om å bli servert. De nekter å flytte seg.",
                 "startId": "start",
                 "scenarios": [
                     {
@@ -111,24 +111,24 @@
                         "text": "Nyheten sprer seg på campus: Fire av medstudentene dine sitter rolig ved lunchbaren og venter på å bli servert. Betjeningen nekter å ta imot bestillingen. De sitter bare der og leser.\n\nNeste dag vil de gjøre det igjen. De trenger folk til å fylle stolene.\n\nHva gjør du?",
                         "options": [
                             { "label": "Bli med i sit-in'en", "nextId": "sit-in" },
-                            { "label": "Du er enig, men redd – du holder deg unna", "nextId": "unna" }
+                            { "label": "Du er enig, men redd - du holder deg unna", "nextId": "unna" }
                         ]
                     },
                     {
                         "id": "sit-in",
-                        "text": "Du setter deg ned ved baren. En eldre hvit mann bak deg sier noe stygt. Du ser rett frem og sier ingenting. Kaffekopene kommer ikke.\n\nNoen begynner å helle ketchup på hodet ditt. Du sitter stille. Det er det dere har øvd på: Uansett hva som skjer – sitt stille, se rolig ut, ikke svar provokasjonene.\n\nNyhetsreportere er der. Bildene kommer på forsiden av avisen neste dag.",
+                        "text": "Du setter deg ned ved baren. En eldre hvit mann bak deg sier noe stygt. Du ser rett frem og sier ingenting. Kaffekopene kommer ikke.\n\nNoen begynner å helle ketchup på hodet ditt. Du sitter stille. Det er det dere har øvd på: Uansett hva som skjer - sitt stille, se rolig ut, ikke svar provokasjonene.\n\nNyhetsreportere er der. Bildene kommer på forsiden av avisen neste dag.",
                         "options": [
                             { "label": "Hva skjedde videre?", "nextId": "videre" }
                         ]
                     },
                     {
                         "id": "videre",
-                        "text": "Sit-in'ene i Greensboro spredte seg. Innen uker hadde lignende protester startet i over 50 byer i 9 stater. Woolworths mistet så mange kunder at de etter seks måneder begynte å servere svarte og hvite ved de samme barene.\n\nDet var ikke lov som endret det. Det var en stol. Og motet til å sitte i den.",
+                        "text": "Sit-in'ene i Greensboro spredte seg. Innen få uker hadde nyhetsdekningen ført til lignende protester i byer over hele landet. I juli 1960, rundt fem måneder etter den første aksjonen, begynte lunchbaren på Woolworths i Greensboro å servere svarte kunder.\n\nDet var ikke lov som endret det. Det var en stol. Og motet til å sitte i den.",
                         "options": []
                     },
                     {
                         "id": "unna",
-                        "text": "Du holder deg unna. Frykten er reell – du kjenner til folk som er blitt banket opp, arrestert, mistet jobbene sine for å ha protestert.\n\nMen du følger med på nyheter. Og dagene og ukene som følger, ser du sit-in'ene spre seg fra by til by. Du ser at det virker.\n\nNeste gang de trenger folk, rekker du opp hånden.",
+                        "text": "Du holder deg unna. Frykten er reell - du kjenner til folk som er blitt banket opp, arrestert, mistet jobbene sine for å ha protestert.\n\nMen du følger med på nyheter. Og dagene og ukene som følger, ser du sit-in'ene spre seg fra by til by. Du ser at det virker.\n\nNeste gang de trenger folk, rekker du opp hånden.",
                         "options": []
                     }
                 ]
@@ -140,15 +140,15 @@
         },
         {
             "type": "text",
-            "content": "28. august 1963. Over 250 000 mennesker samlet seg i Washington D.C. for March on Washington. Det var den største politiske demonstrasjonen i amerikansk historie til da. Mot slutten av dagen gikk Martin Luther King Jr. til mikrofonen.\n\nTalen han hadde forberedt, var god men kjedelig. Sangeren Mahalia Jackson, som sto bak ham, ropte: «Tell them about the dream, Martin!» King la manuset til side. Det som fulgte, var improvisert – og er blitt en av historiens mest siterte taler: «I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.»\n\nAtte måneder etter, i juli 1964, signerte president Lyndon B. Johnson Civil Rights Act. Segregering var nå ulovlig. Neste år kom Voting Rights Act. Jim Crow-lovene var formelt over – nesten hundre år etter at slaveriet ble avskaffet."
+            "content": "28. august 1963. Rundt 250 000 mennesker samlet seg i Washington D.C. for March on Washington. Det var en av de største endagsprotestene i amerikansk historie (Encyclopaedia Britannica, 2026a). Mot slutten av dagen gikk Martin Luther King Jr. til mikrofonen.\n\nSangeren Mahalia Jackson sto bak ham og ropte at han måtte fortelle folkemengden om drømmen. King la manuset til side og gikk over i stilen til en baptistpredikant (Tikkanen, 2026). Det som fulgte, er blitt en av historiens mest siterte taler: «I have a dream that my four little children will one day live in a nation where they will not be judged by the color of their skin but by the content of their character.»\n\nElleve måneder senere, i juli 1964, signerte president Lyndon B. Johnson Civil Rights Act. Segregering var nå ulovlig. Året etter kom Voting Rights Act (Godbolt, 2026). Jim Crow-lovene var formelt over - nesten hundre år etter at slaveriet ble avskaffet."
         },
         {
             "type": "header",
-            "text": "Lovene forsvant – men ulikheten?"
+            "text": "Lovene forsvant - men ulikheten?"
         },
         {
             "type": "text",
-            "content": "Civil Rights Act forbød diskriminering. Men den endret ikke hvem som eide land, hvem som fikk gode skoler, hvem som bygget opp formue gjennom generasjoner. De strukturene som ble bygget under Jim Crow, lever videre.\n\nI dag er amerikanske fengsler overveiende svarte. Formuesgapet mellom hvite og svarte amerikanere er nesten like stort som i 1968. Og debatten om politiets behandling av svarte har vist – ikke minst gjennom Black Lives Matter – at spørsmålet om likhet er langt fra besvart.\n\nLovene fra Jim Crow er borte. Men som [apartheid i Sør-Afrika](/historie/dekolonisering/apartheid-syd-afrika) og [Peace Lines i Belfast](/historie/den-kalde-krigen/peace-lines-belfast) illustrerer: Splittelse er enklere å bygge enn å rive."
+            "content": "Civil Rights Act forbød diskriminering. Men den endret ikke hvem som eide land, hvem som fikk gode skoler, hvem som bygget opp formue gjennom generasjoner. De strukturene som ble bygget under Jim Crow, lever videre.\n\nSvarte amerikanere er kraftig overrepresentert i fengslene. I 2018 var 33 prosent av de innsatte svarte, nesten tre ganger så høy andel som blant voksne i befolkningen ellers (Gramlich, 2020). Formuesgapet mellom hvite og svarte krympet raskt i tiårene etter borgerrettskampen, fra åtte til én i 1960 til fem til én i 1980. Så stoppet utviklingen opp, og gapet har faktisk økt litt hvert år siden (McKay, 2022). Og debatten om politiets behandling av svarte har vist - ikke minst gjennom Black Lives Matter - at spørsmålet om likhet er langt fra besvart.\n\nLovene fra Jim Crow er borte. Men som [apartheid i Sør-Afrika](/historie/dekolonisering/apartheid-syd-afrika) og [Peace Lines i Belfast](/historie/den-kalde-krigen/peace-lines-belfast) illustrerer: Splittelse er enklere å bygge enn å rive."
         },
         {
             "type": "component",
@@ -162,12 +162,12 @@
                 ],
                 "reflekter": [
                     "Teksten sier at fasilitetene aldri var «like», selv om loven krevde «separate but equal». Forklar med eksempler fra artikkelen hvordan ulikheten viste seg i praksis.",
-                    "Dommer Harlan skrev i sin dissens at avgjørelsen ville hindre forsoning mellom rasene. Hvorfor kan man si at han fikk rett?",
+                    "Dommer Harlan advarte i sin dissens om at avgjørelsen ville vekke rasehat og mistillit mellom folkegruppene. Hvorfor kan man si at han fikk rett?",
                     "Historien forteller ofte at Rosa Parks var «for sliten til å reise seg». Hvorfor mener artikkelen at dette bildet er misvisende, og hvorfor er forskjellen viktig?",
                     "Sit-in'ene i Greensboro endret Woolworths uten at loven ble endret først. Forklar hvordan slik ikke-voldelig motstand kunne virke."
                 ],
                 "gaaVidere": [
-                    "Artikkelen sier at formuesgapet mellom hvite og svarte amerikanere er nesten like stort som i 1968. Skriv noen setninger om hvorfor lovene kunne forsvinne uten at ulikheten forsvant.",
+                    "Artikkelen sier at formuesgapet mellom hvite og svarte amerikanere krympet fram til 1980, men så stoppet utviklingen opp. Skriv noen setninger om hvorfor lovene kunne forsvinne uten at ulikheten forsvant.",
                     "Artikkelen sammenligner Jim Crow med apartheid i Sør-Afrika og Peace Lines i Belfast, og sier at «splittelse er enklere å bygge enn å rive». Diskuter med en partner hva denne setningen betyr, og finn ett eksempel til fra vår egen tid."
                 ]
             }
@@ -219,6 +219,27 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (2026a). *March on Washington*. Hentet 26.07.2026 fra [britannica.com/event/March-on-Washington](https://www.britannica.com/event/March-on-Washington)",
+                    "Encyclopaedia Britannica. (2026b). *Montgomery bus boycott*. Hentet 26.07.2026 fra [britannica.com/event/Montgomery-bus-boycott](https://www.britannica.com/event/Montgomery-bus-boycott)",
+                    "Equal Justice Initiative. (2017). *Lynching in America: Confronting the Legacy of Racial Terror* (3. utg.). Equal Justice Initiative. Hentet 26.07.2026 fra [eji.org](https://eji.org/reports/lynching-in-america/)",
+                    "Godbolt, J. (2026). *Den amerikanske borgerrettsbevegelsen*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/borgerrettsbevegelsen](https://snl.no/borgerrettsbevegelsen)",
+                    "Godbolt, J. & Mæhlum, L. (2025). *Jim Crow - segregeringen i USA*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Jim_Crow](https://snl.no/Jim_Crow)",
+                    "Gramlich, J. (2020). *Black imprisonment rate in the U.S. has fallen by a third since 2006*. Pew Research Center. Hentet 26.07.2026 fra [pewresearch.org](https://www.pewresearch.org/short-reads/2020/05/06/share-of-black-white-hispanic-americans-in-prison-2018-vs-2006/)",
+                    "Harlan, J. M. (1896). Dissens i *Plessy v. Ferguson*, 163 U.S. 537. Hentet 26.07.2026 fra [law.cornell.edu](https://www.law.cornell.edu/supremecourt/text/163/537)",
+                    "Loewen, J. W. (2018). *Sundown Towns: A Hidden Dimension of American Racism*. The New Press.",
+                    "McKay, L. C. (2022). *How the racial wealth gap has evolved - and why it persists*. Federal Reserve Bank of Minneapolis. Hentet 26.07.2026 fra [minneapolisfed.org](https://www.minneapolisfed.org/article/2022/how-the-racial-wealth-gap-has-evolved-and-why-it-persists)",
+                    "Notaker, H. (2025). *Rosa Parks*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Rosa_Parks](https://snl.no/Rosa_Parks)",
+                    "Ray, M. (u.å.). *Greensboro sit-in*. Encyclopaedia Britannica. Hentet 26.07.2026 fra [britannica.com/event/Greensboro-sit-in](https://www.britannica.com/event/Greensboro-sit-in)",
+                    "Tikkanen, A. (2026). *I Have a Dream*. Encyclopaedia Britannica. Hentet 26.07.2026 fra [britannica.com/topic/I-Have-a-Dream](https://www.britannica.com/topic/I-Have-a-Dream)",
+                    "Urofsky, M. I. (2026). *Jim Crow law*. Encyclopaedia Britannica. Hentet 26.07.2026 fra [britannica.com/event/Jim-Crow-law](https://www.britannica.com/event/Jim-Crow-law)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -268,5 +289,5 @@
         }
     ],
     "createdDate": "2026-04-08T00:00:00Z",
-    "lastUpdated": "2026-04-08T00:00:00Z"
+    "lastUpdated": "2026-07-26T00:00:00Z"
 }
