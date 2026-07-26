@@ -21,7 +21,7 @@
         {
             "year": "1974",
             "title": "Nellikrevolusjonen",
-            "description": "Diktaturet i Portugal faller. Koloniene får frihet."
+            "description": "Diktaturet i Portugal faller. Koloniene blir selvstendige året etter."
         },
         {
             "year": "1990",
@@ -37,7 +37,7 @@
     "content": [
         {
             "type": "text",
-            "content": "På 1960-tallet, da resten av Afrika feiret friheten, holdt ett land igjen. Portugal, styrt av diktatoren Salazar, insisterte på at Angola, Mosambik og Guinea-Bissau ikke var kolonier, men «oversjøiske provinser» som tilhørte Portugal for alltid."
+            "content": "På 1960-tallet, da resten av Afrika feiret friheten, holdt ett land igjen. Portugal ble styrt av diktatoren António de Oliveira Salazar, som i 1951 hadde omdøpt koloniene til «oversjøiske provinser» og dermed erklært at Angola, Mosambik og Guinea-Bissau var en del av Portugal selv. Salazar nektet å følge FNs krav om en fredelig avkolonisering (Chabert, 2025; Orre & Leraand, 2024)."
         },
         {
             "type": "header",
@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "Fra 1961 til 1974 kjempet Portugal en blodig trefrontskrig i Afrika. Det tæret på landets økonomi og moral. Unge portugisiske vernepliktige døde i jungelen for en sak de ikke trodde på. Til slutt var det hæren selv som fikk nok.\n\n25. april 1974 rullet tanksene inn i Lisboa. Ikke for å undertrykke, men for å kaste diktaturet. Folk satte nelliker i løpene på geværene til soldatene. Nellikrevolusjonen førte til demokrati i Portugal – og umiddelbar uavhengighet for koloniene."
+            "content": "Frigjøringskampen i Angola startet 4. februar 1961, og fra da av kjempet Portugal en blodig trefrontskrig i Afrika (Orre & Leraand, 2024). Det tæret på landets økonomi: i 1968 slukte kolonikrigene 36 prosent av statsbudsjettet, og rundt 1970 omtrent halvparten (Chabert, 2024, 2025). Unge portugisiske vernepliktige ble sendt til en krig som ikke kunne vinnes. Til slutt var det hæren selv som fikk nok, og motstanden mot kolonikrigene blant offiserene ble avgjørende (Chabert, 2024).\n\n25. april 1974 gjennomførte offiserene et statskupp mot regimet i Lisboa. Ikke for å undertrykke, men for å kaste diktaturet. En kvinne på Rossio-plassen ga en soldat en nellik og delte deretter ut blomster til flere soldater, og det er derfor opprøret kalles Nellikrevolusjonen. Revolusjonen gjorde slutt på kolonikrigene og førte til demokrati i Portugal, og de portugisiske koloniene i Afrika ble selvstendige alt i 1975 (Chabert, 2024). Angola erklærte seg selvstendig 11. november 1975 (Orre & Leraand, 2024)."
         },
         {
             "type": "header",
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "content": "Da portugiserne dro, stod ett hvitt mindretallsstyre igjen: Apartheid-regimet i Sør-Afrika. Omgitt av nye, svarte nasjoner, ble Sør-Afrika mer og mer isolert. Etter tiår med internasjonal boikott og indre motstand (ledet av ANC), måtte regimet til slutt gi tapt.\n\nI 1994, da Nelson Mandela ble valgt til president, ble den siste store brikken i dekoloniseringen lagt på plass. Et kapittel som startet med Columbus i 1492 var omsider over."
+            "content": "Da portugiserne dro, stod ett hvitt mindretallsstyre igjen: Apartheid-regimet i Sør-Afrika. Omgitt av nye, svarte nasjoner, ble Sør-Afrika mer og mer isolert. ANC bygde opp anti-apartheid-organisasjoner over hele verden, og det ble grunnlaget for en stadig sterkere internasjonal boikott. I 1977 vedtok FN en vidtgående våpenembargo mot Sør-Afrika (Tjønneland, 2024). Etter tiår med boikott utenfra og motstand innenfra måtte regimet til slutt gi tapt: i februar 1990 kunngjorde president de Klerk at Nelson Mandela og de andre fengslede lederne skulle løslates, og at forbudet mot ANC skulle oppheves (Tjønneland, 2024, 2025).\n\n27. april 1994 holdt Sør-Afrika sine første frie demokratiske valg. Mandela, som hadde sittet fengslet i over 27 år, ble landets første demokratisk valgte president med over 60 prosent av stemmene (Leraand mfl., 2025). Dermed ble den siste store brikken i dekoloniseringen lagt på plass. Et kapittel som startet med Columbus i 1492 var omsider over."
         },
         {
             "type": "component",
@@ -72,9 +72,23 @@
                     "Artikkelen sier at et kapittel som startet med Columbus i 1492 var over i 1994. Hva mener teksten med at dette var det samme kapitlet, og er du enig i at det henger sammen?"
                 ],
                 "gaaVidere": [
-                    "Nelson Mandela satt i fengsel i mange år før han ble president. Finn ut hvor lenge han satt fengslet, og skriv tre-fire setninger om hva det forteller om kampen mot Apartheid.",
+                    "Nelson Mandela satt fengslet i over 27 år før han ble president. Finn ut hvor han satt fengslet, og skriv tre-fire setninger om hva den lange fengselstiden forteller om kampen mot Apartheid.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor akkurat Sør-Afrika kalles den siste skansen i dekoloniseringen.",
                     "Diskuter med en partner: Boikott var et viktig våpen mot Apartheid. Finnes det steder i verden i dag der land bruker boikott for å presse fram forandring? Virker det?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Chabert, G. (2024). *Nellikrevolusjonen*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/nellikrevolusjonen](https://snl.no/nellikrevolusjonen)",
+                    "Chabert, G. (2025). *António de Oliveira Salazar*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Antonio_de_Oliveira_Salazar](https://snl.no/Antonio_de_Oliveira_Salazar)",
+                    "Leraand, D., Millstein, M. & Kjølås, H. (2025). *Nelson Mandela*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Nelson_Mandela](https://snl.no/Nelson_Mandela)",
+                    "Orre, A. & Leraand, D. (2024). *Angolas historie*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Angolas_historie](https://snl.no/Angolas_historie)",
+                    "Tjønneland, E. (2024). *Sør-Afrikas historie*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Sør-Afrikas_historie](https://snl.no/S%C3%B8r-Afrikas_historie)",
+                    "Tjønneland, E. (2025). *Apartheid*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/apartheid](https://snl.no/apartheid)"
                 ]
             }
         }
@@ -104,5 +118,5 @@
         }
     ],
     "createdDate": "2026-01-16T10:45:00Z",
-    "lastUpdated": "2026-01-16T10:45:00Z"
+    "lastUpdated": "2026-07-26T00:00:00Z"
 }
