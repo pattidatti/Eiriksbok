@@ -26,10 +26,20 @@ data/
   spells.ts              Besvergelser (låses opp av riktige svar, ikke loot)
   enemies.ts             Fiendearketyper + bossen
   zones.ts               Verdenskartet - 11 soner, én ferdig. Hele paletten per sone.
-  nordvik.ts             Sone 1: NPC-er, landemerker og håndskrevne spørsmål
+  nordvik.ts             Nordvik: NPC-er, landemerker og håndskrevne oppdrag
+  steder.ts              STEDER-registeret. Ett sted = ett kart med alt som hører til
 engine/
-  boot.ts                Starter Phaser (dynamisk import)
-  WorldScene.ts          Verden, bevegelse, kamp, fiende-AI, atmosfære
+  boot.ts                Starter Phaser (dynamisk import), starter scenen på et stedId
+  WorldScene.ts          Orkestrering: bygger stedet, kobler systemene, styrer reisen
+  systems/
+    spiller.ts           Eleven: figur, styring, slag, gard, alt som kan skje med henne
+    fiender.ts           Fiende-AI, spawning, bossen og kunnskapsdysten
+    verden.ts            Bakken, kollisjonen, objektene og atmosfæren
+    interaksjon.ts       Hint, E-trykk, dialog-triggere, utropstegn
+    prosjektiler.ts      Alt som flyr: piler, kastespyd, besvergelser
+    effekter.ts          Partikler, flytende tall og glimt
+    loot.ts              Sølv og gjenstander på bakken
+    entiteter.ts         Delte typer for systemene
   worldgen.ts            Bygger Nordvik-kartet
   spriteforge.ts         Figurer, fiender, våpen, effekter, pikselfont
   tileforge.ts           Terrengfliser, overgangsfliser og verdensobjekter
@@ -125,6 +135,28 @@ nytt like ofte. Pust- og livsstolpene har `aria-valuenow`, som er det
 `scripts/verify-rpg-kamp.mjs` leser når den driver kampen i en ekte nettleser.
 
 Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blueprint.md`.
+Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
+`docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1 og R2 er bygget.
+
+## Verifisering
+
+Seks skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
+`window.__rpgSteder`), som `boot.ts` bare eksponerer i dev.
+
+| Skript | Hva det dekker |
+|---|---|
+| `verify-rpg-kamp.mjs` | Pust, gard, kostnader, skjoldgang |
+| `verify-rpg-drap.mjs` | At et drap gir XP, og at tiden går normalt etterpå |
+| `verify-rpg-verden.mjs` | At bakken, tåka, kollisjonen og objektene finnes |
+| `verify-rpg-samhandling.mjs` | Hint, E-trykk, dialog, landemerker, utropstegn |
+| `verify-rpg-boss.mjs` | Kunnskapsdysten: riktig svar river skjold, galt gjør ikke |
+| `verify-rpg-reise.mjs` | Stedskifte: bygges på nytt, og ingenting lekker |
+
+To ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100 ms
+(Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir
+aldri sett), og fasit skal leses fra dataene, ikke gjettes - `QuizChallenge`
+stokker alternativene per forsøk.
 
 ## Ting som er lett å ødelegge igjen
 
@@ -212,20 +244,31 @@ noen tegner noe.
   himmeltonen + vignetten legges av React oppå lerretet (`Atmosfare`) - inne i
   scenen ville de blitt skalert av kamerazoomen.
 
-## Legge til en ny sone
+## Legge til et nytt sted
 
-Sonene finnes allerede som data - `quest-bank.json` har spørsmål til alle
-sammen. Å åpne en ny sone er byggearbeid, ikke innholdsarbeid:
+Et sted er ett kart. Scenen kjenner ingen steder ved navn - den bygger det den
+får inn i `init()`, så et nytt sted er en oppføring i registeret, ikke en endring
+i motoren:
 
-1. Sett `spillbar: true` på sonen i `data/zones.ts`, og fyll ut hele `tema`.
-   Alt terreng, tømmer, tak og løvverk leses derfra, så en ny sone får sitt eget
-   utseende uten ny grafikk.
-2. Lag `data/<sone>.ts` med NPC-er, landemerker og håndskrevne bossspørsmål,
-   etter mønsteret i `nordvik.ts`. Husk `stikkord` på alt - det er dem som gjør
-   at svarene finnes i verden.
-3. Lag en kartgenerator etter mønsteret i `worldgen.ts`.
-4. Registrer sonen i `WorldScene` og i `byggNordvikQuester`-tilsvarende funksjon
-   i `engine/quests.ts`.
+1. Lag `data/<sted>.ts` med NPC-er, landemerker og håndskrevne oppdrag, etter
+   mønsteret i `nordvik.ts`. Husk `stikkord` på alt - det er dem som gjør at
+   svarene finnes i verden.
+2. Lag en kartgenerator etter mønsteret i `worldgen.ts`.
+3. Fyll ut hele `tema` (i dag hentet fra `data/zones.ts`). Alt terreng, tømmer,
+   tak og løvverk leses derfra, så stedet får sitt eget utseende uten ny grafikk.
+4. Legg stedet inn i `STEDER` i `data/steder.ts`. Det er hele registreringen:
+   tema, kartbygger, spawnpunkt, folk, landemerker, boss og musikk.
+
+NPC- og landemerke-id-er må være unike på tvers av steder - grensesnittet slår
+dem opp med `finnNpc`/`finnLandemerke` uten å vite hvor eleven står.
+
+### Reise mellom steder
+
+`WorldScene.bestillReise(stedId)` ber om å komme et annet sted. React bygger
+questene for det nye stedet og svarer med `utforReise`, som toner ut og bygger
+scenen på nytt. Kjør `node scripts/verify-rpg-reise.mjs` etter endringer i
+oppbyggingen: Phaser rydder scenen, men ikke det som ligger utenfor den, og
+skriptet måler nettopp det.
 
 ## Innhold som holdes utenfor
 
