@@ -58,6 +58,8 @@ export interface Sarslag {
 
 export interface Prosjektil {
     sprite: Phaser.GameObjects.Image;
+    /** Fysisk skudd: peker dit det flyr, og pulserer ikke. */
+    fysisk: boolean;
     vx: number;
     vy: number;
     skade: number;

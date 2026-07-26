@@ -116,7 +116,7 @@ export interface VaapenDef {
     art: WeaponArt;
 }
 
-export type WeaponArt = 'sverd' | 'oks' | 'stav' | 'spyd' | 'hammer';
+export type WeaponArt = 'sverd' | 'oks' | 'stav' | 'spyd' | 'hammer' | 'bue';
 
 // ─── Kamp: skjold, pust, manøvrer ───────────────────────────────────────────
 // Kampsystemet bygger på skjoldet, ikke sverdet. Se
@@ -134,6 +134,27 @@ export type Manover =
 /** Hvor godt våpenet virker i formasjon. Brukes av skjoldborgen i kap. 4. */
 export type RekkeVerdi = 'god' | 'brukbar' | 'ubrukelig';
 
+/**
+ * Hvordan våpenet leverer angrepet.
+ *
+ * Formen bor på arten, tallene på gjenstanden. Det er dette som gjør at en bue
+ * i 793 og et gevær i 1916 er samme sak: skudd, med andre tall og en annen
+ * ladetid. Før lå svingen som den eneste muligheten, rett inn i `slaa()`.
+ */
+export type Angrepsform =
+    | { form: 'sving' }
+    | {
+          form: 'skudd';
+          /** Millisekunder strengen trekkes før skuddet slippes. */
+          ladeMs: number;
+          /** Piksler i sekundet. Sammen med våpenets rekkevidde gir det levetiden. */
+          fart: number;
+          /** Teksturen skuddet tegnes med. */
+          tekstur: string;
+          /** Går skuddet gjennom det det treffer? */
+          gjennom: boolean;
+      };
+
 /** Kampegenskapene til en våpenart. Ligger på arten, ikke på hver gjenstand. */
 export interface VaapenKamp {
     /** Pust ett slag koster. */
@@ -142,6 +163,7 @@ export interface VaapenKamp {
     iRekke: RekkeVerdi;
     /** Tungt slag = lengre hitstop og dyrere å blokkere. */
     tungt: boolean;
+    angrep: Angrepsform;
 }
 
 /**

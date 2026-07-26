@@ -153,6 +153,7 @@ export const NORDVIK_NPCS: NpcDef[] = [
                 'lerbrynje',
                 'ringbrynje',
                 'tingspyd',
+                'jaktbue',
                 'runestav',
                 'kvernstein',
             ],

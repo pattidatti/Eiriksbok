@@ -610,7 +610,50 @@ export function forgeWeapon(scene: Phaser.Scene, art: WeaponArt, tint: string): 
             p.rect(11, 0, 7, 3, metalLys);
             p.rect(11, 6, 7, 2, ramp(metal, -2));
             break;
+        // Bua tegnes på sitt eget lerret. De andre våpnene er lange og lave,
+        // bua er høy: lemmen står på tvers av skuddretningen, og i en 22x10-rute
+        // ble den en strek med en dupp.
+        case 'bue':
+            forgeBue(scene, key, tre, metal, metalLys);
+            return;
     }
+    p.outline();
+    addCanvas(scene, key, p);
+}
+
+/**
+ * Bua, sett fra siden med skuddretningen mot høyre.
+ *
+ * Lemmen buler forover, bort fra skytteren, strengen står loddrett nærmest
+ * henne, og pila ligger nokket på strengen og peker dit hun sikter. Det er den
+ * silhuetten som gjør at en bue leses som bue på seksten piksler.
+ */
+function forgeBue(
+    scene: Phaser.Scene,
+    key: string,
+    tre: string,
+    metal: string,
+    metalLys: string
+): void {
+    const H = 16;
+    const p = createPainter(16, H);
+    const treLys = ramp(tre, 1);
+    const streng = '#e2dcc4';
+
+    // Lemmen: en bue som buler mot høyre, tynnest ut mot tuppene.
+    for (let y = 1; y < H - 1; y++) {
+        const bul = Math.sin(((y - 1) / (H - 3)) * Math.PI) * 4.6;
+        const x = 4 + Math.round(bul);
+        p.px(x, y, tre);
+        p.px(x + 1, y, treLys);
+    }
+    // Strengen, spent mellom tuppene.
+    for (let y = 1; y < H - 1; y++) p.px(4, y, streng);
+    // Pila på strengen.
+    p.rect(4, 7, 10, 1, tre);
+    p.rect(13, 6, 2, 3, metal);
+    p.px(15, 7, metalLys);
+
     p.outline();
     addCanvas(scene, key, p);
 }
@@ -698,6 +741,19 @@ export function forgeEffects(scene: Phaser.Scene): void {
     const dot = createPainter(4, 4);
     dot.ellipse(2, 2, 2, 2, '#ffffff');
     addCanvas(scene, 'fx-prikk', dot);
+
+    // Pila. Tegnes liggende mot høyre, som alt annet som roteres etter en
+    // vinkel: skaft, spiss og styrefjær.
+    // Lys nok til å ses mot gress: mørkt skaft forsvant helt i marka.
+    const pil = createPainter(13, 5);
+    pil.rect(2, 2, 8, 1, '#d8bd86');
+    pil.rect(10, 1, 2, 3, '#dce4ee');
+    pil.px(12, 2, '#ffffff');
+    pil.px(1, 1, '#e8e0c8');
+    pil.px(1, 3, '#e8e0c8');
+    pil.px(0, 2, '#e8e0c8');
+    pil.outline();
+    addCanvas(scene, 'fx-pil', pil);
 
     // Firkant til «piksel-sprut» ved treff.
     const bit = createPainter(3, 3);

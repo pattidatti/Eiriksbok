@@ -4,7 +4,7 @@
 // som prøvespiller, uten å lese logikk. Blueprintens §5.8 er kilden, og alt her
 // er startverdier å justere *ned* fra.
 
-import type { Manover, SkjoldDef, VaapenKamp, WeaponArt } from '../types';
+import type { Angrepsform, Manover, SkjoldDef, VaapenKamp, WeaponArt } from '../types';
 
 // ─── Skjold ─────────────────────────────────────────────────────────────────
 
@@ -45,16 +45,35 @@ export const START_SKJOLD = 'treningsskjold';
 // Kampegenskapene henger på arten, ikke på hver enkelt gjenstand. Da får et nytt
 // sverd i `items.ts` riktig oppførsel uten at noen må huske å fylle ut fire felt.
 
+/** De fleste våpen svinges. Formen er den samme; tallene kommer fra gjenstanden. */
+const SVING: Angrepsform = { form: 'sving' };
+
 export const VAAPEN_KAMP: Record<WeaponArt, VaapenKamp> = {
     // Sverd var status og formue. Ingen svakhet, og ingen egen manøver - den som
     // har sverd, har allerede fordelen.
-    sverd: { pust: 12, manover: 'skjoldstot', iRekke: 'brukbar', tungt: false },
+    sverd: { pust: 12, manover: 'skjoldstot', iRekke: 'brukbar', tungt: false, angrep: SVING },
     // Skjeggøksa var designet for å kroke skjold. Derfor haket.
-    oks: { pust: 14, manover: 'hak', iRekke: 'ubrukelig', tungt: true },
+    oks: { pust: 14, manover: 'hak', iRekke: 'ubrukelig', tungt: true, angrep: SVING },
     // Det vanlige våpenet. Sterkt i formasjon, svakt alene.
-    spyd: { pust: 11, manover: 'stikk-gjennom', iRekke: 'god', tungt: false },
-    hammer: { pust: 18, manover: 'skjoldstot', iRekke: 'ubrukelig', tungt: true },
-    stav: { pust: 10, manover: 'skjoldstot', iRekke: 'ubrukelig', tungt: false },
+    spyd: { pust: 11, manover: 'stikk-gjennom', iRekke: 'god', tungt: false, angrep: SVING },
+    hammer: { pust: 18, manover: 'skjoldstot', iRekke: 'ubrukelig', tungt: true, angrep: SVING },
+    stav: { pust: 10, manover: 'skjoldstot', iRekke: 'ubrukelig', tungt: false, angrep: SVING },
+    // Bua er billig i pust og farlig på avstand, men den koster tid: strengen
+    // må trekkes, og i de 260 millisekundene står eleven åpen. Den som skyter
+    // mens noe kommer mot henne, blir truffet.
+    bue: {
+        pust: 9,
+        manover: 'skjoldstot',
+        iRekke: 'brukbar',
+        tungt: false,
+        angrep: {
+            form: 'skudd',
+            ladeMs: 260,
+            fart: 320,
+            tekstur: 'fx-pil',
+            gjennom: false,
+        },
+    },
 };
 
 export const MANOVER_NAVN: Record<Manover, string> = {

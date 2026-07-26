@@ -35,6 +35,12 @@ export interface SkuddDef {
     farge?: number;
     fraFiende: boolean;
     piercing?: boolean;
+    /**
+     * Et fysisk skudd: en pil eller et kastespyd. Det peker dit det flyr og
+     * pulserer ikke. Pulsen hører til besvergelsene - en pil som puster ser ut
+     * som en feil.
+     */
+    fysisk?: boolean;
 }
 
 export class Prosjektiler {
@@ -54,6 +60,7 @@ export class Prosjektiler {
     skyt(def: SkuddDef): void {
         const bilde = this.scene.add.image(def.x, def.y, def.tekstur).setDepth(def.y + 5);
         if (def.farge !== undefined) bilde.setTint(def.farge);
+        if (def.fysisk) bilde.setRotation(def.vinkel);
         this.liste.push({
             sprite: bilde,
             vx: Math.cos(def.vinkel) * def.fart,
@@ -62,6 +69,7 @@ export class Prosjektiler {
             levetid: def.levetid,
             fraFiende: def.fraFiende,
             piercing: Boolean(def.piercing),
+            fysisk: Boolean(def.fysisk),
             truffet: new Set(),
         });
     }
@@ -77,7 +85,7 @@ export class Prosjektiler {
             p.sprite.y += p.vy * dt;
             p.sprite.setDepth(p.sprite.y + 5);
             p.levetid -= delta;
-            p.sprite.setScale(1 + Math.sin(this.scene.time.now / 60) * 0.12);
+            if (!p.fysisk) p.sprite.setScale(1 + Math.sin(this.scene.time.now / 60) * 0.12);
 
             const tx = Math.floor(p.sprite.x / TILE);
             const ty = Math.floor(p.sprite.y / TILE);

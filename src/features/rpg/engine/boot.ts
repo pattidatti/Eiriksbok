@@ -54,10 +54,14 @@ export async function startSpill(
     // legger på `?t=` på filer som er endret siden serveren startet - og da
     // ville et prøvested det registrerte være usynlig for spillet.
     if (import.meta.env.DEV) {
-        const { STEDER, STED_BY_ID } = await import('../data/steder');
+        const [{ STEDER, STED_BY_ID }, { useRpgStore }] = await Promise.all([
+            import('../data/steder'),
+            import('../store/useRpgStore'),
+        ]);
         Object.assign(window as unknown as Record<string, unknown>, {
             __rpg: game,
             __rpgSteder: { STEDER, STED_BY_ID },
+            __rpgStore: useRpgStore,
         });
     }
 

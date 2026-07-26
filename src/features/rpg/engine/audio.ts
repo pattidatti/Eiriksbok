@@ -219,6 +219,11 @@ export const sfx = {
         tone(150, 0.2, 'square', 0.16, 60, 0.02);
         noise(0.36, 0.22, 420, 0.1, 90);
     },
+    /** Buestrengen som slippes. Et kort smell, og en tynn susing etter pila. */
+    pil() {
+        tone(230, 0.07, 'triangle', 0.16, 90);
+        noise(0.2, 0.1, 3200, 0.02, 900);
+    },
     /** Staven og alt annet: noe blir slengt av gårde. */
     slengt() {
         noise(0.16, 0.3, 2000, 0, 500);

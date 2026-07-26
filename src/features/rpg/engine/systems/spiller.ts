@@ -30,9 +30,13 @@ import {
     type Positur,
 } from '../spriteforge';
 import type { WorldMap } from '../worldgen';
+import type { Angrepsform, VaapenDef, VaapenKamp } from '../../types';
 import type { Effekter } from './effekter';
 import type { Fiende, Sarslag, Sprite } from './entiteter';
 import type { Prosjektiler } from './prosjektiler';
+
+/** Skuddvarianten av angrepsformen, trukket ut så signaturene blir lesbare. */
+type Skuddform = Extract<Angrepsform, { form: 'skudd' }>;
 
 /** Korteste avstand fra et punkt til et linjestykke - brukt av stråle-besvergelsen. */
 function avstandTilLinje(
@@ -299,6 +303,12 @@ export class Spiller {
 
         forgeHumanoid(this.scene, 'helt', look);
         forgeWeapon(this.scene, art, '#cfd6e0');
+
+        // Figuren må bindes om til den nye teksturen. `addSheet` fjerner den
+        // gamle og lager en fra bunnen, og sprite-en blir stående og peke på
+        // den døde: første `setFrame` etterpå slo i «cutWidth of undefined».
+        // Det skjedde hver gang eleven byttet våpen i sekken.
+        this.sprite.setTexture('helt', heltFrame(this.retning, this.positur, this.posFase));
         this.vapenSprite.setTexture(`vapen-${art}`);
         this.forrigeFrame = -1;
     }
@@ -533,10 +543,74 @@ export class Spiller {
         );
     }
 
+    /**
+     * Grunnangrepet. Hvilken form det tar, er data: en øks svinges, en bue
+     * skytes. Legger noen til et gevær i 1916, er det en ny `Angrepsform` i
+     * `data/vaapen.ts` - ikke en gren til her inne.
+     */
     private slaa() {
-        const store = useRpgStore.getState();
-        const vapen = utrustetVaapen(store);
+        const vapen = utrustetVaapen();
         const vk = vaapenKamp(vapen.art);
+        if (vk.angrep.form === 'skudd') this.skuddAngrep(vapen, vk, vk.angrep);
+        else this.svingAngrep(vapen, vk);
+    }
+
+    /**
+     * Skudd: strengen trekkes, og pila slippes når ladetiden er ute. Den flyr
+     * gjennom det samme prosjektillaget som besvergelsene og fiendenes skudd -
+     * det er derfor treff, terreng og opprydding allerede virker.
+     */
+    private skuddAngrep(vapen: VaapenDef, vk: VaapenKamp, form: Skuddform) {
+        const { sliten } = this.kamp.skyt(vk);
+        const vinkel = this.retningsVinkel();
+
+        this.angrepNedkjoling = vapen.hastighet;
+        this.slagIgjen = form.ladeMs;
+        this.slagVarighet = form.ladeMs;
+
+        // Bua holdes fram mens strengen trekkes. Ingen sving, ingen utfall:
+        // hun står stille og sikter, og det er nettopp det som gjør henne åpen.
+        this.vapenSprite
+            .setVisible(true)
+            .setRotation(vinkel)
+            .setDepth(this.sprite.y + (this.retning === 'opp' ? -2 : 1))
+            .setPosition(this.sprite.x + Math.cos(vinkel) * 6, this.sprite.y - 4);
+        sfx.sus();
+
+        const stats = maksVerdier(useRpgStore.getState());
+        const skade = Math.round(
+            (vapen.skade + stats.styrke * 0.8) * (sliten ? KAMP.slitenSkade : 1)
+        );
+
+        this.scene.time.delayedCall(form.ladeMs, () => {
+            // Scenen kan være revet mens strengen sto spent (et stedskifte),
+            // og da finnes verken sprite eller prosjektillag lenger.
+            if (!this.sprite.active) return;
+            this.vapenSprite.setVisible(false);
+            sfx.pil();
+            this.skudd.skyt({
+                x: this.sprite.x + Math.cos(vinkel) * 8,
+                y: this.sprite.y - 4 + Math.sin(vinkel) * 8,
+                vinkel,
+                fart: form.fart,
+                skade,
+                // Rekkevidden er i piksler, farten i piksler per sekund. Da blir
+                // levetiden akkurat så lang som våpenet rekker.
+                levetid: (vapen.rekkevidde / form.fart) * 1000,
+                tekstur: form.tekstur,
+                fraFiende: false,
+                piercing: form.gjennom,
+                fysisk: true,
+            });
+            if (sliten) {
+                this.efx.flytTekst(this.sprite.x, this.sprite.y - 26, 'Slapp streng', '#9fb0c8');
+            }
+        });
+    }
+
+    /** Svinget: buen, treffsektoren og komboen. Grunnformen for alt håndvåpen. */
+    private svingAngrep(vapen: VaapenDef, vk: VaapenKamp) {
+        const store = useRpgStore.getState();
         const rekkevidde = vapen.rekkevidde;
         const bue = (vapen.bue * Math.PI) / 180;
         const basisHastighet = vapen.hastighet;

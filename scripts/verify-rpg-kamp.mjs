@@ -180,43 +180,89 @@ await page.keyboard.up('Shift');
 // men som ingen sendte før R3. Å vente på at en boss faktisk slår sitt tredje
 // slag er ikke noe en test kan love, så slaget leveres rett inn i forsvaret med
 // en ekte fiende som angriper. Alt bak inngangen er den samme koden.
-const sarslag = async (flagg) => {
+//
+// Brettet må ryddes først. Med levende fiender rundt seg blir eleven støtt
+// mellom prøvene, og et støt holder garden nede i 260 ms - da måler prøven en
+// elev uten skjold oppe i stedet for det den skulle måle.
+// Skjoldet settes i stand først. Fiendene har fått slå på det i et halvt minutt
+// allerede, og et oppbrukt skjold betyr at garden ikke kan reises i det hele
+// tatt (`kamp.ts: harSkjold`) - da feiler alle tre prøvene av feil grunn.
+await page.evaluate(() => {
+    const scene = window.__rpg.scene.getScene('verden');
+    for (const f of scene.fiendeSystem.alle()) {
+        if (f.def.kind === 'boss') continue;
+        f.sprite.setPosition(-9999, -9999);
+        f.tilstand = 'sover';
+    }
+    scene.helt.kamp.hvil();
+    // Livet fylles, og en eventuell lås slippes. Eleven har slåss mot ekte
+    // fiender i et halvt minutt før dette, og rekker hun å dø, står spillet
+    // låst bak dødsskjermen - da reises garden aldri, og alle tre prøvene
+    // feiler uten at det er noe galt med særslagene.
+    window.__rpgStore.getState().settHp(9999);
+    scene.settLaast(false);
+});
+
+/**
+ * Leverer ett slag inn i forsvaret, og venter på riktig øyeblikk *inne i*
+ * nettleseren. Poller vi fra Node, ligger det to rundturer mellom «garden står»
+ * og slaget - og i det gapet rakk paradevinduet å åpne seg igjen, så treffet
+ * ble en parade i stedet for en blokk. Paraden hakker ikke skjoldet, og prøven
+ * målte da noe annet enn den skulle.
+ */
+const sarslag = async (flagg, medGard) => {
+    await page.keyboard.up('Shift');
     await ventFullPust();
-    return page.evaluate((flagg) => {
-        const scene = window.__rpg.scene.getScene('verden');
-        const helt = scene.helt;
-        const fiende = scene.fiendeSystem.alle().find((f) => !f.dodd);
-        if (!fiende) return { feil: 'ingen levende fiende' };
-        // Rett foran henne, i den retningen hun vender - ellers dekker ikke
-        // skjoldet, og prøven sier ingenting om særslaget.
-        const vinkel = { ned: Math.PI / 2, opp: -Math.PI / 2, hoyre: 0, venstre: Math.PI }[
-            helt.retning
-        ];
-        fiende.sprite.setPosition(
-            helt.sprite.x + Math.cos(vinkel) * 18,
-            helt.sprite.y + Math.sin(vinkel) * 18
-        );
-        const for_ = helt.kampSnapshot();
-        const gikkGjennom = helt.nerkampTreff(fiende, flagg);
-        const etter = helt.kampSnapshot();
-        return {
-            gard: for_.gardOppe,
-            gikkGjennom,
-            skjoldFor: for_.skjoldHelse,
-            skjoldEtter: etter.skjoldHelse,
-        };
-    }, flagg);
+    if (medGard) await page.keyboard.down('Shift');
+    const ut = await page.evaluate(
+        async ([flagg, medGard]) => {
+            const scene = window.__rpg.scene.getScene('verden');
+            const helt = scene.helt;
+            const vent = (ms) => new Promise((r) => setTimeout(r, ms));
+
+            // Garden må stå, og paradevinduet må være over.
+            let klar = !medGard;
+            for (let i = 0; i < 60 && !klar; i++) {
+                const s = helt.kampSnapshot();
+                klar = s.gardOppe && !s.nyligReist;
+                if (!klar) await vent(50);
+            }
+
+            const fiende = scene.fiendeSystem.alle().find((f) => f.def.kind !== 'boss' && !f.dodd);
+            if (!fiende) return { feil: 'ingen levende fiende' };
+            // Rett foran henne, i den retningen hun vender - ellers dekker ikke
+            // skjoldet, og prøven sier ingenting om særslaget.
+            const vinkel = { ned: Math.PI / 2, opp: -Math.PI / 2, hoyre: 0, venstre: Math.PI }[
+                helt.retning
+            ];
+            fiende.sprite.setPosition(
+                helt.sprite.x + Math.cos(vinkel) * 18,
+                helt.sprite.y + Math.sin(vinkel) * 18
+            );
+            const for_ = helt.kampSnapshot();
+            const gikkGjennom = helt.nerkampTreff(fiende, flagg);
+            const etter = helt.kampSnapshot();
+            fiende.sprite.setPosition(-9999, -9999);
+            fiende.tilstand = 'sover';
+            return {
+                klar,
+                gard: for_.gardOppe,
+                gikkGjennom,
+                skjoldFor: for_.skjoldHelse,
+                skjoldEtter: etter.skjoldHelse,
+            };
+        },
+        [flagg, medGard]
+    );
+    await page.keyboard.up('Shift');
+    return ut;
 };
 
-// Garden opp, og hold den der gjennom begge prøvene.
-await page.keyboard.down('Shift');
-await page.waitForTimeout(400);
-
-const vanlig = await sarslag({});
+const vanlig = await sarslag({}, true);
 sjekk(
     'vanlig slag tas av garden',
     vanlig.gard === true && vanlig.gikkGjennom === false,
-    `gard=${vanlig.gard}, gjennom=${vanlig.gikkGjennom}`
+    `klar=${vanlig.klar}, gard=${vanlig.gard}, gjennom=${vanlig.gikkGjennom}`
 );
 sjekk(
     'blokken hakker skjoldet',
@@ -224,22 +270,21 @@ sjekk(
     `${vanlig.skjoldFor} -> ${vanlig.skjoldEtter}`
 );
 
-const hakket = await sarslag({ hak: true });
+const hakket = await sarslag({ hak: true }, true);
 sjekk(
     'hak river hele skjoldet',
     hakket.gard === true && hakket.skjoldEtter === 0,
-    `gard=${hakket.gard}, ${hakket.skjoldFor} -> ${hakket.skjoldEtter}`
+    `klar=${hakket.klar}, gard=${hakket.gard}, ${hakket.skjoldFor} -> ${hakket.skjoldEtter}`
 );
 
 // Skjoldet er borte nå, så garden kan ikke stå. Vi sjekker likevel at et
 // ublokkerbart slag går gjennom - det er flagget som skal avgjøre det.
-const ublokkerbart = await sarslag({ ublokkerbart: true });
+const ublokkerbart = await sarslag({ ublokkerbart: true }, false);
 sjekk(
     'ublokkerbart slag går gjennom',
     ublokkerbart.gikkGjennom === true,
     `gjennom=${ublokkerbart.gikkGjennom}`
 );
-await page.keyboard.up('Shift');
 
 sjekk('ingen konsollfeil', konsollfeil.length === 0, konsollfeil.slice(0, 2).join(' | '));
 
