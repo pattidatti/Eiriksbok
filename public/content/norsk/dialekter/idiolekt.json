@@ -1,0 +1,263 @@
+{
+    "id": "idiolekt",
+    "title": "Idiolekt: Ingen snakker helt som deg",
+    "layout": "rich",
+    "subject": "norsk",
+    "category": "Talemål",
+    "year": "Hele livet ditt",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "En idiolekt er måten ett enkelt menneske snakker på. Dialekt og sosiolekt handler om grupper, idiolekten handler om deg.",
+        "Idiolekten din er formet av hele livshistorien din: hvor du vokste opp, hvem du har vært sammen med, og hva du har lært.",
+        "Språkforskere kan bruke idiolekten til å finne ut hvem som har skrevet en tekst. Det er kombinasjonen av flere trekk som avslører en person, ikke ett enkelt ord."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Rundt hundre brev lå på bordet hos politiet. Alle så ut til å komme fra ulike kontorer og saksbehandlere, og alle hadde lurt penger ut av folk. Men da en språkforsker leste dem, oppdaget hun noe merkelig: brevene lignet for mye på hverandre. Samme slags ordvalg. Samme slags stavefeil. Samme måte å bygge setninger på. Det var ikke hundre personer som hadde skrevet dem. Det var én. Mannen het Carl Danhammer, og språkanalysen ble avgjørende da han ble dømt til ett år og åtte måneder i fengsel (Tiililä, 2015)."
+        },
+        {
+            "type": "text",
+            "content": "Hvordan er det mulig? Fordi språket ditt er personlig. Ikke bare litt personlig, men så personlig at det kan brukes til å kjenne deg igjen. Fagordet for din helt egen måte å snakke og skrive på er idiolekt."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En språkforsker som studerer en bunke brev på et skrivebord",
+            "caption": "Hundre brev, én skribent. Språket i tekstene lignet for mye på hverandre til at det kunne være tilfeldig."
+        },
+        {
+            "type": "header",
+            "text": "Hva er en idiolekt?"
+        },
+        {
+            "type": "text",
+            "content": "En idiolekt er måten ett enkelt menneske snakker på (Neteland, 2025). Det er der ordet skiller seg fra de andre lekt-ordene du kanskje kjenner. En [dialekt](/norsk/dialekter/hva-er-dialekter) er talemålet i et område. En [sosiolekt](/norsk/dialekter/sosiolekt) er talemålet til en sosial gruppe. En [etnolekt](/norsk/dialekter/etnolekt) er talemålet til en gruppe med felles bakgrunn. Alle disse handler om grupper, og de viser at talemål varierer med mer enn bare geografi: også med hvilken identitet du har og hvilket miljø du hører til (Lund, 2021). Idiolekten handler om én person: deg."
+        },
+        {
+            "type": "text",
+            "content": "Og idiolekten er ikke bare noen få favorittord. Den omfatter hele språksystemet ditt: ordforrådet, lydene du lager, måten du bøyer ord på, hvordan du bygger setninger, og alt annet i språkbruken din (Neteland, 2025). Sier du «boka» eller «boken»? Legger du inn «lissom» når du tenker? Skriver du «hei» eller «heisann» i meldinger? Hvert av disse valgene deler du med mange andre. Men alle sammen, i akkurat din kombinasjon, deler du med nesten ingen."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Slik henger lekt-ordene sammen",
+                "icon": "info",
+                "items": [
+                    "Geolekt eller dialekt: talemålet i et geografisk område, for eksempel bergensk.",
+                    "Sosiolekt: talemålet til en sosial gruppe, for eksempel østkantmål i Oslo.",
+                    "Etnolekt: talemålet til en gruppe med felles språklig eller etnisk bakgrunn.",
+                    "Idiolekt: talemålet til ett enkelt menneske. Det minste nivået av alle."
+                ]
+            }
+        },
+        {
+            "type": "text",
+            "content": "Under kan du bygge din egen språkprofil. Velg ordet du faktisk bruker i hver linje, og følg med på tallet som vokser."
+        },
+        {
+            "type": "component",
+            "name": "IdiolektFingeravtrykk",
+            "props": {
+                "title": "Ditt språklige fingeravtrykk"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvor kommer idiolekten din fra?"
+        },
+        {
+            "type": "text",
+            "content": "Idiolekten din er ikke tilfeldig. Den er formet av livshistorien din: hvor du ble født, hvilken sosial bakgrunn familien din har, og hvor mye skolegang du har fått (Neteland, 2025). Med andre ord er språket ditt en slags oppsummering av alle stedene du har vært og alle du har snakket med."
+        },
+        {
+            "type": "text",
+            "content": "Grunnmuren legges tidlig. De fleste barn sier sitt første ord rundt ettårsdagen, og all grunnleggende grammatikk er på plass allerede ved femårsalderen (Busterud, 2019). Men barn lærer ikke språk av å bli utsatt for lyd. De må høre språk i ekte samtaler med mennesker. Å se på TV alene er ikke nok (Busterud, 2019). Det er derfor de menneskene du vokste opp med, har satt så tydelige spor i språket ditt."
+        },
+        {
+            "type": "text",
+            "content": "Så fortsetter det hele livet. Idiolekten står ikke stille: den endrer seg etter hvert som du lærer nye ord eller flytter til et nytt sted (Neteland, 2025). Begynner du på en ny skole, får du nye ord. Flytter du til en annen landsdel, sniker det seg inn nye [målmerker](/norsk/dialekter/malmerker). Får du en jobb, lærer du et fagspråk. Idiolekten din i dag er ikke helt den samme som for tre år siden, og den vil ikke være den samme om ti år."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "En ungdom omgitt av snakkebobler fra familie venner og skole",
+            "caption": "Hvert menneske du snakker med, legger igjen noe i språket ditt. Til sammen blir det idiolekten din."
+        },
+        {
+            "type": "header",
+            "text": "Når språket blir et bevis"
+        },
+        {
+            "type": "text",
+            "content": "At vi snakker og skriver forskjellig, er ikke bare morsomt å vite. Det brukes i alvorlige saker. Fagfeltet heter rettslingvistikk, og det handler om å bruke språkkunnskap i rettssystemet og i etterforskning (Fløgstad, 2025). De vanligste bruksområdene er saker om opphavsrett, saker der man må finne ut hvem som har skrevet en tekst, og de siste årene også analyse av chat-samtaler. I Norge har Universitetet i Sørøst-Norge tilbudt landets første studieprogram i rettslingvistikk siden 2023 (Fløgstad, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv i spillet under. Du får tre språktrekk og et torg fullt av folk som prater. Bare én person bruker alle tre."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "stemmesporet-3d"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som skjer når du spiller. Ett enkelt trekk hjelper deg nesten ikke. Mange sier «æ». Mange sier «ikkje». Det er først når flere trekk møtes i samme munn at du kan peke ut én person. Dette er akkurat poenget i ekte språkgransking også: beviskraften øker med antallet språklige likheter på ulike nivåer i teksten (Tiililä, 2015)."
+        },
+        {
+            "type": "header",
+            "text": "Du har en idiolekt i skrift også"
+        },
+        {
+            "type": "text",
+            "content": "Idiolekten din stopper ikke når du legger fra deg stemmen. Den følger med inn i tastaturet. Setter du punktum på slutten av en melding, eller lar du den henge? Skriver du «hahaha» eller «lol»? Bruker du store bokstaver i starten av en setning når du chatter? Hvor mange emojier tåler du i én melding? Dette er små vaner, og de fleste av dem har du aldri bestemt deg for. Nettopp derfor er de vanskelige å skjule. Det er også grunnen til at analyse av chat-samtaler har blitt et av bruksområdene i rettslingvistikk de siste årene (Fløgstad, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Prøv en liten test: se på de fem siste meldingene du har sendt. Finner du et mønster som går igjen i alle fem? Kanskje starter du alltid med samme ord. Kanskje har du en fast måte å avslutte på. Det du finner, er biter av din egen skriftlige idiolekt."
+        },
+        {
+            "type": "header",
+            "text": "Hvor sikkert er det?"
+        },
+        {
+            "type": "text",
+            "content": "Ikke helt sikkert, og det er viktig. Et fingeravtrykk av hud gir enten treff eller ikke treff. Et språklig fingeravtrykk er mer usikkert. Språkforskere som gransker tekster, bruker derfor en skala med sju trinn, fra «det er svært sannsynlig at det er samme skribent» til «det er svært sannsynlig at det er ulike skribenter» (Tiililä, 2015). Korte tekster og lite variert språk gjør det vanskelig å konkludere. Skriver du bare «ok» i en melding, er det ingenting å analysere."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Ett ord peker ingen steder. Ti småting som peker samme vei, peker på én person.",
+                "author": "Om idiolekt og språkgransking"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Fra tusenvis av idiolekter til ett språk"
+        },
+        {
+            "type": "text",
+            "content": "Til slutt en tanke som snur hele saken på hodet. Hvis alle har sin egen idiolekt, hvordan kan vi da si at det finnes noe som heter norsk i det hele tatt? Svaret er at gruppene bygges nedenfra. Det er fellestrekkene i alle enkeltmenneskers idiolekter som til sammen utgjør en dialekt eller et språk (Neteland, 2025). Norsk er ikke en ferdig ting som ligger over oss. Norsk er summen av alt vi som snakker det, har til felles."
+        },
+        {
+            "type": "text",
+            "content": "Det betyr også at språket forandrer seg gjennom idiolekter. Når mange nok enkeltpersoner begynner å si et ord på en ny måte, blir den nye måten etter hvert vanlig i hele gruppen. Vil du se hvordan det skjer i praksis, kan du lese om [hvordan et dialekttrekk sprer seg](/norsk/dialekter/spredning-av-dialekttrekk)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Mange ulike mennesker på et torg med snakkebobler over hodene",
+            "caption": "Hver av oss har sin egen idiolekt. Det vi har til felles, kaller vi norsk."
+        },
+        {
+            "type": "text",
+            "content": "Så neste gang noen sier at du har en rar måte å si et ord på, kan du svare at det ikke er rart. Det er idiolekten din. Den er bygd av alle stedene du har bodd, alle du har snakket med, og alt du har lest og sett. Ingen andre har akkurat den samme."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Forklar med egne ord hva en idiolekt er.",
+                    "Hva er forskjellen på en idiolekt og en dialekt?",
+                    "Nevn minst tre deler av språket som inngår i idiolekten din.",
+                    "Hva er rettslingvistikk, og hva brukes det til?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at idiolekten er formet av livshistorien din. Velg tre ting fra ditt eget liv som du tror har satt spor i språket ditt, og forklar hvordan.",
+                    "Hvorfor er ett enkelt språktrekk sjelden nok til å peke ut hvem som har skrevet en tekst? Bruk det du erfarte i spillet.",
+                    "Språkforskere bruker en skala med sju trinn i stedet for å svare ja eller nei. Hvorfor tror du det er viktig i en rettssak?",
+                    "Artikkelen sier at norsk er summen av det alle idiolektene har til felles. Hva betyr det for påstanden om at noen snakker «feil» norsk?"
+                ],
+                "gaaVidere": [
+                    "Ta opp deg selv mens du snakker fritt i to minutter. Hør gjennom opptaket og skriv ned fem trekk som er typiske for akkurat deg.",
+                    "Sammenlign de fem siste meldingene du har sendt med de fem siste en venn har sendt deg. Finn tre konkrete forskjeller i ordvalg, tegnsetting eller emojibruk.",
+                    "Skriv fem til seks setninger om dette: Bør politiet få lov til å bruke språkanalyse som bevis i en rettssak? Bruk minst ett argument fra artikkelen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er en idiolekt?",
+                        "options": [
+                            "Talemålet i et bestemt geografisk område",
+                            "Måten ett enkelt menneske snakker på",
+                            "Et eget språk som bare finnes i Norge",
+                            "En regel for hvordan man skriver nynorsk"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "En idiolekt er måten ett enkelt menneske snakker på, i motsetning til dialekt og sosiolekt, som handler om grupper."
+                    },
+                    {
+                        "question": "Hva inngår i idiolekten din?",
+                        "options": [
+                            "Bare favorittordene dine",
+                            "Bare uttalen din",
+                            "Hele språksystemet: ordforråd, lyder, bøyning og setningsbygging",
+                            "Bare det du skriver, ikke det du sier"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Idiolekten omfatter hele språksystemet til et menneske: ordforråd, lydsystem, bøyningssystem, setningsoppbygging og annen språkbruk."
+                    },
+                    {
+                        "question": "Hva former idiolekten din?",
+                        "options": [
+                            "Livshistorien din: hvor du vokste opp, bakgrunnen din og utdanningen din",
+                            "Bare hvilken skole du går på nå",
+                            "Ingenting, den er medfødt og fast",
+                            "Bare hvilke bøker du leser"
+                        ],
+                        "correctIndex": 0,
+                        "explanation": "Idiolekten formes av hele livshistorien, og den fortsetter å endre seg når du lærer nye ord eller flytter."
+                    },
+                    {
+                        "question": "Hva er rettslingvistikk?",
+                        "options": [
+                            "Læren om rettskriving i skolen",
+                            "Bruk av språkkunnskap i rettssystemet og i etterforskning",
+                            "En egen norsk dialekt",
+                            "Et fag om hvordan domstoler er bygget opp"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Rettslingvistikk bruker språkkunnskap i rettssystemet, blant annet til å finne ut hvem som har skrevet en tekst."
+                    },
+                    {
+                        "question": "Hvorfor er ett enkelt språktrekk sjelden nok til å identifisere en skribent?",
+                        "options": [
+                            "Fordi språktrekk ikke kan måles",
+                            "Fordi mange mennesker deler det samme enkelttrekket",
+                            "Fordi politiet ikke får lese tekster",
+                            "Fordi alle nordmenn snakker helt likt"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Ett trekk deler mange. Beviskraften øker først når flere språklige likheter på ulike nivåer peker samme vei."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Busterud, G. (2019). *Førstespråkstilegnelse*. Store norske leksikon. Hentet 26.07.2026 fra [https://snl.no/førstespråkstilegnelse](https://snl.no/f%C3%B8rstespr%C3%A5kstilegnelse)",
+                    "Fløgstad, G. N. (2025). *Rettslingvistikk*. Store norske leksikon. Hentet 26.07.2026 fra [https://snl.no/rettslingvistikk](https://snl.no/rettslingvistikk)",
+                    "Lund, C. (2021). *Hva er dialekt?*. NDLA. Hentet 26.07.2026 fra [https://ndla.no/nb/r/norsk-sf-vg3/hva-er-dialekt/d8a9ebb30b](https://ndla.no/nb/r/norsk-sf-vg3/hva-er-dialekt/d8a9ebb30b)",
+                    "Neteland, R. (2025). *Idiolekt*. Store norske leksikon. Hentet 26.07.2026 fra [https://snl.no/idiolekt](https://snl.no/idiolekt)",
+                    "Tiililä, U. (2015). *Verbala fingeravtryck: lingvistisk sakkunskap i brottsutredningar*. Språkbruk, Institutet för de inhemska språken. Hentet 26.07.2026 fra [https://sprakbruk.fi/artiklar/verbala-fingeravtryck-lingvistisk-sakkunskap-i-brottsutredningar/](https://sprakbruk.fi/artiklar/verbala-fingeravtryck-lingvistisk-sakkunskap-i-brottsutredningar/)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

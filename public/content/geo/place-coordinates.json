@@ -1079,6 +1079,14 @@
       "count": 9
     },
     {
+      "tag": "dialekt",
+      "count": 9
+    },
+    {
+      "tag": "talemål",
+      "count": 9
+    },
+    {
       "tag": "analyse",
       "count": 9
     },
@@ -1120,14 +1128,6 @@
     },
     {
       "tag": "helse",
-      "count": 8
-    },
-    {
-      "tag": "dialekt",
-      "count": 8
-    },
-    {
-      "tag": "talemål",
       "count": 8
     },
     {
@@ -1271,6 +1271,10 @@
       "count": 6
     },
     {
+      "tag": "språk og identitet",
+      "count": 6
+    },
+    {
       "tag": "bolivar",
       "count": 6
     },
@@ -1348,10 +1352,6 @@
     },
     {
       "tag": "natur",
-      "count": 5
-    },
-    {
-      "tag": "språk og identitet",
       "count": 5
     },
     {
@@ -3316,6 +3316,14 @@
     },
     {
       "tag": "hansaforbundet",
+      "count": 1
+    },
+    {
+      "tag": "idiolekt",
+      "count": 1
+    },
+    {
+      "tag": "rettslingvistikk",
       "count": 1
     },
     {
