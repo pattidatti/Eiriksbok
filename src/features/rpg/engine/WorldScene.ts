@@ -25,7 +25,6 @@ import { KampFx } from './kampfx';
 import { numToHex } from './pixels';
 import {
     FIG_ORIGIN_Y,
-    FIENDE_RAMMER,
     POSITUR_LENGDE,
     SKJOLD_RAMMER,
     TILE,
@@ -43,6 +42,7 @@ import {
 import { forgeProps, forgeTiles } from './tileforge';
 import { Effekter } from './systems/effekter';
 import type { Fiende, Sprite } from './systems/entiteter';
+import { Fiender } from './systems/fiender';
 import { Interaksjon } from './systems/interaksjon';
 import { Loot } from './systems/loot';
 import { Prosjektiler } from './systems/prosjektiler';
@@ -98,7 +98,7 @@ export class WorldScene extends Phaser.Scene {
     private slagIgjen = 0;
     private slagVarighet = 400;
 
-    private fiender: Fiende[] = [];
+    private fiendeSystem!: Fiender;
     /** Alt som flyr: piler, kastespyd, besvergelser. */
     private skudd!: Prosjektiler;
     private samhandling!: Interaksjon;
@@ -140,12 +140,6 @@ export class WorldScene extends Phaser.Scene {
 
     private quester: QuestDef[] = [];
     private laast = false;
-    private bossVakt = false;
-    /** Brølet skal komme én gang, ikke hver gang eleven lokker bossen ut og inn. */
-    private bossVekket = false;
-    private boss: Fiende | null = null;
-    private maaRyddeFiender = false;
-    private spawnTimer = 0;
     private avmeldinger: (() => void)[] = [];
     /** Styrestikke på skjerm (nettbrett). Settes fra React over broen. */
     private touchAkse = { x: 0, y: 0 };
@@ -182,10 +176,27 @@ export class WorldScene extends Phaser.Scene {
         this.lootSystem = new Loot(this, this.efx, () => this.spiller);
         this.skudd = new Prosjektiler(this, this.efx, this.kart, {
             spiller: () => this.spiller,
-            fiender: () => this.fiender,
+            fiender: () => this.fiendeSystem.alle(),
             skadSpiller: (skade) => this.skadSpiller(skade),
-            skadFiende: (f, skade, kritisk, vinkel) => this.skadFiende(f, skade, kritisk, vinkel),
+            skadFiende: (f, skade, kritisk, vinkel) =>
+                this.fiendeSystem.skad(f, skade, kritisk, vinkel),
         });
+        this.fiendeSystem = new Fiender(
+            this,
+            this.kart,
+            this.efx,
+            this.fx,
+            this.lootSystem,
+            this.skudd,
+            ENEMY_BY_ID['den-store-glemselen'],
+            NORDVIK_BOSS_QUESTIONS.length,
+            {
+                spiller: () => this.spiller,
+                nerkampTreff: (fiende) => this.nerkampTreff(fiende),
+                hitstop: (ms) => this.hitstop(ms),
+                laas: (pa) => this.settLaast(pa),
+            }
+        );
         this.samhandling = new Interaksjon(this, NORDVIK_NPCS, NORDVIK_LANDMARKS, {
             spiller: () => this.spiller,
             laas: (pa) => this.settLaast(pa),
@@ -196,7 +207,7 @@ export class WorldScene extends Phaser.Scene {
         this.verden.byggProps();
         this.byggSpiller();
         this.samhandling.bygg();
-        this.byggBoss();
+        this.fiendeSystem.byggBoss();
         this.verden.byggAtmosfare(NORDVIK_LANDMARKS);
         this.settOppInput();
         this.settOppKamera();
@@ -351,37 +362,6 @@ export class WorldScene extends Phaser.Scene {
         }
     }
 
-    private byggBoss() {
-        const def = ENEMY_BY_ID['den-store-glemselen'];
-        const alleredeFelt = useRpgStore.getState().bosser.includes(def.id);
-        if (alleredeFelt) return;
-
-        const arena = this.kart.bossArena;
-        const sprite = this.physics.add.sprite(arena.x, arena.y, `fiende-${def.id}`, 0);
-        sprite.setOrigin(0.5, 0.85).setDepth(sprite.y);
-        sprite.body!.setSize(24, 16);
-        sprite.setImmovable(false);
-
-        this.boss = {
-            sprite,
-            def,
-            hp: def.hp,
-            maksHp: def.hp,
-            tilstand: 'sover',
-            timer: 0,
-            frame: 0,
-            frameTimer: 0,
-            skjold: NORDVIK_BOSS_QUESTIONS.length,
-            dodd: false,
-            lemlestet: false,
-            collidere: [this.physics.add.collider(sprite, this.data.get('vegger'))],
-            stolpe: null,
-            stolpeTid: 0,
-            onsketTint: null,
-        };
-        this.fiender.push(this.boss);
-    }
-
     private settOppKamera() {
         const cam = this.cameras.main;
         cam.setBounds(0, 0, this.kart.bredde * TILE, this.kart.hoyde * TILE);
@@ -446,7 +426,7 @@ export class WorldScene extends Phaser.Scene {
             this.physics.resume();
             // Bossquizen kan ha blitt lukket med Esc eller avbrutt av at eleven
             // døde. Uten dette blir bossen stående med skjoldene sine for alltid.
-            this.bossVakt = false;
+            this.fiendeSystem.settBossVakt(false);
         }
     }
 
@@ -479,10 +459,10 @@ export class WorldScene extends Phaser.Scene {
             }),
             tilSpill.on('bossSvar', ({ riktig }) => {
                 this.settLaast(false);
-                if (!this.boss) return;
+                if (!this.fiendeSystem.harBoss()) return;
                 if (riktig) {
                     sfx.riktig();
-                    this.boss.skjold -= 1;
+                    this.fiendeSystem.senkBossSkjold();
                     useRpgStore.getState().varsle('Et skjold brister!', 'bra');
                     this.cameras.main.flash(220, 255, 240, 180);
                     this.efx.lysglimt(this.spiller.x, this.spiller.y);
@@ -560,11 +540,11 @@ export class WorldScene extends Phaser.Scene {
                 this.padKant(this.gamepad ?? this.input.gamepad?.pad1 ?? null, 'Y') ||
                 this.touchTrykk.has('bruk')
         );
-        this.oppdaterFiender(dt);
+        this.fiendeSystem.oppdater(dt);
         this.skudd.oppdater(dt);
         this.lootSystem.oppdater(dt);
         this.oppdaterDybde();
-        this.oppdaterSpawn(dt);
+        this.fiendeSystem.oppdaterSpawn(dt);
         this.verden.oppdaterAtmosfare(dt);
         this.oppdaterKompass(dt);
         // HUD-en og hjerteslaget skal gå i vanlig tid, ikke i saktefilm.
@@ -593,17 +573,19 @@ export class WorldScene extends Phaser.Scene {
         // settOppKamera). Vi strammer i stedet dødsonen: kameraet klistrer seg
         // til eleven i kamp og slipper henne løs igjen etterpå. Samme følelse,
         // uten å ofre skarpheten.
-        const iKampNa = this.fiender.some(
-            (f) =>
-                !f.dodd &&
-                f.tilstand !== 'sover' &&
-                Phaser.Math.Distance.Between(
-                    f.sprite.x,
-                    f.sprite.y,
-                    this.spiller.x,
-                    this.spiller.y
-                ) < 220
-        );
+        const iKampNa = this.fiendeSystem
+            .alle()
+            .some(
+                (f) =>
+                    !f.dodd &&
+                    f.tilstand !== 'sover' &&
+                    Phaser.Math.Distance.Between(
+                        f.sprite.x,
+                        f.sprite.y,
+                        this.spiller.x,
+                        this.spiller.y
+                    ) < 220
+            );
         if (iKampNa !== this.iKamp) {
             this.iKamp = iKampNa;
             this.cameras.main.setDeadzone(iKampNa ? 14 : 40, iKampNa ? 10 : 30);
@@ -910,7 +892,7 @@ export class WorldScene extends Phaser.Scene {
         const grunnskade =
             ((vapen?.skade ?? 8) + stats.styrke * (basisHastighet / 400)) * sving.skadeFaktor;
         let traff = false;
-        for (const fiende of this.fiender) {
+        for (const fiende of this.fiendeSystem.alle()) {
             if (fiende.dodd) continue;
             const dx = fiende.sprite.x - this.spiller.x;
             const dy = fiende.sprite.y - 4 - (this.spiller.y - 4);
@@ -924,7 +906,7 @@ export class WorldScene extends Phaser.Scene {
                 grunnskade * (kritisk ? 2 : 1) * Phaser.Math.FloatBetween(0.9, 1.15)
             );
             // Tredje slag i komboen kaster dobbelt så hardt.
-            this.skadFiende(fiende, skade, kritisk, vinkelTil, sving.trinn === 3 ? 2 : 1);
+            this.fiendeSystem.skad(fiende, skade, kritisk, vinkelTil, sving.trinn === 3 ? 2 : 1);
             traff = true;
         }
 
@@ -969,7 +951,7 @@ export class WorldScene extends Phaser.Scene {
 
         const stats = maksVerdier(store);
         let traff = false;
-        for (const fiende of this.fiender) {
+        for (const fiende of this.fiendeSystem.alle()) {
             if (fiende.dodd) continue;
             const dx = fiende.sprite.x - this.spiller.x;
             const dy = fiende.sprite.y - 4 - (this.spiller.y - 4);
@@ -984,7 +966,7 @@ export class WorldScene extends Phaser.Scene {
                 vk.manover === 'skjoldstot'
                     ? Math.max(2, Math.round(stats.styrke * 0.6))
                     : Math.round(((vapen?.skade ?? 8) + stats.styrke) * 1.25);
-            this.skadFiende(
+            this.fiendeSystem.skad(
                 fiende,
                 skade,
                 false,
@@ -1037,167 +1019,101 @@ export class WorldScene extends Phaser.Scene {
             .setDepth(this.retning === 'opp' ? this.spiller.y - 3 : this.spiller.y + 3);
     }
 
-    /** Fargen fienden skal ha akkurat nå, uten at treff og varsel slår hverandre ut. */
-    private settFiendeTint(fiende: Fiende) {
-        if (fiende.onsketTint === null) fiende.sprite.clearTint();
-        else fiende.sprite.setTint(fiende.onsketTint);
-    }
-
-    private skadFiende(
-        fiende: Fiende,
-        skade: number,
-        kritisk: boolean,
-        vinkel: number,
-        kraftFaktor = 1
-    ) {
-        // Bossen har skjold som bare kunnskap river ned.
-        if (fiende.def.kind === 'boss' && fiende.skjold > 0) {
-            this.efx.flytTekst(fiende.sprite.x, fiende.sprite.y - 24, 'Beskyttet!', '#9fb0c8');
-            this.cameras.main.shake(60, 0.002);
-            sfx.skjold();
-            if (!this.bossVakt) this.utfordreBoss();
-            return;
-        }
-
-        fiende.hp -= skade;
-        sfx[kritisk ? 'kritisk' : 'treff']();
-        this.fx.klask(fiende.sprite, kritisk ? 0.24 : 0.15);
-        this.fx.vipp(fiende.sprite, kritisk ? 12 : 7);
-        this.fx.gyt(
-            fiende.sprite.x,
-            fiende.sprite.y - 4,
-            fiende.def.farge,
-            kritisk ? 7 : 4,
-            vinkel
-        );
-        if (kritisk) this.fx.nedslag(fiende.sprite.x, fiende.sprite.y - 4, 1.2);
-
-        // Lemlestelse: første gang en fiende går under halvt liv, slås en bit av
-        // den - og den slåss videre uten. Det er ikke et nytt tall å holde styr
-        // på, det er at eleven ser at motstanden er slitt ned.
-        if (!fiende.lemlestet && fiende.hp > 0 && fiende.hp < fiende.maksHp * 0.5) {
-            fiende.lemlestet = true;
-            sfx.lemlestelse();
-            this.fx.lemlest(fiende.sprite.x, fiende.sprite.y - 4, fiende.def.id, 2, vinkel, true);
-            this.fx.gyt(fiende.sprite.x, fiende.sprite.y - 4, fiende.def.farge, 8, vinkel, 1.2);
-        }
-        this.efx.flytTekst(
-            fiende.sprite.x + Phaser.Math.Between(-4, 4),
-            fiende.sprite.y - 20,
-            kritisk ? `${skade}!` : `${skade}`,
-            kritisk ? '#ffd166' : '#ffffff',
-            kritisk ? 18 : 13
-        );
-        this.efx.pikselSprut(
-            fiende.sprite.x,
-            fiende.sprite.y - 8,
-            fiende.def.farge,
-            kritisk ? 12 : 7
-        );
-
-        // Hvitt blink. Timeren setter tilbake den fargen fienden *skal* ha, i
-        // stedet for å nulle alt - ellers visker et treff ut varselfargen når
-        // fienden lader opp til å slå.
-        fiende.sprite.setTintFill(0xffffff);
-        this.time.delayedCall(70, () => {
-            if (!fiende.dodd && fiende.sprite.active) this.settFiendeTint(fiende);
+    /**
+     * Et nærkampslag lander på eleven. Garden får si sitt først: perfekt parade,
+     * vanlig blokk, eller ingenting. Returnerer `false` når garden tok imot, så
+     * fiendesystemet vet at ingenting traff henne.
+     */
+    private nerkampTreff(fiende: Fiende): boolean {
+        const def = fiende.def;
+        // Vinkelen er retningen fra eleven *mot* den som slår, så et angrep i
+        // ryggen aldri kan blokkeres.
+        const utfall = this.kamp.vurderTreff({
+            vinkelTilAngriper: Math.atan2(
+                fiende.sprite.y - this.spiller.y,
+                fiende.sprite.x - this.spiller.x
+            ),
+            retningsVinkel: this.retningsVinkel(),
+            tungt: def.skade >= 12,
         });
 
-        if (fiende.hp <= 0) {
-            this.drepFiende(fiende, vinkel);
-            return;
+        if (utfall.art === 'parade') {
+            this.parade(fiende);
+            return false;
+        }
+        if (utfall.art === 'blokk') {
+            this.blokk(fiende, utfall.skjoldBrast);
+            return false;
         }
 
-        // Tilbakestøt. Uten en egen tilstand overskrev AI-en farten allerede
-        // neste bilde, og treffet flyttet fienden under to piksler.
-        const kraft = (kritisk ? 260 : 170) * kraftFaktor;
-        fiende.sprite.setVelocity(Math.cos(vinkel) * kraft, Math.sin(vinkel) * kraft);
-        fiende.tilstand = 'stotet';
-        fiende.timer = (kritisk ? STOT_MS * 1.6 : STOT_MS) * Math.max(1, kraftFaktor * 0.8);
-        fiende.onsketTint = null;
-        this.visHelsestolpe(fiende);
+        const forSkade = useRpgStore.getState().hp;
+        this.skadSpiller(def.skade);
+        // Bare støt eleven hvis treffet faktisk gikk gjennom. Ellers ble farten
+        // uansett overskrevet av input allerede neste bilde.
+        if (useRpgStore.getState().hp < forSkade) {
+            this.kamp.meldTreff();
+            const v = Math.atan2(
+                this.spiller.y - fiende.sprite.y,
+                this.spiller.x - fiende.sprite.x
+            );
+            this.spiller.setVelocity(Math.cos(v) * 190, Math.sin(v) * 190);
+            this.stotIgjen = STOT_MS;
+        }
+        return true;
     }
 
-    /** Livsstolpen over hodet. Uten den kan ikke eleven se om et slag til holder. */
-    private visHelsestolpe(fiende: Fiende) {
-        if (fiende.def.kind === 'boss') return;
-        if (!fiende.stolpe) {
-            fiende.stolpe = this.add.graphics().setDepth(18000);
-        }
-        const g = fiende.stolpe;
-        const b = 20;
-        const andel = Math.max(0, fiende.hp / fiende.maksHp);
-        g.clear();
-        g.fillStyle(0x120f14, 0.85);
-        g.fillRect(-b / 2 - 1, -1, b + 2, 4);
-        g.fillStyle(andel > 0.5 ? 0x7ad07a : andel > 0.25 ? 0xe8c96a : 0xe0483f, 1);
-        g.fillRect(-b / 2, 0, b * andel, 2);
-        g.setVisible(true);
-        fiende.stolpeTid = 2600;
+    /**
+     * Perfekt parade. Belønningen må være umulig å overse - det er dette
+     * øyeblikket hele kampsystemet er bygget rundt, og eleven skal ville ha det
+     * igjen med én gang.
+     */
+    private parade(fiende: Fiende) {
+        this.gardPress = 200;
+        sfx.paradeKlang();
+        this.hitstop(KAMP.hitstopParade);
+        // Én ramme hvitt over hele skjermen. Belønningen må være umulig å overse.
+        this.cameras.main.flash(70, 255, 255, 245);
+        this.efx.flytTekst(this.spiller.x, this.spiller.y - 30, 'Parade!', '#fff2b0', 15);
+        this.efx.pikselSprut(this.skjoldSprite.x, this.skjoldSprite.y, 0xfff2b0, 14);
+        this.fx.klask(this.spiller, 0.1);
+
+        // Angriperen mister balansen: full åpning. Kameraet dyttes *mot* henne,
+        // ikke bort - det er hun som vant utvekslingen.
+        const v = Math.atan2(fiende.sprite.y - this.spiller.y, fiende.sprite.x - this.spiller.x);
+        this.fx.dytt(v, 5, 150);
+        this.fx.klask(fiende.sprite, 0.2);
+        this.fiendeSystem.stotBort(fiende, v, 240);
     }
 
-    private drepFiende(fiende: Fiende, vinkel = 0) {
-        if (fiende.dodd) return;
-        fiende.dodd = true;
-        this.maaRyddeFiender = true;
-        for (const c of fiende.collidere) this.physics.world.removeCollider(c);
-        fiende.collidere.length = 0;
-        fiende.stolpe?.destroy();
-        fiende.stolpe = null;
-        sfx.dod();
-        this.efx.pikselSprut(fiende.sprite.x, fiende.sprite.y - 8, fiende.def.farge, 20);
+    /** Vanlig blokk: skjoldet tok det, men det kostet pust og en flis av kanten. */
+    private blokk(fiende: Fiende, brast: boolean) {
+        this.gardPress = 160;
+        // Lindetre, ikke jern. Blokken skal høres tørr ut - metallklangen er
+        // paradens belønning, og den skal ikke deles med noe billigere.
+        sfx.treSprak();
+        const v = Math.atan2(this.spiller.y - fiende.sprite.y, this.spiller.x - fiende.sprite.x);
+        this.fx.dytt(v, 3, 110);
+        this.fx.flis(this.skjoldSprite.x, this.skjoldSprite.y, v, brast ? 12 : 4);
 
-        const erBoss = fiende.def.kind === 'boss';
-        // Posisjonen låses nå: avslutningen flytter sprite-en, og alt som skal
-        // ligge igjen skal ligge der fienden faktisk falt.
-        const dx = fiende.sprite.x;
-        const dy = fiende.sprite.y;
+        // Litt støt, så et blokkert slag fortsatt flytter eleven. Uten det står
+        // hun som en vegg, og blokken mister vekt.
+        this.spiller.setVelocity(Math.cos(v) * 70, Math.sin(v) * 70);
 
-        // Avslutningen. Et drap skal ikke føles som at en helsestolpe nådde null.
-        // Bildet stopper, tiden går sakte et øyeblikk, kameraet får dobbelt kick,
-        // og kroppen behandles etter hva den ble drept med.
-        this.hitstop(KAMP.hitstopDrap);
-        this.fx.sakteFilm(erBoss ? 320 : 150, erBoss ? 0.3 : 0.4);
-        this.fx.dytt(vinkel, erBoss ? 12 : 8, 220);
-
-        // Bare bossen får fullskjermsblink. Et forsøk på å «avmette» bildet med en
-        // mørk flash ble prøvd og forkastet: Phasers flash fyller skjermen med
-        // fargen på full alpha, så en mørk flash er ikke avmetting - det er et
-        // svart blink midt i drapet. Ekte avmetting krever en egen pipeline, og
-        // hitstop, saktefilm og gore bærer øyeblikket uten den.
-        if (erBoss) {
-            this.cameras.main.shake(600, 0.012);
-            this.cameras.main.flash(500, 255, 255, 255);
-        }
-
-        // Én avslutning per våpenart, og et lik som blir liggende etterpå.
-        const art =
-            ITEM_BY_ID[useRpgStore.getState().utstyr.vapen ?? 'ovingssverd']?.weapon?.art ?? null;
-        this.fx.avslutning(fiende.sprite, fiende.def, art, vinkel, () => {
-            fiende.sprite.destroy();
-            this.fx.leggLik(dx, dy, fiende.def.id);
-        });
-
-        const store = useRpgStore.getState();
-        store.giXp(fiende.def.xp);
-        this.efx.flytTekst(dx, dy - 30, `+${fiende.def.xp} XP`, '#9ef0c0', 12);
-
-        // Sølv og gjenstander spretter ut i en bue, med én klingende lyd per
-        // objekt. Loot som bare dukker opp under fienden er en kvittering; loot
-        // som spretter er en utbetaling.
-        const solv = Phaser.Math.Between(2, 6) + Math.round(fiende.def.xp / 4);
-        let nr = 0;
-        this.lootSystem.slipp(dx, dy, null, solv, nr++);
-        for (const drop of fiende.def.loot) {
-            if (Math.random() < drop.sjanse) {
-                this.lootSystem.slipp(dx, dy, drop.itemId, 0, nr++);
-            }
-        }
-
-        if (erBoss) {
-            store.felleBoss(fiende.def.id);
-            this.boss = null;
-            this.time.delayedCall(1200, () => fraSpill.emit('seier', {}));
+        if (brast) {
+            sfx.skjoldBrudd();
+            this.hitstop(KAMP.hitstopTungt);
+            this.fx.dytt(v, 9, 260);
+            this.efx.flytTekst(
+                this.spiller.x,
+                this.spiller.y - 30,
+                'Skjoldet brast!',
+                '#ff9d6a',
+                15
+            );
+            useRpgStore.getState().varsle('Skjoldet gikk i to. Nå står du bar.', 'darlig');
+            // Et kort pusterom, ellers lander neste slag i samme sekund som
+            // skjoldet forsvant, og det leser som en straff for å ha blokkert.
+            this.usarbarIgjen = Math.max(this.usarbarIgjen, 420);
         }
     }
 
@@ -1331,7 +1247,7 @@ export class WorldScene extends Phaser.Scene {
                     duration: 260,
                     onComplete: () => graf.destroy(),
                 });
-                for (const fiende of this.fiender) {
+                for (const fiende of this.fiendeSystem.alle()) {
                     if (fiende.dodd) continue;
                     const avstand = avstandTilLinje(
                         fiende.sprite.x,
@@ -1341,7 +1257,8 @@ export class WorldScene extends Phaser.Scene {
                         ende.x,
                         ende.y
                     );
-                    if (avstand < 14) this.skadFiende(fiende, Math.round(skade), false, vinkel);
+                    if (avstand < 14)
+                        this.fiendeSystem.skad(fiende, Math.round(skade), false, vinkel);
                 }
                 this.cameras.main.shake(120, 0.004);
                 break;
@@ -1361,7 +1278,7 @@ export class WorldScene extends Phaser.Scene {
                     onComplete: () => ring.destroy(),
                 });
                 const radius = 110;
-                for (const fiende of this.fiender) {
+                for (const fiende of this.fiendeSystem.alle()) {
                     if (fiende.dodd) continue;
                     const d = Phaser.Math.Distance.Between(
                         this.spiller.x,
@@ -1374,7 +1291,7 @@ export class WorldScene extends Phaser.Scene {
                             fiende.sprite.y - this.spiller.y,
                             fiende.sprite.x - this.spiller.x
                         );
-                        this.skadFiende(fiende, Math.round(skade), false, v);
+                        this.fiendeSystem.skad(fiende, Math.round(skade), false, v);
                     }
                 }
                 this.cameras.main.shake(200, 0.006);
@@ -1423,390 +1340,7 @@ export class WorldScene extends Phaser.Scene {
 
     // ── Fiender ─────────────────────────────────────────────────────────────
 
-    private oppdaterFiender(delta: number) {
-        for (const fiende of this.fiender) {
-            if (fiende.dodd) continue;
-            const sprite = fiende.sprite;
-            const def = fiende.def;
-
-            // Gangfase
-            fiende.frameTimer += delta;
-            if (fiende.frameTimer > 200) {
-                fiende.frameTimer = 0;
-                fiende.frame = (fiende.frame + 1) % FIENDE_RAMMER;
-                sprite.setFrame(fiende.frame);
-            }
-
-            // Livsstolpen følger fienden og forsvinner av seg selv.
-            if (fiende.stolpe) {
-                fiende.stolpeTid -= delta;
-                if (fiende.stolpeTid <= 0) fiende.stolpe.setVisible(false);
-                else
-                    fiende.stolpe.setPosition(sprite.x, sprite.y - sprite.displayHeight * 0.85 - 6);
-            }
-
-            const avstand = Phaser.Math.Distance.Between(
-                sprite.x,
-                sprite.y,
-                this.spiller.x,
-                this.spiller.y
-            );
-            fiende.timer -= delta;
-
-            // Bossen er bundet til gravhaugen. Kommer den for langt ut, snur
-            // den hjem - eleven skal møte den der, ikke i bygda.
-            if (def.kind === 'boss') {
-                const arena = this.kart.bossArena;
-                const hjem = Phaser.Math.Distance.Between(sprite.x, sprite.y, arena.x, arena.y);
-                if (hjem > arena.r) {
-                    const v = Math.atan2(arena.y - sprite.y, arena.x - sprite.x);
-                    sprite.setVelocity(Math.cos(v) * def.fart, Math.sin(v) * def.fart);
-                    fiende.tilstand = 'sover';
-                    continue;
-                }
-            }
-
-            switch (fiende.tilstand) {
-                // Truffet: fienden flyr bakover og AI-en holder fingrene av fatet.
-                case 'stotet':
-                    if (fiende.timer <= 0) {
-                        fiende.tilstand = 'jager';
-                        sprite.setVelocity(0, 0);
-                    }
-                    break;
-
-                case 'sover':
-                    // Fiendene vandrer rolig rundt i stedet for å stå som statuer.
-                    if (fiende.timer <= 0) {
-                        fiende.timer = 900 + Math.random() * 1800;
-                        if (Math.random() < 0.55) {
-                            const v = Math.random() * Math.PI * 2;
-                            sprite.setVelocity(
-                                Math.cos(v) * def.fart * 0.35,
-                                Math.sin(v) * def.fart * 0.35
-                            );
-                        } else {
-                            sprite.setVelocity(0, 0);
-                        }
-                    }
-                    if (avstand < def.aggro) {
-                        fiende.tilstand = 'jager';
-                        if (def.kind === 'boss' && !this.bossVekket) {
-                            this.bossVekket = true;
-                            sfx.bossBrol();
-                            this.cameras.main.shake(700, 0.008);
-                            startMusikk(147, 1);
-                        }
-                    }
-                    break;
-
-                case 'jager': {
-                    if (avstand > def.aggro * 1.6) {
-                        fiende.tilstand = 'sover';
-                        fiende.timer = 0;
-                        break;
-                    }
-                    if (avstand <= def.rekkevidde) {
-                        fiende.tilstand = 'varsler';
-                        fiende.timer = def.varsel;
-                        sprite.setVelocity(0, 0);
-                        fiende.onsketTint = 0xffaaaa;
-                        this.settFiendeTint(fiende);
-                        this.telegrafer(fiende);
-                        break;
-                    }
-                    this.jag(fiende, def.fart);
-                    break;
-                }
-
-                case 'varsler':
-                    sprite.setVelocity(0, 0);
-                    if (fiende.timer <= 0) {
-                        fiende.onsketTint = null;
-                        this.settFiendeTint(fiende);
-                        fiende.tilstand = 'slar';
-                        fiende.timer = 120;
-                        this.fiendeSlaar(fiende, avstand);
-                    }
-                    break;
-
-                case 'slar':
-                    if (fiende.timer <= 0) {
-                        fiende.tilstand = 'henter-seg';
-                        fiende.timer = def.kind === 'boss' ? 700 : 480;
-                    }
-                    break;
-
-                case 'henter-seg': {
-                    // Dempingen må regnes per sekund, ikke per bilde - ellers
-                    // oppfører fienden seg ulikt på 30 og 60 bilder i sekundet.
-                    const d = Math.pow(0.05, delta / 1000);
-                    sprite.setVelocity(sprite.body!.velocity.x * d, sprite.body!.velocity.y * d);
-                    if (fiende.timer <= 0) fiende.tilstand = 'jager';
-                    break;
-                }
-            }
-        }
-        // Bare rydd lista når noen faktisk har dødd. Før ble det allokert en
-        // ny array hver eneste frame.
-        if (this.maaRyddeFiender) {
-            this.maaRyddeFiender = false;
-            this.fiender = this.fiender.filter((f) => !f.dodd || f.sprite.active);
-        }
-    }
-
-    /**
-     * Går mot spilleren, men glir langs hindringer i stedet for å presse seg
-     * inn i dem. Med 130 trær på kartet er «gå rett mot spilleren» ikke et
-     * kanttilfelle - det er normaltilstanden.
-     */
-    private jag(fiende: Fiende, fart: number) {
-        const sprite = fiende.sprite;
-        const dx = this.spiller.x - sprite.x;
-        const dy = this.spiller.y - sprite.y;
-        const v = Math.atan2(dy, dx);
-        let vx = Math.cos(v) * fart;
-        let vy = Math.sin(v) * fart;
-
-        // Sto vi nesten stille forrige bilde selv om vi ville fram, er veien sperret.
-        const body = sprite.body as Phaser.Physics.Arcade.Body;
-        if (body.blocked.left || body.blocked.right || body.touching.left || body.touching.right) {
-            vx = 0;
-            vy = Math.sign(dy || 1) * fart;
-        } else if (body.blocked.up || body.blocked.down || body.touching.up || body.touching.down) {
-            vy = 0;
-            vx = Math.sign(dx || 1) * fart;
-        }
-
-        // Skyv fra hverandre, så fjorten fiender ikke stabler seg i samme piksel
-        // og slår som én.
-        let sx = 0;
-        let sy = 0;
-        for (const annen of this.fiender) {
-            if (annen === fiende || annen.dodd) continue;
-            const ax = sprite.x - annen.sprite.x;
-            const ay = sprite.y - annen.sprite.y;
-            const d2 = ax * ax + ay * ay;
-            if (d2 > 1 && d2 < 18 * 18) {
-                const d = Math.sqrt(d2);
-                sx += (ax / d) * (18 - d);
-                sy += (ay / d) * (18 - d);
-            }
-        }
-        sprite.setVelocity(vx + sx * 3, vy + sy * 3);
-    }
-
-    /** Et lite varsel på bakken før fienden slår. */
-    private telegrafer(fiende: Fiende) {
-        const merke = this.efx.hent('fx-ring');
-        merke.setPosition(fiende.sprite.x, fiende.sprite.y + 2);
-        merke
-            .setTint(0xff8a6a)
-            .setAlpha(0.5)
-            .setScale(0.12)
-            .setDepth(fiende.sprite.y - 1);
-        this.tweens.add({
-            targets: merke,
-            scale: 0.34,
-            alpha: 0,
-            duration: fiende.def.varsel,
-            onComplete: () => this.efx.slipp(merke),
-        });
-    }
-
-    private fiendeSlaar(fiende: Fiende, avstand: number) {
-        const def = fiende.def;
-        if (def.skytende) {
-            this.skudd.skyt({
-                x: fiende.sprite.x,
-                y: fiende.sprite.y - 6,
-                vinkel: Math.atan2(
-                    this.spiller.y - fiende.sprite.y,
-                    this.spiller.x - fiende.sprite.x
-                ),
-                fart: 150,
-                skade: def.skade,
-                levetid: 2200,
-                tekstur: 'fx-kule',
-                farge: def.farge,
-                fraFiende: true,
-            });
-            return;
-        }
-        // Nærkamp: sjekk at eleven fortsatt er innenfor når slaget lander.
-        if (avstand <= def.rekkevidde + 8) {
-            // Skjoldet får si sitt først. Vinkelen er retningen fra eleven *mot*
-            // den som slår, så et angrep i ryggen aldri kan blokkeres.
-            const utfall = this.kamp.vurderTreff({
-                vinkelTilAngriper: Math.atan2(
-                    fiende.sprite.y - this.spiller.y,
-                    fiende.sprite.x - this.spiller.x
-                ),
-                retningsVinkel: this.retningsVinkel(),
-                tungt: def.skade >= 12,
-            });
-
-            if (utfall.art === 'parade') {
-                this.parade(fiende);
-                return;
-            }
-            if (utfall.art === 'blokk') {
-                this.blokk(fiende, utfall.skjoldBrast);
-                return;
-            }
-
-            const forSkade = useRpgStore.getState().hp;
-            this.skadSpiller(def.skade);
-            // Bare støt eleven hvis treffet faktisk gikk gjennom. Ellers ble
-            // farten uansett overskrevet av input allerede neste bilde.
-            if (useRpgStore.getState().hp < forSkade) {
-                this.kamp.meldTreff();
-                const v = Math.atan2(
-                    this.spiller.y - fiende.sprite.y,
-                    this.spiller.x - fiende.sprite.x
-                );
-                this.spiller.setVelocity(Math.cos(v) * 190, Math.sin(v) * 190);
-                this.stotIgjen = STOT_MS;
-            }
-        }
-        this.efx.pikselSprut(fiende.sprite.x, fiende.sprite.y - 6, def.farge, 5);
-    }
-
-    /**
-     * Perfekt parade. Belønningen må være umulig å overse - det er dette
-     * øyeblikket hele kampsystemet er bygget rundt, og eleven skal ville ha det
-     * igjen med én gang.
-     */
-    private parade(fiende: Fiende) {
-        this.gardPress = 200;
-        sfx.paradeKlang();
-        this.hitstop(KAMP.hitstopParade);
-        // Én ramme hvitt over hele skjermen. Belønningen må være umulig å overse.
-        this.cameras.main.flash(70, 255, 255, 245);
-        this.efx.flytTekst(this.spiller.x, this.spiller.y - 30, 'Parade!', '#fff2b0', 15);
-        this.efx.pikselSprut(this.skjoldSprite.x, this.skjoldSprite.y, 0xfff2b0, 14);
-        this.fx.klask(this.spiller, 0.1);
-
-        // Angriperen mister balansen: full åpning. Kameraet dyttes *mot* henne,
-        // ikke bort - det er hun som vant utvekslingen.
-        const v = Math.atan2(fiende.sprite.y - this.spiller.y, fiende.sprite.x - this.spiller.x);
-        this.fx.dytt(v, 5, 150);
-        fiende.sprite.setVelocity(Math.cos(v) * 240, Math.sin(v) * 240);
-        this.fx.klask(fiende.sprite, 0.2);
-        fiende.tilstand = 'stotet';
-        fiende.timer = STOT_MS * 3;
-        fiende.onsketTint = null;
-        this.settFiendeTint(fiende);
-    }
-
-    /** Vanlig blokk: skjoldet tok det, men det kostet pust og en flis av kanten. */
-    private blokk(fiende: Fiende, brast: boolean) {
-        this.gardPress = 160;
-        // Lindetre, ikke jern. Blokken skal høres tørr ut - metallklangen er
-        // paradens belønning, og den skal ikke deles med noe billigere.
-        sfx.treSprak();
-        const v = Math.atan2(this.spiller.y - fiende.sprite.y, this.spiller.x - fiende.sprite.x);
-        this.fx.dytt(v, 3, 110);
-        this.fx.flis(this.skjoldSprite.x, this.skjoldSprite.y, v, brast ? 12 : 4);
-
-        // Litt støt, så et blokkert slag fortsatt flytter eleven. Uten det står
-        // hun som en vegg, og blokken mister vekt.
-        this.spiller.setVelocity(Math.cos(v) * 70, Math.sin(v) * 70);
-
-        if (brast) {
-            sfx.skjoldBrudd();
-            this.hitstop(KAMP.hitstopTungt);
-            this.fx.dytt(v, 9, 260);
-            this.efx.flytTekst(
-                this.spiller.x,
-                this.spiller.y - 30,
-                'Skjoldet brast!',
-                '#ff9d6a',
-                15
-            );
-            useRpgStore.getState().varsle('Skjoldet gikk i to. Nå står du bar.', 'darlig');
-            // Et kort pusterom, ellers lander neste slag i samme sekund som
-            // skjoldet forsvant, og det leser som en straff for å ha blokkert.
-            this.usarbarIgjen = Math.max(this.usarbarIgjen, 420);
-        }
-    }
-
-    private oppdaterSpawn(delta: number) {
-        this.spawnTimer -= delta;
-        if (this.spawnTimer > 0) return;
-        this.spawnTimer = 2600;
-
-        const levende = this.fiender.filter((f) => !f.dodd).length;
-        if (levende >= 14) return;
-
-        // Bare rundt spilleren, men utenfor synsfeltet - fienden skal komme
-        // *til* eleven, ikke poppe opp foran nesa hennes.
-        const kandidater = this.kart.spawnRuter.filter(([x, y]) => {
-            const d = Phaser.Math.Distance.Between(
-                x * TILE,
-                y * TILE,
-                this.spiller.x,
-                this.spiller.y
-            );
-            return d > 200 && d < 420;
-        });
-        if (kandidater.length === 0) return;
-
-        const [tx, ty] = kandidater[Math.floor(Math.random() * kandidater.length)];
-        const niva = maksVerdier(useRpgStore.getState()).niva;
-        const mulige = ENEMIES.filter((e) => e.kind !== 'boss').slice(
-            0,
-            Math.min(5, 2 + Math.floor(niva / 2))
-        );
-        const def = mulige[Math.floor(Math.random() * mulige.length)];
-        this.spawnFiende(def, tx * TILE + 8, ty * TILE + 8);
-    }
-
-    private spawnFiende(def: EnemyDef, x: number, y: number) {
-        const sprite = this.physics.add.sprite(x, y, `fiende-${def.id}`, 0);
-        sprite.setOrigin(0.5, 0.85).setDepth(y);
-        sprite.body!.setSize(10, 8);
-        // Colliderne må tas vare på. Uten dette lå det igjen to per fiende for
-        // alltid, og en halvtimes økt lekket over tusen av dem.
-        const collidere = [
-            this.physics.add.collider(sprite, this.data.get('vegger')),
-            this.physics.add.collider(sprite, this.data.get('propKropper')),
-        ];
-
-        // Liten «trer fram av tåka»-effekt
-        sprite.setAlpha(0).setScale(0.6);
-        this.tweens.add({ targets: sprite, alpha: 1, scale: 1, duration: 320, ease: 'Back.Out' });
-
-        this.fiender.push({
-            sprite,
-            def,
-            hp: def.hp,
-            maksHp: def.hp,
-            tilstand: 'sover',
-            timer: 0,
-            frame: 0,
-            frameTimer: Math.random() * 200,
-            skjold: 0,
-            dodd: false,
-            lemlestet: false,
-            collidere,
-            stolpe: null,
-            stolpeTid: 0,
-            onsketTint: null,
-        });
-    }
-
     // ── Samhandling ─────────────────────────────────────────────────────────
-
-    private utfordreBoss() {
-        if (!this.boss || this.bossVakt) return;
-        this.settLaast(true);
-        this.bossVakt = true;
-        const runde = NORDVIK_BOSS_QUESTIONS.length - this.boss.skjold;
-        fraSpill.emit('bossSporsmal', {
-            runde: Math.max(0, Math.min(NORDVIK_BOSS_QUESTIONS.length - 1, runde)),
-        });
-    }
 
     /** Oppdaterer utropstegnene over NPC-ene. Kalles fra React etter questbytte. */
     oppdaterMarkorer() {
@@ -1830,9 +1364,7 @@ export class WorldScene extends Phaser.Scene {
 
     private oppdaterDybde() {
         this.spiller.setDepth(this.spiller.y);
-        for (const fiende of this.fiender) {
-            if (!fiende.dodd) fiende.sprite.setDepth(fiende.sprite.y);
-        }
+        this.fiendeSystem.oppdaterDybde();
         this.samhandling.oppdaterDybde();
     }
 
