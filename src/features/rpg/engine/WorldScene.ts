@@ -187,8 +187,7 @@ export class WorldScene extends Phaser.Scene {
             spiller: () => this.spiller,
             fiender: () => this.fiender,
             skadSpiller: (skade) => this.skadSpiller(skade),
-            skadFiende: (f, skade, kritisk, vinkel) =>
-                this.skadFiende(f, skade, kritisk, vinkel),
+            skadFiende: (f, skade, kritisk, vinkel) => this.skadFiende(f, skade, kritisk, vinkel),
         });
         this.verden.byggTerreng();
         this.verden.byggKollisjon();
@@ -208,14 +207,18 @@ export class WorldScene extends Phaser.Scene {
         fraSpill.emit('sone', { tittel: 'Nordvik', undertittel: 'Vikingtiden · 793-1066' });
     }
 
-
     private byggSpiller() {
         const store = useRpgStore.getState();
         const look = this.heltLook();
         forgeHumanoid(this, 'helt', look);
 
         const [tx, ty] = NORDVIK_SPAWN;
-        this.spiller = this.physics.add.sprite(tx * TILE + 8, ty * TILE + 8, 'helt', heltFrame('ned', 'idle', 0));
+        this.spiller = this.physics.add.sprite(
+            tx * TILE + 8,
+            ty * TILE + 8,
+            'helt',
+            heltFrame('ned', 'idle', 0)
+        );
         this.spiller.setOrigin(0.5, FIG_ORIGIN_Y);
         this.spiller.setDepth(this.spiller.y);
         this.spiller.body!.setSize(9, 7);
@@ -231,7 +234,9 @@ export class WorldScene extends Phaser.Scene {
             .setOrigin(0.1, 0.5)
             .setVisible(false);
 
-        this.skjoldSprite = this.add.image(this.spiller.x, this.spiller.y, 'skjold', 0).setVisible(false);
+        this.skjoldSprite = this.add
+            .image(this.spiller.x, this.spiller.y, 'skjold', 0)
+            .setVisible(false);
 
         this.physics.add.collider(this.spiller, this.data.get('vegger'));
         this.physics.add.collider(this.spiller, this.data.get('propKropper'));
@@ -664,7 +669,12 @@ export class WorldScene extends Phaser.Scene {
             (f) =>
                 !f.dodd &&
                 f.tilstand !== 'sover' &&
-                Phaser.Math.Distance.Between(f.sprite.x, f.sprite.y, this.spiller.x, this.spiller.y) < 220
+                Phaser.Math.Distance.Between(
+                    f.sprite.x,
+                    f.sprite.y,
+                    this.spiller.x,
+                    this.spiller.y
+                ) < 220
         );
         if (iKampNa !== this.iKamp) {
             this.iKamp = iKampNa;
@@ -686,7 +696,13 @@ export class WorldScene extends Phaser.Scene {
             this.hitstop(220);
             this.cameras.main.flash(260, 255, 250, 220);
             sfx.horn();
-            this.efx.flytTekst(this.spiller.x, this.spiller.y - 34, `NIVÅ ${maks.niva}`, '#ffe9a8', 15);
+            this.efx.flytTekst(
+                this.spiller.x,
+                this.spiller.y - 34,
+                `NIVÅ ${maks.niva}`,
+                '#ffe9a8',
+                15
+            );
             this.efx.pikselSprut(this.spiller.x, this.spiller.y - 10, 0xffe9a8, 22);
         }
     }
@@ -736,7 +752,10 @@ export class WorldScene extends Phaser.Scene {
      * Håndkontrolleren leverer «holdt inne», ikke «trykket nå». Uten en egen
      * kant-deteksjon her ville det å holde A gitt automatisk angrep.
      */
-    private padKant(pad: Phaser.Input.Gamepad.Gamepad | null, knapp: 'A' | 'B' | 'X' | 'Y'): boolean {
+    private padKant(
+        pad: Phaser.Input.Gamepad.Gamepad | null,
+        knapp: 'A' | 'B' | 'X' | 'Y'
+    ): boolean {
         const na = Boolean(pad?.[knapp]);
         const ny = na && !this.padForrige[knapp];
         this.padForrige[knapp] = na;
@@ -767,7 +786,10 @@ export class WorldScene extends Phaser.Scene {
         // Lengden på utslaget styrer farten, så en stikke som er halvveis ute
         // gir halv fart. Tastatur gir alltid 1.
         const utslag = Math.min(1, Math.hypot(dx, dy));
-        const enhet = utslag > 0.001 ? { x: dx / Math.hypot(dx, dy), y: dy / Math.hypot(dx, dy) } : { x: 0, y: 0 };
+        const enhet =
+            utslag > 0.001
+                ? { x: dx / Math.hypot(dx, dy), y: dy / Math.hypot(dx, dy) }
+                : { x: 0, y: 0 };
 
         const ruller = this.rullIgjen > 0;
         const touch = this.touchTrykk;
@@ -782,7 +804,11 @@ export class WorldScene extends Phaser.Scene {
         // åpner deg, og det er derfor paraden er verdt å lære.
         const gardHoldt = this.taster.rull.isDown || Boolean(pad?.R1) || this.touchGard;
         this.kamp.settGardOnsket(
-            gardHoldt && !ruller && this.stotIgjen === 0 && this.slagIgjen === 0 && this.kamp.harSkjold
+            gardHoldt &&
+                !ruller &&
+                this.stotIgjen === 0 &&
+                this.slagIgjen === 0 &&
+                this.kamp.harSkjold
         );
         this.kamp.tikk(delta);
         const gard = this.kamp.gardOppe;
@@ -804,7 +830,13 @@ export class WorldScene extends Phaser.Scene {
             // fiende bak uten å slippe skjoldet.
             if (utslag > 0.001 && this.slagIgjen === 0) {
                 this.retning =
-                    Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 'venstre' : 'hoyre') : dy < 0 ? 'opp' : 'ned';
+                    Math.abs(dx) > Math.abs(dy)
+                        ? dx < 0
+                            ? 'venstre'
+                            : 'hoyre'
+                        : dy < 0
+                          ? 'opp'
+                          : 'ned';
             }
         }
         this.gardPress = Math.max(0, this.gardPress - delta);
@@ -813,7 +845,9 @@ export class WorldScene extends Phaser.Scene {
 
         // Rull - kort fartsøkning med usårbarhet
         const rullTrykk =
-            Phaser.Input.Keyboard.JustDown(this.taster.rull) || this.padKant(pad, 'B') || touch.has('rull');
+            Phaser.Input.Keyboard.JustDown(this.taster.rull) ||
+            this.padKant(pad, 'B') ||
+            touch.has('rull');
         if (rullTrykk && this.rullNedkjoling === 0 && utslag > 0.001) {
             // Uten pust blir rullen en stavring: kortere, og uten usårbarhet.
             const { stavring } = this.kamp.rull();
@@ -824,13 +858,16 @@ export class WorldScene extends Phaser.Scene {
             if (!stavring) this.usarbarIgjen = Math.max(this.usarbarIgjen, RULL_MS + 60);
             sfx.rull();
             this.efx.stovsky(this.spiller.x, this.spiller.y + 6, stavring ? 3 : 6);
-            if (stavring) this.efx.flytTekst(this.spiller.x, this.spiller.y - 26, 'Tungt...', '#9fb0c8');
+            if (stavring)
+                this.efx.flytTekst(this.spiller.x, this.spiller.y - 26, 'Tungt...', '#9fb0c8');
         }
 
         // Angrep. Trykket huskes en kort stund, så et litt tidlig trykk rett
         // før nedkjølingen er ute ikke bare forsvinner.
         const angrepTrykk =
-            Phaser.Input.Keyboard.JustDown(this.taster.angrep) || this.padKant(pad, 'A') || touch.has('angrep');
+            Phaser.Input.Keyboard.JustDown(this.taster.angrep) ||
+            this.padKant(pad, 'A') ||
+            touch.has('angrep');
         if (angrepTrykk) this.angrepBuffer = INPUT_BUFFER_MS;
         if (this.angrepBuffer > 0 && this.angrepNedkjoling === 0 && !ruller) {
             this.angrepBuffer = 0;
@@ -841,14 +878,21 @@ export class WorldScene extends Phaser.Scene {
 
         // Besvergelser 1-4
         const spells = useRpgStore.getState().spells;
-        const hurtigtaster = [this.taster.spell1, this.taster.spell2, this.taster.spell3, this.taster.spell4];
+        const hurtigtaster = [
+            this.taster.spell1,
+            this.taster.spell2,
+            this.taster.spell3,
+            this.taster.spell4,
+        ];
         hurtigtaster.forEach((tast, i) => {
             if (Phaser.Input.Keyboard.JustDown(tast) && spells[i]) this.kastBesvergelse(spells[i]);
         });
         if (this.padKant(pad, 'X') && spells[0]) this.kastBesvergelse(spells[0]);
 
         // Blink når eleven er usårbar
-        this.spiller.setAlpha(this.usarbarIgjen > 0 ? (Math.floor(this.time.now / 70) % 2 ? 0.45 : 1) : 1);
+        this.spiller.setAlpha(
+            this.usarbarIgjen > 0 ? (Math.floor(this.time.now / 70) % 2 ? 0.45 : 1) : 1
+        );
     }
 
     // ── Kamp ────────────────────────────────────────────────────────────────
@@ -887,7 +931,9 @@ export class WorldScene extends Phaser.Scene {
 
         // Sving våpenet gjennom buen. Slår hun oppover, skal våpenet være bak
         // henne - ellers ligger sverdet oppå ansiktet.
-        this.vapenSprite.setVisible(true).setDepth(this.spiller.y + (this.retning === 'opp' ? -2 : 1));
+        this.vapenSprite
+            .setVisible(true)
+            .setDepth(this.spiller.y + (this.retning === 'opp' ? -2 : 1));
         const start = vinkel - bue / 2;
         const slutt = vinkel + bue / 2;
         this.vapenSprite.setRotation(start);
@@ -911,7 +957,11 @@ export class WorldScene extends Phaser.Scene {
 
         // Slagbue-effekt
         const slag = this.add
-            .image(this.spiller.x + Math.cos(vinkel) * 14, this.spiller.y - 4 + Math.sin(vinkel) * 14, 'fx-slag')
+            .image(
+                this.spiller.x + Math.cos(vinkel) * 14,
+                this.spiller.y - 4 + Math.sin(vinkel) * 14,
+                'fx-slag'
+            )
             .setRotation(vinkel)
             .setDepth(this.spiller.y + 2)
             .setAlpha(0.9)
@@ -946,7 +996,9 @@ export class WorldScene extends Phaser.Scene {
             if (Math.abs(Phaser.Math.Angle.Wrap(vinkelTil - vinkel)) > bue / 2) continue;
 
             const kritisk = Math.random() < 0.12;
-            const skade = Math.round(grunnskade * (kritisk ? 2 : 1) * Phaser.Math.FloatBetween(0.9, 1.15));
+            const skade = Math.round(
+                grunnskade * (kritisk ? 2 : 1) * Phaser.Math.FloatBetween(0.9, 1.15)
+            );
             // Tredje slag i komboen kaster dobbelt så hardt.
             this.skadFiende(fiende, skade, kritisk, vinkelTil, sving.trinn === 3 ? 2 : 1);
             traff = true;
@@ -981,7 +1033,8 @@ export class WorldScene extends Phaser.Scene {
         }
 
         const vinkel = this.retningsVinkel();
-        const rekkevidde = (vapen?.rekkevidde ?? 30) * (vk.manover === 'stikk-gjennom' ? 1.35 : 0.8);
+        const rekkevidde =
+            (vapen?.rekkevidde ?? 30) * (vk.manover === 'stikk-gjennom' ? 1.35 : 0.8);
         const bue = vk.manover === 'stikk-gjennom' ? Math.PI / 6 : Math.PI / 2;
 
         this.angrepNedkjoling = 520;
@@ -1007,11 +1060,22 @@ export class WorldScene extends Phaser.Scene {
                 vk.manover === 'skjoldstot'
                     ? Math.max(2, Math.round(stats.styrke * 0.6))
                     : Math.round(((vapen?.skade ?? 8) + stats.styrke) * 1.25);
-            this.skadFiende(fiende, skade, false, vinkelTil, vk.manover === 'skjoldstot' ? 2.4 : 1.4);
+            this.skadFiende(
+                fiende,
+                skade,
+                false,
+                vinkelTil,
+                vk.manover === 'skjoldstot' ? 2.4 : 1.4
+            );
             traff = true;
         }
 
-        this.efx.flytTekst(this.spiller.x, this.spiller.y - 30, MANOVER_NAVN[vk.manover], '#cfd8c0');
+        this.efx.flytTekst(
+            this.spiller.x,
+            this.spiller.y - 30,
+            MANOVER_NAVN[vk.manover],
+            '#cfd8c0'
+        );
         if (traff) {
             this.hitstop(KAMP.hitstopTungt);
             this.cameras.main.shake(110, 0.005);
@@ -1075,7 +1139,13 @@ export class WorldScene extends Phaser.Scene {
         sfx[kritisk ? 'kritisk' : 'treff']();
         this.fx.klask(fiende.sprite, kritisk ? 0.24 : 0.15);
         this.fx.vipp(fiende.sprite, kritisk ? 12 : 7);
-        this.fx.gyt(fiende.sprite.x, fiende.sprite.y - 4, fiende.def.farge, kritisk ? 7 : 4, vinkel);
+        this.fx.gyt(
+            fiende.sprite.x,
+            fiende.sprite.y - 4,
+            fiende.def.farge,
+            kritisk ? 7 : 4,
+            vinkel
+        );
         if (kritisk) this.fx.nedslag(fiende.sprite.x, fiende.sprite.y - 4, 1.2);
 
         // Lemlestelse: første gang en fiende går under halvt liv, slås en bit av
@@ -1094,7 +1164,12 @@ export class WorldScene extends Phaser.Scene {
             kritisk ? '#ffd166' : '#ffffff',
             kritisk ? 18 : 13
         );
-        this.efx.pikselSprut(fiende.sprite.x, fiende.sprite.y - 8, fiende.def.farge, kritisk ? 12 : 7);
+        this.efx.pikselSprut(
+            fiende.sprite.x,
+            fiende.sprite.y - 8,
+            fiende.def.farge,
+            kritisk ? 12 : 7
+        );
 
         // Hvitt blink. Timeren setter tilbake den fargen fienden *skal* ha, i
         // stedet for å nulle alt - ellers visker et treff ut varselfargen når
@@ -1172,7 +1247,8 @@ export class WorldScene extends Phaser.Scene {
         }
 
         // Én avslutning per våpenart, og et lik som blir liggende etterpå.
-        const art = ITEM_BY_ID[useRpgStore.getState().utstyr.vapen ?? 'ovingssverd']?.weapon?.art ?? null;
+        const art =
+            ITEM_BY_ID[useRpgStore.getState().utstyr.vapen ?? 'ovingssverd']?.weapon?.art ?? null;
         this.fx.avslutning(fiende.sprite, fiende.def, art, vinkel, () => {
             fiende.sprite.destroy();
             this.fx.leggLik(dx, dy, fiende.def.id);
@@ -1325,7 +1401,12 @@ export class WorldScene extends Phaser.Scene {
                 graf.lineBetween(this.spiller.x, this.spiller.y - 6, ende.x, ende.y);
                 graf.lineStyle(1, 0xffffff, 1);
                 graf.lineBetween(this.spiller.x, this.spiller.y - 6, ende.x, ende.y);
-                this.tweens.add({ targets: graf, alpha: 0, duration: 260, onComplete: () => graf.destroy() });
+                this.tweens.add({
+                    targets: graf,
+                    alpha: 0,
+                    duration: 260,
+                    onComplete: () => graf.destroy(),
+                });
                 for (const fiende of this.fiender) {
                     if (fiende.dodd) continue;
                     const avstand = avstandTilLinje(
@@ -1365,7 +1446,10 @@ export class WorldScene extends Phaser.Scene {
                         fiende.sprite.y
                     );
                     if (d < radius) {
-                        const v = Math.atan2(fiende.sprite.y - this.spiller.y, fiende.sprite.x - this.spiller.x);
+                        const v = Math.atan2(
+                            fiende.sprite.y - this.spiller.y,
+                            fiende.sprite.x - this.spiller.x
+                        );
                         this.skadFiende(fiende, Math.round(skade), false, v);
                     }
                 }
@@ -1400,7 +1484,13 @@ export class WorldScene extends Phaser.Scene {
             }
             case 'helbred': {
                 store.endreHp(spell.skade);
-                this.efx.flytTekst(this.spiller.x, this.spiller.y - 26, `+${spell.skade}`, '#9ef0c0', 15);
+                this.efx.flytTekst(
+                    this.spiller.x,
+                    this.spiller.y - 26,
+                    `+${spell.skade}`,
+                    '#9ef0c0',
+                    15
+                );
                 this.efx.pikselSprut(this.spiller.x, this.spiller.y - 8, 0x9ef0c0, 14);
                 break;
             }
@@ -1427,7 +1517,8 @@ export class WorldScene extends Phaser.Scene {
             if (fiende.stolpe) {
                 fiende.stolpeTid -= delta;
                 if (fiende.stolpeTid <= 0) fiende.stolpe.setVisible(false);
-                else fiende.stolpe.setPosition(sprite.x, sprite.y - sprite.displayHeight * 0.85 - 6);
+                else
+                    fiende.stolpe.setPosition(sprite.x, sprite.y - sprite.displayHeight * 0.85 - 6);
             }
 
             const avstand = Phaser.Math.Distance.Between(
@@ -1466,7 +1557,10 @@ export class WorldScene extends Phaser.Scene {
                         fiende.timer = 900 + Math.random() * 1800;
                         if (Math.random() < 0.55) {
                             const v = Math.random() * Math.PI * 2;
-                            sprite.setVelocity(Math.cos(v) * def.fart * 0.35, Math.sin(v) * def.fart * 0.35);
+                            sprite.setVelocity(
+                                Math.cos(v) * def.fart * 0.35,
+                                Math.sin(v) * def.fart * 0.35
+                            );
                         } else {
                             sprite.setVelocity(0, 0);
                         }
@@ -1582,7 +1676,11 @@ export class WorldScene extends Phaser.Scene {
     private telegrafer(fiende: Fiende) {
         const merke = this.efx.hent('fx-ring');
         merke.setPosition(fiende.sprite.x, fiende.sprite.y + 2);
-        merke.setTint(0xff8a6a).setAlpha(0.5).setScale(0.12).setDepth(fiende.sprite.y - 1);
+        merke
+            .setTint(0xff8a6a)
+            .setAlpha(0.5)
+            .setScale(0.12)
+            .setDepth(fiende.sprite.y - 1);
         this.tweens.add({
             targets: merke,
             scale: 0.34,
@@ -1639,7 +1737,10 @@ export class WorldScene extends Phaser.Scene {
             // farten uansett overskrevet av input allerede neste bilde.
             if (useRpgStore.getState().hp < forSkade) {
                 this.kamp.meldTreff();
-                const v = Math.atan2(this.spiller.y - fiende.sprite.y, this.spiller.x - fiende.sprite.x);
+                const v = Math.atan2(
+                    this.spiller.y - fiende.sprite.y,
+                    this.spiller.x - fiende.sprite.x
+                );
                 this.spiller.setVelocity(Math.cos(v) * 190, Math.sin(v) * 190);
                 this.stotIgjen = STOT_MS;
             }
@@ -1692,7 +1793,13 @@ export class WorldScene extends Phaser.Scene {
             sfx.skjoldBrudd();
             this.hitstop(KAMP.hitstopTungt);
             this.fx.dytt(v, 9, 260);
-            this.efx.flytTekst(this.spiller.x, this.spiller.y - 30, 'Skjoldet brast!', '#ff9d6a', 15);
+            this.efx.flytTekst(
+                this.spiller.x,
+                this.spiller.y - 30,
+                'Skjoldet brast!',
+                '#ff9d6a',
+                15
+            );
             useRpgStore.getState().varsle('Skjoldet gikk i to. Nå står du bar.', 'darlig');
             // Et kort pusterom, ellers lander neste slag i samme sekund som
             // skjoldet forsvant, og det leser som en straff for å ha blokkert.
@@ -1711,14 +1818,22 @@ export class WorldScene extends Phaser.Scene {
         // Bare rundt spilleren, men utenfor synsfeltet - fienden skal komme
         // *til* eleven, ikke poppe opp foran nesa hennes.
         const kandidater = this.kart.spawnRuter.filter(([x, y]) => {
-            const d = Phaser.Math.Distance.Between(x * TILE, y * TILE, this.spiller.x, this.spiller.y);
+            const d = Phaser.Math.Distance.Between(
+                x * TILE,
+                y * TILE,
+                this.spiller.x,
+                this.spiller.y
+            );
             return d > 200 && d < 420;
         });
         if (kandidater.length === 0) return;
 
         const [tx, ty] = kandidater[Math.floor(Math.random() * kandidater.length)];
         const niva = maksVerdier(useRpgStore.getState()).niva;
-        const mulige = ENEMIES.filter((e) => e.kind !== 'boss').slice(0, Math.min(5, 2 + Math.floor(niva / 2)));
+        const mulige = ENEMIES.filter((e) => e.kind !== 'boss').slice(
+            0,
+            Math.min(5, 2 + Math.floor(niva / 2))
+        );
         const def = mulige[Math.floor(Math.random() * mulige.length)];
         this.spawnFiende(def, tx * TILE + 8, ty * TILE + 8);
     }
@@ -1763,11 +1878,21 @@ export class WorldScene extends Phaser.Scene {
         let naermest: { type: 'npc' | 'landemerke'; id: string; d: number } | null = null;
 
         for (const [id, sprite] of this.npcSprites) {
-            const d = Phaser.Math.Distance.Between(sprite.x, sprite.y, this.spiller.x, this.spiller.y);
+            const d = Phaser.Math.Distance.Between(
+                sprite.x,
+                sprite.y,
+                this.spiller.x,
+                this.spiller.y
+            );
             if (d < 34 && (!naermest || d < naermest.d)) naermest = { type: 'npc', id, d };
         }
         for (const [id, sprite] of this.landemerker) {
-            const d = Phaser.Math.Distance.Between(sprite.x, sprite.y, this.spiller.x, this.spiller.y);
+            const d = Phaser.Math.Distance.Between(
+                sprite.x,
+                sprite.y,
+                this.spiller.x,
+                this.spiller.y
+            );
             if (d < 30 && (!naermest || d < naermest.d)) naermest = { type: 'landemerke', id, d };
         }
 
@@ -1783,7 +1908,9 @@ export class WorldScene extends Phaser.Scene {
                 fraSpill.emit('hint', { tekst: `E - snakk med ${npc?.name ?? 'noen'}` });
             } else {
                 const lm = NORDVIK_LANDMARKS.find((l) => l.id === ny.id);
-                fraSpill.emit('hint', { tekst: `E - ${lm?.kind === 'kiste' ? 'åpne' : 'les'} ${lm?.title}` });
+                fraSpill.emit('hint', {
+                    tekst: `E - ${lm?.kind === 'kiste' ? 'åpne' : 'les'} ${lm?.title}`,
+                });
             }
         }
 
@@ -1839,7 +1966,6 @@ export class WorldScene extends Phaser.Scene {
                 return Math.PI / 2;
         }
     }
-
 
     private oppdaterDybde() {
         this.spiller.setDepth(this.spiller.y);
