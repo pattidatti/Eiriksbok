@@ -42,6 +42,13 @@ const tall = async (merkelapp) => {
 };
 const pust = () => tall('Pust');
 const liv = () => tall('Liv');
+
+/** Kamptilstanden rett fra scenen: gard, skjoldhelse, pust. Null hvis scenen er borte. */
+const kampSnapshot = () =>
+    page.evaluate(() => {
+        const scene = window.__rpg?.scene.getScene('nordvik');
+        return scene?.helt?.kampSnapshot() ?? null;
+    });
 const ventFullPust = async () => {
     for (let i = 0; i < 30 && (await pust()) < 99; i++) await page.waitForTimeout(200);
 };
@@ -86,16 +93,29 @@ sjekk(
 );
 
 // ── Garden: Shift holdt i ro reiser skjoldet og drenerer 6 pust i sekundet ──
+// Én kjøring har meldt «drenerte 0 pust» uten at årsaken lot seg finne igjen.
+// Derfor prøvetas garden mens den holdes. Feiler dreneringen, sier utskriften
+// hvorfor: garden kommer ikke opp uten skjold (`kamp.ts:445 harSkjold`), og et
+// støt fra en fiende senker den med 260 ms hvile før den kan reises igjen
+// (`kamp.ts:172 senkGard`). Livet leses som forstyrrelsesvakt, som i `maal()`.
 const pFor = await pust();
+const lGardFor = await liv();
 await page.keyboard.down('Shift');
-await page.waitForTimeout(2000);
+const gardProver = [];
+for (let i = 0; i < 10; i++) {
+    await page.waitForTimeout(200);
+    gardProver.push(await kampSnapshot());
+}
 const pGard = await pust();
 await page.screenshot({ path: `${UT}/kamp-2-gard.png` });
-sjekk(
-    'garden drenerer ~6 pust i sekundet',
-    pGard <= pFor - 9 && pGard >= pFor - 18,
-    `${pFor} -> ${pGard}`
-);
+const oppe = gardProver.filter((s) => s?.gardOppe).length;
+const sisteSkjold = gardProver.at(-1)?.skjoldHelse;
+const gardDetalj = `${pFor} -> ${pGard}, oppe i ${oppe}/10 prøver, skjold ${sisteSkjold}`;
+if ((await liv()) !== lGardFor) {
+    console.log(`HOPP  garden - avbrutt av kamp  (${gardDetalj})`);
+} else {
+    sjekk('garden drenerer ~6 pust i sekundet', pGard <= pFor - 9 && pGard >= pFor - 18, gardDetalj);
+}
 await page.keyboard.up('Shift');
 
 // ── Gjenvinning: skal ta seg opp igjen etter hvilepausen ───────────────────

@@ -72,44 +72,80 @@ await page.waitForTimeout(600);
 const dystApen = await apneDysten();
 sjekk(dystApen, 'slag mot beskyttet boss åpnet kunnskapsdysten');
 
-let riktigTruffet = false;
-if (dystApen) {
-    // Vi vet ikke hvilket alternativ som er riktig, så vi prøver oss fram til
-    // svaret er riktig. Det er hele poenget med sjekken: et riktig svar - og
-    // bare det - skal rive ned et skjold.
-    for (let forsok = 0; forsok < 4 && !riktigTruffet; forsok++) {
-        if (forsok > 0 && !(await apneDysten())) {
-            console.log(`     (forsøk ${forsok}: fikk ikke åpnet dysten på nytt)`);
-            break;
-        }
-        const alternativer = await page.$$('button.flex.w-full.items-start');
-        if (alternativer.length <= forsok) {
-            console.log(`     (forsøk ${forsok}: bare ${alternativer.length} alternativer)`);
-            break;
-        }
-        const forSkjold = (await boss())?.skjold ?? -1;
-        await alternativer[forsok].click();
-        await page.waitForTimeout(500);
-        riktigTruffet = Boolean(await page.$('text=Riktig!'));
-        await page.click('button.bg-amber-400');
-        await page.waitForTimeout(1400);
+/**
+ * Fasiten for det spørsmålet som står oppe nå.
+ *
+ * `QuizChallenge` stokker alternativene per forsøk (`QuizChallenge.tsx:44`), så
+ * å gjette på indeks kan aldri bli pålitelig - en kjøring brukte opp alle fire
+ * forsøkene uten å treffe. Derfor leses spørsmålsbanken rett fra kilden gjennom
+ * Vites dev-server, og svaret velges på tekst.
+ */
+const fasit = () =>
+    page.evaluate(async () => {
+        const { NORDVIK_BOSS_QUESTIONS } = await import('/src/features/rpg/data/nordvik.ts');
+        // Spørsmålet står i h2-en i QuizChallenge.
+        const stilt = [...document.querySelectorAll('h2')].map((e) => e.textContent?.trim());
+        const spm = NORDVIK_BOSS_QUESTIONS.find((q) => stilt.includes(q.question));
+        if (!spm) return null;
+        return {
+            riktig: spm.options[spm.correct],
+            galt: spm.options.find((_, i) => i !== spm.correct),
+        };
+    });
 
-        if (forsok === 0) {
-            sjekk(!(await page.$('text=Kunnskapsdyst')), 'dysten lukket seg etter svar');
-            const vakt = await page.evaluate(
-                () => window.__rpg.scene.getScene('nordvik').fiendeSystem.bossVakt
-            );
-            sjekk(vakt === false, `bossvakten ble sluppet igjen (bossVakt=${vakt})`);
-        }
-        if (riktigTruffet) {
-            const etterSkjold = (await boss())?.skjold ?? -1;
-            sjekk(
-                etterSkjold === forSkjold - 1,
-                `riktig svar rev ned et skjold (${forSkjold} -> ${etterSkjold})`
-            );
-        }
+/** Klikker alternativet med denne teksten. Returnerer om det fantes. */
+const svar = async (tekst) => {
+    const knapp = page.locator('button.flex.w-full.items-start', { hasText: tekst }).first();
+    if (!(await knapp.count())) return false;
+    await knapp.click();
+    await page.waitForTimeout(500);
+    return true;
+};
+
+/** Lukker tilbakemeldingen etter et svar. */
+const lukkSvar = async () => {
+    await page.click('button.bg-amber-400');
+    await page.waitForTimeout(1400);
+};
+
+if (dystApen) {
+    const svarene = await fasit();
+    sjekk(svarene !== null, `fasiten ble funnet for spørsmålet som står oppe`);
+
+    // ── Galt svar først: dysten skal lukke seg, vakten slippes, skjoldet stå ──
+    const forGalt = (await boss())?.skjold ?? -1;
+    sjekk(await svar(svarene.galt), `galt alternativ fantes (${JSON.stringify(svarene.galt)})`);
+    // Første bom avslører ikke fasiten: «Ikke helt.», og «Ikke denne heller.»
+    // hvis den allerede er avslørt (QuizChallenge.tsx:130).
+    const bomTekst = await page.textContent('p.font-display').catch(() => null);
+    sjekk(
+        bomTekst?.startsWith('Ikke') ?? false,
+        `galt svar ble meldt som bom (${JSON.stringify(bomTekst)})`
+    );
+    await lukkSvar();
+    sjekk(!(await page.$('text=Kunnskapsdyst')), 'dysten lukket seg etter svar');
+    const vakt = await page.evaluate(
+        () => window.__rpg.scene.getScene('nordvik').fiendeSystem.bossVakt
+    );
+    sjekk(vakt === false, `bossvakten ble sluppet igjen (bossVakt=${vakt})`);
+    const etterGalt = (await boss())?.skjold ?? -1;
+    sjekk(etterGalt === forGalt, `galt svar rev ikke ned skjold (${forGalt} -> ${etterGalt})`);
+
+    // ── Riktig svar: og bare det skal rive ned et skjold ─────────────────────
+    if (await apneDysten()) {
+        const nyFasit = (await fasit()) ?? svarene;
+        const forRiktig = (await boss())?.skjold ?? -1;
+        sjekk(await svar(nyFasit.riktig), `riktig alternativ fantes (${JSON.stringify(nyFasit.riktig)})`);
+        sjekk(Boolean(await page.$('text=Riktig!')), 'riktig svar ble meldt som riktig');
+        await lukkSvar();
+        const etterRiktig = (await boss())?.skjold ?? -1;
+        sjekk(
+            etterRiktig === forRiktig - 1,
+            `riktig svar rev ned et skjold (${forRiktig} -> ${etterRiktig})`
+        );
+    } else {
+        sjekk(false, 'fikk ikke åpnet dysten på nytt for det riktige svaret');
     }
-    if (!riktigTruffet) sjekk(false, 'traff aldri et riktig svar på fire forsøk');
 }
 
 const etter = await boss();

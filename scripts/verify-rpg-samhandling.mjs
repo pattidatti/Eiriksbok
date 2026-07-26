@@ -49,6 +49,24 @@ const sjekk = (ok, melding) => {
     if (!ok) feil.push(melding);
 };
 
+/**
+ * E må holdes, ikke bare trykkes. Phasers `Key.onUp` nullstiller `_justDown`,
+ * så et keydown og keyup i samme bilde blir aldri sett av
+ * `Phaser.Input.Keyboard.JustDown` - og `page.keyboard.press()` sender begge
+ * uten opphold. Kampskriptet holder tastene av samme grunn.
+ */
+const trykkE = async () => {
+    await page.keyboard.down('e');
+    await page.waitForTimeout(140);
+    await page.keyboard.up('e');
+};
+
+/** Tittelen i et åpent panel. Pausemenyen bruker samme selektor, så den skilles ut. */
+const paneltittel = async () => {
+    const t = (await page.textContent('h2.font-display').catch(() => null))?.trim() ?? null;
+    return t === 'Pause' ? null : t;
+};
+
 // ── NPC ─────────────────────────────────────────────────────────────────────
 const navn = await stillDegVed('npc', 'gudrun');
 sjekk(navn === 'Gudrun Husfrue', `målet kjenner navnet sitt (fikk ${JSON.stringify(navn)})`);
@@ -56,9 +74,9 @@ await page.waitForTimeout(600);
 const npcHint = await hint();
 sjekk(npcHint === 'E - snakk med Gudrun Husfrue', `hint ved NPC: ${JSON.stringify(npcHint)}`);
 
-await page.keyboard.press('e');
+await trykkE();
 await page.waitForTimeout(900);
-const dialogTittel = await page.textContent('h2.font-display').catch(() => null);
+const dialogTittel = await paneltittel();
 sjekk(
     dialogTittel?.includes('Gudrun') ?? false,
     `E åpnet samtalen (${JSON.stringify(dialogTittel)})`
@@ -77,10 +95,13 @@ sjekk(
     `hint ved landemerke: ${JSON.stringify(lmHint)}`
 );
 
-await page.keyboard.press('e');
+await trykkE();
 await page.waitForTimeout(900);
-const lmTittel = await page.textContent('h2.font-display').catch(() => null);
-sjekk(Boolean(lmTittel), `E åpnet landemerket (${JSON.stringify(lmTittel)})`);
+const lmTittel = await paneltittel();
+sjekk(
+    lmTittel?.includes('Runesteinen') ?? false,
+    `E åpnet landemerket (${JSON.stringify(lmTittel)})`
+);
 await page.keyboard.press('Escape');
 await page.waitForTimeout(700);
 
