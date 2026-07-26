@@ -7,7 +7,7 @@
     "readTime": "9 min lesning",
     "heroImage": "/images/den-franske-revolusjon/robespierre-og-skrekkveldet-hero.webp",
     "details": [
-        "Maximilien Robespierre ledet Velferdskomiteen som styrte Frankrike under skrekkveldet.",
+        "Maximilien Robespierre var det mest kjente medlemmet av Velferdskomiteen, som styrte Frankrike under skrekkveldet.",
         "Omtrent seksten tusen mennesker ble henrettet med giljotinen mellom 1793 og 1794.",
         "Robespierre endte selv under giljotinen 28. juli 1794."
     ],
@@ -19,28 +19,29 @@
         "1700-tallet",
         "etikk"
     ],
+    "lastUpdated": "2026-07-26T00:00:00Z",
     "content": [
         {
             "type": "text",
-            "content": "Maximilien Robespierre er en av historiens merkeligste skikkelser. Han var en sky og blek advokat fra en liten by. Han hadde tynn stemme, og han sa at han hatet vold. Likevel ble det han som sendte tusenvis av mennesker til giljotinen i Frankrike. Hvordan kan en mann som drømte om et bedre samfunn ende opp som leder for det blodigste året i revolusjonen?"
+            "content": "Maximilien Robespierre er en av historiens merkeligste skikkelser. Han var advokat fra en liten by i Nord-Frankrike, han fikk ry som en veltalende forsvarer av fattige folk, og han kjempet i årevis mot dødsstraff (Østberg, 2025b). Likevel ble det han som sendte tusenvis av mennesker til giljotinen. Hvordan kan en mann som drømte om et bedre samfunn ende opp som den mest markante skikkelsen i det blodigste året i revolusjonen?"
         },
         {
             "type": "image",
             "src": "/images/den-franske-revolusjon/robespierre-og-skrekkveldet-hero.webp",
             "alt": "Portrett av Maximilien Robespierre, fransk advokat og revolusjonsleder, ca. 1791",
-            "caption": "Robespierre var liten av vekst, alltid pent kledd og bar pudret parykk."
+            "caption": "På portrettene går Robespierre alltid pent kledd, med pudret parykk."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Maximilien Robespierre — kort fortalt",
+                "title": "Maximilien Robespierre - kort fortalt",
                 "items": [
-                    "Født 1758 i Arras i Nord-Frankrike. Foreldreløs som tenåring.",
-                    "Utdannet advokat. Forsvarte ofte fattige uten å ta betalt.",
-                    "Valgt inn i nasjonalforsamlingen i 1789, samme år som revolusjonen begynte.",
-                    "Kallenavn: «Den ubestikkelige» — fordi ingen klarte å kjøpe meningene hans.",
-                    "Levde nøysomt hele livet, selv da han hadde landets makt i hånden."
+                    "Født 6. mai 1758 i Arras i Nord-Frankrike. Moren døde da han var seks år, og faren forlot familien.",
+                    "Utdannet advokat, kjent som en veltalende forsvarer av fattige folk.",
+                    "Valgt inn som representant for tredjestanden i 1789, samme år som revolusjonen begynte.",
+                    "Kallenavn: «Den ubestikkelige» - fordi ingen klarte å kjøpe meningene hans.",
+                    "Krevde at slaveriet skulle avskaffes, og var mot å begrense stemmeretten."
                 ]
             }
         },
@@ -50,7 +51,7 @@
         },
         {
             "type": "text",
-            "content": "Robespierre vokste opp i en bitteliten leilighet etter at moren hans døde og faren forsvant. Han måtte betale studiene sine selv. Han ble en dyktig advokat og tok ofte saker for folk som ikke hadde råd til å forsvare seg. Klassekameratene husket ham som en stille gutt som leste hele tiden og aldri var med på leker.\n\nDa revolusjonen begynte i 1789, ble han valgt inn i nasjonalforsamlingen i Paris. Der ble han kjent for én ting: han var prinsippfast. Han krevde at slaveriet skulle avskaffes. Han var mot dødsstraff, selv for de verste forbryterne. Han mente at alle menn skulle få stemmerett, ikke bare de rike. Få trodde han ville få det som han ville, men han ga seg aldri. Få store talere hadde svakere stemme enn ham, men alle hørte etter når han snakket.\n\nDen store helten hans var filosofen Jean-Jacques Rousseau, en av de viktigste tenkerne i [opplysningstiden](/samfunnskunnskap/styringsformer/opplysningstid). Rousseau hadde skrevet at et samfunn må bygge på «folkets allmenne vilje». Det vil si: lovene skal speile det vanlige folk mener er rett, ikke det kongen eller adelen vil ha. Robespierre tok dette dypt på alvor. Han trodde at revolusjonen kunne lage et helt nytt menneske: en borger som tenkte på fellesskapet før seg selv."
+            "content": "Moren til Robespierre døde da han var seks år, og faren forlot familien. Slektninger tok seg av ham til han var elleve. Da fikk han stipend til Louis-le-Grand, en av de fineste skolene i Paris (Østberg, 2025b; Bouloiseau, 2026). Han leste jus, og alt som 22-åring var han etablert advokat i hjembyen Arras. Der fikk han ry som en veltalende forsvarer av fattige folk (Østberg, 2025b).\n\nDa revolusjonen begynte i 1789, ble han valgt inn som representant for tredjestanden, de vanlige folkene (Bouloiseau, 2026). Der ble han kjent for én ting: han var prinsippfast. Han krevde at slaveriet skulle avskaffes. Han var mot dødsstraff, selv for de verste forbryterne. Han kjempet for full rettighet for jøder og skuespillere, for juryrettssaker og for trykkefrihet, og han gikk imot alle forsøk på å begrense stemmeretten til de rike (Østberg, 2025b). Få trodde han ville få det som han ville, men han ga seg aldri.\n\nDen store helten hans var filosofen Jean-Jacques Rousseau, en av de viktigste tenkerne i [opplysningstiden](/samfunnskunnskap/styringsformer/opplysningstid). Rousseau hadde skrevet at et samfunn må bygge på «folkets allmenne vilje». Det vil si: lovene skal speile det vanlige folk mener er rett, ikke det kongen eller adelen vil ha. Robespierre tok dette dypt på alvor. Han trodde at revolusjonen kunne lage et helt nytt menneske: en borger som tenkte på fellesskapet før seg selv."
         },
         {
             "type": "header",
@@ -58,14 +59,14 @@
         },
         {
             "type": "text",
-            "content": "I 1792 fikk Frankrike store problemer. Kongene i Østerrike og Preussen ville hjelpe Ludvig 16. tilbake til makten, og krigen brøt ut langs grensen. Samtidig var det matmangel i byene. Rykter løp om forrædere som skulle åpne portene for fienden.\n\nFolk i Paris ble livredde. I september brøt de seg inn i fengslene og drepte fanger de mistenkte for å være på fiendens side. Mer enn tusen mennesker ble myrdet i løpet av noen få dager. Det er disse drapene historikere kaller «septembermassakrene».\n\nRobespierre så at revolusjonen kunne dø. Han mente at bare strenge tiltak kunne redde den. Sommeren 1793 ble han valgt inn i Velferdskomiteen, et råd på tolv menn som styrte landet i en slags unntakstilstand. Komiteen kunne arrestere, dømme og henrette nesten hvem som helst."
+            "content": "I 1792 fikk Frankrike store problemer. Krigen brøt ut mot Østerrike og Preussen, som ville hjelpe Ludvig 16. tilbake til makten. Samtidig var det matmangel i byene. Rykter løp om forrædere som skulle åpne portene for fienden.\n\nFolk i Paris ble livredde. Fra 2. til 6. september brøt de seg inn i fengslene og drepte fanger de mistenkte for å være på fiendens side. Over 1300 mennesker ble myrdet i løpet av disse dagene, de fleste adelige og prester, men også vanlige kriminelle (Tønnesson, 2025). Det er disse drapene historikere kaller «septembermassakrene».\n\nRobespierre så at revolusjonen kunne dø. Han mente at bare strenge tiltak kunne redde den. Sommeren 1793 ble han valgt inn i Velferdskomiteen, et råd på tolv menn som styrte landet i en slags unntakstilstand (Østberg, 2025b; Østberg, 2026). Komiteen kunne arrestere, dømme og henrette nesten hvem som helst."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
                 "text": "Skrekken er ikke annet enn rask, hard og ubøyelig rettferdighet. Den er derfor et uttrykk for dyden.",
-                "author": "Robespierre, tale i nasjonalforsamlingen 5. februar 1794"
+                "author": "Robespierre, tale til Nasjonalkonventet 5. februar 1794"
             }
         },
         {
@@ -74,28 +75,28 @@
         },
         {
             "type": "text",
-            "content": "Den nye loven het «loven om mistenkte». Alle som virket fiendtlige mot revolusjonen kunne arresteres. Det trengtes ikke bevis. Det holdt med et rykte fra en nabo eller en uforsiktig spøk på en kafé.\n\nGiljotinen var maskinen som skulle gjøre henrettelsen rask og lik for alle. Den ble faktisk oppfunnet for å være mer human enn øksen og repet. I praksis ble den et samlebånd for henrettelser. På torget i Paris falt hodene hver eneste dag. Folk tok med strikketøy og matpakke og så på, som om det var teater."
+            "content": "Høsten 1793 kom «loven om mistenkte». Den slo fast at tidligere adelige, prester som nektet å avlegge ed til staten, og slektninger av folk som hadde flyktet fra landet, skulle arresteres (Østberg, 2026). Man trengte altså ikke ha gjort noe. Det holdt å tilhøre feil gruppe.\n\nGiljotinen var maskinen som skulle gjøre henrettelsen rask og lik for alle. Den ble tatt i bruk i 1792, og tanken bak var å gjøre dødsstraffen mindre pinefull enn øksen og repet. Halshogging med sverd hadde vært en fordel for adelen, og nå skulle alle behandles likt (Østberg, 2025a). I praksis ble maskinen et samlebånd for henrettelser. Loven krevde at henrettelsen skulle skje offentlig, og giljotinen sto godt synlig midt i byen, til slutt på Revolusjonsplassen (Østberg, 2025a). Folk samlet seg for å se på, som om det var teater."
         },
         {
             "type": "image",
             "src": "/images/den-franske-revolusjon/robespierre-og-skrekkveldet-01.webp",
             "alt": "Folkemengde samlet rundt giljotinen på Place de la Révolution i Paris under skrekkveldet 1793",
-            "caption": "Henrettelsene ble en folkeforestilling. Noen avishandlere solgte lister over dagens ofre."
+            "caption": "Henrettelsene skjedde offentlig, midt i byen, og trakk store folkemengder."
         },
         {
             "type": "text",
-            "content": "Mellom september 1793 og juli 1794 ble omtrent seksten tusen mennesker henrettet. Mange flere døde i fengsel eller i massehenrettelser ute i provinsene. Ofrene var ikke bare adel og prester. De var bønder, håndverkere og gamle revolusjonshelter. Til og med Robespierres egne venner ble sendt til giljotinen da han mente de hadde sviktet idealene."
+            "content": "Omtrent seksten tusen mennesker ble henrettet med giljotinen under skrekkveldet (Østberg, 2025a). Mange flere døde i fengsel eller i massehenrettelser ute i provinsene, og regner man med alle som ble drept i disse årene, kommer tallet opp mot 35 000-40 000 (Østberg, 2026). Ofrene var ikke bare adel og prester. De var bønder, håndverkere og gamle revolusjonshelter. Til og med Robespierres egne venner ble sendt til giljotinen da han mente de hadde sviktet idealene."
         },
         {
             "type": "component",
             "name": "DragDropTimeline",
             "props": {
-                "title": "Skrekkveldet — sett hendelsene i riktig rekkefølge",
+                "title": "Skrekkveldet - sett hendelsene i riktig rekkefølge",
                 "events": [
                     {
                         "id": "e1",
                         "year": 1789,
-                        "label": "Bastillen stormes — revolusjonen begynner"
+                        "label": "Bastillen stormes - revolusjonen begynner"
                     },
                     {
                         "id": "e2",
@@ -110,7 +111,7 @@
                     {
                         "id": "e4",
                         "year": 1793,
-                        "label": "Velferdskomiteen får utvidet makt — Robespierre styrer"
+                        "label": "Velferdskomiteen får utvidet makt - Robespierre blir medlem"
                     },
                     {
                         "id": "e5",
@@ -131,7 +132,7 @@
         },
         {
             "type": "text",
-            "content": "Robespierre trodde han kunne stoppe blodbadet ved å gjøre revolusjonen renere enn ren. Han innførte en «fornuftens religion» og holdt en stor fest til ære for det han kalte «Det høyeste vesen». Han talte om dyd og moral fra talerstolen.\n\nMen mange medlemmer i nasjonalforsamlingen begynte å frykte for sitt eget liv. Hvem kunne være sikker på at Robespierre ikke pekte på dem i neste tale? Frykten gjorde dem modige.\n\nDen 27. juli 1794 reiste flere av dem seg mot ham. De ropte ham ned før han fikk tale ferdig. Han prøvde å skyte seg, men traff bare kjeven. Dagen etter ble han ført til den samme giljotinen han selv hadde brukt mot andre. Han skrek av smerte da bandasjen ble revet av munnen hans. Sekunder seinere falt øksa.\n\nSkrekkveldet var over."
+            "content": "Robespierre trodde han kunne stoppe blodbadet ved å gjøre revolusjonen renere enn ren. Han tok avstand fra den antikristne «fornuftsdyrkelsen» som andre revolusjonære hadde satt i gang, og fikk i stedet innført en egen borgerreligion: dyrkingen av «Det høyeste vesen». Den 8. juni 1794 ledet han selv en stor fest til ære for den i Tuilerihagen i Paris (Bouloiseau, 2026). Han talte om dyd og moral fra talerstolen.\n\nMen mange medlemmer i Nasjonalkonventet begynte å frykte for sitt eget liv. Hvem kunne være sikker på at Robespierre ikke pekte på dem i neste tale? Frykten gjorde dem modige.\n\nDen 27. juli 1794 snudde forsamlingen seg mot ham midt under den siste talen hans. Han ble satt under tiltale samme dag. Senere på kvelden såret han seg selv alvorlig med et pistolskudd i kjeven (Bouloiseau, 2026). Dagen etter, 28. juli, ble han ført til den samme giljotinen han selv hadde brukt mot andre, og henrettet foran en jublende folkemengde (Bouloiseau, 2026).\n\nSkrekkveldet var over."
         },
         {
             "type": "component",
@@ -146,22 +147,22 @@
                         "text": "Vennen din Jean banker på døra om natten. Han hvisker: «Min onkel er på flukt. Han trenger et sted å skjule seg i en uke. Politiet leter overalt.» Moren din ligger og sover i naborommet. Hvis du sier ja og dere blir tatt, vil dere alle ende på giljotinen.\n\nHva gjør du?",
                         "options": [
                             {
-                                "label": "Ja — jeg gjemmer ham. Ingen fortjener å dø for en mening.",
+                                "label": "Ja - jeg gjemmer ham. Ingen fortjener å dø for en mening.",
                                 "nextId": "gjemmer"
                             },
                             {
-                                "label": "Nei — det er for farlig for moren min.",
+                                "label": "Nei - det er for farlig for moren min.",
                                 "nextId": "nei"
                             },
                             {
-                                "label": "Jeg melder fra — kanskje vi får belønning og ros.",
+                                "label": "Jeg melder fra - kanskje vi får belønning og ros.",
                                 "nextId": "melder"
                             }
                         ]
                     },
                     {
                         "id": "gjemmer",
-                        "text": "Onkelen sover i kjelleren. Hver gang det banker på døra, stivner du. Etter seks dager klarer han å rømme ut av byen. Du blir aldri tatt — men du sover dårlig resten av livet.\n\nMange år seinere, da skrekkveldet er over, kommer onkelen tilbake. Han gir deg en bok av Rousseau med en hilsen: «Mot er å gjøre det rette når du er redd.»",
+                        "text": "Onkelen sover i kjelleren. Hver gang det banker på døra, stivner du. Etter seks dager klarer han å rømme ut av byen. Du blir aldri tatt - men du sover dårlig resten av livet.\n\nMange år seinere, da skrekkveldet er over, kommer onkelen tilbake. Han gir deg en bok av Rousseau med en hilsen: «Mot er å gjøre det rette når du er redd.»",
                         "options": []
                     },
                     {
@@ -202,9 +203,9 @@
                     "Hvordan endte Robespierre selv den 28. juli 1794?"
                 ],
                 "reflekter": [
-                    "Robespierre var mot dødsstraff og sa at han hatet vold, men ble likevel leder for det blodigste året i revolusjonen. Forklar hvordan dette kunne skje.",
+                    "Robespierre kjempet i årevis mot dødsstraff og for rettighetene til fattige folk, men ble likevel den mest markante skikkelsen i det blodigste året i revolusjonen. Forklar hvordan dette kunne skje.",
                     "I teksten sier Robespierre at «skrekken» bare er rask og hard rettferdighet, og et uttrykk for dyden. Hva mener han med dette, og hvorfor er det farlig å tenke slik?",
-                    "Hvorfor ble medlemmene i nasjonalforsamlingen til slutt modige nok til å reise seg mot Robespierre? Bruk uttrykket «når jegeren blir byttet» i svaret ditt.",
+                    "Hvorfor ble medlemmene i Nasjonalkonventet til slutt modige nok til å reise seg mot Robespierre? Bruk uttrykket «når jegeren blir byttet» i svaret ditt.",
                     "Teksten sier at ettertiden lærte to ting av Robespierre. Forklar begge med dine egne ord, og velg hvilken du mener er viktigst."
                 ],
                 "gaaVidere": [
@@ -269,6 +270,19 @@
                         ],
                         "answer": "Han ble henrettet på giljotinen 28. juli 1794"
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bouloiseau, M. (2026). *Maximilien Robespierre*. Encyclopaedia Britannica. Hentet 26.07.2026 fra [britannica.com/biography/Maximilien-Robespierre](https://www.britannica.com/biography/Maximilien-Robespierre)",
+                    "Tønnesson, K. (2025). *Septembermassakrene*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/septembermassakrene](https://snl.no/septembermassakrene)",
+                    "Østberg, K. P. (2025a). *Giljotin*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/giljotin](https://snl.no/giljotin)",
+                    "Østberg, K. P. (2025b). *Maximilien Robespierre*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Maximilien_Robespierre](https://snl.no/Maximilien_Robespierre)",
+                    "Østberg, K. P. (2026). *Skrekkveldet*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/skrekkveldet](https://snl.no/skrekkveldet)"
                 ]
             }
         }
