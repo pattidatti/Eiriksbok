@@ -9,35 +9,35 @@
     "heroImage": "/images/historie/dekolonisering/kongo_hero.webp",
     "details": [
         "Fra belgisk koloni til kaos.",
-        "Patrice Lumumba og CIA.",
+        "Patrice Lumumba og drapet i 1961.",
         "Da den kalde krigen traff Afrika."
     ],
     "timeline": [
         {
             "year": "1885",
             "title": "Kong Leopolds private eiendom",
-            "description": "Kongo Free State etableres. Terrorvelde."
+            "description": "Kongostaten blir Leopold IIs personlige eiendom. Hæren hans bruker vold for å kontrollere befolkningen."
         },
         {
             "year": "1960",
             "title": "30. juni: Uavhengighet",
-            "description": "Belgia trekker seg ut over natten. Lumumba blir statsminister."
+            "description": "Belgia trekker seg ut i all hast. Lumumba blir statsminister."
         },
         {
             "year": "1961",
-            "title": "Lumumba myrdes",
-            "description": "Drept av separatister med hjelp fra Belgia og CIA."
+            "title": "Lumumba drepes",
+            "description": "Drept i Katanga 17. januar, uten rettergang og under ledelse av en belgisk offiser."
         },
         {
             "year": "1965",
             "title": "Mobutu tar makten",
-            "description": "Starter et kleptokrati som varer i 30 år."
+            "description": "Militærkupp i november. Mobutu blir sittende i 32 år."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "Kongo er et enormt land, rikt på naturressurser som gummi, kobber, diamanter og uran. Men rikdommen har vært landets forbannelse. Under belgisk styre var utdanning forbudt for afrikanere over grunnskolenivå. Da Kongo ble uavhengig i 1960, hadde landet kun 30 universitetsutdannede personer i en befolkning på 14 millioner. Det var ingen leger, ingen ingeniører, ingen offiserer."
+            "content": "Kongo er et enormt land, rikt på naturressurser. Kolonimakten hentet ut gummi og elfenben (Leraand & Solhjell, 2026b), og i dag utvinnes blant annet kobber, kobolt, diamanter og uran (Hem, 2026). Men rikdommen har vært landets forbannelse. Under belgisk styre var høyere utdanning svært begrenset for kongoleserne. Da Kongo ble uavhengig i 1960, hadde bare 17 kongolesere universitetsutdanning, og belgierne satt i de aller fleste lederstillingene (Leraand & Solhjell, 2026b). Et helt land skulle plutselig styre seg selv, nesten uten egne leger, ingeniører og offiserer."
         },
         {
             "type": "header",
@@ -45,14 +45,14 @@
         },
         {
             "type": "text",
-            "content": "På uavhengighetsdagen holdt kongen av Belgia en tale der han roste Belgias innsats. Den nye statsministeren, Patrice Lumumba, svarte med en flammende tale der han beskrev undertrykkelsen, rasismen og slaveriet folket hadde lidd under. Talen gjorde ham til en helt i afrikanernes øyne, men til en farlig fiende for Vesten."
+            "content": "På uavhengighetsdagen 30. juni 1960 talte kongen av Belgia først. Han fremstilte kolonitiden som et sivilisasjonsverk Belgia kunne være stolt av. Den nye statsministeren, Patrice Lumumba, svarte med en flammende tale. Han fortalte om tvangsarbeid til en lønn ingen kunne leve av, om hån og slag fordi folk var svarte, og om en lov som var mild mot hvite og «grusom og umenneskelig» mot svarte (Lumumba, 1960/2020). Talen gjorde ham til en helt i afrikanernes øyne, men til en farlig fiende for Vesten."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Uran til atombomben",
-                "content": "Hvorfor var USA så interessert i Kongo? Shinkolobwe-gruven i Katanga-provinsen leverte uranet som ble brukt i Hiroshima-bomben. USA var livredde for at Sovjetunionen skulle få kontroll over disse gruvene."
+                "content": "Hvorfor var USA så interessert i Kongo? Shinkolobwe-gruven i Katanga-provinsen leverte uranet som ble brukt i Hiroshima-bomben. Malmen der holdt rundt 65 prosent uranoksid, mot under 1 prosent i amerikansk og kanadisk malm (Williams, 2016). USA var livredde for at Sovjetunionen skulle få kontroll over disse gruvene."
             }
         },
         {
@@ -61,28 +61,44 @@
         },
         {
             "type": "text",
-            "content": "Bare dager etter uavhengigheten brøt hæren sammen i mytteri. Den rike provinsen Katanga løsrev seg med belgisk støtte. Lumumba ba FN om hjelp, men ble avvist. I desperasjon ba han Sovjetunionen om hjelp. Det var dødsdommen hans.\n\nCIA og Belgia konspirerte for å fjerne ham. Lumumba ble fanget, torturert og henrettet i januar 1961. Oberst Mobutu Sese Seko, en vestlig alliert, tok makten og styrte landet (som han døpte om til Zaire) som sin egen bankkonto i over 30 år."
+            "content": "Bare dager etter uavhengigheten brøt det ut mytteri i hæren, og Belgia sendte inn soldater (Solhjell & Leraand, 2026a). Den rike provinsen Katanga erklærte seg selvstendig 11. juli 1960, med støtte fra Belgia, Sør-Afrika og USA og fra gruveselskapene som tjente på mineralene i provinsen (Solhjell & Leraand, 2026a).\n\nLumumba ba FN om hjelp, og FN sendte fredsstyrken ONUC. Men styrken nektet å slå ned løsrivelsen i Katanga, og da ba Lumumba Sovjetunionen om fly til å frakte sine egne soldater dit (Wallerstein, 2026). Det var dødsdommen hans. Han ble avsatt i september 1960, arrestert og sendt til Katanga. Der ble han torturert og drept 17. januar 1961, uten rettergang og under ledelse av en belgisk offiser. Belgia har innrømmet sin rolle, og senere avsløringer peker også mot amerikansk medvirkning (Leraand, 2026).\n\nMobutu Sese Seko tok makten i et militærkupp i november 1965 og ble sittende i 32 år. Han samarbeidet tett med USA gjennom hele den kalde krigen, og i 1971 døpte han landet om til Zaïre. Ettermælet hans er preget av omfattende plyndring av statskassen (Solhjell, 2025)."
         },
         {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvor mange universitetsutdannede kongolesere fantes det da landet ble uavhengig i 1960, og hvor stor var befolkningen?",
+                    "Hvor mange kongolesere hadde universitetsutdanning da landet ble uavhengig i 1960, og hvem satt i de fleste lederstillingene?",
                     "Hvilke naturressurser gjorde Kongo så rikt, og hvorfor kaller teksten rikdommen en forbannelse?",
                     "Hva var det med Lumumbas tale på uavhengighetsdagen som gjorde ham til en helt for afrikanerne, men til en fiende for Vesten?",
-                    "Hva skjedde med Lumumba i januar 1961, og hvem sto bak?"
+                    "Hva skjedde med Lumumba 17. januar 1961, og hvilket land har innrømmet sin rolle i drapet?"
                 ],
                 "reflekter": [
-                    "Belgierne forbød utdanning for afrikanere over grunnskolenivå. Forklar hvordan dette gjorde det vanskelig for Kongo å styre seg selv da landet plutselig ble uavhengig.",
+                    "Belgierne holdt høyere utdanning nesten stengt for kongoleserne. Forklar hvordan dette gjorde det vanskelig for Kongo å styre seg selv da landet plutselig ble uavhengig.",
                     "Uranet fra Shinkolobwe-gruven ble brukt i Hiroshima-bomben. Forklar hvorfor akkurat dette gjorde USA så redde for at Sovjetunionen skulle få kontroll over Kongo.",
-                    "Lumumba ba først FN om hjelp, men da han ble avvist, vendte han seg til Sovjetunionen. Hvorfor kaller teksten dette dødsdommen hans?",
+                    "FN sendte en fredsstyrke, men styrken nektet å slå ned løsrivelsen i Katanga. Da vendte Lumumba seg til Sovjetunionen. Hvorfor kaller teksten dette dødsdommen hans?",
                     "USA støttet diktatoren Mobutu fordi han var anti-kommunist, ikke fordi han var demokrat. Vurder om det var riktig av Vesten å velge en alliert på denne måten."
                 ],
                 "gaaVidere": [
-                    "Mobutu styrte landet som sin egen bankkonto i over 30 år. Finn ut hva ordet kleptokrati betyr, og skriv noen setninger om hvorfor et slikt styre er skadelig for et land.",
+                    "Mobutu satt med makten i 32 år, og ettermælet hans er preget av plyndring av statskassen. Finn ut hva ordet kleptokrati betyr, og skriv noen setninger om hvorfor et slikt styre er skadelig for et land.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan den kalde krigen mellom USA og Sovjetunionen kunne avgjøre skjebnen til et land i hjertet av Afrika.",
                     "Diskuter med en partner: Hvem hadde mest skyld i kaoset i Kongo etter 1960 - Belgia, USA, Sovjetunionen eller kongoleserne selv?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Leraand, D. & Solhjell, R. (2026b). *DR Kongos historie til 1960*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/DR_Kongos_historie_til_1960](https://snl.no/DR_Kongos_historie_til_1960)",
+                    "Solhjell, R. & Leraand, D. (2026a). *DR Kongos historie 1960-1994*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/DR_Kongos_historie_1960-1994](https://snl.no/DR_Kongos_historie_1960%E2%80%931994)",
+                    "Leraand, D. (2026). *Patrice Lumumba*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Patrice_Lumumba](https://snl.no/Patrice_Lumumba)",
+                    "Wallerstein, I. (2026). *Patrice Lumumba*. Encyclopaedia Britannica. Hentet 26.07.2026 fra [britannica.com](https://www.britannica.com/biography/Patrice-Lumumba)",
+                    "Solhjell, R. (2025). *Mobutu Sese Seko*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Mobutu_Sese_Seko](https://snl.no/Mobutu_Sese_Seko)",
+                    "Hem, M. (2026). *Den demokratiske republikken Kongo*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Kongo](https://snl.no/Kongo_-_DR_Kongo,_Kinshasa)",
+                    "Williams, S. (2016). *The link between uranium from the Congo and Hiroshima: a story of twin tragedies*. The Conversation. Hentet 26.07.2026 fra [theconversation.com](https://theconversation.com/the-link-between-uranium-from-the-congo-and-hiroshima-a-story-of-twin-tragedies-64329)",
+                    "Lumumba, P. (1960/2020). *Tale ved seremonien for Kongos uavhengighet, 30. juni 1960*. Jacobin. Hentet 26.07.2026 fra [jacobin.com](https://jacobin.com/2020/06/patrice-lumumba-belgium-republic-of-congo-independence)"
                 ]
             }
         }
@@ -90,11 +106,11 @@
     "quiz": [
         {
             "id": "q1",
-            "question": "Hvor mange universitetsutdannede kongolesere fantes det i 1960?",
+            "question": "Hvor mange kongolesere hadde universitetsutdanning da Kongo ble uavhengig i 1960?",
             "options": [
-                "Ca. 30",
-                "Ca. 3000",
-                "Ca. 300 000",
+                "17",
+                "1700",
+                "170 000",
                 "Ingen"
             ],
             "correctAnswer": 0
@@ -112,5 +128,5 @@
         }
     ],
     "createdDate": "2026-01-16T10:40:00Z",
-    "lastUpdated": "2026-01-16T10:40:00Z"
+    "lastUpdated": "2026-07-26T00:00:00Z"
 }
