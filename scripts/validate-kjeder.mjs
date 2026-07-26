@@ -48,6 +48,40 @@ const MAX_FEIL = 6;
 const MIN_PER_BOTTE = 2;
 const LENGDE_SLINGRING = 15;
 const KULISSER = new Set(['middelalder', 'industri', 'moderne']);
+/**
+ * Scenene bakgrunnen kan vise. Holdes i synk med SCENER i
+ * `src/components/games/kjede/kjedeScener.ts` - en scene som ikke finnes der,
+ * faller stille tilbake til kulissen, og da mister kjeden hele poenget med at
+ * landskapet forteller historien.
+ */
+const SCENER = new Set([
+    'bygdeliv',
+    'havn',
+    'pestby',
+    'odegard',
+    'nyjord',
+    'kongsgard',
+    'union',
+    'industriby',
+    'byen',
+    'bygate',
+    'versailles',
+    'bastillen',
+    'barrikade',
+    'slagmark',
+    'gruve',
+    'jernbane',
+    'arbeiderby',
+    'skyttergrav',
+    'krisetid',
+    'fakkeltog',
+    'muren',
+    'panelblokk',
+    'folketog',
+    'utvandrerhavn',
+    'finansby',
+    'boligfelt',
+]);
 // Tegn som avslører at norsk tekst har blitt mishandlet av en encoding et sted
 const BRUTNE_TEGN = /Ã¦|Ã¸|Ã¥|Ã†|Ã˜|Ã…|�/;
 
@@ -102,8 +136,14 @@ for (const filnavn of filer) {
     for (const nokkel of ['title', 'subjectId', 'topicId', 'epoke', 'ingress', 'start', 'slutt']) {
         if (!kjede[nokkel]) meld(fil, `mangler «${nokkel}»`);
     }
+    // «aar» sorterer kjedene kronologisk på startskjermen. Uten den havner de i
+    // filnavnrekkefølge, og da står 1980 foran 1349.
+    if (typeof kjede.aar !== 'number') meld(fil, 'mangler «aar» (startår som tall)');
     if (!KULISSER.has(kjede.kulisse)) {
         meld(fil, `ukjent kulisse «${kjede.kulisse}» (gyldige: ${[...KULISSER].join(', ')})`);
+    }
+    if (kjede.scene && !SCENER.has(kjede.scene)) {
+        meld(fil, `ukjent scene «${kjede.scene}» (gyldige: ${[...SCENER].join(', ')})`);
     }
     if (!fagOgEmne.has(`${kjede.subjectId}/${kjede.topicId}`)) {
         meld(fil, `${kjede.subjectId}/${kjede.topicId} finnes ikke i manifestet`);
@@ -185,6 +225,9 @@ for (const filnavn of filer) {
         if (l.link && !gyldigeLenker.has(l.link)) {
             meld(fil, `ledd ${i + 1}: død lenke ${l.link}`);
         }
+        if (l.scene && !SCENER.has(l.scene)) {
+            meld(fil, `ledd ${i + 1}: ukjent scene «${l.scene}»`);
+        }
     });
 
     indeks.push({
@@ -193,10 +236,13 @@ for (const filnavn of filer) {
         subjectId: kjede.subjectId,
         topicId: kjede.topicId,
         epoke: kjede.epoke,
+        aar: kjede.aar,
         ingress: kjede.ingress,
         antallLedd: ledd.length,
     });
 }
+
+indeks.sort((a, b) => a.aar - b.aar);
 
 if (feil.length) {
     console.error('\nKjedereaksjonen - ugyldige kjeder:\n');

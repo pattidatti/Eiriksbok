@@ -17,8 +17,9 @@ import {
     FOG_START_LEAD,
     GROUND_TOP,
     LEAP_DUR,
+    PLATFORM_W,
+    PUST_DUR,
     SETTLE_DUR,
-    SLAB_W,
     THINK_TIME_SCALE,
     arcPoint,
     clamp01,
@@ -27,9 +28,11 @@ import {
     easeOutCubic,
     edgeX,
     landingX,
+    lesetid,
     runSpeed,
     segmentX,
 } from '../../../utils/kjedeFysikk';
+import { KULISSE_SCENE } from './kjedeScener';
 import { beregnEffekter, tilbud, type DrivkraftEffekter } from './drivkrefter';
 
 export type Fase =
@@ -37,6 +40,7 @@ export type Fase =
     | 'tenk'
     | 'sprang'
     | 'landing'
+    | 'pust'
     | 'fall'
     | 'feilspor'
     | 'klatre'
@@ -83,16 +87,47 @@ export interface KjedeVerden {
     riktigeForsteForsok: number;
     tid: number;
     valg: Valgstein[] | null;
-    markert: number;
+    /** Sekunder eleven har på seg på DETTE leddet. Regnet ut fra tekstmengden. */
+    tenketid: number;
+    /**
+     * Tastaturmarkøren. `null` betyr at ingen påstand er pekt ut.
+     *
+     * Den starter alltid på null. Før sto den på rad 2 fra det øyeblikket
+     * valgene dukket opp, og da hadde én av de tre en tydelig ramme rundt seg
+     * uten at eleven hadde gjort noe - det leste som et hint om hvilken som var
+     * riktig. Markøren dukker først opp når eleven faktisk bruker piltastene.
+     */
+    markert: number | null;
     aktivFeil: KjedeFeil | null;
+    /** Satt når tenketiden gikk ut uten at eleven valgte noe. */
+    tidUt: boolean;
     resultater: LeddResultat[];
     drivkrefter: DrivkraftId[];
     tilbudte: DrivkraftId[] | null;
     effekter: DrivkraftEffekter;
     hendelser: Verdenshendelse[];
-    /** Settes når figuren har landet feil, slik at 'fall' vet hvor den faller fra. */
+    /** Settes når figuren skal falle, slik at 'fall' vet hvor den faller fra. */
+    fallFraX: number;
     fallFraY: number;
 }
+
+// ---------------------------------------------------------------------------
+// Scener
+// ---------------------------------------------------------------------------
+
+/**
+ * Bakgrunnen på plattform `i`. Utgangspunktet har kjedens egen scene, og hvert
+ * ledd kan bytte den ut. Et ledd uten scene arver den forrige, så en kjede kan
+ * la det samme landskapet stå over flere ledd der ingenting har endret seg.
+ */
+export const sceneForSegment = (kjede: Kjede, i: number): string => {
+    let scene = kjede.scene ?? KULISSE_SCENE[kjede.kulisse] ?? 'bygdeliv';
+    for (let n = 1; n <= i; n++) {
+        const neste = kjede.ledd[n - 1]?.scene;
+        if (neste) scene = neste;
+    }
+    return scene;
+};
 
 // ---------------------------------------------------------------------------
 // Oppsett
@@ -113,13 +148,16 @@ export const opprettVerden = (kjede: Kjede, seed: number): KjedeVerden => ({
     riktigeForsteForsok: 0,
     tid: 0,
     valg: null,
-    markert: 1,
+    tenketid: 8,
+    markert: null,
     aktivFeil: null,
+    tidUt: false,
     resultater: [],
     drivkrefter: [],
     tilbudte: null,
     effekter: beregnEffekter([]),
     hendelser: [],
+    fallFraX: segmentX(0),
     fallFraY: GROUND_TOP,
 });
 
@@ -207,6 +245,12 @@ export const flyttMarkering = (w: KjedeVerden, retning: -1 | 1) => {
     if (!kanVelge(w) || !w.valg) return;
     const gyldige = w.valg.filter((s) => s.tilstand !== 'smuldrer' && s.tilstand !== 'borte');
     if (gyldige.length === 0) return;
+    // Første piltast peker ut den øverste eller nederste påstanden i stedet for
+    // å flytte fra et sted markøren aldri sto
+    if (w.markert === null) {
+        w.markert = retning === 1 ? gyldige[0].row : gyldige[gyldige.length - 1].row;
+        return;
+    }
     let neste = w.markert;
     for (let i = 0; i < w.valg.length; i++) {
         neste = (neste + retning + w.valg.length) % w.valg.length;
@@ -255,13 +299,49 @@ export const velg = (w: KjedeVerden, row: number) => {
             s.anim = 0;
         }
     }
+    w.tidUt = false;
     w.fase = 'sprang';
     w.faseT = 0;
 };
 
 /**
+ * Tenketiden gikk ut uten at eleven pekte ut noe.
+ *
+ * Før valgte spillet for henne: markøren sto på rad 2 fra første stund, og når
+ * tiden løp ut ble den påstanden trykket inn på hennes vegne. Det var både
+ * urimelig - hun kunne bli sendt i feilsporet for et svar hun aldri valgte - og
+ * grunnen til at rad 2 måtte tegnes med ramme rundt seg hele tiden. Nå går hun
+ * ut over kanten i stedet, og fasiten legger seg på plass mens hun er nede.
+ */
+const tidenGikkUt = (w: KjedeVerden) => {
+    if (w.fase !== 'tenk' || !w.valg) return;
+    const ledd = kommendeLedd(w);
+    w.resultater.push({
+        index: w.segment,
+        tekst: ledd.tekst,
+        link: ledd.link,
+        riktig: false,
+    });
+    w.streak = 0;
+    w.aktivFeil = null;
+    w.tidUt = true;
+    w.fogX += w.effekter.overtrampByks;
+    for (const s of w.valg) {
+        if (s.tilstand !== 'svever') continue;
+        s.tilstand = s.riktig ? 'senkes' : 'smuldrer';
+        s.anim = 0;
+    }
+    w.hendelser.push({ type: 'feil', hvorfor: '' });
+    // Hun stopper ikke ved kanten - hun går utfor den
+    w.fallFraX = edgeX(w.segment) + 70;
+    w.fallFraY = GROUND_TOP;
+    w.fase = 'fall';
+    w.faseT = 0;
+};
+
+/**
  * Eleven kan hoppe ut av feilsporet selv, men ikke før forklaringen har rukket å
- * bli lest. Uten denne terskelen ble omveien gratis, og da forsvant grunnen til
+ * bli lest. Uten den terskelen ble omveien gratis, og da forsvant grunnen til
  * å svare riktig.
  */
 export const MIN_FEILSPOR_LESETID = 1.5;
@@ -270,6 +350,13 @@ export const hoppOverFeilspor = (w: KjedeVerden) => {
     if (w.fase === 'feilspor' && w.faseT > MIN_FEILSPOR_LESETID) {
         w.faseT = w.effekter.feilsporTid;
     }
+};
+
+/** Pusterommet kan kortes ned, men ikke hoppes over helt. */
+export const MIN_PUST = 0.7;
+
+export const hoppOverPust = (w: KjedeVerden) => {
+    if (w.fase === 'pust' && w.faseT > MIN_PUST) w.faseT = PUST_DUR;
 };
 
 export const velgDrivkraft = (w: KjedeVerden, id: DrivkraftId) => {
@@ -285,12 +372,27 @@ export const velgDrivkraft = (w: KjedeVerden, id: DrivkraftId) => {
 // Tidssteg
 // ---------------------------------------------------------------------------
 
+/**
+ * Kjeden har kneppet på plass. Eleven flyttes ett steg fram, og så holder
+ * spillet pusten et øyeblikk: kameraet blir stående på leddet hun nettopp
+ * bygget, og teksten hun valgte står fram som det nye utgangspunktet.
+ *
+ * Før gikk spillet rett fra landing til løping til neste spørsmål. Det ga tre
+ * spørsmål i strekk uten et eneste øyeblikk der noe fikk synke inn.
+ */
 const gaaTilNesteSegment = (w: KjedeVerden) => {
     w.segment += 1;
     w.valg = null;
     w.aktivFeil = null;
+    w.tidUt = false;
+    w.markert = null;
     w.playerY = GROUND_TOP;
+    w.fase = 'pust';
+    w.faseT = 0;
+};
 
+/** Kalles når pusterommet er over: enten drivkraftvalg eller videre løping. */
+const etterPust = (w: KjedeVerden) => {
     if (w.segment === drivkraftpunkt(w.kjede) && w.drivkrefter.length === 0) {
         const rng = mulberry32(djb2Hash(`${w.seed}:drivkraft`));
         w.tilbudte = tilbud(rng, w.drivkrefter);
@@ -329,16 +431,17 @@ export const stegVerden = (w: KjedeVerden, dtRaw: number) => {
     w.tid += dt;
     w.faseT += dt;
 
-    // Tenkeøyeblikket sakker ned hele verden, også Glemselen. Å tenke skal
-    // koste lite. Det som koster, er å ta feil.
+    // Tenkeøyeblikket sakker ned hele verden. Å tenke skal koste lite. Det som
+    // koster, er å ta feil.
     const skala = w.fase === 'tenk' ? THINK_TIME_SCALE : 1;
     const vdt = dt * skala;
 
-    // Glemselen står stille mens eleven tenker og mens hun leser forklaringen i
-    // feilsporet. Å tenke og å lese skal aldri koste terreng - straffen for et
-    // feilsvar er bykset i `velg()`, og det er like stort uansett hvor lenge
-    // eleven blir liggende nede og lese. Se FOG_SURGE i kjedeFysikk.ts.
-    const taakenGaar = w.fase !== 'tenk' && w.fase !== 'feilspor';
+    // Glemselen går bare mens eleven er i bevegelse. Den står stille mens hun
+    // tenker, mens hun leser forklaringen i feilsporet, og i pusterommet etter
+    // at kjeden har kneppet på plass. Å tenke og å lese skal aldri koste
+    // terreng - straffen for et feilsvar er bykset i `velg()`, og det er like
+    // stort uansett hvor lenge eleven blir liggende nede og lese.
+    const taakenGaar = w.fase !== 'tenk' && w.fase !== 'feilspor' && w.fase !== 'pust';
     if (taakenGaar) w.fogX += w.effekter.tåkefart * vdt;
     animerSteiner(w, vdt);
 
@@ -348,15 +451,18 @@ export const stegVerden = (w: KjedeVerden, dtRaw: number) => {
             w.playerY = GROUND_TOP;
             const sisteSegment = w.segment >= w.kjede.ledd.length;
             if (sisteSegment) {
-                if (w.playerX >= segmentX(w.segment) + SLAB_W * 0.6) {
+                if (w.playerX >= segmentX(w.segment) + PLATFORM_W * 0.6) {
                     w.fase = 'mal';
                     w.hendelser.push({ type: 'ferdig', fullfort: true });
                 }
             } else if (w.playerX >= edgeX(w.segment)) {
                 w.playerX = edgeX(w.segment);
                 w.valg = byggValg(w);
-                const forsteGyldige = w.valg.findIndex((s) => s.tilstand === 'svever');
-                w.markert = w.valg[1]?.tilstand === 'svever' ? 1 : Math.max(0, forsteGyldige);
+                w.tenketid =
+                    lesetid(w.valg.filter((s) => s.tilstand === 'svever').map((s) => s.tekst)) *
+                    w.effekter.tenketidFaktor;
+                w.markert = null;
+                w.tidUt = false;
                 w.fase = 'tenk';
                 w.faseT = 0;
                 w.hendelser.push({ type: 'valg-vises' });
@@ -365,13 +471,17 @@ export const stegVerden = (w: KjedeVerden, dtRaw: number) => {
         }
 
         case 'tenk': {
-            if (w.faseT >= w.effekter.tenketid) velg(w, w.markert);
+            if (w.faseT >= w.tenketid) {
+                if (w.markert !== null) velg(w, w.markert);
+                else tidenGikkUt(w);
+            }
             break;
         }
 
         case 'sprang': {
             const t = clamp01(w.faseT / LEAP_DUR);
-            const stein = w.valg?.[w.markert];
+            // 'sprang' settes bare av `velg()`, som alltid låser markøren først
+            const stein = w.markert === null ? undefined : w.valg?.[w.markert];
             const maalY = stein ? CHOICE_ROW_Y[stein.row] : GROUND_TOP;
             const p = arcPoint(
                 easeOutCubic(t) * 0.35 + t * 0.65,
@@ -379,12 +489,13 @@ export const stegVerden = (w: KjedeVerden, dtRaw: number) => {
                 GROUND_TOP,
                 landingX(w.segment + 1),
                 maalY,
-                120
+                130
             );
             w.playerX = p.x;
             w.playerY = p.y;
             if (t >= 1) {
                 const riktig = stein?.riktig ?? false;
+                w.fallFraX = landingX(w.segment + 1);
                 w.fallFraY = maalY;
                 if (riktig && stein) {
                     stein.tilstand = 'senkes';
@@ -416,9 +527,16 @@ export const stegVerden = (w: KjedeVerden, dtRaw: number) => {
             break;
         }
 
+        case 'pust': {
+            w.playerY = GROUND_TOP;
+            w.playerX = landingX(w.segment);
+            if (w.faseT >= PUST_DUR) etterPust(w);
+            break;
+        }
+
         case 'fall': {
             const t = clamp01(w.faseT / FALL_DUR);
-            w.playerX = landingX(w.segment + 1) - 40 * t;
+            w.playerX = w.fallFraX - 40 * t;
             w.playerY = w.fallFraY + (FEILSPOR_TOP - w.fallFraY) * easeInQuad(t);
             w.camY = 210 * easeOutCubic(t);
             if (t >= 1) {
@@ -429,6 +547,7 @@ export const stegVerden = (w: KjedeVerden, dtRaw: number) => {
         }
 
         case 'feilspor': {
+            w.playerX = w.fallFraX - 40;
             w.playerY = FEILSPOR_TOP;
             w.camY = 210;
             if (w.faseT >= w.effekter.feilsporTid) {
@@ -442,7 +561,7 @@ export const stegVerden = (w: KjedeVerden, dtRaw: number) => {
             const t = clamp01(w.faseT / CLIMB_DUR);
             const p = arcPoint(
                 easeOutCubic(t),
-                landingX(w.segment + 1) - 40,
+                w.fallFraX - 40,
                 FEILSPOR_TOP,
                 landingX(w.segment + 1),
                 GROUND_TOP,

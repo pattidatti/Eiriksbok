@@ -537,8 +537,91 @@ leses opp én gang per valg.
 
 - **Sju kjeder gjenstår** av de åtte §4.3 beskriver. Dette er fortsatt det
   klart største løftet: motoren tåler mer innhold enn den har.
+  *Løst i §14.*
 - **Kanvasteksten er liten på Chromebook.** Skalaen blir 0,81 på 1366x768, så
   21px-fonten rendres som cirka 17px. Skjermleser-speilet i §13.4 dekker
   hjelpemidler, men ikke en elev som bare synes det er smått.
 - **Tuningen i §13.1 er simulert, ikke observert.** Tallene bør sjekkes mot ekte
   elever før de låses.
+
+---
+
+## 14. Innholdspasset: de sju kjedene
+
+Motoren sto ferdig med én kjede. Nå er alle åtte på plass:
+
+| Kjede | Fag/emne | Startår |
+|---|---|---|
+| Svartedauden | historie/middelalderen | 1349 |
+| Fra dampmaskin til fabrikkby | historie/industriell-revolusjon | 1765 |
+| Den franske revolusjonen | historie/den-franske-revolusjon | 1789 |
+| Hamskiftet i Norge | historie/norge-i-moderne-tid | 1850 |
+| Veien til første verdenskrig | historie/forste-verdenskrig | 1914 |
+| Fra Versailles til Hitler | historie/mellomkrigstiden | 1919 |
+| Jernteppet faller | historie/den-kalde-krigen | 1980 |
+| Renta og lommeboka di | samfunnskunnskap/okonomi | i dag |
+
+Alle har seks ledd og fem feilalternativer per ledd, og hvert ledd lenker til
+artikkelen det bygger på.
+
+### 14.1 «Oljen forandrer Norge» ble til «Hamskiftet»
+
+§4.3 satte opp en oljekjede under `historie/norge-i-moderne-tid`. Emnet har
+ingen oljeartikkel, og de eneste oljetekstene i boka handler om Midtøsten og om
+petrodollaren. En kjede der ingen ledd kan lenke videre mister halve poenget:
+«jeg skjønte ikke det der» skal ha et sted å gå (§3.4).
+
+Hamskiftet dekker det samme faglige rommet, og har full artikkeldekning:
+`hamskiftet`, `utvandringen-til-amerika` og `kvinnekampen`. Kausalkjeden er
+dessuten sterkere: færre barn dør, folketallet dobles, jorda tar slutt,
+Amerika og byene tar imot, arbeiderne organiserer seg, alle får stemmerett.
+Skrives en oljeartikkel senere, er oljekjeden en naturlig niende.
+
+### 14.2 Lengdebalansen er en redaksjonell tvangstrøye, og det er meningen
+
+Regelen fra §4.1.1 (minst to feilalternativer minst like lange som fasiten,
+minst to høyst like lange, ingen mer enn 15 tegn unna) styrer forfattingen mer
+enn man tror. Første utkast av hver kjede brøt den i nesten hvert ledd, alltid
+samme vei: fasiten ble den lengste setningen, fordi den sanne forklaringen
+gjerne trenger et ledd til. Rettingen er å fylle ut de gale alternativene, ikke
+å korte ned det riktige.
+
+Nyttig arbeidsmåte: skriv kjeden ferdig, kjør `node scripts/validate-kjeder.mjs`,
+og la feilmeldingene si nøyaktig hvor mange tegn som mangler hvor.
+
+### 14.3 Kulissene: sytten nye scener
+
+`kjedeScener.ts` dekket middelalderen pluss to generiske bakgrunner. Kjedene fra
+1789 og framover ville ha løpt gjennom stavkirker og pestbyer, så scenebiblioteket
+er utvidet med `bygate`, `versailles`, `bastillen`, `barrikade`, `slagmark`,
+`gruve`, `jernbane`, `arbeiderby`, `skyttergrav`, `krisetid`, `fakkeltog`,
+`muren`, `panelblokk`, `folketog`, `utvandrerhavn`, `finansby` og `boligfelt`.
+
+Nye primitiver: `person` og `rekke` (folkemengden er selve motivet i barrikaden,
+brødkøen og fakkeltoget), `banner`, `bygard`, `skorstein`, `kanon`, `lykt`,
+`bil` og `blokk`. De eldste scenene skriver ut hele paletten sin; de nye deler
+en `GRUNN`-palett og setter bare det som faktisk skiller dem.
+
+Tre ting kom først fram i visuell gjennomgang, ikke i koden:
+
+1. **Trekantkollisjon.** `gruve` og `skyttergrav` hadde `midtFjell` i
+   mellomgrunnen, og kullhaugene og sandsekkene forsvant i fjellene bak. Gruva
+   fikk `midtPiper`, og skyttergraven har nå ingen mellomgrunn i det hele tatt.
+   Fronten i Flandern var flat.
+2. **Silhuettene var for små.** De nye motivene ble tegnet i «riktig» skala og
+   forsvant mot de gamle scenene, som er tegnet 30-50 prosent større enn de
+   burde vært. Bygårder, viadukt, heisetårn, kanon og slott er skalert opp.
+3. **Banken leste som en låve.** Søyler er usynlige når hele silhuetten fylles
+   med én farge. Finansbyen sier nå «finans» med høyde: tårnrekka er blitt
+   hovedvarianten, og tempelet er lavt og bredt bak den.
+
+Verifisert ved å rendre alle 26 scener i tre kamera-posisjoner hver, slik at
+hver variant faktisk ble sett, og ved en gjennomspilling av den franske
+revolusjonen i Chromium på 1366x768.
+
+### 14.4 Kjedene sorteres kronologisk
+
+Oversikten ble bygget i filnavnrekkefølge, så startskjermen listet 1980 foran
+1349. Hver kjede har nå et `aar`-felt (startåret), og `validate-kjeder.mjs`
+sorterer indeksen på det. Feltet brukes ikke til noe annet: et spill om årsak og
+virkning skal ikke presentere innholdet sitt alfabetisk.

@@ -30,6 +30,8 @@ const TOM_SNAPSHOT: HudSnapshot = {
     tenkeandel: 0,
     fase: 'lop',
     arsak: '',
+    fasit: '',
+    tidUt: false,
     valg: [],
 };
 
@@ -249,6 +251,8 @@ const KjedereaksjonenPage: React.FC = () => {
                         tenkeandel={snapshot.tenkeandel}
                         arsak={snapshot.arsak}
                         valg={snapshot.valg}
+                        fasit={snapshot.fasit}
+                        tidUt={snapshot.tidUt}
                         aktivFeil={aktivFeil}
                         tilbudte={tilbudte}
                         onVelgDrivkraft={onVelgDrivkraft}

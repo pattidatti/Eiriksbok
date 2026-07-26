@@ -24,7 +24,7 @@ const REGLER = [
     {
         icon: MousePointerClick,
         tittel: 'Velg med 1, 2 eller 3',
-        tekst: 'Tiden går i sakte film mens du velger, så å tenke koster nesten ingenting. Å ta feil koster tid.',
+        tekst: 'Du får tid til å lese alle tre, og tåka står stille mens du tenker. Det er å ta feil som koster.',
     },
     {
         icon: CloudFog,

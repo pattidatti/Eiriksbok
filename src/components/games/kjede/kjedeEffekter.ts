@@ -2,7 +2,10 @@
 // og klem-strekk på figuren. Ingenting her påvirker simuleringen - verden vet
 // ikke at de finnes. Det er med vilje: juice skal aldri kunne endre utfallet.
 
-import { GROUND_TOP, PITCH, SLAB_W, clamp01 } from '../../../utils/kjedeFysikk';
+import { GAP_W, GROUND_TOP, SLAB_W, clamp01 } from '../../../utils/kjedeFysikk';
+
+/** Hvor langt bakover på broa kjedeglimtet tar sats. */
+const GLIMT_ANLOP = GAP_W + 480;
 
 export interface Partikkel {
     x: number;
@@ -60,7 +63,7 @@ export const nyeEffekter = (): Effekter => ({
     sjokkX: 0,
 });
 
-export const GLIMT_VARIGHET = 0.95;
+export const GLIMT_VARIGHET = 1.15;
 export const SJOKK_VARIGHET = 0.5;
 
 /** Fartsstripene lever i juvet mellom landkanten og bunnen av bildet. */
@@ -92,18 +95,17 @@ export const stoevSprut = (e: Effekter, x: number, y: number, rng: () => number,
 };
 
 /**
- * Tenner kjedeglimtet og låser banen det skal løpe: fra forrige stein og inn i
- * den nye. Egen funksjon fordi glimtet også skal gå ved redusert bevegelse, der
- * støvet og rystelsen er slått av.
+ * Tenner kjedeglimtet og låser banen det skal løpe: bakover langs broa eleven
+ * kom fra, over gapet og inn i den nye steinen. Egen funksjon fordi glimtet også
+ * skal gå ved redusert bevegelse, der støvet og rystelsen er slått av.
+ *
+ * Banen starter ikke helt tilbake ved forrige stein. Broa er nå over 1300 piksler
+ * lang, og kameraet står på gapet i dette øyeblikket - en puls som startet ved
+ * forrige stein ville brukt halve levetiden sin utenfor bildet.
  */
 export const tennGlimt = (e: Effekter, venstreX: number) => {
     e.glimt = 0;
-    // Fra midten av årsak-steinen til midten av virkning-steinen. Før startet
-    // pulsen 196 px til venstre for forrige stein, altså i løse lufta bak
-    // eleven, og den lyseste delen av banen (styrken topper på midten) havnet
-    // oppå steinen hun allerede sto på i stedet for over gapet. Nå går den
-    // synlig fra årsak til virkning, som er hele metaforen.
-    e.glimtFra = venstreX - PITCH + SLAB_W / 2;
+    e.glimtFra = venstreX - GLIMT_ANLOP;
     e.glimtTil = venstreX + SLAB_W / 2;
 };
 
