@@ -15,6 +15,7 @@
 
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
+import { entreNordvik, stengHmr } from './lib/rpg-testside.mjs';
 
 const UT = '.screenshots';
 mkdirSync(UT, { recursive: true });
@@ -72,10 +73,8 @@ const maal = async (navn, forventet, handling) => {
     );
 };
 
-await page.goto('http://localhost:5173/oving/rpg', { waitUntil: 'networkidle' });
-await page.fill('input[placeholder="Skriv navnet ditt"]', 'Torstein');
-await page.click('button:has-text("Reis til Nordvik")');
-await page.waitForSelector('canvas', { timeout: 30000 });
+await stengHmr(page);
+await entreNordvik(page);
 await page.waitForTimeout(3500);
 await page.screenshot({ path: `${UT}/kamp-1-start.png` });
 

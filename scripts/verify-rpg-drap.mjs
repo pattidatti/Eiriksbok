@@ -12,6 +12,7 @@
 // eleven går bort og plukker det opp.
 import { chromium } from 'playwright';
 import { writeFileSync, mkdirSync } from 'node:fs';
+import { entreNordvik, stengHmr } from './lib/rpg-testside.mjs';
 
 mkdirSync('.screenshots', { recursive: true });
 const browser = await chromium.launch();
@@ -20,10 +21,8 @@ const feil = [];
 page.on('pageerror', (e) => feil.push(String(e)));
 page.on('console', (m) => m.type() === 'error' && feil.push(m.text()));
 
-await page.goto('http://localhost:5173/oving/rpg', { waitUntil: 'networkidle' });
-await page.fill('input[placeholder="Skriv navnet ditt"]', 'Torstein');
-await page.click('button:has-text("Reis til Nordvik")');
-await page.waitForSelector('canvas');
+await stengHmr(page);
+await entreNordvik(page);
 await page.waitForTimeout(3000);
 
 const cdp = await page.context().newCDPSession(page);

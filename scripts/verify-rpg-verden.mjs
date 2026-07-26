@@ -12,6 +12,7 @@
 // være identiske. Tallene er ikke magiske - de er «like mange som i går».
 
 import { chromium } from 'playwright';
+import { entreNordvik, stengHmr } from './lib/rpg-testside.mjs';
 
 const FORVENTET_MINST = {
     taake: 14,
@@ -29,10 +30,8 @@ const sidefeil = [];
 page.on('pageerror', (e) => sidefeil.push(String(e)));
 page.on('console', (m) => m.type() === 'error' && sidefeil.push(m.text()));
 
-await page.goto('http://localhost:5173/oving/rpg', { waitUntil: 'networkidle' });
-await page.fill('input[placeholder="Skriv navnet ditt"]', 'Torstein');
-await page.click('button:has-text("Reis til Nordvik")');
-await page.waitForSelector('canvas', { timeout: 30000 });
+await stengHmr(page);
+await entreNordvik(page);
 await page.waitForTimeout(4000);
 
 const tall = await page.evaluate(() => {

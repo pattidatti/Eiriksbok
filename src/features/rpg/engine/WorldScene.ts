@@ -23,7 +23,6 @@ import { fraSpill, tilSpill } from './bridge';
 import { Kamp } from './kamp';
 import { KampFx } from './kampfx';
 import { numToHex } from './pixels';
-import { aktivQuestFor, nesteQuestFor } from './quests';
 import {
     FIG_ORIGIN_Y,
     FIENDE_RAMMER,
@@ -44,6 +43,7 @@ import {
 import { forgeProps, forgeTiles } from './tileforge';
 import { Effekter } from './systems/effekter';
 import type { Fiende, Sprite } from './systems/entiteter';
+import { Interaksjon } from './systems/interaksjon';
 import { Loot } from './systems/loot';
 import { Prosjektiler } from './systems/prosjektiler';
 import { Verden } from './systems/verden';
@@ -101,9 +101,7 @@ export class WorldScene extends Phaser.Scene {
     private fiender: Fiende[] = [];
     /** Alt som flyr: piler, kastespyd, besvergelser. */
     private skudd!: Prosjektiler;
-    private npcSprites = new Map<string, Phaser.GameObjects.Sprite>();
-    private npcMarkorer = new Map<string, Phaser.GameObjects.Image>();
-    private landemerker = new Map<string, Phaser.GameObjects.Image>();
+    private samhandling!: Interaksjon;
     /** Sølv og gjenstander som ligger på bakken. */
     private lootSystem!: Loot;
     /** Partikler, flytende tall og glimt. Kjenner ingen spillregler. */
@@ -142,7 +140,6 @@ export class WorldScene extends Phaser.Scene {
 
     private quester: QuestDef[] = [];
     private laast = false;
-    private naerInteraksjon: { type: 'npc' | 'landemerke'; id: string } | null = null;
     private bossVakt = false;
     /** Brølet skal komme én gang, ikke hver gang eleven lokker bossen ut og inn. */
     private bossVekket = false;
@@ -189,12 +186,16 @@ export class WorldScene extends Phaser.Scene {
             skadSpiller: (skade) => this.skadSpiller(skade),
             skadFiende: (f, skade, kritisk, vinkel) => this.skadFiende(f, skade, kritisk, vinkel),
         });
+        this.samhandling = new Interaksjon(this, NORDVIK_NPCS, NORDVIK_LANDMARKS, {
+            spiller: () => this.spiller,
+            laas: (pa) => this.settLaast(pa),
+            quester: () => this.quester,
+        });
         this.verden.byggTerreng();
         this.verden.byggKollisjon();
         this.verden.byggProps();
         this.byggSpiller();
-        this.byggNpcer();
-        this.byggLandemerker();
+        this.samhandling.bygg();
         this.byggBoss();
         this.verden.byggAtmosfare(NORDVIK_LANDMARKS);
         this.settOppInput();
@@ -350,76 +351,6 @@ export class WorldScene extends Phaser.Scene {
         }
     }
 
-    private byggNpcer() {
-        for (const npc of NORDVIK_NPCS) {
-            forgeHumanoid(this, `npc-${npc.id}`, {
-                appearance: {
-                    skin: npc.id.length % 6,
-                    hair: (npc.id.charCodeAt(0) + 1) % 6,
-                    hairColor: npc.id.charCodeAt(1) % 6,
-                    face: 0,
-                },
-                tunic: npc.palette.tunic,
-                trim: npc.palette.trim,
-                armorTier: 0,
-            });
-            const [tx, ty] = npc.tile;
-            const sprite = this.add.sprite(
-                tx * TILE + 8,
-                ty * TILE + 8,
-                `npc-${npc.id}`,
-                heltFrame('ned', 'idle', 0)
-            );
-            sprite.setOrigin(0.5, FIG_ORIGIN_Y).setDepth(sprite.y);
-            // NPC-ene puster. Fem mennesker frosset i en bygd så ut som en feil.
-            this.tweens.addCounter({
-                from: 0,
-                to: 1,
-                duration: 900 + Math.random() * 500,
-                yoyo: true,
-                repeat: -1,
-                onUpdate: (t) =>
-                    sprite.setFrame(heltFrame('ned', 'idle', (t.getValue() ?? 0) > 0.5 ? 1 : 0)),
-            });
-            this.npcSprites.set(npc.id, sprite);
-
-            const markor = this.add.image(sprite.x, sprite.y - 26, 'fx-utrop').setDepth(9000);
-            this.tweens.add({
-                targets: markor,
-                y: markor.y - 3,
-                duration: 700,
-                yoyo: true,
-                repeat: -1,
-                ease: 'Sine.InOut',
-            });
-            this.npcMarkorer.set(npc.id, markor);
-        }
-    }
-
-    private byggLandemerker() {
-        for (const lm of NORDVIK_LANDMARKS) {
-            const [tx, ty] = lm.tile;
-            const key =
-                lm.kind === 'runestein'
-                    ? 'prop-runestein'
-                    : lm.kind === 'skilt'
-                      ? 'prop-skilt'
-                      : lm.kind === 'kiste'
-                        ? 'loot-kiste'
-                        : 'prop-baal-0';
-            const bilde = this.add.image(tx * TILE + 8, ty * TILE + 8, key);
-            bilde.setOrigin(0.5, 0.85).setDepth(bilde.y);
-            if (lm.kind === 'baal') {
-                (bilde as unknown as Phaser.GameObjects.Sprite).destroy();
-                const s = this.add.sprite(tx * TILE + 8, ty * TILE + 8, 'prop-baal-0');
-                s.setOrigin(0.5, 0.85).setDepth(s.y).play('baal');
-                this.landemerker.set(lm.id, s as unknown as Phaser.GameObjects.Image);
-                continue;
-            }
-            this.landemerker.set(lm.id, bilde);
-        }
-    }
-
     private byggBoss() {
         const def = ENEMY_BY_ID['den-store-glemselen'];
         const alleredeFelt = useRpgStore.getState().bosser.includes(def.id);
@@ -450,16 +381,6 @@ export class WorldScene extends Phaser.Scene {
         };
         this.fiender.push(this.boss);
     }
-
-    /**
-     * Spillet heter Minnevokteren. Fienden er tåka. Bygda er «en fjordbygd der
-     * tåka har begynt å spise navnene på folk». Likevel fantes det ikke én
-     * piksel atmosfærisk tåke i rendereren - og `tema.himmel` var definert på
-     * alle elleve soner uten å bli lest noe sted.
-     *
-     * Her tas begge i bruk: en tone i lufta, en vignett i kanten, og tåkeslør
-     * som driver over verden og tykner der eleven ikke har vært.
-     */
 
     private settOppKamera() {
         const cam = this.cameras.main;
@@ -631,7 +552,14 @@ export class WorldScene extends Phaser.Scene {
         }
 
         this.oppdaterSpiller(dt);
-        this.sjekkInteraksjon();
+        // Hvilken tast som er «bruk» bor hos scenen; samhandlingen får bare vite
+        // at den ble trykket. `padKant` må kalles hver frame - den husker forrige
+        // tilstand for å skille et trykk fra en knapp som holdes.
+        this.samhandling.sjekk(
+            Phaser.Input.Keyboard.JustDown(this.taster.bruk) ||
+                this.padKant(this.gamepad ?? this.input.gamepad?.pad1 ?? null, 'Y') ||
+                this.touchTrykk.has('bruk')
+        );
         this.oppdaterFiender(dt);
         this.skudd.oppdater(dt);
         this.lootSystem.oppdater(dt);
@@ -727,17 +655,13 @@ export class WorldScene extends Phaser.Scene {
             return;
         }
 
-        const mal =
-            kilde.type === 'npc' ? this.npcSprites.get(kilde.id) : this.landemerker.get(kilde.id);
+        const mal = this.samhandling.mal(kilde.type, kilde.id);
         if (!mal) return;
         this.kompassAktivt = true;
         fraSpill.emit('kompass', {
             vinkel: (Math.atan2(mal.y - this.spiller.y, mal.x - this.spiller.x) * 180) / Math.PI,
             avstand: Phaser.Math.Distance.Between(this.spiller.x, this.spiller.y, mal.x, mal.y),
-            navn:
-                kilde.type === 'npc'
-                    ? (NORDVIK_NPCS.find((n) => n.id === kilde.id)?.name ?? kilde.navn)
-                    : (NORDVIK_LANDMARKS.find((l) => l.id === kilde.id)?.title ?? kilde.navn),
+            navn: mal.navn ?? kilde.navn,
         });
     }
 
@@ -1874,63 +1798,6 @@ export class WorldScene extends Phaser.Scene {
 
     // ── Samhandling ─────────────────────────────────────────────────────────
 
-    private sjekkInteraksjon() {
-        let naermest: { type: 'npc' | 'landemerke'; id: string; d: number } | null = null;
-
-        for (const [id, sprite] of this.npcSprites) {
-            const d = Phaser.Math.Distance.Between(
-                sprite.x,
-                sprite.y,
-                this.spiller.x,
-                this.spiller.y
-            );
-            if (d < 34 && (!naermest || d < naermest.d)) naermest = { type: 'npc', id, d };
-        }
-        for (const [id, sprite] of this.landemerker) {
-            const d = Phaser.Math.Distance.Between(
-                sprite.x,
-                sprite.y,
-                this.spiller.x,
-                this.spiller.y
-            );
-            if (d < 30 && (!naermest || d < naermest.d)) naermest = { type: 'landemerke', id, d };
-        }
-
-        // Sammenlikningen gikk før via to JSON.stringify hver eneste frame.
-        const ny = naermest ? { type: naermest.type, id: naermest.id } : null;
-        const forrige = this.naerInteraksjon;
-        if (ny?.id !== forrige?.id || ny?.type !== forrige?.type) {
-            this.naerInteraksjon = ny;
-            if (!ny) {
-                fraSpill.emit('hint', { tekst: null });
-            } else if (ny.type === 'npc') {
-                const npc = NORDVIK_NPCS.find((n) => n.id === ny.id);
-                fraSpill.emit('hint', { tekst: `E - snakk med ${npc?.name ?? 'noen'}` });
-            } else {
-                const lm = NORDVIK_LANDMARKS.find((l) => l.id === ny.id);
-                fraSpill.emit('hint', {
-                    tekst: `E - ${lm?.kind === 'kiste' ? 'åpne' : 'les'} ${lm?.title}`,
-                });
-            }
-        }
-
-        const pad = this.gamepad ?? this.input.gamepad?.pad1 ?? null;
-        const brukTrykk =
-            Phaser.Input.Keyboard.JustDown(this.taster.bruk) ||
-            this.padKant(pad, 'Y') ||
-            this.touchTrykk.has('bruk');
-        if (brukTrykk && this.naerInteraksjon) {
-            this.settLaast(true);
-            sfx.dialog();
-            if (this.naerInteraksjon.type === 'npc') {
-                fraSpill.emit('dialog', { npcId: this.naerInteraksjon.id });
-            } else {
-                fraSpill.emit('landmark', { landmarkId: this.naerInteraksjon.id });
-            }
-            fraSpill.emit('hint', { tekst: null });
-        }
-    }
-
     private utfordreBoss() {
         if (!this.boss || this.bossVakt) return;
         this.settLaast(true);
@@ -1941,15 +1808,9 @@ export class WorldScene extends Phaser.Scene {
         });
     }
 
-    /** Oppdaterer utropstegnene over NPC-ene. */
+    /** Oppdaterer utropstegnene over NPC-ene. Kalles fra React etter questbytte. */
     oppdaterMarkorer() {
-        const status = useRpgStore.getState().quester;
-        for (const [id, markor] of this.npcMarkorer) {
-            const ny = nesteQuestFor(id, this.quester, status);
-            const aktiv = aktivQuestFor(id, this.quester, status);
-            markor.setVisible(Boolean(ny || aktiv));
-            markor.setTexture(aktiv ? 'fx-sporsmal' : 'fx-utrop');
-        }
+        this.samhandling.oppdaterMarkorer();
     }
 
     // ── Småting som gjør det digg ───────────────────────────────────────────
@@ -1972,7 +1833,7 @@ export class WorldScene extends Phaser.Scene {
         for (const fiende of this.fiender) {
             if (!fiende.dodd) fiende.sprite.setDepth(fiende.sprite.y);
         }
-        for (const [, sprite] of this.npcSprites) sprite.setDepth(sprite.y);
+        this.samhandling.oppdaterDybde();
     }
 
     /** Fargen på en fiende, brukt av grensesnittet. */
