@@ -16,7 +16,10 @@ export function Atmosfare({ himmel }: { himmel: string | null }) {
     if (!himmel) return null;
     return (
         <div className="pointer-events-none absolute inset-0 z-10">
-            <div className="absolute inset-0 mix-blend-multiply" style={{ background: himmel, opacity: 0.1 }} />
+            <div
+                className="absolute inset-0 mix-blend-multiply"
+                style={{ background: himmel, opacity: 0.1 }}
+            />
             <div
                 className="absolute inset-0"
                 style={{
@@ -89,7 +92,9 @@ export function Skjermkontroll({ gardOppe }: { gardOppe: boolean }) {
             >
                 <div
                     className={`h-14 w-14 rounded-full border-2 transition-colors ${
-                        aktiv ? 'border-amber-300/80 bg-amber-300/30' : 'border-white/30 bg-white/15'
+                        aktiv
+                            ? 'border-amber-300/80 bg-amber-300/30'
+                            : 'border-white/30 bg-white/15'
                     }`}
                     style={{ transform: `translate(${knott.x}px, ${knott.y}px)` }}
                 />
@@ -129,10 +134,10 @@ function Knapp({
         farge === 'amber'
             ? 'border-amber-300/70 bg-amber-400/25 text-amber-100'
             : farge === 'sky'
-              ? 'border-sky-300/60 bg-sky-400/20 text-sky-100'
-              : farge === 'tre'
-                ? 'border-[#c9a86a]/70 bg-[#c9a86a]/20 text-[#f0dcb0]'
-                : 'border-white/25 bg-white/10 text-slate-100';
+            ? 'border-sky-300/60 bg-sky-400/20 text-sky-100'
+            : farge === 'tre'
+            ? 'border-[#c9a86a]/70 bg-[#c9a86a]/20 text-[#f0dcb0]'
+            : 'border-white/25 bg-white/10 text-slate-100';
     return (
         <button
             type="button"

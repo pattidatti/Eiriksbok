@@ -40,6 +40,20 @@ export interface Fiende {
     stolpeTid: number;
     /** Fargen fienden skal ha når treff-blinket er over (varsel-rødt eller ingen). */
     onsketTint: number | null;
+    /** Hvor mange slag den har forsøkt. Avgjør når særslaget kommer. */
+    slagTeller: number;
+}
+
+/**
+ * Særtrekkene ved ett bestemt slag, på vei fra fienden til garden. Formen
+ * matcher det `Kamp.vurderTreff()` alltid har tatt imot - den satt bare aldri
+ * koblet til noe før.
+ */
+export interface Sarslag {
+    /** Går gjennom garden. */
+    ublokkerbart?: boolean;
+    /** Blokkeres det, ryker hele skjoldet. Paraden er fortsatt trygg. */
+    hak?: boolean;
 }
 
 export interface Prosjektil {

@@ -83,11 +83,16 @@ export const SPELLS: SpellDef[] = [
     },
 ];
 
-export const SPELL_BY_ID: Record<string, SpellDef> = Object.fromEntries(SPELLS.map((s) => [s.id, s]));
+export const SPELL_BY_ID: Record<string, SpellDef> = Object.fromEntries(
+    SPELLS.map((s) => [s.id, s])
+);
 
 /** Besvergelser eleven har gjort seg fortjent til, men ikke fått ennå. */
 export function newlyUnlockedSpells(riktigeSvar: number, kjente: string[]): SpellDef[] {
     return SPELLS.filter(
-        (s) => s.krevesRiktige !== undefined && riktigeSvar >= s.krevesRiktige && !kjente.includes(s.id)
+        (s) =>
+            s.krevesRiktige !== undefined &&
+            riktigeSvar >= s.krevesRiktige &&
+            !kjente.includes(s.id)
     );
 }

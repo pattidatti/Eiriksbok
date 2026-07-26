@@ -98,7 +98,10 @@ export class Effekter {
     stovsky(x: number, y: number, antall: number): void {
         for (let i = 0; i < antall; i++) {
             const p = this.hent('fx-prikk');
-            p.setPosition(x, y).setTint(0xd8c89a).setDepth(y - 1).setAlpha(0.7);
+            p.setPosition(x, y)
+                .setTint(0xd8c89a)
+                .setDepth(y - 1)
+                .setAlpha(0.7);
             const v = Math.random() * Math.PI * 2;
             this.scene.tweens.add({
                 targets: p,

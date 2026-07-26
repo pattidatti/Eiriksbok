@@ -97,16 +97,23 @@ export interface ItemDef {
     /** Hva Bera Kremmer tar for den. Uten pris er den ikke til salgs. */
     pris?: number;
     /** Bare for våpen: form og rekkevidde på slaget. */
-    weapon?: {
-        skade: number;
-        /** Millisekunder mellom slag. */
-        hastighet: number;
-        /** Piksler slaget rekker. */
-        rekkevidde: number;
-        /** Grader på slagbuen. */
-        bue: number;
-        art: WeaponArt;
-    };
+    weapon?: VaapenDef;
+}
+
+/**
+ * Tallene på selve gjenstanden. Formen på angrepet hører til arten
+ * (`VAAPEN_KAMP` i data/vaapen.ts) - to nivåer, så et nytt sverd får riktig
+ * oppførsel uten at noen må fylle ut fire felt til.
+ */
+export interface VaapenDef {
+    skade: number;
+    /** Millisekunder mellom slag. */
+    hastighet: number;
+    /** Piksler slaget rekker. For skytevåpen: hvor langt pila flyr. */
+    rekkevidde: number;
+    /** Grader på slagbuen. */
+    bue: number;
+    art: WeaponArt;
 }
 
 export type WeaponArt = 'sverd' | 'oks' | 'stav' | 'spyd' | 'hammer';
@@ -203,6 +210,22 @@ export interface EnemyDef {
     /** Skyter prosjektiler i stedet for nærkamp. */
     skytende?: boolean;
     storrelse?: number;
+    /**
+     * Særslaget. Uten dette er hvert slag et vanlig slag som garden kan ta.
+     *
+     * Det er med vilje ikke hvert slag: et monster som alltid slår ublokkerbart
+     * fjerner skjoldet fra spillet, og et som alltid haker gjør skjoldet til
+     * forbruksmateriell. Ett av n gir eleven noe å lese - og telegraferingen
+     * skifter farge, så det går an å lese det.
+     */
+    sarslag?: {
+        /** Hvert n-te slag er et særslag. */
+        hvert: number;
+        /** Går gjennom garden. Svaret er å rulle, ikke å blokkere. */
+        ublokkerbart?: boolean;
+        /** Haker skjoldet ned: blokkeres det, ryker hele skjoldet. Paraden er trygg. */
+        hak?: boolean;
+    };
 }
 
 // ─── Quester ────────────────────────────────────────────────────────────────

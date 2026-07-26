@@ -114,7 +114,11 @@ const gardDetalj = `${pFor} -> ${pGard}, oppe i ${oppe}/10 prøver, skjold ${sis
 if ((await liv()) !== lGardFor) {
     console.log(`HOPP  garden - avbrutt av kamp  (${gardDetalj})`);
 } else {
-    sjekk('garden drenerer ~6 pust i sekundet', pGard <= pFor - 9 && pGard >= pFor - 18, gardDetalj);
+    sjekk(
+        'garden drenerer ~6 pust i sekundet',
+        pGard <= pFor - 9 && pGard >= pFor - 18,
+        gardDetalj
+    );
 }
 await page.keyboard.up('Shift');
 
@@ -169,6 +173,72 @@ if ((await liv()) === lHoldFor) {
     console.log('HOPP  langt hold - avbrutt av kamp');
 }
 sjekk('pusten går aldri under null', pHold >= 0, `pust=${pHold}`);
+await page.keyboard.up('Shift');
+
+// ── Særslagene: ublokkerbart og hak ────────────────────────────────────────
+// Fiendene slår med de to flaggene `Kamp.vurderTreff()` alltid har tatt imot,
+// men som ingen sendte før R3. Å vente på at en boss faktisk slår sitt tredje
+// slag er ikke noe en test kan love, så slaget leveres rett inn i forsvaret med
+// en ekte fiende som angriper. Alt bak inngangen er den samme koden.
+const sarslag = async (flagg) => {
+    await ventFullPust();
+    return page.evaluate((flagg) => {
+        const scene = window.__rpg.scene.getScene('verden');
+        const helt = scene.helt;
+        const fiende = scene.fiendeSystem.alle().find((f) => !f.dodd);
+        if (!fiende) return { feil: 'ingen levende fiende' };
+        // Rett foran henne, i den retningen hun vender - ellers dekker ikke
+        // skjoldet, og prøven sier ingenting om særslaget.
+        const vinkel = { ned: Math.PI / 2, opp: -Math.PI / 2, hoyre: 0, venstre: Math.PI }[
+            helt.retning
+        ];
+        fiende.sprite.setPosition(
+            helt.sprite.x + Math.cos(vinkel) * 18,
+            helt.sprite.y + Math.sin(vinkel) * 18
+        );
+        const for_ = helt.kampSnapshot();
+        const gikkGjennom = helt.nerkampTreff(fiende, flagg);
+        const etter = helt.kampSnapshot();
+        return {
+            gard: for_.gardOppe,
+            gikkGjennom,
+            skjoldFor: for_.skjoldHelse,
+            skjoldEtter: etter.skjoldHelse,
+        };
+    }, flagg);
+};
+
+// Garden opp, og hold den der gjennom begge prøvene.
+await page.keyboard.down('Shift');
+await page.waitForTimeout(400);
+
+const vanlig = await sarslag({});
+sjekk(
+    'vanlig slag tas av garden',
+    vanlig.gard === true && vanlig.gikkGjennom === false,
+    `gard=${vanlig.gard}, gjennom=${vanlig.gikkGjennom}`
+);
+sjekk(
+    'blokken hakker skjoldet',
+    vanlig.skjoldEtter < vanlig.skjoldFor,
+    `${vanlig.skjoldFor} -> ${vanlig.skjoldEtter}`
+);
+
+const hakket = await sarslag({ hak: true });
+sjekk(
+    'hak river hele skjoldet',
+    hakket.gard === true && hakket.skjoldEtter === 0,
+    `gard=${hakket.gard}, ${hakket.skjoldFor} -> ${hakket.skjoldEtter}`
+);
+
+// Skjoldet er borte nå, så garden kan ikke stå. Vi sjekker likevel at et
+// ublokkerbart slag går gjennom - det er flagget som skal avgjøre det.
+const ublokkerbart = await sarslag({ ublokkerbart: true });
+sjekk(
+    'ublokkerbart slag går gjennom',
+    ublokkerbart.gikkGjennom === true,
+    `gjennom=${ublokkerbart.gikkGjennom}`
+);
 await page.keyboard.up('Shift');
 
 sjekk('ingen konsollfeil', konsollfeil.length === 0, konsollfeil.slice(0, 2).join(' | '));

@@ -13,7 +13,7 @@ import Phaser from 'phaser';
 import { ITEM_BY_ID } from '../../data/items';
 import { SPELL_BY_ID } from '../../data/spells';
 import { KAMP, MANOVER_NAVN, vaapenKamp } from '../../data/vaapen';
-import { maksVerdier, useRpgStore } from '../../store/useRpgStore';
+import { maksVerdier, useRpgStore, utrustetVaapen } from '../../store/useRpgStore';
 import { sfx, startMusikk, stopMusikk } from '../audio';
 import { fraSpill } from '../bridge';
 import { Kamp } from '../kamp';
@@ -31,7 +31,7 @@ import {
 } from '../spriteforge';
 import type { WorldMap } from '../worldgen';
 import type { Effekter } from './effekter';
-import type { Fiende, Sprite } from './entiteter';
+import type { Fiende, Sarslag, Sprite } from './entiteter';
 import type { Prosjektiler } from './prosjektiler';
 
 /** Korteste avstand fra et punkt til et linjestykke - brukt av stråle-besvergelsen. */
@@ -258,14 +258,14 @@ export class Spiller {
                       store.character.classId === 'skald'
                           ? '#8b2f4a'
                           : store.character.classId === 'runemester'
-                            ? '#2f4b8b'
-                            : '#3c6b4a',
+                          ? '#2f4b8b'
+                          : '#3c6b4a',
                   trim:
                       store.character.classId === 'skald'
                           ? '#e8c96a'
                           : store.character.classId === 'runemester'
-                            ? '#7fd4ff'
-                            : '#cfd8c0',
+                          ? '#7fd4ff'
+                          : '#cfd8c0',
               }
             : { tunic: '#8b2f4a', trim: '#e8c96a' };
 
@@ -273,10 +273,10 @@ export class Spiller {
         const tier = !rustning
             ? 0
             : rustning === 'vadmelskjortel'
-              ? 1
-              : rustning === 'lerbrynje'
-                ? 2
-                : 3;
+            ? 1
+            : rustning === 'lerbrynje'
+            ? 2
+            : 3;
 
         return {
             appearance: store.character?.appearance ?? { skin: 0, hair: 0, hairColor: 0, face: 0 },
@@ -292,8 +292,7 @@ export class Spiller {
      */
     oppdaterUtseende() {
         const look = this.heltLook();
-        const store = useRpgStore.getState();
-        const art = ITEM_BY_ID[store.utstyr.vapen ?? 'ovingssverd']?.weapon?.art ?? 'sverd';
+        const art = utrustetVaapen().art;
         const signatur = `${JSON.stringify(look)}|${art}`;
         if (signatur === this.utseendeSignatur) return;
         this.utseendeSignatur = signatur;
@@ -474,8 +473,8 @@ export class Spiller {
                             ? 'venstre'
                             : 'hoyre'
                         : dy < 0
-                          ? 'opp'
-                          : 'ned';
+                        ? 'opp'
+                        : 'ned';
             }
         }
         this.gardPress = Math.max(0, this.gardPress - delta);
@@ -536,11 +535,11 @@ export class Spiller {
 
     private slaa() {
         const store = useRpgStore.getState();
-        const vapen = ITEM_BY_ID[store.utstyr.vapen ?? 'ovingssverd']?.weapon;
-        const vk = vaapenKamp(vapen?.art);
-        const rekkevidde = vapen?.rekkevidde ?? 30;
-        const bue = ((vapen?.bue ?? 100) * Math.PI) / 180;
-        const basisHastighet = vapen?.hastighet ?? 400;
+        const vapen = utrustetVaapen(store);
+        const vk = vaapenKamp(vapen.art);
+        const rekkevidde = vapen.rekkevidde;
+        const bue = (vapen.bue * Math.PI) / 180;
+        const basisHastighet = vapen.hastighet;
 
         // Pusten, komboen og slitenheten avgjøres i kamp.ts. Null tilbake betyr
         // at hun står bundet i etterslep etter et bommet tredje slag.
@@ -621,7 +620,7 @@ export class Spiller {
         // ellers ville et trett slag gitt mer styrkebonus enn et uthvilt.
         const stats = maksVerdier(store);
         const grunnskade =
-            ((vapen?.skade ?? 8) + stats.styrke * (basisHastighet / 400)) * sving.skadeFaktor;
+            (vapen.skade + stats.styrke * (basisHastighet / 400)) * sving.skadeFaktor;
         let traff = false;
         for (const fiende of this.kroker.fiender()) {
             if (fiende.dodd) continue;
@@ -661,8 +660,8 @@ export class Spiller {
      */
     private manover() {
         const store = useRpgStore.getState();
-        const vapen = ITEM_BY_ID[store.utstyr.vapen ?? 'ovingssverd']?.weapon;
-        const vk = vaapenKamp(vapen?.art);
+        const vapen = utrustetVaapen(store);
+        const vk = vaapenKamp(vapen.art);
 
         if (!this.kamp.manover()) {
             this.efx.flytTekst(this.sprite.x, this.sprite.y - 28, 'Ikke pust nok', '#9fb0c8');
@@ -670,8 +669,7 @@ export class Spiller {
         }
 
         const vinkel = this.retningsVinkel();
-        const rekkevidde =
-            (vapen?.rekkevidde ?? 30) * (vk.manover === 'stikk-gjennom' ? 1.35 : 0.8);
+        const rekkevidde = vapen.rekkevidde * (vk.manover === 'stikk-gjennom' ? 1.35 : 0.8);
         const bue = vk.manover === 'stikk-gjennom' ? Math.PI / 6 : Math.PI / 2;
 
         this.angrepNedkjoling = 520;
@@ -696,7 +694,7 @@ export class Spiller {
             const skade =
                 vk.manover === 'skjoldstot'
                     ? Math.max(2, Math.round(stats.styrke * 0.6))
-                    : Math.round(((vapen?.skade ?? 8) + stats.styrke) * 1.25);
+                    : Math.round((vapen.skade + stats.styrke) * 1.25);
             this.kroker.skadFiende(
                 fiende,
                 skade,
@@ -732,10 +730,10 @@ export class Spiller {
             this.retning === 'ned'
                 ? [-5, 1]
                 : this.retning === 'opp'
-                  ? [5, -2]
-                  : this.retning === 'venstre'
-                    ? [-6, 0]
-                    : [6, 0];
+                ? [5, -2]
+                : this.retning === 'venstre'
+                ? [-6, 0]
+                : [6, 0];
         // Presset skyver skjoldet ett piksel ut i det noe treffer det.
         const press = this.gardPress > 0 ? Math.sign(ox) : 0;
         this.skjoldSprite
@@ -750,7 +748,7 @@ export class Spiller {
      * vanlig blokk, eller ingenting. Returnerer `false` når garden tok imot, så
      * fiendesystemet vet at ingenting traff henne.
      */
-    nerkampTreff(fiende: Fiende): boolean {
+    nerkampTreff(fiende: Fiende, sar?: Sarslag): boolean {
         const def = fiende.def;
         // Vinkelen er retningen fra eleven *mot* den som slår, så et angrep i
         // ryggen aldri kan blokkeres.
@@ -761,7 +759,15 @@ export class Spiller {
             ),
             retningsVinkel: this.retningsVinkel(),
             tungt: def.skade >= 12,
+            ublokkerbart: sar?.ublokkerbart,
+            hak: sar?.hak,
         });
+
+        // Sto garden oppe og slaget gikk gjennom likevel, må eleven få vite
+        // hvorfor. Uten dette leser et ublokkerbart slag som et ødelagt skjold.
+        if (utfall.art === 'gjennom' && sar?.ublokkerbart && this.kamp.gardOppe) {
+            this.efx.flytTekst(this.sprite.x, this.sprite.y - 30, 'Ublokkerbart!', '#ffd27a');
+        }
 
         if (utfall.art === 'parade') {
             this.parade(fiende);

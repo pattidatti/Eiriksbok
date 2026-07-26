@@ -23,11 +23,7 @@ export class Loot {
     private spillerPos: () => { x: number; y: number };
     private biter: LootBit[] = [];
 
-    constructor(
-        scene: Phaser.Scene,
-        efx: Effekter,
-        spillerPos: () => { x: number; y: number }
-    ) {
+    constructor(scene: Phaser.Scene, efx: Effekter, spillerPos: () => { x: number; y: number }) {
         this.scene = scene;
         this.efx = efx;
         this.spillerPos = spillerPos;

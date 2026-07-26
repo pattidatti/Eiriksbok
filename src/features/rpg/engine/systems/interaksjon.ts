@@ -111,10 +111,10 @@ export class Interaksjon {
                 lm.kind === 'runestein'
                     ? 'prop-runestein'
                     : lm.kind === 'skilt'
-                      ? 'prop-skilt'
-                      : lm.kind === 'kiste'
-                        ? 'loot-kiste'
-                        : 'prop-baal-0';
+                    ? 'prop-skilt'
+                    : lm.kind === 'kiste'
+                    ? 'loot-kiste'
+                    : 'prop-baal-0';
             const bilde = this.scene.add.image(tx * TILE + 8, ty * TILE + 8, key);
             bilde.setOrigin(0.5, 0.85).setDepth(bilde.y);
             if (lm.kind === 'baal') {

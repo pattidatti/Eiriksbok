@@ -44,12 +44,7 @@ export class Prosjektiler {
     private kroker: ProsjektilKroker;
     private liste: Prosjektil[] = [];
 
-    constructor(
-        scene: Phaser.Scene,
-        efx: Effekter,
-        kart: WorldMap,
-        kroker: ProsjektilKroker
-    ) {
+    constructor(scene: Phaser.Scene, efx: Effekter, kart: WorldMap, kroker: ProsjektilKroker) {
         this.scene = scene;
         this.efx = efx;
         this.kart = kart;
@@ -95,12 +90,8 @@ export class Prosjektiler {
 
             if (p.fraFiende) {
                 if (
-                    Phaser.Math.Distance.Between(
-                        p.sprite.x,
-                        p.sprite.y,
-                        spiller.x,
-                        spiller.y - 6
-                    ) < TREFF_RADIUS
+                    Phaser.Math.Distance.Between(p.sprite.x, p.sprite.y, spiller.x, spiller.y - 6) <
+                    TREFF_RADIUS
                 ) {
                     this.kroker.skadSpiller(p.skade);
                     this.efx.pikselSprut(p.sprite.x, p.sprite.y, 0xffffff, 6);

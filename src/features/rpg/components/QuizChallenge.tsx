@@ -44,23 +44,19 @@ export function QuizChallenge({ tittel, innsats, question, hint, forsok = 0, onS
     // Alternativene stokkes, ellers ligger fasiten ofte først i innholdet.
     // Seeden inkluderer forsøksnummeret, så et nytt forsøk gir ny rekkefølge -
     // ellers kunne eleven bare huske posisjonen fra forrige gang.
-    const rekkefolge = useMemo(() => stokk(question.options.length, `${question.id}#${forsok}`), [
-        question.options.length,
-        question.id,
-        forsok,
-    ]);
+    const rekkefolge = useMemo(
+        () => stokk(question.options.length, `${question.id}#${forsok}`),
+        [question.options.length, question.id, forsok]
+    );
 
     const riktig = valgt === question.correct;
     /** Fasiten vises ved riktig svar, eller når eleven har brukt opp forsøkene. */
     const avslor = riktig || forsok >= 1;
 
-    const velg = useCallback(
-        (i: number) => {
-            setValgt((forrige) => (forrige === null ? i : forrige));
-            setVist(true);
-        },
-        []
-    );
+    const velg = useCallback((i: number) => {
+        setValgt((forrige) => (forrige === null ? i : forrige));
+        setVist(true);
+    }, []);
 
     useEffect(() => {
         const lytt = (e: KeyboardEvent) => {
@@ -76,7 +72,9 @@ export function QuizChallenge({ tittel, innsats, question, hint, forsok = 0, onS
         <div className="absolute inset-0 z-50 grid place-items-center bg-slate-950/70 px-3 backdrop-blur-sm">
             <div className="max-h-[86vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-amber-300/25 bg-slate-950/97 p-5 shadow-2xl sm:p-6">
                 <header className="mb-4">
-                    <p className="text-xs uppercase tracking-[0.25em] text-amber-300/80">{tittel}</p>
+                    <p className="text-xs uppercase tracking-[0.25em] text-amber-300/80">
+                        {tittel}
+                    </p>
                     {innsats && <p className="mt-0.5 text-sm text-slate-400">{innsats}</p>}
                 </header>
 
@@ -96,7 +94,8 @@ export function QuizChallenge({ tittel, innsats, question, hint, forsok = 0, onS
                         const erValgt = i === valgt;
                         let stil =
                             'border-white/15 bg-white/5 hover:border-white/40 hover:bg-white/10';
-                        if (vist && erFasit && avslor) stil = 'border-emerald-400/70 bg-emerald-500/15';
+                        if (vist && erFasit && avslor)
+                            stil = 'border-emerald-400/70 bg-emerald-500/15';
                         else if (vist && erValgt) stil = 'border-rose-500/70 bg-rose-600/15';
                         else if (vist) stil = 'border-white/10 bg-white/[0.03] opacity-55';
 
@@ -156,7 +155,8 @@ export function QuizChallenge({ tittel, innsats, question, hint, forsok = 0, onS
                         )}
 
                         <p className="mt-3 text-sm text-slate-400">
-                            Vil du lese mer? <KildeLenke href={question.link} tittel={question.lessonTitle} />
+                            Vil du lese mer?{' '}
+                            <KildeLenke href={question.link} tittel={question.lessonTitle} />
                         </p>
                         <button
                             type="button"

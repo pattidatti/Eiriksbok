@@ -13,7 +13,7 @@ import { CLASS_BY_ID, levelFromXp, statsAt, xpForLevel } from '../data/classes';
 import { ITEM_BY_ID, equipmentBonus } from '../data/items';
 import { SPELL_BY_ID, newlyUnlockedSpells } from '../data/spells';
 import { sfx } from '../engine/audio';
-import type { CharacterDraft, ItemSlot, QuestDef } from '../types';
+import type { CharacterDraft, ItemSlot, QuestDef, VaapenDef } from '../types';
 
 export interface RpgState {
     character: CharacterDraft | null;
@@ -58,6 +58,9 @@ export interface RpgState {
 
 const TOM_UTSTYR: Record<ItemSlot, string | null> = { vapen: null, rustning: null, amulett: null };
 
+/** Våpenet en elev uten utrustet våpen slår med - hendene hennes, i praksis. */
+const START_VAAPEN = 'ovingssverd';
+
 let varselId = 0;
 
 /** Maks liv/kraft ut fra nivå, klasse og utstyr. */
@@ -74,6 +77,20 @@ export function maksVerdier(state: Pick<RpgState, 'character' | 'xp' | 'utstyr'>
         visdom: base.visdom + bonus.visdom,
         vern: base.vern + bonus.vern,
     };
+}
+
+/**
+ * Våpenet eleven har i hånda.
+ *
+ * Fire steder gjorde `ITEM_BY_ID[utstyr.vapen ?? 'ovingssverd']?.weapon?.art ??
+ * 'sverd'` hver for seg, og de var ikke enige: tre av dem falt tilbake på
+ * øvingssverdets tall, den fjerde på strengen «sverd». Ett oppslag, ett fall.
+ */
+export function utrustetVaapen(
+    state: Pick<RpgState, 'utstyr'> = useRpgStore.getState()
+): VaapenDef {
+    const vapen = ITEM_BY_ID[state.utstyr.vapen ?? START_VAAPEN]?.weapon;
+    return vapen ?? (ITEM_BY_ID[START_VAAPEN].weapon as VaapenDef);
 }
 
 export const useRpgStore = create<RpgState>()(
@@ -189,7 +206,10 @@ export const useRpgStore = create<RpgState>()(
                 set({ sekk, utstyr: { ...state.utstyr, [item.slot]: itemId } });
                 // Utstyr kan øke maks-liv; fyll ikke opp, men klipp aldri under 1.
                 const maks = maksVerdier(get());
-                set({ hp: Math.max(1, Math.min(get().hp, maks.hp)), mana: Math.min(get().mana, maks.mana) });
+                set({
+                    hp: Math.max(1, Math.min(get().hp, maks.hp)),
+                    mana: Math.min(get().mana, maks.mana),
+                });
             },
 
             taAv: (slot) => {
@@ -198,7 +218,10 @@ export const useRpgStore = create<RpgState>()(
                 if (!id) return;
                 set({ sekk: [...state.sekk, id], utstyr: { ...state.utstyr, [slot]: null } });
                 const maks = maksVerdier(get());
-                set({ hp: Math.max(1, Math.min(get().hp, maks.hp)), mana: Math.min(get().mana, maks.mana) });
+                set({
+                    hp: Math.max(1, Math.min(get().hp, maks.hp)),
+                    mana: Math.min(get().mana, maks.mana),
+                });
             },
 
             startQuest: (questId) => {
@@ -232,7 +255,8 @@ export const useRpgStore = create<RpgState>()(
                     const andel = forsok === 0 ? 1 : 0.5;
                     get().giXp(Math.round(quest.belonning.xp * andel));
                     get().giSolv(Math.round(quest.belonning.solv * andel));
-                    if (forsok === 0 && quest.belonning.itemId) get().leggISekk(quest.belonning.itemId);
+                    if (forsok === 0 && quest.belonning.itemId)
+                        get().leggISekk(quest.belonning.itemId);
                     if (quest.belonning.spellId) get().lerSpell(quest.belonning.spellId);
 
                     // Nye besvergelser kan ha blitt låst opp av at telleren steg.
@@ -259,7 +283,10 @@ export const useRpgStore = create<RpgState>()(
                 });
                 if (forsok >= 2) {
                     set({ quester: { ...get().quester, [quest.id]: 'ferdig' } });
-                    get().varsle('Oppdraget lukkes. Les forklaringen - den sitter neste gang.', 'darlig');
+                    get().varsle(
+                        'Oppdraget lukkes. Les forklaringen - den sitter neste gang.',
+                        'darlig'
+                    );
                 } else {
                     get().varsle('Ikke helt. Gå og finn svaret, så prøver vi igjen.', 'darlig');
                 }
@@ -338,7 +365,7 @@ export const useRpgStore = create<RpgState>()(
                     lest: state.lest,
                     bosser: state.bosser,
                     sisteSone: state.sisteSone,
-                }) as unknown as RpgState,
+                } as unknown as RpgState),
             migrate: (lagret, versjon) => {
                 const s = (lagret ?? {}) as Partial<RpgState>;
                 const ut: Partial<RpgState> = { ...s, questForsok: s.questForsok ?? {} };
@@ -351,7 +378,7 @@ export const useRpgStore = create<RpgState>()(
                 // oppdrag (`nordvik-h*`), nivå, sølv, utstyr og boss beholdes.
                 if (versjon < 3) {
                     const gammel = (n: string) => /^nordvik-b\d+$/.test(n);
-                    const vask = <T,>(kart: Record<string, T> | undefined) =>
+                    const vask = <T>(kart: Record<string, T> | undefined) =>
                         Object.fromEntries(
                             Object.entries(kart ?? {}).filter(([n]) => !gammel(n))
                         ) as Record<string, T>;

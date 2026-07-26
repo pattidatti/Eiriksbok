@@ -141,7 +141,14 @@ function addCanvas(scene: Phaser.Scene, key: string, painter: { canvas: HTMLCanv
 
 // ─── Menneskefigur ──────────────────────────────────────────────────────────
 
-function drawHumanoid(p: Painter, dir: Dir, st: Stilling, look: HeroLook, hair: string, skin: string): void {
+function drawHumanoid(
+    p: Painter,
+    dir: Dir,
+    st: Stilling,
+    look: HeroLook,
+    hair: string,
+    skin: string
+): void {
     const tunic = look.tunic;
     const trim = look.trim;
     const bukse = '#4a3b2c';
@@ -185,7 +192,8 @@ function drawHumanoid(p: Painter, dir: Dir, st: Stilling, look: HeroLook, hair: 
 
     // ── Armer ───────────────────────────────────────────────────────────────
     const arm = (x: number, fase: number, farge: string, hud: string, leder: boolean) => {
-        const dx = (side ? fase : 0) + lutX + (leder ? st.strekk * (dir === 'venstre' ? -1 : 1) : 0);
+        const dx =
+            (side ? fase : 0) + lutX + (leder ? st.strekk * (dir === 'venstre' ? -1 : 1) : 0);
         const y = 10 + ty + fase + st.krup;
         const h = Math.max(2, 5 - st.krup);
         p.rect(x + dx, y, 2, h, farge);
@@ -199,7 +207,8 @@ function drawHumanoid(p: Painter, dir: Dir, st: Stilling, look: HeroLook, hair: 
 
     // ── Rustning oppå kjortelen ─────────────────────────────────────────────
     if (look.armorTier >= 1) {
-        const plate = look.armorTier >= 3 ? '#c8cdd6' : look.armorTier === 2 ? '#9aa3ae' : '#7a6a52';
+        const plate =
+            look.armorTier >= 3 ? '#c8cdd6' : look.armorTier === 2 ? '#9aa3ae' : '#7a6a52';
         p.rect(4 + lutX, kroppY, 8, Math.min(4, kroppH), plate);
         p.vline(4 + lutX, kroppY, Math.min(4, kroppH), ramp(plate, 1));
         p.rect(10 + lutX, kroppY, 2, Math.min(4, kroppH), ramp(plate, -1));
@@ -268,7 +277,14 @@ function drawHumanoid(p: Painter, dir: Dir, st: Stilling, look: HeroLook, hair: 
     }
 }
 
-function drawHair(p: Painter, style: string, color: string, dir: Dir, hodeY: number, hx: number): void {
+function drawHair(
+    p: Painter,
+    style: string,
+    color: string,
+    dir: Dir,
+    hodeY: number,
+    hx: number
+): void {
     const lys = ramp(color, 1);
     const mork = ramp(color, -1);
     const bak = dir === 'opp';

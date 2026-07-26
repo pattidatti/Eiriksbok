@@ -11,9 +11,8 @@
 
 import Phaser from 'phaser';
 import { ENEMIES } from '../../data/enemies';
-import { ITEM_BY_ID } from '../../data/items';
 import { KAMP } from '../../data/vaapen';
-import { maksVerdier, useRpgStore } from '../../store/useRpgStore';
+import { maksVerdier, useRpgStore, utrustetVaapen } from '../../store/useRpgStore';
 import type { EnemyDef } from '../../types';
 import { sfx, startMusikk } from '../audio';
 import { fraSpill } from '../bridge';
@@ -21,9 +20,20 @@ import type { KampFx } from '../kampfx';
 import { FIENDE_RAMMER, TILE } from '../spriteforge';
 import type { WorldMap } from '../worldgen';
 import type { Effekter } from './effekter';
-import type { Fiende, Sprite } from './entiteter';
+import type { Fiende, Sarslag, Sprite } from './entiteter';
 import type { Loot } from './loot';
 import type { Prosjektiler } from './prosjektiler';
+
+/** Fargen særslaget varsles i. Rødt er vanlig slag, dette er noe annet. */
+const SARSLAG_TINT = 0xffd27a;
+
+/** Særslaget dette slaget er, om det er noe. Null for et vanlig slag. */
+function sarslag(fiende: Fiende): Sarslag | undefined {
+    const def = fiende.def.sarslag;
+    if (!def || def.hvert < 1) return undefined;
+    if (fiende.slagTeller % def.hvert !== 0) return undefined;
+    return { ublokkerbart: def.ublokkerbart, hak: def.hak };
+}
 
 /** Hvor lenge et treff kaster fienden bakover før AI-en tar rattet igjen. */
 const STOT_MS = 150;
@@ -37,7 +47,7 @@ export interface FiendeKroker {
      * Fienden lander et nærkampslag. Returner `true` hvis slaget gikk gjennom
      * garden, `false` hvis det ble paret eller blokkert.
      */
-    nerkampTreff: (fiende: Fiende) => boolean;
+    nerkampTreff: (fiende: Fiende, sar?: Sarslag) => boolean;
     hitstop: (ms: number) => void;
     /** Låser bevegelsen mens bossdysten står åpen. */
     laas: (pa: boolean) => void;
@@ -141,6 +151,7 @@ export class Fiender {
             stolpe: null,
             stolpeTid: 0,
             onsketTint: null,
+            slagTeller: 0,
         };
         this.liste.push(this.bossen);
     }
@@ -182,6 +193,7 @@ export class Fiender {
             stolpe: null,
             stolpeTid: 0,
             onsketTint: null,
+            slagTeller: 0,
         });
     }
 
@@ -297,9 +309,13 @@ export class Fiender {
                         fiende.tilstand = 'varsler';
                         fiende.timer = def.varsel;
                         sprite.setVelocity(0, 0);
-                        fiende.onsketTint = 0xffaaaa;
+                        // Slaget telles allerede her, så varselet og treffet er
+                        // enige om hvorvidt dette er særslaget.
+                        fiende.slagTeller += 1;
+                        const sar = sarslag(fiende);
+                        fiende.onsketTint = sar ? SARSLAG_TINT : 0xffaaaa;
                         this.settTint(fiende);
-                        this.telegrafer(fiende);
+                        this.telegrafer(fiende, Boolean(sar));
                         break;
                     }
                     this.jag(fiende, def.fart);
@@ -384,18 +400,22 @@ export class Fiender {
         sprite.setVelocity(vx + sx * 3, vy + sy * 3);
     }
 
-    /** Et lite varsel på bakken før fienden slår. */
-    private telegrafer(fiende: Fiende): void {
+    /**
+     * Et lite varsel på bakken før fienden slår. Særslaget varsles i en annen
+     * farge og med et større merke - eleven skal kunne lese at dette ene slaget
+     * ikke er som de andre, ellers er det bare urettferdig.
+     */
+    private telegrafer(fiende: Fiende, sarslag = false): void {
         const merke = this.efx.hent('fx-ring');
         merke.setPosition(fiende.sprite.x, fiende.sprite.y + 2);
         merke
-            .setTint(0xff8a6a)
-            .setAlpha(0.5)
+            .setTint(sarslag ? SARSLAG_TINT : 0xff8a6a)
+            .setAlpha(sarslag ? 0.75 : 0.5)
             .setScale(0.12)
             .setDepth(fiende.sprite.y - 1);
         this.scene.tweens.add({
             targets: merke,
-            scale: 0.34,
+            scale: sarslag ? 0.48 : 0.34,
             alpha: 0,
             duration: fiende.def.varsel,
             onComplete: () => this.efx.slipp(merke),
@@ -421,7 +441,8 @@ export class Fiender {
         }
         // Nærkamp: sjekk at eleven fortsatt er innenfor når slaget lander. Tok
         // garden imot, er det hele - ingen sprut, for ingenting traff henne.
-        if (avstand <= def.rekkevidde + 8 && !this.kroker.nerkampTreff(fiende)) return;
+        if (avstand <= def.rekkevidde + 8 && !this.kroker.nerkampTreff(fiende, sarslag(fiende)))
+            return;
         this.efx.pikselSprut(fiende.sprite.x, fiende.sprite.y - 6, def.farge, 5);
     }
 
@@ -563,8 +584,7 @@ export class Fiender {
         }
 
         // Én avslutning per våpenart, og et lik som blir liggende etterpå.
-        const art =
-            ITEM_BY_ID[useRpgStore.getState().utstyr.vapen ?? 'ovingssverd']?.weapon?.art ?? null;
+        const art = utrustetVaapen().art;
         this.fx.avslutning(fiende.sprite, fiende.def, art, vinkel, () => {
             fiende.sprite.destroy();
             this.fx.leggLik(dx, dy, fiende.def.id);
