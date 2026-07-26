@@ -12,7 +12,7 @@
 import type Phaser from 'phaser';
 import type { AppearanceChoice, EnemyDef, WeaponArt } from '../types';
 import { HAIR_COLORS, HAIR_STYLES, SKIN_TONES } from '../data/classes';
-import { createPainter, numToHex, ramp, type Painter } from './pixels';
+import { createPainter, makeRng, numToHex, ramp, type Painter } from './pixels';
 
 export const TILE = 16;
 
@@ -481,6 +481,74 @@ export function forgeEnemy(scene: Phaser.Scene, def: EnemyDef): void {
         ark.ctx.drawImage(celle.canvas, frame * w, 0);
     }
     addSheet(scene, `fiende-${def.id}`, ark.canvas, w, h, FIENDE_RAMMER, 1);
+    forgeLosdeler(scene, def);
+    forgeLik(scene, def);
+}
+
+// ─── Løsdeler og lik ────────────────────────────────────────────────────────
+// Lemlestelse og avslutninger trenger biter som kan spinne av og bli liggende.
+// De tegnes i fiendens egen farge, så en ny fiende får sine egne rester uten at
+// noen må tegne noe: samme prinsipp som at rustningen synes med én gang.
+
+/** Antall former i løsdel-arket. Hver bit er sin egen ramme. */
+export const LOSDEL_RAMMER = 6;
+
+function forgeLosdeler(scene: Phaser.Scene, def: EnemyDef): void {
+    const base = numToHex(def.farge);
+    const lys = ramp(base, 1);
+    const mork = ramp(base, -2);
+    const S = 8;
+    const ark = createPainter(S * LOSDEL_RAMMER, S);
+    // Seedet på id-en, så samme fiende alltid faller i samme biter. En fiende som
+    // sprekker ulikt hver gang leser som støy.
+    const rng = makeRng([...def.id].reduce((a, c) => a + c.charCodeAt(0), 7));
+
+    for (let i = 0; i < LOSDEL_RAMMER; i++) {
+        const c = createPainter(S, S, 1, 1);
+        // De to første er store flak, resten er småbiter. Da kan en avslutning
+        // velge tyngde: øksa river av flak, hammeren lager grus.
+        const r = i < 2 ? 3 : i < 4 ? 2 : 1.4;
+        const kjerne = i % 2 === 0 ? base : mork;
+        for (let y = 0; y < S; y++) {
+            for (let x = 0; x < S; x++) {
+                const d = Math.hypot(x - 3.5, y - 3.5);
+                if (d > r + rng() * 0.9) continue;
+                c.px(x, y, d < r * 0.5 ? lys : kjerne);
+            }
+        }
+        // Bare de store flakene får kontur. Med kontur på småbitene leser de som
+        // fasetterte krystaller i stedet for som noe som ble revet av.
+        if (i < 2) c.outline();
+        ark.ctx.drawImage(c.canvas, i * S, 0);
+    }
+    addSheet(scene, `losdel-${def.id}`, ark.canvas, S, S, LOSDEL_RAMMER, 1);
+}
+
+/**
+ * Liket som blir liggende. Det er ikke fienden med lav alpha - det er en flat,
+ * mørknet form som leser som «her lå det noe» også etter at eleven har gått
+ * videre. Et slagmark uten rester føles som en skytebane.
+ */
+function forgeLik(scene: Phaser.Scene, def: EnemyDef): void {
+    const scale = def.storrelse ?? 1;
+    const w = Math.round(20 * scale);
+    const h = Math.round(12 * scale);
+    const p = createPainter(w, h, 1, 1);
+    const base = ramp(numToHex(def.farge), -2);
+    const mork = ramp(numToHex(def.farge), -3);
+    const rng = makeRng([...def.id].reduce((a, c) => a + c.charCodeAt(0), 31));
+
+    // En sammensunket haug, bredere enn høy, med ujevn kant.
+    for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+            const dx = (x - w / 2) / (w * 0.42);
+            const dy = (y - h * 0.62) / (h * 0.34);
+            if (dx * dx + dy * dy > 1 + rng() * 0.25) continue;
+            p.px(x, y, y > h * 0.62 ? mork : base);
+        }
+    }
+    p.outline();
+    addCanvas(scene, `lik-${def.id}`, p);
 }
 
 // ─── Våpen ──────────────────────────────────────────────────────────────────
@@ -619,6 +687,22 @@ export function forgeEffects(scene: Phaser.Scene): void {
     const bit = createPainter(3, 3);
     bit.rect(0, 0, 3, 3, '#ffffff');
     addCanvas(scene, 'fx-bit', bit);
+
+    // Blodflekker. Fire ujevne små former i stedet for én firkant: skalerte
+    // firkanter leser som spredte murstein, ikke som blod.
+    const FW = 5;
+    const flekkRng = makeRng(1066);
+    const flekkArk = createPainter(FW * 4, 4);
+    for (let f = 0; f < 4; f++) {
+        const c = createPainter(FW, 4, 1, 1);
+        // Én kjerne og noen få sprut rundt, alltid asymmetrisk.
+        c.rect(1, 1, 2, 2, '#ffffff');
+        for (let i = 0; i < 4; i++) {
+            c.px(Math.floor(flekkRng() * FW), Math.floor(flekkRng() * 4), '#ffffff');
+        }
+        flekkArk.ctx.drawImage(c.canvas, f * FW, 0);
+    }
+    addSheet(scene, 'fx-flekk', flekkArk.canvas, FW, 4, 4, 1);
 
     // Slagbuen som blinker når du svinger.
     const slash = createPainter(28, 28);

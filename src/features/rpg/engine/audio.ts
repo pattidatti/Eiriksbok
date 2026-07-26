@@ -184,6 +184,46 @@ export const sfx = {
         tone(294, 0.6, 'triangle', 0.12, 392, 0.08);
         noise(0.5, 0.06, 1200, 0.02, 300);
     },
+    // ── Avslutninger ────────────────────────────────────────────────────────
+    // Én lyd per våpenart. Det er ikke pynt: eleven skal høre hvilket våpen som
+    // gjorde det, også når hun ser bort på helsestolpen sin.
+
+    /** Sverdet: et kutt. Kort, høyt, og så en våt hale. */
+    kutt() {
+        noise(0.08, 0.4, 6000, 0, 1800);
+        tone(1400, 0.07, 'sawtooth', 0.1, 500);
+        noise(0.26, 0.24, 700, 0.06, 160);
+    },
+    /** Øksa: et flekk. Tungt anslag ned i noe som gir etter. */
+    flekk() {
+        noise(0.13, 0.46, 1300, 0, 220);
+        tone(120, 0.26, 'square', 0.24, 48);
+        noise(0.3, 0.2, 520, 0.09, 110);
+    },
+    /** Spydet: gjennomboring. En glidende, trang lyd. */
+    gjennombor() {
+        noise(0.2, 0.3, 2400, 0, 380);
+        tone(320, 0.24, 'triangle', 0.14, 120);
+        noise(0.22, 0.16, 600, 0.12, 140);
+    },
+    /** Hammeren: knusing. Alt på én gang, og lavt. */
+    knus() {
+        noise(0.17, 0.52, 900, 0, 130);
+        tone(78, 0.36, 'sawtooth', 0.3, 38);
+        tone(150, 0.2, 'square', 0.16, 60, 0.02);
+        noise(0.36, 0.22, 420, 0.1, 90);
+    },
+    /** Staven og alt annet: noe blir slengt av gårde. */
+    slengt() {
+        noise(0.16, 0.3, 2000, 0, 500);
+        tone(240, 0.22, 'triangle', 0.14, 90);
+    },
+    /** Når en bit blir slått av en fiende som slåss videre. */
+    lemlestelse() {
+        noise(0.1, 0.34, 1600, 0, 260);
+        tone(200, 0.16, 'square', 0.12, 80);
+    },
+
     /** Én klingende lyd per gjenstand som spretter ut. */
     lootPling(i = 0) {
         tone(880 + i * 110, 0.09, 'square', 0.08, undefined, i * 0.045);

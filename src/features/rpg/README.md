@@ -173,6 +173,41 @@ Disse er alle feil som har vært i koden, og som ikke er åpenbare:
   fraksjonell zoom gir ujevne piksler i en pikselartscene. I stedet strammes
   dødsonen (40×30 → 14×10) når noe jager eleven. Samme innsnevring, uten å ofre
   skarpheten. Kortvarige fraksjonelle zoom (et kick) er greit; varige er ikke.
+
+## Gore, avslutninger og saktefilm
+
+`engine/kampfx.ts` eier alt som gjør kampen deilig: kamerastøt, klaskesprett,
+blod, løsdeler, lik, saktefilm og én avslutningsanimasjon per våpenart. Modulen
+kjenner ingen spillregler - den tar bare imot «noe traff her, i denne retningen,
+med denne vekten». Sprite-materialet (`losdel-<id>`, `lik-<id>`) smis av
+`forgeEnemy`, i fiendens egen farge, så en ny fiende får sine egne rester uten at
+noen tegner noe.
+
+- **Avslutningene skiller på våpen.** Sverdet kutter på tvers, øksa slår ned i
+  bakken, spydet skyver kroppen bakover før den siger, hammeren knuser til grus.
+  Hver har sin egen lyd. Legger du til en våpenart, legg til en gren - `default`
+  slenger bare kroppen av gårde.
+- **Lemlestelse skjer én gang per fiende**, første gang den går under halvt liv
+  (`fiende.lemlestet`). Den slåss videre uten biten. Det er ikke et nytt tall å
+  følge, det er at eleven *ser* at motstanden er slitt ned.
+- **Saktefilmen telles ned aller først i `update`**, før hver tidlige retur. Lå
+  nedtellingen etter hitstop- eller lås-returen, kunne den henge igjen for alltid
+  hvis eleven åpnet en dialog i drapsøyeblikket - og da går hele spillet i sirup
+  uten at noen skjønner hvorfor. `KampFx.tikk()` skal alltid få **ekte** delta;
+  bare spillogikken skaleres.
+
+### To fallgruver som kostet tid
+
+- **Phasers `flash` er ikke avmetting.** Den fyller skjermen med fargen på full
+  alpha og fader ut, så en «mørk flash» for å ta fargen ut av bildet er i praksis
+  et svart blink midt i drapet. Det ble prøvd, sett på et skjermbilde og fjernet.
+  Ekte avmetting krever en egen pipeline. Hvitt blink er greit - hvitt leser som
+  et høylys, mørkt leser som en glipp.
+- **Skalerte firkanter leser ikke som blod.** Første forsøk brukte `fx-bit`
+  (3×3 hvit rute) skalert opp til 1,9×1,2 - resultatet så ut som spredte murstein
+  på plenen. Blod trenger små, ujevne former (`fx-flekk`, fire varianter) og en
+  mørkere farge enn sprutet i luften. Konturen må også bort på småbiter, ellers
+  leser løsdelene som fasetterte krystaller.
 - **Atmosfære.** Tåkeslør driver over verden i to lag, bålet lyser og flakker, og
   himmeltonen + vignetten legges av React oppå lerretet (`Atmosfare`) - inne i
   scenen ville de blitt skalert av kamerazoomen.
