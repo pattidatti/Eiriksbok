@@ -1,6 +1,10 @@
 // Delte typer for rollespillet «Minnevokteren» (/oving/rpg).
 // Ingen React, ingen Phaser, ingen store-import - kun data.
 
+// Kartformen bor hos den som lager kart. Dette er en ren type-import, så den
+// forsvinner i kompileringen og drar ingen kode med seg hit.
+import type { WorldMap } from './engine/worldgen';
+
 // ─── Spørsmålsbanken (generert av scripts/generate-quest-bank.mjs) ───────────
 
 export interface BankQuestion {
@@ -315,6 +319,52 @@ export interface Kilde {
     type: 'npc' | 'landemerke';
     id: string;
     navn: string;
+}
+
+// ─── Sted ───────────────────────────────────────────────────────────────────
+
+/**
+ * Ett kart. Alt scenen trenger for å bygge en verden ligger her, og ingenting
+ * av det ligger i scenen selv.
+ *
+ * Før dette het scenen bokstavelig talt «nordvik» og leste NORDVIK_-dataene
+ * direkte. Da fantes det ingen måte å bytte kart på - og kapittel 1 er nettopp
+ * det: Torstein seiler fra Nordvik til Lindisfarne.
+ */
+export interface Sted {
+    id: string;
+    /** Navnet som slås opp når eleven ankommer. */
+    tittel: string;
+    undertittel: string;
+    /** Epoken stedet hører til. Peker på en ZoneDef til epoker.ts finnes (R4). */
+    epokeId: string;
+    tema: ZoneTema;
+    /** Terrenget. Bygges på nytt hver gang eleven kommer hit. */
+    byggKart: () => WorldMap;
+    /** Ruta eleven står på ved ankomst. */
+    spawn: [number, number];
+    npcer: NpcDef[];
+    landemerker: LandmarkDef[];
+    /** Bossen som vokter stedet. Ikke alle steder har en. */
+    boss?: {
+        enemyId: string;
+        /** Ett skjold per spørsmål. */
+        sporsmal: BankQuestion[];
+    };
+    /** Grunntonen i den generative slåtten. */
+    musikkRot: number;
+    /** Håndskrevne oppdrag som hører til dette stedet. */
+    authored: AuthoredQuest[];
+}
+
+/** Et håndskrevet oppdrag: spørsmålet pluss innpakningen rundt det. */
+export interface AuthoredQuest {
+    title: string;
+    intro: string;
+    hint: string;
+    giverId: string;
+    question: BankQuestion;
+    belonning: { xp: number; solv: number; itemId?: string };
 }
 
 // ─── Lagret spill ───────────────────────────────────────────────────────────

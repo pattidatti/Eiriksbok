@@ -113,7 +113,7 @@ if (await page.$('button:has-text("Reis deg")')) {
 }
 
 await page.evaluate(() => {
-    const scene = window.__rpg.scene.getScene('nordvik');
+    const scene = window.__rpg.scene.getScene('verden');
     const kart = scene.kart;
     for (const f of scene.fiendeSystem.alle()) {
         if (f.dodd) continue;
@@ -161,7 +161,7 @@ if (!rolig) {
     // drenerer den 0 - som leser som at tiden står stille. Ikke en feil i
     // klokka, men i forutsetningen for å lese den.
     const skjold = await page.evaluate(
-        () => window.__rpg.scene.getScene('nordvik').helt.kampSnapshot().skjoldHelse
+        () => window.__rpg.scene.getScene('verden').helt.kampSnapshot().skjoldHelse
     );
     if (f === null || e === null || lFor === null || lEtter === null) {
         console.log('tidssjekk hoppet over - eleven døde under målingen');

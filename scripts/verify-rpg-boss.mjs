@@ -33,7 +33,7 @@ const sjekk = (ok, melding) => {
 /** Bossens tilstand, lest rett ut av scenen. */
 const boss = async () =>
     page.evaluate(() => {
-        const scene = window.__rpg?.scene.getScene('nordvik');
+        const scene = window.__rpg?.scene.getScene('verden');
         const b = scene?.fiendeSystem?.bossen;
         return b ? { skjold: b.skjold, hp: b.hp, tilstand: b.tilstand } : null;
     });
@@ -44,7 +44,7 @@ sjekk((fore?.skjold ?? 0) > 0, `bossen står med skjold: ${JSON.stringify(fore)}
 // Still deg inntil den og slå. Et slag på en beskyttet boss skal åpne dysten.
 const stillDegVedBossen = () =>
     page.evaluate(() => {
-        const scene = window.__rpg.scene.getScene('nordvik');
+        const scene = window.__rpg.scene.getScene('verden');
         const b = scene.fiendeSystem.bossen;
         // Rett under den, så «opp» er riktig vei. Slagsektoren er smal, og et
         // slag i feil retning treffer ingenting.
@@ -125,7 +125,7 @@ if (dystApen) {
     await lukkSvar();
     sjekk(!(await page.$('text=Kunnskapsdyst')), 'dysten lukket seg etter svar');
     const vakt = await page.evaluate(
-        () => window.__rpg.scene.getScene('nordvik').fiendeSystem.bossVakt
+        () => window.__rpg.scene.getScene('verden').fiendeSystem.bossVakt
     );
     sjekk(vakt === false, `bossvakten ble sluppet igjen (bossVakt=${vakt})`);
     const etterGalt = (await boss())?.skjold ?? -1;

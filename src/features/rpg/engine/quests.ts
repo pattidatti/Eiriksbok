@@ -1,4 +1,4 @@
-// Setter sammen questene for en sone. Massen kommer fra spørsmålsbanken som
+// Setter sammen questene for et sted. Massen kommer fra spørsmålsbanken som
 // genereres fra artiklenes egne quizer, og de viktigste øyeblikkene er
 // håndskrevet (se data/nordvik.ts).
 //
@@ -13,8 +13,7 @@
 //     kunne svaret, var «let i verden» oppfylt av å bli stående i samme
 //     samtaleboks - 15 av 17 bankoppdrag krevde ikke ett skritt.
 
-import { NORDVIK_AUTHORED, NORDVIK_LANDMARKS, NORDVIK_NPCS } from '../data/nordvik';
-import type { BankQuestion, Kilde, NpcDef, QuestBank, QuestDef } from '../types';
+import type { BankQuestion, Kilde, NpcDef, QuestBank, QuestDef, Sted } from '../types';
 import { makeRng } from './pixels';
 
 let bank: QuestBank | null = null;
@@ -37,16 +36,16 @@ function sokefelt(q: BankQuestion): string {
  * alt som står skrevet på steinene. Returnerer null hvis ingen i verden vet
  * det - da må hintet si det rett ut i stedet for å lyve.
  */
-export function finnKilde(q: BankQuestion): Kilde | null {
+export function finnKilde(q: BankQuestion, sted: Sted): Kilde | null {
     const felt = sokefelt(q);
-    for (const npc of NORDVIK_NPCS) {
+    for (const npc of sted.npcer) {
         for (const bit of npc.kunnskap ?? []) {
             if (bit.stikkord.some((ord) => felt.includes(ord.toLowerCase()))) {
                 return { type: 'npc', id: npc.id, navn: npc.name };
             }
         }
     }
-    for (const lm of NORDVIK_LANDMARKS) {
+    for (const lm of sted.landemerker) {
         if ((lm.stikkord ?? []).some((ord) => felt.includes(ord.toLowerCase()))) {
             return { type: 'landemerke', id: lm.id, navn: lm.title };
         }
@@ -72,50 +71,37 @@ const BELONNINGER = [
 ];
 
 /**
- * Bygger questlisten for Nordvik: tre håndskrevne oppdrag først (de lærer
+ * Bygger questlisten for et sted: de håndskrevne oppdragene først (de lærer
  * eleven hvordan spillet fungerer), deretter så mange som banken rekker til.
+ *
+ * Alt som er Nordvik-spesifikt kommer inn med `sted`. Tidligere lå giverne,
+ * replikkene og belønningene som tre parallelle lister her inne, indeksert mot
+ * spørsmålene - da kunne funksjonen bare bygge Nordvik.
  */
-export function byggNordvikQuester(bankData: QuestBank): QuestDef[] {
-    const sone = bankData.zones.find((z) => z.id === 'nordvik');
+export function byggQuester(bankData: QuestBank, sted: Sted): QuestDef[] {
+    const sone = bankData.zones.find((z) => z.id === sted.epokeId);
     const bankSporsmal = sone?.questions ?? [];
     const rng = makeRng(4711);
     const quester: QuestDef[] = [];
 
-    // Håndskrevne oppdrag - knyttet til en bestemt NPC som faktisk kan svaret.
-    const authoredGivere = ['gudrun', 'orm', 'aslak'];
-    const authoredIntro = [
-        'Nøklene mine klirrer, og jeg husker ikke lenger hvorfor de betyr noe. Kan du finne det ut for meg?',
-        'Tåka tok ordet for det jeg gjør. Jeg legger bordene slik - men hva heter det?',
-        'Jeg skriver ned alt. Men jeg har mistet navnet på tida før vår. Hjelp meg.',
-    ];
-    const authoredHint = [
-        'Gudrun vet det selv - hun har bare mistet ordet. Snakk med henne igjen.',
-        'Orm i naustet kan vise deg hvordan bordene ligger.',
-        'Aslak Munk sitter ved kirken og husker mer enn han tror.',
-    ];
-
     // Alle som kan gi oppdrag. Handelsmannen driver bod, ikke oppdrag.
-    const givere = NORDVIK_NPCS.filter((n) => !n.handler);
+    const givere = sted.npcer.filter((n) => !n.handler);
 
     /** Hvor mange oppdrag hver giver har fått. Holder køene omtrent like lange. */
     const kolengde = new Map<string, number>(givere.map((n) => [n.id, 0]));
 
-    NORDVIK_AUTHORED.forEach((q, i) => {
-        kolengde.set(authoredGivere[i], (kolengde.get(authoredGivere[i]) ?? 0) + 1);
+    sted.authored.forEach((a, i) => {
+        kolengde.set(a.giverId, (kolengde.get(a.giverId) ?? 0) + 1);
         quester.push({
-            id: `nordvik-h${i}`,
-            title: ['Nøklene i beltet', 'Bordene i skroget', 'De stille århundrene'][i],
-            intro: authoredIntro[i],
-            hint: authoredHint[i],
-            question: q,
+            id: `${sted.id}-h${i}`,
+            title: a.title,
+            intro: a.intro,
+            hint: a.hint,
+            question: a.question,
             source: 'authored',
-            giverId: authoredGivere[i],
-            kilde: { type: 'npc', id: authoredGivere[i], navn: '' },
-            belonning: {
-                xp: 45,
-                solv: 20,
-                itemId: i === 0 ? 'vadmelskjortel' : i === 1 ? 'kvernstein' : undefined,
-            },
+            giverId: a.giverId,
+            kilde: { type: 'npc', id: a.giverId, navn: '' },
+            belonning: a.belonning,
         });
     });
 
@@ -142,7 +128,7 @@ export function byggNordvikQuester(bankData: QuestBank): QuestDef[] {
     // savner det.
     const stokket = stokk(bankSporsmal, rng);
     stokket.forEach((q, i) => {
-        const kilde = finnKilde(q);
+        const kilde = finnKilde(q, sted);
         const giver = velgGiver(kilde);
         kolengde.set(giver.id, (kolengde.get(giver.id) ?? 0) + 1);
         const belonning = BELONNINGER[i % BELONNINGER.length];
@@ -152,7 +138,7 @@ export function byggNordvikQuester(bankData: QuestBank): QuestDef[] {
             // kjøres i `scan:content`, altså ved hver eneste build. Én ny
             // vikingtid-artikkel med quiz forskjøv alle indeksene, og lagrede
             // «ferdig»-markeringer pekte plutselig på andre spørsmål.
-            id: `nordvik-b:${q.id}`,
+            id: `${sted.id}-b:${q.id}`,
             // Tittelen er selve spørsmålet. Før sto leksjonstittelen her, men
             // Nordviks 17 spørsmål deler bare 7 leksjoner. Fire oppdrag på rad
             // med teksten «Merovingertiden: De stille århundrene» så ut som at
@@ -166,7 +152,14 @@ export function byggNordvikQuester(bankData: QuestBank): QuestDef[] {
             kilde,
             belonning: {
                 ...belonning,
-                itemId: i === 2 ? 'lerbrynje' : i === 5 ? 'sagasverd' : i === 9 ? 'skaldering' : undefined,
+                itemId:
+                    i === 2
+                        ? 'lerbrynje'
+                        : i === 5
+                        ? 'sagasverd'
+                        : i === 9
+                        ? 'skaldering'
+                        : undefined,
             },
         });
     });

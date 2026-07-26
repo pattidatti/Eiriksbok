@@ -1,4 +1,6 @@
-// Verden i Nordvik: terreng, folk, fiender og kamp i sanntid.
+// Verden: terreng, folk, fiender og kamp i sanntid, uansett hvilket sted eleven
+// står på. Scenen får stedet inn i `init()` og bygger det den får - den vet ikke
+// at Nordvik finnes.
 //
 // Scenen eier bevegelse, slag og fiende-AI. Alt som har med tall å gjøre
 // (liv, XP, sekk, quester) bor i useRpgStore, og alt som skal *vises* som
@@ -6,15 +8,9 @@
 
 import Phaser from 'phaser';
 import { ENEMY_BY_ID, ENEMIES } from '../data/enemies';
-import {
-    NORDVIK_LANDMARKS,
-    NORDVIK_NPCS,
-    NORDVIK_SPAWN,
-    NORDVIK_BOSS_QUESTIONS,
-} from '../data/nordvik';
-import { ZONE_BY_ID } from '../data/zones';
+import { stedEllerStart } from '../data/steder';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
-import type { EnemyDef, QuestDef } from '../types';
+import type { EnemyDef, QuestDef, Sted } from '../types';
 import { sfx, startMusikk, stopMusikk } from './audio';
 import { fraSpill, tilSpill } from './bridge';
 import { KampFx } from './kampfx';
@@ -35,9 +31,17 @@ import { Loot } from './systems/loot';
 import { Prosjektiler } from './systems/prosjektiler';
 import { Spiller } from './systems/spiller';
 import { Verden } from './systems/verden';
-import { byggNordvik, type WorldMap } from './worldgen';
+import type { WorldMap } from './worldgen';
+
+/**
+ * Scenenøkkelen. Én scene, mange steder - derfor heter den ikke lenger
+ * «nordvik». Verifiseringsskriptene slår opp scenen med denne.
+ */
+export const VERDEN_SCENE = 'verden';
 
 export class WorldScene extends Phaser.Scene {
+    /** Stedet som bygges. Alt kartspesifikt kommer herfra. */
+    private sted!: Sted;
     private kart!: WorldMap;
     /** Eleven: figur, styring, slag, gard og alt som kan skje med henne. */
     private helt!: Spiller;
@@ -72,16 +76,18 @@ export class WorldScene extends Phaser.Scene {
     private avmeldinger: (() => void)[] = [];
 
     constructor() {
-        super('nordvik');
+        super(VERDEN_SCENE);
     }
 
-    init(data: { quester: QuestDef[] }) {
+    init(data: { stedId?: string; quester: QuestDef[] }) {
         this.quester = data.quester ?? [];
+        this.sted = stedEllerStart(data.stedId);
     }
 
     create() {
-        const tema = ZONE_BY_ID.nordvik.tema;
-        this.kart = byggNordvik();
+        const { sted } = this;
+        const tema = sted.tema;
+        this.kart = sted.byggKart();
 
         forgeTiles(this, tema);
         forgeProps(this, tema);
@@ -107,8 +113,8 @@ export class WorldScene extends Phaser.Scene {
             this.fx,
             this.lootSystem,
             this.skudd,
-            ENEMY_BY_ID['den-store-glemselen'],
-            NORDVIK_BOSS_QUESTIONS.length,
+            sted.boss ? ENEMY_BY_ID[sted.boss.enemyId] : null,
+            sted.boss?.sporsmal.length ?? 0,
             {
                 spiller: () => this.helt.sprite,
                 nerkampTreff: (fiende) => this.helt.nerkampTreff(fiende),
@@ -116,7 +122,7 @@ export class WorldScene extends Phaser.Scene {
                 laas: (pa) => this.settLaast(pa),
             }
         );
-        this.helt = new Spiller(this, this.kart, this.efx, this.fx, this.skudd, NORDVIK_SPAWN, {
+        this.helt = new Spiller(this, this.kart, this.efx, this.fx, this.skudd, sted.spawn, {
             fiender: () => this.fiendeSystem.alle(),
             skadFiende: (f, skade, kritisk, vinkel, kraft) =>
                 this.fiendeSystem.skad(f, skade, kritisk, vinkel, kraft),
@@ -124,7 +130,7 @@ export class WorldScene extends Phaser.Scene {
             hitstop: (ms) => this.hitstop(ms),
             laas: (pa) => this.settLaast(pa),
         });
-        this.samhandling = new Interaksjon(this, NORDVIK_NPCS, NORDVIK_LANDMARKS, {
+        this.samhandling = new Interaksjon(this, sted.npcer, sted.landemerker, {
             spiller: () => this.helt.sprite,
             laas: (pa) => this.settLaast(pa),
             quester: () => this.quester,
@@ -135,14 +141,20 @@ export class WorldScene extends Phaser.Scene {
         this.helt.bygg();
         this.samhandling.bygg();
         this.fiendeSystem.byggBoss();
-        this.verden.byggAtmosfare(NORDVIK_LANDMARKS);
+        this.verden.byggAtmosfare(sted.landemerker);
         this.settOppKamera();
         this.lyttPaaUi();
 
-        startMusikk(196, 0);
+        startMusikk(sted.musikkRot, 0);
         this.events.once('shutdown', () => this.rydd());
 
-        fraSpill.emit('sone', { tittel: 'Nordvik', undertittel: 'Vikingtiden · 793-1066' });
+        // Stedet huskes, så neste økt begynner der eleven slapp.
+        useRpgStore.setState({ sisteSone: sted.id });
+        fraSpill.emit('sone', {
+            stedId: sted.id,
+            tittel: sted.tittel,
+            undertittel: sted.undertittel,
+        });
     }
 
     private settOppKamera() {

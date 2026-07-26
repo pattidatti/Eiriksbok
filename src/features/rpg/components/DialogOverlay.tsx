@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NORDVIK_LANDMARKS, NORDVIK_NPCS } from '../data/nordvik';
+import { finnLandemerke, finnNpc } from '../data/steder';
 import { sfx } from '../engine/audio';
 import { useRpgStore } from '../store/useRpgStore';
 import type { QuestDef } from '../types';
@@ -18,7 +18,7 @@ interface DialogProps {
  * det NPC-en sier, det hun *vet* (svarene eleven leter etter), og oppdraget.
  */
 export function DialogOverlay({ npcId, quester, onLukk, onTaOppdrag, onSvarPa }: DialogProps) {
-    const npc = NORDVIK_NPCS.find((n) => n.id === npcId);
+    const npc = finnNpc(npcId);
     const status = useRpgStore((s) => s.quester);
     const [replikk] = useState(() =>
         npc ? npc.smalltalk[Math.floor(Math.random() * npc.smalltalk.length)] : ''
@@ -113,7 +113,7 @@ interface LandmarkProps {
 }
 
 export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
-    const lm = NORDVIK_LANDMARKS.find((l) => l.id === landmarkId);
+    const lm = finnLandemerke(landmarkId);
     const markerLest = useRpgStore((s) => s.markerLest);
     const lest = useRpgStore((s) => s.lest);
     const forste = lm ? !lest.includes(lm.id) : false;

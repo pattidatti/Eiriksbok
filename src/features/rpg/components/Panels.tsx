@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
-import { NORDVIK_NPCS } from '../data/nordvik';
+import { finnNpc } from '../data/steder';
 import { SPELL_BY_ID } from '../data/spells';
 import { ZONES } from '../data/zones';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
@@ -327,7 +327,7 @@ function VerdensKart({ niva }: { niva: number }) {
 
 /** Bera Kremmers bod. Grunnen til at sølvet i sekken betyr noe. */
 export function ButikkPanel({ npcId, onLukk }: { npcId: string; onLukk: () => void }) {
-    const npc = NORDVIK_NPCS.find((n) => n.id === npcId);
+    const npc = finnNpc(npcId);
     const solv = useRpgStore((s) => s.solv);
     const sekk = useRpgStore((s) => s.sekk);
     const utstyr = useRpgStore((s) => s.utstyr);

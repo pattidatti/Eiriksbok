@@ -28,7 +28,7 @@ await page.waitForTimeout(4000);
 const stillDegVed = async (type, id) =>
     page.evaluate(
         ([type, id]) => {
-            const scene = window.__rpg?.scene.getScene('nordvik');
+            const scene = window.__rpg?.scene.getScene('verden');
             const mal = scene?.samhandling?.mal(type, id);
             if (!mal) return null;
             scene.helt.sprite.setPosition(mal.x, mal.y + 10);
@@ -109,7 +109,7 @@ await page.waitForTimeout(700);
 // Markørene skal finnes og minst én skal være synlig - ellers vet ikke eleven
 // hvem som har et oppdrag til henne.
 const markorer = await page.evaluate(() => {
-    const scene = window.__rpg?.scene.getScene('nordvik');
+    const scene = window.__rpg?.scene.getScene('verden');
     const kart = scene?.samhandling?.npcMarkorer;
     if (!kart) return null;
     const alle = [...kart.values()];

@@ -46,7 +46,7 @@ const liv = () => tall('Liv');
 /** Kamptilstanden rett fra scenen: gard, skjoldhelse, pust. Null hvis scenen er borte. */
 const kampSnapshot = () =>
     page.evaluate(() => {
-        const scene = window.__rpg?.scene.getScene('nordvik');
+        const scene = window.__rpg?.scene.getScene('verden');
         return scene?.helt?.kampSnapshot() ?? null;
     });
 const ventFullPust = async () => {

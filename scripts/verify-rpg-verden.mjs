@@ -37,8 +37,8 @@ await page.waitForTimeout(4000);
 const tall = await page.evaluate(() => {
     const spill = window.__rpg;
     if (!spill) return { feil: 'window.__rpg mangler - kjører du i dev?' };
-    const scene = spill.scene.getScene('nordvik');
-    if (!scene) return { feil: 'fant ikke scenen «nordvik»' };
+    const scene = spill.scene.getScene('verden');
+    if (!scene) return { feil: 'fant ikke scenen «verden»' };
     const liste = scene.children.list;
     const medTekstur = (n) => liste.filter((o) => o.texture?.key === n).length;
     return {
@@ -49,6 +49,8 @@ const tall = await page.evaluate(() => {
         vegger: scene.data.get('vegger')?.getChildren?.().length ?? -1,
         propKropper: scene.data.get('propKropper')?.getChildren?.().length ?? -1,
         npcer: liste.filter((o) => o.texture?.key?.startsWith?.('npc-')).length,
+        // Merk: dette tallet lever. Fiender spawner og dør mens vi teller, så
+        // det svinger med et titalls. Det er linjene over som skal stå stille.
         barn: liste.length,
     };
 });

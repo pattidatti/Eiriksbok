@@ -51,7 +51,8 @@ export class Fiender {
     private loot: Loot;
     private skudd: Prosjektiler;
     private kroker: FiendeKroker;
-    private bossDef: EnemyDef;
+    /** Null på steder uten boss. */
+    private bossDef: EnemyDef | null;
     private bossRunder: number;
 
     private liste: Fiende[] = [];
@@ -69,7 +70,7 @@ export class Fiender {
         fx: KampFx,
         loot: Loot,
         skudd: Prosjektiler,
-        bossDef: EnemyDef,
+        bossDef: EnemyDef | null,
         bossRunder: number,
         kroker: FiendeKroker
     ) {
@@ -110,6 +111,7 @@ export class Fiender {
     // ── Bygging ─────────────────────────────────────────────────────────────
 
     byggBoss(): void {
+        if (!this.bossDef) return;
         if (useRpgStore.getState().bosser.includes(this.bossDef.id)) return;
 
         const arena = this.kart.bossArena;
