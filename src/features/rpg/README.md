@@ -152,11 +152,36 @@ kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 | `verify-rpg-samhandling.mjs` | Hint, E-trykk, dialog, landemerker, utropstegn            |
 | `verify-rpg-boss.mjs`        | Kunnskapsdysten: riktig svar river skjold, galt gjør ikke |
 | `verify-rpg-reise.mjs`       | Stedskifte: bygges på nytt, og ingenting lekker           |
+| `verify-rpg-bue.mjs`         | Skytevåpen: ladetid, pil i lufta, rekkevidde              |
 
-To ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100 ms
-(Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir
-aldri sett), og fasit skal leses fra dataene, ikke gjettes - `QuizChallenge`
-stokker alternativene per forsøk.
+Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
+ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir
+aldri sett), fasit skal leses fra dataene og ikke gjettes (`QuizChallenge`
+stokker alternativene per forsøk), og en prøve som krever en bestemt
+kamptilstand må vente på den *inne i* nettleseren. Poller man fra Node, ligger
+det to rundturer mellom «garden står» og slaget - nok til at paradevinduet
+rekker å åpne seg, og da blir blokken en parade.
+
+## Våpen og angrepsform
+
+Kampegenskapene ligger i to lag: tallene på gjenstanden (`VaapenDef` i
+`items.ts` - skade, hastighet, rekkevidde, bue) og formen på arten
+(`VAAPEN_KAMP` i `data/vaapen.ts` - pust, manøver, tyngde og `Angrepsform`).
+
+`Angrepsform` avgjør hvilket verb våpenet har:
+
+- **`sving`** - buen, treffsektoren og komboen. Alle håndvåpen.
+- **`skudd`** - strengen trekkes i `ladeMs`, og skuddet går ut i
+  prosjektillaget. Rekkevidden (piksler) delt på farten (piksler i sekundet)
+  gir levetiden.
+
+Et nytt skytevåpen er derfor data, ikke en ny gren i `slaa()`: et gevær i 1916
+er bua med andre tall og lengre ladetid. Skudd som er fysiske gjenstander må
+settes med `fysisk: true` - da peker de dit de flyr og pulserer ikke, slik
+besvergelsene skal.
+
+Fiendene har `sarslag` etter samme tanke: hvert n-te slag går gjennom garden
+(`ublokkerbart`) eller river skjoldet (`hak`), og det telegraferes i egen farge.
 
 ## Ting som er lett å ødelegge igjen
 
