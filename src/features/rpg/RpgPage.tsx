@@ -256,7 +256,10 @@ export default function RpgPage() {
 
             {overlegg.type === 'utfordring' && (
                 <QuizChallenge
-                    tittel={overlegg.quest.title}
+                    // Overskriften sier hvor spørsmålet kommer fra. Questtittelen
+                    // er nå selve spørsmålet, og det står rett under - å vise det
+                    // begge steder ville bare vært dobbelt opp.
+                    tittel={overlegg.quest.question.lessonTitle}
                     innsats={`Belønning: ${overlegg.quest.belonning.xp} XP og ${overlegg.quest.belonning.solv} sølv`}
                     question={overlegg.quest.question}
                     hint={overlegg.quest.hint}

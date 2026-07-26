@@ -3,14 +3,18 @@
 // håndskrevet (se data/nordvik.ts).
 //
 // Hele spillmekanikken hviler på én regel: hvert spørsmål har et svar som
-// finnes et sted på kartet, og hintet peker på det stedet. Tidligere ble
-// giveren delt ut med ren runde-fordeling og hintet skrev «spør <tilfeldig
-// NPC>» uten at den NPC-en visste noe som helst. For 17 av 20 oppdrag var
-// «let i verden» derfor ikke sant. Nå slås kilden opp for hvert spørsmål, og
-// oppdraget havner hos den som faktisk vet svaret.
+// finnes et sted på kartet, og hintet peker på det stedet. Det krever to ting,
+// og begge har vært feil før:
+//
+//  1. Kilden må slås opp, ikke gjettes. Med ren runde-fordeling skrev hintet
+//     «spør <tilfeldig NPC>» uten at den NPC-en visste noe som helst, og for
+//     17 av 20 oppdrag var «let i verden» ikke sant.
+//  2. Giveren må være en annen enn kilden. Da oppdraget ble lagt hos den som
+//     kunne svaret, var «let i verden» oppfylt av å bli stående i samme
+//     samtaleboks - 15 av 17 bankoppdrag krevde ikke ett skritt.
 
 import { NORDVIK_AUTHORED, NORDVIK_LANDMARKS, NORDVIK_NPCS } from '../data/nordvik';
-import type { BankQuestion, Kilde, QuestBank, QuestDef } from '../types';
+import type { BankQuestion, Kilde, NpcDef, QuestBank, QuestDef } from '../types';
 import { makeRng } from './pixels';
 
 let bank: QuestBank | null = null;
@@ -90,7 +94,14 @@ export function byggNordvikQuester(bankData: QuestBank): QuestDef[] {
         'Aslak Munk sitter ved kirken og husker mer enn han tror.',
     ];
 
+    // Alle som kan gi oppdrag. Handelsmannen driver bod, ikke oppdrag.
+    const givere = NORDVIK_NPCS.filter((n) => !n.handler);
+
+    /** Hvor mange oppdrag hver giver har fått. Holder køene omtrent like lange. */
+    const kolengde = new Map<string, number>(givere.map((n) => [n.id, 0]));
+
     NORDVIK_AUTHORED.forEach((q, i) => {
+        kolengde.set(authoredGivere[i], (kolengde.get(authoredGivere[i]) ?? 0) + 1);
         quester.push({
             id: `nordvik-h${i}`,
             title: ['Nøklene i beltet', 'Bordene i skroget', 'De stille århundrene'][i],
@@ -108,22 +119,45 @@ export function byggNordvikQuester(bankData: QuestBank): QuestDef[] {
         });
     });
 
-    // Alle som kan gi oppdrag. Handelsmannen driver bod, ikke oppdrag.
-    const givere = NORDVIK_NPCS.filter((n) => !n.handler);
+    /**
+     * Giveren skal aldri være den som sitter på svaret.
+     *
+     * Før ble oppdraget lagt hos kilden selv. Da var «gå og finn ut av det»
+     * oppfylt av å bli stående i samme samtaleboks - 15 av 17 bankoppdrag
+     * krevde ikke ett skritt, og hintet sa «Aslak vet dette, gå og spør» mens
+     * eleven sto foran Aslak med kunnskapsfanen hans rett over svarknappen.
+     *
+     * Nå velges en annen NPC, og blant dem den med kortest kø. Uten den
+     * balanseringen fikk Orm sju oppdrag og Leiv to.
+     */
+    function velgGiver(kilde: Kilde | null): NpcDef {
+        const mulige = givere.filter((n) => n.id !== kilde?.id);
+        const valgbare = mulige.length > 0 ? mulige : givere;
+        return valgbare.reduce((best, n) =>
+            (kolengde.get(n.id) ?? 0) < (kolengde.get(best.id) ?? 0) ? n : best
+        );
+    }
 
-    // Resten fra banken. Hvert spørsmål havner hos den som vet svaret - og hvis
-    // svaret står på en stein, hos den som står nærmest steinen.
+    // Resten fra banken. Kilden er den som vet svaret; giveren er en annen som
+    // savner det.
     const stokket = stokk(bankSporsmal, rng);
     stokket.forEach((q, i) => {
         const kilde = finnKilde(q);
-        const giver =
-            kilde?.type === 'npc'
-                ? (givere.find((n) => n.id === kilde.id) ?? givere[i % givere.length])
-                : givere[i % givere.length];
+        const giver = velgGiver(kilde);
+        kolengde.set(giver.id, (kolengde.get(giver.id) ?? 0) + 1);
         const belonning = BELONNINGER[i % BELONNINGER.length];
         quester.push({
-            id: `nordvik-b${i}`,
-            title: q.lessonTitle,
+            // ID-en må følge spørsmålet, ikke plassen i lista. `nordvik-b${i}`
+            // flyttet på seg hver gang quest-bank.json ble regenerert - og den
+            // kjøres i `scan:content`, altså ved hver eneste build. Én ny
+            // vikingtid-artikkel med quiz forskjøv alle indeksene, og lagrede
+            // «ferdig»-markeringer pekte plutselig på andre spørsmål.
+            id: `nordvik-b:${q.id}`,
+            // Tittelen er selve spørsmålet. Før sto leksjonstittelen her, men
+            // Nordviks 17 spørsmål deler bare 7 leksjoner. Fire oppdrag på rad
+            // med teksten «Merovingertiden: De stille århundrene» så ut som at
+            // det samme oppdraget kunne tas om igjen med én gang.
+            title: q.question,
             intro: introFor(kilde),
             hint: hintFor(q, kilde),
             question: q,

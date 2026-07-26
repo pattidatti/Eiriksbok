@@ -318,7 +318,7 @@ export const useRpgStore = create<RpgState>()(
         }),
         {
             name: 'rpg-minnevokteren-v1',
-            version: 2,
+            version: 3,
             // Bare data lagres. Før ble hele staten - inkludert alle
             // handlingene - sendt gjennom serialiseringen.
             partialize: (state) =>
@@ -339,9 +339,27 @@ export const useRpgStore = create<RpgState>()(
                     bosser: state.bosser,
                     sisteSone: state.sisteSone,
                 }) as unknown as RpgState,
-            migrate: (lagret) => {
+            migrate: (lagret, versjon) => {
                 const s = (lagret ?? {}) as Partial<RpgState>;
-                return { ...s, questForsok: s.questForsok ?? {} } as RpgState;
+                const ut: Partial<RpgState> = { ...s, questForsok: s.questForsok ?? {} };
+
+                // Bankoppdragene het før `nordvik-b<nummer>`, der nummeret var
+                // plassen i en liste som ble stokket på nytt hver gang
+                // quest-bank.json ble regenerert. Markeringene overlevde altså
+                // ikke en build: de pekte på andre spørsmål enn dem eleven
+                // faktisk hadde svart på. De kastes én gang her. Håndskrevne
+                // oppdrag (`nordvik-h*`), nivå, sølv, utstyr og boss beholdes.
+                if (versjon < 3) {
+                    const gammel = (n: string) => /^nordvik-b\d+$/.test(n);
+                    const vask = <T,>(kart: Record<string, T> | undefined) =>
+                        Object.fromEntries(
+                            Object.entries(kart ?? {}).filter(([n]) => !gammel(n))
+                        ) as Record<string, T>;
+                    ut.quester = vask(s.quester);
+                    ut.questForsok = vask(ut.questForsok);
+                }
+
+                return ut as RpgState;
             },
             onRehydrateStorage: () => (state) => {
                 if (!state) return;
