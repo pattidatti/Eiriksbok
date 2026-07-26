@@ -22,12 +22,11 @@ import { sfx, startMusikk, stopMusikk } from './audio';
 import { fraSpill, tilSpill } from './bridge';
 import { Kamp } from './kamp';
 import { KampFx } from './kampfx';
-import { hexToNum, numToHex } from './pixels';
+import { numToHex } from './pixels';
 import { aktivQuestFor, nesteQuestFor } from './quests';
 import {
     FIG_ORIGIN_Y,
     FIENDE_RAMMER,
-    GLYF,
     POSITUR_LENGDE,
     SKJOLD_RAMMER,
     TILE,
@@ -38,20 +37,13 @@ import {
     forgeSkjold,
     forgeTallfont,
     forgeWeapon,
-    glyfIndex,
     heltFrame,
     type Dir,
     type Positur,
 } from './spriteforge';
-import {
-    FLIS_PRIORITET,
-    FLIS_VARIANTER,
-    forgeProps,
-    forgeTiles,
-    type KantHjorne,
-    type KantRetning,
-    type TileKey,
-} from './tileforge';
+import { forgeProps, forgeTiles } from './tileforge';
+import { Effekter } from './systems/effekter';
+import { Verden } from './systems/verden';
 import { byggNordvik, type WorldMap } from './worldgen';
 
 type Sprite = Phaser.Physics.Arcade.Sprite;
@@ -136,8 +128,6 @@ export class WorldScene extends Phaser.Scene {
     private posFase = 0;
     private posTimer = 0;
     private forrigeFrame = -1;
-    private vannLag: Phaser.GameObjects.RenderTexture[] = [];
-    private vannFrame = 0;
     private utseendeSignatur = '';
     private slagIgjen = 0;
     private slagVarighet = 400;
@@ -153,10 +143,10 @@ export class WorldScene extends Phaser.Scene {
         solv: number;
         levetid: number;
     }[] = [];
-    private partikkelPool: Phaser.GameObjects.Image[] = [];
-    private taakeflak: { bilde: Phaser.GameObjects.Image; fart: number }[] = [];
-    private baalLys: Phaser.GameObjects.Image[] = [];
-    private baalPuls = 0;
+    /** Partikler, flytende tall og glimt. Kjenner ingen spillregler. */
+    private efx = new Effekter(this);
+    /** Bakken, kollisjonen, objektene og atmosfæren. Kjenner ingen spillregler. */
+    private verden!: Verden;
     private kompassTimer = 0;
     private kompassAktivt = false;
 
@@ -228,14 +218,15 @@ export class WorldScene extends Phaser.Scene {
         forgeLootIcons(this);
         for (const def of ENEMIES) forgeEnemy(this, def);
 
-        this.byggTerreng();
-        this.byggKollisjon();
-        this.byggProps();
+        this.verden = new Verden(this, this.kart, tema);
+        this.verden.byggTerreng();
+        this.verden.byggKollisjon();
+        this.verden.byggProps();
         this.byggSpiller();
         this.byggNpcer();
         this.byggLandemerker();
         this.byggBoss();
-        this.byggAtmosfare();
+        this.verden.byggAtmosfare(NORDVIK_LANDMARKS);
         this.settOppInput();
         this.settOppKamera();
         this.lyttPaaUi();
@@ -246,214 +237,6 @@ export class WorldScene extends Phaser.Scene {
         fraSpill.emit('sone', { tittel: 'Nordvik', undertittel: 'Vikingtiden · 793-1066' });
     }
 
-    // ── Oppbygging ──────────────────────────────────────────────────────────
-
-    /**
-     * Bakken tegnes én gang inn i én stor tekstur. Da koster den ett tegnekall
-     * i stedet for tre tusen sprites.
-     *
-     * Det viktige her er andre runde: hver rute ser på naboene sine, og hvis en
-     * nabo har en flis som «vinner» (se FLIS_PRIORITET), legges naboens kant
-     * oppå. Uten det møtes gress, sand og vann i harde 16-pikslers trapper over
-     * hele kartet.
-     */
-    private byggTerreng() {
-        const { bredde, hoyde, terreng } = this.kart;
-        const rt = this.add.renderTexture(0, 0, bredde * TILE, hoyde * TILE);
-        rt.setOrigin(0, 0).setDepth(-1000);
-
-        const flisPa = (x: number, y: number): TileKey => {
-            if (x < 0 || y < 0 || x >= bredde || y >= hoyde) return terreng[Math.min(Math.max(y, 0), hoyde - 1)]?.[Math.min(Math.max(x, 0), bredde - 1)] ?? 'gress';
-            return terreng[y][x];
-        };
-        // Fast variant per rute, så verden ser lik ut hver gang.
-        const variantFor = (x: number, y: number, flis: TileKey) => {
-            const h = (x * 73856093) ^ (y * 19349663) ^ flis.length * 2654435761;
-            return Math.abs(h) % FLIS_VARIANTER[flis];
-        };
-
-        const vannRuter: [number, number][] = [];
-        for (let y = 0; y < hoyde; y++) {
-            for (let x = 0; x < bredde; x++) {
-                const flis = terreng[y][x];
-                if (flis === 'vann') {
-                    vannRuter.push([x, y]);
-                    // Stillestående vann bakes inn, så det aldri blir hull i kartet.
-                    rt.drawFrame('flis-vann-0-stille', undefined, x * TILE, y * TILE);
-                    continue;
-                }
-                rt.drawFrame(`flis-${flis}-${variantFor(x, y, flis)}`, undefined, x * TILE, y * TILE);
-            }
-        }
-
-        // ── Overgangene ─────────────────────────────────────────────────────
-        const naboer: [KantRetning, number, number][] = [
-            ['n', 0, -1],
-            ['s', 0, 1],
-            ['v', -1, 0],
-            ['h', 1, 0],
-        ];
-        const hjorner: [KantHjorne, number, number][] = [
-            ['nv', -1, -1],
-            ['nh', 1, -1],
-            ['sv', -1, 1],
-            ['sh', 1, 1],
-        ];
-        for (let y = 0; y < hoyde; y++) {
-            for (let x = 0; x < bredde; x++) {
-                const min = flisPa(x, y);
-                const minPrio = FLIS_PRIORITET[min];
-                // Sanden får sin lyse skumkant bare der den faktisk møter vann.
-                const kantNavn = (nabo: TileKey) =>
-                    nabo === 'sand' && min === 'vann' ? 'sandskum' : nabo;
-                for (const [retning, dx, dy] of naboer) {
-                    const nabo = flisPa(x + dx, y + dy);
-                    if (FLIS_PRIORITET[nabo] <= minPrio) continue;
-                    rt.drawFrame(`kant-${kantNavn(nabo)}-${retning}`, undefined, x * TILE, y * TILE);
-                }
-                for (const [hjorne, dx, dy] of hjorner) {
-                    const nabo = flisPa(x + dx, y + dy);
-                    if (FLIS_PRIORITET[nabo] <= minPrio) continue;
-                    // Hjørnet skal bare fylles når ingen av de to sidene alt gjør jobben.
-                    if (flisPa(x + dx, y) === nabo || flisPa(x, y + dy) === nabo) continue;
-                    rt.drawFrame(`hjorne-${kantNavn(nabo)}-${hjorne}`, undefined, x * TILE, y * TILE);
-                }
-            }
-        }
-
-        // ── Vannet får leve ─────────────────────────────────────────────────
-        // Fire ferdigbakte lag som veksler. Tidligere lå det 268 enkeltsprites
-        // her, hver med sin egen animasjonskomponent.
-        if (vannRuter.length > 0) {
-            let minX = bredde;
-            let maksX = 0;
-            let minY = hoyde;
-            let maksY = 0;
-            for (const [x, y] of vannRuter) {
-                minX = Math.min(minX, x);
-                maksX = Math.max(maksX, x);
-                minY = Math.min(minY, y);
-                maksY = Math.max(maksY, y);
-            }
-            const bx = minX * TILE;
-            const by = minY * TILE;
-            for (let frame = 0; frame < 4; frame++) {
-                const lag = this.add.renderTexture(
-                    bx,
-                    by,
-                    (maksX - minX + 1) * TILE,
-                    (maksY - minY + 1) * TILE
-                );
-                lag.setOrigin(0, 0).setDepth(-999).setVisible(frame === 0);
-                for (const [x, y] of vannRuter) {
-                    lag.drawFrame(`flis-vann-${frame}`, undefined, x * TILE - bx, y * TILE - by);
-                }
-                this.vannLag.push(lag);
-            }
-            this.time.addEvent({
-                delay: 260,
-                loop: true,
-                callback: () => {
-                    this.vannFrame = (this.vannFrame + 1) % this.vannLag.length;
-                    this.vannLag.forEach((l, i) => l.setVisible(i === this.vannFrame));
-                },
-            });
-        }
-    }
-
-    /**
-     * En usynlig kollisjonsboks. Vi bruker Rectangle og ikke Sprite: en sprite
-     * uten tekstur arver Phasers 32x32 «mangler bilde»-ramme, og
-     * `updateFromGameObject()` setter da kroppen tilbake til 32x32 uansett hva
-     * man ber om. Rectangle har ekte bredde og høyde, så boksen blir riktig.
-     */
-    private lagBoks(
-        gruppe: Phaser.Physics.Arcade.StaticGroup,
-        x: number,
-        y: number,
-        w: number,
-        h: number
-    ) {
-        const boks = this.add.rectangle(x, y, w, h);
-        boks.setVisible(false);
-        this.physics.add.existing(boks, true);
-        gruppe.add(boks);
-        // Boksen skal aldri tegnes, og den har ingenting i visningslista å
-        // gjøre: 286 usynlige rektangler der var nok til å tredoble lengden på
-        // lista som sorteres etter dybde hver frame.
-        this.children.remove(boks);
-        return boks;
-    }
-
-    private byggKollisjon() {
-        // Naboruter slås sammen til lange rektangler, så vi får noen hundre
-        // kollisjonsbokser i stedet for flere tusen.
-        const { bredde, hoyde, blokkert } = this.kart;
-        const vegger = this.physics.add.staticGroup();
-        for (let y = 0; y < hoyde; y++) {
-            let start = -1;
-            for (let x = 0; x <= bredde; x++) {
-                const solid = x < bredde && blokkert[y][x];
-                if (solid && start === -1) start = x;
-                if (!solid && start !== -1) {
-                    const w = (x - start) * TILE;
-                    this.lagBoks(vegger, start * TILE + w / 2, y * TILE + TILE / 2, w, TILE);
-                    start = -1;
-                }
-            }
-        }
-        this.data.set('vegger', vegger);
-    }
-
-    /**
-     * De 244 objektene i verden er statiske, men de må fortsatt sorteres mot
-     * spilleren så hun kan gå bak et tre.
-     *
-     * Jeg prøvde å bake dem inn i vannrette bånd for å spare tegnekall. Det
-     * halverte bildefrekvensen: hvert bånd er en kartbred, delvis gjennomsiktig
-     * flate, og fem-seks av dem overlapper hver piksel på skjermen. Overtegning
-     * er dyrere enn tegnekall på en svak GPU. Derfor står objektene her som
-     * hver sin Image - med dybden satt én gang, siden de aldri flytter seg.
-     */
-    private byggProps() {
-        const solide = this.physics.add.staticGroup();
-
-        for (const prop of this.kart.props) {
-            const nokkel =
-                prop.kind === 'tre' || prop.kind === 'busk' || prop.kind === 'stein'
-                    ? `prop-${prop.kind}-${prop.variant}`
-                    : `prop-${prop.kind}`;
-
-            const bilde = this.add.image(prop.x, prop.y, nokkel);
-            // Foten av objektet bestemmer dybden, så spilleren kan gå bak trær.
-            bilde.setOrigin(0.5, 0.85).setDepth(prop.y);
-            if (prop.kind === 'kai' || prop.kind === 'langskip') bilde.setDepth(-900);
-            // Variasjon per objekt: speiling, størrelse og en liten fargetone.
-            bilde.setFlipX(prop.flip).setScale(prop.skala);
-            if (prop.tint !== 0) {
-                const n = Math.max(0, Math.min(255, 255 + prop.tint));
-                bilde.setTint((n << 16) | (n << 8) | n);
-            }
-
-            if (prop.solid && prop.treff) {
-                this.lagBoks(solide, prop.x, prop.y + prop.treff.dy, prop.treff.w, prop.treff.h);
-            }
-        }
-        this.data.set('propKropper', solide);
-
-        // Bål på tingplassen
-        this.anims.create({
-            key: 'baal',
-            frames: [
-                { key: 'prop-baal-0' },
-                { key: 'prop-baal-1' },
-                { key: 'prop-baal-2' },
-                { key: 'prop-baal-3' },
-            ],
-            frameRate: 9,
-            repeat: -1,
-        });
-    }
 
     private byggSpiller() {
         const store = useRpgStore.getState();
@@ -701,61 +484,6 @@ export class WorldScene extends Phaser.Scene {
      * Her tas begge i bruk: en tone i lufta, en vignett i kanten, og tåkeslør
      * som driver over verden og tykner der eleven ikke har vært.
      */
-    private byggAtmosfare() {
-        const tema = ZONE_BY_ID.nordvik.tema;
-
-        // Himmeltonen og vignetten legges av React oppå lerretet (se
-        // `Atmosfare` i RpgPage). Da slipper de å kjempe mot kamerazoomen, og
-        // de blir skarpe uansett skjermoppløsning.
-        fraSpill.emit('atmosfare', { himmel: tema.himmel });
-
-        // Tåkeslør som driver over verden. Dette er selve temaet i spillet:
-        // Glemselen er tåke, og før fantes den bare i teksten.
-        // Antallet er holdt nede med vilje: hvert flak er en stor gjennomsiktig
-        // flate, og overtegning er det som koster på en svak Chromebook-GPU.
-        for (let i = 0; i < 14; i++) {
-            const naer = i % 2 === 0;
-            const lag = this.add
-                .image(
-                    Math.random() * this.kart.bredde * TILE,
-                    Math.random() * this.kart.hoyde * TILE,
-                    'fx-taake'
-                )
-                // Ett lag under figurene og ett over: da får tåka dybde.
-                .setDepth(naer ? 29000 : -850)
-                .setScale(naer ? 1.8 + Math.random() * 1.2 : 3 + Math.random() * 2)
-                .setAlpha(naer ? 0.11 + Math.random() * 0.07 : 0.15 + Math.random() * 0.09)
-                .setTint(hexToNum(tema.himmel));
-            this.taakeflak.push({ bilde: lag, fart: (naer ? 11 : 4) + Math.random() * 7 });
-        }
-
-        // Bålet lyser. Ett bål i hele bygda, og det ga null lys.
-        for (const lm of NORDVIK_LANDMARKS) {
-            if (lm.kind !== 'baal') continue;
-            const [tx, ty] = lm.tile;
-            const glo = this.add
-                .image(tx * TILE + 8, ty * TILE + 4, 'fx-glo')
-                .setTint(0xffb23f)
-                .setAlpha(0.3)
-                .setScale(2.2)
-                .setDepth(-800)
-                .setBlendMode(Phaser.BlendModes.ADD);
-            this.baalLys.push(glo);
-        }
-    }
-
-    private oppdaterAtmosfare(delta: number) {
-        const dt = delta / 1000;
-        const kartB = this.kart.bredde * TILE;
-        for (const flak of this.taakeflak) {
-            flak.bilde.x += flak.fart * dt;
-            if (flak.bilde.x > kartB + 120) flak.bilde.x = -120;
-        }
-        // Bålet flakker.
-        this.baalPuls += delta;
-        const puls = 0.26 + Math.sin(this.baalPuls / 190) * 0.05 + Math.sin(this.baalPuls / 71) * 0.03;
-        for (const lys of this.baalLys) lys.setAlpha(puls);
-    }
 
     private settOppKamera() {
         const cam = this.cameras.main;
@@ -845,7 +573,7 @@ export class WorldScene extends Phaser.Scene {
                 useRpgStore.getState().fullforQuest(quest, riktig);
                 if (riktig) {
                     sfx.riktig();
-                    this.feirRiktigSvar();
+                    this.efx.lysglimt(this.spiller.x, this.spiller.y);
                 } else {
                     sfx.galt();
                     this.cameras.main.shake(140, 0.004);
@@ -860,7 +588,7 @@ export class WorldScene extends Phaser.Scene {
                     this.boss.skjold -= 1;
                     useRpgStore.getState().varsle('Et skjold brister!', 'bra');
                     this.cameras.main.flash(220, 255, 240, 180);
-                    this.feirRiktigSvar();
+                    this.efx.lysglimt(this.spiller.x, this.spiller.y);
                     useRpgStore.setState((s) => ({ riktigeSvar: s.riktigeSvar + 1 }));
                 } else {
                     sfx.galt();
@@ -933,7 +661,7 @@ export class WorldScene extends Phaser.Scene {
         this.oppdaterLoot(dt);
         this.oppdaterDybde();
         this.oppdaterSpawn(dt);
-        this.oppdaterAtmosfare(dt);
+        this.verden.oppdaterAtmosfare(dt);
         this.oppdaterKompass(dt);
         // HUD-en og hjerteslaget skal gå i vanlig tid, ikke i saktefilm.
         this.oppdaterKampUi(delta);
@@ -987,8 +715,8 @@ export class WorldScene extends Phaser.Scene {
             this.hitstop(220);
             this.cameras.main.flash(260, 255, 250, 220);
             sfx.horn();
-            this.flytTekst(this.spiller.x, this.spiller.y - 34, `NIVÅ ${maks.niva}`, '#ffe9a8', 15);
-            this.pikselSprut(this.spiller.x, this.spiller.y - 10, 0xffe9a8, 22);
+            this.efx.flytTekst(this.spiller.x, this.spiller.y - 34, `NIVÅ ${maks.niva}`, '#ffe9a8', 15);
+            this.efx.pikselSprut(this.spiller.x, this.spiller.y - 10, 0xffe9a8, 22);
         }
     }
 
@@ -1089,7 +817,7 @@ export class WorldScene extends Phaser.Scene {
         const gard = this.kamp.gardOppe;
         if (this.kamp.lesKollaps()) {
             sfx.galt();
-            this.flytTekst(this.spiller.x, this.spiller.y - 28, 'Tom for pust!', '#ff9d6a');
+            this.efx.flytTekst(this.spiller.x, this.spiller.y - 28, 'Tom for pust!', '#ff9d6a');
         }
 
         if (!ruller && this.stotIgjen === 0 && this.utfallIgjen === 0) {
@@ -1124,8 +852,8 @@ export class WorldScene extends Phaser.Scene {
             this.rullNedkjoling = RULL_NEDKJOLING;
             if (!stavring) this.usarbarIgjen = Math.max(this.usarbarIgjen, RULL_MS + 60);
             sfx.rull();
-            this.stovsky(this.spiller.x, this.spiller.y + 6, stavring ? 3 : 6);
-            if (stavring) this.flytTekst(this.spiller.x, this.spiller.y - 26, 'Tungt...', '#9fb0c8');
+            this.efx.stovsky(this.spiller.x, this.spiller.y + 6, stavring ? 3 : 6);
+            if (stavring) this.efx.flytTekst(this.spiller.x, this.spiller.y - 26, 'Tungt...', '#9fb0c8');
         }
 
         // Angrep. Trykket huskes en kort stund, så et litt tidlig trykk rett
@@ -1262,7 +990,7 @@ export class WorldScene extends Phaser.Scene {
             this.hitstop(tungt ? KAMP.hitstopTungt : KAMP.hitstopLett);
             this.fx.dytt(vinkel, tungt ? 6 : 3, tungt ? 140 : 110);
         } else if (sving.trinn === 3) {
-            this.stovsky(this.spiller.x, this.spiller.y + 6, 4);
+            this.efx.stovsky(this.spiller.x, this.spiller.y + 6, 4);
         }
     }
 
@@ -1277,7 +1005,7 @@ export class WorldScene extends Phaser.Scene {
         const vk = vaapenKamp(vapen?.art);
 
         if (!this.kamp.manover()) {
-            this.flytTekst(this.spiller.x, this.spiller.y - 28, 'Ikke pust nok', '#9fb0c8');
+            this.efx.flytTekst(this.spiller.x, this.spiller.y - 28, 'Ikke pust nok', '#9fb0c8');
             return;
         }
 
@@ -1312,7 +1040,7 @@ export class WorldScene extends Phaser.Scene {
             traff = true;
         }
 
-        this.flytTekst(this.spiller.x, this.spiller.y - 30, MANOVER_NAVN[vk.manover], '#cfd8c0');
+        this.efx.flytTekst(this.spiller.x, this.spiller.y - 30, MANOVER_NAVN[vk.manover], '#cfd8c0');
         if (traff) {
             this.hitstop(KAMP.hitstopTungt);
             this.cameras.main.shake(110, 0.005);
@@ -1365,7 +1093,7 @@ export class WorldScene extends Phaser.Scene {
     ) {
         // Bossen har skjold som bare kunnskap river ned.
         if (fiende.def.kind === 'boss' && fiende.skjold > 0) {
-            this.flytTekst(fiende.sprite.x, fiende.sprite.y - 24, 'Beskyttet!', '#9fb0c8');
+            this.efx.flytTekst(fiende.sprite.x, fiende.sprite.y - 24, 'Beskyttet!', '#9fb0c8');
             this.cameras.main.shake(60, 0.002);
             sfx.skjold();
             if (!this.bossVakt) this.utfordreBoss();
@@ -1388,14 +1116,14 @@ export class WorldScene extends Phaser.Scene {
             this.fx.lemlest(fiende.sprite.x, fiende.sprite.y - 4, fiende.def.id, 2, vinkel, true);
             this.fx.gyt(fiende.sprite.x, fiende.sprite.y - 4, fiende.def.farge, 8, vinkel, 1.2);
         }
-        this.flytTekst(
+        this.efx.flytTekst(
             fiende.sprite.x + Phaser.Math.Between(-4, 4),
             fiende.sprite.y - 20,
             kritisk ? `${skade}!` : `${skade}`,
             kritisk ? '#ffd166' : '#ffffff',
             kritisk ? 18 : 13
         );
-        this.pikselSprut(fiende.sprite.x, fiende.sprite.y - 8, fiende.def.farge, kritisk ? 12 : 7);
+        this.efx.pikselSprut(fiende.sprite.x, fiende.sprite.y - 8, fiende.def.farge, kritisk ? 12 : 7);
 
         // Hvitt blink. Timeren setter tilbake den fargen fienden *skal* ha, i
         // stedet for å nulle alt - ellers visker et treff ut varselfargen når
@@ -1447,7 +1175,7 @@ export class WorldScene extends Phaser.Scene {
         fiende.stolpe?.destroy();
         fiende.stolpe = null;
         sfx.dod();
-        this.pikselSprut(fiende.sprite.x, fiende.sprite.y - 8, fiende.def.farge, 20);
+        this.efx.pikselSprut(fiende.sprite.x, fiende.sprite.y - 8, fiende.def.farge, 20);
 
         const erBoss = fiende.def.kind === 'boss';
         // Posisjonen låses nå: avslutningen flytter sprite-en, og alt som skal
@@ -1481,7 +1209,7 @@ export class WorldScene extends Phaser.Scene {
 
         const store = useRpgStore.getState();
         store.giXp(fiende.def.xp);
-        this.flytTekst(dx, dy - 30, `+${fiende.def.xp} XP`, '#9ef0c0', 12);
+        this.efx.flytTekst(dx, dy - 30, `+${fiende.def.xp} XP`, '#9ef0c0', 12);
 
         // Sølv og gjenstander spretter ut i en bue, med én klingende lyd per
         // objekt. Loot som bare dukker opp under fienden er en kvittering; loot
@@ -1515,7 +1243,7 @@ export class WorldScene extends Phaser.Scene {
         if (this.skjoldLadninger > 0 && !tvunget) {
             this.skjoldLadninger -= 1;
             sfx.skjold();
-            this.flytTekst(this.spiller.x, this.spiller.y - 26, 'Skjold!', '#cfd8c0');
+            this.efx.flytTekst(this.spiller.x, this.spiller.y - 26, 'Skjold!', '#cfd8c0');
             this.usarbarIgjen = 300;
             return;
         }
@@ -1530,7 +1258,7 @@ export class WorldScene extends Phaser.Scene {
         this.cameras.main.flash(120, 180, 20, 20);
         this.fx.klask(this.spiller, 0.2);
         this.fx.blod(this.spiller.x, this.spiller.y, 0xc4241f, 3, this.retningsVinkel() + Math.PI);
-        this.flytTekst(this.spiller.x, this.spiller.y - 26, `-${faktisk}`, '#ff8080', 15);
+        this.efx.flytTekst(this.spiller.x, this.spiller.y - 26, `-${faktisk}`, '#ff8080', 15);
 
         if (useRpgStore.getState().hp <= 0) this.spillerDor();
     }
@@ -1703,8 +1431,8 @@ export class WorldScene extends Phaser.Scene {
             }
             case 'helbred': {
                 store.endreHp(spell.skade);
-                this.flytTekst(this.spiller.x, this.spiller.y - 26, `+${spell.skade}`, '#9ef0c0', 15);
-                this.pikselSprut(this.spiller.x, this.spiller.y - 8, 0x9ef0c0, 14);
+                this.efx.flytTekst(this.spiller.x, this.spiller.y - 26, `+${spell.skade}`, '#9ef0c0', 15);
+                this.efx.pikselSprut(this.spiller.x, this.spiller.y - 8, 0x9ef0c0, 14);
                 break;
             }
         }
@@ -1883,7 +1611,7 @@ export class WorldScene extends Phaser.Scene {
 
     /** Et lite varsel på bakken før fienden slår. */
     private telegrafer(fiende: Fiende) {
-        const merke = this.hentPartikkel('fx-ring');
+        const merke = this.efx.hent('fx-ring');
         merke.setPosition(fiende.sprite.x, fiende.sprite.y + 2);
         merke.setTint(0xff8a6a).setAlpha(0.5).setScale(0.12).setDepth(fiende.sprite.y - 1);
         this.tweens.add({
@@ -1891,7 +1619,7 @@ export class WorldScene extends Phaser.Scene {
             scale: 0.34,
             alpha: 0,
             duration: fiende.def.varsel,
-            onComplete: () => this.slippPartikkel(merke),
+            onComplete: () => this.efx.slipp(merke),
         });
     }
 
@@ -1948,7 +1676,7 @@ export class WorldScene extends Phaser.Scene {
                 this.stotIgjen = STOT_MS;
             }
         }
-        this.pikselSprut(fiende.sprite.x, fiende.sprite.y - 6, def.farge, 5);
+        this.efx.pikselSprut(fiende.sprite.x, fiende.sprite.y - 6, def.farge, 5);
     }
 
     /**
@@ -1962,8 +1690,8 @@ export class WorldScene extends Phaser.Scene {
         this.hitstop(KAMP.hitstopParade);
         // Én ramme hvitt over hele skjermen. Belønningen må være umulig å overse.
         this.cameras.main.flash(70, 255, 255, 245);
-        this.flytTekst(this.spiller.x, this.spiller.y - 30, 'Parade!', '#fff2b0', 15);
-        this.pikselSprut(this.skjoldSprite.x, this.skjoldSprite.y, 0xfff2b0, 14);
+        this.efx.flytTekst(this.spiller.x, this.spiller.y - 30, 'Parade!', '#fff2b0', 15);
+        this.efx.pikselSprut(this.skjoldSprite.x, this.skjoldSprite.y, 0xfff2b0, 14);
         this.fx.klask(this.spiller, 0.1);
 
         // Angriperen mister balansen: full åpning. Kameraet dyttes *mot* henne,
@@ -1996,7 +1724,7 @@ export class WorldScene extends Phaser.Scene {
             sfx.skjoldBrudd();
             this.hitstop(KAMP.hitstopTungt);
             this.fx.dytt(v, 9, 260);
-            this.flytTekst(this.spiller.x, this.spiller.y - 30, 'Skjoldet brast!', '#ff9d6a', 15);
+            this.efx.flytTekst(this.spiller.x, this.spiller.y - 30, 'Skjoldet brast!', '#ff9d6a', 15);
             useRpgStore.getState().varsle('Skjoldet gikk i to. Nå står du bar.', 'darlig');
             // Et kort pusterom, ellers lander neste slag i samme sekund som
             // skjoldet forsvant, og det leser som en straff for å ha blokkert.
@@ -2083,7 +1811,7 @@ export class WorldScene extends Phaser.Scene {
                     Phaser.Math.Distance.Between(p.sprite.x, p.sprite.y, this.spiller.x, this.spiller.y - 6) < 12
                 ) {
                     this.skadSpiller(p.skade);
-                    this.pikselSprut(p.sprite.x, p.sprite.y, 0xffffff, 6);
+                    this.efx.pikselSprut(p.sprite.x, p.sprite.y, 0xffffff, 6);
                     p.sprite.destroy();
                     this.prosjektiler.splice(i, 1);
                     continue;
@@ -2107,7 +1835,7 @@ export class WorldScene extends Phaser.Scene {
                     }
                 }
                 if (traff && !p.piercing) {
-                    this.pikselSprut(p.sprite.x, p.sprite.y, 0xffffff, 8);
+                    this.efx.pikselSprut(p.sprite.x, p.sprite.y, 0xffffff, 8);
                     p.sprite.destroy();
                     this.prosjektiler.splice(i, 1);
                     continue;
@@ -2189,7 +1917,7 @@ export class WorldScene extends Phaser.Scene {
                 } else {
                     store.giSolv(l.solv);
                     sfx.solv();
-                    this.flytTekst(l.sprite.x, l.sprite.y - 12, `+${l.solv} sølv`, '#f2edd0', 11);
+                    this.efx.flytTekst(l.sprite.x, l.sprite.y - 12, `+${l.solv} sølv`, '#f2edd0', 11);
                 }
                 this.tweens.killTweensOf(l.sprite);
                 l.sprite.destroy();
@@ -2281,118 +2009,6 @@ export class WorldScene extends Phaser.Scene {
         }
     }
 
-    // ── Partikler og tall ───────────────────────────────────────────────────
-    // Alt her gjenbrukes. Før ble det laget og ødelagt et Image + en Tween per
-    // partikkel, og et helt nytt Text-objekt (= én ny GL-teksturopplasting) per
-    // skadetall. Det er den klassiske kilden til hakk på en Chromebook-GPU.
-
-    private hentPartikkel(nokkel: string): Phaser.GameObjects.Image {
-        const p = this.partikkelPool.pop() ?? this.add.image(0, 0, nokkel);
-        p.setTexture(nokkel)
-            .setActive(true)
-            .setVisible(true)
-            .setAlpha(1)
-            .setScale(1)
-            .setAngle(0)
-            .clearTint();
-        return p;
-    }
-
-    private slippPartikkel(p: Phaser.GameObjects.Image) {
-        p.setActive(false).setVisible(false);
-        if (this.partikkelPool.length < 220) this.partikkelPool.push(p);
-        else p.destroy();
-    }
-
-    /**
-     * Flytende tall, tegnet med pikselfonten. Vektorfont skalert 3x av kameraet
-     * var det mest uskarpe elementet i en ellers skarp pikselartscene.
-     */
-    private flytTekst(x: number, y: number, tekst: string, farge: string, storrelse = 1) {
-        const skala = storrelse >= 15 ? 1.5 : 1;
-        const bredde = tekst.length * GLYF.w * skala;
-        const tint = Phaser.Display.Color.HexStringToColor(farge).color;
-        const tegn: Phaser.GameObjects.Image[] = [];
-        for (let i = 0; i < tekst.length; i++) {
-            const bilde = this.hentPartikkel('font-tall');
-            bilde.setFrame(glyfIndex(tekst[i]));
-            bilde
-                .setPosition(x - bredde / 2 + i * GLYF.w * skala, y)
-                .setOrigin(0, 0.5)
-                .setScale(skala)
-                .setTint(tint)
-                .setDepth(20000);
-            tegn.push(bilde);
-        }
-        this.tweens.add({
-            targets: tegn,
-            y: y - 22,
-            alpha: 0,
-            duration: 720,
-            ease: 'Quad.Out',
-            onComplete: () => {
-                for (const t of tegn) {
-                    t.setOrigin(0.5, 0.5);
-                    this.slippPartikkel(t);
-                }
-            },
-        });
-    }
-
-    private pikselSprut(x: number, y: number, farge: number, antall: number) {
-        for (let i = 0; i < antall; i++) {
-            const bit = this.hentPartikkel('fx-bit');
-            bit.setPosition(x, y).setTint(farge).setDepth(19000);
-            const v = Math.random() * Math.PI * 2;
-            const fart = 20 + Math.random() * 46;
-            this.tweens.add({
-                targets: bit,
-                x: x + Math.cos(v) * fart,
-                y: y + Math.sin(v) * fart,
-                alpha: 0,
-                scale: 0.3,
-                duration: 260 + Math.random() * 220,
-                ease: 'Quad.Out',
-                onComplete: () => this.slippPartikkel(bit),
-            });
-        }
-    }
-
-    private stovsky(x: number, y: number, antall: number) {
-        for (let i = 0; i < antall; i++) {
-            const p = this.hentPartikkel('fx-prikk');
-            p.setPosition(x, y).setTint(0xd8c89a).setDepth(y - 1).setAlpha(0.7);
-            const v = Math.random() * Math.PI * 2;
-            this.tweens.add({
-                targets: p,
-                x: x + Math.cos(v) * 14,
-                y: y + Math.sin(v) * 7,
-                alpha: 0,
-                scale: 1.8,
-                duration: 380,
-                onComplete: () => this.slippPartikkel(p),
-            });
-        }
-    }
-
-    private feirRiktigSvar() {
-        // Et lite lysglimt rundt spilleren når kunnskapen treffer.
-        const ring = this.add
-            .image(this.spiller.x, this.spiller.y - 6, 'fx-ring')
-            .setTint(0xfff1a8)
-            .setDepth(this.spiller.y + 8)
-            .setScale(0.2);
-        this.tweens.add({
-            targets: ring,
-            scale: 1.8,
-            alpha: 0,
-            duration: 520,
-            ease: 'Cubic.Out',
-            onComplete: () => ring.destroy(),
-        });
-        this.pikselSprut(this.spiller.x, this.spiller.y - 10, 0xfff1a8, 16);
-        this.cameras.main.flash(160, 255, 250, 200);
-    }
 
     private oppdaterDybde() {
         this.spiller.setDepth(this.spiller.y);
