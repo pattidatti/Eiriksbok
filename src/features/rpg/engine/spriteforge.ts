@@ -692,7 +692,11 @@ export function forgeEffects(scene: Phaser.Scene): void {
 // uskarp tekst i en pikselartscene, og en ny GL-teksturopplasting per tall.
 // Her lages sifrene én gang som ett lite pikselfont-ark.
 
-const SIFFER = '0123456789+-!XP ';
+// Fonten hadde bare sifre, X og P. Alt annet falt tilbake på mellomrom, så
+// «Skjold!» og «Beskyttet!» har hele tiden rendret som nesten blanke bobler.
+// Hele alfabetet ligger her nå - kampen sier «Parade!» og «Skjoldet brast!», og
+// de ordene er halve belønningen.
+const SIFFER = '0123456789+-!.,?:ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ ';
 const GLYF_W = 4;
 const GLYF_H = 6;
 const GLYFER: Record<string, string[]> = {
@@ -709,8 +713,39 @@ const GLYFER: Record<string, string[]> = {
     '+': ['000', '010', '111', '010', '000', '000'],
     '-': ['000', '000', '111', '000', '000', '000'],
     '!': ['010', '010', '010', '000', '010', '000'],
-    X: ['101', '101', '010', '101', '101', '000'],
+    '.': ['000', '000', '000', '000', '010', '000'],
+    ',': ['000', '000', '000', '010', '010', '000'],
+    '?': ['111', '001', '011', '000', '010', '000'],
+    ':': ['000', '010', '000', '010', '000', '000'],
+    A: ['111', '101', '111', '101', '101', '000'],
+    B: ['110', '101', '110', '101', '110', '000'],
+    C: ['111', '100', '100', '100', '111', '000'],
+    D: ['110', '101', '101', '101', '110', '000'],
+    E: ['111', '100', '111', '100', '111', '000'],
+    F: ['111', '100', '111', '100', '100', '000'],
+    G: ['111', '100', '101', '101', '111', '000'],
+    H: ['101', '101', '111', '101', '101', '000'],
+    I: ['111', '010', '010', '010', '111', '000'],
+    J: ['001', '001', '001', '101', '111', '000'],
+    K: ['101', '101', '110', '101', '101', '000'],
+    L: ['100', '100', '100', '100', '111', '000'],
+    M: ['101', '111', '111', '101', '101', '000'],
+    N: ['110', '101', '101', '101', '101', '000'],
+    O: ['111', '101', '101', '101', '111', '000'],
     P: ['110', '101', '110', '100', '100', '000'],
+    Q: ['111', '101', '101', '111', '001', '000'],
+    R: ['111', '101', '110', '101', '101', '000'],
+    S: ['111', '100', '111', '001', '111', '000'],
+    T: ['111', '010', '010', '010', '010', '000'],
+    U: ['101', '101', '101', '101', '111', '000'],
+    V: ['101', '101', '101', '101', '010', '000'],
+    W: ['101', '101', '111', '111', '101', '000'],
+    X: ['101', '101', '010', '101', '101', '000'],
+    Y: ['101', '101', '010', '010', '010', '000'],
+    Z: ['111', '001', '010', '100', '111', '000'],
+    Æ: ['011', '101', '111', '101', '101', '000'],
+    Ø: ['011', '101', '111', '101', '110', '000'],
+    Å: ['010', '111', '101', '111', '101', '000'],
     ' ': ['000', '000', '000', '000', '000', '000'],
 };
 
@@ -727,9 +762,12 @@ export function forgeTallfont(scene: Phaser.Scene): void {
     addSheet(scene, 'font-tall', p.canvas, GLYF_W, GLYF_H, SIFFER.length, 1);
 }
 
-/** Rammenummeret til ett tegn i pikselfonten. */
+/**
+ * Rammenummeret til ett tegn i pikselfonten. Fonten har bare store bokstaver, så
+ * små bokstaver løftes - ellers ville «Parade!» blitt «P!».
+ */
 export function glyfIndex(tegn: string): number {
-    const i = SIFFER.indexOf(tegn);
+    const i = SIFFER.indexOf(tegn.toUpperCase());
     return i >= 0 ? i : SIFFER.length - 1;
 }
 

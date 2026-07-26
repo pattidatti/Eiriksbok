@@ -145,6 +145,50 @@ export const sfx = {
         tone(140, 0.5, 'sine', 0.18, 420);
         noise(0.3, 0.08, 900, 0.05);
     },
+
+    // ── Kampen ──────────────────────────────────────────────────────────────
+    // Treffet er tre lag: sus før, anslag ved, materiale etter. Ett lag alene
+    // høres ut som en knapp; tre lag høres ut som noe som møter noe.
+
+    /** Suset foran et tungt slag. Spilles like før anslaget lander. */
+    sus() {
+        noise(0.16, 0.2, 3400, 0, 520);
+    },
+    /** Lindetre som tar imot. Tørt smell, ingen metallklang. */
+    treSprak() {
+        noise(0.07, 0.34, 1500, 0, 420);
+        tone(260, 0.1, 'square', 0.12, 120);
+        tone(150, 0.14, 'triangle', 0.08, 80, 0.02);
+    },
+    /** Skjoldet går i to. Et smell, og så noe som knekker. */
+    skjoldBrudd() {
+        noise(0.1, 0.42, 2200, 0, 300);
+        tone(190, 0.3, 'sawtooth', 0.2, 60);
+        noise(0.34, 0.16, 800, 0.08, 140);
+        tone(90, 0.4, 'triangle', 0.12, 45, 0.06);
+    },
+    /** Perfekt parade: jern mot jern, høyt og kort. */
+    paradeKlang() {
+        tone(1760, 0.14, 'square', 0.16, 880);
+        tone(2640, 0.1, 'triangle', 0.1, 1320, 0.01);
+        noise(0.12, 0.24, 5200, 0, 900);
+    },
+    /** Hjerteslag når livet er lavt. To slag, som et ekte. */
+    hjerteslag() {
+        tone(58, 0.16, 'sine', 0.3, 40);
+        tone(52, 0.2, 'sine', 0.22, 34, 0.19);
+    },
+    /** Hornstøt ved nytt nivå. */
+    horn() {
+        tone(196, 0.7, 'sawtooth', 0.18, 294);
+        tone(294, 0.6, 'triangle', 0.12, 392, 0.08);
+        noise(0.5, 0.06, 1200, 0.02, 300);
+    },
+    /** Én klingende lyd per gjenstand som spretter ut. */
+    lootPling(i = 0) {
+        tone(880 + i * 110, 0.09, 'square', 0.08, undefined, i * 0.045);
+        tone(1320 + i * 110, 0.07, 'triangle', 0.05, undefined, i * 0.045 + 0.03);
+    },
     bossBrol() {
         tone(90, 1.1, 'sawtooth', 0.3, 42);
         noise(1.0, 0.24, 700, 0.05, 120);

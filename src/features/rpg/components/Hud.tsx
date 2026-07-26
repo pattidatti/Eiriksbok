@@ -23,6 +23,8 @@ export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Pr
 
     return (
         <div className="pointer-events-none absolute inset-0 z-20 select-none">
+            <Blodkant andel={store.hp / Math.max(1, maks.hp)} />
+
             {/* Øverst til venstre: liv, kraft, nivå */}
             <div className="absolute left-3 top-3 w-56 space-y-1.5">
                 <div className="flex items-center gap-2">
@@ -153,6 +155,33 @@ export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Pr
                 ))}
             </div>
         </div>
+    );
+}
+
+/**
+ * Blod inn fra skjermkanten under 30 % liv, pulserende i takt med hjerteslaget
+ * scenen spiller (~1 slag i sekundet). Eleven skal kjenne at det står dårlig til
+ * før hun rekker å lese tallet.
+ *
+ * Ligger som et React-lag oppå lerretet, ikke inne i Phaser: et lag i scenen
+ * ville blitt skalert av kamerazoomen og blitt en grøt av store piksler.
+ */
+function Blodkant({ andel }: { andel: number }) {
+    if (andel >= 0.3 || andel <= 0) return null;
+    // Fra tydelig til påtrengende etter hvor ille det er, ikke av/på. Gulvet må
+    // være høyt nok til at den *ses* i det samme den slår inn - en effekt eleven
+    // ikke legger merke til, er ikke en advarsel.
+    const styrke = 0.34 + (1 - andel / 0.3) * 0.42;
+    return (
+        <div
+            className="pointer-events-none absolute inset-0 animate-[hjerteslag_980ms_ease-in-out_infinite]"
+            style={{
+                background: `radial-gradient(ellipse at center, rgba(122,8,8,0) 34%, rgba(122,8,8,${styrke.toFixed(
+                    2
+                )}) 100%)`,
+            }}
+            aria-hidden
+        />
     );
 }
 

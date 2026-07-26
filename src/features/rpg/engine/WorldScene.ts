@@ -171,6 +171,18 @@ export class WorldScene extends Phaser.Scene {
     private skjoldTimer: Phaser.Time.TimerEvent | null = null;
     private skjoldRing: Phaser.GameObjects.Image | null = null;
     private hitstopIgjen = 0;
+    /** Det retningsbestemte kamerastøtet. Bare ett om gangen. */
+    private dyttTween: Phaser.Tweens.Tween | null = null;
+    /** Blod som blir liggende. Eldste ryddes når lista blir lang. */
+    private blodflekker: Phaser.GameObjects.Image[] = [];
+    /** Utfallet i slaget: figuren bæres framover i trefframmen. */
+    private utfallIgjen = 0;
+    /** Hjerteslaget når livet er lavt. */
+    private hjerteTimer = 0;
+    /** Nivået sist vi sjekket, så vi kan feire når det stiger. */
+    private sisteNiva = 0;
+    /** Er eleven i kamp? Styrer hvor tett kameraet følger. */
+    private iKamp = false;
     /** Forrige bildes knappetilstand, så håndkontrolleren får ekte trykk-kant. */
     private padForrige = { A: false, B: false, X: false, Y: false };
 
@@ -863,6 +875,11 @@ export class WorldScene extends Phaser.Scene {
         stopMusikk();
         for (const av of this.avmeldinger) av();
         this.avmeldinger = [];
+        // Kamerastøtet kan stå midt i en tween, og blodflekkene er egne bilder.
+        this.dyttTween?.remove();
+        this.dyttTween = null;
+        for (const flekk of this.blodflekker) flekk.destroy();
+        this.blodflekker = [];
     }
 
     // ── Oppdatering ─────────────────────────────────────────────────────────
@@ -891,6 +908,7 @@ export class WorldScene extends Phaser.Scene {
         this.rullIgjen = Math.max(0, this.rullIgjen - delta);
         this.usarbarIgjen = Math.max(0, this.usarbarIgjen - delta);
         this.stotIgjen = Math.max(0, this.stotIgjen - delta);
+        this.utfallIgjen = Math.max(0, this.utfallIgjen - delta);
         this.slagIgjen = Math.max(0, this.slagIgjen - delta);
         this.angrepBuffer = Math.max(0, this.angrepBuffer - delta);
         for (const [id, verdi] of this.spellNedkjoling) {
@@ -917,10 +935,49 @@ export class WorldScene extends Phaser.Scene {
      * en gjentegning per bilde.
      */
     private oppdaterKampUi(delta: number) {
+        this.hjerteTimer -= delta;
         this.kampUiTimer -= delta;
         if (this.kampUiTimer > 0) return;
         this.kampUiTimer = 90;
         fraSpill.emit('kamp', this.kamp.snapshot());
+
+        const store = useRpgStore.getState();
+        const maks = maksVerdier(store);
+
+        // ── Rommet snevres inn når det gjelder ──────────────────────────────
+        // Zoomen holdes på hele tall, ellers blir pikslene ujevne (se
+        // settOppKamera). Vi strammer i stedet dødsonen: kameraet klistrer seg
+        // til eleven i kamp og slipper henne løs igjen etterpå. Samme følelse,
+        // uten å ofre skarpheten.
+        const iKampNa = this.fiender.some(
+            (f) =>
+                !f.dodd &&
+                f.tilstand !== 'sover' &&
+                Phaser.Math.Distance.Between(f.sprite.x, f.sprite.y, this.spiller.x, this.spiller.y) < 220
+        );
+        if (iKampNa !== this.iKamp) {
+            this.iKamp = iKampNa;
+            this.cameras.main.setDeadzone(iKampNa ? 14 : 40, iKampNa ? 10 : 30);
+        }
+
+        // ── Hjerteslag under 30 % liv ───────────────────────────────────────
+        // Eleven skal kjenne at det står dårlig til før hun rekker å lese
+        // tallet. Blodkanten i HUD-en pulserer i samme takt.
+        if (this.hjerteTimer <= 0 && store.hp > 0 && store.hp / maks.hp < 0.3) {
+            this.hjerteTimer = 980;
+            sfx.hjerteslag();
+        }
+
+        // ── Nivåstigning ────────────────────────────────────────────────────
+        if (this.sisteNiva === 0) this.sisteNiva = maks.niva;
+        else if (maks.niva > this.sisteNiva) {
+            this.sisteNiva = maks.niva;
+            this.hitstop(220);
+            this.cameras.main.flash(260, 255, 250, 220);
+            sfx.horn();
+            this.flytTekst(this.spiller.x, this.spiller.y - 34, `NIVÅ ${maks.niva}`, '#ffe9a8', 15);
+            this.pikselSprut(this.spiller.x, this.spiller.y - 10, 0xffe9a8, 22);
+        }
     }
 
     /**
@@ -962,6 +1019,78 @@ export class WorldScene extends Phaser.Scene {
         this.hitstopIgjen = ms;
         this.physics.pause();
         this.tweens.pauseAll();
+    }
+
+    /**
+     * Retningsbestemt kamerastøt. Rystelse i alle retninger leser som støy - et
+     * dytt langs treffvektoren leser som kraft. Dette er enkeltgrepet som gjorde
+     * mest for hvordan slagene kjennes.
+     *
+     * Kameraet følger spilleren, så `setScroll` blir overskrevet neste bilde.
+     * `followOffset` er det ene stedet vi kan skyve det uten å slåss med
+     * `startFollow`.
+     */
+    private dytt(vinkel: number, piksler: number, ms = 120) {
+        const cam = this.cameras.main;
+        const mx = Math.cos(vinkel) * piksler;
+        const my = Math.sin(vinkel) * piksler;
+        // To dytt samtidig ville dratt kameraet i to retninger og etterlatt en
+        // permanent forskyvning når den ene tweenen ryddet etter seg.
+        this.dyttTween?.remove();
+        cam.setFollowOffset(mx, my);
+        this.dyttTween = this.tweens.addCounter({
+            from: 1,
+            to: 0,
+            duration: ms,
+            ease: 'Quad.Out',
+            onUpdate: (t) => {
+                const k = t.getValue() ?? 0;
+                cam.setFollowOffset(mx * k, my * k);
+            },
+            onComplete: () => {
+                cam.setFollowOffset(0, 0);
+                this.dyttTween = null;
+            },
+        });
+    }
+
+    /**
+     * Klaskesprett: målet klemmes flatt i trefframmen og spretter tilbake.
+     * Squash and stretch - nesten gratis, og det gjør hvert treff til en hendelse.
+     */
+    private klask(mal: Phaser.GameObjects.Sprite, styrke = 0.15) {
+        this.tweens.killTweensOf(mal);
+        mal.setScale(1 + styrke, 1 - styrke);
+        this.tweens.add({
+            targets: mal,
+            scaleX: 1,
+            scaleY: 1,
+            duration: 80,
+            ease: 'Quad.Out',
+        });
+    }
+
+    /**
+     * Blod som blir liggende. Flekkene ligger over terrenget og under alt som
+     * går på det, og de eldste ryddes bort - ellers vokser lista hele økten.
+     */
+    private blodflekk(x: number, y: number, farge: number, antall: number, vinkel: number) {
+        for (let i = 0; i < antall; i++) {
+            const spredning = Phaser.Math.FloatBetween(-0.7, 0.7);
+            const lengde = Phaser.Math.Between(3, 16);
+            const flekk = this.add
+                .image(
+                    x + Math.cos(vinkel + spredning) * lengde,
+                    y + Math.sin(vinkel + spredning) * lengde + Phaser.Math.Between(0, 5),
+                    'fx-bit'
+                )
+                .setTint(farge)
+                .setAlpha(Phaser.Math.FloatBetween(0.35, 0.7))
+                .setScale(Phaser.Math.FloatBetween(0.7, 1.8), Phaser.Math.FloatBetween(0.5, 1.2))
+                .setDepth(-880);
+            this.blodflekker.push(flekk);
+        }
+        while (this.blodflekker.length > 90) this.blodflekker.shift()?.destroy();
     }
 
     /**
@@ -1023,7 +1152,7 @@ export class WorldScene extends Phaser.Scene {
             this.flytTekst(this.spiller.x, this.spiller.y - 28, 'Tom for pust!', '#ff9d6a');
         }
 
-        if (!ruller && this.stotIgjen === 0) {
+        if (!ruller && this.stotIgjen === 0 && this.utfallIgjen === 0) {
             // Angrepet forplikter: eleven går saktere mens hun svinger, og bak
             // et reist skjold går hun i skjoldgang.
             const bremse = this.slagIgjen > 0 ? 0.4 : gard ? KAMP.gardFart : 1;
@@ -1108,6 +1237,14 @@ export class WorldScene extends Phaser.Scene {
 
         const vinkel = this.retningsVinkel();
         sfx.sving();
+        // Suset foran et tungt slag gir treffet en opptakt i stedet for bare et smell.
+        if (vk.tungt) sfx.sus();
+
+        // Utfallet: figuren bæres framover i trefframmen. Dette er enkeltgrepet
+        // som gir mest utslag i 2D-action, og det gjør slaget til noe hun
+        // forplikter seg til i stedet for noe hun trykker på.
+        this.utfallIgjen = 110;
+        this.spiller.setVelocity(Math.cos(vinkel) * 120, Math.sin(vinkel) * 120);
 
         // Sving våpenet gjennom buen. Slår hun oppover, skal våpenet være bak
         // henne - ellers ligger sverdet oppå ansiktet.
@@ -1180,7 +1317,7 @@ export class WorldScene extends Phaser.Scene {
             // Hitstop etter vekt. Ett tall for alt gjør at ingenting føles tungt.
             const tungt = vk.tungt || sving.trinn === 3;
             this.hitstop(tungt ? KAMP.hitstopTungt : KAMP.hitstopLett);
-            this.cameras.main.shake(90, tungt ? 0.005 : 0.0035);
+            this.dytt(vinkel, tungt ? 6 : 3, tungt ? 140 : 110);
         } else if (sving.trinn === 3) {
             this.stovsky(this.spiller.x, this.spiller.y + 6, 4);
         }
@@ -1294,6 +1431,8 @@ export class WorldScene extends Phaser.Scene {
 
         fiende.hp -= skade;
         sfx[kritisk ? 'kritisk' : 'treff']();
+        this.klask(fiende.sprite, kritisk ? 0.24 : 0.15);
+        this.blodflekk(fiende.sprite.x, fiende.sprite.y, fiende.def.farge, kritisk ? 4 : 2, vinkel);
         this.flytTekst(
             fiende.sprite.x + Phaser.Math.Between(-4, 4),
             fiende.sprite.y - 20,
@@ -1312,7 +1451,7 @@ export class WorldScene extends Phaser.Scene {
         });
 
         if (fiende.hp <= 0) {
-            this.drepFiende(fiende);
+            this.drepFiende(fiende, vinkel);
             return;
         }
 
@@ -1344,7 +1483,7 @@ export class WorldScene extends Phaser.Scene {
         fiende.stolpeTid = 2600;
     }
 
-    private drepFiende(fiende: Fiende) {
+    private drepFiende(fiende: Fiende, vinkel = 0) {
         if (fiende.dodd) return;
         fiende.dodd = true;
         this.maaRyddeFiender = true;
@@ -1356,9 +1495,21 @@ export class WorldScene extends Phaser.Scene {
         this.pikselSprut(fiende.sprite.x, fiende.sprite.y - 8, fiende.def.farge, 20);
 
         const erBoss = fiende.def.kind === 'boss';
+
+        // Avslutningen. Et drap skal ikke føles som at en helsestolpe nådde null:
+        // bildet stopper, kameraet får dobbelt kick, og det ligger en blodbue
+        // igjen på bakken etterpå.
+        this.hitstop(KAMP.hitstopDrap);
+        this.dytt(vinkel, erBoss ? 12 : 8, 220);
+        this.blodflekk(fiende.sprite.x, fiende.sprite.y, fiende.def.farge, erBoss ? 26 : 9, vinkel);
+
+        // De større fiendene tar fargen ut av bildet et øyeblikk. Vi gjør det ikke
+        // på hver liten tåkedott - da blir det flimmer i stedet for tyngde.
         if (erBoss) {
             this.cameras.main.shake(600, 0.012);
             this.cameras.main.flash(500, 255, 255, 255);
+        } else if (fiende.maksHp >= 34) {
+            this.cameras.main.flash(120, 42, 44, 52);
         }
 
         this.tweens.add({
@@ -1374,11 +1525,16 @@ export class WorldScene extends Phaser.Scene {
         store.giXp(fiende.def.xp);
         this.flytTekst(fiende.sprite.x, fiende.sprite.y - 30, `+${fiende.def.xp} XP`, '#9ef0c0', 12);
 
-        // Sølv og gjenstander faller på bakken
+        // Sølv og gjenstander spretter ut i en bue, med én klingende lyd per
+        // objekt. Loot som bare dukker opp under fienden er en kvittering; loot
+        // som spretter er en utbetaling.
         const solv = Phaser.Math.Between(2, 6) + Math.round(fiende.def.xp / 4);
-        this.slippLoot(fiende.sprite.x, fiende.sprite.y, null, solv);
+        let nr = 0;
+        this.slippLoot(fiende.sprite.x, fiende.sprite.y, null, solv, nr++);
         for (const drop of fiende.def.loot) {
-            if (Math.random() < drop.sjanse) this.slippLoot(fiende.sprite.x, fiende.sprite.y, drop.itemId, 0);
+            if (Math.random() < drop.sjanse) {
+                this.slippLoot(fiende.sprite.x, fiende.sprite.y, drop.itemId, 0, nr++);
+            }
         }
 
         if (erBoss) {
@@ -1411,8 +1567,11 @@ export class WorldScene extends Phaser.Scene {
         store.endreHp(-faktisk);
         this.usarbarIgjen = USARBAR_MS;
         sfx.skade();
-        this.cameras.main.shake(180, 0.007);
+        // Dyttet går bort fra treffet - eleven skal kjenne at hun ble slått bakover.
+        this.dytt(this.retningsVinkel() + Math.PI, 7, 170);
         this.cameras.main.flash(120, 180, 20, 20);
+        this.klask(this.spiller, 0.2);
+        this.blodflekk(this.spiller.x, this.spiller.y, 0xc4241f, 3, this.retningsVinkel() + Math.PI);
         this.flytTekst(this.spiller.x, this.spiller.y - 26, `-${faktisk}`, '#ff8080', 15);
 
         if (useRpgStore.getState().hp <= 0) this.spillerDor();
@@ -1444,6 +1603,13 @@ export class WorldScene extends Phaser.Scene {
         this.kamp.hvil();
         this.touchGard = false;
         this.avsluttSkjold();
+        // Kameraet skal ikke våkne skjevt hvis hun døde midt i et dytt, og
+        // blodet fra forrige forsøk skal ikke ligge igjen på tunet.
+        this.dyttTween?.remove();
+        this.dyttTween = null;
+        this.cameras.main.setFollowOffset(0, 0);
+        for (const flekk of this.blodflekker) flekk.destroy();
+        this.blodflekker = [];
         // Litt sølv går tapt - nok til å svi, ikke nok til å ødelegge.
         const tap = Math.floor(store.solv * 0.15);
         if (tap > 0) useRpgStore.setState({ solv: store.solv - tap });
@@ -1838,17 +2004,20 @@ export class WorldScene extends Phaser.Scene {
      */
     private parade(fiende: Fiende) {
         this.gardPress = 200;
-        sfx.skjold();
-        sfx.kritisk();
+        sfx.paradeKlang();
         this.hitstop(KAMP.hitstopParade);
+        // Én ramme hvitt over hele skjermen. Belønningen må være umulig å overse.
         this.cameras.main.flash(70, 255, 255, 245);
-        this.cameras.main.shake(90, 0.004);
         this.flytTekst(this.spiller.x, this.spiller.y - 30, 'Parade!', '#fff2b0', 15);
         this.pikselSprut(this.skjoldSprite.x, this.skjoldSprite.y, 0xfff2b0, 14);
+        this.klask(this.spiller, 0.1);
 
-        // Angriperen mister balansen: full åpning.
+        // Angriperen mister balansen: full åpning. Kameraet dyttes *mot* henne,
+        // ikke bort - det er hun som vant utvekslingen.
         const v = Math.atan2(fiende.sprite.y - this.spiller.y, fiende.sprite.x - this.spiller.x);
+        this.dytt(v, 5, 150);
         fiende.sprite.setVelocity(Math.cos(v) * 240, Math.sin(v) * 240);
+        this.klask(fiende.sprite, 0.2);
         fiende.tilstand = 'stotet';
         fiende.timer = STOT_MS * 3;
         fiende.onsketTint = null;
@@ -1858,9 +2027,11 @@ export class WorldScene extends Phaser.Scene {
     /** Vanlig blokk: skjoldet tok det, men det kostet pust og en flis av kanten. */
     private blokk(fiende: Fiende, brast: boolean) {
         this.gardPress = 160;
-        sfx.skjold();
-        this.cameras.main.shake(70, 0.003);
+        // Lindetre, ikke jern. Blokken skal høres tørr ut - metallklangen er
+        // paradens belønning, og den skal ikke deles med noe billigere.
+        sfx.treSprak();
         const v = Math.atan2(this.spiller.y - fiende.sprite.y, this.spiller.x - fiende.sprite.x);
+        this.dytt(v, 3, 110);
         this.skjoldFlis(this.skjoldSprite.x, this.skjoldSprite.y, v, brast ? 12 : 4);
 
         // Litt støt, så et blokkert slag fortsatt flytter eleven. Uten det står
@@ -1868,9 +2039,9 @@ export class WorldScene extends Phaser.Scene {
         this.spiller.setVelocity(Math.cos(v) * 70, Math.sin(v) * 70);
 
         if (brast) {
-            sfx.dod();
+            sfx.skjoldBrudd();
             this.hitstop(KAMP.hitstopTungt);
-            this.cameras.main.shake(220, 0.008);
+            this.dytt(v, 9, 260);
             this.flytTekst(this.spiller.x, this.spiller.y - 30, 'Skjoldet brast!', '#ff9d6a', 15);
             useRpgStore.getState().varsle('Skjoldet gikk i to. Nå står du bar.', 'darlig');
             // Et kort pusterom, ellers lander neste slag i samme sekund som
@@ -2015,16 +2186,32 @@ export class WorldScene extends Phaser.Scene {
         }
     }
 
-    private slippLoot(x: number, y: number, itemId: string | null, solv: number) {
+    private slippLoot(x: number, y: number, itemId: string | null, solv: number, nr = 0) {
         const key = itemId ? (ITEM_BY_ID[itemId]?.slot === 'vapen' ? 'loot-bok' : 'loot-kiste') : 'loot-solv';
         const sprite = this.add.image(x, y, key).setDepth(y);
-        // Lite hopp når den faller ut
+        sfx.lootPling(nr);
+
+        // Spretter ut i en bue i stedet for rett opp og ned. Retningen varieres
+        // per objekt, så to drop aldri lander i samme punkt.
+        //
+        // Buen er én tween på x og to på y etter hverandre - opp og så ned. To
+        // samtidige y-tweens ville slått hverandre ut, og gjenstanden ville
+        // hoppet uten å komme noen vei.
+        const v = Phaser.Math.FloatBetween(-Math.PI, Math.PI);
+        const kast = Phaser.Math.Between(10, 22);
+        const mx = x + Math.cos(v) * kast;
+        const my = y + Math.sin(v) * kast * 0.5;
+        this.tweens.add({ targets: sprite, x: mx, duration: 350, ease: 'Quad.Out' });
         this.tweens.add({
             targets: sprite,
-            y: y - 10,
-            duration: 220,
-            yoyo: true,
+            y: my - 13,
+            duration: 190,
             ease: 'Quad.Out',
+            onComplete: () => {
+                if (sprite.active) {
+                    this.tweens.add({ targets: sprite, y: my, duration: 160, ease: 'Quad.In' });
+                }
+            },
         });
         this.tweens.add({
             targets: sprite,

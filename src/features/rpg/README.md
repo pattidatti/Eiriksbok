@@ -157,8 +157,22 @@ Disse er alle feil som har vært i koden, og som ikke er åpenbare:
 - **Kontur og fargeramper.** `Painter.outline()` legger 1px kontur rundt alt.
   `ramp()` hue-shifter mot kaldt i skyggen og varmt i lyset i stedet for å gange
   fargen med et tall.
-- **Animasjon.** Hver figur har alle 48 rammene sine i én tekstur: fire
-  retninger × (2 idle, 4 gange, 3 slag, 3 rull). Se `heltFrame()`.
+- **Animasjon.** Hver figur har alle 56 rammene sine i én tekstur: fire
+  retninger × (2 idle, 4 gange, 3 slag, 3 rull, 2 gard). Se `heltFrame()`.
+  Endrer du dette, må `KOLONNER`, `START`, `POSITUR_LENGDE` og positurlista i
+  `forgeHumanoid` endres i samme åndedrag.
+- **Pikselfonten** (`forgeTallfont`) har sifre, skilletegn og hele alfabetet med
+  æ, ø og å. Den hadde bare `0123456789+-!XP ` en stund, og da rendret «Skjold!»
+  som en nesten blank boble - alt annet falt tilbake på mellomrom. `glyfIndex()`
+  løfter små bokstaver, så tekst kan skrives naturlig.
+- **Kameraet dyttes, det ristes ikke.** `dytt(vinkel, piksler)` skyver
+  `followOffset` langs treffvektoren og eases tilbake. Rystelse i alle retninger
+  leser som støy; et dytt leser som kraft. `setScroll` virker ikke her - kameraet
+  følger spilleren og overskriver det neste bilde.
+- **Zoomen holdes på hele tall.** Blueprinten ba om 3.0 → 3.4 i kamp, men
+  fraksjonell zoom gir ujevne piksler i en pikselartscene. I stedet strammes
+  dødsonen (40×30 → 14×10) når noe jager eleven. Samme innsnevring, uten å ofre
+  skarpheten. Kortvarige fraksjonelle zoom (et kick) er greit; varige er ikke.
 - **Atmosfære.** Tåkeslør driver over verden i to lag, bålet lyser og flakker, og
   himmeltonen + vignetten legges av React oppå lerretet (`Atmosfare`) - inne i
   scenen ville de blitt skalert av kamerazoomen.

@@ -523,3 +523,38 @@ body.dyslexia-mode h6 {
     animation: none;
   }
 }
+
+/*
+  Minnevokteren: blodkanten pulserer i takt med hjerteslaget scenen spiller
+  (sfx.hjerteslag, ~980 ms). To slag per puls, som et ekte hjerte.
+*/
+@keyframes hjerteslag {
+
+  0%,
+  100% {
+    opacity: 0.78;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  18% {
+    opacity: 0.85;
+  }
+
+  26% {
+    opacity: 0.98;
+  }
+
+  45% {
+    opacity: 0.78;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  [class*="hjerteslag"] {
+    animation: none;
+  }
+}
