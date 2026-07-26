@@ -1,0 +1,176 @@
+{
+    "id": "fransk-revolusjon",
+    "title": "Den franske revolusjonen",
+    "subjectId": "historie",
+    "topicId": "den-franske-revolusjon",
+    "epoke": "Opplysningstiden",
+    "aar": 1789,
+    "kulisse": "moderne",
+    "scene": "bygate",
+    "ingress": "Statskassa er tom og brødet dyrt. Følg sporet fra skattekrise til keiserkroning.",
+    "start": "Frankrike i 1789: staten er blakk etter mange kriger, og brødet er dyrere enn noen gang.",
+    "slutt": "Kongen var borte for godt, men friheten endte hos en mann som kalte seg keiser.",
+    "ledd": [
+        {
+            "tekst": "Kongen kaller inn stenderforsamlingen for å få adelen til å betale skatt.",
+            "link": "/historie/den-franske-revolusjon/intro",
+            "scene": "versailles",
+            "feil": [
+                {
+                    "tekst": "Kongen låner enda mer penger i utlandet og lar skattene stå helt urørt.",
+                    "hvorfor": "Ingen ville låne mer til en stat som knapt klarte å betale renter."
+                },
+                {
+                    "tekst": "Adelen tilbyr seg helt frivillig å betale skatt for å redde statens økonomi.",
+                    "hvorfor": "Skattefriheten var selve grunnen til at adelen var adel. Den ga de ikke fra seg."
+                },
+                {
+                    "tekst": "Kongen selger franske kolonier i Amerika og fyller opp statskassa slik.",
+                    "hvorfor": "Frankrike hadde alt mistet det meste i Amerika i krigen mot britene."
+                },
+                {
+                    "tekst": "Kongen setter ned brødprisen med makt, og da forsvinner underskuddet helt.",
+                    "hvorfor": "Billigere brød ga ikke staten en eneste ny mynt i kassa."
+                },
+                {
+                    "tekst": "Kongen ber kirken og adelen om soldater i stedet for om mer penger.",
+                    "hvorfor": "Staten manglet penger, ikke soldater. Regningene fra krigene måtte betales."
+                }
+            ]
+        },
+        {
+            "tekst": "Tredjestanden nekter å bli stemt ned, og kaller seg nasjonalforsamling.",
+            "link": "/historie/den-franske-revolusjon/intro",
+            "feil": [
+                {
+                    "tekst": "Tredjestanden godtar at adel og kirke har to stemmer mot deres ene stemme.",
+                    "hvorfor": "Da ville de tape hver eneste avstemning. Det var nettopp det de nektet."
+                },
+                {
+                    "tekst": "Kongen gir tredjestanden dobbelt så mange stemmer som de andre to.",
+                    "hvorfor": "Kongen holdt på den gamle ordningen. Han ville ha penger, ikke reformer."
+                },
+                {
+                    "tekst": "Adelen og kirken går sammen med tredjestanden og krever ny konge.",
+                    "hvorfor": "Adel og kirke ville beholde det de hadde. Ingen krevde ny konge i 1789."
+                },
+                {
+                    "tekst": "Alle de tre stendene reiser hjem igjen uten å ha vedtatt noe som helst.",
+                    "hvorfor": "Tredjestanden ble sittende. De sverget å ikke gå før Frankrike fikk grunnlov."
+                },
+                {
+                    "tekst": "Kongen oppløser hele forsamlingen, og ingen protesterer mot det.",
+                    "hvorfor": "Han prøvde å stenge dem ute. De møttes i ballhuset og fortsatte likevel."
+                }
+            ]
+        },
+        {
+            "tekst": "Folket i Paris stormer Bastillen 14. juli for å få tak i våpen og krutt.",
+            "link": "/historie/den-franske-revolusjon/stormingen-av-bastillen",
+            "scene": "bastillen",
+            "feil": [
+                {
+                    "tekst": "Folket i Paris stormer Bastillen for å slippe fri tusenvis av fanger.",
+                    "hvorfor": "Det satt bare sju fanger igjen. Det var kruttlageret folkemengden var ute etter."
+                },
+                {
+                    "tekst": "Soldatene i Paris slår ned opprøret før mengden når helt fram til Bastillen.",
+                    "hvorfor": "Mange soldater gikk over til folket i stedet for å skyte på dem."
+                },
+                {
+                    "tekst": "Folket i Paris marsjerer stille forbi Bastillen og går hjem igjen etterpå.",
+                    "hvorfor": "Det ble kamp. Kommandanten ble drept, og festningen falt samme dag."
+                },
+                {
+                    "tekst": "Kongen gir bort Bastillen til folket for å unngå at det blir kamp.",
+                    "hvorfor": "Kongen ga ingenting bort. Han hadde tvert imot samlet tropper rundt Paris."
+                },
+                {
+                    "tekst": "Bastillen står tom, og folkemengden lar den bygningen være i fred.",
+                    "hvorfor": "Festningen var bevoktet, og der lå kruttet byen trengte til gevrene sine."
+                }
+            ]
+        },
+        {
+            "tekst": "Forsamlingen vedtar at alle menn er født frie og like for loven.",
+            "link": "/historie/den-franske-revolusjon/menneskerettighetserklaeringen",
+            "scene": "bygate",
+            "feil": [
+                {
+                    "tekst": "Forsamlingen vedtar at adelen skal beholde alle de gamle rettene sine.",
+                    "hvorfor": "Natten til 4. august ga adelen fra seg de gamle privilegiene sine."
+                },
+                {
+                    "tekst": "Forsamlingen gir kvinner de samme rettighetene som menn med en gang.",
+                    "hvorfor": "Kvinner fikk ikke stemmerett. Det tok over 150 år før franske kvinner fikk den."
+                },
+                {
+                    "tekst": "Forsamlingen bestemmer at kongen skal styre helt alene igjen.",
+                    "hvorfor": "Det motsatte skjedde. Kongen ble bundet av en grunnlov han måtte godta."
+                },
+                {
+                    "tekst": "Forsamlingen lar kirken beholde jorda og skatten den krevde inn.",
+                    "hvorfor": "Kirkens jord ble tatt av staten og solgt for å betale statsgjelda."
+                },
+                {
+                    "tekst": "Forsamlingen skriver at bare de rikeste mennene skal ha rettigheter.",
+                    "hvorfor": "Erklæringen gjaldt alle menn. Hvem som fikk stemme, var en annen strid."
+                }
+            ]
+        },
+        {
+            "tekst": "Krig og frykt for forrædere gir Robespierre makt, og skrekkveldet begynner.",
+            "link": "/historie/den-franske-revolusjon/robespierre-og-skrekkveldet",
+            "scene": "barrikade",
+            "feil": [
+                {
+                    "tekst": "Krigen mot nabolandene gjør at hele Frankrike samler seg bak kongen sin igjen.",
+                    "hvorfor": "Kongen ble mistenkt for å hjelpe fienden. Han ble avsatt og henrettet i 1793."
+                },
+                {
+                    "tekst": "Nabolandene lar Frankrike være helt i fred, og revolusjonen får ro til å virke.",
+                    "hvorfor": "Østerrike og Preussen gikk til angrep for å stanse revolusjonen hos seg selv."
+                },
+                {
+                    "tekst": "Robespierre nekter å bruke makt, og lar motstanderne sine være i fred.",
+                    "hvorfor": "Han mente frykt var nødvendig. Tusenvis ble dømt og henrettet på under et år."
+                },
+                {
+                    "tekst": "Frankrike innfører fred og full ytringsfrihet midt under krigen.",
+                    "hvorfor": "Det ble tvert om. Å si feil ting kunne føre deg rett til giljotinen."
+                },
+                {
+                    "tekst": "Kongen flykter til Østerrike og styrer Frankrike derfra i mange år.",
+                    "hvorfor": "Fluktforsøket ble stanset ved Varennes. Kongen ble ført tilbake til Paris."
+                }
+            ]
+        },
+        {
+            "tekst": "En general ved navn Napoleon tar makten og kroner seg selv til keiser.",
+            "link": "/historie/den-franske-revolusjon/napoleon",
+            "scene": "slagmark",
+            "feil": [
+                {
+                    "tekst": "Folket velger seg en ny konge av den gamle slekten, og alt blir som før nå.",
+                    "hvorfor": "Det gamle kongehuset kom først tilbake i 1814, etter at Napoleon var slått."
+                },
+                {
+                    "tekst": "Frankrike blir en fredelig republikk styrt av folkevalgte i mange lange år.",
+                    "hvorfor": "Republikken varte kort. En general med hæren i ryggen tok over i 1799."
+                },
+                {
+                    "tekst": "Robespierre styrer Frankrike helt til han dør av alderdom i fred.",
+                    "hvorfor": "Han ble selv henrettet i 1794, av de samme reglene han hadde innført."
+                },
+                {
+                    "tekst": "Nabolandene erobrer Frankrike og deler landet mellom seg i 1795.",
+                    "hvorfor": "Franske hærer vant. Det var Frankrike som erobret store deler av Europa."
+                },
+                {
+                    "tekst": "Adelen tar makten tilbake og gjenoppretter alle de gamle skattene.",
+                    "hvorfor": "Adelen var spredt for alle vinder. Mange hadde flyktet ut av landet."
+                }
+            ]
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 {
-  "buildId": 1785059763388,
+  "buildId": 1785091777850,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1478,7 +1478,8 @@
       "content/historie/industriell-revolusjon/barnearbeid.json"
     ],
     "dampmaskinen": [
-      "content/historie/industriell-revolusjon/dampmaskinen.json"
+      "content/historie/industriell-revolusjon/dampmaskinen.json",
+      "content/kjeder/dampmaskinen.json"
     ],
     "dopapirets-historie": [
       "content/historie/industriell-revolusjon/dopapirets-historie.json"
@@ -1743,7 +1744,8 @@
       "content/historie/norgeshistorie/fornorskingen-av-samene.json"
     ],
     "hamskiftet": [
-      "content/historie/norgeshistorie/hamskiftet.json"
+      "content/historie/norgeshistorie/hamskiftet.json",
+      "content/kjeder/hamskiftet.json"
     ],
     "helleristninger": [
       "content/historie/norgeshistorie/helleristninger.json"
@@ -2023,11 +2025,26 @@
     "detective-vardo": [
       "content/interactive/detective/vardo.json"
     ],
+    "fransk-revolusjon": [
+      "content/kjeder/fransk-revolusjon.json"
+    ],
+    "jernteppet-faller": [
+      "content/kjeder/jernteppet-faller.json"
+    ],
     "kjede-oversikt": [
       "content/kjeder/kjede-oversikt.json"
     ],
+    "renta": [
+      "content/kjeder/renta.json"
+    ],
     "kjeder-svartedauden": [
       "content/kjeder/svartedauden.json"
+    ],
+    "veien-til-forste-verdenskrig": [
+      "content/kjeder/veien-til-forste-verdenskrig.json"
+    ],
+    "versailles-til-hitler": [
+      "content/kjeder/versailles-til-hitler.json"
     ],
     "historie-10-trinn": [
       "content/kompetansemal/historie-10-trinn.json"
@@ -4344,8 +4361,15 @@
     "interactive/detective/detective-svartedauden": "content/interactive/detective/svartedauden.json",
     "interactive/detective/detective-tungtvann": "content/interactive/detective/tungtvann.json",
     "interactive/detective/detective-vardo": "content/interactive/detective/vardo.json",
+    "kjeder/dampmaskinen.json/dampmaskinen": "content/kjeder/dampmaskinen.json",
+    "kjeder/fransk-revolusjon.json/fransk-revolusjon": "content/kjeder/fransk-revolusjon.json",
+    "kjeder/hamskiftet.json/hamskiftet": "content/kjeder/hamskiftet.json",
+    "kjeder/jernteppet-faller.json/jernteppet-faller": "content/kjeder/jernteppet-faller.json",
     "kjeder/kjede-oversikt.json/kjede-oversikt": "content/kjeder/kjede-oversikt.json",
+    "kjeder/renta.json/renta": "content/kjeder/renta.json",
     "kjeder/svartedauden.json/svartedauden": "content/kjeder/svartedauden.json",
+    "kjeder/veien-til-forste-verdenskrig.json/veien-til-forste-verdenskrig": "content/kjeder/veien-til-forste-verdenskrig.json",
+    "kjeder/versailles-til-hitler.json/versailles-til-hitler": "content/kjeder/versailles-til-hitler.json",
     "kompetansemal/historie-10-trinn.json/historie-10-trinn": "content/kompetansemal/historie-10-trinn.json",
     "kompetansemal/krle-10-trinn.json/krle-10-trinn": "content/kompetansemal/krle-10-trinn.json",
     "kompetansemal/musikk-10-trinn.json/musikk-10-trinn": "content/kompetansemal/musikk-10-trinn.json",

@@ -6,7 +6,78 @@
             "subjectId": "historie",
             "topicId": "middelalderen",
             "epoke": "Middelalderen",
+            "aar": 1349,
             "ingress": "Ett skip la til kai i Bergen. Følg sporet fra pesten til unionen med Danmark.",
+            "antallLedd": 6
+        },
+        {
+            "id": "dampmaskinen",
+            "title": "Fra dampmaskin til fabrikkby",
+            "subjectId": "historie",
+            "topicId": "industriell-revolusjon",
+            "epoke": "Industrialiseringen",
+            "aar": 1765,
+            "ingress": "En maskin som aldri blir trøtt. Følg sporet fra kullgruva til den første fagforeningen.",
+            "antallLedd": 6
+        },
+        {
+            "id": "fransk-revolusjon",
+            "title": "Den franske revolusjonen",
+            "subjectId": "historie",
+            "topicId": "den-franske-revolusjon",
+            "epoke": "Opplysningstiden",
+            "aar": 1789,
+            "ingress": "Statskassa er tom og brødet dyrt. Følg sporet fra skattekrise til keiserkroning.",
+            "antallLedd": 6
+        },
+        {
+            "id": "hamskiftet",
+            "title": "Hamskiftet i Norge",
+            "subjectId": "historie",
+            "topicId": "norge-i-moderne-tid",
+            "epoke": "Norge i moderne tid",
+            "aar": 1850,
+            "ingress": "Flere barn overlevde, og hele Norge endret seg. Følg sporet fra gården til stemmeretten.",
+            "antallLedd": 6
+        },
+        {
+            "id": "veien-til-forste-verdenskrig",
+            "title": "Veien til første verdenskrig",
+            "subjectId": "historie",
+            "topicId": "forste-verdenskrig",
+            "epoke": "Første verdenskrig",
+            "aar": 1914,
+            "ingress": "Ett pistolskudd, og en hel verdensdel går i krig. Følg sporet fra Sarajevo til skyttergravene.",
+            "antallLedd": 6
+        },
+        {
+            "id": "versailles-til-hitler",
+            "title": "Fra Versailles til Hitler",
+            "subjectId": "historie",
+            "topicId": "mellomkrigstiden",
+            "epoke": "Mellomkrigstiden",
+            "aar": 1919,
+            "ingress": "En fredsavtale, et børskrakk og seks millioner arbeidsledige. Følg sporet fram til 1933.",
+            "antallLedd": 6
+        },
+        {
+            "id": "jernteppet-faller",
+            "title": "Jernteppet faller",
+            "subjectId": "historie",
+            "topicId": "den-kalde-krigen",
+            "epoke": "Den kalde krigen",
+            "aar": 1980,
+            "ingress": "Et system som gikk tomt for penger. Følg sporet fra tomme butikkhyller til muren som åpnes.",
+            "antallLedd": 6
+        },
+        {
+            "id": "renta",
+            "title": "Renta og lommeboka di",
+            "subjectId": "samfunnskunnskap",
+            "topicId": "okonomi",
+            "epoke": "I dag",
+            "aar": 2024,
+            "ingress": "Ett rentemøte i Oslo, og hele landet får mindre å rutte med. Følg sporet inn i lommeboka di.",
             "antallLedd": 6
         }
     ]

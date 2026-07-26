@@ -1,0 +1,175 @@
+{
+    "id": "veien-til-forste-verdenskrig",
+    "title": "Veien til første verdenskrig",
+    "subjectId": "historie",
+    "topicId": "forste-verdenskrig",
+    "epoke": "Første verdenskrig",
+    "aar": 1914,
+    "kulisse": "moderne",
+    "scene": "bygate",
+    "ingress": "Ett pistolskudd, og en hel verdensdel går i krig. Følg sporet fra Sarajevo til skyttergravene.",
+    "start": "Europa i 1914: stormaktene er bundet sammen i to allianser som lover hverandre hjelp.",
+    "slutt": "Ni millioner soldater døde i en krig som begynte med et skudd mot én bil.",
+    "ledd": [
+        {
+            "tekst": "Et skudd i Sarajevo dreper arvingen til tronen i Østerrike-Ungarn.",
+            "link": "/historie/forste-verdenskrig/opptakt",
+            "feil": [
+                {
+                    "tekst": "Et skudd i Sarajevo dreper den russiske tsaren under et statsbesøk.",
+                    "hvorfor": "Tsaren levde til 1918. Det var Franz Ferdinand som ble drept i Sarajevo."
+                },
+                {
+                    "tekst": "En bombe i Sarajevo dreper hele den serbiske regjeringen på en gang.",
+                    "hvorfor": "Angrepet rammet Østerrike-Ungarn. Serbias regjering satt trygt i Beograd."
+                },
+                {
+                    "tekst": "Attentatmannen blir stanset, og tronarvingen kommer uskadd hjem.",
+                    "hvorfor": "Første forsøk bommet. Så kjørte bilen feil, og skytteren fikk en ny sjanse."
+                },
+                {
+                    "tekst": "Østerrike-Ungarn og Serbia blir venner etter drapet i Sarajevo.",
+                    "hvorfor": "Drapet ga Wien den grunnen de hadde ventet på for å gå mot Serbia."
+                },
+                {
+                    "tekst": "Skuddet i Sarajevo blir holdt hemmelig, og få får vite om det.",
+                    "hvorfor": "Nyheten sto i aviser over hele Europa i løpet av det samme døgnet."
+                }
+            ]
+        },
+        {
+            "tekst": "Østerrike-Ungarn krever oppgjør med Serbia, og Russland stiller seg bak dem.",
+            "link": "/historie/forste-verdenskrig/opptakt",
+            "feil": [
+                {
+                    "tekst": "Tyskland ber Østerrike-Ungarn om å holde fred med Serbia for nesten enhver pris.",
+                    "hvorfor": "Tyskland ga tvert imot en fullmakt: gjør det dere må, vi står bak dere."
+                },
+                {
+                    "tekst": "Russland lar Serbia klare seg selv, og holder hæren sin hjemme i ro.",
+                    "hvorfor": "Russland så på seg selv som beskytteren til de slaviske folkene."
+                },
+                {
+                    "tekst": "Østerrike-Ungarn godtar hele det serbiske svaret, og saken blir lagt helt død.",
+                    "hvorfor": "Kravene var laget for å bli avvist. Krigserklæringen kom 28. juli."
+                },
+                {
+                    "tekst": "Serbia angriper Østerrike-Ungarn først, uten å ha fått noen krav.",
+                    "hvorfor": "Kravene kom fra Wien. Serbia svarte, og godtok nesten alt sammen."
+                },
+                {
+                    "tekst": "En domstol avgjør striden mellom landene, og begge godtar dommen.",
+                    "hvorfor": "Det fantes ingen domstol med slik makt. Stormaktene avgjorde selv."
+                }
+            ]
+        },
+        {
+            "tekst": "Alliansene trekker land etter land inn, og på noen uker er Europa i krig.",
+            "link": "/historie/forste-verdenskrig/oversikt",
+            "scene": "folketog",
+            "feil": [
+                {
+                    "tekst": "Krigen holder seg mellom Østerrike-Ungarn og Serbia helt fram til året 1918.",
+                    "hvorfor": "Avtalene bandt landene sammen. Fem stormakter var med i løpet av en måned."
+                },
+                {
+                    "tekst": "Alliansene faller fra hverandre, og hvert land velger freden for seg selv.",
+                    "hvorfor": "Avtalene holdt. Det var nettopp derfor krigen ble så stor så fort."
+                },
+                {
+                    "tekst": "Storbritannia holder seg helt utenfor krigen på fastlandet i Europa.",
+                    "hvorfor": "Britene gikk inn da tyske soldater marsjerte inn i nøytrale Belgia."
+                },
+                {
+                    "tekst": "Italia går straks inn i krigen på Tysklands og Østerrikes side.",
+                    "hvorfor": "Italia ble utenfor i 1914, og kom inn på den andre siden i 1915."
+                },
+                {
+                    "tekst": "Folkeforbundet stanser krigen før den rekker å spre seg videre.",
+                    "hvorfor": "Folkeforbundet fantes ikke ennå. Det ble opprettet etter krigen, i 1920."
+                }
+            ]
+        },
+        {
+            "tekst": "Tyskland angriper Frankrike gjennom Belgia, men blir stanset ved Marne.",
+            "link": "/historie/forste-verdenskrig/krigens-lop",
+            "scene": "slagmark",
+            "feil": [
+                {
+                    "tekst": "Tyskland angriper Frankrike rett over grensen i øst, og vinner der raskt.",
+                    "hvorfor": "Grensen i øst var full av festninger. Derfor gikk planen om Belgia."
+                },
+                {
+                    "tekst": "Tyskland venter på et fransk angrep i stedet for selv å gå inn i Belgia.",
+                    "hvorfor": "Planen krevde fart. Tyskland ville slå Frankrike før Russland var klar."
+                },
+                {
+                    "tekst": "Belgia slipper de tyske soldatene igjennom uten å gjøre motstand.",
+                    "hvorfor": "Belgierne slåss og sinket tyskerne. Det kostet tyskerne dyrebare dager."
+                },
+                {
+                    "tekst": "Tyskland tar Paris i løpet av noen uker, akkurat slik planen sa.",
+                    "hvorfor": "Franskmennene stanset angrepet ved Marne, noen mil utenfor Paris."
+                },
+                {
+                    "tekst": "Frankrike gir opp med en gang, og krigen i vest er over til høsten.",
+                    "hvorfor": "Frankrike holdt stand i fire år. Fronten flyttet seg knapt av flekken."
+                }
+            ]
+        },
+        {
+            "tekst": "Hærene graver seg ned, og fronten står nesten stille i fire lange år.",
+            "link": "/historie/forste-verdenskrig/skyttergravskrig",
+            "scene": "skyttergrav",
+            "feil": [
+                {
+                    "tekst": "Hærene rykker fram noen mil hver uke, helt til krigen er avgjort.",
+                    "hvorfor": "Maskingevær og piggtråd stoppet alt. Noen hundre meter kostet tusenvis av liv."
+                },
+                {
+                    "tekst": "Soldatene slåss til hest i åpent lende, slik de gjorde i eldre kriger.",
+                    "hvorfor": "Hester var sjanseløse mot maskingevær. Soldatene måtte grave seg ned."
+                },
+                {
+                    "tekst": "Begge sider trekker seg tilbake og venter på fred hjemme i landet sitt.",
+                    "hvorfor": "Ingen turte å gi fra seg terreng. Da ville motstanderen bare rykke inn."
+                },
+                {
+                    "tekst": "Nye våpen gjør at angrep nesten alltid lykkes mot en gravd front.",
+                    "hvorfor": "De nye våpnene hjalp den som forsvarte seg, ikke den som angrep."
+                },
+                {
+                    "tekst": "Krigen flytter seg helt til sjøs, og på land skjer det ingenting mer.",
+                    "hvorfor": "Sjøkrigen kom i tillegg. Det var på land de fleste soldatene døde."
+                }
+            ]
+        },
+        {
+            "tekst": "Tyskland gir opp høsten 1918, og keiseren må flykte fra landet.",
+            "link": "/historie/forste-verdenskrig/tyske-revolusjon",
+            "scene": "krisetid",
+            "feil": [
+                {
+                    "tekst": "Tyskland vinner krigen etter at Russland gikk ut av den i 1917.",
+                    "hvorfor": "Tyskland vant i øst, men amerikanske soldater kom til vestfronten."
+                },
+                {
+                    "tekst": "Keiseren beholder tronen, og styrer Tyskland videre i mange år.",
+                    "hvorfor": "Han flyktet til Nederland. Tyskland ble republikk allerede i november."
+                },
+                {
+                    "tekst": "Krigen ender uavgjort, og grensene blir liggende akkurat som før.",
+                    "hvorfor": "Tyskland tapte og måtte gi fra seg land i både øst og vest."
+                },
+                {
+                    "tekst": "Tyskland blir erobret og delt mellom seierherrene med en gang.",
+                    "hvorfor": "Landet ble ikke delt i 1918. Det skjedde først etter neste verdenskrig."
+                },
+                {
+                    "tekst": "Soldatene slåss videre lenge etter at fredsavtalen er skrevet.",
+                    "hvorfor": "Våpnene tidde 11. november 1918. Da hadde soldatene fått nok."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,176 @@
+{
+    "id": "dampmaskinen",
+    "title": "Fra dampmaskin til fabrikkby",
+    "subjectId": "historie",
+    "topicId": "industriell-revolusjon",
+    "epoke": "Industrialiseringen",
+    "aar": 1765,
+    "kulisse": "industri",
+    "scene": "nyjord",
+    "ingress": "En maskin som aldri blir trøtt. Følg sporet fra kullgruva til den første fagforeningen.",
+    "start": "England på 1700-tallet: nesten alt arbeid gjøres av mennesker, dyr, vann og vind.",
+    "slutt": "På hundre år flyttet arbeidet fra åkeren til fabrikken, og hverdagen ble en helt annen.",
+    "ledd": [
+        {
+            "tekst": "Dampmaskinen pumper vannet ut av kullgruvene, så det kan hentes opp mer kull.",
+            "link": "/historie/industriell-revolusjon/dampmaskinen",
+            "scene": "gruve",
+            "feil": [
+                {
+                    "tekst": "Dampmaskinen blir først brukt til å trekke plogen over de store engelske åkrene.",
+                    "hvorfor": "De første maskinene var tunge som hus. De ble stående i ro ved gruva."
+                },
+                {
+                    "tekst": "Kullgruvene blir stengt, fordi dampmaskinen kan erstatte kullet helt og fullt.",
+                    "hvorfor": "Maskinen gikk på kull selv. Jo flere maskiner, jo mer kull måtte opp."
+                },
+                {
+                    "tekst": "Dampmaskinen gjør vannhjulet til den viktigste kraftkilden i landet.",
+                    "hvorfor": "Det motsatte skjedde. Dampen tok over jobben vannhjulet hadde hatt."
+                },
+                {
+                    "tekst": "Gruvearbeiderne mister jobben, siden maskinen graver ut kullet selv.",
+                    "hvorfor": "Maskinen pumpet bare vann. Kullet måtte fortsatt hakkes løs for hånd."
+                },
+                {
+                    "tekst": "Dampmaskinen blir brukt til å varme opp husene i de engelske byene.",
+                    "hvorfor": "Maskinen laget bevegelse, ikke varme i stua. Den drev pumper og hjul."
+                }
+            ]
+        },
+        {
+            "tekst": "Med kull som kraft kan fabrikkene bygges der eierne vil, ikke bare ved fossen.",
+            "link": "/historie/industriell-revolusjon/industriell-revolusjon",
+            "scene": "industriby",
+            "feil": [
+                {
+                    "tekst": "Fabrikkene må fortsatt ligge tett ved elva, for maskinene trenger rennende vann.",
+                    "hvorfor": "Dampmaskinen trengte kull og en kjele. Elva var ikke lenger nødvendig."
+                },
+                {
+                    "tekst": "Fabrikkene blir bygget langt ute på landet, unna både folk og havner.",
+                    "hvorfor": "De ble bygget der arbeidere, kull og kaier fantes, altså i og ved byene."
+                },
+                {
+                    "tekst": "Hver familie får sin egen maskin, og arbeidet fortsetter hjemme i stua som før.",
+                    "hvorfor": "Maskinene var store og dyre. Bare eiere med kapital hadde råd til dem."
+                },
+                {
+                    "tekst": "Fabrikkene blir mindre enn før, fordi maskinene tar så stor plass.",
+                    "hvorfor": "Fabrikkene ble større. Én maskin kunne drive mange vevstoler samtidig."
+                },
+                {
+                    "tekst": "Fabrikkene flytter til land uten kull, der arbeidskrafta er billigst.",
+                    "hvorfor": "Uten kull sto maskinene stille. Industrien vokste der kullet lå."
+                }
+            ]
+        },
+        {
+            "tekst": "Damp på skinner: jernbanen frakter kull, varer og folk langt raskere enn før.",
+            "link": "/historie/industriell-revolusjon/jernbanen",
+            "scene": "jernbane",
+            "feil": [
+                {
+                    "tekst": "Hest og kjerre er fortsatt raskest, så jernbanen blir aldri særlig mye brukt.",
+                    "hvorfor": "Et tog dro last ingen hest klarte, og det holdt farten time etter time."
+                },
+                {
+                    "tekst": "Jernbanen blir bare brukt til å frakte folk, aldri til varer, kull eller malm.",
+                    "hvorfor": "Godstogene tjente mest penger. Kull var den aller viktigste lasten."
+                },
+                {
+                    "tekst": "Kanalene tar over all transport, og skinnene blir revet opp igjen.",
+                    "hvorfor": "Kanalene tapte. Toget gikk raskere, også der det ikke fantes vann."
+                },
+                {
+                    "tekst": "Jernbanen gjør varene dyrere, siden billetten koster mer enn hesten.",
+                    "hvorfor": "Frakt ble mye billigere for hvert tonn. Derfor falt prisene på varer."
+                },
+                {
+                    "tekst": "Bare de rikeste får lov til å reise med toget de første tiårene.",
+                    "hvorfor": "Det kom egne, billige vogner. Vanlige folk reiste lenger enn før."
+                }
+            ]
+        },
+        {
+            "tekst": "Folk flytter fra bygda til fabrikkbyene for å få lønn utbetalt i penger.",
+            "link": "/historie/industriell-revolusjon/industriell-revolusjon",
+            "scene": "arbeiderby",
+            "feil": [
+                {
+                    "tekst": "Fabrikkeierne må hente arbeidere fra utlandet, for ingen vil flytte inn.",
+                    "hvorfor": "Folk strømmet til av seg selv. På gården fantes det verken jobb eller jord."
+                },
+                {
+                    "tekst": "Folk blir boende på gården og går til fabrikken hver eneste morgen.",
+                    "hvorfor": "Avstanden var altfor lang. Uten buss eller bil måtte du bo i byen."
+                },
+                {
+                    "tekst": "Byene krymper, fordi de nye fabrikkene ligger ute på landsbygda.",
+                    "hvorfor": "Byene eksploderte. Manchester ble tidoblet på under hundre år."
+                },
+                {
+                    "tekst": "Bøndene får høyere priser for kornet, og velger derfor å bli på gårdene.",
+                    "hvorfor": "Nye maskiner gjorde at gården trengte færre folk enn den hadde før."
+                },
+                {
+                    "tekst": "Fabrikkene flytter ut til folket i stedet for at folket flytter inn.",
+                    "hvorfor": "Fabrikken måtte ligge nær kull og kai. Da måtte folkene komme dit."
+                }
+            ]
+        },
+        {
+            "tekst": "Lønna til én voksen strekker ikke til, så barna må også ut i arbeid.",
+            "link": "/historie/industriell-revolusjon/barnearbeid",
+            "feil": [
+                {
+                    "tekst": "Barna får gå på skolen, siden fabrikklønna holder til hele familien.",
+                    "hvorfor": "Lønna dekket knapt mat og husleie. Skole var noe de færreste hadde råd til."
+                },
+                {
+                    "tekst": "Fabrikkene nekter å ansette barn, fordi arbeidet er altfor tungt.",
+                    "hvorfor": "Barn var billige og små nok til å krype inn under maskinene."
+                },
+                {
+                    "tekst": "Barna arbeider bare noen timer i uka, og er ledige resten av tiden sin.",
+                    "hvorfor": "Dagene var på tolv timer eller mer, seks dager i uka, året rundt."
+                },
+                {
+                    "tekst": "Foreldrene tjener så godt at mødrene kan slutte helt å arbeide.",
+                    "hvorfor": "Både mor og barn måtte tjene penger for at familien skulle klare seg."
+                },
+                {
+                    "tekst": "Barna får den samme lønna som voksne for det arbeidet de gjør.",
+                    "hvorfor": "Et barn kostet en brøkdel av en voksen. Det var derfor de ble ansatt."
+                }
+            ]
+        },
+        {
+            "tekst": "Arbeiderne går sammen i fagforeninger og krever kortere dager og bedre lønn.",
+            "link": "/samfunnskunnskap/arbeidsliv/fagforeninger",
+            "scene": "folketog",
+            "feil": [
+                {
+                    "tekst": "Arbeiderne sier opp i fabrikken og flytter tilbake til de gamle gårdene sine.",
+                    "hvorfor": "Gårdene var borte eller opptatt. Fabrikken var den eneste inntekten de hadde."
+                },
+                {
+                    "tekst": "Fabrikkeierne setter ned arbeidstiden helt frivillig, uten at noen krever det.",
+                    "hvorfor": "Kortere dager kostet eieren penger. Endringene kom etter streik og lovkrav."
+                },
+                {
+                    "tekst": "Staten forbyr alt fabrikkarbeid, og industrien stanser helt opp.",
+                    "hvorfor": "Staten stanset ikke industrien. Den kom med lover om alder og timer."
+                },
+                {
+                    "tekst": "Hver arbeider forhandler alene med eieren, og det gir raskt resultat.",
+                    "hvorfor": "Alene sto du svakt. Det fantes alltid en annen som ville ta jobben din."
+                },
+                {
+                    "tekst": "Arbeiderne krever å få eie maskinene selv, og eierne sier ja til det.",
+                    "hvorfor": "Kravene handlet om lønn, timer og sikkerhet, ikke om å overta fabrikken."
+                }
+            ]
+        }
+    ]
+}

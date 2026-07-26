@@ -1,0 +1,176 @@
+{
+    "id": "versailles-til-hitler",
+    "title": "Fra Versailles til Hitler",
+    "subjectId": "historie",
+    "topicId": "mellomkrigstiden",
+    "epoke": "Mellomkrigstiden",
+    "aar": 1919,
+    "kulisse": "moderne",
+    "scene": "versailles",
+    "ingress": "En fredsavtale, et børskrakk og seks millioner arbeidsledige. Følg sporet fram til 1933.",
+    "start": "Tyskland i 1919: krigen er tapt, og seierherrene skriver fredsvilkårene helt alene.",
+    "slutt": "Fjorten år etter fredsavtalen sto en diktator med all makt i Tyskland.",
+    "ledd": [
+        {
+            "tekst": "Versaillestraktaten gir Tyskland skylden for krigen og en enorm regning.",
+            "link": "/historie/mellomkrigstiden/tyskland",
+            "feil": [
+                {
+                    "tekst": "Versaillestraktaten gir Tyskland tilbake alle koloniene landet hadde før.",
+                    "hvorfor": "Koloniene ble tatt fra Tyskland og fordelt mellom seierherrene."
+                },
+                {
+                    "tekst": "Tyskland får være med og skrive fredsavtalen på like fot med de andre landene.",
+                    "hvorfor": "Tyskerne fikk ikke forhandle. De måtte skrive under på det som var bestemt."
+                },
+                {
+                    "tekst": "Seierherrene lar Tyskland slippe å betale noe som helst etter krigen.",
+                    "hvorfor": "Erstatningen var enorm, og skulle betales i mange tiår framover."
+                },
+                {
+                    "tekst": "Tyskland får beholde en hær like stor som den de hadde under krigen.",
+                    "hvorfor": "Hæren ble satt til 100 000 mann, uten stridsvogner, fly og ubåter."
+                },
+                {
+                    "tekst": "Seierherrene deler Tyskland i to stater med hver sin regjering.",
+                    "hvorfor": "Tyskland ble ikke delt i 1919. Det skjedde først etter neste verdenskrig."
+                }
+            ]
+        },
+        {
+            "tekst": "Tyskland trykker flere sedler for å betale, og pengene mister verdien.",
+            "link": "/historie/mellomkrigstiden/tyskland",
+            "scene": "krisetid",
+            "feil": [
+                {
+                    "tekst": "Tyskland nekter å betale, og saken ender med at hele kravet blir slettet.",
+                    "hvorfor": "Kravet sto ved lag. Da Tyskland stanset, rykket franske soldater inn i Ruhr."
+                },
+                {
+                    "tekst": "Prisene faller kraftig i Tyskland, og alle får mer for pengene sine.",
+                    "hvorfor": "Prisene eksploderte. Et brød kunne koste milliarder mark høsten 1923."
+                },
+                {
+                    "tekst": "Tyskland betaler alt sammen med gull, uten å trykke opp nye sedler.",
+                    "hvorfor": "Gullet var brukt opp under krigen. Det som var igjen, dekket ingenting."
+                },
+                {
+                    "tekst": "De som hadde spart penger i banken, blir rike av den raske prisveksten.",
+                    "hvorfor": "Sparepengene ble til ingenting. Det var sparerne som tapte aller mest."
+                },
+                {
+                    "tekst": "Andre land gir Tyskland gull, så sedlene holder verdien sin likevel.",
+                    "hvorfor": "Ingen ga bort gull. Det var Tyskland som skyldte penger til de andre."
+                }
+            ]
+        },
+        {
+            "tekst": "Amerikanske lån får tysk økonomi på fote igjen, og noen gode år følger.",
+            "link": "/historie/mellomkrigstiden/oversikt",
+            "scene": "bygate",
+            "feil": [
+                {
+                    "tekst": "Tyskland klarer seg helt uten hjelp utenfra, og bygger seg opp på egen hånd.",
+                    "hvorfor": "Uten lån fra USA hadde verken erstatningen eller industrien latt seg betale."
+                },
+                {
+                    "tekst": "Frankrike gir Tyskland store pengegaver for å få landet på fote igjen.",
+                    "hvorfor": "Frankrike krevde penger av Tyskland. Det var USA som lånte dem ut."
+                },
+                {
+                    "tekst": "De gode årene varer helt fram til andre verdenskrig bryter ut.",
+                    "hvorfor": "De varte i fem år. Krakket i 1929 gjorde slutt på hele oppgangen."
+                },
+                {
+                    "tekst": "Tyskland låner penger av Sovjetunionen for å komme i gang igjen.",
+                    "hvorfor": "Sovjet hadde selv lite penger. Kapitalen kom fra amerikanske banker."
+                },
+                {
+                    "tekst": "Ingen andre land vil handle med Tyskland, og krisen fortsetter uten stans.",
+                    "hvorfor": "Handelen tok seg opp. Midten av 1920-tallet var de rolige gylne årene."
+                }
+            ]
+        },
+        {
+            "tekst": "Børsen i New York krakker i 1929, og lånene til Tyskland blir krevd tilbake.",
+            "link": "/historie/mellomkrigstiden/borskrakk",
+            "scene": "finansby",
+            "feil": [
+                {
+                    "tekst": "Børskrakket i New York rammer bare amerikanere, og Europa merker lite til det.",
+                    "hvorfor": "Verden hang sammen gjennom lån og handel. Krisen spredte seg på måneder."
+                },
+                {
+                    "tekst": "Amerikanske banker låner ut enda mer penger til Europa etter krakket i 1929.",
+                    "hvorfor": "Bankene trengte pengene selv. De krevde inn lånene i stedet for å gi nye."
+                },
+                {
+                    "tekst": "Krakket i New York gjør at Tyskland får slettet all gjelden sin.",
+                    "hvorfor": "Gjelden ble stående. Betalingen ble bare utsatt noen få år."
+                },
+                {
+                    "tekst": "Verdenshandelen vokser raskt etter 1929, og alle land tjener på den.",
+                    "hvorfor": "Handelen falt som en stein. Land etter land stengte grensene med toll."
+                },
+                {
+                    "tekst": "Krakket skjer i Berlin, og børsen i New York blir ikke rammet.",
+                    "hvorfor": "Det begynte på Wall Street i New York, i oktober 1929."
+                }
+            ]
+        },
+        {
+            "tekst": "Hver tredje tysker står uten arbeid, og mange mister troen på demokratiet.",
+            "link": "/historie/mellomkrigstiden/tyskland",
+            "scene": "krisetid",
+            "feil": [
+                {
+                    "tekst": "Arbeidsledigheten holder seg lav, og tyskerne er trygge på framtiden sin igjen.",
+                    "hvorfor": "Rundt seks millioner tyskere var uten arbeid da krisen var på sitt verste."
+                },
+                {
+                    "tekst": "Regjeringen skaffer arbeid til alle med en gang krisen setter inn.",
+                    "hvorfor": "Regjeringen kuttet i stedet i utgiftene. Da ble ledigheten enda verre."
+                },
+                {
+                    "tekst": "De arbeidsledige samler seg om partiene på midten i tysk politikk.",
+                    "hvorfor": "Partiene på midten mistet velgere. Ytterpartiene vokste i hvert valg."
+                },
+                {
+                    "tekst": "Krisen rammer bare de rikeste, som taper formuene sine på børsen.",
+                    "hvorfor": "Det var arbeidsfolk uten jobb og uten trygd som ble hardest rammet."
+                },
+                {
+                    "tekst": "Tyskerne får krisehjelp fra Folkeforbundet, og krisen går raskt over igjen.",
+                    "hvorfor": "Folkeforbundet hadde verken penger eller makt til å løse en verdenskrise."
+                }
+            ]
+        },
+        {
+            "tekst": "Nazistene lover arbeid og orden, og i 1933 får Hitler makten i Tyskland.",
+            "link": "/historie/mellomkrigstiden/tyskland",
+            "scene": "fakkeltog",
+            "feil": [
+                {
+                    "tekst": "Nazistene taper hvert eneste valg, og partiet blir borte fra tysk politikk.",
+                    "hvorfor": "De ble største parti i 1932. Krisen ga dem millioner av nye velgere."
+                },
+                {
+                    "tekst": "Hitler tar makten i et blodig militærkupp, uten at det holdes valg.",
+                    "hvorfor": "Han ble utnevnt til rikskansler på lovlig vis, av president Hindenburg."
+                },
+                {
+                    "tekst": "Nazistene vinner rent flertall, med over halvparten av alle stemmene bak seg.",
+                    "hvorfor": "De fikk aldri mer enn 38 prosent i et fritt valg. De trengte hjelp for å nå makten."
+                },
+                {
+                    "tekst": "Hitler blir valgt til president direkte av det tyske folket i 1933.",
+                    "hvorfor": "Han stilte mot Hindenburg i 1932, og tapte. Kanslerposten fikk han av andre."
+                },
+                {
+                    "tekst": "De andre partiene går sammen og holder nazistene ute av regjeringen.",
+                    "hvorfor": "De klarte ikke å samarbeide. Konservative trodde de kunne styre Hitler."
+                }
+            ]
+        }
+    ]
+}
