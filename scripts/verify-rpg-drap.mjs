@@ -16,7 +16,10 @@ import { entreNordvik, stengHmr } from './lib/rpg-testside.mjs';
 
 mkdirSync('.screenshots', { recursive: true });
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1366, height: 768 }, reducedMotion: 'no-preference' });
+const page = await browser.newPage({
+    viewport: { width: 1366, height: 768 },
+    reducedMotion: 'no-preference',
+});
 const feil = [];
 page.on('pageerror', (e) => feil.push(String(e)));
 page.on('console', (m) => m.type() === 'error' && feil.push(m.text()));
@@ -28,10 +31,14 @@ await page.waitForTimeout(3000);
 const cdp = await page.context().newCDPSession(page);
 const skudd = async (navn, i) => {
     const { data } = await cdp.send('Page.captureScreenshot', { format: 'png' });
-    writeFileSync(`.screenshots/${navn}-${String(i).padStart(2, '0')}.png`, Buffer.from(data, 'base64'));
+    writeFileSync(
+        `.screenshots/${navn}-${String(i).padStart(2, '0')}.png`,
+        Buffer.from(data, 'base64')
+    );
 };
 
-const liv = async () => Number(await (await page.$('[aria-label="Liv"]')).getAttribute('aria-valuenow'));
+const liv = async () =>
+    Number(await (await page.$('[aria-label="Liv"]')).getAttribute('aria-valuenow'));
 // XP gis i drapsøyeblikket. Sølv krever at hun plukker det opp, så det er
 // ubrukelig som signal.
 const xp = async () => {
@@ -82,10 +89,14 @@ for (let runde = 0; runde < 60 && !drept; runde++) {
 if (!drept) console.log('ingen drap fanget');
 
 // Sjekk at tiden er tilbake til normalt etterpå. Saktefilmen skalerer vår egen
-// delta, og pusten er en presis klokke: garden drenerer 6 i sekundet. Men den
-// målingen holder bare i fred - blokker koster 8-18 pust hver, og i en pågående
-// kamp drukner de signalet. Derfor løper hun først vekk: eleven har fart 96,
-// fiendene 42-70, så hun kommer unna.
+// delta, og pusten er en presis klokke: garden drenerer 6 i sekundet.
+//
+// Men den målingen holder bare i fred, og fred er sjelden vare i Nordvik: et
+// blokkert slag koster 8-18 pust i tillegg, og da drukner signalet. Å løpe fra
+// dem var det første forsøket, men fiendene fulgte etter, og målingen ble hoppet
+// over i fire av fem kjøringer. Nå ryddes brettet i stedet: fiendene flyttes til
+// motsatt hjørne og legges i dvale, og spawnklokka settes langt fram. Det er et
+// inngrep i verden, men det er den eneste måten å måle en klokke på uten støy.
 const pust = async () => {
     const el = await page.$('[aria-label="Pust"]');
     return el ? Number(await el.getAttribute('aria-valuenow')) : null;
@@ -101,9 +112,20 @@ if (await page.$('button:has-text("Reis deg")')) {
     await page.waitForTimeout(1800);
 }
 
-await page.keyboard.down('a');
-await page.waitForTimeout(5000);
-await page.keyboard.up('a');
+await page.evaluate(() => {
+    const scene = window.__rpg.scene.getScene('nordvik');
+    const kart = scene.kart;
+    for (const f of scene.fiendeSystem.alle()) {
+        if (f.dodd) continue;
+        f.sprite.setPosition(8, (kart.hoyde - 2) * 16);
+        f.sprite.setVelocity(0, 0);
+        f.tilstand = 'sover';
+        f.timer = 999999;
+    }
+    // Ingen nye på en stund, og eleven settes i motsatt hjørne.
+    scene.fiendeSystem.spawnTimer = 999999;
+    scene.helt.sprite.setPosition((kart.bredde - 2) * 16, 24);
+});
 
 // Vent til hun har fred: livet står stille og pusten er full.
 let rolig = false;
@@ -135,8 +157,16 @@ if (!rolig) {
     // Dør eleven under målingen, forsvinner HUD-en og begge avlesningene blir
     // null. Da er `f - e` null-null = 0, som leser som «tiden står stille» -
     // en falsk alarm som så helt ekte ut.
+    // Er skjoldet brukket, kan garden ikke reises i det hele tatt, og da
+    // drenerer den 0 - som leser som at tiden står stille. Ikke en feil i
+    // klokka, men i forutsetningen for å lese den.
+    const skjold = await page.evaluate(
+        () => window.__rpg.scene.getScene('nordvik').helt.kampSnapshot().skjoldHelse
+    );
     if (f === null || e === null || lFor === null || lEtter === null) {
         console.log('tidssjekk hoppet over - eleven døde under målingen');
+    } else if (skjold <= 0) {
+        console.log(`tidssjekk hoppet over - skjoldet er brukket, garden kan ikke reises`);
     } else if (lFor !== lEtter) {
         console.log(
             `tidssjekk hoppet over - eleven ble truffet under målingen (${drenert} pust, liv ${lFor} -> ${lEtter})`

@@ -48,7 +48,7 @@ const stillDegVedBossen = () =>
         const b = scene.fiendeSystem.bossen;
         // Rett under den, så «opp» er riktig vei. Slagsektoren er smal, og et
         // slag i feil retning treffer ingenting.
-        scene.spiller.setPosition(b.sprite.x, b.sprite.y + 14);
+        scene.helt.sprite.setPosition(b.sprite.x, b.sprite.y + 14);
     });
 
 /** Slår til dysten åpner seg. Returnerer om den kom. */

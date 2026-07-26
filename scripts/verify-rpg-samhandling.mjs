@@ -31,7 +31,7 @@ const stillDegVed = async (type, id) =>
             const scene = window.__rpg?.scene.getScene('nordvik');
             const mal = scene?.samhandling?.mal(type, id);
             if (!mal) return null;
-            scene.spiller.setPosition(mal.x, mal.y + 10);
+            scene.helt.sprite.setPosition(mal.x, mal.y + 10);
             return mal.navn;
         },
         [type, id]

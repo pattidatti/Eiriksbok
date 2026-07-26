@@ -100,7 +100,11 @@ await page.keyboard.up('Shift');
 
 // ── Gjenvinning: skal ta seg opp igjen etter hvilepausen ───────────────────
 await page.waitForTimeout(2600);
-sjekk('pusten tar seg opp igjen i ro', (await pust()) > pGard + 10, `${pGard} -> ${await pust()}`);
+// Kravet er «pusten kommer tilbake», ikke et bestemt antall poeng. Drenerte
+// garden bare 10, kan gjenvinningen umulig bli 11 - da slo den gamle
+// `> pGard + 10`-testen ut på en helt normal runde.
+const pRo = await pust();
+sjekk('pusten tar seg opp igjen i ro', pRo > pGard && pRo >= 99, `${pGard} -> ${pRo}`);
 
 // ── Kostnadene ─────────────────────────────────────────────────────────────
 await maal('slaget', 12, () => trykk('Space'));
@@ -136,7 +140,11 @@ await page.waitForTimeout(8000);
 const pHold = await pust();
 await page.screenshot({ path: `${UT}/kamp-4-langt-hold.png` });
 if ((await liv()) === lHoldFor) {
-    sjekk('garden drenerer jevnt gjennom 8 sekunder', pHold <= pHoldFor - 40, `${pHoldFor} -> ${pHold}`);
+    sjekk(
+        'garden drenerer jevnt gjennom 8 sekunder',
+        pHold <= pHoldFor - 40,
+        `${pHoldFor} -> ${pHold}`
+    );
 } else {
     console.log('HOPP  langt hold - avbrutt av kamp');
 }
