@@ -9,13 +9,13 @@
     "details": [
         "Sommeren 1787 møttes 55 menn i Philadelphia for å bygge en helt ny stat.",
         "De delte makten i tre for at ingen skulle kunne bli en ny konge.",
-        "Grunnloven fra 1787 er den eldste skrevne grunnloven som fortsatt er i bruk."
+        "Grunnloven fra 1787 er den eldste grunnloven som fortsatt er i bruk."
     ],
-    "externalUrl": "https://snl.no/USAs_grunnlov",
+    "externalUrl": "https://snl.no/USAs_politiske_system",
     "content": [
         {
             "type": "text",
-            "content": "Sommeren 1787 var det kokvarmt i Philadelphia. Inne i en stor sal satt 55 menn med vinduene lukket, enda de svettet gjennom skjortene. De hadde stengt vinduene med vilje, for ingen utenfor skulle høre hva de snakket om. Krigen mot Storbritannia var vunnet. Amerikanerne hadde beseiret en konge og fått friheten sin. Men nå holdt det nye landet på å falle fra hverandre, og mennene i salen skulle finne ut hvordan de skulle bygge en stat som varte."
+            "content": "Sommeren 1787 var det kokvarmt i Philadelphia. Inne i en stor sal satt 55 menn med vinduene lukket, enda de svettet gjennom skjortene (Beeman, u.å.). De hadde stengt vinduene med vilje og lovet hverandre taushet, for ingenting av det som ble sagt i salen, skulle ut til folk (National Archives and Records Administration, 2023). Krigen mot Storbritannia var vunnet. Amerikanerne hadde beseiret en konge og fått friheten sin. Men nå holdt det nye landet på å falle fra hverandre, og mennene i salen skulle finne ut hvordan de skulle bygge en stat som varte."
         },
         {
             "type": "image",
@@ -29,15 +29,15 @@
         },
         {
             "type": "text",
-            "content": "Etter [uavhengighetskrigen](/historie/den-amerikanske-revolusjonen/uavhengighetskrigen) var USA egentlig tretten små stater som knapt hang sammen. Hver delstat lagde sine egne regler og trykte sine egne penger. Det fantes ingen sterk felles regjering. Landet hadde ingen god måte å kreve inn skatt på, så det var nesten blakk. Soldatene som hadde vunnet krigen, ventet fortsatt på lønna si."
+            "content": "Etter [uavhengighetskrigen](/historie/den-amerikanske-revolusjonen/uavhengighetskrigen) var USA egentlig tretten små stater som knapt hang sammen. Hver delstat lagde sine egne regler, og delstatene styrket makten sin på bekostning av fellesskapet (Godbolt, 2026). Det fantes ingen sterk felles regjering. Den kunne verken kreve inn skatt eller styre handelen (Beeman, u.å.; National Archives and Records Administration, 2023). Samtidig satt landet med en stor krigsgjeld det ikke klarte å betale ned (Godbolt, 2026)."
         },
         {
             "type": "text",
-            "content": "Mange var redde for at det hele skulle rakne. Hvis delstatene begynte å krangle for alvor, kunne de ende opp i krig med hverandre. Da ville drømmen om et fritt USA være over nesten før den hadde begynt. Noe måtte gjøres, og det raskt."
+            "content": "Mange var redde for at det hele skulle rakne. Landet var i økonomisk krise, og det var uro i samfunnet (Godbolt, 2026). Hvis delstatene begynte å krangle for alvor, kunne de ende opp i krig med hverandre. Da ville drømmen om et fritt USA være over nesten før den hadde begynt. Noe måtte gjøres, og det raskt."
         },
         {
             "type": "text",
-            "content": "Vinteren før møtet hadde fattige bønder i delstaten Massachusetts gjort opprør. Mange av dem satt i dyp gjeld og var redde for å miste gårdene sine, og til slutt grep de til våpen. Den svake fellesstaten hadde nesten ingen hær å stoppe dem med. Opprøret skremte mange, og de skjønte at landet trengte en fastere styring hvis det skulle overleve."
+            "content": "Vinteren før møtet hadde fattige bønder i delstaten Massachusetts gjort opprør. Mange av dem satt i dyp gjeld og var redde for å miste gårdene sine, og høye skatter gjorde det bare verre. Til slutt grep de til våpen. I januar 1787 gikk rundt 1200 menn under Daniel Shays til angrep på et våpenlager (Encyclopaedia Britannica, u.å.). Opprøret skremte mange, og det ble et sterkt argument for at landet trengte en fastere og mer samlet styring (Encyclopaedia Britannica, u.å.). Uroen var med på å framskynde møtet i Philadelphia (Beeman, u.å.)."
         },
         {
             "type": "header",
@@ -49,7 +49,7 @@
         },
         {
             "type": "text",
-            "content": "Løsningen fant de hos opplysningstenkerne i Europa. Den franske filosofen [Montesquieu](/krle/filosofi/montesquieu) hadde skrevet at frihet bare er trygg når makten deles opp. Så lenge én person eller én gruppe sitter med all makten, kan de bli tyranner. Men deler du makten i flere deler som må passe på hverandre, blir det vanskelig for noen å ta over alene. Denne ideen ble selve ryggraden i den nye grunnloven."
+            "content": "Løsningen fant de hos opplysningstenkerne i Europa. Den franske filosofen [Montesquieu](/krle/filosofi/montesquieu) skrev alt i 1748 at makten må deles opp, fordi den som har makt, gjerne misbruker den (Thorsen, 2024). Så lenge én person eller én gruppe sitter med all makten, kan de bli tyranner. Men deler du makten i flere deler som må passe på hverandre, blir det vanskelig for noen å ta over alene. Denne ideen ble selve ryggraden i den nye grunnloven (Berg & Notaker, 2025)."
         },
         {
             "type": "component",
@@ -64,7 +64,7 @@
         },
         {
             "type": "text",
-            "content": "Grunnloven delte makten i staten i tre deler. Vi kaller dem de tre statsmaktene. Hver del har sin egen jobb, og ingen av dem kan gjøre alt alene."
+            "content": "Grunnloven delte makten i staten i tre deler. Vi kaller dem de tre statsmaktene. Hver del har sin egen jobb, og ingen av dem kan gjøre alt alene (Berg & Notaker, 2025)."
         },
         {
             "type": "list",
@@ -76,11 +76,11 @@
         },
         {
             "type": "text",
-            "content": "Tenk deg at Kongressen vil lage en ny lov. Først må et flertall av de folkevalgte stemme ja. Så må presidenten skrive under. Sier presidenten nei, kan Kongressen likevel få loven vedtatt hvis et stort flertall står fast. Og skulle loven bryte grunnloven, kan Høyesterett stoppe den etterpå. Én lov må altså gjennom flere hender før den gjelder."
+            "content": "Tenk deg at Kongressen vil lage en ny lov. Først må et flertall av de folkevalgte stemme ja. Så må presidenten skrive under. Sier presidenten nei, kan Kongressen likevel få loven vedtatt hvis to tredjedeler i begge kamre står fast (National Archives and Records Administration, 2025). Og skulle loven bryte grunnloven, kan Høyesterett stoppe den etterpå (Berg & Notaker, 2025). Én lov må altså gjennom flere hender før den gjelder."
         },
         {
             "type": "text",
-            "content": "Det smarte er at de tre kan stoppe hverandre. Presidenten kan si nei til en lov fra Kongressen. Kongressen bestemmer over pengene og kan avsette en president som går for langt. Høyesterett kan kjenne en lov ugyldig. Dette samspillet kalles maktfordeling, og det er hele hjertet i den amerikanske grunnloven. Ingen av de tre kan bli konge, fordi de andre to alltid står klare til å stanse dem."
+            "content": "Det smarte er at de tre kan stoppe hverandre. Presidenten kan si nei til en lov fra Kongressen. Kongressen bestemmer over pengene, og en president som gjør noe alvorlig galt, kan stilles for riksrett og fjernes fra vervet (National Archives and Records Administration, 2025). Høyesterett kan kjenne en lov ugyldig. Dette samspillet kalles maktfordeling, og tanken bak er enkel: makt skal stanse makt (Thorsen, 2024). Ingen av de tre kan bli konge, fordi de andre to alltid står klare til å stanse dem."
         },
         {
             "type": "image",
@@ -105,18 +105,18 @@
         },
         {
             "type": "text",
-            "content": "Makten ble ikke bare delt mellom de tre statsmaktene. Den ble også delt mellom den felles staten og de enkelte delstatene. Den felles staten fikk ansvar for de store tingene, som hær, penger og avtaler med andre land. Delstatene fikk fortsatt bestemme mye selv, som skoler og lokale lover. Denne todelingen kalles føderalisme. Slik følte hver delstat at den fortsatt hadde noe å si, samtidig som landet stod samlet utad."
+            "content": "Makten ble ikke bare delt mellom de tre statsmaktene. Den ble også delt mellom den felles staten og de enkelte delstatene. Den felles staten fikk ansvar for de store tingene, som hær, penger og avtaler med andre land. Delstatene bestemmer fortsatt selv i alt grunnloven ikke uttrykkelig legger til fellesstaten (Berg & Notaker, 2025). Denne todelingen kalles føderalisme. Slik følte hver delstat at den fortsatt hadde noe å si, samtidig som landet stod samlet utad."
         },
         {
             "type": "text",
-            "content": "Grunnloven begynte med tre ord som ble berømte: «Vi, folket». Med det mente de at makten kom nedenfra, fra innbyggerne selv, ikke ovenfra fra en konge av Guds nåde. Det var en helt ny tanke om hvem en stat egentlig tilhører."
+            "content": "Grunnloven begynte med tre ord som ble berømte: «Vi, folket» - «We the People» (National Archives and Records Administration, 2025). Med det mente de at makten kom nedenfra, fra innbyggerne selv, ikke ovenfra fra en konge av Guds nåde. Det var en helt ny tanke om hvem en stat egentlig tilhører."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Verdens eldste i bruk",
-                "content": "Grunnloven fra 1787 er den eldste skrevne grunnloven som fortsatt gjelder i dag. Da Norge skulle lage sin egen [grunnlov i 1814](/samfunnskunnskap/styringsformer/grunnloven), var den amerikanske et av forbildene. Bare noen få år etterpå kom også den franske [erklæringen om menneskerettigheter](/historie/den-franske-revolusjon/menneskerettighetserklaeringen)."
+                "content": "Grunnloven fra 1787 er den eldste grunnloven som fortsatt gjelder i dag (Berg & Gisle, 2024). Da Norge skulle lage sin egen [grunnlov i 1814](/samfunnskunnskap/styringsformer/grunnloven), hentet riksforsamlingen på Eidsvoll konkrete regler fra flere utenlandske grunnlover - først og fremst den franske fra 1791, den amerikanske fra 1787 og den svenske fra 1809 (Holmøyvik, 2026). Bare noen få år etter 1787 kom også den franske [erklæringen om menneskerettigheter](/historie/den-franske-revolusjon/menneskerettighetserklaeringen)."
             }
         },
         {
@@ -129,7 +129,7 @@
         },
         {
             "type": "text",
-            "content": "Det tok lang tid og mye kamp før flere fikk del i rettighetene. Kort etter 1787 la de til de ti første tilleggene til grunnloven. De kalles rettighetserklæringen og verner om ting som ytringsfrihet og religionsfrihet. Siden er grunnloven endret mange ganger, blant annet for å avskaffe slaveriet og gi flere stemmerett. Grunnloven var altså ikke ferdig i 1787. Den var en begynnelse som senere generasjoner måtte kjempe for å gjøre bedre."
+            "content": "Det tok lang tid og mye kamp før flere fikk del i rettighetene. I 1791 la de til de ti første tilleggene til grunnloven (Berg & Notaker, 2025). De kalles rettighetserklæringen og verner om ting som ytringsfrihet og religionsfrihet. Siden er grunnloven endret flere ganger: i 1865 ble slaveriet avskaffet, og i 1920 fikk kvinner stemmerett (Berg & Notaker, 2025). Grunnloven var altså ikke ferdig i 1787. Den var en begynnelse som senere generasjoner måtte kjempe for å gjøre bedre."
         },
         {
             "type": "image",
@@ -215,7 +215,26 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Beeman, R. R. (u.å.). *The Constitutional Convention of 1787: A revolution in government*. National Constitution Center. Hentet 26.07.2026 fra [constitutioncenter.org](https://constitutioncenter.org/the-constitution/white-papers/the-constitutional-convention-of-1787-a-revolution-in-government)",
+                    "Berg, O. T. & Gisle, J. (2024). *Grunnlov*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/grunnlov](https://snl.no/grunnlov)",
+                    "Berg, O. T. & Notaker, H. (2025). *USAs politiske system*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/USAs_politiske_system](https://snl.no/USAs_politiske_system)",
+                    "Encyclopaedia Britannica. (u.å.). *Shays's Rebellion*. Hentet 26.07.2026 fra [britannica.com](https://www.britannica.com/event/Shayss-Rebellion)",
+                    "Godbolt, J. (2026). *USAs historie 1783-1860*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/USAs_historie_1783-1860](https://snl.no/USAs_historie_1783%E2%80%931860)",
+                    "Holmøyvik, E. (2026). *Grunnlova*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Grunnlova](https://snl.no/Grunnlova)",
+                    "National Archives and Records Administration. (2023). *The Constitution: How did it happen?* Hentet 26.07.2026 fra [archives.gov](https://www.archives.gov/founding-docs/constitution/how-did-it-happen)",
+                    "National Archives and Records Administration. (2025). *The Constitution of the United States: A transcription*. Hentet 26.07.2026 fra [archives.gov](https://www.archives.gov/founding-docs/constitution-transcript)",
+                    "Thorsen, D. E. (2024). *Maktfordelingsprinsippet*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/maktfordelingsprinsippet](https://snl.no/maktfordelingsprinsippet)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-26T00:00:00Z",
+    "factChecked": "2026-07-26"
 }
