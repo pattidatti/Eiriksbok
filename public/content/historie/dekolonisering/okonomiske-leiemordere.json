@@ -12,7 +12,7 @@
         "John Perkins og oppskriften på usynlig kontroll.",
         "Iran 1953, Chile 1973 og gjeldsfellen som fortsatt brukes."
     ],
-    "externalUrl": "https://snl.no/nykolonialisme",
+    "externalUrl": "https://snl.no/neo-kolonialisme",
     "timeline": [
         {
             "year": "1953",
@@ -45,18 +45,18 @@
         },
         {
             "type": "text",
-            "content": "Perkins ble født i USA i 1945. På 1970-tallet fikk han jobb i et stort konsulentselskap. Tittelen hans var 'sjeføkonom', og oppgaven hørtes uskyldig ut: han skulle reise til fattige land og regne ut hvor mye de ville tjene på å bygge veier, kraftverk og havner."
+            "content": "Perkins er amerikaner. På 1970-tallet fikk han jobb i et stort amerikansk konsulentselskap. Tittelen hans var 'sjeføkonom', og oppgaven hørtes uskyldig ut: han skulle reise til fattige land og regne ut hvor mye de ville tjene på å bygge veier, kraftverk og havner (Perkins, 2004)."
         },
         {
             "type": "text",
-            "content": "Men Perkins forteller at jobben egentlig var noe annet. Han skulle lage rapporter med tall som var blåst opp med vilje, slik at landene tok opp lån de umulig kunne betale tilbake. I 2004 ga han ut boken 'Confessions of an Economic Hit Man', der han fortalte om alt han hadde vært med på. Boken ble en verdensbestselger."
+            "content": "Men Perkins forteller at jobben egentlig var noe annet. Han skulle lage rapporter med tall som var blåst opp med vilje, slik at landene tok opp lån de umulig kunne betale tilbake. I 2004 ga han ut boken 'Confessions of an Economic Hit Man', der han fortalte om alt han hadde vært med på (Perkins, 2004). Boken ble en bestselger."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Vi blåste opp tallene for å få landene til å låne enorme summer. Når de ikke kunne betale, eide vi dem.",
-                "author": "John Perkins (slik han beskriver jobben)"
+                "text": "Økonomiske leiemordere er høyt betalte fagfolk som lurer land over hele verden for tusenvis av milliarder dollar.",
+                "author": "John Perkins, Confessions of an Economic Hit Man (2004)"
             }
         },
         {
@@ -103,11 +103,11 @@
         },
         {
             "type": "text",
-            "content": "Et av de tydeligste eksemplene skjedde i Iran. Landet hadde mye olje, men et britisk selskap tok nesten hele fortjenesten. I 1951 valgte iranerne en ny leder, Mohammad Mossadeq, som bestemte at oljen skulle tilhøre Irans eget folk. Det kalles å nasjonalisere."
+            "content": "Et av de tydeligste eksemplene skjedde i Iran. Landet hadde mye olje, men den ble kontrollert av et britisk selskap. I april 1951 ble Mohammad Mossadeq statsminister, etter at han hadde skaffet flertall i nasjonalforsamlingen for at oljen skulle tilhøre Iran selv. Det kalles å nasjonalisere (Kvaase & Mørk, 2025)."
         },
         {
             "type": "text",
-            "content": "Vesten ble rasende. I 1953 organiserte den amerikanske etterretningstjenesten CIA og britisk etterretning et kupp. Mossadeq ble styrtet, og sjahen (kongen) fikk all makt tilbake. Oljen havnet igjen hos vestlige selskaper. Dette var sjakalene i arbeid, lenge før Perkins fikk sin jobb. Du kan lese hele historien i [Operasjon Ajax](/historie/den-kalde-krigen/operasjon-ajax)."
+            "content": "Vesten ble rasende. Fra april 1953 laget den amerikanske etterretningstjenesten CIA en plan for å fjerne Mossadeq, og president Eisenhower godkjente den i juni. Med britisk støtte drev CIA en propagandakampanje og fikk organisert demonstrasjoner. 15. august signerte sjahen (kongen) et dekret som krevde at Mossadeq gikk av, og han ble arrestert. Kuppet styrket sjahens makt (Kvaase & Mørk, 2025). Dette var sjakalene i arbeid, lenge før Perkins fikk sin jobb. Du kan lese hele historien i [Operasjon Ajax](/historie/den-kalde-krigen/operasjon-ajax)."
         },
         {
             "type": "header",
@@ -115,11 +115,11 @@
         },
         {
             "type": "text",
-            "content": "I Chile vant Salvador Allende valget i 1970. Han ville at landets store kobbergruver skulle gi penger til vanlige chilenere, ikke til amerikanske selskaper. USAs president Nixon ga en kjent ordre: få Chiles økonomi til å 'skrike'. USA stanset lån og presset landet økonomisk."
+            "content": "I Chile vant Salvador Allende valget i 1970. Han ville at landets store kobbergruver skulle gi penger til vanlige chilenere, ikke til amerikanske selskaper, og nasjonaliserte gruvene (Bull, 2025). Allerede 15. september 1970, før Allende var innsatt, ga USAs president Nixon CIA ordre om å hindre ham. I de håndskrevne notatene til CIA-sjef Richard Helms fra det møtet står den beryktede setningen 'få økonomien til å skrike' (Kornbluh, 2020). USA støttet opposisjonen og drev økonomisk boikott mot Chile (Bull, 2025)."
         },
         {
             "type": "text",
-            "content": "I 1973 ble Allende styrtet i et blodig militærkupp. Generalen Augusto Pinochet tok over og styrte som diktator i 17 år. Igjen ser vi mønsteret: en leder som ville beholde landets rikdom selv, ble fjernet. Les mer i [Få økonomien til å skrike: Kuppet i Chile](/historie/den-kalde-krigen/chile-1973)."
+            "content": "11. september 1973 ble Allende styrtet i et blodig militærkupp. Presidentpalasset La Moneda ble bombet, og tilhengerne hans ble arrestert i massevis (Bull, 2025). Generalen Augusto Pinochet ledet hæren i det CIA-støttede kuppet og styrte landet som diktator fram til 1990. Om lag 3000 politiske motstandere ble drept eller forsvant (Opsvik, 2025). Igjen ser vi mønsteret: en leder som ville beholde landets rikdom selv, ble fjernet. Les mer i [Få økonomien til å skrike: Kuppet i Chile](/historie/den-kalde-krigen/chile-1973)."
         },
         {
             "type": "header",
@@ -127,7 +127,7 @@
         },
         {
             "type": "text",
-            "content": "Iran og Chile er ikke unike. Det samme mønsteret går igjen i mange land i etterkrigstiden. I [Kongo](/historie/dekolonisering/kongo) ble lederen Patrice Lumumba myrdet med hjelp fra CIA, og en vestlig-vennlig diktator tok over rikdommen. I store deler av [Latin-Amerika](/historie/dekolonisering/latin-amerika) ble valgte ledere presset eller fjernet når de truet vestlige interesser. I [Guatemala](/historie/dekolonisering/guatemala-1954) sto til og med et amerikansk fruktselskap bak et kupp, og i [Indonesia](/historie/den-kalde-krigen/indonesia-1965) endte jakten på kommunister i et av etterkrigstidens største massedrap, med vestlig støtte."
+            "content": "Iran og Chile er ikke unike. Det samme mønsteret går igjen i mange land i etterkrigstiden. I [Kongo](/historie/dekolonisering/kongo) ble statsminister Patrice Lumumba drept i januar 1961 etter tortur og uten rettssak. En belgisk offiser ledet henrettelsen, og senere avsløringer har påvist belgisk og trolig også amerikansk medvirkning i drapet (Leraand, 2026). I store deler av [Latin-Amerika](/historie/dekolonisering/latin-amerika) ble valgte ledere presset eller fjernet når de truet vestlige interesser. I [Guatemala](/historie/dekolonisering/guatemala-1954) tok president Jacobo Árbenz nesten 90 000 hektar plantasjejord fra det amerikanske fruktselskapet United Fruit, og selskapets innflytelse over amerikanske politikere var med på å utløse kuppet mot ham i 1954 (Ekern, 2024). I [Indonesia](/historie/den-kalde-krigen/indonesia-1965) ble et kuppforsøk i 1965 fulgt av massakrer på påståtte kommunister, og anslagene over antall drepte varierer fra 500 000 til 1 200 000 (Vikør & Filseth, 2025)."
         },
         {
             "type": "text",
@@ -143,7 +143,7 @@
         },
         {
             "type": "text",
-            "content": "Selve gjeldsfellen finnes fortsatt. Mange fattige land bruker store deler av inntektene sine på å betale renter på gamle lån, i stedet for på skoler og sykehus. Bak mange av disse lånene står [IMF og Verdensbanken](/samfunnskunnskap/handel-og-infrastruktur/imf-og-verdensbanken), og selve pengene stammer ofte fra olje gjennom [petrodollaren](/samfunnskunnskap/okonomi/petrodollaren). Perkins mener systemet bare har byttet ansikt. I dag snakker mange om at også Kina bruker lån til store prosjekter i Afrika og Asia for å skaffe seg kontroll og innflytelse. Mekanismen er den samme: den som eier gjelden, har makten."
+            "content": "Selve gjeldsfellen finnes fortsatt. Land i det globale sør betaler i snitt omtrent dobbelt så mye i renter på statsgjelden sin som de rike industrilandene, og budsjettene til helse, skole og utvikling klarer ikke å holde tritt (Danbolt, 2024). Bak mange av disse lånene står [IMF og Verdensbanken](/samfunnskunnskap/handel-og-infrastruktur/imf-og-verdensbanken), og selve pengene stammer ofte fra olje gjennom [petrodollaren](/samfunnskunnskap/okonomi/petrodollaren). Perkins mener systemet bare har byttet ansikt. I dag snakker mange om at også Kina bruker lån til store prosjekter i Afrika og Asia for å skaffe seg kontroll og innflytelse. Mekanismen er den samme: den som eier gjelden, har makten."
         },
         {
             "type": "text",
@@ -155,11 +155,11 @@
         },
         {
             "type": "text",
-            "content": "Her må vi være kritiske. Mye av det Perkins forteller om Iran og Chile er godt dokumentert av historikere. Men noen av hans egne historier er vanskelige å bevise, fordi vi bare har hans ord for det. Enkelte mener han overdriver og gjør verden enklere enn den er."
+            "content": "Her må vi være kritiske. Mye av det Perkins forteller om Iran og Chile er godt dokumentert av historikere og av avgraderte amerikanske dokumenter (Kornbluh, 2020; Kvaase & Mørk, 2025). Men boken hans er hans egen fortelling om sitt eget liv (Perkins, 2004), og flere av historiene er vanskelige å bevise fordi vi bare har hans ord for dem. Enkelte mener han overdriver og gjør verden enklere enn den er."
         },
         {
             "type": "text",
-            "content": "Likevel peker boken på noe sant og viktig: rike land og store selskaper har ofte brukt penger, lån og makt til å styre fattigere land, lenge etter at koloniene formelt ble frie. Det kalles [nykolonialisme](/historie/dekolonisering/nykolonialisme). En god historiker tror ikke blindt på én kilde, men sammenligner flere. Da ser vi at sannheten ligger et sted mellom Perkins sine dramatiske historier og de tørre fakta i arkivene."
+            "content": "Likevel peker boken på noe sant og viktig: rike land og store selskaper har ofte brukt penger, lån og makt til å styre fattigere land, lenge etter at koloniene formelt ble frie. Det kalles [nykolonialisme](/historie/dekolonisering/nykolonialisme), og begrepet brukes særlig om den politiske og økonomiske kontrollen de gamle europeiske kolonimaktene beholdt over sine tidligere kolonier etter at de fikk formell selvstendighet (Berg & Hagen, 2024). En god historiker tror ikke blindt på én kilde, men sammenligner flere. Da ser vi at sannheten ligger et sted mellom Perkins sine dramatiske historier og de tørre fakta i arkivene."
         },
         {
             "type": "component",
@@ -178,9 +178,27 @@
                     "Artikkelen sier at USA ofte forklarte inngrepene med å stanse kommunisme, men at det også lå et ønske om ressurser bak. Hvorfor kan det være vanskelig å vite hvilken grunn som var den ekte?"
                 ],
                 "gaaVidere": [
-                    "Artikkelen sier at mange fattige land i dag bruker store deler av inntektene på å betale renter i stedet for skoler og sykehus, og at Kina nå låner ut penger til store prosjekter i Afrika og Asia. Finn ett eksempel fra nyhetene og vurder om mønsteret Perkins beskriver passer.",
+                    "Artikkelen sier at land i det globale sør betaler omtrent dobbelt så mye i renter som rike industriland, og at Kina nå låner ut penger til store prosjekter i Afrika og Asia. Finn ett eksempel fra nyhetene og vurder om mønsteret Perkins beskriver passer.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor vi må være kritiske til Perkins, selv om mye av det han forteller er sant. Bruk begrepet nykolonialisme.",
                     "Diskuter med en partner: Hva kan et fattig land gjøre for å unngå å havne i gjeldsfellen når det trenger penger til å bygge veier og kraftverk?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, O. T. & Hagen, M. (2024). *Neo-kolonialisme*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/neo-kolonialisme](https://snl.no/neo-kolonialisme)",
+                    "Bull, B. (2025). *Salvador Allende*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Salvador_Allende](https://snl.no/Salvador_Allende)",
+                    "Danbolt, I. L. (2024). *Hva er egentlig finansiering for utvikling?* FN-sambandet. Hentet 26.07.2026 fra [fn.no](https://fn.no/nyheter/hva-er-egentlig-finansiering-for-utvikling)",
+                    "Ekern, S. (2024). *Guatemalas historie*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Guatemalas_historie](https://snl.no/Guatemalas_historie)",
+                    "Kornbluh, P. (2020). *'Extreme Option: Overthrow Allende'*. National Security Archive. Hentet 26.07.2026 fra [nsarchive.gwu.edu](https://nsarchive.gwu.edu/briefing-book/chile/2020-09-15/extreme-option-overthrow-allende)",
+                    "Kvaase, K. & Mørk, H. K. (2025). *Muhammad Mosaddeq*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Muhammad_Mosaddeq](https://snl.no/Muhammad_Mosaddeq)",
+                    "Leraand, D. (2026). *Patrice Lumumba*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Patrice_Lumumba](https://snl.no/Patrice_Lumumba)",
+                    "Opsvik, T. (2025). *Augusto Pinochet*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Augusto_Pinochet](https://snl.no/Augusto_Pinochet)",
+                    "Perkins, J. (2004). *Confessions of an Economic Hit Man*. Berrett-Koehler Publishers.",
+                    "Vikør, L. S. & Filseth, G. (2025). *Indonesias historie*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Indonesias_historie](https://snl.no/Indonesias_historie)"
                 ]
             }
         }
@@ -232,5 +250,5 @@
         }
     ],
     "createdDate": "2026-05-31T00:00:00Z",
-    "lastUpdated": "2026-05-31T00:00:00Z"
+    "lastUpdated": "2026-07-26T00:00:00Z"
 }
