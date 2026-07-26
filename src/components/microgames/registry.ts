@@ -12,6 +12,7 @@ const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
 const OsloSosiolekt3D = lazy(() => import('./OsloSosiolekt3D'));
 const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
+const Stemmesporet3D = lazy(() => import('./Stemmesporet3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
 const Vesterled3D = lazy(() => import('./Vesterled3D'));
@@ -783,6 +784,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./MultietnolektGata3D'),
         Component: MultietnolektGata3D as never,
+    },
+    'stemmesporet-3d': {
+        id: 'stemmesporet-3d',
+        title: 'Stemmesporet: finn den ene stemmen',
+        description:
+            'Et torg fullt av folk som prater. Du får tre språktrekk og skal finne den ene som bruker alle sammen. Ett trekk deler mange - bare kombinasjonen peker ut én person.',
+        estimatedSeconds: 150,
+        loader: () => import('./Stemmesporet3D'),
+        Component: Stemmesporet3D as never,
     },
     'vikingskip-3d': {
         id: 'vikingskip-3d',

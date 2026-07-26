@@ -194,6 +194,7 @@ const SprakBaneVelger = lazy(() => import('./content/interactive/SprakBaneVelger
 const DialektDetektiv = lazy(() => import('./content/interactive/DialektDetektiv').then(m => ({ default: m.DialektDetektiv })));
 const SosiolektSkifteren = lazy(() => import('./content/interactive/SosiolektSkifteren').then(m => ({ default: m.SosiolektSkifteren })));
 const EtnolektDekoder = lazy(() => import('./content/interactive/EtnolektDekoder').then(m => ({ default: m.EtnolektDekoder })));
+const IdiolektFingeravtrykk = lazy(() => import('./content/interactive/IdiolektFingeravtrykk').then(m => ({ default: m.IdiolektFingeravtrykk })));
 const BergensTokjonn = lazy(() => import('./content/interactive/BergensTokjonn').then(m => ({ default: m.BergensTokjonn })));
 const BergensSosiolektPult = lazy(() => import('./content/interactive/BergensSosiolektPult').then(m => ({ default: m.BergensSosiolektPult })));
 const SpredningsKart = lazy(() => import('./content/interactive/SpredningsKart').then(m => ({ default: m.SpredningsKart })));
@@ -528,6 +529,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     DialektDetektiv,
     SosiolektSkifteren,
     EtnolektDekoder,
+    IdiolektFingeravtrykk,
     BergensTokjonn,
     BergensSosiolektPult,
     SpredningsKart,
