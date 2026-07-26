@@ -43,45 +43,11 @@ import {
 } from './spriteforge';
 import { forgeProps, forgeTiles } from './tileforge';
 import { Effekter } from './systems/effekter';
+import type { Fiende, Sprite } from './systems/entiteter';
+import { Loot } from './systems/loot';
+import { Prosjektiler } from './systems/prosjektiler';
 import { Verden } from './systems/verden';
 import { byggNordvik, type WorldMap } from './worldgen';
-
-type Sprite = Phaser.Physics.Arcade.Sprite;
-
-interface Fiende {
-    sprite: Sprite;
-    def: EnemyDef;
-    hp: number;
-    maksHp: number;
-    tilstand: 'sover' | 'jager' | 'varsler' | 'slar' | 'henter-seg' | 'stotet';
-    timer: number;
-    frame: number;
-    frameTimer: number;
-    /** Bossen er udødelig til eleven svarer riktig. */
-    skjold: number;
-    dodd: boolean;
-    /** Har den mistet en bit alt? Skal bare skje én gang per fiende. */
-    lemlestet: boolean;
-    /** Colliderne må fjernes eksplisitt når fienden dør, ellers lekker de. */
-    collidere: Phaser.Physics.Arcade.Collider[];
-    /** Livsstolpen over hodet. Vises først når fienden har tatt skade. */
-    stolpe: Phaser.GameObjects.Graphics | null;
-    /** Hvor lenge stolpen blir stående etter siste treff. */
-    stolpeTid: number;
-    /** Fargen fienden skal ha når treff-blinket er over (varsel-rødt eller ingen). */
-    onsketTint: number | null;
-}
-
-interface Prosjektil {
-    sprite: Phaser.GameObjects.Image;
-    vx: number;
-    vy: number;
-    skade: number;
-    levetid: number;
-    fraFiende: boolean;
-    piercing: boolean;
-    truffet: Set<Fiende>;
-}
 
 /** Korteste avstand fra et punkt til et linjestykke - brukt av stråle-besvergelsen. */
 function avstandTilLinje(
@@ -133,16 +99,13 @@ export class WorldScene extends Phaser.Scene {
     private slagVarighet = 400;
 
     private fiender: Fiende[] = [];
-    private prosjektiler: Prosjektil[] = [];
+    /** Alt som flyr: piler, kastespyd, besvergelser. */
+    private skudd!: Prosjektiler;
     private npcSprites = new Map<string, Phaser.GameObjects.Sprite>();
     private npcMarkorer = new Map<string, Phaser.GameObjects.Image>();
     private landemerker = new Map<string, Phaser.GameObjects.Image>();
-    private loot: {
-        sprite: Phaser.GameObjects.Image;
-        itemId: string | null;
-        solv: number;
-        levetid: number;
-    }[] = [];
+    /** Sølv og gjenstander som ligger på bakken. */
+    private lootSystem!: Loot;
     /** Partikler, flytende tall og glimt. Kjenner ingen spillregler. */
     private efx = new Effekter(this);
     /** Bakken, kollisjonen, objektene og atmosfæren. Kjenner ingen spillregler. */
@@ -219,6 +182,14 @@ export class WorldScene extends Phaser.Scene {
         for (const def of ENEMIES) forgeEnemy(this, def);
 
         this.verden = new Verden(this, this.kart, tema);
+        this.lootSystem = new Loot(this, this.efx, () => this.spiller);
+        this.skudd = new Prosjektiler(this, this.efx, this.kart, {
+            spiller: () => this.spiller,
+            fiender: () => this.fiender,
+            skadSpiller: (skade) => this.skadSpiller(skade),
+            skadFiende: (f, skade, kritisk, vinkel) =>
+                this.skadFiende(f, skade, kritisk, vinkel),
+        });
         this.verden.byggTerreng();
         this.verden.byggKollisjon();
         this.verden.byggProps();
@@ -657,8 +628,8 @@ export class WorldScene extends Phaser.Scene {
         this.oppdaterSpiller(dt);
         this.sjekkInteraksjon();
         this.oppdaterFiender(dt);
-        this.oppdaterProsjektiler(dt);
-        this.oppdaterLoot(dt);
+        this.skudd.oppdater(dt);
+        this.lootSystem.oppdater(dt);
         this.oppdaterDybde();
         this.oppdaterSpawn(dt);
         this.verden.oppdaterAtmosfare(dt);
@@ -1216,10 +1187,10 @@ export class WorldScene extends Phaser.Scene {
         // som spretter er en utbetaling.
         const solv = Phaser.Math.Between(2, 6) + Math.round(fiende.def.xp / 4);
         let nr = 0;
-        this.slippLoot(dx, dy, null, solv, nr++);
+        this.lootSystem.slipp(dx, dy, null, solv, nr++);
         for (const drop of fiende.def.loot) {
             if (Math.random() < drop.sjanse) {
-                this.slippLoot(dx, dy, drop.itemId, 0, nr++);
+                this.lootSystem.slipp(dx, dy, drop.itemId, 0, nr++);
             }
         }
 
@@ -1328,19 +1299,17 @@ export class WorldScene extends Phaser.Scene {
 
         switch (spell.kind) {
             case 'prosjektil': {
-                const bilde = this.add
-                    .image(this.spiller.x, this.spiller.y - 6, 'fx-kule')
-                    .setTint(spell.farge)
-                    .setDepth(this.spiller.y + 5);
-                this.prosjektiler.push({
-                    sprite: bilde,
-                    vx: Math.cos(vinkel) * 260,
-                    vy: Math.sin(vinkel) * 260,
+                this.skudd.skyt({
+                    x: this.spiller.x,
+                    y: this.spiller.y - 6,
+                    vinkel,
+                    fart: 260,
                     skade,
                     levetid: 1400,
+                    tekstur: 'fx-kule',
+                    farge: spell.farge,
                     fraFiende: false,
                     piercing: Boolean(spell.piercing),
-                    truffet: new Set(),
                 });
                 break;
             }
@@ -1626,20 +1595,19 @@ export class WorldScene extends Phaser.Scene {
     private fiendeSlaar(fiende: Fiende, avstand: number) {
         const def = fiende.def;
         if (def.skytende) {
-            const v = Math.atan2(this.spiller.y - fiende.sprite.y, this.spiller.x - fiende.sprite.x);
-            const bilde = this.add
-                .image(fiende.sprite.x, fiende.sprite.y - 6, 'fx-kule')
-                .setTint(def.farge)
-                .setDepth(fiende.sprite.y + 5);
-            this.prosjektiler.push({
-                sprite: bilde,
-                vx: Math.cos(v) * 150,
-                vy: Math.sin(v) * 150,
+            this.skudd.skyt({
+                x: fiende.sprite.x,
+                y: fiende.sprite.y - 6,
+                vinkel: Math.atan2(
+                    this.spiller.y - fiende.sprite.y,
+                    this.spiller.x - fiende.sprite.x
+                ),
+                fart: 150,
                 skade: def.skade,
                 levetid: 2200,
+                tekstur: 'fx-kule',
+                farge: def.farge,
                 fraFiende: true,
-                piercing: false,
-                truffet: new Set(),
             });
             return;
         }
@@ -1787,143 +1755,6 @@ export class WorldScene extends Phaser.Scene {
             stolpeTid: 0,
             onsketTint: null,
         });
-    }
-
-    // ── Prosjektiler og loot ────────────────────────────────────────────────
-
-    private oppdaterProsjektiler(delta: number) {
-        const dt = delta / 1000;
-        for (let i = this.prosjektiler.length - 1; i >= 0; i--) {
-            const p = this.prosjektiler[i];
-            p.sprite.x += p.vx * dt;
-            p.sprite.y += p.vy * dt;
-            p.sprite.setDepth(p.sprite.y + 5);
-            p.levetid -= delta;
-            p.sprite.setScale(1 + Math.sin(this.time.now / 60) * 0.12);
-
-            const tx = Math.floor(p.sprite.x / TILE);
-            const ty = Math.floor(p.sprite.y / TILE);
-            const utenfor =
-                tx < 0 || ty < 0 || tx >= this.kart.bredde || ty >= this.kart.hoyde || this.kart.blokkert[ty][tx];
-
-            if (p.fraFiende) {
-                if (
-                    Phaser.Math.Distance.Between(p.sprite.x, p.sprite.y, this.spiller.x, this.spiller.y - 6) < 12
-                ) {
-                    this.skadSpiller(p.skade);
-                    this.efx.pikselSprut(p.sprite.x, p.sprite.y, 0xffffff, 6);
-                    p.sprite.destroy();
-                    this.prosjektiler.splice(i, 1);
-                    continue;
-                }
-            } else {
-                let traff = false;
-                for (const fiende of this.fiender) {
-                    if (fiende.dodd || p.truffet.has(fiende)) continue;
-                    const d = Phaser.Math.Distance.Between(
-                        p.sprite.x,
-                        p.sprite.y,
-                        fiende.sprite.x,
-                        fiende.sprite.y - 6
-                    );
-                    if (d < 12 + (fiende.def.storrelse ?? 1) * 5) {
-                        const v = Math.atan2(p.vy, p.vx);
-                        this.skadFiende(fiende, Math.round(p.skade), false, v);
-                        p.truffet.add(fiende);
-                        traff = true;
-                        if (!p.piercing) break;
-                    }
-                }
-                if (traff && !p.piercing) {
-                    this.efx.pikselSprut(p.sprite.x, p.sprite.y, 0xffffff, 8);
-                    p.sprite.destroy();
-                    this.prosjektiler.splice(i, 1);
-                    continue;
-                }
-            }
-
-            if (p.levetid <= 0 || utenfor) {
-                p.sprite.destroy();
-                this.prosjektiler.splice(i, 1);
-            }
-        }
-    }
-
-    private slippLoot(x: number, y: number, itemId: string | null, solv: number, nr = 0) {
-        const key = itemId ? (ITEM_BY_ID[itemId]?.slot === 'vapen' ? 'loot-bok' : 'loot-kiste') : 'loot-solv';
-        const sprite = this.add.image(x, y, key).setDepth(y);
-        sfx.lootPling(nr);
-
-        // Spretter ut i en bue i stedet for rett opp og ned. Retningen varieres
-        // per objekt, så to drop aldri lander i samme punkt.
-        //
-        // Buen er én tween på x og to på y etter hverandre - opp og så ned. To
-        // samtidige y-tweens ville slått hverandre ut, og gjenstanden ville
-        // hoppet uten å komme noen vei.
-        const v = Phaser.Math.FloatBetween(-Math.PI, Math.PI);
-        const kast = Phaser.Math.Between(10, 22);
-        const mx = x + Math.cos(v) * kast;
-        const my = y + Math.sin(v) * kast * 0.5;
-        this.tweens.add({ targets: sprite, x: mx, duration: 350, ease: 'Quad.Out' });
-        this.tweens.add({
-            targets: sprite,
-            y: my - 13,
-            duration: 190,
-            ease: 'Quad.Out',
-            onComplete: () => {
-                if (sprite.active) {
-                    this.tweens.add({ targets: sprite, y: my, duration: 160, ease: 'Quad.In' });
-                }
-            },
-        });
-        this.tweens.add({
-            targets: sprite,
-            scale: 1.12,
-            duration: 600,
-            yoyo: true,
-            repeat: -1,
-            ease: 'Sine.InOut',
-        });
-        // Loot du aldri går bort til skal forsvinne. Før lå hvert eneste
-        // sølvstykke igjen for alltid, hvert med en evig tween.
-        this.loot.push({ sprite, itemId, solv, levetid: 45000 });
-    }
-
-    private oppdaterLoot(delta: number) {
-        for (let i = this.loot.length - 1; i >= 0; i--) {
-            const l = this.loot[i];
-            l.levetid -= delta;
-            if (l.levetid <= 0) {
-                this.tweens.killTweensOf(l.sprite);
-                l.sprite.destroy();
-                this.loot.splice(i, 1);
-                continue;
-            }
-            if (l.levetid < 4000) l.sprite.setAlpha(Math.floor(l.levetid / 160) % 2 ? 0.35 : 1);
-
-            const d = Phaser.Math.Distance.Between(l.sprite.x, l.sprite.y, this.spiller.x, this.spiller.y);
-            // Trekkes mot spilleren når hun er nær - alltid tilfredsstillende.
-            if (d < 40) {
-                const v = Math.atan2(this.spiller.y - l.sprite.y, this.spiller.x - l.sprite.x);
-                const steg = (180 * delta) / 1000;
-                l.sprite.x += Math.cos(v) * steg;
-                l.sprite.y += Math.sin(v) * steg;
-            }
-            if (d < 12) {
-                const store = useRpgStore.getState();
-                if (l.itemId) {
-                    store.leggISekk(l.itemId);
-                    sfx.plukk();
-                } else {
-                    store.giSolv(l.solv);
-                    sfx.solv();
-                    this.efx.flytTekst(l.sprite.x, l.sprite.y - 12, `+${l.solv} sølv`, '#f2edd0', 11);
-                }
-                this.tweens.killTweensOf(l.sprite);
-                l.sprite.destroy();
-                this.loot.splice(i, 1);
-            }
-        }
     }
 
     // ── Samhandling ─────────────────────────────────────────────────────────

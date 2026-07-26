@@ -120,16 +120,34 @@ for (let i = 0; i < 40; i++) {
 if (!rolig) {
     console.log('tidssjekk hoppet over - fikk ikke fred til å måle');
 } else {
+    // Livet leses før og etter: blir eleven truffet mens garden står, koster
+    // blokken 8-18 pust i tillegg, og målingen er ikke lenger et rent tilfelle.
+    // Uten denne vakten rapporterte skriptet «tiden er ute av lås» hver gang en
+    // fiende kom bort og slo, som er en falsk alarm - samme grunn til at
+    // verify-rpg-kamp.mjs måler med `lFor`/`lEtter`.
     const f = await pust();
+    const lFor = await liv2();
     await page.keyboard.down('Shift');
     await page.waitForTimeout(2000);
     const e = await pust();
+    const lEtter = await liv2();
     await page.keyboard.up('Shift');
     const drenert = f - e;
-    console.log(
-        `tid etter drap: garden drenerte ${drenert} pust i 2 sek`,
-        drenert >= 9 && drenert <= 18 ? '- OK, normal tid' : '- FEIL, tiden er ute av lås'
-    );
+    // Dør eleven under målingen, forsvinner HUD-en og begge avlesningene blir
+    // null. Da er `f - e` null-null = 0, som leser som «tiden står stille» -
+    // en falsk alarm som så helt ekte ut.
+    if (f === null || e === null || lFor === null || lEtter === null) {
+        console.log('tidssjekk hoppet over - eleven døde under målingen');
+    } else if (lFor !== lEtter) {
+        console.log(
+            `tidssjekk hoppet over - eleven ble truffet under målingen (${drenert} pust, liv ${lFor} -> ${lEtter})`
+        );
+    } else {
+        console.log(
+            `tid etter drap: garden drenerte ${drenert} pust i 2 sek`,
+            drenert >= 9 && drenert <= 18 ? '- OK, normal tid' : '- FEIL, tiden er ute av lås'
+        );
+    }
 }
 await skudd('etterpaa', 0);
 console.log('konsollfeil:', feil.length ? feil.slice(0, 3) : 'ingen');
