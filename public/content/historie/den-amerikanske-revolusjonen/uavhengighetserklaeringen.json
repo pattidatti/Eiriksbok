@@ -14,7 +14,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Det var varmt i Philadelphia sommeren 1776. Inne i et rom med lukkede vinduer satt en ung mann på 33 år og skrev. Han het Thomas Jefferson. På bare noen få uker skrev han et dokument som skulle forandre verden. Han visste at ordene hans kunne føre til at han ble hengt for forræderi mot kongen. Likevel skrev han videre."
+            "content": "Det var varmt i Philadelphia sommeren 1776. Inne i et rom med lukkede vinduer satt en ung mann på 33 år og skrev. Han het Thomas Jefferson (Sirevåg, 2026). På bare noen få uker skrev han et dokument som skulle forandre verden. Han visste at ordene hans kunne føre til at han ble hengt for forræderi mot kongen. Likevel skrev han videre."
         },
         {
             "type": "image",
@@ -40,11 +40,11 @@
         },
         {
             "type": "text",
-            "content": "Erklæringen var ikke skrevet av én mann alene. Kongressen valgte en gruppe på fem, blant dem den kjente oppfinneren Benjamin Franklin og den skarpe advokaten John Adams. Men de andre ba Jefferson skrive selve teksten, rett og slett fordi han skrev best. Han satt bøyd over papiret i litt over to uker, og de andre rettet på noen av ordene hans etterpå."
+            "content": "Erklæringen var ikke skrevet av én mann alene. Den 11. juni 1776 valgte kongressen en gruppe på fem, blant dem den kjente oppfinneren Benjamin Franklin og den skarpe advokaten John Adams (Encyclopaedia Britannica, 2026). Men de andre ba Jefferson skrive selve teksten, rett og slett fordi han skrev best (Ellis, 2026). Han satt bøyd over papiret i litt over to uker, og de andre rettet på noen av ordene hans etterpå."
         },
         {
             "type": "text",
-            "content": "Den 2. juli stemte kongressen for at koloniene skulle bli frie. To dager senere, den 4. juli, godtok de selve teksten. Derfor er det 4. juli folk husker, og ikke den 2. Den første som skrev under, var kongressens leder John Hancock. Han skrev navnet sitt så stort og tydelig at det fylte en hel linje. Sagnet sier at han ville at kong George skulle kunne lese det uten briller. I dag betyr «a John Hancock» rett og slett en underskrift på engelsk."
+            "content": "Den 2. juli stemte kongressen for at koloniene skulle bli frie. To dager senere, den 4. juli, godtok de selve teksten (Encyclopaedia Britannica, 2026). Derfor er det 4. juli folk husker, og ikke den 2. Selve pergamentet ble ikke undertegnet før 2. august, og til slutt satte 56 utsendinger navnet sitt på det (Encyclopaedia Britannica, 2026). Øverst står navnet til kongressens leder John Hancock, skrevet så stort og tydelig at det fyller en hel linje. Sagnet sier at han ville at kong George skulle kunne lese det uten briller. I dag betyr «a John Hancock» rett og slett en underskrift på engelsk."
         },
         {
             "type": "header",
@@ -64,7 +64,7 @@
         },
         {
             "type": "text",
-            "content": "Legg merke til ordet «selvsagte». Jefferson sier ikke at kongen har gitt folk disse rettighetene. Han sier at de bare finnes, fra fødselen av, hos hvert eneste menneske. Denne tanken hadde han hentet fra filosofen [John Locke](/krle/filosofi/locke), som mente at alle mennesker har naturlige rettigheter til liv, frihet og eiendom. Ingen konge og ingen lov kan ta disse rettighetene bort, mente Locke. De er en del av det å være menneske."
+            "content": "Legg merke til ordet «selvsagte». Jefferson sier ikke at kongen har gitt folk disse rettighetene. Han sier at de bare finnes, fra fødselen av, hos hvert eneste menneske. Denne tanken hadde han hentet fra filosofen [John Locke](/krle/filosofi/locke), som mente at alle mennesker har naturlige rettigheter til liv, frihet og eiendom. Ingen konge og ingen lov kan ta disse rettighetene bort, mente Locke. De er en del av det å være menneske. Erklæringen er i hovedsak en gjentakelse av Lockes tanker om samfunnskontrakten (Pharo, 2026)."
         },
         {
             "type": "text",
@@ -97,7 +97,7 @@
         },
         {
             "type": "text",
-            "content": "Ordene ble raskt til handling. Da erklæringen ble lest høyt på et torg i New York, stormet folkemengden fram og rev ned den store, forgylte statuen av kong George III. Metallet i statuen ble smeltet om og støpt til kuler for revolusjonshæren. Symbolet på den gamle makten ble bokstavelig talt gjort om til våpen for den nye. Prøv det selv."
+            "content": "Ordene ble raskt til handling. Den 9. juli 1776 ble erklæringen lest høyt for soldatene i New York. Få timer senere stormet en folkemengde fram til plassen Bowling Green og rev ned den store, forgylte statuen av kong George III (Bellion, 2022). Statuen inneholdt nesten to tonn bly. Metallet ble sendt til Connecticut og støpt om til over 42 000 kuler for revolusjonshæren (Bellion, 2022). Symbolet på den gamle makten ble bokstavelig talt gjort om til våpen for den nye. Prøv det selv."
         },
         {
             "type": "component",
@@ -116,7 +116,7 @@
         },
         {
             "type": "text",
-            "content": "Slaver var ikke frie. Kvinner fikk ikke stemme. Urfolket ble jaget fra landet sitt. Og verst av alt: Thomas Jefferson, mannen som skrev at alle er like og frie, eide selv over 600 slaver gjennom livet. Han skrev ordene med den ene hånden og holdt mennesker som eiendom med den andre. Denne dype motsetningen fulgte USA i mange tiår og førte til slutt til en blodig borgerkrig."
+            "content": "Slaver var ikke frie. Kvinner fikk ikke stemme. Urfolket ble jaget fra landet sitt. Og verst av alt: Thomas Jefferson, mannen som skrev at alle er like og frie, eide selv over 600 slaver gjennom livet (Ellis, 2026). Han skrev ordene med den ene hånden og holdt mennesker som eiendom med den andre. Denne dype motsetningen fulgte USA i mange tiår og førte til slutt til en blodig borgerkrig."
         },
         {
             "type": "text",
@@ -220,6 +220,19 @@
                         "correctAnswer": 0,
                         "explanation": "Selv om erklæringen sa at alle er like, gjaldt det i praksis ikke slaver, kvinner eller urfolk. Jefferson eide selv slaver."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bellion, W. (2022). *Why Did Colonists Topple the George III Statue at Bowling Green?* Smithsonian Magazine. Hentet 26.07.2026 fra [smithsonianmag.com](https://www.smithsonianmag.com/history/a-toppled-statue-of-george-iii-epitomizes-the-ongoing-debate-over-americas-monuments-180979463/)",
+                    "Ellis, J. J. (2026). *Thomas Jefferson*. Encyclopaedia Britannica. Hentet 26.07.2026 fra [britannica.com/biography/Thomas-Jefferson](https://www.britannica.com/biography/Thomas-Jefferson)",
+                    "Encyclopaedia Britannica. (2026). *Declaration of Independence*. Hentet 26.07.2026 fra [britannica.com/topic/Declaration-of-Independence](https://www.britannica.com/topic/Declaration-of-Independence)",
+                    "Pharo, H. (2026). *Den amerikanske uavhengighetserklæringen*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/den_amerikanske_uavhengighetserklæringen](https://snl.no/den_amerikanske_uavhengighetserkl%C3%A6ringen)",
+                    "Sirevåg, T. (2026). *Thomas Jefferson*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Thomas_Jefferson](https://snl.no/Thomas_Jefferson)"
                 ]
             }
         }
