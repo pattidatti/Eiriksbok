@@ -26,7 +26,7 @@
         {
             "year": "1920",
             "title": "San Remo-konferansen",
-            "description": "Mandatområdene opprettes (Frankrike får Syria/Libanon, UK får Palestina/Irak)."
+            "description": "Mandatområdene opprettes (Frankrike får Syria og Libanon, Storbritannia får Irak, Jordan og Palestina)."
         },
         {
             "year": "1948",
@@ -37,7 +37,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Hvis du ser på et kart over Midtøsten, vil du legge merke til noe rart: Mange av grensene er snorrette linjer. De følger ikke elver, fjell eller folkegrupper. Hvorfor? Fordi de ble tegnet med linjal av to menn i et rom i London under første verdenskrig."
+            "content": "Hvis du ser på et kart over Midtøsten, vil du legge merke til noe rart: Mange av grensene er snorrette linjer. De følger ikke elver, fjell eller folkegrupper. Hvorfor? Fordi de i stor grad ble trukket av to menn under første verdenskrig: britiske Mark Sykes og franske François Georges-Picot. De delte området mellom seg med blå, røde og brune linjer over kartet (Nordenson & Leraand, 2025). Grensene tok ikke hensyn til hvem som faktisk bodde der, eller hva folk selv ønsket (Nordenson, 2026)."
         },
         {
             "type": "header",
@@ -45,14 +45,14 @@
         },
         {
             "type": "text",
-            "content": "Under første verdenskrig trengte britene hjelp mot Osmanriket (som var alliert med Tyskland). De lovet de arabiske lederne et stort, selvstendig arabisk rike hvis de gjorde opprør mot tyrkerne. Araberne holdt sin del av avtalen (kjent gjennom Lawrence of Arabia).\n\nMen britene hadde allerede lovet bort landet til noen andre. I den hemmelige Sykes-Picot-avtalen (1916) hadde Storbritannia og Frankrike blitt enige om å dele Midtøsten mellom seg."
+            "content": "Under første verdenskrig trengte britene hjelp mot Osmanriket (som var alliert med Tyskland). I brev til sharif Hussein ibn Ali i Mekka lovet de vagt å støtte et arabisk kongedømme som skulle dekke det meste av dagens Syria, Libanon, Palestina, Jordan og Irak, i tillegg til store deler av Den arabiske halvøy (Nordenson & Dokka, 2025). Løftet var med vilje uklart formulert, og det sa lite om hvor grensene skulle gå. Araberne holdt likevel sin del av avtalen: i 1916 gjorde Hussein opprør mot Osmanriket med britisk støtte, en kamp mange kjenner gjennom Lawrence of Arabia.\n\nMen britene hadde allerede lovet bort mye av det samme landet til andre. I den hemmelige Sykes-Picot-avtalen fra 16. mai 1916 ble Storbritannia og Frankrike enige om å dele Midtøsten mellom seg: Frankrike skulle ha dagens Syria og Libanon, Storbritannia skulle ha Irak og Jordan, og Palestina skulle styres internasjonalt (Nordenson & Leraand, 2025)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Mandatsystemet",
-                "content": "Etter krigen kalte de det ikke 'kolonier', men 'mandater'. Frankrike fikk Syria og Libanon. Storbritannia fikk Irak, Jordan og Palestina. I teorien skulle de forberede landene på selvstendighet, men i praksis styrte de dem som kolonier for å sikre olje og handelsruter."
+                "content": "Etter krigen kalte de det ikke «kolonier», men «mandater». På San Remo-konferansen i 1920 fikk Frankrike Syria og Libanon, mens Storbritannia fikk Irak, Jordan og Palestina. Ordningen ble formalisert gjennom Folkeforbundet i 1922. I teorien skulle mandatmaktene forberede områdene på selvstendighet, men i praksis styrte de dem som kolonier og satte sine egne interesser først (Nordenson, 2026)."
             }
         },
         {
@@ -61,14 +61,14 @@
         },
         {
             "type": "text",
-            "content": "Samtidig ga den britiske utenriksministeren enda et løfte. I Balfour-erklæringen (1917) lovet han å støtte opprettelsen av et 'nasjonalt hjem for det jødiske folk' i Palestina. Dette kolliderte direkte med løftene gitt til araberne som allerede bodde der. Britenes dobbelspill la grunnlaget for en av verdens mest fastlåste konflikter."
+            "content": "Den 2. november 1917 ga den britiske utenriksministeren Arthur Balfour enda et løfte. I et brev til baron Walter Rothschild lovet han britisk støtte til «et nasjonalt hjem for det jødiske folk» i Palestina. Samtidig sto det i erklæringen at ingenting skulle skade de sivile og religiøse rettighetene til de ikke-jødiske samfunnene som allerede bodde der (Leraand, 2024). I praksis kolliderte løftet med det britene hadde lovet araberne, og begge avtalene ble holdt hemmelige for de arabiske lederne (Leraand, 2024). Britenes dobbeltspill la grunnlaget for en av verdens mest fastlåste konflikter."
         },
         {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva la britene merke til at var rart med grensene i Midtøsten, og hvordan ble de tegnet?",
+                    "Hva er det som er rart med mange av grensene i Midtøsten, og hvem var de to mennene som trakk dem?",
                     "Hva lovet britene de arabiske lederne hvis de gjorde opprør mot Osmanriket?",
                     "Hva ble Storbritannia og Frankrike enige om i den hemmelige Sykes-Picot-avtalen fra 1916?",
                     "Hva lovet den britiske utenriksministeren i Balfour-erklæringen fra 1917?"
@@ -83,6 +83,18 @@
                     "Israel-Palestina-konflikten er fortsatt i nyhetene. Finn ett ferskt eksempel og forklar kort hvordan det henger sammen med det som skjedde mellom 1916 og 1948.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer for en venn hvorfor snorrette grenser tegnet med linjal kan skape problemer for menneskene som bor der.",
                     "Diskuter med en partner: Hvem hadde ansvaret for konflikten som fulgte - de som ga løftene, eller de som mottok dem?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Nordenson, J. & Leraand, D. (2025). *Sykes-Picot-avtalen*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Sykes-Picot-avtalen](https://snl.no/Sykes-Picot-avtalen)",
+                    "Nordenson, J. & Dokka, Å. G. (2025). *Hussein-McMahon-korrespondansen*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Hussein-McMahon-korrespondansen](https://snl.no/Hussein-McMahon-korrespondansen)",
+                    "Nordenson, J. (2026). *Oppdelingen av Midtøsten etter første verdenskrig*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Oppdelingen_av_Midtøsten_etter_første_verdenskrig](https://snl.no/Oppdelingen_av_Midt%C3%B8sten_etter_f%C3%B8rste_verdenskrig)",
+                    "Leraand, D. (2024). *Balfour-erklæringen*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Balfour-erklæringen](https://snl.no/Balfour-erkl%C3%A6ringen)"
                 ]
             }
         }
@@ -112,5 +124,5 @@
         }
     ],
     "createdDate": "2026-01-16T10:15:00Z",
-    "lastUpdated": "2026-01-16T10:15:00Z"
+    "lastUpdated": "2026-07-26T00:00:00Z"
 }

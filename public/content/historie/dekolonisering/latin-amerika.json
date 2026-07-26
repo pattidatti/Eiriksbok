@@ -21,23 +21,23 @@
         {
             "year": "1810",
             "title": "Revolusjonene starter",
-            "description": "Juntaer tar makten i Caracas og Buenos Aires."
+            "description": "Lokale juntaer tar makten flere steder i koloniene."
         },
         {
             "year": "1819",
             "title": "Gran Colombia",
-            "description": "Bolívar grunnlegger en storrepublikk."
+            "description": "Grunnlaget for storrepublikken legges i Angostura. Republikken organiseres formelt i Cúcuta i 1821."
         },
         {
             "year": "1824",
             "title": "Slaget ved Ayacucho",
-            "description": "Det siste spanske nederlaget i Sør-Amerika."
+            "description": "Slagene ved Junín og Ayacucho sikrer den endelige seieren over rojalistene."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "På starten av 1800-tallet strakte det spanske imperiet seg fra California i nord til Ildlandet i sør. Men imperiet knaket i sammenføyningene. I motsetning til på Haiti, var det ikke slavene som ledet opprøret her, men den hvite overklassen født i Amerika, kjent som kreoler."
+            "content": "På starten av 1800-tallet strakte det spanske imperiet seg fra California i nord til Ildlandet i sør. Men imperiet knaket i sammenføyningene. I motsetning til på Haiti, var det ikke slavene som ledet opprøret her. Det var eliten i koloniene, særlig forretningsstanden, og fremst blant dem den hvite overklassen som var født i Amerika: kreolene (Opsvik, 2025a)."
         },
         {
             "type": "header",
@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "Konflikten handlet om makt og stillinger. Det spanske systemet favoriserte *peninsulares* – folk født i Spania. De fikk alle toppjobbene i administrasjonen og kirken. Kreolene, selv om de var rike og utdannede, ble holdt utenfor. Da Napoleon invaderte Spania i 1808 og avsatte kongen, så kreolene sin sjanse: «Vi er lojale mot kongen, ikke mot Napoleon,» sa de, og dannet sine egne regjeringer."
+            "content": "Konflikten handlet om makt og stillinger. Det spanske systemet favoriserte *peninsulares* - folk født i Spania. De fikk de øverste stillingene i administrasjonen og kirken. Kreolene, selv om de var rike og utdannede, ble holdt utenfor. Rivaliseringen mellom dette aristokratiet i koloniene og det Spania-lojale byråkratiet la grunnlaget for frigjøringsbevegelsene (Opsvik, 2025a). Da Napoleon invaderte Spania i 1808 og avsatte kongen, ble båndene til moderlandet svekket. Kreolene så sin sjanse: «Vi er lojale mot kongen, ikke mot Napoleon,» sa de, og dannet sine egne regjeringer. Frigjøringskampen fikk to store militære ledere: Simón Bolívar i nord, og José de San Martín, som førte hæren sin over Andesfjellene i 1817, frigjorde Chile og siden gikk mot Peru (Skatvik, 2025)."
         },
         {
             "type": "component",
@@ -62,13 +62,13 @@
                     },
                     {
                         "label": "Stil",
-                        "left": "Visjonær og karismatisk",
-                        "right": "Militær strateg og beskjeden"
+                        "left": "Visjonær og karismatisk sentralist",
+                        "right": "Militær strateg - førte hæren over Andesfjellene"
                     },
                     {
                         "label": "Mål",
                         "left": "Et forent, republikansk Sør-Amerika",
-                        "right": "Uavhengighet (gjerne monarki)"
+                        "right": "Uavhengighet for koloniene i sør, ett land om gangen"
                     }
                 ]
             }
@@ -79,14 +79,14 @@
         },
         {
             "type": "text",
-            "content": "Simón Bolívar hadde en visjon om at de spanske koloniene skulle forenes i én stor nasjon, akkurat som USA i nord. Han opprettet Gran Colombia (som dekket dagens Colombia, Venezuela, Ecuador og Panama). Men geografien i Sør-Amerika – med de enorme Andesfjellene og Amazonas-jungelen – gjorde kommunikasjon nesten umulig.\n\nI tillegg var det sterk rivalisering mellom de ulike lokale elitene (caudillos). Gran Colombia falt sammen i 1831, kort tid etter Bolívars død. Latin-Amerika ble splittet opp i mange mindre stater, preget av politisk ustabilitet og militærstyre."
+            "content": "Simón Bolívar var sentralist. Han ville bygge store nasjoner og samle de spanske koloniene, akkurat som USA i nord (Opsvik, 2025b). Grunnlaget for Gran Colombia ble lagt på kongressen i Angostura i 1819, og republikken ble formelt organisert på kongressen i Cúcuta i 1821 (Encyclopaedia Britannica, u.å.). Den dekket dagens Colombia, Venezuela, Ecuador og Panama (Opsvik, 2025b). Men geografien i Sør-Amerika, med de enorme Andesfjellene og Amazonas-jungelen, gjorde kommunikasjon nesten umulig.\n\nI tillegg var det sterk rivalisering mellom landsdelene og hard kamp om embetene mellom de lokale elitene (caudillos) (Encyclopaedia Britannica, u.å.). Bolívar ville ha sterk sentralmakt, mens de fleste ønsket lokalt selvstyre. Venezuela og Ecuador brøt ut, og storrepublikken var i praksis oppløst da Bolívar døde 17. desember 1830 (Opsvik, 2025b). Latin-Amerika ble splittet opp i mange mindre stater, preget av politisk ustabilitet og militærstyre."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "author": "Simón Bolívar",
-                "text": "Jeg har pløyd i havet."
+                "author": "Simón Bolívar, brev til general Juan José Flores, 9. november 1830",
+                "text": "Den som tjener en revolusjon, pløyer i havet."
             }
         },
         {
@@ -97,18 +97,31 @@
                     "Hva var en kreol, og hvordan skilte kreolene seg fra peninsulares i det spanske systemet?",
                     "Hvilken hendelse i 1808 ga kreolene sjansen til å danne sine egne regjeringer?",
                     "Hvilke land dekker Gran Colombia, som Bolívar grunnla, i dag?",
-                    "Nevn to grunner teksten gir til at Gran Colombia falt sammen i 1831."
+                    "Nevn to grunner teksten gir til at Gran Colombia falt fra hverandre."
                 ],
                 "reflekter": [
                     "Forklar hvorfor opprøret i Latin-Amerika ble ledet av den rike overklassen og ikke av slavene, slik som på Haiti.",
                     "Hvordan gjorde geografien i Sør-Amerika, med Andesfjellene og Amazonas-jungelen, det vanskelig å holde Gran Colombia samlet?",
                     "Sammenlign Simón Bolívar og José de San Martín. Hvordan var målene og stilen deres forskjellige?",
-                    "Bolívar sa «Jeg har pløyd i havet.» Hva tror du han mente med dette, ut fra hvordan drømmen hans endte?"
+                    "Bolívar skrev at «den som tjener en revolusjon, pløyer i havet». Hva tror du han mente med dette, ut fra hvordan drømmen hans endte?"
                 ],
                 "gaaVidere": [
                     "Bolívar ville forene Sør-Amerika til én stor nasjon, slik USA i nord. Diskuter hvorfor det lyktes i nord, men ikke i sør.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor et land som frigjør seg, likevel kan ende opp splittet og ustabilt.",
                     "Finn ut hvilket land Bolívar har fått oppkalt etter seg i dag, og fortell kort hvorfor han fortsatt blir husket der."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Opsvik, T. (2025a). *Latin-Amerikas historie*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Latin-Amerikas_historie](https://snl.no/Latin-Amerikas_historie)",
+                    "Opsvik, T. (2025b). *Simón Bolívar*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Simón_Bolívar](https://snl.no/Sim%C3%B3n_Bol%C3%ADvar)",
+                    "Skatvik, F. (2025). *José de San Martín*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/José_de_San_Martín](https://snl.no/Jos%C3%A9_de_San_Mart%C3%ADn)",
+                    "Encyclopaedia Britannica. (u.å.). *Gran Colombia*. Hentet 26.07.2026 fra [britannica.com](https://www.britannica.com/place/Gran-Colombia)",
+                    "Bolívar, S. (1830). *Carta de Bolívar al general Juan José Flores* (brev, Barranquilla 9. november 1830). Wikisource. Hentet 26.07.2026 fra [es.wikisource.org](https://es.wikisource.org/wiki/Carta_de_Bol%C3%ADvar_al_general_Juan_Jos%C3%A9_Flores_(1830))"
                 ]
             }
         }
@@ -138,5 +151,5 @@
         }
     ],
     "createdDate": "2026-01-16T10:10:00Z",
-    "lastUpdated": "2026-01-16T10:10:00Z"
+    "lastUpdated": "2026-07-26T00:00:00Z"
 }

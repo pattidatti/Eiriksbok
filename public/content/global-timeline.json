@@ -5264,7 +5264,7 @@
     {
       "id": "latin-amerika-sub-1",
       "title": "Revolusjonene starter",
-      "description": "Juntaer tar makten i Caracas og Buenos Aires.",
+      "description": "Lokale juntaer tar makten flere steder i koloniene.",
       "startDate": 1810,
       "endDate": null,
       "displayDate": "1810",
@@ -5506,7 +5506,7 @@
     {
       "id": "latin-amerika-sub-2",
       "title": "Gran Colombia",
-      "description": "Bolívar grunnlegger en storrepublikk.",
+      "description": "Grunnlaget for storrepublikken legges i Angostura. Republikken organiseres formelt i Cúcuta i 1821.",
       "startDate": 1819,
       "endDate": null,
       "displayDate": "1819",
@@ -5552,7 +5552,7 @@
     {
       "id": "latin-amerika-sub-3",
       "title": "Slaget ved Ayacucho",
-      "description": "Det siste spanske nederlaget i Sør-Amerika.",
+      "description": "Slagene ved Junín og Ayacucho sikrer den endelige seieren over rojalistene.",
       "startDate": 1824,
       "endDate": null,
       "displayDate": "1824",
@@ -6241,7 +6241,7 @@
     {
       "id": "kongo-sub-0",
       "title": "Kong Leopolds private eiendom",
-      "description": "Kongo Free State etableres. Terrorvelde.",
+      "description": "Kongostaten blir Leopold IIs personlige eiendom. Hæren hans bruker vold for å kontrollere befolkningen.",
       "startDate": 1885,
       "endDate": null,
       "displayDate": "1885",
@@ -7060,7 +7060,7 @@
     {
       "id": "midtosten-mandater-sub-2",
       "title": "San Remo-konferansen",
-      "description": "Mandatområdene opprettes (Frankrike får Syria/Libanon, UK får Palestina/Irak).",
+      "description": "Mandatområdene opprettes (Frankrike får Syria og Libanon, Storbritannia får Irak, Jordan og Palestina).",
       "startDate": 1920,
       "endDate": null,
       "displayDate": "1920",
@@ -9275,7 +9275,7 @@
     {
       "id": "kongo-sub-1",
       "title": "30. juni: Uavhengighet",
-      "description": "Belgia trekker seg ut over natten. Lumumba blir statsminister.",
+      "description": "Belgia trekker seg ut i all hast. Lumumba blir statsminister.",
       "startDate": 1960,
       "endDate": null,
       "displayDate": "1960",
@@ -9375,8 +9375,8 @@
     },
     {
       "id": "kongo-sub-2",
-      "title": "Lumumba myrdes",
-      "description": "Drept av separatister med hjelp fra Belgia og CIA.",
+      "title": "Lumumba drepes",
+      "description": "Drept i Katanga 17. januar, uten rettergang og under ledelse av en belgisk offiser.",
       "startDate": 1961,
       "endDate": null,
       "displayDate": "1961",
@@ -9685,7 +9685,7 @@
     {
       "id": "kongo-sub-3",
       "title": "Mobutu tar makten",
-      "description": "Starter et kleptokrati som varer i 30 år.",
+      "description": "Militærkupp i november. Mobutu blir sittende i 32 år.",
       "startDate": 1965,
       "endDate": null,
       "displayDate": "1965",
