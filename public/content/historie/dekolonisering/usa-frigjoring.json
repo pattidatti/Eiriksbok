@@ -10,7 +10,7 @@
     "details": [
         "Den første suksessfulle kolonifrigjøringen.",
         "Inspirert av opplysningstidens ideer.",
-        "Startskuddet for revolusjoner i Frankrike og Latin-Amerika."
+        "Ble en inspirasjon for grunnlover og frigjøringskamper i andre land."
     ],
     "timeline": [
         {
@@ -30,14 +30,14 @@
         },
         {
             "year": "1789",
-            "title": "Grunnloven",
-            "description": "USA får sin konstitusjon og George Washington blir president."
+            "title": "Grunnloven i kraft",
+            "description": "Grunnloven fra 1787 trer i kraft, og George Washington blir USAs første president."
         }
     ],
     "content": [
         {
             "type": "text",
-            "content": "I 1776 gjorde 13 britiske kolonier i Nord-Amerika noe verden aldri hadde sett før: De erklærte seg uavhengige fra verdens mektigste imperium, Storbritannia. Dette var ikke bare et opprør mot skatter, men en revolusjon drevet av nye, radikale ideer om frihet og folkestyre.\n\nFrem til da var det en selvfølge at konger styrte av Guds nåde. Den amerikanske revolusjonen snudde dette på hodet: Regjeringens makt kommer fra folket."
+            "content": "Den 4. juli 1776 gjorde 13 britiske kolonier i Nord-Amerika noe verden aldri hadde sett før: De erklærte seg uavhengige fra verdens mektigste imperium, Storbritannia (Pharo, 2026b). Dette var ikke bare et opprør mot skatter, men en revolusjon drevet av nye, radikale ideer om frihet og folkestyre.\n\nFrem til da var det en selvfølge at konger styrte av Guds nåde. Den amerikanske revolusjonen snudde dette på hodet: Erklæringen slo fast at de som styrer, bare har rett til å styre hvis de har samtykke fra dem de styrer over (Pharo, 2026a). Makten kommer altså fra folket."
         },
         {
             "type": "header",
@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "Opprøret var dypt inspirert av opplysningstiden. Europeiske filosofer som John Locke og Montesquieu hadde skrevet om 'naturlige rettigheter' og maktfordeling. De amerikanske lederne, som Thomas Jefferson og Benjamin Franklin, leste disse bøkene og brukte dem som våpen.\n\nSlagordet 'No taxation without representation' (ingen skatt uten representasjon) oppsummerte sinnet. Kolonistene nektet å betale skatt til et parlament i London hvor de ikke hadde stemmerett."
+            "content": "Opprøret var dypt inspirert av opplysningstiden. Uavhengighetserklæringen bygger på naturrettsfilosofien og på den engelske filosofen John Lockes tanke om at staten hviler på en avtale mellom folket og de som styrer (Pharo, 2026a). Den franske tenkeren Montesquieu hadde i 1748 skrevet at makten må deles opp, fordi den som har makt, gjerne misbruker den (Thorsen, 2024). Thomas Jefferson, som skrev det meste av erklæringen, kjente både lovverk og samtidens bøker godt, og han brukte disse ideene som våpen (Pharo, 2026a).\n\nSlagordet 'No taxation without representation' (ingen skatt uten representasjon) oppsummerte sinnet. Det ble formet av Patrick Henry alt i 1765, da han gikk mot en britisk skattelov (Pharo, 2026b). Kolonistene mente de var engelskmenn som ikke kunne skattlegges uten sitt eget samtykke, og de nektet å betale skatt til et parlament i London hvor de ikke hadde stemmerett (Pharo, 2026b)."
         },
         {
             "type": "component",
@@ -61,14 +61,14 @@
         },
         {
             "type": "text",
-            "content": "Mens Thomas Jefferson skrev at 'alle menn er skapt like', eide han selv slaver. Dette er det store paradokset ved USAs fødsel. Friheten gjaldt i hovedsak hvite, eiende menn. Både kvinner, urfolk og afro-amerikanere ble stående utenfor det nye demokratiet. Likevel tente ordene i uavhengighetserklæringen en gnist som skulle inspirere frigjøringskamper over hele verden i århundrene som kom – fra Haiti til Vietnam."
+            "content": "Mens Thomas Jefferson skrev at alle mennesker er født like, eide han selv slaver på plantasjen sin, og han trodde ikke på likhet mellom folkegrupper (Pharo, 2026a). Dette er det store paradokset ved USAs fødsel. Friheten gjaldt i hovedsak hvite, eiende menn. Kvinner og ikke-hvite menn, og særlig de afroamerikanerne som var slaver, ble stående utenfor det nye demokratiet (Pharo, 2026a).\n\nLikevel tente ordene i uavhengighetserklæringen en gnist. Erklæringen ble en inspirasjon for mange land, både i samtiden og lenge etterpå - fra den norske grunnloven i 1814 til de mange nye statene som vokste fram da kolonirikene falt sammen etter andre verdenskrig (Pharo, 2026a)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hvorfor vant kolonistene?",
-                "content": "Gueriljakrigføring: Amerikanerne kjente terrenget og brukte skyttergravstaktikk.\nFransk hjelp: Frankrike så en sjanse til å svekke sin erkefiende Storbritannia og sendte penger, våpen og skip.\nMotivasjon: Kolonistene kjempet for sine hjem, britene kjempet for en lønnsslipp."
+                "content": "Terrenget: Amerikanerne kjente landet sitt og lå i skjul i skogholt og bak steingjerder. George Washington unngikk ofte de store slagene og holdt hæren samlet i stedet (Pharo, 2026b). Han ble valgt til USAs første president i 1789 (Store norske leksikon, 2026).\nFransk hjelp: Frankrike så en sjanse til å svekke sin erkefiende Storbritannia og sendte våpenhjelp alt fra 1776. I 1778 inngikk Frankrike en formell allianse med amerikanerne, og Spania og Nederland fulgte etter. Da måtte britene kjempe flere steder i verden samtidig (Pharo, 2026b).\nMotivasjon: Kolonistene kjempet for sine egne hjem."
             }
         },
         {
@@ -78,19 +78,31 @@
                 "forstaa": [
                     "Hvor mange britiske kolonier var det som erklærte seg uavhengige i 1776, og fra hvilket imperium?",
                     "Hva betyr slagordet 'No taxation without representation', og hvorfor nektet kolonistene å betale skatt til parlamentet i London?",
-                    "Hvem skrev at 'alle menn er skapt like', og hva var det store paradokset ved denne personen?",
+                    "Hvem skrev at alle mennesker er født like, og hva var det store paradokset ved denne personen?",
                     "Nevn tre grunner til at kolonistene klarte å vinne krigen mot Storbritannia."
                 ],
                 "reflekter": [
                     "Teksten sier at 'ideer reiser raskere enn kuler'. Forklar med egne ord hvordan opplysningstidens ideer ble brukt som våpen i revolusjonen.",
                     "Før revolusjonen var det en selvfølge at konger styrte av Guds nåde. Forklar hvordan den amerikanske revolusjonen snudde dette på hodet.",
-                    "Hvorfor kalles USA 'den første dominobrikken'? Hva mener teksten med at revolusjonen ble et startskudd for andre land som Haiti og Vietnam?",
+                    "Hvorfor kalles USA 'den første dominobrikken'? Hva mener teksten når den sier at erklæringen ble en inspirasjon både for den norske grunnloven i 1814 og for nye stater etter andre verdenskrig?",
                     "Ordene i uavhengighetserklæringen gjaldt i praksis mest hvite, eiende menn. Var erklæringen likevel viktig for grupper som ble stående utenfor? Argumenter for begge sider."
                 ],
                 "gaaVidere": [
                     "Slagordet 'ingen skatt uten representasjon' handler om retten til å være med å bestemme. Finn et eksempel fra i dag der folk krever å få bestemme over noe som angår dem.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor du mener det er et paradoks at Thomas Jefferson skrev om frihet mens han selv eide slaver.",
                     "Diskuter med en partner: Kan en god idé være farlig for makthaverne? Bruk den amerikanske revolusjonen som eksempel."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Pharo, H. (2026a). *Den amerikanske uavhengighetserklæringen*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/den_amerikanske_uavhengighetserklæringen](https://snl.no/den_amerikanske_uavhengighetserkl%C3%A6ringen)",
+                    "Pharo, H. (2026b). *Den amerikanske uavhengighetskrigen*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/den_amerikanske_uavhengighetskrigen](https://snl.no/den_amerikanske_uavhengighetskrigen)",
+                    "Store norske leksikon. (2026). *George Washington*. Hentet 26.07.2026 fra [snl.no/George_Washington](https://snl.no/George_Washington)",
+                    "Thorsen, D. E. (2024). *Maktfordelingsprinsippet*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/maktfordelingsprinsippet](https://snl.no/maktfordelingsprinsippet)"
                 ]
             }
         }
@@ -120,5 +132,6 @@
         }
     ],
     "createdDate": "2026-01-16T10:00:00Z",
-    "lastUpdated": "2026-01-16T10:00:00Z"
+    "lastUpdated": "2026-07-26T00:00:00Z",
+    "factChecked": "2026-07-26"
 }
