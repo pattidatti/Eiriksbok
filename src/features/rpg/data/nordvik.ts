@@ -1,4 +1,4 @@
-import type { BankQuestion, LandmarkDef, NpcDef } from '../types';
+import type { AuthoredQuest, BankQuestion, LandmarkDef, NpcDef } from '../types';
 
 // Nordvik - den ferdige sonen. Alt her er håndlaget: hvor folk står, hva de
 // vet, og hvilke svar som ligger gjemt i verden.
@@ -148,7 +148,15 @@ export const NORDVIK_NPCS: NpcDef[] = [
         ],
         handler: {
             velkomst: 'Kom nærmere. Jeg har både det som verner og det som leger.',
-            varer: ['vadmelskjortel', 'lerbrynje', 'ringbrynje', 'tingspyd', 'runestav', 'kvernstein'],
+            varer: [
+                'vadmelskjortel',
+                'lerbrynje',
+                'ringbrynje',
+                'tingspyd',
+                'jaktbue',
+                'runestav',
+                'kvernstein',
+            ],
         },
     },
 ];
@@ -228,7 +236,8 @@ export const NORDVIK_AUTHORED: BankQuestion[] = [
     },
     {
         id: 'nordvik-authored-1',
-        question: 'Orm legger bordene i skroget over hverandre, som takstein. Hva kalles den metoden?',
+        question:
+            'Orm legger bordene i skroget over hverandre, som takstein. Hva kalles den metoden?',
         options: ['Klinkbygging', 'Kravellbygging', 'Bindingsverk', 'Lafting'],
         correct: 0,
         explanation:
@@ -256,6 +265,42 @@ export const NORDVIK_AUTHORED: BankQuestion[] = [
         lessonId: 'merovingertiden',
         lessonTitle: 'Merovingertiden: De stille århundrene',
         link: '/historie/norgeshistorie/merovingertiden',
+    },
+];
+
+/**
+ * De håndskrevne oppdragene, ferdig innpakket. Tittel, replikk, hint, giver og
+ * belønning lå tidligere i `engine/quests.ts` som tre parallelle lister indeksert
+ * mot spørsmålene over. Det er stedets innhold, ikke questmotorens, og det måtte
+ * flytte hit for at motoren skal kunne bygge oppdrag for hvilket sted som helst.
+ *
+ * Giveren er alltid den som selv har mistet ordet - de tre lærer eleven hvordan
+ * spillet fungerer, og derfor er kilden her giveren selv.
+ */
+export const NORDVIK_AUTHORED_QUESTER: AuthoredQuest[] = [
+    {
+        title: 'Nøklene i beltet',
+        intro: 'Nøklene mine klirrer, og jeg husker ikke lenger hvorfor de betyr noe. Kan du finne det ut for meg?',
+        hint: 'Gudrun vet det selv - hun har bare mistet ordet. Snakk med henne igjen.',
+        giverId: 'gudrun',
+        question: NORDVIK_AUTHORED[0],
+        belonning: { xp: 45, solv: 20, itemId: 'vadmelskjortel' },
+    },
+    {
+        title: 'Bordene i skroget',
+        intro: 'Tåka tok ordet for det jeg gjør. Jeg legger bordene slik - men hva heter det?',
+        hint: 'Orm i naustet kan vise deg hvordan bordene ligger.',
+        giverId: 'orm',
+        question: NORDVIK_AUTHORED[1],
+        belonning: { xp: 45, solv: 20, itemId: 'kvernstein' },
+    },
+    {
+        title: 'De stille århundrene',
+        intro: 'Jeg skriver ned alt. Men jeg har mistet navnet på tida før vår. Hjelp meg.',
+        hint: 'Aslak Munk sitter ved kirken og husker mer enn han tror.',
+        giverId: 'aslak',
+        question: NORDVIK_AUTHORED[2],
+        belonning: { xp: 45, solv: 20 },
     },
 ];
 

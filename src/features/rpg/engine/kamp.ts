@@ -215,6 +215,22 @@ export class Kamp {
         }
     }
 
+    /**
+     * Ett skudd.
+     *
+     * Ingen kombo: å trekke en bue tre ganger etter hverandre er ikke en
+     * kombinasjon, det er tre skudd. Uten pust går skuddet likevel, men svakt -
+     * samme regel som et trett slag. Garden senkes; ingen holder skjoldet oppe
+     * og trekker streng samtidig.
+     */
+    skyt(vaapen: VaapenKamp): { sliten: boolean } {
+        const sliten = this.pust < vaapen.pust;
+        this.pust = Math.max(0, this.pust - vaapen.pust);
+        this.senkGard();
+        this.registrerHandling();
+        return { sliten };
+    }
+
     /** Manøveren er et valg, ikke et grunnverb. Den kan nektes. */
     manover(): boolean {
         if (this.pust < KAMP.manoverPust) return false;

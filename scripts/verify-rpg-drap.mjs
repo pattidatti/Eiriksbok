@@ -12,27 +12,33 @@
 // eleven går bort og plukker det opp.
 import { chromium } from 'playwright';
 import { writeFileSync, mkdirSync } from 'node:fs';
+import { entreNordvik, stengHmr } from './lib/rpg-testside.mjs';
 
 mkdirSync('.screenshots', { recursive: true });
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1366, height: 768 }, reducedMotion: 'no-preference' });
+const page = await browser.newPage({
+    viewport: { width: 1366, height: 768 },
+    reducedMotion: 'no-preference',
+});
 const feil = [];
 page.on('pageerror', (e) => feil.push(String(e)));
 page.on('console', (m) => m.type() === 'error' && feil.push(m.text()));
 
-await page.goto('http://localhost:5173/oving/rpg', { waitUntil: 'networkidle' });
-await page.fill('input[placeholder="Skriv navnet ditt"]', 'Torstein');
-await page.click('button:has-text("Reis til Nordvik")');
-await page.waitForSelector('canvas');
+await stengHmr(page);
+await entreNordvik(page);
 await page.waitForTimeout(3000);
 
 const cdp = await page.context().newCDPSession(page);
 const skudd = async (navn, i) => {
     const { data } = await cdp.send('Page.captureScreenshot', { format: 'png' });
-    writeFileSync(`.screenshots/${navn}-${String(i).padStart(2, '0')}.png`, Buffer.from(data, 'base64'));
+    writeFileSync(
+        `.screenshots/${navn}-${String(i).padStart(2, '0')}.png`,
+        Buffer.from(data, 'base64')
+    );
 };
 
-const liv = async () => Number(await (await page.$('[aria-label="Liv"]')).getAttribute('aria-valuenow'));
+const liv = async () =>
+    Number(await (await page.$('[aria-label="Liv"]')).getAttribute('aria-valuenow'));
 // XP gis i drapsøyeblikket. Sølv krever at hun plukker det opp, så det er
 // ubrukelig som signal.
 const xp = async () => {
@@ -83,10 +89,14 @@ for (let runde = 0; runde < 60 && !drept; runde++) {
 if (!drept) console.log('ingen drap fanget');
 
 // Sjekk at tiden er tilbake til normalt etterpå. Saktefilmen skalerer vår egen
-// delta, og pusten er en presis klokke: garden drenerer 6 i sekundet. Men den
-// målingen holder bare i fred - blokker koster 8-18 pust hver, og i en pågående
-// kamp drukner de signalet. Derfor løper hun først vekk: eleven har fart 96,
-// fiendene 42-70, så hun kommer unna.
+// delta, og pusten er en presis klokke: garden drenerer 6 i sekundet.
+//
+// Men den målingen holder bare i fred, og fred er sjelden vare i Nordvik: et
+// blokkert slag koster 8-18 pust i tillegg, og da drukner signalet. Å løpe fra
+// dem var det første forsøket, men fiendene fulgte etter, og målingen ble hoppet
+// over i fire av fem kjøringer. Nå ryddes brettet i stedet: fiendene flyttes til
+// motsatt hjørne og legges i dvale, og spawnklokka settes langt fram. Det er et
+// inngrep i verden, men det er den eneste måten å måle en klokke på uten støy.
 const pust = async () => {
     const el = await page.$('[aria-label="Pust"]');
     return el ? Number(await el.getAttribute('aria-valuenow')) : null;
@@ -102,9 +112,20 @@ if (await page.$('button:has-text("Reis deg")')) {
     await page.waitForTimeout(1800);
 }
 
-await page.keyboard.down('a');
-await page.waitForTimeout(5000);
-await page.keyboard.up('a');
+await page.evaluate(() => {
+    const scene = window.__rpg.scene.getScene('verden');
+    const kart = scene.kart;
+    for (const f of scene.fiendeSystem.alle()) {
+        if (f.dodd) continue;
+        f.sprite.setPosition(8, (kart.hoyde - 2) * 16);
+        f.sprite.setVelocity(0, 0);
+        f.tilstand = 'sover';
+        f.timer = 999999;
+    }
+    // Ingen nye på en stund, og eleven settes i motsatt hjørne.
+    scene.fiendeSystem.spawnTimer = 999999;
+    scene.helt.sprite.setPosition((kart.bredde - 2) * 16, 24);
+});
 
 // Vent til hun har fred: livet står stille og pusten er full.
 let rolig = false;
@@ -120,16 +141,42 @@ for (let i = 0; i < 40; i++) {
 if (!rolig) {
     console.log('tidssjekk hoppet over - fikk ikke fred til å måle');
 } else {
+    // Livet leses før og etter: blir eleven truffet mens garden står, koster
+    // blokken 8-18 pust i tillegg, og målingen er ikke lenger et rent tilfelle.
+    // Uten denne vakten rapporterte skriptet «tiden er ute av lås» hver gang en
+    // fiende kom bort og slo, som er en falsk alarm - samme grunn til at
+    // verify-rpg-kamp.mjs måler med `lFor`/`lEtter`.
     const f = await pust();
+    const lFor = await liv2();
     await page.keyboard.down('Shift');
     await page.waitForTimeout(2000);
     const e = await pust();
+    const lEtter = await liv2();
     await page.keyboard.up('Shift');
     const drenert = f - e;
-    console.log(
-        `tid etter drap: garden drenerte ${drenert} pust i 2 sek`,
-        drenert >= 9 && drenert <= 18 ? '- OK, normal tid' : '- FEIL, tiden er ute av lås'
+    // Dør eleven under målingen, forsvinner HUD-en og begge avlesningene blir
+    // null. Da er `f - e` null-null = 0, som leser som «tiden står stille» -
+    // en falsk alarm som så helt ekte ut.
+    // Er skjoldet brukket, kan garden ikke reises i det hele tatt, og da
+    // drenerer den 0 - som leser som at tiden står stille. Ikke en feil i
+    // klokka, men i forutsetningen for å lese den.
+    const skjold = await page.evaluate(
+        () => window.__rpg.scene.getScene('verden').helt.kampSnapshot().skjoldHelse
     );
+    if (f === null || e === null || lFor === null || lEtter === null) {
+        console.log('tidssjekk hoppet over - eleven døde under målingen');
+    } else if (skjold <= 0) {
+        console.log(`tidssjekk hoppet over - skjoldet er brukket, garden kan ikke reises`);
+    } else if (lFor !== lEtter) {
+        console.log(
+            `tidssjekk hoppet over - eleven ble truffet under målingen (${drenert} pust, liv ${lFor} -> ${lEtter})`
+        );
+    } else {
+        console.log(
+            `tid etter drap: garden drenerte ${drenert} pust i 2 sek`,
+            drenert >= 9 && drenert <= 18 ? '- OK, normal tid' : '- FEIL, tiden er ute av lås'
+        );
+    }
 }
 await skudd('etterpaa', 0);
 console.log('konsollfeil:', feil.length ? feil.slice(0, 3) : 'ingen');

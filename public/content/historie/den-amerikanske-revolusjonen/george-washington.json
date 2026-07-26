@@ -14,7 +14,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Det var den 23. desember 1783. En mann i uniform gikk inn i en sal full av folkevalgte i byen Annapolis. Han hadde nettopp vunnet en krig mot verdens sterkeste rike. Hæren stolte blindt på ham, og mange mente han kunne blitt konge over det helt nye landet om han bare ville. I stedet tok han fram et papir, leste opp noen ord om at oppdraget var fullført, og la fra seg sverdet. Så red han hjem til gården sin. Da kong George III i England hørte at Washington hadde tenkt å gi fra seg makten, skal han ha sagt: «Gjør han det, blir han den største mannen i verden.»"
+            "content": "Det var den 23. desember 1783. En mann i uniform gikk inn i en sal full av folkevalgte i byen Annapolis (Encyclopaedia Britannica, 2026). Han hadde nettopp vunnet en krig mot verdens sterkeste rike. Hæren stolte blindt på ham, og mange mente han kunne blitt konge over det helt nye landet om han bare ville. I stedet tok han fram et papir, leste opp noen ord om at oppdraget var fullført, og la fra seg sverdet. Så red han hjem til gården sin. Historien vil ha det til at kong George III i England sa: «Gjør han det, blir han den største mannen i verden.» Om kongen virkelig sa det, vet vi ikke sikkert."
         },
         {
             "type": "image",
@@ -32,11 +32,11 @@
         },
         {
             "type": "text",
-            "content": "Washington ble født i 1732 i kolonien Virginia. Familien var ikke blant de aller rikeste, og faren døde da George var elleve år. Han gikk ikke på universitet slik mange andre ledere gjorde. I stedet lærte han seg å måle opp land, og som ung mann red han langt inn i villmarken for å tegne kart. Han var høy, sterk og rolig, og folk la merke til at han holdt hodet kaldt når andre mistet det."
+            "content": "Washington ble født i 1732 i kolonien Virginia. Familien var ikke blant de aller rikeste, og faren døde da George var elleve år (Graff, 2026). Han gikk ikke på universitet slik mange andre ledere gjorde. I stedet lærte han seg å måle opp land, og allerede som syttenåring fikk han offentlig jobb som landmåler i Virginia. Som ung mann red han langt inn i villmarken for å tegne kart (Graff, 2026). Han var høy, sterk og rolig, og folk la merke til at han holdt hodet kaldt når andre mistet det."
         },
         {
             "type": "text",
-            "content": "Som ung offiser var han med i en tidligere krig mellom England og Frankrike. Han gjorde noen feil, men han lærte av dem. Da de tretten koloniene i Nord-Amerika til slutt gjorde opprør mot den britiske kongen, trengte de en general alle kunne stole på. Valget falt på Washington. Han var ikke den mest lærde eller den mest strålende taleren, men han var den folk stolte på. Det skulle vise seg å bety mer enn alt annet."
+            "content": "Som ung offiser var han med i en tidligere krig mellom England og Frankrike på 1750-tallet (Store norske leksikon, 2026). Han gjorde noen feil, men han lærte av dem. Da de tretten koloniene i Nord-Amerika til slutt gjorde opprør mot den britiske kongen, trengte de en general alle kunne stole på. Sommeren 1775 falt valget på Washington (Pharo, 2026). Han var ikke den mest lærde eller den mest strålende taleren, men han var den folk stolte på. Det skulle vise seg å bety mer enn alt annet."
         },
         {
             "type": "header",
@@ -44,11 +44,11 @@
         },
         {
             "type": "text",
-            "content": "De første årene av [uavhengighetskrigen](/historie/den-amerikanske-revolusjonen/uavhengighetskrigen) gikk dårlig. Washingtons hær var liten, dårlig utstyrt og full av vanlige bønder og håndverkere. De sloss mot verdens best trente soldater. Gang på gang måtte de trekke seg tilbake. Menn døde av kulde og sult, og mange rømte hjem. Vinteren 1776 var alt i ferd med å rakne."
+            "content": "De første årene av [uavhengighetskrigen](/historie/den-amerikanske-revolusjonen/uavhengighetskrigen) gikk dårlig. Washingtons hær var liten, dårlig utstyrt og full av vanlige bønder og håndverkere. De sloss mot verdens best trente soldater. Gang på gang måtte de trekke seg tilbake. Menn døde av kulde og sult, og mange rømte hjem. Vinteren 1776 var alt i ferd med å rakne. Hæren var slått to ganger, dårlig kledd og dårlig matet, og tusenvis av mennene var barbeinte (Graff, 2026)."
         },
         {
             "type": "text",
-            "content": "Da tok Washington en sjanse ingen trodde var mulig. Selveste julenatten lastet han hæren i robåter og rodde tvers over den iskalde Delaware-elven, midt i snøen og mørket. På den andre siden overrasket de fienden i byen Trenton og vant. Seieren var ikke stor i seg selv, men den ga nytt håp akkurat da alt så mørkest ut. Slike dristige trekk holdt hæren i live til hjelp kom fra Frankrike, og til slutt vant koloniene. Prøv selv å ro hæren over elven i spillet under."
+            "content": "Da tok Washington en sjanse ingen trodde var mulig. Selveste julenatten satte han rundt 2400 mann i robåter og rodde tvers over den iskalde Delaware-elven, midt i snøen og mørket. På den andre siden overrasket de fienden i byen Trenton og vant (Graff, 2026). Seieren var ikke stor i seg selv, men den ga nytt håp akkurat da alt så mørkest ut. Slike dristige trekk holdt hæren i live til Frankrike gikk inn på kolonistenes side i 1778 (Pharo, 2026), og til slutt vant koloniene. Prøv selv å ro hæren over elven i spillet under."
         },
         {
             "type": "component",
@@ -69,11 +69,11 @@
         },
         {
             "type": "text",
-            "content": "Da krigen nærmet seg slutten, var mange soldater sinte. Kongressen hadde ikke betalt dem lønn på lenge. Noen offiserer begynte å hviske om at hæren burde ta makten med vold og gjøre Washington til enehersker. Én kveld i 1783 møtte Washington de sinte offiserene. Han holdt en kort tale, men det som gjorde størst inntrykk var da han tok fram brillene sine og sa at han var blitt både grå og nesten blind i tjeneste for landet. Flere av mennene begynte å gråte. Opprøret rant ut i sanden. Washington kunne brukt hæren til å ta makten. Han nektet."
+            "content": "Da krigen nærmet seg slutten, var mange soldater sinte. Kongressen hadde ikke betalt dem lønn på lenge. Noen offiserer begynte å hviske om at hæren burde ta makten med vold og gjøre Washington til enehersker. I mars 1783 møtte Washington de sinte offiserene i leiren ved Newburgh. Han holdt en kort tale, men det som gjorde størst inntrykk var da han tok fram brillene sine og sa at han var blitt grå i deres tjeneste og nå holdt på å bli blind. Flere av mennene fikk tårer i øynene (Teaching American History, 2025). Opprøret rant ut i sanden. Washington kunne brukt hæren til å ta makten. Han nektet."
         },
         {
             "type": "text",
-            "content": "Samme år la han fra seg kommandoen og dro hjem, slik du leste i starten. Tenk deg at du vinner det største spillet som finnes, og alle roper at du kan bli sjefen over alt for alltid. Og så sier du bare nei takk og går hjem. Det er nesten umulig for de fleste mennesker. Men det var akkurat dette valget som gjorde at det nye landet ikke fikk en ny konge. Prøv de samme valgene selv i oppgaven under."
+            "content": "Samme år la han fra seg kommandoen i kongressens hender og dro hjem, slik du leste i starten (Store norske leksikon, 2026). Tenk deg at du vinner det største spillet som finnes, og alle roper at du kan bli sjefen over alt for alltid. Og så sier du bare nei takk og går hjem. Det er nesten umulig for de fleste mennesker. Men det var akkurat dette valget som gjorde at det nye landet ikke fikk en ny konge. Prøv de samme valgene selv i oppgaven under."
         },
         {
             "type": "component",
@@ -86,11 +86,11 @@
         },
         {
             "type": "text",
-            "content": "Noen år senere skrev amerikanerne en [grunnlov](/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven) som bestemte hvordan landet skulle styres. De var redde for at én person igjen skulle få for mye makt. Likevel trengte de en første leder de kunne stole på, og alle pekte på den samme mannen. I 1789 ble Washington valgt til USAs første president."
+            "content": "Noen år senere skrev amerikanerne en [grunnlov](/historie/den-amerikanske-revolusjonen/den-amerikanske-grunnloven) som bestemte hvordan landet skulle styres. De var redde for at én person igjen skulle få for mye makt. Likevel trengte de en første leder de kunne stole på, og alle pekte på den samme mannen. I 1789 ble Washington valgt til USAs første president (Store norske leksikon, 2026)."
         },
         {
             "type": "text",
-            "content": "Alt han gjorde ble til en regel for dem som kom etter. Ingen hadde vært president før, så hvert valg han tok skapte et mønster. Det viktigste kom til slutt. Etter to perioder, åtte år, kunne han lett blitt valgt på nytt så mange ganger han ville. I stedet gikk han av og dro hjem igjen. Dermed ble det en uskreven regel at makten i USA skal skifte hender fredelig, og ingen president skal sitte for alltid. Sammenlign dette med [Napoleon](/historie/den-franske-revolusjon/napoleon) i Frankrike, som noen år senere satte en keiserkrone på sitt eget hode. To revolusjoner, to helt ulike slutter."
+            "content": "Alt han gjorde ble til en regel for dem som kom etter. Ingen hadde vært president før, så hvert valg han tok skapte et mønster. Det viktigste kom til slutt. Han ble gjenvalgt i 1792, men i 1796 sa han nei til å stille en tredje gang (Store norske leksikon, 2026). Etter to perioder, åtte år, kunne han lett blitt valgt på nytt så mange ganger han ville. I stedet gikk han av og dro hjem igjen. Dermed ble det en uskreven regel at makten i USA skal skifte hender fredelig, og ingen president skal sitte for alltid. Sammenlign dette med [Napoleon](/historie/den-franske-revolusjon/napoleon) i Frankrike, som noen år senere satte en keiserkrone på sitt eget hode. To revolusjoner, to helt ulike slutter."
         },
         {
             "type": "header",
@@ -98,11 +98,11 @@
         },
         {
             "type": "text",
-            "content": "Washington var ingen feilfri helt, og det er viktig å si tydelig. Han eide slaver. På gården hans i Mount Vernon arbeidet flere hundre slavebundne mennesker uten frihet og uten lønn. Mannen som kjempet for at et folk skulle være fritt, holdt selv andre mennesker ufrie. Dette er den samme [sprekken](/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen) som fantes i hele den amerikanske revolusjonen: vakre ord om frihet og likhet, samtidig som mange mennesker ikke fikk del i den."
+            "content": "Washington var ingen feilfri helt, og det er viktig å si tydelig. Han eide slaver. På gården hans i Mount Vernon arbeidet over to hundre slavebundne mennesker uten frihet og uten lønn. Selv eide han 123 av dem. Resten tilhørte familien til kona hans (Blakemore, 2025). Mannen som kjempet for at et folk skulle være fritt, holdt selv andre mennesker ufrie. Dette er den samme [sprekken](/historie/den-amerikanske-revolusjonen/uavhengighetserklaeringen) som fantes i hele den amerikanske revolusjonen: vakre ord om frihet og likhet, samtidig som mange mennesker ikke fikk del i den."
         },
         {
             "type": "text",
-            "content": "Mot slutten av livet ser det ut til at Washington fikk dårlig samvittighet. I testamentet sitt bestemte han at slavene hans skulle settes fri etter at han og kona var døde. Han var den eneste av de store lederne som gjorde dette. Det gjør ikke det gale han var med på riktig, men det viser at selv han skjønte at noe skurret mellom ordene og handlingene."
+            "content": "Mot slutten av livet ser det ut til at Washington fikk dårlig samvittighet. I testamentet sitt bestemte han at de menneskene han selv eide, skulle settes fri når kona hans døde (Graff, 2026). Slik gikk det ikke helt: de ble frigitt allerede i januar 1801, vel ett år etter at Washington selv var død (Blakemore, 2025). De andre på gården kunne han ikke frigi, for de var ikke hans. Det gjør ikke det gale han var med på riktig, men det viser at selv han skjønte at noe skurret mellom ordene og handlingene."
         },
         {
             "type": "image",
@@ -116,7 +116,7 @@
         },
         {
             "type": "text",
-            "content": "Washington døde i 1799. Han hadde ikke funnet opp de store tankene om frihet, og han var ikke den flinkeste generalen som noen gang har levd. Det han ga verden var noe annet og sjeldnere: et eksempel på at en mektig person kan gi slipp på makten frivillig. Hver gang en president, statsminister eller leder taper et valg og går rolig av, lever litt av Washingtons valg videre."
+            "content": "Washington døde i 1799 (Graff, 2026). Han hadde ikke funnet opp de store tankene om frihet, og han var ikke den flinkeste generalen som noen gang har levd. Det han ga verden var noe annet og sjeldnere: et eksempel på at en mektig person kan gi slipp på makten frivillig. Hver gang en president, statsminister eller leder taper et valg og går rolig av, lever litt av Washingtons valg videre."
         },
         {
             "type": "text",
@@ -192,7 +192,7 @@
                             "Han nektet å bli president"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Washington kjempet for et fritt folk, men holdt samtidig flere hundre mennesker som slaver på gården sin."
+                        "explanation": "Washington kjempet for et fritt folk, men på gården hans arbeidet over to hundre slavebundne mennesker. 123 av dem eide han selv."
                     },
                     {
                         "question": "Hvordan skiller Washington seg fra Napoleon i Frankrike?",
@@ -205,6 +205,20 @@
                         "correctAnswer": 2,
                         "explanation": "To revolusjoner endte helt ulikt: Washington gikk hjem fra makten, mens Napoleon gjorde seg selv til keiser."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Blakemore, E. (2025). *Did George Washington Really Free Mount Vernon's Enslaved Workers?* History. Hentet 26.07.2026 fra [history.com](https://www.history.com/articles/did-george-washington-really-free-mount-vernons-slaves)",
+                    "Encyclopaedia Britannica. (2026). *Annapolis*. Hentet 26.07.2026 fra [britannica.com/place/Annapolis](https://www.britannica.com/place/Annapolis)",
+                    "Graff, H. (2026). *George Washington*. Encyclopaedia Britannica. Hentet 26.07.2026 fra [britannica.com/biography/George-Washington](https://www.britannica.com/biography/George-Washington)",
+                    "Pharo, H. (2026). *Den amerikanske uavhengighetskrigen*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/den_amerikanske_uavhengighetskrigen](https://snl.no/den_amerikanske_uavhengighetskrigen)",
+                    "Store norske leksikon. (2026). *George Washington*. Hentet 26.07.2026 fra [snl.no/George_Washington](https://snl.no/George_Washington)",
+                    "Teaching American History. (2025). *An Officer's Account of Washington's Remarks*. Ashbrook Center. Hentet 26.07.2026 fra [teachingamericanhistory.org](https://teachingamericanhistory.org/document/an-officers-account-of-washingtons-remarks/)"
                 ]
             }
         }

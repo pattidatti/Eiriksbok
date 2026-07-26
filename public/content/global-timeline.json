@@ -4974,8 +4974,8 @@
     },
     {
       "id": "usa-frigjoring-sub-3",
-      "title": "Grunnloven",
-      "description": "USA får sin konstitusjon og George Washington blir president.",
+      "title": "Grunnloven i kraft",
+      "description": "Grunnloven fra 1787 trer i kraft, og George Washington blir USAs første president.",
       "startDate": 1789,
       "endDate": null,
       "displayDate": "1789",
@@ -11869,6 +11869,7 @@
         "usa",
         "krig"
       ],
+      "image": "/images/midtoesten/iran-usa-krigen-01.webp",
       "lat": 32,
       "lng": 53,
       "placeLabel": "Iran",
@@ -11891,6 +11892,7 @@
         "iran",
         "olje"
       ],
+      "image": "/images/midtoesten/iran-usa-krigen-02.webp",
       "lat": 32,
       "lng": 53,
       "placeLabel": "Iran",

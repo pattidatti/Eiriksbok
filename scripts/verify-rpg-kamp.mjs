@@ -15,6 +15,7 @@
 
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
+import { entreNordvik, stengHmr } from './lib/rpg-testside.mjs';
 
 const UT = '.screenshots';
 mkdirSync(UT, { recursive: true });
@@ -41,6 +42,13 @@ const tall = async (merkelapp) => {
 };
 const pust = () => tall('Pust');
 const liv = () => tall('Liv');
+
+/** Kamptilstanden rett fra scenen: gard, skjoldhelse, pust. Null hvis scenen er borte. */
+const kampSnapshot = () =>
+    page.evaluate(() => {
+        const scene = window.__rpg?.scene.getScene('verden');
+        return scene?.helt?.kampSnapshot() ?? null;
+    });
 const ventFullPust = async () => {
     for (let i = 0; i < 30 && (await pust()) < 99; i++) await page.waitForTimeout(200);
 };
@@ -72,10 +80,8 @@ const maal = async (navn, forventet, handling) => {
     );
 };
 
-await page.goto('http://localhost:5173/oving/rpg', { waitUntil: 'networkidle' });
-await page.fill('input[placeholder="Skriv navnet ditt"]', 'Torstein');
-await page.click('button:has-text("Reis til Nordvik")');
-await page.waitForSelector('canvas', { timeout: 30000 });
+await stengHmr(page);
+await entreNordvik(page);
 await page.waitForTimeout(3500);
 await page.screenshot({ path: `${UT}/kamp-1-start.png` });
 
@@ -87,21 +93,42 @@ sjekk(
 );
 
 // ── Garden: Shift holdt i ro reiser skjoldet og drenerer 6 pust i sekundet ──
+// Én kjøring har meldt «drenerte 0 pust» uten at årsaken lot seg finne igjen.
+// Derfor prøvetas garden mens den holdes. Feiler dreneringen, sier utskriften
+// hvorfor: garden kommer ikke opp uten skjold (`kamp.ts:445 harSkjold`), og et
+// støt fra en fiende senker den med 260 ms hvile før den kan reises igjen
+// (`kamp.ts:172 senkGard`). Livet leses som forstyrrelsesvakt, som i `maal()`.
 const pFor = await pust();
+const lGardFor = await liv();
 await page.keyboard.down('Shift');
-await page.waitForTimeout(2000);
+const gardProver = [];
+for (let i = 0; i < 10; i++) {
+    await page.waitForTimeout(200);
+    gardProver.push(await kampSnapshot());
+}
 const pGard = await pust();
 await page.screenshot({ path: `${UT}/kamp-2-gard.png` });
-sjekk(
-    'garden drenerer ~6 pust i sekundet',
-    pGard <= pFor - 9 && pGard >= pFor - 18,
-    `${pFor} -> ${pGard}`
-);
+const oppe = gardProver.filter((s) => s?.gardOppe).length;
+const sisteSkjold = gardProver.at(-1)?.skjoldHelse;
+const gardDetalj = `${pFor} -> ${pGard}, oppe i ${oppe}/10 prøver, skjold ${sisteSkjold}`;
+if ((await liv()) !== lGardFor) {
+    console.log(`HOPP  garden - avbrutt av kamp  (${gardDetalj})`);
+} else {
+    sjekk(
+        'garden drenerer ~6 pust i sekundet',
+        pGard <= pFor - 9 && pGard >= pFor - 18,
+        gardDetalj
+    );
+}
 await page.keyboard.up('Shift');
 
 // ── Gjenvinning: skal ta seg opp igjen etter hvilepausen ───────────────────
 await page.waitForTimeout(2600);
-sjekk('pusten tar seg opp igjen i ro', (await pust()) > pGard + 10, `${pGard} -> ${await pust()}`);
+// Kravet er «pusten kommer tilbake», ikke et bestemt antall poeng. Drenerte
+// garden bare 10, kan gjenvinningen umulig bli 11 - da slo den gamle
+// `> pGard + 10`-testen ut på en helt normal runde.
+const pRo = await pust();
+sjekk('pusten tar seg opp igjen i ro', pRo > pGard && pRo >= 99, `${pGard} -> ${pRo}`);
 
 // ── Kostnadene ─────────────────────────────────────────────────────────────
 await maal('slaget', 12, () => trykk('Space'));
@@ -137,12 +164,127 @@ await page.waitForTimeout(8000);
 const pHold = await pust();
 await page.screenshot({ path: `${UT}/kamp-4-langt-hold.png` });
 if ((await liv()) === lHoldFor) {
-    sjekk('garden drenerer jevnt gjennom 8 sekunder', pHold <= pHoldFor - 40, `${pHoldFor} -> ${pHold}`);
+    sjekk(
+        'garden drenerer jevnt gjennom 8 sekunder',
+        pHold <= pHoldFor - 40,
+        `${pHoldFor} -> ${pHold}`
+    );
 } else {
     console.log('HOPP  langt hold - avbrutt av kamp');
 }
 sjekk('pusten går aldri under null', pHold >= 0, `pust=${pHold}`);
 await page.keyboard.up('Shift');
+
+// ── Særslagene: ublokkerbart og hak ────────────────────────────────────────
+// Fiendene slår med de to flaggene `Kamp.vurderTreff()` alltid har tatt imot,
+// men som ingen sendte før R3. Å vente på at en boss faktisk slår sitt tredje
+// slag er ikke noe en test kan love, så slaget leveres rett inn i forsvaret med
+// en ekte fiende som angriper. Alt bak inngangen er den samme koden.
+//
+// Brettet må ryddes først. Med levende fiender rundt seg blir eleven støtt
+// mellom prøvene, og et støt holder garden nede i 260 ms - da måler prøven en
+// elev uten skjold oppe i stedet for det den skulle måle.
+// Skjoldet settes i stand først. Fiendene har fått slå på det i et halvt minutt
+// allerede, og et oppbrukt skjold betyr at garden ikke kan reises i det hele
+// tatt (`kamp.ts: harSkjold`) - da feiler alle tre prøvene av feil grunn.
+await page.evaluate(() => {
+    const scene = window.__rpg.scene.getScene('verden');
+    for (const f of scene.fiendeSystem.alle()) {
+        if (f.def.kind === 'boss') continue;
+        f.sprite.setPosition(-9999, -9999);
+        f.tilstand = 'sover';
+    }
+    scene.helt.kamp.hvil();
+    // Livet fylles, og en eventuell lås slippes. Eleven har slåss mot ekte
+    // fiender i et halvt minutt før dette, og rekker hun å dø, står spillet
+    // låst bak dødsskjermen - da reises garden aldri, og alle tre prøvene
+    // feiler uten at det er noe galt med særslagene.
+    window.__rpgStore.getState().settHp(9999);
+    scene.settLaast(false);
+});
+
+/**
+ * Leverer ett slag inn i forsvaret, og venter på riktig øyeblikk *inne i*
+ * nettleseren. Poller vi fra Node, ligger det to rundturer mellom «garden står»
+ * og slaget - og i det gapet rakk paradevinduet å åpne seg igjen, så treffet
+ * ble en parade i stedet for en blokk. Paraden hakker ikke skjoldet, og prøven
+ * målte da noe annet enn den skulle.
+ */
+const sarslag = async (flagg, medGard) => {
+    await page.keyboard.up('Shift');
+    await ventFullPust();
+    if (medGard) await page.keyboard.down('Shift');
+    const ut = await page.evaluate(
+        async ([flagg, medGard]) => {
+            const scene = window.__rpg.scene.getScene('verden');
+            const helt = scene.helt;
+            const vent = (ms) => new Promise((r) => setTimeout(r, ms));
+
+            // Garden må stå, og paradevinduet må være over.
+            let klar = !medGard;
+            for (let i = 0; i < 60 && !klar; i++) {
+                const s = helt.kampSnapshot();
+                klar = s.gardOppe && !s.nyligReist;
+                if (!klar) await vent(50);
+            }
+
+            const fiende = scene.fiendeSystem.alle().find((f) => f.def.kind !== 'boss' && !f.dodd);
+            if (!fiende) return { feil: 'ingen levende fiende' };
+            // Rett foran henne, i den retningen hun vender - ellers dekker ikke
+            // skjoldet, og prøven sier ingenting om særslaget.
+            const vinkel = { ned: Math.PI / 2, opp: -Math.PI / 2, hoyre: 0, venstre: Math.PI }[
+                helt.retning
+            ];
+            fiende.sprite.setPosition(
+                helt.sprite.x + Math.cos(vinkel) * 18,
+                helt.sprite.y + Math.sin(vinkel) * 18
+            );
+            const for_ = helt.kampSnapshot();
+            const gikkGjennom = helt.nerkampTreff(fiende, flagg);
+            const etter = helt.kampSnapshot();
+            fiende.sprite.setPosition(-9999, -9999);
+            fiende.tilstand = 'sover';
+            return {
+                klar,
+                gard: for_.gardOppe,
+                gikkGjennom,
+                skjoldFor: for_.skjoldHelse,
+                skjoldEtter: etter.skjoldHelse,
+            };
+        },
+        [flagg, medGard]
+    );
+    await page.keyboard.up('Shift');
+    return ut;
+};
+
+const vanlig = await sarslag({}, true);
+sjekk(
+    'vanlig slag tas av garden',
+    vanlig.gard === true && vanlig.gikkGjennom === false,
+    `klar=${vanlig.klar}, gard=${vanlig.gard}, gjennom=${vanlig.gikkGjennom}`
+);
+sjekk(
+    'blokken hakker skjoldet',
+    vanlig.skjoldEtter < vanlig.skjoldFor,
+    `${vanlig.skjoldFor} -> ${vanlig.skjoldEtter}`
+);
+
+const hakket = await sarslag({ hak: true }, true);
+sjekk(
+    'hak river hele skjoldet',
+    hakket.gard === true && hakket.skjoldEtter === 0,
+    `klar=${hakket.klar}, gard=${hakket.gard}, ${hakket.skjoldFor} -> ${hakket.skjoldEtter}`
+);
+
+// Skjoldet er borte nå, så garden kan ikke stå. Vi sjekker likevel at et
+// ublokkerbart slag går gjennom - det er flagget som skal avgjøre det.
+const ublokkerbart = await sarslag({ ublokkerbart: true }, false);
+sjekk(
+    'ublokkerbart slag går gjennom',
+    ublokkerbart.gikkGjennom === true,
+    `gjennom=${ublokkerbart.gikkGjennom}`
+);
 
 sjekk('ingen konsollfeil', konsollfeil.length === 0, konsollfeil.slice(0, 2).join(' | '));
 

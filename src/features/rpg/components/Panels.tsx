@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
-import { NORDVIK_NPCS } from '../data/nordvik';
+import { finnNpc } from '../data/steder';
 import { SPELL_BY_ID } from '../data/spells';
 import { ZONES } from '../data/zones';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
@@ -37,7 +37,11 @@ export function InventoryPanel({ onLukk, onEndret }: { onLukk: () => void; onEnd
                             <div
                                 key={slot}
                                 className="rounded-xl border border-white/12 bg-white/5 p-3"
-                                style={item ? { borderColor: `${RARITY_COLOR[item.rarity]}55` } : undefined}
+                                style={
+                                    item
+                                        ? { borderColor: `${RARITY_COLOR[item.rarity]}55` }
+                                        : undefined
+                                }
                             >
                                 <p className="text-[10px] uppercase tracking-widest text-slate-500">
                                     {SLOT_LABEL[slot]}
@@ -81,7 +85,9 @@ export function InventoryPanel({ onLukk, onEndret }: { onLukk: () => void; onEnd
                     I sekken ({store.sekk.length})
                 </h3>
                 {store.sekk.length === 0 ? (
-                    <p className="text-sm text-slate-500">Tom. Fell noen tåkeskapninger, så fyller den seg.</p>
+                    <p className="text-sm text-slate-500">
+                        Tom. Fell noen tåkeskapninger, så fyller den seg.
+                    </p>
                 ) : (
                     <ul className="space-y-2">
                         {store.sekk.map((id, i) => {
@@ -102,7 +108,9 @@ export function InventoryPanel({ onLukk, onEndret }: { onLukk: () => void; onEnd
                                                 {RARITY_LABEL[item.rarity]}
                                             </span>
                                         </p>
-                                        <p className="truncate text-xs text-slate-400">{item.flavor}</p>
+                                        <p className="truncate text-xs text-slate-400">
+                                            {item.flavor}
+                                        </p>
                                         <p className="mt-0.5 text-[11px] text-slate-300">
                                             {item.weapon
                                                 ? `${item.weapon.skade} skade · ${item.weapon.rekkevidde} rekkevidde`
@@ -178,7 +186,10 @@ export function QuestLog({ quester, onLukk }: { quester: QuestDef[]; onLukk: () 
             ) : (
                 <ul className="mb-5 space-y-2">
                     {aktive.map((q) => (
-                        <li key={q.id} className="rounded-xl border border-amber-300/25 bg-amber-300/5 p-3">
+                        <li
+                            key={q.id}
+                            className="rounded-xl border border-amber-300/25 bg-amber-300/5 p-3"
+                        >
                             <p className="font-display font-semibold text-amber-100">{q.title}</p>
                             <p className="mt-1 text-sm leading-relaxed text-slate-300">{q.hint}</p>
                         </li>
@@ -193,11 +204,17 @@ export function QuestLog({ quester, onLukk }: { quester: QuestDef[]; onLukk: () 
                 <p className="text-sm text-slate-500">Ingen ennå.</p>
             ) : (
                 <ul className="space-y-1">
-                    {ferdige.slice(-12).reverse().map((q) => (
-                        <li key={q.id} className="rounded-lg bg-emerald-500/10 px-3 py-1.5 text-sm text-emerald-200">
-                            {q.title}
-                        </li>
-                    ))}
+                    {ferdige
+                        .slice(-12)
+                        .reverse()
+                        .map((q) => (
+                            <li
+                                key={q.id}
+                                className="rounded-lg bg-emerald-500/10 px-3 py-1.5 text-sm text-emerald-200"
+                            >
+                                {q.title}
+                            </li>
+                        ))}
                 </ul>
             )}
         </Ramme>
@@ -219,7 +236,9 @@ export function PauseMeny({
     return (
         <div className="absolute inset-0 z-50 overflow-y-auto bg-slate-950/95 px-4 py-8">
             <div className="mx-auto max-w-3xl">
-                <h2 className="mb-1 text-center font-display text-3xl font-bold text-amber-200">Pause</h2>
+                <h2 className="mb-1 text-center font-display text-3xl font-bold text-amber-200">
+                    Pause
+                </h2>
                 <p className="mb-6 text-center text-sm text-slate-400">
                     Spillet lagrer seg selv. Du kan trygt lukke fanen.
                 </p>
@@ -327,7 +346,7 @@ function VerdensKart({ niva }: { niva: number }) {
 
 /** Bera Kremmers bod. Grunnen til at sølvet i sekken betyr noe. */
 export function ButikkPanel({ npcId, onLukk }: { npcId: string; onLukk: () => void }) {
-    const npc = NORDVIK_NPCS.find((n) => n.id === npcId);
+    const npc = finnNpc(npcId);
     const solv = useRpgStore((s) => s.solv);
     const sekk = useRpgStore((s) => s.sekk);
     const utstyr = useRpgStore((s) => s.utstyr);
@@ -348,7 +367,9 @@ export function ButikkPanel({ npcId, onLukk }: { npcId: string; onLukk: () => vo
                 </span>
             </header>
 
-            <p className="mb-4 text-[15px] leading-relaxed text-slate-100">«{npc.handler.velkomst}»</p>
+            <p className="mb-4 text-[15px] leading-relaxed text-slate-100">
+                «{npc.handler.velkomst}»
+            </p>
 
             <ul className="space-y-2">
                 {npc.handler.varer.map((id) => {
@@ -362,7 +383,10 @@ export function ButikkPanel({ npcId, onLukk }: { npcId: string; onLukk: () => vo
                             className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/5 p-3"
                         >
                             <div className="min-w-0">
-                                <p className="font-semibold" style={{ color: RARITY_COLOR[item.rarity] }}>
+                                <p
+                                    className="font-semibold"
+                                    style={{ color: RARITY_COLOR[item.rarity] }}
+                                >
                                     {item.name}
                                 </p>
                                 <p className="truncate text-xs text-slate-400">{item.flavor}</p>

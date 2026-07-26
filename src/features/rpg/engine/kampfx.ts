@@ -73,8 +73,11 @@ export class KampFx {
     private normalTid(): void {
         this.sakteIgjen = 0;
         this.faktor = 1;
-        this.scene.physics.world.timeScale = 1;
-        this.scene.tweens.timeScale = 1;
+        // Samme grunn som i vask(): under nedstenging kan fysikkverdenen og
+        // tween-manageren være borte før vi slipper til.
+        const verden = this.scene.physics?.world;
+        if (verden) verden.timeScale = 1;
+        if (this.scene.tweens) this.scene.tweens.timeScale = 1;
     }
 
     // ── Kamera ──────────────────────────────────────────────────────────────
@@ -113,7 +116,13 @@ export class KampFx {
     klask(mal: Phaser.GameObjects.Sprite | Bilde, styrke = 0.15): void {
         this.scene.tweens.killTweensOf(mal);
         mal.setScale(1 + styrke, 1 - styrke);
-        this.scene.tweens.add({ targets: mal, scaleX: 1, scaleY: 1, duration: 80, ease: 'Quad.Out' });
+        this.scene.tweens.add({
+            targets: mal,
+            scaleX: 1,
+            scaleY: 1,
+            duration: 80,
+            ease: 'Quad.Out',
+        });
     }
 
     /** Vipp: en kort rotasjonsrykning. Gjør at et treff kjennes i kroppen. */
@@ -474,13 +483,22 @@ export class KampFx {
         this.lik = [];
         this.dyttTween?.remove();
         this.dyttTween = null;
-        this.scene.cameras.main.setFollowOffset(0, 0);
+        // Vask kalles også fra scenens shutdown, og da er kjerneplugins alt
+        // ryddet: `cameras.main` finnes ikke lenger. Kastet herfra avbrøt hele
+        // opprydningen, og en reise til et nytt sted strandet med tomt lerret.
+        this.scene.cameras?.main?.setFollowOffset(0, 0);
         this.normalTid();
     }
 
     private hent(nokkel: string): Bilde {
         const p = this.pool.pop() ?? this.scene.add.image(0, 0, nokkel);
-        p.setTexture(nokkel).setActive(true).setVisible(true).setAlpha(1).setScale(1).setAngle(0).clearTint();
+        p.setTexture(nokkel)
+            .setActive(true)
+            .setVisible(true)
+            .setAlpha(1)
+            .setScale(1)
+            .setAngle(0)
+            .clearTint();
         return p;
     }
 

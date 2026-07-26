@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NORDVIK_LANDMARKS, NORDVIK_NPCS } from '../data/nordvik';
+import { finnLandemerke, finnNpc } from '../data/steder';
 import { sfx } from '../engine/audio';
 import { useRpgStore } from '../store/useRpgStore';
 import type { QuestDef } from '../types';
@@ -18,7 +18,7 @@ interface DialogProps {
  * det NPC-en sier, det hun *vet* (svarene eleven leter etter), og oppdraget.
  */
 export function DialogOverlay({ npcId, quester, onLukk, onTaOppdrag, onSvarPa }: DialogProps) {
-    const npc = NORDVIK_NPCS.find((n) => n.id === npcId);
+    const npc = finnNpc(npcId);
     const status = useRpgStore((s) => s.quester);
     const [replikk] = useState(() =>
         npc ? npc.smalltalk[Math.floor(Math.random() * npc.smalltalk.length)] : ''
@@ -76,7 +76,9 @@ export function DialogOverlay({ npcId, quester, onLukk, onTaOppdrag, onSvarPa }:
 
             {aktiv ? (
                 <section className="rounded-xl border border-amber-300/30 bg-amber-300/5 p-3">
-                    <h3 className="mb-1 font-display font-semibold text-amber-200">{aktiv.title}</h3>
+                    <h3 className="mb-1 font-display font-semibold text-amber-200">
+                        {aktiv.title}
+                    </h3>
                     <p className="mb-3 text-sm text-slate-300">{aktiv.hint}</p>
                     <button
                         type="button"
@@ -113,7 +115,7 @@ interface LandmarkProps {
 }
 
 export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
-    const lm = NORDVIK_LANDMARKS.find((l) => l.id === landmarkId);
+    const lm = finnLandemerke(landmarkId);
     const markerLest = useRpgStore((s) => s.markerLest);
     const lest = useRpgStore((s) => s.lest);
     const forste = lm ? !lest.includes(lm.id) : false;
@@ -141,10 +143,10 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
                 {lm.kind === 'runestein'
                     ? 'Runestein'
                     : lm.kind === 'skilt'
-                      ? 'Innskrift'
-                      : lm.kind === 'baal'
-                        ? 'Bål'
-                        : 'Kiste'}
+                    ? 'Innskrift'
+                    : lm.kind === 'baal'
+                    ? 'Bål'
+                    : 'Kiste'}
             </p>
             <h2 className="mb-3 font-display text-2xl font-bold text-amber-200">{lm.title}</h2>
             <p className="text-[15px] leading-relaxed text-slate-100">{lm.text}</p>

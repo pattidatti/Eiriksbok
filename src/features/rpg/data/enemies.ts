@@ -85,6 +85,11 @@ export const ENEMIES: EnemyDef[] = [
             { itemId: 'bjornetann', sjanse: 0.07 },
         ],
         storrelse: 1.2,
+        // Vrangbildet river skjoldet ned, som et øksehak. Blokkerer eleven
+        // det fjerde slaget, ryker hele skjoldet - men paraden er trygg.
+        // Det er skjoldsystemets ene skarpe lærepenge: å lese varselet er
+        // ikke det samme som å gjemme seg bak treet.
+        sarslag: { hvert: 4, hak: true },
     },
 
     // ── Boss ────────────────────────────────────────────────────────────────
@@ -105,7 +110,14 @@ export const ENEMIES: EnemyDef[] = [
         xp: 160,
         loot: [{ itemId: 'minnehammer', sjanse: 1 }],
         storrelse: 2.1,
+        // Hvert tredje slag er overhåndsslaget: det går gjennom garden, og
+        // svaret er å rulle. Med 620 ms varsel og eget varselfarge er det
+        // lesbart - og det er det som gjør bossen til en dans i stedet for
+        // en utholdenhetsprøve med skjoldet oppe.
+        sarslag: { hvert: 3, ublokkerbart: true },
     },
 ];
 
-export const ENEMY_BY_ID: Record<string, EnemyDef> = Object.fromEntries(ENEMIES.map((e) => [e.id, e]));
+export const ENEMY_BY_ID: Record<string, EnemyDef> = Object.fromEntries(
+    ENEMIES.map((e) => [e.id, e])
+);

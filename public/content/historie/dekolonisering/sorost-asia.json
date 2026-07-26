@@ -37,7 +37,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Før andre verdenskrig virket de europeiske kolonimaktene uovervinnelige. Britene, franskmennene og nederlenderne styrte Sørøst-Asia med jernhånd. Men i 1941-42 skjedde det utenkelige: Japan, en asiatisk nasjon, feide over regionen og knuste de europeiske hærene på få uker.\n\nJapans okkupasjon var brutal, men den beviste én ting: Den hvite mann var ikke overlegen. Da Japan tapte krigen i 1945, oppstod et maktvakuum. Før europeerne rakk å komme tilbake, erklærte nasjonalistene uavhengighet."
+            "content": "Før andre verdenskrig virket de europeiske kolonimaktene uovervinnelige. Britene, franskmennene og nederlenderne styrte Sørøst-Asia med jernhånd. Men i 1941-42 skjedde det utenkelige: Japan, en asiatisk nasjon, feide over regionen. Britenes store festning Singapore falt i februar 1942 (Filseth, 2026), og i mars samme år var også Indonesia okkupert (Vikør & Filseth, 2025).\n\nJapans okkupasjon var hard. Men nederlaget rammet europeerne på et ømt punkt: med tapet av Singapore mistet britene en anseelse de aldri fikk tilbake (Filseth, 2026). Den hvite mann var ikke uovervinnelig. Da Japan tapte krigen i 1945, oppstod et maktvakuum. Før europeerne rakk å komme tilbake, erklærte nasjonalistene uavhengighet."
         },
         {
             "type": "header",
@@ -45,7 +45,7 @@
         },
         {
             "type": "text",
-            "content": "I Indonesia hadde nederlenderne styrt i 350 år. Nasjonalisten Sukarno erklærte Indonesia uavhengig to dager etter Japans overgivelse. Da nederlandske tropper kom tilbake for å 'gjenopprette ro og orden', møtte de en befolkning som ropte 'Merdeka!' (Frihet!). Etter fire år med blodig geriljakrig og sterkt press fra USA (som truet med å kutte Marshallhjelpen til Nederland), måtte Nederland gi tapt i 1949."
+            "content": "Indonesia hadde vært en nederlandsk koloni siden 1600-tallet (Vikør & Filseth, 2025). Den 17. august 1945, to dager etter at Japan overga seg, erklærte nasjonalisten Sukarno Indonesia uavhengig (Vikør & Filseth, 2025). Da nederlandske tropper kom tilbake for å ta kolonien tilbake, møtte de et folk som ikke ville gi opp friheten. Ordet indonesierne samlet seg om, var «merdeka» - fri, uavhengig.\n\nDet ble fire år med krig, der indonesierne blant annet brukte geriljataktikk. I november 1949 måtte Nederland gi opp og overføre makten til Indonesia (Vikør & Filseth, 2025). Presset kom også utenfra: USA truet med å stanse Marshallhjelpen til Nederland, men historikere er uenige om hvor mye den trusselen egentlig betydde (Van Der Eng, 1988)."
         },
         {
             "type": "header",
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "content": "I Vietnam stod kommunisten Ho Chi Minh på et torg i Hanoi i 1945 og leste opp en uavhengighetserklæring. Han startet med å sitere den amerikanske uavhengighetserklæringen: «Alle mennesker er født like...».\n\nHo Chi Minh håpet på støtte fra USA. Men den kalde krigen var i gang. USA så på ham som en kommunist først, og en nasjonalist dernest. Derfor støttet USA Frankrikes forsøk på å ta tilbake kolonien. Det endte med et katastrofalt fransk nederlag ved Dien Bien Phu i 1954, som igjen ledet rett inn i den store Vietnamkrigen."
+            "content": "I Vietnam stod kommunisten Ho Chi Minh 2. september 1945 på Ba Dinh-plassen i Hanoi og leste opp en uavhengighetserklæring (Filseth, 2024). Han startet med å sitere den amerikanske uavhengighetserklæringen fra 1776: «Alle mennesker er født like...» (Lindsay, 2016).\n\nHo Chi Minh håpet på støtte fra USA, og han spurte amerikanerne rett ut hvorfor de ikke hjalp et folk som tok selvbestemmelse på alvor (Lindsay, 2016). Men den kalde krigen var i gang. USA så på ham som en kommunist først, og en nasjonalist dernest. I stedet ga USA militærhjelp til Frankrike og godkjente en fransk-styrt regjering i Saigon (Filseth, 2024). Det endte med at de franske styrkene måtte kapitulere ved Dien Bien Phu 7. mai 1954, og det franske koloniveldet i Indokina var slutt (Filseth, 2024). Derfra gikk veien rett inn i den store Vietnamkrigen."
         },
         {
             "type": "component",
@@ -62,11 +62,11 @@
                 "forstaa": [
                     "Hva skjedde i Sørøst-Asia i 1941-42, og hvilke europeiske hærer ble slått av Japan?",
                     "Hvem var Sukarno, og hva erklærte han to dager etter at Japan overga seg?",
-                    "Hvor lenge hadde nederlenderne styrt Indonesia, og hvilket år måtte de gi tapt?",
+                    "Fra hvilket århundre hadde Indonesia vært en nederlandsk koloni, og hvilket år måtte Nederland gi opp kolonien?",
                     "Hvilken tekst siterte Ho Chi Minh da han leste opp uavhengighetserklæringen i Hanoi i 1945?"
                 ],
                 "reflekter": [
-                    "Teksten sier at Japans okkupasjon 'beviste én ting: Den hvite mann var ikke overlegen'. Forklar hvorfor akkurat dette gjorde det lettere for nasjonalistene å kreve uavhengighet.",
+                    "Teksten sier at britene mistet en anseelse de aldri fikk tilbake da Singapore falt, og at 'den hvite mann var ikke uovervinnelig'. Forklar hvorfor akkurat dette gjorde det lettere for nasjonalistene å kreve uavhengighet.",
                     "Hva menes med et 'maktvakuum' i 1945, og hvorfor var det så viktig for nasjonalistene å erklære uavhengighet før europeerne kom tilbake?",
                     "USA truet med å kutte Marshallhjelpen til Nederland, men støttet Frankrike i Vietnam. Forklar hvorfor USA handlet så ulikt i de to landene.",
                     "Overskriften kaller Vietnam 'Ironien i historien'. Forklar hva som er ironisk når Ho Chi Minh siterer den amerikanske uavhengighetserklæringen, men likevel ender opp som USAs fiende."
@@ -75,6 +75,19 @@
                     "Skriv et kort avsnitt (4-5 setninger) der du forklarer hvordan andre verdenskrig, som handlet om Europa, endte med å svekke europeernes makt helt på andre siden av kloden.",
                     "Diskuter i klassen: Hvis USA hadde støttet Ho Chi Minh i 1945 i stedet for Frankrike, tror dere Vietnamkrigen kunne vært unngått? Bruk det teksten sier om den kalde krigen.",
                     "Finn ut hva ordet 'dekolonisering' betyr, og gi ett eksempel fra vår egen tid på et land eller folk som fortsatt kjemper for mer selvstyre."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Filseth, G. (2024). *Vietnams historie*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Vietnams_historie](https://snl.no/Vietnams_historie)",
+                    "Filseth, G. (2026). *Singapores historie*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Singapores_historie](https://snl.no/Singapores_historie)",
+                    "Lindsay, J. M. (2016). *Remembering Ho Chi Minh's 1945 declaration of Vietnam's independence*. Council on Foreign Relations. Hentet 26.07.2026 fra [cfr.org](https://www.cfr.org/articles/remembering-ho-chi-minhs-1945-declaration-vietnams-independence)",
+                    "Van Der Eng, P. (1988). *Marshall aid as a catalyst in the decolonization of Indonesia, 1947-49*. Journal of Southeast Asian Studies, 19(2), 335-352.",
+                    "Vikør, L. S. & Filseth, G. (2025). *Indonesias historie*. Store norske leksikon. Hentet 26.07.2026 fra [snl.no/Indonesias_historie](https://snl.no/Indonesias_historie)"
                 ]
             }
         }
@@ -104,5 +117,6 @@
         }
     ],
     "createdDate": "2026-01-16T10:25:00Z",
-    "lastUpdated": "2026-01-16T10:25:00Z"
+    "lastUpdated": "2026-07-26T00:00:00Z",
+    "factChecked": "2026-07-26"
 }

@@ -98,7 +98,12 @@ export function createPainter(
                 for (let x = 0; x < w; x++) {
                     const i = (y * w + x) * 4;
                     if (d[i + 3] > 40) continue;
-                    if (!dekket(x - 1, y) && !dekket(x + 1, y) && !dekket(x, y - 1) && !dekket(x, y + 1)) {
+                    if (
+                        !dekket(x - 1, y) &&
+                        !dekket(x + 1, y) &&
+                        !dekket(x, y - 1) &&
+                        !dekket(x, y + 1)
+                    ) {
                         continue;
                     }
                     ut[i] = r;
@@ -133,7 +138,10 @@ export function createPainter(
 export function shade(hex: string, amount: number): string {
     const { r, g, b } = hexToRgb(hex);
     const f = (v: number) =>
-        Math.max(0, Math.min(255, Math.round(amount >= 0 ? v + (255 - v) * amount : v * (1 + amount))));
+        Math.max(
+            0,
+            Math.min(255, Math.round(amount >= 0 ? v + (255 - v) * amount : v * (1 + amount)))
+        );
     return rgbToHex(f(r), f(g), f(b));
 }
 

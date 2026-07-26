@@ -97,6 +97,13 @@ export function generate() {
     };
 
     for (const event of events) {
+        // 0) Explicit event image override
+        if (event.image) {
+            result[event.id] = event.image;
+            stats.hero += 1;
+            continue;
+        }
+
         // 1) Article heroImage (sub-events deler link med forelder, så de arver gratis)
         if (event.link) {
             const hero = resolveArticleHero(event.link);

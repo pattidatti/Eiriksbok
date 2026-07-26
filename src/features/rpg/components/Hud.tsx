@@ -35,7 +35,13 @@ export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Pr
                         {store.character?.name ?? 'Vandrer'}
                     </span>
                 </div>
-                <Stolpe verdi={store.hp} maks={maks.hp} farge="#e0483f" bak="#3a1512" merkelapp="Liv" />
+                <Stolpe
+                    verdi={store.hp}
+                    maks={maks.hp}
+                    farge="#e0483f"
+                    bak="#3a1512"
+                    merkelapp="Liv"
+                />
                 {/*
                     Pusten. Den rister rødt når den bunner ut - eleven må kjenne
                     at hun er tom, ikke lese det. Uten pust kan hun ikke blokkere,
@@ -51,7 +57,13 @@ export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Pr
                         rister={kamp.tom}
                     />
                 )}
-                <Stolpe verdi={store.mana} maks={maks.mana} farge="#4aa3e0" bak="#122a3a" merkelapp="Kraft" />
+                <Stolpe
+                    verdi={store.mana}
+                    maks={maks.mana}
+                    farge="#4aa3e0"
+                    bak="#122a3a"
+                    merkelapp="Kraft"
+                />
                 {kamp && <Skjoldmerke kamp={kamp} />}
                 <Stolpe
                     verdi={fremgang.inn}
@@ -84,7 +96,9 @@ export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Pr
                         ▲
                     </span>
                     <span className="text-xs font-semibold text-slate-100">{kompass.navn}</span>
-                    <span className="text-[11px] text-slate-400">{Math.round(kompass.avstand / 16)} ruter</span>
+                    <span className="text-[11px] text-slate-400">
+                        {Math.round(kompass.avstand / 16)} ruter
+                    </span>
                 </div>
             )}
 
@@ -144,10 +158,10 @@ export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Pr
                             v.art === 'bra'
                                 ? 'bg-emerald-500/90 text-emerald-50 ring-emerald-300/40'
                                 : v.art === 'darlig'
-                                  ? 'bg-rose-600/90 text-rose-50 ring-rose-300/40'
-                                  : v.art === 'niva'
-                                    ? 'bg-amber-400/95 text-slate-900 ring-amber-200/50'
-                                    : 'bg-slate-900/90 text-slate-100 ring-white/15'
+                                ? 'bg-rose-600/90 text-rose-50 ring-rose-300/40'
+                                : v.art === 'niva'
+                                ? 'bg-amber-400/95 text-slate-900 ring-amber-200/50'
+                                : 'bg-slate-900/90 text-slate-100 ring-white/15'
                         }`}
                     >
                         {v.tekst}
@@ -244,9 +258,9 @@ function Stolpe({
     const andel = Math.max(0, Math.min(1, verdi / Math.max(1, maks)));
     return (
         <div
-            className={`relative w-full overflow-hidden rounded-full ring-1 ring-black/40 ${tynn ? 'h-2' : 'h-4'} ${
-                rister ? 'animate-[hudRist_240ms_ease-in-out_infinite]' : ''
-            }`}
+            className={`relative w-full overflow-hidden rounded-full ring-1 ring-black/40 ${
+                tynn ? 'h-2' : 'h-4'
+            } ${rister ? 'animate-[hudRist_240ms_ease-in-out_infinite]' : ''}`}
             style={{ background: bak }}
             role="progressbar"
             aria-label={merkelapp}
@@ -292,7 +306,9 @@ function Knapp({
             className="relative rounded-lg bg-slate-900/85 px-3 py-1.5 text-xs font-semibold text-slate-100 ring-1 ring-white/15 transition hover:bg-slate-800"
         >
             {tekst}
-            <span className="ml-1.5 rounded bg-white/10 px-1 text-[10px] text-slate-300">{tast}</span>
+            <span className="ml-1.5 rounded bg-white/10 px-1 text-[10px] text-slate-300">
+                {tast}
+            </span>
             {merke ? (
                 <span className="absolute -right-1.5 -top-1.5 grid h-5 w-5 place-items-center rounded-full bg-amber-400 text-[10px] font-bold text-slate-900">
                     {merke}

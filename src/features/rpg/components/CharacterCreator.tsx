@@ -50,11 +50,13 @@ export function CharacterCreator({ onFerdig }: Props) {
         <div className="absolute inset-0 z-30 overflow-y-auto bg-slate-950/95 px-4 py-8 text-slate-100">
             <div className="mx-auto max-w-5xl">
                 <header className="mb-6 text-center">
-                    <p className="text-xs uppercase tracking-[0.3em] text-amber-300/80">Minnevokteren</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-amber-300/80">
+                        Minnevokteren
+                    </p>
                     <h1 className="font-display text-3xl font-bold sm:text-4xl">Hvem er du?</h1>
                     <p className="mx-auto mt-2 max-w-xl text-sm text-slate-300">
-                        Tåka har begynt å spise det folk husker. Du er den som skal hente det tilbake.
-                        Lag figuren din, så begynner vi i Nordvik.
+                        Tåka har begynt å spise det folk husker. Du er den som skal hente det
+                        tilbake. Lag figuren din, så begynner vi i Nordvik.
                     </p>
                 </header>
 
@@ -218,7 +220,9 @@ function Fargevalg({
                         onClick={() => onVelg(i)}
                         style={{ background: farge }}
                         className={`h-9 w-9 rounded-lg border-2 transition ${
-                            valgt === i ? 'border-amber-300 scale-110' : 'border-white/20 hover:border-white/50'
+                            valgt === i
+                                ? 'border-amber-300 scale-110'
+                                : 'border-white/20 hover:border-white/50'
                         }`}
                     />
                 ))}

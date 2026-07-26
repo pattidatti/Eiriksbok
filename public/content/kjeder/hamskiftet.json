@@ -1,0 +1,175 @@
+{
+    "id": "hamskiftet",
+    "title": "Hamskiftet i Norge",
+    "subjectId": "historie",
+    "topicId": "norge-i-moderne-tid",
+    "epoke": "Norge i moderne tid",
+    "aar": 1850,
+    "kulisse": "industri",
+    "scene": "nyjord",
+    "ingress": "Flere barn overlevde, og hele Norge endret seg. Følg sporet fra gården til stemmeretten.",
+    "start": "Norge rundt 1850: ni av ti bor på landet, og folketallet vokser raskere enn før.",
+    "slutt": "På to menneskealdre gikk Norge fra bondeland til industriland med stemmerett for alle.",
+    "ledd": [
+        {
+            "tekst": "Poteten, koppevaksinen og fred gjør at langt færre barn dør som små.",
+            "link": "/historie/norge-i-moderne-tid/hamskiftet",
+            "feil": [
+                {
+                    "tekst": "Nye kriger og uår gjør at folketallet i Norge synker kraftig.",
+                    "hvorfor": "Norge hadde fred etter 1814. Folketallet steg jevnt og trutt i hundre år."
+                },
+                {
+                    "tekst": "Poteten blir forbudt, fordi folk tror den er farlig å spise.",
+                    "hvorfor": "Poteten ble tvert imot maten som holdt liv i folk når kornet slo feil."
+                },
+                {
+                    "tekst": "Legene finner opp antibiotika, og barna blir reddet fra alle sykdommer.",
+                    "hvorfor": "Antibiotika kom først på 1900-tallet. Her var det vaksine og mat som hjalp."
+                },
+                {
+                    "tekst": "Folk får mange færre barn enn før, og familiene blir dermed mye mindre.",
+                    "hvorfor": "Barnetallet holdt seg høyt. Forskjellen var at flere av dem vokste opp."
+                },
+                {
+                    "tekst": "Kolera og pest tar like mange liv som de gjorde i middelalderen.",
+                    "hvorfor": "Epidemiene kom sjeldnere, og langt færre døde av dem enn før."
+                }
+            ]
+        },
+        {
+            "tekst": "Folketallet dobler seg, og det blir flere folk enn det er jord å dele på.",
+            "link": "/historie/norge-i-moderne-tid/hamskiftet",
+            "feil": [
+                {
+                    "tekst": "Gårdene blir delt i så små bruk at alle likevel kan leve godt av sitt eget.",
+                    "hvorfor": "Bruket ble for lite til å fø en familie. Da måtte noen finne annet arbeid."
+                },
+                {
+                    "tekst": "Ny jord i utmarka gir plass til alle som ønsker å bli bønder.",
+                    "hvorfor": "Det ble ryddet mye ny jord, men langt fra nok til alle som ble født."
+                },
+                {
+                    "tekst": "Færre folk gjør at gårdene må slås sammen til noen få store bruk.",
+                    "hvorfor": "Det var mangel på jord, ikke på folk. Norge hadde aldri vært mer folkerikt."
+                },
+                {
+                    "tekst": "Alle sønnene får hver sin gård, akkurat slik de alltid har fått.",
+                    "hvorfor": "Gården gikk til én. De andre ble husmenn, arbeidere eller utvandrere."
+                },
+                {
+                    "tekst": "Byene tømmes for folk, som heller flytter ut på landet for å dyrke jorda.",
+                    "hvorfor": "Strømmen gikk motsatt vei. Byene vokste raskere enn bygdene gjorde."
+                }
+            ]
+        },
+        {
+            "tekst": "Hundretusener av nordmenn reiser over havet til Amerika for å få jord.",
+            "link": "/historie/norge-i-moderne-tid/utvandringen-til-amerika",
+            "scene": "utvandrerhavn",
+            "feil": [
+                {
+                    "tekst": "Nordmenn får ikke lov til å reise ut, og grensene blir stengt av staten.",
+                    "hvorfor": "Det var fritt å reise. Rundt 800 000 nordmenn dro over på under hundre år."
+                },
+                {
+                    "tekst": "De fleste utvandrerne reiser til Danmark og Tyskland i stedet for Amerika.",
+                    "hvorfor": "Amerika var målet. Der fantes det jord nok til alle som ville rydde den."
+                },
+                {
+                    "tekst": "Bare de aller rikeste har råd til å reise over Atlanterhavet.",
+                    "hvorfor": "Billetten var dyr, men mange solgte alt, eller fikk den betalt av slekt."
+                },
+                {
+                    "tekst": "Utvandrerne kommer hjem igjen etter noen måneder i Amerika.",
+                    "hvorfor": "De aller fleste ble værende. Mange så aldri Norge igjen."
+                },
+                {
+                    "tekst": "Amerika nekter å ta imot folk fra Norge i disse årene helt.",
+                    "hvorfor": "USA ønsket nybyggere velkommen, og ga bort jord til dem som ville dyrke."
+                }
+            ]
+        },
+        {
+            "tekst": "De som blir igjen, flytter til byene og til de nye fabrikkene.",
+            "link": "/historie/norge-i-moderne-tid/hamskiftet",
+            "scene": "industriby",
+            "feil": [
+                {
+                    "tekst": "De som blir igjen, blir boende på gårdene sine hele livet ut.",
+                    "hvorfor": "Uten egen jord fantes det ikke levebrød. Byen hadde arbeid å tilby."
+                },
+                {
+                    "tekst": "Byene i Norge krymper, for det finnes ikke arbeid å få der.",
+                    "hvorfor": "Kristiania ble mer enn firedoblet i løpet av bare noen tiår."
+                },
+                {
+                    "tekst": "Fabrikkene i Norge legges ned, og all industrien forsvinner helt.",
+                    "hvorfor": "Industrien vokste. Sagbruk, tekstil og hermetikk ga tusenvis av jobber."
+                },
+                {
+                    "tekst": "Folk flytter fra byene og ut til fossene for å bygge seg hytter.",
+                    "hvorfor": "Ved fossene ble det bygget fabrikker, ikke hytter. Dit kom arbeidsfolk."
+                },
+                {
+                    "tekst": "Staten bestemmer hvem som får lov til å flytte inn til byene.",
+                    "hvorfor": "Alle kunne flytte fritt. Det var arbeid, ikke tillatelse, som avgjorde."
+                }
+            ]
+        },
+        {
+            "tekst": "Arbeiderne og bøndene organiserer seg og krever å bli hørt.",
+            "link": "/samfunnskunnskap/arbeidsliv/fagforeninger",
+            "scene": "folketog",
+            "feil": [
+                {
+                    "tekst": "Arbeiderne holder seg unna politikk og lar embetsmennene styre.",
+                    "hvorfor": "Arbeiderpartiet ble stiftet i 1887, nettopp for å få politisk makt."
+                },
+                {
+                    "tekst": "Fagforeninger blir forbudt i Norge, og ingen tør samle seg.",
+                    "hvorfor": "Foreningene vokste fram fra 1870-tallet, og LO ble stiftet i 1899."
+                },
+                {
+                    "tekst": "Bare eierne av fabrikkene får lov til å danne organisasjoner.",
+                    "hvorfor": "Begge sider organiserte seg. Arbeidsgiverne kom faktisk etter arbeiderne."
+                },
+                {
+                    "tekst": "Arbeiderne krever å få overta staten med våpen i hånd nå.",
+                    "hvorfor": "Kravene gjaldt lønn, arbeidstid og stemmerett, ikke væpnet opprør."
+                },
+                {
+                    "tekst": "Bøndene og arbeiderne blir uvenner og slutter å snakke sammen.",
+                    "hvorfor": "De sto ofte sammen mot embetsmennene, og fikk gjennomslag på Stortinget."
+                }
+            ]
+        },
+        {
+            "tekst": "Alle menn får stemmerett i 1898, og kvinnene får den i 1913.",
+            "link": "/historie/norge-i-moderne-tid/kvinnekampen",
+            "scene": "byen",
+            "feil": [
+                {
+                    "tekst": "Bare menn med eiendom får stemme, helt fram til året 1950.",
+                    "hvorfor": "Kravet om eiendom falt i 1898. Da fikk alle menn over 25 år stemme."
+                },
+                {
+                    "tekst": "Kvinner i Norge fikk stemmerett lenge før mennene fikk den.",
+                    "hvorfor": "Kvinnene kom etter. Norge var likevel tidlig ute i verden med 1913."
+                },
+                {
+                    "tekst": "Stemmeretten blir gitt av kongen, uten at noen har krevd den.",
+                    "hvorfor": "Den ble kjempet fram av foreninger, underskrifter og lange debatter."
+                },
+                {
+                    "tekst": "Norge er det siste landet i verden som gir kvinner stemmerett.",
+                    "hvorfor": "Norge var blant de aller første. De fleste land brukte mange tiår til."
+                },
+                {
+                    "tekst": "Alle over femten år får lov til å stemme ved valget i 1913.",
+                    "hvorfor": "Aldersgrensen var 25 år. Femtenåringer stemmer ikke i Norge i dag heller."
+                }
+            ]
+        }
+    ]
+}

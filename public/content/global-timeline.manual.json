@@ -11,7 +11,8 @@
       "subjectId": "historie",
       "topicId": "midtoesten",
       "link": "/historie/midtoesten/iran-usa-krigen",
-      "tags": ["midtosten", "iran", "usa", "krig"]
+      "tags": ["midtosten", "iran", "usa", "krig"],
+      "image": "/images/midtoesten/iran-usa-krigen-01.webp"
     },
     {
       "id": "hormuz-stengt-2026",
@@ -24,7 +25,8 @@
       "subjectId": "historie",
       "topicId": "midtoesten",
       "link": "/historie/midtoesten/iran-usa-krigen",
-      "tags": ["midtosten", "iran", "olje"]
+      "tags": ["midtosten", "iran", "olje"],
+      "image": "/images/midtoesten/iran-usa-krigen-02.webp"
     },
     {
       "id": "islamabad-memorandumet",

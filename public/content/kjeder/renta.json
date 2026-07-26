@@ -1,0 +1,175 @@
+{
+    "id": "renta",
+    "title": "Renta og lommeboka di",
+    "subjectId": "samfunnskunnskap",
+    "topicId": "okonomi",
+    "epoke": "I dag",
+    "aar": 2024,
+    "kulisse": "moderne",
+    "scene": "boligfelt",
+    "ingress": "Ett rentemøte i Oslo, og hele landet får mindre å rutte med. Følg sporet inn i lommeboka di.",
+    "start": "Norge i dag: nesten alle som kjøper bolig, låner mesteparten av pengene i banken.",
+    "slutt": "Renta er ett tall, men det treffer matbutikken, jobben og lommeboka di.",
+    "ledd": [
+        {
+            "tekst": "Prisene stiger raskt, og pengene dine kjøper mindre enn i fjor.",
+            "link": "/samfunnskunnskap/okonomi/inflasjon-og-rente",
+            "scene": "finansby",
+            "feil": [
+                {
+                    "tekst": "Prisene stiger raskt, og pengene dine blir dermed verdt mer enn i fjor.",
+                    "hvorfor": "Når prisene stiger, får du mindre for hundrelappen. Det kalles inflasjon."
+                },
+                {
+                    "tekst": "Prisene stiger bare på de varene som er laget i utlandet.",
+                    "hvorfor": "Prisveksten traff også strøm, husleie og mat som lages her hjemme."
+                },
+                {
+                    "tekst": "Prisene stiger nøyaktig like mye som lønna, så ingen merker noe.",
+                    "hvorfor": "Lønna henger som regel etter. Da blir det mindre igjen i lommeboka."
+                },
+                {
+                    "tekst": "Prisene blir bestemt av staten, som setter dem en gang i året.",
+                    "hvorfor": "Bedriftene setter prisene selv. Staten styrer bare noen få avgifter."
+                },
+                {
+                    "tekst": "Prisene faller når det blir mangel på varer i butikkhyllene.",
+                    "hvorfor": "Mangel presser prisene opp. Det er da kundene byr mot hverandre."
+                }
+            ]
+        },
+        {
+            "tekst": "Norges Bank setter opp styringsrenta for å bremse prisveksten.",
+            "link": "/samfunnskunnskap/okonomi/inflasjon-og-rente",
+            "feil": [
+                {
+                    "tekst": "Norges Bank setter ned styringsrenta for å bremse prisveksten.",
+                    "hvorfor": "Lavere rente gir mer forbruk. Da stiger prisene enda raskere."
+                },
+                {
+                    "tekst": "Stortinget bestemmer renta i statsbudsjettet hver eneste høst.",
+                    "hvorfor": "Norges Bank setter renta selv. Det er derfor banken er uavhengig."
+                },
+                {
+                    "tekst": "Bankene blir enige seg imellom om hva renta skal ligge på.",
+                    "hvorfor": "Bankene konkurrerer om kundene. Styringsrenta er felles for alle."
+                },
+                {
+                    "tekst": "Norges Bank trykker opp flere penger for å holde prisene nede.",
+                    "hvorfor": "Flere penger i omløp presser prisene oppover, ikke nedover."
+                },
+                {
+                    "tekst": "Renta er alltid den samme, uansett hvordan prisene utvikler seg.",
+                    "hvorfor": "Renta blir vurdert flere ganger i året, alt etter hvordan det går."
+                }
+            ]
+        },
+        {
+            "tekst": "Bankene følger etter, og renta på boliglånet ditt går opp.",
+            "link": "/samfunnskunnskap/okonomi/naturlig-rente",
+            "scene": "boligfelt",
+            "feil": [
+                {
+                    "tekst": "Bankene lar renta på lånet stå stille selv om styringsrenta stiger.",
+                    "hvorfor": "Bankene låner selv penger dyrere. Regningen sender de videre til deg."
+                },
+                {
+                    "tekst": "Bare helt nye lån blir dyrere, mens gamle lån aldri endrer seg.",
+                    "hvorfor": "De fleste norske boliglån har flytende rente, som endrer seg underveis."
+                },
+                {
+                    "tekst": "Renta på lånet ditt går ned når styringsrenta går opp.",
+                    "hvorfor": "Rentene følger hverandre oppover. Det er hele poenget med styringsrenta."
+                },
+                {
+                    "tekst": "Bankene betaler økningen selv, så kundene slipper unna.",
+                    "hvorfor": "En bank som tar tapet selv, tjener ingenting. Kunden betaler."
+                },
+                {
+                    "tekst": "Boliglånet blir billigere, fordi bankene får penger billig.",
+                    "hvorfor": "Pengene banken låner inn, blir dyrere når styringsrenta stiger."
+                }
+            ]
+        },
+        {
+            "tekst": "Familier med lån får mindre igjen å bruke hver eneste måned.",
+            "link": "/samfunnskunnskap/okonomi/inflasjon-og-rente",
+            "feil": [
+                {
+                    "tekst": "Familier med store lån merker ingenting til at renta går opp.",
+                    "hvorfor": "På et lån på tre millioner koster ett prosentpoeng rundt 30 000 i året."
+                },
+                {
+                    "tekst": "Det er de som har spart opp penger, som taper mest på høy rente.",
+                    "hvorfor": "Sparerne får tvert imot bedre betalt. Det er låntakerne som betaler."
+                },
+                {
+                    "tekst": "Familiene får høyere lønn med en gang renta blir satt opp.",
+                    "hvorfor": "Lønna forhandles én gang i året. Renta kan endres flere ganger."
+                },
+                {
+                    "tekst": "Bare de som leier bolig, merker at renta har gått opp.",
+                    "hvorfor": "Låntakerne merker det først. Husleia følger ofte etter litt senere."
+                },
+                {
+                    "tekst": "Familiene betaler mindre skatt, så regningen går opp i opp.",
+                    "hvorfor": "Fradraget dekker bare en liten del. Resten må du betale selv."
+                }
+            ]
+        },
+        {
+            "tekst": "Folk handler mindre, og bedriftene ansetter derfor færre.",
+            "link": "/samfunnskunnskap/okonomi/produksjon",
+            "scene": "krisetid",
+            "feil": [
+                {
+                    "tekst": "Folk handler mer enn før, siden lånet koster dem mer hver måned.",
+                    "hvorfor": "Går mer av lønna til renter, blir det mindre igjen til alt annet."
+                },
+                {
+                    "tekst": "Bedriftene ansetter flere når kundene bruker mindre penger.",
+                    "hvorfor": "Færre kunder betyr mindre å gjøre. Da trengs det heller ikke flere folk."
+                },
+                {
+                    "tekst": "Bedriftene merker ingenting til at kundene handler mindre.",
+                    "hvorfor": "Butikker og verksteder lever av kunder. Færre kunder merkes med en gang."
+                },
+                {
+                    "tekst": "Prisene stiger enda raskere når folk kjøper færre varer.",
+                    "hvorfor": "Svakere etterspørsel demper prisveksten. Det er nettopp meningen."
+                },
+                {
+                    "tekst": "Staten overtar de bedriftene som selger mindre enn før.",
+                    "hvorfor": "Staten overtar ikke bedrifter som går dårlig i en nedgangstid."
+                }
+            ]
+        },
+        {
+            "tekst": "Prisveksten faller tilbake, og da kan renta settes ned igjen.",
+            "link": "/samfunnskunnskap/okonomi/naturlig-rente",
+            "scene": "byen",
+            "feil": [
+                {
+                    "tekst": "Prisveksten fortsetter oppover selv om renta blir satt kraftig opp.",
+                    "hvorfor": "Høy rente demper forbruk og lån. Da bremser prisveksten etter hvert."
+                },
+                {
+                    "tekst": "Renta blir stående høyt for alltid når den først er satt opp.",
+                    "hvorfor": "Renta går opp og ned i sykluser, alt etter hva økonomien trenger."
+                },
+                {
+                    "tekst": "Norges Bank setter renta ned straks prisene begynner å stige.",
+                    "hvorfor": "Da ville prisveksten skyte fart igjen. Banken venter til den er dempet."
+                },
+                {
+                    "tekst": "Prisene faller tilbake til det nivået de lå på for ti år siden.",
+                    "hvorfor": "Prisene fortsetter å stige, bare saktere. De gamle prisene kommer ikke igjen."
+                },
+                {
+                    "tekst": "Renta settes ned først når alle lån i landet er betalt ned.",
+                    "hvorfor": "Lån finnes det alltid. Det er prisveksten banken følger med på."
+                }
+            ]
+        }
+    ]
+}

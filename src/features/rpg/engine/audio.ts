@@ -13,7 +13,9 @@ let stoppMusikk: (() => void) | null = null;
 function ensure(): Ctx | null {
     if (typeof window === 'undefined') return null;
     if (!ctx) {
-        const Impl = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+        const Impl =
+            window.AudioContext ??
+            (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
         if (!Impl) return null;
         ctx = new Impl();
         master = ctx.createGain();
@@ -51,7 +53,8 @@ function tone(
     const g = c.createGain();
     osc.type = type;
     osc.frequency.setValueAtTime(freq, t0);
-    if (sweepTo !== undefined) osc.frequency.exponentialRampToValueAtTime(Math.max(20, sweepTo), t0 + dur);
+    if (sweepTo !== undefined)
+        osc.frequency.exponentialRampToValueAtTime(Math.max(20, sweepTo), t0 + dur);
     g.gain.setValueAtTime(0.0001, t0);
     g.gain.exponentialRampToValueAtTime(Math.max(0.0001, gain), t0 + 0.008);
     g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
@@ -73,7 +76,8 @@ function noise(dur: number, gain: number, cutoff: number, delay = 0, sweepTo?: n
     const filter = c.createBiquadFilter();
     filter.type = 'lowpass';
     filter.frequency.setValueAtTime(cutoff, t0);
-    if (sweepTo !== undefined) filter.frequency.exponentialRampToValueAtTime(Math.max(60, sweepTo), t0 + dur);
+    if (sweepTo !== undefined)
+        filter.frequency.exponentialRampToValueAtTime(Math.max(60, sweepTo), t0 + dur);
     const g = c.createGain();
     g.gain.setValueAtTime(gain, t0);
     g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
@@ -123,7 +127,9 @@ export const sfx = {
         tone(1600, 0.08, 'square', 0.07, undefined, 0.05);
     },
     riktig() {
-        [523, 659, 784, 1047].forEach((f, i) => tone(f, 0.24, 'triangle', 0.16, undefined, i * 0.075));
+        [523, 659, 784, 1047].forEach((f, i) =>
+            tone(f, 0.24, 'triangle', 0.16, undefined, i * 0.075)
+        );
     },
     galt() {
         tone(220, 0.3, 'sawtooth', 0.16, 120);
@@ -213,6 +219,11 @@ export const sfx = {
         tone(150, 0.2, 'square', 0.16, 60, 0.02);
         noise(0.36, 0.22, 420, 0.1, 90);
     },
+    /** Buestrengen som slippes. Et kort smell, og en tynn susing etter pila. */
+    pil() {
+        tone(230, 0.07, 'triangle', 0.16, 90);
+        noise(0.2, 0.1, 3200, 0.02, 900);
+    },
     /** Staven og alt annet: noe blir slengt av gårde. */
     slengt() {
         noise(0.16, 0.3, 2000, 0, 500);
@@ -251,7 +262,13 @@ export function startMusikk(rot = 196, intensitet = 0): void {
     let neste = c.currentTime + 0.1;
     const stegLengde = () => (intensitet > 0.5 ? 0.28 : 0.42);
 
-    const spillNote = (freq: number, tid: number, lengde: number, gain: number, type: OscillatorType) => {
+    const spillNote = (
+        freq: number,
+        tid: number,
+        lengde: number,
+        gain: number,
+        type: OscillatorType
+    ) => {
         const osc = c.createOscillator();
         const g = c.createGain();
         osc.type = type;

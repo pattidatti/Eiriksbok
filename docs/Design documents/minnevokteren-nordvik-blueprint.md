@@ -4,7 +4,10 @@
 (§5.0), tall (§5.8), progresjonskobling (§7.5) og lagringsmigrering (§12.2) er
 spesifisert. Etappe 1 er byggbar.
 **Rute:** `/oving/rpg`
-**Erstatter:** «Minnevokteren», den abstrakte sone-rammen
+**Erstatter:** «Minnevokteren», den abstrakte sone-rammen. Navnet lever videre som
+hubbens fiksjon, utenfor epokene, der det ikke står mellom eleven og fagstoffet.
+**Se også:** `rpg-hub-og-epoker-blueprint.md` - hub, epoker og flerspiller. Den er
+rammen rundt denne. Endringer den medfører her er merket «Oppdatert» i §12, §13 og §15.
 **Fag:** historie / samfunnsfag
 **Emne:** vikingtiden (13 artikler)
 **Målgruppe:** 10. trinn
@@ -952,6 +955,12 @@ export interface KildeDef {
 arves mellom kapitler), `aere`, `aett`, `saker`, `klokke`, `begreper`, `beretninger`,
 `fredlos`, `sette` (spilte cutscenes), `kilder` (leste).
 
+> **Oppdatert.** Disse feltene ligger nå ett nivå ned, under
+> `epoker['vikingtiden']`, fordi lagringen må romme flere epoker. Den ytre formen står i
+> `rpg-hub-og-epoker-blueprint.md` §8. Alt om hva som arves og hva som nullstilles
+> (§12.1) og hele migreringstabellen (§12.2) gjelder uendret innenfor den rammen. Det
+> gjøres som **én** migrering, `version: 3 → 4`, med samme localStorage-nøkkel.
+
 **Nye filer:**
 
 ```
@@ -1035,11 +1044,12 @@ Ingen endringslogg. Det er en åpningsscene.
 
 ## 13. Byggerekkefølge
 
-Fem etapper. Hver enkelt gir noe spillbart.
+Seks etapper. Hver enkelt gir noe spillbart.
 
 | Etappe | Hva | Hvorfor her |
 |---|---|---|
 | **1. Kampsystemet** | `kamp.ts`: pust, retningsbestemt gard, perfekt parade, skjoldbrudd, kombo. Hele juice-tabellen i §5.3. Våpenmanøvrene. Fem fiendearketyper. | Alt annet står på denne. Og den kan testes for seg selv, i dagens Nordvik, uten at noe annet endres. |
+| **1b. Refaktorering** | Oppdeling av `WorldScene`, sted-abstraksjon, angrepsform som data, regelsett, farkost, `SaveState` v4, hub og flerspiller. R1-R8 i `rpg-hub-og-epoker-blueprint.md` §10. | **Kapittel 1 krever stedbytte** (Nordvik → Lindisfarne), og det finnes ikke i koden i dag. Se §13.1. |
 | **2. Kapittel 1** | 793 komplett: skroget, kampopplæringen mot Ravn, navigasjonen, Lindisfarne, cutscenene `sjosettingen` og `stranda` | Én ferdig, perfeksjonert time. Referansestandarden alt annet måles mot. |
 | **3. Mellomspill I** | Bordet, kildene, det tomme feltet | Kapittel 1 er ikke ferdig uten det. Dette er hele poenget med å ha utført raidet. |
 | **4. Ære, ætt, ting + kapittel 2** | `aere.ts`, `ting.ts`, mannebot, fredløshet, hevn. Årshjulet. Forrådet. Åsa. | 872 er kapittelet der de sosiale systemene *er* spillet |
@@ -1048,6 +1058,30 @@ Fem etapper. Hver enkelt gir noe spillbart.
 **Etappe 1 og 2 alene** er et ferdig, spillbart, knallgodt produkt: én time som ingen
 lærebok i Norge har maken til. Det er dét jeg ville bygget og perfeksjonert før noe
 skaleres.
+
+**Status:** etappe 1 er i hovedsak bygget. `engine/kamp.ts` og `data/vaapen.ts` har
+pust, retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo,
+og `engine/kampfx.ts` har hele §5.3b. Det som gjenstår av etappe 1: de fem menneskelige
+fiendearketypene (§5.6), sax og bue som våpen (§5.2), og koblingen av `ublokkerbart`
+og `hak` fra `fiendeSlaar()` til `Kamp.vurderTreff()`, som allerede tar dem imot.
+
+### 13.1 Hvorfor etappe 1b kom til
+
+Kapittel 1 spilles på to kart: Nordvik og Lindisfarne. Dagens kode kan ikke bytte kart i
+det hele tatt. `WorldScene` heter bokstavelig talt `'nordvik'` (`WorldScene.ts:212`),
+`boot.ts:44` starter den ved navn, `create()` leser `ZONE_BY_ID.nordvik` uten parameter,
+og `sisteSone` i storen settes én gang og leses aldri. Stedskiftet må altså bygges
+uansett, før kapittel 1, uavhengig av alt som gjelder hub og flerspiller.
+
+Da den jobben likevel skulle gjøres, ble rammen rundt den avgjort samtidig: én hub med
+portaler til flere epoker, flerspiller i hubben, og systemer som tåler at en senere
+epoke har gevær, hest eller skip i stedet for øks og spyd. Det designet står i
+`rpg-hub-og-epoker-blueprint.md`.
+
+Denne blueprinten er uendret av det. Kampanjen, kapitlene, mellomspillene, ære og ætt,
+tinget, årshjulet og minnetreet gjelder som skrevet. Vikingtiden blir én epoke blant
+flere i stedet for hele spillet, og Nordvik blir ett sted blant flere i stedet for hele
+verden.
 
 ---
 
@@ -1111,11 +1145,18 @@ og av det som ryker først i systemer som dette.
 
 ## 15. Det som faller bort
 
-- **Sone-modellen.** De ti andre sonene i `data/zones.ts` (Gryet, Marmortorget,
-  Steinborg, Lysbyen, Dampbyen, Skyggeåret, Ordheimen, Tempelhagen, Rådhusplassen,
-  Klangdalen) hviler på Minnevokteren-rammen. De blir stående som «kommer», og
-  spørsmålet om hva de skal være tas opp igjen etter at vikingkampanjen er ferdig og
-  testet. Én god kampanje slår elleve tynne soner.
+- **Sone-modellen som kampanjeramme.** De ti andre sonene i `data/zones.ts` (Gryet,
+  Marmortorget, Steinborg, Lysbyen, Dampbyen, Skyggeåret, Ordheimen, Tempelhagen,
+  Rådhusplassen, Klangdalen) hvilte på Minnevokteren-rammen med tåka og de abstrakte
+  fiendene. Den rammen faller bort.
+
+  > **Oppdatert.** Sonene selv gjør det ikke. De blir **epoker** med hver sin portal i
+  > hubben, etter `rpg-hub-og-epoker-blueprint.md` §2. Argumentet under står uendret,
+  > for det var aldri et argument mot en navigasjonsramme: det var et argument mot
+  > elleve tynne *kampanjer*. Ingen epoke bygges ut før vikingtiden er ferdig og testet
+  > på elever, og epokelisten er ikke bestemt.
+
+  Én god kampanje slår elleve tynne soner.
 - **De abstrakte fiendene.** `glemsel | paastand | anakronisme | rykte | vrangbilde`
   erstattes av folk med navn og ætt.
 - **De 17 bankspørsmålene som oppdrag.** Banken beholdes som ryggrad for framtidige

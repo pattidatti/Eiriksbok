@@ -19,6 +19,11 @@ export interface KjedeLedd {
     feil: KjedeFeil[];
     /** Artikkelen leddet bygger på. Vises som lenke på broen til slutt. */
     link?: string;
+    /**
+     * Bakgrunnen eleven løper gjennom ETTER at dette leddet er bygget. Utelates
+     * den, står forrige scene. Gyldige verdier ligger i `kjedeScener.ts`.
+     */
+    scene?: string;
 }
 
 export type Kulisse = 'middelalder' | 'industri' | 'moderne';
@@ -29,7 +34,16 @@ export interface Kjede {
     subjectId: string;
     topicId: string;
     epoke: string;
+    /**
+     * Året kjeden starter. Brukes bare til å sortere kjedene kronologisk på
+     * startskjermen: et spill om årsak og virkning skal ikke liste innholdet
+     * sitt alfabetisk etter filnavn.
+     */
+    aar: number;
+    /** Standardkulissen. Brukes der et ledd ikke oppgir sin egen scene. */
     kulisse: Kulisse;
+    /** Bakgrunnen på det første strekket, før noe har skjedd. */
+    scene?: string;
     ingress: string;
     /** Utgangspunktet. Står i den første steinen eleven løper på. */
     start: string;
@@ -44,6 +58,7 @@ export interface KjedeIndexEntry {
     subjectId: string;
     topicId: string;
     epoke: string;
+    aar: number;
     ingress: string;
     antallLedd: number;
 }

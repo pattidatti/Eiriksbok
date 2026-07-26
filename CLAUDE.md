@@ -184,6 +184,7 @@ The app uses a manifest-driven routing system:
 /oving/konsept-snake            Konseptslange (norsk-spill)
 /oving/retorikk                 Retorikk-spill
 /oving/hengemann                Hengemann (ordgjetting)
+/oving/kjedereaksjonen          Kjedereaksjonen (2D-sidescroller om årsak og virkning)
 /oving/virkemidler              Virkemiddel-verkstedet
 /oving/detektiv                 Detektiv-hub
 /oving/detektiv/:caseId         Detective case
@@ -579,6 +580,7 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 | `scripts/generate-timeline.js` | Rebuilds `global-timeline.json` + geo-beriker events (lat/lng/placeCountryId) |
 | `scripts/generate-place-coordinates.js` | Genererer `geo/place-coordinates.json` (tag → koordinat-ordbok for `/atlas`) |
 | `scripts/generate-quest-bank.mjs` | Bygger `public/data/rpg/quest-bank.json` fra Quiz-komponentene i artiklene (spørsmålsbanken til rollespillet) |
+| `scripts/validate-kjeder.mjs` | Validerer årsakskjedene i `public/content/kjeder/` og genererer `kjede-oversikt.json` (Kjedereaksjonen) |
 | `scripts/scan-concepts.js` | Scans articles for potential new concept terms |
 | `scripts/optimize-images.js` | Converts images to WebP |
 | `scripts/copy-404.js` | Copies `index.html` to `404.html` for SPA routing on static hosts |

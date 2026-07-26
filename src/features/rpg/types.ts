@@ -1,6 +1,10 @@
 // Delte typer for rollespillet «Minnevokteren» (/oving/rpg).
 // Ingen React, ingen Phaser, ingen store-import - kun data.
 
+// Kartformen bor hos den som lager kart. Dette er en ren type-import, så den
+// forsvinner i kompileringen og drar ingen kode med seg hit.
+import type { WorldMap } from './engine/worldgen';
+
 // ─── Spørsmålsbanken (generert av scripts/generate-quest-bank.mjs) ───────────
 
 export interface BankQuestion {
@@ -93,19 +97,26 @@ export interface ItemDef {
     /** Hva Bera Kremmer tar for den. Uten pris er den ikke til salgs. */
     pris?: number;
     /** Bare for våpen: form og rekkevidde på slaget. */
-    weapon?: {
-        skade: number;
-        /** Millisekunder mellom slag. */
-        hastighet: number;
-        /** Piksler slaget rekker. */
-        rekkevidde: number;
-        /** Grader på slagbuen. */
-        bue: number;
-        art: WeaponArt;
-    };
+    weapon?: VaapenDef;
 }
 
-export type WeaponArt = 'sverd' | 'oks' | 'stav' | 'spyd' | 'hammer';
+/**
+ * Tallene på selve gjenstanden. Formen på angrepet hører til arten
+ * (`VAAPEN_KAMP` i data/vaapen.ts) - to nivåer, så et nytt sverd får riktig
+ * oppførsel uten at noen må fylle ut fire felt til.
+ */
+export interface VaapenDef {
+    skade: number;
+    /** Millisekunder mellom slag. */
+    hastighet: number;
+    /** Piksler slaget rekker. For skytevåpen: hvor langt pila flyr. */
+    rekkevidde: number;
+    /** Grader på slagbuen. */
+    bue: number;
+    art: WeaponArt;
+}
+
+export type WeaponArt = 'sverd' | 'oks' | 'stav' | 'spyd' | 'hammer' | 'bue';
 
 // ─── Kamp: skjold, pust, manøvrer ───────────────────────────────────────────
 // Kampsystemet bygger på skjoldet, ikke sverdet. Se
@@ -123,6 +134,27 @@ export type Manover =
 /** Hvor godt våpenet virker i formasjon. Brukes av skjoldborgen i kap. 4. */
 export type RekkeVerdi = 'god' | 'brukbar' | 'ubrukelig';
 
+/**
+ * Hvordan våpenet leverer angrepet.
+ *
+ * Formen bor på arten, tallene på gjenstanden. Det er dette som gjør at en bue
+ * i 793 og et gevær i 1916 er samme sak: skudd, med andre tall og en annen
+ * ladetid. Før lå svingen som den eneste muligheten, rett inn i `slaa()`.
+ */
+export type Angrepsform =
+    | { form: 'sving' }
+    | {
+          form: 'skudd';
+          /** Millisekunder strengen trekkes før skuddet slippes. */
+          ladeMs: number;
+          /** Piksler i sekundet. Sammen med våpenets rekkevidde gir det levetiden. */
+          fart: number;
+          /** Teksturen skuddet tegnes med. */
+          tekstur: string;
+          /** Går skuddet gjennom det det treffer? */
+          gjennom: boolean;
+      };
+
 /** Kampegenskapene til en våpenart. Ligger på arten, ikke på hver gjenstand. */
 export interface VaapenKamp {
     /** Pust ett slag koster. */
@@ -131,6 +163,7 @@ export interface VaapenKamp {
     iRekke: RekkeVerdi;
     /** Tungt slag = lengre hitstop og dyrere å blokkere. */
     tungt: boolean;
+    angrep: Angrepsform;
 }
 
 /**
@@ -199,6 +232,22 @@ export interface EnemyDef {
     /** Skyter prosjektiler i stedet for nærkamp. */
     skytende?: boolean;
     storrelse?: number;
+    /**
+     * Særslaget. Uten dette er hvert slag et vanlig slag som garden kan ta.
+     *
+     * Det er med vilje ikke hvert slag: et monster som alltid slår ublokkerbart
+     * fjerner skjoldet fra spillet, og et som alltid haker gjør skjoldet til
+     * forbruksmateriell. Ett av n gir eleven noe å lese - og telegraferingen
+     * skifter farge, så det går an å lese det.
+     */
+    sarslag?: {
+        /** Hvert n-te slag er et særslag. */
+        hvert: number;
+        /** Går gjennom garden. Svaret er å rulle, ikke å blokkere. */
+        ublokkerbart?: boolean;
+        /** Haker skjoldet ned: blokkeres det, ryker hele skjoldet. Paraden er trygg. */
+        hak?: boolean;
+    };
 }
 
 // ─── Quester ────────────────────────────────────────────────────────────────
@@ -315,6 +364,52 @@ export interface Kilde {
     type: 'npc' | 'landemerke';
     id: string;
     navn: string;
+}
+
+// ─── Sted ───────────────────────────────────────────────────────────────────
+
+/**
+ * Ett kart. Alt scenen trenger for å bygge en verden ligger her, og ingenting
+ * av det ligger i scenen selv.
+ *
+ * Før dette het scenen bokstavelig talt «nordvik» og leste NORDVIK_-dataene
+ * direkte. Da fantes det ingen måte å bytte kart på - og kapittel 1 er nettopp
+ * det: Torstein seiler fra Nordvik til Lindisfarne.
+ */
+export interface Sted {
+    id: string;
+    /** Navnet som slås opp når eleven ankommer. */
+    tittel: string;
+    undertittel: string;
+    /** Epoken stedet hører til. Peker på en ZoneDef til epoker.ts finnes (R4). */
+    epokeId: string;
+    tema: ZoneTema;
+    /** Terrenget. Bygges på nytt hver gang eleven kommer hit. */
+    byggKart: () => WorldMap;
+    /** Ruta eleven står på ved ankomst. */
+    spawn: [number, number];
+    npcer: NpcDef[];
+    landemerker: LandmarkDef[];
+    /** Bossen som vokter stedet. Ikke alle steder har en. */
+    boss?: {
+        enemyId: string;
+        /** Ett skjold per spørsmål. */
+        sporsmal: BankQuestion[];
+    };
+    /** Grunntonen i den generative slåtten. */
+    musikkRot: number;
+    /** Håndskrevne oppdrag som hører til dette stedet. */
+    authored: AuthoredQuest[];
+}
+
+/** Et håndskrevet oppdrag: spørsmålet pluss innpakningen rundt det. */
+export interface AuthoredQuest {
+    title: string;
+    intro: string;
+    hint: string;
+    giverId: string;
+    question: BankQuestion;
+    belonning: { xp: number; solv: number; itemId?: string };
 }
 
 // ─── Lagret spill ───────────────────────────────────────────────────────────

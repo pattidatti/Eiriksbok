@@ -21,8 +21,13 @@ export interface SceneEvents {
     dod: Record<string, never>;
     /** Bossen er felt. */
     seier: Record<string, never>;
-    /** Sonetittel når eleven går inn i et område. */
-    sone: { tittel: string; undertittel: string };
+    /** Stedet eleven ankom. `stedId` lar React slå opp resten selv. */
+    sone: { stedId: string; tittel: string; undertittel: string };
+    /**
+     * Scenen ber om å komme til et annet sted. React bygger questene for det
+     * nye stedet og svarer med `WorldScene.utforReise`.
+     */
+    reise: { stedId: string };
     /** Sonens lys, så React kan legge himmeltone og vignett oppå lerretet. */
     atmosfare: { himmel: string };
     /** Retningen til nærmeste mål, til kompasset i HUD-en. */
@@ -87,4 +92,3 @@ class Emitter<Events> {
 export const fraSpill = new Emitter<SceneEvents>();
 /** Grensesnittet sier ifra til scenen. */
 export const tilSpill = new Emitter<UiEvents>();
-

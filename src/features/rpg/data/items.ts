@@ -47,6 +47,18 @@ export const ITEMS: ItemDef[] = [
         weapon: { skade: 5, hastighet: 420, rekkevidde: 38, bue: 80, art: 'stav' },
     },
     {
+        id: 'jaktbue',
+        name: 'Jaktbue',
+        slot: 'vapen',
+        rarity: 'vanlig',
+        flavor: 'Laget for elg, ikke for menn. Den vet ikke forskjellen.',
+        stats: {},
+        // `rekkevidde` er hvor langt pila flyr, ikke hvor langt hun når med
+        // armen. Sammen med farten i angrepsformen gir den levetiden.
+        weapon: { skade: 9, hastighet: 520, rekkevidde: 300, bue: 0, art: 'bue' },
+        pris: 110,
+    },
+    {
         id: 'sagasverd',
         name: 'Sagasverdet',
         slot: 'vapen',

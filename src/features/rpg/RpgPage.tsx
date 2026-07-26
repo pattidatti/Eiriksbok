@@ -14,13 +14,13 @@ import { Atmosfare, Skjermkontroll } from './components/Skjermkontroll';
 import { harBeroring } from './engine/enhet';
 import { ButikkPanel, InventoryPanel, PauseMeny, QuestLog } from './components/Panels';
 import { Meldingsskjerm, QuizChallenge } from './components/QuizChallenge';
-import { NORDVIK_BOSS_QUESTIONS, NORDVIK_NPCS } from './data/nordvik';
+import { finnNpc, stedEllerStart } from './data/steder';
 import { resumeAudio } from './engine/audio';
 import { fraSpill, tilSpill } from './engine/bridge';
 import type { KampSnapshot } from './engine/kamp';
-import { byggNordvikQuester, lastQuestBank } from './engine/quests';
+import { byggQuester, lastQuestBank } from './engine/quests';
 import type { SpillHandle } from './engine/boot';
-import type { WorldScene } from './engine/WorldScene';
+import { VERDEN_SCENE, type WorldScene } from './engine/WorldScene';
 import { useRpgStore } from './store/useRpgStore';
 import type { CharacterDraft, QuestDef } from './types';
 
@@ -50,14 +50,25 @@ export default function RpgPage() {
     const startQuest = useRpgStore((s) => s.startQuest);
     const questForsok = useRpgStore((s) => s.questForsok);
 
+    // Stedet eleven skal til: der hun sluttet sist. En ukjent id - en lagring
+    // fra et sted som ikke finnes lenger - faller tilbake til startstedet i
+    // stedet for å låse henne ute av spillet.
+    const sted = stedEllerStart(useRpgStore((s) => s.sisteSone));
+
     const [klar, setKlar] = useState(false);
     const [feil, setFeil] = useState<string | null>(null);
     const [quester, setQuester] = useState<QuestDef[]>([]);
     const [overlegg, setOverlegg] = useState<Overlegg>({ type: 'ingen' });
     const [hint, setHint] = useState<string | null>(null);
-    const [sonetittel, setSonetittel] = useState<{ tittel: string; undertittel: string } | null>(null);
+    const [sonetittel, setSonetittel] = useState<{ tittel: string; undertittel: string } | null>(
+        null
+    );
     const [himmel, setHimmel] = useState<string | null>(null);
-    const [kompass, setKompass] = useState<{ vinkel: number; avstand: number; navn: string } | null>(null);
+    const [kompass, setKompass] = useState<{
+        vinkel: number;
+        avstand: number;
+        navn: string;
+    } | null>(null);
     /** Pust, gard og skjoldslitasje. Kommer fra scenen ~11 ganger i sekundet. */
     const [kamp, setKamp] = useState<KampSnapshot | null>(null);
     const [touch] = useState(harBeroring);
@@ -65,7 +76,7 @@ export default function RpgPage() {
     const scene = useCallback((): WorldScene | null => {
         const game = spillRef.current?.game;
         if (!game) return null;
-        return (game.scene.getScene('nordvik') as WorldScene | null) ?? null;
+        return (game.scene.getScene(VERDEN_SCENE) as WorldScene | null) ?? null;
     }, []);
 
     // Spillet skal fylle skjermen - toppmenyen kommer i veien.
@@ -80,18 +91,19 @@ export default function RpgPage() {
         lastQuestBank()
             .then((bank) => {
                 if (avbrutt) return;
-                const bygde = byggNordvikQuester(bank);
+                const bygde = byggQuester(bank, sted);
                 questerRef.current = bygde;
                 setQuester(bygde);
                 setKlar(true);
             })
             .catch((e: unknown) => {
-                if (!avbrutt) setFeil(e instanceof Error ? e.message : 'Klarte ikke å laste spørsmålene.');
+                if (!avbrutt)
+                    setFeil(e instanceof Error ? e.message : 'Klarte ikke å laste spørsmålene.');
             });
         return () => {
             avbrutt = true;
         };
-    }, []);
+    }, [sted]);
 
     // ── Start Phaser når karakteren finnes ──────────────────────────────────
     useEffect(() => {
@@ -100,16 +112,18 @@ export default function RpgPage() {
         const parent = containerRef.current;
 
         void import('./engine/boot').then(({ startSpill }) =>
-            startSpill(parent, questerRef.current).then((handle) => {
-                if (avbrutt) {
-                    handle.destroy();
-                    return;
+            startSpill(parent, questerRef.current, useRpgStore.getState().sisteSone).then(
+                (handle) => {
+                    if (avbrutt) {
+                        handle.destroy();
+                        return;
+                    }
+                    spillRef.current = handle;
+                    // Utropstegnene skal stemme med lagrede quester med én gang.
+                    handle.game.events.once('poststep', () => scene()?.oppdaterMarkorer());
+                    window.setTimeout(() => scene()?.oppdaterMarkorer(), 400);
                 }
-                spillRef.current = handle;
-                // Utropstegnene skal stemme med lagrede quester med én gang.
-                handle.game.events.once('poststep', () => scene()?.oppdaterMarkorer());
-                window.setTimeout(() => scene()?.oppdaterMarkorer(), 400);
-            })
+            )
         );
 
         return () => {
@@ -123,14 +137,32 @@ export default function RpgPage() {
     useEffect(() => {
         const av = [
             fraSpill.on('dialog', ({ npcId }) => {
-                const npc = NORDVIK_NPCS.find((n) => n.id === npcId);
+                const npc = finnNpc(npcId);
                 setOverlegg(npc?.handler ? { type: 'butikk', npcId } : { type: 'dialog', npcId });
             }),
             fraSpill.on('atmosfare', ({ himmel: h }) => setHimmel(h)),
             fraSpill.on('kompass', (k) => setKompass(k)),
             fraSpill.on('kamp', (k) => setKamp(k)),
-            fraSpill.on('landmark', ({ landmarkId }) => setOverlegg({ type: 'landemerke', landmarkId })),
+            fraSpill.on('landmark', ({ landmarkId }) =>
+                setOverlegg({ type: 'landemerke', landmarkId })
+            ),
             fraSpill.on('bossSporsmal', ({ runde }) => setOverlegg({ type: 'boss', runde })),
+            // Scenen ber om å reise. Questene hører til stedet og bygges her,
+            // så scenen får dem med seg inn i den nye verdenen - ellers ville
+            // eleven komme fram til et kart der oppdragene pekte på folk som
+            // bor et helt annet sted.
+            fraSpill.on('reise', ({ stedId }) => {
+                const nytt = stedEllerStart(stedId);
+                setOverlegg({ type: 'ingen' });
+                setHint(null);
+                setKompass(null);
+                void lastQuestBank().then((bank) => {
+                    const bygde = byggQuester(bank, nytt);
+                    questerRef.current = bygde;
+                    setQuester(bygde);
+                    scene()?.utforReise(nytt.id, bygde);
+                });
+            }),
             fraSpill.on('hint', ({ tekst }) => setHint(tekst)),
             fraSpill.on('dod', () => setOverlegg({ type: 'dod' })),
             fraSpill.on('seier', () => setOverlegg({ type: 'seier' })),
@@ -140,7 +172,7 @@ export default function RpgPage() {
             }),
         ];
         return () => av.forEach((f) => f());
-    }, []);
+    }, [scene]);
 
     // ── Hurtigtaster for panelene ───────────────────────────────────────────
     useEffect(() => {
@@ -279,11 +311,11 @@ export default function RpgPage() {
                 />
             )}
 
-            {overlegg.type === 'boss' && (
+            {overlegg.type === 'boss' && sted.boss && (
                 <QuizChallenge
                     tittel="Kunnskapsdyst"
                     innsats="Den store Glemselen er beskyttet. Hvert riktige svar river ned ett skjold."
-                    question={NORDVIK_BOSS_QUESTIONS[overlegg.runde]}
+                    question={sted.boss.sporsmal[overlegg.runde]}
                     onSvar={(riktig) => {
                         tilSpill.emit('bossSvar', { riktig });
                         setOverlegg({ type: 'ingen' });

@@ -1,0 +1,176 @@
+{
+    "id": "jernteppet-faller",
+    "title": "Jernteppet faller",
+    "subjectId": "historie",
+    "topicId": "den-kalde-krigen",
+    "epoke": "Den kalde krigen",
+    "aar": 1980,
+    "kulisse": "moderne",
+    "scene": "panelblokk",
+    "ingress": "Et system som gikk tomt for penger. Følg sporet fra tomme butikkhyller til muren som åpnes.",
+    "start": "Øst-Europa i 1980: partiet bestemmer alt, og muren deler Berlin i to helt ulike byer.",
+    "slutt": "På to år forsvant et system som mange trodde ville vare i hundre år til.",
+    "ledd": [
+        {
+            "tekst": "Sovjet bruker enorme summer på våpen, mens butikkhyllene hjemme står tomme.",
+            "link": "/historie/den-kalde-krigen/atomvapenkapplopet",
+            "scene": "industriby",
+            "feil": [
+                {
+                    "tekst": "Sovjet kutter i våpnene og bruker heller pengene på butikker og nye boliger.",
+                    "hvorfor": "Rustningen fortsatte for fullt. Forsvaret slukte en enorm del av økonomien."
+                },
+                {
+                    "tekst": "Sovjetisk industri lager de samme varene som folk kan kjøpe i butikk i Vesten.",
+                    "hvorfor": "Fabrikkene lagde stål, våpen og traktorer, ikke varer folk sto i kø for."
+                },
+                {
+                    "tekst": "Krigen i Afghanistan gir Sovjet store inntekter og nye markeder.",
+                    "hvorfor": "Krigen kostet penger og liv i ni år. Til slutt måtte Sovjet trekke seg ut."
+                },
+                {
+                    "tekst": "Sovjetunionen blir rikere enn USA i løpet av hele 1980-tallet.",
+                    "hvorfor": "Avstanden økte den andre veien. Sovjet klarte ikke å holde tritt."
+                },
+                {
+                    "tekst": "Folk i Sovjet får kjøpt det de vil, bare de står lenge nok i kø.",
+                    "hvorfor": "Køene var lange, men hyllene var ofte tomme uansett hvor lenge du sto."
+                }
+            ]
+        },
+        {
+            "tekst": "Gorbatsjov åpner for kritikk og reformer for å redde systemet.",
+            "link": "/historie/den-kalde-krigen/veien-mot-slutt",
+            "scene": "panelblokk",
+            "feil": [
+                {
+                    "tekst": "Gorbatsjov strammer inn og forbyr all kritikk av partiet.",
+                    "hvorfor": "Åpenhet var hele ideen. Avisene fikk skrive om feil som før var hemmelige."
+                },
+                {
+                    "tekst": "Gorbatsjov avskaffer kommunismen helt i sitt første år ved makten.",
+                    "hvorfor": "Han ville reparere systemet, ikke rive det. Det raknet likevel."
+                },
+                {
+                    "tekst": "Gorbatsjov ber USA om å overta styringen av Sovjetunionen.",
+                    "hvorfor": "Han søkte avtaler om nedrustning, ikke hjelp til å styre landet."
+                },
+                {
+                    "tekst": "Gorbatsjov nekter å møte ledere fra Vesten så lenge han styrer.",
+                    "hvorfor": "Han møtte Reagan flere ganger, og de ble enige om å kutte i atomvåpen."
+                },
+                {
+                    "tekst": "Gorbatsjov holder alle problemene i landet strengt hemmelige.",
+                    "hvorfor": "Han sa høyt at økonomien sto stille. Det var nytt for en sovjetleder."
+                }
+            ]
+        },
+        {
+            "tekst": "Sovjet slutter å true med stridsvogner, og landene i øst går egne veier.",
+            "link": "/historie/den-kalde-krigen/veien-mot-slutt",
+            "feil": [
+                {
+                    "tekst": "Sovjet sender stridsvogner inn i Polen, akkurat slik de gjorde i Praha i 1968.",
+                    "hvorfor": "Gorbatsjov sa nei til å bruke hæren. Uten den trusselen falt regimene."
+                },
+                {
+                    "tekst": "Landene i Øst-Europa velger å beholde det gamle styret sitt helt frivillig.",
+                    "hvorfor": "Så fort trusselen forsvant, krevde folk frie valg i land etter land."
+                },
+                {
+                    "tekst": "Sovjet melder alle østblokklandene inn i NATO for å skape ro i Europa.",
+                    "hvorfor": "NATO var motstanderen. Landene i øst kom først med lenge etterpå."
+                },
+                {
+                    "tekst": "Landene i øst får nye grenser bestemt for seg av lederne i Moskva.",
+                    "hvorfor": "Grensene lå fast. Det som endret seg, var hvem som styrte innenfor dem."
+                },
+                {
+                    "tekst": "Landene i øst blir bedt om å slå seg sammen til én eneste stor stat.",
+                    "hvorfor": "De gikk motsatt vei. Hvert land ville bestemme mer selv, ikke mindre."
+                }
+            ]
+        },
+        {
+            "tekst": "Ungarn åpner grensen mot vest, og østtyskere rømmer gjennom hullet.",
+            "link": "/historie/den-kalde-krigen/berlinmuren",
+            "scene": "muren",
+            "feil": [
+                {
+                    "tekst": "Ungarn stenger grensen enda hardere, og ingen slipper ut den veien.",
+                    "hvorfor": "Ungarn klippet opp piggtråden sommeren 1989 og lot folk gå over."
+                },
+                {
+                    "tekst": "Østtyskerne får reise fritt til Vesten, og få av dem velger å bli borte.",
+                    "hvorfor": "Fri reise var nettopp det de ikke hadde. Derfor gikk de om Ungarn."
+                },
+                {
+                    "tekst": "Ungarn krever at alle flyktningene blir sendt rett tilbake til DDR.",
+                    "hvorfor": "Ungarn lot dem reise videre. Det var starten på hele raset."
+                },
+                {
+                    "tekst": "Østerrike stanser alle som kommer, og sender dem hjem igjen med tog.",
+                    "hvorfor": "Østerrike tok imot. Derfra reiste østtyskerne videre til Vest-Tyskland."
+                },
+                {
+                    "tekst": "DDR åpner sin egen grense mot vest den samme uka som Ungarn gjør det.",
+                    "hvorfor": "DDR holdt igjen i to måneder til. Muren åpnet først i november."
+                }
+            ]
+        },
+        {
+            "tekst": "Store demonstrasjoner presser DDR, og 9. november 1989 åpnes muren.",
+            "link": "/historie/den-kalde-krigen/berlinmuren",
+            "scene": "folketog",
+            "feil": [
+                {
+                    "tekst": "Politiet slår ned demonstrasjonene, og muren blir stående i mange år til.",
+                    "hvorfor": "Demonstrasjonene ble for store. I Leipzig gikk hundretusener i gatene."
+                },
+                {
+                    "tekst": "Muren blir revet av sovjetiske soldater etter ordre fra Moskva.",
+                    "hvorfor": "Det var berlinerne selv som hakket løs på muren, med hammer og meisel."
+                },
+                {
+                    "tekst": "Folk i DDR demonstrerer for at muren skal bli stående der den står.",
+                    "hvorfor": "De krevde frihet til å reise og til å velge sine egne ledere."
+                },
+                {
+                    "tekst": "USA sprenger muren med bomber for å frigjøre Øst-Berlin fra DDR.",
+                    "hvorfor": "Ingen skjøt. Grensevaktene åpnet bommene da mengden ble for stor."
+                },
+                {
+                    "tekst": "Muren åpnes etter en avtale mellom USA og Sovjet, uten protester.",
+                    "hvorfor": "Åpningen kom av press nedenfra, og av en pressemelding lest feil opp."
+                }
+            ]
+        },
+        {
+            "tekst": "Regjeringene faller på rekke og rad, og i 1991 er Sovjet oppløst.",
+            "link": "/historie/den-kalde-krigen/veien-mot-slutt",
+            "scene": "byen",
+            "feil": [
+                {
+                    "tekst": "De kommunistiske partiene beholder makten i alle østblokklandene sine.",
+                    "hvorfor": "I løpet av 1989 mistet de makten i land etter land, nesten uten vold."
+                },
+                {
+                    "tekst": "Sovjetunionen består, men uten Russland som en del av unionen.",
+                    "hvorfor": "Russland var kjernen i unionen. Uten Russland fantes det ingen union."
+                },
+                {
+                    "tekst": "Tyskland blir liggende delt i to land helt fram til år 2000.",
+                    "hvorfor": "Landet ble samlet allerede i oktober 1990, under ett år etter murfallet."
+                },
+                {
+                    "tekst": "Sovjet erobrer landene i Øst-Europa på nytt med militærmakt.",
+                    "hvorfor": "Sovjetunionen holdt på å gå i oppløsning selv. Hæren ble kalt hjem."
+                },
+                {
+                    "tekst": "Alle de nye landene i øst melder seg raskt inn i Warszawapakten igjen.",
+                    "hvorfor": "Warszawapakten ble oppløst i 1991. Flere av landene søkte mot NATO."
+                }
+            ]
+        }
+    ]
+}

@@ -4,13 +4,16 @@
 // ut av trøbbel, tro gir retning før du vet svaret.
 
 import type { Drivkraft, DrivkraftId } from '../../../types/kjede';
-import { FEILSPOR_DUR, FOG_SPEED, FOG_SURGE, THINK_MAX } from '../../../utils/kjedeFysikk';
+import { FEILSPOR_DUR, FOG_SPEED, FOG_SURGE } from '../../../utils/kjedeFysikk';
 
 export const DRIVKREFTER: Record<DrivkraftId, Drivkraft> = {
     makt: {
         id: 'makt',
         navn: 'Makt',
-        effekt: 'Tenkeøyeblikket varer 2 sekunder lenger.',
+        // Fast påslag i sekunder ville betydd lite på et langt ledd og mye på et
+        // kort. Tenketiden regnes nå ut fra hvor mye tekst som står på skjermen,
+        // så evnen må være en faktor for å kjennes lik hele veien.
+        effekt: 'Du får halvannen gang så lang tid på å velge.',
         begrunnelse: 'Makt gir deg tid andre ikke har.',
     },
     natur: {
@@ -40,7 +43,8 @@ export const DRIVKRAFT_IDS = Object.keys(DRIVKREFTER) as DrivkraftId[];
 
 /** Samlede effekter av drivkreftene eleven har plukket opp. */
 export interface DrivkraftEffekter {
-    tenketid: number;
+    /** Ganges med lesetiden verden regner ut for det aktuelle leddet. */
+    tenketidFaktor: number;
     tåkefart: number;
     feilsporTid: number;
     /** Hvor langt Glemselen rykker fram når eleven tar feil. */
@@ -49,7 +53,7 @@ export interface DrivkraftEffekter {
 }
 
 export const beregnEffekter = (valgte: DrivkraftId[]): DrivkraftEffekter => ({
-    tenketid: THINK_MAX + (valgte.includes('makt') ? 2 : 0),
+    tenketidFaktor: valgte.includes('makt') ? 1.5 : 1,
     tåkefart: FOG_SPEED * (valgte.includes('natur') ? 0.8 : 1),
     feilsporTid: FEILSPOR_DUR,
     overtrampByks: FOG_SURGE * (valgte.includes('okonomi') ? 0.5 : 1),
