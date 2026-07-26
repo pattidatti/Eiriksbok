@@ -48,8 +48,17 @@ export async function startSpill(
 
     // Gjør spillet tilgjengelig i konsollen under utvikling - uvurderlig når
     // noe oppfører seg rart og man vil se på scenen mens den kjører.
+    //
+    // Stedregisteret legges ved siden av. Et skript som importerer
+    // `data/steder.ts` selv kan få en annen modulinstans enn appen - Vite
+    // legger på `?t=` på filer som er endret siden serveren startet - og da
+    // ville et prøvested det registrerte være usynlig for spillet.
     if (import.meta.env.DEV) {
-        (window as unknown as { __rpg?: Phaser.Game }).__rpg = game;
+        const { STEDER, STED_BY_ID } = await import('../data/steder');
+        Object.assign(window as unknown as Record<string, unknown>, {
+            __rpg: game,
+            __rpgSteder: { STEDER, STED_BY_ID },
+        });
     }
 
     return {

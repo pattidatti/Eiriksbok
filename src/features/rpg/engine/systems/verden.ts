@@ -154,7 +154,9 @@ export class Verden {
                     (maksX - minX + 1) * TILE,
                     (maksY - minY + 1) * TILE
                 );
-                lag.setOrigin(0, 0).setDepth(-999).setVisible(frame === 0);
+                lag.setOrigin(0, 0)
+                    .setDepth(-999)
+                    .setVisible(frame === 0);
                 for (const [x, y] of vannRuter) {
                     lag.drawFrame(`flis-vann-${frame}`, undefined, x * TILE - bx, y * TILE - by);
                 }
@@ -254,7 +256,14 @@ export class Verden {
         }
         this.scene.data.set('propKropper', solide);
 
-        // Bål på tingplassen
+        // Bål på tingplassen.
+        //
+        // Animasjonsmanageren er global for hele spillet, mens flisene lages på
+        // nytt for hvert sted. Uten å fjerne den gamle først blir «baal»
+        // liggende og peke på bilder som er slettet, og `anims.create` nekter å
+        // erstatte en nøkkel som finnes. Første landemerke som spilte den etter
+        // en reise krasjet på «sourceSize of null», midt i byggingen av verden.
+        this.scene.anims.remove('baal');
         this.scene.anims.create({
             key: 'baal',
             frames: [

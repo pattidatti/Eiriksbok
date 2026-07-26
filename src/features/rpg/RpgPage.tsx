@@ -147,6 +147,22 @@ export default function RpgPage() {
                 setOverlegg({ type: 'landemerke', landmarkId })
             ),
             fraSpill.on('bossSporsmal', ({ runde }) => setOverlegg({ type: 'boss', runde })),
+            // Scenen ber om å reise. Questene hører til stedet og bygges her,
+            // så scenen får dem med seg inn i den nye verdenen - ellers ville
+            // eleven komme fram til et kart der oppdragene pekte på folk som
+            // bor et helt annet sted.
+            fraSpill.on('reise', ({ stedId }) => {
+                const nytt = stedEllerStart(stedId);
+                setOverlegg({ type: 'ingen' });
+                setHint(null);
+                setKompass(null);
+                void lastQuestBank().then((bank) => {
+                    const bygde = byggQuester(bank, nytt);
+                    questerRef.current = bygde;
+                    setQuester(bygde);
+                    scene()?.utforReise(nytt.id, bygde);
+                });
+            }),
             fraSpill.on('hint', ({ tekst }) => setHint(tekst)),
             fraSpill.on('dod', () => setOverlegg({ type: 'dod' })),
             fraSpill.on('seier', () => setOverlegg({ type: 'seier' })),
@@ -156,7 +172,7 @@ export default function RpgPage() {
             }),
         ];
         return () => av.forEach((f) => f());
-    }, []);
+    }, [scene]);
 
     // ── Hurtigtaster for panelene ───────────────────────────────────────────
     useEffect(() => {

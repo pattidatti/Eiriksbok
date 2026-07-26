@@ -74,6 +74,8 @@ export class WorldScene extends Phaser.Scene {
     private quester: QuestDef[] = [];
     private laast = false;
     private avmeldinger: (() => void)[] = [];
+    /** En reise er bestilt. Hindrer at to avreiser overlapper. */
+    private reiser = false;
 
     constructor() {
         super(VERDEN_SCENE);
@@ -82,6 +84,7 @@ export class WorldScene extends Phaser.Scene {
     init(data: { stedId?: string; quester: QuestDef[] }) {
         this.quester = data.quester ?? [];
         this.sted = stedEllerStart(data.stedId);
+        this.reiser = false;
     }
 
     create() {
@@ -166,9 +169,15 @@ export class WorldScene extends Phaser.Scene {
         const onsket = Math.max(2, Math.min(4, Math.round(this.scale.width / 420)));
         cam.setZoom(onsket);
         cam.setRoundPixels(true);
-        this.scale.on('resize', () => {
+
+        // Skalamanageren overlever scenen. Uten avmeldingen ville hver reise
+        // legge igjen en lytter til, og etter fem stedskifter ville fem
+        // lyttere justert zoomen på hver eneste vindusendring.
+        const juster = () =>
             cam.setZoom(Math.max(2, Math.min(4, Math.round(this.scale.width / 420))));
-        });
+        this.scale.on('resize', juster);
+        this.avmeldinger.push(() => this.scale.off('resize', juster));
+
         cam.fadeIn(700, 0, 0, 0);
     }
 
@@ -407,6 +416,48 @@ export class WorldScene extends Phaser.Scene {
     // ── Fiender ─────────────────────────────────────────────────────────────
 
     // ── Samhandling ─────────────────────────────────────────────────────────
+
+    // ── Reise mellom steder ─────────────────────────────────────────────────
+
+    /**
+     * Be om å komme til et annet sted. Spillet kan ikke bare bytte kart selv:
+     * questene hører til stedet, og de bygges av React fra spørsmålsbanken.
+     * Derfor spør scenen, og React svarer med `utforReise`.
+     *
+     * Skipet i R5 og portalene i hubben kaller denne.
+     */
+    bestillReise(stedId: string) {
+        if (this.reiser || stedId === this.sted.id) return;
+        this.reiser = true;
+        fraSpill.emit('reise', { stedId });
+    }
+
+    /**
+     * Utfør reisen. Scenen bygges fra bunnen: Phaser river alt som ligger i
+     * den, `rydd()` tar det som ligger utenfor, og `create()` bygger det nye
+     * stedet.
+     *
+     * Kompasset og hintet nullstilles først. De peker på folk og steiner i den
+     * gamle verdenen, og et hint om Gudrun mens skjermen viser et kloster i
+     * Northumbria er verre enn ingen hint.
+     */
+    utforReise(stedId: string, quester: QuestDef[]) {
+        fraSpill.emit('kompass', null);
+        fraSpill.emit('hint', { tekst: null });
+        // Låsen må av før scenen rives. Blir den stående, starter det nye
+        // stedet med pauset fysikk og en elev som ikke kan gå.
+        this.settLaast(false);
+        this.cameras.main.fadeOut(420, 0, 0, 0);
+        this.cameras.main.once('camerafadeoutcomplete', () => {
+            // Restarten må ut av render-fasen. `camerafadeoutcomplete` fyres
+            // fra innsiden av fade-effekten mens kameraet tegner, og river vi
+            // kameramanageren der, krasjer effekten på sitt eget kamera
+            // («Cannot read properties of undefined (reading setFollowOffset)»)
+            // og scenen blir liggende død med et tomt lerret. Ett bilde senere
+            // er vi trygt ute i oppdateringssteget.
+            this.time.delayedCall(0, () => this.scene.restart({ stedId, quester }));
+        });
+    }
 
     /** Tegner helten på nytt når utstyret endrer seg. Kalles fra React. */
     oppdaterUtseende() {
