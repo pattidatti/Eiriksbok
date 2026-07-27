@@ -33,9 +33,9 @@ export interface SceneEvents {
     /** Retningen til nærmeste mål, til kompasset i HUD-en. */
     kompass: { vinkel: number; avstand: number; navn: string } | null;
     /**
-     * Pust, gard og skjoldslitasje. Sendes et titalls ganger i sekundet, ikke 60:
-     * pusten endrer seg hele tiden, og en store-skriving per bilde ville tegnet
-     * HUD-en på nytt like ofte.
+     * Ressurs, gard og vernslitasje. Sendes et titalls ganger i sekundet, ikke
+     * 60: ressursen endrer seg hele tiden, og en store-skriving per bilde ville
+     * tegnet HUD-en på nytt like ofte.
      */
     kamp: KampSnapshot;
 }

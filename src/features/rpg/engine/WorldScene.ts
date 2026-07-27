@@ -8,6 +8,7 @@
 
 import Phaser from 'phaser';
 import { ENEMY_BY_ID, ENEMIES } from '../data/enemies';
+import { regelsettFor } from '../data/epoker';
 import { stedEllerStart } from '../data/steder';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
 import type { EnemyDef, QuestDef, Sted } from '../types';
@@ -125,14 +126,27 @@ export class WorldScene extends Phaser.Scene {
                 laas: (pa) => this.settLaast(pa),
             }
         );
-        this.helt = new Spiller(this, this.kart, this.efx, this.fx, this.skudd, sted.spawn, {
-            fiender: () => this.fiendeSystem.alle(),
-            skadFiende: (f, skade, kritisk, vinkel, kraft) =>
-                this.fiendeSystem.skad(f, skade, kritisk, vinkel, kraft),
-            stotBort: (f, vinkel, fart) => this.fiendeSystem.stotBort(f, vinkel, fart),
-            hitstop: (ms) => this.hitstop(ms),
-            laas: (pa) => this.settLaast(pa),
-        });
+        // Verb-kontrakten kommer fra epoken stedet ligger i: hva ressursen
+        // heter, hva vernet er, og hvor fort eleven går. Scenen leser den ikke
+        // selv - den rekker den videre til den som styrer figuren.
+        const regler = regelsettFor(sted.epokeId);
+        this.helt = new Spiller(
+            this,
+            this.kart,
+            this.efx,
+            this.fx,
+            this.skudd,
+            sted.spawn,
+            regler,
+            {
+                fiender: () => this.fiendeSystem.alle(),
+                skadFiende: (f, skade, kritisk, vinkel, kraft) =>
+                    this.fiendeSystem.skad(f, skade, kritisk, vinkel, kraft),
+                stotBort: (f, vinkel, fart) => this.fiendeSystem.stotBort(f, vinkel, fart),
+                hitstop: (ms) => this.hitstop(ms),
+                laas: (pa) => this.settLaast(pa),
+            }
+        );
         this.samhandling = new Interaksjon(this, sted.npcer, sted.landemerker, {
             spiller: () => this.helt.sprite,
             laas: (pa) => this.settLaast(pa),

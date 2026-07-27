@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
 import { finnNpc } from '../data/steder';
 import { SPELL_BY_ID } from '../data/spells';
-import { ZONES } from '../data/zones';
+import { EPOKER } from '../data/epoker';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
 import type { ItemSlot, QuestDef } from '../types';
 import { Ramme } from './DialogOverlay';
@@ -274,15 +274,15 @@ export function PauseMeny({
 }
 
 /**
- * Verdenskartet. Ti kort merket «Kommer» rett i ansiktet på eleven leser som et
- * uferdig spill. Her vises den ene ferdige sonen som det den er, og resten
+ * Verdenskartet over epokene. Ti kort merket «Kommer» rett i ansiktet på eleven
+ * leser som et uferdig spill. Her vises den ene ferdige epoken som det den er, og resten
  * ligger sammenrullet bak en knapp - som et løfte hun kan velge å se, ikke en
  * liste over det som mangler.
  */
 function VerdensKart({ niva }: { niva: number }) {
     const [visAlle, setVisAlle] = useState(false);
-    const apne = ZONES.filter((z) => z.spillbar);
-    const kommer = ZONES.filter((z) => !z.spillbar);
+    const apne = EPOKER.filter((e) => e.spillbar);
+    const kommer = EPOKER.filter((e) => !e.spillbar);
 
     return (
         <>
@@ -290,27 +290,27 @@ function VerdensKart({ niva }: { niva: number }) {
                 Verden
             </h3>
             <div className="grid gap-2 sm:grid-cols-2">
-                {apne.map((z) => (
+                {apne.map((e) => (
                     <div
-                        key={z.id}
+                        key={e.id}
                         className={`rounded-xl border p-3 ${
-                            niva >= z.krevesNiva
+                            niva >= e.krevesNiva
                                 ? 'border-emerald-400/40 bg-emerald-500/10'
                                 : 'border-white/10 bg-white/5 opacity-70'
                         }`}
                     >
                         <div className="flex items-baseline justify-between gap-2">
-                            <p className="font-display font-semibold text-slate-100">{z.title}</p>
+                            <p className="font-display font-semibold text-slate-100">{e.title}</p>
                             <span className="text-[10px] uppercase tracking-wider text-slate-400">
-                                {z.era}
+                                {e.era}
                             </span>
                         </div>
-                        <p className="mt-0.5 text-xs leading-snug text-slate-400">{z.pitch}</p>
+                        <p className="mt-0.5 text-xs leading-snug text-slate-400">{e.pitch}</p>
                         <p className="mt-1.5 text-[11px] font-semibold">
-                            {niva >= z.krevesNiva ? (
+                            {niva >= e.krevesNiva ? (
                                 <span className="text-emerald-300">Åpen</span>
                             ) : (
-                                <span className="text-amber-300">Krever nivå {z.krevesNiva}</span>
+                                <span className="text-amber-300">Krever nivå {e.krevesNiva}</span>
                             )}
                         </p>
                     </div>
@@ -329,13 +329,13 @@ function VerdensKart({ niva }: { niva: number }) {
 
             {visAlle && (
                 <ul className="mx-auto mt-3 max-w-xl space-y-1.5">
-                    {kommer.map((z) => (
-                        <li key={z.id} className="rounded-lg bg-white/5 px-3 py-2 text-sm">
-                            <span className="font-semibold text-slate-200">{z.title}</span>
+                    {kommer.map((e) => (
+                        <li key={e.id} className="rounded-lg bg-white/5 px-3 py-2 text-sm">
+                            <span className="font-semibold text-slate-200">{e.title}</span>
                             <span className="ml-2 text-[11px] uppercase tracking-wider text-slate-500">
-                                {z.era}
+                                {e.era}
                             </span>
-                            <p className="text-xs text-slate-400">{z.pitch}</p>
+                            <p className="text-xs text-slate-400">{e.pitch}</p>
                         </li>
                     ))}
                 </ul>

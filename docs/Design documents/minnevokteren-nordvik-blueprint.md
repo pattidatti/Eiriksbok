@@ -1145,7 +1145,7 @@ og av det som ryker først i systemer som dette.
 
 ## 15. Det som faller bort
 
-- **Sone-modellen som kampanjeramme.** De ti andre sonene i `data/zones.ts` (Gryet,
+- **Sone-modellen som kampanjeramme.** De ti andre sonene i `data/epoker.ts` (Gryet,
   Marmortorget, Steinborg, Lysbyen, Dampbyen, Skyggeåret, Ordheimen, Tempelhagen,
   Rådhusplassen, Klangdalen) hvilte på Minnevokteren-rammen med tåka og de abstrakte
   fiendene. Den rammen faller bort.

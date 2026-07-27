@@ -95,7 +95,7 @@ sjekk(
 // ── Garden: Shift holdt i ro reiser skjoldet og drenerer 6 pust i sekundet ──
 // Én kjøring har meldt «drenerte 0 pust» uten at årsaken lot seg finne igjen.
 // Derfor prøvetas garden mens den holdes. Feiler dreneringen, sier utskriften
-// hvorfor: garden kommer ikke opp uten skjold (`kamp.ts:445 harSkjold`), og et
+// hvorfor: garden kommer ikke opp uten skjold (`kamp.ts:445 harVern`), og et
 // støt fra en fiende senker den med 260 ms hvile før den kan reises igjen
 // (`kamp.ts:172 senkGard`). Livet leses som forstyrrelsesvakt, som i `maal()`.
 const pFor = await pust();
@@ -109,7 +109,7 @@ for (let i = 0; i < 10; i++) {
 const pGard = await pust();
 await page.screenshot({ path: `${UT}/kamp-2-gard.png` });
 const oppe = gardProver.filter((s) => s?.gardOppe).length;
-const sisteSkjold = gardProver.at(-1)?.skjoldHelse;
+const sisteSkjold = gardProver.at(-1)?.vernHelse;
 const gardDetalj = `${pFor} -> ${pGard}, oppe i ${oppe}/10 prøver, skjold ${sisteSkjold}`;
 if ((await liv()) !== lGardFor) {
     console.log(`HOPP  garden - avbrutt av kamp  (${gardDetalj})`);
@@ -186,7 +186,7 @@ await page.keyboard.up('Shift');
 // elev uten skjold oppe i stedet for det den skulle måle.
 // Skjoldet settes i stand først. Fiendene har fått slå på det i et halvt minutt
 // allerede, og et oppbrukt skjold betyr at garden ikke kan reises i det hele
-// tatt (`kamp.ts: harSkjold`) - da feiler alle tre prøvene av feil grunn.
+// tatt (`kamp.ts: harVern`) - da feiler alle tre prøvene av feil grunn.
 await page.evaluate(() => {
     const scene = window.__rpg.scene.getScene('verden');
     for (const f of scene.fiendeSystem.alle()) {
@@ -248,8 +248,8 @@ const sarslag = async (flagg, medGard) => {
                 klar,
                 gard: for_.gardOppe,
                 gikkGjennom,
-                skjoldFor: for_.skjoldHelse,
-                skjoldEtter: etter.skjoldHelse,
+                skjoldFor: for_.vernHelse,
+                skjoldEtter: etter.vernHelse,
             };
         },
         [flagg, medGard]

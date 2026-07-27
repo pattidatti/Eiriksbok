@@ -1,8 +1,13 @@
-// Skjold, våpenmanøvrer og alle tallene i kampsystemet.
+// Skjold, våpenmanøvrer og kostnadene i kampsystemet.
 //
 // Tallene ligger her og ikke i `kamp.ts` av én grunn: de skal justeres av noen
 // som prøvespiller, uten å lese logikk. Blueprintens §5.8 er kilden, og alt her
 // er startverdier å justere *ned* fra.
+//
+// Skillet mot `regelsett/viking.ts`: regelsettet eier *formen* på epoken - hva
+// ressursen heter, hvor fort den kommer tilbake, hva vernet er og hvor fort
+// eleven går. Denne fila eier hva hver enkelt handling koster og hvor tungt et
+// treff kjennes. Det første byttes når epoken byttes; det andre gjør det ikke.
 
 import type { Angrepsform, Manover, SkjoldDef, VaapenKamp, WeaponArt } from '../types';
 
@@ -13,7 +18,6 @@ export const SKJOLD: SkjoldDef[] = [
         id: 'treningsskjold',
         navn: 'Treningsskjold',
         helse: 5,
-        dekning: 120,
         tyngde: 2,
         flavor: 'Tyngre enn det trenger å være. Det er meningen.',
     },
@@ -21,7 +25,6 @@ export const SKJOLD: SkjoldDef[] = [
         id: 'rundskjold',
         navn: 'Rundskjold av lindetre',
         helse: 7,
-        dekning: 120,
         tyngde: 0,
         flavor: 'Lindetre er lett og sprekker pent. Det siste er en fordel.',
     },
@@ -29,7 +32,6 @@ export const SKJOLD: SkjoldDef[] = [
         id: 'jernskodd-rundskjold',
         navn: 'Jernskodd rundskjold',
         helse: 9,
-        dekning: 120,
         tyngde: 3,
         flavor: 'Jernkant hele veien rundt. Du kjenner den i armen etter tre slag.',
     },
@@ -85,23 +87,6 @@ export const MANOVER_NAVN: Record<Manover, string> = {
 // ─── Tallene ────────────────────────────────────────────────────────────────
 
 export const KAMP = {
-    /**
-     * Maks pust. Stiger ikke med nivå: pust er menneskelig, og en sytten år
-     * gammel gutt puster ikke bedre enn en huskarl.
-     */
-    maksPust: 100,
-
-    /** Pust per sekund, når hun har fått stå i fred. */
-    gjenvinning: 22,
-    /**
-     * Hvor lenge etter siste handling og siste treff gjenvinningen starter.
-     * Denne pausen er grunnen til at eleven må ut av rekkevidde for å puste, og
-     * den bevegelsen ut og inn er hele rytmen i kampen.
-     */
-    hvilePause: 700,
-    /** Pust per sekund garden koster å holde oppe. Ingen gjenvinning samtidig. */
-    gardDrenering: 6,
-
     /** Pust komboens tre trinn koster, ganget med våpenets grunnkostnad. */
     komboFaktor: [1, 1.15, 1.65],
     /** Neste slag må starte innen dette etter at forrige er ferdig. */
@@ -117,19 +102,6 @@ export const KAMP = {
     rullPust: 15,
     manoverPust: 22,
 
-    /**
-     * Paradevinduet, målt fra rammen garden reiser seg. Gavmildt med vilje: er
-     * det for stramt, slutter eleven å prøve, og da er hele systemet borte.
-     */
-    paradeVindu: 180,
-    /**
-     * Hvor lenge skjoldet må ligge nede før det kan reises igjen. Uten denne kan
-     * eleven hamre på tasten og få et evig paradevindu.
-     */
-    gardHvile: 260,
-    /** Sektoren skjoldet dekker, i grader til hver side av retningen hun vender. */
-    dekningHalv: 60,
-
     /** Skjoldhakk per blokk. Parade hakker ikke. */
     hakkLett: 1,
     hakkTungt: 2,
@@ -139,9 +111,6 @@ export const KAMP = {
     slitenHastighet: 1.35,
     /** Rull uten pust blir en stavring: kortere, og uten usårbarhet. */
     stavringFaktor: 0.6,
-
-    /** Skjoldgang - farten mens garden er oppe. */
-    gardFart: 0.45,
 
     /** Hitstop etter vekt. Ett tall for alt gjør at ingenting føles tungt. */
     hitstopLett: 40,

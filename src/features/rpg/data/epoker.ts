@@ -1,23 +1,34 @@
-import type { ZoneDef, ZoneTema } from '../types';
-
-// Verdenskartet. Nordvik er ferdig bygget; de andre sonene er synlige på
-// kartet, men merket «kommer». Spørsmålsbanken har allerede innhold til alle
-// sammen (se scripts/generate-quest-bank.mjs), så resten er byggearbeid - ikke
+// Epokene. Én epoke er en innholdsmodul: eget regelsett, egne steder, én portal
+// i hubben. Vikingtiden er ferdig bygget; de andre er synlige på verdenskartet,
+// men merket «kommer». Spørsmålsbanken har allerede innhold til alle sammen (se
+// scripts/generate-quest-bank.mjs), så resten er byggearbeid - ikke
 // innholdsarbeid.
 //
-// Temaet er hele palettene til en sone. Terreng, trær, tømmer og tak leses alle
-// herfra, så en ny sone får sin egen identitet uten ny grafikk.
+// Merk skillet mot `steder.ts`: Nordvik er et *sted* i epoken «vikingtiden», og
+// Lindisfarne blir et annet. Epoken eier regelsettet og fagstoffet, stedet eier
+// kartet. Før dette het epoken «nordvik», og da fantes det ikke noe sted å
+// henge kapittel 1 sitt andre kart.
+//
+// Temaet er hele paletten. Terreng, trær, tømmer og tak leses alle herfra, så
+// en ny epoke får sin egen identitet uten ny grafikk.
+//
+// Listen er et utkast, ikke et løfte. Se blueprintens §12.
 
-const tema = (t: ZoneTema): ZoneTema => t;
+import type { EpokeDef, Regelsett, Tema } from '../types';
+import { VIKING_REGELSETT } from './regelsett/viking';
 
-export const ZONES: ZoneDef[] = [
+const tema = (t: Tema): Tema => t;
+
+export const EPOKER: EpokeDef[] = [
     {
-        id: 'nordvik',
-        title: 'Nordvik',
-        era: 'Vikingtiden',
+        id: 'vikingtiden',
+        title: 'Vikingtiden',
+        era: '793-1066',
         pitch: 'En fjordbygd der tåka har begynt å spise navnene på folk.',
         krevesNiva: 1,
         spillbar: true,
+        regelsett: VIKING_REGELSETT,
+        bankSone: 'nordvik',
         tema: tema({
             gress: '#4d7c45',
             stein: '#7d8590',
@@ -38,6 +49,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Der alt begynte. Ild, korn og de første streker på en vegg.',
         krevesNiva: 4,
         spillbar: false,
+        bankSone: 'gryet',
         tema: tema({
             gress: '#7a7043',
             stein: '#8d8272',
@@ -58,6 +70,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Søyler, torg og folk som krangler høylytt om hvem som skal styre.',
         krevesNiva: 5,
         spillbar: false,
+        bankSone: 'marmortorget',
         tema: tema({
             gress: '#8a9a5b',
             stein: '#e0dcd0',
@@ -78,6 +91,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Borg, kirke og pest. Noen vokter porten - og sannheten.',
         krevesNiva: 7,
         spillbar: false,
+        bankSone: 'steinborg',
         tema: tema({
             gress: '#3f6b48',
             stein: '#6f7280',
@@ -98,6 +112,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Trykkpresser, plakater og folk som nekter å bøye seg.',
         krevesNiva: 9,
         spillbar: false,
+        bankSone: 'lysbyen',
         tema: tema({
             gress: '#5a7a4a',
             stein: '#c8b89a',
@@ -118,6 +133,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Sot, samlebånd og en klokke som aldri slutter å tikke.',
         krevesNiva: 11,
         spillbar: false,
+        bankSone: 'dampbyen',
         tema: tema({
             gress: '#4a4f3c',
             stein: '#5d5a55',
@@ -138,6 +154,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Propaganda i høyttalerne. Her er løgnen bevæpnet.',
         krevesNiva: 12,
         spillbar: false,
+        bankSone: 'skyggeaaret',
         tema: tema({
             gress: '#3d4a3a',
             stein: '#55585c',
@@ -158,6 +175,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Et bibliotek som er større på innsiden. Ordene flytter på seg.',
         krevesNiva: 3,
         spillbar: false,
+        bankSone: 'ordheimen',
         tema: tema({
             gress: '#4a6a5a',
             stein: '#8a7a68',
@@ -178,6 +196,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Sju stier, sju svar. Ingen av dem er en snarvei.',
         krevesNiva: 6,
         spillbar: false,
+        bankSone: 'tempelhagen',
         tema: tema({
             gress: '#5a8a5a',
             stein: '#d8d0c0',
@@ -198,6 +217,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Her stemmer folk. Noen prøver å telle feil.',
         krevesNiva: 8,
         spillbar: false,
+        bankSone: 'radhusplassen',
         tema: tema({
             gress: '#4a7a5a',
             stein: '#b0b8c0',
@@ -218,6 +238,7 @@ export const ZONES: ZoneDef[] = [
         pitch: 'Dalen svarer når du spiller riktig. Og tier når du bommer.',
         krevesNiva: 10,
         spillbar: false,
+        bankSone: 'klangdalen',
         tema: tema({
             gress: '#5a7a6a',
             stein: '#9a8ab0',
@@ -233,4 +254,22 @@ export const ZONES: ZoneDef[] = [
     },
 ];
 
-export const ZONE_BY_ID: Record<string, ZoneDef> = Object.fromEntries(ZONES.map((z) => [z.id, z]));
+export const EPOKE_BY_ID: Record<string, EpokeDef> = Object.fromEntries(
+    EPOKER.map((e) => [e.id, e])
+);
+
+/**
+ * Verb-kontrakten til en epoke, med vikingtiden som fallback.
+ *
+ * Fallbacken er ikke en generalitet vi later som vi har: den er der for at et
+ * halvferdig sted med feilstavet `epokeId` skal være spillbart i stedet for å
+ * krasje i første bilde. Bygger noen epoke nummer to, skal stedet peke på den.
+ */
+export function regelsettFor(epokeId: string): Regelsett {
+    return EPOKE_BY_ID[epokeId]?.regelsett ?? VIKING_REGELSETT;
+}
+
+/** Sonen i spørsmålsbanken epoken henter fagstoff fra. */
+export function bankSoneFor(epokeId: string): string {
+    return EPOKE_BY_ID[epokeId]?.bankSone ?? epokeId;
+}

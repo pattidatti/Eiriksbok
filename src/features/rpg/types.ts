@@ -155,6 +155,9 @@ export type Angrepsform =
           gjennom: boolean;
       };
 
+/** Verbet et våpen bruker. Regelsettet sier hvilke verb epoken kjenner. */
+export type AngrepsformId = Angrepsform['form'];
+
 /** Kampegenskapene til en våpenart. Ligger på arten, ikke på hver gjenstand. */
 export interface VaapenKamp {
     /** Pust ett slag koster. */
@@ -169,17 +172,120 @@ export interface VaapenKamp {
 /**
  * Skjoldet er en forbruksvare, ikke en statoppgradering. Lindetre, tynt, bygget
  * for å ta imot og splintres.
+ *
+ * Sektoren det dekker står *ikke* her. Den hører til epoken (`VernDef.dekning`):
+ * alle rundskjold dekket 120 grader, og en soldat som kaster seg i dekning i
+ * 1916 dekker ikke mer bare fordi sekken hans er tyngre.
  */
 export interface SkjoldDef {
     id: string;
     navn: string;
     /** Treff det tåler. Går ned ved blokk, ikke ved perfekt parade. */
     helse: number;
-    /** Grader det dekker. Rundskjold 120, ikke 360. */
-    dekning: number;
     /** Ekstra pust hver blokk koster. */
     tyngde: number;
     flavor: string;
+}
+
+// ─── Regelsett: verb-kontrakten til en epoke ────────────────────────────────
+//
+// Fella er å generalisere «våpen» til noe som dekker alt fra øks til Mauser.
+// Vi generaliserer de tre verbene i stedet: innsats, vern og ressurs.
+//
+//   Verb       | 793            | 1916                | Til hest
+//   -----------|----------------|---------------------|------------------
+//   Innsats    | hugg           | skyt / lad          | ri ned
+//   Vern       | reis skjoldet  | kast deg i dekning  | trekk i tøylene
+//   Ressurs    | pust           | nerve               | hestens krefter
+//
+// Kjerneregelen overlever intakt: står du bak et reist vern når slaget kommer,
+// blokkerer du; reiser du vernet i det slaget kommer, parerer du. Å dukke i det
+// granaten kommer er nøyaktig samme ferdighet som å reise skjoldet i det øksa
+// kommer, og den kontinuiteten får vi gratis så lenge signaturene her ikke har
+// ordet «skjold» i seg.
+//
+// Se docs/Design documents/rpg-hub-og-epoker-blueprint.md §5.
+
+/** Det eleven bruker opp. Pust i 793, nerve i 1916. */
+export interface RessursDef {
+    id: string;
+    /** Ordet HUD-en skriver på stolpen. Verifikasjonsskriptene leser den som aria-label. */
+    navn: string;
+    /**
+     * Taket. Stiger ikke med nivå: pust er menneskelig, og en sytten år gammel
+     * gutt puster ikke bedre enn en huskarl.
+     */
+    maks: number;
+    /** Per sekund, når hun har fått stå i fred. */
+    gjenvinning: number;
+    /**
+     * Millisekunder etter siste handling og siste treff før gjenvinningen
+     * starter. Denne pausen er grunnen til at eleven må ut av rekkevidde for å
+     * puste, og den bevegelsen ut og inn er hele rytmen i kampen.
+     */
+    pause: number;
+    /** Per sekund vernet koster å holde oppe. Ingen gjenvinning samtidig. */
+    drenering: number;
+    farge: string;
+    /** Fargen når den er bunnet ut. Stolpen rister i samme øyeblikk. */
+    tomFarge: string;
+    bakgrunn: string;
+}
+
+/** Det eleven gjemmer seg bak. Skjold i 793, dekning i 1916. */
+export interface VernDef {
+    art: 'skjold' | 'dekning' | 'toyler';
+    /** Ordet HUD-en bruker mens det holder. */
+    navn: string;
+    /** Ordet når det er brukt opp. */
+    brutt: string;
+    /** Grader det dekker rundt blikkretningen. Rundskjold 120, ikke 360. */
+    dekning: number;
+    /** Slites det av å ta imot? En skyttergrav gjør ikke det. */
+    slitasje: boolean;
+    /**
+     * Paradevinduet, målt fra rammen vernet reiser seg. Gavmildt med vilje: er
+     * det for stramt, slutter eleven å prøve, og da er hele systemet borte.
+     */
+    paradeVindu: number;
+    /**
+     * Hvor lenge vernet må ligge nede før det kan reises igjen. Uten denne kan
+     * eleven hamre på tasten og få et evig paradevindu.
+     */
+    hvile: number;
+    /** Farten mens vernet er oppe, som andel av vanlig gange. */
+    fart: number;
+    /** Rutene i HUD-en: én per treff vernet tåler. */
+    farge: { oppe: string; nede: string; tomt: string };
+    /** Det eleven får se i det vernet ryker. Epokens ord, ikke motorens. */
+    meldinger: { brast: string; varsel: string };
+}
+
+export interface BevegelseDef {
+    /** Piksler i sekundet. */
+    fart: number;
+    /** Finnes rullen i denne epoken? */
+    rull: boolean;
+    rullFart: number;
+    rullMs: number;
+    rullNedkjoling: number;
+    /** Hvor lenge eleven er usårbar etter et treff. */
+    usarbarMs: number;
+}
+
+/**
+ * Verb-kontrakten til en epoke. Vikingtiden er eneste implementasjon nå, og det
+ * er med vilje: poenget er ikke å ha to, det er at signaturene tåler den andre
+ * når den kommer.
+ */
+export interface Regelsett {
+    id: string;
+    navn: string;
+    ressurs: RessursDef;
+    vern: VernDef;
+    bevegelse: BevegelseDef;
+    /** Verbene epoken kjenner. Et våpen med en annen form svinges i stedet. */
+    angrepsformer: AngrepsformId[];
 }
 
 export interface LootDrop {
@@ -282,26 +388,43 @@ export interface QuestDef {
 
 // ─── Verden ─────────────────────────────────────────────────────────────────
 
-export interface ZoneDef {
+/**
+ * En epoke er en innholdsmodul: eget regelsett, egne steder, én portal i
+ * hubben. Den er ikke et kart - det er stedene inni den som er kart.
+ */
+export interface EpokeDef {
     id: string;
     title: string;
     era: string;
     /** Kort tekst på verdenskartet. */
     pitch: string;
-    /** Nivået som låser opp sonen. */
+    /** Nivået som låser opp epoken. */
     krevesNiva: number;
-    /** Klar til å spilles? Sone 1 er ferdig, resten kommer. */
+    /** Klar til å spilles? Vikingtiden er ferdig, resten kommer. */
     spillbar: boolean;
     /**
+     * Verb-kontrakten. Bare den ferdige epoken har en - de andre er tittel og
+     * palett, og et regelsett ingen har designet ville vært et løfte vi ikke
+     * kan holde.
+     */
+    regelsett?: Regelsett;
+    /**
+     * Sonen i spørsmålsbanken epoken henter fagstoff fra
+     * (`scripts/generate-quest-bank.mjs`). Egen id fordi de to listene eies av
+     * hver sin fil og ikke skal låses til hverandre.
+     */
+    bankSone: string;
+    /**
      * Fargetema. Alt terreng og alt tømmer hentes herfra - ingen hardkodede
-     * farger i tileforge. Det er dette som gjør at en ny sone får sin egen
+     * farger i tileforge. Det er dette som gjør at en ny epoke får sin egen
      * identitet uten at noen må tegne ny grafikk: trærne i Mesopotamia skal
      * ikke være fjordgrønne, og husene i Dampbyen ikke vikingbrune.
      */
-    tema: ZoneTema;
+    tema: Tema;
 }
 
-export interface ZoneTema {
+/** Paletten til et sted. Alt terreng, tømmer, tak og løvverk leses herfra. */
+export interface Tema {
     gress: string;
     stein: string;
     vann: string;
@@ -381,9 +504,9 @@ export interface Sted {
     /** Navnet som slås opp når eleven ankommer. */
     tittel: string;
     undertittel: string;
-    /** Epoken stedet hører til. Peker på en ZoneDef til epoker.ts finnes (R4). */
+    /** Epoken stedet hører til. Slår opp regelsett og spørsmålsbank i `EPOKER`. */
     epokeId: string;
-    tema: ZoneTema;
+    tema: Tema;
     /** Terrenget. Bygges på nytt hver gang eleven kommer hit. */
     byggKart: () => WorldMap;
     /** Ruta eleven står på ved ankomst. */

@@ -25,7 +25,9 @@ data/
   items.ts               Våpen, rustning, amuletter, priser
   spells.ts              Besvergelser (låses opp av riktige svar, ikke loot)
   enemies.ts             Fiendearketyper + bossen
-  zones.ts               Verdenskartet - 11 soner, én ferdig. Hele paletten per sone.
+  epoker.ts              De 11 epokene, én ferdig. Palett, regelsett og bank-sone.
+  regelsett/viking.ts    Verb-kontrakten for vikingtiden: pust, skjold, rull
+  vaapen.ts              Skjold, angrepsform per våpenart og kostnadene i kampen
   nordvik.ts             Nordvik: NPC-er, landemerker og håndskrevne oppdrag
   steder.ts              STEDER-registeret. Ett sted = ett kart med alt som hører til
 engine/
@@ -103,11 +105,59 @@ vises `Skjermkontroll` med analog styrestikke og knapper - uten den er spillet
 uspillbart på nettbrett. Der er garden en **veksling**, ikke et hold: tommelen kan
 ikke holde skjoldet og slå samtidig.
 
+## Epoke, sted og regelsett
+
+Tre nivåer, klart adskilt - skillet ligger i typene, ikke i hodet til den som
+koder:
+
+| Begrep        | Hva det er                                                            | Fil                       |
+| ------------- | --------------------------------------------------------------------- | ------------------------- |
+| **Sted**      | Ett kart, med tema, folk, landemerker og spawnpunkt                   | `data/steder.ts`          |
+| **Epoke**     | Innholdsmodul: eget regelsett, egne steder, egen sone i spørsmålsbanken | `data/epoker.ts`          |
+| **Regelsett** | Verb-kontrakten: hva ressursen er, hva vernet er, hvordan hun beveger seg | `data/regelsett/viking.ts` |
+
+Nordvik er et *sted* i epoken «vikingtiden». Lindisfarne blir et annet sted i
+samme epoke, og arver da både regelsettet og fagstoffet gratis.
+
+### Verb-kontrakten
+
+Fella er å generalisere `Vaapen` til noe som dekker alt fra øks til Mauser. Vi
+generaliserer de tre verbene i stedet:
+
+| Verb                | 793           | 1916               | Til hest           |
+| ------------------- | ------------- | ------------------ | ------------------ |
+| Innsats (mellomrom) | hugg          | skyt / lad         | ri ned             |
+| Vern (shift)        | reis skjoldet | kast deg i dekning | trekk i tøylene    |
+| Ressurs             | pust          | nerve              | hestens krefter    |
+
+Derfor står ordene «pust» og «skjold» ikke i noen signatur i `engine/kamp.ts`
+eller `engine/systems/spiller.ts` lenger. De er vikingtidens ord, og de kommer
+inn med `Regelsett`. Å dukke i det granaten kommer er nøyaktig samme ferdighet
+som å reise skjoldet i det øksa kommer - den kontinuiteten får vi gratis så
+lenge kontrakten holdes.
+
+**Vikingtiden er eneste implementasjon, og det skal den være.** Poenget er ikke
+å ha to regelsett, det er at signaturene tåler det andre når det kommer.
+
+Arbeidsdelingen mellom de to tall-filene:
+
+-   `data/regelsett/viking.ts` eier **formen** på epoken: hva ressursen heter og
+    hvor fort den kommer tilbake, hva vernet er og hvor mye det dekker, hvor
+    fort eleven går og om hun kan rulle. Byttes når epoken byttes.
+-   `data/vaapen.ts` eier **hva hver handling koster** og hvor tungt et treff
+    kjennes: kombofaktorer, blokkpris, hitstop, slitenhet. Byttes ikke.
+
+Ordene HUD-en skriver kommer også fra regelsettet (`ressurs.navn`, `vern.navn`,
+`vern.brutt`). Merk at `ressurs.navn` er «Pust» og at
+`scripts/verify-rpg-kamp.mjs` finner stolpen på nettopp det ordet
+(`[aria-label="Pust"]`). Endres det, må skriptene endres i samme åndedrag.
+
 ## Kampsystemet
 
-Kampen bygger på skjoldet, ikke sverdet. All logikk ligger i `engine/kamp.ts`
-(ren tilstand, ingen Phaser), alle tallene i `data/vaapen.ts`, og `WorldScene`
-gjør bare inndata, treffgeometri og effekter. Kjerneregelen:
+Kampen bygger på vernet, ikke sverdet. All logikk ligger i `engine/kamp.ts`
+(ren tilstand, ingen Phaser), formen i regelsettet, kostnadene i
+`data/vaapen.ts`, og `Spiller` gjør bare inndata, treffgeometri og effekter.
+Kjerneregelen:
 
 > Står du bak et reist skjold når slaget kommer, blokkerer du.
 > Reiser du skjoldet i det slaget kommer, parerer du.
@@ -124,9 +174,13 @@ dårlige strategien uten at vi trenger å straffe den.
 -   **Skjoldet** er en forbruksvare med synlig slitasje: fire rammer i en egen
     tekstur (`forgeSkjold`), ett hakk per blokk, brudd på null. Slitasjen er en
     teller eleven kan se, aldri en terning - er den tilfeldig, føles bruddet urettferdig.
+    Slitasjen er et flagg på epoken (`vern.slitasje`): en skyttergrav slites ikke
+    av å bli skutt på.
 -   **Dekningen er retningsbestemt.** 120 grader rundt blikkretningen. Angrep fra
-    siden og bakfra går rett gjennom, og det er derfor rekka finnes.
--   **Garden kan ikke hamres.** `KAMP.gardHvile` holder skjoldet nede i 260 ms etter
+    siden og bakfra går rett gjennom, og det er derfor rekka finnes. Sektoren hører
+    til epoken (`vern.dekning`), ikke til den enkelte gjenstanden - alle rundskjold
+    dekket like mye.
+-   **Garden kan ikke hamres.** `vern.hvile` holder skjoldet nede i 260 ms etter
     at det er senket, så eleven ikke kan ligge i et evig paradevindu.
 
 Kamptilstanden sendes til HUD-en over broen (`fraSpill.emit('kamp', …)`) elleve
@@ -136,13 +190,20 @@ nytt like ofte. Pust- og livsstolpene har `aria-valuenow`, som er det
 
 Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blueprint.md`.
 Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
-`docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1 og R2 er bygget.
+`docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R4 er bygget.
 
 ## Verifisering
 
-Seks skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Sju skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 `window.__rpgSteder`), som `boot.ts` bare eksponerer i dev.
+
+Er 5173 opptatt (en annen økt kjører allerede), tar Vite neste ledige port. Da
+må skriptene få vite hvor de skal:
+
+```bash
+RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
+```
 
 | Skript                       | Hva det dekker                                            |
 | ---------------------------- | --------------------------------------------------------- |
@@ -279,10 +340,13 @@ i motoren:
    mønsteret i `nordvik.ts`. Husk `stikkord` på alt - det er dem som gjør at
    svarene finnes i verden.
 2. Lag en kartgenerator etter mønsteret i `worldgen.ts`.
-3. Fyll ut hele `tema` (i dag hentet fra `data/zones.ts`). Alt terreng, tømmer,
-   tak og løvverk leses derfra, så stedet får sitt eget utseende uten ny grafikk.
+3. Fyll ut hele `tema` (i dag hentet fra epoken i `data/epoker.ts`). Alt terreng,
+   tømmer, tak og løvverk leses derfra, så stedet får sitt eget utseende uten ny
+   grafikk.
 4. Legg stedet inn i `STEDER` i `data/steder.ts`. Det er hele registreringen:
-   tema, kartbygger, spawnpunkt, folk, landemerker, boss og musikk.
+   epoke, tema, kartbygger, spawnpunkt, folk, landemerker, boss og musikk.
+   `epokeId` avgjør både regelsettet og hvilken sone i spørsmålsbanken stedet
+   henter fagstoff fra - peker den feil, faller stedet tilbake på vikingtiden.
 
 NPC- og landemerke-id-er må være unike på tvers av steder - grensesnittet slår
 dem opp med `finnNpc`/`finnLandemerke` uten å vite hvor eleven står.

@@ -8,7 +8,7 @@ interface Props {
     hint: string | null;
     /** Retningen til det aktive oppdragets kilde. */
     kompass: { vinkel: number; avstand: number; navn: string } | null;
-    /** Pust, gard og skjoldslitasje. Null før scenen har sendt sitt første bilde. */
+    /** Ressurs, gard og vernslitasje. Null før scenen har sendt sitt første bilde. */
     kamp: KampSnapshot | null;
     onApneSekk: () => void;
     onApneLogg: () => void;
@@ -43,17 +43,21 @@ export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Pr
                     merkelapp="Liv"
                 />
                 {/*
-                    Pusten. Den rister rødt når den bunner ut - eleven må kjenne
-                    at hun er tom, ikke lese det. Uten pust kan hun ikke blokkere,
+                    Ressursen - pust i 793, nerve i 1916. Navnet og fargene
+                    kommer fra epokens regelsett, ikke herfra: HUD-en skal ikke
+                    vite hvilken epoke eleven står i.
+
+                    Den rister rødt når den bunner ut - eleven må kjenne at hun
+                    er tom, ikke lese det. Uten ressurs kan hun ikke blokkere,
                     og slagene blir trege.
                 */}
                 {kamp && (
                     <Stolpe
-                        verdi={kamp.pust}
-                        maks={kamp.maksPust}
-                        farge={kamp.tom ? '#e0483f' : '#7ad0b0'}
-                        bak="#122a24"
-                        merkelapp="Pust"
+                        verdi={kamp.ressurs}
+                        maks={kamp.maksRessurs}
+                        farge={kamp.tom ? kamp.ressursDef.tomFarge : kamp.ressursDef.farge}
+                        bak={kamp.ressursDef.bakgrunn}
+                        merkelapp={kamp.ressursDef.navn}
                         rister={kamp.tom}
                     />
                 )}
@@ -64,7 +68,7 @@ export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Pr
                     bak="#122a3a"
                     merkelapp="Kraft"
                 />
-                {kamp && <Skjoldmerke kamp={kamp} />}
+                {kamp && <Vernmerke kamp={kamp} />}
                 <Stolpe
                     verdi={fremgang.inn}
                     maks={fremgang.spenn}
@@ -200,36 +204,40 @@ function Blodkant({ andel }: { andel: number }) {
 }
 
 /**
- * Skjoldet: én rute per treff det tåler. Slitasjen skal være en teller eleven kan
+ * Vernet: én rute per treff det tåler. Slitasjen skal være en teller eleven kan
  * se, ikke en terning - er den tilfeldig, føles bruddet urettferdig; er den
  * synlig, er den spenning.
+ *
+ * Ordene og fargene kommer fra epokens regelsett. «Skjold» og «Bart» er
+ * vikingtidens ord; en skyttergrav i 1916 heter noe annet og er ikke gullbrun.
  */
-function Skjoldmerke({ kamp }: { kamp: KampSnapshot }) {
-    if (kamp.skjoldMaks <= 0) return null;
-    const brukket = kamp.skjoldHelse <= 0;
+function Vernmerke({ kamp }: { kamp: KampSnapshot }) {
+    if (kamp.vernMaks <= 0) return null;
+    const { navn, brutt, farge } = kamp.vernDef;
+    const brukket = kamp.vernHelse <= 0;
     return (
-        <div className="flex items-center gap-1.5 pt-0.5" title={kamp.skjoldNavn}>
+        <div className="flex items-center gap-1.5 pt-0.5" title={kamp.vernNavn}>
             <span
                 className={`text-[10px] font-bold uppercase tracking-wider ${
                     brukket ? 'text-rose-300' : kamp.gardOppe ? 'text-amber-200' : 'text-slate-400'
                 }`}
             >
-                {brukket ? 'Bart' : 'Skjold'}
+                {brukket ? brutt : navn}
             </span>
             <div className="flex gap-[3px]">
-                {Array.from({ length: kamp.skjoldMaks }, (_, i) => (
+                {Array.from({ length: kamp.vernMaks }, (_, i) => (
                     <span
                         key={i}
                         className={`h-2.5 w-1.5 rounded-[1px] ring-1 ring-black/50 ${
-                            i < kamp.skjoldHelse ? '' : 'opacity-25'
+                            i < kamp.vernHelse ? '' : 'opacity-25'
                         }`}
                         style={{
                             background:
-                                i < kamp.skjoldHelse
+                                i < kamp.vernHelse
                                     ? kamp.gardOppe
-                                        ? '#e8c96a'
-                                        : '#c9a86a'
-                                    : '#3a2a18',
+                                        ? farge.oppe
+                                        : farge.nede
+                                    : farge.tomt,
                         }}
                     />
                 ))}

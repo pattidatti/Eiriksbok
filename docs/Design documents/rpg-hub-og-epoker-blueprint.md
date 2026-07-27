@@ -86,7 +86,7 @@ Fire nivåer, klart adskilt. Skillet må ligge i typene, ikke i hodet til den so
 | **Epoke** | Innholdsmodul med eget regelsett og egne kapitler. Én portal i hubben. | `vikingtiden`, `forste-verdenskrig`, `voc` |
 | **Regelsett** | Verb-kontrakten for en epoke. | skjold + pust vs. dekning + nerve |
 
-`ZoneDef` i dagens `data/zones.ts` blir `EpokeDef`. Merk at de elleve sonene allerede har
+`ZoneDef` i `data/zones.ts` ble `EpokeDef` i `data/epoker.ts` (R4). Merk at de elleve sonene allerede har
 fulle 10-farges paletter, og at `scripts/generate-quest-bank.mjs` sorterer spørsmål inn i
 dem etter årstall (`ZONE_RULES`, `zoneByYear`). **Epokelisten finnes nesten ferdig som
 utkast.** Den er ikke et løfte, se §12.
@@ -389,6 +389,27 @@ trenger dem. R7 og R8 er der risikoen ligger: verdien deres avhenger av at det f
 noe å gå til gjennom portalene.
 
 Etter R8: kapittel 1, etter Nordvik-blueprintens etappe 2.
+
+### Status
+
+**R1-R4 er bygget** (juli 2026). Alle sju `scripts/verify-rpg-*.mjs` er grønne.
+
+Ett avvik fra §5, gjort med vilje: `Regelsett.bevegelse` har ikke `farkost`.
+Feltet ville ikke blitt lest av noen før R5, og et felt ingen leser er den
+feilen `iRekke` allerede har gjort i denne kodebasen. R5 legger det til når det
+faktisk styrer noe. Alt annet i signaturen er implementert og lest:
+`vern.slitasje` avgjør om blokken hakker, `bevegelse.rull` om rullen finnes, og
+`angrepsformer` hvilke verb epoken kjenner.
+
+To ting R4 ryddet underveis, som ikke sto i planen:
+
+- **`SkjoldDef.dekning` er borte.** Alle tre skjoldene hadde 120 - det var en
+  epokekonstant forkledd som en gjenstandsegenskap. Den bor nå i `vern.dekning`,
+  ett sted. `KAMP.dekningHalv` var en tredje kopi, og den var død.
+- **Epoke og bank-sone er skilt.** `Sted.epokeId` het `'nordvik'` og ble slått
+  rett opp i spørsmålsbanken. Nå er epoken `'vikingtiden'` med
+  `bankSone: 'nordvik'`, så Lindisfarne kan legges til uten at noen må
+  regenerere banken eller finne på en epoke som heter det samme som et sted.
 
 ---
 

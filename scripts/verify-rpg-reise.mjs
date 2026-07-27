@@ -69,9 +69,9 @@ const lagd = await page.evaluate(async () => {
     // Vite kan gi skriptet en annen modulinstans enn appen bruker, og da ville
     // prøvestedet vært usynlig for spillet.
     const steder = window.__rpgSteder;
-    const zones = await import('/src/features/rpg/data/zones.ts');
+    const epoker = await import('/src/features/rpg/data/epoker.ts');
     const nordvik = steder.STED_BY_ID.nordvik;
-    const annet = zones.ZONES.find((z) => z.id !== 'nordvik');
+    const annet = epoker.EPOKER.find((e) => e.id !== nordvik.epokeId);
     const prove = {
         ...nordvik,
         id: 'proveplass',

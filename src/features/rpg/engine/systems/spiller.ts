@@ -5,9 +5,9 @@
 // treff. Fiendene når den bare gjennom kroker: den kan skade dem og støte dem
 // bort, men den vet ikke hvordan de tenker.
 //
-// Startruta kommer inn som argument, ikke fra Nordvik-dataene, så den samme
-// kontrolleren kan settes ned i et kloster i 793 eller en skyttergrav i 1916
-// (blueprint R2).
+// Startruta kommer inn som argument, ikke fra Nordvik-dataene, og fart, vern og
+// ressurs kommer fra epokens regelsett - så den samme kontrolleren kan settes
+// ned i et kloster i 793 eller en skyttergrav i 1916 (blueprint R2 og R4).
 
 import Phaser from 'phaser';
 import { ITEM_BY_ID } from '../../data/items';
@@ -30,7 +30,7 @@ import {
     type Positur,
 } from '../spriteforge';
 import type { WorldMap } from '../worldgen';
-import type { Angrepsform, VaapenDef, VaapenKamp } from '../../types';
+import type { Angrepsform, Regelsett, VaapenDef, VaapenKamp } from '../../types';
 import type { Effekter } from './effekter';
 import type { Fiende, Sarslag, Sprite } from './entiteter';
 import type { Prosjektiler } from './prosjektiler';
@@ -55,11 +55,11 @@ function avstandTilLinje(
     return Math.hypot(px - (x1 + t * dx), py - (y1 + t * dy));
 }
 
-const SPILLER_FART = 96;
-const RULL_FART = 260;
-const RULL_MS = 260;
-const RULL_NEDKJOLING = 620;
-const USARBAR_MS = 620;
+/**
+ * Fart, rull og usårbarhet bor i epokens regelsett, ikke her. En rytter og en
+ * soldat i skyttergrav beveger seg ikke som en huskarl, og det skal ikke koste
+ * en kodeendring å si det.
+ */
 /** Hvor lenge et treff kaster eleven bakover før styringen tar rattet igjen. */
 const STOT_MS = 150;
 /** Trykker eleven angrep like før nedkjølingen er ute, huskes trykket så lenge. */
@@ -92,14 +92,16 @@ export class Spiller {
     private fx: KampFx;
     private skudd: Prosjektiler;
     private startRute: [number, number];
+    /** Epokens verb-kontrakt: ressurs, vern og bevegelse. */
+    private regler: Regelsett;
     private kroker: SpillerKroker;
 
     private vapenSprite!: Phaser.GameObjects.Image;
-    private skjoldSprite!: Phaser.GameObjects.Image;
+    private vernSprite!: Phaser.GameObjects.Image;
 
-    /** Pust, kombo, gard og skjoldslitasje. Reglene bor i kamp.ts. */
-    private kamp = new Kamp();
-    /** Teller ned etter noe traff skjoldet - skyver det ett piksel ut. */
+    /** Ressurs, kombo, gard og vernslitasje. Reglene bor i kamp.ts. */
+    private kamp: Kamp;
+    /** Teller ned etter noe traff vernet - skyver det ett piksel ut. */
     private gardPress = 0;
 
     private retning: Dir = 'ned';
@@ -140,6 +142,7 @@ export class Spiller {
         fx: KampFx,
         skudd: Prosjektiler,
         startRute: [number, number],
+        regler: Regelsett,
         kroker: SpillerKroker
     ) {
         this.scene = scene;
@@ -148,6 +151,8 @@ export class Spiller {
         this.fx = fx;
         this.skudd = skudd;
         this.startRute = startRute;
+        this.regler = regler;
+        this.kamp = new Kamp(regler);
         this.kroker = kroker;
     }
 
@@ -245,7 +250,7 @@ export class Spiller {
             .setOrigin(0.1, 0.5)
             .setVisible(false);
 
-        this.skjoldSprite = this.scene.add
+        this.vernSprite = this.scene.add
             .image(this.sprite.x, this.sprite.y, 'skjold', 0)
             .setVisible(false);
 
@@ -323,7 +328,7 @@ export class Spiller {
         let fart: number;
         if (this.rullIgjen > 0) {
             positur = 'rull';
-            fart = RULL_MS / POSITUR_LENGDE.rull;
+            fart = this.regler.bevegelse.rullMs / POSITUR_LENGDE.rull;
         } else if (this.slagIgjen > 0) {
             positur = 'slag';
             fart = this.slagVarighet / POSITUR_LENGDE.slag;
@@ -456,7 +461,7 @@ export class Spiller {
                 !ruller &&
                 this.stotIgjen === 0 &&
                 this.slagIgjen === 0 &&
-                this.kamp.harSkjold
+                this.kamp.harVern
         );
         this.kamp.tikk(delta);
         const gard = this.kamp.gardOppe;
@@ -467,11 +472,12 @@ export class Spiller {
 
         if (!ruller && this.stotIgjen === 0 && this.utfallIgjen === 0) {
             // Angrepet forplikter: eleven går saktere mens hun svinger, og bak
-            // et reist skjold går hun i skjoldgang.
-            const bremse = this.slagIgjen > 0 ? 0.4 : gard ? KAMP.gardFart : 1;
+            // et reist vern går hun i skjoldgang.
+            const bremse = this.slagIgjen > 0 ? 0.4 : gard ? this.regler.vern.fart : 1;
+            const fart = this.regler.bevegelse.fart;
             this.sprite.setVelocity(
-                enhet.x * SPILLER_FART * utslag * bremse,
-                enhet.y * SPILLER_FART * utslag * bremse
+                enhet.x * fart * utslag * bremse,
+                enhet.y * fart * utslag * bremse
             );
 
             // Retningen settes også under gard, så eleven kan snu seg mot en
@@ -489,21 +495,23 @@ export class Spiller {
         }
         this.gardPress = Math.max(0, this.gardPress - delta);
         this.oppdaterHeltRamme(delta, !ruller && utslag > 0.001 && this.slagIgjen === 0);
-        this.oppdaterSkjold();
+        this.oppdaterVern();
 
-        // Rull - kort fartsøkning med usårbarhet
+        // Rull - kort fartsøkning med usårbarhet. Ikke alle epoker har den: den
+        // som ligger i en skyttergrav ruller ikke, han kryper.
+        const beveg = this.regler.bevegelse;
         const rullTrykk =
             Phaser.Input.Keyboard.JustDown(this.taster.rull) ||
             this.padKant(pad, 'B') ||
             touch.has('rull');
-        if (rullTrykk && this.rullNedkjoling === 0 && utslag > 0.001) {
+        if (beveg.rull && rullTrykk && this.rullNedkjoling === 0 && utslag > 0.001) {
             // Uten pust blir rullen en stavring: kortere, og uten usårbarhet.
             const { stavring } = this.kamp.rull();
-            const fart = stavring ? RULL_FART * KAMP.stavringFaktor : RULL_FART;
+            const fart = stavring ? beveg.rullFart * KAMP.stavringFaktor : beveg.rullFart;
             this.sprite.setVelocity(enhet.x * fart, enhet.y * fart);
-            this.rullIgjen = RULL_MS;
-            this.rullNedkjoling = RULL_NEDKJOLING;
-            if (!stavring) this.usarbarIgjen = Math.max(this.usarbarIgjen, RULL_MS + 60);
+            this.rullIgjen = beveg.rullMs;
+            this.rullNedkjoling = beveg.rullNedkjoling;
+            if (!stavring) this.usarbarIgjen = Math.max(this.usarbarIgjen, beveg.rullMs + 60);
             sfx.rull();
             this.efx.stovsky(this.sprite.x, this.sprite.y + 6, stavring ? 3 : 6);
             if (stavring)
@@ -551,7 +559,11 @@ export class Spiller {
     private slaa() {
         const vapen = utrustetVaapen();
         const vk = vaapenKamp(vapen.art);
-        if (vk.angrep.form === 'skudd') this.skuddAngrep(vapen, vk, vk.angrep);
+        // Epoken bestemmer hvilke verb som finnes. Havner et våpen med en form
+        // epoken ikke kjenner i sekken, svinges det - da blir det en klubbe i
+        // stedet for at angrepsknappen slutter å virke.
+        const kjent = this.regler.angrepsformer.includes(vk.angrep.form);
+        if (kjent && vk.angrep.form === 'skudd') this.skuddAngrep(vapen, vk, vk.angrep);
         else this.svingAngrep(vapen, vk);
     }
 
@@ -787,16 +799,16 @@ export class Spiller {
     }
 
     /**
-     * Skjoldet følger retningen hun vender, og slitasjen vises på sprite-en før
+     * Vernet følger retningen hun vender, og slitasjen vises på sprite-en før
      * bruddet kommer. Er det en teller eleven kan se, er det spenning - er det
      * tilfeldig, føles det urettferdig.
      */
-    private oppdaterSkjold() {
+    private oppdaterVern() {
         if (!this.kamp.gardOppe) {
-            this.skjoldSprite.setVisible(false);
+            this.vernSprite.setVisible(false);
             return;
         }
-        const andel = this.kamp.skjoldHelse / Math.max(1, this.kamp.skjoldMaks);
+        const andel = this.kamp.vernHelse / Math.max(1, this.kamp.vernMaks);
         const ramme = andel > 0.99 ? 0 : andel > 0.66 ? 1 : andel > 0.33 ? 2 : 3;
         // Figurens origo står ved føttene, så skjoldet må løftes opp til brystet.
         // Ligger det lavere, dekker det bakken i stedet for henne.
@@ -810,7 +822,7 @@ export class Spiller {
                 : [6, 0];
         // Presset skyver skjoldet ett piksel ut i det noe treffer det.
         const press = this.gardPress > 0 ? Math.sign(ox) : 0;
-        this.skjoldSprite
+        this.vernSprite
             .setVisible(true)
             .setFrame(Math.min(SKJOLD_RAMMER - 1, ramme))
             .setPosition(this.sprite.x + ox + press, this.sprite.y - 9 + oy)
@@ -848,7 +860,7 @@ export class Spiller {
             return false;
         }
         if (utfall.art === 'blokk') {
-            this.blokk(fiende, utfall.skjoldBrast);
+            this.blokk(fiende, utfall.vernBrast);
             return false;
         }
 
@@ -877,7 +889,7 @@ export class Spiller {
         // Én ramme hvitt over hele skjermen. Belønningen må være umulig å overse.
         this.scene.cameras.main.flash(70, 255, 255, 245);
         this.efx.flytTekst(this.sprite.x, this.sprite.y - 30, 'Parade!', '#fff2b0', 15);
-        this.efx.pikselSprut(this.skjoldSprite.x, this.skjoldSprite.y, 0xfff2b0, 14);
+        this.efx.pikselSprut(this.vernSprite.x, this.vernSprite.y, 0xfff2b0, 14);
         this.fx.klask(this.sprite, 0.1);
 
         // Angriperen mister balansen: full åpning. Kameraet dyttes *mot* henne,
@@ -888,7 +900,7 @@ export class Spiller {
         this.kroker.stotBort(fiende, v, 240);
     }
 
-    /** Vanlig blokk: skjoldet tok det, men det kostet pust og en flis av kanten. */
+    /** Vanlig blokk: vernet tok det, men det kostet pust og en flis av kanten. */
     private blokk(fiende: Fiende, brast: boolean) {
         this.gardPress = 160;
         // Lindetre, ikke jern. Blokken skal høres tørr ut - metallklangen er
@@ -896,7 +908,7 @@ export class Spiller {
         sfx.treSprak();
         const v = Math.atan2(this.sprite.y - fiende.sprite.y, this.sprite.x - fiende.sprite.x);
         this.fx.dytt(v, 3, 110);
-        this.fx.flis(this.skjoldSprite.x, this.skjoldSprite.y, v, brast ? 12 : 4);
+        this.fx.flis(this.vernSprite.x, this.vernSprite.y, v, brast ? 12 : 4);
 
         // Litt støt, så et blokkert slag fortsatt flytter eleven. Uten det står
         // hun som en vegg, og blokken mister vekt.
@@ -906,8 +918,9 @@ export class Spiller {
             sfx.skjoldBrudd();
             this.kroker.hitstop(KAMP.hitstopTungt);
             this.fx.dytt(v, 9, 260);
-            this.efx.flytTekst(this.sprite.x, this.sprite.y - 30, 'Skjoldet brast!', '#ff9d6a', 15);
-            useRpgStore.getState().varsle('Skjoldet gikk i to. Nå står du bar.', 'darlig');
+            const meldinger = this.regler.vern.meldinger;
+            this.efx.flytTekst(this.sprite.x, this.sprite.y - 30, meldinger.brast, '#ff9d6a', 15);
+            useRpgStore.getState().varsle(meldinger.varsel, 'darlig');
             // Et kort pusterom, ellers lander neste slag i samme sekund som
             // skjoldet forsvant, og det leser som en straff for å ha blokkert.
             this.usarbarIgjen = Math.max(this.usarbarIgjen, 420);
@@ -935,7 +948,7 @@ export class Spiller {
         const stats = maksVerdier(store);
         const faktisk = Math.max(1, Math.round(skade - stats.vern * 0.6));
         store.endreHp(-faktisk);
-        this.usarbarIgjen = USARBAR_MS;
+        this.usarbarIgjen = this.regler.bevegelse.usarbarMs;
         sfx.skade();
         // Dyttet går bort fra treffet - eleven skal kjenne at hun ble slått bakover.
         this.fx.dytt(this.retningsVinkel() + Math.PI, 7, 170);

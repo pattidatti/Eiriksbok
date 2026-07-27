@@ -12,7 +12,7 @@
 //    ulike fliser med samlede gresstuster, og de speiles i tillegg.
 
 import type Phaser from 'phaser';
-import type { ZoneDef } from '../types';
+import type { Tema } from '../types';
 import { createPainter, makeRng, ramp, type Painter } from './pixels';
 import { TILE } from './spriteforge';
 
@@ -69,7 +69,7 @@ function flekker(p: Painter, rng: () => number, antall: number, farge: string, s
 }
 
 /** Fargene en flistype bruker. Alt hentes fra temaet, så nye soner ser nye ut. */
-function flisFarge(tema: ZoneDef['tema'], flis: TileKey): string {
+function flisFarge(tema: Tema, flis: TileKey): string {
     switch (flis) {
         case 'gress':
             return tema.gress;
@@ -90,7 +90,7 @@ function flisFarge(tema: ZoneDef['tema'], flis: TileKey): string {
 
 // ─── Grunnfliser ────────────────────────────────────────────────────────────
 
-export function forgeTiles(scene: Phaser.Scene, tema: ZoneDef['tema']): void {
+export function forgeTiles(scene: Phaser.Scene, tema: Tema): void {
     const rng = makeRng(20250725);
 
     const lagVarianter = (flis: TileKey, tegn: (p: Painter, variant: number) => void) => {
@@ -211,7 +211,7 @@ export function forgeTiles(scene: Phaser.Scene, tema: ZoneDef['tema']): void {
  * så grensen mellom gress og sand blir en ujevn, myk overgang i stedet for en
  * rett strek langs et rutenett.
  */
-function forgeKanter(scene: Phaser.Scene, tema: ZoneDef['tema']): void {
+function forgeKanter(scene: Phaser.Scene, tema: Tema): void {
     // «sandskum» er sandkanten som bare brukes der sanden møter vann. Uten et
     // eget sett ville den lyse skumkanten også blitt tegnet der sanden møter
     // stien, og etterlatt et hvitt flak midt på en brun vei.
@@ -281,7 +281,7 @@ export const PROP_VARIANTER: Record<string, number> = {
     stein: 3,
 };
 
-export function forgeProps(scene: Phaser.Scene, tema: ZoneDef['tema']): void {
+export function forgeProps(scene: Phaser.Scene, tema: Tema): void {
     const rng = makeRng(991);
     const lov = tema.lov;
     const tommer = tema.tommer;

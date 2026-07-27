@@ -5,7 +5,7 @@
 // som helst annet sted.
 
 import Phaser from 'phaser';
-import type { LandmarkDef, ZoneTema } from '../../types';
+import type { LandmarkDef, Tema } from '../../types';
 import { fraSpill } from '../bridge';
 import { hexToNum } from '../pixels';
 import { TILE } from '../spriteforge';
@@ -24,7 +24,7 @@ const TAAKEFLAK = 14;
 export class Verden {
     private scene: Phaser.Scene;
     private kart: WorldMap;
-    private tema: ZoneTema;
+    private tema: Tema;
 
     private vannLag: Phaser.GameObjects.RenderTexture[] = [];
     private vannFrame = 0;
@@ -32,7 +32,7 @@ export class Verden {
     private baalLys: Phaser.GameObjects.Image[] = [];
     private baalPuls = 0;
 
-    constructor(scene: Phaser.Scene, kart: WorldMap, tema: ZoneTema) {
+    constructor(scene: Phaser.Scene, kart: WorldMap, tema: Tema) {
         this.scene = scene;
         this.kart = kart;
         this.tema = tema;

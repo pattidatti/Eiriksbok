@@ -1,48 +1,65 @@
-// Kampsystemet: pust, retningsbestemt gard, perfekt parade, skjoldslitasje, kombo.
+// Kampsystemet: ressurs, retningsbestemt gard, perfekt parade, vernslitasje, kombo.
 //
 // Ingen Phaser her inne. Modulen er ren tilstand og rene regler, drevet av
-// `WorldScene` én gang per bilde. Det er med vilje: kampen er den delen av
-// spillet som skal justeres oftest, og den må kunne leses uten å kjenne motoren.
+// `Spiller` én gang per bilde. Det er med vilje: kampen er den delen av spillet
+// som skal justeres oftest, og den må kunne leses uten å kjenne motoren.
 //
 // Kjerneregelen, som alt annet henger på:
 //
-//   Står du bak et reist skjold når slaget kommer, blokkerer du.
-//   Reiser du skjoldet i det slaget kommer, parerer du.
+//   Står du bak et reist vern når slaget kommer, blokkerer du.
+//   Reiser du vernet i det slaget kommer, parerer du.
 //
-// Derfor måles paradevinduet fra rammen garden reiser seg, ikke fra tastetrykket.
-// Se docs/Design documents/minnevokteren-nordvik-blueprint.md §5.0 og §5.8.
+// Derfor måles paradevinduet fra rammen vernet reiser seg, ikke fra
+// tastetrykket.
+//
+// Ordene «pust» og «skjold» står ikke i signaturene her. De er vikingtidens ord
+// for ressursen og vernet, og de kommer inn med regelsettet (`Regelsett` i
+// types.ts, `data/regelsett/viking.ts`). En soldat i 1916 har nerve og en
+// skyttergrav, og reglene nedenfor gjelder ham like fullt.
+//
+// Se docs/Design documents/minnevokteren-nordvik-blueprint.md §5.0 og §5.8, og
+// docs/Design documents/rpg-hub-og-epoker-blueprint.md §5.
 
 import { KAMP, SKJOLD_BY_ID, START_SKJOLD } from '../data/vaapen';
-import type { SkjoldDef, VaapenKamp } from '../types';
+import type { Regelsett, RessursDef, SkjoldDef, VaapenKamp, VernDef } from '../types';
 
 /** Hva som skjedde da et slag traff eleven. */
 export type TreffUtfall =
-    /** Skjoldet ble reist i det slaget kom. Angriperen mister balansen. */
+    /** Vernet ble reist i det slaget kom. Angriperen mister balansen. */
     | { art: 'parade' }
-    /** Skjoldet tok det. Koster pust, hakker kanten. */
-    | { art: 'blokk'; hakk: number; skjoldBrast: boolean; pust: number }
+    /** Vernet tok det. Koster ressurs, sliter på kanten. */
+    | { art: 'blokk'; hakk: number; vernBrast: boolean; pust: number }
     /** Ingen gard, feil retning, eller ublokkerbart. Slaget går inn. */
     | { art: 'gjennom' };
 
 export interface SlagResultat {
     trinn: 1 | 2 | 3;
-    /** Slag uten pust går likevel - de blir bare trege og svake. */
+    /** Slag uten ressurs går likevel - de blir bare trege og svake. */
     sliten: boolean;
     skadeFaktor: number;
     hastighetFaktor: number;
 }
 
 export interface KampSnapshot {
-    pust: number;
-    maksPust: number;
+    /** Pust i 793, nerve i 1916. Hva den heter står i `ressursDef`. */
+    ressurs: number;
+    maksRessurs: number;
+    /**
+     * Navn og farger på ressursen. Peker rett inn i regelsettet - ikke en
+     * kopi, så det koster ingenting å sende med elleve ganger i sekundet.
+     */
+    ressursDef: RessursDef;
     gardOppe: boolean;
     /** Sant i det korte vinduet der en parade er mulig. Brukes til garde-rammen. */
     nyligReist: boolean;
-    skjoldHelse: number;
-    skjoldMaks: number;
-    skjoldNavn: string;
+    vernHelse: number;
+    vernMaks: number;
+    /** Gjenstanden: «Rundskjold av lindetre». */
+    vernNavn: string;
+    /** Epokens ord for vernet: «Skjold» mens det holder, «Bart» når det er borte. */
+    vernDef: VernDef;
     komboTrinn: number;
-    /** Pusten er bunnet ut. HUD-en skal riste. */
+    /** Ressursen er bunnet ut. HUD-en skal riste. */
     tom: boolean;
 }
 
@@ -55,11 +72,13 @@ function vinkelDiff(a: number, b: number): number {
 }
 
 export class Kamp {
-    pust: number = KAMP.maksPust;
-    readonly maksPust: number = KAMP.maksPust;
+    private readonly regler: Regelsett;
 
-    private skjoldId: string = START_SKJOLD;
-    skjoldHelse: number = SKJOLD_BY_ID[START_SKJOLD].helse;
+    ressurs: number;
+    readonly maksRessurs: number;
+
+    private vernId: string = START_SKJOLD;
+    vernHelse: number = SKJOLD_BY_ID[START_SKJOLD].helse;
 
     gardOppe = false;
     /** Millisekunder siden garden ble reist. Paradevinduet måles på denne. */
@@ -75,23 +94,30 @@ export class Kamp {
     private sidenHandling = Number.POSITIVE_INFINITY;
 
     /**
-     * Settes når pusten tok slutt mens garden var oppe, og leses én gang av
+     * Settes når ressursen tok slutt mens garden var oppe, og leses én gang av
      * scenen som vil spille lyd og riste på stolpen. Flagget nullstilles i
      * lesingen, ikke i tikket - ellers kan et bilde med lav bildefrekvens
      * svelge det.
      */
     private kollapsFlagg = false;
 
-    get skjold(): SkjoldDef {
-        return SKJOLD_BY_ID[this.skjoldId] ?? SKJOLD_BY_ID[START_SKJOLD];
+    constructor(regler: Regelsett) {
+        this.regler = regler;
+        this.maksRessurs = regler.ressurs.maks;
+        this.ressurs = regler.ressurs.maks;
     }
 
-    get skjoldMaks(): number {
-        return this.skjold.helse;
+    /** Selve gjenstanden. Tallene på den; ordene om den står i regelsettet. */
+    get vern(): SkjoldDef {
+        return SKJOLD_BY_ID[this.vernId] ?? SKJOLD_BY_ID[START_SKJOLD];
     }
 
-    get harSkjold(): boolean {
-        return this.skjoldHelse > 0;
+    get vernMaks(): number {
+        return this.vern.helse;
+    }
+
+    get harVern(): boolean {
+        return this.vernHelse > 0;
     }
 
     /** Står hun i etterslep etter et bommet tredje slag? */
@@ -99,16 +125,16 @@ export class Kamp {
         return this.etterslep > 0;
     }
 
-    byttSkjold(id: string): void {
-        if (!SKJOLD_BY_ID[id] || id === this.skjoldId) return;
-        this.skjoldId = id;
-        this.skjoldHelse = SKJOLD_BY_ID[id].helse;
+    byttVern(id: string): void {
+        if (!SKJOLD_BY_ID[id] || id === this.vernId) return;
+        this.vernId = id;
+        this.vernHelse = SKJOLD_BY_ID[id].helse;
     }
 
-    /** Nytt skjold av samme slag - etter hvile, eller når et kapittel begynner. */
+    /** Nytt vern av samme slag - etter hvile, eller når et kapittel begynner. */
     hvil(): void {
-        this.pust = this.maksPust;
-        this.skjoldHelse = this.skjoldMaks;
+        this.ressurs = this.maksRessurs;
+        this.vernHelse = this.vernMaks;
         this.senkGard();
         this.komboTrinn = 0;
         this.komboIgjen = 0;
@@ -116,13 +142,13 @@ export class Kamp {
     }
 
     nullstill(): void {
-        this.skjoldId = START_SKJOLD;
+        this.vernId = START_SKJOLD;
         this.hvil();
         this.sidenHandling = Number.POSITIVE_INFINITY;
         this.kollapsFlagg = false;
     }
 
-    /** Leses én gang av scenen. Sant hvis garden nettopp falt av tom pust. */
+    /** Leses én gang av scenen. Sant hvis garden nettopp falt av tom ressurs. */
     lesKollaps(): boolean {
         const k = this.kollapsFlagg;
         this.kollapsFlagg = false;
@@ -132,13 +158,14 @@ export class Kamp {
     /**
      * Eleven vil ha garden opp. Scenen kaller denne hvert bilde med den samlede
      * tilstanden fra tastatur, håndkontroll og skjermknapp - selve overgangen
-     * skjer i `tikk`, så reglene om nedkjøling og tom pust bare finnes ett sted.
+     * skjer i `tikk`, så reglene om nedkjøling og tom ressurs bare finnes ett sted.
      */
     settGardOnsket(onsket: boolean): void {
         this.gardOnsket = onsket;
     }
 
     tikk(delta: number): void {
+        const { ressurs: res } = this.regler;
         this.sidenHandling += delta;
         this.sidenReist += delta;
         this.gardNedkjoling = Math.max(0, this.gardNedkjoling - delta);
@@ -148,8 +175,8 @@ export class Kamp {
 
         // Reisningen. Den er øyeblikkelig med vilje: et kjapt trykk i det slaget
         // kommer *er* paraden, og da skal ingen terskel ligge i veien. Det som
-        // hindrer hamring på tasten, er hvilen etter at skjoldet er senket.
-        if (this.gardOnsket && !this.gardOppe && this.gardNedkjoling === 0 && this.pust > 0) {
+        // hindrer hamring på tasten, er hvilen etter at vernet er senket.
+        if (this.gardOnsket && !this.gardOppe && this.gardNedkjoling === 0 && this.ressurs > 0) {
             this.gardOppe = true;
             this.sidenReist = 0;
         } else if (!this.gardOnsket && this.gardOppe) {
@@ -157,14 +184,17 @@ export class Kamp {
         }
 
         if (this.gardOppe) {
-            this.pust -= (KAMP.gardDrenering * delta) / 1000;
-            if (this.pust <= 0) {
-                this.pust = 0;
+            this.ressurs -= (res.drenering * delta) / 1000;
+            if (this.ressurs <= 0) {
+                this.ressurs = 0;
                 this.kollapsFlagg = true;
                 this.senkGard();
             }
-        } else if (this.sidenHandling >= KAMP.hvilePause) {
-            this.pust = Math.min(this.maksPust, this.pust + (KAMP.gjenvinning * delta) / 1000);
+        } else if (this.sidenHandling >= res.pause) {
+            this.ressurs = Math.min(
+                this.maksRessurs,
+                this.ressurs + (res.gjenvinning * delta) / 1000
+            );
         }
     }
 
@@ -172,7 +202,7 @@ export class Kamp {
         if (!this.gardOppe) return;
         this.gardOppe = false;
         this.sidenReist = Number.POSITIVE_INFINITY;
-        this.gardNedkjoling = KAMP.gardHvile;
+        this.gardNedkjoling = this.regler.vern.hvile;
     }
 
     private registrerHandling(): void {
@@ -190,9 +220,9 @@ export class Kamp {
 
         const trinn = (this.komboIgjen > 0 ? Math.min(3, this.komboTrinn + 1) : 1) as 1 | 2 | 3;
         const kostnad = Math.round(vaapen.pust * KAMP.komboFaktor[trinn - 1]);
-        const sliten = this.pust < kostnad;
+        const sliten = this.ressurs < kostnad;
 
-        this.pust = Math.max(0, this.pust - kostnad);
+        this.ressurs = Math.max(0, this.ressurs - kostnad);
         this.komboTrinn = trinn;
         // Vinduet begynner å løpe når svingen er ferdig, ikke når den starter.
         this.komboIgjen = svingMs + KAMP.komboVindu;
@@ -219,13 +249,13 @@ export class Kamp {
      * Ett skudd.
      *
      * Ingen kombo: å trekke en bue tre ganger etter hverandre er ikke en
-     * kombinasjon, det er tre skudd. Uten pust går skuddet likevel, men svakt -
+     * kombinasjon, det er tre skudd. Uten ressurs går skuddet likevel, men svakt -
      * samme regel som et trett slag. Garden senkes; ingen holder skjoldet oppe
      * og trekker streng samtidig.
      */
     skyt(vaapen: VaapenKamp): { sliten: boolean } {
-        const sliten = this.pust < vaapen.pust;
-        this.pust = Math.max(0, this.pust - vaapen.pust);
+        const sliten = this.ressurs < vaapen.pust;
+        this.ressurs = Math.max(0, this.ressurs - vaapen.pust);
         this.senkGard();
         this.registrerHandling();
         return { sliten };
@@ -233,17 +263,17 @@ export class Kamp {
 
     /** Manøveren er et valg, ikke et grunnverb. Den kan nektes. */
     manover(): boolean {
-        if (this.pust < KAMP.manoverPust) return false;
-        this.pust -= KAMP.manoverPust;
+        if (this.ressurs < KAMP.manoverPust) return false;
+        this.ressurs -= KAMP.manoverPust;
         this.senkGard();
         this.registrerHandling();
         return true;
     }
 
-    /** Rull. Uten pust blir den en stavring: kortere, og uten usårbarhet. */
+    /** Rull. Uten ressurs blir den en stavring: kortere, og uten usårbarhet. */
     rull(): { stavring: boolean } {
-        const stavring = this.pust < KAMP.rullPust;
-        this.pust = Math.max(0, this.pust - KAMP.rullPust);
+        const stavring = this.ressurs < KAMP.rullPust;
+        this.ressurs = Math.max(0, this.ressurs - KAMP.rullPust);
         this.senkGard();
         this.registrerHandling();
         return { stavring };
@@ -255,7 +285,7 @@ export class Kamp {
      * Avgjør hva som skjer når et slag lander på eleven.
      *
      * `vinkelTilAngriper` er retningen fra eleven *mot* den som slår, og
-     * `retningsVinkel` er den veien hun vender. Skjoldet dekker en sektor rundt
+     * `retningsVinkel` er den veien hun vender. Vernet dekker en sektor rundt
      * blikkretningen - derfor treffer angrep fra siden og bakfra uansett, og
      * derfor finnes rekka.
      */
@@ -264,33 +294,41 @@ export class Kamp {
         retningsVinkel: number;
         tungt: boolean;
         ublokkerbart?: boolean;
-        /** Øksehak: blokkeres den, river den skjoldet ned i stedet for helsa. */
+        /** Øksehak: blokkeres den, river den vernet ned i stedet for helsa. */
         hak?: boolean;
     }): TreffUtfall {
-        if (inn.ublokkerbart || !this.gardOppe || !this.harSkjold) return { art: 'gjennom' };
+        const vern = this.regler.vern;
+        if (inn.ublokkerbart || !this.gardOppe || !this.harVern) return { art: 'gjennom' };
 
-        const halv = (this.skjold.dekning / 2) * (Math.PI / 180);
+        const halv = (vern.dekning / 2) * (Math.PI / 180);
         if (Math.abs(vinkelDiff(inn.vinkelTilAngriper, inn.retningsVinkel)) > halv) {
             return { art: 'gjennom' };
         }
 
-        // Paraden. Koster ingenting, hakker ikke, og gir pust tilbake - hele
+        // Paraden. Koster ingenting, sliter ikke, og gir ressurs tilbake - hele
         // belønningen for å lese varselet i stedet for å gjemme seg.
-        if (this.sidenReist <= KAMP.paradeVindu) {
-            this.pust = Math.min(this.maksPust, this.pust + KAMP.paradeGevinst);
+        if (this.sidenReist <= vern.paradeVindu) {
+            this.ressurs = Math.min(this.maksRessurs, this.ressurs + KAMP.paradeGevinst);
             return { art: 'parade' };
         }
 
-        const kost = (inn.tungt ? KAMP.blokkPustTungt : KAMP.blokkPust) + this.skjold.tyngde;
-        this.pust = Math.max(0, this.pust - kost);
+        const kost = (inn.tungt ? KAMP.blokkPustTungt : KAMP.blokkPust) + this.vern.tyngde;
+        this.ressurs = Math.max(0, this.ressurs - kost);
         this.registrerHandling();
 
-        const hakk = inn.hak ? this.skjoldHelse : inn.tungt ? KAMP.hakkTungt : KAMP.hakkLett;
-        this.skjoldHelse = Math.max(0, this.skjoldHelse - hakk);
-        const skjoldBrast = this.skjoldHelse === 0;
-        if (skjoldBrast) this.senkGard();
+        // En skyttergrav slites ikke av å bli skutt på. Et lindeskjold gjør det.
+        const hakk = !vern.slitasje
+            ? 0
+            : inn.hak
+            ? this.vernHelse
+            : inn.tungt
+            ? KAMP.hakkTungt
+            : KAMP.hakkLett;
+        this.vernHelse = Math.max(0, this.vernHelse - hakk);
+        const vernBrast = this.vernHelse === 0;
+        if (vernBrast) this.senkGard();
 
-        return { art: 'blokk', hakk, skjoldBrast, pust: kost };
+        return { art: 'blokk', hakk, vernBrast, pust: kost };
     }
 
     /** Et treff som gikk gjennom skal også stoppe gjenvinningen. */
@@ -302,15 +340,17 @@ export class Kamp {
 
     snapshot(): KampSnapshot {
         return {
-            pust: this.pust,
-            maksPust: this.maksPust,
+            ressurs: this.ressurs,
+            maksRessurs: this.maksRessurs,
+            ressursDef: this.regler.ressurs,
             gardOppe: this.gardOppe,
-            nyligReist: this.sidenReist <= KAMP.paradeVindu,
-            skjoldHelse: this.skjoldHelse,
-            skjoldMaks: this.skjoldMaks,
-            skjoldNavn: this.skjold.navn,
+            nyligReist: this.sidenReist <= this.regler.vern.paradeVindu,
+            vernHelse: this.vernHelse,
+            vernMaks: this.vernMaks,
+            vernNavn: this.vern.navn,
+            vernDef: this.regler.vern,
             komboTrinn: this.komboTrinn,
-            tom: this.pust <= 0.5,
+            tom: this.ressurs <= 0.5,
         };
     }
 }

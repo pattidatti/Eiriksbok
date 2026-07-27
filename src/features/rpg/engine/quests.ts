@@ -13,6 +13,7 @@
 //     kunne svaret, var «let i verden» oppfylt av å bli stående i samme
 //     samtaleboks - 15 av 17 bankoppdrag krevde ikke ett skritt.
 
+import { bankSoneFor } from '../data/epoker';
 import type { BankQuestion, Kilde, NpcDef, QuestBank, QuestDef, Sted } from '../types';
 import { makeRng } from './pixels';
 
@@ -79,7 +80,9 @@ const BELONNINGER = [
  * spørsmålene - da kunne funksjonen bare bygge Nordvik.
  */
 export function byggQuester(bankData: QuestBank, sted: Sted): QuestDef[] {
-    const sone = bankData.zones.find((z) => z.id === sted.epokeId);
+    // Fagstoffet hører til epoken, ikke til stedet: Nordvik og Lindisfarne
+    // deler vikingtidens spørsmål, og et sted mer koster ingen ny bank.
+    const sone = bankData.zones.find((z) => z.id === bankSoneFor(sted.epokeId));
     const bankSporsmal = sone?.questions ?? [];
     const rng = makeRng(4711);
     const quester: QuestDef[] = [];

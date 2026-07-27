@@ -42,9 +42,17 @@ export async function stengHmr(page) {
     });
 }
 
+/**
+ * Adressen til dev-serveren. Vite tar neste ledige port når 5173 er opptatt, og
+ * det er den vanlige tilstanden når flere økter er i gang samtidig. Da kjøres
+ *
+ *     RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
+ */
+const BASE = process.env.RPG_BASE ?? 'http://localhost:5173';
+
 /** Går fra forsiden til Nordvik med en ferdig laget elev. */
 export async function entreNordvik(page, navn = 'Torstein') {
-    await page.goto('http://localhost:5173/oving/rpg', { waitUntil: 'networkidle' });
+    await page.goto(`${BASE}/oving/rpg`, { waitUntil: 'networkidle' });
     await page.fill('input[placeholder="Skriv navnet ditt"]', navn);
     await page.click('button:has-text("Reis til Nordvik")');
     await page.waitForSelector('canvas', { timeout: 30000 });

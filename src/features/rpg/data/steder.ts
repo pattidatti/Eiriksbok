@@ -17,14 +17,14 @@ import {
     NORDVIK_NPCS,
     NORDVIK_SPAWN,
 } from './nordvik';
-import { ZONE_BY_ID } from './zones';
+import { EPOKE_BY_ID } from './epoker';
 
 const NORDVIK: Sted = {
     id: 'nordvik',
     tittel: 'Nordvik',
     undertittel: 'Vikingtiden · 793-1066',
-    epokeId: 'nordvik',
-    tema: ZONE_BY_ID.nordvik.tema,
+    epokeId: 'vikingtiden',
+    tema: EPOKE_BY_ID.vikingtiden.tema,
     byggKart: byggNordvik,
     spawn: NORDVIK_SPAWN,
     npcer: NORDVIK_NPCS,
