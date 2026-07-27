@@ -35,6 +35,7 @@ const Kjoleskapet3D = lazy(() => import('./Kjoleskapet3D'));
 const Radarvakten3D = lazy(() => import('./Radarvakten3D'));
 const Konklusjonsbroen3D = lazy(() => import('./Konklusjonsbroen3D'));
 const LegendensVei3D = lazy(() => import('./LegendensVei3D'));
+const Alliansefella1914 = lazy(() => import('./Alliansefella1914'));
 const MonumentTorget3D = lazy(() => import('./MonumentTorget3D'));
 const Teknologibolgen3D = lazy(() => import('./Teknologibolgen3D'));
 const Nyheitsbobla3D = lazy(() => import('./Nyheitsbobla3D'));
@@ -1486,6 +1487,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./LegendensVei3D'),
         Component: LegendensVei3D as never,
+    },
+    'alliansefella-1914': {
+        id: 'alliansefella-1914',
+        title: 'Alliansefella 1914',
+        description:
+            'Knytt de fire alliansene som holdt Europa sammen i 1914 ved å klikke hovedstedene sammen to og to. Så tenner gnisten i Sarajevo, og telegrammene begynner å fly. Du har flygetiden på deg til å klikke «Forhandle» over byen som er i ferd med å bli dratt inn. Bommer du tre ganger, står hele Europa i brann på under en uke. Lyspæren: du bygde selv nettet som gjorde et lokalt drap til en verdenskrig, og de fem hoppene i kjeden er nøyaktig de beslutningene historikerne fortsatt er uenige om hvem som burde ha stanset.',
+        estimatedSeconds: 120,
+        loader: () => import('./Alliansefella1914'),
+        Component: Alliansefella1914 as never,
     },
 };
 

@@ -6563,6 +6563,29 @@
       ]
     },
     {
+      "id": "skylda-for-forste-verdenskrig",
+      "title": "Hvem hadde skylda for første verdenskrig?",
+      "description": "Historikerne er enige om hva som skjedde i juli 1914, men ikke om hvem som burde ha stanset det.",
+      "startDate": 1914,
+      "endDate": null,
+      "displayDate": "1914",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/skylda-for-forste-verdenskrig",
+      "tags": [
+        "historiens-store-gater",
+        "kildekritikk",
+        "forste-verdenskrig",
+        "historiebruk",
+        "europa"
+      ],
+      "lat": 50,
+      "lng": 15,
+      "placeLabel": "Europa",
+      "geoConfidence": "tag"
+    },
+    {
       "id": "sammenbruddet",
       "title": "Sammenbruddet og det nye Tyrkia",
       "description": "Rikets endelikt i første verdenskrig: Gallipoli, folkemordet på armenerne, Atatürks republikk og Sykes-Picot-avtalen som tegnet dagens Midtøsten.",
