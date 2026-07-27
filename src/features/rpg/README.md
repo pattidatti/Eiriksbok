@@ -4,9 +4,17 @@ Et rollespill i sanntid der eleven spiller seg gjennom fagstoffet.
 
 **Hallen** er rammen: en tidslinje eleven går på, delt med klassen, med en
 portal per epoke. **Vikingtiden** er den ene ferdige epoken, og der spiller hun
-historien rett - ingen metafor. Kapittel 1 er 793: hun lærer skjoldet av Ravn,
-legger bordene i skroget selv, holder breddegraden vestover, og går i land på
-Lindisfarne.
+historien rett - ingen metafor.
+
+**Kapittel 1 er 793.** Hun lærer skjoldet av Ravn, legger bordene i skroget
+selv, holder breddegraden vestover, og går i land på Lindisfarne. Etterpå
+sitter hun ved kildebordet og leter etter en norrøn beretning om det hun
+nettopp gjorde, og finner feltet tomt.
+
+**Kapittel 2 er 872.** Hun er Åsa, datteren hans, husfrue på samme gård med
+nøklene i beltet. Mennene er ved Hafrsfjord. Hun sår åkeren, avgjør hvem av
+tre som får korn av henne, møter dem som kommer for å ta gården, fører en
+drapssak på tinget - og ser om det er nok til vinteren.
 
 Dette er et eget spor, adskilt fra 3D-mini-spillmotoren i `src/games/engine/`
 og fra mikrospillene i `src/components/microgames/`.
@@ -32,6 +40,9 @@ data/
   enemies.ts             Fiendearketyper + bossen
   epoker.ts              De 11 epokene, én ferdig. Årstall, palett, regelsett, bank-sone.
   kapitler.ts            De fem kapitlene i vikingtiden. Steg, roller, flagg.
+  aetter.ts              Ættene rundt Nordvik, og hva et menneske koster i bot
+  aaret.ts               Kapittel 2: forrådet, avlingen, valgene og vinterregnskapet
+  ting.ts                Vitnene og lovhjemlene på tinget
   begreper.ts            Minnetreet: det eleven kan fordi hun har gjort det
   kilder.ts              Kildene på bordet i mellomspillene. Ekte, med henvisning.
   mellomspill.ts         Bordet mellom to kapitler: kort, veiinger, det tomme feltet
@@ -41,7 +52,8 @@ data/
   folelser.ts            De åtte ikonene elevene kan sende hverandre
   regelsett/viking.ts    Verb-kontrakten for vikingtiden: pust, skjold, rull
   vaapen.ts              Skjold, angrepsform per våpenart og kostnadene i kampen
-  nordvik.ts             Nordvik: NPC-er, landemerker og håndskrevne oppdrag
+  nordvik.ts             Nordvik i 793: NPC-er, landemerker og håndskrevne oppdrag
+  nordvik872.ts          Nordvik i 872: de som ble igjen, haugen og bua
   steder.ts              STEDER-registeret. Ett sted = ett kart med alt som hører til
 engine/
   boot.ts                Starter Phaser (dynamisk import), starter scenen på et stedId
@@ -58,6 +70,11 @@ engine/
     entiteter.ts         Delte typer for systemene
   klipp.ts               Cutscene-avspilleren
   opplaering.ts          Fire økter på tunet, mot Ravn
+  klokke.ts              Årshjulet: fire årstider, og dagene en handling koster
+  aere.ts                Ære, ætt-ære, priser - og om naboætta stiller opp
+  gaarden.ts             Året i 872: årstidsskiftene, bua og oppgjøret
+  angrepet.ts            Båten i vika: kampen, og kampen som ikke skjer
+  ting.ts                Sakens fire trinn: frist, vitner, hjemmel, dom
   raidet.ts              Lindisfarne, i to halvdeler
   lindisfarnegen.ts      Bygger klosterøya
   farkost.ts             Båter: besittelse, styring og egen kollisjonsmaske
@@ -79,8 +96,9 @@ net/
 store/useRpgStore.ts     All spillertilstand, lagringsformatet + kobling til «Min læring»
 components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordring,
                          sekk, logg, butikk, skjermkontroll, atmosfære-overlegg,
-                         klippscene (bjelker og replikk), skroget, navigasjonen og
-                         mellomspillet (bordet med kildene) og minnetreet
+                         klippscene (bjelker og replikk), skroget, navigasjonen,
+                         mellomspillet (bordet med kildene), minnetreet,
+                         opptakten, bua (Forradet) og tinget (Tingsak)
 ```
 
 ## Slik henger læring og spill sammen
@@ -463,6 +481,62 @@ regelendring ville gjort det til en straff eleven kan lese seg til, og da blir
 det en preken. Kontrasten bærer, og fordi spillet ikke sier noe, sier det ikke
 for mye.
 
+## Kapittel 2: 872
+
+Samme gård, 79 år senere. Åsa Torsteinsdotter er husfrue og hauld, mennene er
+sør ved Hafrsfjord, og nøklene til bua henger i beltet hennes. Kapittelet har
+nesten ingen kamp - motoren er årshjulet, forrådet og hvem hun står i gjeld til.
+
+| Årstid | Hva som avgjøres | Hvor det ligger |
+| --- | --- | --- |
+| **Vår** | Hvor mye såkorn i jorda, og om det skjer før våronna er omme | `Gaarden.velg('saaingen')` |
+| **Sommer** | Hvem hun mater: Harald, motstanderne hans, eller naboætta | `Gaarden.gave()` |
+| **Høst** | Innhøstingen, slakten - og båten som kommer inn vika | `Gaarden.inngang('host')`, `Angrepet` |
+| **Vinter** | Om det holdt | `Gaarden.gjorOppVinteren()` |
+
+**Ingenting er tilfeldig.** Avlingen henger på når hun sådde og hvor mye hun
+turte å legge i jorda: tidlig gir tre ganger igjen, sent gir halvannen. Går det
+galt, skal eleven kunne peke på valget som gjorde det - ikke på en terning.
+Regnestykket for vinteren står framme i bua hele året, og det er *samme
+funksjon* som gjør opp til slutt (`vinterregnskap`). To regnestykker for det
+samme er den sikreste måten å gjøre et spill urettferdig på.
+
+**Det harde valget er ikke kornet, det er hvem hun gir det til.** Kornet finnes
+bare én gang, og ett svar lukker spørsmålet. Gaven til naboætta ser ut som
+sløsing i juni, og er forsikring i oktober og i februar:
+
+-   **Om høsten** kommer Gaute Gråkappe for å ta gården. Har hun ære nok *og*
+    Sæbø-ætta noe å takke for, stiller de seg foran tunet, og han snur.
+    Kampen som ikke skjer, skal være det eleven skryter av - derfor krever den
+    to handlinger, ikke én (`stillerOpp` i `engine/aere.ts`).
+-   **Om vinteren** kommer Vigdis over isen med mer korn enn hun fikk, hvis det
+    knep. Det er gjengaven, og den er hele ættesamfunnet i én vinter.
+
+**Trellen.** Kåre kan få et spyd før angrepet. Da binder han den ene, og hun
+står mot to. Og på tinget etterpå står navnet hans i vitnelista - grått, fordi
+en ufri mann ikke kan bære vitnemål, uansett hva han så. Lista underviser ved
+å nekte.
+
+**Tinget** har fire trinn, og de er hele saken: lys drapet innen ett døgn
+(ellers er det mord), skaff vitner (de kan ikke kjøpes), anfør riktig hjemmel
+(feil hjemmel taper saken selv om hun har rett i sak), og hør dommen. Fristen
+varsles ikke av spillet - den står på steinen ved tingbålet, og Torgeir sier
+den. Bot går fra bingen og gjør vinteren smalere; fredløshet er en tilstand, og
+ikke game over.
+
+Ting som er lette å ødelegge her:
+
+-   **Bua avgjør ingenting.** `Forradet.tsx` viser og melder; `Gaarden` eier
+    hva et valg koster. Samme regel som for kildebordet.
+-   **Årstidsskiftene ligger samlet i `Gaarden.inngang()`.** Spres de utover,
+    får man to steder som begge tror de høster den samme åkeren.
+-   **`Angrepet.gjenopprett()` leser fasen ut av lagringen.** Uten den
+    forsvinner fem menn i vika i det eleven tar en tur innom hallen: scenen
+    bygges på nytt, og et felt i minnet er ikke sant.
+-   **Året kan ikke skyves forbi en uavklart båt eller en uført sak.**
+    `Gaarden.bua()` tar bort «La året gå videre» - ellers finnes det en vei
+    rundt kapittelets eneste kamp, og en vei til å la et drap bli ulyst for godt.
+
 ## Mellomspillet: bordet med kildene
 
 Mellom to kapitler forlater eleven året hun spilte og ser tilbake på det hun
@@ -546,7 +620,7 @@ hver gang eleven kommer fram et sted.
 
 ## Verifisering
 
-Fjorten skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Tjueen skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 `window.__rpgSteder`, storen gjennom `window.__rpgStore`), som `boot.ts` bare
 eksponerer i dev.
@@ -574,6 +648,13 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-opplaering.mjs`  | Ravns fire økter: at han ikke dør, at hun ikke dør       |
 | `verify-rpg-skroget.mjs`     | Feil skrog synker, riktig gir begrepet og sjøsettingen  |
 | `verify-rpg-lindisfarne.mjs` | Ferden vestover, raidet, stillheten, valgene og hjemveien |
+| `verify-rpg-mellomspill.mjs` | Kildebordet begge veier, og det tomme feltet                |
+| `verify-rpg-minnetre.mjs`    | De tre tilstandene, og de to veiene verden løfter dem      |
+| `verify-rpg-aarshjul.mjs`    | Årstidsskiftet, gatingen per kapittel, og æren i prisene   |
+| `verify-rpg-kapittel2.mjs`   | Kapittelskiftet: hva som arves, hva som nullstilles        |
+| `verify-rpg-aaret.mjs`       | Et helt år i 872, gjengaven, og sent sådd korn             |
+| `verify-rpg-angrepet.mjs`    | Begge utgangene av båten i vika                            |
+| `verify-rpg-tinget.mjs`      | Sakens fire trinn: frist, vitner, hjemmel, dom             |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir

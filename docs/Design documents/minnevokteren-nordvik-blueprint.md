@@ -1069,7 +1069,8 @@ retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo;
 
 **Etappe 1b er bygget.** R1-R8, se `rpg-hub-og-epoker-blueprint.md` §10.
 
-**Etappe 2 er bygget** (K1a-K1e), og **etappe 3** med den.
+**Etappe 2 er bygget** (K1a-K1e), og **etappe 3** med den. **Etappe 4 er
+bygget** (K2a-K2f) - se nederst i denne seksjonen.
 
 | Delet | Hva som står |
 |---|---|
@@ -1142,10 +1143,51 @@ bordet har verken tidspress eller kamp, og det er ingenting å straffe her - et
 bom er ofte den korteste veien inn i hvorfor. Prøven måler det nå, for det er
 den regelen som ryker først den dagen noen vil legge poeng på bordet.
 
-**Det som gjenstår før kapittel 2:** ingenting av kapittel 1. Neste etappe er
-§13 etappe 4 - ære, ætt, ting og årshjulet, og Åsa i 872. Minnetreet har fortsatt
-ingen skjerm (`components/Minnetre.tsx` i §12-fillista): seks begreper deles ut
-og vises som et varsel, men eleven kan ikke slå dem opp noe sted.
+**Etappe 4 er bygget** (K2a-K2f), og med den er kapittel 2 spillbart fra
+opptakt til vinter.
+
+| Delet | Hva som står |
+|---|---|
+| K2a | Minnetreet fikk en skjerm (§7.4). Verden løfter noder to veier: `KunnskapsBit.begrep` gir `hort`, `LandmarkDef.begrep` gir `forstatt` der lesingen selv er handlingen |
+| K2b | `engine/klokke.ts` (årshjulet), `engine/aere.ts` (ære, ætt-ære, priser), `data/aetter.ts`. HUD-en viser dem bare i kapitler som lar eleven flytte dem |
+| K2c | Nordvik 872 som eget sted, kapittelskiftet (§12.1) og opptakten. `stedIEpoke(epokeId, kapittel)` erstatter `forsteStedI` |
+| K2d | Året: forrådet, såkornet, «hvem mater du», innhøstingen, slakten og vinteroppgjøret |
+| K2e | Båten i vika: kampen, trellen med spydet, og kampen som ikke skjer (§16.1) |
+| K2f | Tinget: lysing innen ett døgn, vitnene, hjemmelen, dommen - og fredløshet som tilstand |
+
+**Fem avvik fra planen, alle begrunnet:**
+
+- **Årstiden regnes ut av dagen.** §12 gir `Klokke` et `aarstid`-felt ved siden
+  av `dag`. To felt som beskriver det samme driver fra hverandre første gang
+  noen setter dagen alene - og da sår gården korn i november.
+- **`Forrad` har fire tall, ikke tre.** Åkeren ble et eget tall fordi eleven da
+  ser avlingen sin vokse fram i det hun sår, i stedet for å få den i fanget om
+  høsten. Det er der lærdommen om såkornet sitter.
+- **Æreterskelen for §16.1 er 55, ikke «høy nok».** Den er satt slik at det
+  kreves *to* handlinger i kapittelet: gaven til naboætta gir gjelden, et svar
+  til kongens mann gir æren. Én av delene er ikke nok, og det er meningen.
+- **Tinget settes når det finnes en sak.** Historisk møttes tinget til faste
+  tider. Å bygge det ville krevd at eleven ventet på neste sommer med et ulyst
+  drap, og de fire trinnene - som *er* fagstoffet - ville blitt utsatt et helt
+  år. Fristen på ett døgn er beholdt intakt, for den er den ene som lærer noe.
+- **Mellomspill II er ikke bygget.** Kapittelet ender med vinteren.
+  `mellomspillEtter: 'mellomspill-2'` peker på noe som ikke finnes ennå, og
+  `apneMellomspill` returnerer i stillhet - det er trygt, men det er også
+  grunnen til at kapittel 2 er *spillbart* og ikke *ferdig*, slik kapittel 1
+  ikke var ferdig før bordet sto.
+
+Ett funn fra prøvingen som ikke sto i planen: **feiringene fra «Min læring» la
+seg oppå kapittelets første setning.** Kildebordet gir 60 XP, og raketten med
+«Nivå 3!» kom i samme øyeblikk som opptakten til 872. `useStilleSkjerm` setter
+nå feiringer og XP-toaster på vent mens et fullskjerms øyeblikk står. Køen
+holdes - eleven skal aldri miste en belønning fordi hun så en cutscene.
+
+**Det som gjenstår:** §13 etappe 5 - kapittel 3-5, holmgangen, skjoldborgen,
+resten av mellomspillene og epilogen. Nærmest ligger Mellomspill II, som er
+det som gjør kapittel 2 ferdig. Og §16.3 står fortsatt: `ClassId` skal ut av
+karakterskaperen, men den ligger på flerspiller-tråden (`Gjest.classId`) og i
+`figurLook`. Navnet er derimot ordnet - HUD-en viser rollens navn inne i en
+epoke og elevens eget i hallen.
 
 ### 13.1 Hvorfor etappe 1b kom til
 
