@@ -50,10 +50,69 @@ export async function stengHmr(page) {
  */
 const BASE = process.env.RPG_BASE ?? 'http://localhost:5173';
 
-/** Går fra forsiden til Nordvik med en ferdig laget elev. */
+const NOKKEL = 'rpg-minnevokteren-v1';
+
+/**
+ * Åpner spillet i Nordvik med en ferdig laget elev.
+ *
+ * Lagringen sås i localStorage i stedet for at skriptet klikker seg gjennom
+ * karakterskaperen. Grunnen er R7: en ny elev begynner i Minnevokterens hall,
+ * og et klikk på startknappen lander henne der - ikke i Nordvik. Skriptene som
+ * måler kamp, båt og boss skal rett i bygda, ikke gå tidslinjeveien først.
+ *
+ * Formen er `SaveState` v4. Hull fylles av `merge` i storen, så det som ikke
+ * står her får sin default.
+ */
 export async function entreNordvik(page, navn = 'Torstein') {
+    await page.addInitScript(
+        ([nokkel, verdi]) => localStorage.setItem(nokkel, verdi),
+        [
+            NOKKEL,
+            JSON.stringify({
+                version: 4,
+                state: {
+                    version: 4,
+                    spiller: {
+                        character: {
+                            name: navn,
+                            classId: 'vokter',
+                            appearance: { skin: 1, hair: 2, hairColor: 1, face: 0 },
+                        },
+                    },
+                    sisteEpoke: 'vikingtiden',
+                    epoker: { vikingtiden: { kapittel: 1, sisteSted: 'nordvik' } },
+                },
+            }),
+        ]
+    );
     await page.goto(`${BASE}/oving/rpg`, { waitUntil: 'networkidle' });
-    await page.fill('input[placeholder="Skriv navnet ditt"]', navn);
-    await page.click('button:has-text("Reis til Nordvik")');
+    await page.waitForSelector('canvas', { timeout: 30000 });
+}
+
+/** Åpner spillet i hallen med en ferdig laget elev, og eventuelle spor. */
+export async function entreHallen(page, hub = undefined) {
+    await page.addInitScript(
+        ([nokkel, verdi]) => localStorage.setItem(nokkel, verdi),
+        [
+            NOKKEL,
+            JSON.stringify({
+                version: 4,
+                state: {
+                    version: 4,
+                    spiller: {
+                        character: {
+                            name: 'Torstein',
+                            classId: 'vokter',
+                            appearance: { skin: 1, hair: 2, hairColor: 1, face: 0 },
+                        },
+                    },
+                    ...(hub ? { hub } : {}),
+                    sisteEpoke: 'vikingtiden',
+                    epoker: { vikingtiden: { kapittel: 1, sisteSted: 'hub' } },
+                },
+            }),
+        ]
+    );
+    await page.goto(`${BASE}/oving/rpg`, { waitUntil: 'networkidle' });
     await page.waitForSelector('canvas', { timeout: 30000 });
 }

@@ -241,7 +241,7 @@ export default function RpgPage() {
 
             {!klar && (
                 <div className="absolute inset-0 grid place-items-center text-slate-300">
-                    <p className="font-display text-lg tracking-widest">Vekker Nordvik …</p>
+                    <p className="font-display text-lg tracking-widest">Vekker {sted.tittel} …</p>
                 </div>
             )}
 

@@ -13,6 +13,16 @@ export const NORDVIK_SIZE = { bredde: 64, hoyde: 48 };
 export const NORDVIK_SPAWN: [number, number] = [14, 30];
 
 /**
+ * Porten hjem til Minnevokterens hall. Står noen skritt sørvest for der eleven
+ * våkner, så veien tilbake er synlig fra første bilde - en dør inn som ikke er
+ * en dør ut, er en felle.
+ *
+ * Ruta står her og ikke i `steder.ts` fordi `worldgen.ts` må rydde plass til
+ * den. Uten det kan et tre stå midt i porten.
+ */
+export const NORDVIK_PORTAL: [number, number] = [11, 34];
+
+/**
  * Færingen ved brygga. Den ligger fortøyd rett nord for bryggeenden, i vann på
  * alle kanter, så eleven må gå helt ut på plankene for å komme om bord.
  *

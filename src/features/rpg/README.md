@@ -25,7 +25,8 @@ data/
   items.ts               Våpen, rustning, amuletter, priser
   spells.ts              Besvergelser (låses opp av riktige svar, ikke loot)
   enemies.ts             Fiendearketyper + bossen
-  epoker.ts              De 11 epokene, én ferdig. Palett, regelsett og bank-sone.
+  epoker.ts              De 11 epokene, én ferdig. Årstall, palett, regelsett, bank-sone.
+  hub.ts                 Minnevokterens hall: portalplassering, landemerker, palett
   regelsett/viking.ts    Verb-kontrakten for vikingtiden: pust, skjold, rull
   vaapen.ts              Skjold, angrepsform per våpenart og kostnadene i kampen
   nordvik.ts             Nordvik: NPC-er, landemerker og håndskrevne oppdrag
@@ -43,7 +44,9 @@ engine/
     loot.ts              Sølv og gjenstander på bakken
     entiteter.ts         Delte typer for systemene
   farkost.ts             Båter: besittelse, styring og egen kollisjonsmaske
+  portal.ts              Portalene: lys, skilt, hint og reisen mellom steder
   worldgen.ts            Bygger Nordvik-kartet
+  hubgen.ts              Bygger hallen: tidslinjeveien, lunden og skogen
   spriteforge.ts         Figurer, fiender, våpen, effekter, pikselfont
   tileforge.ts           Terrengfliser, overgangsfliser og verdensobjekter
   pixels.ts              Tegneverktøy, fargeramper, kontur, seedet tilfeldighet
@@ -119,6 +122,61 @@ koder:
 
 Nordvik er et *sted* i epoken «vikingtiden». Lindisfarne blir et annet sted i
 samme epoke, og arver da både regelsettet og fagstoffet gratis.
+
+Hubben er det ene stedet med `epokeId: null`. Den ligger utenfor alle epoker,
+og det er ikke en mangel - se «Minnevokterens hall» under.
+
+## Minnevokterens hall
+
+Der eleven begynner, og der hun kommer hjem. Hallen er en **tidslinje du går
+på**: én vei fra vest til øst, og portalene ligger langs den i kronologisk
+rekkefølge. Går hun østover, går hun framover i år.
+
+Avstanden mellom portalene er **kvadratrota** av hvor lenge siden det er - ikke
+årene selv, og ikke logaritmen. Rå proporsjon presser fire epoker oppå hverandre
+i den ene enden; log ble prøvd, målt og forkastet, for mennesker velger epoker
+omtrent log-jevnt og da blir avstandene *like*. Veien ble en liste, og nettopp
+den forskjellen den skulle lære bort forsvant. Kvadratrota lar steget fra
+steinalderen til antikken være fem ganger så langt som steget fra
+industrialiseringen til krigen.
+
+Fire epoker har `aar: null` - språk, tro, samfunn og musikk er ikke tider. De
+står i lunden sør for veien. Det er en påstand om at ikke alt hører hjemme på en
+akse, og den er verdt å vise.
+
+| Fil | Hva |
+| --- | --- |
+| `data/hub.ts` | Portalplassering, landemerker, palett. Regner ut hvor hver epoke havner. |
+| `engine/hubgen.ts` | Kartet: veien, sidestien, lunden, skogen |
+| `engine/portal.ts` | Portalene: lys, skilt, hint, E, og reisen |
+
+Noen valg som er lette å tråkke feil i senere:
+
+-   **Hallen bytter ikke epoke.** `ankomSted(stedId, null)` lar `epokeId` stå.
+    Uten det ville et skritt inn i hallen lagt vikingtiden bort og åpnet en tom
+    «hub-epoke», og eleven ville sett nivået sitt falle til 1 i HUD-en.
+-   **Regelsettet er vikingtidens**, gjennom fallbacken i `regelsettFor`. Et eget
+    «fredelig» sett for et sted uten fiender ville vært regelsett nummer to,
+    skrevet for å slippe å vise en pust-stolpe. Blueprintens §5 sier nei til det.
+-   **Én dør inn er ingen dør ut.** Nordvik har en port hjem
+    (`NORDVIK_PORTAL`), og `worldgen` rydder plass til den - ellers kan et tre
+    stå midt i porten.
+-   **Eleven kommer ut av den døra hun gikk inn i.** `WorldScene.ankomstRute()`
+    finner porten som peker tilbake dit hun kom fra. Uten det lander hun ved
+    bålet i vest hver gang hun kommer hjem, og må gå hele veien østover på nytt.
+-   **Portalene kjenner ikke epokene sine.** Tittel, årstall, farge og om den er
+    åpen slås opp i `EPOKER`. En ny epoke blir synlig i hallen uten at noen
+    skriver den inn to steder.
+
+### Spor
+
+Hallen bærer merker etter den som var der før (blueprint §3.4): en liten stein
+ved portalen for hver gang eleven har gått inn i epoken, og en stein på varden
+for hver gang hun har kommet hjem. Begge ligger i `hub`-noden i lagringen.
+
+Foreløpig er sporene hennes egne. Formen er den samme den dagen rommet blir
+delt (R8) - et tall per portal og en haug ved varden - så det som endrer seg da
+er hvor tallet kommer fra, ikke hva hallen gjør med det.
 
 ### Verb-kontrakten
 
@@ -267,7 +325,7 @@ hver gang eleven kommer fram et sted.
 
 ## Verifisering
 
-Ni skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Ti skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 `window.__rpgSteder`, storen gjennom `window.__rpgStore`), som `boot.ts` bare
 eksponerer i dev.
@@ -290,6 +348,7 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-bue.mjs`         | Skytevåpen: ladetid, pil i lufta, rekkevidde              |
 | `verify-rpg-farkost.mjs`     | Båten: om bord, ro, land stopper, i land igjen            |
 | `verify-rpg-lagring.mjs`     | At et lagret spill overlever migreringen, og epokebytte   |
+| `verify-rpg-hub.mjs`         | Hallen: tidslinjen, varden, og reisen inn og hjem igjen   |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir

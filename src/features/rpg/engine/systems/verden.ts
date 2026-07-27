@@ -277,7 +277,12 @@ export class Verden {
         });
     }
 
-    byggAtmosfare(landemerker: LandmarkDef[]): void {
+    /**
+     * `taake` er hvor tykk Glemselen ligger her. 1 er Nordvik. Hallen har
+     * mindre, for den ligger utenfor tiden - men ikke null, for tåka er selve
+     * temaet i spillet, og et sted uten den ser ut som et annet spill.
+     */
+    byggAtmosfare(landemerker: LandmarkDef[], taake = 1): void {
         // Himmeltonen og vignetten legges av React oppå lerretet (se
         // `Atmosfare` i RpgPage). Da slipper de å kjempe mot kamerazoomen, og
         // de blir skarpe uansett skjermoppløsning.
@@ -287,7 +292,7 @@ export class Verden {
         // Glemselen er tåke, og før fantes den bare i teksten.
         // Antallet er holdt nede med vilje: hvert flak er en stor gjennomsiktig
         // flate, og overtegning er det som koster på en svak Chromebook-GPU.
-        for (let i = 0; i < TAAKEFLAK; i++) {
+        for (let i = 0; i < Math.round(TAAKEFLAK * taake); i++) {
             const naer = i % 2 === 0;
             const lag = this.scene.add
                 .image(

@@ -21,6 +21,9 @@ import { FIG_ORIGIN_Y, TILE, forgeHumanoid, heltFrame } from '../spriteforge';
 const NPC_AVSTAND = 34;
 const LANDEMERKE_AVSTAND = 30;
 
+/** Steiner på varden. Flere leser som en steinrøys, ikke som et spor. */
+const VARDE_TAK = 16;
+
 export type InteraksjonMaal = { type: 'npc' | 'landemerke'; id: string };
 
 export interface InteraksjonKroker {
@@ -40,6 +43,11 @@ export class Interaksjon {
     private npcMarkorer = new Map<string, Phaser.GameObjects.Image>();
     private landemerker = new Map<string, Phaser.GameObjects.Image>();
     private naermest: InteraksjonMaal | null = null;
+    /** Varden, hvis stedet har en. */
+    private vardeId: string | null = null;
+    private vardeSteiner: Phaser.GameObjects.Image[] = [];
+    /** Én stein per besøk. Ellers blir varden en knapp å trykke på.  */
+    private harLagtStein = false;
 
     constructor(
         scene: Phaser.Scene,
@@ -114,7 +122,10 @@ export class Interaksjon {
                     ? 'prop-skilt'
                     : lm.kind === 'kiste'
                     ? 'loot-kiste'
+                    : lm.kind === 'varde'
+                    ? 'prop-varde'
                     : 'prop-baal-0';
+            if (lm.kind === 'varde') this.byggVarde(lm, tx, ty);
             const bilde = this.scene.add.image(tx * TILE + 8, ty * TILE + 8, key);
             bilde.setOrigin(0.5, 0.85).setDepth(bilde.y);
             if (lm.kind === 'baal') {
@@ -126,6 +137,32 @@ export class Interaksjon {
             }
             this.landemerker.set(lm.id, bilde);
         }
+    }
+
+    /**
+     * Steinene som allerede ligger på varden.
+     *
+     * Varden er det ene landemerket som ikke leses. Den er et spor (blueprint
+     * §3.4): eleven legger en stein hver gang hun kommer hjem til hallen, og
+     * haugen vokser mens hun spiller. Én ferdigtegnet varde ville løyet om hvor
+     * mange ganger hun faktisk har vært her.
+     */
+    private byggVarde(lm: LandmarkDef, tx: number, ty: number): void {
+        const antall = Math.min(VARDE_TAK, useRpgStore.getState().hub.steiner);
+        for (let i = 0; i < antall; i++) this.leggStein(tx, ty, i);
+        this.vardeId = lm.id;
+    }
+
+    private leggStein(tx: number, ty: number, i: number): void {
+        const rad = Math.floor(i / 4);
+        const kol = i % 4;
+        const bilde = this.scene.add.image(
+            tx * TILE + 3 + kol * 5 + (rad % 2) * 2,
+            ty * TILE + 4 - rad * 4,
+            'prop-smaastein'
+        );
+        bilde.setOrigin(0.5, 0.9).setDepth(ty * TILE + 9 + i);
+        this.vardeSteiner.push(bilde);
     }
 
     /**
@@ -167,13 +204,16 @@ export class Interaksjon {
                 fraSpill.emit('hint', { tekst: `E - snakk med ${npc?.name ?? 'noen'}` });
             } else {
                 const lm = this.landemerkeDefs.find((l) => l.id === ny.id);
-                fraSpill.emit('hint', {
-                    tekst: `E - ${lm?.kind === 'kiste' ? 'åpne' : 'les'} ${lm?.title}`,
-                });
+                fraSpill.emit('hint', { tekst: this.landemerkeHint(lm) });
             }
         }
 
         if (brukTrykk && this.naermest) {
+            // Varden åpner ingen tekst. Den tar imot en stein.
+            if (this.naermest.type === 'landemerke' && this.naermest.id === this.vardeId) {
+                this.leggSteinPaaVarden();
+                return;
+            }
             this.kroker.laas(true);
             sfx.dialog();
             if (this.naermest.type === 'npc') {
@@ -183,6 +223,35 @@ export class Interaksjon {
             }
             fraSpill.emit('hint', { tekst: null });
         }
+    }
+
+    private landemerkeHint(lm: LandmarkDef | undefined): string {
+        if (lm?.kind === 'varde') {
+            const antall = useRpgStore.getState().hub.steiner;
+            if (this.harLagtStein) return `Varden - ${antall} steiner`;
+            return 'E - legg en stein på varden';
+        }
+        return `E - ${lm?.kind === 'kiste' ? 'åpne' : 'les'} ${lm?.title}`;
+    }
+
+    /**
+     * En stein til. Ingen lås og ingen tekstboks - handlingen er hele
+     * innholdet, og eleven skal kunne gjøre den i forbifarten.
+     */
+    private leggSteinPaaVarden(): void {
+        if (this.harLagtStein || !this.vardeId) return;
+        const lm = this.landemerkeDefs.find((l) => l.id === this.vardeId);
+        if (!lm) return;
+        this.harLagtStein = true;
+        useRpgStore.getState().leggStein();
+        if (this.vardeSteiner.length < VARDE_TAK) {
+            this.leggStein(lm.tile[0], lm.tile[1], this.vardeSteiner.length);
+        }
+        // Tallet leses etter endringen. Snapshotet over er det gamle.
+        const antall = useRpgStore.getState().hub.steiner;
+        sfx.dialog();
+        useRpgStore.getState().varsle(`En stein til på varden. ${antall} nå.`, 'bra');
+        fraSpill.emit('hint', { tekst: `Varden - ${antall} steiner` });
     }
 
     /**

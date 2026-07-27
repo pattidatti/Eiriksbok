@@ -80,6 +80,12 @@ const BELONNINGER = [
  * spørsmålene - da kunne funksjonen bare bygge Nordvik.
  */
 export function byggQuester(bankData: QuestBank, sted: Sted): QuestDef[] {
+    // Hubben hører ikke til noen epoke, og har derfor ingen fagstoff-sone å
+    // hente fra. Den har heller ingen å gi oppdrag - portalene er hele
+    // innholdet der, og et oppdrag i hallen ville pekt på et svar som står i en
+    // annen verden.
+    if (!sted.epokeId) return [];
+
     // Fagstoffet hører til epoken, ikke til stedet: Nordvik og Lindisfarne
     // deler vikingtidens spørsmål, og et sted mer koster ingen ny bank.
     const sone = bankData.zones.find((z) => z.id === bankSoneFor(sted.epokeId));

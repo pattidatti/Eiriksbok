@@ -9,13 +9,14 @@
 import Phaser from 'phaser';
 import { ENEMY_BY_ID, ENEMIES } from '../data/enemies';
 import { regelsettFor } from '../data/epoker';
-import { stedEllerStart } from '../data/steder';
+import { forsteStedI, stedEllerStart } from '../data/steder';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
 import type { EnemyDef, QuestDef, Sted } from '../types';
 import { sfx, startMusikk, stopMusikk } from './audio';
 import { fraSpill, tilSpill } from './bridge';
 import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
+import { Portaler } from './portal';
 import { numToHex } from './pixels';
 import {
     TILE,
@@ -56,6 +57,8 @@ export class WorldScene extends Phaser.Scene {
     private samhandling!: Interaksjon;
     /** Båter og annet eleven kan gå om bord i. */
     private farkoster!: Farkoster;
+    /** Dørene ut: portalene i hallen, og porten hjem fra en epoke. */
+    private porter!: Portaler;
     /** Sølv og gjenstander som ligger på bakken. */
     private lootSystem!: Loot;
     /** Partikler, flytende tall og glimt. Kjenner ingen spillregler. */
@@ -80,14 +83,19 @@ export class WorldScene extends Phaser.Scene {
     private avmeldinger: (() => void)[] = [];
     /** En reise er bestilt. Hindrer at to avreiser overlapper. */
     private reiser = false;
+    /** Stedet eleven kom fra, hvis hun kom gjennom en dør. */
+    private fraSted: string | null = null;
+    /** Stedet den bestilte reisen går fra. Blir `fraSted` på den andre siden. */
+    private reiserFra: string | null = null;
 
     constructor() {
         super(VERDEN_SCENE);
     }
 
-    init(data: { stedId?: string; quester: QuestDef[] }) {
+    init(data: { stedId?: string; quester: QuestDef[]; fraSted?: string }) {
         this.quester = data.quester ?? [];
         this.sted = stedEllerStart(data.stedId);
+        this.fraSted = data.fraSted ?? null;
         this.reiser = false;
     }
 
@@ -139,7 +147,7 @@ export class WorldScene extends Phaser.Scene {
             this.efx,
             this.fx,
             this.skudd,
-            sted.spawn,
+            this.ankomstRute(),
             regler,
             {
                 fiender: () => this.fiendeSystem.alle(),
@@ -166,14 +174,19 @@ export class WorldScene extends Phaser.Scene {
                 akse: () => this.helt.akse(),
             }
         );
+        this.porter = new Portaler(this, sted.portaler ?? [], {
+            spiller: () => this.helt.sprite,
+            reis: (stedId) => this.bestillReise(stedId),
+        });
         this.verden.byggTerreng();
         this.verden.byggKollisjon();
         this.verden.byggProps();
         this.helt.bygg();
         this.samhandling.bygg();
         this.farkoster.bygg();
+        this.porter.bygg();
         this.fiendeSystem.byggBoss();
-        this.verden.byggAtmosfare(sted.landemerker);
+        this.verden.byggAtmosfare(sted.landemerker, sted.taake ?? 1);
         this.settOppKamera();
         this.lyttPaaUi();
 
@@ -188,6 +201,28 @@ export class WorldScene extends Phaser.Scene {
             tittel: sted.tittel,
             undertittel: sted.undertittel,
         });
+    }
+
+    /**
+     * Ruta eleven står på ved ankomst.
+     *
+     * Kom hun gjennom en dør, skal hun komme ut av den samme døra på andre
+     * siden - ikke ved stedets faste startpunkt. Uten dette lander hun i vest
+     * ved bålet hver eneste gang hun kommer hjem fra en epoke, og må gå hele
+     * tidslinjeveien østover på nytt for å komme tilbake dit hun var. Det er en
+     * straff for å ha reist.
+     */
+    private ankomstRute(): [number, number] {
+        const { sted } = this;
+        if (!this.fraSted) return sted.spawn;
+        const port = (sted.portaler ?? []).find((p) =>
+            p.maal.art === 'sted'
+                ? p.maal.stedId === this.fraSted
+                : forsteStedI(p.maal.epokeId) === this.fraSted
+        );
+        // Tre ruter under porten: hun skal stå foran den, ikke inni den - og
+        // ikke oppå skiltet, som henger like under.
+        return port ? [port.tile[0], port.tile[1] + 3] : sted.spawn;
     }
 
     private settOppKamera() {
@@ -324,7 +359,11 @@ export class WorldScene extends Phaser.Scene {
         // en båt og en nabo innen rekkevidde, skal ett trykk gjøre én ting.
         const brukTrykk = this.helt.brukTrykk();
         const farkostEier = this.farkoster.sjekk(dt, brukTrykk);
-        this.samhandling.sjekk(farkostEier ? false : brukTrykk, !farkostEier);
+        // Portalen kommer før folk og steiner: står eleven i porten, skal ett
+        // trykk føre henne gjennom, ikke åpne skiltet ved siden av.
+        const portEier = this.porter.sjekk(delta, brukTrykk, !farkostEier);
+        const opptatt = farkostEier || portEier;
+        this.samhandling.sjekk(opptatt ? false : brukTrykk, !opptatt);
         // Figuren settes på dekk *etter* at båten har flyttet seg. Snus
         // rekkefølgen, ligger hun ett bilde etter, og da sklir hun rundt oppå.
         const dekk = this.farkoster.dekksplass();
@@ -470,6 +509,7 @@ export class WorldScene extends Phaser.Scene {
     bestillReise(stedId: string) {
         if (this.reiser || stedId === this.sted.id) return;
         this.reiser = true;
+        this.reiserFra = this.sted.id;
         fraSpill.emit('reise', { stedId });
     }
 
@@ -496,7 +536,9 @@ export class WorldScene extends Phaser.Scene {
             // («Cannot read properties of undefined (reading setFollowOffset)»)
             // og scenen blir liggende død med et tomt lerret. Ett bilde senere
             // er vi trygt ute i oppdateringssteget.
-            this.time.delayedCall(0, () => this.scene.restart({ stedId, quester }));
+            this.time.delayedCall(0, () =>
+                this.scene.restart({ stedId, quester, fraSted: this.reiserFra })
+            );
         });
     }
 
@@ -508,6 +550,22 @@ export class WorldScene extends Phaser.Scene {
     /** Oppdaterer utropstegnene over NPC-ene. Kalles fra React etter questbytte. */
     oppdaterMarkorer() {
         this.samhandling.oppdaterMarkorer();
+    }
+
+    /** Portalene på stedet. Prøveskriptene leser dem herfra. */
+    portalOversikt() {
+        return this.porter.oversikt();
+    }
+
+    /**
+     * Setter eleven et annet sted på kartet.
+     *
+     * Finnes for prøveskriptene: å gå åtte sekunder langs tidslinjeveien er en
+     * fin opplevelse for en elev og bortkastet tid for en måling. Cutscenene i
+     * etappe 2 trenger det samme.
+     */
+    flyttHelt(x: number, y: number) {
+        this.helt.sprite.setPosition(x, y);
     }
 
     // ── Småting som gjør det digg ───────────────────────────────────────────

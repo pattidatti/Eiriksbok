@@ -149,7 +149,12 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
                     : 'Kiste'}
             </p>
             <h2 className="mb-3 font-display text-2xl font-bold text-amber-200">{lm.title}</h2>
-            <p className="text-[15px] leading-relaxed text-slate-100">{lm.text}</p>
+            {/* Avsnitt beholdes. Runesteinene i Nordvik er én blokk hver, men
+                skiltene i hallen forklarer to ting hver, og de skal ikke gro
+                sammen til én vegg av tekst. */}
+            <p className="whitespace-pre-line text-[15px] leading-relaxed text-slate-100">
+                {lm.text}
+            </p>
             {forste && (
                 <p className="mt-4 rounded-lg bg-emerald-500/15 px-3 py-2 text-sm text-emerald-200">
                     Du husker dette nå. +5 erfaring.

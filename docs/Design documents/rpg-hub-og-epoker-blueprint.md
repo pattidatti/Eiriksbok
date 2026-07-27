@@ -99,7 +99,11 @@ utkast.** Den er ikke et løfte, se §12.
 
 Hubben er en tidslinje du går på. En vei eller en elv renner gjennom hele kartet, og
 portalene ligger langs den i kronologisk rekkefølge med avstand proporsjonal med tid
-(log-skalert der spennet blir for stort).
+(komprimert der spennet blir for stort).
+
+> **Rettet etter R7.** Denne paragrafen sa opprinnelig «log-skalert». Log ble bygget,
+> målt og forkastet - den gjorde avstandene like og gjorde veien til en liste. Bygget er
+> kvadratrota av «hvor lenge siden». Se statusnotatet under §10.
 
 Da lærer eleven kronologi med føttene. «Vikingtiden ligger nærmere Stiklestad enn
 steinalderen ligger vikingtiden» blir en kroppslig erfaring i stedet for et tall på en
@@ -392,7 +396,7 @@ Etter R8: kapittel 1, etter Nordvik-blueprintens etappe 2.
 
 ### Status
 
-**R1-R6 er bygget** (juli 2026). Alle ni `scripts/verify-rpg-*.mjs` er grønne.
+**R1-R7 er bygget** (juli 2026). Alle ti `scripts/verify-rpg-*.mjs` er grønne.
 
 #### R4
 
@@ -470,6 +474,51 @@ To ting arbeidet avdekket, som ikke sto i planen:
 leser tilbake både storen og disken: v3 flatt, v1 med stokkede bankoppdrag,
 en fremmed epoke som ikke skal røres, epokebytte begge veier, og en lagring
 med hull i.
+
+#### R7
+
+Minnevokterens hall står. Elleve portaler, én åpen, og en ny elev begynner
+der i stedet for i Nordvik. Fire ting avviker fra §3, og alle fire er
+begrunnet av at de ble prøvd:
+
+- **§3.1 sa log-skala. Log var feil.** Prøvd, målt og forkastet: mennesker
+  velger epoker omtrent log-jevnt - hver epoke ligger en fast *andel* nærmere
+  nå enn den forrige - så `log(alder)` gjorde avstandene like: 240, 240, 176,
+  224, 256, 240 piksler. Veien ble en liste, og nettopp den forskjellen den
+  skulle lære bort forsvant. Kvadratrota gir 464, 336, 176, 176, 128, 96, og
+  da kjennes dyp tid som dyp tid. `verify-rpg-hub.mjs` måler dette, så ingen
+  kan sette log tilbake uten at prøven sier fra.
+- **Fire epoker står ikke på veien.** Språk, tro, samfunn og musikk er ikke
+  tider, og et påfunnet årstall for «Ordheimen» ville vært en løgn på et kart
+  som ellers forteller sant. De står i en lund sør for veien, og skiltet ved
+  inngangen sier hvorfor. `EpokeDef.aar: null` er det som skiller dem.
+- **Hallen har ingen epoke** (`Sted.epokeId: null`), og `ankomSted` bytter
+  ikke epoke for den. Uten det ville et skritt inn i hallen lagt vikingtiden
+  bort og åpnet en tom «hub-epoke» - eleven ville sett nivået sitt falle til 1
+  i det hun kom hjem. Regelsettet blir vikingtidens gjennom fallbacken, og det
+  er med vilje: et eget fredelig sett ville vært regelsett nummer to, i strid
+  med §5.
+- **Én dør inn måtte ha en dør ut.** Nordvik fikk en port hjem, og
+  `WorldScene.ankomstRute()` setter eleven ned foran den porten hun kom fra -
+  ikke på stedets faste startpunkt. Uten det lander hun ved bålet i vest hver
+  eneste gang hun kommer hjem, og må gå hele tidslinjeveien østover på nytt.
+
+**`hub`-noden i lagringen trengte ingen ny versjon.** Den ble utelatt i R6 med
+vilje, og ble lagt til nå ved å gi den en default i `merge`. Det er R6-arbeidet
+som betaler seg: en lagring uten `hub` får en tom en, og ingen elev merker noe.
+Fallgruve 11 handlet om omstrukturering, og den er gjort én gang.
+
+Spor (§3.4) er bygget som portaltellere og steiner på varden - hennes egne
+foreløpig. Fotavtrykkene er ikke bygget: de krever et spor-lag som tegner
+historikk over terrenget, og verdien er den samme som steinene gir. Formen på
+`HubSpor` er den flerspilleren i R8 trenger, så det som endrer seg da er hvor
+tallet kommer fra.
+
+En ting prøvingen lærte oss om harnesset, ikke om spillet: headless Chromium
+struper `requestAnimationFrame` når ingenting skjer på siden, og da fryser
+kameraets fade-in midt i. Spillet går som det skal, men skjermbildet blir
+kullsvart og målingen leser en verden som ikke er ferdig bygget. Prøven venter
+nå på ekte tilstand (`sisteSted` satt og fade ferdig), ikke på en klokke.
 
 ---
 

@@ -398,6 +398,16 @@ export interface EpokeDef {
     id: string;
     title: string;
     era: string;
+    /**
+     * Årstallet epoken står på i hubbens tidslinjevei - der portalen hennes
+     * ligger. Ett tall må velges for et helt århundre, og det er greit: veien
+     * skal gi eleven en følelse av avstand i tid, ikke en datering.
+     *
+     * `null` betyr at epoken ikke hører hjemme på en tidsakse i det hele tatt.
+     * Språk, tro, samfunn og musikk er ikke tider, de er måter å se på, og de
+     * står i lunden ved siden av veien. Det er sant, og det er verdt å vise.
+     */
+    aar: number | null;
     /** Kort tekst på verdenskartet. */
     pitch: string;
     /** Nivået som låser opp epoken. */
@@ -475,7 +485,11 @@ export interface KunnskapsBit {
 
 export interface LandmarkDef {
     id: string;
-    kind: 'runestein' | 'skilt' | 'baal' | 'kiste';
+    /**
+     * `varde` er den ene som ikke leses: eleven legger en stein på den i
+     * stedet for å åpne en tekst. Se `Interaksjon`.
+     */
+    kind: 'runestein' | 'skilt' | 'baal' | 'kiste' | 'varde';
     tile: [number, number];
     title: string;
     /** Teksten eleven leser - inneholder svar på minst ett spørsmål. */
@@ -501,13 +515,34 @@ export interface Kilde {
  * direkte. Da fantes det ingen måte å bytte kart på - og kapittel 1 er nettopp
  * det: Torstein seiler fra Nordvik til Lindisfarne.
  */
+/**
+ * En dør ut av stedet.
+ *
+ * Portalene i hubben peker på epoker; portalen i den andre enden peker hjem.
+ * Alt annet en portal viser - tittel, tidsspenn, farge, om den er åpen - slås
+ * opp i `EPOKER`, så en ny epoke blir synlig i hubben uten at noen skriver den
+ * inn to steder.
+ */
+export interface PortalDef {
+    tile: [number, number];
+    maal:
+        | { art: 'epoke'; epokeId: string }
+        | { art: 'sted'; stedId: string; navn: string; undertekst: string };
+}
+
 export interface Sted {
     id: string;
     /** Navnet som slås opp når eleven ankommer. */
     tittel: string;
     undertittel: string;
-    /** Epoken stedet hører til. Slår opp regelsett og spørsmålsbank i `EPOKER`. */
-    epokeId: string;
+    /**
+     * Epoken stedet hører til. Slår opp regelsett og spørsmålsbank i `EPOKER`.
+     *
+     * `null` for hubben: den ligger utenfor alle epoker. Det er ikke en
+     * mangel - det er grunnen til at eleven kan gå dit uten at nivået,
+     * sølvet og oppdragene hennes byttes ut med en annen epokes.
+     */
+    epokeId: string | null;
     tema: Tema;
     /** Terrenget. Bygges på nytt hver gang eleven kommer hit. */
     byggKart: () => WorldMap;
@@ -517,6 +552,14 @@ export interface Sted {
     landemerker: LandmarkDef[];
     /** Båter, hester og annet som ligger fortøyd her. */
     farkoster?: FarkostDef[];
+    /** Dørene ut. Hubben har mange, Nordvik har én tilbake. */
+    portaler?: PortalDef[];
+    /**
+     * Hvor tykk Glemselen ligger her. 1 er Nordvik. Hubben ligger utenfor
+     * tiden, og tåka har mindre å ta av - men den skal ikke være borte, for da
+     * ser stedet ut som et annet spill.
+     */
+    taake?: number;
     /** Bossen som vokter stedet. Ikke alle steder har en. */
     boss?: {
         enemyId: string;
@@ -623,10 +666,33 @@ export interface EpokeSave {
     kapittelState: EpokeKapittel;
 }
 
+/**
+ * Sporene eleven legger igjen i hubben.
+ *
+ * Et åpent rom klokka 22 en søndag har én elev i seg (blueprint §3.4). Derfor
+ * bærer hubben merker etter dem som var der før - foreløpig etter eleven selv,
+ * og etter alle når flerspilleren kommer i R8. Formen er den samme begge
+ * veier: et tall per portal, og steinene på varden.
+ */
+export interface HubSpor {
+    /** Hvor mange ganger hun har gått inn i hver epoke. */
+    besokt: Record<string, number>;
+    /** Steiner lagt på varden. Én per gang hun kommer hjem. */
+    steiner: number;
+}
+
 export interface SaveState {
     version: 4;
     /** Følger eleven overalt, i alle epoker. */
     spiller: { character: CharacterDraft | null };
+    /**
+     * Hubben hører ikke til noen epoke, så sporene hennes ligger her.
+     *
+     * Feltet kom til etter at v4 var skrevet, og krevde likevel ingen ny
+     * versjon: `merge` bygger hele tilstanden og fyller hull med defaults, så
+     * en lagring uten `hub` får en tom en. Det var hele poenget med R6.
+     */
+    hub: HubSpor;
     /** Epoken hun sto i sist. */
     sisteEpoke: string;
     epoker: Record<string, EpokeSave>;

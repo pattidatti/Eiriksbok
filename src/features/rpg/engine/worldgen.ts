@@ -3,7 +3,7 @@
 // steiner strøs ut med en seedet generator - så kartet ser levende ut, men er
 // helt likt hver gang eleven kommer tilbake.
 
-import { NORDVIK_SIZE } from '../data/nordvik';
+import { NORDVIK_PORTAL, NORDVIK_SIZE } from '../data/nordvik';
 import { makeRng } from './pixels';
 import type { TileKey } from './tileforge';
 
@@ -181,6 +181,22 @@ export function byggNordvik(): WorldMap {
         }
         return true;
     };
+
+    // ── Plassen foran porten hjem ───────────────────────────────────────────
+    // Ryddes før alt annet plasseres. `strø` hopper over ruter som er merket,
+    // og over alt som ligger inntil en sti - så både porten og lufta rundt den
+    // holder seg fri for skog.
+    for (let dy = -1; dy <= 1; dy++) {
+        for (let dx = -1; dx <= 1; dx++) {
+            const px = NORDVIK_PORTAL[0] + dx;
+            const py = NORDVIK_PORTAL[1] + dy;
+            if (px < 1 || py < 1 || px >= W - 1 || py >= H - 1) continue;
+            if (terreng[py][px] === 'vann' || terreng[py][px] === 'stein') continue;
+            terreng[py][px] = 'sti';
+            blokkert[py][px] = false;
+            merk(px, py);
+        }
+    }
 
     // ── Bygninger ───────────────────────────────────────────────────────────
     /** Standardverdier for et objekt uten variasjon (bygninger, kaier). */

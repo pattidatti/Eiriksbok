@@ -16,13 +16,15 @@ import { useProgressStore } from '../../progress/useProgressStore';
 import { CLASS_BY_ID, CLASSES, levelFromXp, statsAt, xpForLevel } from '../data/classes';
 import { ITEM_BY_ID, equipmentBonus } from '../data/items';
 import { SPELL_BY_ID, newlyUnlockedSpells } from '../data/spells';
-import { forsteStedI, START_EPOKE, START_STED } from '../data/steder';
+import { START_EPOKE } from '../data/epoker';
+import { forsteStedI, START_STED } from '../data/steder';
 import { sfx } from '../engine/audio';
 import type {
     CharacterDraft,
     EpokeKampanje,
     EpokeKapittel,
     EpokeSave,
+    HubSpor,
     ItemSlot,
     QuestDef,
     SaveState,
@@ -49,6 +51,8 @@ export interface RpgState {
     sisteSted: string;
     /** Lagret tilstand for epoker hun ikke står i akkurat nå. */
     andreEpoker: Record<string, EpokeSave>;
+    /** Merkene hun har satt i hubben. Hører ikke til noen epoke. */
+    hub: HubSpor;
     xp: number;
     hp: number;
     mana: number;
@@ -67,7 +71,11 @@ export interface RpgState {
     varsler: { id: number; tekst: string; art: 'info' | 'bra' | 'darlig' | 'niva' }[];
 
     lagKarakter: (draft: CharacterDraft) => void;
-    ankomSted: (stedId: string, epokeId: string) => void;
+    ankomSted: (stedId: string, epokeId: string | null) => void;
+    /** Eleven gikk inn i en epoke. Telleren ved portalen vokser med én. */
+    teltPortal: (epokeId: string) => void;
+    /** En stein lagt på varden. */
+    leggStein: () => void;
     slettAlt: () => void;
     endreHp: (delta: number) => void;
     endreMana: (delta: number) => void;
@@ -98,6 +106,9 @@ const LAGRING_VERSJON = 4;
 let varselId = 0;
 
 // ─── Epoketilstand ──────────────────────────────────────────────────────────
+
+/** En hall ingen har satt sine spor i ennå. */
+const tomtHub = (): HubSpor => ({ besokt: {}, steiner: 0 });
 
 /** Ingenting lært, ingenting gjort. */
 const tomKampanje = (): EpokeKampanje => ({
@@ -253,6 +264,7 @@ export const useRpgStore = create<RpgState>()(
             kapittel: 1,
             sisteSted: START_STED,
             andreEpoker: {},
+            hub: tomtHub(),
             ...tomtKapittel(null),
             ...tomKampanje(),
             varsler: [],
@@ -261,7 +273,12 @@ export const useRpgStore = create<RpgState>()(
                 set((s) => ({
                     ...leggUtEpoke(s, START_EPOKE, nyEpoke(START_EPOKE, draft)),
                     character: draft,
+                    // En ny elev begynner i hallen, ikke i en epoke. Epoken er
+                    // likevel satt: den er boka regnskapet føres i, og den
+                    // åpnes i det hun går gjennom den første portalen.
+                    sisteSted: START_STED,
                     andreEpoker: {},
+                    hub: tomtHub(),
                     varsler: [],
                 })),
 
@@ -269,9 +286,21 @@ export const useRpgStore = create<RpgState>()(
                 set((s) => ({
                     ...leggUtEpoke(s, START_EPOKE, nyEpoke(START_EPOKE, null)),
                     character: null,
+                    sisteSted: START_STED,
                     andreEpoker: {},
+                    hub: tomtHub(),
                     varsler: [],
                 })),
+
+            teltPortal: (epokeId) =>
+                set((s) => ({
+                    hub: {
+                        ...s.hub,
+                        besokt: { ...s.hub.besokt, [epokeId]: (s.hub.besokt[epokeId] ?? 0) + 1 },
+                    },
+                })),
+
+            leggStein: () => set((s) => ({ hub: { ...s.hub, steiner: s.hub.steiner + 1 } })),
 
             /**
              * Eleven har kommet fram et sted. Stedet huskes, så neste økt
@@ -282,10 +311,14 @@ export const useRpgStore = create<RpgState>()(
              * eller begynnes på. To epoker skal aldri smelte sammen til én
              * bunke tall, og det er hele grunnen til at lagringen har et
              * `epoker`-navnerom.
+             *
+             * `epokeId: null` er hubben. Den ligger utenfor alle epoker, og da
+             * skal ingenting byttes: eleven skal kunne gå hjem til hallen og
+             * tilbake uten at nivået hennes står og skifter i HUD-en.
              */
             ankomSted: (stedId, epokeId) => {
                 const s = get();
-                if (epokeId === s.epokeId) {
+                if (epokeId === null || epokeId === s.epokeId) {
                     if (s.sisteSted !== stedId) set({ sisteSted: stedId });
                     return;
                 }
@@ -498,6 +531,7 @@ export const useRpgStore = create<RpgState>()(
             partialize: (state): SaveState => ({
                 version: LAGRING_VERSJON,
                 spiller: { character: state.character },
+                hub: state.hub,
                 sisteEpoke: state.epokeId,
                 epoker: { ...state.andreEpoker, [state.epokeId]: aktivEpoke(state) },
             }),
@@ -509,7 +543,14 @@ export const useRpgStore = create<RpgState>()(
                 const aktiv = alle[epokeId];
                 delete alle[epokeId];
                 return leggUtEpoke(
-                    { ...gjeldende, character, andreEpoker: alle },
+                    {
+                        ...gjeldende,
+                        character,
+                        andreEpoker: alle,
+                        // `hub` kom til etter v4 og trengte likevel ingen ny
+                        // versjon: hullet fylles her, som alle andre hull.
+                        hub: { ...tomtHub(), ...s.hub },
+                    },
                     epokeId,
                     heleEpoken(epokeId, aktiv, character)
                 );
@@ -545,6 +586,7 @@ export const useRpgStore = create<RpgState>()(
                 return {
                     version: LAGRING_VERSJON,
                     spiller: { character },
+                    hub: tomtHub(),
                     sisteEpoke: START_EPOKE,
                     epoker: {
                         [START_EPOKE]: {

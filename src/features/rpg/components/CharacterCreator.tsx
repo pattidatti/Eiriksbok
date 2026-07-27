@@ -56,7 +56,8 @@ export function CharacterCreator({ onFerdig }: Props) {
                     <h1 className="font-display text-3xl font-bold sm:text-4xl">Hvem er du?</h1>
                     <p className="mx-auto mt-2 max-w-xl text-sm text-slate-300">
                         Tåka har begynt å spise det folk husker. Du er den som skal hente det
-                        tilbake. Lag figuren din, så begynner vi i Nordvik.
+                        tilbake. Lag figuren din, så begynner vi i hallen - der veien gjennom årene
+                        starter.
                     </p>
                 </header>
 
@@ -179,7 +180,7 @@ export function CharacterCreator({ onFerdig }: Props) {
                             }
                             className="w-full rounded-xl bg-amber-400 px-6 py-4 font-display text-lg font-bold text-slate-900 transition enabled:hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-40"
                         >
-                            {kanStarte ? 'Reis til Nordvik' : 'Skriv et navn først'}
+                            {kanStarte ? 'Gå inn i hallen' : 'Skriv et navn først'}
                         </button>
                     </div>
                 </div>

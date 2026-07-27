@@ -479,6 +479,62 @@ export function forgeProps(scene: Phaser.Scene, tema: Tema): void {
     gjerde.outline();
     addCanvas(scene, 'prop-gjerde', gjerde);
 
+    // ── Portal: to reiste steiner og en overligger ──────────────────────────
+    //
+    // Formen er en dolmen, ikke en trolldomsring: hubben er et sted i verden,
+    // ikke et magisk mellomrom. Åpningen står tom her - lyset i den tegnes for
+    // seg (`prop-portallys`) og fargelegges med epokens egen himmelfarge, så
+    // hver portal lyser i den tiden den fører til.
+    const stein = tema.stein;
+    const portal = createPainter(38, 46, 1, 1);
+    for (const x of [3, 27]) {
+        portal.rect(x, 8, 8, 34, stein);
+        portal.vline(x, 8, 34, ramp(stein, 2));
+        portal.rect(x + 6, 8, 2, 34, ramp(stein, -2));
+        // Litt forvitring, ellers leser stolpene som to grå kasser.
+        portal.px(x + 2, 16, ramp(stein, -3));
+        portal.px(x + 4, 27, ramp(stein, -3));
+        portal.px(x + 1, 35, ramp(stein, 1));
+    }
+    portal.rect(1, 2, 36, 8, ramp(stein, 1));
+    portal.hline(1, 2, 36, ramp(stein, 3));
+    portal.hline(1, 9, 36, ramp(stein, -2));
+    portal.outline();
+    portal.behind(() => portal.ellipse(19, 43, 17, 3, 'rgba(0,0,0,0.3)'));
+    addCanvas(scene, 'prop-portal', portal);
+
+    // Selve åpningen. Hvit, så tinten avgjør fargen alene.
+    const lys = createPainter(16, 32, 1, 1);
+    for (let y = 0; y < 32; y++) {
+        // Sterkest i midten, svakest mot kantene - da får åpningen dybde uten
+        // at vi trenger en gradient-API.
+        const t = 1 - Math.abs(y - 16) / 22;
+        const a = 0.28 + t * 0.5;
+        lys.hline(0, y, 16, `rgba(255,255,255,${a.toFixed(2)})`);
+    }
+    addCanvas(scene, 'prop-portallys', lys);
+
+    // ── Varden: steinene eleven legger igjen ────────────────────────────────
+    //
+    // Bare foten forges. Steinene oppå legges én for én av `Portaler`, for
+    // antallet er selve sporet - en ferdigtegnet varde ville løyet om hvor
+    // ofte hun har vært her.
+    const varde = createPainter(22, 14, 1, 1);
+    varde.ellipse(11, 9, 9, 3, ramp(stein, -2));
+    varde.ellipse(11, 8, 8, 3, stein);
+    varde.ellipse(8, 7, 3, 2, ramp(stein, 2));
+    varde.ellipse(14, 7, 2, 2, ramp(stein, 1));
+    varde.outline();
+    varde.behind(() => varde.ellipse(11, 12, 10, 2, 'rgba(0,0,0,0.26)'));
+    addCanvas(scene, 'prop-varde', varde);
+
+    // Én løs stein. Legges oppå varden, én per hjemkomst.
+    const smaastein = createPainter(8, 7, 1, 1);
+    smaastein.ellipse(4, 4, 3, 2, stein);
+    smaastein.ellipse(3, 3, 2, 1, ramp(stein, 2));
+    smaastein.outline();
+    addCanvas(scene, 'prop-smaastein', smaastein);
+
     // ── Skilt ───────────────────────────────────────────────────────────────
     const skilt = createPainter(18, 22, 1, 1);
     skilt.rect(7, 8, 2, 10, ramp(tommer, -1));

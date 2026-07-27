@@ -22,6 +22,7 @@ const tema = (t: Tema): Tema => t;
 export const EPOKER: EpokeDef[] = [
     {
         id: 'vikingtiden',
+        aar: 793,
         title: 'Vikingtiden',
         era: '793-1066',
         pitch: 'En fjordbygd der tåka har begynt å spise navnene på folk.',
@@ -44,6 +45,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'gryet',
+        aar: -3000,
         title: 'Gryet',
         era: 'Steinalder og de første byene',
         pitch: 'Der alt begynte. Ild, korn og de første streker på en vegg.',
@@ -65,6 +67,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'marmortorget',
+        aar: -450,
         title: 'Marmortorget',
         era: 'Antikken',
         pitch: 'Søyler, torg og folk som krangler høylytt om hvem som skal styre.',
@@ -86,6 +89,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'steinborg',
+        aar: 1300,
         title: 'Steinborg',
         era: 'Middelalderen',
         pitch: 'Borg, kirke og pest. Noen vokter porten - og sannheten.',
@@ -107,6 +111,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'lysbyen',
+        aar: 1650,
         title: 'Lysbyen',
         era: 'Renessanse og revolusjoner',
         pitch: 'Trykkpresser, plakater og folk som nekter å bøye seg.',
@@ -128,6 +133,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'dampbyen',
+        aar: 1850,
         title: 'Dampbyen',
         era: 'Industrialiseringen',
         pitch: 'Sot, samlebånd og en klokke som aldri slutter å tikke.',
@@ -149,6 +155,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'skyggeaaret',
+        aar: 1940,
         title: 'Skyggeåret',
         era: 'Krig og kald krig',
         pitch: 'Propaganda i høyttalerne. Her er løgnen bevæpnet.',
@@ -170,6 +177,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'ordheimen',
+        aar: null,
         title: 'Ordheimen',
         era: 'Språk og litteratur',
         pitch: 'Et bibliotek som er større på innsiden. Ordene flytter på seg.',
@@ -191,6 +199,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'tempelhagen',
+        aar: null,
         title: 'Tempelhagen',
         era: 'Tro og tanke',
         pitch: 'Sju stier, sju svar. Ingen av dem er en snarvei.',
@@ -212,6 +221,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'radhusplassen',
+        aar: null,
         title: 'Rådhusplassen',
         era: 'Samfunn og demokrati',
         pitch: 'Her stemmer folk. Noen prøver å telle feil.',
@@ -233,6 +243,7 @@ export const EPOKER: EpokeDef[] = [
     },
     {
         id: 'klangdalen',
+        aar: null,
         title: 'Klangdalen',
         era: 'Musikk',
         pitch: 'Dalen svarer når du spiller riktig. Og tier når du bommer.',
@@ -259,17 +270,38 @@ export const EPOKE_BY_ID: Record<string, EpokeDef> = Object.fromEntries(
 );
 
 /**
+ * Epoken en ny elev fører regnskapet sitt i.
+ *
+ * Ikke det samme som stedet hun begynner å gå på - hun begynner i hubben, og
+ * den ligger utenfor alle epoker. Utledes av lista, så den dagen en annen epoke
+ * blir ferdig først, følger dette med.
+ */
+export const START_EPOKE = (EPOKER.find((e) => e.spillbar) ?? EPOKER[0]).id;
+
+/**
+ * Epokene som står på tidslinjeveien, eldst først, og de som ikke gjør det.
+ *
+ * Språk, tro, samfunn og musikk har ingen plass på en tidsakse. De står i
+ * lunden ved siden av veien i stedet for å bli klemt inn på et årstall noen
+ * måtte finne på.
+ */
+export const EPOKER_I_TID = EPOKER.filter((e) => e.aar !== null).sort(
+    (a, b) => (a.aar ?? 0) - (b.aar ?? 0)
+);
+export const EPOKER_UTEN_TID = EPOKER.filter((e) => e.aar === null);
+
+/**
  * Verb-kontrakten til en epoke, med vikingtiden som fallback.
  *
  * Fallbacken er ikke en generalitet vi later som vi har: den er der for at et
  * halvferdig sted med feilstavet `epokeId` skal være spillbart i stedet for å
  * krasje i første bilde. Bygger noen epoke nummer to, skal stedet peke på den.
  */
-export function regelsettFor(epokeId: string): Regelsett {
-    return EPOKE_BY_ID[epokeId]?.regelsett ?? VIKING_REGELSETT;
+export function regelsettFor(epokeId: string | null): Regelsett {
+    return EPOKE_BY_ID[epokeId ?? '']?.regelsett ?? VIKING_REGELSETT;
 }
 
 /** Sonen i spørsmålsbanken epoken henter fagstoff fra. */
-export function bankSoneFor(epokeId: string): string {
-    return EPOKE_BY_ID[epokeId]?.bankSone ?? epokeId;
+export function bankSoneFor(epokeId: string | null): string {
+    return EPOKE_BY_ID[epokeId ?? '']?.bankSone ?? epokeId ?? '';
 }
