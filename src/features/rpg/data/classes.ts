@@ -1,4 +1,4 @@
-import type { AppearanceChoice, ClassDef, ClassId } from '../types';
+import type { AppearanceChoice, ClassDef, ClassId, FigurLook } from '../types';
 
 // De tre veiene inn i spillet. Hver klasse er knyttet til en måte å bruke
 // kunnskap på: fortelle (skald), tyde (runemester) og huske (vokter).
@@ -87,6 +87,47 @@ export function levelFromXp(xp: number): number {
 
 /** Toppnivået for Nordvik. Nye soner løfter dette taket. */
 export const MAX_LEVEL = 12;
+
+// ─── Slik en figur ser ut ───────────────────────────────────────────────────
+//
+// Eleven selv og de andre i hallen tegnes av den samme smia, og da må de også
+// kles på av den samme funksjonen. Før lå fargevalget som en ternær-kjede inne
+// i `Spiller.heltLook()`, ved siden av `palette` her - to sannheter om hvilken
+// farge en runemester har på kjortelen. De holdt seg like helt til den dagen
+// noen endret den ene.
+
+/**
+ * Hvor tung rustningen ser ut: 0 er ingen, 3 er tyngst.
+ *
+ * Ukjent id gir tyngste trinn med vilje. Får eleven en rustning vi ikke har
+ * tegnet, skal hun se rustet ut - ikke naken.
+ */
+export function rustningTier(rustningId: string | null | undefined): number {
+    if (!rustningId) return 0;
+    if (rustningId === 'vadmelskjortel') return 1;
+    if (rustningId === 'lerbrynje') return 2;
+    return 3;
+}
+
+/**
+ * Alt `forgeHumanoid` trenger for å tegne én person.
+ *
+ * Slår aldri opp klassen uten fall: en gjest fra nettet kan sende en klasse-id
+ * vi ikke kjenner, og da skal hun tegnes som en skald - ikke krasje hallen.
+ */
+export function figurLook(
+    classId: ClassId | null | undefined,
+    appearance: AppearanceChoice | null | undefined,
+    armorTier: number
+): FigurLook {
+    const palette = (classId ? CLASS_BY_ID[classId]?.palette : null) ?? CLASSES[0].palette;
+    return {
+        appearance: appearance ?? DEFAULT_APPEARANCE,
+        tunic: palette.tunic,
+        trim: palette.trim,
+        armorTier,
+    };
+}
 
 /** Fulle kjernestats for en klasse på et gitt nivå. */
 export function statsAt(classId: ClassId, level: number) {

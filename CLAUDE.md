@@ -547,8 +547,10 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 ## Firebase / Backend
 
 - Config in `src/lib/firebase.ts`
-- Used for: Quiz Battle (Realtime DB), user feedback (`FeedbackWidget`), presence tracking
-- Database rules in `database.rules.json` and `firebase-rules.json`
+- Used for: Quiz Battle (Realtime DB), user feedback (`FeedbackWidget`), presence tracking,
+  and the shared hall in Minnevokteren (`rpg-hub`)
+- Database rules live in `database.rules.json` — the one file `firebase.json` deploys.
+  Deploy them with `firebase deploy --only database` after editing.
 - Feedback data is **not** publicly readable. To export:
   ```bash
   node scripts/fetch_feedback.cjs YOUR_DATABASE_SECRET

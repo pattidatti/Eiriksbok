@@ -2,6 +2,7 @@
 // (liv, sekk, quester) leser begge sider rett fra useRpgStore - broen brukes
 // bare til hendelser: «åpne denne dialogen», «eleven svarte riktig».
 
+import type { Gjest, Stilling } from '../types';
 import type { KampSnapshot } from './kamp';
 
 type Handler<T> = (payload: T) => void;
@@ -38,6 +39,15 @@ export interface SceneEvents {
      * tegnet HUD-en på nytt like ofte.
      */
     kamp: KampSnapshot;
+    /**
+     * Hvor eleven står, til de andre i hallen. Sendes bare på steder med
+     * `flerspiller`, og bare ti ganger i sekundet.
+     *
+     * Scenen vet ikke at det finnes et nett. Den melder hvor hun står, og om
+     * noen bryr seg om det er ikke dens sak - det er nettopp derfor ingen epoke
+     * noen gang trenger nettverkskode.
+     */
+    minStilling: Stilling;
 }
 
 export interface UiEvents {
@@ -60,6 +70,16 @@ export interface UiEvents {
      * kan ikke holde skjoldet og slå samtidig.
      */
     knapp: { navn: 'angrep' | 'rull' | 'bruk' | 'gard' };
+    /**
+     * De andre i hallen, ferdig filtrert for dem eleven har skjult.
+     *
+     * Går ikke gjennom React-tilstand. Kommer ti ganger i sekundet per elev i
+     * rommet, og en `setState` per melding ville tegnet hele grensesnittet på
+     * nytt hundre og seksti ganger i sekundet.
+     */
+    gjester: { liste: Gjest[] };
+    /** Eleven sendte en følelse selv. Vises over hennes eget hode også. */
+    folelse: { emoji: string | null };
 }
 
 class Emitter<Events> {

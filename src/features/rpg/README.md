@@ -26,7 +26,8 @@ data/
   spells.ts              Besvergelser (låses opp av riktige svar, ikke loot)
   enemies.ts             Fiendearketyper + bossen
   epoker.ts              De 11 epokene, én ferdig. Årstall, palett, regelsett, bank-sone.
-  hub.ts                 Minnevokterens hall: portalplassering, landemerker, palett
+  hub.ts                 Minnevokterens hall: portaler, landemerker, benker, palett
+  folelser.ts            De åtte ikonene elevene kan sende hverandre
   regelsett/viking.ts    Verb-kontrakten for vikingtiden: pust, skjold, rull
   vaapen.ts              Skjold, angrepsform per våpenart og kostnadene i kampen
   nordvik.ts             Nordvik: NPC-er, landemerker og håndskrevne oppdrag
@@ -42,9 +43,11 @@ engine/
     prosjektiler.ts      Alt som flyr: piler, kastespyd, besvergelser
     effekter.ts          Partikler, flytende tall og glimt
     loot.ts              Sølv og gjenstander på bakken
+    gjester.ts           De andre elevene: figur, navn, følelse, glidning
     entiteter.ts         Delte typer for systemene
   farkost.ts             Båter: besittelse, styring og egen kollisjonsmaske
   portal.ts              Portalene: lys, skilt, hint og reisen mellom steder
+  samvaer.ts             Benkene ved bålet, og følelsen over eget hode
   worldgen.ts            Bygger Nordvik-kartet
   hubgen.ts              Bygger hallen: tidslinjeveien, lunden og skogen
   spriteforge.ts         Figurer, fiender, våpen, effekter, pikselfont
@@ -54,9 +57,13 @@ engine/
   quests.ts              Setter sammen quester + finner hvor svaret står i verden
   bridge.ts              Hendelser mellom scene og React
   enhet.ts               Har enheten berøringsskjerm?
+net/
+  hubRom.ts              Transporten: rom, tilstedeværelse, posisjon over RTDB
+  useHubRom.ts           Det eneste som kjenner både broen og nettet
+  navnevakt.ts           Hvilke navn et klasserom skal slippe å lese
 store/useRpgStore.ts     All spillertilstand, lagringsformatet + kobling til «Min læring»
-components/              Karakterskaper, HUD, dialog, kunnskapsutfordring, sekk,
-                         logg, butikk, skjermkontroll og atmosfære-overlegg
+components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordring,
+                         sekk, logg, butikk, skjermkontroll og atmosfære-overlegg
 ```
 
 ## Slik henger læring og spill sammen
@@ -95,7 +102,7 @@ components/              Karakterskaper, HUD, dialog, kunnskapsutfordring, sekk,
 | **Shift trykket, i bevegelse** | Rull (kort usårbarhet)                      |
 | **Retning under gard**         | Vend garden, skjoldgang i 45 % fart         |
 | **Shift + mellomrom**          | Våpenets manøver (hak / stikk / skjoldstøt) |
-| E                              | Snakk / les / åpne / gå om bord             |
+| E                              | Snakk / les / åpne / gå om bord / sett deg  |
 | 1-4                            | Besvergelser                                |
 | I / L / Esc                    | Sekk / oppdrag / meny                       |
 
@@ -174,9 +181,102 @@ Hallen bærer merker etter den som var der før (blueprint §3.4): en liten stei
 ved portalen for hver gang eleven har gått inn i epoken, og en stein på varden
 for hver gang hun har kommet hjem. Begge ligger i `hub`-noden i lagringen.
 
-Foreløpig er sporene hennes egne. Formen er den samme den dagen rommet blir
-delt (R8) - et tall per portal og en haug ved varden - så det som endrer seg da
-er hvor tallet kommer fra, ikke hva hallen gjør med det.
+Sporene er hennes egne, også nå som rommet er delt. Det er et valg: en varde
+som vokser av alle sammen ville vært en teller for hele skolen, og en teller
+sier ingenting om hvor ofte *du* har vært her. Formen tåler begge deler - et
+tall per portal og en haug ved varden - så det som eventuelt endrer seg er hvor
+tallet kommer fra.
+
+## Hallen er delt
+
+Regelen som styrer hele nettlaget står i én linje:
+
+> **Hubben er sammen. Epokene er alene.**
+
+Det er ikke en nedskalering, det er riktig design. De stille øyeblikkene inne i
+en epoke - kildekritikken, valget eleven må ta alene - kollapser med en
+klassekamerat som spretter rundt i bildet. Og konsekvensen for arkitekturen er
+enorm: **ingen epoke trenger noen gang nettverkskode.**
+
+Regelen håndheves ett sted, og det er med vilje ikke i nettlaget:
+`Sted.flerspiller` er sant for hallen og udefinert for alt annet, og
+`useHubRom` kobler til på nettopp det flagget. Da kan ingen slå på flerspiller
+for en epoke ved å endre en if-setning inne i transporten - det må gjøres i
+`steder.ts`, ved siden av alt annet som sier hva stedet er.
+
+| Fil | Hva |
+| --- | --- |
+| `net/hubRom.ts` | Rom, tilstedeværelse, posisjon over RTDB. Kjenner ikke Phaser. |
+| `net/useHubRom.ts` | Det eneste som kjenner både broen og nettet |
+| `net/navnevakt.ts` | Hvilke navn et klasserom skal slippe å lese |
+| `engine/systems/gjester.ts` | Tegner de andre. Kjenner ikke Firebase. |
+| `engine/samvaer.ts` | Benkene ved bålet, og følelsen over eget hode |
+| `components/HubHud.tsx` | Hvem er inne, hva kan jeg si, hvordan skjuler jeg noen |
+
+**Slik henger det sammen.** Scenen melder hvor eleven står over broen
+(`minStilling`, ti ganger i sekundet) uten å vite at det finnes et nett.
+`useHubRom` tar det videre. De andre kommer inn fra Firebase og sendes samme
+vei tilbake (`gjester`). Ingen av de to sidene vet om den andre.
+
+Ting som er lette å ødelegge her:
+
+-   **Gjestene skal aldri bli React-tilstand.** Ti meldinger i sekundet ganger
+    seksten elever er hundre og seksti oppdateringer i sekundet. Ble hver av
+    dem en `setState`, ville hele grensesnittet tegnes på nytt like ofte. Bare
+    *navnelista* er tilstand, og den friskes opp én gang i sekundet.
+-   **`onDisconnect()` settes før første skriving.** Snus rekkefølgen, og eleven
+    mister nettet i mellomrommet, blir hun stående som et spøkelse i rommet for
+    alltid.
+-   **Vi tegner 120 ms bakpå, og glidningen ebber ut.** Rå posisjoner ti ganger
+    i sekundet gir figurer som teleporterer. Gjettingen videre finnes for å
+    dekke *én* tapt melding - den skal ikke dekke at noen har sluttet å sende.
+    Derfor er den full etter 200 ms, borte etter 400, og da står figuren
+    nøyaktig på siste kjente sted. Uten uttoningen blir en elev som fryser
+    stående et stykke fra der hun faktisk er, i tolv sekunder.
+-   **Taket på seksten i rommet er en tegnegrense, ikke en nettgrense.** Uten
+    det får du seksti figurer med navneskilt på en Chromebook og en
+    bildefrekvens på ti.
+-   **Rommet velges ved å lese hele treet én gang.** Alternativet - en teller
+    ved siden av - kan ikke holdes i takt, for `onDisconnect()` kan sette en
+    verdi men ikke trekke fra en.
+-   **Innholdet vinner over møbelet.** `Interaksjon.sjekk()` returnerer om den
+    har et mål, og benken spør sist. Sto benken først, stjal den E-tasten fra
+    varden tre ruter unna. Ett unntak: sitter hun allerede, eier benken
+    trykket, ellers åpner E skiltet ved siden av og hun blir sittende.
+
+### Trygghet
+
+Rommene er åpne og elevene har ingen konto. Det gir tre krav, og alle tre er
+bygget:
+
+-   **Ingen fritekst-chat.** Åtte faste ikoner (`data/folelser.ts`), og
+    `trygtIkon()` prøver også det som kommer *inn* - reglene i basen kan bare
+    måle lengden på en tekst, ikke skille et ikon fra et annet.
+-   **Navnevakt.** Bokstaver, mellomrom og bindestrek, 2-16 tegn, pluss en
+    blokkliste. Tegnsettet er det viktigste av de tre: uten sifre og skilletegn
+    finnes det ingen URL, ingen «snap: …» og ingen tallspam å skrive. Den
+    kjøres både på det eleven skriver og på det som kommer inn fra nettet - en
+    klient som går utenom grensesnittet skal ikke kunne vise noe hallen ikke
+    ville godtatt.
+-   **Skjul-knappen.** Ett trykk, lokalt, uten å be om lov. Det finnes ingen å
+    klage til, så hun må kunne fjerne noen fra sitt eget bilde selv.
+
+> **Reglene i `database.rules.json` er det som faktisk gjelder.** Klientside
+> alene er et forslag. Endres tegnsettet i `navnevakt.ts`, må regelen under
+> `rpg-hub` endres i samme åndedrag - ellers får eleven et navn godkjent på
+> skjermen som tjeneren nekter, og hun blir stående usynlig uten at noe sier
+> hvorfor.
+
+### Å sitte er ikke en positur
+
+Figuren settes ned på benken i idle-ramma, nøyaktig som hun står stille om bord
+i færingen - `settOmBord(true)` med fast posisjon og retning. En `sitte`-positur
+ville tvunget `KOLONNER`, `START`, `POSITUR_LENGDE` og hele positurlista i
+`forgeHumanoid` til å endres i samme åndedrag, for tre rammer ingen har tegnet.
+
+Til gjengjeld måtte benken bli tretti piksler bred: en seksten piksler bred
+stokk under en atten piksler bred figur er helt borte i det noen setter seg på
+den.
 
 ### Verb-kontrakten
 
@@ -284,7 +384,9 @@ nytt like ofte. Pust- og livsstolpene har `aria-valuenow`, som er det
 
 Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blueprint.md`.
 Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
-`docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R5 er bygget.
+`docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R8 er bygget, og
+refaktoreringen er dermed ferdig. Neste er kapittel 1, etter Nordvik-blueprintens
+etappe 2.
 
 ## Lagring
 
@@ -325,7 +427,7 @@ hver gang eleven kommer fram et sted.
 
 ## Verifisering
 
-Ti skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Elleve skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 `window.__rpgSteder`, storen gjennom `window.__rpgStore`), som `boot.ts` bare
 eksponerer i dev.
@@ -349,6 +451,7 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-farkost.mjs`     | Båten: om bord, ro, land stopper, i land igjen            |
 | `verify-rpg-lagring.mjs`     | At et lagret spill overlever migreringen, og epokebytte   |
 | `verify-rpg-hub.mjs`         | Hallen: tidslinjen, varden, og reisen inn og hjem igjen   |
+| `verify-rpg-flerspiller.mjs` | Navnevakt, glidning, skjul, benk - og at epokene er alene |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir

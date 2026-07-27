@@ -174,10 +174,10 @@ export class Interaksjon {
      * nærmest, men skriver ingenting: den som eier hintet, skal få skrive det i
      * fred, og neste bilde uten båt finner vi målet på nytt.
      */
-    sjekk(brukTrykk: boolean, aktiv = true): void {
+    sjekk(brukTrykk: boolean, aktiv = true): boolean {
         if (!aktiv) {
             this.naermest = null;
-            return;
+            return false;
         }
         const spiller = this.kroker.spiller();
         let funn: { type: 'npc' | 'landemerke'; id: string; d: number } | null = null;
@@ -212,7 +212,7 @@ export class Interaksjon {
             // Varden åpner ingen tekst. Den tar imot en stein.
             if (this.naermest.type === 'landemerke' && this.naermest.id === this.vardeId) {
                 this.leggSteinPaaVarden();
-                return;
+                return true;
             }
             this.kroker.laas(true);
             sfx.dialog();
@@ -223,6 +223,11 @@ export class Interaksjon {
             }
             fraSpill.emit('hint', { tekst: null });
         }
+
+        // Har vi noen eller noe innen rekkevidde? Det er dette laget under - i
+        // dag benkene i hallen - trenger å vite for å holde seg unna: står
+        // eleven ved en person eller en stein med en tekst i, skal E gjelde den.
+        return this.naermest !== null;
     }
 
     private landemerkeHint(lm: LandmarkDef | undefined): string {

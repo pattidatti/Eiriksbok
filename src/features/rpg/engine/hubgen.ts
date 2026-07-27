@@ -8,7 +8,16 @@
 // kommer forbi; trær leser som et sted som fortsetter. Det er riktigere her:
 // epokene som ikke er bygget ennå, ligger et sted der ute.
 
-import { HUB_PORTALER, HUB_SIZE, LUND, LUND_AVKJORING, veiY } from '../data/hub';
+import {
+    HUB_LANDEMERKER,
+    HUB_PORTALER,
+    HUB_SIZE,
+    LUND,
+    LUND_AVKJORING,
+    SITTEPLASSER,
+    VARDE_RUTE,
+    veiY,
+} from '../data/hub';
 import { makeRng } from './pixels';
 import type { TileKey } from './tileforge';
 import type { PropPlacement, WorldMap } from './worldgen';
@@ -108,6 +117,44 @@ export function byggHub(): WorldMap {
         for (let dy = -2; dy <= 1; dy++) {
             for (let dx = -2; dx <= 2; dx++) merk(p.tile[0] + dx, p.tile[1] + dy);
         }
+    }
+    // Det samme gjelder bålet, varden, skiltene og benkene rundt ilden. Et tre
+    // midt i bålplassen er ikke bare stygt - eleven kommer ikke fram til
+    // benken, og da finnes ikke stedet folk skal møtes.
+    for (const l of HUB_LANDEMERKER) {
+        for (let dy = -1; dy <= 1; dy++) {
+            for (let dx = -1; dx <= 1; dx++) merk(l.tile[0] + dx, l.tile[1] + dy);
+        }
+    }
+    for (const s of SITTEPLASSER) {
+        for (let dy = -1; dy <= 1; dy++) {
+            for (let dx = -1; dx <= 1; dx++) merk(s.tile[0] + dx, s.tile[1] + dy);
+        }
+    }
+    // Varden hører til hallen, men står i `steder.ts` sammen med resten av
+    // stedet - derfor er den ikke med i `HUB_LANDEMERKER` og må merkes for seg.
+    for (let dy = -1; dy <= 1; dy++) {
+        for (let dx = -1; dx <= 1; dx++) merk(VARDE_RUTE[0] + dx, VARDE_RUTE[1] + dy);
+    }
+
+    // ── Benkene ─────────────────────────────────────────────────────────────
+    //
+    // Ikke solide. Eleven settes ned *på* benken av `Samvaer`, og en
+    // kollisjonsboks ville dyttet henne av i det hun reiste seg igjen.
+    //
+    // Fire piksler over rutas midte, så dybdesorteringen legger benken bak
+    // henne. Ligger den på ruta selv, blir plankene tegnet oppå ryggen hennes.
+    for (const s of SITTEPLASSER) {
+        props.push({
+            kind: 'benk',
+            x: s.tile[0] * 16 + 8,
+            y: s.tile[1] * 16 + 4,
+            solid: false,
+            variant: 0,
+            flip: false,
+            skala: 1,
+            tint: 0,
+        });
     }
 
     const erLedig = (x: number, y: number) => {

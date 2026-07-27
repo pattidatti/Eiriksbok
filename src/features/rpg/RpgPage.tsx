@@ -10,6 +10,9 @@ import { useLayout } from '../../context/LayoutContext';
 import { CharacterCreator } from './components/CharacterCreator';
 import { DialogOverlay, LandmarkOverlay } from './components/DialogOverlay';
 import { Hud } from './components/Hud';
+import { HubHud } from './components/HubHud';
+import { rustningTier } from './data/classes';
+import { useHubRom } from './net/useHubRom';
 import { Atmosfare, Skjermkontroll } from './components/Skjermkontroll';
 import { harBeroring } from './engine/enhet';
 import { ButikkPanel, InventoryPanel, PauseMeny, QuestLog } from './components/Panels';
@@ -72,6 +75,23 @@ export default function RpgPage() {
     /** Pust, gard og skjoldslitasje. Kommer fra scenen ~11 ganger i sekundet. */
     const [kamp, setKamp] = useState<KampSnapshot | null>(null);
     const [touch] = useState(harBeroring);
+
+    // ── Hallen, delt med andre ──────────────────────────────────────────────
+    //
+    // Betingelsen er `sted.flerspiller` og ingenting annet. Reiser eleven inn i
+    // en epoke, blir den falsk, hooken kobler fra, og epoken er alene - hele
+    // blueprintens §4.1 håndheves i denne ene linja.
+    const rustning = useRpgStore((s) => s.utstyr.rustning);
+    const identitet =
+        character && klar
+            ? {
+                  navn: character.name,
+                  classId: character.classId,
+                  appearance: character.appearance,
+                  rustning: rustningTier(rustning),
+              }
+            : null;
+    const hub = useHubRom(Boolean(sted.flerspiller) && Boolean(character) && klar, identitet);
 
     const scene = useCallback((): WorldScene | null => {
         const game = spillRef.current?.game;
@@ -258,6 +278,10 @@ export default function RpgPage() {
 
                     {touch && overlegg.type === 'ingen' && (
                         <Skjermkontroll gardOppe={kamp?.gardOppe ?? false} />
+                    )}
+
+                    {sted.flerspiller && overlegg.type === 'ingen' && (
+                        <HubHud hub={hub} touch={touch} />
                     )}
 
                     {sonetittel && (

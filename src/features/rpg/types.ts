@@ -81,6 +81,28 @@ export interface CharacterDraft {
     appearance: AppearanceChoice;
 }
 
+/**
+ * Alt sprite-smia trenger for å kle på én figur.
+ *
+ * Både eleven og de andre i hallen tegnes av `forgeHumanoid`, og begge kles på
+ * av `figurLook()` i `data/classes.ts`. Typen står her, ikke i `spriteforge.ts`,
+ * fordi den krysser grensa mellom data, nett og tegning.
+ */
+export interface FigurLook {
+    appearance: AppearanceChoice;
+    tunic: string;
+    trim: string;
+    /** 0 = ingen rustning, 1-3 = stadig tyngre. Styrer plater og hjelm. */
+    armorTier: number;
+}
+
+/**
+ * Retningen en figur ser. Må være den samme unionen som `Dir` i
+ * `spriteforge.ts` - den er et alias av denne, så de kan ikke drive fra
+ * hverandre.
+ */
+export type Retning = 'ned' | 'venstre' | 'hoyre' | 'opp';
+
 // ─── Utstyr og gjenstander ──────────────────────────────────────────────────
 
 export type ItemSlot = 'vapen' | 'rustning' | 'amulett';
@@ -570,6 +592,86 @@ export interface Sted {
     musikkRot: number;
     /** Håndskrevne oppdrag som hører til dette stedet. */
     authored: AuthoredQuest[];
+    /**
+     * Deles stedet med andre elever?
+     *
+     * Bare hallen. «Hubben er sammen, epokene er alene» (blueprint §4.1) er en
+     * pedagogisk regel før den er en teknisk: de stille øyeblikkene inne i en
+     * epoke kollapser med en klassekamerat som spretter rundt i bildet.
+     *
+     * Flagget står på stedet og ikke i nettlaget med vilje. Da kan ingen
+     * komme til å slå på flerspiller for et sted ved å endre en if-setning
+     * inne i transporten - det må gjøres her, ved siden av alt annet som sier
+     * hva stedet er.
+     */
+    flerspiller?: boolean;
+    /** Benker og steiner det går an å sette seg på. Bare der folk møtes. */
+    sitteplasser?: SitteplassDef[];
+}
+
+// ─── Samvær ─────────────────────────────────────────────────────────────────
+
+/**
+ * Et sted å sette seg. Bålet er verdt å sitte ved uansett (blueprint §3.4), og
+ * det er dette elevene faktisk kommer til å bruke rommet til (§4.5).
+ *
+ * Å sitte er ikke en ny positur. Figuren settes ned på benken i idle-ramma,
+ * nøyaktig som hun står stille om bord i færingen - av samme grunn: en
+ * `sitte`-positur ville tvunget `KOLONNER`, `START`, `POSITUR_LENGDE` og hele
+ * positurlista i `forgeHumanoid` til å endres i samme åndedrag.
+ */
+export interface SitteplassDef {
+    id: string;
+    tile: [number, number];
+    /** Hvilken vei hun ser når hun sitter - mot bålet, ikke ut i skogen. */
+    ser: Retning;
+}
+
+// ─── Flerspiller ────────────────────────────────────────────────────────────
+
+/**
+ * Det som endrer seg ti ganger i sekundet: hvor en figur står og hva hun gjør.
+ *
+ * Står her og ikke i `net/`, fordi scenen melder den uten å vite at det finnes
+ * et nett. Ville den vært en nett-type, måtte `systems/spiller.ts` importert
+ * fra `net/` - og da hadde vi en pil fra spillet mot Firebase som ingen hadde
+ * bedt om.
+ */
+export interface Stilling {
+    x: number;
+    y: number;
+    dir: Retning;
+    /** Bare de to som er synlige på avstand. Ingen slag, ingen gard. */
+    positur: 'idle' | 'gang';
+    sitter: boolean;
+}
+
+/**
+ * En annen elev i hallen, slik hun kommer inn over nettet.
+ *
+ * Dette er hele det delte bildet. Det er med vilje kort: posisjon, retning,
+ * hvem hun er og hva hun føler. Ingen liv, ingen skade, ingen kamptilstand -
+ * det finnes ingen kamp der ute, og en type som later som noe annet ville
+ * invitert til å bygge det.
+ */
+export interface Gjest {
+    id: string;
+    /** Navnet hun valgte, allerede gjennom navnevakten. */
+    navn: string;
+    x: number;
+    y: number;
+    dir: Retning;
+    /** Bare de to som er synlige på avstand. Ingen slag, ingen gard. */
+    positur: 'idle' | 'gang';
+    sitter: boolean;
+    /** Følelsen hun sendte, eller null. Alltid fra det faste hjulet. */
+    emoji: string | null;
+    classId: ClassId;
+    appearance: AppearanceChoice;
+    /** Rustningstrinnet, 0-3. Sendt som tall, ikke som gjenstands-id. */
+    rustning: number;
+    /** Klokkeslettet vi hørte fra henne sist, målt på tjenerens klokke. */
+    sist: number;
 }
 
 // ─── Farkost ────────────────────────────────────────────────────────────────

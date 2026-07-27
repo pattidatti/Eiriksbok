@@ -17,7 +17,7 @@ import type { PortalDef } from '../types';
 import { sfx } from './audio';
 import { fraSpill } from './bridge';
 import { hexToNum } from './pixels';
-import { GLYF, TILE, glyfIndex } from './spriteforge';
+import { GLYF, TILE, skrivPiksel } from './spriteforge';
 
 /** Hvor nær eleven må stå for at portalen skal svare. */
 const NAER = 40;
@@ -160,34 +160,11 @@ export class Portaler {
     }
 
     /**
-     * Skilttekst med pikselfonten.
-     *
-     * Vektorfont skalert tre ganger av kameraet er det mest uskarpe elementet i
-     * en ellers skarp scene - det er samme grunn som `Effekter.flytTekst` har.
-     * Her er teksten statisk, så den bygges én gang og blir liggende.
+     * Skilttekst med pikselfonten. Statisk: den bygges én gang og blir
+     * liggende, så vi trenger ikke ta vare på håndtaket.
      */
     private skriv(x: number, y: number, tekst: string, farge: string): void {
-        const tint = Phaser.Display.Color.HexStringToColor(farge).color;
-        const bredde = tekst.length * GLYF.w;
-        for (let i = 0; i < tekst.length; i++) {
-            const ramme = glyfIndex(tekst[i]);
-            const tx = x - bredde / 2 + i * GLYF.w;
-            // Skygge først. Lys tekst rett på gress er nesten uleselig på en
-            // Chromebook, og en piksel mørk bak hvert tegn koster ingenting.
-            this.scene.add
-                .image(tx + 1, y + 1, 'font-tall')
-                .setFrame(ramme)
-                .setOrigin(0, 0.5)
-                .setTint(0x0d1014)
-                .setAlpha(0.75)
-                .setDepth(29999);
-            this.scene.add
-                .image(tx, y, 'font-tall')
-                .setFrame(ramme)
-                .setOrigin(0, 0.5)
-                .setTint(tint)
-                .setDepth(30000);
-        }
+        skrivPiksel(this.scene, tekst, farge, 30000).sett(x, y);
     }
 
     /**

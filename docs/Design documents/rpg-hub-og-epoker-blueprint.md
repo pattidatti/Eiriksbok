@@ -396,7 +396,8 @@ Etter R8: kapittel 1, etter Nordvik-blueprintens etappe 2.
 
 ### Status
 
-**R1-R7 er bygget** (juli 2026). Alle ti `scripts/verify-rpg-*.mjs` er grønne.
+**R1-R8 er bygget** (juli 2026). Refaktoreringen er ferdig. Alle elleve
+`scripts/verify-rpg-*.mjs` er grønne.
 
 #### R4
 
@@ -519,6 +520,70 @@ struper `requestAnimationFrame` når ingenting skjer på siden, og da fryser
 kameraets fade-in midt i. Spillet går som det skal, men skjermbildet blir
 kullsvart og målingen leser en verden som ikke er ferdig bygget. Prøven venter
 nå på ekte tilstand (`sisteSted` satt og fade ferdig), ikke på en klokke.
+
+#### R8
+
+Hallen er delt. Åpne rom som fylles av seg selv, medelever som glir over
+plassen med navnet sitt over hodet, benker rundt bålet, et hjul med åtte
+følelser og en skjul-knapp. `net/hubRom.ts` er transporten,
+`engine/systems/gjester.ts` tegner, `net/useHubRom.ts` er det eneste som
+kjenner begge sider, og `engine/samvaer.ts` eier benkene.
+
+**§4.1 håndheves ett sted, og det er ikke i nettlaget.** `Sted.flerspiller` er
+sant for hallen og udefinert for alt annet, og `useHubRom` kobler til på
+nettopp det flagget. Da kan ingen komme til å slå på flerspiller for en epoke
+ved å endre en betingelse inne i transporten - det må gjøres i `steder.ts`, ved
+siden av alt annet som sier hva stedet er. `verify-rpg-flerspiller.mjs` reiser
+inn i Nordvik og måler at både gjestene og nettlaget er borte.
+
+Fire avvik og funn som er verdt å ha skrevet ned:
+
+-   **Ekstrapoleringen måtte ebbe ut.** Fallgruve 7 ber om «maks 200 ms», og
+    det ble bygget rett fram først: gjett videre i samme retning, stopp etter
+    200 ms. Prøven viste hva som var galt med det - en elev som slutter å sende
+    blir stående der gjettingen forlot henne, altså et stykke fra der hun
+    faktisk er, helt til pulsen tolv sekunder senere retter det opp. Nå ebber
+    gjettingen ut: full styrke etter 200 ms, borte etter 400, og da står
+    figuren nøyaktig på siste kjente sted. I tillegg er avstanden takket på 24
+    piksler, for én rar melding skal ikke kunne kaste noen ut av verden.
+-   **Innholdet vinner over møbelet.** Benkene sto først i E-rekkefølgen, og da
+    stjal de tasten fra varden tre ruter unna - eleven kunne ikke legge steinen
+    sin, og `verify-rpg-hub.mjs` sa fra med én gang. `Interaksjon.sjekk()`
+    returnerer nå om den har et mål, og benken spør sist. Ett unntak, og det er
+    nødvendig: sitter hun allerede, eier benken trykket, ellers åpner E skiltet
+    ved siden av og hun blir sittende.
+-   **Ingen ny positur, igjen.** Å sitte er `settOmBord(true)` med en fast
+    posisjon og retning - nøyaktig samme tilstand som å stå om bord i færingen,
+    for det er samme sak sett fra figuren. `Positur` er urørt, og §7-advarselen
+    om `KOLONNER`/`START`/`POSITUR_LENGDE` gjelder fortsatt for den dagen
+    hesten kommer. Til gjengjeld måtte benken bli tretti piksler bred: en
+    seksten piksler bred stokk under en atten piksler bred figur er usynlig.
+-   **Prøven skal ikke delta i spillet.** Flagget `rpg-uten-nett` i
+    localStorage (bare i utviklingsmodus) hindrer `useHubRom` i å koble opp, og
+    medelevene settes i stedet inn gjennom `window.__rpgHub.settGjester` - som
+    kjører rådataene gjennom `tolkGjest`, den samme tolkningen Firebase-svaret
+    går gjennom. Da måles navnevakten og ikoncensuren på det som kommer
+    *utenfra*, som er der de hører hjemme, uten at en kjøring skriver en
+    oppdiktet elev inn i et ekte klasserom.
+
+To ting som ble ryddet på veien, og som ikke sto i planen:
+
+-   **Påkledningen hadde to sannheter.** `Spiller.heltLook()` regnet ut
+    kjortelfargen med en ternær-kjede ved siden av `ClassDef.palette`, som
+    inneholdt de samme seks fargene. De holdt seg like helt til noen skulle
+    tegne en medelev. Nå kler `figurLook()` i `data/classes.ts` alle, og
+    `rustningTier()` er det ene stedet som vet hva en lærbrynje ser ut som.
+-   **Pikselskriveren var privat i `Portaler`.** Navneskiltene over hodet
+    trengte den samme, og en kopi til ville vært den tredje måten å skrive et
+    ord på i denne kodebasen. Den bor nå i `spriteforge.ts` som `skrivPiksel`,
+    med et håndtak som kan flyttes og ryddes.
+
+Det som ikke er bygget, og hvorfor: **fotavtrykk i hallen** (§3.4) er fortsatt
+ikke der - steinene ved portalene og på varden gir den samme opplysningen, og
+et spor-lag som tegner historikk over terrenget er en ny tegneflate for null ny
+mening. **Rombytte** (§12) er åpent som før. **Alt annet i §4.5** - kappløp,
+skjoldvegg-lek, beretningsvegg - står som mulig senere, og skal fortsatt ikke
+bygges nå.
 
 ---
 

@@ -470,6 +470,31 @@ export function forgeProps(scene: Phaser.Scene, tema: Tema): void {
     baat.behind(() => baat.ellipse(15, 14, 13, 3, 'rgba(0,0,0,0.22)'));
     addCanvas(scene, 'prop-baat', baat);
 
+    // ── Benk ────────────────────────────────────────────────────────────────
+    //
+    // En kløyvd stokk på to knubber. Ikke en snekret hagebenk: hallen er ikke
+    // et sted noen har møblert, den er et sted noen har slitt ned.
+    //
+    // Tretti piksler bred, og det er hele poenget. Figuren er atten bred og
+    // tegnes foran benken - en benk på seksten ville vært helt borte i det
+    // noen satte seg på den. Stokken må stikke ut på begge sider for at det
+    // skal lese som å sitte og ikke som å stå i gresset.
+    //
+    // Den er ikke solid. Eleven settes ned *på* den av `Samvaer`, og en
+    // kollisjonsboks ville dyttet henne av i det hun reiste seg.
+    const benk = createPainter(30, 12, 1, 1);
+    benk.rect(4, 8, 3, 3, ramp(tommer, -2));
+    benk.rect(23, 8, 3, 3, ramp(tommer, -2));
+    benk.rect(1, 5, 28, 3, tommer);
+    benk.hline(1, 5, 28, ramp(tommer, 2));
+    benk.hline(1, 7, 28, ramp(tommer, -2));
+    // To kvistmerker, ellers leser stokken som en planke.
+    benk.px(9, 6, ramp(tommer, -3));
+    benk.px(20, 6, ramp(tommer, -3));
+    benk.outline();
+    benk.behind(() => benk.ellipse(15, 11, 14, 2, 'rgba(0,0,0,0.24)'));
+    addCanvas(scene, 'prop-benk', benk);
+
     // ── Gjerde ──────────────────────────────────────────────────────────────
     const gjerde = createPainter(TILE + 2, 16, 1, 1);
     gjerde.rect(2, 2, 2, 11, ramp(tommer, -1));

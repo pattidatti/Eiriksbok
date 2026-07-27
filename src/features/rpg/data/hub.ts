@@ -27,7 +27,7 @@
 // den er verdt å vise.
 
 import { EPOKER_I_TID, EPOKER_UTEN_TID } from './epoker';
-import type { LandmarkDef, PortalDef, Tema } from '../types';
+import type { LandmarkDef, PortalDef, SitteplassDef, Tema } from '../types';
 
 export const HUB_SIZE = { bredde: 104, hoyde: 36 };
 
@@ -95,6 +95,30 @@ export const HUB_SPAWN: [number, number] = [6, Math.round(veiY(6))];
 /** Bålet og varden står ved veiens begynnelse, der eleven kommer inn. */
 export const BAAL_RUTE: [number, number] = [5, Math.round(veiY(5)) + 3];
 export const VARDE_RUTE: [number, number] = [8, Math.round(veiY(8)) + 3];
+
+/**
+ * Benkene rundt bålet.
+ *
+ * Bålet skal være verdt å sitte ved uansett (blueprint §3.4). Et åpent rom
+ * klokka 22 en søndag har én elev i seg, og da må stedet holde alene - ellers
+ * leser flerspilleren som en funksjon som er i stykker.
+ *
+ * De står i en halvsirkel rundt ilden og ser inn mot den, ikke ut i skogen. Tre
+ * er nok: fire ville lukket ringen, og en lukket ring har ingen vei inn.
+ *
+ * Halvsirkelen ligger sør for ilden, og den holder to ruters avstand til både
+ * bålet og varden. Begge er landemerker med noe å gjøre - bålet har en tekst
+ * som forklarer hele hallen, og varden tar imot en stein - og `Interaksjon`
+ * svarer på 30 piksler. Legges en benk nærmere enn det, står eleven i to soner
+ * samtidig, og én av dem taper. Det skal ikke være innholdet som taper.
+ *
+ * Vestover er det ikke plass: bålet står fem ruter fra steinkanten.
+ */
+export const SITTEPLASSER: SitteplassDef[] = [
+    { id: 'baal-vest', tile: [BAAL_RUTE[0] - 2, BAAL_RUTE[1] + 2], ser: 'hoyre' },
+    { id: 'baal-sor', tile: [BAAL_RUTE[0], BAAL_RUTE[1] + 3], ser: 'opp' },
+    { id: 'baal-ost', tile: [BAAL_RUTE[0] + 2, BAAL_RUTE[1] + 4], ser: 'opp' },
+];
 
 export const HUB_LANDEMERKER: LandmarkDef[] = [
     {

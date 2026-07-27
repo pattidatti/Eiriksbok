@@ -11,7 +11,14 @@
 import { byggHub } from '../engine/hubgen';
 import { byggNordvik } from '../engine/worldgen';
 import type { LandmarkDef, NpcDef, Sted } from '../types';
-import { HUB_LANDEMERKER, HUB_PORTALER, HUB_SPAWN, HUB_TEMA, VARDE_RUTE } from './hub';
+import {
+    HUB_LANDEMERKER,
+    HUB_PORTALER,
+    HUB_SPAWN,
+    HUB_TEMA,
+    SITTEPLASSER,
+    VARDE_RUTE,
+} from './hub';
 import {
     NORDVIK_AUTHORED_QUESTER,
     NORDVIK_BOSS_QUESTIONS,
@@ -61,6 +68,10 @@ const HUB: Sted = {
     taake: 0.45,
     musikkRot: 220,
     authored: [],
+    // Det ene stedet som deles. «Hubben er sammen, epokene er alene» - se
+    // `Sted.flerspiller` for hvorfor flagget står her og ikke i nettlaget.
+    flerspiller: true,
+    sitteplasser: SITTEPLASSER,
 };
 
 const NORDVIK: Sted = {

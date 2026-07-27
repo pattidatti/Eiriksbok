@@ -10,9 +10,9 @@
 // `setFrame(n)` i stedet for et teksturoppslag.
 
 import type Phaser from 'phaser';
-import type { AppearanceChoice, EnemyDef, WeaponArt } from '../types';
+import type { EnemyDef, FigurLook, Retning, WeaponArt } from '../types';
 import { HAIR_COLORS, HAIR_STYLES, SKIN_TONES } from '../data/classes';
-import { createPainter, makeRng, numToHex, ramp, type Painter } from './pixels';
+import { createPainter, hexToNum, makeRng, numToHex, ramp, type Painter } from './pixels';
 
 export const TILE = 16;
 
@@ -27,7 +27,12 @@ const FIG_H = 22;
  */
 export const FIG_ORIGIN_Y = (0.85 * FIG_H + 1) / CELL_H;
 
-export type Dir = 'ned' | 'venstre' | 'hoyre' | 'opp';
+/**
+ * Retningen figuren ser. Alias, ikke en egen union: `Retning` i `types.ts` er
+ * den samme opplysningen, og den krysser nettet. To unioner som beskriver det
+ * samme driver fra hverandre.
+ */
+export type Dir = Retning;
 export type Positur = 'idle' | 'gang' | 'slag' | 'rull' | 'gard';
 
 /**
@@ -52,13 +57,11 @@ export function heltFrame(dir: Dir, positur: Positur, fase: number): number {
     return RAD[dir] * KOLONNER + START[positur] + (((fase % n) + n) % n);
 }
 
-export interface HeroLook {
-    appearance: AppearanceChoice;
-    tunic: string;
-    trim: string;
-    /** 0 = ingen rustning, 1-3 = stadig tyngre. Styrer plater og hjelm. */
-    armorTier: number;
-}
+/**
+ * Alias av `FigurLook` i `types.ts`. Smia er ikke stedet formen på en person
+ * bestemmes - den bare tegner det den får.
+ */
+export type HeroLook = FigurLook;
 
 /**
  * Én kroppsstilling. Alle tallene er piksler, og alle er små - på 22 piksler
@@ -928,6 +931,85 @@ export function glyfIndex(tegn: string): number {
 }
 
 export const GLYF = { w: GLYF_W, h: GLYF_H };
+
+/** Et ord tegnet med pikselfonten, som kan flyttes og ryddes igjen. */
+export interface PikselTekst {
+    /** Bredden i piksler, så den som kaller kan sentrere noe annet over den. */
+    bredde: number;
+    /** Flytt hele ordet. Midtstilt om `x`, med bunnlinja i `y`. */
+    sett: (x: number, y: number) => void;
+    settAlpha: (a: number) => void;
+    settDybde: (d: number) => void;
+    fjern: () => void;
+}
+
+/**
+ * Skriver et ord med pikselfonten, midtstilt om `x`.
+ *
+ * Grunnen til at dette ikke er `scene.add.text` er den samme som i
+ * `Effekter.flytTekst`: en vektorfont som kameraet skalerer tre ganger er det
+ * mest uskarpe elementet i en ellers skarp scene. Navnet over hodet på en
+ * medelev står midt i bildet - det er det siste stedet som tåler å bli grøtete.
+ *
+ * Hvert tegn får en mørk skygge bak seg. Lys tekst rett på gress er nesten
+ * uleselig på en Chromebook, og én piksel koster ingenting.
+ */
+export function skrivPiksel(
+    scene: Phaser.Scene,
+    tekst: string,
+    farge: string,
+    dybde: number
+): PikselTekst {
+    const tint = hexToNum(farge);
+    const bredde = tekst.length * GLYF_W;
+    const skygger: Phaser.GameObjects.Image[] = [];
+    const tegn: Phaser.GameObjects.Image[] = [];
+
+    for (let i = 0; i < tekst.length; i++) {
+        const ramme = glyfIndex(tekst[i]);
+        skygger.push(
+            scene.add
+                .image(0, 0, 'font-tall')
+                .setFrame(ramme)
+                .setOrigin(0, 0.5)
+                .setTint(0x0d1014)
+                .setAlpha(0.75)
+                .setDepth(dybde - 1)
+        );
+        tegn.push(
+            scene.add
+                .image(0, 0, 'font-tall')
+                .setFrame(ramme)
+                .setOrigin(0, 0.5)
+                .setTint(tint)
+                .setDepth(dybde)
+        );
+    }
+
+    const alle = [...skygger, ...tegn];
+    return {
+        bredde,
+        sett: (x, y) => {
+            const venstre = Math.round(x - bredde / 2);
+            for (let i = 0; i < tegn.length; i++) {
+                const tx = venstre + i * GLYF_W;
+                skygger[i].setPosition(tx + 1, y + 1);
+                tegn[i].setPosition(tx, y);
+            }
+        },
+        settAlpha: (a) => {
+            for (const b of tegn) b.setAlpha(a);
+            for (const b of skygger) b.setAlpha(a * 0.75);
+        },
+        settDybde: (d) => {
+            for (const b of skygger) b.setDepth(d - 1);
+            for (const b of tegn) b.setDepth(d);
+        },
+        fjern: () => {
+            for (const b of alle) b.destroy();
+        },
+    };
+}
 
 // ─── Gjenstander på bakken ──────────────────────────────────────────────────
 

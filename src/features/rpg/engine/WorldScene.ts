@@ -17,6 +17,7 @@ import { fraSpill, tilSpill } from './bridge';
 import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { Portaler } from './portal';
+import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
 import {
     TILE,
@@ -29,6 +30,7 @@ import {
 import { forgeProps, forgeTiles } from './tileforge';
 import { Effekter } from './systems/effekter';
 import { Fiender } from './systems/fiender';
+import { Gjester } from './systems/gjester';
 import { Interaksjon } from './systems/interaksjon';
 import { Loot } from './systems/loot';
 import { Prosjektiler } from './systems/prosjektiler';
@@ -61,6 +63,18 @@ export class WorldScene extends Phaser.Scene {
     private porter!: Portaler;
     /** Sølv og gjenstander som ligger på bakken. */
     private lootSystem!: Loot;
+    /**
+     * De andre elevene i hallen, og benkene de kan sette seg på.
+     *
+     * `null` overalt utenom hubben. Det er ikke en optimalisering - det er
+     * regelen i blueprintens §4.1: hubben er sammen, epokene er alene. Står
+     * feltet som null i en epoke, kan ingen kode der komme til å tegne en
+     * medelev inn i et øyeblikk som skal være stille.
+     */
+    private gjester: Gjester | null = null;
+    private samvaer: Samvaer | null = null;
+    /** Egen stilling meldes ti ganger i sekundet, ikke seksti. */
+    private stillingTimer = 0;
     /** Partikler, flytende tall og glimt. Kjenner ingen spillregler. */
     private efx = new Effekter(this);
     /** Bakken, kollisjonen, objektene og atmosfæren. Kjenner ingen spillregler. */
@@ -178,6 +192,17 @@ export class WorldScene extends Phaser.Scene {
             spiller: () => this.helt.sprite,
             reis: (stedId) => this.bestillReise(stedId),
         });
+        // Samværet finnes bare der stedet sier at det deles. Benkene uten
+        // flerspiller ville vært møbler uten grunn, og flerspiller uten benker
+        // et rom uten noe å gjøre i - de to hører sammen.
+        if (sted.flerspiller) {
+            this.gjester = new Gjester(this);
+            this.samvaer = new Samvaer(this, sted.sitteplasser ?? [], {
+                spiller: () => this.helt.sprite,
+                settSitter: (plass) => this.helt.settSitter(plass),
+                akse: () => this.helt.akse(),
+            });
+        }
         this.verden.byggTerreng();
         this.verden.byggKollisjon();
         this.verden.byggProps();
@@ -306,7 +331,13 @@ export class WorldScene extends Phaser.Scene {
                 }
             }),
             tilSpill.on('besvergelse', ({ spellId }) => this.helt.kastBesvergelse(spellId)),
-            tilSpill.on('gjenoppliv', () => this.helt.gjenoppliv())
+            tilSpill.on('gjenoppliv', () => this.helt.gjenoppliv()),
+            // Bildet av rommet kommer hit ti ganger i sekundet per elev der
+            // ute. Det er derfor det går over broen og ikke gjennom
+            // React-tilstand: en gjentegning per melding ville tegnet hele
+            // grensesnittet hundre ganger i sekundet.
+            tilSpill.on('gjester', ({ liste }) => this.gjester?.motta(liste)),
+            tilSpill.on('folelse', ({ emoji }) => this.samvaer?.visFolelse(emoji))
         );
     }
 
@@ -317,6 +348,13 @@ export class WorldScene extends Phaser.Scene {
         // Kamerastøtet kan stå midt i en tween, og blod, biter og lik er egne
         // bilder som må ryddes.
         this.fx.vask();
+        // Gjestene ligger i et kart utenfor visningslista. Phaser river
+        // sprite-ene med scenen, men ikke kartet - og en reise ut av hallen
+        // ville ellers latt figurene stå igjen som nøkler til bilder som er
+        // borte.
+        this.gjester?.vask();
+        this.gjester = null;
+        this.samvaer = null;
     }
 
     // ── Oppdatering ─────────────────────────────────────────────────────────
@@ -327,6 +365,13 @@ export class WorldScene extends Phaser.Scene {
         // eleven åpnet en dialog i drapsøyeblikket - og da ville hele spillet gå
         // i sirup uten at noen skjønte hvorfor.
         this.fx.tikk(delta);
+
+        // De andre i hallen tikker før alle tidlige returer, og i vanlig tid.
+        // Hallen skal leve videre mens eleven leser et skilt: en verden som
+        // fryser fordi hun åpnet en tekst, leser som at nettet falt ut. Det er
+        // trygt fordi det ikke finnes noe der ute som kan skade henne - de
+        // andre er bilder, ikke kropper.
+        this.gjester?.oppdater(delta);
 
         // Ekte hit-stop: hele verden fryser, ikke bare AI-en. Fysikk og tweens
         // må pauses eksplisitt, ellers glir alt videre og det føles som lagg.
@@ -363,7 +408,30 @@ export class WorldScene extends Phaser.Scene {
         // trykk føre henne gjennom, ikke åpne skiltet ved siden av.
         const portEier = this.porter.sjekk(delta, brukTrykk, !farkostEier);
         const opptatt = farkostEier || portEier;
-        this.samhandling.sjekk(opptatt ? false : brukTrykk, !opptatt);
+
+        // Rekkefølgen mellom benken og folk er ikke vilkårlig, og den ble
+        // rettet etter en måling: benken sto først, og da stjal den E-tasten fra
+        // varden som står tre ruter unna - eleven kunne ikke legge steinen sin.
+        //
+        // Regelen er nå: **innholdet vinner over møbelet.** Står hun ved en
+        // person eller en stein med noe å lese i, gjelder E den. Ett unntak,
+        // og det er nødvendig: sitter hun allerede, eier benken trykket, ellers
+        // ville E åpnet skiltet ved siden av og latt henne bli sittende.
+        const sitter = this.samvaer?.sitter ?? false;
+        const benkEier = sitter
+            ? (this.samvaer?.sjekk(delta, brukTrykk, !opptatt) ?? false)
+            : false;
+        const folkEier = this.samhandling.sjekk(
+            opptatt || benkEier ? false : brukTrykk,
+            !opptatt && !benkEier
+        );
+        if (!sitter) {
+            this.samvaer?.sjekk(
+                delta,
+                opptatt || folkEier ? false : brukTrykk,
+                !opptatt && !folkEier
+            );
+        }
         // Figuren settes på dekk *etter* at båten har flyttet seg. Snus
         // rekkefølgen, ligger hun ett bilde etter, og da sklir hun rundt oppå.
         const dekk = this.farkoster.dekksplass();
@@ -374,11 +442,27 @@ export class WorldScene extends Phaser.Scene {
         this.oppdaterDybde();
         this.fiendeSystem.oppdaterSpawn(dt);
         this.verden.oppdaterAtmosfare(dt);
+        this.meldStilling(delta);
         this.oppdaterKompass(dt);
         // HUD-en og hjerteslaget skal gå i vanlig tid, ikke i saktefilm.
         this.oppdaterKampUi(delta);
         // Skjermknappene leses én gang per bilde og tømmes så.
         this.helt.tomTouchTrykk();
+    }
+
+    /**
+     * Melder hvor eleven står, til de andre i hallen.
+     *
+     * Ti ganger i sekundet, ikke seksti. Scenen vet ikke at det finnes et nett -
+     * den sier bare hvor hun står, og React tar det videre hvis noen lytter.
+     * Står hun ikke på et sted som deles, sendes ingenting i det hele tatt.
+     */
+    private meldStilling(delta: number) {
+        if (!this.gjester) return;
+        this.stillingTimer -= delta;
+        if (this.stillingTimer > 0) return;
+        this.stillingTimer = 100;
+        fraSpill.emit('minStilling', this.helt.stilling(this.samvaer?.sitter ?? false));
     }
 
     /**
@@ -555,6 +639,25 @@ export class WorldScene extends Phaser.Scene {
     /** Portalene på stedet. Prøveskriptene leser dem herfra. */
     portalOversikt() {
         return this.porter.oversikt();
+    }
+
+    /**
+     * De andre i hallen, slik de faktisk er tegnet. Prøveskriptene leser dem
+     * herfra - det er den eneste måten å måle at etterslepet og glidningen
+     * virker uten å ha to nettlesere i rommet samtidig.
+     */
+    gjesteOversikt() {
+        return this.gjester?.oversikt() ?? [];
+    }
+
+    /** Sitter eleven på en benk? Prøveskriptene leser den herfra. */
+    sitterNaa() {
+        return this.samvaer?.sitter ?? false;
+    }
+
+    /** Følelsen eleven viser nå, eller null. Prøveskriptene leser den herfra. */
+    folelseNaa() {
+        return this.samvaer?.folelse ?? null;
     }
 
     /**

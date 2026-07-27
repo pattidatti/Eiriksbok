@@ -8,7 +8,17 @@ import { makeRng } from './pixels';
 import type { TileKey } from './tileforge';
 
 export interface PropPlacement {
-    kind: 'tre' | 'busk' | 'stein' | 'langhus' | 'bu' | 'naust' | 'gjerde' | 'langskip' | 'kai';
+    kind:
+        | 'tre'
+        | 'busk'
+        | 'stein'
+        | 'langhus'
+        | 'bu'
+        | 'naust'
+        | 'gjerde'
+        | 'langskip'
+        | 'kai'
+        | 'benk';
     /** Piksler, ikke ruter. */
     x: number;
     y: number;

@@ -10,6 +10,7 @@
 // ned i et kloster i 793 eller en skyttergrav i 1916 (blueprint R2 og R4).
 
 import Phaser from 'phaser';
+import { figurLook, rustningTier } from '../../data/classes';
 import { ITEM_BY_ID } from '../../data/items';
 import { SPELL_BY_ID } from '../../data/spells';
 import { KAMP, MANOVER_NAVN, vaapenKamp } from '../../data/vaapen';
@@ -30,7 +31,7 @@ import {
     type Positur,
 } from '../spriteforge';
 import type { WorldMap } from '../worldgen';
-import type { Angrepsform, Regelsett, VaapenDef, VaapenKamp } from '../../types';
+import type { Angrepsform, Regelsett, Stilling, VaapenDef, VaapenKamp } from '../../types';
 import type { Effekter } from './effekter';
 import type { Fiende, Sarslag, Sprite } from './entiteter';
 import type { Prosjektiler } from './prosjektiler';
@@ -256,6 +257,47 @@ export class Spiller {
         }
     }
 
+    /**
+     * Hvor hun står, slik de andre i hallen skal se henne.
+     *
+     * Bare posisjon, retning og om hun går. Ikke liv, ikke pust, ikke gard -
+     * det finnes ingen kamp der de andre er, og en stilling som bar med seg
+     * kamptilstand ville vært en invitasjon til å bygge det.
+     */
+    stilling(sitter: boolean): Stilling {
+        return {
+            x: this.sprite.x,
+            y: this.sprite.y,
+            dir: this.retning,
+            positur: this.positur === 'gang' ? 'gang' : 'idle',
+            sitter,
+        };
+    }
+
+    /**
+     * Sett henne ned på en benk, eller reis henne opp igjen.
+     *
+     * Gjenbruker `settOmBord`: å sitte og å sitte i en båt er den samme
+     * tilstanden sett fra figuren - kroppen av, ingen gard, ingen halvferdig
+     * kombo, og en posisjon noe annet bestemmer. Forskjellen er bare at benken
+     * ikke beveger seg.
+     */
+    settSitter(plass: { x: number; y: number; dir: Dir } | null): void {
+        if (plass) {
+            this.settOmBord(true);
+            this.retning = plass.dir;
+            this.sprite.setPosition(plass.x, plass.y);
+            this.sprite.setDepth(plass.y + 1);
+            // Rammen må tvinges fram. Retningen er endret uten at
+            // animasjonsløkka har vært innom, og uten dette blir hun sittende
+            // og se feil vei til hun reiser seg.
+            this.forrigeFrame = -1;
+        } else {
+            this.settOmBord(false);
+            this.sprite.setDepth(this.sprite.y);
+        }
+    }
+
     /** Alt står stille mens eleven leser. */
     stopp(): void {
         if (this.sprite.body?.enable) this.sprite.setVelocity(0, 0);
@@ -316,40 +358,18 @@ export class Spiller {
         this.scene.physics.world.setBounds(0, 0, this.kart.bredde * TILE, this.kart.hoyde * TILE);
     }
 
+    /**
+     * Slik eleven ser ut nå. Selve påkledningen ligger i `figurLook()`, delt
+     * med gjestene i hallen - de andre elevene skal tegnes av nøyaktig samme
+     * regler som hun selv.
+     */
     private heltLook() {
         const store = useRpgStore.getState();
-        const klasseFarge = store.character
-            ? {
-                  tunic:
-                      store.character.classId === 'skald'
-                          ? '#8b2f4a'
-                          : store.character.classId === 'runemester'
-                          ? '#2f4b8b'
-                          : '#3c6b4a',
-                  trim:
-                      store.character.classId === 'skald'
-                          ? '#e8c96a'
-                          : store.character.classId === 'runemester'
-                          ? '#7fd4ff'
-                          : '#cfd8c0',
-              }
-            : { tunic: '#8b2f4a', trim: '#e8c96a' };
-
-        const rustning = store.utstyr.rustning;
-        const tier = !rustning
-            ? 0
-            : rustning === 'vadmelskjortel'
-            ? 1
-            : rustning === 'lerbrynje'
-            ? 2
-            : 3;
-
-        return {
-            appearance: store.character?.appearance ?? { skin: 0, hair: 0, hairColor: 0, face: 0 },
-            tunic: klasseFarge.tunic,
-            trim: klasseFarge.trim,
-            armorTier: tier,
-        };
+        return figurLook(
+            store.character?.classId,
+            store.character?.appearance,
+            rustningTier(store.utstyr.rustning)
+        );
     }
 
     /**

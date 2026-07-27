@@ -42,6 +42,46 @@
             ".read": true,
             ".write": true
         },
+        "rpg-hub": {
+            "rom": {
+                "$rom": {
+                    ".read": true,
+                    "$klient": {
+                        ".write": true,
+                        "navn": {
+                            ".validate": "newData.isString() && newData.val().length >= 2 && newData.val().length <= 16 && newData.val().matches(/^[a-zA-ZæøåÆØÅéèêüöäáàâç][a-zA-ZæøåÆØÅéèêüöäáàâç -]*$/)"
+                        },
+                        "x": {
+                            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 8192"
+                        },
+                        "y": {
+                            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 8192"
+                        },
+                        "dir": {
+                            ".validate": "newData.isString() && newData.val().matches(/^(ned|opp|venstre|hoyre)$/)"
+                        },
+                        "positur": {
+                            ".validate": "newData.isString() && newData.val().matches(/^(idle|gang)$/)"
+                        },
+                        "sitter": { ".validate": "newData.isBoolean()" },
+                        "emoji": { ".validate": "newData.isString() && newData.val().length <= 8" },
+                        "classId": {
+                            ".validate": "newData.isString() && newData.val().matches(/^(skald|runemester|vokter)$/)"
+                        },
+                        "rustning": {
+                            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 3"
+                        },
+                        "sist": { ".validate": "newData.isNumber()" },
+                        "appearance": {
+                            "$felt": {
+                                ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 32"
+                            }
+                        },
+                        "$annet": { ".validate": false }
+                    }
+                }
+            }
+        },
         "progress": {
             "$code": {
                 ".read": true,

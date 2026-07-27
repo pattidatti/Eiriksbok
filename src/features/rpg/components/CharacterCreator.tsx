@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { CLASSES, FACES, HAIR_COLORS, HAIR_STYLES, SKIN_TONES } from '../data/classes';
 import { renderHeroPortrait } from '../engine/spriteforge';
+import { NAVN_MAKS, vurderNavn } from '../net/navnevakt';
 import type { CharacterDraft, ClassId } from '../types';
 
 interface Props {
@@ -33,6 +34,12 @@ export function CharacterCreator({ onFerdig }: Props) {
 
     const klasse = CLASSES.find((c) => c.id === classId)!;
 
+    // Navnet vises over hodet hennes for alle andre i hallen, så det prøves her
+    // og ikke først når hun kommer inn. Se `net/navnevakt.ts` for hvorfor
+    // tegnsettet er så smalt som det er.
+    const dom = vurderNavn(navn);
+    const kanStarte = dom.ok;
+
     const portrett = useMemo(
         () =>
             renderHeroPortrait({
@@ -43,8 +50,6 @@ export function CharacterCreator({ onFerdig }: Props) {
             }),
         [skin, hair, hairColor, face, klasse]
     );
-
-    const kanStarte = navn.trim().length >= 2;
 
     return (
         <div className="absolute inset-0 z-30 overflow-y-auto bg-slate-950/95 px-4 py-8 text-slate-100">
@@ -98,10 +103,28 @@ export function CharacterCreator({ onFerdig }: Props) {
                             <input
                                 id="rpg-navn"
                                 value={navn}
-                                onChange={(e) => setNavn(e.target.value.slice(0, 18))}
+                                onChange={(e) => setNavn(e.target.value.slice(0, NAVN_MAKS))}
                                 placeholder="Skriv navnet ditt"
-                                className="w-full rounded-xl border border-white/15 bg-slate-900/70 px-4 py-3 text-base outline-none transition focus:border-amber-300/60"
+                                aria-invalid={navn.length > 0 && !dom.ok}
+                                aria-describedby="rpg-navn-hjelp"
+                                className={`w-full rounded-xl border bg-slate-900/70 px-4 py-3 text-base outline-none transition ${
+                                    navn.length > 0 && !dom.ok
+                                        ? 'border-rose-400/60'
+                                        : 'border-white/15 focus:border-amber-300/60'
+                                }`}
                             />
+                            <p
+                                id="rpg-navn-hjelp"
+                                className={`mt-1.5 text-xs ${
+                                    navn.length > 0 && dom.grunn
+                                        ? 'text-rose-300'
+                                        : 'text-slate-400'
+                                }`}
+                            >
+                                {navn.length > 0 && dom.grunn
+                                    ? dom.grunn
+                                    : 'Andre elever ser navnet ditt i hallen. Bokstaver, mellomrom og bindestrek.'}
+                            </p>
                         </section>
 
                         {/* Klasse */}
@@ -169,18 +192,29 @@ export function CharacterCreator({ onFerdig }: Props) {
                         </section>
 
                         <button
+                            // Fast id: teksten på knappen bytter med
+                            // navnevakten, og prøveskriptene må kunne peke på
+                            // den uansett hva den heter akkurat nå.
+                            id="rpg-start"
                             type="button"
                             disabled={!kanStarte}
                             onClick={() =>
                                 onFerdig({
-                                    name: navn.trim(),
+                                    // Det ryddede navnet, ikke det hun skrev:
+                                    // doble mellomrom skal ikke følge henne inn
+                                    // i hallen.
+                                    name: dom.navn,
                                     classId,
                                     appearance: { skin, hair, hairColor, face },
                                 })
                             }
                             className="w-full rounded-xl bg-amber-400 px-6 py-4 font-display text-lg font-bold text-slate-900 transition enabled:hover:bg-amber-300 disabled:cursor-not-allowed disabled:opacity-40"
                         >
-                            {kanStarte ? 'Gå inn i hallen' : 'Skriv et navn først'}
+                            {kanStarte
+                                ? 'Gå inn i hallen'
+                                : navn.length > 0
+                                ? 'Velg et annet navn'
+                                : 'Skriv et navn først'}
                         </button>
                     </div>
                 </div>
