@@ -17,6 +17,7 @@ import { Mellomspill } from './components/Mellomspill';
 import { Minnetre } from './components/Minnetre';
 import { Opptakt } from './components/Opptakt';
 import { Forradet } from './components/Forradet';
+import { Tingsak } from './components/Tingsak';
 import { KAPITTEL_BY_NR } from './data/kapitler';
 import { MELLOMSPILL_BY_ID } from './data/mellomspill';
 import { Navigasjonen } from './components/Navigasjonen';
@@ -60,7 +61,9 @@ type Overlegg =
     /** Bua: forrådet og årets valg. */
     | { type: 'forrad'; apne: string[]; kanGaaVidere: boolean }
     /** Ett skjermbilde som eier flaten: båten som snudde, vinteren som gjorde opp. */
-    | { type: 'beskjed'; tittel: string; tekst: string; knapp: string };
+    | { type: 'beskjed'; tittel: string; tekst: string; knapp: string }
+    /** Tinget: saken, trinn for trinn. */
+    | { type: 'tingsak'; sakId: string };
 
 export default function RpgPage() {
     const navigate = useNavigate();
@@ -116,6 +119,14 @@ export default function RpgPage() {
     const [replikk, setReplikk] = useState<{ hvem: string; tekst: string } | null>(null);
     const replikkTimer = useRef<number | null>(null);
     const [touch] = useState(harBeroring);
+    /**
+     * Saken tinget står med nå.
+     *
+     * Leses ut av storen og ikke sendt med over broen: skjermen skal se saken
+     * *mens* den endrer seg - et vitne som legges til, en hjemmel som anføres -
+     * og et øyeblikksbilde sendt ved åpning ville stått og vist gårsdagens sak.
+     */
+    const sakUnderBehandling = useRpgStore((s) => s.saker.find((x) => x.dom === 'ubehandlet'));
 
     // ── Hallen, delt med andre ──────────────────────────────────────────────
     //
@@ -160,6 +171,7 @@ export default function RpgPage() {
         overlegg.type === 'mellomspill' ||
         overlegg.type === 'puzzle' ||
         overlegg.type === 'forrad' ||
+        overlegg.type === 'tingsak' ||
         overlegg.type === 'beskjed';
     useEffect(() => {
         useStilleSkjerm.getState().settStille(eierSkjermen);
@@ -265,6 +277,7 @@ export default function RpgPage() {
                 setOverlegg({ type: 'forrad', apne, kanGaaVidere })
             ),
             fraSpill.on('beskjed', (k) => setOverlegg({ type: 'beskjed', ...k })),
+            fraSpill.on('tingsak', ({ sakId }) => setOverlegg({ type: 'tingsak', sakId })),
             // Replikken står i noen sekunder og går av seg selv. Den skal ikke
             // kreve et tastetrykk: verden går videre mens den står, og en
             // beskjed som må lukkes midt i en kamp er en beskjed eleven lukker
@@ -307,6 +320,11 @@ export default function RpgPage() {
                 if (overlegg.type === 'forrad') {
                     setOverlegg({ type: 'ingen' });
                     tilSpill.emit('forradLukk', {});
+                    return;
+                }
+                if (overlegg.type === 'tingsak') {
+                    setOverlegg({ type: 'ingen' });
+                    tilSpill.emit('tingsakSvar', { art: 'lukk' });
                     return;
                 }
                 // Puzzlet må lukkes gjennom sin egen vei ut. `lukk()` sender
@@ -576,6 +594,21 @@ export default function RpgPage() {
                     onLukk={() => {
                         setOverlegg({ type: 'ingen' });
                         tilSpill.emit('forradLukk', {});
+                    }}
+                />
+            )}
+
+            {overlegg.type === 'tingsak' && sakUnderBehandling && (
+                <Tingsak
+                    sak={sakUnderBehandling}
+                    onLys={() => tilSpill.emit('tingsakSvar', { art: 'lys' })}
+                    onVitner={(vitner) => tilSpill.emit('tingsakSvar', { art: 'vitner', vitner })}
+                    onHjemmel={(id) => tilSpill.emit('tingsakSvar', { art: 'hjemmel', id })}
+                    // Dommen lukker seg selv: scenen svarer med beskjeden.
+                    onDom={() => tilSpill.emit('tingsakSvar', { art: 'dom' })}
+                    onLukk={() => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('tingsakSvar', { art: 'lukk' });
                     }}
                 />
             )}

@@ -13,7 +13,9 @@ import { stedEllerStart, stedIEpoke } from '../data/steder';
 import { kapittelIEpoke, maksVerdier, useRpgStore } from '../store/useRpgStore';
 import type { EnemyDef, KlippDef, QuestDef, Sted } from '../types';
 import { sfx, startMusikk, stopMusikk } from './audio';
-import { fraSpill, tilSpill } from './bridge';
+import { fraSpill, tilSpill, type UiEvents } from './bridge';
+import { dommen, innenforFristen } from './ting';
+import { BOT_I_KORN } from '../data/ting';
 import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
@@ -509,7 +511,8 @@ export class WorldScene extends Phaser.Scene {
                 this.apneBua();
             }),
             tilSpill.on('forradLukk', () => this.settLaast(false)),
-            tilSpill.on('beskjedLest', () => this.settLaast(false))
+            tilSpill.on('beskjedLest', () => this.settLaast(false)),
+            tilSpill.on('tingsakSvar', (svar) => this.forSaken(svar))
         );
     }
 
@@ -984,6 +987,94 @@ export class WorldScene extends Phaser.Scene {
         this.settLaast(false);
         if (handlingId === 'bua-forradet') this.apneBua();
         if (handlingId === 'gaa-i-fjaera') this.angrepet?.mot();
+        if (handlingId === 'til-tinget') this.apneTinget();
+    }
+
+    // ── Tinget ──────────────────────────────────────────────────────────────
+
+    /**
+     * Tinget settes. Verden står låst bak vollen.
+     *
+     * Bare når det finnes en sak som ikke er avgjort. Er den ført, er den ført -
+     * en dom som kan spilles om igjen er ingen dom.
+     */
+    private apneTinget(): void {
+        const sak = useRpgStore.getState().saker.find((s) => s.dom === 'ubehandlet');
+        if (!sak) return;
+        this.settLaast(true);
+        fraSpill.emit('tingsak', { sakId: sak.id });
+    }
+
+    /**
+     * Ett skritt i saken.
+     *
+     * Scenen er den ene som skriver i den. Skjermen på vollen viser trinnene og
+     * melder hva Åsa gjorde - den skal ikke kunne komme til å dømme.
+     */
+    private forSaken(svar: UiEvents['tingsakSvar']): void {
+        const store = useRpgStore.getState();
+        const sak = store.saker.find((s) => s.dom === 'ubehandlet');
+        if (!sak) return;
+        switch (svar.art) {
+            case 'lys':
+                // Fristen måles her og ikke i skjermen: en frist en komponent
+                // kan tolke, er en frist to steder kan være uenige om.
+                if (!innenforFristen(sak, store.klokke.dag)) return;
+                store.endreSak(sak.id, { lyst: true });
+                store.varsle('Du lyste drapet. Nå er det en sak, ikke et mord.', 'info');
+                return;
+            case 'vitner':
+                store.endreSak(sak.id, { vitner: svar.vitner });
+                return;
+            case 'hjemmel':
+                store.endreSak(sak.id, { anfort: svar.id });
+                return;
+            case 'lukk':
+                this.settLaast(false);
+                return;
+            case 'dom':
+                this.avsiDom(sak.id);
+        }
+    }
+
+    /**
+     * Dommen faller, og gården lever med den.
+     *
+     * Fredløshet er ikke game over (§16.2 og §7.1). Det er en tilstand, og den
+     * lærer hva et samfunn uten stat gjør med den det støter ut.
+     */
+    private avsiDom(sakId: string): void {
+        const store = useRpgStore.getState();
+        const sak = store.saker.find((s) => s.id === sakId);
+        if (!sak) return;
+        const dom = dommen(sak, store.aere);
+        store.endreSak(sakId, { dom: dom.dom });
+        store.larBegrep('mannebot', 'forstatt');
+        store.fullforPuzzle(`sak-${sakId}`, 'Du førte en sak på tinget');
+
+        if (dom.dom === 'frikjent') {
+            store.giAere(12, 'Tinget ga deg medhold. Alle hørte hjemmelen din.');
+            store.endreAett('hovda', { uoppgjort: -1 });
+        } else if (dom.dom === 'bot') {
+            store.giAere(6, 'Du gjorde opp for deg. Det er slik en strid tar slutt.');
+            store.endreForrad({ korn: -BOT_I_KORN });
+            store.endreAett('hovda', { uoppgjort: -1 });
+        } else {
+            store.giAere(-25, 'Du tidde. Tinget dømte deg fredløs.');
+            useRpgStore.setState({ fredlos: true });
+        }
+
+        this.settLaast(false);
+        fraSpill.emit('beskjed', {
+            tittel:
+                dom.dom === 'frikjent'
+                    ? 'Du står lovlig'
+                    : dom.dom === 'bot'
+                      ? 'Boten er satt'
+                      : 'Fredløs',
+            tekst: [dom.kjennelse, dom.folge].filter(Boolean).join('\n\n'),
+            knapp: 'Gå hjem',
+        });
     }
 
     /**

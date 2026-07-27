@@ -91,6 +91,15 @@ export class Gaarden {
         if (aarstid === 'host' && s.steg.includes(K2.hosten) && !s.steg.includes(K2.angrepet)) {
             return;
         }
+        // Og står det en uoppgjort sak, er det den som gjelder. Ingenting annet
+        // på gården er viktigere enn et drap som ikke er lyst.
+        if (s.saker.some((sak) => sak.dom === 'ubehandlet')) {
+            fraSpill.emit('oppgave', {
+                tittel: 'Saken',
+                mal: 'Gå fram på tingvollen. Det som ikke blir lyst, er mord.',
+            });
+            return;
+        }
         const mal =
             aarstid === 'vaar'
                 ? s.steg.includes(K2.vaaronn)
@@ -130,7 +139,11 @@ export class Gaarden {
         // og la vinteren komme mens fem menn står i fjæra, er ikke et valg -
         // det er en vei rundt kapittelets eneste kamp.
         const angrepStaar = aarstid === 'host' && !s.steg.includes(K2.angrepet);
-        return { apne, kanGaaVidere: aarstid !== 'vinter' && !angrepStaar };
+        // Det samme gjelder en sak som ikke er ført. Å la vinteren komme over
+        // en uoppgjort drapssak er ikke å utsette den - da er drapet ulyst for
+        // godt, og eleven har tapt saken uten å ha sett tinget.
+        const sakStaar = s.saker.some((sak) => sak.dom === 'ubehandlet');
+        return { apne, kanGaaVidere: aarstid !== 'vinter' && !angrepStaar && !sakStaar };
     }
 
     /** Åsa bestemte seg i bua. */

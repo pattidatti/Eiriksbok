@@ -78,6 +78,8 @@ export interface SceneEvents {
      * selv, og dette skal leses.
      */
     beskjed: { tittel: string; tekst: string; knapp: string };
+    /** Tinget er satt, og hun står med en sak. */
+    tingsak: { sakId: string };
     /**
      * Åpne mellomspillet - bordet med kildene.
      *
@@ -179,6 +181,19 @@ export interface UiEvents {
     forradLukk: Record<string, never>;
     /** Beskjeden er lest. */
     beskjedLest: Record<string, never>;
+    /**
+     * Ett skritt i en tingsak.
+     *
+     * Ett hendelsesnavn og ikke fem: de fire trinnene er *samme* sak som beveger
+     * seg, og fire navn hadde invitert til fire steder som fører den hver for
+     * seg. Scenen er den ene som skriver i saken.
+     */
+    tingsakSvar:
+        | { art: 'lys' }
+        | { art: 'vitner'; vitner: string[] }
+        | { art: 'hjemmel'; id: string }
+        | { art: 'dom' }
+        | { art: 'lukk' };
 }
 
 class Emitter<Events> {

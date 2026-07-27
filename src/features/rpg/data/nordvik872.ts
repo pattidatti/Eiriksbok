@@ -345,10 +345,33 @@ export const NORDVIK_872_LANDMARKS: LandmarkDef[] = [
         stikkord: ['fjære', 'landgang'],
         handling: { id: 'gaa-i-fjaera', knapp: 'Gå ned og møt dem' },
     },
+    /**
+     * Tingvollen.
+     *
+     * Egen utgave i 872, ikke den fra 793 - for her henger det en knapp på
+     * bålet, og en tingsak i 793 finnes ikke. Det er også her fristen står:
+     * blueprintens §7.2 sier at spillet ikke skal varsle om det ene døgnet, men
+     * at det skal stå på en stein eleven kan ha lest.
+     */
+    {
+        id: 'tingvollen-872',
+        kind: 'baal',
+        tile: [38, 25],
+        title: 'Tingbålet',
+        text: 'Bålet brenner så lenge tinget er satt. Ingen våpen innenfor steinringen.\n\nI steinen ved siden av står det skåret, med runer som er eldre enn noen her:\n\n«Drap skal lysast same døgn. Det som ikkje vert lyst, er mord.»',
+        stikkord: ['ting', 'lysing', 'mord'],
+        handling: {
+            id: 'til-tinget',
+            knapp: 'Gå fram på vollen',
+            // Bare når det finnes en sak. En knapp som ikke gjør noe, lærer
+            // eleven at knapper ikke gjør noe.
+            krever: ['k2-sak-reist'],
+        },
+    },
     // Steinene fra 793 er de samme steinene. Objektene gjenbrukes med vilje:
     // det eleven leste som Torstein, kan hun lese igjen som Åsa - 79 år eldre,
     // og med mose på.
     ...NORDVIK_LANDMARKS.filter((l) =>
-        ['runestein-navnet', 'runestein-hallen', 'baal-tinget'].includes(l.id)
+        ['runestein-navnet', 'runestein-hallen'].includes(l.id)
     ),
 ];

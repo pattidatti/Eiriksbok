@@ -93,6 +93,14 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Jeg har aldri holdt et våpen. Det er ikke lov.',
     },
     {
+        id: 'mannebot',
+        navn: 'Mannebot',
+        forklaring:
+            'Et drap ble ikke straffet med fengsel - det fantes ikke. Det ble gjort opp i sølv, og prisen sto etter hvem den drepte var: en hauld kostet mer enn en fri karl, og en trell var eierens tap. Men boten forutsatte at drapet var lyst. Det som ikke ble lyst, var mord, og mord kunne ingen kjøpe seg fri fra.',
+        forstasVed: 'Før en drapssak på tinget, fra lysing til dom.',
+        replikk: 'Femti mark for en fri mann. Du krever for mye, Einar.',
+    },
+    {
         id: 'aetten',
         navn: 'Ætta',
         forklaring:

@@ -190,6 +190,7 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
     const larBegrep = useRpgStore((s) => s.larBegrep);
     const lest = useRpgStore((s) => s.lest);
     const flagg = useRpgStore((s) => s.flagg);
+    const gjortSteg = useRpgStore((s) => s.steg);
     const settFlagg = useRpgStore((s) => s.settFlagg);
     const giSolv = useRpgStore((s) => s.giSolv);
     const forste = lm ? !lest.includes(lm.id) : false;
@@ -260,7 +261,7 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
                 Døra inn til noe scenen eier - bua med forrådet. Skilt fra
                 `valg` under, som setter et flagg og er over med det.
             */}
-            {lm.handling && (
+            {lm.handling && (lm.handling.krever ?? []).every((k) => gjortSteg.includes(k)) && (
                 <button
                     type="button"
                     onClick={() => {

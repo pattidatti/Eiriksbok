@@ -194,7 +194,13 @@ async function vei(page, n, videreTekst) {
     );
     sjekk('Samtidig kilde er forstått', slutt?.begreper?.['samtidig-kilde'] === 'forstatt');
     sjekk('Kildetaushet er forstått', slutt?.begreper?.['kildetaushet'] === 'forstatt');
-    sjekk('Verden er ikke låst etterpå', (await laast(page)) === false);
+    // Bordet slipper ikke eleven tilbake til 793 - det tar henne videre til
+    // 872. Låsen står derfor, og den tilhører opptakten til kapittel 2
+    // (se scripts/verify-rpg-kapittel2.mjs). Et ubundet «låst = false» her
+    // ville krevd at kampanjen stoppet opp etter kapittel 1.
+    await page.waitForTimeout(4200);
+    sjekk('Kapittel 2 begynner der bordet slutter', (await page.locator('[data-prove="opptakt"]').count()) === 1);
+    sjekk('Verden står låst bak opptakten', (await laast(page)) === true);
     sjekk('Ingen konsollfeil', konsollfeil.length === 0, konsollfeil.slice(0, 2).join(' | '));
 
     await page.close();

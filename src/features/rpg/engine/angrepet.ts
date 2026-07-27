@@ -237,6 +237,9 @@ export class Angrepet {
         const falt = Boolean(this.gaute?.dodd);
         if (falt) {
             store.settFlagg(ANGREP_FLAGG.drepteGaute);
+            // Steget er det som åpner tingvollen. Uten en sak står det ingen
+            // knapp på bålet, og en tom knapp lærer eleven at knapper er pynt.
+            store.fullforSteg('k2-sak-reist');
             store.endreAett('hovda', { velvilje: -40, uoppgjort: 1 });
             store.reisSak({
                 id: 'sak-gaute',
@@ -254,7 +257,18 @@ export class Angrepet {
         }
         startMusikk(this.kroker.musikkRot, 0);
         fraSpill.emit('motstander', null);
-        fraSpill.emit('oppgave', null);
+        // Kortet sier hva som haster, ikke hva hun bør gjøre. Fristen er det
+        // eneste som står der - og den står der bare fordi hun nettopp drepte
+        // en mann med ætt.
+        fraSpill.emit(
+            'oppgave',
+            falt
+                ? {
+                      tittel: 'Ett døgn',
+                      mal: 'Gå til tingvollen mens det er tid. Det som ikke blir lyst, er mord.',
+                  }
+                : null
+        );
         fraSpill.emit('beskjed', {
             tittel: 'Tunet står',
             tekst: [

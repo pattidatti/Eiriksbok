@@ -894,7 +894,12 @@ export interface LandmarkDef {
      * åpner noe scenen eier. Ett felt som gjorde begge deler ville før eller
      * siden fått en `if` i seg om hva slags landemerke det var.
      */
-    handling?: { id: string; knapp: string };
+    handling?: {
+        id: string;
+        knapp: string;
+        /** Kapittelsteg som må være gjort før knappen finnes. */
+        krever?: string[];
+    };
     /**
      * Noe eleven kan gjøre her, ikke bare lese.
      *
