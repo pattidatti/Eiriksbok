@@ -37,6 +37,22 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Vi er ikke vikinger. Vi drar i viking. Det er ikke det samme.',
     },
     {
+        id: 'samtidig-kilde',
+        navn: 'Samtidig kilde',
+        forklaring:
+            'En kilde skrevet i samme tid som det den forteller om. Den står nærmere enn en som kommer hundre år etter - men nær i tid er ikke det samme som å ha vært der, og en samtidig kilde kan ta side like hardt som en sen.',
+        forstasVed: 'Vei Alkuins brev og den angelsaksiske krøniken mot hverandre.',
+        replikk: 'Han skrev det samme året. Han satt bare tusen mil unna da han skrev det.',
+    },
+    {
+        id: 'kildetaushet',
+        navn: 'Kildetaushet',
+        forklaring:
+            'Når ingen skrev noe ned, står det ingenting igjen. Det betyr ikke at ingenting hendte - det betyr at vi ikke kan vite det, og at de som kunne skrive, sitter igjen med ordet.',
+        forstasVed: 'Let etter en norrøn kilde om Lindisfarne, og finn ingen.',
+        replikk: 'Det står ingenting om oss. Det er ikke fordi vi ikke var der.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:

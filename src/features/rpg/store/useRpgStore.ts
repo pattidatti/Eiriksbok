@@ -72,6 +72,8 @@ export interface RpgState {
     begreper: Record<string, Forstaaelse>;
     /** Cutscenene hun har sett. */
     sette: string[];
+    /** Kildene hun har lagt ut på bordet i et mellomspill. */
+    kilder: string[];
     /** Valg som huskes: brente skriptoriet, tok bøkene, og resten. */
     flagg: Record<string, boolean>;
     /** Beskjeder som HUD-en viser som «toast». */
@@ -105,6 +107,10 @@ export interface RpgState {
     larBegrep: (begrepId: string, niva: Forstaaelse) => void;
     /** Et puzzle er løst. Egen kontering fordi puzzlet er arbeidet, ikke begrepet. */
     fullforPuzzle: (puzzleId: string, tittel: string) => void;
+    /** En kilde er lagt ut på bordet. Kumulativ - Mellomspill V leser hele lista. */
+    lesKilde: (kildeId: string) => void;
+    /** Mellomspillet er gjennomgått. Kildekritikken er den tyngste XP-en i spillet. */
+    fullforMellomspill: (id: string, tittel: string) => void;
     /** Kapittelet er i havn. */
     fullforKapittel: (nr: number, tittel: string) => void;
     markerSett: (klippId: string) => void;
@@ -157,6 +163,7 @@ const tomKampanje = (): EpokeKampanje => ({
     steg: [],
     begreper: {},
     sette: [],
+    kilder: [],
     flagg: {},
 });
 
@@ -224,6 +231,7 @@ const aktivEpoke = (s: RpgState): EpokeSave => ({
         steg: s.steg,
         begreper: s.begreper,
         sette: s.sette,
+        kilder: s.kilder,
         flagg: s.flagg,
     },
     kapittelState: {
@@ -582,6 +590,40 @@ export const useRpgStore = create<RpgState>()(
                 useProgressStore.getState().recordActivity({
                     kind: 'microgame-played',
                     activityId: `oving/rpg/puzzle/${puzzleId}`,
+                    subjectId: 'historie',
+                    topicId: 'vikingtiden',
+                    score: 1,
+                    title: `Minnevokteren: ${tittel}`,
+                });
+            },
+
+            lesKilde: (kildeId) => {
+                const s = get();
+                if (s.kilder.includes(kildeId)) return;
+                set({ kilder: [...s.kilder, kildeId] });
+            },
+
+            /**
+             * Et mellomspill er gjennomgått.
+             *
+             * Dette er den største enkeltbelønningen spillet gir i «Min læring»
+             * (blueprint §7.5), og det er med vilje: kildekritikk er det
+             * tyngste kompetansemålet i emnet, og bordet er det eneste stedet i
+             * spillet hun møter det som noe hun selv må avgjøre.
+             *
+             * Vakten er `steg`, ikke `recordActivity`. Storen dedupliserer
+             * riktignok selv, men et gjentak gir repetisjonsbonus - og eleven
+             * skal kunne gå tilbake til bordet og lese kildene om igjen så ofte
+             * hun vil uten at det blir en XP-maskin.
+             */
+            fullforMellomspill: (id, tittel) => {
+                const s = get();
+                const merke = `mellomspill:${id}`;
+                if (s.steg.includes(merke)) return;
+                set({ steg: [...s.steg, merke] });
+                useProgressStore.getState().recordActivity({
+                    kind: 'minigame-played',
+                    activityId: `oving/rpg/mellomspill/${id}`,
                     subjectId: 'historie',
                     topicId: 'vikingtiden',
                     score: 1,

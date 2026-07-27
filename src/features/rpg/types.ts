@@ -387,6 +387,114 @@ export interface BegrepDef {
     replikk: string;
 }
 
+// ─── Kilder og mellomspill ──────────────────────────────────────────────────
+//
+// Mellom hvert kapittel forlater eleven året hun spilte, og ser tilbake på det
+// hun nettopp gjorde (blueprint §6). Formen er et bord med kilder på: hun
+// legger dem ut, leser dem, veier dem. Ingen kamp, ingen tidspress.
+//
+// Dette er kildekritikken, og den er hardere her enn den ville vært som et
+// avsnitt i en artikkel, fordi hun var der.
+
+export type KildeArt =
+    | 'brev'
+    | 'annal'
+    | 'reiseberetning'
+    | 'dikt'
+    | 'innskrift'
+    | 'saga'
+    | 'arkeologi';
+
+/**
+ * Hvor nær kilden står det den forteller om.
+ *
+ * `nesten` er den viktigste av de fire: den angelsaksiske krøniken *ser*
+ * samtidig ut - den er ført år for år - men boka vi har er skrevet omkring
+ * hundre år senere, av eldre notater. Uten det trinnet ville eleven lært at en
+ * årbok er en samtidig kilde, og det er ikke sant.
+ */
+export type Naerhet = 'samtidig' | 'nesten' | 'senere' | 'mye-senere';
+
+export interface KildeDef {
+    id: string;
+    navn: string;
+    art: KildeArt;
+    naerhet: Naerhet;
+    /** Årstallet slik det står på kortet. Kort - ikke en setning. */
+    aar: string;
+    opphav: {
+        hvem: string;
+        /** Hvor kilden ble skrevet. Alkuins hele poeng ligger her. */
+        hvor: string;
+        for: string;
+        hensikt: string;
+    };
+    /** Det kilden faktisk sier, oversatt. Aldri omskrevet til noe den ikke sier. */
+    utdrag: string;
+    /** Hvor utdraget er hentet fra, i klartekst, så en lærer kan slå det opp. */
+    henvisning: string;
+}
+
+/**
+ * Ett spørsmål eleven veier en kilde med.
+ *
+ * `fasit` står uansett hva hun svarte. Et mellomspill uten tidspress og uten
+ * kamp har ingen grunn til å straffe et feil valg - poenget er at hun ser
+ * hvorfor, og et bom er ofte den beste veien inn i det.
+ */
+export interface Veiing {
+    id: string;
+    sporsmal: string;
+    svar: VeiingSvar[];
+    /** Det som står etterpå, uansett svar. Selve fagstoffet. */
+    fasit: string;
+}
+
+export interface VeiingSvar {
+    tekst: string;
+    riktig: boolean;
+    /** Kort svar på nettopp dette valget. Én setning, uten dom. */
+    respons: string;
+}
+
+export interface MellomspillDef {
+    id: string;
+    nr: number;
+    tittel: string;
+    apning: { tittel: string; tekst: string };
+    /** Kildene på bordet, i den rekkefølgen de legges ut. */
+    kort: MellomspillKort[];
+    /** Feltet som blir stående tomt. Det sterkeste øyeblikket (blueprint §3). */
+    tomtFelt: TomtFelt | null;
+    /** Begrepene bordet løfter til `forstatt` når hun er gjennom. */
+    begreper: string[];
+    slutt: { tittel: string; tekst: string; knapp: string };
+}
+
+export interface MellomspillKort {
+    kildeId: string;
+    /** Knappen som legger kortet på bordet. Hennes handling, ikke spillets. */
+    knapp: string;
+    veiinger: Veiing[];
+}
+
+/**
+ * Kilden som ikke finnes.
+ *
+ * Det finnes ingen norrøn beretning om Lindisfarne - ikke ett kvad, ikke én
+ * runestein. Eleven skal ikke få det opplyst; hun skal lete etter den og finne
+ * feltet tomt. Derfor er dette et eget trinn med en egen knapp, og ikke en
+ * tredje `MellomspillKort` uten utdrag.
+ */
+export interface TomtFelt {
+    knapp: string;
+    tittel: string;
+    tekst: string;
+    /** Linja som bare står der hvis flagget er satt. */
+    hvisFlagg?: { flagg: string; tekst: string };
+    veiing: Veiing;
+}
+
 // ─── Cutscenes ──────────────────────────────────────────────────────────────
 //
 // Bygget på det motoren alt har: kamera, tweens, spriteforge-figurer, låsen og
@@ -924,6 +1032,14 @@ export interface EpokeKampanje {
     begreper: Record<string, Forstaaelse>;
     /** Cutscenene hun har sett. En sett cutscene kan hoppes over. */
     sette: string[];
+    /**
+     * Kildene hun har lagt ut på bordet i et mellomspill.
+     *
+     * Ligger i kampanjen og ikke i kapittelet fordi den er kumulativ: i
+     * Mellomspill V ligger alle kildene fra alle kapitlene på bordet samtidig,
+     * i tidsrekkefølge, og hullene blir synlige (blueprint §6).
+     */
+    kilder: string[];
     /**
      * Valg som skal huskes på tvers av steder og kapitler - «brente
      * skriptoriet», «tok guttene». Ett flatt navnerom, med vilje: et valg som

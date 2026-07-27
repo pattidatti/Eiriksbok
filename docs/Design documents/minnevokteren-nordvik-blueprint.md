@@ -566,7 +566,7 @@ Alle kildene på bordet samtidig, i tidsrekkefølge. Hullene blir synlige. Og ti
 | Kilde | Type | Nærhet | Av / for | Kommer i |
 |---|---|---|---|---|
 | Alkuins brev, 793 | brev | samtidig | kirkemann, til en konge | Mellomspill I |
-| Den angelsaksiske krøniken | annal | samtidig | ofrene, for ettertiden | I |
+| Den angelsaksiske krøniken | annal | nesten samtidig (nedskrevet ca. 890) | ofrene, for ettertiden | I |
 | Skaldekvad om Hafrsfjord | dikt | samtidig | kongens skald | II |
 | Heimskringla (Snorre, 1230) | saga | 300 år etter | islending, for kongsætten | II, IV |
 | Ibn Fadlan, 922 | reiseberetning | samtidig | fremmed, for kalifen | III |
@@ -1069,7 +1069,7 @@ retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo;
 
 **Etappe 1b er bygget.** R1-R8, se `rpg-hub-og-epoker-blueprint.md` §10.
 
-**Etappe 2 er bygget** (K1a-K1e).
+**Etappe 2 er bygget** (K1a-K1e), og **etappe 3** med den.
 
 | Delet | Hva som står |
 |---|---|
@@ -1099,9 +1099,53 @@ retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo;
   `figurLook`, og å bytte den midt i en etappe der resten allerede var verifisert
   ville satt hallen i spill for en kosmetisk gevinst. Den hører til etappe 3.
 
-**Det som gjenstår av kapittel 1:** Mellomspill I (etappe 3). Kapittelet er
-spillbart uten det, men det er ikke *ferdig* uten det - hele grunnen til at
-eleven utfører raidet selv, ligger i det tomme feltet på bordet etterpå.
+**Etappe 3 er bygget.** Mellomspill I står, og med det er kapittel 1 ferdig,
+ikke bare spillbart.
+
+Bordet er `data/mellomspill.ts` (kort, veiinger, det tomme feltet),
+`data/kilder.ts` (kildene, med henvisning), `components/Mellomspill.tsx`
+(bordet på skjermen) og `WorldScene.apneMellomspill` / `avsluttMellomspill`
+(låsen, begrepene og regnskapet). `scripts/verify-rpg-mellomspill.mjs` driver
+det gjennom en ekte nettleser, begge veier gjennom skriptoriet.
+
+Formen holdt: to kilder legges ut og veies med tre spørsmål hver, og så er det
+ett felt igjen. Eleven får ikke opplyst at det ikke finnes noen norrøn kilde -
+hun får en knapp som sier «se etter en norrøn kilde», og feltet blir stående
+tomt mens hun ser på det. Begrepene bordet gir, er `[Samtidig kilde]` og
+`[Kildetaushet]`.
+
+**Fem avvik fra planen:**
+
+- **Krøniken er ikke «samtidig».** §6-tabellen sier det, og strengt tatt er det
+  galt: notatene er gamle, men boka vi har er skrevet omkring år 890. Hadde
+  bordet lært bort at en årbok er en samtidig kilde, ville det lært bort noe som
+  ikke stemmer. `Naerhet` fikk derfor verdien `nesten`, og nettopp det spranget
+  ble det første veiespørsmålet på krøniken.
+- **Datoen er blitt et spørsmål.** Krøniken sier 8. januar; raidet var 8. juni.
+  Det står ikke i blueprinten, men det er den beste inngangen til forskjellen på
+  å lyve og å skrive feil som kapittelet har: Idus Iunii og Idus Ianuarii er
+  nesten samme ord, og feilen er hva som skjer når en tekst kopieres for hånd i
+  hundrevis av år.
+- **`KildeDef.mellomspill` er utelatt.** §12 gir kilden en peker til
+  mellomspillet, men §6-tabellen viser selv at Heimskringla brukes i både II og
+  IV. Pekeren går andre veien nå: mellomspillet lister kildene sine.
+- **Bare kildene til Mellomspill I ligger inne.** De åtte i §6-tabellen er en
+  designliste. En kilde ingen legger ut, er nøyaktig den feilen `iRekke` alt har
+  gjort i denne kodebasen.
+- **Bordet ligger framme i pausemenyen etterpå.** Det står ikke i planen, og det
+  er den ene tingen i spillet som blir bedre av å leses to ganger. XP gis bare
+  første gang, så det er ikke en maskin.
+
+Ett funn fra prøvingen, som ikke sto i planen: **fasiten må stå også når hun
+bommer.** Første utkast viste den bare ved riktig svar, som quizen gjør. Men
+bordet har verken tidspress eller kamp, og det er ingenting å straffe her - et
+bom er ofte den korteste veien inn i hvorfor. Prøven måler det nå, for det er
+den regelen som ryker først den dagen noen vil legge poeng på bordet.
+
+**Det som gjenstår før kapittel 2:** ingenting av kapittel 1. Neste etappe er
+§13 etappe 4 - ære, ætt, ting og årshjulet, og Åsa i 872. Minnetreet har fortsatt
+ingen skjerm (`components/Minnetre.tsx` i §12-fillista): seks begreper deles ut
+og vises som et varsel, men eleven kan ikke slå dem opp noe sted.
 
 ### 13.1 Hvorfor etappe 1b kom til
 

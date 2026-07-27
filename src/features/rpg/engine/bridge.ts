@@ -59,6 +59,15 @@ export interface SceneEvents {
     /** Åpne et av kapittelets puzzle-overlegg. */
     puzzle: { id: 'skroget' | 'navigasjonen' };
     /**
+     * Åpne mellomspillet - bordet med kildene.
+     *
+     * Eget hendelsesnavn og ikke en tredje `puzzle`-id, fordi de to er ulike
+     * ting: et puzzle er noe hun gjør *inne i* året, med verden stående låst
+     * bak seg. Mellomspillet er hun ute av året, og det skal kunne åpnes fra
+     * pausemenyen like gjerne som fra Orm.
+     */
+    mellomspill: { id: string };
+    /**
      * Det eleven holder på med akkurat nå, som et lite kort i HUD-en.
      *
      * Skilt fra oppdragsloggen med vilje: loggen er alt hun kunne gjort, dette
@@ -123,6 +132,12 @@ export interface UiEvents {
      * riktig på første forsøk skal merkes i verden, ikke i tallene.
      */
     puzzleSvar: { id: string; lost: boolean; forsteForsok?: boolean };
+    /**
+     * Eleven la fra seg kildene. `gjennomgatt` er falsk når hun gikk før hun
+     * kom til det tomme feltet - da har hun ikke sett det bordet skulle vise
+     * henne, og mellomspillet er ikke fullført.
+     */
+    mellomspillFerdig: { id: string; gjennomgatt: boolean };
     /**
      * Eleven valgte en kapittelhandling i en samtale - «Vis meg», «Jeg legger
      * bordene». Scenen eier hva som faktisk skjer.

@@ -18,7 +18,8 @@ import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
 import { Opplaering } from './opplaering';
-import { K1, K1_FLAGG } from '../data/kapitler';
+import { K1, K1_FLAGG, KAPITTEL_BY_NR } from '../data/kapitler';
+import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
 import { Raidet } from './raidet';
 import { Portaler } from './portal';
@@ -415,6 +416,12 @@ export class WorldScene extends Phaser.Scene {
             ),
             tilSpill.on('puzzleSvar', ({ id, lost, forsteForsok }) =>
                 this.avsluttPuzzle(id, lost, Boolean(forsteForsok))
+            ),
+            // Bordet holder ingen regnskap selv - det melder bare at hun la fra
+            // seg kildene, og hva hun rakk. Konteringen ligger her, ved siden
+            // av alt annet som deler ut begreper.
+            tilSpill.on('mellomspillFerdig', ({ id, gjennomgatt }) =>
+                this.avsluttMellomspill(id, gjennomgatt)
             )
         );
     }
@@ -820,6 +827,12 @@ export class WorldScene extends Phaser.Scene {
                 store.fullforSteg(K1.hjem);
                 store.fullforKapittel(1, 'Kapittel 1: Skroget og stranda');
                 store.varsle('Kapittel 1 er over. 793 er bak deg.', 'niva');
+                // Og så bordet, med én gang. Kapittelet er spillbart uten
+                // mellomspillet, men det er ikke ferdig uten det: hele grunnen
+                // til at hun utførte raidet selv, ligger i det tomme feltet på
+                // bordet etterpå (blueprint §3 og §6).
+                const bordet = KAPITTEL_BY_NR[1]?.mellomspillEtter;
+                if (bordet) this.apneMellomspill(bordet);
                 return;
             }
             default:
@@ -865,6 +878,39 @@ export class WorldScene extends Phaser.Scene {
             default:
                 return;
         }
+    }
+
+    // ── Mellomspillet ───────────────────────────────────────────────────────
+
+    /**
+     * Åpner bordet med kildene. Verden står låst bak det.
+     *
+     * Offentlig fordi den har to innganger: Orm, når hun kommer hjem, og
+     * pausemenyen etterpå. Et bord hun bare får se én gang er et bord hun
+     * kommer til å klikke seg gjennom - og kildekritikk er det eneste i dette
+     * spillet som blir bedre av å leses to ganger.
+     */
+    apneMellomspill(id: string): void {
+        if (!MELLOMSPILL_BY_ID[id]) return;
+        this.settLaast(true);
+        fraSpill.emit('mellomspill', { id });
+    }
+
+    /**
+     * Hun la fra seg kildene.
+     *
+     * Begrepene deles ut her og ikke i komponenten, av samme grunn som for
+     * puzzlene: React tegner bordet, den skal ikke avgjøre hva et bord er
+     * verdt. Gikk hun før det tomme feltet, har hun ikke sett det som var
+     * poenget, og da er ingenting fullført.
+     */
+    private avsluttMellomspill(id: string, gjennomgatt: boolean): void {
+        this.settLaast(false);
+        const def = MELLOMSPILL_BY_ID[id];
+        if (!def || !gjennomgatt) return;
+        const store = useRpgStore.getState();
+        store.fullforMellomspill(def.id, `Mellomspill ${def.nr}: ${def.tittel}`);
+        for (const begrepId of def.begreper) store.larBegrep(begrepId, 'forstatt');
     }
 
     // ── Cutscenes ───────────────────────────────────────────────────────────

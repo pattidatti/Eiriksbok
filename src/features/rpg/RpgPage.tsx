@@ -12,6 +12,8 @@ import { DialogOverlay, LandmarkOverlay } from './components/DialogOverlay';
 import { Hud } from './components/Hud';
 import { HubHud } from './components/HubHud';
 import { Klippscene } from './components/Klippscene';
+import { Mellomspill } from './components/Mellomspill';
+import { MELLOMSPILL_BY_ID } from './data/mellomspill';
 import { Navigasjonen } from './components/Navigasjonen';
 import { Skroget } from './components/Skroget';
 import { rustningTier } from './data/classes';
@@ -43,7 +45,9 @@ type Overlegg =
     | { type: 'dod' }
     | { type: 'seier' }
     /** Kapittelets håndverkspuzzle. Scenen står låst bak det. */
-    | { type: 'puzzle'; id: 'skroget' | 'navigasjonen' };
+    | { type: 'puzzle'; id: 'skroget' | 'navigasjonen' }
+    /** Bordet med kildene, mellom to kapitler. */
+    | { type: 'mellomspill'; id: string };
 
 export default function RpgPage() {
     const navigate = useNavigate();
@@ -222,6 +226,7 @@ export default function RpgPage() {
             // skade i dag, men de to veiene inn i «alt står stille» skal ikke
             // begge være i bruk - det er slik de kommer i utakt.
             fraSpill.on('puzzle', ({ id }) => setOverlegg({ type: 'puzzle', id })),
+            fraSpill.on('mellomspill', ({ id }) => setOverlegg({ type: 'mellomspill', id })),
             // Replikken står i noen sekunder og går av seg selv. Den skal ikke
             // kreve et tastetrykk: verden går videre mens den står, og en
             // beskjed som må lukkes midt i en kamp er en beskjed eleven lukker
@@ -260,6 +265,16 @@ export default function RpgPage() {
                 if (overlegg.type === 'puzzle') {
                     setOverlegg({ type: 'ingen' });
                     tilSpill.emit('puzzleSvar', { id: overlegg.id, lost: false });
+                    return;
+                }
+                // Samme grunn som for puzzlet: bordet satte låsen gjennom
+                // scenen, og bare scenen kan ta den av igjen.
+                if (overlegg.type === 'mellomspill') {
+                    setOverlegg({ type: 'ingen' });
+                    tilSpill.emit('mellomspillFerdig', {
+                        id: overlegg.id,
+                        gjennomgatt: false,
+                    });
                     return;
                 }
                 if (apent) lukk();
@@ -472,6 +487,16 @@ export default function RpgPage() {
                 />
             )}
 
+            {overlegg.type === 'mellomspill' && MELLOMSPILL_BY_ID[overlegg.id] && (
+                <Mellomspill
+                    def={MELLOMSPILL_BY_ID[overlegg.id]}
+                    onFerdig={(gjennomgatt) => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('mellomspillFerdig', { id: overlegg.id, gjennomgatt });
+                    }}
+                />
+            )}
+
             {overlegg.type === 'sekk' && (
                 <InventoryPanel onLukk={lukk} onEndret={() => scene()?.oppdaterUtseende()} />
             )}
@@ -481,6 +506,9 @@ export default function RpgPage() {
             {overlegg.type === 'pause' && (
                 <PauseMeny
                     onFortsett={lukk}
+                    // Går gjennom scenen, ikke rett i overlegget: låsen skal
+                    // settes og tas av på ett sted, og det stedet er scenen.
+                    onApneBordet={(id) => scene()?.apneMellomspill(id)}
                     onAvslutt={() => navigate('/oving')}
                     onNyKarakter={() => {
                         slettAlt();

@@ -62,8 +62,14 @@ const NOKKEL = 'rpg-minnevokteren-v1';
  *
  * Formen er `SaveState` v4. Hull fylles av `merge` i storen, så det som ikke
  * står her får sin default.
+ *
+ * `kampanje` er for skriptene som måler noe som ligger sent i kapittelet:
+ * mellomspillet kommer først når hun har vært på Lindisfarne og kommet hjem, og
+ * å spille seg dit for hver måling ville tatt minutter og gjort prøven til en
+ * prøve av alt annet. Det som sås her er nøyaktig det kampanjefeltet spillet
+ * selv ville ha lagret.
  */
-export async function entreNordvik(page, navn = 'Torstein') {
+export async function entreNordvik(page, navn = 'Torstein', kampanje = undefined) {
     await page.addInitScript(
         ([nokkel, verdi]) => localStorage.setItem(nokkel, verdi),
         [
@@ -80,7 +86,13 @@ export async function entreNordvik(page, navn = 'Torstein') {
                         },
                     },
                     sisteEpoke: 'vikingtiden',
-                    epoker: { vikingtiden: { kapittel: 1, sisteSted: 'nordvik' } },
+                    epoker: {
+                        vikingtiden: {
+                            kapittel: 1,
+                            sisteSted: 'nordvik',
+                            ...(kampanje ? { kampanje } : {}),
+                        },
+                    },
                 },
             }),
         ]

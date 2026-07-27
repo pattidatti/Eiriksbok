@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
 import { finnNpc } from '../data/steder';
 import { EPOKER } from '../data/epoker';
+import { KAPITLER } from '../data/kapitler';
+import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
-import type { ItemSlot, QuestDef } from '../types';
+import type { ItemSlot, MellomspillDef, QuestDef } from '../types';
 import { Ramme } from './DialogOverlay';
 
 /** Sekken: alt eleven eier, og det hun har på seg. */
@@ -209,12 +211,23 @@ export function PauseMeny({
     onFortsett,
     onAvslutt,
     onNyKarakter,
+    onApneBordet,
 }: {
     onFortsett: () => void;
     onAvslutt: () => void;
     onNyKarakter: () => void;
+    /** Åpne et mellomspill hun alt har vært gjennom en gang. */
+    onApneBordet: (id: string) => void;
 }) {
     const niva = maksVerdier(useRpgStore()).niva;
+    const steg = useRpgStore((s) => s.steg);
+    // Bordene hun har låst opp: de som hører til et kapittel hun har fullført.
+    // Kildekritikk er det ene i dette spillet som blir bedre av å leses to
+    // ganger, og et bord hun bare får se én gang, er et bord hun klikker seg
+    // gjennom.
+    const bord = KAPITLER.filter((k) => steg.includes(`kapittel:${k.nr}`))
+        .map((k) => ({ kapittel: k.nr, def: k.mellomspillEtter && MELLOMSPILL_BY_ID[k.mellomspillEtter] }))
+        .filter((b): b is { kapittel: number; def: MellomspillDef } => Boolean(b.def));
 
     return (
         <div className="absolute inset-0 z-50 overflow-y-auto bg-slate-950/95 px-4 py-8">
@@ -249,6 +262,31 @@ export function PauseMeny({
                         Ny figur (sletter alt)
                     </button>
                 </div>
+
+                {bord.length > 0 && (
+                    <section className="mb-6">
+                        <h3 className="mb-2 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
+                            Kildebordet
+                        </h3>
+                        <div className="flex flex-wrap justify-center gap-2">
+                            {bord.map((b) => (
+                                <button
+                                    key={b.def.id}
+                                    type="button"
+                                    onClick={() => onApneBordet(b.def.id)}
+                                    className="rounded-xl border border-amber-300/25 bg-amber-300/5 px-4 py-2.5 text-left transition hover:border-amber-300/60 hover:bg-amber-300/10"
+                                >
+                                    <span className="block font-display text-sm font-bold text-amber-100">
+                                        {b.def.tittel}
+                                    </span>
+                                    <span className="mt-0.5 block text-xs text-slate-400">
+                                        Kildene fra kapittel {b.kapittel}. Ligger framme.
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
+                    </section>
+                )}
 
                 <VerdensKart niva={niva} />
             </div>

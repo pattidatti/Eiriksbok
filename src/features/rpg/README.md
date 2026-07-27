@@ -33,6 +33,8 @@ data/
   epoker.ts              De 11 epokene, én ferdig. Årstall, palett, regelsett, bank-sone.
   kapitler.ts            De fem kapitlene i vikingtiden. Steg, roller, flagg.
   begreper.ts            Minnetreet: det eleven kan fordi hun har gjort det
+  kilder.ts              Kildene på bordet i mellomspillene. Ekte, med henvisning.
+  mellomspill.ts         Bordet mellom to kapitler: kort, veiinger, det tomme feltet
   klipp/kapittel1.ts     Cutscenene: sjøsettingen og stranda
   lindisfarne.ts         Klosteret: landemerkene, og valgene hun tar der
   hub.ts                 Minnevokterens hall: portaler, landemerker, benker, palett
@@ -77,7 +79,8 @@ net/
 store/useRpgStore.ts     All spillertilstand, lagringsformatet + kobling til «Min læring»
 components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordring,
                          sekk, logg, butikk, skjermkontroll, atmosfære-overlegg,
-                         klippscene (bjelker og replikk), skroget og navigasjonen
+                         klippscene (bjelker og replikk), skroget, navigasjonen og
+                         mellomspillet (bordet med kildene)
 ```
 
 ## Slik henger læring og spill sammen
@@ -425,6 +428,8 @@ midt i uten at hvert lagrede spill i et klasserom hopper et hakk.
 | `k1-byttet` | Det som er igjen. Valgene. | `data/lindisfarne.ts` |
 | `k1-hjem` | Orm spør hva du tok med | `data/nordvik.ts` |
 
+Og så, i det kapittelet er over: **Mellomspill I**.
+
 Ting som er lette å ødelegge her:
 
 -   **Ravn og raidet er de eneste som setter ut fiender selv.** Alt annet går
@@ -457,6 +462,50 @@ Hele forskjellen er ett flagg, `Fiende.stille`. Det er med vilje: en
 regelendring ville gjort det til en straff eleven kan lese seg til, og da blir
 det en preken. Kontrasten bærer, og fordi spillet ikke sier noe, sier det ikke
 for mye.
+
+## Mellomspillet: bordet med kildene
+
+Mellom to kapitler forlater eleven året hun spilte og ser tilbake på det hun
+nettopp gjorde. Formen er et bord med kilder på: hun legger dem ut, leser dem og
+veier dem. Ingen kamp, ingen tidspress, ingen poeng for å svare fort.
+
+Mellomspill I kommer etter 793, og det er **hele grunnen til at eleven utfører
+raidet selv**. Hun leser Alkuins brev og den angelsaksiske krøniken, og så er
+det ett felt igjen på bordet. Hun får ikke opplyst at det ikke finnes noen
+norrøn kilde om Lindisfarne - hun får en knapp som sier «se etter en norrøn
+kilde», og feltet blir stående tomt mens hun ser på det.
+
+Brente hun skriptoriet, står det en linje til.
+
+| Fil | Hva |
+| --- | --- |
+| `data/kilder.ts` | Kildene: hvem, hvor, for hvem, hva de sier, og hvor det står |
+| `data/mellomspill.ts` | Bordet: hvilke kort, hvilke veiinger, hva det tomme feltet sier |
+| `components/Mellomspill.tsx` | Bordet på skjermen |
+| `WorldScene.apneMellomspill` / `avsluttMellomspill` | Låsen, begrepene og regnskapet |
+
+Ting som er lette å ødelegge her:
+
+-   **Bordet deler ikke ut begreper.** Komponenten melder at hun la kildene fra
+    seg, og hva hun rakk; `avsluttMellomspill` i scenen konterer. Samme regel
+    som for puzzlene, og av samme grunn: det er spillet som skal avgjøre hva et
+    bord er verdt, ikke det som tegner det.
+-   **Fasiten står uansett hva hun svarte.** Uten tidspress og uten kamp er det
+    ingenting å straffe, og et bom er ofte den korteste veien inn i hvorfor.
+    Legger noen inn poeng på bordet, er det den regelen som ryker først.
+-   **Går hun fra bordet før det tomme feltet, er ingenting fullført.**
+    `mellomspillFerdig` har `gjennomgatt`, og den er falsk da. Hun har ikke sett
+    det bordet skulle vise henne.
+-   **Kapittelet peker på mellomspillet, ikke omvendt.**
+    `KapittelDef.mellomspillEtter` er den ene pekeren. Ligger den samme
+    koblingen to steder, driver de fra hverandre.
+-   **Utdragene er ikke omskrevet.** Dragene står i krøniken fordi de faktisk
+    står der. En kilde vi har gjort lettere å svare på, er ikke en kilde lenger,
+    og `henvisning` er der for at en lærer skal kunne sjekke nettopp det.
+
+Bordet ligger framme i pausemenyen etterpå. Kildekritikk er det ene i dette
+spillet som blir bedre av å leses to ganger, og `fullforMellomspill` gir XP bare
+første gang.
 
 ## Lagring
 
