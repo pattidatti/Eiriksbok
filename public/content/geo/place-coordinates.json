@@ -839,12 +839,12 @@
       "count": 32
     },
     {
-      "tag": "oppfinnelser",
-      "count": 29
+      "tag": "kildekritikk",
+      "count": 30
     },
     {
-      "tag": "kildekritikk",
-      "count": 28
+      "tag": "oppfinnelser",
+      "count": 29
     },
     {
       "tag": "imperium",
@@ -1463,6 +1463,10 @@
       "count": 4
     },
     {
+      "tag": "historiens-store-gater",
+      "count": 4
+    },
+    {
       "tag": "ressurser",
       "count": 4
     },
@@ -1556,6 +1560,10 @@
     },
     {
       "tag": "rente",
+      "count": 4
+    },
+    {
+      "tag": "forste-verdenskrig",
       "count": 4
     },
     {
@@ -1712,6 +1720,10 @@
     },
     {
       "tag": "opptakt",
+      "count": 3
+    },
+    {
+      "tag": "historiebruk",
       "count": 3
     },
     {
@@ -1912,10 +1924,6 @@
     },
     {
       "tag": "språkfamilie",
-      "count": 2
-    },
-    {
-      "tag": "historiens-store-gater",
       "count": 2
     },
     {
@@ -2484,10 +2492,6 @@
     },
     {
       "tag": "sentralbank",
-      "count": 2
-    },
-    {
-      "tag": "forste-verdenskrig",
       "count": 2
     },
     {
@@ -3432,10 +3436,6 @@
     },
     {
       "tag": "rettsvitenskap",
-      "count": 1
-    },
-    {
-      "tag": "historiebruk",
       "count": 1
     },
     {

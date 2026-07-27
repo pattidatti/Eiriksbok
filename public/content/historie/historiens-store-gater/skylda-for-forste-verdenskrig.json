@@ -1,0 +1,257 @@
+{
+    "id": "skylda-for-forste-verdenskrig",
+    "title": "Hvem hadde skylda for første verdenskrig?",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "1914",
+    "category": "Historiens store gåter",
+    "readTime": "11 min lesning",
+    "heroImage": "/images/historiens-store-gater/placeholder.webp",
+    "details": [
+        "Historikerne er enige om hva som skjedde i juli 1914, men ikke om hvem som bærer ansvaret.",
+        "Paragraf 231 i Versailles-traktaten la skylda på Tyskland og landets allierte.",
+        "Fritz Fischer snudde debatten i 1961, Christopher Clark snudde den tilbake i 2012.",
+        "Skyld er en vurdering, ikke et funn du kan grave opp av bakken."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Den 28. juni 1919 satt to tyske utsendinger i speilsalen i slottet Versailles utenfor Paris og skrev under på en fredsavtale. Datoen var ikke tilfeldig: det var nøyaktig fem år siden skuddene i Sarajevo. I avtalen sto det en paragraf, nummer 231, som slo fast at Tyskland og landets allierte hadde ansvaret for krigen og all skaden den hadde ført med seg (Brazier, 2025). Fire år med krig og rundt 18 millioner døde og sårede var dermed avgjort i én setning: dette er deres feil."
+        },
+        {
+            "type": "text",
+            "content": "Men var det så enkelt? Over hundre år senere krangler historikere fortsatt om det samme spørsmålet. Ikke fordi de mangler kilder, men fordi de har lest de samme kildene og kommet fram til ulike svar."
+        },
+        {
+            "type": "image",
+            "src": "/images/historiens-store-gater/placeholder.webp",
+            "alt": "Tyske utsendinger signerer fredsavtalen i speilsalen i Versailles",
+            "caption": "28. juni 1919: Tyskland fikk ikke være med i forhandlingene, bare skrive under."
+        },
+        {
+            "type": "header",
+            "text": "Det alle er enige om"
+        },
+        {
+            "type": "text",
+            "content": "Selve hendelsesrekken er godt dokumentert. Den 28. juni 1914 skjøt den bosnisk-serbiske nasjonalisten Gavrilo Princip den østerrikske tronarvingen Franz Ferdinand og kona hans i Sarajevo. Den 5. juli lovet den tyske keiseren Wilhelm 2. at Tyskland ville støtte Østerrike-Ungarn uansett hva de gjorde. Denne lovnaden kalles blankofullmakten, fordi den var som en sjekk uten beløp: Wien kunne fylle ut selv (Brazier, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Den 23. juli sendte Østerrike-Ungarn et ultimatum til Serbia med ti krav og bare 48 timers frist. Kravene var laget så harde at Serbia skulle måtte si nei. Serbia godtok likevel nesten alt, men ikke alt. Den 28. juli erklærte Østerrike-Ungarn krig. Russland begynte å mobilisere hæren sin for å beskytte Serbia. Tyskland erklærte krig mot Russland 1. august og mot Frankrike 3. august. Da tyske soldater marsjerte inn i det nøytrale Belgia, erklærte Storbritannia krig 4. august (Brazier, 2026). På fem uker var en lokal krise på Balkan blitt en verdenskrig."
+        },
+        {
+            "type": "text",
+            "content": "Ingen seriøs historiker bestrider denne rekkefølgen. Det er ikke her uenigheten ligger. Uenigheten begynner i det øyeblikket noen spør: hvem burde ha handlet annerledes?"
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Årsak og skyld er ikke det samme",
+                "content": "En årsak forteller hva som førte til noe. En skyld forteller hvem som burde ha valgt annerledes. Du kan bli enig med noen om alle årsakene til en slåsskamp i skolegården og likevel være dypt uenig om hvem som har skylda. Det avhenger av hvor langt tilbake du begynner å telle, og hvor mye du mener hver enkelt hadde et reelt valg."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Paragrafen som ble en bombe"
+        },
+        {
+            "type": "text",
+            "content": "Da de fire store seierherrene, Woodrow Wilson fra USA, David Lloyd George fra Storbritannia, Georges Clemenceau fra Frankrike og Vittorio Emanuele Orlando fra Italia, forhandlet fram avtalen i 1919, var paragraf 231 mest ment som en juridisk begrunnelse. Noen måtte ha det rettslige ansvaret for at seierherrene kunne kreve erstatning. Rett etterpå fulgte paragraf 232, som gjorde det klart at kravene ikke var uendelige, men måtte stå i forhold til det Tyskland faktisk kunne betale (Brazier, 2025). I 1919 var det knapt noen som trodde at nettopp paragraf 231 skulle bli den mest omstridte i hele avtalen."
+        },
+        {
+            "type": "text",
+            "content": "Beløpene ble uansett svimlende. Først ble kravet satt til 269 milliarder gullmark. I 1921 ble det redusert til 132 milliarder, som skulle betales over 59 år. I praksis betalte Tyskland rundt 22 milliarder fram til betalingene stoppet i 1931. Den aller siste innbetalingen kom først i 2010 (Brazier, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "I Tyskland ble paragrafen oppfattet som en fornedring. Det tyske utenriksdepartementet opprettet en egen avdeling som skulle motbevise den, og på 1920-tallet ga staten ut over 40 bind med diplomatiske dokumenter. Utvalget var neppe tilfeldig: dokumentene som viste tysk aggresjon, ble tonet ned (Mulligan, 2016). Samtidig spredte generalene Paul von Hindenburg og Erich Ludendorff dolkestøtlegenden, myten om at Tyskland ikke tapte på slagmarken, men ble sveket hjemmefra (Hatlehol, 2025). Bitterheten over skyldspørsmålet ble en av kreftene som brakte [Hitler til makten i Tyskland](/historie/mellomkrigstiden/tyskland)."
+        },
+        {
+            "type": "header",
+            "text": "Tre svar på det samme spørsmålet"
+        },
+        {
+            "type": "text",
+            "content": "Det første svaret var altså Versailles-svaret fra 1919: Tyskland og landets allierte har ansvaret. Det holdt ikke lenge blant forskerne. Allerede på 1920- og 1930-tallet begynte historikere som amerikanerne Sidney Fay og Bernadotte Schmitt å ta avstand fra det. Den franske historikeren Pierre Renouvin formulerte det som ble en slags kjøreregel: historikerens oppgave er ikke å fastsette ansvar, men å forklare (Mulligan, 2016)."
+        },
+        {
+            "type": "text",
+            "content": "Det andre svaret kom i 1961 og traff som et jordskjelv. Den tyske historikeren Fritz Fischer gikk gjennom tyske arkiver og hevdet at tyske ledere hadde planlagt en angrepskrig helt siden desember 1912. Dette var sprengstoff, fordi det var en tysk forsker som la skylda på sitt eget land, i en tid da mange tyskere mente at Tyskland var blitt angrepet. Konservative historikere gikk hardt imot ham. Gerhard Ritter mente Fischer leste kildene feil, og at verken den politiske eller den militære ledelsen i Tyskland ville ha krig. Men i løpet av 1970-tallet ble Fischers syn nærmest det vanlige synet i faget (Mulligan, 2016)."
+        },
+        {
+            "type": "text",
+            "content": "Det tredje svaret kom rundt hundreårsmarkeringen. I boka Sovngjengerne fra 2012 argumenterte den australske historikeren Christopher Clark for at ingen av stormaktene ønsket akkurat denne krigen. Alle tok sjanser, alle regnet med at de andre ville bakke ut, og til sammen gikk de i søvne inn i katastrofen (Clark, 2012). Historikeren Thomas Otte la på samme måte vekt på tilfeldigheter og på hva enkeltmennesker faktisk bestemte i de avgjørende dagene, framfor store, uunngåelige krefter (Mulligan, 2016)."
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som skjer her. De tre svarene bygger på de samme hendelsene, de samme datoene og i stor grad de samme dokumentene. Forskjellen ligger i hvor langt tilbake de begynner å telle, og hvor mye handlefrihet de mener hver enkelt leder hadde. Prøv selv under."
+        },
+        {
+            "type": "component",
+            "name": "Skyldvekten",
+            "props": {
+                "title": "Skyldvekten",
+                "intro": "Du har 100 ansvarspoeng. Fordel dem mellom stormaktene, og se hvilket av de tre svarene du ligner mest på."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Kjente du at det var vanskelig å bestemme seg? Det er nettopp poenget. Å fordele skyld krever at du tar stilling til noe kildene ikke svarer på av seg selv: kunne de involverte ha gjort noe annet?"
+        },
+        {
+            "type": "image",
+            "src": "/images/historiens-store-gater/placeholder.webp",
+            "alt": "Telegrafkontor i 1914 der meldinger sendes mellom europeiske hovedsteder",
+            "caption": "Julikrisen ble utkjempet med telegrammer. Hver melding gjorde det vanskeligere å snu."
+        },
+        {
+            "type": "header",
+            "text": "Kjedereaksjonen du kan kjenne på"
+        },
+        {
+            "type": "text",
+            "content": "En viktig grunn til at ett drap kunne velte hele Europa, var alliansene. Trippelalliansen fra 1882 bandt Tyskland, Østerrike-Ungarn og Italia sammen. På den andre siden sto trippelententen, som vokste fram av en fransk-russisk allianse fra 1890-tallet og senere trakk inn Storbritannia (Brazier og Kirkhusmo, 2024). Hver enkelt avtale var ment å hindre krig, fordi ingen skulle våge å angripe en fiende med mektige venner. Til sammen gjorde de det motsatte: de gjorde det nesten umulig å holde en konflikt lokal. I mikrospillet under bygger du dette nettet selv, og ser hva det gjør med gnisten fra Sarajevo. Vil du lese mer om hvordan spenningen bygde seg opp, finner du det i artikkelen om [opptakten til krigen](/historie/forste-verdenskrig/opptakt)."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "alliansefella-1914"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor gåten fortsatt betyr noe"
+        },
+        {
+            "type": "text",
+            "content": "Skyldspørsmålet er ikke bare en akademisk lek. Svaret fra 1919 ble skrevet inn i en fredsavtale, og avtalen formet Europa i tjue år. Erstatningskravene, tapet av land og følelsen av å bli dømt uten å ha fått forsvare seg, ga næring til det sinnet som preget [mellomkrigstiden og veien mot en ny krig](/historie/forste-verdenskrig/konsekvenser). Historie er altså ikke bare noe som har skjedd. Det er noe folk bruker."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig er dette et sunt eksempel på hva ekte faglig uenighet er. Fischer og Clark bruker begge kilder, begge lar seg motsi, og begge har endret mening hos andre forskere. Det er noe helt annet enn å nekte for at noe har skjedd. Flere slike stridsspørsmål finner du i oversikten over [historiens store gåter](/historie/historiens-store-gater/oversikt)."
+        },
+        {
+            "type": "text",
+            "content": "Når du møter historikere som er uenige, er det noen spørsmål som nesten alltid hjelper deg videre:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Hvor langt tilbake begynner de å telle? Ved skuddet i Sarajevo, ved alliansene på 1800-tallet, eller enda tidligere?",
+                "Hvilke kilder bruker de, og hvilke lar de være å bruke?",
+                "Mener de at lederne hadde et reelt valg, eller at systemet dro dem med?",
+                "Hvem tjener på nettopp dette svaret akkurat nå?"
+            ]
+        },
+        {
+            "type": "image",
+            "src": "/images/historiens-store-gater/placeholder.webp",
+            "alt": "Kart over Europa i 1914 med alliansene tegnet inn som linjer",
+            "caption": "De samme linjene som skulle skape trygghet, gjorde krigen umulig å begrense."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva sto det i paragraf 231 i Versailles-traktaten, og hvilket år ble avtalen undertegnet?",
+                    "Hva var blankofullmakten, og hvilken dato ble den gitt?",
+                    "Hva hevdet Fritz Fischer i 1961, og hva var hovedpoenget til Christopher Clark i 2012?",
+                    "Sett opp hendelsene i juli og august 1914 i riktig rekkefølge, fra drapet i Sarajevo til Storbritannia gikk med."
+                ],
+                "reflekter": [
+                    "Forklar med egne ord forskjellen på en årsak og en skyld. Bruk et eksempel fra din egen hverdag.",
+                    "Hvorfor kan tre historikere lese de samme dokumentene og likevel svare ulikt på hvem som hadde skylda?",
+                    "Alliansene skulle hindre krig. Forklar hvordan de i stedet gjorde krigen større.",
+                    "Hvorfor ble paragraf 231 så mye viktigere i ettertid enn de som skrev den, hadde tenkt?"
+                ],
+                "gaaVidere": [
+                    "Velg ett av de tre svarene og skriv et kort innlegg på fem til ti setninger der du forsvarer det. Bruk minst tre konkrete opplysninger fra artikkelen.",
+                    "Diskuter i par: bør historikere i det hele tatt fordele skyld, eller bør de bare forklare? Finn ett argument for hver side.",
+                    "Finn et eksempel fra nyhetene i dag der folk er uenige om hvem som startet en konflikt. Hvilke av spørsmålene i lista over kan du bruke på det?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva slo paragraf 231 i Versailles-traktaten fast?",
+                        "options": [
+                            "At Tyskland og landets allierte hadde ansvaret for krigen",
+                            "At Serbia måtte betale erstatning til Østerrike-Ungarn",
+                            "At ingen land kunne klandres for krigen",
+                            "At Russland måtte trekke hæren sin tilbake"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Paragraf 231 la ansvaret for krigen og skadene den førte med seg på Tyskland og landets allierte. Den ble kalt krigsskyldparagrafen."
+                    },
+                    {
+                        "question": "Hva var blankofullmakten fra 5. juli 1914?",
+                        "options": [
+                            "Et løfte fra Tyskland om ubetinget støtte til Østerrike-Ungarn",
+                            "Et fredsforslag fra Storbritannia",
+                            "En avtale mellom Russland og Serbia om felles forsvar",
+                            "En tillatelse fra Serbia til å etterforske drapet"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Keiser Wilhelm 2. lovet Østerrike-Ungarn full tysk støtte uansett hva de foretok seg. Uten den lovnaden hadde Wien trolig ikke turt å gå så hardt fram."
+                    },
+                    {
+                        "question": "Hva hevdet Fritz Fischer i 1961?",
+                        "options": [
+                            "At tyske ledere hadde planlagt en angrepskrig siden 1912",
+                            "At Serbia alene startet krigen",
+                            "At krigen var en ren ulykke ingen kunne forutse",
+                            "At Storbritannia lokket Tyskland i en felle"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Fischer gikk gjennom tyske arkiver og mente å vise at ledelsen i Berlin bevisst arbeidet mot krig fra desember 1912. Det var oppsiktsvekkende at en tysk historiker sa dette."
+                    },
+                    {
+                        "question": "Hva er hovedpoenget i Christopher Clarks bok Sovngjengerne fra 2012?",
+                        "options": [
+                            "Ingen ønsket akkurat denne krigen, men alle tok sjanser og gikk i søvne inn i den",
+                            "Tyskland alene bærer hele ansvaret",
+                            "Krigen skyldtes bare drapet i Sarajevo",
+                            "Historikere bør slutte å studere julikrisen"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Clark mener ansvaret er delt. Alle stormaktene jaget sine egne interesser og tok bevisste sjanser, uten at noen hadde planlagt nettopp denne krigen."
+                    },
+                    {
+                        "question": "Hvorfor er historikerne uenige om skyldspørsmålet?",
+                        "options": [
+                            "De vekter ansvaret ulikt og begynner å telle på ulike tidspunkt",
+                            "De er uenige om hvilken dato krigen brøt ut",
+                            "De har ikke tilgang til de samme kildene",
+                            "De vet ikke hvem som ble drept i Sarajevo"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Selve hendelsesrekken er det enighet om. Uenigheten handler om hvor langt tilbake årsakene strekker seg, og om hvor mye reell handlefrihet lederne hadde."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brazier, E. (2026). *Julikrisen*. Store norske leksikon. Hentet 27.07.2026 fra https://snl.no/Julikrisen",
+                    "Brazier, E. (2025). *Versailles-traktaten*. Store norske leksikon. Hentet 27.07.2026 fra https://snl.no/Versailles-traktaten",
+                    "Brazier, E. og Kirkhusmo, A. (2024). *Første verdenskrig*. Store norske leksikon. Hentet 27.07.2026 fra https://snl.no/f%C3%B8rste_verdenskrig",
+                    "Clark, C. (2012). *The Sleepwalkers: How Europe Went to War in 1914*. Allen Lane.",
+                    "Hatlehol, G. D. (2025). *Dolkestøtlegenden*. Store norske leksikon. Hentet 27.07.2026 fra https://snl.no/dolkest%C3%B8tlegenden",
+                    "Mulligan, W. (2016). *The Historiography of the Origins of the First World War*. 1914-1918-online. International Encyclopedia of the First World War. Hentet 27.07.2026 fra https://encyclopedia.1914-1918-online.net/article/the-historiography-of-the-origins-of-the-first-world-war/"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
