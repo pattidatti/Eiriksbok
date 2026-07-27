@@ -75,6 +75,13 @@ export interface SceneEvents {
      * Flytende pikseltekst over hodet duger til «Parade!», ikke til en setning.
      */
     replikk: { hvem: string; tekst: string } | null;
+    /**
+     * Den navngitte motstanderen, øverst på skjermen.
+     *
+     * `andel` er 0-1 av livet hans. Null betyr at han er borte - av bildet
+     * eller av verden.
+     */
+    motstander: { navn: string; andel: number } | null;
 }
 
 export interface UiEvents {

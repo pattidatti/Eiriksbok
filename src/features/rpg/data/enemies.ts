@@ -124,8 +124,99 @@ export const MENNESKER: EnemyDef[] = [
     },
 ];
 
+/**
+ * De to på Lindisfarne.
+ *
+ * Motstanden er dempet til det kildene tillater (§16.4). Alkuin og krøniken
+ * beskriver drepte munker - ikke en kongens ombudsmann med brynjekledde menn.
+ * De som slåss er øyas egne folk, med det de har: spyd, økser, én gammel hjelm.
+ * Kampen blir ikke dårligere av å være ujevn. Den blir mer ubehagelig, og det
+ * er riktigere.
+ *
+ * Han som fører dem, heter «Mannen med hjelmen». Ikke fordi vi ikke fant på et
+ * navn, men fordi ingen kilde ga ham et - og Mellomspill I skal kunne peke på
+ * nettopp det.
+ */
+export const LINDISFARNE_FIENDER: EnemyDef[] = [
+    {
+        id: 'oyboer',
+        kind: 'menneske',
+        name: 'Mannen med hjelmen',
+        hp: 96,
+        skade: 12,
+        fart: 58,
+        aggro: 300,
+        rekkevidde: 26,
+        varsel: 480,
+        farge: 0x7a6a4a,
+        xp: 60,
+        loot: [],
+        vaapenArt: 'oks',
+        harSkjold: true,
+        haar: 4,
+        navngitt: true,
+        sarslag: { hvert: 4, hak: true },
+    },
+    {
+        id: 'oyas-mann',
+        kind: 'menneske',
+        name: 'Mann fra øya',
+        hp: 30,
+        skade: 8,
+        fart: 52,
+        aggro: 260,
+        rekkevidde: 34,
+        varsel: 600,
+        farge: 0x6f7a5f,
+        xp: 12,
+        loot: [],
+        vaapenArt: 'spyd',
+        haar: 2,
+    },
+    {
+        id: 'oyas-okse',
+        kind: 'menneske',
+        name: 'Mann fra øya',
+        hp: 34,
+        skade: 10,
+        fart: 56,
+        aggro: 260,
+        rekkevidde: 24,
+        varsel: 560,
+        farge: 0x7f6a4f,
+        xp: 14,
+        loot: [],
+        vaapenArt: 'oks',
+        haar: 1,
+    },
+    {
+        /**
+         * De som er igjen når motstanden er nede.
+         *
+         * De slår ikke, de løper. Alt om dem settes i `Raidet`: `stille`,
+         * `flykter`, `fredelig`. Tallene her er bare det en kropp må ha for å
+         * finnes - og `xp: 0` og tom loot er ikke en innstilling, det er det
+         * hele avsnittet handler om.
+         */
+        id: 'klosterfolk',
+        kind: 'menneske',
+        name: 'Klosterfolk',
+        hp: 18,
+        skade: 0,
+        fart: 64,
+        aggro: 0,
+        rekkevidde: 0,
+        varsel: 900,
+        farge: 0x8a8478,
+        xp: 0,
+        loot: [],
+        haar: 4,
+    },
+];
+
 export const ENEMIES: EnemyDef[] = [
     ...MENNESKER,
+    ...LINDISFARNE_FIENDER,
     {
         id: 'glemseltaake',
         kind: 'glemsel',

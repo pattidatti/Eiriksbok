@@ -78,6 +78,8 @@ export class Fiender {
     private bossVakt = false;
     private bossVekket = false;
     private spawnTimer = 0;
+    /** Navnestolpen øverst sendes et titalls ganger i sekundet, ikke seksti. */
+    private toppTimer = 0;
     /** Lista ryddes bare når noen faktisk har dødd, ikke hver frame. */
     private maaRydde = false;
 
@@ -298,6 +300,20 @@ export class Fiender {
             }
             fiende.navnskilt?.sett(sprite.x, sprite.y - sprite.displayHeight * 0.85 - 14);
 
+            // Navnestolpen øverst. Den sendes ikke hver frame - HUD-en tegner
+            // seg på nytt for hver melding, og 60 ganger i sekundet for en
+            // stolpe som beveger seg i rykk uansett er bortkastet.
+            if (fiende.toppstolpe) {
+                this.toppTimer -= delta;
+                if (this.toppTimer <= 0) {
+                    this.toppTimer = 120;
+                    fraSpill.emit('motstander', {
+                        navn: fiende.navn ?? def.name,
+                        andel: Math.max(0, fiende.hp / fiende.maksHp),
+                    });
+                }
+            }
+
             // Livsstolpen følger fienden og forsvinner av seg selv.
             if (fiende.stolpe) {
                 fiende.stolpeTid -= delta;
@@ -357,6 +373,14 @@ export class Fiender {
                     break;
 
                 case 'jager': {
+                    // Den som flykter, går den andre veien. Ingen aggro, ingen
+                    // rekkevidde, ingen slag - bare vekk.
+                    if (fiende.flykter) {
+                        const v = Math.atan2(sprite.y - spiller.y, sprite.x - spiller.x);
+                        const fart = avstand < 140 ? def.fart * 1.15 : def.fart * 0.35;
+                        sprite.setVelocity(Math.cos(v) * fart, Math.sin(v) * fart);
+                        break;
+                    }
                     if (avstand > def.aggro * 1.6) {
                         fiende.tilstand = 'sover';
                         fiende.timer = 0;
@@ -563,13 +587,18 @@ export class Fiender {
             this.fx.lemlest(fiende.sprite.x, fiende.sprite.y - 4, fiende.def.id, 2, vinkel, true);
             this.fx.gyt(fiende.sprite.x, fiende.sprite.y - 4, fiende.def.farge, 8, vinkel, 1.2);
         }
-        this.efx.flytTekst(
-            fiende.sprite.x + Phaser.Math.Between(-4, 4),
-            fiende.sprite.y - 20,
-            kritisk ? `${skade}!` : `${skade}`,
-            kritisk ? '#ffd166' : '#ffffff',
-            kritisk ? 18 : 13
-        );
+        // Skadetallet er en utbetaling. Den hører ikke hjemme over en som ikke
+        // slår tilbake, og fraværet er hele forskjellen på de to halvdelene av
+        // Lindisfarne.
+        if (!fiende.stille) {
+            this.efx.flytTekst(
+                fiende.sprite.x + Phaser.Math.Between(-4, 4),
+                fiende.sprite.y - 20,
+                kritisk ? `${skade}!` : `${skade}`,
+                kritisk ? '#ffd166' : '#ffffff',
+                kritisk ? 18 : 13
+            );
+        }
         this.efx.pikselSprut(
             fiende.sprite.x,
             fiende.sprite.y - 8,
@@ -602,7 +631,7 @@ export class Fiender {
 
     /** Livsstolpen over hodet. Uten den kan ikke eleven se om et slag til holder. */
     private visHelsestolpe(fiende: Fiende): void {
-        if (fiende.def.kind === 'boss') return;
+        if (fiende.def.kind === 'boss' || fiende.stille) return;
         if (!fiende.stolpe) {
             fiende.stolpe = this.scene.add.graphics().setDepth(18000);
         }
@@ -630,6 +659,7 @@ export class Fiender {
         // lik - og det er en annen scene enn den vi skriver.
         fiende.navnskilt?.fjern();
         fiende.navnskilt = undefined;
+        if (fiende.toppstolpe) fraSpill.emit('motstander', null);
         sfx.dod();
         this.efx.pikselSprut(fiende.sprite.x, fiende.sprite.y - 8, fiende.def.farge, 20);
 
@@ -662,6 +692,12 @@ export class Fiender {
             fiende.sprite.destroy();
             this.fx.leggLik(dx, dy, fiende.def.id);
         });
+
+        // Her slutter spillet å juble. Ingen XP, ingen sølv, ingen loot-bue.
+        // Alt annet er likt: hitstop, saktefilm, blod og et lik som blir
+        // liggende. Fraværet av belønning er det eneste som skiller de to
+        // halvdelene, og det er nok.
+        if (fiende.stille) return;
 
         const store = useRpgStore.getState();
         store.giXp(fiende.def.xp);

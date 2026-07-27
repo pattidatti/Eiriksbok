@@ -12,12 +12,23 @@ interface Props {
     kamp: KampSnapshot | null;
     /** Det ene eleven holder på med nå. Null mellom kapittelstegene. */
     oppgave: { tittel: string; mal: string; teller?: string } | null;
+    /** Den navngitte motstanderen. Null når det ikke er noen. */
+    motstander: { navn: string; andel: number } | null;
     onApneSekk: () => void;
     onApneLogg: () => void;
     onPause: () => void;
 }
 
-export function Hud({ hint, kompass, kamp, oppgave, onApneSekk, onApneLogg, onPause }: Props) {
+export function Hud({
+    hint,
+    kompass,
+    kamp,
+    oppgave,
+    motstander,
+    onApneSekk,
+    onApneLogg,
+    onPause,
+}: Props) {
     const store = useRpgStore();
     const maks = maksVerdier(store);
     const fremgang = nivaFremgang(store.xp);
@@ -147,6 +158,32 @@ export function Hud({ hint, kompass, kamp, oppgave, onApneSekk, onApneLogg, onPa
                     );
                 })}
             </div>
+
+            {/*
+                Navnestolpen øverst. Bare den ene som fører de andre får den, og
+                den finnes for at eleven skal vite at hun slåss mot *noen* - ikke
+                for at han skal virke sterkere. Skiltet over hodet drukner i et
+                slagsmål med sju mann; denne gjør ikke det.
+
+                Han heter «Mannen med hjelmen», og det er ikke fordi vi ikke
+                fant på et navn. Ingen kilde ga ham et.
+            */}
+            {motstander && (
+                <div
+                    data-prove="motstander"
+                    className="absolute left-1/2 top-14 w-80 -translate-x-1/2 text-center"
+                >
+                    <p className="mb-1 font-display text-lg font-bold text-slate-100 drop-shadow">
+                        {motstander.navn}
+                    </p>
+                    <div className="h-2.5 w-full overflow-hidden rounded-full bg-black/60 ring-1 ring-white/20">
+                        <div
+                            className="h-full bg-rose-500 transition-[width] duration-200"
+                            style={{ width: `${Math.max(0, motstander.andel) * 100}%` }}
+                        />
+                    </div>
+                </div>
+            )}
 
             {/*
                 Oppgavekortet. Det ene eleven holder på med, ikke lista over alt

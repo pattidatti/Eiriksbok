@@ -19,7 +19,8 @@ import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
 import { Opplaering } from './opplaering';
 import { K1, K1_FLAGG } from '../data/kapitler';
-import { SJOSETTINGEN } from '../data/klipp/kapittel1';
+import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
+import { Raidet } from './raidet';
 import { Portaler } from './portal';
 import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
@@ -63,6 +64,8 @@ export class WorldScene extends Phaser.Scene {
     private samhandling!: Interaksjon;
     /** Fire økter på tunet, mot Ravn. Kapittel 1 begynner her. */
     private opplaering!: Opplaering;
+    /** Raidet mot Lindisfarne, i to halvdeler. Ligger stille alle andre steder. */
+    private raidet!: Raidet;
     /** Båter og annet eleven kan gå om bord i. */
     private farkoster!: Farkoster;
     /** Dørene ut: portalene i hallen, og porten hjem fra en epoke. */
@@ -197,6 +200,13 @@ export class WorldScene extends Phaser.Scene {
             ovingsmodus: (pa) => this.helt.settOvingsmodus(pa),
             visNpc: (npcId, synlig) => this.samhandling.settSynlig(npcId, synlig),
         });
+        this.raidet = new Raidet({
+            settUt: (defId, x, y, valg) => {
+                const def = ENEMY_BY_ID[defId];
+                return def ? this.fiendeSystem.settUt(def, x, y, valg) : null;
+            },
+            musikkRot: sted.musikkRot,
+        });
         this.samhandling = new Interaksjon(this, sted.npcer, sted.landemerker, {
             spiller: () => this.helt.sprite,
             laas: (pa) => this.settLaast(pa),
@@ -263,6 +273,31 @@ export class WorldScene extends Phaser.Scene {
             stedId: sted.id,
             tittel: sted.tittel,
             undertittel: sted.undertittel,
+        });
+
+        this.aapneStedet();
+    }
+
+    /**
+     * Det som skal skje i det eleven kommer fram et sted.
+     *
+     * Ligger her og ikke i `steder.ts` av samme grunn som handlingene: dataene
+     * sier hva et sted *er*, scenen sier hva som skjer. Et felt i registeret som
+     * het `naarHunKommer` ville før eller siden fått et helt kapittel i seg.
+     */
+    private aapneStedet(): void {
+        if (this.sted.id !== 'lindisfarne') return;
+        const store = useRpgStore.getState();
+        if (store.steg.includes(K1.motstanden)) {
+            // Hun har vært her før. Ingen ny cutscene og ingen nye forsvarere -
+            // øya skal ikke fylle seg opp på nytt hver gang hun seiler tilbake
+            // for å hente det hun lot ligge.
+            this.raidet.start();
+            return;
+        }
+        void this.spillKlipp(STRANDA).then(() => {
+            useRpgStore.getState().fullforSteg(K1.stranda);
+            this.raidet.start();
         });
     }
 
@@ -492,6 +527,7 @@ export class WorldScene extends Phaser.Scene {
             !opptatt && !benkEier && !this.opplaering.gaar
         );
         this.opplaering.oppdater(delta);
+        this.raidet.oppdater(delta);
         if (!sitter) {
             this.samvaer?.sjekk(
                 delta,
@@ -659,6 +695,16 @@ export class WorldScene extends Phaser.Scene {
      */
     bestillReise(stedId: string) {
         if (this.reiser || stedId === this.sted.id) return;
+        // Å forlate øya *er* å ha gjort seg ferdig der. Hun trenger ikke ta
+        // noe som helst - å la alt ligge er et av valgene (§3), og steget skal
+        // føres uansett. Ellers ville Orm hjemme stått og ventet på et bytte som
+        // aldri kom, og kapittelet kunne ikke avsluttes.
+        if (this.sted.id === 'lindisfarne' && useRpgStore.getState().steg.includes(K1.motstanden)) {
+            useRpgStore.getState().fullforSteg(K1.byttet);
+        }
+        // Raidet eier oppgavekortet og navnestolpen. Begge lever i React, og
+        // uten dette ville «Ta det du vil ha» blitt stående over fjorden hjemme.
+        this.raidet.avslutt();
         this.reiser = true;
         this.reiserFra = this.sted.id;
         fraSpill.emit('reise', { stedId });
@@ -765,6 +811,18 @@ export class WorldScene extends Phaser.Scene {
                 fraSpill.emit('puzzle', { id: 'skroget' });
                 return;
             }
+            case 'orm-ferden': {
+                this.settLaast(true);
+                fraSpill.emit('puzzle', { id: 'navigasjonen' });
+                return;
+            }
+            case 'orm-hjemkomst': {
+                const store = useRpgStore.getState();
+                store.fullforSteg(K1.hjem);
+                store.fullforKapittel(1, 'Kapittel 1: Skroget og stranda');
+                store.varsle('Kapittel 1 er over. 793 er bak deg.', 'niva');
+                return;
+            }
             default:
                 return;
         }
@@ -793,6 +851,16 @@ export class WorldScene extends Phaser.Scene {
                 void this.spillKlipp(SJOSETTINGEN).then(() => {
                     useRpgStore.getState().fullforSteg(K1.sjosettingen);
                 });
+                return;
+            }
+            case 'navigasjonen': {
+                store.fullforSteg(K1.navigasjonen);
+                store.fullforPuzzle('navigasjonen', 'Du holdt breddegraden vestover');
+                store.larBegrep('breddegradseiling', 'forstatt');
+                // Reisen bestilles med én gang. Overfarten *er* puzzlet - å
+                // sette henne tilbake på brygga for å gå om bord etterpå ville
+                // gjort seilasen til en meny hun må gjennom to ganger.
+                this.bestillReise('lindisfarne');
                 return;
             }
             default:

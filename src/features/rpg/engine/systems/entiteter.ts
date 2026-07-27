@@ -66,10 +66,34 @@ export interface Fiende {
      * gjemme seg.
      */
     fredelig?: boolean;
+    /**
+     * Løper vekk i stedet for mot.
+     *
+     * Andre halvdel av Lindisfarne. De som er igjen på øya kan ikke slåss, og
+     * de gjør det eneste folk gjør: de kommer seg unna.
+     */
+    flykter?: boolean;
+    /**
+     * Spillet slutter å juble.
+     *
+     * Ingen livsstolpe, ingen skadetall, ingen XP, ingen loot, ingen fanfare.
+     * Reglene er de samme - angrepet virker likt, blodet ser likt ut. Det er
+     * kontrasten som bærer, ikke en regelendring (blueprint §3).
+     */
+    stille?: boolean;
     /** Navn over hodet. Folk fra bygda har det; fremmede har det ikke (§5.7). */
     navn?: string;
     /** Skiltet som tegner navnet. Lages første bilde `navn` er satt. */
     navnskilt?: PikselTekst;
+    /**
+     * Navnestolpe øverst på skjermen, som en boss.
+     *
+     * Den som fører øyas menn har den (blueprint §3). Poenget er ikke at han er
+     * sterkere - det er at eleven skal vite hvem hun slåss mot mens hun gjør
+     * det, og at det er noen. Skiltet over hodet forsvinner i et slagsmål med
+     * sju mann; en stolpe øverst gjør ikke det.
+     */
+    toppstolpe?: boolean;
 }
 
 /**

@@ -668,6 +668,30 @@ export interface LandmarkDef {
     text: string;
     /** Hvilke spørsmål teksten svarer på. Se KunnskapsBit. */
     stikkord?: string[];
+    /**
+     * Noe eleven kan gjøre her, ikke bare lese.
+     *
+     * Lindisfarne er hele grunnen til at dette finnes: relikvieskrinet, bøkene,
+     * skriptoriet. Hun tar det hun vil, eller lar være, og spillet sier
+     * ingenting - verken ros eller straff. Følgen kommer i mellomspillet og i
+     * graven hennes i kapittel 5.
+     */
+    valg?: LandmarkValg;
+}
+
+export interface LandmarkValg {
+    id: string;
+    /** Teksten på knappen. Hennes handling, ikke spillets vurdering av den. */
+    knapp: string;
+    /** Flagget den setter. Leses av mellomspillet og av senere kapitler. */
+    flagg: string;
+    /** Det som står der etterpå. Én linje, uten dom. */
+    etterpa: string;
+    /**
+     * Sølv det gir. Bøkene gir null, og det er ikke en forglemmelse: de er
+     * verdiløse for henne og uerstattelige for dem, og det er hele poenget.
+     */
+    solv?: number;
 }
 
 /** Hvor svaret på et spørsmål faktisk står i verden. */

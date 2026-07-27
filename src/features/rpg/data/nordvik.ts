@@ -129,6 +129,27 @@ export const NORDVIK_NPCS: NpcDef[] = [
                 etterpa:
                     'Det flyter. Det er alt som skal sies om et skrog. Nå skal det vestover, og du skal med.',
             },
+            {
+                id: 'orm-ferden',
+                knapp: 'Jeg blir med vestover',
+                ledetekst:
+                    'Vi har hørt om et sted over havet. Ingen mur, sier de, og gull på veggene. Ravn har lært deg å holde skjoldet, og du har lagt bordene selv. Da kan du styre også.',
+                // Begge deler kreves. Å seile ut uten å kunne holde skjoldet er
+                // ikke et valg kapittelet skal tilby - og skroget må flyte før
+                // noen kan seile i det.
+                krever: ['k1-skroget', 'k1-ravn'],
+                gir: 'k1-navigasjonen',
+                etterpa: 'Du har vært der. Det er ikke noe mer å si om det her.',
+            },
+            {
+                id: 'orm-hjemkomst',
+                knapp: 'Fortell hva du tok med',
+                ledetekst: 'Så. Du kom hjem. Hva tok du med?',
+                krever: ['k1-byttet'],
+                gir: 'k1-hjem',
+                etterpa:
+                    'Han spurte aldri hva som skjedde der borte. Bare hva du hadde med deg. Det er det som blir husket her.',
+            },
         ],
         kunnskap: [
             {

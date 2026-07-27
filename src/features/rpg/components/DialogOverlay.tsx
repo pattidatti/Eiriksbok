@@ -158,7 +158,12 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
     const lm = finnLandemerke(landmarkId);
     const markerLest = useRpgStore((s) => s.markerLest);
     const lest = useRpgStore((s) => s.lest);
+    const flagg = useRpgStore((s) => s.flagg);
+    const settFlagg = useRpgStore((s) => s.settFlagg);
+    const giSolv = useRpgStore((s) => s.giSolv);
     const forste = lm ? !lest.includes(lm.id) : false;
+    const valg = lm?.valg;
+    const tatt = valg ? Boolean(flagg[valg.flagg]) : false;
 
     useEffect(() => {
         sfx.apne();
@@ -195,7 +200,32 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
             <p className="whitespace-pre-line text-[15px] leading-relaxed text-slate-100">
                 {lm.text}
             </p>
-            {forste && (
+            {/*
+                Valget. Ingen vurdering står her - ingen «er du sikker?», ingen
+                farge som sier at dette er stygt, og ingen ros når det er gjort.
+                Spillet sier ingenting (blueprint §3). Følgen kommer i
+                mellomspillet og i graven hennes i kapittel 5.
+            */}
+            {valg && !tatt && (
+                <button
+                    type="button"
+                    onClick={() => {
+                        settFlagg(valg.flagg);
+                        if (valg.solv) giSolv(valg.solv);
+                        onLukk();
+                    }}
+                    className="mt-4 w-full rounded-lg border border-white/25 bg-white/10 px-4 py-3 font-display font-semibold text-slate-100 transition hover:bg-white/20"
+                >
+                    {valg.knapp}
+                </button>
+            )}
+            {valg && tatt && (
+                <p className="mt-4 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-[15px] text-slate-300">
+                    {valg.etterpa}
+                </p>
+            )}
+
+            {forste && !valg && (
                 <p className="mt-4 rounded-lg bg-emerald-500/15 px-3 py-2 text-sm text-emerald-200">
                     Du husker dette nå. +5 erfaring.
                 </p>

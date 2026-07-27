@@ -9,6 +9,12 @@
 // slå opp «hvem er dette» uten å vite hvor eleven står.
 
 import { byggHub } from '../engine/hubgen';
+import {
+    byggLindisfarne,
+    LINDISFARNE_PORTAL,
+    LINDISFARNE_SPAWN,
+} from '../engine/lindisfarnegen';
+import { LINDISFARNE_LANDMARKS } from './lindisfarne';
 import { byggNordvik } from '../engine/worldgen';
 import type { LandmarkDef, NpcDef, Sted } from '../types';
 import {
@@ -112,7 +118,55 @@ const NORDVIK: Sted = {
     authored: NORDVIK_AUTHORED_QUESTER,
 };
 
-export const STEDER: Sted[] = [HUB, NORDVIK];
+/**
+ * Lindisfarne, 8. juni 793.
+ *
+ * Andre halvdel av kapittel 1, og det andre kartet epoken har. Stedet har ingen
+ * NPC-er og ingen oppdrag: de som bor her, møter eleven som motstand først og
+ * som flyktende folk etterpå, og begge deler eies av `Raidet`.
+ *
+ * `spawner` er tom. Ingen driver inn hit av seg selv - raidet setter ut sine
+ * egne i to bølger, og en glemseltåke mellom dem ville vært et annet spill.
+ */
+const LINDISFARNE: Sted = {
+    id: 'lindisfarne',
+    tittel: 'Lindisfarne',
+    undertittel: '8. juni 793',
+    epokeId: 'vikingtiden',
+    tema: {
+        ...EPOKE_BY_ID.vikingtiden.tema,
+        // Lavere, kaldere og mer utvasket enn hjemme. Nordsjøen om morgenen,
+        // ikke en fjord i solskinn - og et gress som er beitet ned av sau.
+        gress: '#5f7a4e',
+        himmel: '#c2cbd0',
+        vann: '#33607e',
+        sand: '#ddd3b4',
+        tak: '#6a6250',
+        tommer: '#7a6a52',
+    },
+    byggKart: byggLindisfarne,
+    spawn: LINDISFARNE_SPAWN,
+    npcer: [],
+    landemerker: LINDISFARNE_LANDMARKS,
+    portaler: [
+        {
+            tile: LINDISFARNE_PORTAL,
+            maal: {
+                art: 'sted',
+                stedId: 'nordvik',
+                navn: 'NORDVIK',
+                undertekst: 'HJEM',
+            },
+        },
+    ],
+    // Klarere luft enn hjemme. Glemselen har ikke fått tak her - ennå.
+    taake: 0.5,
+    spawner: [],
+    musikkRot: 174,
+    authored: [],
+};
+
+export const STEDER: Sted[] = [HUB, NORDVIK, LINDISFARNE];
 
 export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s) => [s.id, s]));
 

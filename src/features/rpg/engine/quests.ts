@@ -96,6 +96,16 @@ export function byggQuester(bankData: QuestBank, sted: Sted): QuestDef[] {
     // Alle som kan gi oppdrag. Handelsmannen driver bod, ikke oppdrag.
     const givere = sted.npcer.filter((n) => !n.handler);
 
+    // Et sted uten folk har ingen å gi oppdrag, og da er det ingen oppdrag.
+    //
+    // Dette er ikke en kanttilfelle-vakt, det er en ekte tilstand: Lindisfarne
+    // har ingen NPC-er, for de som bor der møter eleven som motstand og ikke
+    // som samtale. Før falt `velgGiver` på `reduce` over en tom liste - «Reduce
+    // of empty array with no initial value» - og hele reisen dit stoppet i det
+    // React skulle bygge questene for det nye stedet. Feilen pekte på
+    // questmotoren, ikke på stedet.
+    if (givere.length === 0) return [];
+
     /** Hvor mange oppdrag hver giver har fått. Holder køene omtrent like lange. */
     const kolengde = new Map<string, number>(givere.map((n) => [n.id, 0]));
 

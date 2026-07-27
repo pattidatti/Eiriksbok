@@ -305,6 +305,53 @@ export function startMusikk(rot = 196, intensitet = 0): void {
     stoppMusikk = () => window.clearInterval(timer);
 }
 
+/**
+ * Én tone som blir stående.
+ *
+ * Andre halvdel av Lindisfarne (blueprint §3): motstanden er nede, og det som
+ * er igjen på øya er de som ikke kan slåss. Ingenting i reglene endrer seg -
+ * spillet slutter bare å juble. Musikken faller bort og blir stående på én
+ * tone, og det er kontrasten som bærer, ikke en regelendring.
+ *
+ * Derfor er dette ikke `startMusikk` med lav intensitet: en slått med færre
+ * noter er fortsatt en slått. Dette er en drone, uten puls og uten melodi, og
+ * fraværet av rytme er hele poenget.
+ */
+export function startEnTone(rot = 147): void {
+    const c = ensure();
+    if (!c || !musikk) return;
+    stopMusikk();
+
+    const osc = c.createOscillator();
+    const under = c.createOscillator();
+    const g = c.createGain();
+    osc.type = 'sine';
+    under.type = 'triangle';
+    osc.frequency.setValueAtTime(rot, c.currentTime);
+    under.frequency.setValueAtTime(rot / 2, c.currentTime);
+    g.gain.setValueAtTime(0.0001, c.currentTime);
+    // Den kommer sakte. Et kutt fra slått til drone i ett bilde leser som at
+    // lyden falt ut, ikke som at noe tok slutt.
+    g.gain.exponentialRampToValueAtTime(0.07, c.currentTime + 2.4);
+    osc.connect(g).connect(musikk);
+    under.connect(g);
+    osc.start();
+    under.start();
+
+    stoppMusikk = () => {
+        const na = ctx?.currentTime ?? 0;
+        try {
+            g.gain.cancelScheduledValues(na);
+            g.gain.setValueAtTime(Math.max(0.0001, g.gain.value), na);
+            g.gain.exponentialRampToValueAtTime(0.0001, na + 0.4);
+            osc.stop(na + 0.5);
+            under.stop(na + 0.5);
+        } catch {
+            // Konteksten kan alt være lukket. Da er tonen borte uansett.
+        }
+    };
+}
+
 export function stopMusikk(): void {
     stoppMusikk?.();
     stoppMusikk = null;

@@ -12,6 +12,7 @@ import { DialogOverlay, LandmarkOverlay } from './components/DialogOverlay';
 import { Hud } from './components/Hud';
 import { HubHud } from './components/HubHud';
 import { Klippscene } from './components/Klippscene';
+import { Navigasjonen } from './components/Navigasjonen';
 import { Skroget } from './components/Skroget';
 import { rustningTier } from './data/classes';
 import { useHubRom } from './net/useHubRom';
@@ -92,6 +93,8 @@ export default function RpgPage() {
         mal: string;
         teller?: string;
     } | null>(null);
+    /** Den navngitte motstanderen, øverst på skjermen. */
+    const [motstander, setMotstander] = useState<{ navn: string; andel: number } | null>(null);
     /** Én replikk sagt mens spillet går. Går av seg selv. */
     const [replikk, setReplikk] = useState<{ hvem: string; tekst: string } | null>(null);
     const replikkTimer = useRef<number | null>(null);
@@ -223,6 +226,7 @@ export default function RpgPage() {
             // kreve et tastetrykk: verden går videre mens den står, og en
             // beskjed som må lukkes midt i en kamp er en beskjed eleven lukker
             // uten å lese.
+            fraSpill.on('motstander', (m) => setMotstander(m)),
             fraSpill.on('replikk', (r) => {
                 setReplikk(r);
                 if (replikkTimer.current) window.clearTimeout(replikkTimer.current);
@@ -337,6 +341,7 @@ export default function RpgPage() {
                         kompass={kompass}
                         kamp={kamp}
                         oppgave={oppgave}
+                        motstander={motstander}
                         onApneSekk={() => apnePanel({ type: 'sekk' })}
                         onApneLogg={() => apnePanel({ type: 'logg' })}
                         onPause={() => apnePanel({ type: 'pause' })}
@@ -450,6 +455,19 @@ export default function RpgPage() {
                     onAvbryt={() => {
                         setOverlegg({ type: 'ingen' });
                         tilSpill.emit('puzzleSvar', { id: 'skroget', lost: false });
+                    }}
+                />
+            )}
+
+            {overlegg.type === 'puzzle' && overlegg.id === 'navigasjonen' && (
+                <Navigasjonen
+                    onFerdig={() => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('puzzleSvar', { id: 'navigasjonen', lost: true });
+                    }}
+                    onAvbryt={() => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('puzzleSvar', { id: 'navigasjonen', lost: false });
                     }}
                 />
             )}
