@@ -180,8 +180,9 @@ export class WorldScene extends Phaser.Scene {
         startMusikk(sted.musikkRot, 0);
         this.events.once('shutdown', () => this.rydd());
 
-        // Stedet huskes, så neste økt begynner der eleven slapp.
-        useRpgStore.setState({ sisteSone: sted.id });
+        // Stedet huskes, så neste økt begynner der eleven slapp. Går reisen
+        // over en epokegrense, legger storen den forrige epoken til side hel.
+        useRpgStore.getState().ankomSted(sted.id, sted.epokeId);
         fraSpill.emit('sone', {
             stedId: sted.id,
             tittel: sted.tittel,

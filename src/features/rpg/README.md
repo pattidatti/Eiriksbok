@@ -51,7 +51,7 @@ engine/
   quests.ts              Setter sammen quester + finner hvor svaret står i verden
   bridge.ts              Hendelser mellom scene og React
   enhet.ts               Har enheten berøringsskjerm?
-store/useRpgStore.ts     All spillertilstand + kobling til «Min læring»
+store/useRpgStore.ts     All spillertilstand, lagringsformatet + kobling til «Min læring»
 components/              Karakterskaper, HUD, dialog, kunnskapsutfordring, sekk,
                          logg, butikk, skjermkontroll og atmosfære-overlegg
 ```
@@ -228,11 +228,49 @@ Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blu
 Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
 `docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R5 er bygget.
 
+## Lagring
+
+Lagringen har to former, og de er med vilje ikke den samme.
+
+-   **På disken** (`SaveState` i `types.ts`, localStorage-nøkkelen
+    `rpg-minnevokteren-v1`) ligger alt i et navnerom per epoke:
+    `spiller` er globalt og følger eleven overalt, `epoker[id]` har
+    `kampanje` (det hun har lært og gjort - arves mellom kapitler) og
+    `kapittelState` (den ene personen i det ene kapittelet - nullstilles ved
+    kapittelskifte). Nivå og utstyr følger personen, ikke ætten.
+-   **I kjøretiden** (`RpgState` i storen) ligger den *aktive* epoken flatt, så
+    ingen komponent trenger å vite hvilken epoke den leser fra. Epoker eleven
+    ikke står i, ligger urørt i `andreEpoker`.
+
+`partialize` og `merge` i storen er de eneste to stedene som kjenner begge
+formene. Det er verdt å holde slik: før hadde vi to typer som skulle beskrive
+det samme, og de hadde drevet fra hverandre uten at noe sa fra.
+
+Tre ting som er lette å ødelegge:
+
+-   **Nøkkelen byttes aldri.** Å bytte den er å slette hvert eneste lagrede
+    spill i et klasserom som spiller. Nye former får ny `version` og en
+    migrering.
+-   **`merge` er total.** Den bygger hele tilstanden gjennom `heleEpoken()`, som
+    fyller hullene. Derfor kan ikke et nytt felt lenger komme tilbake som
+    `undefined` for en elev med et gammelt spill - den klassen feil er borte,
+    men bare så lenge nye felt får default i `tomKampanje()`/`tomtKapittel()`.
+-   **Ingen oppslag uten fall.** `CLASS_BY_ID[…].startWeapon` på en klasse som
+    er omdøpt kastet et unntak midt i innlastingen, zustand svelget det, og
+    eleven møtte karakterskaperen som om hun aldri hadde spilt - med det
+    lagrede spillet liggende urørt til hun laget en ny figur oppå det.
+    `onRehydrateStorage` logger nå slike feil.
+
+`ankomSted(stedId, epokeId)` er det eneste som bytter epoke: den legger den
+forrige bort hel og henter den nye fram hel. `WorldScene.create()` kaller den
+hver gang eleven kommer fram et sted.
+
 ## Verifisering
 
-Åtte skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Ni skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
-`window.__rpgSteder`), som `boot.ts` bare eksponerer i dev.
+`window.__rpgSteder`, storen gjennom `window.__rpgStore`), som `boot.ts` bare
+eksponerer i dev.
 
 Er 5173 opptatt (en annen økt kjører allerede), tar Vite neste ledige port. Da
 må skriptene få vite hvor de skal:
@@ -251,6 +289,7 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-reise.mjs`       | Stedskifte: bygges på nytt, og ingenting lekker           |
 | `verify-rpg-bue.mjs`         | Skytevåpen: ladetid, pil i lufta, rekkevidde              |
 | `verify-rpg-farkost.mjs`     | Båten: om bord, ro, land stopper, i land igjen            |
+| `verify-rpg-lagring.mjs`     | At et lagret spill overlever migreringen, og epokebytte   |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir

@@ -46,9 +46,17 @@ export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s
 /** Der en ny elev begynner. */
 export const START_STED = 'nordvik';
 
+/** Epoken startstedet ligger i. Utledes, så de to aldri kan si hver sin ting. */
+export const START_EPOKE = STED_BY_ID[START_STED].epokeId;
+
 /** Stedet med denne id-en, eller startstedet hvis id-en er ukjent. */
 export function stedEllerStart(id: string | undefined): Sted {
     return STED_BY_ID[id ?? ''] ?? STED_BY_ID[START_STED];
+}
+
+/** Der en elev kommer inn i en epoke hun ikke har vært i før. */
+export function forsteStedI(epokeId: string): string {
+    return (STEDER.find((s) => s.epokeId === epokeId) ?? STED_BY_ID[START_STED]).id;
 }
 
 /** Slår opp en NPC uten å vite hvor hun står. */

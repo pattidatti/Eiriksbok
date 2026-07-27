@@ -392,7 +392,7 @@ Etter R8: kapittel 1, etter Nordvik-blueprintens etappe 2.
 
 ### Status
 
-**R1-R5 er bygget** (juli 2026). Alle åtte `scripts/verify-rpg-*.mjs` er grønne.
+**R1-R6 er bygget** (juli 2026). Alle ni `scripts/verify-rpg-*.mjs` er grønne.
 
 #### R4
 
@@ -432,6 +432,44 @@ fallgruve 6 ber om. Tre ting prøvingen avdekket, og som er verdt å huske:
 Farkosten kjenner ingen reisemål. `bestillReise()` fra R2 finnes og virker, men
 det er ingenting å seile til før Lindisfarne bygges - å koble en avreise til
 kartkanten nå ville vært et løfte uten et sted i den andre enden.
+
+#### R6
+
+Lagringen er `version: 4` med `epoker`-navnerommet, samme nøkkel, én
+migrering. Formen følger §8, med tre avvik som er verdt å begrunne:
+
+- **`hub` er ikke lagt inn.** Det er en hel delstate for et sted som ikke
+  finnes ennå, og R4-leksjonen gjelder: et felt ingen leser er den feilen
+  `iRekke` allerede har gjort her. R7 legger det til additivt med default -
+  det er ikke omstruktureringen fallgruve 11 advarer mot. Den, den dyre
+  migreringen, er gjort nå og gjøres bare én gang.
+- **`kampanje` har det spillet faktisk har i dag** - `quester`,
+  `questForsok`, `riktigeSvar`, `galeSvar`, `lest`, `bosser` - ikke
+  `aettAere`, `saker`, `beretninger` og resten fra Nordvik-blueprintens
+  §12.2. De feltene hører til systemene i etappe 2 og legges inn av dem.
+  Skillet mellom arvet og nullstilt er altså ekte fra dag én, ikke et tomt
+  skall.
+- **`spells`, `mana` og `character.classId` står.** §12.2 tar dem ut, men det
+  er en *spillendring* som hører til etappe 2, ikke til en omlegging av
+  lagringsformatet. Hver etappe skal etterlate spillet spillbart.
+
+To ting arbeidet avdekket, som ikke sto i planen:
+
+- **Fallgruven med flat fletting er strukturelt borte.** `merge` er nå total:
+  den bygger hele tilstanden gjennom `heleEpoken()`, som fyller hull med
+  `tomKampanje()`/`tomtKapittel()`. Et nytt felt kan ikke lenger komme
+  tilbake som `undefined` for en elev med et gammelt spill - man må aktivt
+  glemme å gi det en default, i stedet for aktivt å huske en migrering.
+- **Et unntak under innlasting er usynlig.** `CLASS_BY_ID[…].startWeapon` på
+  en klasse-id som ikke finnes kastet midt i rehydreringen, zustand svelget
+  det, og eleven møtte karakterskaperen som om hun aldri hadde spilt - med
+  spillet sitt liggende urørt på disken til hun laget en ny figur oppå det.
+  Alle oppslag har fall nå, og `onRehydrateStorage` logger feilen.
+
+`scripts/verify-rpg-lagring.mjs` sår ekte lagrede spill i localStorage og
+leser tilbake både storen og disken: v3 flatt, v1 med stokkede bankoppdrag,
+en fremmed epoke som ikke skal røres, epokebytte begge veier, og en lagring
+med hull i.
 
 ---
 

@@ -572,21 +572,24 @@ export interface AuthoredQuest {
 }
 
 // ─── Lagret spill ───────────────────────────────────────────────────────────
+//
+// Formen på disken, versjon 4. Den er ikke den samme som kjøretidstilstanden i
+// `store/useRpgStore.ts`: der ligger den aktive epoken flatt, så komponentene
+// kan lese `s.hp` uten å vite hvilken epoke de står i. Storen pakker mellom de
+// to formene i `partialize` og `merge`, og det er de eneste to stedene som
+// kjenner begge. Før hadde vi to typer som skulle beskrive det samme, og de
+// hadde drevet fra hverandre.
 
-export interface SaveState {
-    version: number;
-    character: CharacterDraft | null;
-    niva: number;
-    xp: number;
-    hp: number;
-    mana: number;
-    solv: number;
-    /** Item-id-er i sekken. */
-    sekk: string[];
-    utstyr: Record<ItemSlot, string | null>;
-    spells: string[];
+/**
+ * Det eleven har lært og gjort i en epoke. Arves mellom kapitler: Orm den
+ * yngre i 1066 arver ikke Torsteins sverd fra 793, men han arver at ætten hans
+ * gjorde det den gjorde.
+ */
+export interface EpokeKampanje {
     /** Quest-id → status. */
     quester: Record<string, 'aktiv' | 'ferdig'>;
+    /** Hvor mange ganger eleven har bommet på hvert oppdrag. */
+    questForsok: Record<string, number>;
     /** Riktige svar totalt - låser opp besvergelser. */
     riktigeSvar: number;
     galeSvar: number;
@@ -594,5 +597,37 @@ export interface SaveState {
     lest: string[];
     /** Drepte bosser. */
     bosser: string[];
-    sisteSone: string;
+}
+
+/**
+ * Det som hører til én person i ett kapittel, og som nullstilles ved
+ * kapittelskifte. Nivå og utstyr følger personen, ikke ætten.
+ */
+export interface EpokeKapittel {
+    hp: number;
+    mana: number;
+    xp: number;
+    solv: number;
+    /** Item-id-er i sekken. */
+    sekk: string[];
+    utstyr: Record<ItemSlot, string | null>;
+    spells: string[];
+}
+
+export interface EpokeSave {
+    /** Hvilket kapittel `kapittelState` hører til. Ett foreløpig. */
+    kapittel: number;
+    /** Stedet i epoken eleven sto på sist. */
+    sisteSted: string;
+    kampanje: EpokeKampanje;
+    kapittelState: EpokeKapittel;
+}
+
+export interface SaveState {
+    version: 4;
+    /** Følger eleven overalt, i alle epoker. */
+    spiller: { character: CharacterDraft | null };
+    /** Epoken hun sto i sist. */
+    sisteEpoke: string;
+    epoker: Record<string, EpokeSave>;
 }

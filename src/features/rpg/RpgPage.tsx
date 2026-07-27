@@ -53,7 +53,7 @@ export default function RpgPage() {
     // Stedet eleven skal til: der hun sluttet sist. En ukjent id - en lagring
     // fra et sted som ikke finnes lenger - faller tilbake til startstedet i
     // stedet for å låse henne ute av spillet.
-    const sted = stedEllerStart(useRpgStore((s) => s.sisteSone));
+    const sted = stedEllerStart(useRpgStore((s) => s.sisteSted));
 
     const [klar, setKlar] = useState(false);
     const [feil, setFeil] = useState<string | null>(null);
@@ -112,7 +112,7 @@ export default function RpgPage() {
         const parent = containerRef.current;
 
         void import('./engine/boot').then(({ startSpill }) =>
-            startSpill(parent, questerRef.current, useRpgStore.getState().sisteSone).then(
+            startSpill(parent, questerRef.current, useRpgStore.getState().sisteSted).then(
                 (handle) => {
                     if (avbrutt) {
                         handle.destroy();

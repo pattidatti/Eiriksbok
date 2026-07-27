@@ -2,6 +2,10 @@
 // lukker fanen ligger her, og lagres i localStorage som de andre storene i
 // appen.
 //
+// To former, med vilje ikke den samme: den aktive epoken ligger flatt i
+// kjøretiden, mens disken har et navnerom per epoke (`SaveState` i types.ts).
+// `partialize` og `merge` nederst er de eneste to stedene som kjenner begge.
+//
 // Storen er også broen til «Min læring»: når eleven fullfører en quest eller
 // feller en boss, kalles recordActivity() slik at det teller i det vanlige
 // progresjonssystemet.
@@ -9,14 +13,42 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { useProgressStore } from '../../progress/useProgressStore';
-import { CLASS_BY_ID, levelFromXp, statsAt, xpForLevel } from '../data/classes';
+import { CLASS_BY_ID, CLASSES, levelFromXp, statsAt, xpForLevel } from '../data/classes';
 import { ITEM_BY_ID, equipmentBonus } from '../data/items';
 import { SPELL_BY_ID, newlyUnlockedSpells } from '../data/spells';
+import { forsteStedI, START_EPOKE, START_STED } from '../data/steder';
 import { sfx } from '../engine/audio';
-import type { CharacterDraft, ItemSlot, QuestDef, VaapenDef } from '../types';
+import type {
+    CharacterDraft,
+    EpokeKampanje,
+    EpokeKapittel,
+    EpokeSave,
+    ItemSlot,
+    QuestDef,
+    SaveState,
+    VaapenDef,
+} from '../types';
 
+/**
+ * Kjøretidstilstanden.
+ *
+ * Den aktive epoken ligger **flatt** her - `hp`, `xp`, `sekk` og resten - så
+ * ingen komponent trenger å vite hvilken epoke den leser fra. Det som ligger
+ * lagret om epoker eleven ikke står i nå, ligger urørt i `andreEpoker`.
+ *
+ * Formen på disken er en annen, og den står i `SaveState` (`types.ts`).
+ * `partialize` og `merge` er de eneste to stedene som kjenner begge.
+ */
 export interface RpgState {
     character: CharacterDraft | null;
+    /** Epoken eleven står i. Alt det flate under gjelder den. */
+    epokeId: string;
+    /** Kapittelet i epoken. Kapittelskifte kommer med kampanjen. */
+    kapittel: number;
+    /** Stedet hun sto på sist - der neste økt begynner. */
+    sisteSted: string;
+    /** Lagret tilstand for epoker hun ikke står i akkurat nå. */
+    andreEpoker: Record<string, EpokeSave>;
     xp: number;
     hp: number;
     mana: number;
@@ -31,11 +63,11 @@ export interface RpgState {
     galeSvar: number;
     lest: string[];
     bosser: string[];
-    sisteSone: string;
     /** Beskjeder som HUD-en viser som «toast». */
     varsler: { id: number; tekst: string; art: 'info' | 'bra' | 'darlig' | 'niva' }[];
 
     lagKarakter: (draft: CharacterDraft) => void;
+    ankomSted: (stedId: string, epokeId: string) => void;
     slettAlt: () => void;
     endreHp: (delta: number) => void;
     endreMana: (delta: number) => void;
@@ -61,7 +93,127 @@ const TOM_UTSTYR: Record<ItemSlot, string | null> = { vapen: null, rustning: nul
 /** Våpenet en elev uten utrustet våpen slår med - hendene hennes, i praksis. */
 const START_VAAPEN = 'ovingssverd';
 
+const LAGRING_VERSJON = 4;
+
 let varselId = 0;
+
+// ─── Epoketilstand ──────────────────────────────────────────────────────────
+
+/** Ingenting lært, ingenting gjort. */
+const tomKampanje = (): EpokeKampanje => ({
+    quester: {},
+    questForsok: {},
+    riktigeSvar: 0,
+    galeSvar: 0,
+    lest: [],
+    bosser: [],
+});
+
+/**
+ * En person som akkurat har begynt.
+ *
+ * Slår aldri opp klassen uten fall. Et lagret spill fra en klasse som er
+ * omdøpt eller fjernet - og det kommer til å skje, `character.classId` er på
+ * vei ut med kampanjen - skal gi eleven en litt annen startgave, ikke et
+ * unntak midt i innlastingen som lar henne stå igjen uten spill i det hele
+ * tatt.
+ */
+const tomtKapittel = (character: CharacterDraft | null): EpokeKapittel => {
+    const klasse = character ? (CLASS_BY_ID[character.classId] ?? CLASSES[0]) : null;
+    const start = character ? statsAt(character.classId, 1) : { hp: 100, mana: 40 };
+    return {
+        hp: start.hp,
+        mana: start.mana,
+        xp: 0,
+        solv: 0,
+        sekk: klasse ? [klasse.startWeapon] : [],
+        utstyr: klasse ? { ...TOM_UTSTYR, vapen: klasse.startWeapon } : { ...TOM_UTSTYR },
+        spells: klasse ? [klasse.startSpell] : [],
+    };
+};
+
+const nyEpoke = (epokeId: string, character: CharacterDraft | null): EpokeSave => ({
+    kapittel: 1,
+    sisteSted: forsteStedI(epokeId),
+    kampanje: tomKampanje(),
+    kapittelState: tomtKapittel(character),
+});
+
+/**
+ * Fyller hullene i en lagret epoke.
+ *
+ * Dette er stedet fallgruven i blueprintens §12.2 lå: zustand-persist flettet
+ * flatt, så et felt som bare fikk verdi i `create()` ble `undefined` for en
+ * elev med et gammelt lagret spill, og første `.length` krasjet spillet
+ * hennes. Nå går alt gjennom denne funksjonen, og et nytt felt får default
+ * uten at noen må huske å skrive en migrering.
+ */
+const heleEpoken = (
+    epokeId: string,
+    lagret: Partial<EpokeSave> | undefined,
+    character: CharacterDraft | null
+): EpokeSave => ({
+    kapittel: lagret?.kapittel ?? 1,
+    sisteSted: lagret?.sisteSted ?? forsteStedI(epokeId),
+    kampanje: { ...tomKampanje(), ...lagret?.kampanje },
+    kapittelState: { ...tomtKapittel(character), ...lagret?.kapittelState },
+});
+
+/** Den aktive epoken, plukket ut av den flate kjøretidstilstanden. */
+const aktivEpoke = (s: RpgState): EpokeSave => ({
+    kapittel: s.kapittel,
+    sisteSted: s.sisteSted,
+    kampanje: {
+        quester: s.quester,
+        questForsok: s.questForsok,
+        riktigeSvar: s.riktigeSvar,
+        galeSvar: s.galeSvar,
+        lest: s.lest,
+        bosser: s.bosser,
+    },
+    kapittelState: {
+        hp: s.hp,
+        mana: s.mana,
+        xp: s.xp,
+        solv: s.solv,
+        sekk: s.sekk,
+        utstyr: s.utstyr,
+        spells: s.spells,
+    },
+});
+
+/** Motsatt vei: en epoke brettes ut flatt oppå tilstanden. */
+const leggUtEpoke = (s: RpgState, epokeId: string, epoke: EpokeSave): RpgState => ({
+    ...s,
+    epokeId,
+    kapittel: epoke.kapittel,
+    sisteSted: epoke.sisteSted,
+    ...epoke.kampanje,
+    ...epoke.kapittelState,
+});
+
+/**
+ * Formen lagringen hadde til og med versjon 3: alt flatt, én epoke
+ * underforstått. Står her, ikke i `types.ts`, fordi den bare finnes for
+ * migreringens skyld og skal dø den dagen ingen elev har et så gammelt spill.
+ */
+interface LagringV3 {
+    character: CharacterDraft | null;
+    xp: number;
+    hp: number;
+    mana: number;
+    solv: number;
+    sekk: string[];
+    utstyr: Record<ItemSlot, string | null>;
+    spells: string[];
+    quester: Record<string, 'aktiv' | 'ferdig'>;
+    questForsok: Record<string, number>;
+    riktigeSvar: number;
+    galeSvar: number;
+    lest: string[];
+    bosser: string[];
+    sisteSone: string;
+}
 
 /** Maks liv/kraft ut fra nivå, klasse og utstyr. */
 export function maksVerdier(state: Pick<RpgState, 'character' | 'xp' | 'utstyr'>) {
@@ -97,62 +249,55 @@ export const useRpgStore = create<RpgState>()(
     persist(
         (set, get) => ({
             character: null,
-            xp: 0,
-            hp: 100,
-            mana: 40,
-            solv: 0,
-            sekk: [],
-            utstyr: { ...TOM_UTSTYR },
-            spells: [],
-            quester: {},
-            questForsok: {},
-            riktigeSvar: 0,
-            galeSvar: 0,
-            lest: [],
-            bosser: [],
-            sisteSone: 'nordvik',
+            epokeId: START_EPOKE,
+            kapittel: 1,
+            sisteSted: START_STED,
+            andreEpoker: {},
+            ...tomtKapittel(null),
+            ...tomKampanje(),
             varsler: [],
 
-            lagKarakter: (draft) => {
-                const klasse = CLASS_BY_ID[draft.classId];
-                const start = statsAt(draft.classId, 1);
-                set({
+            lagKarakter: (draft) =>
+                set((s) => ({
+                    ...leggUtEpoke(s, START_EPOKE, nyEpoke(START_EPOKE, draft)),
                     character: draft,
-                    xp: 0,
-                    hp: start.hp,
-                    mana: start.mana,
-                    solv: 0,
-                    sekk: [klasse.startWeapon],
-                    utstyr: { ...TOM_UTSTYR, vapen: klasse.startWeapon },
-                    spells: [klasse.startSpell],
-                    quester: {},
-                    questForsok: {},
-                    riktigeSvar: 0,
-                    galeSvar: 0,
-                    lest: [],
-                    bosser: [],
+                    andreEpoker: {},
                     varsler: [],
-                });
-            },
+                })),
 
             slettAlt: () =>
-                set({
+                set((s) => ({
+                    ...leggUtEpoke(s, START_EPOKE, nyEpoke(START_EPOKE, null)),
                     character: null,
-                    xp: 0,
-                    hp: 100,
-                    mana: 40,
-                    solv: 0,
-                    sekk: [],
-                    utstyr: { ...TOM_UTSTYR },
-                    spells: [],
-                    quester: {},
-                    questForsok: {},
-                    riktigeSvar: 0,
-                    galeSvar: 0,
-                    lest: [],
-                    bosser: [],
+                    andreEpoker: {},
                     varsler: [],
-                }),
+                })),
+
+            /**
+             * Eleven har kommet fram et sted. Stedet huskes, så neste økt
+             * begynner der hun slapp.
+             *
+             * Er stedet i en annen epoke, legges den hun forlot til side hel -
+             * nivå, sølv, sekk og alt hun har lært - og den nye hentes fram
+             * eller begynnes på. To epoker skal aldri smelte sammen til én
+             * bunke tall, og det er hele grunnen til at lagringen har et
+             * `epoker`-navnerom.
+             */
+            ankomSted: (stedId, epokeId) => {
+                const s = get();
+                if (epokeId === s.epokeId) {
+                    if (s.sisteSted !== stedId) set({ sisteSted: stedId });
+                    return;
+                }
+                const lagret = s.andreEpoker[epokeId];
+                const andre = { ...s.andreEpoker, [s.epokeId]: aktivEpoke(s) };
+                delete andre[epokeId];
+                set({
+                    ...leggUtEpoke(s, epokeId, heleEpoken(epokeId, lagret, s.character)),
+                    sisteSted: stedId,
+                    andreEpoker: andre,
+                });
+            },
 
             endreHp: (delta) => {
                 const state = get();
@@ -345,30 +490,36 @@ export const useRpgStore = create<RpgState>()(
         }),
         {
             name: 'rpg-minnevokteren-v1',
-            version: 3,
-            // Bare data lagres. Før ble hele staten - inkludert alle
-            // handlingene - sendt gjennom serialiseringen.
-            partialize: (state) =>
-                ({
-                    character: state.character,
-                    xp: state.xp,
-                    hp: state.hp,
-                    mana: state.mana,
-                    solv: state.solv,
-                    sekk: state.sekk,
-                    utstyr: state.utstyr,
-                    spells: state.spells,
-                    quester: state.quester,
-                    questForsok: state.questForsok,
-                    riktigeSvar: state.riktigeSvar,
-                    galeSvar: state.galeSvar,
-                    lest: state.lest,
-                    bosser: state.bosser,
-                    sisteSone: state.sisteSone,
-                } as unknown as RpgState),
-            migrate: (lagret, versjon) => {
-                const s = (lagret ?? {}) as Partial<RpgState>;
-                const ut: Partial<RpgState> = { ...s, questForsok: s.questForsok ?? {} };
+            version: LAGRING_VERSJON,
+            // Bare data lagres, og i den formen `SaveState` beskriver. Før ble
+            // hele staten - inkludert alle handlingene - sendt gjennom
+            // serialiseringen, og formen på disken var bare påstått i en type
+            // ingen sjekket mot.
+            partialize: (state): SaveState => ({
+                version: LAGRING_VERSJON,
+                spiller: { character: state.character },
+                sisteEpoke: state.epokeId,
+                epoker: { ...state.andreEpoker, [state.epokeId]: aktivEpoke(state) },
+            }),
+            merge: (lagret, gjeldende): RpgState => {
+                const s = (lagret ?? {}) as Partial<SaveState>;
+                const character = s.spiller?.character ?? null;
+                const epokeId = s.sisteEpoke ?? START_EPOKE;
+                const alle = { ...s.epoker };
+                const aktiv = alle[epokeId];
+                delete alle[epokeId];
+                return leggUtEpoke(
+                    { ...gjeldende, character, andreEpoker: alle },
+                    epokeId,
+                    heleEpoken(epokeId, aktiv, character)
+                );
+            },
+            migrate: (lagret, versjon): SaveState => {
+                if (versjon >= LAGRING_VERSJON) return lagret as SaveState;
+
+                const s = (lagret ?? {}) as Partial<LagringV3>;
+                let quester = s.quester ?? {};
+                let questForsok = s.questForsok ?? {};
 
                 // Bankoppdragene het før `nordvik-b<nummer>`, der nummeret var
                 // plassen i en liste som ble stokket på nytt hver gang
@@ -378,17 +529,54 @@ export const useRpgStore = create<RpgState>()(
                 // oppdrag (`nordvik-h*`), nivå, sølv, utstyr og boss beholdes.
                 if (versjon < 3) {
                     const gammel = (n: string) => /^nordvik-b\d+$/.test(n);
-                    const vask = <T>(kart: Record<string, T> | undefined) =>
+                    const vask = <T>(kart: Record<string, T>) =>
                         Object.fromEntries(
-                            Object.entries(kart ?? {}).filter(([n]) => !gammel(n))
+                            Object.entries(kart).filter(([n]) => !gammel(n))
                         ) as Record<string, T>;
-                    ut.quester = vask(s.quester);
-                    ut.questForsok = vask(ut.questForsok);
+                    quester = vask(quester);
+                    questForsok = vask(questForsok);
                 }
 
-                return ut as RpgState;
+                // Alt som lå flatt hørte til vikingtiden - det fantes ingen
+                // annen epoke å høre til. Nøkkelen beholdes: å bytte den er å
+                // slette hvert eneste lagrede spill i et klasserom som spiller.
+                const character = s.character ?? null;
+                const tomt = tomtKapittel(character);
+                return {
+                    version: LAGRING_VERSJON,
+                    spiller: { character },
+                    sisteEpoke: START_EPOKE,
+                    epoker: {
+                        [START_EPOKE]: {
+                            kapittel: 1,
+                            sisteSted: s.sisteSone ?? START_STED,
+                            kampanje: {
+                                quester,
+                                questForsok,
+                                riktigeSvar: s.riktigeSvar ?? 0,
+                                galeSvar: s.galeSvar ?? 0,
+                                lest: s.lest ?? [],
+                                bosser: s.bosser ?? [],
+                            },
+                            kapittelState: {
+                                hp: s.hp ?? tomt.hp,
+                                mana: s.mana ?? tomt.mana,
+                                xp: s.xp ?? 0,
+                                solv: s.solv ?? 0,
+                                sekk: s.sekk ?? [],
+                                utstyr: { ...TOM_UTSTYR, ...s.utstyr },
+                                spells: s.spells ?? [],
+                            },
+                        },
+                    },
+                };
             },
-            onRehydrateStorage: () => (state) => {
+            onRehydrateStorage: () => (state, feil) => {
+                // Uten denne linja er en feil i migreringen usynlig: zustand
+                // svelger unntaket, eleven møter karakterskaperen som om hun
+                // aldri hadde spilt, og det lagrede spillet ligger urørt på
+                // disken til hun lager en ny figur oppå det.
+                if (feil) console.error('[rpg] klarte ikke å laste lagret spill', feil);
                 if (!state) return;
                 // Lukket eleven fanen mellom at hun døde og at hun trykket
                 // «Reis deg», ble hp lagret som 0. Da våknet hun neste gang med
