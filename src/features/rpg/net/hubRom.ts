@@ -15,7 +15,6 @@
 
 import {
     get,
-    off,
     onDisconnect,
     onValue,
     ref,
@@ -83,6 +82,21 @@ export interface HubRom {
     settIdentitet: (identitet: HubIdentitet) => void;
     forlat: () => void;
 }
+
+/**
+ * Hvilken tilkobling som eier noden akkurat nå.
+ *
+ * React kjører hver effekt to ganger under StrictMode: den kobler til, river
+ * ned, og kobler til igjen. Begge tilkoblingene peker på **samme** node, for
+ * klient-id-en er den samme personen i den samme fanen - og da river den
+ * førstes opprydding beina under den andre.
+ *
+ * Telleren settes med én gang `blimMed` begynner, ikke når den er ferdig, så
+ * den som *startet* sist eier noden uansett hvilken rekkefølge svarene kommer
+ * i. En tilkobling som ikke lenger er eier melder seg av sin egen lytter og
+ * lar noden være i fred.
+ */
+let eier = 0;
 
 /** Id-en de andre kjenner oss på. */
 const ANON_NOKKEL = 'gravity_anon_id';
@@ -188,6 +202,12 @@ export function tolkGjest(id: string, raa: RaaGjest | null): Gjest | null {
  * fra en. En teller ville drevet fra virkeligheten hver gang noen mistet nettet,
  * og da fylles rommene med plasser som ikke finnes.
  *
+ * > **`.read` må ligge på `rpg-hub/rom`, ikke på det enkelte rommet.** Første
+ * > utgave av reglene ga lesetilgang per rom, og da svarte denne lesningen 401.
+ * > Feilen var usynlig: `catch`-en falt tilbake på `hall-1`, alle havnet i det
+ * > samme rommet for alltid, og taket sluttet å gjelde uten at noe så galt ut
+ * > før det sto tretti figurer på en Chromebook. Derfor roper vi nå.
+ *
  * To som velger rom i samme sekund kan begge se det samme siste ledige rommet
  * og bli sytten. Det er greit: taket er en tegnegrense med margin, ikke en
  * kapasitet som sprekker.
@@ -197,8 +217,11 @@ async function velgRom(naa: () => number): Promise<string> {
     try {
         const snap = await get(ref(db, ROT));
         alle = (snap.val() as typeof alle) ?? {};
-    } catch {
-        // Uten nettet er hallen tom, og det er en helt gyldig hall.
+    } catch (e) {
+        // Uten nettet er hallen tom, og det er en helt gyldig hall - men det er
+        // ikke den eneste grunnen til at vi havner her, og den andre er verdt
+        // et rop: nektes lesningen, slutter romfordelingen å virke i stillhet.
+        console.warn('[rpg] fikk ikke lest romlista - alle havner i hall-1', e);
         return 'hall-1';
     }
 
@@ -224,6 +247,8 @@ export async function blimMed(
     identitet: HubIdentitet,
     paaGjester: (gjester: Gjest[]) => void
 ): Promise<HubRom> {
+    eier += 1;
+    const mitt = eier;
     const naa = await tjenertid();
     const id = klientId();
     const romId = await velgRom(naa);
@@ -308,7 +333,12 @@ export async function blimMed(
 
     const takt = window.setInterval(flush, TAKT_MS);
 
-    onValue(
+    // Avmeldingen `onValue` gir tilbake, ikke `off(romRef)`. `off` på en
+    // referanse river **alle** lyttere på den stien, også dem noen andre har
+    // satt opp - og under StrictMode er «noen andre» tilkoblingen som nettopp
+    // erstattet oss. Symptomet lignet ikke årsaken: begge elevene sto i basen,
+    // begge så seg selv, og ingen så den andre.
+    const meldAv = onValue(
         romRef,
         (snap) => {
             const rom = (snap.val() as Record<string, RaaGjest> | null) ?? {};
@@ -349,7 +379,11 @@ export async function blimMed(
         },
         forlat: () => {
             window.clearInterval(takt);
-            off(romRef);
+            meldAv();
+            // Noden ryddes bare hvis vi fortsatt eier den. Gjør vi det ikke,
+            // har en nyere tilkobling overtatt den samme plassen, og å slette
+            // her ville tatt eleven ut av hallen mens hun står der.
+            if (mitt !== eier) return;
             void onDisconnect(minRef).cancel().catch(() => {});
             void remove(minRef).catch(() => {});
         },

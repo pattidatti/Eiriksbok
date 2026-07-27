@@ -112,6 +112,21 @@ await page.waitForFunction(
 );
 await page.waitForTimeout(1600);
 
+// ── 2b. Én scene lytter, ikke to ────────────────────────────────────────────
+//
+// React kjører oppstartseffekten to ganger under StrictMode: den bygger
+// Phaser-spillet, river det, og bygger det på nytt. Ryddet ikke den første
+// scenen opp etter seg, blir den liggende igjen som lytter på broen - og neste
+// medelev som kommer inn ber en revet renderer om å smi en figur.
+//
+// Feilen var usynlig fra utsiden: hallen var bare tom, og unntaket pekte på
+// Phaser. Derfor telles lytterne her. Er de to, er en scene død og lytter
+// fortsatt.
+const lyttere = await page.evaluate(
+    () => window.__rpgBro.tilSpill.handlers.get('gjester')?.size ?? 0
+);
+sjekk('nøyaktig én scene lytter på hallen', lyttere === 1, `${lyttere}`);
+
 const gjest = (id, navn, x, y, ekstra = {}) => ({
     id,
     navn,

@@ -44,8 +44,8 @@
         },
         "rpg-hub": {
             "rom": {
+                ".read": true,
                 "$rom": {
-                    ".read": true,
                     "$klient": {
                         ".write": true,
                         "navn": {

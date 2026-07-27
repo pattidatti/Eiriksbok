@@ -216,7 +216,20 @@ export class WorldScene extends Phaser.Scene {
         this.lyttPaaUi();
 
         startMusikk(sted.musikkRot, 0);
-        this.events.once('shutdown', () => this.rydd());
+        // Både `shutdown` og `destroy`. De to er ikke det samme, og forskjellen
+        // kostet en ettermiddag: Phaser sender `shutdown` når scenen stoppes
+        // (en reise), men `destroy` når hele spillet rives - og React river
+        // spillet hver eneste gang i utviklingsmodus, fordi StrictMode kjører
+        // oppstartseffekten to ganger.
+        //
+        // Sto bare `shutdown` her, ble den døde scenen liggende igjen som
+        // lytter på broen. Neste hendelse som ba den tegne noe - en medelev som
+        // kom inn i hallen - slo i «Cannot read properties of null (reading
+        // renderer)», for teksturlageret hennes hørte til et spill som ikke
+        // fantes lenger. Ingenting i hallen ble tegnet, og feilen pekte på
+        // Phaser og ikke på oss.
+        this.events.once('shutdown', this.ryddEnGang);
+        this.events.once('destroy', this.ryddEnGang);
 
         // Stedet huskes, så neste økt begynner der eleven slapp. Går reisen
         // over en epokegrense, legger storen den forrige epoken til side hel.
@@ -340,6 +353,20 @@ export class WorldScene extends Phaser.Scene {
             tilSpill.on('folelse', ({ emoji }) => this.samvaer?.visFolelse(emoji))
         );
     }
+
+    /**
+     * Ryddingen, koblet til begge sluttene og kjørt nøyaktig én gang.
+     *
+     * Den melder seg av begge før den rydder. Uten det ville en scene som har
+     * vært gjennom fem reiser stå med fem `destroy`-lyttere - ufarlig, siden
+     * `rydd()` tåler å kjøres to ganger, men det er den slags rot som gjør at
+     * neste feil tar en ettermiddag i stedet for ti minutter.
+     */
+    private ryddEnGang = () => {
+        this.events.off('shutdown', this.ryddEnGang);
+        this.events.off('destroy', this.ryddEnGang);
+        this.rydd();
+    };
 
     private rydd() {
         stopMusikk();
