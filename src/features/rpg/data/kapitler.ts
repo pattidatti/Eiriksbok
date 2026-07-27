@@ -34,6 +34,10 @@ export const K1 = {
  */
 export const K2 = {
     noklene: 'k2-noklene',
+    vaaronn: 'k2-vaaronn',
+    kornet: 'k2-kornet',
+    hosten: 'k2-hosten',
+    vinteren: 'k2-vinteren',
 } as const;
 
 /** Flagg kapittel 1 setter, og som mellomspillet og kapittel 5 leser. */
@@ -137,6 +141,30 @@ export const KAPITLER: KapittelDef[] = [
                 tittel: 'Nøklene i beltet',
                 mal: 'Snakk med Torgeir på tunet. Han vet hva som er igjen.',
                 krever: [],
+            },
+            {
+                id: K2.vaaronn,
+                tittel: 'Såkornet',
+                mal: 'Lås opp bua og bestem hvor mye korn som skal i jorda.',
+                krever: [K2.noklene],
+            },
+            {
+                id: K2.kornet,
+                tittel: 'Hvem mater du?',
+                mal: 'Harald krever. Motstanderne hans ber. Naboen spør.',
+                krever: [K2.vaaronn],
+            },
+            {
+                id: K2.hosten,
+                tittel: 'Innhøstingen',
+                mal: 'Få kornet inn, og bestem slakten.',
+                krever: [K2.kornet],
+            },
+            {
+                id: K2.vinteren,
+                tittel: 'Vinteren',
+                mal: 'Se om det holder.',
+                krever: [K2.hosten],
             },
         ],
         // 872 er kapittelet der de sosiale systemene *er* spillet: forrådet

@@ -22,6 +22,7 @@ import { K1, K1_FLAGG, K2, KAPITTEL_BY_NR } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
 import { Raidet } from './raidet';
+import { Gaarden } from './gaarden';
 import { Portaler } from './portal';
 import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
@@ -67,6 +68,14 @@ export class WorldScene extends Phaser.Scene {
     private opplaering!: Opplaering;
     /** Raidet mot Lindisfarne, i to halvdeler. Ligger stille alle andre steder. */
     private raidet!: Raidet;
+    /**
+     * Året på gården: årstidene, forrådet og oppgjøret.
+     *
+     * `null` overalt utenom kapittel 2. Årshjulet går ikke av seg selv, og et
+     * kapittel som ikke spiller på det, skal ikke ha en klokke stående og tikke
+     * i bakgrunnen.
+     */
+    private gaarden: Gaarden | null = null;
     /** Båter og annet eleven kan gå om bord i. */
     private farkoster!: Farkoster;
     /** Dørene ut: portalene i hallen, og porten hjem fra en epoke. */
@@ -208,6 +217,14 @@ export class WorldScene extends Phaser.Scene {
             },
             musikkRot: sted.musikkRot,
         });
+        // Gården eies av kapittelet, ikke av stedet: det er 872 som har et
+        // årshjul, ikke Nordvik.
+        this.gaarden =
+            sted.kapittel === 2
+                ? new Gaarden({
+                      settSynlig: (npcId, synlig) => this.samhandling.settSynlig(npcId, synlig),
+                  })
+                : null;
         this.samhandling = new Interaksjon(this, sted.npcer, sted.landemerker, {
             spiller: () => this.helt.sprite,
             laas: (pa) => this.settLaast(pa),
@@ -291,6 +308,10 @@ export class WorldScene extends Phaser.Scene {
         // Torgeir før hun vet at hun er Åsa, er kapittelskiftet bare et
         // kartbytte med nye navn på folk.
         if (this.visOpptakt()) return;
+        // Gården setter seg selv i takt med årstiden: hvem som står på tunet,
+        // og hva hun holder på med. Uten dette kommer hun hjem fra hallen midt
+        // i sommeren til et tomt tun.
+        this.gaarden?.oppdater();
         if (this.sted.id !== 'lindisfarne') return;
         const store = useRpgStore.getState();
         if (store.steg.includes(K1.motstanden)) {
@@ -451,7 +472,26 @@ export class WorldScene extends Phaser.Scene {
             tilSpill.on('opptaktFerdig', ({ nr }) => {
                 useRpgStore.getState().markerSett(`opptakt:k${nr}`);
                 this.settLaast(false);
-            })
+                // Året skal stå riktig i det hun får gå: hvem som er på tunet,
+                // og hva oppgavekortet sier.
+                this.gaarden?.oppdater();
+            }),
+            tilSpill.on('landemerkeHandling', ({ handlingId }) =>
+                this.utforLandemerkeHandling(handlingId)
+            ),
+            tilSpill.on('forradValg', ({ beslutning, alternativ }) => {
+                this.gaarden?.velg(beslutning, alternativ);
+                this.apneBua();
+            }),
+            tilSpill.on('forradVidere', () => {
+                this.gaarden?.gaaVidere();
+                // Vinteren gjør opp og sender sitt eget skjermbilde. Da skal
+                // ikke bua legge seg oppå det igjen.
+                if (useRpgStore.getState().steg.includes(K2.vinteren)) return;
+                this.apneBua();
+            }),
+            tilSpill.on('forradLukk', () => this.settLaast(false)),
+            tilSpill.on('kapittelsluttLest', () => this.settLaast(false))
         );
     }
 
@@ -868,6 +908,21 @@ export class WorldScene extends Phaser.Scene {
                 if (bordet) this.apneMellomspill(bordet);
                 return;
             }
+            // ── Sommeren på tunet: hvem mater du? ───────────────────────────
+            // Alle tre går gjennom `Gaarden`, som eier kornet og følgene.
+            // Dialogen har alt sagt hva det koster; her betales det.
+            case 'gave-harald': {
+                this.gaarden?.gave('harald', true);
+                return;
+            }
+            case 'gave-motstanderne': {
+                this.gaarden?.gave('motstanderne', true);
+                return;
+            }
+            case 'gave-saebo': {
+                this.gaarden?.gave('saebo', true);
+                return;
+            }
             case 'torgeir-noklene': {
                 // Her er samtalen selve handlingen. Torgeir forteller Åsa hva
                 // som ligger i bua, og det er alt steget er - hun vet nå hva
@@ -875,11 +930,31 @@ export class WorldScene extends Phaser.Scene {
                 // forrådet er et eget steg, og et kapittel som åpner med to
                 // paneler etter hverandre begynner med papirarbeid.
                 useRpgStore.getState().fullforSteg(K2.noklene);
+                this.gaarden?.oppdater();
                 return;
             }
             default:
                 return;
         }
+    }
+
+    /** Eleven trykket på knappen ved et landemerke. */
+    private utforLandemerkeHandling(handlingId: string): void {
+        this.settLaast(false);
+        if (handlingId === 'bua-forradet') this.apneBua();
+    }
+
+    /**
+     * Åpner bua. Verden står låst bak den.
+     *
+     * Kalles også etter hvert valg: skjermen skal vise året slik det er *nå*,
+     * og hvilke valg som står åpne kan ha endret seg av det hun nettopp gjorde.
+     */
+    private apneBua(): void {
+        const bua = this.gaarden?.bua();
+        if (!bua) return;
+        this.settLaast(true);
+        fraSpill.emit('forrad', bua);
     }
 
     /**

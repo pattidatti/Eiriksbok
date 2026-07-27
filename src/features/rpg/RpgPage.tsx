@@ -16,6 +16,7 @@ import { Klippscene } from './components/Klippscene';
 import { Mellomspill } from './components/Mellomspill';
 import { Minnetre } from './components/Minnetre';
 import { Opptakt } from './components/Opptakt';
+import { Forradet } from './components/Forradet';
 import { KAPITTEL_BY_NR } from './data/kapitler';
 import { MELLOMSPILL_BY_ID } from './data/mellomspill';
 import { Navigasjonen } from './components/Navigasjonen';
@@ -55,7 +56,11 @@ type Overlegg =
     /** Bordet med kildene, mellom to kapitler. */
     | { type: 'mellomspill'; id: string }
     /** Åpningsskjermen til et nytt kapittel. */
-    | { type: 'opptakt'; nr: number };
+    | { type: 'opptakt'; nr: number }
+    /** Bua: forrådet og årets valg. */
+    | { type: 'forrad'; apne: string[]; kanGaaVidere: boolean }
+    /** Skjermbildet som avslutter et kapittel. */
+    | { type: 'kapittelslutt'; tittel: string; tekst: string; knapp: string };
 
 export default function RpgPage() {
     const navigate = useNavigate();
@@ -153,7 +158,9 @@ export default function RpgPage() {
         klipp.pa ||
         overlegg.type === 'opptakt' ||
         overlegg.type === 'mellomspill' ||
-        overlegg.type === 'puzzle';
+        overlegg.type === 'puzzle' ||
+        overlegg.type === 'forrad' ||
+        overlegg.type === 'kapittelslutt';
     useEffect(() => {
         useStilleSkjerm.getState().settStille(eierSkjermen);
         return () => useStilleSkjerm.getState().settStille(false);
@@ -254,6 +261,10 @@ export default function RpgPage() {
             fraSpill.on('puzzle', ({ id }) => setOverlegg({ type: 'puzzle', id })),
             fraSpill.on('mellomspill', ({ id }) => setOverlegg({ type: 'mellomspill', id })),
             fraSpill.on('opptakt', ({ nr }) => setOverlegg({ type: 'opptakt', nr })),
+            fraSpill.on('forrad', ({ apne, kanGaaVidere }) =>
+                setOverlegg({ type: 'forrad', apne, kanGaaVidere })
+            ),
+            fraSpill.on('kapittelslutt', (k) => setOverlegg({ type: 'kapittelslutt', ...k })),
             // Replikken står i noen sekunder og går av seg selv. Den skal ikke
             // kreve et tastetrykk: verden går videre mens den står, og en
             // beskjed som må lukkes midt i en kamp er en beskjed eleven lukker
@@ -287,8 +298,17 @@ export default function RpgPage() {
             // Opptakten kan ikke lukkes med Esc. Den er kapittelets første
             // setning, ikke et panel - og en elev som trykker Esc av vane skal
             // ikke ende opp i 872 uten å ha fått vite at hun er Åsa.
-            if (overlegg.type === 'opptakt') return;
+            // Det samme gjelder skjermbildet som avslutter kapittelet: året er
+            // gjort opp, og det skal leses.
+            if (overlegg.type === 'opptakt' || overlegg.type === 'kapittelslutt') return;
             if (e.key === 'Escape') {
+                // Bua må lukkes gjennom sin egen vei ut, som puzzlet: låsen ble
+                // satt av scenen, og bare scenen kan ta den av igjen.
+                if (overlegg.type === 'forrad') {
+                    setOverlegg({ type: 'ingen' });
+                    tilSpill.emit('forradLukk', {});
+                    return;
+                }
                 // Puzzlet må lukkes gjennom sin egen vei ut. `lukk()` sender
                 // bare `lukk` og `pause: false`, og da ville scenen aldri fått
                 // vite at eleven gikk - låsen ville stått til hun snakket med
@@ -542,6 +562,35 @@ export default function RpgPage() {
             {overlegg.type === 'logg' && <QuestLog quester={quester} onLukk={lukk} />}
 
             {overlegg.type === 'minnetre' && <Minnetre onLukk={lukk} />}
+
+            {overlegg.type === 'forrad' && (
+                <Forradet
+                    apne={overlegg.apne}
+                    kanGaaVidere={overlegg.kanGaaVidere}
+                    // Bua lukkes ikke her: scenen svarer med et nytt `forrad`
+                    // med årets nye tilstand, eller med kapittelsluttskjermen.
+                    onValg={(beslutning, alternativ) =>
+                        tilSpill.emit('forradValg', { beslutning, alternativ })
+                    }
+                    onGaaVidere={() => tilSpill.emit('forradVidere', {})}
+                    onLukk={() => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('forradLukk', {});
+                    }}
+                />
+            )}
+
+            {overlegg.type === 'kapittelslutt' && (
+                <Meldingsskjerm
+                    tittel={overlegg.tittel}
+                    tekst={overlegg.tekst}
+                    knapp={overlegg.knapp}
+                    onKlikk={() => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('kapittelsluttLest', {});
+                    }}
+                />
+            )}
 
             {overlegg.type === 'opptakt' && KAPITTEL_BY_NR[overlegg.nr] && (
                 <Opptakt

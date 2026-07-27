@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { finnLandemerke, finnNpc } from '../data/steder';
 import { sfx } from '../engine/audio';
+import { tilSpill } from '../engine/bridge';
 import { useRpgStore } from '../store/useRpgStore';
 import type { QuestDef } from '../types';
 
@@ -237,6 +238,25 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
                 Spillet sier ingenting (blueprint §3). Følgen kommer i
                 mellomspillet og i graven hennes i kapittel 5.
             */}
+            {/*
+                Døra inn til noe scenen eier - bua med forrådet. Skilt fra
+                `valg` under, som setter et flagg og er over med det.
+            */}
+            {lm.handling && (
+                <button
+                    type="button"
+                    onClick={() => {
+                        onLukk();
+                        tilSpill.emit('landemerkeHandling', {
+                            landmarkId: lm.id,
+                            handlingId: lm.handling!.id,
+                        });
+                    }}
+                    className="mt-4 w-full rounded-lg bg-amber-400 px-4 py-3 font-display font-bold text-slate-900 transition hover:bg-amber-300"
+                >
+                    {lm.handling.knapp}
+                </button>
+            )}
             {valg && !tatt && (
                 <button
                     type="button"

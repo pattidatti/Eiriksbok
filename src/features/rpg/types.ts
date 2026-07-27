@@ -440,6 +440,30 @@ export interface Klokke {
     dag: number;
 }
 
+/**
+ * Det gården har å leve av.
+ *
+ * Fire tall, og ikke flere: korn er både mat og såkorn, kjøtt er det som ikke
+ * må dyrkes, dyra er både mat og fôrutgift - og åkeren er det som står på rot.
+ * Et femte tall gjør bua til et regneark, og det er ikke det nøklene handler om.
+ */
+export interface Forrad {
+    /** Sekker bygg i bingen. */
+    korn: number;
+    /** Mål tørket og saltet kjøtt. */
+    kjott: number;
+    /** Kyr og sauer. */
+    dyr: number;
+    /**
+     * Det som står og gror.
+     *
+     * Eget tall, og det er verdt det: eleven ser avlingen sin vokse fram i det
+     * hun sår, i stedet for å få et tall i fanget om høsten. Det er der
+     * lærdommen om såkornet sitter - at høsten begynner om våren.
+     */
+    aaker: number;
+}
+
 // ─── Minnetreet ─────────────────────────────────────────────────────────────
 //
 // Kunnskap er ikke et tall, det er handlingsrom (blueprint §7.4). Eleven kan
@@ -863,6 +887,15 @@ export interface LandmarkDef {
      */
     tillegg?: { flagg: string; tekst: string }[];
     /**
+     * Noe eleven kan *gjøre* her som ikke er et valg med en følge, men en dør
+     * inn til en egen skjerm - bua med forrådet.
+     *
+     * Skilt fra `valg` med vilje: `valg` setter et flagg og er over, dette
+     * åpner noe scenen eier. Ett felt som gjorde begge deler ville før eller
+     * siden fått en `if` i seg om hva slags landemerke det var.
+     */
+    handling?: { id: string; knapp: string };
+    /**
      * Noe eleven kan gjøre her, ikke bare lese.
      *
      * Lindisfarne er hele grunnen til at dette finnes: relikvieskrinet, bøkene,
@@ -1194,6 +1227,14 @@ export interface EpokeKapittel {
      * igjen med, er `aettAere`, og det er et annet og mindre tall.
      */
     aere: number;
+    /**
+     * Forrådet på gården.
+     *
+     * Kapitteltilstand: kornet i bingen i 872 er ikke det samme kornet som i
+     * 995. Et forråd som fulgte kampanjen ville gjort hver vinter til en
+     * konsekvens av forrige kapittels vinter, og da spiller ingen kapittel 3.
+     */
+    forrad: Forrad;
 }
 
 export interface EpokeSave {

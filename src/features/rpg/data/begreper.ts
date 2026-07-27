@@ -53,6 +53,38 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Det står ingenting om oss. Det er ikke fordi vi ikke var der.',
     },
     {
+        id: 'aarshjulet',
+        navn: 'Årshjulet',
+        forklaring:
+            'Et bondeår har en rekkefølge ingen kan bytte om på. Såing om våren, ferd og ting om sommeren, innhøsting og slakt om høsten, og så vinteren, som lever av alt det andre. Derfor var vikingferdene sommerferder: det er den ene årstiden gården klarer seg uten deg.',
+        forstasVed: 'Så åkeren selv, i tide.',
+        replikk: 'Vi drar ikke om høsten. Om høsten er kornet ute.',
+    },
+    {
+        id: 'husfrue',
+        navn: 'Husfrue',
+        forklaring:
+            'Kona på gården styrte alt innenfor dørstokken, og nøklene i beltet var tegnet på det. Var mannen borte - på ferd, i krig, død - styrte hun alt utenfor også. Det var ikke et unntak. Det var slik en gård overlevde at menn dro.',
+        forstasVed: 'Styr Nordvik gjennom et helt år, og få gården gjennom vinteren.',
+        replikk: 'Jeg spør ikke ham. Nøklene henger her.',
+    },
+    {
+        id: 'gjengave',
+        navn: 'Gjengave',
+        forklaring:
+            'En gave er aldri bare en gave. Den som tar imot, står i gjeld til han har gitt noe tilbake - og gjerne litt mer. Det er ikke høflighet, det er forsikring: i et samfunn uten stat er det bare de som skylder deg noe, som kommer når det brenner.',
+        forstasVed: 'Gi korn til naboætta i sommer, og se hva som kommer tilbake om vinteren.',
+        replikk: 'Jeg ga da de ikke hadde. Nå har de.',
+    },
+    {
+        id: 'leidang',
+        navn: 'Kongens krav',
+        forklaring:
+            'En konge som holder på å samle et land, må ha mat, skip og menn - og han henter det fra gårdene. Å gi er å velge side, og å nekte er også å velge side. Ordningen som senere ble hetende leidang, vokste ut av nettopp dette.',
+        forstasVed: 'Svar kongens mann, eller la være, og bær følgen.',
+        replikk: 'Han kom ikke hit for å be.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:

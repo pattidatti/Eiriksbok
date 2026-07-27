@@ -64,6 +64,15 @@ export interface SceneEvents {
      */
     opptakt: { nr: number };
     /**
+     * Bua er låst opp: forrådet, regnestykket og årets valg.
+     *
+     * Scenen sender med hva som står åpent nå. Skjermen skal ikke kjenne
+     * årstidene - den tegner det den får, og melder hva Åsa bestemte.
+     */
+    forrad: { apne: string[]; kanGaaVidere: boolean };
+    /** Kapittelet er over. Ett skjermbilde, og så er året bak henne. */
+    kapittelslutt: { tittel: string; tekst: string; knapp: string };
+    /**
      * Åpne mellomspillet - bordet med kildene.
      *
      * Eget hendelsesnavn og ikke en tredje `puzzle`-id, fordi de to er ulike
@@ -150,6 +159,20 @@ export interface UiEvents {
     npcHandling: { npcId: string; handlingId: string };
     /** Opptakten er lest. Låsen tas av, og kapittelet begynner. */
     opptaktFerdig: { nr: number };
+    /**
+     * Eleven valgte noe ved et landemerke - «Lås opp bua». Samme form som
+     * `npcHandling`, og av samme grunn: dataene sier hva knappen heter, scenen
+     * eier hva som skjer.
+     */
+    landemerkeHandling: { landmarkId: string; handlingId: string };
+    /** Åsa bestemte seg i bua. `alternativ` er tomt når hun bare lukket den. */
+    forradValg: { beslutning: string; alternativ: string };
+    /** Året skal gå videre til neste årstid. */
+    forradVidere: Record<string, never>;
+    /** Bua lukkes igjen. */
+    forradLukk: Record<string, never>;
+    /** Skjermbildet som avslutter kapittelet er lest. */
+    kapittelsluttLest: Record<string, never>;
 }
 
 class Emitter<Events> {

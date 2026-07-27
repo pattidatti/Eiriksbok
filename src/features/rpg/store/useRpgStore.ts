@@ -19,9 +19,11 @@ import { ITEM_BY_ID, equipmentBonus } from '../data/items';
 import { START_EPOKE } from '../data/epoker';
 import { stedIEpoke, START_STED } from '../data/steder';
 import { sfx } from '../engine/audio';
+import { START_FORRAD } from '../data/aaret';
 import type {
     AettTilstand,
     CharacterDraft,
+    Forrad,
     EpokeKampanje,
     EpokeKapittel,
     EpokeSave,
@@ -93,6 +95,8 @@ export interface RpgState {
     flagg: Record<string, boolean>;
     /** Personens egen ære, 0-100. Dør med personen. */
     aere: number;
+    /** Korn, kjøtt og dyr på gården. */
+    forrad: Forrad;
     /** Ættens rykte. Arves til neste kapittel som et forsprang. */
     aettAere: number;
     /** Hva hver ætt mener om eleven. */
@@ -141,6 +145,14 @@ export interface RpgState {
     gaaDager: (dager: number, grunn?: string) => void;
     /** Sett klokken. Brukes av kapittelskiftet, ikke av spillet. */
     settKlokke: (klokke: Klokke) => void;
+    /**
+     * Legg til eller trekk fra i forrådet. Ingenting går under null.
+     *
+     * En binge kan ikke inneholde minus fire sekker korn, og en gård kan ikke
+     * ha minus to kyr. Klampingen ligger her og ikke hos den som kaller, så
+     * ingen kan komme til å glemme den midt i en høst.
+     */
+    endreForrad: (endring: Partial<Forrad>) => void;
     /** Reis en sak. Den ligger til den er ført på tinget. */
     reisSak: (sak: Sak) => void;
     /** Endre en sak: lyst, vitner, anført lov, dom. */
@@ -247,6 +259,7 @@ const tomtKapittel = (character: CharacterDraft | null): EpokeKapittel => {
         // Femti er «en av oss»: hun er verken utstøtt eller kjent. Den som
         // arver noe, får det gjennom `startAere` ved kapittelskiftet.
         aere: 50,
+        forrad: { ...START_FORRAD },
     };
 };
 
@@ -308,6 +321,7 @@ const aktivEpoke = (s: RpgState): EpokeSave => ({
         sekk: s.sekk,
         utstyr: s.utstyr,
         aere: s.aere,
+        forrad: s.forrad,
     },
 });
 
@@ -682,6 +696,16 @@ export const useRpgStore = create<RpgState>()(
 
             settKlokke: (klokke) => set({ klokke }),
 
+            endreForrad: (endring) =>
+                set((s) => ({
+                    forrad: {
+                        korn: Math.max(0, s.forrad.korn + (endring.korn ?? 0)),
+                        kjott: Math.max(0, s.forrad.kjott + (endring.kjott ?? 0)),
+                        dyr: Math.max(0, s.forrad.dyr + (endring.dyr ?? 0)),
+                        aaker: Math.max(0, s.forrad.aaker + (endring.aaker ?? 0)),
+                    },
+                })),
+
             reisSak: (sak) => {
                 const s = get();
                 if (s.saker.some((x) => x.id === sak.id)) return;
@@ -944,6 +968,7 @@ export const useRpgStore = create<RpgState>()(
                                 // Ingen elev har spilt et kapittel med ære
                                 // ennå. Alle kommer inn som «en av oss».
                                 aere: tomt.aere,
+                                forrad: tomt.forrad,
                             },
                         },
                     },

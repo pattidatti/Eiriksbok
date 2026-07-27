@@ -139,14 +139,93 @@ export const NORDVIK_872_NPCS: NpcDef[] = [
             'Mine menn dro sør de også. Vi sitter i samme båt, og den ligger på land.',
             'Gaute Gråkappe har vært på fjorden. Han ser på gårder som har få folk igjen.',
         ],
+        handlinger: [
+            {
+                id: 'gave-saebo',
+                knapp: 'Seks sekker over vika',
+                ledetekst:
+                    'Jeg spør deg om noe jeg helst ikke ville spurt om. Vi sådde for lite i vår, og vi har seks munner. Seks sekker korn, Åsa. Jeg skriver det ikke ned noe sted, men jeg glemmer det ikke.',
+                // Først når hun har sådd selv. Da vet hun hva seks sekker er.
+                krever: ['k2-vaaronn'],
+                gir: 'k2-gave-saebo',
+                etterpa: 'Vi står i gjeld til deg. Det gjør vi til det er gjort opp.',
+            },
+        ],
         kunnskap: [
             {
                 tekst: 'En gave er aldri bare en gave. Den som tar imot, står i gjeld til den som ga, til han har gitt noe tilbake. Slik holder ættene hverandre i live - og slik binder de hverandre.',
                 stikkord: ['gave', 'gjengave', 'gjeld'],
+                begrep: 'gjengave',
             },
             {
                 tekst: 'Det finnes ingen konge som kan sende folk for å hjelpe deg her. Kommer noen mot gården din, er det ætta di og naboene dine som stiller opp - eller ingen.',
                 stikkord: ['ætt', 'naboer', 'stat'],
+            },
+        ],
+    },
+    /**
+     * De to som kommer over fjorden i sommer.
+     *
+     * De står på kartet hele tiden, men er skjult utenom sommeren - `Gaarden`
+     * viser og skjuler dem. Alternativet var å sette dem ut og hente dem inn
+     * som fiender, og det ville gjort to menn med et ærend om til noe som
+     * dukker opp. De kommer med båt, og de drar igjen når de har fått svar.
+     */
+    {
+        id: 'torolv',
+        name: 'Torolv Kongsmann',
+        role: 'Sendt av Harald Hårfagre',
+        tile: [23, 29],
+        ser: 'venstre',
+        palette: { tunic: '#5a3f6b', trim: '#e8c96a', hair: '#4a3a2a' },
+        smalltalk: [
+            'Kongen samler landet. Det koster korn.',
+            'Jeg spør på gårdene i denne fjorden. Alle svarer.',
+            'Mannen din er sør hos oss. Det burde gjøre dette enkelt.',
+        ],
+        kunnskap: [
+            {
+                tekst: 'Harald tar ikke bare land. Han tar odelen: jorda skal være hans, og bøndene skal betale for å sitte på sin egen gård. Det er derfor mange heller flyttet til Island.',
+                stikkord: ['odel', 'island', 'utvandring'],
+            },
+        ],
+        handlinger: [
+            {
+                id: 'gave-harald',
+                knapp: 'Åtte sekker til kongen',
+                ledetekst:
+                    'Åtte sekker korn til hæren. Kongen glemmer ikke hvem som ga i det året det gjaldt - og han glemmer ikke hvem som lot være.',
+                gir: 'k2-kornet',
+                etterpa: 'Kornet er sørover. Du har svart.',
+            },
+        ],
+    },
+    {
+        id: 'eystein',
+        name: 'Eystein frå Vestfold',
+        role: 'Sendt av dem som slåss mot Harald',
+        tile: [26, 31],
+        ser: 'opp',
+        palette: { tunic: '#3f5a3f', trim: '#c9b489', hair: '#6a4a2a' },
+        smalltalk: [
+            'Vi er ikke færre enn ham. Vi er bare dårligere til å samle oss.',
+            'Vinner han, er ingen gård her din lenger. Den er hans, og du sitter på lån.',
+            'Jeg ber. Jeg krever ikke. Merk deg forskjellen.',
+        ],
+        kunnskap: [
+            {
+                tekst: 'Småkongene styrte hver sin bygd eller dal. Ingen av dem var svak, men de kunne ikke enes - og det er derfor én mann kunne ta dem én etter én.',
+                stikkord: ['småkonge', 'rikssamling'],
+            },
+        ],
+        handlinger: [
+            {
+                id: 'gave-motstanderne',
+                knapp: 'Åtte sekker til dem som står imot',
+                ledetekst:
+                    'Åtte sekker. Vi har ingen konge som kan love deg noe tilbake - bare folk som husker.',
+                gir: 'k2-kornet',
+                etterpa: 'De rodde nordover med kornet ditt.',
             },
         ],
     },
@@ -219,6 +298,7 @@ export const NORDVIK_872_LANDMARKS: LandmarkDef[] = [
         title: 'Bua',
         text: 'Her ligger alt gården har: korn i binger, tørrfisk under taket, smør i kar.\n\nNøkkelen til denne døra henger i beltet ditt. Det er ikke pynt - det er hvem som avgjør hvem som spiser i vinter.',
         stikkord: ['nøkl', 'forråd', 'husfrue'],
+        handling: { id: 'bua-forradet', knapp: 'Lås opp bua' },
     },
     // Steinene fra 793 er de samme steinene. Objektene gjenbrukes med vilje:
     // det eleven leste som Torstein, kan hun lese igjen som Åsa - 79 år eldre,

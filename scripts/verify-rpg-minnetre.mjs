@@ -68,8 +68,12 @@ await page.waitForTimeout(700);
 const apent = await page.locator('[data-prove="minnetre"]').count();
 sjekk('M åpner minnetreet', apent === 1);
 
+// Totalen leses av treet selv. Kampanjen får flere begreper for hvert kapittel
+// som bygges, og en prøve som holder fast på seks ville blitt rød av at spillet
+// vokser - uten at noe er galt.
+const noder = await page.locator('[data-prove^="begrep-"]').count();
 const teller = (await page.textContent('[data-prove="minnetre-teller"]').catch(() => ''))?.trim();
-sjekk('telleren stemmer med lagringen', teller === '2 av 6 forstått', teller);
+sjekk('telleren stemmer med lagringen', teller === `2 av ${noder} forstått`, teller);
 
 // ── 2. Tåka røper ingenting ─────────────────────────────────────────────────
 sjekk('bygget skrog gir forstått', (await niva('klinkbygging')) === 'forstatt');
@@ -126,7 +130,10 @@ sjekk(
         !hort.includes('sommeryrke'),
     hort.replace(/\s+/g, ' ').trim().slice(0, 120)
 );
-sjekk('telleren har vokst med steinen', (await page.textContent('[data-prove="minnetre-teller"]')).trim() === '3 av 6 forstått');
+sjekk(
+    'telleren har vokst med steinen',
+    (await page.textContent('[data-prove="minnetre-teller"]')).trim() === `3 av ${noder} forstått`
+);
 
 await page.screenshot({ path: '.screenshots/rpg-minnetre.png' });
 
