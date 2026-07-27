@@ -34,7 +34,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Sommeren 1945 ligger store deler av verden i grus. Byer som Warszawa, Tokyo og Berlin er bombet i stykker. Rundt 60 millioner mennesker er døde. Millioner vandrer langs veiene i Europa uten hjem og uten land. Midt i dette kaoset samles verdens ledere for å bygge noe nytt. De lover hverandre: aldri mer krig. Men de gjør noe mer enn å love. De skriver regler. Og den som skriver reglene, får makt."
+            "content": "Sommeren 1945 ligger store deler av verden i grus. Byer som Warszawa, Tokyo og Berlin er bombet i stykker. Minst 70 millioner mennesker er døde (Hatlehol, 2025). Millioner vandrer langs veiene i Europa uten hjem og uten land. Midt i dette kaoset samles verdens ledere for å bygge noe nytt. De lover hverandre: aldri mer krig. Men de gjør noe mer enn å love. De skriver regler. Og den som skriver reglene, får makt."
         },
         {
             "type": "text",
@@ -46,7 +46,7 @@
         },
         {
             "type": "text",
-            "content": "Andre verdenskrig var den dødeligste krigen i historien. Europa og Asia var utslitt. Storbritannia var nesten konkurs. Frankrike hadde vært okkupert. Tyskland og Japan lå knust. Men to land sto igjen som kjemper. Sovjetunionen hadde mistet over 25 millioner mennesker, men hadde verdens største hær, og den sto midt i Øst-Europa. USA hadde knapt blitt bombet hjemme. Fabrikkene gikk for fullt, landet sto for nesten halvparten av all industri i verden, og bare USA hadde atombomben."
+            "content": "Andre verdenskrig var den dødeligste krigen i historien. Europa og Asia var utslitt. Storbritannia var nesten konkurs. Frankrike hadde vært okkupert. Tyskland og Japan lå knust. Men to land sto igjen som kjemper. Sovjetunionen hadde mistet rundt 27 millioner mennesker, men hadde en enorm hær, og den sto midt i Øst-Europa (Hatlehol, 2025). USA hadde knapt blitt bombet hjemme. Etter krigen flyttet den økonomiske tyngden i verden seg for alvor over til USA, dollaren ble verdens ledende valuta, og bare USA hadde atombomben (Hatlehol, 2025)."
         },
         {
             "type": "image",
@@ -60,15 +60,15 @@
         },
         {
             "type": "text",
-            "content": "I juni 1945 møttes 51 land i San Francisco og opprettet De forente nasjoner, FN. Tanken var enkel: hvis alle land har et sted å snakke sammen, trenger de ikke skyte på hverandre. I Generalforsamlingen fikk alle land én stemme hver, uansett om landet var stort eller lite. Det hørtes rettferdig ut. Men den virkelige makten ble lagt et annet sted: i Sikkerhetsrådet."
+            "content": "26. juni 1945 undertegnet 51 land FN-pakten i San Francisco, og De forente nasjoner, FN, var i gang (Knudsen mfl., 2025). Tanken var enkel: hvis alle land har et sted å snakke sammen, trenger de ikke skyte på hverandre. I Generalforsamlingen fikk alle land én stemme hver, uansett om landet var stort eller lite (Knudsen mfl., 2025). Det hørtes rettferdig ut. Men den virkelige makten ble lagt et annet sted: i Sikkerhetsrådet."
         },
         {
             "type": "text",
-            "content": "Fem land fikk fast plass i Sikkerhetsrådet: USA, Sovjetunionen (i dag Russland), Storbritannia, Frankrike og Kina. Hver av dem fikk vetorett. Veto betyr at ett enkelt nei stopper hele saken, uansett hva resten av verden mener. Hvorfor akkurat disse fem? Svaret er enkelt: de vant krigen. Vinnerne bygde fredens hus, og ga seg selv nøklene."
+            "content": "Fem land fikk fast plass i Sikkerhetsrådet: USA, Sovjetunionen (i dag Russland), Storbritannia, Frankrike og Kina. Hver av dem fikk vetorett. Veto betyr at ett enkelt nei stopper hele saken, uansett hva resten av verden mener. Og vedtakene fra Sikkerhetsrådet er de eneste i FN som alle medlemsland er nødt til å følge (FN-sambandet & Ravndal, 2026). Hvorfor akkurat disse fem? Svaret er enkelt: de var de allierte som vant krigen (FN-sambandet & Ravndal, 2026). Vinnerne bygde fredens hus, og ga seg selv nøklene."
         },
         {
             "type": "text",
-            "content": "FN var likevel mye mer enn stormaktenes klubb. Organisasjonen fikk egne kontorer for helse, mat og barn, som WHO og UNICEF. I 1948 vedtok FN Verdenserklæringen om menneskerettigheter, som slår fast at alle mennesker er født frie og like. Og den aller første generalsekretæren, altså FNs øverste sjef, ble faktisk en nordmann: Trygve Lie. Et lite land som Norge satset alt på FN, nettopp fordi små land trenger felles regler mer enn stormaktene gjør."
+            "content": "FN var likevel mye mer enn stormaktenes klubb. Organisasjonen fikk egne kontorer for helse, mat og barn, som WHO og UNICEF. I 1948 vedtok FNs generalforsamling Verdenserklæringen om menneskerettigheter, som slår fast at alle mennesker er født frie og med samme menneskeverd (Blaker Strand, 2025). Og den aller første generalsekretæren, altså FNs øverste sjef, ble faktisk en nordmann: Trygve Lie (Hjeltnes mfl., 2025). Et lite land som Norge satset alt på FN, nettopp fordi små land trenger felles regler mer enn stormaktene gjør."
         },
         {
             "type": "component",
@@ -89,18 +89,18 @@
         },
         {
             "type": "text",
-            "content": "Den kanskje viktigste avtalen ble laget før krigen engang var slutt. I juli 1944 møttes 44 land på et hotell i den lille byen Bretton Woods i USA. Der bestemte de hvordan verdens penger skulle fungere. Amerikanske dollar ble knyttet til gull, og alle andre lands valuta ble knyttet til dollaren. Fra nå av var dollaren verdens penger. Ville et land kjøpe olje, korn eller maskiner fra utlandet, trengte det som regel dollar."
+            "content": "Den kanskje viktigste avtalen ble laget før krigen engang var slutt. I juli 1944 møttes 44 land, deriblant Norge, i den lille byen Bretton Woods i USA. Der bestemte de hvordan verdens penger skulle fungere. Amerikanske dollar skulle kunne veksles inn i gull, og alle andre lands valuta ble knyttet til dollaren (Thomassen, 2026). Fra nå av var dollaren verdens penger. Ville et land kjøpe olje, korn eller maskiner fra utlandet, trengte det som regel dollar."
         },
         {
             "type": "text",
-            "content": "På det samme møtet opprettet landene to nye pengeinstitusjoner. Det internasjonale pengefondet, IMF, skulle låne ut penger til land i økonomisk krise, men stilte krav til hvordan landet måtte styre økonomien sin. Verdensbanken skulle gi lån til gjenoppbygging og til fattige land som ville utvikle seg. Og hvem bestemmer i disse bankene? Der teller ikke stemmene likt. Jo mer penger et land har skutt inn, jo mer makt har det. USA har alltid hatt mest."
+            "content": "Det samme møtet la grunnlaget for to nye pengeinstitusjoner (Thomassen, 2026). Det internasjonale pengefondet, IMF, skulle låne ut penger til land i økonomisk krise, og medlemslandene måtte til gjengjeld følge fondets regler for hvordan de styrte valutaen sin (Munthe & Lundbo, 2024). Verdensbanken skulle gi lån til gjenoppbygging og til fattige land som ville utvikle seg (Lundbo, 2024). Og hvem bestemmer i disse bankene? Der teller ikke stemmene likt. I IMF får hvert land en kvote som blir bestemt av hvor stor økonomien er og hvor mye landet handler med utlandet, og kvoten avgjør hvor mange stemmer landet har. Slik får USA og de andre store industrilandene en dominerende stilling (Munthe & Lundbo, 2024). Verdensbanken har dessuten alltid hatt en amerikansk sjef (Lundbo, 2024)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "IMF og Verdensbanken - enkelt forklart",
-                "content": "IMF er som en legevakt for land i pengetrøbbel: du får hjelp, men må følge legens ordre. Verdensbanken er som en bank for store byggeprosjekter i fattige land: veier, kraftverk og havner. Begge ble laget i 1944, begge har hovedkontor i Washington, og i begge har rike land mest makt."
+                "content": "IMF er som en legevakt for land i pengetrøbbel: du får hjelp, men må følge legens ordre. Verdensbanken er som en bank for store byggeprosjekter i fattige land: veier, kraftverk og havner. Begge ble bestemt på møtet i Bretton Woods i 1944, begge har hovedkontor i Washington, og i begge har rike land mest makt."
             }
         },
         {
@@ -115,7 +115,7 @@
         },
         {
             "type": "text",
-            "content": "I 1948 gjorde USA noe som lignet ren sjenerøsitet. Gjennom Marshallhjelpen sendte de rundt 13 milliarder dollar til Vest-Europa, en enorm sum den gangen. Pengene bygde opp fabrikker, veier og byer, også i Norge. Men granskeren spør alltid: hva fikk giveren igjen? USA trengte kunder som hadde råd til å kjøpe amerikanske varer, og mye av hjelpen ble nettopp brukt på varer fra USA. USA ville også hindre at fattige og desperate europeere valgte kommunismen. Sovjetunionen skjønte poenget og nektet landene i Øst-Europa å ta imot hjelpen."
+            "content": "I 1948 gjorde USA noe som lignet ren sjenerøsitet. Gjennom Marshallhjelpen overførte de 13,2 milliarder dollar til Vest-Europa i lån og gaver fram til utgangen av 1951, en enorm sum den gangen (Pharo, 2026). Pengene bygde opp fabrikker, veier og byer, også i Norge, som fikk godt over 450 millioner dollar (Pharo, 2026). Men granskeren spør alltid: hva fikk giveren igjen? Europa manglet dollar, og varer som mat, drivstoff og maskiner kunne bare kjøpes for dollar, så mye av handelen gikk til USA. USA ville dessuten hindre at fattige og desperate europeere valgte kommunismen, og et stabilt Vest-Europa var i USAs egen sikkerhetsinteresse (Pharo, 2026). Sovjetunionen skjønte poenget og sa nei, og Polen og Tsjekkoslovakia takket nei under sterkt press fra Moskva (Pharo, 2026)."
         },
         {
             "type": "component",
@@ -130,7 +130,7 @@
         },
         {
             "type": "text",
-            "content": "Verden fikk altså FN, felles pengeregler og gjenoppbygging. Håpet var ekte. Folk som hadde overlevd to verdenskriger på tretti år, mente det når de sa aldri mer. Men under overflaten var sprekken synlig allerede i 1945. Sovjetunionens hær ble stående i Øst-Europa, og Stalin sørget for lydige regjeringer i land etter land. USA satt på atombomben og verdens sterkeste økonomi. Ingen av dem stolte på den andre. Året etter sa Winston Churchill at et jernteppe hadde senket seg tvers gjennom Europa. Det som kom etterpå, kan du lese om i [Den kalde krigen](/historie/den-kalde-krigen/oversikt)."
+            "content": "Verden fikk altså FN, felles pengeregler og gjenoppbygging. Håpet var ekte. Folk som hadde overlevd to verdenskriger på tretti år, mente det når de sa aldri mer. Men under overflaten var sprekken synlig allerede i 1945. Sovjetunionens hær ble stående i Øst-Europa, og Stalin sørget for lydige regjeringer i land etter land. USA satt på atombomben og verdens sterkeste økonomi. Ingen av dem stolte på den andre. I 1946 sa Winston Churchill i en tale i Fulton i USA at et jernteppe hadde senket seg tvers gjennom Europa, fra Stettin ved Østersjøen til Trieste ved Adriaterhavet (Petersen, 2026). Det som kom etterpå, kan du lese om i [Den kalde krigen](/historie/den-kalde-krigen/oversikt)."
         },
         {
             "type": "image",
@@ -175,7 +175,7 @@
                     {
                         "year": "1948",
                         "title": "Marshallhjelpen",
-                        "description": "USA sender milliarder til Vest-Europa. Sovjetunionen sier nei på vegne av øst."
+                        "description": "USA sender milliarder til Vest-Europa. Sovjetunionen sier nei, og Øst-Europa følger etter."
                     }
                 ]
             }
@@ -217,7 +217,7 @@
                             "Kina og India"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Storbritannia og Frankrike var utmattet, Japan og Tyskland lå knust. USA og Sovjetunionen sto igjen med de mektigste hærene og økomiene."
+                        "explanation": "Storbritannia og Frankrike var utmattet, Japan og Tyskland lå knust. USA og Sovjetunionen sto igjen med de mektigste hærene og økonomiene."
                     },
                     {
                         "question": "Hva betyr vetoretten i FNs sikkerhetsråd?",
@@ -252,6 +252,24 @@
                         "correctAnswer": 1,
                         "explanation": "Pengehjelpen bandt Europa til USA på to måter: europeerne kjøpte amerikanske varer, og de ble naturlige allierte mot Sovjetunionen. En gave med to gevinster."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Blaker Strand, V. (2025). *Verdenserklæringen om menneskerettigheter*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Verdenserklæringen_om_menneskerettigheter](https://snl.no/Verdenserkl%C3%A6ringen_om_menneskerettigheter)",
+                    "FN-sambandet & Ravndal, E. J. (2026). *FNs sikkerhetsråd*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/FNs_sikkerhetsråd](https://snl.no/FNs_sikkerhetsr%C3%A5d)",
+                    "Hatlehol, G. D. (2025). *Andre verdenskrig*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/andre_verdenskrig](https://snl.no/andre_verdenskrig)",
+                    "Hjeltnes, G., Tvedt, K. A. & Ravndal, E. J. (2025). *Trygve Lie*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Trygve_Lie](https://snl.no/Trygve_Lie)",
+                    "Knudsen, O. F., Ravndal, E. J. & FN-sambandet (2025). *FN - Forente nasjoner*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/FN_-_Forente_nasjoner](https://snl.no/FN_-_Forente_nasjoner)",
+                    "Lundbo, S. (2024). *Verdensbanken*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Verdensbanken](https://snl.no/Verdensbanken)",
+                    "Munthe, P. & Lundbo, S. (2024). *IMF - Det internasjonale pengefondet*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/IMF_-_Det_internasjonale_pengefondet](https://snl.no/IMF_-_Det_internasjonale_pengefondet)",
+                    "Petersen, T. (2026). *Jernteppet*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/jernteppet](https://snl.no/jernteppet)",
+                    "Pharo, H. (2026). *Marshallplanen*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Marshallplanen](https://snl.no/Marshallplanen)",
+                    "Thomassen, E. (2026). *Bretton Woods-avtalen*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Bretton_Woods-avtalen](https://snl.no/Bretton_Woods-avtalen)"
                 ]
             }
         }
@@ -325,5 +343,5 @@
         }
     ],
     "createdDate": "2026-07-03T00:00:00Z",
-    "lastUpdated": "2026-07-03T00:00:00Z"
+    "lastUpdated": "2026-07-27T00:00:00Z"
 }

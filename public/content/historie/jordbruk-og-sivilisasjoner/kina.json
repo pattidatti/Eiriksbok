@@ -2,13 +2,13 @@
     "id": "kina",
     "title": "Det gamle Kina: Sivilisasjonen ved Den gule elven",
     "layout": "rich",
-    "year": "5000 fvt – 220 evt",
+    "year": "5000 fvt - 220 evt",
     "category": "Tidlige sivilisasjoner",
     "readTime": "9 min lesning",
     "heroImage": "/images/jordbruk-og-sivilisasjoner/kina-hero.webp",
     "details": [
-        "Den gule elven (Huang He) ble både livgiver og «Kinas sorg» - den fôret avlingene, men flommet over hundrevis av ganger.",
-        "Kineserne fant opp silke, papir, kompass og krutt lenge før Europa kjente til dem.",
+        "Den gule elven (Huang He) ble både livgiver og «Kinas sorg» - den fôret avlingene, men har gått over sine bredder mer enn 1500 ganger på 2500 år.",
+        "Kineserne fant opp silke, papir, porselen og svartkrutt lenge før Europa kjente til dem.",
         "Ideen om «Himmelens mandat» forklarte hvorfor et dynasti reiste seg - og hvorfor det måtte falle."
     ],
     "content": [
@@ -28,11 +28,11 @@
         },
         {
             "type": "text",
-            "content": "Huang He renner over 5400 kilometer gjennom Nord-Kina. På åssidene rundt elven ligger et tykt lag med løss - et lett, gult støv som vinden har båret med seg fra ørkenene i nord. Når regnet kommer, vasker det løss ned i elven. Det er derfor vannet er gult. Den samme jorda er utrolig fruktbar, og det er nettopp her, langs Huang He, at de første kinesiske bøndene begynte å dyrke hirse for rundt 7000 år siden."
+            "content": "Huang He renner 5464 kilometer gjennom Kina og er landets nest lengste elv (Wedul, 2026). På åssidene rundt elven ligger et tykt lag med løss - et lett, gult støv. Når regnet kommer, vasker det løss ned i elven, og slammet gir vannet den gule fargen (Wedul, 2026). Den samme jorda er utrolig fruktbar, og det er nettopp her, langs Huang He, at de første kinesiske bøndene dyrket hirse. Funn viser at hirse ble dyrket i dalføret allerede for rundt 7800 år siden (Zhang mfl., 2012)."
         },
         {
             "type": "text",
-            "content": "Problemet er at løss-jorden også gjør elven farlig. Slammet samler seg på elvebunnen, og bunnen stiger. Snart renner elven høyere enn markene rundt. Når regnet blir for kraftig, sprenger Huang He demningene og oversvømmer alt. Slike flommer har drept millioner gjennom historien. Kineserne ga elven et nytt navn: «Kinas sorg»."
+            "content": "Problemet er at løss-jorda også gjør elven farlig. Slammet samler seg på elvebunnen, og bunnen stiger. Noen steder ligger elveløpet i dag flere meter høyere enn landskapet rundt, bak lange diker. Når dikene ryker, oversvømmer elven alt. Huang He har gått over sine bredder mer enn 1500 ganger de siste 2500 årene, og flommene har krevd svært mange liv (Wedul, 2026). Derfor fikk elven kallenavnet «Kinas sorg»."
         },
         {
             "type": "header",
@@ -40,7 +40,7 @@
         },
         {
             "type": "text",
-            "content": "Du har kanskje lest om Mesopotamia, Egypt og Indusdalen. Kina er den fjerde av de eldste sivilisasjonene som vokste fram langs store elver. Mens sumererne bygde Uruk og egypterne reiste pyramider, samlet kinesiske bønder seg i landsbyer langs Huang He. Det viktige er at Kina utviklet seg helt for seg selv. Det var ingen vei, ingen kjøpmann og ingen reisende mellom Mesopotamia og Kina i denne tidlige tiden. Likevel kom kineserne fram til mange av de samme oppfinnelsene: korn, byer, skrift og konger. Sivilisasjonen ser ut til å være en idé som flere folkeslag oppdager hver for seg når jordbruket gir nok mat til at noen kan slutte å dyrke jord."
+            "content": "Du har kanskje lest om Mesopotamia, Egypt og Indusdalen. Kina er den fjerde av de eldste sivilisasjonene som vokste fram langs store elver. Mens sumererne bygde Uruk og egypterne reiste pyramider, samlet kinesiske bønder seg i landsbyer langs Huang He. Det viktige er at Kina i stor grad utviklet seg for seg selv. Det fantes riktignok spredt kontakt på tvers av Sentral-Asia allerede i det tredje årtusenet fvt., men noen fast forbindelse mellom Midtøsten og Kina var det ikke - de første kildene som viser at de to verdenene kjente til hverandre, er fra århundrene rundt vår tidsregnings begynnelse (Seland, 2026). Likevel kom kineserne fram til mange av de samme oppfinnelsene: korn, byer, skrift og konger. Sivilisasjonen ser ut til å være en idé som flere folkeslag oppdager hver for seg når jordbruket gir nok mat til at noen kan slutte å dyrke jord."
         },
         {
             "type": "header",
@@ -48,11 +48,11 @@
         },
         {
             "type": "text",
-            "content": "Det første kinesiske dynastiet vi har sikre spor etter heter Shang. Det styrte fra rundt 1600 til 1046 fvt. Shang-kongene bodde i store byer av stampet jord, og de hadde et merkelig sett verktøy for å snakke med gudene: orakelbein. Presten skrev et spørsmål på et skulderbein fra en okse eller på et skilpaddeskall. Så holdt han et glødende stykke metall mot beinet til det sprakk. Sprekkene ble lest som svar fra forfedrene. Tusenvis av slike bein er funnet, og inskripsjonene på dem er den eldste kinesiske skriften vi kjenner."
+            "content": "Myten forteller at Xia var det første dynastiet, men det eldste vi har sikre kilder til er Shang (Spira & Torheim-Sandvik, 2026). Det styrte fra rundt 1550 til 1046 fvt. Shang-kongene hadde et merkelig sett verktøy for å snakke med gudene: orakelbein. Presten risset et spørsmål om rituale, jakt eller avling inn i et skulderbein fra en okse eller i et skilpaddeskall. Så ble beinet varmet opp til det sprakk, og sprekkene ble lest som svar. Inskripsjonene på disse beina er den eldste kinesiske skriften vi kjenner (Sjøstedt, 2024a)."
         },
         {
             "type": "text",
-            "content": "Etter Shang kom Zhou-dynastiet. Det varte i nesten 800 år og er det lengste dynastiet i kinesisk historie. Zhou-tida var en stor tid for filosofi. Det var her tenkere som Konfutse og Laozi skrev om hvordan et menneske bør leve, og hvordan en hersker bør herske. Konfutse mente at samfunnet ville fungere hvis alle visste sin plass og oppførte seg ordentlig. Den ideen har preget kinesisk kultur helt fram til vår tid."
+            "content": "Etter Shang kom Zhou-dynastiet, som varte fra 1046 til 256 fvt. - nesten 800 år (Sjøstedt, 2024b). Zhou-tida var en stor tid for filosofi. Det var her tenkere som Konfutse (551-479 fvt.) og Laozi skrev om hvordan et menneske bør leve, og hvordan en hersker bør herske (Henne mfl., 2025). Konfutse var opptatt av forholdet mellom mennesker, og mente at samfunnet ville fungere hvis alle visste sin plass og oppførte seg ordentlig. Den ideen har preget kinesisk kultur helt fram til vår tid."
         },
         {
             "type": "header",
@@ -60,7 +60,7 @@
         },
         {
             "type": "text",
-            "content": "Zhou-kongene trengte å forklare hvorfor det var greit at de hadde tatt makten fra Shang. Forklaringen de fant opp ble en av de viktigste ideene i hele Kinas historie. De kalte den «Himmelens mandat». Tanken er enkel: himmelen gir en utvalgt mann retten til å herske, men bare så lenge han hersker rettferdig. Hvis keiseren blir grådig eller dum, hvis avlingene mislykkes, hvis elven flommer over, hvis nomader bryter igjennom murene - da har himmelen trukket tilbake mandatet. Da har folket lov til å gjøre opprør. Den som lykkes med opprøret, beviser at han har det nye mandatet. Slik gjentar mønsteret seg gjennom hele Kinas historie."
+            "content": "Zhou-kongene trengte å forklare hvorfor det var greit at de hadde tatt makten fra Shang. Forklaringen de fant opp ble en av de viktigste ideene i hele Kinas historie. De kalte den «Himmelens mandat». Tanken er enkel: himmelen gir en utvalgt mann retten til å herske, men bare så lenge han hersker rettferdig. Zhou hevdet at Shang hadde mistet mandatet gjennom dårlig styre, mens de selv hadde den moralske retten til å ta over (Cartwright, 2017). Kongen ble sett på som et mellomledd mellom «himmelens vei» og «menneskenes vei» (Sjøstedt, 2024b). Hvis keiseren blir grådig eller dum, hvis avlingene mislykkes, hvis elven flommer over, hvis nomader bryter igjennom murene - da har himmelen trukket tilbake mandatet. Filosofen Mencius mente at folket da kunne vise misnøye gjennom opprør (Cartwright, 2017). Den som lykkes med opprøret, beviser at han har det nye mandatet. Slik gjentar mønsteret seg gjennom hele Kinas historie."
         },
         {
             "type": "component",
@@ -75,13 +75,13 @@
         },
         {
             "type": "text",
-            "content": "I 221 fvt skjedde noe ingen hadde sett før. Kongen av en liten stat i vest, som het Qin, beseiret alle de andre statene og samlet Kina til ett rike. Han tok seg et helt nytt navn: Qin Shi Huangdi - «Den første keiseren av Qin». Han er en av de mest brutale og mest betydningsfulle herskerne verden har sett. Han brente bøker han ikke likte. Han henrettet lærde som var uenige med ham. Men han bygde også Den store muren, han satte i gang arbeidet med terrakottahæren, og han laget ett skriftsystem, én pengeenhet og én lov som gjaldt over hele riket. Da han døde, viste det seg at folket hadde fått nok. Bønder gjorde opprør, og bare fire år senere falt Qin-dynastiet."
+            "content": "I 221 fvt. skjedde noe ingen hadde sett før. Kongen av en stat i vest, som het Qin, beseiret alle de andre statene og samlet Kina til ett rike. Han tok seg et helt nytt navn: Qin Shi Huangdi - «Den første keiseren av Qin» - og regjerte fra 221 til 210 fvt. (Store norske leksikon, 2026b). Han er en av de mest brutale og mest betydningsfulle herskerne verden har sett. Styret ble sterkt sentralisert, og motstand fra lærde som mente Zhou-tidas ordning var idealet, ble slått hardt ned. Men under ham ble arbeidet med Den kinesiske mur for alvor satt i gang, og Kina fikk standardiserte mål, vekter, skrifttegn og delvis felles mynt (Store norske leksikon, 2026a). Han satte også i gang arbeidet med terrakottahæren. Han døde i 210 fvt., og bare fire år senere, i 206 fvt., falt Qin-dynastiet."
         },
         {
             "type": "image",
             "src": "/images/jordbruk-og-sivilisasjoner/kina-01.webp",
             "alt": "Rekker av terrakottakrigere i en mørk grav, sett ovenfra i støvete lys",
-            "caption": "Qin Shi Huangdi tok 700 000 arbeidere med seg i graven - eller rettere sagt, han fikk dem til å forme leire-soldater som skulle bevokte ham i evigheten."
+            "caption": "Over 8000 terrakottakrigere i naturlig størrelse ble funnet ved Xi'an i 1974. De skulle bevokte Qin Shi Huangdi i evigheten."
         },
         {
             "type": "header",
@@ -89,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Etter Qin kom Han-dynastiet (206 fvt – 220 evt). Mens romerriket vokste fram i vest, vokste Han-Kina fram i øst. På et tidspunkt sto begge riker side om side, omtrent like store, men de visste nesten ingenting om hverandre. Det forandret seg langsomt da kinesiske kjøpmenn begynte å sende silke vestover. Silken kom fra silkeormer som spinner kokonger av tråd, en hemmelighet kineserne holdt for seg selv i over tusen år. Karavaner med kameler bar silken gjennom ørkenen, gjennom Persia, og helt fram til Roma. Veien fikk navnet Silkeveien, og handelen langs den åpnet en bro mellom Kinas verden og Middelhavets verden."
+            "content": "Etter Qin kom Han-dynastiet, som regjerte fra 206 fvt. til 220 evt. (Store norske leksikon, 2026a). Mens romerriket vokste fram i vest, vokste Han-Kina fram i øst. Lenge visste de to rikene nesten ingenting om hverandre. Det forandret seg da handelen langs karavanerutene gjennom Sentral-Asia tok seg opp. Silken kom fra silkeormer som spinner kokonger av tråd, og den krevende produksjonen gjorde silke til en dyrebar vare i tusenvis av år (Klepp, 2026). Fra Romerriket gikk gull, sølv, glass og rav den andre veien. Handelen gikk sjelden hele veien i én strekk - varene ble sendt videre gjennom mange mellomledd, og riket Kushana i dagens Afghanistan og Pakistan var et viktig knutepunkt (Seland, 2026). Navnet «Silkeveien» er forresten helt moderne: det ble laget av den tyske geografen Ferdinand von Richthofen i 1877 (Seland, 2026)."
         },
         {
             "type": "header",
@@ -97,13 +97,13 @@
         },
         {
             "type": "text",
-            "content": "Det er vanlig å tenke på Europa som verdens oppfinneverksted, men i mange hundre år var det Kina som ledet an. Papir ble oppfunnet i Han-Kina rundt år 100 evt - over tusen år før det kom til Europa. Den magnetiske kompassen ble brukt av kinesiske sjømenn lenge før Columbus seilte vestover. Krutt ble laget av kinesiske alkymister som lette etter en drikk for evig liv. Og porselen - det vi i dag kaller «kina» eller «china» på engelsk - var så fint og hardt at europeiske konger ga formuer for det. Hver av disse oppfinnelsene endret hele verden da de spredte seg vestover."
+            "content": "Det er vanlig å tenke på Europa som verdens oppfinneverksted, men i mange hundre år var det Kina som ledet an. Hoffembetsmannen Cai Lun utviklet en metode for å lage papir av bast- og tekstilfibrer i år 105 evt., mens Han-dynastiet styrte (Store norske leksikon, 2024). Kineserne kjente også magnetsteinens retningsegenskaper tidlig: en kinesisk ordbok fra 121 fvt. omtaler den som «en stein som kan gi nålen en retning», og de la den på et trebrett som fløt i vann for å finne sør (Kjerstad, 2026). Svartkrutt, historiens første kjente sprengstoff, ble også oppfunnet i Kina (Kristensen, 2026). Og porselen ble første gang laget i Kina under Tang-dynastiet (618-906) - så fint og hardt at europeiske konger ga formuer for det, og først i 1709 klarte noen i Europa å lage porselen selv (Opstad, 2026). Hver av disse oppfinnelsene endret hele verden da de spredte seg vestover."
         },
         {
             "type": "image",
             "src": "/images/jordbruk-og-sivilisasjoner/kina-02.webp",
             "alt": "Kinesisk håndverker spinner silketråd fra hvite kokonger ved en lav benk i et tre-tun",
-            "caption": "Silke kommer fra kokongene til silkeormen. Kineserne holdt fremgangsmåten hemmelig i over tusen år."
+            "caption": "Silke kommer fra kokongene til silkeormen. Den krevende produksjonen gjorde silke til en av verdens dyreste varer i tusenvis av år."
         },
         {
             "type": "header",
@@ -111,7 +111,7 @@
         },
         {
             "type": "text",
-            "content": "Han-dynastiet falt rundt år 220 evt, ødelagt av korrupsjon, bondeopprør og innfall fra nomader i nord. Etter Han fulgte nye dynastier - Sui, Tang, Song, Yuan, Ming, Qing. Hver gang gjentok mønsteret seg: et dynasti reiste seg, regjerte i flere hundre år, ble svakt og korrupt, mistet himmelens mandat og falt. Det siste dynastiet, Qing, falt så sent som i 1912. Til sammen er Kina den eldste sammenhengende sivilisasjonen i verden - fortsatt skriver de med tegn som har slektninger helt tilbake til orakelbeinene i Shang."
+            "content": "Han-dynastiet falt i år 220 evt. Etter Han fulgte nye dynastier - Sui, Tang, Song, Yuan, Ming, Qing. Hver gang gjentok mønsteret seg: et dynasti reiste seg, regjerte i flere hundre år, ble svakt og mistet grepet, og falt. Ingen dynastier i Kina har vart i mer enn rundt 400 år (Spira & Torheim-Sandvik, 2026). Det siste dynastiet, Qing, styrte fra 1644 til revolusjonen i 1911, og Republikken Kina ble opprettet i 1912 (Spira & Torheim-Sandvik, 2026). Fortsatt skriver kineserne med tegn som har slektninger helt tilbake til orakelbeinene i Shang."
         },
         {
             "type": "component",
@@ -124,7 +124,7 @@
                     "Nevn tre kinesiske oppfinnelser fra teksten, og forklar kort hva silke ble laget av."
                 ],
                 "reflekter": [
-                    "Teksten sier at Kina utviklet seg helt for seg selv, men likevel fant kineserne opp mange av de samme tingene som Mesopotamia og Egypt. Hva forteller det oss om hvordan sivilisasjoner oppstår?",
+                    "Teksten sier at Kina i stor grad utviklet seg for seg selv, men likevel fant kineserne opp mange av de samme tingene som Mesopotamia og Egypt. Hva forteller det oss om hvordan sivilisasjoner oppstår?",
                     "Løss-jorda gjorde elven både livgivende og livsfarlig. Forklar hvordan den samme jorda kunne gi mat og samtidig føre til dødelige flommer.",
                     "Qin Shi Huangdi blir kalt både en av de mest brutale og en av de mest betydningsfulle herskerne. Vurder om det er mulig å være begge deler samtidig, og bruk eksempler fra teksten.",
                     "Hvorfor var «Himmelens mandat» en smart forklaring for Zhou-kongene som nettopp hadde tatt makten fra Shang?"
@@ -162,11 +162,11 @@
                         "correctIndex": 2
                     },
                     {
-                        "question": "Hvilken kinesisk oppfinnelse fant veien til Europa først rundt tusen år etter den ble oppfunnet i Kina?",
+                        "question": "Hvilken kinesisk oppfinnelse klarte ingen i Europa å lage selv før i 1709?",
                         "options": [
                             "Hjulet",
                             "Plogen",
-                            "Papir",
+                            "Porselen",
                             "Kniven"
                         ],
                         "correctIndex": 2
@@ -193,7 +193,31 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Cartwright, M. (2017). *Mandate of Heaven*. World History Encyclopedia. Hentet 27.07.2026 fra [worldhistory.org/Mandate_of_Heaven](https://www.worldhistory.org/Mandate_of_Heaven/)",
+                    "Henne, H., Kværne, P. & Jacobsen, K. A. (2025). *Konfutse*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Konfutse](https://snl.no/Konfutse)",
+                    "Kjerstad, N. (2026). *Kompass*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/kompass](https://snl.no/kompass)",
+                    "Klepp, I. G. (2026). *Silke*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/silke](https://snl.no/silke)",
+                    "Kristensen, T. E. (2026). *Svartkrutt*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/svartkrutt](https://snl.no/svartkrutt)",
+                    "Opstad, L. (2026). *Porselen*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/porselen](https://snl.no/porselen)",
+                    "Seland, E. H. (2026). *Silkeveien*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Silkeveien](https://snl.no/Silkeveien)",
+                    "Sjøstedt, G. (2024a). *Shang-dynastiet*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Shang-dynastiet](https://snl.no/Shang-dynastiet)",
+                    "Sjøstedt, G. (2024b). *Zhou-dynastiet*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Zhou-dynastiet](https://snl.no/Zhou-dynastiet)",
+                    "Spira, I. & Torheim-Sandvik, O. (2026). *Kinas historie*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Kinas_historie](https://snl.no/Kinas_historie)",
+                    "Store norske leksikon. (2024). *Cai Lun*. Hentet 27.07.2026 fra [snl.no/Cai_Lun](https://snl.no/Cai_Lun)",
+                    "Store norske leksikon. (2026a). *Qin og Han-dynastiene*. Hentet 27.07.2026 fra [snl.no/Qin_og_Han-dynastiene](https://snl.no/Qin_og_Han-dynastiene)",
+                    "Store norske leksikon. (2026b). *Qin Shi Huangdi*. Hentet 27.07.2026 fra [snl.no/Qin_Shi_Huangdi](https://snl.no/Qin_Shi_Huangdi)",
+                    "Wedul, C. F. (2026). *Huangelva*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Huangelva](https://snl.no/Huangelva)",
+                    "Zhang, J., Lu, H., Gu, W. mfl. (2012). *Early mixed farming of millet and rice 7800 years ago in the Middle Yellow River region, China*. PLoS ONE, 7(12), e52146. [doi.org/10.1371/journal.pone.0052146](https://doi.org/10.1371/journal.pone.0052146)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-27T12:00:00Z"
 }
