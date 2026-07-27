@@ -13,6 +13,7 @@ interface Props {
     motstander: { navn: string; andel: number } | null;
     onApneSekk: () => void;
     onApneLogg: () => void;
+    onApneMinnetre: () => void;
     onPause: () => void;
 }
 
@@ -24,6 +25,7 @@ export function Hud({
     motstander,
     onApneSekk,
     onApneLogg,
+    onApneMinnetre,
     onPause,
 }: Props) {
     const store = useRpgStore();
@@ -113,6 +115,12 @@ export function Hud({
             <div className="pointer-events-auto absolute right-3 top-14 flex gap-2">
                 <Knapp onClick={onApneSekk} tekst="Sekk" tast="I" />
                 <Knapp onClick={onApneLogg} tekst="Oppdrag" tast="L" merke={aktive || undefined} />
+                {/*
+                    Minnetreet. Det som står der, er det eleven har gjort - og
+                    det skal være like lett å slå opp som sekken. Uten en knapp
+                    var begrepene et varsel som forsvant etter fire sekunder.
+                */}
+                <Knapp onClick={onApneMinnetre} tekst="Minne" tast="M" />
                 <Knapp onClick={onPause} tekst="Meny" tast="Esc" />
             </div>
 

@@ -136,8 +136,14 @@ export function InventoryPanel({ onLukk, onEndret }: { onLukk: () => void; onEnd
                 Her sto besvergelsene. De er pensjonert (blueprint §15): Nordvik
                 har ingen trolldom, og det eleven kan i stedet er skjoldet,
                 paraden og våpenets manøver - ferdigheter, ikke et inventar.
-                Minnetreet tar over denne plassen når det bygges.
+
+                Det hun *kan*, ligger i minnetreet, og det har sin egen skjerm.
+                Å legge en kopi av det her ville gjort kunnskapen til en ting i
+                sekken, og det er nettopp det den ikke er.
             */}
+            <p className="text-xs text-slate-500">
+                Det du kan, ligger ikke i sekken. Trykk M for minnetreet.
+            </p>
         </Ramme>
     );
 }
@@ -212,12 +218,14 @@ export function PauseMeny({
     onAvslutt,
     onNyKarakter,
     onApneBordet,
+    onApneMinnetre,
 }: {
     onFortsett: () => void;
     onAvslutt: () => void;
     onNyKarakter: () => void;
     /** Åpne et mellomspill hun alt har vært gjennom en gang. */
     onApneBordet: (id: string) => void;
+    onApneMinnetre: () => void;
 }) {
     const niva = maksVerdier(useRpgStore()).niva;
     const steg = useRpgStore((s) => s.steg);
@@ -246,6 +254,13 @@ export function PauseMeny({
                         className="rounded-xl bg-amber-400 px-6 py-3 font-display font-bold text-slate-900 transition hover:bg-amber-300"
                     >
                         Fortsett
+                    </button>
+                    <button
+                        type="button"
+                        onClick={onApneMinnetre}
+                        className="rounded-xl border border-emerald-300/30 px-6 py-3 font-semibold text-emerald-200 transition hover:bg-emerald-400/10"
+                    >
+                        Minnetreet
                     </button>
                     <button
                         type="button"

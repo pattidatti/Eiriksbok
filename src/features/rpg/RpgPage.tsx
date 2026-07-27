@@ -13,6 +13,7 @@ import { Hud } from './components/Hud';
 import { HubHud } from './components/HubHud';
 import { Klippscene } from './components/Klippscene';
 import { Mellomspill } from './components/Mellomspill';
+import { Minnetre } from './components/Minnetre';
 import { MELLOMSPILL_BY_ID } from './data/mellomspill';
 import { Navigasjonen } from './components/Navigasjonen';
 import { Skroget } from './components/Skroget';
@@ -41,6 +42,8 @@ type Overlegg =
     | { type: 'boss'; runde: number }
     | { type: 'sekk' }
     | { type: 'logg' }
+    /** Minnetreet: det hun kan fordi hun har gjort det. */
+    | { type: 'minnetre' }
     | { type: 'pause' }
     | { type: 'dod' }
     | { type: 'seier' }
@@ -284,6 +287,7 @@ export default function RpgPage() {
             if (apent) return;
             if (e.key === 'i' || e.key === 'I') apnePanel({ type: 'sekk' });
             if (e.key === 'l' || e.key === 'L') apnePanel({ type: 'logg' });
+            if (e.key === 'm' || e.key === 'M') apnePanel({ type: 'minnetre' });
         };
         window.addEventListener('keydown', lytt);
         return () => window.removeEventListener('keydown', lytt);
@@ -359,6 +363,7 @@ export default function RpgPage() {
                         motstander={motstander}
                         onApneSekk={() => apnePanel({ type: 'sekk' })}
                         onApneLogg={() => apnePanel({ type: 'logg' })}
+                        onApneMinnetre={() => apnePanel({ type: 'minnetre' })}
                         onPause={() => apnePanel({ type: 'pause' })}
                     />
 
@@ -503,12 +508,17 @@ export default function RpgPage() {
 
             {overlegg.type === 'logg' && <QuestLog quester={quester} onLukk={lukk} />}
 
+            {overlegg.type === 'minnetre' && <Minnetre onLukk={lukk} />}
+
             {overlegg.type === 'pause' && (
                 <PauseMeny
                     onFortsett={lukk}
                     // Går gjennom scenen, ikke rett i overlegget: låsen skal
                     // settes og tas av på ett sted, og det stedet er scenen.
                     onApneBordet={(id) => scene()?.apneMellomspill(id)}
+                    // Bytter overlegg uten å gå via `apnePanel`: pausen står
+                    // alt, og et `pause: true` til ville tatt låsen to ganger.
+                    onApneMinnetre={() => setOverlegg({ type: 'minnetre' })}
                     onAvslutt={() => navigate('/oving')}
                     onNyKarakter={() => {
                         slettAlt();

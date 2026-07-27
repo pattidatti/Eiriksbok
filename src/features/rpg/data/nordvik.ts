@@ -67,6 +67,7 @@ export const NORDVIK_NPCS: NpcDef[] = [
             {
                 tekst: 'Vi drar ikke som vikinger. Vi drar i viking. Det er noe man gjør om sommeren, mellom våronna og slåtten - ikke noe man er.',
                 stikkord: ['viking', 'hærferd', 'sommer'],
+                begrep: 'haerferd',
             },
             {
                 tekst: 'Skjoldet er av lindetre. Det er lett, og det er meningen at det skal splintres. Et skjold som holder evig, er et skjold som brekker armen din i stedet.',
@@ -155,6 +156,7 @@ export const NORDVIK_NPCS: NpcDef[] = [
             {
                 tekst: 'Vi legger bordene over hverandre, som takstein på et tak. Det kalles klinkbygging. Det gjør skroget både lett og sterkt.',
                 stikkord: ['klinkbygg', 'over hverandre'],
+                begrep: 'klinkbygging',
             },
             {
                 tekst: 'Skipet stikker knapt ned i vannet. Grunt dypgående, kaller vi det. Derfor kan vi seile langt opp elvene og komme brått på folk.',
@@ -212,6 +214,11 @@ export const NORDVIK_NPCS: NpcDef[] = [
                 tekst: 'Harald Hårfagre vant ikke i Hafrsfjord alene. Han allierte seg med ladejarlene fra Trøndelag.',
                 stikkord: ['ladejarl', 'hafrsfjord', 'hårfagre'],
             },
+            {
+                tekst: 'Ute på havet vet jeg ikke hvor jeg er. Jeg vet at jeg ligger like høyt: sola står like høyt ved middag hver dag jeg holder kursen. Driver den oppover, har jeg gått for langt sør.',
+                stikkord: ['breddegrad', 'solhøyde', 'navigasjon'],
+                begrep: 'breddegradseiling',
+            },
         ],
     },
     {
@@ -233,6 +240,7 @@ export const NORDVIK_NPCS: NpcDef[] = [
             {
                 tekst: 'Derfor vet vi så lite om den tida: vi må grave i jorda og bruke arkeologi i stedet for tekster.',
                 stikkord: ['arkeologi', 'skrev noe ned'],
+                begrep: 'kildetaushet',
             },
             {
                 tekst: 'Det begynte med en katastrofe. I år 536 kom det en klimakatastrofe. Sola ble borte bak et slør, avlingene sviktet, og svært mange døde.',
@@ -274,6 +282,9 @@ export const NORDVIK_LANDMARKS: LandmarkDef[] = [
         title: 'Runesteinen ved veien',
         text: 'Her går Nordvegen - veien mot nord. Det er derfor landet heter Noreg: «veien mot nord».',
         stikkord: ['norge', 'nordvegen'],
+        // Å lese steinen *er* handlingen begrepet står for. Alt annet i treet
+        // krever at hun har gjort noe; dette krever at hun har vært her.
+        begrep: { id: 'nordvegen', niva: 'forstatt' },
     },
     {
         id: 'runestein-hallen',

@@ -30,6 +30,7 @@ export function DialogOverlay({
     const npc = finnNpc(npcId);
     const status = useRpgStore((s) => s.quester);
     const gjort = useRpgStore((s) => s.steg);
+    const larBegrep = useRpgStore((s) => s.larBegrep);
     const [replikk] = useState(() =>
         npc ? npc.smalltalk[Math.floor(Math.random() * npc.smalltalk.length)] : ''
     );
@@ -79,7 +80,17 @@ export function DialogOverlay({
                 <section className="mb-4 rounded-xl border border-sky-400/25 bg-sky-400/5 p-3">
                     <button
                         type="button"
-                        onClick={() => setVisKunnskap((v) => !v)}
+                        onClick={() => {
+                            const apner = !visKunnskap;
+                            setVisKunnskap(apner);
+                            // Ordene hun nettopp fikk høre, settes i tåkekanten
+                            // av minnetreet. Aldri høyere: å høre et ord er
+                            // ikke å kunne det (blueprint §7.4).
+                            if (!apner) return;
+                            for (const k of npc.kunnskap ?? []) {
+                                if (k.begrep) larBegrep(k.begrep, 'hort');
+                            }
+                        }}
                         className="flex w-full items-center justify-between text-xs font-semibold uppercase tracking-widest text-sky-300"
                     >
                         <span>Spør {npc.name.split(' ')[0]} ut</span>
@@ -157,6 +168,7 @@ interface LandmarkProps {
 export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
     const lm = finnLandemerke(landmarkId);
     const markerLest = useRpgStore((s) => s.markerLest);
+    const larBegrep = useRpgStore((s) => s.larBegrep);
     const lest = useRpgStore((s) => s.lest);
     const flagg = useRpgStore((s) => s.flagg);
     const settFlagg = useRpgStore((s) => s.settFlagg);
@@ -168,6 +180,10 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
     useEffect(() => {
         sfx.apne();
         if (lm && forste) markerLest(lm.id);
+        // Steinen ved veien er selve handlingen bak `[Nordvegen]`. Løftet
+        // ligger på landemerket og ikke i storen: dataene sier hva teksten er
+        // verdt, storen fører bare regnskapet.
+        if (lm?.begrep) larBegrep(lm.begrep.id, lm.begrep.niva);
         // Skal bare kjøre når landemerket åpnes.
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [lm?.id]);

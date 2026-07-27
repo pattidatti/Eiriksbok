@@ -825,6 +825,10 @@ export class WorldScene extends Phaser.Scene {
             case 'orm-hjemkomst': {
                 const store = useRpgStore.getState();
                 store.fullforSteg(K1.hjem);
+                // Hun dro ut om sommeren og er hjemme før slåtten. Det er hele
+                // begrepet: å dra i viking var noe man gjorde, ikke noe man var
+                // - og nå har hun gjort det, tur-retur.
+                store.larBegrep('haerferd', 'forstatt');
                 store.fullforKapittel(1, 'Kapittel 1: Skroget og stranda');
                 store.varsle('Kapittel 1 er over. 793 er bak deg.', 'niva');
                 // Og så bordet, med én gang. Kapittelet er spillbart uten

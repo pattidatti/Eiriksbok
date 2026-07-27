@@ -750,6 +750,14 @@ export interface NpcHandling {
 export interface KunnskapsBit {
     tekst: string;
     stikkord: string[];
+    /**
+     * Begrepet denne opplysningen *nevner*.
+     *
+     * Den løftes til `hort`, aldri høyere. Å høre et ord er ikke å kunne det,
+     * og en NPC som deler ut `forstatt` ville gjort minnetreet til noe eleven
+     * kan klikke seg gjennom (blueprint §7.4).
+     */
+    begrep?: string;
 }
 
 export interface LandmarkDef {
@@ -765,6 +773,14 @@ export interface LandmarkDef {
     text: string;
     /** Hvilke spørsmål teksten svarer på. Se KunnskapsBit. */
     stikkord?: string[];
+    /**
+     * Begrepet teksten gir, og hvor langt den tar det.
+     *
+     * En runestein kan gi `forstatt` der begrepet nettopp *er* å lese den -
+     * `[Nordvegen]` forstås ved å lese steinen ved veien, og det er hele
+     * handlingen. Alt annet enn det skal stå på `hort`.
+     */
+    begrep?: { id: string; niva: Forstaaelse };
     /**
      * Noe eleven kan gjøre her, ikke bare lese.
      *

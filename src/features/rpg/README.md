@@ -80,7 +80,7 @@ store/useRpgStore.ts     All spillertilstand, lagringsformatet + kobling til «M
 components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordring,
                          sekk, logg, butikk, skjermkontroll, atmosfære-overlegg,
                          klippscene (bjelker og replikk), skroget, navigasjonen og
-                         mellomspillet (bordet med kildene)
+                         mellomspillet (bordet med kildene) og minnetreet
 ```
 
 ## Slik henger læring og spill sammen
@@ -121,7 +121,7 @@ components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordr
 | **Retning under gard**         | Vend garden, skjoldgang i 45 % fart         |
 | **Shift + mellomrom**          | Våpenets manøver (hak / stikk / skjoldstøt) |
 | E                              | Snakk / les / åpne / gå om bord / sett deg  |
-| I / L / Esc                    | Sekk / oppdrag / meny                       |
+| I / L / M / Esc                | Sekk / oppdrag / minnetre / meny            |
 
 Shift betyr to ting, og det er ikke tvetydig: rullen har alltid krevd bevegelse
 (`utslag > 0.001` i `oppdaterSpiller`), så «Shift i ro» kan bare være garden.
