@@ -854,6 +854,15 @@ export interface LandmarkDef {
      */
     begrep?: { id: string; niva: Forstaaelse };
     /**
+     * Linjer som bare står der hvis eleven gjorde noe tidligere i kampanjen.
+     *
+     * Dette er det gården husker. Steinen over Torstein sier én ting til den
+     * som tok relikvieskrinet med hjem i 793, og en annen til den som lot det
+     * ligge - og ingen av delene er en dom. Teksten legges under den faste, med
+     * luft, så eleven ser at det er noe som gjelder henne.
+     */
+    tillegg?: { flagg: string; tekst: string }[];
+    /**
      * Noe eleven kan gjøre her, ikke bare lese.
      *
      * Lindisfarne er hele grunnen til at dette finnes: relikvieskrinet, bøkene,
@@ -924,6 +933,14 @@ export interface Sted {
      * sølvet og oppdragene hennes byttes ut med en annen epokes.
      */
     epokeId: string | null;
+    /**
+     * Kapittelet stedet hører til, om det hører til ett.
+     *
+     * Nordvik finnes fem ganger - det er samme gård, men ikke samme kart, og
+     * ikke samme folk. Uten dette feltet ville porten hjem fra hallen alltid
+     * ført tilbake til 793, fordi den slår opp «det første stedet i epoken».
+     */
+    kapittel?: number;
     tema: Tema;
     /** Terrenget. Bygges på nytt hver gang eleven kommer hit. */
     byggKart: () => WorldMap;

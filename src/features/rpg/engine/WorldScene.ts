@@ -9,8 +9,8 @@
 import Phaser from 'phaser';
 import { ENEMY_BY_ID, ENEMIES } from '../data/enemies';
 import { regelsettFor } from '../data/epoker';
-import { forsteStedI, stedEllerStart } from '../data/steder';
-import { maksVerdier, useRpgStore } from '../store/useRpgStore';
+import { stedEllerStart, stedIEpoke } from '../data/steder';
+import { kapittelIEpoke, maksVerdier, useRpgStore } from '../store/useRpgStore';
 import type { EnemyDef, KlippDef, QuestDef, Sted } from '../types';
 import { sfx, startMusikk, stopMusikk } from './audio';
 import { fraSpill, tilSpill } from './bridge';
@@ -18,7 +18,7 @@ import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
 import { Opplaering } from './opplaering';
-import { K1, K1_FLAGG, KAPITTEL_BY_NR } from '../data/kapitler';
+import { K1, K1_FLAGG, K2, KAPITTEL_BY_NR } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
 import { Raidet } from './raidet';
@@ -287,6 +287,10 @@ export class WorldScene extends Phaser.Scene {
      * het `naarHunKommer` ville før eller siden fått et helt kapittel i seg.
      */
     private aapneStedet(): void {
+        // Opptakten eier skjermen først. Kommer hun rett inn i verden og møter
+        // Torgeir før hun vet at hun er Åsa, er kapittelskiftet bare et
+        // kartbytte med nye navn på folk.
+        if (this.visOpptakt()) return;
         if (this.sted.id !== 'lindisfarne') return;
         const store = useRpgStore.getState();
         if (store.steg.includes(K1.motstanden)) {
@@ -300,6 +304,27 @@ export class WorldScene extends Phaser.Scene {
             useRpgStore.getState().fullforSteg(K1.stranda);
             this.raidet.start();
         });
+    }
+
+    /**
+     * Skal kapittelets åpningsskjerm stå nå?
+     *
+     * Bare på et sted som hører til et kapittel eleven ikke har begynt på ennå,
+     * og aldri i kapittel 1: det begynner med karakterskaperen, og to
+     * åpningsskjermer etter hverandre er én for mye.
+     *
+     * Merket ligger i `sette` sammen med cutscenene. Opptakten *er* en slik
+     * scene - den skal vises én gang, og aldri igjen når eleven kommer hjem fra
+     * hallen midt i året.
+     */
+    private visOpptakt(): boolean {
+        const nr = this.sted.kapittel ?? 0;
+        if (nr < 2) return false;
+        const store = useRpgStore.getState();
+        if (store.sette.includes(`opptakt:k${nr}`)) return false;
+        this.settLaast(true);
+        fraSpill.emit('opptakt', { nr });
+        return true;
     }
 
     /**
@@ -317,7 +342,7 @@ export class WorldScene extends Phaser.Scene {
         const port = (sted.portaler ?? []).find((p) =>
             p.maal.art === 'sted'
                 ? p.maal.stedId === this.fraSted
-                : forsteStedI(p.maal.epokeId) === this.fraSted
+                : stedIEpoke(p.maal.epokeId, kapittelIEpoke(p.maal.epokeId)) === this.fraSted
         );
         // Tre ruter under porten: hun skal stå foran den, ikke inni den - og
         // ikke oppå skiltet, som henger like under.
@@ -422,7 +447,11 @@ export class WorldScene extends Phaser.Scene {
             // av alt annet som deler ut begreper.
             tilSpill.on('mellomspillFerdig', ({ id, gjennomgatt }) =>
                 this.avsluttMellomspill(id, gjennomgatt)
-            )
+            ),
+            tilSpill.on('opptaktFerdig', ({ nr }) => {
+                useRpgStore.getState().markerSett(`opptakt:k${nr}`);
+                this.settLaast(false);
+            })
         );
     }
 
@@ -839,6 +868,15 @@ export class WorldScene extends Phaser.Scene {
                 if (bordet) this.apneMellomspill(bordet);
                 return;
             }
+            case 'torgeir-noklene': {
+                // Her er samtalen selve handlingen. Torgeir forteller Åsa hva
+                // som ligger i bua, og det er alt steget er - hun vet nå hva
+                // hun har å rutte med. Ingen egen skjerm skal ligge her:
+                // forrådet er et eget steg, og et kapittel som åpner med to
+                // paneler etter hverandre begynner med papirarbeid.
+                useRpgStore.getState().fullforSteg(K2.noklene);
+                return;
+            }
             default:
                 return;
         }
@@ -915,6 +953,32 @@ export class WorldScene extends Phaser.Scene {
         const store = useRpgStore.getState();
         store.fullforMellomspill(def.id, `Mellomspill ${def.nr}: ${def.tittel}`);
         for (const begrepId of def.begreper) store.larBegrep(begrepId, 'forstatt');
+        this.gaaVidereTilNesteKapittel(def.nr);
+    }
+
+    /**
+     * Bordet er ryddet, og året er over.
+     *
+     * Neste kapittel begynner med én gang. Å la eleven bli stående i 793 etter
+     * at kildene er lagt bort, ville gjort kampanjen til en samling årstall hun
+     * må finne inngangen til selv - og det finnes ingen inngang, for Orm har
+     * ikke mer å si.
+     *
+     * Vakten er kapittelnummeret i storen, ikke mellomspillet: bordet ligger
+     * framme i pausemenyen etterpå, og det skal kunne leses om igjen uten å
+     * sende henne 79 år fram hver gang.
+     */
+    private gaaVidereTilNesteKapittel(fraNr: number): void {
+        const store = useRpgStore.getState();
+        if (store.kapittel !== fraNr) return;
+        const neste = KAPITTEL_BY_NR[fraNr + 1];
+        // Er neste kapittel ikke bygget ennå, blir hun stående i det hun kan.
+        // Et kapittel uten steg er et tomt kart, og det er verre enn å vente.
+        if (!neste || neste.steg.length === 0) return;
+        const stedId = stedIEpoke(this.sted.epokeId ?? '', neste.nr);
+        if (!stedId) return;
+        store.byttKapittel(neste.nr);
+        this.bestillReise(stedId);
     }
 
     // ── Cutscenes ───────────────────────────────────────────────────────────

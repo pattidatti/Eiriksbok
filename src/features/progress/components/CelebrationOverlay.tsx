@@ -5,6 +5,7 @@
 import { useEffect, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useCelebration } from '../useCelebration';
+import { useStilleSkjerm } from '../useStilleSkjerm';
 import type { Celebration } from '../useCelebration';
 
 const CELEBRATION_DURATION_MS = 3200;
@@ -69,20 +70,27 @@ const Confetti = () => (
 );
 
 export const CelebrationOverlay = () => {
-    const current = useCelebration((s) => s.queue[0] ?? null);
+    // Eier noen andre hele skjermen - en cutscene, kildebordet, åpningen av et
+    // kapittel - står køen. Feiringen kommer når eleven er ute av øyeblikket,
+    // og ingenting går tapt.
+    const stille = useStilleSkjerm((s) => s.stille);
+    const current = useCelebration((s) => (s.queue[0] ?? null));
     const dismiss = useCelebration((s) => s.dismissCurrent);
 
     useEffect(() => {
-        if (!current) return;
+        // Nedtellingen må vente sammen med visningen. Gjør den ikke det,
+        // rekker feiringen å bli avvist mens den er skjult - og eleven får
+        // aldri se den.
+        if (!current || stille) return;
         const timer = setTimeout(dismiss, CELEBRATION_DURATION_MS);
         return () => clearTimeout(timer);
-    }, [current, dismiss]);
+    }, [current, dismiss, stille]);
 
     const view = useMemo(() => (current ? headline(current) : null), [current]);
 
     return (
         <AnimatePresence>
-            {current && view && (
+            {current && view && !stille && (
                 <motion.div
                     key={current.id}
                     className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm"

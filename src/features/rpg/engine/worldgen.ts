@@ -60,7 +60,22 @@ const { bredde: W, hoyde: H } = NORDVIK_SIZE;
 const VANN_GRENSE = 6;
 const SAND_GRENSE = 8;
 
-export function byggNordvik(): WorldMap {
+/**
+ * Det som skiller ett Nordvik fra et annet.
+ *
+ * Gården er den samme gjennom hele kampanjen, og det er hele poenget: eleven
+ * skal kjenne igjen stien og naustet 79 år senere. Derfor er dette ikke to
+ * kartgeneratorer, men den ene med to-tre ting flyttet på - og de tre tingene
+ * er de eneste som *skal* si at tiden har gått.
+ */
+export interface NordvikValg {
+    /** Ligger langskipet på svai? I 872 tok mennene det med sørover. */
+    langskip?: boolean;
+    /** Gravhaugen, om noen ligger her. Ruta den ligger på. */
+    haug?: [number, number] | null;
+}
+
+export function byggNordvik({ langskip = true, haug = null }: NordvikValg = {}): WorldMap {
     const rng = makeRng(1793);
     const terreng: TileKey[][] = [];
     const blokkert: boolean[][] = [];
@@ -208,6 +223,30 @@ export function byggNordvik(): WorldMap {
         }
     }
 
+    // ── Haugen over en av gårdens egne ──────────────────────────────────────
+    // En lav rygg med jord på og en krans av stein rundt. Den er *ikke* en
+    // arena og har ingen fiende i seg: dette er en grav, og eleven skal kunne
+    // gå opp på den og lese steinen som står der.
+    //
+    // Ligger etter `merk` med vilje - haugen skal rydde plass til seg selv, så
+    // ingen skog strøs ned i den etterpå.
+    if (haug) {
+        const [hx, hy] = haug;
+        for (let y = hy - 3; y <= hy + 3; y++) {
+            for (let x = hx - 3; x <= hx + 3; x++) {
+                if (x < 1 || y < 1 || x >= W - 1 || y >= H - 1) continue;
+                if (terreng[y][x] === 'vann') continue;
+                const d = Math.hypot(x - hx, (y - hy) * 1.3);
+                if (d > 3) continue;
+                // Steinkrans ytterst, tråkket sti på toppen: en haug folk går
+                // opp på. Gress ville gjort den usynlig mot enga rundt.
+                terreng[y][x] = d > 2.2 ? 'stein' : 'sti';
+                blokkert[y][x] = false;
+                merk(x, y);
+            }
+        }
+    }
+
     // ── Bygninger ───────────────────────────────────────────────────────────
     /** Standardverdier for et objekt uten variasjon (bygninger, kaier). */
     const fast = { variant: 0, flip: false, skala: 1, tint: 0 };
@@ -258,7 +297,10 @@ export function byggNordvik(): WorldMap {
     // heter Nordvik. Båten eleven faktisk kan ro, står i `NORDVIK_FARKOSTER`.
     // Skroget er 66 piksler bredt, så det må ligge minst to ruter fra
     // kartkanten for ikke å bli klippet.
-    props.push({ kind: 'langskip', x: 3 * 16, y: 46 * 16, solid: false, ...fast });
+    //
+    // I 872 ligger det ikke der. Mennene tok det med sørover til Hafrsfjord, og
+    // den tomme fjorden er den første setningen kapittelet sier - uten ord.
+    if (langskip) props.push({ kind: 'langskip', x: 3 * 16, y: 46 * 16, solid: false, ...fast });
 
     // Gjerde rundt åkrene
     for (let x = 24; x < 34; x += 1) {

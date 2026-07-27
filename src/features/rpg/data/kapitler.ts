@@ -25,6 +25,17 @@ export const K1 = {
     hjem: 'k1-hjem',
 } as const;
 
+/**
+ * Steg-id-ene i kapittel 2.
+ *
+ * Bare de som er bygget står her. Et steg ingen har bygget, er et løfte vi
+ * ikke kan holde - og i oppdragsloggen leser det som noe eleven har gått glipp
+ * av.
+ */
+export const K2 = {
+    noklene: 'k2-noklene',
+} as const;
+
 /** Flagg kapittel 1 setter, og som mellomspillet og kapittel 5 leser. */
 export const K1_FLAGG = {
     /** Brente hun skriptoriet? Da står det tomt der kilden skulle vært. */
@@ -115,9 +126,19 @@ export const KAPITLER: KapittelDef[] = [
         aettId: 'nordvik',
         opptakt: {
             tittel: 'Nordvik, 872',
-            tekst: 'Alle våpenføre menn er sør ved Hafrsfjord. Gården er din.',
+            tekst:
+                'Det er 79 år siden Torstein la bordene i skroget selv. Nå ligger han i haugen sør for tunet, og du er datteren hans.\n\n' +
+                'I vår dro hver mann som kunne bære skjold sørover, til Hafrsfjord, der Harald Hårfagre slåss for å legge hele landet under seg. De tok skipet med. Igjen står en gammel mann, to kvinner og en trell.\n\n' +
+                'Nøklene til bua henger i beltet ditt. Det er ikke pynt. Det er hvem som avgjør hvem som spiser i vinter.',
         },
-        steg: [],
+        steg: [
+            {
+                id: K2.noklene,
+                tittel: 'Nøklene i beltet',
+                mal: 'Snakk med Torgeir på tunet. Han vet hva som er igjen.',
+                krever: [],
+            },
+        ],
         // 872 er kapittelet der de sosiale systemene *er* spillet: forrådet
         // styres gjennom året, og æren kan gjøre at forsvarskampen ikke skjer.
         systemer: { aere: true, aarshjul: true },

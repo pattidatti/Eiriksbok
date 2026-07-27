@@ -217,6 +217,21 @@ export function LandmarkOverlay({ landmarkId, onLukk }: LandmarkProps) {
                 {lm.text}
             </p>
             {/*
+                Det gården husker. Linjene står bare for den som gjorde det de
+                handler om, og ingen av dem dømmer - de sier hva som ligger der.
+            */}
+            {(lm.tillegg ?? [])
+                .filter((t) => flagg[t.flagg])
+                .map((t) => (
+                    <p
+                        key={t.flagg}
+                        data-prove="landemerke-tillegg"
+                        className="mt-3 border-l-2 border-amber-300/40 pl-3 text-[15px] leading-relaxed text-amber-100/85"
+                    >
+                        {t.tekst}
+                    </p>
+                ))}
+            {/*
                 Valget. Ingen vurdering står her - ingen «er du sikker?», ingen
                 farge som sier at dette er stygt, og ingen ros når det er gjort.
                 Spillet sier ingenting (blueprint §3). Følgen kommer i

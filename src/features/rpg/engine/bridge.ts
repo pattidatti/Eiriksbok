@@ -59,6 +59,11 @@ export interface SceneEvents {
     /** Åpne et av kapittelets puzzle-overlegg. */
     puzzle: { id: 'skroget' | 'navigasjonen' };
     /**
+     * Et nytt kapittel begynner. Skjermen skal stå stille et øyeblikk før
+     * eleven får gå, og hun skal få vite hvem hun er nå.
+     */
+    opptakt: { nr: number };
+    /**
      * Åpne mellomspillet - bordet med kildene.
      *
      * Eget hendelsesnavn og ikke en tredje `puzzle`-id, fordi de to er ulike
@@ -143,6 +148,8 @@ export interface UiEvents {
      * bordene». Scenen eier hva som faktisk skjer.
      */
     npcHandling: { npcId: string; handlingId: string };
+    /** Opptakten er lest. Låsen tas av, og kapittelet begynner. */
+    opptaktFerdig: { nr: number };
 }
 
 class Emitter<Events> {

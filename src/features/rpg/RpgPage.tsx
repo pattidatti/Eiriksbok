@@ -7,6 +7,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLayout } from '../../context/LayoutContext';
+import { useStilleSkjerm } from '../progress/useStilleSkjerm';
 import { CharacterCreator } from './components/CharacterCreator';
 import { DialogOverlay, LandmarkOverlay } from './components/DialogOverlay';
 import { Hud } from './components/Hud';
@@ -14,6 +15,8 @@ import { HubHud } from './components/HubHud';
 import { Klippscene } from './components/Klippscene';
 import { Mellomspill } from './components/Mellomspill';
 import { Minnetre } from './components/Minnetre';
+import { Opptakt } from './components/Opptakt';
+import { KAPITTEL_BY_NR } from './data/kapitler';
 import { MELLOMSPILL_BY_ID } from './data/mellomspill';
 import { Navigasjonen } from './components/Navigasjonen';
 import { Skroget } from './components/Skroget';
@@ -50,7 +53,9 @@ type Overlegg =
     /** Kapittelets håndverkspuzzle. Scenen står låst bak det. */
     | { type: 'puzzle'; id: 'skroget' | 'navigasjonen' }
     /** Bordet med kildene, mellom to kapitler. */
-    | { type: 'mellomspill'; id: string };
+    | { type: 'mellomspill'; id: string }
+    /** Åpningsskjermen til et nytt kapittel. */
+    | { type: 'opptakt'; nr: number };
 
 export default function RpgPage() {
     const navigate = useNavigate();
@@ -135,6 +140,24 @@ export default function RpgPage() {
         setHideHeader(true);
         return () => setHideHeader(false);
     }, [setHideHeader]);
+
+    /**
+     * Øyeblikkene som eier hele skjermen.
+     *
+     * Et kapittel åpner med hvem hun er nå, og bordet med kildene er det
+     * tyngste i spillet. Kommer «Nivå 3!» med rakett og konfetti oppå den
+     * setningen, er øyeblikket borte - og XP-en kom nettopp fra det hun holdt
+     * på med. Feiringene står i kø og kommer når hun er ute igjen.
+     */
+    const eierSkjermen =
+        klipp.pa ||
+        overlegg.type === 'opptakt' ||
+        overlegg.type === 'mellomspill' ||
+        overlegg.type === 'puzzle';
+    useEffect(() => {
+        useStilleSkjerm.getState().settStille(eierSkjermen);
+        return () => useStilleSkjerm.getState().settStille(false);
+    }, [eierSkjermen]);
 
     // ── Last spørsmålsbanken og bygg questene ───────────────────────────────
     useEffect(() => {
@@ -230,6 +253,7 @@ export default function RpgPage() {
             // begge være i bruk - det er slik de kommer i utakt.
             fraSpill.on('puzzle', ({ id }) => setOverlegg({ type: 'puzzle', id })),
             fraSpill.on('mellomspill', ({ id }) => setOverlegg({ type: 'mellomspill', id })),
+            fraSpill.on('opptakt', ({ nr }) => setOverlegg({ type: 'opptakt', nr })),
             // Replikken står i noen sekunder og går av seg selv. Den skal ikke
             // kreve et tastetrykk: verden går videre mens den står, og en
             // beskjed som må lukkes midt i en kamp er en beskjed eleven lukker
@@ -260,6 +284,10 @@ export default function RpgPage() {
         const lytt = (e: KeyboardEvent) => {
             if (e.repeat) return;
             const apent = overlegg.type !== 'ingen';
+            // Opptakten kan ikke lukkes med Esc. Den er kapittelets første
+            // setning, ikke et panel - og en elev som trykker Esc av vane skal
+            // ikke ende opp i 872 uten å ha fått vite at hun er Åsa.
+            if (overlegg.type === 'opptakt') return;
             if (e.key === 'Escape') {
                 // Puzzlet må lukkes gjennom sin egen vei ut. `lukk()` sender
                 // bare `lukk` og `pause: false`, og da ville scenen aldri fått
@@ -361,6 +389,11 @@ export default function RpgPage() {
                         kamp={kamp}
                         oppgave={oppgave}
                         motstander={motstander}
+                        rollenavn={
+                            sted.kapittel
+                                ? (KAPITTEL_BY_NR[sted.kapittel]?.rolle.navn ?? null)
+                                : null
+                        }
                         onApneSekk={() => apnePanel({ type: 'sekk' })}
                         onApneLogg={() => apnePanel({ type: 'logg' })}
                         onApneMinnetre={() => apnePanel({ type: 'minnetre' })}
@@ -509,6 +542,18 @@ export default function RpgPage() {
             {overlegg.type === 'logg' && <QuestLog quester={quester} onLukk={lukk} />}
 
             {overlegg.type === 'minnetre' && <Minnetre onLukk={lukk} />}
+
+            {overlegg.type === 'opptakt' && KAPITTEL_BY_NR[overlegg.nr] && (
+                <Opptakt
+                    kapittel={KAPITTEL_BY_NR[overlegg.nr]}
+                    onFerdig={() => {
+                        // Går gjennom scenen, ikke `lukk()`: låsen ble satt av
+                        // scenen, og bare den skal ta den av igjen.
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('opptaktFerdig', { nr: overlegg.nr });
+                    }}
+                />
+            )}
 
             {overlegg.type === 'pause' && (
                 <PauseMeny

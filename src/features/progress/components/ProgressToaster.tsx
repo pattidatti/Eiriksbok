@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useProgressToasts } from '../useProgressToasts';
+import { useStilleSkjerm } from '../useStilleSkjerm';
 import type { ProgressToast } from '../useProgressToasts';
 import { useChipPulse } from '../useChipPulse';
 import { TIER_LABELS } from '../badges';
@@ -160,6 +161,10 @@ const StaticToastCard = ({ toast }: { toast: Exclude<ProgressToast, XpToast> }) 
 
 export const ProgressToaster = () => {
     const toasts = useProgressToasts((s) => s.toasts);
+    // Samme regel som for feiringen: står et fullskjerms øyeblikk, venter
+    // toastene. De ligger i køen og kommer etterpå.
+    const stille = useStilleSkjerm((s) => s.stille);
+    if (stille) return null;
     return (
         <div className="fixed top-20 right-4 z-50 flex flex-col gap-2 items-end pointer-events-none [&>*]:pointer-events-auto">
             <AnimatePresence>

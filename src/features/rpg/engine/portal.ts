@@ -11,7 +11,8 @@
 
 import Phaser from 'phaser';
 import { EPOKE_BY_ID } from '../data/epoker';
-import { forsteStedI } from '../data/steder';
+import { stedIEpoke } from '../data/steder';
+import { kapittelIEpoke } from '../store/useRpgStore';
 import { useRpgStore } from '../store/useRpgStore';
 import type { PortalDef } from '../types';
 import { sfx } from './audio';
@@ -85,8 +86,13 @@ export class Portaler {
             // kartet er bygget ville ellers gitt en port som ikke gjør noe: E
             // trykkes, `bestillReise` avviser i stillhet, og ingenting sier
             // hvorfor.
+            // Kapittelet må med i oppslaget. En elev som står midt i 872 skal
+            // komme hjem til 872 når hun går gjennom porten i hallen, ikke til
+            // 793 og folk som har vært døde i to menneskealdre.
             const maalSted =
-                def.maal.art === 'sted' ? def.maal.stedId : forsteStedI(def.maal.epokeId);
+                def.maal.art === 'sted'
+                    ? def.maal.stedId
+                    : stedIEpoke(def.maal.epokeId, kapittelIEpoke(def.maal.epokeId));
             const apen = maalSted !== null && (def.maal.art === 'sted' || Boolean(epoke?.spillbar));
             const tittel = def.maal.art === 'sted' ? def.maal.navn : (epoke?.title ?? 'Ukjent');
             // Skiltet får årstallet, ikke epokebeskrivelsen. «Steinalder og de

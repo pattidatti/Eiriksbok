@@ -17,7 +17,7 @@ import { BEGREP_BY_ID } from '../data/begreper';
 import { CLASS_BY_ID, CLASSES, levelFromXp, statsAt, xpForLevel } from '../data/classes';
 import { ITEM_BY_ID, equipmentBonus } from '../data/items';
 import { START_EPOKE } from '../data/epoker';
-import { forsteStedI, START_STED } from '../data/steder';
+import { stedIEpoke, START_STED } from '../data/steder';
 import { sfx } from '../engine/audio';
 import type {
     AettTilstand,
@@ -34,11 +34,18 @@ import type {
     SaveState,
     VaapenDef,
 } from '../types';
-import { AERE_GRUNNER, klampAere, prisFor, type AereGrunn } from '../engine/aere';
+import {
+    AERE_GRUNNER,
+    arvetAere,
+    klampAere,
+    prisFor,
+    startAere,
+    type AereGrunn,
+} from '../engine/aere';
 // Døpt om ved importen: handlingen i storen heter det samme, og to like navn i
 // samme fil er en feil som ser riktig ut helt til noen leser den.
 import { AARSTID, gaaDager as tikkKlokke } from '../engine/klokke';
-import { KAPITLER } from '../data/kapitler';
+import { KAPITLER, KAPITTEL_BY_NR } from '../data/kapitler';
 
 /**
  * Kjøretidstilstanden.
@@ -151,6 +158,13 @@ export interface RpgState {
     fullforMellomspill: (id: string, tittel: string) => void;
     /** Kapittelet er i havn. */
     fullforKapittel: (nr: number, tittel: string) => void;
+    /**
+     * Neste kapittel begynner: ny person, samme ætt.
+     *
+     * Kapitteltilstanden nullstilles - nivå, sølv, sekk og utstyr følger
+     * personen, ikke ætten. Det som blir igjen, er det ætten er kjent for.
+     */
+    byttKapittel: (nr: number) => void;
     markerSett: (klippId: string) => void;
     settFlagg: (navn: string, verdi?: boolean) => void;
     varsle: (tekst: string, art?: 'info' | 'bra' | 'darlig' | 'niva') => void;
@@ -240,7 +254,7 @@ const nyEpoke = (epokeId: string, character: CharacterDraft | null): EpokeSave =
     kapittel: 1,
     // Har epoken ikke noe sted ennå, står hun i hallen. Det er sant: da finnes
     // det ingen verden å stå i der inne.
-    sisteSted: forsteStedI(epokeId) ?? START_STED,
+    sisteSted: stedIEpoke(epokeId, 1) ?? START_STED,
     kampanje: tomKampanje(),
     kapittelState: tomtKapittel(character),
 });
@@ -260,7 +274,7 @@ const heleEpoken = (
     character: CharacterDraft | null
 ): EpokeSave => ({
     kapittel: lagret?.kapittel ?? 1,
-    sisteSted: lagret?.sisteSted ?? forsteStedI(epokeId) ?? START_STED,
+    sisteSted: lagret?.sisteSted ?? stedIEpoke(epokeId, lagret?.kapittel ?? 1) ?? START_STED,
     kampanje: { ...tomKampanje(), ...lagret?.kampanje },
     kapittelState: { ...tomtKapittel(character), ...lagret?.kapittelState },
 });
@@ -781,6 +795,32 @@ export const useRpgStore = create<RpgState>()(
                 });
             },
 
+            /**
+             * Kapittelskiftet (blueprint §12.1).
+             *
+             * Orm den yngre i 1066 arver ikke Torsteins sverd fra 793. Han
+             * arver at Torstein hadde et - og at ætten er kjent for det. Derfor
+             * bygges kapitteltilstanden på nytt fra bunnen, mens kampanjen står
+             * urørt: begreper, kilder, saker, flagg og ætt-ære følger med.
+             */
+            byttKapittel: (nr) => {
+                const s = get();
+                const kap = KAPITTEL_BY_NR[nr];
+                if (!kap || s.kapittel === nr) return;
+                const aettAere = arvetAere(s.aettAere, s.aere);
+                set({
+                    kapittel: nr,
+                    ...tomtKapittel(s.character),
+                    aettAere,
+                    // Forspranget hun ikke har gjort seg fortjent til. Det er
+                    // ættesamfunnet, og det er hele grunnen til at kapittel 1
+                    // skal spille inn i kapittel 2.
+                    aere: startAere(aettAere),
+                    // Året settes av kapittelet, og klokken går aldri bakover.
+                    klokke: { aar: Math.max(s.klokke.aar, kap.aar), dag: 1 },
+                });
+            },
+
             markerSett: (klippId) => {
                 const s = get();
                 if (s.sette.includes(klippId)) return;
@@ -942,6 +982,18 @@ export const useRpgStore = create<RpgState>()(
         }
     )
 );
+
+/**
+ * Kapittelet eleven står i, i en gitt epoke.
+ *
+ * Den aktive epoken ligger flatt, de andre ligger i `andreEpoker`. Uten dette
+ * ene oppslaget måtte hver som lurte på «hvilket Nordvik?» kjenne begge former,
+ * og det er nøyaktig den kunnskapen `partialize` og `merge` finnes for å samle.
+ */
+export function kapittelIEpoke(epokeId: string): number {
+    const s = useRpgStore.getState();
+    return epokeId === s.epokeId ? s.kapittel : (s.andreEpoker[epokeId]?.kapittel ?? 1);
+}
 
 /** XP som mangler til neste nivå, og hvor langt inn i nivået eleven er. */
 export function nivaFremgang(xp: number) {

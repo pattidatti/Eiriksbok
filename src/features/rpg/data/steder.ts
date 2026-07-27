@@ -26,6 +26,13 @@ import {
     VARDE_RUTE,
 } from './hub';
 import {
+    NORDVIK_872_LANDMARKS,
+    NORDVIK_872_NPCS,
+    NORDVIK_872_PORTAL,
+    NORDVIK_872_SPAWN,
+    TORSTEINS_HAUG,
+} from './nordvik872';
+import {
     NORDVIK_AUTHORED_QUESTER,
     NORDVIK_BOSS_QUESTIONS,
     NORDVIK_FARKOSTER,
@@ -89,8 +96,9 @@ const NORDVIK: Sted = {
     tittel: 'Nordvik',
     undertittel: 'Vikingtiden · 793-1066',
     epokeId: 'vikingtiden',
+    kapittel: 1,
     tema: EPOKE_BY_ID.vikingtiden.tema,
-    byggKart: byggNordvik,
+    byggKart: () => byggNordvik(),
     spawn: NORDVIK_SPAWN,
     npcer: NORDVIK_NPCS,
     landemerker: NORDVIK_LANDMARKS,
@@ -133,6 +141,7 @@ const LINDISFARNE: Sted = {
     tittel: 'Lindisfarne',
     undertittel: '8. juni 793',
     epokeId: 'vikingtiden',
+    kapittel: 1,
     tema: {
         ...EPOKE_BY_ID.vikingtiden.tema,
         // Lavere, kaldere og mer utvasket enn hjemme. Nordsjøen om morgenen,
@@ -166,7 +175,48 @@ const LINDISFARNE: Sted = {
     authored: [],
 };
 
-export const STEDER: Sted[] = [HUB, NORDVIK, LINDISFARNE];
+/**
+ * Nordvik i 872. Samme gård, samme sti, samme naust - og nesten ingen hjemme.
+ *
+ * Et eget sted og ikke en variabel inne i det gamle: folkene er andre, det som
+ * står på kartet er annerledes, og et kart som skifter innhold etter hvilket
+ * kapittel eleven står i, er et kart ingen kan lese i koden. Terrenget kommer
+ * fra samme generator, for det *er* den samme gården.
+ */
+const NORDVIK_872: Sted = {
+    id: 'nordvik-872',
+    tittel: 'Nordvik',
+    undertittel: '872 · mennene er ved Hafrsfjord',
+    epokeId: 'vikingtiden',
+    kapittel: 2,
+    tema: EPOKE_BY_ID.vikingtiden.tema,
+    // Langskipet er borte, og det ligger en haug sør for tunet som ikke lå der
+    // i 793. To endringer, og begge sier hva som har skjedd uten et ord.
+    byggKart: () => byggNordvik({ langskip: false, haug: TORSTEINS_HAUG }),
+    spawn: NORDVIK_872_SPAWN,
+    npcer: NORDVIK_872_NPCS,
+    landemerker: NORDVIK_872_LANDMARKS,
+    // Ingen båt. Færingen ble tatt med sørover den også, og en gård uten
+    // fartøy er halve grunnen til at Åsa ikke bare kan dra fra det.
+    portaler: [
+        {
+            tile: NORDVIK_872_PORTAL,
+            maal: {
+                art: 'sted',
+                stedId: 'hub',
+                navn: 'HALLEN',
+                undertekst: 'VEIEN HJEM',
+            },
+        },
+    ],
+    // Tomt. Glemselen hører til den gamle rammen, og 872 er et kapittel der
+    // motstanden kommer på en bestemt dag med et bestemt ærend.
+    spawner: [],
+    musikkRot: 185,
+    authored: [],
+};
+
+export const STEDER: Sted[] = [HUB, NORDVIK, LINDISFARNE, NORDVIK_872];
 
 export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s) => [s.id, s]));
 
@@ -184,17 +234,22 @@ export function stedEllerStart(id: string | undefined): Sted {
 }
 
 /**
- * Der en elev kommer inn i en epoke hun ikke har vært i før, eller `null` hvis
- * epoken ikke har noe sted ennå.
+ * Stedet en epoke slipper eleven inn på, i det kapittelet hun står i - eller
+ * `null` hvis epoken ikke har noe sted ennå.
  *
  * Null, ikke et fall til hallen. Faller den tilbake, blir en epoke som er
  * merket `spillbar` uten at kartet er bygget til en portal som fører hjem til
  * stedet eleven allerede står på - og `bestillReise` avviser den i stillhet.
  * Eleven trykker E, ingenting skjer, og ingenting sier hvorfor. Portalen skal
  * i stedet stå mørk til stedet finnes.
+ *
+ * Kapittelet må være med. Uten det ville porten i hallen alltid ført til det
+ * *første* Nordvik - og en elev som står midt i 872 ville kommet hjem til
+ * 793, til folk som har vært døde i to menneskealdre.
  */
-export function forsteStedI(epokeId: string): string | null {
-    return STEDER.find((s) => s.epokeId === epokeId)?.id ?? null;
+export function stedIEpoke(epokeId: string, kapittel = 1): string | null {
+    const iKapittelet = STEDER.find((s) => s.epokeId === epokeId && s.kapittel === kapittel);
+    return (iKapittelet ?? STEDER.find((s) => s.epokeId === epokeId))?.id ?? null;
 }
 
 /** Slår opp en NPC uten å vite hvor hun står. */

@@ -15,6 +15,8 @@ interface Props {
     oppgave: { tittel: string; mal: string; teller?: string } | null;
     /** Den navngitte motstanderen. Null når det ikke er noen. */
     motstander: { navn: string; andel: number } | null;
+    /** Hvem eleven er her. Null i hallen, der hun er seg selv. */
+    rollenavn: string | null;
     onApneSekk: () => void;
     onApneLogg: () => void;
     onApneMinnetre: () => void;
@@ -27,6 +29,7 @@ export function Hud({
     kamp,
     oppgave,
     motstander,
+    rollenavn,
     onApneSekk,
     onApneLogg,
     onApneMinnetre,
@@ -50,8 +53,14 @@ export function Hud({
                     <span className="grid h-8 w-8 place-items-center rounded-lg bg-slate-900/80 font-display text-sm font-bold text-amber-300 ring-1 ring-white/15">
                         {maks.niva}
                     </span>
+                    {/*
+                        Navnet i en epoke er rollens, ikke elevens. Hun er
+                        Torstein i 793 og Åsa i 872 - navnet hun valgte selv
+                        hører til henne, og det står der hun er seg selv: i
+                        hallen, blant klassekameratene (blueprint §16.3).
+                    */}
                     <span className="truncate font-display text-sm font-semibold text-white drop-shadow">
-                        {store.character?.name ?? 'Vandrer'}
+                        {rollenavn ?? store.character?.name ?? 'Vandrer'}
                     </span>
                 </div>
                 <Stolpe
