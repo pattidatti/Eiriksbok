@@ -44,7 +44,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Julaften 1991 skjedde noe nesten ingen hadde trodd var mulig. Flagget med hammer og sigd ble firt ned fra Kreml i Moskva for siste gang. Sovjetunionen, den ene av verdens to supermakter, fantes ikke lenger. I over 40 år hadde USA og Sovjetunionen holdt hverandre i sjakk. Nå sto USA igjen helt alene på toppen."
+            "content": "Den 25. desember 1991 skjedde noe nesten ingen hadde trodd var mulig. Flagget med hammer og sigd ble firt ned fra Kreml i Moskva for siste gang (Goplen mfl., 2025). Sovjetunionen, den ene av verdens to supermakter, fantes ikke lenger, og de femten sovjetrepublikkene ble selvstendige stater. I over 40 år hadde USA og Sovjetunionen holdt hverandre i sjakk. Nå sto USA igjen helt alene på toppen."
         },
         {
             "type": "text",
@@ -62,7 +62,7 @@
         },
         {
             "type": "text",
-            "content": "I Vesten var stemningen nesten euforisk. Den amerikanske forskeren Francis Fukuyama skrev en berømt tekst der han kalte øyeblikket for historiens slutt. Han mente ikke at det ikke ville skje flere ting. Han mente at den store kampen mellom ideer var avgjort. Demokrati og markedsøkonomi hadde vunnet over kommunismen, og resten av verden ville før eller siden følge etter."
+            "content": "I Vesten var stemningen nesten euforisk. Allerede i 1989, mens den kalde krigen holdt på å ebbe ut, skrev den amerikanske forskeren Francis Fukuyama en berømt tekst der han spurte om verden var kommet til historiens slutt (Fukuyama, 1989). Han mente ikke at det ikke ville skje flere ting. Han mente at den store kampen mellom ideer var avgjort. Demokrati og markedsøkonomi hadde vunnet over kommunismen, og resten av verden ville før eller siden følge etter."
         },
         {
             "type": "text",
@@ -73,7 +73,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Hva betyr unipolar?",
-                "content": "Polar kommer av ordet pol, et maktsentrum. En bipolar verden har to sentre som balanserer hverandre, slik USA og Sovjetunionen gjorde under den kalde krigen. En unipolar verden har bare ett. Fra 1991 til rundt 2008 var USA det eneste senteret, med verdens største økonomi og militærbaser i over 70 land."
+                "content": "Polar kommer av ordet pol, et maktsentrum. En bipolar verden har to sentre som balanserer hverandre, slik USA og Sovjetunionen gjorde under den kalde krigen. En unipolar verden har bare ett. Fra 1991 til rundt 2008 var USA det eneste senteret, med verdens største økonomi og militærbaser spredt over hele kloden."
             }
         },
         {
@@ -82,11 +82,11 @@
         },
         {
             "type": "text",
-            "content": "På 1990-tallet begynte varer, penger og informasjon å krysse grenser raskere enn noen gang før. Dette kalles globalisering. En joggesko kunne bli designet i USA, sydd i Vietnam av stoff fra Kina, og solgt i Norge. Containerskip fraktet varene billig over havene, og internett gjorde at penger kunne flyttes over hele kloden på sekunder."
+            "content": "På 1990-tallet begynte varer, penger og informasjon å krysse grenser raskere enn noen gang før. Dette kalles globalisering, og farten økte kraftig etter at den kalde krigen tok slutt i 1991 og nesten hele verden ble koblet på det samme systemet (Seland, 2024). En joggesko kunne bli designet i USA, sydd i Vietnam av stoff fra Kina, og solgt i Norge. Containerskip fraktet varene billig over havene, og internett gjorde at penger kunne flyttes over hele kloden på sekunder."
         },
         {
             "type": "text",
-            "content": "I 1995 fikk den nye verdensøkonomien sitt eget hovedkvarter: Verdens handelsorganisasjon, WTO. Der ble landene enige om felles regler for handel, og tollmurer ble revet ned. I 2001 skjedde noe som skulle forandre alt: Kina ble medlem. Vestlige selskaper flyttet fabrikkene sine dit fordi arbeidskraften var billig. Kina ble verdens fabrikk, og det ble starten på landets vei mot å bli en supermakt. Det kan du lese mer om i [Kina som supermakt](/historie/kinas-historie/kina-supermakt)."
+            "content": "Den 1. januar 1995 fikk den nye verdensøkonomien sitt eget hovedkvarter: Verdens handelsorganisasjon, WTO. Der ble landene enige om felles regler for handel, og tollmurer ble revet ned (Grindheim, 2024). I desember 2001 skjedde noe som skulle forandre alt: Kina ble medlem. Vestlige selskaper flyttet fabrikkene sine dit fordi arbeidskraften var billig. Kina ble verdens fabrikk, og det ble starten på landets vei mot å bli en supermakt. Det kan du lese mer om i [Kina som supermakt](/historie/kinas-historie/kina-supermakt)."
         },
         {
             "type": "image",
@@ -113,7 +113,7 @@
         },
         {
             "type": "text",
-            "content": "Hjelpen kom med strenge krav. Dette kalles strukturtilpasning. For å få nye lån måtte landene kutte i offentlige utgifter som skoler og sykehus, selge statlige selskaper til private eiere og åpne markedene sine for utenlandske varer. Kravene ble bestemt i Washington, ikke i landene selv."
+            "content": "Hjelpen kom med strenge krav. Dette kalles strukturtilpasning. Verdensbanken og IMF innførte slike programmer på 1980-tallet som betingelse for lån og gjeldsslette. Landene måtte kutte i offentlig sektor, selge statlige selskaper til private eiere, fjerne subsidier og slippe priser og handel fri (Eggen, 2024). Kravene ble bestemt i Washington, ikke i landene selv."
         },
         {
             "type": "text",
@@ -123,8 +123,8 @@
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Vi fikk beskjed om å kutte i alt som hjalp de fattige, for å betale banker som allerede var rike.",
-                "author": "Slik beskrev flere afrikanske ledere møtet med strukturtilpasning på 1990-tallet"
+                "text": "Strukturtilpasningene hadde høye sosiale kostnader, blant annet ved masseoppsigelser av offentlig ansatte, reduserte offentlige tjenester, svekket inntekt for bønder og høyere priser på forbruksvarer. Det førte til store protester, flere steder opptøyer.",
+                "author": "Øyvind Eggen, Store norske leksikon (2024)"
             }
         },
         {
@@ -133,7 +133,7 @@
         },
         {
             "type": "text",
-            "content": "Samtidig forandret kartet over Europa seg. Landene som hadde vært tvunget inn i Sovjetunionens maktområde, som Polen, Tsjekkia og de baltiske landene, ville vestover så fort som mulig. De søkte medlemskap i både NATO og EU, og fra 1999 ble de sluppet inn i store puljer."
+            "content": "Samtidig forandret kartet over Europa seg. Landene som hadde vært tvunget inn i Sovjetunionens maktområde, som Polen, Tsjekkia og de baltiske landene, ville vestover så fort som mulig. De søkte medlemskap i både NATO og EU. Polen, Tsjekkia og Ungarn ble NATO-medlemmer i 1999, og i 2004 fulgte sju land til, blant dem Estland, Latvia og Litauen (Cooper & Hilde, 2026)."
         },
         {
             "type": "text",
@@ -180,7 +180,7 @@
         },
         {
             "type": "text",
-            "content": "Den 11. september 2001 fikk den unipolare verden sitt første store sjokk. Terrornettverket al-Qaida kapret fly og styrtet dem inn i World Trade Center i New York og forsvarsdepartementet Pentagon. Nesten 3000 mennesker døde. Verdens mektigste land ble rammet midt i hjertet, av en fiende uten hær og uten stat. USA svarte med å gå til krig i Afghanistan og Irak, noe du kan lese mer om i [Krigen mot terror](/historie/midtoesten/krigen-mot-terror). Krigene ble lange, dyre og svekket USAs rykte i store deler av verden."
+            "content": "Den 11. september 2001 fikk den unipolare verden sitt første store sjokk. Terrornettverket al-Qaida kapret fly og styrtet dem inn i World Trade Center i New York og forsvarsdepartementet Pentagon. Til sammen mistet nesten 3000 mennesker livet i New York, i Pentagon og i flystyrten i Pennsylvania. Verdens mektigste land ble rammet midt i hjertet, av en fiende uten hær og uten stat. USA svarte med å angripe Afghanistan i oktober 2001, og terrorangrepene bidro også til beslutningen om å gå til krig mot Irak i 2003 (Notaker, 2024). Du kan lese mer om det i [Krigen mot terror](/historie/midtoesten/krigen-mot-terror). Krigene ble lange, dyre og svekket USAs rykte i store deler av verden."
         },
         {
             "type": "image",
@@ -190,7 +190,7 @@
         },
         {
             "type": "text",
-            "content": "Det andre sjokket kom innenfra. I 2008 kollapset flere av USAs største banker etter mange år med grådige boliglån og risikable veddemål. Finanskrisen spredte seg som en bølge over hele den globaliserte verden. Millioner mistet jobb og bolig. Landet som hadde fortalt alle andre hvordan økonomi skulle styres, hadde mistet kontrollen over sin egen."
+            "content": "Det andre sjokket kom innenfra. I september 2008 gikk investeringsbanken Lehman Brothers konkurs etter mange år der bankene hadde lånt ut penger til boligkjøpere som ikke kunne betale tilbake. Finanskrisen spredte seg som en bølge over hele den globaliserte verden. Millioner mistet jobb og bolig, og amerikanske myndigheter måtte redde banker og forsikringsselskaper med krisepakker på rundt 700 milliarder dollar (Notaker, 2025). Landet som hadde fortalt alle andre hvordan økonomi skulle styres, hadde mistet kontrollen over sin egen."
         },
         {
             "type": "text",
@@ -209,13 +209,13 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva skjedde julaften 1991, og hvorfor sto USA da igjen alene på toppen?",
+                    "Hva skjedde 25. desember 1991, og hvorfor sto USA da igjen alene på toppen?",
                     "Forklar med egne ord forskjellen på en bipolar og en unipolar verden.",
                     "Hva var strukturtilpasning, og hvilke tre krav måtte fattige land ofte godta for å få nye lån fra IMF?",
                     "Hvilke to hendelser regnes i teksten som slutten på den unipolare epoken, og i hvilke år skjedde de?"
                 ],
                 "reflekter": [
-                    "Fukuyama kalte 1991 for historiens slutt. Forklar hva han mente, og hvorfor teksten sier at han tok feil.",
+                    "Fukuyama spurte i 1989 om verden var kommet til historiens slutt. Forklar hva han mente, og hvorfor teksten sier at han tok feil.",
                     "Teksten sier at globaliseringen ble en vei ut av fattigdom for noen, men tok jobbene fra andre. Forklar hvordan gevinsten ble delt så ujevnt, og bruk eksempelet med joggeskoen.",
                     "Sett fra Vesten var NATO-utvidelsen østover en seier for friheten, men sett fra Moskva så det helt annerledes ut. Forklar begge synene og hvorfor de kan være sanne samtidig.",
                     "Granskerens notat sier at både historien om frihet og historien om skjev makt er sanne på én gang. Argumenter for hvorfor det gjør historie vanskelig, men også viktig."
@@ -276,6 +276,22 @@
                         "correctAnswer": 3,
                         "explanation": "11. september viste at USA var sårbar. Finanskrisen viste at den amerikanske modellen ikke var feilfri. Etter 2008 var troen på USAs eneherredømme svekket."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Cooper, C. G. & Hilde, P. S. (2026). *NATO*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/NATO](https://snl.no/NATO)",
+                    "Eggen, Ø. (2024). *Strukturtilpasningsprogram*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/strukturtilpasningsprogram](https://snl.no/strukturtilpasningsprogram)",
+                    "Fukuyama, F. (1989). *The End of History?* The National Interest. Gjengitt av CFR Education. Hentet 27.07.2026 fra [cfr.org](https://www.cfr.org/education/learn/resource-collections/primary-sources-post-cold-war-engagement-china/fukuyamas-the-end-of-history-1989)",
+                    "Goplen, Å., Mjør, K. J. & Kolstø, P. (2025). *Sovjetunionens historie*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Sovjetunionens_historie](https://snl.no/Sovjetunionens_historie)",
+                    "Grindheim, J. E. (2024). *Verdens handelsorganisasjon*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Verdens_handelsorganisasjon](https://snl.no/Verdens_handelsorganisasjon)",
+                    "Notaker, H. (2024). *Terrorangrepet i USA 11. september 2001*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Terrorangrepet_i_USA_11._september_2001](https://snl.no/Terrorangrepet_i_USA_11._september_2001)",
+                    "Notaker, H. (2025). *Finanskrisen i 2008-2009*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Finanskrisen_i_2008-2009](https://snl.no/Finanskrisen_i_2008%E2%80%932009)",
+                    "Seland, E. H. (2024). *Globalisering*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/globalisering](https://snl.no/globalisering)"
                 ]
             }
         }
@@ -349,5 +365,5 @@
         }
     ],
     "createdDate": "2026-07-03T00:00:00Z",
-    "lastUpdated": "2026-07-03T00:00:00Z"
+    "lastUpdated": "2026-07-27T00:00:00Z"
 }

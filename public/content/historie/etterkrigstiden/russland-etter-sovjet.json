@@ -33,7 +33,7 @@
         {
             "year": "2014",
             "title": "Krim annekteres",
-            "description": "Russland tar Krim-halvøya fra Ukraina. Det er første gang siden 1945 at et europeisk land tar land fra et annet med makt."
+            "description": "Russland tar Krim-halvøya fra Ukraina. Anneksjonen er et brudd på folkeretten og blir ikke anerkjent internasjonalt."
         },
         {
             "year": "2022",
@@ -44,7 +44,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Julaften 1991 ble det sovjetiske flagget firt fra Kreml for siste gang. Et av verdens to mektigste land forsvant, uten krig og nesten uten et skudd. Femten nye land dukket opp på kartet. Men for millioner av russere føltes det ikke som en fødsel. Det føltes som et nederlag. Hvordan gikk landet fra dette sammenbruddet til å starte Europas største krig siden 1945? Følg pengene, gassen og den sårede stoltheten, så ser du mønsteret."
+            "content": "Den 25. desember 1991 ble det sovjetiske flagget firt fra Kreml for siste gang (Goplen mfl., 2025). Et av verdens to mektigste land forsvant, uten krig og nesten uten et skudd. Femten nye land dukket opp på kartet. Men for millioner av russere føltes det ikke som en fødsel. Det føltes som et nederlag. Hvordan gikk landet fra dette sammenbruddet til å starte Europas største krig siden 1945? Følg pengene, gassen og den sårede stoltheten, så ser du mønsteret."
         },
         {
             "type": "header",
@@ -52,7 +52,7 @@
         },
         {
             "type": "text",
-            "content": "Etter Sovjetunionens fall skulle Russland bytte system i full fart, fra planøkonomi til marked. Vestlige rådgivere anbefalte det som ble kalt sjokkterapi: slipp alle priser fri, selg statens eiendom, gjør det raskt. Resultatet ble et sjokk, men lite terapi. Prisene eksploderte, og sparepengene til vanlige folk ble verdiløse i løpet av måneder. Lærere og leger fikk ikke lønn. Forventet levealder for menn sank dramatisk."
+            "content": "Etter Sovjetunionens fall skulle Russland bytte system i full fart, fra planøkonomi til marked. Vestlige rådgivere anbefalte det som ble kalt sjokkterapi: slipp alle priser fri, selg statens eiendom, gjør det raskt. Resultatet ble et sjokk, men lite terapi. Den 2. januar 1992 ble prisene på de fleste varer sluppet fri, og inflasjonen samme år passerte 2500 prosent. Sparepengene til vanlige folk ble verdiløse i løpet av måneder (Kolstø & Holm-Hansen, 2026). Lærere og leger fikk ikke lønn. Fra 1988 til 1994 falt forventet levealder for russiske menn med hele sju år (Brunborg & Foss, 2002)."
         },
         {
             "type": "text",
@@ -72,18 +72,18 @@
         },
         {
             "type": "text",
-            "content": "Nyttårsaften 1999 overrasket president Boris Jeltsin alle: han trakk seg og pekte på en nesten ukjent etterfølger, den tidligere KGB-offiseren Vladimir Putin. Putin tilbød russerne en stilltiende avtale. Dere får orden, lønninger som kommer i tide og landet reist opp igjen. Til gjengjeld blander dere dere ikke i politikken."
+            "content": "Nyttårsaften 1999 overrasket president Boris Jeltsin alle: han trakk seg og pekte på en nesten ukjent etterfølger, den tidligere KGB-offiseren Vladimir Putin (Kolstø & Holm-Hansen, 2026). I mars 2000 vant Putin presidentvalget i første valgomgang. Putin tilbød russerne en stilltiende avtale. Dere får orden, lønninger som kommer i tide og landet reist opp igjen. Til gjengjeld blander dere dere ikke i politikken."
         },
         {
             "type": "text",
-            "content": "Putin hadde flaks med timingen. Oljeprisen steg kraftig utover 2000-tallet, og pengene strømmet inn i statskassen. Levestandarden økte, og mange russere fikk det bedre enn noen gang. Samtidig tok Putin kontroll over de store TV-kanalene, som er der de fleste russere får nyhetene sine fra. Kritiske journalister mistet jobben, og noen mistet livet. Oligarker som utfordret ham, endte i fengsel eller i utlandet. Bit for bit forsvant den frie debatten."
+            "content": "Putin hadde flaks med timingen. Oljeprisen steg kraftig utover 2000-tallet, og pengene strømmet inn i statskassen. Levestandarden økte, og mange russere fikk det bedre enn noen gang. Samtidig kom alle de riksdekkende TV-kanalene igjen under direkte eller indirekte statlig kontroll, og det er der de fleste russere får nyhetene sine fra. Putin-kritiske medieeiere måtte gå i eksil, og oligarker som utfordret ham, ble etterforsket og endte i fengsel eller i utlandet (Kolstø & Holm-Hansen, 2026). Bit for bit forsvant den frie debatten."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
                 "text": "Sovjetunionens sammenbrudd var det 20. århundrets største geopolitiske katastrofe.",
-                "author": "Vladimir Putin, tale til nasjonalforsamlingen i 2005"
+                "author": "Vladimir Putin i den årlige talen til nasjonen, 25. april 2005"
             }
         },
         {
@@ -102,7 +102,7 @@
         },
         {
             "type": "text",
-            "content": "Kreml så det motsatt. Gassen var ikke bare en vare, den var et pressmiddel. Land som gjorde som Russland ville, fikk billig gass. Land som protesterte, kunne oppleve at kranene ble strupt midt på vinteren. Granskerens regel gjelder her: se ikke på hva ledere sier, se på hva de bygger. Russland bygde rørledninger som gikk utenom Ukraina, slik at gassen kunne flyte til Vest-Europa selv om Russland lå i konflikt med naboene sine."
+            "content": "Kreml så det motsatt. Gassen var ikke bare en vare, den var et pressmiddel. Land som gjorde som Russland ville, fikk billig gass. Land som protesterte, kunne oppleve at kranene ble strupt midt på vinteren. Granskerens regel gjelder her: se ikke på hva ledere sier, se på hva de bygger. Russland bygde rørledninger som gikk utenom Ukraina. Gassrørledningen Nord Stream, som går direkte mellom Russland og Tyskland på bunnen av Østersjøen, sto ferdig i 2011 (Kolstø & Holm-Hansen, 2026). Slik kunne gassen flyte til Vest-Europa selv om Russland lå i konflikt med naboene sine."
         },
         {
             "type": "component",
@@ -117,15 +117,15 @@
         },
         {
             "type": "text",
-            "content": "Mens Russland ble rikere, flyttet grensene i Europa seg. Tidligere østblokkland som Polen og de baltiske statene meldte seg inn i NATO og EU. De hadde levd under sovjetisk kontroll og ville ha beskyttelse. Fra Kreml så det annerledes ut: en fiendtlig militærallianse rykket stadig nærmere Russlands grenser. Dette russiske perspektivet er viktig å forstå, men det er ikke det samme som at det ga Russland rett til å angripe noen. Folkeretten er klar: ingen stat har lov til å ta land fra en annen med makt."
+            "content": "Mens Russland ble rikere, flyttet grensene i Europa seg. Tidligere østblokkland meldte seg inn i NATO og EU: Polen, Tsjekkia og Ungarn i 1999, og sju land til i 2004, blant dem Estland, Latvia og Litauen (Cooper & Hilde, 2026). De hadde levd under sovjetisk kontroll og ville ha beskyttelse. Fra Kreml så det annerledes ut: en fiendtlig militærallianse rykket stadig nærmere Russlands grenser. Dette russiske perspektivet er viktig å forstå, men det er ikke det samme som at det ga Russland rett til å angripe noen. Folkeretten er klar: ingen stat har lov til å ta land fra en annen med makt."
         },
         {
             "type": "text",
-            "content": "I 2008 gikk russiske styrker inn i Georgia, et lite naboland som ønsket seg vestover. Krigen varte i fem dager. Vesten protesterte, men fortsatte å kjøpe gass som før. I 2014 gjorde ukrainerne opprør mot sin russiskvennlige president. Putin svarte med å sende soldater uten kjennetegn til Krim-halvøya og annekterte den, altså tok den og erklærte den som russisk. Vesten svarte med milde sanksjoner, og fortsatte å kjøpe gass."
+            "content": "Sommeren 2008 kom det til åpen krig mellom Russland og Georgia, et lite naboland som ønsket seg vestover. Krigen varte i fem dager, og Georgia mistet kontrollen over de områdene landet fortsatt hadde i Sør-Ossetia og Abkhasia (Bærug, 2026). Vesten protesterte, men fortsatte å kjøpe gass som før. I 2014 gjorde ukrainerne opprør mot sin russiskvennlige president. Russiske styrker uten militære kjennetegn tok kontroll på Krim-halvøya (Holm-Hansen mfl., 2026), og etter en folkeavstemning som ikke ble anerkjent internasjonalt, annekterte Russland halvøya 18. mars, altså tok den og erklærte den som russisk (Holm-Hansen, 2026). EU og USA svarte med sanksjoner, men fortsatte å kjøpe gass."
         },
         {
             "type": "text",
-            "content": "Den 24. februar 2022 kom fullskalainvasjonen. Russiske kolonner rullet mot Kyiv fra tre kanter, og raketter traff byer over hele Ukraina. Putin regnet med at landet ville falle på noen dager, og at et splittet Vesten ville se en annen vei denne gangen også. Han tok feil på begge punkter. Ukrainerne kjempet imot, og krigen ble lang og blodig."
+            "content": "Den 24. februar 2022 kom fullskalainvasjonen. Russland angrep Ukraina med styrker fra flere sider av landet, og måten invasjonen ble innledet på tyder på at makthaverne i Kreml hadde regnet med en lett militær seier (Holm-Hansen & Paulsen, 2026). Putin regnet også med at et splittet Vesten ville se en annen vei denne gangen også. Han tok feil på begge punkter. Ukrainerne kjempet imot, og krigen ble lang og blodig."
         },
         {
             "type": "image",
@@ -139,7 +139,7 @@
         },
         {
             "type": "text",
-            "content": "Invasjonen forandret Europa på noen uker. Vestlige land innførte de kraftigste sanksjonene noe stort land er blitt møtt med: russiske banker ble stengt ute fra verdens betalingssystemer, og hundrevis av selskaper forlot landet. Europa begynte det smertefulle arbeidet med å kutte den russiske gassen. Finland og Sverige, som hadde holdt seg utenfor militærallianser i generasjoner, søkte medlemskap i NATO. Tyskland og resten av Europa begynte å ruste opp."
+            "content": "Invasjonen forandret Europa på noen uker. De fleste EU- og NATO-land innførte omfattende sanksjoner som skulle svekke Russlands økonomiske og teknologiske evne til å føre krigen, og hundrevis av selskaper forlot landet (Holm-Hansen & Paulsen, 2026). Europa begynte det smertefulle arbeidet med å kutte den russiske gassen. Finland og Sverige, som hadde holdt seg utenfor militærallianser i generasjoner, søkte medlemskap i NATO. Finland ble medlem i april 2023 og Sverige i mars 2024 (Cooper & Hilde, 2026). Tyskland og resten av Europa begynte å ruste opp."
         },
         {
             "type": "text",
@@ -151,7 +151,7 @@
         },
         {
             "type": "text",
-            "content": "Her må granskeren stille det ubehagelige spørsmålet. Signalene var synlige i årevis: krigen i Georgia, anneksjonen av Krim, taler der Putin sa rett ut at han ikke godtok Europas grenser. Hvorfor reagerte ikke Vesten hardere før?"
+            "content": "Her må granskeren stille det ubehagelige spørsmålet. Signalene var synlige i årevis: krigen i Georgia, anneksjonen av Krim, og taler der Putin allerede i 2005 kalte Sovjetunionens sammenbrudd århundrets største geopolitiske katastrofe (Bigg, 2005). Hvorfor reagerte ikke Vesten hardere før?"
         },
         {
             "type": "list",
@@ -238,11 +238,28 @@
                             "Den ble delt mellom Russland og Ukraina i en fredelig avtale",
                             "Den ble solgt til Tyrkia",
                             "Den erklærte seg selvstendig med støtte fra FN",
-                            "Russland annekterte den fra Ukraina, som første maktovertakelse av land i Europa siden 1945"
+                            "Russland annekterte den fra Ukraina, i strid med folkeretten og uten internasjonal anerkjennelse"
                         ],
                         "correctAnswer": 3,
-                        "explanation": "Det var første gang siden 1945 at et land i Europa tok land fra et annet med makt. Vesten svarte med milde sanksjoner og fortsatte å kjøpe gass."
+                        "explanation": "Russiske styrker uten kjennetegn tok kontroll på halvøya, og etter en folkeavstemning som ikke ble anerkjent internasjonalt, annekterte Russland Krim 18. mars 2014. EU og USA svarte med sanksjoner, men fortsatte å kjøpe gass."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bigg, C. (2005). *Was Soviet Collapse Last Century's Worst Geopolitical Catastrophe?* RFE/RL. Hentet 27.07.2026 fra [rferl.org](https://www.rferl.org/a/1058688.html)",
+                    "Brunborg, H. & Foss, A. (2002). *Norsk dødelighet blant de ti laveste i verden*. Samfunnsspeilet 1/2002. Statistisk sentralbyrå. Hentet 27.07.2026 fra [ssb.no](https://www.ssb.no/a/samfunnsspeilet/utg/200201/08/)",
+                    "Bærug, J. R. (2026). *Sør-Ossetia*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Sør-Ossetia](https://snl.no/S%C3%B8r-Ossetia)",
+                    "Cooper, C. G. & Hilde, P. S. (2026). *NATO*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/NATO](https://snl.no/NATO)",
+                    "Goplen, Å., Mjør, K. J. & Kolstø, P. (2025). *Sovjetunionens historie*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Sovjetunionens_historie](https://snl.no/Sovjetunionens_historie)",
+                    "Holm-Hansen, J. (2026). *Krisen i Ukraina 2013-2014*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/krisen_i_Ukraina_2013-2014](https://snl.no/krisen_i_Ukraina_2013%E2%80%932014)",
+                    "Holm-Hansen, J., Bukkvoll, T. & Paulsen, M. (2026). *Krim*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Krim](https://snl.no/Krim)",
+                    "Holm-Hansen, J. & Paulsen, M. (2026). *Krigen i Ukraina siden 2022*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Krigen_i_Ukraina_siden_2022](https://snl.no/Krigen_i_Ukraina_siden_2022)",
+                    "Kolstø, P. & Holm-Hansen, J. (2026). *Russlands historie etter 1991*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Russlands_samtidshistorie](https://snl.no/Russlands_samtidshistorie)"
                 ]
             }
         }
@@ -316,5 +333,5 @@
         }
     ],
     "createdDate": "2026-07-03T00:00:00Z",
-    "lastUpdated": "2026-07-03T00:00:00Z"
+    "lastUpdated": "2026-07-27T00:00:00Z"
 }
