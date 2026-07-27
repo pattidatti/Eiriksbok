@@ -14,6 +14,7 @@ import { maksVerdier, useRpgStore } from '../store/useRpgStore';
 import type { EnemyDef, QuestDef, Sted } from '../types';
 import { sfx, startMusikk, stopMusikk } from './audio';
 import { fraSpill, tilSpill } from './bridge';
+import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { numToHex } from './pixels';
 import {
@@ -53,6 +54,8 @@ export class WorldScene extends Phaser.Scene {
     /** Alt som flyr: piler, kastespyd, besvergelser. */
     private skudd!: Prosjektiler;
     private samhandling!: Interaksjon;
+    /** Båter og annet eleven kan gå om bord i. */
+    private farkoster!: Farkoster;
     /** Sølv og gjenstander som ligger på bakken. */
     private lootSystem!: Loot;
     /** Partikler, flytende tall og glimt. Kjenner ingen spillregler. */
@@ -152,11 +155,23 @@ export class WorldScene extends Phaser.Scene {
             laas: (pa) => this.settLaast(pa),
             quester: () => this.quester,
         });
+        this.farkoster = new Farkoster(
+            this,
+            this.kart,
+            sted.farkoster ?? [],
+            regler.bevegelse.farkost,
+            {
+                spiller: () => this.helt.sprite,
+                settOmBord: (pa, plass) => this.helt.settOmBord(pa, plass),
+                akse: () => this.helt.akse(),
+            }
+        );
         this.verden.byggTerreng();
         this.verden.byggKollisjon();
         this.verden.byggProps();
         this.helt.bygg();
         this.samhandling.bygg();
+        this.farkoster.bygg();
         this.fiendeSystem.byggBoss();
         this.verden.byggAtmosfare(sted.landemerker);
         this.settOppKamera();
@@ -301,7 +316,18 @@ export class WorldScene extends Phaser.Scene {
         const dt = delta * this.fx.tidsfaktor;
 
         this.helt.oppdater(dt);
-        this.samhandling.sjekk(this.helt.brukTrykk());
+        // E-trykket leses én gang og deles. `JustDown` er oppbrukt etter første
+        // spørring, så to kall i samme bilde ville gitt `false` til den andre.
+        //
+        // Farkosten får første rett på trykket: står eleven på brygga med både
+        // en båt og en nabo innen rekkevidde, skal ett trykk gjøre én ting.
+        const brukTrykk = this.helt.brukTrykk();
+        const farkostEier = this.farkoster.sjekk(dt, brukTrykk);
+        this.samhandling.sjekk(farkostEier ? false : brukTrykk, !farkostEier);
+        // Figuren settes på dekk *etter* at båten har flyttet seg. Snus
+        // rekkefølgen, ligger hun ett bilde etter, og da sklir hun rundt oppå.
+        const dekk = this.farkoster.dekksplass();
+        if (dekk) this.helt.staaPaaDekk(dekk);
         this.fiendeSystem.oppdater(dt);
         this.skudd.oppdater(dt);
         this.lootSystem.oppdater(dt);

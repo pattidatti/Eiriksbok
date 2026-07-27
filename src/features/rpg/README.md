@@ -42,6 +42,7 @@ engine/
     effekter.ts          Partikler, flytende tall og glimt
     loot.ts              Sølv og gjenstander på bakken
     entiteter.ts         Delte typer for systemene
+  farkost.ts             Båter: besittelse, styring og egen kollisjonsmaske
   worldgen.ts            Bygger Nordvik-kartet
   spriteforge.ts         Figurer, fiender, våpen, effekter, pikselfont
   tileforge.ts           Terrengfliser, overgangsfliser og verdensobjekter
@@ -91,7 +92,7 @@ components/              Karakterskaper, HUD, dialog, kunnskapsutfordring, sekk,
 | **Shift trykket, i bevegelse** | Rull (kort usårbarhet)                      |
 | **Retning under gard**         | Vend garden, skjoldgang i 45 % fart         |
 | **Shift + mellomrom**          | Våpenets manøver (hak / stikk / skjoldstøt) |
-| E                              | Snakk / les / åpne                          |
+| E                              | Snakk / les / åpne / gå om bord             |
 | 1-4                            | Besvergelser                                |
 | I / L / Esc                    | Sekk / oppdrag / meny                       |
 
@@ -152,6 +153,41 @@ Ordene HUD-en skriver kommer også fra regelsettet (`ressurs.navn`, `vern.navn`,
 `scripts/verify-rpg-kamp.mjs` finner stolpen på nettopp det ordet
 (`[aria-label="Pust"]`). Endres det, må skriptene endres i samme åndedrag.
 
+## Farkoster
+
+Færingen ligger fortøyd ved bryggeenden i Nordvik. Eleven går ut på plankene,
+trykker E, og ror. Modellen er minimal med vilje: besittelse og styring, ingen
+fysikk.
+
+-   **Figuren står stille om bord, og det er farkosten som beveger seg.**
+    Alternativet er en `ritt`-positur, og den ville tvunget `KOLONNER`, `START`,
+    `POSITUR_LENGDE` og hele positurlista i `forgeHumanoid` til å endres i samme
+    åndedrag - for tre rammer ingen har tegnet. Hesten får sin positur den dagen
+    hesten kommer.
+-   **Farkosten har sin egen kollisjonsmaske.** `kart.farbart`, ikke
+    `kart.blokkert`. De to er nesten motsatte, men ikke helt: brygga er gåbar
+    *og* usjøbar, for et fartøy seiler ikke under en brygge. Alt som gjør en
+    rute om til noe annet enn vann må rydde begge maskene - fjellbeltet gjorde
+    det ikke, og da rodde båten tvers gjennom berget.
+-   **Skroget prøves i midten og ved baugen, aldri ved hekken.** Hekken ligger
+    der båten allerede er, og den er per definisjon lovlig. Tas den med, kan en
+    båt som ligger inntil ei brygge aldri legge fra, fordi dens egen hekk står
+    over plankene.
+-   **Spillerens kropp slås av mens hun seiler** (`body.enable = false`).
+    Kollisjonen hennes er bygget for å holde henne unna vann, og båten skal
+    nettopp dit.
+-   **Landgang settes av farkosten, ikke av spilleren.** Den leter opp nærmeste
+    rute innenfor to ruter som eleven kan stå på, og nekter hvis det ikke finnes
+    noen. Uten den sperren kunne hun gå i land midt i fjorden og bli stående på
+    vannet - en tilstand ingenting i spillet vet hvordan den kommer seg ut av.
+-   **Farkost-laget har førsterett på E og hintlinja.** Står eleven på brygga med
+    både en båt og en nabo innen rekkevidde, skal ett trykk gjøre én ting. Derfor
+    tar `Interaksjon.sjekk()` et `aktiv`-flagg og hviler mens båten eier bildet.
+
+Fjorden i Nordvik er fire-fem ruter bred. Derfor er farkosten en færing på 30
+piksler og ikke langskipet på 66: et fartøy som er lengre enn farvannet er bredt,
+kan ikke snu. Knarren som skal bære eleven til Lindisfarne hører til kapittel 1.
+
 ## Kampsystemet
 
 Kampen bygger på vernet, ikke sverdet. All logikk ligger i `engine/kamp.ts`
@@ -190,11 +226,11 @@ nytt like ofte. Pust- og livsstolpene har `aria-valuenow`, som er det
 
 Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blueprint.md`.
 Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
-`docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R4 er bygget.
+`docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R5 er bygget.
 
 ## Verifisering
 
-Sju skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Åtte skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 `window.__rpgSteder`), som `boot.ts` bare eksponerer i dev.
 
@@ -214,6 +250,7 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-boss.mjs`        | Kunnskapsdysten: riktig svar river skjold, galt gjør ikke |
 | `verify-rpg-reise.mjs`       | Stedskifte: bygges på nytt, og ingenting lekker           |
 | `verify-rpg-bue.mjs`         | Skytevåpen: ladetid, pil i lufta, rekkevidde              |
+| `verify-rpg-farkost.mjs`     | Båten: om bord, ro, land stopper, i land igjen            |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir
@@ -344,7 +381,9 @@ i motoren:
    tømmer, tak og løvverk leses derfra, så stedet får sitt eget utseende uten ny
    grafikk.
 4. Legg stedet inn i `STEDER` i `data/steder.ts`. Det er hele registreringen:
-   epoke, tema, kartbygger, spawnpunkt, folk, landemerker, boss og musikk.
+   epoke, tema, kartbygger, spawnpunkt, folk, landemerker, farkoster, boss og
+   musikk. Kartbyggeren må fylle ut både `blokkert` (der eleven ikke kan gå) og
+   `farbart` (der en båt kan ferdes) - de er ikke hverandres motsatte.
    `epokeId` avgjør både regelsettet og hvilken sone i spørsmålsbanken stedet
    henter fagstoff fra - peker den feil, faller stedet tilbake på vikingtiden.
 

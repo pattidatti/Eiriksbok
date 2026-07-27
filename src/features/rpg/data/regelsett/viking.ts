@@ -59,6 +59,7 @@ export const VIKING_REGELSETT: Regelsett = {
         rullMs: 260,
         rullNedkjoling: 620,
         usarbarMs: 620,
+        farkost: true,
     },
 
     // Sving og skudd. Kastet og støtet står i blueprinten, men ingen har bygget

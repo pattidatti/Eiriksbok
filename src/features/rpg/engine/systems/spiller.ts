@@ -55,11 +55,11 @@ function avstandTilLinje(
     return Math.hypot(px - (x1 + t * dx), py - (y1 + t * dy));
 }
 
-/**
- * Fart, rull og usårbarhet bor i epokens regelsett, ikke her. En rytter og en
- * soldat i skyttergrav beveger seg ikke som en huskarl, og det skal ikke koste
- * en kodeendring å si det.
- */
+// Fart, rull og usårbarhet bor i epokens regelsett, ikke her. En rytter og en
+// soldat i skyttergrav beveger seg ikke som en huskarl, og det skal ikke koste
+// en kodeendring å si det. Det som står igjen nedenfor, er tall som gjelder
+// enhver som har en kropp.
+
 /** Hvor lenge et treff kaster eleven bakover før styringen tar rattet igjen. */
 const STOT_MS = 150;
 /** Trykker eleven angrep like før nedkjølingen er ute, huskes trykket så lenge. */
@@ -134,6 +134,15 @@ export class Spiller {
     private touchAkse = { x: 0, y: 0 };
     private touchTrykk = new Set<TouchKnapp>();
     private touchGard = false;
+
+    /**
+     * Sist leste styreutslag. Farkosten styres med samme stikke som beina, og
+     * den skal ikke lese tastaturet en gang til - da ville to moduler eid
+     * inndata, og de to ville drevet fra hverandre.
+     */
+    private sisteAkse = { x: 0, y: 0, utslag: 0 };
+    /** Står hun om bord i noe? Da eier farkosten bevegelsen, ikke beina. */
+    private omBord = false;
 
     constructor(
         scene: Phaser.Scene,
@@ -214,12 +223,60 @@ export class Spiller {
         return this.kamp.snapshot();
     }
 
+    /** Styreutslaget dette bildet. Farkosten ror med den samme stikka. */
+    akse(): { x: number; y: number; utslag: number } {
+        return this.sisteAkse;
+    }
+
+    /**
+     * Om bord: figuren slutter å gå selv og blir med på det farkosten gjør.
+     *
+     * Kroppen slås av mens hun seiler. Spillerens kollisjon er bygget for å
+     * holde henne unna vann, og båten skal nettopp dit - lot vi kroppen stå på,
+     * ville hun blitt dyttet ut av sjøen i det samme hun la fra land.
+     */
+    settOmBord(pa: boolean, plass?: { x: number; y: number }): void {
+        if (this.omBord === pa) return;
+        this.omBord = pa;
+        const kropp = this.sprite.body as Phaser.Physics.Arcade.Body;
+        this.sprite.setVelocity(0, 0);
+        kropp.enable = !pa;
+        if (pa) {
+            // Ingen gard, ingen kombo og ingen halvferdig rull med ut på sjøen.
+            this.kamp.settGardOnsket(false);
+            this.rullIgjen = 0;
+            this.slagIgjen = 0;
+            this.utfallIgjen = 0;
+            this.stotIgjen = 0;
+        } else if (plass) {
+            this.sprite.setPosition(plass.x, plass.y);
+            // Et lite pusterom etter landgang. Står det en fiende og venter på
+            // stranda, skal hun ikke bli slått i samme bilde som hun går i land.
+            this.usarbarIgjen = Math.max(this.usarbarIgjen, 600);
+        }
+    }
+
     /** Alt står stille mens eleven leser. */
     stopp(): void {
-        this.sprite.setVelocity(0, 0);
+        if (this.sprite.body?.enable) this.sprite.setVelocity(0, 0);
+    }
+
+    /**
+     * Settes på dekk. Kalles av scenen hvert bilde mens hun seiler, etter at
+     * farkosten har flyttet seg - ellers ville figuren ligget ett bilde etter
+     * båten, og på 60 bilder i sekundet leser det som at hun sklir rundt oppå
+     * den.
+     */
+    staaPaaDekk(plass: { x: number; y: number }): void {
+        this.sprite.setPosition(plass.x, plass.y);
+        this.sprite.setDepth(plass.y + 1);
     }
 
     oppdaterDybde(): void {
+        // Om bord settes dybden av `staaPaaDekk`, ett hakk over skroget. Skrev
+        // vi den om til `y` her, ville figuren og båten ligget i samme dybde og
+        // blinket forbi hverandre etter hvem som ble sortert først.
+        if (this.omBord) return;
         this.sprite.setDepth(this.sprite.y);
     }
 
@@ -443,6 +500,24 @@ export class Spiller {
             utslag > 0.001
                 ? { x: dx / Math.hypot(dx, dy), y: dy / Math.hypot(dx, dy) }
                 : { x: 0, y: 0 };
+        this.sisteAkse = { x: enhet.x, y: enhet.y, utslag };
+
+        // Om bord er stikka farkostens, ikke beinas. Hun står på dekk og lar
+        // seg frakte - alt annet i denne metoden hører til en som går selv.
+        // Pusten går videre, så en rotur er et pusterom og ikke en pause.
+        if (this.omBord) {
+            this.kamp.settGardOnsket(false);
+            this.kamp.tikk(delta);
+            this.kamp.lesKollaps();
+            // Hun sitter vendt mot betrakteren. Den som ror, ser dit hun kom
+            // fra, og det er også den ene retningen figuren er tegnet sittende
+            // troverdig i uten en ny positur.
+            this.retning = 'ned';
+            this.oppdaterHeltRamme(delta, false);
+            this.vernSprite.setVisible(false);
+            this.sprite.setAlpha(1);
+            return;
+        }
 
         const ruller = this.rullIgjen > 0;
         const touch = this.touchTrykk;

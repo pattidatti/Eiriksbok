@@ -31,6 +31,13 @@ export interface WorldMap {
     terreng: TileKey[][];
     /** true = kan ikke gås gjennom. */
     blokkert: boolean[][];
+    /**
+     * true = en farkost kan ferdes her. Nesten det motsatte av `blokkert`, men
+     * ikke helt: brygga er gåbar *og* usjøbar, for et fartøy seiler ikke under
+     * en brygge. Gjenbruker man spillerens maske, går båten på land.
+     * (Blueprint R5, fallgruve 6.)
+     */
+    farbart: boolean[][];
     props: PropPlacement[];
     /** Der fiender får lov å dukke opp. */
     spawnRuter: [number, number][];
@@ -47,10 +54,12 @@ export function byggNordvik(): WorldMap {
     const rng = makeRng(1793);
     const terreng: TileKey[][] = [];
     const blokkert: boolean[][] = [];
+    const farbart: boolean[][] = [];
 
     for (let y = 0; y < H; y++) {
         terreng[y] = [];
         blokkert[y] = [];
+        farbart[y] = [];
         for (let x = 0; x < W; x++) {
             let flis: TileKey = 'gress';
             // Fjorden bukter seg litt, så kystlinjen ikke blir en strek.
@@ -65,6 +74,7 @@ export function byggNordvik(): WorldMap {
             }
             terreng[y][x] = flis;
             blokkert[y][x] = flis === 'vann';
+            farbart[y][x] = flis === 'vann';
         }
     }
 
@@ -77,6 +87,10 @@ export function byggNordvik(): WorldMap {
             if (nordFjell || sorFjell || ostFjell) {
                 terreng[y][x] = 'stein';
                 blokkert[y][x] = true;
+                // Fjellet lukker fjorden i begge ender. Glemmes denne, blir
+                // ruta liggende igjen som farbar fra første runde, og båten
+                // seiler tvers gjennom berget.
+                farbart[y][x] = false;
             }
         }
     }
@@ -186,7 +200,10 @@ export function byggNordvik(): WorldMap {
             for (let dx = -Math.floor(w / 2); dx <= Math.floor(w / 2); dx++) {
                 const bx = tx + dx;
                 const by = ty + dy;
-                if (bx > 0 && by > 0 && bx < W && by < H) blokkert[by][bx] = true;
+                if (bx > 0 && by > 0 && bx < W && by < H) {
+                    blokkert[by][bx] = true;
+                    farbart[by][bx] = false;
+                }
             }
         }
     };
@@ -196,14 +213,26 @@ export function byggNordvik(): WorldMap {
     bygg('bu', 13, 22, 3, 3, { w: 34, h: 16, dy: 8 });
     bygg('naust', 8, 39, 4, 3, { w: 42, h: 16, dy: 6 });
 
-    // Kai og skip i fjorden - ren pynt, men det gir stedet en grunn til å hete Nordvik.
-    for (let x = 4; x < 9; x++) {
-        if (terreng[41] && terreng[41][x]) {
-            props.push({ kind: 'kai', x: x * 16 + 8, y: 41 * 16 + 8, solid: false, ...fast });
-            blokkert[41][x] = false;
-        }
+    // ── Brygga ──────────────────────────────────────────────────────────────
+    // Den gikk før fra x=4 til x=8, altså langs stranda og ikke ut i vannet.
+    // Nå strekker den seg helt ut til x=1, så eleven kan gå tørrskodd fram til
+    // båten og gå om bord. Plankene er gåbare (`blokkert = false`) og
+    // *usjøbare* (`farbart = false`): et fartøy seiler ikke under en brygge.
+    // Den slutter på den første gressruta (x=6 på rad 41) og ikke lenger inn:
+    // planker som fortsetter tvers over plenen leser som en feil, ikke som en
+    // brygge.
+    for (let x = 1; x <= 6; x++) {
+        if (!terreng[41]?.[x]) continue;
+        props.push({ kind: 'kai', x: x * 16 + 8, y: 41 * 16 + 8, solid: false, ...fast });
+        blokkert[41][x] = false;
+        farbart[41][x] = false;
     }
-    props.push({ kind: 'langskip', x: 3 * 16, y: 44 * 16, solid: false, ...fast });
+
+    // Langskipet ligger på svai lenger sør - ren pynt, og grunnen til at stedet
+    // heter Nordvik. Båten eleven faktisk kan ro, står i `NORDVIK_FARKOSTER`.
+    // Skroget er 66 piksler bredt, så det må ligge minst to ruter fra
+    // kartkanten for ikke å bli klippet.
+    props.push({ kind: 'langskip', x: 3 * 16, y: 46 * 16, solid: false, ...fast });
 
     // Gjerde rundt åkrene
     for (let x = 24; x < 34; x += 1) {
@@ -272,6 +301,7 @@ export function byggNordvik(): WorldMap {
         hoyde: H,
         terreng,
         blokkert,
+        farbart,
         props,
         spawnRuter,
         bossArena: { x: bossX * 16 + 8, y: bossY * 16 + 8, r: 6 * 16 },

@@ -392,12 +392,13 @@ Etter R8: kapittel 1, etter Nordvik-blueprintens etappe 2.
 
 ### Status
 
-**R1-R4 er bygget** (juli 2026). Alle sju `scripts/verify-rpg-*.mjs` er grønne.
+**R1-R5 er bygget** (juli 2026). Alle åtte `scripts/verify-rpg-*.mjs` er grønne.
 
-Ett avvik fra §5, gjort med vilje: `Regelsett.bevegelse` har ikke `farkost`.
-Feltet ville ikke blitt lest av noen før R5, og et felt ingen leser er den
-feilen `iRekke` allerede har gjort i denne kodebasen. R5 legger det til når det
-faktisk styrer noe. Alt annet i signaturen er implementert og lest:
+#### R4
+
+`Regelsett.bevegelse.farkost` ble utelatt i R4 og lagt til i R5, der den
+faktisk gjøres lest. Et felt ingen leser er den feilen `iRekke` allerede har
+gjort i denne kodebasen. Alt annet i §5-signaturen er implementert og lest:
 `vern.slitasje` avgjør om blokken hakker, `bevegelse.rull` om rullen finnes, og
 `angrepsformer` hvilke verb epoken kjenner.
 
@@ -410,6 +411,27 @@ To ting R4 ryddet underveis, som ikke sto i planen:
   rett opp i spørsmålsbanken. Nå er epoken `'vikingtiden'` med
   `bankSone: 'nordvik'`, så Lindisfarne kan legges til uten at noen må
   regenerere banken eller finne på en epoke som heter det samme som et sted.
+
+#### R5
+
+Færingen ved brygga i Nordvik. Bygget etter §7: besittelse og styring, ingen
+fysikk, ingen ny positur. `WorldMap` fikk en egen maske, `farbart`, som §11
+fallgruve 6 ber om. Tre ting prøvingen avdekket, og som er verdt å huske:
+
+- **Fjellbeltet ryddet ikke `farbart`.** Ruter som først ble satt til vann og
+  siden overskrevet med stein, ble liggende igjen som seilbare. Båten rodde
+  tvers gjennom berget. Alt som gjør en rute om til noe annet enn vann må rydde
+  begge maskene.
+- **Skroget prøves i midten og ved baugen, aldri ved hekken.** Med hekken med i
+  prøven kunne båten aldri legge fra brygga: dens egen hekk sto over plankene,
+  og hver eneste bevegelse ble avvist.
+- **Båten må fortøyes på riktig side.** Første forsøk la den sør for brygga.
+  Brygga er usjøbar og fjellet stenger fjorden noen ruter lenger sør, så båten
+  lå i en lomme den ikke kom ut av. Nord for brygga er leia åpen.
+
+Farkosten kjenner ingen reisemål. `bestillReise()` fra R2 finnes og virker, men
+det er ingenting å seile til før Lindisfarne bygges - å koble en avreise til
+kartkanten nå ville vært et løfte uten et sted i den andre enden.
 
 ---
 

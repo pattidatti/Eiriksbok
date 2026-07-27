@@ -271,6 +271,8 @@ export interface BevegelseDef {
     rullNedkjoling: number;
     /** Hvor lenge eleven er usårbar etter et treff. */
     usarbarMs: number;
+    /** Kan eleven gå om bord i noe? Båt i 793, hest senere, tog aldri. */
+    farkost: boolean;
 }
 
 /**
@@ -513,6 +515,8 @@ export interface Sted {
     spawn: [number, number];
     npcer: NpcDef[];
     landemerker: LandmarkDef[];
+    /** Båter, hester og annet som ligger fortøyd her. */
+    farkoster?: FarkostDef[];
     /** Bossen som vokter stedet. Ikke alle steder har en. */
     boss?: {
         enemyId: string;
@@ -523,6 +527,38 @@ export interface Sted {
     musikkRot: number;
     /** Håndskrevne oppdrag som hører til dette stedet. */
     authored: AuthoredQuest[];
+}
+
+// ─── Farkost ────────────────────────────────────────────────────────────────
+
+/**
+ * Noe eleven kan gå om bord i. Båten i fjorden nå; hesten og VOC-skipet senere.
+ *
+ * Modellen er minimal med vilje: besittelse og styring, ingen fysikk. Figuren
+ * står stille om bord, og det er farkosten som beveger seg - da slipper vi en
+ * `ritt`-positur, og med den en omskriving av hele rammetabellen i
+ * `spriteforge.ts`. Se blueprintens §7.
+ */
+export interface FarkostDef {
+    id: string;
+    navn: string;
+    art: 'baat';
+    /** Ruta den ligger fortøyd på. */
+    tile: [number, number];
+    /**
+     * Hvor mange som får plass. Én brukes nå, men tallet står i typen fra dag
+     * én: skal flere elever seile sammen i hubben senere, er det ikke en ny
+     * modell, bare et større tall.
+     */
+    seter: number;
+    /** Piksler i sekundet i full fart. */
+    fart: number;
+    /**
+     * Millisekunder farkosten bruker på å komme i gang og på å legge seg. Et
+     * fartøy snur ikke som et menneske, og det er hele forskjellen på å gå og
+     * å ro.
+     */
+    treghet: number;
 }
 
 /** Et håndskrevet oppdrag: spørsmålet pluss innpakningen rundt det. */

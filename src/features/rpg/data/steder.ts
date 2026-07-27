@@ -13,6 +13,7 @@ import type { LandmarkDef, NpcDef, Sted } from '../types';
 import {
     NORDVIK_AUTHORED_QUESTER,
     NORDVIK_BOSS_QUESTIONS,
+    NORDVIK_FARKOSTER,
     NORDVIK_LANDMARKS,
     NORDVIK_NPCS,
     NORDVIK_SPAWN,
@@ -29,6 +30,7 @@ const NORDVIK: Sted = {
     spawn: NORDVIK_SPAWN,
     npcer: NORDVIK_NPCS,
     landemerker: NORDVIK_LANDMARKS,
+    farkoster: NORDVIK_FARKOSTER,
     boss: {
         enemyId: 'den-store-glemselen',
         sporsmal: NORDVIK_BOSS_QUESTIONS,

@@ -131,8 +131,17 @@ export class Interaksjon {
     /**
      * Kjøres hver frame. `brukTrykk` er sant den ene framen eleven trykker E,
      * gamepad-Y eller berøringsknappen - hvilken tast det er bor hos scenen.
+     *
+     * `aktiv` er falsk når et annet lag eier hintlinja og E-tasten, som når
+     * eleven står ved en båt eller sitter i den. Da glemmer vi hva som var
+     * nærmest, men skriver ingenting: den som eier hintet, skal få skrive det i
+     * fred, og neste bilde uten båt finner vi målet på nytt.
      */
-    sjekk(brukTrykk: boolean): void {
+    sjekk(brukTrykk: boolean, aktiv = true): void {
+        if (!aktiv) {
+            this.naermest = null;
+            return;
+        }
         const spiller = this.kroker.spiller();
         let funn: { type: 'npc' | 'landemerke'; id: string; d: number } | null = null;
 

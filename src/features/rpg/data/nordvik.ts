@@ -1,4 +1,4 @@
-import type { AuthoredQuest, BankQuestion, LandmarkDef, NpcDef } from '../types';
+import type { AuthoredQuest, BankQuestion, FarkostDef, LandmarkDef, NpcDef } from '../types';
 
 // Nordvik - den ferdige sonen. Alt her er håndlaget: hvor folk står, hva de
 // vet, og hvilke svar som ligger gjemt i verden.
@@ -11,6 +11,32 @@ export const NORDVIK_SIZE = { bredde: 64, hoyde: 48 };
 
 // Der spilleren våkner.
 export const NORDVIK_SPAWN: [number, number] = [14, 30];
+
+/**
+ * Færingen ved brygga. Den ligger fortøyd rett nord for bryggeenden, i vann på
+ * alle kanter, så eleven må gå helt ut på plankene for å komme om bord.
+ *
+ * Nord for brygga, ikke sør: brygga er usjøbar, og sør for den stenger fjellet
+ * fjorden etter tre-fire ruter. En båt fortøyd på sørsiden ligger i en lomme
+ * den ikke kommer ut av. Nordover er leia åpen helt til fjellet i nord.
+ *
+ * Én båt og ett sete. Knarren som skal bære henne til Lindisfarne kommer med
+ * kapittel 1; dette er verbet, ikke reisen.
+ */
+export const NORDVIK_FARKOSTER: FarkostDef[] = [
+    {
+        id: 'nordvik-faering',
+        navn: 'færingen',
+        art: 'baat',
+        tile: [2, 40],
+        seter: 1,
+        fart: 74,
+        // Nesten et helt sekund på å komme i gang og på å legge seg. Det er
+        // mye tregere enn beina, og det er meningen: en båt skal kjennes som
+        // noe som bærer deg, ikke som noe du styrer med fingrene.
+        treghet: 620,
+    },
+];
 
 export const NORDVIK_NPCS: NpcDef[] = [
     {

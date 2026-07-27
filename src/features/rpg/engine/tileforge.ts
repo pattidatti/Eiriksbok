@@ -450,6 +450,26 @@ export function forgeProps(scene: Phaser.Scene, tema: Tema): void {
     skip.behind(() => skip.ellipse(32, 25, 28, 4, 'rgba(0,0,0,0.22)'));
     addCanvas(scene, 'prop-langskip', skip);
 
+    // Færingen: den lille robåten eleven faktisk kan gå om bord i.
+    //
+    // Den er 30 piksler lang og ikke 66 som langskipet, og det er ikke pynt:
+    // fjorden er bare fire-fem ruter bred, og et fartøy som er lengre enn
+    // farvannet er bredt kan ikke snu. Et langskip hører hjemme på havet - i en
+    // vik ror man.
+    const baat = createPainter(30, 18, 1, 1);
+    baat.ellipse(15, 11, 13, 4, ramp(tommer, -2));
+    baat.ellipse(15, 10, 12, 3, ramp(tommer, 1));
+    // Stavnene stikker opp i begge ender. En båt uten dem leser som en skje.
+    baat.rect(2, 5, 2, 6, ramp(tommer, -1));
+    baat.rect(26, 5, 2, 6, ramp(tommer, -1));
+    // Tofter, altså benkene man ror fra.
+    for (const x of [10, 15, 20]) baat.vline(x, 8, 3, ramp(tommer, -3));
+    // Årene ligger langs esingen.
+    baat.hline(6, 7, 18, ramp(tommer, 3));
+    baat.outline();
+    baat.behind(() => baat.ellipse(15, 14, 13, 3, 'rgba(0,0,0,0.22)'));
+    addCanvas(scene, 'prop-baat', baat);
+
     // ── Gjerde ──────────────────────────────────────────────────────────────
     const gjerde = createPainter(TILE + 2, 16, 1, 1);
     gjerde.rect(2, 2, 2, 11, ramp(tommer, -1));
