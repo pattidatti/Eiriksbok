@@ -6,7 +6,7 @@
     "year": "1914",
     "category": "Historiens store gåter",
     "readTime": "11 min lesning",
-    "heroImage": "/images/historiens-store-gater/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/skylda-for-forste-verdenskrig-hero.webp",
     "details": [
         "Historikerne er enige om hva som skjedde i juli 1914, men ikke om hvem som bærer ansvaret.",
         "Paragraf 231 i Versailles-traktaten la skylda på Tyskland og landets allierte.",
@@ -24,7 +24,7 @@
         },
         {
             "type": "image",
-            "src": "/images/historiens-store-gater/placeholder.webp",
+            "src": "/images/historiens-store-gater/skylda-for-forste-verdenskrig-01.webp",
             "alt": "Tyske utsendinger signerer fredsavtalen i speilsalen i Versailles",
             "caption": "28. juni 1919: Tyskland fikk ikke være med i forhandlingene, bare skrive under."
         },
@@ -102,7 +102,7 @@
         },
         {
             "type": "image",
-            "src": "/images/historiens-store-gater/placeholder.webp",
+            "src": "/images/historiens-store-gater/skylda-for-forste-verdenskrig-02.webp",
             "alt": "Telegrafkontor i 1914 der meldinger sendes mellom europeiske hovedsteder",
             "caption": "Julikrisen ble utkjempet med telegrammer. Hver melding gjorde det vanskeligere å snu."
         },
@@ -148,7 +148,7 @@
         },
         {
             "type": "image",
-            "src": "/images/historiens-store-gater/placeholder.webp",
+            "src": "/images/historiens-store-gater/skylda-for-forste-verdenskrig-03.webp",
             "alt": "Kart over Europa i 1914 med alliansene tegnet inn som linjer",
             "caption": "De samme linjene som skulle skape trygghet, gjorde krigen umulig å begrense."
         },
