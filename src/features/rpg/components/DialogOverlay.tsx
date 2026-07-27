@@ -11,15 +11,25 @@ interface DialogProps {
     onLukk: () => void;
     onTaOppdrag: (quest: QuestDef) => void;
     onSvarPa: (quest: QuestDef) => void;
+    /** Eleven valgte en kapittelhandling. */
+    onHandling: (handlingId: string) => void;
 }
 
 /**
  * Samtalen med en NPC. Den har tre deler, og alle er synlige samtidig:
  * det NPC-en sier, det hun *vet* (svarene eleven leter etter), og oppdraget.
  */
-export function DialogOverlay({ npcId, quester, onLukk, onTaOppdrag, onSvarPa }: DialogProps) {
+export function DialogOverlay({
+    npcId,
+    quester,
+    onLukk,
+    onTaOppdrag,
+    onSvarPa,
+    onHandling,
+}: DialogProps) {
     const npc = finnNpc(npcId);
     const status = useRpgStore((s) => s.quester);
+    const gjort = useRpgStore((s) => s.steg);
     const [replikk] = useState(() =>
         npc ? npc.smalltalk[Math.floor(Math.random() * npc.smalltalk.length)] : ''
     );
@@ -27,6 +37,19 @@ export function DialogOverlay({ npcId, quester, onLukk, onTaOppdrag, onSvarPa }:
 
     const aktiv = quester.find((q) => q.giverId === npcId && status[q.id] === 'aktiv') ?? null;
     const ny = quester.find((q) => q.giverId === npcId && !status[q.id]) ?? null;
+
+    /**
+     * Kapittelhandlingen han tilbyr nå, om noen.
+     *
+     * Den vinner over oppdraget under. Er Orm midt i å bygge et skip, skal
+     * ikke samtalen begynne med et flervalgsspørsmål om merovingertiden -
+     * kapittelet er det eleven faktisk holder på med.
+     */
+    const handling =
+        npc?.handlinger?.find(
+            (h) => !gjort.includes(h.gir) && (h.krever ?? []).every((k) => gjort.includes(k))
+        ) ?? null;
+    const gjortHandling = npc?.handlinger?.find((h) => gjort.includes(h.gir)) ?? null;
 
     useEffect(() => {
         const lytt = (e: KeyboardEvent) => {
@@ -74,7 +97,20 @@ export function DialogOverlay({ npcId, quester, onLukk, onTaOppdrag, onSvarPa }:
                 </section>
             )}
 
-            {aktiv ? (
+            {handling ? (
+                <section className="rounded-xl border border-emerald-300/30 bg-emerald-300/5 p-3">
+                    <p className="mb-3 text-[15px] leading-relaxed text-slate-100">
+                        «{handling.ledetekst}»
+                    </p>
+                    <button
+                        type="button"
+                        onClick={() => onHandling(handling.id)}
+                        className="w-full rounded-lg bg-emerald-500 px-4 py-2.5 font-display font-bold text-white transition hover:bg-emerald-400"
+                    >
+                        {handling.knapp}
+                    </button>
+                </section>
+            ) : aktiv ? (
                 <section className="rounded-xl border border-amber-300/30 bg-amber-300/5 p-3">
                     <h3 className="mb-1 font-display font-semibold text-amber-200">
                         {aktiv.title}
@@ -100,6 +136,10 @@ export function DialogOverlay({ npcId, quester, onLukk, onTaOppdrag, onSvarPa }:
                         Ta oppdraget
                     </button>
                 </section>
+            ) : gjortHandling ? (
+                <p className="rounded-xl border border-white/10 bg-white/5 p-3 text-[15px] leading-relaxed text-slate-300">
+                    «{gjortHandling.etterpa}»
+                </p>
             ) : (
                 <p className="rounded-xl border border-white/10 bg-white/5 p-3 text-sm text-slate-400">
                     {npc.name.split(' ')[0]} har ikke mer å be deg om nå.

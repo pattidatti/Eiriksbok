@@ -45,6 +45,8 @@ export class Interaksjon {
     private npcMarkorer = new Map<string, Phaser.GameObjects.Image>();
     private landemerker = new Map<string, Phaser.GameObjects.Image>();
     private naermest: InteraksjonMaal | null = null;
+    /** De som er tatt ut av verden midlertidig. Se `settSynlig`. */
+    private skjulte = new Set<string>();
     /** Varden, hvis stedet har en. */
     private vardeId: string | null = null;
     private vardeSteiner: Phaser.GameObjects.Image[] = [];
@@ -193,6 +195,9 @@ export class Interaksjon {
         let funn: { type: 'npc' | 'landemerke'; id: string; d: number } | null = null;
 
         for (const [id, sprite] of this.npcSprites) {
+            // En skjult NPC er ikke der. Uten dette kan eleven fortsatt trykke E
+            // på Ravn mens han står midt på tunet med øksa hevet.
+            if (this.skjulte.has(id)) continue;
             const d = Phaser.Math.Distance.Between(sprite.x, sprite.y, spiller.x, spiller.y);
             if (d < NPC_AVSTAND && (!funn || d < funn.d)) funn = { type: 'npc', id, d };
         }
@@ -320,6 +325,22 @@ export class Interaksjon {
      */
     sprite(npcId: string): Phaser.GameObjects.Sprite | null {
         return this.npcSprites.get(npcId) ?? null;
+    }
+
+    /**
+     * Skjuler eller viser en NPC, med utropstegnet sitt.
+     *
+     * Opplæringen bruker den: mens kamp-Ravn står på tunet, skal ikke NPC-Ravn
+     * stå to skritt unna og tilby seg å lære deg det samme om igjen.
+     */
+    settSynlig(npcId: string, synlig: boolean): void {
+        this.npcSprites.get(npcId)?.setVisible(synlig);
+        this.npcMarkorer.get(npcId)?.setVisible(synlig);
+        if (!synlig && this.naermest?.id === npcId) {
+            this.naermest = null;
+            fraSpill.emit('hint', { tekst: null });
+        }
+        this.skjulte[synlig ? 'delete' : 'add'](npcId);
     }
 
     /** Navnet på en NPC, til replikkboksen i en cutscene. */

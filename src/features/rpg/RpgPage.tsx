@@ -83,6 +83,15 @@ export default function RpgPage() {
     const [klippTekst, setKlippTekst] = useState<{ hvem: string | null; tekst: string } | null>(
         null
     );
+    /** Det ene eleven holder på med nå. Skilt fra oppdragsloggen med vilje. */
+    const [oppgave, setOppgave] = useState<{
+        tittel: string;
+        mal: string;
+        teller?: string;
+    } | null>(null);
+    /** Én replikk sagt mens spillet går. Går av seg selv. */
+    const [replikk, setReplikk] = useState<{ hvem: string; tekst: string } | null>(null);
+    const replikkTimer = useRef<number | null>(null);
     const [touch] = useState(harBeroring);
 
     // ── Hallen, delt med andre ──────────────────────────────────────────────
@@ -201,6 +210,21 @@ export default function RpgPage() {
                 if (k.pa) setHint(null);
             }),
             fraSpill.on('klippTekst', (t) => setKlippTekst(t)),
+            fraSpill.on('oppgave', (o) => setOppgave(o)),
+            // Replikken står i noen sekunder og går av seg selv. Den skal ikke
+            // kreve et tastetrykk: verden går videre mens den står, og en
+            // beskjed som må lukkes midt i en kamp er en beskjed eleven lukker
+            // uten å lese.
+            fraSpill.on('replikk', (r) => {
+                setReplikk(r);
+                if (replikkTimer.current) window.clearTimeout(replikkTimer.current);
+                if (r) {
+                    replikkTimer.current = window.setTimeout(
+                        () => setReplikk(null),
+                        Math.max(2600, 1200 + r.tekst.length * 55)
+                    );
+                }
+            }),
             fraSpill.on('dod', () => setOverlegg({ type: 'dod' })),
             fraSpill.on('seier', () => setOverlegg({ type: 'seier' })),
             fraSpill.on('sone', (s) => {
@@ -295,6 +319,7 @@ export default function RpgPage() {
                         hint={overlegg.type === 'ingen' ? hint : null}
                         kompass={kompass}
                         kamp={kamp}
+                        oppgave={oppgave}
                         onApneSekk={() => apnePanel({ type: 'sekk' })}
                         onApneLogg={() => apnePanel({ type: 'logg' })}
                         onPause={() => apnePanel({ type: 'pause' })}
@@ -306,6 +331,22 @@ export default function RpgPage() {
 
                     {sted.flerspiller && overlegg.type === 'ingen' && (
                         <HubHud hub={hub} touch={touch} />
+                    )}
+
+                    {replikk && (
+                        // Over hintlinja, ikke under. Nederst i bildet ligger
+                        // besvergelsesknappene, og en replikk oppå dem leser
+                        // som at grensesnittet har kollapset.
+                        <div className="pointer-events-none absolute bottom-[7.5rem] left-1/2 w-full max-w-xl -translate-x-1/2 px-3">
+                            <div className="rounded-xl border border-amber-300/25 bg-slate-950/90 px-4 py-2.5 shadow-lg">
+                                <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-300/90">
+                                    {replikk.hvem}
+                                </p>
+                                <p className="mt-0.5 text-[15px] leading-snug text-slate-100">
+                                    «{replikk.tekst}»
+                                </p>
+                            </div>
+                        </div>
                     )}
 
                     {sonetittel && (
@@ -332,6 +373,13 @@ export default function RpgPage() {
                         lukk();
                     }}
                     onSvarPa={(q) => setOverlegg({ type: 'utfordring', quest: q })}
+                    onHandling={(handlingId) => {
+                        // Overlegget lukkes uten `lukk()`: den ville sendt
+                        // `pause: false` og `lukk`, og scenen ville tatt låsen
+                        // av i samme bilde som handlingen skal ta den *på*.
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('npcHandling', { npcId: overlegg.npcId, handlingId });
+                    }}
                 />
             )}
 

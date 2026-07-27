@@ -1,10 +1,131 @@
 import type { EnemyDef } from '../types';
 
-// Fiendene er ting som spiser kunnskap: glemsel, påstander uten kilde, rykter.
-// De er skumle, men de er også en vits på egen bekostning - «Kildeløs Påstand»
-// dør av å bli bedt om en kilde.
+// Fra 793 er fiendene folk. De har en grunn til å stå der, de slåss for alvor,
+// og de kan leses: hvert varsel er langt nok til at eleven rekker å velge
+// mellom å blokkere, parere eller vike - hvis hun har lært å se forskjell.
+//
+// Telegraferingstallene er blueprintens §5.8, og de er startverdier å justere
+// *ned* fra. Én huskarl skal ta 20-30 sekunder og kreve fire til seks
+// vekslinger. Går det fortere, er kampen en knappetrykker.
+//
+// De abstrakte formene nederst er den gamle Minnevokteren-rammen. De står
+// urørt til den pensjoneres (blueprint §15) - hver etappe skal etterlate
+// spillet spillbart, og bygda har ingen andre fiender før kapittel 1 er ferdig.
+
+/**
+ * Menneskene i kampanjen (§5.6).
+ *
+ * Hver arketype er en lærepenge, ikke en statblokk:
+ *
+ * | Arketype    | Telegrafering        | Hvordan den løses          | Faglig            |
+ * |-------------|----------------------|----------------------------|-------------------|
+ * | Spydmann    | langt stikk, langt varsel | Vik til siden, ikke bakover | Rekkevidde slår hurtighet |
+ * | Øksekar     | to trinn: hak, så slag    | Ikke blokker haken. Vik.    | Skjeggøksas funksjon |
+ * | Bueskytter  | sikte-linje               | Tvinger bevegelse           | Lav status, høy nytte |
+ * | Huskarl     | speilbilde av deg         | Ekte duell: skjold og pust  | Yrkeskrigeren     |
+ * | Berserk     | ublokkerbart, rødt varsel | Må vikes                    | Og i mellomspillet: et sagagrep |
+ */
+export const MENNESKER: EnemyDef[] = [
+    {
+        id: 'spydmann',
+        kind: 'menneske',
+        name: 'Spydmann',
+        hp: 34,
+        skade: 9,
+        fart: 50,
+        aggro: 220,
+        // Lang rekkevidde er hele arketypen. Han når deg før du når ham, og
+        // svaret er å gå til siden - ikke bakover, som er den vanlige refleksen.
+        rekkevidde: 40,
+        varsel: 620,
+        farge: 0x6b7f5a,
+        xp: 14,
+        loot: [{ itemId: 'tingspyd', sjanse: 0.1 }],
+        vaapenArt: 'spyd',
+        haar: 1,
+    },
+    {
+        id: 'oksekar',
+        kind: 'menneske',
+        name: 'Øksekar',
+        hp: 42,
+        skade: 12,
+        fart: 56,
+        aggro: 230,
+        rekkevidde: 24,
+        varsel: 540,
+        farge: 0x8a5a3a,
+        xp: 18,
+        loot: [{ itemId: 'lerbrynje', sjanse: 0.12 }],
+        vaapenArt: 'oks',
+        harSkjold: true,
+        haar: 3,
+        // Skjeggøksa kroker skjoldet og river det ned. Blokkerer eleven haken,
+        // mister hun skjoldet i stedet for helsa - og paraden er trygg. Det er
+        // hele lærepengen: å lese varselet er ikke det samme som å gjemme seg.
+        sarslag: { hvert: 3, hak: true },
+    },
+    {
+        id: 'bueskytter',
+        kind: 'menneske',
+        name: 'Bueskytter',
+        hp: 26,
+        skade: 8,
+        fart: 46,
+        aggro: 300,
+        rekkevidde: 180,
+        varsel: 700,
+        farge: 0x5a6b7f,
+        xp: 16,
+        skytende: true,
+        loot: [{ itemId: 'jaktbue', sjanse: 0.1 }],
+        vaapenArt: 'bue',
+        haar: 0,
+    },
+    {
+        id: 'huskarl',
+        kind: 'menneske',
+        name: 'Huskarl',
+        hp: 58,
+        skade: 13,
+        fart: 62,
+        aggro: 250,
+        rekkevidde: 26,
+        // Yrkeskrigeren. 380 ms er stramt nok til at hun må ha lært paraden,
+        // og gavmildt nok til at den lar seg lære.
+        varsel: 380,
+        farge: 0x4a5568,
+        xp: 30,
+        loot: [
+            { itemId: 'ringbrynje', sjanse: 0.08 },
+            { itemId: 'sagasverd', sjanse: 0.06 },
+        ],
+        vaapenArt: 'sverd',
+        harSkjold: true,
+        haar: 2,
+    },
+    {
+        id: 'berserk',
+        kind: 'menneske',
+        name: 'Berserk',
+        hp: 48,
+        skade: 16,
+        fart: 78,
+        aggro: 280,
+        rekkevidde: 22,
+        varsel: 300,
+        farge: 0x9a3f3f,
+        xp: 34,
+        loot: [{ itemId: 'bjornetann', sjanse: 0.12 }],
+        haar: 5,
+        // Ingen gard tar imot dette. Svaret er å rulle, og det er den eneste
+        // fienden i kapittelet der skjoldet ikke er svaret.
+        sarslag: { hvert: 2, ublokkerbart: true },
+    },
+];
 
 export const ENEMIES: EnemyDef[] = [
+    ...MENNESKER,
     {
         id: 'glemseltaake',
         kind: 'glemsel',

@@ -81,6 +81,14 @@ export interface SpillerKroker {
     stotBort: (fiende: Fiende, vinkel: number, fart: number) => void;
     hitstop: (ms: number) => void;
     laas: (pa: boolean) => void;
+    /**
+     * Hva garden gjorde med et slag. Opplæringen teller på den, og bare den.
+     *
+     * Kroken ligger her og ikke i fiendesystemet fordi det er *forsvaret* som
+     * vet svaret: skjold, parade og blokk hører til eleven, og det skal ikke
+     * ligge to steder.
+     */
+    meldForsvar?: (art: 'parade' | 'blokk' | 'gjennom', fiende: Fiende) => void;
 }
 
 export class Spiller {
@@ -144,6 +152,8 @@ export class Spiller {
     private sisteAkse = { x: 0, y: 0, utslag: 0 };
     /** Står hun om bord i noe? Da eier farkosten bevegelsen, ikke beina. */
     private omBord = false;
+    /** Under opplæringen kan hun ikke dø. Se `skad()`. */
+    private ovingsmodus = false;
 
     constructor(
         scene: Phaser.Scene,
@@ -310,6 +320,11 @@ export class Spiller {
         this.retning = retning;
         this.forrigeFrame = -1;
         this.sprite.setFrame(heltFrame(retning, this.positur, this.posFase));
+    }
+
+    /** Skrur av at eleven kan dø. Bare opplæringen bruker den. */
+    settOvingsmodus(pa: boolean): void {
+        this.ovingsmodus = pa;
     }
 
     /** Alt står stille mens eleven leser. */
@@ -964,6 +979,8 @@ export class Spiller {
             this.efx.flytTekst(this.sprite.x, this.sprite.y - 30, 'Ublokkerbart!', '#ffd27a');
         }
 
+        this.kroker.meldForsvar?.(utfall.art === 'blokk' ? 'blokk' : utfall.art, fiende);
+
         if (utfall.art === 'parade') {
             this.parade(fiende);
             return false;
@@ -1055,7 +1072,15 @@ export class Spiller {
         }
 
         const stats = maksVerdier(store);
-        const faktisk = Math.max(1, Math.round(skade - stats.vern * 0.6));
+        let faktisk = Math.max(1, Math.round(skade - stats.vern * 0.6));
+        // Under opplæringen bunner livet ut på én. Ravn slår for alvor i siste
+        // økt, og en elev som blir slått i hjel av læreren sin slutter å ta
+        // timen - hun trykker på nytt spill i stedet.
+        if (this.ovingsmodus) faktisk = Math.min(faktisk, Math.max(0, store.hp - 1));
+        if (faktisk <= 0) {
+            this.usarbarIgjen = this.regler.bevegelse.usarbarMs;
+            return;
+        }
         store.endreHp(-faktisk);
         this.usarbarIgjen = this.regler.bevegelse.usarbarMs;
         sfx.skade();

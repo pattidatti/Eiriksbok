@@ -50,6 +50,42 @@ export const NORDVIK_FARKOSTER: FarkostDef[] = [
 
 export const NORDVIK_NPCS: NpcDef[] = [
     {
+        id: 'ravn',
+        name: 'Ravn',
+        role: 'Huskarl. Ler av deg.',
+        // På tunet, mellom langhuset og stien. Han skal være det første eleven
+        // går forbi - kapittel 1 begynner med at noen har en mening om henne.
+        tile: [20, 31],
+        ser: 'venstre',
+        palette: { tunic: '#5a5f4a', trim: '#b8a878', hair: '#3a2a1a' },
+        smalltalk: [
+            'Skjoldet er ikke et sted å gjemme seg. Det er et sted å slå fra.',
+            'Faren din bygger. Jeg slåss. Du gjør ingen av delene ennå.',
+            'Pust. Den som ikke puster, taper. Alltid.',
+        ],
+        kunnskap: [
+            {
+                tekst: 'Vi drar ikke som vikinger. Vi drar i viking. Det er noe man gjør om sommeren, mellom våronna og slåtten - ikke noe man er.',
+                stikkord: ['viking', 'hærferd', 'sommer'],
+            },
+            {
+                tekst: 'Skjoldet er av lindetre. Det er lett, og det er meningen at det skal splintres. Et skjold som holder evig, er et skjold som brekker armen din i stedet.',
+                stikkord: ['skjold', 'lindetre'],
+            },
+        ],
+        handlinger: [
+            {
+                id: 'ravn-opplaering',
+                knapp: 'Vis meg',
+                ledetekst:
+                    'Du har holdt det skjoldet i tre somre og lært deg ingenting. Kom hit. Nå tar vi det ordentlig.',
+                gir: 'k1-ravn',
+                etterpa:
+                    'Du kan det nå. Ikke godt, men du kan det. Gå ned til faren din - han står og venter, og han sier det ikke.',
+            },
+        ],
+    },
+    {
         id: 'gudrun',
         name: 'Gudrun Husfrue',
         role: 'Herre over langhuset',

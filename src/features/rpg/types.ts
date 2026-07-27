@@ -430,7 +430,21 @@ export interface SpellDef {
 
 // ─── Fiender ────────────────────────────────────────────────────────────────
 
-export type EnemyKind = 'glemsel' | 'paastand' | 'anakronisme' | 'rykte' | 'vrangbilde' | 'boss';
+/**
+ * Hva slags motstander dette er.
+ *
+ * `menneske` er den som gjelder fra 793 og utover: fiendene i kampanjen er
+ * folk, med navn, ætt og en grunn til å stå der. De abstrakte formene under er
+ * den gamle Minnevokteren-rammen, og de pensjoneres med den (blueprint §15).
+ */
+export type EnemyKind =
+    | 'menneske'
+    | 'glemsel'
+    | 'paastand'
+    | 'anakronisme'
+    | 'rykte'
+    | 'vrangbilde'
+    | 'boss';
 
 export interface EnemyDef {
     id: string;
@@ -452,6 +466,27 @@ export interface EnemyDef {
     /** Skyter prosjektiler i stedet for nærkamp. */
     skytende?: boolean;
     storrelse?: number;
+    /**
+     * Bare for `kind: 'menneske'`: hva han har i hendene.
+     *
+     * Dette er ikke pynt. Eleven skal kunne lese av silhuetten hva slaget
+     * kommer til å bli - spydmannen stikker langt og varsler lenge, øksekaren
+     * haker først. Ser de like ut, er telegraferingen bortkastet.
+     */
+    vaapenArt?: WeaponArt;
+    /** Har han skjold? Da dekker han seg, og du må åpne ham før du treffer. */
+    harSkjold?: boolean;
+    /** Hårfargen, så en flokk ikke ser ut som én mann kopiert opp. */
+    haar?: number;
+    /**
+     * Navn over hodet.
+     *
+     * Skillet i blueprintens §5.7 går ikke mellom «lov å nyte» og «ikke lov»,
+     * men mellom hvem som er inne i ættesystemet. Fremmede har ingen navn over
+     * hodet og intet etterspill; folk fra bygda har begge deler, og eleven ser
+     * forskjellen *før* hun slår.
+     */
+    navngitt?: boolean;
     /**
      * Særslaget. Uten dette er hvert slag et vanlig slag som garden kan ta.
      *
@@ -582,6 +617,29 @@ export interface NpcDef {
     kunnskap?: KunnskapsBit[];
     /** Handelsmann? Da åpner samtalen en bod i stedet for et oppdrag. */
     handler?: { varer: string[]; velkomst: string };
+    /**
+     * Kapittelhandlinger denne personen tilbyr.
+     *
+     * Dette er ikke oppdrag. Et oppdrag er et spørsmål med et svar i verden; en
+     * handling er et sted i kapittelet - Ravn som reiser seg fra stubben, Orm
+     * som rekker deg et bord. De ligger på NPC-en og ikke i questmotoren fordi
+     * de ikke har noe med spørsmålsbanken å gjøre.
+     */
+    handlinger?: NpcHandling[];
+}
+
+export interface NpcHandling {
+    id: string;
+    /** Teksten på knappen. Elevens ord, ikke spillets: «Vis meg». */
+    knapp: string;
+    /** Det han sier når han tilbyr den. */
+    ledetekst: string;
+    /** Kapittelsteg som må være gjort først. Uten dem vises den ikke. */
+    krever?: string[];
+    /** Steget den fører til. Er det gjort, tilbys handlingen ikke igjen. */
+    gir: string;
+    /** Det han sier etterpå, når det alt er gjort. */
+    etterpa: string;
 }
 
 /**
@@ -680,6 +738,16 @@ export interface Sted {
         /** Ett skjold per spørsmål. */
         sporsmal: BankQuestion[];
     };
+    /**
+     * Hvem som dukker opp av seg selv her.
+     *
+     * Tom liste betyr at ingen gjør det - og det er ikke det samme som et sted
+     * uten fiender: raidet setter ut sine egne, og opplæringen sin ene. Uten
+     * dette feltet leste spawningen rett fra hele fiendelista, og da ville en
+     * ny motstander i `data/enemies.ts` begynt å vandre rundt på hvert eneste
+     * kart i spillet - også på gårdstunet hjemme.
+     */
+    spawner: string[];
     /** Grunntonen i den generative slåtten. */
     musikkRot: number;
     /** Håndskrevne oppdrag som hører til dette stedet. */

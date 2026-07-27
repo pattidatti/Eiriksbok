@@ -390,6 +390,90 @@ export function renderHeroPortrait(look: HeroLook, scale = 6): string {
 /** Fiendene har fire ekte rammer. Tidligere var to av tre identiske. */
 export const FIENDE_RAMMER = 4;
 
+/**
+ * En motstander som er et menneske.
+ *
+ * Fra 793 er fiendene folk, ikke former, og da må silhuetten si hvem de er før
+ * de rekker å slå. Det er ikke pynt: hele kampsystemet står på at eleven skal
+ * kunne lese hva som kommer. Spydmannen har en strek som rekker langt utenfor
+ * kroppen, øksekaren en tung klump høyt oppe, bueskytteren en bøyd bue, og den
+ * som har skjold har en skive foran seg som må åpnes før noe treffer.
+ *
+ * Fargen på kjortelen er `def.farge`, som ellers i motoren - da får både blod,
+ * løsdeler og liket hans farge gratis.
+ */
+function drawMenneske(p: Painter, def: EnemyDef, frame: number, bob: number): void {
+    const kjortel = numToHex(def.farge);
+    const lys = ramp(kjortel, 1);
+    const mork = ramp(kjortel, -1);
+    const morkere = ramp(kjortel, -2);
+    const hud = SKIN_TONES[(def.id.length + 1) % SKIN_TONES.length];
+    const haar = HAIR_COLORS[(def.haar ?? def.id.charCodeAt(0)) % HAIR_COLORS.length];
+    const jern = '#b9c0ca';
+    const jernMork = '#7c848f';
+    const tre = '#7a5c38';
+
+    const cx = p.w / 2;
+    const cy = p.h / 2;
+    // Beina går i utakt med pusten, så flokken ikke marsjerer likt.
+    const steg = [0, 1, 0, -1][frame];
+
+    // Bein
+    p.rect(cx - 3, cy + 4 + bob, 2, 4 + steg, morkere);
+    p.rect(cx + 1, cy + 4 + bob, 2, 4 - steg, morkere);
+    // Kjortel
+    p.rect(cx - 4, cy - 2 + bob, 8, 7, kjortel);
+    p.vline(cx - 4, cy - 2 + bob, 7, lys);
+    p.vline(cx + 3, cy - 2 + bob, 7, mork);
+    p.hline(cx - 4, cy + 4 + bob, 8, morkere);
+    // Hode og hår
+    p.rect(cx - 2, cy - 7 + bob, 5, 5, hud);
+    p.rect(cx - 3, cy - 8 + bob, 7, 2, haar);
+    p.px(cx - 3, cy - 6 + bob, haar);
+    p.px(cx + 3, cy - 6 + bob, haar);
+    p.px(cx - 1, cy - 5 + bob, '#241a12');
+    p.px(cx + 2, cy - 5 + bob, '#241a12');
+
+    // Våpenarmen. Slaget svinger litt gjennom de fire rammene, så figuren ikke
+    // står som et skilt mens den jager.
+    const sving = [0, -1, 0, 1][frame];
+    switch (def.vaapenArt) {
+        case 'spyd':
+            // Lang, tynn strek som stikker godt utenfor kroppen. Rekkevidden er
+            // hele poenget med spydmannen, og den skal synes på avstand.
+            p.vline(cx + 5, cy - 9 + bob + sving, 15, tre);
+            p.rect(cx + 4, cy - 10 + bob + sving, 3, 3, jern);
+            break;
+        case 'oks':
+            // Tung klump høyt oppe. Skjeggøksa er bred og kroket.
+            p.vline(cx + 5, cy - 5 + bob + sving, 9, tre);
+            p.rect(cx + 4, cy - 8 + bob + sving, 4, 4, jern);
+            p.px(cx + 4, cy - 5 + bob + sving, jernMork);
+            break;
+        case 'bue':
+            p.vline(cx + 5, cy - 6 + bob, 10, tre);
+            p.px(cx + 6, cy - 5 + bob, tre);
+            p.px(cx + 6, cy + 3 + bob, tre);
+            p.vline(cx + 4, cy - 5 + bob, 8, '#e0d8b0');
+            break;
+        case 'sverd':
+            p.vline(cx + 5, cy - 7 + bob + sving, 8, jern);
+            p.hline(cx + 4, cy + 1 + bob + sving, 3, '#d8b45a');
+            break;
+        default:
+            // Nevene. Berserken har ingenting annet, og det er hele poenget.
+            p.rect(cx + 4, cy - 1 + bob + sving, 2, 3, hud);
+            break;
+    }
+
+    // Skjoldet foran. En skive med bule, som elevens eget.
+    if (def.harSkjold) {
+        p.ellipse(cx - 5, cy + bob, 3.4, 3.8, tre);
+        p.ellipse(cx - 5, cy + bob, 1.6, 1.8, jernMork);
+        p.px(cx - 5, cy - 1 + bob, jern);
+    }
+}
+
 function drawEnemy(p: Painter, def: EnemyDef, frame: number): void {
     const base = numToHex(def.farge);
     const lys = ramp(base, 1);
@@ -402,6 +486,10 @@ function drawEnemy(p: Painter, def: EnemyDef, frame: number): void {
     const cy = p.h / 2;
 
     switch (def.kind) {
+        case 'menneske': {
+            drawMenneske(p, def, frame, bob);
+            break;
+        }
         case 'glemsel': {
             // En tåkeklump med hull i. Formen «eter» seg selv.
             p.ellipse(cx, cy + bob, p.w * 0.38, p.h * 0.3, base);

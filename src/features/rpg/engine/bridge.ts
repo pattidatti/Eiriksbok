@@ -58,6 +58,23 @@ export interface SceneEvents {
     klippTekst: { hvem: string | null; tekst: string } | null;
     /** Åpne et av kapittelets puzzle-overlegg. */
     puzzle: { id: 'skroget' | 'navigasjonen' };
+    /**
+     * Det eleven holder på med akkurat nå, som et lite kort i HUD-en.
+     *
+     * Skilt fra oppdragsloggen med vilje: loggen er alt hun kunne gjort, dette
+     * er det ene hun gjør. Står de to samme sted, blir det viktige et punkt i
+     * en liste.
+     */
+    oppgave: { tittel: string; mal: string; teller?: string } | null;
+    /**
+     * Én replikk sagt midt i spillet, uten å stoppe det.
+     *
+     * Ikke det samme som `dialog`: den låser verden og åpner et vindu. Dette er
+     * Ravn som roper til deg mens dere står og slåss, og barkene fra
+     * blueprintens §9 - folk som snakker til hverandre når du går forbi.
+     * Flytende pikseltekst over hodet duger til «Parade!», ikke til en setning.
+     */
+    replikk: { hvem: string; tekst: string } | null;
 }
 
 export interface UiEvents {
@@ -96,6 +113,11 @@ export interface UiEvents {
     klippHoppOver: Record<string, never>;
     /** Et puzzle er avsluttet. `lost` er falsk når eleven ga opp. */
     puzzleSvar: { id: string; lost: boolean };
+    /**
+     * Eleven valgte en kapittelhandling i en samtale - «Vis meg», «Jeg legger
+     * bordene». Scenen eier hva som faktisk skjer.
+     */
+    npcHandling: { npcId: string; handlingId: string };
 }
 
 class Emitter<Events> {

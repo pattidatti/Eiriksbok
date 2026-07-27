@@ -10,14 +10,14 @@
 // av), så laget ikke er bundet til Den store glemselen (blueprint R2).
 
 import Phaser from 'phaser';
-import { ENEMIES } from '../../data/enemies';
+import { ENEMY_BY_ID } from '../../data/enemies';
 import { KAMP } from '../../data/vaapen';
 import { maksVerdier, useRpgStore, utrustetVaapen } from '../../store/useRpgStore';
 import type { EnemyDef } from '../../types';
 import { sfx, startMusikk } from '../audio';
 import { fraSpill } from '../bridge';
 import type { KampFx } from '../kampfx';
-import { FIENDE_RAMMER, TILE } from '../spriteforge';
+import { FIENDE_RAMMER, TILE, skrivPiksel } from '../spriteforge';
 import type { WorldMap } from '../worldgen';
 import type { Effekter } from './effekter';
 import type { Fiende, Sarslag, Sprite } from './entiteter';
@@ -64,6 +64,14 @@ export class Fiender {
     /** Null på steder uten boss. */
     private bossDef: EnemyDef | null;
     private bossRunder: number;
+    /**
+     * Hvem som kan dukke opp av seg selv her. Tom liste = ingen.
+     *
+     * Stedet eier dette, ikke fiendelista. Uten det ville hver nye motstander
+     * i `data/enemies.ts` begynt å vandre rundt på hvert eneste kart i spillet
+     * - og en berserk på tunet hjemme i 793 er ikke et innslag, det er en feil.
+     */
+    private spawner: string[];
 
     private liste: Fiende[] = [];
     private bossen: Fiende | null = null;
@@ -82,8 +90,10 @@ export class Fiender {
         skudd: Prosjektiler,
         bossDef: EnemyDef | null,
         bossRunder: number,
+        spawner: string[],
         kroker: FiendeKroker
     ) {
+        this.spawner = spawner;
         this.scene = scene;
         this.kart = kart;
         this.efx = efx;
@@ -103,6 +113,25 @@ export class Fiender {
 
     harBoss(): boolean {
         return this.bossen !== null;
+    }
+
+    /**
+     * Fjerner en motstander uten drap: ingen avslutning, ingen loot, ingen XP.
+     *
+     * Ravn går fra tunet når timen er over. Han skal ikke falle om - eleven har
+     * ikke drept ham, hun har blitt bedre enn han var i går.
+     */
+    hentInn(fiende: Fiende): void {
+        if (fiende.dodd) return;
+        fiende.dodd = true;
+        this.maaRydde = true;
+        for (const c of fiende.collidere) this.scene.physics.world.removeCollider(c);
+        fiende.collidere.length = 0;
+        fiende.stolpe?.destroy();
+        fiende.stolpe = null;
+        fiende.navnskilt?.fjern();
+        fiende.navnskilt = undefined;
+        fiende.sprite.destroy();
     }
 
     /** Et riktig svar i bossdysten river ned ett skjold. */
@@ -156,7 +185,20 @@ export class Fiender {
         this.liste.push(this.bossen);
     }
 
-    private spawnFiende(def: EnemyDef, x: number, y: number): void {
+    /**
+     * Setter ut én bestemt motstander, og gir den tilbake.
+     *
+     * Opplæringen og raidet trenger å kunne peke på akkurat *denne* mannen -
+     * skru telegraferingen hans, gjøre ham udødelig, eller vente til han
+     * faller. Den tilfeldige spawningen kan ikke det, og skal ikke kunne det.
+     */
+    settUt(def: EnemyDef, x: number, y: number, valg?: Partial<Fiende>): Fiende {
+        const fiende = this.spawnFiende(def, x, y);
+        Object.assign(fiende, valg);
+        return fiende;
+    }
+
+    private spawnFiende(def: EnemyDef, x: number, y: number): Fiende {
         const sprite = this.scene.physics.add.sprite(x, y, `fiende-${def.id}`, 0);
         sprite.setOrigin(0.5, 0.85).setDepth(y);
         sprite.body!.setSize(10, 8);
@@ -177,7 +219,7 @@ export class Fiender {
             ease: 'Back.Out',
         });
 
-        this.liste.push({
+        const fiende: Fiende = {
             sprite,
             def,
             hp: def.hp,
@@ -194,10 +236,16 @@ export class Fiender {
             stolpeTid: 0,
             onsketTint: null,
             slagTeller: 0,
-        });
+        };
+        this.liste.push(fiende);
+        return fiende;
     }
 
     oppdaterSpawn(delta: number): void {
+        // Et sted uten spawnliste er et sted der ingen kommer av seg selv. Det
+        // er ikke det samme som et sted uten fiender: raidet setter ut sine
+        // egne, og gården hjemme skal være trygg mellom øktene med Ravn.
+        if (this.spawner.length === 0) return;
         this.spawnTimer -= delta;
         if (this.spawnTimer > 0) return;
         this.spawnTimer = SPAWN_PAUSE_MS;
@@ -215,12 +263,13 @@ export class Fiender {
         if (kandidater.length === 0) return;
 
         const [tx, ty] = kandidater[Math.floor(Math.random() * kandidater.length)];
+        // Stedet eier hvem som kan komme; nivået eier hvor mange av dem som er
+        // i spill. Før leste denne rett fra hele `ENEMIES`, og da ville et nytt
+        // menneske i lista dukket opp i hver eneste bygd i spillet.
         const niva = maksVerdier(useRpgStore.getState()).niva;
-        const mulige = ENEMIES.filter((e) => e.kind !== 'boss').slice(
-            0,
-            Math.min(5, 2 + Math.floor(niva / 2))
-        );
-        const def = mulige[Math.floor(Math.random() * mulige.length)];
+        const mulige = this.spawner.slice(0, Math.min(this.spawner.length, 2 + Math.floor(niva / 2)));
+        const def = ENEMY_BY_ID[mulige[Math.floor(Math.random() * mulige.length)]];
+        if (!def) return;
         this.spawnFiende(def, tx * TILE + 8, ty * TILE + 8);
     }
 
@@ -240,6 +289,14 @@ export class Fiender {
                 fiende.frame = (fiende.frame + 1) % FIENDE_RAMMER;
                 sprite.setFrame(fiende.frame);
             }
+
+            // Navnet over hodet. Det er skillet i §5.7 gjort synlig: eleven
+            // skal se *før* hun slår om dette er en fremmed eller en fra
+            // bygda, for det siste har et etterspill.
+            if (fiende.navn && !fiende.navnskilt) {
+                fiende.navnskilt = skrivPiksel(this.scene, fiende.navn, '#f0dca8', 18500);
+            }
+            fiende.navnskilt?.sett(sprite.x, sprite.y - sprite.displayHeight * 0.85 - 14);
 
             // Livsstolpen følger fienden og forsvinner av seg selv.
             if (fiende.stolpe) {
@@ -306,8 +363,17 @@ export class Fiender {
                         break;
                     }
                     if (avstand <= def.rekkevidde) {
+                        // Den fredelige holder avstanden sin og lar være. Han
+                        // står der som noe å øve på, ikke som noe å overleve.
+                        if (fiende.fredelig) {
+                            sprite.setVelocity(0, 0);
+                            break;
+                        }
                         fiende.tilstand = 'varsler';
-                        fiende.timer = def.varsel;
+                        // Telegraferingen kan skrus per motstander. Ravn går fra
+                        // 700 til 450 gjennom opplæringen, og eleven merker at
+                        // hun blir bedre - det er han som er blitt raskere.
+                        fiende.timer = fiende.varsel ?? def.varsel;
                         sprite.setVelocity(0, 0);
                         // Slaget telles allerede her, så varselet og treffet er
                         // enige om hvorvidt dette er særslaget.
@@ -417,7 +483,7 @@ export class Fiender {
             targets: merke,
             scale: sarslag ? 0.48 : 0.34,
             alpha: 0,
-            duration: fiende.def.varsel,
+            duration: fiende.varsel ?? fiende.def.varsel,
             onComplete: () => this.efx.slipp(merke),
         });
     }
@@ -472,7 +538,10 @@ export class Fiender {
             return;
         }
 
-        fiende.hp -= skade;
+        // En som ikke kan dø, tar skade som alle andre - han går bare aldri
+        // under én. Opplæringen bygger på det: Ravn skal kjennes som en ekte
+        // motstander, ikke som en dukke det ikke er noe poeng i å slå på.
+        fiende.hp = fiende.udodelig ? Math.max(1, fiende.hp - skade) : fiende.hp - skade;
         sfx[kritisk ? 'kritisk' : 'treff']();
         this.fx.klask(fiende.sprite, kritisk ? 0.24 : 0.15);
         this.fx.vipp(fiende.sprite, kritisk ? 12 : 7);
@@ -557,6 +626,10 @@ export class Fiender {
         fiende.collidere.length = 0;
         fiende.stolpe?.destroy();
         fiende.stolpe = null;
+        // Navnet dør med mannen. Blir det stående, henger det i lufta over et
+        // lik - og det er en annen scene enn den vi skriver.
+        fiende.navnskilt?.fjern();
+        fiende.navnskilt = undefined;
         sfx.dod();
         this.efx.pikselSprut(fiende.sprite.x, fiende.sprite.y - 8, fiende.def.farge, 20);
 

@@ -17,6 +17,7 @@ import { fraSpill, tilSpill } from './bridge';
 import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
+import { Opplaering } from './opplaering';
 import { Portaler } from './portal';
 import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
@@ -58,6 +59,8 @@ export class WorldScene extends Phaser.Scene {
     /** Alt som flyr: piler, kastespyd, besvergelser. */
     private skudd!: Prosjektiler;
     private samhandling!: Interaksjon;
+    /** Fire økter på tunet, mot Ravn. Kapittel 1 begynner her. */
+    private opplaering!: Opplaering;
     /** Båter og annet eleven kan gå om bord i. */
     private farkoster!: Farkoster;
     /** Dørene ut: portalene i hallen, og porten hjem fra en epoke. */
@@ -147,6 +150,7 @@ export class WorldScene extends Phaser.Scene {
             this.skudd,
             sted.boss ? ENEMY_BY_ID[sted.boss.enemyId] : null,
             sted.boss?.sporsmal.length ?? 0,
+            sted.spawner,
             {
                 spiller: () => this.helt.sprite,
                 nerkampTreff: (fiende) => this.helt.nerkampTreff(fiende),
@@ -168,13 +172,29 @@ export class WorldScene extends Phaser.Scene {
             regler,
             {
                 fiender: () => this.fiendeSystem.alle(),
-                skadFiende: (f, skade, kritisk, vinkel, kraft) =>
-                    this.fiendeSystem.skad(f, skade, kritisk, vinkel, kraft),
+                skadFiende: (f, skade, kritisk, vinkel, kraft) => {
+                    // Opplæringen teller slagene som lander. Den ligger foran
+                    // og ikke inne i fiendesystemet fordi det ikke er fiendens
+                    // sak at noen holder på å lære seg å slå.
+                    this.opplaering.treff(f);
+                    this.fiendeSystem.skad(f, skade, kritisk, vinkel, kraft);
+                },
                 stotBort: (f, vinkel, fart) => this.fiendeSystem.stotBort(f, vinkel, fart),
                 hitstop: (ms) => this.hitstop(ms),
                 laas: (pa) => this.settLaast(pa),
+                meldForsvar: (art, f) => this.opplaering.forsvar(art, f),
             }
         );
+        this.opplaering = new Opplaering({
+            settUt: (defId, x, y, valg) => {
+                const def = ENEMY_BY_ID[defId];
+                return def ? this.fiendeSystem.settUt(def, x, y, valg) : null;
+            },
+            hentInn: (f) => this.fiendeSystem.hentInn(f),
+            spiller: () => this.helt.sprite,
+            ovingsmodus: (pa) => this.helt.settOvingsmodus(pa),
+            visNpc: (npcId, synlig) => this.samhandling.settSynlig(npcId, synlig),
+        });
         this.samhandling = new Interaksjon(this, sted.npcer, sted.landemerker, {
             spiller: () => this.helt.sprite,
             laas: (pa) => this.settLaast(pa),
@@ -353,7 +373,10 @@ export class WorldScene extends Phaser.Scene {
             // React-tilstand: en gjentegning per melding ville tegnet hele
             // grensesnittet hundre ganger i sekundet.
             tilSpill.on('gjester', ({ liste }) => this.gjester?.motta(liste)),
-            tilSpill.on('folelse', ({ emoji }) => this.samvaer?.visFolelse(emoji))
+            tilSpill.on('folelse', ({ emoji }) => this.samvaer?.visFolelse(emoji)),
+            tilSpill.on('npcHandling', ({ npcId, handlingId }) =>
+                this.utforHandling(npcId, handlingId)
+            )
         );
     }
 
@@ -385,6 +408,11 @@ export class WorldScene extends Phaser.Scene {
         this.gjester?.vask();
         this.gjester = null;
         this.samvaer = null;
+        // Oppgavekortet og replikklinja lever i React, ikke i scenen. Phaser
+        // river ingenting av det, så en reise midt i en økt med Ravn ville latt
+        // «Blokker tre slag» stå igjen over et kloster i Northumbria.
+        fraSpill.emit('oppgave', null);
+        fraSpill.emit('replikk', null);
     }
 
     // ── Oppdatering ─────────────────────────────────────────────────────────
@@ -451,10 +479,14 @@ export class WorldScene extends Phaser.Scene {
         const benkEier = sitter
             ? (this.samvaer?.sjekk(delta, brukTrykk, !opptatt) ?? false)
             : false;
+        // Under opplæringen hviler samhandlingen helt. Ravn står som fiende på
+        // tunet, og et hint om at E snakker med Bera tre ruter unna er det
+        // siste eleven skal lese midt i en parade.
         const folkEier = this.samhandling.sjekk(
-            opptatt || benkEier ? false : brukTrykk,
-            !opptatt && !benkEier
+            opptatt || benkEier || this.opplaering.gaar ? false : brukTrykk,
+            !opptatt && !benkEier && !this.opplaering.gaar
         );
+        this.opplaering.oppdater(delta);
         if (!sitter) {
             this.samvaer?.sjekk(
                 delta,
@@ -699,6 +731,31 @@ export class WorldScene extends Phaser.Scene {
      */
     flyttHelt(x: number, y: number) {
         this.helt.sprite.setPosition(x, y);
+    }
+
+    // ── Kapittelet ──────────────────────────────────────────────────────────
+
+    /**
+     * Eleven valgte en kapittelhandling i en samtale.
+     *
+     * Scenen eier hva som skjer, ikke dataene. En handling i `steder.ts` er et
+     * navn og en knapp; hva Nordvik faktisk gjør når Ravn reiser seg, hører
+     * hjemme her - ved siden av alt annet som kan låse verden.
+     */
+    private utforHandling(npcId: string, handlingId: string): void {
+        // Låsen som dialogen satte må av først. Blir den stående, står eleven
+        // og ser på at Ravn slår uten å kunne løfte skjoldet.
+        this.settLaast(false);
+        switch (handlingId) {
+            case 'ravn-opplaering': {
+                const mal = this.samhandling.mal('npc', npcId);
+                if (!mal) return;
+                this.opplaering.start(npcId, { x: mal.x, y: mal.y });
+                return;
+            }
+            default:
+                return;
+        }
     }
 
     // ── Cutscenes ───────────────────────────────────────────────────────────

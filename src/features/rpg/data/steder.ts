@@ -66,6 +66,10 @@ const HUB: Sted = {
     // Tåka er tynnere her. Borte ville den ikke vært riktig - Glemselen finnes
     // også i hallen, den har bare mindre å ta av utenfor tiden.
     taake: 0.45,
+    // Ingen kommer av seg selv i hallen. Den er utenfor tiden, og et sted der
+    // eleven møter klassekameratene sine er det siste stedet som tåler en
+    // berserk ut av tåka.
+    spawner: [],
     musikkRot: 220,
     authored: [],
     // Det ene stedet som deles. «Hubben er sammen, epokene er alene» - se
@@ -100,6 +104,10 @@ const NORDVIK: Sted = {
         enemyId: 'den-store-glemselen',
         sporsmal: NORDVIK_BOSS_QUESTIONS,
     },
+    // Den gamle Minnevokteren-rammen står til den pensjoneres i §15. Hver
+    // etappe skal etterlate spillet spillbart, og bygda har ingen andre
+    // fiender før kapittel 1 er ferdig.
+    spawner: ['glemseltaake', 'kildelos-paastand', 'anakronisme', 'ryktespokelse', 'vrangbilde'],
     musikkRot: 196,
     authored: NORDVIK_AUTHORED_QUESTER,
 };

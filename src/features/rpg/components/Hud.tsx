@@ -10,12 +10,14 @@ interface Props {
     kompass: { vinkel: number; avstand: number; navn: string } | null;
     /** Ressurs, gard og vernslitasje. Null før scenen har sendt sitt første bilde. */
     kamp: KampSnapshot | null;
+    /** Det ene eleven holder på med nå. Null mellom kapittelstegene. */
+    oppgave: { tittel: string; mal: string; teller?: string } | null;
     onApneSekk: () => void;
     onApneLogg: () => void;
     onPause: () => void;
 }
 
-export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Props) {
+export function Hud({ hint, kompass, kamp, oppgave, onApneSekk, onApneLogg, onPause }: Props) {
     const store = useRpgStore();
     const maks = maksVerdier(store);
     const fremgang = nivaFremgang(store.xp);
@@ -145,6 +147,35 @@ export function Hud({ hint, kompass, kamp, onApneSekk, onApneLogg, onPause }: Pr
                     );
                 })}
             </div>
+
+            {/*
+                Oppgavekortet. Det ene eleven holder på med, ikke lista over alt
+                hun kunne gjort - den ligger i oppdragsloggen. Til venstre og
+                nede, der øyet ikke er i kamp: står det midt i bildet, leser hun
+                det i stedet for å se på Ravn.
+
+                Store bokstaver med vilje. Læreren viser dette på projektor.
+            */}
+            {oppgave && (
+                <div
+                    // Prøveskriptene leser kortet herfra. Som `aria-valuenow` på
+                    // stolpene er dette en API-flate, ikke pynt.
+                    data-prove="oppgave"
+                    className="absolute bottom-20 left-3 w-64 rounded-xl border border-amber-300/30 bg-slate-950/85 px-3 py-2.5"
+                >
+                    <div className="flex items-baseline justify-between gap-2">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-300/90">
+                            {oppgave.tittel}
+                        </p>
+                        {oppgave.teller && (
+                            <span className="font-display text-sm font-bold text-amber-200">
+                                {oppgave.teller}
+                            </span>
+                        )}
+                    </div>
+                    <p className="mt-1 text-[15px] leading-snug text-slate-100">{oppgave.mal}</p>
+                </div>
+            )}
 
             {/* Hint om hva E gjør */}
             {hint && (

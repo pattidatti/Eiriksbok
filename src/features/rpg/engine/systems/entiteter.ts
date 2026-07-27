@@ -6,6 +6,7 @@
 
 import type Phaser from 'phaser';
 import type { EnemyDef } from '../../types';
+import type { PikselTekst } from '../spriteforge';
 
 export type Sprite = Phaser.Physics.Arcade.Sprite;
 
@@ -42,6 +43,33 @@ export interface Fiende {
     onsketTint: number | null;
     /** Hvor mange slag den har forsøkt. Avgjør når særslaget kommer. */
     slagTeller: number;
+    /**
+     * Overstyrer telegraferingen fra `def.varsel`.
+     *
+     * Ravn begynner på 700 ms og går ned til 450 gjennom opplæringen. Eleven
+     * merker at hun blir bedre, men det er Ravn som er blitt raskere. Det er en
+     * løgn vi tar med glede (blueprint §5.8).
+     */
+    varsel?: number;
+    /**
+     * Kan ikke dø. Brukes av opplæringen: en huskarl som blir slått i hjel av
+     * en sytten år gammel gutt i første økt er ikke en lærer, og en øvingsdukke
+     * som faller om, avslutter timen midt i.
+     */
+    udodelig?: boolean;
+    /**
+     * Følger etter, men slår ikke.
+     *
+     * Ravn står slik i den første økta: eleven skal få kjenne på svinget uten
+     * at noe kommer imot. En «øvingsdukke» som ikke rører seg lærer henne
+     * ingenting om avstand, og en som slår tilbake med én gang lærer henne å
+     * gjemme seg.
+     */
+    fredelig?: boolean;
+    /** Navn over hodet. Folk fra bygda har det; fremmede har det ikke (§5.7). */
+    navn?: string;
+    /** Skiltet som tegner navnet. Lages første bilde `navn` er satt. */
+    navnskilt?: PikselTekst;
 }
 
 /**
