@@ -193,31 +193,6 @@
       "geoConfidence": "tag"
     },
     {
-      "id": "egypt",
-      "title": "Det gamle Egypt: Riket ved Nilen",
-      "description": "Hvordan Nilens årlige flom skapte en sivilisasjon som varte i tre tusen år.",
-      "startDate": -3100,
-      "endDate": -30,
-      "displayDate": "3100 fvt – 30 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "jordbruk-og-sivilisasjoner",
-      "link": "/historie/jordbruk-og-sivilisasjoner/egypt",
-      "tags": [
-        "egypt",
-        "nilen",
-        "farao",
-        "pyramide",
-        "hieroglyfer",
-        "sivilisasjon"
-      ],
-      "lat": 26.8,
-      "lng": 31,
-      "placeLabel": "Nilen",
-      "placeCountryId": 818,
-      "geoConfidence": "tag"
-    },
-    {
       "id": "orientering",
       "title": "Orientering: Kart, folk og religioner",
       "description": "Hvem bor i Midtøsten, hva tror de på, og hvorfor er regionen så kompleks?",
@@ -236,6 +211,31 @@
       "lat": 29,
       "lng": 45,
       "placeLabel": "Midtøsten",
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "egypt",
+      "title": "Det gamle Egypt: Riket ved Nilen",
+      "description": "Hvordan Nilens årlige flom skapte en sivilisasjon som varte i tre tusen år.",
+      "startDate": -2900,
+      "endDate": -30,
+      "displayDate": "2900 fvt - 30 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "jordbruk-og-sivilisasjoner",
+      "link": "/historie/jordbruk-og-sivilisasjoner/egypt",
+      "tags": [
+        "egypt",
+        "nilen",
+        "farao",
+        "pyramide",
+        "hieroglyfer",
+        "sivilisasjon"
+      ],
+      "lat": 26.8,
+      "lng": 31,
+      "placeLabel": "Nilen",
+      "placeCountryId": 818,
       "geoConfidence": "tag"
     },
     {
@@ -339,7 +339,7 @@
       "description": "Hvordan sivilisasjon vokste fram helt for seg selv i Amerika, bygd på mais og poteter i stedet for hvete.",
       "startDate": -2000,
       "endDate": 1533,
-      "displayDate": "2000 fvt – 1533 evt",
+      "displayDate": "2000 fvt - 1533 evt",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "jordbruk-og-sivilisasjoner",
