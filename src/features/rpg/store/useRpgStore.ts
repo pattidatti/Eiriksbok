@@ -145,7 +145,9 @@ const tomtKapittel = (character: CharacterDraft | null): EpokeKapittel => {
 
 const nyEpoke = (epokeId: string, character: CharacterDraft | null): EpokeSave => ({
     kapittel: 1,
-    sisteSted: forsteStedI(epokeId),
+    // Har epoken ikke noe sted ennå, står hun i hallen. Det er sant: da finnes
+    // det ingen verden å stå i der inne.
+    sisteSted: forsteStedI(epokeId) ?? START_STED,
     kampanje: tomKampanje(),
     kapittelState: tomtKapittel(character),
 });
@@ -165,7 +167,7 @@ const heleEpoken = (
     character: CharacterDraft | null
 ): EpokeSave => ({
     kapittel: lagret?.kapittel ?? 1,
-    sisteSted: lagret?.sisteSted ?? forsteStedI(epokeId),
+    sisteSted: lagret?.sisteSted ?? forsteStedI(epokeId) ?? START_STED,
     kampanje: { ...tomKampanje(), ...lagret?.kampanje },
     kapittelState: { ...tomtKapittel(character), ...lagret?.kapittelState },
 });

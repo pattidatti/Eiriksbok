@@ -110,9 +110,18 @@ export function stedEllerStart(id: string | undefined): Sted {
     return STED_BY_ID[id ?? ''] ?? STED_BY_ID[START_STED];
 }
 
-/** Der en elev kommer inn i en epoke hun ikke har vært i før. */
-export function forsteStedI(epokeId: string): string {
-    return (STEDER.find((s) => s.epokeId === epokeId) ?? STED_BY_ID[START_STED]).id;
+/**
+ * Der en elev kommer inn i en epoke hun ikke har vært i før, eller `null` hvis
+ * epoken ikke har noe sted ennå.
+ *
+ * Null, ikke et fall til hallen. Faller den tilbake, blir en epoke som er
+ * merket `spillbar` uten at kartet er bygget til en portal som fører hjem til
+ * stedet eleven allerede står på - og `bestillReise` avviser den i stillhet.
+ * Eleven trykker E, ingenting skjer, og ingenting sier hvorfor. Portalen skal
+ * i stedet stå mørk til stedet finnes.
+ */
+export function forsteStedI(epokeId: string): string | null {
+    return STEDER.find((s) => s.epokeId === epokeId)?.id ?? null;
 }
 
 /** Slår opp en NPC uten å vite hvor hun står. */

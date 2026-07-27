@@ -48,7 +48,7 @@ export async function stengHmr(page) {
  *
  *     RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
  */
-const BASE = process.env.RPG_BASE ?? 'http://localhost:5173';
+export const BASE = process.env.RPG_BASE ?? 'http://localhost:5173';
 
 const NOKKEL = 'rpg-minnevokteren-v1';
 

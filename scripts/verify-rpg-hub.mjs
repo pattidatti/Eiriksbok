@@ -13,7 +13,7 @@
 
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
-import { entreHallen, stengHmr } from './lib/rpg-testside.mjs';
+import { BASE, entreHallen, stengHmr } from './lib/rpg-testside.mjs';
 
 const UT = '.screenshots';
 mkdirSync(UT, { recursive: true });
@@ -35,6 +35,27 @@ page.on('console', (m) => m.type() === 'error' && sidefeil.push(m.text()));
 page.on('pageerror', (e) => sidefeil.push(String(e)));
 
 await stengHmr(page);
+
+// ── 0. Den nye eleven ───────────────────────────────────────────────────────
+//
+// Veien inn for en som aldri har spilt: karakterskaperen, og så hallen. Den
+// måles her fordi ingen andre skript går den lenger - de sår lagringen og
+// hopper rett i bygda. Uten denne prøven kan startknappen ryke uten at noe
+// sier fra, og det er det første en elev møter.
+
+await page.goto(`${BASE}/oving/rpg`, { waitUntil: 'networkidle' });
+await page.fill('input[placeholder="Skriv navnet ditt"]', 'Ny elev');
+await page.click('button:has-text("Gå inn i hallen")');
+await page.waitForSelector('canvas', { timeout: 30000 });
+await page.waitForFunction(() => Boolean(window.__rpgStore), null, { timeout: 30000 });
+const nystartet = await page.evaluate(() => {
+    const s = window.__rpgStore.getState();
+    return { sted: s.sisteSted, epokeId: s.epokeId, navn: s.character?.name, xp: s.xp };
+});
+sjekk('en ny elev begynner i hallen', nystartet.sted === 'hub', nystartet.sted);
+sjekk('epoken hennes er åpnet likevel', nystartet.epokeId === 'vikingtiden', nystartet.epokeId);
+sjekk('figuren ble laget', nystartet.navn === 'Ny elev' && nystartet.xp === 0, nystartet.navn);
+
 // Tre besøk i vikingtiden og fem steiner fra før: sporene skal ligge der når
 // hun kommer tilbake, ellers er de ikke spor.
 await entreHallen(page, { besokt: { vikingtiden: 3 }, steiner: 5 });

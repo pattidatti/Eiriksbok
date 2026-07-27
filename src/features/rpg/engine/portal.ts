@@ -79,7 +79,15 @@ export class Portaler {
             const y = ty * TILE + 8;
 
             const epoke = def.maal.art === 'epoke' ? EPOKE_BY_ID[def.maal.epokeId] : null;
-            const apen = def.maal.art === 'sted' || Boolean(epoke?.spillbar);
+            // Hvor porten faktisk fører hen. `null` betyr at det ikke finnes noe
+            // sted i den andre enden ennå - da står portalen mørk, uansett hva
+            // epoken påstår om seg selv. En epoke som er merket `spillbar` før
+            // kartet er bygget ville ellers gitt en port som ikke gjør noe: E
+            // trykkes, `bestillReise` avviser i stillhet, og ingenting sier
+            // hvorfor.
+            const maalSted =
+                def.maal.art === 'sted' ? def.maal.stedId : forsteStedI(def.maal.epokeId);
+            const apen = maalSted !== null && (def.maal.art === 'sted' || Boolean(epoke?.spillbar));
             const tittel = def.maal.art === 'sted' ? def.maal.navn : (epoke?.title ?? 'Ukjent');
             // Skiltet får årstallet, ikke epokebeskrivelsen. «Steinalder og de
             // første byene» er 28 tegn med pikselfont - en tekstplakat tvers
@@ -104,12 +112,7 @@ export class Portaler {
 
             const p: Portal = {
                 def,
-                maalSted:
-                    def.maal.art === 'sted'
-                        ? def.maal.stedId
-                        : apen
-                          ? forsteStedI(def.maal.epokeId)
-                          : null,
+                maalSted: apen ? maalSted : null,
                 tittel,
                 undertekst,
                 beskrivelse: epoke?.era ?? '',
