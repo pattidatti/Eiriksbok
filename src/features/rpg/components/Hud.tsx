@@ -1,5 +1,9 @@
 import { maksVerdier, nivaFremgang, useRpgStore } from '../store/useRpgStore';
+import { trinnFor } from '../engine/aere';
+import { AARSTID, AARSTIDER, DAGER_PER_AARSTID, aarstidFor, dagIAarstid } from '../engine/klokke';
+import { KAPITTEL_BY_NR } from '../data/kapitler';
 import type { KampSnapshot } from '../engine/kamp';
+import type { Klokke } from '../types';
 
 interface Props {
     hint: string | null;
@@ -32,6 +36,9 @@ export function Hud({
     const maks = maksVerdier(store);
     const fremgang = nivaFremgang(store.xp);
     const aktive = Object.values(store.quester).filter((s) => s === 'aktiv').length;
+    // Hva kapittelet faktisk spiller på. Ære og årshjul finnes i hele
+    // kampanjen som samfunn, men bare noen kapitler lar eleven flytte dem.
+    const systemer = KAPITTEL_BY_NR[store.kapittel]?.systemer;
 
     return (
         <div className="pointer-events-none absolute inset-0 z-20 select-none">
@@ -82,7 +89,30 @@ export function Hud({
                     merkelapp="Erfaring"
                     tynn
                 />
+                {/*
+                    Æren. Står bare i kapitler som lar eleven flytte den - se
+                    `KapittelDef.systemer`. Merkelappen er ikke tallet, men hva
+                    folk gjør: «Aktet» sier ingenting til en 14-åring, «Folk
+                    hører etter når du sier noe» sier alt.
+                */}
+                {systemer?.aere && (
+                    <div data-prove="aere">
+                        <Stolpe
+                            verdi={store.aere}
+                            maks={100}
+                            farge="#c9a227"
+                            bak="#2e2611"
+                            merkelapp="Ære"
+                        />
+                        <p className="mt-0.5 truncate text-[11px] text-amber-200/70">
+                            {trinnFor(store.aere).folk}
+                        </p>
+                    </div>
+                )}
             </div>
+
+            {/* Klokken er en ring i hjørnet (blueprint §7.3). */}
+            {systemer?.aarshjul && <Aarshjul klokke={store.klokke} />}
 
             {/* Øverst til høyre: sølv og kunnskap */}
             <div className="absolute right-3 top-3 flex items-center gap-2">
@@ -204,6 +234,85 @@ export function Hud({
                         {v.tekst}
                     </div>
                 ))}
+            </div>
+        </div>
+    );
+}
+
+/**
+ * Årshjulet: fire buer, én per årstid, og en viser som går rundt.
+ *
+ * En ring og ikke en stolpe, fordi et år ikke har en begynnelse og en slutt for
+ * den som lever i det - det kommer tilbake. Den som ser på ringen skal kunne
+ * lese to ting uten å telle: hvor i året hun er, og hvor lite som er igjen av
+ * årstiden hun står i.
+ *
+ * Tegnet som SVG oppå lerretet, ikke inne i Phaser: et lag i scenen ville blitt
+ * skalert av kamerazoomen, og en ring på 34 piksler er da plutselig 136.
+ */
+function Aarshjul({ klokke }: { klokke: Klokke }) {
+    const na = aarstidFor(klokke.dag);
+    const def = AARSTID[na];
+    const dag = dagIAarstid(klokke.dag);
+    const R = 26;
+    const omkrets = 2 * Math.PI * R;
+    const bue = omkrets / 4;
+
+    return (
+        <div
+            data-prove="aarshjul"
+            data-aarstid={na}
+            className="absolute right-3 top-[6.5rem] flex items-center gap-2 rounded-xl bg-slate-950/80 px-2.5 py-2 ring-1 ring-white/15"
+        >
+            <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden>
+                {AARSTIDER.map((a, i) => (
+                    <circle
+                        key={a}
+                        cx="32"
+                        cy="32"
+                        r={R}
+                        fill="none"
+                        stroke={AARSTID[a].farge}
+                        strokeWidth="7"
+                        strokeOpacity={a === na ? 1 : 0.22}
+                        // Fire like buer, med en luke mellom, rotert på plass.
+                        strokeDasharray={`${bue - 4} ${omkrets - bue + 4}`}
+                        strokeDashoffset={-bue * i}
+                        transform="rotate(-90 32 32)"
+                    />
+                ))}
+                {/* Viseren: hvor langt inn i årstiden hun har kommet. */}
+                <circle
+                    cx="32"
+                    cy="32"
+                    r={R}
+                    fill="none"
+                    stroke="#ffffff"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeDasharray={`2 ${omkrets - 2}`}
+                    strokeDashoffset={
+                        -(bue * AARSTIDER.indexOf(na) + (bue * (dag - 1)) / DAGER_PER_AARSTID)
+                    }
+                    transform="rotate(-90 32 32)"
+                />
+                <text
+                    x="32"
+                    y="36"
+                    textAnchor="middle"
+                    className="fill-white font-display text-[15px] font-bold"
+                >
+                    {klokke.aar}
+                </text>
+            </svg>
+            <div className="w-24">
+                <p className="font-display text-sm font-bold" style={{ color: def.farge }}>
+                    {def.navn}
+                </p>
+                <p className="text-[10px] uppercase tracking-widest text-slate-400">
+                    Dag {dag} av {DAGER_PER_AARSTID}
+                </p>
+                <p className="mt-0.5 text-[11px] leading-tight text-slate-300">{def.mulig}</p>
             </div>
         </div>
     );

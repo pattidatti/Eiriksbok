@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
 import { finnNpc } from '../data/steder';
 import { EPOKER } from '../data/epoker';
-import { KAPITLER } from '../data/kapitler';
+import { KAPITLER, KAPITTEL_BY_NR } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
+import { prisFor, trinnFor } from '../engine/aere';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
 import type { ItemSlot, MellomspillDef, QuestDef } from '../types';
 import { Ramme } from './DialogOverlay';
@@ -77,7 +78,20 @@ export function InventoryPanel({ onLukk, onEndret }: { onLukk: () => void; onEnd
                 <Stat navn="Styrke" verdi={maks.styrke} />
                 <Stat navn="Vern" verdi={maks.vern} />
                 <Stat navn="Sølv" verdi={store.solv} />
+                {/*
+                    Æren står her bare i kapitler som lar henne flytte den. Et
+                    tall hun ikke kan gjøre noe med, er et tall hun lærer å se
+                    forbi - og da ser hun forbi det den dagen det gjelder.
+                */}
+                {KAPITTEL_BY_NR[store.kapittel]?.systemer?.aere && (
+                    <Stat navn="Ære" verdi={store.aere} />
+                )}
             </section>
+            {KAPITTEL_BY_NR[store.kapittel]?.systemer?.aere && (
+                <p className="mb-5 -mt-3 text-xs text-slate-400">
+                    {trinnFor(store.aere).navn}. {trinnFor(store.aere).folk}
+                </p>
+            )}
 
             <section className="mb-5">
                 <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
@@ -387,6 +401,7 @@ export function ButikkPanel({ npcId, onLukk }: { npcId: string; onLukk: () => vo
     const sekk = useRpgStore((s) => s.sekk);
     const utstyr = useRpgStore((s) => s.utstyr);
     const kjop = useRpgStore((s) => s.kjop);
+    const aere = useRpgStore((s) => s.aere);
     if (!npc?.handler) return null;
 
     const eier = (id: string) => sekk.includes(id) || Object.values(utstyr).includes(id);
@@ -411,7 +426,11 @@ export function ButikkPanel({ npcId, onLukk }: { npcId: string; onLukk: () => vo
                 {npc.handler.varer.map((id) => {
                     const item = ITEM_BY_ID[id];
                     if (!item?.pris) return null;
-                    const harRaad = solv >= item.pris;
+                    // Prisen kommer fra samme funksjon som `kjop` bruker. To
+                    // steder som regner den hver for seg, blir uenige den dagen
+                    // noen justerer kurven.
+                    const pris = prisFor(item.pris, aere);
+                    const harRaad = solv >= pris;
                     const alt = eier(id);
                     return (
                         <li
@@ -440,7 +459,7 @@ export function ButikkPanel({ npcId, onLukk }: { npcId: string; onLukk: () => vo
                                 onClick={() => kjop(id)}
                                 className="shrink-0 rounded-lg bg-amber-400 px-3 py-2 text-xs font-bold text-slate-900 transition enabled:hover:bg-amber-300 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-slate-400"
                             >
-                                {alt ? 'Har den' : `${item.pris} sølv`}
+                                {alt ? 'Har den' : `${pris} sølv`}
                             </button>
                         </li>
                     );

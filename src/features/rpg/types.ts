@@ -362,10 +362,82 @@ export interface KapittelDef {
     tittel: string;
     /** Hvem eleven er. Ikke en avatar - en person. */
     rolle: { navn: string; alder: number; stand: Stand; kjonn: 'kvinne' | 'mann' };
+    /** Ætten hun hører til. Avgjør hvem hevnerne er, og hvem som skylder henne. */
+    aettId: string;
     /** Åpningsteksten. Vises én gang, når kapittelet begynner. */
     opptakt: { tittel: string; tekst: string };
     steg: StegDef[];
     mellomspillEtter: string | null;
+    /**
+     * Systemene kapittelet faktisk bruker, og som HUD-en derfor viser.
+     *
+     * Ære og årshjul finnes i hele kampanjen som samfunn, men de er ikke
+     * spillbare i hvert kapittel. En ærestolpe i 793 som ingenting kan flytte,
+     * er et grensesnitt som lover noe spillet ikke har - og det er nøyaktig
+     * feilen mana-stolpen gjorde før besvergelsene ble pensjonert (§15).
+     */
+    systemer?: { aere?: boolean; aarshjul?: boolean };
+}
+
+// ─── Ære, ætt og ting ───────────────────────────────────────────────────────
+//
+// Blueprint §7.1 og §7.2. Ære er personlig og dør med personen; ætt-æren arves.
+// Et drap uten lysing er ikke drap, det er mord, og mord kan ikke bøtes.
+
+export interface AettDef {
+    id: string;
+    navn: string;
+    /** Folk som hører til. Navnene brukes av hevnen og av tinget. */
+    medlemmer: string[];
+    /** Mannebot per stand, i mark sølv. Se data/aetter.ts for hvorfor tallene. */
+    botsatser: Record<Stand, number>;
+}
+
+/** Hvordan én ætt ser på eleven akkurat nå. */
+export interface AettTilstand {
+    /** -100 til 100. Under null vil de deg noe. */
+    velvilje: number;
+    /** Uoppgjorte drap eleven står ansvarlig for. Hevnerne blir flere per drap. */
+    uoppgjort: number;
+}
+
+export type Gjerning = 'drap' | 'tyveri' | 'aereskrenkelse';
+
+export interface Sak {
+    id: string;
+    gjerning: Gjerning;
+    gjerningsmann: string;
+    offer: string;
+    /** Ætten som skal ha boten, og som ellers tar hevn. */
+    offersAett: string;
+    /** Standen avgjør hvor mye et liv koster. */
+    offersStand: Stand;
+    /** Lyst innen ett døgn? Ellers er det mord, og mord kan ikke bøtes. */
+    lyst: boolean;
+    /** Dagen på årshjulet gjerningen skjedde. Fristen måles herfra. */
+    skjeddeDag: number;
+    vitner: string[];
+    /** Lovhjemmelen eleven anførte. Feil hjemmel taper saken selv om hun har rett. */
+    anfort: string | null;
+    dom: 'ubehandlet' | 'bot' | 'fredlos' | 'frikjent';
+}
+
+// ─── Årshjulet ──────────────────────────────────────────────────────────────
+
+export type Aarstid = 'vaar' | 'sommer' | 'host' | 'vinter';
+
+/**
+ * Tiden i epoken.
+ *
+ * Årstiden står ikke her, den regnes ut av dagen (`aarstidFor` i
+ * engine/klokke.ts). To felt som beskriver det samme driver fra hverandre
+ * første gang noen setter dagen uten å sette årstiden - og da står gården og
+ * sår korn i november.
+ */
+export interface Klokke {
+    aar: number;
+    /** 1 til og med `AARETS_DAGER`. */
+    dag: number;
 }
 
 // ─── Minnetreet ─────────────────────────────────────────────────────────────
@@ -1062,6 +1134,22 @@ export interface EpokeKampanje {
      * bare gjelder inne i ett kapittel er ikke verdt et felt.
      */
     flagg: Record<string, boolean>;
+    /**
+     * Ættens rykte. Arves, i motsetning til personens egen ære.
+     *
+     * Dette er den beste grunnen til at kapittel 1 skal spille inn i kapittel
+     * 2: Åsa begynner ikke på null, hun begynner på halvparten av det faren
+     * hennes etterlot seg (§12.1).
+     */
+    aettAere: number;
+    /** Hva hver ætt mener om eleven, og hva de har til gode. */
+    aetter: Record<string, AettTilstand>;
+    /** Sakene: reist, ført og dømt. Følger ætten, ikke personen. */
+    saker: Sak[];
+    /** Fredløs? Da er halve kartet fiendtlig. Det er en tilstand, ikke en slutt. */
+    fredlos: boolean;
+    /** Tiden. `aar` går aldri bakover, uansett hva et kapittel gjør. */
+    klokke: Klokke;
 }
 
 /**
@@ -1082,6 +1170,13 @@ export interface EpokeKapittel {
     /** Item-id-er i sekken. */
     sekk: string[];
     utstyr: Record<ItemSlot, string | null>;
+    /**
+     * Personens egen ære, 0-100.
+     *
+     * Står her og ikke i kampanjen fordi den dør med personen. Det ætten sitter
+     * igjen med, er `aettAere`, og det er et annet og mindre tall.
+     */
+    aere: number;
 }
 
 export interface EpokeSave {

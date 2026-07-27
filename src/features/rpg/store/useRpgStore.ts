@@ -20,6 +20,7 @@ import { START_EPOKE } from '../data/epoker';
 import { forsteStedI, START_STED } from '../data/steder';
 import { sfx } from '../engine/audio';
 import type {
+    AettTilstand,
     CharacterDraft,
     EpokeKampanje,
     EpokeKapittel,
@@ -27,10 +28,17 @@ import type {
     Forstaaelse,
     HubSpor,
     ItemSlot,
+    Klokke,
     QuestDef,
+    Sak,
     SaveState,
     VaapenDef,
 } from '../types';
+import { AERE_GRUNNER, klampAere, prisFor, type AereGrunn } from '../engine/aere';
+// Døpt om ved importen: handlingen i storen heter det samme, og to like navn i
+// samme fil er en feil som ser riktig ut helt til noen leser den.
+import { AARSTID, gaaDager as tikkKlokke } from '../engine/klokke';
+import { KAPITLER } from '../data/kapitler';
 
 /**
  * Kjøretidstilstanden.
@@ -76,6 +84,17 @@ export interface RpgState {
     kilder: string[];
     /** Valg som huskes: brente skriptoriet, tok bøkene, og resten. */
     flagg: Record<string, boolean>;
+    /** Personens egen ære, 0-100. Dør med personen. */
+    aere: number;
+    /** Ættens rykte. Arves til neste kapittel som et forsprang. */
+    aettAere: number;
+    /** Hva hver ætt mener om eleven. */
+    aetter: Record<string, AettTilstand>;
+    /** Sakene, reist og dømt. */
+    saker: Sak[];
+    fredlos: boolean;
+    /** Tiden på gården. */
+    klokke: Klokke;
     /** Beskjeder som HUD-en viser som «toast». */
     varsler: { id: number; tekst: string; art: 'info' | 'bra' | 'darlig' | 'niva' }[];
 
@@ -100,6 +119,25 @@ export interface RpgState {
     felleBoss: (bossId: string) => void;
     /** Et kapittelsteg er gjort. Trygg å kalle to ganger. */
     fullforSteg: (stegId: string) => void;
+    /**
+     * Æren flytter seg, med en grunn som står i loggen.
+     *
+     * Grunnen er ikke pynt: en ærestolpe som beveger seg uten at eleven vet
+     * hvorfor, er en terning. Hun skal kunne peke på handlingen.
+     */
+    endreAere: (grunn: AereGrunn) => void;
+    /** Ære uten en fast grunn - kapittelets egne øyeblikk. */
+    giAere: (delta: number, tekst: string) => void;
+    /** Hvordan en ætt ser på eleven. Positivt er velvilje, negativt er strid. */
+    endreAett: (aettId: string, endring: Partial<AettTilstand>) => void;
+    /** La det gå dager på årshjulet. Melder fra når årstiden skifter. */
+    gaaDager: (dager: number, grunn?: string) => void;
+    /** Sett klokken. Brukes av kapittelskiftet, ikke av spillet. */
+    settKlokke: (klokke: Klokke) => void;
+    /** Reis en sak. Den ligger til den er ført på tinget. */
+    reisSak: (sak: Sak) => void;
+    /** Endre en sak: lyst, vitner, anført lov, dom. */
+    endreSak: (sakId: string, endring: Partial<Sak>) => void;
     /**
      * Løft et begrep i minnetreet. `hort` er gratis; `forstatt` teller i «Min
      * læring», og bare første gang.
@@ -165,6 +203,13 @@ const tomKampanje = (): EpokeKampanje => ({
     sette: [],
     kilder: [],
     flagg: {},
+    aettAere: 0,
+    aetter: {},
+    saker: [],
+    fredlos: false,
+    // Klokken begynner der kampanjen begynner. Et år på null ville stått og
+    // lyst i HUD-en første gang en epoke skrur på årshjulet.
+    klokke: { aar: KAPITLER[0].aar, dag: 1 },
 });
 
 /**
@@ -185,6 +230,9 @@ const tomtKapittel = (character: CharacterDraft | null): EpokeKapittel => {
         solv: 0,
         sekk: klasse ? [klasse.startWeapon] : [],
         utstyr: klasse ? { ...TOM_UTSTYR, vapen: klasse.startWeapon } : { ...TOM_UTSTYR },
+        // Femti er «en av oss»: hun er verken utstøtt eller kjent. Den som
+        // arver noe, får det gjennom `startAere` ved kapittelskiftet.
+        aere: 50,
     };
 };
 
@@ -233,6 +281,11 @@ const aktivEpoke = (s: RpgState): EpokeSave => ({
         sette: s.sette,
         kilder: s.kilder,
         flagg: s.flagg,
+        aettAere: s.aettAere,
+        aetter: s.aetter,
+        saker: s.saker,
+        fredlos: s.fredlos,
+        klokke: s.klokke,
     },
     kapittelState: {
         hp: s.hp,
@@ -240,6 +293,7 @@ const aktivEpoke = (s: RpgState): EpokeSave => ({
         solv: s.solv,
         sekk: s.sekk,
         utstyr: s.utstyr,
+        aere: s.aere,
     },
 });
 
@@ -508,11 +562,20 @@ export const useRpgStore = create<RpgState>()(
                 }
             },
 
+            /**
+             * Prisen står ikke på varen, den står på deg.
+             *
+             * Bera tar mer av en hun ikke vet om hun får se igjen. Det er den
+             * billigste måten å gjøre æren merkbar på lenge før noen slår seg:
+             * eleven ser tallet endre seg i boden uten at spillet forklarer det.
+             */
             kjop: (itemId) => {
                 const item = ITEM_BY_ID[itemId];
                 const state = get();
-                if (!item?.pris || state.solv < item.pris) return false;
-                set({ solv: state.solv - item.pris, sekk: [...state.sekk, itemId] });
+                if (!item?.pris) return false;
+                const pris = prisFor(item.pris, state.aere);
+                if (state.solv < pris) return false;
+                set({ solv: state.solv - pris, sekk: [...state.sekk, itemId] });
                 get().varsle(`Kjøpt: ${item.name}.`, 'bra');
                 return true;
             },
@@ -543,6 +606,78 @@ export const useRpgStore = create<RpgState>()(
                 if (s.steg.includes(stegId)) return;
                 set({ steg: [...s.steg, stegId] });
             },
+
+            // ── Ære, ætt og tid ─────────────────────────────────────────────
+
+            endreAere: (grunn) => {
+                const { delta, tekst } = AERE_GRUNNER[grunn];
+                get().giAere(delta, tekst);
+            },
+
+            /**
+             * Æren flytter seg, og eleven får vite hvorfor i samme øyeblikk.
+             *
+             * Varselet er ikke pynt. En stolpe som beveger seg uten en setning
+             * ved siden av, leser som en terning - og da slutter eleven å tro
+             * at hun styrer den.
+             */
+            giAere: (delta, tekst) => {
+                const s = get();
+                const ny = klampAere(s.aere + delta);
+                if (ny === s.aere) return;
+                set({ aere: ny });
+                const fortegn = delta > 0 ? '+' : '';
+                get().varsle(`${tekst} (${fortegn}${delta} ære)`, delta > 0 ? 'bra' : 'darlig');
+            },
+
+            endreAett: (aettId, endring) => {
+                const s = get();
+                const na = s.aetter[aettId] ?? { velvilje: 0, uoppgjort: 0 };
+                set({
+                    aetter: {
+                        ...s.aetter,
+                        [aettId]: {
+                            velvilje: Math.max(
+                                -100,
+                                Math.min(100, na.velvilje + (endring.velvilje ?? 0))
+                            ),
+                            uoppgjort: Math.max(0, na.uoppgjort + (endring.uoppgjort ?? 0)),
+                        },
+                    },
+                });
+            },
+
+            /**
+             * Dager går.
+             *
+             * Ingenting annet skjer her. Hva et årstidsskifte *betyr* - at
+             * åkeren skulle vært sådd, at ingen seiler om vinteren - eies av
+             * kapittelet. Ellers ville en gård kunne sulte som bivirkning av at
+             * noen spurte om datoen.
+             */
+            gaaDager: (dager, grunn) => {
+                const s = get();
+                const { klokke, skifte } = tikkKlokke(s.klokke, dager);
+                set({ klokke });
+                if (grunn) get().varsle(`${grunn} (${dager} dager)`, 'info');
+                if (skifte) {
+                    const a = AARSTID[skifte];
+                    get().varsle(`${a.navn}. ${a.laerer}`, 'niva');
+                }
+            },
+
+            settKlokke: (klokke) => set({ klokke }),
+
+            reisSak: (sak) => {
+                const s = get();
+                if (s.saker.some((x) => x.id === sak.id)) return;
+                set({ saker: [...s.saker, sak] });
+            },
+
+            endreSak: (sakId, endring) =>
+                set((s) => ({
+                    saker: s.saker.map((x) => (x.id === sakId ? { ...x, ...endring } : x)),
+                })),
 
             /**
              * Minnetreet. `hort` koster ingenting og teller ingenting - det er
@@ -766,6 +901,9 @@ export const useRpgStore = create<RpgState>()(
                                 solv: (s.solv ?? 0) + stavsolv,
                                 sekk: s.sekk ?? [],
                                 utstyr: { ...TOM_UTSTYR, ...s.utstyr },
+                                // Ingen elev har spilt et kapittel med ære
+                                // ennå. Alle kommer inn som «en av oss».
+                                aere: tomt.aere,
                             },
                         },
                     },

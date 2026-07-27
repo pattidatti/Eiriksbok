@@ -46,6 +46,7 @@ export const KAPITLER: KapittelDef[] = [
         aar: 793,
         tittel: 'Skroget og stranda',
         rolle: { navn: 'Torstein Ormsson', alder: 17, stand: 'karl', kjonn: 'mann' },
+        aettId: 'nordvik',
         opptakt: {
             tittel: 'Nordvik, våren 793',
             tekst:
@@ -111,11 +112,15 @@ export const KAPITLER: KapittelDef[] = [
         aar: 872,
         tittel: 'Nøklene',
         rolle: { navn: 'Åsa Torsteinsdotter', alder: 34, stand: 'hauld', kjonn: 'kvinne' },
+        aettId: 'nordvik',
         opptakt: {
             tittel: 'Nordvik, 872',
             tekst: 'Alle våpenføre menn er sør ved Hafrsfjord. Gården er din.',
         },
         steg: [],
+        // 872 er kapittelet der de sosiale systemene *er* spillet: forrådet
+        // styres gjennom året, og æren kan gjøre at forsvarskampen ikke skjer.
+        systemer: { aere: true, aarshjul: true },
         mellomspillEtter: 'mellomspill-2',
     },
     {
@@ -124,6 +129,7 @@ export const KAPITLER: KapittelDef[] = [
         aar: 995,
         tittel: 'Blot eller dåp',
         rolle: { navn: 'Torgils', alder: 19, stand: 'karl', kjonn: 'mann' },
+        aettId: 'nordvik',
         opptakt: {
             tittel: 'Nordvik, 995',
             tekst: 'En knarr glir inn i fjorden. Tolv menn i brynje. Én i hvit kjortel.',
@@ -137,6 +143,7 @@ export const KAPITLER: KapittelDef[] = [
         aar: 1030,
         tittel: 'Stiklestad',
         rolle: { navn: 'Halvard', alder: 41, stand: 'karl', kjonn: 'mann' },
+        aettId: 'nordvik',
         opptakt: {
             tittel: 'Verdalen, 1030',
             tekst: 'Du er bonde. Du står i bondehæren. Mot kongen.',
@@ -150,6 +157,7 @@ export const KAPITLER: KapittelDef[] = [
         aar: 1066,
         tittel: 'Den som ikke kommer hjem',
         rolle: { navn: 'Orm den yngre', alder: 22, stand: 'karl', kjonn: 'mann' },
+        aettId: 'nordvik',
         opptakt: {
             tittel: 'Stamford Bridge, 1066',
             tekst: 'Brynjene ligger igjen på skipene, i sola, urørt.',
