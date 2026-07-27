@@ -318,6 +318,96 @@ export interface LootDrop {
     sjanse: number;
 }
 
+// ─── Kapittel ───────────────────────────────────────────────────────────────
+//
+// Nordvik er ikke en sone, det er en gård ved en fjord, og eleven spiller den
+// fem ganger over 273 år. Kapittelet sier hvem hun er denne gangen, hvilket år
+// det er, og hva som har endret seg på kartet siden sist.
+//
+// Se docs/Design documents/minnevokteren-nordvik-blueprint.md §2 og §4.
+
+export type Stand = 'trell' | 'karl' | 'hauld' | 'jarl';
+
+/**
+ * Ett steg i et kapittel.
+ *
+ * Framdriften er en liste med id-er i kampanjetilstanden, ikke et tall. Et tall
+ * kan bare gå én vei og sier ingenting om *hva* eleven gjorde; en liste tåler
+ * at hun tar skroget før hun har trent med Ravn, og den tåler at vi legger til
+ * et steg midt i uten at hvert lagrede spill i et klasserom hopper et hakk.
+ */
+export interface StegDef {
+    id: string;
+    tittel: string;
+    /** Én linje i oppdragsloggen. Sier hva hun skal, ikke hvordan. */
+    mal: string;
+    /** Stegene som må være ferdige før dette dukker opp. */
+    krever: string[];
+}
+
+export interface KapittelDef {
+    id: string;
+    nr: number;
+    aar: number;
+    tittel: string;
+    /** Hvem eleven er. Ikke en avatar - en person. */
+    rolle: { navn: string; alder: number; stand: Stand; kjonn: 'kvinne' | 'mann' };
+    /** Åpningsteksten. Vises én gang, når kapittelet begynner. */
+    opptakt: { tittel: string; tekst: string };
+    steg: StegDef[];
+    mellomspillEtter: string | null;
+}
+
+// ─── Minnetreet ─────────────────────────────────────────────────────────────
+//
+// Kunnskap er ikke et tall, det er handlingsrom (blueprint §7.4). Eleven kan
+// `[Klinkbygging]` fordi hun har bygget et skrog som fløt - ikke fordi hun
+// svarte riktig på et flervalgsspørsmål.
+
+export type Forstaaelse = 'ukjent' | 'hort' | 'forstatt';
+
+export interface BegrepDef {
+    id: string;
+    navn: string;
+    /** Kort forklaring, i elevens eget språk. Vises når begrepet løftes. */
+    forklaring: string;
+    /** Hva som løfter det til `forstatt`. Aldri et quizsvar. */
+    forstasVed: string;
+    /** Replikken hun kan bruke når hun forstår det. Blueprint §7.4. */
+    replikk: string;
+}
+
+// ─── Cutscenes ──────────────────────────────────────────────────────────────
+//
+// Bygget på det motoren alt har: kamera, tweens, spriteforge-figurer, låsen og
+// synten. Ingen video, ingen nye filer. Fire regler gjelder (blueprint §8):
+// ingen fakta som bare finnes her, alltid hoppbar, maks 40 sekunder, og vis
+// handling framfor replikk.
+
+export type Klipp =
+    | { art: 'letterbox'; pa: boolean }
+    | { art: 'kamera'; til: [number, number]; ms: number }
+    | { art: 'folg'; hvem: string | 'spiller' }
+    | { art: 'gaa'; hvem: string | 'spiller'; til: [number, number]; ms?: number }
+    | { art: 'vend'; hvem: string | 'spiller'; retning: Retning }
+    | { art: 'si'; hvem: string; tekst: string; ms?: number }
+    | { art: 'tanke'; tekst: string; ms?: number }
+    | { art: 'vent'; ms: number }
+    | { art: 'toning'; inn: boolean; ms: number; farge?: number }
+    | { art: 'ryst'; ms: number; styrke: number }
+    | { art: 'lyd'; navn: 'horn' | 'dialog' | 'treSprak' | 'skjold' | 'bossBrol' | 'pil' }
+    | { art: 'musikk'; rot: number; modus?: number }
+    | { art: 'stille' }
+    | { art: 'taake'; tetthet: number; ms: number }
+    | { art: 'flytt'; hvem: string | 'spiller'; til: [number, number] }
+    | { art: 'sett'; hvem: string; synlig: boolean };
+
+export interface KlippDef {
+    id: string;
+    /** Sekvensen. Spilles i rekkefølge, og eleven kan hoppe over etter første visning. */
+    steg: Klipp[];
+}
+
 // ─── Besvergelser ───────────────────────────────────────────────────────────
 
 export type SpellKind = 'prosjektil' | 'nova' | 'stråle' | 'skjold' | 'helbred';
@@ -483,6 +573,8 @@ export interface NpcDef {
     role: string;
     /** Rutenettkoordinat i sonen. */
     tile: [number, number];
+    /** Hvilken vei hun ser når hun står i ro. Ned om ingen sier noe annet. */
+    ser?: Retning;
     palette: { tunic: string; trim: string; hair: string };
     /** Det NPC-en sier når du snakker uten aktiv quest. */
     smalltalk: string[];
@@ -742,6 +834,21 @@ export interface EpokeKampanje {
     lest: string[];
     /** Drepte bosser. */
     bosser: string[];
+    /**
+     * Kapittelstegene hun har gjort. Arves fordi kapittel 2 skal kunne spørre
+     * om hun bygget skroget selv i 793.
+     */
+    steg: string[];
+    /** Minnetreet: begrep-id → hvor langt hun har kommet med det. */
+    begreper: Record<string, Forstaaelse>;
+    /** Cutscenene hun har sett. En sett cutscene kan hoppes over. */
+    sette: string[];
+    /**
+     * Valg som skal huskes på tvers av steder og kapitler - «brente
+     * skriptoriet», «tok guttene». Ett flatt navnerom, med vilje: et valg som
+     * bare gjelder inne i ett kapittel er ikke verdt et felt.
+     */
+    flagg: Record<string, boolean>;
 }
 
 /**

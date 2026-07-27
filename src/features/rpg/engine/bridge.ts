@@ -48,6 +48,16 @@ export interface SceneEvents {
      * noen gang trenger nettverkskode.
      */
     minStilling: Stilling;
+    /**
+     * En cutscene begynner eller slutter. Bjelkene legges av React oppå
+     * lerretet, ikke inne i scenen: et lag i Phaser ville blitt skalert av
+     * kamerazoomen, og da er en bjelke på 24 piksler plutselig 96 høy.
+     */
+    klipp: { pa: boolean; kanHoppes: boolean };
+    /** Replikken i en cutscene. `hvem: null` er elevens egen tanke. */
+    klippTekst: { hvem: string | null; tekst: string } | null;
+    /** Åpne et av kapittelets puzzle-overlegg. */
+    puzzle: { id: 'skroget' | 'navigasjonen' };
 }
 
 export interface UiEvents {
@@ -80,6 +90,12 @@ export interface UiEvents {
     gjester: { liste: Gjest[] };
     /** Eleven sendte en følelse selv. Vises over hennes eget hode også. */
     folelse: { emoji: string | null };
+    /** Neste replikk i cutscenen. */
+    klippVidere: Record<string, never>;
+    /** Hopp over hele cutscenen. Bare tillatt når hun har sett den før. */
+    klippHoppOver: Record<string, never>;
+    /** Et puzzle er avsluttet. `lost` er falsk når eleven ga opp. */
+    puzzleSvar: { id: string; lost: boolean };
 }
 
 class Emitter<Events> {

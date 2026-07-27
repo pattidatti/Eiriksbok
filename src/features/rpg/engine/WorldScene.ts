@@ -11,11 +11,12 @@ import { ENEMY_BY_ID, ENEMIES } from '../data/enemies';
 import { regelsettFor } from '../data/epoker';
 import { forsteStedI, stedEllerStart } from '../data/steder';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
-import type { EnemyDef, QuestDef, Sted } from '../types';
+import type { EnemyDef, KlippDef, QuestDef, Sted } from '../types';
 import { sfx, startMusikk, stopMusikk } from './audio';
 import { fraSpill, tilSpill } from './bridge';
 import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
+import { spillKlipp, type KlippKontekst } from './klipp';
 import { Portaler } from './portal';
 import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
@@ -94,6 +95,8 @@ export class WorldScene extends Phaser.Scene {
 
     private quester: QuestDef[] = [];
     private laast = false;
+    /** Går det en cutscene? Da hviler E-tasten og alt annet som vil ha den. */
+    private klippGaar = false;
     private avmeldinger: (() => void)[] = [];
     /** En reise er bestilt. Hindrer at to avreiser overlapper. */
     private reiser = false;
@@ -691,11 +694,60 @@ export class WorldScene extends Phaser.Scene {
      * Setter eleven et annet sted på kartet.
      *
      * Finnes for prøveskriptene: å gå åtte sekunder langs tidslinjeveien er en
-     * fin opplevelse for en elev og bortkastet tid for en måling. Cutscenene i
-     * etappe 2 trenger det samme.
+     * fin opplevelse for en elev og bortkastet tid for en måling. Cutscenene
+     * bruker det samme.
      */
     flyttHelt(x: number, y: number) {
         this.helt.sprite.setPosition(x, y);
+    }
+
+    // ── Cutscenes ───────────────────────────────────────────────────────────
+
+    /**
+     * Spiller et klipp og løser når det er over.
+     *
+     * Den som kaller, eier hva som skjer etterpå - avspilleren gjør ingenting
+     * med spilltilstanden. Det er ikke en forglemmelse: en cutscene som kan
+     * dele ut sølv eller sette et flagg, er en cutscene noen kommer til å legge
+     * fagstoff inn i, og blueprintens §8 regel 1 sier at det aldri skal skje.
+     */
+    async spillKlipp(def: KlippDef): Promise<void> {
+        if (this.klippGaar) return;
+        this.klippGaar = true;
+        const sett = useRpgStore.getState().sette.includes(def.id);
+        try {
+            await spillKlipp(def, this.klippKontekst(), sett);
+        } finally {
+            this.klippGaar = false;
+            useRpgStore.getState().markerSett(def.id);
+        }
+    }
+
+    /** Går det et klipp nå? Prøveskriptene leser det, og E-tasten hviler. */
+    get klippAktivt(): boolean {
+        return this.klippGaar;
+    }
+
+    private klippKontekst(): KlippKontekst {
+        return {
+            scene: this,
+            laas: (pa) => this.settLaast(pa),
+            aktor: (hvem) =>
+                hvem === 'spiller' ? this.helt.sprite : this.samhandling.sprite(hvem),
+            navn: (hvem) =>
+                hvem === 'spiller'
+                    ? (useRpgStore.getState().character?.name ?? 'Du')
+                    : (this.samhandling.navn(hvem) ?? hvem),
+            vend: (hvem, retning) => {
+                if (hvem === 'spiller') this.helt.vend(retning);
+                else this.samhandling.vend(hvem, retning);
+            },
+            folgSpiller: () => {
+                const cam = this.cameras.main;
+                cam.startFollow(this.helt.sprite, true, 0.12, 0.12);
+            },
+            taake: (tetthet, ms) => this.verden.settTaake(tetthet, ms),
+        };
     }
 
     // ── Småting som gjør det digg ───────────────────────────────────────────

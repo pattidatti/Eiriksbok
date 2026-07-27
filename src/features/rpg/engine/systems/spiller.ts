@@ -298,6 +298,20 @@ export class Spiller {
         }
     }
 
+    /**
+     * Vender figuren. Cutscenene bruker den; styringen setter retningen selv.
+     *
+     * `forrigeFrame` må nullstilles. Animasjonsløkka bytter bare ramme når
+     * tallet faktisk endrer seg, og står hun i idle-fase 0 begge veier, er
+     * rammenummeret det samme - da ville hun blitt stående og se feil vei
+     * gjennom hele klippet.
+     */
+    vend(retning: Dir): void {
+        this.retning = retning;
+        this.forrigeFrame = -1;
+        this.sprite.setFrame(heltFrame(retning, this.positur, this.posFase));
+    }
+
     /** Alt står stille mens eleven leser. */
     stopp(): void {
         if (this.sprite.body?.enable) this.sprite.setVelocity(0, 0);

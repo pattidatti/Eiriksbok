@@ -11,6 +11,7 @@ import { CharacterCreator } from './components/CharacterCreator';
 import { DialogOverlay, LandmarkOverlay } from './components/DialogOverlay';
 import { Hud } from './components/Hud';
 import { HubHud } from './components/HubHud';
+import { Klippscene } from './components/Klippscene';
 import { rustningTier } from './data/classes';
 import { useHubRom } from './net/useHubRom';
 import { Atmosfare, Skjermkontroll } from './components/Skjermkontroll';
@@ -74,6 +75,14 @@ export default function RpgPage() {
     } | null>(null);
     /** Pust, gard og skjoldslitasje. Kommer fra scenen ~11 ganger i sekundet. */
     const [kamp, setKamp] = useState<KampSnapshot | null>(null);
+    /** Går det en cutscene? Da eier den skjermen. */
+    const [klipp, setKlipp] = useState<{ pa: boolean; kanHoppes: boolean }>({
+        pa: false,
+        kanHoppes: false,
+    });
+    const [klippTekst, setKlippTekst] = useState<{ hvem: string | null; tekst: string } | null>(
+        null
+    );
     const [touch] = useState(harBeroring);
 
     // ── Hallen, delt med andre ──────────────────────────────────────────────
@@ -184,6 +193,14 @@ export default function RpgPage() {
                 });
             }),
             fraSpill.on('hint', ({ tekst }) => setHint(tekst)),
+            fraSpill.on('klipp', (k) => {
+                setKlipp(k);
+                // HUD-en skal ikke ligge oppå en cutscene, og et hint om at E
+                // snakker med Orm mens Orm står midt i klippet er verre enn
+                // ingen hint.
+                if (k.pa) setHint(null);
+            }),
+            fraSpill.on('klippTekst', (t) => setKlippTekst(t)),
             fraSpill.on('dod', () => setOverlegg({ type: 'dod' })),
             fraSpill.on('seier', () => setOverlegg({ type: 'seier' })),
             fraSpill.on('sone', (s) => {
@@ -265,7 +282,14 @@ export default function RpgPage() {
                 </div>
             )}
 
-            {character && klar && (
+            <Klippscene pa={klipp.pa} kanHoppes={klipp.kanHoppes} tekst={klippTekst} />
+
+            {/*
+                HUD-en tas ned mens et klipp går. Liv, pust og oppdragsteller
+                over en scene som skal bære et øyeblikk er det samme som å
+                skrive «du er i et spill» over den.
+            */}
+            {character && klar && !klipp.pa && (
                 <>
                     <Hud
                         hint={overlegg.type === 'ingen' ? hint : null}

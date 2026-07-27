@@ -13,6 +13,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { useProgressStore } from '../../progress/useProgressStore';
+import { BEGREP_BY_ID } from '../data/begreper';
 import { CLASS_BY_ID, CLASSES, levelFromXp, statsAt, xpForLevel } from '../data/classes';
 import { ITEM_BY_ID, equipmentBonus } from '../data/items';
 import { SPELL_BY_ID, newlyUnlockedSpells } from '../data/spells';
@@ -24,6 +25,7 @@ import type {
     EpokeKampanje,
     EpokeKapittel,
     EpokeSave,
+    Forstaaelse,
     HubSpor,
     ItemSlot,
     QuestDef,
@@ -67,6 +69,14 @@ export interface RpgState {
     galeSvar: number;
     lest: string[];
     bosser: string[];
+    /** Kapittelstegene hun har gjort. */
+    steg: string[];
+    /** Minnetreet: begrep-id → ukjent/hørt/forstått. */
+    begreper: Record<string, Forstaaelse>;
+    /** Cutscenene hun har sett. */
+    sette: string[];
+    /** Valg som huskes: brente skriptoriet, tok bøkene, og resten. */
+    flagg: Record<string, boolean>;
     /** Beskjeder som HUD-en viser som «toast». */
     varsler: { id: number; tekst: string; art: 'info' | 'bra' | 'darlig' | 'niva' }[];
 
@@ -91,6 +101,19 @@ export interface RpgState {
     lerSpell: (spellId: string) => void;
     markerLest: (landmarkId: string) => void;
     felleBoss: (bossId: string) => void;
+    /** Et kapittelsteg er gjort. Trygg å kalle to ganger. */
+    fullforSteg: (stegId: string) => void;
+    /**
+     * Løft et begrep i minnetreet. `hort` er gratis; `forstatt` teller i «Min
+     * læring», og bare første gang.
+     */
+    larBegrep: (begrepId: string, niva: Forstaaelse) => void;
+    /** Et puzzle er løst. Egen kontering fordi puzzlet er arbeidet, ikke begrepet. */
+    fullforPuzzle: (puzzleId: string, tittel: string) => void;
+    /** Kapittelet er i havn. */
+    fullforKapittel: (nr: number, tittel: string) => void;
+    markerSett: (klippId: string) => void;
+    settFlagg: (navn: string, verdi?: boolean) => void;
     varsle: (tekst: string, art?: 'info' | 'bra' | 'darlig' | 'niva') => void;
     fjernVarsel: (id: number) => void;
     hvil: () => void;
@@ -118,6 +141,10 @@ const tomKampanje = (): EpokeKampanje => ({
     galeSvar: 0,
     lest: [],
     bosser: [],
+    steg: [],
+    begreper: {},
+    sette: [],
+    flagg: {},
 });
 
 /**
@@ -183,6 +210,10 @@ const aktivEpoke = (s: RpgState): EpokeSave => ({
         galeSvar: s.galeSvar,
         lest: s.lest,
         bosser: s.bosser,
+        steg: s.steg,
+        begreper: s.begreper,
+        sette: s.sette,
+        flagg: s.flagg,
     },
     kapittelState: {
         hp: s.hp,
@@ -509,6 +540,89 @@ export const useRpgStore = create<RpgState>()(
                 });
             },
 
+            fullforSteg: (stegId) => {
+                const s = get();
+                if (s.steg.includes(stegId)) return;
+                set({ steg: [...s.steg, stegId] });
+            },
+
+            /**
+             * Minnetreet. `hort` koster ingenting og teller ingenting - det er
+             * bare at hun har møtt ordet. `forstatt` er det ekte, og det gis
+             * aldri for et quizsvar: den som kaller denne, har sett eleven
+             * gjøre noe.
+             *
+             * XP-en her hører til «Min læring», ikke til spillets eget nivå.
+             * De to tallene skal aldri møtes (blueprint §7.5): spillets XP sier
+             * hvor mye hun har slåss, dette sier hva hun har forstått, og det
+             * er det siste en lærer skal få se.
+             */
+            larBegrep: (begrepId, niva) => {
+                const s = get();
+                const begrep = BEGREP_BY_ID[begrepId];
+                if (!begrep) return;
+                const fra = s.begreper[begrepId] ?? 'ukjent';
+                const rang = { ukjent: 0, hort: 1, forstatt: 2 } as const;
+                if (rang[niva] <= rang[fra]) return;
+                set({ begreper: { ...s.begreper, [begrepId]: niva } });
+                if (niva !== 'forstatt') return;
+
+                get().varsle(`Du forstår ${begrep.navn}.`, 'niva');
+                useProgressStore.getState().recordActivity({
+                    kind: 'microgame-played',
+                    activityId: `oving/rpg/begrep/${begrepId}`,
+                    subjectId: 'historie',
+                    topicId: 'vikingtiden',
+                    score: 1,
+                    title: `Minnevokteren: ${begrep.navn}`,
+                });
+            },
+
+            /**
+             * Vakten er `steg`, ikke `recordActivity`. Storen deduplisererer
+             * riktignok selv, men et gjentak gir repetisjonsbonus - og et
+             * puzzle som gir XP hver gang eleven åpner det igjen, er et puzzle
+             * hun kommer til å åpne igjen.
+             */
+            fullforPuzzle: (puzzleId, tittel) => {
+                const s = get();
+                const merke = `puzzle:${puzzleId}`;
+                if (s.steg.includes(merke)) return;
+                set({ steg: [...s.steg, merke] });
+                useProgressStore.getState().recordActivity({
+                    kind: 'microgame-played',
+                    activityId: `oving/rpg/puzzle/${puzzleId}`,
+                    subjectId: 'historie',
+                    topicId: 'vikingtiden',
+                    score: 1,
+                    title: `Minnevokteren: ${tittel}`,
+                });
+            },
+
+            fullforKapittel: (nr, tittel) => {
+                const s = get();
+                const merke = `kapittel:${nr}`;
+                if (s.steg.includes(merke)) return;
+                set({ steg: [...s.steg, merke] });
+                useProgressStore.getState().recordActivity({
+                    kind: 'minigame-played',
+                    activityId: `oving/rpg/kapittel/${nr}`,
+                    subjectId: 'historie',
+                    topicId: 'vikingtiden',
+                    score: 1,
+                    title: `Minnevokteren: ${tittel}`,
+                });
+            },
+
+            markerSett: (klippId) => {
+                const s = get();
+                if (s.sette.includes(klippId)) return;
+                set({ sette: [...s.sette, klippId] });
+            },
+
+            settFlagg: (navn, verdi = true) =>
+                set((s) => ({ flagg: { ...s.flagg, [navn]: verdi } })),
+
             varsle: (tekst, art = 'info') => {
                 varselId += 1;
                 const id = varselId;
@@ -595,6 +709,13 @@ export const useRpgStore = create<RpgState>()(
                             kapittel: 1,
                             sisteSted: s.sisteSone ?? START_STED,
                             kampanje: {
+                                // Kapittelfeltene (`steg`, `begreper`, `sette`,
+                                // `flagg`) får default her som alle andre. De
+                                // kom til etter v4 og trengte likevel ingen ny
+                                // versjon: `merge` bygger hele tilstanden
+                                // gjennom `heleEpoken`, så en lagring uten dem
+                                // får tomme. Det er R6-arbeidet som betaler seg.
+                                ...tomKampanje(),
                                 quester,
                                 questForsok,
                                 riktigeSvar: s.riktigeSvar ?? 0,

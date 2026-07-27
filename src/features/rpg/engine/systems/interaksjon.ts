@@ -10,7 +10,7 @@
 // 1916 (blueprint R2).
 
 import Phaser from 'phaser';
-import type { LandmarkDef, NpcDef, QuestDef } from '../../types';
+import type { LandmarkDef, NpcDef, QuestDef, Retning } from '../../types';
 import { useRpgStore } from '../../store/useRpgStore';
 import { sfx } from '../audio';
 import { fraSpill } from '../bridge';
@@ -40,6 +40,8 @@ export class Interaksjon {
     private kroker: InteraksjonKroker;
 
     private npcSprites = new Map<string, Phaser.GameObjects.Sprite>();
+    /** Hvilken vei hver NPC ser. Pusteanimasjonen leser den hvert bilde. */
+    private npcRetning = new Map<string, Retning>();
     private npcMarkorer = new Map<string, Phaser.GameObjects.Image>();
     private landemerker = new Map<string, Phaser.GameObjects.Image>();
     private naermest: InteraksjonMaal | null = null;
@@ -95,9 +97,17 @@ export class Interaksjon {
                 yoyo: true,
                 repeat: -1,
                 onUpdate: (t) =>
-                    sprite.setFrame(heltFrame('ned', 'idle', (t.getValue() ?? 0) > 0.5 ? 1 : 0)),
+                    sprite.setFrame(
+                        heltFrame(
+                            this.npcRetning.get(npc.id) ?? 'ned',
+                            'idle',
+                            (t.getValue() ?? 0) > 0.5 ? 1 : 0
+                        )
+                    ),
             });
             this.npcSprites.set(npc.id, sprite);
+            this.npcRetning.set(npc.id, npc.ser ?? 'ned');
+            sprite.setFrame(heltFrame(npc.ser ?? 'ned', 'idle', 0));
 
             const markor = this.scene.add.image(sprite.x, sprite.y - 26, 'fx-utrop').setDepth(9000);
             this.scene.tweens.add({
@@ -301,5 +311,31 @@ export class Interaksjon {
     /** NPC-ene må sorteres inn i dybden sammen med alt annet som står på bakken. */
     oppdaterDybde(): void {
         for (const [, sprite] of this.npcSprites) sprite.setDepth(sprite.y);
+    }
+
+    /**
+     * Figuren til en NPC. Cutscene-avspilleren trenger den for å kunne la folk
+     * gå og snu seg - og den skal ikke lete i scenens visningsliste etter et
+     * navn, for da hadde to lag eid hvem som står hvor.
+     */
+    sprite(npcId: string): Phaser.GameObjects.Sprite | null {
+        return this.npcSprites.get(npcId) ?? null;
+    }
+
+    /** Navnet på en NPC, til replikkboksen i en cutscene. */
+    navn(npcId: string): string | null {
+        return this.npcer.find((n) => n.id === npcId)?.name ?? null;
+    }
+
+    /**
+     * Vender en NPC. Pusteanimasjonen skriver rammen hvert bilde, så en
+     * retningsendring må gå gjennom den - ikke gjennom `setFrame` alene, som
+     * ville blitt overskrevet i neste tick av tweenen.
+     */
+    vend(npcId: string, retning: Retning): void {
+        const sprite = this.npcSprites.get(npcId);
+        if (!sprite) return;
+        this.npcRetning.set(npcId, retning);
+        sprite.setFrame(heltFrame(retning, 'idle', 0));
     }
 }

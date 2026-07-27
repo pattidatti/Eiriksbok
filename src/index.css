@@ -558,3 +558,26 @@ body.dyslexia-mode h6 {
     animation: none;
   }
 }
+
+/*
+  Minnevokteren: bjelkene i en cutscene glir inn ovenfra og nedenfra. De
+  blinker ikke - et bilde som plutselig er innrammet leser som en feil, et
+  bilde som lukker seg leser som at noe skal skje.
+*/
+@keyframes klippBjelke {
+
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  [class*="klippBjelke"] {
+    animation: none;
+  }
+}

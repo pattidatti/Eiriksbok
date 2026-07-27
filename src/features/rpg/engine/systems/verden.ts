@@ -28,7 +28,13 @@ export class Verden {
 
     private vannLag: Phaser.GameObjects.RenderTexture[] = [];
     private vannFrame = 0;
-    private taakeflak: { bilde: Phaser.GameObjects.Image; fart: number }[] = [];
+    /**
+     * `grunnAlpha` er tettheten flaket ble bygget med. Uten den ville en
+     * nedtoning til null gjort at oppturen etterpå ganget med null - og tåka
+     * ville aldri kommet tilbake etter det første klippet.
+     */
+    private taakeflak: { bilde: Phaser.GameObjects.Image; fart: number; grunnAlpha: number }[] =
+        [];
     private baalLys: Phaser.GameObjects.Image[] = [];
     private baalPuls = 0;
 
@@ -305,7 +311,11 @@ export class Verden {
                 .setScale(naer ? 1.8 + Math.random() * 1.2 : 3 + Math.random() * 2)
                 .setAlpha(naer ? 0.11 + Math.random() * 0.07 : 0.15 + Math.random() * 0.09)
                 .setTint(hexToNum(this.tema.himmel));
-            this.taakeflak.push({ bilde: lag, fart: (naer ? 11 : 4) + Math.random() * 7 });
+            this.taakeflak.push({
+                bilde: lag,
+                fart: (naer ? 11 : 4) + Math.random() * 7,
+                grunnAlpha: lag.alpha,
+            });
         }
 
         // Bålet lyser. Ett bål i hele bygda, og det ga null lys.
@@ -320,6 +330,25 @@ export class Verden {
                 .setDepth(-800)
                 .setBlendMode(Phaser.BlendModes.ADD);
             this.baalLys.push(glo);
+        }
+    }
+
+    /**
+     * Toner tåkelaget opp eller ned. Cutscenene bruker den som vær: stranda
+     * ved Lindisfarne skal ikke ligge like tykk som naustet hjemme.
+     *
+     * Flakkene bygges én gang og tones - de rives ikke og bygges på nytt. Å
+     * lage tolv store gjennomsiktige flater midt i et klipp gir et hakk
+     * nøyaktig der klippet skal være rolig.
+     */
+    settTaake(tetthet: number, ms: number): void {
+        for (const flak of this.taakeflak) {
+            const mal = flak.grunnAlpha * Math.max(0, tetthet);
+            if (ms <= 0) {
+                flak.bilde.setAlpha(mal);
+                continue;
+            }
+            this.scene.tweens.add({ targets: flak.bilde, alpha: mal, duration: ms });
         }
     }
 
