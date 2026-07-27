@@ -11,7 +11,9 @@ import { ChokepointLayer } from './layers/ChokepointLayer';
 import { RiskZoneLayer } from './layers/RiskZoneLayer';
 import { COUNTRY_NAMES } from '../data/countryNames';
 
-const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+// Verdensgeometrien lastes LOKALT (public/data/world/) - aldri fra CDN. På Chromebook
+// i klasserom med ustabilt nett ville en CDN-henting gitt blank skjerm.
+const GEO_URL = '/data/world/countries-110m.json';
 
 const WIDTH = 900;
 const HEIGHT = 500;

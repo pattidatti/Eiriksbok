@@ -5,7 +5,9 @@ import { territoryHistory, countryColors, colonizationEvents, majorWars } from '
 import { Tooltip } from 'react-tooltip';
 
 
-const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+// Verdensgeometrien lastes LOKALT (public/data/world/) - aldri fra CDN. På Chromebook
+// i klasserom med ustabilt nett ville en CDN-henting gitt blank skjerm.
+const GEO_URL = '/data/world/countries-110m.json';
 
 interface MapChartProps {
     year: number;

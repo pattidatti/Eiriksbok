@@ -17,7 +17,9 @@ const TRADE_FLOWS = [
     { from: 'Brasil', fromCoord: [-51.9, -14.2], to: 'Kina', toCoord: [116.4, 39.9], label: 'Soyabønner, jernmalm, olje', volume: 'ca. 100 mrd. USD/år' },
 ];
 
-const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+// Verdensgeometrien lastes LOKALT (public/data/world/) - aldri fra CDN. På Chromebook
+// i klasserom med ustabilt nett ville en CDN-henting gitt blank skjerm.
+const GEO_URL = '/data/world/countries-110m.json';
 
 export function GlobalProductionDots({ title, description }: Props) {
     const [selected, setSelected] = useState<(typeof TRADE_FLOWS)[0] | null>(null);
