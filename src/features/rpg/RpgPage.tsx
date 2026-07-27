@@ -357,8 +357,8 @@ export default function RpgPage() {
 
                     {replikk && (
                         // Over hintlinja, ikke under. Nederst i bildet ligger
-                        // besvergelsesknappene, og en replikk oppå dem leser
-                        // som at grensesnittet har kollapset.
+                        // skjermkontrollen på nettbrett, og en replikk oppå
+                        // tommelen leser som at grensesnittet har kollapset.
                         <div className="pointer-events-none absolute bottom-[7.5rem] left-1/2 w-full max-w-xl -translate-x-1/2 px-3">
                             <div className="rounded-xl border border-amber-300/25 bg-slate-950/90 px-4 py-2.5 shadow-lg">
                                 <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-amber-300/90">

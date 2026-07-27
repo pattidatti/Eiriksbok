@@ -84,9 +84,7 @@ export function CharacterCreator({ onFerdig }: Props) {
                         </div>
                         <dl className="w-full space-y-1 text-xs text-slate-300">
                             <Rad navn="Liv" verdi={klasse.base.hp} />
-                            <Rad navn="Kraft" verdi={klasse.base.mana} />
                             <Rad navn="Styrke" verdi={klasse.base.styrke} />
-                            <Rad navn="Visdom" verdi={klasse.base.visdom} />
                             <Rad navn="Vern" verdi={klasse.base.vern} />
                         </dl>
                     </div>

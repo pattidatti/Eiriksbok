@@ -1,7 +1,4 @@
-import { SPELL_BY_ID } from '../data/spells';
 import { maksVerdier, nivaFremgang, useRpgStore } from '../store/useRpgStore';
-import { numToHex } from '../engine/pixels';
-import { tilSpill } from '../engine/bridge';
 import type { KampSnapshot } from '../engine/kamp';
 
 interface Props {
@@ -74,13 +71,6 @@ export function Hud({
                         rister={kamp.tom}
                     />
                 )}
-                <Stolpe
-                    verdi={store.mana}
-                    maks={maks.mana}
-                    farge="#4aa3e0"
-                    bak="#122a3a"
-                    merkelapp="Kraft"
-                />
                 {kamp && <Vernmerke kamp={kamp} />}
                 <Stolpe
                     verdi={fremgang.inn}
@@ -124,39 +114,6 @@ export function Hud({
                 <Knapp onClick={onApneSekk} tekst="Sekk" tast="I" />
                 <Knapp onClick={onApneLogg} tekst="Oppdrag" tast="L" merke={aktive || undefined} />
                 <Knapp onClick={onPause} tekst="Meny" tast="Esc" />
-            </div>
-
-            {/* Besvergelser nederst */}
-            <div className="pointer-events-auto absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-2">
-                {store.spells.slice(0, 4).map((id, i) => {
-                    const spell = SPELL_BY_ID[id];
-                    if (!spell) return null;
-                    const harRaad = store.mana >= spell.kostnad;
-                    return (
-                        <button
-                            key={id}
-                            type="button"
-                            onClick={() => tilSpill.emit('besvergelse', { spellId: id })}
-                            title={`${spell.name} - ${spell.beskrivelse}`}
-                            className={`relative h-14 w-14 rounded-xl border-2 bg-slate-900/85 transition ${
-                                harRaad
-                                    ? 'border-white/25 hover:border-white/60'
-                                    : 'border-white/10 opacity-45'
-                            }`}
-                        >
-                            <span
-                                className="absolute inset-2 rounded-lg"
-                                style={{ background: numToHex(spell.farge), opacity: 0.85 }}
-                            />
-                            <span className="absolute left-1 top-0.5 text-[10px] font-bold text-white/70">
-                                {i + 1}
-                            </span>
-                            <span className="absolute bottom-0.5 right-1 text-[10px] font-semibold text-white/80">
-                                {spell.kostnad}
-                            </span>
-                        </button>
-                    );
-                })}
             </div>
 
             {/*

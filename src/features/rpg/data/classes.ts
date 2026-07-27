@@ -8,11 +8,10 @@ export const CLASSES: ClassDef[] = [
         name: 'Skald',
         tagline: 'Ord som våpen',
         description:
-            'Du kjemper med fortellinger. Skalden treffer hardt og ofte, og henter kraft av å ha rett.',
+            'Du kjemper med fortellinger. Skalden treffer hardt og ofte, og kommer seg unna.',
         affinity: ['norsk', 'historie'],
-        base: { hp: 100, mana: 40, styrke: 7, visdom: 4, vern: 3 },
-        growth: { hp: 12, mana: 4, styrke: 2, visdom: 1, vern: 1 },
-        startSpell: 'ordskred',
+        base: { hp: 100, styrke: 7, vern: 3 },
+        growth: { hp: 12, styrke: 2, vern: 1 },
         startWeapon: 'ovingssverd',
         palette: { tunic: '#8b2f4a', trim: '#e8c96a' },
     },
@@ -21,11 +20,10 @@ export const CLASSES: ClassDef[] = [
         name: 'Runemester',
         tagline: 'Tegn som brenner',
         description:
-            'Du leser det andre ikke ser. Runemesteren har lite liv, men besvergelser som svir.',
+            'Du leser det andre ikke ser. Runemesteren har lite liv, men slår raskt.',
         affinity: ['krle', 'historie'],
-        base: { hp: 78, mana: 80, styrke: 4, visdom: 8, vern: 2 },
-        growth: { hp: 8, mana: 9, styrke: 1, visdom: 3, vern: 1 },
-        startSpell: 'runeglod',
+        base: { hp: 78, styrke: 4, vern: 2 },
+        growth: { hp: 8, styrke: 1, vern: 1 },
         startWeapon: 'bjorkestav',
         palette: { tunic: '#2f4b8b', trim: '#7fd4ff' },
     },
@@ -36,9 +34,8 @@ export const CLASSES: ClassDef[] = [
         description:
             'Du står imot. Vokteren tåler mest, og blir sterkere for hvert svar du får riktig.',
         affinity: ['samfunnskunnskap', 'historie'],
-        base: { hp: 130, mana: 30, styrke: 6, visdom: 3, vern: 7 },
-        growth: { hp: 18, mana: 3, styrke: 2, visdom: 1, vern: 2 },
-        startSpell: 'minneskjold',
+        base: { hp: 130, styrke: 6, vern: 7 },
+        growth: { hp: 18, styrke: 2, vern: 2 },
         startWeapon: 'rustet-oks',
         palette: { tunic: '#3c6b4a', trim: '#cfd8c0' },
     },
@@ -135,9 +132,7 @@ export function statsAt(classId: ClassId, level: number) {
     const steps = Math.max(0, level - 1);
     return {
         hp: def.base.hp + def.growth.hp * steps,
-        mana: def.base.mana + def.growth.mana * steps,
         styrke: def.base.styrke + Math.floor(def.growth.styrke * steps),
-        visdom: def.base.visdom + Math.floor(def.growth.visdom * steps),
         vern: def.base.vern + Math.floor(def.growth.vern * steps),
     };
 }

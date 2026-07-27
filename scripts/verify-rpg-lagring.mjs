@@ -109,7 +109,10 @@ const lesDisk = (page) =>
     const s = await les(page);
     sjekk('v3: karakteren følger med', s.navn === 'Torstein', s.navn);
     sjekk('v3: xp beholdes', s.xp === 120, s.xp);
-    sjekk('v3: sølv beholdes', s.solv === 37, s.solv);
+    // Besvergelsene er pensjonert (§15), og eleven skal ikke bare oppdage at
+    // de er borte: hun får 25 sølv per stav. Det lagrede spillet har én, så
+    // 37 + 25 = 62.
+    sjekk('v3: sølv beholdes, og stavene betales', s.solv === 62, s.solv);
     sjekk('v3: oppdrag beholdes', s.quester['nordvik-h1'] === 'ferdig');
     sjekk('v3: lest landemerke beholdes', s.lest.includes('langhuset'));
     sjekk('v3: felt boss beholdes', s.bosser.includes('den-store-glemselen'));
@@ -278,7 +281,7 @@ const lesDisk = (page) =>
     const s = await les(page);
     sjekk('hull: det som fantes står', s.xp === 88 && s.riktigeSvar === 4);
     sjekk('hull: lister blir tomme lister', Array.isArray(s.lest) && Array.isArray(s.bosser));
-    sjekk('hull: besvergelser blir tom liste', Array.isArray(s.spells));
+    sjekk('hull: besvergelser finnes ikke lenger', s.spells === undefined, String(s.spells));
     sjekk('hull: spillet står likevel', sidefeil.length === 0, sidefeil[0]);
     await ctx.close();
 }

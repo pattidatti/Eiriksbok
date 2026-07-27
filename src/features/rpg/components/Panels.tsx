@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
 import { finnNpc } from '../data/steder';
-import { SPELL_BY_ID } from '../data/spells';
 import { EPOKER } from '../data/epoker';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
 import type { ItemSlot, QuestDef } from '../types';
@@ -73,9 +72,7 @@ export function InventoryPanel({ onLukk, onEndret }: { onLukk: () => void; onEnd
 
             <section className="mb-5 grid grid-cols-2 gap-x-6 gap-y-1 rounded-xl bg-white/5 p-3 text-sm sm:grid-cols-3">
                 <Stat navn="Liv" verdi={maks.hp} />
-                <Stat navn="Kraft" verdi={maks.mana} />
                 <Stat navn="Styrke" verdi={maks.styrke} />
-                <Stat navn="Visdom" verdi={maks.visdom} />
                 <Stat navn="Vern" verdi={maks.vern} />
                 <Stat navn="Sølv" verdi={store.solv} />
             </section>
@@ -133,26 +130,12 @@ export function InventoryPanel({ onLukk, onEndret }: { onLukk: () => void; onEnd
                 )}
             </section>
 
-            <section>
-                <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                    Besvergelser
-                </h3>
-                <ul className="space-y-1.5">
-                    {store.spells.map((id) => {
-                        const spell = SPELL_BY_ID[id];
-                        if (!spell) return null;
-                        return (
-                            <li key={id} className="rounded-lg bg-white/5 px-3 py-2 text-sm">
-                                <span className="font-semibold text-slate-100">{spell.name}</span>
-                                <span className="ml-2 text-xs text-slate-400">
-                                    {spell.kostnad} kraft
-                                </span>
-                                <p className="text-xs text-slate-400">{spell.beskrivelse}</p>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </section>
+            {/*
+                Her sto besvergelsene. De er pensjonert (blueprint §15): Nordvik
+                har ingen trolldom, og det eleven kan i stedet er skjoldet,
+                paraden og våpenets manøver - ferdigheter, ikke et inventar.
+                Minnetreet tar over denne plassen når det bygges.
+            */}
         </Ramme>
     );
 }

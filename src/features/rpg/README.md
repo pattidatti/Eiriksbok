@@ -1,7 +1,12 @@
 # Minnevokteren (`/oving/rpg`)
 
-Et rollespill i sanntid der eleven spiller seg gjennom fagstoffet. Tåka
-(«Glemselen») spiser det folk husker, og eleven henter det tilbake.
+Et rollespill i sanntid der eleven spiller seg gjennom fagstoffet.
+
+**Hallen** er rammen: en tidslinje eleven går på, delt med klassen, med en
+portal per epoke. **Vikingtiden** er den ene ferdige epoken, og der spiller hun
+historien rett - ingen metafor. Kapittel 1 er 793: hun lærer skjoldet av Ravn,
+legger bordene i skroget selv, holder breddegraden vestover, og går i land på
+Lindisfarne.
 
 Dette er et eget spor, adskilt fra 3D-mini-spillmotoren i `src/games/engine/`
 og fra mikrospillene i `src/components/microgames/`.
@@ -14,6 +19,7 @@ og fra mikrospillene i `src/components/microgames/`.
 | **All grafikk tegnes prosedyralt** | Ingen bildefiler. Figurer bygges lagvis som en påkledningsdukke (`engine/spriteforge.ts`), så karakterskaping og synlig rustning koster ingenting i grafikkarbeid.               |
 | **All lyd syntetiseres**           | `engine/audio.ts` lager kamplyder og en generativ slått med Web Audio. Ingen lydfiler.                                                                                           |
 | **Spørsmål hentes fra boka**       | `scripts/generate-quest-bank.mjs` skanner alle Quiz-komponenter i `public/content/` og skriver `public/data/rpg/quest-bank.json`. Nytt fagstoff dukker automatisk opp i spillet. |
+| **Fagstoffet ligger i reglene**    | Kapittelet lærer ikke bort ved å fortelle. Eleven kan `[Klinkbygging]` fordi hun bygget et skrog som fløt, og `[Breddegradseiling]` fordi hun holdt høyden vestover. Hvis hun kan vinne uten å ha forstått det, lærer ikke spillet det bort. |
 
 ## Filer
 
@@ -23,9 +29,12 @@ types.ts                 Alle domenetyper
 data/
   classes.ts             Tre klasser, nivåkurve, utseendevalg
   items.ts               Våpen, rustning, amuletter, priser
-  spells.ts              Besvergelser (låses opp av riktige svar, ikke loot)
   enemies.ts             Fiendearketyper + bossen
   epoker.ts              De 11 epokene, én ferdig. Årstall, palett, regelsett, bank-sone.
+  kapitler.ts            De fem kapitlene i vikingtiden. Steg, roller, flagg.
+  begreper.ts            Minnetreet: det eleven kan fordi hun har gjort det
+  klipp/kapittel1.ts     Cutscenene: sjøsettingen og stranda
+  lindisfarne.ts         Klosteret: landemerkene, og valgene hun tar der
   hub.ts                 Minnevokterens hall: portaler, landemerker, benker, palett
   folelser.ts            De åtte ikonene elevene kan sende hverandre
   regelsett/viking.ts    Verb-kontrakten for vikingtiden: pust, skjold, rull
@@ -40,11 +49,15 @@ engine/
     fiender.ts           Fiende-AI, spawning, bossen og kunnskapsdysten
     verden.ts            Bakken, kollisjonen, objektene og atmosfæren
     interaksjon.ts       Hint, E-trykk, dialog-triggere, utropstegn
-    prosjektiler.ts      Alt som flyr: piler, kastespyd, besvergelser
+    prosjektiler.ts      Alt som flyr: piler og kastespyd
     effekter.ts          Partikler, flytende tall og glimt
     loot.ts              Sølv og gjenstander på bakken
     gjester.ts           De andre elevene: figur, navn, følelse, glidning
     entiteter.ts         Delte typer for systemene
+  klipp.ts               Cutscene-avspilleren
+  opplaering.ts          Fire økter på tunet, mot Ravn
+  raidet.ts              Lindisfarne, i to halvdeler
+  lindisfarnegen.ts      Bygger klosterøya
   farkost.ts             Båter: besittelse, styring og egen kollisjonsmaske
   portal.ts              Portalene: lys, skilt, hint og reisen mellom steder
   samvaer.ts             Benkene ved bålet, og følelsen over eget hode
@@ -63,7 +76,8 @@ net/
   navnevakt.ts           Hvilke navn et klasserom skal slippe å lese
 store/useRpgStore.ts     All spillertilstand, lagringsformatet + kobling til «Min læring»
 components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordring,
-                         sekk, logg, butikk, skjermkontroll og atmosfære-overlegg
+                         sekk, logg, butikk, skjermkontroll, atmosfære-overlegg,
+                         klippscene (bjelker og replikk), skroget og navigasjonen
 ```
 
 ## Slik henger læring og spill sammen
@@ -86,11 +100,12 @@ components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordr
 -   **Bossen er beskyttet.** Den store Glemselen tar ingen skade før eleven svarer
     riktig. Hvert riktige svar river ned ett skjold. Galt svar koster liv som går
     forbi usårbarheten.
--   **Besvergelser låses opp av kunnskap.** `SpellDef.krevesRiktige` er antall
-    riktige svar totalt - ikke nivå og ikke loot.
--   **«Min læring».** `fullforQuest()` og `felleBoss()` kaller
-    `useProgressStore.recordActivity()` med riktig fag og emne, så spillet teller
-    på lik linje med en quiz i boka.
+-   **«Min læring» teller forståelse, aldri drap.** Spillet har sitt eget
+    XP-tall til nivå og utstyr, og det er ikke det samme tallet. `recordActivity`
+    kalles fra fem steder og ingen av dem er en kamp: et begrep løftet til
+    «forstått», et puzzle løst, en tingsak ført til dom, et mellomspill, et
+    kapittel. Kobles den til drap, blir «Min læring» et mål på hvor mange eleven
+    har drept - og det er ikke tallet vi vil vise en lærer.
 
 ## Styring
 
@@ -103,7 +118,6 @@ components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordr
 | **Retning under gard**         | Vend garden, skjoldgang i 45 % fart         |
 | **Shift + mellomrom**          | Våpenets manøver (hak / stikk / skjoldstøt) |
 | E                              | Snakk / les / åpne / gå om bord / sett deg  |
-| 1-4                            | Besvergelser                                |
 | I / L / Esc                    | Sekk / oppdrag / meny                       |
 
 Shift betyr to ting, og det er ikke tvetydig: rullen har alltid krevd bevegelse
@@ -111,7 +125,7 @@ Shift betyr to ting, og det er ikke tvetydig: rullen har alltid krevd bevegelse
 Holder eleven Shift gjennom en rull, reiser garden seg i det rullen slutter.
 
 Håndkontroll støttes (venstre stikke går, A slår, B ruller, **RB holdt** er gard,
-RB+A er manøver, X kaster første besvergelse, Y samhandler). På berøringsskjerm
+RB+A er manøver, Y samhandler). På berøringsskjerm
 vises `Skjermkontroll` med analog styrestikke og knapper - uten den er spillet
 uspillbart på nettbrett. Der er garden en **veksling**, ikke et hold: tommelen kan
 ikke holde skjoldet og slå samtidig.
@@ -388,6 +402,62 @@ Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
 refaktoreringen er dermed ferdig. Neste er kapittel 1, etter Nordvik-blueprintens
 etappe 2.
 
+## Kapittel 1: 793
+
+Vikingtiden spilles som en kampanje over fem kapitler på samme gård
+(`docs/Design documents/minnevokteren-nordvik-blueprint.md`). Kapittel 1 er
+bygget; de fire andre står i `data/kapitler.ts` med rolle og år, og uten steg -
+et steg ingen har bygget er et løfte vi ikke kan holde.
+
+Framdriften er en **liste med steg-id-er** i kampanjetilstanden, ikke et tall.
+Et tall kan bare gå én vei og sier ingenting om hva eleven gjorde; en liste
+tåler at hun tar skroget før hun har trent med Ravn, og at vi legger inn et steg
+midt i uten at hvert lagrede spill i et klasserom hopper et hakk.
+
+| Steg | Hva | Hvor |
+| --- | --- | --- |
+| `k1-ravn` | Fire økter: slag, blokk, parade, alvor | `engine/opplaering.ts` |
+| `k1-skroget` | Legg bordene. Feil skrog synker synlig. | `components/Skroget.tsx` |
+| `k1-sjosettingen` | Skipet på vannet. Orm sier ingenting. | `data/klipp/kapittel1.ts` |
+| `k1-navigasjonen` | Hold breddegraden vestover, uten kompass | `components/Navigasjonen.tsx` |
+| `k1-stranda` | Klosteret ligger der. Det har ingen mur. | `data/klipp/kapittel1.ts` |
+| `k1-motstanden` | Øyas menn. Kampklimakset. | `engine/raidet.ts` |
+| `k1-byttet` | Det som er igjen. Valgene. | `data/lindisfarne.ts` |
+| `k1-hjem` | Orm spør hva du tok med | `data/nordvik.ts` |
+
+Ting som er lette å ødelegge her:
+
+-   **Ravn og raidet er de eneste som setter ut fiender selv.** Alt annet går
+    gjennom `Sted.spawner`, og den er tom både i hallen og på Lindisfarne.
+    Uten den lista ville hver ny motstander i `data/enemies.ts` begynt å vandre
+    rundt på hvert eneste kart - også på gårdstunet hjemme.
+-   **Kapittelhandlinger er ikke oppdrag.** Et oppdrag er et spørsmål med et
+    svar i verden, og det bygges av questmotoren fra spørsmålsbanken. En
+    handling (`NpcDef.handlinger`) er et sted i kapittelet: Ravn som reiser seg
+    fra stubben, Orm som rekker deg et bord. Scenen eier hva som skjer, dataene
+    sier bare hva knappen heter.
+-   **Cutscenene rydder i `finally`.** Bjelker, kamerafølge og tåketetthet
+    henger igjen for alltid hvis eleven hopper over midt i.
+-   **Kameraets ease heter `Sine.easeInOut`.** `Sine.InOut` finnes i
+    `Phaser.Math.Easing`, men ikke i `EaseMap`, og slår ut som «this.ease is not
+    a function» *inne i* kameraets oppdatering. Da stopper scenen, klippets
+    nedtelling fyrer aldri, og cutscenen blir hengende med låsen på.
+-   **Et sted uten NPC-er har ingen oppdrag.** `byggQuester` returnerer tom
+    liste. Uten den vakten reduserte giver-valget over en tom liste, og hele
+    reisen til Lindisfarne stoppet med en feil som pekte på questmotoren.
+
+### De to halvdelene på Lindisfarne
+
+Første halvdel er kapittelets kampklimaks, og den skal være deilig. Andre
+halvdel er de som ikke kan slåss. **Ingenting endrer regler:** angrepet virker
+likt, blodet ser likt ut. Spillet slutter bare å juble - ingen skadetall, ingen
+XP, ingen loot, ingen fanfare, og musikken faller til én tone (`startEnTone`).
+
+Hele forskjellen er ett flagg, `Fiende.stille`. Det er med vilje: en
+regelendring ville gjort det til en straff eleven kan lese seg til, og da blir
+det en preken. Kontrasten bærer, og fordi spillet ikke sier noe, sier det ikke
+for mye.
+
 ## Lagring
 
 Lagringen har to former, og de er med vilje ikke den samme.
@@ -427,7 +497,7 @@ hver gang eleven kommer fram et sted.
 
 ## Verifisering
 
-Elleve skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Fjorten skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 `window.__rpgSteder`, storen gjennom `window.__rpgStore`), som `boot.ts` bare
 eksponerer i dev.
@@ -452,6 +522,9 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-lagring.mjs`     | At et lagret spill overlever migreringen, og epokebytte   |
 | `verify-rpg-hub.mjs`         | Hallen: tidslinjen, varden, og reisen inn og hjem igjen   |
 | `verify-rpg-flerspiller.mjs` | Navnevakt, glidning, skjul, benk - og at epokene er alene |
+| `verify-rpg-opplaering.mjs`  | Ravns fire økter: at han ikke dør, at hun ikke dør       |
+| `verify-rpg-skroget.mjs`     | Feil skrog synker, riktig gir begrepet og sjøsettingen  |
+| `verify-rpg-lindisfarne.mjs` | Ferden vestover, raidet, stillheten, valgene og hjemveien |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir
@@ -476,8 +549,8 @@ Kampegenskapene ligger i to lag: tallene på gjenstanden (`VaapenDef` i
 
 Et nytt skytevåpen er derfor data, ikke en ny gren i `slaa()`: et gevær i 1916
 er bua med andre tall og lengre ladetid. Skudd som er fysiske gjenstander må
-settes med `fysisk: true` - da peker de dit de flyr og pulserer ikke, slik
-besvergelsene skal.
+settes med `fysisk: true` - da peker de dit de flyr og pulserer ikke. Pulsen
+hørte til besvergelsene, og de er borte.
 
 Fiendene har `sarslag` etter samme tanke: hvert n-te slag går gjennom garden
 (`ublokkerbart`) eller river skjoldet (`hak`), og det telegraferes i egen farge.

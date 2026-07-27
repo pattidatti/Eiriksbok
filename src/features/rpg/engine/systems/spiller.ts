@@ -12,7 +12,6 @@
 import Phaser from 'phaser';
 import { figurLook, rustningTier } from '../../data/classes';
 import { ITEM_BY_ID } from '../../data/items';
-import { SPELL_BY_ID } from '../../data/spells';
 import { KAMP, MANOVER_NAVN, vaapenKamp } from '../../data/vaapen';
 import { maksVerdier, useRpgStore, utrustetVaapen } from '../../store/useRpgStore';
 import { sfx, startMusikk, stopMusikk } from '../audio';
@@ -38,23 +37,6 @@ import type { Prosjektiler } from './prosjektiler';
 
 /** Skuddvarianten av angrepsformen, trukket ut så signaturene blir lesbare. */
 type Skuddform = Extract<Angrepsform, { form: 'skudd' }>;
-
-/** Korteste avstand fra et punkt til et linjestykke - brukt av stråle-besvergelsen. */
-function avstandTilLinje(
-    px: number,
-    py: number,
-    x1: number,
-    y1: number,
-    x2: number,
-    y2: number
-): number {
-    const dx = x2 - x1;
-    const dy = y2 - y1;
-    const lengde2 = dx * dx + dy * dy;
-    if (lengde2 === 0) return Math.hypot(px - x1, py - y1);
-    const t = Math.max(0, Math.min(1, ((px - x1) * dx + (py - y1) * dy) / lengde2));
-    return Math.hypot(px - (x1 + t * dx), py - (y1 + t * dy));
-}
 
 // Fart, rull og usårbarhet bor i epokens regelsett, ikke her. En rytter og en
 // soldat i skyttergrav beveger seg ikke som en huskarl, og det skal ikke koste
@@ -129,12 +111,6 @@ export class Spiller {
     private stotIgjen = 0;
     private utfallIgjen = 0;
     private angrepBuffer = 0;
-    private spellNedkjoling = new Map<string, number>();
-
-    private skjoldLadninger = 0;
-    private skjoldTimer: Phaser.Time.TimerEvent | null = null;
-    private skjoldRing: Phaser.GameObjects.Image | null = null;
-
     private taster!: Record<string, Phaser.Input.Keyboard.Key>;
     private gamepad: Phaser.Input.Gamepad.Gamepad | null = null;
     private padForrige = { A: false, B: false, X: false, Y: false };
@@ -194,9 +170,6 @@ export class Spiller {
         this.utfallIgjen = Math.max(0, this.utfallIgjen - dt);
         this.slagIgjen = Math.max(0, this.slagIgjen - dt);
         this.angrepBuffer = Math.max(0, this.angrepBuffer - dt);
-        for (const [id, verdi] of this.spellNedkjoling) {
-            if (verdi > 0) this.spellNedkjoling.set(id, Math.max(0, verdi - dt));
-        }
         this.styr(dt);
     }
 
@@ -491,10 +464,6 @@ export class Spiller {
             angrep: kb.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE),
             rull: kb.addKey(Phaser.Input.Keyboard.KeyCodes.SHIFT),
             bruk: kb.addKey('E'),
-            spell1: kb.addKey('ONE'),
-            spell2: kb.addKey('TWO'),
-            spell3: kb.addKey('THREE'),
-            spell4: kb.addKey('FOUR'),
         };
         // Nettleseren skal ikke scrolle når eleven spiller.
         kb.addCapture(['SPACE', 'UP', 'DOWN', 'LEFT', 'RIGHT']);
@@ -656,18 +625,6 @@ export class Spiller {
             else this.slaa();
         }
 
-        // Besvergelser 1-4
-        const spells = useRpgStore.getState().spells;
-        const hurtigtaster = [
-            this.taster.spell1,
-            this.taster.spell2,
-            this.taster.spell3,
-            this.taster.spell4,
-        ];
-        hurtigtaster.forEach((tast, i) => {
-            if (Phaser.Input.Keyboard.JustDown(tast) && spells[i]) this.kastBesvergelse(spells[i]);
-        });
-        if (this.padKant(pad, 'X') && spells[0]) this.kastBesvergelse(spells[0]);
 
         // Blink når eleven er usårbar
         this.sprite.setAlpha(
@@ -693,7 +650,7 @@ export class Spiller {
 
     /**
      * Skudd: strengen trekkes, og pila slippes når ladetiden er ute. Den flyr
-     * gjennom det samme prosjektillaget som besvergelsene og fiendenes skudd -
+     * gjennom det samme prosjektillaget som fiendenes skudd -
      * det er derfor treff, terreng og opprydding allerede virker.
      */
     private skuddAngrep(vapen: VaapenDef, vk: VaapenKamp, form: Skuddform) {
@@ -1062,15 +1019,6 @@ export class Spiller {
         if (this.usarbarIgjen > 0 && !tvunget) return;
         const store = useRpgStore.getState();
 
-        // Minneskjoldet tar støyten først.
-        if (this.skjoldLadninger > 0 && !tvunget) {
-            this.skjoldLadninger -= 1;
-            sfx.skjold();
-            this.efx.flytTekst(this.sprite.x, this.sprite.y - 26, 'Skjold!', '#cfd8c0');
-            this.usarbarIgjen = 300;
-            return;
-        }
-
         const stats = maksVerdier(store);
         let faktisk = Math.max(1, Math.round(skade - stats.vern * 0.6));
         // Under opplæringen bunner livet ut på én. Ravn slår for alvor i siste
@@ -1101,17 +1049,6 @@ export class Spiller {
         this.scene.time.delayedCall(750, () => fraSpill.emit('dod', {}));
     }
 
-    private avsluttSkjold() {
-        this.skjoldLadninger = 0;
-        this.skjoldTimer?.remove();
-        this.skjoldTimer = null;
-        if (this.skjoldRing) {
-            this.scene.tweens.killTweensOf(this.skjoldRing);
-            this.skjoldRing.destroy();
-            this.skjoldRing = null;
-        }
-    }
-
     gjenoppliv() {
         const store = useRpgStore.getState();
         store.hvil();
@@ -1119,7 +1056,6 @@ export class Spiller {
         // forsøk umulig fordi skjoldet lå i splinter.
         this.kamp.hvil();
         this.touchGard = false;
-        this.avsluttSkjold();
         // Kameraet skal ikke våkne skjevt hvis hun døde midt i et dytt, og
         // slagmarken fra forrige forsøk skal ikke ligge igjen på tunet.
         this.fx.vask();
@@ -1134,151 +1070,16 @@ export class Spiller {
         startMusikk(196, 0);
     }
 
-    kastBesvergelse(spellId: string) {
-        const spell = SPELL_BY_ID[spellId];
-        if (!spell) return;
-        const store = useRpgStore.getState();
-        if (!store.spells.includes(spellId)) return;
-        if ((this.spellNedkjoling.get(spellId) ?? 0) > 0) {
-            store.varsle(`${spell.name} lader fortsatt.`, 'info');
-            return;
-        }
-        if (store.mana < spell.kostnad) {
-            store.varsle('Ikke nok kraft.', 'darlig');
-            return;
-        }
-        store.endreMana(-spell.kostnad);
-        this.spellNedkjoling.set(spellId, spell.nedkjoling);
-        sfx.besvergelse(spell.farge);
-
-        const stats = maksVerdier(store);
-        const skade = spell.skade + stats.visdom * 1.5;
-        const vinkel = this.retningsVinkel();
-
-        switch (spell.kind) {
-            case 'prosjektil': {
-                this.skudd.skyt({
-                    x: this.sprite.x,
-                    y: this.sprite.y - 6,
-                    vinkel,
-                    fart: 260,
-                    skade,
-                    levetid: 1400,
-                    tekstur: 'fx-kule',
-                    farge: spell.farge,
-                    fraFiende: false,
-                    piercing: Boolean(spell.piercing),
-                });
-                break;
-            }
-            case 'stråle': {
-                // En stråle treffer alt på linja med én gang.
-                const lengde = 190;
-                const ende = {
-                    x: this.sprite.x + Math.cos(vinkel) * lengde,
-                    y: this.sprite.y - 6 + Math.sin(vinkel) * lengde,
-                };
-                const graf = this.scene.add.graphics().setDepth(this.sprite.y + 6);
-                graf.lineStyle(4, spell.farge, 0.9);
-                graf.lineBetween(this.sprite.x, this.sprite.y - 6, ende.x, ende.y);
-                graf.lineStyle(1, 0xffffff, 1);
-                graf.lineBetween(this.sprite.x, this.sprite.y - 6, ende.x, ende.y);
-                this.scene.tweens.add({
-                    targets: graf,
-                    alpha: 0,
-                    duration: 260,
-                    onComplete: () => graf.destroy(),
-                });
-                for (const fiende of this.kroker.fiender()) {
-                    if (fiende.dodd) continue;
-                    const avstand = avstandTilLinje(
-                        fiende.sprite.x,
-                        fiende.sprite.y - 6,
-                        this.sprite.x,
-                        this.sprite.y - 6,
-                        ende.x,
-                        ende.y
-                    );
-                    if (avstand < 14)
-                        this.kroker.skadFiende(fiende, Math.round(skade), false, vinkel);
-                }
-                this.scene.cameras.main.shake(120, 0.004);
-                break;
-            }
-            case 'nova': {
-                const ring = this.scene.add
-                    .image(this.sprite.x, this.sprite.y - 6, 'fx-ring')
-                    .setTint(spell.farge)
-                    .setDepth(this.sprite.y + 6)
-                    .setScale(0.2);
-                this.scene.tweens.add({
-                    targets: ring,
-                    scale: 2.6,
-                    alpha: 0,
-                    duration: 420,
-                    ease: 'Cubic.Out',
-                    onComplete: () => ring.destroy(),
-                });
-                const radius = 110;
-                for (const fiende of this.kroker.fiender()) {
-                    if (fiende.dodd) continue;
-                    const d = Phaser.Math.Distance.Between(
-                        this.sprite.x,
-                        this.sprite.y,
-                        fiende.sprite.x,
-                        fiende.sprite.y
-                    );
-                    if (d < radius) {
-                        const v = Math.atan2(
-                            fiende.sprite.y - this.sprite.y,
-                            fiende.sprite.x - this.sprite.x
-                        );
-                        this.kroker.skadFiende(fiende, Math.round(skade), false, v);
-                    }
-                }
-                this.scene.cameras.main.shake(200, 0.006);
-                break;
-            }
-            case 'skjold': {
-                // En ny kasting må rydde etter den forrige. Nedkjølingen er
-                // nøyaktig like lang som varigheten, så uten dette kunne den
-                // gamle timeren slå av et helt ferskt skjold.
-                this.skjoldTimer?.remove();
-                this.skjoldRing?.destroy();
-                this.skjoldLadninger = 3;
-                const ring = this.scene.add
-                    .image(this.sprite.x, this.sprite.y - 6, 'fx-ring')
-                    .setTint(spell.farge)
-                    .setDepth(this.sprite.y - 1)
-                    .setScale(0.5)
-                    .setAlpha(0.5);
-                this.skjoldRing = ring;
-                this.scene.tweens.add({
-                    targets: ring,
-                    scale: 0.62,
-                    alpha: 0.25,
-                    duration: 600,
-                    yoyo: true,
-                    repeat: -1,
-                });
-                this.skjoldTimer = this.scene.time.delayedCall(9000, () => this.avsluttSkjold());
-                store.varsle('Minneskjoldet holder - tre slag.', 'bra');
-                break;
-            }
-            case 'helbred': {
-                store.endreHp(spell.skade);
-                this.efx.flytTekst(
-                    this.sprite.x,
-                    this.sprite.y - 26,
-                    `+${spell.skade}`,
-                    '#9ef0c0',
-                    15
-                );
-                this.efx.pikselSprut(this.sprite.x, this.sprite.y - 8, 0x9ef0c0, 14);
-                break;
-            }
-        }
-    }
+    /**
+     * Her lå besvergelsene.
+     *
+     * De er pensjonert med Minnevokteren-rammen (blueprint §15): Nordvik har
+     * ingen trolldom, og det som erstatter dem er våpenets manøver og
+     * skjoldbruket - ferdigheter eleven må lære, ikke knapper hun låser opp.
+     *
+     * `Prosjektiler` står urørt. Bua skyter gjennom det samme laget, og et
+     * gevær i 1916 vil gjøre det samme.
+     */
 
     retningsVinkel(): number {
         switch (this.retning) {

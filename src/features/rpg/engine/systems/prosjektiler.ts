@@ -1,4 +1,4 @@
-// Alt som flyr. Piler, kastespyd og besvergelser er samme sak: noe forlater
+// Alt som flyr. Piler, kastespyd og skudd fra begge sider er samme sak: noe forlater
 // hånda, følger en rett bane, og treffer det første det når.
 //
 // Modulen avgjør ikke hvor mye skade noe gjør, bare at det traff. Den melder
@@ -37,7 +37,7 @@ export interface SkuddDef {
     piercing?: boolean;
     /**
      * Et fysisk skudd: en pil eller et kastespyd. Det peker dit det flyr og
-     * pulserer ikke. Pulsen hører til besvergelsene - en pil som puster ser ut
+     * pulserer ikke. Pulsen hørte til besvergelsene - en pil som puster ser ut
      * som en feil.
      */
     fysisk?: boolean;

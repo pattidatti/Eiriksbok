@@ -16,7 +16,6 @@ import { useProgressStore } from '../../progress/useProgressStore';
 import { BEGREP_BY_ID } from '../data/begreper';
 import { CLASS_BY_ID, CLASSES, levelFromXp, statsAt, xpForLevel } from '../data/classes';
 import { ITEM_BY_ID, equipmentBonus } from '../data/items';
-import { SPELL_BY_ID, newlyUnlockedSpells } from '../data/spells';
 import { START_EPOKE } from '../data/epoker';
 import { forsteStedI, START_STED } from '../data/steder';
 import { sfx } from '../engine/audio';
@@ -57,11 +56,9 @@ export interface RpgState {
     hub: HubSpor;
     xp: number;
     hp: number;
-    mana: number;
     solv: number;
     sekk: string[];
     utstyr: Record<ItemSlot, string | null>;
-    spells: string[];
     quester: Record<string, 'aktiv' | 'ferdig'>;
     /** Hvor mange ganger eleven har bommet på hvert oppdrag. */
     questForsok: Record<string, number>;
@@ -88,7 +85,6 @@ export interface RpgState {
     leggStein: () => void;
     slettAlt: () => void;
     endreHp: (delta: number) => void;
-    endreMana: (delta: number) => void;
     settHp: (value: number) => void;
     giXp: (amount: number) => void;
     giSolv: (amount: number) => void;
@@ -98,7 +94,6 @@ export interface RpgState {
     startQuest: (questId: string) => void;
     fullforQuest: (quest: QuestDef, riktig: boolean) => void;
     kjop: (itemId: string) => boolean;
-    lerSpell: (spellId: string) => void;
     markerLest: (landmarkId: string) => void;
     felleBoss: (bossId: string) => void;
     /** Et kapittelsteg er gjort. Trygg å kalle to ganger. */
@@ -126,7 +121,25 @@ const START_VAAPEN = 'ovingssverd';
 
 const LAGRING_VERSJON = 4;
 
+/**
+ * Hva en pensjonert besvergelse er verdt.
+ *
+ * Nordvik har ingen trolldom, og stavene eleven brukte år på å låse opp
+ * forsvinner med rammen. Hun skal ikke bare oppdage at de er borte - hun skal
+ * få noe for dem, og få vite hvorfor (blueprint §12.2).
+ */
+const SOLV_PER_STAV = 25;
+
 let varselId = 0;
+
+/**
+ * Sølvet en migrering nettopp ga for pensjonerte staver.
+ *
+ * Ligger som en modulvariabel fordi `migrate` og `onRehydrateStorage` ikke har
+ * noen annen vei mellom seg: migreringen returnerer bare data, og den kan ikke
+ * varsle - storen finnes ikke ennå når den kjører.
+ */
+let lestStavsolv = 0;
 
 // ─── Epoketilstand ──────────────────────────────────────────────────────────
 
@@ -158,15 +171,13 @@ const tomKampanje = (): EpokeKampanje => ({
  */
 const tomtKapittel = (character: CharacterDraft | null): EpokeKapittel => {
     const klasse = character ? (CLASS_BY_ID[character.classId] ?? CLASSES[0]) : null;
-    const start = character ? statsAt(character.classId, 1) : { hp: 100, mana: 40 };
+    const start = character ? statsAt(character.classId, 1) : { hp: 100 };
     return {
         hp: start.hp,
-        mana: start.mana,
         xp: 0,
         solv: 0,
         sekk: klasse ? [klasse.startWeapon] : [],
         utstyr: klasse ? { ...TOM_UTSTYR, vapen: klasse.startWeapon } : { ...TOM_UTSTYR },
-        spells: klasse ? [klasse.startSpell] : [],
     };
 };
 
@@ -217,12 +228,10 @@ const aktivEpoke = (s: RpgState): EpokeSave => ({
     },
     kapittelState: {
         hp: s.hp,
-        mana: s.mana,
         xp: s.xp,
         solv: s.solv,
         sekk: s.sekk,
         utstyr: s.utstyr,
-        spells: s.spells,
     },
 });
 
@@ -245,11 +254,19 @@ interface LagringV3 {
     character: CharacterDraft | null;
     xp: number;
     hp: number;
-    mana: number;
     solv: number;
+    /**
+     * Kraft og besvergelser.
+     *
+     * De finnes ikke lenger i spillet (§15), men de finnes på disken hos hver
+     * elev som har spilt før i dag - og migreringen må kunne lese dem for å
+     * betale for stavene. Feltene skal stå her til den dagen ingen har et så
+     * gammelt lagret spill, og ikke en dag lenger.
+     */
+    mana: number;
+    spells: string[];
     sekk: string[];
     utstyr: Record<ItemSlot, string | null>;
-    spells: string[];
     quester: Record<string, 'aktiv' | 'ferdig'>;
     questForsok: Record<string, number>;
     riktigeSvar: number;
@@ -261,16 +278,14 @@ interface LagringV3 {
 
 /** Maks liv/kraft ut fra nivå, klasse og utstyr. */
 export function maksVerdier(state: Pick<RpgState, 'character' | 'xp' | 'utstyr'>) {
-    if (!state.character) return { hp: 100, mana: 40, styrke: 5, visdom: 5, vern: 3, niva: 1 };
+    if (!state.character) return { hp: 100, styrke: 5, vern: 3, niva: 1 };
     const niva = levelFromXp(state.xp);
     const base = statsAt(state.character.classId, niva);
     const bonus = equipmentBonus(state.utstyr);
     return {
         niva,
         hp: base.hp + bonus.hp,
-        mana: base.mana + bonus.mana,
         styrke: base.styrke + bonus.styrke,
-        visdom: base.visdom + bonus.visdom,
         vern: base.vern + bonus.vern,
     };
 }
@@ -376,12 +391,6 @@ export const useRpgStore = create<RpgState>()(
                 set({ hp: Math.max(0, Math.min(maks, value)) });
             },
 
-            endreMana: (delta) => {
-                const state = get();
-                const maks = maksVerdier(state).mana;
-                set({ mana: Math.max(0, Math.min(maks, state.mana + delta)) });
-            },
-
             giXp: (amount) => {
                 const state = get();
                 const forNiva = levelFromXp(state.xp);
@@ -389,11 +398,11 @@ export const useRpgStore = create<RpgState>()(
                 const nyttNiva = levelFromXp(nyXp);
                 set({ xp: nyXp });
                 if (nyttNiva > forNiva) {
-                    // Nytt nivå fyller opp liv og kraft - en liten pause i kampen.
+                    // Nytt nivå fyller opp livet - en liten pause i kampen.
                     const maks = maksVerdier({ ...state, xp: nyXp });
-                    set({ hp: maks.hp, mana: maks.mana });
+                    set({ hp: maks.hp });
                     sfx.nivaOpp();
-                    get().varsle(`Nivå ${nyttNiva}! Liv og kraft fylt opp.`, 'niva');
+                    get().varsle(`Nivå ${nyttNiva}! Livet er fylt opp.`, 'niva');
                 }
             },
 
@@ -417,10 +426,7 @@ export const useRpgStore = create<RpgState>()(
                 set({ sekk, utstyr: { ...state.utstyr, [item.slot]: itemId } });
                 // Utstyr kan øke maks-liv; fyll ikke opp, men klipp aldri under 1.
                 const maks = maksVerdier(get());
-                set({
-                    hp: Math.max(1, Math.min(get().hp, maks.hp)),
-                    mana: Math.min(get().mana, maks.mana),
-                });
+                set({ hp: Math.max(1, Math.min(get().hp, maks.hp)) });
             },
 
             taAv: (slot) => {
@@ -429,10 +435,7 @@ export const useRpgStore = create<RpgState>()(
                 if (!id) return;
                 set({ sekk: [...state.sekk, id], utstyr: { ...state.utstyr, [slot]: null } });
                 const maks = maksVerdier(get());
-                set({
-                    hp: Math.max(1, Math.min(get().hp, maks.hp)),
-                    mana: Math.min(get().mana, maks.mana),
-                });
+                set({ hp: Math.max(1, Math.min(get().hp, maks.hp)) });
             },
 
             startQuest: (questId) => {
@@ -468,12 +471,6 @@ export const useRpgStore = create<RpgState>()(
                     get().giSolv(Math.round(quest.belonning.solv * andel));
                     if (forsok === 0 && quest.belonning.itemId)
                         get().leggISekk(quest.belonning.itemId);
-                    if (quest.belonning.spellId) get().lerSpell(quest.belonning.spellId);
-
-                    // Nye besvergelser kan ha blitt låst opp av at telleren steg.
-                    for (const spell of newlyUnlockedSpells(get().riktigeSvar, get().spells)) {
-                        get().lerSpell(spell.id);
-                    }
 
                     // Teller i «Min læring» på lik linje med en quiz i boka.
                     useProgressStore.getState().recordActivity({
@@ -510,13 +507,6 @@ export const useRpgStore = create<RpgState>()(
                 set({ solv: state.solv - item.pris, sekk: [...state.sekk, itemId] });
                 get().varsle(`Kjøpt: ${item.name}.`, 'bra');
                 return true;
-            },
-
-            lerSpell: (spellId) => {
-                const state = get();
-                if (state.spells.includes(spellId) || !SPELL_BY_ID[spellId]) return;
-                set({ spells: [...state.spells, spellId] });
-                get().varsle(`Ny besvergelse: ${SPELL_BY_ID[spellId].name}`, 'niva');
             },
 
             markerLest: (landmarkId) => {
@@ -633,8 +623,7 @@ export const useRpgStore = create<RpgState>()(
             fjernVarsel: (id) => set({ varsler: get().varsler.filter((v) => v.id !== id) }),
 
             hvil: () => {
-                const maks = maksVerdier(get());
-                set({ hp: maks.hp, mana: maks.mana });
+                set({ hp: maksVerdier(get()).hp });
             },
         }),
         {
@@ -699,6 +688,8 @@ export const useRpgStore = create<RpgState>()(
                 // slette hvert eneste lagrede spill i et klasserom som spiller.
                 const character = s.character ?? null;
                 const tomt = tomtKapittel(character);
+                const stavsolv = (s.spells?.length ?? 0) * SOLV_PER_STAV;
+                lestStavsolv = stavsolv;
                 return {
                     version: LAGRING_VERSJON,
                     spiller: { character },
@@ -725,12 +716,14 @@ export const useRpgStore = create<RpgState>()(
                             },
                             kapittelState: {
                                 hp: s.hp ?? tomt.hp,
-                                mana: s.mana ?? tomt.mana,
                                 xp: s.xp ?? 0,
-                                solv: s.solv ?? 0,
+                                // Besvergelsene er borte (§15). Eleven skal ikke
+                                // bare miste dem: hun får 25 sølv per stav, og
+                                // en linje som sier hvorfor. Et tap som leser
+                                // som en utbetaling.
+                                solv: (s.solv ?? 0) + stavsolv,
                                 sekk: s.sekk ?? [],
                                 utstyr: { ...TOM_UTSTYR, ...s.utstyr },
-                                spells: s.spells ?? [],
                             },
                         },
                     },
@@ -747,9 +740,23 @@ export const useRpgStore = create<RpgState>()(
                 // «Reis deg», ble hp lagret som 0. Da våknet hun neste gang med
                 // null liv og ingen dødsskjerm å komme seg ut av.
                 if (state.hp <= 0) {
-                    const maks = maksVerdier(state);
-                    state.hp = maks.hp;
-                    state.mana = maks.mana;
+                    state.hp = maksVerdier(state).hp;
+                }
+                // Migreringen kan ikke varsle: `varsle` bruker en timer og et
+                // store som ikke finnes ennå når `migrate` kjører. Beskjeden
+                // legges derfor her, ett bilde senere, og bare til den som
+                // faktisk hadde staver.
+                const stavsolv = lestStavsolv;
+                lestStavsolv = 0;
+                if (stavsolv > 0) {
+                    window.setTimeout(
+                        () =>
+                            state.varsle(
+                                `Nordvik har ingen trolldom. Du fikk ${stavsolv} sølv for stavene.`,
+                                'info'
+                            ),
+                        900
+                    );
                 }
             },
         }

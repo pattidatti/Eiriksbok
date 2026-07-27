@@ -392,7 +392,21 @@ Hver etappe skal etterlate spillet i spillbar stand.
 trenger dem. R7 og R8 er der risikoen ligger: verdien deres avhenger av at det finnes
 noe å gå til gjennom portalene.
 
-Etter R8: kapittel 1, etter Nordvik-blueprintens etappe 2.
+Etter R8: kapittel 1, etter Nordvik-blueprintens etappe 2. **Det er nå bygget**
+- se statusnotatet under §13 der.
+
+R2-arbeidet betalte seg nøyaktig som antatt: Lindisfarne ble en oppføring i
+`STEDER` og en kartbygger, ikke en endring i verdenslaget. To ting R2 ikke hadde
+forutsett, og som kom fram i det stedet nummer to faktisk fantes:
+
+- **Et sted uten NPC-er kunne ikke bygge quester.** `byggQuester` reduserte over
+  en tom giverliste, og hele reisen dit stoppet med «Reduce of empty array with
+  no initial value» - en feil som pekte på questmotoren og ikke på stedet.
+  Lindisfarne har ingen å gi oppdrag, og da er det ingen oppdrag.
+- **Spawningen leste fra hele fiendelista.** Med bare abstrakte fiender gikk det
+  bra; i det menneskene kom inn, ville en berserk begynt å vandre rundt på tunet
+  hjemme i 793. Hvem som dukker opp av seg selv hører til stedet
+  (`Sted.spawner`), ikke til lista.
 
 ### Status
 

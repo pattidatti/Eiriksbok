@@ -43,7 +43,7 @@ export const ITEMS: ItemDef[] = [
         slot: 'vapen',
         rarity: 'vanlig',
         flavor: 'Mer til å peke med enn å slå med. Men den bærer kraft.',
-        stats: { mana: 10 },
+        stats: { styrke: 1 },
         weapon: { skade: 5, hastighet: 420, rekkevidde: 38, bue: 80, art: 'stav' },
     },
     {
@@ -83,7 +83,7 @@ export const ITEMS: ItemDef[] = [
         slot: 'vapen',
         rarity: 'sjelden',
         flavor: 'Tegnene langs skaftet lyser når du sier noe sant.',
-        stats: { visdom: 4, mana: 20 },
+        stats: { styrke: 3 },
         pris: 200,
         weapon: { skade: 8, hastighet: 380, rekkevidde: 42, bue: 90, art: 'stav' },
     },
@@ -131,7 +131,7 @@ export const ITEMS: ItemDef[] = [
         slot: 'rustning',
         rarity: 'episk',
         flavor: 'Tatt fra fienden. Nå beskytter den mot sin egen art.',
-        stats: { vern: 12, hp: 45, visdom: 3 },
+        stats: { vern: 12, hp: 45 },
     },
 
     // ── Amuletter ───────────────────────────────────────────────────────────
@@ -150,7 +150,7 @@ export const ITEMS: ItemDef[] = [
         slot: 'amulett',
         rarity: 'god',
         flavor: 'Den som bærer den, finner alltid det neste ordet.',
-        stats: { visdom: 3, mana: 15 },
+        stats: { styrke: 2 },
     },
     {
         id: 'bjornetann',
@@ -166,7 +166,7 @@ export const ITEMS: ItemDef[] = [
         slot: 'amulett',
         rarity: 'episk',
         flavor: 'Så lenge noen husker deg, er du ikke borte.',
-        stats: { visdom: 5, vern: 4, mana: 30, hp: 30 },
+        stats: { styrke: 4, vern: 4, hp: 30 },
     },
 ];
 
@@ -180,7 +180,7 @@ export const SLOT_LABEL: Record<ItemSlot, string> = {
 
 /** Summerer bonusene fra alt utstyret som er på. */
 export function equipmentBonus(utstyr: Record<ItemSlot, string | null>) {
-    const sum = { hp: 0, mana: 0, styrke: 0, visdom: 0, vern: 0 };
+    const sum = { hp: 0, styrke: 0, vern: 0 };
     for (const id of Object.values(utstyr)) {
         if (!id) continue;
         const item = ITEM_BY_ID[id];

@@ -35,7 +35,14 @@ export interface QuestBank {
 
 // ─── Karakter ───────────────────────────────────────────────────────────────
 
-/** Klassene bestemmer startverdier, første besvergelse og utseende. */
+/**
+ * Klassene bestemmer startverdier, startvåpen og utseende.
+ *
+ * Besvergelsen er borte med rammen (§15). Selve klassevalget er også på vei
+ * ut (§16.3): rolle og navn er gitt av kapittelet, og det eleven skal velge er
+ * hvordan hun ser ut. Til det skjer, er `ClassId` i praksis et utseendevalg
+ * med en startgave.
+ */
 export type ClassId = 'skald' | 'runemester' | 'vokter';
 
 export interface ClassDef {
@@ -48,20 +55,23 @@ export interface ClassDef {
     base: CoreStats;
     /** Per nivå. Brøker rundes ned ved bruk. */
     growth: CoreStats;
-    startSpell: string;
     startWeapon: string;
     palette: { tunic: string; trim: string };
 }
 
+/**
+ * Kjernetallene.
+ *
+ * `mana` og `visdom` er borte med besvergelsene (blueprint §15). Uten
+ * trolldom har visdom ingenting å gange, og en kraftstolpe i 793 er et
+ * grensesnitt som lover noe spillet ikke har. Pusten er ressursen nå, og den
+ * bor i regelsettet - ikke her, for den er epokens og ikke personens.
+ */
 export interface CoreStats {
     /** Maks liv. */
     hp: number;
-    /** Maks kraft (mana) til besvergelser. */
-    mana: number;
     /** Ganger våpenets skade. */
     styrke: number;
-    /** Ganger besvergelsers skade. */
-    visdom: number;
     /** Reduserer skade du tar. */
     vern: number;
 }
@@ -408,26 +418,6 @@ export interface KlippDef {
     steg: Klipp[];
 }
 
-// ─── Besvergelser ───────────────────────────────────────────────────────────
-
-export type SpellKind = 'prosjektil' | 'nova' | 'stråle' | 'skjold' | 'helbred';
-
-export interface SpellDef {
-    id: string;
-    name: string;
-    kind: SpellKind;
-    kostnad: number;
-    skade: number;
-    /** Millisekunder. */
-    nedkjoling: number;
-    farge: number;
-    beskrivelse: string;
-    /** Går prosjektilet gjennom fienden i stedet for å stoppe i den? */
-    piercing?: boolean;
-    /** Kunnskapskravet: låses opp når eleven har svart riktig på så mange spørsmål. */
-    krevesRiktige?: number;
-}
-
 // ─── Fiender ────────────────────────────────────────────────────────────────
 
 /**
@@ -531,7 +521,6 @@ export interface QuestDef {
         xp: number;
         solv: number;
         itemId?: string;
-        spellId?: string;
     };
 }
 
@@ -919,7 +908,7 @@ export interface EpokeKampanje {
     quester: Record<string, 'aktiv' | 'ferdig'>;
     /** Hvor mange ganger eleven har bommet på hvert oppdrag. */
     questForsok: Record<string, number>;
-    /** Riktige svar totalt - låser opp besvergelser. */
+    /** Riktige svar totalt. Statistikk nå - den låser ikke opp noe lenger. */
     riktigeSvar: number;
     galeSvar: number;
     /** Landemerker eleven har lest. */
@@ -947,15 +936,20 @@ export interface EpokeKampanje {
  * Det som hører til én person i ett kapittel, og som nullstilles ved
  * kapittelskifte. Nivå og utstyr følger personen, ikke ætten.
  */
+/**
+ * Det som hører til én person i ett kapittel.
+ *
+ * `mana` og `spells` er ute (blueprint §12.2). Pusten lagres ikke i det hele
+ * tatt - den er alltid full ved innlasting, slik helsa klampes i
+ * `onRehydrateStorage`.
+ */
 export interface EpokeKapittel {
     hp: number;
-    mana: number;
     xp: number;
     solv: number;
     /** Item-id-er i sekken. */
     sekk: string[];
     utstyr: Record<ItemSlot, string | null>;
-    spells: string[];
 }
 
 export interface EpokeSave {

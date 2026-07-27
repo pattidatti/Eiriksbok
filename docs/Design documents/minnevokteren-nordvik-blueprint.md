@@ -1,8 +1,9 @@
 # Blueprint: Nordvik - vikingtiden som spillbar kampanje
 
-**Status:** Forslag (ikke godkjent). Alle åpne spørsmål er avgjort (§16), og styring
-(§5.0), tall (§5.8), progresjonskobling (§7.5) og lagringsmigrering (§12.2) er
-spesifisert. Etappe 1 er byggbar.
+**Status:** Etappe 1, 1b og 2 er bygget. Kapittel 1 er spillbart fra ende til
+annen: opplæringen mot Ravn, skroget, sjøsettingen, navigasjonen, Lindisfarne i
+to halvdeler, valgene og hjemkomsten. Neste er etappe 3 (Mellomspill I).
+Se statusnotatet under §13.
 **Rute:** `/oving/rpg`
 **Erstatter:** «Minnevokteren», den abstrakte sone-rammen. Navnet lever videre som
 hubbens fiksjon, utenfor epokene, der det ikke står mellom eleven og fagstoffet.
@@ -1059,11 +1060,48 @@ Seks etapper. Hver enkelt gir noe spillbart.
 lærebok i Norge har maken til. Det er dét jeg ville bygget og perfeksjonert før noe
 skaleres.
 
-**Status:** etappe 1 er i hovedsak bygget. `engine/kamp.ts` og `data/vaapen.ts` har
-pust, retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo,
-og `engine/kampfx.ts` har hele §5.3b. Det som gjenstår av etappe 1: de fem menneskelige
-fiendearketypene (§5.6), sax og bue som våpen (§5.2), og koblingen av `ublokkerbart`
-og `hak` fra `fiendeSlaar()` til `Kamp.vurderTreff()`, som allerede tar dem imot.
+### Status
+
+**Etappe 1 er bygget.** `engine/kamp.ts` og `data/vaapen.ts` har pust,
+retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo;
+`engine/kampfx.ts` har hele §5.3b; de fem menneskelige arketypene står i
+`data/enemies.ts`, og `ublokkerbart`/`hak` er koblet gjennom `EnemyDef.sarslag`.
+
+**Etappe 1b er bygget.** R1-R8, se `rpg-hub-og-epoker-blueprint.md` §10.
+
+**Etappe 2 er bygget** (K1a-K1e).
+
+| Delet | Hva som står |
+|---|---|
+| K1a | Kapittelrammen (`data/kapitler.ts`), minnetreet (`data/begreper.ts`), cutscene-avspilleren (`engine/klipp.ts`) og «Min læring»-ankrene fra §7.5 |
+| K1b | Fiendene ble folk (§5.6). Kampopplæringen mot Ravn i fire økter, med telegrafering 700→450 |
+| K1c | Skroget (§10.1). Feil bordlegging synker synlig, og gir `[Klinkbygging]` |
+| K1d | Navigasjonen (§10.2), Lindisfarne som eget sted, og raidet i to halvdeler (§3) |
+| K1e | Besvergelser, mana og visdom pensjonert (§15). Migrering med 25 sølv per stav |
+
+**Fire avvik fra planen, alle begrunnet av at de ble prøvd:**
+
+- **Framdriften er en liste, ikke et tall.** §12 sier `kapittel: number`, og det
+  står. Men *innenfor* kapittelet er stegene en liste med id-er. Et tall kan bare
+  gå én vei og sier ingenting om hva eleven gjorde; en liste tåler at hun tar
+  skroget før hun har trent med Ravn, og at vi legger inn et steg midt i uten at
+  hvert lagrede spill i et klasserom hopper et hakk.
+- **Lederen på Lindisfarne heter «Mannen med hjelmen».** §3 gir ham navnestolpe
+  øverst på skjermen, og §16.4 tar fra ham brynja og ombudsmannsrollen. Da satt
+  vi igjen med en navnestolpe uten navn - og det ble det beste svaret: ingen
+  kilde ga ham et. Mellomspill I skal kunne peke på nettopp den linja.
+- **Navigasjonen er et bord, ikke en ratt-tur.** §10.2 legger puzzlet oppå en
+  farkost eleven styrer. Farkosten finnes (R5), men den er en færing i en fjord;
+  en fire døgn lang overfart styrt med WASD er ikke navigasjon, det er venting.
+  Puzzlet er fire døgn med ett tegn hver, og overfarten *er* puzzlet.
+- **Klassevalget står igjen (§16.3).** `ClassId` skulle ut og erstattes av et
+  rent utseendevalg. Den ligger på flerspiller-tråden (`Gjest.classId`) og i
+  `figurLook`, og å bytte den midt i en etappe der resten allerede var verifisert
+  ville satt hallen i spill for en kosmetisk gevinst. Den hører til etappe 3.
+
+**Det som gjenstår av kapittel 1:** Mellomspill I (etappe 3). Kapittelet er
+spillbart uten det, men det er ikke *ferdig* uten det - hele grunnen til at
+eleven utfører raidet selv, ligger i det tomme feltet på bordet etterpå.
 
 ### 13.1 Hvorfor etappe 1b kom til
 

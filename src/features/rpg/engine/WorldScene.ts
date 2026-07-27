@@ -59,7 +59,7 @@ export class WorldScene extends Phaser.Scene {
     private kampUiTimer = 0;
 
     private fiendeSystem!: Fiender;
-    /** Alt som flyr: piler, kastespyd, besvergelser. */
+    /** Alt som flyr: piler og kastespyd. */
     private skudd!: Prosjektiler;
     private samhandling!: Interaksjon;
     /** Fire økter på tunet, mot Ravn. Kapittel 1 begynner her. */
@@ -403,7 +403,6 @@ export class WorldScene extends Phaser.Scene {
                     this.helt.skad(18, true);
                 }
             }),
-            tilSpill.on('besvergelse', ({ spellId }) => this.helt.kastBesvergelse(spellId)),
             tilSpill.on('gjenoppliv', () => this.helt.gjenoppliv()),
             // Bildet av rommet kommer hit ti ganger i sekundet per elev der
             // ute. Det er derfor det går over broen og ikke gjennom

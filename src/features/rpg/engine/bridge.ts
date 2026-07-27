@@ -93,8 +93,6 @@ export interface UiEvents {
     bossSvar: { riktig: boolean };
     /** Sett spillet på pause (meny åpen). */
     pause: { pa: boolean };
-    /** Bruk en besvergelse fra HUD-en. */
-    besvergelse: { spellId: string };
     /** Start på nytt etter død. */
     gjenoppliv: Record<string, never>;
     /** Styrestikke på skjerm. x og y er -1..1. */
