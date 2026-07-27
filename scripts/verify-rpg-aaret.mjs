@@ -213,12 +213,33 @@ async function apneBua(page) {
     // ── Høsten ─────────────────────────────────────────────────────────────
     await apneBua(page);
     await klikk(page, 'La året gå videre');
-    await page.waitForTimeout(900);
+    await page.waitForTimeout(1200);
     const iHost = await tilstand(page);
     sjekk('kornet er høstet inn', iHost?.forrad.korn === 24, `korn ${iHost?.forrad.korn}`);
     sjekk('åkeren står tom etterpå', iHost?.forrad.aaker === 0);
     sjekk('innhøstingen kostet dager', iHost?.klokke.dag === 73, `dag ${iHost?.klokke.dag}`);
 
+    // Båten kommer i samme uke som kornet er inne. Hun ga til både Sæbø og
+    // kongens mann i sommer, så æreveien står åpen: naboætta stiller seg foran
+    // tunet, og kampen blir ikke noe av.
+    sjekk('båten er meldt i det kornet er inne', iHost?.flagg['k2-angrep-varslet'] === true);
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(600);
+    await stillDegVed(page, 'landemerke', 'fjaera-872');
+    await page.waitForTimeout(400);
+    await trykkE(page);
+    await klikk(page, 'Gå ned og møt dem');
+    await page.waitForTimeout(1200);
+    const etterBaaten = await tilstand(page);
+    sjekk(
+        'æreveien gjorde kampen unødvendig',
+        etterBaaten?.flagg['k2-angrep-avverget'] === true,
+        `ære ${etterBaaten?.aere}`
+    );
+    await klikk(page, 'Videre');
+    await page.waitForTimeout(700);
+
+    await apneBua(page);
     await klikk(page, 'Slakt to dyr');
     await page.waitForTimeout(700);
     const etterSlakt = await tilstand(page);
@@ -248,7 +269,15 @@ async function apneBua(page) {
 {
     const { page } = await gaarden(
         {
-            steg: ['k2-noklene', 'k2-vaaronn', 'k2-kornet', 'k2-hosten', 'k2-gave-saebo'],
+            steg: [
+                'k2-noklene',
+                'k2-vaaronn',
+                'k2-kornet',
+                'k2-hosten',
+                // Båten er alt gjort opp: det er vinteren som måles her.
+                'k2-angrepet',
+                'k2-gave-saebo',
+            ],
             klokke: { aar: 872, dag: 85 },
             aetter: { saebo: { velvilje: 45, uoppgjort: 0 } },
             flagg: { 'k2-matet-saebo': true },

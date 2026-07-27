@@ -214,9 +214,61 @@ export const LINDISFARNE_FIENDER: EnemyDef[] = [
     },
 ];
 
+/**
+ * De som kommer over fjorden i 872.
+ *
+ * Gaute Gråkappe er ingen hær. Han er en mann som har lagt merke til at det
+ * ikke er våpenføre menn igjen på Nordvik, og som har regnet ut at det er verdt
+ * risikoen. Det er sånn det så ut: ikke plyndringstog, men naboer som utnyttet
+ * et hull.
+ *
+ * De er navngitte og har ætt. Det er ikke pynt - §5.7 sier at eleven skal se
+ * forskjellen *før* hun slår, og en mann med ætt har hevnere. Faller Gaute,
+ * står Hovda-ætta igjen med en sak, og den saken må føres på tinget.
+ */
+export const HOVDA_MENN: EnemyDef[] = [
+    {
+        id: 'gaute',
+        kind: 'menneske',
+        name: 'Gaute Gråkappe',
+        hp: 78,
+        skade: 11,
+        fart: 58,
+        aggro: 300,
+        rekkevidde: 26,
+        varsel: 460,
+        farge: 0x6a6a78,
+        xp: 44,
+        loot: [{ itemId: 'sagasverd', sjanse: 0.2 }],
+        vaapenArt: 'sverd',
+        harSkjold: true,
+        haar: 2,
+        navngitt: true,
+        sarslag: { hvert: 4, hak: true },
+    },
+    {
+        id: 'hovdamann',
+        kind: 'menneske',
+        name: 'Mann fra Hovda',
+        hp: 36,
+        skade: 9,
+        fart: 52,
+        aggro: 260,
+        rekkevidde: 38,
+        varsel: 600,
+        farge: 0x7a7060,
+        xp: 16,
+        loot: [{ itemId: 'tingspyd', sjanse: 0.12 }],
+        vaapenArt: 'spyd',
+        navngitt: true,
+        haar: 1,
+    },
+];
+
 export const ENEMIES: EnemyDef[] = [
     ...MENNESKER,
     ...LINDISFARNE_FIENDER,
+    ...HOVDA_MENN,
     {
         id: 'glemseltaake',
         kind: 'glemsel',

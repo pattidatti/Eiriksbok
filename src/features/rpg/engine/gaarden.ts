@@ -43,6 +43,14 @@ export const SOMMERGJESTENE = ['torolv', 'eystein'] as const;
 export interface GaardKroker {
     /** Skjuler og viser folk som bare er her i én årstid. */
     settSynlig: (npcId: string, synlig: boolean) => void;
+    /**
+     * Båten kommer inn vika.
+     *
+     * Gården eier ikke angrepet - den sier bare fra at kornet er inne. At det
+     * er nettopp da noen kommer for å ta det, er hele grunnen til at angrepet
+     * ligger der det ligger.
+     */
+    varsleAngrep: () => void;
 }
 
 export class Gaarden {
@@ -78,6 +86,11 @@ export class Gaarden {
         const s = useRpgStore.getState();
         const aarstid = this.aarstid;
         const a = AARSTID[aarstid];
+        // Står båten i vika, eier angrepet oppgavekortet. Årstiden skal ikke
+        // skrive «bestem slakten» oppå fem menn som ror inn.
+        if (aarstid === 'host' && s.steg.includes(K2.hosten) && !s.steg.includes(K2.angrepet)) {
+            return;
+        }
         const mal =
             aarstid === 'vaar'
                 ? s.steg.includes(K2.vaaronn)
@@ -112,7 +125,12 @@ export class Gaarden {
         }
         // Vinteren er ikke en årstid hun kan skyve videre fra: den er slutten
         // på kapittelet, og oppgjøret er alt gjort i det hun kom hit.
-        return { apne, kanGaaVidere: aarstid !== 'vinter' };
+        //
+        // Og høsten kan ikke skyves før båten i vika er gjort opp. Å låse bua
+        // og la vinteren komme mens fem menn står i fjæra, er ikke et valg -
+        // det er en vei rundt kapittelets eneste kamp.
+        const angrepStaar = aarstid === 'host' && !s.steg.includes(K2.angrepet);
+        return { apne, kanGaaVidere: aarstid !== 'vinter' && !angrepStaar };
     }
 
     /** Åsa bestemte seg i bua. */
@@ -210,6 +228,8 @@ export class Gaarden {
                     : 'Det står ingenting på åkeren. Ingenting å høste.',
                 paaRot > 0 ? 'bra' : 'darlig'
             );
+            // Og i samme uke kommer båten. Full bu, ingen menn hjemme.
+            this.kroker.varsleAngrep();
             return;
         }
 
@@ -263,7 +283,7 @@ export class Gaarden {
             .filter(Boolean)
             .join('\n\n');
 
-        fraSpill.emit('kapittelslutt', {
+        fraSpill.emit('beskjed', {
             tittel: berget ? 'Gården sto' : 'Sultevinteren',
             tekst,
             knapp: 'Videre',
@@ -318,6 +338,10 @@ export class Gaarden {
                 hvem === 'harald' ? K2_FLAGG.matetHarald : K2_FLAGG.matetMotstanderne
             );
             store.endreAett(hvem === 'harald' ? 'nordvik' : 'hovda', { velvilje: 20 });
+            // Å gi når man blir bedt om det, er å holde ord: gården står ved
+            // den siden mannen hennes slåss for, og alle på tunet så at hun
+            // gjorde det uten å nøle.
+            store.endreAere('holdt-ord');
             store.varsle(
                 hvem === 'harald'
                     ? 'Kornet gikk sørover, til kongen som holder på å vinne.'
@@ -331,7 +355,12 @@ export class Gaarden {
                     : 'Du sa nei. De rodde videre til neste gård.',
                 'info'
             );
-            if (hvem === 'harald') store.endreAett('nordvik', { velvilje: -10 });
+            // Å si nei til kongens mann, foran hele husholdet, koster noe og gir
+            // noe. Det er ikke trass - det er å vise at gården ikke er hans.
+            if (hvem === 'harald') {
+                store.endreAett('nordvik', { velvilje: -10 });
+                store.endreAere('sto-imot');
+            }
         }
         // Ett svar lukker begge: kornet finnes bare én gang, og valget skal
         // være hvem - ikke hvor mange ganger hun rekker å gi.

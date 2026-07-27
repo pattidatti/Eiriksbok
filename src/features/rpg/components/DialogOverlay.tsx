@@ -47,10 +47,10 @@ export function DialogOverlay({
      * ikke samtalen begynne med et flervalgsspørsmål om merovingertiden -
      * kapittelet er det eleven faktisk holder på med.
      */
-    const handling =
-        npc?.handlinger?.find(
+    const handlinger =
+        npc?.handlinger?.filter(
             (h) => !gjort.includes(h.gir) && (h.krever ?? []).every((k) => gjort.includes(k))
-        ) ?? null;
+        ) ?? [];
     const gjortHandling = npc?.handlinger?.find((h) => gjort.includes(h.gir)) ?? null;
 
     useEffect(() => {
@@ -109,18 +109,36 @@ export function DialogOverlay({
                 </section>
             )}
 
-            {handling ? (
+            {/*
+                Alle handlingene som står åpne, ikke bare den første.
+                Kongsmannen ber om korn, og eleven skal kunne si nei til ham i
+                samme samtale - et nei som bare finnes i å gå sin vei, er ikke
+                et valg hun ser at hun tar.
+
+                Ledeteksten står én gang, over knappene: de to alternativene er
+                svar på det samme spørsmålet, ikke to spørsmål.
+            */}
+            {handlinger.length > 0 ? (
                 <section className="rounded-xl border border-emerald-300/30 bg-emerald-300/5 p-3">
-                    <p className="mb-3 text-[15px] leading-relaxed text-slate-100">
-                        «{handling.ledetekst}»
+                    <p className="mb-3 whitespace-pre-line text-[15px] leading-relaxed text-slate-100">
+                        «{handlinger[0].ledetekst}»
                     </p>
-                    <button
-                        type="button"
-                        onClick={() => onHandling(handling.id)}
-                        className="w-full rounded-lg bg-emerald-500 px-4 py-2.5 font-display font-bold text-white transition hover:bg-emerald-400"
-                    >
-                        {handling.knapp}
-                    </button>
+                    <div className="grid gap-2">
+                        {handlinger.map((h, i) => (
+                            <button
+                                key={h.id}
+                                type="button"
+                                onClick={() => onHandling(h.id)}
+                                className={`w-full rounded-lg px-4 py-2.5 font-display font-bold transition ${
+                                    i === 0
+                                        ? 'bg-emerald-500 text-white hover:bg-emerald-400'
+                                        : 'border border-white/20 text-slate-200 hover:bg-white/5'
+                                }`}
+                            >
+                                {h.knapp}
+                            </button>
+                        ))}
+                    </div>
                 </section>
             ) : aktiv ? (
                 <section className="rounded-xl border border-amber-300/30 bg-amber-300/5 p-3">

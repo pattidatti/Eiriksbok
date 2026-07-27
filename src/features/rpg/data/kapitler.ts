@@ -37,6 +37,7 @@ export const K2 = {
     vaaronn: 'k2-vaaronn',
     kornet: 'k2-kornet',
     hosten: 'k2-hosten',
+    angrepet: 'k2-angrepet',
     vinteren: 'k2-vinteren',
 } as const;
 
@@ -161,10 +162,16 @@ export const KAPITLER: KapittelDef[] = [
                 krever: [K2.kornet],
             },
             {
+                id: K2.angrepet,
+                tittel: 'Båten i vika',
+                mal: 'Noen kommer for å ta gården mens mennene er borte.',
+                krever: [K2.hosten],
+            },
+            {
                 id: K2.vinteren,
                 tittel: 'Vinteren',
                 mal: 'Se om det holder.',
-                krever: [K2.hosten],
+                krever: [K2.angrepet],
             },
         ],
         // 872 er kapittelet der de sosiale systemene *er* spillet: forrådet

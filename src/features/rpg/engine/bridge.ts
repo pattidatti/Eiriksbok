@@ -70,8 +70,14 @@ export interface SceneEvents {
      * årstidene - den tegner det den får, og melder hva Åsa bestemte.
      */
     forrad: { apne: string[]; kanGaaVidere: boolean };
-    /** Kapittelet er over. Ett skjermbilde, og så er året bak henne. */
-    kapittelslutt: { tittel: string; tekst: string; knapp: string };
+    /**
+     * Ett skjermbilde som eier hele flaten.
+     *
+     * Brukes der noe er avgjort og skal få stå alene: båten som snudde, og
+     * vinteren som gjorde opp. Ikke et varsel - et varsel forsvinner av seg
+     * selv, og dette skal leses.
+     */
+    beskjed: { tittel: string; tekst: string; knapp: string };
     /**
      * Åpne mellomspillet - bordet med kildene.
      *
@@ -171,8 +177,8 @@ export interface UiEvents {
     forradVidere: Record<string, never>;
     /** Bua lukkes igjen. */
     forradLukk: Record<string, never>;
-    /** Skjermbildet som avslutter kapittelet er lest. */
-    kapittelsluttLest: Record<string, never>;
+    /** Beskjeden er lest. */
+    beskjedLest: Record<string, never>;
 }
 
 class Emitter<Events> {

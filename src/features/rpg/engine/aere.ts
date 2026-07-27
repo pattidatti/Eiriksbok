@@ -121,7 +121,12 @@ export function aettTilstand(
  * stå ved siden av. Blueprintens §16.1 er hele grunnen - kampen som ikke skjer
  * skal være noe eleven vet at hun kjøpte, ellers leser den som at spillet
  * hoppet over innhold.
+ *
+ * Terskelen er satt slik at det kreves **to** handlinger i kapittel 2, ikke én:
+ * gaven til naboætta gir gjelden, og et svar til kongens mann gir æren. Én av
+ * delene er ikke nok, og det er meningen - den som bare var raus, får hjelp om
+ * vinteren; den som også turte å svare, slipper kampen.
  */
 export function stillerOpp(aere: number, aett: AettTilstand): boolean {
-    return aere >= 62 && aett.velvilje >= 40;
+    return aere >= 55 && aett.velvilje >= 40;
 }

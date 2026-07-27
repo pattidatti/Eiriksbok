@@ -85,6 +85,22 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Han kom ikke hit for å be.',
     },
     {
+        id: 'trell',
+        navn: 'Trell',
+        forklaring:
+            'En trell var ufri. Han eide ingenting, kunne ikke føre sak på tinget, og skulle ikke bære våpen - et våpen i hendene på en ufri mann er et våpen som kan snu seg. Mange treller var tatt på ferd, som krigsbytte. En trell kunne bli frigitt, men frigitt var ikke det samme som fri født.',
+        forstasVed: 'Gi Kåre et spyd, og se hva det gjør med alt annet om ham.',
+        replikk: 'Jeg har aldri holdt et våpen. Det er ikke lov.',
+    },
+    {
+        id: 'aetten',
+        navn: 'Ætta',
+        forklaring:
+            'Det finnes ingen konge, ingen lensmann og ingen hær som kommer når noen står i tunet ditt med spyd. Det finnes ætta di og naboene dine - og de kommer hvis de skylder deg noe. Derfor er en gave ikke sløsing, og derfor er et rykte ikke forfengelighet.',
+        forstasVed: 'Møt dem som kommer for å ta gården, og se hvem som står ved siden av deg.',
+        replikk: 'Hvem skulle jeg sendt bud til? Det er ingen andre enn oss.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:

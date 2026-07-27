@@ -59,8 +59,8 @@ type Overlegg =
     | { type: 'opptakt'; nr: number }
     /** Bua: forrådet og årets valg. */
     | { type: 'forrad'; apne: string[]; kanGaaVidere: boolean }
-    /** Skjermbildet som avslutter et kapittel. */
-    | { type: 'kapittelslutt'; tittel: string; tekst: string; knapp: string };
+    /** Ett skjermbilde som eier flaten: båten som snudde, vinteren som gjorde opp. */
+    | { type: 'beskjed'; tittel: string; tekst: string; knapp: string };
 
 export default function RpgPage() {
     const navigate = useNavigate();
@@ -160,7 +160,7 @@ export default function RpgPage() {
         overlegg.type === 'mellomspill' ||
         overlegg.type === 'puzzle' ||
         overlegg.type === 'forrad' ||
-        overlegg.type === 'kapittelslutt';
+        overlegg.type === 'beskjed';
     useEffect(() => {
         useStilleSkjerm.getState().settStille(eierSkjermen);
         return () => useStilleSkjerm.getState().settStille(false);
@@ -264,7 +264,7 @@ export default function RpgPage() {
             fraSpill.on('forrad', ({ apne, kanGaaVidere }) =>
                 setOverlegg({ type: 'forrad', apne, kanGaaVidere })
             ),
-            fraSpill.on('kapittelslutt', (k) => setOverlegg({ type: 'kapittelslutt', ...k })),
+            fraSpill.on('beskjed', (k) => setOverlegg({ type: 'beskjed', ...k })),
             // Replikken står i noen sekunder og går av seg selv. Den skal ikke
             // kreve et tastetrykk: verden går videre mens den står, og en
             // beskjed som må lukkes midt i en kamp er en beskjed eleven lukker
@@ -300,7 +300,7 @@ export default function RpgPage() {
             // ikke ende opp i 872 uten å ha fått vite at hun er Åsa.
             // Det samme gjelder skjermbildet som avslutter kapittelet: året er
             // gjort opp, og det skal leses.
-            if (overlegg.type === 'opptakt' || overlegg.type === 'kapittelslutt') return;
+            if (overlegg.type === 'opptakt' || overlegg.type === 'beskjed') return;
             if (e.key === 'Escape') {
                 // Bua må lukkes gjennom sin egen vei ut, som puzzlet: låsen ble
                 // satt av scenen, og bare scenen kan ta den av igjen.
@@ -568,7 +568,7 @@ export default function RpgPage() {
                     apne={overlegg.apne}
                     kanGaaVidere={overlegg.kanGaaVidere}
                     // Bua lukkes ikke her: scenen svarer med et nytt `forrad`
-                    // med årets nye tilstand, eller med kapittelsluttskjermen.
+                    // med årets nye tilstand, eller med beskjeden om oppgjøret.
                     onValg={(beslutning, alternativ) =>
                         tilSpill.emit('forradValg', { beslutning, alternativ })
                     }
@@ -580,14 +580,14 @@ export default function RpgPage() {
                 />
             )}
 
-            {overlegg.type === 'kapittelslutt' && (
+            {overlegg.type === 'beskjed' && (
                 <Meldingsskjerm
                     tittel={overlegg.tittel}
                     tekst={overlegg.tekst}
                     knapp={overlegg.knapp}
                     onKlikk={() => {
                         setOverlegg({ type: 'ingen' });
-                        tilSpill.emit('kapittelsluttLest', {});
+                        tilSpill.emit('beskjedLest', {});
                     }}
                 />
             )}

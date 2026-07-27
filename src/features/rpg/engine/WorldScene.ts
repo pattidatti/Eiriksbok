@@ -23,6 +23,7 @@ import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
 import { Raidet } from './raidet';
 import { Gaarden } from './gaarden';
+import { Angrepet, ANGREP_FLAGG } from './angrepet';
 import { Portaler } from './portal';
 import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
@@ -76,6 +77,8 @@ export class WorldScene extends Phaser.Scene {
      * i bakgrunnen.
      */
     private gaarden: Gaarden | null = null;
+    /** Båten i vika, høsten 872. `null` utenom kapittel 2. */
+    private angrepet: Angrepet | null = null;
     /** Båter og annet eleven kan gå om bord i. */
     private farkoster!: Farkoster;
     /** Dørene ut: portalene i hallen, og porten hjem fra en epoke. */
@@ -223,6 +226,18 @@ export class WorldScene extends Phaser.Scene {
             sted.kapittel === 2
                 ? new Gaarden({
                       settSynlig: (npcId, synlig) => this.samhandling.settSynlig(npcId, synlig),
+                      varsleAngrep: () => this.angrepet?.varsle(),
+                  })
+                : null;
+        this.angrepet =
+            sted.kapittel === 2
+                ? new Angrepet({
+                      settUt: (defId, x, y, valg) => {
+                          const def = ENEMY_BY_ID[defId];
+                          return def ? this.fiendeSystem.settUt(def, x, y, valg) : null;
+                      },
+                      settSynlig: (npcId, synlig) => this.samhandling.settSynlig(npcId, synlig),
+                      musikkRot: sted.musikkRot,
                   })
                 : null;
         this.samhandling = new Interaksjon(this, sted.npcer, sted.landemerker, {
@@ -312,6 +327,9 @@ export class WorldScene extends Phaser.Scene {
         // og hva hun holder på med. Uten dette kommer hun hjem fra hallen midt
         // i sommeren til et tomt tun.
         this.gaarden?.oppdater();
+        // Båten i vika står i lagringen, ikke i et felt i minnet: går hun en tur
+        // innom hallen midt i det, skal de fem mennene fortsatt være på vei inn.
+        this.angrepet?.gjenopprett();
         if (this.sted.id !== 'lindisfarne') return;
         const store = useRpgStore.getState();
         if (store.steg.includes(K1.motstanden)) {
@@ -491,7 +509,7 @@ export class WorldScene extends Phaser.Scene {
                 this.apneBua();
             }),
             tilSpill.on('forradLukk', () => this.settLaast(false)),
-            tilSpill.on('kapittelsluttLest', () => this.settLaast(false))
+            tilSpill.on('beskjedLest', () => this.settLaast(false))
         );
     }
 
@@ -603,6 +621,7 @@ export class WorldScene extends Phaser.Scene {
         );
         this.opplaering.oppdater(delta);
         this.raidet.oppdater(delta);
+        this.angrepet?.oppdater(delta);
         if (!sitter) {
             this.samvaer?.sjekk(
                 delta,
@@ -780,6 +799,7 @@ export class WorldScene extends Phaser.Scene {
         // Raidet eier oppgavekortet og navnestolpen. Begge lever i React, og
         // uten dette ville «Ta det du vil ha» blitt stående over fjorden hjemme.
         this.raidet.avslutt();
+        this.angrepet?.avslutt();
         this.reiser = true;
         this.reiserFra = this.sted.id;
         fraSpill.emit('reise', { stedId });
@@ -923,6 +943,27 @@ export class WorldScene extends Phaser.Scene {
                 this.gaarden?.gave('saebo', true);
                 return;
             }
+            case 'nekt-harald': {
+                this.gaarden?.gave('harald', false);
+                return;
+            }
+            case 'nekt-motstanderne': {
+                this.gaarden?.gave('motstanderne', false);
+                return;
+            }
+            case 'nekt-saebo': {
+                this.gaarden?.gave('saebo', false);
+                return;
+            }
+            case 'kaare-vaapen': {
+                // Et spyd i hendene på en ufri mann. Spillet sier ingenting om
+                // hva det betyr - det kommer i det han står der etterpå.
+                const store = useRpgStore.getState();
+                store.settFlagg(ANGREP_FLAGG.kaareVaepnet);
+                store.fullforSteg('k2-kaare-vaapen');
+                store.larBegrep('trell', 'forstatt');
+                return;
+            }
             case 'torgeir-noklene': {
                 // Her er samtalen selve handlingen. Torgeir forteller Åsa hva
                 // som ligger i bua, og det er alt steget er - hun vet nå hva
@@ -942,6 +983,7 @@ export class WorldScene extends Phaser.Scene {
     private utforLandemerkeHandling(handlingId: string): void {
         this.settLaast(false);
         if (handlingId === 'bua-forradet') this.apneBua();
+        if (handlingId === 'gaa-i-fjaera') this.angrepet?.mot();
     }
 
     /**

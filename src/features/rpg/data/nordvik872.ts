@@ -126,6 +126,18 @@ export const NORDVIK_872_NPCS: NpcDef[] = [
                 stikkord: ['frigi', 'frigitt', 'frihet'],
             },
         ],
+        handlinger: [
+            {
+                id: 'kaare-vaapen',
+                knapp: 'Ta spydet',
+                ledetekst:
+                    'Jeg ser båten jeg også. Fem menn, sier Torgeir.\n\nJeg har aldri holdt et våpen. Det er ikke lov. En trell med spyd er en trell som kan snu seg.',
+                // Først når kornet er inne - det er da båten kommer.
+                krever: ['k2-hosten'],
+                gir: 'k2-kaare-vaapen',
+                etterpa: 'Jeg holder det slik du sa. Jeg vet ikke mer enn det.',
+            },
+        ],
     },
     {
         id: 'vigdis',
@@ -149,6 +161,14 @@ export const NORDVIK_872_NPCS: NpcDef[] = [
                 krever: ['k2-vaaronn'],
                 gir: 'k2-gave-saebo',
                 etterpa: 'Vi står i gjeld til deg. Det gjør vi til det er gjort opp.',
+            },
+            {
+                id: 'nekt-saebo',
+                knapp: 'Jeg har ikke noe å avse',
+                ledetekst: '',
+                krever: ['k2-vaaronn'],
+                gir: 'k2-gave-saebo',
+                etterpa: 'Hun spurte ikke igjen.',
             },
         ],
         kunnskap: [
@@ -198,6 +218,15 @@ export const NORDVIK_872_NPCS: NpcDef[] = [
                 gir: 'k2-kornet',
                 etterpa: 'Kornet er sørover. Du har svart.',
             },
+            {
+                id: 'nekt-harald',
+                knapp: 'Ingenting herfra',
+                // Ledeteksten står på den første handlingen. Denne er svaret,
+                // ikke et nytt spørsmål.
+                ledetekst: '',
+                gir: 'k2-kornet',
+                etterpa: 'Han merket seg navnet på gården. Det gjorde alle som sto der.',
+            },
         ],
     },
     {
@@ -226,6 +255,13 @@ export const NORDVIK_872_NPCS: NpcDef[] = [
                     'Åtte sekker. Vi har ingen konge som kan love deg noe tilbake - bare folk som husker.',
                 gir: 'k2-kornet',
                 etterpa: 'De rodde nordover med kornet ditt.',
+            },
+            {
+                id: 'nekt-motstanderne',
+                knapp: 'Ingenting herfra',
+                ledetekst: '',
+                gir: 'k2-kornet',
+                etterpa: 'De rodde videre. De ba, de krevde ikke.',
             },
         ],
     },
@@ -299,6 +335,15 @@ export const NORDVIK_872_LANDMARKS: LandmarkDef[] = [
         text: 'Her ligger alt gården har: korn i binger, tørrfisk under taket, smør i kar.\n\nNøkkelen til denne døra henger i beltet ditt. Det er ikke pynt - det er hvem som avgjør hvem som spiser i vinter.',
         stikkord: ['nøkl', 'forråd', 'husfrue'],
         handling: { id: 'bua-forradet', knapp: 'Lås opp bua' },
+    },
+    {
+        id: 'fjaera-872',
+        kind: 'skilt',
+        tile: [11, 30],
+        title: 'Fjæra nedenfor tunet',
+        text: 'Herfra ser du hele vika. Det er her en båt legger til hvis den skal til Nordvik.\n\nÅ gå ned og møte dem er ikke det samme som å vente på tunet. Der nede står du mellom dem og alt du eier - og de ser at du gjorde det med vilje.',
+        stikkord: ['fjære', 'landgang'],
+        handling: { id: 'gaa-i-fjaera', knapp: 'Gå ned og møt dem' },
     },
     // Steinene fra 793 er de samme steinene. Objektene gjenbrukes med vilje:
     // det eleven leste som Torstein, kan hun lese igjen som Åsa - 79 år eldre,
