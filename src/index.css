@@ -581,3 +581,45 @@ body.dyslexia-mode h6 {
     animation: none;
   }
 }
+
+/*
+  Minnevokteren: prøveturen med skroget. Et skrog som er bygget feil siger under
+  vann - langsomt, og med baugen sist. Eleven skal rekke å se hva som skjer, for
+  det er selve rettelsen: ingen sier hva som var galt før hun har sett det synke.
+*/
+@keyframes skrogSynker {
+
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  35% {
+    transform: translateY(6px) rotate(-2deg);
+  }
+
+  100% {
+    transform: translateY(64px) rotate(-9deg);
+    opacity: 0.35;
+  }
+}
+
+/* Og et som er bygget riktig, ligger og duver. */
+@keyframes skrogFlyter {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.6deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(0.6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  [class*="skrogSynker"],
+  [class*="skrogFlyter"] {
+    animation: none;
+  }
+}

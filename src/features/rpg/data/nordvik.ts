@@ -110,13 +110,25 @@ export const NORDVIK_NPCS: NpcDef[] = [
     {
         id: 'orm',
         name: 'Orm Båtbygger',
-        role: 'Han som kjenner skipet',
+        role: 'Faren din. Sur på deg.',
         tile: [9, 36],
+        ser: 'hoyre',
         palette: { tunic: '#3c5a6b', trim: '#cfd8c0', hair: '#5b3a1a' },
         smalltalk: [
             'Et skip er ikke planker. Det er en tanke som flyter.',
             'Kjenn på bordet her. Kjenner du hvordan de ligger over hverandre?',
             'Faren min bygde etter øyemål. Jeg bygger etter øyemål. Det holder.',
+        ],
+        handlinger: [
+            {
+                id: 'orm-skroget',
+                knapp: 'Jeg legger bordene',
+                ledetekst:
+                    'Du har stått der og sett på i tre somre. Da kan du legge dem selv. Jeg sier ingenting - du får se det på vannet.',
+                gir: 'k1-skroget',
+                etterpa:
+                    'Det flyter. Det er alt som skal sies om et skrog. Nå skal det vestover, og du skal med.',
+            },
         ],
         kunnskap: [
             {

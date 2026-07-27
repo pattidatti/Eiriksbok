@@ -111,8 +111,13 @@ export interface UiEvents {
     klippVidere: Record<string, never>;
     /** Hopp over hele cutscenen. Bare tillatt når hun har sett den før. */
     klippHoppOver: Record<string, never>;
-    /** Et puzzle er avsluttet. `lost` er falsk når eleven ga opp. */
-    puzzleSvar: { id: string; lost: boolean };
+    /**
+     * Et puzzle er avsluttet. `lost` er falsk når eleven ga opp.
+     *
+     * `forsteForsok` er ikke belønning - det er noe Orm husker. Å gjøre det
+     * riktig på første forsøk skal merkes i verden, ikke i tallene.
+     */
+    puzzleSvar: { id: string; lost: boolean; forsteForsok?: boolean };
     /**
      * Eleven valgte en kapittelhandling i en samtale - «Vis meg», «Jeg legger
      * bordene». Scenen eier hva som faktisk skjer.

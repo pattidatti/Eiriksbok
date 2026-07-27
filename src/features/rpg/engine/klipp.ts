@@ -136,7 +136,13 @@ class Avspilling {
 
             case 'kamera': {
                 cam.stopFollow();
-                cam.pan(steg.til[0] * TILE + 8, steg.til[1] * TILE + 8, steg.ms, 'Sine.InOut');
+                // Ease-navnet må stå i Phasers `EaseMap`, og der heter det
+                // `Sine.easeInOut`. `Sine.InOut` er navnet i `Phaser.Math.Easing`
+                // og slår ut som «this.ease is not a function» *inne i*
+                // kameraets oppdatering - altså i tegneløkka, ikke i vår kode.
+                // Da stopper scenen, nedtellingen under fyrer aldri, og
+                // cutscenen blir hengende med låsen på.
+                cam.pan(steg.til[0] * TILE + 8, steg.til[1] * TILE + 8, steg.ms, 'Sine.easeInOut');
                 await this.vent(steg.ms, false);
                 return;
             }
@@ -161,7 +167,7 @@ class Avspilling {
                         x: steg.til[0] * TILE + 8,
                         y: steg.til[1] * TILE + 8,
                         duration: ms,
-                        ease: 'Sine.InOut',
+                        ease: 'Sine.easeInOut',
                         onUpdate: () => sprite.setDepth(sprite.y),
                         onComplete: () => resolve(),
                     });

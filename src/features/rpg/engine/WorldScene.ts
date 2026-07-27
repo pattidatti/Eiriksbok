@@ -18,6 +18,8 @@ import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
 import { Opplaering } from './opplaering';
+import { K1, K1_FLAGG } from '../data/kapitler';
+import { SJOSETTINGEN } from '../data/klipp/kapittel1';
 import { Portaler } from './portal';
 import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
@@ -376,6 +378,9 @@ export class WorldScene extends Phaser.Scene {
             tilSpill.on('folelse', ({ emoji }) => this.samvaer?.visFolelse(emoji)),
             tilSpill.on('npcHandling', ({ npcId, handlingId }) =>
                 this.utforHandling(npcId, handlingId)
+            ),
+            tilSpill.on('puzzleSvar', ({ id, lost, forsteForsok }) =>
+                this.avsluttPuzzle(id, lost, Boolean(forsteForsok))
             )
         );
     }
@@ -751,6 +756,43 @@ export class WorldScene extends Phaser.Scene {
                 const mal = this.samhandling.mal('npc', npcId);
                 if (!mal) return;
                 this.opplaering.start(npcId, { x: mal.x, y: mal.y });
+                return;
+            }
+            case 'orm-skroget': {
+                // Puzzlet tar over skjermen, så verden må stå stille bak det.
+                // Låsen tas av igjen når React svarer med `puzzleSvar`.
+                this.settLaast(true);
+                fraSpill.emit('puzzle', { id: 'skroget' });
+                return;
+            }
+            default:
+                return;
+        }
+    }
+
+    /**
+     * Et puzzle er over. Scenen eier hva det førte til.
+     *
+     * Belønningen ligger her og ikke i komponenten fordi det er spillet som
+     * skal avgjøre hva et løst puzzle betyr - React tegner det, den skal ikke
+     * dele ut begreper.
+     */
+    private avsluttPuzzle(id: string, lost: boolean, forsteForsok: boolean): void {
+        this.settLaast(false);
+        if (!lost) return;
+        const store = useRpgStore.getState();
+        switch (id) {
+            case 'skroget': {
+                store.fullforSteg(K1.skroget);
+                store.fullforPuzzle('skroget', 'Du bygget et skrog som fløt');
+                store.larBegrep('klinkbygging', 'forstatt');
+                if (forsteForsok) store.settFlagg(K1_FLAGG.skrogetHeltFint);
+                // Sjøsettingen kommer med én gang. Å måtte gå ut av naustet og
+                // finne Orm igjen for å se skipet sitt gå på vannet, ville lagt
+                // et ærend mellom handlingen og følgen av den.
+                void this.spillKlipp(SJOSETTINGEN).then(() => {
+                    useRpgStore.getState().fullforSteg(K1.sjosettingen);
+                });
                 return;
             }
             default:

@@ -12,6 +12,7 @@ import { DialogOverlay, LandmarkOverlay } from './components/DialogOverlay';
 import { Hud } from './components/Hud';
 import { HubHud } from './components/HubHud';
 import { Klippscene } from './components/Klippscene';
+import { Skroget } from './components/Skroget';
 import { rustningTier } from './data/classes';
 import { useHubRom } from './net/useHubRom';
 import { Atmosfare, Skjermkontroll } from './components/Skjermkontroll';
@@ -39,7 +40,9 @@ type Overlegg =
     | { type: 'logg' }
     | { type: 'pause' }
     | { type: 'dod' }
-    | { type: 'seier' };
+    | { type: 'seier' }
+    /** Kapittelets håndverkspuzzle. Scenen står låst bak det. */
+    | { type: 'puzzle'; id: 'skroget' | 'navigasjonen' };
 
 export default function RpgPage() {
     const navigate = useNavigate();
@@ -211,6 +214,11 @@ export default function RpgPage() {
             }),
             fraSpill.on('klippTekst', (t) => setKlippTekst(t)),
             fraSpill.on('oppgave', (o) => setOppgave(o)),
+            // Puzzlet åpnes uten `apnePanel`: scenen har alt satt låsen selv, og
+            // et `pause: true` til ville tatt den to ganger. Det gjør ingen
+            // skade i dag, men de to veiene inn i «alt står stille» skal ikke
+            // begge være i bruk - det er slik de kommer i utakt.
+            fraSpill.on('puzzle', ({ id }) => setOverlegg({ type: 'puzzle', id })),
             // Replikken står i noen sekunder og går av seg selv. Den skal ikke
             // kreve et tastetrykk: verden går videre mens den står, og en
             // beskjed som må lukkes midt i en kamp er en beskjed eleven lukker
@@ -241,6 +249,15 @@ export default function RpgPage() {
             if (e.repeat) return;
             const apent = overlegg.type !== 'ingen';
             if (e.key === 'Escape') {
+                // Puzzlet må lukkes gjennom sin egen vei ut. `lukk()` sender
+                // bare `lukk` og `pause: false`, og da ville scenen aldri fått
+                // vite at eleven gikk - låsen ville stått til hun snakket med
+                // noen andre.
+                if (overlegg.type === 'puzzle') {
+                    setOverlegg({ type: 'ingen' });
+                    tilSpill.emit('puzzleSvar', { id: overlegg.id, lost: false });
+                    return;
+                }
                 if (apent) lukk();
                 else apnePanel({ type: 'pause' });
                 return;
@@ -416,6 +433,23 @@ export default function RpgPage() {
                         tilSpill.emit('bossSvar', { riktig });
                         setOverlegg({ type: 'ingen' });
                         tilSpill.emit('pause', { pa: false });
+                    }}
+                />
+            )}
+
+            {overlegg.type === 'puzzle' && overlegg.id === 'skroget' && (
+                <Skroget
+                    onFerdig={(paaForsteForsok) => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('puzzleSvar', {
+                            id: 'skroget',
+                            lost: true,
+                            forsteForsok: paaForsteForsok,
+                        });
+                    }}
+                    onAvbryt={() => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('puzzleSvar', { id: 'skroget', lost: false });
                     }}
                 />
             )}
