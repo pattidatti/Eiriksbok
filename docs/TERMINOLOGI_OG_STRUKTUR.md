@@ -33,7 +33,7 @@ Hver leksjon eller modul kan settes sammen av ulike byggeklosser for å formidle
 Kortfattede definisjoner av nøkkelord.
 *   **Funksjon**: Gir eleven rask tilgang til definisjoner og eksempler.
 *   **Visning**: Vises som interactive cards i artikler ("Fagbegreper") eller i den globale ordlisten.
-*   **Teknisk**: Lagres globalt i TinaCMS (`content/concepts`) eller lokalt i leksjoner.
+*   **Teknisk**: Lagres globalt som JSON i `content/concepts` eller lokalt i leksjoner.
 
 
 ### Kontekst (Context)

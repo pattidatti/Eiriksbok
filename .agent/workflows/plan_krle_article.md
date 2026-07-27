@@ -33,7 +33,7 @@ KRLE articles use a deep nested structure for the "Artikkel" pattern:
 - **Path:** `public/content/krle/religion/[religion]/[topic]/artikkel.json`
 
 ### 2. JSON Rules
-- **Schema:** Use the `name` field for blocks (TinaCMS compatibility).
+- **Schema:** Use the `name` field for blocks (matches ComponentRegistry lookup).
 - **Metadata:**
   ```json
   {

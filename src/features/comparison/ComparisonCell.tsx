@@ -1,5 +1,5 @@
 import React from 'react';
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
+import { RichText } from '../../components/ui/RichText';
 import { Link } from 'react-router-dom';
 import type { ArticleLinkRef, ComparisonContent } from './types';
 
@@ -26,8 +26,8 @@ export const ComparisonCell: React.FC<ComparisonCellProps> = ({
                 }`}
             >
                 {content ? (
-                    content.format === 'tina' ? (
-                        <TinaMarkdown content={content.value as never} />
+                    content.format === 'rich' ? (
+                        <RichText content={content.value} />
                     ) : (
                         <p className="text-text-muted leading-relaxed">{content.value}</p>
                     )

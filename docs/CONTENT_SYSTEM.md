@@ -91,9 +91,9 @@ The timeline aggregates events from all history articles.
 ### 4.2. Flashcards (Fagbegreper)
 Flashcards are global concepts used for practice.
 
-*   **Source**: `public/content/concepts/*.json` (TinaCMS Collection: "Fagbegreper").
+*   **Source**: `public/content/concepts/*.json` (redigeres direkte som JSON).
 *   **How to Add**: 
-    1.  Use the TinaCMS admin interface to add new concepts.
+    1.  Add a new concept by creating a JSON file in `public/content/concepts/`.
     2.  Or run the migration script if you have terms in legacy formats.
 *   **Scanning Tool**:
     *   Command: `npm run scan:concepts`
@@ -107,7 +107,7 @@ When creating a new article, follow this checklist to ensure complete integratio
 1.  [ ] **Create Content**: Write the JSON file in `public/content/...`.
 2.  [ ] **Update Manifest**: Add entry to `manifest.json`.
 3.  [ ] **Scan for Concepts**: Run `npm run scan:concepts`.
-    *   Review the "Potential New Concepts" list. Are there terms here that should be in the global database? If so, add them in TinaCMS.
+    *   Review the "Potential New Concepts" list. Are there terms here that should be in the global database? If so, add them as JSON in `public/content/concepts/`.
     *   Review the "Mentions" list. Does your article mention existing concepts? If `useConcepts` is working correctly, these should be picked up automatically, but you can also tag them manually if needed.
 4.  [ ] **Check Timeline**: If history article, ensure relevant events are added to `global-timeline.json`.
 5.  [ ] **Verify**: Start dev server and check that the article loads, concepts appear in sidebar/glossary, and timeline events show up.

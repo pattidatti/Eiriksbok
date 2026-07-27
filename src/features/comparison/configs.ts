@@ -3,7 +3,7 @@ import type { ComparisonContent, ComparisonDomainConfig, ComparisonEntity } from
 
 function wrapDimensions(
     dimensions: Record<string, unknown> | undefined,
-    format: 'tina' | 'plain'
+    format: 'rich' | 'plain'
 ): Record<string, ComparisonContent | undefined> {
     const wrapped: Record<string, ComparisonContent | undefined> = {};
     for (const [key, value] of Object.entries(dimensions ?? {})) {
@@ -11,7 +11,7 @@ function wrapDimensions(
         wrapped[key] =
             format === 'plain'
                 ? { format: 'plain', value: String(value) }
-                : { format: 'tina', value };
+                : { format: 'rich', value };
     }
     return wrapped;
 }
@@ -72,7 +72,7 @@ export const religionConfig: ComparisonDomainConfig = {
             id: religion.id,
             name: religion.name,
             color: religion.color,
-            dimensions: wrapDimensions(religion.dimensions, 'tina'),
+            dimensions: wrapDimensions(religion.dimensions, 'rich'),
         };
         return entity;
     },

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
+import { RichText } from '../ui/RichText';
 import type { Religion } from '../../types';
 
 interface DimensionWheelProps {
@@ -139,7 +139,7 @@ export const DimensionWheel: React.FC<DimensionWheelProps> = ({ religion }) => {
                             </h3>
                             <div className="prose prose-slate max-w-none">
                                 {religion.dimensions[selectedDim] ? (
-                                    <TinaMarkdown content={religion.dimensions[selectedDim]} />
+                                    <RichText content={religion.dimensions[selectedDim]} />
                                 ) : (
                                     <p className="text-slate-500 italic">Ingen beskrivelse lagt til ennå.</p>
                                 )}

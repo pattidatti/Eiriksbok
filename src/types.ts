@@ -196,7 +196,7 @@ export interface Religion {
     color?: string;
     icon?: string;
     dimensions: {
-        ritual?: any; // Tina Rich Text
+        ritual?: any; // Rich-text-AST, se components/ui/RichText.tsx
         narrative?: any;
         experiential?: any;
         social?: any;

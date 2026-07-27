@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
+import { RichText } from '../ui/RichText';
 import type { Religion } from '../../types';
 
 interface DimensionGridProps {
@@ -34,7 +34,7 @@ export const DimensionGrid: React.FC<DimensionGridProps> = ({ religion }) => {
                     </h3>
                     <div className="prose prose-sm prose-slate max-w-none">
                         {religion.dimensions[dim.key] ? (
-                            <TinaMarkdown content={religion.dimensions[dim.key]} />
+                            <RichText content={religion.dimensions[dim.key]} />
                         ) : (
                             <p className="text-slate-500 italic">Ingen beskrivelse.</p>
                         )}

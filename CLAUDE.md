@@ -38,7 +38,7 @@ Alt innhold i Eiriksbok skal være forståelig for en gjennomsnittlig 14-åring.
 | Routing | React Router v6 (browser router, lazy-loaded pages) |
 | Data fetching | TanStack React Query 5 |
 | Backend/Realtime | Firebase 12 (Firestore, Realtime DB — for Quiz Battle & feedback) |
-| CMS | TinaCMS 2 (visual editing at `/admin`) |
+| CMS | Ingen. Innhold redigeres direkte som JSON under `public/content/` og `public/data/` |
 | 3D (artikler) | React Three Fiber + Drei |
 | 3D (mini-spill) | Raw Three.js (imperativ, ingen R3F) |
 | Fysikk (mini-spill) | Rapier3D (`@dimforge/rapier3d-compat`, WASM, lazy-lastet) |
@@ -68,7 +68,7 @@ Alt innhold i Eiriksbok skal være forståelig for en gjennomsnittlig 14-åring.
 │   │   ├── scenarios/         # Time-travel scenario JSON files
 │   │   ├── kompetansemal/     # Curriculum competence-goal mappings
 │   │   ├── people/            # Person gallery data
-│   │   ├── concepts/          # Flashcard concept JSON (TinaCMS-managed)
+│   │   ├── concepts/          # Flashcard concept JSON (redigeres direkte)
 │   │   └── config/            # Misc content configuration
 │   ├── data/
 │   │   ├── concepts.json      # Auto-generated flashcard concept database
@@ -123,7 +123,6 @@ Alt innhold i Eiriksbok skal være forståelig for en gjennomsnittlig 14-åring.
 │   ├── plan_learning_path.md / build_learning_path.md
 │   ├── plan_minigame.md / build_interactive.md
 │   └── ...                    # Flere arkitekt-/byggemodul-workflows
-├── tina/                      # TinaCMS configuration
 └── Ideer/                     # Planning/ideas documents (Norwegian)
 ```
 
@@ -137,7 +136,6 @@ npm run dev            # Start dev server at localhost:5173 (auto-runs scan:cont
 npm run build          # Production build (gen-version + scan:content + optimize-images + tsc -b + vite build + copy-404.js)
 npm run lint           # ESLint check
 npm run preview        # Preview production build
-npm run tina-dev       # Start with TinaCMS visual editor (go to /admin)
 npm run scan:content   # Regenerate content-index.json + sync manifest dates
 npm run scan:concepts  # Scan articles for potential new flashcard concepts
 npm run optimize-images # Optimaliser WebP under public/ (kjøres automatisk i build; --tving for å presse på nytt)
@@ -459,7 +457,7 @@ See `.agent/workflows/LEARNING_PATH_GUIDE.md` for the full JSON schema.
 
 1. **Create content file**: `public/content/[subject]/[topic]/[lesson-id].json`
 2. **Update manifest**: Add entry under the correct topic in `manifest.json`
-3. **Scan concepts**: `npm run scan:concepts` — review suggestions for new terms to add to TinaCMS
+3. **Scan concepts**: `npm run scan:concepts` — review suggestions, and add new terms as JSON in `public/content/concepts/`
 4. **Add timeline events**: Append any new events to `global-timeline.json`
 5. **Verify**: Start dev server, check article loads, concepts appear, timeline events show
 
@@ -472,8 +470,7 @@ See `.agent/workflows/LEARNING_PATH_GUIDE.md` for the full JSON schema.
 
 ### Adding a New Concept (Flashcard Term)
 
-- Use TinaCMS admin at `http://localhost:5173/admin`, collection "Fagbegreper"
-- Or add directly to `public/content/concepts/[term].json`
+- Add a JSON file directly: `public/content/concepts/[term].json`
 
 ---
 

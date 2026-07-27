@@ -23,9 +23,9 @@ Vi følger en streng estetikk inspirert av moderne "avant-garde" UI.
     ```bash
     npm run dev
     ```
-3.  **Innholdsredigering (TinaCMS)**:
+3.  **Innholdsredigering**:
     ```bash
-    npm run tina-dev
+    # Innhold redigeres direkte som JSON under public/content/
     ```
     Gå til `http://localhost:5173/admin` for å redigere innhold visuelt.
 
@@ -83,7 +83,7 @@ Siden tilbakemeldinger kan inneholde sensitiv info, er databasen **ikke** offent
 - **Styling**: Tailwind CSS v4 (Vanilla logic)
 - **Animations**: Framer Motion
 - **Data**: JSON-driven architecture
-- **CMS**: TinaCMS
+- **CMS**: Ingen - innhold er JSON i repoet
 - **Backend**: Firebase (for Quiz Battle og Multiplayer)
 
 ---

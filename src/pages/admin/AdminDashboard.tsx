@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BarChart, FileText, Link as LinkIcon, Shield, Gamepad2, Edit } from 'lucide-react';
+import { BarChart, FileText, Link as LinkIcon, Shield, Gamepad2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const AdminCard: React.FC<{
@@ -90,14 +90,6 @@ export const AdminDashboard: React.FC = () => {
                         color="bg-orange-50"
                     />
 
-                    <AdminCard
-                        title="CMS Redigering"
-                        description="Gå til TinaCMS for å redigere innholdet."
-                        icon={<Edit className="w-6 h-6 text-pink-600" />}
-                        to="/admin/index.html"
-                        color="bg-pink-50"
-                        external
-                    />
                 </div>
             </div>
         </div>

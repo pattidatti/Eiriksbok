@@ -28,7 +28,6 @@ Den beste editoren for webutvikling.
     - **ESLint**: For å finne feil i koden.
     - **Tailwind CSS IntelliSense**: For hjelp med styling.
     - **Prettier - Code formatter**: For automatisk formatering av kode.
-    - **TinaCMS**: (Valgfritt) Hvis du jobber mye med CMS-konfigurasjonen.
 
 ## 2. Klargjøring av prosjektet
 Prosjektet administreres primært via **Git**. Hvis du har fått tilgang til filene via Dropbox, sørg for at du har de nyeste filene synkronisert. Hvis du bruker GitHub, klon repoet først.
@@ -52,12 +51,10 @@ npm run dev
 ```
 Nettsiden vil da være tilgjengelig på `http://localhost:5173` (eller lignende).
 
-### Starte med TinaCMS (For å redigere innhold)
-Hvis du skal redigere tekst og bilder via CMS-et:
-```bash
-npm run tina-dev
-```
-Dette starter både nettsiden og CMS-systemet.
+### Redigere innhold
+Det er ikke noe CMS i prosjektet. Alt innhold ligger som JSON i repoet:
+artikler under `public/content/`, religions- og filosofidata under `public/data/`.
+Rediger filene direkte, og kjør `npm run dev` for å se endringene.
 
 ## 4. Hold programvare oppdatert 🔄
 

@@ -4,7 +4,7 @@
 // Religion-data er Tina rich text, filosofi-data er rene strenger.
 // Det diskriminerte formatet lar én og samme motor rendre begge.
 export type ComparisonContent =
-    | { format: 'tina'; value: unknown }
+    | { format: 'rich'; value: unknown }
     | { format: 'plain'; value: string };
 
 export interface ComparisonEntity {

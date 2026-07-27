@@ -8,7 +8,7 @@ Dette dokumentet gir en oversikt over hvordan Gravity Lærebok er bygget opp tek
 - **Byggverktøy**: [Vite](https://vitejs.dev/)
 - **Språk**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **CMS**: [TinaCMS](https://tina.io/) (for innholdsredigering)
+- **CMS**: Ingen - alt innhold ligger som JSON i repoet
 - **Ikoner**: [Heroicons](https://heroicons.com/) & [Lucide React](https://lucide.dev/)
 - **Animasjoner**: [Framer Motion](https://www.framer.com/motion/)
 - **Kart/Visualisering**: [React Simple Maps](https://www.react-simple-maps.io/) & [Chart.js](https://www.chartjs.org/)
@@ -31,7 +31,6 @@ Dette dokumentet gir en oversikt over hvordan Gravity Lærebok er bygget opp tek
 │   ├── styles/        # CSS-filer (index.css)
 │   ├── App.tsx        # Hovedkomponenten og ruting
 │   └── main.tsx       # Inngangspunktet for applikasjonen
-├── tina/              # Konfigurasjon for TinaCMS
 └── ...
 ```
 

@@ -26,7 +26,7 @@ The goal is to allow students to compare "Bønn" in Islam with "Bønn" in Kriste
 
 ## Technical Requirements (JSON)
 - **Subject:** `krle`
-- **Schema:** Uses `name` field for content blocks (compatible with TinaCMS templates).
+- **Schema:** Uses `name` field for content blocks (matches ComponentRegistry lookup).
 - **Metadata:**
   ```json
   "religion": "islam",
