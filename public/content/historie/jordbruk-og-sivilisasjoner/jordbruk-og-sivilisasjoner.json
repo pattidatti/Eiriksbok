@@ -10,9 +10,9 @@
     "heroImage": "/images/jordbruk-og-sivilisasjoner/jordbruk-og-sivilisasjoner-hero.webp",
     "fact": "Visste du at de første bøndene ble lavere og fikk dårligere tenner enn jegerne og sankerne som levde før dem?",
     "details": [
-        "Jordbruket oppstod i Den fruktbare halvmåne for rundt 10 000 år siden.",
+        "Jordbruket oppstod i Den fruktbare halvmåne rundt 9500 fvt.",
         "Overskudd av mat frigjorde folk fra åkeren og skapte de første byene.",
-        "I Norge kom de første bøndene til Østlandet rundt 4000 fvt."
+        "I Norge er de eldste sporene etter jordbruk fra området rundt Oslofjorden, rundt 4000 fvt."
     ],
     "tags": [
         "jordbruk",
@@ -37,11 +37,11 @@
         },
         {
             "type": "text",
-            "content": "En revolusjon er en rask og stor forandring. Men jordbruksrevolusjonen gikk egentlig sakte. Den startet i et område vi kaller Den fruktbare halvmåne, et belte med god jord som strekker seg fra dagens Israel og Syria, gjennom Irak og ned mot Persiabukta. Her vokste det ville kornsorter som bygg og hvete. For rundt ti tusen år siden la noen merke til at frø som falt i bakken, ble til nye planter. Sakte, over mange hundre år, lærte de å så, vanne og høste."
+            "content": "En revolusjon er en rask og stor forandring. Men jordbruksrevolusjonen gikk egentlig sakte. Overgangen fra fangst til jord- og husdyrbruk var en lang prosess som skjedde til helt forskjellig tid i ulike deler av verden (Solberg & Omland, 2026). Den startet i et område vi kaller Den fruktbare halvmåne - et belte med god jord som strekker seg fra Persiabukta, gjennom dagens Irak og Syria og bort til Middelhavet (Leraand, 2026). Her vokste det ville kornsorter som bygg og hvete. Rundt 9500 fvt. la noen merke til at frø som falt i bakken, ble til nye planter. Sakte, over mange hundre år, lærte de å så, vanne og høste."
         },
         {
             "type": "text",
-            "content": "Da menneskene begynte å dyrke jorda, måtte de bli boende på ett sted. De bygde hus, ryddet åkrer og temmet dyr som sauer, geiter og kyr. For første gang eide en familie noe stort og fast: jord, hus og buskap. Livet ble trygt på en ny måte - men også hardere."
+            "content": "Da menneskene begynte å dyrke jorda, måtte de bli boende på ett sted. De bygde hus, ryddet åkrer og temmet dyr. Sauer, geiter og kyr ble husdyr rundt 8000 fvt. (Leraand, 2026). For første gang eide en familie noe stort og fast: jord, hus og buskap. Livet ble trygt på en ny måte - men også hardere."
         },
         {
             "type": "header",
@@ -49,7 +49,7 @@
         },
         {
             "type": "text",
-            "content": "Vi tenker ofte at jordbruket bare var et stort framskritt. Men sannheten er mer overraskende. På noen områder fikk bøndene det bedre enn jegerne. På andre fikk de det faktisk verre. Utforsk sammenligningen under og se selv hvem som hadde det best."
+            "content": "Vi tenker ofte at jordbruket bare var et stort framskritt. Men sannheten er mer overraskende. På noen områder fikk bøndene det bedre enn jegerne. På andre fikk de det faktisk verre. En stor studie av skjeletter og gammelt DNA fra 167 europeere viser at de første bøndene ble merkbart lavere enn arvematerialet deres skulle tilsi, og skjelettene bærer tydelige spor etter stress i barndommen (Marciniak mfl., 2022). Utforsk sammenligningen under og se selv hvem som hadde det best."
         },
         {
             "type": "component",
@@ -76,7 +76,7 @@
         },
         {
             "type": "text",
-            "content": "Da kunne noen mennesker gjøre helt andre ting. De ble pottemakere, smeder, prester, soldater eller kjøpmenn. At folk gjør ulike jobber kaller vi arbeidsdeling, og det er en av de viktigste oppfinnelsene i historien. Med arbeidsdeling, overskudd og mange mennesker på ett sted vokste det fram noe helt nytt: byer, konger, lover og skrift. Et slikt samfunn kaller vi en sivilisasjon."
+            "content": "Da kunne noen mennesker gjøre helt andre ting. De ble pottemakere, smeder, prester, soldater eller kjøpmenn. At folk gjør ulike jobber kaller vi arbeidsdeling, og det er en av de viktigste oppfinnelsene i historien. Nettopp fordi bøndene ble boende, kunne det vokse fram bysamfunn med handel, sentralisert makt og de første statene (Leraand, 2026). Med arbeidsdeling, overskudd og mange mennesker på ett sted vokste det fram noe helt nytt: byer, konger, lover og skrift. Et slikt samfunn kaller vi en sivilisasjon."
         },
         {
             "type": "text",
@@ -100,17 +100,17 @@
         },
         {
             "type": "text",
-            "content": "I Norge kom jordbruket mye senere enn i Midtøsten. Her var folk fortsatt jegere og fiskere lenge etter at de første byene var bygd i Mesopotamia. Først rundt 4000 fvt. begynte de første bøndene å rydde åkrer på Østlandet. De dyrket korn og holdt husdyr, men jakt og fiske var fortsatt viktig i mange hundre år."
+            "content": "I Norge kom jordbruket mye senere enn i Midtøsten. Her var folk fortsatt jegere og fiskere lenge etter at de første byene var bygd i Mesopotamia. Rundt 4000 fvt. finner vi de første sporene etter jordbruk rundt Oslofjorden: gravplasser og rester etter husdyr, korn og redskaper (Orning, 2026). Det tok likevel rundt 1500 år før jordbruket slo skikkelig gjennom. I en lang periode var åkerbruk mer et tillegg til jakt og fiske enn en erstatning."
         },
         {
             "type": "text",
-            "content": "Rundt 2500 fvt. kom nye folkegrupper til Norge. Arkeologer kaller dem stridsøksfolket, fordi de ble gravlagt med fint slipte stridsøkser. De brakte med seg nye måter å leve på. Slik ble jordbruket sakte en del av livet også her i nord, selv om vinteren og det karrige landet gjorde det vanskeligere enn nede ved de store elvene."
+            "content": "Rundt 2400 fvt. ser det ut til at jordbruket fikk sitt endelige gjennombrudd fra Trøndelag og sørover. Fra denne tida finner arkeologene stridsøkser og ny keramikk som peker mot innflytelse fra Danmark. Om jordbruket kom hit med innvandrere eller bare gjennom kontakt sørfra, er fortsatt omstridt (Orning, 2026). Uansett ble jordbruket sakte en del av livet også her i nord, selv om vinteren og det karrige landet gjorde det vanskeligere enn nede ved de store elvene. Perioden fra 4000 til rundt 1800 fvt. kaller vi yngre steinalder, og folketallet i Norge økte kraftig i disse årene nettopp fordi fehold og åkerbruk kom i tillegg til jakt og fiske (Solberg & Stylegar, 2026)."
         },
         {
             "type": "image",
             "src": "/images/jordbruk-og-sivilisasjoner/jordbruk-og-sivilisasjoner-03.webp",
             "alt": "Norsk steinalderbonde rydder åker i kupert landskap",
-            "caption": "På Østlandet ryddet de første bøndene åkrer rundt 4000 fvt."
+            "caption": "Rundt Oslofjorden finner vi de første sporene etter jordbruk fra rundt 4000 fvt."
         },
         {
             "type": "component",
@@ -120,7 +120,7 @@
                     "Hvordan levde menneskene før jordbruket, og hva kaller vi denne levemåten?",
                     "Hvor startet jordbruket først, og hvilke ville kornsorter vokste der?",
                     "Hva betyr arbeidsdeling, og hvilke nye yrker fikk folk da ikke alle lenger måtte være bønder?",
-                    "Når og hvor i Norge ryddet de første bøndene åkrer, og hva kalles folkegruppen som kom rundt 2500 fvt.?"
+                    "Når og hvor i Norge finner vi de første sporene etter jordbruk, og hva slags funn peker mot innflytelse fra Danmark rundt 2400 fvt.?"
                 ],
                 "reflekter": [
                     "Teksten sier at jordbruket på noen områder gjorde livet bedre og på andre områder verre. Forklar med egne ord både en fordel og en ulempe for de første bøndene.",
@@ -160,7 +160,7 @@
                             "I Kina"
                         ],
                         "answer": "I Den fruktbare halvmåne i Midtøsten",
-                        "explanation": "Her vokste det ville kornsorter og fantes dyr som var lette å temme. Derfor startet jordbruket akkurat her, for rundt ti tusen år siden."
+                        "explanation": "Her vokste det ville kornsorter og fantes dyr som var lette å temme. Derfor startet jordbruket akkurat her, rundt 9500 fvt."
                     },
                     {
                         "question": "Hvorfor var overskudd av mat så viktig?",
@@ -185,7 +185,7 @@
                         "explanation": "Bøndene spiste mer ensformig og levde tett på husdyr. Skjelettene viser at de ble lavere og fikk dårligere tenner enn jegerne."
                     },
                     {
-                        "question": "Når begynte de første bøndene å rydde åkrer på Østlandet i Norge?",
+                        "question": "Når er de eldste sporene etter jordbruk i Norge fra?",
                         "options": [
                             "Rundt 10 000 fvt.",
                             "Rundt 4000 fvt.",
@@ -193,13 +193,26 @@
                             "Rundt 1000 evt."
                         ],
                         "answer": "Rundt 4000 fvt.",
-                        "explanation": "Jordbruket kom til Norge mye senere enn til Midtøsten. På Østlandet startet det rundt 4000 fvt., flere tusen år etter de første byene i Mesopotamia."
+                        "explanation": "Jordbruket kom til Norge mye senere enn til Midtøsten. Rundt Oslofjorden dukker de første sporene opp rundt 4000 fvt., flere tusen år etter de første byene i Mesopotamia."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Leraand, D. (2026). *Midtøstens historie før 600*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Midtøstens_historie_før_600](https://snl.no/Midt%C3%B8stens_historie_f%C3%B8r_600)",
+                    "Marciniak, S., Bergey, C. M., Silva, A. M. mfl. (2022). *An integrative skeletal and paleogenomic analysis of stature variation suggests relatively reduced health for early European farmers*. Proceedings of the National Academy of Sciences, 119(15). [doi.org/10.1073/pnas.2106743119](https://doi.org/10.1073/pnas.2106743119)",
+                    "Orning, H. J. (2026). *Norges historie*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Norges_historie](https://snl.no/Norges_historie)",
+                    "Solberg, B. & Omland, A. (2026). *Neolittisk tid*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/neolittisk_tid](https://snl.no/neolittisk_tid)",
+                    "Solberg, B. & Stylegar, F.-A. H. (2026). *Steinalderen i Norge*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/steinalderen_i_Norge](https://snl.no/steinalderen_i_Norge)"
                 ]
             }
         }
     ],
     "timeline": [],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2026-05-31T12:00:00Z"
+    "lastUpdated": "2026-07-27T12:00:00Z"
 }
