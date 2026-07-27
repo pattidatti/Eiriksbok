@@ -140,7 +140,7 @@ npm run preview        # Preview production build
 npm run tina-dev       # Start with TinaCMS visual editor (go to /admin)
 npm run scan:content   # Regenerate content-index.json + sync manifest dates
 npm run scan:concepts  # Scan articles for potential new flashcard concepts
-npm run optimize-images # Convert PNG/JPG under public/ to WebP (kjøres automatisk i build)
+npm run optimize-images # Optimaliser WebP under public/ (kjøres automatisk i build; --tving for å presse på nytt)
 npm run gen-version    # Write public/version.json (epoch timestamp; brukt av PWA-update-prompt)
 ```
 
@@ -582,7 +582,7 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 | `scripts/generate-quest-bank.mjs` | Bygger `public/data/rpg/quest-bank.json` fra Quiz-komponentene i artiklene (spørsmålsbanken til rollespillet) |
 | `scripts/validate-kjeder.mjs` | Validerer årsakskjedene i `public/content/kjeder/` og genererer `kjede-oversikt.json` (Kjedereaksjonen) |
 | `scripts/scan-concepts.js` | Scans articles for potential new concept terms |
-| `scripts/optimize-images.js` | Converts images to WebP |
+| `scripts/optimize-images.js` | Optimaliserer WebP-bilder under `public/`. Kvitterer for hver fil i `scripts/image-ledger.json`, så et bilde komprimeres én gang - ikke én gang per build |
 | `scripts/copy-404.js` | Copies `index.html` to `404.html` for SPA routing on static hosts |
 | `scripts/fetch_feedback.cjs` | Exports Firebase feedback data |
 | `scripts/update-learning-paths.cjs` | Updates learning path hub registry |

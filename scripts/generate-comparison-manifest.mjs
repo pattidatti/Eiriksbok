@@ -211,7 +211,9 @@ function buildManifest() {
         .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'nb'));
 
     return {
-        generated: new Date().toISOString(),
+        // Ingen tidsstempel her. Det ble skrevet ved hver build og ga fila en
+        // diff selv når ingenting var endret; ingen leser det, og fila ligger
+        // i git der commit-datoen alt sier når den ble laget.
         religions,
         philosophers,
         topics,

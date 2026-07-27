@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -132,8 +133,20 @@ function scanDirectory(dir) {
 console.log('Scanning content directory...');
 scanDirectory(contentDir);
 
+// buildId brukes som cache-nøkkel når artikler hentes (`contentLoader.ts`).
+// Den var `Date.now()`, og da fikk fila et nytt innhold ved hver eneste build -
+// også når ingenting i innholdet hadde endret seg. To følger: en diff på fila i
+// hver build, og en cache som ble kastet uten grunn hver gang.
+//
+// Nå er den et fingeravtrykk av innholdet. Samme innhold gir samme nøkkel, og
+// nytt innhold gir ny - som er nettopp det en cache-nøkkel skal gjøre.
+const fingeravtrykk = crypto
+    .createHash('sha1')
+    .update(JSON.stringify({ collisionMap, hierarchicalMap }))
+    .digest('hex');
+
 const outputData = {
-    buildId: Date.now(),
+    buildId: parseInt(fingeravtrykk.slice(0, 12), 16),
     contentMap: collisionMap,
     hierarchicalMap: hierarchicalMap
 };

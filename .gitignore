@@ -28,3 +28,7 @@ dist-ssr
 
 # Playwright MCP
 .playwright-mcp/
+
+# Buntanalysen fra rollup-plugin-visualizer. Genereres av npm run build,
+# endrer seg i hver build, og leses lokalt - ikke noe som hører hjemme i git.
+stats.html
