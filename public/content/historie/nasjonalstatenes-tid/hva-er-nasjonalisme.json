@@ -28,11 +28,11 @@
         },
         {
             "type": "text",
-            "content": "For å forstå nasjonalisme må vi skille mellom to ord som ligner på hverandre. En stat er selve apparatet: grenser, lover, en regjering, et politi og en hær. En nasjon er noe annet. En nasjon er en gruppe mennesker som føler at de hører sammen, ofte fordi de deler språk, historie og kultur."
+            "content": "For å forstå nasjonalisme må vi skille mellom to ord som ligner på hverandre. En stat er selve apparatet: grenser, lover, en regjering, et politi og en hær. En nasjon er noe annet. En nasjon er en gruppe mennesker med en felles sosial og kulturell identitet - de føler at de hører sammen, ofte fordi de deler språk, historie og kultur (Knudsen & Berg, 2024)."
         },
         {
             "type": "text",
-            "content": "Når en nasjon får sin egen stat, kaller vi det en nasjonalstat. Norge er et eksempel: nordmennene er nasjonen, og Norge er staten deres. Men det er ikke alltid slik. Noen nasjoner har ingen egen stat, og noen stater rommer mange nasjoner. Nettopp dette gapet mellom folk og stat ble motoren i historien på 1800-tallet."
+            "content": "Når en nasjon får sin egen stat, kaller vi det en nasjonalstat. Målet til nasjonalismen er nettopp dette: hver nasjon skal danne en stat, og hver stat skal være nasjonal (Knudsen, 2024). Norge er et eksempel: nordmennene er nasjonen, og Norge er staten deres. Men det er ikke alltid slik. Noen nasjoner har ingen egen stat, og noen stater rommer mange nasjoner. Nettopp dette gapet mellom folk og stat ble motoren i historien på 1800-tallet."
         },
         {
             "type": "header",
@@ -44,11 +44,11 @@
         },
         {
             "type": "text",
-            "content": "Dette endret seg raskt. [Den franske revolusjonen](/historie/den-franske-revolusjon/intro) i 1789 spredte en ny idé: makten skulle komme fra folket, ikke fra en konge av Guds nåde. Hvis folket skulle bestemme, måtte man først bli enige om hvem «folket» var. Samtidig samlet diktere og forskere inn gamle sagn, eventyr og folkeviser. I Norge kalte vi denne bølgen [nasjonalromantikken](/norsk/litteraturhistorie/nasjonalromantikken). Kunstnerne malte fjell og fjorder og sa: dette er vårt, dette er den norske sjelen."
+            "content": "Dette endret seg raskt. Nasjonalismen vokste fram som en politisk bevegelse i Europa på 1800-tallet, etter [den franske revolusjonen](/historie/den-franske-revolusjon/intro) i 1789 (Knudsen, 2024). Revolusjonen spredte en ny idé: makten skulle komme fra folket, ikke fra en konge av Guds nåde. Hvis folket skulle bestemme, måtte man først bli enige om hvem «folket» var. Samtidig samlet diktere og forskere inn gamle sagn, eventyr og folkeviser. I Norge kalte vi denne bølgen [nasjonalromantikken](/norsk/litteraturhistorie/nasjonalromantikken). Kunstnerne malte fjell og fjorder og sa: dette er vårt, dette er den norske sjelen."
         },
         {
             "type": "text",
-            "content": "Selve språket måtte ofte bygges også. I mange land snakket folk så ulike dialekter at de knapt forsto hverandre. I Norge reiste språkforskeren Ivar Aasen rundt på 1840-tallet og skrev ned hvordan vanlige folk snakket i bygd etter bygd. Ut av dette laget han et nytt norsk skriftspråk. Slik ble språket et verktøy for å knytte folket sammen, ikke bare en måte å prate på."
+            "content": "Selve språket måtte ofte bygges også. I mange land snakket folk så ulike dialekter at de knapt forsto hverandre. I Norge var språkforskeren Ivar Aasen på granskingsferd rundt om i landet mellom 1842 og 1846, og skrev ned hvordan vanlige folk snakket i bygd etter bygd. Ut av dette laget han landsmålet, som er grunnlaget for dagens nynorsk (Bull, 2026). Slik ble språket et verktøy for å knytte folket sammen, ikke bare en måte å prate på."
         },
         {
             "type": "text",
@@ -115,23 +115,23 @@
         },
         {
             "type": "text",
-            "content": "Nasjonalismen kunne skape noe stort og vakkert. Folk fikk stolthet, samhold og lyst til å styre seg selv. På 1800-tallet førte denne kraften til at nye land ble til. [Italia og Tyskland ble samlet](/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland) av mange små stater til to store nasjoner, drevet av troen på at folk med samme språk burde høre sammen."
+            "content": "Nasjonalismen kunne skape noe stort og vakkert. Folk fikk stolthet, samhold og lyst til å styre seg selv. På 1800-tallet førte denne kraften til at nye land ble til. [Italia og Tyskland ble samlet](/historie/nasjonalstatenes-tid/samlingen-av-italia-og-tyskland) fra mange små stater til to store nasjoner, og Tyskland ble samlet under prøyssisk ledelse i 1870 (Knudsen, 2024). Drivkraften var troen på at folk med samme språk burde høre sammen."
         },
         {
             "type": "text",
-            "content": "Men nasjonalismen har en bakside. Følelsen av «vi» krever ofte et «dem». Når en gruppe føler seg som ett folk, kan de begynne å se på andre som fremmede som ikke hører til. Da kan stolthet bli til hat. Flere nasjoner ville ha mest mulig makt og land, og rivaliseringen bidro til at [første verdenskrig](/historie/forste-verdenskrig/opptakt) brøt ut i 1914. Den samme følelsen som samlet folk, kunne altså også drive dem til krig."
+            "content": "Men nasjonalismen har en bakside. Følelsen av «vi» krever ofte et «dem». Når en gruppe føler seg som ett folk, kan de begynne å se på andre som fremmede som ikke hører til. Da kan stolthet bli til hat. Radikal nasjonalistisk politikk har i mange tilfeller ført til krig og voldelig konflikt, og gjennom historien også til undertrykking av minoriteter, etnisk rensing og folkemord (Knudsen, 2024). Nasjonalisme, imperialisme og militarisme regnes som de dypereliggende årsakene til at [første verdenskrig](/historie/forste-verdenskrig/opptakt) brøt ut i 1914 (Brazier & Kirkhusmo, 2024)."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
                 "text": "En nasjon er en avstemning som holdes hver eneste dag.",
-                "author": "Ernest Renan, fransk tenker, 1882. Han mente at en nasjon ikke er blod eller språk alene, men at folk hver dag velger å høre sammen."
+                "author": "Ernest Renan, fransk tenker, i foredraget «Qu'est-ce qu'une nation?» ved Sorbonne 11. mars 1882. Han mente at en nasjon ikke er blod eller språk alene, men at folk hver dag velger å høre sammen."
             }
         },
         {
             "type": "text",
-            "content": "Renan sa noe viktig: en nasjon lever bare så lenge folk velger å tro på den. Det gjør nasjonalismen både sterk og skjør. Den kan samle mennesker om noe godt, og den kan brukes til å stenge andre ute. Begge deler er mulig, og historien er full av begge."
+            "content": "Renan sa noe viktig: en nasjon lever bare så lenge folk velger å tro på den (Renan, 1882). Det gjør nasjonalismen både sterk og skjør. Den kan samle mennesker om noe godt, og den kan brukes til å stenge andre ute. Begge deler er mulig, og historien er full av begge."
         },
         {
             "type": "header",
@@ -139,7 +139,7 @@
         },
         {
             "type": "text",
-            "content": "Norge er et godt eksempel på hvor sterk nasjonalismen var. I 1814 fikk landet sin egen grunnlov, men måtte samtidig gå inn i en union med Sverige. Gjennom hele 1800-tallet vokste følelsen av at nordmenn var et eget folk som burde styre seg selv. Kunstnere malte fjellene, forfattere skrev om bøndene, og 17. mai ble en dag da folk feiret grunnloven i gatene. Litt etter litt bygde alt dette opp en sterk norsk nasjonalfølelse. Denne følelsen endte med at [unionen med Sverige ble oppløst i 1905](/historie/norgeshistorie/unionsopplosningen-1905), og Norge ble en selvstendig nasjonalstat."
+            "content": "Norge er et godt eksempel på hvor sterk nasjonalismen var. I 1814 fikk Norge sin egen grunnlov og ble løsrevet fra Danmark, men gikk samtidig inn i en løs union med Sverige som varte til 1905 (Mardal & Dørum, 2025). Gjennom hele 1800-tallet vokste følelsen av at nordmenn var et eget folk som burde styre seg selv. Kunstnere malte fjellene, forfattere skrev om bøndene, og feiringen av 17. mai ble vanlig fra 1830-årene (Mardal & Dørum, 2025). Litt etter litt bygde alt dette opp en sterk norsk nasjonalfølelse. Til slutt ble [unionen med Sverige oppløst i 1905](/historie/norgeshistorie/unionsopplosningen-1905), uten krig, og Norge ble en selvstendig nasjonalstat (Sejersted, 2025)."
         },
         {
             "type": "image",
@@ -262,7 +262,23 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brazier, E. & Kirkhusmo, A. (2024). *Første verdenskrig*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/første_verdenskrig](https://snl.no/f%C3%B8rste_verdenskrig)",
+                    "Bull, T. (2026). *Ivar Aasen*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Ivar_Aasen](https://snl.no/Ivar_Aasen)",
+                    "Knudsen, O. F. (2024). *Nasjonalisme*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/nasjonalisme](https://snl.no/nasjonalisme)",
+                    "Knudsen, O. F. & Berg, O. T. (2024). *Nasjon*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/nasjon](https://snl.no/nasjon)",
+                    "Mardal, M. A. & Dørum, K. (2025). *Norges historie fra 1815 til 1905*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Norges_historie_fra_1815_til_1905](https://snl.no/Norges_historie_fra_1815_til_1905)",
+                    "Renan, E. (1882). *Qu'est-ce qu'une nation?* [Foredrag ved Sorbonne 11. mars 1882]. Hentet 27.07.2026 fra [classiques.uqam.ca](https://classiques.uqam.ca/classiques/renan_ernest/la_nation/la_nation_texte.html)",
+                    "Sejersted, F. (2025). *Unionsoppløsningen i 1905*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Unionsoppløsningen_i_1905](https://snl.no/Unionsoppl%C3%B8sningen_i_1905)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-27"
 }

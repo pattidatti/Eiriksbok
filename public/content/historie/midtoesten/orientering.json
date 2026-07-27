@@ -8,14 +8,14 @@
   "heroImage": "/images/midtoesten/orientering-hero.webp",
   "details": [
     "Midtøsten er ikke ett folk, ett land eller én religion - begrepet dekker over 20 land og dusinvis av folkegrupper.",
-    "Skillet mellom sunni og shia islam handler ikke om dogmer, men om hvem som skulle lede islam etter Muhammeds død.",
+    "Skillet mellom sunni og shia handler ikke om dogmer, men om hvem som skulle lede islam etter Muhammeds død.",
     "Arabere, persere og tyrkere er tre ulike folkegrupper med ulike språk og kulturer, men felles islamsk arv."
   ],
   "externalUrl": "https://snl.no/Midtosten",
   "content": [
     {
       "type": "text",
-      "content": "Ingen som bor i Midtøsten kaller hjemstedet sitt for \"Midtøsten\". En iraner sier han er fra Iran. En egypter sier hun er fra Egypt. Begrepet ble oppfunnet av en britisk marineoffiser i 1902 for å beskrive havområdene mellom den britiske basen i India og kanalen i Egypt. Siden da har begrepet hengt fast - men det sier mer om europeisk perspektiv enn om regionen selv."
+      "content": "Ingen som bor i Midtøsten kaller hjemstedet sitt for \"Midtøsten\". En iraner sier han er fra Iran. En egypter sier hun er fra Egypt. Selve begrepet oppsto trolig på slutten av 1800-tallet, og det var den amerikanske admiralen Alfred Thayer Mahan som gjorde det kjent i en artikkel fra 1902 (Store norske leksikon, 2024). Han trengte et navn på havområdene mellom den britiske basen i India og kanalen i Egypt. Siden da har begrepet hengt fast - men det sier mer om europeisk perspektiv enn om regionen selv."
     },
     {
       "type": "header",
@@ -23,7 +23,7 @@
     },
     {
       "type": "text",
-      "content": "Det finnes ingen offisiell liste over hvilke land som tilhører Midtøsten, og ulike kilder trekker grensen ulikt. Kjernen er gjerne landene rundt Persiabukta og Middelhavet: Egypt, Israel, Palestina, Jordan, Libanon, Syria, Irak, Iran, Saudi-Arabia, Kuwait, Bahrain, Qatar, De forente arabiske emirater, Oman og Jemen. Tyrkia og de nordafrikanske landene som Libya, Tunisia, Algerie og Marokko regnes av og til med, av og til ikke. Alt i alt handler vi om en region like stor som Europa med rundt 400 millioner innbyggere."
+      "content": "Det finnes ingen offisiell liste over hvilke land som tilhører Midtøsten, og ulike kilder trekker grensen ulikt (Store norske leksikon, 2024). Kjernen er gjerne landene rundt Persiabukta og Middelhavet: Egypt, Israel, Palestina, Jordan, Libanon, Syria, Irak, Iran, Saudi-Arabia, Kuwait, Bahrain, Qatar, De forente arabiske emirater, Oman og Jemen. Tyrkia og de nordafrikanske landene som Libya, Tunisia, Algerie og Marokko regnes av og til med, av og til ikke (Encyclopaedia Britannica, 2026). Alt i alt snakker vi om en svært stor region med mange hundre millioner innbyggere - og en yttergrense som flytter seg alt etter hvem du spør."
     },
     {
       "type": "component",
@@ -55,17 +55,17 @@
     },
     {
       "type": "text",
-      "content": "Det vanligste misforstanden om Midtøsten er at alle er arabere. Det stemmer ikke. Arabere er den største gruppen og bor i et belte fra Marokko i vest til Irak i øst - alle snakker varianter av arabisk. Men iranerne er persere og snakker farsi, et indoeuropeisk språk beslektet med norsk. Tyrkerne bor i Tyrkia og snakker tyrkisk, som tilhører en helt annen språkfamilie. Disse tre folkene - arabere, persere og tyrkere - har bygd tre av historiens mektigste imperier og konkurrert om makt i regionen i over tusen år."
+      "content": "Den vanligste misforståelsen om Midtøsten er at alle er arabere. Det stemmer ikke. Arabere er den største gruppen og bor i et belte fra Marokko i vest til Irak i øst - alle snakker varianter av arabisk. Men iranerne er persere, og de snakker persisk, som også kalles farsi. Det er et indoeuropeisk språk, altså i slekt med norsk (Mørk mfl., 2026). Tyrkerne bor i Tyrkia og snakker tyrkisk, som tilhører en helt annen språkfamilie. Disse tre folkene - arabere, persere og tyrkere - har bygd tre av historiens mektigste imperier og konkurrert om makt i regionen i over tusen år."
     },
     {
       "type": "text",
-      "content": "Så er det kurderne. De er rundt 30-40 millioner mennesker spredt over Tyrkia, Syria, Irak og Iran - uten en egen stat. Kurderne har kjempet lenge for selvstendighet, men ingen av landene de bor i ønsker å gi fra seg territorium. Dette gjør kurderne til et av verdens største folk uten eget hjemland, og kurderspørsmålet er en av de fastlåste konfliktene i regionen."
+      "content": "Så er det kurderne. De er anslagsvis mellom 25 og 40 millioner mennesker spredt over Tyrkia, Syria, Irak og Iran, og de har aldri hatt en egen stat (Kaveh mfl., 2025). Kurderne har kjempet lenge for selvstendighet, men ingen av landene de bor i ønsker å gi fra seg territorium. Dette gjør kurderne til en av de aller største folkegruppene i Midtøsten uten et eget hjemland, og kurderspørsmålet er en av de fastlåste konfliktene i regionen."
     },
     {
       "type": "image",
       "src": "/images/midtoesten/orientering-01.webp",
       "alt": "Kurdiske familier i en by i Nord-Irak",
-      "caption": "Kurderne er Midtøstens største folk uten en egen stat. De fleste bor i fjellområdene der Tyrkia, Syria, Irak og Iran møtes."
+      "caption": "Kurderne er den største folkegruppen i Midtøsten som aldri har hatt en egen stat. De fleste bor i fjellområdene der Tyrkia, Syria, Irak og Iran møtes."
     },
     {
       "type": "header",
@@ -73,7 +73,7 @@
     },
     {
       "type": "text",
-      "content": "Jerusalem er en by på størrelse med Stavanger. Allikevel har den gitt verden tre av de største religionene. Jødedommen er eldst - den vokste frem i Kanaan for rundt 3500 år siden og er basert på pakten mellom Gud og Abrahams folk. Kristendommen ble grunnlagt av Jesus fra Nasaret rundt år 30, og islam av [profeten Muhammed](/historie/midtoesten/islams-fodsel) i Mekka rundt år 610. Alle tre regner Abraham som stamfar, alle tre har Jerusalem som hellig by, og alle tre leser fra overlappende hellige tekster. Allikevel har de tre religionene vært i konflikt med hverandre i store deler av sin felles historie."
+      "content": "Et lite hjørne av verden har gitt oss tre av de største religionene. Jødedommen er eldst. Den bygger på pakten mellom Gud og Abrahams folk, og jødisk tradisjon plasserer Abraham rundt år 2000 fvt. (Groth, 2026). Kristendommen vokste fram rundt år 30 med Jesus fra Nasaret, og begynte som en retning innenfor jødedommen (Elstad & Rasmussen, 2026). Islam kom sist: [profeten Muhammed](/historie/midtoesten/islams-fodsel) ble født i Mekka rundt år 570 og fikk profetkallet sitt i år 610 (Vogt, 2026a). Alle tre regner Abraham som stamfar, alle tre har Jerusalem som hellig by, og alle tre leser fra overlappende hellige tekster. Likevel har de tre religionene vært i konflikt med hverandre i store deler av sin felles historie."
     },
     {
       "type": "header",
@@ -81,11 +81,11 @@
     },
     {
       "type": "text",
-      "content": "Muhammed døde i 632 uten å ha utpekt en arvtaker. Det oppsto raskt strid om hvem som skulle lede muslimene videre. En gruppe mente lederskapet burde gå til Muhammeds svigersønn og fetter Ali - disse ble kalt shia (fra arabisk \"shiat Ali\", Alis tilhengere). En annen gruppe mente man skulle velge den mest skikkede blant de troende - disse ble kalt sunni (fra \"sunnah\", Muhammeds tradisjon). Alis sønn Husain ble drept i slaget ved Karbala i 680, og dette traumet lever den dag i dag som den sentrale hendelsen i shiaislam."
+      "content": "Muhammed døde i 632, og striden om hvem som skulle lede muslimene startet med én gang (Vogt, 2024). En gruppe mente lederskapet måtte gå til noen i slekt med profeten selv, og pekte på svigersønnen og fetteren Ali - disse ble kalt shia (fra arabisk \"shiat Ali\", Alis tilhengere). En annen gruppe mente man skulle velge den mest skikkede blant de troende - disse ble kalt sunni, etter \"sunna\", profetens tradisjon (Vogt, 2024). Alis sønn Husain ble drept i slaget ved Karbala i 680, og det traumet lever den dag i dag som den sentrale hendelsen i shiaislam (Vogt, 2026b)."
     },
     {
       "type": "text",
-      "content": "Skillet mellom sunni og shia handler ikke primært om teologiske dogmer - begge gruppene ber fem ganger om dagen, faster i ramadan og har tro på Koranen. Splittelsen er politisk og historisk. I dag er rundt 85 prosent av verdens muslimer sunnier. Shiamuslimer er i flertall i Iran, Irak, Bahrain og deler av Libanon. Saudi-Arabia er den ledende sunninasjonen, og [Rivaliseringen mellom Saudi-Arabia og Iran](/historie/midtoesten/midtoesten-i-dag) er i stor grad en moderne utgave av den gamle sunni-shia-konflikten."
+      "content": "Skillet mellom sunni og shia handler ikke først og fremst om teologiske dogmer - begge gruppene ber fem ganger om dagen, faster i ramadan og har tro på Koranen. Splittelsen er politisk og historisk. I dag er rundt 85 prosent av verdens muslimer sunnier (Vogt, 2024), mens rundt 15 prosent er shiamuslimer. Shiamuslimene er i flertall i Irak og Bahrain og utgjør omtrent 40 prosent av folket i Libanon (Vogt, 2026b). I Iran er 90-95 prosent av muslimene shiamuslimer (Mørk mfl., 2026). Saudi-Arabia er den ledende sunninasjonen, og [Rivaliseringen mellom Saudi-Arabia og Iran](/historie/midtoesten/midtoesten-i-dag) er i stor grad en moderne utgave av den gamle sunni-shia-konflikten."
     },
     {
       "type": "component",
@@ -103,7 +103,7 @@
           {
             "label": "Hvem leder?",
             "left": "Kalifer og sultaner gjennom historien - i dag religiøse lærde uten politisk makt",
-            "right": "Imamer anses som Guds representanter pa jord - i Iran har ayatollaen politisk makt"
+            "right": "Imamer anses som Guds representanter på jord - i Iran har ayatollaen politisk makt"
           },
           {
             "label": "Dominerende land",
@@ -112,8 +112,8 @@
           },
           {
             "label": "Politisk betydning i dag",
-            "left": "Saudi-Arabia bruker oljepenger til a spre wahhabistisk sunniislam globalt",
-            "right": "Iran eksporterer shiarevolusjonen og stotter shiagrupper i Irak, Libanon og Jemen"
+            "left": "Saudi-Arabia bruker oljepenger til å spre wahhabistisk sunniislam globalt",
+            "right": "Iran eksporterer shiarevolusjonen og støtter shiagrupper i Irak, Libanon og Jemen"
           }
         ]
       }
@@ -124,17 +124,17 @@
     },
     {
       "type": "text",
-      "content": "På 1900-tallet oppdaget vestlige selskaper enorme [oljereserver](/historie/midtoesten/olje-og-makt) under Persiabukta. Det forandret regionen fullstendig. Land som Saudi-Arabia, Kuwait og UAE ble i løpet av et par tiår omgjort fra ørkenøkonomier til noen av verdens rikeste stater per innbygger. Land uten olje - som Jordan, Libanon og Jemen - slet videre med fattigdom. Denne ubalansen har skapt spenninger som ennå ikke er løst. Den har også gitt vestlige stormakter sterk interesse i å kontrollere hvem som styrer i regionen - og det har ført til utenlandsk innblanding med store konsekvenser."
+      "content": "På 1900-tallet fant vestlige selskaper enorme [oljereserver](/historie/midtoesten/olje-og-makt) under Persiabukta. Det forandret regionen fullstendig. I dag ligger 48 prosent av verdens påviste oljereserver i Midtøsten (Hofstad, 2022). Land som Saudi-Arabia, Kuwait og De forente arabiske emirater ble i løpet av et par tiår omgjort fra ørkenøkonomier til noen av verdens rikeste stater per innbygger. Land uten olje - som Jordan, Libanon og Jemen - slet videre med fattigdom. Denne ubalansen har skapt spenninger som ennå ikke er løst. Den har også gitt vestlige stormakter sterk interesse i å kontrollere hvem som styrer i regionen - og det har ført til utenlandsk innblanding med store konsekvenser."
     },
     {
       "type": "image",
       "src": "/images/midtoesten/orientering-02.webp",
       "alt": "Oljeraffineri i Saudi-Arabia med flammer og industrianlegg",
-      "caption": "Golfstatene sitter på rundt halvparten av verdens kjente oljereserver. Olje har gitt noen land enorm rikdom - og gjort dem til mål for geopolitisk interesse fra alle verdenshjørner."
+      "caption": "Midtøsten sitter på nesten halvparten av verdens påviste oljereserver. Olje har gitt noen land enorm rikdom - og gjort dem til mål for geopolitisk interesse fra alle verdenshjørner."
     },
     {
       "type": "header",
-      "text": "Tre akser for a forstå nyhetene"
+      "text": "Tre akser for å forstå nyhetene"
     },
     {
       "type": "text",
@@ -146,27 +146,27 @@
       "props": {}
     },
     {
-        "type": "component",
-        "name": "Oppgaver",
-        "props": {
-            "forstaa": [
-                "Hvem fant opp begrepet \"Midtøsten\", og i hvilket år? Forklar hvorfor teksten sier at begrepet sier mer om europeisk perspektiv enn om regionen selv.",
-                "Teksten nevner tre store folkegrupper i regionen: arabere, persere og tyrkere. Hvilket språk snakker hver av dem, og hvilket av disse språkene er beslektet med norsk?",
-                "Hva var den egentlige grunnen til at muslimene ble delt i sunni og shia etter at Muhammed døde i 632? Svar med det teksten sier.",
-                "Hvor mange kurdere finnes det ifølge teksten, og i hvilke fire land bor de fleste av dem?"
-            ],
-            "reflekter": [
-                "Teksten sier at skillet mellom sunni og shia ikke handler om teologiske dogmer, men er politisk og historisk. Forklar med egne ord hva som menes med dette.",
-                "Grensene i Midtøsten ble i stor grad trukket av europeiske kolonimakter etter første verdenskrig, uten hensyn til hvem som bodde der. Hvordan kan dette henge sammen med at kurderne i dag er et stort folk uten egen stat?",
-                "Jødedom, kristendom og islam deler stamfar, hellig by og overlappende tekster, men har likevel vært i konflikt gjennom historien. Hvorfor tror du folk kan havne i strid selv når de har mye til felles?",
-                "Velg én av de tre aksene fra teksten (sunni/shia, arabere/ikke-arabere eller olje/ikke-olje) og forklar hvordan den kan brukes til å forstå en konkret rivalisering, for eksempel mellom Saudi-Arabia og Iran."
-            ],
-            "gaaVidere": [
-                "Finn en nyhetssak om Midtøsten fra denne uken. Bruk de tre aksene fra teksten og still deg spørsmålene: Hvem er sunni, hvem er shia? Er dette arabere eller ikke? Har landet olje? Skriv et kort avsnitt om hva svarene forteller deg om konflikten.",
-                "Skriv en kort tekst på 5-6 setninger som forklarer for en venn hvorfor det er feil å tro at \"alle i Midtøsten er arabere\".",
-                "Diskuter i klassen: Olje har gjort noen land i regionen svært rike og latt andre bli igjen i fattigdom. Er det rettferdig at naturressurser under bakken avgjør hvor rikt et land blir? Kom med argumenter for og mot."
-            ]
-        }
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvem gjorde begrepet \"Midtøsten\" kjent, og i hvilket år? Forklar hvorfor teksten sier at begrepet sier mer om europeisk perspektiv enn om regionen selv.",
+          "Teksten nevner tre store folkegrupper i regionen: arabere, persere og tyrkere. Hvilket språk snakker hver av dem, og hvilket av disse språkene er beslektet med norsk?",
+          "Hva var den egentlige grunnen til at muslimene ble delt i sunni og shia etter at Muhammed døde i 632? Svar med det teksten sier.",
+          "Hvor mange kurdere finnes det ifølge teksten, og i hvilke fire land bor de fleste av dem?"
+        ],
+        "reflekter": [
+          "Teksten sier at skillet mellom sunni og shia ikke handler om teologiske dogmer, men er politisk og historisk. Forklar med egne ord hva som menes med dette.",
+          "Grensene i Midtøsten ble i stor grad trukket av europeiske kolonimakter etter første verdenskrig, uten hensyn til hvem som bodde der. Hvordan kan dette henge sammen med at kurderne i dag er et stort folk uten egen stat?",
+          "Jødedom, kristendom og islam deler stamfar, hellig by og overlappende tekster, men har likevel vært i konflikt gjennom historien. Hvorfor tror du folk kan havne i strid selv når de har mye til felles?",
+          "Velg én av de tre aksene fra teksten (sunni/shia, arabere/ikke-arabere eller olje/ikke-olje) og forklar hvordan den kan brukes til å forstå en konkret rivalisering, for eksempel mellom Saudi-Arabia og Iran."
+        ],
+        "gaaVidere": [
+          "Finn en nyhetssak om Midtøsten fra denne uken. Bruk de tre aksene fra teksten og still deg spørsmålene: Hvem er sunni, hvem er shia? Er dette arabere eller ikke? Har landet olje? Skriv et kort avsnitt om hva svarene forteller deg om konflikten.",
+          "Skriv en kort tekst på 5-6 setninger som forklarer for en venn hvorfor det er feil å tro at \"alle i Midtøsten er arabere\".",
+          "Diskuter i klassen: Olje har gjort noen land i regionen svært rike og latt andre bli igjen i fattigdom. Er det rettferdig at naturressurser under bakken avgjør hvor rikt et land blir? Kom med argumenter for og mot."
+        ]
+      }
     },
     {
       "type": "component",
@@ -174,52 +174,71 @@
       "props": {
         "questions": [
           {
-            "question": "Hvem oppfant begrepet \"Midtøsten\", og når?",
+            "question": "Hvem gjorde begrepet \"Midtøsten\" kjent, og når?",
             "options": [
-              "En britisk marineoffiser i 1902",
+              "Den amerikanske admiralen Alfred Thayer Mahan i 1902",
               "FN i 1945 da de delte opp regionen",
               "Arabiske nasjonalister på 1800-tallet",
-              "Amerikanske geografer under den kalde krigen"
+              "Britiske geografer under den kalde krigen"
             ],
             "answer": 0,
-            "explanation": "En britisk marineoffiser brukte begrepet i 1902 for å beskrive havomradene mellom India og Egypt. Begrepet reflekterer et europeisk perspektiv - folk i regionen bruker det ikke om seg selv."
+            "explanation": "Begrepet oppsto trolig på slutten av 1800-tallet, men det var den amerikanske admiralen Alfred Thayer Mahan som gjorde det kjent i en artikkel fra 1902. Begrepet speiler et europeisk og amerikansk perspektiv - folk i regionen bruker det ikke om seg selv."
           },
           {
-            "question": "Hva er den viktigste arsakene til skillet mellom sunni og shia?",
+            "question": "Hva er den viktigste årsaken til skillet mellom sunni og shia?",
             "options": [
               "De er uenige om Koranen er Guds ord",
               "Sunnier ber fem ganger om dagen, shia bare tre ganger",
-              "Strid om hvem som skulle lede muslimene etter Muhammeds dod i 632",
+              "Strid om hvem som skulle lede muslimene etter Muhammeds død i 632",
               "Geografiske forskjeller mellom arabere og persere"
             ],
             "answer": 2,
-            "explanation": "Splittelsen handler ikke om teologi, men om politisk lederskap. Shia mente lederretten tilhorte Muhammeds familie, sunni mente man skulle velge den mest skikkede. Striden begynte umiddelbart etter Muhammeds dod i 632."
+            "explanation": "Splittelsen handler ikke om teologi, men om politisk lederskap. Shia mente lederretten hørte til Muhammeds slekt, sunni mente man skulle velge den mest skikkede. Striden begynte med én gang etter Muhammeds død i 632."
           },
           {
-            "question": "Kurderne beskrives som et av verdens storste folk uten egen stat. Hvor mange kurdere finnes det?",
+            "question": "Kurderne beskrives som en av de største folkegruppene uten egen stat. Hvor mange kurdere finnes det?",
             "options": [
               "Rundt 2-3 millioner",
               "Rundt 10 millioner",
-              "Rundt 30-40 millioner",
+              "Mellom 25 og 40 millioner",
               "Over 100 millioner"
             ],
             "answer": 2,
-            "explanation": "Det bor rundt 30-40 millioner kurdere spredt over Tyrkia, Syria, Irak og Iran. Ingen av disse landene onsker a gi fra seg territorium til en kurdisk stat, noe som gjor kurdersporsmalets til en av regionens fastlaste konflikter."
+            "explanation": "Den kurdiske befolkningen anslås til mellom 25 og 40 millioner mennesker, spredt over Tyrkia, Syria, Irak og Iran. Ingen av disse landene ønsker å gi fra seg territorium til en kurdisk stat, og det gjør kurderspørsmålet til en av regionens fastlåste konflikter."
           },
           {
-            "question": "Hvilke tre akser hjelper deg a forstaa konflikter i Midtosten?",
+            "question": "Hvilke tre akser hjelper deg å forstå konflikter i Midtøsten?",
             "options": [
               "Demokrati/diktatur, rik/fattig, by/land",
               "Sunni/shia, arabere/ikke-arabere, olje/ikke-olje",
-              "Islam/kristendom/jodedom, vest/ost, gammel/ny",
-              "USA/Russland/Kina, nord/sor, kyst/innland"
+              "Islam/kristendom/jødedom, vest/øst, gammel/ny",
+              "USA/Russland/Kina, nord/sør, kyst/innland"
             ],
             "answer": 1,
-            "explanation": "De tre aksene sunni/shia, arabere/ikke-arabere og olje/ikke-olje gir deg et kart over hvem som stotter hvem i regionale konflikter. Saudi-Arabia (sunni, arabisk, oljerik) og Iran (shia, persisk, oljerik) er de to dominerende motpolene."
+            "explanation": "De tre aksene sunni/shia, arabere/ikke-arabere og olje/ikke-olje gir deg et kart over hvem som støtter hvem i regionale konflikter. Saudi-Arabia (sunni, arabisk, oljerik) og Iran (shia, persisk, oljerik) er de to dominerende motpolene."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Elstad, H. & Rasmussen, T. (2026). *Kristendom*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/kristendom](https://snl.no/kristendom)",
+          "Encyclopaedia Britannica. (2026). *Middle East*. Hentet 27.07.2026 fra [britannica.com/place/Middle-East](https://www.britannica.com/place/Middle-East)",
+          "Groth, B. (2026). *Jødedom*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+          "Hofstad, K. (2022). *Energikilder*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/energikilder](https://snl.no/energikilder)",
+          "Kaveh, C., Wiborg, S., Askheim, S. & Lindstrøm, A. T. (2025). *Kurdere*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/kurdere](https://snl.no/kurdere)",
+          "Mørk, H. K., Lodgaard, S., Thiesen, F., Skatvik, F. & Izadi, M. M. (2026). *Iran*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/Iran](https://snl.no/Iran)",
+          "Store norske leksikon. (2024). *Midtøsten*. Hentet 27.07.2026 fra [snl.no/Midtøsten](https://snl.no/Midt%C3%B8sten)",
+          "Vogt, K. (2024). *Sunniislam*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/sunniislam](https://snl.no/sunniislam)",
+          "Vogt, K. (2026a). *Islam*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/islam](https://snl.no/islam)",
+          "Vogt, K. (2026b). *Sjiaislam*. Store norske leksikon. Hentet 27.07.2026 fra [snl.no/sjiaislam](https://snl.no/sjiaislam)"
         ]
       }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-07-27"
 }
