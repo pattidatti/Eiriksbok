@@ -1,0 +1,23 @@
+import { chromium } from 'playwright';
+import { stengHmr, BASE } from './lib/rpg-testside.mjs';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1366, height: 768 } });
+await stengHmr(p);
+await p.goto(`${BASE}/oving/rpg`, { waitUntil: 'networkidle' });
+await p.waitForTimeout(3000);
+const kort = async (m) => console.log(m, (await p.evaluate(() => document.body.innerText.slice(0,120))).replace(/\n+/g,' | '));
+await kort('start:');
+await p.click('input');
+await p.keyboard.down('KeyM'); await p.waitForTimeout(160); await p.keyboard.up('KeyM');
+await p.waitForTimeout(900);
+await kort('etter M i input:');
+await p.screenshot({ path: '.screenshots/k1b-m-i-input.png' });
+// nå uten fokus i input
+await p.keyboard.press('Escape');
+await p.waitForTimeout(500);
+await p.evaluate(() => document.activeElement.blur());
+await p.keyboard.down('KeyM'); await p.waitForTimeout(160); await p.keyboard.up('KeyM');
+await p.waitForTimeout(900);
+await kort('etter M uten fokus:');
+await p.screenshot({ path: '.screenshots/k1b-m-uten-fokus.png' });
+await b.close();
