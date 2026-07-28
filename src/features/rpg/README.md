@@ -967,6 +967,50 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-kapittel5.mjs`   | Leiren ved Riccall: flåten, kista og valget om brynja      |
 | `verify-rpg-brua.mjs`        | Stanford bru: dagen som snur, rekka, og at hun dør uansett |
 | `verify-rpg-mellomspill5.mjs` | Hele slutten: tidsrekka, skrinet, det tomme feltet som er henne, epilogen og kartet |
+| `verify-rpg-gjennomspilling.mjs` | Veien eleven går: Ravns fire økter spilt til ende, og en reise etterfulgt av et slag |
+| `rpg-maaltavle.mjs`          | At kapittelmålet står på skjermen i alle fem kapitlene   |
+| `rpg-hudfarge.mjs`           | At hudskyggen ikke er rød - leser pikslene ut av helt-teksturen |
+
+**Om `verify-rpg-gjennomspilling.mjs` spesielt.** De andre prøvene sjekker
+enheter; denne spiller. Skillet er ikke akademisk. Da vikingkampanjen var
+ferdigskrevet, passerte alle prøvene på et spill som frøs ved første treff
+etter en reise, hadde tre frakoblede kampmekanikker, og en opplæring som ikke
+kunne fullføres fordi tretten tåkemonstre sto på tunet.
+
+Grunnen er at hver av dem målte noe litt ved siden av. `verify-rpg-opplaering`
+sjekket at eleven «bunner ut på ett liv» - og den sjekken passerte mens hun ble
+banket ned til nettopp 1 liv. Den målte at gulvet virket, ikke at timen kunne
+fullføres. `verify-rpg-reise` bygget et nytt sted og reiste tilbake, men utløste
+aldri en effekt etterpå, og det var det eneste som kunne avslørt at
+partikkel-poolen overlevde `scene.restart()`.
+
+Regelen som ble igjen: **en ny mekanikk trenger en enhetsprøve, men et nytt
+kapittel trenger noen som går gjennom det.**
+
+Den avdekket også noe om styringen som er verdt å skrive ned, fordi det stoppet
+tre forsøk på rad på å skrive prøven. **Shift er `rull`.** Den blir en gard bare
+når figuren står stille. Holder man en piltast samtidig - for å snu mot
+motstanderen, som er det naturligste i verden - ruller hun i stedet, og garden
+står aldri når slaget lander. Prøven fikk `gard: false` på hvert eneste slag i
+trettiseks forsøk før det gikk opp for noen hvorfor.
+
+Instruksjonen sier det: «Hold Shift mens du står stille.» Men eleven har akkurat
+brukt økt 1 på å hugge, der utfallet bærer henne 13 px framover per slag, så hun
+*må* korrigere for å nå ham - og i det hun korrigerer, blir skjoldet til en
+rulling. Én tast med to betydninger, skilt bare av om figuren beveger seg, og
+rullen forklares aldri noe sted (se `synligeSteg` og styringssiden som mangler i
+pausemenyen). Det er verdt en tanke neste gang noen lurer på hvorfor en elev
+står fast i økt 2.
+
+Den lærte også bort et tall som er verdt å ha framme. Paradevinduet er 180 ms
+og måles fra rammen vernet *reiser seg*, ikke fra slaget. Ravns varsel er
+700 ms og faller til 450 gjennom opplæringen. Reiser eleven skjoldet når han
+begynner å varsle, har det stått i et halvt sekund når slaget lander, og da er
+det en blokk - aldri en parade. «Reis skjoldet i det slaget kommer, ikke før»
+er altså bokstavelig ment: skjoldet skal opp i den siste sjettedelen av
+varselet. Det er en stram terskel for en fjortenåring som aldri har fått vite
+at vinduet finnes, og det er verdt å huske på neste gang noen justerer
+`paradeVindu` eller `varsel`.
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir
