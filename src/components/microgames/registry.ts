@@ -153,6 +153,7 @@ const TrojaUtgravning3D = lazy(() => import('./TrojaUtgravning3D'));
 const MaalmerkeKartet3D = lazy(() => import('./MaalmerkeKartet3D'));
 const EarhartStillehavet3D = lazy(() => import('./EarhartStillehavet3D'));
 const RoanokeSporet3D = lazy(() => import('./RoanokeSporet3D'));
+const KongedagbokenMG = lazy(() => import('./KongedagbokenMG'));
 const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
@@ -1496,6 +1497,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 120,
         loader: () => import('./Alliansefella1914'),
         Component: Alliansefella1914 as never,
+    },
+    'kongedagboken-323': {
+        id: 'kongedagboken-323',
+        title: 'Kongedagboken',
+        description:
+            'Du er skriveren ved kong Aleksanders seng i Babylon, juni 323 fvt. I elleve dager blusser tegnene opp i rommet ett om gangen: feberen, magesmertene, armen som ikke lystrer, kroppen som ikke råtner. Klikk dem før de forsvinner, for det du ikke rekker å skrive ned, er tapt for alltid. Samtidig svirrer det røde rykter ved døra om gift og forræderi, og skriver du dem ned, forgifter du din egen kilde. Lyspæren: kildene om Aleksanders død er en dagbok full av hull og hvisking, og det er derfor ingen lege i dag kan si sikkert hva som drepte ham.',
+        estimatedSeconds: 130,
+        loader: () => import('./KongedagbokenMG'),
+        Component: KongedagbokenMG as never,
     },
 };
 

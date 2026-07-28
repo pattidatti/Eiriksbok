@@ -807,16 +807,16 @@
       "count": 57
     },
     {
+      "tag": "antikken",
+      "count": 40
+    },
+    {
       "tag": "politikk",
       "count": 40
     },
     {
       "tag": "handel",
       "count": 39
-    },
-    {
-      "tag": "antikken",
-      "count": 38
     },
     {
       "tag": "religion",
@@ -831,16 +831,16 @@
       "count": 36
     },
     {
+      "tag": "kildekritikk",
+      "count": 32
+    },
+    {
       "tag": "demokrati",
       "count": 32
     },
     {
       "tag": "middelalder",
       "count": 32
-    },
-    {
-      "tag": "kildekritikk",
-      "count": 30
     },
     {
       "tag": "oppfinnelser",
@@ -1231,6 +1231,10 @@
       "count": 6
     },
     {
+      "tag": "historiens-store-gater",
+      "count": 6
+    },
+    {
       "tag": "maktfordeling",
       "count": 6
     },
@@ -1460,10 +1464,6 @@
     },
     {
       "tag": "norrønt",
-      "count": 4
-    },
-    {
-      "tag": "historiens-store-gater",
       "count": 4
     },
     {
@@ -1876,6 +1876,10 @@
     },
     {
       "tag": "pseudovitenskap",
+      "count": 2
+    },
+    {
+      "tag": "aleksander-den-store",
       "count": 2
     },
     {

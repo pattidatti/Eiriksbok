@@ -663,6 +663,30 @@
       ]
     },
     {
+      "id": "alexanders-dod",
+      "title": "Hvordan døde Aleksander den store?",
+      "description": "Verdens mektigste mann ble syk i Babylon og var død elleve dager senere. Legene strides fortsatt om hva som drepte ham.",
+      "startDate": -323,
+      "endDate": null,
+      "displayDate": "323 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/alexanders-dod",
+      "tags": [
+        "historiens-store-gater",
+        "kildekritikk",
+        "antikken",
+        "aleksander-den-store",
+        "babylon"
+      ],
+      "lat": 32.54,
+      "lng": 44.42,
+      "placeLabel": "Babylon",
+      "placeCountryId": 368,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "dynastiene",
       "title": "De store dynastiene: Keisere og sivilisasjon",
       "description": "Fire oppfinnelser som endret verden og det keiserlige eksamenssystemet.",
