@@ -15,7 +15,9 @@
 //   5. Bård gir budstikka, og budstikka gir `[Bondehæren]` som forstått.
 //   6. Sønnen kan ikke svares før budstikka er tatt imot, og begge svarene
 //      setter hvert sitt flagg.
-//   7. Porten hjem virker, og hun kommer tilbake til 1030 og ikke til 995.
+//   7. Naustet fører hæren ut: knappen står framme når valget er tatt, og
+//      reisen ender på sletta.
+//   8. Porten hjem virker, og hun kommer tilbake til 1030 og ikke til 995.
 
 import { chromium } from 'playwright';
 import { mkdirSync } from 'node:fs';
@@ -214,7 +216,35 @@ sjekk('valget kan ikke tas om igjen', !igjen.includes('Han blir hjemme'));
 await page.keyboard.press('Escape');
 await page.waitForTimeout(300);
 
-// ── 7. Porten hjem, og tilbake til riktig år ────────────────────────────────
+// ── 7. Veien ut: naustet fører til sletta ───────────────────────────────────
+await gaaTil('landemerke', 'naustet-1030');
+const naustet = (await page.textContent('body')) ?? '';
+sjekk('naustet sier hva reisen er', naustet.includes('To dager'));
+sjekk(
+    'knappen står framme når valget er tatt',
+    (await page.getByRole('button', { name: 'Ro ut med de andre' }).count()) === 1
+);
+await klikk('Ro ut med de andre');
+await page.waitForTimeout(4600);
+const paaSletta = await page.evaluate(
+    () => window.__rpg?.scene.getScene('verden')?.sted?.id ?? null
+);
+sjekk('hun kommer til Stiklestad', paaSletta === 'stiklestad', String(paaSletta));
+sjekk('og å komme fram er steget', (await tilstand())?.steg?.includes('k4-veien'));
+await page.screenshot({ path: `${UT}/rpg-k4-stiklestad.png` });
+
+// ── 8. Porten hjem, og tilbake til riktig år ────────────────────────────────
+await page.evaluate(() => {
+    const scene = window.__rpg?.scene.getScene('verden');
+    scene?.bestillReise('nordvik-1030');
+});
+await page.waitForTimeout(4600);
+sjekk(
+    'og hun kommer hjem igjen til gården',
+    (await page.evaluate(() => window.__rpg?.scene.getScene('verden')?.sted?.id ?? null)) ===
+        'nordvik-1030'
+);
+
 await page.evaluate(() => {
     const scene = window.__rpg?.scene.getScene('verden');
     scene?.bestillReise('hub');
