@@ -1,8 +1,21 @@
+// Karakterskaperen (blueprint §16.3).
+//
+// Den valgte før tre klasser: skald, runemester og vokter, med hvert sitt liv
+// og sitt startvåpen. Det er borte. Hvem eleven *er*, avgjøres av året hun står
+// i - Torstein er sytten i 793, Åsa styrer gården i 872 - og et klassevalg oppå
+// det ville sagt at hun også hadde valgt å være en runemester med 78 liv.
+//
+// Det hun velger her, er to ting, og begge følger henne gjennom hele kampanjen:
+// navnet andre elever ser i hallen, og hvordan figuren ser ut. Utseendet arves
+// mellom kapitlene - Åsa har Torsteins hårfarge, Halvard har det samme
+// ansiktet - uten at spillet sier ett ord om slektskap.
+
 import { useMemo, useState } from 'react';
-import { CLASSES, FACES, HAIR_COLORS, HAIR_STYLES, SKIN_TONES } from '../data/classes';
+import { FACES, HAIR_COLORS, HAIR_STYLES, KJORTLER, SKIN_TONES, kjortelFor } from '../data/eleven';
+import { KAPITLER } from '../data/kapitler';
 import { renderHeroPortrait } from '../engine/spriteforge';
 import { NAVN_MAKS, vurderNavn } from '../net/navnevakt';
-import type { CharacterDraft, ClassId } from '../types';
+import type { CharacterDraft } from '../types';
 
 interface Props {
     onFerdig: (draft: CharacterDraft) => void;
@@ -26,13 +39,15 @@ const FACE_LABELS: Record<string, string> = {
 
 export function CharacterCreator({ onFerdig }: Props) {
     const [navn, setNavn] = useState('');
-    const [classId, setClassId] = useState<ClassId>('skald');
+    const [kjortel, setKjortel] = useState(0);
     const [skin, setSkin] = useState(0);
     const [hair, setHair] = useState(0);
     const [hairColor, setHairColor] = useState(0);
     const [face, setFace] = useState(0);
 
-    const klasse = CLASSES.find((c) => c.id === classId)!;
+    const drakt = kjortelFor(kjortel);
+    /** Den hun begynner som. Rollen er kapittelets, ikke hennes. */
+    const forste = KAPITLER[0];
 
     // Navnet vises over hodet hennes for alle andre i hallen, så det prøves her
     // og ikke først når hun kommer inn. Se `net/navnevakt.ts` for hvorfor
@@ -44,11 +59,11 @@ export function CharacterCreator({ onFerdig }: Props) {
         () =>
             renderHeroPortrait({
                 appearance: { skin, hair, hairColor, face },
-                tunic: klasse.palette.tunic,
-                trim: klasse.palette.trim,
+                tunic: drakt.tunic,
+                trim: drakt.trim,
                 armorTier: 0,
             }),
-        [skin, hair, hairColor, face, klasse]
+        [skin, hair, hairColor, face, drakt]
     );
 
     return (
@@ -79,14 +94,20 @@ export function CharacterCreator({ onFerdig }: Props) {
                                 {navn.trim() || 'Uten navn'}
                             </p>
                             <p className="text-xs uppercase tracking-widest text-amber-300/80">
-                                {klasse.name}
+                                {drakt.navn}
                             </p>
                         </div>
-                        <dl className="w-full space-y-1 text-xs text-slate-300">
-                            <Rad navn="Liv" verdi={klasse.base.hp} />
-                            <Rad navn="Styrke" verdi={klasse.base.styrke} />
-                            <Rad navn="Vern" verdi={klasse.base.vern} />
-                        </dl>
+                        {/*
+                            Ingen tabell med liv, styrke og vern. Alle har de
+                            samme tallene nå, og en stolpe som er lik for alle,
+                            lover et valg som ikke finnes.
+                        */}
+                        <p className="text-center text-xs leading-relaxed text-slate-400">
+                            Første gang du går inn i vikingtiden, er du{' '}
+                            <span className="text-slate-200">{forste.rolle.navn}</span>,{' '}
+                            {forste.rolle.alder} vintrer, i året {forste.aar}. Hvem du er, avgjøres
+                            av året du står i. Dette er ansiktet ditt gjennom alle sammen.
+                        </p>
                     </div>
 
                     <div className="space-y-6">
@@ -125,44 +146,25 @@ export function CharacterCreator({ onFerdig }: Props) {
                             </p>
                         </section>
 
-                        {/* Klasse */}
-                        <section>
-                            <h2 className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                                Vei
-                            </h2>
-                            <div className="grid gap-3 sm:grid-cols-3">
-                                {CLASSES.map((c) => {
-                                    const valgt = c.id === classId;
-                                    return (
-                                        <button
-                                            key={c.id}
-                                            type="button"
-                                            onClick={() => setClassId(c.id)}
-                                            className={`rounded-xl border p-3 text-left transition ${
-                                                valgt
-                                                    ? 'border-amber-300/70 bg-amber-300/10 shadow-[0_0_0_1px_rgba(252,211,77,0.3)]'
-                                                    : 'border-white/10 bg-white/5 hover:border-white/25'
-                                            }`}
-                                        >
-                                            <p className="font-display font-semibold">{c.name}</p>
-                                            <p className="text-[11px] uppercase tracking-wider text-amber-300/70">
-                                                {c.tagline}
-                                            </p>
-                                            <p className="mt-1 text-xs leading-snug text-slate-300">
-                                                {c.description}
-                                            </p>
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        </section>
-
                         {/* Utseende */}
                         <section className="space-y-4">
                             <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400">
                                 Utseende
                             </h2>
 
+                            {/*
+                                Kjortelen står først. Den er det største fargefeltet
+                                på figuren, og fargen har et navn som sier hva den er
+                                farget med - krapp, vaid, reseda. Det er den eneste
+                                fagopplysningen i hele skjermen, og den koster ingenting.
+                            */}
+                            <Fargevalg
+                                label="Kjortel"
+                                farger={KJORTLER.map((k) => k.tunic)}
+                                navn={KJORTLER.map((k) => k.navn)}
+                                valgt={kjortel}
+                                onVelg={setKjortel}
+                            />
                             <Fargevalg
                                 label="Hudtone"
                                 farger={SKIN_TONES}
@@ -202,7 +204,7 @@ export function CharacterCreator({ onFerdig }: Props) {
                                     // doble mellomrom skal ikke følge henne inn
                                     // i hallen.
                                     name: dom.navn,
-                                    classId,
+                                    kjortel,
                                     appearance: { skin, hair, hairColor, face },
                                 })
                             }
@@ -221,35 +223,35 @@ export function CharacterCreator({ onFerdig }: Props) {
     );
 }
 
-function Rad({ navn, verdi }: { navn: string; verdi: number }) {
-    return (
-        <div className="flex justify-between border-b border-white/5 pb-1">
-            <dt>{navn}</dt>
-            <dd className="font-semibold text-slate-100">{verdi}</dd>
-        </div>
-    );
-}
-
 function Fargevalg({
     label,
     farger,
+    navn,
     valgt,
     onVelg,
 }: {
     label: string;
     farger: string[];
+    /** Navn på hver farge, der de har et. Blir også skjermleserens tekst. */
+    navn?: string[];
     valgt: number;
     onVelg: (i: number) => void;
 }) {
     return (
         <div>
-            <p className="mb-1.5 text-xs text-slate-400">{label}</p>
+            <p className="mb-1.5 text-xs text-slate-400">
+                {label}
+                {navn?.[valgt] ? (
+                    <span className="ml-2 text-slate-500">{navn[valgt]}</span>
+                ) : null}
+            </p>
             <div className="flex flex-wrap gap-2">
                 {farger.map((farge, i) => (
                     <button
                         key={farge}
                         type="button"
-                        aria-label={`${label} ${i + 1}`}
+                        aria-label={navn?.[i] ?? `${label} ${i + 1}`}
+                        title={navn?.[i]}
                         onClick={() => onVelg(i)}
                         style={{ background: farge }}
                         className={`h-9 w-9 rounded-lg border-2 transition ${

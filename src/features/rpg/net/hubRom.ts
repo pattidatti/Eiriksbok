@@ -25,7 +25,8 @@ import {
 } from 'firebase/database';
 import { db } from '../../../lib/firebase';
 import { trygtIkon } from '../data/folelser';
-import type { AppearanceChoice, ClassId, Gjest, Retning, Stilling } from '../types';
+import { KJORTEL_FOR_KLASSE, KJORTLER } from '../data/eleven';
+import type { AppearanceChoice, Gjest, Retning, Stilling } from '../types';
 import { gjestenavn } from './navnevakt';
 
 const ROT = 'rpg-hub/rom';
@@ -62,7 +63,8 @@ const SPOKELSE_MS = 45000;
 
 export interface HubIdentitet {
     navn: string;
-    classId: ClassId;
+    /** Nummeret på kjortelfargen. Se `KJORTLER` i `data/eleven.ts`. */
+    kjortel: number;
     appearance: AppearanceChoice;
     /** Rustningstrinn 0-3. Tall, ikke gjenstands-id: de andre skal se henne, ikke inventaret. */
     rustning: number;
@@ -151,6 +153,14 @@ export interface RaaGjest {
     positur?: string;
     sitter?: boolean;
     emoji?: string | null;
+    kjortel?: number;
+    /**
+     * Klassen hun hadde før §16.3.
+     *
+     * Feltet leses fortsatt, og det er ikke slurv: en klassekamerat kan sitte i
+     * hallen med en fane som ble åpnet før oppdateringen, og hun skal ha riktig
+     * farge på kjortelen - ikke bli rød fordi vi sluttet å forstå henne.
+     */
     classId?: string;
     appearance?: Partial<AppearanceChoice>;
     rustning?: number;
@@ -158,6 +168,12 @@ export interface RaaGjest {
 }
 
 const RETNINGER: Retning[] = ['ned', 'venstre', 'hoyre', 'opp'];
+
+/** Kjortelnummeret til en gjest, uansett hvilken utgave hun sitter på. */
+function tolkKjortel(raa: RaaGjest): number {
+    if (typeof raa.kjortel === 'number' && KJORTLER[raa.kjortel]) return raa.kjortel;
+    return KJORTEL_FOR_KLASSE[raa.classId ?? ''] ?? 0;
+}
 
 /**
  * Gjør en rå node om til en gjest vi tør å tegne.
@@ -178,7 +194,7 @@ export function tolkGjest(id: string, raa: RaaGjest | null): Gjest | null {
         positur: raa.positur === 'gang' ? 'gang' : 'idle',
         sitter: raa.sitter === true,
         emoji: trygtIkon(raa.emoji),
-        classId: (raa.classId ?? 'skald') as ClassId,
+        kjortel: tolkKjortel(raa),
         appearance: {
             skin: Number(raa.appearance?.skin) || 0,
             hair: Number(raa.appearance?.hair) || 0,
@@ -268,7 +284,7 @@ export async function blimMed(
 
     const helePosten = (s: HubStilling) => ({
         navn: meg.navn,
-        classId: meg.classId,
+        kjortel: meg.kjortel,
         appearance: meg.appearance,
         rustning: meg.rustning,
         emoji: folelse,

@@ -60,7 +60,7 @@ const NOKKEL = 'rpg-minnevokteren-v1';
  * og et klikk på startknappen lander henne der - ikke i Nordvik. Skriptene som
  * måler kamp, båt og boss skal rett i bygda, ikke gå tidslinjeveien først.
  *
- * Formen er `SaveState` v4. Hull fylles av `merge` i storen, så det som ikke
+ * Formen er `SaveState` v5. Hull fylles av `merge` i storen, så det som ikke
  * står her får sin default.
  *
  * `kampanje` er for skriptene som måler noe som ligger sent i kapittelet:
@@ -90,13 +90,13 @@ export async function entreEpoke(
         [
             NOKKEL,
             JSON.stringify({
-                version: 4,
+                version: 5,
                 state: {
-                    version: 4,
+                    version: 5,
                     spiller: {
                         character: {
                             name: navn,
-                            classId: 'vokter',
+                            kjortel: 2,
                             appearance: { skin: 1, hair: 2, hairColor: 1, face: 0 },
                         },
                     },
@@ -124,13 +124,13 @@ export async function entreHallen(page, hub = undefined) {
         [
             NOKKEL,
             JSON.stringify({
-                version: 4,
+                version: 5,
                 state: {
-                    version: 4,
+                    version: 5,
                     spiller: {
                         character: {
                             name: 'Torstein',
-                            classId: 'vokter',
+                            kjortel: 2,
                             appearance: { skin: 1, hair: 2, hairColor: 1, face: 0 },
                         },
                     },

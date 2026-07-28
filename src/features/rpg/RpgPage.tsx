@@ -25,7 +25,7 @@ import { Navigasjonen } from './components/Navigasjonen';
 import { Skroget } from './components/Skroget';
 import { Blotet } from './components/Blotet';
 import { Vinternettene } from './components/Vinternettene';
-import { rustningTier } from './data/classes';
+import { rustningTier } from './data/eleven';
 import { useHubRom } from './net/useHubRom';
 import { Atmosfare, Skjermkontroll } from './components/Skjermkontroll';
 import { harBeroring } from './engine/enhet';
@@ -143,7 +143,7 @@ export default function RpgPage() {
         character && klar
             ? {
                   navn: character.name,
-                  classId: character.classId,
+                  kjortel: character.kjortel,
                   appearance: character.appearance,
                   rustning: rustningTier(rustning),
               }

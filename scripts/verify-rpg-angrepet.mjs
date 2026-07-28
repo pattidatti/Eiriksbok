@@ -49,13 +49,13 @@ async function okt(kampanje, kapittelState = {}) {
         [
             'rpg-minnevokteren-v1',
             JSON.stringify({
-                version: 4,
+                version: 5,
                 state: {
-                    version: 4,
+                    version: 5,
                     spiller: {
                         character: {
                             name: 'Elev',
-                            classId: 'vokter',
+                            kjortel: 2,
                             appearance: { skin: 1, hair: 2, hairColor: 1, face: 0 },
                         },
                     },

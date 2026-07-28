@@ -11,7 +11,7 @@
 
 import type Phaser from 'phaser';
 import type { EnemyDef, FigurLook, Retning, WeaponArt } from '../types';
-import { HAIR_COLORS, HAIR_STYLES, SKIN_TONES } from '../data/classes';
+import { HAIR_COLORS, HAIR_STYLES, SKIN_TONES } from '../data/eleven';
 import { createPainter, hexToNum, makeRng, numToHex, ramp, type Painter } from './pixels';
 
 export const TILE = 16;

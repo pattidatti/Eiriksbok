@@ -472,6 +472,12 @@ migrering. Formen følger §8, med tre avvik som er verdt å begrunne:
   er en *spillendring* som hører til etappe 2, ikke til en omlegging av
   lagringsformatet. Hver etappe skal etterlate spillet spillbart.
 
+  > **Oppdatert.** Alle tre er ute nå. Besvergelsene gikk i K1e (25 sølv per
+  > stav, `version: 3 → 4`), og klassen gikk med Nordvik-blueprintens §16.3:
+  > `character.classId` ble `character.kjortel`, `version: 4 → 5`. Klassen
+  > leses fortsatt to steder, og begge er utenfra - lagrede spill på disken, og
+  > gjester i hallen som sitter på en fane fra før oppdateringen.
+
 To ting arbeidet avdekket, som ikke sto i planen:
 
 - **Fallgruven med flat fletting er strukturelt borte.** `merge` er nå total:
@@ -585,7 +591,7 @@ To ting som ble ryddet på veien, og som ikke sto i planen:
 -   **Påkledningen hadde to sannheter.** `Spiller.heltLook()` regnet ut
     kjortelfargen med en ternær-kjede ved siden av `ClassDef.palette`, som
     inneholdt de samme seks fargene. De holdt seg like helt til noen skulle
-    tegne en medelev. Nå kler `figurLook()` i `data/classes.ts` alle, og
+    tegne en medelev. Nå kler `figurLook()` i `data/eleven.ts` alle, og
     `rustningTier()` er det ene stedet som vet hva en lærbrynje ser ut som.
 -   **Pikselskriveren var privat i `Portaler`.** Navneskiltene over hodet
     trengte den samme, og en kopi til ville vært den tredje måten å skrive et

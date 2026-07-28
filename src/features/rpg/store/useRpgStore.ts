@@ -14,7 +14,14 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { useProgressStore } from '../../progress/useProgressStore';
 import { BEGREP_BY_ID } from '../data/begreper';
-import { CLASS_BY_ID, CLASSES, levelFromXp, statsAt, xpForLevel } from '../data/classes';
+import {
+    DEFAULT_APPEARANCE,
+    KJORTEL_FOR_KLASSE,
+    STARTVAAPEN,
+    levelFromXp,
+    statsAt,
+    xpForLevel,
+} from '../data/eleven';
 import { ITEM_BY_ID, equipmentBonus } from '../data/items';
 import { START_EPOKE } from '../data/epoker';
 import { stedIEpoke, START_STED } from '../data/steder';
@@ -189,7 +196,42 @@ const TOM_UTSTYR: Record<ItemSlot, string | null> = { vapen: null, rustning: nul
 /** Våpenet en elev uten utrustet våpen slår med - hendene hennes, i praksis. */
 const START_VAAPEN = 'ovingssverd';
 
-const LAGRING_VERSJON = 4;
+const LAGRING_VERSJON = 5;
+
+/**
+ * En karakter slik den kan ligge på disken, i en hvilken som helst utgave.
+ *
+ * Før §16.3 hadde hun `classId`; nå har hun `kjortel`. Begge feltene står her,
+ * begge er valgfrie, og `tolkKarakter` gjør en av delene om til en figur vi tør
+ * å tegne. Feltet `classId` skal stå til den dagen ingen har et så gammelt
+ * lagret spill, og ikke en dag lenger.
+ */
+type LagretKarakter = {
+    name?: string;
+    classId?: string;
+    kjortel?: number;
+    appearance?: CharacterDraft['appearance'];
+};
+
+/**
+ * Karakteren, oversatt til den formen spillet bruker nå.
+ *
+ * Den som hadde valgt runemester, får den blå kjortelen - ikke fordi blå er
+ * riktig for en runemester, men fordi det er den fargen hun så på figuren sin i
+ * går. Et lagret spill skal aldri skifte ansikt over natten.
+ */
+function tolkKarakter(raa: LagretKarakter | null | undefined): CharacterDraft | null {
+    if (!raa || typeof raa.name !== 'string') return null;
+    const kjortel =
+        typeof raa.kjortel === 'number'
+            ? raa.kjortel
+            : (KJORTEL_FOR_KLASSE[raa.classId ?? ''] ?? 0);
+    return {
+        name: raa.name,
+        kjortel,
+        appearance: raa.appearance ?? DEFAULT_APPEARANCE,
+    };
+}
 
 /**
  * Hva en pensjonert besvergelse er verdt.
@@ -241,21 +283,18 @@ const tomKampanje = (): EpokeKampanje => ({
 /**
  * En person som akkurat har begynt.
  *
- * Slår aldri opp klassen uten fall. Et lagret spill fra en klasse som er
- * omdøpt eller fjernet - og det kommer til å skje, `character.classId` er på
- * vei ut med kampanjen - skal gi eleven en litt annen startgave, ikke et
- * unntak midt i innlastingen som lar henne stå igjen uten spill i det hele
- * tatt.
+ * Klassen sto her til §16.3: startverdiene og startvåpenet ble slått opp fra
+ * `character.classId`, med fall til den første klassen hvis id-en var ukjent.
+ * Nå er det ett sett tall og ett startvåpen for alle, og det som er hennes -
+ * navnet og utseendet - ligger i `character` og røres ikke av et kapittelskifte.
  */
 const tomtKapittel = (character: CharacterDraft | null): EpokeKapittel => {
-    const klasse = character ? (CLASS_BY_ID[character.classId] ?? CLASSES[0]) : null;
-    const start = character ? statsAt(character.classId, 1) : { hp: 100 };
     return {
-        hp: start.hp,
+        hp: statsAt(1).hp,
         xp: 0,
         solv: 0,
-        sekk: klasse ? [klasse.startWeapon] : [],
-        utstyr: klasse ? { ...TOM_UTSTYR, vapen: klasse.startWeapon } : { ...TOM_UTSTYR },
+        sekk: character ? [STARTVAAPEN] : [],
+        utstyr: character ? { ...TOM_UTSTYR, vapen: STARTVAAPEN } : { ...TOM_UTSTYR },
         // Femti er «en av oss»: hun er verken utstøtt eller kjent. Den som
         // arver noe, får det gjennom `startAere` ved kapittelskiftet.
         aere: 50,
@@ -341,7 +380,7 @@ const leggUtEpoke = (s: RpgState, epokeId: string, epoke: EpokeSave): RpgState =
  * migreringens skyld og skal dø den dagen ingen elev har et så gammelt spill.
  */
 interface LagringV3 {
-    character: CharacterDraft | null;
+    character: LagretKarakter | null;
     xp: number;
     hp: number;
     solv: number;
@@ -366,11 +405,11 @@ interface LagringV3 {
     sisteSone: string;
 }
 
-/** Maks liv/kraft ut fra nivå, klasse og utstyr. */
+/** Maks liv og slagkraft ut fra nivå og utstyr. */
 export function maksVerdier(state: Pick<RpgState, 'character' | 'xp' | 'utstyr'>) {
-    if (!state.character) return { hp: 100, styrke: 5, vern: 3, niva: 1 };
+    if (!state.character) return { hp: statsAt(1).hp, styrke: 5, vern: 3, niva: 1 };
     const niva = levelFromXp(state.xp);
-    const base = statsAt(state.character.classId, niva);
+    const base = statsAt(niva);
     const bonus = equipmentBonus(state.utstyr);
     return {
         niva,
@@ -882,8 +921,14 @@ export const useRpgStore = create<RpgState>()(
                 epoker: { ...state.andreEpoker, [state.epokeId]: aktivEpoke(state) },
             }),
             merge: (lagret, gjeldende): RpgState => {
-                const s = (lagret ?? {}) as Partial<SaveState>;
-                const character = s.spiller?.character ?? null;
+                const s = (lagret ?? {}) as Partial<SaveState> & {
+                    spiller?: { character?: LagretKarakter | null };
+                };
+                // Gjennom `tolkKarakter` også her, ikke bare i `migrate`. Et
+                // lagret spill som har mistet versjonsfeltet, hopper over
+                // migreringen - og da er dette det eneste stedet som kan gjøre
+                // en gammel klasse om til en farge.
+                const character = tolkKarakter(s.spiller?.character);
                 const epokeId = s.sisteEpoke ?? START_EPOKE;
                 const alle = { ...s.epoker };
                 const aktiv = alle[epokeId];
@@ -903,6 +948,21 @@ export const useRpgStore = create<RpgState>()(
             },
             migrate: (lagret, versjon): SaveState => {
                 if (versjon >= LAGRING_VERSJON) return lagret as SaveState;
+
+                // v4 → v5: klassen ble en kjortelfarge (§16.3). Alt annet i et
+                // v4-spill står som det står - hun har spilt kapitler, lagt ut
+                // kilder og lært begreper, og ingenting av det skal røres for å
+                // bytte et felt på figuren hennes.
+                if (versjon === 4) {
+                    const v4 = (lagret ?? {}) as SaveState & {
+                        spiller?: { character?: LagretKarakter | null };
+                    };
+                    return {
+                        ...v4,
+                        version: LAGRING_VERSJON,
+                        spiller: { character: tolkKarakter(v4.spiller?.character) },
+                    };
+                }
 
                 const s = (lagret ?? {}) as Partial<LagringV3>;
                 let quester = s.quester ?? {};
@@ -927,7 +987,7 @@ export const useRpgStore = create<RpgState>()(
                 // Alt som lå flatt hørte til vikingtiden - det fantes ingen
                 // annen epoke å høre til. Nøkkelen beholdes: å bytte den er å
                 // slette hvert eneste lagrede spill i et klasserom som spiller.
-                const character = s.character ?? null;
+                const character = tolkKarakter(s.character);
                 const tomt = tomtKapittel(character);
                 const stavsolv = (s.spells?.length ?? 0) * SOLV_PER_STAV;
                 lestStavsolv = stavsolv;

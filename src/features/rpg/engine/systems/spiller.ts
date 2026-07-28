@@ -10,7 +10,7 @@
 // ned i et kloster i 793 eller en skyttergrav i 1916 (blueprint R2 og R4).
 
 import Phaser from 'phaser';
-import { figurLook, rustningTier } from '../../data/classes';
+import { figurLook, rustningTier } from '../../data/eleven';
 import { ITEM_BY_ID } from '../../data/items';
 import { KAMP, MANOVER_NAVN, vaapenKamp } from '../../data/vaapen';
 import { maksVerdier, useRpgStore, utrustetVaapen } from '../../store/useRpgStore';
@@ -420,7 +420,7 @@ export class Spiller {
     private heltLook() {
         const store = useRpgStore.getState();
         return figurLook(
-            store.character?.classId,
+            store.character?.kjortel,
             store.character?.appearance,
             rustningTier(store.utstyr.rustning)
         );

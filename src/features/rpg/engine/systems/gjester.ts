@@ -12,7 +12,7 @@
 // mellom de to siste prøvene vi har fått.
 
 import Phaser from 'phaser';
-import { figurLook } from '../../data/classes';
+import { figurLook } from '../../data/eleven';
 import { FOLELSE_MS } from '../../data/folelser';
 import type { Gjest } from '../../types';
 import {
@@ -292,7 +292,7 @@ export class Gjester {
      * bedre at nummer tretten låner en figur enn at hallen står og smir.
      */
     private tekstur(g: Gjest): string {
-        const sign = `${g.classId}-${g.rustning}-${g.appearance.skin}-${g.appearance.hair}-${g.appearance.hairColor}-${g.appearance.face}`;
+        const sign = `${g.kjortel}-${g.rustning}-${g.appearance.skin}-${g.appearance.hair}-${g.appearance.hairColor}-${g.appearance.face}`;
         const kjent = this.teksturer.get(sign);
         if (kjent) return kjent;
 
@@ -300,7 +300,7 @@ export class Gjester {
             return this.teksturer.values().next().value as string;
         }
         const nokkel = `gjest-${this.teksturer.size}`;
-        forgeHumanoid(this.scene, nokkel, figurLook(g.classId, g.appearance, g.rustning));
+        forgeHumanoid(this.scene, nokkel, figurLook(g.kjortel, g.appearance, g.rustning));
         this.teksturer.set(sign, nokkel);
         return nokkel;
     }

@@ -1022,7 +1022,7 @@ som bare får verdi i `create()`, blir `undefined` for en gammel elev - og førs
 | `riktigeSvar`, `galeSvar` | Beholdes som statistikk. Låser ikke opp noe lenger. |
 | `quester`, `questForsok` | Beholdes urørt. Kapittel 1 leser dem ikke. |
 | `bosser` | Beholdes. Glemselen finnes ikke lenger, men å slette lista er å påstå at hun ikke felte den. |
-| `character.classId` | Ut (§16.3). `name` og `appearance` beholdes. |
+| `character.classId` | Ut (§16.3). `name` og `appearance` beholdes. Bygget som `version: 4 → 5`: klassen blir kjortelnummeret sitt, så figuren ser lik ut dagen etter. |
 | `sisteSone` | Settes til `nordvik-793` for alle. Den gamle sonen finnes ikke. |
 | Alt nytt | `kapittel: 1`, `kampanje: {}`, `aere: 50`, `aettAere: 0`, `aetter: {}`, `saker: []`, `klokke: { aar: 793, dag: 1, aarstid: 'vaar' }`, `begreper: {}`, `beretninger: []`, `fredlos: false`, `sette: []`, `kilder: []`, `skjold: { def: 'treningsskjold', helse: 5 }` |
 
@@ -1069,9 +1069,9 @@ retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo;
 **Etappe 1b er bygget.** R1-R8, se `rpg-hub-og-epoker-blueprint.md` §10.
 
 **Etappe 2 er bygget** (K1a-K1e), og **etappe 3** med den. **Etappe 4 er
-bygget** (K2a-K2g). **Etappe 5 er bygget** (K3a-K3e, K4a-K4c, K5a-K5d): alle
-fem kapitlene, alle fem mellomspillene og epilogen står. Det eneste som
-gjenstår av hele blueprinten er §16.3 - se nederst i denne seksjonen.
+bygget** (K2a-K2g). **Etappe 5 er bygget** (K3a-K3e, K4a-K4c, K5a-K5e): alle
+fem kapitlene, alle fem mellomspillene, epilogen og §16.3 står. **Hele
+blueprinten er dermed gjennomført.**
 
 | Delet | Hva som står |
 |---|---|
@@ -1100,6 +1100,11 @@ gjenstår av hele blueprinten er §16.3 - se nederst i denne seksjonen.
   rent utseendevalg. Den ligger på flerspiller-tråden (`Gjest.classId`) og i
   `figurLook`, og å bytte den midt i en etappe der resten allerede var verifisert
   ville satt hallen i spill for en kosmetisk gevinst. Den hører til etappe 3.
+
+  > **Oppdatert.** Bygget til slutt, som K5e, etter at alle fem kapitlene sto -
+  > se nederst i denne seksjonen. Utsettelsen var riktig: hallen tåler
+  > omleggingen bare fordi `RaaGjest` fortsatt kan lese en klasse fra en
+  > medelev som ikke har oppdatert fanen sin.
 
 **Etappe 3 er bygget.** Mellomspill I står, og med det er kapittel 1 ferdig,
 ikke bare spillbart.
@@ -1436,8 +1441,41 @@ fordi epilogen er det ene klippet der det å hoppe over koster eleven slutten.
 Nye prøver: `verify-rpg-mellomspill5` driver hele kjeden gjennom en ekte
 nettleser - fra rekka ved brua, gjennom bordet, inn i epilogen og ut i hallen.
 
-**Det som gjenstår:** §16.3. `ClassId` skal ut av karakterskaperen, men den
-ligger på flerspiller-tråden (`Gjest.classId`) og i `figurLook`.
+**§16.3 er bygget** (K5e), og med det er hele blueprinten gjennomført.
+
+`ClassId` er ute. `data/classes.ts` heter `data/eleven.ts`, klassene er blitt
+seks kjortelfarger med navn etter fargestoffet - krapp, vaid, reseda - og
+karakterskaperen velger navn og utseende og ingenting annet. Alle har de samme
+kjernetallene og det samme startvåpenet.
+
+**Fire avvik og funn:**
+
+- **Klassene ble til farger, ikke slettet.** De tre gamle palettene er kjortel
+  0, 1 og 2, i den rekkefølgen de sto i. Da kan `migrate` (v4 → v5) og hallen
+  gjøre `skald | runemester | vokter` om til et tall, og eleven som logger inn
+  dagen etter ser nøyaktig lik ut som i går. En omlegging som gir en klasse
+  tretti elever en ny farge på figuren, leser som en feil - ikke som en ny
+  utgave.
+- **Kjortelen er det eneste fargevalget med et navn.** Hudtone og hårfarge er
+  bare ruter; kjortelen sier «Krapprød», «Vaidblå», «Resedagrønn». Det er den
+  eneste fagopplysningen i hele skjermen - alle seks lot seg lage med det de
+  hadde - og den koster ingenting.
+- **Stolpene med liv, styrke og vern er borte fra skjermen.** Tallene er like
+  for alle nå, og en stolpe som er lik for alle lover et valg som ikke finnes.
+  I stedet står det hvem hun begynner som: «Torstein Ormsson, 17 vintrer, i
+  året 793. Hvem du er, avgjøres av året du står i.»
+- **`Gjest.classId` leses fortsatt, og skal det.** Det står i `RaaGjest` med en
+  kommentar om hvorfor: en klassekamerat kan sitte i hallen med en fane som ble
+  åpnet før oppdateringen, og hun skal ha riktig farge på kjortelen - ikke bli
+  rød fordi vi sluttet å forstå henne.
+
+Utseendearven §16.3 ber om, viste seg å være bygget alt: `character` ligger
+utenfor epoke- og kapitteltilstanden, så Åsa har hatt Torsteins hårfarge siden
+K2c. Det eneste som manglet, var at det ikke sto noe sted.
+
+`verify-rpg-lagring.mjs` driver v1, v3, v4 og v5 gjennom en ekte nettleser og
+måler at klassen blir kjortelfargen sin, at den ikke ligger igjen på disken, og
+at alt hun har spilt står urørt gjennom migreringen.
 
 ### 13.1 Hvorfor etappe 1b kom til
 

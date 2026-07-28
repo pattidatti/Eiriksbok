@@ -36,30 +36,6 @@ export interface QuestBank {
 // ─── Karakter ───────────────────────────────────────────────────────────────
 
 /**
- * Klassene bestemmer startverdier, startvåpen og utseende.
- *
- * Besvergelsen er borte med rammen (§15). Selve klassevalget er også på vei
- * ut (§16.3): rolle og navn er gitt av kapittelet, og det eleven skal velge er
- * hvordan hun ser ut. Til det skjer, er `ClassId` i praksis et utseendevalg
- * med en startgave.
- */
-export type ClassId = 'skald' | 'runemester' | 'vokter';
-
-export interface ClassDef {
-    id: ClassId;
-    name: string;
-    tagline: string;
-    description: string;
-    /** Fagene klassen får bonus i - knytter klassevalg til skolefag. */
-    affinity: string[];
-    base: CoreStats;
-    /** Per nivå. Brøker rundes ned ved bruk. */
-    growth: CoreStats;
-    startWeapon: string;
-    palette: { tunic: string; trim: string };
-}
-
-/**
  * Kjernetallene.
  *
  * `mana` og `visdom` er borte med besvergelsene (blueprint §15). Uten
@@ -85,9 +61,18 @@ export interface AppearanceChoice {
     face: number;
 }
 
+/**
+ * Det eleven velger om seg selv, og alt hun velger.
+ *
+ * `classId` sto her til §16.3 ble bygget. Rollen er kapittelets - hun er
+ * Torstein i 793 og Åsa i 872 - og det eneste som er hennes gjennom alle fem,
+ * er navnet i hallen og hvordan figuren ser ut. `kjortel` er nummeret på en
+ * farge i `KJORTLER`, ikke fargen selv: hexen hører hjemme ett sted, og et
+ * lagret spill skal ikke bære en farge vi kanskje justerer.
+ */
 export interface CharacterDraft {
     name: string;
-    classId: ClassId;
+    kjortel: number;
     appearance: AppearanceChoice;
 }
 
@@ -95,7 +80,7 @@ export interface CharacterDraft {
  * Alt sprite-smia trenger for å kle på én figur.
  *
  * Både eleven og de andre i hallen tegnes av `forgeHumanoid`, og begge kles på
- * av `figurLook()` i `data/classes.ts`. Typen står her, ikke i `spriteforge.ts`,
+ * av `figurLook()` i `data/eleven.ts`. Typen står her, ikke i `spriteforge.ts`,
  * fordi den krysser grensa mellom data, nett og tegning.
  */
 export interface FigurLook {
@@ -1196,7 +1181,8 @@ export interface Gjest {
     sitter: boolean;
     /** Følelsen hun sendte, eller null. Alltid fra det faste hjulet. */
     emoji: string | null;
-    classId: ClassId;
+    /** Nummeret på kjortelfargen hennes. Se `KJORTLER` i `data/eleven.ts`. */
+    kjortel: number;
     appearance: AppearanceChoice;
     /** Rustningstrinnet, 0-3. Sendt som tall, ikke som gjenstands-id. */
     rustning: number;
@@ -1373,7 +1359,14 @@ export interface HubSpor {
 }
 
 export interface SaveState {
-    version: 4;
+    /**
+     * Formen på disken.
+     *
+     * 4 var v4 fra blueprintens §12.2. 5 kom med §16.3: `character.classId` ble
+     * `character.kjortel`, og et lagret spill måtte oversettes for at eleven
+     * skulle se lik ut dagen etter.
+     */
+    version: 5;
     /** Følger eleven overalt, i alle epoker. */
     spiller: { character: CharacterDraft | null };
     /**

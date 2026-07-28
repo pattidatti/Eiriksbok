@@ -24,7 +24,16 @@ const sjekk = (navn, ok, detalj) => {
 };
 
 const ANSIKT = { skin: 1, hair: 2, hairColor: 1, face: 0 };
-const KARAKTER = { name: 'Torstein', classId: 'vokter', appearance: ANSIKT };
+/**
+ * Karakteren slik den så ut før §16.3, med klasse og ikke kjortelfarge.
+ *
+ * Den brukes med vilje i alle de gamle lagringene under: en elev som har spilt
+ * før i dag har nøyaktig denne formen på disken, og migreringen skal gi henne
+ * den grønne kjortelen vokteren hadde - ikke en ny farge, og ikke et unntak.
+ */
+const KARAKTER_V4 = { name: 'Torstein', classId: 'vokter', appearance: ANSIKT };
+/** Og slik den ser ut nå. Vokterens grønne er kjortel nummer 2. */
+const KARAKTER = { name: 'Torstein', kjortel: 2, appearance: ANSIKT };
 
 const browser = await chromium.launch();
 
@@ -55,6 +64,7 @@ const les = (page) =>
         const s = window.__rpgStore.getState();
         return {
             navn: s.character?.name ?? null,
+            kjortel: s.character?.kjortel ?? null,
             epokeId: s.epokeId,
             kapittel: s.kapittel,
             sisteSted: s.sisteSted,
@@ -88,7 +98,7 @@ const lesDisk = (page) =>
     const { page, ctx, sidefeil } = await medLagring({
         version: 3,
         state: {
-            character: KARAKTER,
+            character: KARAKTER_V4,
             xp: 120,
             hp: 44,
             mana: 12,
@@ -121,8 +131,15 @@ const lesDisk = (page) =>
 
     const disk = await lesDisk(page);
     const epoke = disk.state.epoker?.vikingtiden;
-    sjekk('v3: disken er versjon 4', disk.version === 4 && disk.state.version === 4);
+    sjekk('v3: disken er versjon 5', disk.version === 5 && disk.state.version === 5);
     sjekk('v3: spilleren ligger globalt', disk.state.spiller?.character?.name === 'Torstein');
+    // §16.3: klassen ble en kjortelfarge, og vokterens grønne er nummer 2.
+    // Eleven skal se lik ut dagen etter oppdateringen.
+    sjekk('v3: klassen ble kjortelfargen sin', s.kjortel === 2, String(s.kjortel));
+    sjekk(
+        'v3: og klassen ligger ikke igjen på disken',
+        disk.state.spiller?.character?.classId === undefined
+    );
     sjekk('v3: xp ligger i kapittelState', epoke?.kapittelState?.xp === 120);
     sjekk('v3: oppdrag ligger i kampanje', epoke?.kampanje?.quester['nordvik-h1'] === 'ferdig');
     sjekk('v3: ingenting ligger flatt igjen', disk.state.xp === undefined);
@@ -136,7 +153,7 @@ const lesDisk = (page) =>
     const { page, ctx } = await medLagring({
         version: 1,
         state: {
-            character: KARAKTER,
+            character: KARAKTER_V4,
             xp: 40,
             hp: 60,
             mana: 20,
@@ -189,7 +206,7 @@ const lesDisk = (page) =>
         version: 4,
         state: {
             version: 4,
-            spiller: { character: KARAKTER },
+            spiller: { character: KARAKTER_V4 },
             sisteEpoke: 'vikingtiden',
             epoker: {
                 vikingtiden: {
@@ -221,6 +238,8 @@ const lesDisk = (page) =>
     const s = await les(page);
     sjekk('v4: den aktive epoken pakkes ut flatt', s.xp === 120 && s.epokeId === 'vikingtiden');
     sjekk('v4: den andre epoken ligger til side', s.andreEpoker.gryet?.kapittelState.xp === 999);
+    // v4 → v5 rører bare figuren. Alt hun har spilt skal stå urørt gjennom den.
+    sjekk('v4: klassen ble kjortelfargen sin', s.kjortel === 2, String(s.kjortel));
 
     const disk = await lesDisk(page);
     sjekk(
@@ -262,9 +281,9 @@ const lesDisk = (page) =>
 
 {
     const { page, ctx, sidefeil } = await medLagring({
-        version: 4,
+        version: 5,
         state: {
-            version: 4,
+            version: 5,
             spiller: { character: KARAKTER },
             sisteEpoke: 'vikingtiden',
             epoker: {
@@ -282,6 +301,7 @@ const lesDisk = (page) =>
     sjekk('hull: det som fantes står', s.xp === 88 && s.riktigeSvar === 4);
     sjekk('hull: lister blir tomme lister', Array.isArray(s.lest) && Array.isArray(s.bosser));
     sjekk('hull: besvergelser finnes ikke lenger', s.spells === undefined, String(s.spells));
+    sjekk('hull: kjortelen står som den ble lagret', s.kjortel === 2, String(s.kjortel));
     sjekk('hull: spillet står likevel', sidefeil.length === 0, sidefeil[0]);
     await ctx.close();
 }

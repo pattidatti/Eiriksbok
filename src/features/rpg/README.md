@@ -54,7 +54,7 @@ og fra mikrospillene i `src/components/microgames/`.
 RpgPage.tsx              Ruta: Phaser-lerret + React-grensesnitt + broen mellom dem
 types.ts                 Alle domenetyper
 data/
-  classes.ts             Tre klasser, nivåkurve, utseendevalg
+  eleven.ts              Kjortelfarger, utseendevalg, nivåkurve, kjernetall
   items.ts               Våpen, rustning, amuletter, priser
   enemies.ts             Fiendearketyper + bossen
   epoker.ts              De 11 epokene, én ferdig. Årstall, palett, regelsett, bank-sone.
@@ -452,8 +452,8 @@ Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blu
 Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
 `docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R8 er bygget, og
 refaktoreringen er dermed ferdig. Kampanjen er hel: kapittel 1-5, mellomspill
-I-V og epilogen på Nordvik i 1100. Det eneste som gjenstår av
-Nordvik-blueprinten, er §16.3 - `ClassId` ut av karakterskaperen.
+I-V og epilogen på Nordvik i 1100 - og med §16.3 (klassene ut av
+karakterskaperen) er hele Nordvik-blueprinten gjennomført.
 
 ## Kapittel 1: 793
 
@@ -905,7 +905,14 @@ Tre ting som er lette å ødelegge:
     er omdøpt kastet et unntak midt i innlastingen, zustand svelget det, og
     eleven møtte karakterskaperen som om hun aldri hadde spilt - med det
     lagrede spillet liggende urørt til hun laget en ny figur oppå det.
-    `onRehydrateStorage` logger nå slike feil.
+    `onRehydrateStorage` logger nå slike feil. Klassene er borte (§16.3), men
+    regelen står: `kjortelFor()` og `tolkKarakter()` har begge et fall.
+-   **En form som endres, oversettes.** v5 gjorde `character.classId` om til
+    `character.kjortel`, og `tolkKarakter()` gir den som valgte runemester den
+    blå kjortelen. Ikke fordi blå er riktig for en runemester, men fordi det er
+    fargen hun så på figuren sin i går. Det samme gjelder i hallen: `RaaGjest`
+    leser fortsatt `classId`, for en klassekamerat kan sitte der med en fane
+    som ble åpnet før oppdateringen.
 
 `ankomSted(stedId, epokeId)` er det eneste som bytter epoke: den legger den
 forrige bort hel og henter den nye fram hel. `WorldScene.create()` kaller den
