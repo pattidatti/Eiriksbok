@@ -26,6 +26,7 @@ const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m =>
 const Kildekjeden = lazy(() => import('./content/interactive/Kildekjeden').then(m => ({ default: m.Kildekjeden })));
 const LegendensVekst = lazy(() => import('./content/interactive/LegendensVekst').then(m => ({ default: m.LegendensVekst })));
 const Skyldvekten = lazy(() => import('./content/interactive/Skyldvekten').then(m => ({ default: m.Skyldvekten })));
+const Diagnosebrettet = lazy(() => import('./content/interactive/Diagnosebrettet').then(m => ({ default: m.Diagnosebrettet })));
 const AmerikaBevisSortering = lazy(() => import('./content/interactive/AmerikaBevisSortering').then(m => ({ default: m.AmerikaBevisSortering })));
 const TrojaMyteEllerFunn = lazy(() => import('./content/interactive/TrojaMyteEllerFunn').then(m => ({ default: m.TrojaMyteEllerFunn })));
 const SporTavlen = lazy(() => import('./content/interactive/SporTavlen').then(m => ({ default: m.SporTavlen })));
@@ -394,6 +395,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Kildekjeden,
     LegendensVekst,
     Skyldvekten,
+    Diagnosebrettet,
     Comparison,
     WritingFix,
     LineChart,
