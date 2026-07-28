@@ -492,7 +492,7 @@ nesten ingen kamp - motoren er årshjulet, forrådet og hvem hun står i gjeld t
 | **Vår** | Hvor mye såkorn i jorda, og om det skjer før våronna er omme | `Gaarden.velg('saaingen')` |
 | **Sommer** | Hvem hun mater: Harald, motstanderne hans, eller naboætta | `Gaarden.gave()` |
 | **Høst** | Innhøstingen, slakten - og båten som kommer inn vika | `Gaarden.inngang('host')`, `Angrepet` |
-| **Vinter** | Om det holdt | `Gaarden.gjorOppVinteren()` |
+| **Vinter** | Om det holdt, og så bordet med kildene | `Gaarden.gjorOppVinteren()`, `WorldScene.bordetEtterKapittelet()` |
 
 **Ingenting er tilfeldig.** Avlingen henger på når hun sådde og hvor mye hun
 turte å legge i jorda: tidlig gir tre ganger igjen, sent gir halvannen. Går det
@@ -551,6 +551,18 @@ kilde», og feltet blir stående tomt mens hun ser på det.
 
 Brente hun skriptoriet, står det en linje til.
 
+Mellomspill II kommer etter 872, og heter **«Én kilde er ikke to»**. Der bordet
+i 793 viste et hull, viser dette to kilder som ser ut som to og er én: Snorres
+utdrag ender med «Så sier Hornklove:» og strofen han siterer, og Haraldskvadet
+finnes ikke noe annet sted enn inne i Snorre og Fagrskinna. Det tomme feltet er
+**årstallet** - eleven har nettopp levd et helt år i 872, og ingen kilde gir det
+året. Ga hun korn til Haralds mann i sommer, står det en linje til.
+
+Bordet kommer *etter* vinteren, ikke oppå den:
+`WorldScene.bordetEtterKapittelet()` venter til beskjeden om oppgjøret er lest.
+Vakten er `kapittel:N` i storen, så regelen gjelder ethvert kapittel som ender i
+en beskjed - ikke bare dette.
+
 | Fil | Hva |
 | --- | --- |
 | `data/kilder.ts` | Kildene: hvem, hvor, for hvem, hva de sier, og hvor det står |
@@ -575,7 +587,12 @@ Ting som er lette å ødelegge her:
     koblingen to steder, driver de fra hverandre.
 -   **Utdragene er ikke omskrevet.** Dragene står i krøniken fordi de faktisk
     står der. En kilde vi har gjort lettere å svare på, er ikke en kilde lenger,
-    og `henvisning` er der for at en lærer skal kunne sjekke nettopp det.
+    og `henvisning` er der for at en lærer skal kunne sjekke nettopp det. Er et
+    utdrag oversatt eller flyttet mellom målformer, står det i `henvisning`.
+-   **Det tomme feltet er data, ikke en tekst i komponenten.** `feltNavn` og
+    `feltSvar` på `TomtFelt` sier hva som blir stående på kortet. Hullet er ikke
+    det samme hver gang: i 793 er det en kilde som ikke finnes, i 872 er det et
+    årstall ingen har skrevet ned.
 
 Bordet ligger framme i pausemenyen etterpå. Kildekritikk er det ene i dette
 spillet som blir bedre av å leses to ganger, og `fullforMellomspill` gir XP bare
@@ -649,6 +666,7 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-skroget.mjs`     | Feil skrog synker, riktig gir begrepet og sjøsettingen  |
 | `verify-rpg-lindisfarne.mjs` | Ferden vestover, raidet, stillheten, valgene og hjemveien |
 | `verify-rpg-mellomspill.mjs` | Kildebordet begge veier, og det tomme feltet                |
+| `verify-rpg-mellomspill2.mjs` | Bordet i 872: at det kommer etter vinteren, og årstallet som mangler |
 | `verify-rpg-minnetre.mjs`    | De tre tilstandene, og de to veiene verden løfter dem      |
 | `verify-rpg-aarshjul.mjs`    | Årstidsskiftet, gatingen per kapittel, og æren i prisene   |
 | `verify-rpg-kapittel2.mjs`   | Kapittelskiftet: hva som arves, hva som nullstilles        |

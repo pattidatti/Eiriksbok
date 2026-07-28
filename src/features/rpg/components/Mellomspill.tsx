@@ -273,10 +273,10 @@ function Bordet({
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
                             <p className="font-display text-[13px] font-bold leading-tight text-rose-200/80">
-                                Norrøn kilde
+                                {def.tomtFelt.feltNavn}
                             </p>
                             <p className="mt-1 text-[11px] uppercase tracking-widest text-rose-200/50">
-                                Ingen
+                                {def.tomtFelt.feltSvar}
                             </p>
                         </motion.div>
                     ) : (
@@ -317,8 +317,19 @@ function Kildekort({ kildeId }: { kildeId: string }) {
             </p>
 
             <div className="mt-3 border-l-4 border-l-[#b9a179] pl-3">
+                {/*
+                    `whitespace-pre-line` fordi en av kildene er et kvad.
+                    Verselinjene i Haraldskvadet er ikke ombrekking - de er
+                    formen som gjorde at diktet lot seg huske utenat i tre
+                    hundre år, og det er nettopp det den første veiingen spør
+                    om. Kildene i prosa deler avsnitt med blank linje og merker
+                    ikke forskjellen.
+                */}
                 {kilde.utdrag.split('\n\n').map((a, i) => (
-                    <p key={i} className={`text-[15px] italic leading-relaxed ${i ? 'mt-2' : ''}`}>
+                    <p
+                        key={i}
+                        className={`whitespace-pre-line text-[15px] italic leading-relaxed ${i ? 'mt-2' : ''}`}
+                    >
                         «{a}»
                     </p>
                 ))}

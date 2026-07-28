@@ -13,10 +13,17 @@
 // den ikke står i noen tekst her - den ligger i at feltet blir stående tomt
 // mens hun ser på det.
 //
-// Bare Mellomspill I er bygget. II-V står i blueprintens §6 med kilder og
-// spørsmål, og de legges inn som data i denne fila når kapitlene deres finnes.
+// **Mellomspill II gjør det motsatte** (§6). Der bordet i 793 viste et hull,
+// viser bordet i 872 to kilder som ser ut som to og er én: Snorre siterer
+// diktet, og diktet finnes ikke noe annet sted enn inne i Snorre. Og feltet som
+// blir stående tomt er årstallet - det året eleven nettopp har levd et helt liv
+// i.
+//
+// III-V står i blueprintens §6 med kilder og spørsmål, og de legges inn som
+// data i denne fila når kapitlene deres finnes.
 
 import { K1_FLAGG } from './kapitler';
+import { K2_FLAGG } from './aaret';
 import type { MellomspillDef } from '../types';
 
 export const MELLOMSPILL: MellomspillDef[] = [
@@ -197,6 +204,8 @@ export const MELLOMSPILL: MellomspillDef[] = [
         ],
         tomtFelt: {
             knapp: 'Se etter en norrøn kilde',
+            feltNavn: 'Norrøn kilde',
+            feltSvar: 'Ingen',
             tittel: 'Norrøne kilder om Lindisfarne: ingen.',
             tekst:
                 'Ikke ett kvad. Ikke én runestein. Ikke én saga skrevet i nærheten av 793.\n\n' +
@@ -236,6 +245,224 @@ export const MELLOMSPILL: MellomspillDef[] = [
             tekst:
                 'To kilder, og et felt som blir stående tomt.\n\n' +
                 'Det du gjorde i sommer, er skrevet ned. Bare ikke av deg, og ikke for deg.',
+            knapp: 'Legg fra deg kildene',
+        },
+    },
+
+    {
+        id: 'mellomspill-2',
+        nr: 2,
+        tittel: 'Én kilde er ikke to',
+        apning: {
+            tittel: 'Ute av året',
+            tekst:
+                'Mennene er hjemme fra Hafrsfjord. De forteller om slaget hver eneste kveld, og fortellingen blir litt større for hver gang.\n\n' +
+                'Legg 872 fra deg en stund. På bordet foran deg ligger alt vi har igjen etter det slaget: ett dikt og én bok. Legg dem ut. Les dem. Vei dem.',
+        },
+        kort: [
+            {
+                kildeId: 'haraldskvadet-hafrsfjord',
+                knapp: 'Legg ut diktet',
+                veiinger: [
+                    {
+                        id: 'kvad-overlevering',
+                        sporsmal: 'Diktet ble laget rett etter slaget. Hvordan har det kommet fram til oss?',
+                        svar: [
+                            {
+                                tekst: 'Skalden skrev det ned selv, samme år.',
+                                riktig: false,
+                                respons: 'Skaldene skrev ikke. De husket, og de fikk andre til å huske.',
+                            },
+                            {
+                                tekst: 'Det ble husket utenat i tre hundre år, og skrevet ned først på 1200-tallet.',
+                                riktig: true,
+                                respons: 'Ja. Og det er tre hundre år uten et eneste ark.',
+                            },
+                            {
+                                tekst: 'Det sto risset på en stein ved Hafrsfjord.',
+                                riktig: false,
+                                respons: 'Det finnes ingen slik stein. Runer ble ikke brukt til lange dikt.',
+                            },
+                        ],
+                        fasit:
+                            'Skaldediktet var bygget for å huskes: fast rytme, faste bokstavrim, ord som ikke kan byttes ut uten at verset ryker. Derfor tåler det å bli sagt fram i generasjoner uten å endre seg mye.\n\n' +
+                            'Men det ble aldri skrevet ned av dem som hørte det. Vi har det bare fordi noen på 1200-tallet tok det med i bøkene sine.',
+                    },
+                    {
+                        id: 'kvad-hvem-vant',
+                        sporsmal: 'Hvem er det som vinner, i diktet?',
+                        svar: [
+                            {
+                                tekst: 'Harald Hårfagre. Han står med navn.',
+                                riktig: false,
+                                respons:
+                                    'Navnet Harald står ikke i en eneste av de seks strofene om slaget.',
+                            },
+                            {
+                                tekst: 'En som blir kalt Luva.',
+                                riktig: true,
+                                respons: 'Ja. Han har et navn. Det er bare ikke det du ventet.',
+                            },
+                            {
+                                tekst: 'Det står ikke hvem som vant.',
+                                riktig: false,
+                                respons: 'Jo. Motstanderne blir lei av å verge landet mot noen.',
+                            },
+                        ],
+                        fasit:
+                            'Luva betyr omtrent «lugg» - en floke av uklippet hår. Det er et kallenavn, ikke et kongsnavn, og diktet bruker bare det.\n\n' +
+                            'Det var forfattere på 1200-tallet som slo fast at Luva og Harald Hårfagre var samme mann. De kan ha rett. Men det står ikke i diktet, og historikere i dag er ikke enige om det.',
+                    },
+                    {
+                        id: 'kvad-kongens-skald',
+                        sporsmal: 'Skalden var kongens egen mann. Hva gjør det med diktet?',
+                        svar: [
+                            {
+                                tekst: 'Ingenting. Han var der, og han så det som skjedde.',
+                                riktig: false,
+                                respons: 'Han så det. Han fikk også betalt for å fortelle om det.',
+                            },
+                            {
+                                tekst: 'Det er trolig sant at det sto et slag, men diktet er laget for å hylle den som vant.',
+                                riktig: true,
+                                respons: 'Ja. Begge deler er sant samtidig.',
+                            },
+                            {
+                                tekst: 'Da kan vi ikke bruke det til noe.',
+                                riktig: false,
+                                respons:
+                                    'Da hadde vi ingenting igjen. Alle som skrev noe ned, sto et sted.',
+                            },
+                        ],
+                        fasit:
+                            'Kvadet ble sagt fram i hallen, foran menn som selv hadde vært i Hafrsfjord. Det setter en grense: skalden kunne ikke dikte opp et slag som aldri sto, for de som hørte på visste bedre.\n\n' +
+                            'Men alt annet er valgt. Fienden flykter og stikker baken i været; vi gleder oss over slike gjerninger. Hvem som var stor og hvem som var ynkelig, er ikke noe skalden så. Det er noe han bestemte.',
+                    },
+                ],
+            },
+            {
+                kildeId: 'heimskringla-hafrsfjord',
+                knapp: 'Legg ut boka',
+                veiinger: [
+                    {
+                        id: 'snorre-avstand',
+                        sporsmal: 'Hvor lenge etter slaget skriver Snorre?',
+                        svar: [
+                            {
+                                tekst: 'Noen tiår. Han kunne snakket med barnebarna til dem som var der.',
+                                riktig: false,
+                                respons: 'Det er tolv slektsledd for kort.',
+                            },
+                            {
+                                tekst: 'Rundt 350 år etter, og fra et annet land.',
+                                riktig: true,
+                                respons: 'Ja. Islending, på 1200-tallet.',
+                            },
+                            {
+                                tekst: 'Han var samtidig med Harald.',
+                                riktig: false,
+                                respons: 'Da hadde Snorre vært over tre hundre år gammel.',
+                            },
+                        ],
+                        fasit:
+                            'Regn selv: slaget sto en gang mot slutten av 800-tallet, og Snorre skrev omkring 1230. Det er lenger enn fra svartedauden til i dag.\n\n' +
+                            'Snorre er ikke et vitne. Han er en forfatter som samler det han får tak i, og som skriver for folk som gjerne vil høre at kongsætten deres begynte med en stor mann.',
+                    },
+                    {
+                        id: 'snorre-navnene',
+                        sporsmal: 'Snorre nevner seks motstandere ved navn. Hvor mange står i diktet?',
+                        svar: [
+                            {
+                                tekst: 'De samme seks. Snorre skriver av diktet.',
+                                riktig: false,
+                                respons: 'Tell i utdraget. Diktet gir deg to navn.',
+                            },
+                            {
+                                tekst: 'To: Kjøtve og Haklang.',
+                                riktig: true,
+                                respons: 'Ja. Fire navn har kommet til underveis.',
+                            },
+                            {
+                                tekst: 'Ingen. Diktet nevner ingen ved navn.',
+                                riktig: false,
+                                respons: 'Kjøtve den rike står i første strofe.',
+                            },
+                        ],
+                        fasit:
+                            'Eirik, Sulke, Sote jarl, Roald Rygg og Hadd den harde står hos Snorre, ikke i diktet. Det samme gjelder hvilke fylker de kom fra, og hvorfor de gjorde opprør.\n\n' +
+                            'Noe av det kan Snorre ha fra fortellinger vi ikke har igjen. Noe av det kan han ha satt sammen selv, fordi en fortelling trenger navn. Vi kan ikke se forskjell, og det er hele problemet.',
+                    },
+                    {
+                        id: 'snorre-en-eller-to',
+                        sporsmal: 'Diktet og boka sier det samme om Hafrsfjord. Er det to kilder som bekrefter hverandre?',
+                        svar: [
+                            {
+                                tekst: 'Ja. To kilder som sier det samme, er sterkere enn én.',
+                                riktig: false,
+                                respons: 'Bare hvis de ikke har det fra hverandre. Se hvem som siterer hvem.',
+                            },
+                            {
+                                tekst: 'Nei. Snorre siterer diktet. Det er én kilde, sagt to ganger.',
+                                riktig: true,
+                                respons: 'Ja. Og du kan se det i utdraget: «Så sier Hornklove.»',
+                            },
+                            {
+                                tekst: 'Nei, for de sier ikke det samme i det hele tatt.',
+                                riktig: false,
+                                respons: 'De sier mye av det samme. Det er nettopp derfor det lurer deg.',
+                            },
+                        ],
+                        fasit:
+                            'Snorre skriver «så sier Hornklove» og setter inn strofene. Det er ærlig gjort av ham - han viser hvor han har det fra. Men da er ikke boka et vitne ved siden av diktet. Den er en ramme rundt det.\n\n' +
+                            'Verre: strofene finnes i to middelalderbøker, Fagrskinna og Heimskringla, med nesten samme ordlyd. Forskere mener derfor at begge bøkene har skrevet av den samme teksten. Tre bøker på bordet, og fortsatt én kilde.',
+                    },
+                ],
+            },
+        ],
+        tomtFelt: {
+            knapp: 'Se etter årstallet',
+            feltNavn: 'Året det skjedde',
+            feltSvar: 'Ingen kilde sier det',
+            tittel: 'Årstallet 872 står ikke i noen av dem.',
+            tekst:
+                'Ikke i diktet. Ikke hos Snorre. Ikke i ett eneste brev og ikke i én eneste årbok, noe sted i Europa.\n\n' +
+                'Du har nettopp levd et helt år på Nordvik. Du sådde i det, du høstet i det, og du berget deg gjennom vinteren i det. Året hadde et tall. Tallet er det ingen som har fortalt oss.',
+            hvisFlagg: {
+                flagg: K2_FLAGG.matetHarald,
+                tekst: 'Du ga korn til mannen hans i sommer. Du vet ikke sikkert hvilket år du gjorde det.',
+            },
+            veiing: {
+                id: 'tomt-arstallet',
+                sporsmal: 'Hvor kommer 872 fra, da?',
+                svar: [
+                    {
+                        tekst: 'Fra Snorre. Han skriver årstallet i sagaen.',
+                        riktig: false,
+                        respons:
+                            'Snorre skriver ikke årstall slik vi gjør. Han skriver hvem som kom etter hvem.',
+                    },
+                    {
+                        tekst: 'Fra historikere som telte seg bakover fra et årstall de var sikre på.',
+                        riktig: true,
+                        respons: 'Ja. Det er et regnestykke, ikke en opplysning.',
+                    },
+                    {
+                        tekst: 'Fra kirkebøkene i Rogaland.',
+                        riktig: false,
+                        respons: 'Det fantes ingen kirke og ingen bok i Rogaland i 872.',
+                    },
+                ],
+                fasit:
+                    'På 1830-tallet regnet Rudolf Keyser seg bakover fra slaget ved Svolder i år 1000, gjennom hvor lenge hver konge hadde sittet ifølge sagaene, og kom til 872. Han måtte gjette flere steder på veien. P.A. Munch gjorde tallet kjent, og i 1872 reiste landet et minnesmerke på Haraldshaugen for tusenårsjubileet.\n\n' +
+                    'I dag mener de fleste forskerne at slaget sto på 880-tallet. Året du levde i, er et regnestykke noen gjorde tusen år etterpå - og en feiring som gjorde regnestykket til noe alle vet.',
+            },
+        },
+        begreper: ['uavhengige-kilder', 'datering'],
+        slutt: {
+            tittel: 'Bordet står',
+            tekst:
+                'Ett dikt. Én bok som siterer diktet. Og et årstall ingen har skrevet ned.\n\n' +
+                'Det er ikke ingenting. Det er bare mye mindre enn det høres ut som når mennene forteller det ved ilden.',
             knapp: 'Legg fra deg kildene',
         },
     },

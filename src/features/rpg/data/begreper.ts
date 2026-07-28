@@ -53,6 +53,22 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Det står ingenting om oss. Det er ikke fordi vi ikke var der.',
     },
     {
+        id: 'uavhengige-kilder',
+        navn: 'Uavhengige kilder',
+        forklaring:
+            'To kilder som forteller det samme, teller bare som to hvis de ikke har det fra hverandre. Har den ene skrevet av den andre, sitter du med én kilde sagt to ganger - og noe blir ikke sannere av å bli gjentatt.',
+        forstasVed: 'Finn ut hvor Snorre har opplysningene sine om Hafrsfjord fra.',
+        replikk: 'Alle sier det samme, ja. De har det fra samme mann.',
+    },
+    {
+        id: 'datering',
+        navn: 'Datering',
+        forklaring:
+            'Et årstall i en historiebok er ikke alltid noe en kilde sier. Ofte er det noe noen har regnet seg fram til ved å telle bakover fra noe de var sikre på. Regner en annen litt annerledes, flytter årstallet seg.',
+        forstasVed: 'Let etter året 872 i kildene om Hafrsfjord, og finn at ingen av dem gir det.',
+        replikk: 'Hvilket år? Vi teller vintrer her, ikke år.',
+    },
+    {
         id: 'aarshjulet',
         navn: 'Årshjulet',
         forklaring:

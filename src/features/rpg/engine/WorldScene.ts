@@ -511,7 +511,10 @@ export class WorldScene extends Phaser.Scene {
                 this.apneBua();
             }),
             tilSpill.on('forradLukk', () => this.settLaast(false)),
-            tilSpill.on('beskjedLest', () => this.settLaast(false)),
+            tilSpill.on('beskjedLest', () => {
+                this.settLaast(false);
+                this.bordetEtterKapittelet();
+            }),
             tilSpill.on('tingsakSvar', (svar) => this.forSaken(svar))
         );
     }
@@ -1144,6 +1147,31 @@ export class WorldScene extends Phaser.Scene {
         if (!MELLOMSPILL_BY_ID[id]) return;
         this.settLaast(true);
         fraSpill.emit('mellomspill', { id });
+    }
+
+    /**
+     * Kapittelet er over, og beskjeden om det er lest. Da kommer bordet.
+     *
+     * Kapittel 1 åpner mellomspillet rett fra Orm, for der er hjemkomsten en
+     * samtale. Kapittel 2 ender i et fullskjerms oppgjør - vinteren - og bordet
+     * må vente til hun har lest det: to skjermbilder oppå hverandre er ett hun
+     * ikke leser.
+     *
+     * Vakten er `kapittel:N` i storen og ikke et eget flagg per kapittel. Da
+     * gjelder samme regel for alle kapitler som ender i en beskjed, og den er
+     * den samme regelen som pausemenyen bruker for å vise bordene igjen.
+     */
+    private bordetEtterKapittelet(): void {
+        const store = useRpgStore.getState();
+        const kapittel = KAPITTEL_BY_NR[store.kapittel];
+        const bordet = kapittel?.mellomspillEtter;
+        // Et mellomspill som ikke er bygget ennå, gjør ingenting. Det er
+        // grunnen til at kapittel 2 var spillbart uten dette bordet - men også
+        // grunnen til at det ikke var ferdig.
+        if (!bordet || !MELLOMSPILL_BY_ID[bordet]) return;
+        if (!store.steg.includes(`kapittel:${kapittel.nr}`)) return;
+        if (store.steg.includes(`mellomspill:${bordet}`)) return;
+        this.apneMellomspill(bordet);
     }
 
     /**

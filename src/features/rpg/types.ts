@@ -584,6 +584,18 @@ export interface MellomspillKort {
  */
 export interface TomtFelt {
     knapp: string;
+    /**
+     * Det som står igjen på det tomme kortet i raden øverst, etter at hun har
+     * sett etter.
+     *
+     * To felter og ikke en fast tekst, fordi hullet ikke er det samme hver
+     * gang: i 793 er det en norrøn kilde som ikke finnes, i 872 er det et
+     * årstall ingen kilde gir. Sto «Norrøn kilde / Ingen» hardkodet i
+     * komponenten, ville bordet i 872 påstått at det manglet noe annet enn det
+     * eleven nettopp lette etter.
+     */
+    feltNavn: string;
+    feltSvar: string;
     tittel: string;
     tekst: string;
     /** Linja som bare står der hvis flagget er satt. */

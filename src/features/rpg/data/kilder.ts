@@ -8,9 +8,16 @@
 // `henvisning` er ikke pynt. En lærer skal kunne slå opp hvert utdrag, og en
 // elev som spør «hvor står det?» skal få et svar som ikke er «i spillet».
 //
-// Bare kildene til Mellomspill I står her. De åtte i blueprintens §6-tabell er
-// en designliste, ikke en lovnad - en kilde ingen mellomspill legger ut, er
-// nøyaktig den feilen `iRekke` alt har gjort i denne kodebasen.
+// Bare kildene til de mellomspillene som finnes står her. De åtte i
+// blueprintens §6-tabell er en designliste, ikke en lovnad - en kilde ingen
+// mellomspill legger ut, er nøyaktig den feilen `iRekke` alt har gjort i denne
+// kodebasen.
+//
+// To av kildene her er oversatt fra norrønt av andre, og det står i
+// `henvisning` hvem. Der utdraget fantes på nynorsk, er det overført til
+// bokmål, og det står også. Å bytte målform på en oversettelse er ikke det
+// samme som å skrive om en kilde - men eleven skal kunne se hvilken hånd
+// teksten har vært gjennom, og læreren skal kunne slå opp originalen.
 
 import type { KildeDef } from '../types';
 
@@ -49,6 +56,59 @@ export const KILDER: KildeDef[] = [
             'I dette året kom fæle varsler over Northumbria og skremte folket ille: det var voldsomme virvelvinder og lyn, og ildsprutende drager ble sett fly i luften. Rett etter disse tegnene fulgte stor hungersnød, og litt etter det, samme år, ødela hedningenes herjing Guds kirke på Lindisfarne med ran og manndrap.',
         henvisning:
             'Den angelsaksiske krøniken, innførselen for år 793. Oversatt fra engelsk gjengivelse.',
+    },
+
+    // ── Mellomspill II: Hafrsfjord ─────────────────────────────────────────
+    //
+    // De to kortene er med vilje valgt slik at det ene *står inni* det andre.
+    // Diktet er samtidig, og vi har det bare fordi Snorre og Fagrskinna skrev
+    // det av på 1200-tallet. Legger eleven dem ut ved siden av hverandre og
+    // teller dem som to, har hun gjort nøyaktig den feilen mellomspillet heter
+    // etter.
+
+    {
+        id: 'haraldskvadet-hafrsfjord',
+        navn: 'Haraldskvadet, strofene om Hafrsfjord',
+        art: 'dikt',
+        naerhet: 'samtidig',
+        aar: 'Diktet omkring 900. Skrevet ned først på 1200-tallet',
+        opphav: {
+            hvem: 'En skald i kongens hird. Heimskringla sier Torbjørn Hornklove, Fagrskinna sier Tjodolv fra Kvine',
+            hvor: 'Hos kongen selv. Skalden var trolig med i slaget',
+            for: 'Kongen og mennene hans, sagt fram høyt i hallen',
+            hensikt: 'Å hylle den som vant, i ord som skulle huskes ordrett',
+        },
+        utdrag:
+            'Hørte du i Hafrsfjord hvor hårdt de kjempet,\n' +
+            'storættet konge og Kjøtve den rike?\n' +
+            'Knarrer kom østfra, lystne på kappleik,\n' +
+            'med gapende kjefter og krot på stavnen.\n\n' +
+            'Lei av å verge landet for Luva den halsdigre\n' +
+            'kongen tok holmen til skjold;\n' +
+            'segnet under setene de som var såret,\n' +
+            'stakk hodet i bunnen og baken til værs.',
+        henvisning:
+            'Haraldskvadet, strofe 7 og 10. Gjendiktning ved Kjell Arild Pollestad, gjengitt på rikssamlingsjubileet.no. Strofene er bare bevart inne i Fagrskinna og i Snorres Heimskringla.',
+    },
+    {
+        id: 'heimskringla-hafrsfjord',
+        navn: 'Heimskringla: Harald Hårfagres saga',
+        art: 'saga',
+        naerhet: 'mye-senere',
+        aar: 'Omkring 1230, om lag 350 år etter slaget',
+        opphav: {
+            hvem: 'Snorre Sturlason, islandsk høvding, lovsigemann og forfatter',
+            hvor: 'På Island, i Reykholt',
+            for: 'Overklassen i Norge og på Island. Snorre hadde selv vært gjest hos kongsætten',
+            hensikt: 'Å fortelle historien om kongene i Norge, fra den første av dem',
+        },
+        utdrag:
+            'Det kom nyheter fra sør i landet om at hordene og rygene og egdene og telene samlet seg til opprør og bød ut både skip og våpen og folk. Opphavsmennene var Eirik, konge i Hordaland, Sulke, konge i Rogaland, og broren hans Sote jarl, Kjøtve den rike, konge på Agder, og sønnen hans Tore Haklang, og to brødre fra Telemark, Roald Rygg og Hadd den harde.\n\n' +
+            'Hele hæren møttes utenfor Jæren og seilte inn i Hafrsfjord. Der lå kong Harald fra før med hæren sin. Der begynte det straks et stort slag, som var både langt og hardt, men enden ble den at kong Harald vant, og der falt kong Eirik og kong Sulke og broren hans, Sote jarl.\n\n' +
+            'Kong Kjøtve flyktet til en holme der det var en god plass å verge seg på. Så sier Hornklove:\n\n' +
+            '«Hørte du, hvor hardt de i Hafrsfjord sloss, kongen av kjempeætt og Kjøtve den rike?»',
+        henvisning:
+            'Snorre Sturlason, Harald Hårfagres saga kap. 18 (Heimskringla, ca. 1230). Utdraget følger S. Schjøtts omsetting fra 1900, slik den er modernisert på norgeshistorie.no (Universitetet i Oslo), og er overført til bokmål her.',
     },
 ];
 

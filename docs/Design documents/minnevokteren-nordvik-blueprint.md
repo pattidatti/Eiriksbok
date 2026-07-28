@@ -1143,8 +1143,8 @@ bordet har verken tidspress eller kamp, og det er ingenting å straffe her - et
 bom er ofte den korteste veien inn i hvorfor. Prøven måler det nå, for det er
 den regelen som ryker først den dagen noen vil legge poeng på bordet.
 
-**Etappe 4 er bygget** (K2a-K2f), og med den er kapittel 2 spillbart fra
-opptakt til vinter.
+**Etappe 4 er bygget** (K2a-K2g), og med den er kapittel 2 ferdig fra opptakt
+til bordet.
 
 | Delet | Hva som står |
 |---|---|
@@ -1154,8 +1154,9 @@ opptakt til vinter.
 | K2d | Året: forrådet, såkornet, «hvem mater du», innhøstingen, slakten og vinteroppgjøret |
 | K2e | Båten i vika: kampen, trellen med spydet, og kampen som ikke skjer (§16.1) |
 | K2f | Tinget: lysing innen ett døgn, vitnene, hjemmelen, dommen - og fredløshet som tilstand |
+| K2g | Mellomspill II: Haraldskvadet, Snorre, og årstallet som ikke står noe sted |
 
-**Fem avvik fra planen, alle begrunnet:**
+**Fire avvik fra planen, alle begrunnet:**
 
 - **Årstiden regnes ut av dagen.** §12 gir `Klokke` et `aarstid`-felt ved siden
   av `dag`. To felt som beskriver det samme driver fra hverandre første gang
@@ -1170,21 +1171,60 @@ opptakt til vinter.
   tider. Å bygge det ville krevd at eleven ventet på neste sommer med et ulyst
   drap, og de fire trinnene - som *er* fagstoffet - ville blitt utsatt et helt
   år. Fristen på ett døgn er beholdt intakt, for den er den ene som lærer noe.
-- **Mellomspill II er ikke bygget.** Kapittelet ender med vinteren.
-  `mellomspillEtter: 'mellomspill-2'` peker på noe som ikke finnes ennå, og
-  `apneMellomspill` returnerer i stillhet - det er trygt, men det er også
-  grunnen til at kapittel 2 er *spillbart* og ikke *ferdig*, slik kapittel 1
-  ikke var ferdig før bordet sto.
-
 Ett funn fra prøvingen som ikke sto i planen: **feiringene fra «Min læring» la
 seg oppå kapittelets første setning.** Kildebordet gir 60 XP, og raketten med
 «Nivå 3!» kom i samme øyeblikk som opptakten til 872. `useStilleSkjerm` setter
 nå feiringer og XP-toaster på vent mens et fullskjerms øyeblikk står. Køen
 holdes - eleven skal aldri miste en belønning fordi hun så en cutscene.
 
+**Mellomspill II er bygget**, og med det er kapittel 2 ferdig, ikke bare
+spillbart. Bordet heter «Én kilde er ikke to», og det gjør det motsatte av
+bordet i 793: der viste vi et hull, her viser vi to kilder som ser ut som to og
+er én.
+
+Kortene er Haraldskvadet (samtidig, kongens skald) og Snorres Heimskringla
+(ca. 1230). Poenget ligger i utdraget fra Snorre selv, som ender med «Så sier
+Hornklove:» og strofen han siterer - eleven kan se med egne øyne at boka ikke er
+et vitne ved siden av diktet, men en ramme rundt det. Og strofene finnes bare
+inne i Fagrskinna og Heimskringla, med nesten samme ordlyd: tre bøker på bordet,
+og fortsatt én kilde.
+
+**Feltet som blir stående tomt, er årstallet.** Ikke en manglende kilde denne
+gangen - et tall. Eleven har nettopp sådd, høstet og berget seg gjennom vinteren
+i år 872, og ingen kilde noe sted gir det året. Det kommer av at Rudolf Keyser
+på 1830-tallet telte seg bakover fra Svolder gjennom sagaenes regjeringstider,
+at P.A. Munch gjorde tallet kjent, og at landet feiret tusenårsjubileum på
+Haraldshaugen i 1872. De fleste forskere mener i dag at slaget sto på
+880-tallet.
+
+**Fire funn og avvik:**
+
+- **Diktet navngir ikke Harald.** I de seks Hafrsfjord-strofene heter seierherren
+  Luva, ikke Harald Hårfagre. Det står ikke i blueprintens §6, men det er den
+  hardeste enkeltopplysningen på hele bordet, og den ble en egen veiing.
+- **Det tomme feltet måtte bli data.** Komponenten hadde «Norrøn kilde / Ingen»
+  hardkodet i kortraden. Bordet i 872 ville da påstått at det manglet en norrøn
+  kilde, mens eleven nettopp hadde lett etter et årstall. `TomtFelt` har derfor
+  fått `feltNavn` og `feltSvar`.
+- **Kildeutdraget måtte tåle verselinjer.** Kvadet ble tegnet som prosa fordi
+  utdragene bare deles på blank linje. Formen *er* fagstoffet her - den er
+  grunnen til at diktet lot seg huske utenat i tre hundre år, og det er det
+  første spørsmålet bordet stiller. `whitespace-pre-line` løste det uten å røre
+  prosakildene.
+- **Snorres utdrag er overført til bokmål.** Den norske gjengivelsen som lot seg
+  etterprøve (norgeshistorie.no, UiO) bygger på S. Schjøtts omsetting fra 1900
+  og står på nynorsk. Målformbyttet står i `henvisning`, så læreren ser hvilken
+  hånd teksten har vært gjennom.
+
+Bordet kommer *etter* vinteren, ikke oppå den: kapittel 2 ender i et fullskjerms
+oppgjør, og `WorldScene.bordetEtterKapittelet()` venter til beskjeden er lest.
+Vakten er `kapittel:N` i storen, så regelen gjelder alle kapitler som ender i en
+beskjed. `scripts/verify-rpg-mellomspill2.mjs` driver hele kjeden gjennom en
+ekte nettleser, begge veier gjennom kornet til Harald.
+
 **Det som gjenstår:** §13 etappe 5 - kapittel 3-5, holmgangen, skjoldborgen,
-resten av mellomspillene og epilogen. Nærmest ligger Mellomspill II, som er
-det som gjør kapittel 2 ferdig. Og §16.3 står fortsatt: `ClassId` skal ut av
+mellomspill III-V og epilogen. Nærmest ligger kapittel 3 (995, blot eller dåp)
+med holmgangen fra §5.5. Og §16.3 står fortsatt: `ClassId` skal ut av
 karakterskaperen, men den ligger på flerspiller-tråden (`Gjest.classId`) og i
 `figurLook`. Navnet er derimot ordnet - HUD-en viser rollens navn inne i en
 epoke og elevens eget i hallen.

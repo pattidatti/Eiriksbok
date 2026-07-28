@@ -6,7 +6,7 @@
     "category": "Historiens store gåter",
     "readTime": "10 min lesning",
     "factChecked": "2026-07-28",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/alexanders-dod-hero.webp",
     "details": [
         "Verdens mektigste mann var 32 år gammel da han ble syk i Babylon. Elleve dager senere var han død.",
         "Legene har foreslått tyfoidfeber, malaria, gift og en sjelden nervesykdom. Ingen av forklaringene passer alle sporene.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/alexanders-dod-01.webp",
             "alt": "Kongens sovekammer i Babylon opplyst av fakler",
             "caption": "Sovekammeret i Babylon. Hele hæren fikk gå forbi senga én og én for å se kongen en siste gang."
         },
@@ -80,7 +80,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/alexanders-dod-02.webp",
             "alt": "Vinkrukke av leire på et bord i et antikt rom",
             "caption": "Vinen hos Medios ble raskt mistenkeliggjort. Men gift som var kjent i antikken, virker som regel mye raskere enn elleve dager."
         },
