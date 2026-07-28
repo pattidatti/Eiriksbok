@@ -5,9 +5,10 @@
 // kapittel kan bruke flere av dem: kapittel 1 spilles i Nordvik og på
 // Lindisfarne.
 //
-// Kapittel 1, 2 og 3 er ferdige, og kapittel 4 er under bygging. Kapittel 5
-// står her med rolle og år fordi listen skal si sant om hva spillet skal bli -
-// men uten steg, for et steg ingen har bygget er et løfte vi ikke kan holde.
+// Kapittel 1 til 4 er ferdige, og kapittel 5 er under bygging: leiren ved
+// skipene står, brua står ikke ennå. Bare steg som er bygget står i listene
+// under - et steg ingen har bygget er et løfte vi ikke kan holde, og i
+// oppdragsloggen leser det som noe eleven har gått glipp av.
 //
 // Se docs/Design documents/minnevokteren-nordvik-blueprint.md §2 og §4.
 
@@ -72,6 +73,33 @@ export const K4 = {
     veien: 'k4-veien',
     linja: 'k4-linja',
     slaget: 'k4-slaget',
+} as const;
+
+/**
+ * Steg-id-ene i kapittel 5.
+ *
+ * Samme regel som over: bare de som er bygget står her. Kapittelet er kort med
+ * vilje (blueprint §4) - én morgen i leiren ved skipene, og så veien østover.
+ */
+export const K5 = {
+    leiren: 'k5-leiren',
+    brynja: 'k5-brynja',
+} as const;
+
+/**
+ * Flagg kapittel 5 setter.
+ *
+ * Valget om brynja er kapittelets eneste før brua, og det er ikke et valg med
+ * et riktig svar. Med det Orm vet den morgenen - fred sluttet med York, gisler
+ * på vei, ingen fiendtlig hær nærmere enn fire dagsreiser, og fem timers gange
+ * i sol - er det å la brynja ligge den fornuftige avgjørelsen. Det er nettopp
+ * derfor den er verdt å ta selv.
+ */
+export const K5_FLAGG = {
+    /** Bærer han brynja de fem timene? */
+    brynjaMed: 'k5-brynja-med',
+    /** Eller ligger den i kista ved skipene, som kongen ba om? */
+    brynjaIgjen: 'k5-brynja-igjen',
 } as const;
 
 /** Flagg kapittel 4 setter, og som slaget og mellomspillet leser. */
@@ -343,13 +371,34 @@ export const KAPITLER: KapittelDef[] = [
         nr: 5,
         aar: 1066,
         tittel: 'Den som ikke kommer hjem',
-        rolle: { navn: 'Orm den yngre', alder: 22, stand: 'karl', kjonn: 'mann' },
+        rolle: { navn: 'Orm Åsmundsson', alder: 22, stand: 'karl', kjonn: 'mann' },
         aettId: 'nordvik',
         opptakt: {
-            tittel: 'Stamford Bridge, 1066',
-            tekst: 'Brynjene ligger igjen på skipene, i sola, urørt.',
+            tittel: 'Ved Ouse, 25. september 1066',
+            tekst:
+                'Det er 36 år siden Halvard sto i rekka på Stiklestad. Sønnen hans Åsmund ble gammel på gården, og du er sønnen hans igjen. De kaller deg Orm den yngre, etter en mann ingen på Nordvik kan fortelle deg noe om.\n\n' +
+                'I sommer kom leidangsbudet. Harald Sigurdsson, han de kaller Hardråde, krever kongsstolen i England, og han krever hvert skip som kan bære menn. Det gjelder gården din også.\n\n' +
+                'Dere la ut fra Solund tidlig i september, over Hjaltland og Orknøyene, sørover til Humber og opp elva. For fem dager siden slo dere jarlenes hær ved Fulford. York åpnet portene uten kamp.\n\n' +
+                'I dag skal hele Yorkshire sende gisler til kongen, ved ei bru fem timers gange herfra. Da er nord-England hans, og ingen flere skal slåss om det.\n\n' +
+                'Det er varmt for årstiden. Sola står alt høyt over leiren.',
         },
-        steg: [],
+        steg: [
+            {
+                id: K5.leiren,
+                tittel: 'Hva dagen er',
+                mal: 'Tostig Godwinson står ved veien østover. Hør hva som skal skje i dag.',
+                krever: [],
+            },
+            {
+                id: K5.brynja,
+                tittel: 'Kista di',
+                mal: 'Øystein Orre har ordren fra kongen. Avgjør hva du bærer med deg.',
+                krever: [K5.leiren],
+            },
+        ],
+        // Ingen ærestolpe og intet årshjul. Orm er utbudsmann i en konges hær i
+        // et fremmed land: han kan ikke flytte æren sin her, og kapittelet
+        // varer én dag. Samme regel som i 793.
         mellomspillEtter: 'mellomspill-5',
     },
 ];

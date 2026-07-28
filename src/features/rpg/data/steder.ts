@@ -15,6 +15,8 @@ import {
     LINDISFARNE_SPAWN,
 } from '../engine/lindisfarnegen';
 import { LINDISFARNE_LANDMARKS } from './lindisfarne';
+import { byggRiccall, RICCALL_PORTAL, RICCALL_SPAWN } from '../engine/riccallgen';
+import { RICCALL_LANDMARKS, RICCALL_NPCS } from './riccall';
 import { byggNordvik } from '../engine/worldgen';
 import {
     byggStiklestad,
@@ -388,6 +390,58 @@ const STIKLESTAD: Sted = {
     authored: [],
 };
 
+/**
+ * Leiren ved Riccall, 25. september 1066.
+ *
+ * Første halvdel av kapittel 5, og det første stedet i kampanjen som ikke er
+ * Nordvik og ikke er et sted eleven kom til for å ta noe. Hun står i en leir i
+ * et fremmed land fordi kongen kalte ut leidangen, og det er hele forskjellen
+ * på 1066 og 793.
+ *
+ * Ingen portal hjem til en gård: det finnes ingen Nordvik i 1066 på kartet, og
+ * det er ikke en mangel. Kapittelet begynner her, og porten går til hallen -
+ * som i 872, 995 og 1030.
+ */
+const RICCALL: Sted = {
+    id: 'riccall',
+    tittel: 'Leiren ved Riccall',
+    undertittel: '25. september 1066 · gislene kommer i dag',
+    epokeId: 'vikingtiden',
+    kapittel: 5,
+    tema: {
+        ...EPOKE_BY_ID.vikingtiden.tema,
+        // Sen september i Vale of York, i en varme ingen ventet: gresset er
+        // avsvidd, åkrene er skåret, og himmelen er den blanke, høye typen som
+        // gjør at ingen tar med seg noe tungt.
+        gress: '#8e9358',
+        lov: '#a08a3c',
+        aker: '#cdb96a',
+        himmel: '#dde4e0',
+        vann: '#4a6e78',
+    },
+    byggKart: byggRiccall,
+    spawn: RICCALL_SPAWN,
+    npcer: RICCALL_NPCS,
+    landemerker: RICCALL_LANDMARKS,
+    portaler: [
+        {
+            tile: RICCALL_PORTAL,
+            maal: {
+                art: 'sted',
+                stedId: 'hub',
+                navn: 'HALLEN',
+                undertekst: 'VEIEN HJEM',
+            },
+        },
+    ],
+    // Klar luft. Ingen tåke skal forklare bort noe her - det er nettopp sikten
+    // og været som er kapittelets opplysning.
+    taake: 0.35,
+    spawner: [],
+    musikkRot: 138,
+    authored: [],
+};
+
 export const STEDER: Sted[] = [
     HUB,
     NORDVIK,
@@ -396,6 +450,7 @@ export const STEDER: Sted[] = [
     NORDVIK_995,
     NORDVIK_1030,
     STIKLESTAD,
+    RICCALL,
 ];
 
 export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s) => [s.id, s]));

@@ -69,6 +69,7 @@ data/
   nordvik995.ts          Nordvik i 995: hovet, de to haugene og kongens folk
   nordvik1030.ts         Nordvik i 1030: kirken på hovets grunn, budstikka og sønnen
   stiklestad.ts          Sletta i Verdalen: Tore Hund, Kalv Arnesson og rekka
+  riccall.ts             Leiren ved skipene i 1066: Tostig, Øystein Orre og kista
   steder.ts              STEDER-registeret. Ett sted = ett kart med alt som hører til
 engine/
   boot.ts                Starter Phaser (dynamisk import), starter scenen på et stedId
@@ -92,6 +93,7 @@ engine/
   holmgang.ts            Huden på vollen: tre skjold, kanten og holmløsningen
   skjoldborg.ts          Rekka på Stiklestad: plassen, hullet og halvannet minutt
   stiklestadgen.ts       Bygger sletta i Verdalen
+  riccallgen.ts          Bygger leiren ved Ouse: flåten, teltene og veien østover
   ting.ts                Sakens fire trinn: frist, vitner, hjemmel, dom
   raidet.ts              Lindisfarne, i to halvdeler
   lindisfarnegen.ts      Bygger klosterøya
@@ -658,6 +660,52 @@ Ting som er lette å ødelegge her:
     en seier, og da har Mellomspill IV ingenting å gripe fatt i.
 
 
+## Kapittel 5: 1066
+
+Samme ætt, 36 år etter Stiklestad. Orm er sønnesønn av Halvard, og han er ikke
+hjemme: kapittelet begynner i en leir ved elva Ouse i England, fordi kongen
+kalte ut leidangen og bygda trakk lodd. Det er første gang i kampanjen at
+eleven står et sted hun ikke valgte å reise til.
+
+| Steg | Hva | Hvor |
+| --- | --- | --- |
+| `k5-leiren` | Tostig sier hva dagen er: gisler, ikke slag | `data/riccall.ts` |
+| `k5-brynja` | Hva du bærer de fem timene | `data/riccall.ts` |
+
+Brua er ikke bygget ennå. Veien østover står som landemerke og leses, men den
+har ingen knapp - `k5-broen` og `k5-rekka` finnes ikke i `K5`, for et steg
+ingen har bygget leser i oppdragsloggen som noe eleven har gått glipp av.
+
+**Kapittelets tese ligger i at alt eleven møter er fornuftig.** Freden er
+sluttet med York, gislene kommer i dag, Fulford var for fem dager siden, det er
+fem timers gange dit, og det er uvanlig varmt. Ut fra det er det å la brynja
+ligge i kista det kloke - og Øystein sier at kongen har sagt det samme til hver
+mann som går. Eleven tar avgjørelsen selv, med nøyaktig de opplysningene de
+hadde. Det er hele grunnen til at hun skal ta den, og det er derfor
+`[Etterpåklokskap]` gis som *hørt* her og ikke som forstått: hun har ikke sett
+hva valget ble til ennå.
+
+Ting som er lette å ødelegge her:
+
+-   **Ingen i leiren skal ane noe.** Legger vi inn én mann som er urolig, blir
+    valget om brynja et varsel eleven overhørte, og kapittelet lærer bort at de
+    burde skjønt det. Det er nøyaktig den feilen begrepet handler om.
+-   **Kista leser 1030.** Var faren femten i rekka på Stiklestad, eller ble han
+    hjemme i høyet? Begge veier står i `tillegg`, og ingen av dem er en dom.
+    Brynja kommer fra ham uansett.
+-   **Tjodolv er kartets eneste samtidige kilde, og han vet det ikke.** Han
+    sier at et kvad ikke kan dikte et slag ingen sto i, at formen er grunnen
+    til at det overlever, og at det som en gang skrives ned, blir skrevet fra
+    kvadene. Alle tre skal Mellomspill V ta opp igjen. Han faller på brua, og
+    strofene hans finnes bare fordi Snorre siterer dem - samme knute som
+    Haraldskvadet i Mellomspill II.
+-   **`ramp()` duger ikke på teltduken.** Ubleket ull er varm og lite mettet, og
+    skyggeramper dreier en slik farge mot rødt fordi korteste vei fra oransje
+    til blått går baklengs gjennom rødt. Første utkast var et sirkustelt.
+    Fargene på `prop-telt` står derfor skrevet ut.
+-   **Få trær.** Treproppen er en gran, og Vale of York har ingen. Fire ved
+    vannet leser som en klynge; ni leser som at leiren ligger i Trøndelag.
+
 ## Mellomspillet: bordet med kildene
 
 Mellom to kapitler forlater eleven året hun spilte og ser tilbake på det hun
@@ -782,7 +830,7 @@ hver gang eleven kommer fram et sted.
 
 ## Verifisering
 
-Tjueni skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Tretti skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 `window.__rpgSteder`, storen gjennom `window.__rpgStore`), som `boot.ts` bare
 eksponerer i dev.
@@ -826,6 +874,7 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-kapittel4.mjs`   | Nordvik i 1030: kirken på hovets grunn, og budstikka       |
 | `verify-rpg-skjoldborg.mjs`  | Rekka: plassen, hullet, `iRekke` og begge utgangene        |
 | `verify-rpg-mellomspill4.mjs` | Året etter slaget, og de tolv månedene ingen skrev ned    |
+| `verify-rpg-kapittel5.mjs`   | Leiren ved Riccall: flåten, kista og valget om brynja      |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir

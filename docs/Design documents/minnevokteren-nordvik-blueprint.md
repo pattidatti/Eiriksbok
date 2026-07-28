@@ -1070,8 +1070,8 @@ retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo;
 **Etappe 1b er bygget.** R1-R8, se `rpg-hub-og-epoker-blueprint.md` §10.
 
 **Etappe 2 er bygget** (K1a-K1e), og **etappe 3** med den. **Etappe 4 er
-bygget** (K2a-K2g), og **etappe 5** er bygget til og med kapittel 4 - se
-nederst i denne seksjonen.
+bygget** (K2a-K2g), og **etappe 5** er bygget til og med kapittel 4, med
+kapittel 5 påbegynt - se nederst i denne seksjonen.
 
 | Delet | Hva som står |
 |---|---|
@@ -1302,9 +1302,38 @@ Nye prøver: `verify-rpg-kapittel3`, `verify-rpg-blotet`, `verify-rpg-holmgang`,
   Glælognskviða, stilet til Knut den mektiges sønn Svein med en oppfordring om å
   be den døde kongen om hjelp til å beholde landet.
 
-**Det som gjenstår:** kapittel 5, Mellomspill V og epilogen (§4). Og §16.3 står
-fortsatt: `ClassId` skal ut av karakterskaperen, men den ligger på
-flerspiller-tråden (`Gjest.classId`) og i `figurLook`.
+**Kapittel 5 er påbegynt** (K5a): leiren ved skipene står, brua står ikke.
+
+| Delet | Hva som står |
+| --- | --- |
+| K5a | Riccall ved Ouse som eget sted: flåten, teltene, kista og veien østover. Tostig, Øystein Orre, Tjodolv Arnorsson og naboen fra Sæbø. Valget om brynja. `prop-telt` er ny i tileforge |
+
+**Fire avvik og funn:**
+
+- **Kapittelet begynner i England, ikke hjemme.** §4 sier «kort, tett,
+  uunngåelig», og en avskjedsscene på Nordvik ville vært det motsatte. At Orm
+  ikke får si farvel til gården, *er* kapittelet: han er der fordi bygda trakk
+  lodd i mai, og gården får ham aldri tilbake. Nordvik kommer igjen i epilogen,
+  i 1100, uten ham.
+- **Han heter Orm Åsmundsson.** §4 skriver «Orm den yngre», og det er det folk
+  kaller ham - men de fire andre rollene har patronym (`Åsa Torsteinsdotter`,
+  `Torgils Ketilsson`, `Halvard Torgilsson`), og en femte uten ville lest som at
+  vi ikke visste hvem faren var. Opptakten sier begge deler.
+- **Valget om brynja er kapittelets §16.1.** Det finnes ikke i blueprinten, og
+  det er den beste inngangen til 1066 kapittelet har: alt eleven møter den
+  morgenen er sant og fornuftig, og ut fra det er det å la brynja ligge det
+  kloke. Hun tar avgjørelsen med nøyaktig de opplysningene de hadde. Ingen i
+  leiren er urolig - én urolig mann ville gjort valget til et varsel hun
+  overhørte, og da lærer kapittelet bort at de burde skjønt det.
+- **`[Etterpåklokskap]` gis som *hørt*, ikke forstått.** Hun har tatt valget,
+  men hun har ikke sett hva det ble til. Et begrep om etterpåklokskap som deles
+  ut før det har hendt noe å være klok etterpå av, er nøyaktig den feilen
+  begrepet handler om. Det løftes når brua er over.
+
+**Det som gjenstår:** resten av kapittel 5 (brua, rekka uten brynje, døden),
+Mellomspill V og epilogen (§4). Og §16.3 står fortsatt: `ClassId` skal ut av
+karakterskaperen, men den ligger på flerspiller-tråden (`Gjest.classId`) og i
+`figurLook`.
 
 ### 13.1 Hvorfor etappe 1b kom til
 

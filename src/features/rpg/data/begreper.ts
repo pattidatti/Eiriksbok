@@ -220,6 +220,22 @@ export const BEGREPER: BegrepDef[] = [
         forstasVed: 'Les runesteinen ved veien.',
         replikk: 'Dere kaller det ikke et land. Dere kaller det en vei.',
     },
+    {
+        id: 'tronkravet',
+        navn: 'Tronkravet i 1066',
+        forklaring:
+            'Kong Edvard døde barnløs i januar 1066, og tre menn mente kronen var deres: Harald Godwinson, som ble kronet med én gang, Vilhelm av Normandie, som sa han var lovt den, og Harald Sigurdsson, som arvet kravet etter Magnus den gode. Ingen av dem var sønn av en konge i England. Året 1066 er ikke et vikingtokt - det er en arvestrid mellom tre menn, og alle tre har papirene sine i orden.',
+        forstasVed: 'Legg de tre kravene ved siden av hverandre på bordet etter 1066.',
+        replikk: 'Tre menn, ett rike, og ingen av dem har en far som var konge her.',
+    },
+    {
+        id: 'etterpaaklokskap',
+        navn: 'Etterpåklokskap',
+        forklaring:
+            'Vi vet hvordan det gikk. De visste det ikke. Å dømme et valg etter det som hendte etterpå, er å dømme folk for å mangle opplysninger ingen kunne ha hatt. Spørsmålet er alltid det samme: hva visste de i det øyeblikket de valgte, og var valget fornuftig da?',
+        forstasVed: 'Avgjør selv hva du bærer den morgenen, med det Orm vet - og se hva det ble til.',
+        replikk: 'Det sto ingen hær innen fire dagsreiser. Vi visste det. Vi visste det helt til vi ikke visste det.',
+    },
 ];
 
 export const BEGREP_BY_ID: Record<string, BegrepDef> = Object.fromEntries(

@@ -21,7 +21,18 @@ import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
 import { Opplaering } from './opplaering';
-import { K1, K1_FLAGG, K2, K3, K3_FLAGG, K4, K4_FLAGG, KAPITTEL_BY_NR } from '../data/kapitler';
+import {
+    K1,
+    K1_FLAGG,
+    K2,
+    K3,
+    K3_FLAGG,
+    K4,
+    K4_FLAGG,
+    K5,
+    K5_FLAGG,
+    KAPITTEL_BY_NR,
+} from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
 import { Raidet } from './raidet';
@@ -1095,6 +1106,29 @@ export class WorldScene extends Phaser.Scene {
                 store.leggISekk('tingspyd');
                 store.utrust('tingspyd');
                 store.varsle('Skofte ga deg et spyd.', 'bra');
+                return;
+            }
+            // ── 1066: hva dagen er, og hva du bærer ─────────────────────────
+            case 'tostig-dagen': {
+                // Samtalen *er* steget, som hos Torgeir i 872 og Ragnvald i
+                // 995. Tostig sier hva dagen er, og fra nå av vet Orm at det
+                // ikke skal stå noe slag - som er hele forutsetningen for det
+                // ene valget kapittelet har.
+                useRpgStore.getState().fullforSteg(K5.leiren);
+                return;
+            }
+            case 'brynja-med':
+            case 'brynja-igjen': {
+                const store = useRpgStore.getState();
+                const med = handlingId === 'brynja-med';
+                store.settFlagg(med ? K5_FLAGG.brynjaMed : K5_FLAGG.brynjaIgjen);
+                store.fullforSteg(K5.brynja);
+                // Bare `hort`. Hun har tatt avgjørelsen, men hun har ikke sett
+                // hva den ble til ennå - og et begrep om etterpåklokskap som
+                // gis før det er skjedd noe å være klok etterpå av, er
+                // nøyaktig den feilen begrepet handler om. Det løftes til
+                // `forstatt` når brua er over.
+                store.larBegrep('etterpaaklokskap', 'hort');
                 return;
             }
             case 'torgeir-noklene': {

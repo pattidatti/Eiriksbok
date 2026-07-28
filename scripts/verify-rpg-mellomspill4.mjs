@@ -179,8 +179,13 @@ const etter = await tilstand();
 sjekk('bordet er fullført', etter?.steg?.includes('mellomspill:mellomspill-4'));
 sjekk('helgenkåring er forstått', etter?.begreper?.helgenkaaring === 'forstatt');
 sjekk('fortellingen vokser er forstått', etter?.begreper?.['fortellingen-vokser'] === 'forstatt');
-// Kapittel 5 er ikke bygget. Da skal hun bli stående, ikke sendes til et tomt kart.
-sjekk('hun blir stående i 1030', etter?.kapittel === 4, String(etter?.kapittel));
+// Og videre til 1066. Kapittel 5 har steg nå, så bordet er ikke en blindvei
+// lenger - å la henne bli stående i 1030 etter at kildene er lagt bort, ville
+// gjort kampanjen til en samling årstall hun må finne inngangen til selv.
+sjekk('hun sendes videre til 1066', etter?.kapittel === 5, String(etter?.kapittel));
+await page.waitForTimeout(4400);
+const iLeiren = await page.evaluate(() => window.__rpg?.scene.getScene('verden')?.sted?.id ?? null);
+sjekk('og hun lander i leiren ved skipene', iLeiren === 'riccall', String(iLeiren));
 
 sjekk('ingen konsollfeil', konsollfeil.length === 0, konsollfeil.slice(0, 3).join(' | '));
 

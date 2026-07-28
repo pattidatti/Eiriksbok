@@ -19,7 +19,8 @@ export interface PropPlacement {
         | 'gjerde'
         | 'langskip'
         | 'kai'
-        | 'benk';
+        | 'benk'
+        | 'telt';
     /** Piksler, ikke ruter. */
     x: number;
     y: number;

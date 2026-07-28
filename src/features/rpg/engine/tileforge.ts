@@ -446,6 +446,41 @@ export function forgeProps(scene: Phaser.Scene, tema: Tema): void {
     naust.behind(() => naust.ellipse(24, 32, 21, 2, 'rgba(0,0,0,0.28)'));
     addCanvas(scene, 'prop-naust', naust);
 
+    // ── Telt: leiren ved skipene ────────────────────────────────────────────
+    //
+    // Kapittel 5 er grunnen til at det finnes. En hær som ligger ved skipene
+    // sine bor ikke i hus - den bor under seilduk spent over en åsstang, med
+    // kryssede gavlstenger i begge ender, slik teltene fra Oseberg og Gokstad
+    // er formet. Uten dem leser leiren ved Ouse som en tom slette.
+    const telt = createPainter(44, 34, 1, 1);
+    // Fargene står skrevet ut i stedet for å komme fra `ramp`. Duken er
+    // ubleket ull, altså varm og lite mettet, og `ramp` dreier skyggen på en
+    // slik farge mot rødt fordi den korteste veien fra oransje til blått går
+    // baklengs gjennom rødt. Resultatet var et sirkustelt.
+    const dukSol = '#ded2b8';
+    const dukSkygge = '#a2967e';
+    const dukSom = '#c5b99c';
+    const stang = ramp(tommer, 1);
+    // Stengene stikker opp over mønet. Det er det ene som skiller silhuetten
+    // fra en haug med duk.
+    for (let i = 0; i < 8; i++) {
+        telt.rect(14 + i, 2 + i, 2, 2, stang);
+        telt.rect(28 - i, 2 + i, 2, 2, stang);
+    }
+    // Duken: lys solside, mørk skyggeside, og en sømlinje for hver fjerde rad.
+    for (let i = 0; i < 12; i++) {
+        const w = 5 + i * 2.9;
+        const x = 21 - w / 2;
+        const y = 8 + i * 2;
+        telt.rect(x, y, w / 2, 2, i % 4 === 0 ? dukSom : dukSol);
+        telt.rect(x + w / 2, y, w / 2, 2, i % 4 === 0 ? dukSom : dukSkygge);
+    }
+    telt.rect(17, 24, 8, 8, '#241c12');
+    telt.rect(17, 24, 8, 2, '#150f08');
+    telt.outline();
+    telt.behind(() => telt.ellipse(21, 32, 18, 3, 'rgba(0,0,0,0.28)'));
+    addCanvas(scene, 'prop-telt', telt);
+
     // ── Bål: fire rammer ────────────────────────────────────────────────────
     for (let frame = 0; frame < 4; frame++) {
         const p = createPainter(18, 20, 1, 1);
