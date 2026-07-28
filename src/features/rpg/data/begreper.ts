@@ -141,6 +141,14 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Ingen ba deg tro på noe. De ba deg komme.',
     },
     {
+        id: 'holmgang',
+        navn: 'Holmgang',
+        forklaring:
+            'En tvekamp med lov og regler: en utstrakt hud på fem alen, tre skjold hver, og ingen som får blande seg. Går du utenfor huden, har du veket. Den som blør på huden, har tapt - men han dør ikke, han betaler tre mark sølv og saken er ute av verden. Ordningen ble misbrukt av folk som var gode med sverd og krevde andres jord, og den ble forbudt like etter år 1000.',
+        forstasVed: 'Gå en holmgang, og la reglene avgjøre den.',
+        replikk: 'Nekter du, er du niding. Og en niding kan ingen ta i hånden.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:

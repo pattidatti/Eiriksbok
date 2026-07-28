@@ -49,6 +49,25 @@ export const K2 = {
 export const K3 = {
     knarren: 'k3-knarren',
     blotet: 'k3-blotet',
+    holmgangen: 'k3-holmgangen',
+    /**
+     * Ikke et steg i lista, men et merke i den.
+     *
+     * Utfordringen er ikke noe eleven skal se som en oppgave hun mangler - den
+     * er noe som skjer med henne. Merket finnes fordi knappen på tingvollen må
+     * kunne vite om det står en avtale i verden.
+     */
+    utfordret: 'k3-utfordret',
+} as const;
+
+/** Flagg kapittel 3 setter, og som mellomspillet og kapittel 4 leser. */
+export const K3_FLAGG = {
+    /** Sto han på huden til den andre blødde? */
+    vantHolmgang: 'k3-vant-holmgang',
+    /** Blødde han først? Tap, men ikke skam. */
+    tapteHolmgang: 'k3-tapte-holmgang',
+    /** Gikk han av huden? Det er å vike, og det henger ved en mann. */
+    vekHolmgang: 'k3-vek-holmgang',
 } as const;
 
 /** Flagg kapittel 1 setter, og som mellomspillet og kapittel 5 leser. */
@@ -215,6 +234,12 @@ export const KAPITLER: KapittelDef[] = [
                 tittel: 'Blotet',
                 mal: 'Hovet står ennå. Gå opp til horgen og hold blot.',
                 krever: [K3.knarren],
+            },
+            {
+                id: K3.holmgangen,
+                tittel: 'Holmgangen',
+                mal: 'En av kongens menn har krevd deg ut. Møt ham på tingvollen.',
+                krever: [K3.blotet],
             },
         ],
         // Æren er kapittelets valuta: holmgangen kjempes om den, og det er den

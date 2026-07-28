@@ -131,6 +131,17 @@ export class Kamp {
         this.vernHelse = SKJOLD_BY_ID[id].helse;
     }
 
+    /**
+     * Et helt vern av samme slag, uten at noe annet friskes opp.
+     *
+     * Holmgangen er grunnen: tre skjold er tillatt, og det fjerde finnes ikke.
+     * Å bruke `hvil()` her ville gitt henne pusten tilbake i samme slengen, og
+     * da er et skjoldbrudd blitt en belønning.
+     */
+    nyttVern(): void {
+        this.vernHelse = this.vernMaks;
+    }
+
     /** Nytt vern av samme slag - etter hvile, eller når et kapittel begynner. */
     hvil(): void {
         this.ressurs = this.maksRessurs;

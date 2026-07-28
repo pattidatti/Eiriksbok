@@ -265,10 +265,44 @@ export const HOVDA_MENN: EnemyDef[] = [
     },
 ];
 
+/**
+ * Han som krever folk ut på huden, 995.
+ *
+ * Skjalg er en yrkeskriger i kongens følge, og han er den ene fienden i
+ * kampanjen som ikke vil noe med gården. Han vil vinne en holmgang, for det er
+ * det han kan - og det holdt til å ta både jord og ære fra folk som ikke kunne
+ * si nei. Nettopp det misbruket er grunnen til at holmgangen ble forbudt like
+ * etter år 1000.
+ *
+ * Tallene er huskarlens, med mer helse og et hardere varsel: han er den beste
+ * eleven har møtt, og det skal merkes i hendene. `hak` hvert tredje slag er
+ * ikke pynt her - det er hele grunnen til at tre skjold er en regel.
+ */
+export const HOLMGANGSMANN: EnemyDef = {
+    id: 'skjalg',
+    kind: 'menneske',
+    name: 'Skjalg',
+    hp: 110,
+    skade: 14,
+    fart: 66,
+    aggro: 320,
+    rekkevidde: 26,
+    varsel: 360,
+    farge: 0x53607a,
+    xp: 0,
+    loot: [],
+    vaapenArt: 'sverd',
+    harSkjold: true,
+    haar: 3,
+    navngitt: true,
+    sarslag: { hvert: 3, hak: true },
+};
+
 export const ENEMIES: EnemyDef[] = [
     ...MENNESKER,
     ...LINDISFARNE_FIENDER,
     ...HOVDA_MENN,
+    HOLMGANGSMANN,
     {
         id: 'glemseltaake',
         kind: 'glemsel',

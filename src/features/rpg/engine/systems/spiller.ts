@@ -295,9 +295,25 @@ export class Spiller {
         this.sprite.setFrame(heltFrame(retning, this.positur, this.posFase));
     }
 
-    /** Skrur av at eleven kan dø. Bare opplæringen bruker den. */
+    /**
+     * Skrur av at eleven kan dø.
+     *
+     * Opplæringen bruker den, og holmgangen: en holmgang ble avgjort av at
+     * blodet falt på huden, ikke av at noen ble drept. Den som blødde, hadde
+     * tapt og kjøpte seg fri.
+     */
     settOvingsmodus(pa: boolean): void {
         this.ovingsmodus = pa;
+    }
+
+    /** Vernet er helt igjen. Holmgangen rekker henne skjold nummer to og tre. */
+    nyttVern(): void {
+        this.kamp.nyttVern();
+    }
+
+    /** Hvor mye vernet har igjen. Holmgangen teller skjoldene på den. */
+    get vernHelse(): number {
+        return this.kamp.vernHelse;
     }
 
     /** Alt står stille mens eleven leser. */

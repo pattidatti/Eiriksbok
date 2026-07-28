@@ -43,6 +43,15 @@ export const AASAS_HAUG: [number, number] = [14, 38];
  */
 export const HOVET: [number, number] = [30, 14];
 
+/**
+ * Midt på tingvollen. Huden legges ut der bygda alt samles.
+ *
+ * Ruta står her og ikke i `engine/holmgang.ts` med vilje: landemerket på
+ * vollen må kjenne den, og en motor som importerer et sted som importerer
+ * motoren tilbake er en ring modullasteren ikke kommer ut av.
+ */
+export const HUD_MIDT: [number, number] = [38, 24];
+
 /** Kongens knarr, der den ligger i vika. */
 export const KONGENS_KNARR: [number, number] = [3, 30];
 
@@ -211,6 +220,51 @@ export const NORDVIK_995_NPCS: NpcDef[] = [
             },
         ],
     },
+    /**
+     * Han som lever av holmganger.
+     *
+     * Skjalg er ikke en troende og ikke en politiker. Han er en mann som er god
+     * med sverd i et samfunn der en god sverdmann kunne kreve andres jord ved å
+     * utfordre dem - og der en nekt var verre enn et tap. Han står i fjæra fra
+     * første bilde, og han sier hva han er før han krever noe.
+     */
+    {
+        id: 'skjalg-npc',
+        name: 'Skjalg',
+        role: 'En av de tolv. Kjent for noe annet.',
+        tile: [11, 27],
+        ser: 'hoyre',
+        palette: { tunic: '#53607a', trim: '#c9c2ae', hair: '#8a7a52' },
+        smalltalk: [
+            'Jeg bryr meg ikke om hvilken gud du gir hesten din til.',
+            'Jeg har gått ni holmganger. Jeg står her fremdeles.',
+            'Du ser på hendene mine. Det gjør alle til slutt.',
+        ],
+        kunnskap: [
+            {
+                tekst: 'Holmgang er lov. Krever jeg deg ut, må du møte - nekter du, er du niding, og en niding kan ingen ta i hånden. Derfor kan en mann som meg kreve jorda til folk som ikke kan slåss, og få den.',
+                stikkord: ['holmgang', 'niding'],
+                begrep: 'holmgang',
+            },
+            {
+                tekst: 'Den som taper, blør. Han dør ikke - han betaler tre mark sølv, og så er saken ute av verden. Holmløsning kalles det.',
+                stikkord: ['holmløsning', 'bot'],
+            },
+        ],
+        handlinger: [
+            {
+                id: 'skjalg-utfordring',
+                knapp: 'Si det du har å si',
+                ledetekst:
+                    'Du holdt blot etter at kongen forbød det, og du gjorde det så hele fjorden så det.\n\nJeg krever deg ut på huden for det. Tingvollen, i morgen. Fem alen, tre skjold, og den som blør har tapt.\n\nMøter du ikke, sier jeg det jeg da har rett til å si om deg, og ingen her kan si meg imot.',
+                // Først etter blotet. Det er blotet som gir ham påskuddet, og
+                // uten det står utfordringen i lufta uten grunn.
+                krever: ['k3-blotet'],
+                gir: 'k3-utfordret',
+                etterpa: 'Jeg står på vollen. Kom når du er klar.',
+            },
+        ],
+    },
     {
         id: 'eadwulf',
         name: 'Presten Eadwulf',
@@ -294,6 +348,28 @@ export const NORDVIK_995_LANDMARKS: LandmarkDef[] = [
         title: 'Horgen',
         text: 'En haug av flate steiner ute i det fri, svart av gammelt blod og sot.\n\nHorgen er alteret utendørs. Hovet er huset. Begge deler brukes, og det er ingen som har bestemt hvilken av dem som er den rette.',
         stikkord: ['horg', 'alter', 'offer'],
+    },
+    /**
+     * Tingvollen, som i 995 er noe annet enn en tingplass.
+     *
+     * Huden legges ut der, og det er ikke tilfeldig: holmgangen var en
+     * rettsordning, ikke et slagsmål. Den avgjorde saker, og den ble holdt der
+     * folk møttes for å avgjøre saker.
+     */
+    {
+        id: 'vollen-995',
+        kind: 'baal',
+        tile: [HUD_MIDT[0], HUD_MIDT[1] + 4],
+        title: 'Tingvollen',
+        text: 'En flat, tråkket ring med stein rundt. Her settes tinget om sommeren, og her legges huden ut når to menn skal gjøre opp med jern.\n\nEn holmgang er ikke et slagsmål. Det er en måte å avgjøre en sak på, med regler alle kan reglene til: fem alen hud, tre skjold, og den som blør har tapt.',
+        stikkord: ['holmgang', 'ting', 'rettsordning'],
+        handling: {
+            id: 'gaa-paa-huden',
+            knapp: 'Gå ut på huden',
+            // Bare når det står en avtale i verden. En knapp som ikke gjør noe,
+            // lærer eleven at knapper ikke gjør noe.
+            krever: ['k3-utfordret'],
+        },
     },
     {
         id: 'fjaera-995',

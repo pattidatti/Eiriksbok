@@ -26,6 +26,7 @@ import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
 import { Raidet } from './raidet';
 import { Gaarden } from './gaarden';
 import { Angrepet, ANGREP_FLAGG } from './angrepet';
+import { Holmgang } from './holmgang';
 import { Portaler } from './portal';
 import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
@@ -81,6 +82,10 @@ export class WorldScene extends Phaser.Scene {
     private gaarden: Gaarden | null = null;
     /** Båten i vika, høsten 872. `null` utenom kapittel 2. */
     private angrepet: Angrepet | null = null;
+    /** Huden på tingvollen, 995. `null` utenom kapittel 3. */
+    private holmgang: Holmgang | null = null;
+    /** Selve huden, tegnet på bakken mens holmgangen står. */
+    private hudBilde: Phaser.GameObjects.Graphics | null = null;
     /** Båter og annet eleven kan gå om bord i. */
     private farkoster!: Farkoster;
     /** Dørene ut: portalene i hallen, og porten hjem fra en epoke. */
@@ -242,6 +247,24 @@ export class WorldScene extends Phaser.Scene {
                       musikkRot: sted.musikkRot,
                   })
                 : null;
+        this.holmgang =
+            sted.kapittel === 3
+                ? new Holmgang({
+                      settUt: (defId, x, y, valg) => {
+                          const def = ENEMY_BY_ID[defId];
+                          return def ? this.fiendeSystem.settUt(def, x, y, valg) : null;
+                      },
+                      hentInn: (f) => this.fiendeSystem.hentInn(f),
+                      spiller: () => this.helt.sprite,
+                      settSpiller: (x, y) => this.flyttHelt(x, y),
+                      ovingsmodus: (pa) => this.helt.settOvingsmodus(pa),
+                      nyttVern: () => this.helt.nyttVern(),
+                      vernHelse: () => this.helt.vernHelse,
+                      leggUtHud: (x, y, w, h) => this.leggUtHud(x, y, w, h),
+                      taOppHud: () => this.taOppHud(),
+                      musikkRot: sted.musikkRot,
+                  })
+                : null;
         this.samhandling = new Interaksjon(this, sted.npcer, sted.landemerker, {
             spiller: () => this.helt.sprite,
             laas: (pa) => this.settLaast(pa),
@@ -332,6 +355,9 @@ export class WorldScene extends Phaser.Scene {
         // Båten i vika står i lagringen, ikke i et felt i minnet: går hun en tur
         // innom hallen midt i det, skal de fem mennene fortsatt være på vei inn.
         this.angrepet?.gjenopprett();
+        // Samme regel for huden på vollen: er hun utfordret, står avtalen der
+        // også etter en tur innom hallen.
+        this.holmgang?.gjenopprett();
         if (this.sted.id !== 'lindisfarne') return;
         const store = useRpgStore.getState();
         if (store.steg.includes(K1.motstanden)) {
@@ -628,6 +654,7 @@ export class WorldScene extends Phaser.Scene {
         this.opplaering.oppdater(delta);
         this.raidet.oppdater(delta);
         this.angrepet?.oppdater(delta);
+        this.holmgang?.oppdater(delta);
         if (!sitter) {
             this.samvaer?.sjekk(
                 delta,
@@ -806,6 +833,7 @@ export class WorldScene extends Phaser.Scene {
         // uten dette ville «Ta det du vil ha» blitt stående over fjorden hjemme.
         this.raidet.avslutt();
         this.angrepet?.avslutt();
+        this.holmgang?.avslutt();
         this.reiser = true;
         this.reiserFra = this.sted.id;
         fraSpill.emit('reise', { stedId });
@@ -979,6 +1007,14 @@ export class WorldScene extends Phaser.Scene {
                 useRpgStore.getState().fullforSteg(K3.knarren);
                 return;
             }
+            case 'skjalg-utfordring': {
+                // Utfordringen er ikke en oppgave hun tok imot - den er noe
+                // som skjedde med henne. Merket finnes bare så knappen på
+                // vollen vet at det står en avtale i verden.
+                useRpgStore.getState().fullforSteg(K3.utfordret);
+                this.holmgang?.utfordre();
+                return;
+            }
             case 'torgeir-noklene': {
                 // Her er samtalen selve handlingen. Torgeir forteller Åsa hva
                 // som ligger i bua, og det er alt steget er - hun vet nå hva
@@ -1000,12 +1036,51 @@ export class WorldScene extends Phaser.Scene {
         if (handlingId === 'bua-forradet') this.apneBua();
         if (handlingId === 'gaa-i-fjaera') this.angrepet?.mot();
         if (handlingId === 'til-tinget') this.apneTinget();
+        if (handlingId === 'gaa-paa-huden') this.holmgang?.start();
         if (handlingId === 'hold-blot') {
             // Verden må stå stille bak horgen. Låsen tas av igjen når React
             // svarer med `puzzleSvar`, som for de andre puzzlene.
             this.settLaast(true);
             fraSpill.emit('puzzle', { id: 'blotet' });
         }
+    }
+
+    // ── Huden på vollen ─────────────────────────────────────────────────────
+
+    /**
+     * Legger huden ut på bakken.
+     *
+     * Den tegnes her og ikke i `Holmgang`, av samme grunn som ellers: modulen
+     * eier reglene, scenen eier alt som er Phaser. Dybden er over terrenget og
+     * under folk, så begge kan gå oppå den.
+     *
+     * Kanten er ikke pynt. Den *er* arenaen, og eleven må kunne se nøyaktig
+     * hvor den går mens hun viker - derfor en hard, lys strek og ikke en
+     * uttonet flate.
+     */
+    private leggUtHud(x: number, y: number, w: number, h: number): void {
+        this.taOppHud();
+        const g = this.add.graphics().setDepth(-950);
+        g.fillStyle(0x8a7048, 1).fillRect(x - w / 2, y - h / 2, w, h);
+        g.fillStyle(0x7a6140, 1).fillRect(x - w / 2 + 4, y - h / 2 + 4, w - 8, h - 8);
+        g.lineStyle(2, 0xd8c48a, 0.95).strokeRect(x - w / 2, y - h / 2, w, h);
+        // Løkkene i hjørnene. En holmgangshud ble spent fast med tjorer, og de
+        // fire pluggene er det eneste som holdt arenaen på plass.
+        g.fillStyle(0x2f2418, 1);
+        for (const [dx, dy] of [
+            [-1, -1],
+            [1, -1],
+            [-1, 1],
+            [1, 1],
+        ]) {
+            g.fillCircle(x + (dx * w) / 2, y + (dy * h) / 2, 3);
+        }
+        this.hudBilde = g;
+    }
+
+    private taOppHud(): void {
+        this.hudBilde?.destroy();
+        this.hudBilde = null;
     }
 
     // ── Tinget ──────────────────────────────────────────────────────────────
