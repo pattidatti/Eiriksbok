@@ -23,6 +23,7 @@ import { MELLOMSPILL_BY_ID } from './data/mellomspill';
 import { Navigasjonen } from './components/Navigasjonen';
 import { Skroget } from './components/Skroget';
 import { Blotet } from './components/Blotet';
+import { Vinternettene } from './components/Vinternettene';
 import { rustningTier } from './data/classes';
 import { useHubRom } from './net/useHubRom';
 import { Atmosfare, Skjermkontroll } from './components/Skjermkontroll';
@@ -54,7 +55,7 @@ type Overlegg =
     | { type: 'dod' }
     | { type: 'seier' }
     /** Kapittelets håndverkspuzzle. Scenen står låst bak det. */
-    | { type: 'puzzle'; id: 'skroget' | 'navigasjonen' | 'blotet' }
+    | { type: 'puzzle'; id: 'skroget' | 'navigasjonen' | 'blotet' | 'vinternettene' }
     /** Bordet med kildene, mellom to kapitler. */
     | { type: 'mellomspill'; id: string }
     /** Åpningsskjermen til et nytt kapittel. */
@@ -333,6 +334,11 @@ export default function RpgPage() {
                 // vite at eleven gikk - låsen ville stått til hun snakket med
                 // noen andre.
                 if (overlegg.type === 'puzzle') {
+                    // Vinternettene har ingen vei ut. Fristen er ute, og et
+                    // Esc-trykk som lukket den ville latt eleven gå fra
+                    // kapittelets eneste avgjørelse - og etterlatt verden låst
+                    // bak en skjerm som ikke kommer igjen.
+                    if (overlegg.id === 'vinternettene') return;
                     setOverlegg({ type: 'ingen' });
                     tilSpill.emit('puzzleSvar', { id: overlegg.id, lost: false });
                     return;
@@ -580,6 +586,24 @@ export default function RpgPage() {
                     onAvbryt={() => {
                         setOverlegg({ type: 'ingen' });
                         tilSpill.emit('puzzleSvar', { id: 'blotet', lost: false });
+                    }}
+                />
+            )}
+
+            {/*
+                Vinternettene har ingen vei ut. Fristen er ute, og det finnes
+                ikke et «senere» - derfor ingen `onAvbryt`, og derfor står den
+                i lista over overlegg Esc ikke lukker.
+            */}
+            {overlegg.type === 'puzzle' && overlegg.id === 'vinternettene' && (
+                <Vinternettene
+                    onValgt={(valg) => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('puzzleSvar', {
+                            id: 'vinternettene',
+                            lost: true,
+                            utfall: valg,
+                        });
                     }}
                 />
             )}

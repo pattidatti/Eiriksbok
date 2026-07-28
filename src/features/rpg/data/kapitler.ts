@@ -50,6 +50,7 @@ export const K3 = {
     knarren: 'k3-knarren',
     blotet: 'k3-blotet',
     holmgangen: 'k3-holmgangen',
+    valget: 'k3-valget',
     /**
      * Ikke et steg i lista, men et merke i den.
      *
@@ -68,6 +69,12 @@ export const K3_FLAGG = {
     tapteHolmgang: 'k3-tapte-holmgang',
     /** Gikk han av huden? Det er å vike, og det henger ved en mann. */
     vekHolmgang: 'k3-vek-holmgang',
+    /** Lot han hele gården døpe? */
+    dopt: 'k3-dopt',
+    /** Bare korsets tegn, uten dåp - en fot i hver leir. */
+    primsignet: 'k3-primsignet',
+    /** Sa han nei? Da rev de hovet, og han lever med det. */
+    nektet: 'k3-nektet',
 } as const;
 
 /** Flagg kapittel 1 setter, og som mellomspillet og kapittel 5 leser. */
@@ -240,6 +247,12 @@ export const KAPITLER: KapittelDef[] = [
                 tittel: 'Holmgangen',
                 mal: 'En av kongens menn har krevd deg ut. Møt ham på tingvollen.',
                 krever: [K3.blotet],
+            },
+            {
+                id: K3.valget,
+                tittel: 'Vinternettene',
+                mal: 'Fristen er ute. Kall folkene sammen i hallen og svar kongens mann.',
+                krever: [K3.holmgangen],
             },
         ],
         // Æren er kapittelets valuta: holmgangen kjempes om den, og det er den

@@ -57,7 +57,7 @@ export interface SceneEvents {
     /** Replikken i en cutscene. `hvem: null` er elevens egen tanke. */
     klippTekst: { hvem: string | null; tekst: string } | null;
     /** Åpne et av kapittelets puzzle-overlegg. */
-    puzzle: { id: 'skroget' | 'navigasjonen' | 'blotet' };
+    puzzle: { id: 'skroget' | 'navigasjonen' | 'blotet' | 'vinternettene' };
     /**
      * Et nytt kapittel begynner. Skjermen skal stå stille et øyeblikk før
      * eleven får gå, og hun skal få vite hvem hun er nå.

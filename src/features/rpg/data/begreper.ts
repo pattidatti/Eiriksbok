@@ -149,6 +149,22 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Nekter du, er du niding. Og en niding kan ingen ta i hånden.',
     },
     {
+        id: 'kristningen',
+        navn: 'Kristningen',
+        forklaring:
+            'Norge ble ikke kristnet nedenfra, av folk som skiftet mening. Det ble kristnet ovenfra, av konger som hadde bruk for det - og det skjedde én gård av gangen. Husbonden svarte for hver eneste sjel innenfor dørstokken, og den som sa ja fikk gaver, handel og en konge i ryggen. Kirken ble ofte reist der hovet hadde stått, for folk kom dit fra før.',
+        forstasVed: 'Svar kongens mann på vegne av hele gården, og se hva som reises i lia året etter.',
+        replikk: 'Du tror dette handler om guder. Det handler om hvem som får handle med hvem.',
+    },
+    {
+        id: 'primsigning',
+        navn: 'Primsigning',
+        forklaring:
+            'Korsets tegn uten dåp. Den primsignede fikk handle og spise med kristne og være i huset deres, men var ikke bundet av dåpen og kunne fortsatt blote. Kjøpmenn brukte det flittig: en fot i hver leir, og ingen som spurte for nøye. Det er den beste påminnelsen om at kristningen tok flere hundre år og ikke ett møte.',
+        forstasVed: 'Møt kongens krav med korsets tegn i stedet for dåpen.',
+        replikk: 'Jeg har korset på meg i Jorvik og hammeren på meg her. Begge deler er ekte nok.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:

@@ -371,6 +371,25 @@ export const NORDVIK_995_LANDMARKS: LandmarkDef[] = [
             krever: ['k3-utfordret'],
         },
     },
+    /**
+     * Hallen. Der gården samles når noe skal avgjøres.
+     *
+     * Knappen er kapittelets siste handling, og den står på huset og ikke på et
+     * menneske: det er husstanden som skal svare, og husbonden svarer for den.
+     */
+    {
+        id: 'langhuset-995',
+        kind: 'skilt',
+        tile: [18, 30],
+        title: 'Hallen',
+        text: 'Ett langt rom med ildsted midt på gulvet og benker langs begge veggene. Her sover folkene, her spises det, og her avgjøres det som skal avgjøres.\n\nEn gård er ikke en samling enkeltmennesker. Den er en husstand, og den har én husbonde. Det er ham fremmede snakker med, og det er ham de holder ansvarlig.',
+        stikkord: ['langhus', 'husstand', 'husbonde'],
+        handling: {
+            id: 'kall-sammen',
+            knapp: 'Kall folkene sammen',
+            krever: ['k3-holmgangen'],
+        },
+    },
     {
         id: 'fjaera-995',
         kind: 'skilt',

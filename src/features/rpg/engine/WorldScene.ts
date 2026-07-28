@@ -20,7 +20,7 @@ import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
 import { Opplaering } from './opplaering';
-import { K1, K1_FLAGG, K2, K3, KAPITTEL_BY_NR } from '../data/kapitler';
+import { K1, K1_FLAGG, K2, K3, K3_FLAGG, KAPITTEL_BY_NR } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
 import { Raidet } from './raidet';
@@ -1037,6 +1037,10 @@ export class WorldScene extends Phaser.Scene {
         if (handlingId === 'gaa-i-fjaera') this.angrepet?.mot();
         if (handlingId === 'til-tinget') this.apneTinget();
         if (handlingId === 'gaa-paa-huden') this.holmgang?.start();
+        if (handlingId === 'kall-sammen') {
+            this.settLaast(true);
+            fraSpill.emit('puzzle', { id: 'vinternettene' });
+        }
         if (handlingId === 'hold-blot') {
             // Verden må stå stille bak horgen. Låsen tas av igjen når React
             // svarer med `puzzleSvar`, som for de andre puzzlene.
@@ -1200,6 +1204,10 @@ export class WorldScene extends Phaser.Scene {
         if (!lost) return;
         const store = useRpgStore.getState();
         switch (id) {
+            case 'vinternettene': {
+                this.vinternettene(utfall);
+                return;
+            }
             case 'blotet': {
                 // Blotet er det ene puzzlet som ikke kan mislykkes, bare gå
                 // dårlig. Steget er gjort - hun holdt et blot - men begrepet
@@ -1241,6 +1249,52 @@ export class WorldScene extends Phaser.Scene {
             default:
                 return;
         }
+    }
+
+    /**
+     * Gården har svart, og kapittelet er over.
+     *
+     * Ingen av de tre svarene er feil, og ingen av dem gir mer enn de andre i
+     * begreper. Det som skiller dem er hva kongen gjør etterpå - en gave, et
+     * skuldertrekk, eller tre mark og et revet hov - og hvem Torgils er når
+     * kirken står der neste vår.
+     */
+    private vinternettene(utfall?: string): void {
+        const store = useRpgStore.getState();
+        if (store.steg.includes(K3.valget)) return;
+        store.fullforSteg(K3.valget);
+        store.larBegrep('kristningen', 'forstatt');
+        store.larBegrep('sed', 'forstatt');
+
+        if (utfall === 'dopt') {
+            store.settFlagg(K3_FLAGG.dopt);
+            // Kongens gave er ikke en belønning fra spillet. Den er en
+            // kvittering, og den sto i kildene lenge før den sto her.
+            store.giSolv(40);
+            store.giAere(6, 'Kongen ga deg en armring. Alle i fjorden vet hvorfor.');
+        } else if (utfall === 'primsignet') {
+            store.settFlagg(K3_FLAGG.primsignet);
+            store.larBegrep('primsigning', 'forstatt');
+        } else {
+            store.settFlagg(K3_FLAGG.nektet);
+            store.giSolv(-Math.min(store.solv, 60));
+            store.giAere(14, 'Du sa nei mens tolv menn hørte på. Det snakkes om det.');
+        }
+
+        store.fullforKapittel(3, 'Kapittel 3: Blot eller dåp');
+        store.varsle('Kapittel 3 er over. 995 er bak deg.', 'niva');
+        fraSpill.emit('oppgave', null);
+        fraSpill.emit('beskjed', {
+            tittel: 'Vinteren 995',
+            tekst: [
+                'Skipet gikk ut fjorden dagen etter. Det kom ikke tilbake det året.',
+                utfall === 'nektet'
+                    ? 'Der hovet sto, ligger det bare stokker og sot. Ulv kommer fortsatt opp dit om morgenen. Han har ingenting å gjøre der, og han går likevel.'
+                    : 'Der hovet sto, er det ryddet. Grunnen ligger flat og venter på noe.',
+                'Broren din snakker med kongens folk nå. Det gjør ikke du.',
+            ].join('\n\n'),
+            knapp: 'Videre',
+        });
     }
 
     // ── Mellomspillet ───────────────────────────────────────────────────────
