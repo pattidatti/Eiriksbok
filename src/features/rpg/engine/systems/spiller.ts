@@ -130,6 +130,23 @@ export class Spiller {
     private omBord = false;
     /** Under opplæringen kan hun ikke dø. Se `skad()`. */
     private ovingsmodus = false;
+    /**
+     * Står hun i en skjoldborg? Da finnes det ingen vei til siden.
+     *
+     * Rullen er den ene bevegelsen som er ren flukt, og i en rekke er flukt
+     * det samme som å åpne et hull. Regelsettet kan slå den av for en hel epoke
+     * (`bevegelse.rull`); dette slår den av for et øyeblikk, uten å påstå at
+     * epoken ikke har den.
+     */
+    private iRekke = false;
+    /**
+     * Hvor mye av et treff som når fram.
+     *
+     * 1 overalt ellers. I skjoldborgen dekker mannen til høyre halve henne, og
+     * da tar hun mindre - helt til hun går fram fra rekka, og da er det ingen
+     * som holder noe over henne lenger.
+     */
+    private dekning = 1;
 
     constructor(
         scene: Phaser.Scene,
@@ -304,6 +321,25 @@ export class Spiller {
      */
     settOvingsmodus(pa: boolean): void {
         this.ovingsmodus = pa;
+    }
+
+    /**
+     * I rekka: ingen rull, og blikket fram.
+     *
+     * Skjoldborgen slår den på mens rekka står. Retningen settes med én gang og
+     * ikke først neste bilde - hun skal ikke stå ett øyeblikk og se feil vei i
+     * det rekka stiller seg opp.
+     */
+    settIRekke(pa: boolean): void {
+        this.iRekke = pa;
+        if (!pa) return;
+        this.retning = 'opp';
+        this.forrigeFrame = -1;
+    }
+
+    /** Hvor mye av et treff som når fram. Se `dekning`. */
+    settDekning(faktor: number): void {
+        this.dekning = faktor;
     }
 
     /** Vernet er helt igjen. Holmgangen rekker henne skjold nummer to og tre. */
@@ -589,9 +625,15 @@ export class Spiller {
                 enhet.y * fart * utslag * bremse
             );
 
-            // Retningen settes også under gard, så eleven kan snu seg mot en
-            // fiende bak uten å slippe skjoldet.
-            if (utslag > 0.001 && this.slagIgjen === 0) {
+            // I rekka står blikket fram, alltid. Det er ikke en begrensning vi
+            // har lagt på: det *er* en skjoldborg. Uten dette måtte eleven
+            // trykke framover for å vende seg mot den som kommer - og framover
+            // er nøyaktig det ene trykket som åpner et hull i rekka og dreper
+            // mannen ved siden av henne. En styring som krever at du gjør
+            // feilen for å kunne se, er en felle og ikke en regel.
+            if (this.iRekke) {
+                this.retning = 'opp';
+            } else if (utslag > 0.001 && this.slagIgjen === 0) {
                 this.retning =
                     Math.abs(dx) > Math.abs(dy)
                         ? dx < 0
@@ -613,7 +655,7 @@ export class Spiller {
             Phaser.Input.Keyboard.JustDown(this.taster.rull) ||
             this.padKant(pad, 'B') ||
             touch.has('rull');
-        if (beveg.rull && rullTrykk && this.rullNedkjoling === 0 && utslag > 0.001) {
+        if (beveg.rull && !this.iRekke && rullTrykk && this.rullNedkjoling === 0 && utslag > 0.001) {
             // Uten pust blir rullen en stavring: kortere, og uten usårbarhet.
             const { stavring } = this.kamp.rull();
             const fart = stavring ? beveg.rullFart * KAMP.stavringFaktor : beveg.rullFart;
@@ -745,8 +787,16 @@ export class Spiller {
         // Utfallet: figuren bæres framover i trefframmen. Dette er enkeltgrepet
         // som gir mest utslag i 2D-action, og det gjør slaget til noe hun
         // forplikter seg til i stedet for noe hun trykker på.
+        //
+        // Men ikke i en rekke. Der stikker man over skjoldkanten og blir
+        // stående - et utfall ville båret henne tretten piksler ut av rekka for
+        // hvert eneste slag, og da åpner hullet seg av at hun slåss i det hele
+        // tatt. Feilen kapittelet handler om skal være noe hun velger å gjøre,
+        // ikke noe angrepsknappen gjør for henne.
         this.utfallIgjen = 110;
-        this.sprite.setVelocity(Math.cos(vinkel) * 120, Math.sin(vinkel) * 120);
+        if (!this.iRekke) {
+            this.sprite.setVelocity(Math.cos(vinkel) * 120, Math.sin(vinkel) * 120);
+        }
 
         // Sving våpenet gjennom buen. Slår hun oppover, skal våpenet være bak
         // henne - ellers ligger sverdet oppå ansiktet.
@@ -1036,7 +1086,10 @@ export class Spiller {
         const store = useRpgStore.getState();
 
         const stats = maksVerdier(store);
-        let faktisk = Math.max(1, Math.round(skade - stats.vern * 0.6));
+        // Dekningen legges *etter* rustningen. Den er ikke en bedre brynje -
+        // den er et skjold som holdes over henne av mannen ved siden av, og
+        // det virker like godt uansett hva hun har på seg.
+        let faktisk = Math.max(1, Math.round((skade - stats.vern * 0.6) * this.dekning));
         // Under opplæringen bunner livet ut på én. Ravn slår for alvor i siste
         // økt, og en elev som blir slått i hjel av læreren sin slutter å ta
         // timen - hun trykker på nytt spill i stedet.

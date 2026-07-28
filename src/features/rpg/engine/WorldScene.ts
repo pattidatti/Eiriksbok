@@ -10,7 +10,8 @@ import Phaser from 'phaser';
 import { ENEMY_BY_ID, ENEMIES } from '../data/enemies';
 import { regelsettFor } from '../data/epoker';
 import { stedEllerStart, stedIEpoke } from '../data/steder';
-import { kapittelIEpoke, maksVerdier, useRpgStore } from '../store/useRpgStore';
+import { kapittelIEpoke, maksVerdier, useRpgStore, utrustetVaapen } from '../store/useRpgStore';
+import { vaapenKamp } from '../data/vaapen';
 import type { EnemyDef, KlippDef, QuestDef, Sted } from '../types';
 import { sfx, startMusikk, stopMusikk } from './audio';
 import { fraSpill, tilSpill, type UiEvents } from './bridge';
@@ -27,6 +28,7 @@ import { Raidet } from './raidet';
 import { Gaarden } from './gaarden';
 import { Angrepet, ANGREP_FLAGG } from './angrepet';
 import { Holmgang } from './holmgang';
+import { Skjoldborg } from './skjoldborg';
 import { Portaler } from './portal';
 import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
@@ -86,6 +88,10 @@ export class WorldScene extends Phaser.Scene {
     private holmgang: Holmgang | null = null;
     /** Selve huden, tegnet på bakken mens holmgangen står. */
     private hudBilde: Phaser.GameObjects.Graphics | null = null;
+    /** Rekka på Stiklestad, 1030. `null` overalt utenom sletta. */
+    private skjoldborg: Skjoldborg | null = null;
+    /** Streken i gresset der rekka står. */
+    private linjeBilde: Phaser.GameObjects.Graphics | null = null;
     /** Båter og annet eleven kan gå om bord i. */
     private farkoster!: Farkoster;
     /** Dørene ut: portalene i hallen, og porten hjem fra en epoke. */
@@ -202,7 +208,7 @@ export class WorldScene extends Phaser.Scene {
                     // og ikke inne i fiendesystemet fordi det ikke er fiendens
                     // sak at noen holder på å lære seg å slå.
                     this.opplaering.treff(f);
-                    this.fiendeSystem.skad(f, skade, kritisk, vinkel, kraft);
+                    this.fiendeSystem.skad(f, this.iRekkeSkade(skade), kritisk, vinkel, kraft);
                 },
                 stotBort: (f, vinkel, fart) => this.fiendeSystem.stotBort(f, vinkel, fart),
                 hitstop: (ms) => this.hitstop(ms),
@@ -262,6 +268,30 @@ export class WorldScene extends Phaser.Scene {
                       vernHelse: () => this.helt.vernHelse,
                       leggUtHud: (x, y, w, h) => this.leggUtHud(x, y, w, h),
                       taOppHud: () => this.taOppHud(),
+                      musikkRot: sted.musikkRot,
+                  })
+                : null;
+        // Rekka hører til sletta og ikke til kapittelet: kapittel 4 begynner
+        // hjemme på gården, og der finnes det ingen skjoldborg å stille seg i.
+        this.skjoldborg =
+            sted.id === 'stiklestad'
+                ? new Skjoldborg({
+                      settUt: (defId, x, y, valg) => {
+                          const def = ENEMY_BY_ID[defId];
+                          return def ? this.fiendeSystem.settUt(def, x, y, valg) : null;
+                      },
+                      hentInn: (f) => this.fiendeSystem.hentInn(f),
+                      spiller: () => this.helt.sprite,
+                      settSpiller: (x, y) => this.flyttHelt(x, y),
+                      ovingsmodus: (pa) => this.helt.settOvingsmodus(pa),
+                      settIRekke: (pa) => this.helt.settIRekke(pa),
+                      settDekning: (faktor) => this.helt.settDekning(faktor),
+                      saarEffekt: (x, y) => {
+                          this.fx.blod(x, y, 0xc4241f, 4, Math.PI / 2);
+                          this.efx.flytTekst(x, y - 26, 'Truffet!', '#ff8080', 14);
+                      },
+                      leggUtLinje: (fraX, tilX, y) => this.leggUtLinje(fraX, tilX, y),
+                      taOppLinje: () => this.taOppLinje(),
                       musikkRot: sted.musikkRot,
                   })
                 : null;
@@ -358,6 +388,16 @@ export class WorldScene extends Phaser.Scene {
         // Samme regel for huden på vollen: er hun utfordret, står avtalen der
         // også etter en tur innom hallen.
         this.holmgang?.gjenopprett();
+        // Og for rekka på sletta. Går hun hjem for å hente et bedre skjold
+        // mellom to bølger, skal oppgavekortet stå der når hun kommer tilbake.
+        this.skjoldborg?.gjenopprett();
+        // Å komme fram *er* steget. Reisen inn fjorden og opp dalen tok to
+        // dager, og det finnes ingenting å gjøre i dem som ikke er venting -
+        // puzzlet er ikke veien, det er sletta.
+        if (this.sted.id === 'stiklestad') {
+            useRpgStore.getState().fullforSteg(K4.veien);
+            return;
+        }
         if (this.sted.id !== 'lindisfarne') return;
         const store = useRpgStore.getState();
         if (store.steg.includes(K1.motstanden)) {
@@ -655,6 +695,7 @@ export class WorldScene extends Phaser.Scene {
         this.raidet.oppdater(delta);
         this.angrepet?.oppdater(delta);
         this.holmgang?.oppdater(delta);
+        this.skjoldborg?.oppdater(delta);
         if (!sitter) {
             this.samvaer?.sjekk(
                 delta,
@@ -834,6 +875,7 @@ export class WorldScene extends Phaser.Scene {
         this.raidet.avslutt();
         this.angrepet?.avslutt();
         this.holmgang?.avslutt();
+        this.skjoldborg?.avslutt();
         this.reiser = true;
         this.reiserFra = this.sted.id;
         fraSpill.emit('reise', { stedId });
@@ -1038,6 +1080,19 @@ export class WorldScene extends Phaser.Scene {
                 store.fullforSteg(K4.hvemDrar);
                 return;
             }
+            case 'skofte-rekka': {
+                const store = useRpgStore.getState();
+                store.fullforSteg(K4.linja);
+                // Spydet er ikke en belønning. Det er regelen gjort til en
+                // gjenstand: `iRekke` avgjør hva et våpen duger til i en rekke,
+                // og Skofte rekker henne det eneste som duger. Vil hun slåss
+                // med øksa si likevel, står den i sekken, og da får hun kjenne
+                // hvorfor han sa det han sa.
+                store.leggISekk('tingspyd');
+                store.utrust('tingspyd');
+                store.varsle('Skofte ga deg et spyd.', 'bra');
+                return;
+            }
             case 'torgeir-noklene': {
                 // Her er samtalen selve handlingen. Torgeir forteller Åsa hva
                 // som ligger i bua, og det er alt steget er - hun vet nå hva
@@ -1060,6 +1115,13 @@ export class WorldScene extends Phaser.Scene {
         if (handlingId === 'gaa-i-fjaera') this.angrepet?.mot();
         if (handlingId === 'til-tinget') this.apneTinget();
         if (handlingId === 'gaa-paa-huden') this.holmgang?.start();
+        if (handlingId === 'still-deg-i-rekka') this.skjoldborg?.still();
+        if (handlingId === 'til-stiklestad') {
+            // Reisen bestilles med én gang, som etter navigasjonen i 793. Å
+            // sette henne tilbake på tunet for å gå ned til båten etterpå ville
+            // lagt et ærend mellom valget og følgen av det.
+            this.bestillReise('stiklestad');
+        }
         if (handlingId === 'kall-sammen') {
             this.settLaast(true);
             fraSpill.emit('puzzle', { id: 'vinternettene' });
@@ -1108,6 +1170,51 @@ export class WorldScene extends Phaser.Scene {
     private taOppHud(): void {
         this.hudBilde?.destroy();
         this.hudBilde = null;
+    }
+
+    // ── Rekka på sletta ─────────────────────────────────────────────────────
+
+    /**
+     * Tegner streken rekka står på.
+     *
+     * Den er ikke pynt, og den er ikke en vegg: den er der for at eleven skal
+     * kunne se nøyaktig hvor «fram» begynner. Regelen som avgjør kapittelet
+     * handler om én halv rute, og en regel eleven ikke kan se, er en regel hun
+     * opplever som vilkårlig.
+     *
+     * Tegnes her og ikke i `Skjoldborg`, av samme grunn som huden i 995:
+     * modulen eier reglene, scenen eier alt som er Phaser.
+     */
+    private leggUtLinje(fraX: number, tilX: number, y: number): void {
+        this.taOppLinje();
+        const g = this.add.graphics().setDepth(-950);
+        // Tråkket jord der to hundre par føtter har stilt seg opp.
+        g.fillStyle(0x6e6440, 0.55).fillRect(fraX, y - 10, tilX - fraX, 22);
+        g.lineStyle(2, 0xe6dcae, 0.85).beginPath();
+        g.moveTo(fraX, y - 10);
+        g.lineTo(tilX, y - 10);
+        g.strokePath();
+        this.linjeBilde = g;
+    }
+
+    private taOppLinje(): void {
+        this.linjeBilde?.destroy();
+        this.linjeBilde = null;
+    }
+
+    /**
+     * Skaden våpenet hennes gjør akkurat her.
+     *
+     * `VaapenKamp.iRekke` har ligget i dataene siden kampsystemet ble bygget
+     * uten at noe leste den. Utenfor rekka betyr den fortsatt ingenting - et
+     * spyd er ikke bedre enn en øks på et gårdstun - men i en skjoldborg er
+     * den hele forskjellen, og det er der den skal leses.
+     */
+    private iRekkeSkade(skade: number): number {
+        if (!this.skjoldborg) return skade;
+        const art = utrustetVaapen(useRpgStore.getState()).art;
+        const faktor = this.skjoldborg.skadefaktor(vaapenKamp(art).iRekke);
+        return faktor === 1 ? skade : Math.max(1, Math.round(skade * faktor));
     }
 
     // ── Tinget ──────────────────────────────────────────────────────────────

@@ -343,6 +343,18 @@ export const NORDVIK_1030_LANDMARKS: LandmarkDef[] = [
         title: 'Naustet',
         text: 'Båten ligger klar med spydene i. Fra vika ror dere inn fjorden til bunnen, og så går dere opp dalen til fots. To dager, om været holder.\n\nDet ligger fire båter i vika allerede. Gårdene lenger ute er alt på vannet.',
         stikkord: ['utferd', 'stiklestad', 'utbud'],
+        /**
+         * Veien ut av kapittelets første halvdel.
+         *
+         * Knappen krever at valget om Åsmund er tatt. Et utbud der eleven kan
+         * snike seg av gårde før hun har svart sønnen sin, tar fra kapittelet
+         * det ene valget det har før rekka.
+         */
+        handling: {
+            id: 'til-stiklestad',
+            knapp: 'Ro ut med de andre',
+            krever: ['k4-budstikka', 'k4-hvem-drar'],
+        },
     },
     // Steinene fra 793 står ennå. Det eleven leste som Torstein, som Åsa og som
     // Torgils, kan hun lese en fjerde gang.

@@ -298,11 +298,43 @@ export const HOLMGANGSMANN: EnemyDef = {
     sarslag: { hvert: 3, hak: true },
 };
 
+/**
+ * Mannen som står ved siden av deg i skjoldborgen.
+ *
+ * Han ligger i fiendelista, og det er ikke en snarvei - det er den ene formen
+ * motoren har for «en figur som står på kartet, har et navn over hodet og kan
+ * tas ut av det». Han settes ut `fredelig` og `udodelig`, så fiendesystemet
+ * hverken lar ham slå eller lar ham dø: det som kan skje med ham, eier
+ * `engine/skjoldborg.ts`, for det er reglene i rekka som avgjør det.
+ *
+ * `xp: 0` og tom loot er ikke en forglemmelse. En bonde som gir sølv når han
+ * faller, er en fiende, og han er det motsatte.
+ */
+export const BONDE_I_REKKA: EnemyDef = {
+    id: 'bonde-i-rekka',
+    kind: 'menneske',
+    name: 'Bonde',
+    hp: 40,
+    skade: 0,
+    fart: 0,
+    aggro: 0,
+    rekkevidde: 0,
+    varsel: 900,
+    farge: 0x7a7050,
+    xp: 0,
+    loot: [],
+    vaapenArt: 'spyd',
+    harSkjold: true,
+    haar: 2,
+    navngitt: true,
+};
+
 export const ENEMIES: EnemyDef[] = [
     ...MENNESKER,
     ...LINDISFARNE_FIENDER,
     ...HOVDA_MENN,
     HOLMGANGSMANN,
+    BONDE_I_REKKA,
     {
         id: 'glemseltaake',
         kind: 'glemsel',

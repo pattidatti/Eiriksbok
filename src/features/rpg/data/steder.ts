@@ -16,6 +16,12 @@ import {
 } from '../engine/lindisfarnegen';
 import { LINDISFARNE_LANDMARKS } from './lindisfarne';
 import { byggNordvik } from '../engine/worldgen';
+import {
+    byggStiklestad,
+    STIKLESTAD_PORTAL,
+    STIKLESTAD_SPAWN,
+} from '../engine/stiklestadgen';
+import { STIKLESTAD_LANDMARKS, STIKLESTAD_NPCS } from './stiklestad';
 import type { LandmarkDef, NpcDef, Sted } from '../types';
 import {
     HUB_LANDEMERKER,
@@ -334,6 +340,54 @@ const NORDVIK_1030: Sted = {
     authored: [],
 };
 
+/**
+ * Stiklestad, 29. juli 1030.
+ *
+ * Andre halvdel av kapittel 4, og det tredje kartet epoken har - etter samme
+ * mønster som Lindisfarne: ingen oppdrag, ingen spawner, og et sted som bare
+ * finnes for det ene som skal skje der.
+ *
+ * Sletta er flat og åpen med vilje. Nordvik er en fjord med fjell rundt og skog
+ * å gå seg bort i; her er det dyrket mark fra elva til lia, og ingenting å
+ * gjemme seg bak. To skjoldborger trengte nettopp en slik slette.
+ */
+const STIKLESTAD: Sted = {
+    id: 'stiklestad',
+    tittel: 'Stiklestad',
+    undertittel: '29. juli 1030 · Verdalen',
+    epokeId: 'vikingtiden',
+    kapittel: 4,
+    tema: {
+        ...EPOKE_BY_ID.vikingtiden.tema,
+        // Høysommer i en innlandsdal: tørt gress, moden åker, og en himmel som
+        // er lysere og flatere enn fjordhimmelen hjemme.
+        gress: '#94985a',
+        lov: '#7c8a42',
+        aker: '#c9a94e',
+        himmel: '#d6dcd4',
+    },
+    byggKart: byggStiklestad,
+    spawn: STIKLESTAD_SPAWN,
+    npcer: STIKLESTAD_NPCS,
+    landemerker: STIKLESTAD_LANDMARKS,
+    portaler: [
+        {
+            tile: STIKLESTAD_PORTAL,
+            maal: {
+                art: 'sted',
+                stedId: 'nordvik-1030',
+                navn: 'NORDVIK',
+                undertekst: 'HJEM',
+            },
+        },
+    ],
+    // Klarere luft enn hjemme, og ingen tåke som forklarer noe bort.
+    taake: 0.4,
+    spawner: [],
+    musikkRot: 147,
+    authored: [],
+};
+
 export const STEDER: Sted[] = [
     HUB,
     NORDVIK,
@@ -341,6 +395,7 @@ export const STEDER: Sted[] = [
     NORDVIK_872,
     NORDVIK_995,
     NORDVIK_1030,
+    STIKLESTAD,
 ];
 
 export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s) => [s.id, s]));

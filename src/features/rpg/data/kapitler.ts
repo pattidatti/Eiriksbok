@@ -69,6 +69,9 @@ export const K3 = {
 export const K4 = {
     budstikka: 'k4-budstikka',
     hvemDrar: 'k4-hvem-drar',
+    veien: 'k4-veien',
+    linja: 'k4-linja',
+    slaget: 'k4-slaget',
 } as const;
 
 /** Flagg kapittel 4 setter, og som slaget og mellomspillet leser. */
@@ -77,6 +80,10 @@ export const K4_FLAGG = {
     sonnenMed: 'k4-sonnen-med',
     /** Eller ble han hjemme i høyet? */
     sonnenHjemme: 'k4-sonnen-hjemme',
+    /** Sto rekka der hun sto, i halvannet minutt? */
+    holdtLinja: 'k4-holdt-linja',
+    /** Eller åpnet det seg et hull der hun sto? */
+    brast: 'k4-rekka-brast',
 } as const;
 
 /** Flagg kapittel 3 setter, og som mellomspillet og kapittel 4 leser. */
@@ -305,6 +312,24 @@ export const KAPITLER: KapittelDef[] = [
                 tittel: 'Hvem drar',
                 mal: 'Åsmund er femten og har slipt spydet sitt to ganger. Svar ham.',
                 krever: [K4.budstikka],
+            },
+            {
+                id: K4.veien,
+                tittel: 'Inn fjorden',
+                mal: 'Båtene ligger klare ved naustet. Ro ut med de andre.',
+                krever: [K4.hvemDrar],
+            },
+            {
+                id: K4.linja,
+                tittel: 'Hvor du skal stå',
+                mal: 'Skofte har stått i en skjoldborg før. Hør på ham før du stiller deg opp.',
+                krever: [K4.veien],
+            },
+            {
+                id: K4.slaget,
+                tittel: 'Rekka',
+                mal: 'Still deg i rekka. Seier er å bli stående, ikke å drepe noen.',
+                krever: [K4.linja],
             },
         ],
         // Æren avgjør hvem som stiller seg ved siden av deg - det er den samme
