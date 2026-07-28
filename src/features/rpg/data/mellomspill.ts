@@ -466,6 +466,232 @@ export const MELLOMSPILL: MellomspillDef[] = [
             knapp: 'Legg fra deg kildene',
         },
     },
+    {
+        id: 'mellomspill-3',
+        nr: 3,
+        tittel: 'Hvem gagner denne fortellingen?',
+        apning: {
+            tittel: 'Ute av året',
+            tekst:
+                'Skipet er borte ut fjorden. Der hovet sto, ligger grunnen flat, og til våren står det en kirke der.\n\n' +
+                'Legg 995 fra deg en stund. På bordet foran deg ligger to kilder om det som skjedde med landet ditt. Begge er skrevet av kristne, for det var bare kristne som kunne skrive. Legg dem ut, og spør et nytt spørsmål av dem: hvem gagner denne fortellingen?',
+        },
+        kort: [
+            {
+                kildeId: 'kulisteinen',
+                knapp: 'Legg ut steinen',
+                veiinger: [
+                    {
+                        id: 'kuli-hvem-betalte',
+                        sporsmal: 'Hvem bestemte hva som skulle stå her?',
+                        svar: [
+                            {
+                                tekst: 'Kongen. Slike steiner var kongens kunngjøringer.',
+                                riktig: false,
+                                respons:
+                                    'Ingen konge er nevnt. Det står to navn på steinen, og ingen av dem er kongelige.',
+                            },
+                            {
+                                tekst: 'Tore og Halvard, som betalte for den.',
+                                riktig: true,
+                                respons: 'Ja. Den som betaler steinhuggeren, bestemmer ordene.',
+                            },
+                            {
+                                tekst: 'Presten i bygda.',
+                                riktig: false,
+                                respons:
+                                    'Kanskje han hjalp til. Men det er ikke hans navn som står der.',
+                            },
+                        ],
+                        fasit:
+                            'En runestein er ikke en nøytral opplysning som har blitt liggende. Den er et monument noen har bekostet, og hvert eneste ord er valgt og betalt for.\n\n' +
+                            'De to kunne ha nøyd seg med å minnes Ulvljot. De valgte å skrive en setning til, om kristendommen og om Norge. Det er den setningen som gjør steinen viktig - og den sier like mye om Tore og Halvard som om landet.',
+                    },
+                    {
+                        id: 'kuli-hva-vet-vi',
+                        sporsmal: 'Hva er det steinen faktisk forteller oss?',
+                        svar: [
+                            {
+                                tekst: 'At Olav Tryggvason kristnet Norge i 995.',
+                                riktig: false,
+                                respons:
+                                    'Steinen nevner ikke Olav. Den nevner ikke ett eneste årstall heller.',
+                            },
+                            {
+                                tekst: 'At noen på 1000-tallet mente at kristendommen hadde vært her i tolv vintre.',
+                                riktig: true,
+                                respons: 'Ja. Ikke mer enn det - og det er faktisk mye.',
+                            },
+                            {
+                                tekst: 'At alle på Smøla var kristne.',
+                                riktig: false,
+                                respons: 'Det står ingenting om alle. Det står noe om tolv vintre.',
+                            },
+                        ],
+                        fasit:
+                            'Forskerne er uenige om hva de tolv vintrene teller fra. Olav Tryggvason? Håkon den gode? Et bestemt ting der loven ble endret? Steinen sier det ikke, for de som gikk forbi visste det allerede.\n\n' +
+                            'Det er slik korte kilder er: de sier det leseren ikke visste, og tier om det alle visste. Tusen år etterpå er det motsatt.',
+                    },
+                    {
+                        id: 'kuli-navnet',
+                        sporsmal: 'Hvorfor er ordet «Norge» på denne steinen viktig?',
+                        svar: [
+                            {
+                                tekst: 'Fordi det er første gang landsnavnet er skrevet ned her i landet.',
+                                riktig: true,
+                                respons:
+                                    'Ja. Kirken og kongemakten kom, og med dem et land som hadde et navn.',
+                            },
+                            {
+                                tekst: 'Fordi det beviser at Norge var samlet til ett rike.',
+                                riktig: false,
+                                respons:
+                                    'Et navn er ikke et rike. Det tok flere hundre år til før noen styrte alt som lå innenfor det.',
+                            },
+                            {
+                                tekst: 'Fordi steinen er den eldste i Norge.',
+                                riktig: false,
+                                respons: 'Det er den ikke i nærheten av. Det er ordene som er nye.',
+                            },
+                        ],
+                        fasit:
+                            'Torstein i 793 leste «Nordvegen» på steinen ved veien - en seilingslei, ikke et land. På Kulisteinen står navnet om noe annet: et sted som har en historie, og en kristendom som har vart i tolv vintre.\n\n' +
+                            'De to tingene kom sammen. Kirken trengte et rike å være kirke i, og kongen trengte en kirke som sa at han skulle styre.',
+                    },
+                ],
+            },
+            {
+                kildeId: 'heimskringla-kristningen',
+                knapp: 'Legg ut sagaen',
+                veiinger: [
+                    {
+                        id: 'snorre-hvem-for',
+                        sporsmal: 'Hvem skrev Snorre for?',
+                        svar: [
+                            {
+                                tekst: 'For kongsætta i Norge og folk som hadde makt.',
+                                riktig: true,
+                                respons: 'Ja. Snorre hadde vært gjest hos kongen selv.',
+                            },
+                            {
+                                tekst: 'For bøndene, så de skulle vite hva som hadde hendt.',
+                                riktig: false,
+                                respons:
+                                    'Bønder leste ikke. En bok på 1200-tallet var skrevet for hånd og kostet en formue.',
+                            },
+                            {
+                                tekst: 'For kirken i Roma.',
+                                riktig: false,
+                                respons: 'Han skriver på norrønt, ikke latin. Roma leste ikke dette.',
+                            },
+                        ],
+                        fasit:
+                            'Snorre skriver om kongene, for etterkommerne av kongene. Det gjør ham ikke til en løgner - han er ofte kritisk, og han sier tydelig at Olav drepte og lemlestet folk.\n\n' +
+                            'Men det avgjør hva slags fortelling han leter etter: en fortelling om konger som gjorde noe. Bøndene i den fortellingen er noe som blir gjort noe med.',
+                    },
+                    {
+                        id: 'snorre-hvordan-vet-han',
+                        sporsmal: 'Hvordan kan Snorre vite hva som ble sagt i Viken i 995?',
+                        svar: [
+                            {
+                                tekst: 'Han hadde brev og protokoller fra den gang.',
+                                riktig: false,
+                                respons:
+                                    'Det fantes ingen. Ingen i Norge skrev brev om ting på 990-tallet.',
+                            },
+                            {
+                                tekst: 'Det kan han ikke. Han bygger på eldre sagaer og på fortellinger som er gått fra munn til munn i 230 år.',
+                                riktig: true,
+                                respons: 'Ja. Og han skriver samtalene som om noen sto og hørte på.',
+                            },
+                            {
+                                tekst: 'Han var der. Sagaen er et øyenvitne.',
+                                riktig: false,
+                                respons: 'Snorre ble født i 1179. Det er 184 år for sent.',
+                            },
+                        ],
+                        fasit:
+                            'Snorre gjengir hva Olav sa til slektningene sine, ord for ord. Ingen skrev det ned den gangen. Replikkene er en måte å fortelle på, ikke et referat.\n\n' +
+                            'Det betyr ikke at alt er oppdiktet. Det betyr at du må skille mellom det som kan ha overlevd 230 år - hvem, hvor, omtrent når - og det som ikke kan det: hva folk sa, tenkte og følte.',
+                    },
+                    {
+                        id: 'snorre-gagner',
+                        sporsmal: 'Hvem gagner fortellingen om at kongen kristnet landet?',
+                        svar: [
+                            {
+                                tekst: 'Ingen. Det er bare det som skjedde.',
+                                riktig: false,
+                                respons:
+                                    'Noe kan være sant og gagne noen samtidig. De to spørsmålene er ikke det samme.',
+                            },
+                            {
+                                tekst: 'Kongsætta og kirken. Begge to får sin rett til å styre fra den.',
+                                riktig: true,
+                                respons: 'Ja. Og de er de eneste to som betaler for bøker.',
+                            },
+                            {
+                                tekst: 'Islendingene, som ville ha æren.',
+                                riktig: false,
+                                respons:
+                                    'Snorre er islending, men fortellingen gjør ingen islending stor. Den gjør en norsk konge stor.',
+                            },
+                        ],
+                        fasit:
+                            'Er landet kristnet av en konge, følger to ting: kongsætta har gjort noe stort, og kirken har fått landet av kongen. Begge deler var verdt penger og makt på 1200-tallet.\n\n' +
+                            'Dette er partiskhetslinsen: ikke «lyver kilden», men «hvem tjener på at det fortelles slik». Den kan du legge på hva som helst - også på en lærebok, og også på dette spillet.',
+                    },
+                ],
+            },
+        ],
+        tomtFelt: {
+            knapp: 'Se etter dem som sa nei',
+            feltNavn: 'De som holdt på den gamle sida',
+            feltSvar: 'Ingen ord, noe sted',
+            tittel: 'Ingen av dem har skrevet en eneste setning.',
+            tekst:
+                'Ikke et brev. Ikke en runestein. Ikke ett kvad om hvorfor hovet var verdt å holde.\n\n' +
+                'Alt vi vet om den gamle sida, vet vi fra folk som mente den var feil: Snorre, som er kristen, kirkemenn som skrev om den for å vise hvor mørkt det var før, og arkeologer som graver opp ting uten ord i.\n\n' +
+                'Du holdt et blot. Du vet hvordan det luktet, hvem som kom, og hva som ble sagt. Ingenting av det står noe sted.',
+            hvisFlagg: {
+                flagg: 'k3-nektet',
+                tekst: 'Du sa nei, høyt, mens tolv menn hørte på. Det skrev heller ingen ned.',
+            },
+            veiing: {
+                id: 'tomt-de-som-sa-nei',
+                sporsmal: 'Hva følger av at bare den ene siden skrev?',
+                svar: [
+                    {
+                        tekst: 'At vi ikke kan vite noe om hva de mente.',
+                        riktig: false,
+                        respons:
+                            'Litt kan vi. Arkeologien viser hva de gjorde, og motstanderne gjengir dem - skjevt, men de gjengir dem.',
+                    },
+                    {
+                        tekst: 'At vi må lese vinnernes tekster og hele tiden spørre hva de utelot.',
+                        riktig: true,
+                        respons: 'Ja. Det er den eneste veien inn, og den må gås forsiktig.',
+                    },
+                    {
+                        tekst: 'At vi må regne med at alt de skrev er løgn.',
+                        riktig: false,
+                        respons:
+                            'Da satt vi igjen med ingenting. En partisk kilde er ikke en verdiløs kilde.',
+                    },
+                ],
+                fasit:
+                    'Snorre skriver at Olav drepte, lemlestet og landsforviste dem som talte imot. Det er hans egen side som forteller det, og det gjør opplysningen sterkere, ikke svakere: den er ikke til hans fordel.\n\n' +
+                    'Slik leser man vinnernes kilder. Du leter etter det som står der selv om det skader den som skrev - og du husker hele tiden hvem som ikke fikk ordet.',
+            },
+        },
+        begreper: ['partiskhet', 'vinnerens-penn'],
+        slutt: {
+            tittel: 'Bordet står',
+            tekst:
+                'Tolv ord i stein, betalt av to menn. Et kapittel skrevet 230 år etter, for kongsætta. Og ingenting fra dem som holdt fast.\n\n' +
+                'Det er ikke slik at vi ikke vet noe om kristningen. Det er slik at nesten alt vi vet, kommer fra dem som vant den.',
+            knapp: 'Legg fra deg kildene',
+        },
+    },
 ];
 
 export const MELLOMSPILL_BY_ID: Record<string, MellomspillDef> = Object.fromEntries(

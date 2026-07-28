@@ -16,6 +16,12 @@ nøklene i beltet. Mennene er ved Hafrsfjord. Hun sår åkeren, avgjør hvem av
 tre som får korn av henne, møter dem som kommer for å ta gården, fører en
 drapssak på tinget - og ser om det er nok til vinteren.
 
+**Kapittel 3 er 995.** Han er Torgils, oldebarnet hennes. En knarr med tolv
+brynjekledde menn og en prest ligger i vika, og kongen krever at hovet skal
+stå tomt til vinternettene. Han holder blot, går en holmgang på utstrakt hud,
+og svarer til slutt på vegne av hele husstanden. Kirken reises på hovets grunn
+uansett hva han svarte.
+
 Dette er et eget spor, adskilt fra 3D-mini-spillmotoren i `src/games/engine/`
 og fra mikrospillene i `src/components/microgames/`.
 
@@ -54,6 +60,7 @@ data/
   vaapen.ts              Skjold, angrepsform per våpenart og kostnadene i kampen
   nordvik.ts             Nordvik i 793: NPC-er, landemerker og håndskrevne oppdrag
   nordvik872.ts          Nordvik i 872: de som ble igjen, haugen og bua
+  nordvik995.ts          Nordvik i 995: hovet, de to haugene og kongens folk
   steder.ts              STEDER-registeret. Ett sted = ett kart med alt som hører til
 engine/
   boot.ts                Starter Phaser (dynamisk import), starter scenen på et stedId
@@ -74,6 +81,7 @@ engine/
   aere.ts                Ære, ætt-ære, priser - og om naboætta stiller opp
   gaarden.ts             Året i 872: årstidsskiftene, bua og oppgjøret
   angrepet.ts            Båten i vika: kampen, og kampen som ikke skjer
+  holmgang.ts            Huden på vollen: tre skjold, kanten og holmløsningen
   ting.ts                Sakens fire trinn: frist, vitner, hjemmel, dom
   raidet.ts              Lindisfarne, i to halvdeler
   lindisfarnegen.ts      Bygger klosterøya
@@ -98,7 +106,8 @@ components/              Karakterskaper, HUD, hall-HUD, dialog, kunnskapsutfordr
                          sekk, logg, butikk, skjermkontroll, atmosfære-overlegg,
                          klippscene (bjelker og replikk), skroget, navigasjonen,
                          mellomspillet (bordet med kildene), minnetreet,
-                         opptakten, bua (Forradet) og tinget (Tingsak)
+                         opptakten, bua (Forradet), tinget (Tingsak),
+                         blotet (Blotet) og vinternettene (Vinternettene)
 ```
 
 ## Slik henger læring og spill sammen
@@ -537,6 +546,46 @@ Ting som er lette å ødelegge her:
     `Gaarden.bua()` tar bort «La året gå videre» - ellers finnes det en vei
     rundt kapittelets eneste kamp, og en vei til å la et drap bli ulyst for godt.
 
+## Kapittel 3: 995
+
+Samme gård, 123 år etter Åsa. Torgils er nitten og har aldri sett noe annet
+enn hovet oppe i lia. Så kommer Olav Tryggvasons folk inn vika.
+
+| Steg | Hva | Hvor |
+| --- | --- | --- |
+| `k3-knarren` | Kongens mann sier hva fristen er | `data/nordvik995.ts` |
+| `k3-blotet` | Hvem, hva, når - og ingen som retter ham | `components/Blotet.tsx` |
+| `k3-holmgangen` | Huden, tre skjold, kanten | `engine/holmgang.ts` |
+| `k3-valget` | Husstanden, de tre svarene, kirken | `components/Vinternettene.tsx` |
+
+Og så: **Mellomspill III**.
+
+**Fagstoffet ligger i reglene, som ellers.** `sed` gis av å gå inn i hovet og se
+hva som *ikke* finnes der: ingen bok, ingen benkerad, ingen menighet. `blot` gis
+bare når gaven passer til guden og til tiden - Frøy gir avling, Odin gjør ikke
+det. `holmgang` gis av alle tre utgangene, for det eleven skal sitte igjen med
+er at reglene avgjorde. `kristningen` gis av å svare kongen på vegne av hele
+gården, for det var slik det skjedde: én gård av gangen, ikke ett menneske.
+
+Ting som er lette å ødelegge her:
+
+-   **Blotet retter ingen.** Passet gaven ikke, går folk hjem tidlig og ingen
+    sier hvorfor. Legger noen inn en «feil»-melding her, ryker hele forskjellen
+    mellom en sed og en lære.
+-   **Ingen dør på huden.** Skjalg er `udodelig` og eleven står i øvingsmodus.
+    Det er ikke en snillhet - holmgangen ble avgjort av at blodet falt, og den
+    som tapte betalte tre mark sølv. Skrus det av, dør en av dem, og da har
+    kapittelet mistet både regelen og tapsmuligheten som ikke er død.
+-   **Hun må stilles opp på huden.** `Holmgang.start()` flytter henne inn.
+    Uten det begynner kampen der landemerket sto - utenfor kanten - og første
+    advarsel kommer før første slag. Kanten har også 1600 ms nåde, ellers dytter
+    Skjalg henne over streken før hun har reist skjoldet.
+-   **Vinternettene kan ikke lukkes med Esc.** Fristen er ute, og det finnes
+    ikke et «senere». RpgPage har et eget unntak for nettopp den ene skjermen.
+-   **Alle tre svarene ender med kirken på hovets grunn.** Det skal ikke
+    «rettes opp» til at det å nekte redder hovet. Under gulvet i Mære kirke
+    ligger gullgubber fra hedensk kult - kirken ble reist der folk kom fra før.
+
 ## Mellomspillet: bordet med kildene
 
 Mellom to kapitler forlater eleven året hun spilte og ser tilbake på det hun
@@ -557,6 +606,15 @@ utdrag ender med «Så sier Hornklove:» og strofen han siterer, og Haraldskvade
 finnes ikke noe annet sted enn inne i Snorre og Fagrskinna. Det tomme feltet er
 **årstallet** - eleven har nettopp levd et helt år i 872, og ingen kilde gir det
 året. Ga hun korn til Haralds mann i sommer, står det en linje til.
+
+Mellomspill III kommer etter 995, og heter **«Hvem gagner denne fortellingen?»**
+Partiskhetslinsen introduseres her: ikke «lyver kilden», men hvem som tjener på
+at det fortelles slik. Kortene er Kulisteinen - tolv ord hugget i stein, betalt
+av to menn vi ikke vet noe annet om - og Snorres Olav Tryggvasons saga kap. 53,
+skrevet 230 år etter for kongsætta. Det tomme feltet er **de som sa nei**: ingen
+av dem har etterlatt seg én setning om hvorfor. Eleven har nettopp holdt et blot
+selv, og ingenting av det hun gjorde står noe sted. Nektet hun dåpen, står det
+en linje til.
 
 Bordet kommer *etter* vinteren, ikke oppå den:
 `WorldScene.bordetEtterKapittelet()` venter til beskjeden om oppgjøret er lest.
@@ -637,7 +695,7 @@ hver gang eleven kommer fram et sted.
 
 ## Verifisering
 
-Tjueen skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Tjueseks skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 `window.__rpgSteder`, storen gjennom `window.__rpgStore`), som `boot.ts` bare
 eksponerer i dev.
@@ -673,6 +731,11 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-aaret.mjs`       | Et helt år i 872, gjengaven, og sent sådd korn             |
 | `verify-rpg-angrepet.mjs`    | Begge utgangene av båten i vika                            |
 | `verify-rpg-tinget.mjs`      | Sakens fire trinn: frist, vitner, hjemmel, dom             |
+| `verify-rpg-kapittel3.mjs`   | Nordvik i 995: haugen uten stein, hovet, og porten hjem    |
+| `verify-rpg-blotet.mjs`      | Begge kveldene ved horgen, og at Esc ikke er et blot       |
+| `verify-rpg-holmgang.mjs`    | Huden, de tre skjoldene, kanten og alle tre utgangene      |
+| `verify-rpg-vinternettene.mjs` | Husstanden, de tre svarene, og kirken som kommer uansett |
+| `verify-rpg-mellomspill3.mjs` | Bordet i 995, og feltet der de som sa nei skulle stått    |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir

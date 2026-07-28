@@ -1222,12 +1222,49 @@ Vakten er `kapittel:N` i storen, så regelen gjelder alle kapitler som ender i e
 beskjed. `scripts/verify-rpg-mellomspill2.mjs` driver hele kjeden gjennom en
 ekte nettleser, begge veier gjennom kornet til Harald.
 
-**Det som gjenstår:** §13 etappe 5 - kapittel 3-5, holmgangen, skjoldborgen,
-mellomspill III-V og epilogen. Nærmest ligger kapittel 3 (995, blot eller dåp)
-med holmgangen fra §5.5. Og §16.3 står fortsatt: `ClassId` skal ut av
-karakterskaperen, men den ligger på flerspiller-tråden (`Gjest.classId`) og i
-`figurLook`. Navnet er derimot ordnet - HUD-en viser rollens navn inne i en
-epoke og elevens eget i hallen.
+**Kapittel 3 er bygget** (K3a-K3e), fra knarren i vika til bordet etterpå.
+
+| Delet | Hva som står |
+| --- | --- |
+| K3a | Nordvik 995 som eget sted: to hauger, hovet oppe i lia, kongens knarr i vika. `data/nordvik995.ts`, og `sed` gis av å gå inn i hovet |
+| K3b | Blotet (§10.4). `components/Blotet.tsx`: hvem, hva, når - og ingen som retter henne |
+| K3c | Holmgangen (§5.5). `engine/holmgang.ts`: huden, tre skjold, kanten, og holmløsningen |
+| K3d | Vinternettene. `components/Vinternettene.tsx`: husstanden, de tre svarene, og kirken på hovets grunn |
+| K3e | Mellomspill III «Hvem gagner denne fortellingen?»: Kulisteinen, Snorre, og de som sa nei |
+
+**Fem avvik og funn, alle begrunnet av at de ble prøvd:**
+
+- **Blotet kan holdes om igjen, og det er ikke en «prøv på nytt»-knapp.** §10.4
+  sier at avlingen svikter neste høst når gaven ikke passer. Kapittel 3 har
+  ingen årshjul - det varer noen uker - så følgen kan ikke ligge et år fram.
+  Den ligger i kvelden: passet gaven, blir bygda til det lysner; passet den
+  ikke, går folk hjem tidlig og ingen sier hvorfor. Horgen står der hele året,
+  og folk blotet når de trengte noe, så et nytt forsøk er periodekorrekt.
+- **Ingen dør på huden.** §5.5 sier ikke hvordan holmgangen ender. Reglene gjør:
+  den som blødde hadde tapt og kjøpte seg fri med tre mark sølv. Skjalg står
+  derfor udødelig og eleven i øvingsmodus, og kampanjen får sitt første tap som
+  ikke er død - som §16.2 ber om.
+- **Kanten trenger nåde de første 1600 ms.** Uten den skubber Skjalg henne over
+  streken før hun har rukket å reise skjoldet, og et tap som kommer av at
+  motstanderen dyttet leser som juks. Hun må også *stilles opp* på huden når den
+  legges ut; ellers begynner holmgangen der landemerket sto, altså utenfor.
+- **Alle tre svarene på vinternettene ender med kirken.** Det ser ut som at
+  valget ikke betyr noe, og det er nettopp poenget: et enkeltmenneskes svar
+  avgjorde hvem han var etterpå, ikke hvor landet gikk. Under gulvet i Mære
+  kirke ligger gullgubber fra hedensk kult.
+- **Det tomme feltet i Mellomspill III er ikke en kilde og ikke et årstall - det
+  er en side.** Ingen som holdt fast ved den gamle sida har etterlatt seg én
+  setning om hvorfor. Eleven har nettopp holdt et blot selv, og ingenting av det
+  hun gjorde står noe sted. Kortene er Kulisteinen (tolv ord, betalt av to menn)
+  og Snorres Olav Tryggvasons saga kap. 53 (230 år etter, for kongsætta).
+
+Nye prøver: `verify-rpg-kapittel3`, `verify-rpg-blotet`, `verify-rpg-holmgang`,
+`verify-rpg-vinternettene`, `verify-rpg-mellomspill3`.
+
+**Det som gjenstår:** resten av §13 etappe 5 - kapittel 4 og 5, skjoldborgen
+(§5.4), mellomspill IV og V, og epilogen. Og §16.3 står fortsatt: `ClassId` skal
+ut av karakterskaperen, men den ligger på flerspiller-tråden (`Gjest.classId`) og
+i `figurLook`.
 
 ### 13.1 Hvorfor etappe 1b kom til
 

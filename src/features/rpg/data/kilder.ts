@@ -110,6 +110,50 @@ export const KILDER: KildeDef[] = [
         henvisning:
             'Snorre Sturlason, Harald Hårfagres saga kap. 18 (Heimskringla, ca. 1230). Utdraget følger S. Schjøtts omsetting fra 1900, slik den er modernisert på norgeshistorie.no (Universitetet i Oslo), og er overført til bokmål her.',
     },
+
+    // ── Mellomspill III: kristningen ───────────────────────────────────────
+    //
+    // De to kortene er valgt slik at de ikke kan sammenlignes rett fram. Det
+    // ene er tolv ord hugget i stein av to menn som betalte for det; det andre
+    // er et helt kapittel skrevet 230 år etter, av en islending, for kongsætta.
+    // Begge er kristne kilder. Ingen av dem er skrevet av noen som sa nei.
+
+    {
+        id: 'kulisteinen',
+        navn: 'Kulisteinen',
+        art: 'innskrift',
+        naerhet: 'senere',
+        aar: 'Trolig 1000-tallet. Steinen sier selv «tolv vintre»',
+        opphav: {
+            hvem: 'Tore og Halvard. Vi vet ikke noe mer om dem enn navnene',
+            hvor: 'Kuløy på Smøla, ved seilleia nordover langs kysten',
+            for: 'Alle som gikk forbi. En stein ved veien er skrevet for øynene til folk',
+            hensikt: 'Å minnes Ulvljot - og å si noe om hvor lenge kristendommen har vært her',
+        },
+        utdrag:
+            'Tore og Halvard reiste denne steinen etter Ulfljot.\n\n' +
+            'Tolv vintre hadde kristendommen vært i Norge.',
+        henvisning:
+            'Kulisteinen (N 449), fra Kuløy på Smøla, nå på Vitenskapsmuseet i Trondheim. Innskriften har 80 bevarte runer. Oversettelsen følger Store norske leksikon (snl.no/Kulisteinen). Det er den eldste kjente skriftlige bruken av landsnavnet Norge på norsk jord, og forskerne er uenige om hvilken hendelse «tolv vintre» teller fra.',
+    },
+    {
+        id: 'heimskringla-kristningen',
+        navn: 'Heimskringla: Olav Tryggvasons saga',
+        art: 'saga',
+        naerhet: 'mye-senere',
+        aar: 'Omkring 1230, om lag 230 år etter',
+        opphav: {
+            hvem: 'Snorre Sturlason, islandsk høvding og forfatter. Kristen, som alle som kunne skrive da',
+            hvor: 'På Island, i Reykholt',
+            for: 'Kongsætta i Norge og overklassen på Island',
+            hensikt: 'Å fortelle historien om kongene - og om hvordan landet ble kristent',
+        },
+        utdrag:
+            'Kong Olav kunngjorde straks for folket at han ville pålegge alle folk i sitt rike å bli kristne. De menn som før hadde lovet ham sin støtte, var de første som rettet seg etter dette påbudet, og siden de også var de mektigste av de som var tilstede, fulgte alle de andre dem. Da ble alle døpt øst i Viken.\n\n' +
+            'Siden dro kongen nord i Viken og påla alle folk ta imot kristendommen. De som talte mot, straffet han hardt; noen drepte han og noen lot han lemleste, noen drev han bort fra landet.',
+        henvisning:
+            'Snorre Sturlason, Olav Tryggvasons saga kap. 53 (Heimskringla, ca. 1230). Oversatt av Gustav Storm (Gyldendal 1929), i den moderniserte gjengivelsen på norgeshistorie.no (Universitetet i Oslo). Bokmål.',
+    },
 ];
 
 export const KILDE_BY_ID: Record<string, KildeDef> = Object.fromEntries(

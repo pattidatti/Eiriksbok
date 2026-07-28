@@ -274,10 +274,19 @@ async function svar(page, n) {
     );
     sjekk('uavhengige kilder er forstått', slutt?.begreper?.['uavhengige-kilder'] === 'forstatt');
     sjekk('datering er forstått', slutt?.begreper?.['datering'] === 'forstatt');
-    // Kapittel 3 har ingen steg ennå, så hun blir stående i 872 med verden
-    // åpen. Den dagen kapittelet finnes, tar `gaaVidereTilNesteKapittel` over -
-    // og da er det `verify-rpg-kapittel3.mjs` som eier den overgangen.
-    sjekk('verden er hennes igjen etterpå', (await laast(page)) === false);
+    // Kapittel 3 finnes nå, så bordet er ikke en blindvei lenger:
+    // `gaaVidereTilNesteKapittel` sender henne til Nordvik i 995, og opptakten
+    // eier skjermen i det hun kommer fram. Selve overgangen måles av
+    // `verify-rpg-kapittel3.mjs`; her holder det å se at hun ble sendt videre
+    // og ikke ble stående i 872 med et ryddet bord.
+    await page.waitForTimeout(4200);
+    sjekk(
+        'hun sendes videre til 995',
+        (await page.evaluate(
+            () => window.__rpg?.scene.getScene('verden')?.sted?.id ?? null
+        )) === 'nordvik-995'
+    );
+    sjekk('og opptakten eier skjermen', (await page.locator('[data-prove="opptakt"]').count()) === 1);
     sjekk('ingen konsollfeil', konsollfeil.length === 0, konsollfeil.slice(0, 2).join(' | '));
 
     await page.close();

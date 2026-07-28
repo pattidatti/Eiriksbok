@@ -165,6 +165,22 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Jeg har korset på meg i Jorvik og hammeren på meg her. Begge deler er ekte nok.',
     },
     {
+        id: 'partiskhet',
+        navn: 'Hvem gagner fortellingen?',
+        forklaring:
+            'Alle kilder er skrevet av noen, for noen, med en hensikt. Spørsmålet er ikke om kilden lyver, men hvem som tjener på at det fortelles akkurat slik. En runestein er betalt av den som reiste den. En kongesaga er skrevet for kongsætta. Linsen kan legges på hva som helst - også på en lærebok.',
+        forstasVed: 'Vei to kristne kilder om kristningen mot hverandre, og finn ut hvem hver av dem tjener.',
+        replikk: 'Noe kan være sant og gagne noen samtidig. Det er ikke det samme spørsmålet.',
+    },
+    {
+        id: 'vinnerens-penn',
+        navn: 'Vinnerens penn',
+        forklaring:
+            'Alt vi vet om den gamle norrøne sida, er skrevet av folk som mente den var feil. De som holdt fast, etterlot seg ikke én setning om hvorfor - de kunne ikke skrive, og de som kunne, var kristne. Da må man lese vinnernes tekster og hele tiden spørre hva de utelot. Det som står der selv om det skader den som skrev, er ofte det sikreste du har.',
+        forstasVed: 'Let etter noe skrevet av dem som sa nei til dåpen, og finn ingenting.',
+        replikk: 'Du holdt et blot. Ingenting av det står noe sted.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:
