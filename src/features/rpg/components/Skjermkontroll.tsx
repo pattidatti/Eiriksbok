@@ -11,23 +11,21 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { tilSpill } from '../engine/bridge';
 
-/** Himmeltone og vignett. Fargen kommer fra sonens tema. */
+/**
+ * Himmeltonen. Fargen kommer fra sonens tema.
+ *
+ * Vignetten lå her før. Den bor nå i `engine/verdenfx.ts` sammen med resten av
+ * graderingen: to vignetter oppå hverandre ble en mørk ring rundt bildet, ikke
+ * dybde. Igjen står bare en tone som skal være så svak at man ikke ser den før
+ * man skrur den av.
+ */
 export function Atmosfare({ himmel }: { himmel: string | null }) {
     if (!himmel) return null;
     return (
-        <div className="pointer-events-none absolute inset-0 z-10">
-            <div
-                className="absolute inset-0 mix-blend-multiply"
-                style={{ background: himmel, opacity: 0.1 }}
-            />
-            <div
-                className="absolute inset-0"
-                style={{
-                    background:
-                        'radial-gradient(ellipse at center, rgba(11,16,24,0) 42%, rgba(11,16,24,0.34) 100%)',
-                }}
-            />
-        </div>
+        <div
+            className="pointer-events-none absolute inset-0 z-10 mix-blend-multiply"
+            style={{ background: himmel, opacity: 0.07 }}
+        />
     );
 }
 

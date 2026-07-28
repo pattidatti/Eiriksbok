@@ -55,6 +55,8 @@ import {
     forgeTallfont,
 } from './spriteforge';
 import { forgeProps, forgeTiles } from './tileforge';
+import { STANDARD_LYS, hengPaVerdenFX, type VerdenFX } from './verdenfx';
+import { STANDARD_VAER, Vaer, forgeVaer } from './systems/vaer';
 import { Effekter } from './systems/effekter';
 import { Fiender } from './systems/fiender';
 import { Gjester } from './systems/gjester';
@@ -128,8 +130,12 @@ export class WorldScene extends Phaser.Scene {
     private stillingTimer = 0;
     /** Partikler, flytende tall og glimt. Kjenner ingen spillregler. */
     private efx = new Effekter(this);
-    /** Bakken, kollisjonen, objektene og atmosfæren. Kjenner ingen spillregler. */
+    /** Bakken, kollisjonen og objektene. Kjenner ingen spillregler. */
     private verden!: Verden;
+    /** Skyer, tåke, røyk, gnister og fugler. Alt som ligger over verden. */
+    private vaer!: Vaer;
+    /** Graderingen. Null når maskinen ikke har WebGL - da spiller vi ugradert. */
+    private lys: VerdenFX | null = null;
     private kompassTimer = 0;
     private kompassAktivt = false;
 
@@ -174,12 +180,14 @@ export class WorldScene extends Phaser.Scene {
         forgeTiles(this, tema);
         forgeProps(this, tema);
         forgeEffects(this);
+        forgeVaer(this);
         forgeSkjold(this);
         forgeTallfont(this);
         forgeLootIcons(this);
         for (const def of ENEMIES) forgeEnemy(this, def);
 
         this.verden = new Verden(this, this.kart, tema);
+        this.vaer = new Vaer(this, this.kart, tema);
         this.lootSystem = new Loot(this, this.efx, () => this.helt.sprite);
         this.skudd = new Prosjektiler(this, this.efx, this.kart, {
             spiller: () => this.helt.sprite,
@@ -384,8 +392,11 @@ export class WorldScene extends Phaser.Scene {
         this.farkoster.bygg();
         this.porter.bygg();
         this.fiendeSystem.byggBoss();
-        this.verden.byggAtmosfare(sted.landemerker, sted.taake ?? 1);
+        this.verden.meldHimmel();
         this.settOppKamera();
+        // Været bygges *etter* kameraet. Fnugget og fuglene sender ut partikler
+        // der kameraet står, og før `settOppKamera` står det på 0,0 med zoom 1.
+        this.vaer.bygg(sted.landemerker);
         this.lyttPaaUi();
 
         startMusikk(sted.musikkRot, 0);
@@ -549,6 +560,14 @@ export class WorldScene extends Phaser.Scene {
         // Zoom tilpasses skjermen, men holdes på hele tall så pikslene forblir skarpe.
         cam.setZoom(this.skjermZoom());
         cam.setRoundPixels(true);
+
+        // Etterbehandlingen henges på til slutt, når kameraet ellers står ferdig.
+        this.lys = hengPaVerdenFX(
+            this,
+            this.sted.tema.lys ?? STANDARD_LYS,
+            this.sted.tema.vaer ?? STANDARD_VAER,
+            this.sted.taake ?? 1
+        );
 
         // Skalamanageren overlever scenen. Uten avmeldingen ville hver reise
         // legge igjen en lytter til, og etter fem stedskifter ville fem
@@ -811,7 +830,11 @@ export class WorldScene extends Phaser.Scene {
         this.lootSystem.oppdater(dt);
         this.oppdaterDybde();
         this.fiendeSystem.oppdaterSpawn(dt);
-        this.verden.oppdaterAtmosfare(dt);
+        // Været går i vanlig tid, ikke i saktefilm. En sky som bråbremser fordi
+        // eleven felte en fiende, avslører at verden bare er kulisser.
+        this.vaer.oppdater(delta);
+        this.verden.oppdaterSvai(delta, (x) => this.vaer.kastevind(x));
+        this.oppdaterLys();
         this.meldStilling(delta);
         this.oppdaterKompass(dt);
         // HUD-en og hjerteslaget skal gå i vanlig tid, ikke i saktefilm.
@@ -897,6 +920,20 @@ export class WorldScene extends Phaser.Scene {
             );
             this.efx.pikselSprut(this.helt.sprite.x, this.helt.sprite.y - 10, 0xffe9a8, 22);
         }
+    }
+
+    /**
+     * Gir etterbehandlingen kameraets ståsted, så sollyset ligger i verden og
+     * ikke på skjermen. Uten dette ville lysfeltene følge etter eleven når hun
+     * går, og lese som en flekk på linsa i stedet for som sol mellom skyene.
+     */
+    private oppdaterLys() {
+        if (!this.lys) return;
+        const cam = this.cameras.main;
+        this.lys.tid = this.vaer.sekunder;
+        this.lys.skiftX = cam.scrollX;
+        this.lys.skiftY = cam.scrollY;
+        this.lys.zoom = cam.zoom;
     }
 
     /**
@@ -1825,7 +1862,24 @@ export class WorldScene extends Phaser.Scene {
                 const cam = this.cameras.main;
                 cam.startFollow(this.helt.sprite, true, 0.12, 0.12);
             },
-            taake: (tetthet, ms) => this.verden.settTaake(tetthet, ms),
+            // Klippene bruker tåka som vær: stranda ved Lindisfarne skal ikke
+            // ligge like tykk som naustet hjemme. Den lå i sprites før og tones
+            // nå i shaderen - ett tall i stedet for tolv alfaverdier, men samme
+            // regel: skru på faktoren, aldri på grunntettheten, ellers har et
+            // klipp som toner til null ingenting å komme tilbake til.
+            //
+            // Uten WebGL står `lys` som null. Da er det ingen tåke å tone, og
+            // klippet skal gå videre som om ingenting skjedde.
+            taake: (tetthet, ms) => {
+                const lys = this.lys;
+                if (!lys) return;
+                const maal = Math.max(0, tetthet);
+                if (ms <= 0) {
+                    lys.taakeSkala = maal;
+                    return;
+                }
+                this.tweens.add({ targets: lys, taakeSkala: maal, duration: ms });
+            },
             zoom: (andel, ms) => {
                 const cam = this.cameras.main;
                 const hjem = this.skjermZoom();

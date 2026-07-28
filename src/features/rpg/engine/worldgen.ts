@@ -11,6 +11,7 @@ export interface PropPlacement {
     kind:
         | 'tre'
         | 'busk'
+        | 'blomst'
         | 'stein'
         | 'langhus'
         | 'bu'
@@ -473,6 +474,10 @@ export function byggNordvik({
     strø('tre', 130, { w: 10, h: 8, dy: 12 }, 3, (x, y) => y < 18 || y > 38 || x > 44);
     strø('busk', 60, undefined, 2);
     strø('stein', 34, { w: 12, h: 8, dy: 4 }, 3);
+    // Blomster sist, og bare i gresset. De merker ingen ruter som opptatt via
+    // `erLedig` som alle andre - men de er små nok til at et tre som står i
+    // samme rute leser som en blomst *ved foten av* treet, ikke som en feil.
+    strø('blomst', 170, undefined, 3, (x, y) => terreng[y][x] === 'gress');
 
     // ── Hvor fiender får dukke opp ──────────────────────────────────────────
     const spawnRuter: [number, number][] = [];
