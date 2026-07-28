@@ -162,8 +162,16 @@ const etter = await tilstand();
 sjekk('bordet er fullført', etter?.steg?.includes('mellomspill:mellomspill-3'));
 sjekk('partiskhet er forstått', etter?.begreper?.partiskhet === 'forstatt');
 sjekk('vinnerens penn er forstått', etter?.begreper?.['vinnerens-penn'] === 'forstatt');
-// Kapittel 4 er ikke bygget. Da skal hun bli stående, ikke sendes til et tomt kart.
-sjekk('hun blir stående i 995', etter?.kapittel === 3, String(etter?.kapittel));
+// Og så begynner 1030 med én gang. Å la eleven bli stående i 995 etter at
+// kildene er lagt bort, ville gjort kampanjen til en samling årstall hun må
+// finne inngangen til selv.
+await page.waitForTimeout(4200);
+sjekk('hun sendes videre til 1030', etter?.kapittel === 4, String(etter?.kapittel));
+sjekk(
+    'og til gården, ikke til sletta',
+    (await page.evaluate(() => window.__rpg?.scene.getScene('verden')?.sted?.id ?? null)) ===
+        'nordvik-1030'
+);
 
 sjekk('ingen konsollfeil', konsollfeil.length === 0, konsollfeil.slice(0, 3).join(' | '));
 

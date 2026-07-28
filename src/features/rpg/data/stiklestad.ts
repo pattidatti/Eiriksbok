@@ -168,7 +168,7 @@ export const STIKLESTAD_LANDMARKS: LandmarkDef[] = [
         kind: 'skilt',
         tile: [22, 13],
         title: 'Veien ned dalen',
-        text: 'Veien kommer ned fra Sul, fra fjellovergangen mot Sverige. Det er den kongen har brukt.\n\nDere kan se merket hans oppe i bakken. Under det står det tre og et halvt tusen mann, sier de som teller. Nede på sletta står dere. Snorre kommer til å skrive fjorten tusen, og det er ingen som tror på det tallet i dag.\n\nEn hær som er kalt ut med budstikke, kan ikke telles av noen. Det finnes ingen lister.',
+        text: 'Veien kommer ned fra Sul, fra fjellovergangen mot Sverige. Det er den kongen har brukt.\n\nDere kan se merket hans oppe i bakken. Ingen vet hvor mange som står under det. Om to hundre år kommer Snorre til å skrive at kongen hadde 3600 mann og at dere var over 7000 - og historikerne i dag mener at kongen kanskje hadde noen hundre.\n\nEn hær som er kalt ut med budstikke, kan ikke telles av noen. Det finnes ingen lister.',
         stikkord: ['stiklestad', 'hær', 'antall'],
     },
     {

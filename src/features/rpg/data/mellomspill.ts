@@ -692,6 +692,229 @@ export const MELLOMSPILL: MellomspillDef[] = [
             knapp: 'Legg fra deg kildene',
         },
     },
+    {
+        id: 'mellomspill-4',
+        nr: 4,
+        tittel: 'Hvordan en taper blir en helgen',
+        apning: {
+            tittel: 'Ute av året',
+            tekst:
+                'Det er gått et år. Høyet ble berget det året også, og enga ble slått til vanlig tid i sommer.\n\n' +
+                'Legg 1030 fra deg en stund. På bordet foran deg ligger to beretninger om slaget du sto i. Den ene er skrevet av en mann som kjente kongen. Den andre er skrevet to hundre år senere.\n\n' +
+                'Les dem i den rekkefølgen, og se etter én ting: hva som er kommet til underveis.',
+        },
+        kort: [
+            {
+                kildeId: 'sigvat-erfidrapa',
+                knapp: 'Legg ut diktet',
+                veiinger: [
+                    {
+                        id: 'sigvat-hvem-sin-mann',
+                        sporsmal: 'Hvem sin mann var Sigvat?',
+                        svar: [
+                            {
+                                tekst: 'Kongens egen. Han var skald og stallare i hirden hans.',
+                                riktig: true,
+                                respons: 'Ja. Han levde av kongen, og han diktet om ham mens han levde også.',
+                            },
+                            {
+                                tekst: 'Han var en uavhengig islending som bare fortalte det han hørte.',
+                                riktig: false,
+                                respons:
+                                    'Islending var han. Uavhengig var han ikke - han hadde hatt embete hos kongen i femten år.',
+                            },
+                            {
+                                tekst: 'Han sto på bondesiden og skiftet mening etterpå.',
+                                riktig: false,
+                                respons: 'Nei. Han var kongens mann hele veien, og diktet er et minnedikt.',
+                            },
+                        ],
+                        fasit:
+                            'Sigvat er den nærmeste kilden vi har til Stiklestad. Han er også kongens egen skald, og et minnedikt er skrevet for at den døde skal huskes på en bestemt måte.\n\n' +
+                            'Begge deler er sanne samtidig. Nærhet gjør ikke en kilde nøytral, og partiskhet gjør den ikke verdiløs - de er to spørsmål, og du må stille begge.',
+                    },
+                    {
+                        id: 'sigvat-var-han-der',
+                        sporsmal: 'Var han på Stiklestad?',
+                        svar: [
+                            {
+                                tekst: 'Ja. Han sto i kongens hird, der hirden sto.',
+                                riktig: false,
+                                respons: 'Det skulle man tro. Han var i Roma.',
+                            },
+                            {
+                                tekst: 'Nei. Han var på pilegrimsferd til Roma og hørte om det på hjemveien.',
+                                riktig: true,
+                                respons: 'Ja. Den nærmeste kilden vår var ikke der.',
+                            },
+                            {
+                                tekst: 'Han sto blant bøndene, men diktet for kongen etterpå.',
+                                riktig: false,
+                                respons: 'Nei. Han var ikke i landet i det hele tatt.',
+                            },
+                        ],
+                        fasit:
+                            'Du sto der. Han gjorde ikke. Likevel er det hans ord som er blitt til alt vi vet, og du har ikke skrevet en eneste setning.\n\n' +
+                            'Det er ikke en urettferdighet noen har funnet på. Det er hva skriftkyndighet er: den som kan skrive, får fortelle - også om det han ikke så.',
+                    },
+                    {
+                        id: 'sigvat-hva-sier-strofen',
+                        sporsmal: 'Hva er det strofen faktisk påstår?',
+                        svar: [
+                            {
+                                tekst: 'At det ble mørkt som natten midt i slaget.',
+                                riktig: false,
+                                respons: 'Det står ikke der. Se etter en gang til - det er kortere enn du husker.',
+                            },
+                            {
+                                tekst: 'At sola ikke varmet, enda himmelen var skyfri, og at det var et jærtegn.',
+                                riktig: true,
+                                respons: 'Ja. Det er alt han sier om himmelen den dagen.',
+                            },
+                            {
+                                tekst: 'At Gud straffet bøndene for det de hadde gjort.',
+                                riktig: false,
+                                respons: 'Ikke ett ord om straff. Bare om et tegn.',
+                            },
+                        ],
+                        fasit:
+                            'Sju linjer, og de sier én ting: sola varmet ikke, og det var et tegn.\n\n' +
+                            'Merk deg hvor lite det er. Det er den korteste utgaven av dette som finnes, og den er den eldste. Hold den i hodet mens du leser det neste kortet.',
+                    },
+                ],
+            },
+            {
+                kildeId: 'heimskringla-stiklestad',
+                knapp: 'Legg ut sagaen',
+                veiinger: [
+                    {
+                        id: 'snorre-hva-er-lagt-til',
+                        sporsmal: 'Hva har himmelen fått som den ikke hadde hos Sigvat?',
+                        svar: [
+                            {
+                                tekst: 'Ingenting. De to sier det samme med ulike ord.',
+                                riktig: false,
+                                respons:
+                                    'Les dem ved siden av hverandre. Den ene har en skyløs himmel, den andre en rød sky.',
+                            },
+                            {
+                                tekst: 'En rød sky, og mørke som natten - og skyløs himmel er blitt borte.',
+                                riktig: true,
+                                respons: 'Ja. Og det motsatte har skjedd med skyene på veien.',
+                            },
+                            {
+                                tekst: 'En solformørkelse, som Snorre navngir.',
+                                riktig: false,
+                                respons:
+                                    'Snorre sier ikke solformørkelse. Det er vi som leser det inn, fordi vi vet at det finnes.',
+                            },
+                        ],
+                        fasit:
+                            'Sigvat: skyløs himmel, sola varmet ikke. Snorre, to hundre år senere: en rød sky, og mørkt som natten før slaget var slutt.\n\n' +
+                            'Dette er hvordan en fortelling vokser. Ingen behøver å ha løyet. Hver gang noen forteller den videre, blir det litt tydeligere hva som «egentlig» skjedde - og til slutt står det i en bok.',
+                    },
+                    {
+                        id: 'stiklestad-formorkelsen',
+                        sporsmal: 'Det var faktisk en solformørkelse i 1030. Hva gjør det med saken?',
+                        svar: [
+                            {
+                                tekst: 'Den beviser at Snorre har rett, og at mørket var ekte.',
+                                riktig: false,
+                                respons: 'Sjekk datoene før du slår fast noe.',
+                            },
+                            {
+                                tekst: 'Formørkelsen kom 31. august, og slaget sto 29. juli. Det er 33 dager imellom.',
+                                riktig: true,
+                                respons: 'Ja. Noe ekte har havnet på feil dag i fortellingen.',
+                            },
+                            {
+                                tekst: 'Ingenting. Astronomi har ikke noe med historie å gjøre.',
+                                riktig: false,
+                                respons:
+                                    'Tvert imot - det er en av de få gangene vi kan etterprøve en saga med en klokke som aldri tar feil.',
+                            },
+                        ],
+                        fasit:
+                            'Solformørkelsen 31. august 1030 var total over Sør-Trøndelag. Slaget sto 29. juli. Begge deler er ekte, og de skjedde ikke samme dag.\n\n' +
+                            'Det mest sannsynlige er at to hendelser fra samme sommer er smeltet sammen i muntlig fortelling - og at det passet altfor godt til å bli rettet på. Et jærtegn over en helgens dødsdag er verdt mer enn et jærtegn en tilfeldig tirsdag i august.',
+                    },
+                    {
+                        id: 'snorre-mot-seg-selv',
+                        sporsmal: 'Snorre lar en biskop på bondesiden si at kongen brente bygdene. Hvorfor er det verdt å merke seg?',
+                        svar: [
+                            {
+                                tekst: 'Fordi det viser at Snorre egentlig var på bøndenes side.',
+                                riktig: false,
+                                respons:
+                                    'Det var han ikke. Han skriver for kongsætta, og han ender med at kongen blir helgen.',
+                            },
+                            {
+                                tekst: 'Fordi det skader helgenen, og likevel står det der.',
+                                riktig: true,
+                                respons: 'Ja. Det er den sikreste typen opplysning du kan finne i en partisk kilde.',
+                            },
+                            {
+                                tekst: 'Fordi biskoper alltid snakker sant.',
+                                riktig: false,
+                                respons: 'Biskopen er en person i en fortelling skrevet to hundre år senere.',
+                            },
+                        ],
+                        fasit:
+                            'Snorre skriver for kongsætta, og han vet at Olav er helgen når han skriver. Likevel gjengir han at motstanderne kalte ham en som herjet i landet med røverflokker - og at en mann på bondesiden gikk mot ham fordi kongen hadde tatt skipet hans.\n\n' +
+                            'Det som står i en kilde selv om det skader den kilden vil løfte fram, er ofte det tryggeste du har. Der har fortelleren måttet ta med noe han ikke kunne komme utenom.',
+                    },
+                ],
+            },
+        ],
+        tomtFelt: {
+            knapp: 'Se etter året imellom',
+            feltNavn: 'Året mellom slaget og helgenen',
+            feltSvar: 'Ingen skrev det ned',
+            tittel: 'Ett år og fem dager. Og ingen kilde fra dem.',
+            tekst:
+                'Kongen falt 29. juli 1030. Den 3. august 1031 tok biskop Grimkjell kista opp av sanden ved Nidelva og erklærte ham hellig.\n\n' +
+                'I de tolv månedene imellom ble en slagen konge til en helgen. Det finnes ikke én tekst skrevet i det året som forteller hvordan det gikk til. Alt vi har, er skrevet etterpå, av folk som trengte at han var hellig.\n\n' +
+                'Du sto i rekka. Du var der hele dagen. Ingen har spurt deg om noe.',
+            hvisFlagg: {
+                flagg: 'k4-holdt-linja',
+                tekst: 'Rekka di holdt. Det står ikke noe sted heller.',
+            },
+            veiing: {
+                id: 'tomt-aaret-imellom',
+                sporsmal: 'Det eldste vitnesbyrdet om at Olav var hellig, er et dikt fra 1031-1035. Hvem er det skrevet til?',
+                svar: [
+                    {
+                        tekst: 'Til Olavs egen sønn Magnus, som skulle bli konge etter ham.',
+                        riktig: false,
+                        respons: 'Magnus var et barn i Gardarike da. Han kom først noen år senere.',
+                    },
+                    {
+                        tekst: 'Til Svein, sønnen til Knut den mektige - han som styrte Norge etter slaget.',
+                        riktig: true,
+                        respons: 'Ja. Til sønnen av mannen som betalte for å få Olav bort.',
+                    },
+                    {
+                        tekst: 'Til paven i Roma, for å få helligkåringen godkjent.',
+                        riktig: false,
+                        respons:
+                            'Ingen pave hadde noe med denne saken å gjøre. Det var biskopen på stedet som erklærte ham hellig.',
+                    },
+                ],
+                fasit:
+                    'Diktet heter Glælognskviða, og det er laget av Torarin Lovtunge - en skald som hadde vært Knut den mektiges mann. Det er stilet til Knuts sønn Svein, som satt med Norge etter slaget, og det ender med en oppfordring: bøy deg for helgenkongen, og be ham om hjelp til å beholde landet.\n\n' +
+                    'Det eldste vi har om at Olav var hellig, er altså et råd til seierherren om å be til taperen. Kongen som var i veien, var mer nyttig som helgen enn som lik.\n\n' +
+                    'Spør alltid hvem en fortelling gagner. Også når fortellingen er et under.',
+            },
+        },
+        begreper: ['helgenkaaring', 'fortellingen-vokser'],
+        slutt: {
+            tittel: 'Bordet står',
+            tekst:
+                'Sju linjer fra en mann som ikke var der. Et helt kapittel fra en mann som ble født hundre og femti år etter. Og tolv måneder som ingen har skrevet ned.\n\n' +
+                'Dere vant slaget. Han vant alt som kom etterpå.',
+            knapp: 'Legg fra deg kildene',
+        },
+    },
 ];
 
 export const MELLOMSPILL_BY_ID: Record<string, MellomspillDef> = Object.fromEntries(

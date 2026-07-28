@@ -579,6 +579,10 @@ export class WorldScene extends Phaser.Scene {
             tilSpill.on('forradLukk', () => this.settLaast(false)),
             tilSpill.on('beskjedLest', () => {
                 this.settLaast(false);
+                // Kapittel 4 har ett skjermbilde til før bordet: året som gikk
+                // etter slaget. Sier den ja, står den nå framme, og bordet
+                // venter til også den er lest.
+                if (this.aaretEtterStiklestad()) return;
                 this.bordetEtterKapittelet();
             }),
             tilSpill.on('tingsakSvar', (svar) => this.forSaken(svar))
@@ -1425,6 +1429,40 @@ export class WorldScene extends Phaser.Scene {
             ].join('\n\n'),
             knapp: 'Videre',
         });
+    }
+
+    /**
+     * Året etter Stiklestad, og kapittelet er over.
+     *
+     * Dette er hele grunnen til at kapittelet finnes, og det er ikke et
+     * etterord: bondehæren vant, og innen året var omme var kongen de felte
+     * blitt helgen - og de som vant, var blitt de som drepte en helgen. Uten
+     * denne skjermen ender kapittel 4 i en seier, og da har mellomspillet
+     * ingenting å gripe fatt i.
+     *
+     * Den kommer *etter* beskjeden fra sletta, ikke oppå den. To skjermbilder
+     * over hverandre er ett hun ikke leser - samme regel som bordet i 872.
+     * Returnerer sant når den tok skjermen, så den som kalte lar bordet vente.
+     */
+    private aaretEtterStiklestad(): boolean {
+        const store = useRpgStore.getState();
+        if (!store.steg.includes(K4.slaget)) return false;
+        if (store.steg.includes(`kapittel:4`)) return false;
+        store.fullforKapittel(4, 'Kapittel 4: Stiklestad');
+        store.varsle('Kapittel 4 er over. 1030 er bak deg.', 'niva');
+        store.larBegrep('helgenkaaring', 'hort');
+        fraSpill.emit('oppgave', null);
+        fraSpill.emit('beskjed', {
+            tittel: 'Året etter',
+            tekst: [
+                'Dere vant. Kongen falt, og Knut den mektiges sønn Svein satt med landet før høsten var omme. Høyet ble berget, og enga ble slått til vanlig tid året etter.',
+                'Så begynte det å komme bud sørfra og nordfra om ting som hadde hendt ved graven hans i Nidaros. En blind som så. En sår som ble frisk. Det ene bygget på det andre.',
+                'Den 3. august 1031 - ett år og fem dager etter at dere sto i rekka - tok biskop Grimkjell kista opp av sanden ved elva og erklærte Olav Haraldsson for hellig.',
+                'Ingen har sagt at dere gjorde noe galt. Det er bare det at fra den dagen er dere de som drepte en helgen, og det er ikke noe man kommer tilbake fra.',
+            ].join('\n\n'),
+            knapp: 'Videre',
+        });
+        return true;
     }
 
     // ── Mellomspillet ───────────────────────────────────────────────────────

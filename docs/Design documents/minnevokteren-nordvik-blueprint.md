@@ -1,8 +1,8 @@
 # Blueprint: Nordvik - vikingtiden som spillbar kampanje
 
-**Status:** Etappe 1, 1b og 2 er bygget. Kapittel 1 er spillbart fra ende til
-annen: opplæringen mot Ravn, skroget, sjøsettingen, navigasjonen, Lindisfarne i
-to halvdeler, valgene og hjemkomsten. Neste er etappe 3 (Mellomspill I).
+**Status:** Etappe 1-5 er bygget til og med kapittel 4. Kampanjen er spillbar
+fra Nordvik i 793 til sletta på Stiklestad i 1030, med alle fire mellomspillene.
+Det som gjenstår er kapittel 5 (Stamford Bridge), Mellomspill V og epilogen.
 Se statusnotatet under §13.
 **Rute:** `/oving/rpg`
 **Erstatter:** «Minnevokteren», den abstrakte sone-rammen. Navnet lever videre som
@@ -1070,7 +1070,8 @@ retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo;
 **Etappe 1b er bygget.** R1-R8, se `rpg-hub-og-epoker-blueprint.md` §10.
 
 **Etappe 2 er bygget** (K1a-K1e), og **etappe 3** med den. **Etappe 4 er
-bygget** (K2a-K2f) - se nederst i denne seksjonen.
+bygget** (K2a-K2g), og **etappe 5** er bygget til og med kapittel 4 - se
+nederst i denne seksjonen.
 
 | Delet | Hva som står |
 |---|---|
@@ -1261,10 +1262,49 @@ ekte nettleser, begge veier gjennom kornet til Harald.
 Nye prøver: `verify-rpg-kapittel3`, `verify-rpg-blotet`, `verify-rpg-holmgang`,
 `verify-rpg-vinternettene`, `verify-rpg-mellomspill3`.
 
-**Det som gjenstår:** resten av §13 etappe 5 - kapittel 4 og 5, skjoldborgen
-(§5.4), mellomspill IV og V, og epilogen. Og §16.3 står fortsatt: `ClassId` skal
-ut av karakterskaperen, men den ligger på flerspiller-tråden (`Gjest.classId`) og
-i `figurLook`.
+**Kapittel 4 er bygget** (K4a-K4c), fra budstikka på tunet til bordet etterpå.
+
+| Delet | Hva som står |
+| --- | --- |
+| K4a | Nordvik 1030 som eget sted: kirken på hovets grunn, Torgils som gammel mann, budstikka og valget om sønnen. `prop-kirke` er ny i tileforge |
+| K4b | Stiklestad som eget sted, og skjoldborgen (§5.4): plassen, hullet, dekningen og halvannet minutt. `VaapenKamp.iRekke` får endelig en leser |
+| K4c | Året etter, og Mellomspill IV «Hvordan en taper blir en helgen» |
+
+**Fem avvik og funn, alle begrunnet av at de ble prøvd:**
+
+- **Halvard er 34, ikke 41.** §4-tabellen gir ingen alder; `kapitler.ts` sa 41,
+  og da kunne han ikke være sønn av Torgils, som var nitten i 995. Han er født
+  året etter at kirken ble reist, og nettopp det er kapittelets tese: han har
+  aldri sett hovet, han er døpt som spedbarn, og han går mot kongen som gjorde
+  landet kristent. Stiklestad var ikke hedninger mot kristne.
+- **Formasjonen krevde fire regler blueprinten ikke nevner.** §5.4 sier hva
+  eleven ikke får lov til; den sier ikke hva som må stanses. Fienden må klemmes
+  ved streken (AI-en går rett gjennom seks bønders skjold), eleven må holdes i
+  plassen sin (tilbakestøtet skjøv henne ut på ti sekunder), blikket må låses
+  fram (ellers må hun trykke framover - som er feilen - for å se den som kommer),
+  og utfallet i slaget må av (hvert slag bar henne tretten piksler fram). Uten
+  alle fire er skjoldborgen en kulisse hun slåss foran.
+- **Valget om sønnen flytter ikke et barn ut av rekka.** Sier hun nei, står
+  naboens Halvor til venstre for henne i stedet, og han er femten han også. Et
+  valg med et opplagt riktig svar er ikke et valg, og et femtenåring-i-rekka som
+  forsvinner hvis du er en god forelder, lærer bort noe som ikke er sant om
+  utbudet.
+- **Eleven avgjør ikke slaget.** §4 sier «du vinner», og det gjør hun uansett -
+  kongen faller lenger nord, og beskjeden sier det rett ut. Det hun avgjør, er
+  hvem som kom hjem fra hennes del av rekka. Å la rekka hennes bestemme utfallet
+  av Stiklestad ville vært det ene stedet i kampanjen der spillet lyver om
+  historien.
+- **Det tomme feltet i Mellomspill IV er tolv måneder.** Første utkast var
+  «ingen kilde feirer bondehærens seier», og det er galt: Kálfsflokkr av Bjarni
+  gullbrárskáld hyller Kalv Arnessons dåd på Stiklestad. Feltet ble i stedet året
+  mellom slaget 29. juli 1030 og helligkåringen 3. august 1031 - det finnes ingen
+  tekst skrevet i det året, og det eldste vitnesbyrdet om at Olav var hellig er
+  Glælognskviða, stilet til Knut den mektiges sønn Svein med en oppfordring om å
+  be den døde kongen om hjelp til å beholde landet.
+
+**Det som gjenstår:** kapittel 5, Mellomspill V og epilogen (§4). Og §16.3 står
+fortsatt: `ClassId` skal ut av karakterskaperen, men den ligger på
+flerspiller-tråden (`Gjest.classId`) og i `figurLook`.
 
 ### 13.1 Hvorfor etappe 1b kom til
 

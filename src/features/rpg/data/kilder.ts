@@ -154,6 +154,58 @@ export const KILDER: KildeDef[] = [
         henvisning:
             'Snorre Sturlason, Olav Tryggvasons saga kap. 53 (Heimskringla, ca. 1230). Oversatt av Gustav Storm (Gyldendal 1929), i den moderniserte gjengivelsen på norgeshistorie.no (Universitetet i Oslo). Bokmål.',
     },
+
+    // ── Mellomspill IV: Stiklestad og helgenen ─────────────────────────────
+    //
+    // De to kortene er valgt for å vise en fortelling som *vokser*. Sigvat
+    // sier at sola ikke varmet, og det er alt han sier om himmelen. To hundre
+    // år senere har det blitt en rød sky, mørkt som natten, og et slag med
+    // navngitte drapsmenn og replikker. Ingen har løyet underveis - men
+    // avstanden i tid har fylt hullene, og det er nøyaktig det eleven skal se
+    // med egne øyne ved å legge de to ved siden av hverandre.
+
+    {
+        id: 'sigvat-erfidrapa',
+        navn: 'Sigvat Tordarson: minnediktet om Olav',
+        art: 'dikt',
+        naerhet: 'samtidig',
+        aar: 'Diktet omkring 1040, ti år etter slaget',
+        opphav: {
+            hvem: 'Sigvat Tordarson, islending og kong Olavs egen hirdskald. Han var stallare hos kongen',
+            hvor: 'Ikke på Stiklestad. Han var på pilegrimsferd til Roma og fikk høre om fallet på hjemveien',
+            for: 'Kongens ettermæle, og for dem som fortsatt sto på hans side',
+            hensikt: 'Å minnes kongen - og å si at fallet hans betydde noe',
+        },
+        utdrag:
+            'Ikke lite under\n' +
+            'alle menn må kalle\n' +
+            'at fra en skyløs himmel\n' +
+            'sol ei varmet stridsmenn.\n' +
+            'Et kraftig jærtegn hendte\n' +
+            'for kongen den dagen.\n' +
+            'Dagen fikk ikke sin farge.',
+        henvisning:
+            'Sigvat Tordarson, Erfidrápa om Olav den hellige, diktet omkring 1040. Strofen er gjengitt i norsk gjendiktning hos Steinar Thorvaldsen, «Hellig Olav, Snorre og solformørkelsen ved Stiklestad i 1030», dendigitaleolavskilden.no. At Sigvat var på pilegrimsferd til Roma i 1029 og først fikk høre om slaget på hjemveien, står i Store norske leksikon (snl.no/Sigvat_Tordarson).',
+    },
+    {
+        id: 'heimskringla-stiklestad',
+        navn: 'Heimskringla: Olav den helliges saga',
+        art: 'saga',
+        naerhet: 'mye-senere',
+        aar: 'Omkring 1230, om lag 200 år etter slaget',
+        opphav: {
+            hvem: 'Snorre Sturlason, islandsk høvding og forfatter',
+            hvor: 'På Island, i Reykholt',
+            for: 'Kongsætta i Norge og overklassen på Island',
+            hensikt: 'Å fortelle historien om kongene - og om den kongen som var blitt helgen',
+        },
+        utdrag:
+            'Men da slaget tok til, la det seg en rød sky over himmelen og over sola, og før slaget var slutt, var det mørkt som natten.\n\n' +
+            'En biskop på bondesiden sier om kongen: «Han har fart omkring i dette landet med røverflokker og brent bygdene.»\n\n' +
+            'Om Torstein Knarresmed, som Olav hadde tatt et skip fra, står det at han stilte seg først i rekka og var den som ga Olav det første hugget.',
+        henvisning:
+            'Snorre Sturlason, Olav den helliges saga (Heimskringla, ca. 1230). Sitatet om den røde skyen er gjengitt hos Steinar Thorvaldsen på dendigitaleolavskilden.no. Biskopens ord og opplysningen om Torstein Knarresmed er gjengitt av Hans Jacob Orning i «Fire fortellinger om Stiklestad» på norgeshistorie.no (Universitetet i Oslo), der de står på nynorsk; de er overført til bokmål her.',
+    },
 ];
 
 export const KILDE_BY_ID: Record<string, KildeDef> = Object.fromEntries(

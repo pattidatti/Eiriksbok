@@ -197,6 +197,22 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Den som løper fram, dreper mannen ved siden av seg. Det er ikke et ordtak.',
     },
     {
+        id: 'helgenkaaring',
+        navn: 'Helgenkåring',
+        forklaring:
+            'Olav Haraldsson tapte alt på Stiklestad og var død. Ett år og fem dager senere ble han erklært hellig av biskop Grimkjell, og fra da av var kongsætta hans etterkommere av en helgen, kirken hadde en norsk helligdom, og hele landet fikk et samlingspunkt. En helgenkåring er ikke bare tro - det er noe som gir noen makt, og det lønner seg å spørre hvem.',
+        forstasVed: 'Se hva som skjedde med kongen du var med på å felle, i året etterpå.',
+        replikk: 'Vi vant slaget. Innen året var omme, hadde vi drept en helgen.',
+    },
+    {
+        id: 'fortellingen-vokser',
+        navn: 'Fortellingen vokser',
+        forklaring:
+            'Jo lenger unna en kilde står i tid, jo flere detaljer har den ofte. Det er baklengs av hva man skulle tro, og det er et varsel: detaljene er kommet til underveis. Sigvat sier at sola ikke varmet. To hundre år senere har Snorre en rød sky, mørke som natten, navngitte drapsmenn og replikker. Ingen har nødvendigvis løyet - men det som er lagt til, er lagt til av noen.',
+        forstasVed: 'Legg to beretninger om det samme slaget ved siden av hverandre, og se hva som er kommet til.',
+        replikk: 'Han som var nærmest, sa minst.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:

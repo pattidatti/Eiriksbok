@@ -22,6 +22,12 @@ stå tomt til vinternettene. Han holder blot, går en holmgang på utstrakt hud,
 og svarer til slutt på vegne av hele husstanden. Kirken reises på hovets grunn
 uansett hva han svarte.
 
+**Kapittel 4 er 1030.** Han er Halvard, sønnen hans, født året etter at kirken
+ble reist. Han har aldri sett hovet, og han er døpt som spedbarn. Nå kommer en
+budstikke opp stien, og han går mot kongen som gjorde landet kristent -
+sammen med naboer som også er døpt. På Stiklestad står han i en skjoldborg og
+skal bli stående i halvannet minutt uten å gå fram.
+
 Dette er et eget spor, adskilt fra 3D-mini-spillmotoren i `src/games/engine/`
 og fra mikrospillene i `src/components/microgames/`.
 
@@ -61,6 +67,8 @@ data/
   nordvik.ts             Nordvik i 793: NPC-er, landemerker og håndskrevne oppdrag
   nordvik872.ts          Nordvik i 872: de som ble igjen, haugen og bua
   nordvik995.ts          Nordvik i 995: hovet, de to haugene og kongens folk
+  nordvik1030.ts         Nordvik i 1030: kirken på hovets grunn, budstikka og sønnen
+  stiklestad.ts          Sletta i Verdalen: Tore Hund, Kalv Arnesson og rekka
   steder.ts              STEDER-registeret. Ett sted = ett kart med alt som hører til
 engine/
   boot.ts                Starter Phaser (dynamisk import), starter scenen på et stedId
@@ -82,6 +90,8 @@ engine/
   gaarden.ts             Året i 872: årstidsskiftene, bua og oppgjøret
   angrepet.ts            Båten i vika: kampen, og kampen som ikke skjer
   holmgang.ts            Huden på vollen: tre skjold, kanten og holmløsningen
+  skjoldborg.ts          Rekka på Stiklestad: plassen, hullet og halvannet minutt
+  stiklestadgen.ts       Bygger sletta i Verdalen
   ting.ts                Sakens fire trinn: frist, vitner, hjemmel, dom
   raidet.ts              Lindisfarne, i to halvdeler
   lindisfarnegen.ts      Bygger klosterøya
@@ -429,14 +439,14 @@ nytt like ofte. Pust- og livsstolpene har `aria-valuenow`, som er det
 Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blueprint.md`.
 Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
 `docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R8 er bygget, og
-refaktoreringen er dermed ferdig. Neste er kapittel 1, etter Nordvik-blueprintens
-etappe 2.
+refaktoreringen er dermed ferdig. Kapittel 1-4 med mellomspillene er bygget;
+neste er kapittel 5 og epilogen, etter Nordvik-blueprintens etappe 5.
 
 ## Kapittel 1: 793
 
 Vikingtiden spilles som en kampanje over fem kapitler på samme gård
-(`docs/Design documents/minnevokteren-nordvik-blueprint.md`). Kapittel 1 er
-bygget; de fire andre står i `data/kapitler.ts` med rolle og år, og uten steg -
+(`docs/Design documents/minnevokteren-nordvik-blueprint.md`). Kapittel 1-4 er
+bygget; kapittel 5 står i `data/kapitler.ts` med rolle og år, og uten steg -
 et steg ingen har bygget er et løfte vi ikke kan holde.
 
 Framdriften er en **liste med steg-id-er** i kampanjetilstanden, ikke et tall.
@@ -586,6 +596,68 @@ Ting som er lette å ødelegge her:
     «rettes opp» til at det å nekte redder hovet. Under gulvet i Mære kirke
     ligger gullgubber fra hedensk kult - kirken ble reist der folk kom fra før.
 
+## Kapittel 4: 1030
+
+Samme gård, 35 år etter Torgils. Halvard er født året etter at kirken ble
+reist på hovets grunn. Han har aldri sett hovet, han er døpt som spedbarn, og
+han er gift i det huset. Så kommer budstikka.
+
+| Steg | Hva | Hvor |
+| --- | --- | --- |
+| `k4-budstikka` | Pila av tre, og hvem som holder i den andre enden | `data/nordvik1030.ts` |
+| `k4-hvem-drar` | Åsmund er femten og vil bli med | `data/nordvik1030.ts` |
+| `k4-veien` | Å komme fram til sletta *er* steget | `WorldScene.aapneStedet` |
+| `k4-linja` | Skofte viser henne plassen, og gir henne et spyd | `data/stiklestad.ts` |
+| `k4-slaget` | Rekka. Halvannet minutt. | `engine/skjoldborg.ts` |
+
+Og så: **året etter**, og **Mellomspill IV**.
+
+**Kapittelets tese står i kirken.** Bondehæren på Stiklestad var ikke
+hedninger som møtte en kristen konge - den var kristne bønder og misfornøyde
+stormenn, betalt med sølv fra Knut den mektige, mot en kristen konge. Alt
+eleven møter på gården sier det uten å forklare det: presten som ikke vet hva
+han skal be om, faren som går til messe og aldri lenger inn enn til døra, og
+Bård som sier rett ut hvem som sendte budstikka.
+
+**Skjoldborgen er kapittelet** (blueprint §5.4). Fire regler, og hver av dem
+snur en vane eleven har brukt tre kapitler på å bygge:
+
+- **Ingen rull, og ingen vei bakover.** Hun har en plass, og hun blir i den.
+- **Skjoldet hennes dekker halve mannen til venstre.** Han til høyre dekker
+  halve henne, og det er derfor hun tar mindre skade i rekka enn utenfor.
+- **Går hun fram, åpner hun et hull.** Skofte roper først. Blir hun stående
+  framme, tar gutten til venstre imot slagene som var hennes, og faller han,
+  brister rekka.
+- **Seier er å bli stående i halvannet minutt.** Ikke å drepe noe.
+
+`VaapenKamp.iRekke` lå i dataene fra kampsystemet ble bygget uten at noe leste
+den. Nå leses den, og bare her: spydet 1,35, sverdet 0,85, øksa 0,4.
+
+Ting som er lette å ødelegge her:
+
+-   **Fienden må stanses ved streken.** Fiende-AI-en går rett mot eleven, og
+    seks bønders skjold er ingen vegg for den. Uten `holdDemUte()` står hun
+    omringet av folk som er kommet inn bakfra mens rekka «står», og
+    formasjonen er en kulisse.
+-   **Blikket står fram i rekka.** Retningen settes ellers av bevegelse, og da
+    må eleven trykke framover for å vende seg mot den som kommer - som er
+    nøyaktig det ene trykket som dreper naboen. En styring som krever at du
+    gjør feilen for å kunne se, er en felle og ikke en regel.
+-   **Ingen utfall i rekka.** Hvert slag bærer figuren tretten piksler fram
+    (`slaa()`), og da åpner hullet seg av at hun slåss i det hele tatt.
+-   **Bare to menn har navneskilt.** Sju skilt på sju mann som står skulder
+    ved skulder blir én grøt av pikselfont. De to som har navn, er de to
+    regelen handler om.
+-   **Valget om sønnen flytter ikke et barn ut av rekka.** Sier hun nei, står
+    naboens Halvor der i stedet, og han er femten han også. Det som avgjøres,
+    er hvem sitt barn det er.
+-   **Utfallet av slaget står fast.** Kongen faller uansett hva hun gjør, og
+    beskjeden sier det rett ut. Det hun avgjorde, er hvem som kom hjem fra
+    hennes del av rekka.
+-   **Året etter er ikke et etterord.** Uten den skjermen ender kapittelet i
+    en seier, og da har Mellomspill IV ingenting å gripe fatt i.
+
+
 ## Mellomspillet: bordet med kildene
 
 Mellom to kapitler forlater eleven året hun spilte og ser tilbake på det hun
@@ -615,6 +687,21 @@ skrevet 230 år etter for kongsætta. Det tomme feltet er **de som sa nei**: ing
 av dem har etterlatt seg én setning om hvorfor. Eleven har nettopp holdt et blot
 selv, og ingenting av det hun gjorde står noe sted. Nektet hun dåpen, står det
 en linje til.
+
+Mellomspill IV kommer etter 1030, og heter **«Hvordan en taper blir en
+helgen»**. Det handler ikke om hvem som er partisk - det er lest i III - men om
+hvordan en fortelling *vokser*. Sigvat Tordarson, kongens egen skald, sier i
+sju linjer at sola ikke varmet fra en skyløs himmel. To hundre år senere har
+Snorre en rød sky, mørkt som natten, navngitte drapsmenn og replikker. Ingen
+har nødvendigvis løyet; avstanden i tid har fylt hullene. Og solformørkelsen i
+1030 var ekte - den kom 31. august, 33 dager etter slaget.
+
+Det tomme feltet er **de tolv månedene**: fra kongen falt 29. juli 1030 til
+biskop Grimkjell erklærte ham hellig 3. august 1031, finnes det ingen tekst
+skrevet i det året. Det eldste vitnesbyrdet om at Olav var hellig, er
+Glælognskviða - stilet til Knut den mektiges sønn Svein, som satt med Norge
+etter slaget, med en oppfordring om å be den døde kongen om hjelp til å
+beholde landet. Holdt hun rekka, står det en linje til.
 
 Bordet kommer *etter* vinteren, ikke oppå den:
 `WorldScene.bordetEtterKapittelet()` venter til beskjeden om oppgjøret er lest.
@@ -695,7 +782,7 @@ hver gang eleven kommer fram et sted.
 
 ## Verifisering
 
-Tjueseks skript driver spillet i en ekte nettleser. De krever at `npm run dev`
+Tjueni skript driver spillet i en ekte nettleser. De krever at `npm run dev`
 kjører, og leser scenen gjennom `window.__rpg` (og registeret gjennom
 `window.__rpgSteder`, storen gjennom `window.__rpgStore`), som `boot.ts` bare
 eksponerer i dev.
@@ -736,6 +823,9 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-holmgang.mjs`    | Huden, de tre skjoldene, kanten og alle tre utgangene      |
 | `verify-rpg-vinternettene.mjs` | Husstanden, de tre svarene, og kirken som kommer uansett |
 | `verify-rpg-mellomspill3.mjs` | Bordet i 995, og feltet der de som sa nei skulle stått    |
+| `verify-rpg-kapittel4.mjs`   | Nordvik i 1030: kirken på hovets grunn, og budstikka       |
+| `verify-rpg-skjoldborg.mjs`  | Rekka: plassen, hullet, `iRekke` og begge utgangene        |
+| `verify-rpg-mellomspill4.mjs` | Året etter slaget, og de tolv månedene ingen skrev ned    |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir
