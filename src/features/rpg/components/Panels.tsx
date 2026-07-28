@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ITEM_BY_ID, RARITY_COLOR, RARITY_LABEL, SLOT_LABEL } from '../data/items';
 import { finnNpc } from '../data/steder';
 import { EPOKER } from '../data/epoker';
-import { KAPITLER, KAPITTEL_BY_NR } from '../data/kapitler';
+import { KAPITLER, KAPITTEL_BY_NR, kapittelNr, synligeSteg } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { prisFor, trinnFor } from '../engine/aere';
 import { maksVerdier, useRpgStore } from '../store/useRpgStore';
@@ -174,15 +174,67 @@ function Stat({ navn, verdi }: { navn: string; verdi: number }) {
 /** Oppdragsloggen. Viser hintet, ikke svaret. */
 export function QuestLog({ quester, onLukk }: { quester: QuestDef[]; onLukk: () => void }) {
     const status = useRpgStore((s) => s.quester);
+    const kapittelnummer = useRpgStore((s) => s.kapittel);
+    const gjort = useRpgStore((s) => s.steg);
     const aktive = quester.filter((q) => status[q.id] === 'aktiv');
     const ferdige = quester.filter((q) => status[q.id] === 'ferdig');
 
+    // Kapittelet står øverst, før bankspørsmålene. Dette er den ene tingen
+    // eleven faktisk trenger å vite når hun åpner loggen, og fram til nå sto
+    // den ingen steder: `synligeSteg()` var skrevet ferdig og aldri kalt, så
+    // tjuefem mål-linjer lå i `kapitler.ts` uten å nå en skjerm.
+    //
+    // Merk at listen ikke er en oppskrift. `synligeSteg` skjuler alt med
+    // uoppfylte krav, så hun ser hva hun kan gjøre nå - ikke hele kapittelet.
+    const kapittel = kapittelNr(kapittelnummer);
+    const steg = synligeSteg(kapittel, gjort);
+    const naa = steg.filter((s) => !s.ferdig);
+    const tatt = steg.filter((s) => s.ferdig);
+
     return (
         <Ramme onLukk={onLukk}>
-            <h2 className="mb-4 font-display text-2xl font-bold text-amber-200">Oppdrag</h2>
+            <h2 className="mb-1 font-display text-2xl font-bold text-amber-200">Oppdrag</h2>
+            <p className="mb-4 text-xs uppercase tracking-widest text-slate-400">
+                Kapittel {kapittel.nr} · {kapittel.tittel} · {kapittel.aar}
+            </p>
 
             <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
-                Pågår ({aktive.length})
+                Nå ({naa.length})
+            </h3>
+            {naa.length === 0 ? (
+                <p className="mb-5 text-sm text-slate-500">
+                    Ingenting står igjen i dette kapittelet.
+                </p>
+            ) : (
+                <ul className="mb-5 space-y-2">
+                    {naa.map((s) => (
+                        <li
+                            key={s.id}
+                            data-prove="kapittelsteg"
+                            className="rounded-xl border border-amber-300/40 bg-amber-300/10 p-3"
+                        >
+                            <p className="font-display font-semibold text-amber-100">{s.tittel}</p>
+                            <p className="mt-1 text-sm leading-relaxed text-slate-200">{s.mal}</p>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            {tatt.length > 0 && (
+                <ul className="mb-5 space-y-1">
+                    {tatt.map((s) => (
+                        <li
+                            key={s.id}
+                            className="rounded-lg bg-emerald-500/10 px-3 py-1.5 text-sm text-emerald-200"
+                        >
+                            {s.tittel}
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
+                Spørsmål fra folk ({aktive.length})
             </h3>
             {aktive.length === 0 ? (
                 <p className="mb-5 text-sm text-slate-500">

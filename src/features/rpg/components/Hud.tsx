@@ -1,7 +1,7 @@
 import { maksVerdier, nivaFremgang, useRpgStore } from '../store/useRpgStore';
 import { trinnFor } from '../engine/aere';
 import { AARSTID, AARSTIDER, DAGER_PER_AARSTID, aarstidFor, dagIAarstid } from '../engine/klokke';
-import { KAPITTEL_BY_NR } from '../data/kapitler';
+import { KAPITTEL_BY_NR, kapittelNr, synligeSteg } from '../data/kapitler';
 import type { KampSnapshot } from '../engine/kamp';
 import type { Klokke } from '../types';
 
@@ -42,6 +42,18 @@ export function Hud({
     // Hva kapittelet faktisk spiller på. Ære og årshjul finnes i hele
     // kampanjen som samfunn, men bare noen kapitler lar eleven flytte dem.
     const systemer = KAPITTEL_BY_NR[store.kapittel]?.systemer;
+
+    // Kortet nede til venstre eies av set-piecene: er hun midt i en økt med
+    // Ravn eller i skjoldborgen, er det den økta som skal stå der, med teller.
+    // Men mellom dem var kortet tomt, og det var der eleven ble stående uten å
+    // vite hva kapittelet ville. Kapittel 3 hadde synlig mål i 1 av 4 steg,
+    // kapittel 5 i 0 av 2.
+    //
+    // Derfor: set-piecet vinner alltid, og faller det bort, trer kapittelets
+    // neste steg inn. Aldri tomt, aldri to ting om gangen.
+    const nesteSteg = synligeSteg(kapittelNr(store.kapittel), store.steg).find((s) => !s.ferdig);
+    const kort =
+        oppgave ?? (nesteSteg ? { tittel: nesteSteg.tittel, mal: nesteSteg.mal } : null);
 
     return (
         <div className="pointer-events-none absolute inset-0 z-20 select-none">
@@ -197,7 +209,7 @@ export function Hud({
 
                 Store bokstaver med vilje. Læreren viser dette på projektor.
             */}
-            {oppgave && (
+            {kort && (
                 <div
                     // Prøveskriptene leser kortet herfra. Som `aria-valuenow` på
                     // stolpene er dette en API-flate, ikke pynt.
@@ -206,15 +218,15 @@ export function Hud({
                 >
                     <div className="flex items-baseline justify-between gap-2">
                         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-300/90">
-                            {oppgave.tittel}
+                            {kort.tittel}
                         </p>
-                        {oppgave.teller && (
+                        {oppgave?.teller && (
                             <span className="font-display text-sm font-bold text-amber-200">
                                 {oppgave.teller}
                             </span>
                         )}
                     </div>
-                    <p className="mt-1 text-[15px] leading-snug text-slate-100">{oppgave.mal}</p>
+                    <p className="mt-1 text-[15px] leading-snug text-slate-100">{kort.mal}</p>
                 </div>
             )}
 
