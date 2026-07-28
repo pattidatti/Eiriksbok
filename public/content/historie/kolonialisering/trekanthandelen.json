@@ -18,7 +18,7 @@
         },
         {
             "type": "text",
-            "content": "På 1700-tallet var sukker det olje er i dag: verdens mest ettertraktede vare. For å tilfredsstille Europas søtsug, utviklet stormaktene et handelssystem som bandt sammen tre kontinenter i et jerngrep. Dette systemet, kjent som trekant-handelen, var en maskin for profitt drevet av menneskelig lidelse."
+            "content": "På 1700-tallet var sukker det olje er i dag: en av verdens mest ettertraktede varer. Europeisk etterspørsel etter sukker, kaffe, kakao og tobakk drev fram slavehandelen over Atlanterhavet, og mot slutten av 1700-tallet var dette ikke lenger luksus for de få, men varer vanlige folk kjøpte (Eriksen, 2024). For å tilfredsstille søtsuget utviklet stormaktene et handelssystem som bandt sammen tre kontinenter i et jerngrep. Dette systemet, kjent som trekant-handelen, var en maskin for profitt drevet av menneskelig lidelse."
         },
         {
             "type": "component",
@@ -38,7 +38,7 @@
         {
             "type": "factbox",
             "title": "De tre rutene",
-            "content": "1. **Europa til Afrika:** Skipene lastet våpen, tekstiler, brennevin og metallvarer. Dette ble byttet mot mennesker.\n2. **Afrika til Amerika (Midtpassasjen):** Enslaved mennesker ble stuet sammen under dekk og fraktet over Atlanterhavet.\n3. **Amerika til Europa:** Produktene slavene produserte – sukker, bomull, tobakk og kaffe – ble fraktet tilbake til europeiske markeder."
+            "content": "1. **Europa til Afrika:** Skipene lastet fargerike bomullsstoffer, alkohol, tobakk, jernprodukter og våpen. Britene solgte aleine omkring en kvart million geværer i året. Alt dette ble byttet mot mennesker.\n2. **Afrika til Amerika (Midtpassasjen):** Slavegjorte mennesker ble stuet sammen under dekk og fraktet over Atlanterhavet.\n3. **Amerika til Europa:** Sukker, kaffe, kakao, tobakk, bomull, indigo og verdifulle tresorter som mahogni ble fraktet tilbake til europeiske markeder."
         },
         {
             "type": "header",
@@ -46,17 +46,17 @@
         },
         {
             "type": "text",
-            "content": "Den midtre delen av reisen, fra Afrika til Amerika, er det mørkeste kapittelet i maritim historie. "
+            "content": "Den midtre delen av reisen, fra Afrika til Amerika, er det mørkeste kapittelet i maritim historie. Olaudah Equiano var en afrikansk-britisk forfatter og motstander av slaveriet. Selvbiografien hans fra 1789 skildrer både Afrika på slavehandelens tid, slavetilværelsen og en afrikaners liv som fri mann i Europa (Rønning, 2025). Slik beskriver han overfarten (Equiano, 1789):"
         },
         {
             "type": "quote",
-            "content": "Skrikene fra kvinnene og stønnene fra de døende gjorde det hele til en scene av skrekk nesten utenkelig.",
+            "content": "Skrikene fra kvinnene og stønnene fra de døende gjorde det hele til et bilde av redsel som knapt lar seg forestille.",
             "author": "Olaudah Equiano",
-            "source": "En beretning om livet til Olaudah Equiano, 1789"
+            "source": "The Interesting Narrative of the Life of Olaudah Equiano, 1789"
         },
         {
             "type": "text",
-            "content": "Mellom 10 og 15 prosent av de som ble tvunget om bord døde under overfarten. De døde av sykdom, dehydrering, vold eller selvmord. De som overlevde, ble solgt som kveg ved ankomst."
+            "content": "Mellom 1450 og 1850 ble minst 12,5 millioner mennesker skipet ut fra den vestafrikanske kysten, og anslagsvis to millioner av dem døde under selve transporten - omtrent én av sju (Eriksen, 2024). De døde av sykdom, tørst, vold eller selvmord. De som overlevde, ble solgt som kveg ved ankomst. Slaveriet i Amerika skilte seg fra eldre former: mennesker ble kjøpt og solgt som eiendom, tilstanden gikk i arv til barna, og rasistisk nedvurdering gjorde det lettere å bruke mennesker med en annen hudfarge som slaver (Eriksen, 2025)."
         },
         {
             "type": "comparison",
@@ -89,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Trekant-handelen la grunnlaget for den industrielle revolusjon. Kapitalen som ble tjent på sukker og slaver finansierte fabrikker, jernbaner og banker i byer som Liverpool, Bristol og Nantes. Samtidig ble det afrikanske kontinentet tappet for sin viktigste ressurs: unge, friske mennesker. Konsekvensene av denne ubalansen preger fortsatt verden i dag gjennom økonomisk ulikhet og systemisk rasisme."
+            "content": "Trekant-handelen bidro til å finansiere den industrielle revolusjonen. Bearbeiding av slaveprodusert sukker ga arbeidsplasser i britisk industri, og sukkeret utgjorde kanskje en tidel av energitilførselen i den framvoksende arbeiderklassen. Havnebyer som Liverpool, Bristol og Glasgow ble pionerer i oversjøisk transport og transatlantisk handel (Eriksen, 2024). Samtidig ble det afrikanske kontinentet tappet for sin viktigste ressurs: unge, friske mennesker. Konsekvensene av denne ubalansen preger fortsatt verden i dag gjennom økonomisk ulikhet og systemisk rasisme."
         },
         {
             "type": "component",
@@ -98,7 +98,7 @@
                 "forstaa": [
                     "Hvilken vare sammenligner teksten med olje i dag, og hvorfor var den så ettertraktet på 1700-tallet?",
                     "Nevn de tre etappene i trekant-handelen og hva som ble fraktet på hver av dem.",
-                    "Hva kalles reisen fra Afrika til Amerika, og hvor stor andel av menneskene om bord døde under overfarten?",
+                    "Hva kalles reisen fra Afrika til Amerika, og hvor mange av menneskene som ble skipet ut døde under overfarten?",
                     "Ifølge tabellen i teksten: hva er hovedforskjellen mellom kontraktsarbeid og chattel slavery (eiendomsslaveri)?"
                 ],
                 "reflekter": [
@@ -111,6 +111,18 @@
                     "Teksten hevder at konsekvensene av trekant-handelen fortsatt preger verden gjennom økonomisk ulikhet og systemisk rasisme. Finn ett eksempel fra nyheter eller samfunnet i dag som du mener kan knyttes til denne arven, og forklar koblingen.",
                     "Skriv en kort tekst på 5-8 setninger der du forestiller deg at du er en kjøpmann i Liverpool på 1700-tallet. Hvordan ville du forsvart handelen for deg selv, og hva ville du helst ikke tenkt på?",
                     "Diskuter i klassen: Byer som Liverpool og Bristol ble rike på slavehandel. Bør slike byer i dag be om unnskyldning eller betale erstatning for fortiden? Argumenter for og imot."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Equiano, O. (1789). *The Interesting Narrative of the Life of Olaudah Equiano, or Gustavus Vassa, the African*. Hentet 28.07.2026 fra [gutenberg.org](https://www.gutenberg.org/files/15399/15399-h/15399-h.htm)",
+                    "Eriksen, T. L. (2024). *Slavehandelen over Atlanterhavet*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/slavehandelen_over_Atlanterhavet](https://snl.no/slavehandelen_over_Atlanterhavet)",
+                    "Eriksen, T. L. (2025). *Slaveri*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/slaveri](https://snl.no/slaveri)",
+                    "Rønning, H. (2025). *Olaudah Equiano*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Olaudah_Equiano](https://snl.no/Olaudah_Equiano)"
                 ]
             }
         }
@@ -146,5 +158,6 @@
             ],
             "correctAnswer": 1
         }
-    ]
+    ],
+    "lastUpdated": "2026-07-28T00:00:00.000Z"
 }
