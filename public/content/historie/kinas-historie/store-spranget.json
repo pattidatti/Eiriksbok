@@ -7,10 +7,11 @@
   "readTime": "9 min lesning",
   "heroImage": "/images/kinas-historie/store-spranget-hero.webp",
   "details": [
-    "Det store spranget fremover (1958-62) forårsaket en hungersnød som drepte mellom 15 og 55 millioner mennesker.",
-    "Under kulturrevolusjonen ble lærere, leger og intellektuelle sendt til omskoleirleirer på landsbygda.",
-    "Rødegardistene - ungdommer mellom 14 og 25 år - ødela templer, bøker og kunstgjenstander over hele landet."
+    "Det store spranget fremover (1958-62) forårsaket en hungersnød der titalls millioner mennesker døde.",
+    "Under kulturrevolusjonen ble lærere, leger og intellektuelle sendt til omskoleringsleirer på landsbygda.",
+    "Rødegardistene - elever og studenter, på det meste rundt elleve millioner - ødela templer, bøker og kunstgjenstander over hele landet."
   ],
+  "lastUpdated": "2026-07-28",
   "externalUrl": "https://snl.no/Det_store_spranget",
   "content": [
     {
@@ -19,7 +20,7 @@
     },
     {
       "type": "text",
-      "content": "Dette var virkeligheten under Det store spranget fremover, Mao Zedongs storstilte plan for å gjøre Kina til en industriell stormakt. Mao ville at Kina skulle ta igjen Storbritannia i stålproduksjon innen 15 år. Resultatet ble en av historiens verste katastrofer."
+      "content": "Dette var virkeligheten under Det store spranget fremover, Mao Zedongs storstilte plan for å gjøre Kina til en økonomisk og militær stormakt. Målet var å gå forbi britisk tungindustri-produksjon per innbygger innen 15 år (Askheim mfl., 2024). Resultatet ble en av historiens verste katastrofer."
     },
     {
       "type": "header",
@@ -31,7 +32,7 @@
     },
     {
       "type": "text",
-      "content": "I 1958 lanserte Mao Det store spranget fremover. Planen var enkel i teorien: Kina skulle på rekordtid bli en moderne industri- og landbruksnasjon. Kvoter for kornproduksjon ble satt til det dobbelte av det som var mulig. Og ingen torde si at det var urealistisk."
+      "content": "I 1958 lanserte Mao Det store spranget fremover. Planen var enkel i teorien: Kina skulle på rekordtid bli en moderne industri- og landbruksnasjon. Jordbruket ble slått sammen i folkekommuner, og det ble bygd små stålovner rundt om på landsbygda. For å fyre dem ble skog hogd ned - og stålet som kom ut, viste seg å være nesten ubrukelig (Askheim mfl., 2024). Produksjonsmålene var urealistiske. Og ingen torde si det."
     },
     {
       "type": "component",
@@ -51,7 +52,7 @@
     },
     {
       "type": "text",
-      "content": "Partiledere over hele landet meldte inn fantastiske tall. En landsby rapporterte avlinger på ti ganger det faktiske. Staten trodde på tallene og krevde mer korn. Kornet ble sendt til byene og til eksport - mens bøndene sultet. Folk spiste bark, gress og til slutt ingenting."
+      "content": "Partiledere over hele landet meldte inn fantastiske tall. Innrapporteringen av avlingene ble sterkt overdrevet (Askheim mfl., 2024). Staten trodde på tallene og krevde mer korn. Kornet ble sendt til byene og til eksport - mens bøndene sultet. Folk spiste bark, gress og til slutt ingenting."
     },
     {
       "type": "image",
@@ -109,7 +110,7 @@
     },
     {
       "type": "text",
-      "content": "Mellom 1959 og 1961 rammet en hungersnød Kina. Den var ikke skapt av tørke eller naturkatastrofer - den var skapt av politikk. Historikere anslår at mellom 15 og 55 millioner mennesker døde. Det nøyaktige tallet vet vi ikke, fordi det kinesiske kommunistpartiet fortsatt holder arkivene hemmelige. Temaet er i stor grad sensurert i Kina den dag i dag."
+      "content": "Mellom 1959 og 1961 rammet en hungersnød Kina. Tørke og flom gjorde vondt verre, men hovedårsaken var politikken: urealistiske mål, arbeidskraft flyttet fra åkeren til stålovnene, og et system der ingen turte melde fra om at det gikk galt (Askheim mfl., 2024). Titalls millioner mennesker døde trolig. Det nøyaktige tallet vet vi ikke - anslagene spriker fra rundt 20 millioner og langt høyere (Askheim mfl., 2024; Encyclopaedia Britannica, u.å.). Temaet er i stor grad sensurert i Kina den dag i dag."
     },
     {
       "type": "text",
@@ -126,7 +127,7 @@
     },
     {
       "type": "text",
-      "content": "Etter katastrofen mistet Mao noe av sin makt i partiet. Deng Xiaoping og Liu Shaoqi tok over den praktiske styringen av Kina og begynte forsiktig å liberalisere landbruket. Bøndene fikk lov til å dyrke litt for seg selv igjen. Produksjonen begynte sakte å ta seg opp."
+      "content": "Etter katastrofen mistet Mao noe av sin makt i partiet. Pragmatikere som Deng Xiaoping og Liu Shaoqi tok over den praktiske styringen av Kina og begynte forsiktig å liberalisere landbruket. Bøndene fikk lov til å dyrke litt for seg selv igjen. Produksjonen begynte sakte å ta seg opp. Deng var en praktiker som ofte havnet på kollisjonskurs med den ideologiske Mao (Filseth, 2026)."
     },
     {
       "type": "text",
@@ -138,11 +139,11 @@
     },
     {
       "type": "text",
-      "content": "I 1966 kunngjorde Mao kulturrevolusjonen. Målet var å rense Kina for alt som var gammelt, vestlig eller kapitalistisk. Det ekte målet var å knuse politiske motstandere og gjenvinne full kontroll."
+      "content": "I april 1966 satte Mao i gang kulturrevolusjonen. Målet var å fjerne gamle tradisjoner, gamle institusjoner og gammel kultur, og bygge et nytt kommunistisk samfunn (Filseth & Garberg, 2025). Det ekte målet var å knuse politiske motstandere og gjenvinne full kontroll."
     },
     {
       "type": "text",
-      "content": "Mao henvendte seg direkte til ungdommen. Han opprettet Rødegardistene - en massebevegelse av unge mellom 14 og 25 år som fikk i oppgave å oppdage og straffe fiender av revolusjonen. De fikk uniformer, røde armbind og en liten rød bok med Maos sitater. Og de fikk makt."
+      "content": "Mao henvendte seg direkte til ungdommen. De første rødegardist-gruppene ble dannet i Beijing i mai 1966, mest av elever fra videregående skoler og studenter fra universitetene. De oppsto spontant, men Mao oppmuntret dem - å støtte Rødegardistene var én av måtene han bygde opp igjen makten sin i partiet på (Filseth & Garberg, 2024). På det meste var rundt elleve millioner unge med (Filseth & Garberg, 2024). De fikk røde armbind og Maos lille røde - sitatsamlingen Lin Biao hadde redigert og gitt ut i 1964 (Scott, 2025). Og de fikk makt."
     },
     {
       "type": "image",
@@ -154,8 +155,8 @@
       "type": "component",
       "name": "QuoteBlock",
       "props": {
-        "text": "Det er riktig å gjøre opprør.",
-        "author": "Mao Zedong, fra Den lille røde boka"
+        "text": "Marxismen består av mange prinsipper, men til sjuende og sist kan alle føres tilbake til én setning: det er riktig å gjøre opprør.",
+        "author": "Mao Zedong, hilsen til Stalins 60-årsdag i 1939 - senere Rødegardistenes viktigste slagord"
       }
     },
     {
@@ -164,11 +165,11 @@
     },
     {
       "type": "text",
-      "content": "Rødegardistene stormet skoler, universiteter og templer. De brant bøker, knuste statuer og malte over kunstgjenstander. Alt som smakte av tradisjon eller vestlig kultur ble sett på som farlig. Konfucius-templer ble vandalisert. Biblioteker ble tømt."
+      "content": "Slagordet Mao hadde formulert i 1939, tok elevene i bruk som sitt eget - og da studentorganisasjonene siterte det i brev til ham i 1966, svarte Mao med entusiastisk støtte (Russo, 2017). Rødegardistene gikk løs på «de fire gamle»: gamle skikker, gamle vaner, gamle tenkemåter og gamle ideologier (Filseth & Garberg, 2024). De stormet skoler, universiteter og templer, brant bøker og knuste statuer. Alt som smakte av tradisjon eller vestlig kultur ble sett på som farlig. Konfucius-templer ble vandalisert. Biblioteker ble tømt."
     },
     {
       "type": "text",
-      "content": "Lærere ble dratt ut av klasserommet og tvunget til å stå foran folkemengder som skrek anklager mot dem. Leger, forfattere og kunstnere ble sendt til omskoleirleirer på landsbygda - steder der de skulle lære seg ydmykhet gjennom tungt fysisk arbeid. Mange overlevde ikke. Andre satt der i år uten rettssak eller dom."
+      "content": "Angrepene rammet først godseiere, rike bønder og fabrikkeiere, og «borgerlige intellektuelle» - senere også partimedlemmer som ble regnet som ideologisk upålitelige (Filseth & Garberg, 2024). Lærere ble dratt ut av klasserommet og tvunget til å stå foran folkemengder som skrek anklager mot dem. Metodene var veggaviser med kritikk, offentlig ydmykelse, folkedomstoler og straff. Leger, forfattere og kunstnere ble sendt til omskoleringsleirer på landsbygda. Mange overlevde ikke. Selv presidenten, Liu Shaoqi, døde i fengsel i 1969 etter mishandling (Filseth & Garberg, 2025)."
     },
     {
       "type": "text",
@@ -180,17 +181,17 @@
     },
     {
       "type": "text",
-      "content": "Universiteter og videregående skoler ble stengt i år. En hel generasjon kinesere - kalt den tapte generasjonen - vokste opp uten ordentlig skolegang. Hundrevis av millioner liv ble påvirket. Det skapte et hull i kinesisk kompetanse og kultur som tok tiår å reparere."
+      "content": "Universiteter og videregående skoler ble stengt i år. En hel generasjon kinesere - kalt den tapte generasjonen - vokste opp uten ordentlig skolegang. Over hundre millioner mennesker ble rammet på et eller annet vis, verst i årene 1966-1969 (Filseth & Garberg, 2025). Det skapte et hull i kinesisk kompetanse og kultur som tok tiår å reparere."
     },
     {
       "type": "text",
-      "content": "Kulturrevolusjonen varte offisielt til Maos død i 1976, men den mest intense perioden var de første fire årene. Da var landet i kaos. Til slutt måtte Mao sende hæren inn for å kontrollere Rødegardistene han selv hadde sluppet løs."
+      "content": "Da produksjonen stupte og landet var i kaos, tvang myndighetene Rødegardistene til å stoppe - med militæret i ryggen. Bevegelsen ble avviklet fra august 1968, med Maos eget samtykke (Filseth & Garberg, 2024). Selve kulturrevolusjonen ble først regnet som avsluttet 6. oktober 1976, da Banden av fire ble arrestert. Kinesiske myndigheter kaller årene 1966-1976 «tiårskatastrofen» (Filseth & Garberg, 2025)."
     },
     {
       "type": "image",
       "src": "/images/kinas-historie/store-spranget-03.webp",
       "alt": "Kina i kaos under kulturrevolusjonen",
-      "caption": "Kulturrevolusjonen skapte kaos i hele Kina fra 1966 til Maos død i 1976."
+      "caption": "Kulturrevolusjonen skapte kaos i hele Kina fra 1966 til 1976 - årene kinesiske myndigheter selv kaller «tiårskatastrofen»."
     },
     {
       "type": "header",
@@ -198,11 +199,11 @@
     },
     {
       "type": "text",
-      "content": "Da Mao Zedong døde i september 1976, var Kina utmattet. Landet hadde gjennomgått to store katastrofer på under 20 år - begge skapt av Maos ideologi og fryktkultur. Kort tid etter Maos død ble de fire lederne som hadde drevet kulturrevolusjonen videre - kjent som Banden av fire, inkludert Maos kone Jiang Qing - arrestert og stilt for retten."
+      "content": "Da Mao Zedong døde i september 1976, var Kina utmattet. Landet hadde gjennomgått to store katastrofer på under 20 år - begge skapt av Maos ideologi og fryktkultur. Bare uker etter Maos død ble de fire lederne som hadde drevet kulturrevolusjonen videre - kjent som Banden av fire, med Maos kone Jiang Qing i spissen - arrestert og stilt for retten (Filseth & Garberg, 2025)."
     },
     {
       "type": "text",
-      "content": "Deng Xiaoping kom tilbake til makten. Han tok Kina i en helt ny retning - mot markedsøkonomi og åpenhet for handel med omverdenen. Det er historien om [Kinas vekst til supermakt](/historie/kinas-historie/kina-supermakt). Men arret etter Det store spranget og kulturrevolusjonen sitter fortsatt dypt i det kinesiske samfunnet."
+      "content": "Deng Xiaoping var selv blitt fratatt alle verv i 1967 og sendt til tvangsarbeid. Nå kom han tilbake. Etter et partimøte i desember 1978 var han Kinas mektigste mann, og på 1980-tallet åpnet han landet for handel og marked - men uten å gi slipp på det autoritære styret (Filseth, 2026). Det er historien om [Kinas vekst til supermakt](/historie/kinas-historie/kina-supermakt). Men arret etter Det store spranget og kulturrevolusjonen sitter fortsatt dypt i det kinesiske samfunnet."
     },
     {
         "type": "component",
@@ -212,17 +213,17 @@
                 "Hva var Maos mål med Det store spranget fremover, og hvor lang tid ville han bruke på å ta igjen Storbritannia i stålproduksjon?",
                 "Hva er et kollektiv, og hvordan fikk bøndene betalt for arbeidet sitt under Mao?",
                 "Hvorfor rapporterte lokale partiledere avlinger som var mye høyere enn de faktiske?",
-                "Hvem var Rødegardistene, hvor gamle var de, og hva fikk de i oppgave å gjøre?"
+                "Hvem var Rødegardistene, hvor kom de fra, og hva gikk de løs på?"
             ],
             "reflekter": [
-                "Teksten sier at hungersnøden mellom 1959 og 1961 var menneskeskapt og ikke skyldtes tørke eller naturkatastrofer. Forklar med egne ord hvordan politikk og løgn kunne føre til at millioner sultet i hjel.",
+                "Teksten sier at tørke og flom gjorde vondt verre, men at hovedårsaken til hungersnøden var politikken. Forklar med egne ord hvordan politikk og løgn kunne føre til at millioner sultet i hjel.",
                 "Hvorfor tror du Mao valgte å mobilisere nettopp ungdommen da han startet kulturrevolusjonen? Hva kan gjøre unge lettere å styre enn voksne?",
                 "Teksten forteller at barn anklaget foreldre og ektefeller anklaget hverandre. Hvorfor kunne det være tryggere å vise lojalitet til Mao enn til sin egen familie?",
                 "Se på linjediagrammet over kornproduksjonen. Hva forteller tallene fra 1958 til 1961 oss om hva som skjedde, og hvordan passer det med det teksten sier om hungersnøden?"
             ],
             "gaaVidere": [
                 "Teksten sier at det kinesiske kommunistpartiet fortsatt holder arkivene hemmelige og at temaet er sensurert i Kina i dag. Diskuter i klassen hvorfor et land kan ønske å skjule sin egen historie, og hvorfor det er viktig at vi likevel lærer om den.",
-                "Skriv en kort tekst på 5-8 setninger fra en 15-årings synsvinkel som blir med i Rødegardistene i 1966. Hva føler han eller hun når de får uniform, rødt armbind og makt?",
+                "Skriv en kort tekst på 5-8 setninger fra en 15-årings synsvinkel som blir med i Rødegardistene i 1966. Hva føler han eller hun når de får rødt armbind, den lille røde boka og makt?",
                 "Deng Xiaoping tok senere Kina i retning markedsøkonomi og handel med resten av verden. Finn ut hva Kina er kjent for å produsere i dag, og drøft hvor mye landet har forandret seg siden Maos tid."
             ]
         }
@@ -233,15 +234,15 @@
       "props": {
         "questions": [
           {
-            "question": "Hva var hovedmalet med Det store spranget fremover (1958)?",
+            "question": "Hva var hovedmålet med Det store spranget fremover (1958)?",
             "options": [
               "Å gjøre Kina til en militær stormakt",
-              "Å ta igjen Storbritannia i stålproduksjon på 15 år",
+              "Å gå forbi britisk tungindustri per innbygger på 15 år",
               "Å bygge opp Kinas utdanningssystem",
               "Å innføre demokrati i Kina"
             ],
             "answer": 1,
-            "explanation": "Mao ville at Kina raskt skulle bli en industriell stormakt og ta igjen Storbritannia i stålproduksjon. Det førte til at bønder ble tvunget til å smelte kokkeredskaper i bakgardsovner istedenfor å dyrke mat."
+            "explanation": "Mao ville at Kina raskt skulle bli en økonomisk og militær stormakt, og målet var å gå forbi britisk tungindustri-produksjon per innbygger innen 15 år. Det førte til at bønder ble satt til å smelte kjøkkenredskaper i små stålovner istedenfor å dyrke mat."
           },
           {
             "question": "Hvorfor rapporterte lokale partiledere falske, positive tall under Det store spranget?",
@@ -258,12 +259,12 @@
             "question": "Hvem var Rødegardistene?",
             "options": [
               "Maos personlige livvakter",
-              "Unge kinesere mellom 14 og 25 år mobilisert av Mao",
+              "Elever og studenter som Mao oppmuntret og brukte som støttetropper",
               "Kinesiske soldater stasjonert i grenseområder",
               "Eldre kommunistpartimedlemmer"
             ],
             "answer": 1,
-            "explanation": "Rødegardistene var en massebevegelse av unge kinesere som Mao brukte til å angripe det han kalte fiender av revolusjonen. De ødela kulturminner, forfulgte lærere og tvang folk til å delta i offentlige skamrituelle."
+            "explanation": "Rødegardistene var grupper av elever fra videregående skoler og studenter fra universitetene. De oppsto i Beijing i mai 1966, ble oppmuntret av Mao og brukt som støttetropper mot dem han kalte fiender av revolusjonen. De ødela kulturminner, forfulgte lærere og ydmyket folk offentlig."
           },
           {
             "question": "Hva skjedde da Mao Zedong døde i 1976?",
@@ -276,6 +277,21 @@
             "answer": 2,
             "explanation": "Etter Maos død i september 1976 ble de fire lederne som hadde drevet kulturrevolusjonen videre - Banden av fire - raskt arrestert. Deng Xiaoping tok over og satte Kina på en ny kurs mot markedsøkonomi og reform."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Askheim, S., Garberg, B. & Sjøstedt, G. (2024). *Det store spranget*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Det_store_spranget](https://snl.no/Det_store_spranget)",
+          "Encyclopaedia Britannica. (u.å.). *Great Leap Forward*. Hentet 28.07.2026 fra [britannica.com](https://www.britannica.com/event/Great-Leap-Forward)",
+          "Filseth, G. (2026). *Deng Xiaoping*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Deng_Xiaoping](https://snl.no/Deng_Xiaoping)",
+          "Filseth, G. & Garberg, B. (2024). *Rødegardister*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Rødegardister](https://snl.no/R%C3%B8degardister)",
+          "Filseth, G. & Garberg, B. (2025). *Kulturrevolusjonen*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Kulturrevolusjonen](https://snl.no/Kulturrevolusjonen)",
+          "Russo, A. (2017). *Mao on Uprising and Revolution*. Uprising 13/13, Columbia Law School. Hentet 28.07.2026 fra [blogs.law.columbia.edu](https://blogs.law.columbia.edu/uprising1313/alessandro-russo-mao-on-uprising-and-revolution/)",
+          "Scott, I. (2025). *Maos lille røde*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Maos_lille_røde](https://snl.no/Maos_lille_r%C3%B8de)"
         ]
       }
     }
