@@ -69,13 +69,32 @@ const SAND_GRENSE = 8;
  * er de eneste som *skal* si at tiden har gått.
  */
 export interface NordvikValg {
-    /** Ligger langskipet på svai? I 872 tok mennene det med sørover. */
-    langskip?: boolean;
-    /** Gravhaugen, om noen ligger her. Ruta den ligger på. */
-    haug?: [number, number] | null;
+    /**
+     * Ruta et skip ligger på svai på, eller `null` for tom fjord.
+     *
+     * Ikke et ja/nei: i 793 ligger gårdens eget langskip lengst sør, i 872 er
+     * fjorden tom fordi mennene tok det med til Hafrsfjord, og i 995 ligger
+     * kongens knarr rett utenfor tunet. Samme skrog, tre helt forskjellige
+     * setninger - og alle tre sies uten ord.
+     */
+    langskip?: [number, number] | null;
+    /** Gravhaugene, om noen ligger her. Rutene de ligger på. */
+    hauger?: [number, number][];
+    /**
+     * Hovet, om det står her. Ruta huset ligger på.
+     *
+     * Bygges som et langhus, og det er ikke en snarvei: et hov *var* et hus av
+     * samme slag, ofte høvdingens egen hall. Det som gjør det til et hov, er
+     * hva som skjer inni det.
+     */
+    hov?: [number, number] | null;
 }
 
-export function byggNordvik({ langskip = true, haug = null }: NordvikValg = {}): WorldMap {
+export function byggNordvik({
+    langskip = [3, 46],
+    hauger = [],
+    hov = null,
+}: NordvikValg = {}): WorldMap {
     const rng = makeRng(1793);
     const terreng: TileKey[][] = [];
     const blokkert: boolean[][] = [];
@@ -223,15 +242,14 @@ export function byggNordvik({ langskip = true, haug = null }: NordvikValg = {}):
         }
     }
 
-    // ── Haugen over en av gårdens egne ──────────────────────────────────────
-    // En lav rygg med jord på og en krans av stein rundt. Den er *ikke* en
-    // arena og har ingen fiende i seg: dette er en grav, og eleven skal kunne
-    // gå opp på den og lese steinen som står der.
+    // ── Haugene over gårdens egne ───────────────────────────────────────────
+    // En lav rygg med jord på og en krans av stein rundt. De er *ikke* arenaer
+    // og har ingen fiende i seg: dette er graver, og eleven skal kunne gå opp
+    // på dem og lese steinen som står der - eller se at det ikke står noen.
     //
     // Ligger etter `merk` med vilje - haugen skal rydde plass til seg selv, så
     // ingen skog strøs ned i den etterpå.
-    if (haug) {
-        const [hx, hy] = haug;
+    for (const [hx, hy] of hauger) {
         for (let y = hy - 3; y <= hy + 3; y++) {
             for (let x = hx - 3; x <= hx + 3; x++) {
                 if (x < 1 || y < 1 || x >= W - 1 || y >= H - 1) continue;
@@ -274,6 +292,34 @@ export function byggNordvik({ langskip = true, haug = null }: NordvikValg = {}):
     };
 
     bygg('langhus', 18, 27, 5, 4, { w: 62, h: 26, dy: 10 });
+    // ── Hovet ───────────────────────────────────────────────────────────────
+    // Et hus av samme slag som langhuset, med tråkket jord rundt seg og en vei
+    // ned til stien gjennom bygda. Tråkket er ikke pynt: et hov var stedet hele
+    // bygda kom til, og en gresslette uten en eneste sti inn ville sagt at
+    // ingen går dit.
+    if (hov) {
+        const [ox, oy] = hov;
+        const traakk = (x: number, y: number) => {
+            if (x < 1 || y < 1 || x >= W - 1 || y >= H - 1) return;
+            if (terreng[y][x] === 'vann' || terreng[y][x] === 'stein') return;
+            terreng[y][x] = 'sti';
+            blokkert[y][x] = false;
+        };
+        for (let y = oy - 3; y <= oy + 3; y++) {
+            for (let x = ox - 4; x <= ox + 4; x++) {
+                if (Math.hypot((x - ox) / 4, (y - oy) / 3) > 1) continue;
+                traakk(x, y);
+            }
+        }
+        // Veien opp. Den treffer hovedstien der den svinger mot tinget, så
+        // hovet henger sammen med bygda i stedet for å ligge for seg selv i
+        // skogen.
+        for (let y = oy + 3; y <= 26; y++) {
+            traakk(ox, y);
+            traakk(ox + 1, y);
+        }
+        bygg('langhus', ox, oy, 5, 4, { w: 62, h: 26, dy: 10 });
+    }
     bygg('bu', 25, 33, 3, 3, { w: 34, h: 16, dy: 8 });
     bygg('bu', 13, 22, 3, 3, { w: 34, h: 16, dy: 8 });
     bygg('naust', 8, 39, 4, 3, { w: 42, h: 16, dy: 6 });
@@ -299,8 +345,17 @@ export function byggNordvik({ langskip = true, haug = null }: NordvikValg = {}):
     // kartkanten for ikke å bli klippet.
     //
     // I 872 ligger det ikke der. Mennene tok det med sørover til Hafrsfjord, og
-    // den tomme fjorden er den første setningen kapittelet sier - uten ord.
-    if (langskip) props.push({ kind: 'langskip', x: 3 * 16, y: 46 * 16, solid: false, ...fast });
+    // den tomme fjorden er den første setningen kapittelet sier - uten ord. I
+    // 995 ligger det et skrog der igjen, men det er ikke gårdens eget.
+    if (langskip) {
+        props.push({
+            kind: 'langskip',
+            x: langskip[0] * 16,
+            y: langskip[1] * 16,
+            solid: false,
+            ...fast,
+        });
+    }
 
     // Gjerde rundt åkrene
     for (let x = 24; x < 34; x += 1) {

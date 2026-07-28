@@ -41,6 +41,15 @@ export const K2 = {
     vinteren: 'k2-vinteren',
 } as const;
 
+/**
+ * Steg-id-ene i kapittel 3.
+ *
+ * Samme regel som over: bare de som er bygget står her.
+ */
+export const K3 = {
+    knarren: 'k3-knarren',
+} as const;
+
 /** Flagg kapittel 1 setter, og som mellomspillet og kapittel 5 leser. */
 export const K1_FLAGG = {
     /** Brente hun skriptoriet? Da står det tomt der kilden skulle vært. */
@@ -184,13 +193,27 @@ export const KAPITLER: KapittelDef[] = [
         nr: 3,
         aar: 995,
         tittel: 'Blot eller dåp',
-        rolle: { navn: 'Torgils', alder: 19, stand: 'karl', kjonn: 'mann' },
+        rolle: { navn: 'Torgils Ketilsson', alder: 19, stand: 'karl', kjonn: 'mann' },
         aettId: 'nordvik',
         opptakt: {
-            tittel: 'Nordvik, 995',
-            tekst: 'En knarr glir inn i fjorden. Tolv menn i brynje. Én i hvit kjortel.',
+            tittel: 'Nordvik, høsten 995',
+            tekst:
+                'Det er 123 år siden Åsa berget gården gjennom vinteren alene. Ingen her husker navnet hennes. Haugen hennes ligger nede ved naustet, uten stein.\n\n' +
+                'Du er Torgils, nitten vintrer, og du har aldri sett noe annet enn dette: hovet oppe i lia, blot når vinternettene kommer, og guder som får mat fordi de alltid har fått mat.\n\n' +
+                'I morges gled en knarr inn i vika. Tolv menn i brynje, og én i hvit kjortel. De har en konge som heter Olav Tryggvason, og en gud som ikke vil dele bord med noen.',
         },
-        steg: [],
+        steg: [
+            {
+                id: K3.knarren,
+                tittel: 'Tolv menn i brynje',
+                mal: 'Gå ned i fjæra og hør hva kongens mann vil.',
+                krever: [],
+            },
+        ],
+        // Æren er kapittelets valuta: holmgangen kjempes om den, og det er den
+        // som avgjør hvor tungt Torgils' ord veier når gården skal velge side.
+        // Årshjulet hører til 872 - dette kapittelet varer noen uker, ikke et år.
+        systemer: { aere: true },
         mellomspillEtter: 'mellomspill-3',
     },
     {

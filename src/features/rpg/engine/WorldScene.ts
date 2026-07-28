@@ -20,7 +20,7 @@ import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
 import { Opplaering } from './opplaering';
-import { K1, K1_FLAGG, K2, KAPITTEL_BY_NR } from '../data/kapitler';
+import { K1, K1_FLAGG, K2, K3, KAPITTEL_BY_NR } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
 import { Raidet } from './raidet';
@@ -968,6 +968,15 @@ export class WorldScene extends Phaser.Scene {
                 store.settFlagg(ANGREP_FLAGG.kaareVaepnet);
                 store.fullforSteg('k2-kaare-vaapen');
                 store.larBegrep('trell', 'forstatt');
+                return;
+            }
+            // ── 995: vilkårene fra fjæra ────────────────────────────────────
+            case 'ragnvald-vilkaarene': {
+                // Samtalen *er* handlingen, som hos Torgeir i 872. Kongens
+                // mann sier hva som skal skje, og fra nå av vet Torgils hva
+                // fristen er. Ingen skjerm skal legge seg oppå det: hele
+                // kapittelet er svaret på det han nettopp sa.
+                useRpgStore.getState().fullforSteg(K3.knarren);
                 return;
             }
             case 'torgeir-noklene': {

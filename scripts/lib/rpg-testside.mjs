@@ -70,6 +70,21 @@ const NOKKEL = 'rpg-minnevokteren-v1';
  * selv ville ha lagret.
  */
 export async function entreNordvik(page, navn = 'Torstein', kampanje = undefined) {
+    await entreEpoke(page, { navn, kampanje });
+}
+
+/**
+ * Samme, men et vilkårlig kapittel og et vilkårlig sted.
+ *
+ * Finnes fordi kapittel 3 ligger to mellomspill og et helt bondeår ute i
+ * kampanjen. Å spille seg dit for hver måling ville tatt minutter og gjort
+ * hver prøve til en prøve av alt som kommer før - `verify-rpg-kapittel2.mjs`
+ * er den ene som faktisk skal gå gjennom overgangen.
+ */
+export async function entreEpoke(
+    page,
+    { navn = 'Torstein', kapittel = 1, sisteSted = 'nordvik', kampanje, kapittelState } = {}
+) {
     await page.addInitScript(
         ([nokkel, verdi]) => localStorage.setItem(nokkel, verdi),
         [
@@ -88,9 +103,10 @@ export async function entreNordvik(page, navn = 'Torstein', kampanje = undefined
                     sisteEpoke: 'vikingtiden',
                     epoker: {
                         vikingtiden: {
-                            kapittel: 1,
-                            sisteSted: 'nordvik',
+                            kapittel,
+                            sisteSted,
                             ...(kampanje ? { kampanje } : {}),
+                            ...(kapittelState ? { kapittelState } : {}),
                         },
                     },
                 },

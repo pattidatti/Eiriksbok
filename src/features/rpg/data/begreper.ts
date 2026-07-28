@@ -125,6 +125,14 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Hvem skulle jeg sendt bud til? Det er ingen andre enn oss.',
     },
     {
+        id: 'sed',
+        navn: 'Den gamle sida',
+        forklaring:
+            'Den norrøne gudetroen var ikke en tro med en bok, en menighet og et sett læresetninger. Den var en sed: noe folk gjorde til rett tid, slik det alltid var gjort. Ingen spurte hva du mente om Tor. De spurte om du kom til blotet. Derfor het det ikke å bytte tro, men å ta den nye sida.',
+        forstasVed: 'Gå inn i hovet, og se hva som ikke finnes der.',
+        replikk: 'Ingen har spurt meg hva jeg tror. Jeg ville ikke visst hva jeg skulle svare.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:

@@ -33,6 +33,15 @@ import {
     TORSTEINS_HAUG,
 } from './nordvik872';
 import {
+    AASAS_HAUG,
+    HOVET,
+    KONGENS_KNARR,
+    NORDVIK_995_LANDMARKS,
+    NORDVIK_995_NPCS,
+    NORDVIK_995_PORTAL,
+    NORDVIK_995_SPAWN,
+} from './nordvik995';
+import {
     NORDVIK_AUTHORED_QUESTER,
     NORDVIK_BOSS_QUESTIONS,
     NORDVIK_FARKOSTER,
@@ -192,7 +201,7 @@ const NORDVIK_872: Sted = {
     tema: EPOKE_BY_ID.vikingtiden.tema,
     // Langskipet er borte, og det ligger en haug sør for tunet som ikke lå der
     // i 793. To endringer, og begge sier hva som har skjedd uten et ord.
-    byggKart: () => byggNordvik({ langskip: false, haug: TORSTEINS_HAUG }),
+    byggKart: () => byggNordvik({ langskip: null, hauger: [TORSTEINS_HAUG] }),
     spawn: NORDVIK_872_SPAWN,
     npcer: NORDVIK_872_NPCS,
     landemerker: NORDVIK_872_LANDMARKS,
@@ -216,7 +225,58 @@ const NORDVIK_872: Sted = {
     authored: [],
 };
 
-export const STEDER: Sted[] = [HUB, NORDVIK, LINDISFARNE, NORDVIK_872];
+/**
+ * Nordvik i 995. Tredje gang, og første gang noe *står* på gården som ikke
+ * hører til den.
+ *
+ * To hauger sør for tunet i stedet for én, hovet oppe i lia, og kongens knarr
+ * rett utenfor fjæra. Alle tre endringene er samme grep som i 872: terrenget
+ * kommer fra den samme generatoren, for det er den samme gården, og det som
+ * flyttes på er nettopp det som skal si at tiden har gått.
+ */
+const NORDVIK_995: Sted = {
+    id: 'nordvik-995',
+    tittel: 'Nordvik',
+    undertittel: '995 · kongens skip ligger i vika',
+    epokeId: 'vikingtiden',
+    kapittel: 3,
+    tema: {
+        ...EPOKE_BY_ID.vikingtiden.tema,
+        // Senhøst. Løvet er i ferd med å gå, og gresset har mistet det grønne
+        // det hadde i juni - det er vinternettene som er fristen i kapittelet,
+        // og de skal kunne ses på bakken.
+        gress: '#6c7a4a',
+        lov: '#9a7a3a',
+        himmel: '#b9c3c8',
+    },
+    byggKart: () =>
+        byggNordvik({
+            langskip: KONGENS_KNARR,
+            hauger: [TORSTEINS_HAUG, AASAS_HAUG],
+            hov: HOVET,
+        }),
+    spawn: NORDVIK_995_SPAWN,
+    npcer: NORDVIK_995_NPCS,
+    landemerker: NORDVIK_995_LANDMARKS,
+    portaler: [
+        {
+            tile: NORDVIK_995_PORTAL,
+            maal: {
+                art: 'sted',
+                stedId: 'hub',
+                navn: 'HALLEN',
+                undertekst: 'VEIEN HJEM',
+            },
+        },
+    ],
+    // Tomt, som i 872. Det som kommer mot Torgils i dette kapittelet, kommer
+    // fra skipet i vika, og det kommer på en bestemt dag.
+    spawner: [],
+    musikkRot: 165,
+    authored: [],
+};
+
+export const STEDER: Sted[] = [HUB, NORDVIK, LINDISFARNE, NORDVIK_872, NORDVIK_995];
 
 export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s) => [s.id, s]));
 

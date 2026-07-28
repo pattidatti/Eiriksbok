@@ -20,7 +20,15 @@ export const AETTER: AettDef[] = [
     {
         id: 'nordvik',
         navn: 'Nordvik-ætta',
-        medlemmer: ['Orm Båtbygger', 'Torstein Ormsson', 'Gudrun Husfrue', 'Åsa Torsteinsdotter'],
+        medlemmer: [
+            'Orm Båtbygger',
+            'Torstein Ormsson',
+            'Gudrun Husfrue',
+            'Åsa Torsteinsdotter',
+            'Gudrid',
+            'Torgils Ketilsson',
+            'Steinar Ketilsson',
+        ],
         botsatser: { trell: 12, karl: 50, hauld: 100, jarl: 200 },
     },
     {
