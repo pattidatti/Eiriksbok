@@ -96,6 +96,15 @@ export interface OpplaeringKroker {
     spiller: () => { x: number; y: number };
     /** Skrur av at eleven kan dø. */
     ovingsmodus: (pa: boolean) => void;
+    /**
+     * Stanser at nye fiender driver inn mens timen står på.
+     *
+     * En time er det ene stedet i spillet der eleven skal stå stille og gjøre
+     * én ting om gangen. Nordvik har ingen spawner i dag, så dette endrer
+     * ingenting akkurat nå - det er regelen som skal stå: en opplæring kan ikke
+     * avbrytes av verden.
+     */
+    spawning: (pa: boolean) => void;
     /** Skjuler NPC-Ravn mens kamp-Ravn står på tunet. */
     visNpc: (npcId: string, synlig: boolean) => void;
 }
@@ -134,6 +143,7 @@ export class Opplaering {
         if (!ravn) return;
         this.ravn = ravn;
         this.kroker.ovingsmodus(true);
+        this.kroker.spawning(false);
         this.okt = -1;
         this.nesteOkt();
     }
@@ -219,6 +229,7 @@ export class Opplaering {
         this.pause = 0;
         this.okt = -1;
         this.kroker.ovingsmodus(false);
+        this.kroker.spawning(true);
         if (r) this.kroker.hentInn(r);
         this.kroker.visNpc(npcId, true);
         fraSpill.emit('oppgave', null);

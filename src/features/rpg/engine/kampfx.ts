@@ -490,6 +490,17 @@ export class KampFx {
         this.normalTid();
     }
 
+    /**
+     * Slipper poolen. Må kalles når scenen rives, og bare da - se den utførlige
+     * begrunnelsen i `Effekter.glemPool()`. Samme felle, samme frys.
+     *
+     * `vask()` gjør det ikke, fordi `vask()` også kalles ved død, og da er
+     * bildene i poolen fortsatt gyldige.
+     */
+    glemPool(): void {
+        this.pool = [];
+    }
+
     private hent(nokkel: string): Bilde {
         const p = this.pool.pop() ?? this.scene.add.image(0, 0, nokkel);
         p.setTexture(nokkel)

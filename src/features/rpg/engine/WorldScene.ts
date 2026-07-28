@@ -200,7 +200,13 @@ export class WorldScene extends Phaser.Scene {
             sted.spawner,
             {
                 spiller: () => this.helt.sprite,
-                nerkampTreff: (fiende) => this.helt.nerkampTreff(fiende),
+                // `sar` må videre. Uten den er `ublokkerbart` og `hak` døde i
+                // hele spillet: berserken kan blokkeres som alle andre, og
+                // øksekaren river ikke skjoldet. Verre - telegraferingen fyrer
+                // fortsatt, så spillet *sier* at slaget er annerledes og gjør
+                // så ingenting annerledes. Det er slik en elev lærer at det
+                // gule varselet ikke betyr noe.
+                nerkampTreff: (fiende, sar) => this.helt.nerkampTreff(fiende, sar),
                 hitstop: (ms) => this.hitstop(ms),
                 laas: (pa) => this.settLaast(pa),
             }
@@ -240,6 +246,7 @@ export class WorldScene extends Phaser.Scene {
             hentInn: (f) => this.fiendeSystem.hentInn(f),
             spiller: () => this.helt.sprite,
             ovingsmodus: (pa) => this.helt.settOvingsmodus(pa),
+            spawning: (pa) => this.fiendeSystem.settSpawning(pa),
             visNpc: (npcId, synlig) => this.samhandling.settSynlig(npcId, synlig),
         });
         this.raidet = new Raidet({
@@ -689,6 +696,12 @@ export class WorldScene extends Phaser.Scene {
         // Kamerastøtet kan stå midt i en tween, og blod, biter og lik er egne
         // bilder som må ryddes.
         this.fx.vask();
+        // Partikkel-poolene overlever `scene.restart()`, for `efx` og `fx` er
+        // klassefelt og bygges bare én gang per Scene-instans. Bildene i dem er
+        // derimot revet med scenen. Uten dette kastet første effekt etter en
+        // reise, midt i `update`, og bildeløkka stoppet for godt.
+        this.efx.glemPool();
+        this.fx.glemPool();
         // Gjestene ligger i et kart utenfor visningslista. Phaser river
         // sprite-ene med scenen, men ikke kartet - og en reise ut av hallen
         // ville ellers latt figurene stå igjen som nøkler til bilder som er

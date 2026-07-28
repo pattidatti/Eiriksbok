@@ -78,6 +78,8 @@ export class Fiender {
     private bossVakt = false;
     private bossVekket = false;
     private spawnTimer = 0;
+    /** Av mens opplæringen står på. Se `settSpawning`. */
+    private spawningPa = true;
     /** Navnestolpen øverst sendes et titalls ganger i sekundet, ikke seksti. */
     private toppTimer = 0;
     /** Lista ryddes bare når noen faktisk har dødd, ikke hver frame. */
@@ -243,10 +245,23 @@ export class Fiender {
         return fiende;
     }
 
+    /**
+     * Skrur tilsiget av nye fiender av og på. Brukes av opplæringen: en time
+     * kan ikke avbrytes av verden.
+     *
+     * Merk at dette bare stanser *nye*. De som alt står på kartet blir stående,
+     * og det er med vilje - en fiende som forsvant i det Ravn reiste seg, ville
+     * lest som en feil.
+     */
+    settSpawning(pa: boolean): void {
+        this.spawningPa = pa;
+    }
+
     oppdaterSpawn(delta: number): void {
         // Et sted uten spawnliste er et sted der ingen kommer av seg selv. Det
         // er ikke det samme som et sted uten fiender: raidet setter ut sine
         // egne, og gården hjemme skal være trygg mellom øktene med Ravn.
+        if (!this.spawningPa) return;
         if (this.spawner.length === 0) return;
         this.spawnTimer -= delta;
         if (this.spawnTimer > 0) return;

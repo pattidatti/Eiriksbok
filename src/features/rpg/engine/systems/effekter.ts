@@ -42,6 +42,28 @@ export class Effekter {
     }
 
     /**
+     * Slipper poolen. Må kalles når scenen rives, og bare da.
+     *
+     * Effekter bygges som klassefelt i WorldScene, altså én gang per
+     * Scene-instans - mens reise mellom steder går via `scene.restart()`, som
+     * gjenbruker instansen. Phasers `DisplayList.shutdown()` ødelegger da alle
+     * bildene og setter `gameObject.scene = undefined`, men bildene her i
+     * arrayet blir liggende. Neste `hent()` plukker et av dem, kaller
+     * `setTexture`, som slår opp `this.scene.sys.textures` - og kaster.
+     *
+     * Kastet skjer inne i `scene.update`. Phaser planlegger neste bilde *etter*
+     * callbacken, så løkka stopper for godt: eleven må laste siden på nytt.
+     * Det traff nøyaktig kapittel 1s klimaks - trene med Ravn til poolen er
+     * full, seile til Lindisfarne, og fryse på første slag i raidet.
+     *
+     * Dette er med vilje ikke en del av `vask()`: den kalles også midt i live
+     * spill (ved død), og der skal poolen leve videre.
+     */
+    glemPool(): void {
+        this.pool = [];
+    }
+
+    /**
      * Flytende tall, tegnet med pikselfonten. Vektorfont skalert 3x av kameraet
      * var det mest uskarpe elementet i en ellers skarp pikselartscene.
      */

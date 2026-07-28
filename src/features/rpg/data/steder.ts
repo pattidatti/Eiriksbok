@@ -151,10 +151,19 @@ const NORDVIK: Sted = {
         enemyId: 'den-store-glemselen',
         sporsmal: NORDVIK_BOSS_QUESTIONS,
     },
-    // Den gamle Minnevokteren-rammen står til den pensjoneres i §15. Hver
-    // etappe skal etterlate spillet spillbart, og bygda har ingen andre
-    // fiender før kapittel 1 er ferdig.
-    spawner: ['glemseltaake', 'kildelos-paastand', 'anakronisme', 'ryktespokelse', 'vrangbilde'],
+    // Tom, som på hvert eneste andre sted i kampanjen. Her lå den gamle
+    // Minnevokteren-rammen igjen etter §15: glemseltåke, anakronisme og
+    // ryktespøkelse som vandret rundt på en gård i 793.
+    //
+    // De gjorde to ting galt samtidig. De var av et annet spill - eleven skulle
+    // møte en huskarl, ikke en påstand uten kilde. Og de slo mens Ravn lærte
+    // bort skjoldet: tretten av dem sto på tunet og banket henne ned til 1 liv
+    // mens hun prøvde å lande de tre treffene økt 1 krever. Hun overlevde bare
+    // fordi øvingsmodus gulver skaden, og hun ble dyttet rundt så hun aldri kom
+    // i mål. En kjøring på sju minutter endte på «0 av 3».
+    //
+    // Nordvik er hjemme. Det som skjer her, skjer fordi kapittelet vil det.
+    spawner: [],
     musikkRot: 196,
     authored: NORDVIK_AUTHORED_QUESTER,
 };

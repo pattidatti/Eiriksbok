@@ -316,6 +316,23 @@ export default function RpgPage() {
     useEffect(() => {
         const lytt = (e: KeyboardEvent) => {
             if (e.repeat) return;
+            // Ingen figur, ingen hurtigtaster. Karakterskaperen står på skjermen
+            // nå, og panelene under den hører til et spill som ikke er begynt:
+            // Esc åpnet en pausemeny med «Ny figur (sletter alt)» over en figur
+            // som ikke fantes.
+            if (!character) return;
+            // Og skriver hun i et felt, er tastene hennes - ikke våre. Å skrive
+            // «Mikkel» i navnefeltet åpnet Minnetreet i fullskjerm på m-en; i
+            // åpnet Sekken, l åpnet Oppdrag. Det treffer omtrent halve klassen:
+            // Mikkel, Vilma, Emil, Ida, Live, Mia, Ingrid, Mathilde, Liam,
+            // Milla, Oliver, Amalie.
+            const mal = e.target;
+            if (
+                mal instanceof HTMLInputElement ||
+                mal instanceof HTMLTextAreaElement ||
+                (mal instanceof HTMLElement && mal.isContentEditable)
+            )
+                return;
             const apent = overlegg.type !== 'ingen';
             // Opptakten kan ikke lukkes med Esc. Den er kapittelets første
             // setning, ikke et panel - og en elev som trykker Esc av vane skal
