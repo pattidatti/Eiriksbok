@@ -17,6 +17,8 @@ import {
 import { LINDISFARNE_LANDMARKS } from './lindisfarne';
 import { byggRiccall, RICCALL_PORTAL, RICCALL_SPAWN } from '../engine/riccallgen';
 import { RICCALL_LANDMARKS, RICCALL_NPCS } from './riccall';
+import { byggBrua, BRUA_PORTAL, BRUA_SPAWN } from '../engine/bruagen';
+import { BRUA_LANDMARKS, BRUA_NPCS } from './brua';
 import { byggNordvik } from '../engine/worldgen';
 import {
     byggStiklestad,
@@ -442,6 +444,57 @@ const RICCALL: Sted = {
     authored: [],
 };
 
+/**
+ * Stanford bru, 25. september 1066.
+ *
+ * Andre halvdel av kapittel 5, og det femte kartet epoken har. Samme mønster
+ * som Lindisfarne og Stiklestad: ingen oppdrag, ingen spawner, og et sted som
+ * bare finnes for det ene som skal skje der.
+ *
+ * Porten går tilbake til leiren og ikke til hallen. Det er ikke en snarvei ut:
+ * det er den eneste veien hjem som finnes for noen her, og eleven skal ha lest
+ * «FEM TIMERS GANGE» på den før hun trenger å vite hvor langt det er.
+ */
+const STANFORD_BRU: Sted = {
+    id: 'stanford-bru',
+    tittel: 'Stanford bru',
+    undertittel: '25. september 1066 · fem timer fra skipene',
+    epokeId: 'vikingtiden',
+    kapittel: 5,
+    tema: {
+        ...EPOKE_BY_ID.vikingtiden.tema,
+        // Midt på dagen, i en varme ingen ventet i september. Lysere og
+        // flatere enn i leiren om morgenen: det er sola i seg selv som er
+        // opplysningen her, og den skal stå høyt.
+        gress: '#94975a',
+        lov: '#a68c3c',
+        aker: '#d2bd6c',
+        himmel: '#e6ebe4',
+        vann: '#4d6b6a',
+    },
+    byggKart: byggBrua,
+    spawn: BRUA_SPAWN,
+    npcer: BRUA_NPCS,
+    landemerker: BRUA_LANDMARKS,
+    portaler: [
+        {
+            tile: BRUA_PORTAL,
+            maal: {
+                art: 'sted',
+                stedId: 'riccall',
+                navn: 'LEIREN',
+                undertekst: 'FEM TIMERS GANGE',
+            },
+        },
+    ],
+    // Klar luft, klarere enn noe annet sted i kampanjen. De så hverandre på
+    // lang avstand her, og alt som hendte, hendte i fullt dagslys.
+    taake: 0.3,
+    spawner: [],
+    musikkRot: 131,
+    authored: [],
+};
+
 export const STEDER: Sted[] = [
     HUB,
     NORDVIK,
@@ -451,6 +504,7 @@ export const STEDER: Sted[] = [
     NORDVIK_1030,
     STIKLESTAD,
     RICCALL,
+    STANFORD_BRU,
 ];
 
 export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s) => [s.id, s]));

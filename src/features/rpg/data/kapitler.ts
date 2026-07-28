@@ -84,6 +84,10 @@ export const K4 = {
 export const K5 = {
     leiren: 'k5-leiren',
     brynja: 'k5-brynja',
+    veien: 'k5-veien',
+    gislene: 'k5-gislene',
+    stovet: 'k5-stovet',
+    rekka: 'k5-rekka',
 } as const;
 
 /**
@@ -100,6 +104,17 @@ export const K5_FLAGG = {
     brynjaMed: 'k5-brynja-med',
     /** Eller ligger den i kista ved skipene, som kongen ba om? */
     brynjaIgjen: 'k5-brynja-igjen',
+    /**
+     * Sto han lenge nok til å se merket gå ned?
+     *
+     * Dette er det ene kapittel 5 lar eleven avgjøre. Utfallet står fast -
+     * hæren tapte, og Orm kom ikke hjem - men hvor mye av det han fikk vite før
+     * han falt, er hans eget. Epilogen leser flagget: den som gikk ned tidlig,
+     * døde uten å vite hvordan det gikk.
+     */
+    saaMerketFalle: 'k5-saa-merket-falle',
+    /** Eller gikk han i bakken mens Landøyda fortsatt sto? */
+    faltForKongen: 'k5-falt-for-kongen',
 } as const;
 
 /** Flagg kapittel 4 setter, og som slaget og mellomspillet leser. */
@@ -394,6 +409,30 @@ export const KAPITLER: KapittelDef[] = [
                 tittel: 'Kista di',
                 mal: 'Øystein Orre har ordren fra kongen. Avgjør hva du bærer med deg.',
                 krever: [K5.leiren],
+            },
+            {
+                id: K5.veien,
+                tittel: 'Fem timer østover',
+                mal: 'Følg veien ut av leiren, mot Stanford bru.',
+                krever: [K5.brynja],
+            },
+            {
+                id: K5.gislene,
+                tittel: 'Ventingen',
+                mal: 'Kongen står ved veien. Hør hva som skal skje når gislene kommer.',
+                krever: [K5.veien],
+            },
+            {
+                id: K5.stovet,
+                tittel: 'Støvet på veien',
+                mal: 'Det står støv over veien fra York. Gå bort og se hva det er.',
+                krever: [K5.gislene],
+            },
+            {
+                id: K5.rekka,
+                tittel: 'Rekka ved brua',
+                mal: 'Over brua, og opp på høyden. Still deg i rekka.',
+                krever: [K5.stovet],
             },
         ],
         // Ingen ærestolpe og intet årshjul. Orm er utbudsmann i en konges hær i

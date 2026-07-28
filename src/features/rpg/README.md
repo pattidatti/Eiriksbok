@@ -28,6 +28,13 @@ budstikke opp stien, og han går mot kongen som gjorde landet kristent -
 sammen med naboer som også er døpt. På Stiklestad står han i en skjoldborg og
 skal bli stående i halvannet minutt uten å gå fram.
 
+**Kapittel 5 er 1066.** Han er Orm, sønnesønnen hans, og han er ikke hjemme:
+bygda trakk lodd, og han ligger med kongens hær i England. En varm morgen
+avgjør han om brynja skal bli med de fem timene til Stanford bru, der de skal
+ta imot gisler og ingenting mer. Så står det støv over veien fra York. Han
+stiller seg i den samme rekka han lærte i 1030, uten jernet sitt, og han
+kommer ikke hjem.
+
 Dette er et eget spor, adskilt fra 3D-mini-spillmotoren i `src/games/engine/`
 og fra mikrospillene i `src/components/microgames/`.
 
@@ -70,6 +77,7 @@ data/
   nordvik1030.ts         Nordvik i 1030: kirken på hovets grunn, budstikka og sønnen
   stiklestad.ts          Sletta i Verdalen: Tore Hund, Kalv Arnesson og rekka
   riccall.ts             Leiren ved skipene i 1066: Tostig, Øystein Orre og kista
+  brua.ts                Stanford bru: kongen, skalden, naboen og mannen med øksa
   steder.ts              STEDER-registeret. Ett sted = ett kart med alt som hører til
 engine/
   boot.ts                Starter Phaser (dynamisk import), starter scenen på et stedId
@@ -94,6 +102,8 @@ engine/
   skjoldborg.ts          Rekka på Stiklestad: plassen, hullet og halvannet minutt
   stiklestadgen.ts       Bygger sletta i Verdalen
   riccallgen.ts          Bygger leiren ved Ouse: flåten, teltene og veien østover
+  bruslaget.ts           Rekka ved brua: uten brynje, med en klokke som ikke rekker fram
+  bruagen.ts             Bygger Stanford bru: elva, plankene og høyden bak
   ting.ts                Sakens fire trinn: frist, vitner, hjemmel, dom
   raidet.ts              Lindisfarne, i to halvdeler
   lindisfarnegen.ts      Bygger klosterøya
@@ -441,15 +451,17 @@ nytt like ofte. Pust- og livsstolpene har `aria-valuenow`, som er det
 Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blueprint.md`.
 Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
 `docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R8 er bygget, og
-refaktoreringen er dermed ferdig. Kapittel 1-4 med mellomspillene er bygget;
-neste er kapittel 5 og epilogen, etter Nordvik-blueprintens etappe 5.
+refaktoreringen er dermed ferdig. Kapittel 1-5 er bygget, med mellomspill I-IV;
+det som gjenstår er Mellomspill V og epilogen, etter Nordvik-blueprintens
+etappe 5.
 
 ## Kapittel 1: 793
 
 Vikingtiden spilles som en kampanje over fem kapitler på samme gård
-(`docs/Design documents/minnevokteren-nordvik-blueprint.md`). Kapittel 1-4 er
-bygget; kapittel 5 står i `data/kapitler.ts` med rolle og år, og uten steg -
-et steg ingen har bygget er et løfte vi ikke kan holde.
+(`docs/Design documents/minnevokteren-nordvik-blueprint.md`). Alle fem er
+bygget. Det som gjenstår, er Mellomspill V og epilogen - og der gjelder samme
+regel som ellers: et steg ingen har bygget er et løfte vi ikke kan holde, og
+det står derfor ikke i `K5`.
 
 Framdriften er en **liste med steg-id-er** i kampanjetilstanden, ikke et tall.
 Et tall kan bare gå én vei og sier ingenting om hva eleven gjorde; en liste
@@ -671,10 +683,13 @@ eleven står et sted hun ikke valgte å reise til.
 | --- | --- | --- |
 | `k5-leiren` | Tostig sier hva dagen er: gisler, ikke slag | `data/riccall.ts` |
 | `k5-brynja` | Hva du bærer de fem timene | `data/riccall.ts` |
+| `k5-veien` | Å komme fram til brua *er* steget | `WorldScene.aapneStedet` |
+| `k5-gislene` | Kongen sier hva som skjer når gislene kommer | `data/brua.ts` |
+| `k5-stovet` | Støvet på veien, og dagen som snur | `WorldScene.stovetPaaVeien` |
+| `k5-rekka` | Rekka uten brynje. Du dør. | `engine/bruslaget.ts` |
 
-Brua er ikke bygget ennå. Veien østover står som landemerke og leses, men den
-har ingen knapp - `k5-broen` og `k5-rekka` finnes ikke i `K5`, for et steg
-ingen har bygget leser i oppdragsloggen som noe eleven har gått glipp av.
+Epilogen og Mellomspill V er ikke bygget ennå. Etter dødsskjermen gjøres
+kapittelet opp, og veien går til hallen.
 
 **Kapittelets tese ligger i at alt eleven møter er fornuftig.** Freden er
 sluttet med York, gislene kommer i dag, Fulford var for fem dager siden, det er
@@ -705,6 +720,49 @@ Ting som er lette å ødelegge her:
     Fargene på `prop-telt` står derfor skrevet ut.
 -   **Få trær.** Treproppen er en gran, og Vale of York har ingen. Fire ved
     vannet leser som en klynge; ni leser som at leiren ligger i Trøndelag.
+
+### Brua: rekka som ikke kan holde
+
+Andre halvdel spilles ved Stanford bru, og formen sier alt: elva ligger tvers
+over kartet, og det finnes ett sted å krysse den. Eleven kommer fram til en hær
+som ligger i graset med skjoldene fra seg og venter på gisler. Så står det støv
+over veien fra York.
+
+Rekka er den samme som på Stiklestad - samme knapp, samme regler, samme plass
+midt i linja - og det er meningen at hun skal kjenne seg igjen. Tre ting er
+annerledes, og de er hele kapittelet:
+
+-   **Ingen har brynje.** Bar hun sin, dekker rekka henne som i 1030 (0,62), og
+    hun kommer fram sliten etter fem timer med jern i sola. Lot hun den ligge,
+    er hun uthvilt og nesten bar (0,95). De to er nesten like mye verdt, og
+    ingen av dem redder henne. Det *er* valget.
+-   **Klokka teller ned til noe som ikke rekker fram.** Kortet viser hvor langt
+    budet til skipene er kommet: 5 t, 4 t, 3 t, 2 t. Hun dør med to timer igjen
+    på det. Kortet lyver ikke - det er nøyaktig den opplysningen de hadde.
+-   **Mennene ved siden av henne faller uansett hva hun gjør.** På Stiklestad
+    var naboens død hennes feil hvis den skjedde; her er den ingens. Går hun
+    likevel fram, faller Torfinn fortere, men hans fall avslutter ingenting.
+    Det er bare hennes eget som gjør det.
+
+Ting som er lette å ødelegge her:
+
+-   **Øvingsmodus må stå på til hun forlater brua.** Slås den av i det rekka
+    gir seg, står hun med ett liv igjen i halvannet sekund før skjermbildet
+    kommer, og en pil som alt er i lufta når henne. Da tar spillets vanlige
+    dødsskjerm over: «Tåka tok deg. Du våkner igjen i Nordvik.» Det er den ene
+    setningen som ikke får stå i dette kapittelet (blueprint §16.2).
+-   **Hun avgjør ikke slaget, men hun avgjør hva hun rakk å se.** Faller hun
+    før merket går ned, får hun aldri vite at kongen døde eller hvordan det
+    endte. Står hun lenger, ser hun Landøyda gå ned og Øystein Orre komme for
+    sent. Det er ikke en trøstepremie - det er hva et vitne er, og Mellomspill
+    V skal gripe fatt i nettopp det.
+-   **Mannen med øksa har ikke navn.** Historien om ham står i én engelsk
+    håndskrift, skrevet over hundre år etter, og i ingen norrøn kilde. Vi lar
+    ham stå på plankene mens hæren går over, og vi viser ikke kampen hans.
+-   **Ingen kompassretning står på kartet.** Elva ligger vannrett i bildet og
+    rekka nedenfor den, så «over brua» er nedover på skjermen. Der ute renner
+    Derwent nord-sør. Retningene er valgt for øynene, som på Stiklestad, og
+    derfor sier ingen tekst her hvilken vei nord er.
 
 ## Mellomspillet: bordet med kildene
 

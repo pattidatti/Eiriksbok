@@ -40,6 +40,8 @@ import { Gaarden } from './gaarden';
 import { Angrepet, ANGREP_FLAGG } from './angrepet';
 import { Holmgang } from './holmgang';
 import { Skjoldborg } from './skjoldborg';
+import { Bruslaget } from './bruslaget';
+import { STOVET_PAA_VEIEN } from '../data/brua';
 import { Portaler } from './portal';
 import { Samvaer } from './samvaer';
 import { numToHex } from './pixels';
@@ -101,6 +103,8 @@ export class WorldScene extends Phaser.Scene {
     private hudBilde: Phaser.GameObjects.Graphics | null = null;
     /** Rekka på Stiklestad, 1030. `null` overalt utenom sletta. */
     private skjoldborg: Skjoldborg | null = null;
+    /** Rekka ved Stanford bru, 1066. `null` overalt utenom brua. */
+    private brua: Bruslaget | null = null;
     /** Streken i gresset der rekka står. */
     private linjeBilde: Phaser.GameObjects.Graphics | null = null;
     /** Båter og annet eleven kan gå om bord i. */
@@ -306,6 +310,31 @@ export class WorldScene extends Phaser.Scene {
                       musikkRot: sted.musikkRot,
                   })
                 : null;
+        // Og rekka ved brua. Samme krokene som på sletta, med én til: hæren
+        // snur midt i kapittelet, og da må folk kunne tas ut av bildet.
+        this.brua =
+            sted.id === 'stanford-bru'
+                ? new Bruslaget({
+                      settUt: (defId, x, y, valg) => {
+                          const def = ENEMY_BY_ID[defId];
+                          return def ? this.fiendeSystem.settUt(def, x, y, valg) : null;
+                      },
+                      hentInn: (f) => this.fiendeSystem.hentInn(f),
+                      spiller: () => this.helt.sprite,
+                      settSpiller: (x, y) => this.flyttHelt(x, y),
+                      ovingsmodus: (pa) => this.helt.settOvingsmodus(pa),
+                      settIRekke: (pa) => this.helt.settIRekke(pa),
+                      settDekning: (faktor) => this.helt.settDekning(faktor),
+                      saarEffekt: (x, y) => {
+                          this.fx.blod(x, y, 0xc4241f, 4, Math.PI / 2);
+                          this.efx.flytTekst(x, y - 26, 'Truffet!', '#ff8080', 14);
+                      },
+                      leggUtLinje: (fraX, tilX, y) => this.leggUtLinje(fraX, tilX, y),
+                      taOppLinje: () => this.taOppLinje(),
+                      settSynlig: (npcId, synlig) => this.samhandling.settSynlig(npcId, synlig),
+                      musikkRot: sted.musikkRot,
+                  })
+                : null;
         this.samhandling = new Interaksjon(this, sted.npcer, sted.landemerker, {
             spiller: () => this.helt.sprite,
             laas: (pa) => this.settLaast(pa),
@@ -402,11 +431,20 @@ export class WorldScene extends Phaser.Scene {
         // Og for rekka på sletta. Går hun hjem for å hente et bedre skjold
         // mellom to bølger, skal oppgavekortet stå der når hun kommer tilbake.
         this.skjoldborg?.gjenopprett();
+        // Og for brua: hvem som står og venter, og hvem som står på plankene,
+        // avgjøres av hvor langt dagen er kommet - ikke av et felt i minnet.
+        this.brua?.gjenopprett();
         // Å komme fram *er* steget. Reisen inn fjorden og opp dalen tok to
         // dager, og det finnes ingenting å gjøre i dem som ikke er venting -
         // puzzlet er ikke veien, det er sletta.
         if (this.sted.id === 'stiklestad') {
             useRpgStore.getState().fullforSteg(K4.veien);
+            return;
+        }
+        // Samme regel for de fem timene østover i 1066. Marsjen er venting, og
+        // det er framme dagen snur.
+        if (this.sted.id === 'stanford-bru') {
+            useRpgStore.getState().fullforSteg(K5.veien);
             return;
         }
         if (this.sted.id !== 'lindisfarne') return;
@@ -594,6 +632,9 @@ export class WorldScene extends Phaser.Scene {
                 // etter slaget. Sier den ja, står den nå framme, og bordet
                 // venter til også den er lest.
                 if (this.aaretEtterStiklestad()) return;
+                // Og kapittel 5 har sin egen: rekka ved brua ender ikke i en
+                // seier, den ender i at Orm blir liggende.
+                if (this.dodenVedBrua()) return;
                 this.bordetEtterKapittelet();
             }),
             tilSpill.on('tingsakSvar', (svar) => this.forSaken(svar))
@@ -711,6 +752,7 @@ export class WorldScene extends Phaser.Scene {
         this.angrepet?.oppdater(delta);
         this.holmgang?.oppdater(delta);
         this.skjoldborg?.oppdater(delta);
+        this.brua?.oppdater(delta);
         if (!sitter) {
             this.samvaer?.sjekk(
                 delta,
@@ -891,6 +933,7 @@ export class WorldScene extends Phaser.Scene {
         this.angrepet?.avslutt();
         this.holmgang?.avslutt();
         this.skjoldborg?.avslutt();
+        this.brua?.avslutt();
         this.reiser = true;
         this.reiserFra = this.sted.id;
         fraSpill.emit('reise', { stedId });
@@ -1117,6 +1160,13 @@ export class WorldScene extends Phaser.Scene {
                 useRpgStore.getState().fullforSteg(K5.leiren);
                 return;
             }
+            case 'harald-gislene': {
+                // Samtalen *er* steget, som hos Tostig i leiren. Kongen sier
+                // hvorfor ingen har brynje på i dag, og først når eleven har
+                // hørt det, er støvet på veien verdt å gå bort og se på.
+                useRpgStore.getState().fullforSteg(K5.gislene);
+                return;
+            }
             case 'brynja-med':
             case 'brynja-igjen': {
                 const store = useRpgStore.getState();
@@ -1154,6 +1204,14 @@ export class WorldScene extends Phaser.Scene {
         if (handlingId === 'til-tinget') this.apneTinget();
         if (handlingId === 'gaa-paa-huden') this.holmgang?.start();
         if (handlingId === 'still-deg-i-rekka') this.skjoldborg?.still();
+        if (handlingId === 'still-deg-i-brua-rekka') this.brua?.still();
+        if (handlingId === 'se-paa-stovet') this.stovetPaaVeien();
+        if (handlingId === 'til-brua') {
+            // Som reisen opp Verdalen i 1030: den bestilles med én gang. Fem
+            // timers gange er ikke innhold, det er avstanden mellom kista og
+            // rekka - og den avstanden får eleven kjenne når den betyr noe.
+            this.bestillReise('stanford-bru');
+        }
         if (handlingId === 'til-stiklestad') {
             // Reisen bestilles med én gang, som etter navigasjonen i 793. Å
             // sette henne tilbake på tunet for å gå ned til båten etterpå ville
@@ -1249,9 +1307,10 @@ export class WorldScene extends Phaser.Scene {
      * den hele forskjellen, og det er der den skal leses.
      */
     private iRekkeSkade(skade: number): number {
-        if (!this.skjoldborg) return skade;
+        const rekka = this.skjoldborg ?? this.brua;
+        if (!rekka) return skade;
         const art = utrustetVaapen(useRpgStore.getState()).art;
-        const faktor = this.skjoldborg.skadefaktor(vaapenKamp(art).iRekke);
+        const faktor = rekka.skadefaktor(vaapenKamp(art).iRekke);
         return faktor === 1 ? skade : Math.max(1, Math.round(skade * faktor));
     }
 
@@ -1496,6 +1555,55 @@ export class WorldScene extends Phaser.Scene {
             ].join('\n\n'),
             knapp: 'Videre',
         });
+        return true;
+    }
+
+    /**
+     * Støvet på veien, og dagen som snur.
+     *
+     * Ett skjermbilde som eier hele flaten, av samme grunn som vinteren i 872:
+     * det er fire ting som skjer på to minutter, og de må stå i riktig
+     * rekkefølge. Verden låses bak det, og hæren snur mens hun leser.
+     *
+     * Begrepet gis som `forstatt` her og ikke som `hort`. Det er det ene stedet
+     * i kapittelet der noe faktisk går opp for henne: alt de har regnet med i
+     * dag, hvilte på hvor fort en hær kan gå, og nå står den på veien.
+     */
+    private stovetPaaVeien(): void {
+        const store = useRpgStore.getState();
+        if (store.steg.includes(K5.stovet)) return;
+        this.settLaast(true);
+        store.fullforSteg(K5.stovet);
+        store.larBegrep('hurtigmarsjen', 'forstatt');
+        this.brua?.retretten();
+        fraSpill.emit('beskjed', STOVET_PAA_VEIEN);
+    }
+
+    /**
+     * Slutten ved brua, og kapittelet er over.
+     *
+     * Samme form som året etter Stiklestad: beskjeden fra rekka har fått stå
+     * alene, og først når den er lest, gjøres kapittelet opp. Returnerer sant
+     * når den tok skjermen, så den som kalte lar bordet vente.
+     *
+     * Livet fylles opp igjen før hun sendes videre. Ikke fordi Orm overlevde -
+     * han gjorde ikke det - men fordi eleven ikke skal komme inn i hallen med
+     * ett liv igjen og møte glemselen der. Kapittelet er over; kroppen hun går
+     * med videre, er ikke hans.
+     *
+     * Epilogen (blueprint §4) og Mellomspill V hører hjemme nøyaktig her, og
+     * ingen av dem er bygget ennå. Til de står, går veien til hallen.
+     */
+    private dodenVedBrua(): boolean {
+        if (this.sted.id !== 'stanford-bru') return false;
+        const store = useRpgStore.getState();
+        if (!store.steg.includes(K5.rekka)) return false;
+        if (store.steg.includes('kapittel:5')) return false;
+        store.fullforKapittel(5, 'Kapittel 5: Den som ikke kommer hjem');
+        store.varsle('Kapittel 5 er over. 1066 er bak deg.', 'niva');
+        store.settHp(maksVerdier(store).hp);
+        fraSpill.emit('oppgave', null);
+        this.bestillReise('hub');
         return true;
     }
 

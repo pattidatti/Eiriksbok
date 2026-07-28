@@ -329,10 +329,68 @@ export const BONDE_I_REKKA: EnemyDef = {
     navngitt: true,
 };
 
+/**
+ * De som kommer over brua i 1066.
+ *
+ * To arketyper, og forskjellen mellom dem er hele det engelske hærvesenet:
+ * fyrdmannen er en bonde som er kalt ut fra bygda si, akkurat som Orm selv,
+ * mens huskarlen er en betalt yrkeskriger i kongens husholdning. Eleven har
+ * møtt begge før - hun har vært den ene i 1030 - og hun kjenner dem igjen på
+ * hvor fort de slår.
+ *
+ * Det ene som ikke ligger i tallene, ligger i navnet: huskarlen har brynje. Det
+ * har ikke hun i dag. Motoren gjør ikke noe eget ut av det - `bruslaget.ts`
+ * eier den regelen - men det er derfor han er den han er.
+ */
+export const ENGELSKE: EnemyDef[] = [
+    {
+        id: 'engelsk-fyrdmann',
+        kind: 'menneske',
+        name: 'Fyrdmann',
+        hp: 36,
+        skade: 10,
+        fart: 52,
+        aggro: 240,
+        rekkevidde: 38,
+        // Han er ikke en yrkeskriger, og varselet hans er langt nok til at
+        // eleven ser det. Det er ikke han som dreper henne.
+        varsel: 600,
+        farge: 0x7a6a4a,
+        xp: 0,
+        loot: [],
+        vaapenArt: 'spyd',
+        harSkjold: true,
+        haar: 1,
+    },
+    {
+        id: 'engelsk-huskarl',
+        kind: 'menneske',
+        name: 'Huskarl',
+        hp: 68,
+        skade: 17,
+        fart: 60,
+        aggro: 260,
+        rekkevidde: 28,
+        // Hardere enn huskarlen hjemme, og det er ikke balansering: dette er
+        // kong Harald Godwinsons egne, betalte menn, og de har gått fra London
+        // på fire dager for å komme hit.
+        varsel: 350,
+        farge: 0x4a4038,
+        xp: 0,
+        loot: [],
+        vaapenArt: 'oks',
+        haar: 2,
+        // Toppløs øks i to hender: den kroker skjoldkanten og river den ned.
+        // Uten brynje under er det ikke skjoldet som er det verste hun mister.
+        sarslag: { hvert: 3, hak: true },
+    },
+];
+
 export const ENEMIES: EnemyDef[] = [
     ...MENNESKER,
     ...LINDISFARNE_FIENDER,
     ...HOVDA_MENN,
+    ...ENGELSKE,
     HOLMGANGSMANN,
     BONDE_I_REKKA,
     {

@@ -20,7 +20,7 @@
 // hjemmefra, fra Sæbø - den ætta Åsa ga korn til i 872, og som bar budstikka
 // opp stien i 1030.
 
-import { K4_FLAGG } from './kapitler';
+import { K4_FLAGG, K5 } from './kapitler';
 import { RICCALL_PORTAL, VEIEN_OST } from '../engine/riccallgen';
 import type { LandmarkDef, NpcDef } from '../types';
 
@@ -267,6 +267,15 @@ export const RICCALL_LANDMARKS: LandmarkDef[] = [
         title: 'Veien østover',
         text: 'Veien går ut gjennom krattet og videre over sletta, mot Stanford bru. Fem timers gange, sier de som har vært der.\n\nDet er langt nok til at ingen snur for noe de har glemt igjen.\n\nDet ligger en elv ved brua, og en bygd, og det er alt noen her vet om stedet.',
         stikkord: ['stamford bridge', 'stanford bru', 'avstand', 'marsj'],
+        // Marsjen selv er ikke et puzzle. Fem timers gange på en varm dag er
+        // venting, og det finnes ingenting å gjøre i den som ikke er venting -
+        // det er framme det skjer noe. Samme regel som reisen inn Verdalen i
+        // 1030: å komme fram *er* steget.
+        handling: {
+            id: 'til-brua',
+            knapp: 'Gå østover',
+            krever: [K5.brynja],
+        },
     },
     /**
      * Bålet. Fulford, fem dager etter.

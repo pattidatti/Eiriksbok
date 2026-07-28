@@ -1,9 +1,8 @@
 # Blueprint: Nordvik - vikingtiden som spillbar kampanje
 
-**Status:** Etappe 1-5 er bygget til og med kapittel 4. Kampanjen er spillbar
-fra Nordvik i 793 til sletta på Stiklestad i 1030, med alle fire mellomspillene.
-Det som gjenstår er kapittel 5 (Stamford Bridge), Mellomspill V og epilogen.
-Se statusnotatet under §13.
+**Status:** Etappe 1-5 er bygget, og alle fem kapitlene er spillbare - fra
+Nordvik i 793 til rekka ved Stanford bru i 1066, med mellomspill I-IV.
+Det som gjenstår er Mellomspill V og epilogen. Se statusnotatet under §13.
 **Rute:** `/oving/rpg`
 **Erstatter:** «Minnevokteren», den abstrakte sone-rammen. Navnet lever videre som
 hubbens fiksjon, utenfor epokene, der det ikke står mellom eleven og fagstoffet.
@@ -1302,13 +1301,14 @@ Nye prøver: `verify-rpg-kapittel3`, `verify-rpg-blotet`, `verify-rpg-holmgang`,
   Glælognskviða, stilet til Knut den mektiges sønn Svein med en oppfordring om å
   be den døde kongen om hjelp til å beholde landet.
 
-**Kapittel 5 er påbegynt** (K5a): leiren ved skipene står, brua står ikke.
+**Kapittel 5 er bygget** (K5a-K5b), og med det er alle fem kapitlene spillbare.
 
 | Delet | Hva som står |
 | --- | --- |
 | K5a | Riccall ved Ouse som eget sted: flåten, teltene, kista og veien østover. Tostig, Øystein Orre, Tjodolv Arnorsson og naboen fra Sæbø. Valget om brynja. `prop-telt` er ny i tileforge |
+| K5b | Stanford bru som eget sted: elva, plankene, venteplassen og høyden bak. Harald Sigurdsson, Tjodolv og Torfinn. Støvet på veien, retretten over brua, mannen med øksa, og rekka uten brynje - `engine/bruslaget.ts`. Døden, og kapittelet gjort opp |
 
-**Fire avvik og funn:**
+**Fire avvik og funn (K5a):**
 
 - **Kapittelet begynner i England, ikke hjemme.** §4 sier «kort, tett,
   uunngåelig», og en avskjedsscene på Nordvik ville vært det motsatte. At Orm
@@ -1330,8 +1330,38 @@ Nye prøver: `verify-rpg-kapittel3`, `verify-rpg-blotet`, `verify-rpg-holmgang`,
   ut før det har hendt noe å være klok etterpå av, er nøyaktig den feilen
   begrepet handler om. Det løftes når brua er over.
 
-**Det som gjenstår:** resten av kapittel 5 (brua, rekka uten brynje, døden),
-Mellomspill V og epilogen (§4). Og §16.3 står fortsatt: `ClassId` skal ut av
+**Fem avvik og funn (K5b):**
+
+- **Rekka ved brua er den samme rekka som på Stiklestad, med vilje.** §4 sier
+  bare at kampen er umulig fordi brynjene ligger på skipene. Å gi kapittelet en
+  ny formasjonsmekanikk ville skjult nettopp det: eleven skal kjenne igjen
+  knappen, plassen og reglene fra 1030 og gå inn i dem med skuldrene senket, og
+  så oppdage inne i rekka at alt hun kan, ikke er nok. Gjenkjennelsen *er*
+  lærepengen.
+- **Klokka teller ned til hjelp som ikke rekker fram.** På Stiklestad teller
+  kortet ned til seier. Her viser det hvor langt budet til skipene er kommet -
+  5 t, 4 t, 3 t, 2 t - og hun dør med to timer igjen på det. Kortet lyver ikke;
+  det er nøyaktig den opplysningen de hadde, og det er derfor det gjør vondt.
+- **Mennene i rekka faller på klokka, ikke på hennes feil.** Det er den ene
+  regelen som snur §5.4 på hodet, og den er hele forskjellen på et slag man kan
+  stå seg gjennom og et slag som var avgjort før det begynte. Hullet fra 1030
+  virker fortsatt - går hun fram, faller Torfinn fortere - men hans fall
+  avslutter ingenting. Bare hennes eget gjør det.
+- **Det hun avgjør, er hva hun rakk å se.** §16.2 sier at skjermen er ferdig
+  skrevet, og det er den: hun dør uansett. Men faller hun før merket går ned,
+  får hun aldri vite at kongen døde eller hvordan det endte, og står hun
+  lenger, ser hun Landøyda gå ned og Øystein Orre komme for sent. To flagg, og
+  Mellomspill V skal gripe fatt i nettopp det: alt vi vet om dagen, vet vi fra
+  folk som sto et annet sted enn ham.
+- **Øvingsmodus må stå på til hun er ute av 1066.** Slås den av i det rekka gir
+  seg, slik `skjoldborg.ts` gjør, står hun med ett liv igjen i halvannet sekund
+  før skjermbildet kommer - og en pil som alt er i lufta når henne. Da tar
+  spillets vanlige dødsskjerm over: «Tåka tok deg. Du våkner igjen i Nordvik.»
+  Det er den ene setningen som ikke får stå i dette kapittelet. Feilen fantes i
+  første utkast og ble funnet av `scripts/verify-rpg-brua.mjs`.
+
+**Det som gjenstår:** Mellomspill V (§6) og epilogen (§4) - i dag går veien fra
+dødsskjermen rett til hallen. Og §16.3 står fortsatt: `ClassId` skal ut av
 karakterskaperen, men den ligger på flerspiller-tråden (`Gjest.classId`) og i
 `figurLook`.
 

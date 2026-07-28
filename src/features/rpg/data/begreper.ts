@@ -229,6 +229,14 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Tre menn, ett rike, og ingen av dem har en far som var konge her.',
     },
     {
+        id: 'hurtigmarsjen',
+        navn: 'Hurtigmarsjen',
+        forklaring:
+            'En hær i 1066 gikk til fots og spiste av landet den gikk gjennom. Alle regnet med rundt tre mil om dagen, og ut fra det var en hær i London ufarlig for en hær i York i minst fire dager. Harald Godwinson gikk nesten tretti mil på fire døgn og kom fram med folkene sine i stand til å slåss. Hele planen ved Stanford bru hvilte på et anslag om fart, og det er verdt å merke seg: det som avgjorde slaget, var ikke mot eller våpen, men hvor lang tid noen trodde noe tok.',
+        forstasVed: 'Stå ved veien og se hæren som ikke kunne rukket fram.',
+        replikk: 'Ingen fører en hær fra London til York på fire dager. Det har aldri hendt.',
+    },
+    {
         id: 'etterpaaklokskap',
         navn: 'Etterpåklokskap',
         forklaring:
