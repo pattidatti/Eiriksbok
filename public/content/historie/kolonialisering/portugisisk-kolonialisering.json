@@ -22,7 +22,7 @@
         },
         {
             "type": "text",
-            "content": "Dette er historien om hvordan verdens første globale imperium ble bygget – ikke med store hærer som marsjerte over land, som romerne eller spanjolene, men med smidige skip, presise kart og kanoner rettet mot havnebyer."
+            "content": "Dette er historien om hvordan verdens første globale imperium ble bygget - ikke med store hærer som marsjerte over land, som romerne eller spanjolene, men med smidige skip, presise kart og kanoner rettet mot havnebyer."
         },
         {
             "type": "header",
@@ -30,11 +30,11 @@
         },
         {
             "type": "text",
-            "content": "Startskuddet for den portugisiske ekspansjonen knyttes ofte til en mann som sjelden seilte selv: Prins Henrik «Sjøfareren» (1394–1460). Han etablerte det som i praksis var et forskningssenter for navigasjon i Sagres. Her samlet han de beste karttegnerne, astronomene og sjømennene fra hele Europa – både kristne og jøder."
+            "content": "Startskuddet for den portugisiske ekspansjonen knyttes ofte til en mann som knapt seilte selv: Prins Henrik «Sjøfareren» (1394-1460). Han seilte bare tre ganger, og kom aldri lenger enn til Nord-Afrika. Ifølge tradisjonen grunnla han likevel en sjøfartsskole i Sagres, der navigasjon og matematikk ble studert. Mellom 1415 og 1460 stod han bak omtrent en tredjedel av alle oppdagelsesferdene langs vestkysten av Afrika (Chabert, 2025a)."
         },
         {
             "type": "text",
-            "content": "Det store teknologiske gjennombruddet var karavellen. Dette nye skipet kombinerte nordeuropeiske skrog med arabiske seil (trekantseil). Det gjorde det mulig å krysse mot vinden, noe som var avgjørende for å kunne seile nedover Afrika-kysten og – viktigst av alt – komme seg hjem igjen mot de rådende vindene."
+            "content": "Det store teknologiske gjennombruddet var karavellen. Skipstypen ble utviklet i de tjue årene etter erobringen av Ceuta, og var slankere og lettere enn galeiene. Trekantseilene gjorde det mulig å krysse mot vinden (Chabert, 2025a), noe som var avgjørende for å kunne seile nedover Afrika-kysten og - viktigst av alt - komme seg hjem igjen mot de rådende vindene."
         },
         {
             "type": "factbox",
@@ -47,7 +47,7 @@
         },
         {
             "type": "text",
-            "content": "Målet for portugiserne var klart: Å finne sjøveien til India. Krydderhandelen var dominert av arabiske kjøpmenn og Venezia, som tok skyhøye priser. Hvis Portugal kunne seile direkte til kilden, ville de kunne kutte ut alle mellomledd og tjene enorme summer."
+            "content": "Målet for portugiserne var klart: Å finne sjøveien til India. Krydderhandelen var dominert av arabiske kjøpmenn og Venezia, som tok skyhøye priser. Hvis Portugal kunne seile direkte til kilden, ville de kunne kutte ut alle mellomledd og tjene enorme summer. Men det handlet ikke bare om penger. Kong Manuel 1. ville også utbre kristendommen og svekke islam, og siden Europa hadde få varer Asia ville ha, ble plyndring og makt en sentral del av strategien (Feddersen, 2025)."
         },
         {
             "type": "timeline",
@@ -66,12 +66,12 @@
                 {
                     "year": "1498",
                     "title": "Vasco da Gama når India",
-                    "description": "Sjøveien til India er funnet. Da Gama returnerer med en last verdt 60 ganger ekspedisjonens kostnad."
+                    "description": "Sjøveien til India er funnet. Vasco da Gama når Malabarkysten ved Calicut 18. mai 1498."
                 },
                 {
                     "year": "1500",
                     "title": "Brasil oppdages",
-                    "description": "Pedro Álvarez Cabral «oppdager» Brasil på vei til India (kanskje med vilje, kanskje ved et uhell)."
+                    "description": "Pedro Álvares Cabral når kysten av dagens Bahia i Brasil på vei til India."
                 },
                 {
                     "year": "1511",
@@ -86,11 +86,11 @@
         },
         {
             "type": "text",
-            "content": "Her skiller den portugisiske modellen seg markant fra den spanske. Mens spanjolene erobret store landområder i Amerika (som Mexico og Peru), bygget portugiserne et Thalassokrati – et sjøimperium. De var ikke mange nok til å okkupere land som India eller Kina. I stedet erobret de strategiske havnebyer og bygget befestede handelsstasjoner kalt Feitorias."
+            "content": "Her skiller den portugisiske modellen seg markant fra den spanske. Mens spanjolene erobret store landområder i Amerika (som Mexico og Peru), bygget portugiserne et Thalassokrati - et sjøimperium. De var ikke mange nok til å okkupere land som India eller Kina. I stedet erobret de strategiske havnebyer og bygget befestede handelsstasjoner kalt Feitorias."
         },
         {
             "type": "text",
-            "content": "Fra disse basene – som Goa i India, Malakka i Malaysia og Macao i Kina – kontrollerte de handelen. De innførte et pass-system kalt *cartaz*. Alle skip som ville seile i Det indiske hav måtte kjøpe et slikt pass og betale skatt til Portugal. Gjorde de ikke det, ble skipene senket. Det var i praksis statsfinansiert piratvirksomhet satt i system."
+            "content": "Afonso de Albuquerque erobret Goa i India i 1510 og Malakka året etter, og i 1555 tok portugiserne Macao i Kina (Chabert, 2025b). Fra disse basene kontrollerte de handelen. De innførte et pass-system kalt *cartaz*: skip i Det indiske hav måtte ha et portugisisk pass om bord, og de måtte ofte seile i konvoier under portugisisk beskyttelse (Cartwright, 2021). Skip uten pass kunne bli tatt, med last og alt. Det var i praksis statsfinansiert piratvirksomhet satt i system."
         },
         {
             "type": "comparison",
@@ -123,11 +123,11 @@
         },
         {
             "type": "text",
-            "content": "I Afrika og Asia holdt portugiserne seg til kysten. Men i Brasil, som de fikk tildelt gjennom Tordesillastraktaten (fordi kysten stakk så langt ut i Atlanterhavet), utviklet det seg en annen type koloni. Her fant de ikke krydder eller gull i starten. Men de fant jord som var perfekt for sukker."
+            "content": "I Afrika og Asia holdt portugiserne seg til kysten. Men i Brasil, som Portugal gjorde krav på med henvisning til Tordesillas-avtalen fra 1494 (Ayala-Wold & Oldervoll, 2024), utviklet det seg en annen type koloni. Her fant de ikke krydder eller gull i starten. Men de fant jord som var perfekt for sukker."
         },
         {
             "type": "text",
-            "content": "For å dyrke sukker trengte de arbeidskraft. De forsøkte først å bruke den innfødte befolkningen, men som i Spansk Amerika, døde mange av sykdommer eller rømte inn i jungelen. Løsningen ble å hente arbeidskraft fra deres handelsstasjoner i Afrika."
+            "content": "For å dyrke sukker trengte de arbeidskraft. De forsøkte først å bruke urbefolkningen, men mange gjorde sterk motstand, flyktet lenger inn i landet eller døde av europeiske sykdommer som kopper og meslinger. Fra 1538 begynte portugisiske handelsmenn i stedet å frakte slavebundne afrikanere over havet (Braathen mfl., 2026)."
         },
         {
             "type": "header",
@@ -135,12 +135,12 @@
         },
         {
             "type": "text",
-            "content": "Portugal var den nasjonen som startet – og som drev lengst med – den transatlantiske slavehandelen. Det anslås at portugisiske skip fraktet over 5 millioner afrikanere til Amerika, langt flere enn noen annen nasjon. Nesten 40% av alle slaver som ble ført over Atlanterhavet, havnet i Brasil."
+            "content": "Portugal var den nasjonen som startet - og som drev lengst med - den transatlantiske slavehandelen. Mellom 1450 og 1850 ble minst 12,5 millioner mennesker fraktet fra Vest-Afrika og over Atlanterhavet, og mer enn 40 prosent av dem ble solgt til Brasil. Ingen andre land tok imot like mange (Eriksen, 2024). Fra 1700 til 1800 ble 1,7 millioner mennesker ført til Brasil, og fra 1800 til 1850 nesten to millioner til (Braathen mfl., 2026)."
         },
         {
             "type": "quote",
             "content": "Uten sukker, ingen Brasil. Uten slaver, ingen sukker. Uten Angola, ingen slaver.",
-            "author": "Portugisisk ordtak",
+            "author": "Ordtak fra kolonitidens Brasil",
             "source": "1600-tallet"
         },
         {
@@ -153,11 +153,11 @@
         },
         {
             "type": "text",
-            "content": "På 1600-tallet begynte det portugisiske monopolet å sprekke. Nederland, England og Frankrike ville ha sin del av kaken. De hadde større ressurser og bedre skip. [Nederlenderne (VOC)](/historie/kolonialisering/voc) var spesielt aggressive og erobret mange av Portugals viktigste baser i Asia, som Malakka og Ceylon (Sri Lanka)."
+            "content": "På 1600-tallet begynte det portugisiske monopolet å sprekke. Nederland, England og Frankrike ville ha sin del av kaken. De hadde større ressurser og bedre skip. [Nederlenderne (VOC)](/historie/kolonialisering/voc) var spesielt aggressive og erobret mange av Portugals viktigste baser i Asia: Malakka i 1641, Colombo på Ceylon (Sri Lanka) i 1656 og Cochin i India i 1663 (Cartwright, 2021)."
         },
         {
             "type": "text",
-            "content": "Mens Brasil erklærte seg uavhengig allerede i 1822, tviholdt Portugal på sine afrikanske kolonier (Angola, Mosambik) helt frem til 1970-tallet – lenge etter at andre kolonimakter hadde trukket seg ut. Men gullalderen – tiden da en liten nasjon styrte verdenshavene – var over for lengst."
+            "content": "Brasil erklærte seg uavhengig allerede i 1822 (Braathen mfl., 2026), mens Portugal tviholdt på sine afrikanske kolonier (Angola, Mosambik) - lenge etter at andre kolonimakter hadde trukket seg ut. Først etter regimeskiftet i Portugal i 1974 ble koloniene selvstendige (Knutsen & Chabert, 2026). Men gullalderen - tiden da en liten nasjon styrte verdenshavene - var over for lengst."
         },
         {
             "type": "component",
@@ -167,7 +167,7 @@
                     "Hva var en karavell, og hvorfor var dette skipet så viktig for portugiserne?",
                     "Hvem var prins Henrik Sjøfareren, og hva bygget han opp i Sagres?",
                     "Hva var en Feitoria, og hvordan brukte portugiserne slike stasjoner til å kontrollere handelen?",
-                    "Hvor mange afrikanere anslår teksten at portugisiske skip fraktet til Amerika, og hvor stor andel av dem havnet i Brasil?"
+                    "Hvor mange mennesker ble fraktet over Atlanterhavet mellom 1450 og 1850, og hvor stor andel av dem ble solgt til Brasil?"
                 ],
                 "reflekter": [
                     "Forklar med egne ord forskjellen på det spanske landimperiet og det portugisiske sjøimperiet.",
@@ -179,6 +179,22 @@
                     "Portugal tjente enorme summer på å kutte ut mellomledd i krydderhandelen. Finn et eksempel i dag der en bedrift tjener på å selge noe direkte til kunden i stedet for via butikker.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvordan slavehandelen både skapte rikdom i Lisboa og en arv av lidelse i Brasil.",
                     "Diskuter med en partner: Hvorfor tror dere Portugals gullalder tok slutt da Nederland, England og Frankrike ville ha sin del av handelen?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ayala-Wold, A. & Oldervoll, J. (2024). *Tordesillas-avtalen*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Tordesillas-avtalen](https://snl.no/Tordesillas-avtalen)",
+                    "Braathen, E., Julsrud, O. & Buvollen, H. P. (2026). *Brasils historie før 1985*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Brasils_historie_før_1985](https://snl.no/Brasils_historie_f%C3%B8r_1985)",
+                    "Cartwright, M. (2021). *Portuguese Empire*. World History Encyclopedia. Hentet 28.07.2026 fra [worldhistory.org](https://www.worldhistory.org/Portuguese_Empire/)",
+                    "Chabert, G. (2025a). *Henrik Sjøfareren*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Henrik_Sjøfareren](https://snl.no/Henrik_Sj%C3%B8fareren)",
+                    "Chabert, G. (2025b). *Portugals historie*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Portugals_historie](https://snl.no/Portugals_historie)",
+                    "Eriksen, T. L. (2024). *Slavehandelen over Atlanterhavet*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/slavehandelen_over_Atlanterhavet](https://snl.no/slavehandelen_over_Atlanterhavet)",
+                    "Feddersen, C. F. (2025). *Vasco da Gama*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Vasco_da_Gama](https://snl.no/Vasco_da_Gama)",
+                    "Knutsen, G. W. & Chabert, G. (2026). *Portugals samtidshistorie*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Portugals_samtidshistorie](https://snl.no/Portugals_samtidshistorie)"
                 ]
             }
         }
@@ -234,5 +250,6 @@
             ],
             "correctAnswer": 2
         }
-    ]
+    ],
+    "lastUpdated": "2026-07-28T00:00:00.000Z"
 }
