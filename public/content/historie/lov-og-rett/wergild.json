@@ -24,7 +24,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Det er år 600 et sted i Gallia. En fri bonde finner sin bror drept i åkeren. I dag ville politiet kommet. Men det finnes ingen politi. Det finnes ingen statsadvokat. Det finnes ikke engang en stat slik vi tenker på den. Bonden har bare to valg: ta hevn med sverd, eller kreve betaling. Han vet hva broren var verdt. Det står skrevet i loven. 200 solidi - prisen på en fri frank."
+            "content": "Det er år 600 et sted i Gallia. En fri bonde finner sin bror drept i åkeren. I dag ville politiet kommet. Men det finnes ingen politi. Det finnes ingen statsadvokat. Det finnes ikke engang en stat slik vi tenker på den. Bonden har bare to valg: ta hevn med sverd, eller kreve betaling. Han vet hva broren var verdt. Det står skrevet i loven. 200 solidi - prisen på en fri frank (Halsall, 2026)."
         },
         {
             "type": "text",
@@ -36,7 +36,7 @@
         },
         {
             "type": "text",
-            "content": "Før wergild kom, hadde germanske folk én vei å gå når noen i ætten ble drept: hevn. Familien hadde rett og plikt til å drepe gjerningsmannen eller noen i hans ætt. Problemet var åpenbart. Hvert drap fødte et nytt drap. Konflikter mellom familier kunne vare i generasjoner og rive hele bygder fra hverandre."
+            "content": "Før wergild kom, hadde germanske folk én vei å gå når noen i ætten ble drept: hevn. Familien hadde rett og plikt til å drepe gjerningsmannen eller noen i hans ætt. Hos de nordiske folkene ble blodhevn regnet som en hellig plikt, og plikten står også i den eldste lovgivningen (Bertelsen, 2024). Problemet var åpenbart. Hvert drap fødte et nytt drap. Konflikter mellom familier kunne vare i generasjoner og rive hele bygder fra hverandre."
         },
         {
             "type": "text",
@@ -52,11 +52,11 @@
         },
         {
             "type": "text",
-            "content": "Det første store skrittet ble tatt i Frankerriket. Rundt år 500 lot kong Klodvig den saliske loven (Lex Salica) skrive ned. Det var en av Europas eldste nedskrevne lover. I den fantes en pristabell som listet hver tenkelig forbrytelse: drap, lemlestelse, ran, fornærmelse. Hver hadde sin sats."
+            "content": "Det første store skrittet ble tatt i Frankerriket. Rundt år 500 lot kong Klodvig den saliske loven (Lex Salica) skrive ned (Sandvik & Arntzen, 2024). Loven handlet i hovedsak om strafferett. I den fantes en pristabell som listet hver tenkelig forbrytelse: drap, lemlestelse, ran, fornærmelse. Hver hadde sin sats."
         },
         {
             "type": "text",
-            "content": "Pristabellen var ikke nøytral. En edelmann var verdt seks ganger en fri bonde. En romer som levde under frankisk styre var verdt halvparten av en frank. En træl hadde ingen wergild i det hele tatt - eieren fikk erstatning som for et drept dyr. Loven satte ikke bare en pris på drap. Den satte en pris på menneskelig verdi, og prisen sa rett ut at noen mennesker var mer verdt enn andre."
+            "content": "Pristabellen var ikke nøytral. En mann i kongens tjeneste var verdt 600 solidi - tre ganger så mye som en fri frank. En romer som levde under frankisk styre var verdt 100, altså halvparten av en frank (Halsall, 2026). En træl hadde ingen egen wergild - eieren fikk erstatning som for et tapt dyr. Loven satte ikke bare en pris på drap. Den satte en pris på menneskelig verdi, og prisen sa rett ut at noen mennesker var mer verdt enn andre."
         },
         {
             "type": "component",
@@ -69,22 +69,22 @@
         },
         {
             "type": "text",
-            "content": "Wergild spredte seg over hele det germanske Europa. Anglosakserne i England hadde sine tabeller, der en thegn (lavadelsmann) var verdt seks ganger en ceorl (fri bonde), og kongen så mye at ingen privat slekt kunne betale. Friserne, langobardene og burgunderne hadde sine egne varianter."
+            "content": "Wergild spredte seg over hele det germanske Europa. Anglosakserne i England hadde detaljerte pristabeller der satsen fulgte offerets status (Musson, 2009). En thegn (lavadelsmann) var verdt seks ganger en ceorl (fri bonde), og kongen så mye at ingen privat slekt kunne betale. Friserne, langobardene og burgunderne hadde sine egne varianter."
         },
         {
             "type": "text",
-            "content": "I Norge ble systemet kalt mannebot og finnes i de eldste lovene vi har, Gulatingsloven og Frostatingsloven fra 1100-tallet. Her var en hauld, en odelsbonde med ætt langt tilbake, verdt 27 sølvmark. En vanlig fribonde var verdt 12 mark, en frigitt 6, og en træl bare 3 - og de gikk til eieren. Vil du se hele vikingtidens samfunn rundt dette, finner du tinget og ætten i full bredde i [Samfunn og rett i vikingtiden](/historie/vikingtiden/samfunn-og-rett). Wergild var den kontante prisen i bunnen av det hele."
+            "content": "I Norge ble systemet kalt mannebot og finnes i de eldste lovene vi har, Gulatingsloven og Frostatingsloven. Begge ble skrevet ned en gang mellom slutten av 1000-tallet og midten av 1100-tallet (Sunde, 2019, 2025). Øverst blant bøndene sto haulden, en odelsbonde som satt på arvet ættejord. Han tok høyere bøter og hadde større anseelse enn leilendinger og folk som satt på kjøpt jord (Norseng, 2024a). Nederst sto trælen, som i de eldste landskapslovene ble regnet som løsøre uten rettsstatus (Norseng, 2024b). Erstatningen for ham gikk til eieren, ikke til noen ætt. I Wergild-tavla over kan du se hvordan satsene falt nedover rangstigen. Vil du se hele vikingtidens samfunn rundt dette, finner du tinget og ætten i full bredde i [Samfunn og rett i vikingtiden](/historie/vikingtiden/samfunn-og-rett)."
         },
         {
             "type": "text",
-            "content": "Det siste store wergild-systemet i Norge ble samlet av kong Magnus Lagabøte i hans landslov fra 1274. Men da var systemet allerede på vei ut. Loven var i ferd med å bli noe annet."
+            "content": "Det siste store oppgjøret med systemet kom med kong Magnus Lagabøtes landslov fra 1274. Der ble hevn for første gang helt forbudt, og gjerningsmannen alene måtte stå ansvarlig - familien hans slapp å betale for ham (Rønning, 2023). Loven var i ferd med å bli noe annet."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Kvinnens wergild",
-                "content": "Reglene for kvinner varierte mye. I Lex Salica var en kvinne i fertile år verdt det dobbelte av en mann med samme status, fordi hun kunne føde nye krigere. Eldre kvinner falt tilbake til vanlig pris. I norrøn lov var prisen mer lik mellom kjønnene, men det var alltid en mannlig slektning som mottok pengene."
+                "content": "Reglene for kvinner varierte mye. I Lex Salica kostet drapet på en fri kvinne i fertil alder 600 solidi - tre ganger så mye som en fri mann. Da hun ikke lenger kunne føde barn, falt satsen til 200, det samme som mannen. I norrøn lov var prisen mer lik mellom kjønnene, men det var alltid en mannlig slektning som mottok pengene."
             }
         },
         {
@@ -101,14 +101,14 @@
         },
         {
             "type": "text",
-            "content": "Sammen drev kongemakt og kirke wergild ut av Europa. I England forsvant det med normannerne etter 1066. I Norge bygget Magnus Lagabøtes landslov fra 1274 et nytt system der kongen straffet, og bøtene gikk til ham. På 1500-tallet var wergild over hele Vest-Europa stort sett et historisk minne."
+            "content": "Sammen skjøv kongemakt og kirke wergild til side. Men det skjedde ikke over natten. Lenge trodde historikerne at bøtekulturen i England tok slutt med den normanniske erobringen i 1066. Nyere forskning viser at den levde videre langt inn i seinmiddelalderen, ved siden av kongens domstoler: folk fortsatte å forlike seg og betale seg imellom, selv om kongen helst ville dømme selv (Musson, 2009). I Norge sto landsloven fra 1274 for det tydeligste bruddet."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
                 "text": "Med lov skal land byggjast, og ikkje med ulov øydast.",
-                "author": "Frostatingsloven, ca. 1200"
+                "author": "Prologen til Frostatingsloven"
             }
         },
         {
@@ -130,14 +130,14 @@
                 "forstaa": [
                     "Hva betyr ordet wergild, og hvilke to germanske ord kommer det fra? Hva het det samme systemet på norrønt?",
                     "Hvilket valg hadde en ætt når noen i familien ble drept, både før og etter at wergild kom?",
-                    "Hvor mye var en hauld verdt etter Gulatingsloven, og hvor mye var en vanlig fribonde og en træl verdt?",
+                    "Bruk Wergild-tavla i artikkelen: hvor mye var en hauld verdt i norrøn rett, og hvor mye var en vanlig fribonde og en træl verdt?",
                     "Hva het den franske loven som kong Klodvig lot skrive ned rundt år 500, og hva inneholdt den?"
                 ],
                 "reflekter": [
                     "Forklar med egne ord hvordan wergild kunne bryte spiralen med blodhevn mellom to ætter.",
                     "Teksten sier at pristabellen ikke var nøytral. Hva mener den med at loven satte en pris på menneskelig verdi?",
                     "Hvorfor forsvant wergild da kongemakten ble sterkere og kristendommen kom? Forklar hvordan begge dro i samme retning.",
-                    "Ifølge Lex Salica var en kvinne i fertil alder verdt det dobbelte av en mann. Hva sier denne regelen om hva samfunnet verdsatte?"
+                    "Ifølge Lex Salica kostet drapet på en kvinne i fertil alder tre ganger så mye som drapet på en fri mann. Hva sier denne regelen om hva samfunnet verdsatte?"
                 ],
                 "gaaVidere": [
                     "Teksten sier at ideen om at skade kan måles i penger lever videre i dag. Finn et eksempel på erstatning i dagens Norge, og forklar hva som er den viktigste forskjellen fra wergild.",
@@ -197,6 +197,23 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bertelsen, B. E. (2024). *Blodhevn*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/blodhevn](https://snl.no/blodhevn)",
+                    "Halsall, P. (2026). *The Salic Law*. Internet Medieval Sourcebook, Fordham University. Hentet 28.07.2026 fra [sourcebooks.fordham.edu](https://sourcebooks.fordham.edu/halsall/source/salic-law.asp)",
+                    "Musson, A. (2009). *Wergeld: Crime and the compensation culture in medieval England*. Gresham College. Hentet 28.07.2026 fra [gresham.ac.uk](https://www.gresham.ac.uk/watch-now/wergeld-crime-and-compensation-culture-medieval-england)",
+                    "Norseng, P. G. (2024a). *Hauld*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/hauld](https://snl.no/hauld)",
+                    "Norseng, P. G. (2024b). *Trell*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/trell](https://snl.no/trell)",
+                    "Rønning, O.-A. (2023). *Magnus Lagabøtes landslov*. Norgeshistorie, Universitetet i Oslo. Hentet 28.07.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/hoymiddelalder/0935-magnus-lagabotes-landslov.html)",
+                    "Sandvik, G. & Arntzen, J. G. (2024). *Saliske lov*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Saliske_lov](https://snl.no/Saliske_lov)",
+                    "Sunde, J. Ø. (2019). *Frostatingslova*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Frostatingslova](https://snl.no/Frostatingslova)",
+                    "Sunde, J. Ø. (2025). *Gulatingslova*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Gulatingslova](https://snl.no/Gulatingslova)"
+                ]
+            }
         }
     ],
     "timeline": [
@@ -224,11 +241,12 @@
         {
             "id": "magnus-lagabote-1274",
             "title": "Magnus Lagabøtes landslov",
-            "description": "Den siste store wergild-loven i Norge. Kongen tar over rollen som straffemyndighet.",
+            "description": "Hevn blir helt forbudt, og gjerningsmannen alene står ansvarlig. Kongen tar over rollen som straffemyndighet.",
             "startDate": 1274,
             "displayDate": "1274"
         }
     ],
     "createdDate": "2026-05-28T00:00:00Z",
-    "lastUpdated": "2026-05-28T00:00:00Z"
+    "lastUpdated": "2026-07-28T00:00:00.000Z",
+    "factChecked": "2026-07-28"
 }

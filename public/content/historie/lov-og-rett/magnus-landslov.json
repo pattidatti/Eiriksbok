@@ -30,7 +30,7 @@
         },
         {
             "type": "text",
-            "content": "Svaret var enkelt: Norge hadde fire lover. Hvert område hadde sitt eget ting og sin egen lovbok. Gulating styrte Vestlandet, Frostating styrte Trøndelag og Nord-Norge, Eidsivating dekket Opplandene, og Borgarting hadde Viken rundt Oslofjorden. Bonden fra Bergen levde under én lov hjemme, men reiste inn i en annen så snart han krysset en grense. Det var dette en ung konge skulle endre."
+            "content": "Svaret var enkelt: Norge hadde fire lover. Hvert område hadde sitt eget ting og sin egen lovbok. Gulating styrte Vestlandet, Frostating styrte Trøndelag og Nord-Norge, Eidsivating dekket Opplandene, og Borgarting hadde Viken rundt Oslofjorden (Bratberg, 2026). Bonden fra Bergen levde under én lov hjemme, men reiste inn i en annen så snart han krysset en grense. Det var dette en ung konge skulle endre."
         },
         {
             "type": "header",
@@ -38,11 +38,11 @@
         },
         {
             "type": "text",
-            "content": "Landskapslovene var mange hundre år gamle. De hadde vokst fram fra muntlige regler som bøndene selv kunne. På tinget møttes frie menn for å dømme i saker, vedta nye regler og høre lagmannen lese opp loven utenat. Hvert ting hadde sin egen tradisjon. Det som var akseptabelt i Trøndelag, kunne være forbudt i Viken."
+            "content": "Landskapslovene var gamle. De hadde vokst fram fra muntlige regler, og først en gang mellom slutten av 1000-tallet og midten av 1100-tallet ble de skrevet ned (Sunde, 2019, 2025). På tinget møttes frie menn for å dømme i saker, vedta nye regler og høre loven lest opp. Hvert ting hadde sin egen tradisjon. Det som var akseptabelt i Trøndelag, kunne være forbudt i Viken."
         },
         {
             "type": "text",
-            "content": "Lovene handlet mest om bot og oppgjør mellom familier. Hvis noen ble drept, skulle drapsmannens ætt betale [mannebot](/historie/lov-og-rett/wergild) til den dreptes ætt - en fast pris for hvert liv, betalt mellom familier. Hvis ætten nektet boten, kunne de ta blodhevn. Det betydde at de hadde lov til å drepe drapsmannen tilbake. Slik holdt voldsspiralen seg gående i generasjon etter generasjon."
+            "content": "Lovene handlet mest om bot og oppgjør mellom familier. Hvis noen ble drept, skulle drapsmannens ætt betale [mannebot](/historie/lov-og-rett/wergild) til den dreptes ætt - en fast pris for hvert liv, betalt mellom familier. Hvis ætten nektet boten, kunne de ta blodhevn. Det betydde at de hadde lov til å drepe drapsmannen tilbake. I norrøn tid ble hevnen sett på som en hellig plikt, og den plikten står også i den eldste lovgivningen (Bertelsen, 2024). Slik holdt voldsspiralen seg gående i generasjon etter generasjon."
         },
         {
             "type": "text",
@@ -54,10 +54,10 @@
             "props": {
                 "title": "De fire lagdømmene",
                 "items": [
-                    "Gulating (Vestlandet) - lov gjelder fra Sunnmøre til Agder",
-                    "Frostating (Trøndelag og Nord-Norge) - eldste ting, kan være fra 600-tallet",
+                    "Gulating (Vestlandet) - loven gjaldt fra Sunnmøre og sørover",
+                    "Frostating (Trøndelag og Nord-Norge) - ordnet av Håkon den gode rundt 950-960",
                     "Eidsivating (Opplandene) - dekket innlandet",
-                    "Borgarting (Viken) - rundt Oslofjorden, knyttet til danskene"
+                    "Borgarting (Viken) - rundt Oslofjorden"
                 ]
             }
         },
@@ -67,7 +67,7 @@
         },
         {
             "type": "text",
-            "content": "Magnus Håkonsson ble konge i 1263, 25 år gammel. Han hadde sett borgerkriger rive Norge fra hverandre i hele sin barndom. Far hans, Håkon Håkonsson, hadde brukt et helt liv på å gjøre slutt på kampene mellom kongsemner. Nå var landet endelig samlet under én konge. Men det manglet fortsatt noe avgjørende: én felles lov."
+            "content": "Magnus Håkonsson var født i 1238 og ble konge i 1263, 25 år gammel (Helle & Salvesen, 2026). Han hadde sett borgerkriger rive Norge fra hverandre i hele sin barndom. Far hans, Håkon Håkonsson, hadde brukt et helt liv på å gjøre slutt på kampene mellom kongsemner. Nå var landet endelig samlet under én konge. Men det manglet fortsatt noe avgjørende: én felles lov."
         },
         {
             "type": "image",
@@ -77,11 +77,11 @@
         },
         {
             "type": "text",
-            "content": "Magnus startet med å reformere bylovene først. Han laget en felles bylov for Bergen, Trondheim, Oslo og Tønsberg. Det var en prøvekjøring. Han ville se om det var mulig å lage én lov som passet flere steder samtidig. Da det fungerte, gikk han videre til det store oppdraget: én landslov for hele kongeriket."
+            "content": "Magnus tok det største oppdraget først: én landslov for hele kongeriket. Byene måtte vente. Da landsloven var på plass, ga han Bergen sin egen bylov i 1276, og den ble seinere brukt i de andre byene også (Sunde, 2026). Rekkefølgen sier noe om hva som hastet mest. Å samle landet under samme lov kom foran alt annet."
         },
         {
             "type": "text",
-            "content": "Arbeidet tok flere år. Magnus samlet de lovkyndige fra alle fire lagdømmene. De skulle ikke kaste de gamle reglene. De skulle plukke ut det beste fra hver lovbok og sy det sammen til noe nytt. Mange regler ble bevart. Andre ble endret eller fjernet. Kirken hjalp med tekstene, fordi kirkemennene var dem som kunne skrive."
+            "content": "Arbeidet tok flere år. De gamle reglene skulle ikke kastes. Det beste fra hver lovbok skulle plukkes ut og sys sammen til noe nytt. Mange regler ble bevart, andre ble endret eller fjernet. Inn i lovboka kom det også regler hentet fra romerretten og fra kirkeretten, og loven fikk en teknikk som gjorde det mulig å dømme ulikt i saker som lignet, men ikke var like (Sunde, 2026)."
         },
         {
             "type": "component",
@@ -96,11 +96,11 @@
         },
         {
             "type": "text",
-            "content": "Landsloven ble vedtatt på tingene mellom 1274 og 1276. Den endret tre store ting. For det første: kongen ble den som straffet. Før dette var de fleste forbrytelser saker mellom familier. Nå ble alvorlige forbrytelser en sak mellom gjerningsmannen og staten. Bøter ble delt: en del til offeret eller ætten, en del til kongen."
+            "content": "Loven ble først vedtatt på Frostating sommeren 1274, og deretter på Gulating, Borgarting og Eidsivating (Sunde, 2026). Mellom 1274 og 1276 var hele Norge samlet under én lov, som ett av de første kongerikene i Europa (Rønning, 2023). Loven endret tre store ting. For det første: kongen ble den som straffet. Før dette var de fleste forbrytelser saker mellom familier. Nå ble bøtene delt, slik at en del gikk til den fornærmede og en del til kongen (Orning, 2023)."
         },
         {
             "type": "text",
-            "content": "For det andre: blodhevn ble forbudt. Hvis noen tok hevn på egen hånd, ble de selv straffet for drap. Dette var en revolusjon. I hundrevis av år hadde retten til hevn vært en bærebjelke i samfunnet. Nå sa loven rett ut: bare kongen kan ta liv som straff."
+            "content": "For det andre: hevn ble for første gang helt forbudt, og gjerningsmannen alene måtte stå ansvarlig for det han hadde gjort. Familien hans slapp å betale for ham (Rønning, 2023). Dette var en revolusjon. I hundrevis av år hadde retten til hevn vært en bærebjelke i samfunnet. Nå sa loven rett ut at ingen kunne ta seg til rette på egen hånd."
         },
         {
             "type": "text",
@@ -111,12 +111,12 @@
             "name": "QuoteBlock",
             "props": {
                 "text": "Med lov skal landet bygges, og ikke med ulov ødes.",
-                "author": "Landslovens prolog (1274)"
+                "author": "Prologen til Frostatingsloven"
             }
         },
         {
             "type": "text",
-            "content": "Setningen står helt i begynnelsen av Magnus' landslov. Den ble så viktig at den senere kom inn i [den norske Grunnloven av 1814](/samfunnskunnskap/styringsformer/grunnloven), der den fortsatt brukes som mottoet for hele rettsstaten. Tanken er enkel: et samfunn holdes sammen av lover som alle følger. Uten lov - ulov - faller alt fra hverandre."
+            "content": "Setningen er eldre enn landsloven. Den står i prologen til Frostatingsloven, og den finnes igjen i flere nordiske middelalderlover. Forskerne er uenige om den kommer fra kirkeretten eller fra romerretten (Sunde, 2019). Tanken er enkel: et samfunn holdes sammen av lover som alle følger. Uten lov - ulov - faller alt fra hverandre. Setningen lever fortsatt. Den er smidd inn i lysekronen i statsrådssalen på Slottet, og henger over hodene på dem som styrer landet hver fredag (Haakon, 2024)."
         },
         {
             "type": "header",
@@ -124,7 +124,7 @@
         },
         {
             "type": "text",
-            "content": "Magnus fikk tilnavnet sitt mens han fortsatt levde. Lagabøte betyr han som bedrer loven. Det var ikke vanlig at konger fikk slike tilnavn. De fleste ble husket for slag de vant eller for makt de tok. Magnus ble husket for noe annet: at han skrev ned reglene og gjorde dem like for alle."
+            "content": "Lagabøte betyr han som bedrer loven. Tilnavnet fikk han ikke mens han levde. Det var ettertiden som ga ham det, fordi han sto bak det mest omfattende lovarbeidet noen styresmakt har gjennomført i Norge (Helle & Salvesen, 2026). Det var ikke vanlig at konger ble husket på den måten. De fleste ble husket for slag de vant eller for makt de tok. Magnus ble husket for noe annet: at han skrev ned reglene og gjorde dem like for alle."
         },
         {
             "type": "image",
@@ -134,11 +134,11 @@
         },
         {
             "type": "text",
-            "content": "Han var også den første norske kongen som fulgte regler om tronfølge skikkelig. Han laget en tronfølgelov som sa at den eldste ektefødte sønnen skulle arve tronen. Tidligere hadde det vært strid hver gang en konge døde, fordi mange kunne kreve kronen. Magnus prøvde å gjøre kongemakten forutsigbar. Han ville at neste generasjon skulle slippe det kaoset han selv hadde vokst opp i."
+            "content": "Magnus stanset ikke med landsloven. Byene fikk sin bylov, og mellom 1273 og 1277 skrev han nye regler for hirden, kongens egne menn (Helle & Salvesen, 2026). Regler om tronfølge fantes allerede fra 1163, etter tiår med strid hver gang en konge døde. Magnus bygde videre på dem. Han ville at neste generasjon skulle slippe det kaoset han selv hadde vokst opp i."
         },
         {
             "type": "text",
-            "content": "Magnus døde i 1280, bare 42 år gammel. Han fikk ikke se hvor lenge loven hans skulle vare. Men landsloven gjaldt i over 400 år. Først i 1687 ble den erstattet av Christian Vs Norske Lov. Få lover i Europa har vart så lenge eller blitt fulgt så lojalt."
+            "content": "Magnus døde i Bergen 9. mai 1280, bare 42 år gammel (Helle & Salvesen, 2026). Han fikk ikke se hvor lenge loven hans skulle vare. Landsloven ble brukt i over 400 år, helt til Christian Vs Norske Lov tok over i 1687 (Sunde, 2026). Få lover i Europa har vart så lenge."
         },
         {
             "type": "header",
@@ -164,16 +164,16 @@
                     "Hva het de fire lagdømmene Norge var delt i før 1274, og hvilke landsdeler styrte de?",
                     "Hva var mannebot, og hva kunne en ætt gjøre hvis den andre ætten nektet å betale den?",
                     "Nevn de tre store tingene Landsloven endret da den ble vedtatt mellom 1274 og 1276.",
-                    "Hva betyr tilnavnet Lagabøte, og hvorfor fikk Magnus akkurat dette tilnavnet?"
+                    "Hva betyr tilnavnet Lagabøte, og hvem var det som ga Magnus dette tilnavnet?"
                 ],
                 "reflekter": [
                     "Teksten sier at ættesystemet med blodhevn 'ikke var uten logikk'. Forklar hvorfor systemet fungerte i et samfunn av løse bygder uten sterk konge.",
                     "Hvorfor kaller teksten forbudet mot blodhevn en 'revolusjon'? Bruk det du vet om hva ætten betydde for folk før 1274.",
-                    "Magnus reformerte bylovene før han lagde landsloven. Forklar hvorfor det var lurt å gjøre denne 'prøvekjøringen' først.",
+                    "Magnus tok landsloven først og byloven etterpå. Forklar hvorfor det hastet mest å få hele landet under samme lov.",
                     "Sammenlign hvordan en drapssak ble håndtert før og etter 1274. Hvem hadde ansvaret for straffen i hvert tilfelle?"
                 ],
                 "gaaVidere": [
-                    "Setningen 'Med lov skal landet bygges, og ikke med ulov ødes' er fortsatt motto for norsk rettsvesen. Skriv fem-seks setninger om hva du tror setningen betyr for hvordan Norge styres i dag.",
+                    "Setningen 'Med lov skal landet bygges, og ikke med ulov ødes' er over 800 år gammel og står smidd inn i lysekronen i statsrådssalen på Slottet. Skriv fem-seks setninger om hva du tror setningen betyr for hvordan Norge styres i dag.",
                     "Teksten sier at staten har monopol på vold, og at dette hviler på det Magnus skrev ned. Finn et eksempel fra nyhetene eller hverdagen der du ser denne ideen i praksis, og forklar den.",
                     "Diskuter i par: Er det alltid rettferdig at kongen eller staten straffer i stedet for familien selv? Finn ett argument for og ett mot."
                 ]
@@ -213,15 +213,15 @@
                         "explanation": "Før 1274 straffet familiene selv. Etter 1274 var det kongen som dømte. Det er en milepæl mot moderne rettsstat."
                     },
                     {
-                        "question": "Hvilken setning fra Landsloven står fortsatt i Grunnloven?",
+                        "question": "Hvilken lov har setningen Med lov skal landet bygges i prologen sin?",
                         "options": [
-                            "Av folket og for folket",
-                            "Med lov skal landet bygges",
-                            "Frihet, likhet, brorskap",
-                            "Alle er like for loven"
+                            "Grunnloven av 1814",
+                            "Frostatingsloven",
+                            "Christian Vs Norske Lov",
+                            "Magnus Lagabøtes bylov"
                         ],
                         "correct": 1,
-                        "explanation": "Med lov skal landet bygges, og ikke med ulov ødes ble tatt inn i Grunnloven av 1814 og er fortsatt et motto for norsk rettsvesen."
+                        "explanation": "Setningen står i prologen til Frostatingsloven og er eldre enn landsloven. Den finnes igjen i flere nordiske middelalderlover."
                     },
                     {
                         "question": "Hvor lenge gjaldt Landsloven før den ble erstattet?",
@@ -231,7 +231,26 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bertelsen, B. E. (2024). *Blodhevn*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/blodhevn](https://snl.no/blodhevn)",
+                    "Bratberg, T. (2026). *Frostating*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Frostating](https://snl.no/Frostating)",
+                    "Haakon, kronprins. (2024). *Åpningen av Landslovjubileet: Kronprinsregentens tale*. Det norske kongehus. Hentet 28.07.2026 fra [kongehuset.no](https://www.kongehuset.no/tale.html?tid=225138&sek=26947&scope=0)",
+                    "Helle, K. & Salvesen, H. (2026). *Magnus Lagabøte*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Magnus_Lagabøte](https://snl.no/Magnus_Lagab%C3%B8te)",
+                    "Orning, H. J. (2023). *Forbrytelse og straff*. Norgeshistorie, Universitetet i Oslo. Hentet 28.07.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/hoymiddelalder/0922-forbrytelse-og-straff.html)",
+                    "Rønning, O.-A. (2023). *Magnus Lagabøtes landslov*. Norgeshistorie, Universitetet i Oslo. Hentet 28.07.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/hoymiddelalder/0935-magnus-lagabotes-landslov.html)",
+                    "Sunde, J. Ø. (2019). *Frostatingslova*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Frostatingslova](https://snl.no/Frostatingslova)",
+                    "Sunde, J. Ø. (2025). *Gulatingslova*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Gulatingslova](https://snl.no/Gulatingslova)",
+                    "Sunde, J. Ø. (2026). *Magnus Lagabøters landslov*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Magnus_Lagabøters_landslov](https://snl.no/Magnus_Lagab%C3%B8ters_landslov)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-28T00:00:00.000Z",
+    "factChecked": "2026-07-28"
 }
