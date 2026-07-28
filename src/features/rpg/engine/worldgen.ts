@@ -14,6 +14,7 @@ export interface PropPlacement {
         | 'stein'
         | 'langhus'
         | 'bu'
+        | 'kirke'
         | 'naust'
         | 'gjerde'
         | 'langskip'
@@ -88,12 +89,25 @@ export interface NordvikValg {
      * hva som skjer inni det.
      */
     hov?: [number, number] | null;
+    /**
+     * Kirken, om den står her. Ruta huset ligger på.
+     *
+     * Skal stå på samme rute som hovet sto på, og det er ikke en snarvei i
+     * koden - det er det som faktisk skjedde. Under gulvet i Mære kirke ligger
+     * gullgubber fra hedensk kult: kirken ble reist der folk kom fra før.
+     *
+     * Tråkket rundt og veien ned til bygda er den samme som hovet fikk. Det er
+     * med vilje: stien er slitt av folk som har gått den i generasjoner, og den
+     * ble ikke lagt om av at huset i enden ble byttet ut.
+     */
+    kirke?: [number, number] | null;
 }
 
 export function byggNordvik({
     langskip = [3, 46],
     hauger = [],
     hov = null,
+    kirke = null,
 }: NordvikValg = {}): WorldMap {
     const rng = makeRng(1793);
     const terreng: TileKey[][] = [];
@@ -292,13 +306,17 @@ export function byggNordvik({
     };
 
     bygg('langhus', 18, 27, 5, 4, { w: 62, h: 26, dy: 10 });
-    // ── Hovet ───────────────────────────────────────────────────────────────
-    // Et hus av samme slag som langhuset, med tråkket jord rundt seg og en vei
-    // ned til stien gjennom bygda. Tråkket er ikke pynt: et hov var stedet hele
-    // bygda kom til, og en gresslette uten en eneste sti inn ville sagt at
-    // ingen går dit.
-    if (hov) {
-        const [ox, oy] = hov;
+    // ── Hovet, og kirken som kom etter det ──────────────────────────────────
+    // Tråkket jord rundt huset og en vei ned til stien gjennom bygda. Tråkket
+    // er ikke pynt: et hov var stedet hele bygda kom til, og en gresslette uten
+    // en eneste sti inn ville sagt at ingen går dit.
+    //
+    // De to deler kode fordi de deler grunn. I 995 står hovet der; i 1030 står
+    // kirken på samme rute, med den samme stien opp - og det er ikke en
+    // gjenbruksfinte, det er hva som faktisk skjedde.
+    const helligsted = hov ?? kirke;
+    if (helligsted) {
+        const [ox, oy] = helligsted;
         const traakk = (x: number, y: number) => {
             if (x < 1 || y < 1 || x >= W - 1 || y >= H - 1) return;
             if (terreng[y][x] === 'vann' || terreng[y][x] === 'stein') return;
@@ -318,7 +336,11 @@ export function byggNordvik({
             traakk(ox, y);
             traakk(ox + 1, y);
         }
-        bygg('langhus', ox, oy, 5, 4, { w: 62, h: 26, dy: 10 });
+        // Samme grunn, to hus. Kirken er smalere enn hovet var, og
+        // kollisjonsboksen følger huset og ikke tomta - eleven skal kunne gå
+        // rundt den der hovet sperret.
+        if (hov) bygg('langhus', ox, oy, 5, 4, { w: 62, h: 26, dy: 10 });
+        else bygg('kirke', ox, oy, 3, 4, { w: 36, h: 18, dy: 8 });
     }
     bygg('bu', 25, 33, 3, 3, { w: 34, h: 16, dy: 8 });
     bygg('bu', 13, 22, 3, 3, { w: 34, h: 16, dy: 8 });

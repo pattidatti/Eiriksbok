@@ -392,6 +392,41 @@ export function forgeProps(scene: Phaser.Scene, tema: Tema): void {
     bu.behind(() => bu.ellipse(20, 34, 17, 2, 'rgba(0,0,0,0.28)'));
     addCanvas(scene, 'prop-bu', bu);
 
+    // ── Stavkirke ───────────────────────────────────────────────────────────
+    //
+    // Kapittel 4 er hele grunnen til at den finnes. Den står på hovets grunn i
+    // 1030, og formen *er* setningen: hovet var langt og lavt, kirken er høy og
+    // smal. Ingen tekst trenger å si at det har gått femogtretti år.
+    //
+    // Svalgangen rundt er ikke pynt. Den er det som gjør et stavhus til en
+    // stavkirke å se på, og den lave takskjørten er det eneste som skiller
+    // silhuetten fra en bu satt på høykant.
+    const kirke = createPainter(44, 66, 1, 1);
+    kirke.rect(4, 46, 36, 9, ramp(tommer, -2));
+    for (let x = 6; x < 40; x += 5) kirke.vline(x, 46, 9, ramp(tommer, -1));
+    for (let i = 0; i < 5; i++) {
+        const w = 40 - i * 3;
+        kirke.rect(22 - w / 2, 46 - i * 2, w, 2, i < 1 ? ramp(tak, 1) : tak);
+    }
+    kirke.rect(13, 24, 18, 24, tommer);
+    for (let x = 15; x < 31; x += 4) {
+        kirke.vline(x, 26, 22, ramp(tommer, -1));
+        kirke.vline(x + 1, 26, 22, ramp(tommer, 1));
+    }
+    // Bratt tak: snøen skal av, og høyden er poenget.
+    for (let i = 0; i < 12; i++) {
+        const w = 22 - i * 2;
+        kirke.rect(22 - w / 2, 24 - i * 2, w, 2, i < 2 ? ramp(tak, 1) : tak);
+    }
+    kirke.vline(22, 0, 8, '#e8dcc0');
+    kirke.hline(20, 3, 5, '#e8dcc0');
+    // Døra, og ingen vinduer. Lyset kom inn under takskjegget.
+    kirke.rect(19, 38, 7, 10, '#241a10');
+    kirke.rect(19, 38, 7, 2, '#150e07');
+    kirke.outline();
+    kirke.behind(() => kirke.ellipse(22, 57, 19, 3, 'rgba(0,0,0,0.3)'));
+    addCanvas(scene, 'prop-kirke', kirke);
+
     // ── Naust ved vannet ────────────────────────────────────────────────────
     const naust = createPainter(50, 36, 1, 1);
     naust.rect(4, 16, 40, 15, ramp(tommer, -1));

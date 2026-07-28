@@ -20,7 +20,7 @@ import { Farkoster } from './farkost';
 import { KampFx } from './kampfx';
 import { spillKlipp, type KlippKontekst } from './klipp';
 import { Opplaering } from './opplaering';
-import { K1, K1_FLAGG, K2, K3, K3_FLAGG, KAPITTEL_BY_NR } from '../data/kapitler';
+import { K1, K1_FLAGG, K2, K3, K3_FLAGG, K4, K4_FLAGG, KAPITTEL_BY_NR } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
 import { Raidet } from './raidet';
@@ -1013,6 +1013,29 @@ export class WorldScene extends Phaser.Scene {
                 // vollen vet at det står en avtale i verden.
                 useRpgStore.getState().fullforSteg(K3.utfordret);
                 this.holmgang?.utfordre();
+                return;
+            }
+            // ── 1030: budstikka, og hvem som blir med ───────────────────────
+            case 'baard-budstikka': {
+                const store = useRpgStore.getState();
+                store.fullforSteg(K4.budstikka);
+                // Begrepet gis av å ta imot, ikke av å høre Bård snakke.
+                // Forskjellen er hele poenget: en budstikke er ikke en
+                // opplysning, den er en forpliktelse man tar på seg.
+                store.larBegrep('bondehaeren', 'forstatt');
+                store.giAere(6, 'Du tok imot budstikka med én gang. Bård så det.');
+                return;
+            }
+            case 'aasmund-med': {
+                const store = useRpgStore.getState();
+                store.settFlagg(K4_FLAGG.sonnenMed);
+                store.fullforSteg(K4.hvemDrar);
+                return;
+            }
+            case 'aasmund-hjemme': {
+                const store = useRpgStore.getState();
+                store.settFlagg(K4_FLAGG.sonnenHjemme);
+                store.fullforSteg(K4.hvemDrar);
                 return;
             }
             case 'torgeir-noklene': {

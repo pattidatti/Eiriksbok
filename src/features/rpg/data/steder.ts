@@ -42,6 +42,13 @@ import {
     NORDVIK_995_SPAWN,
 } from './nordvik995';
 import {
+    KIRKEN,
+    NORDVIK_1030_LANDMARKS,
+    NORDVIK_1030_NPCS,
+    NORDVIK_1030_PORTAL,
+    NORDVIK_1030_SPAWN,
+} from './nordvik1030';
+import {
     NORDVIK_AUTHORED_QUESTER,
     NORDVIK_BOSS_QUESTIONS,
     NORDVIK_FARKOSTER,
@@ -276,7 +283,65 @@ const NORDVIK_995: Sted = {
     authored: [],
 };
 
-export const STEDER: Sted[] = [HUB, NORDVIK, LINDISFARNE, NORDVIK_872, NORDVIK_995];
+/**
+ * Nordvik i 1030. Fjerde gang, og første gang gården er kristen fra før.
+ *
+ * Kirken står der hovet sto, på samme rute og med den samme stien opp. Det er
+ * den ene endringen som bærer hele kapittelet: mannen som skal gå mot kongen om
+ * noen dager, er døpt i det huset.
+ *
+ * Skipet ligger på svai lengst sør igjen, der gårdens eget lå i 793. Det er
+ * ikke det samme skroget - det er at gården har fartøy igjen, og at det er det
+ * som skal bære dem inn fjorden til utbudet.
+ */
+const NORDVIK_1030: Sted = {
+    id: 'nordvik-1030',
+    tittel: 'Nordvik',
+    undertittel: '1030 · budstikka har vært på fire gårder før din',
+    epokeId: 'vikingtiden',
+    kapittel: 4,
+    tema: {
+        ...EPOKE_BY_ID.vikingtiden.tema,
+        // Slåtten, i tørt vær. Enga er lysere og mer utbrent enn i juni, og
+        // himmelen er den ene tingen som gjør høyet verdt å haste med.
+        gress: '#8a9450',
+        lov: '#6f8a45',
+        himmel: '#cfd8d4',
+    },
+    byggKart: () =>
+        byggNordvik({
+            hauger: [TORSTEINS_HAUG, AASAS_HAUG],
+            kirke: KIRKEN,
+        }),
+    spawn: NORDVIK_1030_SPAWN,
+    npcer: NORDVIK_1030_NPCS,
+    landemerker: NORDVIK_1030_LANDMARKS,
+    portaler: [
+        {
+            tile: NORDVIK_1030_PORTAL,
+            maal: {
+                art: 'sted',
+                stedId: 'hub',
+                navn: 'HALLEN',
+                undertekst: 'VEIEN HJEM',
+            },
+        },
+    ],
+    // Tomt, som i 872 og 995. Det som kommer mot Halvard i dette kapittelet,
+    // står oppstilt i en dal to dagsreiser unna, og det kommer på én dag.
+    spawner: [],
+    musikkRot: 156,
+    authored: [],
+};
+
+export const STEDER: Sted[] = [
+    HUB,
+    NORDVIK,
+    LINDISFARNE,
+    NORDVIK_872,
+    NORDVIK_995,
+    NORDVIK_1030,
+];
 
 export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s) => [s.id, s]));
 

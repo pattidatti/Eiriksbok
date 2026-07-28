@@ -5,9 +5,9 @@
 // kapittel kan bruke flere av dem: kapittel 1 spilles i Nordvik og på
 // Lindisfarne.
 //
-// Bare kapittel 1 er bygget. De fire andre står her med rolle og år fordi
-// listen skal si sant om hva spillet skal bli - men uten steg, for et steg
-// ingen har bygget er et løfte vi ikke kan holde.
+// Kapittel 1, 2 og 3 er ferdige, og kapittel 4 er under bygging. Kapittel 5
+// står her med rolle og år fordi listen skal si sant om hva spillet skal bli -
+// men uten steg, for et steg ingen har bygget er et løfte vi ikke kan holde.
 //
 // Se docs/Design documents/minnevokteren-nordvik-blueprint.md §2 og §4.
 
@@ -59,6 +59,24 @@ export const K3 = {
      * kunne vite om det står en avtale i verden.
      */
     utfordret: 'k3-utfordret',
+} as const;
+
+/**
+ * Steg-id-ene i kapittel 4.
+ *
+ * Samme regel som over: bare de som er bygget står her.
+ */
+export const K4 = {
+    budstikka: 'k4-budstikka',
+    hvemDrar: 'k4-hvem-drar',
+} as const;
+
+/** Flagg kapittel 4 setter, og som slaget og mellomspillet leser. */
+export const K4_FLAGG = {
+    /** Står sønnen i rekka ved siden av deg? */
+    sonnenMed: 'k4-sonnen-med',
+    /** Eller ble han hjemme i høyet? */
+    sonnenHjemme: 'k4-sonnen-hjemme',
 } as const;
 
 /** Flagg kapittel 3 setter, og som mellomspillet og kapittel 4 leser. */
@@ -266,13 +284,33 @@ export const KAPITLER: KapittelDef[] = [
         nr: 4,
         aar: 1030,
         tittel: 'Stiklestad',
-        rolle: { navn: 'Halvard', alder: 41, stand: 'karl', kjonn: 'mann' },
+        rolle: { navn: 'Halvard Torgilsson', alder: 34, stand: 'karl', kjonn: 'mann' },
         aettId: 'nordvik',
         opptakt: {
-            tittel: 'Verdalen, 1030',
-            tekst: 'Du er bonde. Du står i bondehæren. Mot kongen.',
+            tittel: 'Nordvik, juli 1030',
+            tekst:
+                'Det er 35 år siden faren din svarte kongens mann i hallen. Han lever ennå, og han sitter ved veggen med hendene i fanget.\n\n' +
+                'Du er Halvard, født året etter at kirken ble reist. Du har aldri sett hovet som sto der. Du er døpt, gift og skriftet i det huset oppe i lia, og du har aldri tenkt over at det finnes noe annet.\n\n' +
+                'Graset ligger slått på enga. I morges kom Bård på Sæbø gående opp stien med en pil skåret i tre, og han sa at Olav Haraldsson er på vei ned Verdalen med hæren sin.',
         },
-        steg: [],
+        steg: [
+            {
+                id: K4.budstikka,
+                tittel: 'Pila av tre',
+                mal: 'Bård står på tunet med budstikka. Hør hva den betyr før du tar imot.',
+                krever: [],
+            },
+            {
+                id: K4.hvemDrar,
+                tittel: 'Hvem drar',
+                mal: 'Åsmund er femten og har slipt spydet sitt to ganger. Svar ham.',
+                krever: [K4.budstikka],
+            },
+        ],
+        // Æren avgjør hvem som stiller seg ved siden av deg - det er den samme
+        // regelen som i 872, og i en skjoldborg er den bokstavelig. Årshjulet
+        // hører til Åsa: dette kapittelet varer fra slåtten til slaget.
+        systemer: { aere: true },
         mellomspillEtter: 'mellomspill-4',
     },
     {

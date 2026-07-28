@@ -181,6 +181,22 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Du holdt et blot. Ingenting av det står noe sted.',
     },
     {
+        id: 'bondehaeren',
+        navn: 'Bondehæren',
+        forklaring:
+            'Hæren som møtte Olav Haraldsson på Stiklestad kalles bondehæren, og bønder var med. Men den ble kalt ut, ledet og betalt av stormenn som hadde mistet makt til kongen - Kalv Arnesson og Tore Hund - og pengene kom fra Knut den mektige i Danmark og England. Nesten alle som sto der var døpt, på begge sider. Det var ikke en strid mellom to guder.',
+        forstasVed: 'Ta imot budstikka, og finn ut hvem som holder i den andre enden.',
+        replikk: 'De har sølv fra Knut den mektige. Vi har ljåer.',
+    },
+    {
+        id: 'skjoldborg',
+        navn: 'Skjoldborg',
+        forklaring:
+            'En rekke der skjoldene ligger kant i kant. Skjoldet ditt dekker deg og halve mannen til venstre for deg, og mannen til høyre dekker halve deg - ingen står bak sitt eget skjold alene. Går én fram, åpner han et hull, og naboen faller. Derfor vant den siden som greide å stå stille lengst, ikke den som slo hardest. Spydet er våpenet i rekka; en øks trenger albuerom, og albuerom finnes ikke der inne.',
+        forstasVed: 'Stå i en skjoldborg til den holder, uten å gå fram.',
+        replikk: 'Den som løper fram, dreper mannen ved siden av seg. Det er ikke et ordtak.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:
