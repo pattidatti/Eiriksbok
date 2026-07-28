@@ -31,7 +31,7 @@
     },
     {
       "type": "text",
-      "content": "I april 1989 døde Hu Yaobang, en populær partileder kjent for å lytte til kritikk. Studenter i Beijing samlet seg for å minnes ham - og snart ble minnemarkeringen til noe mye større. De unge krevde dialog med partiet, frihet til å protestere, og en fri presse. De ville ikke velte kommuniststyret. De ville at Kina skulle bli bedre."
+      "content": "I april 1989 døde Hu Yaobang, en populær partileder kjent for å lytte til kritikk. Studenter i Beijing samlet seg for å minnes ham - og snart ble minnemarkeringen til noe mye større (Filseth & Garberg, 2025). De unge krevde dialog med partiet, frihet til å protestere, og en fri presse. De ville ikke velte kommuniststyret. De ville at Kina skulle bli bedre."
     },
     {
       "type": "image",
@@ -45,11 +45,11 @@
     },
     {
       "type": "text",
-      "content": "Det som begynte med noen tusen studenter på Tiananmen-plassen, vokste raskt. Demonstrantene satte opp telt og nektet å dra. De lagde en 10 meter høy statue de kalte \"Demokratiets gudinne\", inspirert av Frihetsgudinnen i New York. Arbeidere, lærere og journalister sluttet seg til. I midten av mai hadde over en million mennesker deltatt i demonstrasjoner i Beijing alene - og lignende protester spredte seg til over 400 andre kinesiske byer."
+      "content": "Det som begynte med noen tusen studenter på Tiananmen-plassen, vokste raskt. Demonstrantene satte opp telt og nektet å dra. De reiste en statue av gips midt på plassen og kalte den \"Demokratiets gudinne\" (Encyclopaedia Britannica, 2026). Arbeidere, lærere og journalister sluttet seg til. Den 19. mai samlet rundt 1,2 millioner mennesker seg til protest i Beijing (FRONTLINE, 2019), og lignende protester spredte seg til byer over hele Kina."
     },
     {
       "type": "text",
-      "content": "Mange av soldatene som ble sendt for å overvåke plassen, var ikke fiendtlig innstilt. Noen av dem tok bilder med studentene. Noen delte mat. Partileder Zhao Ziyang besøkte demonstrantene personlig og sa med tårer i øynene: \"Vi kom for sent.\" Han mente at partiet burde snakke med dem."
+      "content": "Mange av soldatene som ble sendt for å overvåke plassen, var ikke fiendtlig innstilt. Noen av dem tok bilder med studentene. Noen delte mat. Tidlig om morgenen 19. mai gikk partileder Zhao Ziyang selv ut på plassen med en megafon og sa til de sultestreikende studentene: \"Vi kom for sent\" (FRONTLINE, 2019). Han mente at partiet burde snakke med dem. Det ble hans siste offentlige opptreden."
     },
     {
       "type": "header",
@@ -57,7 +57,7 @@
     },
     {
       "type": "text",
-      "content": "Bak scenene raste en bitter maktkamp. Zhao Ziyang sto for dialog. Men statsminister Li Peng og de eldre hardlinjerne mente at ettergivenhet ville true partiets autoritet. Deng Xiaoping lyttet til begge sider - og valgte til slutt hardlinjernes løsning. Den 20. mai erklærte myndighetene unntakstilstand i Beijing. Zhao Ziyang ble fratatt all makt, satt i husarrest og fikk aldri komme tilbake i politikken. Han tilbrakte resten av livet isolert i hjemmet sitt."
+      "content": "Bak scenene raste en bitter maktkamp. Zhao Ziyang sto for dialog, men ble nedstemt i politbyrået. Statsminister Li Peng og de eldre hardlinjerne mente at ettergivenhet ville true partiets autoritet. Deng Xiaoping lyttet til begge sider - og valgte til slutt hardlinjernes løsning. Den 20. mai erklærte Li Peng unntakstilstand i Beijing (Filseth & Garberg, 2025). Zhao Ziyang ble fratatt all makt og satt i husarrest. Der ble han sittende til han døde i 2005, og navnet hans skulle ikke lenger nevnes offentlig."
     },
     {
       "type": "text",
@@ -75,11 +75,11 @@
     },
     {
       "type": "text",
-      "content": "Natten til søndag 4. juni 1989 startet angrepet. Stridsvogner og soldater med skarpe skudd rykket inn langs Chang'an Avenue - hovedgaten som fører rett til Tiananmen-plassen. Det ble skutt mot folkemengder i gatene rundt plassen. Sykehusene ble overfylte. Ambulanser kom ikke frem."
+      "content": "Natten til søndag 4. juni 1989 startet angrepet. Stridsvogner og soldater med skarpe skudd rykket inn langs Chang'an Avenue - hovedgaten som fører rett til Tiananmen-plassen. Det ble brukt skarpe skudd, og de blodigste kampene sto ikke på selve plassen, men i gatene rundt den (Filseth, 2025). Sykehusene ble overfylte. Ambulanser kom ikke frem."
     },
     {
       "type": "text",
-      "content": "Klokken rundt 06.00 om morgenen var plassen ryddet. Nøyaktig hvor mange som ble drept er fortsatt ukjent. Kina har aldri publisert offisielle tall. Kinesisk Røde Kors anslo i første omgang 2 600, men trakk tallet tilbake under press. Amnesty International anslår flere hundre til over tusen drepte. Frigitte britiske diplomatdokumenter fra 2017 antyder tallet kan ha vært langt høyere. Sannheten er gjemt."
+      "content": "Tidlig om morgenen var plassen tømt (Encyclopaedia Britannica, 2026). Nøyaktig hvor mange som ble drept er fortsatt ukjent. Kinesiske myndigheter oppga rundt 200 drepte sivile, et tall nesten alle avviser som altfor lavt. Kinesisk Røde Kors oppga først 2 600 døde og 10 000 skadde, men organisasjonen avviste tallet etterpå. Amnesty International og flere av deltakerne mente tallet lå nærmere 1 000 (TIME, 1990). Et britisk diplomattelegram som ble frigitt i 2017, anslo minst 10 000 drepte (Lin, 2017). Noen pålitelig oversikt finnes ikke."
     },
     {
       "type": "component",
@@ -91,20 +91,20 @@
           {
             "id": "m1",
             "myth": "Det er ingen bevis for at noen ble drept på Tiananmen-plassen.",
-            "evidence": "Kinesiske og utenlandske vitner dokumenterer drap langs gatene rundt plassen. Britiske diplomatiske dokumenter (frigitt 2017) anslår 10 000 drepte, men de fleste historikere anslår 200-1000+.",
-            "source": "Britisk utenriksdepartement, 2017"
+            "evidence": "Kinesiske og utenlandske vitner dokumenterer drap i gatene rundt plassen. Et britisk diplomattelegram frigitt i 2017 anslo minst 10 000 drepte. Andre anslag ligger lavere, fra et par hundre til noen tusen - men ingen mener tallet er null.",
+            "source": "Radio Free Asia (2017) og TIME (1990)"
           },
           {
             "id": "m2",
             "myth": "Det var en nødvendig handling for å stoppe anarki.",
-            "evidence": "Demonstrantene var fredelige. Verken kinesisk eller internasjonalt politi rapporterte om voldelige handlinger fra studentenes side før hæren gikk inn.",
-            "source": "Amnesty International, 1989"
+            "evidence": "Protestene var i hovedsak fredelige gjennom hele våren. Volden startet da hæren rykket inn natt til 4. juni med skarpe skudd.",
+            "source": "Store norske leksikon (2025)"
           },
           {
             "id": "m3",
             "myth": "De fleste kinesere støtter partiets håndtering i ettertid.",
-            "evidence": "Meningsmålinger er forbudt i Kina om dette temaet. Sensurering av alle referanser antyder at partiet frykter konsekvensene av en åpen diskusjon.",
-            "source": "Human Rights Watch"
+            "evidence": "Det er umulig å måle. Temaet er sensurert, og åpen debatt om 4. juni er ikke tillatt. At partiet blokkerer selv kodeord og emojier rundt årsdagen, tyder på at det frykter en åpen diskusjon.",
+            "source": "Koetse (2024), What's on Weibo"
           }
         ]
       }
@@ -115,11 +115,11 @@
     },
     {
       "type": "text",
-      "content": "Dagen etter, 5. juni, fotograferte fire vestlige journalister det samme øyeblikket fra ulike vinkler: en mann i hvit skjorte som stanser en kolonne stridsvogner ved å gå ut i veien og stille seg foran dem. Kjøretøyet stopper. Mannen klatrer opp, ser inn i luken, klatrer ned igjen. Han og stridsvognen prøver å manøvrere seg rundt hverandre - som en merkelig dans."
+      "content": "Dagen etter, 5. juni, fotograferte fire fotografer for internasjonale nyhetsbyråer og magasiner det samme øyeblikket fra ulike vinkler (Chan, 2017): en mann i hvit skjorte som stanser en kolonne stridsvogner ved å gå ut i veien og stille seg foran dem. Kjøretøyet stopper. Mannen klatrer opp, ser inn i luken, klatrer ned igjen. Han og stridsvognen prøver å manøvrere seg rundt hverandre - som en merkelig dans."
     },
     {
       "type": "text",
-      "content": "Hvem han var, vet vi ikke. Hva som skjedde med ham etterpå, vet vi ikke. Kinesiske myndigheter har sagt at han aldri ble arrestert, men har ikke gitt noen annen forklaring. Mange mener han ble henrettet. Noen mener han lever i skjul. Fotografiene hans er i dag kjent over hele verden - unntatt i Kina, hvor de er fullstendig blokkert."
+      "content": "Hvem han var, vet vi ikke. Hva som skjedde med ham etterpå, vet vi ikke. Kinesiske myndigheter har sagt at han aldri ble arrestert, men har ikke gitt noen annen forklaring. Mange mener han ble henrettet. Noen mener han lever i skjul. Fotografiene hans er i dag kjent over hele verden - unntatt i Kina, hvor de blokkeres sammen med alt annet som viser til 4. juni (Koetse, 2024)."
     },
     {
       "type": "image",
@@ -132,7 +132,7 @@
       "name": "FactBox",
       "props": {
         "title": "Sensurens omfang",
-        "content": "I Kina i dag er søkeordet \"4. juni\" blokkert på alle større plattformer. Ingen kinesisk lærebok nevner massakren. Over 90 000 nettsider som omtaler hendelsen er blokkert av den kinesiske brannmuren. Unge kinesere bruker koder som \"May 35th\" (den 35. mai, som ikke finnes) for å omgå sensuren - inntil disse også blir oppdaget og slettet. Fotografiet av tankmannen er et av verdens mest kjente bilder - og et av de mest effektivt undertrykte."
+        "content": "I Kina blokkeres søk på \"4. juni\" på de store nettplattformene rundt årsdagen. Unge kinesere har brukt koder som \"den 35. mai\" - en dato som ikke finnes - for å skrive om hendelsen uten å bruke ordene. Men kodene blir oppdaget og fjernet så snart de blir populære, og sensuren omfatter til og med emojier som stearinlys og kake. Fotografiet av tankmannen er et av verdens mest kjente bilder - og et av de mest effektivt undertrykte."
       }
     },
     {
@@ -152,12 +152,12 @@
       "name": "QuoteBlock",
       "props": {
         "text": "Vi kom for sent.",
-        "author": "Zhao Ziyang, Kinas partileder, til demonstrantene på Tiananmen-plassen, mai 1989"
+        "author": "Zhao Ziyang, Kinas partileder, til sultestreikende studenter på Tiananmen-plassen 19. mai 1989"
       }
     },
     {
       "type": "text",
-      "content": "I dag, over 35 år senere, holder studenter i Hongkong stearinlys hvert år den 4. juni for å minnes de som ble drept. Men siden 2020 har myndighetene forbudt også det. Det siste stedet i Kina der noen åpent minnes Tiananmen, er blitt stille. Flammen er slukket - i det minste der man kan se den."
+      "content": "I mange år var Hongkong det eneste stedet på kinesisk jord der 4. juni ble markert åpent: titusener møttes i Victoria Park med stearinlys for å minnes de drepte. I 2020 forbød politiet markeringen for første gang, og siden har den ikke fått lov. Organisasjonen som arrangerte den, oppløste seg selv i 2021 etter at flere av lederne ble arrestert (Hong Kong Free Press, 2026). Det siste stedet i Kina der noen åpent minnes Tiananmen, er blitt stille. Flammen er slukket - i det minste der man kan se den."
     },
     {
         "type": "component",
@@ -177,7 +177,7 @@
             ],
             "gaaVidere": [
                 "Bildet av tankmannen er kjent over hele verden, men usynlig i Kina. Skriv et kort avsnitt om hvorfor et enkelt fotografi kan bli så farlig for et lederskap.",
-                "Finn ut hvordan en stat kan sensurere informasjon på nettet i dag, og sammenlign med hvordan Kina blokkerer over 90 000 nettsider om Tiananmen. Del funnene dine med klassen.",
+                "Finn ut hvordan en stat kan sensurere informasjon på nettet i dag, og sammenlign med hvordan Kina blokkerer søkeord, kodeord og emojier rundt 4. juni. Del funnene dine med klassen.",
                 "Diskuter i grupper: Bør et land ha rett til å bestemme selv hva som skjer med egne innbyggere, eller har andre land et ansvar for å reagere når noe slikt som Tiananmen skjer?"
             ]
         }
@@ -214,11 +214,11 @@
             "options": [
               "Fordi det ikke fantes journalister til stede den kvelden",
               "Fordi demonstrantene selv ikke ønsket å oppgi tall",
-              "Fordi Kina aldri har publisert offisielle tall og sensurerer all informasjon om hendelsen",
+              "Fordi de offisielle kinesiske tallene er omstridt og all informasjon om hendelsen sensureres",
               "Fordi Røde Kors bekreftet at ingen ble drept direkte på plassen"
             ],
             "answer": 2,
-            "explanation": "Kina har aldri publisert offisielle dødstall. Anslag fra ulike kilder varierer kraftig, og all informasjon om hendelsen er sensurert i Kina den dag i dag."
+            "explanation": "Kinesiske myndigheter oppga rundt 200 drepte sivile, men nesten alle mener det tallet er altfor lavt. Andre anslag varierer fra noen hundre til over 10 000, og all informasjon om hendelsen er sensurert i Kina den dag i dag."
           },
           {
             "question": "Hva skjedde i Vest-Europa samme år som Tiananmen-massakren, og hva var forskjellen?",
@@ -233,7 +233,25 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Chan, B. (2017). *The other photographers who snapped Tiananmen's Tank Man, and their memories of June 4, 1989 in Beijing*. South China Morning Post. Hentet 28.07.2026 fra [scmp.com](https://www.scmp.com/culture/article/2096173/other-photographers-who-snapped-tiananmens-tank-man-and-their-memories-june)",
+          "Encyclopaedia Britannica. (2026). *Tiananmen Square incident*. Hentet 28.07.2026 fra [britannica.com](https://www.britannica.com/event/Tiananmen-Square-incident)",
+          "Filseth, G. (2025). *Den himmelske freds plass*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Den_himmelske_freds_plass](https://snl.no/Den_himmelske_freds_plass)",
+          "Filseth, G. & Garberg, B. (2025). *Folkerepublikken Kinas historie*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Folkerepublikken_Kinas_historie](https://snl.no/Folkerepublikken_Kinas_historie)",
+          "FRONTLINE. (2019). *Timeline: What Led to the Tiananmen Square Massacre*. PBS. Hentet 28.07.2026 fra [pbs.org](https://www.pbs.org/wgbh/frontline/article/timeline-tiananmen-square/)",
+          "Hong Kong Free Press. (2026). *Patriotic carnival to return to site of Hong Kong's Tiananmen crackdown memorial vigil*. Hentet 28.07.2026 fra [hongkongfp.com](https://hongkongfp.com/2026/05/26/patriotic-carnival-to-return-to-site-of-hong-kongs-tiananmen-crackdown-memorial-vigil/)",
+          "Koetse, M. (2024). *Weibo Watch: The Last 'T' Standing*. What's on Weibo. Hentet 28.07.2026 fra [whatsonweibo.com](https://www.whatsonweibo.com/the-last-t-word-35th-anniversary-of-tiananmen/)",
+          "Lin, P. (2017). *Chinese Army 'Spared No-one' in 1989 Mass Killings in Beijing: UK cables*. Radio Free Asia. Hentet 28.07.2026 fra [rfa.org](https://www.rfa.org/english/news/china/tianmen-revelations-12212017131357.html)",
+          "TIME. (1990). *How Many Really Died? Tiananmen Square Fatalities*. Hentet 28.07.2026 fra [time.com](https://time.com/archive/6715033/how-many-really-died-tiananmen-square-fatalities/)"
+        ]
+      }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-07-28T00:00:00.000Z"
 }
