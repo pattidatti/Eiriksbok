@@ -1756,7 +1756,7 @@
       "description": "Handel med krydder og luksusvarer før 1500.",
       "startDate": 700,
       "endDate": 1500,
-      "displayDate": "700–1500",
+      "displayDate": "700-1500",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "kolonialisering",
@@ -2516,7 +2516,7 @@
     {
       "id": "magna-carta",
       "title": "Magna Carta - da kongen måtte bøye seg for loven",
-      "description": "I 1215 tvang engelske baroner kong Johan til å skrive under på Magna Carta. For første gang måtte selv kongen følge loven - en spire til rettsstaten.",
+      "description": "I 1215 tvang engelske baroner kong Johan til å besegle Magna Carta. For første gang måtte selv kongen følge loven - en spire til rettsstaten.",
       "startDate": 1215,
       "endDate": null,
       "displayDate": "1215",
@@ -3941,6 +3941,32 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "hekseprosessene",
+      "title": "Hekseprosessene - når frykten styrte retten",
+      "description": "Mellom 1560 og 1700 ble over 330 mennesker dømt til døden for trolldom i Norge. De fleste var kvinner, og Finnmark var hardest rammet. Loven var formelt på plass - men logikken var lukket.",
+      "startDate": 1560,
+      "endDate": 1700,
+      "displayDate": "1560-1700",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "lov-og-rett",
+      "link": "/historie/lov-og-rett/hekseprosessene",
+      "tags": [
+        "hekseprosessene",
+        "trolldom",
+        "vardo",
+        "finnmark",
+        "rettsstat",
+        "kvinnehistorie",
+        "norgeshistorie"
+      ],
+      "lat": 70.37,
+      "lng": 31.11,
+      "placeLabel": "Vardø",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "galileo-galilei",
       "title": "Galileo Galilei: Mannen som så himmelen først",
       "description": "Med en hjemmelaget kikkert og et stridig sinn beviste Galileo at jorden beveger seg — og la grunnlaget for moderne vitenskap.",
@@ -3963,32 +3989,6 @@
       "lng": 12.5,
       "placeLabel": "Italia",
       "placeCountryId": 380,
-      "geoConfidence": "tag"
-    },
-    {
-      "id": "hekseprosessene",
-      "title": "Hekseprosessene - når frykten styrte retten",
-      "description": "Mellom 1567 og 1696 ble om lag 350 mennesker brent som hekser i Norge. De fleste var fattige kvinner i Finnmark. Loven var formelt på plass - men logikken var lukket.",
-      "startDate": 1567,
-      "endDate": 1696,
-      "displayDate": "1567-1696",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "lov-og-rett",
-      "link": "/historie/lov-og-rett/hekseprosessene",
-      "tags": [
-        "hekseprosessene",
-        "trolldom",
-        "vardo",
-        "finnmark",
-        "rettsstat",
-        "kvinnehistorie",
-        "norgeshistorie"
-      ],
-      "lat": 70.37,
-      "lng": 31.11,
-      "placeLabel": "Vardø",
-      "placeCountryId": 578,
       "geoConfidence": "tag"
     },
     {
@@ -4123,7 +4123,7 @@
     {
       "id": "voc",
       "title": "Det nederlandske ostindiske kompani (VOC)",
-      "description": "Verdens første aksjeselskap og et globalt handelsimperium.",
+      "description": "Verdens første børsnoterte selskap og et globalt handelsimperium.",
       "startDate": 1602,
       "endDate": null,
       "displayDate": "1602",

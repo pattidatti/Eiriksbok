@@ -14,7 +14,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Det er en sommerdag i juni 1215. På en eng ved elva Themsen i England står kong Johan ansikt til ansikt med en flokk sinte baroner. Baronene er rike menn som eier mye land. De har med seg soldater, og de er lei av kongen. Johan har tapt kriger, krevd inn skatt etter skatt, og fengslet folk han ikke likte. Nå har baronene fått nok. De gir kongen et valg: skriv under på våre krav, eller mist tronen."
+            "content": "Det er 15. juni 1215. På en eng som heter Runnymede, ved elva Themsen mellom Windsor og Staines, står kong Johan ansikt til ansikt med en flokk sinte baroner (Lunga, 2026). Baronene er rike menn som eier mye land. De har med seg soldater, og de er lei av kongen. Johan har tapt kriger, krevd inn skatt etter skatt, og fengslet folk han ikke likte. Nå har baronene fått nok. De gir kongen et valg: godta kravene våre, eller så fortsetter krigen."
         },
         {
             "type": "text",
@@ -44,7 +44,7 @@
         },
         {
             "type": "text",
-            "content": "Kong Johan trengte hele tiden penger. Han førte dyre kriger i Frankrike, og han tapte de fleste av dem. For å betale presset han baronene hardt. Han fant på nye skatter, krevde store summer for arv, og straffet dem som ikke betalte. Mange baroner mistet både gods og ære uten en eneste rettssak."
+            "content": "Kong Johan trengte hele tiden penger. Han førte dyre kriger i Frankrike, og han tapte de fleste av dem. Allerede i 1202 hadde den franske kongen inndratt de franske landområdene hans (Holmboe & Lunga, 2026). For å betale presset han baronene hardt. Han fant på nye skatter, krevde store summer for arv, og straffet dem som ikke betalte. Mange baroner mistet både gods og ære uten en eneste rettssak."
         },
         {
             "type": "text",
@@ -61,16 +61,18 @@
         },
         {
             "type": "text",
-            "content": "Magna Carta hadde 63 punkter. De fleste handlet om penger og land som var viktige akkurat i 1215, og er glemt i dag. Men noen få punkter ble stående som store ideer. Det viktigste var dette: kongen kunne ikke lenger kreve ny skatt uten å spørre et råd av menn først. Pengene tilhørte ikke kongen alene."
+            "content": "Magna Carta hadde 63 punkter (Lunga, 2026). De fleste handlet om penger og land som var viktige akkurat i 1215, og er glemt i dag. Men noen få punkter ble stående som store ideer. Punkt 12 var ett av dem: kongen kunne ikke kreve inn de store krigsskattene uten samtykke fra riket. Bare tre ting var unntatt, blant annet løsepenger hvis kongen selv ble tatt til fange (Storbritannias nasjonalarkiv, u.å.). Pengene tilhørte altså ikke kongen alene."
         },
         {
             "type": "text",
-            "content": "Et annet punkt ble enda mer berømt. Det sa at ingen fri mann skulle fengsles, jages bort eller fratas eiendommen sin uten en lovlig dom av sine likemenn. Med andre ord: kongen kunne ikke straffe deg bare fordi han ville. Du hadde rett til en rettferdig rettssak. Dette var en helt ny tanke om at folk har rettigheter som selv kongen må respektere."
+            "content": "Punkt 39 ble enda mer berømt. Det sa at ingen fri mann skulle fengsles, jages bort eller fratas eiendommen sin uten en lovlig dom av sine likemenn eller etter landets lov (Storbritannias nasjonalarkiv, u.å.). Med andre ord: kongen kunne ikke straffe deg bare fordi han ville. Du hadde rett til en rettferdig rettssak. Dette var en helt ny tanke om at folk har rettigheter som selv kongen må respektere. Merk deg ordet «fri mann» - i 1215 gjaldt dette langt fra alle."
         },
         {
             "type": "component",
             "name": "MicroGame",
-            "props": { "gameId": "forseglingen-runnymede-3d" }
+            "props": {
+                "gameId": "forseglingen-runnymede-3d"
+            }
         },
         {
             "type": "component",
@@ -90,11 +92,11 @@
         },
         {
             "type": "text",
-            "content": "Magna Carta fikk ingen lett start. Bare noen uker etter at kong Johan hadde skrevet under, fikk han paven til å si at avtalen var ugyldig. Krigen mellom kongen og baronene blusset opp igjen. Men så døde Johan plutselig høsten 1216, og sønnen hans var bare ni år gammel. De som styrte for den unge kongen, valgte å godta Magna Carta på nytt for å skape fred."
+            "content": "Magna Carta fikk ingen lett start. Bare noen uker etter beseglingen fikk kong Johan pave Innocens 3. til å erklære hele dokumentet ugyldig. Krigen mellom kongen og baronene blusset opp igjen. Men så døde Johan i oktober 1216, og sønnen Henrik 3. var bare ni år gammel. De som styrte for den unge kongen, ga ut Magna Carta på nytt i hans navn - og det trakk baronene bort fra den franske prinsen de hadde invitert inn (Lunga, 2026)."
         },
         {
             "type": "text",
-            "content": "Slik overlevde avtalen. Den ble bekreftet flere ganger av nye konger gjennom hundreårene. Sakte ble den til noe mer enn et brev fra 1215. Den ble et symbol på at makten har grenser, og at folk har rettigheter loven må verne om."
+            "content": "Slik overlevde avtalen. Den ble gitt ut på nytt i 1216, 1217, 1225 og 1297, og ble slik en fast del av engelsk rett (Lunga, 2026). Sakte ble den til noe mer enn et brev fra 1215. Den ble et symbol på at makten har grenser, og at folk har rettigheter loven må verne om."
         },
         {
             "type": "image",
@@ -108,7 +110,7 @@
         },
         {
             "type": "text",
-            "content": "Ideen i Magna Carta spredte seg langt utenfor England. Tanken om at ingen står over loven, og at folk har rettigheter som må respekteres, ble en grunnstein i mange land. Da USA og Frankrike laget sine egne lover på 1700-tallet, bygde de videre på den samme ideen. Det gjorde også Norge da Grunnloven ble skrevet i 1814. Du kan lese om den i artikkelen om [Grunnloven](/samfunnskunnskap/styringsformer/grunnloven)."
+            "content": "Ideen i Magna Carta spredte seg langt utenfor England. Tanken om at ingen står over loven, og at folk har rettigheter som må respekteres, ble en grunnstein i mange land. De amerikanske kolonistene brukte Magna Carta som argument mot den britiske kongen, og charteret satte tydelige spor i den amerikanske rettighetserklæringen fra 1791 - særlig kravet om rettferdig rettergang (USAs nasjonalarkiv, 2019). Den samme tanken preget Norge da Grunnloven ble skrevet i 1814. Du kan lese om den i artikkelen om [Grunnloven](/samfunnskunnskap/styringsformer/grunnloven)."
         },
         {
             "type": "text",
@@ -130,11 +132,11 @@
                     "Hva betyr navnet Magna Carta, og i hvilket år satte kong Johan seglet sitt på dokumentet?",
                     "Hvorfor gjorde baronene opprør mot kong Johan? Nevn minst to grunner fra teksten.",
                     "Hva sa punkt 39 om hva som måtte til før en fri mann kunne fengsles eller fratas eiendommen sin?",
-                    "Hva skjedde med Magna Carta rett etter at kong Johan hadde skrevet under, og hvordan overlevde avtalen likevel?"
+                    "Hva skjedde med Magna Carta rett etter at kong Johan hadde beseglet den, og hvordan overlevde avtalen likevel?"
                 ],
                 "reflekter": [
                     "Teksten sier at kongen før 1215 sto over loven. Forklar med egne ord hva forskjellen er på å stå over loven og å stå under loven.",
-                    "Hvorfor var det så viktig at kongen ikke lenger kunne kreve ny skatt uten å spørre et råd først? Hva sier dette om hvem pengene egentlig tilhørte?",
+                    "Hvorfor var det så viktig at kongen ikke lenger kunne kreve inn de store krigsskattene uten samtykke fra riket? Hva sier dette om hvem pengene egentlig tilhørte?",
                     "Baronene var rike og mektige menn, ikke vanlige bønder. Vurder hvorfor det nettopp var de som klarte å tvinge kongen til å bøye seg.",
                     "Sammenlign Magna Carta med Magnus Lagabøtes landslov slik teksten beskriver dem. Hva var likt ved det som skjedde i England og i Norge?"
                 ],
@@ -196,7 +198,21 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Holmboe, H. & Lunga, P. S. (2026). *Johan uten land*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Johan_uten_land](https://snl.no/Johan_uten_land)",
+                    "Lunga, P. S. (2026). *Magna Carta*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Magna_Carta](https://snl.no/Magna_Carta)",
+                    "Storbritannias nasjonalarkiv. (u.å.). *Magna Carta, 1215*. The National Archives. Hentet 28.07.2026 fra [nationalarchives.gov.uk](https://www.nationalarchives.gov.uk/education/resources/magna-carta/british-library-magna-carta-1215-runnymede/)",
+                    "USAs nasjonalarkiv. (2019). *Magna Carta: Legacy*. National Archives and Records Administration. Hentet 28.07.2026 fra [archives.gov](https://www.archives.gov/exhibits/featured-documents/magna-carta/legacy.html)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-28T00:00:00.000Z",
+    "factChecked": "2026-07-28"
 }
