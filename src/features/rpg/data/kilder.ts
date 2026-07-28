@@ -206,6 +206,46 @@ export const KILDER: KildeDef[] = [
         henvisning:
             'Snorre Sturlason, Olav den helliges saga (Heimskringla, ca. 1230). Sitatet om den røde skyen er gjengitt hos Steinar Thorvaldsen på dendigitaleolavskilden.no. Biskopens ord og opplysningen om Torstein Knarresmed er gjengitt av Hans Jacob Orning i «Fire fortellinger om Stiklestad» på norgeshistorie.no (Universitetet i Oslo), der de står på nynorsk; de er overført til bokmål her.',
     },
+
+    // ── Mellomspill V: den ene kilden uten forfatter ────────────────────────
+    //
+    // Det åttende kortet er ikke en tekst. Det er et skrin av barlind og
+    // bronse, tatt fra en irsk kirke og lagt i grava til en kvinne i Namdalen,
+    // og det er den eneste kilden i hele kampanjen som ikke har en avsender,
+    // en mottaker eller en hensikt.
+    //
+    // Det er valgt av tre grunner. Det er ekte, og det er godt undersøkt. Det
+    // gjør nøyaktig det eleven gjorde i 793, uten at noen har skrevet ett ord
+    // om det. Og det svarer på spørsmålet det tomme feltet stiller: når ingen
+    // skrev noe om folk som deg, hvordan vet vi noe som helst om dem?
+    //
+    // `utdrag` er ingen replikk og settes derfor ikke i hermetegn av bordet.
+    // En gjenstand siteres ikke - den beskrives.
+    {
+        id: 'melhus-skrinet',
+        navn: 'Skrinet fra Melhus',
+        art: 'arkeologi',
+        naerhet: 'samtidig',
+        aar: 'Laget i Irland på 700-tallet. Lagt i grava omkring år 800',
+        opphav: {
+            hvem: 'Ingen. En gjenstand har ingen forfatter',
+            hvor: 'Funnet i en gravhaug på gården Melhus i Overhalla i Namdalen, i 1906',
+            for: 'Kvinnen som ble gravlagt med det',
+            hensikt: 'Ingen. Et skrin vil ikke overbevise deg om noe',
+        },
+        merker: {
+            hvem: 'Laget av',
+            hvor: 'Funnet i',
+            for: 'Lagt i grava til',
+            hensikt: 'Vil oppnå',
+        },
+        utdrag:
+            'Et lite hus av barlind, kledd med bronseplater, tolv centimeter langt og åtte høyt. Lokket er formet som et tak med høy mønekam, og på hver side sitter en rund plate av tinn med et snurret trekorsmønster.\n\n' +
+            'Det er et relikvieskrin, laget i et irsk kloster for å ta vare på beinet etter en helgen. Det har vært festet med reimer og båret om halsen på en prest.\n\n' +
+            'Det lå i en båtgrav sammen med en mann og en kvinne, og det er lagt ned på hennes side. Grava er fra omkring år 800. Ingen skrev noe om den.',
+        henvisning:
+            'Melhusskrinet (T8144), NTNU Vitenskapsmuseet. Funnet i 1906 av gårdbruker Johannes Melhus i Overhalla, og undersøkt av arkeolog Theodor Petersen i 1907. Beskrivelse og tolkning etter A. M. Heen-Pettersen og G. Murray, «An Insular Reliquary from Melhus», Medieval Archaeology 62 (2018), gjengitt på forskning.no og norwegianscitechnews.com. Skrinet er ett av tolv hele insulære husformede skrin som er bevart i Europa.',
+    },
 ];
 
 export const KILDE_BY_ID: Record<string, KildeDef> = Object.fromEntries(

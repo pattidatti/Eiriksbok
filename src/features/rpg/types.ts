@@ -529,6 +529,16 @@ export interface KildeDef {
     utdrag: string;
     /** Hvor utdraget er hentet fra, i klartekst, så en lærer kan slå det opp. */
     henvisning: string;
+    /**
+     * Hva de fire feltene på kortet skal hete for nettopp denne kilden.
+     *
+     * Sju av åtte kilder er tekster, og for dem står «Skrevet av / Skrevet i /
+     * Skrevet til / Vil oppnå». Den åttende er et skrin av barlind og bronse,
+     * og et skrin er ikke skrevet av noen. Sto merkene fast, ville bordet
+     * påstått at en gjenstand har en forfatter og en hensikt - altså det stikk
+     * motsatte av hvorfor arkeologien er verdt å legge ut til slutt.
+     */
+    merker?: { hvem: string; hvor: string; for: string; hensikt: string };
 }
 
 /**
@@ -558,6 +568,16 @@ export interface MellomspillDef {
     nr: number;
     tittel: string;
     apning: { tittel: string; tekst: string };
+    /**
+     * Alle kildene lagt ut på én linje, før kortene.
+     *
+     * Bare Mellomspill V har den, og det er formen bordet i 1066 *er*: fire
+     * bord har lagt ut to kilder hver, og til slutt skal de ligge sammen i
+     * tidsrekkefølge, med avstanden fra hendelsen til nedskrivingen tegnet som
+     * en strek. Hullene i kampanjen blir da ikke noe hun får opplyst - de er
+     * det hun ser (blueprint §6).
+     */
+    tidsrekke?: Tidsrekke;
     /** Kildene på bordet, i den rekkefølgen de legges ut. */
     kort: MellomspillKort[];
     /** Feltet som blir stående tomt. Det sterkeste øyeblikket (blueprint §3). */
@@ -583,6 +603,15 @@ export interface MellomspillKort {
  * tredje `MellomspillKort` uten utdrag.
  */
 export interface TomtFelt {
+    /**
+     * De to setningene som står rett før hun ser etter.
+     *
+     * Data og ikke fast tekst i komponenten, av samme grunn som `feltNavn`:
+     * bordet i 793 sier «begge er skrevet av dem du gikk løs på», og det er
+     * sant der og bare der. Sto den setningen fast, ville bordet i 872 påstått
+     * at Snorre og Haraldskvadet var skrevet av noen eleven hadde angrepet.
+     */
+    oppfordring: string;
     knapp: string;
     /**
      * Det som står igjen på det tomme kortet i raden øverst, etter at hun har
@@ -598,9 +627,57 @@ export interface TomtFelt {
     feltSvar: string;
     tittel: string;
     tekst: string;
-    /** Linja som bare står der hvis flagget er satt. */
-    hvisFlagg?: { flagg: string; tekst: string };
+    /**
+     * Linjene som bare står der hvis flagget er satt.
+     *
+     * En liste og ikke én linje, fordi det tomme feltet i 1066 er eleven selv:
+     * der skal alle fem kapitlene stå oppført med det hun faktisk gjorde, og
+     * ingen av dem finnes i noen kilde. Bordene i 793 og 1030 har fortsatt bare
+     * én linje hver.
+     */
+    hvisFlagg?: { flagg: string; tekst: string }[];
     veiing: Veiing;
+}
+
+// ─── Tidsrekka (Mellomspill V) ──────────────────────────────────────────────
+
+/**
+ * Alle kildene i kampanjen, lagt ut på én linje.
+ *
+ * Hvert punkt tegnes som en strek fra året det handler om til året det ble
+ * skrevet ned. Alkuins strek er et punkt; Snorres er tre og et halvt hundreår
+ * lang. Det er den samme opplysningen fire bord har gitt hver for seg, og
+ * første gang eleven ser den som en form.
+ */
+export interface Tidsrekke {
+    /** Knappen som legger alt ut. Hennes handling, som kortene. */
+    knapp: string;
+    tittel: string;
+    tekst: string;
+    punkter: TidsrekkePunkt[];
+    /**
+     * Ett spørsmål om helheten. Ikke om ett kort - det er gjort før.
+     *
+     * Knappen som avslutter det, heter det samme som knappen på det første
+     * kortet: bordet navngir alltid neste handling, aldri «Videre». Derfor står
+     * det ikke noe eget felt for den her.
+     */
+    veiing: Veiing;
+}
+
+export interface TidsrekkePunkt {
+    /** Året kilden ble til. Der streken slutter. */
+    aar: number;
+    /** Året den forteller om. Der streken begynner. */
+    omAar: number;
+    /** Årstallet slik det står for eleven: «793», «ca. 1230». */
+    merke: string;
+    navn: string;
+    art: KildeArt;
+    /** Én linje om hva den forteller om. Ikke en gjentakelse av kortet. */
+    om: string;
+    /** Kilden hun alt har lagt ut, hvis den er ett av kortene fra I-IV. */
+    kildeId?: string;
 }
 
 // ─── Cutscenes ──────────────────────────────────────────────────────────────
@@ -625,6 +702,11 @@ export type Klipp =
     | { art: 'musikk'; rot: number; modus?: number }
     | { art: 'stille' }
     | { art: 'taake'; tetthet: number; ms: number }
+    /**
+     * Kameraet stiger. `til` er en andel av skjermens egen zoom - 0.6 er
+     * seks tideler så nær - og `null` setter den tilbake.
+     */
+    | { art: 'stig'; til: number | null; ms: number }
     | { art: 'flytt'; hvem: string | 'spiller'; til: [number, number] }
     | { art: 'sett'; hvem: string; synlig: boolean };
 
@@ -991,6 +1073,18 @@ export interface Sted {
      * ført tilbake til 793, fordi den slår opp «det første stedet i epoken».
      */
     kapittel?: number;
+    /**
+     * Navnet i HUD-en, når kapittelets rolle er feil svar.
+     *
+     * Utelatt betyr «bruk rollen i kapittelet», som er riktig overalt bortsett
+     * fra ett sted: epilogen. Nordvik i 1100 hører til kapittel 5, men Orm har
+     * ligget ved Stanford bru i trettifire år, og et navneskilt med ham på
+     * mens eleven går rundt på gården er den ene setningen epilogen ikke tåler.
+     *
+     * `null` gir elevens eget navn i stedet, og det er ikke en nødløsning: de
+     * fem rollene er over, og den som ser på gården nå, er hun.
+     */
+    rollenavn?: string | null;
     tema: Tema;
     /** Terrenget. Bygges på nytt hver gang eleven kommer hit. */
     byggKart: () => WorldMap;

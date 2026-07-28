@@ -19,10 +19,14 @@
 // blir stående tomt er årstallet - det året eleven nettopp har levd et helt liv
 // i.
 //
-// III-V står i blueprintens §6 med kilder og spørsmål, og de legges inn som
-// data i denne fila når kapitlene deres finnes.
+// **Mellomspill V er ikke et femte bord av samme slag** (§6). Fire bord har
+// lagt ut to kilder hver, og til slutt skal alle sammen ligge der samtidig, i
+// tidsrekkefølge. Hver kilde tegnes som en strek fra året den forteller om til
+// året den ble til, og da er hullene ikke lenger noe eleven får opplyst - de er
+// det hun ser. Det siste kortet er det eneste i kampanjen som ikke er en tekst,
+// og det tomme feltet er henne selv.
 
-import { K1_FLAGG } from './kapitler';
+import { K1_FLAGG, K3_FLAGG, K4_FLAGG, K5_FLAGG } from './kapitler';
 import { K2_FLAGG } from './aaret';
 import type { MellomspillDef } from '../types';
 
@@ -203,6 +207,9 @@ export const MELLOMSPILL: MellomspillDef[] = [
             },
         ],
         tomtFelt: {
+            oppfordring:
+                'To kilder ligger på bordet. Begge er skrevet av dem du gikk løs på.\n\n' +
+                'Det er ett felt igjen. Legg ut det som er skrevet på ditt eget språk, av dine egne, om det du gjorde i sommer.',
             knapp: 'Se etter en norrøn kilde',
             feltNavn: 'Norrøn kilde',
             feltSvar: 'Ingen',
@@ -210,10 +217,12 @@ export const MELLOMSPILL: MellomspillDef[] = [
             tekst:
                 'Ikke ett kvad. Ikke én runestein. Ikke én saga skrevet i nærheten av 793.\n\n' +
                 'Alt du vet om det du nettopp gjorde, vet du fordi de du angrep kunne skrive.',
-            hvisFlagg: {
-                flagg: K1_FLAGG.brenteSkriptoriet,
-                tekst: 'Og du var der da det ble avgjort hvem som fikk fortelle.',
-            },
+            hvisFlagg: [
+                {
+                    flagg: K1_FLAGG.brenteSkriptoriet,
+                    tekst: 'Og du var der da det ble avgjort hvem som fikk fortelle.',
+                },
+            ],
             veiing: {
                 id: 'tomt-hvorfor',
                 sporsmal: 'Hvorfor står det ingenting fra din side?',
@@ -420,6 +429,9 @@ export const MELLOMSPILL: MellomspillDef[] = [
             },
         ],
         tomtFelt: {
+            oppfordring:
+                'To kilder ligger på bordet, og du har nettopp sett at de henger sammen.\n\n' +
+                'Det er ett felt igjen. Legg ut året. Skriv opp hvilket år slaget i Hafrsfjord sto, og si hvilken av kildene som gir deg tallet.',
             knapp: 'Se etter årstallet',
             feltNavn: 'Året det skjedde',
             feltSvar: 'Ingen kilde sier det',
@@ -427,10 +439,12 @@ export const MELLOMSPILL: MellomspillDef[] = [
             tekst:
                 'Ikke i diktet. Ikke hos Snorre. Ikke i ett eneste brev og ikke i én eneste årbok, noe sted i Europa.\n\n' +
                 'Du har nettopp levd et helt år på Nordvik. Du sådde i det, du høstet i det, og du berget deg gjennom vinteren i det. Året hadde et tall. Tallet er det ingen som har fortalt oss.',
-            hvisFlagg: {
-                flagg: K2_FLAGG.matetHarald,
-                tekst: 'Du ga korn til mannen hans i sommer. Du vet ikke sikkert hvilket år du gjorde det.',
-            },
+            hvisFlagg: [
+                {
+                    flagg: K2_FLAGG.matetHarald,
+                    tekst: 'Du ga korn til mannen hans i sommer. Du vet ikke sikkert hvilket år du gjorde det.',
+                },
+            ],
             veiing: {
                 id: 'tomt-arstallet',
                 sporsmal: 'Hvor kommer 872 fra, da?',
@@ -644,6 +658,9 @@ export const MELLOMSPILL: MellomspillDef[] = [
             },
         ],
         tomtFelt: {
+            oppfordring:
+                'To kilder ligger på bordet. Begge er kristne, og begge forteller om en seier.\n\n' +
+                'Det er ett felt igjen. Legg ut den andre sida: det noen skrev om hvorfor det gamle var verdt å holde på.',
             knapp: 'Se etter dem som sa nei',
             feltNavn: 'De som holdt på den gamle sida',
             feltSvar: 'Ingen ord, noe sted',
@@ -652,10 +669,12 @@ export const MELLOMSPILL: MellomspillDef[] = [
                 'Ikke et brev. Ikke en runestein. Ikke ett kvad om hvorfor hovet var verdt å holde.\n\n' +
                 'Alt vi vet om den gamle sida, vet vi fra folk som mente den var feil: Snorre, som er kristen, kirkemenn som skrev om den for å vise hvor mørkt det var før, og arkeologer som graver opp ting uten ord i.\n\n' +
                 'Du holdt et blot. Du vet hvordan det luktet, hvem som kom, og hva som ble sagt. Ingenting av det står noe sted.',
-            hvisFlagg: {
-                flagg: 'k3-nektet',
-                tekst: 'Du sa nei, høyt, mens tolv menn hørte på. Det skrev heller ingen ned.',
-            },
+            hvisFlagg: [
+                {
+                    flagg: K3_FLAGG.nektet,
+                    tekst: 'Du sa nei, høyt, mens tolv menn hørte på. Det skrev heller ingen ned.',
+                },
+            ],
             veiing: {
                 id: 'tomt-de-som-sa-nei',
                 sporsmal: 'Hva følger av at bare den ene siden skrev?',
@@ -867,6 +886,9 @@ export const MELLOMSPILL: MellomspillDef[] = [
             },
         ],
         tomtFelt: {
+            oppfordring:
+                'To kilder ligger på bordet: en strofe fra ti år etter, og et kapittel fra to hundre år etter.\n\n' +
+                'Det er ett felt igjen. Legg ut noe som er skrevet i året mellom slaget og den dagen han ble kalt hellig.',
             knapp: 'Se etter året imellom',
             feltNavn: 'Året mellom slaget og helgenen',
             feltSvar: 'Ingen skrev det ned',
@@ -875,10 +897,12 @@ export const MELLOMSPILL: MellomspillDef[] = [
                 'Kongen falt 29. juli 1030. Den 3. august 1031 tok biskop Grimkjell kista opp av sanden ved Nidelva og erklærte ham hellig.\n\n' +
                 'I de tolv månedene imellom ble en slagen konge til en helgen. Det finnes ikke én tekst skrevet i det året som forteller hvordan det gikk til. Alt vi har, er skrevet etterpå, av folk som trengte at han var hellig.\n\n' +
                 'Du sto i rekka. Du var der hele dagen. Ingen har spurt deg om noe.',
-            hvisFlagg: {
-                flagg: 'k4-holdt-linja',
-                tekst: 'Rekka di holdt. Det står ikke noe sted heller.',
-            },
+            hvisFlagg: [
+                {
+                    flagg: K4_FLAGG.holdtLinja,
+                    tekst: 'Rekka di holdt. Det står ikke noe sted heller.',
+                },
+            ],
             veiing: {
                 id: 'tomt-aaret-imellom',
                 sporsmal: 'Det eldste vitnesbyrdet om at Olav var hellig, er et dikt fra 1031-1035. Hvem er det skrevet til?',
@@ -912,6 +936,336 @@ export const MELLOMSPILL: MellomspillDef[] = [
             tekst:
                 'Sju linjer fra en mann som ikke var der. Et helt kapittel fra en mann som ble født hundre og femti år etter. Og tolv måneder som ingen har skrevet ned.\n\n' +
                 'Dere vant slaget. Han vant alt som kom etterpå.',
+            knapp: 'Legg fra deg kildene',
+        },
+    },
+
+    // ── Mellomspill V ──────────────────────────────────────────────────────
+    //
+    // Det siste bordet, og det eneste som ikke begynner med å legge ut to
+    // kilder. Fire bord har gjort det alt; her ligger alt sammen framme
+    // samtidig, i tidsrekkefølge, og det eleven ser er avstanden mellom det som
+    // hendte og det noen skrev om det.
+    //
+    // Kortet er det åttende og siste: et skrin av barlind og bronse fra en irsk
+    // kirke, i grava til en kvinne i Namdalen. Ingen forfatter, ingen mottaker,
+    // ingen hensikt - og derfor det ene svaret på spørsmålet det tomme feltet
+    // stiller.
+    //
+    // Og det tomme feltet er henne. Fem liv, fem kapitler, hver eneste
+    // avgjørelse hun tok - og ikke én linje om noe av det, noe sted.
+    {
+        id: 'mellomspill-5',
+        nr: 5,
+        tittel: 'Og du?',
+        apning: {
+            tittel: 'Ute av alt',
+            tekst:
+                'Orm ble liggende ved brua. Ingen hentet ham hjem, og ingen vet hvor han ligger.\n\n' +
+                'Du er ute av 1066 nå, og denne gangen er du ute av alle sammen. Foran deg står bordet en siste gang, og alt du har lagt ut gjennom fem liv, ligger på det.\n\n' +
+                'Legg dem i rekkefølge. Se på dem samtidig.',
+        },
+        tidsrekke: {
+            knapp: 'Legg dem i rekkefølge',
+            tittel: 'Alt sammen, på én linje',
+            tekst:
+                'Hver kilde er tegnet som en strek. Streken begynner i året kilden forteller om, og slutter i året den ble til.\n\n' +
+                'Er streken kort, ble det skrevet ned med én gang. Er den lang, gikk det tid - og i den tiden ble det fortalt videre av folk vi ikke kjenner.',
+            punkter: [
+                {
+                    aar: 793,
+                    omAar: 793,
+                    merke: '793',
+                    navn: 'Alkuins brev',
+                    art: 'brev',
+                    om: 'Skrevet samme år, over tusen kilometer unna, av en mann som ikke var der.',
+                    kildeId: 'alkuin-aethelred',
+                },
+                {
+                    aar: 800,
+                    omAar: 800,
+                    merke: 'ca. 800',
+                    navn: 'Skrinet fra Melhus',
+                    art: 'arkeologi',
+                    om: 'Lagt i jorda i det samme øyeblikket det handler om. Ingen strek i det hele tatt.',
+                    kildeId: 'melhus-skrinet',
+                },
+                {
+                    aar: 890,
+                    omAar: 793,
+                    merke: 'ca. 890',
+                    navn: 'Den angelsaksiske krøniken',
+                    art: 'annal',
+                    om: 'Notatene er gamle. Boka vi har er skrevet omkring hundre år etter.',
+                    kildeId: 'angelsaksiske-kroniken-793',
+                },
+                {
+                    aar: 900,
+                    omAar: 872,
+                    merke: 'ca. 900',
+                    navn: 'Haraldskvadet',
+                    art: 'dikt',
+                    om: 'Diktet mens folk husket. Skrevet ned først på 1200-tallet, inne i to sagabøker.',
+                    kildeId: 'haraldskvadet-hafrsfjord',
+                },
+                {
+                    aar: 1030,
+                    omAar: 1030,
+                    merke: '1000-tallet',
+                    navn: 'Kulisteinen',
+                    art: 'innskrift',
+                    om: 'Hugget av to menn som betalte for det. De skrev tolv ord, og de skrev dem selv.',
+                    kildeId: 'kulisteinen',
+                },
+                {
+                    aar: 1032,
+                    omAar: 1031,
+                    merke: '1031-1035',
+                    navn: 'Glælognskviða',
+                    art: 'dikt',
+                    om: 'Det eldste vi har om at Olav var hellig. Stilet til sønnen av mannen som ville ham bort.',
+                },
+                {
+                    aar: 1040,
+                    omAar: 1030,
+                    merke: 'ca. 1040',
+                    navn: 'Sigvats minnedikt',
+                    art: 'dikt',
+                    om: 'Ti år etter slaget, av kongens egen skald. Sju linjer om himmelen.',
+                    kildeId: 'sigvat-erfidrapa',
+                },
+                {
+                    aar: 1100,
+                    omAar: 1066,
+                    merke: 'etter 1066',
+                    navn: 'Krøniken om året 1066',
+                    art: 'annal',
+                    om: 'Den samme årboken, ført videre. Dette er alt som står om dagen du døde.',
+                },
+                {
+                    aar: 1230,
+                    omAar: 872,
+                    merke: 'ca. 1230',
+                    navn: 'Heimskringla',
+                    art: 'saga',
+                    om: 'Én mann på Island forteller om alt sammen. Se hvor lang den streken er.',
+                    kildeId: 'heimskringla-hafrsfjord',
+                },
+            ],
+            veiing: {
+                id: 'tidsrekka-formen',
+                sporsmal: 'Se på formen. Hva er det denne linja viser?',
+                svar: [
+                    {
+                        tekst: 'At vi vet mer og mer jo lenger tiden går.',
+                        riktig: false,
+                        respons:
+                            'Det blir mer tekst. Det er ikke det samme som at det blir mer vi vet.',
+                    },
+                    {
+                        tekst: 'At nesten alt vi har, er skrevet av andre enn dem det handler om - og som oftest lenge etterpå.',
+                        riktig: true,
+                        respons: 'Ja. Og de to korteste strekene er de to som ikke er bøker.',
+                    },
+                    {
+                        tekst: 'At de eldste kildene er de sikreste.',
+                        riktig: false,
+                        respons:
+                            'Alkuins brev er det eldste på bordet, og han hadde ikke sett noe av det han skriver om.',
+                    },
+                ],
+                fasit:
+                    'To hundre og åtti år ligger på dette bordet, og nesten alt du kan lese er skrevet av kirkemenn, kongers skalder eller en islandsk høvding tre hundre år etterpå.\n\n' +
+                    'De to strekene uten lengde er de to som ikke er skrevet av noen som ville fortelle deg noe: en stein to menn betalte for, og et skrin som ble lagt i jorda. De sier lite. Til gjengjeld sier de det uten å ville noe med deg.\n\n' +
+                    'Det er ikke fordi folk løy. Det er fordi det var disse som kunne skrive, og fordi de skrev om det de brydde seg om.',
+            },
+        },
+        kort: [
+            {
+                kildeId: 'melhus-skrinet',
+                knapp: 'Legg ut skrinet',
+                veiinger: [
+                    {
+                        id: 'melhus-hva-slags-kilde',
+                        sporsmal: 'Alle de andre kortene er tekster. Hva er dette?',
+                        svar: [
+                            {
+                                tekst: 'En kilde uten avsender. Ingen laget den for at noen skulle tro noe.',
+                                riktig: true,
+                                respons: 'Ja. Og det er både styrken og svakheten dens.',
+                            },
+                            {
+                                tekst: 'En kristen kilde, siden det er et kirkeskrin.',
+                                riktig: false,
+                                respons:
+                                    'Det er laget av kristne. Men den som la det i jorda, gjorde noe kirken ikke ville.',
+                            },
+                            {
+                                tekst: 'Ikke en kilde i det hele tatt. Det står ikke noe på det.',
+                                riktig: false,
+                                respons:
+                                    'Da hadde vi ingenting om folk flest. Nesten ingen av dem etterlot seg tekst.',
+                            },
+                        ],
+                        fasit:
+                            'Et brev vil overbevise deg. En saga vil underholde deg og løfte en ætt. Et skrin i en grav vil ingenting - det ligger bare der.\n\n' +
+                            'Derfor kan arkeologien ikke lyve for deg på den måten tekster kan. Til gjengjeld sier den aldri hvorfor. Vi ser at skrinet er her. Vi ser ikke hvordan det kom.',
+                    },
+                    {
+                        id: 'melhus-hva-kan-det-ikke',
+                        sporsmal: 'Hva får du aldri vite av dette skrinet?',
+                        svar: [
+                            {
+                                tekst: 'Hvor det er laget.',
+                                riktig: false,
+                                respons:
+                                    'Det ser vi på arbeidet. Mønsteret og teknikken er irsk, og den slags kan spores.',
+                            },
+                            {
+                                tekst: 'Hva hun het, og hva hun mente om det.',
+                                riktig: true,
+                                respons: 'Nettopp. Det er det jorda aldri gir deg.',
+                            },
+                            {
+                                tekst: 'Omtrent når det ble lagt i jorda.',
+                                riktig: false,
+                                respons:
+                                    'Det kan dateres, blant annet på de andre tingene i grava. Omtrent, men det holder.',
+                            },
+                        ],
+                        fasit:
+                            'Vi vet hva som ligger der, hvor det er laget, og omtrent når det ble lagt ned. Vi vet ikke hva hun het, om hun var med på ferden selv, om skrinet var en gave eller et bytte, eller hva hun tenkte da hun fikk det.\n\n' +
+                            'Arkeologien svarer på hva og når. Den svarer nesten aldri på hvem og hvorfor.',
+                    },
+                    {
+                        id: 'melhus-de-fire-hundre',
+                        sporsmal: 'Det er funnet omkring fire hundre insulære gjenstander i Norge. De fleste er klippet i biter og gjort om til smykker i kvinnegraver. Hva forteller det?',
+                        svar: [
+                            {
+                                tekst: 'At kvinnene på gårdene var med på ferdene selv.',
+                                riktig: false,
+                                respons:
+                                    'Noen dro vestover, og noen ble boende der. Men smykkene beviser ikke det - de beviser hvor tingene endte.',
+                            },
+                            {
+                                tekst: 'At byttet ble delt ut hjemme, og at det ble båret av folk som aldri hadde vært der.',
+                                riktig: true,
+                                respons: 'Ja. Raidet var ikke over da skipet kom hjem.',
+                            },
+                            {
+                                tekst: 'At nordmenn kjøpte smykkene av irske handelsmenn.',
+                                riktig: false,
+                                respons:
+                                    'Noe ble handlet. Men et beslag revet av et relikvieskrin og satt nål på, er ikke en handelsvare - det er et skrin som er ødelagt.',
+                            },
+                        ],
+                        fasit:
+                            'Beslagene ble revet av skrin, bokpermer og altersaker, klippet til, og fikk nål på baksiden. Så ble de båret som den tredje spenna på en kappe, av kvinner på gårder i Rogaland, i Trøndelag og i Namdalen.\n\n' +
+                            'Skrinet fra Melhus er ett av tolv hele skrin som er igjen i hele Europa. At det ikke ble klippet opp, er det uvanlige med det.\n\n' +
+                            'Ingen skrev noe om noe av dette. Vi vet det fordi det ligger i jorda, på fire hundre steder.',
+                    },
+                ],
+            },
+        ],
+        tomtFelt: {
+            oppfordring:
+                'Åtte kilder ligger på bordet nå. To hundre og åtti år, fem kapitler, og alt du har vært gjennom.\n\n' +
+                'Det er ett felt igjen. Legg ut det som er skrevet om deg.',
+            knapp: 'Se etter deg selv',
+            feltNavn: 'Fem liv på Nordvik',
+            feltSvar: 'Ingen kilde',
+            tittel: 'Ingen av dem nevner deg.',
+            tekst:
+                'Ikke ett navn. Ikke én setning. Ikke i brevet, ikke i årboken, ikke hos Snorre.\n\n' +
+                'Du har vært sytten år og bygget et skip. Du har styrt en gård gjennom en vinter alene. Du har stått på en hud med tre skjold, og du har stått i to rekker og falt i den siste av dem. Fem mennesker levde fem hele liv, og dette er alt som står igjen av dem:',
+            hvisFlagg: [
+                {
+                    flagg: K1_FLAGG.tokSkrinet,
+                    tekst: '793: Du tok et skrin fra kirken på Lindisfarne. Det finnes ikke ett ord om det - bare et skrin som en gang lå i en grav.',
+                },
+                {
+                    flagg: K1_FLAGG.brenteSkriptoriet,
+                    tekst: '793: Du brente rommet der de skrev. Det står ingenting om at det brant.',
+                },
+                {
+                    flagg: K2_FLAGG.matetHarald,
+                    tekst: '872: Du ga korn til Harald Hårfagres mann. Ingen årbok noterte det, og ingen kilde gir deg engang året.',
+                },
+                {
+                    flagg: K2_FLAGG.matetMotstanderne,
+                    tekst: '872: Du ga korn til dem som sto imot Harald. Snorre har ikke hørt om det.',
+                },
+                {
+                    flagg: K2_FLAGG.matetSaebo,
+                    tekst: '872: Du ga korn til naboætta på Sæbø, og de kom tilbake for deg. Ingen skrev det ned.',
+                },
+                {
+                    flagg: K2_FLAGG.matetIngen,
+                    tekst: '872: Du sendte begge kongsmennene tomhendt av gårde. Ingen skrev det ned.',
+                },
+                {
+                    flagg: K3_FLAGG.dopt,
+                    tekst: '995: Du lot hele gården døpe. Kristningen står i en saga fra 1230, uten deg i.',
+                },
+                {
+                    flagg: K3_FLAGG.primsignet,
+                    tekst: '995: Du tok korsets tegn uten dåpen, med en fot i hver leir. Det finnes ingen tekst om folk som gjorde det på Nordvik.',
+                },
+                {
+                    flagg: K3_FLAGG.nektet,
+                    tekst: '995: Du sa nei, høyt, mens tolv menn hørte på. Ingen av dem skrev det ned.',
+                },
+                {
+                    flagg: K4_FLAGG.sonnenMed,
+                    tekst: '1030: Du tok med deg sønnen din til Stiklestad. Snorre navngir kongens menn. Ikke deres.',
+                },
+                {
+                    flagg: K4_FLAGG.sonnenHjemme,
+                    tekst: '1030: Du lot sønnen din bli hjemme i høyet. Naboens gutt sto der i stedet, og heller ikke han står noe sted.',
+                },
+                {
+                    flagg: K5_FLAGG.brynjaIgjen,
+                    tekst: '1066: Du lot brynja ligge i kista ved skipene, slik kongen ba om. Det var det fornuftige den morgenen, og det er ingen som har skrevet det.',
+                },
+                {
+                    flagg: K5_FLAGG.saaMerketFalle,
+                    tekst: '1066: Du sto lenge nok til å se Landøyda gå ned. Krøniken forteller at kongen falt. Den forteller ikke om noen som så det.',
+                },
+            ],
+            veiing: {
+                id: 'tomt-og-du',
+                sporsmal:
+                    'Alt du fikk vite om dagen ved brua, står i én innførsel i den angelsaksiske krøniken. Hva er det verdt å vite om nettopp den?',
+                svar: [
+                    {
+                        tekst: 'At den er skrevet av nordmenn som slapp unna.',
+                        riktig: false,
+                        respons: 'Den er engelsk, som i 793. Det er fortsatt den andre siden som fører boka.',
+                    },
+                    {
+                        tekst: 'At håndskriftet bryter av midt i fortellingen, og at en annen hånd har skrevet resten hundre år senere.',
+                        riktig: true,
+                        respons: 'Ja. Også det siste du fikk vite, er skrevet av noen som ikke var der.',
+                    },
+                    {
+                        tekst: 'At den ble skrevet ned samme kveld, av en som sto på brua.',
+                        riktig: false,
+                        respons: 'Ingen sto på brua og skrev. Ingen sto noe sted og skrev, den dagen.',
+                    },
+                ],
+                fasit:
+                    'I det håndskriftet som forteller mest om Stanford bru, stopper teksten midt i - og resten er ført inn på et innskutt blad, med en hånd fra hundre år senere. Der står blant annet den store nordmannen som holdt brua alene til noen stakk et spyd opp gjennom plankene.\n\n' +
+                    'Det er en god historie. Den kan være sann. Men den er skrevet ned av noen som ikke var der, hundre år etterpå, om en dag der ingen på din side skrev noe som helst.\n\n' +
+                    'Det er slik det står til med nesten alt vi vet om deg og folkene dine. Og det er grunnen til at du skal spørre om hvem som skrev det, når, og for hvem - hver eneste gang.',
+            },
+        },
+        begreper: ['arkeologi-som-kilde', 'de-skriftlose'],
+        slutt: {
+            tittel: 'Og du?',
+            tekst:
+                'Åtte kilder, to hundre og åtti år, og ikke ett ord om noen av dere.\n\n' +
+                'Det betyr ikke at dere ikke var her. Det betyr at de som kunne skrive, skrev om noe annet - og at det som er igjen av dere, ligger i jorda og må graves fram.\n\n' +
+                'Legg fra deg kildene. Det er én ting igjen å se.',
             knapp: 'Legg fra deg kildene',
         },
     },

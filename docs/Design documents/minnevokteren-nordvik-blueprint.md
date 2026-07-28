@@ -1069,8 +1069,9 @@ retningsbestemt gard, paradevindu målt fra reisningen, skjoldslitasje og kombo;
 **Etappe 1b er bygget.** R1-R8, se `rpg-hub-og-epoker-blueprint.md` §10.
 
 **Etappe 2 er bygget** (K1a-K1e), og **etappe 3** med den. **Etappe 4 er
-bygget** (K2a-K2g), og **etappe 5** er bygget til og med kapittel 4, med
-kapittel 5 påbegynt - se nederst i denne seksjonen.
+bygget** (K2a-K2g). **Etappe 5 er bygget** (K3a-K3e, K4a-K4c, K5a-K5d): alle
+fem kapitlene, alle fem mellomspillene og epilogen står. Det eneste som
+gjenstår av hele blueprinten er §16.3 - se nederst i denne seksjonen.
 
 | Delet | Hva som står |
 |---|---|
@@ -1360,10 +1361,83 @@ Nye prøver: `verify-rpg-kapittel3`, `verify-rpg-blotet`, `verify-rpg-holmgang`,
   Det er den ene setningen som ikke får stå i dette kapittelet. Feilen fantes i
   første utkast og ble funnet av `scripts/verify-rpg-brua.mjs`.
 
-**Det som gjenstår:** Mellomspill V (§6) og epilogen (§4) - i dag går veien fra
-dødsskjermen rett til hallen. Og §16.3 står fortsatt: `ClassId` skal ut av
-karakterskaperen, men den ligger på flerspiller-tråden (`Gjest.classId`) og i
-`figurLook`.
+**Mellomspill V og epilogen er bygget** (K5c-K5d), og med det er kampanjen hel:
+fem kapitler, fem bord, og en gård i 1100.
+
+| Delet | Hva som står |
+| --- | --- |
+| K5c | Mellomspill V «Og du?»: tidsrekka med alle ni kildene, skrinet fra Melhus som det eneste kortet uten forfatter, og det tomme feltet som er eleven selv |
+| K5d | Nordvik 1100 som eget sted: kirkegården, haugene uten navn, og folkene som ikke kan svare. `epilog`-klippet, `prop-kors` i tileforge, og det kontrafaktiske med kartet som tegnes på nytt |
+
+**Fem avvik og funn (K5c):**
+
+- **Bordet i 1066 er ikke et femte bord av samme slag.** §6 sier «alle kildene
+  på bordet samtidig, i tidsrekkefølge». Fire kort til med tre veiinger hver
+  ville tatt tjue minutter og lært bort det samme fjerde gang. Tidsrekka tegner
+  i stedet hver kilde som en strek fra året den forteller om til året den ble
+  til - Alkuins er et punkt, Snorres er tre og et halvt hundreår lang - og de to
+  uten forfatter har egen farge. Hullene er ikke noe hun får opplyst; de er
+  formen hun ser på.
+- **`dine egne beretninger` fra §11.4 finnes ikke, og skulle ikke lates som
+  om.** Rykte-systemet i §11.4 ble aldri bygget. Det tomme feltet er derfor det
+  hun *faktisk* gjorde: hvert kapittel legger igjen ett flagg, og bordet lister
+  dem opp - skrinet fra Lindisfarne, kornet i 872, neiet i 995, sønnen i rekka,
+  brynja som ble liggende. Ingen av dem står i noen kilde. Det er den samme
+  lærdommen §11.4 var ute etter, hentet fra noe som er sant om spillet.
+- **Det åttende kortet er ikke en tekst, og bordet måtte slutte å behandle det
+  som en.** §6-tabellen gir V et arkeologisk kort. Kortet hadde «Skrevet av» og
+  «Vil oppnå» hardkodet, og satte utdraget i hermetegn - altså ga et stykke
+  barlind en forfatter og en stemme, i det ene mellomspillet som handler om at
+  det ikke finnes noen. `KildeDef.merker` og et unntak for `arkeologi` løste
+  det.
+- **Kilden er Melhusskrinet (T8144), ikke «gravgodset i haugen».** §6 skriver et
+  anonymt gravfunn. Et ekte skrin med funnsted, museumsnummer og litteratur er
+  det motsatte av et anonymt eksempel, og dette gjør nøyaktig det eleven gjorde
+  i 793: irsk relikvieskrin, i en båtgrav på Melhus i Overhalla, lagt på
+  kvinnens side, omkring år 800. Ingen skrev noe om det.
+- **Det siste spørsmålet er håndskriftet, ikke skrinet.** Alt eleven fikk vite
+  om dagen ved brua, står i den angelsaksiske krøniken - og teksten der bryter
+  av midt i fortellingen om Stanford bru. Resten, blant annet mannen som holdt
+  brua alene, er ført inn på et innskutt blad med en hånd fra hundre år senere.
+  Det er den samme årboken hun møtte på det første bordet, og den lukker
+  kampanjen der den begynte.
+
+**Fire avvik og funn (K5d):**
+
+- **Kirkegården ligger ved kirken, ikke der haugene sto.** §4 sier «kirkegård
+  der haugene sto». Men skiltet ved haugene i 1030 sier allerede at de døde
+  legges i vigslet jord ved kirken nå, i rader, med hodet mot vest - og det er
+  det som faktisk skjedde. Haugene ligger derfor der de alltid har ligget, uten
+  steinkrans, mens radene står oppe i lia. Å flytte gravfeltet ned til haugene
+  ville motsagt spillets eget kapittel 4.
+- **`stig` er et nytt klippsteg.** «Kamera stiger over Nordvik» lot seg ikke
+  gjøre med `kamera`, som bare panorerer langs bakken - altså samme grep som
+  `stranda` alt bruker. Steget zoomer mot en *andel* av skjermens egen zoom og
+  ikke et absolutt nivå: en Chromebook står på 2 der en stor skjerm står på 4,
+  og et fast tall ville sett riktig ut på én av dem.
+- **Navnestolpen kan ikke si Orm.** Stedet hører til kapittel 5, og HUD-en tar
+  navnet fra kapittelets rolle. Orm har ligget ved Stanford bru i trettifire år.
+  `Sted.rollenavn: null` gir elevens eget navn i stedet, og det er ikke en
+  nødløsning: de fem rollene er over, og den som ser på gården nå, er hun.
+- **Det kontrafaktiske svarer ikke likt tre ganger.** §4 gir tre spørsmål uten å
+  si hva de er verdt. De er med vilje ulike i styrke: seilet river vekk alt,
+  murene endrer ikke *om* det ble raid men hvem som skrev om dem, og hennes eget
+  korn endrer nesten ingenting. Det siste er det viktigste av de tre - et «hva
+  om» der ingenting rakner, er den eneste måten å vise hva øvelsen er til for.
+  Kortet leser flaggene fra 872 og spør alltid om det motsatte av det hun
+  gjorde.
+
+Ett funn fra prøvingen som ikke sto i planen: **`letterbox`-steget gjorde hvert
+klipp hoppbart første gang.** Det meldte `kanHoppes: true` fast, og siden alle
+klipp begynner med bjelkene, sto «Hopp over» der fra første sekund - stikk i
+strid med §8 regel 2. Feilen har ligget der siden kapittel 1, og ble funnet
+fordi epilogen er det ene klippet der det å hoppe over koster eleven slutten.
+
+Nye prøver: `verify-rpg-mellomspill5` driver hele kjeden gjennom en ekte
+nettleser - fra rekka ved brua, gjennom bordet, inn i epilogen og ut i hallen.
+
+**Det som gjenstår:** §16.3. `ClassId` skal ut av karakterskaperen, men den
+ligger på flerspiller-tråden (`Gjest.classId`) og i `figurLook`.
 
 ### 13.1 Hvorfor etappe 1b kom til
 

@@ -274,13 +274,15 @@ await okt('uten brynje', framTilBrua(false), async (page) => {
     sjekk('flagget står', s1?.flagg?.['k5-falt-for-kongen'] === true);
     sjekk('og hun så ikke merket falle', !s1?.flagg?.['k5-saa-merket-falle']);
     await klikk(page, 'Videre');
-    await page.waitForTimeout(4600);
+    await page.waitForTimeout(1600);
     const s2 = await tilstand(page);
     sjekk('kapittelet er over', s2?.steg?.includes('kapittel:5'));
-    const hvor = await page.evaluate(
-        () => window.__rpg?.scene.getScene('verden')?.sted?.id ?? null
+    // Og bordet kommer med én gang. Kapittel 5 har ingenting mer å si etter
+    // rekka - til forskjell fra 1030, som har året etter imellom.
+    sjekk(
+        'bordet kommer rett etter beskjeden',
+        (await page.locator('[data-prove="mellomspill"]').count()) === 1
     );
-    sjekk('og hun er ute av 1066', hvor === 'hub', String(hvor));
 });
 
 // ── Økt 2: med brynje, og den som sto til merket gikk ned ───────────────────

@@ -244,6 +244,30 @@ export const BEGREPER: BegrepDef[] = [
         forstasVed: 'Avgjør selv hva du bærer den morgenen, med det Orm vet - og se hva det ble til.',
         replikk: 'Det sto ingen hær innen fire dagsreiser. Vi visste det. Vi visste det helt til vi ikke visste det.',
     },
+    {
+        id: 'arkeologi-som-kilde',
+        navn: 'Arkeologi som kilde',
+        forklaring:
+            'Ting i jorda er laget for å brukes, ikke for å overbevise noen. Derfor tar de ikke side slik en tekst gjør. Til gjengjeld sier de aldri hvorfor: en grav forteller hva som ligger der og omtrent når det ble lagt ned, men ikke hva hun het eller hva hun mente om det.',
+        forstasVed: 'Legg et irsk relikvieskrin fra en norsk grav ved siden av de skrevne kildene.',
+        replikk: 'Det står ingenting på det. Det er nettopp derfor det ikke prøver å lure deg.',
+    },
+    {
+        id: 'de-skriftlose',
+        navn: 'De skriftløse',
+        forklaring:
+            'Nesten ingen i vikingtiden kunne skrive mer enn en runeinnskrift, og de som førte bøker, var kirkemenn og kongers skalder. Derfor handler nesten alt vi kan lese om konger, slag og kirke - og nesten ingenting om de hundre tusen som sådde, gjettet på været og døde hjemme.',
+        forstasVed: 'Let etter deg selv i alle kildene fra fem kapitler, og finn ingen.',
+        replikk: 'Ingen av dem nevner oss. Vi var her likevel.',
+    },
+    {
+        id: 'kontrafaktisk',
+        navn: 'Hva om',
+        forklaring:
+            'Å spørre «hva om» er ikke å finne på en annen historie. Det er en måte å prøve hva som faktisk betydde noe: tar du bort én ting og alt annet blir som før, betydde den lite. Rakner alt, betydde den mye. Svaret er aldri et fasitsvar om hva som ville skjedd - det er et svar om hva som hang sammen.',
+        forstasVed: 'Ta bort én ting fra vikingtiden, og se hva som henger sammen med den.',
+        replikk: 'Vi kan ikke vite hva som hadde skjedd. Vi kan se hva som hang sammen med hva.',
+    },
 ];
 
 export const BEGREP_BY_ID: Record<string, BegrepDef> = Object.fromEntries(

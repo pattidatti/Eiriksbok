@@ -55,6 +55,16 @@ export interface KlippKontekst {
     folgSpiller: () => void;
     /** Tåketettheten, for de klippene der været er dramaturgi. */
     taake: (tetthet: number, ms: number) => void;
+    /**
+     * Kameraet stiger eller senker seg.
+     *
+     * `andel` er et forhold til den zoomen skjermen har valgt, ikke et absolutt
+     * tall: 0.6 er «seks tideler så nær», og den regnes ut mot verdien scenen
+     * satte da den startet. Et absolutt nivå ville sett riktig ut på én skjerm
+     * og feil på alle andre, og en Chromebook står på 2 der en stor skjerm står
+     * på 4. `null` setter den tilbake dit skjermen vil ha den.
+     */
+    zoom: (andel: number | null, ms: number) => void;
 }
 
 /**
@@ -64,6 +74,15 @@ export interface KlippKontekst {
 class Avspilling {
     private ktx: KlippKontekst;
     private hopper = false;
+    /**
+     * Om eleven har lov til å hoppe over (blueprint §8, regel 2).
+     *
+     * Feltet finnes fordi `letterbox`-steget melder fra om skjermen på nytt, og
+     * må melde det samme svaret som avspillingen begynte med. Sto det `true`
+     * der, ville hvert eneste klipp bli hoppbart i det bjelkene kom - altså i
+     * første steg, og altså også første gang.
+     */
+    private kanHoppes = false;
     /** Løses av et tastetrykk: neste replikk, eller ut av ventingen. */
     private vekk: (() => void) | null = null;
     private avmeldinger: (() => void)[] = [];
@@ -74,6 +93,7 @@ class Avspilling {
 
     async spill(def: KlippDef, kanHoppes: boolean): Promise<void> {
         const cam = this.ktx.scene.cameras.main;
+        this.kanHoppes = kanHoppes;
         this.ktx.laas(true);
         fraSpill.emit('klipp', { pa: true, kanHoppes });
         this.avmeldinger.push(
@@ -102,6 +122,10 @@ class Avspilling {
             cam.shakeEffect.reset();
             this.ktx.folgSpiller();
             this.ktx.taake(1, 0);
+            // Zoomen hører til her av samme grunn som letterboxen: hopper eleven
+            // over midt i en stigning, skal hun ikke bli stående og styre en
+            // figur på tre piksler.
+            this.ktx.zoom(null, 0);
             fraSpill.emit('klippTekst', null);
             fraSpill.emit('klipp', { pa: false, kanHoppes: false });
             this.ktx.laas(false);
@@ -131,8 +155,14 @@ class Avspilling {
 
         switch (steg.art) {
             case 'letterbox':
-                fraSpill.emit('klipp', { pa: steg.pa, kanHoppes: true });
+                fraSpill.emit('klipp', { pa: steg.pa, kanHoppes: this.kanHoppes });
                 return;
+
+            case 'stig': {
+                this.ktx.zoom(steg.til, steg.ms);
+                await this.vent(steg.ms, false);
+                return;
+            }
 
             case 'kamera': {
                 cam.stopFollow();

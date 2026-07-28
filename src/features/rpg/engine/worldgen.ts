@@ -20,7 +20,8 @@ export interface PropPlacement {
         | 'langskip'
         | 'kai'
         | 'benk'
-        | 'telt';
+        | 'telt'
+        | 'kors';
     /** Piksler, ikke ruter. */
     x: number;
     y: number;
@@ -102,6 +103,17 @@ export interface NordvikValg {
      * ble ikke lagt om av at huset i enden ble byttet ut.
      */
     kirke?: [number, number] | null;
+    /**
+     * Kirkegården: rader med trekors nedenfor kirken.
+     *
+     * Bare epilogen har den, og den er den siste setningen kampanjen sier uten
+     * ord. I 1030 står det på skiltet ved haugene at de døde legges i vigslet
+     * jord ved kirken nå; sytti år senere ligger de der, i rader, med hodet mot
+     * vest - og haugene er to grasrygger ingen kan navnet på.
+     *
+     * Krever at `kirke` står. Et gravfelt uten kirke er ikke en kirkegård.
+     */
+    kirkegard?: boolean;
 }
 
 export function byggNordvik({
@@ -109,6 +121,7 @@ export function byggNordvik({
     hauger = [],
     hov = null,
     kirke = null,
+    kirkegard = false,
 }: NordvikValg = {}): WorldMap {
     const rng = makeRng(1793);
     const terreng: TileKey[][] = [];
@@ -342,6 +355,31 @@ export function byggNordvik({
         // rundt den der hovet sperret.
         if (hov) bygg('langhus', ox, oy, 5, 4, { w: 62, h: 26, dy: 10 });
         else bygg('kirke', ox, oy, 3, 4, { w: 36, h: 18, dy: 8 });
+
+        // Kirkegården. Fire rader sør for kirken, med hodet mot vest - altså
+        // korsene på rekke nedover, slik de faktisk ble lagt.
+        //
+        // Ingen av dem er `solid`. Eleven skal kunne gå mellom gravene, og et
+        // gravfelt som stenger henne ute er et gjerde med kors på. Den lille
+        // forskyvningen kommer fra den seedede generatoren: et helt rett rutenett
+        // ser tegnet ut, og disse ble satt ned én om gangen over sytti år.
+        if (kirkegard) {
+            for (let rad = 0; rad < 4; rad++) {
+                for (let n = 0; n < 5; n++) {
+                    const gx = ox - 2 + n;
+                    const gy = oy + 3 + rad;
+                    if (gx < 1 || gy < 1 || gx >= W - 1 || gy >= H - 1) continue;
+                    if (terreng[gy][gx] === 'vann' || terreng[gy][gx] === 'stein') continue;
+                    props.push({
+                        kind: 'kors',
+                        x: gx * 16 + 8 + Math.round(rng() * 4 - 2),
+                        y: gy * 16 + 10 + Math.round(rng() * 3 - 1),
+                        solid: false,
+                        ...fast,
+                    });
+                }
+            }
+        }
     }
     bygg('bu', 25, 33, 3, 3, { w: 34, h: 16, dy: 8 });
     bygg('bu', 13, 22, 3, 3, { w: 34, h: 16, dy: 8 });

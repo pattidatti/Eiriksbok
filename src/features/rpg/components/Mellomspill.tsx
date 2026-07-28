@@ -23,10 +23,12 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ART_NAVN, KILDE_BY_ID, NAERHET_FORKLARING, NAERHET_NAVN } from '../data/kilder';
 import { useRpgStore } from '../store/useRpgStore';
-import type { MellomspillDef, Veiing } from '../types';
+import type { MellomspillDef, Tidsrekke, Veiing } from '../types';
 
 type Steg =
     | { art: 'apning' }
+    /** Alle kildene på én linje. Bare Mellomspill V har dette steget. */
+    | { art: 'tidsrekke' }
     /** Kilde nummer `i` ligger på bordet, og veies. */
     | { art: 'kort'; i: number }
     /** Feltet som blir stående tomt. */
@@ -87,7 +89,17 @@ export function Mellomspill({ def, onFerdig }: Props) {
                     </p>
                 </header>
 
-                <Bordet def={def} lagtUt={lagtUt} tomtVist={tomtVist} />
+                {/*
+                    Feltene står ikke framme mens tidsrekka gjør det. På bordet i
+                    1066 ligger alt allerede ute - på linja - og to tomme felter
+                    over den ville sagt at det manglet noe der akkurat i det
+                    øyeblikket hun ser at ingenting mangler. De kommer når det
+                    siste kortet legges ut.
+                */}
+                {(!def.tidsrekke ||
+                    (steg.art !== 'apning' && steg.art !== 'tidsrekke')) && (
+                    <Bordet def={def} lagtUt={lagtUt} tomtVist={tomtVist} />
+                )}
 
                 {steg.art === 'apning' && (
                     <Ark>
@@ -96,9 +108,30 @@ export function Mellomspill({ def, onFerdig }: Props) {
                         </h3>
                         <Avsnitt tekst={def.apning.tekst} />
                         <Hovedknapp
-                            tekst={def.kort[0]?.knapp ?? 'Begynn'}
-                            onClick={() => leggUt(0)}
+                            tekst={
+                                def.tidsrekke?.knapp ?? def.kort[0]?.knapp ?? 'Begynn'
+                            }
+                            onClick={() =>
+                                def.tidsrekke ? setSteg({ art: 'tidsrekke' }) : leggUt(0)
+                            }
                         />
+                    </Ark>
+                )}
+
+                {steg.art === 'tidsrekke' && def.tidsrekke && (
+                    <Ark>
+                        <h3 className="font-display text-xl font-bold text-amber-100">
+                            {def.tidsrekke.tittel}
+                        </h3>
+                        <Avsnitt tekst={def.tidsrekke.tekst} />
+                        <Linja rekke={def.tidsrekke} />
+                        <div className="mt-6">
+                            <Veiingene
+                                veiinger={[def.tidsrekke.veiing]}
+                                sisteKnapp={def.kort[0]?.knapp ?? 'Videre'}
+                                onFerdig={() => leggUt(0)}
+                            />
+                        </div>
                     </Ark>
                 )}
 
@@ -129,14 +162,13 @@ export function Mellomspill({ def, onFerdig }: Props) {
                     <Ark>
                         {!tomtVist ? (
                             <>
-                                <p className="text-[15px] leading-relaxed text-amber-100/80">
-                                    To kilder ligger på bordet. Begge er skrevet av dem du gikk løs
-                                    på.
-                                </p>
-                                <p className="mt-2 text-[15px] leading-relaxed text-amber-100/80">
-                                    Det er ett felt igjen. Legg ut det som er skrevet på ditt eget
-                                    språk, av dine egne, om det du gjorde i sommer.
-                                </p>
+                                {/*
+                                    Oppfordringen er data. Sto den fast her, ville
+                                    bordet i 872 påstått at Snorre var skrevet av
+                                    noen eleven hadde angrepet - og bordet i 1066
+                                    at det lå to kort framme når det ligger ni.
+                                */}
+                                <Avsnitt tekst={def.tomtFelt.oppfordring} />
                                 <Hovedknapp
                                     tekst={def.tomtFelt.knapp}
                                     onClick={() => setTomtVist(true)}
@@ -158,12 +190,22 @@ export function Mellomspill({ def, onFerdig }: Props) {
                                     transition={{ duration: 0.9, delay: 1.4 }}
                                 >
                                     <Avsnitt tekst={def.tomtFelt.tekst} />
-                                    {def.tomtFelt.hvisFlagg &&
-                                        flagg[def.tomtFelt.hvisFlagg.flagg] && (
-                                            <p className="mt-4 border-l-2 border-rose-400/50 pl-3 text-[15px] leading-relaxed text-rose-200/90">
-                                                {def.tomtFelt.hvisFlagg.tekst}
+                                    {/*
+                                        Linjene eleven selv har satt. I 793 og 1030
+                                        er det én; i 1066 er det hele livet hennes,
+                                        kapittel for kapittel, og lengden på lista
+                                        er halve poenget mot feltet som står tomt.
+                                    */}
+                                    {def.tomtFelt.hvisFlagg
+                                        ?.filter((l) => flagg[l.flagg])
+                                        .map((l) => (
+                                            <p
+                                                key={l.flagg}
+                                                className="mt-4 border-l-2 border-rose-400/50 pl-3 text-[15px] leading-relaxed text-rose-200/90"
+                                            >
+                                                {l.tekst}
                                             </p>
-                                        )}
+                                        ))}
                                     {/*
                                         Luft. Linja over er kapittelets tyngste
                                         setning, og et spørsmål som klistrer seg
@@ -224,8 +266,17 @@ function Bordet({
     lagtUt: number;
     tomtVist: boolean;
 }) {
+    // Antall felter følger bordet, ikke et fast tall. Bordene i 793-1030 har to
+    // kort og et tomt felt; bordet i 1066 har lagt ut åtte kilder på linja alt,
+    // og har ett kort igjen. Tre spalter der ville etterlatt et hull som leser
+    // som at noe manglet - og det er nettopp den betydningen det tomme feltet
+    // eier.
+    const spalter = def.kort.length + (def.tomtFelt ? 1 : 0);
     return (
-        <div className="grid grid-cols-3 gap-2 rounded-xl border border-amber-900/40 bg-[#2b2018] p-2 shadow-inner sm:gap-3 sm:p-3">
+        <div
+            className="grid gap-2 rounded-xl border border-amber-900/40 bg-[#2b2018] p-2 shadow-inner sm:gap-3 sm:p-3"
+            style={{ gridTemplateColumns: `repeat(${spalter}, minmax(0, 1fr))` }}
+        >
             {def.kort.map((k, i) => {
                 const kilde = KILDE_BY_ID[k.kildeId];
                 const pa = i < lagtUt;
@@ -305,11 +356,20 @@ function Kildekort({ kildeId }: { kildeId: string }) {
                 </p>
             </div>
 
+            {/*
+                Merkene følger kilden. Sju av åtte er tekster, og for dem står
+                «Skrevet av». Det åttende er et skrin, og et skrin er ikke
+                skrevet av noen - sto merket fast, ville kortet påstått at en
+                gjenstand har en forfatter.
+            */}
             <dl className="mt-3 grid gap-y-1.5 text-[13px]">
-                <Rad merke="Skrevet av" verdi={kilde.opphav.hvem} />
-                <Rad merke="Skrevet i" verdi={kilde.opphav.hvor} />
-                <Rad merke="Skrevet til" verdi={kilde.opphav.for} />
-                <Rad merke="Vil oppnå" verdi={kilde.opphav.hensikt} />
+                <Rad merke={kilde.merker?.hvem ?? 'Skrevet av'} verdi={kilde.opphav.hvem} />
+                <Rad merke={kilde.merker?.hvor ?? 'Skrevet i'} verdi={kilde.opphav.hvor} />
+                <Rad merke={kilde.merker?.for ?? 'Skrevet til'} verdi={kilde.opphav.for} />
+                <Rad
+                    merke={kilde.merker?.hensikt ?? 'Vil oppnå'}
+                    verdi={kilde.opphav.hensikt}
+                />
             </dl>
 
             <p className="mt-3 inline-block rounded border border-[#7a6549]/30 px-2 py-0.5 text-[11px] font-semibold text-[#6b5a45]">
@@ -325,12 +385,19 @@ function Kildekort({ kildeId }: { kildeId: string }) {
                     om. Kildene i prosa deler avsnitt med blank linje og merker
                     ikke forskjellen.
                 */}
+                {/*
+                    En gjenstand siteres ikke. Hermetegnene står om det kilden
+                    *sier*, og skrinet fra Melhus sier ingenting - kortet
+                    beskriver det. Sto anførselen der, ville bordet gitt et stykke
+                    barlind en stemme det ikke har, i det ene mellomspillet som
+                    handler om at det ikke finnes noen.
+                */}
                 {kilde.utdrag.split('\n\n').map((a, i) => (
                     <p
                         key={i}
                         className={`whitespace-pre-line text-[15px] italic leading-relaxed ${i ? 'mt-2' : ''}`}
                     >
-                        «{a}»
+                        {kilde.art === 'arkeologi' ? a : `«${a}»`}
                     </p>
                 ))}
             </div>
@@ -420,6 +487,94 @@ function Veiingene({
                     </motion.div>
                 </AnimatePresence>
             )}
+        </div>
+    );
+}
+
+// ─── Tidsrekka ──────────────────────────────────────────────────────────────
+
+/**
+ * Alle kildene i kampanjen, tegnet på én linje (blueprint §6).
+ *
+ * Hver kilde er en strek fra året den forteller om til året den ble til.
+ * Alkuins strek er et punkt; Snorres er tre og et halvt hundreår lang, og den
+ * ligger nederst slik at eleven ser den strekke seg under alle de andre.
+ *
+ * **De to uten lengde har egen farge.** Kulisteinen og skrinet fra Melhus er de
+ * eneste to på bordet som ikke er en bok noen skrev om noe som hadde hendt - og
+ * det er nettopp den forskjellen veiingen spør om. Fargen sier det før
+ * spørsmålet gjør, og det er meningen: hun skal kunne se svaret sitt i formen.
+ */
+function Linja({ rekke }: { rekke: Tidsrekke }) {
+    const fra = Math.min(...rekke.punkter.map((p) => p.omAar)) - 15;
+    const til = Math.max(...rekke.punkter.map((p) => p.aar)) + 15;
+    const spenn = til - fra;
+    const andel = (aar: number) => ((aar - fra) / spenn) * 100;
+
+    /** Hundreårene som står som hjelpelinjer bak strekene. */
+    const merkeaar = [800, 900, 1000, 1100, 1200];
+
+    return (
+        <div className="mt-5 rounded-xl border border-amber-900/40 bg-[#2b2018] p-3 sm:p-4">
+            <div className="relative mb-2 h-4 text-[10px] text-amber-100/40">
+                {merkeaar.map((a) => (
+                    <span
+                        key={a}
+                        className="absolute -translate-x-1/2"
+                        style={{ left: `${andel(a)}%` }}
+                    >
+                        {a}
+                    </span>
+                ))}
+            </div>
+
+            <ol className="grid gap-2.5">
+                {rekke.punkter.map((p, i) => {
+                    const utenLengde = p.art === 'arkeologi' || p.art === 'innskrift';
+                    const start = andel(p.omAar);
+                    // Et punkt uten lengde ville blitt usynlig. Minstebredden er
+                    // ikke pynt - den er forskjellen på «ingen strek» og «ingen
+                    // kilde», og de to betyr stikk motsatte ting her.
+                    const bredde = Math.max(andel(p.aar) - start, 1.1);
+                    return (
+                        <li key={p.navn}>
+                            <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                                <p className="font-display text-[13px] font-bold text-amber-50">
+                                    {p.navn}
+                                </p>
+                                <p className="text-[11px] uppercase tracking-widest text-amber-100/45">
+                                    {ART_NAVN[p.art]} · {p.merke}
+                                </p>
+                            </div>
+                            <div className="relative mt-1 h-2 rounded-full bg-black/30">
+                                {merkeaar.map((a) => (
+                                    <span
+                                        key={a}
+                                        className="absolute inset-y-0 w-px bg-amber-100/10"
+                                        style={{ left: `${andel(a)}%` }}
+                                    />
+                                ))}
+                                <motion.span
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ duration: 0.7, delay: 0.15 + i * 0.12 }}
+                                    style={{
+                                        left: `${start}%`,
+                                        width: `${bredde}%`,
+                                        transformOrigin: 'left',
+                                    }}
+                                    className={`absolute inset-y-0 rounded-full ${
+                                        utenLengde ? 'bg-emerald-300/80' : 'bg-amber-300/70'
+                                    }`}
+                                />
+                            </div>
+                            <p className="mt-1 text-[12px] leading-snug text-amber-100/60">
+                                {p.om}
+                            </p>
+                        </li>
+                    );
+                })}
+            </ol>
         </div>
     );
 }

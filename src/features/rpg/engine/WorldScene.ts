@@ -35,6 +35,7 @@ import {
 } from '../data/kapitler';
 import { MELLOMSPILL_BY_ID } from '../data/mellomspill';
 import { SJOSETTINGEN, STRANDA } from '../data/klipp/kapittel1';
+import { EPILOG } from '../data/klipp/epilog';
 import { Raidet } from './raidet';
 import { Gaarden } from './gaarden';
 import { Angrepet, ANGREP_FLAGG } from './angrepet';
@@ -447,6 +448,32 @@ export class WorldScene extends Phaser.Scene {
             useRpgStore.getState().fullforSteg(K5.veien);
             return;
         }
+        // Epilogen. Kameraet stiger over gården hun har vært på i fem liv, og
+        // det skjer én gang - kommer hun tilbake hit fra hallen, skal hun få gå
+        // rett inn i den, ikke se den forfra igjen.
+        if (this.sted.id === 'nordvik-1100') {
+            const store = useRpgStore.getState();
+            // Kartet er lagt bort. Da er hun ferdig, og gården er bare en gård
+            // hun kan gå på.
+            if (store.steg.includes('puzzle:epilog')) return;
+            // Ellers står det ett kort: hun skal ned til haugene. Uten det er
+            // epilogen et vakkert sted uten en vei ut, og det siste spørsmålet
+            // kampanjen stiller, er noe hun må snuble over.
+            const kort = {
+                tittel: 'Haugene',
+                mal: 'Gå ned til haugene ved naustet, og bli stående der.',
+            };
+            // `sette` er den samme lista avspilleren selv fører, og merket
+            // settes av den. Å føre et eget merke her ville gitt to sannheter om
+            // hvorvidt klippet er sett - og den ene ville avgjort om det spilles,
+            // den andre om det kan hoppes over.
+            if (store.sette.includes(EPILOG.id)) {
+                fraSpill.emit('oppgave', kort);
+                return;
+            }
+            void this.spillKlipp(EPILOG).then(() => fraSpill.emit('oppgave', kort));
+            return;
+        }
         if (this.sted.id !== 'lindisfarne') return;
         const store = useRpgStore.getState();
         if (store.steg.includes(K1.motstanden)) {
@@ -511,15 +538,13 @@ export class WorldScene extends Phaser.Scene {
         cam.startFollow(this.helt.sprite, true, 0.12, 0.12);
         cam.setDeadzone(40, 30);
         // Zoom tilpasses skjermen, men holdes på hele tall så pikslene forblir skarpe.
-        const onsket = Math.max(2, Math.min(4, Math.round(this.scale.width / 420)));
-        cam.setZoom(onsket);
+        cam.setZoom(this.skjermZoom());
         cam.setRoundPixels(true);
 
         // Skalamanageren overlever scenen. Uten avmeldingen ville hver reise
         // legge igjen en lytter til, og etter fem stedskifter ville fem
         // lyttere justert zoomen på hver eneste vindusendring.
-        const juster = () =>
-            cam.setZoom(Math.max(2, Math.min(4, Math.round(this.scale.width / 420))));
+        const juster = () => cam.setZoom(this.skjermZoom());
         this.scale.on('resize', juster);
         this.avmeldinger.push(() => this.scale.off('resize', juster));
 
@@ -632,11 +657,13 @@ export class WorldScene extends Phaser.Scene {
                 // etter slaget. Sier den ja, står den nå framme, og bordet
                 // venter til også den er lest.
                 if (this.aaretEtterStiklestad()) return;
-                // Og kapittel 5 har sin egen: rekka ved brua ender ikke i en
-                // seier, den ender i at Orm blir liggende.
-                if (this.dodenVedBrua()) return;
+                // Kapittel 5 gjør seg opp her: rekka ved brua ender ikke i en
+                // seier, den ender i at Orm blir liggende. Den tar ingen skjerm,
+                // så bordet kommer rett etterpå.
+                this.dodenVedBrua();
                 this.bordetEtterKapittelet();
             }),
+            tilSpill.on('kontrafaktiskFerdig', () => this.kartetLagtBort()),
             tilSpill.on('tingsakSvar', (svar) => this.forSaken(svar))
         );
     }
@@ -1206,6 +1233,7 @@ export class WorldScene extends Phaser.Scene {
         if (handlingId === 'still-deg-i-rekka') this.skjoldborg?.still();
         if (handlingId === 'still-deg-i-brua-rekka') this.brua?.still();
         if (handlingId === 'se-paa-stovet') this.stovetPaaVeien();
+        if (handlingId === 'hva-om') this.hvaOm();
         if (handlingId === 'til-brua') {
             // Som reisen opp Verdalen i 1030: den bestilles med én gang. Fem
             // timers gange er ikke innhold, det er avstanden mellom kista og
@@ -1591,20 +1619,59 @@ export class WorldScene extends Phaser.Scene {
      * ett liv igjen og møte glemselen der. Kapittelet er over; kroppen hun går
      * med videre, er ikke hans.
      *
-     * Epilogen (blueprint §4) og Mellomspill V hører hjemme nøyaktig her, og
-     * ingen av dem er bygget ennå. Til de står, går veien til hallen.
+     * Den tar ikke skjermen, og derfor kommer bordet med én gang etterpå. Det
+     * er forskjellen på denne og året etter Stiklestad: 1030 har ett
+     * skjermbilde til før kildene, 1066 har ingenting mer å si. Rekka ga seg,
+     * beskjeden er lest, og det neste er Mellomspill V.
      */
-    private dodenVedBrua(): boolean {
-        if (this.sted.id !== 'stanford-bru') return false;
+    private dodenVedBrua(): void {
+        if (this.sted.id !== 'stanford-bru') return;
         const store = useRpgStore.getState();
-        if (!store.steg.includes(K5.rekka)) return false;
-        if (store.steg.includes('kapittel:5')) return false;
+        if (!store.steg.includes(K5.rekka)) return;
+        if (store.steg.includes('kapittel:5')) return;
         store.fullforKapittel(5, 'Kapittel 5: Den som ikke kommer hjem');
         store.varsle('Kapittel 5 er over. 1066 er bak deg.', 'niva');
         store.settHp(maksVerdier(store).hp);
         fraSpill.emit('oppgave', null);
+    }
+
+    /**
+     * Det kontrafaktiske, og slutten på kampanjen (blueprint §4).
+     *
+     * Låsen settes her og tas av når kartet legges bort, som for bordet: verden
+     * skal stå stille bak det siste spørsmålet.
+     */
+    private hvaOm(): void {
+        this.settLaast(true);
+        fraSpill.emit('kontrafaktisk', { pa: true });
+    }
+
+    /**
+     * Kartet er lagt bort, og det er ikke mer.
+     *
+     * Begrepet gis her og ikke i komponenten, av samme grunn som for bordene:
+     * React tegner kartet, den avgjør ikke hva det er verdt. Og det gis som
+     * `forstatt`, for hun har nettopp tatt bort tre ting og sett hva som fulgte
+     * med hver av dem - det er hele det begrepet er.
+     *
+     * Veien går til hallen. Nordvik i 1100 blir stående, og hun kan gå tilbake
+     * hit gjennom porten; det er det eneste stedet i epoken som ikke har noe
+     * hun må gjøre, og det tåler å bli besøkt.
+     */
+    private kartetLagtBort(): void {
+        const store = useRpgStore.getState();
+        this.settLaast(false);
+        // `puzzle:epilog` er merket `fullforPuzzle` selv fører, og den gir XP
+        // bare første gang. Vakten står her også, for varselet og begrepet skal
+        // følge den samme regelen: hun kan gå tilbake til haugene og stille
+        // spørsmålet om igjen uten at det blir en maskin.
+        if (!store.steg.includes('puzzle:epilog')) {
+            store.larBegrep('kontrafaktisk', 'forstatt');
+            store.varsle('Kampanjen er over. Vikingtiden er bak deg.', 'niva');
+        }
+        store.fullforPuzzle('epilog', 'Epilogen: Nordvik i 1100');
+        fraSpill.emit('oppgave', null);
         this.bestillReise('hub');
-        return true;
     }
 
     // ── Mellomspillet ───────────────────────────────────────────────────────
@@ -1663,6 +1730,13 @@ export class WorldScene extends Phaser.Scene {
         const store = useRpgStore.getState();
         store.fullforMellomspill(def.id, `Mellomspill ${def.nr}: ${def.tittel}`);
         for (const begrepId of def.begreper) store.larBegrep(begrepId, 'forstatt');
+        // Etter det siste bordet finnes det ikke et kapittel til. Det finnes en
+        // gård i 1100, og den er hele grunnen til at kampanjen har hatt den
+        // samme gården i fem kapitler.
+        if (def.nr === 5) {
+            this.bestillReise('nordvik-1100');
+            return;
+        }
         this.gaaVidereTilNesteKapittel(def.nr);
     }
 
@@ -1737,7 +1811,25 @@ export class WorldScene extends Phaser.Scene {
                 cam.startFollow(this.helt.sprite, true, 0.12, 0.12);
             },
             taake: (tetthet, ms) => this.verden.settTaake(tetthet, ms),
+            zoom: (andel, ms) => {
+                const cam = this.cameras.main;
+                const hjem = this.skjermZoom();
+                const maal = andel === null ? hjem : hjem * andel;
+                if (ms <= 0) cam.setZoom(maal);
+                else cam.zoomTo(maal, ms, 'Sine.easeInOut');
+            },
         };
+    }
+
+    /**
+     * Zoomen skjermen vil ha.
+     *
+     * Ett sted, fordi tre kaller på den: kameraoppsettet, vindusendringen og
+     * klippet som lar kameraet stige. Ble tallet skrevet tre steder, ville en
+     * cutscene som satte det tilbake låst en Chromebook på storskjermens nivå.
+     */
+    private skjermZoom(): number {
+        return Math.max(2, Math.min(4, Math.round(this.scale.width / 420)));
     }
 
     // ── Småting som gjør det digg ───────────────────────────────────────────

@@ -451,17 +451,15 @@ nytt like ofte. Pust- og livsstolpene har `aria-valuenow`, som er det
 Blueprinten for hele kampanjen: `docs/Design documents/minnevokteren-nordvik-blueprint.md`.
 Refaktoreringen mot hub, epoker og flerspiller (R1-R8):
 `docs/Design documents/rpg-hub-og-epoker-blueprint.md`. R1-R8 er bygget, og
-refaktoreringen er dermed ferdig. Kapittel 1-5 er bygget, med mellomspill I-IV;
-det som gjenstår er Mellomspill V og epilogen, etter Nordvik-blueprintens
-etappe 5.
+refaktoreringen er dermed ferdig. Kampanjen er hel: kapittel 1-5, mellomspill
+I-V og epilogen på Nordvik i 1100. Det eneste som gjenstår av
+Nordvik-blueprinten, er §16.3 - `ClassId` ut av karakterskaperen.
 
 ## Kapittel 1: 793
 
 Vikingtiden spilles som en kampanje over fem kapitler på samme gård
 (`docs/Design documents/minnevokteren-nordvik-blueprint.md`). Alle fem er
-bygget. Det som gjenstår, er Mellomspill V og epilogen - og der gjelder samme
-regel som ellers: et steg ingen har bygget er et løfte vi ikke kan holde, og
-det står derfor ikke i `K5`.
+bygget, med hvert sitt bord etterpå, og etter det femte kommer epilogen.
 
 Framdriften er en **liste med steg-id-er** i kampanjetilstanden, ikke et tall.
 Et tall kan bare gå én vei og sier ingenting om hva eleven gjorde; en liste
@@ -688,8 +686,35 @@ eleven står et sted hun ikke valgte å reise til.
 | `k5-stovet` | Støvet på veien, og dagen som snur | `WorldScene.stovetPaaVeien` |
 | `k5-rekka` | Rekka uten brynje. Du dør. | `engine/bruslaget.ts` |
 
-Epilogen og Mellomspill V er ikke bygget ennå. Etter dødsskjermen gjøres
-kapittelet opp, og veien går til hallen.
+Etter dødsskjermen gjøres kapittelet opp, og bordet kommer med én gang. Til
+forskjell fra 1030 har 1066 ingenting mer å si mellom rekka og kildene.
+
+## Mellomspill V og epilogen
+
+Det siste bordet heter «Og du?», og det er ikke bygget som de fire andre. Fire
+bord har lagt ut to kilder hver; her ligger alle sammen framme samtidig, i
+tidsrekkefølge, tegnet som streker fra året de forteller om til året de ble til.
+Det eneste kortet er skrinet fra Melhus - kampanjens ene kilde uten forfatter -
+og det tomme feltet er eleven selv, med det hun faktisk gjorde i hvert kapittel
+listet opp under.
+
+| Fil | Hva |
+| --- | --- |
+| `data/mellomspill.ts` | `mellomspill-5`: tidsrekka, skrinet, og det tomme feltet som leser flaggene fra alle fem kapitlene |
+| `data/nordvik1100.ts` | Gården trettifire år etter: kirkegården, haugene uten navn, Ketil og Ragna |
+| `data/klipp/epilog.ts` | Kameraet stiger over gården. `stig` er steget som gjør det |
+| `components/Kontrafaktisk.tsx` | De tre «hva om»-spørsmålene, og kartet som tegnes på nytt |
+
+Veien er: rekka gir seg → beskjeden leses → bordet → `nordvik-1100` → klippet →
+oppgavekortet peker på haugene → det kontrafaktiske → hallen. `WorldScene`
+eier hvert ledd (`dodenVedBrua`, `bordetEtterKapittelet`, `avsluttMellomspill`,
+`hvaOm`, `kartetLagtBort`).
+
+To ting som er verdt å vite om stedet: det står `kapittel: 5` og ligger
+**sist** i `STEDER`, så `stedIEpoke` fortsatt sender en elev midt i 1066 til
+leiren og ikke til en gård hun ikke har fått se. Og det har `rollenavn: null`,
+fordi HUD-en ellers ville skrevet «Orm Åsmundsson» over en mann som har vært
+død i trettifire år.
 
 **Kapittelets tese ligger i at alt eleven møter er fornuftig.** Freden er
 sluttet med York, gislene kommer i dag, Fulford var for fem dager siden, det er
@@ -933,6 +958,8 @@ RPG_BASE=http://localhost:5175 node scripts/verify-rpg-kamp.mjs
 | `verify-rpg-skjoldborg.mjs`  | Rekka: plassen, hullet, `iRekke` og begge utgangene        |
 | `verify-rpg-mellomspill4.mjs` | Året etter slaget, og de tolv månedene ingen skrev ned    |
 | `verify-rpg-kapittel5.mjs`   | Leiren ved Riccall: flåten, kista og valget om brynja      |
+| `verify-rpg-brua.mjs`        | Stanford bru: dagen som snur, rekka, og at hun dør uansett |
+| `verify-rpg-mellomspill5.mjs` | Hele slutten: tidsrekka, skrinet, det tomme feltet som er henne, epilogen og kartet |
 
 Tre ting de har lært på den harde måten: et tastetrykk må **holdes** i over 100
 ms (Phasers `Key.onUp` nullstiller `_justDown`, så `page.keyboard.press()` blir

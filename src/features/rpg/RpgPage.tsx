@@ -13,6 +13,7 @@ import { DialogOverlay, LandmarkOverlay } from './components/DialogOverlay';
 import { Hud } from './components/Hud';
 import { HubHud } from './components/HubHud';
 import { Klippscene } from './components/Klippscene';
+import { Kontrafaktisk } from './components/Kontrafaktisk';
 import { Mellomspill } from './components/Mellomspill';
 import { Minnetre } from './components/Minnetre';
 import { Opptakt } from './components/Opptakt';
@@ -58,6 +59,8 @@ type Overlegg =
     | { type: 'puzzle'; id: 'skroget' | 'navigasjonen' | 'blotet' | 'vinternettene' }
     /** Bordet med kildene, mellom to kapitler. */
     | { type: 'mellomspill'; id: string }
+    /** Epilogens siste spørsmål: kartet som tegnes på nytt. */
+    | { type: 'kontrafaktisk' }
     /** Åpningsskjermen til et nytt kapittel. */
     | { type: 'opptakt'; nr: number }
     /** Bua: forrådet og årets valg. */
@@ -171,6 +174,7 @@ export default function RpgPage() {
         klipp.pa ||
         overlegg.type === 'opptakt' ||
         overlegg.type === 'mellomspill' ||
+        overlegg.type === 'kontrafaktisk' ||
         overlegg.type === 'puzzle' ||
         overlegg.type === 'forrad' ||
         overlegg.type === 'tingsak' ||
@@ -274,6 +278,9 @@ export default function RpgPage() {
             // begge være i bruk - det er slik de kommer i utakt.
             fraSpill.on('puzzle', ({ id }) => setOverlegg({ type: 'puzzle', id })),
             fraSpill.on('mellomspill', ({ id }) => setOverlegg({ type: 'mellomspill', id })),
+            fraSpill.on('kontrafaktisk', ({ pa }) =>
+                setOverlegg(pa ? { type: 'kontrafaktisk' } : { type: 'ingen' })
+            ),
             fraSpill.on('opptakt', ({ nr }) => setOverlegg({ type: 'opptakt', nr })),
             fraSpill.on('forrad', ({ apne, kanGaaVidere }) =>
                 setOverlegg({ type: 'forrad', apne, kanGaaVidere })
@@ -351,6 +358,14 @@ export default function RpgPage() {
                         id: overlegg.id,
                         gjennomgatt: false,
                     });
+                    return;
+                }
+                // Samme regel, og samme lås. Kartet er kampanjens siste
+                // skjermbilde, og et Esc-trykk som bare fjernet det ville
+                // etterlatt eleven låst fast på en haug i 1100.
+                if (overlegg.type === 'kontrafaktisk') {
+                    setOverlegg({ type: 'ingen' });
+                    tilSpill.emit('kontrafaktiskFerdig', {});
                     return;
                 }
                 if (apent) lukk();
@@ -435,9 +450,11 @@ export default function RpgPage() {
                         oppgave={oppgave}
                         motstander={motstander}
                         rollenavn={
-                            sted.kapittel
-                                ? (KAPITTEL_BY_NR[sted.kapittel]?.rolle.navn ?? null)
-                                : null
+                            sted.rollenavn !== undefined
+                                ? sted.rollenavn
+                                : sted.kapittel
+                                  ? (KAPITTEL_BY_NR[sted.kapittel]?.rolle.navn ?? null)
+                                  : null
                         }
                         onApneSekk={() => apnePanel({ type: 'sekk' })}
                         onApneLogg={() => apnePanel({ type: 'logg' })}
@@ -614,6 +631,15 @@ export default function RpgPage() {
                     onFerdig={(gjennomgatt) => {
                         setOverlegg({ type: 'ingen' });
                         tilSpill.emit('mellomspillFerdig', { id: overlegg.id, gjennomgatt });
+                    }}
+                />
+            )}
+
+            {overlegg.type === 'kontrafaktisk' && (
+                <Kontrafaktisk
+                    onFerdig={() => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('kontrafaktiskFerdig', {});
                     }}
                 />
             )}

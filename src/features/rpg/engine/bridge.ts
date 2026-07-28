@@ -90,6 +90,14 @@ export interface SceneEvents {
      */
     mellomspill: { id: string };
     /**
+     * Det kontrafaktiske i epilogen: kartet som tegnes på nytt.
+     *
+     * Eget navn og ikke et `puzzle`, av samme grunn som mellomspillet: hun er
+     * ikke inne i et år og løser noe, hun står utenfor alle sammen og prøver
+     * hva som hang sammen med hva. Og den har ingen fasit å svare på.
+     */
+    kontrafaktisk: { pa: boolean };
+    /**
      * Det eleven holder på med akkurat nå, som et lite kort i HUD-en.
      *
      * Skilt fra oppdragsloggen med vilje: loggen er alt hun kunne gjort, dette
@@ -165,6 +173,8 @@ export interface UiEvents {
      * henne, og mellomspillet er ikke fullført.
      */
     mellomspillFerdig: { id: string; gjennomgatt: boolean };
+    /** Eleven la fra seg kartet. Kampanjen er over, og hun går til hallen. */
+    kontrafaktiskFerdig: Record<string, never>;
     /**
      * Eleven valgte en kapittelhandling i en samtale - «Vis meg», «Jeg legger
      * bordene». Scenen eier hva som faktisk skjer.

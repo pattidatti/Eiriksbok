@@ -565,6 +565,22 @@ export function forgeProps(scene: Phaser.Scene, tema: Tema): void {
     benk.behind(() => benk.ellipse(15, 11, 14, 2, 'rgba(0,0,0,0.24)'));
     addCanvas(scene, 'prop-benk', benk);
 
+    // ── Trekors på en grav ──────────────────────────────────────────────────
+    //
+    // Epilogen er hele grunnen til at det finnes. I 1030 sier steinen ved
+    // naustet at haugene ikke brukes lenger; i 1100 står radene her, og de er
+    // det synligste kristendommen gjorde med en gård. Korsene skal stå litt
+    // ulikt - en kirkegård der alt står i blytt, leser som et gjerde.
+    const kors = createPainter(14, 22, 1, 1);
+    kors.rect(6, 4, 2, 14, ramp(tommer, -1));
+    kors.vline(6, 4, 14, ramp(tommer, 1));
+    kors.rect(2, 7, 10, 2, tommer);
+    kors.hline(2, 7, 10, ramp(tommer, 1));
+    kors.px(4, 12, ramp(tommer, -3));
+    kors.outline();
+    kors.behind(() => kors.ellipse(7, 19, 5, 2, 'rgba(0,0,0,0.26)'));
+    addCanvas(scene, 'prop-kors', kors);
+
     // ── Gjerde ──────────────────────────────────────────────────────────────
     const gjerde = createPainter(TILE + 2, 16, 1, 1);
     gjerde.rect(2, 2, 2, 11, ramp(tommer, -1));

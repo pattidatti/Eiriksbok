@@ -59,6 +59,13 @@ import {
     NORDVIK_1030_SPAWN,
 } from './nordvik1030';
 import {
+    KIRKEN_1100,
+    NORDVIK_1100_LANDMARKS,
+    NORDVIK_1100_NPCS,
+    NORDVIK_1100_PORTAL,
+    NORDVIK_1100_SPAWN,
+} from './nordvik1100';
+import {
     NORDVIK_AUTHORED_QUESTER,
     NORDVIK_BOSS_QUESTIONS,
     NORDVIK_FARKOSTER,
@@ -495,6 +502,70 @@ const STANFORD_BRU: Sted = {
     authored: [],
 };
 
+/**
+ * Nordvik i 1100. Epilogen (blueprint §4), og det sjette kartet epoken har.
+ *
+ * Samme generator som de fire andre gangene, med to endringer: kirken står der
+ * fra 1030, og nå ligger det fire rader med trekors nedenfor den. Fjorden er
+ * tom - gården eier ikke et skip som kan krysse åpent hav lenger - og haugene
+ * ligger der de har ligget siden 793 og 872, uten steinkrans.
+ *
+ * Det står `kapittel: 5`, og det står *etter* Riccall i lista. Det er med
+ * vilje: `stedIEpoke` tar det første stedet i kapittelet, og en elev som går
+ * til hallen midt i 1066 og kommer tilbake, skal komme tilbake til leiren ved
+ * skipene - ikke til en gård hun ikke har fått se ennå. Epilogen nås bare fra
+ * bordet, og det er den eneste veien inn i den.
+ */
+const NORDVIK_1100: Sted = {
+    id: 'nordvik-1100',
+    tittel: 'Nordvik',
+    undertittel: '1100 · trettifire år etter',
+    epokeId: 'vikingtiden',
+    kapittel: 5,
+    // Orm har ligget ved Stanford bru i trettifire år. Navnet hans over gården
+    // her ville vært det ene som ødela epilogen, og elevens eget navn i stedet
+    // er ikke en nødløsning: de fem rollene er over.
+    rollenavn: null,
+    tema: {
+        ...EPOKE_BY_ID.vikingtiden.tema,
+        // Tidlig høst i klarvær, og lysere enn noe annet Nordvik: dette er ikke
+        // en scene som skal være trist. Gården står, og det er nettopp det som
+        // er tungt med den.
+        gress: '#7e9152',
+        lov: '#b09141',
+        himmel: '#dde6e6',
+        vann: '#4a7086',
+    },
+    byggKart: () =>
+        byggNordvik({
+            langskip: null,
+            hauger: [TORSTEINS_HAUG, AASAS_HAUG],
+            kirke: KIRKEN_1100,
+            kirkegard: true,
+        }),
+    spawn: NORDVIK_1100_SPAWN,
+    npcer: NORDVIK_1100_NPCS,
+    landemerker: NORDVIK_1100_LANDMARKS,
+    portaler: [
+        {
+            tile: NORDVIK_1100_PORTAL,
+            maal: {
+                art: 'sted',
+                stedId: 'hub',
+                navn: 'HALLEN',
+                undertekst: 'VEIEN HJEM',
+            },
+        },
+    ],
+    // Klar luft. Glemselen i epilogen er ikke en tåke som ligger over gården -
+    // den er at folkene som bor her, ikke kan navnene. Å legge tåke på det ville
+    // gjort en helt vanlig ting om til noe overnaturlig.
+    taake: 0.3,
+    spawner: [],
+    musikkRot: 220,
+    authored: [],
+};
+
 export const STEDER: Sted[] = [
     HUB,
     NORDVIK,
@@ -505,6 +576,7 @@ export const STEDER: Sted[] = [
     STIKLESTAD,
     RICCALL,
     STANFORD_BRU,
+    NORDVIK_1100,
 ];
 
 export const STED_BY_ID: Record<string, Sted> = Object.fromEntries(STEDER.map((s) => [s.id, s]));
