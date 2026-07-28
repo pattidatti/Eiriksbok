@@ -8,9 +8,10 @@
   "heroImage": "/images/historie/kinas-historie/silkeveien-hero.webp",
   "details": [
     "Silkeveien var ikke en enkelt vei, men et nettverk av handelsruter fra Kina til Middelhavet.",
-    "Kina hadde monopol på silkeproduksjon i over 1000 år - å avsløre hemmeligheten var dødsstraff.",
+    "Kina var i århundrer verdens eneste leverandør av silke - å føre silkeormen ut av landet var dødsstraff.",
     "Langs rutene reiste ikke bare varer, men ideer, religioner og sykdommer - inkludert svartepesten."
   ],
+  "lastUpdated": "2026-07-28",
   "externalUrl": "https://snl.no/silkeveien",
   "content": [
     {
@@ -19,13 +20,13 @@
     },
     {
       "type": "text",
-      "content": "Silkeveien var ikke en enkelt vei man kunne slå opp på et kart. Det var et nettverk av handelsruter som bandt Kina til Sentral-Asia, India, Persia, Arabia og til slutt Middelhavet. Fra omtrent 130 fvt til 1453 evt knyttet disse rutene sammen de største sivilisasjonene i verden. Ingen planla det slik - det vokste fram fordi det lønnet seg."
+      "content": "Silkeveien var ikke en enkelt vei man kunne slå opp på et kart. Det er et moderne navn på de gamle handelsnettverkene mellom Øst-Asia og middelhavsområdet, og rutene bandt Kina til Sentral-Asia, India, Persia og Arabia (Seland, 2024). De første skriftlige kildene som viser at Kina og middelhavsområdet kjente til hverandre, er fra tiden rundt Kristi fødsel. Landrutene var aller viktigst i to perioder: rundt 400-700 evt, og på 1200- og 1300-tallet (Seland, 2024). Ingen planla det slik - det vokste fram fordi det lønnet seg."
     },
     {
       "type": "image",
       "src": "/images/historie/kinas-historie/silkeveien-01.webp",
       "alt": "Kamelkaravane i ørkenen langs Silkeveien",
-      "caption": "Kamelkaravaner var de viktigste transportmidlene langs landrutene. En kamel kunne bære opp mot 300 kilo og tålte den krevende ørkenterrenget."
+      "caption": "Kamelkaravaner var de viktigste transportmidlene langs landrutene. En lastekamel kunne bære et par hundre kilo og tålte det krevende ørkenterrenget."
     },
     {
       "type": "component",
@@ -52,18 +53,18 @@
     },
     {
       "type": "text",
-      "content": "Navnet «Silkeveien» er misvisende. Silke var viktig, men rutene fraktet alt mulig. Fra Kina gikk keramikk, te, papir og jernvarer vestover. Vestfra kom glass, gull, sølv, ull og lapis lazuli - den blå steinen som kunstnere brukte til å blande maling. Fra India kom krydder, elfenben og bomull. Fra Arabia kom parfyme og edelstener."
+      "content": "Navnet «Silkeveien» er misvisende. Silke var viktig, men rutene fraktet alt mulig. Vestover gikk kinesisk silke, og fra India krydder og edelstener. Motsatt vei gikk romerske håndverksprodukter og mynter av sølv og gull, og hester fra det iranske området var ettertraktet i Kina (Seland, 2024). Til dette kom keramikk, papir, ull, elfenben, bomull og lapis lazuli - den blå steinen som kunstnere brukte til å blande maling."
     },
     {
       "type": "text",
-      "content": "Det som gjorde silken spesiell, var prisen. I Roma kunne en kilo silke koste like mye som en kilo gull. Romerske senatorers koner etterspurte det skinnende stoffet, og romarriktet blødde gull for å få tak i det. Noen romerske politikere klaget over at gullet forlot riket for å betale for asiatisk luksus. De hadde et poeng - handelsbalansen var ensidig."
+      "content": "Det som gjorde silken spesiell, var prisen. Romerske politikere klaget over at rikdommen forlot riket for å betale for asiatisk luksus. Den romerske forfatteren Plinius den eldre regnet med at India, «sererne» - altså kineserne - og Den arabiske halvøy trakk hundre millioner sestertser ut av riket hvert eneste år (Plinius den eldre, 1855). Han hadde et poeng: handelsbalansen var ensidig."
     },
     {
       "type": "component",
       "name": "FactBox",
       "props": {
         "title": "Hva reiste langs silkeveien?",
-        "content": "Silkeveien brakte varer, religion og sykdommer i begge retninger. Vestover gikk silke, keramikk, te og papir fra Kina. Østover kom glass, gull og ull fra Roma og Persia. Men det usynlige var like viktig: buddhismen spredte seg inn i Kina langs disse rutene, islam fulgte kjøpmennene østover, og på 1340-tallet reiste svartepesten med rottelopper i handelsbyttene - og utslettet opp mot halvparten av Europas befolkning."
+        "content": "Silkeveien brakte varer, religion og sykdommer i begge retninger. Vestover gikk silke, keramikk og papir fra Kina. Østover kom romerske håndverksvarer, mynter av sølv og gull, og hester fra det iranske området (Seland, 2024). Men det usynlige var like viktig: buddhismen spredte seg inn i Kina langs disse rutene, islam fulgte kjøpmennene østover, og på 1340-tallet reiste svartepesten med lopper på rotter i handelsvarene - og tok trolig livet av rundt halvparten av Europas befolkning (Moseng, 2026)."
       }
     },
     {
@@ -72,18 +73,18 @@
     },
     {
       "type": "text",
-      "content": "I over tusen år visste ingen utenfor Kina hvordan silke ble laget. Silke kommer fra kokonger spunnet av silkeormer - larvene til sommerfuglen Bombyx mori. Kineserne voktet hemmeligheten med livet. Å smugle ut silkeormer eller mulbærfrø - treet larvene spiser - var ifølge loven straffbart med døden."
+      "content": "I århundrer var Kina verdens eneste leverandør av silke. Silke kommer fra kokonger spunnet av silkeormer - larvene til sommerfuglen Bombyx mori, som lever på blader fra morbærtreet (Klepp, 2024). Kineserne voktet hemmeligheten med livet: å føre silkeormen eller eggene og larvene hennes ut av Kina var straffbart med døden (Klepp, 2024)."
     },
     {
       "type": "text",
-      "content": "Monopolet varte helt til 550 evt. Da sendte den østromerske keiseren Justinian to nestorianske munker til Kina. De gjemte silkeormegg i hule staver av bambus og smuglet dem ut. Bysants lærte å produsere silke selv, og monopolet var brutt. Men da hadde Kina allerede tjent formuer på hemmeligheten i mer enn ti århundrer."
+      "content": "Rundt år 550 evt tok det slutt. To nestorianske munker klarte å smugle levende silkeormegg til keiser Justinians hoff i Konstantinopel, og dermed startet silkeproduksjonen i middelhavsområdet (Klepp, 2024). Bysants kunne lage silke selv, og monopolet var brutt. Men da hadde Kina allerede tjent formuer på hemmeligheten i århundrer."
     },
     {
       "type": "component",
       "name": "QuoteBlock",
       "props": {
-        "text": "Vi er ikke naboer med Kina, men vi er forbundet gjennom handel og kunnskap.",
-        "author": "Arabisk geograf Ibn Khurradadhbih, 800-tallet"
+        "text": "Etter det aller laveste anslaget trekker India, sererne og Den arabiske halvøy hundre millioner sestertser ut av riket vårt hvert år - så dyrt betaler vi for luksusen vår og for kvinnene våre.",
+        "author": "Plinius den eldre, Naturalis Historia, bok 12 (skrevet ca. 77 evt)"
       }
     },
     {
@@ -92,7 +93,7 @@
     },
     {
       "type": "text",
-      "content": "Her er en overraskelse: kineserne selv reiste sjelden langs hele ruten. Det var sogdiske kjøpmenn fra dagens Usbekistan og Tadsjikistan som dominerte landhandelen i århundrer. De snakket mange språk, hadde nettverk av familier spredt langs hele ruten, og visste hvilke gaver man ga til hvilke herskere for å slippe trygt gjennom. Arabiske kjøpmenn tok over sjøhandelen og kontrollerte rutene via Persiabukta og Det indiske hav."
+      "content": "Her er en overraskelse: kineserne selv reiste sjelden langs hele ruten. I storhetstiden mellom 400 og 700 evt var det sogdiske handelsfolk fra dagens Usbekistan og Tadsjikistan som drev karavanehandelen mellom Kina og dagens Iran (Seland, 2024). De snakket mange språk, hadde nettverk av familier spredt langs hele ruten, og visste hvilke gaver man ga til hvilke herskere for å slippe trygt gjennom. Arabiske kjøpmenn tok over sjøhandelen og kontrollerte rutene via Persiabukta og Det indiske hav."
     },
     {
       "type": "text",
@@ -115,11 +116,11 @@
     },
     {
       "type": "text",
-      "content": "Karavanerutene fraktet mer enn varer. Buddhismen reiste fra India inn i Kina langs disse veiene i løpet av de første århundrene evt. Kinesiske pilegrimsmunker som Xuanzang reiste vestover til India for å hente buddhistiske tekster. Islam fulgte de arabiske kjøpmennene østover og slo rot i Sentral-Asia. Kristendommen nådde Kina via nestorianske misjonærer. Rutene var ikke bare handelsveger - de var informasjonsmotorveier."
+      "content": "Karavanerutene fraktet mer enn varer. Buddhismen, den nestorianske kristendommen, manikeismen og islam spredte seg alle langs disse veiene, og buddhistiske klostre fungerte både som herberger for karavanene og som långivere (Seland, 2024). Kinesiske pilegrimsmunker som Xuanzang reiste vestover til India for å hente buddhistiske tekster. Den andre veien gikk teknologien: silkeproduksjon, papir, trykkekunst og kompass spredte seg vestover fra Kina (Seland, 2024). Rutene var ikke bare handelsveier - de var informasjonsmotorveier."
     },
     {
       "type": "text",
-      "content": "Men noe langt farligere reiste også disse veiene. På 1340-tallet spredte [svartepesten](/historie/middelalderen/svartedauden) seg vestover fra Sentral-Asia langs handelsrutene. Bakterien Yersinia pestis levde i rottelopper i handelsbyttene. Den nådde Krimhalvøya i 1346, og derfra seilte den med handelsskip til Europa. Svartepesten drepte mellom en tredjedel og halvparten av Europas befolkning. Aldri hadde handelsforbindelsene fått så dramatiske konsekvenser."
+      "content": "Men noe langt farligere reiste også disse veiene. På 1340-tallet spredte [svartepesten](/historie/middelalderen/svartedauden) seg vestover langs handelsveiene og kommunikasjonslinjene mellom Asia og Europa (Moseng, 2026). Bakterien Yersinia pestis levde i lopper på rotter i handelsvarene. Utbruddet på Krimhalvøya kom i 1347, og derfra fulgte pesten handelsrutene over Svartehavet og Middelhavet til europeiske havner (Moseng, 2026). Samtidige kilder tyder på at rundt halvparten av Europas befolkning døde. Aldri hadde handelsforbindelsene fått så dramatiske konsekvenser."
     },
     {
       "type": "header",
@@ -131,7 +132,7 @@
     },
     {
       "type": "text",
-      "content": "Det ble tryggere å reise. Mongolene organiserte posthus og vaktstyrker langs rutene. Det var i denne perioden at den venetianske kjøpmannen Marco Polo reiste til Kina og tilbrakte 17 år ved Kublai Khans hoff. Boken han skrev etterpå, ga europeerne en ny og detaljert beskrivelse av Østen - og økte nysgjerrigheten for det som lå i Øst."
+      "content": "Det ble tryggere å reise, og handelen tok seg kraftig opp fra 1200-tallet og fram til svartedauden midt på 1300-tallet (Seland, 2024). Det var i denne perioden at den venetianske kjøpmannen Marco Polo dro østover. Han var borte i 24 år, fra 1271 til 1295, og 17 av dem arbeidet han for den mongolske storkhanen (Feddersen, 2026). Boken han fortalte til en medfange etterpå, gjorde rutene kjent over hele Europa og gjorde Asia til noe man faktisk kunne vite noe om, ikke bare noe man diktet om (Feddersen, 2026)."
     },
     {
       "type": "header",
@@ -143,7 +144,7 @@
     },
     {
       "type": "text",
-      "content": "Portugisiske sjøfarere seide sørover langs Afrika og fant sjøveien til India i 1498. Colombus seilte vestover og snublet over Amerika i 1492. De store geografiske oppdagelsene var ikke tilfeldige - de var et direkte svar på at landveiene til Asia ble dyrere og farligere. Silkeveien ble ikke borte over natten, men handelen tok gradvis sjøveien i stedet. En epoke var over."
+      "content": "Portugisiske sjøfarere seilte sørover langs Afrika og fant sjøveien til India i 1498. Columbus seilte vestover og snublet over Amerika i 1492. De store geografiske oppdagelsene var ikke tilfeldige - de hang sammen med at landveiene til Asia ble dyrere og farligere. Silkeveien ble ikke borte over natten. Det var først da europeiske stater og handelskompanier bygde opp faste sjøruter mellom Europa og Øst-Asia på 1500- og 1600-tallet, at landrutene mistet sin økonomiske betydning (Seland, 2024). En epoke var over."
     },
     {
       "type": "image",
@@ -158,7 +159,7 @@
             "forstaa": [
                 "Hva var Silkeveien egentlig? Forklar med egne ord hvorfor navnet «en vei» er misvisende.",
                 "Nevn minst tre varer som gikk vestover fra Kina, og tre varer som kom østover mot Kina.",
-                "Hvordan brøt Bysants Kinas silkemonopol rundt 550 evt, og hvem sto bak?",
+                "Hvordan brøt Bysants Kinas silkemonopol rundt år 550 evt, og hvem sto bak?",
                 "Hva var Pax Mongolica, og hvorfor gjorde den det lettere å reise langs Silkeveien?"
             ],
             "reflekter": [
@@ -213,7 +214,7 @@
             "explanation": "Pax Mongolica betyr den mongolske freden. Da mongolene kontrollerte et sammenhengende rike fra Stillehavet til Øst-Europa, ble reisen langs Silkeveien tryggere og enklere enn på lenge."
           },
           {
-            "question": "Hva var den direkte årsaken til at europeerne begynte å lete etter sjøveier til Asia?",
+            "question": "Hva var en viktig årsak til at europeerne begynte å lete etter sjøveier til Asia?",
             "options": [
               "De ville bevise at jorda var rund",
               "Osmanerne inntok Konstantinopel i 1453, noe som gjorde landveiene dyrere",
@@ -223,6 +224,19 @@
             "answer": 1,
             "explanation": "Da osmanerne tok Konstantinopel i 1453 og kontrollerte handelsveiene, ble det for dyrt å handle gjennom dem. Europeiske makter finansierte sjøekspedisjoner for å finne alternative ruter - noe som utløste oppdagelsestiden."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Feddersen, C. F. (2026). *Marco Polo*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Marco_Polo](https://snl.no/Marco_Polo)",
+          "Klepp, I. G. (2024). *Silke*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/silke](https://snl.no/silke)",
+          "Moseng, O. G. (2026). *Svartedauden*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/svartedauden](https://snl.no/svartedauden)",
+          "Plinius den eldre. (1855). *The Natural History*, bok 12, kapittel 41 (J. Bostock & H. T. Riley, overs.). Taylor and Francis. Hentet 28.07.2026 fra [Perseus Digital Library](http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0137:book=12:chapter=41)",
+          "Seland, E. H. (2024). *Silkeveien*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/Silkeveien](https://snl.no/Silkeveien)"
         ]
       }
     }

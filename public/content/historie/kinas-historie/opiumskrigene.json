@@ -8,9 +8,10 @@
     "heroImage": "/images/historie/kinas-historie/opiumskrigene-hero.webp",
     "details": [
         "Storbritannia eksporterte opium fra India til Kina for å skaffe penger til å betale for kinesisk te.",
-        "Da Kina konfiskerte og destruerte britisk opium i 1839, svarte Storbritannia med militær makt.",
-        "Nanking-traktaten 1842 tvang Kina til å gi fra seg Hong Kong og åpne fem havnebyer for handel."
+        "Da Kina konfiskerte og destruerte 20 283 kister britisk opium i 1839, svarte Storbritannia med militær makt.",
+        "Nanking-traktaten 1842 tvang Kina til å gi fra seg Hongkong og åpne fem havnebyer for handel."
     ],
+    "lastUpdated": "2026-07-28",
     "externalUrl": "https://snl.no/Opiumskrigene",
     "content": [
         {
@@ -27,11 +28,11 @@
         },
         {
             "type": "text",
-            "content": "Problemet var at Kina ikke ville ha noe tilbake. Den kinesiske keiseren så på Europa som et tilbakestående sted uten produkter verdig et sivilisert land. Han svarte den britiske kongen med ordene: 'Vi har ikke bruk for dine barbarers varer.' England betalte alt i sølv, og sølvet forsvant ut av landet i strøm."
+            "content": "Problemet var at Kina ikke ville ha noe tilbake. Da kong George 3. i 1793 sendte en utsending til keiser Qianlong for å be om bedre handelsvilkår, fikk han et kjølig svar. Keiseren skrev at han ikke satte pris på merkelige eller påfunnsomme gjenstander, og at han ikke hadde bruk for varer fra Storbritannia (Crossley, 2022). Britene måtte betale med sølv, og en stadig større del av handelen ble gjort opp i sølv som forsvant ut av landet (Spira, 2024)."
         },
         {
             "type": "text",
-            "content": "Det britiske East India Company trengte en løsning. De fant den i India: opium. De begynte å dyrke opiumsvalmuer i India, foredle det til narkotika, og selge det ulovlig til kinesere. Pengene de tjente, brukte de til å kjøpe te. Systemet fungerte brutalt effektivt. Snart strømmet sølvet motsatt vei - fra Kina til Storbritannia."
+            "content": "Det britiske East India Company trengte en løsning. De fant den i India: opium. De sørget for at opium ble dyrket og foredlet i India og solgt videre til Kina, enda innførsel av opium var forbudt der (Spira, 2024). Pengene de tjente, brukte de til å kjøpe te. Systemet fungerte brutalt effektivt. Snart strømmet sølvet motsatt vei - fra Kina til Storbritannia."
         },
         {
             "type": "component",
@@ -54,7 +55,7 @@
         },
         {
             "type": "text",
-            "content": "Keiseren sendte sin mest erfarne embedsmann, Lin Zexu, til Guangzhou i 1839 med klar beskjed: stopp opiumhandelen. Lin var intelligent og prinsippfast. Han forsto at dette ikke bare var et kriminalitetsproblem - det var et angrep på kinesisk samfunn. Han skrev et brev direkte til dronning Victoria i London."
+            "content": "Hoffet sendte en av sine mest erfarne embetsmenn, Lin Zexu, til Guangzhou i 1839 med klar beskjed: stopp opiumhandelen (Spira, 2024). Lin var intelligent og prinsippfast. Han forsto at dette ikke bare var et kriminalitetsproblem - det var et angrep på kinesisk samfunn. Han skrev et brev direkte til dronning Victoria i London."
         },
         {
             "type": "component",
@@ -66,7 +67,7 @@
         },
         {
             "type": "text",
-            "content": "Brevet nådde aldri dronningen offisielt. Det ble ignorert. Men Lin ventet ikke på svar. Han konfiskerte over 1000 tonn britisk opium i Guangzhou-havnen og fikk det destruert - en av historiens største narkotikabeslag. Det tok 23 dager å brenne og løse opp alt i havet."
+            "content": "Brevet nådde aldri fram til dronningen (Allingham, 2006). Men Lin ventet ikke på svar. Han presset den britiske handelsinspektøren Charles Elliot til å utlevere hele opiumslageret - 20 283 kister, rundt 1400 tonn - og fikk alt sammen destruert (Spira, 2024; Pletcher, u.å.). Det var et av historiens største narkotikabeslag, og det tok flere uker å ødelegge alt."
         },
         {
             "type": "component",
@@ -92,7 +93,7 @@
                     },
                     {
                         "id": "konfisker",
-                        "text": "Du konfiskerer opiumet og bruker 23 dager på å destruere det i havet. Det er en historisk handling - du har stoppet narkotikahandelen. Men i London raser de britiske kjøpmennene. De krever erstatning og krever at regjeringen griper inn. Parlamentet vedtar med knapp margin å sende en marineflåte. Kina er ikke forberedt på det som kommer - moderne industrivåpen mot Kinas middelalderkanoner. Kina taper krigen som følger. Men Lin Zexu blir husket i Kina som en helt - mannen som turte å si nei.",
+                        "text": "Du konfiskerer opiumet og bruker flere uker på å destruere det. Det er en historisk handling - du har stoppet narkotikahandelen. Men i London raser de britiske kjøpmennene. De krever erstatning og krever at regjeringen griper inn. Parlamentet vedtar med knapp margin å sende en marineflåte. Kina er ikke forberedt på det som kommer - moderne industrivåpen mot Kinas middelalderkanoner. Kina taper krigen som følger. Men Lin Zexu blir husket i Kina som en helt - mannen som turte å si nei.",
                         "options": []
                     },
                     {
@@ -109,11 +110,11 @@
         },
         {
             "type": "text",
-            "content": "I London ble Lin Zexus aksjon presentert som et overfall på britisk eiendom og en fornærmelse mot den britiske kronen. Det spilte ingen rolle at opiumet var ulovlig i Kina. Parlamentet stemte for krig - men bare med 271 mot 262 stemmer. Det var svært nær."
+            "content": "I London ble Lin Zexus aksjon presentert som et overfall på britisk eiendom og en fornærmelse mot den britiske kronen. Det spilte ingen rolle at opiumet var ulovlig i Kina. Saken var omstridt i underhuset, og avstemningen endte 271 mot 262 - ni stemmers margin (Hayes, 2023). Storbritannia erklærte krig i juli 1840 (Spira, 2024)."
         },
         {
             "type": "text",
-            "content": "Krigen som fulgte var ikke egentlig en krig. Det var et massaker. Den britiske flåten hadde dampskip og moderne kanoner som kunne skyte langt og presist. Kina hadde trebygde seilskuter og kanoner fra 1600-tallet. Britene tok fort, byer og elver i løpet av måneder. Kinas befestninger, bygd for å stoppe andre asiatiske angrep, var verdilose mot industriell krigføring."
+            "content": "Krigen ble svært ujevn. Den britiske flåten hadde dampskip og moderne kanoner som kunne skyte langt og presist. Kina hadde trebygde seilskuter og eldre kanoner. Britene tok festninger, byer og elveløp i løpet av måneder. Kina tapte fordi militærmakten var underlegen, men også fordi styret var preget av korrupsjon og indre spenninger (Spira, 2024)."
         },
         {
             "type": "image",
@@ -127,19 +128,19 @@
         },
         {
             "type": "text",
-            "content": "I 1842 var Kina tvunget til å undertegne Nanking-traktaten - den første av det kineserne kaller 'de ulikeverdige traktater'. Det var ikke en forhandling mellom likeverdige parter. Det var diktat fra en seierherre til en beseiret fiende."
+            "content": "I 1842 var Kina tvunget til å undertegne Nanking-traktaten - den første av det kineserne kaller 'de ulikeverdige traktater'. Det var ikke en forhandling mellom likeverdige parter. Det var diktat fra en seierherre til en beseiret fiende. Kina måtte gi fra seg Hongkong og åpne fem havnebyer for utenlandsk handel (Spira, 2024)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hva betyr Nanking-traktaten?",
-                "content": "Kina måtte avsta Hong Kong til Storbritannia - en britisk koloni fram til 1997. Fem havnebyer ble tvunget åpne for britisk handel: Guangzhou, Shanghai, Fuzhou, Ningbo og Xiamen. Kina betalte 21 millioner sølvdollar i erstatning - tilsvarende mange milliarder i dag. Britiske borgere i Kina fikk ekstraterritorialitet, det vil si at de sto utenfor kinesisk lov og bare kunne dømmes av britiske domstoler. Kina mistet retten til å sette egne tollsatser. Andre europeiske makter krevde snart de samme rettighetene."
+                "content": "Kina måtte avstå Hongkong til Storbritannia - en britisk koloni fram til 1997. Fem havnebyer ble tvunget åpne for britisk handel: Guangzhou, Shanghai, Fuzhou, Ningbo og Xiamen. Kina betalte 21 millioner sølvdollar i erstatning - tilsvarende mange milliarder i dag. Tollsatsene ble låst fast i avtalen, slik at Kina mistet retten til å bestemme dem selv. Året etter, i tilleggsavtalen fra 1843, fikk britiske borgere i Kina ekstraterritorialitet: de sto utenfor kinesisk lov og kunne bare dømmes av britiske domstoler (Encyclopaedia Britannica, u.å.). Andre stormakter krevde snart de samme rettighetene - USA fikk sin avtale alt i 1844 (Encyclopaedia Britannica, 2026)."
             }
         },
         {
             "type": "text",
-            "content": "Ekstraterritorialiteten var kanskje den mest ydmykende delen. Det betydde at en britisk borger som begikk drap i Shanghai, ikke kunne straffes av kinesiske myndigheter. Kina hadde mistet kontrollen over sitt eget territorium. Franske, amerikanske og japanske traktater fulgte snart med liknende krav."
+            "content": "Ekstraterritorialiteten var kanskje den mest ydmykende delen av dette traktatsystemet. Det betydde at en britisk borger som begikk drap i Shanghai, ikke kunne straffes av kinesiske myndigheter. Kina hadde mistet kontrollen over sitt eget territorium. Amerikanske, franske og senere japanske avtaler kom med liknende krav, og for hver ny avtale ble rettighetene utvidet (Encyclopaedia Britannica, 2026)."
         },
         {
             "type": "header",
@@ -147,11 +148,11 @@
         },
         {
             "type": "text",
-            "content": "Opiumskrigene markerte starten på det kineserne kaller 'de 100 ydmykelsenes år' - perioden fra 1839 til 1949 da Kina ble presset, delt og ydmyket av fremmede makter. En andre opiumskrig fulgte i 1856-1860, der britiske og franske tropper brant ned Sommerpalasset i Beijing. Japan tok Taiwan og Korea. Russland tok landområder i nord. Andre europeiske makter sikret seg handelsrettigheter og territorier."
+            "content": "Opiumskrigene markerte starten på det kineserne kaller 'de 100 ydmykelsenes år' - perioden fra 1839 til 1949 da Kina ble presset, delt og ydmyket av fremmede makter (Kaufman, 2011). En andre opiumskrig fulgte i 1856-1860. Da rykket en britisk-fransk styrke helt fram til hovedstaden og brente ned keiserens sommerpalass nordvest for Beijing (Spira, 2025). Japan tok Taiwan og Korea. Russland tok landområder i nord. Andre europeiske makter sikret seg handelsrettigheter og territorier."
         },
         {
             "type": "text",
-            "content": "Kina, som i tusenvis av år hadde sett seg selv som verdens midtpunkt og ledende sivilisasjon, ble behandlet som et land uten suverenitet. Det satte dype sår. I dag bruker kinesiske ledere konsekvent begrepet 'de 100 ydmykelsenes år' for å forklare Kinas utenrikspolitikk og hvorfor landet er så opptatt av at ingen skal blande seg i dets indre anliggender."
+            "content": "Kina, som i tusenvis av år hadde sett seg selv som verdens midtpunkt og ledende sivilisasjon, ble behandlet som et land uten suverenitet. Det satte dype sår. I dag bruker kinesiske ledere begrepet 'de 100 ydmykelsenes år' når de forklarer Kinas utenrikspolitikk og hvorfor landet er så opptatt av at ingen skal blande seg i dets indre anliggender (Kaufman, 2011)."
         },
         {
             "type": "image",
@@ -165,7 +166,7 @@
         },
         {
             "type": "text",
-            "content": "Lin Zexu, mannen som brant opiumet og skrev til dronning Victoria, ble avsatt av keiseren etter nederlaget - stemplet som den som provoserte krigen. Han ble sendt i eksil til den avsidesliggende Xinjiang-provinsen. Men historien rehabiliterte ham. I dag er han en nasjonal helt i Kina, statuen hans står i Hong Kong - nettopp den byen som ble tapt på grunn av krigen han forsøkte å hindre."
+            "content": "Lin Zexu, mannen som ødela opiumet og skrev til dronning Victoria, ble raskt avsatt av keiseren som selv hadde godkjent den harde linjen. Han ble sendt i eksil til den avsidesliggende grensen i nordvest (Hayford, u.å.). Men historien rehabiliterte ham. I dag blir han hyllet i Kina som mannen som turte å si nei - selv om nederlaget kostet landet Hongkong."
         },
         {
             "type": "component",
@@ -173,14 +174,14 @@
             "props": {
                 "forstaa": [
                     "Hvorfor betalte England enorme summer med sølv til Kina på 1700-tallet, og hva var det England kjøpte?",
-                    "Hva gjorde Lin Zexu med det britiske opiumet i Guangzhou i 1839, og hvor lang tid tok det å destruere det?",
+                    "Hva gjorde Lin Zexu med det britiske opiumet i Guangzhou i 1839, og hvor mye opium var det snakk om?",
                     "Hvilke tre store krav måtte Kina godta i Nanking-traktaten fra 1842?",
                     "Hva betyr uttrykket 'de 100 ydmykelsenes år', og hvilken periode dekker det?"
                 ],
                 "reflekter": [
-                    "Teksten kaller den første opiumskrigen 'ikke egentlig en krig, men et massaker'. Forklar hva som gjorde at Kina tapte så fort mot den britiske flåten.",
+                    "Teksten sier at krigen ble svært ujevn. Forklar hva som gjorde at Kina tapte så fort mot den britiske flåten.",
                     "I brevet til dronning Victoria peker Lin Zexu på at opium var forbudt i Storbritannia selv. Hvorfor mente han dette var et sterkt argument mot britene?",
-                    "Hvorfor var ekstraterritorialiteten en så ydmykende del av Nanking-traktaten for Kina? Bruk teksten til å forklare hva den betydde i praksis.",
+                    "Hvorfor var ekstraterritorialiteten en så ydmykende del av traktatsystemet for Kina? Bruk teksten til å forklare hva den betydde i praksis.",
                     "Lin Zexu ble først avsatt og sendt i eksil, men er i dag en nasjonal helt i Kina. Hva sier denne forandringen om hvordan Kina ser tilbake på opiumskrigene?"
                 ],
                 "gaaVidere": [
@@ -211,14 +212,14 @@
                         "options": [
                             "Han sendte det tilbake til India",
                             "Han solgte det videre til kinesiske kjøpmenn",
-                            "Han konfiskerte og destruerte over 1000 tonn opium",
+                            "Han konfiskerte og destruerte 20 283 kister opium",
                             "Han lagret det i keiserens magasiner"
                         ],
                         "answer": 2,
-                        "explanation": "Lin Zexu konfiskerte alt det britiske opiumet i Guangzhou-havnen - over 1000 tonn - og fikk det destruert. Det tok 23 dager å brenne og løse opp opiumet i havet. Dette utløste den britiske militære responsen."
+                        "explanation": "Lin Zexu presset britene til å utlevere hele opiumslageret i Guangzhou - 20 283 kister, rundt 1400 tonn - og fikk alt sammen destruert. Dette utløste den britiske militære responsen."
                     },
                     {
-                        "question": "Hva var ekstraterritorialitet, slik det ble brukt i Nanking-traktaten?",
+                        "question": "Hva var ekstraterritorialitet, slik den ble innført i Kina etter Nanking-traktaten?",
                         "options": [
                             "Retten til å bygge britiske festninger på kinesisk jord",
                             "At britiske borgere i Kina sto utenfor kinesisk lov og bare kunne dømmes av britiske domstoler",
@@ -226,7 +227,7 @@
                             "At britiske skip fritt kunne seile på alle kinesiske elver"
                         ],
                         "answer": 1,
-                        "explanation": "Ekstraterritorialitet betydde at britiske borgere som begikk lovbrudd i Kina, ikke kunne straffes av kinesiske myndigheter. De sto utenfor kinesisk lov. Dette var en av de mest ydmykende bestemmelsene i traktaten."
+                        "explanation": "Ekstraterritorialitet betydde at britiske borgere som begikk lovbrudd i Kina, ikke kunne straffes av kinesiske myndigheter. De sto utenfor kinesisk lov. Retten kom med tilleggsavtalen i 1843, og var en av de mest ydmykende delene av traktatsystemet."
                     },
                     {
                         "question": "Hva mener kineserne med begrepet 'de 100 ydmykelsenes år'?",
@@ -239,6 +240,24 @@
                         "answer": 2,
                         "explanation": "De 100 ydmykelsenes år refererer til perioden fra opiumskrigene i 1839 til kommunistenes seier i 1949. I denne perioden mistet Kina territorier og suverenitet til Storbritannia, Frankrike, Japan og Russland gjennom en rekke ulikeverdige traktater."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Allingham, P. V. (2006). *Commissioner Lin Ze-xu's Letter to Queen Victoria*. The Victorian Web. Hentet 28.07.2026 fra [victorianweb.org](https://victorianweb.org/history/empire/opiumwars/lin.html)",
+                    "Crossley, P. (2022). *We possess all things*. London Review of Books, 44(16). Hentet 28.07.2026 fra [lrb.co.uk](https://www.lrb.co.uk/the-paper/v44/n16/pamela-crossley/we-possess-all-things)",
+                    "Encyclopaedia Britannica. (2026). *Treaty of Wanghia*. Hentet 28.07.2026 fra [britannica.com](https://www.britannica.com/topic/Treaty-of-Wanghia)",
+                    "Encyclopaedia Britannica. (u.å.). *Treaty of Nanjing*. Hentet 28.07.2026 fra [britannica.com](https://www.britannica.com/event/Treaty-of-Nanjing)",
+                    "Hayes, A. (2023). *How Did the Opium Wars Impact China?* TheCollector. Hentet 28.07.2026 fra [thecollector.com](https://www.thecollector.com/how-did-opium-wars-impact-china/)",
+                    "Hayford, C. W. (u.å.). *Lin Zexu*. Encyclopaedia Britannica. Hentet 28.07.2026 fra [britannica.com](https://www.britannica.com/biography/Lin-Zexu)",
+                    "Kaufman, A. A. (2011). *The \"Century of Humiliation\" and China's National Narratives*. Vitnemål for U.S.-China Economic and Security Review Commission. Hentet 28.07.2026 fra [uscc.gov](https://www.uscc.gov/sites/default/files/3.10.11Kaufman.pdf)",
+                    "Pletcher, K. (u.å.). *Opium Wars*. Encyclopaedia Britannica. Hentet 28.07.2026 fra [britannica.com](https://www.britannica.com/topic/Opium-Wars)",
+                    "Spira, I. (2024). *Den første opiumskrigen*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/den_første_opiumskrigen](https://snl.no/den_f%C3%B8rste_opiumskrigen)",
+                    "Spira, I. (2025). *Den andre opiumskrigen*. Store norske leksikon. Hentet 28.07.2026 fra [snl.no/den_andre_opiumskrigen](https://snl.no/den_andre_opiumskrigen)"
                 ]
             }
         }
