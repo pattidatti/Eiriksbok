@@ -163,17 +163,48 @@ export function ramp(hex: string, steg: number): string {
 
     // Mot blått i skyggen, mot gult i lyset - men aldri hele veien.
     const mal = skygge ? 255 : 45;
-    const nyH = dreiHue(h, mal, n * (skygge ? 13 : 9));
-    const nyS = Math.max(0, Math.min(1, s + (skygge ? 0.06 : -0.07) * n));
+    let raa = dreiHue(h, mal, n * (skygge ? 13 : 9));
+
+    // ── Sperren mot rødt ────────────────────────────────────────────────────
+    // Korteste vei fra en varm tone til blått går *nedover, gjennom rødt*. For
+    // gress og stein er det uten betydning - de ligger langt fra 0 grader. For
+    // hud er det katastrofalt: hudtonen ligger på 28 grader, og to skyggetrinn
+    // dreier den 26. Da lander skyggen på rent rødt.
+    //
+    // Målt på den ferdige helt-teksturen før dette: `#e0a878` ble til `#ca221d`
+    // over halsen, i alle fire retninger, på alle 56 rammene, på helten og på
+    // hver eneste NPC. Det leste som et kutt, ikke som en skygge - og det sto
+    // midt i bildet hele tiden.
+    //
+    // Sperren regnes før hue-en pakkes rundt 0. Gjøres den etterpå, vikler en
+    // varm tone seg forbi rødt og havner i fiolett på den andre siden, som er
+    // like galt. Den gjelder bare toner som *starter* varme: en rød kjortel
+    // (0 grader) skal fortsatt ha rød skygge.
+    //
+    // Grensen er `>=`, ikke `>`. Enkelte steder rampes en farge som alt er
+    // rampet én gang, og andre trinn starter da nøyaktig på gulvet - med `>`
+    // slapp det gjennom og landet på 7 grader likevel.
+    if (skygge && h >= 20 && h < 190 && raa < 20) raa = 20;
+    const nyH = (raa + 360) % 360;
+
+    // Metningen løftes bare der det er plass. Å legge på et fast tillegg mens
+    // lysheten faller, gjør en alt mettet farge til ren kulør - samme feil som
+    // over, sett fra den andre kanten.
+    const nyS = Math.max(0, Math.min(1, s + (skygge ? 0.06 * (1 - s) : -0.07) * n));
     const nyL = Math.max(0, Math.min(1, l + (skygge ? -0.11 : 0.12) * n));
     return hslToHex(nyH, nyS, nyL);
 }
 
-/** Dreier en fargetone mot en måltone, høyst `maks` grader. */
+/**
+ * Dreier en fargetone mot en måltone, høyst `maks` grader.
+ *
+ * Svaret pakkes med vilje *ikke* inn i 0-360: `ramp()` må se om dreiningen gikk
+ * forbi rødt, og det er umulig etter en modulo.
+ */
 function dreiHue(fra: number, til: number, maks: number): number {
     let diff = ((til - fra + 540) % 360) - 180;
     if (Math.abs(diff) > maks) diff = Math.sign(diff) * maks;
-    return (fra + diff + 360) % 360;
+    return fra + diff;
 }
 
 export function hexToRgb(hex: string): { r: number; g: number; b: number } {
