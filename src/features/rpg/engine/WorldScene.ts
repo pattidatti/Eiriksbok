@@ -480,8 +480,8 @@ export class WorldScene extends Phaser.Scene {
             tilSpill.on('npcHandling', ({ npcId, handlingId }) =>
                 this.utforHandling(npcId, handlingId)
             ),
-            tilSpill.on('puzzleSvar', ({ id, lost, forsteForsok }) =>
-                this.avsluttPuzzle(id, lost, Boolean(forsteForsok))
+            tilSpill.on('puzzleSvar', ({ id, lost, forsteForsok, utfall }) =>
+                this.avsluttPuzzle(id, lost, Boolean(forsteForsok), utfall)
             ),
             // Bordet holder ingen regnskap selv - det melder bare at hun la fra
             // seg kildene, og hva hun rakk. Konteringen ligger her, ved siden
@@ -1000,6 +1000,12 @@ export class WorldScene extends Phaser.Scene {
         if (handlingId === 'bua-forradet') this.apneBua();
         if (handlingId === 'gaa-i-fjaera') this.angrepet?.mot();
         if (handlingId === 'til-tinget') this.apneTinget();
+        if (handlingId === 'hold-blot') {
+            // Verden må stå stille bak horgen. Låsen tas av igjen når React
+            // svarer med `puzzleSvar`, som for de andre puzzlene.
+            this.settLaast(true);
+            fraSpill.emit('puzzle', { id: 'blotet' });
+        }
     }
 
     // ── Tinget ──────────────────────────────────────────────────────────────
@@ -1109,11 +1115,31 @@ export class WorldScene extends Phaser.Scene {
      * skal avgjøre hva et løst puzzle betyr - React tegner det, den skal ikke
      * dele ut begreper.
      */
-    private avsluttPuzzle(id: string, lost: boolean, forsteForsok: boolean): void {
+    private avsluttPuzzle(
+        id: string,
+        lost: boolean,
+        forsteForsok: boolean,
+        utfall?: string
+    ): void {
         this.settLaast(false);
         if (!lost) return;
         const store = useRpgStore.getState();
         switch (id) {
+            case 'blotet': {
+                // Blotet er det ene puzzlet som ikke kan mislykkes, bare gå
+                // dårlig. Steget er gjort - hun holdt et blot - men begrepet
+                // står på «hørt» til gaven passet til guden og til tiden.
+                // Ingen sier hvorfor. Ulv står ved hovet i morgen også.
+                store.fullforSteg(K3.blotet);
+                if (utfall !== 'passet') {
+                    store.larBegrep('blot', 'hort');
+                    return;
+                }
+                store.fullforPuzzle('blotet', 'Du holdt et blot bygda ble værende i');
+                store.larBegrep('blot', 'forstatt');
+                store.giAere(10, 'Bygda ble til det lysnet. Det snakkes om det.');
+                return;
+            }
             case 'skroget': {
                 store.fullforSteg(K1.skroget);
                 store.fullforPuzzle('skroget', 'Du bygget et skrog som fløt');

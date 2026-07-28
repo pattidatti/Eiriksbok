@@ -190,8 +190,6 @@ sjekk('vilkårene er en frist, ikke en trussel i løse lufta', ordene.includes('
 await page.screenshot({ path: `${UT}/rpg-k3-vilkaarene.png` });
 await klikk('Hva vil dere?');
 await page.waitForTimeout(700);
-await page.keyboard.press('Escape');
-await page.waitForTimeout(500);
 sjekk('kongens mann gir første steg', (await tilstand())?.steg?.includes('k3-knarren'));
 
 // ── 7. Porten hjem, og tilbake til riktig år ────────────────────────────────

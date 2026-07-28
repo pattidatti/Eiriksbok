@@ -278,6 +278,14 @@ export const NORDVIK_995_LANDMARKS: LandmarkDef[] = [
         text: 'Et langt hus av tømmer, uten vinduer. Innenfor står tre trebilder på en benk langs veggen: Tor med hammeren, Frøy, og Odin med ett øye.\n\nDet finnes ingen bok her, ingen benkerader og ingen menighet. Det finnes en bolle, en kvist, og et ildsted stort nok til å koke kjøtt til hele bygda.\n\nIngen har noen gang spurt deg hva du tror. De har spurt om du kommer til blotet.',
         stikkord: ['hov', 'gudebilde', 'hedendom'],
         begrep: { id: 'sed', niva: 'forstatt' },
+        /**
+         * Knappen står på hovet og ikke på Ulv.
+         *
+         * Et blot er ikke noe godene gir deg lov til. Det er noe gården holder,
+         * og Torgils er gårdens mann. Han kan holde det igjen senere også -
+         * horgen står der hele året, og folk blotet når de trengte noe.
+         */
+        handling: { id: 'hold-blot', knapp: 'Hold blot', krever: ['k3-knarren'] },
     },
     {
         id: 'horgen',

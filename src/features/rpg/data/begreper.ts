@@ -133,6 +133,14 @@ export const BEGREPER: BegrepDef[] = [
         replikk: 'Ingen har spurt meg hva jeg tror. Jeg ville ikke visst hva jeg skulle svare.',
     },
     {
+        id: 'blot',
+        navn: 'Blot',
+        forklaring:
+            'Et blot var et gjestebud der gudene var med. Man ga noe som kostet: et dyr gården hadde bruk for, oftest en hest om høsten. Blodet ble samlet i en bolle og stenket på folk og vegger, kjøttet ble kokt, og begrene gikk rundt ilden - til Odin for makt, til Frøy for godt år og fred, og til slekta i haugene. Gaven måtte passe til guden: Frøy gir avling, Odin gjør ikke det.',
+        forstasVed: 'Hold et blot der gaven passer til guden og til tiden.',
+        replikk: 'Ingen ba deg tro på noe. De ba deg komme.',
+    },
+    {
         id: 'nordvegen',
         navn: 'Nordvegen',
         forklaring:

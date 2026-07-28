@@ -48,6 +48,7 @@ export const K2 = {
  */
 export const K3 = {
     knarren: 'k3-knarren',
+    blotet: 'k3-blotet',
 } as const;
 
 /** Flagg kapittel 1 setter, og som mellomspillet og kapittel 5 leser. */
@@ -208,6 +209,12 @@ export const KAPITLER: KapittelDef[] = [
                 tittel: 'Tolv menn i brynje',
                 mal: 'Gå ned i fjæra og hør hva kongens mann vil.',
                 krever: [],
+            },
+            {
+                id: K3.blotet,
+                tittel: 'Blotet',
+                mal: 'Hovet står ennå. Gå opp til horgen og hold blot.',
+                krever: [K3.knarren],
             },
         ],
         // Æren er kapittelets valuta: holmgangen kjempes om den, og det er den

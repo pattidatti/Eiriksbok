@@ -57,7 +57,7 @@ export interface SceneEvents {
     /** Replikken i en cutscene. `hvem: null` er elevens egen tanke. */
     klippTekst: { hvem: string | null; tekst: string } | null;
     /** Åpne et av kapittelets puzzle-overlegg. */
-    puzzle: { id: 'skroget' | 'navigasjonen' };
+    puzzle: { id: 'skroget' | 'navigasjonen' | 'blotet' };
     /**
      * Et nytt kapittel begynner. Skjermen skal stå stille et øyeblikk før
      * eleven får gå, og hun skal få vite hvem hun er nå.
@@ -152,8 +152,13 @@ export interface UiEvents {
      *
      * `forsteForsok` er ikke belønning - det er noe Orm husker. Å gjøre det
      * riktig på første forsøk skal merkes i verden, ikke i tallene.
+     *
+     * `utfall` finnes for blotet, som er det ene puzzlet der «ikke løst» og
+     * «gikk fra det» ikke er samme sak: et blot som ble holdt, ble holdt -
+     * også når gaven ikke passet. Scenen må kunne skille de to, ellers teller
+     * et Esc-trykk som en kveld ved horgen.
      */
-    puzzleSvar: { id: string; lost: boolean; forsteForsok?: boolean };
+    puzzleSvar: { id: string; lost: boolean; forsteForsok?: boolean; utfall?: string };
     /**
      * Eleven la fra seg kildene. `gjennomgatt` er falsk når hun gikk før hun
      * kom til det tomme feltet - da har hun ikke sett det bordet skulle vise

@@ -22,6 +22,7 @@ import { KAPITTEL_BY_NR } from './data/kapitler';
 import { MELLOMSPILL_BY_ID } from './data/mellomspill';
 import { Navigasjonen } from './components/Navigasjonen';
 import { Skroget } from './components/Skroget';
+import { Blotet } from './components/Blotet';
 import { rustningTier } from './data/classes';
 import { useHubRom } from './net/useHubRom';
 import { Atmosfare, Skjermkontroll } from './components/Skjermkontroll';
@@ -53,7 +54,7 @@ type Overlegg =
     | { type: 'dod' }
     | { type: 'seier' }
     /** Kapittelets håndverkspuzzle. Scenen står låst bak det. */
-    | { type: 'puzzle'; id: 'skroget' | 'navigasjonen' }
+    | { type: 'puzzle'; id: 'skroget' | 'navigasjonen' | 'blotet' }
     /** Bordet med kildene, mellom to kapitler. */
     | { type: 'mellomspill'; id: string }
     /** Åpningsskjermen til et nytt kapittel. */
@@ -559,6 +560,26 @@ export default function RpgPage() {
                     onAvbryt={() => {
                         setOverlegg({ type: 'ingen' });
                         tilSpill.emit('puzzleSvar', { id: 'navigasjonen', lost: false });
+                    }}
+                />
+            )}
+
+            {overlegg.type === 'puzzle' && overlegg.id === 'blotet' && (
+                <Blotet
+                    onFerdig={(passet) => {
+                        setOverlegg({ type: 'ingen' });
+                        // Blotet ble holdt uansett hva hun svarte. `utfall`
+                        // sier hvordan det gikk; `lost` sier bare at hun ikke
+                        // gikk fra det.
+                        tilSpill.emit('puzzleSvar', {
+                            id: 'blotet',
+                            lost: true,
+                            utfall: passet ? 'passet' : 'passet-ikke',
+                        });
+                    }}
+                    onAvbryt={() => {
+                        setOverlegg({ type: 'ingen' });
+                        tilSpill.emit('puzzleSvar', { id: 'blotet', lost: false });
                     }}
                 />
             )}
