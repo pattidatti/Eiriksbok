@@ -425,8 +425,67 @@ export interface EpokeDef {
     tema: Tema;
 }
 
+/**
+ * Lyset over et sted. Dette er ikke palett, men *gradering*: hvordan hele
+ * bildet farges etter at alt annet er tegnet (se `engine/verdenfx.ts`).
+ *
+ * Skillet er verdt å holde på. Paletten sier hva gresset er laget av; lysbildet
+ * sier hva slags dag det er. En rå vikingmorgen og en tørr romersk ettermiddag
+ * kan dele hver eneste flisfarge og likevel se ut som to verdener.
+ */
+export interface Lysbilde {
+    /** Fargen skyggene trekkes mot. Kald i nord, varm i sør. */
+    skygge: string;
+    /** Fargen høylysene trekkes mot. */
+    hoylys: string;
+    kontrast: number;
+    metning: number;
+    /** Hvor mye bildet mørkner mot kantene. 0 = ingenting. */
+    vignett: number;
+    /** Hvor mye sollyset varierer når det driver over landskapet. */
+    sol: number;
+    /**
+     * Grunnlyset. Over 1 løfter hele bildet.
+     *
+     * Den finnes fordi resten av graderingen mørkner: kontrast rundt 0,5,
+     * vignett i kanten og et skydekke som driver over. Uten et løft her ender
+     * en klar formiddag opp som skumring.
+     */
+    eksponering: number;
+}
+
+/** Været over et sted: skydekke, tåke, vind og det som lever i lufta. */
+export interface Vaerlag {
+    /**
+     * Hvor mørkt det blir under en sky. 0 = skyfri himmel.
+     *
+     * Selve skydekket tegnes ikke som bilder, men regnes ut i
+     * etterbehandlingen (`engine/verdenfx.ts`). Se kommentaren øverst i den
+     * fila for hvorfor.
+     */
+    skyggedybde: number;
+    /** Hvor fort skyene driver, i verdenspiksler i sekundet. */
+    skyfart: number;
+    /** Fargen skyggen trekker bildet mot. Kald grå-blå på en nordisk dag. */
+    skyfarge: string;
+    /** Hvor tett tåka ligger. 0 = klar sikt. Tegnes i samme pass som skyene. */
+    taake: number;
+    /** Fargen på tåka. */
+    taakefarge: string;
+    /** Vindstyrken. Styrer både hvor fort skyene driver og hvor mye trær svaier. */
+    vind: number;
+    /** Fnugg og pollen i lufta. 0 = klar luft. */
+    fnugg: number;
+    /** Får fugler krysse himmelen? */
+    fugler: boolean;
+}
+
 /** Paletten til et sted. Alt terreng, tømmer, tak og løvverk leses herfra. */
 export interface Tema {
+    /** Graderingen. Utelates den, brukes `STANDARD_LYS`. */
+    lys?: Lysbilde;
+    /** Været. Utelates det, brukes `STANDARD_VAER`. */
+    vaer?: Vaerlag;
     gress: string;
     stein: string;
     vann: string;

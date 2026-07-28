@@ -30,6 +30,28 @@ export const EPOKER: EpokeDef[] = [
         regelsett: VIKING_REGELSETT,
         bankSone: 'nordvik',
         tema: tema({
+            // En klar formiddag i en nordisk fjord: kalde blå skygger, tynt
+            // gullys, mye vind. Det er dette lyset - ikke paletten - som gjør
+            // at Nordvik ser nordisk ut og ikke som en generisk grønn slette.
+            lys: {
+                skygge: '#7f9fd8',
+                hoylys: '#fff2cf',
+                kontrast: 1.05,
+                metning: 1.04,
+                vignett: 0.4,
+                sol: 0.05,
+                eksponering: 1.16,
+            },
+            vaer: {
+                skyggedybde: 0.62,
+                skyfart: 21,
+                skyfarge: '#93a9c8',
+                taake: 0.17,
+                taakefarge: '#d6e4f0',
+                vind: 1.15,
+                fnugg: 1,
+                fugler: true,
+            },
             gress: '#4d7c45',
             stein: '#7d8590',
             vann: '#2c5f8a',

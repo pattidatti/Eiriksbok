@@ -147,22 +147,34 @@ export function forgeTiles(scene: Phaser.Scene, tema: Tema): void {
         }
     });
 
-    // Vann: fire rammer så bølgen faktisk ruller i stedet for å blinke.
-    for (let frame = 0; frame < 4; frame++) {
-        const p = createPainter(TILE, TILE);
-        const v = tema.vann;
-        p.rect(0, 0, TILE, TILE, v);
-        for (let y = 0; y < TILE; y += 4) {
-            const skift = Math.round(Math.sin((frame / 4) * Math.PI * 2 + y) * 2);
-            p.hline(((y * 3) % TILE) + skift - 4, y + 1, 5, ramp(v, 1));
-            p.hline(((y * 5) % TILE) + skift, y + 3, 3, ramp(v, -1));
+    // ── Vannet ──────────────────────────────────────────────────────────────
+    // To dybder, fire rammer hver. Dybden er ikke pynt: en fjord med én eneste
+    // blåfarge fra bredd til bredd leser som et gulv. Så snart det grunne
+    // vannet er lysere enn det dype, ser øyet en bunn som skråner, og da tror
+    // det på vannet.
+    //
+    // Bølgen selv er tre streker: en mørk dal, en lysere rygg og en liten
+    // kam på toppen. Med bare to kontrastnivåer blir det striper.
+    const lagVann = (nokkel: string, grunn: string) => {
+        for (let frame = 0; frame < 4; frame++) {
+            const p = createPainter(TILE, TILE);
+            p.rect(0, 0, TILE, TILE, grunn);
+            for (let y = 0; y < TILE; y += 4) {
+                const skift = Math.round(Math.sin((frame / 4) * Math.PI * 2 + y * 0.9) * 2);
+                p.hline(((y * 3) % TILE) + skift - 4, y + 1, 6, ramp(grunn, -1));
+                p.hline(((y * 5) % TILE) + skift, y + 3, 4, ramp(grunn, 1));
+                p.px(((y * 5) % TILE) + skift + 1, y + 3, ramp(grunn, 2));
+            }
+            addCanvas(scene, `${nokkel}-${frame}`, p);
         }
-        addCanvas(scene, `flis-vann-${frame}`, p);
-    }
-    // Stillestående variant til bakingen, så ikke-animerte lag har noe å tegne.
-    const stille = createPainter(TILE, TILE);
-    stille.rect(0, 0, TILE, TILE, tema.vann);
-    addCanvas(scene, 'flis-vann-0-stille', stille);
+        // Stillestående variant til bakingen, så ikke-animerte lag har noe å
+        // tegne - ellers blir det hull i kartet der vannlaget ikke rekker.
+        const stille = createPainter(TILE, TILE);
+        stille.rect(0, 0, TILE, TILE, grunn);
+        addCanvas(scene, `${nokkel}-stille`, stille);
+    };
+    lagVann('flis-vann', tema.vann);
+    lagVann('flis-vanndyp', ramp(tema.vann, -1));
 
     // Stein/fjell: brutte flater i stedet for gjennomgående striper. De gamle
     // linjene på y=5 og y=11 dannet sammenhengende bånd tvers over fjellkjeden.
@@ -278,6 +290,7 @@ function forgeKanter(scene: Phaser.Scene, tema: Tema): void {
 export const PROP_VARIANTER: Record<string, number> = {
     tre: 3,
     busk: 2,
+    blomst: 3,
     stein: 3,
 };
 
@@ -324,6 +337,33 @@ export function forgeProps(scene: Phaser.Scene, tema: Tema): void {
         busk.outline();
         busk.behind(() => busk.ellipse(8, 12, 5, 2, 'rgba(0,0,0,0.28)'));
         addCanvas(scene, `prop-busk-${v}`, busk);
+    }
+
+    // ── Blomster ────────────────────────────────────────────────────────────
+    // Bare seks-sju piksler hver, og de gjør mer for en gressflate enn noe
+    // annet i denne fila. En eng uten dem er en farge; en eng med dem er et
+    // sted. Fargene er mette og få - hvitveis, soleie, revebjelle - så de leser
+    // som blomster og ikke som støy i teksturen.
+    const blomsterfarger: [string, string][] = [
+        ['#f2f0e4', '#c9c4ae'],
+        ['#f2cf4a', '#c9a12b'],
+        ['#c96fa8', '#9c4a80'],
+    ];
+    for (let v = 0; v < PROP_VARIANTER.blomst; v++) {
+        const [kron, skygge] = blomsterfarger[v];
+        const b = createPainter(9, 11, 1, 1);
+        const stilk = ramp(lov, -1);
+        b.vline(3, 4, 5, stilk);
+        b.px(2, 6, ramp(lov, 1));
+        b.px(4, 5, ramp(lov, 1));
+        b.rect(2, 2, 3, 2, kron);
+        b.px(3, 1, kron);
+        b.px(1, 3, kron);
+        b.px(5, 3, kron);
+        b.px(4, 3, skygge);
+        b.px(3, 3, ramp(kron, 2));
+        b.behind(() => b.ellipse(3, 9, 2, 1, 'rgba(0,0,0,0.22)'));
+        addCanvas(scene, `prop-blomst-${v}`, b);
     }
 
     // ── Kampesteiner ────────────────────────────────────────────────────────

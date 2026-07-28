@@ -26,6 +26,8 @@ import {
     forgeTallfont,
 } from './spriteforge';
 import { forgeProps, forgeTiles } from './tileforge';
+import { STANDARD_LYS, hengPaVerdenFX, type VerdenFX } from './verdenfx';
+import { STANDARD_VAER, Vaer, forgeVaer } from './systems/vaer';
 import { Effekter } from './systems/effekter';
 import { Fiender } from './systems/fiender';
 import { Interaksjon } from './systems/interaksjon';
@@ -60,8 +62,12 @@ export class WorldScene extends Phaser.Scene {
     private lootSystem!: Loot;
     /** Partikler, flytende tall og glimt. Kjenner ingen spillregler. */
     private efx = new Effekter(this);
-    /** Bakken, kollisjonen, objektene og atmosfæren. Kjenner ingen spillregler. */
+    /** Bakken, kollisjonen og objektene. Kjenner ingen spillregler. */
     private verden!: Verden;
+    /** Skyer, tåke, røyk, gnister og fugler. Alt som ligger over verden. */
+    private vaer!: Vaer;
+    /** Graderingen. Null når maskinen ikke har WebGL - da spiller vi ugradert. */
+    private lys: VerdenFX | null = null;
     private kompassTimer = 0;
     private kompassAktivt = false;
 
@@ -99,12 +105,14 @@ export class WorldScene extends Phaser.Scene {
         forgeTiles(this, tema);
         forgeProps(this, tema);
         forgeEffects(this);
+        forgeVaer(this);
         forgeSkjold(this);
         forgeTallfont(this);
         forgeLootIcons(this);
         for (const def of ENEMIES) forgeEnemy(this, def);
 
         this.verden = new Verden(this, this.kart, tema);
+        this.vaer = new Vaer(this, this.kart, tema);
         this.lootSystem = new Loot(this, this.efx, () => this.helt.sprite);
         this.skudd = new Prosjektiler(this, this.efx, this.kart, {
             spiller: () => this.helt.sprite,
@@ -173,8 +181,11 @@ export class WorldScene extends Phaser.Scene {
         this.samhandling.bygg();
         this.farkoster.bygg();
         this.fiendeSystem.byggBoss();
-        this.verden.byggAtmosfare(sted.landemerker);
+        this.verden.meldHimmel();
         this.settOppKamera();
+        // Været bygges *etter* kameraet. Fnugget og fuglene sender ut partikler
+        // der kameraet står, og før `settOppKamera` står det på 0,0 med zoom 1.
+        this.vaer.bygg(sted.landemerker);
         this.lyttPaaUi();
 
         startMusikk(sted.musikkRot, 0);
@@ -198,6 +209,13 @@ export class WorldScene extends Phaser.Scene {
         const onsket = Math.max(2, Math.min(4, Math.round(this.scale.width / 420)));
         cam.setZoom(onsket);
         cam.setRoundPixels(true);
+
+        // Etterbehandlingen henges på til slutt, når kameraet ellers står ferdig.
+        this.lys = hengPaVerdenFX(
+            this,
+            this.sted.tema.lys ?? STANDARD_LYS,
+            this.sted.tema.vaer ?? STANDARD_VAER
+        );
 
         // Skalamanageren overlever scenen. Uten avmeldingen ville hver reise
         // legge igjen en lytter til, og etter fem stedskifter ville fem
@@ -333,7 +351,11 @@ export class WorldScene extends Phaser.Scene {
         this.lootSystem.oppdater(dt);
         this.oppdaterDybde();
         this.fiendeSystem.oppdaterSpawn(dt);
-        this.verden.oppdaterAtmosfare(dt);
+        // Været går i vanlig tid, ikke i saktefilm. En sky som bråbremser fordi
+        // eleven felte en fiende, avslører at verden bare er kulisser.
+        this.vaer.oppdater(delta);
+        this.verden.oppdaterSvai(delta, (x) => this.vaer.kastevind(x));
+        this.oppdaterLys();
         this.oppdaterKompass(dt);
         // HUD-en og hjerteslaget skal gå i vanlig tid, ikke i saktefilm.
         this.oppdaterKampUi(delta);
@@ -403,6 +425,20 @@ export class WorldScene extends Phaser.Scene {
             );
             this.efx.pikselSprut(this.helt.sprite.x, this.helt.sprite.y - 10, 0xffe9a8, 22);
         }
+    }
+
+    /**
+     * Gir etterbehandlingen kameraets ståsted, så sollyset ligger i verden og
+     * ikke på skjermen. Uten dette ville lysfeltene følge etter eleven når hun
+     * går, og lese som en flekk på linsa i stedet for som sol mellom skyene.
+     */
+    private oppdaterLys() {
+        if (!this.lys) return;
+        const cam = this.cameras.main;
+        this.lys.tid = this.vaer.sekunder;
+        this.lys.skiftX = cam.scrollX;
+        this.lys.skiftY = cam.scrollY;
+        this.lys.zoom = cam.zoom;
     }
 
     /**

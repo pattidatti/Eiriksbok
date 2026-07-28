@@ -5,9 +5,9 @@
 // som helst annet sted.
 
 import Phaser from 'phaser';
-import type { LandmarkDef, Tema } from '../../types';
+import type { Tema } from '../../types';
 import { fraSpill } from '../bridge';
-import { hexToNum } from '../pixels';
+import { makeRng } from '../pixels';
 import { TILE } from '../spriteforge';
 import {
     FLIS_PRIORITET,
@@ -18,8 +18,12 @@ import {
 } from '../tileforge';
 import type { WorldMap } from '../worldgen';
 
-/** Hvor mange tåkeflak som driver over verden. Holdt nede med vilje, se under. */
-const TAAKEFLAK = 14;
+/** Alt som svaier i vinden: hvilket bilde, hvor i takten, og hvor mye. */
+interface Svai {
+    bilde: Phaser.GameObjects.Image;
+    fase: number;
+    amplitude: number;
+}
 
 export class Verden {
     private scene: Phaser.Scene;
@@ -28,9 +32,8 @@ export class Verden {
 
     private vannLag: Phaser.GameObjects.RenderTexture[] = [];
     private vannFrame = 0;
-    private taakeflak: { bilde: Phaser.GameObjects.Image; fart: number }[] = [];
-    private baalLys: Phaser.GameObjects.Image[] = [];
-    private baalPuls = 0;
+    private svaiende: Svai[] = [];
+    private tid = 0;
 
     constructor(scene: Phaser.Scene, kart: WorldMap, tema: Tema) {
         this.scene = scene;
@@ -67,6 +70,13 @@ export class Verden {
             return Math.abs(h) % FLIS_VARIANTER[flis];
         };
 
+        // Hvor dypt vannet er: hvor mange ruter det er ut til nærmeste land.
+        // Brukes bare til å velge mellom to farger, men det er nok til at
+        // fjorden får en bunn som skråner i stedet for å være en blå flate.
+        const dybdeKart = this.maalVanndybde();
+        const vannNokkel = (x: number, y: number) =>
+            dybdeKart[y][x] >= 3 ? 'flis-vanndyp' : 'flis-vann';
+
         const vannRuter: [number, number][] = [];
         for (let y = 0; y < hoyde; y++) {
             for (let x = 0; x < bredde; x++) {
@@ -74,7 +84,7 @@ export class Verden {
                 if (flis === 'vann') {
                     vannRuter.push([x, y]);
                     // Stillestående vann bakes inn, så det aldri blir hull i kartet.
-                    rt.drawFrame('flis-vann-0-stille', undefined, x * TILE, y * TILE);
+                    rt.drawFrame(`${vannNokkel(x, y)}-stille`, undefined, x * TILE, y * TILE);
                     continue;
                 }
                 rt.drawFrame(
@@ -131,6 +141,27 @@ export class Verden {
             }
         }
 
+        // ── Blomstene bakes inn ─────────────────────────────────────────────
+        // De ligger på bakken, de er ni piksler høye, og ingen går noen gang
+        // bak dem. Da har de ingenting i visningslista å gjøre: hundre og ti
+        // egne bilder ville vært hundre og ti sorteringer og tegnekall per
+        // bilde, for detaljer som aldri flytter seg i forhold til gresset.
+        //
+        // Prisen er at de ikke kan svaie. Den er verdt å betale: det er trærne
+        // som selger vinden, ikke blomstene, og trærne svaier fortsatt.
+        for (const prop of this.kart.props) {
+            if (prop.kind !== 'blomst') continue;
+            const bilde = this.scene.textures.get(`prop-blomst-${prop.variant}`).getSourceImage();
+            // `draw` setter øvre venstre hjørne, mens propsene er plassert
+            // etter origo (0,5 / 0,85). Uten forskyvningen står blomstene et
+            // halvt bilde nord-vest for der de hører hjemme.
+            rt.draw(
+                `prop-blomst-${prop.variant}`,
+                prop.x - bilde.width / 2,
+                prop.y - bilde.height * 0.85
+            );
+        }
+
         // ── Vannet får leve ─────────────────────────────────────────────────
         // Fire ferdigbakte lag som veksler. Tidligere lå det 268 enkeltsprites
         // her, hver med sin egen animasjonskomponent.
@@ -158,7 +189,12 @@ export class Verden {
                     .setDepth(-999)
                     .setVisible(frame === 0);
                 for (const [x, y] of vannRuter) {
-                    lag.drawFrame(`flis-vann-${frame}`, undefined, x * TILE - bx, y * TILE - by);
+                    lag.drawFrame(
+                        `${vannNokkel(x, y)}-${frame}`,
+                        undefined,
+                        x * TILE - bx,
+                        y * TILE - by
+                    );
                 }
                 this.vannLag.push(lag);
             }
@@ -171,6 +207,46 @@ export class Verden {
                 },
             });
         }
+    }
+
+    /**
+     * Avstanden fra hver vannrute ut til nærmeste land, i ruter.
+     *
+     * En bølgefront som sprer seg innover fra kysten: alt land er 0, og hver
+     * runde legger ett hakk på naboene som ennå ikke er nådd. Kartet er 60x50,
+     * så dette er ferdig før noen rekker å se på det.
+     */
+    private maalVanndybde(): number[][] {
+        const { bredde, hoyde, terreng } = this.kart;
+        const dybde: number[][] = [];
+        const front: [number, number][] = [];
+        for (let y = 0; y < hoyde; y++) {
+            dybde[y] = [];
+            for (let x = 0; x < bredde; x++) {
+                const vann = terreng[y][x] === 'vann';
+                dybde[y][x] = vann ? Infinity : 0;
+                if (!vann) front.push([x, y]);
+            }
+        }
+        for (let i = 0; i < front.length; i++) {
+            const [x, y] = front[i];
+            for (const [dx, dy] of [
+                [0, -1],
+                [0, 1],
+                [-1, 0],
+                [1, 0],
+            ]) {
+                const nx = x + dx;
+                const ny = y + dy;
+                if (nx < 0 || ny < 0 || nx >= bredde || ny >= hoyde) continue;
+                if (dybde[ny][nx] !== Infinity) continue;
+                dybde[ny][nx] = dybde[y][x] + 1;
+                front.push([nx, ny]);
+            }
+        }
+        // Vann helt uten land i nærheten (et kart som er bare hav) ville ellers
+        // stå igjen som Infinity og alltid telles som dypt. Det er riktig svar.
+        return dybde;
     }
 
     /**
@@ -232,8 +308,11 @@ export class Verden {
      */
     byggProps(): void {
         const solide = this.scene.physics.add.staticGroup();
+        const rng = makeRng(60313);
 
         for (const prop of this.kart.props) {
+            // Blomstene er bakt inn i bakketeksturen (se byggTerreng).
+            if (prop.kind === 'blomst') continue;
             const nokkel =
                 prop.kind === 'tre' || prop.kind === 'busk' || prop.kind === 'stein'
                     ? `prop-${prop.kind}-${prop.variant}`
@@ -248,6 +327,19 @@ export class Verden {
             if (prop.tint !== 0) {
                 const n = Math.max(0, Math.min(255, 255 + prop.tint));
                 bilde.setTint((n << 16) | (n << 8) | n);
+            }
+
+            // Løvverket svaier. Origo ligger på 0,85 av høyden - altså nede ved
+            // roten - så en rotasjon vipper krona og lar stammen stå. Utslaget
+            // er med vilje bittelite: to-tre grader. Mer enn det, og skogen ser
+            // ut som den danser i stedet for å puste.
+            const utslag: Record<string, number> = { tre: 0.05, busk: 0.032 };
+            if (utslag[prop.kind] !== undefined) {
+                this.svaiende.push({
+                    bilde,
+                    fase: rng() * Math.PI * 2,
+                    amplitude: utslag[prop.kind] * (0.7 + rng() * 0.6),
+                });
             }
 
             if (prop.solid && prop.treff) {
@@ -277,58 +369,28 @@ export class Verden {
         });
     }
 
-    byggAtmosfare(landemerker: LandmarkDef[]): void {
-        // Himmeltonen og vignetten legges av React oppå lerretet (se
-        // `Atmosfare` i RpgPage). Da slipper de å kjempe mot kamerazoomen, og
-        // de blir skarpe uansett skjermoppløsning.
+    /**
+     * Himmeltonen legges av React oppå lerretet (se `Atmosfare` i RpgPage). Da
+     * slipper den å kjempe mot kamerazoomen, og den blir skarp uansett
+     * skjermoppløsning.
+     *
+     * Alt annet i lufta - skyer, tåke, røyk, gnister, fugler - bor i `Vaer`.
+     * Det lå her før, og det gjorde denne modulen til to ting på én gang.
+     */
+    meldHimmel(): void {
         fraSpill.emit('atmosfare', { himmel: this.tema.himmel });
-
-        // Tåkeslør som driver over verden. Dette er selve temaet i spillet:
-        // Glemselen er tåke, og før fantes den bare i teksten.
-        // Antallet er holdt nede med vilje: hvert flak er en stor gjennomsiktig
-        // flate, og overtegning er det som koster på en svak Chromebook-GPU.
-        for (let i = 0; i < TAAKEFLAK; i++) {
-            const naer = i % 2 === 0;
-            const lag = this.scene.add
-                .image(
-                    Math.random() * this.kart.bredde * TILE,
-                    Math.random() * this.kart.hoyde * TILE,
-                    'fx-taake'
-                )
-                // Ett lag under figurene og ett over: da får tåka dybde.
-                .setDepth(naer ? 29000 : -850)
-                .setScale(naer ? 1.8 + Math.random() * 1.2 : 3 + Math.random() * 2)
-                .setAlpha(naer ? 0.11 + Math.random() * 0.07 : 0.15 + Math.random() * 0.09)
-                .setTint(hexToNum(this.tema.himmel));
-            this.taakeflak.push({ bilde: lag, fart: (naer ? 11 : 4) + Math.random() * 7 });
-        }
-
-        // Bålet lyser. Ett bål i hele bygda, og det ga null lys.
-        for (const lm of landemerker) {
-            if (lm.kind !== 'baal') continue;
-            const [tx, ty] = lm.tile;
-            const glo = this.scene.add
-                .image(tx * TILE + 8, ty * TILE + 4, 'fx-glo')
-                .setTint(0xffb23f)
-                .setAlpha(0.3)
-                .setScale(2.2)
-                .setDepth(-800)
-                .setBlendMode(Phaser.BlendModes.ADD);
-            this.baalLys.push(glo);
-        }
     }
 
-    oppdaterAtmosfare(delta: number): void {
-        const dt = delta / 1000;
-        const kartB = this.kart.bredde * TILE;
-        for (const flak of this.taakeflak) {
-            flak.bilde.x += flak.fart * dt;
-            if (flak.bilde.x > kartB + 120) flak.bilde.x = -120;
+    /**
+     * Får skogen til å puste. `kastevind` kommer fra `Vaer`, så løvverket og
+     * skydekket driver etter samme vind - det er den delte kilden som gjør at
+     * det leser som vær og ikke som to uavhengige animasjoner.
+     */
+    oppdaterSvai(delta: number, kastevind: (x: number) => number): void {
+        this.tid += delta / 1000;
+        for (const s of this.svaiende) {
+            s.bilde.rotation =
+                Math.sin(this.tid * 1.9 + s.fase) * s.amplitude * kastevind(s.bilde.x);
         }
-        // Bålet flakker.
-        this.baalPuls += delta;
-        const puls =
-            0.26 + Math.sin(this.baalPuls / 190) * 0.05 + Math.sin(this.baalPuls / 71) * 0.03;
-        for (const lys of this.baalLys) lys.setAlpha(puls);
     }
 }
