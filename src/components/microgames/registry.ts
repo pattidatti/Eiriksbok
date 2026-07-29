@@ -864,7 +864,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'ut-av-afrika-3d',
         title: 'Ut av Afrika',
         description:
-            'Dra en tids-spak framover fra 200 000 år siden og følg menneskene ut fra Afrika i 3D: en lysende front vandrer langs bueformede ruter til Asia, Europa, Amerika og til slutt Norge, mens innlandsisen i nord trekker seg tilbake. Klikk hver verdensdel etter hvert som den nås for å slå deg ned. Lyspæren: alle mennesker stammer fra Afrika, og Norge ble befolket aller sist, for rundt 11 000 år siden, etter at isen smeltet - Norges historie er svært ung mot menneskets 200 000 år.',
+            'Dra en tids-spak framover fra 300 000 år siden og følg menneskene ut fra Afrika i 3D: en lysende front vandrer langs bueformede ruter til Asia, Europa, Amerika og til slutt Norge, mens innlandsisen i nord trekker seg tilbake. Klikk hver verdensdel etter hvert som den nås for å slå deg ned. Lyspæren: alle mennesker stammer fra Afrika, og Norge ble befolket aller sist, for rundt 11 000 år siden, etter at isen smeltet - Norges historie er svært ung mot menneskets 300 000 år.',
         estimatedSeconds: 140,
         loader: () => import('./UtvandringenFraAfrika3D'),
         Component: UtvandringenFraAfrika3D as never,

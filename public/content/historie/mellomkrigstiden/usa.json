@@ -6,7 +6,8 @@
     "readTime": "18 minutter",
     "layout": "rich",
     "heroImage": "/images/mellomkrigstiden/hero_usa.webp",
-    "summary": "Fra grenseløs optimisme til dyp fortvilelse – USAs reise gjennom mellomkrigstiden er historien om kapitalismens ville syklus.",
+    "summary": "Fra grenseløs optimisme til dyp fortvilelse - USAs reise gjennom mellomkrigstiden er historien om kapitalismens ville syklus.",
+    "lastUpdated": "2026-07-29",
     "content": [
         {
             "type": "paragraph",
@@ -20,18 +21,18 @@
         },
         {
             "type": "paragraph",
-            "text": "På 1920-tallet forandret USA seg i et tempo verden aldri hadde sett. Bilen, som hadde vært en luksus for de rike, ble masseprodusert av Henry Ford og parkert i oppkjørselen til vanlige amerikanere. I 1920 hadde én av ti amerikanere bil. I 1929 var det én av fem. Bilen skapte forsteder, motorveier, bensinstasjoner og en helt ny livsstil."
+            "text": "På 1920-tallet forandret USA seg i et tempo verden aldri hadde sett. Bilen, som hadde vært en luksus for de rike, ble masseprodusert av Henry Ford. Han innførte systematisk standardisering og samlebåndproduksjon, og fra 1910 til 1916 falt prisen på en T-Ford fra 780 til 360 dollar mens det årlige salget steg fra 20 000 til 600 000 biler (Rabben, 2025). Bilen gikk fra å være luksus til å bli noe middelklassen kunne eie, og den skapte forsteder, motorveier, bensinstasjoner og en helt ny livsstil."
         },
         {
             "type": "paragraph",
-            "text": "Radioen forvandlet underholdning og informasjon. Plutselig kunne en president tale direkte til millioner av hjem. Reklamebransjen eksploderte. Jazzen – Afrikas rytmer filtrert gjennom New Orleans – danset opp Mississippi til Chicago og New York, hvor den ble lydsporet til et tiår. Louis Armstrong, Duke Ellington og Bessie Smith ble nasjonale stjerner."
+            "text": "Radioen forvandlet underholdning og informasjon. Plutselig kunne en president tale direkte til millioner av hjem. Reklamebransjen eksploderte. Jazzen - Afrikas rytmer filtrert gjennom New Orleans - danset opp Mississippi til Chicago og New York, hvor den ble lydsporet til et tiår. Louis Armstrong, Duke Ellington og Bessie Smith ble nasjonale stjerner."
         },
         {
             "type": "FactBox",
             "title": "Jazz Age i tall",
             "facts": [
                 "Bilproduksjonen økte fra 1,9 millioner i 1920 til 5,3 millioner i 1929.",
-                "Innen 1930 hadde 40% av amerikanske hjem radio.",
+                "Innen 1930 hadde 40 prosent av amerikanske hjem radio.",
                 "Elektrisitetsforbruket doblet seg på 1920-tallet.",
                 "Hollywood produserte 800 filmer i året på slutten av tiåret."
             ]
@@ -44,21 +45,21 @@
         },
         {
             "type": "paragraph",
-            "text": "Krigen hadde frigjort kvinnene. De hadde jobbet på fabrikker mens mennene var i skyttergravene. Nå nektet de å gå tilbake til kjøkkenbenken. «Flapper»-piken ble symbolet på den nye kvinnen: kort hår, korte skjørt, sigaretter, makeup, og – skandale! – hun danset alene med menn hun ikke var gift med. I 1920 fikk amerikanske kvinner stemmerett."
+            "text": "Krigen hadde frigjort kvinnene. De hadde jobbet på fabrikker mens mennene var i skyttergravene. Nå nektet de å gå tilbake til kjøkkenbenken. «Flapper»-piken ble symbolet på den nye kvinnen: kort hår, korte skjørt, sigaretter, makeup, og - skandale! - hun danset alene med menn hun ikke var gift med. I 1920 fikk amerikanske kvinner stemmerett."
         },
         {
             "type": "paragraph",
-            "text": "Samtidig hersket forbudstiden (Prohibition). Det 18. grunnlovstillegget, som trådte i kraft i 1920, forbød produksjon, salg og transport av alkohol. Intensjonen var å skape et moralsk, edruelig Amerika. Resultatet ble det motsatte. Forbudet skapte et svart marked av enorme dimensjoner. Speakeasies – ulovlige barer skjult bak falske fasader – dukket opp i hver storby. Og organisert kriminalitet blomstret."
+            "text": "Samtidig hersket forbudstiden (Prohibition). Det 18. grunnlovstillegget, som trådte i kraft i 1920, forbød produksjon, salg og transport av alkohol. Intensjonen var å skape et moralsk, edruelig Amerika. Resultatet ble det motsatte. Forbudet fikk uheldige sidevirkninger: hjemmebrenning, smugling og ulovlige serveringssteder (Braut, 2026). Speakeasies - ulovlige barer skjult bak falske fasader - dukket opp i hver storby. Og organisert kriminalitet blomstret."
         },
         {
             "type": "QuoteBlock",
-            "quote": "Prohibition is better than no liquor at all.",
-            "source": "Will Rogers",
-            "context": "Amerikansk komiker som fanget tidens kynisme."
+            "quote": "Et stort sosialt og økonomisk eksperiment, edelt i motiv og vidtrekkende i formål.",
+            "source": "President Herbert Hoover om forbudstiden, 1928",
+            "context": "Uttrykket ble kortet ned til «det edle eksperimentet», og navnet ble hengende ved forbudstiden - etter hvert like mye i hån som i ros."
         },
         {
             "type": "paragraph",
-            "text": "Al Capone i Chicago tjente 100 millioner dollar i året på smuglervirksomhet. Politikere ble bestukket. Politi så en annen vei. Forbudet varte til 1933, da det ble opphevet av «The New Deal»-regjeringen – en erkjennelse av at det hadde skapt flere problemer enn det løste."
+            "text": "Al Capone i Chicago kjøpte opp nedlagte bryggerier og drev dem videre på tross av forbudet. Bare i 1927 hadde han en fortjeneste på anslagsvis 105 millioner dollar (Aukrust, 2026). Politifolk og forbudsagenter ble stadig fristet av bestikkelser, eller av muligheten til å gå inn i smuglingen selv, og tilliten til politiet ble undergravd (PBS, 2026). Forbudet varte til 1933, da det ble opphevet (Braut, 2026). Roosevelt var motstander av forbudstiden, og det var et standpunkt som var populært hos folk (Godbolt & Sirevåg, 2025)."
         },
         {
             "type": "header",
@@ -68,11 +69,11 @@
         },
         {
             "type": "paragraph",
-            "text": "Gjennom 1920-tallet steg aksjekursene på Wall Street høyere og høyere. Alle ville være med. Vanlige mennesker – taxisjåfører, frisører, lærere – begynte å spekulere. De lånte penger for å kjøpe aksjer, sikre på at kursene bare ville fortsette oppover. Dette kalles å kjøpe «on margin» – du betalte bare en brøkdel av aksjens verdi og lånte resten. Så lenge markedet steg, var alle vinnere."
+            "text": "Gjennom 1920-tallet steg aksjekursene på Wall Street høyere og høyere. Aksjespekulanter drev kursene til rekordhøyder sommeren og høsten 1929. Men det var ikke hele folket som satt med aksjer: bare rundt én prosent av amerikanerne eide aksjer i 1929. Til gjengjeld var to tredeler av aksjekjøpene finansiert med lån (Billington & Reisegg, 2025). Dette kalles å kjøpe «on margin» - du betalte bare en brøkdel av aksjens verdi og lånte resten. Så lenge markedet steg, var alle vinnere."
         },
         {
             "type": "paragraph",
-            "text": "Men under overflaten var økonomien syk. Kjøpekraften holdt ikke tritt med produksjonen. Bønder led under lave priser på landbruksprodukter. Ulikheten økte: de rike ble rikere, mens vanlige arbeidere stagnerte. Bankene var løst regulert og tok enorme risikoer. Og stadig mer av den økonomiske aktiviteten var basert på kreditt – fremtidig inntekt som kanskje aldri ville komme."
+            "text": "Men under overflaten var økonomien syk. Kjøpekraften holdt ikke tritt med produksjonen. Bønder led under lave priser på landbruksprodukter. Ulikheten økte: de rike ble rikere, mens vanlige arbeidere stagnerte. Bankene var løst regulert og tok enorme risikoer. Og stadig mer av den økonomiske aktiviteten var basert på kreditt - fremtidig inntekt som kanskje aldri ville komme."
         },
         {
             "type": "header",
@@ -82,11 +83,11 @@
         },
         {
             "type": "paragraph",
-            "text": "Boblen sprakk i oktober 1929. Den 24. oktober – «Black Thursday» – begynte panikken. Investorer prøvde desperat å selge, men det var ingen kjøpere. Kursene stupte. Den følgende tirsdagen, 29. oktober, kollapset markedet fullstendig. 16 millioner aksjer ble dumpet på markedet. Formuer som hadde blomstret i årevis, fordampet på timer."
+            "text": "Boblen sprakk i oktober 1929. Den 24. oktober - «Black Thursday» - begynte panikken, og 13 millioner aksjer ble omsatt på børsen. Kursene stupte. Den følgende tirsdagen, 29. oktober, kollapset markedet fullstendig: over 16 millioner aksjer ble solgt (Billington & Reisegg, 2025). Formuer som hadde blomstret i årevis, fordampet på timer."
         },
         {
             "type": "paragraph",
-            "text": "Men dette var bare begynnelsen. Krakket utløste en dominoeffekt. Banker som hadde lånt ut penger til aksjespekulasjon, gikk konkurs. Når bankene falt, mistet folk sparepengene sine. Bedrifter som ikke fikk kreditt, måtte stenge. Arbeidsløsheten eksploderte. I 1933 var hver fjerde amerikaner arbeidsledig. Folk sto i brødkøer. Familier mistet hjemmene sine. «Hoovervilles» – slumleirer oppkalt etter den impopulære president Hoover – dukket opp i byene."
+            "text": "Men dette var bare begynnelsen. Krakket utløste en dominoeffekt. Banker som hadde lånt ut penger til aksjespekulasjon, gikk konkurs, og flere tusen banker ble avviklet i USA i årene etter krakket (Thomassen, 2025). Av alle bankene som fantes i 1930, hadde 20 prosent gått under innen 1933 (Romer, 2026). Når bankene falt, mistet folk sparepengene sine. Bedrifter som ikke fikk kreditt, måtte stenge. Arbeidsløsheten eksploderte: fra 1,5 millioner i 1929 til 14,5 millioner i mars 1933 - hver fjerde amerikaner sto uten arbeid (Billington & Reisegg, 2025). Folk sto i brødkøer. Familier mistet hjemmene sine. «Hoovervilles» - slumleirer oppkalt etter den impopulære president Hoover - dukket opp i byene."
         },
         {
             "type": "TimelineComponent",
@@ -128,15 +129,19 @@
         },
         {
             "type": "paragraph",
-            "text": "I november 1932 ble Franklin Delano Roosevelt – «FDR» – valgt til president med et overveldende flertall. Han lovet «a new deal for the American people». I sin innsettelsestale erklærte han: «The only thing we have to fear is fear itself.» Det var et psykologisk vendepunkt."
+            "text": "I november 1932 ble Franklin Delano Roosevelt - «FDR» - valgt til president med 22,8 millioner stemmer mot Herbert Hoovers 15,7 millioner (Godbolt & Sirevåg, 2025). Uttrykket «new deal» brukte han allerede da han ble partiets presidentkandidat på landsmøtet i 1932: han lovet folk en bedre hverdag ved å dele ut kortene på nytt (Godbolt, 2024). I innsettelsestalen 4. mars 1933 erklærte han at «the only thing we have to fear is fear itself» (Roosevelt, 1933). Det var et psykologisk vendepunkt."
         },
         {
             "type": "paragraph",
-            "text": "The New Deal var ikke én politikk, men et helt arsenal av reformer, eksperimenter og arbeidsprogrammer. De første 100 dagene av FDRs presidentskap var en tornado av lovgivning: Emergency Banking Act gjenopprettet tilliten til bankene. Civilian Conservation Corps satte unge menn i arbeid med naturvern. Agricultural Adjustment Act hjalp bøndene. Social Security Act skapte et sikkerhetsnett for de eldre."
+            "text": "The New Deal var ikke én politikk, men et helt arsenal av reformer, eksperimenter og arbeidsprogrammer. Roosevelt-regjeringen fikk gjennom så mange vedtak i de første hundre dagene at uttrykket «de første hundre dagene» siden har blitt brukt til å måle hvor godt nye presidenter lykkes (Godbolt & Sirevåg, 2025). Han stengte alle bankene i en periode for å hindre at finanssystemet kollapset, og jordbruksloven fra 1933 skulle få ned overproduksjonen og øke inntektene til bøndene gjennom støtte (Godbolt, 2024). Civilian Conservation Corps satte unge menn i arbeid med naturvern."
         },
         {
             "type": "paragraph",
-            "text": "The New Deal var kontroversielt. Konservative kalte det sosialisme. Radikale mente det ikke gikk langt nok. Høyesterett underkjente flere lover. Men for millioner av amerikanere representerte det håp – og en stat som endelig brydde seg om vanlige folks skjebne."
+            "text": "Reformene stoppet ikke der. I den andre New Deal-bølgen mellom 1935 og 1938 kom Works Progress Administration, et stort program for offentlig sysselsetting (Godbolt, 2024). Den viktigste reformen var folketrygden, social security, som ble opprettet i 1935 og ble bærebjelken i den amerikanske velferdsstaten (Godbolt & Sirevåg, 2025)."
+        },
+        {
+            "type": "paragraph",
+            "text": "The New Deal var kontroversielt. Konservative kalte det sosialisme. Radikale mente det ikke gikk langt nok - senator Huey Long krevde en radikal omfordeling av rikdommen. I 1935 erklærte Høyesterett deler av NRA og jordbruksloven grunnlovsstridige (Godbolt, 2024). Men for millioner av amerikanere representerte New Deal håp - og en stat som endelig brydde seg om vanlige folks skjebne."
         },
         {
             "type": "FactBox",
@@ -156,11 +161,11 @@
         },
         {
             "type": "paragraph",
-            "text": "Da andre verdenskrig brøt ut i Europa i 1939, var den amerikanske økonomien fortsatt ikke fullt restituert. Arbeidsløsheten var ned fra 25% til rundt 15%, men det var krigsproduksjonen som endelig endte depresjonen. USAs rolle som «demokratiets arsenal» under andre verdenskrig fullførte den økonomiske gjenreisningen."
+            "text": "Da andre verdenskrig brøt ut i Europa i 1939, hadde industriproduksjonen tatt seg merkbart opp igjen siden 1933, og arbeidsløsheten var på vei ned (Thomassen, 2025). Men den var fortsatt høyere enn før krisen. Det var den kraftige økningen i militære utgifter i årene før USA selv gikk inn i krigen som endelig fikk arbeidsløsheten under nivået fra før depresjonen, og det skjedde først i 1942 (Romer, 2026)."
         },
         {
             "type": "paragraph",
-            "text": "Men arven fra mellomkrigstiden var varig. The New Deal etablerte prinsippet om at staten hadde et ansvar for sine borgeres velferd. Social Security, bankreguleringer og arbeidsrettigheter ble varige deler av det amerikanske samfunnet. Og leksjonene fra 1929 – om farene ved uregulert spekulasjon og for høy gjeldsbelastning – skulle bli viktige igjen, og igjen, og igjen."
+            "text": "Men arven fra mellomkrigstiden var varig. The New Deal etablerte prinsippet om at staten hadde et ansvar for sine borgeres velferd. Social security, bankreguleringer og arbeidsrettigheter ble varige deler av det amerikanske samfunnet. Og leksjonene fra 1929 - om farene ved uregulert spekulasjon og for høy gjeldsbelastning - skulle bli viktige igjen, og igjen, og igjen."
         },
         {
             "type": "paragraph",
@@ -186,6 +191,24 @@
                     "Teksten sier at leksjonene fra 1929 kom igjen 'igjen, og igjen, og igjen'. Finn ut hva finanskrisen i 2008 handlet om, og skriv tre likheter med det som skjedde i 1929.",
                     "Skriv en kort tekst (5-8 setninger) der du forestiller deg at du er en vanlig amerikaner i 1933 som har mistet både jobb og sparepenger. Hva føler du, og hva håper du at presidenten skal gjøre?",
                     "Diskuter med en partner: Hvor mye ansvar bør staten ha for folk som mister jobben i en krise? Bruk The New Deal som eksempel i argumentene deres."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aukrust, M. (2026). *Al Capone*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Al_Capone](https://snl.no/Al_Capone)",
+                    "Billington, L. & Reisegg, Ø. (2025). *Wall Street-krakket i 1929*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Wall_Street-krakket_i_1929](https://snl.no/Wall_Street-krakket_i_1929)",
+                    "Braut, G. S. (2026). *Avholdsbevegelsen*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/avholdsbevegelsen](https://snl.no/avholdsbevegelsen)",
+                    "Godbolt, J. (2024). *New Deal*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/New_Deal](https://snl.no/New_Deal)",
+                    "Godbolt, J. & Sirevåg, T. (2025). *Franklin D. Roosevelt*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Franklin_D._Roosevelt](https://snl.no/Franklin_D._Roosevelt)",
+                    "PBS. (2026). *Unintended consequences*. Prohibition - a film by Ken Burns and Lynn Novick. Hentet 29.07.2026 fra [pbs.org](https://www.pbs.org/kenburns/prohibition/unintended-consequences)",
+                    "Rabben, M. B. (2025). *Henry Ford*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Henry_Ford](https://snl.no/Henry_Ford)",
+                    "Romer, C. D. (2026). *Great Depression*. Encyclopaedia Britannica. Hentet 29.07.2026 fra [britannica.com/money/Great-Depression](https://www.britannica.com/money/Great-Depression)",
+                    "Roosevelt, F. D. (1933). *Inaugural address, 4. mars 1933*. The American Presidency Project, University of California, Santa Barbara. Hentet 29.07.2026 fra [presidency.ucsb.edu](https://www.presidency.ucsb.edu/documents/inaugural-address-8)",
+                    "Thomassen, E. (2025). *Den store depresjonen*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/den_store_depresjonen](https://snl.no/den_store_depresjonen)"
                 ]
             }
         }
