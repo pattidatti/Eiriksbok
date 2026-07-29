@@ -27,6 +27,16 @@ for (const kap of KAPITLER) {
     await entreEpoke(page, { navn: 'Torstein', kapittel: kap.nr, sisteSted: kap.sted });
     await page.waitForTimeout(3500);
 
+    // Opptakten først. Den dekker hele flaten i kapittel 2-5, og HUD-en tegnes
+    // ikke lenger under den - et overlegg tar den ned, slik `Skjermkontroll` og
+    // `HubHud` alltid har blitt tatt ned. Leser man kortet før opptakten er
+    // lest, leser man en skjerm eleven ikke har fått ennå.
+    const opptakt = page.locator('div.z-\\[60\\] button').last();
+    if (await opptakt.count()) {
+        await opptakt.click({ timeout: 15000 });
+        await page.waitForTimeout(900);
+    }
+
     // 1. Kortet i HUD-en.
     const kort = await page.evaluate(() => {
         const el = document.querySelector('[data-prove="oppgave"]');
@@ -35,15 +45,7 @@ for (const kap of KAPITLER) {
         return { tittel: (p[0]?.textContent || '').trim(), mal: (p[1]?.textContent || '').trim() };
     });
 
-    // 2. Oppdragsloggen. Opptakten dekker hele skjermen i kapittel 2-5, kan
-    // ikke lukkes med Esc (med vilje - den er kapittelets første setning), og
-    // knappen dukker opp først etter at avsnittene har tonet inn. Den må
-    // klikkes, slik eleven også må.
-    const opptakt = page.locator('div.z-\\[60\\] button').last();
-    if (await opptakt.count()) {
-        await opptakt.click({ timeout: 15000 });
-        await page.waitForTimeout(900);
-    }
+    // 2. Oppdragsloggen.
     await page.keyboard.press('l');
     await page.waitForTimeout(700);
     const steg = await page.evaluate(() =>

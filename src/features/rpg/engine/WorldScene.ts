@@ -184,7 +184,9 @@ export class WorldScene extends Phaser.Scene {
         this.skudd = new Prosjektiler(this, this.efx, this.kart, {
             spiller: () => this.helt.sprite,
             fiender: () => this.fiendeSystem.alle(),
-            skadSpiller: (skade) => this.helt.skad(skade),
+            // Gjennom forsvaret, ikke utenom det. Denne gikk rett i `skad()`,
+            // og da kunne ingen pil blokkeres i hele spillet.
+            skadSpiller: (x, y, skade) => this.helt.prosjektilTreff(x, y, skade),
             skadFiende: (f, skade, kritisk, vinkel) =>
                 this.fiendeSystem.skad(f, skade, kritisk, vinkel),
         });

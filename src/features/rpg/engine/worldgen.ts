@@ -117,7 +117,16 @@ export interface NordvikValg {
 }
 
 export function byggNordvik({
-    langskip = [3, 46],
+    // Ved brygga, ikke oppe i fjellet. Standardverdien var [3, 46], og kartet
+    // er 64x48 - alt sør for y=44 er fjellet som lukker fjorden. Skroget med
+    // skjoldene lå halvveis oppå den grå berget, i både 793 og 1030 (som ikke
+    // sender egen verdi og derfor arvet feilen). 872 sender null, og 995 sender
+    // kongens knarr, så de to slapp unna.
+    //
+    // [2, 43] legger skipet langs vestenden av brygga, som går på y=42. Baugen
+    // rekker akkurat borti sanden, og det er som det skal være: et skip ligger
+    // ikke og svever midt i en fjord, det ligger fortøyd.
+    langskip = [2, 43],
     hauger = [],
     hov = null,
     kirke = null,

@@ -1005,11 +1005,17 @@ export class Spiller {
         this.kroker.meldForsvar?.(utfall.art === 'blokk' ? 'blokk' : utfall.art, fiende);
 
         if (utfall.art === 'parade') {
-            this.parade(fiende);
+            this.parade(
+                Math.atan2(fiende.sprite.y - this.sprite.y, fiende.sprite.x - this.sprite.x),
+                fiende
+            );
             return false;
         }
         if (utfall.art === 'blokk') {
-            this.blokk(fiende, utfall.vernBrast);
+            this.blokk(
+                Math.atan2(this.sprite.y - fiende.sprite.y, this.sprite.x - fiende.sprite.x),
+                utfall.vernBrast
+            );
             return false;
         }
 
@@ -1027,11 +1033,48 @@ export class Spiller {
     }
 
     /**
+     * En pil eller et kastespyd som lander på eleven.
+     *
+     * Går gjennom nøyaktig samme forsvar som et sverdslag. Før gikk skudd rett
+     * i `skad()` og forbi `vurderTreff` - altså kunne ingen pil blokkeres, og
+     * bueskytteren kunne ikke møtes med skjold i det hele tatt. Et
+     * vikingrundskjold som ikke stopper piler er den ene tingen en fjortenåring
+     * prøver først, og den ene tingen skjoldet er kjent for.
+     *
+     * Vinkelen regnes fra der skuddet er, ikke fra der det ble sluppet. Det er
+     * riktig av samme grunn som for nærkamp: skjoldet dekker den veien hun ser,
+     * og en pil i ryggen skal treffe.
+     *
+     * Returnerer true når treffet gikk gjennom.
+     */
+    prosjektilTreff(x: number, y: number, skade: number): boolean {
+        const utfall = this.kamp.vurderTreff({
+            vinkelTilAngriper: Math.atan2(y - this.sprite.y, x - this.sprite.x),
+            retningsVinkel: this.retningsVinkel(),
+            tungt: skade >= 12,
+        });
+
+        if (utfall.art === 'parade') {
+            this.parade(Math.atan2(y - this.sprite.y, x - this.sprite.x));
+            return false;
+        }
+        if (utfall.art === 'blokk') {
+            this.blokk(Math.atan2(this.sprite.y - y, this.sprite.x - x), utfall.vernBrast);
+            return false;
+        }
+
+        const forSkade = useRpgStore.getState().hp;
+        this.skad(skade);
+        if (useRpgStore.getState().hp < forSkade) this.kamp.meldTreff();
+        return true;
+    }
+
+    /**
      * Perfekt parade. Belønningen må være umulig å overse - det er dette
      * øyeblikket hele kampsystemet er bygget rundt, og eleven skal ville ha det
      * igjen med én gang.
      */
-    private parade(fiende: Fiende) {
+    private parade(v: number, fiende?: Fiende) {
         this.gardPress = 200;
         sfx.paradeKlang();
         this.kroker.hitstop(KAMP.hitstopParade);
@@ -1043,19 +1086,23 @@ export class Spiller {
 
         // Angriperen mister balansen: full åpning. Kameraet dyttes *mot* henne,
         // ikke bort - det er hun som vant utvekslingen.
-        const v = Math.atan2(fiende.sprite.y - this.sprite.y, fiende.sprite.x - this.sprite.x);
+        //
+        // En pariert pil har ingen angriper å slå ut av balanse - skytteren
+        // står tjue meter unna. Da blir det med klangen og glimtet, og det er
+        // riktig: belønningen er at pila ikke traff.
         this.fx.dytt(v, 5, 150);
-        this.fx.klask(fiende.sprite, 0.2);
-        this.kroker.stotBort(fiende, v, 240);
+        if (fiende) {
+            this.fx.klask(fiende.sprite, 0.2);
+            this.kroker.stotBort(fiende, v, 240);
+        }
     }
 
     /** Vanlig blokk: vernet tok det, men det kostet pust og en flis av kanten. */
-    private blokk(fiende: Fiende, brast: boolean) {
+    private blokk(v: number, brast: boolean) {
         this.gardPress = 160;
         // Lindetre, ikke jern. Blokken skal høres tørr ut - metallklangen er
         // paradens belønning, og den skal ikke deles med noe billigere.
         sfx.treSprak();
-        const v = Math.atan2(this.sprite.y - fiende.sprite.y, this.sprite.x - fiende.sprite.x);
         this.fx.dytt(v, 3, 110);
         this.fx.flis(this.vernSprite.x, this.vernSprite.y, v, brast ? 12 : 4);
 

@@ -62,8 +62,17 @@ export function Hud({
             {/* Øverst til venstre: liv, kraft, nivå */}
             <div className="absolute left-3 top-3 w-56 space-y-1.5">
                 <div className="flex items-center gap-2">
-                    <span className="grid h-8 w-8 place-items-center rounded-lg bg-slate-900/80 font-display text-sm font-bold text-amber-300 ring-1 ring-white/15">
-                        {maks.niva}
+                    {/*
+                        Nivået sto som et bart tall i en boks. «5» alene sier
+                        ingenting - ordet må stå der, som på stolpene.
+                    */}
+                    <span className="grid h-9 w-9 place-content-center justify-items-center rounded-lg bg-slate-900/80 leading-none ring-1 ring-white/15">
+                        <span className="text-[8px] font-bold tracking-[0.12em] text-amber-300/70">
+                            NIVÅ
+                        </span>
+                        <span className="font-display text-sm font-bold text-amber-300">
+                            {maks.niva}
+                        </span>
                     </span>
                     {/*
                         Navnet i en epoke er rollens, ikke elevens. Hun er
@@ -427,10 +436,14 @@ function Stolpe({
     rister?: boolean;
 }) {
     const andel = Math.max(0, Math.min(1, verdi / Math.max(1, maks)));
-    return (
+    const tall = `${Math.ceil(verdi)} / ${Math.round(maks)}`;
+
+    // Stolpa selv. Ordet står *i* den på de tykke, og over den på de tynne -
+    // en stolpe på to piksler har ingen innside å skrive i.
+    const stripe = (
         <div
             className={`relative w-full overflow-hidden rounded-full ring-1 ring-black/40 ${
-                tynn ? 'h-2' : 'h-4'
+                tynn ? 'h-2' : 'h-[18px]'
             } ${rister ? 'animate-[hudRist_240ms_ease-in-out_infinite]' : ''}`}
             style={{ background: bak }}
             role="progressbar"
@@ -443,10 +456,31 @@ function Stolpe({
                 style={{ width: `${andel * 100}%`, background: farge }}
             />
             {!tynn && (
-                <span className="absolute inset-0 grid place-items-center text-[10px] font-bold text-white/90 drop-shadow">
-                    {Math.ceil(verdi)} / {Math.round(maks)}
+                <span className="absolute inset-0 flex items-center justify-between px-2 text-[11px] font-bold leading-none text-white drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+                    {/*
+                        Ordet, ikke bare tallet. `merkelapp` var til nå kun
+                        `aria-label`, så det eneste som sto på skjermen var
+                        «130 / 130» over «100 / 100» - to stolper uten navn, og
+                        i kapittel 2-4 kommer to gullfargede til som bare
+                        skilles på metning. Dette vises på projektor i et
+                        klasserom; da må det stå hva det er.
+                    */}
+                    <span className="tracking-[0.14em]">{merkelapp.toUpperCase()}</span>
+                    <span className="tabular-nums">{tall}</span>
                 </span>
             )}
+        </div>
+    );
+
+    if (!tynn) return stripe;
+
+    return (
+        <div className="space-y-0.5">
+            <div className="flex items-baseline justify-between text-[10px] font-bold leading-none text-white/75 drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]">
+                <span className="tracking-[0.14em]">{merkelapp.toUpperCase()}</span>
+                <span className="tabular-nums">{tall}</span>
+            </div>
+            {stripe}
         </div>
     );
 }

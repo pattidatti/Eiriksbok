@@ -55,6 +55,36 @@ const tall = await page.evaluate(() => {
     };
 });
 
+// ── Ligger alt som skal flyte, faktisk i vann? ──────────────────────────────
+//
+// Langskipet lå på [3, 46] i 793 og 1030, og kartet er 64x48: alt sør for y=44
+// er fjellet som lukker fjorden. Skroget med skjoldene lå halvveis oppå den grå
+// berget. Prosedyrale plasseringer som denne er lette å flytte tilbake i
+// vanvare, så den sjekkes.
+const flytende = await page.evaluate(() => {
+    const k = window.__rpg.scene.getScene('verden').kart;
+    return k.props
+        .filter((p) => p.kind === 'langskip')
+        .map((p) => {
+            const tx = Math.round(p.x / 16);
+            const ty = Math.round(p.y / 16);
+            return { tx, ty, terreng: k.terreng[ty]?.[tx], farbart: k.farbart[ty]?.[tx] };
+        });
+});
+const strandet = flytende.filter((s) => s.terreng !== 'vann' || !s.farbart);
+for (const s of flytende) {
+    console.log(
+        `  langskip [${s.tx},${s.ty}] ${s.terreng}${s.farbart ? ', farbart' : ', IKKE farbart'}`
+    );
+}
+if (strandet.length) {
+    console.error(
+        '\nFEIL - langskip utenfor vann:',
+        strandet.map((s) => `[${s.tx},${s.ty}] på ${s.terreng}`).join(', ')
+    );
+    process.exit(1);
+}
+
 await browser.close();
 
 if (tall.feil) {

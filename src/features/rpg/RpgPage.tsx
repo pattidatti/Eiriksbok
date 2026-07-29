@@ -333,13 +333,32 @@ export default function RpgPage() {
                 (mal instanceof HTMLElement && mal.isContentEditable)
             )
                 return;
+            // Går det et klipp, eier `Klippscene` tastaturet. Den har sin egen
+            // lytter på window: Esc hopper over, mellomrom fører videre. Uten
+            // denne returnerte begge to på samme trykk - Esc både hoppet over
+            // klippet *og* åpnet pausemenyen, og i/l/m la et panel oppå
+            // letterboxen og tok av låsen midt i en cutscene.
+            if (klipp.pa) return;
+
             const apent = overlegg.type !== 'ingen';
             // Opptakten kan ikke lukkes med Esc. Den er kapittelets første
             // setning, ikke et panel - og en elev som trykker Esc av vane skal
             // ikke ende opp i 872 uten å ha fått vite at hun er Åsa.
             // Det samme gjelder skjermbildet som avslutter kapittelet: året er
             // gjort opp, og det skal leses.
-            if (overlegg.type === 'opptakt' || overlegg.type === 'beskjed') return;
+            //
+            // Døden og seieren står i samme liste, og det er en ren feilretting:
+            // begge to har én vei ut som gjør mer enn å lukke. Dødsskjermens
+            // knapp sender `gjenoppliv`; Esc sendte bare `lukk`, som tok av
+            // låsen uten å vekke henne. Kameraet ble stående svart på 0 liv, og
+            // eneste vei videre var pausemenyen.
+            if (
+                overlegg.type === 'opptakt' ||
+                overlegg.type === 'beskjed' ||
+                overlegg.type === 'dod' ||
+                overlegg.type === 'seier'
+            )
+                return;
             if (e.key === 'Escape') {
                 // Bua må lukkes gjennom sin egen vei ut, som puzzlet: låsen ble
                 // satt av scenen, og bare scenen kan ta den av igjen.
@@ -457,11 +476,22 @@ export default function RpgPage() {
                 HUD-en tas ned mens et klipp går. Liv, pust og oppdragsteller
                 over en scene som skal bære et øyeblikk er det samme som å
                 skrive «du er i et spill» over den.
+
+                Og den tas ned under et overlegg, av samme grunn og én til.
+                Grunnen er den samme: kapittelets opptakt dekker hele flaten på
+                z-60, og en livsstolpe rundt den sier «spill» der teksten
+                prøver å si «år». Den ekstra grunnen er at knappene lyver -
+                `Ramme` ligger på z-40 og spiser klikket, så Sekk og Oppdrag ser
+                trykkbare ut og gjør ingenting. Det er målt: seks klikk på Sekk
+                under en samtale med Ravn, ingen respons.
+
+                `Skjermkontroll` og `HubHud` under her har alltid hatt denne
+                vakten. Det var bare HUD-en som manglet den.
             */}
-            {character && klar && !klipp.pa && (
+            {character && klar && !klipp.pa && overlegg.type === 'ingen' && (
                 <>
                     <Hud
-                        hint={overlegg.type === 'ingen' ? hint : null}
+                        hint={hint}
                         kompass={kompass}
                         kamp={kamp}
                         oppgave={oppgave}
@@ -479,13 +509,10 @@ export default function RpgPage() {
                         onPause={() => apnePanel({ type: 'pause' })}
                     />
 
-                    {touch && overlegg.type === 'ingen' && (
-                        <Skjermkontroll gardOppe={kamp?.gardOppe ?? false} />
-                    )}
+                    {/* Vakten på overlegg ligger nå på hele blokken over. */}
+                    {touch && <Skjermkontroll gardOppe={kamp?.gardOppe ?? false} />}
 
-                    {sted.flerspiller && overlegg.type === 'ingen' && (
-                        <HubHud hub={hub} touch={touch} />
-                    )}
+                    {sted.flerspiller && <HubHud hub={hub} touch={touch} />}
 
                     {replikk && (
                         // Over hintlinja, ikke under. Nederst i bildet ligger

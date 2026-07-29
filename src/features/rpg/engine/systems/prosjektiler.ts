@@ -19,7 +19,12 @@ const TREFF_RADIUS = 12;
 export interface ProsjektilKroker {
     spiller: () => { x: number; y: number };
     fiender: () => Fiende[];
-    skadSpiller: (skade: number) => void;
+    /**
+     * Et skudd som lander på eleven. Kroken får *hvor* skuddet er, ikke bare
+     * hvor mye det gjør: forsvaret må vite hvilken vei det kom fra for å
+     * avgjøre om skjoldet dekket.
+     */
+    skadSpiller: (x: number, y: number, skade: number) => void;
     skadFiende: (fiende: Fiende, skade: number, kritisk: boolean, vinkel: number) => void;
 }
 
@@ -101,7 +106,7 @@ export class Prosjektiler {
                     Phaser.Math.Distance.Between(p.sprite.x, p.sprite.y, spiller.x, spiller.y - 6) <
                     TREFF_RADIUS
                 ) {
-                    this.kroker.skadSpiller(p.skade);
+                    this.kroker.skadSpiller(p.sprite.x, p.sprite.y, p.skade);
                     this.efx.pikselSprut(p.sprite.x, p.sprite.y, 0xffffff, 6);
                     this.fjern(i);
                     continue;
