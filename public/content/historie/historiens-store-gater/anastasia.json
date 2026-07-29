@@ -6,7 +6,7 @@
   "category": "Historiens store gåter",
   "readTime": "10 min lesning",
   "factChecked": "2026-07-29",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/historiens-store-gater/anastasia-hero.webp",
   "details": [
     "Tsarfamilien ble henrettet i Jekaterinburg i juli 1918, men likene ble gjemt. Uten grav kunne ingen motbevise at Anastasia hadde kommet seg unna.",
     "Over 200 personer sa at de var et av Romanov-barna. Den mest kjente, Anna Anderson, kjempet i retten i over tretti år.",
@@ -19,7 +19,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/historiens-store-gater/anastasia-01.webp",
       "alt": "Kjellerrom i et hus i Jekaterinburg opplyst av en enkelt lampe",
       "caption": "Huset i Jekaterinburg der tsarfamilien ble holdt fanget sommeren 1918."
     },
@@ -82,7 +82,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/historiens-store-gater/anastasia-02.webp",
       "alt": "Eldre kvinne fotografert i svart-hvitt utenfor et tysk hus",
       "caption": "Anna Anderson holdt fast ved historien sin i over seksti år."
     },
@@ -131,7 +131,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/historiens-store-gater/anastasia-03.webp",
       "alt": "Åpen utgravning i en bjørkeskog med markører og målebånd",
       "caption": "Skogen utenfor Jekaterinburg der begge gravene ble funnet."
     },
