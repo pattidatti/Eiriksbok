@@ -6,11 +6,12 @@
     "readTime": "20 minutter",
     "layout": "rich",
     "heroImage": "/images/mellomkrigstiden/hero_borskrakk.webp",
-    "summary": "Black Tuesday. Millioner i brødkøer. Men hva forårsaket egentlig historiens verste økonomiske krise – og hva var løsningen? To intellektuelle giganter ga radikalt forskjellige svar.",
+    "lastUpdated": "2026-07-29",
+    "summary": "Black Tuesday. Millioner i brødkøer. Men hva forårsaket egentlig historiens verste økonomiske krise - og hva var løsningen? To intellektuelle giganter ga radikalt forskjellige svar.",
     "content": [
         {
             "type": "paragraph",
-            "text": " 29. oktober 1929. Gulvet på New York Stock Exchange er kaos. Meglere skriker, telefonledninger overbelastes, tikkermaskinene går varm. På én dag forsvinner 14 milliarder dollar fra den amerikanske økonomien – en sum som tilsvarer hele statsbudsjettet til USA. I løpet av de neste ukene vil Wall Street tape 30 milliarder dollar – mer enn hele kostnaden for første verdenskrig. The Roaring Twenties er over. The Great Depression har begynt."
+            "text": " 29. oktober 1929. Gulvet på New York Stock Exchange er kaos. Meglere skriker, telefonledninger overbelastes, tikkermaskinene går varme. Over 16 millioner aksjer blir solgt i løpet av denne ene dagen (Billington & Reisegg, 2025). På de få dagene fra 24. til 29. oktober mister det amerikanske aksjemarkedet 47 prosent av verdien sin, og fallet fortsetter helt til sommeren 1932 - da har Dow Jones-indeksen sunket 89 prosent fra toppen (Billington & Reisegg, 2025). The Roaring Twenties er over. The Great Depression har begynt."
         },
         {
             "type": "header",
@@ -20,7 +21,7 @@
         },
         {
             "type": "paragraph",
-            "text": "For å forstå krakket må vi først forstå bommen som kom før. Gjennom 1920-tallet steg de amerikanske aksjekursene jevnt og trutt – og deretter eksponentielt. Mellom 1921 og 1929 tredoblet Dow Jones-indeksen seg. Alle ville være med. Vanlige mennesker tok opp lån for å kjøpe aksjer. Bankene lånte ut villig. Federal Reserve, den amerikanske sentralbanken, holdt rentene lave og pumpet penger inn i økonomien. [Hva skjer egentlig når renten er kunstig lav? Lær om tidspreferanse og renter i Økonomi-emnet.](/samfunnskunnskap/okonomi/inflasjon-og-rente)"
+            "text": "For å forstå krakket må vi først forstå bommen som kom før. Gjennom 1920-tallet steg de amerikanske aksjekursene jevnt og trutt - og deretter eksponentielt. Fra august 1921 til september 1929 ble Dow Jones-indeksen seks ganger så høy, fra 63 til 381 poeng (Richardson mfl., 2013). Alle ville være med. Vanlige mennesker tok opp lån for å kjøpe aksjer: kjøperen la ofte bare ti prosent på bordet selv og lånte resten (Richardson mfl., 2013). De siste årene før krakket var det ikke uvanlig at to tredeler av alle aksjekjøp var lånefinansiert (Billington & Reisegg, 2025). Bankene lånte ut villig, og Federal Reserve, den amerikanske sentralbanken, ble i ettertid kritisert for å ha gjort kreditten for billig. [Hva skjer egentlig når renten er kunstig lav? Lær om tidspreferanse og renter i Økonomi-emnet.](/samfunnskunnskap/okonomi/inflasjon-og-rente)"
         },
         {
             "type": "paragraph",
@@ -28,7 +29,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Da Federal Reserve begynte å stramme inn kreditt sommeren 1929, begynte nervøsiteten å bre seg. Og når panikken først slo inn, var det ingen vei tilbake. Alle ville ut gjennom samme dør samtidig."
+            "text": "Da Federal Reserve begynte å stramme inn kreditten sommeren 1929, begynte nervøsiteten å bre seg. I august satte sentralbanken i New York diskontorenten opp til seks prosent (Richardson mfl., 2013). Og når panikken først slo inn, var det ingen vei tilbake. Alle ville ut gjennom samme dør samtidig."
         },
         {
             "type": "header",
@@ -38,22 +39,23 @@
         },
         {
             "type": "paragraph",
-            "text": "Børskrakket var gnisten, men ildebrannen spredte seg raskt til hele økonomien. Banker som hadde lånt ut til spekulanter, gikk konkurs. Når bankene falt, mistet folk sparepengene sine – det fantes ingen innskudds­garanti. Forbruket stupte. Bedrifter som ikke fikk solgt varene sine, permitterte arbeidere. Arbeidsledige kunne ikke kjøpe varer. En ond spiral tok tak."
+            "text": "Børskrakket var gnisten, men ildebrannen spredte seg raskt til hele økonomien. Krakket regnes som en utløsende årsak til den store depresjonen, verdenskrisen som varte fra 1929 til 1933 (Billington & Reisegg, 2025). Banker som hadde lånt ut til spekulanter, gikk konkurs. Når bankene falt, mistet folk sparepengene sine - det fantes ingen innskuddsgaranti. Forbruket stupte. Bedrifter som ikke fikk solgt varene sine, permitterte arbeidere. Arbeidsledige kunne ikke kjøpe varer. En ond spiral tok tak."
         },
         {
             "type": "FactBox",
             "title": "Depresjonens omfang",
             "facts": [
-                "USAs BNP falt med 30% mellom 1929 og 1933.",
-                "Arbeidsløsheten i USA steg fra 3% til 25%.",
-                "9 000 amerikanske banker gikk konkurs (40% av alle banker).",
-                "Verdenshandelen falt med 65% innen 1934.",
-                "I Tyskland og Storbritannia steg arbeidsløsheten til over 20%."
+                "USAs samlede produksjon (BNP) falt med rundt 30 prosent mellom 1929 og 1933 (Romer, 2026; Thomassen, 2025).",
+                "Arbeidsløsheten i USA passerte 20 prosent: i 1933 sto nesten hver fjerde i arbeidsstyrken uten jobb (Romer, 2026; Thomassen, 2025).",
+                "Industriproduksjonen i USA falt med 47 prosent (Romer, 2026).",
+                "Rundt 20 prosent av bankene som fantes i 1930, hadde gått konkurs innen 1933 (Romer, 2026).",
+                "Verdens samlede BNP falt med om lag 15 prosent mellom 1929 og 1932 (Thomassen, 2025).",
+                "I Storbritannia var en fjerdedel av arbeidsstyrken uten jobb i 1933, i Tyskland om lag en tredjedel (Thomassen, 2025)."
             ]
         },
         {
             "type": "paragraph",
-            "text": "Og krisen var ikke begrenset til USA. Gjennom nettet av internasjonale lån, handelsforbindelser og gullstandarden spredte depresjonen seg som en pandemi. Europa – som aldri hadde kommet seg helt etter første verdenskrig – ble rammet enda hardere. I Tyskland skapte massearbeidsløshet og fortvilelse grobunn for ekstremisme."
+            "text": "Og krisen var ikke begrenset til USA. Gjennom nettet av internasjonale lån, handelsforbindelser og gullstandarden spredte depresjonen seg som en pandemi. Europa - som aldri hadde kommet seg helt etter første verdenskrig - ble rammet enda hardere (Thomassen, 2025). I Tyskland skapte massearbeidsløshet og fortvilelse grobunn for ekstremisme."
         },
         {
             "type": "header",
@@ -63,7 +65,7 @@
         },
         {
             "type": "paragraph",
-            "text": "John Maynard Keynes, den britiske økonomen, observerte depresjonen med voksende frustrasjon. Den klassiske økonomiske visdommen sa at markedet ville korrigere seg selv – at priser og lønninger ville falle til et nivå der full sysselsetting ble gjenopprettet. Men år etter år forble millioner arbeidsledige. Markedet korrigerte seg ikke."
+            "text": "John Maynard Keynes, den britiske økonomen, observerte depresjonen med voksende frustrasjon. Den klassiske økonomiske visdommen sa at markedet ville korrigere seg selv - at priser og lønninger ville falle til et nivå der full sysselsetting ble gjenopprettet. Keynes' viktigste bidrag var nettopp å vise at den gamle teorien ikke forklarte hvordan markedet oppførte seg når arbeidsløsheten var høy (Stoltz, 2024). Men år etter år forble millioner arbeidsledige. Markedet korrigerte seg ikke."
         },
         {
             "type": "QuoteBlock",
@@ -73,11 +75,11 @@
         },
         {
             "type": "paragraph",
-            "text": "I sitt hovedverk «The General Theory of Employment, Interest and Money» (1936) presenterte Keynes en radikal diagnose: problemet var ikke at lønningene var for høye eller at arbeiderne var late. Problemet var etterspørselssvikt. Folk og bedrifter hadde sluttet å bruke penger. De sparte i stedet – av frykt. Men når alle sparer samtidig, faller den totale etterspørselen. Bedrifter selger mindre, sier opp folk, som da bruker enda mindre penger. Det er «spareparadokset»: det som er rasjonelt for individet (å spare), kan være katastrofalt for økonomien som helhet."
+            "text": "I sitt hovedverk «The General Theory of Employment, Interest and Money» fra 1936 presenterte Keynes en radikal diagnose (Stoltz, 2024): problemet var ikke at lønningene var for høye eller at arbeiderne var late. Problemet var etterspørselssvikt. Folk og bedrifter hadde sluttet å bruke penger. De sparte i stedet - av frykt. Men når alle sparer samtidig, faller den totale etterspørselen. Bedrifter selger mindre, sier opp folk, som da bruker enda mindre penger. Det er «spareparadokset»: det som er rasjonelt for individet (å spare), kan være katastrofalt for økonomien som helhet."
         },
         {
             "type": "paragraph",
-            "text": "Løsningen, mente Keynes, var at staten måtte fylle tomrommet. Når privat etterspørsel kollapser, må offentlig etterspørsel øke. Staten må bygge veier, skoler, sykehus – selv om budsjettet går i underskudd. Underskuddet kan betales ned senere, når økonomien er frisk igjen. Dette var den intellektuelle grunnmuren for The New Deal, og for moderne makroøkonomisk politikk."
+            "text": "Løsningen, mente Keynes, var at staten måtte fylle tomrommet. I en økonomi med arbeidsløshet kunne sysselsettingen økes ved å øke utgiftene, enten til forbruk eller til investeringer (Stoltz, 2024). Staten må bygge veier, skoler, sykehus - selv om budsjettet går i underskudd. Underskuddet kan betales ned senere, når økonomien er frisk igjen. Roosevelt hadde nær kontakt med Keynes og mente selv at staten måtte spille en aktiv rolle for å komme ut av krisen (Godbolt, 2024). Dette var den intellektuelle grunnmuren for The New Deal, som varte fra 1933 til 1938, og for moderne makroøkonomisk politikk."
         },
         {
             "type": "header",
@@ -87,15 +89,15 @@
         },
         {
             "type": "paragraph",
-            "text": "Men ikke alle var enige med Keynes. Den østerrikske økonomen Friedrich August von Hayek – som debatterte Keynes på London School of Economics gjennom 1930-tallet – hadde en helt annen diagnose. For Hayek var ikke depresjonen et resultat av for lite statlig inngripen, men av for mye. [Vil du forstå teorien bak Hayeks advarsel? Les historien om Byggmesterens Dilemma her.](/samfunnskunnskap/okonomi/finanskriser)"
+            "text": "Men ikke alle var enige med Keynes. Den østerrikske økonomen Friedrich August von Hayek, professor ved London School of Economics fra 1931 til 1950 (Munthe, 2024), hadde en helt annen diagnose. Striden mellom de to blusset opp for alvor på 1930-tallet: Hayek skrev en knallhard anmeldelse av Keynes' «A Treatise on Money», og Keynes svarte med å gå løs på Hayeks «Prices and Production» (Caldwell, 2026). For Hayek var ikke depresjonen et resultat av for lite statlig inngripen, men av for mye. [Vil du forstå teorien bak Hayeks advarsel? Les historien om Byggmesterens Dilemma her.](/samfunnskunnskap/okonomi/finanskriser)"
         },
         {
             "type": "paragraph",
-            "text": "Hayeks teori, utviklet sammen med Ludwig von Mises, kalles den østerrikske konjunkturteorien. Den starter med sentralbanken. Når Federal Reserve holdt rentene kunstig lave på 1920-tallet, sendte det et falskt signal til markedet. Lave renter betyr normalt at folk sparer mye og at det er rikelig med kapital å investere. Men dette var ikke ekte sparing – det var nylagde penger pumpet inn i systemet."
+            "text": "Hayek hadde Ludwig von Mises som læremester og ledet det østerrikske instituttet for konjunkturforskning (Caldwell, 2026). Teorien de bygde, kalles den østerrikske konjunkturteorien, og den starter med sentralbanken. Hayek la særlig vekt på at statenes pengepolitikk skapte inflasjon (Munthe, 2024). Når renten holdes kunstig lav, sendes et falskt signal til markedet. Lav rente betyr normalt at folk sparer mye og at det er rikelig med kapital å investere. Men dette var ikke ekte sparing - det var nylagde penger pumpet inn i systemet."
         },
         {
             "type": "paragraph",
-            "text": "Resultatet var feilinvesteringer. Bedrifter startet prosjekter som bare ga mening med lave renter. Kapital ble kanalisert til feil sektorer – for mye til bygging, aksjespekulasjon og forbrukslån, for lite til produktiv industri. Da boblen sprakk, ble disse feilinvesteringene avslørt. Fabrikker som aldri skulle vært bygget, måtte stenge. Ressurser som var tildelt feil sektor, måtte omfordeles. Og det tar tid – smertefull tid med arbeidsløshet og konkurser."
+            "text": "Resultatet var feilinvesteringer. Bedrifter startet prosjekter som bare ga mening med lave renter. Kapital ble kanalisert til feil sektorer - for mye til bygging, aksjespekulasjon og forbrukslån, for lite til produktiv industri. Da boblen sprakk, ble disse feilinvesteringene avslørt. Fabrikker som aldri skulle vært bygget, måtte stenge. Ressurser som var tildelt feil sektor, måtte omfordeles. Og det tar tid - smertefull tid med arbeidsløshet og konkurser."
         },
         {
             "type": "Comparison",
@@ -127,7 +129,7 @@
         },
         {
             "type": "paragraph",
-            "text": "For Hayek var Keynes' løsning – mer statlig utgifter – å behandle sykdommen med mer av det som forårsaket den. Det ville bare forsinke den nødvendige omstillingen og skape grobunn for enda verre kriser i fremtiden. Markedet måtte få lov til å «rense» seg selv, uansett hvor smertefullt det var på kort sikt."
+            "text": "For Hayek var Keynes' løsning - mer statlige utgifter - å behandle sykdommen med mer av det som forårsaket den. Det ville bare forsinke den nødvendige omstillingen og skape grobunn for enda verre kriser i fremtiden. Markedet måtte få lov til å «rense» seg selv, uansett hvor smertefullt det var på kort sikt."
         },
         {
             "type": "component",
@@ -145,15 +147,15 @@
         },
         {
             "type": "paragraph",
-            "text": "På 1930-tallet vant Keynes – i praksis. The New Deal, med sine massive offentlige utgifter, ble Roosevelts svar på krisen. Etter andre verdenskrig ble keynesiansk økonomisk politikk ortodoksi i Vesten. Stater styrte konjunkturene med finans- og pengepolitikk. Det så ut til å fungere – i hvert fall frem til 1970-tallets stagflasjon."
+            "text": "På 1930-tallet vant Keynes - i praksis. The New Deal, med sine tiltak for nødhjelp, gjenreisning og reform, ble Roosevelts svar på krisen (Godbolt, 2024). Etter andre verdenskrig ble keynesiansk økonomisk politikk ortodoksi i Vesten. Stater styrte konjunkturene med finans- og pengepolitikk. Det så ut til å fungere - i hvert fall frem til 1970-tallets stagflasjon. Hayek på sin side fikk nobelprisen i økonomi i 1974 (Munthe, 2024)."
         },
         {
             "type": "paragraph",
-            "text": "Da fikk Hayeks ideer ny vind i seilene. Margaret Thatcher og Ronald Reagan, begge inspirert av den østerrikske skolen og Milton Friedmans monetarisme, førte en politikk av deregulering, skattelettelser og mindre statlig inngripen. Hayeks «The Road to Serfdom» (1944), som advarte mot at velmenende sosialdemokrati kunne føre til totalitarisme, ble en bibel for den nye høyresiden."
+            "text": "Da fikk Hayeks ideer ny vind i seilene. Margaret Thatcher og Ronald Reagan blir begge regnet som representanter for nyliberale tenkemåter, der Hayek og Milton Friedman var de viktigste ideologene (Thorsen, 2025). Politikken deres handlet om færre offentlige inngrep i økonomien og mer privatisering. Hayeks bok «The Road to Serfdom» fra 1944, som forsvarte den økonomiske liberalismen og kritiserte planøkonomien (Munthe, 2024), ble en bibel for den nye høyresiden."
         },
         {
             "type": "paragraph",
-            "text": "Så kom finanskrisen i 2008. Igjen kollapset markeder. Igjen truet depresjon. Og igjen grep stater inn med massive redningspakker og stimulans – en keynesiansk respons. Kritikerne – mange av dem inspirert av Hayek – mente dette bare utsatte problemene."
+            "text": "Så kom finanskrisen i 2008. Igjen kollapset markeder. Igjen truet depresjon. Og igjen grep stater inn med massive redningspakker og stimulans - en keynesiansk respons. Kritikerne - mange av dem inspirert av Hayek - mente dette bare utsatte problemene."
         },
         {
             "type": "header",
@@ -163,7 +165,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Hva kan vi lære av 1929? Både keynesianere og østerrikere kan enes om noen grunnleggende innsikter: at spekulasjonsboblen på 1920-tallet var usunn, at for løs kredittpolitikk bidro til boblen, at det internasjonale finanssystemet var for skjørt, og at proteksjonisme – som Smoot-Hawley-tollmurene – forverret krisen dramatisk."
+            "text": "Hva kan vi lære av 1929? Både keynesianere og østerrikere kan enes om noen grunnleggende innsikter: at spekulasjonsboblen på 1920-tallet var usunn, at for løs kredittpolitikk bidro til boblen, at det internasjonale finanssystemet var for skjørt, og at proteksjonisme forverret krisen. Smoot-Hawley-tollmurene fra 1930 la høye tollsatser på industri- og landbruksvarer, andre land svarte med samme mynt, og verdenshandelen krympet (Romer, 2026)."
         },
         {
             "type": "paragraph",
@@ -171,7 +173,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Dette er ikke bare et akademisk spørsmål. Det handler om millioner av menneskers liv – om familier som mister hjemmene sine, arbeidere som mister jobbene sine, samfunn som faller fra hverandre. Økonomiske kriser er ikke abstrakte kurver på et diagram. De er menneskelige tragedier."
+            "text": "Dette er ikke bare et akademisk spørsmål. Det handler om millioner av menneskers liv - om familier som mister hjemmene sine, arbeidere som mister jobbene sine, samfunn som faller fra hverandre. Økonomiske kriser er ikke abstrakte kurver på et diagram. De er menneskelige tragedier."
         },
         {
             "type": "header",
@@ -183,9 +185,9 @@
             "type": "FactBox",
             "title": "Fordypning og sammenhenger",
             "facts": [
-                "[Tyskland: Veien mot nazismen](/historie/mellomkrigstiden/tyskland) – Se hvordan krakket banet vei for Hitler.",
-                "[USA: The New Deal](/historie/mellomkrigstiden/usa) – Løsningen? Hvordan Roosevelt møtte krisen.",
-                "[Samfunnskunnskap: Finanskriser](/samfunnskunnskap/okonomi/finanskriser) – Lær teorien om hvorfor økonomien krasjer."
+                "[Tyskland: Veien mot nazismen](/historie/mellomkrigstiden/tyskland) - Se hvordan krakket banet vei for Hitler.",
+                "[USA: The New Deal](/historie/mellomkrigstiden/usa) - Løsningen? Hvordan Roosevelt møtte krisen.",
+                "[Samfunnskunnskap: Finanskriser](/samfunnskunnskap/okonomi/finanskriser) - Lær teorien om hvorfor økonomien krasjer."
             ]
         },
         {
@@ -193,9 +195,9 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva skjedde 29. oktober 1929, og omtrent hvor mye penger forsvant fra den amerikanske økonomien den ene dagen?",
+                    "Hva skjedde 29. oktober 1929, og hvor stor del av verdien sin mistet det amerikanske aksjemarkedet i dagene 24.-29. oktober?",
                     "Forklar hva teksten mener med en spekulativ boble: hvorfor kjøpte folk egentlig aksjer mot slutten av 1920-tallet?",
-                    "Ifølge FactBoxen om depresjonens omfang: hvor mye steg arbeidsløsheten i USA, og hvor mange banker gikk konkurs?",
+                    "Ifølge FactBoxen om depresjonens omfang: hvor høy ble arbeidsløsheten i USA, og hvor stor andel av bankene gikk konkurs?",
                     "Hva var Keynes' løsning på depresjonen, og hva mente Hayek at staten burde gjøre i stedet?"
                 ],
                 "reflekter": [
@@ -208,6 +210,23 @@
                     "Da finanskrisen kom i 2008, grep statene inn med store redningspakker, altså en keynesiansk respons. Finn ett eksempel på hvordan staten grep inn under en krise i din egen levetid, og diskuter om du synes det var riktig.",
                     "Skriv en kort tekst (5-8 setninger) der du velger side i debatten mellom Keynes og Hayek. Bruk minst tre argumenter fra artikkelen for å begrunne valget ditt.",
                     "Diskuter i par: teksten sier at økonomiske kriser ikke er abstrakte kurver, men menneskelige tragedier. Hvorfor er det viktig å huske på menneskene bak tallene når politikere bestemmer hva de skal gjøre i en krise?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Billington, L. & Reisegg, Ø. (2025). *Wall Street-krakket i 1929*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Wall_Street-krakket_i_1929](https://snl.no/Wall_Street-krakket_i_1929)",
+                    "Caldwell, B. J. (2026). *F.A. Hayek*. Encyclopaedia Britannica. Hentet 29.07.2026 fra [britannica.com/biography/F-A-Hayek](https://www.britannica.com/biography/F-A-Hayek)",
+                    "Godbolt, J. (2024). *New Deal*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/New_Deal](https://snl.no/New_Deal)",
+                    "Munthe, P. (2024). *Friedrich August von Hayek*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Friedrich_August_von_Hayek](https://snl.no/Friedrich_August_von_Hayek)",
+                    "Richardson, G. mfl. (2013). *Stock market crash of 1929*. Federal Reserve History. Hentet 29.07.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/stock-market-crash-of-1929)",
+                    "Romer, C. D. (2026). *Great Depression*. Encyclopaedia Britannica. Hentet 29.07.2026 fra [britannica.com/money/Great-Depression](https://www.britannica.com/money/Great-Depression)",
+                    "Stoltz, G. (2024). *John Maynard Keynes*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/John_Maynard_Keynes](https://snl.no/John_Maynard_Keynes)",
+                    "Thomassen, E. (2025). *Den store depresjonen*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/den_store_depresjonen](https://snl.no/den_store_depresjonen)",
+                    "Thorsen, D. E. (2025). *Nyliberalisme*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/nyliberalisme](https://snl.no/nyliberalisme)"
                 ]
             }
         }

@@ -158,7 +158,7 @@
                 "phase": "Akt 2: Konfrontasjonen",
                 "title": "Festen er over",
                 "type": "utfordring",
-                "content": "29. oktober 1929. Black Tuesday. Du hører skriking fra Wall Street - ikke av smerte, men av ren panikk. Meglere som har levd høyt i årevis, ser nå formuer forsvinne på minutter. Tikkermaskinene kan ikke holde tritt med raset. 14 milliarder dollar forsvinner på én dag.\n\nBørskrakket er bare begynnelsen. Det som følger er The Great Depression - den verste økonomiske krisen i moderne historie. Banker går konkurs. Folk mister sparepengene. Fabrikker stenger. I 1933 er hver fjerde amerikaner arbeidsledig. Familier lever i teltleire - 'Hoovervilles' - oppkalt etter presidenten som ikke klarer å stoppe katastrofen.\n\nMen hva forårsaket det? Her møter du to konkurrerende forklaringer. John Maynard Keynes mener problemet er etterspørselssvikt - folk slutter å bruke penger, og staten må fylle tomrommet. Friedrich Hayek mener problemet er feilinvesteringer - skapt av sentralbankens kunstig lave renter. Begge er geniale. Begge har noe rett. Debatten fortsetter i dag.\n\nLes artikkelen om børskrakket og prøv å forstå begge sidene.",
+                "content": "29. oktober 1929. Black Tuesday. Du hører skriking fra Wall Street - ikke av smerte, men av ren panikk. Meglere som har levd høyt i årevis, ser nå formuer forsvinne på minutter. Tikkermaskinene kan ikke holde tritt med raset. Over 16 millioner aksjer skifter hender denne ene dagen.\n\nBørskrakket er bare begynnelsen. Det som følger er The Great Depression - den verste økonomiske krisen i moderne historie. Banker går konkurs. Folk mister sparepengene. Fabrikker stenger. I 1933 er hver fjerde amerikaner arbeidsledig. Familier lever i teltleire - 'Hoovervilles' - oppkalt etter presidenten som ikke klarer å stoppe katastrofen.\n\nMen hva forårsaket det? Her møter du to konkurrerende forklaringer. John Maynard Keynes mener problemet er etterspørselssvikt - folk slutter å bruke penger, og staten må fylle tomrommet. Friedrich Hayek mener problemet er feilinvesteringer - skapt av sentralbankens kunstig lave renter. Begge er geniale. Begge har noe rett. Debatten fortsetter i dag.\n\nLes artikkelen om børskrakket og prøv å forstå begge sidene.",
                 "tasks": [
                     "Hva skjedde på Black Tuesday, 29. oktober 1929? (Fakta)",
                     "Forklar Keynes' teori om etterspørselssvikt med egne ord. (Forståelse)",
@@ -1041,7 +1041,7 @@
                     "linksToStepId": "krakket",
                     "year": 1929,
                     "image": "/images/mellomkrigstiden/hero_borskrakk.webp",
-                    "teacherNotes": "På gulvet i New York Stock Exchange skriker meglerne mens tikkermaskinene går varme. På én dag forsvinner 14 milliarder dollar. Festen fra forrige steg er brått over."
+                    "teacherNotes": "På gulvet i New York Stock Exchange skriker meglerne mens tikkermaskinene går varme. Over 16 millioner aksjer skifter hender på denne ene dagen. Festen fra forrige steg er brått over."
                 },
                 {
                     "id": "krakket-blacktuesday",
@@ -1059,17 +1059,17 @@
                         },
                         {
                             "id": "p2",
-                            "text": "På én dag forsvinner 14 milliarder dollar.",
+                            "text": "Fra 24. til 29. oktober mister det amerikanske aksjemarkedet 47 prosent av verdien sin.",
                             "type": "bullet"
                         },
                         {
                             "id": "p3",
-                            "text": "Arbeidsløsheten i USA stiger fra 3 til 25 prosent.",
+                            "text": "Arbeidsløsheten i USA passerer 20 prosent: nesten hver fjerde er uten jobb i 1933.",
                             "type": "bullet"
                         },
                         {
                             "id": "p4",
-                            "text": "9000 banker går konkurs, og verden kastes ut i depresjon.",
+                            "text": "Rundt 20 prosent av bankene fra 1930 er konkurs innen 1933, og verden kastes ut i depresjon.",
                             "type": "key-fact"
                         }
                     ],
