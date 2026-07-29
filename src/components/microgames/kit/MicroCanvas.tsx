@@ -106,10 +106,21 @@ function SceneAuditProbe() {
             const tmp = new THREE.Box3();
             let meshCount = 0;
             scene.updateMatrixWorld(true);
+            // Bakgrunnsdekor er ikke «modellen»: himmelkuppel, skybanker, fugler.
+            // Spillet merker dem med userData.sceneAuditIgnore - på meshen selv
+            // eller på en forelder-gruppe. Uten dette sprenger fire skybanker
+            // spredt over 38 enheter modellboksen, og innrammings-sjekken slår ut
+            // på et spill som er riktig innrammet (ut-av-afrika-3d, 2026-07-29).
+            const isDecor = (o: THREE.Object3D) => {
+                for (let n: THREE.Object3D | null = o; n; n = n.parent)
+                    if (n.userData?.sceneAuditIgnore) return true;
+                return false;
+            };
             scene.traverse((o) => {
                 const m = o as THREE.Mesh;
                 if (!m.isMesh || !m.visible || !m.geometry) return;
                 meshCount++;
+                if (isDecor(m)) return;
                 tmp.setFromObject(m);
                 if (tmp.isEmpty()) return;
                 // Parkerte pool-objekter (partikler o.l. gjemmes ofte på y≈-999)

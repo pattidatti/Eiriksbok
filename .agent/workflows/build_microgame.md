@@ -349,6 +349,14 @@ Verifiseringen er derfor en løkke, ikke et punkt:
    CI-porten `.github/workflows/microgame-audit.yml` kjører samme audit og er kun et sikkerhetsnett
    som aldri skal trenge å slå ut.
 
+> **Bakgrunnsdekor og innrammings-sjekken.** Scene-revisjonen måler «modellen»: den unionerer
+> bounding-boksene til alle synlige mesh, men holder bakke-/vannplan (bredere enn 26 enheter) og
+> parkerte pool-objekter utenfor. Dekor som ligger spredt utover scenen - himmelkuppel, skybanker,
+> fugler - faller mellom disse to unntakene og blåser opp modellboksen, slik at et riktig innrammet
+> spill får treff på «feil innramming». Merk derfor slik dekor med `userData={{ sceneAuditIgnore: true }}`
+> på meshen eller på gruppa den ligger i. Bruk flagget KUN på dekor: setter du det på spillinnhold,
+> slår du av porten for nettopp det du vil at den skal vokte.
+
 ---
 
 ## Avanserte lag - gjør spillet unikt, immersivt og vanedannende

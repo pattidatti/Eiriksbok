@@ -484,8 +484,9 @@ function SkyDome() {
         tex.needsUpdate = true;
         return tex;
     }, []);
+    // sceneAuditIgnore: bakgrunnsdekor, ikke del av «modellen» scene-auditen måler.
     return (
-        <mesh scale={[-1, 1, 1]}>
+        <mesh scale={[-1, 1, 1]} userData={{ sceneAuditIgnore: true }}>
             <sphereGeometry args={[60, 24, 24]} />
             <meshBasicMaterial map={texture} side={THREE.BackSide} fog={false} depthWrite={false} />
         </mesh>
@@ -507,8 +508,10 @@ function Clouds() {
         ],
         []
     );
+    // sceneAuditIgnore: skybankene ligger spredt over ~38 enheter. Uten flagget
+    // blir de målt som «modellen», og innrammings-sjekken slår ut på feil grunnlag.
     return (
-        <group ref={grp}>
+        <group ref={grp} userData={{ sceneAuditIgnore: true }}>
             {clouds.map((c, i) => (
                 <mesh key={i} position={c.p} scale={[c.s, c.s * 0.4, c.s]}>
                     <sphereGeometry args={[1, 12, 10]} />
