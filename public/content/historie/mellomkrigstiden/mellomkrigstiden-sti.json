@@ -1975,7 +1975,7 @@
                 },
                 {
                     "id": "midtosten-quote",
-                    "title": "Vi har vært en nasjon av kjøpmenn så lenge at vi har mistet all skam over å bryte løfter.",
+                    "title": "Det var klart fra begynnelsen av at hvis vi vant krigen, ville disse løftene bare være dødt papir.",
                     "layout": "quote",
                     "summary": "T.E. Lawrence",
                     "phase": "konfrontasjon",
@@ -1984,7 +1984,7 @@
                         1916,
                         1920
                     ],
-                    "teacherNotes": "Lawrence of Arabia kjempet sammen med araberne og følte seg sveket av sitt eget land. Bruk sitatet til empati-oppgaven (oppgave 6)."
+                    "teacherNotes": "Lawrence of Arabia kjempet sammen med araberne og visste at de britiske løftene ikke ville bli holdt. Sitatet er fra Seven Pillars of Wisdom (1926). Bruk det til empati-oppgaven (oppgave 6)."
                 },
                 {
                     "id": "task-midtosten",
@@ -2260,7 +2260,7 @@
                         },
                         {
                             "id": "p4",
-                            "text": "I 1937 drepes minst 100 000 i Nanjing-massakren.",
+                            "text": "I 1937 drepes et sted mellom 40 000 og 300 000 i Nanjing-massakren.",
                             "type": "key-fact"
                         }
                     ],

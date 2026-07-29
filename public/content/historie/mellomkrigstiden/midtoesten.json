@@ -6,11 +6,12 @@
     "readTime": "18 minutter",
     "layout": "rich",
     "heroImage": "/images/mellomkrigstiden/map_midtoesten.webp",
-    "summary": "Sykes-Picot, mandatsystemet og det arabiske bedraget – historien om hvordan europeiske kolonialmakter tegnet kartet over dagens Midtøsten.",
+    "lastUpdated": "2026-07-29",
+    "summary": "Sykes-Picot, mandatsystemet og det arabiske bedraget - historien om hvordan europeiske kolonialmakter tegnet kartet over dagens Midtøsten.",
     "content": [
         {
             "type": "paragraph",
-            "text": "I 1916, midt under første verdenskrig, satt to diplomater – briten Mark Sykes og franskmannen François Georges-Picot – over et kart over Midtøsten. Med penner og linjaler delte de opp det osmanske rikets arabiske provinser mellom seg. En rett linje fra Kirkuk i Irak til Haifa ved Middelhavet – kjent som «Sykes-Picot-linjen» – skulle definere fremtiden til millioner av mennesker. De kunne ikke ane at denne linjen ville skape konflikter som fortsatt raser i dag."
+            "text": "I 1916, midt under første verdenskrig, satt to diplomater - briten Mark Sykes og franskmannen François Georges-Picot - over et kart over Midtøsten. Med penner og linjaler delte de opp det osmanske rikets arabiske provinser mellom seg (Nordenson & Leraand, 2025). Linjene de trakk skulle bestemme fremtiden til millioner av mennesker. De kunne ikke ane at disse linjene ville skape konflikter som fortsatt raser i dag."
         },
         {
             "type": "header",
@@ -24,13 +25,13 @@
         },
         {
             "type": "paragraph",
-            "text": "Storbritannia og Frankrike så muligheten til å dele byttet. Men de trengte allierte i regionen. En britisk offiser, T.E. Lawrence – «Lawrence of Arabia» – ble sendt for å støtte en arabisk opprør mot osmanene. Han allierte seg med Sharif Hussein av Mekka, som drømte om et uavhengig arabisk rike."
+            "text": "Storbritannia og Frankrike så muligheten til å dele byttet. Men de trengte allierte i regionen. Da sharif Hussein ibn Ali av Mekka og andre arabiske ledere gjorde opprør mot osmanene i 1916, så den britiske offiseren T.E. Lawrence - «Lawrence of Arabia» - en mulighet til å samle de spredte arabiske stammene til én militær styrke under prins Faisal (Smidt, 2025)."
         },
         {
             "type": "QuoteBlock",
-            "quote": "Vi har vært 'en nasjon av kjøpmenn' så lenge at vi har mistet all skam over å bryte løfter.",
-            "source": "T.E. Lawrence",
-            "context": "Lawrence ble desillusjonert da han innså at britiske løfter til araberne var tomme."
+            "quote": "Det var klart fra begynnelsen av at hvis vi vant krigen, ville disse løftene bare være dødt papir.",
+            "source": "T.E. Lawrence, Seven Pillars of Wisdom (1926)",
+            "context": "Lawrence visste at de britiske løftene til araberne ikke ville bli holdt. Han skrev at han var «bittert skamfull», men tok sjansen på bedraget fordi han mente arabisk hjelp var nødvendig for en rask britisk seier."
         },
         {
             "type": "header",
@@ -40,11 +41,11 @@
         },
         {
             "type": "paragraph",
-            "text": "I hemmelighet – mens de lovte Hussein et arabisk rike – forhandlet Storbritannia og Frankrike om å dele Midtøsten seg imellom. Sykes-Picot-avtalen (1916) delte regionen i «innflytelsessoner»: Frankrike skulle få Syria og Libanon, Storbritannia Irak og Jordan. Palestina skulle være under internasjonal kontroll."
+            "text": "I hemmelighet - mens de ga Hussein vage løfter om et arabisk rike - forhandlet Storbritannia og Frankrike om å dele Midtøsten seg imellom. Sykes-Picot-avtalen (1916) delte regionen i «innflytelsessoner»: Frankrike skulle få dagens Syria og Libanon og deler av Irak, Storbritannia resten av Irak og Jordan. Palestina skulle være under internasjonal kontroll (Nordenson & Leraand, 2025)."
         },
         {
             "type": "paragraph",
-            "text": "Da bolsjevikene tok makten i Russland i 1917, publiserte de de hemmelige avtalene for å diskreditere de kapitalistiske maktene. Araberene oppdaget bedraget. Tilliten var knust. Lawrence, som hadde ridd ved arabernes side, skrev at han følte seg «besudlet» av å ha vært redskap for denne politikken."
+            "text": "Da bolsjevikene tok makten i Russland i 1917, trakk de Russland fra samarbeidet, ga avkall på sine egne territorielle krav og offentliggjorde avtalen (Nordenson & Leraand, 2025). Araberne oppdaget bedraget. Tilliten var knust. Lawrence, som hadde ridd ved arabernes side, skrev senere i memoarene sine at det hadde vært klart hele veien at løftene til araberne ville ende som dødt papir (Lawrence, 1926). Han deltok på fredskonferansen i Versailles og ble dypt skuffet over den avvisende behandlingen araberne fikk der (Smidt, 2025)."
         },
         {
             "type": "header",
@@ -54,15 +55,15 @@
         },
         {
             "type": "paragraph",
-            "text": "Som om dette ikke var komplisert nok, kom enda et løfte. I november 1917 sendte den britiske utenriksministeren Arthur Balfour et brev til Lord Rothschild, en leder for den britiske sionistbevegelsen. Brevet – Balfour-erklæringen – erklærte britisk støtte til «etableringen av et nasjonalt hjem for det jødiske folk i Palestina»."
+            "text": "Som om dette ikke var komplisert nok, kom enda et løfte. Den 2. november 1917 sendte den britiske utenriksministeren Arthur Balfour et brev til baron Walter Rothschild, en leder for den britiske sionistbevegelsen. Brevet - Balfour-erklæringen - erklærte at den britiske regjeringen så med velvilje på «etableringen av et nasjonalt hjem for det jødiske folk i Palestina» (Leraand, 2024)."
         },
         {
             "type": "paragraph",
-            "text": "Sionismen – bevegelsen for et jødisk hjemland – hadde vokst siden slutten av 1800-tallet, drevet av antisemittisme i Europa og drømmen om å gjenopprette et gammelt hjem. Theodor Herzl, sionismens grunnlegger, hadde sett løsningen på «det jødiske spørsmålet» i en jødisk stat. Nå, midt i krigens kaos, fikk bevegelsen stormaktsstøtte."
+            "text": "Sionismen - bevegelsen for et jødisk hjemland - vokste fram som et svar på fortsatt diskriminering av jøder og økende antisemittisme i Europa, der de gamle religiøse fordommene nå ble blandet med nye raseteorier. Theodor Herzl grunnla den politiske sionismen på den første sionistkongressen i Basel i 1897, med målet om et lovlig og trygt hjemland for det jødiske folket (Groth, 2025). Nå, midt i krigens kaos, fikk bevegelsen stormaktsstøtte."
         },
         {
             "type": "paragraph",
-            "text": "Men Balfour-erklæringen inneholdt en fatal motsetning: den lovet et «nasjonalt hjem for det jødiske folk» samtidig som den sa at «ingenting skal gjøres som skader de sivile og religiøse rettighetene til de ikke-jødiske samfunnene i Palestina». I 1917 var 90% av Palestinas befolkning arabere. Hvordan kunne begge løftene holdes?"
+            "text": "Men Balfour-erklæringen inneholdt en fatal motsetning: den lovet et «nasjonalt hjem for det jødiske folk» samtidig som den sa at «ingenting skal gjøres som skader de sivile og religiøse rettighetene til de ikke-jødiske samfunnene i Palestina» (Leraand, 2024). Ved utbruddet av første verdenskrig bodde det rundt 690 000 mennesker i Palestina: omtrent 535 000 muslimer, 70 000 kristne og 85 000 jøder (Berg mfl., 2025). Det store flertallet var altså arabere. Hvordan kunne begge løftene holdes?"
         },
         {
             "type": "header",
@@ -72,19 +73,19 @@
         },
         {
             "type": "paragraph",
-            "text": "Etter krigen ble Folkeforbundet etablert for å sikre fred. En av dets oppgaver var å håndtere de tidligere osmanske provinsene. Løsningen ble «mandatsystemet» – en juridisk konstruksjon som ga europeiske makter administrasjon over territorier som angivelig ikke var «klare for selvstyre»."
+            "text": "Etter krigen ble Folkeforbundet etablert for å sikre fred. En av dets oppgaver var å håndtere de tidligere osmanske provinsene. Løsningen ble «mandatsystemet» - en juridisk konstruksjon som ga europeiske makter administrasjon over territorier som angivelig ikke var «klare for selvstyre»."
         },
         {
             "type": "paragraph",
-            "text": "Frankrike fikk mandater over Syria og Libanon. Storbritannia fikk mandater over Irak, Transjordan (dagens Jordan) og Palestina. I teorien skulle mandatmaktene forberede befolkningen på selvstendighet. I praksis var det kolonialisme med nytt navn."
+            "text": "Folkeforbundet formaliserte ordningen i 1922. Frankrike fikk styre dagens Syria og Libanon, mens det som i dag er Irak, Israel, Palestina og Jordan ble satt under britisk kontroll (Nordenson, 2026). I teorien skulle mandatmaktene forberede befolkningen på selvstendighet. I praksis var det kolonialisme med nytt navn."
         },
         {
             "type": "FactBox",
             "title": "De nye statene",
             "facts": [
-                "Irak: Skapt ved å slå sammen tre osmanske provinser (Mosul, Bagdad, Basra). Britene installerte en konge, Faisal I.",
-                "Syria: Frankrike splittet mandatet i flere enheter, inkludert Lebanon, for å favorisere kristne maronitter.",
-                "Transjordan: Opprettet i 1921 som et eget emirat under Faisals bror Abdullah.",
+                "Irak: Skapt ved å slå sammen tre osmanske provinser (Mosul, Bagdad, Basra), med Faisal som konge (Nordenson, 2026).",
+                "Syria: Frankrike splittet mandatet i flere enheter, inkludert Libanon, for å favorisere kristne maronitter.",
+                "Transjordan: Opprettet som et eget område øst for Jordanelva, med Faisals bror Abdullah på tronen (Nordenson, 2026).",
                 "Palestina: Administrert direkte av Storbritannia, med økende konflikt mellom jøder og arabere."
             ]
         },
@@ -96,11 +97,11 @@
         },
         {
             "type": "paragraph",
-            "text": "Mandatsystemet møtte motstand fra dag én. I Syria brøt det ut opprør mot fransk styre i 1925-1927. Franskmennene slo det ned med brutal makt, inkludert bombing av Damaskus. I Irak opponerte stammene mot britisk kontroll; Royal Air Force – flyvåpenet – ble brukt til å «bombe dem til lydighet»."
+            "text": "Mandatsystemet møtte motstand fra dag én. I Syria brøt det ut et stort opprør i 1925, først blant drusere, så over hele landet. Frankrike trengte 95 000 soldater og to år på å få kontroll igjen. I Irak brøt det ut store opprør sommeren 1920, der rundt 8 000 irakere og 2 000 briter mistet livet før britene fikk overtaket (Nordenson, 2026)."
         },
         {
             "type": "paragraph",
-            "text": "Den arabiske nasjonalismen vokste. En ny generasjon av arabiske intellektuelle – utdannet i europeiske ideer om nasjonalisme og selvbestemmelse – krevde uavhengighet. Men grensene kolonimaktene hadde tegnet, tok ikke hensyn til etniske, religiøse eller stammeforhold. Sunnier, sjiaer, kurdere, kristne – alle ble kastet sammen i stater de ikke hadde valgt."
+            "text": "Den arabiske nasjonalismen vokste. En ny generasjon av arabiske intellektuelle - utdannet i europeiske ideer om nasjonalisme og selvbestemmelse - krevde uavhengighet. Men grensene kolonimaktene hadde tegnet, tok ikke hensyn til etniske, religiøse eller stammeforhold. Sunnier, sjiaer, kurdere, kristne - alle ble kastet sammen i stater de ikke hadde valgt."
         },
         {
             "type": "header",
@@ -110,11 +111,11 @@
         },
         {
             "type": "paragraph",
-            "text": "I Palestina vokste spenningen gjennom hele mellomkrigstiden. Jødisk immigrasjon fra Europa økte, særlig etter at nazistene kom til makten i Tyskland i 1933. Sionistiske organisasjoner kjøpte land og bygde kibbutzer. Den arabiske befolkningen følte seg truet."
+            "text": "I Palestina vokste spenningen gjennom hele mellomkrigstiden. Nazistenes forfølgelse i Europa drev innvandringen kraftig opp, og i 1936 utgjorde jødene en tredel av befolkningen (Berg mfl., 2025). Sionistiske organisasjoner kjøpte land og bygde kibbutzer. Den arabiske befolkningen følte seg truet."
         },
         {
             "type": "paragraph",
-            "text": "I 1936-1939 brøt det arabiske opprøret ut. Araberne streiket, angrep jødiske bosetninger og britiske myndigheter. Britene slo opprøret ned med stor brutalitet – henrettelser, deportasjoner, kollektiv avstraffelse. Men da var det for sent å finne en fredelig løsning. Veien mot 1948 og den første arabisk-israelske krigen var lagt."
+            "text": "I 1936-1939 brøt det store arabiske opprøret ut, drevet av dårligere levekår, motstand mot fortsatt jødisk innvandring og krav om selvstyre. Det ble en sterk nasjonal manifestasjon med streiker og militante aksjoner. Britene slo opprøret ned med sprengning av hus, nattlige raid, internering, tortur, fengsling, deportasjoner og konfiskering av jord. Mer enn 4 000 palestinere ble drept, og lederskapet ble fengslet eller sendt i eksil (Berg mfl., 2025). Veien mot 1948 og den første arabisk-israelske krigen var lagt."
         },
         {
             "type": "TimelineComponent",
@@ -134,12 +135,12 @@
                 {
                     "year": "1920",
                     "title": "Mandatene fordeles",
-                    "description": "Folkeforbundet gir formelt Frankrike og Storbritannia kontroll over regionen. I Irak og Syria bryter det ut opprør mot de nye herrene."
+                    "description": "Frankrike og Storbritannia får kontroll over regionen, formalisert av Folkeforbundet i 1922. Allerede sommeren 1920 bryter det ut store opprør i Irak."
                 },
                 {
                     "year": "1925",
                     "title": "Opprør i Syria",
-                    "description": "Det store syriske opprøret mot det franske mandatstyret starter. Franskmennene svarer med å bombe Damaskus."
+                    "description": "Det store syriske opprøret mot det franske mandatstyret starter blant druserne og sprer seg over hele landet. Frankrike trenger 95 000 soldater og to år på å slå det ned."
                 },
                 {
                     "year": "1936",
@@ -156,15 +157,15 @@
         },
         {
             "type": "paragraph",
-            "text": "Når vi ser på konfliktene i dagens Midtøsten – borgerkrigen i Syria, sekterisk vold i Irak, den israelske-palestinske konflikten – ser vi fortsatt skyggen av Sykes og Picot. Grensene de tegnet, ignorerte regionale realiteter. Løftene de ga, var uforenlige. Stadene de skapte, manglet legitimitet."
+            "text": "Når vi ser på konfliktene i dagens Midtøsten - borgerkrigen i Syria, sekterisk vold i Irak, den israelske-palestinske konflikten - ser vi fortsatt skyggen av Sykes og Picot. Grensene de tegnet, ignorerte regionale realiteter. Løftene de ga, var uforenlige. Statene de skapte, manglet legitimitet."
         },
         {
             "type": "paragraph",
-            "text": "Dette betyr ikke at alle problemer i Midtøsten kan spores tilbake til kolonialismen. Regionale aktører har egne ambisjoner, ideologier og historier. Men fundamentet – kartene, grensene, strukturene – ble lagt i mellomkrigstiden av europeiske diplomater som sjelden møtte menneskene de tegnet linjer rundt."
+            "text": "Dette betyr ikke at alle problemer i Midtøsten kan spores tilbake til kolonialismen. Regionale aktører har egne ambisjoner, ideologier og historier. Men fundamentet - kartene, grensene, strukturene - ble lagt i mellomkrigstiden av europeiske diplomater som sjelden møtte menneskene de tegnet linjer rundt."
         },
         {
             "type": "paragraph",
-            "text": "Å forstå Midtøsten i dag krever å forstå denne historien – og å anerkjenne at det som virker som «urgamle konflikter» ofte er resultater av ganske moderne beslutninger."
+            "text": "Å forstå Midtøsten i dag krever å forstå denne historien - og å anerkjenne at det som virker som «urgamle konflikter» ofte er resultater av ganske moderne beslutninger."
         },
         {
             "type": "component",
@@ -177,7 +178,7 @@
                     "Hva skjedde i Palestina i årene 1936-1939, og hvordan reagerte britene på det?"
                 ],
                 "reflekter": [
-                    "Balfour-erklæringen lovet et jødisk nasjonalhjem samtidig som den skulle beskytte rettighetene til de ikke-jødiske innbyggerne, som utgjorde 90% av befolkningen. Forklar hvorfor disse to løftene var vanskelige å holde samtidig.",
+                    "Balfour-erklæringen lovet et jødisk nasjonalhjem samtidig som den skulle beskytte rettighetene til de ikke-jødiske innbyggerne, som utgjorde det store flertallet av befolkningen. Forklar hvorfor disse to løftene var vanskelige å holde samtidig.",
                     "Teksten sier at britene ga tre uforenlige løfter: til araberne, til franskmennene og til sionistene. Forklar hvordan disse løftene sto i motsetning til hverandre.",
                     "Hvorfor tegnet grensene kolonimaktene lagde så store problemer, når de ikke tok hensyn til etniske, religiøse eller stammeforhold? Bruk eksemplet med Irak.",
                     "Vurder påstanden i teksten om at det som virker som urgamle konflikter i Midtøsten ofte er resultater av ganske moderne beslutninger. Er du enig? Begrunn svaret."
@@ -186,6 +187,21 @@
                     "Finn en nyhetssak fra dagens Midtøsten, for eksempel om Syria, Irak eller konflikten mellom Israel og palestinerne. Skriv kort hvordan hendelsene i mellomkrigstiden kan henge sammen med det du leser om.",
                     "Skriv en kort dagbokstekst (4-6 setninger) sett fra T.E. Lawrence sitt perspektiv i det øyeblikket han oppdager at britenes løfter til araberne var tomme.",
                     "Diskuter i klassen: Kan land i dag holdes ansvarlige for grenser og løfter som ble laget for over hundre år siden? Kom med argumenter for begge sider."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, K. G., Jensehaugen, J. & Leraand, D. (2025). *Palestinas historie før 1948*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Palestinas_historie](https://snl.no/Palestinas_historie)",
+                    "Groth, B. (2025). *Sionisme*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/sionisme](https://snl.no/sionisme)",
+                    "Lawrence, T. E. (1926). *Seven Pillars of Wisdom*. Hentet 29.07.2026 fra [gutenberg.net.au](https://gutenberg.net.au/ebooks01/0100111h.html)",
+                    "Leraand, D. (2024). *Balfour-erklæringen*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Balfour-erklæringen](https://snl.no/Balfour-erkl%C3%A6ringen)",
+                    "Nordenson, J. (2026). *Oppdelingen av Midtøsten etter første verdenskrig*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Oppdelingen_av_Midtøsten_etter_første_verdenskrig](https://snl.no/Oppdelingen_av_Midt%C3%B8sten_etter_f%C3%B8rste_verdenskrig)",
+                    "Nordenson, J. & Leraand, D. (2025). *Sykes-Picot-avtalen*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Sykes-Picot-avtalen](https://snl.no/Sykes-Picot-avtalen)",
+                    "Smidt, K. (2025). *Thomas Edward Lawrence*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Thomas_Edward_Lawrence](https://snl.no/Thomas_Edward_Lawrence)"
                 ]
             }
         }

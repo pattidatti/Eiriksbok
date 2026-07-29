@@ -6,11 +6,12 @@
     "readTime": "17 minutter",
     "layout": "rich",
     "heroImage": "/images/mellomkrigstiden/hero_japan.webp",
-    "summary": "Fra Taishō-demokratiet til militarismens triumf – hvordan Japan vandret fra vestlig inspirert modernisme til imperialistisk aggresjon.",
+    "lastUpdated": "2026-07-29",
+    "summary": "Fra Taishō-demokratiet til militarismens triumf - hvordan Japan vandret fra vestlig inspirert modernisme til imperialistisk aggresjon.",
     "content": [
         {
             "type": "paragraph",
-            "text": "I 1918 sto Japan som en av verdens stormakter. Det hadde beseiret Russland i 1905 – den første asiatiske seier over en europeisk stormakt i moderne tid. Det hadde annektert Korea. Det hadde kjempet på seierherrenes side i første verdenskrig og vunnet tyske kolonier i Stillehavet. Japan var det moderne Asia – og det så mot vest for inspirasjon."
+            "text": "I 1918 sto Japan som en av verdens stormakter. Det hadde beseiret Russland i 1905 - den første asiatiske seier over en europeisk stormakt i moderne tid. Det hadde annektert Korea. Det hadde kjempet på seierherrenes side i første verdenskrig og vunnet tyske kolonier i Stillehavet. Japan var det moderne Asia - og det så mot vest for inspirasjon."
         },
         {
             "type": "header",
@@ -20,7 +21,7 @@
         },
         {
             "type": "paragraph",
-            "text": "1910- og 1920-tallet – Taishō-perioden – var Japans eksperiment med liberal demokrati. Politiske partier styrte. Pressen var fri. Arbeiderbevegelsen organiserte seg. Kvinner begynte å kreve rettigheter. «Modan gāru» (modern girl) – den selvstendige, vestlig kledde japanske kvinnen – ble et symbol på endring."
+            "text": "1910- og 1920-tallet - Taishō-perioden - var Japans eksperiment med liberal demokrati. Politiske partier styrte. Pressen var fri. Arbeiderbevegelsen organiserte seg. Kvinner begynte å kreve rettigheter. «Modan gāru» (modern girl) - den selvstendige, vestlig kledde japanske kvinnen - ble et symbol på endring."
         },
         {
             "type": "image",
@@ -30,11 +31,11 @@
         },
         {
             "type": "paragraph",
-            "text": "Men demokratiet hadde sine grenser. Kun de rikeste hadde stemmerett frem til 1925. Keiseren forble symbolsk hellig. Og militæret – hæren og marinen – sto utenfor sivil kontroll. Ifølge grunnloven rapporterte generalene direkte til keiseren, ikke til statsministeren."
+            "text": "Men demokratiet hadde sine grenser. Først i 1925 fikk alle menn over 25 år stemmerett, og samtidig kom strengere lover mot politisk uro (Filseth & Henne, 2024). Keiseren forble symbolsk hellig. Og militæret - hæren og marinen - sto utenfor sivil kontroll. Etter grunnloven var regjeringen bare ansvarlig overfor keiseren, ikke overfor nasjonalforsamlingen."
         },
         {
             "type": "QuoteBlock",
-            "quote": "Demokrati i Japan var som et vakkert tre plantet i sand – uten røtter.",
+            "quote": "Demokrati i Japan var som et vakkert tre plantet i sand - uten røtter.",
             "source": "Moderne historiker",
             "context": "Taishō-demokratiet manglet dype tradisjoner og solide institusjoner."
         },
@@ -46,11 +47,11 @@
         },
         {
             "type": "paragraph",
-            "text": "1929-krakket rammet Japan hardt. Silkeeksporten – vital for japanske bønder – kollapset da amerikanske forbrukere kuttet forbruket. Landsbyer sultet. Unge offiserer, ofte fra fattige rurale bakgrunner, ble radikalisert. De hatet de korrupte politikerne i Tokyo. De drømte om et «Shōwa-restaurasjon» – å rense Japan og la keiserens sanne vilje styre."
+            "text": "1929-krakket rammet Japan hardt. Da det amerikanske silkemarkedet brøt sammen i 1929, ble det en katastrofe for japanske bønder og arbeidere (Kitajima, 2026). Landsbyer sultet. Unge offiserer, ofte fra fattige rurale bakgrunner, ble radikalisert. De hatet de korrupte politikerne i Tokyo. De drømte om et «Shōwa-restaurasjon» - å rense Japan og la keiserens sanne vilje styre."
         },
         {
             "type": "paragraph",
-            "text": "Ultranasjonalistiske organisasjoner blomstret. Noen fantaserte om «Pan-asianisme» – Japan som Asias frigjører fra vestlig imperialisme. Andre ville rett og slett erobre. Felles var troen på Japans unike misjon og forakt for vestlig liberalisme."
+            "text": "Ultranasjonalistiske organisasjoner blomstret. Noen fantaserte om «Pan-asianisme» - Japan som Asias frigjører fra vestlig imperialisme. Andre ville rett og slett erobre. Felles var troen på Japans unike misjon og forakt for vestlig liberalisme."
         },
         {
             "type": "header",
@@ -60,11 +61,11 @@
         },
         {
             "type": "paragraph",
-            "text": "I september 1931 tok offiserer i Japans Kwantung-hær – stasjonert i det kinesiske Mandsjuria – saken i egne hender. De iscenesatte en sabotasje mot den japanske jernbanen og brukte det som påskudd for å invadere hele provinsen. Regjeringen i Tokyo – som ikke hadde gitt ordre – ble stilt overfor fullbyrdede fakta."
+            "text": "I september 1931 tok offiserer i Japans Kwantung-hær - stasjonert i det kinesiske Mandsjuria - saken i egne hender. En bombe mot den japanske jernbanen ved Mukden ble utløsende, og japanske styrker okkuperte det meste av Mandsjuria (Filseth & Henne, 2024). Regjeringen i Tokyo - som ikke hadde gitt ordre - ble stilt overfor fullbyrdede fakta."
         },
         {
             "type": "paragraph",
-            "text": "Mandsjuria-hendelsen viste militærets makt. Ingen ble straffet. Tvert imot ble offiserene hyllet som helter. Regjeringen, fanget av nasjonalistisk opinion, godkjente invasjonen i etterkant. Da Folkeforbundet fordømte Japan, meldte Japan seg ut."
+            "text": "Mandsjuria-hendelsen viste militærets makt. Ingen ble straffet. Tvert imot ble offiserene hyllet som helter. Regjeringen, fanget av nasjonalistisk opinion, godkjente invasjonen i etterkant. Folkeforbundet fordømte Japan, og i 1933 meldte Japan seg ut av forbundet (Filseth & Henne, 2024)."
         },
         {
             "type": "image",
@@ -77,9 +78,9 @@
             "title": "Manchukuo",
             "facts": [
                 "Japan opprettet marionett-staten 'Manchukuo' med den siste kinesiske keiseren, Puyi, som nominell leder.",
-                "I realiteten styrte Kwantung-hæren territoriet.",
+                "I realiteten var staten strengt styrt av japanerne, som brukte den som base for videre ekspansjon i Asia (Encyclopaedia Britannica, 2026c).",
                 "Mandsjuria ble plyndret for ressurser til japansk industri.",
-                "Over 100 000 koreanere og kinesere ble brukt som tvangsarbeidere."
+                "Japan pumpet arbeidskraft og kapital inn i Manchukuo og bygde opp tungindustri på områdets ressurser."
             ]
         },
         {
@@ -90,11 +91,11 @@
         },
         {
             "type": "paragraph",
-            "text": "Gjennom 1930-tallet utførte ultranasjonalistiske offiserer politiske attentater. Statsminister Inukai Tsuyoshi ble myrdet i 1932 av marineoffiserer. Andre attentat rammet bankfolk, industriledere, politikere. Morderne ble ofte behandlet mildt av domstolene – «patriotiske motiver» ble formidabel."
+            "text": "Gjennom 1930-tallet utførte ultranasjonalistiske offiserer politiske attentater. Statsminister Inukai Tsuyoshi ble myrdet i mai 1932 (Filseth & Henne, 2024). Andre attentat rammet bankfolk, industriledere og politikere. Drapene skremte politikerne, og de militære ekstremistene fikk stadig større innflytelse mens partiene mistet tilliten sin (Filseth & Henne, 2024)."
         },
         {
             "type": "paragraph",
-            "text": "I februar 1936 forsøkte unge hæroffiserer et regelrett statskupp – «26. februar-hendelsen». De myrdet flere ministere og okkuperte sentrale bygninger i Tokyo. Keiser Hirohito fordømte kuppmakerne, og de ble arrestert og henrettet. Men paradoksalt nok styrket hendelsen militærets posisjon: ingen sivil politiker våget lenger å trosse generalene."
+            "text": "I februar 1936 forsøkte unge hæroffiserer et regelrett statskupp - «26. februar-hendelsen». Rundt 1 500 soldater, ledet av yngre offiserer, drepte flere sentrale ledere, blant dem finansministeren, og okkuperte sentrale bygninger i Tokyo (Encyclopaedia Britannica, 2026b). Kuppet slo feil fordi opprørerne ikke klarte å samle bred støtte. Men paradoksalt nok styrket hendelsen militærets posisjon: partienes innflytelse ble kraftig svekket, og ingen sivil politiker våget lenger å trosse generalene (Encyclopaedia Britannica, 2026b)."
         },
         {
             "type": "header",
@@ -104,15 +105,15 @@
         },
         {
             "type": "paragraph",
-            "text": "I juli 1937 brukte Japan en mindre grensehendelse som påskudd for å invadere Kina for alvor. Det som startet som en «hendelse» ble en brutal krig. Den japanske hæren erobret Shanghai og deretter Nanjing, hovedstaden."
+            "text": "Den 7. juli 1937 åpnet japanske tropper ild mot kinesiske avdelinger ved Marco Polo-broen nær Beijing. Slik startet den andre kinesisk-japanske krigen (Encyclopaedia Britannica, 2026a). Det som startet som en «hendelse» ble en brutal krig. Den japanske hæren erobret Shanghai og deretter Nanjing, hovedstaden."
         },
         {
             "type": "paragraph",
-            "text": "Det som skjedde i Nanjing i desember 1937 sjokkerte verden. I ukevis herjet japanske tropper i byen: massakrer på sivile og fanger, massevoldtekter, plyndring. Anslagene varierer, men minst 100 000 – kanskje over 300 000 – ble drept. «Nanjing-massakren» er fortsatt et omstridt minne i Øst-Asia."
+            "text": "Det som skjedde i Nanjing i desember 1937 sjokkerte verden. I ukevis herjet japanske tropper i byen: massakrer på sivile og soldater som hadde overgitt seg, massevoldtekter, plyndring (Encyclopaedia Britannica, 2026a). Anslagene spriker sterkt: japanske okkupasjonsstyrker drepte et sted mellom 40 000 og 300 000 mennesker i og rundt byen (Store norske leksikon, 2026). «Nanjing-massakren» er fortsatt et omstridt minne i Øst-Asia."
         },
         {
             "type": "paragraph",
-            "text": "Krigen i Kina ble en malstrøm. Japans hær erobret kystbyene, men klarte aldri å knekke kinesisk motstand i innlandet. Ressursene ble strukket. Og vestlige makter – særlig USA – begynte å legge press på Japan."
+            "text": "Krigen i Kina ble en malstrøm. Japans hær erobret kystbyene, men klarte aldri å knekke kinesisk motstand i innlandet. Ressursene ble strukket. Og vestlige makter - særlig USA - begynte å legge press på Japan."
         },
         {
             "type": "TimelineComponent",
@@ -159,25 +160,25 @@
         },
         {
             "type": "paragraph",
-            "text": "USA reagerte på Japans aggresjon med økonomiske sanksjoner – først på stål og jernmalm, deretter i 1941 en total oljeembargo. For Japan, avhengig av amerikansk olje, var dette en strategisk krise. Uten olje ville marinen være lammet innen et par år."
+            "text": "USA reagerte på Japans aggresjon med økonomiske sanksjoner, og 1. august 1941 innførte amerikanerne oljeboikott etter at Japan hadde okkupert Fransk Indokina. For Japan, som var avhengig av amerikansk olje, var dette en strategisk krise: japanske beregninger viste at oljelagrene ville være brukt opp i løpet av tre år (Hatlehol, 2025)."
         },
         {
             "type": "paragraph",
-            "text": "Militærledelsen så to valg: trekke seg ut av Kina og forhandle med USA (politisk umulig for de nasjonalistiske kreftene), eller slå til mot de ressursrike europeiske koloniene i Sørøst-Asia – olje i Nederlandsk Øst-India, gummi og tinn i Malaya. Men det ville bety krig med Storbritannia, Nederland – og USA."
+            "text": "Militærledelsen så to valg: trekke seg ut av Kina og forhandle med USA (politisk umulig for de nasjonalistiske kreftene), eller slå til mot de ressursrike europeiske koloniene i Sørøst-Asia - olje i Nederlandsk Øst-India, gummi og tinn i Malaya. Men det ville bety krig med Storbritannia, Nederland - og USA."
         },
         {
             "type": "paragraph",
-            "text": "Admiral Isoroku Yamamoto – ironisk nok en mann som advarte mot krig med USA – planla et dristig slag: ødelegge den amerikanske Stillehavsflåten ved Pearl Harbor i Hawaii, og gi Japan tid til å bygge et uinntagelig imperium før amerikanerne kunne slå tilbake."
+            "text": "Admiral Isoroku Yamamoto, sjef for den samlede flåten, sto bak ideen om å bombe Pearl Harbor. Han visste at amerikanerne var langt sterkere militært, og så et knusende overraskelsesangrep mot Stillehavsflåten som den eneste sjansen til å vinne en krig mot USA (Hatlehol, 2025). Målet var å gi Japan tid til å bygge et uinntagelig imperium før amerikanerne kunne slå tilbake."
         },
         {
             "type": "image",
             "src": "/images/mellomkrigstiden/japan_pearl_harbor.webp",
-            "caption": "Kido Butai – den japanske hangarskipsflåten – gjør seg klar til angrep ved daggry i desember 1941. Zero-flyene på dekket skulle snart endre historiens gang.",
+            "caption": "Kido Butai - den japanske hangarskipsflåten - gjør seg klar til angrep ved daggry i desember 1941. Zero-flyene på dekket skulle snart endre historiens gang.",
             "alt": "Japanske Zero-fly på dekket av et hangarskip før angrepet på Pearl Harbor."
         },
         {
             "type": "paragraph",
-            "text": "Den 7. desember 1941 angrep japanske fly Pearl Harbor. Over 2 400 amerikanere ble drept. Åtte slagskip ble ødelagt eller skadet. «En dag som vil leve i vanære», kalte president Roosevelt det. USA erklærte krig. Veien Japan hadde vandret gjennom mellomkrigstiden endte i den voldsomste konflikten i Stillehavet historien har sett."
+            "text": "Den 7. desember 1941 angrep japanske fly Pearl Harbor. Til sammen 2 403 amerikanere ble drept, og alle de åtte amerikanske slagskipene som lå i havnen ble senket eller skadet (Hatlehol, 2025). «En dag som vil leve i vanære», kalte president Roosevelt det. USA erklærte krig. Veien Japan hadde vandret gjennom mellomkrigstiden endte i den voldsomste konflikten i Stillehavet historien har sett."
         },
         {
             "type": "header",
@@ -187,15 +188,15 @@
         },
         {
             "type": "paragraph",
-            "text": "Japans historie i mellomkrigstiden er et tragisk paradoks. Samme land som hadde skapt Taishō-demokratiet, Bauhaus-inspirert arkitektur og moderne litteratur, skapte også Nanjing-massakren og kamikaze-piloter. Moderniseringen ga verktøyene – industri, teknologi, organisasjon – men ikke automatisk de liberale verdiene."
+            "text": "Japans historie i mellomkrigstiden er et tragisk paradoks. Samme land som hadde skapt Taishō-demokratiet, Bauhaus-inspirert arkitektur og moderne litteratur, skapte også Nanjing-massakren og kamikaze-piloter. Moderniseringen ga verktøyene - industri, teknologi, organisasjon - men ikke automatisk de liberale verdiene."
         },
         {
             "type": "paragraph",
-            "text": "Militarismen seiret fordi demokratiet var svakt, fordi økonomisk krise radikaliserte, og fordi imperialisme var tidens ideologi – også for vestlige makter. Japan lærte ekspansjon av de samme maktene som senere fordømte den."
+            "text": "Militarismen seiret fordi demokratiet var svakt, fordi økonomisk krise radikaliserte, og fordi imperialisme var tidens ideologi - også for vestlige makter. Japan lærte ekspansjon av de samme maktene som senere fordømte den."
         },
         {
             "type": "paragraph",
-            "text": "Arven er komplisert. Det moderne Japan, bygget på ruinene av 1945, er et av verdens mest fredelige demokratier. Men stridene om minnene – over Nanjing, over «komfortkvinner», over Yasukuni-helligdommen – viser at mellomkrigstidens skygger ennå ikke er fullt ut konfrontert."
+            "text": "Arven er komplisert. Det moderne Japan, bygget på ruinene av 1945, er et av verdens mest fredelige demokratier. Men stridene om minnene - over Nanjing, over «komfortkvinner», over Yasukuni-helligdommen - viser at mellomkrigstidens skygger ennå ikke er fullt ut konfrontert."
         },
         {
             "type": "header",
@@ -207,8 +208,8 @@
             "type": "FactBox",
             "title": "Imperialismens nettverk",
             "facts": [
-                "[Folkeforbundet](/historie/mellomkrigstiden/folkeforbundet) – Hvorfor verden ikke stoppet invasjonen.",
-                "[Tyskland: Veien mot nazismen](/historie/mellomkrigstiden/tyskland) – Japans allierte i vest."
+                "[Folkeforbundet](/historie/mellomkrigstiden/folkeforbundet) - Hvorfor verden ikke stoppet invasjonen.",
+                "[Tyskland: Veien mot nazismen](/historie/mellomkrigstiden/tyskland) - Japans allierte i vest."
             ]
         },
         {
@@ -231,6 +232,21 @@
                     "Teksten sier at stridene om minnene, over Nanjing og Yasukuni-helligdommen, ennå ikke er fullt ut konfrontert. Finn et eksempel på at fortiden fortsatt skaper strid mellom land i dag, og skriv kort om hvorfor.",
                     "Skriv en kort tekst på rundt ti setninger der du er admiral Yamamoto. Du advarer mot krig med USA, men får likevel ordre om å planlegge angrepet på Pearl Harbor. Hvordan tenker du?",
                     "Diskuter i klassen: Teksten kaller Japans historie et 'moderniseringens paradoks' fordi teknologi og industri ikke automatisk ga liberale verdier. Kan et land bli teknologisk avansert og samtidig udemokratisk i dag?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (2026a). *Empire of Japan: The road to World War II*. Hentet 29.07.2026 fra [britannica.com/place/Empire-of-Japan/The-road-to-World-War-II](https://www.britannica.com/place/Empire-of-Japan/The-road-to-World-War-II)",
+                    "Encyclopaedia Britannica. (2026b). *February 26 Incident*. Hentet 29.07.2026 fra [britannica.com/event/February-26-Incident](https://www.britannica.com/event/February-26-Incident)",
+                    "Encyclopaedia Britannica. (2026c). *Manchukuo*. Hentet 29.07.2026 fra [britannica.com/place/Manchukuo](https://www.britannica.com/place/Manchukuo)",
+                    "Filseth, G. & Henne, H. (2024). *Japans historie*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Japans_historie](https://snl.no/Japans_historie)",
+                    "Hatlehol, G. D. (2025). *Pearl Harbor*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Pearl_Harbor](https://snl.no/Pearl_Harbor)",
+                    "Kitajima, M. (2026). *Japan: Japanese expansionism*. Encyclopaedia Britannica. Hentet 29.07.2026 fra [britannica.com/place/Japan/Japanese-expansionism](https://www.britannica.com/place/Japan/Japanese-expansionism)",
+                    "Store norske leksikon. (2026). *Nanjing*. Hentet 29.07.2026 fra [snl.no/Nanjing](https://snl.no/Nanjing)"
                 ]
             }
         }
