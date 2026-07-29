@@ -2319,10 +2319,10 @@
     {
       "id": "boktrykkerkunsten-sub-0",
       "title": "Tidlige eksperimenter",
-      "description": "Kineseren Bi Sheng eksperimenterer med løse typer i keramikk.",
-      "startDate": 1040,
+      "description": "Kineseren Pi Sheng utvikler skrifttyper i brent leire.",
+      "startDate": 1041,
       "endDate": null,
-      "displayDate": "1040",
+      "displayDate": "1041",
       "type": "sub-event",
       "subjectId": "historie",
       "topicId": "middelalderen",
@@ -3086,7 +3086,7 @@
     {
       "id": "boktrykkerkunsten-sub-1",
       "title": "Gutenbergs gjennombrudd",
-      "description": "Johannes Gutenberg introduserer moderne boktrykkerkunst med løse typer i metall i Mainz.",
+      "description": "Johannes Gutenberg utvikler metoden med løse typer i metall i Mainz. De eldste kjente trykkene fra pressa hans er fra omkring 1445.",
       "startDate": 1440,
       "endDate": null,
       "displayDate": "1440",
@@ -3545,7 +3545,7 @@
     {
       "id": "boktrykkerkunsten-sub-2",
       "title": "Masseproduksjon",
-      "description": "Over 20 millioner bøker er trykket i Europa.",
+      "description": "Femti år etter Gutenbergs første trykk finnes det boktrykkerier på 271 steder i Europa. I Venezia alene er det 36.",
       "startDate": 1500,
       "endDate": null,
       "displayDate": "1500",
