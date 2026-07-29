@@ -6841,6 +6841,30 @@
       ]
     },
     {
+      "id": "anastasia",
+      "title": "Anastasia - gåten DNA løste",
+      "description": "Overlevde tsardatteren henrettelsen i 1918? I sytti år kunne ingen motbevise det, for likene var gjemt. Så kom grava i skogen - og DNA-et.",
+      "startDate": 1918,
+      "endDate": null,
+      "displayDate": "1918",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/anastasia",
+      "tags": [
+        "historiens-store-gater",
+        "kildekritikk",
+        "mysterier",
+        "russland",
+        "dna"
+      ],
+      "lat": 61.5,
+      "lng": 90,
+      "placeLabel": "Russland",
+      "placeCountryId": 643,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "spanskesyken",
       "title": "Spanskesyken",
       "description": "Pandemien i 1918 som drepte flere mennesker enn hele krigen.",

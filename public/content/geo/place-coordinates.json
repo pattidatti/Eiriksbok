@@ -832,7 +832,7 @@
     },
     {
       "tag": "kildekritikk",
-      "count": 32
+      "count": 34
     },
     {
       "tag": "demokrati",
@@ -927,6 +927,10 @@
       "count": 18
     },
     {
+      "tag": "mysterier",
+      "count": 17
+    },
+    {
       "tag": "kristendom",
       "count": 17
     },
@@ -949,10 +953,6 @@
     {
       "tag": "doctrinal",
       "count": 16
-    },
-    {
-      "tag": "mysterier",
-      "count": 15
     },
     {
       "tag": "konflikt",
@@ -1103,6 +1103,10 @@
       "count": 9
     },
     {
+      "tag": "historiens-store-gater",
+      "count": 8
+    },
+    {
       "tag": "borgerkrig",
       "count": 8
     },
@@ -1228,10 +1232,6 @@
     },
     {
       "tag": "silkeveien",
-      "count": 6
-    },
-    {
-      "tag": "historiens-store-gater",
       "count": 6
     },
     {
@@ -2235,10 +2235,6 @@
       "count": 2
     },
     {
-      "tag": "kirken",
-      "count": 2
-    },
-    {
       "tag": "hekseprosessene",
       "count": 2
     },
@@ -2248,6 +2244,10 @@
     },
     {
       "tag": "kvinnehistorie",
+      "count": 2
+    },
+    {
+      "tag": "kirken",
       "count": 2
     },
     {
@@ -2500,6 +2500,10 @@
     },
     {
       "tag": "mandat",
+      "count": 2
+    },
+    {
+      "tag": "dna",
       "count": 2
     },
     {
