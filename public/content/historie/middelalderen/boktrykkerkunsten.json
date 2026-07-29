@@ -3,31 +3,31 @@
     "title": "Boktrykkerkunsten",
     "subject": "Samfunnsfag",
     "topic": "Historie",
-    "fact": "Før boktrykkerkunsten kunne en munk bruke et helt år på å kopiere én bibel for hånd. Med Gutenbergs presse kunne man etter hvert trykke 3600 sider om dagen.",
+    "fact": "Før boktrykkerkunsten måtte hver bok skrives av for hånd, ett eksemplar om gangen. Med Gutenbergs metode kunne den samme teksten trykkes i flere hundre, ja opptil flere tusen helt like eksemplarer.",
     "year": "1440",
     "layout": "rich",
     "heroImage": "/images/middelalderen/boktrykkerkunsten-hero.webp",
     "details": [
-        "Gutenberg utviklet trykkpressen ca. 1440.",
-        "Kineserne hadde teknologien mye tidligere (år 700).",
-        "Førte til 20 millioner bøker innen år 1500.",
+        "Gutenberg utviklet metoden med løse typer i metall mellom 1440 og 1450.",
+        "I Kina trykte de hele boksider fra utskårne treplater alt på 800-tallet.",
+        "Femti år etter Gutenbergs første trykk fantes det boktrykkerier på 271 steder i Europa.",
         "Gjorde kunnskap tilgjengelig for massene."
     ],
     "timeline": [
         {
-            "year": "1040",
+            "year": "1041",
             "title": "Tidlige eksperimenter",
-            "description": "Kineseren Bi Sheng eksperimenterer med løse typer i keramikk."
+            "description": "Kineseren Pi Sheng utvikler skrifttyper i brent leire."
         },
         {
             "year": "1440",
             "title": "Gutenbergs gjennombrudd",
-            "description": "Johannes Gutenberg introduserer moderne boktrykkerkunst med løse typer i metall i Mainz."
+            "description": "Johannes Gutenberg utvikler metoden med løse typer i metall i Mainz. De eldste kjente trykkene fra pressa hans er fra omkring 1445."
         },
         {
             "year": "1500",
             "title": "Masseproduksjon",
-            "description": "Over 20 millioner bøker er trykket i Europa."
+            "description": "Femti år etter Gutenbergs første trykk finnes det boktrykkerier på 271 steder i Europa. I Venezia alene er det 36."
         },
         {
             "year": "1517",
@@ -38,7 +38,7 @@
     "content": [
         {
             "type": "text",
-            "content": "I 1440 skjedde det en endring i den tyske byen Mainz som skulle vise seg å være like betydningsfull for menneskeheten som oppfinnelsen av hjulet eller internett. Gullsmeden Johannes Gutenberg introduserte da moderne boktrykkerkunst for Europa. Selv om vi ofte sier at han «oppfant» trykking, var hans virkelige genistrek å sette sammen eksisterende kunnskap til et effektivt massesproduksjonssystem."
+            "content": "Mellom 1440 og 1450 skjedde det en endring i den tyske byen Mainz som skulle vise seg å være like betydningsfull for menneskeheten som oppfinnelsen av hjulet eller internett. Johannes Gutenberg utviklet en metode for å støpe bokstaver, tall og tegn i løse, byttbare skrifttyper (Rannem mfl., 2026). Selv om vi ofte sier at han «oppfant» trykking, lå genistreken hans i å sette sammen kunnskap som allerede fantes, til en fleksibel, nøyaktig og effektiv produksjonsmetode (Rannem, 2026)."
         },
         {
             "type": "header",
@@ -46,11 +46,11 @@
         },
         {
             "type": "text",
-            "content": "For å forstå hvor radikalt dette var, må man se på verden før 1440. Bøker var luksusgjenstander. Munker satt i klostrenes scriptorier og kopierte tekster for hånd, en nitid prosess hvor én enkelt bibel kunne ta år å fullføre. Dette gjorde kunnskap ekstremt dyrt og forbeholdt en liten elite av geistlige og adelige."
+            "content": "For å forstå hvor radikalt dette var, må man se på verden før 1440. Bøker var luksusgjenstander. Munker og andre skrivere kopierte tekster for hånd, ett eksemplar om gangen, og arbeidet var både langsomt og kostbart. Fram til papiret nådde Europa på 1200-tallet, ble bøker skrevet på pergament laget av dyrehud, som var dyrt og omstendelig å framstille. Til de 40 eksemplarene av Gutenbergs bibel som ble trykt på pergament, gikk det med 3200 dyrehuder (Rannem, 2026). Dette gjorde kunnskap ekstremt dyrt og forbeholdt en liten elite av geistlige og adelige."
         },
         {
             "type": "text",
-            "content": "Det er verdt å merke seg at trykking ikke var ukjent i verden. Kineserne hadde benyttet blokktrykk i århundrer, og allerede rundt år 1040 hadde oppfinneren Bi Sheng eksperimentert med løse typer i keramikk. Men der det kinesiske skriftspråket krevde tusenvis av ulike tegn, var Gutenbergs metode perfekt tilpasset det latinske alfabetets begrensede antall bokstaver."
+            "content": "Det er verdt å merke seg at trykking ikke var ukjent i verden. I Kina fantes det alt på 800-tallet blokkbøker, altså bøker som ble trykt side for side fra utskårne treplater. I 1041 utviklet kineseren Pi Sheng skrifttyper i brent leire. Men fordi kinesisk skrift har tusenvis av ulike tegn, forble blokktrykk lenge den foretrukne metoden i Kina (Rannem mfl., 2026). Gutenbergs metode passet derimot perfekt til det latinske alfabetet, der hver bokstav er en frittstående enhet (Rannem, 2026)."
         },
         {
             "type": "header",
@@ -58,11 +58,11 @@
         },
         {
             "type": "text",
-            "content": "Gutenbergs bakgrunn som gullsmed var nøkkelen til suksessen. Han utviklet ikke bare en trykkpresse, men en hel industriell prosess. Kjernen var de løse typene. Han skapte en unik legering av bly, tinn og antimon. Denne metallblandingen hadde den spesielle egenskapen at den utvidet seg litt når den stivnet i støpeformen. Dette ga bokstavene en eksepsjonell skarphet som verken treblokker eller keramikk kunne matche."
+            "content": "Gutenberg blir ofte omtalt som gullsmed, men det er faktisk usikkert om han var det. Vi vet lite om ham, for han etterlot seg ingen notater og satte aldri navnet sitt på det han trykte. Det er derfor uklart hvor han hentet kunnskapen sin om metaller og gravering fra (Rannem, 2026). Det vi vet, er at han ikke bare utviklet en trykkpresse, men en hel produksjonsprosess. Kjernen var de løse typene, støpt i en blanding av bly, tinn og antimon. Det aller viktigste var selve støpeapparatet: høyden på formen var fast, mens bredden kunne justeres etter hvor brei hver enkelt bokstav var (Rannem mfl., 2026). Metallblandingen måtte tåle et enormt press. Hver eneste bokstav ble utsatt for rundt ti kilo, og med flere sider i samme trykkform kunne det bli flere tonn til sammen (Rannem, 2026)."
         },
         {
             "type": "text",
-            "content": "For å overføre disse typene til papir, bygget han om vinpresser fra Rhindalen. Ved å bruke en enorm treskrue kunne han presse papiret mot de svertede metalltypene med stor kraft. Kombinert med hans egenutviklede, oljebaserte trykksverte – som festet seg til metall uten å renne – kunne han nå produsere sider med perfekt presisjon, gang på gang. Mens en munk klarte noen få sider om dagen, kunne en trykkpresse etter hvert produsere 3600 sider daglig."
+            "content": "For å overføre typene til papir brukte man enkle håndpresser av tre. De var en tilpasning av de gamle vin- og olivenpressene som hadde vært kjent helt siden antikken. Trekonstruksjonen var sårbar for høyt trykk, så det var vanlig å støtte pressa opp mot takbjelkene, slik at den ikke ble ødelagt eller falt gjennom gulvet (Rannem mfl., 2026). Gutenberg eksperimenterte også med papir og trykkfarge til han fant en kombinasjon som ga jevn farge på bokstavene og et rent avtrykk på papiret (Rannem, 2026). Der en skriver lagde ett eksemplar om gangen, kunne et trykkeri nå produsere opplag på flere hundre, kanskje over tusen helt like eksemplarer (Rannem & Kalleklev, 2026)."
         },
         {
             "type": "image",
@@ -81,35 +81,35 @@
         },
         {
             "type": "text",
-            "content": "Effekten var umiddelbar og eksplosiv. Prisen på bøker stupte, og antallet titler skjøt i været. Rundt år 1500, bare 60 år etter oppfinnelsen, fantes det allerede over 20 millioner bøker i Europa."
+            "content": "Effekten var umiddelbar og eksplosiv. Boktrykkeriene spredte seg raskt utover Europa i siste halvdel av 1400-tallet, med tyngdepunkt i dagens Tyskland, Nord-Italia og Frankrike. Bare femti år etter Gutenbergs første trykk fantes det boktrykkerier på 271 forskjellige steder i Europa. I Venezia alene var det 36 (Rannem & Kalleklev, 2026)."
         },
         {
             "type": "text",
-            "content": "Denne flommen av billig informasjon ble en rambukk mot datidens maktstrukturer. Tidligere hadde kirken hatt nesten totalt monopol på sannheten, ettersom de kontrollerte både produksjonen av bøker og språket (latin). Trykkpressen knuste dette monopolet."
+            "content": "Denne flommen av billig informasjon ble en rambukk mot datidens maktstrukturer. Tidligere hadde kirken hatt nesten totalt monopol på sannheten, ettersom den kontrollerte både produksjonen av bøker og språket, latin. Etter hvert som boktrykkerkunsten spredte seg, økte leseferdighetene, kirken mistet monopolet sitt på sannheten, og yngre generasjoner kunne skaffe seg kunnskap på egen hånd (Rannem mfl., 2026)."
         },
         {
             "type": "text",
-            "content": "Det tydeligste eksempelet på teknologiens makt kom med reformasjonen. Da Martin Luther skrev sine teser i 1517, ble de ikke liggende i en skuff. De ble trykket, kopiert og spredt over hele kontinentet på få uker. Vanlige folk begynte å lære å lese, og for første gang fikk de tilgang til bibler og politiske skrifter på sitt eget morsmål. Det ble nesten umulig for makthaverne å drive sensur; forbød man en bok i én by, ble den trykket i nabo-fyrstedømmet."
+            "content": "Det tydeligste eksempelet på teknologiens makt kom med reformasjonen. Da Martin Luther offentliggjorde de 95 tesene sine 31. oktober 1517, ble de ikke liggende i en skuff. Boktrykkerkunsten ble tatt i bruk for å spre tesene som plakater, og forleggere i by etter by oppdaget at det var penger å tjene på å trykke Luthers tekster. Rundt 1520 var han blitt den mest berømte mannen i hele Europa (Rasmussen, 2026). Makthaverne prøvde å stanse spredningen med sensur og bokbrenning, blant annet gjennom den katolske kirkens liste over forbudte bøker, Index Librorum Prohibitorum. Men en tekst som allerede var trykt i hundrevis av eksemplarer og spredt over hele kontinentet, var mye vanskeligere å stoppe (Rannem mfl., 2026)."
         },
         {
             "type": "text",
-            "content": "Gutenbergs oppfinnelse la dermed grunnlaget for det moderne samfunnet. Den demokratiserte kunnskap, muliggjorde vitenskapelig fremgang, og lærte menneskene å stille kritiske spørsmål til de som styrte."
+            "content": "Gutenbergs oppfinnelse la dermed grunnlaget for det moderne samfunnet. Den gjorde kunnskap tilgjengelig for mange, og den lærte menneskene å stille kritiske spørsmål til dem som styrte. Den førte til en kraftig vitenskapelig og kulturell blomstring på 1500- og 1600-tallet, og la grunnlaget for det vi kaller opplysningstiden på 1700-tallet (Rannem, 2026)."
         },
         {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "I hvilket år og hvilken by introduserte Johannes Gutenberg moderne boktrykkerkunst?",
+                    "I hvilken by og i hvilke år utviklet Johannes Gutenberg metoden med løse typer?",
                     "Hvordan ble bøker laget før 1440, og hvorfor gjorde det bøker så dyre?",
-                    "Hvilke tre metaller blandet Gutenberg for å lage de løse typene, og hvilken egenskap ga blandingen bokstavene?",
-                    "Hvor mange bøker fantes det i Europa rundt år 1500, bare 60 år etter oppfinnelsen?"
+                    "Hvilke tre metaller blandet Gutenberg for å lage de løse typene, og hvorfor måtte blandingen være så hard?",
+                    "På hvor mange steder i Europa fantes det boktrykkerier femti år etter Gutenbergs første trykk?"
                 ],
                 "reflekter": [
                     "Teksten sier at Gutenbergs genistrek var å sette sammen eksisterende kunnskap, ikke å finne opp trykking. Forklar med egne ord hva som menes med det.",
-                    "Kineserne hadde løse typer allerede rundt år 1040. Hvorfor passet Gutenbergs metode bedre til det latinske alfabetet enn til det kinesiske skriftspråket?",
+                    "Kineserne hadde løse typer allerede i 1041. Hvorfor passet Gutenbergs metode bedre til det latinske alfabetet enn til den kinesiske skriften?",
                     "Forklar hvordan trykkpressen knuste kirkens monopol på kunnskap og sannhet.",
-                    "Hvorfor ble det nesten umulig for makthaverne å drive sensur etter at trykkpressen kom? Bruk eksempelet med Martin Luthers teser."
+                    "Makthaverne prøvde å stanse spredningen med sensur og bokbrenning. Hvorfor var det likevel vanskelig å stoppe ideer som allerede var trykt? Bruk eksempelet med Martin Luthers teser."
                 ],
                 "gaaVidere": [
                     "Teksten sammenligner trykkpressen med internett. Skriv en kort tekst (5-8 setninger) der du sammenligner hvordan de to spredte informasjon og utfordret makthavere.",
@@ -143,7 +143,7 @@
                             "Ingen kunne lese"
                         ],
                         "answer": "De ble kopiert for hånd av munker",
-                        "explanation": "Det var en nitid prosess å kopiere tekster for hånd, og en enkelt bibel kunne ta år å fullføre."
+                        "explanation": "Hver bok måtte skrives av for hånd, ett eksemplar om gangen, og pergamentet den ble skrevet på var dyrt å framstille."
                     },
                     {
                         "question": "Hvilken metallblanding brukte Gutenberg for typene sine?",
@@ -154,7 +154,7 @@
                             "Kobber og sink"
                         ],
                         "answer": "Bly, tinn og antimon",
-                        "explanation": "Denne legeringen utvidet seg litt når den stivnet, noe som ga bokstavene eksepsjonell skarphet."
+                        "explanation": "Blandingen måtte være hard nok til å tåle det enorme presset i pressa, rundt ti kilo på hver eneste bokstav."
                     },
                     {
                         "question": "Hvordan påvirket trykkpressen reformasjonen?",
@@ -165,10 +165,23 @@
                             "Den hadde ingen effekt"
                         ],
                         "answer": "Den spredte Luthers ideer raskt over hele Europa",
-                        "explanation": "Luthers teser ble trykket og spredt på få uker, noe som gjorde det umulig å stoppe bevegelsen."
+                        "explanation": "Boktrykkerkunsten ble brukt til å spre Luthers teser som plakater, og rundt 1520 var han blitt den mest berømte mannen i Europa."
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Rannem, Ø. (2026). *Johann Gutenberg*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Johann_Gutenberg](https://snl.no/Johann_Gutenberg)",
+                    "Rannem, Ø. & Kalleklev, K. (2026). *boktrykkeri - historikk*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/boktrykkeri_-_historikk](https://snl.no/boktrykkeri_-_historikk)",
+                    "Rannem, Ø., Borgersen, O. & Kalleklev, K. (2026). *boktrykkerkunsten*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/boktrykkerkunsten](https://snl.no/boktrykkerkunsten)",
+                    "Rasmussen, T. (2026). *Martin Luther*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Martin_Luther](https://snl.no/Martin_Luther)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-07-29"
 }
