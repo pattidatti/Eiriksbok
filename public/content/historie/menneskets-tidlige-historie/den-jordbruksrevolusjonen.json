@@ -7,18 +7,18 @@
     "readTime": "9 min lesning",
     "heroImage": "/images/menneskets-tidlige-historie/den-jordbruksrevolusjonen-hero.webp",
     "details": [
-        "For 12 000 år siden begynte mennesker å dyrke korn og temme dyr — det største skiftet i menneskets historie",
+        "For 12 000 år siden begynte mennesker å dyrke korn og temme dyr - det største skiftet i menneskets historie",
         "Jordbruket vokste fram uavhengig på minst syv ulike steder i verden",
         "For den enkelte ble livet hardere, men bønder ble til slutt langt flere enn jegerne kunne være"
     ],
     "content": [
         {
             "type": "text",
-            "content": "En jeger går gjennom en lysning et sted i Midtøsten. Han er på vei mot fjellene der reinen trekker. I forfjor mistet han en pose med villhvete akkurat her. Nå står lysningen full av kornaks — høyere og tettere enn noe annet sted han har sett. Han stopper. Han sanker. Han bestemmer seg for å komme tilbake neste år. Tusen år senere står det en landsby på samme sted. Ti tusen år senere står det New York."
+            "content": "En jeger går gjennom en lysning et sted i Midtøsten. Han er på vei mot fjellene der reinen trekker. I forfjor mistet han en pose med villhvete akkurat her. Nå står lysningen full av kornaks - høyere og tettere enn noe annet sted han har sett. Han stopper. Han sanker. Han bestemmer seg for å komme tilbake neste år. Tusen år senere står det en landsby på samme sted. Ti tusen år senere står det New York."
         },
         {
             "type": "text",
-            "content": "Slik kan det ha startet — den jordbruksrevolusjonen som forandret hva det vil si å være menneske. For omtrent 12 000 år siden begynte små grupper å bytte ut vandring med dyrking. Bytte ut spyd med plog. Det tok 4 000 år å fullføre, men da skiftet var over, var ingenting som før."
+            "content": "Slik kan det ha startet - den jordbruksrevolusjonen som forandret hva det vil si å være menneske. For omtrent 12 000 år siden begynte små grupper å bytte ut vandring med dyrking (Solberg & Omland, 2025). Bytte ut spyd med plog. Det tok flere tusen år å fullføre (Larson mfl., 2014), men da skiftet var over, var ingenting som før."
         },
         {
             "type": "header",
@@ -26,7 +26,7 @@
         },
         {
             "type": "text",
-            "content": "I 190 000 år hadde Homo sapiens vært nomader. Vi gikk dit maten gikk. Vi sov der natten kom. Ingen eide jord, for ingen ble lenge nok et sted til å eie noe. Så endret klimaet seg. Etter siste istid ble jorda varmere og mer fuktig. Ville kornslag — hvete, bygg, ris, mais — vokste i store mengder i bestemte regioner. Det ga mennesker en sjelden mulighet: hvis de ble værende der frøene falt, kunne de plante om våren og høste om høsten."
+            "content": "Homo sapiens har vært på jorda i omtrent 300 000 år (Schackt mfl., 2025), og nesten hele den tida var vi nomader. Vi gikk dit maten gikk. Vi sov der natten kom. Ingen eide jord, for ingen ble lenge nok et sted til å eie noe. Så endret klimaet seg. Etter siste istid ble jorda varmere og mer fuktig (Solberg & Omland, 2025). Ville kornslag - hvete, bygg, ris, mais - vokste i store mengder i bestemte regioner. Det ga mennesker en sjelden mulighet: hvis de ble værende der frøene falt, kunne de plante om våren og høste om høsten."
         },
         {
             "type": "image",
@@ -36,14 +36,14 @@
         },
         {
             "type": "text",
-            "content": "Det startet sannsynligvis i et område som forskere kaller Den fruktbare halvmånen — landet mellom dagens Iran, Irak, Syria og Israel. Her fantes ville utgaver av nesten alle dyrene og plantene vi i dag dyrker. Geiter, sauer, griser og kveg gikk allerede i flokker som var lette å temme. Hvete og bygg vokste vilt. Naturen hadde dekket bordet."
+            "content": "Det startet sannsynligvis i et område som forskere kaller Den fruktbare halvmånen - landet mellom dagens Iran, Irak, Syria og Israel. Halvmånen strekker seg fra Persiabukta gjennom Irak og Syria til Middelhavet (Leraand, 2026). Her fantes ville utgaver av nesten alle dyrene og plantene vi i dag dyrker. Geiter, sauer, griser og kveg gikk allerede i flokker som var lette å temme. Hvete og bygg vokste vilt. Naturen hadde dekket bordet. Ifølge Leraand (2026) hadde menneskene her jordbruk rundt 9500 fvt, og de temmet husdyr rundt 8000 fvt."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hva er en revolusjon når den tar 4 000 år?",
-                "content": "Vi kaller det en revolusjon fordi resultatet var radikalt — men selve overgangen var ekstremt sakte. Ingen våknet og bestemte seg for å bli bonde. Folk plantet litt mer hver generasjon, mens jakten ble litt mindre viktig. Etter hundre generasjoner var en hel ny livsstil etablert. Sett fra utsiden ser det ut som en plutselig forandring. Sett innenfra var det knapt merkbart."
+                "content": "Vi kaller det en revolusjon fordi resultatet var radikalt - men selve overgangen var ekstremt sakte. Ingen våknet og bestemte seg for å bli bonde. Folk plantet litt mer hver generasjon, mens jakten ble litt mindre viktig. Etter hundre generasjoner var en hel ny livsstil etablert. Sett fra utsiden ser det ut som en plutselig forandring. Sett innenfra var det knapt merkbart."
             }
         },
         {
@@ -52,35 +52,35 @@
         },
         {
             "type": "text",
-            "content": "Det merkeligste med jordbruket er at det ikke ble oppfunnet ett sted og spredt derfra. Det skjedde uavhengig på minst sju ulike steder i verden, til vidt forskjellige tider. Folk som aldri hadde hørt om hverandre, gjorde det samme."
+            "content": "Det merkeligste med jordbruket er at det ikke ble oppfunnet ett sted og spredt derfra. Det skjedde uavhengig på minst sju ulike steder i verden, til vidt forskjellige tider. Forskerne regner i dag med minst elleve slike sentre (Larson mfl., 2014). Folk som aldri hadde hørt om hverandre, gjorde det samme."
         },
         {
             "type": "list",
             "items": [
-                "Den fruktbare halvmånen (Midtøsten) — hvete og bygg, omtrent 10 000 fvt",
-                "Kina (Yangtze- og Gule elv) — ris og hirse, omtrent 8 000 fvt",
-                "Ny-Guinea — taro og banan, omtrent 7 000 fvt",
-                "Mexico og Mellom-Amerika — mais, bønner og squash, omtrent 6 000 fvt",
-                "Andesfjellene (Sør-Amerika) — poteter og quinoa, omtrent 5 000 fvt",
-                "Afrikas Sahel — durra og perlehirse, omtrent 4 000 fvt",
-                "Østre Nord-Amerika — solsikke og squash, omtrent 3 000 fvt"
+                "Den fruktbare halvmånen (Midtøsten) - hvete og bygg, omtrent 10 000 fvt",
+                "Kina (Yangtze- og Gule elv) - ris og hirse, omtrent 8 000 fvt",
+                "Ny-Guinea - taro og banan, omtrent 7 000 fvt",
+                "Mexico og Mellom-Amerika - mais, bønner og squash, omtrent 6 000 fvt",
+                "Andesfjellene (Sør-Amerika) - poteter og quinoa, omtrent 5 000 fvt",
+                "Afrikas Sahel - durra og perlehirse, omtrent 4 000 fvt",
+                "Østre Nord-Amerika - solsikke og squash, omtrent 3 000 fvt"
             ]
         },
         {
             "type": "text",
-            "content": "Hver region dyrket det som vokste der. Ingen kunne bytte ideer over et hav de aldri hadde krysset. Likevel kom de fram til samme konklusjon: bli værende, plant frø, vent på avlingen. Det forteller oss noe stort — at jordbruket ikke var en lykkelig idé, men en respons som lå klar for alle mennesker som fikk muligheten."
+            "content": "Hver region dyrket det som vokste der. Ingen kunne bytte ideer over et hav de aldri hadde krysset. Likevel kom de fram til samme konklusjon: bli værende, plant frø, vent på avlingen. Det forteller oss noe stort - at jordbruket ikke var en lykkelig idé, men en respons som lå klar for alle mennesker som fikk muligheten."
         },
         {
             "type": "header",
-            "text": "Hveten vant — du tapte"
+            "text": "Hveten vant - du tapte"
         },
         {
             "type": "text",
-            "content": "Vi forteller ofte historien som om jordbruket var et fremskritt. Folk ble smartere, vi løste sultens problem, vi reiste oss fra hulemennesker til sivilisasjon. Men knokler fra tidlige bønder forteller en annen historie. De var lavere enn jegerne. Tennene deres var fulle av hull. Ryggradene deres var slitt av bøyd arbeid. Mange døde før de fylte 40."
+            "content": "Vi forteller ofte historien som om jordbruket var et fremskritt. Folk ble smartere, vi løste sultens problem, vi reiste oss fra hulemennesker til sivilisasjon. Men knokler fra tidlige bønder forteller en annen historie. De var lavere enn jegerne, og kroppene deres var mindre kraftige (Mummert mfl., 2011). Tennene deres var fulle av hull. Ryggradene deres var slitt av bøyd arbeid. Forskerne mener det skyldtes ensformig kost, sultperioder når avlingen slo feil, og at mange nå levde tett sammen (Mummert mfl., 2011)."
         },
         {
             "type": "text",
-            "content": "Hvorfor valgte de da å bli? Svaret er at de ikke valgte. Hver enkelt generasjon tok en liten beslutning som virket fornuftig: jeg planter litt mer i år. Jeg får flere barn fordi det er mer mat. Jeg bygger et hus fordi vi blir her uansett. Etter hundre generasjoner satt etterkommerne fast — bofaste, mange, avhengige av åkeren. Det var ingen vei tilbake. Den israelske historikeren Yuval Noah Harari kaller dette \"historiens største bløff\": vi trodde vi temmet hveten, men hveten temmet oss."
+            "content": "Hvorfor valgte de da å bli? Svaret er at de ikke valgte. Hver enkelt generasjon tok en liten beslutning som virket fornuftig: jeg planter litt mer i år. Jeg får flere barn fordi det er mer mat. Jeg bygger et hus fordi vi blir her uansett. Etter hundre generasjoner satt etterkommerne fast - bofaste, mange, avhengige av åkeren. Det var ingen vei tilbake. Den israelske historikeren Yuval Noah Harari kaller dette \"historiens største bløff\": vi trodde vi temmet hveten, men hveten temmet oss (Harari, 2017)."
         },
         {
             "type": "component",
@@ -90,20 +90,20 @@
         {
             "type": "image",
             "src": "/images/menneskets-tidlige-historie/den-jordbruksrevolusjonen-02.webp",
-            "alt": "Sammenligning av to skjeletter side om side — en høyere jeger og en kortere bonde",
+            "alt": "Sammenligning av to skjeletter side om side - en høyere jeger og en kortere bonde",
             "caption": "Knokler forteller sannheten. Bønder ble kortere, fikk dårligere tenner og mer slitte ledd enn jegerne de etterfulgte."
         },
         {
             "type": "header",
-            "text": "Hva jordbruket bygde — og hva det knuste"
+            "text": "Hva jordbruket bygde - og hva det knuste"
         },
         {
             "type": "text",
-            "content": "Selv om hver enkelt bonde levde et hardere liv, lot jordbruket oss bli langt flere. En jaktmark kunne fø én jeger. Den samme jorda dyrket kunne fø ti bønder. Da overskuddet av mat vokste, kunne noen i landsbyen begynne å gjøre noe annet enn å skaffe mat. Det ble plass til håndverkere, prester, soldater, herskere. Slik oppsto byer. Slik oppsto skrift, lov og religion. Slik oppsto vi."
+            "content": "Selv om hver enkelt bonde levde et hardere liv, lot jordbruket oss bli langt flere. En jaktmark kunne fø én jeger. Den samme jorda dyrket kunne fø ti bønder (Harari, 2017). Da overskuddet av mat vokste, kunne noen i landsbyen begynne å gjøre noe annet enn å skaffe mat. Det ble plass til håndverkere, prester, soldater, herskere. Slik oppsto byer. Slik oppsto skrift, lov og religion. Slik oppsto vi."
         },
         {
             "type": "text",
-            "content": "Men noe ble også tapt for alltid. Eiendomsrett til jord skapte forskjeller mellom rik og fattig. Lagring av korn gjorde det mulig å samle opp makt — og krige om den. Husdyr som levde tett med mennesker ga oss nye sykdommer: kopper, meslinger, influensa, kolera. Pandemier ble mulig først da vi bygde landsbyer. Og jegerens variabel kost ble erstattet med ensformige porsjoner grøt og brød."
+            "content": "Men noe ble også tapt for alltid. Eiendomsrett til jord skapte forskjeller mellom rik og fattig. Lagring av korn gjorde det mulig å samle opp makt - og krige om den. Husdyr som levde tett med mennesker ga oss nye sykdommer. Av femten viktige smittsomme sykdommer i tempererte strøk kom minst åtte trolig fra husdyr, blant dem kopper, meslinger og influensa (Wolfe mfl., 2007). Pandemier ble mulig først da vi bygde landsbyer. Og jegerens varierte kost ble erstattet med ensformige porsjoner grøt og brød."
         },
         {
             "type": "component",
@@ -119,13 +119,13 @@
         },
         {
             "type": "text",
-            "content": "Etter jordbruksrevolusjonen var menneskeheten igjen for første gang siden den kognitive revolusjonen 60 000 år tidligere. Vi hadde et nytt grunnlag å bygge på. I de neste tusen årene reiste det seg byer langs Eufrat, Nilen, Indus og den Gule elv. Folk fant opp hjulet, plogen og skrifttegn. Kongedømmer ble til, lover ble skrevet, templer ble bygget. Det vi i dag kaller sivilisasjon — og alt det fører med seg av godt og vondt — startet med en glemt sekk frø i en lysning."
+            "content": "Etter jordbruksrevolusjonen var menneskeheten igjen for første gang siden den kognitive revolusjonen 60 000 år tidligere. Vi hadde et nytt grunnlag å bygge på. I de neste tusen årene reiste det seg byer langs Eufrat, Nilen, Indus og den Gule elv. Folk fant opp hjulet, plogen og skrifttegn. Kongedømmer ble til, lover ble skrevet, templer ble bygget. Det vi i dag kaller sivilisasjon - og alt det fører med seg av godt og vondt - startet med en glemt sekk frø i en lysning."
         },
         {
             "type": "image",
             "src": "/images/menneskets-tidlige-historie/den-jordbruksrevolusjonen-03.webp",
             "alt": "Utsikt over en moderne storby med skyskrapere og myldrende mennesker",
-            "caption": "Alt det moderne mennesker har bygget — byer, lover, teknologi — hviler på grunnlaget jordbruksrevolusjonen la for 12 000 år siden."
+            "caption": "Alt det moderne mennesker har bygget - byer, lover, teknologi - hviler på grunnlaget jordbruksrevolusjonen la for 12 000 år siden."
         },
         {
             "type": "component",
@@ -164,7 +164,7 @@
                             "På 1800-tallet"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Jordbruket begynte for omtrent 12 000 år siden — etter siste istid, da klimaet ble varmere og fuktig nok til at korn kunne dyrkes."
+                        "explanation": "Jordbruket begynte for omtrent 12 000 år siden - etter siste istid, da klimaet ble varmere og fuktig nok til at korn kunne dyrkes."
                     },
                     {
                         "question": "Hvor mange ganger ble jordbruket oppfunnet?",
@@ -175,7 +175,7 @@
                             "Hundrevis av ganger"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Jordbruket oppstod uavhengig minst sju ganger — i Midtøsten, Kina, Ny-Guinea, Mexico, Andesfjellene, Sahel og det østre Nord-Amerika."
+                        "explanation": "Jordbruket oppstod uavhengig minst sju ganger - i Midtøsten, Kina, Ny-Guinea, Mexico, Andesfjellene, Sahel og det østre Nord-Amerika."
                     },
                     {
                         "question": "Hva sier knokler fra tidlige bønder om livet deres sammenlignet med jegere?",
@@ -212,7 +212,23 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Harari, Y. N. (2017). *Sapiens: En kort historie om menneskeheten* (L. Stokseth, overs.). Bazar Forlag.",
+                    "Larson, G. mfl. (2014). *Current perspectives and the future of domestication studies*. Proceedings of the National Academy of Sciences, 111(17), 6139-6146. Hentet 29.07.2026 fra [pnas.org](https://www.pnas.org/doi/10.1073/pnas.1323964111)",
+                    "Leraand, D. (2026). *Midtøstens historie før 600*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Midtøstens_historie_før_600](https://snl.no/Midt%C3%B8stens_historie_f%C3%B8r_600)",
+                    "Mummert, A., Esche, E., Robinson, J. & Armelagos, G. J. (2011). *Stature and robusticity during the agricultural transition: Evidence from the bioarchaeological record*. Economics and Human Biology, 9(3), 284-301. Hentet 29.07.2026 fra [pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/21507735/)",
+                    "Schackt, J., Ørmen, T. & Tønnessen, M. (2025). *Mennesket*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/mennesket](https://snl.no/mennesket)",
+                    "Solberg, B. & Omland, A. (2025). *Neolittisk tid*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/neolittisk_tid](https://snl.no/neolittisk_tid)",
+                    "Wolfe, N. D., Dunavan, C. P. & Diamond, J. (2007). *Origins of major human infectious diseases*. Nature, 447, 279-283. Hentet 29.07.2026 fra [nature.com](https://www.nature.com/articles/nature05775)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-29"
 }

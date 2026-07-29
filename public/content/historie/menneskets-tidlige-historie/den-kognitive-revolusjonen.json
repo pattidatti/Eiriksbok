@@ -23,11 +23,11 @@
     "content": [
         {
             "type": "text",
-            "content": "For rundt 17 000 år siden gikk en ungdom inn i en mørk hule i Sør-Frankrike med en brennende fakkel i hånden og malte en hest på veggen. Hesten er ikke der lenger. Steinen er. Men maleriet finnes fortsatt, og det forteller oss noe ingen annen art kunne ha fortalt: at mennesker tenkte på dyr selv når dyrene ikke var i rommet. Vi laget bilder av det vi husket og det vi drømte om."
+            "content": "For rundt 17 000 år siden gikk en ungdom inn i en mørk hule sørvest i Frankrike med en brennende fakkel i hånden og malte en hest på veggen. Hulen heter Lascaux, og kullet i maleriene er karbondatert til nettopp den tida (Encyclopaedia Britannica, 2026). Hesten er ikke der lenger. Steinen er. Men maleriet finnes fortsatt, og det forteller oss noe ingen annen art kunne ha fortalt: at mennesker tenkte på dyr selv når dyrene ikke var i rommet. Vi laget bilder av det vi husket og det vi drømte om."
         },
         {
             "type": "text",
-            "content": "Dette var ikke alltid mulig. Homo sapiens hadde levd i over hundre tusen år før noen begynte å lage kunst, bygge båter eller pynte seg med smykker. Så skjedde det noe stort i hodet vårt. Forskere kaller det den kognitive revolusjonen, og den begynte for rundt 70 000 år siden."
+            "content": "Dette var ikke alltid mulig. Homo sapiens har vært på jorda i omtrent 300 000 år, men de eldste sikre sporene etter kunst og smykker er rundt 80 000 år gamle (Schackt mfl., 2025). Vi levde altså i hundretusener av år før noen begynte å lage kunst, bygge båter eller pynte seg. Så skjedde det noe stort i hodet vårt. Historikeren Yuval Noah Harari kaller det den kognitive revolusjonen, og mener den begynte for rundt 70 000 år siden (Harari, 2017)."
         },
         {
             "type": "image",
@@ -65,7 +65,7 @@
         },
         {
             "type": "text",
-            "content": "Dette kalles fiktive virkeligheter. De finnes ikke i naturen. Du kan ikke peke på dem. Men de styrer livene våre. En sjimpanseflokk har ingen aksjeselskaper. Ingen religioner. Ingen lover. Vi har alle deler — og vi handler etter dem hver eneste dag."
+            "content": "Harari (2017) kaller dette fiktive virkeligheter. De finnes ikke i naturen. Du kan ikke peke på dem. Men de styrer livene våre. En sjimpanseflokk har ingen aksjeselskaper. Ingen religioner. Ingen lover. Vi har alle deler - og vi handler etter dem hver eneste dag."
         },
         {
             "type": "component",
@@ -76,11 +76,11 @@
         },
         {
             "type": "header",
-            "text": "Felles myter — limet i samfunnet"
+            "text": "Felles myter - limet i samfunnet"
         },
         {
             "type": "text",
-            "content": "En liten gruppe på ti mennesker kan samarbeide fordi alle kjenner hverandre. En stamme på hundre fordi alle har felles familie og felles minner. Men hvor mange mennesker kan du egentlig kjenne godt? Forskere tror tallet ligger rundt 150."
+            "content": "En liten gruppe på ti mennesker kan samarbeide fordi alle kjenner hverandre. En stamme på hundre fordi alle har felles familie og felles minner. Men hvor mange mennesker kan du egentlig kjenne godt? Antropologen Robin Dunbar regnet seg fram til rundt 150 ved å sammenligne hjernestørrelse og flokkstørrelse hos aper (Dunbar, 1992)."
         },
         {
             "type": "text",
@@ -102,11 +102,11 @@
         },
         {
             "type": "text",
-            "content": "Da Homo sapiens kom til Europa, fantes det allerede andre mennesker der. Neandertalerne hadde levd i Europa i hundretusenvis av år. De var sterkere enn oss, hadde større hjerner og overlevde harde vintre. Vi var små, magre afrikanere som plutselig dukket opp i et kaldt og fremmed landskap."
+            "content": "Da Homo sapiens kom til Europa, fantes det allerede andre mennesker der. Neandertalerne hadde levd i Europa i hundretusenvis av år. De var sterkere enn oss, og hjernen deres var på rundt 1 500 kubikkcentimeter, litt større enn vår (Ørmen, 2025). De overlevde harde vintre. Vi var små, magre afrikanere som plutselig dukket opp i et kaldt og fremmed landskap."
         },
         {
             "type": "text",
-            "content": "Likevel forsvant neandertalerne for rundt 30 000 år siden. Hvorfor? Den beste forklaringen er at vi ikke var smartere som enkeltpersoner. Vi var bedre til å samarbeide i store grupper. Neandertalerne levde i små familier på rundt tjue personer. Homo sapiens kunne samle hundrevis av mennesker mot et felles mål, fordi vi delte de samme mytene og historiene."
+            "content": "Likevel forsvant neandertalerne. De siste gruppene i det sørvestlige Europa levde til for rundt 30 000 år siden (Ørmen, 2025), men nyere dateringer tyder på at de fleste var borte allerede for omtrent 40 000 år siden (Higham mfl., 2014). Hvorfor? Den beste forklaringen er at vi ikke var smartere som enkeltpersoner. Vi var bedre til å samarbeide i store grupper. Genetiske studier viser at neandertalerne levde i forholdsvis små familiegrupper (Ørmen, 2025). Homo sapiens kunne samle hundrevis av mennesker mot et felles mål, fordi vi delte de samme mytene og historiene."
         },
         {
             "type": "text",
@@ -117,7 +117,7 @@
             "name": "FactBox",
             "props": {
                 "title": "DNA-en din inneholder neandertalere",
-                "content": "Genetikere har funnet ut at de fleste mennesker utenfor Afrika har mellom 1 og 4 prosent neandertaler-DNA. Forfedrene våre møtte og fikk barn med neandertalere før de forsvant. En liten del av dem lever altså videre i oss."
+                "content": "Da det første utkastet til neandertalernes arvestoff ble lagt fram i 2010, viste det at mennesker utenfor Afrika har noen få prosent neandertaler-DNA (Green mfl., 2010; Ørmen, 2025). Forfedrene våre møtte og fikk barn med neandertalere før de forsvant. En liten del av dem lever altså videre i oss."
             }
         },
         {
@@ -130,7 +130,7 @@
         },
         {
             "type": "text",
-            "content": "Når du leser denne artikkelen, deltar du i den samme revolusjonen som begynte i en hule for 70 000 år siden. Bokstavene foran deg er bare blekk og piksler. Ordene har ingen kraft i seg selv. Men du og jeg har blitt enige om at de betyr noe — og derfor kan jeg sende en idé fra mitt hode til ditt."
+            "content": "Når du leser denne artikkelen, deltar du i den samme revolusjonen som begynte i en hule for 70 000 år siden. Bokstavene foran deg er bare blekk og piksler. Ordene har ingen kraft i seg selv. Men du og jeg har blitt enige om at de betyr noe - og derfor kan jeg sende en idé fra mitt hode til ditt."
         },
         {
             "type": "text",
@@ -140,7 +140,7 @@
             "type": "image",
             "src": "/images/menneskets-tidlige-historie/den-kognitive-revolusjonen-03.webp",
             "alt": "Stor folkemengde med tente lys på en festplass om natten",
-            "caption": "Fra hulemalerier til konserter med titusener av tilskuere — felles historier samler oss fortsatt."
+            "caption": "Fra hulemalerier til konserter med titusener av tilskuere - felles historier samler oss fortsatt."
         },
         {
             "type": "component",
@@ -228,7 +228,23 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Dunbar, R. I. M. (1992). *Neocortex size as a constraint on group size in primates*. Journal of Human Evolution, 22(6), 469-493.",
+                    "Encyclopaedia Britannica. (2026). *Lascaux*. Hentet 29.07.2026 fra [britannica.com/place/Lascaux](https://www.britannica.com/place/Lascaux)",
+                    "Green, R. E. mfl. (2010). *A draft sequence of the Neandertal genome*. Science, 328(5979), 710-722. Hentet 29.07.2026 fra [pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/20448178/)",
+                    "Harari, Y. N. (2017). *Sapiens: En kort historie om menneskeheten* (L. Stokseth, overs.). Bazar Forlag.",
+                    "Higham, T. mfl. (2014). *The timing and spatiotemporal patterning of Neanderthal disappearance*. Nature, 512, 306-309. Hentet 29.07.2026 fra [nature.com](https://www.nature.com/articles/nature13621)",
+                    "Schackt, J., Ørmen, T. & Tønnessen, M. (2025). *Mennesket*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/mennesket](https://snl.no/mennesket)",
+                    "Ørmen, T. (2025). *Neandertaler*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/neandertaler](https://snl.no/neandertaler)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-29"
 }
