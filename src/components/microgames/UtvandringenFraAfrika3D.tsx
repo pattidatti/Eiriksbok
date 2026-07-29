@@ -31,10 +31,10 @@ import type { MicroGameProps } from './types';
 // drar tids-spaken framover, ser hun menneskene vandre ut fra Afrika, og hun må
 // klikke hver verdensdel etter hvert som den nås for å slå seg ned. De to siste
 // verdensdelene (Amerika og Norge) nås først helt på slutten av spaken - så
-// eleven føler hvor kort Norges historie er mot menneskets 200 000 år.
+// eleven føler hvor kort Norges historie er mot menneskets 300 000 år.
 
 // ── Tid ──────────────────────────────────────────────────────────────────────
-const START_AGO = 200000; // Homo sapiens oppstår i Afrika
+const START_AGO = 300000; // Homo sapiens oppstår i Afrika
 const END_AGO = 9000; // spakens høyre ende
 const SPAN = START_AGO - END_AGO;
 
@@ -65,7 +65,7 @@ const REGIONS: Region[] = [
         id: 'afrika',
         name: 'Afrika',
         pos: [-1, 1.6],
-        arrivalAgo: 200000,
+        arrivalAgo: 300000,
         land: '#c9a15a',
         blobs: [
             { dx: 0, dz: 0, sx: 2.1, sz: 2.6 },
@@ -87,7 +87,7 @@ const REGIONS: Region[] = [
         id: 'europa',
         name: 'Europa',
         pos: [0.4, -2.7],
-        arrivalAgo: 40000,
+        arrivalAgo: 45000,
         land: '#9cc47a',
         blobs: [{ dx: 0, dz: 0, sx: 2.0, sz: 1.4 }],
     },
@@ -95,7 +95,7 @@ const REGIONS: Region[] = [
         id: 'amerika',
         name: 'Amerika',
         pos: [-6.6, -0.6],
-        arrivalAgo: 15000,
+        arrivalAgo: 14000,
         land: '#8fbf86',
         blobs: [
             { dx: 0, dz: 0, sx: 1.7, sz: 2.2 },
@@ -249,14 +249,14 @@ const UtvandringenFraAfrika3D: React.FC<MicroGameProps> = ({ onComplete }) => {
                 {won ? (
                     <WinScreen title="Du fulgte menneskene ut i hele verden!" onReplay={reset}>
                         Alle mennesker stammer fra Afrika. Derfra spredte vi oss over titusener av
-                        år: til Asia for rundt 70 000 år siden, Europa for 40 000, Amerika for 15
+                        år: til Asia for rundt 70 000 år siden, Europa for 45 000, Amerika for 14
                         000, og til slutt Norge for rundt 11 000 år siden, etter at isen trakk seg
-                        tilbake. Norges historie er altså svært ung mot menneskets 200 000 år.
+                        tilbake. Norges historie er altså svært ung mot menneskets 300 000 år.
                     </WinScreen>
                 ) : (
                     <SceneFact>
                         <span className="font-bold text-slate-800">Én vandring, hele kloden:</span>{' '}
-                        Homo sapiens oppsto i Afrika for rundt 200 000 år siden. I titusenvis av år
+                        Homo sapiens oppsto i Afrika for minst 300 000 år siden. I titusenvis av år
                         levde vi som nomader og fulgte dyr og planter. Dra spaken framover, så ser du
                         hvor lenge Norge lå tomt under isen mens resten av verden ble befolket.
                     </SceneFact>
@@ -484,8 +484,9 @@ function SkyDome() {
         tex.needsUpdate = true;
         return tex;
     }, []);
+    // sceneAuditIgnore: bakgrunnsdekor, ikke del av «modellen» scene-auditen måler.
     return (
-        <mesh scale={[-1, 1, 1]}>
+        <mesh scale={[-1, 1, 1]} userData={{ sceneAuditIgnore: true }}>
             <sphereGeometry args={[60, 24, 24]} />
             <meshBasicMaterial map={texture} side={THREE.BackSide} fog={false} depthWrite={false} />
         </mesh>
@@ -507,8 +508,10 @@ function Clouds() {
         ],
         []
     );
+    // sceneAuditIgnore: skybankene ligger spredt over ~38 enheter. Uten flagget
+    // blir de målt som «modellen», og innrammings-sjekken slår ut på feil grunnlag.
     return (
-        <group ref={grp}>
+        <group ref={grp} userData={{ sceneAuditIgnore: true }}>
             {clouds.map((c, i) => (
                 <mesh key={i} position={c.p} scale={[c.s, c.s * 0.4, c.s]}>
                     <sphereGeometry args={[1, 12, 10]} />

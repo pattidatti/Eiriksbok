@@ -3,27 +3,32 @@
     "title": "Menneskets tidlige historie",
     "subject": "Samfunnsfag",
     "topic": "Historie",
-    "fact": "Visste du at Homo sapiens og Neanderthalere levde side om side i Europa i tusenvis av år og fikk barn sammen?",
+    "fact": "Visste du at Homo sapiens og neandertalerne levde side om side i Europa i tusenvis av år og fikk barn sammen?",
     "tags": [
         "forhistorie",
         "mennesket",
         "evolusjon",
         "afrika"
     ],
-    "year": "200000 fvt - 9300 fvt",
+    "year": "300000 fvt - 10000 fvt",
+    "lastUpdated": "2026-07-29",
     "timeline": [],
     "content": [
         {
             "type": "text",
-            "content": "Ifølge kartleggingen av menneskets vandringer, oppstod Homo sapiens i Afrika for rundt 200 000 år siden. I titusenvis av år levde menneskene som nomader. En nomade er en som ikke har fast boplass, men flytter rundt som jeger og samler for å finne mat."
+            "content": "Det moderne mennesket, Homo sapiens, oppsto i Afrika for minst 300 000 år siden. Fram til for rundt 70 000 år siden fantes vi bare på dette ene kontinentet (Schackt mfl., 2025). I titusenvis av år levde menneskene som nomader. En nomade er en som ikke har fast boplass, men flytter rundt som jeger og samler for å finne mat."
         },
         {
             "type": "text",
-            "content": "For omtrent 70 000 år siden begynte en stor utvandring fra Afrika mot Asia. Menneskene nådde Europa for ca. 40 000 år siden, og krysset til slutt over til Amerika for rundt 15 000 år siden. Samtidig fantes det andre mennesketyper, som Homo neanderthalensis i Europa og Homo erectus i Asia, men det var Homo sapiens som spredte seg til hele verden."
+            "content": "For omtrent 70 000 år siden begynte den store utvandringen fra Afrika. Menneskene gikk via Den arabiske halvøya til Sør-Asia og Sørøst-Asia, og de nådde Australia for rundt 65 000 år siden. Europa ble befolket fra for rundt 45 000 år siden, og Amerika i hvert fall fra for om lag 14 000 år siden (Schackt mfl., 2025)."
         },
         {
             "type": "text",
-            "content": "I Norges historie starter fortellingen mye senere. De første nomadene kom til Finnmark rundt 9300 fvt., etter at isen trakk seg tilbake."
+            "content": "Homo sapiens var ikke alene. I Europa og Vest-Asia møtte menneskene neandertalerne, og de to gruppene levde side om side i tusenvis av år. DNA fra både neandertalerknokler og folk som lever i dag viser at det ble født barn med foreldre fra begge gruppene: mange av oss har noen få prosent neandertaler-DNA. De siste neandertalerne levde i Sørvest-Europa for bare 30 000 år siden (Ørmen, 2025). En eldre menneskeart, Homo erectus, hadde spredt seg fra Afrika helt til Kina og Java, men den døde ut for rundt 250 000 år siden - lenge før Homo sapiens gikk ut av Afrika (Ørmen mfl., 2025). Til slutt var det Homo sapiens som spredte seg til hele verden."
+        },
+        {
+            "type": "text",
+            "content": "I Norges historie starter fortellingen mye senere. Menneskene kunne ikke komme hit før innlandsisen trakk seg tilbake. De sikrest daterte boplassene vi kjenner, Pauler 1 og 2 i Vestfold, er inntil 11 800 år gamle, og boplassen Galta 3 på Rennesøy i Rogaland kan gå tilbake til rundt 10 000 fvt. Gjennom hele steinalderen levde folk her som jegere og sankere (Solberg & Stylegar, 2024)."
         },
         {
             "type": "component",
@@ -36,7 +41,7 @@
             "type": "component",
             "name": "FactBox",
             "props": {
-                "content": "Homo sapiens oppstod i Afrika for 200 000 år siden. Nomader er jegere og samlere uten fast boplass."
+                "content": "Homo sapiens oppsto i Afrika for minst 300 000 år siden. Nomader er jegere og samlere uten fast boplass."
             }
         },
         {
@@ -44,21 +49,33 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvor og for omtrent hvor lenge siden oppstod Homo sapiens ifølge teksten?",
+                    "Hvor og for omtrent hvor lenge siden oppsto Homo sapiens ifølge teksten?",
                     "Hva betyr det at menneskene levde som nomader, og hvordan skaffet de seg mat?",
                     "I hvilken rekkefølge nådde Homo sapiens Asia, Europa og Amerika, og omtrent når kom de til hvert sted?",
-                    "Når og hvor kom de første nomadene til Norge, og hva var det som gjorde det mulig?"
+                    "Når kom de første menneskene til Norge, og hva var det som gjorde det mulig?"
                 ],
                 "reflekter": [
-                    "Teksten sier at flere mennesketyper som Homo neanderthalensis og Homo erectus levde samtidig, men at det var Homo sapiens som spredte seg til hele verden. Hvorfor tror du det ble slik?",
+                    "Teksten sier at Homo sapiens møtte neandertalerne i Europa og Vest-Asia, men at det til slutt var Homo sapiens som spredte seg til hele verden. Hvorfor tror du det ble slik?",
                     "Norges historie starter mye senere enn menneskets historie ellers. Forklar hvorfor isen er en viktig del av svaret på hvorfor menneskene kom så sent hit.",
                     "Hvorfor tror du menneskene i titusenvis av år måtte flytte rundt i stedet for å bli boende på ett sted?",
-                    "Faktaboksen forteller at Homo sapiens og neanderthalere fikk barn sammen. Hva sier dette om hvor like de to mennesketypene egentlig var?"
+                    "Teksten forteller at Homo sapiens og neandertalerne fikk barn sammen. Hva sier dette om hvor like de to gruppene egentlig var?"
                 ],
                 "gaaVidere": [
                     "Skriv et kort avsnitt der du forestiller deg én dag i livet som nomade for 40 000 år siden. Hva må du gjøre for å overleve fram til kvelden?",
                     "I dag flytter mange mennesker fra ett land til et annet. Diskuter med en medelev hva som er likt og hva som er ulikt mellom dagens flytting og den store utvandringen fra Afrika.",
                     "Menneskene brukte tusenvis av år på å spre seg over kloden. Finn ut hvor lang tid et fly bruker fra Afrika til Amerika i dag, og skriv én setning om hvor mye raskere vi reiser nå."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Schackt, J., Ørmen, T. & Tønnessen, M. (2025). *Mennesket*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/mennesket](https://snl.no/mennesket)",
+                    "Solberg, B. & Stylegar, F.-A. H. (2024). *Steinalderen i Norge*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/steinalderen_i_Norge](https://snl.no/steinalderen_i_Norge)",
+                    "Ørmen, T. (2025). *Neandertaler*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/neandertaler](https://snl.no/neandertaler)",
+                    "Ørmen, T., Heintz, O., Heintz, N. & Hoel, O. A. (2025). *Homo erectus*. Store norske leksikon. Hentet 29.07.2026 fra [snl.no/Homo_erectus](https://snl.no/Homo_erectus)"
                 ]
             }
         }
