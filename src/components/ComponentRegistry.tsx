@@ -167,6 +167,7 @@ const PerspectivePrism = lazy(() => import('./content/interactive/PerspectivePri
 const PovertySimulation = lazy(() => import('./content/interactive/PovertySimulation').then(m => ({ default: m.PovertySimulation })));
 const OkonomiVerdenLink = lazy(() => import('./content/interactive/okonomi/OkonomiVerdenLink').then(m => ({ default: m.OkonomiVerdenLink })));
 const BiasLens = lazy(() => import('./learning-path/BiasLens').then(m => ({ default: m.BiasLens })));
+const Bevishullet = lazy(() => import('./content/interactive/Bevishullet').then(m => ({ default: m.Bevishullet })));
 const Kjedereaksjonen = lazy(() => import('./content/interactive/Kjedereaksjonen').then(m => ({ default: m.Kjedereaksjonen })));
 const AllianceChain = lazy(() => import('./content/interactive/AllianceChain').then(m => ({ default: m.AllianceChain })));
 const KontekstKompasset = lazy(() => import('./content/interactive/KontekstKompasset').then(m => ({ default: m.KontekstKompasset })));
@@ -508,6 +509,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     OkonomiVerdenLink,
     ByzantineSurvival,
     BiasLens,
+    Bevishullet,
     Kjedereaksjonen,
     AllianceChain,
     PowderKeg,

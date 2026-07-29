@@ -155,8 +155,18 @@ const EarhartStillehavet3D = lazy(() => import('./EarhartStillehavet3D'));
 const RoanokeSporet3D = lazy(() => import('./RoanokeSporet3D'));
 const KongedagbokenMG = lazy(() => import('./KongedagbokenMG'));
 const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
+const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'grava-i-skogen': {
+        id: 'grava-i-skogen',
+        title: 'Grava i skogen',
+        description:
+            'Skogen utenfor Jekaterinburg, 1991. Du drar elleve navneplater ned i massegrava som nettopp er åpnet - men grava rommer bare ni, og to navn blir liggende igjen i hendene dine. Mens de to mangler, samler det seg folk i skogkanten som sier at de er de savnede barna. Skru fram året med spaken, og i 2007 dukker det opp en andre, mindre grav 70 meter unna. Legg de to siste navnene der, og menneskemengden løser seg opp. Lyspæren: gåten om at Anastasia overlevde levde ikke av bevis, men av hullet mellom kildene.',
+        estimatedSeconds: 170,
+        loader: () => import('./GravaISkogen3D'),
+        Component: GravaISkogen3D as never,
+    },
     'hormuz-flaskehalsen-3d': {
         id: 'hormuz-flaskehalsen-3d',
         title: 'Flaskehalsen i Hormuz',
