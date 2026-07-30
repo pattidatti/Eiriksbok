@@ -24,7 +24,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Da den siste vestromerske keiseren ble avsatt i 476, markerte det slutten på en æra, men ikke slutten på historien. Romerriket hadde i århundrer kjempet mot indre instabilitet, økonomisk krise og press fra folkegrupper langs grensene. Det som fulgte i vest var ikke et totalt mørke, men en tid preget av voldsom dynamikk og dype endringer. Gamle romerske institusjoner forsvant ikke over natten; de ble i stedet gradvis omskapt i møte med nye germanske herskere og en voksende kirke."
+            "content": "Da den siste vestromerske keiseren ble avsatt i 476 (Goplen mfl., 2025), markerte det slutten på en æra, men ikke slutten på historien. Romerriket hadde i århundrer kjempet mot indre instabilitet, økonomisk krise og press fra folkegrupper langs grensene. Det som fulgte i vest var ikke et totalt mørke, men en tid preget av voldsom dynamikk og dype endringer. Gamle romerske institusjoner forsvant ikke over natten; de ble i stedet gradvis omskapt i møte med nye germanske herskere og en voksende kirke."
         },
         {
             "type": "header",
@@ -32,7 +32,7 @@
         },
         {
             "type": "text",
-            "content": "For å forstå tidlig middelalder, må vi forstå hva som skjedde med Romerriket. Allerede på 200-tallet begynte riket å knake i sammenføyningene under det som kalles 'statenes krise'. Inflasjon, pest og stadige borgerkriger svekket den sentrale makten. Keiser Diokletian forsøkte å redde riket ved å dele det i to administrasjonsområder (øst og vest), og Konstantin den store flyttet hovedstaden til Konstantinopel. Mens den østlige delen blomstret, ble den vestlige delen stadig mer sårbar for ytre angrep og indre forfall."
+            "content": "For å forstå tidlig middelalder, må vi forstå hva som skjedde med Romerriket. Allerede på 200-tallet begynte riket å knake i sammenføyningene. Romerne fikk stadig større problemer med å styre og forsvare et samlet rike, og resultatet ble en dyp økonomisk og politisk krise (Iddeng mfl., 2025). Keiser Diokletian delte regjeringsmakten med en medkeiser i 285 og bygde den ut til et firemannsvelde i 293, der hver av keiserne styrte sin del av riket (Iddeng, 2025). Konstantin den store gjorde Konstantinopel til rikets hovedstad i 330 (Seland, 2025). Etter 395 hadde de to riksdelene aldri mer en felles keiser (Goplen mfl., 2025). Mens den østlige delen blomstret, ble den vestlige delen stadig mer sårbar for ytre angrep og indre forfall."
         },
         {
             "type": "header",
@@ -40,7 +40,7 @@
         },
         {
             "type": "text",
-            "content": "Mange glemmer at selv om Roma falt i vest, overlevde Romerriket i øst i ytterligere tusen år. Dette riket kaller vi i dag for det bysantinske riket. Under keiser Justinian på 500-tallet nådde riket et høydepunkt. Han forsøkte å gjenerobre de tapte provinsene i vest, bygde praktverket Hagia Sophia og kodifiserte romersk lov i 'Corpus Juris Civilis' – et verk som skulle danne grunnlaget for moderne rettssystemer i Europa. Bysants fungerte som et skjold for Europa mot invasjoner fra øst og bevarte mye av den gresk-romerske kunnskapen som senere ble gjenoppdaget i vest."
+            "content": "Mange glemmer at selv om Roma falt i vest, overlevde Romerriket i øst i nesten tusen år til, helt til osmanene erobret Konstantinopel i 1453 (Goplen mfl., 2025). Dette riket kaller vi i dag for det bysantinske riket. Under keiser Justinian (527-565) nådde riket et høydepunkt. Hærførerne hans erobret Italia og store områder i Nord-Afrika, han fikk reist praktverket Hagia Sofia i hovedstaden, og han ga ut en stor lovsamling, 'Corpus juris civilis' (Goplen mfl., 2025). Lovsamlingen ble utgitt i årene 529-534 og har siden hatt sterk innvirkning på rettsutviklingen i Europa (Sandvik & Gisle, 2025). Bysants tok støyten mot angrep fra øst og bevarte mye av den gresk-romerske kunnskapen som senere ble gjenoppdaget i vest."
         },
         {
             "type": "header",
@@ -48,7 +48,7 @@
         },
         {
             "type": "text",
-            "content": "Folkevandringstiden var ikke bare en rekke invasjoner, men en periode med kompliserte folkebevegelser og politiske omveltninger. Presset fra hunerne, et rytterfolk fra de sentralasiatiske steppene, tvang germanske stammer som vestgotere, østgotere, vandaler og frankere på flukt vestover. Disse gruppene søkte ikke nødvendigvis å ødelegge Roma, men å bli en del av rikets rikdom og trygghet. Resultatet ble en 'ethnogenesis' – dannelsen av nye identiteter der romersk og germansk kultur smeltet sammen."
+            "content": "Folkevandringstiden var ikke bare en rekke invasjoner, men en periode med kompliserte folkebevegelser og politiske omveltninger. Hunerne var et nomadefolk fra Sentral-Asia som rundt år 370 brøt inn i det sørøstlige Europa. Erobringene deres satte i gang en kjedereaksjon der germanske folk søkte vestover og sørover mot Romerriket (Imsen & Seland, 2024). Blant dem var vestgotere, østgotere, vandaler og frankere. Disse gruppene søkte ikke nødvendigvis å ødelegge Roma, men å erobre nytt land eller å komme seg i trygghet (Imsen & Seland, 2024). Resultatet ble nye identiteter der romersk og germansk kultur smeltet sammen."
         },
         {
             "type": "component",
@@ -63,7 +63,7 @@
                         "right": "Muntlig sedvane og rett (Tingsamfunn)"
                     },
                     {
-                        "left": "Loja itet til staten og keiseren",
+                        "left": "Lojalitet til staten og keiseren",
                         "right": "Personlig troskap til høvdingen (Comitatus)"
                     },
                     {
@@ -83,11 +83,11 @@
         },
         {
             "type": "text",
-            "content": "Etter at den romerske staten forsvant, var den katolske kirken den eneste institusjonen som fortsatt holdt Europa sammen. Paven i Roma tok over rollen som en moralsk og ofte politisk leder. I denne kaotiske tiden vokste klostervesenet frem som en stabiliserende kraft. Benedikt av Nursia grunnla på 500-tallet klosteret Monte Cassino og utarbeidet 'Benedikts regel', som ble malen for munkeordenene i vest."
+            "content": "Etter at den romerske staten forsvant i vest, var den katolske kirken en av de få institusjonene som fortsatt bandt Europa sammen. Paven i Roma tok over rollen som en moralsk og ofte politisk leder. I denne kaotiske tiden vokste klostervesenet frem som en stabiliserende kraft. Rundt år 530 anla Benedikt fra Nursia et kloster på fjelltoppen Monte Cassino sørøst for Roma, og regelen han skrev, Benedikts regel, ble det mest innflytelsesrike klosterreglementet i Den katolske kirke (Stensvold, 2026)."
         },
         {
             "type": "text",
-            "content": "Klostrene ble mye mer enn bare religøse sentre. De var datidens biblioteker, sykehus og landbruksskoler. I de såkalte scriptoriene satt munker og kopierte bibler og antikke verk for hånd. Uten denne innsatsen ville store deler av antikkens litteratur, filosofi og vitenskap ha gått tapt for ettertiden. Klostrene var øyer av orden og læring i et ellers fragmentert landskap."
+            "content": "Klostrene ble mye mer enn bare religiøse sentre. De var datidens biblioteker og lærdomssentre. I de såkalte skriveverkstedene (scriptoriene) satt munker og kopierte bibler og antikke verk for hånd. Særlig latinske tekster ble bevart gjennom bibliotekene og skriveverkstedene til benediktinerordenen (Moseid mfl., 2025). Uten denne innsatsen ville store deler av antikkens litteratur, filosofi og vitenskap ha gått tapt for ettertiden. Klostrene var øyer av orden og læring i et ellers fragmentert landskap."
         },
         {
             "type": "header",
@@ -95,7 +95,7 @@
         },
         {
             "type": "text",
-            "content": "Hvorfor vet vi det vi vet om denne tiden? Historikere støtter seg på både skriftlige og arkeologiske kilder. Gregor av Tours er vår viktigste kilde til frankernes historie. Selv om han ofte skriver farget av sin egen tid og sine religiøse overbevisninger, gir han oss et uvurderlig innblikk i livene til konger som Klodvig. Arkeologiske funn, som praktfulle gravhauger og rester av landsbyer, utfyller bildet og viser oss at hverdagen for vanlige folk kanskje ikke var så mørk som tidligere antatt."
+            "content": "Hvorfor vet vi det vi vet om denne tiden? Historikere støtter seg på både skriftlige og arkeologiske kilder. Verket 'Frankernes historie', skrevet av Gregor fra Tours, er en viktig kilde til historien i merovingertiden (Flottorp, 2024). Han skrev også helgenfortellinger, og teksten hans er farget av hans egen tid og hans religiøse overbevisninger. Likevel gir han oss et uvurderlig innblikk i livene til konger som Klodvig. Arkeologiske funn, som praktfulle gravhauger og rester av landsbyer, utfyller bildet og viser oss at hverdagen for vanlige folk kanskje ikke var så mørk som tidligere antatt."
         },
         {
             "type": "component",
@@ -112,11 +112,11 @@
         },
         {
             "type": "text",
-            "content": "Frankerne skilte seg ut som den mest holdbare av de nye germanske maktene. Under Klodvig på slutten av 400-tallet ble de samlet til ett rike. Klodvigs dåp i 496 var ikke bare en religiøs handling, men et politisk mesterstykke. Ved å velge den katolske troen, framfor arianismen som andre germanske stammer bekjente seg til, sikret han seg støtte fra den romerske adelen og kirken i Gallia. Dette la grunnlaget for Merovingerdynastiet, de 'langhårede kongene'."
+            "content": "Frankerne skilte seg ut som den mest holdbare av de nye germanske maktene. Klodvig var den første som samlet frankerne til et større rike (Store norske leksikon, 2026). Dåpen hans i Reims i 496 var ikke bare en religiøs handling, men et politisk mesterstykke. Ved å velge den romersk-katolske troen framfor arianismen, som gotere, burgundere og langobarder den gang støttet, sikret han frankerriket støtte fra romerkirken (Store norske leksikon, 2026). Dette la grunnlaget for Merovingerdynastiet, som styrte frankerriket helt til den siste merovingerkongen ble avsatt i 751 (Bratberg & Brégaint, 2025)."
         },
         {
             "type": "text",
-            "content": "Etter hvert ble Merovingerne svakere, og den reelle makten havnet hos 'major domus' – hushovmesterne. Den mest kjente av disse var Karl Martell. I 732 stanset han den arabiske ekspansjonen inn i Europa i det berømte slaget ved Poitiers (Tours). Dette slaget ble stående som et symbol på forsvaret av det kristne Europa og banet vei for et nytt dynasti: Karolingerne."
+            "content": "Etter hvert ble merovingerne svakere, og den reelle makten havnet hos kongens 'major domus' - hushovmesteren. Merovingerkongene ble marionetter i hendene på karolingerne, som gjorde hushovmester-stillingen arvelig i slekten (Bratberg & Brégaint, 2025). Karl Martell ble frankisk major domus i 717, og han førte i praksis styret selv (Holmboe, 2024). I 732 stanset han den arabiske framrykkingen i det berømte slaget ved Poitiers, og fikk med det verdenshistorisk betydning (Holmboe, 2024). Han ble siden kalt kristenhetens redningsmann, og han ga navn til et nytt dynasti: karolingerne (Holmboe, 2024)."
         },
         {
             "type": "header",
@@ -124,7 +124,7 @@
         },
         {
             "type": "text",
-            "content": "Den raske fremveksten av det islamske kalifatet på 600- og 700-tallet endret maktbalansen fullstendig. Middelhavet, som i århundrer hadde vært 'Mare Nostrum' (vårt hav) for romerne og et sentrum for handel, ble nå en grensesone mellom to sivilisasjoner. Historikeren Henri Pirenne hevdet at det var først da araberne tok kontroll over Middelhavet, og dermed kuttet de gamle handelsveiene, at middelalderen egentlig begynte. Europa ble tvunget til å vende seg innover mot kontinentet og nordover, noe som styrket betydningen av Frankerriket."
+            "content": "Den raske fremveksten av det islamske kalifatet på 600- og 700-tallet endret maktbalansen fullstendig. Middelhavet, som i århundrer hadde vært 'Mare Nostrum' (vårt hav) for romerne og et sentrum for handel, ble nå en grensesone mellom to sivilisasjoner. Historikeren Henri Pirenne hevdet at det ikke var de germanske folkevandringene, men islams ekspansjon som skapte det store bruddet i utviklingen i Vest- og Sør-Europa (Imsen, 2025). Etter hans syn var det først da araberne tok kontroll over Middelhavet og kuttet de gamle handelsveiene, at middelalderen egentlig begynte. Europa ble tvunget til å vende seg innover mot kontinentet og nordover, noe som styrket betydningen av Frankerriket."
         },
         {
             "type": "header",
@@ -132,15 +132,15 @@
         },
         {
             "type": "text",
-            "content": "Karl den Store (Charlemagne) er kanskje den viktigste skikkelsen i tidlig middelalder. Han var en krigerkonge som utvidet Frankerriket til å dekke mesteparten av dagens Frankrike, Tyskland og Nord-Italia. Men han var også en administrator og reformator. Han etablerte et system med 'missi dominici' – utsendinger som reiste rundt for å kontrollere at hans lover ble fulgt og at rettferdighet skjedde."
+            "content": "Karl den store (Charlemagne) er kanskje den viktigste skikkelsen i tidlig middelalder. Han var en krigerkonge, og til slutt hersket han over et rike som nærmet seg det vestromerske i omfang (Holmboe, 2026). Men han var også en administrator og reformator. Hvert år sendte han ut kongelige sendebud, 'missi dominici', som regel en greve og en biskop, for å kontrollere grevene ute i riket (Holmboe, 2026)."
         },
         {
             "type": "text",
-            "content": "Under Karl den Store oppsto det vi kaller den karolingiske renessansen. Han så at kirken og staten trengte utdannede folk, og han inviterte de beste lærde i Europa, som Alkuin fra York, til sitt hoff i Aachen. De reformerte skrivesystemet ved å utvikle den karolingiske minuskelen – de små bokstavene som våre moderne fonter fortsatt bygger på. Dette gjorde det enklere å lese og kopiere bøker over hele riket."
+            "content": "Under Karl den store oppsto det vi kaller den karolingiske renessansen: teologi, historieskriving og diktning blomstret på nytt på grunnlag av arven fra antikken (Holmboe, 2026). Han så at kirken og staten trengte utdannede folk, og han hentet lærde som Alkuin fra York til hoffet sitt, der Alkuin ledet hoffskolen (Holmboe, 2026). Samtidig vokste det fram en ny skriftform, den karolingiske minuskelen, med små bokstaver som var lette å kjenne igjen. Den ble spredt gjennom kopieringsarbeidet i klostrene, ikke minst under Alkuins ledelse i klosteret i Tours, og det går en direkte linje fra denne håndskriften til de moderne skrifttypene vi bruker i dag (Rannem, 2025). Dette gjorde det enklere å lese og kopiere bøker over hele riket."
         },
         {
             "type": "text",
-            "content": "Kulminasjonen av hans makt kom i år 800, da han ble kronet til romersk keiser av paven. Dette var en handling full av symbolikk: Det var et forsøk på å gjenopplive det vestromerske keiserdømmet i en ny, kristen drakt. Selv om riket ble delt mellom hans sønnesønner etter hans død (traktaten i Verdun i 843), var grunnlaget for det moderne Europa med nasjoner som Frankrike og Tyskland lagt."
+            "content": "Kulminasjonen av hans makt kom juledag år 800. Under høymessen i Peterskirken i Roma kronet pave Leo 3. ham til romernes keiser (Holmboe, 2026). Dette var en handling full av symbolikk: Det var et forsøk på å gjenopplive det vestromerske keiserdømmet i en ny, kristen drakt. Ved traktaten i Verdun i 843 ble riket delt i tre: Vestfranken, Østfranken og midtriket Lothringen (Brégaint, 2026). Midtriket forsvant gradvis, og de to andre delene ble til det som senere skulle bli Frankrike og Tyskland (Brégaint, 2026)."
         },
         {
             "type": "component",
@@ -169,7 +169,31 @@
                 "gaaVidere": [
                     "Munkene i klostrene kopierte bøker for hånd for å ta vare på kunnskap. Hvordan tar vi vare på kunnskap i dag, og hva kan gå tapt hvis systemene våre svikter?",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor mange kaller denne perioden en mørk tid, og om du synes det navnet er rettferdig.",
-                    "Diskuter med en partner: Karl den Store blir kalt en av grunnleggerne av det moderne Europa. Hvorfor kan én enkelt hersker få så stor betydning for ettertiden?"
+                    "Diskuter med en partner: Karl den store blir kalt en av grunnleggerne av det moderne Europa. Hvorfor kan én enkelt hersker få så stor betydning for ettertiden?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brégaint, D. (2026). *Frankerriket*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Frankerriket](https://snl.no/Frankerriket)",
+                    "Flottorp, H. (2024). *Gregor fra Tours*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Gregor_fra_Tours](https://snl.no/Gregor_fra_Tours)",
+                    "Goplen, Å., Fjalsett, G. K., Tsakos, A. & Seland, E. H. (2025). *Bysants*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Bysants](https://snl.no/Bysants)",
+                    "Bratberg, T. & Brégaint, D. (2025). *merovingere*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/merovingere](https://snl.no/merovingere)",
+                    "Holmboe, H. (2024). *Karl Martell*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Karl_Martell](https://snl.no/Karl_Martell)",
+                    "Holmboe, H. (2026). *Karl 1. den store*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Karl_1._den_store](https://snl.no/Karl_1._den_store)",
+                    "Iddeng, J. W. (2025). *Diokletian*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Diokletian](https://snl.no/Diokletian)",
+                    "Iddeng, J. W., Steen, T. & Tvedt, K. A. (2025). *Romerriket*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Romerriket](https://snl.no/Romerriket)",
+                    "Imsen, S. (2025). *Henri Pirenne*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Henri_Pirenne](https://snl.no/Henri_Pirenne)",
+                    "Imsen, S. & Seland, E. H. (2024). *hunere*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/hunere](https://snl.no/hunere)",
+                    "Moseid, T. E., Redse, T. & Gjersdal, A. (2025). *bibliotek*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/bibliotek](https://snl.no/bibliotek)",
+                    "Rannem, Ø. (2025). *karolingisk minuskelskrift*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/karolingisk_minuskelskrift](https://snl.no/karolingisk_minuskelskrift)",
+                    "Sandvik, G. & Gisle, J. (2025). *Corpus juris civilis*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Corpus_juris_civilis](https://snl.no/Corpus_juris_civilis)",
+                    "Seland, E. H. (2025). *Konstantinopel*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Konstantinopel](https://snl.no/Konstantinopel)",
+                    "Stensvold, A. (2026). *Benedikt fra Nursia*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Benedikt_fra_Nursia](https://snl.no/Benedikt_fra_Nursia)",
+                    "Store norske leksikon. (2026). *Chlodvig 1.* Hentet 30.07.2026 fra [snl.no/Chlodvig_1.](https://snl.no/Chlodvig_1.)"
                 ]
             }
         }
