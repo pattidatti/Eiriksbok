@@ -1,5 +1,5 @@
 {
-  "buildId": 160131137510728,
+  "buildId": 134209113525249,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2583,6 +2583,9 @@
     "etnolekt": [
       "content/norsk/dialekter/etnolekt.json"
     ],
+    "geolekt": [
+      "content/norsk/dialekter/geolekt.json"
+    ],
     "hva-er-dialekter": [
       "content/norsk/dialekter/hva-er-dialekter.json"
     ],
@@ -4558,6 +4561,7 @@
     "norsk/analyse/tema-og-budskap": "content/norsk/analyse/tema-og-budskap.json",
     "norsk/dialekter/bergensk": "content/norsk/dialekter/bergensk.json",
     "norsk/dialekter/etnolekt": "content/norsk/dialekter/etnolekt.json",
+    "norsk/dialekter/geolekt": "content/norsk/dialekter/geolekt.json",
     "norsk/dialekter/hva-er-dialekter": "content/norsk/dialekter/hva-er-dialekter.json",
     "norsk/dialekter/idiolekt": "content/norsk/dialekter/idiolekt.json",
     "norsk/dialekter/malmerker": "content/norsk/dialekter/malmerker.json",

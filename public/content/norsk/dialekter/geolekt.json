@@ -1,0 +1,248 @@
+{
+    "id": "geolekt",
+    "title": "Geolekt: Hvor går grensen mellom to dialekter?",
+    "layout": "rich",
+    "subject": "norsk",
+    "year": "1850-1970",
+    "category": "Dialekter",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "En geolekt er en språkvariant som bare er knyttet til et geografisk område.",
+        "Grensen for ett enkelt språktrekk kalles en isogloss.",
+        "Isoglossene ligger sjelden oppå hverandre, derfor er en dialektgrense et område og ikke en strek."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Du sitter på bussen fra Bergen til Oslo. Ved avgang hører du «eg» og en rullende r. Fem timer senere, når bussen ruller ned mot Drammen, sier folk «jæi», og r-en er en helt annen lyd. Et sted underveis har språket skiftet. Men hvor? Var det da bussen passerte det høyeste fjellet? Da du kjørte gjennom den lange tunnelen? Prøv å sette fingeren på kartet og si «her går grensen». Det er nemlig vanskeligere enn det høres ut."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Buss på fjellovergang mellom Vestlandet og Østlandet i dagslys",
+            "caption": "Et sted på turen over fjellet skifter talemålet. Men det finnes ingen skiltstolpe som sier hvor."
+        },
+        {
+            "type": "header",
+            "text": "Geolekt: språket som hører til et sted"
+        },
+        {
+            "type": "text",
+            "content": "Språkforskere bruker ordet varietet om enhver variant av et språk. Når varieteten bare er avgrenset av geografi, altså av hvor folk bor, kaller vi den en geolekt (Neteland & Opsahl, 2025). Dette er den vanligste betydningen av ordet «dialekt» i dagligtale. Når du sier at noen «snakker sunnmørsk», mener du en geolekt."
+        },
+        {
+            "type": "text",
+            "content": "Geolekten er én av flere måter språket ditt kan være formet på. En [sosiolekt](/norsk/dialekter/sosiolekt) er knyttet til en sosial gruppe i stedet for et sted. En [etnolekt](/norsk/dialekter/etnolekt) vokser fram i miljøer med mange språk. Og helt ned på personnivå har hver av oss en [idiolekt](/norsk/dialekter/idiolekt), vår helt egen språkstil. Geolekten er den som svarer på spørsmålet «hvor kommer du fra?»."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hvorfor trenger vi ordet «geolekt»?",
+                "content": "Ordet «dialekt» blir brukt om to litt ulike ting. Noen ganger betyr det alle slags språkvarianter, også de sosiale. Andre ganger betyr det bare varianten som hører til et sted. Når forskere vil være helt presise på at de snakker om det siste, bruker de ordet geolekt (Neteland & Opsahl, 2025). Ordet er satt sammen av «geo», som betyr jord eller sted, og «lekt», som betyr talemåte."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Isoglossen: grensen for ett enkelt trekk"
+        },
+        {
+            "type": "text",
+            "content": "For å finne ut hvor en geolekt slutter, kan vi ikke måle hele talemålet på én gang. Vi må ta ett trekk om gangen. Et slikt trekk kaller vi et [målmerke](/norsk/dialekter/malmerker), for eksempel tjukk l eller den myke j-lyden i «mannj». Den geografiske grensen for utbredelsen av ett målmerke har et eget navn: den heter en isogloss (Neteland & Opsahl, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Slik lager forskerne isoglosser: de reiser rundt, spør folk på mange ulike steder hvordan de sier bestemte ord, og fører svarene inn på et kart. Da tegner det seg en linje der det ene svaret slutter og det andre tar over (Store norske leksikon, 2025). En dialektgrense er nettopp en slik skillelinje, der ett dialektsærtrekk slutter og et annet begynner (Skjekkeland, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Dette arbeidet har lange røtter i Norge. Ivar Aasen sine reiser på 1800-tallet var avgjørende for at studiet av dialekter kom i gang som vitenskap. Senere kartla Amund B. Larsen bymålene på begynnelsen av 1900-tallet, og ordlistene til Johan Storm ble brukt av forskere helt fram til 1970-tallet (Neteland, 2025). Likevel har vi aldri fått et samlet dialektatlas for norsk. Vi har mange kart over enkelttrekk, men ikke ett stort kart over alt."
+        },
+        {
+            "type": "component",
+            "name": "IsoglossKartet",
+            "props": {
+                "title": "Isogloss-kartet"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Derfor finnes det ingen skarp grense"
+        },
+        {
+            "type": "text",
+            "content": "Nå kommer det viktigste i hele artikkelen. Hvis alle målmerkene hadde skiftet på nøyaktig samme sted, ville dialektgrensene vært enkle streker. Men slik er det ikke. Isoglossene for ulike språktrekk faller ofte ikke sammen. Derfor blir overgangen fra sted til sted gradvis, litt etter litt (Store norske leksikon, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg tre bygder på rekke i en dal. Den vestligste mangler alle tre trekkene, den østligste har alle tre, og bygda i midten har ett av dem. Hvor setter du grensen da? Uansett hvor du setter den, havner noe på feil side. Det er derfor forskerne sier at en tydelig dialektgrense bare finnes der mange isoglosser faller sammen på samme sted (Store norske leksikon, 2025). Der linjene sprer seg, har vi i stedet et overgangsområde."
+        },
+        {
+            "type": "text",
+            "content": "Det blir enda mer rotete når vi ser nøye etter. Selv innenfor ett og samme målmerke kan det finnes flere varianter, og grensene for dem faller ikke sammen over alt. Tjukk l er et slikt tilfelle: lyden brukes både der det gamle språket hadde bokstaven l og der det hadde bokstavene rð, og de to typene har ikke helt de samme grensene (Venås & Skjekkeland, 2026). Jo nærmere du går inn på kartet, jo flere linjer dukker opp."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Nærbilde av et gammelt håndtegnet dialektkart med flere fargede linjer",
+            "caption": "Hver farget linje er ett målmerke. Der linjene følger hverandre, snakker vi om en dialektgrense."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "dialektgrensa-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Geografien tegner linjene"
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor ligger linjene akkurat der de ligger? Svaret er ofte at folk måtte reise for å snakke sammen. Det store skillet mellom østnorsk og vestnorsk følger geografien tett. Grensen går fra Langesundsfjorden, gjennom sørvestre Telemark, videre langs Langfjella, og til slutt mellom Romsdal og Nordmøre (Venås & Skjekkeland, 2026). Det er ingen tilfeldighet at den følger den store fjellkjeden. Fjell var det som gjorde det tungt å komme seg fra bygd til bygd."
+        },
+        {
+            "type": "text",
+            "content": "Setesdal er et godt eksempel. Dalen fikk ikke ordentlig vei før på slutten av 1800-tallet, og talemålet der har holdt på mange gamle trekk som er borte andre steder (Skjekkeland, 2026). Når reisen er tung, blir språket liggende i ro. Når reisen er lett, blandes språket raskere."
+        },
+        {
+            "type": "text",
+            "content": "Andre trekk følger helt andre linjer. Palatalisering, den myke j-lyden, hører til et nordlig område. Grensen for den strekker seg så langt sør som til Hedmark, og går mellom Valdres og Gudbrandsdalen (Venås & Skjekkeland, 2026). Den linjen har altså ingenting med Langfjella å gjøre. To bygder kan ligge på samme side av den ene grensen og på hver sin side av den andre. Nettopp derfor blir kartet et nett av linjer i stedet for et puslespill med tydelige biter."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "quote": "En dialektgrense er sjelden en strek. Den er et belte der mange små linjer tilfeldigvis følger hverandre.",
+                "author": "Om norsk dialektgeografi"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Grenser som flytter på seg"
+        },
+        {
+            "type": "text",
+            "content": "Isoglosser er heller ikke fastspikret. De flytter seg når trekkene [sprer seg](/norsk/dialekter/spredning-av-dialekttrekk) til nye områder. Skarre-r er det beste eksempelet. Lyden oppsto i Paris på 1600-tallet, og rundt år 1800 hadde den nådd Kristiansand og Bergen. Siden 1950-tallet har skarre-beltet vokst videre fra Risør i retning Bergen (Skjekkeland, 2026). Grensen for skarre-r i dag ligger altså et annet sted enn den lå da bestemoren din var ung."
+        },
+        {
+            "type": "text",
+            "content": "Noen ganger er skiftet likevel brått. Det er lett å finne eksempler på at et dialekttrekk plutselig forsvinner fra én bygd til nabobygda (Skjekkeland, 2026). En fjord, et fjell eller en gammel grense mellom to prestegjeld kan gi et tydelig hopp. Men det gjelder ett trekk om gangen, ikke hele talemålet."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Kartet viser fortiden",
+                "content": "Et dialektkart er som et gammelt fotografi. Det viser hvordan folk snakket den gangen forskerne samlet inn materialet, og de spurte som regel eldre folk på landsbygda (Neteland, 2025). Kartet er derfor ikke et bilde av hvordan ungdom snakker i dag. Nå har folk flyttet mer, reist mer og møttes på nett, og mange av de gamle linjene har blitt utydelige."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To ungdommer prater sammen på en fjellovergang med utsikt over dalen",
+            "caption": "Grensene i språket er levende. De flytter seg hver gang folk møtes på nye måter."
+        },
+        {
+            "type": "text",
+            "content": "Så hva svarer vi til slutt på spørsmålet fra bussturen? At grensen ikke er ett sted. Den er en sone, kanskje flere mil bred, der det ene trekket etter det andre gir seg. Å forstå det er å forstå hvordan språk faktisk fungerer: ikke som land med streker mellom seg, men som et landskap der alt går gradvis over i noe annet."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en geolekt? Forklar med egne ord.",
+                    "Hva betyr ordet isogloss?",
+                    "Hvor går hovedgrensen mellom østnorsk og vestnorsk? Nevn minst tre steder den passerer.",
+                    "Når nådde skarre-r fram til Kristiansand og Bergen?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor det ikke går an å tegne én strek som deler to dialekter helt riktig.",
+                    "Hvorfor har talemålet i Setesdal holdt på gamle trekk lenger enn mange andre steder?",
+                    "Et dialektkart er laget av svar fra eldre folk på landsbygda. Hva blir da usikkert hvis vi bruker kartet til å si noe om hvordan ungdom snakker i dag?",
+                    "Hva er forskjellen på en geolekt og en sosiolekt? Gi et eksempel på hver."
+                ],
+                "gaaVidere": [
+                    "Spør noen som er eldre enn deg om de husker ord eller uttaler fra hjemstedet sitt som nesten ingen bruker lenger. Skriv ned tre av dem.",
+                    "Tegn din egen isogloss. Velg ett ord som sies på to måter der du bor, spør ti personer, og marker svarene på et enkelt kart over nærområdet.",
+                    "Diskuter i klassen: Betyr det noe om de gamle dialektgrensene blir borte? Hva vinner vi, og hva mister vi?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er en geolekt?",
+                        "options": [
+                            "En språkvariant som bare er knyttet til et geografisk område",
+                            "En språkvariant som er knyttet til en sosial gruppe",
+                            "Den personlige språkstilen til ett enkelt menneske",
+                            "Et skriftspråk som brukes i skolen"
+                        ],
+                        "correctIndex": 0,
+                        "explanation": "En geolekt er avgrenset av hvor folk bor. Er varianten knyttet til en sosial gruppe, kaller vi den en sosiolekt."
+                    },
+                    {
+                        "question": "Hva kaller vi den geografiske grensen for utbredelsen av ett målmerke?",
+                        "options": ["En dialektsone", "En isogloss", "En varietet", "Et målføre"],
+                        "correctIndex": 1,
+                        "explanation": "En isogloss er linjen på kartet der ett bestemt språktrekk slutter og et annet tar over."
+                    },
+                    {
+                        "question": "Hvorfor er dialektgrenser som regel ikke skarpe streker?",
+                        "options": [
+                            "Fordi forskerne ikke har rukket å måle nøyaktig nok",
+                            "Fordi alle dialekter egentlig er like",
+                            "Fordi isoglossene for ulike språktrekk ofte ikke faller sammen",
+                            "Fordi grensene bare finnes i skriftspråket"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Hvert trekk har sin egen grense. Når linjene ligger på ulike steder, blir overgangen gradvis, og vi får et overgangsområde i stedet for en strek."
+                    },
+                    {
+                        "question": "Når snakker vi likevel om en tydelig dialektgrense?",
+                        "options": [
+                            "Når mange isoglosser faller sammen på samme sted",
+                            "Når det går en fylkesgrense der",
+                            "Når folk selv sier at de snakker ulikt",
+                            "Når det er mer enn ti mil mellom to bygder"
+                        ],
+                        "correctIndex": 0,
+                        "explanation": "Det er buntingen som lager grensen. Der flere linjer følger hverandre, oppleves skillet som tydelig."
+                    },
+                    {
+                        "question": "Hva forteller historien om skarre-r oss om isoglosser?",
+                        "options": [
+                            "At de ligger fast gjennom hundrevis av år",
+                            "At de kan flytte seg når et språktrekk sprer seg",
+                            "At de bare finnes på Vestlandet",
+                            "At de blir tegnet av Språkrådet"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Skarre-r kom fra Paris på 1600-tallet, nådde Kristiansand og Bergen rundt 1800, og beltet har fortsatt å vokse etter 1950. Grensen er i bevegelse."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Neteland, R. & Opsahl, T. (2025). *Dialekt*. Store norske leksikon. Hentet 30.07.2026 fra [https://snl.no/dialekt](https://snl.no/dialekt)",
+                    "Skjekkeland, M. (2026). *Dialektgrenser*. Store norske leksikon. Hentet 30.07.2026 fra [https://snl.no/dialektgrenser](https://snl.no/dialektgrenser)",
+                    "Store norske leksikon. (2025). *Dialektgeografi*. Hentet 30.07.2026 fra [https://snl.no/dialektgeografi](https://snl.no/dialektgeografi)",
+                    "Neteland, R. (2025). *Dialektologi*. Store norske leksikon. Hentet 30.07.2026 fra [https://snl.no/dialektologi](https://snl.no/dialektologi)",
+                    "Venås, K. & Skjekkeland, M. (2026). *Dialekter i Noreg - inndeling*. Store norske leksikon. Hentet 30.07.2026 fra [https://snl.no/dialekter_i_Noreg_-_inndeling](https://snl.no/dialekter_i_Noreg_-_inndeling)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
