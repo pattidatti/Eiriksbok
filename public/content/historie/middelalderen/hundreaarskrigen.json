@@ -24,7 +24,7 @@
         },
         {
             "type": "text",
-            "content": "Svaret ligger i en av de lengste og merkeligste krigene i historien. Hundreårskrigen var en serie kriger mellom England og Frankrike som varte fra 1337 til 1453, altså i hele 116 år. Den startet med en krangel om en krone. Den engelske kongen mente at han også hadde rett til å være konge i Frankrike, og da franskmennene sa nei, gikk England til krig. Engelske hærer seilte over kanalen og herjet i Frankrike i over hundre år."
+            "content": "Svaret ligger i en av de lengste og merkeligste krigene i historien. Hundreårskrigen er navnet på de krigene som ble ført mellom England og Frankrike i perioden 1337 til 1453, med kortere og lengre perioder med fred og våpenhvile imellom (Imsen, 2024). Det er 116 år fra første til siste år. Den startet med en krangel om en krone. Engelske konger hadde len i Frankrike og ville styre dem fritt, mens de franske kongene krevde full kontroll. I 1328 hevdet den engelske kongen Edvard 3. at han selv var den rettmessige arvingen til den franske tronen, gjennom moren sin (Imsen, 2024). Da franskmennene sa nei, gikk England til krig. Engelske hærer seilte over kanalen og herjet i Frankrike i over hundre år."
         },
         {
             "type": "header",
@@ -32,7 +32,7 @@
         },
         {
             "type": "text",
-            "content": "Selv om vi kaller den én krig, var Hundreårskrigen egentlig mange korte kriger med lange pauser imellom. Noen år raste kampene, andre år var det våpenhvile. Soldatene dro hjem, kongene byttet ut hverandre, og nye konger startet kampen på nytt. Mellom slagene kom også noe verre enn krig: i 1349 traff svartedauden Europa og drepte rundt en tredjedel av alle mennesker. Du kan lese mer i artikkelen om [svartedauden](/historie/middelalderen/svartedauden). Pesten rammet begge sider hardt, men så snart den ga seg, tok krigen til igjen."
+            "content": "Selv om vi kaller den én krig, var Hundreårskrigen egentlig mange korte kriger med lange pauser imellom. Noen år raste kampene, andre år var det våpenhvile. Soldatene dro hjem, kongene byttet ut hverandre, og nye konger startet kampen på nytt. Mellom slagene kom også noe verre enn krig: svartedauden herjet i Europa fra 1346 til 1353, og trolig døde rundt halvparten av folket i Europa på bare tre år. Til Norge kom pesten i 1349 (Moseng, 2026). Du kan lese mer i artikkelen om [svartedauden](/historie/middelalderen/svartedauden). Pesten rammet begge sider hardt, og krigen falt sammen med en tid da hele den føydale økonomien i Vest-Europa var i krise, blant annet fordi befolkningen sank under de store pestepidemiene (Imsen, 2024)."
         },
         {
             "type": "header",
@@ -40,11 +40,11 @@
         },
         {
             "type": "text",
-            "content": "I starten av middelalderen var ridderen nesten umulig å slå. Han var en rik kriger i full rustning på en stridshest, trent fra barnsben av. I artikkelen om [middelalderen](/historie/middelalderen/middelalderen) ser du hvordan ridderne sto øverst på krigsmarken, akkurat som under [korstogene](/historie/middelalderen/korstogene). Men i Hundreårskrigen møtte ridderen et nytt våpen: den engelske langbuen. En langbue var billig og laget av tre, men den var nesten to meter høy og skjøt piler så langt og så hardt at de kunne gå tvers gjennom rustning. Og det viktigste: en hær kunne ha tusenvis av bueskyttere. Mens én ridder kostet en formue, kunne en vanlig bonde læres opp til å skyte med bue."
+            "content": "I starten av middelalderen var ridderen nesten umulig å slå. Han var en rik kriger i full rustning på en stridshest, trent fra barnsben av. I artikkelen om [middelalderen](/historie/middelalderen/middelalderen) ser du hvordan ridderne sto øverst på krigsmarken, akkurat som under [korstogene](/historie/middelalderen/korstogene). Men i Hundreårskrigen møtte ridderen et nytt våpen: den engelske langbuen. Langbuen var et fryktet engelsk våpen et godt stykke inn på 1400-tallet (Bryhn & Beil, 2026). Den var billig og laget av tre, og det viktigste: en hær kunne ha tusenvis av bueskyttere. Mens én ridder kostet en formue, kunne en vanlig bonde læres opp til å skyte med bue. Hundreårskrigen ble et nederlag for den franske føydaladelen, som slag etter slag ble slått av engelske bueskyttere og fotfolk (Imsen, 2024)."
         },
         {
             "type": "text",
-            "content": "Ved Crécy i 1346, Poitiers i 1356 og Azincourt i 1415 vant England store seire mot mye større franske hærer. Hemmeligheten var ikke ett supervåpen, men mengden. Tusenvis av piler i lufta samtidig stoppet ethvert rytterangrep før det nådde fram. Prøv det selv nedenfor: hvor mange bueskyttere må til for å stanse den franske ridderen?"
+            "content": "Ved Crécy i 1346, Poitiers i 1356 og Azincourt i 1415 vant England store seire mot mye større franske hærer (Imsen, 2024). Slaget ved Azincourt sto 25. oktober 1415, og der slo engelskmennene under kong Henrik 5. en fransk styrke som var tallmessig overlegen (Lima, 2025). Hemmeligheten var ikke ett supervåpen, men mengden. Tusenvis av piler i lufta samtidig stoppet ethvert rytterangrep før det nådde fram. Prøv det selv nedenfor: hvor mange bueskyttere må til for å stanse den franske ridderen?"
         },
         {
             "type": "component",
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "content": "Senere i krigen kom enda et nytt våpen: kanonen. Med krutt og kanonkuler kunne en hær skyte hull i de tykke borgmurene som ridderne hadde gjemt seg bak i hundrevis av år. Sammen gjorde langbuen og kanonen at den tunge ridderen ikke lenger var konge på slagmarken. Krig handlet ikke lenger om noen få helter i rustning, men om mange vanlige soldater med våpen som alle hadde råd til."
+            "content": "Krutt og kanoner kom også i bruk. Skytevåpen ble vanlige i løpet av Hundreårskrigen, og kanoner er dokumentert brukt alt i slaget ved Crécy i 1346 (Mo & Leraand, 2025). Etter hvert gjorde den nye teknologien at faste festninger ble mer sårbare - de tykke murene som ridderne hadde gjemt seg bak i hundrevis av år, var ikke lenger nok (Mo & Leraand, 2025). Sammen gjorde langbuen og kanonen at den tunge ridderen ikke lenger var konge på slagmarken. Krig handlet ikke lenger om noen få helter i rustning, men om mange vanlige soldater med våpen som alle hadde råd til."
         },
         {
             "type": "image",
@@ -67,11 +67,11 @@
         },
         {
             "type": "text",
-            "content": "Rundt 1420 så det ut som Frankrike var ferdig. England kontrollerte store deler av landet, og den franske kongen var svak og redd. Da skjedde noe ingen kunne tro. En ung bondejente på sytten år, Jeanne d'Arc, kom til hoffet og sa at Gud hadde sendt henne for å redde Frankrike. Mot alle odds fikk hun lov til å bli med hæren. I 1429 ledet hun de franske soldatene til byen Orléans, som hadde vært beleiret av engelskmennene. På få dager løftet hun beleiringen. Plutselig trodde franskmennene på seier igjen."
+            "content": "Rundt 1420 så det ut som Frankrike var ferdig. England kontrollerte store deler av landet, og den franske kongen var svak og redd. Da skjedde noe ingen kunne tro. En ung bondejente på sytten år kom til hoffet og sa at himmelske stemmer hadde sendt henne for å hjelpe kongen av Frankrike mot fiendene hans. Hun het Jeanne d'Arc, var født i 1412 og kom fra landsbyen Domrémy (Holmboe mfl., 2026). Mot alle odds fikk hun lov til å bli med hæren. I 1429 fikk hun en militær kommando og klarte å snu krigslykken til Frankrikes fordel: hun løftet beleiringen av Orléans og vant seier ved Patay (Holmboe mfl., 2026). Plutselig trodde franskmennene på seier igjen."
         },
         {
             "type": "text",
-            "content": "Jeanne hjalp den franske kongen Karl 7. å bli kronet, og det ga ham makt og ære. Men selv ble hun tatt til fange av englendernes allierte, dømt og brent på bålet i 1431, bare nitten år gammel. Likevel var skaden allerede skjedd for England: krigen hadde snudd. I mikrospillet under kan du selv følge krigen som svinger fram og tilbake, helt til Jeanne snur alt ved Orléans."
+            "content": "Deretter førte hun kong Karl 7. til Reims, der han ble kronet. Det var høydepunktet i den korte karrieren hennes. I 1430 ble hun tatt til fange av burgunderne, solgt til engelskmennene og stilt for retten i Rouen, tiltalt for trolldom og kjetteri. Hun ble brent på bålet 30. mai 1431, nitten år gammel (Holmboe mfl., 2026). Den militære rollen hennes var i virkeligheten svært begrenset. Den største virkningen hennes var psykologisk: hun viste at engelskmennene kunne slås, og ga franskmennene motet tilbake (Holmboe mfl., 2026). I mikrospillet under kan du selv følge krigen som svinger fram og tilbake, helt til Jeanne snur alt ved Orléans."
         },
         {
             "type": "component",
@@ -86,7 +86,7 @@
         },
         {
             "type": "text",
-            "content": "Etter Orléans tok Frankrike tilbake landet sitt bit for bit, og i 1453 var krigen over. England satt igjen med nesten ingenting på fransk jord. Men krigen forandret mer enn et kart. Før hadde mange folk følt seg mest knyttet til sin egen herre eller sin egen by. Etter over hundre år med krig mot en felles fiende begynte folk i England og Frankrike å føle seg som engelskmenn og franskmenn, som egne nasjoner. Kongene fikk mer makt, fordi de trengte penger og soldater fra hele landet for å vinne krigen. De begynte å bygge faste hærer av betalte soldater i stedet for å låne riddere av rike herrer, og de krevde inn skatt fra alle for å betale for det. Sakte men sikkert ble de løse landene til sterke, samlede stater."
+            "content": "Etter Orléans tok Frankrike tilbake landet sitt bit for bit. I 1453 var engelskmennene i praksis fordrevet fra Frankrike, selv om de fortsatt satt med byen Calais (Imsen, 2024). Men krigen forandret mer enn et kart. Før hadde mange folk følt seg mest knyttet til sin egen herre eller sin egen by. I begge landene fremmet krigen nasjonalistiske holdninger: folk begynte å føle seg som engelskmenn og franskmenn, som egne nasjoner (Imsen, 2024). Makten flyttet seg også, men ikke på samme måte i de to landene. I Frankrike styrket krigen kongemakten og pekte fram mot eneveldet. I England la krigføringen større økonomiske byrder på folket, og det styrket indirekte parlamentets makt over skattene (Imsen, 2024)."
         },
         {
             "type": "image",
@@ -106,13 +106,13 @@
                     "Hvilke to land kjempet mot hverandre i Hundreårskrigen, og hva startet krigen?",
                     "Hvorfor kunne den engelske langbuen slå de franske ridderne? Nevn minst to grunner fra teksten.",
                     "Hva gjorde Jeanne d'Arc ved byen Orléans i 1429, og hvordan endte det for henne selv?",
-                    "Hvor mange år varte krigen, og hva rammet Europa midt i den i 1349?"
+                    "Hvor mange år varte krigen, og hvilken katastrofe rammet Europa midt i den?"
                 ],
                 "reflekter": [
                     "Teksten sier at hemmeligheten bak de engelske seirene ikke var ett supervåpen, men mengden. Forklar hvorfor tusenvis av billige bueskyttere kunne slå noen få dyre riddere.",
                     "Både langbuen og kanonen gjorde slutt på riddernes makt. Sammenlign de to våpnene: hva ødela hver av dem for ridderne?",
                     "Hvorfor tror du en ung bondejente som Jeanne d'Arc klarte å gi de franske soldatene troen på seier tilbake?",
-                    "Krigen gjorde kongene sterkere og folk mer knyttet til nasjonen sin. Forklar hvordan behovet for penger og soldater til krigen førte til dette."
+                    "Krigen gjorde folk mer knyttet til nasjonen sin, men makten flyttet seg ulikt i de to landene: i Frankrike ble kongen sterkere, i England ble parlamentet sterkere. Forklar forskjellen med egne ord."
                 ],
                 "gaaVidere": [
                     "Skriv et kort dagboknotat (4-6 setninger) fra en fransk bonde som ble lært opp til å skyte med langbue i den engelske hæren. Hvordan føles det å kunne slå en ridder?",
@@ -164,11 +164,26 @@
                             "Pesten forsvant for godt"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Etter over hundre år med krig mot en felles fiende vokste følelsen av å være en egen nasjon fram, og kongene fikk mer makt."
+                        "explanation": "Etter over hundre år med krig mot en felles fiende vokste følelsen av å være en egen nasjon fram i både England og Frankrike."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bryhn, R. & Beil, B. J. L. (2026). *bueskyting*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/bueskyting](https://snl.no/bueskyting)",
+                    "Holmboe, H., Svendsen, T. O. & Brégaint, D. (2026). *Jeanne d'Arc*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Jeanne_d'Arc](https://snl.no/Jeanne_d%27Arc)",
+                    "Imsen, S. (2024). *Hundreårskrigen*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Hundreårskrigen](https://snl.no/Hundre%C3%A5rskrigen)",
+                    "Lima, G. (2025). *Azincourt*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Azincourt](https://snl.no/Azincourt)",
+                    "Mo, M. & Leraand, D. (2025). *artilleri*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/artilleri](https://snl.no/artilleri)",
+                    "Moseng, O. G. (2026). *svartedauden*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/svartedauden](https://snl.no/svartedauden)"
                 ]
             }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-30"
 }
