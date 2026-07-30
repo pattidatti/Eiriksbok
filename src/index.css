@@ -202,6 +202,24 @@ body.dyslexia-mode header > div > :last-child span {
   white-space: nowrap;
 }
 
+/* Under xl får ikke menyraden plass med den bredere fonten: ved 768 px trenger
+   den 504 px mot 423 tilgjengelige, og selv uten mellomrom mellom lenkene
+   mangler det - «Stier» ble klippet og «Øving» forsvant bak streak-pilla.
+   Der lar vi menyraden stå i grunnfonten. Brødteksten beholder OpenDyslexic på
+   alle bredder, og det er der lesegevinsten ligger; menyraden er rammeverk.
+   (Å falle tilbake til hamburgermenyen virker ikke: både overlegget og panelet
+   i MobileMenu er md:hidden, så knappen ville åpnet noe usynlig.)
+
+   Merk :not()-leddene: de er ikke pynt. Grunnregelen over teller tre klasser
+   (.dyslexia-mode pluss de to :not()-argumentene), så en enklere selektor her
+   ville tapt på spesifisitet selv med !important. */
+@media (max-width: 1279px) {
+  body.dyslexia-mode header nav,
+  body.dyslexia-mode header nav *:not(.material-icons):not(.material-icons-outlined) {
+    font-family: 'Inter', sans-serif !important;
+  }
+}
+
 /* --- Atmospheric Overlays --- */
 @keyframes cloud-drift {
   from {
