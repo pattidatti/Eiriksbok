@@ -14,13 +14,13 @@
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg at du lever for fem tusen år siden. Det finnes ingen bøker, ingen bokstaver, ingen måte å skrive ned tankene dine på. Likevel vil du fortelle noe til dem som kommer etter deg. Hva gjør du? En del mennesker i Norge fant en løsning: de hugget bildene sine rett inn i fjellet. Disse bildene kaller vi helleristninger, og noen av dem har ligget der i over seks tusen år. De er noe av det eldste vi har etter de første nordmennene."
+            "content": "Tenk deg at du lever for fem tusen år siden. Det finnes ingen bøker, ingen bokstaver, ingen måte å skrive ned tankene dine på. Likevel vil du fortelle noe til dem som kommer etter deg. Hva gjør du? En del mennesker i Norge fant en løsning: de hugget bildene sine rett inn i fjellet. Disse bildene kaller vi helleristninger, og de eldste i Alta ble hugget for over seks tusen år siden (Solberg, 2024). De er noe av det eldste vi har etter de første nordmennene."
         },
         {
             "type": "image",
             "src": "/images/norgeshistorie/helleristninger-01.webp",
             "alt": "Nært bilde av figurer hugget inn i et grått svaberg ute i landskapet",
-            "caption": "En helleristning er ikke malt på, men hugget ned i selve berget. Sporene er bare noen millimeter dype."
+            "caption": "En helleristning er som regel hugget eller slipt ned i selve berget. Sporene er så grunne at figurene nesten forsvinner i steinen."
         },
         {
             "type": "header",
@@ -28,11 +28,11 @@
         },
         {
             "type": "text",
-            "content": "En helleristning er et bilde som er hugget eller slipt inn i berg. Folk brukte en hard stein og slo om og om igjen til det ble en grunn fure i fjellet. Det tok lang tid, så ingen gjorde dette for moro skyld. Bildene måtte bety noe viktig. Siden de som laget dem ikke kunne skrive, er ristningene den nærmeste beskjeden vi har fra dem. Når vi ser på en helleristning, ser vi rett inn i tankene til et menneske som levde lenge før Norge fantes som land."
+            "content": "En helleristning er et bilde som er hugget, skåret, slipt eller malt på en bergflate (Hagen, 2024). Folk brukte en hard stein og slo om og om igjen til det ble en grunn fure i fjellet. Det tok lang tid, så ingen gjorde dette for moro skyld. Bildene måtte bety noe viktig. Siden de som laget dem ikke kunne skrive, er ristningene den nærmeste beskjeden vi har fra dem. Når vi ser på en helleristning, ser vi rett inn i tankene til et menneske som levde lenge før Norge fantes som land."
         },
         {
             "type": "text",
-            "content": "De aller fleste helleristningene i Norge ligger langs kysten og ved vann. Det er ingen tilfeldighet. Havet og elvene ga mat, og det var langs vannet folk bodde og reiste. Dette var lenge før [vikingtiden og rikssamlingen](/historie/norgeshistorie/norge-for-vikingene), i en tid da Norge var bygd av små grupper jegere og bønder."
+            "content": "De aller fleste helleristningene i Norge ligger nær gammel havstrand eller ved innsjøer og elver (Hagen, 2024). Det er ingen tilfeldighet. Havet og elvene ga mat, og det var langs vannet folk bodde og reiste. I dag er det registrert mer enn 1700 steder med bergkunst og over 30 000 figurer i Norge (Rogaland fylkeskommune, 2025). Dette var lenge før [vikingtiden og rikssamlingen](/historie/norgeshistorie/norge-for-vikingene), i en tid da Norge var bygd av små grupper jegere og bønder."
         },
         {
             "type": "header",
@@ -40,16 +40,16 @@
         },
         {
             "type": "text",
-            "content": "Forskerne deler helleristningene i to hovedtyper. De eldste kaller vi veideristninger, fra ordet veide som betyr å jakte. De er fra steinalderen og viser store dyr som elg, rein, bjørn og fisk. Dyrene er ofte tegnet med stor nøyaktighet, nesten som om den som hugget dem kjente hvert eneste dyr. Folk levde av å jakte og fiske, og mange tror de hugget dyrene i stein for å sikre seg god fangst. Den mest kjente samlingen finnes i Alta helt nord i Norge."
+            "content": "Forskerne deler helleristningene i to hovedtyper. De eldste kaller vi veideristninger, fra ordet veide som betyr å jakte. De er fra steinalderen og viser dyr som elg, rein, hjort, bjørn, sel, hval, fugl og fisk (Hagen, 2024). Dyrene er ofte tegnet med stor nøyaktighet, nesten som om den som hugget dem kjente hvert eneste dyr. Folk levde av å jakte og fiske, og mange tror de hugget dyrene i stein for å sikre seg god fangst. Den mest kjente samlingen finnes i Alta helt nord i Norge."
         },
         {
             "type": "text",
-            "content": "Den andre typen kaller vi jordbruksristninger. De er yngre og kom da folk hadde begynt å dyrke korn og holde dyr. Denne nye levemåten lærte du mer om i [jordbruksrevolusjonen](/historie/menneskets-tidlige-historie/den-jordbruksrevolusjonen). Nå dukker det opp andre bilder: båter, soltegn, hjul, plogen og mennesker. Båten er faktisk det vanligste motivet i hele Norden."
+            "content": "Den andre typen kaller vi jordbruksristninger. De er yngre og kom da folk hadde begynt å dyrke korn og holde dyr. Denne nye levemåten lærte du mer om i [jordbruksrevolusjonen](/historie/menneskets-tidlige-historie/den-jordbruksrevolusjonen). Nå dukker det opp andre bilder: båter, ringer, spiraler og soltegn. Båten er den vanligste bildeformen i jordbruksristningene (Hagen, 2024)."
         },
         {
             "type": "list",
             "items": [
-                "Båter: det vanligste motivet, ofte med mange små streker som kan være mennesker om bord.",
+                "Båter: det vanligste motivet i jordbruksristningene, ofte med mange små streker som kan være mennesker om bord.",
                 "Dyr: elg, rein, hjort og fisk, særlig i de eldste ristningene.",
                 "Soltegn: ringer og hjul som mange tror er bilder av solen.",
                 "Mennesker: enkle figurer, noen med våpen, noen som ser ut til å danse."
@@ -72,7 +72,7 @@
         },
         {
             "type": "text",
-            "content": "Du skulle tro at et bilde i fjellet var lett å få øye på. Det er det ikke. Sporene er bare noen få millimeter dype. Når sola står høyt på himmelen, faller lyset rett ned, og da forsvinner figurene nesten helt i berget. Men når sola står lavt, om morgenen eller kvelden, kommer lyset skrått inn. Da kaster de grunne furene en liten skygge, og plutselig trer dyrene, båtene og menneskene fram."
+            "content": "Du skulle tro at et bilde i fjellet var lett å få øye på. Det er det ikke. Sporene er svært grunne. Når sola står høyt på himmelen, faller lyset rett ned, og da forsvinner figurene nesten helt i berget. Men når sola står lavt, om morgenen eller kvelden, kommer lyset skrått inn. Da kaster de grunne furene en liten skygge, og plutselig trer dyrene, båtene og menneskene fram. Det er nettopp derfor helleristninger oppleves best når sollyset faller skrått på berget, eller når du lyser på dem med lykt i mørket (Rogaland fylkeskommune, 2025)."
         },
         {
             "type": "image",
@@ -82,7 +82,7 @@
         },
         {
             "type": "text",
-            "content": "Dette er ikke bare en morsom detalj. Det er selve grunnen til at mange ristninger ble funnet sent, og at nye blir oppdaget den dag i dag. Arkeologer leter når sola står lavt, eller maler opp sporene med rød farge så de blir lettere å se. Prøv det samme i spillet under: senk sola mot horisonten og se figurene komme fram på berget."
+            "content": "Dette er ikke bare en morsom detalj. Det er selve grunnen til at mange ristninger ble funnet sent, og at nye blir oppdaget den dag i dag. Arkeologer leter når sola står lavt. Før var det vanlig å male opp sporene med rød farge så de ble lettere å se, men siden 1990-tallet har Riksantikvaren arbeidet for å slutte med det, fordi malingen river med seg biter av berget når den flasser av (Rogaland fylkeskommune, 2025). Prøv det samme i spillet under: senk sola mot horisonten og se figurene komme fram på berget."
         },
         {
             "type": "component",
@@ -97,7 +97,7 @@
         },
         {
             "type": "text",
-            "content": "Den største og mest kjente samlingen av helleristninger i Norge ligger i Alta i Finnmark. Der har folk hugget bilder i over fem tusen år, og forskerne har funnet flere tusen figurer. I 1985 kom ristningene i Alta på UNESCOs liste over verdens viktigste kulturarv. Det betyr at de regnes som like verdifulle for hele verden som pyramidene i Egypt eller den kinesiske muren. Et naket berg i Nord-Norge står altså på samme liste som verdens mest berømte byggverk."
+            "content": "Den største og mest kjente samlingen av helleristninger i Norge ligger i Alta i Finnmark. Der ble det hugget bilder fra rundt 4200 fvt. til rundt 500 fvt., altså i nesten fire tusen år, og forskerne har funnet nesten tre tusen figurer fordelt på fire steder (Solberg, 2024). I 1985 kom bergkunsten i Alta på UNESCOs verdensarvliste (Storsletten, 2026). Det betyr at de regnes som like verdifulle for hele verden som pyramidene i Egypt eller den kinesiske muren. Et naket berg i Nord-Norge står altså på samme liste som verdens mest berømte byggverk."
         },
         {
             "type": "component",
@@ -107,8 +107,8 @@
                 "items": [
                     "Eldst: veideristninger fra steinalderen, med jaktdyr som elg og rein.",
                     "Yngst: jordbruksristninger fra bronsealderen, med båter, sol og mennesker.",
-                    "Alta i Finnmark har flere tusen figurer og er på UNESCOs verdensarvliste.",
-                    "Sporene er bare millimeter dype og synes best når sola står lavt."
+                    "Alta i Finnmark har nesten tre tusen figurer og kom på UNESCOs verdensarvliste i 1985.",
+                    "Sporene er svært grunne og synes best når sola står lavt."
                 ]
             }
         },
@@ -165,10 +165,10 @@
                         "explanation": "En helleristning er et bilde som er hugget eller slipt ned i selve berget, ikke malt på."
                     },
                     {
-                        "question": "Hvilket motiv er det vanligste i Norden?",
+                        "question": "Hvilket motiv er det vanligste i jordbruksristningene?",
                         "options": ["Elgen", "Solen", "Båten", "Hesten"],
                         "correctIndex": 2,
-                        "explanation": "Båten er det vanligste motivet, ofte med små streker som kan være mennesker om bord."
+                        "explanation": "Båten er den vanligste bildeformen i jordbruksristningene, ofte med små streker som kan være mennesker om bord."
                     },
                     {
                         "question": "Hvorfor er helleristninger ofte vanskelige å se?",
@@ -179,7 +179,7 @@
                             "De er alltid dekket av mose"
                         ],
                         "correctIndex": 2,
-                        "explanation": "Sporene er bare millimeter dype. Når sola står lavt, kaster de skygge, og figurene trer fram."
+                        "explanation": "Sporene er svært grunne. Når sola står lavt, kaster de skygge, og figurene trer fram."
                     },
                     {
                         "question": "Hvorfor er Alta-ristningene spesielt kjente?",
@@ -190,7 +190,7 @@
                             "De viser bilder av biler"
                         ],
                         "correctIndex": 1,
-                        "explanation": "Alta har flere tusen figurer og kom på UNESCOs liste over verdens viktigste kulturarv i 1985."
+                        "explanation": "Alta har nesten tre tusen figurer og kom på UNESCOs liste over verdens viktigste kulturarv i 1985."
                     },
                     {
                         "question": "Hva mener vi når vi sier at helleristninger må tolkes?",
@@ -205,7 +205,20 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hagen, A. (2024). *Helleristninger*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/helleristninger](https://snl.no/helleristninger)",
+                    "Rogaland fylkeskommune. (2025). *Helleristninger*. Hentet 30.07.2026 fra [rogfk.no](https://www.rogfk.no/vare-tjenester/kulturminner-og-vern/kulturminner-i-rogaland/helleristninger/)",
+                    "Solberg, B. (2024). *Alta-ristningene*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Alta-ristningene](https://snl.no/Alta-ristningene)",
+                    "Storsletten, O. (2026). *UNESCOs verdensarvliste*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/UNESCOs_verdensarvliste](https://snl.no/UNESCOs_verdensarvliste)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-30"
 }
