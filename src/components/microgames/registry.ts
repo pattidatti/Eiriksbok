@@ -11,6 +11,7 @@ const Colosseum3D = lazy(() => import('./Colosseum3D'));
 const TheodosianWalls3D = lazy(() => import('./TheodosianWalls3D'));
 const Hamskiftet3D = lazy(() => import('./Hamskiftet3D'));
 const OsloSosiolekt3D = lazy(() => import('./OsloSosiolekt3D'));
+const Dialektgrensa3D = lazy(() => import('./Dialektgrensa3D'));
 const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
 const Stemmesporet3D = lazy(() => import('./Stemmesporet3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
@@ -779,6 +780,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Hamskiftet3D'),
         Component: Hamskiftet3D as never,
+    },
+    'dialektgrensa-3d': {
+        id: 'dialektgrensa-3d',
+        title: 'Dialektgrensa',
+        description:
+            'Seks bygder ligger på rekke i en tenkt dal. Klikk deg gjennom dem og hør hvilke målmerker folk bruker - så dukker de tre isoglossene opp, og de ligger ikke på samme sted. Nå skal du dra én grensestolpe dit du mener dialektgrensa går. Over hvert hus lyser tre prikker grønt eller rødt mens du drar, og uansett hvor du setter stolpen blir noen liggende røde. Lyspæren: en dialektgrense er ikke én strek, men et område der flere isoglosser flokker seg.',
+        estimatedSeconds: 160,
+        loader: () => import('./Dialektgrensa3D'),
+        Component: Dialektgrensa3D as never,
     },
     'oslo-sosiolekt-3d': {
         id: 'oslo-sosiolekt-3d',

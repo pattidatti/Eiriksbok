@@ -202,6 +202,7 @@ const IdiolektFingeravtrykk = lazy(() => import('./content/interactive/IdiolektF
 const BergensTokjonn = lazy(() => import('./content/interactive/BergensTokjonn').then(m => ({ default: m.BergensTokjonn })));
 const BergensSosiolektPult = lazy(() => import('./content/interactive/BergensSosiolektPult').then(m => ({ default: m.BergensSosiolektPult })));
 const SpredningsKart = lazy(() => import('./content/interactive/SpredningsKart').then(m => ({ default: m.SpredningsKart })));
+const IsoglossKartet = lazy(() => import('./content/interactive/IsoglossKartet').then(m => ({ default: m.IsoglossKartet })));
 const StormaktVagskal = lazy(() => import('./content/interactive/StormaktVagskal').then(m => ({ default: m.StormaktVagskal })));
 const LeonardoNotatbok = lazy(() => import('./content/interactive/LeonardoNotatbok').then(m => ({ default: m.LeonardoNotatbok })));
 const GalileoTelescope = lazy(() => import('./content/interactive/GalileoTelescope').then(m => ({ default: m.GalileoTelescope })));
@@ -541,6 +542,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     BergensTokjonn,
     BergensSosiolektPult,
     SpredningsKart,
+    IsoglossKartet,
     StormaktVagskal,
     LeonardoNotatbok,
     GalileoTelescope,

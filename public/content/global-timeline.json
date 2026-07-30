@@ -5888,6 +5888,31 @@
       ]
     },
     {
+      "id": "geolekt",
+      "title": "Geolekt: Hvor går grensen mellom to dialekter?",
+      "description": "Hvert målmerke har sin egen grense på kartet. Lær hva en isogloss er, og hvorfor en dialektgrense er et område og ikke en strek.",
+      "startDate": 1850,
+      "endDate": 1970,
+      "displayDate": "1850-1970",
+      "type": "lesson",
+      "subjectId": "norsk",
+      "topicId": "dialekter",
+      "link": "/norsk/dialekter/geolekt",
+      "tags": [
+        "dialekt",
+        "talemål",
+        "geolekt",
+        "isogloss",
+        "dialektgrense",
+        "språkgeografi"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "crystal-palace",
       "title": "Verdensutstillingen i London",
       "description": "The Great Exhibition i Crystal Palace markerer høydepunktet for victorianernes tro på industrielt og teknologisk framskritt.",
