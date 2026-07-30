@@ -1,4 +1,4 @@
-// Genererer public/content/geo/place-coordinates.json — en ordbok som mapper
+// Genererer scripts/data/place-coordinates.json — en ordbok som mapper
 // geografiske tidslinje-tags (norge, roma, romerriket, athen ...) til koordinater
 // og (der det gir mening) til et moderne land-id i world-atlas (ISO 3166-1 numerisk).
 //
@@ -23,7 +23,12 @@ const __dirname = path.dirname(__filename);
 const CONTENT_DIR = path.join(__dirname, '../public/content');
 const TIMELINE_PATH = path.join(CONTENT_DIR, 'global-timeline.json');
 const MANIFEST_PATH = path.join(CONTENT_DIR, 'manifest.json');
-const OUTPUT_DIR = path.join(CONTENT_DIR, 'geo');
+// Ordboken bor i scripts/, ikke i public/. Den leses bare av
+// generate-timeline.js under bygging - ingen side henter den. Da den lå i
+// public/content/ ble den både sendt til hver elev (56 KB, der 22 KB er
+// `_unmapped`-lista vi selv rydder etter) og indeksert som en leksjon med id
+// «place-coordinates» i søket.
+const OUTPUT_DIR = path.join(__dirname, 'data');
 const OUTPUT_PATH = path.join(OUTPUT_DIR, 'place-coordinates.json');
 
 // Skrivevarianter -> kanonisk tag. Holder tag-rotet ute av selve ordboken.

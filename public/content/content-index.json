@@ -1,5 +1,5 @@
 {
-  "buildId": 64708088630127,
+  "buildId": 160131137510728,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1176,9 +1176,6 @@
     ],
     "scanner-config": [
       "content/config/scanner-config.json"
-    ],
-    "place-coordinates": [
-      "content/geo/place-coordinates.json"
     ],
     "global-timeline-images": [
       "content/global-timeline-images.json"
@@ -4092,7 +4089,6 @@
     "concepts/zimmermann-telegrammet.json/zimmermann-telegrammet": "content/concepts/zimmermann-telegrammet.json",
     "config/progression.json/progression": "content/config/progression.json",
     "config/scanner-config.json/scanner-config": "content/config/scanner-config.json",
-    "geo/place-coordinates.json/place-coordinates": "content/geo/place-coordinates.json",
     "global-timeline-images.json/undefined/global-timeline-images": "content/global-timeline-images.json",
     "global-timeline.json/undefined/global-timeline": "content/global-timeline.json",
     "global-timeline.manual.json/undefined/global-timeline.manual": "content/global-timeline.manual.json",

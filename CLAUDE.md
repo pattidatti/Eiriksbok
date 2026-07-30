@@ -345,7 +345,7 @@ plasserer dem geografisk. Hovedmål: elev-utforskning (Chromebook 1366×768 base
 
 **Slik fungerer det:**
 
-1. **Sted-ordbok** — `public/content/geo/place-coordinates.json` mapper geografiske tags
+1. **Sted-ordbok** — `scripts/data/place-coordinates.json` mapper geografiske tags
    (`norge`, `roma`, `romerriket`, `athen` …) til `{ lat, lng, label, kind, countryId }`.
    `kind` ∈ `by | land | imperium | region`. `countryId` = ISO 3166-1 numerisk (= world-atlas
    `geo.id`) og brukes for land-klikk. Fila genereres av `scripts/generate-place-coordinates.js`
@@ -577,7 +577,7 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 | `scripts/generateContentIndex.js` | Builds `content-index.json` for fast search |
 | `scripts/sync-manifest-dates.js` | Syncs `createdDate` in manifest |
 | `scripts/generate-timeline.js` | Rebuilds `global-timeline.json` + geo-beriker events (lat/lng/placeCountryId) |
-| `scripts/generate-place-coordinates.js` | Genererer `geo/place-coordinates.json` (tag → koordinat-ordbok for `/atlas`) |
+| `scripts/generate-place-coordinates.js` | Genererer `scripts/data/place-coordinates.json` (tag → koordinat-ordbok for `/atlas`) |
 | `scripts/generate-quest-bank.mjs` | Bygger `public/data/rpg/quest-bank.json` fra Quiz-komponentene i artiklene (spørsmålsbanken til rollespillet) |
 | `scripts/validate-kjeder.mjs` | Validerer årsakskjedene i `public/content/kjeder/` og genererer `kjede-oversikt.json` (Kjedereaksjonen) |
 | `scripts/scan-concepts.js` | Scans articles for potential new concept terms |
@@ -595,7 +595,7 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 |---|---|
 | `public/content/manifest.json` | App skeleton — subjects, topics, lessons, tools |
 | `public/content/global-timeline.json` | All historical timeline events (geo-beriket for `/atlas`) |
-| `public/content/geo/place-coordinates.json` | Tag → koordinat/land-ordbok for Verdensatlaset |
+| `scripts/data/place-coordinates.json` | Tag → koordinat/land-ordbok for Verdensatlaset (bygge-input, sendes ikke til elevene) |
 | `src/pages/AtlasPage.tsx` | Verdensatlas — fullskjerms kart-tidslinje (`/atlas`) |
 | `public/data/concepts.json` | Auto-generated concept/flashcard database |
 | `src/components/ComponentRegistry.tsx` | Maps component names to React components |

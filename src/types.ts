@@ -230,7 +230,7 @@ export interface GlobalTimelineEvent {
     link: string;
     tags?: string[];
     // Geografisk plassering for verdensatlaset (/atlas). Settes av
-    // scripts/generate-timeline.js fra public/content/geo/place-coordinates.json.
+    // scripts/generate-timeline.js fra scripts/data/place-coordinates.json.
     lat?: number;
     lng?: number;
     placeLabel?: string;       // f.eks. "Roma" eller "Norge"

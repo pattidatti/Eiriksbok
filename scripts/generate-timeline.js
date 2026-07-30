@@ -11,7 +11,9 @@ export const MANIFEST_PATH = path.join(CONTENT_DIR, 'manifest.json');
 export const TEXT_ENTRIES_DIR = path.join(__dirname, '../src/data/texts/entries');
 export const MANUAL_PATH = path.join(CONTENT_DIR, 'global-timeline.manual.json');
 export const OUTPUT_PATH = path.join(CONTENT_DIR, 'global-timeline.json');
-export const PLACE_COORDS_PATH = path.join(CONTENT_DIR, 'geo', 'place-coordinates.json');
+// Stedordboken er et bygge-verktøy, ikke innhold: den bor i scripts/data/ og
+// sendes ikke til elevene. Se generate-place-coordinates.js.
+export const PLACE_COORDS_PATH = path.join(__dirname, 'data', 'place-coordinates.json');
 
 // Geografisk beriking: gir hvert event lat/lng + land-id ut fra stedordboken.
 // Mest presise tag vinner: by (3) > land/imperium (2) > region (1). Ved likhet
