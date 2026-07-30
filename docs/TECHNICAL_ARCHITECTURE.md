@@ -11,7 +11,7 @@ Dette dokumentet gir en oversikt over hvordan Gravity Lærebok er bygget opp tek
 - **CMS**: Ingen - alt innhold ligger som JSON i repoet
 - **Ikoner**: [Heroicons](https://heroicons.com/) & [Lucide React](https://lucide.dev/)
 - **Animasjoner**: [Framer Motion](https://www.framer.com/motion/)
-- **Kart/Visualisering**: [React Simple Maps](https://www.react-simple-maps.io/) & [Chart.js](https://www.chartjs.org/)
+- **Kart/Visualisering**: [d3-geo](https://github.com/d3/d3-geo) + [topojson-client](https://github.com/topojson/topojson-client) & [Chart.js](https://www.chartjs.org/)
 
 ## 📂 Prosjektstruktur
 

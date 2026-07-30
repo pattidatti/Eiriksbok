@@ -5,7 +5,7 @@ description: Performs a comprehensive "ULTRATHINK" analysis of the codebase, cov
 1. **System Health Check**
    - Run linting validation.
    - Run type checking.
-
+   
    ```bash
    npm run lint
    npx tsc -b --noEmit
@@ -14,7 +14,7 @@ description: Performs a comprehensive "ULTRATHINK" analysis of the codebase, cov
 2. **Content & integrity Check**
    - Scan content to ensure manifest is synchronized.
    - Check for missing visual assets.
-
+   
    ```bash
    npm run scan:content
    python find_missing_images.py
@@ -22,7 +22,7 @@ description: Performs a comprehensive "ULTRATHINK" analysis of the codebase, cov
 
 3. **Performance Analysis**
    - Run a production build to check for bundle issues and size warnings.
-
+   
    ```bash
    npm run build
    ```
@@ -30,14 +30,14 @@ description: Performs a comprehensive "ULTRATHINK" analysis of the codebase, cov
 4. **Component & Design Audit**
    - Identify usage of core UI components vs raw HTML/Tailwind to ensure "light theme" consistency.
    - Search for "TODO", "FIXME", or deprecated patterns.
-
+   
    ```bash
    grep -r "ImmersiveCard" src/components
    grep -r "TODO" src
    ```
 
 5. **Report Generation**
-   - Synthesize all findings into a structured "ULTRATHINK Report" artifact (`ultrathink_report.md`).
+   - Synthesize all findings into a structured "ULTRATHINK Report" artifact. Lagre den som `docs/reports/ultrathink-ÅÅÅÅ-MM-DD.md` (dagens dato) - aldri i repo-rota.
    - The report must cover:
      - **Technical Health**: Lint/Type errors, Build status.
      - **Architecture**: Manifest integrity, Component reusability.

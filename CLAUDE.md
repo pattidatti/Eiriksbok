@@ -167,15 +167,24 @@ The app uses a manifest-driven routing system:
 /laeringsstier                  Learning paths hub
 /min-laering                    «Min læring» - elevdashboard (XP, streak, badges, fag-mestring, synk-kode)
 /persongalleri                  Person gallery
+/persongalleri/:slug            Person gallery - enkeltperson
 /colonization                   Kolonisering-kart (verdenshistorie)
 /infrastruktur-atlas            Infrastruktur-Atlas (samfunnskunnskap)
+/himmel                         Stjernehimmelen
+/samfunnskunnskap/okonomi/verden  Økonomi i verden (kartvisning)
+
+/mikrospill                     Mikrospill-galleri (lette inline-spill)
+/mikrospill/:gameId             Enkelt mikrospill (brukes også av MicroGame-komponenten)
 
 /musikk/komposisjon             Komposisjonsverktøy (notesett)
 /musikk/oving/rytme             Rytmetrening (Rhythm Tapper)
 /musikk/oving/gehortrening      Gehørtrening
+/musikk/gitarstudio             Gitarstudio
 
 /oving                          Practice hub
-/oving/flashcards               Flashcards
+/oving/dagens-okt               Dagens økt (daglig repetisjon)
+/oving/loype                    Kunnskapsløypa
+/oving/flashcards               Flashcards (alias /flashcards)
 /oving/quiz                     Quiz (alias /quiz)
 /oving/chrono                   Chrono card game
 /oving/chrono-glider            Chrono Glider (R3F)
@@ -633,7 +642,6 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 - `docs/THE_ARCHITECTS_HANDBOOK.md` — Philosophy and workflow manifesto
 - `docs/CONTENT_SYSTEM.md` — Full content system reference (layouts, feature systems, troubleshooting)
 - `docs/CONTENT_STYLE_GUIDE.md` — Writing style rules
-- `docs/ARTICLE_STANDARD.md` — Standardformat og kvalitetskrav for artikler
 - `docs/TECHNICAL_ARCHITECTURE.md` — Architecture overview
 - `docs/DEVELOPER_SETUP.md` — Machine setup guide
 - `docs/HVORDAN_DETTE_FUNGERER.md` — Plain-norwegian forklaring av hele systemet

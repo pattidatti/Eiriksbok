@@ -21,10 +21,10 @@ Focus on the "Soul" of the content before writing any code.
 - **Tone:** Derived from Blueprint.
 - **Method:** Implement the "Mental Model" defined in the Blueprint.
 - **Complexity:** Explain complex concepts (e.g., "Feudalisme") in an accessible way.
-- **Cross-linking:** Identify other articles or topics mentioned that should be linked (interndisiplinær kobling).
+- **Cross-linking:** Identify other articles eleven naturlig vil ha nytte av, og lenk til dem **inne i brødteksten** der temaet nevnes. Tverrfaglig/interndisiplinær kobling er innlenker i prosaen, IKKE en samle-komponent på bunnen av artikkelen.
 
 ### 2. Content Structure
-- **Length:** 1200 - 3000+ words (Dybdeartikler: 4000+).
+- **Length:** 900 - 1200 ord. Målet er korte, fokuserte artikler for en 14-åring, ikke dybdeartikler.
 - **Introduction:** Engaging hook and overview.
 - **Core Sections:** Use `header` blocks (NOT nested sections).
 - **Summary:** Concise wrap-up or "Deep Dive" conclusion.
@@ -51,7 +51,7 @@ Hver artikkel skal ha **én signaturkomponent** — en interaktiv komponent som 
 
 **Hovedregel:** artikkelen får OGSÅ et skreddersydd 3D-mikrospill - en kort, romlig "aha"-opplevelse der eleven interagerer direkte med en 3D-verden (klikker objekter, drar dem på plass, justerer en spak, ser verdenen forvandle seg). Det kommer **i tillegg til** signaturkomponenten, ikke i stedet for: signaturkomponenten er artikkelens 2D-hovedmotor, mikrospillet er den romlige opplevelsen.
 
-**Når hoppe over:** bare når emnet ikke har noen struktur å representere romlig (f.eks. ren grammatikk- eller rettskrivingsdrill). Abstrakte tema (tid, tro, ideer, etikk) kan bli sterke mikrospill når de har en modell eller prosess du kan iscenesette - bruk «morf-og-se / modell-sammenlikning»-arketypen og en iscenesettelse som matcher emnet (ikke standard grønn-åker-diorama). Eks: eskatologiens sirkulær-vs-lineær tid (`TidensFormer3D`). Dokumenter kort i planen hvis mikrospill droppes. I tvil - lag det.
+**Når hoppe over:** bare når emnet virkelig ikke egner seg for 3D (f.eks. ren grammatikk, rettskriving eller andre ikke-romlige tema). Dokumenter da kort i planen hvorfor mikrospill droppes. I tvil - lag det.
 
 **Slik bygges det:** på interaksjons-toolkitet i `src/components/microgames/kit/`. Les hele `.agent/workflows/build_microgame.md` og følg den. Skriv spillet til `src/components/microgames/<Navn>.tsx`, registrer i `src/components/microgames/registry.ts` med en kebab-case `id`, og embed i artikkel-JSON:
 ```json
@@ -69,10 +69,11 @@ Referanse-standard: `VikingShip3D.tsx` (dra-bygg med klikk + drag + slider + fle
     - **Core Text Tools:**
         - `WritingFix`: [NEW] Essential for language/writing topics (show "Bad" vs "Good" examples).
         - `Comparison`: [NEW] Compare two texts, images, or concepts side-by-side.
-        - `QuoteBlock`: For primary sources/citates.
+        - `QuoteBlock`: For primary sources/citates. Eksakt prop-skjema (bruk `text`/`author`, IKKE `quote`/`source`): `{ "type": "component", "name": "QuoteBlock", "props": { "text": "<sitatet>", "author": "<kilde/opphav>" } }`
         - `FactBox`: For technical details/summaries.
         - `GlossaryTooltip`: For inline definitions (automatic, but can be manual).
         - `TextHighlighter` / `SentenceBuilder` / `GrammarRuleCard`: For deep language analysis.
+        - **Tverrfaglig kobling = innlenker, ikke komponent.** Når artikkelen henger sammen med andre temaer, lenk til dem naturlig i brødteksten med `[tekst](/absolutt/sti)` der temaet nevnes (2-4 stykker per artikkel). IKKE lag en samle-komponent på bunnen. (`InterdisciplinaryBridge` finnes fortsatt for spesialtilfeller, men skal ikke brukes som standard.)
     - **Media & Visuals:**
         - `Gallery`: [NEW] For image collections (use consistent aspect ratios).
         - `TimelineComponent`: Use inside articles with `compact: true`.
@@ -102,7 +103,9 @@ Referanse-standard: `VikingShip3D.tsx` (dra-bygg med klikk + drag + slider + fle
         - `VirtualPiano`: Playable instrument.
         - `SongwriterStudio` / `BeatBuilder`: Creative music tools.
     - **Assessment:**
-        - `Quiz`: 3-5 questions at the end.
+        - `Oppgaver` (obligatorisk, plassert nest sist — rett før Quiz): felles oppgavesett i bunnen av hver artikkel. Bloom-trapp med tre valgfrie kategorier — `forstaa` (finn fakta i teksten), `reflekter` (forklar/analyser/vurder), `gaaVidere` (diskusjon, skriveoppgave eller koble til nåtid = det ekstra utover teksten). Skriv gode oppgaver forankret i artikkelens innhold; "Gå videre" skal løfte eleven ut over gjengivelse. Komponenten har en innebygd "kopier oppgaver"-knapp. Se JSON-skjema i Phase 2.
+        - `Quiz`: 3-5 questions, ALLER siste blokk (seriens faste sjekkpunkt).
+        - `Kildeliste` (obligatorisk, plasseres aller sist etter Quiz): artikkelen skal være kildebelagt. Kilder hentes FØRST (kilde-først: skriv fra kildene, ikke fra hukommelsen), verifiseres, og aldri konstrueres. Brødteksten skal ha APA forfatter-år-henvisninger på bærende påstander. Se sourcing-regel og APA-format i Phase 2, JSON Structure Rules.
     - **General Rule:** Make a model that underscores what the article is about. Make it interactive, beautiful, fun, and insightful.
     - **Lager du ny komponent?** Følg `/build_interactive`-skillet for designprinsipper og teknisk implementasjon.
 
@@ -123,8 +126,28 @@ Focus on the "Bones" of the JSON structure.
 - **Flat Content:** The `content` array MUST be flat.
 - **Components:** Select appropriate interactive blocks from the `article-implementation` catalog.
 - **No Markdown Bolding:** Never use `**text**` for emphasis. Use the concept system.
-- **Cross-linking:** Use `[Link Text](/subject/topic/article-id)` for internal links.
+- **Cross-linking:** Vev 2-4 naturlige innlenker inn i brødteksten med `[Link Text](/subject/topic/article-id)` der andre temaer nevnes. Dette er måten tverrfaglig kobling gjøres på — ikke en egen komponent.
 - **Lists:** Use `{ "type": "list", "items": [...] }`. NEVER use markdown `-` lists.
+- **Avslutning (obligatorisk rekkefølge):** Artikkelen avsluttes med en `Oppgaver`-blokk nest sist, og deretter `Quiz` som **ALLER siste blokk** (Quiz forblir seriens faste avslutning). `Oppgaver` er et felles oppgavesett (Bloom-trapp) som skal ligge like over Quiz på hver artikkel. Skjema:
+  ```json
+  {
+    "type": "component",
+    "name": "Oppgaver",
+    "props": {
+      "forstaa":   ["Finn-fakta-oppgave 1", "Finn-fakta-oppgave 2"],
+      "reflekter": ["Analyser/vurder-oppgave 1", "Analyser/vurder-oppgave 2"],
+      "gaaVidere": ["Diskusjon/skriv/koble-til-nåtid 1", "..."]
+    }
+  }
+  ```
+  Alle tre kategoriene er valgfrie (tomme utelates), men sikt på 3-4 i `forstaa`, 3-4 i `reflekter` og 2-3 i `gaaVidere`. Oppgavetekst kan inneholde innlenker (`[tekst](/sti)`). Kategoriene rendres med farge, ikon og fortløpende nummerering av komponenten — skriv bare selve oppgaveteksten.
+- **Kilde-først (obligatorisk, FØR skriving):** Ekte etterprøvbar kvalitet krever at artikkelen skrives FRA kilder, ikke fra hukommelsen. Hent 3-5 troverdige, uavhengige kilder med WebFetch/WebSearch (SNL, FN-sambandet, offentlige/universitets-/lærebokkilder) og les dem faktisk før du skriver én setning brødtekst. Enhver etterprøvbar påstand (årstall, tall, navn, sitat, omstridt faktum) MÅ ha dekning i en hentet kilde — mangler dekning, fjern eller omform påstanden, aldri fyll hull fra hukommelsen. Klarer emnet seg ikke å belegge, velg et annet emne fremfor å publisere ubelagt.
+- **Kildehenvisning i teksten (obligatorisk):** Bruk APA forfatter-år i løpende tekst på bærende påstander — årstall, tall, sitater, navn, omstridte fakta — i husets stil (`public/content/norsk/skrivehjelp/hvordan-fore-kilder.json`). Eksempel: `Ifølge Store norske leksikon (2023) ...` eller `... over 50 land (Hobsbawm, 1975).` Ikke på hver setning; teksten skal fortsatt være lettlest for en 14-åring. Hver henvisning skal ha en matchende oppføring i Kildeliste, og omvendt.
+- **Kildeliste (obligatorisk, aller siste blokk — etter Quiz):** Minst 3 kilder. Hver kilde MÅ faktisk hentes og verifiseres (forfatter + år) mot den virkelige siden — ALDRI konstrueres eller gjettes, heller ikke plausible SNL-forfatternavn eller datoer. Format følger husets APA-stil fra `public/content/norsk/skrivehjelp/hvordan-fore-kilder.json`: kun årstall i parentes (aldri SNL sin "sist oppdatert"-dato), pluss `Hentet DD.MM.ÅÅÅÅ fra URL` for kilder som endres ofte (som SNL). Stabile bok-/artikkelkilder trenger ikke hentedato. Eksempel: `Sigurdsson, J. V. (2021). *Vikingtiden*. Store norske leksikon. Hentet 10.01.2024 fra https://snl.no/vikingtiden`.
+- **Bilder (obligatorisk):** Artikkelen MÅ ha `"heroImage": "/images/placeholder.webp"` på toppnivå, og 3 inline bildebokser fordelt i content-arrayen. Eksakte plasseringer: (1) rett etter åpningsteksten, (2) ved et dramatisk vendepunkt midt i artikkelen, (3) etter siste hoveddel (før Quiz). `alt`-teksten (5-10 ord, norsk) beskriver konkret hva bildet skal vise — den brukes av bildegenererings-workflowen. Eksempel:
+  ```json
+  { "type": "image", "src": "/images/placeholder.webp", "alt": "Norske vikingskip i havn, 900-tallet", "caption": "Langskip brukt på raids" }
+  ```
 
 ### 3. Global Data Sync
 - **Timeline:** Sett `year` (eller `date`) på artikkel-JSON-objektet for at artikkelen skal havne i `/tidslinje`. Sub-events for samme artikkel legges i artikkelens egen `timeline[]`-array. `global-timeline.json` regenereres automatisk av `npm run scan:content` — **ikke rediger fila direkte**. Hand-kuraterte events uten tilhørende leksjon legges i `public/content/global-timeline.manual.json`.
@@ -138,10 +161,13 @@ Focus on the "Bones" of the JSON structure.
 ## Phase 3: Visuals & Verification
 Final polish and technical checks.
 
-### 1. Image Generation
-- **Style:** Use image-style-guide.md
-- **Path:** `public/images/<topic>/<article-id>-hero.jpg`.
-- **Consistency:** Ensure the hero image matches the card image in Topic overview.
+### 1. Bilder — verifiser plassholdere
+Sjekk at artikkelen har alle bildeplassholdere (krav beskrevet i Phase 2, JSON Structure Rules):
+- [ ] `"heroImage": "/images/placeholder.webp"` på toppnivå
+- [ ] `"image": "/images/placeholder.webp"` i manifest-oppføringen
+- [ ] 3 inline bildebokser med beskrivende `alt`-tekst (5-10 ord, norsk) i content-arrayen
+
+Bilder genereres etterpå i Antigravity med workflowen `generate_article_images.md`.
 
 ### 2. Verification Checklist
 **Audit:** Run an audit using the `article-implementation` skill.
@@ -152,6 +178,7 @@ Final polish and technical checks.
 - [ ] Concepts are clickable and show in sidebar.
 - [ ] Timeline events appear correctly.
 - [ ] Images load without errors.
+- [ ] Artikkelen har `Oppgaver` (Forstå/Reflekter/Gå videre) nest sist, og `Quiz` som aller siste blokk.
 - **Data Synchronization:**
     - [ ] Run `node scripts/scan-concepts.js` to update the global glossary and people records.
 

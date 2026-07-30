@@ -13,7 +13,8 @@ description: Design-fase for en ny læringssti. Scanner eksisterende artikler, p
 *   File: `.agent/workflows/LEARNING_PATH_GUIDE.md` — Komplett guide med JSON-schema, pedagogikk og komponentbibliotek.
 *   File: `public/content/manifest.json` — App-skjelettet. Finn emnet og dets artikler.
 *   File: `src/types.ts` (linje 260-284) — TypeScript-typer for `LearningPathStep` og `LearningPathData`.
-*   File: `public/content/historie/forste-verdenskrig/ww1-sti.json` — Referanseimplementasjon (les struktur og tone).
+*   File: `public/content/historie/forste-verdenskrig/ww1-sti.json` — Referanseimplementasjon (struktur og tone).
+*   File: `public/content/norsk/virkemidler/skapende-skriving-sti.json` — **Eksemplarisk referanseimplementasjon** (kvalitetsstandard for oppgaver, metafor, titler og narrativ dybde).
 *   File: `docs/image-style-guide.md` — Bildegenereringsstandarder.
 
 ---
@@ -43,6 +44,8 @@ Bruk all informasjon fra steg 2 til å designe den komplette læringsreisen.
 ### 3.1 Overordnet Design
 
 *   **Perspektiv/Tone:** Definer "Du"-stemmen. Hvem er eleven i denne reisen? (F.eks. "Du er en ung bonde som ser riket vokse" eller "Du er journalist som dekker krisen"). Stemmen skal utvikle seg gjennom aktene.
+*   **Samlende metafor:** Gi stien en gjennomgående metafor som gir eleven et mentalt bilde av reisen og binder alle steg sammen. (F.eks. "Forfatterens Verksted" med skuffer og verktøy, "Tidsmaskinen" med destinasjoner, "Rettssalen" med vitner og bevis.) Metaforen bør gjennomsyre stegtitler, content-tekst og oppgaveformuleringer.
+*   **Poetiske stegtitler (stil):** Definer stilen for stegtitler. De bør være evokative og nysgjerrighetsskapende — ikke generiske. "Hjertet i teksten" > "Tema og budskap". "Mennesker av blekk" > "Karakterbygging". "Mal med ord" > "Språklige virkemidler".
 *   **Emosjonell bue:** Beskriv den emosjonelle reisen (nysgjerrighet → spenning → empati → refleksjon).
 *   **Rød tråd:** Hva er det gjennomgående spørsmålet som binder alle steg sammen? (F.eks. "Hvorfor faller sivilisasjoner?" eller "Hva gjør en leder god?")
 
@@ -71,11 +74,13 @@ Bruk all informasjon fra steg 2 til å designe den komplette læringsreisen.
 
 For hvert steg, definer:
 
-| # | Steg-ID | Fase | Tittel | Type | Artikkelkobling | Komponent? | Bloom-nivå |
-|---|---|---|---|---|---|---|---|
-| 0 | step-0 | Prolog | ... | fakta | /path/to/article | — | 1 |
-| 1 | step-1 | Akt 1 | ... | fakta | ... | — | 1-2 |
-| ... | ... | ... | ... | ... | ... | ... | ... |
+| # | Steg-ID | Fase | Tittel | Type | Artikkelkobling | Komponent? | Bloom-nivå | Anvendelsesoppgave? |
+|---|---|---|---|---|---|---|---|---|
+| 0 | step-0 | Prolog | ... | fakta | /path/to/article | — | 1 | — |
+| 1 | step-1 | Akt 1 | ... | fakta | ... | — | 1-2 | "Lag en..." |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... |
+
+> **VIKTIG:** Hvert steg bør fokusere på **én artikkel**. Hvis innholdet krever to artikler, del steget i to. Planlegg **4-7 oppgaver** per steg som følger Bloom-trappen: Fakta → Forståelse → Anvendelse → Refleksjon.
 
 > **VIKTIG:** Step-typen `interaktiv` finnes IKKE i TypeScript-typen. Steg med komponenter bruker `fakta`, `utfordring` eller `oppgave` som type.
 
@@ -99,6 +104,11 @@ For hver valgt komponent, skriv:
 *   Hvilken hendelse/kontekst den kobles til
 *   Hvilke props som trengs (konseptnivå, ikke fullstendig JSON)
 *   Hvorfor denne komponenten styrker læringen akkurat her
+*   **Hvor i den narrative buen den plasseres** — og hvorfor akkurat der
+
+> **Plassering ved vendepunkt:** Interaktive komponenter bør plasseres ved **vendepunkter og klimaks** i den narrative buen — ikke spredd tilfeldig. En ScenarioRoleplay hører hjemme i Akt 2 (konfrontasjonen), en PackTheBag ved syntese. Komponenter i Akt 1 bør være sjeldne og lette (f.eks. DragDropTimeline).
+>
+> **Skreddersydde komponenter:** Ikke nøy deg med eksisterende bibliotek. Vurder om emnet trenger **unike, skreddersydde komponenter**. F.eks. en "omskriv setningen"-widget for kreativ skriving, et karakterbygger-verktøy, eller en kart-pusle for geografi. Hvis du identifiserer et behov, beskriv konseptet og funksjonaliteten i blueprinten.
 
 ---
 
@@ -161,13 +171,17 @@ Verifiser før godkjenning:
 
 - [ ] **Steg 0 finnes** — Prolog med null forkunnskap
 - [ ] **Alle lenker er absolutte** — Starter med `/`
-- [ ] **Bloom følges** — Fakta → Forståelse → Refleksjon i hvert steg
+- [ ] **Bloom følges** — Fakta → Forståelse → Anvendelse → Refleksjon i hvert steg
 - [ ] **10-20 steg totalt** — Ikke for kort, ikke for lang
 - [ ] **Ingen duplikat-ID** — Søk i `manifest.json` etter `[emne-id]-sti`
-- [ ] **Minst 2 interaktive komponenter** planlagt
+- [ ] **Minst 2 interaktive komponenter** planlagt — plassert ved vendepunkt/klimaks
 - [ ] **Ingen `interaktiv`-type** — Alle steg bruker gyldige typer: `fakta|refleksjon|utfordring|oppgave|ressurs|oving|gruppe`
-- [ ] **Hvert steg har 5-8 oppgaver** planlagt
+- [ ] **Hvert steg har 4-7 oppgaver** planlagt — med minst én anvendelsesoppgave
 - [ ] **"Les artikkelen" er første oppgave** der artikkelen kreves
+- [ ] **Samlende metafor** er definert og gjennomgående
+- [ ] **Poetiske stegtitler** — evokative, ikke generiske
+- [ ] **Én artikkel per steg** — ingen steg krever lesing av flere artikler
+- [ ] **Referanse:** Sammenlign kvalitet mot `skapende-skriving-sti.json`
 
 ---
 

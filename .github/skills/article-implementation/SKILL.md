@@ -9,7 +9,7 @@ This skill governs the transformation of a Pedagogical Blueprint into a function
 
 ## 1. Pedagogical Identity
 Every article must move beyond simple facts into deep explanation.
-- **Narrative Depth**: 600–1200 words depending on complexity.
+- **Narrative Depth**: 900-1200 ord, avhengig av kompleksitet.
 - **Self-Sustaining Sektioner**: Each section should be readable in isolation, providing necessary context.
 - **No Assumptions**: Fill in background info so the reader never feels "lost".
 - **Tone**: Pedagogical, wondering, and explanatory.

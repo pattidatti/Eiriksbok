@@ -98,10 +98,10 @@ Hvis du er en AI-agent som jobber på dette prosjektet:
 ---
 
 ## 📚 Videre lesning
-- [The Architect's Handbook](file:///C:/Users/Eirik/Documents/Eiriksbok/Eiriksbok/docs/THE_ARCHITECTS_HANDBOOK.md) - For dyp forståelse av arbeidsflyten.
-- [Hvordan dette fungerer (ELI5)](file:///C:/Users/Eirik/Documents/Eiriksbok/Eiriksbok/docs/HVORDAN_DETTE_FUNGERER.md) - En enkel introduksjon til arkitekturen (LEGO-prinsippet).
-- [Learning Path Guide](file:///C:/Users/Eirik/Documents/Eiriksbok/Eiriksbok/.agent/workflows/LEARNING_PATH_GUIDE.md) - Hvordan bygge pedagogiske reiser.
-- [Article Standard](file:///C:/Users/Eirik/Documents/Eiriksbok/Eiriksbok/docs/ARTICLE_STANDARD.md) - Det tekniske oppsettet for JSON-filer.
+- [The Architect's Handbook](docs/THE_ARCHITECTS_HANDBOOK.md) - For dyp forståelse av arbeidsflyten.
+- [Hvordan dette fungerer (ELI5)](docs/HVORDAN_DETTE_FUNGERER.md) - En enkel introduksjon til arkitekturen (LEGO-prinsippet).
+- [Learning Path Guide](.agent/workflows/LEARNING_PATH_GUIDE.md) - Hvordan bygge pedagogiske reiser.
+- [Content System](docs/CONTENT_SYSTEM.md) - Det tekniske oppsettet for JSON-filer.
 
 > [!TIP]
-> Sjekk [docs/](file:///C:/Users/Eirik/Documents/Eiriksbok/Eiriksbok/docs/) mappen for flere dybdeguider om bildestiler, terminologi og spesifikke moduler som "Historisk Detektiv".
+> Sjekk [docs/](docs/) mappen for flere dybdeguider om bildestiler, terminologi og spesifikke moduler som "Historisk Detektiv".

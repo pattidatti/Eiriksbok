@@ -30,7 +30,7 @@ Den beste editoren for webutvikling.
     - **Prettier - Code formatter**: For automatisk formatering av kode.
 
 ## 2. Klargjøring av prosjektet
-Prosjektet administreres primært via **Git**. Hvis du har fått tilgang til filene via Dropbox, sørg for at du har de nyeste filene synkronisert. Hvis du bruker GitHub, klon repoet først.
+Prosjektet administreres via **Git**. Klon repoet fra GitHub før du gjør noe annet.
 
 1.  **Åpne prosjektmappen** i VS Code.
 2.  Åpne en **Terminal** i VS Code (`Terminal` -> `New Terminal` i menyen).

@@ -37,7 +37,7 @@ description: Performs a comprehensive "ULTRATHINK" analysis of the codebase, cov
    ```
 
 5. **Report Generation**
-   - Synthesize all findings into a structured "ULTRATHINK Report" artifact (`ultrathink_report.md`).
+   - Synthesize all findings into a structured "ULTRATHINK Report" artifact. Lagre den som `docs/reports/ultrathink-ÅÅÅÅ-MM-DD.md` (dagens dato) - aldri i repo-rota.
    - The report must cover:
      - **Technical Health**: Lint/Type errors, Build status.
      - **Architecture**: Manifest integrity, Component reusability.

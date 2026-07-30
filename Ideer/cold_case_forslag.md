@@ -43,4 +43,4 @@ Her er 30 forslag til mysterier og historiske hendelser som passer perfekt for D
 30. **Apollo 11:** (Kildekritikk-case) Hvordan kan vi motbevise konspirasjonsteoriene om at månelandingen ble filmet i et studio?
 
 ---
-*Disse ideene følger prinsippene i [DETEKTIV_GUIDE.md](file:///c:/Users/Eirik/Documents/Eiriksbok/Eiriksbok/docs/DETEKTIV_GUIDE.md) og gir rom for både narrative innledninger og kildekritisk analyse.*
+*Disse ideene følger prinsippene i [DETEKTIV_GUIDE.md](../docs/DETEKTIV_GUIDE.md) og gir rom for både narrative innledninger og kildekritisk analyse.*

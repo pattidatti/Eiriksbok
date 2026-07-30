@@ -15,7 +15,8 @@ description: Bygger en komplett læringssti-JSON fra en godkjent Blueprint. Impl
 *   File: `docs/Design documents/[emne-id]-laeringssti-blueprint.md` — PRIMÆRKILDEN. Følg denne nøye.
 *   File: `.agent/workflows/LEARNING_PATH_GUIDE.md` — JSON-schema og pedagogisk guide.
 *   File: `src/types.ts` (linje 260-284) — TypeScript-typer for `LearningPathStep` og `LearningPathData`.
-*   File: `public/content/historie/forste-verdenskrig/ww1-sti.json` — Referanseimplementasjon.
+*   File: `public/content/historie/forste-verdenskrig/ww1-sti.json` — Referanseimplementasjon (struktur).
+*   File: `public/content/norsk/virkemidler/skapende-skriving-sti.json` — **Eksemplarisk referanseimplementasjon** (kvalitetsstandard for oppgaver, metafor, titler og narrativ dybde). Les denne først for å kalibrere kvalitetsnivået.
 *   File: `public/content/manifest.json` — For registrering.
 
 ---
@@ -78,8 +79,8 @@ Hvert steg i `steps`-arrayet:
         "Les artikkelen [Artikkeltittel](/absolutt/sti/til/artikkel)",
         "Fakta-spørsmål som kan besvares direkte fra artikkelen",
         "Forståelsesspørsmål som krever forklaring av mekanismer",
-        "Analyse-/refleksjonsspørsmål som krever egen vurdering",
-        "Etisk dilemma eller 'hva ville du gjort?'-spørsmål"
+        "Anvendelsesoppgave der eleven skaper noe (f.eks. 'Lag en...', 'Skriv en...', 'Tegn en...')",
+        "Analyse-/refleksjonsspørsmål som krever egen vurdering"
     ],
     "links": [
         {
@@ -92,12 +93,16 @@ Hvert steg i `steps`-arrayet:
 
 **Regler:**
 *   Gyldige typer: `fakta`, `refleksjon`, `utfordring`, `oppgave`, `ressurs`, `oving`, `gruppe`. **ALDRI** `interaktiv`.
-*   Hvert steg skal ha **5-8 oppgaver** som følger Bloom (Fakta → Forståelse → Refleksjon).
+*   Hvert steg skal ha **4-7 oppgaver** som følger Bloom (Fakta → Forståelse → Anvendelse → Refleksjon). Minst én oppgave skal være en **anvendelsesoppgave** der eleven *skaper* noe (f.eks. "Lag en minikarakter", "Skriv en åpningssetning", "Tegn en tidslinje").
 *   Hvis steget krever at eleven leser en artikkel, skal **"Les artikkelen [Tittel](url)"** ALLTID være den **første** oppgaven.
+*   **Én artikkel per steg.** Hvert steg fokuserer på nøyaktig én artikkel. Hvis innholdet krever to artikler, del steget i to.
+*   **Poetiske stegtitler.** Bruk evokative, nysgjerrighetsskapende titler — ikke generiske. "Hjertet i teksten" > "Tema og budskap".
 *   Alle stier starter med **absolutt sti** (`/`).
-*   `content` skal være minst **150 ord** — guiding, narrativ, engasjerende.
+*   `content` skal være minst **150 ord** (helst 200-300) — guiding, narrativ, engasjerende. Bruk den samlende metaforen aktivt i teksten.
 
 ### 3.4 Steg med Interaktive Komponenter
+
+> **Ny komponent?** Kjør `/build_interactive` for designprinsipper og teknisk implementasjon.
 
 Steg som inneholder en komponent bruker `type: "utfordring"`, `"oppgave"` eller `"fakta"` (ALDRI `"interaktiv"`). Legg til `component`-feltet:
 
@@ -248,8 +253,10 @@ Kjør gjennom denne sjekklisten:
 - [ ] **"Les artikkelen" først:** Der artikkelen kreves, er dette den første oppgaven
 - [ ] **Ghost-Fact Audit:** Les faktisk innholdet i de refererte artiklene og verifiser at alle fakta-spørsmål kan besvares fra kildematerialet. Fjern eller omformuler spørsmål som refererer til informasjon som ikke finnes i artikkelen.
 - [ ] **Content-lengde:** Hvert stegs `content`-felt er minst 150 ord
-- [ ] **Oppgaver per steg:** 5-8 oppgaver per steg
-- [ ] **Bloom-rekkefølge:** Oppgavene følger Fakta → Forståelse → Refleksjon
+- [ ] **Oppgaver per steg:** 4-7 oppgaver per steg, med minst én anvendelsesoppgave
+- [ ] **Bloom-rekkefølge:** Oppgavene følger Fakta → Forståelse → Anvendelse → Refleksjon
+- [ ] **Én artikkel per steg:** Hvert steg fokuserer på kun én artikkel
+- [ ] **Poetiske stegtitler:** Evokative, ikke generiske
 - [ ] **Steg 0 finnes:** Prolog med null forkunnskap
 - [ ] **Unike ID-er:** Alle `step-[nummer]` er unike innen filen
 
@@ -332,8 +339,13 @@ Sjekkliste:
 - [ ] Hub-indeksen er oppdatert (`update-learning-paths.cjs`)
 - [ ] `scan:content` kjører uten feil
 - [ ] Steg 0 (Prolog) finnes og krever null forkunnskap
-- [ ] Minst 2 interaktive komponenter er implementert
-- [ ] Alle steg har 5-8 oppgaver med Bloom-progresjon
+- [ ] Minst 2 interaktive komponenter er implementert — plassert ved vendepunkt/klimaks
+- [ ] Alle steg har 4-7 oppgaver med Bloom-progresjon (Fakta → Forståelse → Anvendelse → Refleksjon)
+- [ ] Minst én anvendelsesoppgave per steg (eleven *skaper* noe)
+- [ ] Samlende metafor er gjennomgående i content-tekst og stegtitler
+- [ ] Poetiske stegtitler — evokative, ikke generiske
+- [ ] Én artikkel per steg
+- [ ] Kvalitet sammenlignet med `skapende-skriving-sti.json`
 - [ ] Blueprint-status er satt til "Bygget"
 
 **Ferdig!** Informer bruker:

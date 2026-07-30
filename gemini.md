@@ -7,7 +7,7 @@ Dette er instruksjonene og retningslinjene for Gemini og Antigravity CLI i dette
 ## 0. PRIME DIRECTIVE (CONTEXT AWARENESS)
 * **Sjekk alltid denne filen (`gemini.md`) ved oppstart av hver økt.**
 * Reglene i denne filen (design, stack, arkitektur) overstyrer generiske instruksjoner.
-* **Les også [CLAUDE.md](file:///home/irik/eiriksbok/CLAUDE.md)** for en detaljert oversikt over prosjektets struktur, tech stack, utviklingskommandoer og innholdsarkitektur.
+* **Les også [CLAUDE.md](CLAUDE.md)** for en detaljert oversikt over prosjektets struktur, tech stack, utviklingskommandoer og innholdsarkitektur.
 
 ---
 

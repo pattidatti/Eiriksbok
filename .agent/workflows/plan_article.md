@@ -24,7 +24,7 @@ Focus on the "Soul" of the content before writing any code.
 - **Cross-linking:** Identify other articles eleven naturlig vil ha nytte av, og lenk til dem **inne i brødteksten** der temaet nevnes. Tverrfaglig/interndisiplinær kobling er innlenker i prosaen, IKKE en samle-komponent på bunnen av artikkelen.
 
 ### 2. Content Structure
-- **Length:** 1200 - 3000+ words (Dybdeartikler: 4000+).
+- **Length:** 900 - 1200 ord. Målet er korte, fokuserte artikler for en 14-åring, ikke dybdeartikler.
 - **Introduction:** Engaging hook and overview.
 - **Core Sections:** Use `header` blocks (NOT nested sections).
 - **Summary:** Concise wrap-up or "Deep Dive" conclusion.

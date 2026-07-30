@@ -69,6 +69,7 @@ Her kan du skrive ned ideer, oppgaver og annet du vil huske for Gravity lærebok
 - [ ] Vikingtiden: Avsnitt med siffer inni seg bør være nummererte lister i stedet. 
 - [ ] Relaterte artikler i sidebar fra samme emne (I alle emner, eller krasjer det med noe? Undersøk og lag plan. Sidebards og layouts bør planlegges og utvikles skikkelig).
 - [ ] Oppdatere artikkel for kilder: legge til info om kilder uten år, uten forfatter, mer konkrete eksempler i tekst og kildeliste.
+- [ ] Mini-spillmotor: `VehicleSystem` (kjøretøy eleven kan styre). Eneste punktet fra motor-oppgraderingsplanen som aldri ble bygget - alle andre systemer i fase 1-5 finnes i `src/games/engine/systems/`.
 
 ## ✅ Ferdig
 - [x] Opprettet denne filen
