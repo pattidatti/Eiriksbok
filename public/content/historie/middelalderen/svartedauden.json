@@ -9,7 +9,7 @@
     "readTime": "5 min lesning",
     "category": "Middelalderen",
     "details": [
-        "Drepte ca. 50% av befolkningen",
+        "Tok livet av mellom en tredjedel og godt over halvparten av befolkningen",
         "Kom til Bergen i 1349",
         "Førte til ødegårder og bedre kår for bønder"
     ],
@@ -24,7 +24,7 @@
         {
             "type": "text",
             "title": "Pesten kommer til Norge",
-            "content": "Svartedauden kom til Norge (Bergen) i 1349, men pesten hadde herjet i Europa siden 1346. Den spredte seg via handelsruter fra [det Mongolske riket](/historie/middelalderen/mongolske-riket) i øst. På verdensbasis døde mellom 70 og 200 millioner mennesker."
+            "content": "Svartedauden kom til Norge i 1349. Samtidige kilder forteller at pesten kom til Bergen med et skip fra England (Moseng, 2026), mens andre forskere mener den nådde Oslo allerede i 1348 (Orning, 2015a). I Europa hadde pesten herjet siden 1347. Pest hadde eksistert lenge i områdene [det Mongolske riket](/historie/middelalderen/mongolske-riket) rådde over i øst, og fra Krimhalvøya fulgte smitten handelsrutene over Svartehavet og Middelhavet og videre nordover i Europa (Moseng, 2026). På bare tre år døde trolig rundt halvparten av folket i Europa."
         },
         {
             "type": "component",
@@ -36,18 +36,18 @@
         {
             "type": "text",
             "title": "Konsekvenser for samfunnet",
-            "content": "I Norge døde ca. 50% av befolkningen. Dette førte til at mange gårder ble stående tomme (ødegårder). For staten var dette en katastrofe, da skatteinntektene forsvant. Men for de fattige bøndene som overlevde, ble livet faktisk bedre: Det var nå rikelig med jord tilgjengelig, og de kunne kreve bedre vilkår."
+            "content": "Hvor mange som døde i Norge, er forskerne uenige om. Noen anslag ligger på 30-45 prosent av befolkningen (Opsahl, 2026), mens andre mener at godt over halvparten døde (Benedictow, 2025). Uansett hvilket tall som stemmer best, ble følgene enorme. Mange gårder ble stående tomme (ødegårder): rundt 1450 lå om lag 60 prosent av alle gårdene i landet øde (Orning, 2015b). For staten var dette en katastrofe, for skatteinntektene som holdt konge og adel oppe, forsvant sammen med bøndene (Opsahl, 2026). Men for de fattige bøndene som overlevde, ble livet faktisk bedre: det var nå rikelig med jord, prisen på arbeidskraft steg, og landskylda - leia bonden betalte for jorda - sank til omtrent en fjerdedel av det den hadde vært (Orning, 2015b)."
         },
         {
             "type": "text",
             "title": "Slutten på en epoke",
-            "content": "Svartedauden markerer slutten på Norges storhetstid i middelalderen og starten på unionstiden med Danmark. Pesten kom tilbake i bølger i over 200 år etterpå."
+            "content": "Lenge het det at svartedauden gjorde slutt på Norges storhetstid. Nyere forskning nyanserer dette: pesten rammet hele Europa, og den alene kan ikke forklare at Norge fikk en svak stilling i unionen med Danmark (Moseng, 2026). Men befolkningstapet svekket inntektene som holdt kongemakten oppe, og det gjorde union med nabolandene mer aktuelt. I 1397 gikk Norge inn i Kalmarunionen (Opsahl, 2026). Pesten kom tilbake i bølger i flere hundre år, helt til det siste utbruddet i Norge i 1654 (Moseng, 2026)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "content": "Svartedauden drepte halvparten av Norges befolkning, men førte til bedre kår for de som overlevde."
+                "content": "Svartedauden tok livet av en stor del av Norges befolkning. Anslagene spriker fra en tredjedel til godt over halvparten, men de som overlevde, fikk bedre kår."
             }
         },
         {
@@ -56,15 +56,15 @@
             "props": {
                 "forstaa": [
                     "Hvilket år kom svartedauden til Norge, og hvilken by kom pesten til først?",
-                    "Omtrent hvor stor del av Norges befolkning døde av pesten?",
+                    "Hva sier de ulike anslagene om hvor stor del av Norges befolkning som døde?",
                     "Hvor spredte pesten seg fra, og langs hvilke ruter kom den til Europa?",
                     "Hva er en ødegård, og hvorfor ble det så mange av dem etter pesten?"
                 ],
                 "reflekter": [
                     "Forklar hvorfor svartedauden var en katastrofe for staten, men samtidig kunne gjøre livet bedre for de fattige bøndene som overlevde.",
                     "Teksten sier at bøndene kunne kreve bedre vilkår etter pesten. Forklar med egne ord hvorfor det ble slik når så mange gårder sto tomme.",
-                    "Svartedauden markerte slutten på Norges storhetstid og starten på unionstiden med Danmark. Hvorfor kan et så stort befolkningstap svekke et helt land?",
-                    "På verdensbasis døde mellom 70 og 200 millioner mennesker. Hvorfor tror du tallet er så usikkert for en hendelse så langt tilbake i tid?"
+                    "Befolkningstapet svekket inntektene som holdt kongemakten oppe. Hvorfor kan et så stort tap av folk svekke et helt land?",
+                    "Forskerne er uenige om hvor mange som døde. Hvorfor tror du slike tall blir så usikre for en hendelse så langt tilbake i tid?"
                 ],
                 "gaaVidere": [
                     "Pesten spredte seg langs handelsruter mellom land. Sammenlign med hvordan en sykdom sprer seg i verden i dag. Hva er likt, og hva er annerledes?",
@@ -72,8 +72,21 @@
                     "Diskuter med en partner: Kan en stor katastrofe noen ganger føre til noe positivt for et samfunn? Bruk svartedauden som eksempel."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Benedictow, O. J. (2025). *Dødelighet i svartedauen*. Norgeshistorie, Universitetet i Oslo. Hentet 30.07.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/hoymiddelalder/0954-dodelighet-i-svartedauen.html)",
+                    "Moseng, O. G. (2026). *Svartedauden*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/svartedauden](https://snl.no/svartedauden)",
+                    "Opsahl, E. (2026). *Norge i senmiddelalderen*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Norge_i_senmiddelalderen](https://snl.no/Norge_i_senmiddelalderen)",
+                    "Orning, H. J. (2015a). *Svartedauden*. Norgeshistorie, Universitetet i Oslo. Hentet 30.07.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/senmiddelalder/1001-Svartedauden.html)",
+                    "Orning, H. J. (2015b). *Ødegårdene*. Norgeshistorie, Universitetet i Oslo. Hentet 30.07.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/senmiddelalder/1003-odegardene.html)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-07-30T00:00:00.000Z"
 }
