@@ -7,6 +7,8 @@
     "category": "Norge",
     "readTime": "9 min lesning",
     "heroImage": "/images/norgeshistorie/fornorskingen-av-samene-hero.webp",
+    "lastUpdated": "2026-07-30",
+    "factChecked": "2026-07-30",
     "details": [
         "Fornorsking var en bevisst statlig politikk for å gjøre samene norske",
         "Mange samiske barn mistet språket sitt på internatskolene",
@@ -29,11 +31,11 @@
         },
         {
             "type": "text",
-            "content": "Samene er et urfolk. Det betyr at de bodde i området sitt lenge før de moderne landegrensene ble trukket. Samene har levd i nord i flere tusen år, i et område som kalles Sápmi. Sápmi strekker seg over fire land: Norge, Sverige, Finland og Russland. Grensene mellom landene betyr lite for den samiske kulturen, som henger sammen på tvers av dem."
+            "content": "Samene er et urfolk. Det betyr at de bodde i området sitt lenge før de moderne landegrensene ble trukket. De tradisjonelle samiske bosettingsområdene ligger i fire land: Norge, Sverige, Finland og Russland (Berg-Nordlie & Gaski, 2026). Hele dette området kalles Sápmi. Grensene mellom landene betyr lite for den samiske kulturen, som henger sammen på tvers av dem."
         },
         {
             "type": "text",
-            "content": "Den samiske kulturen har sitt eget språk, sin egen klesdrakt som heter kofte, og sin egen sangform. Mange samer levde av reindrift og flyttet med dyra etter årstidene. Du kan lese mer om samenes tro og verdensbilde i artikkelen om [samisk religion](/krle/religion/samisk/intro), og om den særegne sangformen i artikkelen om [joik](/musikk/musikkhistorie/joik)."
+            "content": "Den samiske kulturen har sine egne språk, sin egen klesdrakt som heter kofte, og sin egen sangform. Tradisjonelt har fiske, jakt, fangst, sanking, håndverk og reindrift vært sentrale samiske næringer, og joiken har alltid hatt en helt egen plass i samisk bevissthet (Berg-Nordlie & Gaski, 2026). Du kan lese mer om samenes tro og verdensbilde i artikkelen om [samisk religion](/krle/religion/samisk/intro), og om den særegne sangformen i artikkelen om [joik](/musikk/musikkhistorie/joik)."
         },
         {
             "type": "header",
@@ -41,15 +43,15 @@
         },
         {
             "type": "text",
-            "content": "Fornorsking betyr å gjøre noe eller noen norsk. Fra midten av 1800-tallet bestemte den norske staten at samene skulle bli mest mulig like andre nordmenn. De skulle lære norsk, gå i norsk skole og gi slipp på sin egen kultur. Dette var ikke tilfeldig. Det var en planlagt politikk som varte i over hundre år."
+            "content": "Fornorsking er politikk og prosesser der språket og kulturen til urfolk og nasjonale minoriteter blir motarbeidet og erstattet med majoritetens (Berg-Nordlie, 2025). Fra midten av 1800-tallet bestemte den norske staten at samene skulle bli mest mulig like andre nordmenn. De skulle lære norsk, gå i norsk skole og gi slipp på sin egen kultur. Dette var ikke tilfeldig. Det var en planlagt politikk, og den varte fra 1850-årene til 1960-årene (Berg-Nordlie, 2025)."
         },
         {
             "type": "text",
-            "content": "Hvorfor gjorde staten dette? På 1800-tallet vokste det fram en sterk nasjonalfølelse i Norge. Mange mente at et land var sterkest når alle snakket samme språk og hadde samme kultur. Dette var den samme tida da Norge bygde seg opp som egen nasjon og til slutt brøt unionen med Sverige, som du kan lese om i artikkelen om [unionsoppløsningen i 1905](/historie/norge-i-moderne-tid/unionsopplosningen-1905). Samtidig mente noen forskere på den tida, helt feilaktig, at enkelte folkeslag var mer utviklet enn andre. Samene ble sett ned på. I tillegg ville staten ha kontroll over land og ressurser i nord."
+            "content": "Hvorfor gjorde staten dette? På 1800-tallet vokste det fram en sterk nasjonalfølelse i Norge. Mange mente at et land var sterkest når alle snakket samme språk og hadde samme kultur. Dette var den samme tida da Norge bygde seg opp som egen nasjon og til slutt brøt unionen med Sverige, som du kan lese om i artikkelen om [unionsoppløsningen i 1905](/historie/norge-i-moderne-tid/unionsopplosningen-1905). Samtidig fantes det tanker om at samene var underlegne både kulturelt og sivilisasjonsmessig. I tillegg ville staten ha kontroll over land og ressurser i nord, og myndighetene var bekymret for hvem som hadde makta i grenseområdene (Berg-Nordlie, 2025)."
         },
         {
             "type": "text",
-            "content": "Allerede i 1851 satte staten av egne penger, kalt Finnefondet, til å lære samiske barn norsk. I 1898 kom Wexelsen-plakaten. Den slo fast at lærerne bare skulle bruke norsk i skolen. Samisk var i praksis forbudt i klasserommet. Dette skjedde i samme periode som striden om [bokmål og nynorsk](/norsk/sprakhistorie/bokmal-og-nynorsk) preget landet. Mens nordmenn flest kjempet om hvilken norsk de skulle skrive, fikk samiske barn ikke lov til å bruke språket sitt i det hele tatt."
+            "content": "Allerede i 1851 opprettet staten et eget pengefond, kalt Finnefondet, som skulle bruke skolen til å gjøre samiske barn norske (Berg-Nordlie, 2025). I 1898 kom Wexelsen-plakaten, en instruks fra kirkeminister Vilhelm Andreas Wexelsen. Den påla lærerne å sørge for at samisk og kvensk ikke ble brukt mer enn det som var strengt nødvendig. Samisk var i praksis forbudt i klasserommet. Dette skjedde i samme periode som striden om [bokmål og nynorsk](/norsk/sprakhistorie/bokmal-og-nynorsk) preget landet. Mens nordmenn flest kjempet om hvilken norsk de skulle skrive, fikk samiske barn ikke lov til å bruke språket sitt i det hele tatt."
         },
         {
             "type": "component",
@@ -62,7 +64,7 @@
         },
         {
             "type": "text",
-            "content": "Det sterkeste våpenet i fornorskinga var internatskolene. Mange samiske familier bodde spredt og langt fra skolen. Løsningen ble at barna flyttet inn på skolen og bodde der i ukevis eller månedsvis. På internatet var det norsk som gjaldt. Barna fikk kjeft hvis de snakket samisk, også i friminuttene."
+            "content": "Det sterkeste våpenet i fornorskinga var internatskolene. De første statlige internatskolene i Finnmark kom fra 1901, og de skilte samiske og kvenske barn fra språket og kulturen sin (Berg-Nordlie, 2025). Mange samiske familier bodde spredt og langt fra skolen. Løsningen ble at barna flyttet inn på skolen og bodde der i ukevis eller månedsvis. På internatet var det norsk som gjaldt. Barna fikk kjeft hvis de snakket samisk, også i friminuttene."
         },
         {
             "type": "text",
@@ -87,11 +89,15 @@
         },
         {
             "type": "text",
-            "content": "Fornorskinga ble aldri helt vellykket. Mange samer holdt fast på språket og kulturen i det skjulte. Etter andre verdenskrig begynte holdningene sakte å endre seg. I 1959 fikk skolen igjen lov til å bruke samisk i undervisningen. Men det store vendepunktet kom senere."
+            "content": "Fornorskinga ble aldri helt vellykket. Mange samer holdt fast på språket og kulturen i det skjulte. Etter andre verdenskrig begynte holdningene sakte å endre seg. I 1959 ble Wexelsen-plakaten opphevet av en ny skolelov, og i 1963 var den målrettede fornorskingspolitikken formelt over (Berg-Nordlie, 2025). Men det store vendepunktet kom senere."
         },
         {
             "type": "text",
-            "content": "På slutten av 1970-tallet ville staten bygge en stor demning i Altaelva i Finnmark. Samer og naturvernere protesterte kraftig. Noen lenket seg fast, andre sultestreiket foran Stortinget. Alta-aksjonen tapte kampen om elva, men vant noe mye større: hele Norge fikk øynene opp for hvordan samene var blitt behandlet. Politikerne forsto at de måtte ta samenes rettigheter på alvor."
+            "content": "Striden om Altaelva, kalt Alta-saka, var en politisk konflikt som varte fra rundt 1968 til 1982. Staten ville bygge ut Alta-Kautokeinovassdraget i Finnmark, og motstanderne mente det ville ramme reindrifta hardt. Protestene mot utbyggingen kalles Alta-aksjonen. Samer, naturvernere og folk i bygdene aksjonerte på flere vis: 15 000 skrev under, anleggsarbeidet ble stanset med sivil ulydighet sommeren 1979, samiske aktivister satte opp telt utenfor Stortinget i oktober samme år, og vinteren 1981 sultestreiket flere i ukene fra januar til februar (Berg-Nordlie & Tvedt, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Aksjonen tapte kampen om elva. Høyesterett slo i 1982 fast at utbyggingen var lovlig, og demningen sto ferdig i 1987. Men aksjonen vant noe mye større: hele Norge fikk øynene opp for hvordan samene var blitt behandlet. Politikerne forsto at de måtte ta samenes rettigheter på alvor. Samerettsutvalget kom i 1980, sameloven i 1987 og en egen grunnlovsparagraf om samisk språk og kultur i 1988 (Berg-Nordlie & Tvedt, 2025)."
         },
         {
             "type": "text",
@@ -103,11 +109,15 @@
         },
         {
             "type": "text",
-            "content": "I 2023 la en egen kommisjon fram en stor rapport om fornorskinga. Den kalles Sannhets- og forsoningskommisjonen. Rapporten fortalte historiene til dem som hadde opplevd urett, og Norge sa offentlig unnskyld. Å si unnskyld løser ikke alt, men det er et viktig steg. Det handler om å innrømme at noe gikk galt, slik at man kan gjøre det bedre."
+            "content": "Stortinget satte i 2018 ned en egen kommisjon som skulle granske fornorskingspolitikken og uretten mot samer, kvener og skogfinner. Den kalles Sannhets- og forsoningskommisjonen, og i juni 2023 la den fram rapporten sin. Konklusjonen var at fornorskingspolitikken fikk alvorlige følger for disse gruppene, blant annet i form av tapt språk og kultur (Aspøy, 2024)."
         },
         {
             "type": "text",
-            "content": "I dag lever den samiske kulturen igjen. Stadig flere lærer seg samisk på nytt, joiken høres i moderne musikk, og det samiske flagget heises med stolthet på samefolkets dag den 6. februar. Historien om fornorskinga viser noe viktig: en kultur kan presses helt til kanten av å forsvinne, men hvis folk kjemper for den, kan den også reise seg igjen."
+            "content": "Selve unnskyldningen kom halvannet år senere. Den 12. november 2024 vedtok Stortinget å uttrykke sin dypeste beklagelse for uretten fornorskingspolitikken påførte samer, kvener/norskfinner og skogfinner, og ba samtidig om unnskyldning for den aktive rollen tidligere Storting hadde spilt (Stortinget, 2024). Å si unnskyld løser ikke alt, men det er et viktig steg. Det handler om å innrømme at noe gikk galt, slik at man kan gjøre det bedre."
+        },
+        {
+            "type": "text",
+            "content": "I dag lever den samiske kulturen igjen. Stadig flere lærer seg samisk på nytt, joiken høres i moderne musikk, og det samiske flagget heises med stolthet på samefolkets dag den 6. februar (Berg-Nordlie & Gaski, 2026). Historien om fornorskinga viser noe viktig: en kultur kan presses helt til kanten av å forsvinne, men hvis folk kjemper for den, kan den også reise seg igjen."
         },
         {
             "type": "component",
@@ -186,12 +196,25 @@
                         "options": [
                             "Sametinget ble lagt ned",
                             "Fornorskinga begynte på nytt",
-                            "En kommisjon la fram en rapport, og Norge sa unnskyld for fornorskinga",
+                            "Sannhets- og forsoningskommisjonen la fram rapporten sin om fornorskinga",
                             "Samisk ble forbudt igjen"
                         ],
-                        "explanation": "Sannhets- og forsoningskommisjonen la fram rapporten sin i 2023, og Norge ba offentlig om unnskyldning for uretten.",
+                        "explanation": "Sannhets- og forsoningskommisjonen la fram rapporten sin i juni 2023. Selve unnskyldningen kom senere: 12. november 2024 vedtok Stortinget å beklage uretten og ba om unnskyldning.",
                         "answer": 2
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aspøy, A. (2024). *Sannhets- og forsoningskommisjonen*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Sannhets-_og_forsoningskommisjonen](https://snl.no/Sannhets-_og_forsoningskommisjonen)",
+                    "Berg-Nordlie, M. (2025). *Fornorsking*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/fornorsking](https://snl.no/fornorsking)",
+                    "Berg-Nordlie, M., & Gaski, H. (2026). *Samer*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/samer](https://snl.no/samer)",
+                    "Berg-Nordlie, M., & Tvedt, K. A. (2025). *Alta-saken*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Alta-saken](https://snl.no/Alta-saken)",
+                    "Stortinget. (2024). *Innstilling om sannhets- og forsoningskommisjonens rapport*. Hentet 30.07.2026 fra [stortinget.no](https://www.stortinget.no/no/Hva-skjer-pa-Stortinget/Nyhetsarkiv/Hva-skjer-nyheter/2024-2025/sannhets--og-forsoningskommisjonen/)"
                 ]
             }
         }
