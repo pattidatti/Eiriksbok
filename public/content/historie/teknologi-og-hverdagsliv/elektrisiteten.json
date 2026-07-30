@@ -20,8 +20,8 @@
     {
       "type": "image",
       "src": "/images/teknologi-og-hverdagsliv/elektrisiteten-01.webp",
-      "alt": "Glødende lyspaere lyser opp et moerkt rom med en familie rundt et bord",
-      "caption": "Da den elektriske lyspaera tentes, ble kvelden plutselig lang, lys og trygg, uten os og åpen flamme."
+      "alt": "Glødende lyspære lyser opp et mørkt rom med en familie rundt et bord",
+      "caption": "Da den elektriske lyspæra tentes, ble kvelden plutselig lang, lys og trygg, uten os og åpen flamme."
     },
     {
       "type": "header",
@@ -50,7 +50,7 @@
     {
       "type": "image",
       "src": "/images/teknologi-og-hverdagsliv/elektrisiteten-02.webp",
-      "alt": "Naerbilde av en tidlig lyspaere med gloedende traad i glasskule",
+      "alt": "Nærbilde av en tidlig lyspære med glødende tråd i glasskule",
       "caption": "Hemmeligheten var glødetråden inne i en lufttom glasskule, som kunne lyse i timevis uten å brenne opp."
     },
     {
@@ -121,7 +121,7 @@
           },
           {
             "year": 1879,
-            "description": "Thomas Edison lager en lyspaere med glødetråd som kan brenne i timevis."
+            "description": "Thomas Edison lager en lyspære med glødetråd som kan brenne i timevis."
           },
           {
             "year": 1882,
@@ -201,7 +201,7 @@
             "explanation": "Stearinlys, parafinlamper og gasslys ga svakt lys, kostet penger for hver time de brant, og var en åpen flamme som lett kunne starte brann."
           },
           {
-            "question": "Hva var Thomas Edisons virkelig store grep, utover selve lyspaera?",
+            "question": "Hva var Thomas Edisons virkelig store grep, utover selve lyspæra?",
             "options": [
               "Han fant opp parafinlampen",
               "Han bygde også kraftverk og ledninger, slik at strømmen faktisk nådde fram til husene",
@@ -209,7 +209,7 @@
               "Han laget den første vaskemaskinen"
             ],
             "answer": 1,
-            "explanation": "En lyspaere er ubrukelig uten strøm. Edison tenkte på hele systemet og bygde kraftverk og ledninger, slik at vanlige folk kunne få lys i husene sine."
+            "explanation": "En lyspære er ubrukelig uten strøm. Edison tenkte på hele systemet og bygde kraftverk og ledninger, slik at vanlige folk kunne få lys i husene sine."
           },
           {
             "question": "Hvorfor vant vekselstrømmen over likestrømmen i strømkrigen?",

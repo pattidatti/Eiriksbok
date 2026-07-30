@@ -221,7 +221,7 @@
             "choices": [
                 {
                     "id": "c_hub1_beslutning",
-                    "text": "Du har lest alle rapporter og raadfört deg med raadgiverne. Ta mobiliseringsbeslutningen.",
+                    "text": "Du har lest alle rapporter og rådført deg med rådgiverne. Ta mobiliseringsbeslutningen.",
                     "nextNodeId": "mobilisering_beslutning",
                     "condition": {
                         "all": [
@@ -327,7 +327,7 @@
             "choices": [
                 {
                     "id": "c_ressurser_tilbake",
-                    "text": "Gaa tilbake til arbeidsrommet.",
+                    "text": "Gå tilbake til arbeidsrommet.",
                     "nextNodeId": "hub_tsarskoje_1914",
                     "setFlags": ["hub1_budsjett_done"]
                 }
@@ -578,7 +578,7 @@
             "choices": [
                 {
                     "id": "c_hub2_videre",
-                    "text": "Du har veiet alle alternativer paa ostfronten. Det er paa tide aa ta stilling.",
+                    "text": "Du har veiet alle alternativer på østfronten. Det er på tide å ta stilling.",
                     "nextNodeId": "rasputin_dilemma",
                     "condition": {
                         "all": [
@@ -795,7 +795,7 @@
             "choices": [
                 {
                     "id": "c_hub3_videre",
-                    "text": "Petrograd er ustabilt. Du har gjort hva du kan. Vinteren 1917 naermer seg.",
+                    "text": "Petrograd er ustabilt. Du har gjort hva du kan. Vinteren 1917 nærmer seg.",
                     "nextNodeId": "petrograd_vinter_1917",
                     "condition": {
                         "all": [
