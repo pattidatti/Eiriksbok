@@ -23,7 +23,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Det hellige romerske rike er en av de mest fascinerende og komplekse statsdannelsene i europeisk historie. Det eksisterte i over 800 år, fra kroningen av Otto den store i 962 til Napoleon tvang frem oppløsningen i 1806. Riket dekket store deler av Sentral-Europa, med dagens Tyskland som kjerneområde, men strakte seg også inn i dagens Italia, Frankrike, Tsjekkia, Polen, Nederland, Belgia, Østerrike og Sveits. Det var verken en nasjonalstat eller en enkel føderasjon, men et lappeteppe av hundrevis av små og store territorier, bundet sammen av en valgt keiser og en felles riksdag."
+            "content": "Det hellige romerske rike er en av de mest fascinerende og komplekse statsdannelsene i europeisk historie. Det var et keiserdømme i Vest-Europa fra 962 til 1806, altså i over 800 år, med keiseren som øverste myndighet (Arntzen, 2025). Riket omfattet hele eller deler av de moderne statene Tyskland, Nederland, Belgia, Luxembourg, Frankrike, Sveits, Italia, Kroatia, Slovenia, Østerrike, Tsjekkia og Polen (Arntzen, 2025). Det var verken en nasjonalstat eller en enkel føderasjon. På sitt største besto riket av over 1700 mer eller mindre selvstyrende fyrstedømmer og territorier, bundet sammen av en valgt keiser og en felles riksdag (Arntzen, 2025)."
         },
         {
             "type": "component",
@@ -44,11 +44,11 @@
         },
         {
             "type": "text",
-            "content": "Grunnlaget for riket ble lagt av Karl den store, frankernes konge, som ble kronet til keiser av paven i Roma 1. juledag år 800. Karl samlet store deler av det kristne Vest-Europa og gjenopplivet keisertittelen som hadde ligget brakk i vest siden 476. Selv om Karls rike ble delt etter hans død, levde ideen om et kristent universalkaiserrike videre."
+            "content": "Grunnlaget for riket ble lagt av Karl den store, frankernes konge. På 1. juledag år 800 kronet pave Leo 3. ham til romersk keiser i Peterskirken i Roma, og keiserverdigheten i Vest-Europa ble gjenopplivet etter å ha ligget brakk i århundrer (Holmboe, 2026). Karl samlet store deler av det kristne Vest-Europa. Selv om riket hans ble delt etter hans død, levde ideen om et kristent universalkeiserrike videre."
         },
         {
             "type": "text",
-            "content": "Det var den tyske kongen Otto den store som i 962 ble kronet i Roma og dermed formelt grunnla det riket som senere skulle få navnet 'Det hellige romerske rike av den tyske nasjon'. Otto og hans etterfølgere så det som sin oppgave å kontrollere både Tyskland og Italia, og ikke minst å beskytte (og kontrollere) paven i Roma."
+            "content": "Rikets historie regnes fra år 962, da den tyske kongen Otto 1. den store ble kronet til romersk keiser (Arntzen, 2025). Riket var egentlig en videreføring av to eldre statsdannelser, Frankerriket og etterfølgeren det østfrankiske riket. Tillegget 'av den tyske nasjon' kom først til i 1512 (Arntzen, 2025). Otto og etterfølgerne hans så det som sin oppgave å kontrollere både Tyskland og Italia, og ikke minst å beskytte (og kontrollere) paven i Roma."
         },
         {
             "type": "component",
@@ -94,7 +94,7 @@
         },
         {
             "type": "text",
-            "content": "I motsetning til arvekongedømmene i Frankrike og England, var Det hellige romerske rike et valgkongedømme. Keiseren ble valgt av en eksklusiv gruppe fyrster, kalt kurfyrster. Selv om tittelen ofte gikk i arv innenfor mektige familier (som Habsburgerne), måtte hver ny keiser forhandle med fyrstene og gi dem privilegier for å bli valgt."
+            "content": "I motsetning til arvekongedømmene i Frankrike og England, var Det hellige romerske rike et valgkongedømme. Keiseren ble valgt av en eksklusiv gruppe av rikets fremste fyrster, kalt kurfyrstene (Arntzen, 2025). Keiser Karl 4.s gylne bulle fra 1356 fastsatte at hver ny keiser skulle velges av sju kurfyrster: erkebiskopene av Mainz, Köln og Trier, pfalzgreven ved Rhinen, hertugen av Sachsen, markgreven av Brandenburg og kongen av Böhmen (Thingsaker, 2025). Selv om tittelen ofte gikk i arv innenfor mektige familier (som Habsburgerne), måtte hver ny keiser forhandle med fyrstene og gi dem privilegier for å bli valgt."
         },
         {
             "type": "component",
@@ -106,7 +106,7 @@
         },
         {
             "type": "text",
-            "content": "Makten i riket var fordelt mellom keiseren og Riksdagen (Reichstag). Riksdagen var en forsamling av rikets stender: kurfyrstene, andre fyrster (hertuger, grever, biskoper) og representanter for de frie riksbyene. Ingen nye lover eller skatter kunne vedtas uten Riksdagens samtykke. Dette systemet beskyttet de små statenes selvstyre, men gjorde det også svært vanskelig for keiseren å styre effektivt eller føre en samlet utenrikspolitikk."
+            "content": "Makten i riket var fordelt mellom keiseren og Riksdagen (Reichstag). Riksstendene var samlebetegnelsen på de tre gruppene som til sammen utgjorde riksdagen: kurfyrstene, de øvrige fyrstene (hertuger, grever, biskoper) og representantene for de frie riksbyene. Keiseren var bundet av vedtakene deres når det gjaldt felles skattlegging og utskriving av soldater (Arntzen, 2025). Dette systemet beskyttet de små statenes selvstyre, men gjorde det også svært vanskelig for keiseren å styre effektivt eller føre en samlet utenrikspolitikk."
         },
         {
             "type": "header",
@@ -114,17 +114,17 @@
         },
         {
             "type": "text",
-            "content": "En rød tråd gjennom høymiddelalderen var maktkampen mellom keiseren og paven. Keiserne mente de var innsatt av Gud og hadde rett til å utnevne biskoper (investitur). Pavene, styrket av [Cluny-reformen](/historie/middelalderen/middelalderen), hevdet at kirken var hevet over verdslig makt."
+            "content": "En rød tråd gjennom høymiddelalderen var maktkampen mellom keiseren og paven. Striden sto om retten til å utnevne biskoper, og særlig om selve innsettelsen, der biskopen fikk ring og stav (Tøllefsen, 2022). Keiserne mente de var innsatt av Gud og hadde denne retten. Pavene, styrket av [Cluny-reformen](/historie/middelalderen/middelalderen), hevdet at kirken var hevet over verdslig makt."
         },
         {
             "type": "text",
-            "content": "Konflikten nådde sitt klimaks under Investiturstriden. Pave Gregor 7. bannlyste keiser Henrik 4., noe som fristilte Henriks vasaller fra deres lojalitetsed. For å redde kronen måtte Henrik i 1077 vandre barføtt i snøen til borgen Canossa i Nord-Italia, hvor paven oppholdt seg, og be om tilgivelse. Paven lot ham vente i tre dager før han opphevet bannlysningen. 'Canossagangen' står i dag som et symbol på den sekulære maktens underkastelse under kirken, selv om Henrik senere tok hevn og jaget Gregor fra Roma."
+            "content": "Konflikten nådde sitt klimaks under Investiturstriden. Pave Gregor 7. bannlyste keiser Henrik 4. og løste undersåttene hans fra troskapseden deres (Halvorsen, 2024). For å redde kronen måtte Henrik i 1077 oppsøke paven på borgen Canossa i Nord-Italia og be om å bli løst fra bannet (Tøllefsen, 2022). 'Canossagangen' står i dag som et symbol på den verdslige maktens underkastelse under kirken. Men det ble ikke slutten: Henrik ble bannlyst på nytt i 1080, fikk valgt en motpave og ble kronet til keiser i Roma i 1084 (Tøllefsen, 2022). Gregor måtte flykte fra Roma og døde i Salerno i Sør-Italia i 1085 (Halvorsen, 2024)."
         },
         {
             "type": "image",
             "src": "/images/lessons/middelalderen/canossa.webp",
             "alt": "Henrik 4. ved Canossa",
-            "caption": "Keiser Henrik 4. venter ydmykt på pavens tilgivelse utenfor Canossa-borgen i 1077."
+            "caption": "Keiser Henrik 4. ber om pavens tilgivelse ved Canossa-borgen i 1077."
         },
         {
             "type": "header",
@@ -132,7 +132,7 @@
         },
         {
             "type": "text",
-            "content": "Fra 1400-tallet og helt til rikets slutt var keisetronen nesten kontinuerlig besatt av familien Habsburg. Gjennom smart ekteskapspolitikk ('La andre krige, du, lykkelige Østerrike, gift deg!') bygde de et verdensrike. Keiser Karl 5. (1519–1556) styrte over et rike 'hvor solen aldri gikk ned', som inkluderte Tyskland, Østerrike, Nederlandene, Spania og de enorme amerikanske koloniene. Men Karls drøm om et samlet katolsk monarki ble knust av reformasjonen."
+            "content": "Fra 1438 og helt til rikets slutt i 1806 var keisertronen nesten sammenhengende besatt av medlemmer av fyrstehuset Habsburg (Arntzen, 2025). Gjennom smart ekteskapspolitikk bygde de et verdensrike. Keiser Karl 5. (1519-1556) styrte over et rike der solen aldri gikk ned: Spania, Nederlandene, Østerrike, Tyskland, Napoli, Sicilia, Sardinia og de amerikanske koloniene, spredt over tre verdensdeler (Arntzen, 2026a). Men Karls drøm om et samlet katolsk monarki ble knust av reformasjonen."
         },
         {
             "type": "header",
@@ -140,11 +140,11 @@
         },
         {
             "type": "text",
-            "content": "Da munken Martin Luther spikret sine 95 teser på kirkedøra i Wittenberg i 1517, utløste han en religiøs jordskjelv som splittet riket. Mange fyrster, særlig i nord, gikk over til lutherdommen. Dette var ikke bare religiøst motivert; det ga dem også muligheten til å beslaglegge kirkens enorme eiendommer og styrke sin uavhengighet fra den katolske keiseren."
+            "content": "Den 31. oktober 1517 offentliggjorde munken Martin Luther i Wittenberg 95 teser med kritikk av pavekirkens avlatshandel. Tesene ble spredd som plakater med den nye boktrykkerkunsten, og de regnes gjerne som startskuddet for reformasjonen (Rasmussen, 2026). Det ble et religiøst jordskjelv som splittet riket. Mange fyrster, særlig i nord, gikk over til lutherdommen. Dette var ikke bare religiøst motivert; det ga dem også muligheten til å beslaglegge kirkens enorme eiendommer og styrke sin uavhengighet fra den katolske keiseren."
         },
         {
             "type": "text",
-            "content": "Religionsfreden i Augsburg (1555) forsøkte å løse konflikten med prinsippet *Cuius regio, eius religio* ('den som styrer, bestemmer religionen'). Hver fyrste fikk bestemme om hans undersåtter skulle være katolikker eller lutheranere. Dette sementerte splittelsen av Tyskland."
+            "content": "Karl 5. klarte ikke å knuse reformasjonen militært, og måtte i 1555 godta religionsfreden i Augsburg. Prinsippet ble at herskeren bestemte religionen i sitt eget område (Arntzen, 2026a). På latin: *Cuius regio, eius religio* - 'den som styrer, bestemmer religionen'. Hver fyrste fikk avgjøre om undersåttene hans skulle være katolikker eller lutheranere. Dette sementerte splittelsen av Tyskland."
         },
         {
             "type": "header",
@@ -152,11 +152,11 @@
         },
         {
             "type": "text",
-            "content": "Spenningene eksploderte i 1618, da protestantiske opprørere i Praha kastet keiserens utsendinger ut av vinduet ('Defenestrasjonen i Praha'). [Trettiårskrigen](/historie/reformasjonen/30-aarskrigen) (1618–1648) utviklet seg fra en tysk religionskrig til en europeisk storkrig om maktbalansen. Sverige og Frankrike intervenerte på protestantenes side mot Habsburgerne."
+            "content": "Spenningene eksploderte i 1618, da protestantiske adelsmenn kastet tre keiserlige rådsherrer ut av vinduene på borgen i Praha ('Defenestrasjonen i Praha') og satte i gang et tsjekkisk opprør mot keiseren (Arntzen, 2026b). [Trettiårskrigen](/historie/reformasjonen/30-aarskrigen) (1618-1648) utviklet seg fra en tysk religionskrig til en europeisk storkrig om maktbalansen. Sverige gikk inn i krigen i 1629-1630 under Gustav 2. Adolf, og Frankrike formelt i 1635, ledet av kardinal Richelieu - begge på protestantenes side mot Habsburgerne (Arntzen, 2026b)."
         },
         {
             "type": "text",
-            "content": "Krigen var en katastrofe uten sidestykke. Store deler av Tyskland ble lagt øde, og befolkningen kan ha sunket med opptil 40%. Freden i Westfalen i 1648 endret rikets karakter for alltid. Riket ble i praksis en løs føderasjon av over 300 suverene stater, som hver hadde rett til å føre sin egen utenrikspolitikk. Keiserens makt var redusert til nesten ingenting."
+            "content": "Krigen var en katastrofe uten sidestykke. Store deler av Tyskland ble lagt øde. Historikere har anslått at den samlede befolkningen i riket sank med rundt 40 prosent i perioden 1600-1650, men tallet er omdiskutert blant forskere (Arntzen, 2026b). Freden i Westfalen i 1648 endret rikets karakter for alltid. Fyrstene, både de protestantiske og de katolske, fikk stadfestet sin selvstendige stilling overfor keiseren, og de største av dem - Bayern, Brandenburg/Preussen og Sachsen - kunne føre sin egen utenrikspolitikk. Keiserens drøm om å styre Tyskland samlet var oppgitt, og Frankrike tok definitivt over rollen som Europas dominerende stormakt (Arntzen, 2026b)."
         },
         {
             "type": "image",
@@ -170,7 +170,7 @@
         },
         {
             "type": "text",
-            "content": "På 1700-tallet ble riket dominert av rivaliseringen mellom Østerrike (Habsburg) og den oppkomlende militærmakten Preussen (Hohenzollern). Denne 'tyske dualismen' lammet riket ytterligere. Da Napoleon Bonaparte erobret store deler av Tyskland og opprettet Rhinforbundet under fransk beskyttelse, så keiser Frans 2. skriften på veggen. Den 6. august 1806 abdiserte han og erklærte Det hellige romerske rike for oppløst."
+            "content": "På 1700-tallet ble riket dominert av rivaliseringen mellom Østerrike (Habsburg) og den oppkomlende militærmakten Preussen (Hohenzollern). Denne 'tyske dualismen' lammet riket ytterligere. Da Napoleon Bonaparte erobret store deler av Tyskland og opprettet Rhinforbundet under fransk beskyttelse, så keiser Frans 2. skriften på veggen. I 1806 la han ned den romerske keiserverdigheten som et mottrekk mot Rhinforbundet, og Det hellige romerske rike var oppløst (Arntzen, 2025)."
         },
         {
             "type": "component",
@@ -185,7 +185,7 @@
                         "right": "Lojalitet til én nasjon og stat"
                     },
                     {
-                        "left": "Uklar grenser og overlappende rettigheter",
+                        "left": "Uklare grenser og overlappende rettigheter",
                         "right": "Klare grenser og sentralisert lovgivning"
                     },
                     {
@@ -201,7 +201,7 @@
         },
         {
             "type": "text",
-            "content": "Selv om riket ofte har blitt latterliggjort for sin ineffektivitet, har historikere i dag et mer nyansert syn. Riket var en organisasjon som bevarte fred og rettssikkerhet i Sentral-Europa gjennom lov og forhandlinger, snarere enn rå makt. Dets desentraliserte struktur ga rom for et rikt kulturliv – tenk på Bach, Goethe og Kant, som alle virket innenfor rikets grenser. Noen ser til og med riket som en tidlig forløper til Den europeiske union (EU): et overnasjonalt fellesskap av stater som samarbeider, men bevarer sin egenart."
+            "content": "Selv om riket ofte har blitt latterliggjort for sin ineffektivitet, har historikere i dag et mer nyansert syn. Riket var en organisasjon som bevarte fred og rettssikkerhet i Sentral-Europa gjennom lov og forhandlinger, snarere enn rå makt. Den desentraliserte strukturen ga rom for et rikt kulturliv - tenk på Bach og Goethe, som begge virket innenfor rikets grenser. Noen ser til og med riket som en tidlig forløper til Den europeiske union (EU): et overnasjonalt fellesskap av stater som samarbeider, men bevarer sin egenart."
         },
         {
             "type": "component",
@@ -217,16 +217,33 @@
                     "Voltaire skrev at riket 'verken var hellig, romersk eller et rike'. Artikkelen svarer på dette. Forklar med egne ord hvorfor riket likevel kalte seg alle tre delene.",
                     "Hvorfor var det vanskeligere for keiseren å styre effektivt enn for kongene i Frankrike og England? Bruk valgkongedømmet og Riksdagen i svaret ditt.",
                     "Mange fyrster gikk over til lutherdommen etter 1517. Forklar hvordan dette både handlet om tro OG om makt og penger for fyrstene.",
-                    "Freden i Westfalen i 1648 gjorde riket til en løs føderasjon av over 300 stater. Vurder hvorfor dette regnes som et vendepunkt der keiserens makt nesten forsvant."
+                    "Freden i Westfalen i 1648 stadfestet fyrstenes selvstendige stilling overfor keiseren. Vurder hvorfor dette regnes som et vendepunkt der keiserens makt nesten forsvant."
                 ],
                 "gaaVidere": [
                     "Artikkelen sammenligner riket med EU: et fellesskap av stater som samarbeider, men beholder sin egenart. Skriv et kort avsnitt om hvor du synes sammenligningen passer, og hvor den halter.",
                     "Se på tabellen som sammenligner riket med den moderne nasjonalstaten. Diskuter med en klassekamerat hvilken av de to dere ville følt størst tilhørighet til, og hvorfor.",
-                    "Trettiårskrigen kan ha halvert befolkningen i deler av Tyskland. Finn ett eksempel på en religions- eller borgerkrig i nyere tid, og sammenlign hvordan tro og makt blandes."
+                    "Trettiårskrigen kan ha kostet rundt 40 prosent av befolkningen i riket. Finn ett eksempel på en religions- eller borgerkrig i nyere tid, og sammenlign hvordan tro og makt blandes."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Arntzen, J. G. (2025). *Det tysk-romerske riket*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Det_tysk-romerske_riket](https://snl.no/Det_tysk-romerske_riket)",
+                    "Arntzen, J. G. (2026a). *Karl 5. - tysk-romersk keiser*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Karl_5._-_tysk-romersk_keiser](https://snl.no/Karl_5._-_tysk-romersk_keiser)",
+                    "Arntzen, J. G. (2026b). *trettiårskrigen*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/trettiårskrigen](https://snl.no/tretti%C3%A5rskrigen)",
+                    "Halvorsen, P. B. (2024). *Gregor 7.* Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Gregor_7](https://snl.no/Gregor_7)",
+                    "Holmboe, H. (2026). *Karl 1. den store*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Karl_den_store](https://snl.no/Karl_den_store)",
+                    "Rasmussen, T. (2026). *Martin Luther*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Martin_Luther](https://snl.no/Martin_Luther)",
+                    "Thingsaker, B. (2025). *den gylne bulle*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/den_gylne_bulle](https://snl.no/den_gylne_bulle)",
+                    "Tøllefsen, T. O. (2022). *investiturstriden*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/investiturstriden](https://snl.no/investiturstriden)"
                 ]
             }
         }
     ],
+    "lastUpdated": "2026-07-30",
     "quiz": [
         {
             "question": "Når ble Det hellige romerske rike formelt oppløst?",
