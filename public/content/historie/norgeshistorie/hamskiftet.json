@@ -11,17 +11,20 @@
         "industrialisering",
         "samfunn"
     ],
+    "lastUpdated": "2026-07-30",
+    "factChecked": "2026-07-30",
     "content": [
         {
             "type": "text",
-            "content": "For 200 år siden var Norge et helt annet land. Nesten alle bodde på landet, og livet handlet om én ting: Å skaffe nok mat til å overleve vinteren. Men i løpet av noen få tiår gikk Norge gjennom en forvandling så stor at den ble kalt 'Det store hamskiftet'. Norge skiftet utseende – eller ham."
+            "content": "For 200 år siden var Norge et helt annet land. Nesten alle bodde på landet, og livet handlet om én ting: å skaffe nok mat til å overleve vinteren. Men i løpet av noen få tiår gikk Norge gjennom en forvandling så stor at forfatteren Inge Krokann i 1942 kalte den «det store hamskiftet» (Brekke & Losnegård, 2026). Norge skiftet utseende, eller ham."
         },
         {
             "type": "component",
             "component": "QuoteBlock",
             "props": {
-                "text": "Norge skiftet ham, slik ormen kaster skinnet.",
-                "author": "Inge Krokann (dikter)"
+                "text": "Det store hamskifte i bondesamfunnet",
+                "author": "Inge Krokann, 1942",
+                "context": "Tittelen på essayet som ga omveltningen navnet sitt"
             }
         },
         {
@@ -31,19 +34,19 @@
         },
         {
             "type": "text",
-            "content": "På 1700- og tidlig 1800-tall var Norge et jordbrukssamfunn preget av \"mangesysleri\". Det betyr at man ikke bare var bonde – man var fisker, tømmerhogger, snekker og smed også. Man måtte kunne alt, for det man ikke lagde selv, fikk man ikke tak i. Samfunnet var også strengt inndelt i klasser."
+            "content": "På 1700- og tidlig 1800-tall var Norge et jordbrukssamfunn preget av «mangesysleri». Det betyr at man ikke bare var bonde: man var fisker, tømmerhogger, snekker og smed også. Man måtte kunne alt, for det man ikke lagde selv, fikk man ikke tak i. Samfunnet var også strengt inndelt i klasser."
         },
         {
             "type": "list",
             "items": [
-                "**Bønder:** Eide jorda si selv og hadde stemmerett (etter 1814). De var 'konger' på egen gård.",
-                "**Husmenn:** Den store underklassen. De eide ingenting, men fikk leie en liten jordflekk av bonden mot at de jobbet for ham når han trengte det. De og familiene deres levde ofte i dyp fattigdom.",
-                "**Tjenestefolk:** Ungdommer som jobbet på gårdene for kost og losji før de kanskje giftet seg."
+                "Bønder: eide jorda si selv og hadde stemmerett etter 1814. De var «konger» på egen gård.",
+                "Husmenn: den store underklassen. En husmann leide hustomt med eller uten jord som hørte til en gård, betalte festeavgift og hadde ofte arbeidsplikt for bonden. Huset bygde og eide han gjerne selv, ute i utmarka.",
+                "Tjenestefolk: ungdommer som jobbet på gårdene for kost og losji før de kanskje giftet seg."
             ]
         },
         {
             "type": "text",
-            "content": "Husmannsvesenet vokste seg enormt utover 1800-tallet fordi befolkningen økte, men det var ikke nok jord til alle. Dette skapte en sosial spenning som skulle eksplodere i utvandring og politiske bevegelser."
+            "content": "Husmannsklassen var på sitt største rundt 1850, og for mange var utkommet magert (Damslora & Dørum, 2026). Husmannsvesenet vokste utover 1800-tallet fordi befolkningen økte, men det var ikke nok jord til alle. Dette skapte en sosial spenning som skulle eksplodere i utvandring og politiske bevegelser."
         },
         {
             "type": "header",
@@ -52,7 +55,7 @@
         },
         {
             "type": "text",
-            "content": "På 1800-tallet skjedde det noe dramatisk. Poteten kom til Norge (og ga billig næring), silda kom inn til kysten, og vi fikk vaksiner mot kopper. Resultatet? Færre barn døde, og folk levde lenger. Befolkningen vokste raskere enn noen gang før."
+            "content": "På 1800-tallet skjedde det noe dramatisk. Potetdyrkingen ble omfattende, fisket økte, jordmorvesenet ble bedre, det kom distriktsleger, og koppevaksinen tok knekken på en av de farligste sykdommene. Veksten kom altså ikke av at folk fikk flere barn, men av at færre døde: dødeligheten falt fra rundt 20 til rundt 15 promille, og levealderen steg fra 35-40 år rundt 1800 til om lag 50 år i 1870 (Myhre, 2015). Mellom 1815 og 1865 ble befolkningen nesten fordoblet, fra 885 000 til 1 702 000 innbyggere. Norge passerte én million innbyggere i 1823 og to millioner i 1891 (Thorsnæs, 2025)."
         },
         {
             "type": "component",
@@ -85,11 +88,15 @@
                         "value": 2000000
                     },
                     {
-                        "year": 1934,
+                        "year": 1942,
                         "value": 3000000
                     },
                     {
-                        "year": 2013,
+                        "year": 1975,
+                        "value": 4000000
+                    },
+                    {
+                        "year": 2012,
                         "value": 5000000
                     },
                     {
@@ -103,7 +110,7 @@
         },
         {
             "type": "text",
-            "content": "Den voldsomme veksten skapte et akutt problem: Det var ikke nok jord til alle. Løsningen for mange ble å reise. Fra 1825 og utover reiste over 800 000 nordmenn til USA. Kun Irland sendte en større andel av befolkningen sin over Atlanteren. Brevene som kom hjem («Amerikabrev») fortalte om fruktbar jord som man kunne få gratis, og om frihet fra husmannsåket."
+            "content": "Den voldsomme veksten skapte et akutt problem. Det var ikke matmangel, men mangel på levebrød i form av ledige gårdsbruk (Myhre, 2015). Løsningen for mange ble å reise. Mellom 1836 og 1915 utvandret over 750 000 nordmenn til Nord-Amerika, og i Europa var det bare Irland som sendte en større andel av befolkningen sin over Atlanteren (Nerbøvik, 2025). Brevene som kom hjem («amerikabrev») næret drømmen om friere forhold og et bedre liv et annet sted."
         },
         {
             "type": "header",
@@ -112,7 +119,7 @@
         },
         {
             "type": "text",
-            "content": "Det vi kaller \"Det store hamskiftet\" er overgangen fra selvbergingsjordbruk til salgsjordbruk. Bøndene sluttet å produsere alt til eget bruk og begynte å produsere varer for å selge dem – melk, kjøtt og smør. For pengene kunne de kjøpe varer fra butikken, som kaffe, sukker og finere klær."
+            "content": "Det vi kaller «det store hamskiftet» er overgangen fra selvbergingsjordbruk til salgsjordbruk. Fra midten av 1800-tallet, og særlig i 1860-årene, begynte jordbruket å rette seg bevisst mot markedet: bøndene produserte det som lønte seg best, som melk, kjøtt og smør (Nerbøvik, 2026). For pengene kunne de kjøpe varer fra butikken, som kaffe, sukker og finere klær."
         },
         {
             "type": "text",
@@ -121,9 +128,9 @@
         {
             "type": "list",
             "items": [
-                "**Jernbanen (1854):** Gjorde det mulig å frakte varer raskt over lange avstander. Melk kunne nå fraktes fersk inn til byene.",
-                "**Maskiner:** Slåmaskiner og hesteriver fra USA og England gjorde at én mann og en hest kunne gjøre jobben til ti mann med ljå. Dette var helt nødvendig, for arbeidskraften (husmennene) hadde dratt til Amerika eller byen.",
-                "**Pengeøkonomi:** Bonden ble en forretningsmann som investerte i utstyr og solgte varer på et marked."
+                "Jernbanen: Hovedbanen mellom Christiania og Eidsvoll ble Norges første jernbane og åpnet 1. september 1854 (Wisting & Aspenberg, 2025). Nå kunne varer fraktes raskt over lange avstander, og melk kunne komme fersk inn til byene.",
+                "Maskiner: nye redskaper erstattet menneskehender. Hesten og slåmaskinen arbeidet fortere og rakk over mer enn mange mennesker tidligere hadde greid (Nerbøvik, 2026). Det var helt nødvendig, for arbeidskraften hadde dratt til Amerika eller byen.",
+                "Pengeøkonomi: bonden ble en forretningsmann som investerte i utstyr og solgte varer på et marked."
             ]
         },
         {
@@ -167,11 +174,11 @@
         },
         {
             "type": "text",
-            "content": "De som ikke dro til Amerika, dro ofte til byene. Langs Akerselva i Christiania (Oslo) dukket det opp fabrikker drevet av vannkraft. Tekstilfabrikker, mekaniske verksteder og sagbruk trengte arbeidere. Her oppsto en ny samfunnsklasse: Industriarbeiderklassen."
+            "content": "De som ikke dro til Amerika, dro ofte til byene. Langs Akerselva i Christiania (Oslo) dukket det opp fabrikker drevet av vannkraft. Elva har 20 fall med en samlet fallhøyde på 149 meter, og den ga kraft til bedrifter som Hjula Væveri, Myrens Verksted, Nydalens Compagnie og Bjølsen Valsemølle (Tvedt & Svendsen, 2025). Sagbruk, spinnerier og veverier trengte arbeidere. Her oppsto en ny samfunnsklasse: industriarbeiderklassen."
         },
         {
             "type": "text",
-            "content": "Livet i byene var hardt, med lange arbeidsdager (ofte 12-14 timer) og trangboddhet. Dette la grunnlaget for de første arbeiderforeningene. Marcus Thrane startet i 1848 den første store massebevegelsen for arbeidere (Thranebevegelsen), som krevde stemmerett og bedre kår. Selv om bevegelsen ble slått ned, var frøet sådd for det moderne norske demokratiet."
+            "content": "Livet i byene var hardt, med lange arbeidsdager og trangboddhet. Dette la grunnlaget for de første arbeiderforeningene. Marcus Thrane startet det politiske arbeidet sitt i 1848, og i 1849 grunnla han den første store massebevegelsen for arbeidere, Thranebevegelsen. Den krevde blant annet allmenn stemmerett, bedre kår for husmennene og bedre skoler, og sommeren 1850 hadde den rundt 273 lokale foreninger med 20 854 medlemmer. Myndighetene slo bevegelsen ned: Thrane ble arrestert i 1851 og dømt til fire års straffarbeid (Pryser & Ringvej, 2025). Men frøet var sådd for det moderne norske demokratiet."
         },
         {
             "type": "header",
@@ -180,14 +187,14 @@
         },
         {
             "type": "text",
-            "content": "Utviklingen stoppet ikke der. Etter andre verdenskrig kom traktoren for fullt. Dette kalles ofte \"Det andre hamskiftet\". Igjen ble behovet for arbeidskraft drastisk redusert. Én traktor erstattet mange hester og enda flere gårdsarbeidere. Gårdene ble større, færre og helmekaniserte."
+            "content": "Utviklingen stoppet ikke der. Det nye teknologiske mønsteret som slo gjennom i primærnæringene i tiårene etter andre verdenskrig kalles ofte «det andre hamskiftet». Motorkraft overtok arbeidet for både dyr og mennesker (Lange, 2015). Igjen ble behovet for arbeidskraft drastisk redusert. Gårdene ble større, færre og helmekaniserte."
         },
         {
             "type": "component",
             "component": "FactBox",
             "props": {
                 "title": "Fra hest til hestekrefter",
-                "content": "I 1905 kom en av de første traktorene til Norge fra England. Den ble sett på som et monster! Men utviklingen gikk sin gang: I 1949 var det ca. 9 000 traktorer i Norge. I 1959 var tallet økt til over 50 000. I dag styrer mange bønder avanserte maskiner via GPS."
+                "content": "I 1950 gjorde nesten 200 000 hester tjeneste i norsk jordbruk og skogbruk, og det fantes rundt 10 000 traktorer. Tjue år senere var 80 prosent av hestene borte, og det var kommet godt over 100 000 traktorer i drift (Lange, 2015). I dag styrer mange bønder avanserte maskiner via GPS."
             }
         },
         {
@@ -202,7 +209,7 @@
                 ],
                 "reflekter": [
                     "Forklar hvordan jernbanen fra 1854 og nye maskiner som slåmaskinen hang sammen med at bøndene begynte å produsere for salg.",
-                    "Hvorfor dro over 800 000 nordmenn til USA? Bruk 'Amerikabrevene' og husmannsvesenet i svaret ditt.",
+                    "Hvorfor dro over 750 000 nordmenn til Nord-Amerika? Bruk amerikabrevene og husmannsvesenet i svaret ditt.",
                     "Sammenlign det første hamskiftet (1840+) med det andre hamskiftet (1960+). Hva var likt, og hva var forskjellig?",
                     "Hvorfor tror du livet i byene ved Akerselva la grunnlaget for arbeiderforeninger som Thranebevegelsen?"
                 ],
@@ -210,6 +217,24 @@
                     "I dag styrer mange bønder maskiner via GPS. Skriv en kort tekst (5-8 setninger) om hvordan du tror gårdsarbeid vil se ut om 50 år.",
                     "Da maskinene tok over, forsvant behovet for mange arbeidere. Finn et eksempel fra din egen tid der ny teknologi gjør at færre folk trengs i en jobb.",
                     "Diskuter med en partner: Var hamskiftet mest et gode eller et onde for vanlige folk? Trekk fram både fordeler og ulemper."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brekke, T., & Losnegård, G. (2026). *Inge Krokann*. Norsk biografisk leksikon. Hentet 30.07.2026 fra [nbl.snl.no/Inge_Krokann](https://nbl.snl.no/Inge_Krokann)",
+                    "Damslora, S., & Dørum, K. (2026). *Husmann*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/husmann](https://snl.no/husmann)",
+                    "Lange, E. (2015). *Primærnæringene moderniseres*. Norgeshistorie, Universitetet i Oslo. Hentet 30.07.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/velferdsstat-og-vestvending/1808-primerneringene-moderniseres.html)",
+                    "Myhre, J. E. (2015). *Befolkningsøkningen*. Norgeshistorie, Universitetet i Oslo. Hentet 30.07.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/bygging-av-stat-og-nasjon/1406-befolkningsokningen.html)",
+                    "Nerbøvik, J. (2025). *Utvandringa frå Noreg til Nord-Amerika*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Utvandringa_frå_Noreg_til_Nord-Amerika](https://snl.no/Utvandringa_fr%C3%A5_Noreg_til_Nord-Amerika)",
+                    "Nerbøvik, J. (2026). *Det store hamskiftet*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Det_store_hamskiftet](https://snl.no/Det_store_hamskiftet)",
+                    "Pryser, T., & Ringvej, M. (2025). *Marcus Thrane*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Marcus_Thrane](https://snl.no/Marcus_Thrane)",
+                    "Thorsnæs, G. (2025). *Norge - befolkningsutvikling*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Norge_-_befolkningsutvikling](https://snl.no/Norge_-_befolkningsutvikling)",
+                    "Tvedt, K. A., & Svendsen, T. O. (2025). *Akerselva*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Akerselva](https://snl.no/Akerselva)",
+                    "Wisting, T., & Aspenberg, N. C. (2025). *Hovedbanen*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Hovedbanen](https://snl.no/Hovedbanen)"
                 ]
             }
         }
@@ -228,7 +253,7 @@
         {
             "question": "Hva var hovedårsaken til befolkningseksplosjonen på 1800-tallet?",
             "options": [
-                "Bedre kosthold (potet/sild) og vaksiner førte til lavere dødelighet",
+                "Bedre kosthold (potet og fisk), bedre helsestell og koppevaksinen førte til lavere dødelighet",
                 "Folk fikk mange flere barn enn før",
                 "Mange innvandrere kom til Norge",
                 "Det var ingen kriger"
