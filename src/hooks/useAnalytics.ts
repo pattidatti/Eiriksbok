@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ref, runTransaction } from 'firebase/database';
-import { db } from '../lib/firebase';
+import { getFirebase } from '../lib/firebaseLazy';
 
 const VIEW_SESSION_KEY = 'gravity_analytics_session';
 
@@ -21,15 +20,15 @@ export const useAnalytics = (id: string | undefined) => {
         }
 
         // Increment view count in Firebase
-        const viewRef = ref(db, `analytics/views/${safeId}`);
-
-        runTransaction(viewRef, (currentViews) => {
-            return (currentViews || 0) + 1;
-        })
+        getFirebase()
+            .then(({ db, ref, runTransaction }) =>
+                runTransaction(ref(db, `analytics/views/${safeId}`), (currentViews) => {
+                    return (currentViews || 0) + 1;
+                })
+            )
             .then(() => {
                 sessionStorage.setItem(sessionKey, 'true');
                 countedRef.current = true;
-                console.log(`[Analytics] Tracked view for: ${safeId}`);
             })
             .catch((err) => {
                 console.error('[Analytics] Failed to track view:', err);

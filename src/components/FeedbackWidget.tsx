@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
-import { push, ref, serverTimestamp } from 'firebase/database';
-import { db } from '../lib/firebase';
+import { getFirebase } from '../lib/firebaseLazy';
 import { useSettings } from '../hooks/useSettings';
 
 const RATE_LIMIT_MS = 60 * 1000; // 1 minute
@@ -49,8 +48,10 @@ export const FeedbackWidget: React.FC = () => {
         setStatus('sending');
 
         try {
-            const feedbackRef = ref(db, 'feedback');
-            await push(feedbackRef, {
+            // Firebase hentes først når eleven faktisk sender inn, ikke ved
+            // montering. Widgeten ligger i Layout og lastes på hver sidevisning.
+            const { db, ref, push, serverTimestamp } = await getFirebase();
+            await push(ref(db, 'feedback'), {
                 message: message.trim(),
                 url: window.location.href,
                 timestamp: serverTimestamp(),

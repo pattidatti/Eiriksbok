@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ref, onDisconnect, set, serverTimestamp } from 'firebase/database';
-import { db } from '../lib/firebase';
+import { getFirebase } from '../lib/firebaseLazy';
 import { useLocation } from 'react-router-dom';
 
 const ANON_ID_KEY = 'gravity_anon_id';
@@ -20,16 +19,10 @@ export const usePresence = () => {
     useEffect(() => {
         // Get or create persistent Anonymous ID
         let anonId = localStorage.getItem(ANON_ID_KEY);
+        const isNewUser = !anonId;
         if (!anonId) {
             anonId = generateUUID();
             localStorage.setItem(ANON_ID_KEY, anonId);
-
-            const uniqueUserRef = ref(db, `analytics/unique_users/${anonId}`);
-            set(uniqueUserRef, {
-                firstSeen: serverTimestamp(),
-                lastSeen: serverTimestamp(),
-                device: navigator.userAgent
-            }).catch(err => console.error('Failed to track unique user', err));
         }
 
         const path = location.pathname;
@@ -38,23 +31,36 @@ export const usePresence = () => {
         if (lastPathRef.current === path) return;
         lastPathRef.current = path;
 
-        // Manage "Active Now" presence — one write per navigation
-        const presenceRef = ref(db, `analytics/active_users/${anonId}`);
-        set(presenceRef, {
-            path,
-            lastActive: serverTimestamp(),
-            online: true
-        }).catch(err => console.error('Failed to set presence', err));
+        // Firebase lastes her, etter første tegning, i stedet for å ligge i
+        // den eager pakken. Alle skrivingene under er ren analytikk.
+        void getFirebase().then(({ db, ref, onDisconnect, set, serverTimestamp }) => {
+            if (isNewUser) {
+                set(ref(db, `analytics/unique_users/${anonId}`), {
+                    firstSeen: serverTimestamp(),
+                    lastSeen: serverTimestamp(),
+                    device: navigator.userAgent
+                }).catch(err => console.error('Failed to track unique user', err));
+            }
 
-        onDisconnect(presenceRef).remove();
+            // Manage "Active Now" presence - one write per navigation
+            const presenceRef = ref(db, `analytics/active_users/${anonId}`);
+            set(presenceRef, {
+                path,
+                lastActive: serverTimestamp(),
+                online: true
+            }).catch(err => console.error('Failed to set presence', err));
+
+            onDisconnect(presenceRef).remove();
+        });
 
         // Debounce lastSeen update: max one write per 30 seconds
         if (lastSeenTimerRef.current) clearTimeout(lastSeenTimerRef.current);
         lastSeenTimerRef.current = setTimeout(() => {
             const id = localStorage.getItem(ANON_ID_KEY);
             if (id) {
-                const userLastSeenRef = ref(db, `analytics/unique_users/${id}/lastSeen`);
-                set(userLastSeenRef, serverTimestamp()).catch(() => {});
+                void getFirebase().then(({ db, ref, set, serverTimestamp }) =>
+                    set(ref(db, `analytics/unique_users/${id}/lastSeen`), serverTimestamp())
+                ).catch(() => {});
             }
         }, 30_000);
 

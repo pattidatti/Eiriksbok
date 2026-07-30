@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ref, push, serverTimestamp } from 'firebase/database';
-import { db } from '../lib/firebase';
+import { getFirebase } from '../lib/firebaseLazy';
 import { useLocation } from 'react-router-dom';
 
 export const useReadingTime = () => {
@@ -21,16 +20,20 @@ export const useReadingTime = () => {
                 // Sanitize path for Firebase key (replace / with _)
                 const safePath = currentPath.replace(/[^a-zA-Z0-9-_]/g, '_');
 
-                // We use import() here inside the effect cleanup to avoid potential issues? 
-                // Actually standard import is fine, but ensuring db is available.
-                // We'll trust the direct import from outside.
-
-                const readingTimeRef = ref(db, `analytics/reading_time/${safePath}`);
-                push(readingTimeRef, {
-                    duration: duration,
-                    timestamp: serverTimestamp(),
-                    path: currentPath
-                }).catch(err => console.error("Failed to log reading time", err));
+                // Firebase hentes først her, altså kun når eleven faktisk har
+                // lest lenge nok til at målingen teller. Ved navigasjon i appen
+                // rekker importen å løse seg og skrivingen går gjennom; lukker
+                // eleven fanen, går hendelsen tapt - slik den også gjorde med
+                // den statiske importen.
+                void getFirebase()
+                    .then(({ db, ref, push, serverTimestamp }) =>
+                        push(ref(db, `analytics/reading_time/${safePath}`), {
+                            duration: duration,
+                            timestamp: serverTimestamp(),
+                            path: currentPath
+                        })
+                    )
+                    .catch(err => console.error("Failed to log reading time", err));
             }
         };
     }, [location.pathname]);

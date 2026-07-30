@@ -3,8 +3,7 @@
 // write-through). På en ny enhet henter koden profilen ned igjen.
 // Konflikt: siste skriver vinner (per idébeskrivelsen - v1-avveining).
 
-import { get as dbGet, ref, set as dbSet } from 'firebase/database';
-import { db } from '../../lib/firebase';
+import { getFirebase } from '../../lib/firebaseLazy';
 import { generateSyncCode, isValidSyncCode, normalizeSyncCode } from './wordlist';
 import { serializeProgress, useProgressStore } from './useProgressStore';
 import type { ProgressData } from './useProgressStore';
@@ -12,7 +11,18 @@ import type { ProgressData } from './useProgressStore';
 const SYNC_PATH = 'progress';
 const WRITE_DEBOUNCE_MS = 3000;
 
-const remoteRef = (code: string) => ref(db, `${SYNC_PATH}/${code}`);
+// Firebase lastes først når en synk-kode faktisk er i bruk. Eleven uten kode
+// treffer aldri disse to, og progresjonen ligger uansett i localStorage
+// (useProgressStore) - skyen er kun speilingen mellom enheter.
+const readRemote = async (code: string) => {
+    const { db, ref, get } = await getFirebase();
+    return get(ref(db, `${SYNC_PATH}/${code}`));
+};
+
+const writeRemote = async (code: string, payload: ProgressData) => {
+    const { db, ref, set } = await getFirebase();
+    return set(ref(db, `${SYNC_PATH}/${code}`), payload);
+};
 
 // Firebase avviser undefined og dropper tomme objekter/arrays.
 // JSON-runde stripper undefined; normalizeRemote fyller hull ved henting.
@@ -46,7 +56,7 @@ const pushNow = async (): Promise<void> => {
     const code = useProgressStore.getState().sync.code;
     if (!code) return;
     try {
-        await dbSet(remoteRef(code), toRemotePayload(serializeProgress()));
+        await writeRemote(code, toRemotePayload(serializeProgress()));
         useProgressStore.getState().markSynced(Date.now());
     } catch (err) {
         console.error('Progress-synk feilet', err);
@@ -69,7 +79,7 @@ export const startProgressSync = (): void => {
 
     const initialCode = useProgressStore.getState().sync.code;
     if (initialCode) {
-        void dbGet(remoteRef(initialCode))
+        void readRemote(initialCode)
             .then((snapshot) => {
                 const raw = snapshot.val() as Partial<ProgressData> | null;
                 const local = useProgressStore.getState();
@@ -95,7 +105,7 @@ export const createSyncCode = async (): Promise<string> => {
     // Kollisjonssjekk: generer til vi finner en ledig (i praksis første forsøk)
     for (let attempt = 0; attempt < 5; attempt++) {
         const code = generateSyncCode();
-        const snapshot = await dbGet(remoteRef(code));
+        const snapshot = await readRemote(code);
         if (!snapshot.exists()) {
             useProgressStore.getState().setSyncCode(code);
             await pushNow();
@@ -112,7 +122,7 @@ export const loginWithCode = async (input: string): Promise<LoginResult> => {
     const code = normalizeSyncCode(input);
     if (!isValidSyncCode(code)) return 'invalid';
     try {
-        const snapshot = await dbGet(remoteRef(code));
+        const snapshot = await readRemote(code);
         const raw = snapshot.val() as Partial<ProgressData> | null;
         if (!raw) return 'not-found';
         useProgressStore.getState().hydrateFromRemote(normalizeRemote(raw, code));
