@@ -1,6 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// OpenDyslexic selvhostes via Fontsource. Nettleseren laster først ned woff2-en
+// når dysleksimodus faktisk er på og tekst matcher @font-face, så dette koster
+// ingenting for elever som ikke bruker modusen.
+import '@fontsource/opendyslexic/400.css';
+import '@fontsource/opendyslexic/700.css';
 import './index.css';
 import App from './App.tsx';
 import { fetchRegistry, fetchManifest } from './utils/contentLoader';
