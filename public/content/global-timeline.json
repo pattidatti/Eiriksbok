@@ -29,7 +29,7 @@
       "description": "Hvordan et nytt språk i hjernen for 70 000 år siden gjorde Homo sapiens til den eneste arten som dominerer kloden.",
       "startDate": -70000,
       "endDate": null,
-      "displayDate": "-70000",
+      "displayDate": "70 000 fvt",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "menneskets-tidlige-historie",
@@ -117,6 +117,25 @@
       "placeLabel": "Norge",
       "placeCountryId": 578,
       "geoConfidence": "tag"
+    },
+    {
+      "id": "helleristninger",
+      "title": "Helleristninger: Beskjeder hugget i stein",
+      "description": "Bildene de første nordmennene hugget i berget, og hvordan vi tolker dem i dag.",
+      "startDate": -5000,
+      "endDate": -500,
+      "displayDate": "5000-500 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norgeshistorie",
+      "link": "/historie/norgeshistorie/helleristninger",
+      "tags": [
+        "forhistorie",
+        "steinalder",
+        "bronsealder",
+        "kilder",
+        "alta"
+      ]
     },
     {
       "id": "kina",
@@ -382,6 +401,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "zarathustra-og-zoroastrismen",
+      "title": "Zarathustra og zoroastrismen",
+      "description": "En liten religion fra Persia som ga verden ideer om Satan, dommens dag og kampen mellom godt og ondt.",
+      "startDate": -1500,
+      "endDate": -500,
+      "displayDate": "1500-500 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "perserriket",
+      "link": "/historie/perserriket/zarathustra-og-zoroastrismen",
+      "tags": [
+        "antikken",
+        "perserriket",
+        "religion",
+        "zoroastrismen",
+        "krle"
+      ],
+      "lat": 32,
+      "lng": 53,
+      "placeLabel": "Perserriket",
+      "placeCountryId": 364,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "bronsealderens-kollaps",
       "title": "Bronsealderens kollaps",
       "description": "En sammenkoblet verden av riker rundt Middelhavet forsvant på femti år. Se hvordan handel gjorde dem både rike og skjøre.",
@@ -453,6 +496,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "greske-guder",
+      "title": "Gudene på Olympen: greske myter",
+      "description": "De greske gudene var en kranglete familie på fjellet Olympen. Hver gud styrte sin del av verden, og mytene forklarte alt fra torden til årstider.",
+      "startDate": -800,
+      "endDate": -300,
+      "displayDate": "800-300 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "antikkens-hellas",
+      "link": "/historie/antikkens-hellas/greske-guder",
+      "tags": [
+        "antikken",
+        "hellas",
+        "mytologi",
+        "religion",
+        "guder"
+      ],
+      "lat": 39,
+      "lng": 22,
+      "placeLabel": "Hellas",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "olympiske-leker",
       "title": "De olympiske lekene i antikken",
       "description": "En religiøs fest for Zevs som stoppet krigene mellom bystatene og samlet hele Hellas hvert fjerde år.",
@@ -499,6 +566,78 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "romerske-guder",
+      "title": "De Romerske Gudene",
+      "description": "En reise inn i en verden hvor guder er overalt, og fred med dem sikrer rikets bestående.",
+      "startDate": -753,
+      "endDate": 476,
+      "displayDate": "753 f.Kr - 476 e.Kr",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "romerriket",
+      "link": "/historie/romerriket/romerske-guder",
+      "tags": [
+        "historie",
+        "romerriket",
+        "religion",
+        "krle"
+      ],
+      "lat": 41.9,
+      "lng": 12.5,
+      "placeLabel": "Romerriket",
+      "placeCountryId": 380,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "gresk-vitenskap",
+      "title": "Gresk vitenskap: Da fornuften forklarte verden",
+      "description": "Grekerne var blant de første som forklarte naturen med fornuft i stedet for guder. De la grunnlaget for matematikk og naturvitenskap, regnet ut jordas størrelse og avslørte juks med vann.",
+      "startDate": -600,
+      "endDate": -200,
+      "displayDate": "600-200 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "antikkens-hellas",
+      "link": "/historie/antikkens-hellas/gresk-vitenskap",
+      "tags": [
+        "antikken",
+        "hellas",
+        "vitenskap",
+        "matematikk",
+        "arkimedes"
+      ],
+      "lat": 39,
+      "lng": 22,
+      "placeLabel": "Hellas",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "kyros-den-store",
+      "title": "Kyros den store",
+      "description": "Grunnleggeren av Perserriket vant ved å la folk beholde gudene, språket og lovene sine — verdens første verdensimperium ble bygd på toleranse, ikke terror.",
+      "startDate": -590,
+      "endDate": -530,
+      "displayDate": "590-530 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "perserriket",
+      "link": "/historie/perserriket/kyros-den-store",
+      "tags": [
+        "antikken",
+        "perserriket",
+        "kyros",
+        "imperium",
+        "religion",
+        "toleranse"
+      ],
+      "lat": 32,
+      "lng": 53,
+      "placeLabel": "Perserriket",
+      "placeCountryId": 364,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "athen-demokrati",
       "title": "Demokratiet i Athen",
       "description": "Verdens første direkte demokrati blomstrer i Athen.",
@@ -519,6 +658,30 @@
       "placeLabel": "Athen",
       "placeCountryId": 300,
       "geoConfidence": "tag"
+    },
+    {
+      "id": "germanske-sprak",
+      "title": "De germanske søskenbarna",
+      "description": "Hvorfor norsk, engelsk og tysk er i slekt.",
+      "startDate": -500,
+      "endDate": null,
+      "displayDate": "ca. 500 f.Kr.–i dag",
+      "type": "lesson",
+      "subjectId": "norsk",
+      "topicId": "sprakhistorie",
+      "link": "/norsk/sprakhistorie/germanske-sprak",
+      "tags": [
+        "språkhistorie",
+        "germansk",
+        "indoeuropeisk",
+        "norrønt",
+        "språkfamilie"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
     },
     {
       "id": "norge-for-vikingene-sub-5",
@@ -544,6 +707,78 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "athen-og-sparta",
+      "title": "Athen og Sparta: to byer, to verdener",
+      "description": "Hellas var ikke ett land, men hundrevis av bystater. Athen valgte demokrati og kultur, Sparta valgte disiplin og hær.",
+      "startDate": -500,
+      "endDate": -323,
+      "displayDate": "500-323 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "antikkens-hellas",
+      "link": "/historie/antikkens-hellas/athen-og-sparta",
+      "tags": [
+        "antikken",
+        "hellas",
+        "athen",
+        "sparta",
+        "demokrati"
+      ],
+      "lat": 37.98,
+      "lng": 23.73,
+      "placeLabel": "Athen",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "gresk-teater",
+      "title": "Gresk teater: tragedie og komedie",
+      "description": "Teateret ble født av en fest for guden Dionysos. Her fant grekerne opp tragedien og komedien, og bygde teatre der én stemme nådde tusenvis.",
+      "startDate": -500,
+      "endDate": -300,
+      "displayDate": "500-300 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "antikkens-hellas",
+      "link": "/historie/antikkens-hellas/gresk-teater",
+      "tags": [
+        "antikken",
+        "hellas",
+        "teater",
+        "tragedie",
+        "komedie"
+      ],
+      "lat": 39,
+      "lng": 22,
+      "placeLabel": "Hellas",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "perserkrigene",
+      "title": "Perserkrigene",
+      "description": "Hvordan en flokk greske bystater slo verdens største rike — i tre avgjørende slag.",
+      "startDate": -499,
+      "endDate": -449,
+      "displayDate": "499-449 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "perserriket",
+      "link": "/historie/perserriket/perserkrigene",
+      "tags": [
+        "antikken",
+        "hellas",
+        "perserriket",
+        "krig",
+        "demokrati"
+      ],
+      "lat": 39,
+      "lng": 22,
+      "placeLabel": "Hellas",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "peloponnesian-casus",
       "title": "Peloponneserkrigen",
       "description": "Spartas frykt for Athens makt blir den virkelige årsaken til krigen, tross mange offisielle begrunnelser.",
@@ -562,6 +797,30 @@
       "lat": 39,
       "lng": 22,
       "placeLabel": "Hellas",
+      "placeCountryId": 300,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "peloponneskrigen",
+      "title": "Peloponneskrigen: Da Hellas ødela seg selv",
+      "description": "Athen var en sjømakt, Sparta en landmakt, og ingen kunne slå den andre raskt. Derfor ble krigen en tjuesju år lang utmattelseskamp som svekket hele Hellas.",
+      "startDate": -431,
+      "endDate": -404,
+      "displayDate": "431-404 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "antikkens-hellas",
+      "link": "/historie/antikkens-hellas/peloponneskrigen",
+      "tags": [
+        "antikken",
+        "hellas",
+        "athen",
+        "sparta",
+        "krig"
+      ],
+      "lat": 37.98,
+      "lng": 23.73,
+      "placeLabel": "Athen",
       "placeCountryId": 300,
       "geoConfidence": "tag"
     },
@@ -644,6 +903,31 @@
         "antikken",
         "pseudovitenskap"
       ]
+    },
+    {
+      "id": "aleksander-den-store",
+      "title": "Aleksander den store",
+      "description": "Eleven av Aristoteles ble verdens største erobrer på 13 år. Men hans virkelige arv er hellenismen — kulturen som blandet gresk og persisk og varte i 1000 år.",
+      "startDate": -356,
+      "endDate": -323,
+      "displayDate": "356-323 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "perserriket",
+      "link": "/historie/perserriket/aleksander-den-store",
+      "tags": [
+        "antikken",
+        "perserriket",
+        "aleksander",
+        "hellas",
+        "hellenisme",
+        "imperium"
+      ],
+      "lat": 32,
+      "lng": 53,
+      "placeLabel": "Perserriket",
+      "placeCountryId": 364,
+      "geoConfidence": "tag"
     },
     {
       "id": "aristoteles-etikk",
@@ -819,6 +1103,29 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "romerske-keisere",
+      "title": "De romerske keiserne",
+      "description": "En reise gjennom makt, galskap og storhet.",
+      "startDate": -27,
+      "endDate": 476,
+      "displayDate": "27 f.Kr. - 476 evt.",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "romerriket",
+      "link": "/historie/romerriket/romerske-keisere",
+      "tags": [
+        "antikken",
+        "roma",
+        "keiser",
+        "biografi"
+      ],
+      "lat": 41.9,
+      "lng": 12.5,
+      "placeLabel": "Roma",
+      "placeCountryId": 380,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "norge-for-vikingene-sub-6",
       "title": "Romersk jernalder",
       "description": "Starten på romersk jernalder.",
@@ -839,29 +1146,6 @@
       "lng": 8.5,
       "placeLabel": "Norge",
       "placeCountryId": 578,
-      "geoConfidence": "tag"
-    },
-    {
-      "id": "romerske-keisere",
-      "title": "De romerske keiserne",
-      "description": "En reise gjennom makt, galskap og storhet.",
-      "startDate": 27,
-      "endDate": 476,
-      "displayDate": "27 f.Kr. - 476 evt.",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "romerriket",
-      "link": "/historie/romerriket/romerske-keisere",
-      "tags": [
-        "antikken",
-        "roma",
-        "keiser",
-        "biografi"
-      ],
-      "lat": 41.9,
-      "lng": 12.5,
-      "placeLabel": "Roma",
-      "placeCountryId": 380,
       "geoConfidence": "tag"
     },
     {
@@ -1091,31 +1375,6 @@
       "geoConfidence": "tag"
     },
     {
-      "id": "aleksander-den-store",
-      "title": "Aleksander den store",
-      "description": "Eleven av Aristoteles ble verdens største erobrer på 13 år. Men hans virkelige arv er hellenismen — kulturen som blandet gresk og persisk og varte i 1000 år.",
-      "startDate": 356,
-      "endDate": -323,
-      "displayDate": "356-323 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "perserriket",
-      "link": "/historie/perserriket/aleksander-den-store",
-      "tags": [
-        "antikken",
-        "perserriket",
-        "aleksander",
-        "hellas",
-        "hellenisme",
-        "imperium"
-      ],
-      "lat": 32,
-      "lng": 53,
-      "placeLabel": "Perserriket",
-      "placeCountryId": 364,
-      "geoConfidence": "tag"
-    },
-    {
       "id": "vestromerrikets-fall-middelalder-ref",
       "title": "Vestromerrikets fall",
       "description": "Et dypdykk i årsakene til det store imperiets kollaps.",
@@ -1202,30 +1461,6 @@
       ]
     },
     {
-      "id": "peloponneskrigen",
-      "title": "Peloponneskrigen: Da Hellas ødela seg selv",
-      "description": "Athen var en sjømakt, Sparta en landmakt, og ingen kunne slå den andre raskt. Derfor ble krigen en tjuesju år lang utmattelseskamp som svekket hele Hellas.",
-      "startDate": 431,
-      "endDate": -404,
-      "displayDate": "431-404 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "antikkens-hellas",
-      "link": "/historie/antikkens-hellas/peloponneskrigen",
-      "tags": [
-        "antikken",
-        "hellas",
-        "athen",
-        "sparta",
-        "krig"
-      ],
-      "lat": 37.98,
-      "lng": 23.73,
-      "placeLabel": "Athen",
-      "placeCountryId": 300,
-      "geoConfidence": "tag"
-    },
-    {
       "id": "arven-etter-romerriket",
       "title": "Arven etter Romerriket",
       "description": "Et dypdykk i hvordan Romerriket preger kultur, språk, lover og politikk i dag.",
@@ -1269,54 +1504,6 @@
       "placeLabel": "Frankerriket",
       "placeCountryId": 250,
       "geoConfidence": "tag"
-    },
-    {
-      "id": "perserkrigene",
-      "title": "Perserkrigene",
-      "description": "Hvordan en flokk greske bystater slo verdens største rike — i tre avgjørende slag.",
-      "startDate": 499,
-      "endDate": -449,
-      "displayDate": "499-449 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "perserriket",
-      "link": "/historie/perserriket/perserkrigene",
-      "tags": [
-        "antikken",
-        "hellas",
-        "perserriket",
-        "krig",
-        "demokrati"
-      ],
-      "lat": 39,
-      "lng": 22,
-      "placeLabel": "Hellas",
-      "placeCountryId": 300,
-      "geoConfidence": "tag"
-    },
-    {
-      "id": "germanske-sprak",
-      "title": "De germanske søskenbarna",
-      "description": "Hvorfor norsk, engelsk og tysk er i slekt.",
-      "startDate": 500,
-      "endDate": null,
-      "displayDate": "ca. 500 f.Kr.–i dag",
-      "type": "lesson",
-      "subjectId": "norsk",
-      "topicId": "sprakhistorie",
-      "link": "/norsk/sprakhistorie/germanske-sprak",
-      "tags": [
-        "språkhistorie",
-        "germansk",
-        "indoeuropeisk",
-        "norrønt",
-        "språkfamilie"
-      ],
-      "lat": 60.5,
-      "lng": 8.5,
-      "placeLabel": "Norge",
-      "placeCountryId": 578,
-      "geoConfidence": "guess"
     },
     {
       "id": "kong-arthur",
@@ -1393,54 +1580,6 @@
         "middelalderen",
         "folkevandringstiden"
       ]
-    },
-    {
-      "id": "athen-og-sparta",
-      "title": "Athen og Sparta: to byer, to verdener",
-      "description": "Hellas var ikke ett land, men hundrevis av bystater. Athen valgte demokrati og kultur, Sparta valgte disiplin og hær.",
-      "startDate": 500,
-      "endDate": -323,
-      "displayDate": "500-323 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "antikkens-hellas",
-      "link": "/historie/antikkens-hellas/athen-og-sparta",
-      "tags": [
-        "antikken",
-        "hellas",
-        "athen",
-        "sparta",
-        "demokrati"
-      ],
-      "lat": 37.98,
-      "lng": 23.73,
-      "placeLabel": "Athen",
-      "placeCountryId": 300,
-      "geoConfidence": "tag"
-    },
-    {
-      "id": "gresk-teater",
-      "title": "Gresk teater: tragedie og komedie",
-      "description": "Teateret ble født av en fest for guden Dionysos. Her fant grekerne opp tragedien og komedien, og bygde teatre der én stemme nådde tusenvis.",
-      "startDate": 500,
-      "endDate": -300,
-      "displayDate": "500-300 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "antikkens-hellas",
-      "link": "/historie/antikkens-hellas/gresk-teater",
-      "tags": [
-        "antikken",
-        "hellas",
-        "teater",
-        "tragedie",
-        "komedie"
-      ],
-      "lat": 39,
-      "lng": 22,
-      "placeLabel": "Hellas",
-      "placeCountryId": 300,
-      "geoConfidence": "tag"
     },
     {
       "id": "norge-for-vikingene-sub-8",
@@ -1677,55 +1816,6 @@
       "geoConfidence": "tag"
     },
     {
-      "id": "kyros-den-store",
-      "title": "Kyros den store",
-      "description": "Grunnleggeren av Perserriket vant ved å la folk beholde gudene, språket og lovene sine — verdens første verdensimperium ble bygd på toleranse, ikke terror.",
-      "startDate": 590,
-      "endDate": -530,
-      "displayDate": "590-530 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "perserriket",
-      "link": "/historie/perserriket/kyros-den-store",
-      "tags": [
-        "antikken",
-        "perserriket",
-        "kyros",
-        "imperium",
-        "religion",
-        "toleranse"
-      ],
-      "lat": 32,
-      "lng": 53,
-      "placeLabel": "Perserriket",
-      "placeCountryId": 364,
-      "geoConfidence": "tag"
-    },
-    {
-      "id": "gresk-vitenskap",
-      "title": "Gresk vitenskap: Da fornuften forklarte verden",
-      "description": "Grekerne var blant de første som forklarte naturen med fornuft i stedet for guder. De la grunnlaget for matematikk og naturvitenskap, regnet ut jordas størrelse og avslørte juks med vann.",
-      "startDate": 600,
-      "endDate": -200,
-      "displayDate": "600-200 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "antikkens-hellas",
-      "link": "/historie/antikkens-hellas/gresk-vitenskap",
-      "tags": [
-        "antikken",
-        "hellas",
-        "vitenskap",
-        "matematikk",
-        "arkimedes"
-      ],
-      "lat": 39,
-      "lng": 22,
-      "placeLabel": "Hellas",
-      "placeCountryId": 300,
-      "geoConfidence": "tag"
-    },
-    {
       "id": "norront",
       "title": "Norrønt: Språket vikingene snakket",
       "description": "Med litt øvelse kan du lese norrønt. Det er ikke et fremmed språk — det er oldemoren til moderne norsk.",
@@ -1918,29 +2008,6 @@
       "geoConfidence": "tag"
     },
     {
-      "id": "romerske-guder",
-      "title": "De Romerske Gudene",
-      "description": "En reise inn i en verden hvor guder er overalt, og fred med dem sikrer rikets bestående.",
-      "startDate": 753,
-      "endDate": 476,
-      "displayDate": "753 f.Kr - 476 e.Kr",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "romerriket",
-      "link": "/historie/romerriket/romerske-guder",
-      "tags": [
-        "historie",
-        "romerriket",
-        "religion",
-        "krle"
-      ],
-      "lat": 41.9,
-      "lng": 12.5,
-      "placeLabel": "Romerriket",
-      "placeCountryId": 380,
-      "geoConfidence": "tag"
-    },
-    {
       "id": "hypotesen-norden-vs-frankrike",
       "title": "Hypotesen: Norden vs. Frankrike",
       "description": "Var vikingtiden et desperat selvforsvar mot en kristen supermakt?",
@@ -2018,30 +2085,6 @@
         "keiser",
         "karl-den-store"
       ]
-    },
-    {
-      "id": "greske-guder",
-      "title": "Gudene på Olympen: greske myter",
-      "description": "De greske gudene var en kranglete familie på fjellet Olympen. Hver gud styrte sin del av verden, og mytene forklarte alt fra torden til årstider.",
-      "startDate": 800,
-      "endDate": -300,
-      "displayDate": "800-300 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "antikkens-hellas",
-      "link": "/historie/antikkens-hellas/greske-guder",
-      "tags": [
-        "antikken",
-        "hellas",
-        "mytologi",
-        "religion",
-        "guder"
-      ],
-      "lat": 39,
-      "lng": 22,
-      "placeLabel": "Hellas",
-      "placeCountryId": 300,
-      "geoConfidence": "tag"
     },
     {
       "id": "myklebust-skipet",
@@ -2521,7 +2564,7 @@
       "description": "Stormen fra øst som endret verdenshistorien.",
       "startDate": 1206,
       "endDate": 1368,
-      "displayDate": "1206–1368",
+      "displayDate": "1206-1368",
       "type": "lesson",
       "subjectId": "historie",
       "topicId": "middelalderen",
@@ -3584,30 +3627,6 @@
         "renessansen",
         "bøker"
       ]
-    },
-    {
-      "id": "zarathustra-og-zoroastrismen",
-      "title": "Zarathustra og zoroastrismen",
-      "description": "En liten religion fra Persia som ga verden ideer om Satan, dommens dag og kampen mellom godt og ondt.",
-      "startDate": 1500,
-      "endDate": -500,
-      "displayDate": "1500-500 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "perserriket",
-      "link": "/historie/perserriket/zarathustra-og-zoroastrismen",
-      "tags": [
-        "antikken",
-        "perserriket",
-        "religion",
-        "zoroastrismen",
-        "krle"
-      ],
-      "lat": 32,
-      "lng": 53,
-      "placeLabel": "Perserriket",
-      "placeCountryId": 364,
-      "geoConfidence": "tag"
     },
     {
       "id": "kalvin-og-kalvinismen",
@@ -10012,7 +10031,7 @@
       "title": "Økonomisk krigføring",
       "description": "USA stopper lån og finansierer streiker og uro.",
       "startDate": 1971,
-      "endDate": 73,
+      "endDate": 1973,
       "displayDate": "1971-73",
       "type": "sub-event",
       "subjectId": "historie",
@@ -12079,25 +12098,6 @@
       "placeLabel": "Norge",
       "placeCountryId": 578,
       "geoConfidence": "guess"
-    },
-    {
-      "id": "helleristninger",
-      "title": "Helleristninger: Beskjeder hugget i stein",
-      "description": "Bildene de første nordmennene hugget i berget, og hvordan vi tolker dem i dag.",
-      "startDate": 5000,
-      "endDate": -500,
-      "displayDate": "5000-500 fvt",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "norgeshistorie",
-      "link": "/historie/norgeshistorie/helleristninger",
-      "tags": [
-        "forhistorie",
-        "steinalder",
-        "bronsealder",
-        "kilder",
-        "alta"
-      ]
     }
   ]
 }

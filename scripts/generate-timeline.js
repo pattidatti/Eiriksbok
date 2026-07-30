@@ -77,17 +77,25 @@ export function parseYearString(yearStr) {
     // Clean string (replace en-dash with hyphen, trim)
     let cleanStr = yearStr.toString().replace(/–/g, '-').trim();
 
-    // Helper to parse single year part
-    const parsePart = (str) => {
+    // «f.Kr» må gjenkjennes, ikke bare «fvt»/«bc».
+    const BC_RE = /\bfvt\b|\bbc\b|f\.?\s*kr/;
+    const AD_RE = /\bevt\b|\bad\b|e\.?\s*kr/;
+
+    // Les tallet og eventuell egen epokemarkør, uten å bestemme fortegn ennå.
+    const rawPart = (str) => {
         const s = str.trim().toLowerCase();
-        const isBC = s.includes('fvt') || s.includes('bc');
-        // Extract first number found
         const match = s.match(/-?\d+/);
-        if (!match) return NaN;
-        let num = parseInt(match[0]);
-        if (isBC) num = -Math.abs(num);
-        return num;
+        if (!match) return { num: NaN, bc: false, ad: false };
+        return { num: parseInt(match[0]), bc: BC_RE.test(s), ad: AD_RE.test(s) };
     };
+
+    const applySign = (p, inheritBC) => {
+        if (isNaN(p.num)) return NaN;
+        if (p.bc || (inheritBC && !p.ad)) return -Math.abs(p.num);
+        return p.num;
+    };
+
+    const parsePart = (str) => applySign(rawPart(str), false);
 
     // Check for range with specific separator (space-hyphen-space or just hyphen if clear)
     // We try to split by " - " first to avoid splitting negative numbers
@@ -105,8 +113,24 @@ export function parseYearString(yearStr) {
     }
 
     if (parts.length === 2) {
-        const start = parsePart(parts[0]);
-        const end = parsePart(parts[1]);
+        const a = rawPart(parts[0]);
+        const b = rawPart(parts[1]);
+
+        // Retningen på epokemarkøren avgjør. Står den bakerst, gjelder den hele
+        // spennet: «5000-500 fvt» er 5000 fvt til 500 fvt. Står den først,
+        // gjelder den bare sitt eget ledd: «221 fvt - 1912» er 221 fvt til 1912.
+        const start = applySign(a, b.bc && !a.ad);
+        let end = applySign(b, false);
+
+        // «1971-73» betyr 1971-1973: et forkortet sluttår arver århundret fra
+        // startåret. Gjelder kun rene e.Kr.-spenn, så fvt-spenn (der sluttåret
+        // med rette er nærmere null) ikke røres.
+        if (!isNaN(start) && !isNaN(end) && start > 0 && end > 0 && end < start
+            && String(end).length < String(start).length) {
+            const s = String(start);
+            end = parseInt(s.slice(0, s.length - String(end).length) + String(end));
+        }
+
         if (!isNaN(start)) {
             return {
                 startDate: start,
@@ -119,10 +143,16 @@ export function parseYearString(yearStr) {
     // Check for single year
     const year = parsePart(cleanStr);
     if (!isNaN(year)) {
+        // Et blankt negativt årstall i kilden («year": "-70000"») ble vist rått
+        // som «-70000» på tidslinjen. Skriv det om til norsk form; andre
+        // formater beholder sin egen formulering.
+        const bareNegative = /^-\d+$/.test(cleanStr);
         return {
             startDate: year,
             endDate: null,
-            displayDate: yearStr
+            displayDate: bareNegative
+                ? `${Math.abs(year).toLocaleString('no-NB')} fvt`
+                : yearStr
         };
     }
 

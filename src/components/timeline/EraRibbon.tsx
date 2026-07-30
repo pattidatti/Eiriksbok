@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { ERAS, formatEraRange, type Era } from '../../data/timelineEras';
+import { ERAS, formatEraRange, getEraForYear, type Era } from '../../data/timelineEras';
 import type { GlobalTimelineEvent } from '../../types';
 
 interface EraRibbonProps {
@@ -20,13 +20,18 @@ export const EraRibbon: React.FC<EraRibbonProps> = ({
     onEraClick,
     className = '',
 }) => {
+    // Tell via getEraForYear, ikke et strengt intervall. Hendelser som faller
+    // utenfor spennet i begge ender (f.eks. «Menneskets tidlige historie» i
+    // 300 000 fvt, mot Forhistorie som starter i 200 000 fvt) klemmes dit av
+    // getEraForYear og VISES i gruppen. Med strengt intervall ble de ikke
+    // talt, så kortene summerte til 563 mens siden sa «Viser 564 av 564».
     const stats: EraStat[] = useMemo(() => {
-        return ERAS.map((era) => ({
-            era,
-            count: events.filter(
-                (e) => e.startDate >= era.startYear && e.startDate <= era.endYear
-            ).length,
-        }));
+        const counts = new Map<string, number>();
+        for (const e of events) {
+            const id = getEraForYear(e.startDate).id;
+            counts.set(id, (counts.get(id) ?? 0) + 1);
+        }
+        return ERAS.map((era) => ({ era, count: counts.get(era.id) ?? 0 }));
     }, [events]);
 
     const maxCount = useMemo(
