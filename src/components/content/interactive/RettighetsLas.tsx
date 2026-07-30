@@ -18,12 +18,12 @@ const DEFAULT_MILESTONES: Milestone[] = [
     {
         year: '1884',
         right: 'Rett til utdanning',
-        detail: 'Universitetet i Oslo åpnet dørene for kvinner. Før dette var høyere skole stengt for jenter.',
+        detail: 'Kvinner ble tatt opp ved alle fakultetene ved universitetet. Fra 1882 kunne de ta examen artium.',
     },
     {
         year: '1888',
-        right: 'Egen lønn og eiendom',
-        detail: 'Gifte kvinner ble myndige og fikk styre sin egen inntekt. Før dette eide mannen alt.',
+        right: 'Egen lønn',
+        detail: 'Gifte kvinner ble myndige og fikk råderett over det de selv tjente. Mannen bestemte fortsatt over felleseiet.',
     },
     {
         year: '1901',
