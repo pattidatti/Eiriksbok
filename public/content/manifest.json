@@ -807,7 +807,7 @@
                 "kebabnorsk"
               ],
               "createdDate": "2026-07-22T00:00:00Z",
-              "lastUpdated": "2026-07-22T07:34:29+02:00"
+              "lastUpdated": "2026-07-30T18:40:43+02:00"
             },
             {
               "id": "idiolekt",
@@ -2823,7 +2823,8 @@
                 "rikssamlingen",
                 "mysterier"
               ],
-              "createdDate": "2026-07-30T00:00:00Z"
+              "createdDate": "2026-07-30T00:00:00Z",
+              "lastUpdated": "2026-07-30T07:31:54+02:00"
             }
           ]
         },
@@ -2846,7 +2847,7 @@
                 "alta"
               ],
               "createdDate": "2026-06-27T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T19:54:04+02:00"
             },
             {
               "id": "norge-for-vikingene",
@@ -2877,7 +2878,7 @@
                 "fimbulvinter"
               ],
               "createdDate": "2025-12-05T20:37:16+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00",
+              "lastUpdated": "2026-07-30T19:54:04+02:00",
               "definitions": [
                 {
                   "term": "Fimbulvinter",
@@ -3025,7 +3026,7 @@
                 "norden"
               ],
               "createdDate": "2026-06-09T00:00:00Z",
-              "lastUpdated": "2026-07-11T13:11:28+02:00"
+              "lastUpdated": "2026-07-30T19:54:04+02:00"
             },
             {
               "id": "hanseatene",
@@ -3039,7 +3040,7 @@
                 "bergen"
               ],
               "createdDate": "2026-01-30T14:38:55+01:00",
-              "lastUpdated": "2026-07-11T13:11:28+02:00"
+              "lastUpdated": "2026-07-30T06:06:30+02:00"
             },
             {
               "id": "hansadrapet-1455",
@@ -3206,7 +3207,7 @@
                 "1800-tallet"
               ],
               "createdDate": "2026-06-08T00:00:00Z",
-              "lastUpdated": "2026-07-11T13:11:28+02:00"
+              "lastUpdated": "2026-07-30T18:40:43+02:00"
             },
             {
               "id": "kvinnekampen",
@@ -3242,7 +3243,7 @@
                 "menneskerettigheter"
               ],
               "createdDate": "2026-06-06T00:00:00Z",
-              "lastUpdated": "2026-07-11T13:11:28+02:00"
+              "lastUpdated": "2026-07-30T16:01:36+02:00"
             },
             {
               "id": "22-juli-2011",
@@ -3258,7 +3259,7 @@
                 "radikalisering"
               ],
               "createdDate": "2026-05-17T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T16:01:36+02:00"
             },
             {
               "id": "detective-isdalskvinnen",
@@ -3550,7 +3551,7 @@
               "link": "/oving/tidsreise/nikolaj-ii",
               "icon": "crown",
               "createdDate": "2026-03-12T15:16:56+01:00",
-              "lastUpdated": "2026-03-14T21:17:17+01:00"
+              "lastUpdated": "2026-07-30T18:40:43+02:00"
             }
           ],
           "lessons": [
@@ -3753,7 +3754,7 @@
                 "jazz"
               ],
               "createdDate": "2026-01-18T22:34:44+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T01:09:19+02:00"
             },
             {
               "id": "borskrakk",
@@ -3857,7 +3858,7 @@
                 "politikk"
               ],
               "createdDate": "2026-01-18T22:34:44+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T01:09:19+02:00"
             },
             {
               "id": "spania",
@@ -3909,7 +3910,7 @@
               "link": "/oving/tidsreise/kald-krig",
               "icon": "clock",
               "createdDate": "2026-03-13T13:54:43+01:00",
-              "lastUpdated": "2026-03-18T10:08:39+01:00"
+              "lastUpdated": "2026-07-30T18:40:43+02:00"
             }
           ],
           "lessons": [
@@ -4433,7 +4434,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T18:40:43+02:00"
             },
             {
               "id": "kjoleskapet",
@@ -4738,7 +4739,7 @@
                 "1800-tallet"
               ],
               "createdDate": "2026-07-17T00:00:00Z",
-              "lastUpdated": "2026-07-17T03:30:06+02:00"
+              "lastUpdated": "2026-07-30T12:04:59+02:00"
             },
             {
               "id": "gresk-frigjoringskrig",
@@ -4809,7 +4810,7 @@
                 "humanisme"
               ],
               "createdDate": "2026-05-18T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T18:40:43+02:00"
             },
             {
               "id": "galileo-galilei",
@@ -5715,7 +5716,7 @@
               "link": "/historie/middelalderen/svartedauden-sti",
               "icon": "map",
               "createdDate": "2025-12-22T21:11:33+01:00",
-              "lastUpdated": "2026-07-04T08:07:38+02:00"
+              "lastUpdated": "2026-07-30T12:04:59+02:00"
             },
             {
               "id": "detective-svartedauden",
@@ -5740,7 +5741,7 @@
                 "folkevandringstiden"
               ],
               "createdDate": "2025-12-25T00:02:52+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T12:04:59+02:00"
             },
             {
               "id": "middelalderen",
@@ -5753,7 +5754,7 @@
                 "europa"
               ],
               "createdDate": "2025-12-20T23:36:59+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T08:59:13+02:00"
             },
             {
               "id": "svartedauden",
@@ -5768,7 +5769,7 @@
                 "sykdom"
               ],
               "createdDate": "2025-11-28T18:28:18+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T12:04:59+02:00"
             },
             {
               "id": "hanseatene",
@@ -5783,7 +5784,7 @@
                 "middelalderen"
               ],
               "createdDate": "2026-01-30T14:38:55+01:00",
-              "lastUpdated": "2026-07-11T13:11:28+02:00"
+              "lastUpdated": "2026-07-30T06:06:30+02:00"
             },
             {
               "id": "korstogene",
@@ -5799,7 +5800,7 @@
                 "kulturmote"
               ],
               "createdDate": "2026-05-21T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T08:59:13+02:00"
             },
             {
               "id": "hundreaarskrigen",
@@ -5815,7 +5816,7 @@
                 "frankrike"
               ],
               "createdDate": "2026-06-29T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T06:06:30+02:00"
             },
             {
               "id": "bysantinske-riket",
@@ -5886,7 +5887,7 @@
                 "keiser"
               ],
               "createdDate": "2025-12-21T20:32:19+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T06:06:30+02:00"
             },
             {
               "id": "detective-berlinmuren",
@@ -5911,7 +5912,7 @@
                 "mongolene"
               ],
               "createdDate": "2026-01-07T09:56:43+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T08:59:13+02:00"
             },
             {
               "id": "al-andalus",
@@ -6647,7 +6648,7 @@
                 "afrika"
               ],
               "createdDate": "2025-11-28T18:28:18+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-30T01:09:19+02:00"
             },
             {
               "id": "den-kognitive-revolusjonen",
@@ -6952,7 +6953,7 @@
                 "golfkrig"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-24T05:53:03+02:00"
+              "lastUpdated": "2026-07-30T18:40:43+02:00"
             },
             {
               "id": "krigen-mot-terror",

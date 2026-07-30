@@ -1235,11 +1235,11 @@
       "count": 6
     },
     {
-      "tag": "maktfordeling",
+      "tag": "språkhistorie",
       "count": 6
     },
     {
-      "tag": "språkhistorie",
+      "tag": "maktfordeling",
       "count": 6
     },
     {
@@ -1443,7 +1443,27 @@
       "count": 4
     },
     {
+      "tag": "krle",
+      "count": 4
+    },
+    {
+      "tag": "mytologi",
+      "count": 4
+    },
+    {
+      "tag": "guder",
+      "count": 4
+    },
+    {
       "tag": "republikk",
+      "count": 4
+    },
+    {
+      "tag": "germansk",
+      "count": 4
+    },
+    {
+      "tag": "norrønt",
       "count": 4
     },
     {
@@ -1459,31 +1479,11 @@
       "count": 4
     },
     {
-      "tag": "germansk",
-      "count": 4
-    },
-    {
-      "tag": "norrønt",
-      "count": 4
-    },
-    {
       "tag": "vikingtid",
       "count": 4
     },
     {
       "tag": "ressurser",
-      "count": 4
-    },
-    {
-      "tag": "krle",
-      "count": 4
-    },
-    {
-      "tag": "mytologi",
-      "count": 4
-    },
-    {
-      "tag": "guder",
       "count": 4
     },
     {
@@ -1671,6 +1671,10 @@
       "count": 4
     },
     {
+      "tag": "kilder",
+      "count": 3
+    },
+    {
       "tag": "biografi",
       "count": 3
     },
@@ -1775,10 +1779,6 @@
       "count": 3
     },
     {
-      "tag": "kilder",
-      "count": 3
-    },
-    {
       "tag": "novelle",
       "count": 3
     },
@@ -1824,6 +1824,10 @@
     },
     {
       "tag": "homo-sapiens",
+      "count": 2
+    },
+    {
+      "tag": "alta",
       "count": 2
     },
     {
@@ -1875,11 +1879,59 @@
       "count": 2
     },
     {
+      "tag": "zoroastrismen",
+      "count": 2
+    },
+    {
       "tag": "idrett",
       "count": 2
     },
     {
+      "tag": "matematikk",
+      "count": 2
+    },
+    {
+      "tag": "arkimedes",
+      "count": 2
+    },
+    {
+      "tag": "kyros",
+      "count": 2
+    },
+    {
+      "tag": "toleranse",
+      "count": 2
+    },
+    {
+      "tag": "indoeuropeisk",
+      "count": 2
+    },
+    {
+      "tag": "språkfamilie",
+      "count": 2
+    },
+    {
+      "tag": "teater",
+      "count": 2
+    },
+    {
+      "tag": "tragedie",
+      "count": 2
+    },
+    {
+      "tag": "komedie",
+      "count": 2
+    },
+    {
       "tag": "pseudovitenskap",
+      "count": 2
+    },
+    {
+      "tag": "aleksander",
+      "count": 2
+    },
+    {
+      "tag": "hellenisme",
       "count": 2
     },
     {
@@ -1919,22 +1971,6 @@
       "count": 2
     },
     {
-      "tag": "aleksander",
-      "count": 2
-    },
-    {
-      "tag": "hellenisme",
-      "count": 2
-    },
-    {
-      "tag": "indoeuropeisk",
-      "count": 2
-    },
-    {
-      "tag": "språkfamilie",
-      "count": 2
-    },
-    {
       "tag": "legende",
       "count": 2
     },
@@ -1951,39 +1987,11 @@
       "count": 2
     },
     {
-      "tag": "teater",
-      "count": 2
-    },
-    {
-      "tag": "tragedie",
-      "count": 2
-    },
-    {
-      "tag": "komedie",
-      "count": 2
-    },
-    {
       "tag": "merovingertid",
       "count": 2
     },
     {
       "tag": "muhammed",
-      "count": 2
-    },
-    {
-      "tag": "kyros",
-      "count": 2
-    },
-    {
-      "tag": "toleranse",
-      "count": 2
-    },
-    {
-      "tag": "matematikk",
-      "count": 2
-    },
-    {
-      "tag": "arkimedes",
       "count": 2
     },
     {
@@ -2164,10 +2172,6 @@
     },
     {
       "tag": "trelast",
-      "count": 2
-    },
-    {
-      "tag": "zoroastrismen",
       "count": 2
     },
     {
@@ -2732,10 +2736,6 @@
     },
     {
       "tag": "saktekst",
-      "count": 2
-    },
-    {
-      "tag": "alta",
       "count": 2
     },
     {
