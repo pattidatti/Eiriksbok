@@ -6,7 +6,7 @@
     "year": "1850-1970",
     "category": "Dialekter",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/dialekter/geolekt-hero.webp",
     "details": [
         "En geolekt er en språkvariant som bare er knyttet til et geografisk område.",
         "Grensen for ett enkelt språktrekk kalles en isogloss.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/geolekt-01.webp",
             "alt": "Buss på fjellovergang mellom Vestlandet og Østlandet i dagslys",
             "caption": "Et sted på turen over fjellet skifter talemålet. Men det finnes ingen skiltstolpe som sier hvor."
         },
@@ -84,7 +84,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/geolekt-02.webp",
             "alt": "Nærbilde av et gammelt håndtegnet dialektkart med flere fargede linjer",
             "caption": "Hver farget linje er ett målmerke. Der linjene følger hverandre, snakker vi om en dialektgrense."
         },
@@ -141,7 +141,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dialekter/geolekt-03.webp",
             "alt": "To ungdommer prater sammen på en fjellovergang med utsikt over dalen",
             "caption": "Grensene i språket er levende. De flytter seg hver gang folk møtes på nye måter."
         },
