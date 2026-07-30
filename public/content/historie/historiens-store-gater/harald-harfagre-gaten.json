@@ -6,7 +6,7 @@
     "year": "865-933",
     "category": "Historiens store gåter",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/harald-harfagre-gaten-hero.webp",
     "details": [
         "Harald Hårfagre skal ha styrt fra rundt 865 til han døde omkring 930.",
         "Hovedkilden vår er Snorre Sturlason, som skrev om ham først på 1200-tallet, over 300 år senere.",
@@ -24,7 +24,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/harald-harfagre-gaten-01.webp",
             "alt": "En islandsk skriver med fjærpenn over en åpen skinnbok i et mørkt rom",
             "caption": "Snorre Sturlason skrev Heimskringla på Island rundt 1230. Han døde der i 1241, over 300 år etter Harald Hårfagre."
         },
@@ -84,7 +84,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/harald-harfagre-gaten-02.webp",
             "alt": "Vikingskip på stille sjø mellom bratte fjell langs den norske kysten",
             "caption": "Kystleia var motorveien i vikingtiden. Den som hadde skip, kunne holde kysten - men ikke bygdene innerst i dalene."
         },
@@ -155,7 +155,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/harald-harfagre-gaten-03.webp",
             "alt": "Arkeologer graver ut steinrester av en stor vikinghall nær sjøen",
             "caption": "På Avaldsnes har arkeologene funnet spor etter en kongsgård. Sporene i bakken er det nærmeste vi kommer Haralds egen tid."
         },
