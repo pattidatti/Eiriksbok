@@ -214,8 +214,9 @@ const TsarsDilemma: React.FC = () => {
                                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
                                 className="bg-[#f5e6d3] text-stone-900 p-6 rounded shadow-[0_0_50px_rgba(0,0,0,0.5)] border-8 border-double border-amber-700 w-full relative"
                             >
-                                {/* Paper Texture Overlay */}
-                                <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-multiply bg-[url('https://www.transparenttextures.com/patterns/aged-paper.png')]" />
+                                {/* Papirtekstur lå her, men aged-paper.png på
+                                    transparenttextures.com svarer 404. Laget var
+                                    tomt og kostet kun et bomkall over skolenettet. */}
 
                                 <div className="relative z-10 text-center">
                                     <div className="mb-4 flex justify-center text-amber-800 opacity-50">

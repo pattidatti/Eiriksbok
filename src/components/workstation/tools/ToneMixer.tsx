@@ -129,8 +129,8 @@ export const ToneMixer: React.FC = () => {
             <div className="flex-1 relative perspective-1000">
                 <div className="relative w-full h-full bg-[#fcfaf7] text-stone-900 p-12 md:p-20 shadow-2xl rounded-sm overflow-hidden flex flex-col items-center justify-center text-center transform rotate-y-2 transition-transform duration-500 hover:rotate-y-0 origin-left border-l-4 border-stone-300">
 
-                    {/* Paper Texture Overlay */}
-                    <div className="absolute inset-0 bg-[url('/assets/workstation/paper-grain.png')] opacity-40 pointer-events-none mix-blend-multiply" />
+                    {/* Papirtekstur lå her, men /assets/workstation/paper-grain.png
+                        har aldri eksistert - laget var tomt og ga kun en 404. */}
 
                     <div className="relative z-10 max-w-lg">
                         <div className="mb-12 font-mono text-xs text-stone-400 tracking-[0.3em] uppercase opacity-50">Utkast #429</div>

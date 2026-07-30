@@ -154,8 +154,9 @@ body {
    på elementene selv, og en klasse vinner alltid over arvet font-family fra
    body. Derfor nådde den gamle body-regelen aldri brødteksten.
 
-   Ikonfont-spans holdes utenfor, ellers ville glyfnavnene ("arrow_forward")
-   vist seg som ren tekst. */
+   :not()-leddene skjermer ikonfont-spans mot å få skriften påtvunget. Prosjektet
+   bruker nå kun SVG-ikoner (lucide), så de har ingen praktisk effekt i dag, men
+   de bærer spesifisiteten som overstyringen under xl må matche - se der. */
 body.dyslexia-mode,
 body.dyslexia-mode *:not(.material-icons):not(.material-icons-outlined) {
   font-family: 'OpenDyslexic', sans-serif !important;

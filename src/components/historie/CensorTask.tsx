@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+// Ikonene under var material-icons-ligaturer («verified_user», «approval»,
+// «arrow_forward»), men Material Icons-fonten lastes ingen steder i prosjektet.
+// Uten fonten rendrer nettleseren ligaturnavnet som ren tekst, så eleven så
+// ordet «arrow_forward» stå i knappen. Byttet til lucide-react, som resten av
+// kodebasen bruker og som er SVG uten fontavhengighet.
+import { X, ShieldCheck, Stamp, ArrowRight } from 'lucide-react';
 
 const LEVEL_CONFIG = [
     {
@@ -150,7 +155,7 @@ export const CensorTask: React.FC = () => {
             <div className="my-16 font-sans relative max-w-2xl mx-auto text-center">
                 <div className="bg-stone-800 text-stone-100 p-12 rounded shadow-2xl border-4 border-yellow-600/50">
                     <div className="mb-6 inline-block p-4 rounded-full bg-yellow-600/20 border-2 border-yellow-500 text-yellow-500">
-                        <span className="material-icons-outlined text-4xl">verified_user</span>
+                        <ShieldCheck className="w-9 h-9" />
                     </div>
                     <h2 className="text-3xl font-bold font-serif mb-4 text-yellow-500 tracking-widest uppercase">
                         Klarert for Tjeneste
@@ -208,8 +213,8 @@ export const CensorTask: React.FC = () => {
 
             <div className="bg-stone-100 p-1 rounded-sm shadow-2xl border border-stone-300 min-h-[500px]">
                 <div className={`p-8 md:p-12 shadow-inner relative overflow-hidden transition-colors duration-700 min-h-[500px] flex flex-col ${level.vibe}`}>
-                    {/* Paper Texture Overlay */}
-                    <div className="absolute inset-0 opacity-30 pointer-events-none mix-blend-multiply" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/aged-paper.png")' }}></div>
+                    {/* Papirtekstur lå her, men aged-paper.png på
+                        transparenttextures.com svarer 404. Laget var tomt. */}
 
                     {/* Header */}
                     <div className="mb-8 border-b-2 border-stone-800/10 pb-4 flex justify-between items-end relative z-10">
@@ -284,7 +289,7 @@ export const CensorTask: React.FC = () => {
                             onClick={checkResult}
                             className="bg-stone-800 hover:bg-stone-900 text-[#f4e4bc] font-bold py-3 px-8 md:px-12 rounded-sm shadow-lg transform transition-all active:translate-y-0.5 uppercase tracking-wider flex items-center gap-3 active:scale-95"
                         >
-                            <span className="material-icons-outlined text-xl">approval</span>
+                            <Stamp className="w-5 h-5" />
                             POSTLEGG BREV
                         </button>
                     ) : (
@@ -298,7 +303,7 @@ export const CensorTask: React.FC = () => {
                                     onClick={handleNext}
                                     className="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-8 rounded shadow-md uppercase tracking-widest flex items-center gap-2 animate-bounce-subtle"
                                 >
-                                    Neste Brev <span className="material-icons-outlined">arrow_forward</span>
+                                    Neste Brev <ArrowRight className="w-5 h-5" />
                                 </button>
                             ) : (
                                 <button

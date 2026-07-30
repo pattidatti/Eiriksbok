@@ -157,8 +157,8 @@ export const TrumansDilemma: React.FC = () => {
 
     return (
         <div className="w-full max-w-2xl mx-auto my-12 font-mono text-zinc-900 bg-[#f0e6d2] rounded-sm shadow-xl border-4 border-zinc-400 relative overflow-hidden">
-            {/* Background Texture */}
-            <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/aged-paper.png')] mix-blend-multiply" />
+            {/* Bakgrunnstekstur lå her, men aged-paper.png på
+                transparenttextures.com svarer 404. Laget var tomt. */}
 
             {/* Header / Top Secret Stamp */}
             <div className="bg-zinc-800 text-zinc-200 p-4 border-b-4 border-zinc-400 flex justify-between items-center relative z-10">

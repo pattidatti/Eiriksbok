@@ -83,8 +83,9 @@ export const AllianceChain: React.FC = () => {
 
     return (
         <div className="w-full my-12 p-1 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden relative font-serif text-slate-800">
-            {/* Background Decor - Light Mode */}
-            <div className="absolute inset-0 bg-[url('/patterns/paper-texture.png')] opacity-20 pointer-events-none" />
+            {/* Background Decor - Light Mode.
+                Papirteksturen som lå her pekte på /patterns/paper-texture.png,
+                en mappe som ikke finnes i public/. Laget var tomt og ga en 404. */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-amber-50/50 blur-3xl rounded-full pointer-events-none" />
 
             {/* Header */}

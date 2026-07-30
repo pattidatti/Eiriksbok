@@ -8,11 +8,10 @@ import { Scrapbook } from './tools/Scrapbook';
 import { InkParticles } from '../ui/InkParticles';
 
 // Assets
-// Assets
-const ASSETS = {
-    bg: '/assets/workstation/bg-ink-light.png',
-    grain: '/assets/workstation/paper-grain.png',
-};
+// Bakgrunns- og korntekstur lå her tidligere, men filene har aldri ligget i
+// public/. Lagene rendret derfor alltid tomt og ga kun to 404-er per visning.
+// Fjernet framfor å late som de finnes; skal papirlooken inn igjen, må
+// bildene legges i public/assets/workstation/ først.
 
 // --- Components ---
 
@@ -84,17 +83,6 @@ export const WorkstationLayout: React.FC = () => {
 
     return (
         <div className="relative w-full h-screen overflow-hidden bg-[#f8f5f2] text-stone-900 selection:bg-amber-200">
-
-            {/* Background Layer - The Ink */}
-            <div
-                className="absolute inset-0 z-0 bg-cover bg-center opacity-80"
-                style={{ backgroundImage: `url(${ASSETS.bg})` }}
-            />
-            {/* Texture Overlay - Paper Grain */}
-            <div
-                className="absolute inset-0 z-0 opacity-20 pointer-events-none mix-blend-overlay"
-                style={{ backgroundImage: `url(${ASSETS.grain})` }}
-            />
 
             <InkParticles
                 sourceRect={particleSource}
