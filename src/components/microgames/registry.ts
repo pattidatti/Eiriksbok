@@ -154,6 +154,7 @@ const MaalmerkeKartet3D = lazy(() => import('./MaalmerkeKartet3D'));
 const EarhartStillehavet3D = lazy(() => import('./EarhartStillehavet3D'));
 const RoanokeSporet3D = lazy(() => import('./RoanokeSporet3D'));
 const KongedagbokenMG = lazy(() => import('./KongedagbokenMG'));
+const HoldNordvegen3D = lazy(() => import('./HoldNordvegen3D'));
 const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 
@@ -1516,6 +1517,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 130,
         loader: () => import('./KongedagbokenMG'),
         Component: KongedagbokenMG as never,
+    },
+    'hold-nordvegen-3d': {
+        id: 'hold-nordvegen-3d',
+        title: 'Hold Nordvegen',
+        description:
+            'Du er Harald Hårfagre med tre skip og seks gårder langs kysten. Troskapen renner ut av seg selv, og uro bryter ut der du ikke er. Klikk en gård, så seiler skipet dit og fornyer vennskapet - men ligger skipet ett sted, glir et annet unna. To bygder i innlandet kan du aldri nå, for dit går det ingen båt. Lyspæren: makten til Harald var skip, gaver og vennskap langs kystleia. Den rakk til kysten, ikke til et helt land - og derfor er sagaens "hele Norge" vanskelig å tro.',
+        estimatedSeconds: 130,
+        loader: () => import('./HoldNordvegen3D'),
+        Component: HoldNordvegen3D as never,
     },
 };
 

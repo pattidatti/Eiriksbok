@@ -1,5 +1,5 @@
 {
-  "buildId": 186782007885457,
+  "buildId": 64708088630127,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1464,6 +1464,9 @@
     ],
     "gronlands-gate": [
       "content/historie/historiens-store-gater/gronlands-gate.json"
+    ],
+    "harald-harfagre-gaten": [
+      "content/historie/historiens-store-gater/harald-harfagre-gaten.json"
     ],
     "hvem-nadde-amerika-forst": [
       "content/historie/historiens-store-gater/hvem-nadde-amerika-forst.json"
@@ -4185,6 +4188,7 @@
     "historie/historiens-store-gater/atlantis": "content/historie/historiens-store-gater/atlantis.json",
     "historie/historiens-store-gater/den-trojanske-krig": "content/historie/historiens-store-gater/den-trojanske-krig.json",
     "historie/historiens-store-gater/gronlands-gate": "content/historie/historiens-store-gater/gronlands-gate.json",
+    "historie/historiens-store-gater/harald-harfagre-gaten": "content/historie/historiens-store-gater/harald-harfagre-gaten.json",
     "historie/historiens-store-gater/hvem-nadde-amerika-forst": "content/historie/historiens-store-gater/hvem-nadde-amerika-forst.json",
     "historie/historiens-store-gater/kong-arthur": "content/historie/historiens-store-gater/kong-arthur.json",
     "historie/historiens-store-gater/oversikt": "content/historie/historiens-store-gater/oversikt.json",
