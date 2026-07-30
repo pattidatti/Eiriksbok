@@ -2,7 +2,7 @@
     "id": "mongolske-riket",
     "title": "Det Mongolske Riket",
     "layout": "rich",
-    "year": "1206–1368",
+    "year": "1206-1368",
     "category": "Middelalder",
     "readTime": "9 min lesning",
     "heroImage": "/images/history/mongolske-riket-hero.webp",
@@ -14,14 +14,14 @@
     "content": [
         {
             "type": "text",
-            "content": "Det er år 1250. En handelsmann fra Venezia er på vei gjennom de store, flate steppene i Sentral-Asia. Han rider på en kamel, og bak ham er det tre vogner lastet med tøy og krydder. Han hadde ventet å frykte for livet sitt på denne lange veien. Men noe overrasker ham: veiene er trygge. Det finnes hvileplasser med friske hester og mat ved hvert stopp. En mongolsk vakt nikker vennlig til ham og lar ham passere. Det mongolske riket kontrollerer alt fra Kina i øst til Polen i vest, og for kjøpmenn er dette en gyllen tid. Men dette riket ble ikke til i fred. Det ble skapt av en av historiens mest fryktede krigere, og bak den trygge handelsveien lå ruiner av byer som hadde nektet å overgi seg."
+            "content": "Det er år 1250. En handelsmann fra Venezia er på vei gjennom de store, flate steppene i Sentral-Asia. Han rider på en kamel, og bak ham er det tre vogner lastet med tøy og krydder. Han hadde ventet å frykte for livet sitt på denne lange veien. Men noe overrasker ham: veiene er trygge. Det finnes hvileplasser med friske hester og mat ved hvert stopp. En mongolsk vakt nikker vennlig til ham og lar ham passere. Det mongolske riket strekker seg fra Stillehavet i øst til Det svarte hav i vest, og for kjøpmenn er dette en gyllen tid (Sjøstedt, 2024). Men dette riket ble ikke til i fred. Det ble skapt av en av historiens mest fryktede krigere, og bak den trygge handelsveien lå ruiner av byer som hadde nektet å overgi seg."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Det mongolske riket i tall",
-                "content": "På sitt største (rundt 1270) dekket riket om lag 24 millioner kvadratkilometer — omtrent like stor som Russland og Kina til sammen. Det var verdens største sammenhengende landimperium gjennom historien. Rundt 100 millioner mennesker levde under mongolsk styre, styrt av et folk på bare én til to millioner. Riket strakte seg fra Stillehavet i øst til Det svarte hav i vest."
+                "content": "På sitt største, mot slutten av 1200-tallet, dekket riket om lag 23 millioner kvadratkilometer (Encyclopaedia Britannica, 2026b). Det var verdenshistoriens største sammenhengende imperium i areal (Sjøstedt & Thuesen, 2022). Riket strakte seg fra Stillehavet i øst til Det svarte hav i vest, og mongolene var selv et lite nomadefolk som styrte over folkeslag i hele Asia og Øst-Europa (Sjøstedt, 2024)."
             }
         },
         {
@@ -30,11 +30,11 @@
         },
         {
             "type": "text",
-            "content": "Mongolene levde på de store steppene — det enorme, åpne gresslandet som strekker seg fra Kasakhstan i vest til Mandsjuria i øst. De var nomader: de bodde i filttelt kalt ger (vi kjenner dem som jurter) og fulgte flokken sin med hester, sauer og geiter gjennom årstidene. Et barn lærte å ride allerede i treårsalderen og å skyte med bue bare noen år etter. For en mongolsk kriger var hesten ikke bare et transportmiddel — den var mat, venn og våpen på én gang."
+            "content": "Mongolene levde på de store steppene - det enorme, åpne gresslandet som strekker seg fra Kasakhstan i vest til Mandsjuria i øst. De var nomader: de bodde i filttelt kalt ger (vi kjenner dem som jurter) og drev med flokkene sine over steppene (Olsen, 2025). For en mongolsk kriger var hesten ikke bare et transportmiddel - den var mat, venn og våpen på én gang."
         },
         {
             "type": "text",
-            "content": "Denne nomadiske livsstilen skapte krigere av et slag den bofaste verden nesten ikke hadde sett. De mongolske rytterne var mobile på en helt annen måte enn europeiske rustningsryttere. En mongolsk hær kunne dekke over hundre kilometer på én dag, mens riddere i tung rustning slet med å komme halvveis så langt. Og de skjøt piler med nøyaktig sikt selv mens de red i full gallopp. Men steppeliv hadde én stor svakhet: de mongolske stammene var spredt og rivaliserte med hverandre om beitemarkene. I hundrevis av år hadde de sloss seg imellom i stedet for å stå samlet mot omverdenen. Det trengte én mann å endre på."
+            "content": "Denne nomadiske livsstilen skapte krigere av et slag den bofaste verden nesten ikke hadde sett. Mongolenes militære bragder skyldtes i stor grad hærer av ryttere med bue, som hadde stor fart og bevegelighet (Encyclopaedia Britannica, 2026a). En mongolsk kavalerienhet kunne tilbakelegge 95-120 kilometer på én dag, og takket være stigbøyler og en trebygd sal med høy for- og bakstøtte kunne rytterne skyte nøyaktig i alle retninger selv i høy fart (Cartwright, 2019). Men steppeliv hadde én stor svakhet: de mongolske stammene var spredt og rivaliserte med hverandre om beitemarkene. Det trengte én mann å endre på."
         },
         {
             "type": "image",
@@ -44,15 +44,15 @@
         },
         {
             "type": "header",
-            "text": "Temüjin — fra fattig gutt til verdenshersker"
+            "text": "Temüjin - fra fredløs gutt til verdenshersker"
         },
         {
             "type": "text",
-            "content": "Rundt år 1162 ble en gutt født i en liten og fattig mongolsk klan. Da faren hans ble forgiftet av fiender, var gutten bare ni år gammel. Klanen forlot familien til sin skjebne på steppene om vinteren — noe som betød nesten sikker død. Som tenåring ble gutten kidnappet og holdt som slave i en rival-klan. Han rømte, samlet en liten gruppe trofaste menn rundt seg og begynte det lange arbeidet med å forene de mongolske stammene. Gutten het Temüjin. Vi kjenner ham i dag som Djengis Khan."
+            "content": "Rundt år 1162 ble en gutt født i en mongolsk klan. Da faren hans, Jesügei khan, døde, var gutten bare ni år gammel. Han levde en tid som fredløs før han ble anerkjent som stammehøvding (Sjøstedt, 2024). Derfra begynte det lange arbeidet med å forene de mongolske stammene. Gutten het Temüjin - navnet betyr «smed» på mongolsk. Vi kjenner ham i dag som Djengis Khan."
         },
         {
             "type": "text",
-            "content": "Det er fristende å tenke på Djengis Khan bare som en brutal kriger. Men det som er virkelig imponerende med ham er klokskapen. Han forstod at den store svakheten til mongolene var splittelsen, og han brukte hele sitt voksne liv på å samle stammene under ett styre. Han belønnet lojale menn rikt, uansett hvilken stamme de kom fra. Han fremmet folk basert på dyktighet, ikke på familienavn. Han brøt med den gamle skikken der vinnere drepte fiendenes menn — i stedet tok han håndverkere, ingeniører og kyndige folk inn i sin egen hær. I 1206 ble Temüjin hyllet som Djengis Khan — 'Universell Herre' — av alle de mongolske stammene på en stor stammefest ved Onon-elven. En ny verdenshistorisk makt var født."
+            "content": "Det er fristende å tenke på Djengis Khan bare som en brutal kriger. Men han regnes som en av historiens største strateger og organisatorer. Han forstod at den store svakheten til mongolene var splittelsen, og han samlet stammene under ett styre. Til det enorme riket bygde han et effektivt styringsapparat og ga det en felles lov, Dsjasag (Sjøstedt, 2024). I 1206 ble Temüjin utropt til hersker over det nye «store mongolske riket» og tok herskernavnet Djengis Khan - et navn som betyr enten «universell» eller «hard» hersker (Sjøstedt, 2024). En ny verdenshistorisk makt var født."
         },
         {
             "type": "component",
@@ -69,7 +69,7 @@
                     {
                         "date": "1206",
                         "title": "Djengis Khan forener mongolene",
-                        "description": "Alle de mongolske stammene samles under én leder for første gang. Det mongolske riket er grunnlagt."
+                        "description": "Temüjin blir utropt til hersker over det nye «store mongolske riket» og tar herskernavnet Djengis Khan."
                     },
                     {
                         "date": "1215",
@@ -79,32 +79,32 @@
                     {
                         "date": "1227",
                         "title": "Djengis Khan dør",
-                        "description": "Riket deles mellom sønnene hans. Erobringene fortsetter, men frøet til splittelse er sådd."
+                        "description": "Riket deles mellom de fire ektefødte sønnene hans. Erobringene fortsetter, men frøet til splittelse er sådd."
                     },
                     {
                         "date": "1241",
                         "title": "Mongolene invaderer Polen og Ungarn",
-                        "description": "Europa kneler i frykt. Mongolene vinner store slag, men trekker seg tilbake da storkhanen dør."
+                        "description": "Tatarene overfaller Ungarn i 1241-1242 og volder enorme ødeleggelser. Kong Béla 4. bruker resten av livet på å gjenreise landet."
                     },
                     {
                         "date": "1258",
                         "title": "Bagdad plyndres",
-                        "description": "Det abbasidiske kalifatets storby ødelegges. En av verdens viktigste lærdomsbyer brennes ned."
+                        "description": "Mongolenes herjing ødelegger byen. Titusener av innbyggere blir drept, og mye av byens kulturelle rikdom brennes."
                     },
                     {
-                        "date": "ca. 1250–1350",
+                        "date": "ca. 1200-1350",
                         "title": "Pax Mongolica",
-                        "description": "Den mongolske freden: Silkeveien er trygg, handel blomstrer mellom øst og vest."
+                        "description": "Den mongolske freden: karavanerutene er trygge, og handelen blomstrer mellom øst og vest."
                     },
                     {
-                        "date": "1275–1295",
+                        "date": "1271-1295",
                         "title": "Marco Polo reiser til Kina",
-                        "description": "Den venezianske kjøpmannen tilbringer 17 år ved Kublai Khans hoff og vender hjem med utrolige fortellinger."
+                        "description": "Den venezianske kjøpmannen er 17 år i tjeneste ved Kublai khans hoff og vender hjem til Venezia i 1295."
                     },
                     {
                         "date": "1347",
                         "title": "Svartedauden sprer seg langs silkeveiruten",
-                        "description": "Pesten reiser langs de trygge mongolske handelsveiene til Europa. Halvparten av Europas befolkning dør i løpet av noen tiår."
+                        "description": "Pesten reiser langs handelsveiene fra Asia til Europa. Omtrent halvparten av Europas befolkning dør i løpet av tre år."
                     },
                     {
                         "date": "1368",
@@ -120,11 +120,11 @@
         },
         {
             "type": "text",
-            "content": "Det mongolske militæret var ikke bare stort — det var revolusjonerende i måten det tenkte og kjempet på. Kjernen var lette bueskyttere til hest: raskt bevegelige og nøyaktige på lang avstand. Men Djengis Khan la til noe de fleste hærer manglet: disiplin og planlegging."
+            "content": "Det mongolske militæret var ikke bare stort - det var revolusjonerende i måten det tenkte og kjempet på. Kjernen var lette bueskyttere til hest: raskt bevegelige og nøyaktige på lang avstand (Encyclopaedia Britannica, 2026a). Men Djengis Khan la til noe de fleste hærer manglet: disiplin og planlegging."
         },
         {
             "type": "text",
-            "content": "Mongolene brukte psykologisk krigføring bevisst. De spredte historier om grusomheten sin forut for hæren, slik at mange byer overga seg uten kamp — noe som sparte begge parters liv. De var også fleksible: de hadde ingen tung forsyningskjede og levde av landet de red gjennom. Og de lærte av fiendene. Etter å ha inntatt Beijing tok de kinesiske ingeniører inn i hæren sin og lærte seg å beleire befestede byer med katapulter og belejringstårn."
+            "content": "Mongolene brukte psykologisk krigføring bevisst. Når en by var erobret, kunne noen få overlevende få slippe unna nettopp for å fortelle naboene hva som hadde skjedd. Ryktene gikk foran hæren, og mange steder overga folk seg uten kamp i håp om nåde (Cartwright, 2019). De var også fleksible: de hadde ingen tung forsyningskjede og levde av landet de red gjennom. Og de lærte av fiendene. Etter at Beijing falt i 1215 (Sjøstedt, 2024), tok de ingeniører fra de erobrede rikene inn i hæren sin og lærte seg å beleire befestede byer med katapulter.\n\nMed denne hæren red mongolene langt vestover. I 1241-1242 overfalt de Ungarn og voldte enorme ødeleggelser; kong Béla 4. brukte resten av livet sitt på å gjenreise landet med nye borger og festninger (Sulyok, 2026). I 1258 gikk de løs på Bagdad, en av verdens rikeste byer og et lærdomssenter der greske verker var blitt oversatt til arabisk. Titusener av innbyggere ble drept, og mye av byens kulturelle rikdom ble brent og ødelagt (Aarseth, 2026)."
         },
         {
             "type": "image",
@@ -134,7 +134,7 @@
         },
         {
             "type": "text",
-            "content": "En av mongolenes mest beryktede taktikker het den fingerte flukten: en del av hæren later som den trekker seg tilbake i panikk. Motstanderen forfølger i triumf — og kjører rett inn i et bakhold der resten av hæren venter. Taktikken krevde jernhard disiplin, for det er svært vanskelig å late som man flykter uten faktisk å gjøre det. Mongolene fikk det til igjen og igjen, fordi motstanderne ikke trodde en slik disiplinert hær var mulig."
+            "content": "En av mongolenes mest beryktede taktikker het den fingerte flukten: de angrep med en liten styrke og lot som de trakk seg tilbake, slik at fienden fulgte etter - rett inn i en mye større mongolsk styrke (Cartwright, 2019). Taktikken krevde jernhard disiplin, for det er svært vanskelig å late som man flykter uten faktisk å gjøre det."
         },
         {
             "type": "component",
@@ -148,7 +148,7 @@
             "name": "ScenarioRoleplay",
             "props": {
                 "title": "Handelsmannen på Silkeveien",
-                "intro": "Det er år 1260. Du er en velstående arabisk handelsmann i Bagdad. Du ønsker å sende en karavane med krydder og tekstiler til Kina — en reise på over 7 000 kilometer. Mongolene kontrollerer nesten hele veien.",
+                "intro": "Det er år 1260. Du er en velstående arabisk handelsmann i Bagdad. Du ønsker å sende en karavane med krydder og tekstiler til Kina - en reise på flere tusen kilometer. Mongolene kontrollerer nesten hele veien.",
                 "startId": "start",
                 "scenarios": [
                     {
@@ -156,7 +156,7 @@
                         "text": "Forretningsforbindelsen din fra Samarkand sender et brev: 'Den mongolske veien er trygg nå. Handelen blomstrer. Kom!' Men andre advarer deg: 'Mongolene er upålitelige. Hva om de bestemmer seg for å plyndre karavanen din?' Du må bestemme deg. Hva gjør du?",
                         "options": [
                             {
-                                "label": "Sende karavanen — du stoler på Pax Mongolica",
+                                "label": "Sende karavanen - du stoler på Pax Mongolica",
                                 "nextId": "send"
                             },
                             {
@@ -181,7 +181,7 @@
                     },
                     {
                         "id": "wait",
-                        "text": "Du venter i to år. I mellomtiden sender konkurrentene dine karavaner og tjener store summer. Du innser at du har mistet muligheten. Pax Mongolica var reell — i hvert fall en stund. Den som nølte, tapte.",
+                        "text": "Du venter i to år. I mellomtiden sender konkurrentene dine karavaner og tjener store summer. Du innser at du har mistet muligheten. Pax Mongolica var reell - i hvert fall en stund. Den som nølte, tapte.",
                         "options": [
                             {
                                 "label": "Start på nytt",
@@ -191,7 +191,7 @@
                     },
                     {
                         "id": "travel",
-                        "text": "Du reiser selv. På veien passerer du gjennom dusinvis av mongolske sjekkposter. Vaktsoldatene er strenge, men rettferdige — de tar bare den offisielle tollavgiften. Du ankommer Kublai Khans hoff i Beijing og oppdager et kosmopolitisk senter der arabere, kinesere, persere og europeere alle gjør forretninger side om side. Det er et syn du aldri glemmer.",
+                        "text": "Du reiser selv. På veien passerer du gjennom dusinvis av mongolske sjekkposter. Vaktsoldatene er strenge, men rettferdige - de tar bare den offisielle tollavgiften. Du ankommer Kublai Khans hoff i Beijing og oppdager et kosmopolitisk senter der arabere, kinesere, persere og europeere alle gjør forretninger side om side. Det er et syn du aldri glemmer.",
                         "options": [
                             {
                                 "label": "Start på nytt",
@@ -204,26 +204,26 @@
         },
         {
             "type": "header",
-            "text": "Pax Mongolica — Silkeveienes gylne alder"
+            "text": "Pax Mongolica - Silkeveienes gylne alder"
         },
         {
             "type": "text",
-            "content": "Det er en historisk ironi: riket som ble skapt med blod og ild skapte en av de tryggeste handelsperiodene i verdenshistorien. Pax Mongolica — 'Den mongolske freden' — varte omtrent fra 1250 til 1350. Under mongolsk styre var hele veien fra Kina til Det svarte hav under én myndighet, noe som betød at en kjøpmann slapp å forholde seg til dusinvis av ulike herskere, tollavgifter og farer underveis."
+            "content": "Det er en historisk ironi: riket som ble skapt med blod og ild skapte en av de tryggeste handelsperiodene i verdenshistorien. Pax Mongolica - «Den mongolske freden» - er navnet på tiden da store deler av Asia og Øst-Europa var samlet under mongolsk styre. Karavanerutene var særlig viktige fra 1200-tallet og fram til svartedauden midt på 1300-tallet (Seland, 2024). Under mongolsk styre lå hele veien fra Kina til Det svarte hav under én myndighet, og en kjøpmann slapp å forholde seg til dusinvis av ulike herskere, tollavgifter og farer underveis."
         },
         {
             "type": "text",
-            "content": "Langs de mongolske handelsveiene fantes det yam-stasjoner — poststasjonser med friske hester og mat. En bud-kurér kunne dekke tusenvis av kilometer på noen uker ved å bytte hest ved hver stasjon. Varer som silke, krydder, porselen og glass fløt mellom øst og vest som aldri før. Den venezianske kjøpmannen Marco Polo reiste til Kublai Khans hoff i Kina og tilbrakte 17 år der. Da han kom hjem med sine fortellinger, trodde nesten ingen ham — det virket for fantastisk."
+            "content": "Langs de mongolske handelsveiene fantes det yam-stasjoner - poststasjoner med friske hester og mat, slik at en kurér kunne bytte hest underveis. Varene ble fraktet med karavaner av kameler og muldyr, og silke, krydder og edelstener gikk vestover (Seland, 2024). Den venezianske kjøpmannen Marco Polo dro østover i 1271 og var 17 år i tjeneste ved Kublai khans hoff før han kom tilbake til Venezia i 1295. Hjemme ble fortellingen hans lenge lest som en eventyrfortelling snarere enn som et vitnemål (Feddersen, 2026)."
         },
         {
             "type": "text",
-            "content": "Det skjedde mer enn varebytte langs disse veiene. Ideer, teknologier og religioner reiste også. Kinesisk kunnskap om papirpenger og kruttvåpen nådde Persia og videre til Europa. Islamsk matematikk og astronomi møtte kinesisk filosofi ved det mongolske hoffet. Pax Mongolica var en av de rikeste periodene for kulturutveksling verden hadde sett — og den ble muliggjort av en nomades drøm om å samle verden under ett tak."
+            "content": "Det skjedde mer enn varebytte langs disse veiene. Ideer, teknologier og religioner reiste også. Teknologi som silkespinning, papirframstilling, trykkekunst og kompasset spredte seg fra Kina til Midtøsten og Middelhavsområdet, og religioner som islam og nestoriansk kristendom fikk fotfeste langs rutene (Seland, 2024). Pax Mongolica var en av de rikeste periodene for kulturutveksling verden hadde sett - og den ble muliggjort av en nomades drøm om å samle verden under ett tak."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Pax Mongolica i praksis",
-                "content": "Yam-systemet hadde stasjoner hvert 25–40 km langs de viktigste veiene. En reise fra Kina til Middelhavet tok ca. 6–9 måneder under Pax Mongolica — mot år uten fast veisikkerhet. Handelsvarer som gikk vestover: silke, porselen, krydder, te. Østover: glass, ull, sølv, hester. Det mongolske hoffet var et møtepunkt for lærde fra hele det kjente verden."
+                "content": "Yam-systemet var et nett av poststasjoner med friske hester og mat langs de viktigste veiene, slik at en kurér kunne bytte hest og holde farten oppe. Varene ble fraktet i karavaner av kameler og muldyr. Vestover gikk silke, krydder og edelstener; østover gikk blant annet glass og metaller. Karavanerutene var viktigst fra 1200-tallet og fram til svartedauden midt på 1300-tallet (Seland, 2024)."
             }
         },
         {
@@ -232,15 +232,15 @@
         },
         {
             "type": "text",
-            "content": "Mongolenes rike hadde en strukturell svakhet: det var bygd på personlig lojalitet til én hersker, ikke på en sterk stat med stabile institusjoner. Da Djengis Khan døde i 1227, delte riket seg mellom sønnene hans, og da barnebarna arvet, ble delene enda flere og rivaliserte enda hardere. Det som hadde vært ett rike under én khan, ble gradvis fire separate riker som til slutt kjempet mot hverandre."
+            "content": "Mongolenes rike hadde en strukturell svakhet: det var bygd på personlig lojalitet til én hersker, ikke på en sterk stat med stabile institusjoner. Da Djengis Khan døde 25. august 1227 (Sjøstedt, 2024), ble riket delt mellom de fire ektefødte sønnene hans. Ögödei fikk den østlige delen og ble storkhan med overordnet myndighet (Sjøstedt & Thuesen, 2022). Da barnebarna arvet, ble delene enda flere og rivaliserte enda hardere. Det som hadde vært ett rike under én khan, ble gradvis flere separate riker som til slutt kjempet mot hverandre."
         },
         {
             "type": "text",
-            "content": "Men det virkelig skjebnesvangre kom langs de trygge handelsveiene. Pesten, i Europa kalt [Svartedauden](/historie/middelalderen/svartedauden), oppsto sannsynligvis i Sentral-Asia og spredte seg langs silkeveiruten vest- og sørover. Ironisk nok bidro Pax Mongolica til å formidle sykdommen raskt og vidt. De trygge veiene var like åpne for sykdom som for silke og krydder. I 1347 nådde pesten Konstantinopel og Krimhalvøya. I 1349 nådde den Bergen. Omtrent halvparten av Europas befolkning døde i løpet av noen tiår."
+            "content": "Men det virkelig skjebnesvangre kom langs de trygge handelsveiene. Pesten, i Europa kalt [Svartedauden](/historie/middelalderen/svartedauden), spredte seg langs handelsveiene fra Asia gjennom Svartehavet og Middelhavet og nådde Europa i 1346-1347 (Moseng, 2026). Ironisk nok bidro Pax Mongolica til å formidle sykdommen raskt og vidt. De trygge veiene var like åpne for sykdom som for silke og krydder. Omtrent halvparten av Europas befolkning døde i løpet av tre år (Moseng, 2026)."
         },
         {
             "type": "text",
-            "content": "Det mongolske rikets siste del i Kina, Yuan-dynastiet, falt i 1368 da Ming-dynastiet drev mongolene tilbake til steppene. Da mongolsk styre ble svekket og landveiene øst-vest ble farlige igjen, fylte [Hansabyene](/historie/middelalderen/hanseatene) hullet og overtok mye av handelen på de kortere, tryggere havrutene i Nord-Europa. Senere søkte Europa nye sjøveier til Kina fordi landeveiene var stengt, og endte i stedet med å [erobre Amerika](/historie/kolonialisering/europa-erobrer-verden). Men arven etter mongolene besto. Mongolene hadde knyttet øst og vest tettere sammen enn noen gang tidligere og vist verden at nomader fra steppene kunne endre løpet til verdenshistorien. De tyrkiske dynastiene som fulgte i Sentral-Asia og India, som Osmanske riket og Mughal-riket, var alle inspirert av den mongolske arven. Djengis Khans barnebarn regnes fortsatt som en av de største genetiske forfedrene i Sentral-Asia."
+            "content": "Det mongolske rikets siste del i Kina, Yuan-dynastiet, slet med økonomiske problemer og indre strid etter Khubilai khans død i 1294, og falt i 1368 da Ming-dynastiet drev mongolene tilbake til steppene (Olsen & Filseth, 2024). Samme år flyktet storkhanens hoff for godt fra Kina og vendte tilbake til Mongolia (Sjøstedt & Thuesen, 2022). Da mongolsk styre ble svekket og landveiene øst-vest ble farlige igjen, fylte [Hansabyene](/historie/middelalderen/hanseatene) hullet og overtok mye av handelen på de kortere, tryggere havrutene i Nord-Europa. Senere søkte Europa nye sjøveier til Kina fordi landeveiene var stengt, og endte i stedet med å [erobre Amerika](/historie/kolonialisering/europa-erobrer-verden). Men arven etter mongolene besto. Mongolene hadde knyttet øst og vest tettere sammen enn noen gang tidligere og vist verden at nomader fra steppene kunne endre løpet til verdenshistorien."
         },
         {
             "type": "component",
@@ -248,12 +248,12 @@
             "props": {
                 "forstaa": [
                     "Hvor stort var det mongolske riket på sitt største, og hvorfor er det spesielt i verdenshistorien?",
-                    "Hva het Djengis Khan da han ble født, og hva betyr tittelen 'Djengis Khan'?",
-                    "Hva var Pax Mongolica, og omtrent hvilken periode varte den?",
+                    "Hva het Djengis Khan da han ble født, og hva kan tittelen 'Djengis Khan' bety?",
+                    "Hva var Pax Mongolica, og omtrent hvilken periode var karavanerutene viktigst?",
                     "Forklar hva den fingerte flukten var, og hvorfor den krevde så streng disiplin."
                 ],
                 "reflekter": [
-                    "Teksten sier at Djengis Khans klokskap var like viktig som brutaliteten hans. Forklar med egne ord hvordan han klarte å samle de splittede mongolske stammene.",
+                    "Teksten sier at Djengis Khan regnes som en av historiens største organisatorer. Forklar med egne ord hva han gjorde med det riket han hadde erobret.",
                     "Hvorfor kunne en mongolsk hær bevege seg mye raskere enn europeiske riddere i tung rustning, og hvilken fordel ga det i krig?",
                     "Forklar den historiske ironien i at de trygge veiene under Pax Mongolica både fremmet handel og hjalp Svartedauden med å spre seg.",
                     "Riket var bygd på personlig lojalitet til én hersker i stedet for sterke institusjoner. Hvorfor gjorde dette riket sårbart etter at Djengis Khan døde?"
@@ -279,7 +279,7 @@
                             "Det rikeste riket i middelalderen"
                         ],
                         "answer": "Det største sammenhengende landimperiet i historien",
-                        "explanation": "Det mongolske riket dekket om lag 24 millioner kvadratkilometer — større enn Russland og Kina til sammen — og var verdens største sammenhengende landimperium gjennom historien."
+                        "explanation": "Det mongolske riket dekket om lag 23 millioner kvadratkilometer og var verdenshistoriens største sammenhengende imperium i areal."
                     },
                     {
                         "question": "Hva het Djengis Khan egentlig?",
@@ -290,7 +290,7 @@
                             "Batu"
                         ],
                         "answer": "Temüjin",
-                        "explanation": "Djengis Khan ble født med navnet Temüjin. Tittelen 'Djengis Khan' betyr omtrent 'Universell Herre' og ble gitt ham da han forente alle de mongolske stammene i 1206."
+                        "explanation": "Djengis Khan ble født med navnet Temüjin, som betyr «smed» på mongolsk. Herskernavnet Djengis Khan tok han i 1206, og det betyr enten «universell» eller «hard» hersker."
                     },
                     {
                         "question": "Hva er Pax Mongolica?",
@@ -301,7 +301,7 @@
                             "Det mongolske militærets treningsprogram"
                         ],
                         "answer": "Perioden da mongolenes handelsveier skapte trygg handel mellom øst og vest",
-                        "explanation": "Pax Mongolica ('Den mongolske freden') var perioden ca. 1250–1350 der mongolsk kontroll over Silkeveien gjorde handel mellom Kina og Europa tryggere enn på lenge."
+                        "explanation": "Pax Mongolica ('Den mongolske freden') var tiden da store deler av Asia og Øst-Europa lå under mongolsk styre. Karavanerutene var særlig viktige fra 1200-tallet og fram til svartedauden midt på 1300-tallet."
                     },
                     {
                         "question": "Hva er den historiske ironien ved Pax Mongolica og Svartedauden?",
@@ -312,7 +312,7 @@
                             "Svartedauden drepte alle mongolene og dermed sluttet Pax Mongolica"
                         ],
                         "answer": "De trygge handelsveiene som fremmet handel, hjalp også pesten med å spre seg raskt",
-                        "explanation": "Ironisk nok bidro Pax Mongolicas åpne og trygge veier til at Svartedauden kunne spre seg raskt og vidt fra Sentral-Asia til Europa — de samme veiene som hadde fremmet handel og kulturutveksling."
+                        "explanation": "Ironisk nok bidro Pax Mongolicas åpne og trygge veier til at Svartedauden kunne spre seg raskt og vidt fra Asia til Europa - de samme veiene som hadde fremmet handel og kulturutveksling."
                     },
                     {
                         "question": "Hva var den fingerte flukten?",
@@ -323,11 +323,32 @@
                             "En måte å skjule seg i graset på steppene"
                         ],
                         "answer": "En taktikk der deler av hæren later som den flykter for å lokke fienden i bakhold",
-                        "explanation": "Den fingerte flukten var en av mongolenes mest effektive taktikker: en del av hæren later som den flykter i panikk, motstanderen forfølger i triumf og kjører rett inn i et bakhold der resten av hæren venter."
+                        "explanation": "Den fingerte flukten var en av mongolenes mest effektive taktikker: de angrep med en liten styrke og lot som de trakk seg tilbake, slik at fienden fulgte etter rett inn i en mye større mongolsk styrke."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aarseth, M. B. (2026). *Bagdad*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Bagdad](https://snl.no/Bagdad)",
+                    "Cartwright, M. (2019). *Mongol Warfare*. World History Encyclopedia. Hentet 30.07.2026 fra [worldhistory.org](https://www.worldhistory.org/Mongol_Warfare/)",
+                    "Encyclopaedia Britannica. (2026a). *Mongol*. Hentet 30.07.2026 fra [britannica.com](https://www.britannica.com/topic/Mongol)",
+                    "Encyclopaedia Britannica. (2026b). *Mongol empire*. Hentet 30.07.2026 fra [britannica.com](https://www.britannica.com/place/Mongol-empire)",
+                    "Feddersen, C. F. (2026). *Marco Polo*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Marco_Polo](https://snl.no/Marco_Polo)",
+                    "Moseng, O. G. (2026). *svartedauden*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/svartedauden](https://snl.no/svartedauden)",
+                    "Olsen, S. M. (2025). *mongoler*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/mongoler](https://snl.no/mongoler)",
+                    "Olsen, S. M. & Filseth, G. (2024). *Mongolias historie*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Mongolias_historie](https://snl.no/Mongolias_historie)",
+                    "Seland, E. H. (2024). *Silkeveien*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Silkeveien](https://snl.no/Silkeveien)",
+                    "Sjøstedt, G. (2024). *Djengis khan*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Djengis_khan](https://snl.no/Djengis_khan)",
+                    "Sjøstedt, G. & Thuesen, N. P. (2022). *Mongolriket*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Mongolriket](https://snl.no/Mongolriket)",
+                    "Sulyok, V. (2026). *Ungarns historie*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Ungarns_historie](https://snl.no/Ungarns_historie)"
                 ]
             }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-07-30"
 }

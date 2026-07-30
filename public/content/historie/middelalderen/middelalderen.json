@@ -22,7 +22,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Middelalderen er en av de mest misforståtte periodene i historien. Lenge ble den kalt 'den mørke middelalder', en dyster ventetid mellom antikkens lysende sivilisasjoner og renessansens gjenfødelse. I dag vet vi at dette bildet er feilaktig. Middelalderen var en periode preget av voldsom dynamikk, teknologisk innovasjon, intellektuell oppvåkning og dannelsen av det Europa vi kjenner i dag. Det var i disse tusen årene, fra ca. 500 til 1500, at nasjonalstatene begynte å ta form, universitetene ble grunnlagt, og grunnlaget for moderne rettsvesen og parlamentarisme ble lagt."
+            "content": "Middelalderen er en av de mest misforståtte periodene i historien. Lenge ble den kalt 'den mørke middelalder', en dyster ventetid mellom antikkens lysende sivilisasjoner og renessansens gjenfødelse. I dag vet vi at dette bildet er feilaktig. Middelalderen var en periode preget av voldsom dynamikk, teknologisk innovasjon, intellektuell oppvåkning og dannelsen av det Europa vi kjenner i dag. Middelalderen regnes fra omkring 500 til omkring 1500 (Brégaint mfl., 2024). Det var i disse tusen årene at nasjonalstatene begynte å ta form, universitetene ble grunnlagt, og grunnlaget for moderne rettsvesen og parlamentarisme ble lagt."
         },
         {
             "type": "component",
@@ -60,7 +60,7 @@
         },
         {
             "type": "text",
-            "content": "Perioden deles ofte inn i tre hovedfaser: Tidlig middelalder (ca. 500–1000), høymiddelalder (ca. 1000–1300) og senmiddelalder (ca. 1300–1500). Hver av disse fasene hadde sine egne unike utfordringer og triumfer, men felles for dem alle var kirkens sentrale rolle og det føydale samfunnssystemet."
+            "content": "Perioden deles i tre hovedfaser: tidlig middelalder (ca. 500-1050), høymiddelalder (ca. 1050-1300) og senmiddelalder (ca. 1300-1500) (Brégaint mfl., 2024). Hver av disse fasene hadde sine egne utfordringer og triumfer, men felles for dem alle var kirkens sentrale rolle og det føydale samfunnssystemet."
         },
         {
             "type": "header",
@@ -68,7 +68,7 @@
         },
         {
             "type": "text",
-            "content": "Da [Vestromerriket kollapset](/historie/romerriket/vestromerrikets-fall) i 476 evt., forsvant den sentraliserte statsmakten som hadde holdt Europa sammen. Veinettet forfalt, handelen krympet, og byene tømtes for folk. I stedet oppsto en rekke germanske kongedømmer – vestgotere i Spania, frankere i Gallia, og østgotere og langobarder i Italia. Dette var en urolig tid, preget av folkevandringer og krigføring, men det var også en tid for nybygging."
+            "content": "Da [Vestromerriket kollapset](/historie/romerriket/vestromerrikets-fall) på slutten av 400-tallet, forsvant den sentraliserte statsmakten som hadde holdt Europa sammen. Veinettet forfalt, handelen krympet, og byene tømtes for folk. I stedet opprettet germanske stammer nye riker som blandet lokale trekk med den romerske kulturen de forsøkte å etterligne (Brégaint mfl., 2024) - vestgotere i Spania, frankere i Gallia, og østgotere og langobarder i Italia. Dette var en urolig tid, preget av folkevandringer og krigføring, men det var også en tid for nybygging."
         },
         {
             "type": "header",
@@ -76,11 +76,11 @@
         },
         {
             "type": "text",
-            "content": "Blant de nye maktene var Frankerriket det viktigste. Under dynastiet merovingerne, og senere karolingerne, samlet frankerne store deler av Vest-Europa. Høydepunktet kom med Karl den store (Charlemagne), som ble kronet til keiser av paven i Roma 1. juledag år 800. Dette var en symbolsk handling av enorm betydning: Det markerte at tyngdepunktet i Europa hadde flyttet seg nordover, fra Middelhavet til kontinentet, og det etablerte alliansen mellom kongemakten og kirken som skulle definere middelalderen."
+            "content": "Blant de nye maktene var Frankerriket det viktigste. Under dynastiet merovingerne, og senere karolingerne, samlet frankerne store deler av Vest-Europa. Høydepunktet kom med Karl den store (Charlemagne). Under høymessen i Peterskirken i Roma 1. juledag år 800 kronet pave Leo 3. ham til romernes keiser (Holmboe, 2026). Dette var en symbolsk handling av enorm betydning: Det markerte at tyngdepunktet i Europa hadde flyttet seg nordover, fra Middelhavet til kontinentet, og det etablerte alliansen mellom kongemakten og kirken som skulle definere middelalderen."
         },
         {
             "type": "text",
-            "content": "Karl den store forsøkte å gjenreise romersk kultur og utdanning, en periode kjent som den karolingiske renessansen. Han etablerte skoler ved hoffet, standardiserte skriften (den karolingiske minuskelen, som våre små bokstaver bygger på) og reformerte administrasjonen. Men riket hans overlevde ikke lenge etter hans død. Det ble delt mellom hans barnebarn, noe som la grunnlaget for de fremtidige nasjonene Frankrike og Tyskland."
+            "content": "Karl den store forsøkte å gjenreise romersk kultur og utdanning, en periode kjent som den karolingiske renessansen. Han etablerte skoler ved hoffet, og hoffet hans ble et lærdomssenter. Den viktigste kulturelle nyvinningen var en ny skrift - den karolingiske minuskelen, som vår egen bokskrift bygger på (Holmboe, 2026). Men riket hans overlevde ikke lenge etter hans død. Det ble delt mellom hans barnebarn, noe som la grunnlaget for de fremtidige nasjonene Frankrike og Tyskland."
         },
         {
             "type": "image",
@@ -94,7 +94,7 @@
         },
         {
             "type": "text",
-            "content": "På 800- og 900-tallet ble Europa angrepet fra alle kanter. Fra nord kom [vikingene](/historie/vikingtiden/artikkel) med sine raske skip, plyndret klostre og byer, og etablerte bosetninger i England, Frankrike (Normandie) og Russland. Fra øst kom madjarene, et rytterfolk som herjet Sentral-Europa før de slo seg ned i Ungarn. Fra sør ekspanderte det islamske kalifatet, som allerede hadde erobret Spania og Sicilia, og raidet kystområdene i Italia og Frankrike."
+            "content": "På 800- og 900-tallet ble Europa angrepet fra alle kanter. Fra nord kom [vikingene](/historie/vikingtiden/artikkel) med sine raske skip, plyndret klostre og byer, og etablerte bosetninger i England, Frankrike (Normandie) og Russland. Fra øst kom madjarene, et rytterfolk som i 896 dro over Karpatene under høvdingen Árpád. De ridende krigerne deres gjorde årvisse plyndringstokter mot sør og vest helt til de tapte ved Lechfeld i 955 (Sulyok, 2026). Fra sør ekspanderte det islamske kalifatet, som allerede hadde erobret Spania og Sicilia, og raidet kystområdene i Italia og Frankrike."
         },
         {
             "type": "text",
@@ -113,8 +113,8 @@
             "name": "Comparison",
             "props": {
                 "title": "Tidlig middelalder vs. Høymiddelalder",
-                "leftTitle": "Tidlig middelalder (500-1000)",
-                "rightTitle": "Høymiddelalder (1000-1300)",
+                "leftTitle": "Tidlig middelalder (500-1050)",
+                "rightTitle": "Høymiddelalder (1050-1300)",
                 "items": [
                     {
                         "left": "Politisk kaos og oppsplitting",
@@ -141,7 +141,7 @@
         },
         {
             "type": "text",
-            "content": "Samfunnet var organisert i et hierarki basert på jordeiendom og troskapsbånd, kjent som [føydalisme](/samfunnskunnskap/styringsformer/foydalisme). Kongen eide i teorien alt land, men delte det ut til vasaller (hertuger og grever) mot løfte om militær støtte (riddere). Vasallene delte igjen ut land til undervasaller. Nederst sto bøndene, som utgjorde det store flertallet (ca. 90%). Mange var livegne – de var bundet til jorden og måtte arbeide for godseieren i bytte mot beskyttelse og retten til å dyrke en liten jordlapp til eget bruk."
+            "content": "Samfunnet var organisert i et hierarki basert på jordeiendom og troskapsbånd, kjent som [føydalisme](/samfunnskunnskap/styringsformer/foydalisme). Kongen delte ut landområder (len) til vasaller, som til gjengjeld måtte stille med militær styrke når kongen ba om det. Større lensherrer delte lenet sitt videre til egne vasaller, og slik oppsto en pyramide med kongen på toppen (Tøllefsen, 2025). Nederst sto bøndene, som utgjorde det store flertallet. Mange var livegne: de var bundet til å arbeide på et gods, og fikk ikke forlate det uten tillatelse fra godseieren. Til gjengjeld betalte de for beskyttelse, enten med gratis arbeid eller med jordbruksvarer (Tøllefsen, 2025)."
         },
         {
             "type": "text",
@@ -166,7 +166,7 @@
         },
         {
             "type": "text",
-            "content": "Den katolske kirken var middelalderens mektigste institusjon. Paven var ikke bare en åndelig leder, men en politisk fyrste som kunne utfordre keisere og konger. Høydepunktet i denne maktkampen var investiturstriden (1075–1122), en konflikt om hvem som skulle ha retten til å utnevne biskoper: Paven eller keiseren? Striden endte med et kompromiss, men det styrket pavens autoritet og markerte begynnelsen på et skille mellom kirke og stat."
+            "content": "Den katolske kirken var middelalderens mektigste institusjon. Paven var ikke bare en åndelig leder, men en politisk fyrste som kunne utfordre keisere og konger. Høydepunktet i denne maktkampen var investiturstriden, som brøt ut på 1070-tallet mellom pave Gregor 7. og keiser Henrik 4. Striden gjaldt hvem som skulle ha retten til å utnevne biskoper og gi dem ring og stav, symbolene på bispeembetet. Den endte med konkordatet i Worms i 1122: biskopene skulle velges fritt, men i keiserens nærvær, og keiseren beholdt stor innflytelse hvis det oppsto uenighet (Tøllefsen, 2022)."
         },
         {
             "type": "text",
@@ -178,7 +178,7 @@
         },
         {
             "type": "text",
-            "content": "I 1095 holdt pave Urban 2. en tale der han oppfordret kristne riddere til å ta opp korset og frigjøre Jerusalem fra muslimsk styre. Dette utløste det første korstoget, som endte med erobringen av Jerusalem i 1099 og etableringen av korsfarerstater i Midtøsten. Det var flere korstog over de neste to hundre årene, men de mislyktes i lengden med å beholde kontrollen over Det hellige land."
+            "content": "I 1095 holdt pave Urban 2. en tale i Clermont der han oppfordret kristne til å ta opp våpen og frigjøre Jerusalem fra muslimsk styre, og lovte syndsforlatelse til dem som dro (Melve, 2026). Dette utløste [det første korstoget](/historie/middelalderen/korstogene), som endte med erobringen av Jerusalem 15. juli 1099 og etableringen av korsfarerstater i Midtøsten. Det var flere korstog over de neste to hundre årene, men de mislyktes i lengden med å beholde kontrollen over Det hellige land."
         },
         {
             "type": "text",
@@ -204,7 +204,7 @@
         },
         {
             "type": "text",
-            "content": "På 1100- og 1200-tallet oppsto de første universitetene i byer som Bologna, Paris og Oxford. Her studerte man teologi, jus og medisin. Skolastikken, med teologen Thomas Aquinas i spissen, forsøkte å forene kristen tro med fornuft og logikk. I arkitekturen ble den tunge romanske stilen erstattet av den himmelstrebende gotikken, med sine spissbuer, store glassmalerier og strebepilarer, som muliggjorde enorme katedraler som Notre-Dame i Paris."
+            "content": "De første universitetene vokste fram i Bologna på 1000-tallet, i Paris midt på 1100-tallet og i Oxford mot slutten av 1100-tallet. Et universitet hadde som regel fire fakulteter: et filosofisk, som forberedte studentene, og de tre «høyere» - teologisk, juridisk og medisinsk (Smeplass, 2026). Skolastikken, med teologen Thomas Aquinas i spissen, forsøkte å forene kristen tro med fornuft og logikk. I arkitekturen ble den tunge romanske stilen erstattet av den himmelstrebende gotikken, med sine spissbuer, store glassmalerier og strebepilarer, som muliggjorde enorme katedraler som Notre-Dame i Paris."
         },
         {
             "type": "header",
@@ -220,7 +220,7 @@
         },
         {
             "type": "text",
-            "content": "Den største katastrofen inntraff i 1347, da pestbakterien *Yersinia pestis* kom til Europa med skip fra Svartehavet. Pesten, kjent som [Svartedauden](/historie/middelalderen/svartedauden), spredte seg med lynets hastighet og tok livet av mellom en tredjedel og halvparten av Europas befolkning i løpet av få år. Konsekvensene var enorme. Landsbyer ble lagt øde, og mangelen på arbeidskraft førte til at bøndene kunne kreve bedre vilkår. Mange steder opphørte livegenskapet. Pesten kom tilbake i bølger gjennom hele perioden og holdt folketallet nede."
+            "content": "Den største katastrofen kom i 1346-1347, da bakterien *Yersinia pestis* nådde Europa langs handelsveiene fra Asia, gjennom Svartehavet og Middelhavet. Pesten, kjent som [Svartedauden](/historie/middelalderen/svartedauden), tok livet av omtrent halvparten av Europas befolkning i løpet av tre år (Moseng, 2026). Konsekvensene var enorme. Landsbyer ble lagt øde. Jordprisene og leiene falt, mens prisen på arbeidskraft steg - for bøndene som overlevde, kunne levekårene faktisk bli bedre i senmiddelalderen (Moseng, 2026). Pesten kom tilbake i bølger gjennom hele perioden og holdt folketallet nede."
         },
         {
             "type": "image",
@@ -234,15 +234,15 @@
         },
         {
             "type": "text",
-            "content": "Samtidig herjet krig mellom England og Frankrike. Hundreårskrigen (1337–1453) var en serie konflikter om den franske tronen. Krigen så introduksjonen av nye våpen som langbuen og etter hvert krutt og kanoner, som gjorde de adelige ridderne mindre viktige på slagmarken. Nasjonalfølelsen vokste frem i begge land, styrket av skikkelser som Jeanne d’Arc, bondejenta som ledet franske tropper til seier før hun ble brent på bålet."
+            "content": "Samtidig herjet krig mellom England og Frankrike. Hundreårskrigen (1337-1453) var en serie konflikter med lengre og kortere fredsperioder imellom. Kong Edvard 3. av England mente han var rettmessig arving til den franske tronen fordi han var dattersønn av Filip 4. (Imsen, 2024). I 1429 fikk Jeanne d'Arc en militær kommando og klarte å snu krigslykken til Frankrikes fordel. Kort etter ble hun tatt til fange av engelskmennene og brent på bålet for trolldom og kjetteri (Imsen, 2024). Krigen svekket den føydale adelen i begge land og styrket nasjonalfølelsen."
         },
         {
             "type": "header",
-            "content": "Det store skisma"
+            "content": "Splittelsen i kirken"
         },
         {
             "type": "text",
-            "content": "Også kirken var i krise. Paver ble i en periode styrt av den franske kongen og residerte i Avignon, ikke Roma. Senere valgte kardinalene to, og en stund til og med tre, paver samtidig. Dette 'store skismaet' svekket kirkens autoritet og førte til rop om reformer, rop som halvannet århundre senere skulle lede til [reformasjonen](/historie/reformasjonen/30-aarskrigen)."
+            "content": "Også kirken var i krise. Pavene residerte i en periode i Avignon i Frankrike, ikke i Roma. Da paven vendte tilbake til Roma, oppsto splittelsen for alvor: det ble valgt to rivaliserende paver, én i Roma og én i Avignon, og i en periode gjorde til og med tre menn samtidig krav på å være kirkens øverste leder (Stensvold, 2025). Denne striden om pavevalget varte fra 1378 til 1417 og svekket kirkens autoritet. Den førte til rop om reformer, rop som halvannet århundre senere skulle lede til [reformasjonen](/historie/reformasjonen/30-aarskrigen)."
         },
         {
             "type": "header",
@@ -250,7 +250,7 @@
         },
         {
             "type": "text",
-            "content": "Mot slutten av 1400-tallet begynte Europa å hente seg inn igjen. Sentralmakten styrket seg i land som Frankrike, England og Spania (der reconquistaen ble fullført i 1492). Bysants falt til osmanene i 1453, noe som sendte greske lærde på flukt vestover og ga en ny innsprøytning til humanismen og renessansen som vokste frem i Italia. Samtidig begynte europeiske eventyrere å se utover havet mot nye verdener. Middelalderen var over, og tidlig moderne tid sto for døren."
+            "content": "Mot slutten av 1400-tallet begynte Europa å hente seg inn igjen. Sentralmakten styrket seg i land som Frankrike, England og Spania (der reconquistaen ble fullført i 1492). Konstantinopel falt til sultan Mehmet 2. den 29. mai 1453 etter en 55 dager lang beleiring. Mange bysantinske lærde søkte tilflukt i Italia, og sammen med den nye trykkekunsten gjorde det at greske tekster som var gått tapt i Vesten, kunne spres på nytt - en kraftig innsprøytning til humanismen og renessansen (Seland, 2026). Samtidig begynte europeiske eventyrere å se utover havet mot nye verdener. Middelalderen var over, og tidlig moderne tid sto for døren."
         },
         {
             "type": "component",
@@ -273,13 +273,32 @@
                 "reflekter": [
                     "Teksten sier at 'den mørke middelalder' er et feilaktig bilde. Bruk minst tre eksempler fra artikkelen til å forklare hvorfor perioden ikke var stillestående.",
                     "Angrepene fra vikinger, madjarer og arabere tvang frem føydalismen. Forklar sammenhengen mellom trusselen utenfra og at lokale stormenn bygde borger og overtok forsvaret.",
-                    "Svartedauden gjorde arbeidskraft til en mangelvare, og mange steder opphørte livegenskapet. Forklar hvorfor en katastrofe kunne føre til bedre vilkår for bøndene som overlevde.",
+                    "Svartedauden gjorde arbeidskraft til en mangelvare, og prisen på arbeid steg mens jordprisene falt. Forklar hvorfor en katastrofe kunne føre til bedre vilkår for bøndene som overlevde.",
                     "Sammenlign tidlig middelalder og høymiddelalder. Hva var de viktigste forskjellene når det gjaldt befolkning, handel og byer?"
                 ],
                 "gaaVidere": [
                     "Universitetene i Bologna, Paris og Oxford ble grunnlagt i middelalderen. Finn ut hvor gammelt det eldste universitetet i Norge er, og diskuter hva det sier om når høyere utdanning kom hit.",
                     "Skriv en kort tekst (5-8 setninger) der du tar rollen som en ung bonde like etter Svartedauden. Hvordan har livet ditt endret seg fordi det er blitt så få arbeidere igjen?",
                     "Diskuter med en partner: Korstogene førte til at europeerne gjenoppdaget gresk filosofi, vitenskap og nye varer. Kan en krig ha positive følger for samfunnet selv om selve krigen er brutal?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brégaint, D., Imsen, S. & Scott, I. (2024). *middelalderen*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/middelalderen](https://snl.no/middelalderen)",
+                    "Holmboe, H. (2026). *Karl den store*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Karl_den_store](https://snl.no/Karl_den_store)",
+                    "Imsen, S. (2024). *Hundreårskrigen*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Hundreårskrigen](https://snl.no/Hundre%C3%A5rskrigen)",
+                    "Melve, L. (2026). *korstog*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/korstog](https://snl.no/korstog)",
+                    "Moseng, O. G. (2026). *svartedauden*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/svartedauden](https://snl.no/svartedauden)",
+                    "Seland, E. H. (2026). *Konstantinopels fall*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Konstantinopels_fall](https://snl.no/Konstantinopels_fall)",
+                    "Smeplass, E. (2026). *universitet*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/universitet](https://snl.no/universitet)",
+                    "Stensvold, A. (2025). *skisma*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/skisma](https://snl.no/skisma)",
+                    "Sulyok, V. (2026). *Ungarns historie*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/Ungarns_historie](https://snl.no/Ungarns_historie)",
+                    "Tøllefsen, T. O. (2022). *investiturstriden*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/investiturstriden](https://snl.no/investiturstriden)",
+                    "Tøllefsen, T. O. (2025). *føydalisme*. Store norske leksikon. Hentet 30.07.2026 fra [snl.no/føydalisme](https://snl.no/f%C3%B8ydalisme)"
                 ]
             }
         }
@@ -335,5 +354,6 @@
             ],
             "correctAnswer": 1
         }
-    ]
+    ],
+    "lastUpdated": "2026-07-30"
 }
