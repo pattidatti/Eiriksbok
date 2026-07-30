@@ -22,6 +22,48 @@ const CONTENT_DIR = path.join(__dirname, '../public/content');
 const MANIFEST_PATH = path.join(CONTENT_DIR, 'manifest.json');
 const OUTPUT_DIR = path.join(__dirname, '../public/data/rpg');
 const OUTPUT_PATH = path.join(OUTPUT_DIR, 'quest-bank.json');
+const EPOKER_PATH = path.join(__dirname, '../src/features/rpg/data/epoker.ts');
+
+/**
+ * Bare spillbare epoker havner i banken.
+ *
+ * Sonene nedenfor dekker hele læreboka, men bare én epoke er bygget. Resten er
+ * merket `spillbar: false` i epoker.ts og har ingen steder, så `byggQuester`
+ * kan aldri slå opp i dem. Før tok de plass likevel: 959 spørsmål og 547 KB
+ * lastet ned på hver Chromebook, der 17 var nåbare.
+ *
+ * Sannheten om hva som er spillbart eies av epoker.ts, ikke av dette skriptet -
+ * ellers ville en ny epoke krevd at to lister ble husket samtidig. Vi leser
+ * `spillbar` og `bankSone` derfra i tekstform, siden dette er et .mjs-skript
+ * uten TypeScript. Feltene står én gang per epoke og i samme rekkefølge, så de
+ * kan parres på plass. Klaffer ikke antallet, har fila fått en form vi ikke
+ * forstår: da slipper vi gjennom alle sonene, for et spill uten spørsmål er
+ * verre enn et spill med noen unødvendige.
+ */
+function spillbareSoner() {
+    let src;
+    try {
+        src = fs.readFileSync(EPOKER_PATH, 'utf-8');
+    } catch {
+        console.warn('[quest-bank] Fant ikke epoker.ts - skriver alle soner.');
+        return null;
+    }
+
+    const spillbar = [...src.matchAll(/^\s*spillbar:\s*(true|false)\s*,/gm)].map(
+        (m) => m[1] === 'true'
+    );
+    const soner = [...src.matchAll(/^\s*bankSone:\s*'([^']+)'\s*,/gm)].map((m) => m[1]);
+
+    if (spillbar.length === 0 || spillbar.length !== soner.length) {
+        console.warn(
+            `[quest-bank] Klarte ikke å parre spillbar/bankSone i epoker.ts ` +
+                `(${spillbar.length} mot ${soner.length}) - skriver alle soner.`
+        );
+        return null;
+    }
+
+    return new Set(soner.filter((_, i) => spillbar[i]));
+}
 
 // Sonene i spillverdenen. Rekkefølgen er spillerens reise gjennom verden.
 // `topics` matcher topicId eksakt; `subjects` er fallback for hele faget.
@@ -319,9 +361,14 @@ export function generate() {
         if (found > 0) files += 1;
     }
 
+    const spillbare = spillbareSoner();
+    const medSporsmal = [...zones.values()].filter((z) => z.questions.length > 0);
+    const beholdt = spillbare ? medSporsmal.filter((z) => spillbare.has(z.id)) : medSporsmal;
+    const utelatt = medSporsmal.filter((z) => !beholdt.includes(z));
+
     const bank = {
         generatedFrom: 'public/content/**/*.json (Quiz-komponenter)',
-        zones: [...zones.values()].filter((z) => z.questions.length > 0),
+        zones: beholdt,
     };
     const total = bank.zones.reduce((sum, z) => sum + z.questions.length, 0);
 
@@ -336,6 +383,14 @@ export function generate() {
             `(ulesbare=${skipped}, holdt utenfor=${excluded}) → ` +
             `${path.relative(process.cwd(), OUTPUT_PATH)}\n[quest-bank] ${summary}`
     );
+    if (utelatt.length > 0) {
+        const droppet = utelatt.reduce((sum, z) => sum + z.questions.length, 0);
+        console.log(
+            `[quest-bank] ${droppet} spørsmål i ${utelatt.length} soner utelatt - epoken er ` +
+                `ikke spillbar ennå (${utelatt.map((z) => z.id).join(', ')}). ` +
+                `Sett spillbar: true i epoker.ts når den åpnes.`
+        );
+    }
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
