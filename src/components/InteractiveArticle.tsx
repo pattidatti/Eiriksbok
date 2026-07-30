@@ -276,9 +276,11 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
             />
 
             {/* Navigation Bar */}
-            {/* På mobil ligger knappen i normal flyt øverst (over meta-raden) så den
-                ikke overlapper tittelen; fra md flyter den fast over hero-bildet. */}
-            <div className="relative top-0 md:fixed md:top-32 left-0 w-full p-4 flex justify-between items-center z-40 pointer-events-none">
+            {/* Knappen ligger i normal flyt øverst (over meta-raden) så den ikke
+                overlapper tittelen. Først fra xl er skjermen bred nok til at det er
+                margin utenfor innholdsspalten (max-w-5xl) å flyte i - under det la
+                den seg oppå overskriften, f.eks. på Galaxy Fold utbrettet (~950px). */}
+            <div className="relative top-0 xl:fixed xl:top-32 left-0 w-full p-4 flex justify-between items-center z-40 pointer-events-none">
                 <div className="pointer-events-auto flex gap-2">
 
                     <button

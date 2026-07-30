@@ -16,6 +16,19 @@ import { ProgressChip } from '../features/progress/components/ProgressChip';
 import { ProgressToaster } from '../features/progress/components/ProgressToaster';
 import { CelebrationOverlay } from '../features/progress/components/CelebrationOverlay';
 
+/* Toppmenyen. `short` brukes på mellomstore skjermer (nettbrett, Chromebook i
+   delt vindu, Galaxy Fold utbrettet ~950px) der de fulle navnene ikke får plass.
+   Fra xl (1280px) vises full tekst. */
+const navLinks = [
+    { to: '/norsk', label: 'Norsk', short: 'Norsk', prefetch: 'SubjectPage' },
+    { to: '/samfunnskunnskap', label: 'Samfunnskunnskap', short: 'Samfunn', prefetch: 'SubjectPage' },
+    { to: '/historie', label: 'Historie', short: 'Historie', prefetch: 'SubjectPage' },
+    { to: '/krle', label: 'KRLE', short: 'KRLE', prefetch: 'SubjectPage' },
+    { to: '/musikk', label: 'Musikk', short: 'Musikk', prefetch: 'SubjectPage' },
+    { to: '/laeringsstier', label: 'Læringsstier', short: 'Stier', prefetch: 'Unknown' },
+    { to: '/oving', label: 'Øving', short: 'Øving', prefetch: 'PracticePage' },
+];
+
 export const Layout: React.FC = () => {
     const location = useLocation();
     const outlet = useOutlet();
@@ -49,8 +62,8 @@ export const Layout: React.FC = () => {
             {/* Navbar */}
             {!hideHeader && (
                 <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-white/70 border-b border-white/20 shadow-sm transition-all duration-300">
-                    <div className="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between">
-                        <div className="flex items-center gap-2 sm:gap-4">
+                    <div className="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                             {/* Feedback Widget - Top Left */}
                             <FeedbackWidget />
 
@@ -66,23 +79,28 @@ export const Layout: React.FC = () => {
                             <Link to="/" className="flex items-center gap-2 sm:gap-3 text-xl font-display font-bold text-text-main no-underline tracking-tight group">
 
                                 <img src="/logo.webp" alt="Logo" className="w-8 h-8 object-contain transition-transform group-hover:scale-110" />
-                                {/* Merkenavnet vises kun fra tablet/desktop (sm+). På telefon står
-                                    logo-ikonet alene, så topbaren aldri renner over (Fold lukket ~344px). */}
-                                <span className="hidden sm:inline">BOK.HAALAND.DE</span>
+                                {/* Merkenavnet står bare der det faktisk er plass: på telefon (< sm)
+                                    ville det sprengt topbaren (Fold lukket ~344px), og mellom md og xl
+                                    trenger menylenkene plassen (Fold utbrettet ~950px). */}
+                                <span className="hidden sm:inline md:hidden xl:inline">BOK.HAALAND.DE</span>
                             </Link>
                         </div>
 
-                        <nav className="hidden md:flex items-center space-x-8">
-                            <PrefetchLink to="/norsk" prefetchTarget="SubjectPage" className={`text-sm transition-colors ${isActive('/norsk')}`}>Norsk</PrefetchLink>
-                            <PrefetchLink to="/samfunnskunnskap" prefetchTarget="SubjectPage" className={`text-sm transition-colors ${isActive('/samfunnskunnskap')}`}>Samfunnskunnskap</PrefetchLink>
-                            <PrefetchLink to="/historie" prefetchTarget="SubjectPage" className={`text-sm transition-colors ${isActive('/historie')}`}>Historie</PrefetchLink>
-                            <PrefetchLink to="/krle" prefetchTarget="SubjectPage" className={`text-sm transition-colors ${isActive('/krle')}`}>KRLE</PrefetchLink>
-                            <PrefetchLink to="/musikk" prefetchTarget="SubjectPage" className={`text-sm transition-colors ${isActive('/musikk')}`}>Musikk</PrefetchLink>
-                            <PrefetchLink to="/laeringsstier" prefetchTarget="Unknown" className={`text-sm transition-colors ${isActive('/laeringsstier')}`}>Læringsstier</PrefetchLink>
-                            <PrefetchLink to="/oving" prefetchTarget="PracticePage" className={`text-sm transition-colors ${isActive('/oving')}`}>Øving</PrefetchLink>
+                        <nav className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-8 min-w-0">
+                            {navLinks.map((link) => (
+                                <PrefetchLink
+                                    key={link.to}
+                                    to={link.to}
+                                    prefetchTarget={link.prefetch}
+                                    className={`text-sm whitespace-nowrap transition-colors ${isActive(link.to)}`}
+                                >
+                                    <span className="xl:hidden">{link.short}</span>
+                                    <span className="hidden xl:inline">{link.label}</span>
+                                </PrefetchLink>
+                            ))}
                         </nav>
 
-                        <div className="flex items-center gap-1 sm:gap-2">
+                        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
                             <ProgressChip />
                             <button
                                 onClick={toggleDyslexicMode}
@@ -101,7 +119,7 @@ export const Layout: React.FC = () => {
                                 aria-label="Søk (Ctrl+K)"
                             >
                                 <Search size={20} className="w-5 h-5" />
-                                <span className="hidden md:inline-flex items-center gap-0.5 px-1.5 py-0.5 ml-1 text-[10px] font-medium text-slate-400 border border-slate-200 rounded bg-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                <span className="hidden xl:inline-flex items-center gap-0.5 px-1.5 py-0.5 ml-1 text-[10px] font-medium text-slate-400 border border-slate-200 rounded bg-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                                     <span className="text-xs">Ctrl</span> K
                                 </span>
                             </button>
