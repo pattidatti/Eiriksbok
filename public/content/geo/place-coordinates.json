@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 311
+      "count": 313
     },
     {
       "tag": "dekolonisering",
@@ -823,16 +823,16 @@
       "count": 37
     },
     {
+      "tag": "kildekritikk",
+      "count": 36
+    },
+    {
       "tag": "kald-krig",
       "count": 36
     },
     {
       "tag": "nykolonialisme",
       "count": 36
-    },
-    {
-      "tag": "kildekritikk",
-      "count": 34
     },
     {
       "tag": "demokrati",
@@ -903,6 +903,10 @@
       "count": 19
     },
     {
+      "tag": "mysterier",
+      "count": 19
+    },
+    {
       "tag": "kultur",
       "count": 18
     },
@@ -925,10 +929,6 @@
     {
       "tag": "narrative",
       "count": 18
-    },
-    {
-      "tag": "mysterier",
-      "count": 17
     },
     {
       "tag": "kristendom",
@@ -1467,6 +1467,10 @@
       "count": 4
     },
     {
+      "tag": "vikingtid",
+      "count": 4
+    },
+    {
       "tag": "ressurser",
       "count": 4
     },
@@ -1980,10 +1984,6 @@
     },
     {
       "tag": "arkimedes",
-      "count": 2
-    },
-    {
-      "tag": "vikingtid",
       "count": 2
     },
     {

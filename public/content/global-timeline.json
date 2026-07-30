@@ -2106,6 +2106,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "harald-harfagre-gaten",
+      "title": "Samlet Harald Hårfagre virkelig Norge?",
+      "description": "Alle har lært at Harald samlet Norge i 872. Men hovedkilden vår ble skrevet 300 år senere, og samtidige kilder gir ham et mye mindre rike.",
+      "startDate": 865,
+      "endDate": 933,
+      "displayDate": "865-933",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/harald-harfagre-gaten",
+      "tags": [
+        "historie",
+        "vikingtid",
+        "norge",
+        "kildekritikk",
+        "rikssamlingen",
+        "mysterier"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "rikssamlingen",
       "title": "Rikssamlingen",
       "description": "Harald Hårfagre og samlingen av Norge.",

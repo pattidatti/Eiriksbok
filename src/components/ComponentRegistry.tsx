@@ -24,6 +24,7 @@ import { MapCarousel } from './MapCarousel';
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
 const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m => ({ default: m.Gaatekart })));
 const Kildekjeden = lazy(() => import('./content/interactive/Kildekjeden').then(m => ({ default: m.Kildekjeden })));
+const HaraldsRike = lazy(() => import('./content/interactive/HaraldsRike').then(m => ({ default: m.HaraldsRike })));
 const LegendensVekst = lazy(() => import('./content/interactive/LegendensVekst').then(m => ({ default: m.LegendensVekst })));
 const Skyldvekten = lazy(() => import('./content/interactive/Skyldvekten').then(m => ({ default: m.Skyldvekten })));
 const Diagnosebrettet = lazy(() => import('./content/interactive/Diagnosebrettet').then(m => ({ default: m.Diagnosebrettet })));
@@ -394,6 +395,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     QuoteBlock,
     Kildeliste,
     Kildekjeden,
+    HaraldsRike,
     LegendensVekst,
     Skyldvekten,
     Diagnosebrettet,
