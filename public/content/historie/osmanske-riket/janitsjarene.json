@@ -2,12 +2,12 @@
   "id": "janitsjarene",
   "title": "Janitsjarene: sultanens slavehær",
   "layout": "rich",
-  "year": "1383-1826",
+  "year": "1362-1826",
   "category": "Det osmanske riket",
   "readTime": "8 min lesning",
   "heroImage": "/images/osmanske-riket/janitsjarene-hero.webp",
   "details": [
-    "Janitsjarene var sultanens elitesoldater, hentet som kristne gutter fra Balkan gjennom devşirme-systemet.",
+    "Janitsjarene var sultanens elitesoldater, hentet som kristne gutter fra Balkan og Anatolia gjennom devşirme-systemet.",
     "Guttene ble formelt slaver, men de mest dyktige kunne stige helt til topps i riket.",
     "Til slutt ble janitsjarene så mektige at de kunne avsette sultaner, og i 1826 ble de oppløst med makt."
   ],
@@ -29,11 +29,11 @@
     },
     {
       "type": "text",
-      "content": "Hvert femte år eller så reiste sultanens menn rundt i de kristne landsbyene på Balkan. Der valgte de ut gutter, ofte mellom åtte og atten år. De friskeste og mest lovende ble skrevet inn i en bok og ført bort fra familiene sine. Dette systemet kalte osmanerne devşirme, et ord som betyr 'innsamling'. På norsk sier vi gjerne barnetributten."
+      "content": "Med jevne mellomrom reiste sultanens menn rundt i de kristne landsbyene på Balkan og i Anatolia. Der valgte de ut gutter mellom åtte og atten år (Peksevgen, 2025). De friskeste og mest lovende ble skrevet inn i en bok og ført bort fra familiene sine. Dette systemet kalte osmanerne devşirme. På norsk sier vi gjerne barnetributten."
     },
     {
       "type": "text",
-      "content": "Guttene ble formelt sultanens slaver. De ble muslimer, lærte tyrkisk og fikk en hard oppdragelse langt hjemmefra. For familiene var det en sorg å miste et barn. Men for guttene selv kunne det åpne dører ingen bonde ellers fikk se. Følg veien til en slik gutt og kjenn selv på hvor vanskelig det er å dømme dette systemet."
+      "content": "Guttene ble formelt sultanens slaver, hentet inn som en slags skatt blant ikke-muslimske familier (Ims, 2026). De ble muslimer, lærte tyrkisk og fikk opplæring i palasskoler i Edirne og Istanbul, langt hjemmefra (Peksevgen, 2025). For familiene var det en sorg å miste et barn. Men for guttene selv kunne det åpne dører ingen bonde ellers fikk se. Følg veien til en slik gutt og kjenn selv på hvor vanskelig det er å dømme dette systemet."
     },
     {
       "type": "component",
@@ -48,25 +48,17 @@
     },
     {
       "type": "text",
-      "content": "De fleste guttene endte som janitsjarer, sultanens stående elitehær. Mens fienden måtte rope sammen krigere på nytt for hver kamp, hadde janitsjarene trent sammen hele livet. De var lønnet, disiplinerte og lojale bare mot sultanen. De var også blant de første soldatene i verden som brukte håndvåpen med krutt i stor skala. I kamp etter kamp gjorde de utslaget."
+      "content": "De fleste guttene endte som janitsjarer, sultanens stående elitehær. Som fast avdeling fantes korpset helt fra 1362, under sultan Murad 1. (Ims, 2026). Mens fienden måtte rope sammen krigere på nytt for hver kamp, hadde janitsjarene trent sammen hele livet. De var lønnet, disiplinerte og lojale bare mot sultanen. Først var de væpnet med bue, senere med skytevåpen og sabel (Ims, 2026). I kamp etter kamp gjorde de utslaget."
     },
     {
       "type": "text",
-      "content": "Janitsjarene levde sammen i egne kaserner, nesten som en stor familie. De spiste fra de samme store grytene, og kjelene ble et symbol for hele korpset. Når janitsjarene var misfornøyde, veltet de grytene sine, og alle skjønte at det var alvor."
-    },
-    {
-      "type": "component",
-      "name": "QuoteBlock",
-      "props": {
-        "text": "Disse soldatene var sultanens høyre hånd. Han kledde dem, lønnet dem og stolte på dem mer enn på sine egne slektninger.",
-        "author": "En europeisk ambassadør på 1500-tallet"
-      }
+      "content": "Janitsjarene levde og spiste sammen i egne kaserner, nesten som en stor familie. Alle hørte til bektasji-ordenen, et religiøst brorskap som bandt korpset sammen på tvers av rekkene (Ims, 2026). Når janitsjarene var misfornøyde, viste de det samlet, og alle skjønte at det var alvor."
     },
     {
       "type": "image",
       "src": "/images/osmanske-riket/janitsjarene-02.webp",
       "alt": "Janitsjarer samlet rundt store kobbergryter i en kaserne",
-      "caption": "De store grytene var et symbol for korpset. Å velte dem var janitsjarenes måte å si fra på."
+      "caption": "Janitsjarene levde og spiste sammen i egne kaserner. Fellesskapet bandt korpset tett sammen."
     },
     {
       "type": "header",
@@ -74,30 +66,30 @@
     },
     {
       "type": "text",
-      "content": "Her ligger det merkeligste ved hele systemet. Disse mennene var slaver, men noen av dem ble rikets virkelige makthavere. De flinkeste guttene ble ikke soldater, men ble utdannet i palasset. De kunne stige til topps som guvernører, generaler og til og med storvesir, sjefen for hele rikets styre. En gjeterunge fra en fjellandsby kunne altså ende som den nest mektigste mannen i riket, bare etter sultanen selv."
+      "content": "Her ligger det merkeligste ved hele systemet. Disse mennene var slaver, men noen av dem ble rikets virkelige makthavere. De flinkeste guttene ble ikke soldater, men ble utdannet i palasset. De kunne stige til topps som guvernører, generaler og til og med storvesir, sjefen for hele rikets styre. En gjeterunge fra en fjellandsby kunne altså ende som den nest mektigste mannen i riket, bare etter sultanen selv. De fleste storvesirene på 1500- og tidlig 1600-tallet kom nettopp fra dette systemet (Peksevgen, 2025)."
     },
     {
       "type": "text",
-      "content": "Men makt har en bakside. Etter hvert ble janitsjarene klar over hvor sterke de var. De krevde høyere lønn, de blandet seg i politikken, og de gjorde opprør når de ble misfornøyde. Flere sultaner ble avsatt, og noen til og med drept, av sin egen elitehær. Den styrken som en gang gjorde riket mektig, var blitt en trussel mot herskeren selv."
+      "content": "Men makt har en bakside. Etter hvert ble janitsjarene klar over hvor sterke de var. De krevde høyere lønn, de blandet seg i politikken, og de gjorde opprør når de ble misfornøyde. Allerede i 1512 var de en så sterk maktfaktor at de kunne tvinge sultan Bayezit 2. fra tronen (Ims, 2026). Flere sultaner ble avsatt, og noen til og med drept, av sin egen elitehær. Den styrken som en gang gjorde riket mektig, var blitt en trussel mot herskeren selv."
     },
     {
       "type": "text",
-      "content": "Til slutt ble det for mye. I 1826 bestemte sultan Mahmud 2. seg for å bli kvitt dem. Da janitsjarene gjorde opprør igjen, slo han hardt tilbake og oppløste hele korpset med makt. Etter nesten 500 år var historien om sultanens slavehær over. Det sier mye om systemet at det både hadde løftet fattige gutter til topps og til slutt måtte knuses for at sultanen skulle få beholde makten."
+      "content": "Til slutt ble det for mye. Sultan Mahmut 2., som styrte fra 1808 til 1839, ville reformere hæren etter europeisk mønster. Da janitsjarene gjorde opprør mot reformene i 1826, slo han hardt tilbake (Goplen, 2026). Massakren rammet både janitsjarer og ledere i bektasji-ordenen, og sultanen kunne bygge en helt ny hær fra grunnen av (Ims, 2026). Etter mer enn 450 år var historien om sultanens slavehær over. Det sier mye om systemet at det både hadde løftet fattige gutter til topps og til slutt måtte knuses for at sultanen skulle få beholde makten."
     },
     {
       "type": "image",
       "src": "/images/osmanske-riket/janitsjarene-03.webp",
       "alt": "Soldater i nye uniformer marsjerer mens gamle faner ligger igjen",
-      "caption": "I 1826 oppløste sultanen janitsjarene med makt. En 500 år gammel ordning var over."
+      "caption": "I 1826 oppløste sultanen janitsjarene med makt. En ordning på over 450 år var over."
     },
     {
         "type": "component",
         "name": "Oppgaver",
         "props": {
             "forstaa": [
-                "Hva var devşirme, eller barnetributten, og hvor hentet sultanens menn guttene fra?",
+                "Hva var devşirme, eller barnetributten, og hvilke to områder hentet sultanens menn guttene fra?",
                 "Hvorfor var janitsjarene en så sterk hær? Nevn minst tre grunner fra teksten.",
-                "Hva betydde de store grytene for janitsjarene, og hva skjedde når de veltet dem?",
+                "Hva var bektasji-ordenen, og hvorfor var fellesskapet i kasernene viktig for janitsjarene?",
                 "Hva skjedde med janitsjarene i 1826, og hvem sto bak?"
             ],
             "reflekter": [
@@ -122,23 +114,23 @@
             "question": "Hva var devşirme, eller barnetributten?",
             "options": [
               "En skatt som ble betalt i korn",
-              "Et system der kristne gutter på Balkan ble hentet ut til tjeneste for sultanen",
+              "Et system der kristne gutter på Balkan og i Anatolia ble hentet ut til tjeneste for sultanen",
               "En religiøs høytid",
               "En type våpen"
             ],
             "answer": 1,
-            "explanation": "Devşirme betyr 'innsamling'. Sultanens menn hentet ut lovende kristne gutter fra landsbyene på Balkan. Guttene ble muslimer og slaver i sultanens tjeneste."
+            "explanation": "Sultanens menn hentet ut lovende kristne gutter mellom åtte og atten år fra landsbyene på Balkan og i Anatolia. Guttene ble muslimer og slaver i sultanens tjeneste."
           },
           {
             "question": "Hva gjorde janitsjarene til en så sterk hær?",
             "options": [
               "De var flere millioner soldater",
-              "De var fast trent, lønnet og disiplinerte, og brukte krutt tidlig",
+              "De var en fast avdeling som trente sammen hele livet, var lønnet og lojale bare mot sultanen",
               "De hadde fly og kanoner fra starten",
               "De kjempet bare når de hadde lyst"
             ],
             "answer": 1,
-            "explanation": "Janitsjarene var en stående hær som trente sammen hele livet, var lønnet og lojale mot sultanen. De var også blant de første som brukte håndvåpen med krutt i stor skala."
+            "explanation": "Janitsjarene var en stående hær som trente sammen hele livet, var lønnet og lojale mot sultanen. Først var de væpnet med bue, senere med skytevåpen og sabel."
           },
           {
             "question": "Hva er det merkeligste paradokset ved janitsjarene?",
@@ -160,11 +152,23 @@
               "De tapte en krig mot Norge"
             ],
             "answer": 1,
-            "explanation": "Janitsjarene var blitt så sterke at de kunne avsette sultaner. I 1826 slo sultan Mahmud 2. hardt tilbake mot et opprør og oppløste hele korpset."
+            "explanation": "Janitsjarene var blitt så sterke at de kunne avsette sultaner. I 1826 slo sultan Mahmut 2. hardt tilbake mot et opprør og oppløste hele korpset."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Goplen, Å. (2026). *Mahmut 2.* Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Mahmud_2](https://snl.no/Mahmud_2)",
+          "Ims, G. A. (2026). *Janitsjarene*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Janitsjarene](https://snl.no/Janitsjarene)",
+          "Peksevgen, Ş. (2025). *Devsjirme-systemet*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Devsjirme-systemet](https://snl.no/Devsjirme-systemet)"
         ]
       }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-07-31"
 }
