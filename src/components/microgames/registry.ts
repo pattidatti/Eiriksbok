@@ -16,6 +16,7 @@ const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
 const Stemmesporet3D = lazy(() => import('./Stemmesporet3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
+const Vikinghjelmen3D = lazy(() => import('./Vikinghjelmen3D'));
 const Vesterled3D = lazy(() => import('./Vesterled3D'));
 const DelawareKrysning3D = lazy(() => import('./DelawareKrysning3D'));
 const LeonardoFlygemaskin3D = lazy(() => import('./LeonardoFlygemaskin3D'));
@@ -825,6 +826,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./VikingShip3D'),
         Component: VikingShip3D as never,
+    },
+    'vikinghjelmen-3d': {
+        id: 'vikinghjelmen-3d',
+        title: 'Sett sammen vikinghjelmen',
+        description:
+            'Du er konservator. Dra de fire delene fra Gjermundbu-funnet opp på hjelmestativet og bygg den eneste bevarte vikinghjelmen i Norge. På bordet ligger også et par horn - prøver du å sette dem på, faller de av, for det finnes verken funn eller feste for dem. Til slutt reiser operahjelmen fra 1876 seg ved siden av, og du ser de to side om side. Lyspæra: hornhjelmen kom fra en teaterscene, ikke fra vikingtiden.',
+        estimatedSeconds: 150,
+        loader: () => import('./Vikinghjelmen3D'),
+        Component: Vikinghjelmen3D as never,
     },
     'vesterled-3d': {
         id: 'vesterled-3d',

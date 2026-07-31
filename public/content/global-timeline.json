@@ -6173,6 +6173,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "hvem-eier-vikingene",
+      "title": "Hvem eier vikingene?",
+      "description": "Hornhjelmen kom fra en operascene i 1876, og DNA viser at vikingene ikke var ett rent folk. Slik sjekker du et vikingsymbol.",
+      "startDate": 1876,
+      "endDate": 2026,
+      "displayDate": "1876-2026",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/hvem-eier-vikingene",
+      "tags": [
+        "historie",
+        "vikingtid",
+        "norge",
+        "kildekritikk",
+        "symboler",
+        "mysterier"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "jim-crow-lovene",
       "title": "Jim Crow: «Separate but equal»",
       "description": "Vannfontener, busser og drømmer – slik delte Jim Crow-lovene det amerikanske sør.",

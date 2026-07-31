@@ -1,0 +1,241 @@
+{
+    "id": "hvem-eier-vikingene",
+    "title": "Hvem eier vikingene?",
+    "layout": "rich",
+    "year": "1876-2026",
+    "category": "Historiens store gåter",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Ingen hjelm med horn er funnet fra vikingtiden - hornene kom fra en operascene i 1876",
+        "DNA fra 442 skjeletter viser at folk i vikingtiden var blandet, ikke ett rent folk",
+        "Både museer, spillselskaper og høyreekstreme grupper bruker de samme norrøne tegnene"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "På gården Gjermundbu på Ringerike gravde en gårdssønn i 1943 fram en grav fra vikingtiden. I jorda lå våpen, rideutstyr og en hjelm av jern. Den hjelmen er fortsatt den eneste bevarte vikinghjelmen som er funnet i Norge, og i dag står den på Historisk museum i Oslo (Stylegar, 2026). Hjelmen er rund og glatt, med en liten jernbeskyttelse over øynene og nesen. Den har ingen horn."
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg likevel en viking. De fleste ser for seg en skjeggete mann med horn på hjelmen. Det bildet stemmer ikke med et eneste arkeologisk funn. Og hornene er bare begynnelsen. Mye av det vi tror vi vet om vikingene, ble laget lenge etter at de siste vikingskipene var råtnet bort - og noen har brukt det til å si noe helt annet enn det funnene sier."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Rund jernhjelm uten horn i en glassmonter på et museum",
+            "caption": "Hjelmen fra Gjermundbu er den eneste bevarte vikinghjelmen i Norge. Den er glatt og rund."
+        },
+        {
+            "type": "header",
+            "text": "Hjelmen som aldri fantes"
+        },
+        {
+            "type": "text",
+            "content": "Arkeologer har aldri funnet en eneste hjelm med horn fra vikingtiden (Andersen, 2025). Ikke i Norge, ikke i Danmark, ikke noe annet sted. Hornhjelmen ble laget på en teaterscene. Da Richard Wagner satte opp operaen «Nibelungens ring» på 1870-tallet, tegnet kostymedesigneren Carl Emil Doepler klærne til skuespillerne. Han blandet trekk fra ulike land og tidsaldre, og satte horn på hjelmene. Premieren i 1876 ble en enorm suksess, forestillingen dro på turné i Europa, og kostymene ble kopiert av kunstnere, tegnere og folk som lagde skolebøker (Andersen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Grava på Gjermundbu forteller også noe om hvor sjeldne slike funn er. Den var en mannsgrav fra siste halvdel av 900-tallet, og den inneholdt et omfattende sett med våpen og rideutstyr (Stylegar, 2026). Hjelmer av jern var dyre og forbeholdt de få. De fleste som dro på tokt, hadde verken hjelm eller brynje. Bildet av en hel hær med skinnende hjelmer er altså også laget senere."
+        },
+        {
+            "type": "text",
+            "content": "Det finnes hjelmer med horn i Norden, men de er mye eldre. To berømte hjelmer fra bronsealderen er funnet ved Veksø i Danmark, over tusen år før [vikingtiden](/historie/vikingtiden/artikkel) begynte rundt år 800 (Andersen, 2025; Bandlien, 2026). De har ingenting med vikinger å gjøre. Verdens mest kjente vikingsymbol er altså yngre enn telefonen, og det kom fra en opera."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "vikinghjelmen-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Vikingene var ikke ett folk"
+        },
+        {
+            "type": "text",
+            "content": "I 2020 la et internasjonalt forskerlag fram DNA fra 442 skjeletter fra vikingtiden. Skjelettene kom fra graver over hele Europa og helt til Grønland (University of Cambridge, 2020). Resultatet overrasket forskerne selv. Gener hadde strømmet inn i Skandinavia fra sør og øst både før og under vikingtiden. Folk som lå i vikinggraver på Orknøyene hadde irsk og skotsk opphav, uten skandinaviske gener i det hele tatt. Og mange av dem vi kaller vikinger, hadde brunt hår, ikke lyst."
+        },
+        {
+            "type": "text",
+            "content": "Studien ga også noen uventede enkeltbilder. I en båtgrav i Estland lå fire brødre som døde samme dag. Og sporene etter vikingtiden i Europa i dag er mindre enn mange tror: rundt seks prosent av befolkningen i Storbritannia bærer gener fra vikingtiden, mot rundt ti prosent i Sverige (University of Cambridge, 2020). Vikingene satte spor, men de erstattet ikke folkene de møtte."
+        },
+        {
+            "type": "text",
+            "content": "Å være viking var altså mer noe man gjorde enn noe man var født som. Ordet beskrev folk som dro ut på tokt, handlet, plyndret og bosatte seg nye steder. Vikingtiden varte fra omkring 800 til omkring 1050, og var like mye en tid for handel, nye byer og religionsskifte som for krig (Bandlien, 2026). Oslo, Nidaros og Sigtuna ble grunnlagt i denne perioden."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Folk gravlagt som vikinger kunne ha helt annet opphav enn skandinavisk",
+                "Gener kom inn i Norden fra sør og øst, ikke bare ut av Norden",
+                "Vikingtiden var en tid med handel og byer, ikke bare plyndring"
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Da vikingene ble tatt i bruk"
+        },
+        {
+            "type": "text",
+            "content": "På 1800-tallet trengte Norge en fortelling om seg selv. Landet lå i union med Sverige og hadde nettopp fått en grunnlov. Malere dro til fjells, eventyrsamlere dro til bygdene, og [nasjonalromantikken](/norsk/litteraturhistorie/nasjonalromantikken) fant to ting å bygge på: 1814 og vikingtiden. Det var i denne perioden vikingskipene ble gravd fram og gjort til nasjonale skatter. Norge var ikke alene om dette; de fleste land i Europa valgte seg [en gullalder](/historie/nasjonalstatenes-tid/nasjonenes-gullaldre) å vise fram."
+        },
+        {
+            "type": "text",
+            "content": "På 1930-tallet gikk Nasjonal Samling mye lenger. Partiet til Vidkun Quisling hentet både navn og tegn fra fortiden. Eliteformasjonen fikk navnet hirden, etter livvakten til vikingkongene. Partiet brukte solkorset, som de hevdet stammet fra skjoldet til Olav den hellige, og byttet ut de norske fargene rødt, hvitt og blått med kongsfargene rødt og gull (Korneliussen, 2022). Fortiden ble ikke gjenfortalt. Den ble plukket i, og bitene som passet ideologien, ble løftet fram."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Å søke seg til en tidligere gullalder er noe man finner i all nasjonalisme.",
+                "author": "Øystein Sørensen, professor i historie ved Universitetet i Oslo (Korneliussen, 2022)"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Faneborg med solkors-merker i en folkemengde på 1930-tallet",
+            "caption": "Nasjonal Samling hentet navn, farger og tegn fra vikingtiden og middelalderen."
+        },
+        {
+            "type": "header",
+            "text": "De samme tegnene i dag"
+        },
+        {
+            "type": "text",
+            "content": "Forskerne Øystein Sørensen og Karoline Kjesrud har sammenlignet propagandaen fra 1930- og 1940-tallet med propagandaen til dagens høyreekstreme grupper. De fant at de samme tegnene går igjen: runer, solkors, Tors hammer og pynt hentet fra stavkirkene. Grupper som Proud Boys, Soldiers of Odin og Den nordiske motstandsbevegelsen bruker slike symboler i logoer og bilder. Kjesrud peker på at uttrykket er blitt hardere. Der naziplakatene fra 1930-tallet var fargerike og laget for et bredt publikum, er dagens bilder mørke i svart, grått og grønt, og de retter seg mot et smalt publikum (Korneliussen, 2022)."
+        },
+        {
+            "type": "text",
+            "content": "Men det er ikke slik at alle som bruker norrøne tegn, står for det samme. Runer står på gravsteiner og i museer. De brukes i spill, i filmer, i musikk og i tatoveringer. Mange bruker Tors hammer fordi de liker historien, ikke fordi de har en politisk mening. Det er nettopp derfor koblingen til ekstremisme er et problem for alle andre som er interessert i vikingtiden: det samme tegnet kan bety helt ulike ting, avhengig av hvem som bærer det (Moe, 2021)."
+        },
+        {
+            "type": "component",
+            "name": "SymbolSporet",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Så hvem eier vikingene?"
+        },
+        {
+            "type": "text",
+            "content": "Svaret er kort: ingen. Ingen kan ta patent på en rune eller kjøpe eneretten til et vikingskip. Fortiden er ikke privat eiendom. Men det betyr ikke at all bruk er like god. En påstand kan sjekkes mot funn, og noen påstander holder ikke. Ideen om et rent nordisk folk i vikingtiden er en slik påstand. Den kom ikke fra vikingene selv, men fra nasjonalismen på 1800- og 1900-tallet, og DNA-funnene fra 2020 sier det motsatte (University of Cambridge, 2020; Korneliussen, 2022)."
+        },
+        {
+            "type": "text",
+            "content": "Forskerne som har studert dette, mener at det viktigste ikke er å forby tegn, men å snakke om dem og vise hva kildene faktisk sier. Da blir det tydelig at fortellingen enkelte grupper bygger på, ikke stemmer med funnene (Korneliussen, 2022; Moe, 2021). Det er en oppgave alle kan gjøre. Du trenger ikke være arkeolog for å spørre hvor et bilde kommer fra."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Tre spørsmål til et vikingsymbol",
+                "content": "1. Hva sier funnene? Finnes tingen i graver, i runeinnskrifter eller i samtidige tekster - eller finnes den bare på bilder laget senere? 2. Hvem fant det på? Mange «vikingting» ble laget på 1800-tallet, i teatret eller i reklame. Finn året og personen. 3. Hvem bruker det nå, og til hva? Det samme tegnet kan bety noe helt ulikt hos et museum og hos en politisk gruppe."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom som ser på runeinnskrift på en stein i et museum",
+            "caption": "Å sjekke et symbol krever ikke utstyr. Det krever tre spørsmål og litt tid."
+        },
+        {
+            "type": "text",
+            "content": "Vikingtiden er full av spørsmål der svaret er mindre sikkert enn det vi liker å tro. [Samlet Harald Hårfagre virkelig Norge?](/historie/historiens-store-gater/harald-harfagre-gaten) er et av dem. Felles for alle disse gåtene er at de blir mest interessante når vi slutter å lete etter et enkelt svar, og i stedet ser på hvem som fortalte historien, og hvorfor de ville fortelle akkurat den."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor og når ble den eneste bevarte vikinghjelmen i Norge funnet, og hvordan ser den ut?",
+                    "Hvem laget kostymene med horn, til hvilken opera, og hvilket år hadde forestillingen premiere?",
+                    "Hvor mange skjeletter fra vikingtiden ble undersøkt i DNA-studien fra 2020, og hva viste funnene fra Orknøyene?",
+                    "Nevn tre tegn eller navn som Nasjonal Samling hentet fra fortiden."
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor hornhjelmen kan kalles et yngre symbol enn telefonen.",
+                    "Hvorfor er DNA-funnene fra 2020 et problem for påstanden om et rent nordisk folk? Bruk ordene «kilde» og «bevis» i svaret.",
+                    "Karoline Kjesrud peker på at dagens høyreekstreme bilder er mørkere og retter seg mot et smalere publikum enn plakatene fra 1930-tallet. Hva kan det fortelle oss om hvem budskapet er laget for?",
+                    "Mange bruker runer og Tors hammer uten å ha noen politisk mening. Hvorfor blir det likevel vanskelig for dem når ekstreme grupper bruker de samme tegnene?"
+                ],
+                "gaaVidere": [
+                    "Finn tre bilder av vikinger fra reklame, spill eller film. Bruk de tre spørsmålene i faktaboksen på hvert bilde, og skriv en kort dom over hvor mye av bildet som stemmer med funnene.",
+                    "Diskuter i klassen: Bør det være lov å bruke gamle symboler til hva man vil? Begrunn svaret med minst ett argument for og ett mot.",
+                    "Skriv et kort innlegg til skoleavisa der du forklarer for en tiåring hvorfor vikinger ikke hadde horn på hjelmen. Bruk maks 150 ord."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvor mange hjelmer med horn er funnet fra vikingtiden?",
+                        "options": ["Ingen", "Én, fra Gjermundbu", "Rundt ti", "Flere hundre"],
+                        "correctIndex": 0,
+                        "explanation": "Arkeologer har ikke funnet en eneste hjelm med horn fra vikingtiden. Hjelmen fra Gjermundbu er rund og glatt (Andersen, 2025)."
+                    },
+                    {
+                        "question": "Hvor kom bildet av vikingen med hornhjelm fra?",
+                        "options": [
+                            "Fra runeinnskrifter i Norge",
+                            "Fra kostymene i Wagners opera på 1870-tallet",
+                            "Fra danske kirkemalerier",
+                            "Fra vikingenes egne sagaer"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Carl Emil Doepler tegnet kostymene til «Nibelungens ring», og etter premieren i 1876 spredte hornhjelmen seg til kunst og skolebøker (Andersen, 2025)."
+                    },
+                    {
+                        "question": "Hva viste DNA-studien av 442 skjeletter fra vikingtiden?",
+                        "options": [
+                            "At alle vikinger var lyse og skandinaviske",
+                            "At folk i vikinggraver kunne ha helt annet opphav, og at gener kom inn fra sør og øst",
+                            "At vikingene aldri forlot Skandinavia",
+                            "At vikingene var i slekt med romerne"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Folk gravlagt som vikinger på Orknøyene hadde irsk og skotsk opphav, og mange vikinger hadde brunt hår (University of Cambridge, 2020)."
+                    },
+                    {
+                        "question": "Hva het eliteformasjonen til Nasjonal Samling, oppkalt etter livvakten til vikingkongene?",
+                        "options": ["Hirden", "Leidangen", "Tinget", "Kongsfargene"],
+                        "correctIndex": 0,
+                        "explanation": "Hirden var navnet på livvakten til vikingkongene, og NS gjenbrukte navnet på sin egen eliteformasjon (Korneliussen, 2022)."
+                    },
+                    {
+                        "question": "Hva mener forskerne er det viktigste å gjøre med symboler som blir misbrukt?",
+                        "options": [
+                            "Forby alle gamle symboler",
+                            "Snakke om dem og vise hva kildene faktisk sier",
+                            "Fjerne dem fra museene",
+                            "La være å nevne dem"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Forskerne mener det er viktig å snakke om symbolbruken og vise at ideologien ikke stemmer med de historiske funnene (Korneliussen, 2022; Moe, 2021)."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, K. H. (2025). *MYTE: Havde vikingernes hjelme horn?* Danmarkshistorien, Aarhus Universitet. Hentet 31.07.2026 fra [danmarkshistorien.lex.dk](https://danmarkshistorien.lex.dk/MYTE_Havde_vikingernes_hjelme_horn%3F)",
+                    "Bandlien, B. (2026). *Vikingtiden*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/vikingtiden](https://snl.no/vikingtiden)",
+                    "Korneliussen, A.-K. (2022). *Høyreekstreme pynter seg med fortida - men det er de ikke alene om*. Institutt for arkeologi, konservering og historie, Universitetet i Oslo. Hentet 31.07.2026 fra [hf.uio.no](https://www.hf.uio.no/iakh/forskning/aktuelt/aktuelle-saker/2022/hoyreekstreme-pynter-seg-med-fortida.html)",
+                    "Moe, M. J. (2021). *Blir vi aldri lei av vikingene?* NDLA. Hentet 31.07.2026 fra [ndla.no](https://ndla.no/r/norsk-pb/blir-vi-aldri-lei-av-vikingene/7c5bab00a2)",
+                    "Stylegar, F.-A. H. (2026). *Gjermundbufunnet*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Gjermundbufunnet](https://snl.no/Gjermundbufunnet)",
+                    "University of Cambridge. (2020). *World's largest-ever DNA sequencing of Viking skeletons reveals they weren't all Scandinavian*. Hentet 31.07.2026 fra [cam.ac.uk](https://www.cam.ac.uk/research/news/worlds-largest-ever-dna-sequencing-of-viking-skeletons-reveals-they-werent-all-scandinavian)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

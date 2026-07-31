@@ -2841,6 +2841,21 @@
               ],
               "createdDate": "2026-07-30T00:00:00Z",
               "lastUpdated": "2026-07-30T07:31:54+02:00"
+            },
+            {
+              "id": "hvem-eier-vikingene",
+              "title": "Hvem eier vikingene?",
+              "description": "Hornhjelmen kom fra en operascene i 1876, og DNA viser at vikingene ikke var ett rent folk. Slik sjekker du et vikingsymbol.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "vikingtid",
+                "norge",
+                "kildekritikk",
+                "symboler",
+                "mysterier"
+              ],
+              "createdDate": "2026-07-31T00:00:00Z"
             }
           ]
         },

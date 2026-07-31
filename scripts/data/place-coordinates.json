@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 313
+      "count": 315
     },
     {
       "tag": "dekolonisering",
@@ -819,12 +819,12 @@
       "count": 39
     },
     {
-      "tag": "religion",
-      "count": 37
+      "tag": "kildekritikk",
+      "count": 38
     },
     {
-      "tag": "kildekritikk",
-      "count": 36
+      "tag": "religion",
+      "count": 37
     },
     {
       "tag": "kald-krig",
@@ -891,6 +891,10 @@
       "count": 22
     },
     {
+      "tag": "mysterier",
+      "count": 21
+    },
+    {
       "tag": "steinalder",
       "count": 20
     },
@@ -900,10 +904,6 @@
     },
     {
       "tag": "samfunn",
-      "count": 19
-    },
-    {
-      "tag": "mysterier",
       "count": 19
     },
     {
@@ -1003,6 +1003,14 @@
       "count": 12
     },
     {
+      "tag": "dialekt",
+      "count": 11
+    },
+    {
+      "tag": "talemål",
+      "count": 11
+    },
+    {
       "tag": "atomvåpen",
       "count": 11
     },
@@ -1076,14 +1084,6 @@
     },
     {
       "tag": "identitet",
-      "count": 9
-    },
-    {
-      "tag": "dialekt",
-      "count": 9
-    },
-    {
-      "tag": "talemål",
       "count": 9
     },
     {
@@ -1256,6 +1256,10 @@
     },
     {
       "tag": "fimbulvinter",
+      "count": 6
+    },
+    {
+      "tag": "vikingtid",
       "count": 6
     },
     {
@@ -1479,10 +1483,6 @@
       "count": 4
     },
     {
-      "tag": "vikingtid",
-      "count": 4
-    },
-    {
       "tag": "ressurser",
       "count": 4
     },
@@ -1556,6 +1556,10 @@
     },
     {
       "tag": "ideologi",
+      "count": 4
+    },
+    {
+      "tag": "symboler",
       "count": 4
     },
     {
@@ -2439,6 +2443,22 @@
       "count": 2
     },
     {
+      "tag": "geolekt",
+      "count": 2
+    },
+    {
+      "tag": "isogloss",
+      "count": 2
+    },
+    {
+      "tag": "dialektgrense",
+      "count": 2
+    },
+    {
+      "tag": "språkgeografi",
+      "count": 2
+    },
+    {
       "tag": "samer",
       "count": 2
     },
@@ -2964,10 +2984,6 @@
     },
     {
       "tag": "samisk",
-      "count": 2
-    },
-    {
-      "tag": "symboler",
       "count": 2
     },
     {
