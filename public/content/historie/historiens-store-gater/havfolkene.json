@@ -1,0 +1,244 @@
+{
+    "id": "havfolkene",
+    "title": "Hvem var havfolkene?",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "1177 fvt",
+    "category": "Historiens store gåter",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Havfolkene er et samlenavn egypterne brukte på flere fremmede grupper som kom sjøveien rundt år 1200 fvt.",
+        "Nesten alt vi har om dem, er skrevet av fienden deres: egyptiske seiersinnskrifter.",
+        "Arvestoff og keramikk viser at noen av dem kom fra Europa, men forskerne er fortsatt uenige om hvem de var."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "På en tempelvegg i Egypt står et av de mest kjente bildene fra oldtiden. Skipene ligger tett i tett i Nildeltaet. Menn med fjærkroner på hodet faller i vannet. Egyptiske bueskyttere skyter fra land. Over det hele troner farao Ramses 3., dobbelt så stor som alle andre, med buen spent. Under bildene har skriverne hugget inn hva som skjedde: et forbund av fremmede folk kom over havet, og farao slo dem tilbake."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Egyptisk tempelrelieff av sjøslag med skip og krigere i Nildeltaet",
+            "caption": "Slaget i Nildeltaet slik det ble hugget inn i tempelveggen til Ramses 3. Bildet viser bare den ene sidens versjon."
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hvem som forteller. Alle på bildet som ikke er egyptere, er tegnet som tapere. Ingen av dem får si et eneste ord. Det er hele problemet med havfolkene, og grunnen til at de fortsatt er en av [Historiens store gåter](/historie/historiens-store-gater/oversikt)."
+        },
+        {
+            "type": "header",
+            "text": "Ett navn på mange folk"
+        },
+        {
+            "type": "text",
+            "content": "Havfolkene er ikke navnet på ett folk. Det er et samlenavn forskere bruker på flere grupper som slo seg ned langs kysten av det østlige Middelhavet i overgangen mellom bronsealder og jernalder, altså fra 1300-tallet til 1100-tallet fvt (Groth, 2024). Egyptiske tekster nevner dem med hvert sitt navn: sherden, teresh, tjeker, weshesh, denuna, ekwesh, lukka, shekelesh og peleset."
+        },
+        {
+            "type": "text",
+            "content": "Forskerne har lenge prøvd å knytte navnene til steder på kartet. De vanligste forslagene er:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Sherden: Sardinia, øya vest i Middelhavet.",
+                "Shekelesh: Sicilia.",
+                "Ekwesh og denuna: Hellas og øyene i Egeerhavet.",
+                "Lukka: Lykia, en kystdel av dagens Tyrkia.",
+                "Peleset: Kreta eller et annet sted i Egeerhavet. Dette er gruppen Bibelen kaller filistere."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Ingen av koblingene er sikre. Opprinnelsen er omstridt, og gjennom årene er både Sicilia, Balkan, områdene nord for Svartehavet, Lilleasia og Kreta blitt foreslått som hjemsted. I dag heller de fleste forskere mot at havfolkene kom fra flere av områdene rundt Egeerhavet, og at sammensetningen deres var mer sammensatt enn man før trodde (Groth, 2024)."
+        },
+        {
+            "type": "header",
+            "text": "Kilden er skrevet av motstanderen"
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg at alt du visste om en krangel i skolegården, kom fra én person: den som vant. Du hadde fått vite at hen ble angrepet uten grunn, at motparten var mange og sinte, og at hen selv holdt hodet kaldt. Du hadde ikke fått vite hva den andre het, hvor hen kom fra, eller hvorfor hen ble sint."
+        },
+        {
+            "type": "text",
+            "content": "Slik er kildesituasjonen for havfolkene. De viktigste tekstene er innskriftene i tempelet Medinet Habu, Papyrus Harris fra tiden etter Ramses 3., og de eldre Amarnabrevene (Groth, 2024). Alle er egyptiske. Havfolkene selv har ikke etterlatt seg en eneste tekst vi kan lese. Kildene om dem er nesten bare egyptiske, og de beskriver dem kun som fiender i kamp (Mark, 2009)."
+        },
+        {
+            "type": "text",
+            "content": "En seiersinnskrift er heller ikke en nøytral rapport. Den ble hugget inn på farao sin egen gravtempelvegg for å vise hvor mektig kongen var. Noen setninger i den kan vi likevel sjekke mot andre funn. Andre er ren skryt. Å skille de to fra hverandre er selve jobben til en historiker."
+        },
+        {
+            "type": "component",
+            "name": "Seiersinnskriften",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor la de ut på havet?"
+        },
+        {
+            "type": "text",
+            "content": "Havfolkene dukker opp i en periode da nesten hele Middelhavsverdenen raknet. Byer ble brent, riker forsvant, og handelen som hadde bundet området sammen, stoppet opp. Farao Merenptah (ca. 1213-1203 fvt) måtte slå tilbake et angrep, og under Ramses 3. (ca. 1186-1155 fvt) kom det store sammenstøtet. Egyptiske kilder daterer det til 1177 fvt (Groth, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Historikeren Eric Cline (2021) mener at havfolkene umulig kan ha felt så mange riker på egen hånd. I stedet peker han på en kjede av kriser som virket samtidig: tørke, jordskjelv, opprør, angrep og brudd i handelsrutene. Bronsealderens riker var tett vevd sammen og avhengige av hverandre, og nettopp derfor forplantet krisen seg så fort. Havfolkene er da like mye et tegn på at noe var galt, som årsaken til at det gikk galt."
+        },
+        {
+            "type": "text",
+            "content": "Dette henger tett sammen med [Bronsealderens kollaps](/samfunnskunnskap/imperienes-fall/bronsealderens-kollaps), der du kan lese mer om hvorfor så mange riker falt nesten samtidig, og med [Hvorfor imperier faller](/samfunnskunnskap/imperienes-fall/hvorfor-imperier-faller)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Uttørket åker ved kysten med tomme skip som ligger klare i vannet",
+            "caption": "Når avlingene sviktet flere år på rad, ble havet den eneste veien ut. Mange av dem som kom, flyktet trolig fra sult."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "havfolkene-kommer"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Sporene i bakken"
+        },
+        {
+            "type": "text",
+            "content": "Heldigvis finnes det kilder som ikke kan skryte. Arkeologene har gravd ut byene der én av gruppene slo seg ned, nemlig peleset, som vi kjenner best som filistrene. Fra rundt 1175 fvt bosatte de seg sør i Kanaan, og i to hundre år var de fem byene deres, Ashdod, Ashkelon, Ekron, Gat og Gaza, en viktig makt i området (Groth, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "I bakken finner arkeologene keramikk som ser egeisk ut. Formene og dekoren skiller seg tydelig fra det som var vanlig i Kanaan fra før, men leiren er lokal. Det betyr at folk som kunne håndverket fra Egeerhavet, laget kruset sitt på et nytt sted. Det er akkurat det du forventer å finne hvis mennesker har flyttet, ikke bare varer."
+        },
+        {
+            "type": "text",
+            "content": "I 2019 kom det sterkeste beviset så langt. Et forskerlag hentet ut arvestoff fra ti mennesker som ble gravlagt i Ashkelon i bronsealder og jernalder. De fra tidlig jernalder hadde en arv fra Sør-Europa som de eldre gravene ikke hadde. Innen to hundre år var det sporet borte igjen, sannsynligvis fordi de nyankomne giftet seg inn i lokalbefolkningen (Feldman mfl., 2019). Naboene kalte dem fortsatt filistere, men i arvestoffet var de blitt en del av området."
+        },
+        {
+            "type": "text",
+            "content": "At arvestoff kan avgjøre en gammel strid, er ikke nytt. Det samme skjedde med saken om [Anastasia](/historie/historiens-store-gater/anastasia), der DNA satte punktum for et mysterium som hadde levd i nesten hundre år."
+        },
+        {
+            "type": "header",
+            "text": "Så, hvem var de?"
+        },
+        {
+            "type": "text",
+            "content": "Det beste svaret forskningen kan gi i dag, er dette: havfolkene var trolig aldri ett folk. De var flere grupper, med ulikt språk og ulikt hjemsted, som la ut på havet i den samme urolige perioden. Noen kom for å plyndre. Noen flyktet fra sult. Noen ble værende og bygde nye byer. Egypterne samlet dem alle under ett navn, fordi det var slik de så dem: som fremmede som kom fra sjøen."
+        },
+        {
+            "type": "text",
+            "content": "Gåten er altså ikke helt uløst. Vi vet at de fantes, når de kom, og at minst én av gruppene hadde røtter i Europa. Men vi vet fortsatt ikke sikkert hvem hver enkelt gruppe var, og vi kommer neppe til å få vite det før noen finner en tekst skrevet av dem selv."
+        },
+        {
+            "type": "text",
+            "content": "Det er verdt å huske neste gang du leser om en gammel hendelse. Spørsmålet er ikke bare hva kilden sier, men hvem som holdt pennen. Det samme problemet møter du i artikkelen om [Den trojanske krig](/historie/historiens-store-gater/den-trojanske-krig), der nesten alt vi har, er et dikt skrevet flere hundre år etter at krigen skulle ha vært."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Arkeolog som børster jord av en gammel leirkrukke i en utgravning",
+            "caption": "Keramikk og arvestoff er kilder som ikke kan skryte. Derfor veier de tungt når tekstene bare forteller den ene sidens historie."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det at havfolkene er et samlenavn og ikke navnet på ett folk?",
+                    "Hvilke tre egyptiske kilder nevner teksten, og hva har de til felles?",
+                    "Hvilket år daterer egyptiske kilder det store slaget mot havfolkene til?",
+                    "Hva fant forskerne i arvestoffet til menneskene som ble gravlagt i Ashkelon?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor en seiersinnskrift er en vanskelig kilde å stole på.",
+                    "Hvorfor veier keramikk og arvestoff tyngre enn en tempelvegg når forskere skal finne ut hvem havfolkene var?",
+                    "Cline mener havfolkene er like mye et tegn på krise som en årsak til den. Hva mener han med det?",
+                    "I mikrospillet noterer du fem ulike hjemsteder, mens innskriften bare har ett ord. Hva går tapt når en kilde slår mange grupper sammen til én?"
+                ],
+                "gaaVidere": [
+                    "Finn en nettside eller video om havfolkene. Sjekk hvem som står bak, og se om den skiller mellom det kildene sier og det forskerne gjetter.",
+                    "Skriv et kort brev fra en av dem som gikk om bord i skipene i 1177 fvt. Bruk bare det teksten faktisk gir dekning for.",
+                    "Diskuter i klassen: finnes det hendelser i dag der vi bare hører den ene sidens versjon? Hvordan kan vi sjekke den?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er havfolkene?",
+                        "options": [
+                            "Ett folk med ett språk og én konge",
+                            "Et samlenavn på flere grupper som kom sjøveien til det østlige Middelhavet",
+                            "Egyptiske sjømenn i faraos flåte",
+                            "En gruppe forskere som graver ut skipsvrak"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Havfolkene er et samlenavn på flere fremmede grupper som slo seg ned langs kysten av det østlige Middelhavet mellom 1300-tallet og 1100-tallet fvt (Groth, 2024)."
+                    },
+                    {
+                        "question": "Hvorfor er de egyptiske innskriftene en vanskelig kilde?",
+                        "options": [
+                            "Fordi ingen klarer å lese hieroglyfer",
+                            "Fordi de er skrevet på papir som har råtnet bort",
+                            "Fordi de er skrevet av motstanderen for å vise hvor mektig farao var",
+                            "Fordi de ble laget flere tusen år etterpå"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Innskriftene sto på faraos eget tempel og skulle vise kongens makt. Havfolkene selv har ikke etterlatt seg tekster (Mark, 2009)."
+                    },
+                    {
+                        "question": "Hvilket år daterer egyptiske kilder det store slaget mot havfolkene til?",
+                        "options": ["1550 fvt", "1177 fvt", "753 fvt", "331 fvt"],
+                        "correctIndex": 1,
+                        "explanation": "Ramses 3. beseiret havfolkene i 1177 fvt ifølge de egyptiske kildene (Groth, 2024)."
+                    },
+                    {
+                        "question": "Hva viste DNA-undersøkelsen fra Ashkelon i 2019?",
+                        "options": [
+                            "At alle filistrene kom fra Egypt",
+                            "At folk fra tidlig jernalder hadde arv fra Sør-Europa som de eldre gravene manglet",
+                            "At det aldri bodde mennesker i Ashkelon",
+                            "At filistrene var i slekt med vikingene"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Menneskene fra tidlig jernalder hadde en sør-europeisk arv som bronsealdergravene ikke hadde, og sporet var borte igjen innen to hundre år (Feldman mfl., 2019)."
+                    },
+                    {
+                        "question": "Hva mener Eric Cline om havfolkenes rolle i bronsealderens kollaps?",
+                        "options": [
+                            "At de alene knuste alle rikene",
+                            "At de aldri har eksistert",
+                            "At de var én av flere kriser som virket samtidig",
+                            "At de reddet Egypt fra hungersnød"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Cline (2021) peker på tørke, jordskjelv, opprør, angrep og brudd i handelen som virket sammen. Havfolkene alene kunne ikke ha felt så mange riker."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Cline, E. H. (2021). *1177 B.C.: The Year Civilization Collapsed* (revidert utgave). Princeton University Press.",
+                    "Feldman, M., Master, D. M., Bianco, R. A., Burri, M., Stockhammer, P. W., Mittnik, A., Aja, A. J., Jeong, C. & Krause, J. (2019). *Ancient DNA sheds light on the genetic origins of early Iron Age Philistines*. Science Advances, 5(7). [doi.org/10.1126/sciadv.aax0061](https://doi.org/10.1126/sciadv.aax0061)",
+                    "Groth, B. (2024). *Havfolkene*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/havfolkene](https://snl.no/havfolkene)",
+                    "Groth, B. (2026). *Filistere*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/filistere](https://snl.no/filistere)",
+                    "Mark, J. J. (2009). *Sea Peoples*. World History Encyclopedia. Hentet 31.07.2026 fra [worldhistory.org/Sea_Peoples](https://www.worldhistory.org/Sea_Peoples/)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

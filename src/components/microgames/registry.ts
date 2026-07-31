@@ -157,6 +157,7 @@ const EarhartStillehavet3D = lazy(() => import('./EarhartStillehavet3D'));
 const RoanokeSporet3D = lazy(() => import('./RoanokeSporet3D'));
 const KongedagbokenMG = lazy(() => import('./KongedagbokenMG'));
 const HoldNordvegen3D = lazy(() => import('./HoldNordvegen3D'));
+const HavfolkeneKommer3D = lazy(() => import('./HavfolkeneKommer3D'));
 const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 
@@ -1546,6 +1547,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 130,
         loader: () => import('./HoldNordvegen3D'),
         Component: HoldNordvegen3D as never,
+    },
+    'havfolkene-kommer': {
+        id: 'havfolkene-kommer',
+        title: 'Hvem kommer over havet?',
+        description:
+            'Dra tørken oppover rundt Middelhavet i 1177 fvt. Markene visner, og fem kyster sender flåtene sine mot Nildeltaet samtidig. Klikk hvert skip mens det seiler og noter hvor det kom fra - rekker du det ikke før det går i land, er opplysningen tapt for alltid. Til slutt stilles loggen din opp mot den egyptiske innskriften. Lyspæren: du så fem ulike hjemsteder, mens kilden bare har ett ord for dem alle - havfolk. Derfor kan vi ikke lese ut av den hvem de faktisk var.',
+        estimatedSeconds: 140,
+        loader: () => import('./HavfolkeneKommer3D'),
+        Component: HavfolkeneKommer3D as never,
     },
 };
 

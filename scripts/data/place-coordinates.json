@@ -807,6 +807,10 @@
       "count": 57
     },
     {
+      "tag": "kildekritikk",
+      "count": 40
+    },
+    {
       "tag": "antikken",
       "count": 40
     },
@@ -817,10 +821,6 @@
     {
       "tag": "handel",
       "count": 39
-    },
-    {
-      "tag": "kildekritikk",
-      "count": 38
     },
     {
       "tag": "religion",
@@ -1335,6 +1335,10 @@
       "count": 6
     },
     {
+      "tag": "migrasjon",
+      "count": 5
+    },
+    {
       "tag": "eskatologi",
       "count": 5
     },
@@ -1715,10 +1719,6 @@
       "count": 3
     },
     {
-      "tag": "migrasjon",
-      "count": 3
-    },
-    {
       "tag": "kommunikasjon",
       "count": 3
     },
@@ -1884,6 +1884,18 @@
     },
     {
       "tag": "zoroastrismen",
+      "count": 2
+    },
+    {
+      "tag": "oldtid",
+      "count": 2
+    },
+    {
+      "tag": "middelhavet",
+      "count": 2
+    },
+    {
+      "tag": "bronsealderen",
       "count": 2
     },
     {
