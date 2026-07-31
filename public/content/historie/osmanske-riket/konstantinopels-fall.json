@@ -9,13 +9,13 @@
   "details": [
     "I 1453 erobret sultan Mehmet 2. byen Konstantinopel, og det tusen år gamle Bysants forsvant fra historien.",
     "Mehmets gigantiske kanoner klarte det ingen hær hadde klart før: å knuse verdens sterkeste bymurer.",
-    "Fallet sendte greske lærde vestover og fikk Europa til å lete etter nye sjøveier - to gnister til renessanse og oppdagelsesreiser."
+    "Fallet sendte bysantinske lærde med greske bøker vestover til Italia, og ga renessansen en kraftig innsprøytning."
   ],
   "externalUrl": "https://snl.no/Konstantinopels_fall",
   "content": [
     {
       "type": "text",
-      "content": "Noen årstall er verdt å huske fordi verden ble en annen etterpå. 1453 er ett av dem. Det året falt byen Konstantinopel, hovedstaden i det som var igjen av Romerriket. Byen hadde stått imot angrep i over tusen år. Murene rundt den var de sterkeste i verden. Likevel tok det bare 53 dager før alt var over. For å forstå hvorfor dette rystet hele verden, må vi se på hva som sto på spill."
+      "content": "Noen årstall er verdt å huske fordi verden ble en annen etterpå. 1453 er ett av dem. Det året falt byen Konstantinopel, hovedstaden i det som var igjen av Romerriket. Byen hadde vært hovedstad i over tusen år, og murene rundt den var blant de sterkeste i verden (Seland, 2025). Likevel tok det bare 55 dager før alt var over (Seland, 2026). For å forstå hvorfor dette rystet hele verden, må vi se på hva som sto på spill."
     },
     {
       "type": "image",
@@ -29,11 +29,11 @@
     },
     {
       "type": "text",
-      "content": "Konstantinopel var ikke en hvilken som helst by. Den hadde vært hovedstad i Det østromerske riket, Bysants, helt siden 300-tallet. I tusen år hadde den vært et symbol på rikdom, makt og kristen tro i øst. Men på 1400-tallet var Bysants blitt en skygge av seg selv. Riket var skrumpet inn til lite mer enn selve byen og noen små områder rundt. Inni de mektige murene bodde det færre folk enn før, og keiseren hadde nesten ingen hær."
+      "content": "Konstantinopel var ikke en hvilken som helst by. Keiser Konstantin den store gjorde den til hovedstad i Romerriket i år 330, og byen fikk navn etter ham (Seland, 2025). I tusen år var den et symbol på rikdom, makt og kristen tro i øst. Men på 1400-tallet var Bysants blitt en skygge av seg selv. I 1204 hadde korsfarere plyndret byen og delt riket opp, og fra 1421 var Bysants i en krise det aldri kom ut av (Goplen et al., 2025). Riket var skrumpet inn til lite mer enn selve byen og noen små områder rundt. Inni de mektige murene bodde det færre folk enn før, og keiseren hadde nesten ingen hær."
     },
     {
       "type": "text",
-      "content": "Rundt byen vokste det osmanske riket. For den unge sultanen Mehmet 2. var Konstantinopel som en stein midt i riket hans, en fremmed by han måtte ri rundt. Han bestemte seg for å ta den, koste hva det koste ville. Mehmet var bare 21 år, men han hadde noe ingen tidligere angriper hadde hatt: nye, gigantiske kanoner."
+      "content": "Rundt byen vokste det osmanske riket. For den unge sultanen Mehmet 2. var Konstantinopel som en stein midt i riket hans, en fremmed by han måtte ri rundt. Han bestemte seg for å ta den, koste hva det koste ville. Mehmet var bare 21 år, men han hadde noe ingen tidligere angriper hadde hatt: han fikk støpt kanoner som var kraftige nok til å bryte byens sterke murer (Seland, 2026)."
     },
     {
       "type": "text",
@@ -60,7 +60,7 @@
     },
     {
       "type": "text",
-      "content": "I 53 dager raste kampen om byen. Inne bak murene kjempet noen tusen forsvarere for å holde ut. Utenfor sto en enorm osmansk hær. Sett deg selv inn i beleiringen, både fra muren og fra leiren, og kjenn hvor umulig situasjonen var for de som forsvarte byen."
+      "content": "I 55 dager raste kampen om byen (Seland, 2026). Inne bak murene kjempet noen tusen forsvarere for å holde ut. Utenfor sto en enorm osmansk hær. Sett deg selv inn i beleiringen, både fra muren og fra leiren, og kjenn hvor umulig situasjonen var for de som forsvarte byen."
     },
     {
       "type": "component",
@@ -131,7 +131,7 @@
     },
     {
       "type": "text",
-      "content": "Mehmet rev ikke byen ned. Tvert imot: han ville bygge den opp igjen til et glansfullt sentrum for riket sitt. Han flyttet hovedstaden hit, og byen fikk etter hvert navnet Istanbul. Den store kirken Hagia Sofia ble gjort om til moské. Folk fra hele riket flyttet inn, og snart yret byen av liv igjen, med kjøpmenn, håndverkere og lærde fra mange land og religioner."
+      "content": "Da byen falt, ble den plyndret i tre dager, slik skikken var, og den store kirken Hagia Sofia ble gjort om til moské (Seland, 2026). Men Mehmet rev ikke byen ned. Tvert imot: han ville bygge den opp igjen til et glansfullt sentrum for riket sitt. Han hentet inn folk fra alle deler av riket og satte håndverkere i arbeid for å få handelen i gang igjen (Peksevgen, 2025). I 1457 ble hovedstaden flyttet hit, til byen osmanerne kalte Istanbul (Seland, 2026). Snart yret byen av liv igjen, med kjøpmenn, håndverkere og lærde fra mange land og religioner."
     },
     {
       "type": "image",
@@ -146,10 +146,10 @@
         "compact": true,
         "events": [
           { "year": 330, "description": "Byen blir hovedstad i Romerriket og får navnet Konstantinopel." },
-          { "year": 1451, "description": "Mehmet 2. blir sultan, bare 19 år gammel, og planlegger å ta byen." },
+          { "year": 1451, "description": "Mehmet 2. blir sultan igjen etter farens død, og bruker to år på å planlegge angrepet." },
           { "year": 1452, "description": "Osmanerne bygger en festning som stenger sundet nord for byen." },
-          { "year": 1453, "description": "Etter 53 dagers beleiring faller byen 29. mai. Bysants forsvinner." },
-          { "year": 1453, "description": "Byen blir rikets nye hovedstad og bygges opp igjen til en storby." }
+          { "year": 1453, "description": "Etter 55 dagers beleiring faller byen 29. mai. Bysants forsvinner." },
+          { "year": 1457, "description": "Hovedstaden flyttes hit, og byen bygges opp igjen til en storby." }
         ]
       }
     },
@@ -159,11 +159,11 @@
     },
     {
       "type": "text",
-      "content": "Fallet av Konstantinopel fikk følger langt utenfor byens murer. Mange greske lærde flyktet vestover til byer som Venezia og Firenze. De hadde med seg gamle bøker og kunnskap fra antikken, og de var med på å tenne det vi kaller [renessansen](/historie/renessansen/oversikt), den store gjenfødelsen av kunst og vitenskap i Europa."
+      "content": "Fallet av Konstantinopel fikk følger langt utenfor byens murer. Mange bysantinske lærde søkte tilflukt i Italia. De hadde med seg gamle greske bøker, og sammen med den nye trykkekunsten gjorde det at tekstene kunne spres på nytt i Vest-Europa. Det ga [renessansen](/historie/renessansen/oversikt), den store gjenfødelsen av kunst og vitenskap, en kraftig innsprøytning (Seland, 2026)."
     },
     {
       "type": "text",
-      "content": "Samtidig satt osmanerne nå enda fastere på handelsrutene mellom øst og vest. For europeiske kjøpmenn som ville ha silke og krydder, ble det dyrt og vanskelig å handle over land. Derfor begynte de å lete etter en [sjøvei utenom riket](/historie/kolonialisering/verdenshandel-for-oppdagelsesreisene). Den jakten førte til de store oppdagelsesreisene, og til at europeerne noen tiår senere seilte til Amerika. Ett byfall i 1453 satte altså i gang to av de største endringene i verdenshistorien."
+      "content": "Her må vi rydde opp i en seiglivet misforståelse. Mange har trodd at osmanerne stengte handelsveiene i 1453, og at det tvang europeerne ut på havet for å finne en sjøvei til Asia. Men portugiserne hadde allerede seilt sørover langs Afrika i flere tiår da byen falt: de nådde Kapp Bojador i 1434 og Kapp Verde i 1445. Drivkreftene deres var korstog mot muslimene, jakt på gull og slaver, og ren og skjær ære (Feddersen & Barr, 2024). Vil du vite hvordan krydderhandelen faktisk hang sammen, kan du lese om [verdenshandelen før oppdagelsesreisene](/historie/kolonialisering/verdenshandel-for-oppdagelsesreisene). Det som derimot er sikkert, er at 1453 flyttet et tyngdepunkt: den siste resten av Romerriket var borte, og osmanerne sto nå som en stormakt midt mellom Europa og Asia."
     },
     {
       "type": "image",
@@ -184,13 +184,13 @@
             "reflekter": [
                 "Forklar med egne ord hvorfor de tusen år gamle murene ikke lenger klarte å stoppe angriperne i 1453.",
                 "Forsvarerne hadde sperret havna med en jernkjetting. Forklar hvordan Mehmet kom seg forbi den, og hvorfor grepet var så overraskende.",
-                "Byen var nesten tom for folk og hær, men murene sto fortsatt. Vurder hvorfor Bysants likevel klarte å holde ut i 53 dager.",
-                "Teksten sier at ett byfall satte i gang to store endringer i verden. Forklar hvordan fallet både tente renessansen og førte til oppdagelsesreisene."
+                "Byen var nesten tom for folk og hær, men murene sto fortsatt. Vurder hvorfor Bysants likevel klarte å holde ut i 55 dager.",
+                "Forklar hvordan lærde som flyktet til Italia, og den nye trykkekunsten, sammen ga renessansen en kraftig innsprøytning."
             ],
             "gaaVidere": [
                 "Skriv en kort tekst (5-8 setninger) fra den siste keiserens eller en forsvarers synsvinkel den 29. mai 1453. Bruk minst tre konkrete detaljer fra artikkelen.",
                 "Mehmet valgte å bygge byen opp igjen i stedet for å rive den. Diskuter med en partner hvorfor en erobrer kan tjene mer på å beholde en by enn å ødelegge den, og finn et eksempel fra nyere tid.",
-                "Handelsrutene mellom øst og vest ble stengt, og det tvang europeerne til å finne nye veier. Finn et eksempel i dag der en stengt handelsvei har skapt problemer, og sammenlign med 1453."
+                "Artikkelen viser at en populær forklaring på oppdagelsesreisene ikke stemmer. Finn ut hvorfor portugiserne begynte å seile sørover langs Afrika allerede før 1453, og skriv tre setninger om hva som egentlig drev dem."
             ]
         }
     },
@@ -233,19 +233,33 @@
             "explanation": "Forsvarerne hadde sperret havna med en jernkjetting. Mehmet lot skipene rulle over land på smurte stokker og fikk dem i vannet bak kjettingen."
           },
           {
-            "question": "Hvorfor begynte europeiske kjøpmenn å lete etter nye sjøveier etter 1453?",
+            "question": "Stemmer det at fallet i 1453 satte i gang de europeiske oppdagelsesreisene?",
             "options": [
-              "De likte ikke å reise over land",
-              "Osmanerne kontrollerte handelsrutene, så handel over land ble dyr og vanskelig",
-              "Det var ikke lenger varer i øst",
-              "Kongene forbød handel"
+              "Ja, ingen europeere hadde seilt langs Afrika før 1453",
+              "Nei, portugiserne hadde allerede seilt sørover langs Afrika i flere tiår da byen falt",
+              "Ja, alle handelsveier over land ble stengt samme år",
+              "Nei, oppdagelsesreisene begynte først på 1700-tallet"
             ],
             "answer": 1,
-            "explanation": "Med osmanerne fast plassert på rutene mellom øst og vest ble det dyrt å handle over land. Jakten på en sjøvei utenom riket førte til de store oppdagelsesreisene."
+            "explanation": "Dette er en seiglivet misforståelse. Portugiserne nådde Kapp Bojador i 1434 og Kapp Verde i 1445, altså før 1453. Drivkreftene var korstog mot muslimene, jakt på gull og slaver, og ære."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Feddersen, C. F. & Barr, S. (2024). *Oppdagelsesreiser*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/oppdagelsesreiser](https://snl.no/oppdagelsesreiser)",
+          "Goplen, Å., Fjalsett, G. K., Tsakos, A. & Seland, E. H. (2025). *Det bysantinske riket*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Det_bysantinske_riket](https://snl.no/Det_bysantinske_riket)",
+          "Peksevgen, Ş. (2025). *Mehmet 2.* Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Mehmet_2](https://snl.no/Mehmet_2)",
+          "Seland, E. H. (2025). *Konstantinopel*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Konstantinopel](https://snl.no/Konstantinopel)",
+          "Seland, E. H. (2026). *Konstantinopels fall*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Konstantinopels_fall](https://snl.no/Konstantinopels_fall)"
         ]
       }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-07-31"
 }
