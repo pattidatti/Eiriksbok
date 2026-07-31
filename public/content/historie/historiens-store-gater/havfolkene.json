@@ -6,7 +6,7 @@
     "year": "1177 fvt",
     "category": "Historiens store gåter",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/havfolkene-hero.webp",
     "details": [
         "Havfolkene er et samlenavn egypterne brukte på flere fremmede grupper som kom sjøveien rundt år 1200 fvt.",
         "Nesten alt vi har om dem, er skrevet av fienden deres: egyptiske seiersinnskrifter.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/havfolkene-01.webp",
             "alt": "Egyptisk tempelrelieff av sjøslag med skip og krigere i Nildeltaet",
             "caption": "Slaget i Nildeltaet slik det ble hugget inn i tempelveggen til Ramses 3. Bildet viser bare den ene sidens versjon."
         },
@@ -92,7 +92,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/havfolkene-02.webp",
             "alt": "Uttørket åker ved kysten med tomme skip som ligger klare i vannet",
             "caption": "Når avlingene sviktet flere år på rad, ble havet den eneste veien ut. Mange av dem som kom, flyktet trolig fra sult."
         },
@@ -141,7 +141,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/havfolkene-03.webp",
             "alt": "Arkeolog som børster jord av en gammel leirkrukke i en utgravning",
             "caption": "Keramikk og arvestoff er kilder som ikke kan skryte. Derfor veier de tungt når tekstene bare forteller den ene sidens historie."
         },
