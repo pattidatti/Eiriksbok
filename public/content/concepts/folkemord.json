@@ -1,8 +1,15 @@
 {
     "term": "Folkemord",
-    "aliases": ["folkemordet", "folkemords"],
-    "definition": "Et planlagt forsøk på å utslette en hel folkegruppe, for eksempel ved drap eller tvangsforflytning. Et kjent eksempel er folkemordet på armenerne under første verdenskrig, der over en million mennesker mistet livet.",
+    "aliases": [
+        "folkemordet",
+        "folkemords"
+    ],
+    "definition": "Et planlagt forsøk på å utslette en hel folkegruppe, for eksempel ved drap eller tvangsforflytning. Et kjent eksempel er folkemordet på armenerne under første verdenskrig, der anslagsvis 600 000 til 1,2 millioner mennesker mistet livet.",
     "type": "concept",
-    "tags": ["historie", "krig", "menneskerettigheter"],
+    "tags": [
+        "historie",
+        "krig",
+        "menneskerettigheter"
+    ],
     "subject": "historie"
 }

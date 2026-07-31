@@ -1423,7 +1423,7 @@
     {
       "id": "norge-for-vikingene-sub-7",
       "title": "Folkevandringstiden",
-      "description": "Starten på folkevandringstiden.",
+      "description": "Folkevandringstiden i Norge, ca. 375-550 evt.",
       "startDate": 400,
       "endDate": null,
       "displayDate": "400 evt.",
@@ -1653,6 +1653,29 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "norge-for-vikingene-sub-9",
+      "title": "Justinianske pest",
+      "description": "Pesten herjer i det østlige Middelhavsområdet og kan ha nådd Norden.",
+      "startDate": 540,
+      "endDate": null,
+      "displayDate": "540 evt.",
+      "type": "sub-event",
+      "subjectId": "historie",
+      "topicId": "norgeshistorie",
+      "link": "/historie/norgeshistorie/norge-for-vikingene",
+      "tags": [
+        "historie",
+        "norge",
+        "steinalder",
+        "jernalder"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "klimakrisen-536-sub-1",
       "title": "Nytt vulkanutbrudd",
       "description": "Enda et stort vulkanutbrudd forverrer nedkjølingen.",
@@ -1669,29 +1692,6 @@
         "klima",
         "folkevandring",
         "fimbulvinter"
-      ],
-      "lat": 60.5,
-      "lng": 8.5,
-      "placeLabel": "Norge",
-      "placeCountryId": 578,
-      "geoConfidence": "tag"
-    },
-    {
-      "id": "norge-for-vikingene-sub-9",
-      "title": "Justinianske pest",
-      "description": "Pesten når Europa og Norge.",
-      "startDate": 541,
-      "endDate": null,
-      "displayDate": "541 evt.",
-      "type": "sub-event",
-      "subjectId": "historie",
-      "topicId": "norgeshistorie",
-      "link": "/historie/norgeshistorie/norge-for-vikingene",
-      "tags": [
-        "historie",
-        "norge",
-        "steinalder",
-        "jernalder"
       ],
       "lat": 60.5,
       "lng": 8.5,
@@ -1726,7 +1726,7 @@
     {
       "id": "norge-for-vikingene-sub-10",
       "title": "Slutt på gullalderen",
-      "description": "Bygdeborgene går ut av bruk.",
+      "description": "Bygdeborgene går ut av bruk, og eldre jernalder går over i yngre jernalder.",
       "startDate": 550,
       "endDate": null,
       "displayDate": "550 evt.",
