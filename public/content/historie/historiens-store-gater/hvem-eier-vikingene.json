@@ -5,7 +5,7 @@
     "year": "1876-2026",
     "category": "Historiens store gåter",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/hvem-eier-vikingene-hero.webp",
     "details": [
         "Ingen hjelm med horn er funnet fra vikingtiden - hornene kom fra en operascene i 1876",
         "DNA fra 442 skjeletter viser at folk i vikingtiden var blandet, ikke ett rent folk",
@@ -22,7 +22,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/hvem-eier-vikingene-01.webp",
             "alt": "Rund jernhjelm uten horn i en glassmonter på et museum",
             "caption": "Hjelmen fra Gjermundbu er den eneste bevarte vikinghjelmen i Norge. Den er glatt og rund."
         },
@@ -95,7 +95,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/hvem-eier-vikingene-02.webp",
             "alt": "Faneborg med solkors-merker i en folkemengde på 1930-tallet",
             "caption": "Nasjonal Samling hentet navn, farger og tegn fra vikingtiden og middelalderen."
         },
@@ -138,7 +138,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/hvem-eier-vikingene-03.webp",
             "alt": "Ungdom som ser på runeinnskrift på en stein i et museum",
             "caption": "Å sjekke et symbol krever ikke utstyr. Det krever tre spørsmål og litt tid."
         },
