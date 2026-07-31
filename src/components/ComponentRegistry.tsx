@@ -67,6 +67,7 @@ const MeijiModellvalg = lazy(() => import('./content/interactive/MeijiModellvalg
 const Sjokkbolgen1905 = lazy(() => import('./content/interactive/Sjokkbolgen1905').then(m => ({ default: m.Sjokkbolgen1905 })));
 const KaizenVerksted = lazy(() => import('./content/interactive/KaizenVerksted').then(m => ({ default: m.KaizenVerksted })));
 const SymbolMatcher = lazy(() => import('./content/interactive/SymbolMatcher').then(m => ({ default: m.SymbolMatcher })));
+const SymbolSporet = lazy(() => import('./content/interactive/SymbolSporet').then(m => ({ default: m.SymbolSporet })));
 const TragediensTrinn = lazy(() => import('./content/interactive/TragediensTrinn').then(m => ({ default: m.TragediensTrinn })));
 const UtvandrerVekta = lazy(() => import('./content/interactive/UtvandrerVekta').then(m => ({ default: m.UtvandrerVekta })));
 const SuverenitetsSkala = lazy(() => import('./content/interactive/SuverenitetsSkala').then(m => ({ default: m.SuverenitetsSkala })));
@@ -433,6 +434,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     GrammarRuleCard,
     MaalmerkeMatcher,
     SymbolMatcher,
+    SymbolSporet,
     AthenSparta,
     PeloponnesStrategi,
     TextHighlighter,
