@@ -12,9 +12,9 @@
     ],
     "readTime": "6 min lesning",
     "heroImage": "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&q=80",
-    "fact": "Visste du at Perserriket under Kyros den store var det første riket som innførte en form for menneskerettigheter, nedskrevet på Kyros-sylinderen?",
+    "fact": "Visste du at Kyros-sylinderen, en leirsylinder med kileskrift, forteller hvordan Kyros lot bortførte folk vende hjem og bygde opp igjen helligdommene deres? Noen kaller den et tidlig menneskerettighetsdokument. Andre mener det er å lese vår egen tid inn i en gammel tekst.",
     "details": [
-        "Verdens største rike i sin tid.",
+        "Strakte seg fra Hellas og Egypt til elven Indus.",
         "Kjent for toleranse og effektiv administrasjon.",
         "Grunnlagt av Kyros den store.",
         "Falt for Aleksander den store."
@@ -23,17 +23,17 @@
     "content": [
         {
             "type": "text",
-            "content": "Achaemenide-riket, også kjent som det første persiske riket, var et imperium i det gamle Iran fra 550 til 330 fvt. Det ble grunnlagt av Kyros den store, som styrtet det mediske riket og erobret store deler av Midtøsten, inkludert Babylon. Riket strakte seg på sitt største fra Balkan og Egypt i vest til Indusdalen i øst, og var det største imperiet verden hadde sett til da."
+            "content": "Akamenide-riket, også kjent som det første persiske riket, var et imperium i det gamle Iran. Kyros 2. den store kom til makten i 559 fvt og bygde opp riket etter at han i 550 fvt hadde vunnet over sin egen lensherre, mederkongen Astyages (Barstad & Groth, 2025). I 539 fvt erobret han Babylon (Barstad & Groth, 2025). På sitt største strakte riket seg fra Hellas i vest og Egypt i sør til elven Indus i øst og Samarkand i nordøst (Groth, 2025b). Det falt først da Aleksander den store erobret det på 330-tallet fvt (Groth, 2025b)."
         },
         {
             "type": "text",
             "title": "En ny type imperium",
-            "content": "Perserriket skilte seg fra tidligere imperier, som det assyriske, ved sin toleranse overfor erobrede folk. Kyros den store lot jødene vende tilbake til Jerusalem fra eksilet i Babylon og gjenoppbygge tempelet sitt. Han respekterte lokale skikker og religioner, noe som bidro til å holde det enorme riket sammen.\n\nUnder Dareios I (den store) ble riket organisert i provinser kalt satrapier, styrt av satraper (guvernører). Han innførte også et standardisert myntsystem (dareiken) og bygde et omfattende veinett, inkludert den berømte Kongeveien, som gjorde kommunikasjon og handel raskere og tryggere."
+            "content": "Perserriket skilte seg fra tidligere imperier i måten det behandlet erobrede folk på. Kyros 2. viste toleranse overfor fremmede religioner, og det var en bevisst politisk strategi (Groth, 2025b). Han ga jødene tillatelse og hjelp til å vende tilbake fra eksilet i Babylon, og midler til å bygge opp igjen tempelet i Jerusalem, som var ødelagt i 586 fvt (Barstad & Groth, 2025). Å respektere lokale skikker og religioner bidro til å holde det enorme riket sammen.\n\nUnder Dareios 1. (den store) ble riket for første gang organisert som et ordnet verdensrike, delt i 20 provinser kalt satrapier, hver med sin satrap (Groth, 2024). Satrapiene hadde selvstyre, men måtte betale skatt og stille soldater (Groth, 2025b). Dareios ordnet skattesystemet, bygde veier, preget mynt og satte opp en slags postordning for rikets myndigheter (Groth, 2024). Gullmynten dareiken ble preget for første gang under ham (Store norske leksikon, 2024). Herodot forteller at hovedveien mellom Sardes og Susa hadde faste stasjoner der kurerer kunne bytte til uthvilte hester underveis (Groth, 2024)."
         },
         {
             "type": "text",
             "title": "Kultur og religion",
-            "content": "Perserne fulgte zoroastrismen, en religion grunnlagt av profeten Zarathustra. Den lærte at verden var en kampplass mellom det gode (Ahura Mazda) og det onde (Ahriman), og at menneskene måtte velge side gjennom gode tanker, gode ord og gode gjerninger. Denne religionen påvirket senere jødedom, kristendom og islam.\n\nPersisk kunst og arkitektur var storslått, med palassbyen Persepolis som det fremste eksempelet. Her møttes utsendinger fra alle rikets hjørner for å gi gaver til kongen. Relieffene i Persepolis viser folk fra hele imperiet i sine nasjonale drakter, noe som understreker rikets flerkulturelle karakter."
+            "content": "Perserne fulgte zoroastrismen, en av verdens eldste levende religioner, grunnlagt av profeten Zarathustra. Den lærer at tilværelsen er preget av en kamp mellom Ahura Mazda, det gode, og Angra Mainju (Ahriman), det onde, og at menneskene må velge side gjennom gode tanker, gode ord og gode gjerninger (Groth, 2025c). Zoroastrismen påvirket jødisk endetidstro etter eksilet i Babylon, med forestillinger om kampen mellom gode og onde makter, engler og Satan, demoner og helvete. Derfra gikk ideene videre inn i kristendommen og islam (Groth, 2025c).\n\nPersisk kunst og arkitektur var storslått, med palassbyen Persepolis som det fremste eksempelet. Byen ble grunnlagt rundt 520 fvt av Dareios 1. og var kongelig residens, mens administrasjonen ble styrt fra Susa (Groth, 2025a). På trappene opp til Apadana-hallen viser 23 scener utsendinger fra fjerne deler av riket som bærer gaver til kongen ved festen for vårjevndøgn (Sharp, 2026). Relieffene understreker rikets flerkulturelle karakter."
         },
         {
             "type": "image",
@@ -49,7 +49,7 @@
         {
             "type": "text",
             "title": "Arven etter Perserriket",
-            "content": "Selv om riket falt for Aleksander den store, levde den persiske kulturen og administrasjonsmodellen videre. Aleksander selv adopterte mange persiske skikker og giftet seg med en persisk prinsesse. Achaemenide-riket satte standarden for hvordan et multikulturelt imperium kunne styres, og ideen om et universelt rike levde videre gjennom historien."
+            "content": "Selv om riket falt for Aleksander den store, levde den persiske kulturen og administrasjonsmodellen videre. Aleksander lot persiske satraper beholde stillingene sine, kledde seg i persisk drakt og prøvde å innføre persisk hoffseremoniell (Walbank, 2026). I 327 fvt giftet han seg med Roxane, datter av en fyrste i Baktria (Steen et al., 2025). Akamenide-riket satte standarden for hvordan et flerkulturelt imperium kunne styres, og ideen om et universelt rike levde videre gjennom historien."
         },
         {
             "type": "component",
@@ -58,13 +58,13 @@
                 "forstaa": [
                     "Hvem grunnla Perserriket, og hvilket rike styrtet han for å gjøre det?",
                     "Hva kalte perserne provinsene sine, og hvem styrte dem?",
-                    "Hvilke tre ting bygde eller innførte Dareios I for å knytte det store riket sammen?",
+                    "Hvilke tre ting bygde eller innførte Dareios 1. for å knytte det store riket sammen?",
                     "Hva het den persiske religionen, og hva lærte den om kampen mellom godt og ondt?"
                 ],
                 "reflekter": [
-                    "Teksten sier at Perserriket skilte seg fra det assyriske ved sin toleranse. Forklar hvordan det å respektere lokale skikker og religioner kunne hjelpe Kyros med å holde et enormt rike samlet.",
+                    "Teksten sier at Perserriket skilte seg fra tidligere imperier i måten det behandlet erobrede folk på. Forklar hvordan det å respektere lokale skikker og religioner kunne hjelpe Kyros med å holde et enormt rike samlet.",
                     "Kyros lot jødene vende tilbake til Jerusalem og bygge opp tempelet sitt. Hvorfor tror du en hersker kunne tjene på å behandle et erobret folk godt i stedet for hardt?",
-                    "Persepolis-relieffene viser folk fra hele riket i sine egne nasjonaldrakter. Hva forteller dette valget oss om hvordan perserne ville at riket skulle framstå?",
+                    "Persepolis-relieffene viser utsendinger fra fjerne deler av riket som bærer gaver til kongen. Hva forteller dette valget oss om hvordan perserne ville at riket skulle framstå?",
                     "Aleksander den store erobret Perserriket, men adopterte mange persiske skikker etterpå. Hvordan kan en taper i en krig likevel ende opp med å forme seieren?"
                 ],
                 "gaaVidere": [
@@ -73,8 +73,25 @@
                     "Diskuter i klassen: Er det lettere å styre mange folkeslag med toleranse eller med hard makt? Bruk eksempler fra Perserriket i argumentene deres."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Barstad, H. M. & Groth, B. (2025). *Kyros 2. den store*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Kyros_2_den_store](https://snl.no/Kyros_2_den_store)",
+                    "Groth, B. (2024). *Dareios 1.* Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Dareios_1](https://snl.no/Dareios_1)",
+                    "Groth, B. (2025a). *Persepolis*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Persepolis](https://snl.no/Persepolis)",
+                    "Groth, B. (2025b). *Persia*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Persia](https://snl.no/Persia)",
+                    "Groth, B. (2025c). *Zoroastrisme*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/zoroastrisme](https://snl.no/zoroastrisme)",
+                    "Sharp, R. N. (2026). *Persepolis*. Encyclopaedia Britannica. Hentet 31.07.2026 fra [britannica.com/place/Persepolis](https://www.britannica.com/place/Persepolis)",
+                    "Steen, T., Amundsen, L. & Østby, E. (2025). *Aleksander den store*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Aleksander_den_store](https://snl.no/Aleksander_den_store)",
+                    "Store norske leksikon. (2024). *Dareik*. Hentet 31.07.2026 fra [snl.no/dareik](https://snl.no/dareik)",
+                    "Walbank, F. W. (2026). *Alexander the Great*. Encyclopaedia Britannica. Hentet 31.07.2026 fra [britannica.com/biography/Alexander-the-Great](https://www.britannica.com/biography/Alexander-the-Great)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-07-31"
 }
