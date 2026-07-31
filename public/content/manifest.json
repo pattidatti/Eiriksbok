@@ -2856,6 +2856,21 @@
                 "mysterier"
               ],
               "createdDate": "2026-07-31T00:00:00Z"
+            },
+            {
+              "id": "havfolkene",
+              "title": "Hvem var havfolkene?",
+              "description": "Egyptiske seiersinnskrifter er nesten alt vi har om folkene som kom over havet rundt 1177 fvt. Hva kan vi egentlig vite?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "oldtid",
+                "middelhavet",
+                "egypt",
+                "kildekritikk",
+                "bronsealderen",
+                "migrasjon"
+              ],
+              "createdDate": "2026-07-31T00:00:00Z"
             }
           ]
         },
