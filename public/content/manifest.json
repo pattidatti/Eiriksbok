@@ -2991,7 +2991,7 @@
             {
               "id": "alv-erlingsson",
               "title": "Alv Erlingsson: Piratjarlen",
-              "description": "Historien om Alv Erlingsson, kongens favoritt som ble Norges mest beryktede sjørøver.",
+              "description": "Historien om Alv Erlingsson, stormannen som førte sin egen kaperkrig og endte på steile og hjul.",
               "image": "/images/historie/norgeshistorie/alv-erlingsson/hero.webp",
               "year": "1290",
               "tags": [
@@ -3225,9 +3225,9 @@
             {
               "id": "utvandringen-til-amerika",
               "title": "Utvandringen til Amerika",
-              "description": "Over 800 000 nordmenn reiste til Amerika mellom 1825 og 1930. Press hjemmefra og lokking fra Amerika drev den største folkeflyttingen i norsk historie.",
+              "description": "Rundt 800 000 nordmenn reiste til Nord-Amerika mellom 1825 og 1915. Press hjemmefra og lokking fra Amerika drev den største folkeflyttingen i norsk historie.",
               "image": "/images/norgeshistorie/utvandringen-til-amerika-hero.webp",
-              "year": "1825-1930",
+              "year": "1825-1915",
               "layout": "rich",
               "tags": [
                 "historie",

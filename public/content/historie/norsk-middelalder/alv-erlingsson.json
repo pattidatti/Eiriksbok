@@ -1,7 +1,7 @@
 {
     "id": "alv-erlingsson",
     "title": "Alv Erlingsson: Piraten som utfordret kongen",
-    "description": "Historien om Norges mektigste adelsmann som ble en fryktet sjørøver og tvang kongen til å bygge Akershus festning.",
+    "description": "Historien om en av Norges mektigste adelsmenn, som ble en fryktet kaper, gjorde opprør mot hertugen og endte på steile og hjul.",
     "image": "/images/historie/norgeshistorie/alv-erlingsson/hero.webp",
     "tags": [
         "historie",
@@ -13,43 +13,44 @@
         "akershus"
     ],
     "layout": "rich",
-    "year": "ca. 1260–1290",
+    "year": "1276-1290",
     "timeline": [
         {
-            "year": 1260,
-            "title": "Født som aristokrat",
-            "description": "Alv blir født inn i Tanberg-ætten, en av Norges aller mektigste familier."
+            "year": 1276,
+            "title": "Første gang i kildene",
+            "description": "Alv av Tanberg-ætten er nevnt som lendmann på det nordiske kongemøtet ved Göta älv."
         },
         {
-            "year": 1276,
-            "title": "Jarl av Sarpsborg",
-            "description": "Blir kongens mektigste mann i øst og styrer fra borgen Isegran."
+            "year": 1283,
+            "title": "Herre over Borgarsysle",
+            "description": "Overtar farens embete som kongelig syslemann, med egen borg på Isegran."
+        },
+        {
+            "year": 1284,
+            "title": "Kaperkrigen starter",
+            "description": "Kapere som Alv har rustet ut, overfaller hansaskip. Han herjer Skagen og Skanør."
         },
         {
             "year": 1286,
-            "title": "Sjørøver-hæren fra England",
-            "description": "Låner penger og henter profesjonelle sjørøvere fra Cinque Ports i England."
+            "title": "Jarl og hær fra England",
+            "description": "Utnevnt til jarl. Henter 2000 mark sterling og krigsfolk fra «the Five Ports»."
         },
         {
             "year": 1287,
-            "title": "Opprør og Akershus",
-            "description": "Alv angriper Oslo. Som svar begynner kongen å bygge Akershus festning."
-        },
-        {
-            "year": 1287,
-            "title": "Massakren på Isegran",
-            "description": "Sykdom og krig fører til at 400 av Alvs menn dør når hertugen tar hevn."
+            "title": "Opprør og fredløshet",
+            "description": "Alv angriper Oslo og blir lyst fredløs. 220 av mennene hans blir drept."
         },
         {
             "year": 1290,
             "title": "En grusom slutt",
-            "description": "Alv blir knust på steile og hjul utenfor Helsingborg."
+            "description": "Alv blir tatt til fange av danskene og radbrukket ved Hälsingborg."
         }
     ],
+    "lastUpdated": "2026-07-31",
     "content": [
         {
             "type": "text",
-            "content": "Han hadde makt, penger og kontakter over hele Europa. Alv Erlingsson var ikke hvem som helst – han var en ridder som trodde han var viktigere enn loven. Men det som begynte som en flott karriere som kongens høyre hånd, endte opp i en voldsspiral av sjørøveri, svik og et brutalt drap på et kjerrehjul. Dette skjedde i middelalderen, en tid der noen få mektige familier styrte nesten alt i Norge."
+            "content": "Han hadde makt, penger og kontakter over hele Europa. Alv Erlingsson var ikke hvem som helst - han var en stormann som handlet så selvrådig at han bandt opp hele Norges utenrikspolitikk (Helle, 2025). Det som begynte som en karriere i kongens tjeneste, endte i en voldsspiral av kaperkrig, opprør og en henrettelse på et kjerrehjul. Dette skjedde i middelalderen, en tid der noen få mektige familier styrte nesten alt i Norge."
         },
         {
             "type": "header",
@@ -57,7 +58,7 @@
         },
         {
             "type": "text",
-            "content": "Alv kom ikke fra ingensteds. Han tilhørte den mektige Tanberg-ætten på Ringerike. Faren hans, Erling, var en av kongens aller nærmeste rådgivere gjennom tidene. Alv var faktisk i nær slekt med selve kongefamilien, som tremenning av kong Magnus Lagabøte. Gjennom sin oldemor var han også knyttet til den berømte hertug Skule, en mann som tidligere hadde prøvd å ta makten i Norge. Fordi Alv var så høyt oppe i samfunnet, følte han at han kunne snakke til kongen som en likemann. Han var ikke bare en vanlig undersått; han var nesten som en småkonge i sitt eget område."
+            "content": "Alv kom ikke fra ingensteds. Han var den siste i lendmannsætten fra Tornberg - i dag Tanberg - på Ringerike. Faren hans, Erling Alvsson, var lendmann og syslemann, og han var søstersønn av den berømte hertug Skule Bårdsson, en mann som tidligere hadde prøvd å ta makten i Norge. I kongebrev ble både faren og Alv kalt «vår frende», altså slektning av kongen (Helle, 2025). Da faren døde i 1283, overtok Alv embetet som kongelig syslemann i Borgarsysle. Fordi Alv var så høyt oppe i samfunnet, kunne han snakke til kongen nesten som en likemann. Han var ikke en vanlig undersått; han var nesten som en småkonge i sitt eget område."
         },
         {
             "type": "header",
@@ -65,12 +66,12 @@
         },
         {
             "type": "text",
-            "content": "I året 1286 ble Alv sendt til England for å ordne opp i viktige avtaler for Norge. Men Alv hadde sin helt egen plan. Han klarte å lure til seg et lån på hele 2000 mark sterling/466 kg sølv (ca 300 millioner i 2026) i den norske kongens navn. Dette var en enorm sum penger på den tiden. Men han nøyde seg ikke bare med gull. Han fikk med seg profesjonelle sjørøvere og sterke krigere fra de såkalte Cinque Ports i England. Dette var havnebyer som var fylt med eksperter på å kjempe til sjøs. Alv reiste altså hjem til Norge med en privat hær av engelske skip og pirater."
+            "content": "Sent i 1285 eller tidlig i 1286 ble Alv utnevnt til jarl, tydeligvis med et særlig militært ansvar. Våren 1286 dro han til England som kongelig utsending, for å ta opp lån til krigen mot Danmark. Han vendte hjem med 2000 mark sterling og krigsfolk fra «the Five Ports» (Helle, 2025). Dette var en enorm sum penger på den tiden. Men han nøyde seg ikke med sølvet. De engelske havnebyene var fulle av menn som var eksperter på å kjempe til sjøs, og Alv reiste hjem til Norge med en hær av engelske skip og krigere."
         },
         {
             "type": "image",
             "src": "/images/historie/norgeshistorie/alv-erlingsson/alv-court.webp",
-            "caption": "Greven av Sarpsborg: I utlandet kalte Alv seg Comes de Saresburg. Han ville at alle skulle tro han var en uavhengig fyrste som styrte seg selv.",
+            "caption": "Greven av Sarpsborg: I England titulerte Alv seg «greve av Sarpsborg», på latin Comes de Saresburg.",
             "alt": "Alv Erlingsson i audiens i England."
         },
         {
@@ -79,18 +80,18 @@
         },
         {
             "type": "text",
-            "content": "Hvorfor trengte Alv sin egen pirathær? Han ville knuse makten til de tyske kjøpmennene i Hansaen, som kontrollerte mye av handelen i Norge. Alv startet det som kalles en kaperkrig. Det betyr at han ga seg selv lov til å rane skipene deres. Men Alv var mye mer brutal enn vanlige sjørøvere. Historien forteller at han og de engelske soldatene hans ofte drepte hele mannskapet på skipene de overfalt, slik at det ikke skulle finnes noen vitner igjen."
+            "content": "Alt før England-turen hadde Alv gjort seg beryktet. Vinteren 1283-1284 truet de tyske hansabyene med å blokkere Norge, etter at styret i Bergen hadde strammet inn handelsfriheten til de tyske kjøpmennene. Regjeringen svarte med et vennlig brev, og hansabyene sendte skipene sine nordover som vanlig. På veien ble de overfalt av kapere Alv hadde rustet ut (Helle, 2025). En kaper er en sjørøver som herjer med en slags tillatelse i ryggen - men Alv handlet på egen hånd, og angrepene passet dårlig med den offisielle linjen til den norske regjeringen (Helle, 2025)."
         },
         {
             "type": "comparison",
             "leftTitle": "Den rike jarlen",
             "rightTitle": "Det fattige kongehuset",
-            "leftContent": "Mens Alv fylte borgen sin med gull og dyre varer fra skipene han plyndret i Danmark og på havet, ble han personlig steinrik. Han beholdt alt byttet selv og nektet å dele med andre.",
-            "rightContent": "Norge ble straffet hardt for det Alv gjorde. Da freden i Kalmar ble signert, måtte kongen betale Hansaen 6000 mark sølv i erstatning. Det var en regning som nesten tømte hele statskassa."
+            "leftContent": "Alv trakk seg tilbake med byttet fra herjingene i Danmark, og borgen på Isegran var en av bare to private stormannsborger vi kjenner fra Norge på denne tiden. Men da formuen hans ble delt året etter at han døde, var det ikke noe til overs.",
+            "rightContent": "Norge ble straffet hardt for det Alv gjorde. Høsten 1285 kom freden gjennom en voldgiftsdom i Kalmar, og et av vilkårene var en norsk skadeserstatning på 6000 mark sølv til hansabyene - ikke minst på grunn av Alvs piratvirksomhet."
         },
         {
             "type": "text",
-            "content": "Alv herjet spesielt i de danske byene Horsens og Kalundborg. Han brant ned alt og brydde seg ikke om at han dro Norge inn i en farlig krig som landet ikke var klart for. Til slutt ble han mer enn bare en plage for fienden; han ble sett på som en fare for hele det norske riket."
+            "content": "Samme år herjet han Skagen på Nord-Jylland og Skanør i Skåne, som den gang var dansk. Året etter, mens regjeringen prøvde å få fred, stakk Alv til sjøs på nytt og herjet de danske byene Horsens og Kalundborg. Han trakk seg tilbake med byttet da en overlegen styrke av vendiske kogger kom mot ham (Helle, 2025). Han brydde seg ikke om at han dro Norge inn i en farlig konflikt som landet ikke var klart for."
         },
         {
             "type": "header",
@@ -98,7 +99,7 @@
         },
         {
             "type": "text",
-            "content": "Alv styrte sitt lille rike fra borgen Isegran i Fredrikstad. Her følte han seg trygg, helt til han begikk en feil som ingen kunne tilgi. I 1287 lurte han hertugens høvedsmann, Hallkjell Krøkedans, til Isegran under falske løfter om fred. Hallkjell var en slags politisjef og en viktig mann for kongen. Istedenfor å forhandle, drepte Alv ham kaldblodig. Dette brøt med alle regler for hvordan riddere og adelsmenn skulle oppføre seg mot hverandre."
+            "content": "Alv styrte sitt lille rike fra borgen Isegran ved Glommas utløp, der Fredrikstad ligger i dag. Her følte han seg trygg, helt til han begikk en feil som ingen kunne tilgi. Forholdet mellom Alv og hertug Håkon Magnusson, broren og medstyreren til kong Eirik, var dårlig. I 1287 gjorde Alv et gåtefullt opprør mot hertugen. Han angrep Oslo og fanget hertugens høvedsmann i byen, Hallkjell Krøkedans. Alv sperret ham inne på Isegran, og der ble Hallkjell drept (Helle, 2025). Hallkjell var en viktig mann for hertugen, og drapet brøt med alle regler for hvordan stormenn skulle oppføre seg mot hverandre."
         },
         {
             "type": "image",
@@ -108,12 +109,12 @@
         },
         {
             "type": "text",
-            "content": "Hertug Haakon, som senere ble kong Haakon V, svarte med sinne. Han angrep Isegran med en enorm hær. I det blodige slaget som fulgte i 1287, ble borgen lagt i aske. Det sies at over 400 av Alvs menn mistet livet i kampene og av sykdom. Alv selv klarte akkurat å rømme, og i raseriet seilte han mot Oslo for å brenne byen. Men angrepet på Oslo fikk et resultat som Alv aldri hadde sett for seg."
+            "content": "Hertug Håkon, som senere ble kong Håkon V, svarte med full kraft. Alv og følgesmennene hans ble lyst fredløse, og hele 220 av dem ble drept (Helle, 2025). Hertugen angrep borgen på Isegran, og anlegget ble ødelagt (Toft, 2005). Alv selv klarte å rømme. Men angrepet på Oslo fikk et resultat som Alv aldri hadde sett for seg."
         },
         {
             "type": "info_box",
             "title": "Akershus festning blir til",
-            "content": "Da hertug Haakon så hvor lett Alv kunne angripe Oslo fra sjøen, skjønte han at byen trengte et mye sterkere forsvar. Rett etter Alvs angrep begynte han å bygge Akershus festning av stein. Alv Erlingsson er altså selve årsaken til at den berømte borgen i Oslo ble bygget!"
+            "content": "Angrepet i 1287 viste hvor dårlig Oslo var beskyttet fra sjøen. En gang rundt år 1300 satte kong Håkon V i gang byggingen av Akershus i stein, og i 1308 sto det en sterk festning der (Tschudi-Madsen & Hammer, 2026). Oslo var alt blitt hovedsetet og residensbyen hans mens han var hertug (Helle & Norseng, 2025). Det står ofte at Alv er grunnen til at borgen ble bygget. Men det er en fortelling som er satt sammen i ettertid: kildene knytter ikke byggingen direkte til angrepet, og det gikk over ti år imellom."
         },
         {
             "type": "header",
@@ -121,17 +122,17 @@
         },
         {
             "type": "text",
-            "content": "Alv levde som en lovløs pirat i flere år, og flyktet mellom landene rundt Nordsjøen. Men i året 1290 ble han gjenkjent i Danmark. Danskene hadde ikke glemt byene han hadde brent ned. Han ble dømt til døden på steile og hjul. Dette var en straff som var så smertefull og vanærende at nesten ingen adelsmenn ble utsatt for den."
+            "content": "Alv søkte tilflukt i et kloster i Sverige, der han ser ut til å ha stått seg godt med kong Magnus Birgersson (Helle, 2025). Men i året 1290 ble han tatt til fange av danskene. Danskene hadde ikke glemt byene han hadde herjet. Han endte på steile og hjul, en straff som var så smertefull og vanærende at nesten ingen stormenn ble utsatt for den."
         },
         {
             "type": "image",
             "src": "/images/historie/norgeshistorie/alv-erlingsson/alv-death.webp",
-            "caption": "Den siste ferden: Alv endte på steile og hjul i 1290. Det var kongens måte å vise at ingen var mektigere enn staten og loven.",
+            "caption": "Den siste ferden: Alv ble radbrukket og drept av danskene ved Hälsingborg i 1290.",
             "alt": "Et hjul på en stake."
         },
         {
             "type": "text",
-            "content": "Henrettelsen skjedde utenfor byen Helsingborg. Bøddelen knuste Alvs bein og armer med tunge slag mens han ennå levde, før kroppen ble flettet inn i et kjerrehjul. Der ble han liggende til skrekk og advarsel for alle andre. Selv om han døde som en kriminell, skrev noen i ettertid at Norges ære falt sammen med ham. De så på ham som den siste av de store, frie ridderne som nektet å bøye seg."
+            "content": "Han ble radbrukket og drept ved Hälsingborg i 1290 (Helle, 2025). Å bli radbrukket vil si at bøddelen knuser bein og armer med tunge slag mens den dømte ennå lever, før kroppen blir flettet inn i et kjerrehjul og stilt ut til skrekk og advarsel. To år senere hentet svogeren hans, den tidligere kansleren Tore Håkonsson, levningene fra Hälsingborg til Tønsberg (Helle, 2025). Alv fikk altså til slutt en grav."
         },
         {
             "type": "header",
@@ -139,7 +140,7 @@
         },
         {
             "type": "text",
-            "content": "Her begynner den virkelig interessante delen av historien. For nesten alt vi vet om Alv Erlingsson, kommer fra kilder skrevet av hans fiender - kongemakten og Hansaen. De kalte ham sjørøver, lovbryter og forræder. Men tenk deg at du hørte historien fra Alvs egne menn, eller fra bøndene som hadde lidt under hanseatenes makt i norske byer. De ville kanskje fortalt om en mann som kjempet mot fremmede kjøpmenn som satt på Norges rikdommer. De ville fortalt om en jarl som mente han hadde lov til å ta hevn for den behandlingen hans menn hadde fått. Noen norske krønikeskrivere noterte faktisk at da Alv falt, falt også noe av Norges ære. Historien er alltid fortalt fra et ståsted. Den som vinner, får definere hvem taperen var."
+            "content": "Her begynner den virkelig interessante delen av historien. Det meste vi vet om Alv, kommer fra brev og annaler skrevet av folk som sto på den andre siden: kongemakten og hansabyene. De kalte ham sjørøver og fredløs. Men folk flest fortalte en annen historie. Det dramatiske livet og fallet hans grep folkefantasien, og han fikk en eventyrlig plass i en rik flora av sagn og viser både i Norge og Danmark (Helle, 2025). I Telemark sang de om krigeren som til slutt kledde steile og hjul. I en dansk kjempevise hugger han løs til han står i blodet av femten riddere. På 1500-tallet regnet Absalon Pederssøn Beyer ham som en av de merkelige krigsmennene fra en tid da Norge var stolt og sterkt (Helle, 2025). Historien er alltid fortalt fra et ståsted. Den som vinner, får definere hvem taperen var - men de som taper, kan bli helter i visene."
         },
         {
             "type": "component",
@@ -153,31 +154,31 @@
                         "title": "Hertug Haakon (vinneren)",
                         "color": "#c0392b",
                         "icon": "👑",
-                        "content": "Alv Erlingsson var en forræder og en kriminell. Han stjal penger i kongens navn, drepte kongens sendebud under fredsflagget, og brente ned norske byer. Han var en trussel mot hele riket. Dommen - steile og hjul - var rettferdig. Ingen er hevet over loven, ikke engang en jarl.",
-                        "sourceCredit": "Basert på kongelige kildeskrifter fra ca. 1290"
+                        "content": "Alv Erlingsson var en opprører. Han angrep Oslo, tok høvedsmannen min til fange og lot ham drepe på Isegran. Kaperkrigen hans var i strid med den offisielle linjen til regjeringen og dro riket inn i en konflikt vi ikke ville ha. Derfor ble han lyst fredløs. Ingen er hevet over loven, ikke engang en jarl.",
+                        "sourceCredit": "Rekonstruert synspunkt, bygget på hendelsene i 1287 slik de er gjengitt hos Helle (2025)"
                     },
                     {
                         "id": "hansaen",
                         "title": "De hanseatiske kjøpmennene",
                         "color": "#2c3e50",
                         "icon": "⚓",
-                        "content": "Alv Erlingsson var en pirat og en morder. Han angrep fredelige handelsskip, massakrerte mannskap og brente ned byene Horsens og Kalundborg. Han var ikke en ridder med ære - han var en røver som brukte en politisk krangel som unnskyldning for å berike seg selv. Norge måtte betale 6000 mark sølv for det han gjorde.",
-                        "sourceCredit": "Basert på hanseatiske handelsdokumenter fra 1280-1290"
+                        "content": "Alv Erlingsson var en pirat. Han overfalt handelsskipene våre da vi seilte nordover i god tro, og han herjet Skagen, Skanør, Horsens og Kalundborg. Han var ingen mann med ære - han var en røver som brukte en politisk krangel som unnskyldning for å ta bytte. Norge måtte betale 6000 mark sølv i erstatning for det han gjorde.",
+                        "sourceCredit": "Rekonstruert synspunkt, bygget på kaperkrigen 1284-1285 slik den er gjengitt hos Helle (2025)"
                     },
                     {
                         "id": "folket",
                         "title": "Alvs tilhengere (taperne)",
                         "color": "#27ae60",
                         "icon": "🗡️",
-                        "content": "Alv kjempet mot fremmede kjøpmenn som kontrollerte Norges handel og tok Norges rikdommer ut av landet. Han var en av de siste frie norske jarlene - en mann som nektet å bøye seg for en kongemakt som ble stadig mer sentralisert. Da han falt, falt noe av norsk selvstendighet med ham.",
-                        "sourceCredit": "Basert på fragmentariske norske krøniker og sagn fra 1300-tallet"
+                        "content": "Alv gikk løs på de fremmede kjøpmennene som satt på handelen i byene våre. Han var den siste i en gammel og stolt ætt, en mann som nektet å bøye seg for en kongemakt som ville styre alt selv. Vi synger om ham fordi han sto oppreist til det siste.",
+                        "sourceCredit": "Rekonstruert synspunkt, bygget på sagnene og visene om Alv som er omtalt hos Helle (2025)"
                     }
                 ]
             }
         },
         {
             "type": "text",
-            "content": "Etter at Alv døde, endret alt seg i Norge. Den nye kongen, Haakon V, sørget for at ingen adelsmenn lenger fikk ha egne hærer eller bygge egne borger. Han flyttet hovedstaden til Oslo og gjorde Akershus til landets sentrum. Tiden med uavhengige riddere var over – nå var det kongens lov som gjaldt for alle sammen."
+            "content": "Etter at Alv døde, strammet kongemakten grepet. I en forordning fra 1308 kalte kong Håkon V tilbake alle sysler i landet, og han bestemte at jarle- og lendmannsverdighet ikke lenger skulle gis til nye menn. Hovedpoenget var å binde tjenestemennene fastere til kongen og gjøre det vanskeligere å drive selvrådig stormannspolitikk i framtiden (Helle & Norseng, 2025). Oslo var alt blitt hovedsetet hans. Tiden da en mann som Alv kunne føre sin egen utenrikspolitikk fra en privat borg, var over."
         },
         {
             "type": "component",
@@ -186,26 +187,38 @@
                 "forstaa": [
                     "Hvilken adelsætt kom Alv Erlingsson fra, og i hvilket område hadde denne familien makten sin?",
                     "Hva gjorde Alv da han ble sendt til England i 1286? Nevn både lånet han tok opp og hvem han fikk med seg hjem.",
-                    "Hvilken festning begynte hertug Haakon å bygge etter at Alv angrep Oslo, og hvorfor bygde han den av stein?",
-                    "Hvordan endte livet til Alv Erlingsson? Forklar hvor og hvordan han ble henrettet i 1290."
+                    "Hva skjedde med Alv og mennene hans etter angrepet på Oslo i 1287?",
+                    "Hvordan endte livet til Alv Erlingsson? Forklar hvor han døde i 1290, og hvem som tok livet av ham."
                 ],
                 "reflekter": [
                     "Alv følte at han kunne snakke til kongen som en likemann. Forklar hvordan slekten og posisjonen hans gjorde at han oppførte seg nesten som en småkonge.",
-                    "Teksten forteller at drapet på Hallkjell Krøkedans brøt med alle regler for hvordan riddere skulle oppføre seg. Hvorfor tror du nettopp dette svikoppdraget ble et vendepunkt som ingen kunne tilgi?",
+                    "Teksten forteller at drapet på Hallkjell Krøkedans brøt med alle regler for hvordan stormenn skulle oppføre seg mot hverandre. Hvorfor tror du nettopp dette drapet ble et vendepunkt som ingen kunne tilgi?",
                     "Sammenlign de tre perspektivene i artikkelen: hertug Haakon, Hansaen og Alvs tilhengere. Hvordan kan de fortelle så ulike historier om den samme mannen?",
-                    "Kongen valgte den mest vanærende straffen, steile og hjul, mot en adelsmann. Hva ville han vise resten av riket med å gjøre det på denne måten?"
+                    "Danskene valgte den mest vanærende straffen, steile og hjul, mot en mann av høy ætt. Hva ville de vise omverdenen med å gjøre det på denne måten?"
                 ],
                 "gaaVidere": [
                     "Artikkelen sier at den som vinner får definere hvem taperen var. Finn et eksempel fra nyhetene eller din egen tid der to sider forteller helt ulike historier om det samme, og forklar hvorfor det er vanskelig å vite hva som er sant.",
-                    "Skriv en kort tale (5-8 setninger) som Alvs forsvarer i rettssaken i 1290. Bruk minst to konkrete detaljer fra teksten til å forsvare ham.",
+                    "Tenk deg at Alv hadde fått forsvare seg i 1290. Skriv en kort tale (5-8 setninger) på vegne av ham. Bruk minst to konkrete detaljer fra teksten.",
                     "Diskuter i klassen: Var Alv Erlingsson en helt som kjempet mot fremmede kjøpmenn, eller bare en egoistisk sjørøver som beriket seg selv? Begrunn standpunktet ditt med eksempler fra teksten."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Helle, K. (2025). *Alv Erlingsson*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Alv_Erlingsson](https://snl.no/Alv_Erlingsson)",
+                    "Helle, K. & Norseng, P. G. (2025). *Håkon 5. Magnusson*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Håkon_5._Magnusson](https://snl.no/H%C3%A5kon_5._Magnusson)",
+                    "Toft, M. (2005). *Isegran - frå sjørøvarreir til arkeologisk stasjon*. Uniforum, Universitetet i Oslo. Hentet 31.07.2026 fra [uniforum.uio.no](https://www.uniforum.uio.no/nyheter/2005/09/isegran-fraa-sjoeroevarreir-til-arkeologisk-stasjon.html)",
+                    "Tschudi-Madsen, S. & Hammer, E. (2026). *Akershus slott og festning*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Akershus_slott_og_festning](https://snl.no/Akershus_slott_og_festning)"
                 ]
             }
         }
     ],
     "quiz": [
         {
-            "question": "Hvilken historisk bygning i Oslo ble bygget fordi Alv angrep byen?",
+            "question": "Hvilken borg begynte kong Håkon V å bygge i Oslo rundt år 1300?",
             "options": [
                 "Nidarosdomen",
                 "Akershus festning",
@@ -237,27 +250,27 @@
     ],
     "lessonPlan": {
         "learningObjectives": [
-            "Forklare sammenhengen mellom Alv Erlingssons opprør og byggingen av Akershus festning.",
-            "Beskrive maktkampen mellom de rike adelsfamiliene og kongehuset.",
-            "Reflektere over hvordan Alv gikk fra å være en respektert diplomat til en dødsdømt sjørøver."
+            "Gjøre rede for Alv Erlingssons kaperkrig og opprøret mot hertug Håkon i 1287.",
+            "Beskrive maktkampen mellom de rike stormannsfamiliene og kongehuset.",
+            "Vurdere hvor sikkert vi kan vite at Alvs angrep var grunnen til at Akershus ble bygget."
         ],
         "preReading": [
             "Hvis du var konge, hvordan ville du stoppet en adelsmann som hadde sin egen hær av pirater?",
             "Hva betyr det å ha makt i middelalderen sammenlignet med i dag?"
         ],
         "whileReading": [
-            "Lær deg navnet på borgen til Alv og hvorfor den ble brent ned.",
+            "Lær deg navnet på borgen til Alv og hva som skjedde med den.",
             "Hva kalte Alv seg når han var i utlandet?"
         ],
         "postReading": [
-            "Hvorfor tror du hertug Haakon valgte å bygge en borg av stein istedenfor tre etter angrepet?",
-            "Alv var en av de siste frie ridderne i Norge. Hva tror du ble annerledes i landet da slike menn forsvant?",
+            "Hvorfor tror du kong Håkon V valgte å bygge en borg av stein istedenfor tre?",
+            "Alv var den siste i sin gamle ætt. Hva tror du ble annerledes i landet da stormenn som ham forsvant?",
             "Var Alv Erlingsson en helt som kjempet for Norge, eller bare en egoistisk sjørøver? Begrunn svaret ditt."
         ],
         "writingTask": [
-            "**Forsvarsadvokaten:** Se for deg at du er Alv Erlingssons forsvarer i rettssaken i Danmark i 1290. Skriv en tale der du prøver å overbevise dommerne om at Alv ikke bare var en forbryter, men en mann som kjempet for sin ære og mot Hansaens makt. Bruk detaljer fra teksten for å begrunne saken din.",
+            "**Forsvarsadvokaten:** Se for deg at Alv Erlingsson hadde fått en forsvarer da danskene tok ham i 1290. Skriv en tale der du prøver å overbevise om at Alv ikke bare var en forbryter, men en mann som kjempet for sin ære og mot hansabyenes makt. Bruk detaljer fra teksten for å begrunne saken din.",
             "**Ridderens siste natt:** Skriv et brev eller et dagboknotat fra Alv selv, skrevet i fengselet i Helsingborg kvelden før han skal henrettes. Han reflekterer over livet sitt: Fra å være kongens nærmeste venn til å ende opp som en utstøtt pirat. Angrer han på drapet på Hallkjell Krøkedans, og hva tenker han om at navnet hans vil huskes for alltid?",
-            "**Breaking News fra Middelalderen:** Skriv en nyhetsartikkel eller et 'live-intervju' fra Fredrikstad i 1287, rett etter at borgen Isegran er brent ned. Intervju en overlevende soldat eller en livredd innbygger i byen. Hvordan opplevde de Alvs svik og hertugens brutale hevn?",
+            "**Breaking News fra Middelalderen:** Skriv en nyhetsartikkel eller et 'live-intervju' fra Glomma-munningen i 1287, rett etter at borgen Isegran er ødelagt. Intervju en overlevende soldat eller en livredd innbygger. Hvordan opplevde de Alvs opprør og hertugens brutale svar?",
             "**Alv i det 21. århundre:** Hvis Alv Erlingsson levde i dag, hvem ville han vært? En rebelsk teknommilliardær, en beryktet hacker som angriper store selskaper, eller en kontroversiell politiker? Lag en karakterbeskrivelse eller en kort historie der du plasserer Alvs personlighet og ambisjoner i vår moderne verden."
         ]
     }
