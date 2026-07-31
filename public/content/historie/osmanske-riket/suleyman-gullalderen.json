@@ -1,166 +1,180 @@
 {
-  "id": "suleyman-gullalderen",
-  "title": "Süleyman den store og gullalderen",
-  "layout": "rich",
-  "year": "1520-1566",
-  "category": "Det osmanske riket",
-  "readTime": "9 min lesning",
-  "heroImage": "/images/osmanske-riket/suleyman-gullalderen-hero.webp",
-  "details": [
-    "Under Süleyman (1520-1566) nådde riket sitt høydepunkt i makt, lov og kultur.",
-    "Europa kalte ham 'den store' for erobringene, mens folket hjemme kalte ham 'Lovgiveren'.",
-    "I 1529 sto hæren ved Wiens porter, det lengste vest osmanerne noen gang kom."
-  ],
-  "externalUrl": "https://snl.no/S%C3%BCleyman_1_den_store",
-  "content": [
-    {
-      "type": "text",
-      "content": "Hvert rike har en gullalder, en tid da alt ser ut til å gå riktig vei. For osmanerne kom den under sultan Süleyman, som styrte fra 1520 til 1566. Det er nesten et halvt århundre, lenger enn de fleste konger fikk sitte. I løpet av disse årene ble riket rikere, større og mektigere enn noen gang. Det spennende med Süleyman er at han var to ting på en gang: en av tidens største krigere og en av tidens klokeste lovgivere."
-    },
-    {
-      "type": "image",
-      "src": "/images/osmanske-riket/suleyman-gullalderen-01.webp",
-      "alt": "Sultan i praktfulle klær i en tronsal med blå fliser og gull",
-      "caption": "Süleyman styrte i nesten 46 år. Under ham var riket på sitt aller mektigste."
-    },
-    {
-      "type": "header",
-      "text": "Krigeren som skremte Europa"
-    },
-    {
-      "type": "text",
-      "content": "I Europa kalte de ham Süleyman 'den store'. Grunnen var hærene hans. Han erobret Beograd, jaget ridderne bort fra øya Rhodos og slo en ungarsk hær så grundig at hele Ungarn falt i hendene hans. I 1529 marsjerte han helt fram til portene til Wien, hovedstaden til de mektige Habsburgerne. Aldri før hadde en osmansk hær stått så langt inne i Europa. Wien holdt akkurat stand, men hele Europa skalv."
-    },
-    {
-      "type": "text",
-      "content": "Presset fra Süleyman i øst fikk følger langt unna. Mens Habsburgerne måtte bruke kreftene sine på å holde osmanerne tilbake, fikk de mindre tid til å slå ned protestantene i Tyskland. På den måten var det osmanske presset med på å gi den nye, protestantiske troen rom til å vokse, en tro som senere skulle utløse [store religionskriger i Europa](/historie/reformasjonen/30-aarskrigen)."
-    },
-    {
-      "type": "component",
-      "name": "LawgiverOrConqueror",
-      "props": {
-        "title": "Süleyman: én mann, to ansikter"
-      }
-    },
-    {
-      "type": "header",
-      "text": "Lovgiveren hjemme"
-    },
-    {
-      "type": "text",
-      "content": "Hjemme i riket hadde Süleyman et helt annet tilnavn. Der kalte de ham Kanuni, som betyr 'Lovgiveren'. Mens han var ute og krigte, jobbet han også med noe mindre dramatisk, men kanskje enda viktigere: å ordne rikets lover. Han samlet og fornyet reglene som styrte hverdagen, fra skatt og handel til straff for ulike forbrytelser. Lovverket han laget, varte i flere hundre år etter ham."
-    },
-    {
-      "type": "text",
-      "content": "Süleyman var opptatt av rettferd. Han laget regler som skulle hindre at skatteinnkrevere presset bøndene for hardt, og han mente at også vanlige folk skulle kunne få sin sak prøvd. Selv kristne og jøder kunne søke rettferd i sultanens domstoler. For en hersker på 1500-tallet var dette uvanlig moderne tanker."
-    },
-    {
-      "type": "component",
-      "name": "FactBox",
-      "props": {
-        "title": "Sinan, mannen som bygde for evigheten",
-        "content": "Süleyman hadde en stjernearkitekt som het Mimar Sinan. I løpet av et langt liv tegnet Sinan hundrevis av bygninger: moskeer, broer, bad og skoler. De største moskeene hans har enorme kupler som ser ut til å sveve, og flere av dem står den dag i dag. Når folk i dag tenker på osmansk arkitektur, tenker de ofte på det Sinan bygde under gullalderen."
-      }
-    },
-    {
-      "type": "image",
-      "src": "/images/osmanske-riket/suleyman-gullalderen-02.webp",
-      "alt": "Stor moské med svevende kuppel og slanke minareter i kveldslys",
-      "caption": "Arkitekten Sinan reiste moskeer med kupler som ser ut til å sveve. Mange av dem står fortsatt."
-    },
-    {
-      "type": "header",
-      "text": "Toppen og grensen"
-    },
-    {
-      "type": "text",
-      "content": "Under Süleyman strakte riket seg over tre kontinenter, fra Ungarn i nord til de hellige byene Mekka og Medina i sør, og fra Algerie i vest til grensen mot Persia i øst. Hoffet var et av de rikeste i verden, og kunst, diktning og vitenskap blomstret. Bak mange av beslutningene sto også Süleymans kone Hürrem, en tidligere slavinne som fikk stor makt ved hoffet, et tegn på hvor mye [livet bak palassmurene](/historie/osmanske-riket/topkapi-palasset) betydde for politikken."
-    },
-    {
-      "type": "text",
-      "content": "Men selv en gullalder har en grense. Wien viste hvor langt vest hæren kunne nå, og lenger kom den ikke. Riket var så stort at det tok måneder å sende en hær fra hovedstaden til ytterkantene. Süleyman døde i 1566, under et felttog, som en gammel mann fortsatt i sadelen. Etter ham fulgte herskere som sjelden var like dyktige, og sakte begynte tyngdepunktet å skifte. Men minnet om gullalderen levde videre i hundrevis av år."
-    },
-    {
-      "type": "image",
-      "src": "/images/osmanske-riket/suleyman-gullalderen-03.webp",
-      "alt": "Stort osmansk hærtog med telt og faner på vei gjennom et åpent landskap",
-      "caption": "Süleyman døde under et felttog som gammel mann, fortsatt i sadelen. Med ham endte rikets høydepunkt."
-    },
-    {
-        "type": "component",
-        "name": "Oppgaver",
-        "props": {
-            "forstaa": [
-                "Hvor lenge styrte Süleyman, og hvorfor kalte Europa ham 'den store'?",
-                "Hva betyr tilnavnet Kanuni, og hva gjorde Süleyman som fortjente det?",
-                "Hva skjedde ved Wien i 1529, og hvorfor var dette et vendepunkt?",
-                "Hvem var Mimar Sinan, og hva bygde han under gullalderen?"
-            ],
-            "reflekter": [
-                "Forklar hvordan Süleyman kunne være to ting på en gang: en fryktet kriger og en klok lovgiver.",
-                "Teksten sier at presset fra Süleyman i øst ga protestantene i Tyskland rom til å vokse. Forklar med egne ord hvordan det henger sammen.",
-                "Süleyman lot også kristne og jøder søke rettferd i domstolene sine. Hvorfor kaller teksten dette uvanlig moderne tanker for en hersker på 1500-tallet?",
-                "Hvorfor kunne ikke riket vokse lenger vest enn Wien? Nevn minst én grunn teksten peker på."
-            ],
-            "gaaVidere": [
-                "Süleyman ble husket både for erobringer og for lover. Skriv en kort tekst (5-8 setninger) om hva du mener det er viktigst at en leder blir husket for, og hvorfor.",
-                "Sinan bygde moskeer som fortsatt står i dag. Finn et byggverk i Norge eller verden som har stått i flere hundre år, og forklar hvorfor folk fortsatt tar vare på det.",
-                "Diskuter med en partner: Kan en leder både føre krig ute og skape rettferd hjemme, eller kommer de to alltid i konflikt?"
-            ]
+    "id": "suleyman-gullalderen",
+    "title": "Süleyman den store og gullalderen",
+    "layout": "rich",
+    "year": "1520-1566",
+    "category": "Det osmanske riket",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/osmanske-riket/suleyman-gullalderen-hero.webp",
+    "details": [
+        "Under Süleyman (1520-1566) nådde riket sitt høydepunkt i makt, lov og kultur.",
+        "Europa kalte ham 'den store' for erobringene, mens folket hjemme kalte ham 'Lovgiveren'.",
+        "I 1529 beleiret hæren Wien, hovedstaden til Habsburgerne, men klarte ikke å ta byen."
+    ],
+    "externalUrl": "https://snl.no/Suleyman_1._-_den_store",
+    "lastUpdated": "2026-07-31",
+    "content": [
+        {
+            "type": "text",
+            "content": "Hvert rike har en gullalder, en tid da alt ser ut til å gå riktig vei. For osmanerne kom den under sultan Süleyman, som styrte fra 1520 til 1566 (Ims & Goplen, 2025). Det er nesten et halvt århundre, lenger enn de fleste konger fikk sitte. I disse årene vokste riket til en av tidens fremste stormakter (Peksevgen, 2026). Det spennende med Süleyman er at han var to ting på en gang: en av tidens største krigere og en av tidens klokeste lovgivere."
+        },
+        {
+            "type": "image",
+            "src": "/images/osmanske-riket/suleyman-gullalderen-01.webp",
+            "alt": "Sultan i praktfulle klær i en tronsal med blå fliser og gull",
+            "caption": "Süleyman styrte i nesten 46 år. Under ham var riket på sitt aller mektigste."
+        },
+        {
+            "type": "header",
+            "text": "Krigeren som skremte Europa"
+        },
+        {
+            "type": "text",
+            "content": "I Europa kalte de ham Süleyman 'den store'. Grunnen var hærene hans. Han ledet selv 13 felttog: han tok Beograd i 1521, jaget ridderne bort fra øya Rhodos og la Ungarn under seg etter slaget ved Mohács i 1526 (Ims & Goplen, 2025). I 1529 marsjerte han helt fram til Wien, hovedstaden til de mektige Habsburgerne, og beleiret byen. Beleiringen mislyktes (Ims & Goplen, 2025), men hele Europa skalv."
+        },
+        {
+            "type": "text",
+            "content": "Presset fra Süleyman i øst fikk følger langt unna. Keiser Karl 5., som styrte Habsburgernes rike, hadde alt i 1521 fordømt Martin Luther som kjetter og forbudt fyrstene sine å spre læren hans (Arntzen, 2026). Men etter at Süleyman la Ungarn under seg, holdt det osmanske presset mot keiserriket fram i halvannet århundre til (Arntzen, 2026). Karl fikk aldri ro nok til å gjøre slutt på den nye troen, og i 1555 ble det avgjort at fyrstene i riket selv kunne velge trosretning (Arntzen, 2026). Slik levde protestantismen videre, en tro som senere skulle utløse [store religionskriger i Europa](/historie/reformasjonen/30-aarskrigen)."
+        },
+        {
+            "type": "component",
+            "name": "LawgiverOrConqueror",
+            "props": {
+                "title": "Süleyman: én mann, to ansikter"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Lovgiveren hjemme"
+        },
+        {
+            "type": "text",
+            "content": "Hjemme i riket hadde Süleyman et helt annet tilnavn. På tyrkisk kalte de ham Kanuni, som betyr 'Lovgiveren' (Ims & Goplen, 2025). Mens han var ute og krigte, jobbet han også med noe mindre dramatisk, men kanskje enda viktigere: å ordne riket innenfra. Han var en dyktig organisator og gjennomførte reformer i forvaltningen, i hæren og i pengestellet (Ims & Goplen, 2025). Under ham ble det lagt stor vekt på lovgivning, administrasjon og bygging av religiøse og offentlige institusjoner (Peksevgen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Kristne og jøder hadde en egen plass i dette systemet. De ble kalt dhimmi og fikk bo i riket så lenge de godtok sultanens styre og betalte en egen personskatt, jizya. Til gjengjeld beholdt de vanligvis sitt eget rettssystem i familiesaker og andre private spørsmål (Vikør, 2025). Ordningen var ikke likeverd slik vi tenker om det i dag, for de sto under muslimene. Men hvor strengt forskjellsbehandlingen ble praktisert, varierte gjennom historien (Vikør, 2025)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Sinan, mannen som bygde for evigheten",
+                "content": "Süleyman hadde en stjernearkitekt som het Mimar Sinan. Han var hoffarkitekt fra 1538, og gjennom et langt liv skal han ha tegnet 334 større offentlige bygg, spredt over hele riket fra Budapest til Damaskus (Store norske leksikon, 2024). De største moskeene hans har enorme kupler som ser ut til å sveve. Süleymanmoskeen i Istanbul og Selimmoskeen i Edirne står den dag i dag, og Selimmoskeen regnes som et av de fineste byggverkene fra rikets storhetstid (Store norske leksikon, 2024)."
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/osmanske-riket/suleyman-gullalderen-02.webp",
+            "alt": "Stor moské med svevende kuppel og slanke minareter i kveldslys",
+            "caption": "Arkitekten Sinan reiste moskeer med kupler som ser ut til å sveve. Mange av dem står fortsatt."
+        },
+        {
+            "type": "header",
+            "text": "Toppen og grensen"
+        },
+        {
+            "type": "text",
+            "content": "Under Süleyman strakte riket seg over tre kontinenter. Han utvidet det inn i Georgia, Bagdad, Jemen, Tunisia og Alger, og i 1538 slo flåten hans den spanske og venetianske flåten og sikret tyrkisk overtak i Middelhavet (Ims & Goplen, 2025). Hoffet var et av de rikeste i verden. Süleyman støttet selv vitenskap og kunst, og skrev dikt på osmansk-tyrkisk og persisk under dekknavnet Muhibbi, 'den som elsker' (Ims & Goplen, 2025). Også [livet bak palassmurene](/historie/osmanske-riket/topkapi-palasset) betydde mye for hvordan riket ble styrt."
+        },
+        {
+            "type": "text",
+            "content": "Men selv en gullalder har en grense. Wien viste hvor langt hæren kunne nå i denne retningen, og lenger kom den ikke. Riket var så stort at det tok måneder å sende en hær fra hovedstaden til ytterkantene. Süleyman døde 7. september 1566 ved Szigetvár i Ungarn, midt under et felttog, som en gammel mann fortsatt i sadelen (Ims & Goplen, 2025). Han ble gravlagt i Istanbul, i et gravmæle ved Süleymanmoskeen som Sinan hadde tegnet (Ims & Goplen, 2025). Etter ham fulgte herskere som sjelden var like dyktige, og sakte begynte tyngdepunktet å skifte. Men minnet om gullalderen levde videre i hundrevis av år."
+        },
+        {
+            "type": "image",
+            "src": "/images/osmanske-riket/suleyman-gullalderen-03.webp",
+            "alt": "Stort osmansk hærtog med telt og faner på vei gjennom et åpent landskap",
+            "caption": "Süleyman døde under et felttog som gammel mann, fortsatt i sadelen. Med ham endte rikets høydepunkt."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor lenge styrte Süleyman, og hvorfor kalte Europa ham 'den store'?",
+                    "Hva betyr tilnavnet Kanuni, og hva gjorde Süleyman som fortjente det?",
+                    "Hva skjedde ved Wien i 1529, og hvordan endte beleiringen?",
+                    "Hvem var Mimar Sinan, og omtrent hvor mange bygg skal han ha tegnet?"
+                ],
+                "reflekter": [
+                    "Forklar hvordan Süleyman kunne være to ting på en gang: en fryktet kriger og en klok lovgiver.",
+                    "Keiser Karl 5. måtte kjempe mot både protestantene i Tyskland og det osmanske presset i øst. Forklar med egne ord hvordan de to frontene kan ha påvirket hverandre.",
+                    "Kristne og jøder i riket ble kalt dhimmi. Forklar hva den ordningen gikk ut på, og hvorfor den både ga rettigheter og innebar forskjellsbehandling.",
+                    "Hvorfor klarte ikke hæren å komme lenger enn til Wien? Nevn minst én grunn teksten peker på."
+                ],
+                "gaaVidere": [
+                    "Süleyman ble husket både for erobringer og for lover. Skriv en kort tekst (5-8 setninger) om hva du mener det er viktigst at en leder blir husket for, og hvorfor.",
+                    "Sinan bygde moskeer som fortsatt står i dag. Finn et byggverk i Norge eller verden som har stått i flere hundre år, og forklar hvorfor folk fortsatt tar vare på det.",
+                    "Diskuter med en partner: Kan en leder både føre krig ute og skape rettferd hjemme, eller kommer de to alltid i konflikt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvorfor fikk Süleyman ulike tilnavn i Europa og hjemme?",
+                        "options": [
+                            "Folk husket navnet hans feil",
+                            "Europa så krigeren 'den store', mens folket hjemme så 'Lovgiveren'",
+                            "Han byttet navn da han ble gammel",
+                            "Han hadde to forskjellige riker"
+                        ],
+                        "answer": 1,
+                        "explanation": "Süleyman var begge deler på en gang. Europa fryktet erobreren og kalte ham 'den store', mens folket hjemme satte pris på dommeren og kalte ham Kanuni, 'Lovgiveren'."
+                    },
+                    {
+                        "question": "Hva skjedde ved Wien i 1529?",
+                        "options": [
+                            "Süleyman erobret byen for godt",
+                            "Hæren beleiret Wien, men klarte ikke å ta byen",
+                            "Süleyman ble tatt til fange",
+                            "Det ble inngått fred for alltid"
+                        ],
+                        "answer": 1,
+                        "explanation": "I 1529 marsjerte hæren helt fram til Wien og beleiret byen, men beleiringen mislyktes. Wien holdt stand, men hele Europa skalv."
+                    },
+                    {
+                        "question": "Hva gjorde Süleyman som 'Lovgiveren'?",
+                        "options": [
+                            "Han forbød alle lover",
+                            "Han la stor vekt på lovgivning og reformerte forvaltningen, hæren og pengestellet",
+                            "Han skrev en roman",
+                            "Han avskaffet domstolene"
+                        ],
+                        "answer": 1,
+                        "explanation": "Süleyman var en dyktig organisator. Under ham ble det lagt stor vekt på lovgivning og administrasjon, og han gjennomførte reformer i forvaltningen, i hæren og i pengestellet. Derfor kalte de ham Kanuni, 'Lovgiveren'."
+                    },
+                    {
+                        "question": "Hvem var Mimar Sinan?",
+                        "options": [
+                            "En general i hæren",
+                            "Stjernearkitekten som skal ha tegnet 334 større offentlige bygg, blant annet store moskeer",
+                            "Süleymans sønn",
+                            "En kjøpmann fra Venezia"
+                        ],
+                        "answer": 1,
+                        "explanation": "Sinan var hoffarkitekt fra 1538 og skal ha tegnet 334 større offentlige bygg fra Budapest til Damaskus. Süleymanmoskeen i Istanbul og Selimmoskeen i Edirne står fortsatt."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Arntzen, J. G. (2026). *Karl 5. - tysk-romersk keiser*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Karl_5._-_tysk-romersk_keiser](https://snl.no/Karl_5._-_tysk-romersk_keiser)",
+                    "Ims, G. A. & Goplen, Å. (2025). *Suleyman 1. - den store*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Suleyman_1._-_den_store](https://snl.no/Suleyman_1._-_den_store)",
+                    "Peksevgen, Ş. (2026). *Det osmanske rikets historie*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Det_osmanske_rikets_historie](https://snl.no/Det_osmanske_rikets_historie)",
+                    "Store norske leksikon. (2024). *Mimar Sinan*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Mimar_Sinan](https://snl.no/Mimar_Sinan)",
+                    "Vikør, K. S. (2025). *Dhimmi*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/dhimmi](https://snl.no/dhimmi)"
+                ]
+            }
         }
-    },
-    {
-      "type": "component",
-      "name": "Quiz",
-      "props": {
-        "questions": [
-          {
-            "question": "Hvorfor fikk Süleyman ulike tilnavn i Europa og hjemme?",
-            "options": [
-              "Folk husket navnet hans feil",
-              "Europa så krigeren 'den store', mens folket hjemme så 'Lovgiveren'",
-              "Han byttet navn da han ble gammel",
-              "Han hadde to forskjellige riker"
-            ],
-            "answer": 1,
-            "explanation": "Süleyman var begge deler på en gang. Europa fryktet erobreren og kalte ham 'den store', mens folket hjemme satte pris på dommeren og kalte ham Kanuni, 'Lovgiveren'."
-          },
-          {
-            "question": "Hva skjedde ved Wien i 1529?",
-            "options": [
-              "Süleyman erobret byen for godt",
-              "Hæren nådde portene til Wien, det lengste vest osmanerne kom, men byen holdt stand",
-              "Süleyman ble tatt til fange",
-              "Det ble inngått fred for alltid"
-            ],
-            "answer": 1,
-            "explanation": "I 1529 marsjerte hæren helt fram til Wien. Det var det lengste vest en osmansk hær noen gang kom. Wien holdt akkurat stand, men hele Europa skalv."
-          },
-          {
-            "question": "Hva gjorde Süleyman som 'Lovgiveren'?",
-            "options": [
-              "Han forbød alle lover",
-              "Han samlet og fornyet rikets lover, blant annet for å verne bøndene",
-              "Han skrev en roman",
-              "Han avskaffet domstolene"
-            ],
-            "answer": 1,
-            "explanation": "Süleyman ordnet rikets lover i et system som varte i flere hundre år. Han laget blant annet regler som skulle hindre at bøndene ble presset for hardt av skatteinnkrevere."
-          },
-          {
-            "question": "Hvem var Mimar Sinan?",
-            "options": [
-              "En general i hæren",
-              "Stjernearkitekten som tegnet hundrevis av bygninger, blant annet store moskeer",
-              "Süleymans sønn",
-              "En kjøpmann fra Venezia"
-            ],
-            "answer": 1,
-            "explanation": "Sinan var Süleymans stjernearkitekt. Han bygde moskeer, broer og bad, og flere av de store kuppelmoskeene hans står fortsatt i dag."
-          }
-        ]
-      }
-    }
-  ],
-  "timeline": []
+    ],
+    "timeline": []
 }
