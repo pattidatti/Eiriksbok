@@ -7,10 +7,11 @@
     "readTime": "10 min lesning",
     "heroImage": "/images/perserriket/aleksander-den-store-hero.webp",
     "details": [
-        "Aleksander var bare 20 år gammel da han ble konge — og 32 da han døde. På de tretten årene erobret han et område fra Hellas til India.",
-        "Han tapte aldri et slag. Men det viktigste var ikke seirene — det var hva han gjorde med fienden etterpå.",
-        "Aleksander spredte gresk språk, byggekunst og tenkning fra Egypt til Afghanistan. Denne blandingskulturen kalles hellenismen og varte i over 1000 år."
+        "Aleksander var bare 20 år gammel da han ble konge - og 32 da han døde. På de tretten årene erobret han et område fra Hellas til India.",
+        "Han vant alle de store slagene sine mot perserne. Men det viktigste var ikke seirene - det var hva han gjorde med fienden etterpå.",
+        "Aleksander spredte gresk språk, byggekunst og tenkning fra Middelhavet til India og Sentral-Asia. Denne blandingskulturen kalles hellenismen."
     ],
+    "lastUpdated": "2026-07-31",
     "content": [
         {
             "type": "header",
@@ -18,7 +19,7 @@
         },
         {
             "type": "text",
-            "content": "Sommeren 336 fvt sitter en 20 år gammel mann og hører på en beskjed som forandrer livet hans. Faren, kong Filip II av Makedonia, er blitt myrdet på sin egen datters bryllup. En livvakt har stukket ham med kniv. Filip etterlater seg et rike i Nord-Hellas og en hær som er den mest disiplinerte i Europa. Den unge mannen heter Aleksander. Han har ingen militære seirer å vise til ennå. Generalene tror han er for ung. Bystatene i sør ser sin sjanse til å gjøre opprør."
+            "content": "I 336 fvt får en 20 år gammel mann en beskjed som forandrer livet hans. Faren, kong Filip 2. av Makedonia, er blitt myrdet (Steen & Østby, 2024). Filip etterlater seg et rike i Nord-Hellas og en hær han selv har bygd opp til å bli den beste verden hadde sett (Griffith, 2026). Den unge mannen heter Aleksander. Hæren hyller ham, og han overtar tronen uten motstand (Walbank, 2026). Men han har ingen store seirer å vise til ennå, og et helt rike skal styres."
         },
         {
             "type": "text",
@@ -27,7 +28,7 @@
         {
             "type": "image",
             "src": "/images/perserriket/aleksander-den-store-hero.webp",
-            "alt": "Aleksander den store på hesten Buchefalos i full rustning under et slag mot persiske soldater",
+            "alt": "Aleksander den store på hesten Bukefalos i full rustning under et slag mot persiske soldater",
             "caption": "Aleksander red i front av sine egne soldater. Det er en av grunnene til at de fulgte ham helt til India."
         },
         {
@@ -36,11 +37,11 @@
         },
         {
             "type": "text",
-            "content": "Faren Filip ansatte den beste læreren han kunne finne for sønnen sin. Det var filosofen Aristoteles. I tre år leste Aleksander om logikk, biologi og politikk under ham. Aristoteles ga ham også et eksemplar av Iliaden, det greske heltediktet om krigeren Akilles. Aleksander sov med boka under puta resten av livet."
+            "content": "Faren Filip ansatte den beste læreren han kunne finne for sønnen sin. Det var filosofen Aristoteles. Fra Aleksander var 13 til han var 16, var Aristoteles læreren hans (Walbank, 2026). Gjennom ham tok Aleksander til seg gresk kultur og tenkning (Steen et al., 2025)."
         },
         {
             "type": "text",
-            "content": "Det er lett å tro at Aristoteles formet Aleksander til en filosof. Men det stemmer ikke helt. Aleksander tok med seg kjærligheten til kunnskap, ja. Men han tok også med seg drømmen om å bli som Akilles: en helt som faktisk gjorde noe. Da han krysset over til Asia, dro han først til byen Troja for å hilse på Akilles sin grav."
+            "content": "Det er lett å tro at Aristoteles formet Aleksander til en filosof. Men det stemmer ikke helt. Aleksander tok med seg kjærligheten til kunnskap, ja. Men han tok også med seg drømmen om å bli som Akilles, helten fra Homers Iliade. Da han hadde krysset over til Asia, dro han først til Ilion, altså Troja. Britannica kaller besøket en romantisk gest inspirert av Homer (Walbank, 2026)."
         },
         {
             "type": "header",
@@ -48,25 +49,25 @@
         },
         {
             "type": "text",
-            "content": "Aleksander krysset Hellesponten i 334 fvt med rundt 40 000 soldater. Mot seg hadde han Dareios III, stor-kongen av Persia. Det persiske riket var verdens største på den tiden. Det strakte seg fra Egypt til India og hadde minst ti ganger så mange folk og soldater som Aleksander."
+            "content": "Aleksander krysset Hellesponten våren 334 fvt med rundt 40 000 soldater (Steen et al., 2025). Mot seg hadde han Dareios 3., storkongen av Persia. Det persiske riket strakte seg fra Egypt til India, og kongen kunne stille langt flere soldater enn Aleksander. Ved Gaugamela sto rundt 50 000 av Aleksanders menn mot omkring 200 000 persere (Steen et al., 2025)."
         },
         {
             "type": "text",
-            "content": "Likevel vant Aleksander. Først ved Granikos-elven, så ved Issos, og til slutt i det avgjørende slaget ved Gaugamela i 331 fvt. Tre store slag, alle vant. Han tapte aldri et eneste slag i hele livet. Hans hemmelighet var hesteryttere som angrep i kile-formasjon, lange greske spyd kalt sarissa, og en lederstil hvor han selv red i fronten."
+            "content": "Likevel vant Aleksander. Først ved Granikos-elven i mai 334 fvt, så ved Issos høsten 333 fvt, og til slutt i det avgjørende slaget ved Gaugamela i oktober 331 fvt (Steen et al., 2025). Tre store slag, alle vunnet. Hemmeligheten lå i hæren faren hadde bygd opp: fotfolk i tett falanks med sarissaen, et spyd nesten halvannen gang så langt som det vanlige greske (Griffith, 2026), kavaleri på fløyene, og en lederstil der han selv red i fronten."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hvorfor tapte Persia?",
-                "content": "Persia hadde flere soldater, men hæren var sammensatt av folk fra mange ulike provinser som ikke kjente hverandre. Aleksander sin hær var trent sammen i flere år. I tillegg hadde de en konge som red i fronten — ikke en som flyktet når slaget gikk dårlig. Dareios III flyktet to ganger fra Aleksander. Til slutt ble han drept av sine egne menn."
+                "content": "Persia hadde flere soldater, men hæren var sammensatt av folk fra mange ulike provinser som ikke kjente hverandre. Aleksanders hær var trent sammen i flere år. I tillegg hadde de en konge som red i fronten, ikke en som flyktet når slaget gikk dårlig. Dareios 3. flyktet fra slaget ved Issos, og året etter Gaugamela ble han drept av sine egne menn (Steen et al., 2025)."
             }
         },
         {
             "type": "image",
             "src": "/images/perserriket/aleksander-den-store-01.webp",
             "alt": "Kart over Aleksanders erobringer fra Hellas gjennom Egypt og Persia til India, med byer han grunnla markert",
-            "caption": "Aleksanders ekspansjon. Han grunnla over 70 nye byer på veien — de fleste het Aleksandria."
+            "caption": "Aleksanders ekspansjon. Han grunnla en rekke nye byer på veien, de fleste med navnet Aleksandria."
         },
         {
             "type": "header",
@@ -78,11 +79,11 @@
         },
         {
             "type": "text",
-            "content": "Han lot persiske ledere beholde stillingene sine. Han adopterte persiske skikker selv. Han kledde seg i persisk drakt. Han giftet seg med en lokal høvdingdatter. Han trente persiske soldater i gresk taktikk og blandet dem med greske enheter. For mange av hans egne generaler var dette uutholdelig. Hvorfor skulle den greske seierherren oppføre seg som en perser?"
+            "content": "Han lot persiske satraper beholde stillingene sine, og han tok persiske ledere inn i hæren (Walbank, 2026). Han kledde seg i persisk drakt og prøvde å innføre persisk hoffseremoniell (Walbank, 2026). I 327 fvt giftet han seg med Roxane, datter av en fyrste i Baktria (Steen et al., 2025). For mange av hans egne generaler var dette uutholdelig. Hvorfor skulle den greske seierherren oppføre seg som en perser?"
         },
         {
             "type": "text",
-            "content": "Men Aleksander forstod noe de ikke forstod. Et imperium som hater erobreren sin, holder bare så lenge soldatene står i hver by. Et imperium som ser erobreren som «en av oss», kan styres lenge etter at erobreren er død. Prøv selv hvilke valg han tok — og hvordan de formet historien."
+            "content": "Men Aleksander forstod noe de ikke forstod. Et imperium som hater erobreren sin, holder bare så lenge soldatene står i hver by. Et imperium som ser erobreren som «en av oss», kan styres lenge etter at erobreren er død. Prøv selv hvilke valg han tok, og hvordan de formet historien."
         },
         {
             "type": "component",
@@ -93,21 +94,21 @@
         },
         {
             "type": "header",
-            "text": "Hellenismen — kulturen som overlevde sin skaper"
+            "text": "Hellenismen - kulturen som overlevde sin skaper"
         },
         {
             "type": "text",
-            "content": "Resultatet av Aleksanders valg har et navn: hellenismen. Det er ordet for den blandingskulturen som vokste fram der gresk møtte persisk, egyptisk og indisk. På et språk-nivå betyr det at gresk ble brukt fra Egypt til Afghanistan i nesten 1000 år. Da forfatterne av Det nye testamentet skrev om Jesus, skrev de på gresk, ikke arameisk. Det var Aleksanders språk-arv som gjorde det mulig."
+            "content": "Resultatet av Aleksanders valg har et navn: hellenismen. Ordet dekker både epoken fra Aleksanders død i 323 fvt til Egypt ble en del av Romerriket i 30 fvt, og blandingskulturen som vokste fram i denne tiden. Gresk kultur hørte ikke lenger bare hjemme i Hellas: den spredte seg fra det vestlige Middelhavet helt til India og Sentral-Asia. Et viktig trekk var koinè, et gresk fellesspråk som kunne brukes over hele den hellenistiske verden (Andersen et al., 2025). Da forfatterne av Det nye testamentet skrev om Jesus, skrev de på gresk (Hvalvik, 2024). Det var Aleksanders språkarv som gjorde det mulig."
         },
         {
             "type": "text",
-            "content": "I Egypt grunnla han Aleksandria, byen som senere skulle huse verdens største bibliotek. I dagens Afghanistan oppstod en kunststil kalt Gandhara, der buddha-statuer plutselig fikk greske ansiktstrekk og kappe. Da romerne senere bygde sitt imperium, kopierte de hellenistisk arkitektur, filosofi og kunst. Hellenismen er Aleksanders virkelige arv — ikke seirene, men den nye blanding-kulturen."
+            "content": "I Egypt grunnla han i 331 fvt Alexandria, byen som fikk oldtidens største bibliotek (Irgens, 2025). I grenselandet mellom dagens Pakistan og Afghanistan vokste det fram en kunststil kalt Gandhara-kunsten. Der er de stående Buddha-figurene hellenistiske i formen, mens de sittende, mediterende statuene bygger på indisk tradisjon (Kværne, 2025). Romerne som kom etter, bygde videre på hellenistisk arkitektur, filosofi og kunst. Hellenismen er Aleksanders virkelige arv: ikke seirene, men den nye blandingskulturen."
         },
         {
             "type": "image",
             "src": "/images/perserriket/aleksander-den-store-02.webp",
-            "alt": "Antikk Buddha-statue fra Gandhara med greske trekk — kappe, krøllet hår, realistiske ansiktstrekk",
-            "caption": "En Buddha med gresk ansikt. Gandhara-kunsten i dagens Afghanistan og Pakistan blandet gresk skulpturteknikk med buddhistisk innhold."
+            "alt": "Antikk Buddha-statue fra Gandhara med greske trekk: kappe, krøllet hår, realistiske ansiktstrekk",
+            "caption": "En Buddha formet etter hellenistisk forbilde. I Gandhara-kunsten er de stående Buddha-figurene greske i formen, mens innholdet er buddhistisk."
         },
         {
             "type": "header",
@@ -115,18 +116,18 @@
         },
         {
             "type": "text",
-            "content": "I juni 323 fvt blir Aleksander syk i Babylon. Han har feber i ti dager. Han kan ikke snakke til slutt. Han er bare 32 år gammel. Da hans menn spør hvem som skal arve riket, sier han angivelig: «Den sterkeste». Det er kanskje en myte — men det som skjedde etterpå, viser at det ikke spilte noen rolle hva han sa. Han hadde ingen voksen tronarving. Roxana er gravid, men barnet er ikke født ennå."
+            "content": "I juni 323 fvt blir Aleksander syk i Babylon etter et langt gjestebud. Ti dager senere, 13. juni, er han død, bare 32 år gammel (Walbank, 2026). Da mennene hans spør hvem som skal arve riket, sier han angivelig: «Den sterkeste». Det er kanskje en myte, men det som skjedde etterpå, viser at det ikke spilte noen rolle hva han sa. Han hadde ingen voksen tronarving, og riket falt raskt fra hverandre i kriger mellom generalene, som kalles diadokene (Steen et al., 2025)."
         },
         {
             "type": "text",
-            "content": "Det enorme imperiet splittes mellom hans generaler. I Egypt tar Ptolemaios over og starter et nytt kongedømme som skal vare i 300 år — det siste medlemmet er Kleopatra. I Asia tar Selevkos over et område fra Tyrkia til India. I Makedonia tar Antigonos over hjemlandet. Imperiet blir altså til tre store hellenistiske kongedømmer. Men gresk kultur lever videre i alle tre, og deler den gjennom 1000 år."
+            "content": "Ut av krigene vokser det fram tre store hellenistiske kongedømmer: ptolemeerne i Egypt, selevkidene i Asia og antigonidene i Makedonia (Andersen et al., 2025). Gresk kultur lever videre i alle tre, helt til Egypt som det siste av dem blir en del av Romerriket i 30 fvt (Andersen et al., 2025)."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Det finnes ingenting umulig for den som vil prøve.",
-                "author": "Aleksander den store"
+                "text": "Jeg ville tatt imot tilbudet, hvis jeg var Aleksander. - Det ville jeg også, hvis jeg var Parmenion.",
+                "author": "Generalen Parmenion ville ta imot Dareios' fredstilbud. Slik svarte Aleksander (Walbank, 2026)."
             }
         },
         {
@@ -135,15 +136,15 @@
         },
         {
             "type": "text",
-            "content": "Aleksander døde for over 2300 år siden. Likevel kjenner alle navnet hans. Hvorfor? Det er ikke fordi han vant flest slag. Mange har vunnet flere. Det er ikke fordi imperiet hans varte lenge — det varte ikke engang ut hans eget århundre. Det er fordi han endret hvordan kulturer kan møtes. Før Aleksander var verden delt i strenge sivilisasjoner som krigfòr hverandre. Etter Aleksander fantes det et stort hellenistisk område hvor folk kunne reise, handle og lære av hverandre."
+            "content": "Aleksander døde for over 2300 år siden. Likevel kjenner alle navnet hans. Hvorfor? Det er ikke fordi han vant flest slag. Mange har vunnet flere. Det er ikke fordi imperiet hans varte lenge, for det falt fra hverandre med en gang han var borte. Det er fordi han endret hvordan kulturer kan møtes. Etter Aleksander fantes det et stort hellenistisk område hvor folk kunne reise, handle og lære av hverandre."
         },
         {
             "type": "text",
-            "content": "Det er også derfor romerne, som kom etter, ble en kopi av hellenismen. Romerske templer ligner greske templer. Romerske filosofer skrev på gresk når de ville være seriøse. Romerske keisere lot seg male som hellenistiske konger. Hadde ikke Aleksander valgt integrasjon, ville antikken vi kjenner i dag — alt fra Sokrates til Bibelen til romerske akvedukter — sett helt annerledes ut."
+            "content": "Romerne som kom etter, bygde videre på det samme. Romerske templer ligner greske templer, og gresk filosofi og kunst ble en selvfølgelig del av romersk dannelse. Hadde ikke Aleksander valgt integrasjon, ville antikken vi kjenner i dag sett annerledes ut."
         },
         {
             "type": "text",
-            "content": "Aleksander var ikke perfekt. Han brente Persepolis. Han drepte sin egen venn Kleitos i en fyllesyk krangel. Mot slutten ble han paranoid og henrettet flere av sine egne generaler. Men hovedmønsteret i hans liv er klart: han forsøkte å smelte sammen heller enn å utslette. Det er hellenismens hemmelighet — og grunnen til at han fortsatt kalles «den store»."
+            "content": "Aleksander var ikke perfekt. Da Persepolis falt i 330 fvt, brente han ned palasset til storkongen Xerxes (Groth, 2025; Walbank, 2026). Han drepte sin egen venn Kleitos i en fyllekrangel (Walbank, 2026). Mot slutten ble han stadig mer mistenksom mot sine egne: generalen Filotas ble dømt av hæren og henrettet, faren hans Parmenion ble drept på Aleksanders ordre, og historikeren Kallisthenes ble henrettet eller døde i fangenskap (Walbank, 2026). Men hovedmønsteret i livet hans er klart: han forsøkte å smelte sammen heller enn å utslette. Det er hellenismens hemmelighet, og grunnen til at han fortsatt kalles «den store»."
         },
         {
             "type": "component",
@@ -151,15 +152,15 @@
             "props": {
                 "forstaa": [
                     "Hvor gammel var Aleksander da han ble konge, og hvor gammel var han da han døde?",
-                    "Hvem var Aleksanders lærer, og hvilken bok ga læreren ham som Aleksander sov med under puta resten av livet?",
-                    "Nevn de tre store slagene Aleksander vant mot perserne, og forklar hvorfor teksten sier han tapte aldri et slag.",
-                    "Hva menes med hellenismen, og hvor lenge levde denne blandingskulturen ifølge teksten?"
+                    "Hvem var Aleksanders lærer, og hvor gammel var Aleksander da undervisningen begynte og sluttet?",
+                    "Nevn de tre store slagene Aleksander vant mot perserne, og hvilke år de sto.",
+                    "Hva menes med hellenismen, og hvilken periode dekker ordet ifølge teksten?"
                 ],
                 "reflekter": [
                     "Teksten sier at det ikke var seirene som gjorde Aleksander til den store, men det han gjorde med de tapende. Forklar med egne ord hva han gjorde annerledes enn andre erobrere.",
-                    "Persia hadde ti ganger så mange soldater, men tapte likevel. Bruk faktaboksen og teksten til å forklare minst to grunner til at den store hæren tapte.",
+                    "Perserkongen kunne stille langt flere soldater enn Aleksander, men tapte likevel. Bruk faktaboksen og teksten til å forklare minst to grunner til at den store hæren tapte.",
                     "Mange av Aleksanders egne generaler mislikte at han kledde seg i persisk drakt og lot persiske ledere beholde stillingene. Vurder om du synes valget hans var klokt eller ikke, og begrunn svaret.",
-                    "Buddha-statuene i Gandhara fikk plutselig greske ansiktstrekk. Forklar hvordan dette ene eksemplet viser hva hellenismen egentlig var."
+                    "I Gandhara-kunsten er de stående Buddha-figurene formet etter hellenistiske forbilder, mens innholdet er buddhistisk. Forklar hvordan dette ene eksemplet viser hva hellenismen egentlig var."
                 ],
                 "gaaVidere": [
                     "Aleksander integrerte de erobrede folkene i stedet for å utslette dem. Finn et eksempel fra nyere tid der to kulturer har blandet seg og blitt til noe nytt, og skriv noen setninger om likhetene med hellenismen.",
@@ -184,7 +185,7 @@
                         "question": "Hvem var Aleksanders lærer?",
                         "options": ["Sokrates", "Platon", "Aristoteles", "Diogenes"],
                         "correctIndex": 2,
-                        "explanation": "Filosofen Aristoteles var Aleksanders lærer i tre år. Aleksander tok med seg Iliaden på sine erobringstog."
+                        "explanation": "Filosofen Aristoteles underviste Aleksander fra han var 13 til han var 16 år gammel."
                     },
                     {
                         "question": "Hva er hellenismen?",
@@ -206,7 +207,7 @@
                             "Fordi han bygde verdens største tempel"
                         ],
                         "correctIndex": 2,
-                        "explanation": "Det var ikke seirene, men hva han gjorde med fienden etterpå — han integrerte kulturer i stedet for å utslette dem."
+                        "explanation": "Det var ikke seirene, men hva han gjorde med fienden etterpå: han integrerte kulturer i stedet for å utslette dem."
                     },
                     {
                         "question": "Hva skjedde med imperiet etter Aleksander døde?",
@@ -217,8 +218,25 @@
                             "Det ble erobret av romerne med en gang"
                         ],
                         "correctIndex": 2,
-                        "explanation": "Aleksander hadde ingen voksen tronarving. Hans generaler delte imperiet i blant annet Ptolemeernes Egypt og Selevkidenes Asia."
+                        "explanation": "Aleksander hadde ingen voksen tronarving. Generalene hans delte imperiet i blant annet ptolemeernes Egypt og selevkidenes Asia."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, Ø., Steen, T. & Østby, E. (2025). *Hellenismen*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/hellenismen](https://snl.no/hellenismen)",
+                    "Griffith, G. T. (2026). *Philip II. King of Macedonia*. Encyclopaedia Britannica. Hentet 31.07.2026 fra [britannica.com/biography/Philip-II-king-of-Macedonia](https://www.britannica.com/biography/Philip-II-king-of-Macedonia)",
+                    "Groth, B. (2025). *Persepolis*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Persepolis](https://snl.no/Persepolis)",
+                    "Hvalvik, R. (2024). *Det nye testamentet*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Det_nye_testamentet](https://snl.no/Det_nye_testamentet)",
+                    "Irgens, M. (2025). *Alexandria*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Alexandria](https://snl.no/Alexandria)",
+                    "Kværne, P. (2025). *Gandhara-kunst*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Gandhara-kunst](https://snl.no/Gandhara-kunst)",
+                    "Steen, T. & Østby, E. (2024). *Filip 2. - konge av Makedonia*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Filip_2._-_konge_av_Makedonia](https://snl.no/Filip_2._-_konge_av_Makedonia)",
+                    "Steen, T., Amundsen, L. & Østby, E. (2025). *Aleksander den store*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Aleksander_den_store](https://snl.no/Aleksander_den_store)",
+                    "Walbank, F. W. (2026). *Alexander the Great*. Encyclopaedia Britannica. Hentet 31.07.2026 fra [britannica.com/biography/Alexander-the-Great](https://www.britannica.com/biography/Alexander-the-Great)"
                 ]
             }
         }
