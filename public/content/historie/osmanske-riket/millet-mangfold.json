@@ -9,13 +9,13 @@
   "details": [
     "I riket levde muslimer, kristne og jøder side om side, hver gruppe under sine egne lover og ledere.",
     "Dette kalles millet-systemet, og det ga religiøse minoriteter frihet, men ikke full likhet.",
-    "Mens Europa jaget jøder bort og førte religionskriger, ønsket sultanen de samme menneskene velkommen."
+    "Mens Europa jaget jøder bort og førte religionskriger, fikk de samme menneskene gode forhold i det osmanske riket."
   ],
-  "externalUrl": "https://snl.no/millet-systemet",
+  "externalUrl": "https://snl.no/millet_-_Det_osmanske_riket",
   "content": [
     {
       "type": "text",
-      "content": "I 1492 skjedde to ting på en gang i to deler av verden. I Spania ble jødene jaget ut av landet hvis de ikke ville bli kristne. Tusenvis måtte forlate hjemmene sine med det de kunne bære. Samtidig, langt mot øst, sendte den osmanske sultanen skip for å hente dem. 'Dere kaller den spanske kongen klok,' skal han ha sagt, 'men han har gjort sitt eget land fattigere og mitt rikere.' Hvordan kunne ett rike ta imot folk som andre jaget bort?"
+      "content": "I 1492 ble jødene drevet ut av Spania under kong Ferdinand 5. og dronning Isabella. Tusenvis måtte forlate hjemmene sine med det de kunne bære, og flyktningene spredte seg rundt hele Middelhavet. Mange av dem endte i det osmanske riket. Der fikk de gode forhold, og det vokste fram store jødiske samfunn både på Balkan og ellers i riket (Groth & Arntzen, 2025). Hvordan kunne ett rike ta imot folk som andre jaget bort?"
     },
     {
       "type": "image",
@@ -29,7 +29,7 @@
     },
     {
       "type": "text",
-      "content": "Det osmanske riket var aldri et land med ett folk og én tro. Innenfor grensene bodde det tyrkere, arabere, grekere, armenere, serbere, jøder og mange flere. De aller fleste var ikke tyrkere, og svært mange var ikke muslimer. Likevel klarte sultanene å holde alt dette sammen i hundrevis av år. Nøkkelen var en smart ordning vi kaller millet-systemet."
+      "content": "Det osmanske riket var aldri et land med ett folk og én tro. Befolkningen var fleretnisk og flerreligiøs, med kristne, muslimer, jøder og andre grupper side om side (Peksevgen, 2026a). Innenfor grensene bodde det tyrkere, arabere, grekere, armenere, serbere, jøder og mange flere. Likevel klarte sultanene å holde alt dette sammen i hundrevis av år. Nøkkelen var en ordning vi kaller millet-systemet."
     },
     {
       "type": "text",
@@ -48,7 +48,7 @@
     },
     {
       "type": "text",
-      "content": "Tanken bak millet-systemet var enkel. I stedet for å tvinge alle til å bli like, lot sultanen hver religiøs gruppe styre seg selv. Hver millet hadde sin egen leder, som svarte direkte til sultanen. De kristne fulgte sine egne kirkelover, jødene sine, og muslimene sharia. Saker om ekteskap, arv og tro ble avgjort innenfor hver gruppe, etter deres egne regler."
+      "content": "Tanken bak millet-systemet var enkel. I stedet for å tvinge alle til å bli like, ga sultanen hver religiøs gruppe en avgrenset rett til å styre seg selv under sine egne lover (Des Bouvrie Thorsen, 2023). Hver millet hadde sin egen religiøse leder, som svarte til myndighetene for å kreve inn skatt og holde ro og orden i gruppa. Gruppene hadde egne domstoler, som kunne bygge på kristen kirkerett eller jødisk halakha. Saker om ekteskap, arv og tro ble altså avgjort innenfor hver gruppe, etter deres egne regler (Des Bouvrie Thorsen, 2023)."
     },
     {
       "type": "text",
@@ -59,7 +59,7 @@
       "name": "FactBox",
       "props": {
         "title": "Frihet, men ikke likhet",
-        "content": "Ikke-muslimer betalte en egen skatt som het cizye, som muslimer slapp. De fikk vanligvis ikke bære våpen, og det fantes regler for hvordan de skulle kle seg og bygge. De høyeste embetene var stort sett forbeholdt muslimer. Med andre ord: alle fikk leve etter sin egen tro, men de var ikke like for loven. Det var toleranse på osmansk vis."
+        "content": "Kristne og jøder hadde det islamsk lov kaller dhimmi-status. De fikk beskyttelse av liv og eiendom og beholdt sin egen rett i familiesaker, men til gjengjeld måtte de betale en egen personskatt, jizya (på tyrkisk cizye), og godta en underordnet stilling i forhold til muslimene. Hvor strengt dette ble praktisert, varierte gjennom historien (Vikør, 2025). Med andre ord: alle fikk leve etter sin egen tro, men de var ikke like for loven. Det var toleranse på osmansk vis."
       }
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "type": "text",
-      "content": "Men det samme mangfoldet kunne bli farlig hvis riket ble svakt. Når hver gruppe hadde sin egen identitet, sin egen leder og sitt eget språk, var det lettere for dem å begynne å drømme om egne nasjoner. Mange hundre år senere, da nasjonalismens tanker spredte seg, ble nettopp dette en av bruddlinjene som rev riket fra hverandre. Det som hadde vært en styrke, ble til slutt en svakhet."
+      "content": "Men det samme mangfoldet kunne bli farlig hvis riket ble svakt. Når hver gruppe hadde sin egen identitet, sin egen leder og sitt eget språk, var det lettere for dem å begynne å drømme om egne nasjoner. Mange hundre år senere spredte nasjonalismens tanker seg. Nasjonale uavhengighetsbevegelser, fra den greske frigjøringskrigen i 1821 til 1830 og videre på Balkan, kostet riket store landområder for godt (Peksevgen, 2026b). Det som hadde vært en styrke, ble til slutt en svakhet."
     },
     {
       "type": "image",
@@ -91,7 +91,7 @@
         "name": "Oppgaver",
         "props": {
             "forstaa": [
-                "Hva skjedde i Spania i 1492, og hva gjorde den osmanske sultanen samtidig?",
+                "Hva skjedde med jødene i Spania i 1492, og hvor fant mange av dem et nytt hjem?",
                 "Hva var millet-systemet? Forklar kort hvordan hver religiøs gruppe ble styrt.",
                 "Hva var cizye, og hvem måtte betale denne skatten?",
                 "Nevn minst tre folkegrupper som bodde i det osmanske riket."
@@ -145,7 +145,7 @@
               "Bare muslimer fikk bo i riket"
             ],
             "answer": 1,
-            "explanation": "Kristne og jøder fikk leve etter sin egen tro, men de betalte en egen skatt (cizye), fikk ofte ikke bære våpen, og de høyeste embetene var stort sett forbeholdt muslimer."
+            "explanation": "Kristne og jøder fikk beskyttelse og beholdt sin egen rett i familiesaker, men de måtte betale en egen personskatt (jizya/cizye) og godta en underordnet stilling i forhold til muslimene."
           },
           {
             "question": "Hvordan kunne mangfoldet bli en svakhet?",
@@ -160,7 +160,21 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Des Bouvrie Thorsen, K. (2023). *Millet - Det osmanske riket*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/millet_-_Det_osmanske_riket](https://snl.no/millet_-_Det_osmanske_riket)",
+          "Groth, B. & Arntzen, J. G. (2025). *Sefarder*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/sefarder](https://snl.no/sefarder)",
+          "Peksevgen, Ş. (2026a). *Det osmanske riket*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Det_osmanske_riket](https://snl.no/Det_osmanske_riket)",
+          "Peksevgen, Ş. (2026b). *Det osmanske rikets historie*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Det_osmanske_rikets_historie](https://snl.no/Det_osmanske_rikets_historie)",
+          "Vikør, K. S. (2025). *Dhimmi*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/dhimmi](https://snl.no/dhimmi)"
+        ]
+      }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-07-31"
 }

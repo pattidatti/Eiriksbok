@@ -9,13 +9,13 @@
   "details": [
     "Riket er oppkalt etter Osman, en kriger som rundt år 1300 ledet en liten flokk ryttere i grenselandet i Anatolia.",
     "Osmanerne vokste i tomrommet etter et svekket Bysants, dels ved erobring og dels ved smarte allianser.",
-    "På under hundre år gikk de fra en flokk grensekrigere til den sterkeste makten på Balkan."
+    "På under hundre år gikk de fra en flokk grensekrigere til en stormakt som hersket over Serbia og store deler av Balkan."
   ],
   "externalUrl": "https://snl.no/Osman_1",
   "content": [
     {
       "type": "text",
-      "content": "Alle store riker begynner et sted. Romerriket begynte med en liten by. Det osmanske riket begynte med en mann, en flokk ryttere og en drøm. Mannen het Osman, og det er etter ham hele riket fikk navnet sitt. På norsk sier vi 'osmansk', og på engelsk 'Ottoman', men begge kommer fra det samme navnet: Osman."
+      "content": "Alle store riker begynner et sted. Romerriket begynte med en liten by. Det osmanske riket begynte med en mann, en flokk ryttere og en drøm. Mannen het Osman, og det er etter ham hele riket fikk navnet sitt (Peksevgen, 2026b). På norsk sier vi 'osmansk', og på engelsk 'Ottoman', men begge kommer fra det samme navnet: Osman."
     },
     {
       "type": "component",
@@ -41,11 +41,11 @@
     },
     {
       "type": "text",
-      "content": "Osman og mennene hans var det folk kalte ghazi-krigere. Det var ryttere som levde av å kjempe i grenselandet mellom det kristne Bysants og de muslimske rikene i Anatolia, området som i dag er Tyrkia. De var dyktige til hest, raske og harde, og de tjente på krigsbytte og land de tok."
+      "content": "Osman og mennene hans var det folk kalte ghazi-krigere. Det var ryttere som levde av å kjempe i grenselandet mellom det kristne Bysants og de muslimske rikene i Anatolia, området som i dag er Tyrkia (Peksevgen, 2026b). De var dyktige til hest, raske og harde, og de tjente på krigsbytte og land de tok. Osman selv levde fra 1258 til rundt 1323, og seieren hans ved Bapheus i 1302 ga osmanerne fast fotfeste i området (Peksevgen, 2026b)."
     },
     {
       "type": "text",
-      "content": "Tidspunktet var perfekt for noen som ville vokse. Det gamle Øst-Romerriket, som vi kaller Bysants, hadde styrt området i tusen år, men nå var det utslitt og svakt. Det var blitt rammet av indre strid og av [korstogene](/historie/middelalderen/korstogene), der kristne hærer fra Europa hadde herjet og svekket det. Mellom det døende Bysants og de oppdelte tyrkiske statene oppsto et tomrom. Osman fylte det."
+      "content": "Tidspunktet var perfekt for noen som ville vokse. Det gamle Øst-Romerriket, som vi kaller Bysants, hadde styrt området i tusen år, men nå var det utslitt og svakt. I 1204 ble hovedstaden Konstantinopel tatt og plyndret av deltakerne i [det fjerde korstoget](/historie/middelalderen/korstogene), og etterpå ble riket delt opp i flere små stater (Goplen et al., 2025). Mellom det svekkede Bysants og de oppdelte tyrkiske statene oppsto et tomrom. Osman fylte det."
     },
     {
       "type": "component",
@@ -64,7 +64,7 @@
     },
     {
       "type": "text",
-      "content": "Sønnen og sønnesønnene til Osman fortsatte det han hadde startet. De erobret den store byen Bursa og gjorde den til hovedstad. De krysset stredet og satte for første gang foten i Europa. Og i 1389 møtte de en serbisk hær på Kosovosletta. Slaget ble blodig, men da røyken la seg, var osmanerne den sterkeste makten på hele Balkan."
+      "content": "Sønnen og sønnesønnene til Osman fortsatte det han hadde startet. Sønnen Orhan gjorde den store byen Bursa til rikets første hovedstad i 1326 (Lundbo, 2026). Midt på 1300-tallet gikk osmanske styrker over Dardanellene og satte for første gang foten i Europa (Peksevgen, 2026a). Og i 1389 møtte de en serbisk hær på Kosovosletta. Slaget ble blodig, og både den serbiske fyrsten Lazar og sultan Murat 1. falt i kampen. Osmanerne vant, og Serbia ble en provins i det osmanske riket (Lundbo, 2024)."
     },
     {
       "type": "image",
@@ -78,7 +78,7 @@
     },
     {
       "type": "text",
-      "content": "Det som virkelig skilte osmanerne fra naboene, var at de bygde en fast og disiplinert hær. Mens andre herskere måtte samle sammen krigere på nytt for hver kamp, hadde sultanen soldater som var trent, lønnet og lojale hele året. Denne slagkraften gjorde at riket kunne fortsette å vokse i generasjon etter generasjon."
+      "content": "Det som virkelig skilte osmanerne fra naboene, var at de bygde en fast og disiplinert hær. Mens andre herskere måtte samle sammen krigere på nytt for hver kamp, hadde sultanen janitsjarene, en fast avdeling som sto klar hele året. Korpset fantes som fast avdeling fra 1362, under sultan Murat 1., og ble senere regnet som det beste fotfolket i Europa (Ims, 2026). Denne slagkraften gjorde at riket kunne fortsette å vokse i generasjon etter generasjon."
     },
     {
       "type": "text",
@@ -164,7 +164,22 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Goplen, Å., Fjalsett, G. K., Tsakos, A. & Seland, E. H. (2025). *Det bysantinske riket*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Det_bysantinske_riket](https://snl.no/Det_bysantinske_riket)",
+          "Ims, G. A. (2026). *Janitsjarene*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Janitsjarene](https://snl.no/Janitsjarene)",
+          "Lundbo, S. (2024). *Kosovo polje*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Kosovo_polje](https://snl.no/Kosovo_polje)",
+          "Lundbo, S. (2026). *Bursa*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Bursa](https://snl.no/Bursa)",
+          "Peksevgen, Ş. (2026a). *Det osmanske rikets historie*. Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Det_osmanske_rikets_historie](https://snl.no/Det_osmanske_rikets_historie)",
+          "Peksevgen, Ş. (2026b). *Osman 1.* Store norske leksikon. Hentet 31.07.2026 fra [snl.no/Osman_1](https://snl.no/Osman_1)"
+        ]
+      }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-07-31"
 }
