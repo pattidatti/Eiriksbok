@@ -15,7 +15,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Romerriket falt ikke; det forandret seg bare til oss. Det er en dristig påstand, men se deg rundt. Hvis du bor i en by med rette gater, hvis du bruker penger med ansiktet til en leder på, hvis du går til en domstol for å løse en konflikt, eller hvis du bare sier ordet 'skole', 'kalender' eller 'musikk' – da lever du i arven etter Roma."
+            "content": "Romerriket falt ikke; det forandret seg bare til oss. Det er en dristig påstand, men se deg rundt. Hvis du bor i en by med rette gater, hvis du bruker penger med ansiktet til en leder på, hvis du går til en domstol for å løse en konflikt, eller hvis du bare sier ordet 'skole', 'kalender' eller 'musikk' - da lever du i arven etter Roma."
         },
         {
             "type": "header",
@@ -23,11 +23,11 @@
         },
         {
             "type": "text",
-            "content": "Romerne snakket latin. Da imperiet falt, forsvant ikke språket. Det utviklet seg. I Frankrike blandet vulgærlatin (folkets latin) seg med gallisk, i Spania med iberisk, og i Romania med dakisk. Resultatet er de romanske språkene: Fransk, spansk, italiensk, portugisisk og rumensk. Nesten en milliard mennesker snakker i dag et moderne 'romersk' språk som morsmål."
+            "content": "Romerne snakket latin. Da imperiet falt, forsvant ikke språket. Det utviklet seg. Det var ikke det fine skriftspråket som levde videre, men vulgærlatin - språket vanlige folk snakket til hverdags. I hver del av riket blandet det seg med språkene som allerede fantes der, og rundt 700-tallet hadde de ulike variantene beveget seg så langt fra latin og fra hverandre at de var blitt egne språk (Lima, 2025). Resultatet er de romanske språkene: fransk, spansk, italiensk, portugisisk og rumensk, i tillegg til blant annet katalansk, sardisk og galisisk. Mer enn 900 millioner mennesker har i dag et romansk språk som morsmål (Lima, 2025)."
         },
         {
             "type": "text",
-            "content": "Men hva med oss i nord? Engelsk og norsk er germanske språk, men vi er likevel gjennomsyret av latin. Da kristendommen kom, kom den på latin. Vitenskapen, jussen og kirken brukte latin helt frem til 1700-tallet. Ord som *system, data, video, audio, media, null, prosent* og *sivilisasjon* er ren latin. Du kan faktisk ikke snakke om politikk, vitenskap eller utdanning uten å bruke ord romerne ga oss."
+            "content": "Men hva med oss i nord? Engelsk og norsk er germanske språk, men vi er likevel gjennomsyret av latin. Da kristendommen kom, kom den på latin. Vitenskapen, jussen og kirken brukte latin i århundrer etter at riket selv var borte. Ord som *system, data, video, audio, media, null, prosent* og *sivilisasjon* er ren latin. Du kan faktisk ikke snakke om politikk, vitenskap eller utdanning uten å bruke ord romerne ga oss."
         },
         {
             "type": "component",
@@ -43,7 +43,7 @@
         },
         {
             "type": "text",
-            "content": "Den kanskje viktigste arven er usynlig: Loven. Romerne var besatt av orden og regler. Deres største juridiske verk, *Corpus Juris Civilis* (samlet av keiser Justinian på 500-tallet), danner grunnlaget for lovgivningen i nesten alle europeiske land i dag. Napoleon baserte sin lovbok på romersk rett, og gjennom ham spredte det seg til hele verden."
+            "content": "Den kanskje viktigste arven er usynlig: Loven. Romerne var besatt av orden og regler. Deres største juridiske verk, *Corpus juris civilis*, ble satt sammen i årene 529-534 på ordre fra keiser Justinian, som satte ned en kommisjon på ti menn under ledelse av juristen Tribonian (Sandvik & Gisle, 2025). Verket ble studert intenst ved middelalderens universiteter, særlig i Bologna, og har hatt sterk innflytelse på rettsutviklingen i Europa. I Østerrike og Tyskland var deler av det gjeldende rett helt fram til den nye sivillovboken trådte i kraft i 1900 (Sandvik & Gisle, 2025)."
         },
         {
             "type": "image",
@@ -53,7 +53,15 @@
         },
         {
             "type": "text",
-            "content": "Sentrale prinsipper vi tar for gitt, kommer fra Roma:\n1.  Likhet for loven: Loven skal gjelde likt for alle (selv om romerne ikke alltid fulgte dette i praksis med slaver).\n2.  Uskyldspresumpsjonen: 'Ei incumbit probatio qui dicit, non qui negat' – Bevisbyrden ligger på den som anklager, ikke den som nekter. Du er uskyldig til det motsatte er bevist.\n3.  Dommere og advokater: Systemet med proffe jurister som tolker loven og forsvarer klienter, er en romersk oppfinnelse."
+            "content": "Sentrale prinsipper vi tar for gitt i dag, har røtter i romerretten:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Likhet for loven: Loven skal gjelde likt for alle. Romerne fulgte det ikke selv i praksis - slaver hadde ikke de samme rettighetene som frie borgere.",
+                "Uskyldspresumpsjonen: Bevisbyrden ligger på den som anklager, ikke på den som nekter. Du er uskyldig til det motsatte er bevist.",
+                "Dommere og advokater: Systemet med utdannede jurister som tolker loven og forsvarer klienter, har røtter i Roma."
+            ]
         },
         {
             "type": "header",
@@ -61,23 +69,23 @@
         },
         {
             "type": "text",
-            "content": "Hvis du ser på berømte romerske bygninger som Pantheon eller Colosseum, kan du lure på hvorfor de fortsatt står etter 2000 år, mens moderne broer ruster i stykker etter femti. Hemmeligheten er Opus Caementicium – romersk betong. De blandet kalkstein med vulkansk aske (pozzolana). Denne blandingen har en unik egenskap: Den blir hardere over tid, og den herder til og med under vann."
+            "content": "Hvis du ser på berømte romerske bygninger som Pantheon eller Colosseum, kan du lure på hvorfor de fortsatt står etter nesten 2000 år, mens moderne broer ruster i stykker etter femti. En stor del av svaret er opus caementicium - romersk betong. Den bestod av brent kalk, vulkansk aske og knust teglstein (Thue, 2025). Blandingen herdet når den ble rørt ut i vann, og ble deretter vannbestandig. Det var mestringen av betongstøping som gjorde at romerne kunne bygge hvelv og kupler i en skala ingen hadde sett før (Sande, 2024)."
         },
         {
             "type": "image",
             "src": "/images/romerriket/pantheon-oculus.webp",
             "alt": "Innsiden av Pantheon-kuppelen med lysstråle fra oculus",
-            "caption": "Kuppelen i Pantheon er fortsatt verdens største kuppel av uarmert betong, 1900 år etter at den ble bygget."
+            "caption": "Kuppelen i Pantheon er 43,3 meter i tverrmål og er den største kuppelen i murverk som noen gang er bygd (Sande, 2024)."
         },
         {
             "type": "text",
-            "content": "Vi glemte oppskriften på betong i middelalderen og gjenoppdaget den ikke før på 1700-tallet. Uten betong ville moderne byer med skyskrapere vært umulige. Romerne ga oss også buen. Før romerne brukte man mest søyler og bjelker (som i greske templer), noe som begrenset hvor store rom man kunne bygge. Buen fordeler vekten utover og nedover, slik at man kan bygge gigantiske åpne rom (hvelv) og broer som tåler enorm vekt."
+            "content": "Den sementen moderne betong bygger på, portlandsement, ble først utviklet i Storbritannia på 1800-tallet, oppkalt etter portlandstein fra sørkysten av England (Thue, 2025). Uten betong ville moderne byer med skyskrapere vært umulige. Romerne ga oss også buen. Før romerne brukte man mest søyler og bjelker, som i greske templer, og det begrenset hvor store rom man kunne bygge. Buen fordeler vekten utover og nedover, slik at man kan bygge gigantiske åpne rom og broer som tåler enorm vekt. Romernes viktigste bidrag til arkitekturen er nettopp hvelvet (Sande, 2024)."
         },
         {
             "type": "image",
             "src": "/images/romerriket/pont-du-gard.webp",
             "alt": "Den romerske akveduktbroen Pont du Gard i Frankrike",
-            "caption": "Romerne var mestere i å kontrollere vannet. Akveduktene deres kunne transportere ferskvann over hundrevis av kilometer ved hjelp av tyngdekraften."
+            "caption": "Romerne var mestere i å kontrollere vannet. Akveduktene kunne føre ferskvann 30-50 kilometer inn til byene ved hjelp av tyngdekraften (Sande, 2024)."
         },
         {
             "type": "component",
@@ -112,11 +120,11 @@
         },
         {
             "type": "text",
-            "content": "Har du lagt merke til at mange gamle europeiske byer har gater som går rett som piler? Det er ofte fordi de startet som romerske militærleirer (*castrum*). Romerne planla byene sine etter et rutenett. De hadde to hovedgater: Cardo (nord-sør) og Decumanus (øst-vest). Der de krysset hverandre, lå Forum – byens sentrum med torg, templer og rådhus. Byer som London, Paris, Köln, Wien og Barcelona ble alle grunnlagt eller utbygd av romerne."
+            "content": "Har du lagt merke til at mange gamle europeiske byer har gater som går rett som piler? Det er ofte fordi de startet som romerske militærleirer (*castrum*). En romersk provinsby ble alltid planlagt rundt to hovedgater: cardo og decumanus. De delte byen inn i et firkantet rutenett, og der de krysset hverandre lå forum - byens torg og sentrum (Sande, 2024). Mange av dagens europeiske byer vokste ut av slike romerske byer og leirer."
         },
         {
             "type": "text",
-            "content": "Mellom byene bygde de veier. 'Alle veier fører til Roma' er ikke bare et ordtak; det var fakta. Romerne bygde over 80 000 kilometer med steinbelagte veier. De var så solid bygget at mange av dem fortsatt brukes som fundament for moderne motorveier i dag. Veiene gjorde det mulig å reise raskt og trygt, noe som bandt Europa sammen økonomisk og kulturelt."
+            "content": "Mellom byene bygde de veier. 'Alle veier fører til Roma' er ikke bare et ordtak; det var fakta. Romerne var oldtidens store veibyggere. Over en periode på om lag 700 år, fram til år 395 evt., bygde de ut et hovedveinett som strakte seg fra Persiabukta til Skottland, og veiene holdt fremragende kvalitet (Nordahl & Hoff, 2024). Veiene gjorde det mulig å reise raskt og trygt, noe som bandt riket sammen økonomisk og kulturelt."
         },
         {
             "type": "header",
@@ -124,7 +132,7 @@
         },
         {
             "type": "text",
-            "content": "Til slutt må vi ikke glemme at Roma ble kristendommens 'hovedkvarter'. Paven i Roma tok tittelen *Pontifex Maximus* ('Den øverste brobygger'), en tittel som opprinnelig tilhørte den romerske ypperstepresten og senere keiseren. Den katolske kirke organiserte seg med bispedømmer som fulgte de gamle romerske provinsgrensene. Selv i dag snakker paven latin, og Vatikanstaten er på mange måter den siste levende resten av Romerriket."
+            "content": "Til slutt må vi ikke glemme at Roma ble kristendommens 'hovedkvarter'. I antikkens Roma var *pontifex maximus* den øverste lederen for statskulten og rikets fremste religiøse autoritet, en tittel keiserne etter hvert bar selv. Paven overtok den ikke med en gang. Først på 1400-tallet begynte pavene å bruke tittelen, fordi renessansens humanister ville knytte pavemakten tettere til det praktfulle Romerriket (Iddeng & Steen, 2025). Den katolske kirke organiserte seg også med bispedømmer som fulgte de gamle romerske provinsgrensene. Selv i dag er latin kirkespråk i Vatikanet, og Vatikanstaten er på mange måter den siste levende resten av Romerriket."
         },
         {
             "type": "component",
@@ -132,12 +140,12 @@
             "props": {
                 "forstaa": [
                     "Hva kalles de romanske språkene, og nevn minst tre av dem som utviklet seg fra latin.",
-                    "Hva var hemmeligheten bak romersk betong (Opus Caementicium), og hva gjorde denne blandingen så spesiell ifølge teksten?",
-                    "Hva het de to hovedgatene i en romersk byplan, og hvilken retning gikk hver av dem?",
-                    "Hvilket juridisk verk samlet keiser Justinian på 500-tallet, og hvorfor er det viktig i dag?"
+                    "Hva bestod romersk betong (opus caementicium) av, og hva gjorde denne blandingen så spesiell ifølge teksten?",
+                    "Hva het de to hovedgatene i en romersk byplan, og hva lå der de krysset hverandre?",
+                    "Hvilket juridisk verk ble satt sammen på keiser Justinians ordre, og hvorfor er det viktig i dag?"
                 ],
                 "reflekter": [
-                    "Forklar hvorfor buen lot romerne bygge mye større rom enn grekerne, som brukte søyler og bjelker.",
+                    "Forklar hvorfor buen og hvelvet lot romerne bygge mye større rom enn grekerne, som brukte søyler og bjelker.",
                     "Teksten sier at norsk er et germansk språk, men likevel fullt av latinske ord som system, video og prosent. Forklar hvordan latin havnet i språket vårt selv om vi aldri var en del av Romerriket.",
                     "Sammenlign gresk og romersk byggekunst ut fra tabellen i artikkelen. Hvilken forskjell mener du betyr mest for hvordan vi bygger i dag, og hvorfor?",
                     "Artikkelen kaller uskyldspresumpsjonen en romersk arv, men nevner også at romerne ikke behandlet slaver likt for loven. Diskuter hvorfor et prinsipp kan være verdifullt selv om de som fant det opp ikke fulgte det selv."
@@ -169,7 +177,7 @@
                         "options": [
                             "Plast",
                             "Stål",
-                            "Betong (Opus Caementicium)",
+                            "Betong (opus caementicium)",
                             "Isopor"
                         ],
                         "correctAnswer": 2
@@ -185,7 +193,7 @@
                         "correctAnswer": 1
                     },
                     {
-                        "question": "Hvem tok tittelen Pontifex Maximus etter keiserne?",
+                        "question": "Hvem tok i bruk tittelen pontifex maximus etter keiserne?",
                         "options": [
                             "Presidenten av Italia",
                             "Paven",
@@ -194,6 +202,20 @@
                         ],
                         "correctAnswer": 1
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Iddeng, J. W. & Steen, T. (2025). *Pontifex maximus*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/pontifex_maximus](https://snl.no/pontifex_maximus)",
+                    "Lima, G. (2025). *Romanske språk*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/romanske_språk](https://snl.no/romanske_spr%C3%A5k)",
+                    "Nordahl, R. S. & Hoff, I. (2024). *Vei*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/vei](https://snl.no/vei)",
+                    "Sande, S. (2024). *Romersk arkitektur*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/romersk_arkitektur](https://snl.no/romersk_arkitektur)",
+                    "Sandvik, G. & Gisle, J. (2025). *Corpus juris civilis*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Corpus_juris_civilis](https://snl.no/Corpus_juris_civilis)",
+                    "Thue, J. V. (2025). *Betong*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/betong](https://snl.no/betong)"
                 ]
             }
         }
@@ -214,10 +236,11 @@
             "options": [
                 "Plast",
                 "Stål",
-                "Betong (Opus Caementicium)",
+                "Betong (opus caementicium)",
                 "Isopor"
             ],
             "correctAnswer": 2
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-01"
 }
