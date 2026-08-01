@@ -17,7 +17,7 @@
   "content": [
     {
       "type": "text",
-      "content": "Tenk deg en krig så brutal at den drepte en tredjedel av befolkningen i Tyskland. En krig hvor soldater ikke fikk lønn, men beskjed om å \"ta det de trengte\" fra bøndene. Dette var 30-årskrigen – en konflikt som startet som en krangel om religion, men endte som en brutal maktkamp om Europas fremtid. Det var den første moderne krigen, og den siste store religionskrigen."
+      "content": "Tenk deg en krig så ødeleggende at folketallet i Det tysk-romerske riket falt med rundt 40 prosent i årene 1600-1650 (Arntzen, 2026b). En krig der soldatene sjelden fikk lønn, men i stedet tok det de trengte fra bøndene. Dette var 30-årskrigen - en konflikt som startet som en krangel om religion, men endte som en brutal maktkamp om Europas fremtid. Det ble den siste store religionskrigen i Europa."
     },
     {
       "type": "header",
@@ -25,15 +25,15 @@
     },
     {
       "type": "text",
-      "content": "På begynnelsen av 1600-tallet var Europa en kruttønne som ventet på en gnist. Martin Luthers reformasjon hadde hundre år tidligere splittet kristenheten i to: katolikker og protestanter. Freden i Augsburg (1555) hadde forsøkt å roe gemyttene med prinsippet *cuius regio, eius religio* («den som styrer, bestemmer religionen»), men spenningene var fortsatt høye.\n\nSentralt i konflikten sto Det tysk-romerske riket, et lappeteppe av hundrevis av småstater, fyrstedømmer og frie byer, alle underlagt (i teorien) keiseren i Wien. Keiseren var fra huset Habsburg, en strengt katolsk familie som også styrte Spania og store deler av den nye verden. Protestantene fryktet at habsburgerne ville knuse troen deres og innføre sentralisert katolsk enevelde."
+      "content": "På begynnelsen av 1600-tallet var Europa en kruttønne som ventet på en gnist. Martin Luthers reformasjon hadde hundre år tidligere splittet kristenheten i to: katolikker og protestanter. Freden i Augsburg (1555) hadde forsøkt å roe gemyttene med prinsippet *cuius regio, eius religio* («den som styrer, bestemmer religionen»), men spenningene var fortsatt høye (Arntzen, 2026a).\n\nSentralt i konflikten sto Det tysk-romerske riket. Riket besto av over 300 større og mindre områder med hver sin fyrste, og øverst sto keiseren (Arntzen, 2026b). Keiseren var fra huset Habsburg, en strengt katolsk familie som også styrte Spania og store deler av den nye verden. Protestantene fryktet at habsburgerne ville knuse troen deres og innføre sentralisert katolsk enevelde."
     },
     {
       "type": "header",
-      "text": "Fase 1: Det böhmiske opprøret (1618–1625)"
+      "text": "Fase 1: Det böhmiske opprøret (1618-1625)"
     },
     {
       "type": "text",
-      "content": "Gnisten ble tent i Praha i 1618. Böhmen (dagens Tsjekkia) var et velstående område med mange protestanter, men den nye keiseren, Ferdinand II, var en ivrig katolikk som ønsket å stramme inn. De protestantiske adelsmennene fikk nok. Den 23. mai marsjerte de inn på borgen i Praha, tok tak i to av keiserens stattholdere (og sekretæren deres) og kastet dem ut av vinduet fra tredje etasje.\n\nDette, kjent som «defenestrasjonen i Praha», var startskuddet. Mennene overlevde fallet (katolikkene sa de ble reddet av jomfru Maria og engler, protestantene mente de landet i en haug med møkk), men freden var død."
+      "content": "Gnisten ble tent i Praha i 1618. Böhmen (dagens Tsjekkia) var et velstående område med mange protestanter, men den nye keiseren, Ferdinand II, var en ivrig katolikk som ønsket å stramme inn. De protestantiske adelsmennene fikk nok. Den 23. mai 1618 samlet de seg på borgen i Praha, tok tak i to katolske rådsherrer som keiseren hadde utnevnt, og sekretæren deres, og kastet alle tre ut av vinduet (Seim, 2026).\n\nDette, kjent som «defenestrasjonen i Praha», innledet det tsjekkiske opprøret mot keiseren og dermed 30-årskrigen (Seim, 2026). Alle tre overlevde fallet, for de landet i en gammel gjødselhaug. Men freden var død."
     },
     {
       "type": "image",
@@ -43,46 +43,46 @@
     },
     {
       "type": "text",
-      "content": "Opprørerne valgte en ny, protestantisk konge, Fredrik V av Pfalz. Men gleden ble kortvarig. Keiser Ferdinand samlet en stor hær, støttet av Spania og Det katolske forbund. I slaget ved Det hvite berg i 1620 ble bøhmerne knust. Fredrik V rømte (og ble kalt «vinterkongen» fordi han bare regjerte én vinter), og keiseren straffet Böhmen hardt. 27 opprørsledere ble henrettet i Praha, og protestantismen ble forbudt. Det så ut som krigen var over, men den hadde så vidt begynt."
+      "content": "Opprørerne valgte en ny, protestantisk konge, Fredrik V av Pfalz. Men gleden ble kortvarig. Keiser Ferdinand samlet en stor hær, støttet av Spania og Den katolske liga. I slaget ved Det hvite berg i november 1620 ble bøhmerne knust av ligaens hær under Johann von Tilly (Arntzen, 2026b). Fredrik V måtte gå i landflyktighet (og ble kalt «vinterkongen» fordi han bare regjerte én vinter), og keiseren straffet Böhmen hardt. 27 av opprørslederne ble halshugd i Praha (Arntzen, 2026b), og protestantismen ble forbudt. Det så ut som krigen var over, men den hadde så vidt begynt."
     },
     {
       "type": "header",
-      "text": "Fase 2: Den danske intervensjonen (1625–1629)"
+      "text": "Fase 2: Den danske intervensjonen (1625-1629)"
     },
     {
       "type": "text",
-      "content": "Med Böhmen knust, begynte de andre protestantiske kongene å svette. Ville keiseren nå ta dem alle? Christian 4. av Danmark-Norge, som også var hertug av Holstein i Tyskland, bestemte seg for å gripe inn. Han drømte om å bli protestantenes beskytter (og sikre danske interesser i Nord-Tyskland).\n\nDet gikk dårlig. Keiseren hadde fått seg en ny general, den briljante, men skruppelløse Albrecht von Wallenstein. Wallenstein revolusjonerte krigføringen ved å innføre «krig skatter krig»-prinsippet: Hæren skulle ikke betales av keiseren, men leve av å plyndre områdene de marsjerte gjennom. Den danske hæren ble ingen match for Wallensteins leiesoldater. Christian 4. led et ydmykende nederlag i slaget ved Lutter am Barenberge i 1626. Ved freden i Lübeck i 1629 måtte han love å aldri blande seg i tyske saker igjen. Danmark-Norge var ute, og keiseren så mektigere ut enn noensinne."
+      "content": "Med Böhmen knust, begynte de andre protestantiske kongene å svette. Ville keiseren nå ta dem alle? Christian 4. av Danmark-Norge, som også var hertug av Holstein i Tyskland, gikk inn i krigen i 1625 som leder for de protestantiske fyrstene i Tyskland (Rian, Mardal & Weidling, 2026). Han drømte om å bli protestantenes beskytter og om å sikre danske interesser i Nord-Tyskland.\n\nDet gikk dårlig. Keiseren hadde fått en ny hærfører, Albrecht von Wallenstein, som ledet de keiserlige hærene mot de protestantiske fyrstene (Brakestad, 2026). Hæren hans ble ikke betalt av keiseren, men levde av områdene den marsjerte gjennom. Dette kalles gjerne «krig skatter krig». Å forsyne hæren fra landet den var i, var vanlig i krigføringen på 1600-tallet, men det gikk hardest ut over bøndene (Arntzen, 2026b). Den danske hæren ble ingen match for Wallensteins soldater. Christian 4. led et ydmykende nederlag i slaget ved Lutter am Barenberge i 1626. Ved freden i Lübeck i 1629 slapp han unna uten å miste land, men han måtte gi opp planene sine i Tyskland (Rian, Mardal & Weidling, 2026). Danmark-Norge var ute, og keiseren så mektigere ut enn noensinne."
     },
     {
       "type": "header",
-      "text": "Fase 3: Den svenske intervensjonen (1630–1635)"
+      "text": "Fase 3: Den svenske intervensjonen (1630-1635)"
     },
     {
       "type": "text",
-      "content": "Nå var krisen akutt for protestantene. Keiseren utstedte Restitusjonsediktet, som krevde at all katolsk eiendom som var blitt protestantisk siden 1555 skulle leveres tilbake. Dette ville ha ruinert Nord-Tyskland.\n\nInn fra nord kom redningen: «Løven fra Norden», Gustav II Adolf av Sverige. Sverige var et lutfattig bondesamfunn, men kongen hadde bygget en av Europas mest moderne hærer. De brukte lette feltkanoner som kunne flyttes raskt, og musketerer som skjøt i salver (alle på én gang) for maksimal effekt. Viktigst av alt: De var disiplinerte og nasjonale, ikke bare leiesoldater.\n\nSverige fikk også en uventet alliert: Det katolske Frankrike. Den franske kardinal Richelieu brydde seg mer om å svekke rivalene i Habsburg enn om religion, og betalte svenskene store summer for å krige mot keiseren."
+      "content": "Nå var krisen akutt for protestantene. I 1629 utstedte keiser Ferdinand II Restitusjonsediktet. Det krevde at alt kirkegods som var gjort verdslig siden 1552, straks skulle leveres tilbake, og det gjorde kalvinismen ulovlig i riket (Encyclopaedia Britannica, 2026). Dette ville ha ruinert Nord-Tyskland.\n\nInn fra nord kom redningen: «Løven fra Norden», Gustav II Adolf av Sverige. Sverige var et lutfattig bondesamfunn, men kongen hadde bygget en av Europas mest moderne hærer. Han viste at lett, men bevegelig artilleri ga et avgjørende fortrinn, og han stilte opp musketerene sine i rekker som skjøt salve etter salve (Mardal, Haagensen & Viken, 2026). Kongen gikk inn i krigen på protestantenes side, men økonomiske, politiske og dynastiske grunner betydde like mye som religionen (Mardal, Haagensen & Viken, 2026).\n\nSverige fikk også en uventet alliert: Det katolske Frankrike. Den franske kardinal Richelieu ville for enhver pris hindre at habsburgerne også fikk et Tyskland under fast keiserlig kontroll. Fra slutten av 1620-årene ga han store pengestøtter, først til Christian 4., senere til Gustav 2. Adolf (Oldervoll, 2026)."
     },
     {
       "type": "text",
-      "content": "Svenskene feide gjennom Tyskland. I slaget ved Breitenfeld (1631) knuste de den keiserlige hæren. Det var en sjokkseier som snudde krigen. Gustav Adolf ble hyllet som en helt, men lykken varte ikke evig. I slaget ved Lützen i 1632, i tett tåke, red kongen seg bort fra livvaktene sine og ble skutt og drept. Kroppen hans ble funnet ribbet for klær og smykker under en haug med lik."
+      "content": "Svenskene feide gjennom Tyskland. I slaget ved Breitenfeld (1631) knuste de den keiserlige hæren (Mardal, Haagensen & Viken, 2026). Det var en sjokkseier som snudde krigen. Gustav Adolf ble hyllet som en helt, men lykken varte ikke evig. I slaget ved Lützen i november 1632 vant svenskene, men kongen selv falt mens han ledet et motangrep (Mardal, Haagensen & Viken, 2026)."
     },
     {
       "type": "text",
-      "content": "Selv om svenskene vant slaget ved Lützen, mistet de sin store leder. Krigen fortsatte, men ble mer og mer kaotisk. I 1634 ble svenskene slått ved Nördlingen, og mange tyske fyrster inngikk separatfred med keiseren."
+      "content": "Selv om svenskene vant slaget ved Lützen, mistet de sin store leder. Krigen fortsatte, men ble mer og mer kaotisk. I september 1634 led svenskene et stort nederlag i Bayern, og mange tyske fyrster inngikk separatfred med keiseren (Arntzen, 2026b)."
     },
     {
       "type": "header",
-      "text": "Fase 4: Den franske intervensjonen (1635–1648)"
+      "text": "Fase 4: Den franske intervensjonen (1635-1648)"
     },
     {
       "type": "text",
-      "content": "Nå tok krigen en ny vending. Religion spilte nesten ingen rolle lenger; det var ren maktpolitikk. Frankrike, som hittil hadde betalt andre for å slåss (som Sverige), erklærte nå krig direkte mot Spania og keiseren. Det ble en verdenskrig i utstrekning, med kamper i koloniene, på havet og over hele Europa.\n\nDenne fasen var den mest blodige og utmattende. Hærene, både de franske, svenske og keiserlige, vandret rundt som gresshopperflokker og spiste landet tomt. Det var ingen store, avgjørende slag som endret alt, bare en endeløs serie av beleiringer, plyndringer og mindre trefninger."
+      "content": "Nå tok krigen en ny vending. Religion spilte nesten ingen rolle lenger; det var ren maktpolitikk. Frankrike, som hittil hadde betalt andre for å slåss, tok nå direkte del i krigshandlingene mot Spania og keiseren (Oldervoll, 2026). Det ble en verdenskrig i utstrekning, med kamper i koloniene, på havet og over hele Europa.\n\nDenne fasen var den mest blodige og utmattende. Hærene, både de franske, svenske og keiserlige, vandret rundt som gresshopperflokker og spiste landet tomt. Det var ingen store, avgjørende slag som endret alt, bare en endeløs serie av beleiringer, plyndringer og mindre trefninger."
     },
     {
       "type": "component",
       "name": "FactBox",
       "props": {
         "title": "Magdeburgs fall (1631)",
-        "content": "Et av krigens mørkeste kapitler. Da keiserlige tropper inntok den protestantiske byen Magdeburg, gikk de amok. Av 30 000 innbyggere overlevde bare 5 000. Byen brant ned, og 'magdeburgisering' ble et nytt ord for total ødeleggelse."
+        "content": "Et av krigens mørkeste kapitler. Den 20. mai 1631 brøt keiserlige tropper under Tilly gjennom forsvarsverkene i den protestantiske byen Magdeburg. Branner brøt ut over hele byen, og før dagen var omme var 20 000 av byens rundt 25 000 innbyggere drept (Field, u.å.). 'Magdeburgisering' ble et nytt ord for total ødeleggelse."
       }
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "type": "text",
-      "content": "Det var de vanlige menneskene som betalte prisen for kongenes ambisjoner. Soldatene brakte med seg pest, tyfus og dysenteri. Fordi hærene levde av landet, tok de maten fra bøndene, som sultet i hjel. Vokset opp under krigen? Da kjente du ikke til noe annet enn vold.\n\nI noen deler av Tyskland døde opp mot 60% av befolkningen. Landsbyer forsvant helt fra kartet. De psykologiske arrene var dype, og frykten for kaos og fremmede soldater satt i den tyske folkesjelen i århundrer. Det var også en tid med heksejakter; når ting gikk galt, lette man etter syndebukker, og tusenvis av kvinner ble brent på bålet."
+      "content": "Det var de vanlige menneskene som betalte prisen for kongenes ambisjoner. Soldatene brakte med seg pest, tyfus og dysenteri. Fordi hærene levde av landet, tok de maten fra bøndene, som sultet i hjel. Vokste du opp under krigen, kjente du ikke til noe annet enn vold.\n\nFolketallet i Det tysk-romerske riket falt med rundt 40 prosent mellom 1600 og 1650, og først midt på 1700-tallet var det tilbake på gammelt nivå (Arntzen, 2026b). I de hardest rammede områdene var tapene enda større. Landsbyer forsvant helt fra kartet. De psykologiske arrene var dype, og frykten for kaos og fremmede soldater satt i den tyske folkesjelen i århundrer. Det var også en tid med heksejakter: når ting gikk galt, lette man etter syndebukker."
     },
     {
       "type": "header",
@@ -99,16 +99,16 @@
     },
     {
       "type": "text",
-      "content": "Etter 30 år med myrderier var Europa utslitt. Alle parter innså at ingen kunne vinne en total seier. Fredsforhandlingene startet i 1644 i de tyske regionene Westfalen (i byene Münster og Osnabrück). Det tok fire år å bli enige. Dette var første gang i historien at så mange stater møttes for å forhandle om en felles fredsavtale.\n\nResultatet, Freden i Westfalen, endret verden for alltid:"
+      "content": "Etter 30 år med myrderier var Europa utslitt. Alle parter innså at ingen kunne vinne en total seier. Fredsforhandlingene startet i 1643 i de tyske byene Münster og Osnabrück i Westfalen, og det tok fem år før partene ble enige. Avtalene ble undertegnet 24. oktober 1648 (Arntzen, 2026a).\n\nResultatet, Freden i Westfalen, endret verden for alltid:"
     },
     {
       "type": "list",
       "ordered": true,
       "items": [
-        "**Religionsfrihet:** Augsburg-fredens prinsipp ble bekreftet og utvidet til å inkludere kalvinister. Fyrstene bestemte religionen, men folk fikk lov til å utøve sin egen tro privat.",
-        "**Svekkelse av keiseren:** Det tysk-romerske riket ble i praksis oppløst som en enhetsstat. De over 300 tyske statene fikk full suverenitet og kunne inngå egne allianser. Tyskland forble splittet i over 200 år til.",
-        "**Nye stormakter:** Frankrike kom ut som Europas ledende makt. Sverige sikret seg områder i Nord-Tyskland og ble en stormakt i Østersjøen. Spania mistet sin dominans. Sveits og Nederland ble anerkjent som selvstendige stater.",
-        "**Suverenitetsprinsippet:** Kanskje viktigst av alt var ideen om at en stat er suveren innenfor sine egne grenser. Ingen overnasjonal myndighet (som Paven eller Keiseren) hadde rett til å gripe inn i en annen stats indre anliggender. Dette er grunnlaget for dagens internasjonale system (FN-pakten)."
+        "**Religionsfrihet:** Augsburg-fredens prinsipp ble bekreftet og utvidet til også å gjelde kalvinistene, men ikke gjendøperne. Tre kirkesamfunn ble dermed likestilte i riket (Arntzen, 2026a).",
+        "**Svekkelse av keiseren:** De tyske fyrstene, både protestantiske og katolske, fikk bekreftet sin frie stilling overfor keiseren, og drømmen om et samlet Tyskland under keiserlig kontroll var død (Arntzen, 2026a). Tyskland forble splittet i over 200 år til.",
+        "**Nye stormakter:** Frankrike gikk ut av krigen som seierherre og fikk overherredømme over frie byer i Alsace og over Pinerolo. Sverige fikk Vorpommern, Bremen og Verden, og dermed også plass i riksforsamlingene. Sveits og Nederland ble anerkjent som selvstendige og utenfor riket (Arntzen, 2026a).",
+        "**Suverenitetsprinsippet:** Kanskje viktigst av alt var ideen om at en stat er suveren innenfor sine egne grenser. Ingen overnasjonal myndighet, som paven eller keiseren, hadde rett til å gripe inn i en annen stats indre anliggender. Historikere har lenge sett fredskongressene i Westfalen som utgangspunktet for en ny mellomstatlig rettsorden, der statens integritet og territorielle suverenitet er grunnlaget for forholdet mellom stater, selv om nyere forskning demper noe av den vurderingen (Arntzen, 2026a). Prinsippet er fortsatt en bærebjelke i det internasjonale systemet og i FN-pakten."
       ]
     },
     {
@@ -121,7 +121,7 @@
         "props": {
             "forstaa": [
                 "Hvilken hendelse i Praha i 1618 regnes som startskuddet for 30-årskrigen, og hva gjorde de protestantiske adelsmennene?",
-                "Hva gikk «krig skatter krig»-prinsippet til Wallenstein ut på, og hvem gikk det verst ut over?",
+                "Hva gikk «krig skatter krig» ut på i Wallensteins hær, og hvem gikk det verst ut over?",
                 "Hvorfor gikk det katolske Frankrike, ledet av kardinal Richelieu, inn i krigen på protestantenes side?",
                 "Nevn minst tre viktige resultater av Freden i Westfalen i 1648."
             ],
@@ -129,7 +129,7 @@
                 "Krigen startet som en krangel om religion, men endte som ren maktpolitikk. Forklar med egne ord hvordan denne endringen skjedde gjennom de fire fasene.",
                 "Hvorfor tapte den danske hæren til Christian 4. mot Wallenstein, mens den svenske hæren til Gustav II Adolf først vant store seiere? Sammenlign de to hærene.",
                 "Teksten kaller suverenitetsprinsippet «kanskje viktigst av alt». Forklar hva prinsippet betyr, og hvorfor det var så nytt at ingen makt som Paven eller keiseren kunne blande seg inn i en annen stat.",
-                "Det var sivilbefolkningen som betalte den høyeste prisen. Vurder hvordan det å la hæren leve av å plyndre landet førte til at opp mot 60 % av folk i noen områder døde."
+                "Det var sivilbefolkningen som betalte den høyeste prisen. Vurder hvordan det å la hæren leve av landet den var i, bidro til at folketallet i riket falt med rundt 40 prosent."
             ],
             "gaaVidere": [
                 "Suverenitetsprinsippet fra Westfalen er fortsatt grunnlaget for FN-pakten i dag. Finn et eksempel fra nyhetene der land er uenige om ett land har rett til å blande seg inn i et annet lands indre saker.",
@@ -137,8 +137,26 @@
                 "Diskuter med en partner: Var Freden i Westfalen en god løsning, når den etterlot Tyskland splittet i over 200 år til? Argumenter for og imot."
             ]
         }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Arntzen, J. G. (2026a). *Freden i Westfalen*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/freden_i_Westfalen_-_1648](https://snl.no/freden_i_Westfalen_-_1648)",
+          "Arntzen, J. G. (2026b). *Trettiårskrigen*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/trettiårskrigen](https://snl.no/trettiårskrigen)",
+          "Brakestad, A. S. (2026). *Albrecht von Wallenstein*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Albrecht_von_Wallenstein](https://snl.no/Albrecht_von_Wallenstein)",
+          "Encyclopaedia Britannica. (2026). *Edict of Restitution*. Hentet 01.08.2026 fra [britannica.com/event/Edict-of-Restitution](https://www.britannica.com/event/Edict-of-Restitution)",
+          "Field, J. F. (u.å.). *Sack of Magdeburg*. Encyclopaedia Britannica. Hentet 01.08.2026 fra [britannica.com/event/Sack-of-Magdeburg](https://www.britannica.com/event/Sack-of-Magdeburg)",
+          "Mardal, M. A., Haagensen, P. & Viken, Ø. L. I. (2026). *Gustav 2. Adolf*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Gustav_2._Adolf](https://snl.no/Gustav_2._Adolf)",
+          "Oldervoll, J. (2026). *Armand Jean du Plessis de Richelieu*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Armand_Jean_du_Plessis_de_Richelieu](https://snl.no/Armand_Jean_du_Plessis_de_Richelieu)",
+          "Rian, Ø., Mardal, M. A. & Weidling, T. R. (2026). *Christian 4.* Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Christian_4.](https://snl.no/Christian_4.)",
+          "Seim, J. (2026). *Defenestrasjon*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/defenestrasjon](https://snl.no/defenestrasjon)"
+        ]
+      }
     }
   ],
+  "lastUpdated": "2026-08-01",
   "quiz": [
     {
       "question": "Hvilken hendelse regnes som starten på 30-årskrigen?",

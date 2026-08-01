@@ -1,7 +1,7 @@
 {
     "id": "kalvin-og-kalvinismen",
     "title": "Johan Calvin og kalvinismen",
-    "description": "En streng fransk advokat gjorde Geneve om til den protestantiske verdens hovedstad — og la grunnlaget for moderne arbeidsmoral og kapitalisme.",
+    "description": "En streng fransk jurist gjorde Geneve om til den protestantiske verdens hovedstad - og la grunnlaget for moderne arbeidsmoral og kapitalisme.",
     "layout": "rich",
     "year": "1509-1564",
     "category": "Reformasjonen",
@@ -25,7 +25,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Hvis Wittenberg var reformasjonens lille gnist, så ble Geneve dens stålovn. I 1541 vandret en mager, alvorlig fransk advokat tilbake gjennom byportene etter to års eksil. Han var bare 32 år gammel, plaget av magesår og hodepine. Men i de neste 23 årene skulle Johan Calvin gjøre den lille byen ved Genevesjøen om til den protestantiske verdens hovedstad. Folk fra hele Europa kom hit for å lære, og de tok med seg ideene hans hjem til Skottland, Nederland, Frankrike og senere de amerikanske koloniene."
+            "content": "Hvis Wittenberg var reformasjonens lille gnist, så ble Geneve dens stålovn. I 1541 vandret en mager, alvorlig fransk jurist tilbake gjennom byportene etter noen år borte fra byen. Han var bare 32 år gammel. Men i de neste 23 årene skulle Johan Calvin gjøre den lille byen ved Genevesjøen om til den protestantiske verdens hovedstad (Elstad, 2025). Folk fra hele Europa kom hit for å lære, og de tok med seg ideene hans hjem til Skottland, Nederland, Frankrike og senere de amerikanske koloniene."
         },
         {
             "type": "header",
@@ -33,11 +33,11 @@
         },
         {
             "type": "text",
-            "content": "Calvin ble født i 1509 i den nordfranske byen Noyon. Faren hans var advokat for biskopen, og unge Johan ble sendt til Paris for å bli prest. Han var en eksepsjonell elev — tørr i humøret, men med en jernhard hjerne. Da han var ferdig med teologien byttet han retning og studerte jus i stedet. Et sted på 1530-tallet leste han Luthers tekster. Han kalte det selv en plutselig omvendelse. Den katolske kirken kunne ikke lenger holde på ham."
+            "content": "Calvin ble født 10. juli 1509 i den nordfranske byen Noyon (Elstad, 2025). Faren hans var advokat for biskopen, og unge Johan ble sendt til Paris for å bli prest. Han var en eksepsjonell elev, tørr i humøret, men med en jernhard hjerne. Han studerte litteratur og jus i Paris, Orléans og Bourges. I 1534 gikk han over til reformasjonens ideer (Elstad, 2025). Den katolske kirken kunne ikke lenger holde på ham."
         },
         {
             "type": "text",
-            "content": "I 1536 ga han ut den første utgaven av sitt store hovedverk, Institutio Christianae Religionis — Kristendommens grunnlære. Det var en logisk, klar og brutalt systematisk fremstilling av den nye protestantiske troen. Mens Luther skrev som en sint munk med hammer, skrev Calvin som en jurist som la fram bevisene punkt for punkt. Boka ble en bestselger og gjorde Calvin verdenskjent over natta."
+            "content": "I 1536 ga han ut den første utgaven av sitt store hovedverk, Institutio religionis christianae - Kristendommens grunnlære. Han bygde det ut og skrev det om flere ganger senere (Elstad, 2025). Det var en logisk, klar og brutalt systematisk fremstilling av den nye protestantiske troen. Mens Luther skrev som en sint munk med hammer, skrev Calvin som en jurist som la fram bevisene punkt for punkt. Boka gjorde Calvin kjent i hele det protestantiske Europa."
         },
         {
             "type": "image",
@@ -47,26 +47,26 @@
         },
         {
             "type": "header",
-            "text": "Geneve — Guds eksperimentby"
+            "text": "Geneve - Guds eksperimentby"
         },
         {
             "type": "text",
-            "content": "Calvin var egentlig på reise gjennom Geneve i 1536 da reformatoren Guillaume Farel oppsøkte ham på et vertshus. Farel ba ham bli og hjelpe til. Calvin nektet — han ville heller skrive bøker i fred. Farel ble rasende og forbannet ham: Gud ville straffe ham hvis han ikke ble. Calvin ble. Etter to år ble han kastet ut for å være for streng. I 1541 hentet byrådet ham tilbake."
+            "content": "Calvin var egentlig på reise gjennom Geneve i 1536 da reformatoren Guillaume Farel oppsøkte ham. Farel overtalte ham til å bli og hjelpe til (Elstad, 2025). Calvin ville helst skrive bøker i fred, men han ble. I 1538 måtte han forlate byen fordi motstanden mot den strenge kirketukten hans ble for stor. I 1541 kom han tilbake, og der ble han resten av livet (Elstad, 2025)."
         },
         {
             "type": "text",
-            "content": "Det Calvin bygde i Geneve var noe helt nytt: en bystat der kirken og bystyret jobbet hånd i hånd for å forme menneskenes liv ned til den minste detalj. Hovedinstitusjonen var konsistoriet — et råd av eldre menn og prester som overvåket innbyggernes oppførsel. De passet på at folk gikk i kirken, snakket sant, ikke drakk for mye, ikke danset, ikke bannet og ikke gikk med for fancy klær. Skoletvang ble innført. Tiggere fikk hjelp gjennom organiserte fond. Bordeller ble stengt."
+            "content": "Det Calvin bygde i Geneve var noe helt nytt: en bystat der kirken og bystyret jobbet hånd i hånd for å forme menneskenes liv ned til den minste detalj. Byen ble et sentrum for reformasjonen i Sveits, med streng kirketukt, egen lærd skole og etter hvert et universitet (Elstad, 2025). Hovedinstitusjonen var konsistoriet, et råd av eldre menn og prester som overvåket innbyggernes oppførsel. De passet på at folk gikk i kirken, snakket sant, ikke drakk for mye, ikke danset, ikke bannet og ikke gikk med for fancy klær. Skoletvang ble innført. Tiggere fikk hjelp gjennom organiserte fond. Bordeller ble stengt."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "content": "I 1553 ble den spanske legen Michael Servetus brent på bålet i Geneve for å nekte å tro på treenigheten. Calvin støttet henrettelsen. Det viser noe viktig: selv om reformasjonen handlet om frihet fra paven, var de tidlige protestantene like strenge som katolikkene mot dem som tenkte annerledes."
+                "content": "Den spanske legen og teologen Michel Servet avviste den vanlige læren om treenigheten. Han ble arrestert i Geneve, dømt for å fornekte kristne grunnsannheter og brent på bålet 27. oktober 1553. Calvin var selv med på å melde ham til inkvisisjonen (Holck, 2026). Det viser noe viktig: selv om reformasjonen handlet om frihet fra paven, var de tidlige protestantene like strenge som katolikkene mot dem som tenkte annerledes."
             }
         },
         {
             "type": "text",
-            "content": "Geneve fikk tilnavnet det protestantiske Roma. Religiøse flyktninger strømmet inn fra hele Europa. Skottske presbyterianere som John Knox, franske huguenotter, nederlandske reformerte, engelske puritanere — alle dro til Geneve for å studere hos Calvin og dra hjem som mer eller mindre fanatiske reformatorer."
+            "content": "Geneve fikk tilnavnet det protestantiske Roma. Religiøse flyktninger strømmet inn fra hele Europa. Skotten John Knox måtte forlate England da katolske Maria Tudor styrte, og bodde en tid hos Calvin i Geneve (Store norske leksikon, 2024). Slik var det for mange: franske huguenotter, nederlandske reformerte og engelske puritanere dro til Geneve for å studere hos Calvin og reiste hjem som reformatorer."
         },
         {
             "type": "header",
@@ -74,11 +74,11 @@
         },
         {
             "type": "text",
-            "content": "Mens [Luther](/historie/reformasjonen/martin-luther) la vekten på sola fide - frelse ved tro alene - gikk Calvin ett skritt videre. Hvordan kan mennesker ha tro? Bare fordi Gud gir dem den. Og hvem gir Gud troen til? Dem han har valgt. Når valgte han? Før verden ble skapt. Dette kalles predestinasjonslæren. Gud har bestemt på forhånd hvem som skal bli frelst og hvem som skal gå fortapt. Du kan ikke fortjene plassen din. Du kan ikke kjøpe den. Du kan ikke engang vite om du har den."
+            "content": "Mens [Luther](/historie/reformasjonen/martin-luther) la vekten på sola fide - frelse ved tro alene - gikk Calvin ett skritt videre. Hvordan kan mennesker ha tro? Bare fordi Gud gir dem den. Og hvem gir Gud troen til? Dem han har valgt. Når valgte han? Før verden ble skapt. Dette kalles predestinasjonslæren. Gud har bestemt på forhånd hvem som skal bli frelst og hvem som skal gå fortapt, og læren fikk stor betydning for de reformerte kirkene i Europa (Elstad, 2025). Du kan ikke fortjene plassen din. Du kan ikke kjøpe den. Du kan ikke engang vite om du har den."
         },
         {
             "type": "text",
-            "content": "Mange syntes læren var grusom. Hvorfor i det hele tatt prøve å være et godt menneske hvis alt er bestemt? Men Calvin svarte at de utvalgte ikke kan unngå å leve gudfryktig. Troen viser seg i livet. Hardt arbeid, edruelighet og sparing var ikke veien til frelse — men de var tegn på at man kanskje var en av de utvalgte. Her ligger paradokset som skulle forandre verden."
+            "content": "Mange syntes læren var grusom. Hvorfor i det hele tatt prøve å være et godt menneske hvis alt er bestemt? Men Calvin svarte at de utvalgte ikke kan unngå å leve gudfryktig. Troen viser seg i livet. Hardt arbeid, edruelighet og sparing var ikke veien til frelse, men de kunne være tegn på at man var en av de utvalgte. Her ligger paradokset som skulle forandre verden."
         },
         {
             "type": "component",
@@ -91,11 +91,11 @@
         },
         {
             "type": "text",
-            "content": "Mens Luthers lære stort sett ble værende i Tyskland og Skandinavia, spredte Calvins lære seg lenger. I Skottland ledet John Knox en hard og folkelig reformasjon på 1560-tallet. Den skotske kirken, presbyterianerne, bygde et samfunn med strenge moralregler og brede skoler. Skotske barn lærte å lese tidlig, slik at de selv kunne studere Bibelen. Presbyterianerne er ett av flere [reformerte kirkesamfunn](/krle/religion/kristendom/kirkesamfunn) som fortsatt bygger på Calvins lære i dag."
+            "content": "Mens Luthers lære stort sett ble værende i Tyskland og Skandinavia, spredte Calvins lære seg lenger. Knox vendte tilbake til Skottland i 1559, og reformasjonen ble gjennomført på 1560-tallet. Han skrev bekjennelsesskriftet til den skotske kirken i 1560 og kirkeordningen i 1561, begge i streng kalvinistisk ånd (Store norske leksikon, 2024). Den presbyterianske kirken bygde et samfunn med strenge moralregler, der det å kunne lese Bibelen selv sto helt sentralt. Presbyterianerne er ett av flere [reformerte kirkesamfunn](/krle/religion/kristendom/kirkesamfunn) som fortsatt bygger på Calvins lære i dag."
         },
         {
             "type": "text",
-            "content": "I Frankrike kalte de kalvinistene huguenotter. De ble forfulgt brutalt — særlig under [Bartolomeusnatten](/historie/reformasjonen/30-aarskrigen) i 1572 da titusenvis ble myrdet i Paris. Mange flyktet til Nederland, der kalvinismen ble statsreligion etter at landet gjorde opprør mot katolske Spania. Nederland ble på 1600-tallet Europas rikeste land — handelsskip, kunstnere som Rembrandt, banker og børser i Amsterdam."
+            "content": "I Frankrike kalte de kalvinistene huguenotter. De ble forfulgt brutalt, særlig under Bartolomeusnatten 24. august 1572. Rundt 3 000 huguenotter ble drept i Paris, og drapene spredte seg til byer som Lyon, Bourges og Rouen. Til sammen ble omkring 7 000 protestanter drept i Frankrike (Brégaint, 2024). Mange flyktet til Nederland, der kalvinismen ble statsreligion etter at landet gjorde opprør mot katolske Spania. Nederland ble på 1600-tallet et av Europas rikeste land, med handelsskip, kunstnere som Rembrandt, og banker og børser i Amsterdam."
         },
         {
             "type": "image",
@@ -105,7 +105,7 @@
         },
         {
             "type": "text",
-            "content": "Engelske kalvinister, kalt puritanere, krevde at den anglikanske kirken skulle renses for alle katolske rester. Da kong Charles 1. nektet, brøt det ut borgerkrig på 1640-tallet. Puritanerne vant, halshugget kongen og styrte England i over ti år som republikk. Andre puritanere ga opp og seilte til Amerika på skipet Mayflower i 1620. Der la de grunnlaget for den strenge, arbeidssomme kulturen i New England, og senere for store deler av amerikansk samfunnsmoral."
+            "content": "Engelske kalvinister, kalt puritanere, ivret for kirkens renhet og ville fjerne alle katolske rester fra gudstjenesten (Langhelle, 2025). Da kong Charles 1. nektet, brøt det ut borgerkrig på 1640-tallet. Puritanerne ble et politisk parti som fikk makten i Det lange parlamentet, med Oliver Cromwell som leder helt fram til 1658. Først da kongedømmet ble gjenopprettet i 1660, mistet de makten (Langhelle, 2025). Andre puritanere ga opp og flyktet til Amerika. Der la de grunnlaget for den strenge, arbeidssomme kulturen i New England, og senere for store deler av amerikansk samfunnsmoral."
         },
         {
             "type": "header",
@@ -113,11 +113,11 @@
         },
         {
             "type": "text",
-            "content": "Mer enn 300 år etter Calvins død, i 1905, ga den tyske sosiologen Max Weber ut en kjent bok: Den protestantiske etikken og kapitalismens ånd. Weber spurte hvorfor industrikapitalismen først vokste fram i protestantiske områder — England, Nederland, Skottland, Nord-Tyskland og USA — og ikke i de katolske landene rundt Middelhavet, selv om disse hadde vært rikere i utgangspunktet."
+            "content": "Mer enn 300 år etter Calvins død, i 1904, ga den tyske sosiologen Max Weber ut en kjent bok: Den protestantiske etikk og kapitalismens ånd (Dalen, 2024). Weber spurte hvorfor industrikapitalismen først vokste fram i protestantiske områder som England, Nederland, Skottland, Nord-Tyskland og USA, og ikke i de katolske landene rundt Middelhavet."
         },
         {
             "type": "text",
-            "content": "Webers svar var Calvins paradoks. Predestinasjonen skapte en evig uro hos den troende: er jeg blant de utvalgte? For å berolige seg selv kastet folk seg over arbeidet. Suksess i yrket ble lest som et tegn på at Gud så med velbehag på dem. Men luksus var fortsatt synd. Du fikk altså rikdom du ikke fikk lov til å sløse med. Hva gjør man da? Man sparer og investerer. Man bygger fabrikker, kjøper skip, ansetter folk. Slik ble pengene satt i arbeid igjen og igjen, og det er nettopp dette som er kjernen i kapitalismen. Sparingen og disiplinen som Calvin krevde, kan ses som en tidlig kime til hele tankegangen bak [moderne arbeidsdeling og produksjon](/samfunnskunnskap/okonomi/arbeidsspesialisering)."
+            "content": "Webers svar var Calvins paradoks. Predestinasjonen skapte en evig uro hos den troende: er jeg blant de utvalgte? For å berolige seg selv kastet folk seg over arbeidet. Suksess i yrket ble lest som et tegn på at Gud så med velbehag på dem. Men luksus var fortsatt synd. Du fikk altså rikdom du ikke fikk lov til å sløse med. Hva gjør man da? Man sparer og investerer. Man bygger fabrikker, kjøper skip, ansetter folk. Slik ble pengene satt i arbeid igjen og igjen, og det er nettopp dette som er kjernen i kapitalismen. Weber mente ikke at protestantismen skapte kapitalismen, men at de religiøse verdiene gjorde det mer sannsynlig at kapitalismen vokste fram nettopp i Nord-Europa (Dalen, 2024). Sparingen og disiplinen som Calvin krevde, kan ses som en tidlig kime til hele tankegangen bak [moderne arbeidsdeling og produksjon](/samfunnskunnskap/okonomi/arbeidsspesialisering)."
         },
         {
             "type": "component",
@@ -156,11 +156,11 @@
         },
         {
             "type": "text",
-            "content": "Calvin døde i 1564 — utslitt, mager og bare 54 år gammel. Han ba om å bli gravlagt i en umerket grav, slik at ingen skulle dyrke ham. Graven ble aldri funnet. Men ideene hans levde videre på måter han aldri kunne ha forestilt seg. Skottland ga oss verdens første allmenne skolesystem, fordi alle måtte kunne lese Bibelen. Nederland ble pionér innen finans og handel. Puritanerne i New England la grunnlaget for amerikansk universitetsutdanning — Harvard ble grunnlagt i 1636 av puritanere — og senere for amerikansk demokrati."
+            "content": "Calvin døde 27. mai 1564 i Geneve, utslitt og bare 54 år gammel (Elstad, 2025). Men ideene hans levde videre på måter han aldri kunne ha forestilt seg. I Skottland ble skolegang og lesekyndighet viktig, fordi alle skulle kunne lese Bibelen selv. Nederland ble en pioner innen finans og handel. Og i New England vokste det fram universiteter: Harvard ble grunnlagt allerede i 1636 som en gave fra kolonistene rundt, og fikk navnet sitt etter presten John Harvard i 1638 (Store norske leksikon, 2025)."
         },
         {
             "type": "text",
-            "content": "Samtidig hadde kalvinismen sin mørke side. Strengheten kunne bli grusom. Hekseprosesser blomstret like mye i protestantiske områder som katolske. Tanken om at noen er utvalgt og andre fortapt har vært brukt til å rettferdiggjøre alt fra slaveri til økonomisk ulikhet. Som med de fleste store ideer i historien handler arven om både lys og skygge."
+            "content": "Samtidig hadde kalvinismen sin mørke side. Strengheten kunne bli grusom, slik saken mot Servet viser. Tanken om at noen er utvalgt og andre fortapt har vært brukt til å rettferdiggjøre alt fra slaveri til økonomisk ulikhet. Som med de fleste store ideer i historien handler arven om både lys og skygge."
         },
         {
             "type": "component",
@@ -169,17 +169,17 @@
                 "forstaa": [
                     "Hvilken by gjorde Calvin om til den protestantiske verdens hovedstad, og hvilket tilnavn fikk byen?",
                     "Hva går predestinasjonslæren ut på? Forklar med egne ord hva Calvin mente Gud hadde bestemt før verden ble skapt.",
-                    "Hva het Calvins store hovedverk fra 1536, og hvorfor skrev artikkelen at han la fram troen 'punkt for punkt' som en jurist?",
+                    "Hva het Calvins store hovedverk fra 1536, og hvorfor skriver artikkelen at han la fram troen 'punkt for punkt' som en jurist?",
                     "Nevn minst tre grupper eller land der kalvinismen spredte seg, for eksempel presbyterianere, huguenotter eller puritanere."
                 ],
                 "reflekter": [
                     "Comparison-tabellen viser tre forskjeller mellom Luther og Calvin. Velg den forskjellen du synes er størst, og forklar hvorfor.",
                     "Max Weber mente at frykten for å ikke være blant de utvalgte fikk folk til å jobbe hardt og spare. Forklar hvordan denne uroen kunne føre til at det vokste fram kapitalisme.",
-                    "Reformasjonen handlet om frihet fra paven, men Calvin støttet at Michael Servetus ble brent på bålet i 1553. Hva forteller dette oss om hvor tolerante de tidlige protestantene egentlig var?",
+                    "Reformasjonen handlet om frihet fra paven, men Calvin var med på å melde Michel Servet, som ble brent på bålet i 1553. Hva forteller dette oss om hvor tolerante de tidlige protestantene egentlig var?",
                     "Artikkelen sier at arven etter Calvin handler om både lys og skygge. Gi ett eksempel på hver side, og vurder om det gode veier opp for det vonde."
                 ],
                 "gaaVidere": [
-                    "Skottland fikk verdens første allmenne skolesystem fordi alle måtte kunne lese Bibelen. Skriv et kort avsnitt om hvordan en religiøs idé kan få følger som varer i flere hundre år.",
+                    "I Skottland ble det viktig at alle kunne lese, fordi alle måtte kunne lese Bibelen selv. Skriv et kort avsnitt om hvordan en religiøs idé kan få følger som varer i flere hundre år.",
                     "Diskuter i klassen: Er det rett at rikdom du tjener ikke skal sløses bort, men spares og investeres? Kjenner dere igjen denne tanken i samfunnet i dag?",
                     "Konsistoriet i Geneve passet på at folk ikke drakk for mye, danset eller gikk med for fancy klær. Skriv ned tre regler du tror ville skapt størst bråk hvis en slik gruppe overvåket ditt eget nabolag i dag."
                 ]
@@ -217,10 +217,10 @@
                         "options": [
                             "At kalvinismen forbød all økonomisk virksomhet",
                             "At kalvinismen førte til latskap fordi alt var bestemt på forhånd",
-                            "At den protestantiske arbeidsetikken — hard jobbing og sparing som tegn på frelse — la grunnlaget for moderne kapitalisme",
+                            "At den protestantiske arbeidsetikken, med hard jobbing og sparing som tegn på frelse, la grunnlaget for moderne kapitalisme",
                             "At kapitalismen ødela kalvinismen"
                         ],
-                        "answer": "At den protestantiske arbeidsetikken — hard jobbing og sparing som tegn på frelse — la grunnlaget for moderne kapitalisme",
+                        "answer": "At den protestantiske arbeidsetikken, med hard jobbing og sparing som tegn på frelse, la grunnlaget for moderne kapitalisme",
                         "explanation": "Weber pekte på at troende kalvinister jobbet hardt og sparte mye fordi de håpet at ytre suksess var et tegn på at de var blant Guds utvalgte. Sparingen ble til kapital som kunne investeres."
                     },
                     {
@@ -235,18 +235,34 @@
                         "explanation": "Lutheranere fulgte Martin Luther, ikke Calvin. Presbyterianerne i Skottland, huguenottene i Frankrike og puritanerne i England (og senere i Amerika) bygde derimot alle på Calvins lære."
                     },
                     {
-                        "question": "Hvorfor støttet Calvin at Michael Servetus ble brent på bålet i 1553?",
+                        "question": "Hvorfor ble Michel Servet brent på bålet i Geneve i 1553?",
                         "options": [
-                            "Fordi Servetus var katolikk",
-                            "Fordi Servetus nektet å tro på treenigheten",
-                            "Fordi Servetus stjal penger fra byen",
-                            "Fordi Servetus støttet paven"
+                            "Fordi Servet var katolikk",
+                            "Fordi Servet avviste læren om treenigheten",
+                            "Fordi Servet stjal penger fra byen",
+                            "Fordi Servet støttet paven"
                         ],
-                        "answer": "Fordi Servetus nektet å tro på treenigheten",
-                        "explanation": "Servetus ble dømt som kjetter for sine teologiske ideer. Saken viser at de tidlige protestantene kunne være like strenge mot annerledestenkende som den katolske kirken hadde vært."
+                        "answer": "Fordi Servet avviste læren om treenigheten",
+                        "explanation": "Servet ble dømt for å fornekte kristne grunnsannheter og brent på bålet 27. oktober 1553. Calvin var selv med på å melde ham. Saken viser at de tidlige protestantene kunne være like strenge mot annerledestenkende som den katolske kirken hadde vært."
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brégaint, D. (2024). *Blodbryllupet i Paris*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Blodbryllupet_i_Paris](https://snl.no/Blodbryllupet_i_Paris)",
+                    "Dalen, M. (2024). *Max Weber*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Max_Weber](https://snl.no/Max_Weber)",
+                    "Elstad, H. (2025). *Jean Calvin*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Jean_Calvin](https://snl.no/Jean_Calvin)",
+                    "Holck, P. (2026). *Michel Servet*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Michel_Servet](https://snl.no/Michel_Servet)",
+                    "Langhelle, S. I. (2025). *Puritanere*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/puritanere](https://snl.no/puritanere)",
+                    "Store norske leksikon. (2024). *John Knox*. Hentet 01.08.2026 fra [snl.no/John_Knox](https://snl.no/John_Knox)",
+                    "Store norske leksikon. (2025). *Harvard University*. Hentet 01.08.2026 fra [snl.no/Harvard_University](https://snl.no/Harvard_University)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-01"
 }

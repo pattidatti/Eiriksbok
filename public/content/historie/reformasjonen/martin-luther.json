@@ -8,7 +8,7 @@
   "readTime": "10 min lesning",
   "heroImage": "/images/reformasjonen/martin-luther-hero.webp",
   "details": [
-    "Munken Martin Luther hengte opp 95 teser i Wittenberg 31. oktober 1517.",
+    "Munken Martin Luther offentliggjorde 95 teser i Wittenberg 31. oktober 1517.",
     "Boktrykkerpressen gjorde protesten hans til en europeisk bevegelse på få uker.",
     "Striden splittet kristendommen i katolikker og protestanter, og banet vei for 30-årskrigen."
   ],
@@ -23,7 +23,7 @@
   "content": [
     {
       "type": "text",
-      "content": "Det var en kald høstdag i Wittenberg 31. oktober 1517. En tysk munk i svart kappe gikk bort til kirkedøren med en hammer i den ene hånden og et papir i den andre. Han hengte opp et dokument med 95 korte setninger på latin. Han kalte dem teser. Munken het Martin Luther, og han ante ikke at han nettopp hadde startet en lavine som skulle rive Europa i to."
+      "content": "Det var en kald høstdag i Wittenberg 31. oktober 1517. Slik forteller den kjente historien det: en tysk munk i svart kappe gikk bort til kirkedøren med en hammer i den ene hånden og et papir i den andre. Han hengte opp et dokument med 95 korte setninger på latin. Han kalte dem teser. Munken het Martin Luther, og han ante ikke at han nettopp hadde startet en lavine som skulle rive Europa i to. Vi vet sikkert at han offentliggjorde tesene denne dagen, men ikke om han virkelig spikret dem opp på kirkedøra (Rasmussen, 2026a)."
     },
     {
       "type": "header",
@@ -35,7 +35,7 @@
     },
     {
       "type": "text",
-      "content": "Løsningen var avlatshandel. Kirken sa til vanlige folk at de kunne betale seg fri fra straff i skjærsilden — stedet mellom himmel og helvete der sjeler måtte sone for syndene sine. Selgeren Johann Tetzel reiste rundt i Tyskland med slagordet: «Når mynten i kista klinger, sjelen ut av skjærsilden springer.» For en bonde som nettopp hadde mistet et barn, kunne et avlatsbrev koste flere måneders lønn."
+      "content": "Løsningen var avlatshandel. Kirken sa til vanlige folk at de kunne betale penger til kirken for syndene sine i stedet for å gjøre bot (Rasmussen, 2026b). Pengene skulle kjøpe dem fri fra straff i skjærsilden, stedet mellom himmel og helvete der sjeler måtte sone. Dominikanermunken Johann Tetzel var den mest kjente avlatsselgeren, og det er han som har fått slagordet «når mynten i kista klinger, springer sjelen ut av skjærsilden» knyttet til seg. Avlatspreken hans i Meissen i 1516 var den direkte foranledningen til Luthers 95 teser (Halvorsen, 2025)."
     },
     {
       "type": "component",
@@ -50,7 +50,7 @@
     },
     {
       "type": "text",
-      "content": "Luther var augustinermunk og professor i teologi ved universitetet i Wittenberg. Han leste Bibelen om og om igjen og fant ingen steder der det sto at man kunne kjøpe seg fri fra synd. I tese nummer 86 skrev han spydig: «Hvorfor bygger ikke paven Peterskirken med sine egne penger? Han er jo rikere enn den rikeste rikmann.»"
+      "content": "Luther var augustinermunk og professor i teologi ved universitetet i Wittenberg. Han leste Bibelen om og om igjen og fant ingen steder der det sto at man kunne kjøpe seg fri fra synd. I tese nummer 86 spurte han spydig hvorfor paven, som var rikere enn den styrtrike romeren Crassus, ikke bygde Peterskirken med sine egne penger i stedet for med pengene til fattige troende (KDG Wittenberg, 1997)."
     },
     {
       "type": "text",
@@ -62,11 +62,11 @@
     },
     {
       "type": "text",
-      "content": "Bare 70 år tidligere hadde Johann Gutenberg laget den moderne [boktrykkerpressen](/historie/middelalderen/boktrykkerkunsten). Plutselig kunne en tekst trykkes i tusenvis av eksemplarer på dager, ikke år. Noen oversatte tesene til tysk, og trykkere over hele landet løp pressene varme. Innen to uker leste folk i Berlin, München og Wien om munken som hadde våget å si paven imot."
+      "content": "Rundt 1450, knapt 70 år tidligere, hadde Johann Gutenberg satt sammen den moderne [boktrykkerpressen](/historie/middelalderen/boktrykkerkunsten) med løse metalltyper (Rannem, 2025). Plutselig kunne en tekst trykkes i tusenvis av eksemplarer på dager, ikke år. Noen oversatte tesene til tysk, og trykkere over hele landet løp pressene varme. I løpet av få uker leste folk i tyske byer langt fra Wittenberg om munken som hadde våget å si paven imot."
     },
     {
       "type": "text",
-      "content": "Reformasjonen var trolig den første store mediebegivenheten i historien. Trykkere produserte pamfletter, plakater og tegneserier i hopetall. Luthers tekster solgte i hundretusener. Paven og hans menn var helt uforberedt på en motstander som spredte ord raskere enn de kunne stoppe ham."
+      "content": "Reformasjonen var trolig den første store mediebegivenheten i historien. Fra 1517 og utover tjente forleggere i Wittenberg, Erfurt, Nürnberg, Basel og flere andre byer gode penger på å trykke og selge skriftene hans, og de spredte seg eksplosivt (Rasmussen, 2026b). Paven og hans menn var helt uforberedt på en motstander som spredte ord raskere enn de kunne stoppe ham."
     },
     {
       "type": "header",
@@ -78,7 +78,7 @@
     },
     {
       "type": "text",
-      "content": "Foran keiseren og hele riksforsamlingen sto Luther fast. Han sa: «Min samvittighet er bundet til Guds ord. Her står jeg, jeg kan ikke annet.» Keiseren gjorde ham fredløs gjennom Edikt fra Worms. Det betydde at hvem som helst kunne drepe ham uten straff. Men Luther fikk hjelp av en venn: kurfyrste Fredrik den Vise gjemte ham på borgen Wartburg i nesten et år."
+      "content": "Foran keiseren og hele riksforsamlingen sto Luther fast. Den 17. april 1521 nektet han å ta noe tilbake, og sa at han bare kunne overbevises «ut fra Skriften eller fornuften» (Rasmussen, 2026a). Ettertiden har husket ham for setningen «Her står jeg, jeg kan ikke annet», men historikere vet ikke sikkert om han faktisk sa den. Keiseren gjorde ham fredløs gjennom Edikt fra Worms. Det betydde at hvem som helst kunne drepe ham uten straff. Men Luther fikk hjelp av en venn: kurfyrste Fredrik den Vise fikk ham i hemmelighet til borgen Wartburg, der han var trygg i ti måneder (Rasmussen, 2026a)."
     },
     {
       "type": "component",
@@ -126,11 +126,11 @@
     },
     {
       "type": "text",
-      "content": "På Wartburg gjorde Luther noe revolusjonerende: han oversatte Det nye testamentet fra latin til tysk på bare elleve uker. Tidligere hadde bare prester kunnet lese Bibelen, og de tolket den for resten av folket. Nå kunne hvem som helst som kunne lese, sjekke selv hva som faktisk sto der. Det var som å gi alle nøkkelen til et hus som hadde vært låst i tusen år."
+      "content": "På Wartburg gjorde Luther noe revolusjonerende: han oversatte Det nye testamentet til tysk på noen få måneder. Han avviste den latinske bibelen kirken brukte, og oversatte i stedet rett fra gresk, med tekstutgaven til Erasmus av Rotterdam som grunnlag. Oversettelsen kom ut i 1522 (Kvalbein et al., 2026). Tidligere hadde bare prester kunnet lese Bibelen, og de tolket den for resten av folket. Nå kunne hvem som helst som kunne lese, sjekke selv hva som faktisk sto der. Det var som å gi alle nøkkelen til et hus som hadde vært låst i tusen år."
     },
     {
       "type": "text",
-      "content": "Luthers tyske bibel la også grunnlaget for moderne tysk skriftspråk. Han skrev som folk faktisk snakket, ikke som lærde prester. Det samme skjedde senere med dansk og norsk: Bibelen og salmebøker på folkespråket løftet skriftspråket vårt. Tysk, dansk og norsk er alle [germanske språk](/norsk/sprakhistorie/germanske-sprak), og oversettelsene av Bibelen var med på å forme hvordan vi skriver dem i dag."
+      "content": "Luthers tyske bibel fikk avgjørende betydning for utviklingen av det tyske språket (Kvalbein et al., 2026). Han skrev som folk faktisk snakket, ikke som lærde prester. Det samme skjedde senere med dansk og norsk: Bibelen og salmebøker på folkespråket løftet skriftspråket vårt. Tysk, dansk og norsk er alle [germanske språk](/norsk/sprakhistorie/germanske-sprak), og oversettelsene av Bibelen var med på å forme hvordan vi skriver dem i dag."
     },
     {
       "type": "header",
@@ -138,7 +138,7 @@
     },
     {
       "type": "text",
-      "content": "Den nye bevegelsen fikk navnet protestantisme i 1529, etter at lutherske fyrster protesterte mot et katolsk forbud. Snart sto Europa med to konkurrerende [kristendommer](/krle/religion/kristendom/intro) som var enige om Jesus, men uenige om nesten alt annet."
+      "content": "Navnet «protestanter» stammer fra riksdagen i Speyer i 1529, da tilhengerne av den nye bevegelsen la ned protest mot forbudet mot å spre reformasjonen videre. Selv kalte de seg helst «evangeliske» (Elstad, 2025). Snart sto Europa med to konkurrerende [kristendommer](/krle/religion/kristendom/intro) som var enige om Jesus, men uenige om nesten alt annet."
     },
     {
       "type": "component",
@@ -187,7 +187,7 @@
     },
     {
       "type": "text",
-      "content": "I Norge kom reformasjonen ovenfra og ned. Det var ikke folket som krevde forandring, men kongen som påla den. I 1537 vant Christian 3. en borgerkrig i Danmark og innførte luthersk lære i hele Danmark-Norge med en gang. Den siste katolske erkebiskopen, Olav Engelbrektsson, måtte rømme landet. Kongen la ned klostrene og overtok kirkens enorme jordeiendommer. Norge gikk samtidig fra å være et eget kongerike til å bli en lydrike under Danmark, en stilling vi holdt i nesten 300 år."
+      "content": "I Norge kom reformasjonen ovenfra og ned. Det var ikke folket som krevde forandring, men kongen som påla den. Christian 3. vant borgerkrigen i Danmark, og i april 1537 sendte han en flåte med soldater til Norge for å knekke motstanden. Den siste katolske erkebiskopen, Olav Engelbrektsson, forlot Trondheim 1. påskedag og måtte flykte fra landet 1. april 1537 (Rian, 2026). Kongen avskaffet den katolske kirken, satte biskopene i fengsel, dro inn alt bispe- og klostergods og innførte en luthersk kirkeordning under kongens styre (Rian, 2026). Allerede i oktober 1536 var det bestemt at Norge ikke lenger skulle være et eget kongerike, men ligge under den danske kronen. Den stillingen holdt landet i nesten 300 år."
     },
     {
       "type": "header",
@@ -195,7 +195,7 @@
     },
     {
       "type": "text",
-      "content": "Reformasjonen splittet ikke bare kirken, den splittet også kartet over Europa. I freden i Augsburg i 1555 innførte fyrstene et prinsipp på latin: cuius regio, eius religio — den som styrer, bestemmer religionen. Det betydde fred for fyrstene, men ikke for vanlige folk. Skiftet kongen mening, måtte du skifte tro eller flytte."
+      "content": "Reformasjonen splittet ikke bare kirken, den splittet også kartet over Europa. I freden i Augsburg i 1555 innførte fyrstene et prinsipp på latin: cuius regio, eius religio - den som har den politiske makten, bestemmer også religionen (Rasmussen, 2026b). Det betydde fred for fyrstene, men ikke for vanlige folk. Skiftet kongen mening, måtte du skifte tro eller flytte."
     },
     {
       "type": "text",
@@ -229,10 +229,10 @@
           },
           {
             "id": "med-bondene",
-            "text": "Du marsjerer med flere tusen bønder mot adelens borg. Dere brenner kornlagre og krever rettigheter. Men noen uker senere kommer en sjokkerende beskjed: Luther selv har skrevet en pamflett der han kaller bøndene «mordere og tjuver» og ber fyrstene slå dere ned. Hærene rykker fram. Hva nå?",
+            "text": "Du marsjerer med flere tusen bønder mot adelens borg. Dere brenner kornlagre og krever rettigheter. Men noen uker senere kommer en sjokkerende beskjed: Luther selv har skrevet en pamflett der han kaller bøndene «mordere og røvere» og ber fyrstene slå dere ned. Hærene rykker fram. Hva nå?",
             "options": [
               {
-                "label": "Du fortsetter å kjempe — Luther har sviktet oss",
+                "label": "Du fortsetter å kjempe - Luther har sviktet oss",
                 "nextId": "fortsett-kamp"
               },
               {
@@ -243,7 +243,7 @@
           },
           {
             "id": "fortsett-kamp",
-            "text": "I slaget ved Frankenhausen knuser fyrstehæren bondene. Over 100 000 bønder døde i bondekrigene. Reformasjonen overlevde, men den ble en sak for fyrstene, ikke for folket. Luthers pakt med makten ga ham beskyttelse, men kostet bevegelsen den sosiale rettferdigheten den kunne ha brakt med seg.",
+            "text": "I slaget ved Frankenhausen 15. mai 1525 knuser en fyrstehær på rundt 6 000 mann den lokale opprørshæren på 8 000. Til sammen ble mellom 70 000 og 75 000 bønder drept eller såret i bondekrigene (Arntzen, 2025). Reformasjonen overlevde, men den ble en sak for fyrstene, ikke for folket. Luthers pakt med makten ga ham beskyttelse, men kostet bevegelsen den sosiale rettferdigheten den kunne ha brakt med seg.",
             "options": [
               {
                 "label": "Tilbake til start",
@@ -290,7 +290,7 @@
     },
     {
       "type": "text",
-      "content": "Luther var ikke den første som kritiserte paven. John Wycliffe i England og Jan Hus i Tsjekkia hadde sagt mye av det samme hundre år tidligere, men ble brent på bålet. Hvorfor lyktes Luther? Tre ting kom sammen samtidig: en ny teknologi som spredte ideer raskere enn kirken kunne stoppe dem, en politisk situasjon der tyske fyrster så en sjanse til å frigjøre seg fra paven og keiseren, og et religiøst behov hos vanlige folk som var trette av kirkens grådighet."
+      "content": "Luther var ikke den første som kritiserte paven. John Wycliffe i England og Jan Hus i Tsjekkia hadde sagt mye av det samme hundre år tidligere. Hus ble brent på bålet, og Wycliffes lære ble fordømt av kirken. Hvorfor lyktes Luther? Tre ting kom sammen samtidig: en ny teknologi som spredte ideer raskere enn kirken kunne stoppe dem, en politisk situasjon der tyske fyrster så en sjanse til å frigjøre seg fra paven og keiseren, og et religiøst behov hos vanlige folk som var trette av kirkens grådighet."
     },
     {
       "type": "header",
@@ -302,7 +302,7 @@
     },
     {
       "type": "text",
-      "content": "Samtidig hadde Luther sine mørke sider. Han skrev hatske tekster mot jøder mot slutten av livet, tekster som tyske nazister senere skulle misbruke. Han støttet fyrstene mot bøndene da de gjorde opprør. Han er en påminnelse om at de som forandrer historien sjelden er enkle helter eller skurker, men sammensatte mennesker som har gjort både stort og smått."
+      "content": "Samtidig hadde Luther sine mørke sider. I 1543, mot slutten av livet, skrev han et skrift der han anbefalte å brenne synagoger (Rasmussen, 2026a). Slike tekster skulle tyske nazister senere misbruke. Han støttet fyrstene mot bøndene da de gjorde opprør. Han er en påminnelse om at de som forandrer historien sjelden er enkle helter eller skurker, men sammensatte mennesker som har gjort både stort og smått."
     },
     {
         "type": "component",
@@ -318,7 +318,7 @@
                 "Forklar hvorfor boktrykkerpressen var så avgjørende for at Luthers protest ble en europeisk bevegelse i stedet for en lokal debatt.",
                 "Teksten sier at Luther lyktes der Wycliffe og Hus mislyktes. Hvilke tre ting kom sammen samtidig, og hvorfor var akkurat den kombinasjonen viktig?",
                 "Sammenlign den katolske og den protestantiske veien til frelse. Hvorfor tror du forskjellen om «tro alene» ble så viktig for vanlige folk?",
-                "Luther kalte de opprørske bøndene «mordere og tjuver». Hva forteller det om forholdet mellom religion og makt, og var det å svikte sine egne idealer?"
+                "Luther kalte de opprørske bøndene «mordere og røvere». Hva forteller det om forholdet mellom religion og makt, og var det å svikte sine egne idealer?"
             ],
             "gaaVidere": [
                 "Teksten kaller reformasjonen «den første store mediebegivenheten i historien». Sammenlign hvordan tesene spredte seg med hvordan ideer sprer seg på sosiale medier i dag. Hva er likt, og hva er ulikt?",
@@ -363,7 +363,7 @@
               "Katolikker leser ikke Bibelen i det hele tatt"
             ],
             "answer": "Katolikker tror frelse krever tro, gjerninger og sakramenter; protestanter tror på frelse ved tro alene",
-            "explanation": "Luthers viktigste teologiske idé var sola fide — frelse ved tro alene. Han mente Guds nåde er en gave som ikke kan kjøpes eller fortjenes."
+            "explanation": "Luthers viktigste teologiske idé var sola fide - frelse ved tro alene. Han mente Guds nåde er en gave som ikke kan kjøpes eller fortjenes."
           },
           {
             "question": "Hvordan kom reformasjonen til Norge?",
@@ -378,6 +378,24 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Arntzen, J. G. (2025). *Bondekrigen*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Bondekrigen](https://snl.no/Bondekrigen)",
+          "Elstad, H. (2025). *Protestantisme*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/protestantisme](https://snl.no/protestantisme)",
+          "Halvorsen, P. B. (2025). *Johann Tetzel*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Johann_Tetzel](https://snl.no/Johann_Tetzel)",
+          "KDG Wittenberg. (1997). *The 95 Theses*. Hentet 01.08.2026 fra [luther.de/en/95thesen.html](https://www.luther.de/en/95thesen.html)",
+          "Kvalbein, H., Leivestad, R., Seim, T. K., Berg-Nordlie, M., Aasgaard, R. & Halse, P. (2026). *Bibeloversettelser*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/bibeloversettelser](https://snl.no/bibeloversettelser)",
+          "Rannem, Ø. (2025). *Johann Gutenberg*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Johann_Gutenberg](https://snl.no/Johann_Gutenberg)",
+          "Rasmussen, T. (2026a). *Martin Luther*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Martin_Luther](https://snl.no/Martin_Luther)",
+          "Rasmussen, T. (2026b). *Reformasjonen*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/reformasjonen](https://snl.no/reformasjonen)",
+          "Rian, Ø. (2026). *Olav Engelbrektsson*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Olav_Engelbrektsson](https://snl.no/Olav_Engelbrektsson)"
+        ]
+      }
     }
-  ]
+  ],
+  "lastUpdated": "2026-08-01"
 }
