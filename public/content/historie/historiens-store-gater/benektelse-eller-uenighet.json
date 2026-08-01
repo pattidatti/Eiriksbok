@@ -6,7 +6,7 @@
     "year": "1945",
     "category": "Historiens store gåter",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiens-store-gater/benektelse-eller-uenighet-hero.webp",
     "details": [
         "Historikere er uenige hele tiden, og det er selve arbeidet i faget.",
         "Benektelse ser ut som uenighet, men bytter ut kravet sitt hver gang beviset kommer.",
@@ -23,7 +23,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/benektelse-eller-uenighet-01.webp",
             "alt": "Ungdom leser to motstridende artikler på en skjerm",
             "caption": "To tekster kan se like troverdige ut på skjermen. Forskjellen kommer først fram når du sjekker hva de gjør med motargumenter."
         },
@@ -74,7 +74,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/benektelse-eller-uenighet-02.webp",
             "alt": "Arkivhyller fulle av mapper og dokumenter fra krigen",
             "caption": "Hundretusener av dokumenter ligger i arkivene. Det er dette materialet benekterne må se bort fra for at påstanden deres skal henge sammen."
         },
@@ -145,7 +145,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiens-store-gater/benektelse-eller-uenighet-03.webp",
             "alt": "Elev som sammenligner to kilder ved et skolebord",
             "caption": "Du trenger ikke være ekspert på emnet for å bruke testen. Du trenger bare å følge med på om kravet står stille."
         },
