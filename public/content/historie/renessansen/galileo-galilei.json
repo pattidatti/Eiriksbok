@@ -8,18 +8,18 @@
     "heroImage": "/images/renessansen/galileo-hero.webp",
     "details": [
         "Galileo var en italiensk vitenskapsmann som forandret hvordan vi forstår universet.",
-        "Han var den første som rettet en kikkert mot himmelen, og oppdaget at kirkens verdensbilde var feil.",
+        "Han var blant de første som rettet en kikkert mot himmelen, og det han så passet dårlig med kirkens verdensbilde.",
         "Kirken stilte ham for retten og dømte ham til husarrest resten av livet.",
-        "Han la grunnlaget for moderne vitenskap: tro ikke på autoriteter — sjekk selv, mål og test."
+        "Han la grunnlaget for moderne vitenskap: tro ikke på autoriteter - sjekk selv, mål og test."
     ],
     "content": [
         {
             "type": "text",
-            "content": "En kveld i januar 1610 satt en 45 år gammel italiener på taket av et hus i Padova og pekte et lite rør mot himmelen. Røret var hans egen oppfinnelse — en kikkert med to slipte linser. Han siktet mot den lyseste prikken på himmelen: planeten Jupiter. Det han så fikk hjertet til å banke. Ved siden av Jupiter lå tre små lysprikker på en rett linje. Han noterte dem ned. Neste kveld var prikkene flyttet. Etter en uke var det fire av dem, og de byttet plass annenhver natt. Galileo Galilei skjønte hva han så: fire måner som gikk i bane rundt Jupiter. Og hvis fire måner kretset rundt en planet som ikke var jorden, så kretset ikke alt rundt jorden likevel."
+            "content": "En kveld i januar 1610 satt en 45 år gammel italiener i Padova og pekte et lite rør mot himmelen. Røret var hans eget arbeid - en kikkert med slipte linser. Han siktet mot den lyseste prikken på himmelen: planeten Jupiter. Det han så fikk hjertet til å banke. Ved siden av Jupiter lå tre små lysprikker på en rett linje. Han noterte dem ned. Neste kveld var prikkene flyttet. Etter noen netter var det fire av dem, og de byttet plass fra natt til natt. Galileo Galilei skjønte hva han så: fire måner som gikk i bane rundt Jupiter (Van Helden, 2026). Og hvis fire måner kretset rundt en planet som ikke var jorden, så kretset ikke alt rundt jorden likevel."
         },
         {
             "type": "text",
-            "content": "Den natten begynte slutten på et tusen år gammelt verdensbilde. Kirken og universitetene lærte at jorden lå urørlig i sentrum av universet, og at himmelen utenfor var perfekt og uforanderlig. Aristoteles hadde sagt det 2000 år tidligere, og Ptolemaios hadde regnet det ut. Men én mann med ett enkelt instrument og ett par våkne øyne skulle bevise at de to autoritetene tok feil. Galileo ble selve symbolet på den nye tankegangen som senere fikk navnet vitenskapelig metode: ikke stol på det du har blitt fortalt — gå ut og se selv."
+            "content": "Den natten begynte slutten på et tusen år gammelt verdensbilde. Kirken og universitetene lærte at jorden lå urørlig i sentrum av universet, og at himmelen utenfor var perfekt og uforanderlig. Aristoteles hadde sagt det 2000 år tidligere, og Ptolemaios hadde regnet det ut. Men én mann med ett enkelt instrument og ett par våkne øyne skulle vise at de to autoritetene tok feil. Galileo ble selve symbolet på den nye tankegangen som senere fikk navnet vitenskapelig metode: ikke stol på det du har blitt fortalt - gå ut og se selv."
         },
         {
             "type": "image",
@@ -33,7 +33,7 @@
         },
         {
             "type": "text",
-            "content": "Galileo ble født i Pisa i 1564, samme år som Shakespeare og samme år som Michelangelo døde. Faren ville at han skulle bli lege, men Galileo fant matematikken mer spennende. Han ble professor i Pisa, og senere i Padova, og han hadde en plagsom vane: han stilte spørsmål ved alt læreboka sa. Hvorfor faller tunge ting raskere enn lette? Aristoteles hadde sagt det, og alle hadde trodd det i 2000 år. Galileo prøvde å sjekke. Han slapp kuler av ulik vekt fra Pisa-tårnet (sier legenden) og rullet baller ned skråe planker, og oppdaget at alt faller like raskt — uansett hvor tungt det er. Det var Aristoteles som tok feil."
+            "content": "Galileo ble født i Pisa 15. februar 1564, samme år som Shakespeare og samme år som Michelangelo døde (Elgarøy, 2024). Faren ville at han skulle bli lege, men Galileo fant matematikken mer spennende. Han ble professor i Pisa, og senere i Padova, og han hadde en plagsom vane: han stilte spørsmål ved alt læreboka sa. Hvorfor faller tunge ting raskere enn lette? Aristoteles hadde sagt det, og alle hadde trodd det i 2000 år. Galileo prøvde å sjekke. Legenden vil ha det til at han slapp kuler av ulik vekt fra det skjeve tårnet i Pisa, men det er trolig ikke noe han faktisk gjorde (Elgarøy, 2024). Det han virkelig gjorde, var å rulle kuler ned skrå planker og måle tiden de brukte. Slik fant han de riktige lovene for fritt fall - og viste at Aristoteles tok feil."
         },
         {
             "type": "component",
@@ -44,7 +44,7 @@
         },
         {
             "type": "text",
-            "content": "Denne måten å tenke på var ny. I middelalderens universiteter slo man opp i bøker av Aristoteles og diskuterte hva han hadde ment. Galileo gjorde noe annet: han satte opp et forsøk og målte resultatet. Hvis bøkene var uenige med målingene, var det bøkene som tok feil. Dette virker selvsagt for oss i dag, men det var revolusjonerende den gangen. Galileo skrev en gang: 'Naturens bok er skrevet i matematikkens språk.' For ham var verden noe man kunne måle og regne på, ikke noe man skulle lese om i gamle bøker."
+            "content": "Denne måten å tenke på var ny. I middelalderens universiteter slo man opp i bøker av Aristoteles og diskuterte hva han hadde ment. Galileo gjorde noe annet: han satte opp et forsøk og målte resultatet. Hvis bøkene var uenige med målingene, var det bøkene som tok feil. Dette virker selvsagt for oss i dag, men det var revolusjonerende den gangen. Galileo skrev at universet er som en stor bok som ligger åpen foran oss, men at boka er skrevet i matematikkens språk - og at den som ikke kan det språket, ikke forstår et eneste ord av den (Van Helden, 2026). For ham var verden noe man kunne måle og regne på, ikke noe man skulle lese om i gamle bøker."
         },
         {
             "type": "header",
@@ -52,7 +52,7 @@
         },
         {
             "type": "text",
-            "content": "Sommeren 1609 fikk Galileo høre om en oppfinnelse i Nederland: et rør med linser som fikk fjerne ting til å se nærmere ut. Han gikk hjem, slipte sine egne linser, og bygde noe som var åtte ganger bedre enn det nederlenderne hadde laget. Først solgte han kikkerten til den venetianske marinen, som kunne se fiendtlige skip flere timer før de nærmet seg. Men i januar 1610 gjorde han noe ingen hadde tenkt på: han pekte kikkerten oppover, mot stjernehimmelen."
+            "content": "I 1609 fikk Galileo høre om en oppfinnelse i Nederland: et rør med linser som fikk fjerne ting til å se nærmere ut (Elgarøy, 2024). Han gikk hjem, slipte sine egne linser, og bygde en kikkert som forstørret åtte ganger - langt kraftigere enn de nederlandske. Han viste den fram for senatet i Venezia, som straks skjønte hvor nyttig den var: skip kunne oppdages lenge før de kom fram. Galileo fikk fast stilling for livet og dobbelt lønn (Van Helden, 2026). Utover høsten bygde han enda bedre kikkerter. Og i januar 1610 gjorde han noe få hadde tenkt på: han pekte kikkerten oppover, mot stjernehimmelen."
         },
         {
             "type": "component",
@@ -63,7 +63,7 @@
         },
         {
             "type": "text",
-            "content": "I løpet av få måneder gjorde Galileo flere oppdagelser enn astronomer hadde gjort på tusen år. Månen var ikke glatt — den hadde fjell og kratere som jorden. Jupiter hadde fire måner som gikk rundt seg. Venus hadde faser, slik vår egen måne har. Solen hadde mørke flekker som beveget seg over overflaten. Alt pekte i samme retning: himmelen er fysisk, foranderlig og mulig å forstå. Han skrev oppdagelsene i boka 'Sidereus Nuncius' i mars 1610, og ble berømt i hele Europa."
+            "content": "I løpet av få måneder gjorde Galileo flere oppdagelser enn astronomer hadde gjort på tusen år. Månen var ikke glatt - den hadde fjell og daler med lange skygger. Jupiter hadde fire måner som gikk rundt seg. Venus hadde faser, slik vår egen måne har, og det viste at Venus går rundt solen og ikke rundt jorden. Solen hadde mørke flekker som beveget seg over overflaten. Alt pekte i samme retning: himmelen er fysisk, foranderlig og mulig å forstå. Han skrev oppdagelsene i boka 'Sidereus Nuncius' i 1610, og ble berømt i hele Europa (Van Helden, 2026)."
         },
         {
             "type": "header",
@@ -71,21 +71,21 @@
         },
         {
             "type": "text",
-            "content": "Problemet var at det Galileo så støttet en idé som kirken hadde forbudt. Allerede i 1543 hadde den polske astronomen Nikolaus Kopernikus skrevet at solen, ikke jorden, var i sentrum av universet. Det stred mot Bibelens beskrivelse av at jorden stod stille mens solen beveget seg over himmelen. Kirken hadde foreløpig latt boken være i fred, men da Galileo begynte å vise med beviser at Kopernikus hadde rett, ble det alvor. I 1616 advarte kardinal Bellarmin Galileo: snakk gjerne om dette som en regnemodell, men ikke som sannhet. Kopernikus' bok ble forbudt."
+            "content": "Problemet var at det Galileo så støttet en idé kirken ikke ville høre. Allerede i 1543 hadde den polske astronomen Nikolaus Kopernikus skrevet at solen, ikke jorden, var i sentrum av universet. Det stred mot måten Bibelen ble lest på, der jorden stod stille mens solen beveget seg over himmelen. Men da Galileo begynte å vise fram beviser for at Kopernikus hadde rett, ble det alvor. I 1616 kalte kirken tanken om at jorden beveger seg for urimelig og delvis kjettersk (Elgarøy, 2024). Kardinal Robert Bellarmin ga Galileo beskjed om at han verken kunne hevde eller forsvare Kopernikus' modell, og Kopernikus' bok ble stanset inntil den var rettet (Van Helden, 2026)."
         },
         {
             "type": "text",
-            "content": "Galileo holdt seg unna saken i nesten 20 år. Så i 1632 ga han ut en ny bok: 'Dialog om de to viktigste verdenssystemene'. Boken var skrevet som en samtale mellom tre personer, der den ene forsvarte jorden-i-sentrum-modellen. Galileo kalte denne personen Simplicio — som høres ut som 'den enkle' eller 'den dumme' på italiensk. Mange leste det som en hån mot paven, som tidligere hadde brukt akkurat de samme argumentene som Simplicio. Paven ble rasende. Galileo ble innkalt til Den hellige inkvisisjon i Roma."
+            "content": "Galileo holdt seg unna saken i nesten 20 år. Så i 1632 ga han ut en ny bok: 'Dialog om de to viktigste verdenssystemene'. Boken var skrevet som en samtale mellom tre personer, der den ene forsvarte jorden-i-sentrum-modellen. Galileo kalte denne personen Simplicio - som høres ut som 'den enkle' på italiensk. Verre var det at Simplicio fikk det siste ordet, og at akkurat det argumentet var pave Urban 8. sitt eget favorittargument. Paven ble rasende (Van Helden, 2026). Galileo ble innkalt til Den hellige inkvisisjon i Roma."
         },
         {
             "type": "image",
             "src": "/images/renessansen/galileo-02.webp",
             "alt": "Galileo som gammel mann står foran et stort rom fullt av kardinaler i røde kapper, en bibel og en stor bok ligger på et bord",
-            "caption": "Galileo ble stilt for inkvisisjonen i Roma i 1633. Han ble dømt for kjetteri og tvunget til å trekke tilbake at jorden beveger seg."
+            "caption": "Galileo ble stilt for inkvisisjonen i Roma i 1633. Han ble dømt for mistanke om kjetteri og tvunget til å trekke tilbake at jorden beveger seg."
         },
         {
             "type": "text",
-            "content": "I april 1633 ble Galileo, da 69 år gammel og syk, dømt for 'mistanke om kjetteri'. Han måtte knele foran kardinalene og lese opp en erklæring der han trakk tilbake at jorden beveger seg. Han fikk valget mellom å bøye seg eller bli torturert og brent på bålet, slik munken Giordano Bruno hadde blitt 33 år tidligere for å ha sagt det samme. Galileo bøyde seg. Legenden sier at da han reiste seg, mumlet han 'Eppur si muove' — 'Og likevel beveger den seg'. Vi vet ikke om han faktisk sa det, men setningen er blitt et symbol på vitenskapens motstand mot autoriteter som ber den om å lyve."
+            "content": "22. juni 1633 måtte Galileo, da 69 år gammel og syk, knele foran kardinalene og lese opp en erklæring der han trakk tilbake at jorden beveger seg. Dommen lød på fengsel på livstid, men ble gjort om til husarrest (Elgarøy, 2024). Presset var enormt. Trettitre år tidligere hadde inkvisisjonen brent filosofen Giordano Bruno på bålet i Roma - riktignok for hans teologiske meninger, ikke for at han forsvarte Kopernikus (Tjønneland, 2024). Galileo bøyde seg. Legenden sier at da han reiste seg, mumlet han 'Eppur si muove' - 'Og likevel beveger den seg'. Vi vet ikke om han faktisk sa det, men setningen er blitt et symbol på vitenskapens motstand mot autoriteter som ber den om å lyve."
         },
         {
             "type": "header",
@@ -93,18 +93,18 @@
         },
         {
             "type": "text",
-            "content": "Galileo ble dømt til husarrest resten av livet. Han fikk bo i sitt eget hus i Arcetri nær Firenze, men kunne ikke reise og fikk knapt besøk. Han ble blind i 1638, sannsynligvis fordi han hadde sett for direkte på solen gjennom kikkerten år tidligere. Men hjernen var skarp. Han skrev fortsatt — om bevegelse, om fritt fall, om hvordan kanonkuler beveger seg gjennom luften. Den siste boken hans, 'Diskurser om to nye vitenskaper', smuglet han ut av Italia til en bokhandler i Nederland. Den ble grunnlaget for den moderne fysikken som Isaac Newton bygde videre på 50 år senere."
+            "content": "Galileo ble dømt til husarrest resten av livet. Han fikk bo i sitt eget hus i Arcetri nær Firenze, men kunne ikke reise fritt. Synet sviktet, og til slutt var han nesten blind - trolig fordi han hadde sett rett på solen gjennom kikkerten år tidligere (Elgarøy, 2024). Men hjernen var skarp. Han skrev fortsatt - om bevegelse, om fritt fall, om hvordan kanonkuler beveger seg gjennom luften. Den siste boken hans, 'Diskurser om to nye vitenskaper', fikk vennene hans trykt i Leiden i Nederland i 1638 (Van Helden, 2026). Den ble et grunnlag for den moderne fysikken som Isaac Newton senere bygde videre på."
         },
         {
             "type": "text",
-            "content": "Galileo døde i 1642, blind og fortsatt under husarrest. Samme år ble Newton født. Det skulle gå 350 år før den katolske kirken offisielt innrømmet at de hadde tatt feil. I 1992 erklærte pave Johannes Paul II at Galileo hadde rett: jorden beveger seg rundt solen. Det er den lengste rettssaken i menneskehetens historie."
+            "content": "Galileo døde i Arcetri 8. januar 1642, nesten blind og fortsatt under husarrest (Elgarøy, 2024). Saken hans ble liggende i kirken i århundrer. I 1979 satte pave Johannes Paul 2. ned en kommisjon som skulle gå gjennom rettssaken. Kommisjonen la fram svaret i 1992, og 31. oktober det året holdt paven en tale der han slo fast at kirkens menn den gangen hadde gjort en feil (Neckar, 2025). Det hadde da gått 359 år siden dommen."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hva betyr egentlig vitenskapelig metode?",
-                "content": "Galileos arv er ikke at han fant ut at jorden går rundt solen. Andre hadde sagt det før ham. Arven er måten han fant det ut på. Stille et spørsmål, lage en hypotese, sette opp et eksperiment, måle resultatet, og endre hypotesen hvis resultatet ikke stemmer. Dette er fortsatt slik forskere arbeider i dag — fra medisiner mot kreft til hvordan klimaet forandrer seg. Vitenskap er ikke en samling fakta. Det er en metode for å skille mellom det vi tror og det vi vet."
+                "content": "Galileos arv er ikke at han fant ut at jorden går rundt solen. Andre hadde sagt det før ham. Arven er måten han fant det ut på. Stille et spørsmål, lage en hypotese, sette opp et eksperiment, måle resultatet, og endre hypotesen hvis resultatet ikke stemmer. Dette er fortsatt slik forskere arbeider i dag - fra medisiner mot kreft til hvordan klimaet forandrer seg. Vitenskap er ikke en samling fakta. Det er en metode for å skille mellom det vi tror og det vi vet."
             }
         },
         {
@@ -113,7 +113,7 @@
         },
         {
             "type": "text",
-            "content": "Det er lett å tro at striden om jorden og solen er gammelt nytt. Hvem bryr seg om Ptolemaios og Kopernikus i dag? Men det Galileo gjorde, ligger under hele den moderne verden. Hver gang en lege gir deg en medisin som er testet i et forsøk, hver gang en ingeniør beregner om en bro vil tåle vekten, hver gang noen sjekker en faktapåstand i stedet for bare å tro på den — er det Galileos metode i arbeid. Han viste at autoriteter kan ta feil, og at det er greit å sjekke selv. Han viste at sannhet er noe vi finner ut sammen, gjennom forsøk og målinger, ikke noe vi bare aksepterer fordi noen mektige sier det."
+            "content": "Det er lett å tro at striden om jorden og solen er gammelt nytt. Hvem bryr seg om Ptolemaios og Kopernikus i dag? Men det Galileo gjorde, ligger under hele den moderne verden. Hver gang en lege gir deg en medisin som er testet i et forsøk, hver gang en ingeniør beregner om en bro vil tåle vekten, hver gang noen sjekker en faktapåstand i stedet for bare å tro på den - er det Galileos metode i arbeid. Han viste at autoriteter kan ta feil, og at det er greit å sjekke selv. Han viste at sannhet er noe vi finner ut sammen, gjennom forsøk og målinger, ikke noe vi bare aksepterer fordi noen mektige sier det."
         },
         {
             "type": "text",
@@ -132,13 +132,13 @@
                 "reflekter": [
                     "Forklar med egne ord hva som var nytt med måten Galileo tenkte på, sammenlignet med hvordan man arbeidet ved middelalderens universiteter.",
                     "Hvorfor ble Galileos oppdagelser et problem for kirken, selv om han bare beskrev det han faktisk så gjennom kikkerten?",
-                    "Galileo bøyde seg for inkvisisjonen i stedet for å bli brent slik Giordano Bruno ble. Var det feigt eller klokt? Argumenter for begge sider.",
+                    "Galileo bøyde seg for inkvisisjonen i stedet for å stå på sitt. Var det feigt eller klokt? Argumenter for begge sider.",
                     "Teksten sier at Galileo også er en advarsel. Hva mener den med at sannhet ikke alltid er velkommen?"
                 ],
                 "gaaVidere": [
                     "Finn et eksempel fra din egen hverdag der noen tester en påstand i stedet for bare å tro på den, slik Galileos metode ber oss om. Beskriv hvordan det fungerer.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvorfor 'Eppur si muove' er blitt et symbol, selv om vi ikke vet om Galileo virkelig sa det.",
-                    "Diskuter med en partner: Hvorfor tok det 350 år før kirken innrømmet at Galileo hadde rett? Hva gjør det vanskelig for mektige å innrømme at de tok feil?"
+                    "Diskuter med en partner: Hvorfor tok det så lang tid før kirken gikk gjennom saken mot Galileo på nytt? Hva gjør det vanskelig for mektige å innrømme at de tok feil?"
                 ]
             }
         },
@@ -156,7 +156,7 @@
                             "At Jupiter hadde ringer som Saturn"
                         ],
                         "correctIndex": 1,
-                        "explanation": "Galileo så fire lysprikker som flyttet seg fra natt til natt rundt Jupiter — de fire største månene. Hvis måner kunne gå i bane rundt Jupiter, kretset ikke alt rundt jorden."
+                        "explanation": "Galileo så fire lysprikker som flyttet seg fra natt til natt rundt Jupiter - de fire største månene. Hvis måner kunne gå i bane rundt Jupiter, kretset ikke alt rundt jorden."
                     },
                     {
                         "question": "Hvorfor var Galileos oppdagelser et problem for kirken?",
@@ -178,7 +178,7 @@
                             "Tenk lenge og hardt uten å gjøre eksperimenter"
                         ],
                         "correctIndex": 1,
-                        "explanation": "Galileo erstattet 'Aristoteles sa det' med 'la oss måle det'. Hvis målingen ikke stemmer med teorien, må teorien endres — ikke målingen."
+                        "explanation": "Galileo erstattet 'Aristoteles sa det' med 'la oss måle det'. Hvis målingen ikke stemmer med teorien, må teorien endres - ikke målingen."
                     },
                     {
                         "question": "Hva betyr setningen 'Eppur si muove'?",
@@ -189,7 +189,7 @@
                             "Universet er uendelig"
                         ],
                         "correctIndex": 0,
-                        "explanation": "Etter at Galileo ble tvunget til å si at jorden står stille, skal han ha mumlet 'Eppur si muove' — 'og likevel beveger den seg'. Setningen står som symbol på at sannheten ikke endrer seg selv om noen tvinger oss til å si noe annet."
+                        "explanation": "Etter at Galileo ble tvunget til å si at jorden står stille, skal han ha mumlet 'Eppur si muove' - 'og likevel beveger den seg'. Setningen står som symbol på at sannheten ikke endrer seg selv om noen tvinger oss til å si noe annet."
                     },
                     {
                         "question": "Hvorfor sammenligner vi ofte Galileo med en bro til moderne vitenskap?",
@@ -200,11 +200,24 @@
                             "Han var den første som brukte latin i vitenskap"
                         ],
                         "correctIndex": 2,
-                        "explanation": "Galileos metode — observasjon, måling, eksperiment — er fortsatt grunnpilaren for all moderne vitenskap, fra medisin til klimaforskning."
+                        "explanation": "Galileos metode - observasjon, måling, eksperiment - er fortsatt grunnpilaren for all moderne vitenskap, fra medisin til klimaforskning."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Elgarøy, Ø. (2024). *Galileo Galilei*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Galileo_Galilei](https://snl.no/Galileo_Galilei)",
+                    "Neckar, E. (2025). *Oct. 31, 1992: The pope addresses the Galileo affair*. Astronomy. Hentet 01.08.2026 fra [astronomy.com](https://www.astronomy.com/today-in-the-history-of-astronomy/oct-31-1992-the-pope-addresses-the-galileo-affair/)",
+                    "Tjønneland, E. (2024). *Giordano Bruno*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Giordano_Bruno](https://snl.no/Giordano_Bruno)",
+                    "Van Helden, A. (2026). *Galileo Galilei*. Encyclopaedia Britannica. Hentet 01.08.2026 fra [britannica.com/biography/Galileo-Galilei](https://www.britannica.com/biography/Galileo-Galilei)"
                 ]
             }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-01"
 }
