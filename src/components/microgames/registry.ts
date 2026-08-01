@@ -161,8 +161,18 @@ const HavfolkeneKommer3D = lazy(() => import('./HavfolkeneKommer3D'));
 const Malstanga3D = lazy(() => import('./Malstanga3D'));
 const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
+const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'taj-mahal-symmetri': {
+        id: 'taj-mahal-symmetri',
+        title: 'Speilaksen i Taj Mahal',
+        description:
+            'Agra, 1631. Du får bare lov til å bygge venstre halvdel av Taj Mahal. Dra minaretene, sidebygningen og hagefeltet ut på plass, og se hver eneste del sprette opp speilvendt på høyre side av den gylne midtaksen. Bommer du på målet, finner ikke speilaksen tvillingen, og delen går tilbake. Når alle fire par står, reiser mausoleet seg midt på aksen - og med en bryter kan du slå av speilloven og se roen falle sammen. Lyspæren: mogulenes byggekunst er ikke pynt, men en lov om at hver del må ha sin tvilling.',
+        estimatedSeconds: 150,
+        loader: () => import('./TajMahalSymmetri3D'),
+        Component: TajMahalSymmetri3D as never,
+    },
     'grava-i-skogen': {
         id: 'grava-i-skogen',
         title: 'Grava i skogen',

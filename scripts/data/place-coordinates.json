@@ -899,6 +899,10 @@
       "count": 20
     },
     {
+      "tag": "islam",
+      "count": 20
+    },
+    {
       "tag": "renessansen",
       "count": 20
     },
@@ -908,10 +912,6 @@
     },
     {
       "tag": "kultur",
-      "count": 18
-    },
-    {
-      "tag": "islam",
       "count": 18
     },
     {
@@ -1047,6 +1047,10 @@
       "count": 10
     },
     {
+      "tag": "hinduisme",
+      "count": 10
+    },
+    {
       "tag": "rettigheter",
       "count": 10
     },
@@ -1164,10 +1168,6 @@
     },
     {
       "tag": "hellige-tekster",
-      "count": 8
-    },
-    {
-      "tag": "hinduisme",
       "count": 8
     },
     {
@@ -1471,6 +1471,10 @@
       "count": 4
     },
     {
+      "tag": "toleranse",
+      "count": 4
+    },
+    {
       "tag": "germansk",
       "count": 4
     },
@@ -1492,6 +1496,10 @@
     },
     {
       "tag": "ressurser",
+      "count": 4
+    },
+    {
+      "tag": "imperier",
       "count": 4
     },
     {
@@ -1915,10 +1923,6 @@
       "count": 2
     },
     {
-      "tag": "toleranse",
-      "count": 2
-    },
-    {
       "tag": "indoeuropeisk",
       "count": 2
     },
@@ -2036,10 +2040,6 @@
     },
     {
       "tag": "hypotese",
-      "count": 2
-    },
-    {
-      "tag": "imperier",
       "count": 2
     },
     {
@@ -2224,6 +2224,10 @@
     },
     {
       "tag": "süleyman",
+      "count": 2
+    },
+    {
+      "tag": "mogulriket",
       "count": 2
     },
     {

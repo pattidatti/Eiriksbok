@@ -1,0 +1,274 @@
+{
+    "id": "mogulriket",
+    "title": "Mogulriket: verdens rikeste rike",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "1526-1857",
+    "category": "Indias historie",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Mogulriket styrte India fra 1526 til 1857 og var lenge en av verdens rikeste stormakter.",
+        "Keiserne var muslimer, mens svært mange av innbyggerne var hinduer. Hvordan de to gruppene skulle leve sammen, ble rikets viktigste spørsmål.",
+        "Akbar ga hinduene plass i staten. Aurangzeb tok plassen tilbake. Kort tid etter falt riket fra hverandre."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "På slutten av 1600-tallet lagde India omtrent en fjerdedel av alt som ble produsert i hele verden. Mellom hundre og hundre og femti millioner mennesker bodde i riket (Nangia, 2026). Bomullstøy fra India ble solgt i London og Lisboa. Krydder fra India havnet i norske gryter. Ingen andre steder på kloden fantes det så mye å hente."
+        },
+        {
+            "type": "text",
+            "content": "Riket het Mogulriket, og det holdt sammen i over tre hundre år. Så raknet det på under femti. Historien om hvorfor er ikke først og fremst en historie om hærer og grenser. Den handler om et helt annet spørsmål: hva gjør du når nesten alle du styrer over, tror på noe annet enn deg selv?"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Travel indisk basargate med bomullsboder og krydder, 1600-tallet",
+            "caption": "En basar i mogulenes India. Herfra ble bomullstøy og krydder sendt ut i hele verden."
+        },
+        {
+            "type": "header",
+            "text": "Et rike blir til"
+        },
+        {
+            "type": "text",
+            "content": "I 1526 kom en fyrste ved navn Babur inn over fjellene i nordvest og erobret de nordvestlige delene av India. Det året regnes som starten på Mogulriket (Waldrop, 2026). Etterfølgerne hans utvidet riket bit for bit, og på det største omfattet det nesten hele den indiske halvøya."
+        },
+        {
+            "type": "text",
+            "content": "Ordet mogul kommer av mongol. Familien førte slekta si tilbake til mongolske og tyrkiske erobrere fra Sentral-Asia. De snakket persisk ved hoffet, bygde i persisk stil og hentet ideer fra hele den muslimske verden, akkurat slik lærde hadde gjort under [Det islamske gullalderet](/historie/midtoesten/islamsk-gullaldet)."
+        },
+        {
+            "type": "header",
+            "text": "Keiseren og de andre"
+        },
+        {
+            "type": "text",
+            "content": "Her ligger kjernen i hele historien. Keiserne var muslimer. Svært mange av innbyggerne var hinduer, med egne guder, egne templer og egne skikker. Det som gjorde Mogulriket spesielt, var forsøket på å få hinduer og muslimer til å bo i én og samme stat (Nangia, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Det er lett å tenke at et rike styres av lover og soldater. Men et rike på hundre millioner mennesker kan ingen hær holde i sjakk. Skatten må betales frivillig av folk som synes ordningen er til å leve med. Derfor ble spørsmålet om hvor mye plass hinduene skulle få, det viktigste keiserne noen gang tok stilling til. Prøv selv hvordan de valgene henger sammen."
+        },
+        {
+            "type": "component",
+            "name": "StormogulensValg",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Akbars vei: gi plass"
+        },
+        {
+            "type": "text",
+            "content": "Akbar levde fra 1542 til 1605 og overtok tronen etter faren sin i 1556 (Waldrop, 2025a). Han var bare tretten år gammel. I løpet av de neste femti årene utvidet han riket fra Kabul i vest til Bengalbukta i øst, men det er ikke erobringene han huskes best for. Han huskes for at han samlet et sammensatt folk gjennom toleranse."
+        },
+        {
+            "type": "text",
+            "content": "Akbar gjorde tre ting som endret riket:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Han fjernet skatten som pilegrimer måtte betale, og skatten som ikke-muslimer betalte i stedet for å gjøre krigstjeneste (Ballhatchet, u.å.).",
+                "Han giftet seg inn i hinduiske fyrstefamilier. I 1562 tilbød rajputfyrsten Bihari Mal av Amber ham datteren sin, og andre rajputfyrster fulgte etter (Ballhatchet, u.å.).",
+                "Han lot hinduiske fyrster nå de høyeste stillingene i staten, som generaler og som guvernører over hele provinser (Ballhatchet, u.å.)."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Akbar var også nysgjerrig på tro i seg selv. Han samlet lærde fra ulike religioner ved hoffet og laget til og med sin egen religion, Din Ilahi, satt sammen av flere. Den fikk aldri særlig mange tilhengere (Waldrop, 2025a). Men den tolerante politikken virket: den forsonte hinduene i riket og bygde opp en administrasjon som varte lenge etter ham (Kristiansen et al., 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Akbar var ikke snill fordi han var god. Han var klok fordi han regnet. En rajputfyrste med egen hær er en farlig fiende, men en glimrende general. Toleranse var billigere enn krig."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Mogulkeiseren i audienssal omgitt av hinduiske og muslimske rådgivere",
+            "caption": "Ved Akbars hoff satt hinduer og muslimer side om side. Det var uvanlig for sin tid."
+        },
+        {
+            "type": "header",
+            "text": "Da riket var på sitt rikeste"
+        },
+        {
+            "type": "text",
+            "content": "Akbars barnebarn Shah Jahan styrte fra 1628 til 1658 (Waldrop, 2026). Under ham nådde mogulenes byggekunst toppen. Da yndlingskona hans, Mumtaz, døde, lot han bygge et gravmæle til minne om henne. Arbeidet varte fra 1631 til 1648, og resultatet er Taj Mahal (Gunnarsjaa, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Bygget er en kubisk bygning med en stor kuppel i midten og fasader i marmor og sandstein. Fire minareter står rundt det, og hele anlegget ligger i en pyntehage. En gruppe arkitekter fra India, Persia og Sentral-Asia sto bak, trolig ledet av Ustad Ahmad. I dag står Taj Mahal på UNESCOs verdensarvliste (Gunnarsjaa, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Det som slår folk mest når de kommer dit, er roen i bygget. Den roen er ingen tilfeldighet. Hele anlegget er bygd rundt en midtakse, og nesten hver eneste del har en tvilling på den andre siden. Bygg det selv og se hva som skjer når du fjerner speilingen."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "taj-mahal-symmetri"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Aurangzebs vei: ta plassen tilbake"
+        },
+        {
+            "type": "text",
+            "content": "Shah Jahans sønn Aurangzeb tok makten i 1658. Han gjorde det ved å sette faren sin i fengsel og rydde brødrene sine av veien. Han styrte til han døde i 1707 (Waldrop, 2025b)."
+        },
+        {
+            "type": "text",
+            "content": "Aurangzeb ville at riket skulle følge islamsk lov strengt. I 1679 innførte han skatten på ikke-muslimer på nytt (Spear, 2026). Hindutempler og gudebilder ble ofte ødelagt, og folk som ikke ville skifte tro, ble forfulgt (Waldrop, 2025b). Samtidig er bildet mer sammensatt enn man skulle tro: han ga også en rekke hinduer høye stillinger i hæren og i pengevesenet (Waldrop, 2025b)."
+        },
+        {
+            "type": "text",
+            "content": "I sør lokket rikene i Deccan. Aurangzeb erobret Bijapur og Golconda i 1686 og 1687, og riket ble større enn det noen gang hadde vært (Spear, 2026). Men prisen var høy. De siste tjueseks årene av livet førte han krig nesten uten pause (Waldrop, 2025b). En hær som står i felt år etter år, spiser opp skatten den skal beskytte."
+        },
+        {
+            "type": "header",
+            "text": "Riket faller fra hverandre"
+        },
+        {
+            "type": "text",
+            "content": "Da Aurangzeb døde i 1707, gikk riket raskt i oppløsning (Waldrop, 2025b). Perserne og afghanerne angrep fra nordvest, og provins etter provins begynte å styre seg selv (Kristiansen et al., 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Da meldte europeerne seg. Det britiske handelskompaniet, som du kan lese mer om i artikkelen om [Ostindiske kompani](/historie/kolonialisering/eic), vant slaget ved Plassey i 1757 og skaffet seg makt over stadig større deler av India (Kristiansen et al., 2024). Britene bygde ikke opp noe nytt styringsapparat. De arvet i stor grad det mogulene allerede hadde laget (Waldrop, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Slutten kom i 1857. Indiske soldater i britisk tjeneste gjorde opprør, og opprøret ble slått ned i 1859 (Kristiansen et al., 2024). Den siste stormogulen, Bahadur Shah, ble avsatt av britene i 1857 (Waldrop, 2026). Da hadde riket eksistert i 331 år. Veien videre gikk gjennom nesten hundre år med britisk styre, fram til [Indias frigjøring](/historie/dekolonisering/india) i 1947."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Britiske soldater foran tomt mogulpalass i Delhi, 1857",
+            "caption": "1857: den siste stormogulen ble avsatt, og britene overtok riket han hadde arvet."
+        },
+        {
+            "type": "header",
+            "text": "Hva Mogulriket kan lære oss"
+        },
+        {
+            "type": "text",
+            "content": "Det er fristende å lage en enkel regning av dette: Akbar var snill og riket vokste, Aurangzeb var streng og riket falt. Så enkelt er det ikke. Riket var faktisk på sitt aller største under Aurangzeb, og forfallet hadde flere årsaker enn religion alene. Krigene kostet enormt, arvefølgen var uklar, og europeiske skip hadde begynt å styre verdenshandelen."
+        },
+        {
+            "type": "text",
+            "content": "Men ett mønster er vanskelig å komme utenom. Så lenge keiseren ga de andre plass, betalte de skatt og slåss for riket. Da plassen ble tatt fra dem, ble de samme menneskene et problem som ingen hær klarte å løse. Vil du forstå hva det betyr for dem det gjaldt, kan du lese om [sentrale trekk i hinduismen](/krle/religion/hinduisme/sentrale-trekk)."
+        },
+        {
+            "type": "text",
+            "content": "Mogulriket er derfor mer enn en fjern historie om keisere og marmorbygg. Det er et av de tydeligste eksemplene vi har på hva som skjer med et samfunn når flertallet og mindretallet slutter å gi hverandre rom."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilket år ble Mogulriket grunnlagt, og hvem grunnla det?",
+                    "Omtrent hvor stor del av verdens produksjon kom fra India på slutten av 1600-tallet?",
+                    "Nevn tre ting Akbar gjorde for å gi hinduene plass i riket.",
+                    "Hva skjedde i 1679, og hvem innførte det?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor et rike ikke kan holdes sammen med hær alene.",
+                    "Akbar fjernet skatten på ikke-muslimer, mens Aurangzeb innførte den igjen. Hva sier de to valgene om hvordan de så på innbyggerne sine?",
+                    "Riket var på sitt største under Aurangzeb, men falt fra hverandre kort tid etter ham. Hvordan kan begge deler stemme samtidig?",
+                    "Britene arvet styringsapparatet mogulene hadde bygd. Hvorfor kan det ha gjort det lettere for dem å ta over India?"
+                ],
+                "gaaVidere": [
+                    "Diskuter i klassen: finnes det land i dag der flertallet og mindretallet strever med å gi hverandre plass? Hva gjør staten der?",
+                    "Skriv en kort tekst der du er rådgiver for en ny stormogul i 1660. Gi ham tre råd, og begrunn hvert av dem med noe fra artikkelen.",
+                    "Sammenlign Taj Mahal med en norsk kirke eller et rådhus du kjenner. Hva forteller byggene om hvem som hadde makt da de ble reist?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvem grunnla Mogulriket, og når?",
+                        "options": [
+                            "Akbar i 1556",
+                            "Babur i 1526",
+                            "Shah Jahan i 1628",
+                            "Aurangzeb i 1658"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Babur erobret de nordvestlige delene av India i 1526. Det året regnes som starten på Mogulriket."
+                    },
+                    {
+                        "question": "Hva var det viktigste Akbar gjorde for å holde riket samlet?",
+                        "options": [
+                            "Han bygde Taj Mahal",
+                            "Han stengte grensene mot Persia",
+                            "Han ga hinduene plass i staten og fjernet skatten på ikke-muslimer",
+                            "Han flyttet hovedstaden til Kabul"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Akbar fjernet skattene som rammet ikke-muslimer, giftet seg inn i hinduiske fyrstefamilier og lot hinduer bli generaler og guvernører."
+                    },
+                    {
+                        "question": "Hvorfor ble Taj Mahal bygd?",
+                        "options": [
+                            "Som gravmæle over Shah Jahans kone Mumtaz",
+                            "Som moské for hele hovedstaden",
+                            "Som festning mot angrep fra sør",
+                            "Som bolig for stormogulen"
+                        ],
+                        "correctIndex": 0,
+                        "explanation": "Shah Jahan lot bygget reise mellom 1631 og 1648 til minne om yndlingskona si, Mumtaz."
+                    },
+                    {
+                        "question": "Hva gjorde Aurangzeb i 1679?",
+                        "options": [
+                            "Han avskaffet all skatt",
+                            "Han innførte skatten på ikke-muslimer på nytt",
+                            "Han flyttet riket til Bengal",
+                            "Han inngikk fred med rikene i Deccan"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Aurangzeb innførte jizya, skatten på ikke-muslimer, på nytt i 1679. Det var et tydelig brudd med Akbars linje."
+                    },
+                    {
+                        "question": "Hvordan endte Mogulriket?",
+                        "options": [
+                            "Det ble erobret av Persia i 1707",
+                            "Det ble delt i to like store riker",
+                            "Den siste stormogulen ble avsatt av britene i 1857",
+                            "Det gikk over til å bli en republikk"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Britene avsatte den siste stormogulen, Bahadur Shah, i 1857, etter at soldatopprøret var slått ned."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ballhatchet, K. A. (u.å.). *Akbar*. Encyclopædia Britannica. Hentet 01.08.2026 fra https://www.britannica.com/biography/Akbar",
+                    "Gunnarsjaa, A. (2026). *Taj Mahal*. Store norske leksikon. Hentet 01.08.2026 fra https://snl.no/Taj_Mahal",
+                    "Kristiansen, K., Filseth, G. & Waldrop, A. (2024). *Indias historie*. Store norske leksikon. Hentet 01.08.2026 fra https://snl.no/Indias_historie",
+                    "Nangia, T. (2026). *Mughal dynasty*. Encyclopædia Britannica. Hentet 01.08.2026 fra https://www.britannica.com/topic/Mughal-dynasty",
+                    "Spear, T. G. P. (2026). *Aurangzeb*. Encyclopædia Britannica. Hentet 01.08.2026 fra https://www.britannica.com/biography/Aurangzeb",
+                    "Waldrop, A. (2025a). *Akbar*. Store norske leksikon. Hentet 01.08.2026 fra https://snl.no/Akbar",
+                    "Waldrop, A. (2025b). *Aurangzeb*. Store norske leksikon. Hentet 01.08.2026 fra https://snl.no/Aurangzeb",
+                    "Waldrop, A. (2026). *Mogulriket*. Store norske leksikon. Hentet 01.08.2026 fra https://snl.no/Mogulriket"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
