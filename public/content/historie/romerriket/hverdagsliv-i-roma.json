@@ -23,11 +23,11 @@
         },
         {
             "type": "text",
-            "content": "Roma var verdens første storby, og den hadde storbyproblemer vi kjenner igjen: Plassmangel. De rike bodde i store eneboliger kalt Domus, med innlagt vann, hage og gulvvarme. Men 90% av befolkningen bodde i Insulae (øyer) – store leiegårder som kunne være opptil syv etasjer høye."
+            "content": "Roma var en storby med storbyproblemer vi kjenner igjen: Plassmangel. De rike bodde i en *domus* - en enebolig for én familie, bygd rundt et atrium og en søylegård (peristyl) med mottakelsesrom, soverom og spisestuer (Encyclopaedia Britannica, u.å.-a). De aller fleste bodde i stedet i en *insula* ('øy'), en leiegård. Slike bygg var ofte fem etasjer eller mer, selv om loven satte en høydegrense på 68 fot under Augustus og 58 fot under Trajan (Encyclopaedia Britannica, u.å.-b)."
         },
         {
             "type": "text",
-            "content": "I en *insula* var det omvendt av i dag: De fattigste bodde øverst. Hvorfor? Fordi det ikke fantes heis, og hvis bygget kollapset (noe som skjedde ofte) eller begynte å brenne (enda oftere), var det umulig å komme seg ut fra toppen. De øverste leilighetene var små, mørke rom uten vann eller do. Leietakerne måtte hente vann fra offentlige fontener og bruke offentlige toaletter (latriner) på gatenivå."
+            "content": "Leiegårdene var bygd av murstein dekket med betong, og gatenivået rommet typisk håndverkerverksteder og butikker. Leilighetene over ble nådd via en felles innvendig trapp og fikk lys og luft fra gaten og en indre gårdsplass (Encyclopaedia Britannica, u.å.-b). Insulaene ble først og fremst bebodd av arbeidsfolk (Encyclopaedia Britannica, u.å.-b). I en *insula* var det omvendt av i dag: De billigste og dårligste leilighetene lå øverst. Det fantes ingen heis, og tett bebygde, dårlig bygde leiegårder tok ofte fyr (Hornblower, 2026) - da var det de øverst oppe som satt verst i det. Leietakerne måtte hente vann fra offentlige fontener og bruke offentlige toaletter (latriner) på gatenivå."
         },
         {
             "type": "component",
@@ -50,21 +50,21 @@
         },
         {
             "type": "text",
-            "content": "Romerne elsket mat, men dietten varierte enormt basert på klasse. For de fattige besto menyen nesten utelukkende av korn. Staten delte ut gratis korn (*annona*) til de fattigste borgerne, som de bakte til brød eller kokte til grøt. Kjøtt var luksusvare som man spiste ved spesielle anledninger eller offerfester."
+            "content": "Romerne elsket mat, men dietten varierte enormt etter klasse. For de fattige besto menyen nesten utelukkende av korn. De fattige i byen levde et utrygt liv, avhengige av den offentlige kornutdelingen og av private gaver fra de rike (Hornblower, 2026). Kornet ble bakt til brød eller kokt til grøt. Kjøtt var en luksusvare som man spiste ved spesielle anledninger eller offerfester."
         },
         {
             "type": "image",
             "src": "/images/romerriket/thermopolium.webp",
             "alt": "Et romersk gatemat-utsalg (thermopolium) med krukker i disken",
-            "caption": "Siden de færreste hadde kjøkken hjemme, spiste de fleste romere lunsjen sin ute på gaten hos en 'thermopolium' – antikkens svar på McDonalds."
+            "caption": "Siden de færreste hadde kjøkken hjemme, spiste de fleste romere lunsjen sin ute på gaten hos en 'thermopolium' - antikkens svar på McDonalds."
         },
         {
             "type": "text",
-            "content": "Men det var én ingrediens alle brukte: Garum. Dette var en fermentert fiskesaus laget av fiskeinnvoller og salt som fikk stå i solen i månedsvis til det ble en flytende væske. Det luktet forferdelig, men smakte (visstnok) fantastisk, fullt av umami. Romerne brukte garum på alt – til og med i desserter! Det var antikkens ketsjup og soyasaus i ett."
+            "content": "Men det var én ingrediens alle brukte: Garum. Dette var en gjæret fiskesaus, ikke ulik dagens asiatiske fiskesaus, og den ble brukt i store mengder i romersk matlaging (Encyclopaedia Britannica, 2026). Romerne hadde den i nesten alt - til og med i retter vi i dag ville kalt desserter (Encyclopaedia Britannica, 2026). Det var antikkens ketsjup og soyasaus i ett."
         },
         {
             "type": "text",
-            "content": "Rike romere holdt berømte banketter (*convivium*) hvor de lå til bords på divaner og ble servert retter som stekt påfugl, fylte syvsovere (små gnagere) og østers fra Storbritannia. Måltidet varte i timevis, akkompagnert av vin blandet med vann og honning."
+            "content": "Rike romere holdt berømte gjestebud der de lå til bords på divaner. Måltidet kunne vare i timevis, med vin til maten. Forskjellen mellom rik og fattig i Roma var enorm: De aller fleste i byen var fattige, mens rikdom og innflytelse var samlet hos noen få (Hornblower, 2026)."
         },
         {
             "type": "image",
@@ -78,11 +78,11 @@
         },
         {
             "type": "text",
-            "content": "Skole var ikke obligatorisk, og det kostet penger. Derfor var det mest gutter fra rike familier som fikk utdanning. Jenter lærte som regel å lese og skrive hjemme, men deres utdanning fokuserte mer på å drive et hushold."
+            "content": "Romerne bygde skolegangen sin på den greske modellen, og de verdsatte talekunsten like høyt som athenerne hadde gjort (Nakosteen, 2026). Men utdanning var ikke likt fordelt: Det var barna i de velstående familiene som fikk den grundigste opplæringen, og guttene gikk lengst i skoleløpet."
         },
         {
             "type": "text",
-            "content": "Skolen startet tidlig om morgenen. Læreren var ofte en streng, gresk slave eller frigitt slave. Disiplinen var hard; stokkeslag var vanlig hvis man gjorde feil. Barna skrev på vokstavler med en spiss penn (*stylus*). Når de hadde lært leksen, kunne de glatte ut voksen med den flate baksiden av pennen og starte på nytt. De lærte å lese, skrive og regne, men det viktigste faget for en romersk gutt var retorikk – kunsten å tale for seg. For å gjøre karriere i politikken eller jussen, måtte man kunne overbevise folk med ord."
+            "content": "I velstående familier ble barnet - gutt eller jente - fra de tidligste årene overlatt til en gresk tjener eller slave for å lære språket (Nakosteen, 2026). Romerne overtok den greske skoletradisjonen, og med den fulgte den samme strenge og harde disiplinen (Nakosteen, 2026). Barna lærte bokstaver og tall ved å risse dem inn i en vokstavle med en spiss penn, en *stylus* (Shimahara, 2026). Når de hadde lært leksen, kunne de glatte ut voksen og starte på nytt. Det viktigste faget for en romersk gutt var retorikk - kunsten å tale for seg. Romerne skjønte tidlig hvilket våpen retorikken kunne være for en statsmann (Nakosteen, 2026)."
         },
         {
             "type": "image",
@@ -92,7 +92,7 @@
         },
         {
             "type": "text",
-            "content": "En viktig figur i en rik gutts liv var paedagogus. Dette var en slave som fulgte gutten til og fra skolen, bar bøkene hans, og passet på at han oppførte seg pent og lærte leksene sine. Ordet 'pedagog' (lærer) kommer fra denne rollen."
+            "content": "En viktig figur i en rik gutts liv var *paidagogos* - på latin *paedagogus*. Rollen kom fra Hellas: En gutt av høy rang ble fulgt av en slags ledsager, som regel en betrodd slave i familien (Shimahara, 2026). Han fulgte gutten til og fra skolen og passet på at han oppførte seg pent. Ordet 'pedagog' (lærer) kommer fra denne rollen."
         },
         {
             "type": "header",
@@ -100,11 +100,11 @@
         },
         {
             "type": "text",
-            "content": "I dag kan en milliardær gå i t-skjorte og jeans. I Roma viste klærne nøyaktig hvem du var. Det grunnleggende plagget for alle – menn, kvinner, slaver og keisere – var tunikaen. Det var en enkel kjole av ull eller lin."
+            "content": "I dag kan en milliardær gå i t-skjorte og jeans. I Roma viste klærne nøyaktig hvem du var. Det grunnleggende plagget var tunikaen, *tunica* (de Marly, 2026). Fargen fortalte hvor du hørte hjemme: hvitt for overklassen, ubleket eller brunt for alle andre (de Marly, 2026)."
         },
         {
             "type": "text",
-            "content": "Men over tunikaen bar romerske mannlige borgere en Toga. Togaen var et enormt stykke ullstoff (opptil 6 meter langt) som ble drapert rundt kroppen på en komplisert måte. Den var tung, varm og upraktisk – du kunne ikke løpe eller arbeide i den. Og det var nettopp poenget! Togaen viste at du var en borger som hadde tid til å drive med politikk, ikke manuelt arbeid. Kun borgere fikk bære toga; slaver og utlendinger fikk ikke lov."
+            "content": "Men over tunikaen bar romerske mannlige borgere en toga. Togaen var et halvsirkelformet stykke stoff, om lag 5,5 meter langt og 1,7 meter på det bredeste, og den ble drapert rundt kroppen på en komplisert måte (de Marly, 2026). Den var laget av ull og derfor svært tung (de Marly, 2026). Stoffet ble lagt over venstre skulder, rundt ryggen og under høyre arm, slik at bare høyre arm var fri (de Marly, 2026) - du kunne ikke løpe eller arbeide i et slikt plagg. Og det var nettopp poenget! Togaen var et rangmerke: Retten til å bære den var forbeholdt romerske borgere (de Marly, 2026)."
         },
         {
             "type": "component",
@@ -141,12 +141,12 @@
                 "forstaa": [
                     "Hva var forskjellen på en domus og en insula, og hvem bodde hvor?",
                     "Hvorfor bodde de fattigste øverst i leiegårdene, mens det er omvendt i dag?",
-                    "Hva var garum, og hvordan ble denne fiskesausen laget?",
+                    "Hva var garum, og i hva slags retter brukte romerne det?",
                     "Hvem fikk lov til å bære toga, og hvorfor var det bare disse som hadde lov?"
                 ],
                 "reflekter": [
                     "Forklar hvorfor togaen var både upraktisk og et statussymbol på samme tid. Hva sier det om hva romerne verdsatte?",
-                    "Skolen kostet penger og var ikke obligatorisk. Hvordan påvirket dette hvem som fikk utdanning, og hva slags forskjeller skapte det mellom folk?",
+                    "Barn i velstående familier fikk en gresk slave som privatlærer, mens fattige familier ikke hadde den muligheten. Hva slags forskjeller mellom folk skapte det?",
                     "Retorikk var det viktigste faget for en romersk gutt. Hvorfor var det å kunne tale for seg så viktig for å gjøre karriere i Roma?",
                     "Sammenlign hverdagen til en patrisier med hverdagen til en plebeier eller slave. Nevn minst tre konkrete forskjeller fra teksten."
                 ],
@@ -204,6 +204,21 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "de Marly, D. (2026). *Dress: Ancient Rome*. Encyclopaedia Britannica. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/topic/dress-clothing/Ancient-Rome)",
+                    "Encyclopaedia Britannica. (2026). *Garum*. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/topic/garum)",
+                    "Encyclopaedia Britannica. (u.å.-a). *Domus*. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/technology/domus-dwelling)",
+                    "Encyclopaedia Britannica. (u.å.-b). *Insula*. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/technology/insula)",
+                    "Hornblower, S. (2026). *Ancient Rome: The empire in the 2nd century*. Encyclopaedia Britannica. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/place/ancient-Rome/The-empire-in-the-2nd-century)",
+                    "Nakosteen, M. K. (2026). *Education: Roman adoption of Hellenistic education*. Encyclopaedia Britannica. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/topic/education/Roman-adoption-of-Hellenistic-education)",
+                    "Shimahara, N. (2026). *Education: Athens*. Encyclopaedia Britannica. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/topic/education/Athens)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -237,5 +252,6 @@
             ],
             "correctAnswer": 1
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-01T00:00:00Z"
 }
