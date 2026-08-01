@@ -6,15 +6,16 @@
     "category": "Renessansen",
     "readTime": "9 min lesning",
     "heroImage": "/images/renessansen/den-vitenskapelige-revolusjonen-hero.webp",
+    "lastUpdated": "2026-08-01",
     "details": [
         "Folk sluttet å stole blindt på gamle autoriteter og begynte å teste ideer mot virkeligheten.",
         "Den vitenskapelige metoden ble født: se nøye, gjett, test, og del resultatet med andre.",
-        "Kopernikus, Galileo og Newton viste at sola, ikke jorda, står i sentrum - og at de samme reglene styrer både en eple som faller og planetene på himmelen."
+        "Kopernikus, Galileo og Newton viste at sola, ikke jorda, står i sentrum - og at de samme reglene styrer både et eple som faller og planetene på himmelen."
     ],
     "content": [
         {
             "type": "text",
-            "content": "En kveld i 1609 rettet Galileo Galilei en hjemmelaget kikkert mot månen. Alle de lærde var enige om at himmelen var fullkommen og glatt. Men gjennom kikkerten så Galileo noe ingen bok hadde fortalt ham om: fjell, daler og kratre. Månen lignet faktisk på jorda. Hvordan kunne det stemme med det de kloke mennene hadde sagt i over tusen år? Galileo gjorde noe nytt og dristig: han stolte mer på sine egne øyne enn på autoritetene. Det var starten på en helt ny måte å finne sannheten på."
+            "content": "En kveld i 1609 rettet Galileo Galilei en hjemmelaget kikkert mot månen. Han hadde hørt om de nye kikkertene fra Nederland og bygde raskt langt bedre utgaver selv, med opptil 30 gangers forstørrelse (Elgarøy, 2024). Alle de lærde var enige om at himmelen var fullkommen og glatt. Men gjennom kikkerten så Galileo noe ingen bok hadde fortalt ham om: sletter og fjell med skarpe skygger (Elgarøy, 2024). Månen lignet faktisk på jorda. Hvordan kunne det stemme med det de kloke mennene hadde sagt i over tusen år? Galileo gjorde noe nytt og dristig: han stolte mer på sine egne øyne enn på autoritetene. Det var starten på en helt ny måte å finne sannheten på."
         },
         {
             "type": "image",
@@ -32,7 +33,7 @@
         },
         {
             "type": "text",
-            "content": "Problemet var bare at ingen sjekket om det faktisk stemte. Aristoteles mente for eksempel at tunge ting faller raskere enn lette ting. Det hørtes fornuftig ut, så alle trodde det. Men hadde noen egentlig prøvd å slippe to ting samtidig og se etter? Å tvile på en autoritet kunne være farlig. Den som sa kirken eller de gamle bøkene tok feil, kunne bli straffet hardt. Likevel vokste det i renessansen fram en ny mistanke blant kunstnere og tenkere som igjen begynte å se nøye på verden rundt seg: kanskje burde vi teste ideene i stedet for bare å tro på dem? Kanskje kunne våre egne øyne og forsøk fortelle oss mer enn en bok som var tusen år gammel?"
+            "content": "Problemet var bare at ingen sjekket om det faktisk stemte. Aristoteles mente for eksempel at tunge ting faller raskere enn lette ting. Det hørtes fornuftig ut, så alle trodde det. Men hadde noen egentlig prøvd å slippe to ting samtidig og se etter? Galileo gjorde nettopp det, og fant allerede rundt 1583 ut at Aristoteles tok feil (Elgarøy, 2024). Å tvile på en autoritet kunne være farlig. Den som sa kirken eller de gamle bøkene tok feil, kunne bli straffet hardt. Likevel vokste det i renessansen fram en ny mistanke blant kunstnere og tenkere som igjen begynte å se nøye på verden rundt seg: kanskje burde vi teste ideene i stedet for bare å tro på dem? Kanskje kunne våre egne øyne og forsøk fortelle oss mer enn en bok som var tusen år gammel?"
         },
         {
             "type": "header",
@@ -40,7 +41,7 @@
         },
         {
             "type": "text",
-            "content": "Den store ideen i den vitenskapelige revolusjonen var enkel, men den forandret alt: en påstand er ikke sann fordi en mektig person sier det, men fordi den tåler å bli testet mot virkeligheten. Denne framgangsmåten kaller vi den vitenskapelige metoden. Den er som å være en detektiv som ikke nøyer seg med rykter, men leter etter bevis."
+            "content": "Den store ideen i den vitenskapelige revolusjonen var enkel, men den forandret alt: en påstand er ikke sann fordi en mektig person sier det, men fordi den tåler å bli testet mot virkeligheten. På 1600-tallet ble det aristoteliske natursynet gradvis erstattet av et nytt, der erfaring og eksperiment, krav om bevis og holdbar argumentasjon ble selve grunnlaget for kunnskap (Sletnes, 2025). Denne framgangsmåten kaller vi den vitenskapelige metoden. Den er som å være en detektiv som ikke nøyer seg med rykter, men leter etter bevis."
         },
         {
             "type": "list",
@@ -66,7 +67,7 @@
         },
         {
             "type": "text",
-            "content": "Den mest sjokkerende ideen kom fra den polske astronomen Nikolaus Kopernikus. I 1543 ga han ut en bok der han påstod at sola, ikke jorda, står i midten. Jorda er bare en planet som suser rundt sola sammen med de andre. For folk på den tiden var dette nesten utenkelig. Alle kunne jo se at sola sto opp i øst og gikk ned i vest. Og fortalte ikke Bibelen at jorda sto fast? Likevel hadde Kopernikus et godt argument: med sola i sentrum ble hele himmelen mye enklere å forklare. Den nye tenkningen vokste rett ut av nysgjerrigheten i [renessansen](/historie/renessansen/oversikt)."
+            "content": "Den mest sjokkerende ideen kom fra den polske astronomen Nikolaus Kopernikus. I 1543 ga han ut boka De revolutionibus orbium coelestium, der han påstod at jorda kretser rundt sola og snurrer om sin egen akse (Ringnes, 2026). Jorda er bare en planet som suser rundt sola sammen med de andre. For folk på den tiden var dette nesten utenkelig. Alle kunne jo se at sola sto opp i øst og gikk ned i vest. Og fortalte ikke Bibelen at jorda sto fast? Likevel hadde Kopernikus et godt argument: med sola i sentrum ble hele himmelen mye enklere å forklare. Den nye tenkningen vokste rett ut av nysgjerrigheten i [renessansen](/historie/renessansen/oversikt)."
         },
         {
             "type": "image",
@@ -76,7 +77,7 @@
         },
         {
             "type": "text",
-            "content": "Det var her Galileo og kikkerten kom inn. Da han pekte kikkerten mot himmelen, så han at planeten Jupiter hadde egne måner som gikk i bane rundt den. Altså gikk ikke alt i universet rundt jorda. Galileo samlet bevis for at Kopernikus hadde rett. Det gjorde kirken rasende, og Galileo ble dømt og satt i husarrest resten av livet. Du kan lese mer om livet hans i artikkelen om [Galileo Galilei](/historie/renessansen/galileo-galilei). Men ideene hans var ikke til å stoppe: bevisene talte for seg selv."
+            "content": "Det var her Galileo og kikkerten kom inn. I 1610 oppdaget han fire himmellegemer som gikk i bane rundt planeten Jupiter, og skjønte at det var måner (Elgarøy, 2024). Altså gikk ikke alt i universet rundt jorda. I 1613 sa Galileo offentlig at han støttet Kopernikus (Elgarøy, 2024). Det gjorde kirken rasende, og Galileo ble dømt og satt i husarrest resten av livet. Du kan lese mer om livet hans i artikkelen om [Galileo Galilei](/historie/renessansen/galileo-galilei). Men ideene hans var ikke til å stoppe: bevisene talte for seg selv."
         },
         {
             "type": "component",
@@ -91,11 +92,11 @@
         },
         {
             "type": "text",
-            "content": "Den siste store brikken la engelskmannen Isaac Newton på plass i 1687. Han stilte et spørsmål barn fortsatt stiller: hvorfor faller et eple ned fra treet? Svaret hans var like enkelt som det var enormt. En usynlig kraft, tyngdekraften, trekker eplet mot jorda. Og den samme kraften holder månen i bane rundt jorda og planetene rundt sola. Den samme regelen styrer altså både eplet i hagen og hele himmelen."
+            "content": "Den siste store brikken la engelskmannen Isaac Newton på plass da han ga ut verket Principia i 1687 (Ormestad, 2025). Han stilte et spørsmål barn fortsatt stiller: hvorfor faller et eple ned fra treet? Svaret hans var like enkelt som det var enormt. En usynlig kraft, tyngdekraften, trekker eplet mot jorda. Newton mente at den samme tyngdeloven dro eplet mot bakken og holdt månen i bane, og konkluderte med at de samme naturlovene gjelder overalt i universet (Ormestad, 2025). Den samme regelen styrer altså både eplet i hagen og hele himmelen."
         },
         {
             "type": "text",
-            "content": "Dette var en svimlende tanke. Verden var ikke lenger et mysterium man bare kunne undre seg over. Den fulgte regler man kunne måle, regne på og forstå. Med matematikk kunne man til og med forutsi hvor en planet ville være om hundre år. Tenk på det: ved hjelp av noen få regler kunne et menneske si nøyaktig hva himmelen kom til å gjøre i framtiden. Naturen var blitt noe mennesket kunne undersøke, ikke bare frykte. Og hver gang noen testet Newtons regler, stemte de. Det ga forskerne et helt nytt selvtillit til å spørre videre."
+            "content": "Dette var en svimlende tanke. Verden var ikke lenger et mysterium man bare kunne undre seg over. Den fulgte regler man kunne måle, regne på og forstå. Med matematikk kunne man til og med forutsi hvor en planet ville være om hundre år. Tenk på det: ved hjelp av noen få regler kunne et menneske si nøyaktig hva himmelen kom til å gjøre i framtiden. Naturen var blitt noe mennesket kunne undersøke, ikke bare frykte. Og hver gang noen testet Newtons regler, stemte de. Det ga forskerne en helt ny selvtillit til å spørre videre. I 1660 gikk en gruppe forskere i London sammen og grunnla Royal Society, et selskap der nye funn skulle legges fram og etterprøves av andre i stedet for å bli godtatt på autoritet (Skouen, 2026)."
         },
         {
             "type": "component",
@@ -191,6 +192,19 @@
                         "correctIndex": 2,
                         "explanation": "Newtons store innsikt var at én og samme regel gjelder både på jorda og i himmelen."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Elgarøy, Ø. (2024). *Galileo Galilei*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Galileo_Galilei](https://snl.no/Galileo_Galilei)",
+                    "Ormestad, H. (2025). *Isaac Newton*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Isaac_Newton](https://snl.no/Isaac_Newton)",
+                    "Ringnes, T. (2026). *Nicolaus Copernicus*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Nicolaus_Copernicus](https://snl.no/Nicolaus_Copernicus)",
+                    "Skouen, T. (2026). *Royal Society*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Royal_Society](https://snl.no/Royal_Society)",
+                    "Sletnes, K. B. (2025). *Naturvitenskap*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/naturvitenskap](https://snl.no/naturvitenskap)"
                 ]
             }
         }
