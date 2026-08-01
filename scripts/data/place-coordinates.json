@@ -808,7 +808,7 @@
     },
     {
       "tag": "kildekritikk",
-      "count": 40
+      "count": 42
     },
     {
       "tag": "antikken",
@@ -927,6 +927,10 @@
       "count": 18
     },
     {
+      "tag": "holocaust",
+      "count": 18
+    },
+    {
       "tag": "narrative",
       "count": 18
     },
@@ -944,10 +948,6 @@
     },
     {
       "tag": "geopolitikk",
-      "count": 16
-    },
-    {
-      "tag": "holocaust",
       "count": 16
     },
     {
@@ -1379,6 +1379,10 @@
       "count": 5
     },
     {
+      "tag": "andre-verdenskrig",
+      "count": 5
+    },
+    {
       "tag": "globalt",
       "count": 5
     },
@@ -1744,10 +1748,6 @@
     },
     {
       "tag": "totalitarisme",
-      "count": 3
-    },
-    {
-      "tag": "andre-verdenskrig",
       "count": 3
     },
     {
@@ -2596,6 +2596,18 @@
     },
     {
       "tag": "quisling",
+      "count": 2
+    },
+    {
+      "tag": "historiografi",
+      "count": 2
+    },
+    {
+      "tag": "konspirasjonsteorier",
+      "count": 2
+    },
+    {
+      "tag": "nyere-tid",
       "count": 2
     },
     {

@@ -1,0 +1,280 @@
+{
+    "id": "benektelse-eller-uenighet",
+    "title": "Ekte uenighet eller benektelse?",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "1945",
+    "category": "Historiens store gåter",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Historikere er uenige hele tiden, og det er selve arbeidet i faget.",
+        "Benektelse ser ut som uenighet, men bytter ut kravet sitt hver gang beviset kommer.",
+        "Holocaust er blant de best dokumenterte hendelsene i historien, og er ikke omstridt blant historikere."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "To personer sier nøyaktig det samme: «Jeg er uenig med historikerne.» Den ene er professor og har lest arkiver i tjue år. Den andre sitter på et nettforum og har lest tre blogginnlegg. Begge kaller seg kritiske. Begge sier at den vanlige forklaringen er feil."
+        },
+        {
+            "type": "text",
+            "content": "Hvordan ser du forskjellen? Det holder ikke å høre etter hvor sikre de er, for begge to høres sikre ut. Du må se på noe helt annet: hva de gjør når du legger et bevis på bordet."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom leser to motstridende artikler på en skjerm",
+            "caption": "To tekster kan se like troverdige ut på skjermen. Forskjellen kommer først fram når du sjekker hva de gjør med motargumenter."
+        },
+        {
+            "type": "header",
+            "text": "To slags uenighet"
+        },
+        {
+            "type": "text",
+            "content": "Historiefaget er fullt av ekte uenighet. Det er ikke et problem, det er selve jobben. Forskere strides om hvorfor riker faller, hvem som kom først, og hva en kilde egentlig betyr. Du finner slike strider i nesten alle [Historiens store gåter](/historie/historiens-store-gater/oversikt). I artikkelen om [havfolkene](/historie/historiens-store-gater/havfolkene) er forskerne fortsatt uenige om hvem de fremmede sjøfolkene var."
+        },
+        {
+            "type": "text",
+            "content": "Men noen ganger er en uenighet bare kledd ut som uenighet. Den ser ut som forskning, den bruker ord som kilder og kritisk, og den som fremmer den kaller seg gjerne forsker. Likevel er den noe helt annet. Det tydeligste eksemplet er holocaustbenektelse: påstanden om at nazistenes drap på omkring seks millioner jøder under andre verdenskrig er en myte (Simonsen, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "Slik jobber historikere når de er uenige"
+        },
+        {
+            "type": "text",
+            "content": "Historieskriving forandrer seg hele tiden, og slik skal det være. Historikere leser fortiden ut fra sin egen samtid, og derfor endrer svarene seg når nye spørsmål og nye kilder kommer til (Roos, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Et norsk eksempel: På 1870-tallet leste Ernst Sars norsk historie som én lang utvikling fram mot selvstendighet. Senere historikere som Halvdan Koht og Edvard Bull la vekt på økonomi og klasseskiller i stedet. Ingen av dem jukset. De stilte ulike spørsmål til det samme materialet. Utover 1900-tallet ble faget i tillegg mer skeptisk til at en historiker kan gjengi fortiden helt objektivt (Roos, 2025). Mer om dette finner du i [Hvem skriver historien?](/samfunnskunnskap/ideer-og-verdenssyn/km-3-historieframstilling)."
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som skjer i slike strider. Når et nytt funn peker en annen vei, endrer forskeren påstanden sin. Kravet til hva som teller som bevis, står stille. Det er nettopp derfor en faglig strid kan avgjøres."
+        },
+        {
+            "type": "header",
+            "text": "Kravet som flytter seg"
+        },
+        {
+            "type": "text",
+            "content": "Benektelse oppfører seg motsatt. Benekterne avviser tre ting: tallet på rundt seks millioner ofre, at gasskamrene ble brukt til å drepe mennesker, og at drapene var planlagte og systematiske (Molbæk-Steensig, 2023). Mange av dem hevder i tillegg at hele historien er funnet på av en internasjonal sammensvergelse. Den påstanden henger tett sammen med gamle antisemittiske myter om at jøder styrer medier og finans (Simonsen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Ett av argumentene høres fornuftig ut ved første øyekast: det finnes ingen skriftlig ordre fra Hitler om å utrydde jødene, altså fantes det ingen plan. En faghistoriker ville holdt det spørsmålet opp mot alt det andre kildematerialet. Benekteren gjør det motsatte og ser bort fra alt som peker den andre veien (Molbæk-Steensig, 2023). Legg fram et bevis, og kravet er plutselig et annet."
+        },
+        {
+            "type": "component",
+            "name": "MalstangaTest",
+            "props": {}
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Arkivhyller fulle av mapper og dokumenter fra krigen",
+            "caption": "Hundretusener av dokumenter ligger i arkivene. Det er dette materialet benekterne må se bort fra for at påstanden deres skal henge sammen."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor er vi så sikre på at det skjedde?"
+        },
+        {
+            "type": "text",
+            "content": "Holocaust er blant de aller best dokumenterte hendelsene i historien. Materialet er enormt (Molbæk-Steensig, 2023):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Hundretusener av skriftlige dokumenter: brev, notater, ordrer, regninger, planer og taler.",
+                "Tusenvis av øyenvitneforklaringer fra overlevende, fra folk som bodde i nærheten, og fra tyske vakter og gjerningsmenn.",
+                "Fotografier tatt av militæret, av pressen og av privatpersoner.",
+                "Selve leirene, som fortsatt står. Du kan lese om dem i artikkelen om [konsentrasjonsleirene](/historie/andre-verdenskrig/konsentrasjonsleirene).",
+                "Folketellinger som viser hvor mange jøder som bodde i Europa før krigen, og hvor få som var igjen etterpå."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Her ligger et paradoks. Fordi benekterne har blitt motbevist så mange ganger, har forskerne gravd enda dypere i kildene enn de ellers ville gjort. Arbeidet med å tilbakevise påstandene har gitt oss mer kunnskap om Holocaust, ikke mindre (Molbæk-Steensig, 2023)."
+        },
+        {
+            "type": "header",
+            "text": "Tre kjennetegn du kan se etter"
+        },
+        {
+            "type": "text",
+            "content": "Benektelse følger de samme sporene som konspirasjonstenkning ellers. Tre trekk går igjen (Dyrendal, 2025):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Manglende bevis blir gjort om til bevis. At noe ikke finnes, forklares med at sammensvergelsen har skjult det godt.",
+                "Den som er uenig, blir gjort til en del av sammensvergelsen. Da slipper man å svare på selve argumentet.",
+                "Ingenting kan motbevise påstanden. Alt som støtter den, teller. Alt som taler mot, avvises."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Det siste punktet er det viktigste. En påstand som ingenting i verden kan motbevise, kan heller ikke undersøkes. Da er den ute av faget, uansett hvor faglig den er formulert. Prøv mekanismen selv i spillet under."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "flytt-malstanga"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvor kommer benektelsen fra?"
+        },
+        {
+            "type": "text",
+            "content": "Benektelsen er nesten like gammel som selve folkemordet. Allerede sommeren 1945 finnes dokumenterte eksempler i Sverige, og påstandene dukket først opp som politisk propaganda i høyreekstreme tidsskrifter (Simonsen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Fra 1970-tallet begynte benekterne å kle seg ut som forskere. I 1979 ble Institute for Historical Review stiftet i USA, og i 1988 kom den såkalte Leuchter-rapporten, som påsto at kjemiske analyser fra Auschwitz-Birkenau motbeviste massedrapene (Simonsen, 2025). Slike rapporter kan se troverdige ut for den som ikke er fagperson, men tallene og analysene er fordreide, manipulerte eller rett og slett forfalskede (Molbæk-Steensig, 2023)."
+        },
+        {
+            "type": "text",
+            "content": "Dette har skjedd i Norge også. I avisen 8. Mai, som senere het Folk og Land og ble gitt ut av tidligere medlemmer av Nasjonal Samling, kom slike påstander fra rundt 1949 og fram til 1970-tallet. I 1976 ble Olav Hoaas dømt for å kalle gasskamrene oppspinn, og i 1978 mistet han jobben som lektor. I dag spres benektelsen mest på nett, og i Norge er det særlig grupper på ytre høyre som fremmer den. Tyskland og Østerrike har forbudt holocaustbenektelse ved lov, mens Norge ikke har et slikt generelt forbud (Simonsen, 2025)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Elev som sammenligner to kilder ved et skolebord",
+            "caption": "Du trenger ikke være ekspert på emnet for å bruke testen. Du trenger bare å følge med på om kravet står stille."
+        },
+        {
+            "type": "header",
+            "text": "Testen du kan bruke på alt"
+        },
+        {
+            "type": "text",
+            "content": "Kildekritikk handler om å vurdere hvem avsenderen er, og hvor troverdig det de sier faktisk er (Orgeret & Hatlen, 2026). Et av spørsmålene du stiller, handler om tendens: hva ønsker avsenderen å oppnå med det de sier?"
+        },
+        {
+            "type": "text",
+            "content": "Målstang-testen er en enkel utvidelse av dette. Ikke bare spør hvem som snakker. Se hva som skjer i det øyeblikket beviset kommer:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Endrer personen påstanden sin når nye funn peker en annen vei? Da er dere i en faglig samtale.",
+                "Bytter personen ut kravet sitt hver gang du oppfyller det? Da er dere ikke det, uansett hvor faglig det høres ut."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Testen virker langt utenfor historiefaget. Den fungerer på helsepåstander, på reklame og på det du møter i kommentarfeltet. Og den krever ikke at du kan alt om emnet på forhånd. Den krever bare at du følger med på om målstanga står stille."
+        },
+        {
+            "type": "text",
+            "content": "At Holocaust skjedde, er ikke omstridt blant historikere. Det er ikke fordi noen har bestemt at man ikke får være uenig. Det er fordi kravet for lengst er oppfylt, mange ganger, av bevis som fortsatt ligger der og lar seg sjekke."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke tre ting avviser holocaustbenekterne, ifølge artikkelen?",
+                    "Hva skjedde med norsk historieskriving fra Ernst Sars til Halvdan Koht og Edvard Bull?",
+                    "Nevn tre typer kilder som dokumenterer Holocaust.",
+                    "Hvilket år finnes de første dokumenterte eksemplene på holocaustbenektelse, og i hvilket land?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hva det vil si å flytte målstanga i en diskusjon.",
+                    "Hvorfor kan en faglig strid avgjøres, mens en strid mot en benekter ikke kan det?",
+                    "Artikkelen sier at arbeidet med å tilbakevise benektelse har gitt oss mer kunnskap om Holocaust. Forklar hvordan det kan henge sammen.",
+                    "Hvorfor er det et problem for en påstand at ingenting kan motbevise den? Bruk punktene fra Dyrendal i svaret ditt."
+                ],
+                "gaaVidere": [
+                    "Finn en diskusjon i et kommentarfelt eller en video om et tema du kan litt om. Bruk målstang-testen: skriver noen om påstanden sin når de møter motargumenter, eller bytter de ut kravet?",
+                    "Skriv en kort tekst der du forklarer for en yngre elev hvordan hen kan se forskjell på faglig uenighet og benektelse. Bruk minst ett eksempel fra artikkelen.",
+                    "Diskuter i klassen: Tyskland forbyr holocaustbenektelse ved lov, Norge gjør det ikke. Finn ett argument for og ett argument mot et slikt forbud."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er det tydeligste tegnet på at en uenighet ikke er faglig?",
+                        "options": [
+                            "At personen høres veldig sikker ut",
+                            "At personen bytter ut kravet sitt hver gang beviset kommer",
+                            "At personen er uenig med de fleste forskere",
+                            "At personen ikke har utdanning"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "En faglig uenig person endrer påstanden sin når beviset peker en annen vei. En benekter endrer kravet i stedet, slik at det aldri kan oppfylles."
+                    },
+                    {
+                        "question": "Hva skjedde da norske historikere gikk fra Ernst Sars til Halvdan Koht og Edvard Bull?",
+                        "options": [
+                            "De fant ut at kildene var forfalsket",
+                            "De sluttet å bruke kilder",
+                            "De stilte nye spørsmål og la vekt på økonomi og klasseskiller",
+                            "De ble enige om at historie ikke kan studeres"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Ingen av dem jukset. De stilte ulike spørsmål til det samme materialet, og derfor endret framstillingen seg (Roos, 2025)."
+                    },
+                    {
+                        "question": "Hvilket argument bruker benektere om Hitler?",
+                        "options": [
+                            "At det ikke finnes en skriftlig ordre fra ham, altså fantes ingen plan",
+                            "At han aldri var rikskansler",
+                            "At han ble frikjent etter krigen",
+                            "At han skrev ordren, men at den ble borte i en brann"
+                        ],
+                        "correctIndex": 0,
+                        "explanation": "Argumentet ser fornuftig ut, men benekteren ser bort fra alt det andre kildematerialet som peker motsatt vei (Molbæk-Steensig, 2023)."
+                    },
+                    {
+                        "question": "Hva er et kjennetegn på konspirasjonstenkning?",
+                        "options": [
+                            "At påstanden endres når nye kilder kommer fram",
+                            "At manglende bevis blir brukt som bevis for at noe er skjult",
+                            "At den bygger på førstehåndskilder",
+                            "At den blir publisert i fagtidsskrifter"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Fraværet av bevis forklares med at sammensvergelsen har skjult sporene godt. Da kan ingenting motbevise påstanden (Dyrendal, 2025)."
+                    },
+                    {
+                        "question": "Hvorfor regnes Holocaust som svært godt dokumentert?",
+                        "options": [
+                            "Fordi én stor rapport slo det fast etter krigen",
+                            "Fordi ingen har prøvd å undersøke det nærmere",
+                            "Fordi dokumenter, vitner, fotografier, leirene selv og folketellinger peker samme vei",
+                            "Fordi det står i lovverket i Tyskland"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Styrken ligger i at mange helt ulike kildetyper peker mot det samme. Én kilde kan ta feil, men ikke alle på én gang."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Dyrendal, A. (2025). *Konspirasjonsteori*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/konspirasjonsteori](https://snl.no/konspirasjonsteori)",
+                    "Molbæk-Steensig, S. (2023). *Holocaustbenektelse*. HL-senteret. Hentet 01.08.2026 fra [hlsenteret.no](https://www.hlsenteret.no/undervisning/kunnskapsbasen/Ulike%20folkemord/folkemord-under-nazismen/ettertid/holocaustbenektelse)",
+                    "Orgeret, K. S. & Hatlen, J. F. (2026). *Kildekritikk*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/kildekritikk](https://snl.no/kildekritikk)",
+                    "Roos, M. (2025). *Historiografi*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/historiografi](https://snl.no/historiografi)",
+                    "Simonsen, K. B. (2025). *Holocaustbenektelse*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Holocaustbenektelse](https://snl.no/Holocaustbenektelse)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

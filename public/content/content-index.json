@@ -1,5 +1,5 @@
 {
-  "buildId": 50789357086756,
+  "buildId": 177142155546001,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1455,6 +1455,9 @@
     ],
     "atlantis": [
       "content/historie/historiens-store-gater/atlantis.json"
+    ],
+    "benektelse-eller-uenighet": [
+      "content/historie/historiens-store-gater/benektelse-eller-uenighet.json"
     ],
     "den-trojanske-krig": [
       "content/historie/historiens-store-gater/den-trojanske-krig.json"
@@ -4191,6 +4194,7 @@
     "historie/historiens-store-gater/anastasia": "content/historie/historiens-store-gater/anastasia.json",
     "historie/historiens-store-gater/antikythera-mekanismen": "content/historie/historiens-store-gater/antikythera-mekanismen.json",
     "historie/historiens-store-gater/atlantis": "content/historie/historiens-store-gater/atlantis.json",
+    "historie/historiens-store-gater/benektelse-eller-uenighet": "content/historie/historiens-store-gater/benektelse-eller-uenighet.json",
     "historie/historiens-store-gater/den-trojanske-krig": "content/historie/historiens-store-gater/den-trojanske-krig.json",
     "historie/historiens-store-gater/gronlands-gate": "content/historie/historiens-store-gater/gronlands-gate.json",
     "historie/historiens-store-gater/harald-harfagre-gaten": "content/historie/historiens-store-gater/harald-harfagre-gaten.json",
