@@ -3421,13 +3421,13 @@
         {
           "id": "indias-historie",
           "title": "Indias historie",
-          "image": "/images/placeholder.webp",
+          "image": "/images/indias-historie/mogulriket-hero.webp",
           "lessons": [
             {
               "id": "mogulriket",
               "title": "Mogulriket: verdens rikeste rike",
               "description": "I over tre hundre år styrte muslimske keisere et India der svært mange var hinduer. Hvor mye plass de ga hverandre, avgjorde om riket holdt sammen.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/indias-historie/mogulriket-hero.webp",
               "tags": [
                 "india",
                 "mogulriket",

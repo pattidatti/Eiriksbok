@@ -6,7 +6,7 @@
     "year": "1526-1857",
     "category": "Indias historie",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/indias-historie/mogulriket-hero.webp",
     "details": [
         "Mogulriket styrte India fra 1526 til 1857 og var lenge en av verdens rikeste stormakter.",
         "Keiserne var muslimer, mens svært mange av innbyggerne var hinduer. Hvordan de to gruppene skulle leve sammen, ble rikets viktigste spørsmål.",
@@ -23,7 +23,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/mogulriket-01.webp",
             "alt": "Travel indisk basargate med bomullsboder og krydder, 1600-tallet",
             "caption": "En basar i mogulenes India. Herfra ble bomullstøy og krydder sendt ut i hele verden."
         },
@@ -86,7 +86,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/mogulriket-02.webp",
             "alt": "Mogulkeiseren i audienssal omgitt av hinduiske og muslimske rådgivere",
             "caption": "Ved Akbars hoff satt hinduer og muslimer side om side. Det var uvanlig for sin tid."
         },
@@ -147,7 +147,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/mogulriket-03.webp",
             "alt": "Britiske soldater foran tomt mogulpalass i Delhi, 1857",
             "caption": "1857: den siste stormogulen ble avsatt, og britene overtok riket han hadde arvet."
         },
