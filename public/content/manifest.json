@@ -3419,6 +3419,28 @@
           ]
         },
         {
+          "id": "indias-historie",
+          "title": "Indias historie",
+          "image": "/images/placeholder.webp",
+          "lessons": [
+            {
+              "id": "mogulriket",
+              "title": "Mogulriket: verdens rikeste rike",
+              "description": "I over tre hundre år styrte muslimske keisere et India der svært mange var hinduer. Hvor mye plass de ga hverandre, avgjorde om riket holdt sammen.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "india",
+                "mogulriket",
+                "islam",
+                "hinduisme",
+                "imperier",
+                "toleranse"
+              ],
+              "createdDate": "2026-08-01T00:00:00Z"
+            }
+          ]
+        },
+        {
           "id": "japans-historie",
           "title": "Japans historie",
           "image": "/images/japans-historie/det-foydale-japan-hero.webp",

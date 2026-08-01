@@ -1,5 +1,5 @@
 {
-  "buildId": 177142155546001,
+  "buildId": 233681959373321,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1491,6 +1491,9 @@
     ],
     "skylda-for-forste-verdenskrig": [
       "content/historie/historiens-store-gater/skylda-for-forste-verdenskrig.json"
+    ],
+    "mogulriket": [
+      "content/historie/indias-historie/mogulriket.json"
     ],
     "barnearbeid": [
       "content/historie/industriell-revolusjon/barnearbeid.json"
@@ -4206,6 +4209,7 @@
     "historie/historiens-store-gater/pyramidene": "content/historie/historiens-store-gater/pyramidene.json",
     "historie/historiens-store-gater/roanoke": "content/historie/historiens-store-gater/roanoke.json",
     "historie/historiens-store-gater/skylda-for-forste-verdenskrig": "content/historie/historiens-store-gater/skylda-for-forste-verdenskrig.json",
+    "historie/indias-historie/mogulriket": "content/historie/indias-historie/mogulriket.json",
     "historie/industriell-revolusjon/barnearbeid": "content/historie/industriell-revolusjon/barnearbeid.json",
     "historie/industriell-revolusjon/dampmaskinen": "content/historie/industriell-revolusjon/dampmaskinen.json",
     "historie/industriell-revolusjon/dopapirets-historie": "content/historie/industriell-revolusjon/dopapirets-historie.json",

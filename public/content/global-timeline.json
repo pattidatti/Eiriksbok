@@ -3868,6 +3868,31 @@
       ]
     },
     {
+      "id": "mogulriket",
+      "title": "Mogulriket: verdens rikeste rike",
+      "description": "I over tre hundre år styrte muslimske keisere et India der svært mange var hinduer. Hvor mye plass de ga hverandre, avgjorde om riket holdt sammen.",
+      "startDate": 1526,
+      "endDate": 1857,
+      "displayDate": "1526-1857",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "indias-historie",
+      "link": "/historie/indias-historie/mogulriket",
+      "tags": [
+        "india",
+        "mogulriket",
+        "islam",
+        "hinduisme",
+        "imperier",
+        "toleranse"
+      ],
+      "lat": 22,
+      "lng": 79,
+      "placeLabel": "India",
+      "placeCountryId": 356,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "pizarro-peru",
       "title": "Pizarro erobrer Peru",
       "description": "Inkariket faller for Francisco Pizarros styrker.",
