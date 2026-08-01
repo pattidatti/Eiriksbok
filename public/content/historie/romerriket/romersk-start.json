@@ -15,7 +15,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Historien om Roma starter ikke med store marmorbygninger, men med en myte om to brødre, en ulvemor og en krangel som endte med drap. Ifølge sagnene ble Roma grunnlagt i år 753 fvt. av Romulus, etter at han hadde drept sin tvillingbror Remus. De to var sønner av krigsguden Mars, men var blitt forlatt i en kurv på elven Tiberen. En hunnulv fant dem og fostret dem opp som sine egne valper."
+            "content": "Historien om Roma starter ikke med store marmorbygninger, men med en myte om to brødre, en ulvemor og en krangel som endte med drap. Ifølge sagnene skal Romulus ha hersket i Roma fra rundt 753 fvt., etter at han hadde drept sin tvillingbror Remus. De to var sønner av krigsguden Mars, men ble kastet i elven Tiberen da de var nyfødte. En hunnulv fant dem og ammet dem som sine egne valper (Torjussen, 2025)."
         },
         {
             "type": "image",
@@ -25,7 +25,7 @@
         },
         {
             "type": "text",
-            "content": "Selv om dette er en spennende fortelling, vet arkeologene at virkeligheten var litt mer jordnær. Roma vokste frem som en samling små landsbyer på sju høyder ved elven Tiberen. Her slo bønder og gjetere seg ned for å dra nytte av den gode plasseringen: Trygg nok til å forsvare seg mot fiender på høydene, men nær nok elven til å drive handel med salt og varer fra kysten."
+            "content": "Selv om dette er en spennende fortelling, vet arkeologene at virkeligheten var litt mer jordnær. Det har bodd folk på stedet siden rundt år 1000 fvt. (Torjussen, 2025). Roma vokste frem som en samling små landsbyer på sju høyder ved elven Tiberen. Her slo bønder og gjetere seg ned for å dra nytte av den gode plasseringen: Trygg nok til å forsvare seg mot fiender på høydene, men nær nok elven til å drive handel med salt og varer fra kysten."
         },
         {
             "type": "component",
@@ -67,18 +67,18 @@
         },
         {
             "type": "text",
-            "content": "I den tidlige fasen (753–509 fvt.) ble Roma styrt av konger. De siste av disse var etruskere, et avansert og mektig kultursamfunn fra nord-Italia. Romerne lærte mye av etruskerne – som bygging av buer og kloakksystemer – men de hatet å bli undertrykket. I år 509 fvt. fikk de nok. Under ledelse av Brutus (en forfar til han som senere drepte Cæsar) jaget de den siste kongen, Tarquinius Superbus, ut av byen."
+            "content": "I den tidlige fasen ble Roma ifølge tradisjonen styrt av sju konger. De siste av disse var etruskere, et avansert og mektig kultursamfunn fra nord-Italia. Romerne lærte mye av etruskerne - som bygging av buer og kloakksystemer - men de hatet å bli undertrykket. Til slutt fikk de nok: den siste etruskerkongen, Tarquinius Superbus, skal ha blitt jaget ut av byen i 510 eller 509 fvt. (Iddeng, 2025b). Ifølge sagnet ble opprøret ledet av Brutus, en forfar til han som senere drepte Cæsar."
         },
         {
             "type": "text",
-            "content": "Romerne sverget en ed på at de aldri mer skulle la seg styre av én mann. De opprettet Republikken (*res publica* – 'folkets sak'). I stedet for en konge, skulle makten deles. Hvert år valgte de to ledere, kalt konsuler, som måtte være enige for å ta beslutninger. Hvis en konsul ble for maktsyk, kunne den andre stoppe ham. Men selv om de hatet konger, var ikke republikken noe demokrati for alle."
+            "content": "Romerne sverget en ed på at de aldri mer skulle la seg styre av én mann. De opprettet Republikken (*res publica* - 'folkets sak'). I stedet for en konge, skulle makten deles. Hvert år valgte de to ledere, kalt konsuler, som måtte være enige for å ta beslutninger (Iddeng mfl., 2025). Hvis en konsul ble for maktsyk, kunne den andre stoppe ham. Men selv om de hatet konger, var ikke republikken noe demokrati for alle. I folkeforsamlingen var det de velstående som dominerte (Iddeng mfl., 2025)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "SPQR",
-                "content": "Har du sett bokstavene SPQR på kumlokk i Roma eller i filmer? Det står for *Senatus Populusque Romanus* – 'Senatet og det romerske folk'. Det var republikkens offisielle navn og merkevare."
+                "content": "Har du sett bokstavene SPQR på kumlokk i Roma eller i filmer? Det står for *Senatus Populusque Romanus* - 'Senatet og det romerske folk'. Det var republikkens offisielle navn og merkevare."
             }
         },
         {
@@ -87,7 +87,7 @@
         },
         {
             "type": "text",
-            "content": "Det nye systemet var skreddersydd for de rike. Samfunnet var delt i to: Patrisierne, som var etterkommere av de sju opprinnelige adelsfamiliene, og Plebeierne, som var... alle andre. Bønder, håndverkere, soldater. I starten var det bare patrisiere som kunne sitte i Senatet eller bli valgt til konsuler."
+            "content": "Det nye systemet var skreddersydd for de rike. Samfunnet var delt i to: Patrisierne, et arvelig aristokrati som besto av et begrenset antall gamle slekter, og Plebeierne, som var... alle andre. Bønder, håndverkere, soldater. I starten hadde patrisierne enerett på både presteembeter og politiske verv (Iddeng, 2025a)."
         },
         {
             "type": "image",
@@ -101,7 +101,7 @@
         },
         {
             "type": "text",
-            "content": "Resultatet ble opprettelsen av Folketribuner. Disse lederne skulle representere vanlige folk og hadde en unik superkraft: Veto-retten. Hvis Senatet vedtok en lov som skadet folket, kunne tribunen reise seg og rope 'Veto!' ('Jeg forbyr!'), og loven ble stanset. Denne maktkampen varte i flere hundre år og kalles 'stenderkampene'."
+            "content": "Resultatet ble opprettelsen av Folketribuner tidlig på 400-tallet fvt. Disse lederne måtte selv være plebeiere, og de hadde en unik superkraft: Veto-retten. Var Senatet i ferd med å vedta et lovforslag som skadet folket, eller misbrukte en embetsmann makten sin, kunne tribunen gripe inn og rope 'Veto!' ('Jeg forbyr!'). Makten hans var altså negativ: han kunne stoppe noe før det ble vedtatt, men ikke oppheve en lov som allerede gjaldt. Fra 449 fvt. ble det valgt ti folketribuner hvert år (Steen & Iddeng, 2024a). Denne maktkampen varte i flere hundre år og kalles 'stenderkampene'. Først rundt år 300 fvt. var patrisiernes enerett borte for godt (Iddeng, 2025a)."
         },
         {
             "type": "header",
@@ -109,11 +109,11 @@
         },
         {
             "type": "text",
-            "content": "Med indre fred (sånn noenlunde) kunne Roma se utover. De erobret først naboene sine i Italia, men snart støtte de på en gigantisk rival: Kartago. Kartago var en sjømakt som kontrollerte handelen i Middelhavet fra sin base i Nord-Afrika. Krigene mellom Roma og Kartago kalles Punerkrigene og varte i over 100 år."
+            "content": "Med indre fred (sånn noenlunde) kunne Roma se utover. De erobret først naboene sine i Italia, men snart støtte de på en gigantisk rival: Kartago. Kartago var en sjømakt som kontrollerte handelen i Middelhavet fra sin base i Nord-Afrika. Krigene mellom Roma og Kartago kalles Punerkrigene. De varte fra 264 til 146 fvt. - altså i godt over hundre år - og endte med at Roma satt igjen som herre over det vestlige Middelhavet (Iddeng, 2024a)."
         },
         {
             "type": "text",
-            "content": "Den mest dramatiske var den andre punerkrigen (218–201 fvt.). Den kartagiske generalen Hannibal Barca gjorde det ingen trodde var mulig. I stedet for å angripe Roma fra sjøen, tok han med seg en enorm hær – inkludert 37 krigselefanter! – og marsjerte fra Spania, gjennom Frankrike og over de snødekte Alpene for å angripe Italia fra nord."
+            "content": "Den mest dramatiske var den andre punerkrigen (218-201 fvt.). Den kartagiske generalen Hannibal Barca gjorde det ingen trodde var mulig. I stedet for å angripe Roma fra sjøen, tok han med seg en enorm hær - krigselefanter inkludert - og marsjerte fra Spania, over Pyreneene, gjennom Sør-Frankrike og over de snødekte Alpene for å angripe Italia fra nord. Turen kostet ham dyrt: han mistet en stor del av hæren og de fleste av elefantene på veien over fjellene (Iddeng, 2024a)."
         },
         {
             "type": "image",
@@ -123,7 +123,7 @@
         },
         {
             "type": "text",
-            "content": "Hannibal knuste romerne i slag etter slag. Det verste nederlaget kom ved Cannae i 216 fvt., hvor Hannibal omringet og slaktet ned kanskje så mange som 70 000 romerske soldater på én dag. Det er fortsatt et av de blodigste slagene i verdenshistorien. Men Romas styrke lå ikke i én hær, men i deres stahet. De nektet å overgi seg. Hvert år Hannibal ble værende i Italia, utskrev Roma nye legioner. Til slutt måtte Hannibal reise hjem for å forsvare Kartago, hvor han ble beseiret av den romerske generalen Scipio Africanus."
+            "content": "Hannibal knuste romerne i slag etter slag. Det verste nederlaget kom ved Cannae i 216 fvt. Hannibal hadde rundt 30 000 mann, mens den romerske hæren etter tradisjonen var på rundt 80 000 - trolig var den ikke på mer enn 50 000. Hannibal satte kjernetroppene på fløyene og lot romerne angripe det vikende sentrumet sitt. Så lukket fløyene seg, og de omringede romerne ble hogd ned, mens Hannibals egne tap var små (Store norske leksikon, 2025). Men Romas styrke lå ikke i én hær, men i deres stahet. De nektet å overgi seg. Hvert år Hannibal ble værende i Italia, utskrev Roma nye legioner. Til slutt måtte Hannibal reise hjem for å forsvare Kartago, hvor den romerske generalen Scipio Africanus slo ham ved Zama i 202 fvt. (Iddeng, 2024a)."
         },
         {
             "type": "header",
@@ -131,15 +131,15 @@
         },
         {
             "type": "text",
-            "content": "Seieren over Kartago gjorde Roma til verdens herskere, men rikdommen ødela republikken. Småbøndene, som hadde vært ryggraden i hæren, kom hjem til gjengrodde gårder de ikke hadde råd til å drive. De rike senatorene kjøpte opp jorda og brukte krigsfanger som gratis slaver. Bøndene flyktet til Roma som arbeidsløse tiggere."
+            "content": "Seieren over Kartago gjorde Roma til verdens herskere, men rikdommen ødela republikken. Småbøndene, som hadde vært ryggraden i hæren, kom hjem til gjengrodde gårder de ikke hadde råd til å drive. De rike senatorene kjøpte opp jorda og brukte krigsfanger som gratis slaver. Slike store, slavedrevne gods ble kalt latifundia, og de tok over etter småbøndene (Iddeng, 2025b). Bøndene flyktet til Roma som arbeidsløse tiggere."
         },
         {
             "type": "text",
-            "content": "To brødre, Tiberius og Gaius Gracchus, prøvde å redde systemet ved å gi jord tilbake til de fattige. Men senatorene var ikke interessert i å dele. I stedet for debatt valgte de vold: Begge brødrene ble drept i politiske opptøyer. Dette markerte starten på slutten. Politikken flyttet seg fra talerstolen til slagmarken."
+            "content": "To brødre, Tiberius og Gaius Gracchus, prøvde å redde systemet ved å gi jord tilbake til de fattige. Tiberius ble folketribun i 133 fvt. og fikk vedtatt en jordlov som satte tak på hvor mye statsjord én borger kunne rå over. Da han mot skikk og bruk stilte til gjenvalg, brøt det ut vold, og Tiberius ble drept sammen med 300 av tilhengerne sine (Iddeng, 2024b). Ti år senere gikk det på samme måte med lillebroren: Gaius var folketribun fra 123 fvt., men da han tapte gjenvalget i 121, slo konsulen Lucius Opimius ned uroen som fulgte. Gaius og flere tusen tilhengere mistet livet (Steen & Iddeng, 2024b). Dette markerte starten på slutten. Politikken flyttet seg fra talerstolen til slagmarken."
         },
         {
             "type": "text",
-            "content": "Snart begynte generaler som Marius og Sulla å bruke hærene sine ikke mot Romas fiender, men mot hverandre. Soldatene var nå lojale mot generalen som betalte dem, ikke mot staten. Da Sulla marsjerte mot Roma og utnevnte seg selv til diktator i år 82 fvt., var presedensen satt. Republikken var i praksis død; den manglet bare en siste mann til å begrave den. Den mannen skulle bli Julius Cæsar. (Les mer om ham i artikkelen [Fra republikk til keiserdømme](/historie/romerriket/augustus-og-keiserdomme))."
+            "content": "Snart begynte generaler som Marius og Sulla å bruke hærene sine ikke mot Romas fiender, men mot hverandre. Soldatene var nå lojale mot generalen som betalte dem, ikke mot staten. Da folkeforsamlingen ga en hærkommando Sulla mente var hans til Marius, marsjerte Sulla med hæren mot Roma - et til da uhørt skritt i romersk historie. Etter at han hadde vunnet borgerkrigen, lot han seg utpeke til diktator for å bygge staten opp igjen (Andersen & Iddeng, 2025). Presedensen var satt. Republikken var i praksis død; den manglet bare en siste mann til å begrave den. Den mannen skulle bli Julius Cæsar. (Les mer om ham i artikkelen [Fra republikk til keiserdømme](/historie/romerriket/augustus-og-keiserdomme))."
         },
         {
             "type": "component",
@@ -239,7 +239,7 @@
                         "description": "Plebeierne streiker og får egne folketribuner."
                     },
                     {
-                        "time": "218–201 fvt.",
+                        "time": "218-201 fvt.",
                         "title": "2. Punerkrig",
                         "description": "Hannibal herjer i Italia, men Roma vinner til slutt."
                     },
@@ -255,8 +255,27 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, Ø. & Iddeng, J. W. (2025). *Lucius Cornelius Sulla*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Lucius_Cornelius_Sulla](https://snl.no/Lucius_Cornelius_Sulla)",
+                    "Iddeng, J. W. (2024a). *Punerkrigene*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/punerkrigene](https://snl.no/punerkrigene)",
+                    "Iddeng, J. W. (2024b). *Tiberius Sempronius Gracchus*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Tiberius_Sempronius_Gracchus](https://snl.no/Tiberius_Sempronius_Gracchus)",
+                    "Iddeng, J. W. (2025a). *Patrisier*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/patrisier](https://snl.no/patrisier)",
+                    "Iddeng, J. W. (2025b). *Romerrikets historie*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Romerrikets_historie](https://snl.no/Romerrikets_historie)",
+                    "Iddeng, J. W., Steen, T. & Tvedt, K. A. (2025). *Romerriket*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Romerriket](https://snl.no/Romerriket)",
+                    "Steen, T. & Iddeng, J. W. (2024a). *Folketribun*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/folketribun](https://snl.no/folketribun)",
+                    "Steen, T. & Iddeng, J. W. (2024b). *Gaius Sempronius Gracchus*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Gaius_Sempronius_Gracchus](https://snl.no/Gaius_Sempronius_Gracchus)",
+                    "Store norske leksikon. (2025). *Cannae*. Hentet 01.08.2026 fra [snl.no/Cannae](https://snl.no/Cannae)",
+                    "Torjussen, S. (2025). *Romulus og Remus*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Romulus_og_Remus](https://snl.no/Romulus_og_Remus)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-08-01",
     "quiz": [
         {
             "question": "Hvilket årstall markerer starten på den romerske republikken?",
