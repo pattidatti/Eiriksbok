@@ -58,7 +58,17 @@ døde") som ikke lar seg belegge: mildne eller fjern detaljen (behold kjernefakt
 udokumentert detalj stå bare fordi den er levende.
 
 **Aldri fabriker** en henvisning eller en kildeoppføring. Usikker på forfatter/år → slå det opp på
-den faktiske siden med WebFetch. Får du det ikke bekreftet → dropp den kilden.
+den faktiske siden med WebFetch.
+
+**Manglende årstall er ikke grunn til å droppe en kilde.** Kravet vårt er *etterprøvbarhet*, ikke
+dato. Kan du lese siden og den dekker påstanden, men den oppgir ingen publiserings-/oppdateringsdato
+→ bruk `(u.å.)` (uten år) og ta med hentedato. Det er husets standard, dokumentert i
+`public/content/norsk/skrivehjelp/hvordan-fore-kilder.json`, og allerede brukt i over 30 artikler.
+Samme regel for manglende forfatter: bruk organisasjonen (aldri "ukjent forfatter" eller domenet).
+
+Dropp en kilde bare når den er *reelt uetterprøvbar*: siden lar seg ikke hente, den finnes ikke, den
+er ikke troverdig, eller den dekker ikke påstanden. Å fjerne belagt innhold fra en artikkel fordi
+kilden mangler en dato er en regresjon - da har vi gjort artikkelen dårligere, ikke bedre.
 
 ---
 
@@ -103,7 +113,8 @@ For **hver** artikkel i batchen:
 2. WebSearch/WebFetch **3-5 troverdige kilder**: Store norske leksikon (snl.no), FN-sambandet,
    universitets-/lærebok-/museumskilder. Foretrekk kilder med navngitt forfatter.
 3. **Les kildene** (WebFetch svarer på en fokusert prompt om de konkrete påstandene). For hver kilde:
-   noter forfatter(e) og år (publiserings-/sist-oppdatert-**år**, ikke full dato).
+   noter forfatter(e) og år (publiserings-/sist-oppdatert-**år**, ikke full dato). Finner du ingen
+   dato på siden → `u.å.` Det diskvalifiserer ikke kilden.
 4. Kryss påstandene mot kildene etter DEN FASTE REGELEN. Skriv ned per påstand: bekreftet / rett til X
    / omformuler til Y - med hvilken kilde.
 5. Klarer du ikke å skaffe minst 3 solide kilder som dekker artikkelens bærende påstander → hopp over
@@ -125,13 +136,17 @@ Gjør endringene fra Jobb 1 direkte i artikkel-JSON-en. Regler:
   { "type": "component", "name": "Kildeliste", "props": { "sources": [ "...", "...", "..." ] } }
   ```
   - Bruk nøkkelen **`"name"`** (ikke `"component"`) - mange eldre artikler blander konvensjonene.
-  - Min. 3 kilder. Hver oppføring verifisert (forfatter + år) mot den virkelige siden - ALDRI
-    konstruert.
+  - Min. 3 kilder. Hver oppføring verifisert mot den virkelige siden - ALDRI konstruert. Verifisert
+    betyr at du har lest siden og at den dekker påstanden; forfatter og år noteres slik siden
+    oppgir dem. Mangler år → `(u.å.)`, og da er hentedato obligatorisk.
   - **Klikkbare markdown-lenker**, ikke bar URL:
     `"Brazier, E. (2026a). *Julikrisen*. Store norske leksikon. Hentet DD.MM.ÅÅÅÅ fra [snl.no/Julikrisen](https://snl.no/Julikrisen)"`
   - Husets format: **kun årstall** i parentesen (aldri en "sist oppdatert"-dato), tittel i `*kursiv*`,
     så utgiver, så `Hentet DD.MM.ÅÅÅÅ fra [lenke](url)` (dagens dato = hentedato) for kilder som endres
     ofte (SNL, nettsider). Stabile bok-/tidsskriftkilder trenger ikke hentedato.
+  - **Nettside uten årstall:** `(u.å.)` i både in-text-henvisning og listeoppføring, og hentedato er
+    da påbudt - den er det som gjør kilden etterprøvbar.
+    `"Encyclopaedia Britannica. (u.å.). *Shays's Rebellion*. Hentet 26.07.2026 fra [britannica.com](https://www.britannica.com/event/Shayss-Rebellion)"`
   - Forfatter først: person hvis oppgitt, ellers organisasjonen (aldri det bare domenenavnet).
   - Hver in-text-henvisning ↔ nøyaktig én listeoppføring, og hver listeoppføring skal være brukt i
     teksten.
