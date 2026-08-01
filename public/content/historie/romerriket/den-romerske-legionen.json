@@ -23,11 +23,11 @@
         },
         {
             "type": "text",
-            "content": "Å bli legionær var en livsstil, ikke en sommerjobb. Man vervet seg for 25 år. Før du fikk ta på deg uniformen, måtte du gjennom en streng helsesjekk (man måtte være minst 172 cm høy og ha 'gode øyne'). Hvis du ble godkjent, sverget du Sacramentum – en hellig ed til keiseren, der du lovte å adlyde ordre til døden."
+            "content": "Å bli legionær var en livsstil, ikke en sommerjobb. Vanligvis vervet man seg for en tjenesteperiode på 25 år, og fikk en fast årslønn (Iddeng, 2025). Tjenesten var frivillig for de fleste, men staten kunne skrive ut soldater med tvang i krisetider. Hvis du ble godkjent, sverget du sacramentum - en hellig ed til keiseren, der du lovte å adlyde ordre til døden (Wasson, 2024)."
         },
         {
             "type": "text",
-            "content": "Som nyrekrutt fikk du ikke sverd med en gang. Du fikk treplater som veide dobbelt så mye som ekte våpen. Du måtte lære å marsjere 30 kilometer om dagen med 30 kilo oppakning. Romerne sa: 'Våre soldater frykter offiserene sine mer enn fienden'. Det var nok sant."
+            "content": "Som nyrekrutt fikk du ikke ekte sverd med en gang. Våpentreningen foregikk med treningssverd av tre og skjold av flettverk (Wasson, 2024). Treningen tok aldri slutt: eksersis i tett formasjon, løping over lange strekninger i full rustning, og marsj i formasjon (Wasson, 2024). Alt du eide, bar du på ryggen."
         },
         {
             "type": "header",
@@ -35,11 +35,20 @@
         },
         {
             "type": "text",
-            "content": "En legion besto av ca. 5000 menn, inndelt i mindre grupper som legoklosser:\n*   Contubernium: 8 menn som delte telt og matlaging. Dette var din 'familie' i hæren.\n*   Centurie: 80 menn ledet av en Centurion. (Ja, navnet betyr 'hundre', men tallet varierte).\n*   Kohort: 480 menn (6 centurier).\n*   Legion: 10 kohorter + kavaleri og støttepersonell."
+            "content": "En legion besto vanligvis av 4 200 til 5 000 mann i republikken, og rundt 5 400 i keisertiden (Iddeng, 2025). Den var inndelt i mindre grupper som legoklosser:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Contubernium: 8 soldater som delte telt og matlaging - 10 telt utgjorde én centurie (Lloyd, 2026). Dette var din 'familie' i hæren.",
+                "Centurie: en avdeling ledet av en centurion, i regelen noe under 100 mann sterk. Navnet betyr 'hundre', men tallet varierte (Store norske leksikon, 2025a).",
+                "Kohort: rundt 480 mann (Encyclopaedia Britannica, u.å.b).",
+                "Legion: 10 kohorter, pluss eget rytteri og støttepersonell (Encyclopaedia Britannica, u.å.b; Iddeng, 2025)."
+            ]
         },
         {
             "type": "text",
-            "content": "Centurionen var ryggraden i hæren. Han var en veteran som hadde kjempet seg opp fra bunnen. Han kjentes igjen på den tverrstilte hestehårskammen på hjelmen og stokken han brukte til å slå udugelige soldater med."
+            "content": "Centurionen var ryggraden i hæren. De fleste centurionene kom fra vanlige familier og hadde kjempet seg opp fra de menige soldatenes rekker (Encyclopaedia Britannica, u.å.a). Han kjentes igjen på den tverrstilte hestehårskammen på hjelmen og stokken han brukte til å slå udugelige soldater med."
         },
         {
             "type": "image",
@@ -53,15 +62,22 @@
         },
         {
             "type": "text",
-            "content": "Den romerske soldaten var en vandrende stridsvogn. Han bar en Lorica Segmentata (leddelt platepanser) som ga god beskyttelse men lot ham bevege seg fritt. Hans viktigste våpen var:\n1.  Pilum: Et tungt kaste-spyd. Spissen var laget av bløtt jern som bøyde seg når det traff et fiendtlig skjold. Dermed ble skjoldet ubrukelig, og fienden måtte kaste det.\n2.  Gladius: Et kort stikksverd. Mens barbarere brukte lange sverd for å hugge (noe som krever stor plass), sto romerne tett i tett bak de store skjoldene (Scutum) og stakk sverdene inn i magen på fienden som en symaskin."
+            "content": "Den romerske soldaten var en vandrende stridsvogn. Legionssoldatene fikk etter hvert helt likt utstyr: panser, metallhjelm, et avlangt treskjold med lærdekke og jernkant, benskinner, et kort tveegget sverd og spyd eller lanse (Iddeng et al., 2025). De to viktigste våpnene var:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Pilum: et tungt kastespyd med et hode av bløtt jern. Jernet skulle bøye seg når spydet traff, så fienden ikke kunne kaste det tilbake (Encyclopaedia Britannica, u.å.c). Traff det et skjold, ble skjoldet ubrukelig.",
+                "Gladius: et kort, tveegget stikksverd (Iddeng et al., 2025). Mens fiender med lange sverd trengte plass til å hugge, sto romerne tett i tett bak de store skjoldene og stakk sverdene fram."
+            ]
         },
         {
             "type": "header",
-            "content": "Disiplin og Decimering"
+            "content": "Disiplin og desimering"
         },
         {
             "type": "text",
-            "content": "Romersk disiplin var brutal. Hvis du sovnet på vakt, ble du slått ihjel av dine egne kamerater. Hvis en hel avdeling feiget ut i kamp, kunne generalen beordre Decimering (fra latin *decem* = ti). Soldatene ble stilt opp, og hver tiende mann ble trukket ut ved loddtrekning og henrettet av de andre ni. Dette skapte en fryktelig motivasjon for å holde linjen."
+            "content": "Romersk disiplin var brutal. Hvis en hel avdeling feiget ut i kamp eller gjorde mytteri, kunne generalen beordre desimering. Ordet kommer fra latin decimare, 'å straffe eller henrette hver tiende mann' (Store norske leksikon, 2025b). Soldatene ble stilt opp, og hver tiende mann ble pisket eller steinet i hjel av de ni andre (Wasson, 2024). Straffen ble brukt enten fordi de skyldige ikke lot seg finne, eller fordi alle var skyldige. Dette skapte en fryktelig motivasjon for å holde linjen."
         },
         {
             "type": "header",
@@ -69,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "Legionærene var også ingeniører. Hver natt, uansett hvor slitne de var, bygde de en befestet leir med voller og palisader. De bygde veier, broer og akvedukter over hele imperiet. De hadde også egne leger og sykehus (*valetudinarium*), som faktisk var bedre enn de sivile sykehusene. En såret soldat hadde større sjanse for å overleve enn en rik borger i Roma."
+            "content": "Legionærene var også ingeniører. Når hæren kom fram, slo den opp en befestet leir med voller og palisader (Lloyd, 2026). De forbedret infrastrukturen der de kom, med bygging av veier og broer (Lloyd, 2026). Hæren hadde også sine egne sykehus som måtte bemannes, i tillegg til teglovner som ble fyrt og brød som ble bakt - en leir var en hel liten by (Lloyd, 2026)."
         },
         {
             "type": "image",
@@ -83,7 +99,7 @@
         },
         {
             "type": "text",
-            "content": "Når romerne møtte en bymur, stoppet de ikke. De bygde beleiringsmaskiner:\n*   Ballista: En gigantisk armbrøst som skjøt store jernpiler med enorm presisjon.\n*   Onager ('Villeselet'): En katapult som slynget steiner på opptil 50 kilo mot murene.\n*   Testudo ('Skilpadde'): Soldatene løftet skjoldene over hodet og dannet et tak, slik at de kunne marsjere helt inntil bymuren beskyttet mot piler og kokende olje."
+            "content": "Når romerne møtte en bymur, stoppet de ikke. De brukte katapulter og ballistaer, begge varianter av steinkastere (Lloyd, 2026). På 200-tallet evt. kom onageren i tillegg, en stor steinkaster (Lloyd, 2026). Og møtte de et regn av piler, løftet soldatene skjoldene over hodet og dannet et tak - testudo, 'skilpadden' - slik at de kunne rykke helt inntil bymuren."
         },
         {
             "type": "image",
@@ -103,7 +119,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Pensjonisttilværelsen",
-                "content": "Hvis du overlevde 25 år i tjenesten (noe ca. 50% gjorde), fikk du en generøs sluttpakke: En stor sum penger eller et stykke jord i provinsene. Mange byer i Europa (som Köln og Wien) startet som kolonier for pensjonerte soldater."
+                "content": "Hvis du overlevde de 25 årene i tjenesten, fikk du en generøs sluttpakke: en engangssum penger - under Augustus 12 000 sestertser - og, viktigst av alt, jord. Köln i Tyskland ble grunnlagt som romersk koloni i år 50 evt. og befolket med romerske veteransoldater."
             }
         },
         {
@@ -139,20 +155,20 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvor mange år vervet en legionær seg for, og hva het den hellige eden han sverget til keiseren?",
+                    "Hvor mange år vervet en legionær seg vanligvis for, og hva het den hellige eden han sverget til keiseren?",
                     "Hva var forskjellen på våpnene Pilum og Gladius, og hva var hvert av dem laget for?",
-                    "Forklar hva straffen Decimering gikk ut på når en hel avdeling feiget ut i kamp.",
-                    "Nevn minst tre ting legionærene bygde eller gjorde i tillegg til å slåss."
+                    "Forklar hva straffen desimering gikk ut på når en hel avdeling feiget ut i kamp.",
+                    "Nevn minst to ting legionærene bygde eller gjorde i tillegg til å slåss."
                 ],
                 "reflekter": [
-                    "Romerne sa at soldatene fryktet offiserene sine mer enn fienden. Hvordan tror du en så brutal disiplin gjorde hæren sterkere i kamp?",
+                    "Disiplinen i legionen var brutal, med straffer som desimering. Hvordan tror du en så streng disiplin gjorde hæren sterkere i kamp?",
                     "Forklar hvorfor det bøyde jernet i spissen på et Pilum var et smart våpen mot fiendens skjold.",
                     "Hvorfor tror du en romersk legionær vant mot en germansk kriger som var like sterk, når vi ser på hvordan de to kjempet ulikt?",
-                    "En såret soldat hadde større sjanse for å overleve enn en rik borger i Roma. Hva sier dette om hvor viktig hæren var for staten?"
+                    "Hæren hadde egne sykehus, teglovner og bakerier. Hva sier det om hvor viktig hæren var for den romerske staten?"
                 ],
                 "gaaVidere": [
                     "Sammenlign den romerske legionen med et moderne forsvar eller en profesjonell hær i dag. Hva er likt, og hva er forskjellig?",
-                    "Skriv en kort tekst (5-8 setninger) om en dag i livet til en fersk legionær som trener med treplater og marsjerer med tung oppakning.",
+                    "Skriv en kort tekst (5-8 setninger) om en dag i livet til en fersk legionær som trener med tresverd og marsjerer med tung oppakning.",
                     "Diskuter med en partner: Var det rettferdig at hver tiende soldat kunne bli henrettet for feil hele avdelingen gjorde? Begrunn svaret."
                 ]
             }
@@ -163,7 +179,7 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Hva var en 'Centurion'?",
+                        "question": "Hva var en 'centurion'?",
                         "options": [
                             "En romersk prest",
                             "Lederen for en avdeling på ca. 80-100 soldater",
@@ -173,7 +189,7 @@
                         "correctAnswer": 1
                     },
                     {
-                        "question": "Hva innebar straffen 'Decimering'?",
+                        "question": "Hva innebar straffen 'desimering'?",
                         "options": [
                             "Soldatene fikk 10% mindre lønn",
                             "Hver tiende soldat ble henrettet av sine egne",
@@ -204,11 +220,28 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (u.å.a). *Centurion*. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/topic/centurion-Roman-military-officer)",
+                    "Encyclopaedia Britannica. (u.å.b). *Cohort*. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/topic/cohort-Roman-military)",
+                    "Encyclopaedia Britannica. (u.å.c). *Pilum*. Hentet 01.08.2026 fra [britannica.com](https://www.britannica.com/technology/pilum)",
+                    "Iddeng, J. W. (2025). *Legion*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/legion](https://snl.no/legion)",
+                    "Iddeng, J. W., Steen, T. & Tvedt, K. A. (2025). *Romerriket*. Store norske leksikon. Hentet 01.08.2026 fra [snl.no/Romerriket](https://snl.no/Romerriket)",
+                    "Lloyd, J. (2026). *Roman Army*. World History Encyclopedia. Hentet 01.08.2026 fra [worldhistory.org](https://www.worldhistory.org/Roman_Army/)",
+                    "Store norske leksikon. (2025a). *Centuria - del av romersk hær*. Hentet 01.08.2026 fra [snl.no/centuria](https://snl.no/centuria_-_del_av_romersk_h%C3%A6r)",
+                    "Store norske leksikon. (2025b). *Desimasjon*. Hentet 01.08.2026 fra [snl.no/desimasjon](https://snl.no/desimasjon)",
+                    "Wasson, D. L. (2024). *Roman Legionary*. World History Encyclopedia. Hentet 01.08.2026 fra [worldhistory.org](https://www.worldhistory.org/Roman_Legionary/)"
+                ]
+            }
         }
     ],
     "quiz": [
         {
-            "question": "Hva var en 'Centurion'?",
+            "question": "Hva var en 'centurion'?",
             "options": [
                 "En romersk prest",
                 "Lederen for en avdeling på ca. 80-100 soldater",
@@ -218,7 +251,7 @@
             "correctAnswer": 1
         },
         {
-            "question": "Hva innebar straffen 'Decimering'?",
+            "question": "Hva innebar straffen 'desimering'?",
             "options": [
                 "Soldatene fikk 10% mindre lønn",
                 "Hver tiende soldat ble henrettet av sine egne",
@@ -237,5 +270,6 @@
             ],
             "correctAnswer": 1
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-01"
 }
