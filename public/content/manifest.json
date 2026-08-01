@@ -2871,6 +2871,21 @@
                 "migrasjon"
               ],
               "createdDate": "2026-07-31T00:00:00Z"
+            },
+            {
+              "id": "benektelse-eller-uenighet",
+              "title": "Ekte uenighet eller benektelse?",
+              "description": "Historikere er uenige hele tiden. Men noen uenigheter er ikke ekte uenighet i det hele tatt. Slik ser du forskjellen.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "kildekritikk",
+                "holocaust",
+                "andre-verdenskrig",
+                "historiografi",
+                "konspirasjonsteorier",
+                "nyere-tid"
+              ],
+              "createdDate": "2026-08-01T00:00:00Z"
             }
           ]
         },

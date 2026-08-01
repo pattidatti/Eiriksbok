@@ -8104,6 +8104,26 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "benektelse-eller-uenighet",
+      "title": "Ekte uenighet eller benektelse?",
+      "description": "Historikere er uenige hele tiden. Men noen uenigheter er ikke ekte uenighet i det hele tatt. Slik ser du forskjellen.",
+      "startDate": 1945,
+      "endDate": null,
+      "displayDate": "1945",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/benektelse-eller-uenighet",
+      "tags": [
+        "kildekritikk",
+        "holocaust",
+        "andre-verdenskrig",
+        "historiografi",
+        "konspirasjonsteorier",
+        "nyere-tid"
+      ]
+    },
+    {
       "id": "japans-okonomiske-mirakel",
       "title": "Japans økonomiske mirakel",
       "description": "Fra ruiner i 1945 til en av verdens rikeste nasjoner på 40 år. Hvordan skoler, kvalitet og eksport gjorde Japan til en supermakt.",

@@ -24,6 +24,7 @@ import { MapCarousel } from './MapCarousel';
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
 const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m => ({ default: m.Gaatekart })));
 const Kildekjeden = lazy(() => import('./content/interactive/Kildekjeden').then(m => ({ default: m.Kildekjeden })));
+const MalstangaTest = lazy(() => import('./content/interactive/MalstangaTest').then(m => ({ default: m.MalstangaTest })));
 const HaraldsRike = lazy(() => import('./content/interactive/HaraldsRike').then(m => ({ default: m.HaraldsRike })));
 const LegendensVekst = lazy(() => import('./content/interactive/LegendensVekst').then(m => ({ default: m.LegendensVekst })));
 const Skyldvekten = lazy(() => import('./content/interactive/Skyldvekten').then(m => ({ default: m.Skyldvekten })));
@@ -698,6 +699,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     CascadeFailureSim: lazy(() => import('./content/interactive/infrastruktur/CascadeFailureSim').then(m => ({ default: m.CascadeFailureSim }))),
     RettighetsLas: lazy(() => import('./content/interactive/RettighetsLas').then(m => ({ default: m.RettighetsLas }))),
     KongensMaktBinding,
+    MalstangaTest,
     MapCarousel,
     KontekstKompasset,
     IdentitetsVeven,

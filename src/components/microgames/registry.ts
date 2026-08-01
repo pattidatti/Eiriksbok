@@ -158,6 +158,7 @@ const RoanokeSporet3D = lazy(() => import('./RoanokeSporet3D'));
 const KongedagbokenMG = lazy(() => import('./KongedagbokenMG'));
 const HoldNordvegen3D = lazy(() => import('./HoldNordvegen3D'));
 const HavfolkeneKommer3D = lazy(() => import('./HavfolkeneKommer3D'));
+const Malstanga3D = lazy(() => import('./Malstanga3D'));
 const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 
@@ -1556,6 +1557,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./HavfolkeneKommer3D'),
         Component: HavfolkeneKommer3D as never,
+    },
+    'flytt-malstanga': {
+        id: 'flytt-malstanga',
+        title: 'Flytt målstanga',
+        description:
+            'Sikt og skyt beviset mot kravet. Mot den første debattanten står målet stille, og to treff avgjør saken. Mot den andre glir målet fire meter lenger unna for hvert eneste treff, og kravet byttes ut med et nytt hver gang. Lyspæren: du kan ikke vinne mot noen som flytter kravet sitt så snart du oppfyller det. Derfor er benektelse noe annet enn faglig uenighet.',
+        estimatedSeconds: 150,
+        loader: () => import('./Malstanga3D'),
+        Component: Malstanga3D as never,
     },
 };
 
