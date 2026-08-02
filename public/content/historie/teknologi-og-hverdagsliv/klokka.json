@@ -6,12 +6,13 @@
   "category": "Teknologi og hverdagsliv",
   "readTime": "8 min lesning",
   "heroImage": "/images/teknologi-og-hverdagsliv/klokka-hero.webp",
+  "lastUpdated": "2026-08-02",
   "details": [
     "I tusenvis av år styrte sola døgnet. Dagen begynte når det ble lyst og sluttet når det ble mørkt, og tiden var ulik fra årstid til årstid.",
     "Den mekaniske klokka delte døgnet i like timer som var like lange hele året, uansett om sola sto høyt eller lavt.",
     "Da fabrikkene, skolene og jernbanen tok over, måtte alle følge samme klokke - og slik ble det moderne, oppdelte døgnet født."
   ],
-  "externalUrl": "https://snl.no/klokke",
+  "externalUrl": "https://snl.no/ur",
   "content": [
     {
       "type": "text",
@@ -31,23 +32,27 @@
         "events": [
           {
             "year": 1300,
-            "description": "De første mekaniske klokkene bygges i Europa og settes opp i kirke- og rådhustårn."
+            "description": "De første mekaniske klokkene vi har sikre spor etter, er store lodd-drevne maskiner i tårn. De slår bare timeslag."
           },
           {
-            "year": 1510,
-            "description": "Fjæra gjør klokkene mindre, slik at de kan bæres i stedet for å henge i lodd."
+            "year": 1500,
+            "description": "Ur drevet av fjærkraft konstrueres, trolig av Peter Henlein i Nürnberg. Nå kan klokka bæres."
           },
           {
             "year": 1656,
-            "description": "Pendelen gjør klokkene mye mer nøyaktige, og de begynner å vise minutter."
+            "description": "Christiaan Huygens konstruerer pendeluret, og klokkene blir mye mer nøyaktige."
           },
           {
-            "year": 1800,
-            "description": "Masseproduserte klokker blir så billige at vanlige folk kan eie sin egen."
+            "year": 1830,
+            "description": "Masseproduserte klokker er blitt så billige at de går fra luksus til vanlig inventar i hjemmene."
           },
           {
             "year": 1884,
-            "description": "Verden deles inn i tidssoner med standardtid, slik at togene kan gå etter samme klokke."
+            "description": "Meridiankonferansen i Washington gjør Greenwich til nullmeridian og legger grunnlaget for tidssonene."
+          },
+          {
+            "year": 1895,
+            "description": "Norge innfører sonetid, slik at hele landet viser den samme klokka."
           }
         ]
       }
@@ -70,11 +75,11 @@
     },
     {
       "type": "text",
-      "content": "På 1300-tallet skjedde noe nytt i Europa. Håndverkere bygde de første mekaniske klokkene, store maskiner av jern og messing drevet av lodd som hang i tau. Hemmeligheten var en oppfinnelse som heter gangen. Den slapp tannhjulene fri litt etter litt, i jevne, små rykk, slik at klokka tikket i et fast tempo i stedet for å bare snurre rundt. For første gang fantes det en maskin som målte tiden helt jevnt, dag og natt, sommer og vinter."
+      "content": "På 1300-tallet skjedde noe nytt i Europa. De første mekaniske klokkene vi har sikre spor etter, var store maskiner drevet av lodd, bygget inn i tårn. De hadde verken visere eller urskive - de slo bare timeslagene (Betts, u.å.). Hemmeligheten var en oppfinnelse som heter gangen. Den gir energi til den svingende delen av urverket litt etter litt, i jevne, små rykk, slik at klokka tikker i et fast tempo i stedet for å bare snurre rundt (Andresen & Hofstad, 2025). For første gang fantes det en maskin som målte tiden helt jevnt, dag og natt, sommer og vinter."
     },
     {
       "type": "text",
-      "content": "De første store klokkene var dyre, og de ble satt opp i kirketårn og rådhustårn der alle i byen kunne høre dem. Klokka slo for å markere hver time, og snart begynte byfolk å rette seg etter slagene. Markedet åpnet til et bestemt klokkeslett. Byportene ble stengt til et bestemt klokkeslett. For første gang delte en hel by den samme tiden, hentet fra den samme maskinen i tårnet."
+      "content": "De første store klokkene var dyre, og de ble satt opp i kirketårn og rådhustårn der alle i byen kunne høre dem. Det eldste urverket som fortsatt finnes i England, står i katedralen i Salisbury og er fra 1386 (Betts, u.å.). Klokka slo for å markere hver time, og snart begynte byfolk å rette seg etter slagene. Markedet åpnet til et bestemt klokkeslett. Byportene ble stengt til et bestemt klokkeslett. For første gang delte en hel by den samme tiden, hentet fra den samme maskinen i tårnet. Nøyaktigheten tok et stort sprang i 1656, da nederlenderen Christiaan Huygens konstruerte pendeluret (Andresen & Hofstad, 2025)."
     },
     {
       "type": "component",
@@ -104,11 +109,11 @@
     },
     {
       "type": "text",
-      "content": "I starten hang klokkene i tårn fordi de var enorme. Men håndverkere ble flinkere, og delene ble mindre og mindre. På 1500-tallet kom fjæra: en oppviklet metallstrimmel som ga klokka kraft i stedet for tunge lodd. Nå trengte ikke klokka lenger å henge i et tau fra taket. Den kunne bæres."
+      "content": "I starten hang klokkene i tårn fordi de var enorme. Men håndverkere ble flinkere, og delene ble mindre og mindre. Omkring år 1500 kom fjæra: en oppviklet metallstrimmel som ga klokka kraft i stedet for tunge lodd. Æren for det får som regel Peter Henlein i Nürnberg (Andresen & Hofstad, 2025). Nå trengte ikke klokka lenger å henge i et tau fra taket. Den kunne bæres."
     },
     {
       "type": "text",
-      "content": "Etter hvert ble klokkene så små at de fikk plass i en lomme. En lommeur var lenge et dyrt statussymbol, noe bare rike hadde råd til. Men da fabrikkene begynte å lage klokker i stort antall, falt prisen. På 1800-tallet kunne vanlige folk eie sin egen klokke. For første gang i historien bar mennesker tiden med seg, rett i lomma."
+      "content": "Etter hvert ble klokkene så små at de fikk plass i en lomme. Et lommeur var lenge et dyrt statussymbol, noe bare rike hadde råd til. Men tidlig på 1800-tallet satte amerikaneren Eli Terry i gang masseproduksjon av klokker med maskinlagde deler i stedet for håndlagde, og prisen falt kraftig. På 1830-tallet var klokka gått fra å være luksus for de rikeste til å bli vanlig inventar i hjemmene (National Inventors Hall of Fame, u.å.). For første gang i historien bar mennesker tiden med seg, rett i lomma."
     },
     {
       "type": "image",
@@ -126,7 +131,7 @@
     },
     {
       "type": "text",
-      "content": "Dette var en helt ny måte å leve på. Tiden ble noe du fikk betalt for, time for time. Uttrykket \"tid er penger\" ble plutselig bokstavelig talt sant. Folk som hadde levd hele livet etter sola, måtte nå lære å leve etter en maskin. Skolene fulgte etter med faste timeplaner, og barna ble vant til klokka tidlig. Slik formet fabrikken det oppdelte døgnet vi fortsatt lever i."
+      "content": "Dette var en helt ny måte å leve på. Historikeren E. P. Thompson har beskrevet nettopp dette skiftet: fra et arbeidsliv som fulgte oppgavene og årstidene, til et arbeidsliv som ble målt og styrt av klokka (Thompson, 1967). Tiden ble noe du fikk betalt for, time for time. Uttrykket \"tid er penger\" ble plutselig bokstavelig talt sant. Folk som hadde levd hele livet etter sola, måtte nå lære å leve etter en maskin. Skolene fulgte etter med faste timeplaner, og barna ble vant til klokka tidlig. Slik formet fabrikken det oppdelte døgnet vi fortsatt lever i."
     },
     {
       "type": "header",
@@ -134,11 +139,11 @@
     },
     {
       "type": "text",
-      "content": "Selv på 1800-tallet hadde det vært ett problem igjen: hver by stilte klokka si etter sin egen sol. Når sola sto høyest i Bergen, var den ennå ikke helt på topp i Oslo lenger øst. Så lenge folk reiste sakte, spilte det ingen rolle. Men så kom [jernbanen](/historie/industriell-revolusjon/jernbanen), og toget gikk fort. Et tog som skulle gå 12.00, hvilken by sin klokke skulle det følge? Togtabellene ble et eneste rot, og det skjedde ulykker fordi klokkene ikke stemte overens."
+      "content": "Selv på 1800-tallet hadde det vært ett problem igjen: hver by stilte klokka si etter sin egen sol. Når sola sto høyest i Bergen, var den ennå ikke helt på topp i Oslo lenger øst. Så lenge folk reiste sakte, spilte det ingen rolle. Men så kom [jernbanen](/historie/industriell-revolusjon/jernbanen), og toget gikk fort. Et tog som skulle gå 12.00, hvilken by sin klokke skulle det følge? Da forbindelsene ble raskere, skapte den lokale soltiden mange vansker, særlig i land som strekker seg langt fra øst til vest. Løsningen ble kalt standardtid eller jernbanetid: én felles klokke for et helt land eller en hel landsdel (Kristiansen mfl., 2025)."
     },
     {
       "type": "text",
-      "content": "Løsningen kom i 1884. Land fra hele verden møttes og ble enige om å dele jorda inn i tidssoner. Innenfor hver sone skulle alle klokker vise nøyaktig det samme, uansett hvor sola sto akkurat der. Dette kalles standardtid. Nå kunne et tog gå 12.00, og alle langs hele linja visste nøyaktig hva det betydde. Klokka hadde gått fra å være sola sin tjener til å bli sjefen som alle, over hele verden, måtte rette seg etter."
+      "content": "Det store gjennombruddet kom i 1884. På meridiankonferansen i Washington ble land fra hele verden enige om at meridianen gjennom Greenwich i London skulle være nullpunktet for lengdegrad, og det ble grunnlaget for det systemet med tidssoner vi bruker i dag (Encyclopaedia Britannica, 2026). Innenfor hver sone skal alle klokker vise nøyaktig det samme, uansett hvor sola står akkurat der. Landene innførte sonetid hver for seg i årene etterpå: Japan var først i 1888, og Norge fulgte etter i 1895 (Kristiansen mfl., 2025). Nå kunne et tog gå 12.00, og alle langs hele linja visste nøyaktig hva det betydde. Klokka hadde gått fra å være sola sin tjener til å bli sjefen som alle, over hele verden, måtte rette seg etter."
     },
     {
       "type": "image",
@@ -179,7 +184,7 @@
     },
     {
       "type": "text",
-      "content": "Klokka ga oss noe vi aldri har gitt fra oss igjen: en delt, nøyaktig tid som binder hele verden sammen. Men den ga oss også en ny herre. I dag styres dagen din av tall på en skjerm, akkurat som arbeiderens dag ble styrt av fabrikkfløyta. En amerikaner ved navn Benjamin Franklin satte ord på den nye tankegangen lenge før fabrikkene tok over, og setningen henger fortsatt over oss:"
+      "content": "Klokka ga oss noe vi aldri har gitt fra oss igjen: en delt, nøyaktig tid som binder hele verden sammen. Men den ga oss også en ny herre. I dag styres dagen din av tall på en skjerm, akkurat som arbeiderens dag ble styrt av fabrikkfløyta. En amerikaner ved navn Benjamin Franklin satte ord på den nye tankegangen lenge før fabrikkene tok over. Han skrev det i et lite råd til en ung håndverker i 1748, og setningen henger fortsatt over oss (Franklin, 1748):"
     },
     {
       "type": "component",
@@ -197,7 +202,7 @@
                 "Hvordan visste folk hva tiden var før klokka ble vanlig? Hva slags enkle hjelpemidler brukte de, og hvorfor virket ikke alltid soluret og timeglasset?",
                 "Hva var oppfinnelsen som het gangen, og hvorfor gjorde den at den mekaniske klokka kunne tikke i et fast tempo dag og natt?",
                 "Hvorfor ble de aller første store klokkene satt opp i kirketårn og rådhustårn i stedet for hjemme hos folk?",
-                "Hva skjedde i 1884, og hvorfor kaller vi det som ble innført for standardtid?"
+                "Hva ble landene enige om på meridiankonferansen i Washington i 1884, og hvilket år innførte Norge sonetid?"
             ],
             "reflekter": [
                 "Forklar hvorfor en sommertime ble lengre enn en vintertime da folk delte dagen fra soloppgang til solnedgang, og hvorfor den mekaniske klokka gjorde alle timene like lange.",
@@ -270,8 +275,23 @@
               "Fordi alle land ville ha samme språk"
             ],
             "answer": 1,
-            "explanation": "Hver by stilte klokka etter sin egen sol. Da togene begynte å gå fort, ble dette farlig og rotete. Standardtid og tidssoner ga alle innenfor en sone den samme klokka."
+            "explanation": "Hver by stilte klokka etter sin egen sol. Da togene begynte å gå fort, ble dette svært rotete. Standardtid og tidssoner ga alle innenfor en sone den samme klokka."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Andresen, G. & Hofstad, K. (2025). *Ur*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/ur](https://snl.no/ur)",
+          "Betts, J. D. (u.å.). *Clock*. Encyclopaedia Britannica. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/technology/clock)",
+          "Encyclopaedia Britannica. (2026). *International Prime Meridian Conference*. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/topic/International-Prime-Meridian-Conference)",
+          "Franklin, B. (1748). *Advice to a Young Tradesman, Written by an Old One*. Hentet 02.08.2026 fra [americanliterature.com](https://americanliterature.com/author/benjamin-franklin/essay/advice-to-a-young-tradesman)",
+          "Kristiansen, J. R., Ringnes, T. & Aksnes, K. (2025). *Tidssone*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/tidssone](https://snl.no/tidssone)",
+          "National Inventors Hall of Fame. (u.å.). *Eli Terry*. Hentet 02.08.2026 fra [invent.org](https://www.invent.org/inductees/eli-terry)",
+          "Thompson, E. P. (1967). Time, Work-Discipline, and Industrial Capitalism. *Past & Present*, 38(1), 56-97."
         ]
       }
     }

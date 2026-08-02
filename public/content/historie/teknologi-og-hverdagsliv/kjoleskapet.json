@@ -6,10 +6,11 @@
   "category": "Teknologi og hverdagsliv",
   "readTime": "8 min lesning",
   "heroImage": "/images/teknologi-og-hverdagsliv/kjoleskapet-hero.webp",
+  "lastUpdated": "2026-08-02",
   "details": [
     "I tusenvis av år var den største oppgaven om høsten å lagre nok mat til å overleve vinteren uten å sulte.",
     "Tørking, salting og hermetikk reddet mat fra å råtne, men endret ofte smaken og var ikke nok til et variert kosthold.",
-    "Da kjøleskapet kom inn i hjemmene rundt 1930, kunne folk endelig ha fersk mat hele året - og langt færre ble syke av bedervet mat."
+    "Kjøleskapet kom inn i amerikanske hjem på 1920- og 1930-tallet, men først på 1950-tallet i Norge. Da kunne folk endelig ha fersk mat hele året."
   ],
   "externalUrl": "https://snl.no/kj%C3%B8leskap",
   "content": [
@@ -29,11 +30,11 @@
     },
     {
       "type": "text",
-      "content": "Mat råtner fordi små organismer vil ha den. Bakterier og mugg er levende vesener som er så små at vi ikke ser dem, og de spiser av maten akkurat som vi gjør. Når de formerer seg, blir kjøttet slimete, melken sur og brødet mugnet. Spiser du slik mat, kan du bli alvorlig syk. I gamle dager visste ingen at bakterier fantes. Folk så bare at mat ble dårlig, og de lærte seg knep for å bremse det, lenge før noen forsto hvorfor knepene virket."
+      "content": "Mat råtner fordi små organismer vil ha den. Bakterier og mugg er levende vesener som er så små at vi ikke ser dem, og de spiser av maten akkurat som vi gjør. Når de formerer seg, blir kjøttet slimete, melken sur og brødet mugnet. Spiser du slik mat, kan du bli alvorlig syk. I gamle dager visste ingen at bakterier fantes. Folk så bare at mat ble dårlig, og de lærte seg knep for å bremse det, lenge før noen forsto hvorfor knepene virket. Først rundt 1860 viste Louis Pasteur at det var mikroorganismene som ble uskadeliggjort når mat ble konservert (Store norske leksikon, 2025)."
     },
     {
       "type": "text",
-      "content": "Hemmeligheten bak alle disse knepene er den samme: gjør forholdene vanskelige for bakteriene. Bakterier trenger vann, varme og næring for å vokse. Tar du bort vannet, eller gjør det for kaldt eller for salt for dem, slutter de å formere seg. Da holder maten seg mye lenger."
+      "content": "Hemmeligheten bak alle disse knepene er den samme: gjør forholdene vanskelige for bakteriene. Bakterier trenger vann, varme og næring for å vokse. Tar du bort vannet, eller gjør det for kaldt eller for salt for dem, slutter de å formere seg (Hovig & Egeland, 2025). Da holder maten seg mye lenger."
     },
     {
       "type": "header",
@@ -41,7 +42,7 @@
     },
     {
       "type": "text",
-      "content": "Det eldste trikset er tørking. Henger du fisk eller kjøtt opp i tørr luft, forsvinner vannet, og bakteriene mister det de trenger for å leve. Tørrfisk fra Nord-Norge kunne ligge i årevis og ble en av de viktigste varene Norge solgte til utlandet. Et annet kraftig triks er salting. Salt trekker vannet ut av maten, og samtidig ut av bakteriene selv, så de tørker inn og dør. Saltet kjøtt og saltet sild kunne holde seg en hel vinter."
+      "content": "Det eldste trikset er tørking. Henger du fisk eller kjøtt opp i tørr luft, forsvinner vannet, og bakteriene mister det de trenger for å leve. Tørrfisk kunne ligge lenge og bli fraktet langt, og den ble en av de aller viktigste varene Norge solgte til utlandet: på 1300-tallet sto tørrfisk for over 80 prosent av norsk eksport (Høberg, 2024). Et annet kraftig triks er salting. Salt trekker vannet ut av maten, og samtidig ut av bakteriene selv, så de tørker inn og dør (Store norske leksikon, 2024). Saltet kjøtt og saltet sild kunne holde seg en hel vinter."
     },
     {
       "type": "text",
@@ -110,7 +111,7 @@
     },
     {
       "type": "text",
-      "content": "Tidlig på 1800-tallet trengte hærene en bedre måte å frakte mat på. I 1810 fant folk ut at hvis du koker mat i en lukket boks, dreper varmen bakteriene, og samtidig stenger du nye bakterier ute. Maten inni kan da holde seg i årevis uten å bli dårlig. Dette kalles hermetikk. Plutselig kunne erter, fisk og kjøtt fraktes over hele verden og spises lenge etterpå. Hermetikk ga folk en helt ny mulighet: å spise mat som var dyrket et helt annet sted, på en helt annen årstid. En boks ert om vinteren var nesten et lite under."
+      "content": "Tidlig på 1800-tallet trengte hærene en bedre måte å frakte mat på. Franskmannen Nicolas Appert vant i 1809 en pris for løsningen sin: han fylte mat på flasker, lukket dem tett og kokte dem i vann etterpå (Store norske leksikon, 2025). Året etter tok engelskmannen Peter Durand patent på å bruke bokser av blikk i stedet for flasker, og innen 1820 leverte han hermetikk til den britiske marinen i store mengder (Encyclopaedia Britannica, 2026). Varmen dreper bakteriene, og den tette boksen stenger nye ute, så maten inni kan holde seg i årevis. Dette kalles hermetikk. Plutselig kunne erter, fisk og kjøtt fraktes over hele verden og spises lenge etterpå. En boks erter om vinteren var nesten et lite under."
     },
     {
       "type": "image",
@@ -125,20 +126,28 @@
         "compact": true,
         "events": [
           {
+            "year": 1809,
+            "description": "Nicolas Appert vinner en pris for å konservere mat i tett lukkede flasker som kokes etterpå."
+          },
+          {
             "year": 1810,
-            "description": "Den første hermetikken oppfinnes - mat kokes i en lukket boks og kan holde seg i årevis."
+            "description": "Peter Durand tar patent på blikkboksen, og hermetikk kan fraktes over hele verden."
           },
           {
             "year": 1834,
-            "description": "Den første kjølemaskinen som bruker fordamping bygges, og legger grunnlaget for kjøleskapet."
+            "description": "Jacob Perkins tar patent på den første maskinen som lager kulde ved å fordampe og presse sammen en væske."
           },
           {
-            "year": 1913,
-            "description": "De første elektriske kjøleskapene for hjemmet kommer på markedet, men er dyre og upålitelige."
+            "year": 1920,
+            "description": "De første kjøleskapene med mekanisk kjøling kommer i amerikanske hjem, men er dyre."
           },
           {
             "year": 1930,
-            "description": "Kjøleskap blir trygge og billige nok til å bli vanlige i hjemmene."
+            "description": "Kjøleskap blir masseprodusert og etter hvert vanlige i amerikanske hjem."
+          },
+          {
+            "year": 1950,
+            "description": "De første kjøleskapene kommer inn i norske hjem."
           }
         ]
       }
@@ -153,7 +162,7 @@
     },
     {
       "type": "text",
-      "content": "Løsningen bygger på et enkelt triks fra naturen: når en væske fordamper og blir til gass, suger den til seg varme fra alt rundt seg. Det er derfor du fryser når du kommer våt opp av bassenget. Et kjøleskap har en spesiell væske som pumpes rundt i rør. Inne i skapet fordamper væsken og suger varmen ut av maten, så det blir kaldt. Bak skapet blir gassen presset sammen igjen og gir fra seg varmen, som du kjenner hvis du tar på baksiden. Slik flyttes varmen ut av skapet om og om igjen, helt automatisk."
+      "content": "Løsningen bygger på et enkelt triks fra naturen: når en væske fordamper og blir til gass, suger den til seg varme fra alt rundt seg. Det er derfor du fryser når du kommer våt opp av bassenget. Et kjøleskap har en spesiell væske som pumpes rundt i rør. Inne i skapet fordamper væsken og suger varmen ut av maten, så det blir kaldt. En pumpe som heter kompressor presser deretter gassen sammen, slik at den blir varmere enn rommet og kan gi fra seg varmen på baksiden av skapet (Bredesen, 2024). Slik flyttes varmen ut av skapet om og om igjen, helt automatisk. Den første maskinen som laget kulde på denne måten, fikk Jacob Perkins patent på i 1834 (ASME, u.å.)."
     },
     {
       "type": "component",
@@ -165,7 +174,7 @@
     },
     {
       "type": "text",
-      "content": "Et kjøleskap kan bare surre og gå hvis det får [strøm fra veggen](/historie/teknologi-og-hverdagsliv/elektrisiteten), og rundt 1930 ble kjøleskap trygge og billige nok til å stå i vanlige hjem. Det forandret hverdagen fullstendig. Nå kunne familien kjøpe fersk mat og ta vare på den i flere dager. Melk surnet ikke over natten, og rester kunne spises dagen etter. Folk slapp å handle hver eneste dag, og de slapp den salte vintermaten. Aller viktigst: langt færre ble syke av bedervet mat, fordi kjøleskapet holdt bakteriene i sjakk."
+      "content": "Et kjøleskap kan bare surre og gå hvis det får [strøm fra veggen](/historie/teknologi-og-hverdagsliv/elektrisiteten). Kjøleskap med mekanisk kjøling kom i amerikanske hjem i begynnelsen av 1920-årene, og et tiår senere ble de laget i stort antall. I Norge måtte folk vente helt til 1950-tallet før de første kjøleskapene kom (Bredesen, 2024). Der de kom inn, forandret de hverdagen fullstendig. Nå kunne familien kjøpe fersk mat og ta vare på den i flere dager. Melk surnet ikke over natten, og rester kunne spises dagen etter. Folk slapp å handle hver eneste dag, og de slapp den salte vintermaten. Aller viktigst: maten ble tryggere, fordi kulden holdt bakteriene i sjakk."
     },
     {
       "type": "component",
@@ -211,7 +220,7 @@
     },
     {
       "type": "text",
-      "content": "Da kjøleskapet kom, endret hele kostholdet seg. Før hadde mange spist tørr og salt mat store deler av året, og det er en av grunnene til at sykdommer i hjertet og magen var vanlige. Med kjøling kunne folk spise ferske grønnsaker, frukt, melk og fersk fisk hele året. Kostholdet ble mer variert, og dermed sunnere. Samtidig sank antallet matforgiftninger, fordi maten ikke lenger rakk å bli farlig før den ble spist."
+      "content": "Da kjøleskapet kom, endret hele kostholdet seg. Før hadde mange spist tørr og salt mat store deler av året, og maten på bordet ble ensformig store deler av vinteren. Med kjøling kunne folk spise ferske grønnsaker, frukt, melk og fersk fisk hele året. Kostholdet ble mer variert, og dermed sunnere. Fryseskapet gjør det samme, bare kraftigere: når vannet i maten blir til is, får ikke mikroorganismene brukt det, og nesten all biologisk aktivitet stanser opp (Hovig & Egeland, 2025)."
     },
     {
       "type": "text",
@@ -237,8 +246,8 @@
             "forstaa": [
                 "Hvorfor råtner mat, og hva trenger bakteriene for å vokse?",
                 "Hvordan virker salting for å bevare mat?",
-                "Hva var den store fordelen med hermetikk som ble oppfunnet i 1810?",
-                "Rundt hvilket årstall ble kjøleskap vanlige i vanlige hjem, og hva krevde de for å kunne fungere?"
+                "Hva var den store fordelen med hermetikken som kom tidlig på 1800-tallet?",
+                "Når kom kjøleskapet inn i amerikanske hjem, og når kom det til norske hjem? Hva må et kjøleskap ha for å kunne fungere?"
             ],
             "reflekter": [
                 "Forklar med egne ord hvorfor et kjøleskap ikke lager kulde, men flytter varme.",
@@ -282,7 +291,7 @@
             "explanation": "Salt trekker vannet ut av maten og ut av bakteriene selv. Uten vann kan ikke bakteriene leve, så maten holder seg. Baksiden er at maten blir veldig salt på smak."
           },
           {
-            "question": "Hva var hovedfordelen med hermetikk fra 1810?",
+            "question": "Hva var hovedfordelen med hermetikken?",
             "options": [
               "Maten ble billigere å lage",
               "Maten ble kald uten is",
@@ -308,12 +317,27 @@
             "options": [
               "Folk begynte å spise mer salt mat",
               "Folk måtte handle mat hver eneste dag",
-              "Folk fikk et mer variert kosthold og langt færre ble syke av bedervet mat",
+              "Folk fikk et mer variert kosthold, og maten ble tryggere å spise",
               "Folk sluttet helt å bruke hermetikk"
             ],
             "answer": 2,
-            "explanation": "Med kjøling kunne folk spise ferske grønnsaker, frukt, melk og fisk hele året i stedet for bare salt vintermat. Kostholdet ble sunnere, og færre ble syke fordi maten ikke rakk å bli farlig."
+            "explanation": "Med kjøling kunne folk spise ferske grønnsaker, frukt, melk og fisk hele året i stedet for bare salt vintermat. Kostholdet ble sunnere, og kulden bremset bakteriene så maten ikke rakk å bli farlig."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "ASME. (u.å.). *The Perkins Vapor-Compression Cycle*. The American Society of Mechanical Engineers. Hentet 02.08.2026 fra [asme.org](https://www.asme.org/about-asme/engineering-history/landmarks/274-perkins-vapor-compression-cycle-for-refrigeration)",
+          "Bredesen, A. M. (2024). *Kjøleskap*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/kjøleskap](https://snl.no/kj%C3%B8leskap)",
+          "Encyclopaedia Britannica. (2026). *Canning*. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/topic/canning-food-processing)",
+          "Hovig, I. E. & Egeland, E. S. (2025). *Konservering - mat*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/konservering_-_mat](https://snl.no/konservering_-_mat)",
+          "Høberg, E. N. (2024). *Tørrfisk*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/tørrfisk](https://snl.no/t%C3%B8rrfisk)",
+          "Store norske leksikon. (2024). *Salting*. Hentet 02.08.2026 fra [snl.no/salting](https://snl.no/salting)",
+          "Store norske leksikon. (2025). *Hermetikk*. Hentet 02.08.2026 fra [snl.no/hermetikk](https://snl.no/hermetikk)"
         ]
       }
     }
