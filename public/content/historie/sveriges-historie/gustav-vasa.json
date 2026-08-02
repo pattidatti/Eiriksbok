@@ -1,6 +1,6 @@
 {
     "id": "gustav-vasa",
-    "title": "Gustav Vasa — Sveriges grunnlegger",
+    "title": "Gustav Vasa - Sveriges grunnlegger",
     "layout": "rich",
     "year": "1496-1560",
     "category": "Sveriges historie",
@@ -14,13 +14,13 @@
     "content": [
         {
             "type": "text",
-            "content": "Vinteren 1521 jaget danske soldater en ung adelsmann gjennom snøkledde skoger i Dalarna. Faren hans var nettopp blitt halshugget i Stockholm. Hodet hans var verdt en formue for kong Christian II av Danmark. Han het Gustav Eriksson, og før vinteren var omme, hadde han samlet bønder med øks og lyst på frihet rundt seg. Tjuen år senere kalte hele Europa ham Gustav Vasa, og Sverige var hans."
+            "content": "Vinteren 1521 jaget danske soldater en ung adelsmann gjennom snøkledde skoger i Dalarna. Faren hans var nettopp blitt halshugget i Stockholm, sammen med to av onklene hans (Encyclopaedia Britannica, u.å.). Han het Gustav Eriksson, og før vinteren var omme, hadde han samlet bønder med øks og lyst på frihet rundt seg. To år senere var han valgt til konge av Sverige (Mardal, 2024). Ettertiden kaller ham Gustav Vasa."
         },
         {
             "type": "image",
             "src": "/images/sveriges-historie/gustav-vasa-01.webp",
             "alt": "Ung mann på ski jaktes gjennom snøkledd dalaskog 1521",
-            "caption": "Ifølge legenden flyktet Gustav Vasa på ski gjennom Dalarna. I dag minnes hendelsen i skirennet Vasaloppet, som går samme rute hvert år."
+            "caption": "Ifølge legenden flyktet Gustav Vasa på ski gjennom Dalarna. I dag går skirennet Vasaloppet motsatt vei av fluktruta hans fra 1521 (Bryhn, 2026)."
         },
         {
             "type": "header",
@@ -28,22 +28,22 @@
         },
         {
             "type": "text",
-            "content": "Gustav var født rundt 1496 inn i Vasa-familien, en mektig svensk adelsslekt. På denne tiden lå Sverige inne i Kalmarunionen — en sammenslåing av Danmark, Norge og Sverige under én konge. For mange svensker føltes unionen som dansk overherredømme, og de hadde lenge ulmet av motstand."
+            "content": "Gustav var født i 1496 inn i Vasa-familien, en mektig svensk adelsslekt (Mardal, 2024). På denne tiden lå Sverige inne i Kalmarunionen, en sammenslåing av Danmark, Norge og Sverige under én konge fra 1397 (Salvesen mfl., 2024). For mange svensker føltes unionen som dansk overherredømme, og de hadde lenge ulmet av motstand."
         },
         {
             "type": "text",
-            "content": "I 1520 marsjerte den danske kongen Christian II inn i Stockholm for å bli kronet. Like etter kroningen lot han nesten 100 svenske adelsmenn og prester henrette på torget. Hendelsen kalles Stockholms blodbad. En av de drepte var Erik Johansson Vasa, Gustavs far. Gustav selv satt fanget i Danmark, men flyktet hjem og prøvde å vekke svenskene til opprør."
+            "content": "I 1520 marsjerte den danske kongen Christian II inn i Stockholm for å bli kronet. Like etter kroningen lot han nesten 100 menn henrette på Stortorget: adelsmenn, biskoper, borgere i byen og tjenerne deres. Hendelsen kalles Stockholms blodbad (Mardal & Opsahl, 2024). En av de drepte var Erik Johansson Vasa, Gustavs far. Gustav hadde tidligere sittet i dansk fangenskap. Nå flyktet han til Dalarna og prøvde å vekke svenskene til opprør (Mardal, 2024)."
         },
         {
             "type": "text",
-            "content": "Først ville ingen høre på ham. Bøndene i Dalarna sa nei. Gustav var allerede på vei mot Norge da to skiløpere innhentet ham med beskjed om at folket likevel var klare. Han snudde, og slik begynte oppstanden. Snart kontrollerte Gustav store deler av landet. I 1523 valgte den svenske riksdagen ham til konge. Den 6. juni er fortsatt Sveriges nasjonaldag."
+            "content": "Først ville ingen høre på ham. Bøndene i Dalarna sa nei. Gustav var allerede på vei mot Norge da bud fra Mora hentet ham tilbake med beskjed om at folket likevel var klare (Bryhn, 2026). Han snudde, og slik begynte oppstanden. Snart kontrollerte Gustav store deler av landet. På riksmøtet i Strängnäs 6. juni 1523 ble han valgt til svensk konge (Mardal, 2024). Den 6. juni er i dag Sveriges nasjonaldag (Jönsson & Mæhlum, 2026)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Vasaloppet — historie blir myte",
-                "content": "Skiflukten gjennom Dalarna er kanskje pyntet på i ettertid. Men hver mars går nesten 16 000 skiløpere de 90 kilometerne fra Sälen til Mora i Vasaloppet — verdens største langrenn. Slik gjør et land en grunnleggermyte til levende fellesskap."
+                "title": "Vasaloppet - historie blir myte",
+                "content": "Skiflukten gjennom Dalarna er kanskje pyntet på i ettertid. Men hvert år går over 15 000 skiløpere de 90 kilometerne fra Sälen til Mora i Vasaloppet, et av verdens største langrenn. Løypa går motsatt vei av fluktruta til Gustav Vasa i 1521 (Bryhn, 2026). Slik gjør et land en grunnleggermyte til levende fellesskap."
             }
         },
         {
@@ -52,7 +52,7 @@
         },
         {
             "type": "text",
-            "content": "Den nye kongen arvet en knust statskasse. Sverige skyldte enorme summer til den tyske handelsbyen Lübeck, som hadde finansiert opprøret. Hvor skulle pengene komme fra? Svaret lå i et stort, rikt nettverk som ingen før hadde våget å røre: den katolske kirken. Klostre eide jord. Biskopene hadde sølv. Kirken kontrollerte minst en femtedel av all dyrket mark i Sverige."
+            "content": "Den nye kongen arvet en knust statskasse. Sverige skyldte enorme summer til den tyske handelsbyen Lübeck, som hadde støttet opprøret. Gjelden var så stor at den tvang fram harde skatter (Mardal, 2024; Encyclopaedia Britannica, u.å.). Hvor skulle pengene komme fra? Svaret lå i et stort, rikt nettverk som ingen før hadde våget å røre: den katolske kirken. Klostre eide jord. Biskopene hadde sølv og egne borger. Kirken var en av landets aller største jordeiere."
         },
         {
             "type": "text",
@@ -60,11 +60,11 @@
         },
         {
             "type": "text",
-            "content": "På riksdagen i Västerås i 1527 fikk Gustav vedtatt at kronen kunne konfiskere kirkens overskudd. Klostre ble stengt. Biskopene mistet land, soldater og rettsmakt. Bøndene merket lite forskjell i hverdagen først — gudstjenestene fortsatte i mange tiår på det gamle viset — men under overflaten ble Sverige i stillhet protestantisk. Statskassen vokste. Sverige kunne betale gjelden til Lübeck og bygge en hær."
+            "content": "På riksdagen i Västerås i 1527 fikk Gustav gjennomført en omfattende reduksjon av kirkegodset, og han ble selv overhode for kirken i Sverige (Mardal, 2024). Klostre ble stengt. Biskopene mistet land, borger og rettsmakt. Til slutt rådde kronen over rundt 60 prosent av jorda i riket (Salvesen mfl., 2025). Bøndene merket lite forskjell i hverdagen først, men under overflaten ble Sverige i stillhet protestantisk. Statskassen vokste. Sverige kunne betale gjelden til Lübeck og bygge en hær."
         },
         {
             "type": "text",
-            "content": "Men det var farlig. Bønder gjorde opprør flere ganger i 1520- og 1530-årene, særlig i Dalarna, som hadde gitt Gustav makten i utgangspunktet. Mange opplevde at kongen tok kirkesølvet de selv hadde skjenket gjennom generasjoner. Vasa slo opprørene ned hardt. Enkelte ledere ble henrettet, andre ble drept i bakhold etter falske invitasjoner til forhandlinger."
+            "content": "Men det var farlig. De tunge skattene fikk bøndene til å gjøre opprør flere ganger (Mardal, 2024), særlig i Dalarna, som hadde gitt Gustav makten i utgangspunktet. Mange opplevde at kongen tok kirkesølvet de selv hadde skjenket gjennom generasjoner. Vasa slo opprørene ned hardt, og flere av lederne ble henrettet."
         },
         {
             "type": "component",
@@ -83,25 +83,25 @@
         },
         {
             "type": "text",
-            "content": "I 1544 fikk han også igjennom at den svenske tronen skulle gå i arv i Vasa-familien. Før dette ble konger valgt av riksdagen. Nå ble Sverige et arvekongedømme. Når Gustav døde, var det sønnen Erik som overtok, og deretter brødrene hans. Maktsamlingen var fullført."
+            "content": "I 1544 fikk han også igjennom den såkalte Västerås arvforening, som gjorde Sverige til et arverike (Mardal, 2024). Før dette ble konger valgt av riksdagen. Nå gikk tronen automatisk videre i Vasa-familien (Encyclopaedia Britannica, u.å.). Da Gustav døde i 1560, var det sønnen Erik som overtok. Maktsamlingen var fullført."
         },
         {
             "type": "image",
             "src": "/images/sveriges-historie/gustav-vasa-02.webp",
             "alt": "Konge med skjegg og krone holder regnskapsbok ved tronstol",
-            "caption": "Gustav Vasa regjerte til han døde i 1560. Han er kanskje den første nordiske kongen som styrte et land som om det var et stort gods — med regnskap, fogder og hardt grep om hver krone."
+            "caption": "Gustav Vasa regjerte til han døde i 1560 (Encyclopaedia Britannica, u.å.). Han er kanskje den første nordiske kongen som styrte et land som om det var et stort gods, med regnskap, fogder og hardt grep om hver krone."
         },
         {
             "type": "header",
-            "text": "Bibelen på svensk — språk som maktverktøy"
+            "text": "Bibelen på svensk - språk som maktverktøy"
         },
         {
             "type": "text",
-            "content": "I 1541 kom Vasa-bibelen ut — den første hele Bibelen på svensk. Det høres kanskje uskyldig ut, men det forandret landet. Før dette ble gudstjenestene holdt på latin, et språk vanlige bønder ikke forstod. Når presten leste fra en svensk bibel, ble det religiøse plutselig tilgjengelig for alle. Samtidig ble svensk språk standardisert nedover i landet. Folk i sør og folk i nord begynte å lese den samme teksten på samme måte."
+            "content": "I 1541 kom Vasa-bibelen ut, den første hele Bibelen på svensk (Nationalencyklopedin, u.å.). Det høres kanskje uskyldig ut, men det forandret landet. Før dette ble gudstjenestene holdt på latin, et språk vanlige bønder ikke forstod. Når presten leste fra en svensk bibel, ble det religiøse plutselig tilgjengelig for alle. Samtidig la oversettelsen grunnlaget for et felles svensk skriftspråk, og den ble stående som den svenske bibelteksten helt til 1917 (Nationalencyklopedin, u.å.)."
         },
         {
             "type": "text",
-            "content": "Gustav forstod at språk er makt. Ved å gjøre Bibelen til folkets bok, knyttet han kongen, kirken og det vanlige hverdagslivet sammen i én svensk fortelling. Dette er en stille, men kraftig form for nasjonsbygging — lenge før ordet 'nasjon' fantes slik vi bruker det i dag."
+            "content": "Gustav forstod at språk er makt. Ved å gjøre Bibelen til folkets bok, knyttet han kongen, kirken og det vanlige hverdagslivet sammen i én svensk fortelling. Dette er en stille, men kraftig form for nasjonsbygging, lenge før ordet 'nasjon' fantes slik vi bruker det i dag."
         },
         {
             "type": "header",
@@ -109,7 +109,7 @@
         },
         {
             "type": "text",
-            "content": "Da Sverige forlot Kalmarunionen i 1523, ble Norge værende igjen under den danske kongen. Det betydde at mens Sverige bygde sitt eget statsapparat under Vasa, ble Norge bare en del av Danmark-Norge. Først 291 år senere, i 1814, fikk Norge sin egen grunnlov igjen. Du kan si at Vasas opprør formet hele Nordens kart for nesten 300 år framover."
+            "content": "Da Sverige forlot Kalmarunionen i 1523, ble Norge værende igjen under den danske kongen. Sverige brøt ut av unionen, mens Norge ble politisk underlagt Danmark (Salvesen mfl., 2024). Det betydde at mens Sverige bygde sitt eget statsapparat under Vasa, ble Norge bare en del av Danmark-Norge. Først nesten 300 år senere, i 1814, fikk Norge sin egen grunnlov. Du kan si at Vasas opprør formet hele Nordens kart for århundrer framover."
         },
         {
             "type": "header",
@@ -117,19 +117,11 @@
         },
         {
             "type": "text",
-            "content": "Gustav Vasa er ikke en helt uten skygger. Han var hard, mistenksom og lite redd for å bryte ord når det tjente ham. Men han ga Sverige tre ting som varte: en sentral stat, en egen kirke under kongen, og en fortelling om at svensker selv hadde valgt sin frihet. Sønnesønnen Gustav II Adolf brukte dette grunnlaget til å gjøre Sverige til stormakt i 1600-tallet."
+            "content": "Gustav Vasa er ikke en helt uten skygger. Han var hard, mistenksom og lite redd for å bryte ord når det tjente ham. Men han ga Sverige tre ting som varte: en sentral stat, en egen kirke under kongen, og en fortelling om at svensker selv hadde valgt sin frihet. Sønnesønnen Gustav II Adolf brukte dette grunnlaget til å gjøre Sverige til stormakt på 1600-tallet (Salvesen mfl., 2025)."
         },
         {
             "type": "text",
-            "content": "Når historikere i dag prøver å forstå hvordan moderne stater oppstår, er Vasa et lærebokeksempel. Han viser at maktsamling sjelden skjer ved sverd alene. Det skjer når en leder samtidig kontrollerer pengestrømmen, det daglige byråkratiet, og fortellingen om hvem folket er. Tre spaker, dratt på samme tid — det er oppskriften."
-        },
-        {
-            "type": "component",
-            "name": "QuoteBlock",
-            "props": {
-                "author": "Gustav Vasa, brev til riksdagen 1544",
-                "content": "Den som vil regjere et folk, må først regjere over deres handlemåte og deres tro."
-            }
+            "content": "Når historikere i dag prøver å forstå hvordan moderne stater oppstår, er Vasa et lærebokeksempel. Han viser at maktsamling sjelden skjer ved sverd alene. Det skjer når en leder samtidig kontrollerer pengestrømmen, det daglige byråkratiet, og fortellingen om hvem folket er. Tre spaker, dratt på samme tid - det er oppskriften."
         },
         {
             "type": "component",
@@ -138,7 +130,7 @@
                 "forstaa": [
                     "Hva var Stockholms blodbad i 1520, og hvem av Gustavs egen familie ble drept der?",
                     "Hvorfor ville Gustav Vasa bryte med paven og støtte reformasjonen? Forklar med tanke på statskassen og gjelden til Lübeck.",
-                    "Hva vedtok riksdagen i Västerås i 1527, og hva betydde det for den katolske kirken i Sverige?",
+                    "Hva ble vedtatt på riksdagen i Västerås i 1527, og hva betydde det for den katolske kirken i Sverige?",
                     "Hva skjedde med Norge da Sverige forlot Kalmarunionen i 1523, og hvor lenge varte det?"
                 ],
                 "reflekter": [
@@ -148,9 +140,9 @@
                     "Teksten sier at Gustav Vasa ikke er en helt uten skygger. Vei det han skapte mot måten han skaffet seg makt på, og gi din egen vurdering av om han fortjener å hylles."
                 ],
                 "gaaVidere": [
-                    "Hver mars går nesten 16 000 skiløpere Vasaloppet fra Sälen til Mora. Skriv et kort avsnitt om hvorfor et land kan ønske å holde liv i en grunnleggermyte gjennom en årlig folkefest.",
+                    "Hvert år går over 15 000 skiløpere Vasaloppet fra Sälen til Mora. Skriv et kort avsnitt om hvorfor et land kan ønske å holde liv i en grunnleggermyte gjennom en årlig folkefest.",
                     "Gustav Vasa kontrollerte penger, byråkrati og fortelling på samme tid. Finn et eksempel fra vår egen tid der en leder eller stat prøver å styre alle tre samtidig, og forklar likheten.",
-                    "Diskuter i klassen: Sitatet sier at den som vil regjere et folk, må regjere over deres handlemåte og tro. Er dette en klok statskunst eller et farlig maktprinsipp?"
+                    "Diskuter i klassen: Gustav Vasa styrte både pengene, byråkratiet og fortellingen om hvem svenskene var. Er det klok statskunst, eller et farlig maktprinsipp, når én leder kontrollerer alle tre?"
                 ]
             }
         },
@@ -168,7 +160,7 @@
                             "At paven krevde mer skatt fra Sverige"
                         ],
                         "answer": 0,
-                        "explanation": "Etter at den danske kongen henrettet om lag 100 svenske adelsmenn og prester — inkludert Gustavs far — flyktet Gustav til Dalarna og samlet bønder til opprør."
+                        "explanation": "Etter at den danske kongen lot nesten 100 menn henrette på Stortorget i Stockholm, blant dem Gustavs far, flyktet Gustav til Dalarna og samlet bønder til opprør."
                     },
                     {
                         "question": "Hvorfor støttet Gustav Vasa reformasjonen i Sverige?",
@@ -190,7 +182,7 @@
                             "Konger måtte selv kjøpe tronen av riksdagen"
                         ],
                         "answer": 2,
-                        "explanation": "Før Vasa ble svenske konger valgt av riksdagen. Etter 1544 gikk tronen automatisk i arv i Vasa-familien, og makten ble sentralisert hos én slekt."
+                        "explanation": "Før Vasa ble svenske konger valgt av riksdagen. Med Västerås arvforening i 1544 gikk tronen automatisk i arv i Vasa-familien, og makten ble samlet hos én slekt."
                     },
                     {
                         "question": "Hvilke tre maktgrep brukte Gustav Vasa samtidig?",
@@ -216,7 +208,24 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bryhn, R. (2026). *Vasaloppet*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Vasaloppet](https://snl.no/Vasaloppet)",
+                    "Encyclopaedia Britannica. (u.å.). *Gustav I Vasa*. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/biography/Gustav-I-Vasa)",
+                    "Jönsson, A. & Mæhlum, L. (2026). *Sverige*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Sverige](https://snl.no/Sverige)",
+                    "Mardal, M. A. (2024). *Gustav 1. Vasa*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Gustav_1_Vasa](https://snl.no/Gustav_1_Vasa)",
+                    "Mardal, M. A. & Opsahl, E. (2024). *Stockholms blodbad*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Stockholms_blodbad](https://snl.no/Stockholms_blodbad)",
+                    "Nationalencyklopedin. (u.å.). *Gustav Vasas bibel*. Hentet 02.08.2026 fra [ne.se](https://www.ne.se/uppslagsverk/encyklopedi/l%C3%A5ng/gustav-vasas-bibel)",
+                    "Salvesen, H., Norseng, P. G., Opsahl, E. & Scott, I. (2024). *Kalmarunionen*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Kalmarunionen](https://snl.no/Kalmarunionen)",
+                    "Salvesen, H., Norseng, P. G., Mardal, M. A. mfl. (2025). *Sveriges historie*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Sveriges_historie](https://snl.no/Sveriges_historie)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-02"
 }
