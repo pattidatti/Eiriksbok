@@ -159,6 +159,7 @@ const KongedagbokenMG = lazy(() => import('./KongedagbokenMG'));
 const HoldNordvegen3D = lazy(() => import('./HoldNordvegen3D'));
 const HavfolkeneKommer3D = lazy(() => import('./HavfolkeneKommer3D'));
 const Malstanga3D = lazy(() => import('./Malstanga3D'));
+const EdiktSoylene3D = lazy(() => import('./EdiktSoylene3D'));
 const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
@@ -1576,6 +1577,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Malstanga3D'),
         Component: Malstanga3D as never,
+    },
+    'edikt-soylene': {
+        id: 'edikt-soylene',
+        title: 'Reis ediktsøylene',
+        description:
+            'Du er Ashoka med fem søyler og seks provinser. Dra søylene ut i riket mens tiden renner ut: en provins som ingen søyle rekker fram til, glemmer budskapet og slukner igjen. Skal du klare alle seks, må én søyle stå midt mellom to naboer. Lyspæren: riket var større enn keiserens stemme, og derfor måtte den samme beskjeden stå hugget i stein i hver eneste avkrok.',
+        estimatedSeconds: 150,
+        loader: () => import('./EdiktSoylene3D'),
+        Component: EdiktSoylene3D as never,
     },
 };
 
