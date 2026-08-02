@@ -2289,26 +2289,6 @@
       "geoConfidence": "tag"
     },
     {
-      "id": "jordbrukets-historie",
-      "title": "Jordbrukets historie: fra hakke til traktor",
-      "description": "Fra den enkle arden til skurtreskeren: hvordan plog, vekselbruk, kunstgjødsel og den grønne revolusjonen gjorde at samme åker kunne fø stadig flere folk.",
-      "startDate": 900,
-      "endDate": 1968,
-      "displayDate": "900-1968",
-      "type": "lesson",
-      "subjectId": "historie",
-      "topicId": "teknologi-og-hverdagsliv",
-      "link": "/historie/teknologi-og-hverdagsliv/jordbrukets-historie",
-      "tags": [
-        "historie",
-        "teknologi",
-        "hverdagsliv",
-        "jordbruk",
-        "mat",
-        "oppfinnelser"
-      ]
-    },
-    {
       "id": "normandie",
       "title": "Normandie: Fra Vikinger til Riddere",
       "description": "Hvordan en gjeng norske og danske vikinger ble Europas mektigste riddere.",
@@ -2431,6 +2411,26 @@
         "kildekritikk",
         "mysterier",
         "oppdagelsesreiser"
+      ]
+    },
+    {
+      "id": "jordbrukets-historie",
+      "title": "Jordbrukets historie: fra hakke til traktor",
+      "description": "Fra den enkle arden til skurtreskeren: hvordan plog, vekselbruk, kunstgjødsel og den grønne revolusjonen gjorde at samme åker kunne fø stadig flere folk.",
+      "startDate": 1000,
+      "endDate": 1968,
+      "displayDate": "1000-1968",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "teknologi-og-hverdagsliv",
+      "link": "/historie/teknologi-og-hverdagsliv/jordbrukets-historie",
+      "tags": [
+        "historie",
+        "teknologi",
+        "hverdagsliv",
+        "jordbruk",
+        "mat",
+        "oppfinnelser"
       ]
     },
     {
