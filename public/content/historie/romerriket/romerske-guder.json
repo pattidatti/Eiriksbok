@@ -24,19 +24,19 @@
         {
             "type": "text",
             "title": "En Verden Full av Guder",
-            "content": "For en romer var verden myldrende full av guder og ånder. Det var ikke bare de store gudene oppe på fjellet Olympen (eller Kapitolhøyden i Roma) som betydde noe. Hver elv hadde sin gud, hver skog sin ånd, og til og med hver dørstokk i huset hadde sin egen beskytter (guden Janus).\n\nReligion i Romerriket handlet mindre om hva du *trodde* på inni deg, og mer om hva du *gjorde*. Det var en kontrakt: Du ga gudene ofringer og respekt, og til gjengjeld ga de deg beskyttelse og lykke. Dette konseptet kalte romerne for do ut des – «jeg gir for at du skal gi»."
+            "content": "For en romer var verden myldrende full av guder og ånder. Den romerske religionen var polyteistisk: romerne dyrket mange guder samtidig, med himmelguden Jupiter som den øverste (Lindhagen, 2026b). Det var ikke bare de store gudene oppe på fjellet Olympen (eller Kapitolhøyden i Roma) som betydde noe. Hver elv hadde sin gud, hver skog sin ånd, og til og med husdørene hadde sin egen beskytter: guden Janus, som har navnet sitt fra det latinske ordet for dør, *ianua* (Lindhagen, 2026b).\n\nReligion i Romerriket handlet mindre om hva du *trodde* på inni deg, og mer om hva du *gjorde*. Den var rituell og kultisk. Det viktigste var å utføre bønn, seremonier og offer på riktig måte. Det var en slags kontrakt: Du ga gudene ofringer og respekt, og til gjengjeld ga de deg beskyttelse og lykke. Dette kalte romerne do ut des - «jeg gir slik at du også må gi» (Lindhagen, 2026b)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Pax Deorum – Fred med Gudene",
-                "content": "Pax Deorum betyr «Gudenes Fred». Romerne trodde at så lenge de opprettholdt denne freden gjennom korrekte ritualer og ofringer, ville riket bestå. Hvis noe gikk galt – som pest, krigsnederlag eller naturkatastrofer – var det et tegn på at Pax Deorum var brutt. Da måtte staten finne ut hvilken gud som var fornærmet og blidgjøre den."
+                "title": "Pax deorum - fred med gudene",
+                "content": "Pax deorum betyr «gudenes fred». Romerne trodde at så lenge de holdt på denne fredspakten gjennom riktige ritualer og ofringer, ville riket bestå. Hvis noe gikk galt, som pest, krigsnederlag eller naturkatastrofer, var det et tegn på at freden var brutt. Da måtte staten finne ut hvilken gud som var fornærmet og blidgjøre den."
             }
         },
         {
             "type": "text",
-            "content": "### Fra Grekenland til Roma\n\nRomerne var praktiske folk. Når de erobret nye områder, så de ofte at lokalbefolkningens guder lignet på deres egne. «Åja, dere ber til en tordengud som er sjefen? Det må være Jupiter!» tenkte de. Slik absorberte de andre kulturers guder inn i sin egen religion. \n\nMest av alt ble de påvirket av grekerne. Nesten alle de store romerske gudene fikk etter hvert en gresk «tvilling» med samme historier og personlighet, bare med et nytt romersk navn."
+            "content": "### Fra Grekenland til Roma\n\nRomerne var praktiske folk. Når de erobret nye områder, så de ofte at lokalbefolkningens guder lignet på deres egne. «Åja, dere ber til en tordengud som er sjefen? Det må være Jupiter!» tenkte de. Slik tok de andre kulturers guder inn i sin egen religion. \n\nMest av alt ble de påvirket av grekerne. I republikkens tid ble de romerske gudene assimilert med de greske, altså smeltet sammen med dem (Lindhagen, 2026b). Nesten alle de store romerske gudene fikk en gresk «tvilling» med de samme historiene, bare med et nytt navn. Samtidig beholdt de romerske gudene sine egne, særegne trekk (Lindhagen, 2026b)."
         },
         {
             "type": "component",
@@ -87,7 +87,7 @@
         {
             "type": "text",
             "title": "Utforsk Pantheon",
-            "content": "Ordet Pantheon betyr «alle guder». I Roma bygde de til og med et tempel med dette navnet (som står den dag i dag!) for å ære alle gudene samtidig. Her kan du bli kjent med de viktigste av dem."
+            "content": "Ordet Pantheon er gresk og betyr «for alle guder». I Roma bygde de til og med et tempel med dette navnet for å ære alle gudene samtidig. Bygningen ble gjort om til kirke i år 609 og står fortsatt godt bevart på Piazza della Rotonda (Østby, 2025). Her kan du bli kjent med de viktigste gudene."
         },
         {
             "type": "component",
@@ -96,12 +96,12 @@
         {
             "type": "text",
             "title": "Religion som Maktmiddel",
-            "content": "Religion var ikke privat i Roma; det var politikk. Prester var ofte politikere, og politikere var prester. Julius Cæsar var for eksempel *Pontifex Maximus* (yppersteprest) lenge før han ble diktator.\n\n### Keiserdyrkelse\nEtter hvert som keiserne fikk mer makt, begynte grensen mellom menneske og gud å viskes ut. Da den første keiseren, Augustus, døde, erklærte senatet at han var blitt en gud. Senere keisere krevde å bli tilbedt mens de fortsatt levde! Å nekte å ofre til keiseren ble sett på som forræderi mot staten – noe som skapte store problemer for de tidlige kristne, som nektet å tilbe andre enn sin egen Gud."
+            "content": "Religion var ikke privat i Roma; det var politikk. Prester var ofte politikere, og politikere var prester. Ypperstepresten, *pontifex maximus*, ledet et kollegium på seksten prester som skulle passe på at forholdet til gudene var i orden (Lindhagen, 2026b). Julius Cæsar ble yppersteprest allerede i år 63 fvt., fjorten år før han ble valgt til diktator (Andersen et al., 2024).\n\n### Keiserdyrkelse\nEtter hvert som keiserne fikk mer makt, begynte grensen mellom menneske og gud å viskes ut. Rundt år 10 fvt. ble det innført en offisiell keiserdyrkelse til ære for Augustus' beskytterånd. Da Augustus døde, erklærte senatet ham for guddommelig, *divus* (Lindhagen, 2026a). De aller fleste keiserne ble altså først gjort til guder etter at de var døde. Bare Caligula og Domitian ville æres som guder mens de ennå levde (Lindhagen, 2026a). De tidlige kristne vegret seg for å ofre til keiseren, siden de bare ville tilbe sin egen Gud. Det var kanskje den viktigste grunnen til at kristne etter hvert ble forfulgt (Lindhagen, 2026a)."
         },
         {
             "type": "text",
             "title": "Livet etter døden",
-            "content": "Romerne hadde ikke en like klar idé om himmel og helvete som kristendommen har. De trodde at de døde levde videre som skygger i underverdenen. Men de trodde også at forfedrenes ånder (Lares og Penates) passet på familien. Derfor hadde alle romerske hjem et lite alter hvor de ofret mat og vin til sine forfedre hver dag."
+            "content": "Romerne hadde ikke en like klar idé om himmel og helvete som kristendommen har. De døde ble tenkt på som en upersonlig samling av ånder, *dis manes*. De var velvillige og trengte bare mindre ofringer på gravplassene (Lindhagen, 2026b). Hjemme var det husgudene Lares og Penates og forfedrene som passet på familien. Familiefaren, *pater familias*, ofret til dem hver dag ved husalteret, som romerne kalte *lararium* (Lindhagen, 2026b)."
         },
         {
             "type": "component",
@@ -119,13 +119,13 @@
                     "Hva betyr uttrykket 'do ut des', og hva forteller det om hvordan romerne så på forholdet mellom mennesker og guder?",
                     "Hva var Pax Deorum, og hva trodde romerne skjedde hvis denne freden ble brutt?",
                     "Hva er de romerske navnene på de greske gudene Zevs, Ares og Athene?",
-                    "Hvem var Lares og Penates, og hva gjorde romerne for dem hjemme hver dag?"
+                    "Hvem var Lares og Penates, og hva gjorde familiefaren for dem hjemme hver dag?"
                 ],
                 "reflekter": [
                     "Teksten sier at romersk religion handlet mer om hva du gjorde enn hva du trodde inni deg. Forklar med egne ord hvorfor ofringer og ritualer da ble så viktige.",
                     "Da romerne erobret nye områder, tenkte de ofte at fremmede guder egentlig var deres egne under nye navn. Hvorfor kan en slik måte å tenke på ha gjort det lettere å styre et stort rike?",
                     "Julius Cæsar var yppersteprest lenge før han ble diktator. Forklar hvordan det å blande religion og politikk kunne gi en person mer makt i Roma.",
-                    "Keiserdyrkelsen skapte store problemer for de tidlige kristne. Forklar hvorfor det å nekte å ofre til keiseren ble sett på som forræderi mot staten, og ikke bare som en privat tro."
+                    "Keiserdyrkelsen skapte store problemer for de tidlige kristne. Forklar hvorfor det å nekte å ofre til keiseren ble et problem for staten, og ikke bare en privat sak."
                 ],
                 "gaaVidere": [
                     "Romerne hadde en beskytter for nesten alt, til og med for dørstokken (guden Janus). Finn tre steder eller ting i ditt eget liv du tror en romer ville gitt sin egen beskyttergud, og forklar hvorfor.",
@@ -133,8 +133,21 @@
                     "Diskuter i klassen: Finnes det i dag eksempler på ledere eller symboler som mennesker nesten tilber eller viser overdreven respekt? Sammenlign med den romerske keiserdyrkelsen."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, Ø., Steen, T. & Iddeng, J. W. (2024). *Julius Caesar*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Julius_Caesar](https://snl.no/Julius_Caesar)",
+                    "Lindhagen, A. (2026a). *Keiserkult*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/keiserkult](https://snl.no/keiserkult)",
+                    "Lindhagen, A. (2026b). *Romersk religion*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/romersk_religion](https://snl.no/romersk_religion)",
+                    "Østby, E. (2025). *Pantheon*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Pantheon](https://snl.no/Pantheon)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-08-02",
     "quiz": [
         {
             "question": "Hva er det romerske navnet på den greske guden Zevs?",
