@@ -6,6 +6,7 @@
   "category": "Teknologi og hverdagsliv",
   "readTime": "8 min lesning",
   "heroImage": "/images/teknologi-og-hverdagsliv/vann-og-vindmolla-hero.webp",
+  "lastUpdated": "2026-08-02",
   "details": [
     "I tusenvis av år var muskler den eneste kraften mennesker hadde. Møllene var første gang noe annet enn armer og bein gjorde jobben.",
     "Et vannhjul i en elv kunne male korn døgnet rundt og erstatte arbeidet til titalls mennesker.",
@@ -37,7 +38,7 @@
     },
     {
       "type": "text",
-      "content": "Romerne fant en bedre måte. De bygde et stort hjul av tre og satte det ut i en rennende elv. Vannet som rant forbi, dyttet på skovlene, altså de flate platene rundt hjulet, og fikk hjulet til å snurre. En aksling, en slags roterende stang, førte kraften inn til kvernsteinene inne i mølla. Slik kunne elva male kornet helt av seg selv. Den store fordelen var enkel: elva blir aldri trøtt. Den renner like sterkt om natten som om dagen, og den trenger verken mat eller hvile. En eneste vannmølle kunne male like mye korn som mange titalls mennesker klarte med håndkvern. Det som før tok en hel landsby en hel dag, kunne nå gjøres mens folk sov."
+      "content": "Romerne fant en bedre måte. Vannhjulet er en av de eldste maskinene vi kjenner til, og i Romerriket ble det brukt til å drive kvernsteiner (Rosvold, 2025). De bygde et stort hjul av tre og satte det ut i en rennende elv. Vannet som rant forbi, dyttet på skovlene, altså de flate platene rundt hjulet, og fikk hjulet til å snurre. En aksling, en slags roterende stang, førte kraften inn til kvernsteinene inne i mølla (Dybdahl, 2024). Slik kunne elva male kornet helt av seg selv. Den store fordelen var enkel: elva blir aldri trøtt. Den renner like sterkt om natten som om dagen, og den trenger verken mat eller hvile. En eneste vannmølle kunne male like mye korn som mange titalls mennesker klarte med håndkvern. Det som før tok en hel landsby en hel dag, kunne nå gjøres mens folk sov."
     },
     {
       "type": "component",
@@ -76,14 +77,14 @@
     },
     {
       "type": "text",
-      "content": "Folk skjønte snart at den samme kraften kunne brukes til mye mer enn å male korn. Med noen smarte tannhjul og stenger kunne den runde bevegelsen til hjulet gjøres om til andre slags bevegelser. På den måten drev vannet sager som skar tømmer til planker, store hamre som banket jern til redskaper, og kverner som malte mel til papir. I middelalderen ble Europa fullt av møller. På 1000-tallet alene fantes det flere tusen vannmøller bare i England. Mølla ble selve motoren i landsbyen, og den som eide den, eide makt. Mange steder måtte bøndene betale en avgift for å få male kornet sitt, og kongen eller klosteret tok gjerne en del av melet som betaling."
+      "content": "Folk skjønte snart at den samme kraften kunne brukes til mye mer enn å male korn. Med noen smarte tannhjul og stenger kunne den runde bevegelsen til hjulet gjøres om til andre slags bevegelser. På den måten drev vannhjulet også pumper og sager (Rosvold, 2025). Oppgangssaga, som skar tømmer til planker og bord, ble drevet av vannkraft alt fra 1230-tallet (Tronstad, 2024). I hammerverkene løftet vannkraften en tung hammer som falt ned og formet glødende jern til redskaper (Hofstad, 2023). I middelalderen ble Europa fullt av møller. Mølla ble selve motoren i landsbyen, og den som eide den, eide makt. Mange steder måtte bøndene betale en avgift for å få male kornet sitt, og kongen eller klosteret tok gjerne en del av melet som betaling. Hvor verdifulle møllene var, ser vi av at de ble skrevet ned sammen med jord og husdyr da Vilhelm Erobreren fikk laget Domesday Book i 1086 (Lunga, 2025)."
     },
     {
       "type": "component",
       "name": "FactBox",
       "props": {
-        "title": "Møller overalt",
-        "content": "I 1086 laget kongen i England en stor oversikt over hele landet, kalt Domesday Book. Den listet opp over 6000 vannmøller. Det betyr at det fantes en mølle for omtrent hver femtiende familie. Møllene var så verdifulle at de ble nøye notert ned, akkurat som åkrer og husdyr. For en middelalderlandsby var mølla like viktig som strømmen er for oss i dag."
+        "title": "Møllene i Domesday Book",
+        "content": "I 1086 beordret Vilhelm Erobreren en stor oversikt over alle jordeiendommer i England, kalt Domesday Book. Der ble ikke bare jord og husdyr skrevet ned, men også fiskedammer, ploger og møller, gård for gård. At møllene ble talt opp på linje med åkrer og buskap, forteller hvor verdifulle de var. For en middelalderlandsby var mølla like viktig som strømmen er for oss i dag."
       }
     },
     {
@@ -92,7 +93,7 @@
     },
     {
       "type": "text",
-      "content": "Det var bare ett problem med vannmølla: den trengte en elv. På flate, tørre sletter, eller langs kysten der landet var nesten uten fall i terrenget, rant det ikke noe vann med kraft nok. Løsningen kom fra himmelen. På 1100-tallet begynte folk i Europa å bygge vindmøller. I stedet for et hjul i en elv hadde de store seil eller vinger som fanget vinden. Når vinden blåste, snurret vingene rundt og drev de samme kvernsteinene som vannmøllene brukte. I land som Nederland, der det var flatt og vått og blåste mye, ble vindmølla helt avgjørende. Der brukte de den ikke bare til å male korn, men også til å pumpe vann bort fra lavtliggende land, slik at folk kunne bo og dyrke jord der det før hadde vært myr og hav."
+      "content": "Det var bare ett problem med vannmølla: den trengte en elv. På flate, tørre sletter, eller langs kysten der landet var nesten uten fall i terrenget, rant det ikke noe vann med kraft nok. Løsningen kom fra himmelen. Fra 1100-tallet ble vindmøller stadig vanligere i Europa, og vindmølla med vannrett aksling er trolig en europeisk oppfinnelse (Encyclopaedia Britannica, u.å.; Mæhlum & Rosvold, 2024). I stedet for et hjul i en elv hadde de store seil eller vinger som fanget vinden. Når vinden blåste, snurret vingene rundt og drev de samme kvernsteinene som vannmøllene brukte. Den viktigste jobben var lenge å male korn. I land som Nederland, der det var flatt og vått og blåste mye, ble vindmølla helt avgjørende. Der brukte de den ikke bare til å male korn, men også til å pumpe vann bort fra lavtliggende land, slik at folk kunne bo og dyrke jord der det før hadde vært myr og hav (Mæhlum & Rosvold, 2024)."
     },
     {
       "type": "image",
@@ -107,7 +108,7 @@
         "title": "Sett mølle-historien i riktig rekkefølge",
         "events": [
           { "id": "romerske-vannmoller", "year": 100, "label": "Romerne bygger vannmøller som maler korn med kraft fra elver" },
-          { "id": "domesday", "year": 1086, "label": "Domesday Book teller over 6000 vannmøller i England" },
+          { "id": "domesday", "year": 1086, "label": "Domesday Book noterer møllene i England, gård for gård" },
           { "id": "vindmoller", "year": 1180, "label": "De første vindmøllene dukker opp i Europa" },
           { "id": "nederland", "year": 1450, "label": "Nederland pumper vann bort med vindmøller og vinner land fra havet" },
           { "id": "foer-damp", "year": 1750, "label": "Møllene har drevet industrien i tusen år, rett før dampmaskinen tar over" }
@@ -129,7 +130,7 @@
     },
     {
       "type": "text",
-      "content": "Nettopp her ligger den store ideen som mølla pekte fram mot. Tenk om noen kunne lage en kraft som ikke var bundet til verken elv eller vind. En kraft du kunne ta med deg hvor som helst og skru på når du ville. Det var akkurat det som skjedde noen hundre år senere. Da [dampmaskinen](/historie/industriell-revolusjon/dampmaskinen) kom på 1700-tallet, kunne folk plutselig lage kraft hvor de ville, bare de hadde kull og vann. Men dampmaskinen sto på skuldrene til møllene. I hundrevis av år hadde mølla allerede lært menneskene den viktigste leksjonen av alle: at naturen kunne gjøre det tunge arbeidet for oss."
+      "content": "Nettopp her ligger den store ideen som mølla pekte fram mot. Tenk om noen kunne lage en kraft som ikke var bundet til verken elv eller vind. En kraft du kunne ta med deg hvor som helst og skru på når du ville. Det var akkurat det som skjedde noen hundre år senere. Den første dampmaskinen som virkelig kunne brukes, ble bygd av Thomas Newcomen i 1712, og James Watt forbedret den kraftig fra 1769 (Johnson, 2022). Da Watt hadde ferdig en dampmaskin som kunne brukes til det meste, trengte man ikke lenger legge fabrikkene der det fantes vannkraft; de kunne i stedet samles ved gruvene eller i havnebyene (Schrumpf mfl., 2024). Plutselig kunne folk lage kraft der de ville, bare de hadde kull og vann. Men dampmaskinen sto på skuldrene til møllene. I hundrevis av år hadde mølla allerede lært menneskene den viktigste leksjonen av alle: at naturen kunne gjøre det tunge arbeidet for oss."
     },
     {
       "type": "text",
@@ -160,7 +161,7 @@
             ],
             "reflekter": [
                 "Teksten sier at elva aldri blir trøtt, mens et menneske må spise, sove og hvile. Forklar hvorfor akkurat dette gjorde vannmølla så mye kraftigere enn en håndkvern.",
-                "Domesday Book fra 1086 listet over 6000 vannmøller i England. Hva forteller det oss om hvor viktig mølla var for en middelalderlandsby?",
+                "Domesday Book fra 1086 talte opp møllene i England på linje med åkrer og husdyr. Hva forteller det oss om hvor viktig mølla var for en middelalderlandsby?",
                 "Både vannmølla og vindmølla hadde samme svakhet: de var bundet til naturen. Forklar hva dette betydde for hvor byer og verksteder måtte ligge.",
                 "Teksten sier at den som eide mølla, eide makt. Hvorfor ga det makt å eie mølla i landsbyen?"
             ],
@@ -231,6 +232,23 @@
             "answer": 1,
             "explanation": "Møllene måtte stå der naturen ga kraft, ved en elv eller på et vindfullt sted. Dampmaskinen kunne derimot lage kraft hvor som helst, bare den hadde kull og vann."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Dybdahl, A. (2024). *Mølle*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/mølle](https://snl.no/m%C3%B8lle)",
+          "Encyclopaedia Britannica. (u.å.). *Windmill*. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/technology/windmill)",
+          "Hofstad, K. (2023). *Hammerverk*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/hammerverk](https://snl.no/hammerverk)",
+          "Johnson, D. G. (2022). *Dampmaskin*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/dampmaskin](https://snl.no/dampmaskin)",
+          "Lunga, P. S. (2025). *Domesday Book*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Domesday_Book](https://snl.no/Domesday_Book)",
+          "Mæhlum, L. & Rosvold, K. A. (2024). *Vindmølle*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/vindmølle](https://snl.no/vindm%C3%B8lle)",
+          "Rosvold, K. A. (2025). *Vannhjul*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/vannhjul](https://snl.no/vannhjul)",
+          "Schrumpf, E. mfl. (2024). *Den industrielle revolusjon*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/den_industrielle_revolusjon](https://snl.no/den_industrielle_revolusjon)",
+          "Tronstad, S. (2024). *Oppgangssag*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/oppgangssag](https://snl.no/oppgangssag)"
         ]
       }
     }
