@@ -29,7 +29,7 @@
     },
     {
       "type": "text",
-      "content": "Før strømmen kom, var lyset om kvelden alltid en flamme av noe som brant. De fattigste brukte stearinlys eller talglys av dyrefett. Mange hadde parafinlamper, som ga litt mer lys, men måtte fylles og renses hele tiden. I store byer fantes det gasslys, der gass strømmet gjennom rør i veggene og brant i små brennere. Felles for alt dette var tre store problemer: lyset var svakt, det kostet penger hver eneste time det brant, og det var farlig. En lampe som veltet kunne sette hele huset i brann. Mange av de store bybrannene i historien startet med en flamme som kom løs."
+      "content": "Før strømmen kom, var lyset om kvelden alltid en flamme av noe som brant. De fattigste brukte stearinlys eller talglys av dyrefett. Mange hadde parafinlamper, som ga litt mer lys, men måtte fylles og renses hele tiden. I store byer fantes det gasslys, der gass strømmet gjennom rør i veggene og brant i små brennere. Gassbelysning kom til London i 1814 og til Oslo i 1848 (Rosvold, 2026). Felles for alt dette var tre store problemer: lyset var svakt, det kostet penger hver eneste time det brant, og det var farlig. En lampe som veltet kunne sette hele huset i brann, og i byer med tette trehus kunne én flamme legge alt i aske."
     },
     {
       "type": "text",
@@ -41,11 +41,11 @@
     },
     {
       "type": "text",
-      "content": "Forskere hadde visst i mange år at en tynn tråd lyser når strøm går gjennom den. Problemet var at tråden ble så varm at den brant opp etter noen minutter. En lampe som varer i to minutter er ikke til mye nytte. Mange oppfinnere jobbet med dette samtidig, blant annet engelskmannen Joseph Swan. Men det var amerikaneren Thomas Edison som rundt 1879 fikk det til å virke skikkelig. Han fant en tråd, kalt en glødetråd, som kunne lyse i timevis uten å brenne opp, og han satte den inne i en glasskule der nesten all lufta var sugd ut. Uten luft kunne ikke tråden ta fyr."
+      "content": "Den første elektriske lyskilden var kullbuelampen, som ble oppfunnet omkring 1850 (Rosvold, 2024). Den lyste sterkt, men den var altfor grov til å ha i en stue. Forskere visste også at en tynn tråd lyser når strøm går gjennom den. Problemet var at tråden ble så varm at den brant opp etter kort tid. En lampe som varer i noen minutter er ikke til mye nytte. Mange oppfinnere jobbet med dette samtidig, og engelskmannen Joseph Swan tok patent på en lignende lampe året før (Rabben & Simonsen, 2025). Men det var amerikaneren Thomas Edison som i 1879 fullførte kulltrådlampen, den første elektriske lyskilden som var brukbar for alle (Rosvold, 2024). Glødetråden kunne lyse i timevis uten å brenne opp fordi den satt inne i en glasskule der nesten all lufta var sugd ut. Uten luft kunne ikke tråden ta fyr."
     },
     {
       "type": "text",
-      "content": "Men en lyspære alene er ubrukelig hvis det ikke kommer strøm til den. Edisons virkelig store grep var at han ikke bare laget pæra. Han bygde også kraftverk og la ledninger ut til hus og gater. Han tenkte på hele systemet, fra strømmen lages til den lyser i taket ditt. I 1882 åpnet han et kraftverk i New York som sendte strøm til hus i nabolaget. For første gang kunne vanlige folk skru på lys i huset uten en eneste flamme."
+      "content": "Men en lyspære alene er ubrukelig hvis det ikke kommer strøm til den. Edisons virkelig store grep var at han ikke bare laget pæra. Han arbeidet også med å produsere og fordele strømmen (Rabben & Simonsen, 2025). Han tenkte på hele systemet, fra strømmen lages til den lyser i taket ditt. I 1882 åpnet han New Yorks første elektrisitetsverk, som forsynte rundt 2000 lamper (Rabben & Simonsen, 2025). Da måtte han finne opp sikringer og koblingsbokser på kjøpet. For første gang kunne vanlige folk skru på lys i huset uten en eneste flamme."
     },
     {
       "type": "image",
@@ -59,7 +59,7 @@
     },
     {
       "type": "text",
-      "content": "Norge hadde noe som passet perfekt til den nye tiden: masse vann som rant nedover bratte fjell. Når vann faller, kan kraften brukes til å lage strøm i et vannkraftverk. Allerede i 1885 fikk byen Hammerfest langt nord i landet elektrisk gatelys, som en av de første byene i hele Europa. Snart bygde nordmenn kraftverk i elver og fosser over hele landet. Strøm fra fossene ble selve grunnlaget for norsk industri, og etter hvert kom strømmen også inn i vanlige hjem, først i byene og siden ute på bygdene."
+      "content": "Norge hadde noe som passet perfekt til den nye tiden: masse vann som rant nedover bratte fjell. Når vann faller, kan kraften brukes til å lage strøm i et vannkraftverk. Allerede i 1885, bare noen få år etter at Edison lanserte glødelampen, sto Laugstol Elektricitetsverk i Skien klart. Det var det første i Norge, og da tresliperiet lagde mer kraft enn det hadde bruk for, ble overskuddet solgt til vanlige kunder (Fageraas & Rosvold, 2026). Noen år senere, etter en bybrann i 1890, ble Hammerfest den første byen i Norge med elektrisk gatelys. Oslo fulgte i 1892 og var den første hovedstaden i Europa som tok i bruk elektrisk gatelys (Rosvold, 2026). Snart bygde nordmenn kraftverk i elver og fosser over hele landet. Strøm fra fossene ble selve grunnlaget for norsk industri, og etter hvert kom strømmen også inn i vanlige hjem, først i byene og siden ute på bygdene."
     },
     {
       "type": "text",
@@ -78,7 +78,7 @@
     },
     {
       "type": "text",
-      "content": "Men det var ikke nok å lage strøm. Den måtte også sendes ut til folk, og her braket to leirer sammen i det som er blitt kalt strømkrigen. Thomas Edison hadde satset alt på likestrøm. Problemet var at likestrøm taper kraften sin fort når den sendes gjennom lange ledninger, så Edison måtte bygge et nytt kraftverk for nesten hvert kvartal. Nikola Tesla og George Westinghouse satset i stedet på vekselstrøm, som kan løftes opp til høy spenning med en transformator og sendes mil etter mil uten å tape mye. Prøv selv hvordan de to systemene klarer seg når byen ligger lenger og lenger unna kraftverket."
+      "content": "Men det var ikke nok å lage strøm. Den måtte også sendes ut til folk, og her braket to leirer sammen i det som er blitt kalt strømkrigen. Thomas Edison hadde satset alt på likestrøm. Problemet var at likestrøm taper kraften sin fort når den sendes gjennom lange ledninger, så Edison måtte bygge et nytt kraftverk for nesten hvert kvartal. George Westinghouse satset i stedet på vekselstrøm. Han kjøpte patentene til Nikola Teslas vekselstrømmotor og ansatte Tesla selv, og han foredlet transformatoren, som løfter strømmen opp til høy spenning slik at den kan sendes mil etter mil uten å tape mye (Encyclopaedia Britannica, u.å.). Prøv selv hvordan de to systemene klarer seg når byen ligger lenger og lenger unna kraftverket."
     },
     {
       "type": "component",
@@ -89,7 +89,7 @@
     },
     {
       "type": "text",
-      "content": "Vekselstrømmen vant, og snart viste det seg at den samme strømmen kunne gjøre mye mer enn å lyse."
+      "content": "Vekselstrømmen vant. I 1893 fikk Westinghouse oppdraget med å lyse opp verdensutstillingen i Chicago, og samme år sikret han seg retten til å bygge vekselstrømsgeneratorer ved Niagarafallene (Encyclopaedia Britannica, u.å.). Edison tapte etter hvert sin ledende stilling i elektroteknikken nettopp fordi likestrømmen måtte vike for vekselstrømmen (Rabben & Simonsen, 2025). Og snart viste det seg at den samme strømmen kunne gjøre mye mer enn å lyse."
     },
     {
       "type": "header",
@@ -101,7 +101,7 @@
     },
     {
       "type": "text",
-      "content": "Dette betydde mest for kvinner, for det var nesten alltid de som gjorde husarbeidet. Å vaske klær for hånd var et tungt arbeid som kunne ta en hel dag. Å holde et hus rent uten støvsuger krevde timevis med koster og kluter. De elektriske apparatene tok over mye av det aller tyngste. Det frigjorde tid og krefter, og det gjorde det lettere for kvinner å ta utdanning og jobb utenfor hjemmet senere på 1900-tallet. Strømmen forandret altså ikke bare hvor lyst det var. Den forandret hvem som hadde tid til hva."
+      "content": "Dette betydde mest for kvinner, for husarbeid har historisk sett først og fremst blitt gjort av kvinner (Klepp, 2025). Å vaske klær for hånd var et tungt arbeid som kunne ta en hel dag. Å holde et hus rent uten støvsuger krevde timevis med koster og kluter. Innlagt vann og strøm ga enorme lettelser for husmødrene, og vaskemaskin, komfyr og støvsuger tok over mye av det aller tyngste etter 1950 (Klepp, 2025). Samtidig steg kravene til hvor rent og pent et hjem skulle være, så tiden som ble spart, forsvant delvis i nye oppgaver. Strømmen forandret altså ikke bare hvor lyst det var. Den forandret hvem som hadde tid til hva."
     },
     {
       "type": "image",
@@ -116,24 +116,28 @@
         "compact": true,
         "events": [
           {
-            "year": 1809,
-            "description": "De første forsøkene med elektrisk lys viser at strøm kan få en tråd til å gløde."
+            "year": 1850,
+            "description": "Kullbuelampen blir oppfunnet, den første elektriske lyskilden. Den lyser sterkt, men er for grov til vanlige hjem."
           },
           {
             "year": 1879,
-            "description": "Thomas Edison lager en lyspære med glødetråd som kan brenne i timevis."
+            "description": "Thomas Edison fullfører kulltrådlampen, den første elektriske lyskilden som er brukbar for alle."
           },
           {
             "year": 1882,
-            "description": "Edison åpner et kraftverk i New York og sender strøm til hus i nabolaget."
+            "description": "Edison åpner New Yorks første elektrisitetsverk og forsyner rundt 2000 lamper."
           },
           {
             "year": 1885,
-            "description": "Hammerfest får elektrisk gatelys, som en av de første byene i Europa."
+            "description": "Laugstol Elektricitetsverk i Skien blir det første i Norge og selger strøm til vanlige kunder."
           },
           {
-            "year": 1891,
-            "description": "Vekselstrøm vinner strømkrigen og blir standarden for å sende strøm over lange avstander."
+            "year": 1890,
+            "description": "Etter en bybrann blir Hammerfest den første byen i Norge med elektrisk gatelys."
+          },
+          {
+            "year": 1893,
+            "description": "Westinghouse lyser opp verdensutstillingen i Chicago med vekselstrøm, og vekselstrømmen blir standarden."
           },
           {
             "year": 1920,
@@ -168,11 +172,11 @@
             "forstaa": [
                 "Nevn de tre store problemene med lyset fra flamme før strømmen kom (svaret står i teksten).",
                 "Hva var Thomas Edisons virkelig store grep utover selve lyspæra, og hvorfor var det så viktig?",
-                "Hvorfor passet Norge spesielt godt til den nye elektriske tiden, og hvilken by fikk elektrisk gatelys allerede i 1885?",
+                "Hvorfor passet Norge spesielt godt til den nye elektriske tiden, hvor sto Norges første elektrisitetsverk, og hvilken by ble den første i Norge med elektrisk gatelys?",
                 "Forklar hvorfor vekselstrømmen vant over likestrømmen i strømkrigen."
             ],
             "reflekter": [
-                "Teksten sier at strømmen forandret hvem som hadde tid til hva. Forklar hvordan de elektriske apparatene betydde mest for kvinner, og hva denne frigjorte tiden gjorde mulig senere.",
+                "Teksten sier at strømmen forandret hvem som hadde tid til hva. Forklar hvorfor de elektriske apparatene betydde mest for kvinner, og hvorfor den frigjorte tiden likevel ikke ble så stor som man kunne tro.",
                 "Hemmeligheten bak Edisons pære var en glødetråd i en glasskule uten luft. Forklar hvorfor det var nødvendig å suge ut lufta for at tråden ikke skulle brenne opp.",
                 "Sammenlign hverdagen før og etter at det elektriske lyset kom. Hva kunne folk plutselig gjøre om kvelden som de ikke kunne før?",
                 "Teksten sier at vi kanskje er litt for godt opplyst i dag. Vurder om denne baksiden av elektrisk lys veier tungt mot alle fordelene, og begrunn svaret ditt."
@@ -209,7 +213,7 @@
               "Han laget den første vaskemaskinen"
             ],
             "answer": 1,
-            "explanation": "En lyspære er ubrukelig uten strøm. Edison tenkte på hele systemet og bygde kraftverk og ledninger, slik at vanlige folk kunne få lys i husene sine."
+            "explanation": "En lyspære er ubrukelig uten strøm. Edison tenkte på hele systemet og arbeidet også med kraftproduksjon og fordeling, slik at vanlige folk kunne få lys i husene sine. Elektrisitetsverket hans i New York forsynte rundt 2000 lamper fra 1882."
           },
           {
             "question": "Hvorfor vant vekselstrømmen over likestrømmen i strømkrigen?",
@@ -231,7 +235,7 @@
               "Norge hadde lange somre med mye sol"
             ],
             "answer": 1,
-            "explanation": "Vann som faller nedover fjell kan brukes i vannkraftverk. Derfor bygde nordmenn kraftverk i fosser og elver, og Hammerfest var en av de første byene i Europa med elektrisk gatelys."
+            "explanation": "Vann som faller nedover fjell kan brukes i vannkraftverk. Derfor bygde nordmenn kraftverk i fosser og elver. Laugstol Elektricitetsverk i Skien ble det første i landet i 1885, og Hammerfest ble den første byen i Norge med elektrisk gatelys."
           },
           {
             "question": "Hvorfor betydde de elektriske apparatene mest for kvinner?",
@@ -242,11 +246,26 @@
               "Fordi apparatene var laget for å brukes utendørs"
             ],
             "answer": 1,
-            "explanation": "Husarbeid som å vaske klær for hånd tok ofte en hel dag. De elektriske apparatene tok over mye av det tyngste, frigjorde tid, og gjorde det lettere for kvinner å ta utdanning og jobb."
+            "explanation": "Husarbeid har historisk sett først og fremst blitt gjort av kvinner, og å vaske klær for hånd tok ofte en hel dag. Innlagt vann og strøm ga enorme lettelser, og vaskemaskin, komfyr og støvsuger tok over mye av det tyngste."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Encyclopaedia Britannica. (u.å.). *George Westinghouse*. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/biography/George-Westinghouse)",
+          "Fageraas, K. B. & Rosvold, K. A. (2026). *Laugstol Brug*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Laugstol_Brug](https://snl.no/Laugstol_Brug)",
+          "Klepp, I. G. (2025). *Husarbeid*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/husarbeid](https://snl.no/husarbeid)",
+          "Rabben, M. B. & Simonsen, T. (2025). *Thomas Alva Edison*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Thomas_Alva_Edison](https://snl.no/Thomas_Alva_Edison)",
+          "Rosvold, K. A. (2024). *Elektrisk lys*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/elektrisk_lys](https://snl.no/elektrisk_lys)",
+          "Rosvold, K. A. (2026). *Gatebelysning*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/gatebelysning](https://snl.no/gatebelysning)"
         ]
       }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-08-02"
 }

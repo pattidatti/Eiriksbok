@@ -8,8 +8,8 @@
     "heroImage": "/images/renessansen/leonardo-da-vinci-hero.webp",
     "details": [
         "Leonardo da Vinci levde fra 1452 til 1519, midt i den italienske renessansen.",
-        "Han var maler, ingeniør, anatom og oppfinner — alt i én person.",
-        "Notatbøkene hans inneholder over 7000 sider med skisser og tanker.",
+        "Han var maler, ingeniør, anatom og oppfinner - alt i én person.",
+        "Notatbøkene hans fyller tusenvis av sider med skisser og tanker.",
         "Han skrev mye av notatene speilvendt, fra høyre til venstre.",
         "Mona Lisa og Nattverden er to av verdens mest kjente malerier."
     ],
@@ -17,17 +17,17 @@
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg en ung mann som sniker seg ned i kjelleren på et sykehus om natten. Det er bare et stearinlys og en kniv. På bordet ligger et menneske som ble hengt tidligere på dagen. Mannen tegner. Han tegner ribbeina, han tegner musklene i armen, han tegner hjertet med klaffene som åpner og lukker seg. Han vil forstå hvordan vi er bygd innvendig. Hvorfor? Fordi han vil male oss riktig utvendig."
+            "content": "Tenk deg en ung mann som står bøyd over et bord i et sykehus om natten. Det er bare et stearinlys og en kniv. På bordet ligger en død kropp. Mannen tegner. Han tegner ribbeina, han tegner musklene i armen, han tegner hjertet med klaffene som åpner og lukker seg. Han vil forstå hvordan vi er bygd innvendig. Hvorfor? Fordi han vil male oss riktig utvendig."
         },
         {
             "type": "text",
-            "content": "Mannen heter Leonardo da Vinci. Han lever i Italia på 1500-tallet, og han er kanskje det merkeligste mennesket som noen gang har levd. For Leonardo nøyer seg ikke med å være maler. Han er også ingeniør, anatom, oppfinner, kanalbygger og våpensmed. På fritiden tegner han fugler i flukt fordi han vil bygge en flygemaskin."
+            "content": "Mannen heter Leonardo da Vinci. Han lever i Italia på 1400- og 1500-tallet, fra 1452 til 1519 (Kårstad & Tschudi-Madsen, 2026), og han er kanskje det merkeligste mennesket som noen gang har levd. For Leonardo nøyer seg ikke med å være maler. Han er også ingeniør, anatom, oppfinner, kanalbygger og våpensmed. På fritiden tegner han fugler i flukt fordi han vil bygge en flygemaskin."
         },
         {
             "type": "image",
             "src": "/images/renessansen/leonardo-da-vinci-01.webp",
             "alt": "Leonardo da Vinci ved arbeidsbordet sitt med skisser av anatomi og flymaskiner rundt seg",
-            "caption": "Leonardos arbeidsbord var et kaos av tegninger, beinrester, oppfinnelser og notater — alle i én rotete blanding av fag."
+            "caption": "Leonardos arbeidsbord var et kaos av tegninger, beinrester, oppfinnelser og notater - alle i én rotete blanding av fag."
         },
         {
             "type": "header",
@@ -35,11 +35,11 @@
         },
         {
             "type": "text",
-            "content": "Leonardo ble født i 1452 i en liten landsby som het Vinci, like utenfor Firenze. «Da Vinci» betyr rett og slett «fra Vinci». Han var sønn av en ung notarius og ei bondejente som ikke var gift. På den tiden ble uekte barn ofte sett ned på, og Leonardo fikk aldri skikkelig skolegang. Han lærte ikke latin, og han måtte være selvlært i alt han senere ble god til."
+            "content": "Leonardo ble født i 1452 i en liten landsby som het Vinci, like utenfor Firenze. «Da Vinci» betyr rett og slett «fra Vinci». Han var sønn av en notarius og ei bondejente som ikke var gift (Kårstad & Tschudi-Madsen, 2026). Fordi han var født utenfor ekteskap, kunne han ikke overta yrket til faren. Det stengte én dør, men åpnet en annen: han sto fritt til å velge kunsten og vitenskapen i stedet. Skikkelig skolegang fikk han aldri, og latin, språket all lærdom ble skrevet på, lærte han seg først langt senere i livet (Heydenreich, 2026)."
         },
         {
             "type": "text",
-            "content": "Det er noe av det merkeligste med ham. Mannen som visste mest om alt mulig, ble aldri tatt opp på noe universitet. Han kalte seg selv «omo sanza lettere» — en mann uten bokstaver. Likevel ble han renessansens største geni. Han stolte på øynene sine og hendene sine, ikke på hva gamle bøker sa."
+            "content": "Det er noe av det merkeligste med ham. Mannen som visste mest om alt mulig, ble aldri tatt opp på noe universitet. Han beskrev seg selv som «omo sanza lettere», en mann uten bokstaver. Men det var nok mer et poeng enn en beskrivelse. Notatene hans viser at han bygde opp et stort bibliotek og kjente både antikke og middelalderske tekster godt (Museo Galileo, u.å.). Forskjellen var at han alltid prøvde det bøkene sa mot det han selv kunne se og måle."
         },
         {
             "type": "header",
@@ -47,7 +47,7 @@
         },
         {
             "type": "text",
-            "content": "Da Leonardo var rundt fjorten år, ble han sendt til byen Firenze for å bli lærling hos en kjent kunstner som het Andrea del Verrocchio. Verrocchios verksted var en travel plass. Der lærte unge gutter å blande maling, hugge marmor, støpe bronse og tegne. Leonardo lærte alt sammen. Det fortelles at han allerede som ung lærling malte en engel i et av Verrocchios bilder — og at den var så vakker at mesteren ble misunnelig og la fra seg pensselen for godt."
+            "content": "Da Leonardo var midt i tenårene, ble han sendt til byen Firenze for å bli lærling hos en kjent kunstner som het Andrea del Verrocchio (Heydenreich, 2026; Kårstad & Tschudi-Madsen, 2026). Verrocchios verksted var en travel plass. Der lærte unge gutter å blande maling, hugge marmor, støpe bronse og tegne. Leonardo lærte alt sammen. Allerede som ung lærling malte han en av englene i Verrocchios «Kristi dåp», og han ga engelen en så naturlig bevegelse og et så levende blikk at figuren skiller seg ut fra resten av bildet (Heydenreich, 2026)."
         },
         {
             "type": "text",
@@ -67,18 +67,18 @@
         },
         {
             "type": "text",
-            "content": "Når historikere snakker om renessansen, bruker de et italiensk uttrykk: «uomo universale». Det betyr «det universale mennesket» — en person som mestrer alt, som ikke deler verden opp i fag, men ser den som én helhet. Leonardo er det perfekte eksempelet. For ham var en hånd og en maskin laget av samme grunnregler. Vann og blod fulgte de samme lovene. Lys i et maleri og lys gjennom et øye var det samme problemet."
+            "content": "Når historikere snakker om renessansen, bruker de et italiensk uttrykk: «uomo universale». Det betyr «det universale mennesket» - en person som mestrer alt, som ikke deler verden opp i fag, men ser den som én helhet. Idealet vokste fram i renessansens Italia, og tanken bak var at et menneske kan bli fremragende på mange felter samtidig (Encyclopaedia Britannica, u.å.). Leonardo er det perfekte eksempelet. For ham var en hånd og en maskin laget av samme grunnregler. Vann og blod fulgte de samme lovene. Lys i et maleri og lys gjennom et øye var det samme problemet."
         },
         {
             "type": "text",
-            "content": "I middelalderen hadde menneskene flest tenkt at verden var et mysterium man bare skulle leve i, ikke forstå. Gud styrte alt, og det var nok. Renessansen snudde dette opp ned. Leonardo og folk som ham trodde at hvis du så nøye nok etter, kunne du forstå hvordan alt henger sammen. Og hvis du forsto det, kunne du også gjenskape det. Du kunne bygge maskiner som lignet kroppen. Du kunne male bilder som lignet livet."
+            "content": "I middelalderen var den enkelte i stor grad underlagt kirken, og verden var noe man levde i mer enn noe man selv skulle granske. Renessansen snudde dette opp ned. Nå var regelen at man skulle observere naturen og menneskekroppen slik den faktisk var (Styve & Bjerkestrand, 2025). Leonardo og folk som ham trodde at hvis du så nøye nok etter, kunne du forstå hvordan alt henger sammen. Og hvis du forsto det, kunne du også gjenskape det. Du kunne bygge maskiner som lignet kroppen. Du kunne male bilder som lignet livet."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Speilskrift",
-                "content": "Leonardo skrev mye av notatene sine speilvendt — fra høyre til venstre, slik at bokstavene må holdes opp mot et speil for å kunne leses. Hvorfor? Det er ingen helt sikker forklaring. Noen tror han ville beskytte ideene sine. Andre mener det var enklere fordi han var venstrehendt og slapp å smøre ut blekket. Uansett gjorde det notatene hans til en kode som tok flere hundre år å oppdage."
+                "content": "Leonardo skrev mye av notatene sine speilvendt - fra høyre til venstre, slik at bokstavene må holdes opp mot et speil for å kunne leses. Hvorfor? Det er ingen helt sikker forklaring. Noen tror han ville beskytte ideene sine. Kårstad og Tschudi-Madsen (2026) mener den mest sannsynlige forklaringen er at det rett og slett var praktisk: Leonardo var venstrehendt og slapp å smøre ut blekket."
             }
         },
         {
@@ -87,11 +87,11 @@
         },
         {
             "type": "text",
-            "content": "I 1482 var Leonardo ferdig som lærling og trengte jobb. Han skrev et brev til hertugen av Milano, Ludovico Sforza. Brevet er bevart, og det er forbløffende. I de første ti punktene snakker Leonardo om hva han kan lage av krigsmaskiner: kanoner, broer som kan flyttes raskt, undervannsbåter for å bore hull i fiendens skip. Helt nederst, nesten som en ettertanke, nevner han at han også kan male litt."
+            "content": "I 1482 trengte Leonardo jobb. Han skrev et brev til hertugen av Milano, Ludovico Sforza. Brevet er bevart, og det er forbløffende. Det har ti punkter, og i de ni første lister Leonardo opp hva han kan lage til krig: broer som kan flyttes raskt, redskaper for å legge festninger i grus, kanoner og bombekastere, tunneler under bakken og overbygde vogner. Først i det tiende og siste punktet nevner han at han også kan bygge, hugge i marmor og male (Veneranda Biblioteca Ambrosiana, u.å.)."
         },
         {
             "type": "text",
-            "content": "Det forteller oss noe viktig om renessansen. Selv geniene måtte tjene penger, og fyrster betalte best for våpen. Leonardo fikk jobben, og i Milano fikk han nesten tjue år til å gjøre nøyaktig hva han ville. Han malte Nattverden på veggen i et kloster, han designet kanaler gjennom byen, og han fylte sider på sider med skisser av flymaskiner, dykkerdrakter og giljotiner."
+            "content": "Det forteller oss noe viktig om renessansen. Selv geniene måtte tjene penger, og fyrster betalte best for våpen. Leonardo fikk jobben, og han ble værende i Milano i sytten år, fra 1482 til 1499 (Kårstad & Tschudi-Madsen, 2026). Der malte han Nattverden på veggen i et kloster mellom 1495 og 1498, han tegnet byggverk og festningsverk for hertugen, og han fylte side på side med skisser av flygemaskiner og krigsmaskiner."
         },
         {
             "type": "component",
@@ -102,7 +102,7 @@
             "type": "image",
             "src": "/images/renessansen/leonardo-da-vinci-02.webp",
             "alt": "Nærbilde av en åpnet renessanse-notatbok med speilskrift og en detaljert skisse av en flymaskin",
-            "caption": "Notatbøkene hans har over 7000 sider. De fleste var ferdige da han døde, men ingen ble noensinne utgitt i hans levetid."
+            "caption": "Notatbøkene hans fyller tusenvis av sider. Ingen av dem ble utgitt mens han levde."
         },
         {
             "type": "header",
@@ -110,11 +110,11 @@
         },
         {
             "type": "text",
-            "content": "Mot slutten av livet bodde Leonardo i Frankrike, invitert av kong Frans I. Han hadde med seg et lite tre-panel som han hadde malt på i mange år. I dag kaller vi det Mona Lisa. Det er bare 77 centimeter høyt og henger på Louvre i Paris. Hvert år kommer det rundt ti millioner mennesker bare for å se det."
+            "content": "Fra 1516 bodde Leonardo i Frankrike, i tjeneste hos kong Frans I, og der døde han i 1519 (Kårstad & Tschudi-Madsen, 2026). Han hadde med seg en liten treplate som han hadde malt på i mange år. I dag kaller vi det Mona Lisa. Bildet er malt med olje på poppeltre og er bare 79 centimeter høyt (Musée du Louvre, u.å.). Det henger på Louvre i Paris, verdens mest besøkte kunstmuseum, og det er museets mest besøkte enkeltmaleri (Faltin, 2025)."
         },
         {
             "type": "text",
-            "content": "Hva er det med dette bildet? Det er ikke størrelsen. Det er smilet. Leonardo brukte en teknikk han kalte sfumato — myke overganger uten skarpe linjer, slik øyet faktisk ser. Hjørnene av munnen er litt uskarpe, så ansiktet skifter uttrykk avhengig av hvor du ser. Når du ser direkte på smilet, virker det nesten borte. Når du ser på øynene, dukker det opp igjen. Det er anatomi, lysstudier og kunst smeltet sammen til ett bilde."
+            "content": "Hva er det med dette bildet? Det er ikke størrelsen. Det er smilet. Leonardo brukte en teknikk som kalles sfumato: myke, uskarpe overganger uten harde linjer, som gir bildet et nesten røykaktig preg (Kårstad & Tschudi-Madsen, 2026). Hjørnene av munnen er litt uskarpe, så ansiktet skifter uttrykk avhengig av hvor du ser. Når du ser direkte på smilet, virker det nesten borte. Når du ser på øynene, dukker det opp igjen. Det er anatomi, lysstudier og kunst smeltet sammen til ett bilde."
         },
         {
             "type": "header",
@@ -122,17 +122,17 @@
         },
         {
             "type": "text",
-            "content": "Her er et paradoks: Leonardo regnes som verdens største geni, men han fullførte nesten ingenting. Mange av maleriene hans ble aldri ferdige. Nattverden begynte å falle av veggen kort tid etter at han var ferdig fordi han prøvde ut en ny malingsteknikk som ikke virket. Bronsstatuen av en kjempehest som han brukte tolv år på å designe, ble aldri støpt fordi bronsen ble brukt til kanoner i stedet."
+            "content": "Her er et paradoks: Leonardo regnes som verdens største geni, men han fullførte nesten ingenting. Mange av maleriene hans ble aldri ferdige. Nattverden begynte å forfalle kort tid etter at han var ferdig, fordi han malte med oljetempera på tørr puss i stedet for å bruke den vanlige freskoteknikken (Kårstad & Tschudi-Madsen, 2026). Og kjempehesten i bronse, som han arbeidet med fra 1483 til 1493, ble aldri støpt: metallet lå klart, men krigen nærmet seg, og bronsen ble brukt til kanoner i stedet (Heydenreich, 2026)."
         },
         {
             "type": "text",
-            "content": "Notatbøkene hans ble heller aldri utgitt. Han skrev tusenvis av sider med oppfinnelser og ideer, men de lå skjult i kister i flere hundre år. Da forskere på 1800-tallet endelig leste dem, oppdaget de at Leonardo hadde tenkt ut helikopteret, fallskjermen, kontaktlinser og solenergi — lenge før noen andre. Men fordi han aldri viste det fram, kunne ingen bygge videre på det."
+            "content": "Notatbøkene hans ble heller aldri utgitt mens han levde. Eleven Francesco Melzi arvet over 10 000 tettskrevne sider, men samlingen ble etter hvert spredt, og den første fullstendige utgaven kom ikke ut før i 1817 (Heydenreich, 2026). Da forskerne endelig fikk lese sidene, fant de blant annet en luftskrue som minner om et helikopter, tegnet rundt 1487, og en flygemaskin med vinger som slår som en fugls, fra rundt 1490 (Heydenreich, 2026). Men Leonardo publiserte aldri noe av dette, og derfor kunne ingen bygge videre på det i hans egen tid."
         },
         {
             "type": "image",
             "src": "/images/renessansen/leonardo-da-vinci-03.webp",
             "alt": "Mona Lisa i en gylden ramme på en mørk museumsvegg med varmt opplys",
-            "caption": "Mona Lisa måler bare 77 x 53 cm. Smilet skifter etter hvor du fester blikket — et triks Leonardo lærte av å studere hvordan øyet og lyset virker sammen."
+            "caption": "Mona Lisa måler bare 79 x 53 cm. Smilet skifter etter hvor du fester blikket - et triks Leonardo lærte av å studere hvordan øyet og lyset virker sammen."
         },
         {
             "type": "header",
@@ -154,18 +154,18 @@
                     "Hvor og når ble Leonardo da Vinci født, og hva betyr egentlig navnet «da Vinci»?",
                     "Hvorfor dissekerte Leonardo lik om natten? Finn svaret i teksten.",
                     "Hva er sfumato, og i hvilket maleri brukte Leonardo denne teknikken?",
-                    "Hva skrev Leonardo om i de første ti punktene i brevet til hertugen av Milano, og hva nevnte han helt til slutt?"
+                    "Hva skrev Leonardo om i de ni første punktene i brevet til hertugen av Milano, og hva nevnte han i det tiende og siste punktet?"
                 ],
                 "reflekter": [
-                    "Leonardo kalte seg selv «en mann uten bokstaver» fordi han aldri lærte latin eller gikk på universitet. Hvordan kunne han likevel bli renessansens største geni? Bruk teksten til å forklare hva han stolte på i stedet for gamle bøker.",
+                    "Leonardo beskrev seg selv som «en mann uten bokstaver», selv om han hadde et stort bibliotek. Hvorfor tror du han sa det om seg selv? Bruk teksten til å forklare hva han stolte på i tillegg til gamle bøker.",
                     "Teksten sier at Leonardo «fullførte nesten ingenting». Forklar med minst to eksempler fra artikkelen hvorfor så mange av prosjektene hans aldri ble ferdige.",
                     "Hva menes med «uomo universale», og hvordan viser Leonardos måte å jobbe på (for eksempel at han studerte anatomi for å male bedre) at han var et slikt menneske?",
                     "Teksten forteller at fyrster betalte best for våpen, og at Leonardo derfor solgte seg inn som våpensmed. Hva forteller dette om hvordan geniene på den tiden måtte tjene penger?"
                 ],
                 "gaaVidere": [
-                    "Leonardo skjulte ideene sine i speilskrift og viste dem aldri fram, så ingen kunne bygge videre på dem. I dag deler forskere ofte arbeidet sitt åpent. Skriv fem-seks setninger om hvorfor det er lurt å dele kunnskap i stedet for å holde den hemmelig.",
+                    "Leonardo publiserte aldri notatene sine, så ingen i samtiden kunne bygge videre på ideene hans. I dag deler forskere ofte arbeidet sitt åpent. Skriv fem-seks setninger om hvorfor det er lurt å dele kunnskap i stedet for å holde den hemmelig.",
                     "Teksten sier at du er «litt av et renessansemenneske selv» når du kobler sammen fag på skolen. Velg to fag du har, og forklar for klassen én ting du har lært i det ene som også hjelper deg i det andre.",
-                    "Diskuter i klassen: Mona Lisa er bare 77 centimeter høyt, men ti millioner mennesker reiser hvert år for å se det. Hva er det som gjør at akkurat dette bildet er blitt så kjent?"
+                    "Diskuter i klassen: Mona Lisa er bare 79 centimeter høyt, men det er det mest besøkte enkeltmaleriet i verdens mest besøkte kunstmuseum. Hva er det som gjør at akkurat dette bildet er blitt så kjent?"
                 ]
             }
         },
@@ -183,7 +183,7 @@
                             "En keiser med makt over alle"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "«Uomo universale» er italiensk for «det universale mennesket» — renessansens ideal om en person som behersker både kunst, vitenskap og håndverk."
+                        "explanation": "«Uomo universale» er italiensk for «det universale mennesket» - renessansens ideal om en person som behersker både kunst, vitenskap og håndverk."
                     },
                     {
                         "question": "Hvorfor dissekerte Leonardo lik?",
@@ -194,7 +194,7 @@
                             "Han trodde på magi og brukte likene til ritualer"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Leonardo studerte anatomi fordi han mente en kunstner måtte forstå kroppen innvendig for å fremstille den riktig utvendig. Han dissekerte over 30 lik."
+                        "explanation": "Leonardo studerte anatomi fordi han mente en kunstner måtte forstå kroppen innvendig for å fremstille den riktig utvendig. Etter hans egen opptelling dissekerte han 30 lik i løpet av livet."
                     },
                     {
                         "question": "Hva er sfumato?",
@@ -210,7 +210,7 @@
                     {
                         "question": "Hvorfor skrev Leonardo notatene sine speilvendt?",
                         "options": [
-                            "Det er ingen helt sikker forklaring — det var sannsynligvis fordi han var venstrehendt eller ville beskytte ideene",
+                            "Det er ingen helt sikker forklaring - det var sannsynligvis fordi han var venstrehendt eller ville beskytte ideene",
                             "Han hadde dårlig syn",
                             "Det var vanlig i renessansen",
                             "Han kjente ikke italiensk"
@@ -231,7 +231,24 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (u.å.). *Renaissance man*. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/topic/Renaissance-man)",
+                    "Faltin, A. (2025). *Louvre*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Louvre](https://snl.no/Louvre)",
+                    "Heydenreich, L. H. (2026). *Leonardo da Vinci*. Encyclopaedia Britannica. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/biography/Leonardo-da-Vinci)",
+                    "Kårstad, S. H. & Tschudi-Madsen, S. (2026). *Leonardo da Vinci*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Leonardo_da_Vinci](https://snl.no/Leonardo_da_Vinci)",
+                    "Museo Galileo. (u.å.). *«Omo sanza lettere»?*. Hentet 02.08.2026 fra [mostre.museogalileo.it](https://mostre.museogalileo.it/codiceleicester/it/le-fonti/4-omo-sanza-lettere)",
+                    "Musée du Louvre. (u.å.). *Portrait de Lisa Gherardini, épouse de Francesco del Giocondo, dite Monna Lisa*. Hentet 02.08.2026 fra [collections.louvre.fr](https://collections.louvre.fr/en/ark:/53355/cl010062370)",
+                    "Styve, P. S. T. & Bjerkestrand, N. E. (2025). *Renessansen*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/renessansen](https://snl.no/renessansen)",
+                    "Veneranda Biblioteca Ambrosiana. (u.å.). *Leonardo's Cover Letter*. Google Arts & Culture. Hentet 02.08.2026 fra [artsandculture.google.com](https://artsandculture.google.com/story/leonardo-s-cover-letter-biblioteca-ambrosiana/sQVRpZ4EhlnSKg)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-02"
 }
