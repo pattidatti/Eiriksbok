@@ -6,7 +6,7 @@
     "year": "320-185 fvt",
     "category": "Indias historie",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/indias-historie/ashoka-og-mauryariket-hero.webp",
     "factChecked": "2026-08-02",
     "details": [
         "Mauryariket var det første riket som samlet nesten hele India, fra rundt 320 til 185 fvt.",
@@ -24,7 +24,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/ashoka-og-mauryariket-01.webp",
             "alt": "Steinsøyle med innskrift på slette i India, morgenlys",
             "caption": "Ashokas budskap ble hugget i klipper og på steinsøyler over hele riket. Noen av dem står fortsatt."
         },
@@ -64,7 +64,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/ashoka-og-mauryariket-02.webp",
             "alt": "Slagmark ved kysten etter kamp, røykskyer over leirene",
             "caption": "Krigen mot Kalinga var Ashokas største seier. Den ble også vendepunktet i regjeringstiden hans."
         },
@@ -129,7 +129,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/ashoka-og-mauryariket-03.webp",
             "alt": "Fire steinløver på toppen av søyle, sett nedenfra",
             "caption": "Løvesøylen fra Sarnath: fire løver som ser hver sin vei. I dag er den Indias riksvåpen."
         },
