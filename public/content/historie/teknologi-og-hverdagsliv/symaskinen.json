@@ -6,8 +6,9 @@
   "category": "Teknologi og hverdagsliv",
   "readTime": "8 min lesning",
   "heroImage": "/images/teknologi-og-hverdagsliv/symaskinen-hero.webp",
+  "lastUpdated": "2026-08-02",
   "details": [
-    "Før symaskinen tok det dagevis å sy en enkel skjorte for hånd, og klær var så dyre at folk eide bare noen få plagg.",
+    "Før symaskinen tok det over fjorten timer å sy en enkel skjorte for hånd, og klær var så dyre at folk eide bare noen få plagg.",
     "Symaskinen syr mange hundre sting i minuttet og kunne gjøre på en time det som tok en hel dag for hånd.",
     "Billige klær til alle hadde også en bakside: store tekstilfabrikker med lange dager, lave lønninger og barn på gulvet."
   ],
@@ -29,7 +30,7 @@
     },
     {
       "type": "text",
-      "content": "Å sy for hånd er langsomt arbeid. Du trer tråden gjennom et nåløye, stikker nåla gjennom stoffet, drar tråden helt ut, og gjentar. Sting etter sting, time etter time. En flink syerske rakk kanskje tretti sting i minuttet på sitt beste, og bare så lenge fingrene orket. En enkel skjorte trenger titusenvis av sting, og kunne ta over ti timer å lage. Et finere plagg, som en kjole eller en frakk, tok gjerne flere dager. I de fleste familier var det kvinnene som sydde, i tillegg til alt det andre arbeidet de hadde i huset. Søm fylte derfor en stor del av tiden, kveld etter kveld, i lyset fra et stearinlys eller en oljelampe."
+      "content": "Å sy for hånd er langsomt arbeid. Du trer tråden gjennom et nåløye, stikker nåla gjennom stoffet, drar tråden helt ut, og gjentar. Sting etter sting, time etter time. En flink syerske rakk kanskje tretti-førti sting i minuttet på sitt beste, og bare så lenge fingrene orket (Beuscher, u.å.). En enkel skjorte trenger mange tusen sting, og tok rundt fjorten og en halv time å sy for hånd. En frakk tok nesten sytten timer (Franklin, 2025). I de fleste familier var det kvinnene som sydde, i tillegg til alt det andre arbeidet de hadde i huset. Søm fylte derfor en stor del av tiden, kveld etter kveld, i lyset fra et stearinlys eller en oljelampe."
     },
     {
       "type": "text",
@@ -41,18 +42,18 @@
     },
     {
       "type": "text",
-      "content": "Mange oppfinnere prøvde å lage en maskin som kunne sy. Det var vanskeligere enn det høres ut. Problemet var at en maskin ikke kan dra en hel, lang tråd helt gjennom stoffet for hvert sting, slik en hånd gjør. Tråden ville bare floke seg eller ryke. Løsningen ble genial: bruk to tråder. En nål med tråd stikker ovenfra og ned gjennom stoffet, og under stoffet fanger en liten spole tråden og låser den fast. Slik dannes et sterkt sting uten at maskinen trenger å dra noen lang tråd ut. Dette kalles låsesting, og det er fortsatt slik symaskiner virker i dag."
+      "content": "Mange oppfinnere prøvde å lage en maskin som kunne sy. Allerede i 1790 fikk engelskmannen Thomas Saint patent på en maskin for å sy lærsko, men patentet ble glemt (Grace's Guide, 2019). Det var vanskeligere enn det høres ut. Problemet var at en maskin ikke kan dra en hel, lang tråd helt gjennom stoffet for hvert sting, slik en hånd gjør. Tråden ville bare floke seg eller ryke. Løsningen ble genial: bruk to tråder. En nål med tråd stikker ovenfra og ned gjennom stoffet, og under stoffet fanger en liten skyttel tråden og låser den fast. Slik dannes et sterkt sting uten at maskinen trenger å dra noen lang tråd ut. Dette kalles låsesting, og det er fortsatt slik symaskiner virker i dag (Køpke & Dybdahl, 2024)."
     },
     {
       "type": "text",
-      "content": "I 1846 fikk amerikaneren Elias Howe patent på en symaskin som brukte denne metoden. Et patent er en enerett til en oppfinnelse. Kort etter forbedret Isaac Singer maskinen og la til en pedal du tråkket på, slik at begge hendene ble frie til å styre stoffet. Singer solgte symaskiner på avbetaling, litt penger hver måned, slik at vanlige familier hadde råd. Snart sto det en symaskin i utallige hjem og verksteder."
+      "content": "I 1846 fikk amerikaneren Elias Howe patent på en symaskin som brukte denne metoden (Encyclopaedia Britannica, 2026). Et patent er en enerett til en oppfinnelse. I 1851 fikk Isaac Singer patent på en forbedret maskin og startet fabrikk (Køpke & Dybdahl, 2024). Maskinen ble drevet med en pedal du tråkket på, slik at begge hendene ble frie til å styre stoffet (Beuscher, u.å.). Kompanjongen hans, Edward Clark, fant på å selge maskinene på avbetaling: litt penger hver måned i stedet for alt på en gang. Det var den første avbetalingsordningen i USA, og den gjorde at vanlige familier hadde råd (Palmer, 2015). Snart sto det en symaskin i utallige hjem og verksteder."
     },
     {
       "type": "component",
       "name": "FactBox",
       "props": {
         "title": "Strid om hvem som var først",
-        "content": "Symaskinen ble ikke oppfunnet av en enkelt person en enkelt dag. Mange jobbet med ideen samtidig, og det endte i en bitter strid om hvem som eide rettighetene. Elias Howe og Isaac Singer kranglet i retten i årevis. Til slutt gikk de store oppfinnerne sammen og delte patentene sine. Det var en av de første gangene flere selskaper slo sammen rettighetene sine for å kunne lage et produkt i fellesskap."
+        "content": "Symaskinen ble ikke oppfunnet av en enkelt person en enkelt dag. Mange jobbet med ideen samtidig, og det endte i en bitter strid om hvem som eide rettighetene. Howes maskin ble kopiert av mange, og det førte til rettssaker i årevis (Encyclopaedia Britannica, 2026). I 1856 gikk de store produsentene sammen og la patentene sine i en felles pott, og Howe fikk en solid årlig utbetaling (Eves mfl., u.å.). Det var en av de første gangene flere selskaper slo sammen rettighetene sine for å kunne lage et produkt i fellesskap."
       }
     },
     {
@@ -68,7 +69,7 @@
     },
     {
       "type": "text",
-      "content": "Med symaskinen falt prisen på klær kraftig. Det som før tok en hel dag for hånd, kunne nå gjøres på en time. En syerske med maskin rakk like mye som mange syersker uten. Plutselig kunne fabrikker sy tusenvis av like plagg til en pris vanlige folk hadde råd til. Dette kalles konfeksjon, som rett og slett betyr ferdigsydde klær laget i en bestemt størrelse, klare til å kjøpes i en butikk. Før måtte du sy klærne selv eller betale en skredder for å tilpasse dem. Nå kunne du gå inn i en butikk, finne din størrelse på hylla og gå ut igjen med et nytt plagg samme dag."
+      "content": "Med symaskinen falt prisen på klær kraftig. Howes maskin klarte 250 sting i minuttet, mer enn sju ganger så fort som en hånd, og Singers maskin klarte rundt 900 (Beuscher, u.å.). Skjorta som tok fjorten og en halv time for hånd, tok litt over én time med maskin, og frakken gikk fra nesten sytten timer til to og en halv (Franklin, 2025). Plutselig kunne fabrikker sy tusenvis av like plagg til en pris vanlige folk hadde råd til. Dette kalles konfeksjon: fabrikklagde klær der samme modell sys i en serie standardstørrelser (Køpke & Håberg, 2025). Før måtte du sy klærne selv eller betale en skredder for å tilpasse dem. Nå kunne du gå inn i en butikk, finne din størrelse på hylla og gå ut igjen med et nytt plagg samme dag."
     },
     {
       "type": "component",
@@ -79,7 +80,7 @@
     },
     {
       "type": "text",
-      "content": "Forandringen i hverdagen var stor. Nå kunne en arbeiderfamilie ha flere plagg, bytte til rene klær oftere, og kjøpe nytt når noe ble for lite eller gikk i stykker. Renere klær betydde også bedre helse. Symaskinen sydde ikke bare skjorter og kjoler, men også sko, telt, seil, sekker og senere bildeler. Den var en av de første maskinene som flyttet inn i vanlige hjem og forandret folks hverdag direkte."
+      "content": "Forandringen i hverdagen var stor. Nå kunne en arbeiderfamilie ha flere plagg, bytte til rene klær oftere, og kjøpe nytt når noe ble for lite eller gikk i stykker. Ferdigsydde klær ble tilgjengelige for folk i alle samfunnslag - en demokratisering av moten, som det er blitt kalt (Franklin, 2025). Symaskinen sydde ikke bare skjorter og kjoler, men også sko, telt, seil og sekker. Den var en av de første maskinene som flyttet inn i vanlige hjem og forandret folks hverdag direkte."
     },
     {
       "type": "image",
@@ -95,11 +96,11 @@
         "events": [
           {
             "year": 1790,
-            "description": "Den engelske skomakeren Thomas Saint tegner den aller første symaskinen, men den blir aldri bygget skikkelig."
+            "description": "Engelskmannen Thomas Saint får patent på en symaskin for å sy lærsko, men patentet blir glemt."
           },
           {
             "year": 1830,
-            "description": "Franskmannen Barthelemy Thimonnier lager fungerende symaskiner, men sinte syersker brenner ned verkstedet hans."
+            "description": "Franskmannen Barthélemy Thimonnier får patent og syr uniformer til den franske hæren. Året etter ødelegger rundt 200 opprørske skreddere maskinene hans."
           },
           {
             "year": 1846,
@@ -107,11 +108,11 @@
           },
           {
             "year": 1851,
-            "description": "Isaac Singer forbedrer maskinen med tråkkepedal og selger den på avbetaling til vanlige hjem."
+            "description": "Isaac Singer får patent på en forbedret maskin og starter fabrikk. Kompanjongen Edward Clark selger den på avbetaling."
           },
           {
             "year": 1856,
-            "description": "De store oppfinnerne slår sammen patentene sine, og symaskinen sprer seg raskt over hele verden."
+            "description": "De store produsentene legger patentene sine i en felles pott, og symaskinen sprer seg raskt over hele verden."
           }
         ]
       }
@@ -183,7 +184,7 @@
         "scenarios": [
           {
             "id": "start",
-            "text": "Året er 1850. Du eier et lite skredderverksted med fem syersker som syr alt for hånd. En selger banker på døra og tilbyr deg symaskiner på avbetaling. De syr mange ganger raskere enn hånd, men de koster mye, og du har hørt at sinte syersker andre steder har ødelagt slike maskiner.\n\nHva gjør du?",
+            "text": "Året er 1850. Du eier et lite skredderverksted med fem syersker som syr alt for hånd. En selger banker på døra og tilbyr deg symaskiner på avbetaling. De syr mange ganger raskere enn hånd, men de koster mye, og du har hørt at sinte skreddere andre steder har ødelagt slike maskiner.\n\nHva gjør du?",
             "options": [
               { "label": "Kjøp maskiner og lær opp syerskene dine", "nextId": "buy" },
               { "label": "Vent og se hva naboene gjør først", "nextId": "wait" },
@@ -252,7 +253,7 @@
             "forstaa": [
                 "Hvorfor var klær så dyrt før symaskinen kom? Bruk teksten om hvor lang tid det tok å sy for hånd.",
                 "Hva er et låsesting, og hvorfor trengs det to tråder for å få det til?",
-                "Hva gjorde Isaac Singer med symaskinen som gjorde at vanlige familier fikk råd til den?",
+                "Hva gjorde Singer-selskapet som gjorde at vanlige familier fikk råd til symaskinen?",
                 "Hva betyr ordet konfeksjon, slik det forklares i artikkelen?"
             ],
             "reflekter": [
@@ -277,12 +278,12 @@
             "question": "Hvorfor var klær så dyrt før symaskinen?",
             "options": [
               "Stoffet var vanskelig å oppdrive",
-              "Hvert plagg ble sydd for hånd og tok dagevis å lage",
+              "Hvert plagg ble sydd for hånd og tok mange timer å lage",
               "Det var forbudt å eie mer enn ett plagg",
               "Folk likte ikke å gå med klær"
             ],
             "answer": 1,
-            "explanation": "Søm for hånd er langsomt. En skjorte trenger titusenvis av sting og kunne ta over ti timer. Derfor var klær dyrt, og folk eide bare noen få plagg."
+            "explanation": "Søm for hånd er langsomt. En skjorte tok rundt fjorten og en halv time å sy for hånd, og en frakk nesten sytten. Derfor var klær dyrt, og folk eide bare noen få plagg."
           },
           {
             "question": "Hva er et låsesting, som gjorde symaskinen mulig?",
@@ -293,18 +294,18 @@
               "Et sting som bare kan sys for hånd"
             ],
             "answer": 1,
-            "explanation": "En maskin kan ikke dra en hel lang tråd gjennom stoffet for hvert sting. Med to tråder, en nål ovenfra og en spole under, låses stingene fast uten at maskinen må dra ut lang tråd."
+            "explanation": "En maskin kan ikke dra en hel lang tråd gjennom stoffet for hvert sting. Med to tråder, en nål ovenfra og en skyttel under, låses stingene fast uten at maskinen må dra ut lang tråd."
           },
           {
-            "question": "Hva gjorde Isaac Singer som hjalp symaskinen inn i vanlige hjem?",
+            "question": "Hva gjorde Singer-selskapet som hjalp symaskinen inn i vanlige hjem?",
             "options": [
-              "Han ga maskinene bort gratis",
-              "Han la til en pedal og solgte maskinen på avbetaling",
-              "Han gjorde maskinen mye større",
-              "Han forbød håndsøm"
+              "Det ga maskinene bort gratis",
+              "Det laget en maskin med tråkkepedal og solgte den på avbetaling",
+              "Det gjorde maskinen mye større",
+              "Det forbød håndsøm"
             ],
             "answer": 1,
-            "explanation": "Singer la til en tråkkepedal som frigjorde begge hender, og solgte maskinen på avbetaling. Da hadde vanlige familier råd, og symaskinen spredte seg til hjem over hele verden."
+            "explanation": "Maskinen hadde en tråkkepedal som frigjorde begge hender, og kompanjongen Edward Clark fant på å selge den på avbetaling. Da hadde vanlige familier råd, og symaskinen spredte seg til hjem over hele verden."
           },
           {
             "question": "Hva betyr konfeksjon?",
@@ -328,6 +329,22 @@
             "answer": 2,
             "explanation": "Billige klær ble laget i tekstilfabrikker der arbeidere, ofte kvinner og barn, satt lange dager for lav lønn. Ny teknologi løste ett problem, men skapte nye. Det samme gjelder mye klesproduksjon i dag."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Beuscher, A. (u.å.). *Number 1 \"Standard\" sewing machine*. Bard Graduate Center. Hentet 02.08.2026 fra [bgc.bard.edu](https://www.bgc.bard.edu/research/articles/183/number-1-standard-sewing-machine)",
+          "Encyclopaedia Britannica. (2026). *Sewing machine*. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/technology/sewing-machine)",
+          "Eves, J. H., York, B. L., Buch, C. & Palmer, M. (u.å.). *Sewing revolution: The machine that changed America*. Windham Textile and History Museum. Hentet 02.08.2026 fra [millmuseum.org](https://millmuseum.org/history-2/din-of-machines/sewing-revolution/)",
+          "Franklin, H. (2025). *1850-1859*. Fashion History Timeline, Fashion Institute of Technology. Hentet 02.08.2026 fra [fashionhistory.fitnyc.edu](https://fashionhistory.fitnyc.edu/1850-1859/)",
+          "Grace's Guide. (2019). *Thomas Saint*. Hentet 02.08.2026 fra [gracesguide.co.uk](https://www.gracesguide.co.uk/Thomas_Saint)",
+          "Køpke, V. & Dybdahl, A. (2024). *Symaskin*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/symaskin](https://snl.no/symaskin)",
+          "Køpke, V. & Håberg, K. R. (2025). *Konfeksjon*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/konfeksjon](https://snl.no/konfeksjon)",
+          "Palmer, A. (2015). *How Singer won the sewing machine war*. Smithsonian Magazine. Hentet 02.08.2026 fra [smithsonianmag.com](https://www.smithsonianmag.com/smithsonian-institution/how-singer-won-sewing-machine-war-180955919/)"
         ]
       }
     }
