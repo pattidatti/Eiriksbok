@@ -33,7 +33,7 @@
     },
     {
       "type": "text",
-      "content": "Noen prøvde å være smarte. Langs kysten kunne folk tenne bål på fjelltopper for å varsle om fiender, og i Frankrike bygde de en kjede av tårn med store, bevegelige armer på taket. En operatør i ett tårn satte armene i en bestemt stilling, og operatøren i neste tårn så det gjennom en kikkert og gjentok signalet. Slik kunne en beskjed hoppe fra tårn til tårn. Det var raskt for sin tid, men det virket bare på klart vær og i dagslys, og hvert ord måtte gjettes ut fra armenes stilling."
+      "content": "Noen prøvde å være smarte. Langs kysten kunne folk tenne bål på fjelltopper for å varsle om fiender. På 1790-tallet utviklet brødrene Claude og Ignace Chappe i Frankrike et semaforsystem: en kjede av tårn med store, bevegelige armer på taket, som til sammen kunne lage 196 ulike signaltegn (Øverby, 2026c). En operatør i ett tårn satte armene i en bestemt stilling, og operatøren i neste tårn så det gjennom en kikkert og gjentok signalet. Slik kunne en beskjed hoppe fra tårn til tårn. Det var raskt for sin tid, men det virket bare på klart vær og i dagslys, og hvert tegn måtte leses ut fra armenes stilling."
     },
     {
       "type": "header",
@@ -41,11 +41,11 @@
     },
     {
       "type": "text",
-      "content": "Den virkelige revolusjonen kom da folk lærte å bruke elektrisitet. En amerikaner ved navn Samuel Morse fant ut at han kunne sende elektriske støt gjennom en metalltråd. Et kort støt og et langt støt - en prikk og en strek. Ved å sette sammen prikker og streker på bestemte måter kunne han stave hvilket som helst ord. Dette systemet kalles morsekode, og maskinen kalles en telegraf. I 1844 sendte Morse den første lange meldingen mellom to amerikanske byer."
+      "content": "Den virkelige revolusjonen kom da folk lærte å bruke elektrisitet. En amerikaner ved navn Samuel Morse laget i 1835 en modell av en telegrafmottaker som virket med elektromagnetisme (Øverby, 2026c). Han fant ut at han kunne sende elektriske støt gjennom en metalltråd. Et kort støt og et langt støt - en prikk og en strek. Ved å sette sammen prikker og streker på bestemte måter kunne han stave hvilket som helst ord. Sammen med assistenten Alfred Vail utviklet han morsealfabetet, og maskinen kalles en telegraf. Kongressen bevilget penger i 1843, og i 1844 sto linja mellom Washington og Baltimore ferdig. Den 24. mai sendte Morse den første meldingen (Encyclopaedia Britannica, u.å.-a)."
     },
     {
       "type": "text",
-      "content": "Nå skjedde noe nesten ufattelig for folk på den tiden. Et elektrisk signal beveger seg gjennom en kabel nesten like fort som lyset. En beskjed som før brukte dager med hest, kunne nå nå fram på minutter. Folk satte opp telegraftråder langs [jernbanesporene](/historie/industriell-revolusjon/jernbanen) over hele verden, og i 1866 lyktes det å legge en kabel helt over bunnen av Atlanteren. For første gang kunne en melding krysse havet på minutter i stedet for uker. Verden hadde plutselig krympet."
+      "content": "Nå skjedde noe nesten ufattelig for folk på den tiden. Et elektrisk signal beveger seg gjennom en kabel nesten like fort som lyset. En beskjed som før brukte dager med hest, kunne nå nå fram på minutter. Allerede den første linja mellom Washington og Baltimore hang på stolper med glassisolatorer langs et [jernbanespor](/historie/industriell-revolusjon/jernbanen) (Encyclopaedia Britannica, u.å.-b), og siden ble slike tråder satt opp over hele verden. I 1866 lyktes det å legge den første varige sjøkabelen mellom Europa og Amerika (Øverby, 2026c). For første gang kunne en melding krysse havet på minutter i stedet for uker. Verden hadde plutselig krympet."
     },
     {
       "type": "component",
@@ -84,7 +84,7 @@
     },
     {
       "type": "text",
-      "content": "Telegrafen var et stort sprang, men den hadde en hake. Du kunne ikke bare bruke den selv. Du måtte gå til et telegrafkontor, betale per ord, og en utdannet operatør banket meldingen din ut i morsekode. På den andre enden satt en operatør og oversatte prikkene og strekene tilbake til ord før beskjeden ble levert. Det kostet penger, det tok tid, og du kunne ikke høre stemmen til den du skrev til."
+      "content": "Telegrafen var et stort sprang, men den hadde en hake. Du kunne ikke bare bruke den selv. Du måtte gå til et telegrafkontor, betale per ord, og en utdannet operatør banket meldingen din ut i morsekode. På den andre enden satt en operatør og oversatte prikkene og strekene tilbake til ord før beskjeden ble levert. I Norge kom telegrafen i drift i 1855, og tjenesten var i bruk helt til 2003 (Øverby, 2026c). Det kostet penger, det tok tid, og du kunne ikke høre stemmen til den du skrev til."
     },
     {
       "type": "image",
@@ -98,18 +98,18 @@
     },
     {
       "type": "text",
-      "content": "I 1876 tok en mann ved navn Alexander Graham Bell det neste steget. Han fant ut hvordan lyden av en stemme kunne gjøres om til et elektrisk signal, sendes gjennom en tråd, og så gjøres tilbake til lyd i den andre enden. Dette kalles en telefon. Nå var det ikke lenger en operatør som banket ut en kode. Nå reiste din egen stemme gjennom tråden, og den du snakket med, kunne svare med en gang. For første gang i historien kunne to mennesker som var langt fra hverandre, ha en helt vanlig samtale i sanntid."
+      "content": "I 1876 tok en mann ved navn Alexander Graham Bell det neste steget. Han konstruerte den første brukbare telefonen og var den første som tok patent på den (Øverby, 2026a). Han fant ut hvordan lyden av en stemme kunne gjøres om til et elektrisk signal, sendes gjennom en tråd, og så gjøres tilbake til lyd i den andre enden. Inne i apparatet setter lydbølgene en jernmembran i svingninger, og disse svingningene får strømmen gjennom en spole til å variere i takt (Øverby, 2026a). Dette kalles en telefon. Nå var det ikke lenger en operatør som banket ut en kode. Nå reiste din egen stemme gjennom tråden, og den du snakket med, kunne svare med en gang. For første gang i historien kunne to mennesker som var langt fra hverandre, ha en helt vanlig samtale i sanntid."
     },
     {
       "type": "text",
-      "content": "Det forandret hverdagen for vanlige folk på en måte telegrafen aldri gjorde. En telegraf var noe du brukte til viktige beskjeder. En telefon var noe du kunne bruke til å spørre bestemor om hun hadde det bra, eller til å bestille varer fra butikken. Etter hvert fikk folk telefon hjemme i stua. Avstanden mellom mennesker var ikke borte, men den betydde plutselig mye mindre."
+      "content": "Det forandret hverdagen for vanlige folk på en måte telegrafen aldri gjorde. En telegraf var noe du brukte til viktige beskjeder. En telefon var noe du kunne bruke til å spørre bestemor om hun hadde det bra, eller til å bestille varer fra butikken. Det gikk fort: Norges aller første telefonsentral åpnet allerede i 1880 (Bryhn et al., 2025). Etter hvert fikk folk telefon hjemme i stua. Avstanden mellom mennesker var ikke borte, men den betydde plutselig mye mindre."
     },
     {
       "type": "component",
       "name": "FactBox",
       "props": {
         "title": "Damene som koblet samtalene",
-        "content": "I begynnelsen kunne ikke telefoner ringe rett til hverandre. Alle telefonene i en by var koblet til en sentral, og der satt det operatører som med håndmakt plugget ledninger sammen for å koble deg til den du ville snakke med. Disse jobbene var blant de første kontorjobbene mange unge kvinner fikk, og en hel generasjon stemmer sa Nummer, takk inn i lufta hver dag. Først mye senere overtok automatiske systemer, slik at du kunne slå nummeret selv."
+        "content": "I begynnelsen kunne ikke telefoner ringe rett til hverandre. Alle telefonene i en by var koblet til en sentral, og der satt det telefonister som svarte på oppringingssignalet og stakk en plugg inn i en «jakk» for å koble deg videre til den du ville snakke med (Øverby, 2026b). Da telefonen kom, steg kvinneandelen i Telegrafverket kraftig, og på de store sentralene ble telefonistjobben etter hvert et rent kvinneyrke. Fram til 1904 måtte kvinnene være ugifte for å få beholde stillingen (Norsk lokalhistorisk institutt, 2026). Automatiske sentraler overtok etter hvert, men de siste manuelle sentralene forsvant ikke fra Norge før på 1980-tallet (Øverby, 2026b)."
       }
     },
     {
@@ -126,22 +126,26 @@
         "events": [
           {
             "year": 1794,
-            "description": "Frankrike bygger en kjede av signaltårn som sender beskjeder med bevegelige armer over lange avstander."
+            "description": "Brødrene Chappe i Frankrike bygger en kjede av signaltårn som sender beskjeder med bevegelige armer over lange avstander."
           },
           {
             "year": 1844,
-            "description": "Samuel Morse sender den første lange telegrafmeldingen i morsekode mellom to byer."
+            "description": "Linja mellom Washington og Baltimore står ferdig, og Samuel Morse sender den første meldingen i morsekode 24. mai."
+          },
+          {
+            "year": 1855,
+            "description": "Telegrafen kommer i drift i Norge."
           },
           {
             "year": 1866,
-            "description": "En kabel legges over bunnen av Atlanteren, og en melding krysser havet på minutter."
+            "description": "Den første varige sjøkabelen mellom Europa og Amerika legges, og en melding krysser havet på minutter."
           },
           {
             "year": 1876,
             "description": "Alexander Graham Bell tar patent på telefonen, og stemmen kan reise gjennom tråden."
           },
           {
-            "year": 1881,
+            "year": 1880,
             "description": "Norges første telefonsentral åpner, og folk i byene kan ringe hverandre."
           }
         ]
@@ -174,7 +178,7 @@
                 "Hvor lang tid kunne et brev bruke over Atlanteren med seilskip, ifølge teksten?",
                 "Hva er morsekode, og hvem laget dette systemet?",
                 "Hva var den store forskjellen mellom telegrafen og telefonen?",
-                "Hva gjorde operatørene på de første telefonsentralene når noen ville ringe?"
+                "Hva gjorde telefonistene på de første telefonsentralene når noen ville ringe, og hvem var det som etter hvert hadde denne jobben?"
             ],
             "reflekter": [
                 "Teksten sier at avstand før 1800-tallet var det samme som tid. Forklar med egne ord hva dette betydde for en konge som skulle sende ordre til hæren sin.",
@@ -214,7 +218,7 @@
               "Navnet på den første telefonen"
             ],
             "answer": 1,
-            "explanation": "Samuel Morse laget et system der prikker og streker, altså korte og lange elektriske støt, kunne settes sammen til bokstaver og ord og sendes gjennom en telegraftråd."
+            "explanation": "Samuel Morse laget sammen med assistenten Alfred Vail et system der prikker og streker, altså korte og lange elektriske støt, kunne settes sammen til bokstaver og ord og sendes gjennom en telegraftråd."
           },
           {
             "question": "Hva var den store forskjellen mellom telegrafen og telefonen?",
@@ -228,7 +232,7 @@
             "explanation": "Telegrafen sendte en kode som en operatør måtte banke ut. Telefonen gjorde stemmen din om til et signal, slik at to mennesker kunne ha en vanlig samtale med en gang."
           },
           {
-            "question": "Hva gjorde operatørene på de første telefonsentralene?",
+            "question": "Hva gjorde telefonistene på de første telefonsentralene?",
             "options": [
               "De skrev ned alt folk sa",
               "De koblet samtalene sammen for hånd ved å plugge ledninger i et koblingsbord",
@@ -236,7 +240,7 @@
               "De sendte morsekode til Amerika"
             ],
             "answer": 1,
-            "explanation": "I begynnelsen kunne ikke telefoner ringe direkte. Operatører på sentralen plugget ledninger sammen for hånd for å koble deg til den du ville snakke med."
+            "explanation": "I begynnelsen kunne ikke telefoner ringe direkte. Telefonistene på sentralen svarte på oppringingssignalet og stakk en plugg inn i en «jakk» for å koble deg til den du ville snakke med. På de store sentralene ble dette etter hvert et rent kvinneyrke."
           },
           {
             "question": "Hvorfor regnes telegrafen og telefonen som en av de største forandringene i historien?",
@@ -251,7 +255,23 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bryhn, R., Ulseth, T. & Brekke, S. (2025). *Telenor*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/Telenor](https://snl.no/Telenor)",
+          "Encyclopaedia Britannica. (u.å.-a). *Samuel F. B. Morse*. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/biography/Samuel-F-B-Morse)",
+          "Encyclopaedia Britannica. (u.å.-b). *Telegraph*. Hentet 02.08.2026 fra [britannica.com](https://www.britannica.com/technology/telegraph)",
+          "Norsk lokalhistorisk institutt. (2026). *Telefon- og telegrafbestyrerinner*. Lokalhistoriewiki. Hentet 02.08.2026 fra [lokalhistoriewiki.no](https://lokalhistoriewiki.no/wiki/Telefon-_og_telegrafbestyrerinner)",
+          "Øverby, H. (2026a). *Telefon*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/telefon](https://snl.no/telefon)",
+          "Øverby, H. (2026b). *Telefonsentral*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/telefonsentral](https://snl.no/telefonsentral)",
+          "Øverby, H. (2026c). *Telegrafi*. Store norske leksikon. Hentet 02.08.2026 fra [snl.no/telegrafi](https://snl.no/telegrafi)"
+        ]
+      }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-08-02"
 }
