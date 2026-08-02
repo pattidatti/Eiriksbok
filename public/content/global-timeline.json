@@ -996,6 +996,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "ashoka-og-mauryariket",
+      "title": "Ashoka: keiseren som angret",
+      "description": "Keiseren som vant krigen mot Kalinga, angret offentlig, og byttet ut hæren med regler hugget i stein.",
+      "startDate": -320,
+      "endDate": -185,
+      "displayDate": "320-185 fvt",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "indias-historie",
+      "link": "/historie/indias-historie/ashoka-og-mauryariket",
+      "tags": [
+        "india",
+        "mauryariket",
+        "ashoka",
+        "buddhisme",
+        "oldtiden"
+      ],
+      "lat": 22,
+      "lng": 79,
+      "placeLabel": "India",
+      "placeCountryId": 356,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "dynastiene",
       "title": "De store dynastiene: Keisere og sivilisasjon",
       "description": "Fire oppfinnelser som endret verden og det keiserlige eksamenssystemet.",

@@ -23,6 +23,7 @@ import { MapCarousel } from './MapCarousel';
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
 const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m => ({ default: m.Gaatekart })));
+const DhammaEllerSverd = lazy(() => import('./content/interactive/DhammaEllerSverd').then(m => ({ default: m.DhammaEllerSverd })));
 const Kildekjeden = lazy(() => import('./content/interactive/Kildekjeden').then(m => ({ default: m.Kildekjeden })));
 const MalstangaTest = lazy(() => import('./content/interactive/MalstangaTest').then(m => ({ default: m.MalstangaTest })));
 const HaraldsRike = lazy(() => import('./content/interactive/HaraldsRike').then(m => ({ default: m.HaraldsRike })));
@@ -397,6 +398,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     PlotGraph,
     QuoteBlock,
     Kildeliste,
+    DhammaEllerSverd,
     Kildekjeden,
     HaraldsRike,
     LegendensVekst,

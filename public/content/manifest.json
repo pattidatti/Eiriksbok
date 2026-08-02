@@ -3424,6 +3424,20 @@
           "image": "/images/indias-historie/mogulriket-hero.webp",
           "lessons": [
             {
+              "id": "ashoka-og-mauryariket",
+              "title": "Ashoka: keiseren som angret",
+              "description": "Keiseren som vant krigen mot Kalinga, angret offentlig, og byttet ut hæren med regler hugget i stein.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "india",
+                "mauryariket",
+                "ashoka",
+                "buddhisme",
+                "oldtiden"
+              ],
+              "createdDate": "2026-08-02T00:00:00Z"
+            },
+            {
               "id": "mogulriket",
               "title": "Mogulriket: verdens rikeste rike",
               "description": "I over tre hundre år styrte muslimske keisere et India der svært mange var hinduer. Hvor mye plass de ga hverandre, avgjorde om riket holdt sammen.",
