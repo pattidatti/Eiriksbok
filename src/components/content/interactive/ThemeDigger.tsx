@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Pickaxe, ChevronDown, CheckCircle2, XCircle, Sparkles } from 'lucide-react';
@@ -47,7 +47,10 @@ export const ThemeDigger = ({
     const [complete, setComplete] = useState(false);
     const currentLayer = sorted.find((l) => !revealedIds.has(l.id));
 
-    const handleAnswer = useCallback(
+    // Ingen useCallback: den manuelle memoiseringen her stemte ikke med det React
+    // Compiler utleder, og da hoppet compileren over å optimalisere hele
+    // komponenten. Uten den memoiserer compileren dette selv.
+    const handleAnswer =
         (layerId: string, opt: { correct: boolean; feedback: string }) => {
             if (opt.correct) {
                 const next = new Set(revealedIds);
@@ -65,9 +68,7 @@ export const ThemeDigger = ({
                 setWrongFeedback(opt.feedback);
                 setTimeout(() => setWrongKey(null), 2000);
             }
-        },
-        [revealedIds, sorted.length]
-    );
+        };
 
     return (
         <div className="w-full max-w-2xl mx-auto my-8 font-sans px-4">

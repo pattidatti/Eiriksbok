@@ -66,8 +66,14 @@ export const Oppgaver = ({ title = 'Oppgaver', forstaa, reflekter, gaaVidere }: 
     // Alle oppgaver i visningsrekkefølge — for "kopier"-knappen (flat 1..N-nummerering).
     const allTasks = groups.flatMap((g) => g.tasks);
 
-    // Fortløpende nummerering 1..N på tvers av kategoriene.
-    let counter = 0;
+    // Fortløpende nummerering 1..N på tvers av kategoriene. Startnummeret per gruppe
+    // regnes ut på forhånd, slik at ingen teller muteres inne i render-callbackene.
+    const groupStart: number[] = [];
+    let running = 0;
+    for (const g of groups) {
+        groupStart.push(running);
+        running += g.tasks.length;
+    }
 
     return (
         <motion.section
@@ -89,7 +95,7 @@ export const Oppgaver = ({ title = 'Oppgaver', forstaa, reflekter, gaaVidere }: 
             </header>
 
             <div className="space-y-4">
-                {groups.map((group) => {
+                {groups.map((group, gi) => {
                     const { level } = group;
                     return (
                         <div
@@ -109,8 +115,7 @@ export const Oppgaver = ({ title = 'Oppgaver', forstaa, reflekter, gaaVidere }: 
 
                             <ol className="space-y-1.5">
                                 {group.tasks.map((task, ti) => {
-                                    counter += 1;
-                                    const n = counter;
+                                    const n = groupStart[gi] + ti + 1;
                                     return (
                                         <motion.li
                                             key={ti}

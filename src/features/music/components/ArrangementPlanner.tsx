@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, X, Sliders, Activity } from 'lucide-react';
+import { nextId } from '../../../utils/random';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type SectionType = 'intro' | 'vers' | 'refreng' | 'bro' | 'outro' | 'solo';
@@ -44,7 +45,7 @@ export const ArrangementPlanner: React.FC = () => {
     const addSection = (type: SectionType) => {
         const lastSection = sections[sections.length - 1];
         const newSection: Section = {
-            id: Math.random().toString(36).substr(2, 9),
+            id: nextId('section'),
             type,
             bars: SECTION_CONFIG[type].defaultBars,
             key: lastSection ? lastSection.key : 'C',

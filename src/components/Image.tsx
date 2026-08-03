@@ -27,19 +27,26 @@ export const Image: React.FC<ImageProps> = ({
     const [currentSrc, setCurrentSrc] = useState<string | undefined>(src);
     const imgRef = React.useRef<HTMLImageElement>(null);
 
-    useEffect(() => {
-        // Reset state when src changes
+    // Reset state when src changes. Justeres under render i stedet for i en
+    // effect, slik at det nye bildet aldri vises et øyeblikk med forrige bildes
+    // lastet-/feil-tilstand.
+    const [prevSrc, setPrevSrc] = useState<string | undefined>(src);
+    if (src !== prevSrc) {
+        setPrevSrc(src);
         setIsLoaded(false);
         setError(false);
         setCurrentSrc(src);
-    }, [src]);
+    }
 
     useEffect(() => {
-        // Check if image is already loaded (e.g. from cache)
-        if (imgRef.current && imgRef.current.complete) {
-            if (imgRef.current.naturalWidth > 0) {
-                setIsLoaded(true);
-            }
+        // Check if image is already loaded (e.g. from cache).
+        // Her leser vi faktisk DOM-en: et bilde som ligger i cache kan være
+        // ferdig lastet før React rekker å koble på onLoad, og da kommer den
+        // hendelsen aldri. Dette er ekte synkronisering mot et eksternt system,
+        // ikke avledet state — derfor er setState i effect riktig her.
+        if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setIsLoaded(true);
         }
     }, [currentSrc]);
 

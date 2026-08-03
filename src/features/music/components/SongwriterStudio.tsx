@@ -5,6 +5,7 @@ import { OrchestraVisualizer } from './studio/OrchestraVisualizer';
 import { TimelineSequencer } from './studio/TimelineSequencer';
 import { ChordEditorOverlay } from './studio/ChordEditorOverlay';
 import { Layers, Zap, Music, Activity } from 'lucide-react';
+import { nextId } from '../../../utils/random';
 
 const INSTRUMENTS_CONFIG: InstrumentTrack[] = [
     { id: 'vocals', type: 'vocals', name: 'Vokal', color: 'text-pink-400', icon: <Music size={16} /> },
@@ -99,7 +100,7 @@ export const SongwriterStudio: React.FC = () => {
                 return {
                     ...prev,
                     [key]: {
-                        id: Math.random().toString(),
+                        id: nextId('block'),
                         sectionId,
                         instrumentId,
                         isActive: true,
@@ -113,7 +114,7 @@ export const SongwriterStudio: React.FC = () => {
 
     const addSection = (type: SectionType) => {
         const newSection: Section = {
-            id: Math.random().toString(),
+            id: nextId('section'),
             type,
             name: SECTIONS_CONFIG[type].label,
             bars: SECTIONS_CONFIG[type].defaultBars,

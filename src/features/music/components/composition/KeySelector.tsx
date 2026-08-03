@@ -30,9 +30,15 @@ export const KeySelector: React.FC<KeySelectorProps> = ({ value, onChange }) => 
     const [pendingScale, setPendingScale] = useState<ScaleType>(value?.scale ?? 'Major');
     const wrapperRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
+    // Nedtrekket skal alltid åpne med den skalaen som faktisk er valgt. Justeres
+    // under render i stedet for i en effect, så menyen ikke blinker med forrige
+    // valg i det den åpnes.
+    const scaleKey = `${value?.scale ?? 'Major'}-${isOpen}`;
+    const [prevScaleKey, setPrevScaleKey] = useState(scaleKey);
+    if (scaleKey !== prevScaleKey) {
+        setPrevScaleKey(scaleKey);
         setPendingScale(value?.scale ?? 'Major');
-    }, [value?.scale, isOpen]);
+    }
 
     useEffect(() => {
         if (!isOpen) return;

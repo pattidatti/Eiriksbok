@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { getDiatonicChords, formatChord } from '../../utils/musicTheory';
 import {
     PROGRESSION_PATTERNS,
@@ -79,9 +79,14 @@ export function ProgressionPanel({
         }));
     }, [rootNote, isMinor]);
 
-    useEffect(() => {
+    // Bytter eleven toneart eller dur/moll, går sjangerfilteret tilbake til
+    // «alle». Justeres under render i stedet for i en effect, så listen aldri
+    // vises ett bilde med forrige toneart sitt filter.
+    const [prevKey, setPrevKey] = useState(`${rootNote}-${isMinor}`);
+    if (`${rootNote}-${isMinor}` !== prevKey) {
+        setPrevKey(`${rootNote}-${isMinor}`);
         setPresetGenre('all');
-    }, [rootNote, isMinor]);
+    }
 
     const filteredPresets = useMemo(() => {
         if (presetGenre === 'all') return transposedPresets;

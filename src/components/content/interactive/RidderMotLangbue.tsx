@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swords, ArrowRight, ShieldCheck, RotateCcw } from 'lucide-react';
 
@@ -20,11 +20,8 @@ const MAX_ARCHERS = 5000;
 
 export function RidderMotLangbue({ title = 'Langbuen mot ridderen' }: RidderMotLangbueProps) {
     const [archers, setArchers] = useState(80);
-    // Har eleven noen gang naadd terskelen? (laaser feiringen, men spaken er fri)
-    const reached = useRef(false);
 
     const stopped = archers >= THRESHOLD;
-    if (stopped) reached.current = true;
 
     // Hvor langt fra den engelske linja stanser ridderen.
     // Faa skyttere: rytteren naar helt fram (lav prosent fra venstre).
@@ -47,7 +44,6 @@ export function RidderMotLangbue({ title = 'Langbuen mot ridderen' }: RidderMotL
 
     const handleReset = () => {
         setArchers(80);
-        reached.current = false;
     };
 
     return (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, AlertTriangle, Hammer } from 'lucide-react';
 
@@ -15,10 +15,14 @@ export const BusinessCycleModel: React.FC = () => {
     const projectSize = perceivedResources;
     const malinvestment = Math.max(0, projectSize - REAL_SAVINGS);
 
-    // Reset when changing rate significantly
-    useEffect(() => {
+    // Reset when changing rate. Justeres under render i stedet for i en effect,
+    // slik at simuleringen ikke rekker å vise forrige fase ett bilde etter at
+    // eleven har dratt i renta.
+    const [prevInterestRate, setPrevInterestRate] = useState(interestRate);
+    if (interestRate !== prevInterestRate) {
+        setPrevInterestRate(interestRate);
         setStage('planning');
-    }, [interestRate]);
+    }
 
     const startProject = () => {
         setStage('boom');

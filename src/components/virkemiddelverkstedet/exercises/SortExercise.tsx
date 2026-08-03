@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, XCircle } from 'lucide-react';
 import type { Exercise, SortData } from '../../../data/virkemiddelverkstedet/types';
+import { shuffledIndices } from '../../../utils/random';
 
 interface SortExerciseProps {
     exercise: Exercise;
@@ -17,14 +18,8 @@ export const SortExercise = ({ exercise, onCorrect, onWrong }: SortExerciseProps
     const [checked, setChecked] = useState(false);
     const [attempts, setAttempts] = useState(0);
 
-    const shuffledItems = useMemo(() => {
-        const indices = data.items.map((_, i) => i);
-        for (let i = indices.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [indices[i], indices[j]] = [indices[j], indices[i]];
-        }
-        return indices;
-    }, [data.items]);
+    // Stokkes én gang når oppgaven åpnes — se MatchExercise for samme mønster.
+    const [shuffledItems] = useState(() => shuffledIndices(data.items.length));
 
     const handleCategoryClick = (categoryId: string) => {
         if (checked || selectedItem === null) return;

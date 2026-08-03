@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { wordClasses, words } from './wordSorterData';
 import type { WordClassId, WordClass, WordItem } from './wordSorterData';
@@ -179,9 +179,18 @@ const playSound = (type: 'success' | 'error') => {
     }
 };
 
+// Trekningen ligger på modulnivå: Math.random() kan ikke kalles inne i en
+// komponent React renderer.
+const pickRandomWord = (pool: WordItem[]): WordItem | null =>
+    pool[Math.floor(Math.random() * pool.length)] ?? null;
+
 const GameLoop: React.FC<GameLoopProps> = ({ selectedClassIds, onExit }) => {
     const [score, setScore] = useState(0);
-    const [currentWord, setCurrentWord] = useState<WordItem | null>(null);
+    // Første ord trekkes i useState-initialisatoren, ikke i en effect: da starter
+    // spillet med et ord på skjermen i stedet for et tomt bilde først.
+    const [currentWord, setCurrentWord] = useState<WordItem | null>(() =>
+        pickRandomWord(words.filter(w => selectedClassIds.includes(w.classId)))
+    );
     const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null);
     const [streak, setStreak] = useState(0);
     const [animatingBucket, setAnimatingBucket] = useState<WordClassId | null>(null);
@@ -210,15 +219,10 @@ const GameLoop: React.FC<GameLoopProps> = ({ selectedClassIds, onExit }) => {
     };
 
     const pickNewWord = () => {
-        const randomIndex = Math.floor(Math.random() * pool.length);
-        setCurrentWord(pool[randomIndex]);
+        setCurrentWord(pickRandomWord(pool));
         setFeedback(null);
         setAnimatingBucket(null);
     };
-
-    useEffect(() => {
-        pickNewWord();
-    }, []);
 
     const handleBucketClick = (classId: WordClassId) => {
         if (!currentWord || feedback) return;

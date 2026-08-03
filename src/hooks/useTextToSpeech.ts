@@ -127,6 +127,10 @@ export const useTextToSpeech = (): TTSReturn => {
         }
     }, []);
 
+    // speakBlock kaller seg selv for neste blokk. En useCallback kan ikke referere
+    // seg selv i sin egen initialisering, så selvkallet går via denne ref-en.
+    const speakBlockRef = useRef<(index: number) => void>(() => {});
+
     const speakBlock = useCallback(
         (index: number) => {
             if (!synth.current || index >= blocksRef.current.length || index < 0) {
@@ -171,7 +175,7 @@ export const useTextToSpeech = (): TTSReturn => {
                     // setTimeout to work around Chrome/ChromeOS bug where
                     // synth.speak() called directly from onend gets silently interrupted
                     setTimeout(() => {
-                        if (!isPausedRef.current) speakBlock(index + 1);
+                        if (!isPausedRef.current) speakBlockRef.current(index + 1);
                     }, 50);
                 } else {
                     setIsPlaying(false);
@@ -196,6 +200,10 @@ export const useTextToSpeech = (): TTSReturn => {
         },
         [clearKeepAlive, startKeepAlive]
     );
+
+    useEffect(() => {
+        speakBlockRef.current = speakBlock;
+    }, [speakBlock]);
 
     const speak = useCallback(
         (textBlocks: string[], startIndex = 0) => {

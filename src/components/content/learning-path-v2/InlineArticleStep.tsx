@@ -28,11 +28,12 @@ export const InlineArticleStep: React.FC<StepRendererProps> = ({
         [step.articleAnchors]
     );
 
+    // En manglende lenke er ikke noe vi trenger å hente for å oppdage — det ses
+    // direkte på steget. Bare selve nettverksfeilene går via state.
+    const missingUrl = !step.articleUrl;
+
     useEffect(() => {
-        if (!step.articleUrl) {
-            setError('Mangler artikkellenke.');
-            return;
-        }
+        if (!step.articleUrl) return;
         const path = `/content${step.articleUrl}.json`;
         let cancelled = false;
         fetch(path)
@@ -56,10 +57,10 @@ export const InlineArticleStep: React.FC<StepRendererProps> = ({
         };
     }, [step.articleUrl]);
 
-    if (error) {
+    if (missingUrl || error) {
         return (
             <div className="rounded-xl bg-rose-50 border border-rose-200 p-5 text-rose-900">
-                {error}
+                {missingUrl ? 'Mangler artikkellenke.' : error}
             </div>
         );
     }

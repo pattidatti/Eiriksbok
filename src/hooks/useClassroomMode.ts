@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 const KEY = 'learning_path_classroom_mode';
 
@@ -9,12 +9,11 @@ export function useClassroomMode(): {
     setClassroom: (v: boolean) => void;
     toggle: () => void;
 } {
-    const [classroom, setClassroomState] = useState<boolean>(false);
-
-    useEffect(() => {
-        const saved = localStorage.getItem(KEY);
-        if (saved === 'true') setClassroomState(true);
-    }, []);
+    // Leses én gang ved mount. Som effect ble læringsstien først tegnet i normal
+    // størrelse og hoppet så til projektor-modus.
+    const [classroom, setClassroomState] = useState<boolean>(
+        () => localStorage.getItem(KEY) === 'true'
+    );
 
     const setClassroom = useCallback((v: boolean) => {
         setClassroomState(v);

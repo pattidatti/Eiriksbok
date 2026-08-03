@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swords, Shield, Eye, Heart, Trophy, Skull, RotateCcw } from 'lucide-react';
 import { MicroGameFrame } from './MicroGameFrame';
@@ -96,13 +96,6 @@ const GladiusDuel: React.FC<MicroGameProps> = ({ onComplete }) => {
     const gameOver = playerHp === 0 || opponentHp === 0;
     const playerWon = opponentHp === 0;
 
-    useEffect(() => {
-        if (gameOver && phase !== 'done') {
-            setPhase('done');
-            sounds.play(playerWon ? 'complete' : 'incorrect');
-        }
-    }, [gameOver, phase, playerWon, sounds]);
-
     const handleChoose = (move: Move) => {
         if (phase !== 'choose' || gameOver) return;
         setPendingChoice(move);
@@ -114,16 +107,27 @@ const GladiusDuel: React.FC<MicroGameProps> = ({ onComplete }) => {
         setTimeout(() => {
             setLastRound(round);
             setHistory((h) => [...h, round]);
-            setPhase('reveal');
+
+            // Utfallet av runden avgjøres her, der de nye HP-ene regnes ut. Før
+            // lå «er duellen over?» i en egen effect som reagerte på at HP endret
+            // seg — altså én render senere.
+            const nextPlayerHp = result === 'lose' ? Math.max(0, playerHp - 1) : playerHp;
+            const nextOpponentHp = result === 'win' ? Math.max(0, opponentHp - 1) : opponentHp;
+            setPlayerHp(nextPlayerHp);
+            setOpponentHp(nextOpponentHp);
 
             if (result === 'win') {
-                setOpponentHp((hp) => Math.max(0, hp - 1));
                 sounds.play('correct');
             } else if (result === 'lose') {
-                setPlayerHp((hp) => Math.max(0, hp - 1));
                 sounds.play('incorrect');
             } else {
                 sounds.play('drop');
+            }
+
+            const duelOver = nextPlayerHp === 0 || nextOpponentHp === 0;
+            setPhase(duelOver ? 'done' : 'reveal');
+            if (duelOver) {
+                sounds.play(nextOpponentHp === 0 ? 'complete' : 'incorrect');
             }
         }, 350);
     };

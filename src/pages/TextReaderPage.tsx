@@ -28,10 +28,17 @@ export const TextReaderPage: React.FC = () => {
         textLibraryData.find((t: TextEntry) => t.id === textId),
         [textId]);
 
-    const [currentLanguage, setCurrentLanguage] = useState<string>('bm.');
-    const [isSplitView, setIsSplitView] = useState(false);
+    const [currentLanguage, setCurrentLanguage] = useState<string>(textEntry?.language || 'bm.');
+    const [isSplitView, setIsSplitView] = useState(
+        () => !!textEntry?.translations && textEntry.translations.length > 0
+    );
 
-    useEffect(() => {
+    // Bytter eleven tekst, skal språk og delt visning følge den nye teksten.
+    // Justeres under render i stedet for i en effect, så den nye teksten aldri
+    // vises et øyeblikk med forrige teksts innstillinger.
+    const [prevTextEntry, setPrevTextEntry] = useState(textEntry);
+    if (textEntry !== prevTextEntry) {
+        setPrevTextEntry(textEntry);
         if (textEntry) {
             setCurrentLanguage(textEntry.language || 'bm.');
             // Default to split view if translations are available
@@ -39,7 +46,7 @@ export const TextReaderPage: React.FC = () => {
                 setIsSplitView(true);
             }
         }
-    }, [textEntry]);
+    }
 
 
 

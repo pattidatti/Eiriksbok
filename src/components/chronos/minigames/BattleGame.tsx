@@ -14,6 +14,14 @@ const MoveIcon: Record<string, any> = {
     maneuver: RefreshCw
 };
 
+// Motstanderens trekk og kritisk treff skal være ekte tilfeldig — det er hele
+// spillet. Trekningen ligger på modulnivå fordi Math.random() ikke kan kalles
+// inne i en komponent som React renderer.
+const pickEnemyMove = (moves: ChronosBattleConfig['moves']) =>
+    moves[Math.floor(Math.random() * moves.length)];
+
+const rollCritical = () => Math.random() > 0.8;
+
 export const BattleGame: React.FC<BattleGameProps> = ({ config, stats, onComplete }) => {
     const getInitialPlayerHealth = () => {
         let hp = config.playerHealth;
@@ -45,7 +53,7 @@ export const BattleGame: React.FC<BattleGameProps> = ({ config, stats, onComplet
         const playerMove = config.moves.find((m: any) => m.id === moveId)!;
 
         // Simple AI: Random Move
-        const enemyMove = config.moves[Math.floor(Math.random() * config.moves.length)];
+        const enemyMove = pickEnemyMove(config.moves);
 
         let resultText = "";
         let pDmg = 0;
@@ -68,7 +76,7 @@ export const BattleGame: React.FC<BattleGameProps> = ({ config, stats, onComplet
         }
 
         // Critical Hit Chance (small)
-        if (Math.random() > 0.8) {
+        if (rollCritical()) {
             if (eDmg > 0) { eDmg += 2; resultText += " KRITISK TREFF!"; }
             if (pDmg > 0) { pDmg += 2; resultText += " KRITISK TREFF PÅ DEG!"; }
         }

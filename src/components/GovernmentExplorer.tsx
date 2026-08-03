@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect, useCallback, useMemo, memo } from 'react';
+import { useState, useCallback, useMemo, memo } from 'react';
 import { Quiz } from './Quiz';
 import type { Lesson } from '../types';
 import {
@@ -107,13 +107,16 @@ export const GovernmentExplorer: React.FC<GovernmentExplorerProps> = ({ lesson }
         setPowerRelation(null);
     }, []);
 
-    useEffect(() => {
-        // Reset maktbalanse når man bytter tab
+    // Reset maktbalanse når man bytter tab. Justeres under render i stedet for i
+    // en effect, så fanen aldri vises ett bilde med forrige tilstand.
+    const [prevTab, setPrevTab] = useState(activeTab);
+    if (activeTab !== prevTab) {
+        setPrevTab(activeTab);
         if (activeTab === 'maktbalanse') {
             setGovStatus('sitter');
             setTriggerAction(false);
         }
-    }, [activeTab]);
+    }
 
     // --- Maktbalanse Actions ---
     const handleMistillit = useCallback(() => {

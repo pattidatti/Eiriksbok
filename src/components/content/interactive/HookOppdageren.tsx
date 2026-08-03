@@ -101,15 +101,18 @@ function Contour({ hook, activeIdx }: ContourProps) {
     const totalDur = hook.steps.reduce((s, x) => s + x.dur, 0);
     const range = Math.max(hook.maxPitch - hook.minPitch, 4);
 
+    // Vanlig løkke i stedet for map med mutert cursor: en let som endres inne i en
+    // callback under render er ikke lov (callbacken kan overleve renderen).
+    const positioned: { x: number; y: number }[] = [];
     let cursor = 0;
-    const positioned = hook.steps.map((step) => {
+    for (const step of hook.steps) {
         const semitone = NOTE_TO_SEMITONE[step.note] ?? 0;
         const x = padX + ((cursor + step.dur / 2) / totalDur) * (W - padX * 2);
         const norm = (semitone - hook.minPitch) / range;
         const y = H - 8 - norm * (H - 16);
         cursor += step.dur;
-        return { x, y };
-    });
+        positioned.push({ x, y });
+    }
 
     return (
         <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-16">

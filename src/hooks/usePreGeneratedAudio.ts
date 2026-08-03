@@ -34,12 +34,18 @@ export const usePreGeneratedAudio = (
     const isPausedRef = useRef(false);
     const playBlockRef = useRef<(index: number) => void>(() => {});
 
+    // Ny tekst: nullstill tilgjengeligheten med en gang. Justeres under render
+    // slik at forrige teksts lyd ikke ser ut til å gjelde den nye mens
+    // manifestet fortsatt hentes.
+    const [prevTextId, setPrevTextId] = useState(textId);
+    if (textId !== prevTextId) {
+        setPrevTextId(textId);
+        setIsAvailable(false);
+    }
+
     // Check availability by fetching manifest
     useEffect(() => {
-        if (!textId) {
-            setIsAvailable(false);
-            return;
-        }
+        if (!textId) return;
         let cancelled = false;
         fetch(`/audio/bibliotek/${textId}/manifest.json`, { method: 'HEAD' })
             .then((res) => {

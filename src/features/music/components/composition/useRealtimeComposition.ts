@@ -23,46 +23,62 @@ type CompositionAction =
     | { type: 'REMOVE_CHORD', sectionId: string, barId: string, chordIndex: number }
     | { type: 'TOGGLE_INSTRUMENT', sectionId: string, instrument: InstrumentType };
 
+// --- Helper: Find Indices ---
+// Ligger på modulnivå og tar komposisjonen som argument. Som funksjon inne i
+// hooken ble den laget på nytt hver render, og da stemte ikke deps-lista til
+// dispatch med det React Compiler utledet — så compileren hoppet over hooken.
+const getIndices = (composition: Composition, sectionId: string, barId?: string) => {
+    const sIndex = composition.sections.findIndex(s => s.id === sectionId);
+    if (sIndex === -1) return null;
+
+    if (!barId) return { sIndex };
+
+    const bIndex = composition.sections[sIndex].bars.findIndex(b => b.id === barId);
+    if (bIndex === -1) return null;
+
+    return { sIndex, bIndex };
+};
+
 export const useRealtimeComposition = () => {
+    const activeId = new URLSearchParams(window.location.search).get('id');
+
+    // Default / Draft Logic. Utkastet leses én gang ved mount i stedet for i en
+    // effect — da er komposisjonen på plass allerede i første render, i stedet for
+    // at verktøyet først tegnes tomt og så fylles.
+    const [initial] = useState(() => {
+        if (activeId) return { composition: null as Composition | null, sectionId: '' };
+
+        const draft = localStorage.getItem('composition_draft');
+        if (draft) {
+            try {
+                const parsed = JSON.parse(draft) as Composition;
+                return { composition: parsed, sectionId: parsed.sections[0]?.id ?? '' };
+            } catch (e) { console.error(e); }
+        }
+        const defaultComp = createDefaultComposition();
+        return { composition: defaultComp, sectionId: defaultComp.sections[0].id };
+    });
+
     // --- State ---
-    const [composition, setComposition] = useState<Composition | null>(null);
-    const [activeSectionId, setActiveSectionId] = useState<string>('');
+    const [composition, setComposition] = useState<Composition | null>(initial.composition);
+    const [activeSectionId, setActiveSectionId] = useState<string>(initial.sectionId);
     const [selectedDuration, setSelectedDuration] = useState<NoteDuration>('4n');
     const [isRestMode, setIsRestMode] = useState(false);
 
-    // Sync Status
-    const [status, setStatus] = useState<'idle' | 'loading' | 'saving' | 'saved' | 'error'>('idle');
+    // Sync Status. Med en delt komposisjon starter vi i 'loading' med en gang;
+    // et lokalt utkast er ferdig lastet i det samme render.
+    const [status, setStatus] = useState<'idle' | 'loading' | 'saving' | 'saved' | 'error'>(
+        activeId ? 'loading' : 'saved'
+    );
     const [activeUsers, setActiveUsers] = useState(0);
 
     // Refs for internal logic
-    const activeId = new URLSearchParams(window.location.search).get('id');
     const isRemoteUpdate = useRef(false);
-
-    // Default / Draft Logic
-    useEffect(() => {
-        if (!activeId) {
-            // Load draft or create default
-            const draft = localStorage.getItem('composition_draft');
-            if (draft) {
-                try {
-                    const parsed = JSON.parse(draft);
-                    setComposition(parsed);
-                    if (parsed.sections.length > 0) setActiveSectionId(parsed.sections[0].id);
-                } catch (e) { console.error(e); }
-            } else {
-                const defaultComp = createDefaultComposition();
-                setComposition(defaultComp);
-                setActiveSectionId(defaultComp.sections[0].id);
-            }
-            setStatus('saved');
-        }
-    }, [activeId]);
 
     // --- Firebase Sync (Read) ---
     useEffect(() => {
         if (!activeId) return;
 
-        setStatus('loading');
         const songRef = ref(db, `compositions/${activeId}`);
 
         const unsubscribe = onValue(songRef, (snapshot) => {
@@ -95,20 +111,6 @@ export const useRealtimeComposition = () => {
         };
     }, [activeId]);
 
-
-    // --- Helper: Find Indices ---
-    const getIndices = (sectionId: string, barId?: string) => {
-        if (!composition) return null;
-        const sIndex = composition.sections.findIndex(s => s.id === sectionId);
-        if (sIndex === -1) return null;
-
-        if (!barId) return { sIndex };
-
-        const bIndex = composition.sections[sIndex].bars.findIndex(b => b.id === barId);
-        if (bIndex === -1) return null;
-
-        return { sIndex, bIndex };
-    };
 
     // --- Action Dispatcher ---
     const dispatch = useCallback((action: CompositionAction) => {
@@ -192,7 +194,7 @@ export const useRealtimeComposition = () => {
                 break;
             }
             case 'UPDATE_SECTION': {
-                const { sIndex } = getIndices(action.sectionId) || {};
+                const { sIndex } = getIndices(composition, action.sectionId) || {};
                 if (sIndex === undefined) return;
 
                 nextComposition.sections[sIndex] = { ...nextComposition.sections[sIndex], ...action.updates };
@@ -205,7 +207,7 @@ export const useRealtimeComposition = () => {
                 break;
             }
             case 'UPDATE_SECTION_BARS': {
-                const { sIndex } = getIndices(action.sectionId) || {};
+                const { sIndex } = getIndices(composition, action.sectionId) || {};
                 if (sIndex === undefined) return;
 
                 const currentBars = nextComposition.sections[sIndex].bars;
@@ -223,7 +225,7 @@ export const useRealtimeComposition = () => {
                 break;
             }
             case 'UPDATE_BAR_NODES': {
-                const { sIndex, bIndex } = getIndices(action.sectionId, action.barId) || {};
+                const { sIndex, bIndex } = getIndices(composition, action.sectionId, action.barId) || {};
                 if (sIndex === undefined || bIndex === undefined) return;
 
                 nextComposition.sections[sIndex].bars[bIndex].nodes = action.nodes;
@@ -234,7 +236,7 @@ export const useRealtimeComposition = () => {
                 break;
             }
             case 'UPDATE_BAR_LYRICS': {
-                const { sIndex, bIndex } = getIndices(action.sectionId, action.barId) || {};
+                const { sIndex, bIndex } = getIndices(composition, action.sectionId, action.barId) || {};
                 if (sIndex === undefined || bIndex === undefined) return;
 
                 nextComposition.sections[sIndex].bars[bIndex].lyrics = action.text;
@@ -244,7 +246,7 @@ export const useRealtimeComposition = () => {
                 break;
             }
             case 'ADD_CHORD': {
-                const { sIndex, bIndex } = getIndices(action.sectionId, action.barId) || {};
+                const { sIndex, bIndex } = getIndices(composition, action.sectionId, action.barId) || {};
                 if (sIndex === undefined || bIndex === undefined) return;
 
                 const chords = nextComposition.sections[sIndex].bars[bIndex].chords || [];
@@ -257,7 +259,7 @@ export const useRealtimeComposition = () => {
                 break;
             }
             case 'UPDATE_CHORD': {
-                const { sIndex, bIndex } = getIndices(action.sectionId, action.barId) || {};
+                const { sIndex, bIndex } = getIndices(composition, action.sectionId, action.barId) || {};
                 if (sIndex === undefined || bIndex === undefined) return;
 
                 const chords = nextComposition.sections[sIndex].bars[bIndex].chords || [];
@@ -273,7 +275,7 @@ export const useRealtimeComposition = () => {
                 break;
             }
             case 'MOVE_CHORD': {
-                const { sIndex, bIndex } = getIndices(action.sectionId, action.barId) || {};
+                const { sIndex, bIndex } = getIndices(composition, action.sectionId, action.barId) || {};
                 if (sIndex === undefined || bIndex === undefined) return;
 
                 const chords = nextComposition.sections[sIndex].bars[bIndex].chords || [];
@@ -299,7 +301,7 @@ export const useRealtimeComposition = () => {
                 break;
             }
             case 'REMOVE_CHORD': {
-                const { sIndex, bIndex } = getIndices(action.sectionId, action.barId) || {};
+                const { sIndex, bIndex } = getIndices(composition, action.sectionId, action.barId) || {};
                 if (sIndex === undefined || bIndex === undefined) return;
 
                 const chords = nextComposition.sections[sIndex].bars[bIndex].chords || [];
@@ -313,7 +315,7 @@ export const useRealtimeComposition = () => {
                 break;
             }
             case 'TOGGLE_INSTRUMENT': {
-                const { sIndex } = getIndices(action.sectionId) || {};
+                const { sIndex } = getIndices(composition, action.sectionId) || {};
                 if (sIndex === undefined) return;
 
                 const insts = nextComposition.sections[sIndex].instruments || [];
@@ -390,8 +392,9 @@ export const useRealtimeComposition = () => {
 
     const updateBar = (sectionId: string, barId: string, nodeIndex: number, newDuration: NoteDuration, isRest: boolean) => {
         // We need to calculate nodes here to create the action payload
-        const { sIndex, bIndex } = getIndices(sectionId, barId) || {};
-        if (sIndex === undefined || bIndex === undefined || !composition) return;
+        if (!composition) return;
+        const { sIndex, bIndex } = getIndices(composition, sectionId, barId) || {};
+        if (sIndex === undefined || bIndex === undefined) return;
 
         const currentNodes = composition.sections[sIndex].bars[bIndex].nodes;
         const newNodes = calculateNewNodes(currentNodes, nodeIndex, newDuration, isRest);

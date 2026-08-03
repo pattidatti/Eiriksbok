@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, MessageCircle, Share2, Shield, Info } from 'lucide-react';
 
@@ -21,29 +21,32 @@ const allPosts: Post[] = [
     { id: 8, author: "AlgoritmeKritiker", category: 'Teknologi', bias: 'Kritisk', content: "Vi blir kontrollert av koder vi ikke ser. Våre valg er ikke lenger våre egne." },
 ];
 
+// Boblen er ekte tilfeldig, så feeden kan ikke utledes under render. Filtreringen
+// ligger på modulnivå og kjøres fra klikk-handleren i stedet for fra en effect.
+const filterFeed = (preference: { category?: string; bias?: string }, bubbleStrength: number): Post[] =>
+    allPosts
+        .filter(post => {
+            const matchesCategory = post.category === preference.category;
+            const matchesBias = post.bias === preference.bias;
+
+            // As strength increases, the chance of seeing non-matching posts decreases
+            const randomFactor = Math.random() * 100;
+            return matchesCategory || matchesBias || randomFactor > bubbleStrength;
+        })
+        .slice(0, 4);
+
 export const FilterBubbleSim: React.FC = () => {
     const [feed, setFeed] = useState<Post[]>(allPosts);
     const [preference, setPreference] = useState<{ category?: string; bias?: string }>({});
     const [bubbleStrength, setBubbleStrength] = useState(0);
 
     const handleLike = (post: Post) => {
-        setPreference({ category: post.category, bias: post.bias });
-        setBubbleStrength(prev => Math.min(prev + 25, 100));
+        const nextPreference = { category: post.category, bias: post.bias };
+        const nextStrength = Math.min(bubbleStrength + 25, 100);
+        setPreference(nextPreference);
+        setBubbleStrength(nextStrength);
+        setFeed(filterFeed(nextPreference, nextStrength));
     };
-
-    useEffect(() => {
-        if (bubbleStrength > 0) {
-            const filtered = allPosts.filter(post => {
-                const matchesCategory = post.category === preference.category;
-                const matchesBias = post.bias === preference.bias;
-
-                // As strength increases, the chance of seeing non-matching posts decreases
-                const randomFactor = Math.random() * 100;
-                return (matchesCategory || matchesBias) || randomFactor > bubbleStrength;
-            });
-            setFeed(filtered.slice(0, 4));
-        }
-    }, [bubbleStrength, preference]);
 
     const reset = () => {
         setFeed(allPosts);

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Telescope, Eye, RotateCcw, Sparkles, CheckCircle2 } from 'lucide-react';
+import { scatter } from '../../../utils/random';
 
 type ObjectId = 'mane' | 'jupiter' | 'venus' | 'sol';
 
@@ -375,12 +376,12 @@ function JupiterDetail() {
                 { x: 28, label: 'Europa' },
                 { x: 72, label: 'Ganymedes' },
                 { x: 86, label: 'Kallisto' },
-            ].map((m) => (
+            ].map((m, mi) => (
                 <motion.div
                     key={m.label}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2 + Math.random() * 0.4 }}
+                    transition={{ delay: 0.2 + scatter(mi, 1) * 0.4 }}
                     className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)]"
                     style={{ left: `${m.x}%` }}
                     title={m.label}

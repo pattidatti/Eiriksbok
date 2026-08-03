@@ -187,13 +187,23 @@ export const ProgresjonAnalysator: React.FC<ProgresjonAnalysatorProps> = ({
         };
     }, []);
 
-    const keyInfo = useMemo(() => detectKey(progression), [progressionKey]);
+    // progressionKey er progresjonen som streng — den er det som faktisk avgjør
+    // resultatet, mens selve arrayet får ny identitet ved hver render.
+    const keyInfo = useMemo(
+        () => detectKey(progressionKey.split(',') as ChordId[]),
+        [progressionKey]
+    );
 
-    useEffect(() => {
+    // Ny progresjon: tilbake til foreslått skala og første akkord. Justeres under
+    // render i stedet for i en effect, så analysen aldri vises ett bilde med
+    // forrige progresjons skala.
+    const [prevProgressionKey, setPrevProgressionKey] = useState(progressionKey);
+    if (progressionKey !== prevProgressionKey) {
+        setPrevProgressionKey(progressionKey);
         setScaleType(keyInfo.suggestedScale);
         setFocusedIdx(0);
         setExplored(new Set([0]));
-    }, [progressionKey]);
+    }
 
     const scaleSet = useMemo(
         () => buildScaleSet(keyInfo.rootSemitone, scaleType),

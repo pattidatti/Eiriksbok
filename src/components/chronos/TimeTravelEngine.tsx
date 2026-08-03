@@ -16,6 +16,7 @@ import { Skeleton } from '../Skeleton';
 import { useNavigate } from 'react-router-dom';
 import { useTimeTravelProfile } from './context/TimeTravelProfileContext';
 import { useChronosRunSave, type SavedRun } from './hooks/useChronosRunSave';
+import { scatter } from '../../utils/random';
 
 interface TimeTravelEngineProps {
     scenarioId: string;
@@ -54,14 +55,15 @@ function ScenarioStartScreen({
     onFresh: () => void;
     onExit: () => void;
 }) {
+    // Dekorative støvkorn — deterministisk spredning, se utils/random.
     const dustParticles = useMemo(() =>
         Array.from({ length: 6 }, (_, i) => ({
-            left: 15 + Math.random() * 70,
-            bottom: 10 + Math.random() * 40,
-            size: 2 + Math.random() * 3,
-            duration: 6 + Math.random() * 8,
+            left: 15 + scatter(i, 1) * 70,
+            bottom: 10 + scatter(i, 2) * 40,
+            size: 2 + scatter(i, 3) * 3,
+            duration: 6 + scatter(i, 4) * 8,
             delay: i * -2.5,
-            opacity: 0.2 + Math.random() * 0.3,
+            opacity: 0.2 + scatter(i, 5) * 0.3,
         })), []);
 
     return (

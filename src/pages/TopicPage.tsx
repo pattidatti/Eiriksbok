@@ -37,12 +37,11 @@ export const TopicPage: React.FC = () => {
 
     const activeItem = currentSubTopic || currentTopic;
 
-    // Define rawLessons early for useMemo, defaulting to empty array if data isn't ready
-    const rawLessons = activeItem?.lessons || [];
-
-    // Sorting Logic - Moved up to avoid early return hook violation
+    // Sorting Logic - Moved up to avoid early return hook violation.
+    // rawLessons hentes inne i memoen: som en variabel utenfor ble `|| []` en ny
+    // tom liste hver render, og memoen regnet på nytt hver gang uansett.
     const sortedLessons = React.useMemo(() => {
-        if (!rawLessons) return [];
+        const rawLessons = activeItem?.lessons ?? [];
         return [...rawLessons].sort((a: any, b: any) => {
             if (sortMode === 'alphabetical') return a.title.localeCompare(b.title);
             if (sortMode === 'year') {
@@ -58,7 +57,7 @@ export const TopicPage: React.FC = () => {
             }
             return 0;
         });
-    }, [rawLessons, sortMode]);
+    }, [activeItem, sortMode]);
 
     // Filter by tag if present in query params - Moved up
     const queryParams = new URLSearchParams(location.search);

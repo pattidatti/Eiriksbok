@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Radio, Shield, Users, AlertTriangle } from 'lucide-react';
 
@@ -8,17 +8,17 @@ export const EliteNetworkBuilder: React.FC = () => {
     const [mediaControl, setMediaControl] = useState(40);
     const [dissent, setDissent] = useState(20);
     const [day, setDay] = useState(1);
-    const [gameOver, setGameOver] = useState<string | null>(null);
-
     const totalPower = (wealth + militarySupport + mediaControl) / 3;
 
-    useEffect(() => {
-        if (totalPower < 30) {
-            setGameOver("Kupp! Den herskende klassen var for svak. En ny elite har tatt makten.");
-        } else if (dissent > 80) {
-            setGameOver("Revolusjon! Folket har stormet palasset. Oligarkiet har falt.");
-        }
-    }, [totalPower, dissent]);
+    // Utledet, ikke egen state: sluttilstanden følger alltid direkte av målerne.
+    // Som state i en effect ble den satt én render for sent, og reset måtte huske
+    // å nullstille den i tillegg til målerne.
+    const gameOver =
+        totalPower < 30
+            ? 'Kupp! Den herskende klassen var for svak. En ny elite har tatt makten.'
+            : dissent > 80
+              ? 'Revolusjon! Folket har stormet palasset. Oligarkiet har falt.'
+              : null;
 
     const performAction = (action: string) => {
         if (gameOver) return;
@@ -56,7 +56,6 @@ export const EliteNetworkBuilder: React.FC = () => {
         setMediaControl(40);
         setDissent(20);
         setDay(1);
-        setGameOver(null);
     };
 
     return (

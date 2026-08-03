@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Lock, ArrowRight } from 'lucide-react';
 
 const ADMIN_PASSWORD = 'admin'; // Simple hardcoded password for now
@@ -8,16 +8,13 @@ interface AdminGuardProps {
 }
 
 export const AdminGuard: React.FC<AdminGuardProps> = ({ children }) => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    // Leses én gang når komponenten monteres. Som effect ble første render alltid
+    // vist som «ikke innlogget», slik at admin så et glimt av login-skjemaet.
+    const [isAuthenticated, setIsAuthenticated] = useState(
+        () => sessionStorage.getItem('admin_authenticated') === 'true'
+    );
     const [password, setPassword] = useState('');
     const [error, setError] = useState(false);
-
-    useEffect(() => {
-        const storedAuth = sessionStorage.getItem('admin_authenticated');
-        if (storedAuth === 'true') {
-            setIsAuthenticated(true);
-        }
-    }, []);
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();

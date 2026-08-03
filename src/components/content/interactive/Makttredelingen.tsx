@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Crown, Landmark, Briefcase, Scale, RotateCcw, ShieldCheck, ShieldAlert, Skull, AlertTriangle } from 'lucide-react';
 
@@ -112,13 +112,12 @@ export function Makttredelingen({
     const [step, setStep] = useState<StepId>(0);
     const [explored, setExplored] = useState<Set<StepId>>(new Set([0]));
 
-    useEffect(() => {
-        setExplored((prev) => {
-            const next = new Set(prev);
-            next.add(step);
-            return next;
-        });
-    }, [step]);
+    // Å bytte steg og å registrere at steget er utforsket hører sammen. Før lå
+    // registreringen i en effect og skjedde én render senere enn selve byttet.
+    const goToStep = (id: StepId) => {
+        setStep(id);
+        setExplored((prev) => new Set(prev).add(id));
+    };
 
     const current = STEPS[step];
     const Icon = current.icon;
@@ -141,7 +140,7 @@ export function Makttredelingen({
                         return (
                             <button
                                 key={s.id}
-                                onClick={() => setStep(s.id)}
+                                onClick={() => goToStep(s.id)}
                                 className={`relative text-left px-3 py-2 rounded-lg border transition-all ${
                                     active
                                         ? `${s.border} ring-2 ring-offset-1 ring-slate-300 shadow-sm`

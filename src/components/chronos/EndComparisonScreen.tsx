@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, XCircle, History } from 'lucide-react';
 import type { ChoiceHistoryEntry } from '../../data/chronos/types';
+import { scatter } from '../../utils/random';
 
 interface EndComparisonScreenProps {
     choiceHistory: ChoiceHistoryEntry[];
@@ -26,10 +27,12 @@ function useCountUp(target: number, duration = 1200, delay = 800) {
 }
 
 export const EndComparisonScreen: React.FC<EndComparisonScreenProps> = ({ choiceHistory }) => {
-    if (choiceHistory.length === 0) return null;
-
     const historicalCount = choiceHistory.filter((e) => e.isHistorical).length;
     const animatedCount = useCountUp(historicalCount);
+
+    // Vaktsjekken må stå etter hooks — React krever lik hook-rekkefølge hver render.
+    if (choiceHistory.length === 0) return null;
+
     const isHighScore = historicalCount >= choiceHistory.length * 0.7;
 
     return (
@@ -47,18 +50,18 @@ export const EndComparisonScreen: React.FC<EndComparisonScreenProps> = ({ choice
                             key={i}
                             initial={{
                                 opacity: 1,
-                                x: `${20 + Math.random() * 60}%`,
+                                x: `${20 + scatter(i, 1) * 60}%`,
                                 y: '-10%',
-                                rotate: Math.random() * 360,
-                                scale: 0.6 + Math.random() * 0.6,
+                                rotate: scatter(i, 2) * 360,
+                                scale: 0.6 + scatter(i, 3) * 0.6,
                             }}
                             animate={{
                                 y: '110%',
-                                rotate: Math.random() * 720 - 360,
+                                rotate: scatter(i, 4) * 720 - 360,
                                 opacity: [1, 1, 0],
                             }}
                             transition={{
-                                duration: 2 + Math.random() * 1.5,
+                                duration: 2 + scatter(i, 5) * 1.5,
                                 delay: 0.8 + i * 0.15,
                                 ease: 'easeIn',
                             }}

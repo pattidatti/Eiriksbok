@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { PlaceholderImage } from './PlaceholderImage';
 
 interface ImageWithFallbackProps {
@@ -11,10 +11,14 @@ interface ImageWithFallbackProps {
 export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({ src, alt, seed, className = '' }) => {
     const [error, setError] = useState(false);
 
-    // Reset error state when src changes
-    useEffect(() => {
+    // Nullstill feilen når src endres. Justeres under render i stedet for i en
+    // effect: da rekker ikke den gamle feiltilstanden å bli vist for det nye
+    // bildet. React kjører renderen på nytt umiddelbart, uten å male noe skjerm.
+    const [prevSrc, setPrevSrc] = useState(src);
+    if (src !== prevSrc) {
+        setPrevSrc(src);
         setError(false);
-    }, [src]);
+    }
 
     if (!src || error) {
         return <PlaceholderImage seed={seed} className={className} />;

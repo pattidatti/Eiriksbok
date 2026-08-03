@@ -16,12 +16,41 @@ interface ArticleAudit {
 
 type SortKey = 'status' | 'title' | 'wordCount' | 'hasImage' | 'hasTags';
 type SortDirection = 'asc' | 'desc';
+type SortConfig = { key: SortKey; direction: SortDirection };
+
+// Definert på modulnivå, ikke inne i ContentInventory: en komponent som lages på
+// nytt hver render får ny identitet, og React river ned og bygger opp DOM-en
+// hennes i stedet for å oppdatere den.
+const SortHeader = ({
+    label,
+    sortKey,
+    icon: Icon,
+    sortConfig,
+    onSort,
+}: {
+    label?: string;
+    sortKey: SortKey;
+    icon?: any;
+    sortConfig: SortConfig;
+    onSort: (key: SortKey) => void;
+}) => (
+    <th
+        className="px-6 py-4 cursor-pointer hover:bg-slate-100 transition-colors group select-none"
+        onClick={() => onSort(sortKey)}
+    >
+        <div className="flex items-center gap-2 justify-center lg:justify-start">
+            {Icon && <Icon className="w-4 h-4 text-slate-400" />}
+            {label && <span>{label}</span>}
+            <ArrowUpDown className={`w-3 h-3 text-slate-300 transition-colors ${sortConfig.key === sortKey ? 'text-indigo-600' : 'group-hover:text-slate-500'}`} />
+        </div>
+    </th>
+);
 
 export const ContentInventory: React.FC = () => {
     const { data: manifest, isLoading } = useManifest();
     const [auditData, setAuditData] = useState<ArticleAudit[]>([]);
     const [scanning, setScanning] = useState(false);
-    const [sortConfig, setSortConfig] = useState<{ key: SortKey; direction: SortDirection }>({ key: 'title', direction: 'asc' });
+    const [sortConfig, setSortConfig] = useState<SortConfig>({ key: 'title', direction: 'asc' });
 
     useEffect(() => {
         if (!manifest) return;
@@ -141,19 +170,6 @@ export const ContentInventory: React.FC = () => {
 
     const issuesCount = auditData.filter(a => a.status !== 'good').length;
 
-    const SortHeader = ({ label, sortKey, icon: Icon }: { label?: string, sortKey: SortKey, icon?: any }) => (
-        <th
-            className="px-6 py-4 cursor-pointer hover:bg-slate-100 transition-colors group select-none"
-            onClick={() => handleSort(sortKey)}
-        >
-            <div className="flex items-center gap-2 justify-center lg:justify-start">
-                {Icon && <Icon className="w-4 h-4 text-slate-400" />}
-                {label && <span>{label}</span>}
-                <ArrowUpDown className={`w-3 h-3 text-slate-300 transition-colors ${sortConfig.key === sortKey ? 'text-indigo-600' : 'group-hover:text-slate-500'}`} />
-            </div>
-        </th>
-    );
-
     return (
         <div className="min-h-screen bg-slate-50 py-12 px-6">
             <div className="max-w-7xl mx-auto">
@@ -195,11 +211,11 @@ export const ContentInventory: React.FC = () => {
                         <table className="w-full text-left text-sm">
                             <thead className="bg-slate-50 text-slate-500 uppercase font-medium border-b border-slate-100">
                                 <tr>
-                                    <SortHeader label="Status" sortKey="status" />
-                                    <SortHeader label="Artikkel" sortKey="title" />
-                                    <SortHeader sortKey="wordCount" icon={Type} />
-                                    <div className="text-center"><SortHeader sortKey="hasImage" icon={Image} /></div>
-                                    <div className="text-center"><SortHeader sortKey="hasTags" icon={Tag} /></div>
+                                    <SortHeader label="Status" sortKey="status" sortConfig={sortConfig} onSort={handleSort} />
+                                    <SortHeader label="Artikkel" sortKey="title" sortConfig={sortConfig} onSort={handleSort} />
+                                    <SortHeader sortKey="wordCount" icon={Type} sortConfig={sortConfig} onSort={handleSort} />
+                                    <div className="text-center"><SortHeader sortKey="hasImage" icon={Image} sortConfig={sortConfig} onSort={handleSort} /></div>
+                                    <div className="text-center"><SortHeader sortKey="hasTags" icon={Tag} sortConfig={sortConfig} onSort={handleSort} /></div>
                                     <th className="px-6 py-4">Merknader</th>
                                 </tr>
                             </thead>

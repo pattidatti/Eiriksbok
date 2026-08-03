@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useConcepts } from '../hooks/useConcepts';
 import type { ConceptItem } from '../hooks/useConcepts';
@@ -27,10 +27,13 @@ export const FlashcardPage: React.FC = () => {
         return Array.from(unique);
     }, [concepts, selectedSubject]);
 
-    // Reset topic when subject changes
-    useEffect(() => {
+    // Reset topic when subject changes. Justeres under render i stedet for i en
+    // effect, så listen aldri vises ett bilde med forrige fags emne valgt.
+    const [prevSubject, setPrevSubject] = useState(selectedSubject);
+    if (selectedSubject !== prevSubject) {
+        setPrevSubject(selectedSubject);
         setSelectedTopic('all');
-    }, [selectedSubject]);
+    }
 
     const filteredConcepts = useMemo(() => {
         return concepts.filter(concept => {

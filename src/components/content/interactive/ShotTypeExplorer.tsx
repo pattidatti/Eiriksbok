@@ -33,6 +33,28 @@ const CUT_Y: Record<string, number | null> = {
     'extreme-close-up': 32,
 };
 
+// Person silhouette in SVG space 0 0 100 160.
+// Modulnivå, ikke inne i SilhouetteDiagram: en komponent som defineres på nytt
+// hver render får ny identitet, og React bygger SVG-nodene på nytt hver gang.
+const PersonShape = ({
+    fill,
+    opacity = 1,
+    transform,
+}: {
+    fill: string;
+    opacity?: number;
+    transform?: string;
+}) => (
+    <g fill={fill} opacity={opacity} transform={transform}>
+        <circle cx="50" cy="16" r="14" />
+        <rect x="35" y="30" width="30" height="68" rx="5" />
+        <rect x="21" y="30" width="12" height="42" rx="4" />
+        <rect x="67" y="30" width="12" height="42" rx="4" />
+        <rect x="35" y="98" width="12" height="56" rx="4" />
+        <rect x="53" y="98" width="12" height="56" rx="4" />
+    </g>
+);
+
 function SilhouetteDiagram({
     framing,
     accentColor,
@@ -50,25 +72,6 @@ function SilhouetteDiagram({
     // body: rect 35,30 w=30 h=68 → y: 30–98
     // arms: rect 21,30 w=12 h=42 and rect 67,30 w=12 h=42
     // legs: rect 35,98 w=12 h=56 and rect 53,98 w=12 h=56
-
-    const PersonShape = ({
-        fill,
-        opacity = 1,
-        transform,
-    }: {
-        fill: string;
-        opacity?: number;
-        transform?: string;
-    }) => (
-        <g fill={fill} opacity={opacity} transform={transform}>
-            <circle cx="50" cy="16" r="14" />
-            <rect x="35" y="30" width="30" height="68" rx="5" />
-            <rect x="21" y="30" width="12" height="42" rx="4" />
-            <rect x="67" y="30" width="12" height="42" rx="4" />
-            <rect x="35" y="98" width="12" height="56" rx="4" />
-            <rect x="53" y="98" width="12" height="56" rx="4" />
-        </g>
-    );
 
     // For extreme-wide: scale person to 24% and position near the ground line
     const personTransform = isExtremeWide ? 'translate(38, 88) scale(0.24)' : undefined;

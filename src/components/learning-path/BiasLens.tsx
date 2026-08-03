@@ -73,16 +73,13 @@ const SourcesView: React.FC<{
 
 // --- Component ---
 
-export const BiasLens: React.FC<BiasLensProps> = ({
-    title = "The Rhetoric Decoder",
-    baseContent = '',
-    lenses = [],
-    sources,
+// Sjølve linse-visninga. Skild ut som eigen komponent slik at BiasLens kan velje
+// visning utan å kalle hooks betinga — React krev lik hook-rekkjefølgje kvar render.
+const LensView: React.FC<{ title: string; baseContent: string; lenses: Perspective[] }> = ({
+    title,
+    baseContent,
+    lenses,
 }) => {
-    // Bruk sources-visning dersom lenses ikkje er oppgitt
-    if (sources && sources.length > 0 && lenses.length === 0) {
-        return <SourcesView title={title} sources={sources} />;
-    }
     const [activeLensId, setActiveLensId] = useState<PerspectiveId>('neutral');
     const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
@@ -230,6 +227,19 @@ export const BiasLens: React.FC<BiasLensProps> = ({
             </div>
         </div>
     );
+};
+
+export const BiasLens: React.FC<BiasLensProps> = ({
+    title = 'The Rhetoric Decoder',
+    baseContent = '',
+    lenses = [],
+    sources,
+}) => {
+    // Bruk sources-visning dersom lenses ikkje er oppgitt
+    if (sources && sources.length > 0 && lenses.length === 0) {
+        return <SourcesView title={title} sources={sources} />;
+    }
+    return <LensView title={title} baseContent={baseContent} lenses={lenses} />;
 };
 
 // --- Helper Subcomponent ---

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, X, Music } from 'lucide-react';
+import { nextId } from '../../../utils/random';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type SectionType = 'intro' | 'vers' | 'refreng' | 'bro' | 'outro';
@@ -27,7 +28,7 @@ export const SongStructureBuilder: React.FC = () => {
 
     const addSection = (type: SectionType) => {
         const newSection: Section = {
-            id: Math.random().toString(36).substr(2, 9),
+            id: nextId('section'),
             type,
             bars: SECTION_CONFIG[type].defaultBars,
         };

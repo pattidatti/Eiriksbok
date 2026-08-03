@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AlertTriangle, Building2, Wallet, ArrowRight } from 'lucide-react';
 
@@ -207,35 +207,45 @@ const PlannerSimulation = () => {
     );
 };
 
+// Etterspørselen svinger tilfeldig, så markedsresultatet kan ikke utledes under
+// render. Regnestykket ligger på modulnivå og kjøres fra skyvekontrollene i stedet
+// for fra en effect.
+const simulateMarket = (price: number, production: number) => {
+    // Consumer demand curve: Higher price = lower demand
+    // But demand also fluctuates randomly
+    const baseDemand = 100 - price;
+    const fluctuation = Math.random() * 20 - 10;
+    const actualDemand = Math.max(0, baseDemand + fluctuation);
+
+    const sold = Math.min(production, actualDemand);
+    const revenue = sold * price;
+    const cost = production * 30; // Fixed unit cost
+
+    return {
+        profit: revenue - cost,
+        feedback:
+            production > actualDemand + 10
+                ? 'Lageret fylles opp! Ingen vil kjøpe til denne prisen.'
+                : production < actualDemand - 10
+                  ? 'Utsolgt! Kundene skriker etter mer.'
+                  : 'God balanse mellom tilbud og etterspørsel.',
+    };
+};
+
 const MarketSimulation = () => {
     const [price, setPrice] = useState(50);
     const [production, setProduction] = useState(50);
-    const [profit, setProfit] = useState(0);
-    const [feedback, setFeedback] = useState("Markedet venter...");
+    const [{ profit, feedback }, setMarket] = useState(() => simulateMarket(50, 50));
 
-    useEffect(() => {
-        // Consumer demand curve: Higher price = lower demand
-        // But demand also fluctuates randomly
-        const baseDemand = 100 - price;
-        const fluctuation = (Math.random() * 20) - 10;
-        const actualDemand = Math.max(0, baseDemand + fluctuation);
+    const changePrice = (next: number) => {
+        setPrice(next);
+        setMarket(simulateMarket(next, production));
+    };
 
-        const sold = Math.min(production, actualDemand);
-        const revenue = sold * price;
-        const cost = production * 30; // Fixed unit cost
-        const net = revenue - cost;
-
-        setProfit(net);
-
-        if (production > actualDemand + 10) {
-            setFeedback("Lageret fylles opp! Ingen vil kjøpe til denne prisen.");
-        } else if (production < actualDemand - 10) {
-            setFeedback("Utsolgt! Kundene skriker etter mer.");
-        } else {
-            setFeedback("God balanse mellom tilbud og etterspørsel.");
-        }
-
-    }, [price, production]);
+    const changeProduction = (next: number) => {
+        setProduction(next);
+        setMarket(simulateMarket(price, next));
+    };
 
     return (
         <motion.div
@@ -263,7 +273,7 @@ const MarketSimulation = () => {
                     </div>
                     <input
                         type="range" min="10" max="100" value={price}
-                        onChange={(e) => setPrice(Number(e.target.value))}
+                        onChange={(e) => changePrice(Number(e.target.value))}
                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                     />
                 </div>
@@ -275,7 +285,7 @@ const MarketSimulation = () => {
                     </div>
                     <input
                         type="range" min="0" max="100" value={production}
-                        onChange={(e) => setProduction(Number(e.target.value))}
+                        onChange={(e) => changeProduction(Number(e.target.value))}
                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                     />
                 </div>

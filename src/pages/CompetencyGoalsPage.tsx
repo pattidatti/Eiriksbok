@@ -287,10 +287,18 @@ export const CompetencyGoalsPage: React.FC = () => {
 
     usePageTitle(data ? `Kompetansemål — ${data.subjectLabel}` : 'Kompetansemål');
 
-    useEffect(() => {
-        let cancelled = false;
+    // Bytter eleven fag, tømmes forrige fags mål med en gang. Justeres under
+    // render i stedet for i effecten, så det nye faget aldri vises et øyeblikk
+    // med det forrige sitt innhold mens hentingen pågår.
+    const [prevSubject, setPrevSubject] = useState(subject);
+    if (subject !== prevSubject) {
+        setPrevSubject(subject);
         setData(null);
         setError(null);
+    }
+
+    useEffect(() => {
+        let cancelled = false;
         fetch(`${import.meta.env.BASE_URL}content/kompetansemal/${subject}-10-trinn.json`)
             .then((res) => {
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);

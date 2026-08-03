@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { EthicalDilemma, Verdict } from '../../../../data/ethics/types';
 import { ethicalSystems } from '../../../../data/ethics/ethicalSystems';
@@ -24,12 +24,16 @@ export const DilemmaEngine: React.FC<DilemmaEngineProps> = ({
     const [expandedSystem, setExpandedSystem] = useState<string | null>(null);
     const targetSystem = ethicalSystems.find(s => s.id === targetSystemId);
 
-    // Auto-expand target system in mastery mode when a choice is made
-    useEffect(() => {
+    // Auto-expand target system in mastery mode when a choice is made. Justeres
+    // under render i stedet for i en effect, så panelet er åpent allerede i det
+    // bildet svaret vises — ikke ett bilde etterpå.
+    const [prevChoiceId, setPrevChoiceId] = useState(selectedChoiceId);
+    if (selectedChoiceId !== prevChoiceId) {
+        setPrevChoiceId(selectedChoiceId);
         if (mode === 'mastery' && targetSystemId && selectedChoiceId) {
             setExpandedSystem(targetSystemId);
         }
-    }, [selectedChoiceId, mode, targetSystemId]);
+    }
 
     const getVerdictIcon = (verdict: Verdict) => {
         switch (verdict) {

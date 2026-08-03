@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 /**
  * useVersionCheck Hook
@@ -6,7 +6,10 @@ import { useState, useEffect, useCallback } from 'react';
  */
 export const useVersionCheck = (intervalMs = 60000) => {
     const [needRefresh, setNeedRefresh] = useState(false);
-    const [currentVersion, setCurrentVersion] = useState<string | null>(null);
+    // Versjonen vi startet med er en ren husk-verdi, ikke noe som skal tegnes.
+    // Som state gjorde den checkVersion ustabil, og intervallet ble revet ned og
+    // satt opp på nytt hver gang den ble satt.
+    const currentVersionRef = useRef<string | null>(null);
 
     const checkVersion = useCallback(async () => {
         try {
@@ -19,20 +22,25 @@ export const useVersionCheck = (intervalMs = 60000) => {
 
             const data = await response.json();
             const newVersion = data.version;
+            if (!newVersion) return;
 
-            if (currentVersion && newVersion && currentVersion !== newVersion) {
-                console.log(`[VersionCheck] New version detected: ${newVersion} (Current: ${currentVersion})`);
+            if (currentVersionRef.current === null) {
+                currentVersionRef.current = newVersion;
+            } else if (currentVersionRef.current !== newVersion) {
+                console.log(`[VersionCheck] New version detected: ${newVersion} (Current: ${currentVersionRef.current})`);
                 setNeedRefresh(true);
-            } else if (!currentVersion && newVersion) {
-                setCurrentVersion(newVersion);
             }
         } catch (error) {
             console.error('[VersionCheck] Failed to check version:', error);
         }
-    }, [currentVersion]);
+    }, []);
 
     useEffect(() => {
-        // Initial check
+        // Initial check.
+        // checkVersion er async og setter først state etter at nettverkskallet
+        // har svart — altså aldri synkront i effect-kroppen. Å polle serveren
+        // for en ny versjon er nettopp den abonnements-jobben effects er til for.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         checkVersion();
 
         // Set up periodic check

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Star, Trash2, Plus } from 'lucide-react';
 import { CHORD_QUALITIES } from '../utils/musicTheory';
 
@@ -18,19 +18,18 @@ interface ChordCollectionProps {
 
 export const ChordCollection: React.FC<ChordCollectionProps> = ({ currentRoot, currentQuality, onLoadChord, variant = 'grid' }) => {
 
-    const [savedChords, setSavedChords] = useState<SavedChord[]>([]);
-
-    // Load from localStorage on mount
-    useEffect(() => {
+    // Load from localStorage on mount. Leses i useState-initialisatoren i stedet
+    // for i en effect, så samlingen er der allerede i første render.
+    const [savedChords, setSavedChords] = useState<SavedChord[]>(() => {
         const stored = localStorage.getItem('akkordbank_collection');
-        if (stored) {
-            try {
-                setSavedChords(JSON.parse(stored));
-            } catch (e) {
-                console.error("Failed to parse saved chords", e);
-            }
+        if (!stored) return [];
+        try {
+            return JSON.parse(stored);
+        } catch (e) {
+            console.error("Failed to parse saved chords", e);
+            return [];
         }
-    }, []);
+    });
 
     // Save to localStorage whenever list changes
     const persist = (chords: SavedChord[]) => {

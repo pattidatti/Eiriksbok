@@ -10,22 +10,22 @@ interface Agent {
     vy: number;
 }
 
+// Startposisjonene er ekte tilfeldige — det er poenget med simuleringen. Fabrikken
+// ligger på modulnivå og kjøres som lazy useState-initialisator, altså nøyaktig én
+// gang ved mount. Som effect ble simuleringen først tegnet tom.
+const createAgents = (): Agent[] =>
+    Array.from({ length: 40 }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+    }));
+
 export const SpontaneousOrderSim: React.FC = () => {
-    const [agents, setAgents] = useState<Agent[]>([]);
+    const [agents, setAgents] = useState<Agent[]>(createAgents);
     const [isRunning, setIsRunning] = useState(false);
     const [rule, setRule] = useState<'chaos' | 'clustering' | 'following'>('chaos');
-
-    // Initialize agents
-    useEffect(() => {
-        const initial = Array.from({ length: 40 }).map((_, i) => ({
-            id: i,
-            x: Math.random() * 100,
-            y: Math.random() * 100,
-            vx: (Math.random() - 0.5) * 0.5,
-            vy: (Math.random() - 0.5) * 0.5
-        }));
-        setAgents(initial);
-    }, []);
 
     const updateAgents = useCallback(() => {
         setAgents(prev => prev.map(a => {

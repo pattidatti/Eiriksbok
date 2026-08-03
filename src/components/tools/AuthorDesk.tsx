@@ -74,6 +74,41 @@ const ScrapbookView = ({ onClose }: { onClose: () => void }) => (
 );
 
 
+// Modulnivå, ikke inne i AuthorDesk: en komponent som defineres på nytt hver
+// render får ny identitet, og React remonterer knappene i stedet for å
+// oppdatere dem — det nullstiller både hover-animasjon og fokus.
+const DeskItem = ({
+    icon: Icon,
+    label,
+    position,
+    onClick,
+    locked
+}: {
+    icon: any,
+    label: string,
+    position: string,
+    onClick: () => void,
+    locked?: boolean
+}) => (
+    <motion.button
+        whileHover={{ scale: 1.05, rotate: 1 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={onClick}
+        className={`absolute ${position} group p-4 flex flex-col items-center justify-center gap-2 transition-all cursor-pointer outline-none`}
+        disabled={locked}
+    >
+        <div id={Icon === BookOpen ? "scrapbook-icon" : undefined} className={`relative w-24 h-24 rounded-full flex items-center justify-center shadow-2xl
+            ${locked ? 'bg-stone-800 opacity-50' : 'bg-stone-800/80 backdrop-blur-sm border border-stone-600 group-hover:bg-stone-700 group-hover:border-amber-500'}`}>
+            <Icon size={40} className={`text-stone-300 ${locked ? '' : 'group-hover:text-amber-400'}`} />
+            {locked && <div className="absolute inset-0 flex items-center justify-center"><div className="w-full h-0.5 bg-stone-500 rotate-45 absolute" /><div className="w-full h-0.5 bg-stone-500 -rotate-45 absolute" /></div>}
+        </div>
+        <span className={`font-serif text-lg tracking-wider bg-black/50 px-3 py-1 rounded backdrop-blur-sm
+             ${locked ? 'text-stone-500' : 'text-stone-300 group-hover:text-amber-200'}`}>
+            {label}
+        </span>
+    </motion.button>
+);
+
 export const AuthorDesk: React.FC = () => {
     const { tools, collectItem } = useDeskStore();
     const [activeTool, setActiveTool] = useState<keyof typeof tools | 'scrapbook' | null>(null);
@@ -89,38 +124,6 @@ export const AuthorDesk: React.FC = () => {
         const centerRect = new DOMRect(window.innerWidth / 2, window.innerHeight / 2, 0, 0);
         setParticleSource(centerRect);
     };
-
-    const DeskItem = ({
-        icon: Icon,
-        label,
-        position,
-        onClick,
-        locked
-    }: {
-        icon: any,
-        label: string,
-        position: string,
-        onClick: () => void,
-        locked?: boolean
-    }) => (
-        <motion.button
-            whileHover={{ scale: 1.05, rotate: 1 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={onClick}
-            className={`absolute ${position} group p-4 flex flex-col items-center justify-center gap-2 transition-all cursor-pointer outline-none`}
-            disabled={locked}
-        >
-            <div id={Icon === BookOpen ? "scrapbook-icon" : undefined} className={`relative w-24 h-24 rounded-full flex items-center justify-center shadow-2xl 
-                ${locked ? 'bg-stone-800 opacity-50' : 'bg-stone-800/80 backdrop-blur-sm border border-stone-600 group-hover:bg-stone-700 group-hover:border-amber-500'}`}>
-                <Icon size={40} className={`text-stone-300 ${locked ? '' : 'group-hover:text-amber-400'}`} />
-                {locked && <div className="absolute inset-0 flex items-center justify-center"><div className="w-full h-0.5 bg-stone-500 rotate-45 absolute" /><div className="w-full h-0.5 bg-stone-500 -rotate-45 absolute" /></div>}
-            </div>
-            <span className={`font-serif text-lg tracking-wider bg-black/50 px-3 py-1 rounded backdrop-blur-sm
-                 ${locked ? 'text-stone-500' : 'text-stone-300 group-hover:text-amber-200'}`}>
-                {label}
-            </span>
-        </motion.button>
-    );
 
     return (
         <div className="relative w-full h-screen overflow-hidden" style={{ background: deskBackground }}>

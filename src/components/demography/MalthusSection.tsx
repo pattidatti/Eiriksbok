@@ -1,45 +1,51 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ImmersiveCard } from '../ImmersiveCard';
 
 export const MalthusSection: React.FC = () => {
     const [pop, setPop] = useState(10);
     const [food, setFood] = useState(50);
     const [isGameOver, setIsGameOver] = useState(false);
-    const [isRunning, setIsRunning] = useState(false);
     const timerRef = useRef<number | null>(null);
+    const popRef = useRef(pop);
+    const foodRef = useRef(food);
 
-    const startSimulation = () => {
+    useEffect(() => {
+        foodRef.current = food;
+    }, [food]);
+
+    // Sammenbruddet avgjøres inne i selve klokketikket, der den nye befolkningen
+    // regnes ut. Før lå sjekken i en egen effect som reagerte på at pop endret
+    // seg — altså én render for sent, og med setState i effect-kroppen.
+    const startClock = useCallback(() => {
         if (timerRef.current) clearInterval(timerRef.current);
-        setIsRunning(true);
-        setIsGameOver(false);
 
         timerRef.current = window.setInterval(() => {
-            setPop(prev => {
-                const newPop = Math.floor(prev * 1.08) + 1;
-                return newPop;
-            });
+            const newPop = Math.floor(popRef.current * 1.08) + 1;
+            popRef.current = newPop;
+            setPop(newPop);
+
+            if (newPop > foodRef.current) {
+                if (timerRef.current) clearInterval(timerRef.current);
+                timerRef.current = null;
+                setIsGameOver(true);
+            }
         }, 1000);
-    };
+    }, []);
 
     useEffect(() => {
-        if (pop > food && isRunning) {
-            if (timerRef.current) clearInterval(timerRef.current);
-            setIsGameOver(true);
-            setIsRunning(false);
-        }
-    }, [pop, food, isRunning]);
-
-    useEffect(() => {
-        startSimulation();
+        startClock();
         return () => {
             if (timerRef.current) clearInterval(timerRef.current);
         };
-    }, []);
+    }, [startClock]);
 
     const resetSimulation = () => {
+        popRef.current = 10;
+        foodRef.current = 50;
         setPop(10);
         setFood(50);
-        startSimulation();
+        setIsGameOver(false);
+        startClock();
     };
 
     const innovate = () => {

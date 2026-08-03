@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useAtlasStore } from '../store/atlasStore';
 import type { LayerType } from '../types';
@@ -37,19 +37,22 @@ export function useAtlasUrlSync(
         }
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    // Debounced URL write
-    const debouncedUpdate = useCallback(
-        debounce((t: typeof transform, layers: Set<LayerType>) => {
-            setSearchParams(
-                {
-                    zoom: String(Math.round(t.scale * 100) / 100),
-                    x: String(Math.round(t.x)),
-                    y: String(Math.round(t.y)),
-                    layers: [...layers].join(','),
-                },
-                { replace: true }
-            );
-        }, 500),
+    // Debounced URL write. useMemo, ikke useCallback: debounce() lager funksjonen,
+    // den *er* ikke funksjonen — med useCallback ble en ny debounce-instans bygd
+    // hver render bare for å bli kastet.
+    const debouncedUpdate = useMemo(
+        () =>
+            debounce((t: typeof transform, layers: Set<LayerType>) => {
+                setSearchParams(
+                    {
+                        zoom: String(Math.round(t.scale * 100) / 100),
+                        x: String(Math.round(t.x)),
+                        y: String(Math.round(t.y)),
+                        layers: [...layers].join(','),
+                    },
+                    { replace: true }
+                );
+            }, 500),
         [setSearchParams]
     );
 

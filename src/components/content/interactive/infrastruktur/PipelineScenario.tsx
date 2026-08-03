@@ -75,6 +75,25 @@ const STAGES: Stage[] = [
     },
 ];
 
+// Modulnivå, ikke inne i PipelineScenario: en komponent som defineres på nytt
+// hver render får ny identitet, og React remonterer baren i stedet for å
+// animere bredden — nettopp overgangen denne komponenten finnes for å vise.
+const ScoreBar = ({ label, value }: { label: string; value: number }) => (
+    <div className="flex items-center gap-2 text-xs">
+        <span className="w-20 text-slate-400 text-right">{label}</span>
+        <div className="flex-1 bg-slate-700 rounded-full h-1.5">
+            <div
+                className="h-1.5 rounded-full transition-all duration-500"
+                style={{
+                    width: `${value * 10}%`,
+                    backgroundColor: value >= 6 ? '#4ade80' : value >= 4 ? '#facc15' : '#f87171',
+                }}
+            />
+        </div>
+        <span className="w-4 text-slate-400">{value}</span>
+    </div>
+);
+
 export function PipelineScenario({ title, intro }: Props) {
     const [stage, setStage] = useState(0);
     const [chosen, setChosen] = useState<Choice | null>(null);
@@ -100,22 +119,6 @@ export function PipelineScenario({ title, intro }: Props) {
             setChosen(null);
         }
     }
-
-    const ScoreBar = ({ label, value }: { label: string; value: number }) => (
-        <div className="flex items-center gap-2 text-xs">
-            <span className="w-20 text-slate-400 text-right">{label}</span>
-            <div className="flex-1 bg-slate-700 rounded-full h-1.5">
-                <div
-                    className="h-1.5 rounded-full transition-all duration-500"
-                    style={{
-                        width: `${value * 10}%`,
-                        backgroundColor: value >= 6 ? '#4ade80' : value >= 4 ? '#facc15' : '#f87171',
-                    }}
-                />
-            </div>
-            <span className="w-4 text-slate-400">{value}</span>
-        </div>
-    );
 
     return (
         <div className="my-6 rounded-xl border border-amber-500/30 bg-slate-900/80 overflow-hidden">

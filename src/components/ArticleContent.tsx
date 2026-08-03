@@ -151,8 +151,6 @@ interface ArticleContentProps {
 export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ content, concepts: explicitConcepts, activeBlockIndex, onBlockClick, isTool = false, audioControls }) => {
     const { entries: globalEntries } = useGlossary();
 
-    if (!content || !Array.isArray(content)) return null;
-
     // OPTIMIZATION: Memoize concept merging to avoid O(N*M) loop on every render.
     // Use a Set for O(1) lookups instead of .some().
     const mergedConcepts = React.useMemo(() => {
@@ -172,6 +170,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
 
         return merged;
     }, [explicitConcepts, globalEntries]);
+
+    // Vaktsjekken må stå etter alle hooks — React krever lik hook-rekkefølge hver render.
+    if (!content || !Array.isArray(content)) return null;
 
     const displayContent = content;
 

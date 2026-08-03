@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bomb, Users, FileWarning, Stamp, ArrowRight, RefreshCcw } from 'lucide-react';
 
@@ -124,17 +124,18 @@ export const TrumansDilemma: React.FC = () => {
     const [support, setSupport] = useState(60); // Politisk støtte
     const [risk, setRisk] = useState(20);       // Atomkrig-fare
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [state, setState] = useState<'playing' | 'ww3' | 'impeached' | 'won'>('playing');
     const [lastOutcome, setLastOutcome] = useState<string | null>(null);
 
-    // Initial check needed in case initial specific values trigger end state - unlikely here but good practice
-    useEffect(() => {
-        if (state === 'playing') {
-            if (risk >= 100) setState('ww3');
-            else if (support <= 0) setState('impeached');
-            else if (currentIndex >= scenarios.length && !lastOutcome) setState('won');
-        }
-    }, [risk, support, currentIndex, lastOutcome, state]);
+    // Utledet, ikke egen state: utfallet følger alltid direkte av målerne og hvor
+    // langt eleven har kommet.
+    const state: 'playing' | 'ww3' | 'impeached' | 'won' =
+        risk >= 100
+            ? 'ww3'
+            : support <= 0
+              ? 'impeached'
+              : currentIndex >= scenarios.length && !lastOutcome
+                ? 'won'
+                : 'playing';
 
     const handleChoice = (outcome: Outcome) => {
         setSupport(prev => Math.min(100, prev + outcome.supportChange));
@@ -151,7 +152,6 @@ export const TrumansDilemma: React.FC = () => {
         setSupport(60);
         setRisk(20);
         setCurrentIndex(0);
-        setState('playing');
         setLastOutcome(null);
     };
 

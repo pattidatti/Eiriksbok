@@ -1,28 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { TrendingUp, DollarSign, ShoppingCart, PiggyBank } from 'lucide-react';
 
 export const InflationCalculator: React.FC = () => {
     const [interestRate, setInterestRate] = useState(5);
-    const [moneySupply, setMoneySupply] = useState(100);
-    const [priceLevel, setPriceLevel] = useState(100);
 
     // Savings calculator state
     const [savingsAmount, setSavingsAmount] = useState(10000);
     const [years, setYears] = useState(10);
     const [inflationRate, setInflationRate] = useState(2.5);
 
-    // Effect to simulate economy based on interest rate
-    useEffect(() => {
-        // Lower interest rate -> Higher money supply (more loans)
-        // Higher interest rate -> Lower money supply (fewer loans)
-        const targetMoneySupply = 200 - (interestRate * 10);
-        setMoneySupply(targetMoneySupply);
-
-        // More money chasing same goods -> Higher prices
-        // We assume goods are constant at 100 units
-        const targetPriceLevel = targetMoneySupply;
-        setPriceLevel(targetPriceLevel);
-    }, [interestRate]);
+    // Utledet, ikke egen state: pengemengde og prisnivå følger alltid direkte av
+    // renta. Som state i en effect lå de én render bak — eleven dro i renta og så
+    // forrige verdi et øyeblikk.
+    // Lower interest rate -> Higher money supply (more loans)
+    // Higher interest rate -> Lower money supply (fewer loans)
+    const moneySupply = 200 - interestRate * 10;
+    // More money chasing same goods -> Higher prices
+    // We assume goods are constant at 100 units
+    const priceLevel = moneySupply;
 
     const calculateFutureValue = () => {
         // Real value = Nominal Value / (1 + inflation_rate)^years

@@ -75,9 +75,8 @@ export const BeatBuilder: React.FC<BeatBuilderProps> = ({ initialPattern }) => {
                     return next;
                 });
             }, interval);
-        } else {
-            if (timerRef.current) clearInterval(timerRef.current);
-            setCurrentStep(0);
+        } else if (timerRef.current) {
+            clearInterval(timerRef.current);
         }
 
         return () => {
@@ -131,6 +130,9 @@ export const BeatBuilder: React.FC<BeatBuilderProps> = ({ initialPattern }) => {
                             if (!isPlaying && Tone.context.state !== 'running') {
                                 await Tone.start();
                             }
+                            // Spillhodet nullstilles her, der eleven trykker
+                            // stopp — ikke i effecten som styrer selve timeren.
+                            if (isPlaying) setCurrentStep(0);
                             setIsPlaying(!isPlaying);
                         }}
                         className={`w-12 h-12 flex items-center justify-center rounded-full transition-all ${isPlaying ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'

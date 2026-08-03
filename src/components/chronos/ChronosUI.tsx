@@ -458,7 +458,9 @@ export const ChronosUI: React.FC<ChronosUIProps> = ({
     const [choiceCooldown, setChoiceCooldown] = useState(false);
 
     // Defeat interstitial overlay
-    const [defeatInterstitial, setDefeatInterstitial] = useState(false);
+    const [defeatInterstitial, setDefeatInterstitial] = useState(
+        () => !!node.isEnd && node.endType === 'defeat'
+    );
 
     // On node change: discovery check + node audio
     useEffect(() => {
@@ -469,6 +471,10 @@ export const ChronosUI: React.FC<ChronosUIProps> = ({
         const willShowDiscovery = !!node.discoveryEvent && !seenDiscoveries.current.has(node.id);
         if (willShowDiscovery) {
             seenDiscoveries.current.add(node.id);
+            // Denne effecten styrer lydavspillingen — et eksternt system — og
+            // oppdagelses-popupen henger sammen med hvilken lyd som skal spilles.
+            // Den kan derfor ikke utledes under render.
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setShowDiscovery(true);
             // Discovery effect handles audio from here
         } else if (!isPausedRef.current && scenarioId) {
@@ -485,12 +491,14 @@ export const ChronosUI: React.FC<ChronosUIProps> = ({
         };
     }, [node.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    // Defeat interstitial: show dramatic overlay when entering a defeat end node
-    useEffect(() => {
-        if (node.isEnd && node.endType === 'defeat') {
-            setDefeatInterstitial(true);
-        }
-    }, [node.id, node.isEnd, node.endType]);
+    // Defeat interstitial: show dramatic overlay when entering a defeat end node.
+    // Justeres under render i stedet for i en effect, så overlegget ligger der
+    // allerede i det bildet nederlagsnoden vises.
+    const [prevNodeId, setPrevNodeId] = useState(node.id);
+    if (node.id !== prevNodeId) {
+        setPrevNodeId(node.id);
+        setDefeatInterstitial(!!node.isEnd && node.endType === 'defeat');
+    }
 
     // Pause node audio when discovery popup is open; resume when dismissed
     useEffect(() => {
@@ -554,9 +562,13 @@ export const ChronosUI: React.FC<ChronosUIProps> = ({
         if (popupAudioRef.current) popupAudioRef.current.playbackRate = rate;
     };
 
-    // Polish: Detect inventory changes for pulse
+    // Polish: Detect inventory changes for pulse.
+    // Pulsen er en tidsstyrt animasjon: den slås på, og en timer slår den av
+    // igjen etter 800 ms. Timeren er et eksternt system, så dette hører hjemme
+    // i en effect selv om den også setter state.
     useEffect(() => {
         if (inventory.length > prevInventoryRef.current.length) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setInventoryPulse(true);
             const t = setTimeout(() => setInventoryPulse(false), 800);
             return () => clearTimeout(t);

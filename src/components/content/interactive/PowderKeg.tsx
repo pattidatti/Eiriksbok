@@ -3,6 +3,33 @@ import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { Flame, Globe, Handshake, Swords, Skull, AlertTriangle } from 'lucide-react';
 
+// Konfetti-eksplosjonen ligger på modulnivå: den bruker Date.now() til å styre
+// varigheten, og impure kall som dette hører ikke hjemme inne i en komponent.
+const burstConfetti = () => {
+    const end = Date.now() + 3000;
+    const frame = () => {
+        confetti({
+            particleCount: 5,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: ['#ef4444', '#f97316', '#000000'] // Red, Orange, Black (smoke/fire)
+        });
+        confetti({
+            particleCount: 5,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: ['#ef4444', '#f97316', '#000000']
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    };
+    frame();
+};
+
 interface Ingredient {
     id: string;
     name: string;
@@ -67,32 +94,7 @@ export const PowderKeg: React.FC = () => {
         setIsExploded(true);
         setPressure(100);
         barrelControls.stop();
-
-        // Canvas Confetti Explosion
-        const duration = 3000;
-        const end = Date.now() + duration;
-
-        const frame = () => {
-            confetti({
-                particleCount: 5,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 },
-                colors: ['#ef4444', '#f97316', '#000000'] // Red, Orange, Black (smoke/fire)
-            });
-            confetti({
-                particleCount: 5,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 },
-                colors: ['#ef4444', '#f97316', '#000000']
-            });
-
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-        };
-        frame();
+        burstConfetti();
     };
 
     const isReadyForSpark = addedIngredients.length === INGREDIENTS.length;

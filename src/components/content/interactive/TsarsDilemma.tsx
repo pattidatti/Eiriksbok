@@ -1,7 +1,17 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Crown, Flame, Snowflake, RefreshCw } from 'lucide-react';
+import { scatter } from '../../../utils/random';
+
+// Snøfnuggene er rent dekorative og endrer seg aldri — regn dem ut én gang på
+// modulnivå i stedet for på hver render.
+const SNOWFLAKES = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    left: `${scatter(i, 1) * 100}%`,
+    delay: scatter(i, 2) * 5,
+    duration: 5 + scatter(i, 3) * 5,
+}));
 
 interface Outcome {
     text: string;
@@ -82,22 +92,18 @@ const TsarsDilemma: React.FC = () => {
     const [loyalty, setLoyalty] = useState(70);
     const [anger, setAnger] = useState(20);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [gameState, setGameState] = useState<'playing' | 'abdicated' | 'revolution' | 'survived'>('playing');
     const [lastOutcome, setLastOutcome] = useState<string | null>(null);
 
-    // Snowfall Effect
-    const snowflakes = Array.from({ length: 20 }).map((_, i) => ({
-        id: i,
-        left: `${Math.random() * 100}%`,
-        delay: Math.random() * 5,
-        duration: 5 + Math.random() * 5
-    }));
-
-    useEffect(() => {
-        if (loyalty <= 0) setGameState('abdicated');
-        if (anger >= 100) setGameState('revolution');
-        if (currentIndex >= scenarios.length && gameState === 'playing') setGameState('survived');
-    }, [loyalty, anger, currentIndex, gameState]);
+    // Utledet, ikke egen state: utfallet følger alltid direkte av målerne og hvor
+    // langt eleven har kommet. Revolusjon slår abdikasjon, slik det gjorde før.
+    const gameState: 'playing' | 'abdicated' | 'revolution' | 'survived' =
+        anger >= 100
+            ? 'revolution'
+            : loyalty <= 0
+              ? 'abdicated'
+              : currentIndex >= scenarios.length
+                ? 'survived'
+                : 'playing';
 
     const handleChoice = (outcome: Outcome) => {
         setLoyalty(prev => Math.min(100, Math.max(0, prev + outcome.loyalty)));
@@ -114,7 +120,6 @@ const TsarsDilemma: React.FC = () => {
         setLoyalty(70);
         setAnger(20);
         setCurrentIndex(0);
-        setGameState('playing');
         setLastOutcome(null);
     };
 
@@ -124,7 +129,7 @@ const TsarsDilemma: React.FC = () => {
             <div className="absolute inset-0 opacity-20 pointer-events-none"
                 style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d97706' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }}
             />
-            {snowflakes.map(flake => (
+            {SNOWFLAKES.map(flake => (
                 <motion.div
                     key={flake.id}
                     className="absolute top-0 text-white/30 pointer-events-none"

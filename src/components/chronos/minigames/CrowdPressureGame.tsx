@@ -29,8 +29,12 @@ export const CrowdPressureGame: React.FC<CrowdPressureGameProps> = ({ config, on
     const [cooldowns, setCooldowns] = useState<Record<string, number>>({});
     const [log, setLog] = useState<string[]>([]);
 
+    // Hold ref-en fersk i en effect, ikke under render — refs skal ikke skrives til
+    // mens React renderer.
     const onCompleteRef = useRef(onComplete);
-    onCompleteRef.current = onComplete;
+    useEffect(() => {
+        onCompleteRef.current = onComplete;
+    }, [onComplete]);
 
     // Pressure fills over time
     useEffect(() => {

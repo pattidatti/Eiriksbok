@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Cpu, Activity, Lock, TrendingUp, AlertOctagon, UserX } from 'lucide-react';
 
@@ -12,19 +12,16 @@ export const TechnocratProblemSolver: React.FC = () => {
     const freedom = Math.max(0, 100 - (security * 0.8 + efficiency * 0.1));
     const socialScore = (efficiency + security + growth) / 3;
 
-    const [message, setMessage] = useState("System Status: Nominal. Waiting for optimization parameters.");
-
-    useEffect(() => {
-        if (socialScore > 90) {
-            setMessage("OPTIMAL DETECTED. Human error eliminated. Freedom is obsolete.");
-        } else if (happiness < 20) {
-            setMessage("WARNING: Social unrest probability 89%. Requesting mandatory dopamine supplements.");
-        } else if (freedom < 10) {
-            setMessage("Total surveillance active. Pre-crime detection enabled.");
-        } else {
-            setMessage("System calculating... Please increase efficiency variables.");
-        }
-    }, [efficiency, security, growth, socialScore, happiness, freedom]);
+    // Utledet, ikke egen state: meldingen følger alltid direkte av målerne. Som
+    // state i en effect ble startmeldingen vist ett bilde før den ble overskrevet.
+    const message =
+        socialScore > 90
+            ? 'OPTIMAL DETECTED. Human error eliminated. Freedom is obsolete.'
+            : happiness < 20
+              ? 'WARNING: Social unrest probability 89%. Requesting mandatory dopamine supplements.'
+              : freedom < 10
+                ? 'Total surveillance active. Pre-crime detection enabled.'
+                : 'System calculating... Please increase efficiency variables.';
 
     return (
         <div className="bg-slate-900 p-8 md:p-10 rounded-3xl border border-slate-700 my-10 shadow-2xl relative overflow-hidden font-mono text-cyan-400">

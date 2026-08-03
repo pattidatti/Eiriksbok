@@ -84,12 +84,13 @@ export function AtlasMap({ onTransformChange }: AtlasMapProps) {
         onTransformChange?.(transform);
     }, [transform, onTransformChange]);
 
-    // Consume viewTarget from store (programmatic zoom)
-    useEffect(() => {
-        if (!viewTarget) return;
+    // Consume viewTarget from store (programmatic zoom). Justeres under render i
+    // stedet for i en effect, så kartet hopper til målet i samme bilde som
+    // ønsket kommer inn — ikke ett bilde etterpå.
+    if (viewTarget) {
         setTransform(viewTarget);
         setViewTarget(null);
-    }, [viewTarget, setViewTarget]);
+    }
 
     // Fullscreen change listener
     useEffect(() => {

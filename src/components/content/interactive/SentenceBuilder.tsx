@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Check, X, RefreshCw } from 'lucide-react';
 import { Reorder } from 'framer-motion';
 
@@ -38,11 +38,14 @@ export const SentenceBuilder: React.FC<SentenceBuilderProps> = ({ segments, corr
     const [items, setItems] = useState(normalizedSegments);
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
-    // If segments prop changes, reset
-    useEffect(() => {
+    // If segments prop changes, reset. Justeres under render i stedet for i en
+    // effect, så eleven aldri ser forrige oppgaves brikker i den nye oppgaven.
+    const [prevSegments, setPrevSegments] = useState(normalizedSegments);
+    if (normalizedSegments !== prevSegments) {
+        setPrevSegments(normalizedSegments);
         setItems(normalizedSegments);
         setIsCorrect(null);
-    }, [normalizedSegments]);
+    }
 
     const checkAnswer = () => {
         // Build array of current IDs

@@ -105,21 +105,21 @@ const TYPE_LABELS: Record<string, string> = {
     finance: 'Finans',
 };
 
+// Rekursiv statusberegning som ren funksjon på modulnivå: en useCallback kan ikke
+// referere seg selv inne i sin egen initialisering.
+function nodeStatus(node: Node, failed: Set<string>): 'ok' | 'failed' | 'cascade' {
+    if (failed.has(node.id)) return 'failed';
+    const dependencyFailed = node.dependsOn.some(
+        (dep) => failed.has(dep) || nodeStatus(NODES.find((n) => n.id === dep)!, failed) !== 'ok'
+    );
+    return dependencyFailed ? 'cascade' : 'ok';
+}
+
 export function CascadeFailureSim({ title, description }: Props) {
     const [failed, setFailed] = useState<Set<string>>(new Set());
     const [messages, setMessages] = useState<string[]>([]);
 
-    const getNodeStatus = useCallback(
-        (node: Node): 'ok' | 'failed' | 'cascade' => {
-            if (failed.has(node.id)) return 'failed';
-            const dependencyFailed = node.dependsOn.some(
-                (dep) => failed.has(dep) || getNodeStatus(NODES.find((n) => n.id === dep)!) !== 'ok'
-            );
-            if (dependencyFailed) return 'cascade';
-            return 'ok';
-        },
-        [failed]
-    );
+    const getNodeStatus = useCallback((node: Node) => nodeStatus(node, failed), [failed]);
 
     function failNode(node: Node) {
         if (failed.has(node.id)) return;

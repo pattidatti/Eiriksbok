@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 import type { Exercise, MatchData } from '../../../data/virkemiddelverkstedet/types';
+import { shuffledIndices } from '../../../utils/random';
 
 interface MatchExerciseProps {
     exercise: Exercise;
@@ -18,15 +19,10 @@ export const MatchExercise = ({ exercise, onCorrect, onWrong }: MatchExercisePro
     const [wrongPair, setWrongPair] = useState<{ example: number; label: number } | null>(null);
     const [attempts, setAttempts] = useState(0);
 
-    // Shuffle labels separately so they don't align with examples
-    const shuffledLabelIndices = useMemo(() => {
-        const indices = data.pairs.map((_, i) => i);
-        for (let i = indices.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [indices[i], indices[j]] = [indices[j], indices[i]];
-        }
-        return indices;
-    }, [data.pairs]);
+    // Shuffle labels separately so they don't align with examples.
+    // useState-initialisator, ikke useMemo: stokkingen skal skje én gang når
+    // oppgaven åpnes, ikke potensielt på nytt midt i besvarelsen.
+    const [shuffledLabelIndices] = useState(() => shuffledIndices(data.pairs.length));
 
     const tryMatch = (exIdx: number, lbIdx: number) => {
         setAttempts((a) => a + 1);

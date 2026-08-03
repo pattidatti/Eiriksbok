@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -40,12 +40,17 @@ export const PhilosophyOdysseyPage: React.FC = () => {
         retry: false,
     });
 
-    useEffect(() => {
+    // Når questen er hentet, tas den i bruk og id-en nullstilles så spørringen
+    // kobles ut igjen. Justeres under render i stedet for i en effect, så questen
+    // er på plass i samme bilde som dataene kommer inn.
+    const [prevFetchedQuest, setPrevFetchedQuest] = useState(fetchedQuest);
+    if (fetchedQuest !== prevFetchedQuest) {
+        setPrevFetchedQuest(fetchedQuest);
         if (fetchedQuest) {
             setActiveQuest(fetchedQuest);
             setActiveQuestId(null);
         }
-    }, [fetchedQuest]);
+    }
 
     if (!profileLoaded) return <PageSkeleton />;
 

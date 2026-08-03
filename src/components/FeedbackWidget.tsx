@@ -14,13 +14,6 @@ export const FeedbackWidget: React.FC = () => {
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error' | 'rate_limited'>('idle');
     const { settings } = useSettings();
 
-    // Check rate limit on mount and whenever modal opens
-    useEffect(() => {
-        if (isOpen) {
-            checkRateLimit();
-        }
-    }, [isOpen]);
-
     const checkRateLimit = () => {
         const lastTime = localStorage.getItem(STORAGE_KEY);
         if (lastTime) {
@@ -35,6 +28,16 @@ export const FeedbackWidget: React.FC = () => {
         }
         return true;
     };
+
+    // Check rate limit on mount and whenever modal opens
+    useEffect(() => {
+        if (isOpen) {
+            checkRateLimit();
+        }
+        // checkRateLimit leser fersk state ved kallet; vi vil bevisst bare kjøre
+        // sjekken når modalen åpnes.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isOpen]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

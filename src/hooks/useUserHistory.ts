@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
 export interface HistoryItem {
     id: string;
@@ -16,18 +16,18 @@ const HISTORY_KEY = 'gravity_user_history';
 const MAX_HISTORY_ITEMS = 20;
 
 export const useUserHistory = () => {
-    const [history, setHistory] = useState<HistoryItem[]>([]);
-
-    useEffect(() => {
+    // Leses én gang ved mount i stedet for i en effect, så historikken er der
+    // allerede i første render og ikke popper inn etterpå.
+    const [history, setHistory] = useState<HistoryItem[]>(() => {
         const stored = localStorage.getItem(HISTORY_KEY);
-        if (stored) {
-            try {
-                setHistory(JSON.parse(stored));
-            } catch (e) {
-                console.error('Failed to parse history', e);
-            }
+        if (!stored) return [];
+        try {
+            return JSON.parse(stored);
+        } catch (e) {
+            console.error('Failed to parse history', e);
+            return [];
         }
-    }, []);
+    });
 
     const addToHistory = useCallback((item: Omit<HistoryItem, 'timestamp'>) => {
         setHistory(prev => {

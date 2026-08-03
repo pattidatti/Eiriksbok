@@ -28,24 +28,20 @@ const DEFAULT_PROFILE: ChronosProfile = {
 const TimeTravelProfileContext = createContext<TimeTravelProfileContextType | undefined>(undefined);
 
 export const TimeTravelProfileProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [profile, setProfile] = useState<ChronosProfile | null>(null);
-    const [isLoading, setIsLoading] = useState(true);
-
-    // Load Profile
-    useEffect(() => {
+    // Load Profile. Leses én gang ved mount i stedet for i en effect: da er
+    // profilen på plass allerede i første render, og isLoading trengs ikke som
+    // eget mellomsteg.
+    const [profile, setProfile] = useState<ChronosProfile | null>(() => {
         const stored = localStorage.getItem(STORAGE_KEY);
-        if (stored) {
-            try {
-                setProfile(JSON.parse(stored));
-            } catch (e) {
-                console.error("Failed to parse profile", e);
-                setProfile(DEFAULT_PROFILE);
-            }
-        } else {
-            setProfile(DEFAULT_PROFILE);
+        if (!stored) return DEFAULT_PROFILE;
+        try {
+            return JSON.parse(stored);
+        } catch (e) {
+            console.error("Failed to parse profile", e);
+            return DEFAULT_PROFILE;
         }
-        setIsLoading(false);
-    }, []);
+    });
+    const isLoading = false;
 
     // Save Profile Effect
     useEffect(() => {

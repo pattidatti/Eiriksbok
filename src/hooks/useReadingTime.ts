@@ -4,7 +4,8 @@ import { useLocation } from 'react-router-dom';
 
 export const useReadingTime = () => {
     const location = useLocation();
-    const startTimeRef = useRef<number>(Date.now());
+    // Settes av effecten under; Date.now() skal ikke kalles under render.
+    const startTimeRef = useRef<number>(0);
 
     useEffect(() => {
         // Reset start time on path change
