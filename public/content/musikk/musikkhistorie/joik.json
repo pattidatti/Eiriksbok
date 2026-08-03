@@ -2,19 +2,20 @@
     "id": "joik",
     "title": "Joik: Stemmen til det samiske folket",
     "layout": "rich",
-    "year": "Tusenvis av år – i dag",
+    "year": "Tusenvis av år - i dag",
     "category": "Musikk og tradisjon",
     "readTime": "9 min lesning",
     "heroImage": "/images/musikkhistorie/joik-hero.webp",
+    "lastUpdated": "2026-08-03T00:00:00Z",
     "details": [
-        "Joik er Europas eldste levende sangform",
-        "Joiken tilhører den den joiker — ikke sangeren",
-        "Forbudt av kirken i 200 år, og nå sterkere enn noensinne"
+        "Joik er en av Europas eldste musikktradisjoner",
+        "Joiken tilhører den den joiker, ikke sangeren",
+        "Fordømt av kirken og undertrykt av fornorskingen - i dag er den sterk igjen"
     ],
     "content": [
         {
             "type": "text",
-            "content": "Lukk øynene og hør for deg en stemme. Den stiger og synker uten tekst slik du kjenner det. Ingen vers, intet refreng, ingen tydelig begynnelse eller slutt. Det er ikke en sang om noen — det er noen. Denne lyden kalles joik, og den er en av verdens eldste og mest unike sangformer. Joiken ble til i det samiske folkets landområder for mange tusen år siden, og den lever fremdeles — i fjellene, i byene og på konsertscener verden over."
+            "content": "Lukk øynene og hør for deg en stemme. Den stiger og synker uten tekst slik du kjenner det. Ingen vers, intet refreng, ingen tydelig begynnelse eller slutt. Det er ikke en sang om noen - det er noen. Denne lyden kalles joik, og den er en av Europas eldste folkemusikktradisjoner, med røtter langt tilbake i samisk historie (Gaski mfl., 2024). Joiken lever fremdeles - i fjellene, i byene og på konsertscener verden over."
         },
         {
             "type": "header",
@@ -22,25 +23,25 @@
         },
         {
             "type": "text",
-            "content": "Det viktigste du må forstå om joik er dette: en joik tilhører den den joiker. Ikke den som synger, men det som joiken er rettet mot. Hvis noen lager en joik om en ulv, er det ulvens joik — ikke sangerens. Joiken er ulvens essens, ikke en fortelling om ulven. Det er et grunnleggende skille fra alt vi vanligvis tenker på som musikk."
+            "content": "Det viktigste du må forstå om joik er dette: den som får en joik, eier den også (Gaski mfl., 2024). Joiken tilhører altså den den joiker, ikke den som synger. Hvis noen lager en joik om en ulv, er det ulvens joik, ikke sangerens. Joiken er ulvens essens, ikke en fortelling om ulven. Det er et grunnleggende skille fra alt vi vanligvis tenker på som musikk. I dag, når joik spres gjennom radio og strømming, har dette eierskapet blitt et vanskeligere spørsmål enn før (Gaski mfl., 2024)."
         },
         {
             "type": "text",
-            "content": "Prøv å se det slik: Tenk at noen lager et bilde av deg som ikke er et portrett — det er en lyd, en klang, som fanger hvem du er på innsiden. Det er det joiken gjør. En person kan ha sin egen joik fra de er liten. Den joiken tilhører dem livet ut og følger dem som en musikalsk identitet. Det å joike noen er en stor gest — det betyr at du ser dem og vil gi dem en stemme i verden."
+            "content": "Prøv å se det slik: Tenk at noen lager et bilde av deg som ikke er et portrett - det er en lyd, en klang, som fanger hvem du er på innsiden. Det er det joiken gjør. En person kan ha sin egen joik fra de er liten. Den joiken tilhører dem livet ut og følger dem som en musikalsk identitet. Det å joike noen er en stor gest - det betyr at du ser dem og vil gi dem en stemme i verden."
         },
         {
             "type": "text",
-            "content": "Joiken kan ha ord, men trenger det ikke. Den kan bestå av meningsfulle stavelser og lyder som til sammen skaper et tonalt bilde av personen, dyret eller stedet. Den har ingen fast struktur. Den kan stoppe midt i og begynne igjen, slik et minne dukker opp og forsvinner. Det er nettopp denne friheten som gjør joiken så svært forskjellig fra europeisk musikktradisjon."
+            "content": "Joiken kan ha ord, men trenger det ikke. Den bygger på resitativ sang, gjentakelse og variasjon over korte formler, og på egne stemmeteknikker (Gaski mfl., 2024). Den har ingen fast begynnelse eller slutt. Den kan stoppe midt i og begynne igjen, slik et minne dukker opp og forsvinner. Det er nettopp denne friheten som gjør joiken så forskjellig fra europeisk musikktradisjon."
         },
         {
             "type": "text",
-            "content": "I samisk tradisjon finnes det tre hovedtyper joik. Personjoiken er den vanligste — den tilhører et bestemt menneske og er en slags musikalsk signatur for den personen. Naturjoiken tilhører et sted: et fjell, en elv, en dal. Dyrejoiken tilhører et dyr, oftest et reinsdyr. Alle tre typene deler den samme grunnegenskapen: joiken tilhører noe utenfor sangeren selv. Det er en ekstraordinær filosofi om musikk som eiendom og tilhørighet."
+            "content": "Joiken deles gjerne inn etter hva den er rettet mot. Personjoiken er den mest kjente i dag og fungerer som en musikalsk signatur for et bestemt menneske. Naturjoiken tilhører et sted: et fjell, en elv, en dal. Dyrejoiken tilhører et dyr, oftest et reinsdyr. I tillegg finnes joiker rettet mot magiske og overnaturlige vesener (Gaski mfl., 2024). Alle deler den samme grunnegenskapen: joiken tilhører noe utenfor sangeren selv."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Du joiker ikke om noen. Du joiker noen. Joiken er ikke et portrett — den er personen selv, fanget i lyd.",
+                "text": "Du joiker ikke om noen. Du joiker noen. Joiken er ikke et portrett - den er personen selv, fanget i lyd.",
                 "author": "Tradisjonelt samisk syn på joik"
             }
         },
@@ -50,15 +51,15 @@
         },
         {
             "type": "text",
-            "content": "Joiken er minst 3000 år gammel. Den har røtter i det samiske folkets religiøse og kulturelle liv lenge før de kom i kontakt med europeisk kristendom. Noaiden — den samiske sjamanen eller det åndelige lederskapet i samfunnet — brukte joik i ritualer for å helbrede syke, kommunisere med naturåndene og navigere mellom den synlige og den usynlige verden."
+            "content": "Joiken har røtter i samisk religion og kulturliv lenge før kristendommen kom nordover. Den sto sentralt i sjamanens ritualer og ble brukt til å komme i transe, og den ble også brukt til å minnes de døde (Gaski mfl., 2024). Noaiden var sjaman og fremste leder i tradisjonell samisk religion, et mellomledd mellom menneskene og åndeverdenen (Løøv, 2025)."
         },
         {
             "type": "text",
-            "content": "Joiken var verktøyet de brukte for å gå inn i transe og ta kontakt med krefter utenfor hverdagslivet. Den var ikke underholdning — den var et hellig redskap. Dyrene, naturen og personene som ble joiket, ble på en måte innkalt gjennom lyden. En joik til et reinsdyr handlet om å hedre dyret, forstå det og knytte seg til det."
+            "content": "I læretiden lærte noaiden å joike, og han lagde som regel sin egen runebomme, som han brukte i de viktigste ritualene (Løøv, 2025). Det som særlig kjennetegnet noaiden, var at frisjelen hans under transe kunne forlate kroppen og reise til andre verdener. Hjelpeånder ledet ham på disse reisene, slik at han kunne snakke med guder og forfedre, søke helbredelse for en syk person og hente sjeler tilbake fra dødsriket (Løøv, 2025). Joiken var ikke underholdning - den var et hellig redskap."
         },
         {
             "type": "text",
-            "content": "I en nomadisk kultur der folket fulgte reinsdyrene gjennom årstidene, ble joiken et middel for å binde folk og natur sammen. Den var minnebanken, historiefortelleren og den åndelige praksisen — alt i ett. Joiken var så sentral at den samiske identiteten og joiken nesten ikke kunne skilles fra hverandre."
+            "content": "I en nomadisk kultur der folket fulgte reinsdyrene gjennom årstidene, ble joiken et middel for å binde folk og natur sammen. Den var minnebanken, historiefortelleren og den åndelige praksisen - alt i ett. Joiken var så sentral at den samiske identiteten og joiken nesten ikke kunne skilles fra hverandre."
         },
         {
             "type": "header",
@@ -66,15 +67,15 @@
         },
         {
             "type": "text",
-            "content": "Fra 1600-tallet og utover begynte den [kristne kirken](/krle/religion/kristendom/intro) å sende prester og misjonærer til samenes landområder. De hadde ett klart mål: å kristne samene og gjøre dem til lydige undersåtter av den norske og svenske staten. For kirken og myndighetene var noaidens ritualer og joiken et uttrykk for hedensk trolldom. Joiken ble sett på som djevelens musikk, og slik ble den behandlet."
+            "content": "Fra 1600-tallet og utover drev den [kristne kirken](/krle/religion/kristendom/intro) en intens misjonsvirksomhet i samiske områder. Noaidene ble stilt for retten i trolldomssaker og henrettet, misjonærene samlet inn og ødela runebommer, og hellige steder ble vanhelliget. Til sammen bidro dette til at den tradisjonelle samiske religionen nesten forsvant (Løøv, 2025). Senere fordømte også den læstadianske vekkelsen joiken som syndig (Aksdal & Gaski, 2023)."
         },
         {
             "type": "text",
-            "content": "Forbudene kom på rekke og rad. Prester nektet joik i menigheten. I de statsstøttede skolene, der samiske barn ble sendt for å lære det norske språket og bli gode norske borgere, var joiken strengt forbudt. Barn som ble tatt i å joike ble straffet. Foreldrene ble fortalt at joiken var skammelig og syndig. Dette er en del av en større politikk historikere kaller fornorsking — et systematisk forsøk på å slette samisk kultur og identitet."
+            "content": "Fra midten av 1800-tallet kom noe nytt i tillegg: en bevisst statlig politikk som historikerne kaller fornorsking. Målet var å gjøre samer og andre minoriteter norske (Skogvang, 2025). Skolen ble det viktigste redskapet. Fra 1880 var det bare tillatt å bruke norsk i undervisningen i de tre nordligste fylkene, og på flere internatskoler i Sápmi risikerte samiske barn straff hvis de brukte sitt eget språk. Joiken ble regnet som syndig og hørte ikke hjemme på skolen. Først i 1959 ble det igjen lov å bruke samisk i undervisningen (Risto, 2026)."
         },
         {
             "type": "text",
-            "content": "Denne politikken varte i over to hundre år. Gradvis begynte mange samer å internalisere skammen. Foreldre som selv hadde lært at joiken var noe stygt, overførte ikke tradisjonen til barna sine. Mange joiker gikk tapt for alltid. Det samiske folket ble sittende igjen med en ydmyket identitet der en viktig del av kulturen var kuttet bort. Fornorskingen viser hvordan en stat kan bruke sin [makt over folk](/samfunnskunnskap/styringsformer/makt-og-legitimitet) til å forme hva de får lov til å tro, synge og være."
+            "content": "Fornorskingspolitikken varte i om lag hundre år, fra rundt 1850 til rundt 1950 (Skogvang, 2025). Gradvis begynte mange samer å ta skammen innover seg. Foreldre som selv hadde lært at joiken var noe stygt, overførte ikke tradisjonen til barna sine. Mange joiker gikk tapt for alltid. Fornorskingen viser hvordan en stat kan bruke sin [makt over folk](/samfunnskunnskap/styringsformer/makt-og-legitimitet) til å forme hva de får lov til å tro, synge og være."
         },
         {
             "type": "component",
@@ -97,12 +98,12 @@
                             {
                                 "original": "sangtradisjon blant urbefolkningen",
                                 "replacement": "hedensk praksis blant det vantro folket",
-                                "explanation": "Prester brukte ord som 'hedensk' og 'vantro' for å markere at samene ikke var kristne — og dermed sto lavere på en tenkt sivilisasjonsskala."
+                                "explanation": "Prester brukte ord som 'hedensk' og 'vantro' for å markere at samene ikke var kristne - og dermed sto lavere på en tenkt sivilisasjonsskala."
                             },
                             {
                                 "original": "seremonier og ritualer",
                                 "replacement": "trolldomsritualer og avgudsdyrkelse",
-                                "explanation": "Kirken knyttet samisk religion til djevelskap og trolldom. Dette rettferdiggjorde forbud og straff — man bekjempet jo ikke kultur, men synd."
+                                "explanation": "Kirken knyttet samisk religion til djevelskap og trolldom. Dette rettferdiggjorde forbud og straff - man bekjempet jo ikke kultur, men synd."
                             },
                             {
                                 "original": "Sangen spilte en svært viktig rolle i hverdagslivet og den åndelige praksisen",
@@ -125,7 +126,7 @@
                             {
                                 "original": "sangtradisjon blant urbefolkningen",
                                 "replacement": "hellig joiktradisjon som bandt folket til landet og hverandre",
-                                "explanation": "For samene var joiken ikke bare musikk — det var en måte å eksistere i verden på, å ha en identitet og tilhørighet."
+                                "explanation": "For samene var joiken ikke bare musikk - det var en måte å eksistere i verden på, å ha en identitet og tilhørighet."
                             },
                             {
                                 "original": "seremonier og ritualer",
@@ -135,7 +136,7 @@
                             {
                                 "original": "Sangen spilte en svært viktig rolle i hverdagslivet og den åndelige praksisen",
                                 "replacement": "Joiken var selve ryggmargen i samisk identitet, kultur og forholdet til naturen",
-                                "explanation": "Å fjerne joiken var det samme som å fjerne en persons navn eller hukommelse. Det var ikke strengt nødvendig å be om å bli avkledd sin joik — det var et grunnleggende overgrep mot identiteten."
+                                "explanation": "Å fjerne joiken var det samme som å fjerne en persons navn eller hukommelse. Det var et grunnleggende overgrep mot identiteten."
                             }
                         ]
                     }
@@ -148,11 +149,11 @@
         },
         {
             "type": "text",
-            "content": "På 1960- og 1970-tallet skjedde noe nytt. Samisk ungdom begynte å stille spørsmål ved fornorskingspolitikken. De så hva som hadde skjedd med kulturen deres, og de ville ha den tilbake. I Norge, Sverige og Finland vokste det fram en samisk kulturell og politisk bevissthet. Samefolket begynte å organisere seg politisk og krevde rettigheter til land, språk og kultur."
+            "content": "Fra 1950-tallet og utover vokste motstanden mot fornorskingen. I 1959 ble det igjen lov å bruke samisk i skolen, og siden fulgte egen samisk høgskole i 1989 og den første samiske læreplanen i 1997 (Risto, 2026). Samisk ungdom begynte å stille spørsmål ved politikken som hadde formet foreldrene deres, og i Norge, Sverige og Finland vokste det fram en samisk kulturell og politisk bevissthet."
         },
         {
             "type": "text",
-            "content": "I denne sammenhengen kom joiken tilbake. Den nye generasjonen lette etter joiker hos de eldre som fremdeles husket dem. De lærte seg å joike igjen — ikke som en religiøs handling, men som en kulturell og identitetsmessig handling. Joiken ble et symbol på motstand og gjenreising. Den sa: Vi er fremdeles her. Kulturen vår er levende."
+            "content": "I denne sammenhengen kom joiken tilbake. Fra 1960- og 1970-tallet begynte en ny generasjon å fornye joiken, blant dem Mari Boine og Nils-Aslak Valkeapää, som blandet joik med jazz, tekno og verdensmusikk (Gaski mfl., 2024). De lærte seg å joike igjen - ikke som en religiøs handling, men som en kulturell og identitetsmessig handling. Joiken ble et symbol på motstand og gjenreising. Den sa: Vi er fremdeles her. Kulturen vår er levende."
         },
         {
             "type": "header",
@@ -160,30 +161,26 @@
         },
         {
             "type": "text",
-            "content": "I dag er joiken langt fra glemt. Den er levende, voksende og mangfoldig. Artisten Mari Boine vokste opp i en liten samisk bygd og ble ikke sett på som noe spesielt — inntil hun begynte å kombinere joik med jazz, blues og verdensmusikk. Plutselig nådde joiken et nytt publikum. Mari Boine ble en internasjonal stjerneartist og beviste at joiken har en plass på de største scenene i verden."
+            "content": "I dag er joiken langt fra glemt. Den er levende, voksende og mangfoldig. Mari Boine ble født i Karasjok i 1956 og har skapt et personlig uttrykk med elementer fra rock, jazz og musikk fra andre kulturer, bygget på joik og samisk musikktradisjon. Med albumet Gula Gula i 1989 fikk hun sitt gjennombrudd både i Norge og internasjonalt, og plateselskapet Real World Records ga albumet ut over hele verden (Nedland & Knudsen, 2025). Hun regnes som en av de fremste samiske musikerne i Norge (Aksdal & Gaski, 2023)."
         },
         {
             "type": "text",
-            "content": "Joik i dag er ikke bare bevaring av det gamle. Den er i utvikling. Unge samiske artister eksperimenterer med å sette joiken inn i ny musikalsk kontekst. Noen blander den med elektronisk musikk og hip-hop. Andre holder seg nær den tradisjonelle formen, men bruker moderne opptaksutstyr og strømmeplattformer for å nå ut. Joiken eksisterer på Spotify, YouTube og TikTok — på de samme plattformene som pop og rap. Det er en sjelden ting i musikkhistorien: en urgammel form som finner seg til rette i det 21. århundre uten å miste sin kjerne."
+            "content": "Joik i dag er ikke bare bevaring av det gamle. Den er i utvikling. Unge samiske artister setter joiken inn i ny musikalsk sammenheng. Noen blander den med elektronisk musikk og hip-hop. Andre holder seg nær den tradisjonelle formen, men bruker moderne opptaksutstyr og strømmeplattformer for å nå ut. Joiken finnes på Spotify, YouTube og TikTok - på de samme plattformene som pop og rap. Det er en sjelden ting i musikkhistorien: en urgammel form som finner seg til rette i det 21. århundre uten å miste sin kjerne."
         },
         {
             "type": "text",
-            "content": "I 2014 fikk joiken et nytt og mye større publikum da den sørsamiske artisten Jon Henrik Fjällgren opptrådte i Idol Sverige med sin farfars joik. Den enkle, nakne stemmen grep millioner av seere. Han ble ikke vinner av programmet, men joiken ble vinner av noe langt større: respekt og anerkjennelse fra et massepublikum som aldri hadde hørt noe lignende. I mange norske hjem ble joik et kjent ord for første gang."
+            "content": "I 2014 fikk joiken et nytt og mye større publikum. Den sørsamiske reingjeteren og artisten Jon Henrik Fjällgren gikk til topps i den svenske TV-konkurransen Talang med en nyskrevet joik, «Mu goahti mu váibmu» - «Mitt hjem er mitt hjerte» - og vant en million kroner (Marakatt, 2014). Tidligere i konkurransen hadde han joiket bestevennen sin, som var død, og fått jurymedlemmer til å gråte. Han vant ikke bare konkurransen: joiken vant respekt og oppmerksomhet fra et massepublikum som aldri hadde hørt noe lignende. I mange norske og svenske hjem ble joik et kjent ord for første gang."
         },
         {
             "type": "text",
-            "content": "Yngre artister som Máddji og Elin Kven viser at joik kan ta nye former uten å miste sjelen sin. Joik blandes med elektronisk musikk, hip-hop og pop. Sameungdom lærer å joike i kulturskolen og på samiske folkehøyskoler. Sametinget støtter joik-opplæring, og Samisk Radio sender joik daglig. Joiken er ikke lenger skambelagt — den er stolt."
-        },
-        {
-            "type": "text",
-            "content": "Likevel finnes det utfordringer. Mange joiker er tapt for alltid. Eldre som husket dem er borte. Unge samer som bor langt utenfor kjernesamfunnene i Sapmi kjenner kanskje ikke sin families joiker. Arbeidet med å ta vare på og lære videre det som er igjen, pågår kontinuerlig. Joik er en sårbar kunstform — men den har overlevd to hundre år med forbud, og den er sterk nok til å overleve også fremtiden."
+            "content": "Joiken er ikke lenger skambelagt - den er stolt. Sametinget har egne støtteordninger for utgivelse av joik og samisk musikk (Sametinget, u.å.), og samiske temaer er i dag en del av læreplanen for alle elever i norsk skole (Risto, 2026). Likevel finnes det utfordringer. Mange joiker er tapt for alltid, og eldre som husket dem er borte. Unge samer som bor langt fra kjerneområdene i Sápmi kjenner kanskje ikke sin families joiker. Arbeidet med å ta vare på og lære videre det som er igjen, pågår kontinuerlig. Joik er en sårbar kunstform - men den har overlevd hundrevis av år med fordømmelse og fornorsking, og den er sterk nok til å overleve også fremtiden."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Samisk musikk — noen navn å huske",
-                "content": "Mari Boine (f. 1956) er den mest kjente samiske artisten internasjonalt. Hun blander joik med jazz og blues og har gitt ut album på store internasjonale plateselskaper. Jon Henrik Fjällgren er en sørsamisk artist fra Sverige som ble kjent etter Idol Sverige i 2014 der han sang sin farfars joik. Máddji er en ung samisk artist som blander joik med moderne pop. Elin Kven representerer en ny generasjon der joiken tar mange ulike former. Felles for dem alle: de bruker joiken for å si noe sant om hvem de er."
+                "title": "Samisk musikk - noen navn å huske",
+                "content": "Mari Boine (f. 1956 i Karasjok) er den mest kjente samiske artisten internasjonalt. Hun blander joik med rock, jazz og musikk fra andre kulturer, og fikk sitt gjennombrudd med albumet Gula Gula i 1989. Nils-Aslak Valkeapää var en annen sentral fornyer som tok joiken inn i ny musikk fra 1960- og 1970-tallet. Ante Mikkel Gaup regnes som en av de mest profilerte joikerne og fortellerne. Jon Henrik Fjällgren er en sørsamisk artist fra Sverige som vant TV-konkurransen Talang i 2014 med en nyskrevet joik. Felles for dem alle: de bruker joiken for å si noe sant om hvem de er."
             }
         },
         {
@@ -191,16 +188,16 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva menes med at en joik tilhører den den joiker, og ikke den som synger?",
-                    "Hvilke tre hovedtyper joik finnes i samisk tradisjon, og hva tilhører hver av dem?",
+                    "Hva menes med at den som får en joik, også eier den?",
+                    "Hvilke typer joik nevner artikkelen, og hva er hver av dem rettet mot?",
                     "Hva var noaiden, og hvordan brukte noaiden joiken?",
-                    "Hvorfor så kirken og myndighetene på joiken som noe farlig, og hva gjorde de med barn som ble tatt i å joike?"
+                    "Hvorfor så kirken på joiken som noe farlig, og hva skjedde med samiske barn på internatskolene?"
                 ],
                 "reflekter": [
                     "Artikkelen sier at joiken ikke er en sang om noen, men noen. Hvorfor gjør denne forskjellen joiken så ulik vanlig musikk der komponisten eier låten?",
-                    "Fornorskingspolitikken varte i over to hundre år. Forklar hvordan skammen kunne føre til at mange joiker gikk tapt for alltid, selv etter at forbudene var borte.",
+                    "Fornorskingspolitikken varte i om lag hundre år. Forklar hvordan skammen kunne føre til at mange joiker gikk tapt for alltid, selv etter at politikken var over.",
                     "Bruk BiasLens-oppgaven i artikkelen. Hvordan kan de samme handlingene bli beskrevet som hedensk trolldom av kirken og som hellig tradisjon av samene? Hva sier det om hvem som forteller historien?",
-                    "Da unge samer tok joiken tilbake på 1970-tallet, brukte de den ikke lenger som religiøs handling, men som symbol på motstand og identitet. Hvorfor kunne joiken bli et så sterkt politisk symbol?"
+                    "Da unge samer tok joiken tilbake fra 1960- og 1970-tallet, brukte de den ikke lenger som religiøs handling, men som symbol på motstand og identitet. Hvorfor kunne joiken bli et så sterkt politisk symbol?"
                 ],
                 "gaaVidere": [
                     "Finn en joik på Spotify eller YouTube (for eksempel av Mari Boine eller Jon Henrik Fjällgren) og hør på den. Skriv noen setninger om hvordan den låter sammenlignet med musikken du vanligvis hører på.",
@@ -223,7 +220,7 @@
                             "Joik har alltid fast vers og refreng"
                         ],
                         "correct": 1,
-                        "explanation": "Det grunnleggende ved joik er at joiken tilhører den den joiker. Hvis du joiker noen, tilhører joiken dem — ikke deg. Det er helt annerledes fra vanlig sang der komponisten eier musikken."
+                        "explanation": "Det grunnleggende ved joik er at den som får en joik, også eier den. Hvis du joiker noen, tilhører joiken dem, ikke deg. Det er helt annerledes fra vanlig sang der komponisten eier musikken."
                     },
                     {
                         "question": "Hva var noaidens rolle i samisk samfunn?",
@@ -231,44 +228,60 @@
                             "Noaiden var læreren som lærte barna å skrive",
                             "Noaiden var sjamanen som brukte joik i helbredelsesritualer",
                             "Noaiden var handelsmannen som solgte reinsdyr",
-                            "Noaiden var kongens representant i Sapmi"
+                            "Noaiden var kongens representant i Sápmi"
                         ],
                         "correct": 1,
-                        "explanation": "Noaiden var det samiske samfunnets åndelige leder — en slags sjaman. Joiken var et av de viktigste verktøyene noaiden brukte i ritualer for å helbrede syke, kommunisere med naturåndene og navigere mellom den synlige og usynlige verden."
+                        "explanation": "Noaiden var sjaman og fremste leder i tradisjonell samisk religion. Joiken var et av de viktigste verktøyene noaiden brukte i ritualer for å helbrede syke, snakke med guder og forfedre og reise mellom verdener."
                     },
                     {
-                        "question": "Hvorfor ble joiken forbudt fra 1600-tallet?",
+                        "question": "Hvorfor ble joiken bekjempet fra 1600-tallet?",
                         "options": [
                             "Fordi joiken var altfor høylytt og forstyrret naboene",
                             "Fordi norske myndigheter mente samene måtte lære europeisk musikk",
-                            "Fordi kirken og norske myndigheter så på joiken som hedensk trolldom",
+                            "Fordi kirken og misjonen så på samisk religion som hedensk trolldom",
                             "Fordi joiken handlet om krig og vold"
                         ],
                         "correct": 2,
-                        "explanation": "Kirken så på joiken som djevelens musikk og et uttrykk for hedensk trolldom. Forbudet var en del av en større fornorskingspolitikk der målet var å slette samisk kultur og identitet og gjøre samene til gode, norske borgere."
+                        "explanation": "Misjonen så på samisk religion som hedensk trolldom. Noaider ble stilt for retten og henrettet, runebommer ble ødelagt, og joiken ble regnet som syndig. Senere kom fornorskingspolitikken i tillegg, med målet om å gjøre samene norske."
                     },
                     {
                         "question": "Hvem er Mari Boine?",
                         "options": [
                             "En samisk politiker som kjempet for Sametinget",
-                            "En samisk artist som blander joik med jazz og verdensmusikk",
+                            "En samisk artist som blander joik med rock, jazz og musikk fra andre kulturer",
                             "En forsker som dokumenterte tapte joiker",
                             "Presten som innførte joikforbudet"
                         ],
                         "correct": 1,
-                        "explanation": "Mari Boine er den mest kjente samiske artisten internasjonalt. Hun vokste opp i en liten samisk bygd og ble en verdenskjent artist ved å kombinere joik med jazz, blues og verdensmusikk — og vise at joiken kan nå alle."
+                        "explanation": "Mari Boine ble født i Karasjok i 1956 og er den mest kjente samiske artisten internasjonalt. Med albumet Gula Gula i 1989 fikk hun sitt gjennombrudd både i Norge og ute i verden."
                     },
                     {
-                        "question": "Hva skjedde med joik-tradisjonen på 1970-tallet?",
+                        "question": "Hva skjedde med joik-tradisjonen fra 1960- og 1970-tallet?",
                         "options": [
                             "Staten innførte nye og strengere forbud",
                             "Joik ble offisielt godkjent som norsk kulturarv",
-                            "En ny generasjon samer begynte å gjenoppdage og ta tilbake joiken",
+                            "En ny generasjon samer begynte å fornye joiken og ta den tilbake",
                             "Joiken forsvant helt fordi ingen husket den lenger"
                         ],
                         "correct": 2,
-                        "explanation": "På 1970-tallet vokste det frem en samisk kulturell og politisk oppvåkning. Unge samer lette etter de eldre som fremdeles husket joikene og lærte dem på nytt. Joiken ble et symbol på samisk identitet og motstand mot fornorskingspolitikken."
+                        "explanation": "Fra 1960- og 1970-tallet vokste det fram en samisk kulturell og politisk oppvåkning. Artister som Mari Boine og Nils-Aslak Valkeapää fornyet joiken ved å blande den med jazz, tekno og verdensmusikk, og joiken ble et symbol på samisk identitet og motstand."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aksdal, B. & Gaski, H. (2023). *Samisk folkemusikk*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/samisk_folkemusikk](https://snl.no/samisk_folkemusikk)",
+                    "Gaski, H., Ledang, O. K. & Aksdal, B. (2024). *Joik*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/joik](https://snl.no/joik)",
+                    "Løøv, M. (2025). *Noaide*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/noaide](https://snl.no/noaide)",
+                    "Marakatt, L.-O. (2014). *Jon Henrik vann Talang med nyskriven jojk*. Sveriges Radio P4 Jämtland. Hentet 03.08.2026 fra [sverigesradio.se](https://www.sverigesradio.se/artikel/5865871)",
+                    "Nedland, S. & Knudsen, J. S. (2025). *Mari Boine*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Mari_Boine](https://snl.no/Mari_Boine)",
+                    "Risto, T. (2026). *Samisk utdanningshistorie*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/samisk_utdanningshistorie](https://snl.no/samisk_utdanningshistorie)",
+                    "Sametinget. (u.å.). *Utgivelse av joik og samisk musikk*. Hentet 03.08.2026 fra [sametinget.no](https://sametinget.no/stipenda-ja-darja/darja/kultuvrra/utgivelse-av-joik-og-samisk-musikk/)",
+                    "Skogvang, S. F. (2025). *Fornorskingspolitikk*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/fornorskingspolitikk](https://snl.no/fornorskingspolitikk)"
                 ]
             }
         }
