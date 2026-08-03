@@ -76,13 +76,19 @@ const MicroGamePreviewPage = React.lazy(routeFactories.MicroGamePreviewPage);
 
 import { WorkstationLayout } from './components/workstation/WorkstationLayout';
 import { usePresence } from './hooks/usePresence';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, ScrollRestoration } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 
 const AppRoot = () => {
   usePresence();
   return (
     <LayoutProvider>
       <GlossaryProvider>
+        {/* Ny navigasjon starter på toppen, tilbakeknappen leverer eleven
+            tilbake til plassen hun forlot. Tidligere gjorde ingen av delene seg
+            selv: en elev som blar langt ned i en emneliste, åpner en artikkel og
+            trykker tilbake, havnet øverst og måtte lete seg fram på nytt. */}
+        <ScrollRestoration />
         <UpdatePrompt />
         <Layout />
       </GlossaryProvider>
@@ -182,14 +188,21 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ErrorBoundary>
-      <Suspense fallback={<PageSkeleton />}>
-        <RouterProvider
-          router={router}
-          future={{
-            v7_startTransition: true,
-          }}
-        />
-      </Suspense>
+      {/* reducedMotion="user" gjør at ALLE framer-motion-animasjoner i appen
+          respekterer systeminnstillingen «reduser bevegelse» - ett sted, i
+          stedet for én useReducedMotion() per komponent. Bevegelse (x/y/scale/
+          rotasjon) slås av; opacity-overganger beholdes, siden de ikke utløser
+          ubehag og ellers ville gitt harde innholdsbytter. */}
+      <MotionConfig reducedMotion="user">
+        <Suspense fallback={<PageSkeleton />}>
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+            }}
+          />
+        </Suspense>
+      </MotionConfig>
     </ErrorBoundary>
   );
 }

@@ -439,7 +439,9 @@ export const EthicsExperimentPage: React.FC = () => {
 
             <style dangerouslySetInnerHTML={{
                 __html: `
-                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Playfair+Display:ital,wght@0,900;1,900&display=swap');
+                /* Outfit selvhostes globalt via Fontsource (src/main.tsx) - ingen
+                   @import her. Playfair Display ble lastet ned av den gamle
+                   @import-en uten å være brukt av en eneste regel. */
                 .font-display { font-family: 'Outfit', sans-serif; }
                 h1, h2, h3 { font-family: 'Outfit', sans-serif; }
             ` }} />

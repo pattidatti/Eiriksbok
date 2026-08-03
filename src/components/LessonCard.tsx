@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import type { ManifestLesson } from '../types';
 import { Clock } from 'lucide-react';
 import { Image as LazyImage } from './Image';
+import { usePrefetchLesson } from '../hooks/usePrefetchLesson';
 
 interface LessonCardProps {
     lesson: ManifestLesson;
@@ -14,9 +15,10 @@ interface LessonCardProps {
 
 export const LessonCard = React.memo<LessonCardProps & { badgeText?: string }>(({ lesson, path, topicTitle, topicImage, badgeText }) => {
     const displayImage = lesson.image || topicImage;
+    const prefetchHandlers = usePrefetchLesson(path);
 
     return (
-        <Link to={path} className="block group no-underline h-full">
+        <Link to={path} className="block group no-underline h-full" {...prefetchHandlers}>
             <motion.div
                 whileHover={{ y: -5 }}
                 whileTap={{ scale: 0.98 }}

@@ -86,9 +86,12 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
         readTime: lesson?.readTime,
     });
 
+    // Ingen window.scrollTo(0, 0) her lenger: <ScrollRestoration> i App.tsx
+    // sender eleven til toppen ved ny navigasjon uansett, og gjorde denne
+    // linjen skadelig - den overstyrte den gjenopprettede leseposisjonen når
+    // eleven kom tilbake til artikkelen med tilbakeknappen.
     useEffect(() => {
         if (lesson) {
-            window.scrollTo(0, 0);
             addToHistory({
                 id: lesson.id,
                 title: lesson.title,
