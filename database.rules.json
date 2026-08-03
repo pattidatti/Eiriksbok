@@ -2,21 +2,45 @@
     "rules": {
         "analytics": {
             "views": {
+                ".read": true,
                 "$id": {
-                    ".read": true,
                     ".write": true
                 }
             },
             "active_users": {
+                ".read": true,
                 "$id": {
-                    ".read": true,
                     ".write": true
                 }
             },
             "unique_users": {
+                ".read": true,
                 "$id": {
-                    ".read": true,
                     ".write": "data.exists() || !data.exists()"
+                }
+            },
+            "reading_time": {
+                ".read": true,
+                "$sti": {
+                    "$maling": {
+                        ".write": "!data.exists() && newData.exists()",
+                        ".validate": "newData.hasChildren(['duration', 'timestamp', 'path']) && newData.child('duration').isNumber() && newData.child('duration').val() > 5000 && newData.child('duration').val() < 14400000 && newData.child('path').isString() && newData.child('path').val().length <= 300"
+                    }
+                }
+            },
+            "searches": {
+                "$sok": {
+                    ".write": "!data.exists() && newData.exists()",
+                    ".validate": "newData.hasChildren(['query', 'timestamp']) && newData.child('query').isString() && newData.child('query').val().length <= 200"
+                }
+            },
+            "games": {
+                "hangman": {
+                    ".read": true,
+                    "$runde": {
+                        ".write": "!data.exists() && newData.exists()",
+                        ".validate": "newData.hasChildren(['outcome', 'timestamp']) && newData.child('outcome').isString() && newData.child('outcome').val().matches(/^(won|lost)$/)"
+                    }
                 }
             }
         },

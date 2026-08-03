@@ -60,10 +60,14 @@ export const StatsPage: React.FC = () => {
                 const type: 'topic' | 'lesson' = parts.length === 2 ? 'topic' : 'lesson';
                 const title = parts.slice(1).map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' / ');
 
-                // Calculate Avg Time for this page
+                // Calculate Avg Time for this page.
+                // Målinger fra før august 2026 ligger under en nøkkel med
+                // ledende understrek (pathname hadde skråstrek foran). Vi leser
+                // begge, så historikken teller med.
+                const timeEntry = rawTimes?.[key] ?? rawTimes?.[`_${key}`];
                 let avgTime = 0;
-                if (rawTimes && rawTimes[key]) {
-                    const sessions = Object.values(rawTimes[key]);
+                if (timeEntry) {
+                    const sessions = Object.values(timeEntry);
                     if (sessions.length > 0) {
                         const totalDuration = sessions.reduce((sum, s) => sum + s.duration, 0);
                         avgTime = totalDuration / sessions.length;
