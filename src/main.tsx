@@ -1,17 +1,22 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-// Alle fonter selvhostes via Fontsource. Tidligere lå Inter/Outfit bak en
-// render-blokkerende <link> til fonts.googleapis.com i index.html: to ekstra
+// Outfit selvhostes via Fontsource. Tidligere lå fonten bak en render-
+// blokkerende <link> til fonts.googleapis.com i index.html: to ekstra
 // DNS+TLS-oppslag før første maling, som på skolenett ofte var det tregeste
 // enkeltelementet på siden. Nå leveres woff2-ene fra samme origin som appen.
 // `latin`-subsettet dekker norsk (æ, ø, å ligger i Latin-1).
-// Én @font-face-regel per vekt koster ingenting i seg selv - nettleseren laster
-// kun ned filen for en vekt som faktisk brukes av tekst på siden.
-import '@fontsource/inter/latin-400.css';
-import '@fontsource/inter/latin-500.css';
-import '@fontsource/inter/latin-600.css';
-import '@fontsource/inter/latin-700.css';
+//
+// Vektene under er nøyaktig de som var tilgjengelige før: 300-700 fra den
+// globale lenken, pluss 900 fra etikk-sidens egen @import. Én @font-face-regel
+// per vekt koster ingenting i seg selv - nettleseren laster kun ned filen for
+// en vekt som faktisk brukes av tekst på siden.
+//
+// Inter er bevisst IKKE med. Den er nevnt i body-regelen i index.css og i noen
+// canvas-kall, men blir overalt overstyrt av Tailwind-klassen `font-sans` på
+// rot-diven i Layout.tsx, som gir systemfonten. Fonten har derfor aldri vært
+// lastet ned på nettstedet - heller ikke før dette - og å selvhoste den ville
+// bare lagt død vekt i CSS-bundelen. Brødteksten skal se ut som i dag.
 import '@fontsource/outfit/latin-300.css';
 import '@fontsource/outfit/latin-400.css';
 import '@fontsource/outfit/latin-500.css';
