@@ -1,0 +1,260 @@
+{
+    "id": "opproret-1857",
+    "title": "Opprøret i 1857: året India reiste seg",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "1857-1859",
+    "category": "Indias historie",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Et handelsselskap styrte India med en hær der ni av ti soldater var indere. I 1857 gjorde den største av hærene mytteri.",
+        "Opprøret var ikke India mot Storbritannia. Store deler av landet ble aldri med, og det avgjorde utfallet.",
+        "Da opprøret var slått ned, mistet kompaniet India. Fra 1858 styrte den britiske staten kolonien direkte."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Om morgenen 9. mai 1857 sto 85 soldater oppstilt på eksersisplassen i Meerut nord for Delhi. De hadde nektet å bruke de nye patronene til geværene sine. Straffen ble lest opp: mange års straffarbeid. Foran de andre soldatene ble uniformene revet av dem, og de ble lagt i lenker. Kameratene deres sto og så på (Waldrop, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Dagen etter gjorde de samme kameratene opprør. De drepte de britiske offiserene sine og satte kursen mot Delhi. Det som startet som en protest mot en patron, ble til den største krisen det britiske styret i India noen gang opplevde."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Indiske soldater i røde uniformer marsjerer bort fra en brennende leir",
+            "caption": "10. mai 1857: sepoyene i Meerut gjør mytteri og marsjerer mot Delhi."
+        },
+        { "type": "header", "text": "Et firma med egen hær" },
+        {
+            "type": "text",
+            "content": "For å forstå hvorfor dette var så farlig, må vi se hvem som egentlig styrte India. Det var ikke den britiske staten. Det var et handelsselskap: [Det britiske ostindiske kompani](/historie/kolonialisering/eic). Selskapet hadde fått lov til å skaffe seg land, slå mynt og holde sin egen hær (Filseth, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Og for en hær. Rundt 1857 hadde kompaniet omtrent 45 000 britiske soldater i India og over 230 000 indiske (Cartwright, 2022). Ni av ti soldater i India var altså indere. De ble kalt sepoyer, av det persiske ordet for soldat. Den største av kompaniets tre hærer var Bengal-hæren i nord. Av 159 000 mann der var bare 24 000 europeere. De øvrige 135 000 var indere (National Army Museum, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "Dette er nøkkelen til hele historien. Britisk makt i India hvilte ikke på britiske soldater. Den hvilte på at indiske soldater fortsatte å adlyde. Det var styrken i systemet, og det var den svake flanken."
+        },
+        { "type": "header", "text": "Hvorfor ble de sinte?" },
+        {
+            "type": "text",
+            "content": "Misnøyen hadde bygd seg opp lenge. Lønningene sto stille eller sank, skattene steg, og en indisk soldat kunne aldri bli offiser uansett hvor dyktig han var (National Army Museum, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "I tillegg tok kompaniet over indiske riker på løpende bånd. En regel som britene kalte doctrine of lapse, gikk ut på at hvis en indisk fyrste døde uten en sønn han selv hadde fått, kunne kompaniet ta riket hans. Adoptivsønner talte ikke. I 1856 ble også Oudh annektert, et stort rike der svært mange av sepoyene i Bengal-hæren kom fra. Med ett var familiene deres hjemme underlagt kompaniets skatteinnkrevere (Nangia, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Så kom gnisten. De nye Enfield-riflene brukte patroner som soldatene måtte bite hull på før de ladet. Det gikk rykter om at patronene var smurt inn med fett fra ku og gris. Kua er hellig for hinduer. Grisen er uren for muslimer. Ryktet traff dermed begge grupper samtidig, og det bekreftet noe mange allerede fryktet: at britene ville bryte ned troen og skikkene deres (Waldrop, 2024)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Var det virkelig fett på patronene?",
+                "content": "Historikere er ikke enige om hvor mye fett som faktisk var brukt, og britiske offiserer prøvde å endre rutinene da protestene startet. Men det spilte liten rolle. Ryktet var allerede ute, og folk trodde på det. Noen ganger er det ikke faktum som utløser en hendelse, men hva folk tror er sant, og hvem de stoler på."
+            }
+        },
+        { "type": "header", "text": "Fra Meerut til Delhi" },
+        {
+            "type": "text",
+            "content": "Allerede i slutten av mars hadde soldaten Mangal Pandey angrepet britiske offiserer i Barrackpore. Han ble hengt 8. april (Nangia, 2026). Så kom Meerut i mai."
+        },
+        {
+            "type": "text",
+            "content": "11. mai 1857 nådde opprørerne fra Meerut Delhi. De brant offentlige bygninger og oppsøkte den gamle mannen som bodde i palasset: Bahadur Shah Zafar, den siste stormogulen. Han hadde tittelen keiser, men hadde i praksis ingen makt igjen. Nå ble han ropt ut som Indias hersker, og han sa ja (Waldrop, 2024). Med det fikk opprøret et navn og en fane, og en linje tilbake til [Mogulriket](/historie/indias-historie/mogulriket) som en gang hadde vært verdens rikeste rike."
+        },
+        {
+            "type": "text",
+            "content": "Opprøret spredte seg utover den nordindiske sletta. I Kanpur sluttet fyrsten Nana Sahib seg til. Etter en beleiring tilbød han britene fritt leide, men de ble drept ved elva Ganges. Senere ble rundt 400 britiske kvinner og barn drept i byen (Nangia, 2026). I Lucknow gjorde soldatene opprør 30. mai. I Jhansi ble fyrstinnen Rani Lakshmibai et av opprørets mest kjente ansikter. Hun hadde selv mistet riket sitt til doctrine of lapse."
+        },
+        {
+            "type": "component",
+            "name": "Sidevalget1857",
+            "props": {}
+        },
+        { "type": "header", "text": "Landet som aldri ble med" },
+        {
+            "type": "text",
+            "content": "Her ligger det avgjørende. Opprøret var stort, men det var ikke hele India. Bombay-hæren og Madras-hæren, altså to av kompaniets tre hærer, ble nesten ikke berørt. Sikh-soldater fra Punjab, punjabiske muslimer og gurkhaer fra Nepal stilte seg på britenes side (National Army Museum, u.å.). Og bortsett fra stormogulen, sønnene hans og Nana Sahib ble ingen av de viktige indiske fyrstene med (Nangia, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Grunnene var ulike. Noen fyrster hadde avtaler med britene som ga dem trygghet på tronen. Sikhene i Punjab hadde selv tapt en krig mot britene få år før, og de så ingen grunn til å kjempe for at en mogulkeiser i Delhi skulle bli sterk igjen. India var ikke ett folk med ett mål i 1857. Det var mange riker, mange språk og mange regnestykker."
+        },
+        { "type": "header", "text": "Beskjeden som gikk raskere enn hæren" },
+        {
+            "type": "text",
+            "content": "Britene hadde også noe opprørerne ikke hadde: telegrafen. I 1857 lå det rundt 4 555 miles med telegraftråd i India, litt over 7 000 kilometer. Da opprøret brøt ut, sendte telegrafistene i Delhi ut varsler til andre britiske stasjoner, og myndighetene i Punjab rakk å forberede seg og hindre at mytteriet spredte seg videre der (PK Porthcurno, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "En hær kan bare marsjere så fort. En beskjed langs en tråd bruker sekunder. Den britiske administratoren Robert Montgomery oppsummerte det etterpå med ordene «Den elektriske telegrafen har reddet India», og setningen ble hugget inn på et minnesmerke i Delhi (PK Porthcurno, u.å.). Med lojale indiske tropper, allierte fyrster og telegrafen tok britene tilbake by etter by (Nangia, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": { "gameId": "telegraflinja-1857" }
+        },
+        { "type": "header", "text": "Britene tar tilbake" },
+        {
+            "type": "text",
+            "content": "Kampen om Delhi begynte 13. september 1857, og byen ble tatt 21. september. Britene mistet over 1 100 mann. Bahadur Shah Zafar overga seg, de to sønnene hans ble henrettet, og rundt 200 opprørere ble hengt uten rettssak (Waldrop, 2024). I løpet av vinteren kom 40 000 forsterkninger fra Storbritannia, og området rundt Lucknow ble gjenerobret. Jhansi falt 3. april 1858, og Gwalior 19. juni 1858 (Nangia, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Nedkjempingen var brutal. Tilfeldige sivile indere ble drept, hele landsbyer ble brent, og folk som var mistenkt for å ha deltatt, ble hengt uten lov og dom (Waldrop, 2024). Freden ble først erklært 8. juli 1859. Etter dette var det vanskelig å hevde at britisk styre i India bygde på noe annet enn ren makt."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Soldater utenfor en ødelagt bymur i Delhi etter beleiringen",
+            "caption": "Delhi ble tatt tilbake 21. september 1857, mye takket være forsterkninger fra Punjab."
+        },
+        { "type": "header", "text": "Kompaniet mister India" },
+        {
+            "type": "text",
+            "content": "Opprøret kostet britene mye, men det kostet handelsselskapet alt. I 1858 gikk India over fra kompaniet til den britiske kronen, og landet ble en koloni styrt av en visekonge (Kristiansen mfl., 2024). Selve selskapet ble oppløst i 1873 (Filseth, 2025). Fra nå av var India kronjuvelen i [det britiske imperiet](/historie/kolonialisering/britisk-imperium), og styrt direkte fra London."
+        },
+        {
+            "type": "text",
+            "content": "Britene endret også hæren. De passet på å blande grupper som ikke lett ville gjøre felles sak, og de rekrutterte tyngre fra områdene som hadde holdt seg lojale. Lærdommen de trakk, var den samme som opprøret hadde avslørt: makten deres hvilte på indere, og derfor måtte de aldri igjen la for mange indere stå samlet på feil side."
+        },
+        { "type": "header", "text": "Hva skal vi kalle det?" },
+        {
+            "type": "text",
+            "content": "Britene kalte det lenge «sepoyopprøret» eller «mytteriet», som om det bare handlet om ulydige soldater. I India blir det gjerne kalt den første frigjøringskrigen, og opprøret regnes som starten på uavhengighetsbevegelsen (Waldrop, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Begge navn peker på noe sant. Det begynte som et mytteri i én hær, og det manglet en felles ledelse og et felles mål. Samtidig var det første gang så mange mennesker gjorde motstand mot britene samtidig. Nesten hundre år senere skulle en helt annen bevegelse, [Indias vei til uavhengighet](/historie/dekolonisering/india), lykkes med noe opprørerne i 1857 aldri klarte: å samle India."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "quote": "Den elektriske telegrafen har reddet India.",
+                "author": "Robert Montgomery, britisk administrator, etter opprøret"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Det er en oppsiktsvekkende innrømmelse. En verdensmakt med den sterkeste flåten i verden forklarte seieren sin med en tråd og noen operatører. Men den viktigste grunnen sto rundt dem hele tiden: de indiske soldatene og fyrstene som valgte å bli stående."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Telegrafstolper langs en støvete slette i Nord-India",
+            "caption": "Telegraflinja gjorde at varselet nådde Punjab før opprørerne gjorde det."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skjedde i Meerut 9. og 10. mai 1857?",
+                    "Omtrent hvor mange britiske og hvor mange indiske soldater hadde kompaniet i India rundt 1857?",
+                    "Hva gikk regelen doctrine of lapse ut på?",
+                    "Hvilke grupper i India stilte seg på britenes side under opprøret?",
+                    "Hva skjedde med styret over India i 1858?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor ryktet om fett på patronene gjorde både hinduer og muslimer sinte.",
+                    "Britene hadde ni indiske soldater for hver britiske. Forklar hvorfor det både var en styrke og en svakhet for dem.",
+                    "Hvorfor ble ikke Bombay-hæren, Madras-hæren, sikhene og de fleste fyrstene med i opprøret? Gi minst to grunner.",
+                    "Hvorfor kan telegrafen ha betydd like mye som soldater under gjenerobringen?"
+                ],
+                "gaaVidere": [
+                    "Britene kalte det «sepoyopprøret», India kaller det «den første frigjøringskrigen». Skriv et kort innlegg der du argumenterer for hvilket navn du mener passer best, og bruk minst tre opplysninger fra artikkelen.",
+                    "Diskuter i klassen: kan en kolonimakt styre et land uten hjelp fra folk som bor der? Finn eksempler fra andre artikler i Eiriksbok.",
+                    "Sammenlign 1857 med Indias vei til uavhengighet på 1900-tallet. Hva var annerledes med den senere bevegelsen, og hvorfor lyktes den?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvem styrte store deler av India da opprøret brøt ut i 1857?",
+                        "options": [
+                            "Den britiske dronningen direkte",
+                            "Et handelsselskap, Det britiske ostindiske kompani",
+                            "Stormogulen i Delhi",
+                            "En fransk kolonihær"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Kompaniet hadde egen hær og styrte store landområder. Først i 1858 tok den britiske staten over."
+                    },
+                    {
+                        "question": "Hva var forholdet mellom britiske og indiske soldater i kompaniets hær?",
+                        "options": [
+                            "Omtrent like mange av hver",
+                            "Flest britiske soldater",
+                            "Rundt 45 000 britiske og over 230 000 indiske",
+                            "Bare indiske soldater"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Ni av ti soldater var indere. Derfor var lojaliteten deres helt avgjørende for britisk makt."
+                    },
+                    {
+                        "question": "Hva utløste selve opprøret i Meerut?",
+                        "options": [
+                            "En ny skatt på salt",
+                            "Rykter om at nye patroner var smurt med fett fra ku og gris",
+                            "At stormogulen erklærte krig",
+                            "En hungersnød i Bengal"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Soldatene måtte bite hull på patronene. Ryktet krenket både hinduer og muslimer, og 85 soldater nektet."
+                    },
+                    {
+                        "question": "Hvorfor klarte britene å slå ned opprøret?",
+                        "options": [
+                            "Fordi de hadde flere soldater enn inderne",
+                            "Fordi store deler av India ikke ble med, og fordi telegrafen ga dem raske beskjeder",
+                            "Fordi opprørerne manglet våpen",
+                            "Fordi de fikk hjelp av Frankrike"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "To av tre hærer, sikhene, gurkhaene og de fleste fyrstene sto utenfor. Telegrafen advarte blant annet Punjab i tide."
+                    },
+                    {
+                        "question": "Hva ble den viktigste følgen av opprøret?",
+                        "options": [
+                            "India ble selvstendig",
+                            "Kompaniet fikk mer makt enn før",
+                            "India ble en koloni styrt direkte av den britiske staten",
+                            "Mogulriket ble gjenopprettet"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "I 1858 gikk India over fra kompaniet til kronen og ble styrt av en visekonge."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Cartwright, M. (2022). *The Armies of the East India Company*. World History Encyclopedia. Hentet 03.08.2026 fra https://www.worldhistory.org/article/2080/the-armies-of-the-east-india-company/",
+                    "Filseth, G. (2025). *East India Company*. Store norske leksikon. Hentet 03.08.2026 fra https://snl.no/East_India_Company",
+                    "Kristiansen, K., Filseth, G. & Waldrop, A. (2024). *Indias historie*. Store norske leksikon. Hentet 03.08.2026 fra https://snl.no/Indias_historie",
+                    "Nangia, T. (2026). *Indian Rebellion of 1857*. Encyclopædia Britannica. Hentet 03.08.2026 fra https://www.britannica.com/event/Indian-Mutiny",
+                    "National Army Museum. (u.å.). *Why did the Indian Rebellion happen?* Hentet 03.08.2026 fra https://www.nam.ac.uk/explore/why-did-indian-mutiny-happen",
+                    "PK Porthcurno. (u.å.). *Strategic Implementation of the Telegraph in India*. Hentet 03.08.2026 fra https://pkporthcurno.com/collections_and_archive/strategic-implementation-of-the-telegraph-in-india/",
+                    "Waldrop, A. (2024). *Det indiske opprøret av 1857*. Store norske leksikon. Hentet 03.08.2026 fra https://snl.no/Det_indiske_opprøret_av_1857"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

@@ -6079,6 +6079,30 @@
       ]
     },
     {
+      "id": "opproret-1857",
+      "title": "Opprøret i 1857: året India reiste seg",
+      "description": "Et handelsselskap styrte India med indiske soldater. I 1857 gjorde de opprør, og britene mistet kompaniet sitt.",
+      "startDate": 1857,
+      "endDate": 1859,
+      "displayDate": "1857-1859",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "indias-historie",
+      "link": "/historie/indias-historie/opproret-1857",
+      "tags": [
+        "india",
+        "kolonialisering",
+        "opprør",
+        "britisk-imperium",
+        "1800-tallet"
+      ],
+      "lat": 22,
+      "lng": 79,
+      "placeLabel": "India",
+      "placeCountryId": 356,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "dopapirets-historie",
       "title": "Dopapirets historie",
       "description": "Fra romernes fellessponge og kinesisk papir på 500-tallet til industriell masseproduksjon. Historien om en gjenstand alle tar for gitt.",

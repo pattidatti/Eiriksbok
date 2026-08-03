@@ -3466,6 +3466,20 @@
                 "vitenskap"
               ],
               "createdDate": "2026-08-03T00:00:00Z"
+            },
+            {
+              "id": "opproret-1857",
+              "title": "Opprøret i 1857: året India reiste seg",
+              "description": "Et handelsselskap styrte India med indiske soldater. I 1857 gjorde de opprør, og britene mistet kompaniet sitt.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "india",
+                "kolonialisering",
+                "opprør",
+                "britisk-imperium",
+                "1800-tallet"
+              ],
+              "createdDate": "2026-08-03T00:00:00Z"
             }
           ]
         },

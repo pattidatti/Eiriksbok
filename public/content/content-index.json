@@ -1,5 +1,5 @@
 {
-  "buildId": 224540066127288,
+  "buildId": 21540813238884,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1500,6 +1500,9 @@
     ],
     "mogulriket": [
       "content/historie/indias-historie/mogulriket.json"
+    ],
+    "opproret-1857": [
+      "content/historie/indias-historie/opproret-1857.json"
     ],
     "barnearbeid": [
       "content/historie/industriell-revolusjon/barnearbeid.json"
@@ -4218,6 +4221,7 @@
     "historie/indias-historie/ashoka-og-mauryariket": "content/historie/indias-historie/ashoka-og-mauryariket.json",
     "historie/indias-historie/guptariket": "content/historie/indias-historie/guptariket.json",
     "historie/indias-historie/mogulriket": "content/historie/indias-historie/mogulriket.json",
+    "historie/indias-historie/opproret-1857": "content/historie/indias-historie/opproret-1857.json",
     "historie/industriell-revolusjon/barnearbeid": "content/historie/industriell-revolusjon/barnearbeid.json",
     "historie/industriell-revolusjon/dampmaskinen": "content/historie/industriell-revolusjon/dampmaskinen.json",
     "historie/industriell-revolusjon/dopapirets-historie": "content/historie/industriell-revolusjon/dopapirets-historie.json",
