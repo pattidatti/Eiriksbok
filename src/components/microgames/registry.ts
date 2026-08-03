@@ -39,6 +39,7 @@ const Konklusjonsbroen3D = lazy(() => import('./Konklusjonsbroen3D'));
 const LegendensVei3D = lazy(() => import('./LegendensVei3D'));
 const Alliansefella1914 = lazy(() => import('./Alliansefella1914'));
 const AryabhatasNatt3D = lazy(() => import('./AryabhatasNatt3D'));
+const HjertetsVekt3D = lazy(() => import('./HjertetsVekt3D'));
 const MonumentTorget3D = lazy(() => import('./MonumentTorget3D'));
 const Teknologibolgen3D = lazy(() => import('./Teknologibolgen3D'));
 const Nyheitsbobla3D = lazy(() => import('./Nyheitsbobla3D'));
@@ -1606,6 +1607,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./AryabhatasNatt3D'),
         Component: AryabhatasNatt3D as never,
+    },
+    'hjertets-vekt-3d': {
+        id: 'hjertets-vekt-3d',
+        title: 'Hjertets vekt',
+        description:
+            'Du står selv i Dommens sal i det gamle Egypt. Hjertet ditt ligger på den ene skåla, fjæren til gudinnen Ma\'at på den andre, og Ammit venter ved siden av. Gyldne fjær og mørke slangevirvler stiger opp foran deg i 45 sekunder: klikk ma\'at-handlingene raskt, og la isfet-virvlene være i fred. Gjør du ingenting, blir hjertet tyngre av seg selv og vekten tipper. Lyspæren: ma\'at var ikke noe man hadde, det var en balanse man måtte holde oppe hele livet, og hjertet husket alt du gjorde.',
+        estimatedSeconds: 150,
+        loader: () => import('./HjertetsVekt3D'),
+        Component: HjertetsVekt3D as never,
     },
 };
 
