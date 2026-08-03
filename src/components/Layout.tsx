@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useOutlet } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { PrefetchLink } from './PrefetchLink';
 import { SearchOverlay } from './SearchOverlay';
 import { Breadcrumbs } from './Breadcrumbs';
@@ -37,6 +37,12 @@ export const Layout: React.FC = () => {
     const { settings, toggleDyslexicMode } = useSettings();
     const { isFullWidth, hideHeader: contextHideHeader } = useLayout();
 
+    // Første maling skal ikke fade inn: en opacity-animasjon på det første
+    // innholdet utsetter LCP med hele animasjonens lengde. React Router gir den
+    // første oppføringen i historikken nøkkelen 'default'; alt eleven navigerer
+    // til etterpå får en generert nøkkel - og animeres.
+    const isInitialLoad = location.key === 'default';
+
     // Add hotkey listener
     useSearchHotkeys(() => setIsSearchOpen(true));
 
@@ -53,11 +59,19 @@ export const Layout: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-bg-main text-text-main font-sans relative overflow-hidden">
-            {/* Ambient Background Glow */}
-            <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-blue-400/20 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }}></div>
-                <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-purple-400/20 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '10s' }}></div>
-            </div>
+            {/* Ambient Background Glow.
+                Statisk, ikke pulserende: to lag på 60%x60% med blur-[120px] som
+                animerer må komposittes på nytt hvert bilde, hele tiden, på hver
+                eneste rute. Gjennom 120 piksler uskarphet er selve pulsen så
+                vidt synlig - men den kostet GPU-budsjett også bak 3D-spillene og
+                atlaset. Der (fullbredde-rutene) tegnes gløden ikke i det hele
+                tatt, siden innholdet dekker den uansett. */}
+            {!forceFullWidth && (
+                <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+                    <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-blue-400/20 rounded-full blur-[120px]"></div>
+                    <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-purple-400/20 rounded-full blur-[120px]"></div>
+                </div>
+            )}
 
             {/* Navbar */}
             {!hideHeader && (
@@ -134,17 +148,20 @@ export const Layout: React.FC = () => {
             <main className={`relative z-10 ${forceFullWidth ? '' : 'pt-4'}`}>
                 <div className={forceFullWidth ? '' : 'max-w-7xl mx-auto px-6'}>
                     {!hideHeader && !forceFullWidth && <Breadcrumbs />}
-                    <AnimatePresence>
-                        <motion.div
-                            key={location.pathname}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                        >
-                            {outlet}
-                        </motion.div>
-                    </AnimatePresence>
+                    {/* Sideovergang: ren opacity, ingen AnimatePresence.
+                        Den gamle varianten manglet mode="wait", så inn- og
+                        ut-siden var montert samtidig og overlappet hverandre -
+                        og 20px-forskyvningen ga et synlig hopp. Nå byttes siden
+                        umiddelbart ut og tones inn på 150 ms: ingen overlapp,
+                        ingen layout-forskyvning, halve ventetiden. */}
+                    <motion.div
+                        key={location.pathname}
+                        initial={isInitialLoad ? false : { opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.15, ease: 'easeOut' }}
+                    >
+                        {outlet}
+                    </motion.div>
                 </div>
             </main>
 
