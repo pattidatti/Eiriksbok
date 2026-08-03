@@ -360,7 +360,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                             </div>
                         );
 
-                    case 'list':
+                    case 'list': {
                         const ListTag = (block as any).ordered ? 'ol' : 'ul';
 
                         // Check if this is a "Definition List" (items start with **Bold**:)
@@ -402,8 +402,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 ))}
                             </ListTag>
                         );
+                    }
 
-                    case 'image':
+                    case 'image': {
                         const imgStyle = (block as any).width ? { width: (block as any).width } : {};
                         // Use inline style to override w-full if width is provided.
                         // We keep w-full as base class for responsiveness if no width is set,
@@ -427,8 +428,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 )}
                             </figure>
                         );
+                    }
 
-                    case 'component':
+                    case 'component': {
                         const ComponentName = (block as any).name || (block as any).component;
                         const RegisteredComponent = getComponent(ComponentName);
 
@@ -447,8 +449,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 </React.Suspense>
                             </div>
                         );
+                    }
 
-                    case 'task':
+                    case 'task': {
                         const taskContent = (block as any).content || (block as any).text;
                         return (
                             <div key={index} className="my-12 relative">
@@ -470,8 +473,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 </div>
                             </div>
                         );
+                    }
 
-                    case 'quiz':
+                    case 'quiz': {
                         const QuizComp = getComponent('Quiz');
                         if (!QuizComp) return null;
                         return (
@@ -481,6 +485,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 />
                             </div>
                         );
+                    }
 
                     case 'quote':
                         return (
@@ -497,7 +502,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                             </blockquote>
                         );
 
-                    case 'link':
+                    case 'link': {
                         const isExternal = (block as any).url?.startsWith('http');
                         const className = "flex items-center gap-2 px-6 py-3 bg-indigo-50 text-indigo-700 rounded-xl font-medium hover:bg-indigo-100 transition-colors my-2 w-fit";
 
@@ -514,8 +519,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 {(block as any).text}
                             </Link>
                         );
+                    }
 
-                    case 'video':
+                    case 'video': {
                         const videoUrl = (block as any).url || (block as any).value;
                         const videoTitle = (block as any).title || "YouTube video";
                         // Extract video ID from URL if it's a full link
@@ -547,6 +553,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 />
                             </div>
                         );
+                    }
 
                     case 'expandable':
                         return (

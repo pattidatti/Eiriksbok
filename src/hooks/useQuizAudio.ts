@@ -63,7 +63,7 @@ export const useQuizAudio = () => {
                 osc.stop(now + 0.5);
                 break;
 
-            case 'correct':
+            case 'correct': {
                 // Happy major arpeggio
                 const frequencies = [523.25, 659.25, 783.99, 1046.50]; // C E G C
                 frequencies.forEach((freq, i) => {
@@ -79,8 +79,9 @@ export const useQuizAudio = () => {
                     o.stop(now + i * 0.05 + 0.3);
                 });
                 break;
+            }
 
-            case 'wrong':
+            case 'wrong': {
                 // Sad "womp womp"
                 osc.type = 'sawtooth';
                 osc.frequency.setValueAtTime(150, now);
@@ -104,6 +105,7 @@ export const useQuizAudio = () => {
                 osc2.stop(now + 0.6);
 
                 break;
+            }
 
             case 'timer_warn':
                 // High ticking
@@ -154,7 +156,7 @@ export const useQuizAudio = () => {
                 osc.stop(now + 0.1);
                 break;
 
-            case 'explode':
+            case 'explode': {
                 // Deep noise explosion
                 // Create buffer for noise
                 const bufferSize = ctx.sampleRate * 2; // 2 seconds
@@ -184,6 +186,7 @@ export const useQuizAudio = () => {
                 noise.start(now);
                 noise.stop(now + 1.5);
                 break;
+            }
 
             case 'whoosh':
                 // Fast swept noise (flying by)

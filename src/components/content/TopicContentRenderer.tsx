@@ -56,7 +56,7 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
         >
             {content.map((block: ContentBlock, index: number) => {
                 switch (block.type) {
-                    case 'header':
+                    case 'header': {
                         // ... (header logic)
                         const HeaderTag = `h${Math.min(Math.max(block.level || 2, 1), 6)}`;
                         const headerClasses = {
@@ -77,6 +77,7 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                                 )}
                             </motion.div>
                         );
+                    }
 
                     case 'paragraph':
                         // ... (paragraph logic)
@@ -123,7 +124,7 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                             </motion.div>
                         );
 
-                    case 'component':
+                    case 'component': {
                         // ... (keep existing component logic)
                         if (block.component === 'FactBox') {
                             const { items, content, ...restProps } = block.props;
@@ -201,6 +202,7 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                             );
                         }
                         return null;
+                    }
 
                     default:
                         return null;

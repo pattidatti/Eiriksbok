@@ -73,11 +73,12 @@ export const NuclearSimulator: React.FC = () => {
         await Tone.start();
 
         switch (type) {
-            case 'arm':
+            case 'arm': {
                 const osc = new Tone.Oscillator(440, "sine").toDestination();
                 osc.start().stop("+0.1");
                 break;
-            case 'launch':
+            }
+            case 'launch': {
                 // const siren = new Tone.UserMedia(); // Unused
                 // Deep rumble
                 const noise = new Tone.Noise("brown").toDestination();
@@ -85,13 +86,15 @@ export const NuclearSimulator: React.FC = () => {
                 noise.start();
                 noise.stop("+2");
                 break;
-            case 'impact':
+            }
+            case 'impact': {
                 // Complex crash
                 const membrane = new Tone.MembraneSynth().toDestination();
                 membrane.triggerAttackRelease("C1", "2n");
                 const metal = new Tone.MetalSynth().toDestination();
                 metal.triggerAttackRelease("32n", 0.1);
                 break;
+            }
         }
     };
 

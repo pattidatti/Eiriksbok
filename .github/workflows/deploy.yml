@@ -37,6 +37,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Smal lint-sjekk: bare React sine hook-regler. De er ryddet til null, og
+      # dette holder dem der. Resten av lint-gjelden (mest `no-explicit-any`)
+      # blokkerer ingenting ennå — se eslint.hooks.config.js.
+      - name: Lint (hook-regler)
+        run: npm run lint:hooks
+
       - name: Build
         run: npm run build
 
