@@ -19,17 +19,17 @@
         {
             "type": "text",
             "title": "Island: Flukten fra kongemakten",
-            "content": "Landnåmet på Island startet rundt år 870. Mange som dro dit, var norske høvdinger som reiste i protest mot Harald Hårfagres harde styre. På Island skapte de et helt unikt samfunn uten konge, men med en sterk rettsorden. I år 930 grunnla de Alltinget, som i dag regnes som verdens eldste fungerende parlament. Island ble et knutepunkt for nordisk kultur og sagaskriving."
+            "content": "Landnåmet på Island startet rundt år 870 og varte til omkring 930. De som kom, var nordboere - først og fremst fra Norge, men også fra øyene vest i havet (Sigurdsson, 2026). Sagaene forteller at mange høvdinger dro for å slippe unna Harald Hårfagres harde styre, men historikerne er uenige om det var hele forklaringen (Norseng mfl., 2023). På Island skapte de et helt unikt samfunn: en fristat uten konge, styrt av høvdinger og lover, som varte helt fram til 1200-tallet (Norseng mfl., 2023). I år 930 ble Alltinget opprettet på Þingvellir, og det regnes i dag som verdens eldste parlament som fortsatt er i bruk (Norseng mfl., 2026). De blodige slektsfeidene i de første hundre årene ga stoffet til islendingesagaene (Norseng mfl., 2023)."
         },
         {
             "type": "text",
             "title": "Grønland: Eirik Raudes drøm",
-            "content": "[Eirik Raude](/persongalleri/eirik-raude) ble lyst fredløs på Island og seilte vestover for å finne nytt land. Han fant en stor øy og ga den navnet Grønland for å lokke til seg flere bosettere. Han grunnla to store bosettinger på Grønland som overlevde i over 400 år. Folkene der drev med sauehold og jakt, og de handlet med verdifulle varer som hvalrosstenner med resten av Europa."
+            "content": "[Eirik Raude](/persongalleri/eirik-raude) ble dømt fredløs i tre år på Island etter et drap, og seilte vestover for å finne nytt land. Han kalte landet han fant for Grønland, fordi han mente folk ville få lyst til å reise dit hvis det hadde et godt navn (Morten, 2025). Med 25 skip satte han kurs vestover; bare 14 kom fram. Selv slo han seg ned på Brattalid i Austerbygda, og det vokste også fram en Vesterbygd lenger nord (Morten, 2025). Bosettingene varte i rundt 450 år, fra omkring 985 til midten av 1400-tallet (Barr mfl., 2026). Folkene der levde av husdyrhold, fiske og fangst, og dro på lange fangstferder nordover langs kysten. De solgte huder, skinn, hvalrosstenner og vadmel til Europa, og kjøpte korn, jern og trelast fra Norge (Barr mfl., 2026)."
         },
         {
             "type": "text",
             "title": "Vinland: Amerika 500 år før Columbus",
-            "content": "Rundt år 1000 seilte Leiv Eiriksson, sønn av Eirik Raude, enda lenger vest. Han nådde kysten av Nord-Amerika og ga landet navnet Vinland fordi han fant viltvoksende druer der. De bygde en liten base, sannsynligvis ved L'Anse aux Meadows på dagens Newfoundland. Vikingene ble imidlertid ikke værende lenge. Store avstander til Grønland og konflikter med urbefolkningen (som de kalte skrælinger) gjorde at bosettingen i Vinland ble oppgitt etter bare noen få år."
+            "content": "Rundt år 1000 seilte Leiv Eiriksson, sønn av Eirik Raude, fra Grønland og enda lenger vest. Han nådde østkysten av Nord-Amerika, og landet fikk navnet Vinland. Sagaene forteller at de fant viltvoksende vindruer der. Forskerne er likevel uenige om navnet kommer fra vín, som betyr vin, eller fra det norrøne ordet vin, som betyr naturlig eng (Solberg, 2024). De bygde en base på nordspissen av dagens Newfoundland, ved L'Anse aux Meadows. Der er det funnet åtte tufter: seks langhus av nordisk type og to gropehus (Solberg, 2024). Vikingene ble likevel ikke værende lenge. Da Torfinn Karlsevne noen år senere prøvde å bosette seg der for godt, ble møtene med urbefolkningen - som nordboerne kalte skrælinger - for fiendtlige, og forsøket ble gitt opp etter tre år (Solberg, 2024)."
         },
         {
             "type": "component",
@@ -41,14 +41,14 @@
         {
             "type": "text",
             "title": "Hvorfor stoppet det?",
-            "content": "Oppdagelsesreisene i vest viser vikingenes utrolige evne til å navigere over åpent hav. At de ikke klarte å bite seg fast i Amerika, skyldtes sannsynligvis at de rett og slett var for få folk. Grønland lå så langt unna at det var vanskelig å sende forsterkninger og utstyr. Likevel står deres bragder som et av de mest imponerende kapitlene i sjøfartshistorien."
+            "content": "Oppdagelsesreisene i vest viser vikingenes utrolige evne til å navigere over åpent hav. At de ikke klarte å bite seg fast i Amerika, hadde flere grunner. Nærmeste base var Grønland, og der bodde det aldri mange folk. Derfra var det langt å sende forsterkninger og utstyr. I tillegg ble møtene med skrælingene fiendtlige (Solberg, 2024). På Grønland ble kontakten med Norge dårligere etter svartedauden på midten av 1300-tallet, og på 1300-tallet var det bare ett skip, grønlandsknarren, som holdt forbindelsen ved like (Barr mfl., 2026). Likevel står bragdene deres som et av de mest imponerende kapitlene i sjøfartshistorien."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Visste du dette?",
-                "content": "Arkeologiske utgravninger på Newfoundland i 1960-årene bekreftet for første gang at vikingenes sagaer om Vinland var historisk sanne."
+                "content": "Helge Ingstad og arkeologen Anne Stine Ingstad gravde ut L'Anse aux Meadows mellom 1961 og 1968. Funn av jernslagg og ambolter viste at det måtte være europeere som hadde bodd der, for urbefolkningen bearbeidet ikke jern. C14-dateringer plasserer bosettingen til rundt år 1000 (Solberg, 2024)."
             }
         },
         {
@@ -59,7 +59,7 @@
                     "Rundt hvilket år startet landnåmet på Island, og hva het parlamentet som ble grunnlagt i år 930?",
                     "Hvorfor ga Eirik Raude øya navnet Grønland, og hvor lenge overlevde bosettingene hans der?",
                     "Hvorfor kalte Leiv Eiriksson landet i vest for Vinland, og hvor lå trolig basen de bygde?",
-                    "Hva forteller teksten var hovedgrunnen til at vikingene ikke klarte å bli værende i Amerika?"
+                    "Hvilke grunner gir teksten til at vikingene ikke klarte å bli værende i Amerika?"
                 ],
                 "reflekter": [
                     "Mange av dem som dro til Island, reiste i protest mot Harald Hårfagre. Forklar hvorfor de valgte å bygge et samfunn helt uten konge.",
@@ -69,7 +69,7 @@
                 ],
                 "gaaVidere": [
                     "Columbus får ofte æren for å ha oppdaget Amerika, men vikingene var der rundt 500 år før. Skriv 5-8 setninger om hvorfor du tror det er Columbus vi husker best.",
-                    "Utgravningene på Newfoundland på 1960-tallet beviste at sagaene om Vinland var sanne. Diskuter med en partner: hvordan kan gamle fortellinger og arkeologi sammen hjelpe oss å forstå fortiden?"
+                    "Utgravningene på Newfoundland på 1960-tallet viste at nordboere virkelig hadde vært i Nord-Amerika. Diskuter med en partner: hvordan kan gamle fortellinger og arkeologi sammen hjelpe oss å forstå fortiden?"
                 ]
             }
         },
@@ -98,12 +98,26 @@
                             "Vinden var så sterk der"
                         ],
                         "answer": "Fordi han fant viltvoksende druer der",
-                        "explanation": "Navnet henviser til funnet av druer eller vinbær i det frodige landskapet."
+                        "explanation": "Sagaene forteller at de fant viltvoksende vindruer. Forskerne er likevel uenige: navnet kan også komme fra det norrøne ordet vin, som betyr naturlig eng."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Barr, S., Norseng, P. G. & Thuesen, N. P. (2026). *Grønlands historie*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Grønlands_historie](https://snl.no/Gr%C3%B8nlands_historie)",
+                    "Morten, Ø. (2025). *Eirik Raude*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Eirik_Raude](https://snl.no/Eirik_Raude)",
+                    "Norseng, P. G., Julsrud, O., Giverholt, H., Mardal, M. A. & Weidling, T. R. (2023). *Islands historie*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Islands_historie](https://snl.no/Islands_historie)",
+                    "Norseng, P. G., Julsrud, O. & Viken, Ø. L. I. (2026). *Alltinget*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Alltinget](https://snl.no/Alltinget)",
+                    "Sigurdsson, J. V. (2026). *Landnåmstiden*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/landnåmstiden](https://snl.no/landn%C3%A5mstiden)",
+                    "Solberg, B. (2024). *Vinland*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Vinland](https://snl.no/Vinland)"
                 ]
             }
         }
     ],
     "createdDate": "2025-12-22T20:35:00Z",
-    "lastUpdated": "2025-12-22T20:35:00Z"
+    "lastUpdated": "2026-08-03T00:00:00Z"
 }

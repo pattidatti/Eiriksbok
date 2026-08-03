@@ -17,7 +17,7 @@
         },
         {
             "type": "text",
-            "content": "Se for deg natten på Nordfjordeid på 800-tallet. Det rykker i luften av varmen fra et tretti meter langt vikingskip i full fyr. Dette er ikke en ulykke, men en regissert performance av makt og magi – et globalt veikryss der klanens høvding valgte å la sjela stige til himmels i en søyle av ild og røyk. Mens andre ble lagt i jorden, brant Myklebust-dynastiet sine broer og skip. Dette er historien om Norges største brente skipshaug, en mystisk afghansk tankering, og en volve som bar sine hemmeligheter med seg inn i flammene."
+            "content": "Se for deg natten på Nordfjordeid i siste halvdel av 800-tallet. Det rykker i luften av varmen fra et tretti meter langt vikingskip i full fyr. Dette er ikke en ulykke, men en regissert forestilling av makt og magi. Klanens høvding skulle la sjela stige til himmels i en søyle av ild og røyk. Mens andre ble lagt i jorden, brant Myklebust-dynastiet sine broer og skip. Dette er historien om den eneste brente skipsgraven blant de sju norske skipshaugene, om en irsk bronsekjele som havnet i asken, og om arkeologene som fortsatt graver etter svar."
         },
         {
             "type": "image",
@@ -37,11 +37,11 @@
                     },
                     {
                         "label": "Datering",
-                        "value": "Ca. 870 e.Kr."
+                        "value": "Siste halvdel av 800-tallet"
                     },
                     {
                         "label": "Spesielt",
-                        "value": "Norges eneste skipshaug med branngrav (kremasjon) i den norske UNESCO-søknaden."
+                        "value": "Den eneste skipshaugen med branngrav (kremasjon) blant de sju haugene i den norske UNESCO-søknaden."
                     }
                 ]
             }
@@ -52,11 +52,15 @@
         },
         {
             "type": "text",
-            "content": "For å forstå Myklebust, må vi se bakover i tid. Funnene på Evebø og Mardal i Gloppen viser at et mektig dynasti etablerte seg i regionen allerede på 400-tallet. Den såkalte «Evebø-høvdingen» ble gravlagt i en drakt dekorert med fabeldyr (ofte tolket som løver), noe som vitner om kontakter langt utenfor Norges grenser – kanskje helt til [Romerriket](/historie/romerriket) eller Bysants. Like utenfor Gloppen, finner vi Karnilshaugen – Vestlandets største gravhaug. Den er hele 80–90 meter i diameter, ruver 12 meter over bakken og er plassert slik at solen kun treffer den ved vintersolverv, et fenomen som neppe er tilfeldig."
+            "content": "For å forstå Myklebust, må vi se bakover i tid. Funnet på gården Evebø i Gloppen viser at det bodde mektige folk i regionen allerede rundt år 450-500. Den såkalte «Evebø-høvdingen» ble lagt i et gravkammer av steinheller, i full drakt med smykker, sverd, et vakkert glassbeger og en gullmynt preget for den østromerske keiseren Theodosius (Solberg, 2024). Mynten og glasset vitner om kontakter langt utenfor Norges grenser, helt ned til [Romerriket](/historie/romerriket)."
         },
         {
             "type": "text",
-            "content": "På et tidspunkt flyttet dette maktsenteret seg til Nordfjordeid. Her, strategisk plassert som et veikryss for handel og ferdsel. Det ligger midt i fjorden, mellom fjordene, med Gloppen til sør, Stadt til vest og og dalføre til øst."
+            "content": "Et par kilometer nordvest for Sandane i Gloppen ligger Karnilshaugen. Georadar-undersøkelser i 2024 slo endelig fast at den er menneskeskapt, og at den er den største menneskeskapte gravhaugen på Vestlandet - blant de største i hele Norden. Den er over 50 meter i diameter og rundt sju meter høy, men var trolig opp mot ti meter da den ble bygd. Ved vinter- og sommersolverv skinner solen på haugen gjennom et skar i fjellet på et bestemt tidspunkt. Plasseringen er neppe tilfeldig. Forskerne mener Karnilshaugen hører til det samme maktmiljøet som Myklebusthaugen (Riksantikvaren, 2024b)."
+        },
+        {
+            "type": "text",
+            "content": "Ved inngangen til vikingtiden oppsto det et maktsenter på selve Nordfjordeid. Her ligger stedet strategisk som et veikryss for handel og ferdsel, midt mellom fjordene, med Gloppen i sør, Stadt i vest og dalførene i øst."
         },
         {
             "type": "header",
@@ -64,7 +68,7 @@
         },
         {
             "type": "text",
-            "content": "Myklebust er ikke én grav, men et felt med fem. Her hviler generasjoner av et dynasti som styrte fjorden i over 200 år."
+            "content": "Myklebust er ikke én grav, men et felt med fem hauger. Hauglegging var forbeholdt rike og mektige mennesker, og på Myklebust pågikk det i om lag 200 år. De eldste gravene som er datert, er fra siste halvdel av 700-tallet, de yngste fra midten av 900-tallet. Her hviler altså generasjoner av den samme mektige slekten (Sagastad, u.å.-a)."
         },
         {
             "type": "component",
@@ -74,22 +78,22 @@
                 "items": [
                     {
                         "label": "Haug 1 (Myklebustskipet)",
-                        "value": "En mektig mann, trolig 'King Audbjørn' som falt i 863."
+                        "value": "Stor branngrav. En velbygd mann på 30-35 år med hogg- og stikkskader. Kanskje kong Audbjørn."
                     },
                     {
-                        "label": "Haug 3 (Sjøatippen)",
-                        "value": "Seks graver, inkludert en mann kremert i båt."
+                        "label": "Haug 2 (Skjoratippen)",
+                        "value": "Dynastigrav med fem, kanskje seks graver, fra slutten av 700-tallet til midten av 900-tallet."
                     },
                     {
-                        "label": "Haug 5 - Volven?",
-                        "value": "Dobbeltgrav. Mann med Ulfberht-sverd ('med sjel, ulv og lys'). Kvinne med smykker fra Østen, tåring og et steikespidd."
+                        "label": "Haug 4 - Volven?",
+                        "value": "En kvinne brent i en båt, gravlagt med smykker, kjøkkenutstyr og en spesiell stav. Fra 900-tallet."
                     }
                 ]
             }
         },
         {
             "type": "text",
-            "content": "Haug 5 er kanskje den mest mystiske. Kvinnen som ligger her, ble gravlagt med et steikespidd. I vikingtidens symbolikk var slike spidd ofte knyttet til volver – spåkvinner som kunne se inn i fremtiden og øve seiðr (magi). Volvene brukte staver som lignet jernstenger eller spidd i sine ritualer. Sammen med tåringen og de eksotiske perlene, tegner dette bildet av en kvinne som var langt mer enn en husfrue; hun kan ha vært en åndelig leder for dynastiet."
+            "content": "Haug 4 er kanskje den mest gåtefulle. Nær midten av haugen lå en kvinnegrav, og de 350 klinknaglene rundt henne forteller at hun ble brent i en båt. Med seg fikk hun en oval bronsespenne og andre smykker, en glassperle, kjøkkenutstyr, tekstilredskap, dyrebein - og en helt spesiell stav. Graven er tolket som en volvegrav. En volve var en spåkvinne, kanskje en rituell leder. Selve ordet volve betyr «stavbærer» (Sagastad, u.å.-a)."
         },
         {
             "type": "header",
@@ -97,11 +101,7 @@
         },
         {
             "type": "text",
-            "content": "Makten på Nordfjordeid strakte seg langt utover fjordene. I gravene er det funnet gjenstander som vitner om et nettverk som spente over kontinenter. Mest spektakulært er en tankering – en kvadratisk, åpen ramme i tre med skarpe 'tenner' på innsiden – som ellers bare er funnet i Afghanistan. At en så spesialisert gjenstand har reist fra [Silkeveien](/historie/romerriket/handel-og-silkeveien) til Nordfjordeid, forteller en utrolig historie om globale bånd."
-        },
-        {
-            "type": "text",
-            "content": "I asken lå også en keltisk bronsekjele, opprinnelig fra et irsk kloster. Kjelen er eldgammel, fra 400-500-tallet – flere århundrer før den ble lagt i graven som en urne. Dette var gjenstander med sjel og historie, kanskje arvestykker eller krigsbytte fra fjerne kyster."
+            "content": "Makten på Nordfjordeid strakte seg langt utover fjordene. Den mest talende gjenstanden i skipsgraven er et emaljert bronsekar av keltisk opphav. Det ble trolig plyndret fra et irsk kloster eller en kirke, og endte som urne for de brente beina til høvdingen på Nordfjordeid (Sagastad, u.å.-a). I graven lå det også en glassperle av mørkt glass med hvite bølgefigurer. Slike gjenstander var ikke bare verdifulle - de bar på en historie, enten de var arvestykker eller krigsbytte fra fjerne kyster."
         },
         {
             "type": "header",
@@ -109,13 +109,13 @@
         },
         {
             "type": "text",
-            "content": "Hvorfor brenne et slikt praktskip? Svaret ligger i ritualene. Brenningen var ikke bare en destruksjon, men en transformasjon. Røyken skulle bære den døde høvdingen til dødsriket. Dette var en *performance* – et teaterstykke for de levende, designet for å sjokkere og imponere."
+            "content": "Hvorfor brenne et slikt praktskip? Svaret ligger i ritualene. Brenningen var ikke bare en destruksjon, men en transformasjon. Røyken skulle bære den døde høvdingen til dødsriket. Dette var en forestilling - et teaterstykke for de levende, designet for å sjokkere og imponere."
         },
         {
             "type": "component",
             "component": "QuoteBlock",
             "props": {
-                "author": "En Rus-viking (gjengitt av Ibn Fadlan, 921 e.Kr.)",
+                "author": "En rus-viking (gjengitt av Ibn Fadlan, ca. 922)",
                 "source": "Møte med en viking ved Volga",
                 "text": "Dere arabere er dumme. Jo, den dere elsker og ærer mest av alle menneskene, kaster dere i jorden når han er død, så jord og krypdyr og mark kan fortære ham. Vi derimot brenner ham opp på et øyeblikk, så går han til paradiset på samme sted og i samme stund."
             }
@@ -127,19 +127,19 @@
         },
         {
             "type": "text",
-            "content": "Videoen viser en tolkning av Ibn Fadlans beretning om en gravlegging av en Rus-viking ved Volga. Den gir et bilde av ritualene som kan ha funnet sted også på Myklebust."
+            "content": "Ibn Fadlan var en arabisk diplomat som var med i en delegasjon fra Bagdad til Volga-området i 921-922. Der møtte han et folk han kalte rus, etter alt å dømme nordboere på handelsferd, og han skrev ned det han så av en skipsgravferd (Danmarkshistorien, u.å.). Videoen viser en tolkning av beretningen hans. Den gir et bilde av ritualer som kan ha funnet sted også på Myklebust."
         },
         {
             "type": "text",
-            "content": "I asken fant Lorange den keltiske bronsekjelen, fylt med hele 1800 gram brente bein, skjoldbuler og en pilspiss – kanskje den som tok livet av høvdingen? Ved siden av lå restene av en ubrent geitekilling, et siste offer lagt ned etter at flammene hadde slukket."
+            "content": "I brannflaket fant Lorange det keltiske bronsekaret. Karet selv var ubrent, og i det lå omtrent 1,7 kilo brente menneskebein. Blant beina lå en eneste pilspiss. Den sto trolig inne i kroppen da mannen ble brent - kanskje var det den som tok livet av ham. I graven lå det også dyrebein pakket i geiteskinn, niste til reisen (Sagastad, u.å.-a)."
         },
         {
             "type": "text",
-            "content": "Det mest fascinerende i kjelen er antallet skjoldbuler: nøyaktig 12 stykker lå sammen med høvdingens bein. Hvorfor 12? En sterk hypotese er at disse representerer høvdingens hird – hans aller nærmeste krigerfølge og livvakter. Totalt i haugen er det funnet over 50 skjoldbuler. Dette tyder på at et helt rettergangsfølge symbolsk ble 'begravet' med sin herre, enten ved at skjoldene hang langs rekka på skipet eller ble ofret i flammene."
+            "content": "Over bronsekaret lå 12 skjoldbuler lagt slik at de dannet et beskyttende lokk over beina. Til sammen er det funnet 44 skjoldbuler i haugen, og det er sannsynlig at de representerer mannskapet på skipet - én bule for hver kriger. Tallet er et minimum, for haugen er langt fra ferdig utgravd (Sagastad, u.å.-a)."
         },
         {
             "type": "text",
-            "content": "En annen detalj som gir oss et glimt av livet om bord, er en spillebrikke som har rustet fast til en skipsnagle. Den minner oss om at skipet ikke bare var et krigsmaskineri, men et hjem for mannskapet, der tidsfordriv og strategi var en del av hverdagen."
+            "content": "Et glimt av livet om bord får vi fra fem spillebrikker av bein og tre terninger som lå i graven (Sagastad, u.å.-a). De minner oss om at skipet ikke bare var et krigsmaskineri, men et hjem for mannskapet, der tidsfordriv og strategi var en del av hverdagen."
         },
         {
             "type": "header",
@@ -147,23 +147,27 @@
         },
         {
             "type": "text",
-            "content": "Rundt år 870 slutter sporene brått. Hva skjedde? Svaret er trolig Harald Hårfagre. I slaget ved Solskjel i 863 falt kongen av Fjordane. Mange av vestlandshøvdingene nektet å underkaste seg Haralds nye sentralmakt og valgte heller å utvandre. Det er sannsynlig at etterkommerne av Myklebust-dynastiet var blant dem som satte seil vestover – til Island."
+            "content": "Hvem var mannen i skipet? Snorre forteller i sagaen om Harald Hårfagre at kong Audbjørn styrte Firdafylket og dro til Solskjel i 876 for å kjempe mot Harald. Der døde han. Det er alltid vanskelig å bruke sagaer som bevis, men flere ting peker samme vei: graven er datert til siste halvdel av 800-tallet, beina stammer fra en velbygd mann på 30-35 år, og de viser hogg- og stikkskader som passer med å ha falt i kamp. Graven er dessuten så påkostet at den må ha tilhørt en høvding eller konge. Sikre kan vi likevel ikke være (Sagastad, u.å.-a)."
+        },
+        {
+            "type": "text",
+            "content": "Gravhaugene på Myklebust forsvinner mot siste halvdel av 900-tallet. Hvorfor? Ble folk kristne? Døde maktsenteret ut? Flyttet slekten, eller endret de bare gravskikken sin? Det vet vi ikke (Sagastad, u.å.-a). Vi vet derimot at mange vestlandshøvdinger i disse årene valgte å utvandre vestover, blant annet til Island."
         },
         {
             "type": "header",
-            "content": "Arkeologenes jakt: 1874 – 2024"
+            "content": "Arkeologenes jakt: 1874-2024"
         },
         {
             "type": "text",
-            "content": "Skipshaugen, som lokalt kalles Rundhøgjen, har i over et århundre ligget i skyggen av de mer berømte vikingskipene i Vestfold. Men nye undersøkelser i 2024, gjennomført av Universitetet i Bergen i samarbeid med Universitetet i Stavanger, bekrefter at Myklebustskipet var en formidabel gigant – kanskje det største vikingskipet som noen gang er funnet i Norge."
+            "content": "Skipshaugen, som lokalt kalles Rundehogjen, har i over et århundre ligget i skyggen av de mer berømte vikingskipene i Vestfold. Men nye undersøkelser i 2024, gjennomført av Universitetet i Bergen i samarbeid med Universitetet i Stavanger, bekrefter at Myklebustskipet var en formidabel gigant - kanskje det største vikingskipet som noen gang er funnet i Norge (Riksantikvaren, 2024a; Riksantikvaren, 2024b)."
         },
         {
             "type": "text",
-            "content": "Den 5. oktober 1874 kom Anders Lorange til Nordfjordeid. Han gravde i det som i dag kalles Rundhøgjen og gjorde spektakulære funn, selv om han bare rakk å undersøke ca. en fjerdedel av haugen. Han etterlot seg dagbøker og – som en eksentrisk hilsen til fremtiden – flaskeposter i sjaktene."
+            "content": "I 1874 kom den unge arkeologen Anders Lorange fra Bergen til Nordfjordeid for å undersøke den store gravhaugen (Sagastad, u.å.-a). Dette var tidlig i arkeologiens tidsalder, da hovedmålet var å finne rikdommene midt i graven. Lorange rakk bare å undersøke omtrent en fjerdedel av haugen, så alt vi har, må regnes som et minimum av det haugen faktisk inneholdt. Da han lukket haugen igjen, la han ned en flaske med en hilsen til dem som en gang skulle komme etter ham (Riksantikvaren, 2024a)."
         },
         {
             "type": "text",
-            "content": "I dagboken beskrev Lorange hvordan han fant sverd, økser og spyd som var bevisst bøyd. Dette var ikke herverk, men et ritual: Våpnene ble 'drept' for at deres sjel skulle følge krigeren inn i etterlivet."
+            "content": "Lorange var en av sin tids mest erfarne feltarkeologer, og han skrev velskrevne innberetninger i Fortidsminneforeningens årbøker (Hagen, 2026). Fra graven hentet han blant annet to sverd, to spyd, en øks, tolv pilspisser, hestebissel og en mengde beslag - i tillegg til rundt 750 klinknagler og spiker fra selve skipet (Sagastad, u.å.-a)."
         },
         {
             "type": "image",
@@ -173,7 +177,7 @@
         {
             "type": "image",
             "src": "/images/lessons/vikingtiden/lorange-flaskepost.webp",
-            "caption": "Hilsen fra 1874: Anders Lorange la igjen en beskjed i en tom vinflaske fra Tyskland, som en tidskapsel til fremtidens finnere."
+            "caption": "Hilsen fra 1874: Anders Lorange la igjen en beskjed i en flaske, som en tidskapsel til fremtidens finnere."
         },
         {
             "type": "component",
@@ -182,7 +186,7 @@
                 "title": "Arkeologi før og nå",
                 "before": {
                     "label": "1874 (Anders Lorange)",
-                    "content": "Spade og sjaktgraving. Fokus på gjenstander. Store inngrep i terrenget. Ingen dokumentasjon av jordlag."
+                    "content": "Spade og sjaktgraving. Fokus på gjenstander midt i graven. Store inngrep i terrenget. Lite dokumentasjon av jordlagene."
                 },
                 "after": {
                     "label": "2024 (UiB/Morten Ramstad)",
@@ -192,7 +196,7 @@
         },
         {
             "type": "text",
-            "content": "I 2024 vendte et team fra UiB tilbake. Ved hjelp av georadar kunne de 'se' ned i jorden uten å grave. De fant spor etter en vollgrav rundt haugen, en flatmarksgrav og et produksjonsanlegg i nærheten. De nye utgravningene fulgte Loranges opprinnelige sjakt og avdekket over 500 nye skipsnagler. Sammen med de 600 naglene Lorange fant, bekrefter dette at skipet var enormt, med totalt flere tusen nagler skjult i haugen."
+            "content": "I 2024 vendte et team fra UiB tilbake. Arkeologisk museum i Stavanger kjørte georadar over området først, slik at de kunne «se» ned i jorden uten å grave. Bildene viste haugens sirkulære form og det som kan være en vollgrav rundt den. Rundt haugen fant de også spor etter en flatmarksgrav og et produksjonsanlegg. Selve utgravningen ga over 500 nye skipsnagler. Sammen med de omtrent 600 naglene Lorange hentet ut i 1874, er det nå funnet godt over 1200 nagler - og bare en fjerdedel av haugen er gravd ut (Riksantikvaren, 2024a). Sagastad anslår at hele skipet hadde rundt 7000 nagler og spiker (Sagastad, u.å.-b)."
         },
         {
             "type": "header",
@@ -200,7 +204,7 @@
         },
         {
             "type": "text",
-            "content": "I dag er Myklebust en av sju norske skipsgravhauger som kartlegges for oppføring på UNESCOs verdensarvliste. Myklebust skiller seg ut som den eneste branngraven blant de utvalgte stedene, som også inkluderer Gjellestad, Storhaug, Herlaugshaugen, Oseberg, Gokstad og Borrehaugene. For å gi besøkende et inntrykk av skipets sanne størrelse, er det bygd en fullskala kopi på Sagastad i Nordfjordeid – 30 meter lang og 6 meter bred."
+            "content": "I dag er Myklebust en av sju norske skipsgravhauger som kartlegges for oppføring på UNESCOs verdensarvliste. Myklebusthaugen skiller seg ut som den eneste med et brent skip. De andre seks er Gjellestad i Østfold, Storhaug på Karmøy, Herlaugshaugen på Leka, og Oseberghaugen, Gokstadhaugen og Borrehaugene i Vestfold (Vestland fylkeskommune, 2024). For å gi besøkende et inntrykk av skipets sanne størrelse, er det bygd en fullskala kopi på Sagastad i Nordfjordeid. Den er 30 meter lang og 6 meter bred, og ble sjøsatt våren 2019 (Sagastad, u.å.-b)."
         },
         {
             "type": "component",
@@ -246,22 +250,39 @@
             "props": {
                 "forstaa": [
                     "Hvor og omtrent når skjedde skipsbegravelsen på Myklebust, og hva var det spesielle ved akkurat denne graven sammenlignet med andre norske skipshauger?",
-                    "Hvilke gjenstander i gravene viser at makten på Nordfjordeid hadde kontakt langt utenfor Norge? Nevn minst to og hvor de kom fra.",
-                    "Hva fant arkeologen Anders Lorange inne i den keltiske bronsekjelen i 1874?",
-                    "Hva mener forskerne at de 12 skjoldbulene ved høvdingens bein kan ha representert?"
+                    "Hvilken gjenstand i skipsgraven viser at makten på Nordfjordeid hadde kontakt langt utenfor Norge, og hvor kom den fra?",
+                    "Hva fant arkeologen Anders Lorange inne i det keltiske bronsekaret i 1874?",
+                    "Hva lå de 12 skjoldbulene over, og hva tror forskerne at de 44 skjoldbulene i haugen til sammen representerer?"
                 ],
                 "reflekter": [
                     "Teksten kaller skipsbrenningen en 'performance' og et 'teaterstykke for de levende'. Forklar hva som menes med dette, og hvorfor en høvding ville brenne et helt praktskip i stedet for å beholde det.",
-                    "I graven ble våpen bevisst bøyd og 'drept'. Hva forteller dette ritualet oss om hva vikingene trodde skjedde etter døden?",
+                    "I graven lå det våpen, hesteutstyr, spillebrikker og niste pakket i geiteskinn. Hva forteller dette oss om hva vikingene trodde skjedde etter døden?",
                     "Sammenlign arkeologien i 1874 med undersøkelsene i 2024. Hvilke fordeler har de nye metodene med georadar, og hva gikk kanskje tapt med Loranges gravemåte?",
-                    "Kvinnen i haug 5 ble gravlagt med et steikespidd, eksotiske perler og en tåring. Hvorfor tror forskerne at hun kan ha vært en volve og en åndelig leder, og ikke bare en vanlig husfrue?"
+                    "Kvinnen i haug 4 ble brent i en båt og gravlagt med en helt spesiell stav. Hvorfor tror forskerne at hun kan ha vært en volve og en rituell leder, og ikke bare en vanlig husfrue?"
                 ],
                 "gaaVidere": [
                     "Lorange la igjen flaskeposter til fremtidens finnere. Skriv en kort beskjed du selv ville lagt i en tidskapsel til noen som graver den opp om 150 år.",
                     "Myklebust er foreslått til UNESCOs verdensarvliste. Diskuter i klassen hvorfor det er viktig å ta vare på et sted som Myklebust, og hvem som bør bestemme hvordan det skal bevares.",
-                    "Ibn Fadlan så en Rus-viking bli brent ved Volga, over tusen kilometer fra Norge. Finn ut hvor langt vikingene reiste, og lag en enkel liste over steder de nådde."
+                    "Ibn Fadlan så en rus-viking bli brent ved Volga, over tusen kilometer fra Norge. Finn ut hvor langt vikingene reiste, og lag en enkel liste over steder de nådde."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Danmarkshistorien. (u.å.). *Ibn Fadlan om vikingernes (ar-rus') skikke, ca. 922*. Lex - Danmarks Nationalleksikon. Hentet 03.08.2026 fra [danmarkshistorien.lex.dk](https://danmarkshistorien.lex.dk/Ibn_Fadlan_om_vikingernes_%28ar-rus%27%29_skikke,_ca._922)",
+                    "Hagen, A. (2026). *Anders Lorange*. Norsk biografisk leksikon. Hentet 03.08.2026 fra [nbl.snl.no/Anders_Lorange](https://nbl.snl.no/Anders_Lorange)",
+                    "Riksantikvaren. (2024a). *Nye funn bekrefter: Myklebustskipet var stort*. Hentet 03.08.2026 fra [riksantikvaren.no](https://riksantikvaren.no/nye-funn-bekrefter-myklebustskipet-var-stort/)",
+                    "Riksantikvaren. (2024b). *Nå er det bekreftet: Den største gravhaugen på Vestlandet*. Hentet 03.08.2026 fra [riksantikvaren.no](https://riksantikvaren.no/na-er-det-bekreftet-den-storste-gravhaugen-pa-vestlandet/)",
+                    "Sagastad. (u.å.-a). *Gravhaugane*. Hentet 03.08.2026 fra [sagastad.no](https://sagastad.no/historia/gravhaugane/)",
+                    "Sagastad. (u.å.-b). *Myklebustskipet*. Hentet 03.08.2026 fra [sagastad.no](https://sagastad.no/historia/myklebustskipet/)",
+                    "Solberg, B. (2024). *Evebøfunnet*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Evebøfunnet](https://snl.no/Eveb%C3%B8funnet)",
+                    "Vestland fylkeskommune. (2024). *Myklebustskipet kan kome på norsk «venteliste» for verdsarv*. Hentet 03.08.2026 fra [vestlandfylke.no](https://www.vestlandfylke.no/nyheitsarkiv/2024/myklebustskipet-kan-kome-pa-norsk-venteliste-for-verdsarv/)"
                 ]
             }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-03T00:00:00Z"
 }
