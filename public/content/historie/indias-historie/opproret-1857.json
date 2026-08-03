@@ -6,7 +6,7 @@
     "year": "1857-1859",
     "category": "Indias historie",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/indias-historie/opproret-1857-hero.webp",
     "details": [
         "Et handelsselskap styrte India med en hær der ni av ti soldater var indere. I 1857 gjorde den største av hærene mytteri.",
         "Opprøret var ikke India mot Storbritannia. Store deler av landet ble aldri med, og det avgjorde utfallet.",
@@ -23,7 +23,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/opproret-1857-01.webp",
             "alt": "Indiske soldater i røde uniformer marsjerer bort fra en brennende leir",
             "caption": "10. mai 1857: sepoyene i Meerut gjør mytteri og marsjerer mot Delhi."
         },
@@ -113,7 +113,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/opproret-1857-02.webp",
             "alt": "Soldater utenfor en ødelagt bymur i Delhi etter beleiringen",
             "caption": "Delhi ble tatt tilbake 21. september 1857, mye takket være forsterkninger fra Punjab."
         },
@@ -149,7 +149,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/opproret-1857-03.webp",
             "alt": "Telegrafstolper langs en støvete slette i Nord-India",
             "caption": "Telegraflinja gjorde at varselet nådde Punjab før opprørerne gjorde det."
         },
