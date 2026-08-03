@@ -44,7 +44,7 @@ export type ContentBlock =
     | { type: 'text' | 'paragraph'; content?: string; text?: string; title?: string; value?: string }
     | { type: 'header'; content?: string; text?: string; value?: string }
     | { type: 'subheader'; content?: string; text?: string; value?: string }
-    | { type: 'image'; src: string; caption?: string; alt?: string; content?: string }
+    | { type: 'image'; src: string; caption?: string; alt?: string; content?: string; width?: string | number }
     | { type: 'component'; name: string; props?: Record<string, unknown>; component?: string }
     | { type: 'section'; title?: string; content: ContentBlock[] }
     | { type: 'list'; items: string[]; ordered?: boolean }
@@ -53,12 +53,31 @@ export type ContentBlock =
     | { type: 'comparison'; before: { label?: string; content: string }; after: { label?: string; content: string } }
     | { type: 'video'; url: string; title?: string; value?: string }
     | { type: 'quote'; content: string; author?: string; source?: string }
-    | { type: 'expandable'; title: string; content: string }
-    | { type: 'info' | 'info_box'; title?: string; content: string }
+    // Innhold kan være enten ren tekst eller nøstede blokker.
+    | { type: 'expandable'; title: string; content: string | ContentBlock[] }
+    | { type: 'info' | 'info_box'; title?: string; content: string; text?: string }
     | { type: 'comparison_card'; items: { title: string; content: string; color: string }[] }
     | { type: 'quiz'; questions: QuizQuestion[] }
-    | { type: 'task'; title?: string; content?: string; text?: string }
-    | { type: 'undefined';[key: string]: any };
+    | { type: 'task'; title?: string; content?: string; text?: string };
+
+/** Alle blokk-typene renderen kjenner. Brukes til å skille kjente blokker fra
+ *  ukjente før innsnevring — se `resolveBlockType` i ArticleContent. */
+export const CONTENT_BLOCK_TYPES = [
+    'text', 'paragraph', 'header', 'subheader', 'image', 'component', 'section',
+    'list', 'link', 'poem', 'comparison', 'video', 'quote', 'expandable',
+    'info', 'info_box', 'comparison_card', 'quiz', 'task',
+] as const satisfies readonly ContentBlock['type'][];
+
+/** En blokk slik den faktisk ligger i artikkel-JSON. Innholdet forfattes for
+ *  hånd, så typen kan mangle eller være ukjent, og eldre innhold har den i
+ *  `name` (TinaCMS) eller `__typename` (GraphQL) i stedet for `type`.
+ *  ArticleContent oversetter denne til en ContentBlock ett sted, og bare der. */
+export interface RawContentBlock {
+    type?: string;
+    name?: string;
+    __typename?: string;
+    content?: unknown;
+}
 
 
 export interface Lesson {
@@ -195,25 +214,31 @@ export interface Religion {
     name: string;
     color?: string;
     icon?: string;
+    // Verdiene er rich-text-AST fra det gamle TinaCMS-formatet, eller ren
+    // tekst. `unknown` er riktig her: strukturen varierer, og <RichText />
+    // tar imot nettopp unknown og snevrer inn selv.
     dimensions: {
-        ritual?: any; // Rich-text-AST, se components/ui/RichText.tsx
-        narrative?: any;
-        experiential?: any;
-        social?: any;
-        ethical?: any;
-        doctrinal?: any;
-        material?: any;
+        ritual?: unknown;
+        narrative?: unknown;
+        experiential?: unknown;
+        social?: unknown;
+        ethical?: unknown;
+        doctrinal?: unknown;
+        material?: unknown;
     };
-}export interface Philosopher {
+}
+
+export interface Philosopher {
     id: string;
     name: string;
     color?: string;
+    // Samme som Religion.dimensions — rich-text-AST eller ren tekst.
     dimensions: {
-        metafysikk?: any; // Tina Rich Text or string
-        epistemologi?: any;
-        etikk?: any;
-        menneskesyn?: any;
-        samfunnssyn?: any;
+        metafysikk?: unknown;
+        epistemologi?: unknown;
+        etikk?: unknown;
+        menneskesyn?: unknown;
+        samfunnssyn?: unknown;
     };
 }
 
@@ -292,7 +317,9 @@ export interface LearningPathStep {
     phase?: string;
     component?: {
         name: string;
-        props?: Record<string, any>;
+        // Props sendes videre til komponenten via ComponentRegistry og
+        // valideres der, ikke her.
+        props?: Record<string, unknown>;
     };
 }
 
@@ -525,7 +552,9 @@ export interface Slide {
     // Interactive integration
     component?: {
         name: string;
-        props?: Record<string, any>;
+        // Props sendes videre til komponenten via ComponentRegistry og
+        // valideres der, ikke her.
+        props?: Record<string, unknown>;
     };
 
     // Transitions & Visuals

@@ -4,8 +4,34 @@ import { Volume2, ChevronDown, Info, CheckCircle2, XCircle, Pause, Play, Square,
 import { motion, useReducedMotion } from 'framer-motion';
 import { getComponent } from './ComponentRegistry';
 import { useGlossary } from '../context/GlossaryContext';
-import type { Concept, ContentBlock } from '../types';
+import type { Concept, ContentBlock, RawContentBlock } from '../types';
+import { CONTENT_BLOCK_TYPES } from '../types';
 import { renderInlineMarkdown } from './markdownUtils';
+
+// Eldre innhold fra GraphQL-laget hadde blokk-typen i __typename.
+const LEGACY_TYPENAMES: Record<string, ContentBlock['type']> = {
+    ArticleContentText: 'text',
+    ArticleContentImage: 'image',
+    ArticleContentHeader: 'header',
+    ArticleContentList: 'list',
+    ArticleContentComponent: 'component',
+};
+
+// Innholdet forfattes som JSON, så blokk-typen kan ligge tre steder: `type`
+// (standard), `name` (eldre TinaCMS-format) eller `__typename` (eldre GraphQL).
+// Dette er det ene stedet forskjellen håndteres.
+const resolveBlockType = (block: ContentBlock): string | undefined => {
+    const raw = block as RawContentBlock;
+    if (raw.type) return raw.type;
+    if (raw.name) return raw.name;
+    if (raw.__typename) return LEGACY_TYPENAMES[raw.__typename];
+    return undefined;
+};
+
+const KNOWN_BLOCK_TYPES = new Set<string>(CONTENT_BLOCK_TYPES);
+
+const isKnownBlockType = (type: string | undefined): type is ContentBlock['type'] =>
+    type !== undefined && KNOWN_BLOCK_TYPES.has(type);
 
 // Normaliser alternative/legacy prop-navn til komponentens forventede props.
 // Brukes både for legacy-format (props spredt på toppnivå) og standardformatet
@@ -23,8 +49,10 @@ const normalizeProps = (props: Record<string, unknown>, type?: string) => {
     return props;
 };
 
-// Simple markdown renderer fallback
-const renderWithMarkdown = (text: string, concepts?: Concept[]) => {
+// Simple markdown renderer fallback.
+// Tar imot undefined fordi blokkene henter teksten fra alternative felter
+// (content/text/value) som alle er valgfrie — funksjonen håndterer tomt selv.
+const renderWithMarkdown = (text: string | undefined, concepts?: Concept[]) => {
     if (!text) return null;
 
     // Split by double newlines for blocks
@@ -37,7 +65,8 @@ const renderWithMarkdown = (text: string, concepts?: Concept[]) => {
                 if (block.startsWith('#')) {
                     const level = block.match(/^#+/)?.[0].length || 0;
                     const content = block.replace(/^#+\s*/, '');
-                    const HeaderTag = `h${Math.min(level + 1, 6)}` as any;
+                    // Blokka starter med minst én '#', så nivået er alltid 1-6.
+                    const HeaderTag = `h${Math.min(level + 1, 6)}` as 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
                     return (
                         <HeaderTag key={index} className={`font-bold text-slate-900 mb-4 mt-8 tracking-tight ${level === 1 ? 'text-2xl' : level === 2 ? 'text-xl' : 'text-lg'}`}>
                             {renderInlineMarkdown(content, concepts)}
@@ -192,17 +221,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                 const rendered = ((): React.ReactNode => {
                 // ... (rest of the mapping using mergedConcepts instead of concepts)
                 // Handle 'type' (standard), 'name' (legacy), and '__typename' (GraphQL)
-                let type = block.type || (block as any).name;
-
-                if (!type && (block as any).__typename) {
-                    switch ((block as any).__typename) {
-                        case 'ArticleContentText': type = 'text'; break;
-                        case 'ArticleContentImage': type = 'image'; break;
-                        case 'ArticleContentHeader': type = 'header'; break;
-                        case 'ArticleContentList': type = 'list'; break;
-                        case 'ArticleContentComponent': type = 'component'; break;
-                    }
-                }
+                const type = resolveBlockType(block);
 
                 // Check for active state if interactive
                 const isActive = activeBlockIndex === index;
@@ -210,10 +229,10 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                 const activeClass = isActive ? "bg-amber-50/40 relative shadow-sm border border-amber-100/50" : "";
 
                 // Check if the type is a registered component
-                const DirectComponent = getComponent(type);
-                if (DirectComponent) {
+                const DirectComponent = type ? getComponent(type) : undefined;
+                if (DirectComponent && type) {
                     // Prop mapping/aliases for easier JSON authoring
-                    const props = normalizeProps({ ...(block as any) }, type as string);
+                    const props = normalizeProps({ ...block }, type);
 
                     return (
                         <div key={index} className="my-4 min-w-0 max-w-full" data-interactive-component>
@@ -224,7 +243,27 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                     );
                 }
 
-                switch (type) {
+                // Ukjent blokk-type: fall tilbake til å vise `content` som tekst.
+                // Dette skjer før innsnevringen under, slik at switchen bare
+                // trenger å håndtere typer vi faktisk kjenner.
+                if (!isKnownBlockType(type)) {
+                    const fallback = (block as RawContentBlock).content;
+                    if (typeof fallback === 'string' && fallback) {
+                        return (
+                            <div key={index} className="mb-4 text-slate-700">
+                                {renderWithMarkdown(fallback, mergedConcepts)}
+                            </div>
+                        );
+                    }
+                    return null;
+                }
+
+                // Den ene bevisste innsnevringen i denne fila. Typen er avgjort
+                // over — inkludert legacy-feltene — og hver gren under leser
+                // bare feltene som hører til sin egen variant.
+                const b = (block.type === type ? block : { ...block, type }) as ContentBlock;
+
+                switch (b.type) {
                     case 'paragraph':
                     case 'text':
                         return (
@@ -233,9 +272,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 className={`mb-4 text-lg text-slate-700 leading-relaxed group ${interactiveClass} ${activeClass}`}
                                 onClick={() => onBlockClick?.(index)}
                             >
-                                {(block as any).title && (
+                                {b.title && (
                                     <h3 className="text-2xl font-bold text-slate-800 mb-4 block">
-                                        {(block as any).title}
+                                        {b.title}
                                     </h3>
                                 )}
                                 {isActive && (
@@ -273,7 +312,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                         )}
                                     </div>
                                 )}
-                                {renderWithMarkdown((block as any).content || (block as any).text || (block as any).value, mergedConcepts)}
+                                {renderWithMarkdown(b.content || b.text || b.value, mergedConcepts)}
                             </div>
                         );
 
@@ -286,19 +325,19 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                     {/* Decorative top border */}
                                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-slate-200 to-transparent opacity-50" />
 
-                                    {(block as any).title && (
+                                    {b.title && (
                                         <h4 className="font-serif italic text-lg text-slate-500 text-center mb-6">
-                                            {(block as any).title}
+                                            {b.title}
                                         </h4>
                                     )}
 
                                     <div className="font-serif text-lg leading-loose text-slate-800 text-center whitespace-pre-line">
-                                        {(block as any).content}
+                                        {b.content}
                                     </div>
 
-                                    {(block as any).author && (
+                                    {b.author && (
                                         <div className="mt-6 text-center text-sm font-sans font-bold text-slate-400 uppercase tracking-widest">
-                                            — {(block as any).author}
+                                            — {b.author}
                                         </div>
                                     )}
                                 </div>
@@ -308,14 +347,14 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                     case 'header':
                         return (
                             <h2 key={index} className="text-2xl font-bold text-slate-900 mb-4 mt-8 tracking-tight">
-                                {(block as any).content || (block as any).text || (block as any).value}
+                                {b.content || b.text || b.value}
                             </h2>
                         );
 
                     case 'subheader':
                         return (
                             <h3 key={index} className="text-xl font-bold text-slate-900 mb-3 mt-6 tracking-tight">
-                                {(block as any).content || (block as any).text || (block as any).value}
+                                {b.content || b.text || b.value}
                             </h3>
                         );
 
@@ -327,11 +366,11 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                     <div className="bg-slate-50 border-b border-slate-100 p-4 flex items-center gap-3">
                                         <XCircle className="w-5 h-5 text-red-500" />
                                         <span className="font-bold text-slate-700 uppercase tracking-wide text-sm">
-                                            {(block as any).before?.label || 'Før'}
+                                            {b.before?.label || 'Før'}
                                         </span>
                                     </div>
                                     <div className="p-6 text-slate-600 italic leading-relaxed bg-slate-50/30">
-                                        {renderInlineMarkdown((block as any).before?.content || '', mergedConcepts)}
+                                        {renderInlineMarkdown(b.before?.content || '', mergedConcepts)}
                                     </div>
                                 </div>
 
@@ -340,11 +379,11 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                     <div className="bg-green-50 border-b border-green-100 p-4 flex items-center gap-3">
                                         <CheckCircle2 className="w-5 h-5 text-green-600" />
                                         <span className="font-bold text-green-800 uppercase tracking-wide text-sm">
-                                            {(block as any).after?.label || 'Etter'}
+                                            {b.after?.label || 'Etter'}
                                         </span>
                                     </div>
                                     <div className="p-6 text-slate-800 font-medium leading-relaxed bg-green-50/10">
-                                        {renderInlineMarkdown((block as any).after?.content || '', mergedConcepts)}
+                                        {renderInlineMarkdown(b.after?.content || '', mergedConcepts)}
                                     </div>
                                 </div>
                             </div>
@@ -353,25 +392,25 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                     case 'section':
                         return (
                             <div key={index} className="my-12">
-                                {(block as any).title && (
-                                    <h2 className="text-3xl font-display font-bold text-slate-900 mb-8 border-b border-slate-100 pb-4">{(block as any).title}</h2>
+                                {b.title && (
+                                    <h2 className="text-3xl font-display font-bold text-slate-900 mb-8 border-b border-slate-100 pb-4">{b.title}</h2>
                                 )}
-                                {(block as any).content && <ArticleContent content={(block as any).content} concepts={mergedConcepts} />}
+                                {b.content && <ArticleContent content={b.content} concepts={mergedConcepts} />}
                             </div>
                         );
 
                     case 'list': {
-                        const ListTag = (block as any).ordered ? 'ol' : 'ul';
+                        const ListTag = b.ordered ? 'ol' : 'ul';
 
                         // Check if this is a "Definition List" (items start with **Bold**:)
-                        const isDefinitionList = (block as any).items?.every((item: string) =>
+                        const isDefinitionList = b.items?.every((item: string) =>
                             item.trim().startsWith('**') && item.includes('**:')
                         );
 
                         if (isDefinitionList) {
                             return (
                                 <div key={index} className="my-10 space-y-6">
-                                    {(block as any).items?.map((item: string, i: number) => {
+                                    {b.items?.map((item: string, i: number) => {
                                         // Parse "**Title**: Content"
                                         const match = item.match(/^\*\*(.*?)\*\*:\s*(.*)/);
                                         if (!match) return null;
@@ -391,11 +430,11 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                             );
                         }
 
-                        const listStyle = (block as any).ordered ? "list-decimal" : "list-disc";
+                        const listStyle = b.ordered ? "list-decimal" : "list-disc";
 
                         return (
                             <ListTag key={index} className={`${listStyle} list-outside ml-6 space-y-3 mb-8 text-slate-700`}>
-                                {(block as any).items?.map((item: string, i: number) => (
+                                {b.items?.map((item: string, i: number) => (
                                     <li key={i} className="leading-relaxed pl-2">
                                         {renderInlineMarkdown(item, mergedConcepts)}
                                     </li>
@@ -405,25 +444,25 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                     }
 
                     case 'image': {
-                        const imgStyle = (block as any).width ? { width: (block as any).width } : {};
+                        const imgStyle = b.width ? { width: b.width } : {};
                         // Use inline style to override w-full if width is provided.
                         // We keep w-full as base class for responsiveness if no width is set,
                         // but inline width will take precedence.
 
                         return (
-                            <figure key={index} className={`my-8 ${(block as any).width ? 'flex flex-col items-center' : ''}`}>
+                            <figure key={index} className={`my-8 ${b.width ? 'flex flex-col items-center' : ''}`}>
                                 <img
-                                    src={(block as any).src}
-                                    alt={(block as any).alt || ''}
+                                    src={b.src}
+                                    alt={b.alt || ''}
                                     loading="lazy"
                                     className="w-full rounded-xl shadow-lg"
                                     // 'auto 16 / 9' reserverer 16:9-plass FØR lasting (unngår
                                     // layout-hopp); etter lasting gjelder bildets egne proporsjoner.
                                     style={{ aspectRatio: 'auto 16 / 9', ...imgStyle }}
                                 />
-                                {(block as any).caption && (
+                                {b.caption && (
                                     <figcaption className="mt-2 text-center text-sm text-gray-400 italic">
-                                        {(block as any).caption}
+                                        {b.caption}
                                     </figcaption>
                                 )}
                             </figure>
@@ -431,7 +470,8 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                     }
 
                     case 'component': {
-                        const ComponentName = (block as any).name || (block as any).component;
+                        // `name` er hovedfeltet, `component` er et eldre alias.
+                        const ComponentName = b.name || b.component || '';
                         const RegisteredComponent = getComponent(ComponentName);
 
                         if (!RegisteredComponent) {
@@ -445,14 +485,14 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                         return (
                             <div key={index} className="min-w-0 max-w-full" data-interactive-component>
                                 <React.Suspense fallback={<div className="h-40 w-full animate-pulse bg-slate-100 rounded-xl my-4 flex items-center justify-center text-slate-400">Laster modul...</div>}>
-                                    <RegisteredComponent {...normalizeProps({ ...((block as any).props || {}) }, ComponentName)} />
+                                    <RegisteredComponent {...normalizeProps({ ...(b.props || {}) }, ComponentName)} />
                                 </React.Suspense>
                             </div>
                         );
                     }
 
                     case 'task': {
-                        const taskContent = (block as any).content || (block as any).text;
+                        const taskContent = b.content || b.text;
                         return (
                             <div key={index} className="my-12 relative">
                                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center shadow-sm z-10 transform -rotate-12">
@@ -464,7 +504,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                     </div>
                                     <div className="relative">
                                         <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                                            {(block as any).title || 'Oppgave'}
+                                            {b.title || 'Oppgave'}
                                         </h3>
                                         <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed text-lg">
                                             {renderWithMarkdown(taskContent, mergedConcepts)}
@@ -481,7 +521,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                         return (
                             <div key={index} className="my-12">
                                 <QuizComp
-                                    questions={(block as any).questions || []}
+                                    questions={b.questions || []}
                                 />
                             </div>
                         );
@@ -491,39 +531,42 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                         return (
                             <blockquote key={index} className="my-12 pl-6 border-l-2 border-slate-900">
                                 <p className="font-serif text-2xl text-slate-800 leading-relaxed">
-                                    "{renderInlineMarkdown((block as any).content, mergedConcepts)}"
+                                    "{renderInlineMarkdown(b.content, mergedConcepts)}"
                                 </p>
-                                {((block as any).author || (block as any).source) && (
+                                {(b.author || b.source) && (
                                     <footer className="mt-6 text-sm not-italic flex flex-col font-medium tracking-wide">
-                                        {(block as any).author && <cite className="not-italic text-slate-900 font-bold uppercase text-xs mb-1">— {(block as any).author}</cite>}
-                                        {(block as any).source && <span className="text-slate-500">{(block as any).source}</span>}
+                                        {b.author && <cite className="not-italic text-slate-900 font-bold uppercase text-xs mb-1">— {b.author}</cite>}
+                                        {b.source && <span className="text-slate-500">{b.source}</span>}
                                     </footer>
                                 )}
                             </blockquote>
                         );
 
                     case 'link': {
-                        const isExternal = (block as any).url?.startsWith('http');
+                        const isExternal = b.url?.startsWith('http');
                         const className = "flex items-center gap-2 px-6 py-3 bg-indigo-50 text-indigo-700 rounded-xl font-medium hover:bg-indigo-100 transition-colors my-2 w-fit";
 
                         if (isExternal) {
                             return (
-                                <a key={index} href={(block as any).url} className={className} target="_blank" rel="noopener noreferrer">
-                                    {(block as any).text}
+                                <a key={index} href={b.url} className={className} target="_blank" rel="noopener noreferrer">
+                                    {b.text}
                                 </a>
                             );
                         }
 
                         return (
-                            <Link key={index} to={(block as any).url} className={className}>
-                                {(block as any).text}
+                            <Link key={index} to={b.url} className={className}>
+                                {b.text}
                             </Link>
                         );
                     }
 
                     case 'video': {
-                        const videoUrl = (block as any).url || (block as any).value;
-                        const videoTitle = (block as any).title || "YouTube video";
+                        // `url` er hovedfeltet, `value` er et eldre alias. Mangler
+                        // begge har vi ingenting å vise.
+                        const videoUrl = b.url || b.value;
+                        if (!videoUrl) return null;
+                        const videoTitle = b.title || "YouTube video";
                         // Extract video ID from URL if it's a full link
                         let embedUrl = videoUrl;
 
@@ -559,14 +602,14 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                         return (
                             <details key={index} className="group my-6 bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm open:shadow-md transition-shadow">
                                 <summary className="flex items-center justify-between p-6 cursor-pointer bg-slate-50 hover:bg-slate-100 transition-colors list-none select-none">
-                                    <h3 className="text-xl font-bold text-slate-800">{(block as any).title}</h3>
+                                    <h3 className="text-xl font-bold text-slate-800">{b.title}</h3>
                                     <ChevronDown className="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180" />
                                 </summary>
                                 <div className="p-6 pt-2 text-slate-700 leading-relaxed border-t border-slate-100">
-                                    {Array.isArray((block as any).content) ? (
-                                        <ArticleContent content={(block as any).content} concepts={mergedConcepts} />
+                                    {Array.isArray(b.content) ? (
+                                        <ArticleContent content={b.content} concepts={mergedConcepts} />
                                     ) : (
-                                        renderWithMarkdown((block as any).content, mergedConcepts)
+                                        renderWithMarkdown(b.content, mergedConcepts)
                                     )}
                                 </div>
                             </details>
@@ -579,9 +622,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                                 <div className="flex items-start gap-4">
                                     <Info className="w-5 h-5 text-slate-400 flex-shrink-0 mt-1 group-hover:text-slate-600 transition-colors" />
                                     <div>
-                                        <h3 className="text-base font-bold text-slate-900 mb-2 uppercase tracking-wide">{(block as any).title}</h3>
+                                        <h3 className="text-base font-bold text-slate-900 mb-2 uppercase tracking-wide">{b.title}</h3>
                                         <div className="text-slate-600 leading-relaxed">
-                                            {renderWithMarkdown((block as any).content || (block as any).text, mergedConcepts)}
+                                            {renderWithMarkdown(b.content || b.text, mergedConcepts)}
                                         </div>
                                     </div>
                                 </div>
@@ -592,7 +635,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                         return (
                             <div key={index} className="my-10">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                    {(block as any).items?.map((item: { title: string; content: string; color: string }, i: number) => {
+                                    {b.items?.map((item: { title: string; content: string; color: string }, i: number) => {
                                         // Map string color names to tailwind classes
                                         const colorMap: Record<string, string> = {
                                             blue: 'bg-blue-50 border-blue-100 text-blue-900',
@@ -615,14 +658,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                         );
 
                     default:
-                        // Fallback for unknown blocks, try to render content if available
-                        if ((block as any).content && typeof (block as any).content === 'string') {
-                            return (
-                                <div key={index} className="mb-4 text-slate-700">
-                                    {renderWithMarkdown((block as any).content, mergedConcepts)}
-                                </div>
-                            );
-                        }
+                        // Ukjente blokk-typer er allerede håndtert før switchen.
+                        // Kommer vi hit har vi lagt til en variant i ContentBlock
+                        // uten å gi den en gren — TypeScript fanger det her.
                         return null;
                 }
                 })();
