@@ -1,5 +1,5 @@
 {
-  "buildId": 21540813238884,
+  "buildId": 130736912562687,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2322,6 +2322,9 @@
     "hinduisme-sentrale-trekk": [
       "content/krle/religion/hinduisme/sentrale-trekk/artikkel.json"
     ],
+    "egyptisk-religion": [
+      "content/krle/religion/historiske-religioner/egyptisk-religion.json"
+    ],
     "monoteismens-fodsel": [
       "content/krle/religion/historiske-religioner/monoteismens-fodsel.json"
     ],
@@ -4495,6 +4498,7 @@
     "krle/religion/hinduisme/intro": "content/krle/religion/hinduisme/intro.json",
     "krle/religion/hinduisme/overgangsriter": "content/krle/religion/hinduisme/overgangsriter/artikkel.json",
     "krle/religion/hinduisme/sentrale-trekk": "content/krle/religion/hinduisme/sentrale-trekk/artikkel.json",
+    "krle/religion/historiske-religioner/egyptisk-religion": "content/krle/religion/historiske-religioner/egyptisk-religion.json",
     "krle/religion/historiske-religioner/monoteismens-fodsel": "content/krle/religion/historiske-religioner/monoteismens-fodsel.json",
     "krle/religion/islam/bonn": "content/krle/religion/islam/bonn/artikkel.json",
     "krle/religion/islam/frelse": "content/krle/religion/islam/frelse/artikkel.json",
