@@ -17,17 +17,17 @@
         {
             "type": "text",
             "title": "Klinkbygging: En revolusjon i tre",
-            "content": "Hemmeligheten bak vikingenes skip ligger i klinkbyggingen. I stedet for å bygge et skjelett først, festet båtbyggerne bordgangene over hverandre som takstein, og klinket dem sammen med jernnagler. Dette gjorde skipene både lette og fleksible. Et vikingskip kunne vri seg i bølgene uten å sprekke, noe som ga dem en fantastisk sjødyktighet."
+            "content": "Hemmeligheten bak vikingenes skip ligger i klinkbyggingen. I stedet for å reise et skjelett først, la båtbyggerne bordgangene overlappende over hverandre som takstein og holdt dem sammen med jernnagler som ble klinket fast (Planke, 2026). Selve skroget, huden, ble bygd ferdig først, og spantene ble satt inn etterpå (Planke, 2026; Store norske leksikon, 2025). Kombinasjonen av tynne bord og få og nette band ga relativt lette og myke båter (Planke, 2026). Et vikingskip kunne derfor vri seg i bølgene uten å sprekke, og det ga dem en fantastisk sjødyktighet. Gokstadskipet er bygd nettopp slik: klinkbygd av eik med innslag av furu, rundt 23 meter langt og 5 meter bredt, med 16 bordganger og 16 par årer (Kjersheim, 2026). Skipet ble gravd ut av gravhaugen Kongshaugen på gården Gokstad i Sandefjord i 1880, og det er så godt bevart at det i dag regnes som verdens største bevarte vikingskip (Stylegar, 2024)."
         },
         {
             "type": "text",
             "title": "Kjølen og seilet",
-            "content": "Den viktigste oppfinnelsen var likevel kjølen. Før vikingtiden var skipene flate under og ble drevet frem med årer. Med en kraftig kjøl av eik kunne skipene nå bære en stor mast med seil uten å velte. Seilet gjorde det mulig å reise over enorme avstander uten å slite ut mannskapet ved årene. Vikingene brukte både årer og seil, noe som gjorde skipene deres farlige uansett værforhold."
+            "content": "Veien fram mot det havgående seilskipet tok flere hundre år. Nydambåten fra omkring år 310-320 var klinket sammen med jernnagler på en kjølplanke av eik i ett stykke, men den hadde verken mast eller seil. Den var med andre ord en robåt (Fredriksen, 2015). Etter hvert ble bunnplanken bedre utviklet og forsterket, slik at bunnen tålte større vanntrykk. Dermed var grunnlaget lagt for å bygge bredere fartøy som etter hvert kunne bære seil (Fredriksen, 2015). Storhaugskipet fra omkring 770 var fortsatt en ren robåt, mens Osebergskipet fra 820 hadde mast og var seilførende. På få tiår endret skipene seg altså fullstendig (Fredriksen, 2015). Seilet gjorde det mulig å reise over store avstander uten å slite ut mannskapet ved årene. Vikingskipene var vanligvis bygd for både roing og seiling, og det gjorde dem farlige uansett værforhold (Store norske leksikon, 2025)."
         },
         {
             "type": "text",
             "title": "Langskip og Knarr",
-            "content": "Vikingene bygde ulike skip til ulike formål. Langskipet var krigsskipet. Det var smalt, langt og bygd for fart. Med et grunt dypgående kunne det seiles helt opp i små elver og trekkes opp på stranden, noe som gjorde at vikingene kunne slå til der fienden følte seg trygg. I spillet [Lindisfarne 793](/oving/spill/lindisfarne-793) kan du selv oppleve et slikt overraskelsesangrep fra langskipets dekk. Knarren var derimot handelsskipet. Det var bredere og dypere, med stor plass til laste som kvernsteiner, skinn og tømmer. Knarren var den stødige arbeidshesten som fraktet folk og fe til Island og Grønland."
+            "content": "Vikingene bygde ulike skip til ulike formål. Langskipet var krigsskipet. Det var smalt, langt og bygd for fart. Et særtrekk ved vikingskipene var at kjølen stakk svært grunt, slik at de kunne legge til uten havn og seile opp i elver (Bandlien, 2026). Dermed kunne vikingene slå til der fienden følte seg trygg. I spillet [Lindisfarne 793](/oving/spill/lindisfarne-793) kan du selv oppleve et slikt overraskelsesangrep fra langskipets dekk. Knarren var derimot handelsskipet. Den kom fordi de lavbordede langskipene verken egnet seg på lange ferder over åpent hav eller kunne ta med nødvendig last av husgeråd, materialer og kveg. Knarren ble derfor kortere, bredere og dypere enn langskipet, med halvdekk forut og akter og åpent lasterom midtskips rundt masta (Store norske leksikon, 2024). Skipstypen er først omtalt i norsk historie i landnåmstiden, årene 874 til omkring 930 (Store norske leksikon, 2024). Det var i disse årene Island ble bosatt, og derfra oppdaget og bosatte nordboerne siden Grønland (Bandlien, 2026)."
         },
         {
             "type": "component",
@@ -54,7 +54,7 @@
                 "items": [
                     {
                         "left": "Langt og smalt",
-                        "right": "Bredt og dypt"
+                        "right": "Kortere, bredere og dypere"
                     },
                     {
                         "left": "Bygget for fart og krig",
@@ -62,7 +62,7 @@
                     },
                     {
                         "left": "Mange årer og seil",
-                        "right": "Få årer, mest seil"
+                        "right": "Åpent lasterom midtskips"
                     },
                     {
                         "left": "Grunt dypgående (elver)",
@@ -76,15 +76,15 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva kalles metoden der båtbyggerne festet bordgangene over hverandre som takstein og klinket dem sammen med jernnagler?",
-                    "Hva var den viktigste oppfinnelsen ifølge teksten, og hvilket materiale ble den laget av?",
+                    "Hva kalles metoden der båtbyggerne la bordgangene over hverandre som takstein og holdt dem sammen med jernnagler?",
+                    "Hva er forskjellen på Nydambåten fra 300-tallet og Osebergskipet fra 820, når det gjelder hvordan de ble drevet fram?",
                     "Hva var forskjellen på et langskip og en knarr, og hva ble hvert av skipene brukt til?",
-                    "Hva heter det godt bevarte vikingskipet som ble funnet i en gravhaug i Vestfold?"
+                    "Hva heter det godt bevarte vikingskipet som ble gravd ut av en gravhaug i Sandefjord i 1880?"
                 ],
                 "reflekter": [
                     "Forklar hvorfor klinkbyggingen gjorde skipene bedre til å tåle bølger enn skip bygget med skjelett først.",
-                    "Teksten sier at kjølen gjorde det mulig å bære en stor mast med seil uten å velte. Forklar hvorfor seilet var så viktig for at vikingene kunne reise langt.",
-                    "Hvorfor var det grunne dypgående en så stor fordel i krig? Bruk det teksten sier om elver og strender i svaret ditt.",
+                    "Teksten sier at bunnplanken ble forsterket slik at bunnen tålte større vanntrykk, og at grunnlaget for seilførende skip da var lagt. Forklar hvorfor seilet var så viktig for at vikingene kunne reise langt.",
+                    "Hvorfor var det grunne dypgående en så stor fordel i krig? Bruk det teksten sier om elver og havner i svaret ditt.",
                     "Vikingene brukte både årer og seil på skipene sine. Vurder hvorfor det var lurt å ha begge deler i stedet for bare én av dem."
                 ],
                 "gaaVidere": [
@@ -114,17 +114,32 @@
                         "question": "Hvorfor var det grunne dypgående så viktig for vikingenes krigstaktikk?",
                         "options": [
                             "Det gjorde skipene raskere",
-                            "De kunne seile opp elver og overraske fienden",
+                            "De kunne seile opp elver og legge til uten havn",
                             "Det var lettere å male skipene",
                             "De kunne frakte mer tunge varer"
                         ],
-                        "answer": "De kunne seile opp elver og overraske fienden",
-                        "explanation": "Fordi skipene ikke stakk dypt i vannet, kunne de navigere der andre store skip ville gått på grunn."
+                        "answer": "De kunne seile opp elver og legge til uten havn",
+                        "explanation": "Fordi kjølen stakk svært grunt, kunne skipene navigere og gå i land der andre store skip ville gått på grunn."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bandlien, B. (2026). *Vikingtiden*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/vikingtiden](https://snl.no/vikingtiden)",
+                    "Fredriksen, P. D. (2015). *Utviklinga av det havgåande seglskipet*. Norgeshistorie, Universitetet i Oslo. Hentet 03.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/merovingertid/0708-utviklinga-av-det-havgaande-seglskipet.html)",
+                    "Kjersheim, V. G. (2026). *Gokstadskipet*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Gokstadskipet](https://snl.no/Gokstadskipet)",
+                    "Planke, T. (2026). *Klinkbygging*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/klinkbygging](https://snl.no/klinkbygging)",
+                    "Store norske leksikon. (2024). *Knarr - seilskip*. Hentet 03.08.2026 fra [snl.no/knarr_-_seilskip](https://snl.no/knarr_-_seilskip)",
+                    "Store norske leksikon. (2025). *Vikingskip*. Hentet 03.08.2026 fra [snl.no/vikingskip](https://snl.no/vikingskip)",
+                    "Stylegar, F.-A. H. (2024). *Gokstadfunnet*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Gokstadfunnet](https://snl.no/Gokstadfunnet)"
                 ]
             }
         }
     ],
     "createdDate": "2025-12-22T20:25:00Z",
-    "lastUpdated": "2025-12-22T20:25:00Z"
+    "lastUpdated": "2026-08-03T00:00:00Z"
 }
