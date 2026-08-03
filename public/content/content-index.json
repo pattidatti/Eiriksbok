@@ -1,5 +1,5 @@
 {
-  "buildId": 111191347992625,
+  "buildId": 224540066127288,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1494,6 +1494,9 @@
     ],
     "ashoka-og-mauryariket": [
       "content/historie/indias-historie/ashoka-og-mauryariket.json"
+    ],
+    "guptariket": [
+      "content/historie/indias-historie/guptariket.json"
     ],
     "mogulriket": [
       "content/historie/indias-historie/mogulriket.json"
@@ -4213,6 +4216,7 @@
     "historie/historiens-store-gater/roanoke": "content/historie/historiens-store-gater/roanoke.json",
     "historie/historiens-store-gater/skylda-for-forste-verdenskrig": "content/historie/historiens-store-gater/skylda-for-forste-verdenskrig.json",
     "historie/indias-historie/ashoka-og-mauryariket": "content/historie/indias-historie/ashoka-og-mauryariket.json",
+    "historie/indias-historie/guptariket": "content/historie/indias-historie/guptariket.json",
     "historie/indias-historie/mogulriket": "content/historie/indias-historie/mogulriket.json",
     "historie/industriell-revolusjon/barnearbeid": "content/historie/industriell-revolusjon/barnearbeid.json",
     "historie/industriell-revolusjon/dampmaskinen": "content/historie/industriell-revolusjon/dampmaskinen.json",

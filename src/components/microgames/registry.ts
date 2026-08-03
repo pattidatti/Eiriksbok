@@ -38,6 +38,7 @@ const Radarvakten3D = lazy(() => import('./Radarvakten3D'));
 const Konklusjonsbroen3D = lazy(() => import('./Konklusjonsbroen3D'));
 const LegendensVei3D = lazy(() => import('./LegendensVei3D'));
 const Alliansefella1914 = lazy(() => import('./Alliansefella1914'));
+const AryabhatasNatt3D = lazy(() => import('./AryabhatasNatt3D'));
 const MonumentTorget3D = lazy(() => import('./MonumentTorget3D'));
 const Teknologibolgen3D = lazy(() => import('./Teknologibolgen3D'));
 const Nyheitsbobla3D = lazy(() => import('./Nyheitsbobla3D'));
@@ -1586,6 +1587,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./EdiktSoylene3D'),
         Component: EdiktSoylene3D as never,
+    },
+    'aryabhatas-natt-3d': {
+        id: 'aryabhatas-natt-3d',
+        title: 'Aryabhatas natt',
+        description:
+            'En klode svever foran en sol som står helt stille. Observatoriet i Ujjain sitter fast på kloden og blir båret rundt, gjennom lys og mørke, mens klokka nede i hjørnet viser hva de som står der ville sagt at den var. Klikk observatoriet i det øyeblikket det treffer den gule porten, og fang soloppgang, middag og midnatt før daggry. Bommer du, koster det en hel omdreining. Lyspæren: himmelens døgnlige bevegelse skyldes at jorda snurrer, akkurat slik Aryabhata skrev rundt år 500.',
+        estimatedSeconds: 140,
+        loader: () => import('./AryabhatasNatt3D'),
+        Component: AryabhatasNatt3D as never,
     },
 };
 

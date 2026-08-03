@@ -3451,6 +3451,21 @@
                 "toleranse"
               ],
               "createdDate": "2026-08-01T00:00:00Z"
+            },
+            {
+              "id": "guptariket",
+              "title": "Guptariket: da verden fikk tallene sine",
+              "description": "I gullalderen til Guptariket ble tallsystemet vi bruker i dag satt sammen: ti sifre, plassverdi og en null som er et ekte tall.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "india",
+                "guptariket",
+                "matematikk",
+                "astronomi",
+                "oldtiden",
+                "vitenskap"
+              ],
+              "createdDate": "2026-08-03T00:00:00Z"
             }
           ]
         },
