@@ -76,9 +76,11 @@ export function NullOppdagelsen({
     // tomrommet, tolket på tre måter.
     const written = slots.filter((s) => s !== null).join(' ');
     const misreadings = useMemo(() => {
+        // Uten null vet ingen hvor bredt tomrommet er: 2 5 kan være 25, 205 eller 2005.
         const bare = digits.filter((d) => d !== 0).join('');
-        return [bare, target, target + '0'];
-    }, [digits, target]);
+        const wide = target.slice(0, zeroIndex) + '00' + target.slice(zeroIndex + 1);
+        return [bare, target, wide];
+    }, [digits, target, zeroIndex]);
 
     return (
         <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden my-8">
@@ -163,7 +165,12 @@ export function NullOppdagelsen({
                                         ? { scale: [1, 1.35, 1] }
                                         : { scale: 1 }
                                 }
-                                transition={{ type: 'spring', stiffness: 320, damping: 14 }}
+                                transition={
+                                    // Keyframe-rekker kan ikke kjøre som spring i Framer Motion.
+                                    d === 0 && zeroUnlocked
+                                        ? { duration: 0.5, times: [0, 0.4, 1], ease: 'easeOut' }
+                                        : { type: 'spring', stiffness: 320, damping: 14 }
+                                }
                                 className={`w-11 h-11 rounded-xl border text-lg font-bold tabular-nums transition-colors ${
                                     locked
                                         ? 'bg-slate-100 border-slate-200 text-slate-300 cursor-not-allowed'
