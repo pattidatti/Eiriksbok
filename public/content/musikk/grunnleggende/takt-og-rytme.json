@@ -7,12 +7,12 @@
         {
             "type": "text",
             "title": "Puls: Musikkens klokke",
-            "content": "Se for deg en klokke som tikker. *Tikk-takk-tikk-takk*. Dette jevne slaget er det vi kaller puls. Når du tramper takten til en sang på radioen, tramper du pulsen.\n\nUten en fast puls vil musikken føles rotete. Det er grunnmuren alt annet bygges på."
+            "content": "Se for deg en klokke som tikker. *Tikk-takk-tikk-takk*. Dette jevne slaget er det vi kaller puls. Når du tramper takten til en sang på radioen, tramper du pulsen.\n\nRytme handler om hvordan lydene i et musikkstykke er ordnet i lange og korte, sterke og svake slag over tid (Sundberg & Eilertsen, 2024). Uten en fast puls vil musikken føles rotete. Det er grunnmuren alt annet bygges på."
         },
         {
             "type": "text",
             "title": "Takt: Å telle til fire",
-            "content": "For å holde orden på pulsslagene, deler vi dem inn i grupper. Dette kalles en takt.\n\nDen aller vanligste inndelingen i pop og rock er å telle til fire. Prøv å si høyt: 1 - 2 - 3 - 4. Når du kommer til 4, begynner du på 1 igjen. Dette er en 4/4-takt."
+            "content": "For å holde orden på pulsslagene, deler vi dem inn i grupper. Dette kalles en takt (Holter, 2025).\n\nDen aller vanligste inndelingen i pop og rock er å telle til fire. Prøv å si høyt: 1 - 2 - 3 - 4. Når du kommer til 4, begynner du på 1 igjen. Dette er en 4/4-takt. Tallet nederst sier hvilken noteverdi vi teller i, og tallet øverst sier hvor mange av dem det er i hver takt (Holter, 2025)."
         },
         {
             "type": "text",
@@ -24,7 +24,7 @@
             "items": [
                 "Plasser en **Stortromme** (Kick) på rute 1, 5, 9 og 13.",
                 "Trykk på Play.",
-                "Dette er en klassisk 'Four-on-the-floor' disko-rytme!",
+                "Dette er en klassisk 'four on the floor' disko-rytme, med stortromma på hvert eneste taktslag (Ruud, 2026).",
                 "Prøv å legge **Skarp** (Snare) på rute 5 og 13. Hører du forskjellen?"
             ]
         },
@@ -39,12 +39,12 @@
         {
             "type": "text",
             "title": "Noteverdier: Hvor lenge varer en tone?",
-            "content": "I Beat Builderen over så du at hver takt var delt inn i 16 små ruter. Hver av disse kalles en sekstendelsnote.\n\n* Helnote: Varer hele takten (alle 16 ruter).\n* Fjerdedelsnote: Varer 1/4 av takten (4 ruter). Det er disse du trampet til i sted (kick på 1, 5, 9, 13).\n* Åttedelsnote: Varer 1/8 av takten (2 ruter). Brukes ofte på Hi-hat."
+            "content": "I Beat Builderen over så du at hver takt var delt inn i 16 små ruter. Hver av disse kalles en sekstendelsnote. Noteverdiene er halvparten av hverandre hele veien nedover: en helnote varer like lenge som 2 halvnoter, 4 fjerdedeler, 8 åttedeler eller 16 sekstendeler (Holter, 2024).\n\n* Helnote: Varer hele takten (alle 16 ruter).\n* Fjerdedelsnote: Varer 1/4 av takten (4 ruter). Det er disse du trampet til i sted (kick på 1, 5, 9, 13).\n* Åttedelsnote: Varer 1/8 av takten (2 ruter). Brukes ofte på Hi-hat."
         },
         {
             "type": "text",
             "title": "Andre taktarter: Vals (3/4)",
-            "content": "Ikke all musikk teller til fire. I en vals teller vi bare til tre: 1 - 2 - 3. Tenk på 'Julekveldsvisa' eller en klassisk selskapsdans. Da får musikken en mer 'svingende' følelse."
+            "content": "Ikke all musikk teller til fire. I en vals teller vi bare til tre: 1 - 2 - 3. En vals blir alltid skrevet i 3/4-takt (Holter, 2025). Vals er både en musikkform og en pardans, der paret snurrer rundt sin egen akse mens de danser (Bakka & Knudsen, 2024). Tenk på Donau-valsen, som Johann Strauss den yngre skrev i 1867 (Andersen, 2025). Da får musikken en mer 'svingende' følelse."
         },
         {
             "type": "text",
@@ -82,6 +82,21 @@
                     "Åpne Rytme-klikkeren og tapp i takt med metronomen. Øv til du får en god skår, og skriv en setning om hva som var vanskeligst med å treffe presist."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, R. J. (2025). *An der schönen blauen Donau*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/An_der_schönen_blauen_Donau](https://snl.no/An_der_sch%C3%B6nen_blauen_Donau)",
+                    "Bakka, E. & Knudsen, J. S. (2024). *Vals*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/vals](https://snl.no/vals)",
+                    "Holter, S. W. (2024). *Noteverdi*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/noteverdi](https://snl.no/noteverdi)",
+                    "Holter, S. W. (2025). *Takt - musikk*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/takt_-_musikk](https://snl.no/takt_-_musikk)",
+                    "Ruud, E. (2026). *Disco*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/disco](https://snl.no/disco)",
+                    "Sundberg, O. K. & Eilertsen, A. (2024). *Rytme - musikk*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/rytme_-_musikk](https://snl.no/rytme_-_musikk)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-03T00:00:00Z"
 }
