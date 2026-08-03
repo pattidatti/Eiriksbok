@@ -6,7 +6,7 @@
     "year": "320-550",
     "category": "Indias historie",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/indias-historie/guptariket-hero.webp",
     "details": [
         "Guptariket styrte det meste av Nord-India på 300- og 400-tallet, og perioden regnes som gullalderen i klassisk indisk kultur.",
         "Her ble tallsystemet vi bruker i dag satt sammen: ti sifre, plassverdi og en null som er et ekte tall.",
@@ -23,7 +23,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/guptariket-01.webp",
             "alt": "Indisk lærd skriver tall på palmeblad i et hoff på 400-tallet",
             "caption": "En lærd ved et indisk hoff på 400-tallet. Det viktigste guptatiden ga verden, kan skrives med ti tegn."
         },
@@ -86,7 +86,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/guptariket-02.webp",
             "alt": "Astronom studerer stjernehimmelen fra et tak i India på 500-tallet",
             "caption": "Aryabhata mente at det er jorda som snurrer, ikke himmelen. Det tok Europa tusen år å komme til samme svar."
         },
@@ -110,7 +110,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/indias-historie/guptariket-03.webp",
             "alt": "Ruiner av en indisk tempelby med gresset som vokser mellom steinene",
             "caption": "Riket forsvant på under to hundre år. Tallene det ga fra seg, bruker du fortsatt."
         },
