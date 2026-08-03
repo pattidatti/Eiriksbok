@@ -7,7 +7,7 @@
         {
             "type": "text",
             "title": "Hva er en akkord?",
-            "content": "Når du spiller én tangent på pianoet, får du en tone. Når du spiller tre eller flere samtidig, får du en akkord.\n\nHarmoni handler om hvordan disse akkordene passer sammen. Det er det som gir musikken følelser."
+            "content": "Når du spiller én tangent på pianoet, får du en tone. Når du spiller tre eller flere samtidig, får du en akkord (Store norske leksikon, 2025a).\n\nHarmoni handler om hvordan disse akkordene klinger sammen og hvordan de brukes (Store norske leksikon, 2025b). Det er det som gir musikken følelser."
         },
         {
             "type": "component",
@@ -16,7 +16,7 @@
         {
             "type": "text",
             "title": "Treklanger: Musikkens byggesteiner",
-            "content": "Den enkleste akkorden kaller vi en treklang. Den består av tre toner:"
+            "content": "Den enkleste akkorden kaller vi en treklang. Den består av tre toner som kan settes opp i terser (Bjerkestrand, 2024):"
         },
         {
             "type": "list",
@@ -33,12 +33,12 @@
         {
             "type": "text",
             "title": "Oppgave: Dur (Glad) vs. Moll (Trist)",
-            "content": "Bruk pianoet over til å høre forskjellen:\n\nC-Dur (Glad):\n*   Finn C, E og G.\n*   Spill dem samtidig.\n*   Høres det lyst og åpent ut?\n\nC-Moll (Trist):\n*   Finn C og G igjen (de er like).\n*   Men i stedet for E (hvit), flytt fingeren ned til Eb (den svarte tangenten rett til venstre for E).\n*   Spill C, Eb og G.\n*   Hører du at det ble mørkere og mer alvorlig?"
+            "content": "Bruk pianoet over til å høre forskjellen:\n\nC-Dur (Glad):\n*   Finn C, E og G.\n*   Spill dem samtidig.\n*   Avstanden fra C til E er en stor ters, og det er den som gjør akkorden til dur (Ruud, 2024).\n*   Høres det lyst og åpent ut?\n\nC-Moll (Trist):\n*   Finn C og G igjen (de er like).\n*   Men i stedet for E (hvit), flytt fingeren ned til Eb (den svarte tangenten rett til venstre for E).\n*   Spill C, Eb og G. Nå er avstanden opp til tersen ett halvt trinn mindre, og akkorden er blitt moll (Ruud, 2025).\n*   Hører du at det ble mørkere og mer alvorlig?"
         },
         {
             "type": "text",
             "title": "Hvorfor heter det Dur og Moll?",
-            "content": "*   Dur kommer fra latin *durus* som betyr 'hard'.\n*   Moll kommer fra *mollis* som betyr 'myk'.\n\nI dag tenker vi ofte at Dur er 'glad' og Moll er 'trist', men det finnes mange glade sanger i moll og triste sanger i dur!"
+            "content": "*   Dur kommer fra latin *durus* som betyr 'hard' (Ruud, 2024).\n*   Moll kommer fra *mollis* som betyr 'myk' (Ruud, 2025).\n\nI dag tenker vi ofte at Dur er 'glad' og Moll er 'trist', men det finnes mange glade sanger i moll og triste sanger i dur!"
         },
         {
             "type": "component",
@@ -62,6 +62,20 @@
                     "Finn sammen med en venn ett eksempel på en glad sang i moll eller en trist sang i dur, og forklar for hverandre hvorfor sangen likevel virker slik den gjør."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bjerkestrand, N. E. (2024). *Treklang*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/treklang](https://snl.no/treklang)",
+                    "Ruud, E. (2024). *Dur*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/dur](https://snl.no/dur)",
+                    "Ruud, E. (2025). *Moll*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/moll](https://snl.no/moll)",
+                    "Store norske leksikon. (2025a). *Akkord - musikk*. Hentet 03.08.2026 fra [snl.no/akkord_-_musikk](https://snl.no/akkord_-_musikk)",
+                    "Store norske leksikon. (2025b). *Harmonikk*. Hentet 03.08.2026 fra [snl.no/harmonikk](https://snl.no/harmonikk)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-03T00:00:00Z"
 }
