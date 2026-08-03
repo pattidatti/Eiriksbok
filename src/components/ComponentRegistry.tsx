@@ -575,6 +575,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     NuclearSimulator: lazy(() => import('./content/interactive/NuclearSimulator').then(m => ({ default: m.NuclearSimulator }))),
     Seiersinnskriften: lazy(() => import('./content/interactive/Seiersinnskriften').then(m => ({ default: m.Seiersinnskriften }))),
     StormogulensValg: lazy(() => import('./content/interactive/StormogulensValg').then(m => ({ default: m.StormogulensValg }))),
+    NullOppdagelsen: lazy(() => import('./content/interactive/NullOppdagelsen').then(m => ({ default: m.NullOppdagelsen }))),
 
     // Demography
     DTMSimulator,

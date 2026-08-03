@@ -1,0 +1,223 @@
+{
+    "id": "guptariket",
+    "title": "Guptariket: da verden fikk tallene sine",
+    "layout": "rich",
+    "subject": "historie",
+    "year": "320-550",
+    "category": "Indias historie",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Guptariket styrte det meste av Nord-India på 300- og 400-tallet, og perioden regnes som gullalderen i klassisk indisk kultur.",
+        "Her ble tallsystemet vi bruker i dag satt sammen: ti sifre, plassverdi og en null som er et ekte tall.",
+        "Riket forsvant da hunerne brøt inn, men ideene reiste videre til araberne og derfra til Europa."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Slå opp i matteboka di. Hvert eneste tall der er skrevet med bare ti tegn: 0, 1, 2, 3, 4, 5, 6, 7, 8 og 9. Med disse ti tegnene kan du skrive et hvilket som helst tall, fra 7 til 7 milliarder. Du kan legge sammen, trekke fra og gange i en loddrett oppstilling på et ark. Det virker helt selvsagt."
+        },
+        {
+            "type": "text",
+            "content": "Det er det ikke. Denne måten å skrive tall på ble ikke funnet opp i Europa, og den er ikke gammel som skriften. Den ble satt sammen i India, i og rundt et rike som het Guptariket. Uten det som skjedde der, ville matteoppgavene dine sett helt annerledes ut."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Indisk lærd skriver tall på palmeblad i et hoff på 400-tallet",
+            "caption": "En lærd ved et indisk hoff på 400-tallet. Det viktigste guptatiden ga verden, kan skrives med ti tegn."
+        },
+        { "type": "header", "text": "Et rike vokser fram i nord" },
+        {
+            "type": "text",
+            "content": "Rundt år 320 samlet en familie ved navn Gupta et nytt storrike med hovedsete i byen Pataliputra i Nord-India (Kristiansen mfl., 2024). Det var ikke første gang noen samlet Nord-India. Rundt seks hundre år tidligere hadde [Ashoka og Mauryariket](/historie/indias-historie/ashoka-og-mauryariket) gjort det samme, men det riket falt fra hverandre etter Ashokas død."
+        },
+        {
+            "type": "text",
+            "content": "Guptaene bygde riket opp igjen med krig, giftermål og allianser. Under keiser Chandragupta 2, som styrte fra 375 til 413, lå omtrent hele Nord-India samlet i én stat (Kristiansen mfl., 2024). På sitt største strakte riket seg over det nordlige og deler av det sentrale og vestlige India (The Editors of Encyclopaedia Britannica, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Historikere kaller guptatiden gullalderen i klassisk India (Filseth, 2025). Ordet gullalder betyr en periode der et samfunn får til uvanlig mye på kort tid. Grunnen er ofte ganske jordnær: når det er fred, og staten er rik nok til å betale for det, kan folk bruke tid på noe annet enn å overleve. Ved hoffet i byen Ujjain satt dikteren Kalidasa og skrev på sanskrit. Andre steder arbeidet folk med matematikk, astronomi og medisin (Kristiansen mfl., 2024)."
+        },
+        { "type": "header", "text": "Tallene som forandret regningen" },
+        {
+            "type": "text",
+            "content": "For å forstå hvor stort det indiske tallsystemet var, må du først se hva det erstattet. Romerne skrev tall med bokstaver: I, V, X, L, C, D og M. Tallet 1888 ble til MDCCCLXXXVIII. Prøv å gange to slike tall med hverandre på et ark. Det går nesten ikke. Romerske tall er fine å hugge inn over en dør, men tunge å regne med."
+        },
+        {
+            "type": "text",
+            "content": "Det indiske systemet gjorde to grep som løste hele problemet. Det første er plassverdi: hvor mye et siffer er verdt, bestemmes av hvor det står i tallet. Femtallet i 5000 og femtallet i 15 er samme tegn, men de betyr ikke det samme. Det andre grepet er et eget tegn for null (Siegmund-Schultze, 2024). Uten null kan du ikke ha plassverdi i det hele tatt, for da har du ingen måte å si at en plass er tom."
+        },
+        {
+            "type": "component",
+            "name": "NullOppdagelsen",
+            "props": {
+                "title": "Skriv tallet uten null",
+                "target": "205",
+                "columns": ["Hundrere", "Tiere", "Enere"]
+            }
+        },
+        {
+            "type": "text",
+            "content": "Det er dette som gjør null til noe mer enn ingenting. Så lenge null bare er et hull i papiret, kan ingen vite hvor stort tallet er. I India tok de steget videre og behandlet null som et tall på linje med de andre, noe du kan legge til, trekke fra og regne med. Matematikeren Brahmagupta, som levde fra rundt 598 til 665, altså like etter guptatiden, skrev ned regnereglene for det (Christiansen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "At ideen slo rot nettopp her, hadde trolig noe med kulturen å gjøre. Hinduismen ga plass til tomhet, kalt sunya, og til det formløse og uendelige som egenskaper ved det som ligger bak alt. Sunya ble også navnet på det nye tallet (Christiansen, 2026). Der andre kulturer så et tomrom som skulle unngås, hadde inderne allerede et ord for det."
+        },
+        { "type": "header", "text": "Aryabhata ser at jorda snurrer" },
+        {
+            "type": "text",
+            "content": "Den mest kjente forskeren fra guptatiden het Aryabhata og levde fra 476 til 550. Han skrev boka Aryabhatiya, og han skrev den på vers, slik at den var lettere å huske utenat. Boka viser at han kjente til titallsystemet, og der står det også hvordan man løser vanskelige likninger (Elgarøy, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "To ting derfra er verdt å stoppe ved. Aryabhata regnet ut at forholdet mellom omkretsen og diameteren i en sirkel er omtrent 3,1416. Det er tallet vi kaller pi, og verdien hans stemmer på fire desimaler. Og han hevdet at himmellegemenes daglige bevegelse over himmelen skyldes at jorda roterer (Elgarøy, 2025). Det er tusen år før Kopernikus."
+        },
+        {
+            "type": "text",
+            "content": "Tenk over hvor dristig det er. Alt du ser med øynene, sier at bakken ligger stille og at sola går over himmelen. Aryabhata snudde det: sola står stille, og det er vi som blir båret rundt. I mikrospillet under kan du prøve det selv."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": { "gameId": "aryabhatas-natt-3d" }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Astronom studerer stjernehimmelen fra et tak i India på 500-tallet",
+            "caption": "Aryabhata mente at det er jorda som snurrer, ikke himmelen. Det tok Europa tusen år å komme til samme svar."
+        },
+        { "type": "header", "text": "Veien til Europa" },
+        {
+            "type": "text",
+            "content": "Rundt år 600 finnes den første nedskrevne dokumentasjonen på det indiske titallsystemet med plassverdi, og derfra kom det til Europa gjennom araberne i århundrene som fulgte (Siegmund-Schultze, 2024). Veien gikk om [Det islamske gullaldet](/historie/midtoesten/islamsk-gullaldet), der lærde i Bagdad oversatte indiske og greske verk til arabisk og bygde videre på dem. Den arabiske oversettelsen av Aryabhatiya fikk stor innflytelse (Elgarøy, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Derfor kaller vi dem ofte arabiske tall. Navnet er en halv sannhet. Tallene ble laget i India, og araberne fraktet dem videre. Selv europeiske kjøpmenn brukte lang tid på å ta dem i bruk, for regnskapene var vant til romertall. Først da handelen ble stor og komplisert nok, vant det systemet som var lettest å regne i."
+        },
+        { "type": "header", "text": "Slutten på gullalderen" },
+        {
+            "type": "text",
+            "content": "Gullaldre varer ikke evig. Midt på 400-tallet brøt hunerne inn i riket og plyndret, og det meste av det guptaene hadde bygd, ble ødelagt. I 528 falt byen Ujjain, og guptatiden var slutt (Kristiansen mfl., 2024). Britannica regner dynastiet som borte rundt midten av 500-tallet, etter at invasjonene hadde krympet riket til nesten ingenting (The Editors of Encyclopaedia Britannica, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Det er en historie som gjentar seg. Omtrent samtidig, i 476, mistet [Vestromerriket](/historie/romerriket/vestromerrikets-fall) sin siste keiser. To store riker i hver sin ende av Eurasia gikk i oppløsning i samme århundre, begge under press fra grupper som kom utenfra."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ruiner av en indisk tempelby med gresset som vokser mellom steinene",
+            "caption": "Riket forsvant på under to hundre år. Tallene det ga fra seg, bruker du fortsatt."
+        },
+        {
+            "type": "text",
+            "content": "Og det er kanskje poenget. Guptariket varte i litt over to hundre år, omtrent like lenge som [Mogulriket](/historie/indias-historie/mogulriket) tusen år senere. Grensene ble visket ut, hovedstaden falt og navnene på keiserne er glemt av de fleste. Men de ti sifrene fra dette hjørnet av verden ligger i lomma di, i hvert eneste tall telefonen din regner med. Riker faller. Gode ideer gjør ikke det."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Når ble Guptariket samlet, og hvilken by var hovedsetet?",
+                    "Hvilke to grep gjorde det indiske tallsystemet bedre enn romertall?",
+                    "Hvem var Aryabhata, og hva het boka han skrev?",
+                    "Hva skjedde med Guptariket midt på 400-tallet, og hvilket år falt Ujjain?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor plassverdi ikke fungerer uten et tegn for null.",
+                    "Hvorfor er det lettere å gange to tall når de er skrevet med indiske sifre enn med romertall? Bruk et eksempel.",
+                    "Guptatiden kalles en gullalder. Hva må til i et samfunn for at folk skal få tid til forskning og diktning?",
+                    "Aryabhata mente at jorda snurrer, selv om alt han så med øynene sa noe annet. Hva sier det om forskjellen på å se noe og å forstå det?"
+                ],
+                "gaaVidere": [
+                    "Skriv tallene 44, 90 og 1888 med romertall. Prøv så å legge sammen to av dem uten å gjøre dem om til vanlige tall. Skriv noen setninger om hvordan det gikk.",
+                    "Vi kaller sifrene arabiske tall, men de kom fra India. Diskuter i klassen hvorfor oppfinnelser ofte får navn etter dem som fraktet dem videre, og ikke etter dem som fant dem opp.",
+                    "Finn tre steder i hverdagen din der plassverdi er helt nødvendig for at noe skal fungere."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Omtrent når styrte Guptariket over det meste av Nord-India?",
+                        "options": [
+                            "På 100- og 200-tallet fvt.",
+                            "På 300- og 400-tallet evt.",
+                            "På 800- og 900-tallet evt.",
+                            "På 1500-tallet evt."
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Guptaene samlet riket rundt år 320, og perioden regnes som gullalderen i klassisk India."
+                    },
+                    {
+                        "question": "Hva er plassverdi?",
+                        "options": [
+                            "At hvert siffer alltid er verdt det samme",
+                            "At tall skrives med bokstaver",
+                            "At verdien til et siffer bestemmes av hvor det står i tallet",
+                            "At null betyr det samme som ingenting"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Femtallet i 5000 og femtallet i 15 er samme tegn, men plassen bestemmer hvor mye det er verdt."
+                    },
+                    {
+                        "question": "Hvorfor er nullen nødvendig i et system med plassverdi?",
+                        "options": [
+                            "Fordi den gjør tallene kortere",
+                            "Fordi den viser at en plass er tom, slik at alle leser tallet likt",
+                            "Fordi den brukes til å gange",
+                            "Fordi romerne brukte den"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Uten null blir 2 og 5 med et tomrom imellom umulig å tolke. Er det 25, 205 eller 2005?"
+                    },
+                    {
+                        "question": "Hva hevdet Aryabhata om himmelens daglige bevegelse?",
+                        "options": [
+                            "At stjernene henger i en krystallkule",
+                            "At sola beveger seg rundt jorda",
+                            "At bevegelsen skyldes at jorda roterer",
+                            "At månen skygger for stjernene"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Aryabhata skrev at himmellegemenes daglige bevegelse skyldes jordas rotasjon, rundt tusen år før Kopernikus."
+                    },
+                    {
+                        "question": "Hvordan kom de indiske tallene til Europa?",
+                        "options": [
+                            "Med vikingene over Nordsjøen",
+                            "Gjennom araberne i århundrene etter år 600",
+                            "Med romerske soldater",
+                            "De ble funnet opp på nytt i Italia"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Det indiske titallsystemet er dokumentert rundt år 600 og kom til Europa via arabiske lærde. Derfor kalles sifrene ofte arabiske tall."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Christiansen, S. H. (2026). *Matematikk*. Store norske leksikon. Hentet 03.08.2026 fra https://snl.no/matematikk",
+                    "Elgarøy, Ø. (2025). *Aryabhata*. Store norske leksikon. Hentet 03.08.2026 fra https://snl.no/Aryabhata",
+                    "Filseth, G. (2025). *Gupta*. Store norske leksikon. Hentet 03.08.2026 fra https://snl.no/Gupta",
+                    "Kristiansen, K., Filseth, G. & Waldrop, A. (2024). *Indias historie*. Store norske leksikon. Hentet 03.08.2026 fra https://snl.no/Indias_historie",
+                    "Siegmund-Schultze, R. (2024). *Indisk matematikk*. Store norske leksikon. Hentet 03.08.2026 fra https://snl.no/indisk_matematikk",
+                    "The Editors of Encyclopaedia Britannica. (2026). *Gupta dynasty*. Encyclopædia Britannica. Hentet 03.08.2026 fra https://www.britannica.com/topic/Gupta-dynasty"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

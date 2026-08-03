@@ -1400,6 +1400,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "guptariket",
+      "title": "Guptariket: da verden fikk tallene sine",
+      "description": "I gullalderen til Guptariket ble tallsystemet vi bruker i dag satt sammen: ti sifre, plassverdi og en null som er et ekte tall.",
+      "startDate": 320,
+      "endDate": 550,
+      "displayDate": "320-550",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "indias-historie",
+      "link": "/historie/indias-historie/guptariket",
+      "tags": [
+        "india",
+        "guptariket",
+        "matematikk",
+        "astronomi",
+        "oldtiden",
+        "vitenskap"
+      ],
+      "lat": 22,
+      "lng": 79,
+      "placeLabel": "India",
+      "placeCountryId": 356,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "bysantinske-riket",
       "title": "Det bysantinske riket",
       "description": "Romerriket falt ikke i 476. Den østlige halvdelen levde videre i nesten tusen år til.",
