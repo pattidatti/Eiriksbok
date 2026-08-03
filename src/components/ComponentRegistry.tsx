@@ -160,6 +160,7 @@ const ResistensSim = lazy(() => import('./content/interactive/ResistensSim').the
 const IdeologiSorter = lazy(() => import('./content/interactive/IdeologiSorter').then(m => ({ default: m.IdeologiSorter })));
 const GlossaryTooltip = lazy(() => import('./content/interactive/GlossaryTooltip').then(m => ({ default: m.GlossaryTooltip })));
 const ScenarioRoleplay = lazy(() => import('./content/interactive/ScenarioRoleplay').then(m => ({ default: m.ScenarioRoleplay })));
+const Sidevalget1857 = lazy(() => import('./content/interactive/Sidevalget1857').then(m => ({ default: m.Sidevalget1857 })));
 const DragDropTimeline = lazy(() => import('./content/interactive/DragDropTimeline').then(m => ({ default: m.DragDropTimeline })));
 const PackTheBag = lazy(() => import('./content/interactive/PackTheBag').then(m => ({ default: m.PackTheBag })));
 const DebateSimulator = lazy(() => import('./content/interactive/DebateSimulator').then(m => ({ default: m.DebateSimulator })));
@@ -505,6 +506,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     IdeologiSorter,
     GlossaryTooltip,
     ScenarioRoleplay,
+    Sidevalget1857,
     DragDropTimeline,
     PackTheBag,
     DebateSimulator,

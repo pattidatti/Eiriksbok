@@ -855,6 +855,10 @@
       "count": 28
     },
     {
+      "tag": "1800-tallet",
+      "count": 26
+    },
+    {
       "tag": "verdensorden",
       "count": 26
     },
@@ -880,10 +884,6 @@
     },
     {
       "tag": "hverdagsliv",
-      "count": 24
-    },
-    {
-      "tag": "1800-tallet",
       "count": 24
     },
     {
@@ -1007,6 +1007,10 @@
       "count": 11
     },
     {
+      "tag": "kolonialisering",
+      "count": 11
+    },
+    {
       "tag": "dialekt",
       "count": 11
     },
@@ -1080,10 +1084,6 @@
     },
     {
       "tag": "sjørøveri",
-      "count": 9
-    },
-    {
-      "tag": "kolonialisering",
       "count": 9
     },
     {
@@ -2500,6 +2500,14 @@
     },
     {
       "tag": "vann",
+      "count": 2
+    },
+    {
+      "tag": "opprør",
+      "count": 2
+    },
+    {
+      "tag": "britisk-imperium",
       "count": 2
     },
     {

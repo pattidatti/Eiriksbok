@@ -42,6 +42,7 @@ const AryabhatasNatt3D = lazy(() => import('./AryabhatasNatt3D'));
 const MonumentTorget3D = lazy(() => import('./MonumentTorget3D'));
 const Teknologibolgen3D = lazy(() => import('./Teknologibolgen3D'));
 const Nyheitsbobla3D = lazy(() => import('./Nyheitsbobla3D'));
+const Telegraflinja3D = lazy(() => import('./Telegraflinja3D'));
 const Konsekvensbolgen3D = lazy(() => import('./Konsekvensbolgen3D'));
 const Levekaarsgapet3D = lazy(() => import('./Levekaarsgapet3D'));
 const Streikefronten3D = lazy(() => import('./Streikefronten3D'));
@@ -786,6 +787,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 120,
         loader: () => import('./TheodosianWalls3D'),
         Component: TheodosianWalls3D as never,
+    },
+    'telegraflinja-1857': {
+        id: 'telegraflinja-1857',
+        title: 'Telegraflinja: kappløpet i 1857',
+        description:
+            'Opprøret sprer seg langs sletta i Nord-India. Send telegrammer i tide, dosér trykket på linja, og berg Punjab.',
+        estimatedSeconds: 160,
+        loader: () => import('./Telegraflinja3D'),
+        Component: Telegraflinja3D as never,
     },
     'hamskiftet-3d': {
         id: 'hamskiftet-3d',
