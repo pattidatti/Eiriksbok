@@ -13,13 +13,13 @@
         "tor"
     ],
     "createdDate": "2025-12-09T23:00:00Z",
-    "lastUpdated": "2025-12-09T23:40:00Z",
+    "lastUpdated": "2026-08-03T00:00:00Z",
     "layout": "rich",
     "content": [
         {
             "type": "text",
             "title": "Ikke en 'religion' slik vi kjenner det",
-            "content": "Når vi tenker på religion i dag, tenker vi ofte på hellige bøker, templer, prester og regler for hvem som er 'syndig'. Åsatrua hadde ingenting av dette. De hadde ingen bibel, ingen pave, og ingen 'Ti bud'. Vikingene kalte det ikke engang en religion, men 'Den gamle sed' (skikken).\n\nDet var en praksisbasert tro. Det handlet om å gjøre avtaler med maktene. Du ga noe (et blot, et offer) for å få noe tilbake (god avling, seier i krig, trygg seilas). Gudene var ikke allmektige eller 'gode'. De var mektige, ja, men også lunefulle, farlige og veldig menneskelige. Du tilba dem ikke av kjærlighet, men av respekt – og litt frykt."
+            "content": "Når vi tenker på religion i dag, tenker vi ofte på hellige bøker, templer, prester og regler for hvem som er 'syndig'. Åsatrua hadde ingenting av dette. De hadde ingen bibel, ingen pave, og ingen 'Ti bud'. Folk i Norden så på religion som en naturlig og selvfølgelig del av verden, og forholdt seg til den mer som handlinger, sedvane og skikker enn som et spørsmål om personlig tro (Magerøy & Næss, 2024).\n\nDet handlet om å gjøre avtaler med maktene. Du ga noe (et blot, et offer) for å få noe tilbake, som god avling eller krigslykke (Magerøy & Næss, 2024). Gudene hadde hver sine områder: Tor rådde over torden og vær, Odin ga mot i kamp, og Frøy ga fred og grøde (Magerøy & Næss, 2024). Mektige var de, men ikke allmektige. Selv gudene visste at ragnarok ville komme, og ikke engang de kunne endre den skjebnen nornene rådde over (Næss, 2025b). Du tilba dem ikke av kjærlighet, men av respekt - og litt frykt."
         },
         {
             "type": "component",
@@ -28,25 +28,25 @@
         {
             "type": "text",
             "title": "Yggdrasil og de ni verdener",
-            "content": "I sentrum av alt sto treet Yggdrasil. Dets greiner strakte seg over hele universet. Verden var delt inn i ulike riker:"
+            "content": "I sentrum av alt sto treet Yggdrasil, et asketre som står midt i verden. Treet er alltid grønt, og greinene strekker seg over hele verden (Næss, 2026). Treet har tre røtter som går til hvert sitt rike. Verden var delt inn slik:"
         },
         {
             "type": "list",
             "items": [
                 "Åsgard: Gudenes hjem, hvor Odin og Tor bodde.",
-                "Midgard: Menneskenes verden (vår verden), beskyttet av en mur (laget av Ymes øyevipper!) mot kaoskreftene.",
+                "Midgard: Menneskenes verden (vår verden), beskyttet av en mur laget av øyenbrynene til urjotnen Yme.",
                 "Utgard/Jotunheim: Hjemmet til jotnene (kjempene), kaoskreftene som alltid truet med å ødelegge verden.",
-                "Helheim: Dødsriket, styrt av gudinnen Hel."
+                "Helheim: Dødsriket under jorda, styrt av gudinnen Hel."
             ]
         },
         {
             "type": "text",
-            "content": "Hele vikingenes verdensbilde handlet om balanse. Gudene var ordenens voktere. Jotnene var kaos. Menneskene levde midt imellom. Hvis balansen tippet, ville Ragnarok – verdens undergang – komme. Derfor var det menneskenes jobb å hjelpe gudene ved å ofre til dem."
+            "content": "Odin og brødrene hans drepte urjotnen Yme og lagde verden av kroppen hans: kjøttet ble jord, beina og tennene ble fjell og stein, blodet og svetten ble hav og vann, og håret ble skog. Av øyenbrynene hans lagde de en mur rundt Midgard, som vern mot jotnene og kaoskreftene (Næss, 2024b). Utgard lå på den andre siden av verdenshavet, og derfra truet jotnene både mennesker og guder (Næss, 2024b). Dødsriket Hel lå under jorda, og dit trodde man at folk kom når de døde (Næss, 2024a).\n\nHele vikingenes verdensbilde handlet om balanse. Gudene var ordenens voktere. Jotnene var kaos. Menneskene levde midt imellom. Hvis balansen tippet, ville Ragnarok - verdens undergang - komme. Derfor var det menneskenes jobb å hjelpe gudene ved å ofre til dem."
         },
         {
             "type": "text",
             "title": "Skjebnen er sjefen",
-            "content": "Det kanskje viktigste begrepet i norrøn tid var skjebne. Vikingene trodde at tre kvinner – Nornene (Urd, Verdande og Skuld) – satt ved Yggdrasils rot og spant livstråden til hvert eneste menneske. Den dagen du ble født, var dagen du skulle dø allerede bestemt. Ingen gud, ikke engang Odin, kunne endre dette.\n\nDette ga vikingene en enorm dødsforakt. Hvorfor være redd i kamp? Hvis det er din dag å dø, dør du uansett om du gjemmer deg under senga eller stormer fremst i krigen. Da er det bedre å dø stående med ære, for ettermælet (hva folk sier om deg etterpå) er det eneste som lever evig.\n\n> «Fe dør, frender dør, en selv dør på samme vis; men ordets glans skal aldri dø i et ærefullt ettermæle.» (Håvamål)"
+            "content": "Det kanskje viktigste begrepet i norrøn tid var skjebne. Nornene var kvinnelige vesener som visste om og formet skjebnen til både mennesker og guder. De var til stede når et barn ble født, og de avgjorde skjebnen til hvert menneske (Næss, 2024c). De tre viktigste het Urd, Verdande og Skuld, og navnene peker mot fortid, nåtid og framtid. Noen kilder sier de skar runer i tre, andre at de spant og klipte tråder for å forme skjebnen (Næss, 2024c). De holdt til under verdenstreet Yggdrasil, ved Urds brønn (Næss, 2024c).\n\nIkke engang gudene kom utenom skjebnen. De visste at ragnarok ville komme, men heller ikke de kunne endre den skjebnen nornene rådde over (Næss, 2025b).\n\nDette ga vikingene en enorm dødsforakt. Hvorfor være redd i kamp? Hvis det er din dag å dø, dør du uansett om du gjemmer deg under senga eller stormer fremst i krigen. Da er det bedre å dø stående med ære, for ettermælet (hva folk sier om deg etterpå) er det eneste som lever evig.\n\n> «Døyr fe; døyr frendar; døyr sjølv det same. Men ordet om deg aldri døyr vinn du eit gjetord gjævt.» (Håvamål 76, i Ivar Mortensson-Egnunds omsetjing fra 1905)"
         },
         {
             "type": "header",
@@ -54,28 +54,28 @@
         },
         {
             "type": "text",
-            "content": "Vikingenes etikk er best kjent fra diktet Håvamål ('Den høyes tale'). Her er det ikke bud om å 'du skal ikke', men snarere gode råd om hvordan man overlever sosialt og fysisk. Vett, vennskap og forsiktighet går igjen."
+            "content": "Vikingenes etikk er best kjent fra diktet Håvamål ('Den høyes tale'). Det er et dikt på 164 strofer i Den eldre Edda, framstilt som talen til Odin, og 'Håve' er et annet navn på Odin (Nordbø, 2025). Her er det ikke bud om 'du skal ikke', men snarere gode råd om hvordan man overlever sosialt og fysisk. Diktet legger vekt på gjestfrihet, lojalitet og måtehold, og advarer mot dumskap og for stor tillit. Vennskap og godt ettermæle blir satt høyere enn rikdom (Nordbø, 2025)."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Betre bør du ber kje i bakkane enn mannavit mykje. (Bedre last bærer du ikke i bakkene enn mye mannevett).",
-                "author": "Håvamål"
+                "text": "Betre byrdi du ber 'kje i bakken enn mannavit mykje. (Du bærer ingen bedre oppakning i bakkene enn mye vett.)",
+                "author": "Håvamål 10, omsett av Ivar Mortensson-Egnund (1905)"
             }
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Veit du ein ven som vel du trur, og du vil gagn av han ha: gjev han heile di sjel og gåver send, og gakk ofte hans veg.",
-                "author": "Håvamål"
+                "text": "Veit du ein ven som vel du trur, og du hjaa han fagnad vil faa: gjev han heile din hug og gaava ei spar, far og finn han ofte. (Har du en venn du stoler på og vil ha glede av: gi ham hele din hu, ikke spar på gaver, og oppsøk ham ofte.)",
+                "author": "Håvamål 44, omsett av Ivar Mortensson-Egnund (1905)"
             }
         },
         {
             "type": "text",
             "title": "Blot og hverdagstro",
-            "content": "Religionen var en del av hverdagen. Man blotet (ofret) til alvene under dørstokken for å beskytte huset. Man helte øl på ilden til ørnene. Store offringer skjedde ved jevndøgn og solverv (jul). Et blot var en fest hvor man drepte dyr og spiste kjøttet sammen med gudene (symbolsk). Blodet ble stenket på deltakerne for å gi dem styrke.\n\nDa kristendommen kom med sine kirker, prester og forbud mot hestekjøtt, var det et kultursjokk. Kristendommen krevde underkastelse og ydmykhet. Åsatru krevde mot og handling. Det var to fundamentalt forskjellige måter å være menneske på."
+            "content": "Religionen var en del av hverdagen. Blotene ble holdt ved faste årstider og ved kriser, for gode avlinger eller krigslykke (Magerøy & Næss, 2024). Man ofret gjenstander, dyr eller mat og drikke til gudene og maktene, og en sentral del av blotet var et felles festmåltid av kjøtt fra offerdyrene, med øl og mjød (Næss, 2025a). Blodet fra dyra ble smurt på gudefigurene, på veggene i og utenfor hovet, og også på deltakerne (Næss, 2025a). Etter sagaene var det tre store blot i året: om høsten for god årsvekst, midtvinters (jul) for grøden i året som kom, og om våren for krigslykke (Næss, 2025a).\n\nDa kristendommen kom, fulgte det med kirker, prester og en helt ny kristenrett. Kristenretten var den delen av loven som gjaldt kirken, og den straffet blant annet det å arbeide på en helligdag, å nekte å døpe barna sine eller å gifte seg med mer enn én (Hatløy & Norseng, 2024). Kristendommen krevde underkastelse og ydmykhet. Åsatru krevde mot og handling. Det var to fundamentalt forskjellige måter å være menneske på."
         },
         {
             "type": "image",
@@ -97,21 +97,39 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva kalte vikingene selv troen sin, i stedet for ordet religion?",
-                    "Nevn minst tre av de ni verdenene i Yggdrasil, og forklar kort hvem eller hva som bodde i hver av dem.",
+                    "Hvordan forholdt folk i Norden seg til religionen sin, ifølge teksten - som personlig tro, eller som handlinger og skikker?",
+                    "Nevn minst tre av rikene rundt Yggdrasil, og forklar kort hvem eller hva som bodde i hvert av dem.",
                     "Hvem var Nornene, og hva var oppgaven deres ved Yggdrasils rot?",
                     "Hva var et blot, og hva håpet vikingene å få igjen for det?"
                 ],
                 "reflekter": [
-                    "Teksten sier at vikingene tilba gudene av respekt og litt frykt, ikke av kjærlighet. Forklar hvorfor gudene ble sett på som mektige, men verken gode eller allmektige.",
-                    "Vikingene mente at dødsdagen din var bestemt allerede da du ble født. Forklar hvordan denne skjebnetroen kunne gi dem stor dødsforakt i kamp.",
-                    "Hvorfor var det så viktig for vikingene å få et godt ettermæle? Bruk sitatet fra Håvamål om at ordets glans aldri dør.",
+                    "Teksten sier at vikingene tilba gudene av respekt og litt frykt, ikke av kjærlighet. Forklar hvorfor gudene ble sett på som mektige, men ikke allmektige.",
+                    "Nornene avgjorde skjebnen til hvert menneske, og ikke engang gudene kunne endre den. Forklar hvordan denne skjebnetroen kunne gi vikingene stor dødsforakt i kamp.",
+                    "Hvorfor var det så viktig for vikingene å få et godt ettermæle? Bruk sitatet fra Håvamål om at ordet om deg aldri dør.",
                     "Sammenlign åsatru og kristendommen slik teksten beskriver dem. Hvorfor var møtet mellom de to et kultursjokk?"
                 ],
                 "gaaVidere": [
                     "Håvamål gir råd om vennskap, vett og forsiktighet i stedet for bud om hva du ikke skal gjøre. Skriv tre korte leveregler for livet ditt i dag i samme stil som Håvamål.",
                     "Diskuter med en partner: Vikingene brydde seg mye om hva folk sa om dem etter at de var døde. Hvor mye betyr ryktet eller ettermælet ditt for folk i dag?",
                     "Skriv en kort tekst (5-8 setninger) om hvordan livet ditt ville sett annerledes ut hvis du trodde at dødsdagen din allerede var bestemt og ikke kunne endres."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hatløy, B. T. & Norseng, P. G. (2024). *Kristenrett*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/kristenrett](https://snl.no/kristenrett)",
+                    "Magerøy, H. & Næss, E. M. (2024). *Norrøn religion*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/norrøn_religion](https://snl.no/norr%C3%B8n_religion)",
+                    "Mortensson-Egnund, I. (omsett) (1905). *Håvamål*. I *Edda-kvæde: Norrøne fornsongar*. Det norske samlaget. Hentet 03.08.2026 fra [no.wikisource.org](https://no.wikisource.org/wiki/H%C3%A5vam%C3%A5l)",
+                    "Nordbø, B. (2025). *Håvamål*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Håvamål](https://snl.no/H%C3%A5vam%C3%A5l)",
+                    "Næss, E. M. (2024a). *Hel*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Hel](https://snl.no/Hel)",
+                    "Næss, E. M. (2024b). *Midgard*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Midgard](https://snl.no/Midgard)",
+                    "Næss, E. M. (2024c). *Norner*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/norner](https://snl.no/norner)",
+                    "Næss, E. M. (2025a). *Blot*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/blot](https://snl.no/blot)",
+                    "Næss, E. M. (2025b). *Ragnarok*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Ragnarok](https://snl.no/Ragnarok)",
+                    "Næss, E. M. (2026). *Yggdrasil*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Yggdrasil](https://snl.no/Yggdrasil)"
                 ]
             }
         }

@@ -12,18 +12,18 @@
         "alfred-den-store"
     ],
     "createdDate": "2025-12-09T23:00:00Z",
-    "lastUpdated": "2025-12-09T23:45:00Z",
+    "lastUpdated": "2026-08-03T00:00:00Z",
     "layout": "rich",
     "content": [
         {
             "type": "text",
             "title": "Den store hedenske hæren",
-            "content": "I 865 skjedde det noe nytt. Vikingene kom ikke lenger bare for å plyndre og dra hjem. De kom for å bli. En enorm flåte, kjent i engelske krøniker som 'The Great Heathen Army', landet i East Anglia. De var ledet av brødrene Ivar Beinlause, Halvdan og Ubbe – angivelig sønner av legenden Ragnar Lodbrok.\n\nI løpet av ti år knuste de kongerikene Northumbria, East Anglia og Mercia. Kongene ble drept (noen sier med den forferdelige 'blodørn'-metoden, selv om historikere er usikre på om den er ekte). Bare ett kongerike sto igjen: Wessex, helt sør i England."
+            "content": "I 865 skjedde det noe nytt. Vikingene kom ikke lenger bare for å plyndre og dra hjem. De kom for å bli. Den store hedenske hæren, kjent i engelske kilder som 'The Great Heathen Army', kom til East Anglia i 865, og målet var å erobre, ikke bare å plyndre (Encyclopaedia Britannica, 2026). En av lederne var Ivar Beinlause, og etter sagaene ville han og brødrene hans hevne faren sin, Ragnar Lodbrok (Encyclopaedia Britannica, 2026).\n\nI løpet av få år erobret hæren de angelsaksiske kongerikene Northumbria, East Anglia og Mercia. Bare ett kongerike holdt stand: Wessex, helt sør i England, under kong Alfred (Encyclopaedia Britannica, 2026)."
         },
         {
             "type": "text",
             "title": "Alfred den Store og delingen av England",
-            "content": "Kongen av Wessex, Alfred, var nær ved å tape alt. Han måtte en periode gjemme seg i myrene spiste brente kaker (ifølge legenden). Men han klarte å samle troppene og vinne et avgjørende slag ved Edington i 878. Vikinghøvdingen Guthrum måtte overgi seg og la seg døpe.\n\nResultatet ble en fredsavtale som delte England i to:"
+            "content": "Kongen av Wessex, Alfred, var nær ved å tape alt. Etter flukten fra Chippenham måtte han ut i ødemarkene i Somerset med en håndfull menn (Lunga, 2024). Til flukten hører den kjente legenden om at kongen søkte tilflukt hos en svinerøkter, og at han lot brødet svi seg fordi han satt dypt i tanker (Lunga, 2024). Men han klarte å samle troppene, og i mai 878 vant han en avgjørende seier over vikinghæren i slaget ved Edington (Lunga, 2024). Vikinghøvdingen Guthrum ble slått, lot seg døpe og bosatte seg i East Anglia. Rundt 880 stadfestet Alfred og Guthrum freden i en avtale som satte grensen mellom England og Danelagen (Lunga, 2025).\n\nResultatet ble en fredsavtale som delte England i to:"
         },
         {
             "type": "list",
@@ -35,7 +35,7 @@
         },
         {
             "type": "text",
-            "content": "I Danelagen gjaldt vikingenes lover. Her bosatte tusenvis av skandinaver seg. De var ikke bare krigere, men bønder, handelsmenn og håndverkere. Byen Jorvik (York) vokste til å bli en av Europas største og rikeste handelsbyer under vikingstyre."
+            "content": "Danelagen var den delen av England der dansk og norsk lov gjaldt, og den omfattet Northumbria, East Anglia og deler av Mercia (Lunga, 2025). Skandinavene hadde en viss selvstendighet og fulgte egne skikker og egne lover i mange saker (Lunga, 2025). Her bosatte tusenvis av skandinaver seg. De var ikke bare krigere, men bønder, handelsmenn og håndverkere, og de skandinaviske stedsnavnene ligger fortsatt tett i nord og øst i England (Lunga, 2025). Byen York het Jorvik og var et hovedsentrum i Danelagen fra 867. I høymiddelalderen var York trolig Englands største by og et sentrum for ullhandelen (Pihl & Skatvik, 2025)."
         },
         {
             "type": "component",
@@ -43,20 +43,20 @@
         },
         {
             "type": "text",
-            "title": "Sproget ditt er fra vikingtiden",
-            "content": "Vikingenes største arv i England er ikke brente klostre, men sproget. Fordi angelsaksisk (gammelengelsk) og norrønt var ganske like språk, smeltet de sammen i Danelagen. Engelskmennene begynte å bruke de enkle norrøne ordene fordi de var lettere.\n\nOrdene forteller oss hva vikingene drev med:"
+            "title": "Språket ditt er fra vikingtiden",
+            "content": "Vikingenes største arv i England er ikke brente klostre, men språket. Angelsaksisk (gammelengelsk) og norrønt var ganske like språk, og i Danelagen smeltet de sammen. Området East Midland, der dialekten senere utviklet seg til moderne engelsk, faller nesten helt sammen med den tett befolkede sørlige delen av Danelagen (Nickelsen, 2012).\n\nSvært mange helt vanlige engelske ord har nordisk opphav:"
         },
         {
             "type": "list",
             "items": [
-                "Krig: Gun, slaughter, berserk.",
-                "Samfunn: Law, by-law, husting, outlaw.",
-                "Hverdag: Egg, knife, vindauge (window), husband, sister, take, give, die."
+                "Hverdag: egg, knife, window, husband, sister, take, give, die.",
+                "Samfunn og lov: law, fellow, trust, guest, gift.",
+                "Kropp og natur: leg, skin, skirt, sky."
             ]
         },
         {
             "type": "text",
-            "content": "Selv pronomenet 'they' (de) er lånt fra norrønt! Uten vikingene ville engelsk hørtes veldig annerledes ut – mye mer som tysk."
+            "content": "Påvirkningen stoppet ikke ved ordene. Forskere mener at også grammatiske ord og former ble overtatt fra skandinavisk, og at setningsbygningen i moderne engelsk har skandinaviske trekk (Nickelsen, 2012). Uten vikingene ville engelsk hørtes ganske annerledes ut."
         },
         {
             "type": "image",
@@ -67,14 +67,14 @@
         {
             "type": "text",
             "title": "Slutten på Danelagen",
-            "content": "Selv om engelske konger gradvis gjenerobret Danelagen på 900-tallet, beholdt området sitt særpreg lenge. Folk fortsatte å ha norrøne navn og følge norrøne skikker. Og vikingene kom tilbake. Tidlig på 1000-tallet erobret danske konger (Svein Tjugeskjegg og Knut den Mektige) hele England.\n\nKnut den Mektige styrte et 'Nordsjø-imperium' som besto av England, Danmark og Norge. I en kort periode var England midtpunktet i et skandinavisk storrike. Det endte definitivt i 1066, da Harald Hardråde tapte ved [Stamford Bridge](/oving/spill/skjoldborg) – bare dager før de 'franske vikingene' (normannerne) erobret England for godt."
+            "content": "Engelske konger tok gradvis Danelagen tilbake på 900-tallet. Kong Æthelstan vant Northumbria i 927, men vikingene fikk kontrollen igjen fra 939, og området ble først endelig nedkjempet i Northumbria i 954 (Lunga, 2025). Likevel beholdt området sitt særpreg lenge. Folk fortsatte å ha norrøne navn og følge norrøne skikker. Og vikingene kom tilbake. Tidlig på 1000-tallet erobret danske konger hele England: først Svein Tjugeskjegg, og så sønnen hans, Knut den mektige (Lunga & Norseng, 2025).\n\nKnut var konge i England 1016-1035, i Danmark 1018-1035 og i Norge fra 1028 til 1035 (Lunga & Norseng, 2025). Han styrte altså et 'Nordsjø-imperium', og i en kort periode var England midtpunktet i et skandinavisk storrike. Det endte i 1066. Ved [Stamford Bridge](/oving/spill/skjoldborg) 25. september ble Harald Hardråde truffet av en pil i strupen og falt, og mange ser dette slaget som avslutningen på vikingtiden. Knappe tre uker senere, 14. oktober, vant normannerne slaget ved Hastings og erobret England for godt (Lunga & Hjardar, 2026)."
         },
         {
             "type": "list",
             "items": [
                 "Vikingene gikk fra plyndring til erobring og bosetting.",
                 "England ble delt i to: Wessex og Danelagen.",
-                "York (Jorvik) ble en vikingmetropol.",
+                "York (Jorvik) ble hovedsentrum i Danelagen fra 867.",
                 "Engelsk språk er stappfullt av norrøne låneord."
             ]
         },
@@ -86,18 +86,33 @@
                     "Hva var nytt med vikingene som kom til England i 865, sammenlignet med tidligere?",
                     "Hvilket engelsk kongerike sto igjen etter at 'The Great Heathen Army' hadde knust de andre?",
                     "Hva het slaget der Alfred vant over vikinghøvdingen Guthrum i 878, og hva måtte Guthrum gjøre etterpå?",
-                    "Hvilken by vokste til å bli en av Europas rikeste handelsbyer under vikingstyre, og hva het den på norrønt?"
+                    "Hvilken by var hovedsentrum i Danelagen fra 867, og hva het den under vikingstyret?"
                 ],
                 "reflekter": [
                     "Forklar hvorfor engelskmennene begynte å bruke norrøne ord. Hva hadde det å gjøre med at språkene lignet hverandre?",
-                    "Ordene 'law', 'outlaw', 'knife' og 'egg' kom fra vikingene. Hva forteller disse ordene oss om hva vikingene drev med i Danelagen?",
+                    "Ordene 'law', 'window', 'knife' og 'egg' kom fra vikingene. Hva forteller det oss at det er så hverdagslige ord som ble lånt inn i engelsk?",
                     "Teksten sier at England 'nesten' ble helt norsk, men at det endte i 1066. Forklar hvorfor du tror vikingene til slutt mistet grepet om England.",
                     "Sammenlign å plyndre og dra hjem med å erobre og bosette seg. Hvorfor tror du vikingene endret strategi?"
                 ],
                 "gaaVidere": [
-                    "Skriv fem setninger på norsk der du bruker så mange norrøne låneord fra engelsk som mulig (for eksempel egg, kniv, sister, take). Marker ordene og forklar hva de betyr.",
-                    "Knut den Mektige styrte et 'Nordsjø-imperium' med England, Danmark og Norge. Diskuter med en medelev: Hvordan tror du det var å styre et rike spredt over hav på 1000-tallet, uten telefon eller raske skip?",
-                    "Finn ut mer om Alfred den Store. Hvorfor tror du han fikk tilnavnet 'den Store', mens de fleste andre konger ikke fikk det?"
+                    "Skriv fem setninger på norsk der du bruker så mange norrøne låneord fra engelsk som mulig (for eksempel egg, knife, sister, take). Marker ordene og forklar hva de betyr.",
+                    "Knut den mektige styrte et 'Nordsjø-imperium' med England, Danmark og Norge. Diskuter med en medelev: Hvordan tror du det var å styre et rike spredt over hav på 1000-tallet, uten telefon eller raske skip?",
+                    "Finn ut mer om Alfred den store. Hvorfor tror du han fikk tilnavnet 'den store', mens de fleste andre konger ikke fikk det?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (2026). *Great Heathen Army*. Hentet 03.08.2026 fra [britannica.com](https://www.britannica.com/topic/Great-Heathen-Army)",
+                    "Lunga, P. S. (2024). *Alfred den store*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Alfred_den_store](https://snl.no/Alfred_den_store)",
+                    "Lunga, P. S. (2025). *Danelagen*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Danelagen](https://snl.no/Danelagen)",
+                    "Lunga, P. S. & Hjardar, K. (2026). *Slaget ved Stamford Bridge*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/slaget_ved_Stamford_Bridge](https://snl.no/slaget_ved_Stamford_Bridge)",
+                    "Lunga, P. S. & Norseng, P. G. (2025). *Knut den mektige*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/Knut_den_mektige](https://snl.no/Knut_den_mektige)",
+                    "Nickelsen, T. (2012). *Engelsk er eit skandinavisk språk*. Apollon, Universitetet i Oslo. Hentet 03.08.2026 fra [uio.no](https://www.uio.no/forskning/forskningsnytt/apollon/artikler/2012/4-engelsk-er-skandinavisk.html)",
+                    "Pihl, R. & Skatvik, F. (2025). *York - by i Storbritannia*. Store norske leksikon. Hentet 03.08.2026 fra [snl.no/York_-_by_i_Storbritannia](https://snl.no/York_-_by_i_Storbritannia)"
                 ]
             }
         }
@@ -116,7 +131,7 @@
         {
             "id": "nordsjoimperiet",
             "term": "Nordsjøimperiet",
-            "definition": "Riket til Knut den Mektige (England, Danmark, Norge)."
+            "definition": "Riket til Knut den mektige (England, Danmark, Norge)."
         }
     ]
 }
