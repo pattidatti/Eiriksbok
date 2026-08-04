@@ -5,7 +5,7 @@
     "year": "1844-i dag",
     "category": "Samisk religion",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/samisk/laestadianismen-hero.webp",
     "details": [
         "Presten Lars Levi Læstadius startet en vekkelse i 1840-årene og forkynte på samisk og finsk",
         "Kautokeino-opprøret i 1852 endte med drap, dødsdommer og to henrettelser",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/samisk/laestadianismen-01.webp",
             "alt": "Folk sitter tett på benker i et opplyst bedehus vinterstid",
             "caption": "Et læstadiansk bedehus i Nord-Norge. Her ble det forkynt på samisk og kvensk lenge etter at skolen hadde forbudt begge språkene."
         },
@@ -84,7 +84,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/samisk/laestadianismen-02.webp",
             "alt": "Snødekt bygd i Finnmark med tømmerhus og lave fjell i bakgrunnen",
             "caption": "Kautokeino, der striden mellom de vakte og øvrigheta endte i vold i november 1852."
         },
@@ -211,7 +211,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/samisk/laestadianismen-03.webp",
             "alt": "Enkelt hvitmalt bedehus i en nordnorsk bygd med fjell bak",
             "caption": "Bedehuset står fortsatt i mange nordnorske bygder, ofte rett ved siden av kirken."
         },

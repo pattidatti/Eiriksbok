@@ -8,7 +8,7 @@
     "year": "2900 fvt - 550 evt",
     "category": "Religionshistorie",
     "readTime": "13 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiske-religioner/egyptisk-religion-hero.webp",
     "dimension": "doctrinal",
     "comparison_tags": ["døden", "frelse", "gudsbildet", "etikk", "hellige-skrifter"],
     "details": [
@@ -28,7 +28,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiske-religioner/egyptisk-religion-01.webp",
             "alt": "Sjakalhodet gud veier et hjerte mot en fjær i tempelsal",
             "caption": "Dommen over den døde: Anubis passer vekten mens hjertet veies mot Ma'ats fjær."
         },
@@ -85,7 +85,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiske-religioner/egyptisk-religion-02.webp",
             "alt": "Prester bærer gudestatue i prosesjon foran egyptisk tempel",
             "caption": "På festdagene ble gudestatuen båret ut. Da fikk vanlige folk se guden sin."
         },
@@ -152,7 +152,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiske-religioner/egyptisk-religion-03.webp",
             "alt": "Balsamerere pakker mumie i lintøy i verksted",
             "caption": "Balsameringen kunne ta flere måneder. Hjertet ble liggende igjen i kroppen."
         },
