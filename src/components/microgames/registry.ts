@@ -23,6 +23,7 @@ const LeonardoFlygemaskin3D = lazy(() => import('./LeonardoFlygemaskin3D'));
 const DeSjuHoydene3D = lazy(() => import('./DeSjuHoydene3D'));
 const SymbolerPaaTaket3D = lazy(() => import('./SymbolerPaaTaket3D'));
 const IngenmanslandMG = lazy(() => import('./IngenmanslandMG'));
+const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
 const Spredning3D = lazy(() => import('./Spredning3D'));
@@ -168,6 +169,15 @@ const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
+    'bedehuset-motet': {
+        id: 'bedehuset-motet',
+        title: 'Møtet i bedehuset',
+        description:
+            'Nord-Troms rundt 1900. Du står på talerstolen i et læstadiansk bedehus. På benkene sitter samisktalende, kvensktalende og norsktalende - og skolen utenfor godtar bare norsk. Hold inne og sikt på en benk for å tale rett til dem, og bytt språk mens møtet går. Glemmer du en benk, faller folk fra og salen går i oppløsning. Lyspæren: et budskap når bare fram på et språk folk forstår, og derfor ble bedehuset et fristed for samisk og kvensk.',
+        estimatedSeconds: 170,
+        loader: () => import('./Bedehuset3D'),
+        Component: Bedehuset3D as never,
+    },
     'taj-mahal-symmetri': {
         id: 'taj-mahal-symmetri',
         title: 'Speilaksen i Taj Mahal',

@@ -819,12 +819,12 @@
       "count": 40
     },
     {
-      "tag": "handel",
+      "tag": "religion",
       "count": 39
     },
     {
-      "tag": "religion",
-      "count": 37
+      "tag": "handel",
+      "count": 39
     },
     {
       "tag": "kald-krig",
@@ -903,6 +903,10 @@
       "count": 20
     },
     {
+      "tag": "kristendom",
+      "count": 20
+    },
+    {
       "tag": "renessansen",
       "count": 20
     },
@@ -935,15 +939,15 @@
       "count": 18
     },
     {
-      "tag": "kristendom",
-      "count": 17
-    },
-    {
       "tag": "olje",
       "count": 17
     },
     {
       "tag": "sivilisasjon",
+      "count": 16
+    },
+    {
+      "tag": "konflikt",
       "count": 16
     },
     {
@@ -953,10 +957,6 @@
     {
       "tag": "doctrinal",
       "count": 16
-    },
-    {
-      "tag": "konflikt",
-      "count": 15
     },
     {
       "tag": "jernalder",
@@ -1375,6 +1375,10 @@
       "count": 5
     },
     {
+      "tag": "samisk",
+      "count": 5
+    },
+    {
       "tag": "media",
       "count": 5
     },
@@ -1744,6 +1748,10 @@
     },
     {
       "tag": "urfolk",
+      "count": 3
+    },
+    {
+      "tag": "fornorsking",
       "count": 3
     },
     {
@@ -2459,6 +2467,10 @@
       "count": 2
     },
     {
+      "tag": "vekkelse",
+      "count": 2
+    },
+    {
       "tag": "telefon",
       "count": 2
     },
@@ -2492,10 +2504,6 @@
     },
     {
       "tag": "samer",
-      "count": 2
-    },
-    {
-      "tag": "fornorsking",
       "count": 2
     },
     {
@@ -3036,10 +3044,6 @@
     },
     {
       "tag": "religionshistorie",
-      "count": 2
-    },
-    {
-      "tag": "samisk",
       "count": 2
     },
     {
@@ -3644,6 +3648,14 @@
     },
     {
       "tag": "osiris",
+      "count": 1
+    },
+    {
+      "tag": "kvensk",
+      "count": 1
+    },
+    {
+      "tag": "nord-norge",
       "count": 1
     },
     {

@@ -5867,6 +5867,30 @@
       ]
     },
     {
+      "id": "laestadianismen-vekkelsen-starter",
+      "title": "Den læstadianske vekkelsen starter",
+      "description": "Presten Lars Levi Læstadius møter den samiske kvinnen Milla Clemensdotter. Etter dette forkynner han med ny kraft på finsk og samisk, og en vekkelse sprer seg over Nordkalotten.",
+      "startDate": 1844,
+      "endDate": null,
+      "displayDate": "1844",
+      "type": "sub-event",
+      "tags": [
+        "religion",
+        "samisk",
+        "kristendom",
+        "vekkelse",
+        "norge"
+      ],
+      "subjectId": "krle",
+      "topicId": "religion",
+      "link": "/krle/religion/samisk/laestadianismen",
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "miller-disappointment",
       "title": "Den store skuffelsen",
       "description": "Tusenvis av tilhengere av William Miller ventet på Jesu gjenkomst, noe som førte til dannelsen av nye trossamfunn.",
@@ -6052,6 +6076,30 @@
         "fornorsking",
         "menneskerettigheter"
       ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "kautokeino-opproret-1852",
+      "title": "Kautokeino-opprøret",
+      "description": "8. november 1852 går en gruppe læstadianske samer til angrep på øvrigheta i Kautokeino. Handelsmannen og lensmannen blir drept, og to av lederne blir henrettet i 1854.",
+      "startDate": 1852,
+      "endDate": null,
+      "displayDate": "8. november 1852",
+      "type": "sub-event",
+      "tags": [
+        "religion",
+        "samisk",
+        "kristendom",
+        "norge",
+        "konflikt"
+      ],
+      "subjectId": "krle",
+      "topicId": "religion",
+      "link": "/krle/religion/samisk/laestadianismen",
       "lat": 60.5,
       "lng": 8.5,
       "placeLabel": "Norge",

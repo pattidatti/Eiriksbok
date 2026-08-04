@@ -8359,6 +8359,21 @@
                   ],
                   "createdDate": "2026-05-28T00:00:00Z",
                   "lastUpdated": "2026-05-31T13:21:17+02:00"
+                },
+                {
+                  "id": "laestadianismen",
+                  "title": "Læstadianismen: da kristendommen ble samisk",
+                  "description": "Vekkelsen som forkynte på samisk og kvensk, og som ble et fristed for språkene under fornorskingen.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "samisk",
+                    "kvensk",
+                    "kristendom",
+                    "vekkelse",
+                    "fornorsking",
+                    "nord-norge"
+                  ],
+                  "createdDate": "2026-08-04T00:00:00Z"
                 }
               ]
             }
