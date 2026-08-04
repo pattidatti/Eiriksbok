@@ -6,18 +6,18 @@
     "category": "Det grunnleggende",
     "readTime": "9 min lesning",
     "heroImage": "/images/grunnleggende/tonearter-og-skalaer-hero.webp",
-    "ingress": "Hvorfor høres en sang glad ut, og en annen trist? Svaret ligger i skalaen — og forskjellen kan være så liten som én eneste tone.",
+    "ingress": "Hvorfor høres en sang glad ut, og en annen trist? Svaret ligger i skalaen - og forskjellen kan være så liten som én eneste tone.",
     "details": [
         "En skala er et mønster av toner som starter på grunntonen og slutter på samme tone én oktav høyere.",
         "Dur-skalaen høres lys og åpen ut. Moll-skalaen høres mørk og alvorlig ut.",
-        "Forskjellen mellom dur og moll er bare én tone — tersen, den tredje tonen i skalaen.",
+        "Forskjellen mellom dur og moll er bare én tone - tersen, den tredje tonen i skalaen.",
         "Tonearten består av en grunntone og en skalatype, for eksempel C-dur eller A-moll.",
         "Pentatoniske skalaer har bare fem toner og brukes mye i blues, rock og folkemusikk."
     ],
     "content": [
         {
             "type": "text",
-            "content": "Du sitter i kinosalen. Heltinnen smiler på lerretet, og musikken er varm og lys. Plutselig skifter scenen til et mørkt rom. Den samme melodien spilles igjen, men nå føles den trist og urolig. Komponisten har ikke skrevet ny musikk — hen har bare byttet skala."
+            "content": "Du sitter i kinosalen. Heltinnen smiler på lerretet, og musikken er varm og lys. Plutselig skifter scenen til et mørkt rom. Den samme melodien spilles igjen, men nå føles den trist og urolig. Komponisten har ikke skrevet ny musikk - hen har bare byttet skala."
         },
         {
             "type": "image",
@@ -31,19 +31,19 @@
         },
         {
             "type": "text",
-            "content": "En skala er en oppskrift på toner. Den starter på en grunntone og går oppover i et fast mønster, helt til vi når samme tone én oktav høyere. Mellom hver tone er det et bestemt antall halvtoner — det er mønsteret som gir skalaen sin stemning."
+            "content": "En skala er en oppskrift på toner. Den starter på en grunntone og går oppover i et fast mønster, helt til vi når samme tone én oktav høyere (Furnes, 2025). Mellom hver tone er det et bestemt antall halvtoner - det er mønsteret som gir skalaen sin stemning."
         },
         {
             "type": "text",
-            "content": "Tenk på et piano. Fra en tangent til neste tangent (svart eller hvit) er det et halvt steg. Fra C til D er det to halve steg — altså et helt steg. Skalaer er bygd opp av en blanding av hele og halve steg."
+            "content": "Tenk på et piano. Fra en tangent til neste tangent (svart eller hvit) er det et halvt steg. Fra C til D er det to halve steg - altså et helt steg. Skalaer er bygd opp av en blanding av hele og halve steg."
         },
         {
             "type": "text",
-            "content": "Dur-skalaen følger mønsteret hel-hel-halv-hel-hel-hel-halv. Det høres tørt ut, men prøv å gå tonene oppover i C-dur: C, D, E, F, G, A, B, C. Tonene treffer alle de hvite tangentene på pianoet. Det er ingen tilfeldighet — pianoet er bygget rundt C-dur."
+            "content": "Dur-skalaen følger mønsteret hel-hel-halv-hel-hel-hel-halv (Ruud, 2024). Det høres tørt ut, men prøv å gå tonene oppover i C-dur: C, D, E, F, G, A, B, C. Tonene treffer alle de hvite tangentene på pianoet. Det er ingen tilfeldighet - pianoet er bygget rundt C-dur."
         },
         {
             "type": "text",
-            "content": "En grunntone er hjemmebasen. Når en melodi slutter på grunntonen, kjennes det som vi har kommet trygt hjem. Når en sang ender på en annen tone, henger den i lufta. Komponister utnytter dette hele tida: de tar oss bort fra grunntonen, bygger spenning, og slipper oss tilbake igjen."
+            "content": "En grunntone er hjemmebasen. I musikkteorien kalles den tonika, og den gir en følelse av hvile (Ruud, 2019b). Når en melodi slutter på grunntonen, kjennes det som vi har kommet trygt hjem. Når en sang ender på en annen tone, henger den i lufta. Komponister utnytter dette hele tida: de tar oss bort fra grunntonen, bygger spenning, og slipper oss tilbake igjen."
         },
         {
             "type": "header",
@@ -51,11 +51,11 @@
         },
         {
             "type": "text",
-            "content": "I vestlig musikk er det to skalaer vi møter overalt: dur og moll. Dur høres lys, glad og åpen ut. Vi hører dur i bursdagssanger, popslagere og marsjer. Moll høres mørk, alvorlig og noen ganger trist ut. Vi hører moll i requier, blues og dramatiske filmscener."
+            "content": "I vestlig musikk er det to skalaer vi møter overalt: dur og moll. Dur høres lys, glad og åpen ut, mens moll gjerne oppfattes som trist og sørgmodig (Ruud, 2024, 2025a). Vi hører dur i bursdagssanger, popslagere og marsjer, og moll i rekviem, blues og dramatiske filmscener."
         },
         {
             "type": "text",
-            "content": "Navnene kommer fra latin. Dur kommer fra durus som betyr hard. Moll kommer fra mollis som betyr myk. Men ikke alle dur-sanger er glade, og ikke alle moll-sanger er triste — det er bare en sterk tendens."
+            "content": "Navnene kommer fra latin. Dur kommer fra durus som betyr hard (Ruud, 2024). Moll kommer fra mollis som betyr myk eller bløt (Ruud, 2025a). Men ikke alle dur-sanger er glade, og ikke alle moll-sanger er triste - det er bare en sterk tendens."
         },
         {
             "type": "list",
@@ -71,7 +71,7 @@
         },
         {
             "type": "text",
-            "content": "Trinnene under er den samme grunntonen i to skalaer. Klikk deg gjennom dem, spill skalaen oppover, og lytt etter forskjellen i den tredje tonen — tersen. Bytt mellom dur og moll og legg merke til hvordan stemningen flyttes."
+            "content": "Trinnene under er den samme grunntonen i to skalaer. I moll er tersen senket ett halvt steg i forhold til dur, slik at vi får en liten ters (Ruud, 2025a). Klikk deg gjennom dem, spill skalaen oppover, og lytt etter forskjellen i den tredje tonen - tersen. Bytt mellom dur og moll og legg merke til hvordan stemningen flyttes."
         },
         {
             "type": "component",
@@ -86,7 +86,7 @@
         },
         {
             "type": "text",
-            "content": "Tonearten er bare to ting satt sammen: en grunntone og en skalatype. C-dur betyr at grunntonen er C og skalaen er dur. A-moll betyr at grunntonen er A og skalaen er moll. På noter ser vi tonearten i starten av notelinjen — som kryss eller b foran tonene som skal endres."
+            "content": "Tonearten er bare to ting satt sammen: en grunntone og en skalatype (Ruud, 2019b). C-dur betyr at grunntonen er C og skalaen er dur. A-moll betyr at grunntonen er A og skalaen er moll. På noter ser vi tonearten i starten av notelinjen, mellom nøkkelen og taktangivelsen, som kryss eller b (Holter, 2024)."
         },
         {
             "type": "image",
@@ -104,15 +104,15 @@
         },
         {
             "type": "text",
-            "content": "Dur og moll har sju toner. Men det finnes også skalaer med færre toner. De viktigste er de pentatoniske, som bare har fem toner. De er enkle å improvisere over, fordi det knapt finnes feil toner."
+            "content": "Dur og moll har sju toner. Men det finnes også skalaer med færre toner. De viktigste er de pentatoniske, som bare har fem toner (Ruud, 2025b). De er enkle å improvisere over, fordi det knapt finnes feil toner."
         },
         {
             "type": "text",
-            "content": "Pentatoniske skalaer finnes i musikk fra hele verden. Mange folkesanger, blues, rock-soloer og kinesisk musikk bruker pentatoniske skalaer. Bluesskalaen er en pentatonisk skala med en ekstra blå tone som gir den rå, sårbare følelsen."
+            "content": "Pentatoniske skalaer finnes i musikk fra hele verden. De er svært utbredt i folkemusikken (Ruud, 2025b), de har formet rockemusikken og brukes mye i country og blues (Guitar.com, 2018), og i kinesisk kunstmusikk har den femtonige skalaen historisk vært selve grunnlaget (Ledang & Haug, 2024). I blues er det de blå tonene - liten ters, forminsket kvint og liten septim - som gir musikken det rå, sårbare preget (Bergh et al., 2025)."
         },
         {
             "type": "text",
-            "content": "Det finnes også eldre skalaer som kalles kirketonearter eller modi. De ble brukt i middelalderen, og noen av dem dukker opp igjen i moderne pop og film. Dorisk og frygisk er to slike modi — den ene høres folkelig ut, den andre eksotisk og spennende. Mange filmmusikere bruker frygisk når de vil at en scene skal kjennes farlig."
+            "content": "Det finnes også eldre skalaer som kalles kirketonearter eller modi. De ble særlig brukt i kirkemusikken før dur og moll tok over på 1600-tallet (Ruud, 2019a). Dorisk og frygisk er to slike modi - den ene høres folkelig ut, den andre mer eksotisk og spent. Noen av dem dukker opp igjen i moderne pop og filmmusikk, nettopp fordi de gir en annen stemning enn vanlig dur og moll."
         },
         {
             "type": "header",
@@ -120,11 +120,11 @@
         },
         {
             "type": "text",
-            "content": "Å bytte toneart kalles modulasjon, og det er et av musikkens største triks. Når en sang stiger et halvt steg opp i siste refreng, kjenner vi det med en gang. Det føles som en heis går oppover, og energien stiger. Mange popslagere bruker dette grepet bevisst for å løfte avslutningen."
+            "content": "Å bytte toneart kalles modulasjon - at musikken går fra én toneart til en annen (Kobb & Ruud, 2025). Det er et av musikkens største triks. Når en sang stiger et halvt steg opp i siste refreng, kjenner vi det med en gang. Det føles som en heis går oppover, og energien stiger. Mange popslagere bruker dette grepet bevisst for å løfte avslutningen."
         },
         {
             "type": "text",
-            "content": "For musikere er modulasjon vanskelig, fordi alle akkordene endrer seg samtidig. De som lærer seg å bytte mellom flere tonearter på øret, har en stor fordel — de kan spille med andre uten å øve mye på forhånd."
+            "content": "For musikere er modulasjon vanskelig, fordi alle akkordene endrer seg samtidig. De som lærer seg å bytte mellom flere tonearter på øret, har en stor fordel - de kan spille med andre uten å øve mye på forhånd."
         },
         {
             "type": "header",
@@ -132,7 +132,7 @@
         },
         {
             "type": "text",
-            "content": "Det enkleste trikset er å lytte til tersen. Spill en akkord — om den tredje tonen er lys, er det dur. Om den tredje tonen er mørk og litt klagende, er det moll. Filmkomponister kjenner dette godt. De kan bytte tonens stemning ved å flytte tersen ett halvt steg ned."
+            "content": "Det enkleste trikset er å lytte til tersen. Spill en akkord - om den tredje tonen er lys, er det dur. Om den tredje tonen er mørk og litt klagende, er det moll. Filmkomponister kjenner dette godt. De kan bytte tonens stemning ved å flytte tersen ett halvt steg ned."
         },
         {
             "type": "image",
@@ -159,7 +159,7 @@
                     "Artikkelen sier at pianoet er bygget rundt C-dur. Hvorfor treffer nettopp C-dur-skalaen bare de hvite tangentene?",
                     "Hvorfor kjennes det trygt ut når en melodi slutter på grunntonen, mens en melodi som ender på en annen tone henger i lufta?",
                     "Modulasjon er vanskelig for musikere fordi alle akkordene endrer seg samtidig. Hvorfor gir det likevel en stor fordel å kunne bytte toneart på øret?",
-                    "Filmkomponister kan gjøre en scene farlig ved å bruke frygisk, eller trist ved å flytte tersen ett halvt steg ned. Hvorfor er så små endringer nok til å snu stemningen helt?"
+                    "Filmkomponister kan snu stemningen i en scene ved å flytte tersen ett halvt steg ned, eller ved å bytte til en gammel modus som frygisk. Hvorfor er så små endringer nok til å snu stemningen helt?"
                 ],
                 "gaaVidere": [
                     "Finn en sang du liker, og prøv å høre om den står i dur eller moll ved å lytte etter tersen. Skriv ned hva du kom fram til og hvorfor.",
@@ -194,7 +194,7 @@
                             "Akkord og bass"
                         ],
                         "correct": 0,
-                        "explanation": "Tonearten er grunntonen pluss skalatypen — for eksempel C (grunntone) + dur (skalatype) = C-dur."
+                        "explanation": "Tonearten er grunntonen pluss skalatypen - for eksempel C (grunntone) + dur (skalatype) = C-dur."
                     },
                     {
                         "question": "Hva betyr ordet dur, som vi har lånt fra latin?",
@@ -216,7 +216,7 @@
                             "Åtte"
                         ],
                         "correct": 1,
-                        "explanation": "Pentatonisk betyr fem toner. Skalaen brukes mye i blues, rock og folkemusikk fordi det er nesten umulig å spille feil tone."
+                        "explanation": "Pentatonisk betyr fem toner. Skalaen er svært utbredt i folkemusikk, og den brukes mye i rock og blues fordi det er nesten umulig å spille feil tone."
                     },
                     {
                         "question": "Hvor i notene ser vi hvilken toneart et stykke står i?",
@@ -231,7 +231,27 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bergh, J., Hansen, K. A. & Knudsen, J. S. (2025). *Blues*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/blues](https://snl.no/blues)",
+                    "Furnes, O. T. (2025). *Skala - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/skala_-_musikk](https://snl.no/skala_-_musikk)",
+                    "Guitar.com. (2018). *Music theory for beginners 3: Introduction to pentatonic scales*. Hentet 04.08.2026 fra [guitar.com](https://guitar.com/lessons/beginner/lessons-theory-pentatonic-scales/)",
+                    "Holter, S. W. (2024). *Fortegn - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/fortegn_-_musikk](https://snl.no/fortegn_-_musikk)",
+                    "Kobb, C. & Ruud, E. (2025). *Modulasjon - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/modulasjon_-_musikk](https://snl.no/modulasjon_-_musikk)",
+                    "Ledang, O. K. & Haug, U. (2024). *Musikk i Kina*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Musikk_i_Kina](https://snl.no/Musikk_i_Kina)",
+                    "Ruud, E. (2019a). *Kirketonearter*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/kirketonearter](https://snl.no/kirketonearter)",
+                    "Ruud, E. (2019b). *Toneart*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/toneart](https://snl.no/toneart)",
+                    "Ruud, E. (2024). *Dur*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/dur](https://snl.no/dur)",
+                    "Ruud, E. (2025a). *Moll*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/moll](https://snl.no/moll)",
+                    "Ruud, E. (2025b). *Pentatonikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/pentatonikk](https://snl.no/pentatonikk)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-04"
 }
