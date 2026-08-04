@@ -2,10 +2,11 @@
   "id": "tekstskriving",
   "title": "Tekstskriving: Fra idé til ferdig låttekst",
   "layout": "rich",
-  "year": "1900–i dag",
+  "year": "1900-i dag",
   "category": "Komposisjon",
   "readTime": "8 min lesning",
   "heroImage": "/images/komposisjon/tekstskriving-hero.webp",
+  "lastUpdated": "2026-08-04",
   "details": [
     "Konkrete bilder slår generelle følelser",
     "Rim og rytme må passe melodien",
@@ -32,7 +33,7 @@
     },
     {
       "type": "text",
-      "content": "Den viktigste regelen i tekstskriving er like enkel som den er vanskelig å følge: vis, ikke fortell. Å skrive «jeg er trist» er å fortelle. Å skrive «skoene dine står fortsatt ved døra mi» er å vise. Forskjellen er enorm. Når du viser, lar du lytteren selv kjenne følelsen i kroppen. Når du forteller, holder du lytteren på armlengdes avstand."
+      "content": "Den viktigste regelen i tekstskriving er like enkel som den er vanskelig å følge: vis, ikke fortell. Regelen betyr at du skal vise leseren eller lytteren hvordan personene i historien har det, ikke fortelle det direkte. En god forfatter skriver gjerne ikke «han er sint», men viser det ved å skildre utseendet, replikkene og handlingene til personen (Abusland, 2024). Å skrive «jeg er trist» er å fortelle. Å skrive «skoene dine står fortsatt ved døra mi» er å vise. Når du viser, lar du lytteren selv kjenne følelsen i kroppen."
     },
     {
       "type": "text",
@@ -55,15 +56,19 @@
     },
     {
       "type": "text",
-      "content": "Rim gjør teksten lettere å huske. De skaper en rytmisk forventning hos lytteren, og når rimet treffer, føles det tilfredsstillende. Men rim er et verktøy, ikke en tvangstrøye. Hvis du vrir og vrenger på setningen bare for å få den til å rime, ødelegger du det du prøver å si."
+      "content": "Rim er, enkelt forklart, lik klang eller lyd i to eller flere ord (Federl, 2026). Rim gjør teksten lettere å huske. De skaper en rytmisk forventning hos lytteren, og når rimet treffer, føles det tilfredsstillende. Men rim er et verktøy, ikke en tvangstrøye. Hvis du vrir og vrenger på setningen bare for å få den til å rime, ødelegger du det du prøver å si."
     },
     {
       "type": "text",
-      "content": "Det finnes flere typer rim. Parrim er når to linjer etter hverandre rimer: «Jeg går ut i natten kald / og finner deg ved vannets fall.» Kryssrim er når annenhver linje rimer: ABAB. Halvrim er når bare den siste vokalen eller konsonanten matcher, som «vann» og «mann». Halvrim gir en mykere effekt og føles ofte mer naturlig enn perfekte rim."
+      "content": "Måten rimene er plassert på, kaller vi rimmønster. Parrim er når enderimene kommer etter hverandre, i formen aabb: «Jeg ventet på en buss som aldri kom / og lomma mi var like tom.» Kryssrim er når enderimene kommer i annenhver verselinje: abab. Rimer første og fjerde linje med hverandre, og andre og tredje med hverandre (abba), heter det omsluttende rim (Abusland, 2025)."
     },
     {
       "type": "text",
-      "content": "Mange moderne artister dropper rim helt i versene og sparer dem til refrenget. Det gir versene en uformell, fortellende tone, mens refrenget føles strammere og mer minneverdig. Prøv dette selv: skriv et vers uten rim der du forteller en historie. Skriv så et refreng med rim som oppsummerer følelsen."
+      "content": "Rimene kan også være mer eller mindre presise. Har ordene helt lik klang fra den siste trykksterke vokalen, som «kime» og «rime», kaller vi det helrim. Er rimet mer omtrentlig, slik at bare vokalene eller bare konsonantene stemmer - som «frisk» og «besk» - snakker vi om halvrim, eller assonans (Federl, 2026). Halvrim gir en mykere effekt og føles ofte mer naturlig enn helrim."
+    },
+    {
+      "type": "text",
+      "content": "Noen låtskrivere dropper rim helt i versene og sparer dem til refrenget. Det gir versene en uformell, fortellende tone, mens refrenget føles strammere og mer minneverdig. Prøv dette selv: skriv et vers uten rim der du forteller en historie. Skriv så et refreng med rim som oppsummerer følelsen."
     },
     {
       "type": "image",
@@ -77,15 +82,15 @@
     },
     {
       "type": "text",
-      "content": "En sangtekst er ikke bare et dikt satt til musikk. Den har en struktur som jobber sammen med melodien. Verset forteller historien. Det gir oss nye detaljer, nye bilder, nye vendinger. Hvert vers har som regel samme melodi, men forskjellig tekst."
+      "content": "En sangtekst er ikke bare et dikt satt til musikk. Den har en struktur som jobber sammen med melodien. I popmusikken bygger strukturen på veksling mellom vers, refreng og eventuelt en bro (Hansen & Ruud, 2026). Verset forteller historien. Det gir oss nye detaljer, nye bilder, nye vendinger. Hvert vers har som regel samme melodi, men forskjellig tekst."
     },
     {
       "type": "text",
-      "content": "Refrenget er det motsatte. Det har samme tekst og samme melodi hver gang det kommer. Refrenget oppsummerer kjernen i sangen. Det er følelsen kokt ned til én setning eller ett bilde. Når noen husker en sang, husker de nesten alltid refrenget."
+      "content": "Refrenget er det motsatte. Refreng er den delen av en låt som gjentas etter verset, og den har samme tekst og samme melodi hver gang. Låtskriverne bruker gjerne sitt beste musikalske materiale her, og et godt refreng gjør en låt vanskelig å glemme (Ruud, 2025). Refrenget oppsummerer kjernen i sangen: følelsen kokt ned til én setning eller ett bilde."
     },
     {
       "type": "text",
-      "content": "Broen er den delen som bare dukker opp én gang, vanligvis etter det andre refrenget. Broen bryter mønsteret. Den gir lytteren et nytt perspektiv, en overraskelse, eller et øyeblikk med refleksjon. Tenk på broen som vendepunktet i en film: det er her noe endrer seg."
+      "content": "Broen, eller bridgen, er en kontrasterende del som kommer før musikken vender tilbake til det vi har hørt før. I popmusikken går rekkefølgen ofte slik: vers 1, refreng, vers 2, refreng, bro og så refrenget en siste gang (Ruud, 2024). Broen bryter mønsteret. Den kan gi lytteren et nytt perspektiv, en overraskelse, eller et øyeblikk med refleksjon. Tenk på broen som vendepunktet i en film: det er her noe endrer seg."
     },
     {
       "type": "component",
@@ -93,9 +98,9 @@
       "props": {
         "title": "Tre vanlige låtstrukturer",
         "items": [
-          "Vers – Refreng – Vers – Refreng (den enkleste)",
-          "Vers – Refreng – Vers – Refreng – Bro – Refreng (den vanligste i pop)",
-          "Vers – Vers – Refreng – Vers – Refreng (brukt i mange ballader)"
+          "Vers - Refreng - Vers - Refreng (den enkleste)",
+          "Vers - Refreng - Vers - Refreng - Bro - Refreng (den vanligste i pop)",
+          "Vers - Vers - Refreng - Vers - Refreng (brukt i mange ballader)"
         ]
       }
     },
@@ -113,7 +118,7 @@
     },
     {
       "type": "text",
-      "content": "Legg merke til at de sterkeste ordene i en linje bør lande på de sterkeste slagene i takten. Hvis det viktigste ordet havner på et svakt slag, mister det kraften sin. Prøv å flytte det viktige ordet til starten eller slutten av linjen, der det får mest oppmerksomhet."
+      "content": "Fast rytme i en tekst handler egentlig om en regelmessig veksling mellom tunge og lette stavelser (Federl, 2026). Derfor bør de sterkeste ordene i en linje lande på de tunge stavelsene. Hvis det viktigste ordet havner på et svakt slag, mister det kraften sin. Prøv å flytte det viktige ordet til starten eller slutten av linjen, der det får mest oppmerksomhet."
     },
     {
       "type": "image",
@@ -154,13 +159,13 @@
             "forstaa": [
                 "Hva betyr regelen vis, ikke fortell i tekstskriving?",
                 "Nevn de tre tingene artikkelen sier du trenger for å skrive en god sangtekst.",
-                "Hva er forskjellen på parrim, kryssrim og halvrim?",
+                "Hva er forskjellen på parrim, kryssrim og omsluttende rim, og hva skiller helrim fra halvrim?",
                 "Hva er en bro i en sang, og når dukker den vanligvis opp?"
             ],
             "reflekter": [
                 "Hvorfor treffer linjen skoene dine står fortsatt ved døra mi sterkere enn å skrive jeg er trist?",
-                "Hvorfor velger mange moderne artister å droppe rim i versene, men beholde dem i refrenget?",
-                "Artikkelen sier at de sterkeste ordene bør lande på de sterkeste slagene i takten. Hva skjer med et viktig ord hvis det havner på et svakt slag?",
+                "Hvorfor velger noen låtskrivere å droppe rim i versene, men beholde dem i refrenget?",
+                "Artikkelen sier at fast rytme er en regelmessig veksling mellom tunge og lette stavelser. Hva skjer med et viktig ord hvis det havner på en lett stavelse?",
                 "Hvorfor mener artikkelen at tålmodighet er viktigere enn talent for en låtskriver?"
             ],
             "gaaVidere": [
@@ -189,32 +194,56 @@
             "question": "Hva er forskjellen mellom et vers og et refreng?",
             "options": [
               "Verset er alltid kortere enn refrenget",
-              "Verset forteller historien med ny tekst, refrenget gjentar samme tekst og oppsummerer følelsen",
+              "Verset forteller historien med ny tekst, refrenget gjentas etter verset og oppsummerer følelsen",
               "Refrenget er alltid det første som kommer i en sang",
               "Verset har alltid rim, refrenget har aldri rim"
             ],
             "answer": 1
           },
           {
+            "question": "Hva kaller vi rimmønsteret abab, der enderimene kommer i annenhver verselinje?",
+            "options": [
+              "Parrim",
+              "Omsluttende rim",
+              "Kryssrim",
+              "Halvrim"
+            ],
+            "answer": 2
+          },
+          {
             "question": "Hva er en bro i en sang?",
             "options": [
               "Et annet ord for refrenget",
               "Instrumentaldelen i midten av sangen",
-              "En del som dukker opp én gang og gir et nytt perspektiv",
+              "En kontrasterende del som kommer før musikken vender tilbake til refrenget",
               "De første to linjene i sangen"
             ],
             "answer": 2
           },
           {
-            "question": "Hvorfor bør sterke ord lande på sterke slag i melodien?",
+            "question": "Hvorfor bør sterke ord lande på tunge stavelser i melodien?",
             "options": [
               "Fordi det er en musikkregel som ikke kan brytes",
-              "Fordi det gjør det lettere å huske teksten",
+              "Fordi det gjør det lettere å rime",
               "Fordi ordene får mer kraft og oppmerksomhet der",
-              "Fordi det gjør det lettere å rime"
+              "Fordi refrenget da blir kortere"
             ],
             "answer": 2
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Abusland, Å. (2024). *Utforsk skrivestilen i Lappjævel*. NDLA. Hentet 04.08.2026 fra [ndla.no](https://ndla.no/r/norsk-kort-botid-sf-vg1/utforsk-skrivestilen-i-lappjavel/794864cff2)",
+          "Abusland, Å. (2025). *Rimmønster*. NDLA. Hentet 04.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg1/rimmonstre/db5e1383cb)",
+          "Federl, M. (2026). *Rim og rytme*. NDLA. Hentet 04.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg1/rim-og-rytme/73cec175e5)",
+          "Hansen, K. A. & Ruud, E. (2026). *Popmusikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/popmusikk](https://snl.no/popmusikk)",
+          "Ruud, E. (2024). *Bridge - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/bridge_-_musikk](https://snl.no/bridge_-_musikk)",
+          "Ruud, E. (2025). *Refreng - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/refreng_-_musikk](https://snl.no/refreng_-_musikk)"
         ]
       }
     }

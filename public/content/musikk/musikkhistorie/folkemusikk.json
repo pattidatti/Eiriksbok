@@ -6,76 +6,81 @@
     "category": "Musikk og tradisjon",
     "readTime": "9 min lesning",
     "heroImage": "/images/musikk/musikkhistorie/folkemusikk-hero.webp",
+    "lastUpdated": "2026-08-04",
     "details": [
-        "Hardingfela har ekstra strenger som vibrerer av seg selv",
-        "Slåtter er dansemelodier overlevert uten noter",
-        "Norske folkesangere lever videre i Aurora, Gåte og Wardruna"
+        "Hardingfela har fire eller fem understrenger som svarer av seg selv",
+        "Slåtter er dansemelodier overlevert muntlig, uten noter",
+        "Folkemusikken lever videre hos Gåte, Wardruna og Annbjørg Lien"
     ],
     "content": [
         {
             "type": "text",
-            "content": "Telemark, en bryllupskveld i 1855. Låven er full av folk, lyset kommer fra parafinlamper, og lufta lukter av kveiteboller og tobakk. Plutselig blir det stille. Myllarguten, en høy mann med kvasse øyne, løfter ei fele opp under haken og setter buen mot strengene. Det første tonefallet kommer som et drag av vind. Så svarer fela seg selv: åtte strenger til, gjemt under fingerbrettet, surrer av seg selv. Lyden henger i lufta som et eko. Og før noen rekker å puste, har Myllarguten startet en springar — og hele låven danser."
+            "content": "Telemark, en bryllupskveld i 1855. Låven er full av folk, lyset kommer fra parafinlamper, og lufta lukter av kveiteboller og tobakk. Plutselig blir det stille. Myllarguten, en høy mann med kvasse øyne, løfter ei fele opp under haken og setter buen mot strengene. Det første tonefallet kommer som et drag av vind. Så svarer fela seg selv: fire strenger til, gjemt under gripebrettet, surrer av seg selv. Lyden henger i lufta som et eko. Og før noen rekker å puste, har Myllarguten startet en springar - og hele låven danser."
         },
         {
             "type": "text",
-            "content": "Dette er norsk folkemusikk. Den ble ikke skrevet ned i bøker, men lært fra fele til fele, fra stemme til stemme, gjennom hundrevis av år. I dag finner du den ikke bare i museer og på folkemusikkfestivaler — den lever i artister som Aurora, Gåte og Wardruna. Tradisjonen og fornyelsen er to ender av samme tråd, og denne artikkelen handler om hvordan den tråden fortsatt holder."
+            "content": "Myllarguten var en virkelig person. Han het egentlig Torgeir Augundsson, ble født i Sauherad i 1799 og døde i Rauland i 1872. Han er en av de mest kjente hardingfelespelemennene Norge har hatt, og i 1849 var han den første som spilte hardingfele på en offentlig konsertscene. Møtet med fiolinisten Ole Bull i 1831 gjorde blant annet at han moderniserte spillet sitt (Gaukstad mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Dette er norsk folkemusikk. Den ble ikke skrevet ned i bøker, men lært fra fele til fele, fra stemme til stemme, gjennom hundrevis av år. Folkemusikk blir nettopp ført videre muntlig fra en utøver til en annen, og musikken forandrer seg litt for hver overlevering (Aksdal mfl., 2024). I dag finner du den ikke bare i museer og på folkemusikkfestivaler - den lever i artister som Gåte, Wardruna og Annbjørg Lien. Tradisjonen og fornyelsen er to ender av samme tråd, og denne artikkelen handler om hvordan den tråden fortsatt holder."
         },
         {
             "type": "header",
-            "text": "Hardingfela — Norges magiske instrument"
+            "text": "Hardingfela - Norges magiske instrument"
         },
         {
             "type": "text",
-            "content": "Hardingfela ser ut som en vanlig fiolin ved første blikk. Fire strenger, en hals, en bue. Men under fingerbrettet skjuler det seg fire eller fem ekstra strenger. Disse heter understrenger eller medstrenger. Du stryker dem aldri direkte. De svarer av seg selv. Når du spiller en tone på en av de øverste strengene, begynner understrengen som er stemt til samme tone å vibrere — som om instrumentet sang med seg selv."
+            "content": "Hardingfela ser ut som en vanlig fiolin ved første blikk. Fire strenger, en hals, en bue. Men under gripebrettet skjuler det seg fire eller fem ekstra strenger. Disse heter understrenger eller medstrenger. Du stryker dem aldri direkte. De løper fritt under gripebrettet og blir satt i svingninger når du stryker på overstrengene (Aksdal, 2024a). Når du spiller en tone på en av de øverste strengene, begynner understrengen som er stemt til samme tone å vibrere - som om instrumentet sang med seg selv."
         },
         {
             "type": "text",
-            "content": "Denne lyden er årsaken til at hardingfela er Norges nasjonalinstrument. Den finnes ikke maken til noe annet sted i verden. Fela ble laget i Hardanger på 1600-tallet, og hver felemaker pyntet sitt instrument med svartelinjer av blekk, perlemorinnlegg og et lite drakhode på enden. Hardingfela er et kunstverk å se på — og en hel skog å høre på."
+            "content": "Mange regner hardingfela som Norges nasjonalinstrument. Gjennom årene har den hatt alt fra to til seks understrenger, men i dag er fire eller fem det vanligste. Den eldste hardingfela vi kjenner til ble trolig laget i 1651 av Ole Jonsen Jaastad i Hardanger (Aksdal, 2024a). Felemakerne pynter instrumentet rikt: gripebrett og strengeholder blir lagt inn med biter av perlemor, bein og metall, og selve fela roses med tusj på tradisjonelt vis (Ole Bull Akademiet, u.å.). Hardingfela er et kunstverk å se på - og en hel skog å høre på."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hvorfor surrer hardingfela?",
-                "content": "Understrengene er stemt slik at de svarer på de samme tonene som spilles på hovedstrengene. Når du spiller en D, vibrerer understreng-D-en av seg selv. Fysikerne kaller det sympatisk resonans — strengene «føler» med."
+                "content": "Understrengene er stemt slik at de svarer på de samme tonene som spilles på hovedstrengene. Når du spiller en D, vibrerer understreng-D-en av seg selv. Fysikerne kaller det sympatisk resonans - strengene «føler» med."
             }
         },
         {
             "type": "image",
             "src": "/images/musikk/musikkhistorie/folkemusikk-01.webp",
             "alt": "Hardingfele med dekor av rosemaling og drakhode, lagt på rødt tøy",
-            "caption": "Ei norsk hardingfele med pyntet hode og rosemaling. De fire ekstra strengene løper under fingerbrettet."
+            "caption": "Ei norsk hardingfele med pyntet hode og rosing. De ekstra strengene løper under gripebrettet."
         },
         {
             "type": "header",
-            "text": "Slått — dansens skjelett"
+            "text": "Slått - dansens skjelett"
         },
         {
             "type": "text",
-            "content": "En slått er en dansemelodi. Det er det enkleste svaret. Men det er også feil, for en slått er noe mer enn en melodi: det er en fortelling som en spelemann har lært av en annen spelemann, som lærte den av sin bestefar, som lærte den i et bryllup i 1810. Ingen slått er helt lik to ganger. Hver spelemann legger til sine egne triller, vridd takt og personlige driv. Slåtten er et skjelett som hver utøver kler i nytt kjøtt."
+            "content": "En slått er en dansemelodi. Det er det enkleste svaret: slått er fellesbetegnelsen på et stykke instrumental folkemusikk som blir framført til dans (Aksdal, 2024b). Men det er også for enkelt, for en slått er noe mer enn en melodi: det er en fortelling som en spelemann har lært av en annen spelemann, som lærte den av sin bestefar, som lærte den i et bryllup i 1810. Ingen slått er helt lik to ganger. Gjennom den muntlige overleveringen blir musikken forandret og tilpasset etter hva situasjonen krever og etter ferdighetene og smaken til dem som spiller (Aksdal mfl., 2024). Slåtten er et skjelett som hver utøver kler i nytt kjøtt."
         },
         {
             "type": "text",
-            "content": "I Norge finnes tre hovedtyper slåtter. Springaren går i tre takter, men ikke jevnt — den har en lett halting der den ene takten er lengre enn de to andre. Det er denne haltinga som driver danseparet rundt golvet. Hallingen går i to takter og er rolig på utsiden, men ladet med energi: dette er dansen der mannen til slutt sparker en hatt av en stokk over hodet. Gangaren går rolig, som folk som går side om side. Alle tre slåtttypene har vandret fra bygd til bygd i hundrevis av år."
+            "content": "Tre av de mest kjente slåttetypene i Norge er springar, halling og gangar (Aksdal, 2024b). Springaren går i tredelt takt, og mange av springdansformene på Østlandet har asymmetrisk takt: de tre taktslagene har litt ulik lengde (Store norske leksikon, 2026). Det er denne ujevnheten som driver danseparet rundt golvet. Hallingen går i todelt takt, oftest notert som 2/4 eller 6/8, og er rolig på utsiden, men ladet med energi. Mest kjent er hallingkastet, der danseren skal sparke ned en hatt som blir holdt opp på en staur (Bakka, 2024). Gangaren går også i todelt takt, men i rolig tempo, som folk som går side om side. Alle tre har vandret fra bygd til bygd i hundrevis av år."
         },
         {
             "type": "header",
-            "text": "Kveding — stemmen alene"
+            "text": "Kveding - stemmen alene"
         },
         {
             "type": "text",
-            "content": "Mens hardingfela er instrumentet og slåtten er dansen, er kvedingen sangen. Å kvede betyr å synge på den gamle norske måten — uten akkorder, uten band, uten harmonier. Bare en stemme som bærer hele fortellingen. Det høres ut som lite, men det er det motsatte: når sangeren står helt alene, må stemmen gjøre alt. Den må bære melodien, fortellingen, følelsen og rytmen i ett."
+            "content": "Mens hardingfela er instrumentet og slåtten er dansen, er kvedingen sangen. Kveding er framføring av vokal folkemusikk som stev, viser og ballader (Bitustøyl & Aksdal, 2024). Det skjer uten akkorder, uten band, uten harmonier. Bare en stemme som bærer hele fortellingen. Det høres ut som lite, men det er det motsatte: når sangeren står helt alene, må stemmen gjøre alt. Den må bære melodien, fortellingen, følelsen og rytmen i ett."
         },
         {
             "type": "text",
-            "content": "Kvederen synger ofte med små ornamenter — bittesmå svinger og tilløp som kommer mellom tonene. Disse heter krullar, og de ligner ikke noe annet i europeisk sang. En kveder lærer dem ikke fra noter, men ved å lytte til en eldre kveder og prøve å gjenta. Ballader, stev og bånsuller (vuggeviser) er sjangrene som lever lengst i kvedetradisjonen. Mange av dem forteller historier som er hundrevis av år gamle: om Olav den hellige, om huldra, om gutter som rir mot trollet i fjellet."
+            "content": "Kvederen synger ofte med små ornamenter - bittesmå svinger og tilløp som kommer mellom tonene. Disse heter krullar, og sammen med melismatisk sang, der én stavelse får flere toner, er de et kjennemerke på stilen (Bitustøyl & Aksdal, 2024). En kveder lærer dem ikke fra noter, men ved å lytte til en eldre kveder og prøve å gjenta. Stev, viser og ballader er sjangrene som lever lengst i kvedetradisjonen, og tekstene er ofte gamle fortellinger som har gått i arv muntlig fra slekt til slekt."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Du arver ikke en slått ved å lese om den. Du arver den når noen spiller den for deg og du prøver å spille den tilbake.",
-                "author": "Norsk folkemusikktradisjon"
+                "text": "Folkemusikk blir vanligvis utformet gjennom at musikken videreføres muntlig fra en utøver til en annen.",
+                "author": "Aksdal, Ledang og Holen, Store norske leksikon"
             }
         },
         {
@@ -84,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Folkemusikk høres kanskje ut som noe gammelt og fjernt. Men her er det rare: den lever bedre i dag enn for hundre år siden. Norske artister henter slåttemotiver, kvedeornament og hardingfela inn i moderne musikk, og de blander tradisjonen med rock, pop, synth og rytmer fra hele verden. Tradisjonen er ikke en fryser som bevarer fortiden. Den er et bål som må mates med ny ved hele tida — ellers slukner det."
+            "content": "Folkemusikk høres kanskje ut som noe gammelt og fjernt. Men her er det rare: den lever bedre i dag enn for hundre år siden. Norske artister henter slåttemotiver, kvedeornament og hardingfela inn i moderne musikk, og de blander tradisjonen med rock, pop, synth og rytmer fra hele verden. Tradisjonen er ikke en fryser som bevarer fortiden. Den er et bål som må mates med ny ved hele tida - ellers slukner det."
         },
         {
             "type": "component",
@@ -97,11 +102,11 @@
         },
         {
             "type": "text",
-            "content": "Slåttene og kvedene hadde forsvunnet om ingen hadde skrevet dem ned. På 1800-tallet reiste mannen Ludvig Mathias Lindeman rundt i landet og samlet melodier fra bønder og spelemenn. Han noterte over 3000 slåtter og folkeviser. Edvard Grieg, vår mest kjente komponist, bygde mye av musikken sin på Lindemans samling — også Peer Gynt-suiten med den berømte morgenstemningen og «I Dovregubbens hall». Uten Lindeman ingen Grieg, og uten Grieg ville verden ikke kjent norsk folkemusikk like godt."
+            "content": "Mye av dette stoffet hadde vært vanskelig å spore i dag om ingen hadde skrevet det ned. Fra 1848 reiste Ludvig Mathias Lindeman rundt i landet og samlet melodier fra bønder og spelemenn. Den første turen gikk til Valdres; senere kom Telemark, Hardanger, Bergen, Hallingdal og Gudbrandsdalen. I alt samlet han omkring 3000 melodier og tekster, og noen av dem ble seinere brukt av komponister som Edvard Grieg og Johan Svendsen (Karevold, 2024). Grieg ville skape en ny norsk tonekunst inspirert av folkeviser og slåtter, og blant de mest kjente verkene hans er scenemusikken til Peer Gynt, med Morgenstemning og I Dovregubbens hall (Benestad & Andersen, 2025)."
         },
         {
             "type": "text",
-            "content": "På 1900-tallet kom radioen og platespilleren. Folk lærte plutselig amerikanske og engelske sanger raskere enn slåtter fra nabodalen. Mange trodde folkemusikken ville dø. Men i 1923 ble Landslaget for spelemenn stiftet, og siden har spelemannstevner samlet utøvere fra hele landet. I dag finnes Riksscenen for folkemusikk i Oslo, festivalen Førde i Sogn og spelemannslag i nesten hver bygd. Tradisjonen er ikke noe museum — den øver hver onsdag i kjelleren under bedehuset."
+            "content": "På 1900-tallet kom radioen og platespilleren. Folk lærte plutselig amerikanske og engelske sanger raskere enn slåtter fra nabodalen. Mange trodde folkemusikken ville dø. Men i 1923 ble Landslaget for Spelemenn stiftet, og siden har spelemannsstevner samlet utøvere fra hele landet. I 2009 gikk laget sammen med Norsk Folkemusikk- og Danselag til organisasjonen FolkOrg, som i dag står bak den årlige Landskappleiken (Bitustøyl & Aksdal, 2023). Riksscenen i Oslo åpnet i 2010 som nasjonal scene for folkemusikk og folkedans (Riksscenen, u.å.), og Førdefestivalen i Sunnfjord har vært arrangert siden 1990 (Thorsnæs mfl., 2022). Tradisjonen er ikke noe museum - den øver hver onsdag i kjelleren under bedehuset."
         },
         {
             "type": "image",
@@ -115,7 +120,11 @@
         },
         {
             "type": "text",
-            "content": "I 2026 er det norske artister med folkemusikk-røtter på topplistene. Aurora er kjent over hele verden, men stemmen hennes har klangen til en kveder. Gåte spiller folkerock med slått-rytmer og elgitar. Wardruna lager rituell musikk med bukkehorn, kraviklyre og halling-puls. Annbjørg Lien har gjort hardingfela til et internasjonalt instrument. Selv K-popgrupper har gjestet med joik og slåtter."
+            "content": "I dag finnes det norske artister med folkemusikk-røtter som når langt ut i verden. Gåte er ei norsk folkrockgruppe som kombinerer tradisjonell norsk folkemusikk og rock; melodien til «Ulveham» bygger på en gammel kulokk, og den første teksten var hentet fra en middelalderballade (Bergan, 2026b). Wardruna vever gamle nordiske lyder og tradisjoner inn i et moderne lydbilde, med instrumenter som tagelharpe, kravik-lyre, bukkehorn og lur (Wardruna, u.å.). Annbjørg Lien spiller hardingfele, vanlig fele og nøkkelharpe, samarbeider med musikere fra jazz og rock, og har holdt konserter i land som Argentina, Japan, Nigeria og Grønland (Aksdal, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Noen hører også kvedetradisjonen i måten Aurora bruker stemmen sin på. Men det er verdt å legge merke til at Store norske leksikon fører henne som kunstpop-artist og oppgir Leonard Cohen, Bob Dylan, Enya og The Chemical Brothers som forbildene hennes - ikke folkemusikk (Bergan, 2026a). Slik er det ofte: hva som er en ekte folkemusikk-rot og hva som er lytterens egen tolkning, er ikke alltid lett å skille."
         },
         {
             "type": "text",
@@ -126,10 +135,10 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvor mange ekstra strenger har hardingfela gjemt under fingerbrettet, og hva heter de?",
-                    "Hva er en slått, og hva heter de tre hovedtypene slåtter i Norge?",
+                    "Hvor mange understrenger har hardingfela vanligvis i dag, og hva heter de?",
+                    "Hva er en slått, og hva heter tre av de mest kjente slåttetypene i Norge?",
                     "Hva betyr det å kvede, og hva heter de små ornamentene kvederen synger mellom tonene?",
-                    "Hvem reiste rundt på 1800-tallet og noterte over 3000 slåtter og folkeviser?"
+                    "Hvem reiste rundt fra 1848 og samlet omkring 3000 melodier og tekster?"
                 ],
                 "reflekter": [
                     "Understrengene på hardingfela stryker du aldri direkte, likevel lager de lyd. Forklar med egne ord hvorfor de begynner å vibrere når du spiller en tone.",
@@ -138,9 +147,9 @@
                     "Da radioen og platespilleren kom på 1900-tallet, trodde mange at folkemusikken ville dø. Forklar hvorfor de nye maskinene var en trussel mot slåttene fra nabodalen."
                 ],
                 "gaaVidere": [
-                    "Hør på en låt av Aurora, Gåte eller Wardruna. Skriv noen setninger om hvor du hører folkemusikk-røtter, for eksempel kvedeklang, slått-rytme eller lyden av hardingfele.",
-                    "Artikkelen sier at du arver en slått ved å høre noen spille den og prøve å spille den tilbake, ikke ved å lese om den. Prøv selv: lær en kort melodi av en medelev bare ved å lytte og herme, uten noter. Fortell klassen hva som var vanskelig.",
-                    "Diskuter i par: Hvis du hørte en springar i en TikTok-låt uten å vite hva det var, ville du telle deg selv som neste ledd i kjeden? Hva skal til for at folkemusikken skal leve videre til dine barn?"
+                    "Hør på en låt av Gåte, Wardruna eller Annbjørg Lien. Skriv noen setninger om hvor du hører folkemusikk-røtter, for eksempel kvedeklang, slått-rytme eller lyden av hardingfele.",
+                    "Artikkelen siterer Store norske leksikon på at folkemusikk føres videre muntlig fra en utøver til en annen. Prøv selv: lær en kort melodi av en medelev bare ved å lytte og herme, uten noter. Fortell klassen hva som var vanskelig.",
+                    "Artikkelen viser at Aurora blir hørt som folkemusikk-inspirert av noen, mens leksikonet oppgir helt andre forbilder. Diskuter i par: hvordan kan man vite om en artist virkelig har folkemusikk-røtter, og hva skal til for at folkemusikken skal leve videre til dine barn?"
                 ]
             }
         },
@@ -153,12 +162,12 @@
                         "question": "Hva er det som gjør hardingfela spesiell sammenlignet med en vanlig fiolin?",
                         "options": [
                             "Den har bare to strenger",
-                            "Den har ekstra strenger under fingerbrettet som vibrerer av seg selv",
+                            "Den har ekstra strenger under gripebrettet som vibrerer av seg selv",
                             "Den er laget av aluminium",
                             "Den må spilles med fingrene, ikke bue"
                         ],
                         "correct": 1,
-                        "explanation": "Hardingfela har fire eller fem understrenger som svarer av seg selv når hovedstrengene spilles — det heter sympatisk resonans."
+                        "explanation": "Hardingfela har i dag fire eller fem understrenger som svarer av seg selv når hovedstrengene spilles - det heter sympatisk resonans."
                     },
                     {
                         "question": "Hva er en slått?",
@@ -180,10 +189,10 @@
                             "Å synge i den gamle norske vokaltradisjonen, uten akkorder"
                         ],
                         "correct": 3,
-                        "explanation": "Kveding er den gamle vokaltradisjonen der stemmen bærer alt — melodi, fortelling og ornament — uten akkordstøtte."
+                        "explanation": "Kveding er framføring av vokal folkemusikk som stev, viser og ballader, der stemmen bærer alt - melodi, fortelling og ornament - uten akkordstøtte."
                     },
                     {
-                        "question": "Hvem reiste rundt og samlet over 3000 norske folkemelodier på 1800-tallet?",
+                        "question": "Hvem reiste rundt og samlet omkring 3000 norske melodier og tekster fra 1848?",
                         "options": [
                             "Edvard Grieg",
                             "Ludvig Mathias Lindeman",
@@ -191,7 +200,7 @@
                             "Bjørnstjerne Bjørnson"
                         ],
                         "correct": 1,
-                        "explanation": "Lindeman noterte slåtter og folkeviser. Grieg brukte mange av dem som grunnlag for sine komposisjoner."
+                        "explanation": "Lindeman noterte slåtter og folkeviser fra 1848. Noen av melodiene ble seinere brukt av komponister som Grieg og Svendsen."
                     },
                     {
                         "question": "Hvorfor sier vi at tradisjon og fornyelse er to ender av samme tråd?",
@@ -202,8 +211,33 @@
                             "Fordi nye artister må slutte å bruke gamle melodier"
                         ],
                         "correct": 0,
-                        "explanation": "Tradisjonen lever fordi musikere bygger videre på den. Annbjørg Lien, Gåte, Aurora og Wardruna er bevis: røttene finnes i låtene deres, men formen er helt ny."
+                        "explanation": "Tradisjonen lever fordi musikere bygger videre på den. Annbjørg Lien, Gåte og Wardruna er bevis: røttene finnes i låtene deres, men formen er helt ny."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aksdal, B. (2024a). *Hardingfele*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/hardingfele](https://snl.no/hardingfele)",
+                    "Aksdal, B. (2024b). *Slått*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/slått](https://snl.no/sl%C3%A5tt)",
+                    "Aksdal, B. (2026). *Annbjørg Lien*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Annbjørg_Lien](https://snl.no/Annbj%C3%B8rg_Lien)",
+                    "Aksdal, B., Ledang, O. K. & Holen, A. (2024). *Folkemusikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/folkemusikk](https://snl.no/folkemusikk)",
+                    "Bakka, E. (2024). *Halling - dans*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/halling](https://snl.no/halling)",
+                    "Benestad, F. & Andersen, R. J. (2025). *Edvard Grieg*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Edvard_Grieg](https://snl.no/Edvard_Grieg)",
+                    "Bergan, J. V. (2026a). *AURORA - artist*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/AURORA_-_artist](https://snl.no/AURORA_-_artist)",
+                    "Bergan, J. V. (2026b). *Gåte*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Gåte](https://snl.no/G%C3%A5te)",
+                    "Bitustøyl, K. & Aksdal, B. (2023). *FolkOrg*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/FolkOrg](https://snl.no/FolkOrg)",
+                    "Bitustøyl, K. & Aksdal, B. (2024). *Kveding*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/kveding](https://snl.no/kveding)",
+                    "Gaukstad, Ø., Aksdal, B. & Mjør, K. J. (2026). *Myllarguten*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Myllarguten](https://snl.no/Myllarguten)",
+                    "Karevold, I. (2024). *Ludvig Mathias Lindeman*. Norsk biografisk leksikon. Hentet 04.08.2026 fra [nbl.snl.no/Ludvig_Mathias_Lindeman](https://nbl.snl.no/Ludvig_Mathias_Lindeman)",
+                    "Ole Bull Akademiet. (u.å.). *Felemakeri*. Hentet 04.08.2026 fra [felemakeriet.no](https://www.felemakeriet.no/norsk/kva-gjer-me/felemakeri/)",
+                    "Riksscenen. (u.å.). *Om oss*. Hentet 04.08.2026 fra [riksscenen.no/om-oss](https://www.riksscenen.no/om-oss)",
+                    "Store norske leksikon. (2026). *Springdans*. Hentet 04.08.2026 fra [snl.no/springdans](https://snl.no/springdans)",
+                    "Thorsnæs, G., Askheim, S. & Helleve, E. (2022). *Førde - tidlegare kommune*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Førde](https://snl.no/F%C3%B8rde)",
+                    "Wardruna. (u.å.). *About*. Hentet 04.08.2026 fra [wardruna.com/about](https://www.wardruna.com/about/)"
                 ]
             }
         }

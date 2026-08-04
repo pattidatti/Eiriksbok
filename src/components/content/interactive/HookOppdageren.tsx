@@ -292,7 +292,7 @@ export function HookOppdageren({ title = 'Hook-oppdageren' }: HookOppdagerenProp
                             <div className="flex items-start gap-2 text-xs text-indigo-900">
                                 <Ruler className="w-4 h-4 mt-0.5 flex-shrink-0" />
                                 <span>
-                                    <b>Kort.</b> 3–7 toner. Lett å huske og synge med.
+                                    <b>Kort.</b> 3-7 toner. Lett å huske og synge med.
                                 </span>
                             </div>
                             <div className="flex items-start gap-2 text-xs text-indigo-900">
@@ -305,8 +305,8 @@ export function HookOppdageren({ title = 'Hook-oppdageren' }: HookOppdagerenProp
                             <div className="flex items-start gap-2 text-xs text-indigo-900">
                                 <MoveDiagonal className="w-4 h-4 mt-0.5 flex-shrink-0" />
                                 <span>
-                                    <b>Tonenært.</b> Tonene ligger nær hverandre. Få store
-                                    sprang.
+                                    <b>Kjent form.</b> Melodien stiger og faller slik ører
+                                    kjenner igjen.
                                 </span>
                             </div>
                         </div>
