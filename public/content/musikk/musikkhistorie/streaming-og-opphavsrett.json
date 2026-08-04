@@ -2,25 +2,25 @@
     "id": "streaming-og-opphavsrett",
     "title": "Streaming og opphavsrett: Hvem får betalt når du hører musikk?",
     "layout": "rich",
-    "year": "2008 – i dag",
+    "year": "2008 - i dag",
     "category": "Musikk og samfunn",
     "readTime": "10 min lesning",
     "heroImage": "/images/musikkhistorie/streaming-og-opphavsrett-hero.webp",
     "details": [
-        "Én avspilling på Spotify gir artisten omtrent tre øre",
-        "En artist må ha rundt en kvart million avspillinger i måneden for å tjene en norsk minstelønn",
-        "Opphavsretten varer i 70 år etter at komponisten dør"
+        "Én avspilling gir rundt tre øre til dem som eier opptaket",
+        "Det trengs godt over en million avspillinger i måneden for å nærme seg en vanlig norsk månedslønn",
+        "Opphavsretten varer i 70 år etter at den som skapte verket dør"
     ],
     "content": [
         {
             "type": "text",
-            "content": "Du sitter på bussen. Du tar opp telefonen, åpner Spotify og trykker på favorittlåten din. Den begynner å spille i ørene dine. Akkurat i det øyeblikket starter en helt usynlig maskin å fordele penger. En tidels brøk av et øre forlater Spotify og begynner en lang reise mellom plateselskaper, rettighetsorganisasjoner, låtskrivere og til slutt — kanskje — den artisten du faktisk hører på. Veldig mange voksne i musikkbransjen krangler om denne maskinen. Mange artister mener den er urettferdig. Andre mener den har reddet musikken. Hvem har rett?"
+            "content": "Du sitter på bussen. Du tar opp telefonen, åpner Spotify og trykker på favorittlåten din. Den begynner å spille i ørene dine. Akkurat i det øyeblikket starter en helt usynlig maskin å fordele penger. En tidels brøk av et øre forlater Spotify og begynner en lang reise mellom plateselskaper, rettighetsorganisasjoner, låtskrivere og til slutt - kanskje - den artisten du faktisk hører på. Veldig mange voksne i musikkbransjen krangler om denne maskinen. Mange artister mener den er urettferdig. Andre mener den har reddet musikken. Hvem har rett?"
         },
         {
             "type": "image",
             "src": "/images/musikkhistorie/streaming-og-opphavsrett-01.webp",
             "alt": "Tenåring med hodetelefoner som lytter til musikk på telefonen sin",
-            "caption": "Hver gang noen trykker «play» starter en pengestrøm — men hvem får hva?"
+            "caption": "Hver gang noen trykker «play» starter en pengestrøm - men hvem får hva?"
         },
         {
             "type": "header",
@@ -28,15 +28,15 @@
         },
         {
             "type": "text",
-            "content": "Før i tiden kjøpte folk musikk. Du gikk i platebutikken, plukket en CD til 200 kroner og tok den med hjem. Den var din. I 2008 kom en svensk tjeneste som het Spotify og snudde alt på hodet. Ideen var rett fram: i stedet for å eie musikken, leier du tilgang til all musikk i verden. Du betaler omtrent hundre kroner i måneden, og kan høre alt så mye du vil. Tjenester som Apple Music, YouTube Music og Tidal følger samme oppskrift."
+            "content": "Før i tiden kjøpte folk musikk. Du gikk i platebutikken, plukket en CD til 200 kroner og tok den med hjem. Den var din. Så kom Spotify og snudde alt på hodet. Tjenesten ble grunnlagt i Sverige i 2006 av Daniel Ek og Martin Lorentzon, og ble lansert i Stockholm i oktober 2008 (Hagen, 2024). Ideen var rett fram: i stedet for å eie musikken, leier du tilgang til all musikk i verden. Du betaler omtrent hundre kroner i måneden, og kan høre alt så mye du vil. Tjenester som Apple Music, YouTube Music og Tidal følger samme oppskrift."
         },
         {
             "type": "text",
-            "content": "Spotify betaler ikke hver artist direkte for hver avspilling du gjør. I stedet samler de inn pengene fra alle abonnenter, trekker fra det de selv skal ha (rundt 30 prosent), og deler resten ut til artistene basert på hvor stor andel av alle avspillinger som gikk til hver enkelt. Hvis du hører bare på Karpe en hel måned, går mer av dine penger til Karpe. Hvis du hører like mye på alle artister, blir andelene jevnere fordelt."
+            "content": "Spotify betaler ikke hver artist direkte for hver avspilling du gjør. I stedet havner pengene fra alle abonnenter i én stor felles pott. Spotify trekker fra rundt 30 prosent til seg selv, og resten fordeles etter hvor stor andel hver artist har av alle avspillinger til sammen (Antonsen, 2018). Denne modellen kalles pro-rata. Den betyr noe overraskende: pengene dine følger ikke din egen lytting. Hører du bare på ett lite band en hel måned, går likevel mesteparten av pengene dine til de aller største artistene, fordi det er de som står for flest avspillinger totalt. Spotify betaler heller ikke artistene direkte, men sender pengene via distribusjons- og plateselskaper (Molde, 2025)."
         },
         {
             "type": "text",
-            "content": "Hver enkelt avspilling gir likevel veldig lite. Tallene endrer seg, men en god tommelfingerregel er at én stream gir mellom tre og fem øre til hele kjeden som står bak låten. Artisten selv får ofte bare en liten del av dette. For å tjene en vanlig norsk månedslønn på rundt 35 000 kroner må en artist altså ha mange hundre tusen avspillinger hver eneste måned — bare på Spotify."
+            "content": "Hver enkelt avspilling gir likevel veldig lite. Ingen strømmetjeneste har en fast pris per avspilling; summen svinger med land, abonnementstype og hvor mye som blir lyttet til totalt (Molde, 2025). Et regnestykke fra NRKbeta landet på rundt 3,2 øre per avspilling til den som eier opptaket (Antonsen, 2018). Artisten selv får bare en del av dette. Gjennomsnittlig månedslønn i Norge var 62 070 kroner i 2025 (Statistisk sentralbyrå, 2026). Med rundt tre øre per avspilling skal det altså godt over en million avspillinger til hver eneste måned bare for at summen skal nærme seg en vanlig lønn - og da har verken plateselskap eller låtskriver tatt sin del ennå."
         },
         {
             "type": "component",
@@ -44,16 +44,16 @@
             "props": {
                 "title": "Tallene bak en stream",
                 "items": [
-                    "1 stream på Spotify gir cirka 0,003 dollar (omtrent 3 øre)",
-                    "En artist trenger rundt 250 000 streams i måneden for å tjene minstelønn",
-                    "Spotify hadde over 600 millioner brukere i 2024",
-                    "Av disse betaler omtrent halvparten for abonnement"
+                    "Én avspilling ga rundt 0,0038 dollar - omtrent 3 øre - til den som eier opptaket (Antonsen, 2018)",
+                    "Spotify beholder rundt 30 prosent av abonnementspengene selv (Antonsen, 2018)",
+                    "Spotify hadde 246 millioner betalende abonnenter i 2024 (Hagen, 2024)",
+                    "Selskapet oppgir i dag 777 millioner brukere, hvorav 300 millioner betaler (Spotify, u.å.)"
                 ]
             }
         },
         {
             "type": "header",
-            "text": "Pengestrømmen — hvem får hva?"
+            "text": "Pengestrømmen - hvem får hva?"
         },
         {
             "type": "text",
@@ -71,7 +71,7 @@
                     },
                     {
                         "title": "Plateselskapet",
-                        "description": "Får den største delen av artistens halvdel — ofte 50 til 80 prosent. Plateselskapet betalte for innspilling, markedsføring og distribusjon, og tar derfor en høy andel før artisten ser noe."
+                        "description": "Får den største delen av artistens halvdel - ofte 50 til 80 prosent. Plateselskapet betalte for innspilling, markedsføring og distribusjon, og tar derfor en høy andel før artisten ser noe."
                     },
                     {
                         "title": "Artisten (utøveren)",
@@ -90,14 +90,14 @@
         },
         {
             "type": "text",
-            "content": "Når du legger sammen alle disse leddene, forstår du hvorfor mange artister er sinte. Selv om låten deres blir spilt en million ganger, kan artisten selv sitte igjen med kanskje 3 000 til 10 000 kroner. Plateselskapet tjener mye mer på den samme låten. Det er denne fordelingen som har skapt en av de største kranglene i moderne musikkhistorie."
+            "content": "Låtskriveren har sitt eget ledd i denne kjeden. I Norge er det TONO som krever inn penger på vegne av komponister, tekstforfattere og musikkforlag, og fordeler dem videre til rundt 40 000 medlemmer (Svendsen, 2025). Når du legger sammen alle leddene, forstår du hvorfor mange artister er sinte. Selv om låten deres blir spilt en million ganger, kan artisten selv sitte igjen med noen få tusen kroner. Plateselskapet tjener mye mer på den samme låten. Kritikken mot for lave utbetalinger har fulgt Spotify helt siden starten, og både artister og plateselskaper har protestert ved å holde musikken sin borte fra tjenesten (Hagen, 2024)."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Musikk skal ikke være gratis. Jeg håper at artister ikke gir bort musikken sin og forventer at kunsten deres ikke skal gi noen verdi tilbake. Plateselskaper, streamingtjenester og fans må alle gjenkjenne dette.",
-                "author": "Taylor Swift, da hun fjernet katalogen sin fra Spotify i 2014"
+                "text": "Musikk er kunst, og kunst er viktig og sjelden. Viktige, sjeldne ting er verdifulle. Verdifulle ting bør man betale for.",
+                "author": "Taylor Swift i Wall Street Journal, juli 2014. Samme høst tok plateselskapet hennes hele katalogen bort fra Spotify (Linshi, 2014)"
             }
         },
         {
@@ -106,21 +106,21 @@
         },
         {
             "type": "text",
-            "content": "For å forstå hvorfor pengene fordeles slik de gjør, må vi forstå opphavsrett. Opphavsrett er en lov som sier at den som lager noe kreativt — en sang, en bok, et bilde, en film — eier det de har laget. Andre kan ikke bare kopiere det og bruke det uten lov. Reglene ble laget for å gi kunstnere mulighet til å tjene penger på arbeidet sitt."
+            "content": "For å forstå hvorfor pengene fordeles slik de gjør, må vi forstå opphavsrett. Opphavsrett er retten den som skaper et åndsverk får til det de har laget - en sang, en bok, et bilde eller en film (Lassen et al., 2024). I Norge er reglene samlet i åndsverkloven (Tande, 2024). Andre kan ikke bare kopiere verket og bruke det uten lov. Reglene ble laget for å gi kunstnere mulighet til å tjene penger på arbeidet sitt."
         },
         {
             "type": "text",
-            "content": "I en sang er det egentlig to opphavsretter. Den ene er retten til selve sangen — melodien, akkordene og teksten. Den eies av låtskriveren. Den andre er retten til opptaket — den konkrete innspillingen du faktisk hører. Den eies oftest av plateselskapet, fordi de betalte for studiotiden. Når noen vil bruke en sang, må de få lov fra begge eierne. Det er derfor det er så komplisert å fordele pengene fra streaming."
+            "content": "I en sang er det egentlig to sett med rettigheter. Det ene er retten til selve verket - melodien, akkordene og teksten. Den eies av låtskriveren og komponisten. Det andre gjelder den konkrete innspillingen du faktisk hører, og tilhører dem som framførte og produserte opptaket. Åndsverkloven kaller dette nærstående rettigheter, og de er noe mer begrenset enn opphavsretten til selve verket (Tande, 2024). I praksis eies opptaket ofte av plateselskapet, fordi det betalte for studiotiden. Når noen vil bruke en sang, må de ha lov fra begge sider. Det er derfor det er så komplisert å fordele pengene fra streaming."
         },
         {
             "type": "text",
-            "content": "Opphavsretten i Norge varer i 70 år etter at den som skapte verket dør. Etter det er verket fritt — alle kan bruke det uten å betale noen. Det er derfor du kan høre Beethoven gratis hvor som helst, mens Beyoncé koster. Beethoven døde i 1827. Hans melodier tilhører nå hele menneskeheten."
+            "content": "For norske verk og verk fra EØS-land varer opphavsretten som hovedregel i 70 år etter utløpet av året opphaveren døde (Lassen et al., 2024). Etter det er verket fritt - alle kan bruke det uten å betale noen. Det er derfor du kan høre Beethoven gratis hvor som helst, mens Beyoncé koster. Beethoven døde i 1827 (Andersen et al., 2025). Melodiene hans tilhører nå hele menneskeheten."
         },
         {
             "type": "image",
             "src": "/images/musikkhistorie/streaming-og-opphavsrett-02.webp",
             "alt": "Studio med mikrofon og lydutstyr, opptaksskjermer og blendet lys",
-            "caption": "I studioet skapes både komposisjonen og opptaket — to ulike opphavsretter som lever videre i tiår etterpå."
+            "caption": "I studioet skapes både komposisjonen og opptaket - to ulike opphavsretter som lever videre i tiår etterpå."
         },
         {
             "type": "header",
@@ -132,7 +132,7 @@
         },
         {
             "type": "text",
-            "content": "Et annet vanskelig spørsmål handler om hvem som egentlig skaper en låt. Mange moderne popsanger er laget av et team — en låtskriver i Sverige, en produsent i Los Angeles, en sanger i Korea. Hvem skal eie sangen? Hvem skal ha mest? Og hva med kunstig intelligens som nå kan lage musikk som høres ut som ekte artister? Hvis en KI-modell er trent på Taylor Swifts sanger, og deretter lager en låt som høres ut som henne — har den brutt opphavsretten?"
+            "content": "Et annet vanskelig spørsmål handler om hvem som egentlig skaper en låt. Mange moderne popsanger er laget av et team - en låtskriver i Sverige, en produsent i Los Angeles, en sanger i Korea. Hvem skal eie sangen? Hvem skal ha mest? Og hva med kunstig intelligens som nå kan lage musikk som høres ut som ekte artister? Hvis en KI-modell er trent på Taylor Swifts sanger, og deretter lager en låt som høres ut som henne - har den brutt opphavsretten?"
         },
         {
             "type": "text",
@@ -142,7 +142,7 @@
             "type": "component",
             "name": "ScenarioRoleplay",
             "props": {
-                "title": "Du er ny artist — hva velger du?",
+                "title": "Du er ny artist - hva velger du?",
                 "intro": "Du er 17 år og har akkurat lastet opp din første låt på en distribusjonstjeneste. Telefonen ringer. To selskaper vil ha deg. Hva svarer du?",
                 "startId": "start",
                 "scenarios": [
@@ -193,7 +193,7 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Omtrent hvor mange øre gir én avspilling på Spotify til hele kjeden bak låten?",
+                    "Omtrent hvor mange øre gir én avspilling på Spotify til den som eier opptaket?",
                     "Hvilke to ulike opphavsretter finnes det i en sang, og hvem eier vanligvis hver av dem?",
                     "Hvor lenge varer opphavsretten i Norge etter at den som skapte verket dør?",
                     "Hva er TONO, og hvem passer den på at får betalt?"
@@ -205,7 +205,7 @@
                     "Hvis en KI-modell er trent på Taylor Swifts sanger og lager en låt som høres ut som henne, mener du den har brutt opphavsretten? Begrunn svaret."
                 ],
                 "gaaVidere": [
-                    "Se på din egen musikklytting den siste uka. Regn omtrent ut hvor mange avspillinger favorittartisten din trenger i måneden for å tjene minstelønn, og skriv noen linjer om hva tallet fikk deg til å tenke.",
+                    "Se på din egen musikklytting den siste uka. Regn omtrent ut hvor mange avspillinger favorittartisten din trenger i måneden for å nærme seg en vanlig norsk månedslønn, og skriv noen linjer om hva tallet fikk deg til å tenke.",
                     "Velg en artist du liker og finn ut hvordan du kan støtte dem slik at de får mest mulig penger (konsert, vinyl, t-skjorte, Bandcamp eller Patreon). Skriv en kort plan for hva du kunne gjort.",
                     "Diskuter i klassen: Skal en ikke-samisk artist få lage en pop-låt med joik i, og skal noen få betalt for det? Bruk argumenter fra teksten om kulturell appropriasjon."
                 ]
@@ -217,7 +217,7 @@
             "props": {
                 "questions": [
                     {
-                        "question": "Omtrent hvor mye tjener en artist for én avspilling på Spotify?",
+                        "question": "Omtrent hvor mye gir én avspilling på Spotify til den som eier opptaket?",
                         "options": [
                             "Cirka 10 kroner",
                             "Cirka 1 krone",
@@ -266,6 +266,24 @@
                         ],
                         "answer": "Du kjøper en konsertbillett eller t-skjorte direkte"
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, R. J., Svendsen, T. O. & Fretland, J. A. (2025). *Ludwig van Beethoven*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Ludwig_van_Beethoven](https://snl.no/Ludwig_van_Beethoven)",
+                    "Antonsen, O. H. (2018). *Hvorfor går ikke pengene jeg betaler Spotify til artistene jeg hører på?* NRKbeta. Hentet 04.08.2026 fra [nrkbeta.no](https://nrkbeta.no/2018/12/30/hvorfor-gar-ikke-pengene-jeg-betaler-spotify-til-artistene-jeg-horer-pa/)",
+                    "Hagen, A. N. (2024). *Spotify*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Spotify](https://snl.no/Spotify)",
+                    "Lassen, B. S., Lund, A. M. & Tande, K. M. (2024). *Opphavsrett*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/opphavsrett](https://snl.no/opphavsrett)",
+                    "Linshi, J. (2014). *Why Taylor Swift Pulled Her Music From Spotify*. TIME. Hentet 04.08.2026 fra [time.com](https://time.com/3554468/why-taylor-swift-spotify/)",
+                    "Molde, A. (2025). *Visste du om disse seks halvsannhetene om Spotify?* Høyskolen Kristiania. Hentet 04.08.2026 fra [kristiania.no](https://www.kristiania.no/kunnskap-kristiania/2025/04/seks-halvsannheter-om-spotify/)",
+                    "Spotify. (u.å.). *Company info*. Hentet 04.08.2026 fra [newsroom.spotify.com](https://newsroom.spotify.com/company-info/)",
+                    "Statistisk sentralbyrå. (2026). *Lønn*. Hentet 04.08.2026 fra [ssb.no](https://www.ssb.no/arbeid-og-lonn/lonn-og-arbeidskraftkostnader/statistikk/lonn)",
+                    "Svendsen, T. O. (2025). *TONO*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/TONO](https://snl.no/TONO)",
+                    "Tande, K. M. (2024). *Åndsverkloven*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/åndsverkloven](https://snl.no/%C3%A5ndsverkloven)"
                 ]
             }
         }
