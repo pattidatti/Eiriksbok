@@ -7,7 +7,7 @@
         {
             "type": "text",
             "title": "Strengene: En Annen Dag...",
-            "content": "En standard gitar har 6 strenger. Vi teller dem ofte fra den tykkeste (øverst) til den tynneste (nederst)."
+            "content": "En standard gitar har 6 strenger. Vi teller dem ofte fra den tykkeste (øverst) til den tynneste (nederst). Den vanlige stemmingen er E-A-d-g-h-e1, altså tonene i lista under (Ledang & Aksdal, 2025)."
         },
         {
             "type": "list",
@@ -22,7 +22,7 @@
         },
         {
             "type": "text",
-            "content": "Huskeregle: *En Annen Dag Gikk Bjørn Egentlig*."
+            "content": "Huskeregle: *En Annen Dag Gikk Bjørn Egentlig*.\n\nDen nest tynneste strengen skriver vi h på norsk. På engelsk heter den samme tonen b, mens vår b kalles b flat (Store norske leksikon, 2024)."
         },
         {
             "type": "component",
@@ -34,12 +34,19 @@
         {
             "type": "text",
             "title": "Oppgave 1: Åpne strenger",
-            "content": "Se på gripebrettet over. De hvite sirklene helt til venstre kalles 'åpne strenger' (bånd 0).\n\n*   Klikk på E, A, D, G, B, E.\n*   Ser du at den tykkeste strengen er nederst på tegningen? (Slik ser det ut når du holder gitaren og ser ned på den)."
+            "content": "Se på gripebrettet over. De hvite sirklene helt til venstre kalles 'åpne strenger' (bånd 0)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Klikk på E, A, D, G, B, E.",
+                "Ser du at den tykkeste strengen er nederst på tegningen? Slik ser det ut når du holder gitaren og ser ned på den."
+            ]
         },
         {
             "type": "text",
             "title": "Oppgave 2: E-moll (Verdens enkleste grep)",
-            "content": "Vi skal ta et grep som heter Em (E-moll). Det er ofte det første grepet man lærer."
+            "content": "Vi skal ta et grep som heter Em (E-moll). Det er ofte det første grepet man lærer.\n\nEn treklang er bygd av grunntone, ters og kvint (Bjerkestrand, 2024). I moll ligger tersen en halvtone lavere enn i dur (Ruud, 2025). E-moll består derfor av tonene e, g og h - og det er nettopp de tonene som klinger når du tar grepet under."
         },
         {
             "type": "list",
@@ -76,6 +83,19 @@
                     "Finn en sang du liker som bruker gitar, og lytt etter om du hører når noen bytter grep. Skriv ned tre setninger om hvordan gitaren låter i sangen."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bjerkestrand, N. E. (2024). *Treklang*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/treklang](https://snl.no/treklang)",
+                    "Ledang, O. K. & Aksdal, B. (2025). *Gitar*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/gitar](https://snl.no/gitar)",
+                    "Ruud, E. (2025). *Moll*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/moll](https://snl.no/moll)",
+                    "Store norske leksikon. (2024). *b - tone*. Hentet 04.08.2026 fra [snl.no/b_-_tone](https://snl.no/b_-_tone)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-04"
 }

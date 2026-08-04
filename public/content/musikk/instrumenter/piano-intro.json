@@ -7,7 +7,7 @@
         {
             "type": "text",
             "title": "Tangentene: Hvit og Svart",
-            "content": "På pianoet har vi hvite og svarte tangenter. De hvite kaller vi stamtoner. De heter C, D, E, F, G, A og H (eller B på engelsk).\n\nDe svarte tangentene er halvtoner (kryss eller b). De brukes for å spille skalaer som ikke bare er C-dur."
+            "content": "Et vanlig piano har 88 tangenter og dekker litt over sju oktaver (Holter & Ruud, 2025). I hver oktav ligger det sju hvite tangenter og fem svarte (Store norske leksikon, 2025b).\n\nDe hvite kaller vi stamtoner. De heter C, D, E, F, G, A og H (eller B på engelsk), og til sammen er de akkurat tonene i C-dur (Bjerkestrand, 2020).\n\nDe svarte tangentene gir tonene som ligger en halvtone over eller under en stamtone. Vi skriver dem med kryss eller b, og vi trenger dem for å spille skalaer som ikke bare er C-dur."
         },
         {
             "type": "component",
@@ -16,12 +16,23 @@
         {
             "type": "text",
             "title": "Oppgave 1: Finn C",
-            "content": "Se på pianoet over. Ser du at de svarte tangentene kommer i grupper på to og tre?\n\nTonen C finner du alltid rett til venstre for gruppen med to svarte tangenter.\n\n*   Prøv å finne alle C-ene på pianoet over.\n*   Trykk på dem. Hører du at de er like, men den ene er lysere enn den andre? Dette kalles en oktav."
+            "content": "Se på pianoet over. Ser du at de svarte tangentene kommer i grupper på to og tre?\n\nTonen C finner du alltid rett til venstre for gruppen med to svarte tangenter."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Prøv å finne alle C-ene på pianoet over.",
+                "Trykk på dem. Hører du at de er like, men den ene er lysere enn den andre?"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Avstanden mellom to slike C-er kalles en oktav. Den øverste tonen svinger dobbelt så fort som den nederste, men vi hører dem likevel som den samme tonen (Ruud, 2026)."
         },
         {
             "type": "text",
             "title": "Oppgave 2: Din første akkord",
-            "content": "Vi skal spille en C-dur akkord. En akkord er når du spiller flere toner samtidig."
+            "content": "Vi skal spille en C-dur akkord. En akkord er en samklang av tre eller flere toner som lyder samtidig (Store norske leksikon, 2025a). C-dur-treklangen består av tonene C, E og G (Ruud, 2025)."
         },
         {
             "type": "list",
@@ -41,7 +52,7 @@
             "props": {
                 "forstaa": [
                     "Hva kaller vi de hvite tangentene på pianoet, og hvilke sju toner heter de?",
-                    "Hva er halvtoner, og hvilken farge har tangentene som lager dem?",
+                    "Hva slags toner gir de svarte tangentene, og hvilke to tegn bruker vi når vi skriver dem?",
                     "Hvor på pianoet finner du alltid tonen C?",
                     "Hvilke tre toner spiller du samtidig når du lager en C-dur akkord?"
                 ],
@@ -57,6 +68,21 @@
                     "Lytt til en sang du liker, og prøv å høre om det er ett instrument som spiller enkelttoner eller akkorder. Beskriv hva du hører."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bjerkestrand, N. E. (2020). *Stamtoner*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/stamtoner](https://snl.no/stamtoner)",
+                    "Holter, S. W. & Ruud, E. (2025). *Piano*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/piano](https://snl.no/piano)",
+                    "Ruud, E. (2025). *Moll*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/moll](https://snl.no/moll)",
+                    "Ruud, E. (2026). *Oktav - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/oktav_-_musikk](https://snl.no/oktav_-_musikk)",
+                    "Store norske leksikon. (2025a). *Akkord - musikk*. Hentet 04.08.2026 fra [snl.no/akkord_-_musikk](https://snl.no/akkord_-_musikk)",
+                    "Store norske leksikon. (2025b). *Klaviatur*. Hentet 04.08.2026 fra [snl.no/klaviatur](https://snl.no/klaviatur)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-04"
 }

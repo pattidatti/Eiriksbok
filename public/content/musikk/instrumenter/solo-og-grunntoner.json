@@ -19,7 +19,7 @@
     },
     {
       "type": "text",
-      "content": "Problemet er at de fleste gitarister lærer en skala og deretter spiller seg gjennom den opp og ned, igjen og igjen. Det kalles skalagrind. Alle notene er teknisk riktige - de er alle i skalaen. Men de mangler noe: de forholder seg ikke til akkordene som spilles under."
+      "content": "En skala er en fast rekke toner i stigende rekkefølge innenfor en oktav (Furnes, 2025). Problemet er at de fleste gitarister lærer en skala og deretter spiller seg gjennom den opp og ned, igjen og igjen. Det kalles skalagrind. Alle notene er teknisk riktige - de er alle i skalaen. Men de mangler noe: de forholder seg ikke til akkordene som spilles under."
     },
     {
       "type": "component",
@@ -35,11 +35,11 @@
     },
     {
       "type": "text",
-      "content": "Hver akkord har en grunntone. Det er noten akkorden er bygd rundt, og den noten som høres mest stabil og 'hjemme' ut. For en G-akkord er det G. For D er det D. For Am er det A."
+      "content": "Hver akkord har en grunntone. En treklang er bygd av grunntone, ters og kvint, og det er grunntonen akkorden er bygd rundt og oppkalt etter (Bjerkestrand, 2024). For en G-akkord er det G. For D er det D. For Am er det A."
     },
     {
       "type": "text",
-      "content": "Når du spiller en solo og lander på grunntonen til akkorden som spilles akkurat da, skjer noe magisk: soloen slår seg til ro. Den følger harmonien. Lytteren kjenner at du vet hva du gjør."
+      "content": "Når du spiller en solo og lander på grunntonen til akkorden som spilles akkurat da, skjer noe magisk: soloen slår seg til ro. Den følger harmonien. Lytteren kjenner at du vet hva du gjør. Det er ikke tilfeldig: i tonal musikk er det grunntonen som gir opplevelsen av stabilitet og hvile (Ruud & Bjerkestrand, 2024)."
     },
     {
       "type": "text",
@@ -87,7 +87,7 @@
     },
     {
       "type": "text",
-      "content": "Et godt tips er å bruke en approachnote - en note rett over eller under grunntonen - rett før landingen. Hvis du er på vei mot G, kan du spille A eller F# et halvslag før, så G-en sitter enda bedre."
+      "content": "Et godt tips er å bruke en approachnote - en note rett over eller under grunntonen - rett før landingen. Hvis du er på vei mot G, kan du spille A eller F# et halvslag før, så G-en sitter enda bedre. Trikset bygger på ledetonen: tonen en halvtone under streber mot grunntonen, og derfor kjennes landingen ekstra riktig ut (Bjerkestrand & Holter, 2024)."
     },
     {
       "type": "component",
@@ -100,7 +100,7 @@
     },
     {
       "type": "text",
-      "content": "Med grunntone-targeting som verktøy kan du nå bygge soloer som faktisk høres ut som om de passer til sangene du spiller over. Steg én er å lære seg grunntone-posisjonene for akkordene du bruker oftest. Steg to er å øve på å navigere mellom dem. Steg tre er å fylle mellomrommene med pentatone fraser."
+      "content": "Med grunntone-targeting som verktøy kan du nå bygge soloer som faktisk høres ut som om de passer til sangene du spiller over. Steg én er å lære seg grunntone-posisjonene for akkordene du bruker oftest. Steg to er å øve på å navigere mellom dem. Steg tre er å fylle mellomrommene med pentatone fraser. Pentatonikk er bruk av skalaer med fem toner, og den er svært utbredt i folkemusikken (Ruud, 2025)."
     },
     {
       "type": "list",
@@ -156,10 +156,10 @@
             "explanation": "Landing på grunntonen ved akkordskiftet gir soloen retning og følger harmonien. Resten av takten kan du bevege deg fritt."
           },
           {
-            "question": "Hva kalles det når en gitarist spiller skalanotorer uten å ha et harmonisk mål?",
+            "question": "Hva kalles det når en gitarist spiller skalatoner uten å ha et harmonisk mål?",
             "options": ["Skalagrind", "Grunntone-targeting", "Approachnoter", "Pentatonisk spilling"],
             "correct": 0,
-            "explanation": "Skalagrind betyr å spille skalanotorer opp og ned uten å navigere mot akkordtonene. Resultatet høres tilfeldig ut."
+            "explanation": "Skalagrind betyr å spille skalatoner opp og ned uten å navigere mot akkordtonene. Resultatet høres tilfeldig ut."
           },
           {
             "question": "Hva er en approachnote?",
@@ -174,7 +174,21 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bjerkestrand, N. E. (2024). *Treklang*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/treklang](https://snl.no/treklang)",
+          "Bjerkestrand, N. E. & Holter, S. W. (2024). *Ledetone*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/ledetone](https://snl.no/ledetone)",
+          "Furnes, O. T. (2025). *Skala - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/skala_-_musikk](https://snl.no/skala_-_musikk)",
+          "Ruud, E. (2025). *Pentatonikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/pentatonikk](https://snl.no/pentatonikk)",
+          "Ruud, E. & Bjerkestrand, N. E. (2024). *Tonalitet*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/tonalitet](https://snl.no/tonalitet)"
+        ]
+      }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-08-04"
 }
