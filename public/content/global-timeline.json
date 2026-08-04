@@ -1535,6 +1535,30 @@
       ]
     },
     {
+      "id": "romerrikets-fall",
+      "title": "Falt Romerriket - og hvorfor?",
+      "description": "Falt Roma på én dag i 476, eller forvitret riket sakte over 300 år? Svaret avhenger av hva du velger å måle.",
+      "startDate": 476,
+      "endDate": null,
+      "displayDate": "476",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "historiens-store-gater",
+      "link": "/historie/historiens-store-gater/romerrikets-fall",
+      "tags": [
+        "romerriket",
+        "antikken",
+        "historiografi",
+        "kollaps",
+        "senantikken"
+      ],
+      "lat": 41.9,
+      "lng": 12.5,
+      "placeLabel": "Romerriket",
+      "placeCountryId": 380,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "arven-etter-romerriket",
       "title": "Arven etter Romerriket",
       "description": "Et dypdykk i hvordan Romerriket preger kultur, språk, lover og politikk i dag.",

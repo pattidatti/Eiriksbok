@@ -82,6 +82,7 @@ const TikkunOlam3D = lazy(() => import('./TikkunOlam3D'));
 const SamsaraSyklusen3D = lazy(() => import('./SamsaraSyklusen3D'));
 const MokshaVeien3D = lazy(() => import('./MokshaVeien3D'));
 const MarsjenMotRoma3D = lazy(() => import('./MarsjenMotRoma3D'));
+const GrensenLekker3D = lazy(() => import('./GrensenLekker3D'));
 const VektenIWien3D = lazy(() => import('./VektenIWien3D'));
 const Vesterleden3D = lazy(() => import('./Vesterleden3D'));
 const Gangen3D = lazy(() => import('./Gangen3D'));
@@ -1338,6 +1339,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 90,
         loader: () => import('./SamsaraSyklusen3D'),
         Component: SamsaraSyklusen3D as never,
+    },
+    'grensen-lekker-3d': {
+        id: 'grensen-lekker-3d',
+        title: 'Grensen som lekker',
+        description:
+            'Du er statskassa i Vestromerriket, og grensa langs elva har seks vadesteder - men du har bare fire legioner. Klikk en legion og så vadestedet den skal marsjere til; marsjen tar tid, og imens dukker det opp angripere et helt annet sted. Hver legion du holder ute tapper statskassa hvert sekund, og hvert vadested du forlater blir plyndret. Du kan oppløse legioner for å spare lønn, men da står enda flere vadesteder åpne. Hold ut i 60 sekunder uten at kassa går tom. Lyspæren: Vestromerriket tapte ikke ett stort slag. Grensa var for lang til å bemannes, hæren for dyr til å betales, og til slutt måtte keiserne velge hvilke provinser de skulle gi opp.',
+        estimatedSeconds: 150,
+        loader: () => import('./GrensenLekker3D'),
+        Component: GrensenLekker3D as never,
     },
     'marsj-mot-roma-3d': {
         id: 'marsj-mot-roma-3d',

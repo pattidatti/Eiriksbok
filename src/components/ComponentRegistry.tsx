@@ -29,6 +29,7 @@ const MalstangaTest = lazy(() => import('./content/interactive/MalstangaTest').t
 const HaraldsRike = lazy(() => import('./content/interactive/HaraldsRike').then(m => ({ default: m.HaraldsRike })));
 const LegendensVekst = lazy(() => import('./content/interactive/LegendensVekst').then(m => ({ default: m.LegendensVekst })));
 const Skyldvekten = lazy(() => import('./content/interactive/Skyldvekten').then(m => ({ default: m.Skyldvekten })));
+const Fallkurven = lazy(() => import('./content/interactive/Fallkurven').then(m => ({ default: m.Fallkurven })));
 const Diagnosebrettet = lazy(() => import('./content/interactive/Diagnosebrettet').then(m => ({ default: m.Diagnosebrettet })));
 const AmerikaBevisSortering = lazy(() => import('./content/interactive/AmerikaBevisSortering').then(m => ({ default: m.AmerikaBevisSortering })));
 const TrojaMyteEllerFunn = lazy(() => import('./content/interactive/TrojaMyteEllerFunn').then(m => ({ default: m.TrojaMyteEllerFunn })));
@@ -406,6 +407,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     HaraldsRike,
     LegendensVekst,
     Skyldvekten,
+    Fallkurven,
     Diagnosebrettet,
     Comparison,
     WritingFix,

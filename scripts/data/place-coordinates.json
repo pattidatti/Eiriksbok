@@ -812,7 +812,7 @@
     },
     {
       "tag": "antikken",
-      "count": 40
+      "count": 42
     },
     {
       "tag": "politikk",
@@ -983,6 +983,10 @@
       "count": 12
     },
     {
+      "tag": "kollaps",
+      "count": 12
+    },
+    {
       "tag": "globalisering",
       "count": 12
     },
@@ -1032,10 +1036,6 @@
     },
     {
       "tag": "forhistorie",
-      "count": 10
-    },
-    {
-      "tag": "kollaps",
       "count": 10
     },
     {
@@ -1508,6 +1508,10 @@
     },
     {
       "tag": "gull",
+      "count": 4
+    },
+    {
+      "tag": "historiografi",
       "count": 4
     },
     {
@@ -2012,6 +2016,10 @@
     },
     {
       "tag": "guptariket",
+      "count": 2
+    },
+    {
+      "tag": "senantikken",
       "count": 2
     },
     {
@@ -2632,10 +2640,6 @@
     },
     {
       "tag": "quisling",
-      "count": 2
-    },
-    {
-      "tag": "historiografi",
       "count": 2
     },
     {

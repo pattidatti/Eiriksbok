@@ -1,5 +1,5 @@
 {
-  "buildId": 65895146707493,
+  "buildId": 14901746928294,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1488,6 +1488,9 @@
     ],
     "roanoke": [
       "content/historie/historiens-store-gater/roanoke.json"
+    ],
+    "romerrikets-fall": [
+      "content/historie/historiens-store-gater/romerrikets-fall.json"
     ],
     "skylda-for-forste-verdenskrig": [
       "content/historie/historiens-store-gater/skylda-for-forste-verdenskrig.json"
@@ -4223,6 +4226,7 @@
     "historie/historiens-store-gater/oversikt": "content/historie/historiens-store-gater/oversikt.json",
     "historie/historiens-store-gater/pyramidene": "content/historie/historiens-store-gater/pyramidene.json",
     "historie/historiens-store-gater/roanoke": "content/historie/historiens-store-gater/roanoke.json",
+    "historie/historiens-store-gater/romerrikets-fall": "content/historie/historiens-store-gater/romerrikets-fall.json",
     "historie/historiens-store-gater/skylda-for-forste-verdenskrig": "content/historie/historiens-store-gater/skylda-for-forste-verdenskrig.json",
     "historie/indias-historie/ashoka-og-mauryariket": "content/historie/indias-historie/ashoka-og-mauryariket.json",
     "historie/indias-historie/guptariket": "content/historie/indias-historie/guptariket.json",

@@ -744,7 +744,7 @@
                 "språkgeografi"
               ],
               "createdDate": "2026-07-30T00:00:00Z",
-              "lastUpdated": "2026-07-30T20:29:21+00:00"
+              "lastUpdated": "2026-07-31T00:31:53+02:00"
             },
             {
               "id": "spredning-av-dialekttrekk",
@@ -2855,7 +2855,8 @@
                 "symboler",
                 "mysterier"
               ],
-              "createdDate": "2026-07-31T00:00:00Z"
+              "createdDate": "2026-07-31T00:00:00Z",
+              "lastUpdated": "2026-07-31T07:31:25+02:00"
             },
             {
               "id": "havfolkene",
@@ -2870,7 +2871,8 @@
                 "bronsealderen",
                 "migrasjon"
               ],
-              "createdDate": "2026-07-31T00:00:00Z"
+              "createdDate": "2026-07-31T00:00:00Z",
+              "lastUpdated": "2026-08-01T00:32:15+02:00"
             },
             {
               "id": "benektelse-eller-uenighet",
@@ -2885,7 +2887,23 @@
                 "konspirasjonsteorier",
                 "nyere-tid"
               ],
-              "createdDate": "2026-08-01T00:00:00Z"
+              "createdDate": "2026-08-01T00:00:00Z",
+              "lastUpdated": "2026-08-01T07:31:37+02:00"
+            },
+            {
+              "id": "romerrikets-fall",
+              "title": "Falt Romerriket - og hvorfor?",
+              "description": "Falt Roma på én dag i 476, eller forvitret riket sakte over 300 år? Svaret avhenger av hva du velger å måle.",
+              "image": "/images/historiens-store-gater/romerrikets-fall-hero.webp",
+              "tags": [
+                "romerriket",
+                "antikken",
+                "historiografi",
+                "kollaps",
+                "senantikken"
+              ],
+              "createdDate": "2026-08-04T00:00:00Z",
+              "lastUpdated": "2026-08-04T17:07:05.213Z"
             }
           ]
         },
@@ -2922,7 +2940,7 @@
                 "jernalder"
               ],
               "createdDate": "2025-12-04T20:11:57+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T16:08:42+02:00"
             },
             {
               "id": "klimakrisen-536",
@@ -3032,7 +3050,7 @@
                 "adel"
               ],
               "createdDate": "2026-01-30T00:14:38+01:00",
-              "lastUpdated": "2026-07-11T13:11:28+02:00"
+              "lastUpdated": "2026-07-31T06:00:25+02:00"
             },
             {
               "id": "knut-alvsson",
@@ -3233,7 +3251,7 @@
                 "1814"
               ],
               "createdDate": "2026-07-01T00:00:00Z",
-              "lastUpdated": "2026-07-11T13:11:28+02:00"
+              "lastUpdated": "2026-07-30T23:58:56+02:00"
             },
             {
               "id": "unionsopplosningen-1905",
@@ -3250,7 +3268,7 @@
                 "unionsoppløsning"
               ],
               "createdDate": "2026-05-28T07:30:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T06:00:25+02:00"
             },
             {
               "id": "utvandringen-til-amerika",
@@ -3268,7 +3286,7 @@
                 "1800-tallet"
               ],
               "createdDate": "2026-06-08T00:00:00Z",
-              "lastUpdated": "2026-07-30T18:40:43+02:00"
+              "lastUpdated": "2026-07-31T06:00:25+02:00"
             },
             {
               "id": "kvinnekampen",
@@ -3286,7 +3304,7 @@
                 "stemmerett"
               ],
               "createdDate": "2026-06-25T00:00:00Z",
-              "lastUpdated": "2026-07-11T13:11:28+02:00"
+              "lastUpdated": "2026-07-30T23:58:56+02:00"
             },
             {
               "id": "fornorskingen-av-samene",
@@ -3380,7 +3398,7 @@
                 "vendepunkt"
               ],
               "createdDate": "2026-05-15T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T08:51:16+02:00"
             },
             {
               "id": "gustav-vasa",
@@ -3396,7 +3414,7 @@
                 "statsbygging"
               ],
               "createdDate": "2026-05-17T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T08:51:16+02:00"
             },
             {
               "id": "stormaktstiden",
@@ -3414,7 +3432,7 @@
                 "poltava"
               ],
               "createdDate": "2026-05-16T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T08:51:16+02:00"
             }
           ]
         },
@@ -3435,7 +3453,8 @@
                 "buddhisme",
                 "oldtiden"
               ],
-              "createdDate": "2026-08-02T00:00:00Z"
+              "createdDate": "2026-08-02T00:00:00Z",
+              "lastUpdated": "2026-08-02T07:31:32+02:00"
             },
             {
               "id": "mogulriket",
@@ -3450,7 +3469,8 @@
                 "imperier",
                 "toleranse"
               ],
-              "createdDate": "2026-08-01T00:00:00Z"
+              "createdDate": "2026-08-01T00:00:00Z",
+              "lastUpdated": "2026-08-02T00:31:47+02:00"
             },
             {
               "id": "guptariket",
@@ -3465,7 +3485,8 @@
                 "oldtiden",
                 "vitenskap"
               ],
-              "createdDate": "2026-08-03T00:00:00Z"
+              "createdDate": "2026-08-03T00:00:00Z",
+              "lastUpdated": "2026-08-03T07:31:55+02:00"
             },
             {
               "id": "opproret-1857",
@@ -3479,7 +3500,8 @@
                 "britisk-imperium",
                 "1800-tallet"
               ],
-              "createdDate": "2026-08-03T00:00:00Z"
+              "createdDate": "2026-08-03T00:00:00Z",
+              "lastUpdated": "2026-08-04T00:31:45+02:00"
             }
           ]
         },
@@ -4475,7 +4497,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T12:02:27+02:00"
             },
             {
               "id": "vann-og-vindmolla",
@@ -4492,7 +4514,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T23:56:40+02:00"
             },
             {
               "id": "klokka",
@@ -4509,7 +4531,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T15:58:09+02:00"
             },
             {
               "id": "boktrykkerkunsten",
@@ -4526,7 +4548,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T12:02:27+02:00"
             },
             {
               "id": "vann-og-kloakk",
@@ -4543,7 +4565,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T23:56:40+02:00"
             },
             {
               "id": "elektrisiteten",
@@ -4560,7 +4582,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-30T18:40:43+02:00"
+              "lastUpdated": "2026-08-02T19:59:44+02:00"
             },
             {
               "id": "kjoleskapet",
@@ -4577,7 +4599,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T15:58:09+02:00"
             },
             {
               "id": "vaksiner-og-antibiotika",
@@ -4594,7 +4616,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T23:56:40+02:00"
             },
             {
               "id": "telefonen",
@@ -4611,7 +4633,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T19:59:44+02:00"
             },
             {
               "id": "symaskinen",
@@ -4628,7 +4650,7 @@
                 "oppfinnelser"
               ],
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T15:58:09+02:00"
             }
           ]
         },
@@ -4936,7 +4958,7 @@
                 "humanisme"
               ],
               "createdDate": "2026-05-18T00:00:00Z",
-              "lastUpdated": "2026-07-30T18:40:43+02:00"
+              "lastUpdated": "2026-08-02T19:59:44+02:00"
             },
             {
               "id": "galileo-galilei",
@@ -4952,7 +4974,7 @@
                 "italia"
               ],
               "createdDate": "2026-05-18T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T11:52:28+02:00"
             },
             {
               "id": "michelangelo",
@@ -4968,7 +4990,7 @@
                 "firenze"
               ],
               "createdDate": "2026-05-19T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T11:52:28+02:00"
             },
             {
               "id": "den-vitenskapelige-revolusjonen",
@@ -4985,7 +5007,7 @@
                 "europa"
               ],
               "createdDate": "2026-06-18T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T08:56:45+02:00"
             }
           ]
         },
@@ -5009,7 +5031,7 @@
                 "1500-tallet"
               ],
               "createdDate": "2026-05-10T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T06:03:21+02:00"
             },
             {
               "id": "30-aarskrigen",
@@ -5024,7 +5046,7 @@
                 "reformasjonen"
               ],
               "createdDate": "2025-12-06T19:29:39+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T06:03:21+02:00"
             },
             {
               "id": "reformasjonen-i-norge",
@@ -5041,7 +5063,7 @@
                 "1500-tallet"
               ],
               "createdDate": "2026-05-11T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T08:56:45+02:00"
             },
             {
               "id": "mottreformasjonen",
@@ -5058,7 +5080,7 @@
                 "1500-tallet"
               ],
               "createdDate": "2026-05-14T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T08:56:45+02:00"
             },
             {
               "id": "kalvin-og-kalvinismen",
@@ -5075,7 +5097,7 @@
                 "1500-tallet"
               ],
               "createdDate": "2026-05-23T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T06:03:21+02:00"
             }
           ]
         },
@@ -5526,7 +5548,7 @@
               "link": "/historie/vikingtiden/vikingtiden-sti",
               "icon": "map",
               "createdDate": "2025-12-22T21:11:33+01:00",
-              "lastUpdated": "2025-12-23T14:29:34+01:00"
+              "lastUpdated": "2026-08-03T15:58:07+02:00"
             },
             {
               "id": "detective-greenland",
@@ -5585,7 +5607,7 @@
                 "skip"
               ],
               "createdDate": "2025-12-22T21:11:33+01:00",
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-08-03T15:58:07+02:00"
             },
             {
               "id": "myklebust-funnet",
@@ -5599,7 +5621,7 @@
                 "norge"
               ],
               "createdDate": "2026-01-30T20:51:50+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-03T12:01:05+02:00"
             },
             {
               "id": "samfunn-og-rett",
@@ -5613,7 +5635,7 @@
                 "lov"
               ],
               "createdDate": "2025-12-22T21:11:33+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-03T15:58:07+02:00"
             },
             {
               "id": "hypotesen-norden-vs-frankrike",
@@ -5627,7 +5649,7 @@
                 "karl-den-store"
               ],
               "createdDate": "2025-12-09T23:20:17+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-03T08:56:03+02:00"
             },
             {
               "id": "karl-den-store",
@@ -5641,7 +5663,7 @@
                 "karl-den-store"
               ],
               "createdDate": "2025-12-09T23:20:17+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-03T08:56:03+02:00"
             },
             {
               "id": "asatro",
@@ -5655,7 +5677,7 @@
                 "guder"
               ],
               "createdDate": "2025-12-09T23:20:17+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-03T05:58:17+02:00"
             },
             {
               "id": "rikssamlingen",
@@ -5668,7 +5690,7 @@
                 "rikssamlingen"
               ],
               "createdDate": "2025-11-28T18:28:18+01:00",
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-08-03T15:58:07+02:00"
             },
             {
               "id": "danelagen",
@@ -5681,7 +5703,7 @@
                 "vikingtiden"
               ],
               "createdDate": "2025-12-09T23:20:17+01:00",
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-08-03T05:58:17+02:00"
             },
             {
               "id": "veien-mot-ost",
@@ -5695,7 +5717,7 @@
                 "vikingtiden"
               ],
               "createdDate": "2025-12-09T23:20:17+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-03T19:57:36+02:00"
             },
             {
               "id": "oppdagelsesreiser",
@@ -5709,7 +5731,7 @@
                 "amerika"
               ],
               "createdDate": "2025-12-22T21:11:33+01:00",
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-08-03T12:01:05+02:00"
             },
             {
               "id": "kristningen-av-norge",
@@ -5723,7 +5745,7 @@
                 "stiklestad"
               ],
               "createdDate": "2025-12-09T23:20:17+01:00",
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-08-03T08:56:03+02:00"
             },
             {
               "id": "normandie",
@@ -5737,7 +5759,7 @@
                 "vikingtiden"
               ],
               "createdDate": "2025-12-09T23:20:17+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-03T12:01:05+02:00"
             }
           ]
         },
@@ -6070,7 +6092,7 @@
               "link": "/historie/romerriket/romerriket-sti",
               "icon": "map",
               "createdDate": "2025-12-22T21:35:57+01:00",
-              "lastUpdated": "2026-05-21T11:01:59+02:00"
+              "lastUpdated": "2026-08-01T15:55:34+02:00"
             },
             {
               "id": "romerriket-sti-v2",
@@ -6079,7 +6101,7 @@
               "link": "/historie/romerriket/romerriket-sti-v2",
               "icon": "map",
               "createdDate": "2026-05-27T00:00:00+02:00",
-              "lastUpdated": "2026-05-27T23:18:11+02:00"
+              "lastUpdated": "2026-08-01T15:55:34+02:00"
             }
           ],
           "lessons": [
@@ -6094,7 +6116,7 @@
                 "republikk"
               ],
               "createdDate": "2025-12-20T09:30:18+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T23:59:58+02:00"
             },
             {
               "id": "caesar",
@@ -6108,7 +6130,7 @@
                 "caesar"
               ],
               "createdDate": "2026-05-28T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T15:55:34+02:00"
             },
             {
               "id": "augustus-og-keiserdomme",
@@ -6122,7 +6144,7 @@
                 "keiser"
               ],
               "createdDate": "2025-12-20T09:30:18+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T15:55:34+02:00"
             },
             {
               "id": "romerske-keisere",
@@ -6136,7 +6158,7 @@
                 "biografi"
               ],
               "createdDate": "2025-12-20T09:30:18+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T05:58:40+02:00"
             },
             {
               "id": "legitimitet-og-kristendom",
@@ -6151,7 +6173,7 @@
                 "politikk"
               ],
               "createdDate": "2025-12-20T20:05:32+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T23:59:58+02:00"
             },
             {
               "id": "handel-og-silkeveien",
@@ -6166,7 +6188,7 @@
                 "globalisering"
               ],
               "createdDate": "2025-12-20T20:33:08+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T20:00:52+02:00"
             },
             {
               "id": "pompeii",
@@ -6180,7 +6202,7 @@
                 "arkeologi"
               ],
               "createdDate": "2025-12-20T20:33:08+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T23:59:58+02:00"
             },
             {
               "id": "diokletian",
@@ -6195,7 +6217,7 @@
                 "sentantikken"
               ],
               "createdDate": "2025-12-23T14:29:34+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00",
+              "lastUpdated": "2026-08-01T20:00:52+02:00",
               "definitions": [
                 {
                   "term": "Tetrarki",
@@ -6228,7 +6250,7 @@
                 "teknologi"
               ],
               "createdDate": "2025-12-20T20:33:08+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T15:55:34+02:00"
             },
             {
               "id": "hverdagsliv-i-roma",
@@ -6243,7 +6265,7 @@
                 "hverdagsliv"
               ],
               "createdDate": "2025-12-20T20:33:08+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T20:00:52+02:00"
             },
             {
               "id": "arven-etter-romerriket",
@@ -6258,7 +6280,7 @@
                 "politikk"
               ],
               "createdDate": "2025-12-20T20:19:26+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T11:52:28+02:00"
             },
             {
               "id": "vestromerrikets-fall",
@@ -6272,7 +6294,7 @@
                 "historie"
               ],
               "createdDate": "2025-12-20T09:30:18+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T05:58:40+02:00"
             },
             {
               "id": "romerske-guder",
@@ -6287,7 +6309,7 @@
                 "krle"
               ],
               "createdDate": "2025-12-21T00:04:37+01:00",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-02T05:58:40+02:00"
             }
           ]
         },
@@ -6329,7 +6351,7 @@
               ],
               "year": "1299",
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T11:52:21+02:00"
             },
             {
               "id": "konstantinopels-fall",
@@ -6346,7 +6368,7 @@
               ],
               "year": "1453",
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T11:52:21+02:00"
             },
             {
               "id": "suleyman-gullalderen",
@@ -6363,7 +6385,7 @@
               ],
               "year": "1520-1566",
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T16:08:42+02:00"
             },
             {
               "id": "janitsjarene",
@@ -6380,7 +6402,7 @@
               ],
               "year": "1383-1826",
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T08:57:21+02:00"
             },
             {
               "id": "millet-mangfold",
@@ -6397,7 +6419,7 @@
               ],
               "year": "1492",
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T11:52:21+02:00"
             },
             {
               "id": "topkapi-palasset",
@@ -6414,7 +6436,7 @@
               ],
               "year": "1465",
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T09:12:40+02:00"
             },
             {
               "id": "handel-og-kultur",
@@ -6431,7 +6453,7 @@
               ],
               "year": "1555",
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T08:57:21+02:00"
             },
             {
               "id": "forfallet",
@@ -6448,7 +6470,7 @@
               ],
               "year": "1683-1908",
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T08:57:21+02:00"
             },
             {
               "id": "sammenbruddet",
@@ -6465,7 +6487,7 @@
               ],
               "year": "1914-1923",
               "createdDate": "2026-05-31T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T16:08:42+02:00"
             }
           ]
         },
@@ -6502,7 +6524,7 @@
                 "demokrati"
               ],
               "createdDate": "2026-05-14T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T00:01:45+02:00"
             },
             {
               "id": "zarathustra-og-zoroastrismen",
@@ -6517,7 +6539,7 @@
                 "krle"
               ],
               "createdDate": "2026-05-15T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T00:01:45+02:00"
             },
             {
               "id": "kyros-den-store",
@@ -6533,7 +6555,7 @@
                 "toleranse"
               ],
               "createdDate": "2026-05-15T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-08-01T00:01:45+02:00"
             },
             {
               "id": "aleksander-den-store",
@@ -6549,7 +6571,7 @@
                 "imperium"
               ],
               "createdDate": "2026-05-17T00:00:00Z",
-              "lastUpdated": "2026-07-08T00:30:53+02:00"
+              "lastUpdated": "2026-07-31T20:04:05+02:00"
             }
           ]
         },
@@ -7945,7 +7967,8 @@
                     "dodeboken",
                     "osiris"
                   ],
-                  "createdDate": "2026-08-03T00:00:00Z"
+                  "createdDate": "2026-08-03T00:00:00Z",
+                  "lastUpdated": "2026-08-04T07:33:37+02:00"
                 }
               ]
             },
@@ -8373,7 +8396,8 @@
                     "fornorsking",
                     "nord-norge"
                   ],
-                  "createdDate": "2026-08-04T00:00:00Z"
+                  "createdDate": "2026-08-04T00:00:00Z",
+                  "lastUpdated": "2026-08-04T07:33:37+02:00"
                 }
               ]
             }
@@ -8959,7 +8983,7 @@
                 "rytme"
               ],
               "createdDate": "2025-12-13T22:43:33+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-03T23:46:13+02:00"
             },
             {
               "id": "akkorder-og-harmoni",
@@ -8972,7 +8996,7 @@
                 "harmoni"
               ],
               "createdDate": "2025-12-13T22:43:33+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-03T23:46:13+02:00"
             },
             {
               "id": "notasjon",
@@ -8985,7 +9009,7 @@
                 "notasjon"
               ],
               "createdDate": "2025-12-13T22:43:33+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-03T23:46:13+02:00"
             },
             {
               "id": "tonearter-og-skalaer",
@@ -8999,7 +9023,7 @@
                 "toneart"
               ],
               "createdDate": "2026-05-21T00:00:00Z",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T05:48:02+02:00"
             }
           ]
         },
@@ -9020,7 +9044,7 @@
                 "piano"
               ],
               "createdDate": "2025-12-13T22:43:33+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T08:46:39+02:00"
             },
             {
               "id": "gitar-intro",
@@ -9033,7 +9057,7 @@
                 "gitar"
               ],
               "createdDate": "2025-12-13T22:43:33+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T08:46:39+02:00"
             },
             {
               "id": "caged-system",
@@ -9048,7 +9072,7 @@
                 "solo"
               ],
               "createdDate": "2026-05-27T00:00:00Z",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T05:48:02+02:00"
             },
             {
               "id": "solo-og-grunntoner",
@@ -9063,7 +9087,7 @@
                 "grunntone"
               ],
               "createdDate": "2026-05-27T00:00:00Z",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T08:46:39+02:00"
             },
             {
               "id": "bass-intro",
@@ -9076,7 +9100,7 @@
                 "bass"
               ],
               "createdDate": "2025-12-13T22:43:33+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T05:48:02+02:00"
             },
             {
               "id": "trommer-intro",
@@ -9089,7 +9113,7 @@
                 "trommer"
               ],
               "createdDate": "2025-12-13T22:43:33+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T11:51:06+02:00"
             }
           ]
         },
@@ -9110,7 +9134,7 @@
                 "låtskriving"
               ],
               "createdDate": "2025-12-13T22:43:33+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T11:51:06+02:00"
             },
             {
               "id": "melodi-og-hook",
@@ -9125,7 +9149,7 @@
                 "hook"
               ],
               "createdDate": "2026-05-17T00:00:00Z",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T16:01:52+02:00"
             },
             {
               "id": "dynamikk-og-uttrykk",
@@ -9139,7 +9163,7 @@
                 "uttrykk"
               ],
               "createdDate": "2026-05-25T00:00:00Z",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T11:51:06+02:00"
             },
             {
               "id": "tekstskriving",
@@ -9153,7 +9177,7 @@
                 "kreativt"
               ],
               "createdDate": "2026-05-27T00:00:00Z",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T16:01:52+02:00"
             }
           ]
         },
@@ -9176,7 +9200,7 @@
                 "kulturhistorie"
               ],
               "createdDate": "2026-05-06T00:00:00Z",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-03T19:57:36+02:00"
             },
             {
               "id": "streaming-og-opphavsrett",
@@ -9221,7 +9245,7 @@
                 "afroamerikansk"
               ],
               "createdDate": "2026-05-15T00:00:00Z",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-03T19:57:36+02:00"
             },
             {
               "id": "folkemusikk",
@@ -9236,7 +9260,7 @@
                 "kulturhistorie"
               ],
               "createdDate": "2026-05-17T00:00:00Z",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-04T16:01:52+02:00"
             },
             {
               "id": "hip-hop",
