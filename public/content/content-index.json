@@ -1,5 +1,5 @@
 {
-  "buildId": 14901746928294,
+  "buildId": 218903162153490,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1398,6 +1398,9 @@
     ],
     "etterkrigstiden-sti": [
       "content/historie/etterkrigstiden/etterkrigstiden-sti.json"
+    ],
+    "jugoslavias-opplosning": [
+      "content/historie/etterkrigstiden/jugoslavias-opplosning.json"
     ],
     "russland-etter-sovjet": [
       "content/historie/etterkrigstiden/russland-etter-sovjet.json"
@@ -4196,6 +4199,7 @@
     "historie/etterkrigstiden/den-unipolare-verden": "content/historie/etterkrigstiden/den-unipolare-verden.json",
     "historie/etterkrigstiden/en-ny-verdensorden": "content/historie/etterkrigstiden/en-ny-verdensorden.json",
     "historie/etterkrigstiden/etterkrigstiden-sti": "content/historie/etterkrigstiden/etterkrigstiden-sti.json",
+    "historie/etterkrigstiden/jugoslavias-opplosning": "content/historie/etterkrigstiden/jugoslavias-opplosning.json",
     "historie/etterkrigstiden/russland-etter-sovjet": "content/historie/etterkrigstiden/russland-etter-sovjet.json",
     "historie/etterkrigstiden/verden-bygges-pa-nytt": "content/historie/etterkrigstiden/verden-bygges-pa-nytt.json",
     "historie/forste-verdenskrig/hjemmefronten": "content/historie/forste-verdenskrig/hjemmefronten.json",

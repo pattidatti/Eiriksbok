@@ -1,0 +1,412 @@
+{
+    "id": "jugoslavias-opplosning",
+    "title": "Jugoslavias oppløsning: Da naboer ble fiender",
+    "subject": "historie",
+    "layout": "rich",
+    "year": "1991-1999",
+    "category": "Verden",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jugoslavia var ett land med seks republikker og mange folkegrupper.",
+        "Da landet sprakk i 1991, ble naboer i samme gate plutselig satt på hver sin side.",
+        "Bosnia-krigen kostet rundt 100 000 liv. I Srebrenica ble over 8000 gutter og menn drept.",
+        "Krigen var ikke uunngåelig. Den var resultat av valg politikere tok."
+    ],
+    "externalUrl": "https://snl.no/Jugoslavias_historie",
+    "content": [
+        {
+            "type": "text",
+            "content": "Vinteren 1984 var Sarajevo verdens midtpunkt. Byen arrangerte vinter-OL, og fjellene rundt var fulle av løyper, tribuner og folk fra hele verden. Åtte år senere lå det kanoner i de samme fjellene, rettet ned mot byen. Naboer som hadde delt oppgang, jobb og fotballag i hele sitt liv, sto plutselig på hver sin side av en frontlinje.\n\nHvordan kan et land der folk levde tett sammen bli et land der de skyter på hverandre? Det er spørsmålet denne artikkelen handler om. Og svaret er ikke at folk plutselig ble onde. Svaret handler om hvilke forskjeller som fikk lov til å bety noe."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Sarajevo omkranset av fjell i vinterlys, olympiske anlegg i forgrunnen",
+            "caption": "Sarajevo arrangerte vinter-OL i 1984. Fjellene rundt byen ble senere brukt til å beskyte den."
+        },
+        {
+            "type": "header",
+            "text": "Ett land, mange folk"
+        },
+        {
+            "type": "text",
+            "content": "Jugoslavia ble opprettet 1. desember 1918, rett etter [første verdenskrig](/historie/forste-verdenskrig/opptakt), under navnet Serbernes, kroatenes og slovenernes kongerike. I 1929 fikk landet navnet Kongeriket Jugoslavia (Mønnesland, 2024). Navnet betyr omtrent «sørslavernes land», og det sier noe viktig: dette var et land bygget rundt tanken om at beslektede folk skulle bo sammen i én stat."
+        },
+        {
+            "type": "text",
+            "content": "Etter andre verdenskrig tok kommunisten Josip Broz Tito over. Han styrte fra 1945 til han døde i 1980, og ifølge Store norske leksikon dominerte han jugoslavisk politikk fullstendig i 35 år (Mønnesland, 2024). Tito bygde landet som en føderasjon: seks republikker og to selvstyrte provinser. Slovenia, Kroatia, Bosnia-Hercegovina, Serbia, Montenegro og Makedonia var republikkene. Kosovo og Vojvodina var provinsene inne i Serbia.\n\nEn føderasjon er en stat satt sammen av flere delstater som styrer mye selv, men som deler forsvar og utenrikspolitikk. Poenget med oppdelingen var å gi hver folkegruppe sitt eget rom, slik at ingen skulle føle seg overkjørt. Så lenge Tito levde, holdt systemet."
+        },
+        {
+            "type": "header",
+            "text": "Krisen etter Tito"
+        },
+        {
+            "type": "text",
+            "content": "Da Tito døde i 1980, forsvant limet. Og økonomien raknet raskt. I 1985 var arbeidsledigheten over 16 prosent, og prisstigningen passerte 100 prosent i året. I 1988 nådde den 250 prosent (Mønnesland, 2024). Prisstigning på 250 prosent betyr at det du kjøpte for hundre kroner i januar kostet flere hundre kroner i desember. Lønna di ble mindre verdt for hver måned som gikk.\n\nNår folk er redde og sinte, leter de etter noen som kan forklare hvorfor. Da står politikere klare med svar. Og det svaret som virket best, var også det farligste: det er de andre sin skyld."
+        },
+        {
+            "type": "header",
+            "text": "Politikerne fant en ny nøkkel"
+        },
+        {
+            "type": "text",
+            "content": "Slobodan Milošević ble leder for det serbiske kommunistpartiet i 1986 og president i 1987 (Mønnesland, 2024). Han skjønte at [nasjonalisme](/historie/nasjonalstatenes-tid/hva-er-nasjonalisme) var et sterkere våpen enn kommunisme. I stedet for å snakke om arbeidere og klasser, snakket han om serbere som var truet. I 1990 opphevet han selvstyret til Kosovo (Endresen, 2019). Provinsen mistet retten til å bestemme over seg selv.\n\nLederne i de andre republikkene svarte med det samme trikset. Overalt fikk folk høre at deres egen gruppe var i fare, og at nabogruppa var problemet. På få år ble folkegruppe den viktigste merkelappen et menneske kunne ha."
+        },
+        {
+            "type": "component",
+            "name": "MerkelappMaskinen",
+            "props": {
+                "title": "Merkelapp-maskinen",
+                "intro": "Tenk deg tolv naboer i samme gate i Sarajevo. Velg en merkelapp, og se hvordan gata deler seg.",
+                "categories": [
+                    {
+                        "id": "yrke",
+                        "label": "Yrke",
+                        "note": "Nå står gata i fire grupper. Ingen av dem har noen gang gått til krig mot hverandre om dette."
+                    },
+                    {
+                        "id": "oppgang",
+                        "label": "Oppgang",
+                        "note": "En helt ny inndeling av akkurat de samme menneskene. Trappa deler dem i to, og ingen bryr seg."
+                    },
+                    {
+                        "id": "musikk",
+                        "label": "Musikksmak",
+                        "note": "Nok en inndeling. Folk krangler gjerne om musikk, men de flytter ikke fra byen på grunn av det."
+                    },
+                    {
+                        "id": "alder",
+                        "label": "Alder",
+                        "note": "Unge og eldre. En inndeling alle land har, og som ingen går til krig om."
+                    },
+                    {
+                        "id": "folkegruppe",
+                        "label": "Folkegruppe",
+                        "note": "Dette er merkelappen politikerne løftet fram på slutten av 1980-tallet. I 1992 fulgte frontlinjene i Bosnia omtrent denne inndelingen. Menneskene var nøyaktig de samme som i de andre sorteringene.",
+                        "avgjorende": true
+                    }
+                ],
+                "people": [
+                    {
+                        "name": "Amra",
+                        "labels": {
+                            "yrke": "Lærer",
+                            "oppgang": "Oppgang A",
+                            "musikk": "Rock",
+                            "alder": "Under 30",
+                            "folkegruppe": "Bosnjak"
+                        }
+                    },
+                    {
+                        "name": "Goran",
+                        "labels": {
+                            "yrke": "Sjåfør",
+                            "oppgang": "Oppgang A",
+                            "musikk": "Folkemusikk",
+                            "alder": "Over 30",
+                            "folkegruppe": "Serber"
+                        }
+                    },
+                    {
+                        "name": "Ivana",
+                        "labels": {
+                            "yrke": "Sykepleier",
+                            "oppgang": "Oppgang B",
+                            "musikk": "Rock",
+                            "alder": "Under 30",
+                            "folkegruppe": "Kroat"
+                        }
+                    },
+                    {
+                        "name": "Emir",
+                        "labels": {
+                            "yrke": "Baker",
+                            "oppgang": "Oppgang B",
+                            "musikk": "Pop",
+                            "alder": "Over 30",
+                            "folkegruppe": "Bosnjak"
+                        }
+                    },
+                    {
+                        "name": "Milena",
+                        "labels": {
+                            "yrke": "Lærer",
+                            "oppgang": "Oppgang B",
+                            "musikk": "Folkemusikk",
+                            "alder": "Under 30",
+                            "folkegruppe": "Serber"
+                        }
+                    },
+                    {
+                        "name": "Josip",
+                        "labels": {
+                            "yrke": "Sjåfør",
+                            "oppgang": "Oppgang A",
+                            "musikk": "Rock",
+                            "alder": "Over 30",
+                            "folkegruppe": "Kroat"
+                        }
+                    },
+                    {
+                        "name": "Selma",
+                        "labels": {
+                            "yrke": "Sykepleier",
+                            "oppgang": "Oppgang A",
+                            "musikk": "Pop",
+                            "alder": "Under 30",
+                            "folkegruppe": "Bosnjak"
+                        }
+                    },
+                    {
+                        "name": "Nikola",
+                        "labels": {
+                            "yrke": "Baker",
+                            "oppgang": "Oppgang B",
+                            "musikk": "Rock",
+                            "alder": "Over 30",
+                            "folkegruppe": "Serber"
+                        }
+                    },
+                    {
+                        "name": "Ana",
+                        "labels": {
+                            "yrke": "Lærer",
+                            "oppgang": "Oppgang A",
+                            "musikk": "Pop",
+                            "alder": "Over 30",
+                            "folkegruppe": "Kroat"
+                        }
+                    },
+                    {
+                        "name": "Haris",
+                        "labels": {
+                            "yrke": "Sjåfør",
+                            "oppgang": "Oppgang B",
+                            "musikk": "Folkemusikk",
+                            "alder": "Under 30",
+                            "folkegruppe": "Bosnjak"
+                        }
+                    },
+                    {
+                        "name": "Dragan",
+                        "labels": {
+                            "yrke": "Sykepleier",
+                            "oppgang": "Oppgang B",
+                            "musikk": "Rock",
+                            "alder": "Over 30",
+                            "folkegruppe": "Serber"
+                        }
+                    },
+                    {
+                        "name": "Marija",
+                        "labels": {
+                            "yrke": "Baker",
+                            "oppgang": "Oppgang A",
+                            "musikk": "Folkemusikk",
+                            "alder": "Under 30",
+                            "folkegruppe": "Kroat"
+                        }
+                    }
+                ],
+                "conclusion": "Du sorterte de samme tolv naboene på fem måter. Menneskene endret seg aldri. Det eneste som endret seg, var hvilken merkelapp som fikk lov til å telle mest. Det var den forandringen som gjorde krigen mulig."
+            }
+        },
+        {
+            "type": "header",
+            "text": "1991: Landet sprekker"
+        },
+        {
+            "type": "text",
+            "content": "25. juni 1991 erklærte Slovenia og Kroatia seg selvstendige. Makedonia fulgte i september samme år, og Bosnia-Hercegovina våren 1992 (Mønnesland, 2024). Jugoslavia var i praksis oppløst.\n\nI Slovenia gikk det raskt. Der bodde det nesten bare slovenere, og krigen varte i ti dager. I Kroatia og Bosnia var det helt annerledes. Der bodde folkegruppene om hverandre, gate for gate og landsby for landsby. Skulle grensene følge folkegruppene, måtte noen flytte på seg. Og noen bestemte seg for å tvinge dem."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Fra ett land til sju",
+                "content": "Jugoslavia besto av seks republikker. I dag er området delt i sju selvstendige stater: Slovenia, Kroatia, Bosnia-Hercegovina, Serbia, Montenegro, Nord-Makedonia og Kosovo. Serbia og Montenegro gikk fra hverandre i 2006, og Kosovo erklærte seg selvstendig i 2008."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Bosnia: den verste krigen"
+        },
+        {
+            "type": "text",
+            "content": "Bosnia-krigen varte fra april 1992 til november 1995. Tre parter kjempet om kontrollen: bosniske muslimer (bosnjaker), bosniske serbere og bosniske kroater. Rundt 100 000 mennesker ble drept, og mellom 35 og 40 prosent av dem var sivile (Holm-Hansen, 2025).\n\nDet nye og forferdelige ordet fra denne krigen var etnisk rensing. Det betyr å drive bort alle som tilhører en annen gruppe fra et område, slik at bare din egen gruppe blir igjen. Titusener ble drept, og hundretusener ble drevet på flukt (Holm-Hansen, 2025). Hus ble brent ned nettopp for at folk ikke skulle ha noe å komme tilbake til."
+        },
+        {
+            "type": "text",
+            "content": "Hovedstaden Sarajevo ble beleiret. Bosnisk-serbiske styrker lå i fjellene rundt og skjøt ned på byen fra 5. april 1992 til 29. februar 1996. Rundt 11 500 mennesker ble drept i byen, minst 500 av dem barn. Det var den lengste beleiringen av en by i moderne europeisk historie (Swift, u.å.).\n\nMidt i 1993 ble en tunnel ferdig under rullebanen på flyplassen. Den knyttet byen til området utenfor og gjorde det mulig å få inn forsyninger (Swift, u.å.). Tunnelen var byens livsnerve, og folk gikk den bøyd med tunge sekker, om og om igjen. Prøv selv hvordan det var:"
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "sarajevo-tunnelen-3d"
+            }
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Smal tunnel av jord og treverk med svake lyspærer i taket",
+            "caption": "Tunnelen under flyplassen var så lav at folk måtte gå bøyd hele veien. Den ble gravd for hånd."
+        },
+        {
+            "type": "header",
+            "text": "Srebrenica 1995"
+        },
+        {
+            "type": "text",
+            "content": "FN hadde erklært byen Srebrenica som et trygt område i april 1993. Det betydde at FN lovte å beskytte sivile som flyktet dit. Nederlandske FN-soldater var stasjonert i byen.\n\nI juli 1995 tok bosnisk-serbiske styrker likevel byen. Over 8000 bosnjakiske gutter og menn ble drept (Lundbo & Holm-Hansen, 2025). FN-sambandet oppgir tallet minst 8372 mennesker (FN-sambandet, 2025). Det var den største massakren i Europa siden Holocaust, og av rundt 8372 savnede er nesten 7000 identifisert ved hjelp av DNA (Lundbo & Holm-Hansen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Både Den internasjonale straffedomstolen for det tidligere Jugoslavia og Den internasjonale domstolen har slått fast at dette var [folkemord](/samfunnskunnskap/styringsformer/km-8-terror-folkemord). Militærsjefen Ratko Mladić ble dømt til livsvarig fengsel i 2017, og Radovan Karadžić fikk 40 års fengsel i 2016 (Lundbo & Holm-Hansen, 2025).\n\nI mai 2024 vedtok FNs generalforsamling at 11. juli skal være en internasjonal minnedag for folkemordet i Srebrenica (FN-sambandet, 2025). At det gikk nesten tretti år før verden fikk en slik minnedag, sier noe om hvor vondt det er å innrømme at man sviktet."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Srebrenica hadde tidligere blitt erklært som en sikker sone av FN.",
+                "author": "FN-sambandet om byen der over 8000 mennesker ble drept"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Dayton og Kosovo"
+        },
+        {
+            "type": "text",
+            "content": "Massakren i Srebrenica fikk endelig verden til å handle. NATO gikk inn med luftangrep, og i desember 1995 ble Dayton-avtalen undertegnet i Paris. Avtalen delte Bosnia-Hercegovina i to deler: Republika Srpska med 49 prosent av landet, og en muslimsk-kroatisk føderasjon med 51 prosent. De to delene skulle dele forsvar og utenrikspolitikk (Holm-Hansen, 2025). Freden kom altså ved å tegne opp de samme skillelinjene som krigen hadde skapt."
+        },
+        {
+            "type": "text",
+            "content": "Men én konflikt var ikke løst: Kosovo. Der utgjorde albanerne flertallet, og etter at selvstyret ble opphevet i 1990, vokste det fram en væpnet motstandsbevegelse kalt UÇK. Fra 1998 utviklet det seg til full krig med massakrer og etnisk rensing.\n\n24. mars 1999 begynte NATO å bombe. Angrepene varte til 10. juni samme år. Minst 10 000 albanere ble drept i denne perioden, og over én million kosovoalbanere ble drevet på flukt (Endresen, 2019). Etterpå fikk Kosovo FN-styre gjennom sikkerhetsrådsresolusjon 1244, og 17. februar 2008 erklærte Kosovo seg selvstendig (Endresen, 2019)."
+        },
+        {
+            "type": "text",
+            "content": "Norge var med hele veien. Den NATO-ledede fredsstyrken KFOR ble opprettet i 1999, og norske styrker deltok fra juni 1999 til 31. august 2020. På det meste hadde Norge rundt 1400 soldater der, og i 2001 ledet Norge hele styrken i seks måneder (Leraand, 2022). Dette var Norges største militære bidrag ute siden andre verdenskrig, og det skjedde like etter at [den kalde krigen](/historie/den-kalde-krigen/oversikt) var over."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Familie med kofferter på en støvete vei ved en grenseovergang",
+            "caption": "Over en million kosovoalbanere ble drevet på flukt i 1999. De fleste kom tilbake da krigen var over."
+        },
+        {
+            "type": "header",
+            "text": "Krigen var et valg"
+        },
+        {
+            "type": "text",
+            "content": "Det er lett å tro at et land med mange folkegrupper må ende i krig. Historien om Jugoslavia viser det motsatte. Landet hadde levd med sitt mangfold i over sytti år. Folk giftet seg på tvers av gruppene, jobbet sammen og bodde i samme oppgang.\n\nDet som endret seg, var politikken. Ledere som trengte støtte fant ut at frykt fungerte bedre enn løfter. Store norske leksikon sier det rett ut: oppløsningen førte til krig, men det var ikke uunngåelig. Det var resultatet av politiske handlinger (Mønnesland, 2024)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Økonomisk krise gjorde folk redde og sinte, og skapte marked for enkle forklaringer.",
+                "Politikere valgte å peke på folkegruppe som årsaken til problemene.",
+                "Da grensene skulle tegnes på nytt, ble blandede områder plutselig et problem som noen ville løse med makt.",
+                "Omverdenen så på lenge før den handlet, og betalte prisen for å nøle."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Dette er ikke bare historie fra et fjernt sted. De samme mekanismene finnes overalt der noen prøver å gjøre én forskjell mellom mennesker viktigere enn alle andre. Krigene på Balkan er de nærmeste vi har kommet på europeisk jord i vår egen tid, og de skjedde mens verden så på. Ti år senere måtte de samme spørsmålene stilles på nytt i andre deler av verden, blant annet i [Russland etter Sovjet](/historie/etterkrigstiden/russland-etter-sovjet)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Når ble Jugoslavia opprettet, og hvilke seks republikker besto landet av?",
+                    "Hva skjedde med økonomien i Jugoslavia på 1980-tallet? Finn tallene for arbeidsledighet og prisstigning i teksten.",
+                    "Hvilke datoer erklærte Slovenia, Kroatia, Makedonia og Bosnia-Hercegovina seg selvstendige?",
+                    "Hva betyr uttrykket etnisk rensing, slik artikkelen forklarer det?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at krigen ikke var uunngåelig. Forklar med egne ord hvorfor forskjellene mellom folkegruppene ikke i seg selv førte til krig.",
+                    "Hvorfor var krigen kort i Slovenia, men lang og blodig i Bosnia? Bruk kartet i hodet: hvor bodde folkegruppene i forhold til hverandre?",
+                    "FN hadde erklært Srebrenica som et trygt område. Hva sier det om FNs makt at massakren likevel skjedde?",
+                    "Dayton-avtalen delte Bosnia etter de skillelinjene krigen hadde skapt. Var det en god løsning? Gi minst ett argument for og ett mot."
+                ],
+                "gaaVidere": [
+                    "Prøv Merkelapp-maskinen i artikkelen på din egen klasse. Skriv ned fem ulike måter klassen kan deles inn på, og diskuter hvorfor ingen av dem gjør dere til fiender.",
+                    "Skriv en kort tekst på cirka 300 ord med tittelen «Hvordan blir en nabo til en fiende?». Bruk minst tre konkrete eksempler fra artikkelen.",
+                    "Finn ut hvor mange land som i dag anerkjenner Kosovo som selvstendig stat, og diskuter hvorfor noen land nekter."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvor mange republikker besto Jugoslavia av under Tito?",
+                        "options": ["Tre", "Fire", "Seks", "Ni"],
+                        "correctAnswer": 2,
+                        "explanation": "Slovenia, Kroatia, Bosnia-Hercegovina, Serbia, Montenegro og Makedonia. I tillegg fantes de to selvstyrte provinsene Kosovo og Vojvodina inne i Serbia."
+                    },
+                    {
+                        "question": "Hva gjorde Slobodan Milošević til et effektivt politisk våpen på slutten av 1980-tallet?",
+                        "options": [
+                            "Nasjonalisme og frykt for at egen folkegruppe var truet",
+                            "Løfter om medlemskap i EU",
+                            "En ny felles valuta for hele Balkan",
+                            "Gratis skolegang for alle"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Da økonomien raknet, byttet han ut klassekampen med nasjonalisme. Budskapet var at serbere var truet, og at nabogruppene var problemet."
+                    },
+                    {
+                        "question": "Omtrent hvor mange mennesker ble drept i Bosnia-krigen?",
+                        "options": ["Rundt 5000", "Rundt 30 000", "Rundt 100 000", "Rundt 500 000"],
+                        "correctAnswer": 2,
+                        "explanation": "Rundt 100 000 mennesker ble drept mellom april 1992 og november 1995, og mellom 35 og 40 prosent av dem var sivile."
+                    },
+                    {
+                        "question": "Hva var spesielt ved Srebrenica da massakren skjedde i juli 1995?",
+                        "options": [
+                            "Byen var hovedstad i Bosnia",
+                            "FN hadde erklært byen som et trygt område",
+                            "Byen lå i Slovenia",
+                            "Byen var allerede tømt for folk"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "FN erklærte Srebrenica som trygt område i 1993, og nederlandske FN-soldater var der. Over 8000 gutter og menn ble likevel drept."
+                    },
+                    {
+                        "question": "Hvor lenge deltok Norge i den NATO-ledede fredsstyrken KFOR i Kosovo?",
+                        "options": [
+                            "Bare i noen uker i 1999",
+                            "Fra 1999 til 2005",
+                            "Fra juni 1999 til august 2020",
+                            "Norge deltok ikke"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Norge var med fra juni 1999 til 31. august 2020, hadde på det meste rundt 1400 soldater der, og ledet hele styrken i seks måneder i 2001."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Endresen, C. (2019). *Kosovos samtidshistorie*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Kosovos_samtidshistorie](https://snl.no/Kosovos_samtidshistorie)",
+                    "FN-sambandet. (2025). *Internasjonal dag til minne om folkemordet i Srebrenica*. Hentet 04.08.2026 fra [fn.no](https://fn.no/om-fn/fn-dager-kalender/kalender/internasjonal-dag-til-minne-om-folkemordet-i-srebrenica)",
+                    "Holm-Hansen, J. (2025). *Bosniakrigen*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Bosnia-krigen](https://snl.no/Bosnia-krigen)",
+                    "Leraand, D. (2022). *Kosovo Force*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Kosovo_Force](https://snl.no/Kosovo_Force)",
+                    "Lundbo, S. & Holm-Hansen, J. (2025). *Srebrenica-massakren*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Srebrenica-massakren](https://snl.no/Srebrenica-massakren)",
+                    "Mønnesland, S. (2024). *Jugoslavias historie*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Jugoslavias_historie](https://snl.no/Jugoslavias_historie)",
+                    "Swift, J. (u.å.). *Siege of Sarajevo*. Encyclopædia Britannica. Hentet 04.08.2026 fra [britannica.com](https://www.britannica.com/topic/Siege-of-Sarajevo)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
