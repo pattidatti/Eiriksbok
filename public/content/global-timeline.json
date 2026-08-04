@@ -11160,6 +11160,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "jugoslavias-opplosning",
+      "title": "Jugoslavias oppløsning: Da naboer ble fiender",
+      "description": "Et land med seks republikker sprakk på ti år. Naboer i samme oppgang havnet på hver sin side av frontlinjen - og krigen var et valg, ikke en skjebne.",
+      "startDate": 1991,
+      "endDate": 1999,
+      "displayDate": "1991-1999",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "etterkrigstiden",
+      "link": "/historie/etterkrigstiden/jugoslavias-opplosning",
+      "tags": [
+        "jugoslavia",
+        "balkan",
+        "bosnia",
+        "kosovo",
+        "folkemord",
+        "nasjonalisme",
+        "fn"
+      ],
+      "lat": 43,
+      "lng": 21,
+      "placeLabel": "Balkan",
+      "geoConfidence": "tag"
+    },
+    {
       "id": "eu-og-eos",
       "title": "EU og EØS: Norge mellom selvstyre og samarbeid",
       "description": "Hvorfor Norge sa nei til EU to ganger, men likevel følger tusenvis av EU-regler gjennom EØS-avtalen.",

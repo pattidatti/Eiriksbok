@@ -41,6 +41,7 @@ const LegendensVei3D = lazy(() => import('./LegendensVei3D'));
 const Alliansefella1914 = lazy(() => import('./Alliansefella1914'));
 const AryabhatasNatt3D = lazy(() => import('./AryabhatasNatt3D'));
 const HjertetsVekt3D = lazy(() => import('./HjertetsVekt3D'));
+const SarajevoTunnelen3D = lazy(() => import('./SarajevoTunnelen3D'));
 const MonumentTorget3D = lazy(() => import('./MonumentTorget3D'));
 const Teknologibolgen3D = lazy(() => import('./Teknologibolgen3D'));
 const Nyheitsbobla3D = lazy(() => import('./Nyheitsbobla3D'));
@@ -1636,6 +1637,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./HjertetsVekt3D'),
         Component: HjertetsVekt3D as never,
+    },
+    'sarajevo-tunnelen-3d': {
+        id: 'sarajevo-tunnelen-3d',
+        title: 'Tunnelen under flyplassen',
+        description:
+            'Sarajevo, 1993. Byen er beleiret, og den eneste veien ut er en 800 meter lang tunnel gravd for hånd under rullebanen. Hold inne for å gå, og styr ryggen med pekeren: rett rygg er raskt, men de gule bjelkene henger lavt og smeller i hodet ditt. Bøyd rygg er trygt, men sliter deg ut - og pumpa som holder vannet nede går bare en kort stund til. Lyspæra: byen overlevde fordi vanlige folk gikk denne turen bøyd, med tung sekk, om og om igjen.',
+        estimatedSeconds: 140,
+        loader: () => import('./SarajevoTunnelen3D'),
+        Component: SarajevoTunnelen3D as never,
     },
 };
 

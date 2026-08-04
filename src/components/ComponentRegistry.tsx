@@ -119,6 +119,7 @@ const AutomationRisk = lazy(() => import('./content/interactive/AutomationRisk')
 const VetorettSimulator = lazy(() => import('./content/interactive/VetorettSimulator').then(m => ({ default: m.VetorettSimulator })));
 const JoggeskoensReise = lazy(() => import('./content/interactive/JoggeskoensReise').then(m => ({ default: m.JoggeskoensReise })));
 const EuropasDilemma = lazy(() => import('./content/interactive/EuropasDilemma').then(m => ({ default: m.EuropasDilemma })));
+const MerkelappMaskinen = lazy(() => import('./content/interactive/MerkelappMaskinen').then(m => ({ default: m.MerkelappMaskinen })));
 const MobilensVerdenskart = lazy(() => import('./content/interactive/MobilensVerdenskart').then(m => ({ default: m.MobilensVerdenskart })));
 const ConformityExperiment = lazy(() => import('./content/interactive/ConformityExperiment').then(m => ({ default: m.ConformityExperiment })));
 const OstracismGame = lazy(() => import('./content/interactive/OstracismGame').then(m => ({ default: m.OstracismGame })));
@@ -428,6 +429,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     VetorettSimulator,
     JoggeskoensReise,
     EuropasDilemma,
+    MerkelappMaskinen,
     MobilensVerdenskart,
     WaveMap,
     DigitalsporProfileren,

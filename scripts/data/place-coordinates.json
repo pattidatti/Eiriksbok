@@ -971,11 +971,15 @@
       "count": 14
     },
     {
+      "tag": "folkemord",
+      "count": 14
+    },
+    {
       "tag": "skrivehjelp",
       "count": 14
     },
     {
-      "tag": "folkemord",
+      "tag": "nasjonalisme",
       "count": 13
     },
     {
@@ -995,7 +999,7 @@
       "count": 12
     },
     {
-      "tag": "nasjonalisme",
+      "tag": "fn",
       "count": 12
     },
     {
@@ -1024,10 +1028,6 @@
     },
     {
       "tag": "atomvåpen",
-      "count": 11
-    },
-    {
-      "tag": "fn",
       "count": 11
     },
     {
@@ -3548,6 +3548,18 @@
     },
     {
       "tag": "nøytralitet",
+      "count": 1
+    },
+    {
+      "tag": "jugoslavia",
+      "count": 1
+    },
+    {
+      "tag": "bosnia",
+      "count": 1
+    },
+    {
+      "tag": "kosovo",
       "count": 1
     },
     {
