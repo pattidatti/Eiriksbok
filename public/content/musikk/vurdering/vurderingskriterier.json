@@ -6,20 +6,22 @@
     "content": [
         {
             "type": "text",
-            "title": "Kompetansemål (Hva du skal lære)",
-            "content": "I følge læreplanen (LK20) er det tre hovedting du skal kunne:"
+            "title": "Kjerneelementene (Hva faget handler om)",
+            "content": "Læreplanen i musikk er bygd rundt fire kjerneelementer. De sier hva faget handler om, og de går igjen på alle trinn (Utdanningsdirektoratet, u.å.-a):"
         },
         {
             "type": "list",
             "items": [
-                "**Utøve musikk**: Du skal kunne spille eller synge sammen med andre. Det handler om teknikk, men mest om samspill og formidling.",
-                "**Lage musikk**: Du skal kunne bruke digitale verktøy (som Beat Builderen vår!) til å sette sammen egne låter.",
-                "**Oppleve musikk**: Du skal kunne lytte til musikk og bruke fagbegreper (som takt, rytme, dur/moll) til å beskrive det du hører."
+                "Utøve musikk: Du deltar aktivt med stemme, kropp og instrumenter i samspill, framføring og lek. Det handler om teknikk, men mest om samspill og formidling.",
+                "Lage musikk: Du arbeider kreativt og setter sammen musikalske byggeklosser til noe nytt, for eksempel med digitale verktøy som Beat Builderen vår.",
+                "Oppleve musikk: Du lytter aktivt og med sansene åpne, og bruker fagbegreper til å beskrive det du hører.",
+                "Kulturforståelse: Du ser musikken i sammenheng med kulturen den kommer fra, og hvordan den gir mening til sosiale hendelser og ritualer."
             ]
         },
         {
             "type": "text",
-            "content": ""
+            "title": "Fagspråket du trenger",
+            "content": "Å bruke fagspråk er en del av det å oppleve musikk. Takt er måten tidsverdiene i et musikkstykke er delt opp i avsnitt, og hver takt har minst ett betont slag (Holter, 2025). Rytme handler om hvordan lydene er organisert i lange og korte, betonte og ubetonte impulser over tid (Sundberg & Eilertsen, 2024). Dur og moll beskriver skalaer, akkorder og tonearter, og knyttes ofte til henholdsvis lyse og mørkere stemninger (Ruud, 2024)."
         },
         {
             "type": "text",
@@ -37,14 +39,14 @@
         {
             "type": "text",
             "title": "Vurderingskriterier",
-            "content": "Lav måloppnåelse: Du deltar, men er usikker på grep/rytme.\nMiddels måloppnåelse: Du mestrer det tekniske greit og klarer å følge pulsen til de andre.\nHøy måloppnåelse: Du spiller med overskudd, lytter til de andre, og bidrar kreativt til samspillet."
+            "content": "Underveis i året skal vurderingen først og fremst hjelpe deg å lære. Den handler om tilbakemeldinger, egenvurdering og veiledning om veien videre, mens standpunktkarakteren settes helt til slutt (Utdanningsdirektoratet, u.å.-b). Slik ser trappa ut i praksis:\nLav måloppnåelse: Du deltar, men er usikker på grep/rytme.\nMiddels måloppnåelse: Du mestrer det tekniske greit og klarer å følge pulsen til de andre.\nHøy måloppnåelse: Du spiller med overskudd, lytter til de andre, og bidrar kreativt til samspillet."
         },
         {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvilke tre hovedting sier teksten at du skal kunne i musikk? Nevn alle tre.",
+                    "Hvilke fire kjerneelementer er læreplanen i musikk bygd rundt? Nevn alle fire.",
                     "Hva betyr det å oppleve musikk, ifølge teksten? Nevn minst ett fagbegrep den trekker fram som eksempel.",
                     "Teksten gir tre tips for å øve effektivt. Hva er de tre tipsene?",
                     "Hva skiller høy måloppnåelse fra lav måloppnåelse i vurderingskriteriene?"
@@ -59,6 +61,19 @@
                     "Velg en sang eller et musikkstykke du liker. Bruk de tre øvingstipsene i teksten og skriv ned hvordan du ville øvd på den vanskeligste delen.",
                     "Lytt til en låt og beskriv den med minst tre fagbegreper (for eksempel takt, rytme, dur eller moll). Del beskrivelsen med en medelev.",
                     "Diskuter i par: Hva må du gjøre for å flytte deg fra middels til høy måloppnåelse i musikk? Lag en konkret plan for deg selv."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Holter, S. W. (2025). *Takt - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/takt_-_musikk](https://snl.no/takt_-_musikk)",
+                    "Ruud, E. (2024). *Dur*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/dur](https://snl.no/dur)",
+                    "Sundberg, O. K. & Eilertsen, A. (2024). *Rytme - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/rytme_-_musikk](https://snl.no/rytme_-_musikk)",
+                    "Utdanningsdirektoratet. (u.å.-a). *Kjerneelementer - læreplan i musikk (MUS01-03)*. Hentet 04.08.2026 fra [udir.no](https://www.udir.no/lk20/mus01-03/om-faget/kjerneelementer)",
+                    "Utdanningsdirektoratet. (u.å.-b). *Vurdering*. Hentet 04.08.2026 fra [udir.no](https://www.udir.no/laring-og-trivsel/vurdering/)"
                 ]
             }
         }
