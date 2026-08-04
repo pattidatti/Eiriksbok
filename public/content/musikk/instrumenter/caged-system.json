@@ -7,7 +7,7 @@
         {
             "type": "text",
             "title": "Hva er CAGED?",
-            "content": "Et åpent C-grep, et åpent A-grep, G, E og D. De fem åpne grunngrep du lærte i begynnelsen er ikke bare fem isolerte posisjoner. De er fem former som kobler seg sammen og dekker hele gitarhalsen fra bånd 0 til bånd 12.\n\nSystemet kalles CAGED etter forbokstavene til de fem formene. Ideen er enkel: når du lærer disse fem formene og forstår hvordan de henger sammen, kan du spille akkorder og soloer i hvilken som helst toneart - og i hvilken som helst posisjon på halsen."
+            "content": "Et åpent C-grep, et åpent A-grep, G, E og D. De fem åpne grunngrep du lærte i begynnelsen er ikke bare fem isolerte posisjoner (MusicRadar, 2023). De er fem former som kobler seg sammen og dekker hele gitarhalsen fra bånd 0 til bånd 12.\n\nSystemet kalles CAGED etter forbokstavene til de fem åpne grepene C, A, G, E og D (Cramer, 2013). Ideen er enkel: når du lærer disse fem formene og forstår hvordan de henger sammen, kan du spille akkorder og soloer i hvilken som helst toneart - og i hvilken som helst posisjon på halsen."
         },
         {
             "type": "header",
@@ -15,7 +15,7 @@
         },
         {
             "type": "text",
-            "content": "Hver form er oppkalt etter det åpne grepet den ligner på. C-formen ser ut som et åpent C-grep. A-formen ser ut som et åpent A-grep. Slik er det for alle fem.\n\nDet som gjør systemet kraftig: når du barréer en form - det vil si legger en finger over alle strengene som en kapo - kan du spille den akkorden i alle tonearter. Formen flytter seg, men fingersettingen inni formen forblir den samme."
+            "content": "Hver form er oppkalt etter det åpne grepet den ligner på. C-formen ser ut som et åpent C-grep. A-formen ser ut som et åpent A-grep. Slik er det for alle fem.\n\nDet som gjør systemet kraftig: når du barréer en form - det vil si legger pekefingeren over alle strengene som en kapo (Ledang & Aksdal, 2025) - kan du spille den akkorden i alle tonearter (Henriksson, 2021a). Formen flytter seg, men fingersettingen inni formen forblir den samme."
         },
         {
             "type": "list",
@@ -40,7 +40,7 @@
         },
         {
             "type": "text",
-            "content": "Det viktige med CAGED er ikke de fem formene i seg selv - det er at de henger på hverandre langs halsen.\n\nTa C-dur som eksempel. Det åpne C-grepet er C-formen. Men du kan også spille C-dur i A-formen på bånd 3. Og i G-formen på bånd 5. Og i E-formen på bånd 8. Og i D-formen på bånd 10. Fem ulike steder å spille den samme akkorden - og mellom hvert sted er det et sammenhengende system av toner du kan bruke."
+            "content": "Det viktige med CAGED er ikke de fem formene i seg selv - det er at de henger på hverandre langs halsen. Mellom to former som ligger ved siden av hverandre, finnes det alltid minst én tone som er felles for begge (Cramer, 2013).\n\nTa C-dur som eksempel. Det åpne C-grepet er C-formen. Men du kan også spille C-dur i A-formen på bånd 3. Og i G-formen på bånd 5. Og i E-formen på bånd 8. Og i D-formen på bånd 10. Fem ulike steder å spille den samme akkorden - og mellom hvert sted er det et sammenhengende system av toner du kan bruke."
         },
         {
             "type": "text",
@@ -52,7 +52,7 @@
         },
         {
             "type": "text",
-            "content": "De fleste nybegynnere lærer én soloposisjon: boks 1 av den mollpentatoniske skalaen. Det er en fin start, men etter et par måneder hører man seg selv spille de samme tonene om og om igjen.\n\nCAGED løser dette. Pentatonskalaen har ikke bare én boks - den har fem, og de korresponderer direkte med de fem CAGED-formene. Når du kan C-formen, kan du også soloposisjonen rundt C-formen. Når du lærer A-formen, får du tilgang til neste soloposisjon. Slik bygger du deg gradvis oppover halsen."
+            "content": "De fleste nybegynnere lærer én soloposisjon: boks 1 av den mollpentatoniske skalaen. Det er en fin start, men etter et par måneder hører man seg selv spille de samme tonene om og om igjen.\n\nCAGED løser dette. Pentatonskalaen består av fem toner (Ruud, 2025), og den har ikke bare én boks - den har fem, og de korresponderer direkte med de fem CAGED-formene. Tar du grunntonen, tersen og kvinten i en akkordform og legger til to toner per oktav, sitter du igjen med en pentaton skala inni selve formen (Henriksson, 2021b). Når du kan C-formen, kan du også soloposisjonen rundt C-formen. Når du lærer A-formen, får du tilgang til neste soloposisjon. Slik bygger du deg gradvis oppover halsen."
         },
         {
             "type": "text",
@@ -155,6 +155,21 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Cramer, M. (2013). *The guitarist's guide to the CAGED system*. Premier Guitar. Hentet 04.08.2026 fra [premierguitar.com](https://www.premierguitar.com/lessons/guitarists-guide-to-caged)",
+                    "Henriksson, D. (2021a). *How to get better at guitar using the CAGED system (Part 1)*. Guitar.com. Hentet 04.08.2026 fra [guitar.com](https://guitar.com/lessons/beginner/get-better-guitar-caged-system/)",
+                    "Henriksson, D. (2021b). *How to get better at guitar using the CAGED system (Part 3)*. Guitar.com. Hentet 04.08.2026 fra [guitar.com](https://guitar.com/lessons/beginner/how-to-get-better-at-guitar-using-the-caged-system-part-3/)",
+                    "Ledang, O. K. & Aksdal, B. (2025). *Gitar*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/gitar](https://snl.no/gitar)",
+                    "MusicRadar. (2023). *Use the CAGED system to play guitar chords across the fretboard quickly and easily*. Hentet 04.08.2026 fra [musicradar.com](https://www.musicradar.com/how-to/guitar-caged-system)",
+                    "Ruud, E. (2025). *Pentatonikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/pentatonikk](https://snl.no/pentatonikk)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-04"
 }

@@ -7,7 +7,7 @@
         {
             "type": "text",
             "title": "Grunnmuren",
-            "content": "Bassen spiller ofte de samme tonene som gitarakkorden (grunntonene), men en oktav dypere. Den har som regel 4 strenger: E, A, D, G (De fire dypeste på gitaren)."
+            "content": "Bassen spiller ofte de samme tonene som gitarakkorden (grunntonene), men en oktav dypere (Rogers, u.å.). Den har som regel 4 strenger, stemt E, A, D, G (Drabløs, 2024) - de samme tonenavnene som de fire dypeste strengene på gitaren, som er stemt E-A-d-g-h-e (Ledang & Aksdal, 2025). Sammen med trommene og akkordinstrumentene utgjør bassen kompet i et band, og gir låten både harmonisk og rytmisk grunnlag (Djupvik, 2024)."
         },
         {
             "type": "component",
@@ -43,6 +43,19 @@
                     "Diskuter med en klassekamerat: Hvorfor tror dere folk ofte legger mest merke til sang og gitar, men sjeldnere til bassen?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Djupvik, O. (2024). *Rytmeseksjon*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/rytmeseksjon](https://snl.no/rytmeseksjon)",
+                    "Drabløs, P. E. (2024). *El-bass*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/el-bass](https://snl.no/el-bass)",
+                    "Ledang, O. K. & Aksdal, B. (2025). *Gitar*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/gitar](https://snl.no/gitar)",
+                    "Rogers, K. (u.å.). *Bass guitar*. Encyclopaedia Britannica. Hentet 04.08.2026 fra [britannica.com](https://www.britannica.com/art/bass-guitar)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-04"
 }
