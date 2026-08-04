@@ -3,11 +3,24 @@
     "title": "Låtens Anatomi",
     "ingress": "Hvordan bygge en hit? De fleste sanger følger en hemmelig oppskrift.",
     "heroImage": "/images/lessons/musikk/komposisjon/lat-struktur.webp",
+    "lastUpdated": "2026-08-04T00:00:00Z",
     "content": [
         {
             "type": "text",
             "title": "Byggeklossene",
-            "content": "Når du hører på radioen, kan det virke som om alle sanger er forskjellige. Men nesten alle poplåter er bygget opp av de samme klossene:\n\n*   Vers: Forteller historien. Melodien er ofte roligere.\n*   Refreng (Chorus): Hoveddelen. Det er denne du nynner på. Den kommer igjen flere ganger.\n*   Bro (Bridge): En kontrast. Noe nytt skjer for å bryte monotoni før siste refreng."
+            "content": "Når du hører på radioen, kan det virke som om alle sanger er forskjellige. Men popmusikken har en ganske standardisert form og lengde, og de fleste låtene bygger på veksling mellom vers, refreng og eventuelt en bro (Hansen & Ruud, 2026). Her er de tre byggeklossene:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Vers: Forteller historien, og teksten skifter fra gang til gang. Melodien er ofte roligere enn i refrenget.",
+                "Refreng (chorus): Den delen som gjentas etter verset. Det er denne du nynner på. Låtskriverne bruker ofte sitt beste musikalske materiale her, og hovedpoenget i teksten havner gjerne i refrenget (Ruud, 2025).",
+                "Bro (bridge): En kontrasterende del. Noe nytt skjer for å bryte monotonien før siste refreng (Ruud, 2024)."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "En vanlig rekkefølge er vers 1 - refreng - vers 2 - refreng - bro - refreng siste gang (Ruud, 2024). Denne vers-refreng-formen har vært vanlig i populærmusikk og rock helt siden 1950-tallet (Ruud, 2025). Den vanligste poplåten varer rundt to og et halvt til tre minutter (Hansen & Ruud, 2026)."
         },
         {
             "type": "component",
@@ -21,14 +34,14 @@
         {
             "type": "list",
             "items": [
-                "**Intro** (4 takter)",
-                "**Vers** (8 takter)",
-                "**Refreng** (8 takter)",
-                "**Vers** (8 takter)",
-                "**Refreng** (8 takter)",
-                "**Bro** (8 takter)",
-                "**Refreng** (8 takter)",
-                "**Outro** (4 takter)"
+                "Intro (4 takter)",
+                "Vers (8 takter)",
+                "Refreng (8 takter)",
+                "Vers (8 takter)",
+                "Refreng (8 takter)",
+                "Bro (8 takter)",
+                "Refreng (8 takter)",
+                "Outro (4 takter)"
             ]
         },
         {
@@ -38,7 +51,7 @@
         {
             "type": "text",
             "title": "Dynamikk",
-            "content": "Tenk også på *energien* i låta. Versene er ofte litt lavere i energi. Refrenget skal 'løfte' taket. Broen kan være helt rolig, eller bygge seg sakte opp mot et klimaks."
+            "content": "Tenk også på *energien* i låta. Dynamikk er de ulike styrkegradene musikken spilles med (Furnes, 2025). Versene er ofte litt lavere i energi. Refrenget skal 'løfte' taket. Broen kan være helt rolig, eller bygge seg sakte opp mot et klimaks."
         },
         {
             "type": "component",
@@ -60,6 +73,18 @@
                     "Velg en sang du liker godt, og hør nøye etter. Prøv å finne verset, refrenget og broen, og skriv ned rekkefølgen du hører dem i.",
                     "Bruk verktøyet i artikkelen til å bygge strukturen intro-vers-refreng-vers-refreng-bro-refreng-outro, og regn ut hvor mange takter sangen ble totalt.",
                     "Tegn en enkel energikurve for en av favorittsangene dine, der du viser hvor låta er rolig og hvor den løfter taket. Diskuter med en medelev hvorfor artisten la energien akkurat der."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Furnes, O. T. (2025). *Dynamikk - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/dynamikk_-_musikk](https://snl.no/dynamikk_-_musikk)",
+                    "Hansen, K. A. & Ruud, E. (2026). *Popmusikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/popmusikk](https://snl.no/popmusikk)",
+                    "Ruud, E. (2024). *Bridge - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/bridge_-_musikk](https://snl.no/bridge_-_musikk)",
+                    "Ruud, E. (2025). *Refreng - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/refreng_-_musikk](https://snl.no/refreng_-_musikk)"
                 ]
             }
         }

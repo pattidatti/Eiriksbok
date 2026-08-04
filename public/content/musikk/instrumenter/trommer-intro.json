@@ -3,28 +3,39 @@
     "title": "Trommer: Introduksjon",
     "ingress": "Det er her energien kommer fra.",
     "heroImage": "/images/lessons/musikk/instrumenter/trommer-intro.webp",
+    "lastUpdated": "2026-08-04T00:00:00Z",
     "content": [
         {
             "type": "text",
             "title": "Trommesettet",
-            "content": "Et trommesett består av mange deler, men tre er viktigst:"
+            "content": "Et trommesett består av cymbaler, hi-hat, skarptromme, tammer og stortromme. Du spiller med trommestikker på de fleste av dem, mens stortrommen og hi-haten styres med pedaler (Almås, 2021). Tre av delene er de viktigste når du skal lære deg en enkel beat:"
         },
         {
             "type": "list",
             "items": [
-                "**Stortromme (Kick)**: Den dype 'BOM'-lyden du kjenner i brystet. Spilles ofte på slag 1 og 3.",
-                "**Skarp (Snare)**: Den skarpe 'KAH'-lyden. Spilles ofte på slag 2 og 4 (Backbeat).",
-                "**Hi-Hat**: De to cymbalene som ligger mot hverandre. Holder pulsen (tikk-tikk-tikk-tikk)."
+                "Stortromme (kick): Den dype BOM-lyden du kjenner i brystet. Den er den største trommen i settet, og du slår på den med en klubbe som sitter i en pedal under høyre fot (Almås, 2024b). Spilles ofte på slag 1 og 3.",
+                "Skarp (snare): Den skarpe KAH-lyden. Lyden kommer fra spiralfjærer, kalt seider, som ligger inntil skinnet på undersiden av trommen (Store norske leksikon, 2024). Spilles ofte på slag 2 og 4.",
+                "Hi-hat: To cymbaler montert mot hverandre i et stativ, som du åpner og lukker med en pedal. Lukket hi-hat gir en kort lyd som holder tempoet stabilt (Almås, 2024a). Den holder pulsen: tikk-tikk-tikk-tikk."
             ]
         },
         {
             "type": "text",
-            "content": ""
+            "title": "Backbeat: motoren i rocken",
+            "content": "Når skarptrommen ligger på slag 2 og 4, kalles det backbeat. Det er et rytmemønster i 4/4-takt med aksent på det andre og det fjerde slaget, og i dag er det som regel skarptrommen som lager det (Ruud, 2024). Grunnen til at dette gir så mye driv, er at det bryter med det ventede: i 4/4-takt er første slag betont og tredje slag relativt betont, mens de andre er lette (Sundberg & Eilertsen, 2024). Backbeaten flytter altså trykket dit øret ikke venter det, og det gjør musikken mer dansbar."
         },
         {
             "type": "text",
-            "title": "Oppgave: Enkel Rocke-beat",
-            "content": "Prøv å lage denne rytmen i hodet (eller klapp den):\n\n*   1: Kick + Hi-hat\n*   2: Snare + Hi-hat\n*   3: Kick + Hi-hat\n*   4: Snare + Hi-hat"
+            "title": "Oppgave: Enkel rockebeat",
+            "content": "Prøv å lage denne rytmen i hodet (eller klapp den):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "1: Kick + hi-hat",
+                "2: Snare + hi-hat",
+                "3: Kick + hi-hat",
+                "4: Snare + hi-hat"
+            ]
         },
         {
             "type": "component",
@@ -46,6 +57,20 @@
                     "Velg en sang du liker. Hør nøye etter og prøv å kjenne igjen stortromme, skarp og hi-hat. Skriv ned på hvilke slag du hører BOM og KAH.",
                     "Klapp eller bank ut den enkle rocke-beaten fra teksten: kick på slag 1 og 3, snare på slag 2 og 4, hi-hat hele tiden. Bruk to hender og en fot, og øv til du klarer den jevnt.",
                     "Lag din egen firetakters beat der du flytter skarptrommen til andre slag enn 2 og 4. Beskriv hvordan den nye rytmen føles annerledes enn den vanlige rocke-beaten."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Almås, K. (2021). *Trommesett*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/trommesett](https://snl.no/trommesett)",
+                    "Almås, K. (2024a). *Hi-hat*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/hi-hat](https://snl.no/hi-hat)",
+                    "Almås, K. (2024b). *Stortromme*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/stortromme](https://snl.no/stortromme)",
+                    "Ruud, E. (2024). *Backbeat*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/backbeat](https://snl.no/backbeat)",
+                    "Store norske leksikon. (2024). *Skarptromme*. Hentet 04.08.2026 fra [snl.no/skarptromme](https://snl.no/skarptromme)",
+                    "Sundberg, O. K. & Eilertsen, A. (2024). *Rytme - musikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/rytme_-_musikk](https://snl.no/rytme_-_musikk)"
                 ]
             }
         }
