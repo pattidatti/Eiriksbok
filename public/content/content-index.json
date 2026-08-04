@@ -1,5 +1,5 @@
 {
-  "buildId": 130736912562687,
+  "buildId": 65895146707493,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2472,6 +2472,9 @@
     "samisk-intro": [
       "content/krle/religion/samisk/intro.json"
     ],
+    "laestadianismen": [
+      "content/krle/religion/samisk/laestadianismen.json"
+    ],
     "sikhisme-grunnleggere": [
       "content/krle/religion/sikhisme/grunnleggere/artikkel.json"
     ],
@@ -4548,6 +4551,7 @@
     "krle/religion/mormonisme/overgangsriter": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
     "krle/religion/mormonisme/sentrale-trekk": "content/krle/religion/mormonisme/sentrale-trekk/artikkel.json",
     "krle/religion/samisk/intro": "content/krle/religion/samisk/intro.json",
+    "krle/religion/samisk/laestadianismen": "content/krle/religion/samisk/laestadianismen.json",
     "krle/religion/sikhisme/grunnleggere": "content/krle/religion/sikhisme/grunnleggere/artikkel.json",
     "krle/religion/sikhisme/hellige-tekster": "content/krle/religion/sikhisme/hellige-tekster/artikkel.json",
     "krle/religion/sikhisme/introduksjon": "content/krle/religion/sikhisme/introduksjon/artikkel.json",
