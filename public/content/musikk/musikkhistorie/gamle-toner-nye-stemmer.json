@@ -9,12 +9,12 @@
     "details": [
         "Musikktradisjoner overlever fordi noen tør å forandre dem",
         "Tradisjon og fornyelse er to sider av samme mynt",
-        "Fra joik til hip-hop — musikk bygger alltid på noe eldre"
+        "Fra joik til hip-hop - musikk bygger alltid på noe eldre"
     ],
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg en scene: En samisk artist står på en stor festival i Europa. Hun synger joik — den eldste vokaltradisjonen i Norden, tusenvis av år gammel. Men bak henne spiller et band med elektrisk gitar, synth og trommer. Publikum danser. Er dette joik? Er dette noe helt nytt? Eller er det begge deler?"
+            "content": "Tenk deg en scene: En samisk artist står på en stor festival i Europa. Hun synger joik, den tradisjonelle samiske musikkformen og en av Europas eldste folkemusikkformer (Gaski mfl., 2024). Men bak henne spiller et band med elektrisk gitar, synth og trommer. Publikum danser. Er dette joik? Er dette noe helt nytt? Eller er det begge deler?"
         },
         {
             "type": "text",
@@ -26,15 +26,15 @@
         },
         {
             "type": "text",
-            "content": "En musikktradisjon er en måte å lage musikk på som folk har gitt videre fra generasjon til generasjon. Det kan være en spesiell sang, en spilleteknikk, en dansestil, eller en hel sjanger. Tradisjon betyr ikke at musikken er gammel og støvete. Det betyr at den har røtter — at noen lærte den av noen som lærte den av noen. Tenk på det som en oppskrift som farmor ga til mamma, og mamma gir videre til deg. Hver generasjon legger til litt av sitt eget, men kjernen er gjenkjennelig."
+            "content": "En musikktradisjon er en måte å lage musikk på som folk har gitt videre fra generasjon til generasjon. Det kan være en spesiell sang, en spilleteknikk, en dansestil, eller en hel sjanger. Tradisjon betyr ikke at musikken er gammel og støvete. Det betyr at den har røtter - at noen lærte den av noen som lærte den av noen. Tenk på det som en oppskrift som farmor ga til mamma, og mamma gir videre til deg. Hver generasjon legger til litt av sitt eget, men kjernen er gjenkjennelig."
         },
         {
             "type": "list",
             "items": [
-                "Joik er den samiske vokaltradisjonen, der sangeren joiker en person, et dyr eller et sted — ikke om dem, men dem.",
-                "Norsk folkemusikk med hardingfele og kveding har blitt overlevert muntlig i hundrevis av år.",
-                "Blues ble skapt av svarte amerikanere i sørstatene og ble stamfaren til rock, soul og hip-hop.",
-                "Flamenco fra Sør-Spania blander gitarspill, sang og dans i en tradisjon formet av romfolk, arabere og spanjolere."
+                "Joik er den tradisjonelle samiske musikkformen. Sangeren joiker en person, et dyr eller et sted - ikke om dem, men dem. Den som fikk sin egen joik, fikk samtidig et tonenavn og full plass i fellesskapet (Gaski mfl., 2024).",
+                "Norsk folkemusikk med hardingfele og kveding har blitt overlevert muntlig fra generasjon til generasjon (Holen mfl., 2024).",
+                "Blues oppsto tidlig på 1900-tallet som afroamerikansk folkemusikk i sørstatene, og ble etter hvert grunnlaget for sjangre som rock'n'roll, rhythm and blues og pop (Bergh mfl., 2025).",
+                "Flamenco vokste fram i Andalucía i Sør-Spania fra slutten av 1700-tallet. Den blander sang, dans og gitarspill i en tradisjon formet av romfolk og av maurisk og sefardisk kultur (Helsvig & Knudsen, 2025)."
             ]
         },
         {
@@ -49,23 +49,23 @@
         },
         {
             "type": "header",
-            "text": "Bevaring — når noen tar vare på det gamle"
+            "text": "Bevaring - når noen tar vare på det gamle"
         },
         {
             "type": "text",
-            "content": "På 1800-tallet var mange redde for at norsk folkemusikk skulle forsvinne. Industrialiseringen forandret bygdene. Folk flyttet til byene for å jobbe i fabrikker, og barna deres vokste opp med andre lyder enn de gamle slåttene. Spillemennene ble eldre, og de unge lærte ikke felespill slik de hadde gjort før. Melodier som hadde levd i hundrevis av år risikerte å dø med de siste som husket dem."
+            "content": "På 1800-tallet var mange redde for at norsk folkemusikk skulle forsvinne. Samfunnet var i rask endring. Etter 1875 førte industrialiseringen til stor flytting til byene: i 1801 bodde ni prosent av nordmennene i by, i 1875 bodde 23 prosent i tettsteder (Thorsnæs, 2026). Folkemusikken fantes ikke i bøker. Den levde bare så lenge noen ga den videre muntlig, fra spelemann til spelemann (Holen mfl., 2024). Melodier som hadde levd i hundrevis av år risikerte å dø med de siste som husket dem."
         },
         {
             "type": "text",
-            "content": "Derfor begynte folk som Ludvig Mathias Lindeman å reise rundt i norske bygder og skrive ned melodier. Han hadde med seg noteblokk og penn, og satt ved kjøkkenbord og i dansestuer og noterte det spillemennene spilte. Over et langt liv samlet han mer enn 3000 folketoner. Uten dette arbeidet ville mye av det vi kaller norsk folkemusikk i dag ha vært borte for godt."
+            "content": "Derfor begynte folk som Ludvig Mathias Lindeman å reise rundt i norske bygder og skrive ned melodier. Han dro på innsamlingsreiser i 1848, 1851 og 1864, til blant annet Valdres, Telemark, Hardanger, Hallingdal og Gudbrandsdalen. Alt på den første turen til Valdres i 1848 noterte han 86 gamle salmemelodier og 83 verdslige melodier. I løpet av livet samlet han rundt 3000 melodier og tekster (Karevold, 2024). Samlingen hans ble senere en viktig inspirasjonskilde for blant andre Edvard Grieg (Holen mfl., 2024)."
         },
         {
             "type": "text",
-            "content": "I dag gjør UNESCO noe lignende på verdensbasis. De har en liste over immateriell kulturarv som beskytter musikktradisjoner fra hele verden, fra portugisisk fado til indonesisk gamelan. Bevaring handler om å si: dette er viktig for oss som mennesker, og dette må ikke glemmes."
+            "content": "I dag gjør UNESCO noe lignende på verdensbasis. Organisasjonen fører lister over immateriell kulturarv med hundrevis av tradisjoner fra hele verden, blant dem indonesisk gamelan (UNESCO, u.å.). Portugisisk fado kom inn på lista i 2011 (UNESCO, 2011). Bevaring handler om å si: dette er viktig for oss som mennesker, og dette må ikke glemmes."
         },
         {
             "type": "header",
-            "text": "Fornyelse — når noen gir gammelt nytt liv"
+            "text": "Fornyelse - når noen gir gammelt nytt liv"
         },
         {
             "type": "text",
@@ -73,11 +73,11 @@
         },
         {
             "type": "text",
-            "content": "Edvard Grieg tok norske folkemeloider og kledde dem i symfonisk drakt. Han hørte en melodi fra en spelemann i Hardanger og brukte den som tema i et stykke for fullt orkester. Melodien var den samme, men konteksten var helt ny. Grieg forandret ikke folkemelodien, men han ga den et nytt liv og et nytt publikum."
+            "content": "Edvard Grieg tok norske folkemelodier og gjorde dem til kunstmusikk med sitt eget personlige uttrykk (Benestad & Andersen, 2025). Det tydeligste eksempelet er samlingen Slåtter. Spelemannen Knut Dahle tok selv kontakt med Grieg og advarte om at slåttene ville gå tapt - han var den siste som hadde lært dem av Myllarguten. Johan Halvorsen satt ti dager ved Nationaltheatret og skrev ned Dahles hardingfelespill, og Grieg bearbeidet slåttene for klaver sommeren 1902. Samlingen kom ut i 1903 med 17 bearbeidelser (Jangaard, u.å.). Melodiene var de samme, men de fikk et nytt liv og et nytt publikum."
         },
         {
             "type": "text",
-            "content": "Det samme skjer i dag. Aurora synger med en åpenhet i stemmen som minner om gammel kveding, men i en moderne produksjon med elektroniske klanger. Wardruna bygger lydvegger med norrøne instrumenter som bukkehorn og langeleik, men skaper nye komposisjoner. Gåte setter slåtter fra 1800-tallet inn i rock-format med trommer og elgitar. Ingen av dem kopierer det gamle. Alle bygger videre på det."
+            "content": "Det samme skjer i dag. Mari Boine bygger på joik og samisk tradisjon, men har skapt et personlig uttrykk med elementer fra rock, jazz og musikk fra andre kulturer (Nedland & Knudsen, 2025). Wardruna spiller på tradisjonelle og historiske nordiske instrumenter som bukkehorn, tagelharpe og kraviklyre, men sier selv at de ikke etterligner fortiden - de bruker den til å lage sin egen samtidige lyd (Wardruna, u.å.). Gåte kombinerer tradisjonell norsk folkemusikk og rock. Melodien i Ulveham, som vant Melodi Grand Prix i 2024, bygger på en gammel kulokk, og den første teksten var hentet fra en middelalderballade (Bergan, 2026). Ingen av dem kopierer det gamle. Alle bygger videre på det."
         },
         {
             "type": "image",
@@ -94,11 +94,11 @@
         },
         {
             "type": "header",
-            "text": "Kulturell respekt — hvem eier musikken?"
+            "text": "Kulturell respekt - hvem eier musikken?"
         },
         {
             "type": "text",
-            "content": "Når musikk krysser kulturgrenser, dukker det opp et vanskelig spørsmål: Hvem har lov til å bruke en annen kulturs musikk? Når en pop-artist sampler en gammel blues-innspilling, er det hyllest eller tyveri? Når en ikke-samisk artist bruker joik-lignende vokal, er det inspirasjon eller respektløshet? Og hva med hip-hop-produsenter som henter biter fra jazz, funk og soul — er det å hedre forgjengerne eller å utnytte dem?"
+            "content": "Når musikk krysser kulturgrenser, dukker det opp et vanskelig spørsmål: Hvem har lov til å bruke en annen kulturs musikk? Når en pop-artist sampler en gammel blues-innspilling, er det hyllest eller tyveri? Når en ikke-samisk artist bruker joik-lignende vokal, er det inspirasjon eller respektløshet? Og hva med hip-hop-produsenter som henter biter fra jazz, funk og soul - er det å hedre forgjengerne eller å utnytte dem?"
         },
         {
             "type": "text",
@@ -110,17 +110,17 @@
         },
         {
             "type": "text",
-            "content": "Musikkhistorien viser oss noe viktig: tradisjon og fornyelse er ikke motsetninger. De er to sider av samme mynt. Uten tradisjon har vi ingen røtter — musikken mister sin dybde og identitet. Uten fornyelse har vi ingen vekst — musikken størkner og forsvinner. De beste musikerne gjennom historien har forstått dette, fra Grieg til Beyoncé."
+            "content": "Musikkhistorien viser oss noe viktig: tradisjon og fornyelse er ikke motsetninger. De er to sider av samme mynt. Uten tradisjon har vi ingen røtter - musikken mister sin dybde og identitet. Uten fornyelse har vi ingen vekst - musikken størkner og forsvinner. De beste musikerne gjennom historien har forstått dette, fra Grieg til Beyoncé."
         },
         {
             "type": "text",
-            "content": "Hver gang noen plukker opp en gammel melodi og gjør den til sin egen, fortsetter samtalen mellom generasjonene. Blues ble til jazz. Jazz ble til rock. Rock ble til punk. Punk ble til grunge. Og et sted der ute sitter noen nå og lager noe helt nytt — uten å vite at de bygger videre på en kjede som strekker seg hundrevis av år tilbake. Det er slik musikk lever. Det er slik all kultur lever."
+            "content": "Hver gang noen plukker opp en gammel melodi og gjør den til sin egen, fortsetter samtalen mellom generasjonene. Bluesen ga grunnlaget for rock. Rock ble til punk. Punk ble til grunge. Og et sted der ute sitter noen nå og lager noe helt nytt - uten å vite at de bygger videre på en kjede som strekker seg hundrevis av år tilbake. Det er slik musikk lever. Det er slik all kultur lever."
         },
         {
             "type": "image",
             "src": "/images/musikkhistorie/gamle-toner-nye-stemmer-03.webp",
             "alt": "Rekke med ulike musikkinstrumenter fra forskjellige tidsepoker og kulturer",
-            "caption": "Fra bukkehorn til synthesizer — verktøyene endrer seg, men behovet for å lage musikk er det samme."
+            "caption": "Fra bukkehorn til synthesizer - verktøyene endrer seg, men behovet for å lage musikk er det samme."
         },
         {
             "type": "component",
@@ -128,9 +128,9 @@
             "props": {
                 "forstaa": [
                     "Hva er en musikktradisjon ifølge artikkelen?",
-                    "Hvor mange folketoner samlet Ludvig Mathias Lindeman i løpet av livet sitt?",
+                    "Omtrent hvor mange melodier og tekster samlet Ludvig Mathias Lindeman i løpet av livet sitt?",
                     "Hva gjør UNESCO for å ta vare på musikktradisjoner fra hele verden?",
-                    "Nevn tre av dagens artister eller grupper som artikkelen sier bygger videre på gamle norske tradisjoner, og kort hva hver av dem gjør."
+                    "Nevn tre av dagens artister eller grupper som artikkelen sier bygger videre på gamle norske og samiske tradisjoner, og kort hva hver av dem gjør."
                 ],
                 "reflekter": [
                     "Artikkelen sier at joik betyr å joike en person eller et sted, ikke om dem, men dem. Hva tror du er forskjellen på å synge om noe og å synge det?",
@@ -159,10 +159,10 @@
                             "Musikk som aldri forandrer seg"
                         ],
                         "correctIndex": 1,
-                        "explanation": "En musikktradisjon er en måte å lage musikk på som folk gir videre til neste generasjon — uansett om den er gammel eller nyere."
+                        "explanation": "En musikktradisjon er en måte å lage musikk på som folk gir videre til neste generasjon - uansett om den er gammel eller nyere."
                     },
                     {
-                        "question": "Hvorfor begynte Ludvig Mathias Lindeman å samle norske folkemeloider?",
+                        "question": "Hvorfor begynte Ludvig Mathias Lindeman å samle norske folkemelodier?",
                         "options": [
                             "For å selge dem til utlandet",
                             "Fordi han syntes de var morsomme",
@@ -170,13 +170,13 @@
                             "Fordi kongen beordret det"
                         ],
                         "correctIndex": 2,
-                        "explanation": "Industrialisering og urbanisering truet de gamle slåttene. Lindeman reiste rundt og skrev ned over 3000 melodier for å bevare dem."
+                        "explanation": "Folkemusikken levde bare muntlig, og samfunnet var i rask endring. Lindeman dro på innsamlingsreiser fra 1848 og samlet i alt rundt 3000 melodier og tekster."
                     },
                     {
                         "question": "Hva er paradokset med å bare konservere en musikktradisjon?",
                         "options": [
                             "Det koster for mye penger",
-                            "Tradisjonen kan bli et museum — den lever i arkiver, men ikke i folks hverdag",
+                            "Tradisjonen kan bli et museum - den lever i arkiver, men ikke i folks hverdag",
                             "Ingen vil høre på gammel musikk",
                             "Det er ulovlig å forandre musikk"
                         ],
@@ -186,7 +186,7 @@
                     {
                         "question": "Hva er et viktig prinsipp når man bruker musikk fra en annen kultur?",
                         "options": [
-                            "Man trenger ikke tenke over det — musikk tilhører alle",
+                            "Man trenger ikke tenke over det - musikk tilhører alle",
                             "Man bør forstå tradisjonen og gi anerkjennelse til de som skapte den",
                             "Man skal aldri blande musikk fra ulike kulturer",
                             "Man må betale en lisensavgift til UNESCO"
@@ -196,7 +196,29 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Benestad, F. & Andersen, R. J. (2025). *Edvard Grieg*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Edvard_Grieg](https://snl.no/Edvard_Grieg)",
+                    "Bergan, J. V. (2026). *Gåte - folkrockgruppe*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Gåte_-_folkrockgruppe](https://snl.no/G%C3%A5te_-_folkrockgruppe)",
+                    "Bergh, J., Hansen, K. A. & Knudsen, J. S. (2025). *Blues*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/blues](https://snl.no/blues)",
+                    "Gaski, H., Ledang, O. K. & Aksdal, B. (2024). *Joik*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/joik](https://snl.no/joik)",
+                    "Helsvig, K. G. & Knudsen, J. S. (2025). *Flamenco*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/flamenco](https://snl.no/flamenco)",
+                    "Holen, A., Ledang, O. K. & Aksdal, B. (2024). *Norsk folkemusikk*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/norsk_folkemusikk](https://snl.no/norsk_folkemusikk)",
+                    "Jangaard, M. (u.å.). *Opus 72*. Grieg minutt for minutt, NRK. Hentet 04.08.2026 fra [griegminuttforminutt.no/opus72](https://www.griegminuttforminutt.no/opus72/)",
+                    "Karevold, I. (2024). *Ludvig Mathias Lindeman*. Norsk biografisk leksikon. Hentet 04.08.2026 fra [nbl.snl.no/Ludvig_Mathias_Lindeman](https://nbl.snl.no/Ludvig_Mathias_Lindeman)",
+                    "Nedland, S. & Knudsen, J. S. (2025). *Mari Boine*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Mari_Boine](https://snl.no/Mari_Boine)",
+                    "Thorsnæs, G. (2026). *Norge - bosettingsmønster*. Store norske leksikon. Hentet 04.08.2026 fra [snl.no/Norge_-_bosettingsmønster](https://snl.no/Norge_-_bosettingsm%C3%B8nster)",
+                    "UNESCO. (2011). *Fado, urban popular song of Portugal*. Representative List of the Intangible Cultural Heritage of Humanity. Hentet 04.08.2026 fra [ich.unesco.org](https://ich.unesco.org/en/RL/fado-urban-popular-song-of-portugal-00563)",
+                    "UNESCO. (u.å.). *Browse the Lists of Intangible Cultural Heritage*. Hentet 04.08.2026 fra [ich.unesco.org/en/lists](https://ich.unesco.org/en/lists)",
+                    "Wardruna. (u.å.). *About Wardruna*. Hentet 04.08.2026 fra [wardruna.com/about](https://www.wardruna.com/about/)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-04"
 }
