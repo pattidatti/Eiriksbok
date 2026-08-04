@@ -6,7 +6,7 @@
     "year": "1991-1999",
     "category": "Verden",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/etterkrigstiden/jugoslavias-opplosning-hero.webp",
     "details": [
         "Jugoslavia var ett land med seks republikker og mange folkegrupper.",
         "Da landet sprakk i 1991, ble naboer i samme gate plutselig satt på hver sin side.",
@@ -21,7 +21,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/jugoslavias-opplosning-01.webp",
             "alt": "Sarajevo omkranset av fjell i vinterlys, olympiske anlegg i forgrunnen",
             "caption": "Sarajevo arrangerte vinter-OL i 1984. Fjellene rundt byen ble senere brukt til å beskyte den."
         },
@@ -249,7 +249,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/jugoslavias-opplosning-02.webp",
             "alt": "Smal tunnel av jord og treverk med svake lyspærer i taket",
             "caption": "Tunnelen under flyplassen var så lav at folk måtte gå bøyd hele veien. Den ble gravd for hånd."
         },
@@ -291,7 +291,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/etterkrigstiden/jugoslavias-opplosning-03.webp",
             "alt": "Familie med kofferter på en støvete vei ved en grenseovergang",
             "caption": "Over en million kosovoalbanere ble drevet på flukt i 1999. De fleste kom tilbake da krigen var over."
         },
