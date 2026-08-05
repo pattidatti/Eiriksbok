@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 317
+      "count": 319
     },
     {
       "tag": "dekolonisering",
@@ -828,7 +828,7 @@
     },
     {
       "tag": "kald-krig",
-      "count": 36
+      "count": 38
     },
     {
       "tag": "nykolonialisme",
@@ -1531,6 +1531,10 @@
       "count": 4
     },
     {
+      "tag": "miljo",
+      "count": 4
+    },
+    {
       "tag": "unionsoppløsning",
       "count": 4
     },
@@ -2135,10 +2139,6 @@
       "count": 2
     },
     {
-      "tag": "miljo",
-      "count": 2
-    },
-    {
       "tag": "paskeoya",
       "count": 2
     },
@@ -2724,6 +2724,14 @@
     },
     {
       "tag": "deng",
+      "count": 2
+    },
+    {
+      "tag": "sovjetunionen",
+      "count": 2
+    },
+    {
+      "tag": "atomkraft",
       "count": 2
     },
     {
