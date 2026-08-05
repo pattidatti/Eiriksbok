@@ -15,7 +15,7 @@
     "content": [
         {
             "type": "text",
-            "value": "Å flytte fra alt man kjenner – familie, venner, språk og kultur – er en av de største beslutningene et menneske kan ta. For å forstå migrasjon deler vi årsakene inn i to grupper: Faktorene som dytter oss vekk, og faktorene som drar oss til et nytt sted."
+            "content": "Å flytte fra alt man kjenner - familie, venner, språk og kultur - er en av de største beslutningene et menneske kan ta. For å forstå migrasjon deler vi årsakene inn i to grupper: faktorene som dytter oss vekk, og faktorene som drar oss til et nytt sted."
         },
         {
             "type": "component",
@@ -23,11 +23,23 @@
         },
         {
             "type": "header",
-            "value": "Push-faktorer: Når du MÅ dra"
+            "value": "Push-faktorer: Når du må dra"
         },
         {
             "type": "text",
-            "value": "Push-faktorer (skyve-faktorer) er negative forhold på hjemstedet. Det handler ofte om ren overlevelse.\n\n*   **Krig og konflikt:** Den vanligste årsaken til flukt i dag (f.eks. Syria, Ukraina).\n*   **Naturkatastrofer:** Tørke eller flom som ødelegger livsgrunnlaget.\n*   **Politisk forfølgelse:** Å bli fengslet for sine meninger."
+            "content": "Push-faktorer (skyve-faktorer) er negative forhold på hjemstedet. Det handler ofte om ren overlevelse. Krig, politisk eller religiøs forfølgelse og store naturkatastrofer er typiske grunner til at folk blir tvunget til å flytte (Tønnessen, 2026)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Krig og konflikt: den vanligste årsaken til flukt i dag, for eksempel fra Syria og Ukraina.",
+                "Naturkatastrofer: tørke eller flom som ødelegger livsgrunnlaget.",
+                "Politisk forfølgelse: å bli fengslet for meningene sine."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Dette er ikke små tall. Over 117 millioner mennesker i verden er drevet bort fra hjemmet sitt av krig, vold eller forfølgelse (FN-sambandet, 2026)."
         },
         {
             "type": "header",
@@ -35,15 +47,31 @@
         },
         {
             "type": "text",
-            "value": "Pull-faktorer (dra-faktorer) er det som lokker deg til et bestemt sted. Hvorfor drar ikke alle flyktninger til nabolandet?\n\n*   **Økonomi:** Høyere lønn og jobbmuligheter.\n*   **Trygghet:** Stabilt demokrati og rettsvesen.\n*   **Frihet:** Muligheten til å være seg selv."
+            "content": "Pull-faktorer (dra-faktorer) er det som lokker deg til et bestemt sted. Hvorfor drar ikke alle flyktninger til nabolandet? Forskjeller i inntekt, hvor lett det er å få jobb, politiske forhold og hvor godt utbygd velferdsstaten er, påvirker alle hvor folk ender opp (Tønnessen, 2026)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Økonomi: høyere lønn og flere jobbmuligheter.",
+                "Trygghet: stabilt demokrati og rettsvesen.",
+                "Frihet: muligheten til å være seg selv.",
+                "Nettverk: familie og venner som allerede bor der."
+            ]
         },
         {
             "type": "header",
-            "value": "Case 1: Den store utvandringen (1825–1920)"
+            "value": "Case 1: Den store utvandringen (1825-1920)"
         },
         {
             "type": "text",
-            "value": "Visste du at over 800 000 nordmenn utvandret til Amerika? Kun Irland mistet en større andel av befolkningen sin.\n\n*   **Push:** Norge var fattig. Gårdene var for små til å deles opp mellom alle sønnene. Det var rett og slett ikke nok mat.\n*   **Pull:** \"The Homestead Act\" i USA lovet gratis jord til alle som ville dyrke den. Brev fra slektninger fortalte om et land der alle kunne bli rike."
+            "content": "Visste du at over 750 000 nordmenn utvandret til Nord-Amerika mellom 1836 og 1915? Ingen andre nordiske land mistet en så stor del av folket sitt, og i hele Europa var det bare Irland som lå høyere (Nerbøvik, 2025)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Push: Norge var fattig. Gårdene var for små til å deles opp mellom alle sønnene, og krisetidene på 1860- og 1870-tallet gjorde det verre.",
+                "Pull: Fra 1862 åpnet Homestead-loven for at folk kunne få eiendomsrett til jord i USA, og Amerika framsto som det lovede landet (Nerbøvik, 2025). Brev fra slektninger fortalte om et land der alle kunne bli rike."
+            ]
         },
         {
             "type": "header",
@@ -51,7 +79,11 @@
         },
         {
             "type": "text",
-            "value": "I 2011 brøt det ut opprør i mange arabiske land (Den arabiske våren). I Syria utviklet det seg til en brutal borgerkrig. \n\nMillioner ble drevet på flukt. Dette er et klassisk eksempel på ekstreme **Push-faktorer** (bomber og kjemiske våpen). Mange søkte seg mot Europa (**Pull-faktor**: Trygghet og menneskerettigheter), noe som skapte store politiske diskusjoner i EU."
+            "content": "Opprørene som kalles den arabiske våren startet i Tunisia i desember 2010 og spredte seg gjennom 2011 til en rekke land i Nord-Afrika og Midtøsten. I Syria begynte det med demonstrasjoner tidlig i 2011, og etter at sikkerhetsstyrkene skjøt mot demonstranter utviklet det seg til en brutal borgerkrig (Leraand & Jensehaugen, 2022)."
+        },
+        {
+            "type": "text",
+            "content": "Om lag halvparten av innbyggerne i Syria er drevet bort fra hjemmene sine, FN anslår at minst 400 000 er drept, og kjemiske våpen ble brukt i krigen (Leraand, 2026). Dette er et klassisk eksempel på ekstreme push-faktorer.\n\nMange søkte seg mot Europa, der trygghet og menneskerettigheter var pull-faktoren. Det skapte store politiske diskusjoner i EU."
         },
         {
             "type": "header",
@@ -59,7 +91,11 @@
         },
         {
             "type": "text",
-            "value": "Migrasjon endrer også landet man drar fra. Når migranter får jobb i rike land, sender de ofte penger hjem til familien. Dette kalles *remittances* (pengeoversendelser).\n\nFaktisk sendes det MER penger hjem via remittances enn all verdens u-hjelp til sammen! Disse pengene betaler for skolegang og helsehjelp i hjemlandet."
+            "content": "Migrasjon endrer også landet man drar fra. Når migranter får jobb i rike land, sender de ofte penger hjem til familien. Dette kalles remittances, eller pengeoverføringer på norsk."
+        },
+        {
+            "type": "text",
+            "content": "I 2023 sendte migranter 656 milliarder dollar hjem til lav- og mellominntektsland. Det er mer enn både utenlandske investeringer og all offisiell bistand til de samme landene (Verdensbanken, 2024). Pengene betaler for mat, skolegang og helsehjelp i hjemlandet."
         },
         {
             "type": "component",
@@ -68,19 +104,33 @@
                 "forstaa": [
                     "Hva er forskjellen på en push-faktor og en pull-faktor, med egne ord?",
                     "Nevn tre push-faktorer som teksten trekker fram som grunner til at folk må flykte.",
-                    "Hvor mange nordmenn utvandret til Amerika i perioden 1825-1920, og hvilket land mistet en enda større andel av befolkningen sin?",
+                    "Hvor mange nordmenn utvandret til Nord-Amerika mellom 1836 og 1915, og hvilket land i Europa mistet en enda større andel av folket sitt?",
                     "Hva er remittances, og hva bruker familiene disse pengene til ifølge teksten?"
                 ],
                 "reflekter": [
                     "Teksten sier at Norge var fattig fordi gårdene var for små til å deles mellom alle sønnene. Forklar hvorfor dette gjorde at så mange valgte å reise til Amerika.",
                     "Hvorfor drar ikke alle flyktninger bare til nabolandet? Bruk pull-faktorene i teksten til å forklare hvorfor mange reiste helt til Europa i 2015.",
-                    "Teksten sier at det sendes mer penger hjem via remittances enn all verdens u-hjelp til sammen. Hvorfor kan slike penger fra migranter være viktigere for et land enn hjelp fra andre stater?",
-                    "Sammenlign den store utvandringen fra Norge på 1800-tallet med flukten fra Syria i 2015. Hva er likt, og hva er forskjellig når det gjelder push- og pull-faktorer?"
+                    "Teksten sier at migranter sender mer penger hjem enn all offisiell bistand til de samme landene. Hvorfor kan slike penger fra migranter være viktigere for et land enn hjelp fra andre stater?",
+                    "Sammenlign den store utvandringen fra Norge på 1800-tallet med flukten fra Syria etter 2011. Hva er likt, og hva er forskjellig når det gjelder push- og pull-faktorer?"
                 ],
                 "gaaVidere": [
                     "Se for deg at du selv måtte flytte til et helt nytt land. Skriv en kort tekst (5-8 setninger) om hvilke tre ting du ville savnet mest av alt du kjenner.",
                     "Diskuter med en partner: Hvis en i din familie fikk jobb i utlandet og sendte penger hjem, hva synes dere pengene burde brukes til?",
                     "Finn ut hvor familien din eller besteforeldrene dine kommer fra. Har noen i slekten flyttet på grunn av en push- eller pull-faktor? Fortell historien til klassen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "FN-sambandet. (2026). *Mennesker på flukt*. Hentet 05.08.2026 fra [fn.no](https://fn.no/tema/menneskerettigheter/mennesker-paa-flukt)",
+                    "Leraand, D. (2026). *Syria*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Syria](https://snl.no/Syria)",
+                    "Leraand, D. & Jensehaugen, J. (2022). *Den arabiske våren*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Den_arabiske_våren](https://snl.no/Den_arabiske_v%C3%A5ren)",
+                    "Nerbøvik, J. (2025). *Utvandringa frå Noreg til Nord-Amerika*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Utvandringa_frå_Noreg_til_Nord-Amerika](https://snl.no/Utvandringa_fr%C3%A5_Noreg_til_Nord-Amerika)",
+                    "Tønnessen, M. (2026). *Migrasjon*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/migrasjon](https://snl.no/migrasjon)",
+                    "Verdensbanken. (2024). *Remittances Slowed in 2023, Expected to Grow Faster in 2024*. Hentet 05.08.2026 fra [worldbank.org](https://www.worldbank.org/en/news/press-release/2024/06/26/remittances-slowed-in-2023-expected-to-grow-faster-in-2024)"
                 ]
             }
         }
@@ -106,5 +156,6 @@
             ],
             "correctAnswer": 1
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-05"
 }
