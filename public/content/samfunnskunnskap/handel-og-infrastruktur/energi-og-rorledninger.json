@@ -7,15 +7,15 @@
   "readTime": "10 min lesning",
   "heroImage": "/images/lessons/handel/energi-rorledninger-hero.webp",
   "details": [
-    "Over 3,5 millioner kilometer rørledninger finnes globalt",
-    "Russland forsynte 40 % av EUs gass i 2021",
+    "Det norske gasstransportsystemet er 8 800 kilometer langt",
+    "Russland var Europas største gassleverandør fram til 2022",
     "Hormuzstredet transporterer 20 % av verdens olje"
   ],
   "externalUrl": "https://snl.no/naturgass",
   "content": [
     {
       "type": "text",
-      "content": "Under bakken og under havbunnen strekker seg et usynlig nervesystem som holder industrisivilisasjonen i gang: rørledningene. De frakter olje, naturgass og flytende naturalis (LNG) over kontinent og havdyp. Der skipene er langsomme og fleksible, er rørledningene raske og rigide — og det gjør dem til noe mer enn infrastruktur. De er politikk støpt i stål."
+      "content": "Under bakken og under havbunnen strekker seg et usynlig nervesystem som holder industrisivilisasjonen i gang: rørledningene. De frakter olje og naturgass over kontinent og havdyp. Der skipene er langsomme og fleksible, er rørledningene raske og rigide - og det gjør dem til noe mer enn infrastruktur. De er politikk støpt i stål."
     },
     {
       "type": "header",
@@ -23,11 +23,11 @@
     },
     {
       "type": "text",
-      "content": "Det er ikke tilfeldig at Russland bygde gassrørledninger direkte til Vest-Europa. Det skapte avhengighet. I årtier var Europas gassforsyning knyttet til Moskvas vilje. Da Putin invaderte Ukraina i 2022, hadde Europa et problem: 40 prosent av gassen kom fra Russland, og mesteparten kom via rørledninger."
+      "content": "Det er ikke tilfeldig at Russland bygde gassrørledninger direkte til Vest-Europa. Det skapte avhengighet. Fram til 2022 var Russland den største leverandøren av naturgass i Europa, med Norge som nummer to (Rosendahl, 2026). Da Putin invaderte Ukraina i 2022, hadde Europa derfor et problem: mesteparten av gassen kom gjennom rør som Moskva kontrollerte."
     },
     {
       "type": "text",
-      "content": "Sabotasjen av Nord Stream 1 og 2 i september 2022 — fire eksplosjoner i Østersjøen som skadet begge rørledningene — viste at infrastruktur er et mål i moderne konflikter. Hvem som sto bak, er fortsatt uklart. Men konsekvensen var tydelig: Europa måtte finne ny energi, raskere enn noen hadde trodd mulig."
+      "content": "Sabotasjen av Nord Stream 1 og 2 i september 2022 - tre lekkasjer i Østersjøen ved Bornholm, i begge rørene til Nord Stream 1 og i det ene røret til Nord Stream 2 - viste at infrastruktur er et mål i moderne konflikter. Tyske etterforskere har mistenkt sju ukrainske borgere, blant dem fire dykkere som skal ha festet sprengstoff til rørene fra en seilbåt. Ukrainske myndigheter avviser at de sto bak (Holm-Hansen, 2026). Konsekvensen var uansett tydelig: Europa måtte finne ny energi, raskere enn noen hadde trodd mulig. I 2025 sto Russland for under 10 prosent av gassen EU importerte (Eurostat, 2026)."
     },
     {
       "type": "component",
@@ -43,7 +43,7 @@
     },
     {
       "type": "text",
-      "content": "Hvert år passerer omtrent 20 prosent av verdens olje gjennom Hormuzstredet — en 54 kilometer smal passasje mellom Iran og Oman. Saudi-Arabias, Iraks, Kuwaits, og UAEs eksport går gjennom her. En konflikt i regionen, eller en iransk beslutning om å blokkere stredet, ville sende oljepriser til værs over natten."
+      "content": "Hvert år passerer omtrent 20 prosent av verdens oljeforbruk gjennom Hormuzstredet (U.S. Energy Information Administration, 2023). Stredet er 167 kilometer langt, og bredden varierer mellom 39 og 96 kilometer. Iran ligger på nordsiden, De forente arabiske emirater og Oman på sørsiden (Leraand & Ghassim, 2026). Saudi-Arabias, Iraks, Kuwaits og Emiratenes eksport går ut gjennom her. En konflikt i regionen, eller en iransk beslutning om å blokkere stredet, ville sende oljeprisene til værs over natten."
     },
     {
       "type": "component",
@@ -51,10 +51,10 @@
       "props": {
         "title": "Verdens viktigste energiflaskehalser",
         "items": [
-          "Hormuzstredet: 20 % av verdens olje, 18 % av LNG",
-          "Malakkastredet: 25 % av verdens oljehandel",
-          "Suezkanalen: ca. 10 % av globalt oljeforbruk",
-          "Bab el-Mandeb (Rødehavet): 8 % av verdenshandelen"
+          "Hormuzstredet: rundt 20 % av verdens oljeforbruk og rundt en femdel av all LNG-handel",
+          "Malakkastredet: hovedåren for olje på vei til Kina, Japan og Sør-Korea",
+          "Suezkanalen: korteste sjøvei mellom Europa og Asia",
+          "Bab el-Mandeb: inngangen til Rødehavet og Suezkanalen sørfra"
         ]
       }
     },
@@ -64,11 +64,11 @@
     },
     {
       "type": "text",
-      "content": "Flytende naturgass (LNG) er en revolusjon. Ved å kjøle ned gass til minus 162 grader Celsius og komprimere den til 1/600 av volumet, kan den lastes på spesialskip og sendes til hvem som helst i verden. Det bryter rørledningenes monopol. LNG ble Europas redning i 2022: skip fra Qatar, Australia og USA fraktet erstatningsgass til terminaler i Frankrike, Nederland og Spania."
+      "content": "Flytende naturgass (LNG) er en revolusjon. Skal gass fraktes svært lange avstander, må den først kjøles ned til væske. Metan koker ved rundt minus 161 grader Celsius, og gassen må holdes så kald hele veien (Lundberg mfl., 2025). Da kan den lastes på spesialskip og sendes til hvem som helst i verden. Det bryter rørledningenes monopol. LNG ble Europas redning i 2022: skip fra Qatar, Australia og USA fraktet erstatningsgass til terminaler i Frankrike, Nederland og Spania."
     },
     {
       "type": "text",
-      "content": "Men LNG er dyrere enn rørgass. Det krever kostbare terminaler for å flytende- og regassifisere. Det tar tid å bygge. Europa kom seg gjennom vinteren 2022–2023, men til en pris: energiregningene skjøt i været, fabrikker stengte, og inflasjon spre seg til alle hjørner av europeisk økonomi."
+      "content": "Men LNG er dyrere enn rørgass. Skipene er kostbare å bygge, og det trengs egne terminaler for å gjøre gassen flytende og for å gjøre den om til gass igjen (Lundberg mfl., 2025). Det tar tid å bygge. Europa kom seg gjennom vinteren 2022-2023, men til en pris: energiregningene skjøt i været, fabrikker stengte, og inflasjonen spredte seg til alle hjørner av europeisk økonomi."
     },
     {
       "type": "header",
@@ -76,7 +76,7 @@
     },
     {
       "type": "text",
-      "content": "Da Russland trakk seg tilbake, ble Norge Europas viktigste gassleverandør. Norsk gass transporteres gjennom Gassled — et nettverk av undersjøiske rørledninger på norsk kontinentalsokkel — til mottaksterminaler i Storbritannia, Frankrike, Belgia, Nederland og Tyskland. Noen av disse rørledningene har ligget på havbunnen siden 1970-tallet og er blant verdens lengste offshore-gassrørledninger."
+      "content": "Da Russland trakk seg tilbake, ble Norge den største gassleverandøren til Europa. Norge produserer nå omtrent halvparten av all europeisk gassproduksjon, og det meste går i rør til Storbritannia og EU-land (Rosendahl, 2026). Det norske gasstransportsystemet er et nettverk av rørledninger med en samlet lengde på 8 800 kilometer, med rør som Statpipe og Langeled (Askheim, 2024). Noen av dem har ligget på havbunnen siden 1970-tallet."
     },
     {
         "type": "component",
@@ -84,9 +84,9 @@
         "props": {
             "forstaa": [
                 "Hva frakter rørledningene, og hvorfor kaller teksten dem et usynlig nervesystem under bakken og havbunnen?",
-                "Hvor stor andel av gassen sin fikk EU fra Russland i 2021, og hvordan kom mesteparten av den?",
-                "Hva skjedde med Nord Stream 1 og 2 i september 2022, og hvor mange eksplosjoner var det?",
-                "Hva er LNG, og til hvor mange grader Celsius kjøles gassen ned for å bli flytende?"
+                "Hvilken rolle hadde Russland som gassleverandør til Europa fram til 2022, og hvordan kom mesteparten av gassen fram?",
+                "Hva skjedde med Nord Stream 1 og 2 i september 2022, og hvor mange lekkasjer oppsto det?",
+                "Hva er LNG, og til omtrent hvor mange grader Celsius må gassen kjøles ned for å bli flytende?"
             ],
             "reflekter": [
                 "Teksten sier at rørledninger er politikk støpt i stål. Forklar hvorfor Russland bygde gassrør direkte til Vest-Europa, og hvordan det skapte avhengighet.",
@@ -110,12 +110,12 @@
             "question": "Hva er LNG?",
             "options": [
               "En type oljeplattform",
-              "Naturgass kjølt ned og komprimert til flytende form",
+              "Naturgass kjølt ned til flytende form",
               "En fornybar energikilde",
               "Et internasjonalt energisamarbeid"
             ],
             "correct": 1,
-            "explanation": "LNG (Liquefied Natural Gas / flytende naturgass) er naturgass som er kjølt ned til -162°C og komprimert til 1/600 av opprinnelig volum. Det gjør det mulig å transportere gass med skip, i stedet for å være avhengig av rørledninger."
+            "explanation": "LNG (Liquefied Natural Gas / flytende naturgass) er naturgass som er kjølt ned til rundt -161 °C, slik at den blir flytende. Det gjør det mulig å transportere gass med skip, i stedet for å være avhengig av rørledninger."
           },
           {
             "question": "Hvilken andel av verdens olje passerer gjennom Hormuzstredet?",
@@ -125,7 +125,23 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Askheim, S. (2024). *Rørledning*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/rørledning](https://snl.no/r%C3%B8rledning)",
+          "Eurostat. (2026). *EU imports of energy products - latest developments*. Europakommisjonen. Hentet 05.08.2026 fra [ec.europa.eu](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=EU_imports_of_energy_products_-_latest_developments)",
+          "Holm-Hansen, J. (2026). *Nord Stream - gassrørledning*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Nord_Stream](https://snl.no/Nord_Stream_-_gassr%C3%B8rledning)",
+          "Leraand, D. & Ghassim, B. (2026). *Hormuzstredet*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Hormuzstredet](https://snl.no/Hormuzstredet)",
+          "Lundberg, N. H., Nesse, N., Hagland, J. & Hofstad, K. (2025). *Naturgass*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/naturgass](https://snl.no/naturgass)",
+          "Rosendahl, K. E. (2026). *Det europeiske gassmarkedet*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/det_europeiske_gassmarkedet](https://snl.no/det_europeiske_gassmarkedet)",
+          "U.S. Energy Information Administration. (2023). *The Strait of Hormuz is the world's most important oil transit chokepoint*. Hentet 05.08.2026 fra [eia.gov](https://www.eia.gov/todayinenergy/detail.php?id=61002)"
+        ]
+      }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-08-05T00:00:00Z"
 }
