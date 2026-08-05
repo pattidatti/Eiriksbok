@@ -171,6 +171,7 @@ const EdiktSoylene3D = lazy(() => import('./EdiktSoylene3D'));
 const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
+const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'bedehuset-motet': {
@@ -1666,6 +1667,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Nedfallsvakten3D'),
         Component: Nedfallsvakten3D as never,
+    },
+    'kullkapplopet-3d': {
+        id: 'kullkapplopet-3d',
+        title: 'Kappløpet om kullet',
+        description:
+            'Spitsbergen rundt 1905. Øyene er ingenmannsland, kull er nettopp funnet, og selskaper fra flere land setter opp skilt for å kreve felt. Klikk et kullfelt i snøen, så går ekspedisjonslaget ditt dit - men det tar tid, og rivalene venter ikke. Kommer du for sent, er turen bortkastet. Lyspæra: kappløpet uten dommer er nettopp grunnen til at landene måtte møtes og skrive Svalbardtraktaten i 1920.',
+        estimatedSeconds: 140,
+        loader: () => import('./Kullkapplopet3D'),
+        Component: Kullkapplopet3D as never,
     },
 };
 

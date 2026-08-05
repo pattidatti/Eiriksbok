@@ -3271,6 +3271,23 @@
               "lastUpdated": "2026-07-31T06:00:25+02:00"
             },
             {
+              "id": "svalbard",
+              "title": "Svalbard: øyene ingen eide",
+              "description": "Svalbard var ingenmannsland til kullet ble funnet. Traktaten av 1920 ga Norge suverenitet, men på tre betingelser som fortsatt gjelder.",
+              "image": "/images/placeholder.webp",
+              "year": "1920",
+              "layout": "rich",
+              "tags": [
+                "historie",
+                "norge",
+                "svalbard",
+                "arktis",
+                "suverenitet",
+                "traktat"
+              ],
+              "createdDate": "2026-08-05T00:00:00Z"
+            },
+            {
               "id": "utvandringen-til-amerika",
               "title": "Utvandringen til Amerika",
               "description": "Rundt 800 000 nordmenn reiste til Nord-Amerika mellom 1825 og 1915. Press hjemmefra og lokking fra Amerika drev den største folkeflyttingen i norsk historie.",

@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 319
+      "count": 321
     },
     {
       "tag": "dekolonisering",
@@ -1616,6 +1616,10 @@
     },
     {
       "tag": "velferdsstat",
+      "count": 4
+    },
+    {
+      "tag": "suverenitet",
       "count": 4
     },
     {
@@ -2619,6 +2623,18 @@
       "count": 2
     },
     {
+      "tag": "svalbard",
+      "count": 2
+    },
+    {
+      "tag": "arktis",
+      "count": 2
+    },
+    {
+      "tag": "traktat",
+      "count": 2
+    },
+    {
       "tag": "stalin",
       "count": 2
     },
@@ -2772,10 +2788,6 @@
     },
     {
       "tag": "eos",
-      "count": 2
-    },
-    {
-      "tag": "suverenitet",
       "count": 2
     },
     {
