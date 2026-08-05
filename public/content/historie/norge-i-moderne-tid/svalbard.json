@@ -1,0 +1,218 @@
+{
+    "id": "svalbard",
+    "title": "Svalbard: øyene ingen eide",
+    "layout": "rich",
+    "year": "1920",
+    "category": "Norge i moderne tid",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-08-05",
+    "details": [
+        "I flere hundre år var Svalbard ingenmannsland. Ingen stat eide øyene, og ingen lov gjaldt der.",
+        "Da kullet ble funnet rundt 1905, satte selskaper fra flere land opp skilt og krevde felt. Uten en dommer over seg endte det i krangel.",
+        "Svalbardtraktaten av 1920 ga Norge full suverenitet, men på tre betingelser som fortsatt former hverdagen på øyene."
+    ],
+    "externalUrl": "https://snl.no/Svalbardtraktaten",
+    "content": [
+        {
+            "type": "text",
+            "content": "Seks mil vest for Longyearbyen ligger en liten by med russiske gateskilt, russisk skole og en byste av Lenin på torget. Byen heter Barentsburg, og den ligger på norsk jord. Det er ingen feil, og det er ingen okkupasjon. Det er en avtale fra 1920 som gjør det mulig. For å skjønne hvorfor Norge både eier Svalbard og må dele det, må vi begynne i en tid da ingen eide noe der oppe i det hele tatt."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Snødekt fjellandskap over en liten arktisk gruveby ved en fjord",
+            "caption": "Svalbard ligger mellom 74 og 81 grader nord. Nesten to tredeler av landarealet er dekket av isbreer."
+        },
+        { "type": "header", "text": "Øyene ingen eide" },
+        {
+            "type": "text",
+            "content": "I 1596 seilte nederlenderen Willem Barentsz nordover for å finne en sjøvei til Kina. I stedet fikk han øye på en rekke spisse, hvite fjelltopper. Han kalte landet Spitsbergen, altså de spisse fjellene (Barr, 2025c). Navnet Svalbard kom først da Norge overtok styringen i 1925."
+        },
+        {
+            "type": "text",
+            "content": "Det Barentsz hadde funnet, var ingen tom øde. Fra begynnelsen av 1600-tallet kom hvalfangere fra England, Nederland og Tyskland. Russiske pelsjegere, kalt pomorer, dukket opp rundt 1715, og norske fangstmenn kom mot slutten av 1700-tallet (Barr, 2025c). Alle tjente penger på øyene. Ingen styrte dem."
+        },
+        {
+            "type": "text",
+            "content": "På fagspråket het dette terra nullius, som betyr ingenmannsland: et område ingen stat har tatt eierskap til. Det gikk lenge greit. Så lenge folk bare jaktet noen måneder om sommeren og reiste hjem igjen, trengte ingen politi eller domstol. Men det skulle endre seg fort."
+        },
+        { "type": "header", "text": "Kullet forandret alt" },
+        {
+            "type": "text",
+            "content": "Rundt 1905 begynte kulldriften for alvor (Barr, 2025c). Det var kull i fjellsidene, dampskip og fabrikker over hele Europa sultet etter brensel, og plutselig var de kalde øyene verdt penger. Amerikaneren John Munro Longyear startet Arctic Coal Co., og selskapet anla i 1905 en gruveby som fikk navnet Longyearbyen etter ham. I 1916 kjøpte det norske selskapet Store Norske Spitsbergen Kulkompani hele eiendommen (Barr, 2025b)."
+        },
+        {
+            "type": "text",
+            "content": "Nå oppsto et problem ingen hadde tenkt på. Selskaper fra Norge, USA, Storbritannia, Sverige og Russland satte opp skilt i snøen og krevde hvert sitt felt. Men hvem skulle avgjøre hvem som hadde satt opp skiltet først? Det fantes ingen tinglysing, ingen politi og ingen domstol. Kravene begynte å overlappe hverandre, og krangelen hadde ingen å gå til."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": { "gameId": "kullkapplopet-3d" }
+        },
+        { "type": "header", "text": "Møtet i Paris" },
+        {
+            "type": "text",
+            "content": "Norge hadde ønsket seg Svalbard lenge. Allerede fra 1871 gjorde Norge og Sverige-Norge forsøk på å ta øyene i besittelse, og mellom 1910 og 1914 kalte Norge inn til tre konferanser i Kristiania for å finne en løsning. De førte ikke fram. Russland var imot, og så kom første verdenskrig i veien (Stortinget, 2020). Du kan lese mer om krigen som stokket om på hele Europa i [Første verdenskrig](/historie/forste-verdenskrig/oversikt)."
+        },
+        {
+            "type": "text",
+            "content": "Etter krigen kom sjansen. Ifølge Stortinget (2020) vedtok utenrikskomiteen allerede 1. november 1918 at Norge skulle arbeide for å få suverenitet over øyene, og diplomaten Fritz Wedel Jarlsberg formet det norske forslaget. Da seierherrene satt samlet i Paris for å ordne opp i verden, ble Svalbard en av sakene på bordet. Norge hadde nettopp blitt et helt selvstendig land etter [unionsoppløsningen i 1905](/historie/norge-i-moderne-tid/unionsopplosningen-1905), og landet var lite og ufarlig. Kanskje var det nettopp derfor de store landene kunne godta at Norge fikk styringen."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Diplomater rundt et langbord som undertegner en traktat i en sal i Paris",
+            "caption": "9. februar 1920 skrev ni land under Svalbardtraktaten i Paris. I dag har 49 land sluttet seg til den."
+        },
+        { "type": "header", "text": "Suverenitet med betingelser" },
+        {
+            "type": "text",
+            "content": "Svalbardtraktaten ble undertegnet 9. februar 1920 av Norge, Nederland, Storbritannia, Danmark, USA, Italia, Frankrike, Sverige og Japan (Ulfstein & Holtsmark, 2026). Den gir Norge full og uinnskrenket suverenitet over Svalbard. Med andre ord: øyene er Norge, på samme måte som Trøndelag er Norge."
+        },
+        {
+            "type": "text",
+            "content": "Men Norge fikk dem ikke gratis. Traktaten setter tre betingelser som Norge må holde (Ulfstein & Holtsmark, 2026). For det første skal borgere og selskaper fra alle land som har skrevet under, behandles helt likt når de vil drive næring på øyene. For det andre kan Norge bare kreve inn skatt som brukes på Svalbard selv, ikke sende pengene til fastlandet. For det tredje er det forbudt å bygge festningsverk eller bruke øyene til krig."
+        },
+        {
+            "type": "text",
+            "content": "Selve overtakelsen tok tid. Stortinget ratifiserte traktaten i 1924, vedtok Svalbardloven 17. juli 1925 og gjorde øyene til en udelelig og uavhendelig del av Kongeriket Norge (Stortinget, 2020). 14. august 1925 heiste Norge flagget i Longyearbyen, og traktaten trådte i kraft (Ulfstein & Holtsmark, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "SvalbardTraktatTest",
+            "props": {}
+        },
+        { "type": "header", "text": "Krig, mistanke og kald krig" },
+        {
+            "type": "text",
+            "content": "Freden varte i seksten år. Sommeren 1941 ble både de norske og de sovjetiske gruvene stengt og folket evakuert. Russerne dro til Arkhangelsk, nordmennene til Skottland. I september 1943 kom tyskerne tilbake med en flåtestyrke ledet av slagskipene Tirpitz og Scharnhorst, og Barentsburg, Longyearbyen og Grumantbyen ble nesten helt rasert (Barr, 2025c)."
+        },
+        {
+            "type": "text",
+            "content": "Etter krigen kom en ny utfordring. Sovjetunionen mente Bjørnøya historisk var russisk og foreslo at de to landene skulle styre Spitsbergen sammen. Utenriksminister Molotov tok saken opp igjen høsten 1946, men Stortinget avviste forhandlinger i februar 1947 (Barr, 2025c). Dermed sto den norske suvereniteten fast gjennom hele [den kalde krigen](/historie/den-kalde-krigen/oversikt), samtidig som sovjetiske gruvebyer lå midt i den norske arktisen."
+        },
+        { "type": "header", "text": "Svalbard i dag" },
+        {
+            "type": "text",
+            "content": "1. januar 2026 bodde det 2 512 mennesker i Longyearbyen og Ny-Ålesund, og 392 i de russiske bosetningene Barentsburg og Pyramiden (Statistisk sentralbyrå, 2026). Det russiske statsselskapet Arktikugol har drevet Barentsburg helt siden 1932, og driver fortsatt gruve, hotell, skole og et forskningssenter der (Barr, 2025a). Det er traktatens krav om lik behandling som gjør dette mulig."
+        },
+        {
+            "type": "text",
+            "content": "Norsk kulldrift går derimot mot slutten. I 2025 ble utvinningen i Gruve 7 i Adventdalen avsluttet (Barr, 2025b). I stedet lever øyene av forskning og turisme. I fjellet ved flyplassen ligger Svalbard globale frøhvelv, som ble åpnet av statsminister Jens Stoltenberg 26. februar 2008. Der ligger frø fra hele verden lagret som en sikkerhetskopi, og permafrosten holder dem frosne selv om kjøleanlegget skulle svikte (Barr, 2025d)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Betonginngangen til frøhvelvet som stikker ut av en snødekt fjellside",
+            "caption": "Svalbard globale frøhvelv åpnet i 2008. Permafrosten er den viktigste grunnen til at det ligger nettopp her."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig er øyene i endring. Sommeren 2020 ble det målt 21,7 grader i Longyearbyen, og i august 2024 ble det målt 20,3 grader på flyplassen (Barr & Thuesen, 2026). Slike tall var utenkelige da traktaten ble skrevet. Og det krangles fortsatt: land er uenige om traktaten også gjelder havområdene utenfor tolv nautiske mil, der fisken og ressursene på havbunnen ligger (Ulfstein & Holtsmark, 2026). Det er en strid som minner om den Norge kjenner godt fra [oljealderen](/historie/norge-i-moderne-tid/oljealderen)."
+        },
+        {
+            "type": "text",
+            "content": "Svalbard er derfor et sjeldent sted i verdenshistorien. Et område som ingen eide, ble gjort til en del av et lite land, men på vilkår som fortsatt gir andre land rett til å være der. Neste gang du ser et bilde av Lenin-bysten i Barentsburg, vet du at den ikke står der på tross av norsk suverenitet. Den står der på grunn av den avtalen som ga Norge suvereniteten."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr terra nullius, og hvorfor ble Svalbard regnet som det i flere hundre år?",
+                    "Hva var det som skjedde rundt 1905 som gjorde at det plutselig hastet med å avklare hvem som styrte øyene?",
+                    "Nevn de tre betingelsene Norge må oppfylle etter Svalbardtraktaten.",
+                    "Når ble traktaten undertegnet, og når overtok Norge suvereniteten i praksis?"
+                ],
+                "reflekter": [
+                    "Norge var et lite og nytt land i 1920. Forklar hvorfor det kanskje var lettere for stormaktene å gi styringen til Norge enn til hverandre.",
+                    "Traktaten sier at skatt fra Svalbard bare kan brukes på Svalbard. Hvorfor tror du de andre landene krevde nettopp den regelen?",
+                    "Barentsburg er en russisk by på norsk jord. Forklar hvordan dette kan være helt lovlig, og hvorfor noen likevel synes det er ubehagelig.",
+                    "Sovjetunionen ville i 1944 til 1947 styre Svalbard sammen med Norge. Hva ville det ha betydd for Norge under den kalde krigen om Stortinget hadde sagt ja?"
+                ],
+                "gaaVidere": [
+                    "Landene er fortsatt uenige om traktaten gjelder havet lengre ute enn tolv nautiske mil. Finn ut hva som ligger der ute som er verdt å krangle om, og skriv et kort innlegg der du argumenterer for det ene synet.",
+                    "Svalbard globale frøhvelv ligger der det ligger på grunn av permafrost. Diskuter to og to: hva skjer med argumentet for plasseringen hvis Arktis fortsetter å bli varmere?",
+                    "Sammenlign Svalbardtraktaten med en klasseregel dere har på skolen. Hva er likt ved å få makt på betingelser, og hva er ulikt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betydde det at Svalbard var terra nullius?",
+                        "options": [
+                            "At øyene var ubebodde hele året",
+                            "At ingen stat hadde tatt eierskap til øyene",
+                            "At bare Norge hadde lov til å drive fangst der",
+                            "At øyene var eid av FN"
+                        ],
+                        "answer": 1,
+                        "explanation": "Terra nullius betyr ingenmannsland. Folk fra mange land jaktet og fanget på Svalbard, men ingen stat styrte øyene, og derfor fantes verken lov eller domstol der."
+                    },
+                    {
+                        "question": "Hva var hovedgrunnen til at spørsmålet om hvem som styrte Svalbard ble akutt på begynnelsen av 1900-tallet?",
+                        "options": [
+                            "Turismen begynte å vokse",
+                            "Isbjørnbestanden gikk ned",
+                            "Kulldriften startet, og selskaper fra flere land krevde de samme feltene",
+                            "Norge ble selvstendig fra Sverige"
+                        ],
+                        "answer": 2,
+                        "explanation": "Kulldriften begynte for alvor rundt 1905. Da satte selskaper fra flere land opp skilt og krevde felt, men det fantes ingen myndighet som kunne avgjøre hvem som hadde rett."
+                    },
+                    {
+                        "question": "Når ble Svalbardtraktaten undertegnet?",
+                        "options": ["9. februar 1920", "17. juli 1925", "1. november 1918", "26. februar 2008"],
+                        "answer": 0,
+                        "explanation": "Traktaten ble undertegnet i Paris 9. februar 1920 av ni land. Norge overtok suvereniteten i praksis 14. august 1925."
+                    },
+                    {
+                        "question": "Hvilken av disse tingene har Norge IKKE lov til på Svalbard?",
+                        "options": [
+                            "Å la norsk lov gjelde på øyene",
+                            "Å bygge festningsverk og bruke øyene til krig",
+                            "Å ha en sysselmester med politimyndighet",
+                            "Å kreve inn skatt som brukes på Svalbard"
+                        ],
+                        "answer": 1,
+                        "explanation": "Traktaten forbyr festningsverk og krigsbruk. De tre andre alternativene følger av at Svalbard er norsk og styres av Norge."
+                    },
+                    {
+                        "question": "Hvorfor kan et russisk selskap drive gruve i Barentsburg på norsk jord?",
+                        "options": [
+                            "Fordi Russland leier området av Norge",
+                            "Fordi Sovjetunionen vant en rettssak i 1947",
+                            "Fordi traktaten gir alle traktatland lik rett til å drive næring på Svalbard",
+                            "Fordi Barentsburg ligger utenfor norsk område"
+                        ],
+                        "answer": 2,
+                        "explanation": "Kravet om likebehandling er en av de tre betingelsene i traktaten. Arktikugol har drevet Barentsburg siden 1932, helt lovlig, på norsk jord."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Barr, S. (2025a). *Barentsburg*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Barentsburg](https://snl.no/Barentsburg)",
+                    "Barr, S. (2025b). *Longyearbyen*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Longyearbyen](https://snl.no/Longyearbyen)",
+                    "Barr, S. (2025c). *Svalbards historie*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Svalbards_historie](https://snl.no/Svalbards_historie)",
+                    "Barr, S. (2025d). *Svalbard globale frøhvelv*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Svalbard_globale_frøhvelv](https://snl.no/Svalbard_globale_fr%C3%B8hvelv)",
+                    "Barr, S. & Thuesen, N. P. (2026). *Svalbard*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Svalbard](https://snl.no/Svalbard)",
+                    "Statistisk sentralbyrå. (2026). *Befolkningen på Svalbard*. Hentet 05.08.2026 fra [ssb.no](https://www.ssb.no/befolkning/folketall/statistikk/befolkningen-pa-svalbard)",
+                    "Stortinget. (2020). *Svalbardtraktaten 100 år*. Hentet 05.08.2026 fra [stortinget.no](https://www.stortinget.no/no/Stortinget-og-demokratiet/Historikk/svalbardtraktaten-100-ar/)",
+                    "Ulfstein, G. & Holtsmark, S. G. (2026). *Svalbardtraktaten*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Svalbardtraktaten](https://snl.no/Svalbardtraktaten)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

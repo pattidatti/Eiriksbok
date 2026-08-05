@@ -7401,6 +7401,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "svalbard",
+      "title": "Svalbard: øyene ingen eide",
+      "description": "Svalbard var ingenmannsland til kullet ble funnet. Traktaten av 1920 ga Norge suverenitet, men på tre betingelser som fortsatt gjelder.",
+      "startDate": 1920,
+      "endDate": null,
+      "displayDate": "1920",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/svalbard",
+      "tags": [
+        "historie",
+        "norge",
+        "svalbard",
+        "arktis",
+        "suverenitet",
+        "traktat"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "folkeforbundet",
       "title": "Drømmen om fred",
       "description": "Folkeforbundet: Idealismen som feilet.",
