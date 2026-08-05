@@ -5,7 +5,7 @@
     "year": "1969-2026",
     "category": "Norge",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norge-i-moderne-tid/oljealderen-hero.webp",
     "factChecked": "2026-08-05",
     "details": [
         "Ekofisk ble funnet i oktober 1969, etter over tre år med tørre brønner.",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/oljealderen-01.webp",
             "alt": "Borerigg i grå Nordsjø med bølger rundt beina",
             "caption": "En borerigg i Nordsjøen. Her ute lå formuen som skulle gjøre Norge til et av verdens rikeste land."
         },
@@ -100,7 +100,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/oljealderen-02.webp",
             "alt": "Minnesmerke med navn på omkomne oljearbeidere ved havet",
             "caption": "123 mennesker mistet livet da Alexander L. Kielland veltet i 1980. Ulykken endret sikkerhetsreglene på norsk sokkel for alltid."
         },
@@ -143,7 +143,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/oljealderen-03.webp",
             "alt": "Moderne norsk skoleklasse i lyst klasserom",
             "caption": "Skolen, sykehusene og veiene i Norge betales i stor grad av inntekter fra havbunnen."
         },
