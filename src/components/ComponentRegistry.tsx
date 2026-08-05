@@ -105,6 +105,7 @@ const DyreetikkBrillene = lazy(() => import('./content/interactive/DyreetikkBril
 const KiAnsvarskjeden = lazy(() => import('./content/interactive/KiAnsvarskjeden').then(m => ({ default: m.KiAnsvarskjeden })));
 const GoldenMeanSlider = lazy(() => import('./content/interactive/GoldenMeanSlider').then(m => ({ default: m.GoldenMeanSlider })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
+const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
 const CategoricalImperativeTester = lazy(() => import('./content/interactive/CategoricalImperativeTester').then(m => ({ default: m.CategoricalImperativeTester })));
 const FilterBubbleSim = lazy(() => import('./content/interactive/FilterBubbleSim').then(m => ({ default: m.FilterBubbleSim })));
 const StatistikkVri = lazy(() => import('./content/interactive/StatistikkVri').then(m => ({ default: m.StatistikkVri })));
@@ -470,6 +471,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     MaktensFristelse,
     GoldenMeanSlider,
     MaatBalansen,
+    ToFlomfortellinger,
     CategoricalImperativeTester,
     FilterBubbleSim,
     AlgoritmeSorteraren,

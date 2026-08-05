@@ -1859,6 +1859,10 @@
       "count": 3
     },
     {
+      "tag": "religionshistorie",
+      "count": 3
+    },
+    {
       "tag": "gitar",
       "count": 3
     },
@@ -3087,10 +3091,6 @@
       "count": 2
     },
     {
-      "tag": "religionshistorie",
-      "count": 2
-    },
-    {
       "tag": "aristoteles",
       "count": 2
     },
@@ -3688,6 +3688,14 @@
     },
     {
       "tag": "osiris",
+      "count": 1
+    },
+    {
+      "tag": "fortellinger",
+      "count": 1
+    },
+    {
+      "tag": "gilgamesj",
       "count": 1
     },
     {
