@@ -3342,6 +3342,24 @@
               "lastUpdated": "2026-07-30T16:01:36+02:00"
             },
             {
+              "id": "nasjonale-minoriteter",
+              "title": "De nasjonale minoritetene: fem folk staten ville gjøre like",
+              "description": "Kvener, skogfinner, romanifolket, rom og jøder har bodd i Norge i hundrevis av år. I over hundre år prøvde staten å gjøre dem like alle andre.",
+              "image": "/images/placeholder.webp",
+              "year": "1814-2015",
+              "layout": "rich",
+              "tags": [
+                "historie",
+                "norge",
+                "minoriteter",
+                "romanifolket",
+                "kvener",
+                "rettigheter",
+                "assimilering"
+              ],
+              "createdDate": "2026-08-05T00:00:00Z"
+            },
+            {
               "id": "22-juli-2011",
               "title": "22. juli 2011 - terrorangrepet på Norge",
               "description": "Dagen et terrorangrep rammet regjeringskvartalet og Utøya, og hvordan Norge svarte med mer demokrati.",

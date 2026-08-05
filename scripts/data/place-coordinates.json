@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 321
+      "count": 323
     },
     {
       "tag": "dekolonisering",
@@ -999,6 +999,10 @@
       "count": 12
     },
     {
+      "tag": "rettigheter",
+      "count": 12
+    },
+    {
       "tag": "industri",
       "count": 12
     },
@@ -1056,10 +1060,6 @@
     },
     {
       "tag": "hinduisme",
-      "count": 10
-    },
-    {
-      "tag": "rettigheter",
       "count": 10
     },
     {
@@ -2448,6 +2448,22 @@
     },
     {
       "tag": "språkpolitikk",
+      "count": 2
+    },
+    {
+      "tag": "minoriteter",
+      "count": 2
+    },
+    {
+      "tag": "romanifolket",
+      "count": 2
+    },
+    {
+      "tag": "kvener",
+      "count": 2
+    },
+    {
+      "tag": "assimilering",
       "count": 2
     },
     {

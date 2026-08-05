@@ -76,6 +76,7 @@ const TragediensTrinn = lazy(() => import('./content/interactive/TragediensTrinn
 const UtvandrerVekta = lazy(() => import('./content/interactive/UtvandrerVekta').then(m => ({ default: m.UtvandrerVekta })));
 const SuverenitetsSkala = lazy(() => import('./content/interactive/SuverenitetsSkala').then(m => ({ default: m.SuverenitetsSkala })));
 const FornorskingMaler = lazy(() => import('./content/interactive/FornorskingMaler').then(m => ({ default: m.FornorskingMaler })));
+const MinoritetsMatrisen = lazy(() => import('./content/interactive/MinoritetsMatrisen').then(m => ({ default: m.MinoritetsMatrisen })));
 const KalmarMaktbalanse = lazy(() => import('./content/interactive/KalmarMaktbalanse').then(m => ({ default: m.KalmarMaktbalanse })));
 const WienerkongressenForhandling = lazy(() => import('./content/interactive/WienerkongressenForhandling').then(m => ({ default: m.WienerkongressenForhandling })));
 const OlympiskFred = lazy(() => import('./content/interactive/OlympiskFred').then(m => ({ default: m.OlympiskFred })));
@@ -387,6 +388,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ArvenFra1789,
     TragediensTrinn,
     FornorskingMaler,
+    MinoritetsMatrisen,
     KalmarMaktbalanse,
     WienerkongressenForhandling,
     OlympiskFred,
