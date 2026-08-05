@@ -5606,6 +5606,32 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "nasjonale-minoriteter",
+      "title": "De nasjonale minoritetene: fem folk staten ville gjøre like",
+      "description": "Kvener, skogfinner, romanifolket, rom og jøder har bodd i Norge i hundrevis av år. I over hundre år prøvde staten å gjøre dem like alle andre.",
+      "startDate": 1814,
+      "endDate": 2015,
+      "displayDate": "1814-2015",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/nasjonale-minoriteter",
+      "tags": [
+        "historie",
+        "norge",
+        "minoriteter",
+        "romanifolket",
+        "kvener",
+        "rettigheter",
+        "assimilering"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "wienerkongressen",
       "title": "Wienerkongressen: Da Europas kart ble tegnet på nytt",
       "description": "Etter Napoleon møttes stormaktene i Wien for å skape maktbalanse og fred. De tegnet om Europas kart og bestemte også Norges skjebne i 1814.",

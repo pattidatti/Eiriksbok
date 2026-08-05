@@ -23,6 +23,7 @@ const LeonardoFlygemaskin3D = lazy(() => import('./LeonardoFlygemaskin3D'));
 const DeSjuHoydene3D = lazy(() => import('./DeSjuHoydene3D'));
 const SymbolerPaaTaket3D = lazy(() => import('./SymbolerPaaTaket3D'));
 const IngenmanslandMG = lazy(() => import('./IngenmanslandMG'));
+const SvanvikenKontrakten3D = lazy(() => import('./SvanvikenKontrakten3D'));
 const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
@@ -489,6 +490,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Stalmonsteret3D'),
         Component: Stalmonsteret3D as never,
+    },
+    'svanviken-kontrakten-3d': {
+        id: 'svanviken-kontrakten-3d',
+        title: 'Kontrakttiden på Svanviken',
+        description:
+            'Svanviken arbeidskoloni på Nordmøre, 1950-tallet. Familien din har skrevet under på en kontrakt, og her er romani, musikken og kontakten med slekta forbudt. Trykk på fela, på mor og barnet, og på postkassa for å holde kulturen i live, og trykk igjen for å stoppe. Bestyreren går runden sin på grusveien uansett hva du gjør, og jo nærmere han er, jo raskere stiger mistanken. Fyll kulturmåleren før kontrakttiden er ute, uten at han melder fra. Lyspæren: assimilering trengte ikke vold. Det holdt å gjøre din egen kultur farlig å bruke.',
+        estimatedSeconds: 170,
+        loader: () => import('./SvanvikenKontrakten3D'),
+        Component: SvanvikenKontrakten3D as never,
     },
     'bergkunsten-3d': {
         id: 'bergkunsten-3d',
