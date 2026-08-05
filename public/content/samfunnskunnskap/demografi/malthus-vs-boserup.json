@@ -15,7 +15,7 @@
     "content": [
         {
             "type": "text",
-            "value": "I 1798 skrev en engelsk prest, Thomas Malthus, en bok som skulle skremme verden. Han mente at befolkningen vokste mye raskere enn matproduksjonen."
+            "content": "I 1798 ga en engelsk prest ut en bok som skulle skremme verden. Thomas Malthus mente at befolkningen formerer seg raskere enn matproduksjonen (Stoltz, 2026)."
         },
         {
             "type": "header",
@@ -23,7 +23,18 @@
         },
         {
             "type": "text",
-            "value": "Malthus sitt regnestykke var enkelt:\n\n*   Befolkningen vokser **eksponentielt** (1, 2, 4, 8, 16...)\n*   Matproduksjonen vokser **lineært** (1, 2, 3, 4, 5...)\n\nFør eller siden vil kurvene krysse hverandre. Da får vi sultkatastrofer, krig og pest som reduserer befolkningen igjen. Naturen rydder opp."
+            "content": "Regnestykket til Malthus var enkelt. Han mente at befolkningen øker i geometrisk rekke, mens matforsyningen bare øker i aritmetisk rekke (Stoltz, 2026):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Befolkningen vokser slik: 1, 2, 4, 8, 16 ...",
+                "Matproduksjonen vokser slik: 1, 2, 3, 4, 5 ..."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Før eller siden vil kurvene krysse hverandre. Da får vi sultkatastrofer, krig og pest som reduserer befolkningen igjen. Naturen rydder opp."
         },
         {
             "type": "header",
@@ -31,7 +42,7 @@
         },
         {
             "type": "text",
-            "value": "I 1965 kom den danske økonomen Esther Boserup med et mot-svar: **\"Nød lærer naken kvinne å spinne.\"**\n\nHun mente at når vi blir for mange, blir vi tvunget til å finne opp ny teknologi. Befolkningspress fører ikke til sult, men til innovasjon."
+            "content": "I 1965 kom den danske sosialøkonomen og utviklingsforskeren Ester Boserup med et mot-svar. Hun mente at befolkningspress fører til innovasjon i landbruket og til at jorda blir utnyttet mer intensivt (Mæhlum, 2023).\n\nNår vi blir for mange, blir vi altså tvunget til å finne opp noe nytt. Tanken kan oppsummeres i et gammelt ordtak: «Nød lærer naken kvinne å spinne.»"
         },
         {
             "type": "header",
@@ -39,7 +50,11 @@
         },
         {
             "type": "text",
-            "value": "Hittil har Boserup fått rett. På 1960-tallet fryktet man massesult i India. Løsningen kom fra en amerikansk agronom ved navn **Norman Borlaug**. Han utviklet nye hvete- og ristyper som ga mye større avlinger.\n\nResultatet? Vi produserer i dag mer enn nok mat til 8 milliarder mennesker."
+            "content": "Hittil har Boserup fått rett. Den grønne revolusjonen startet på slutten av 1940-tallet og skjøt fart fra slutten av 1960-tallet. Nye kornsorter, særlig av hvete og ris, ble tatt i bruk sammen med mer vanning, kunstgjødsel og plantevernmidler (Bratberg & Almås, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "En av de sentrale personene var den amerikanske planteforskeren Norman Borlaug (1914-2009), som fikk Nobels fredspris i 1970. Produksjonen økte kraftig i årene 1970-1990, særlig i Asia, i land som India, Mexico og Pakistan (Bratberg & Almås, 2024).\n\nResultatet? Verdens bønder produserer i dag nok mat til å fø hele menneskeheten (UNRIC, 2025)."
         },
         {
             "type": "component",
@@ -62,19 +77,19 @@
                         "value": 310
                     },
                     {
-                        "year": 1990,
-                        "value": 410
+                        "year": 1989,
+                        "value": 350
                     },
                     {
                         "year": 2020,
-                        "value": 530
+                        "value": 459
                     }
                 ]
             }
         },
         {
             "type": "text",
-            "value": "Grafen over viser utviklingen i Norge. På 100 år har vi klart å nesten firedoble hvor mye mat vi får ut av hver jordlapp. Kunstgjødsel, traktorer og bedre frø har knust Malthus sin pessimisme."
+            "content": "Grafen over viser utviklingen i Norge. Kunstgjødsel, traktorer og bedre kornsorter har gjort at hver jordlapp gir mye mer mat enn før. I 2020 høstet norske bønder i snitt 459 kilo bygg per dekar, mot 351 kilo i 1989 (Statistisk sentralbyrå, 2026).\n\nMen veksten har bremset opp. Fra 1990 til 2010 økte avlingene av bygg og havre med bare et halvt kilo per dekar i året (Dybdal, 2021). Og et dårlig år slår hardt ut: i 2023 falt byggavlingen til 330 kilo per dekar (Statistisk sentralbyrå, 2026)."
         },
         {
             "type": "header",
@@ -82,7 +97,7 @@
         },
         {
             "type": "text",
-            "value": "Selv om vi kan produsere nok mat, har jorda en tålegrense (*carrying capacity*). Spørsmålet i dag er ikke om vi går tom for mat, men om teknologien vår ødelegger økosystemene vi er avhengige av."
+            "content": "Selv om vi kan produsere nok mat, har jorda en tålegrense. Den kalles bæreevne, eller carrying capacity på engelsk.\n\nOg nok mat i verden betyr ikke nok mat til alle: rundt 673 millioner mennesker sultet i 2024, fordi maten er skjevt fordelt (UNRIC, 2025). Spørsmålet i dag er derfor ikke bare om vi går tom for mat, men om vi klarer å dele den - og om teknologien vår ødelegger økosystemene vi er avhengige av."
         },
         {
             "type": "component",
@@ -94,20 +109,34 @@
             "props": {
                 "forstaa": [
                     "Hvem var Thomas Malthus, og hva mente han ville skje hvis befolkningen fortsatte å vokse?",
-                    "Hva er forskjellen på at befolkningen vokser eksponentielt (1, 2, 4, 8, 16) og at matproduksjonen vokser lineært (1, 2, 3, 4, 5)?",
-                    "Hva mente Esther Boserup skjer med oss når vi blir for mange? Bruk uttrykket hennes: 'Nød lærer naken kvinne å spinne'.",
-                    "Hvem var Norman Borlaug, og hva utviklet han som hjalp mot frykten for massesult i India?"
+                    "Hva er forskjellen på at befolkningen vokser i geometrisk rekke (1, 2, 4, 8, 16) og at matproduksjonen vokser i aritmetisk rekke (1, 2, 3, 4, 5)?",
+                    "Hva mente Ester Boserup skjer med oss når vi blir for mange? Bruk ordtaket «Nød lærer naken kvinne å spinne» i svaret.",
+                    "Hvem var Norman Borlaug, og hva var den grønne revolusjonen?"
                 ],
                 "reflekter": [
                     "Malthus og Boserup så helt ulikt på befolkningsvekst. Forklar hvorfor den ene ble kalt pessimist og den andre optimist.",
-                    "Grafen viser at kornavlingen i Norge har nesten firedoblet seg på 100 år. Hvordan kan dette ha skjedd når vi har like mye jord som før? Nevn minst to grunner fra teksten.",
-                    "Teksten sier at Boserup 'hittil har fått rett'. Hvorfor er ordet 'hittil' viktig her, og hva kan gjøre at Malthus likevel kan få rett en gang i framtida?",
-                    "Hva menes med at jorda har en bæreevne (carrying capacity)? Hvorfor mener teksten at hovedspørsmålet i dag ikke er om vi går tom for mat, men om vi ødelegger økosystemene?"
+                    "Grafen viser at kornavlingen per dekar i Norge har økt kraftig på hundre år. Hvordan kan dette ha skjedd når vi har like mye jord som før? Nevn minst to grunner fra teksten.",
+                    "Teksten sier at Boserup «hittil har fått rett». Hvorfor er ordet «hittil» viktig her, og hva kan gjøre at Malthus likevel kan få rett en gang i framtida?",
+                    "Verden produserer nok mat til alle, men i 2024 sultet likevel rundt 673 millioner mennesker. Hva forteller det oss om forskjellen på å produsere mat og å fordele mat?"
                 ],
                 "gaaVidere": [
                     "Skriv en kort tekst (5-8 setninger) der du forklarer hvem av de to, Malthus eller Boserup, du tror har mest rett om framtida. Bruk minst ett eksempel fra din egen tid.",
                     "Diskuter med en partner: Finnes det problemer i dagens verden der ny teknologi virkelig kan redde oss, slik den grønne revolusjonen gjorde? Bli enige om ett eksempel og forklar hvorfor.",
                     "Tenk på et eksempel fra ditt eget liv der du fant en ny løsning fordi du var nødt til det. Skriv noen setninger om hvordan dette ligner på Boserup sin idé om at press fører til nye oppfinnelser."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bratberg, E. & Almås, R. (2024). *Den grønne revolusjon*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/den_grønne_revolusjon](https://snl.no/den_gr%C3%B8nne_revolusjon)",
+                    "Dybdal, S. E. (2021). *60 år med økte avlinger*. Norsk Landbruk. Hentet 05.08.2026 fra [norsklandbruk.no](https://www.norsklandbruk.no/60-ar-med-okte-avlinger/s/5-152-13045)",
+                    "Mæhlum, L. (2023). *Ester Boserup*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Ester_Boserup](https://snl.no/Ester_Boserup)",
+                    "Statistisk sentralbyrå. (2026). *Kornavling per dekar (kg). Tabell 07480*. Hentet 05.08.2026 fra [ssb.no/statbank/table/07480](https://www.ssb.no/statbank/table/07480)",
+                    "Stoltz, G. (2026). *Thomas Robert Malthus*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Thomas_Robert_Malthus](https://snl.no/Thomas_Robert_Malthus)",
+                    "UNRIC. (2025). *Verdens bønder produserer nok mat til å fø hele menneskeheten, men likevel eksisterer sultkatastrofer*. FNs regionale informasjonskontor. Hentet 05.08.2026 fra [unric.org](https://unric.org/no/verdens-bonder-produserer-nok-mat-til-a-fo-hele-menneskeheten-men-likevel-eksisterer-sultkatastrofer/)"
                 ]
             }
         }
@@ -124,14 +153,15 @@
             "correctAnswer": 1
         },
         {
-            "question": "Hvem er kjent som 'far' til den grønne revolusjonen?",
+            "question": "Hvem fikk Nobels fredspris i 1970 for arbeidet med nye kornsorter?",
             "options": [
-                "Esther Boserup",
+                "Ester Boserup",
                 "Thomas Malthus",
                 "Norman Borlaug",
                 "Albert Einstein"
             ],
             "correctAnswer": 2
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-05"
 }

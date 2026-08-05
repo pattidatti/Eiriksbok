@@ -1,7 +1,7 @@
 {
     "id": "teknologi-helse",
     "title": "Teknologi og helse: Kampen mot døden",
-    "ingress": "For 150 år siden døde hvert fjerde barn i Norge før de fylte ett år. I dag er det tallet nesten null. Hva er det som har gjort at vi plutselig lever dobbelt så lenge?",
+    "ingress": "På 1700-tallet døde hvert fjerde barn i Norge før det fylte ett år. I dag er det tallet nesten null. Hva er det som har gjort at vi lever nesten dobbelt så lenge?",
     "image": "/images/lessons/demografi/helse_hero.webp",
     "heroImage": "/images/lessons/demografi/helse_hero.webp",
     "status": "published",
@@ -15,7 +15,11 @@
     "content": [
         {
             "type": "text",
-            "value": "Den største endringen i menneskehetens historie skjedde ikke da vi landet på månen, men da vi lærte oss å bekjempe de usynlige fiendene: bakterier og virus."
+            "content": "Den største endringen i menneskehetens historie skjedde ikke da vi landet på månen, men da vi lærte oss å bekjempe de usynlige fiendene: bakterier og virus."
+        },
+        {
+            "type": "text",
+            "content": "Rundt år 1750 døde omtrent 25 prosent av alle barn i Norge før de fylte ett år (Sandmo, 2015). I dag er tallet 2,5 av 1000 levendefødte, altså under en kvart prosent (Thelle, 2024)."
         },
         {
             "type": "header",
@@ -27,7 +31,11 @@
         },
         {
             "type": "text",
-            "value": "At folk begynte å vaske hendene og at vi fikk underjordiske kloakksystemer har reddet flere liv enn alle medisiner til sammen. Rent drikkevann er fundamentet i den moderne demografien."
+            "content": "At folk begynte å vaske hendene, at maten ble tryggere og at byene fikk underjordiske kloakksystemer, betydde enormt mye. Bedre kontroll med næringsmidler og opplysningsarbeid om hvordan spedbarn bør få mat, var blant de viktigste grunnene til at langt færre barn døde av smittsomme sykdommer (Pedersen, 2003)."
+        },
+        {
+            "type": "text",
+            "content": "Rundt år 1900 døde fortsatt 80 av hver 1000 nyfødte i løpet av det første leveåret i Norge. I år 2000 var tallet 3,8 (Pedersen, 2003)."
         },
         {
             "type": "header",
@@ -35,7 +43,11 @@
         },
         {
             "type": "text",
-            "value": "Sykdommer som kopper, polio og meslinger som før tok millioner av liv, er i dag nesten borte takket være vaksinering. Dette har ført til at barnedødeligheten har sunket dramatisk over hele verden."
+            "content": "Kopper var en svært alvorlig og ofte dødelig virussykdom. Det siste tilfellet ble påvist i oktober 1977, og sykdommen finnes ikke lenger. Vaksiner mot polio, difteri, meslinger og en rekke andre sykdommer har hatt enorm betydning i kampen mot smittsom sykdom (Bøvre et al., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Store vaksinasjonsprogrammer på 1960- og 1970-tallet gjorde at dødsfall av kikhoste og difteri nesten forsvant i Norge (Pedersen, 2003)."
         },
         {
             "type": "header",
@@ -43,7 +55,7 @@
         },
         {
             "type": "text",
-            "value": "Oppdagelsen av penicillin i 1928 gjorde at en enkel halsbetennelse ikke lenger betydde døden. I dag kan vi bytte ut hjerter, operere med roboter og bruke KI for å finne nye medisiner."
+            "content": "I 1928 beskrev den skotske legen Alexander Fleming at muggsoppen Penicillium kunne drepe bakterier. Penicillin var det første antibiotikumet som ble oppdaget, og det har hatt stor betydning for moderne behandling av infeksjoner (Bratlie et al., 2026). En enkel halsbetennelse betydde ikke lenger døden.\n\nI dag kan vi operere med roboter, bytte ut hjerteklaffer og bruke kunstig intelligens til å lete etter nye medisiner."
         },
         {
             "type": "header",
@@ -51,7 +63,11 @@
         },
         {
             "type": "text",
-            "value": "Når vi løser de ytre truslene, dukker det nye opp. I dag dør vi oftere av livsstilssykdommer som hjerte- og karsykdommer eller kreft, fordi vi lever så lenge at kroppen rett og slett slites ut. \n\nForventet levealder i Norge har steget fra 45 år i 1850 til over 83 år i dag."
+            "content": "Når vi løser de ytre truslene, dukker det opp nye. I dag dør vi oftere av livsstilssykdommer som hjerte- og karsykdommer eller kreft, fordi vi lever så lenge at kroppen rett og slett slites ut."
+        },
+        {
+            "type": "text",
+            "content": "I 1846 var forventet levealder i Norge om lag 50 år for kvinner og tre år lavere for menn. I 2025 var den 84,9 år for kvinner og 81,6 år for menn (Folkehelseinstituttet, 2026)."
         },
         {
             "type": "header",
@@ -63,45 +79,59 @@
         },
         {
             "type": "text",
-            "value": "Spørsmålet for fremtiden er ikke bare om vi kan leve lenger, men hvordan teknologien kan hjelpe oss til å ha god helse hele livet."
+            "content": "Spørsmålet for framtida er ikke bare om vi kan leve lenger, men hvordan teknologien kan hjelpe oss til å ha god helse hele livet."
         },
         {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvor mange barn i Norge døde før de fylte ett år for 150 år siden, ifølge artikkelen?",
+                    "Hvor stor andel av barna i Norge døde før de fylte ett år rundt år 1750, ifølge artikkelen? Og hva er tallet i dag?",
                     "Hva var de tre store revolusjonene som gjorde at vi lever lenger? Nevn alle tre.",
-                    "Hvilket år ble penicillin oppdaget, og hva betydde det for en enkel halsbetennelse?",
-                    "Hvor mye har forventet levealder i Norge steget fra 1850 til i dag? Oppgi begge tallene."
+                    "Hvilket år ble penicillin oppdaget, hvem oppdaget det, og hva betydde det for en enkel halsbetennelse?",
+                    "Hvor mye har forventet levealder i Norge steget fra 1846 til 2025? Oppgi tallene for både kvinner og menn."
                 ],
                 "reflekter": [
-                    "Artikkelen sier at rent vann og hygiene har reddet flere liv enn alle medisiner til sammen. Hvorfor tror du noe så enkelt som å vaske hendene kan ha så stor effekt?",
+                    "Artikkelen sier at bedre hygiene, renere vann og tryggere mat var blant de viktigste grunnene til at færre barn døde. Hvorfor tror du noe så enkelt som å vaske hendene kan ha så stor effekt?",
                     "Forklar hvordan vaksiner har fått barnedødeligheten til å synke dramatisk over hele verden.",
                     "Artikkelen kaller det et nytt problem at vi dør av livsstilssykdommer som kreft og hjerte- og karsykdommer. Hvorfor er det egentlig et tegn på at noe har gått bra?",
                     "Hvorfor tror du forfatteren mener at kampen mot bakterier og virus var en større endring enn å lande på månen?"
                 ],
                 "gaaVidere": [
-                    "Skriv en kort tekst (5-8 setninger) om hvordan livet ditt ville vært annerledes hvis du levde i Norge i 1850, da forventet levealder var 45 år.",
-                    "Artikkelen nevner at vi i dag kan bruke roboter og KI i medisin. Diskuter med en partner: Hva slags helseteknologi tror dere finnes om 50 år?",
+                    "Skriv en kort tekst (5-8 setninger) om hvordan livet ditt ville vært annerledes hvis du levde i Norge i 1846, da forventet levealder var rundt 50 år for kvinner og 47 år for menn.",
+                    "Artikkelen nevner at vi i dag kan bruke roboter og kunstig intelligens i medisin. Diskuter med en partner: Hva slags helseteknologi tror dere finnes om 50 år?",
                     "Snakk med en voksen hjemme om hvilke vaksiner du har fått. Lag en liste over sykdommer du er beskyttet mot, og finn ut hvor farlig én av dem var før i tiden."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bratlie, S., Øye, I. & Alnæs, M. (2026). *Penicillin*. Store medisinske leksikon. Hentet 05.08.2026 fra [sml.snl.no/penicillin](https://sml.snl.no/penicillin)",
+                    "Bøvre, K., Kristoffersen, E. & Myrvang, B. (2026). *Vaksine*. Store medisinske leksikon. Hentet 05.08.2026 fra [sml.snl.no/vaksine](https://sml.snl.no/vaksine)",
+                    "Folkehelseinstituttet. (2026). *Forventet levealder i Norge*. Folkehelserapporten. Hentet 05.08.2026 fra [fhi.no](https://www.fhi.no/he/fr/folkehelserapporten/samfunn/levealder/)",
+                    "Pedersen, A. G. (2003). *100 år med redusert spedbarnsdødelighet*. Statistisk sentralbyrå. Hentet 05.08.2026 fra [ssb.no](https://www.ssb.no/helse/artikler-og-publikasjoner/100-aar-med-redusert-spedbarnsdodelighet)",
+                    "Sandmo, E. (2015). *Historisk levealder i Norge: bedre helse, lengre liv*. Norgeshistorie, Universitetet i Oslo. Hentet 05.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/enevelde/1201-historisk-levealder-i-norge.html)",
+                    "Thelle, D. S. (2024). *Barnedødelighet*. Store medisinske leksikon. Hentet 05.08.2026 fra [sml.snl.no/barnedødelighet](https://sml.snl.no/barned%C3%B8delighet)"
                 ]
             }
         }
     ],
     "quiz": [
         {
-            "question": "Hvilket tiltak har reddet flest liv historisk?",
+            "question": "Hva regnes som en av de viktigste grunnene til at langt færre barn døde på 1900-tallet?",
             "options": [
                 "Keisersnitt",
                 "Hjertemedisin",
-                "Rent drikkevann og hygiene",
+                "Bedre hygiene, rent vann og tryggere mat",
                 "Plaster"
             ],
             "correctAnswer": 2
         },
         {
-            "question": "Hva skjedde med forventet levealder i Norge fra 1850 til i dag?",
+            "question": "Hva skjedde med forventet levealder i Norge fra 1846 til i dag?",
             "options": [
                 "Den er den samme",
                 "Den har sunket",
@@ -110,5 +140,6 @@
             ],
             "correctAnswer": 2
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-05"
 }
