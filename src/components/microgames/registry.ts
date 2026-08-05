@@ -42,6 +42,7 @@ const Alliansefella1914 = lazy(() => import('./Alliansefella1914'));
 const AryabhatasNatt3D = lazy(() => import('./AryabhatasNatt3D'));
 const HjertetsVekt3D = lazy(() => import('./HjertetsVekt3D'));
 const SarajevoTunnelen3D = lazy(() => import('./SarajevoTunnelen3D'));
+const Leteboringen3D = lazy(() => import('./Leteboringen3D'));
 const MonumentTorget3D = lazy(() => import('./MonumentTorget3D'));
 const Teknologibolgen3D = lazy(() => import('./Teknologibolgen3D'));
 const Nyheitsbobla3D = lazy(() => import('./Nyheitsbobla3D'));
@@ -1646,6 +1647,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./SarajevoTunnelen3D'),
         Component: SarajevoTunnelen3D as never,
+    },
+    'leteboringen-3d': {
+        id: 'leteboringen-3d',
+        title: 'Leteboringen: fem brønner i Nordsjøen',
+        description:
+            'Nordsjøen 1969. Du er leteleder for Phillips, sjefene i USA vil gi opp, og du har fem brønner igjen. Dra boreriggen rundt på feltet og les seismikken: tallet stiger jo nærmere oljen du kommer, og sonarringen under riggen lyser grønt mot rødt. Klikk «Bor her» når du tør. Bommer du fem ganger, blir feltet lagt ned. Lyspæra: oljen lå ikke og ventet på å bli funnet - Ekofisk kom etter over tre år med tørre brønner, rett før jul.',
+        estimatedSeconds: 160,
+        loader: () => import('./Leteboringen3D'),
+        Component: Leteboringen3D as never,
     },
 };
 

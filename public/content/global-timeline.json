@@ -10180,6 +10180,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "oljealderen",
+      "title": "Oljealderen: da Norge fant gullet under havet",
+      "description": "Hvordan et funn i Nordsjøen i 1969 og noen kloke politiske valg gjorde Norge til et av verdens rikeste land.",
+      "startDate": 1969,
+      "endDate": 2026,
+      "displayDate": "1969-2026",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/oljealderen",
+      "tags": [
+        "historie",
+        "norge",
+        "olje",
+        "okonomi",
+        "samtidshistorie",
+        "oljefondet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "romkapplopet-sub-2",
       "title": "Månelandingen",
       "description": "Apollo 11 lander på månen; USA vinner kappløpet.",

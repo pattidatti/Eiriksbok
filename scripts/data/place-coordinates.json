@@ -784,7 +784,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 315
+      "count": 317
     },
     {
       "tag": "dekolonisering",
@@ -915,6 +915,10 @@
       "count": 19
     },
     {
+      "tag": "olje",
+      "count": 19
+    },
+    {
       "tag": "kultur",
       "count": 18
     },
@@ -939,10 +943,6 @@
       "count": 18
     },
     {
-      "tag": "olje",
-      "count": 17
-    },
-    {
       "tag": "sivilisasjon",
       "count": 16
     },
@@ -959,6 +959,10 @@
       "count": 16
     },
     {
+      "tag": "folkemord",
+      "count": 15
+    },
+    {
       "tag": "jernalder",
       "count": 14
     },
@@ -971,7 +975,7 @@
       "count": 14
     },
     {
-      "tag": "folkemord",
+      "tag": "nasjonalisme",
       "count": 14
     },
     {
@@ -979,7 +983,7 @@
       "count": 14
     },
     {
-      "tag": "nasjonalisme",
+      "tag": "fn",
       "count": 13
     },
     {
@@ -996,10 +1000,6 @@
     },
     {
       "tag": "industri",
-      "count": 12
-    },
-    {
-      "tag": "fn",
       "count": 12
     },
     {
@@ -1275,6 +1275,10 @@
       "count": 6
     },
     {
+      "tag": "okonomi",
+      "count": 6
+    },
+    {
       "tag": "psykologi",
       "count": 6
     },
@@ -1547,10 +1551,6 @@
       "count": 4
     },
     {
-      "tag": "okonomi",
-      "count": 4
-    },
-    {
       "tag": "gullalder",
       "count": 4
     },
@@ -1796,6 +1796,10 @@
     },
     {
       "tag": "rettferdighet",
+      "count": 3
+    },
+    {
+      "tag": "samtidshistorie",
       "count": 3
     },
     {
@@ -2703,6 +2707,10 @@
       "count": 2
     },
     {
+      "tag": "oljefondet",
+      "count": 2
+    },
+    {
       "tag": "rawls",
       "count": 2
     },
@@ -2736,6 +2744,18 @@
     },
     {
       "tag": "golfkrig",
+      "count": 2
+    },
+    {
+      "tag": "jugoslavia",
+      "count": 2
+    },
+    {
+      "tag": "bosnia",
+      "count": 2
+    },
+    {
+      "tag": "kosovo",
       "count": 2
     },
     {
@@ -3527,10 +3547,6 @@
       "count": 1
     },
     {
-      "tag": "samtidshistorie",
-      "count": 1
-    },
-    {
       "tag": "vestfronten",
       "count": 1
     },
@@ -3548,18 +3564,6 @@
     },
     {
       "tag": "nøytralitet",
-      "count": 1
-    },
-    {
-      "tag": "jugoslavia",
-      "count": 1
-    },
-    {
-      "tag": "bosnia",
-      "count": 1
-    },
-    {
-      "tag": "kosovo",
       "count": 1
     },
     {

@@ -1,0 +1,274 @@
+{
+    "id": "oljealderen",
+    "title": "Oljealderen: da Norge fant gullet under havet",
+    "layout": "rich",
+    "year": "1969-2026",
+    "category": "Norge",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-08-05",
+    "details": [
+        "Ekofisk ble funnet i oktober 1969, etter over tre år med tørre brønner.",
+        "De ti oljebud fra 1971 slo fast at staten skulle styre og eie oljen.",
+        "Oljepengene spares i et fond, og staten bruker bare en liten del hvert år."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Rett før jul i 1969 ringte det amerikanske selskapet Phillips til norske myndigheter med en beskjed som skulle endre Norge for alltid: ute i Nordsjøen hadde de funnet olje, og det var nok av den til at det lønte seg å hente den opp (Sokkeldirektoratet og Energidepartementet, 2026). Beskjeden kom i siste liten. Selskapet hadde boret tørre brønner i over tre år og var i ferd med å gi opp hele det norske havområdet."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Borerigg i grå Nordsjø med bølger rundt beina",
+            "caption": "En borerigg i Nordsjøen. Her ute lå formuen som skulle gjøre Norge til et av verdens rikeste land."
+        },
+        {
+            "type": "header",
+            "text": "Landet som trodde det ikke fantes olje"
+        },
+        {
+            "type": "text",
+            "content": "På begynnelsen av 1960-tallet var Norge et helt vanlig europeisk land. Vi levde av fisk, skog, skip og vannkraft. Da noen begynte å snakke om olje under havbunnen, mente flere fageksperter at sjansen var svært liten. Landet hadde jo ingen erfaring med olje i det hele tatt."
+        },
+        {
+            "type": "text",
+            "content": "Likevel gjorde staten noe klokt. I 1963 slo Norge fast at havbunnen utenfor kysten tilhørte den norske staten. To år senere, 13. april 1965, ble den første konsesjonsrunden lyst ut. Selskapene fikk lov til å lete, men bare på norske vilkår, og til sammen ble det delt ut 22 utvinningstillatelser for 78 områder på havbunnen (Ryggvik, Smith-Solbakken og Tollaksen, 2026). Den rekkefølgen ble avgjørende: reglene kom før pengene."
+        },
+        {
+            "type": "text",
+            "content": "Boringen startet i 1966. Brønn etter brønn kom opp tom. Å bore ett hull kostet enorme summer, og i Nordsjøen er været hardt og havet dypt. Mange selskaper vurderte å gi opp."
+        },
+        {
+            "type": "header",
+            "text": "Julegaven fra Ekofisk"
+        },
+        {
+            "type": "text",
+            "content": "Så, 25. oktober 1969, traff boret noe. Feltet fikk navnet Ekofisk, og det lå omtrent 290 kilometer fra norskekysten. Selve oljen lå i et lag av kalkstein som var inntil 200 meter tykt, rundt 3000 meter under havbunnen. Da funnet ble målt opp, viste det seg å være det største oljefeltet noen hadde funnet til havs på den tiden (Norsk Oljemuseum, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Det gikk fort videre. Allerede 15. juni 1971 begynte produksjonen fra Ekofisk. Etter det kom det ene store feltet etter det andre: Statfjord, Gullfaks, Oseberg og Troll. På få år gikk Norge fra å være et land uten olje til å bli en av verdens store eksportører."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "leteboringen-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "De ti oljebud: hvem skulle eie rikdommen?"
+        },
+        {
+            "type": "text",
+            "content": "Nå kom det viktigste spørsmålet i hele oljehistorien: hvem skulle sitte igjen med pengene? I mange land hadde utenlandske selskaper fått hente ut naturressurser og ta med seg fortjenesten hjem. Slik ville ikke Stortinget ha det."
+        },
+        {
+            "type": "text",
+            "content": "I 1971 la industrikomiteen på Stortinget fram ti punkter som senere har blitt kalt de ti oljebud. Det aller første punktet var det viktigste: all virksomhet på norsk sokkel skulle styres og kontrolleres av Norge (Stortingets industrikomité, 1971). Oljen skulle helst føres i land og bearbeides her, det skulle bygges nye næringer på ressursen, og det skulle tas hensyn til naturen og til de næringene som allerede fantes."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Tre grep som ga Norge kontroll",
+                "content": "1963: Staten slo fast at havbunnen utenfor kysten er norsk eiendom.\n1971: De ti oljebud fastslo at Norge selv skulle styre virksomheten.\n1972: Staten opprettet både Statoil og Oljedirektoratet, slik at staten både drev selskap og kontrollerte bransjen."
+            }
+        },
+        {
+            "type": "text",
+            "content": "12. juni 1972 opprettet staten to nye institusjoner samtidig: oljeselskapet Statoil, som staten eide alene, og Oljedirektoratet, som skulle føre tilsyn med hele bransjen (Ryggvik mfl., 2026). Tre år senere kom en egen petroleumsskattelov, slik at en stor del av overskuddet gikk rett i statskassen. Statoil skiftet navn til Equinor i 2018, men eiermodellen står fortsatt: fellesskapet tar mesteparten av gevinsten."
+        },
+        {
+            "type": "text",
+            "content": "Verden fikk se hvor mye makt olje gir allerede i 1973, da oljeprisen ble brukt som våpen i internasjonal politikk. Den historien kan du lese i artikkelen om [olje og makt i Midtøsten](/historie/midtoesten/olje-og-makt). Hvorfor olje overalt måles i dollar, får du svar på i artikkelen om [petrodollaren](/samfunnskunnskap/okonomi/petrodollaren)."
+        },
+        {
+            "type": "header",
+            "text": "Prisen ble betalt i menneskeliv"
+        },
+        {
+            "type": "text",
+            "content": "Oljeeventyret er ikke bare en solskinnshistorie. 27. mars 1980 knakk det ene av de fem beina på boligplattformen Alexander L. Kielland på Ekofisk-feltet. Plattformen la seg over på siden og veltet på rundt 20 minutter. Av de 212 om bord omkom 123 mennesker (Smith-Solbakken og Dahle, 2026). Det er den største industriulykken i norsk historie."
+        },
+        {
+            "type": "text",
+            "content": "Granskingen fant årsaken: en sveis fra verftet var dårlig utført, og der hadde det vokst fram en sprekk over tid. Etter ulykken ble kravene skjerpet kraftig. Nå må det finnes livbåtplass til dobbelt så mange som er om bord, alle må ha sikkerhetsopplæring, og et redningsfartøy skal ligge i nærheten av plattformen hele tiden."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Minnesmerke med navn på omkomne oljearbeidere ved havet",
+            "caption": "123 mennesker mistet livet da Alexander L. Kielland veltet i 1980. Ulykken endret sikkerhetsreglene på norsk sokkel for alltid."
+        },
+        {
+            "type": "header",
+            "text": "Fondet: å spare til dem som ikke er født ennå"
+        },
+        {
+            "type": "text",
+            "content": "Olje er noe man bare kan hente opp én gang. Politikerne så tidlig et problem: hvis staten brukte alle oljepengene med en gang, ville prisene stige, andre næringer ville bli utkonkurrert, og når oljen tok slutt ville landet stå igjen uten både olje og penger."
+        },
+        {
+            "type": "text",
+            "content": "Løsningen var et fond. Loven om fondet kom 22. juni 1990, men på grunn av underskudd på statsbudsjettet kom de første pengene inn først i 1996. I 2006 fikk fondet navnet Statens pensjonsfond utland, og i dagligtale kaller vi det oljefondet. Pengene plasseres i aksjer, obligasjoner og eiendom i utlandet, slik at de ikke varmer opp norsk økonomi (Thomassen, 2026). I 2019 passerte fondet 10 000 milliarder kroner, og ved inngangen til 2025 var verdien 19 742 milliarder kroner. Det er omtrent 3,5 millioner kroner per innbygger."
+        },
+        {
+            "type": "text",
+            "content": "Men et fond hjelper lite hvis politikerne bruker av det i tide og utide. Derfor vedtok Stortinget i 2001 en egen regel, handlingsregelen. Den sier hvor mye av fondet regjeringen kan bruke over statsbudsjettet hvert år. Først var grensen fire prosent, som skulle tilsvare det fondet forventes å tjene i året. I 2017 ble grensen satt ned til tre prosent (Thomassen og Garvik, 2025). Tanken er enkel: bruk avkastningen, la selve formuen ligge."
+        },
+        {
+            "type": "component",
+            "name": "Oljepengevalget",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Oljen i dag, og dilemmaet"
+        },
+        {
+            "type": "text",
+            "content": "Olje og gass er fortsatt den største delen av det Norge selger til utlandet. I 2025 sto olje og gass for 56,8 prosent av all norsk eksport, til en verdi av 1065,6 milliarder kroner. Skattene fra olje og gass utgjorde 24,3 prosent av alle skatter og avgifter staten fikk inn i 2024 (Statistisk sentralbyrå, 2026). Pengene fra havet betaler altså for en stor del av skolen din, sykehusene og veiene."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig er det nettopp olje og gass som slipper ut klimagassene verden må kvitte seg med. Her ligger dilemmaet Norge lever i: landet tjener store penger på å selge det andre land må slutte å bruke. Det er ingen enkel utvei. Selv i 2025 ble det investert 272,9 milliarder kroner i norsk petroleumsvirksomhet (Statistisk sentralbyrå, 2026), altså fortsetter utbyggingen mens klimamålene strammes til."
+        },
+        {
+            "type": "text",
+            "content": "Oljen har også formet arbeidslivet vårt. Lønnsnivået i Norge henger sammen med hvor mye industrien tåler å betale, og du kan lese om hvordan lønningene settes i artikkelen om [frontfagmodellen](/samfunnskunnskap/arbeidsliv/frontfagmodellen)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Moderne norsk skoleklasse i lyst klasserom",
+            "caption": "Skolen, sykehusene og veiene i Norge betales i stor grad av inntekter fra havbunnen."
+        },
+        {
+            "type": "header",
+            "text": "Hva sitter du igjen med?"
+        },
+        {
+            "type": "text",
+            "content": "Norge ble ikke rikt bare fordi det lå olje under havet. Flere land har funnet olje og blitt fattigere av det. Forskjellen ligger i valgene som ble tatt i årene rundt funnet: staten sikret seg eierskapet før pengene begynte å strømme, overskuddet ble skattlagt hardt, og fortjenesten ble spart i stedet for brukt. Flaks fant oljen. Politikk gjorde den til velferd."
+        },
+        {
+            "type": "list",
+            "items": [
+                "1963: Norge slår fast at havbunnen utenfor kysten er norsk.",
+                "1969: Ekofisk blir funnet, etter over tre år med tørre brønner.",
+                "1971: De ti oljebud krever nasjonal styring og kontroll.",
+                "1972: Statoil og Oljedirektoratet opprettes.",
+                "1980: Alexander L. Kielland velter, og 123 mennesker omkommer.",
+                "1990: Loven om oljefondet vedtas. Første innskudd kommer i 1996.",
+                "2001: Handlingsregelen sier hvor mye staten kan bruke hvert år."
+            ]
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Når ble Ekofisk funnet, og hvor lenge hadde selskapene boret tørt før funnet kom?",
+                    "Hva var det aller viktigste punktet i de ti oljebud fra 1971?",
+                    "Hvilke to institusjoner opprettet staten 12. juni 1972, og hva skulle de gjøre?",
+                    "Hvor mye kan regjeringen bruke av oljefondet hvert år etter handlingsregelen i dag?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor det var så viktig at Norge bestemte reglene i 1963 og 1965, altså før oljen var funnet.",
+                    "Teksten sier at flere land har funnet olje og blitt fattigere av det. Hvilke valg gjorde Norge annerledes?",
+                    "Hvorfor plasseres oljefondet i utlandet og ikke i norske veier og sykehus? Bruk det du lærte av Oljepengevalget.",
+                    "Alexander L. Kielland-ulykken førte til strengere regler. Hvorfor tror du sikkerhetsreglene ofte blir skjerpet først etter at noe går galt?"
+                ],
+                "gaaVidere": [
+                    "Diskuter i klassen: Bør Norge slutte å lete etter ny olje, eller fortsette så lenge verden kjøper den? Finn minst to argumenter for hver side.",
+                    "Skriv en kort tekst (5-8 setninger) der du forklarer for en tiåring hva oljefondet er, og hvorfor vi ikke bruker opp hele fondet nå.",
+                    "Finn ut hva olje og gass betyr for stedet du bor. Jobber noen du kjenner i eller nær denne næringen?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Når ble oljefeltet Ekofisk funnet?",
+                        "options": [
+                            "I oktober 1969",
+                            "I 1945",
+                            "I 1985",
+                            "I 2001"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Boret traff Ekofisk 25. oktober 1969, og rett før jul samme år meldte Phillips at feltet var stort nok til å lønne seg."
+                    },
+                    {
+                        "question": "Hva var hovedpoenget i de ti oljebud fra 1971?",
+                        "options": [
+                            "At Norge selv skulle styre og kontrollere virksomheten på sokkelen",
+                            "At utenlandske selskaper skulle eie all oljen",
+                            "At oljen skulle brennes på plattformene",
+                            "At oljen skulle gis bort gratis"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Det første og viktigste budet var at nasjonal styring og kontroll måtte sikres for all virksomhet på norsk sokkel."
+                    },
+                    {
+                        "question": "Hva sier handlingsregelen?",
+                        "options": [
+                            "Hvor stor del av oljefondet staten kan bruke hvert år",
+                            "Hvor mange plattformer Norge kan bygge",
+                            "Hvor dypt selskapene får bore",
+                            "Hvor mye olje Norge må selge til EU"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Handlingsregelen ble vedtatt i 2001. Grensen var først fire prosent av fondet i året, og ble satt ned til tre prosent i 2017."
+                    },
+                    {
+                        "question": "Hva skjedde med plattformen Alexander L. Kielland i 1980?",
+                        "options": [
+                            "Den veltet, og 123 mennesker omkom",
+                            "Den ble solgt til Storbritannia",
+                            "Den slo produksjonsrekord",
+                            "Den ble bygget om til museum"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Ett av de fem beina knakk, og plattformen veltet på rundt 20 minutter. 123 av de 212 om bord mistet livet. Det er den største industriulykken i norsk historie."
+                    },
+                    {
+                        "question": "Hvorfor plasseres oljefondet i utlandet?",
+                        "options": [
+                            "For at pengene ikke skal varme opp norsk økonomi og utkonkurrere andre næringer",
+                            "Fordi det er forbudt å investere i Norge",
+                            "Fordi andre land betaler mer skatt",
+                            "Fordi Norge ikke har banker"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Hvis alle oljepengene ble brukt i Norge med en gang, ville priser og lønninger stige og andre næringer bli utkonkurrert. Derfor investeres fondet ute."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Norsk Oljemuseum. (2026). *Ekofisk*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Ekofisk](https://snl.no/Ekofisk)",
+                    "Ryggvik, H., Smith-Solbakken, M., & Tollaksen, T. G. (2026). *Norsk oljehistorie*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Norsk_oljehistorie](https://snl.no/Norsk_oljehistorie)",
+                    "Smith-Solbakken, M., & Dahle, E. A. (2026). *Alexander Kielland-ulykken*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Alexander_Kielland-ulykken](https://snl.no/Alexander_Kielland-ulykken)",
+                    "Sokkeldirektoratet & Energidepartementet. (2026). *Norway's petroleum history*. Norskpetroleum.no. Hentet 05.08.2026 fra [norskpetroleum.no](https://www.norskpetroleum.no/en/framework/norways-petroleum-history/)",
+                    "Statistisk sentralbyrå. (2026). *Fakta om olje og energi*. Hentet 05.08.2026 fra [ssb.no](https://www.ssb.no/energi-og-industri/faktaside/olje-og-energi)",
+                    "Stortingets industrikomité. (1971). *De ti oljebud*. Norgeshistorie.no, Universitetet i Oslo. Hentet 05.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/kilder/oljealder-og-overflod/K1905-de-ti-oljebud.html)",
+                    "Thomassen, E. (2026). *Statens pensjonsfond utland*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Statens_pensjonsfond_utland](https://snl.no/Statens_pensjonsfond_utland)",
+                    "Thomassen, E., & Garvik, O. (2025). *Handlingsregelen*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/handlingsregelen](https://snl.no/handlingsregelen)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
