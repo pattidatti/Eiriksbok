@@ -5,7 +5,7 @@
     "year": "1920",
     "category": "Norge i moderne tid",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norge-i-moderne-tid/svalbard-hero.webp",
     "factChecked": "2026-08-05",
     "details": [
         "I flere hundre år var Svalbard ingenmannsland. Ingen stat eide øyene, og ingen lov gjaldt der.",
@@ -20,7 +20,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/svalbard-01.webp",
             "alt": "Snødekt fjellandskap over en liten arktisk gruveby ved en fjord",
             "caption": "Svalbard ligger mellom 74 og 81 grader nord. Nesten to tredeler av landarealet er dekket av isbreer."
         },
@@ -62,7 +62,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/svalbard-02.webp",
             "alt": "Diplomater rundt et langbord som undertegner en traktat i en sal i Paris",
             "caption": "9. februar 1920 skrev ni land under Svalbardtraktaten i Paris. I dag har 49 land sluttet seg til den."
         },
@@ -104,7 +104,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/svalbard-03.webp",
             "alt": "Betonginngangen til frøhvelvet som stikker ut av en snødekt fjellside",
             "caption": "Svalbard globale frøhvelv åpnet i 2008. Permafrosten er den viktigste grunnen til at det ligger nettopp her."
         },

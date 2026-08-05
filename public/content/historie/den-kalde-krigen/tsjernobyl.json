@@ -6,7 +6,7 @@
     "year": "1986",
     "category": "Kald krig / Katastrofe",
     "readTime": "13 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/den-kalde-krigen/tsjernobyl-hero.webp",
     "factChecked": "2026-08-05",
     "details": [
         "Reaktor 4 i Tsjernobyl eksploderte natt til 26. april 1986 under en sikkerhetstest.",
@@ -22,7 +22,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-kalde-krigen/tsjernobyl-01.webp",
             "alt": "Kjernekraftverk med ødelagt reaktorbygning og røyk mot nattehimmelen",
             "caption": "Reaktor 4 sto åpen mot himmelen etter eksplosjonen. Grafittbrannen sendte radioaktivt støv høyt opp i lufta i flere dager."
         },
@@ -137,7 +137,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-kalde-krigen/tsjernobyl-02.webp",
             "alt": "Norsk fjellandskap i regn med sauer på beite under lave skyer",
             "caption": "Der bygene sto da skyen passerte, ble nedfallet vasket ned i beitene. Været, ikke avstanden, avgjorde hvem som ble rammet."
         },
@@ -187,7 +187,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/den-kalde-krigen/tsjernobyl-03.webp",
             "alt": "Forskere i felt måler radioaktivitet i lyng og jord med håndholdt instrument",
             "caption": "Norge måler fortsatt. Cesium-137 bruker 30 år på å halveres, og finnes derfor ennå i sopp, vilt og beite."
         },

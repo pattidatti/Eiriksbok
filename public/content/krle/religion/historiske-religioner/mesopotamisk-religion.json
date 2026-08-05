@@ -8,7 +8,7 @@
     "year": "2900 fvt - 539 fvt",
     "category": "Religionshistorie",
     "readTime": "12 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/historiske-religioner/mesopotamisk-religion-hero.webp",
     "dimension": "narrative",
     "comparison_tags": [
         "fortellinger",
@@ -34,7 +34,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiske-religioner/mesopotamisk-religion-01.webp",
             "alt": "Mann studerer knust leirtavle med kileskrift i museumssal",
             "caption": "George Smith fant flomfortellingen på en leirtavle som var over tusen år eldre enn Bibelens versjon."
         },
@@ -96,7 +96,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiske-religioner/mesopotamisk-religion-02.webp",
             "alt": "Ziggurat i soltørket teglstein med bred trapp opp til tempel på toppen",
             "caption": "Zigguraten var bygd som et hellig fjell. Helligdommen lå på toppen, der himmel og jord møttes."
         },
@@ -206,7 +206,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/historiske-religioner/mesopotamisk-religion-03.webp",
             "alt": "Prest bærer skål med mat inn til gudestatue i mørkt tempelrom",
             "caption": "Hver dag ble det båret måltider inn til gudestatuen. Da ingen lenger gjorde det, sluttet religionen å leve."
         },
