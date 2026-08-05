@@ -7,15 +7,15 @@
   "readTime": "8 min lesning",
   "heroImage": "/images/lessons/handel/mat-skipsfart-hero.webp",
   "details": [
-    "Et eple fra New Zealand tilbakelegger 20 000 km til norske butikker",
-    "Ukraina og Russland leverer 30 % av verdens hvete",
-    "Sjømat er Norges nest største eksportnæring"
+    "Containeren gjorde det billig å frakte mat over hele kloden",
+    "Krigen i Ukraina stengte kornet inne i Svartehavet",
+    "Norge eksporterte sjømat for 172 milliarder kroner i 2023"
   ],
-  "externalUrl": "https://snl.no/skipsfart",
+  "externalUrl": "https://snl.no/containerskip",
   "content": [
     {
       "type": "text",
-      "content": "I en norsk dagligvare-hylle kan du finne bananer fra Ecuador, laks oppdrettet med soya fra Brasil, ris fra Thailand, og apelsinejuice fra Florida. Denne variasjonen er ikke bare et resultat av smak — den er et resultat av at skipsfarten har gjort det billigere å frakte mat over en ocean enn å produsere den lokalt. Mat er blitt global."
+      "content": "I en norsk dagligvarehylle kan du finne bananer fra Ecuador, laks oppdrettet med soya fra Brasil, ris fra Thailand og appelsinjuice fra Florida. Denne variasjonen er ikke bare et resultat av smak - den er et resultat av at skipsfarten har gjort det billig å frakte mat over et helt hav. Mat er blitt global."
     },
     {
       "type": "header",
@@ -23,11 +23,15 @@
     },
     {
       "type": "text",
-      "content": "Malcom McLean, en lastebileier fra North Carolina, kom på en idé i 1956: hva om lastebilens lasteplan kunne løftes direkte opp på et skip? Han bygde verdens første containerskip og innledet en logistikkrvolusjon. Standardiserte containere — 20 eller 40 fot lange stålbokser — kan stabeles, fraktes med skip, løftes av kraner og settes direkte på lastebiler eller tog. Lastetiden ble redusert fra dager til timer."
+      "content": "Malcolm McLean, en lastebileier fra North Carolina, hadde en idé: hva om lastebilens lasteplan kunne løftes direkte opp på et skip? Den 26. april 1956 forlot det ombygde tankskipet Ideal-X havnen i Newark med 58 containere om bord, og fem dager senere la det til kai i Houston. Containerne ble lastet på under åtte timer - langt raskere enn vanlig lasting. Regnestykket til McLean viste at lasting av et vanlig skip kostet 5,83 dollar per tonn, mens containere kostet under 16 cent per tonn (Rodrigue, 2024)."
     },
     {
       "type": "text",
-      "content": "I dag er containerne selve symbolet på globalisering. Et moderne containerskip er nesten 400 meter langt og kan frakte 24 000 containere — hver fylt med klær, elektronikk, leketøy eller mat. Og det gjøres med et mannskap på kanskje 20 sjøfolk."
+      "content": "Standardiserte containere kan stables, fraktes med skip, løftes av kraner og settes rett på lastebiler eller tog, og det har gjort skipstransporten langt mer effektiv (Spurkeland, 2024a). Men det tok tid før alle ble enige om målene. På 1950-tallet fantes det fortsatt flere containertyper i ulike størrelser, og først i 1968 kom ISO-standarden for 20- og 40-fots containere. Det var gjennombruddet for standardiseringen (Spurkeland, 2024b)."
+    },
+    {
+      "type": "text",
+      "content": "I dag er containerne selve symbolet på globalisering. De største containerskipene som er bygd, laster rundt 24 000 standardcontainere, målt i TEU (Rabbevåg, 2024). Hver container kan være fylt med klær, elektronikk, leketøy eller mat - og skipet drives av et forbausende lite mannskap."
     },
     {
       "type": "component",
@@ -39,15 +43,15 @@
     },
     {
       "type": "header",
-      "text": "Ukraina-krigen og brødkorven"
+      "text": "Ukraina-krigen og brødkurven"
     },
     {
       "type": "text",
-      "content": "I februar 2022 invaderte Russland Ukraina — og verden fikk raskt kjenne konsekvensene på matvaremarkedet. Ukraina og Russland er til sammen ansvarlige for rundt 30 prosent av verdens hveteksport og 60 prosent av solsikkeolje. Da krigshandlingene blokkerte havnene i Svartehavet, sluttet kornet å nå markeder i Nord-Afrika og Midtøsten."
+      "content": "I februar 2022 invaderte Russland Ukraina - og verden fikk raskt kjenne konsekvensene på matvaremarkedet. Ukraina og Russland er begge blant verdens største leverandører av hvete, bygg og solsikkeolje. Da krigshandlingene blokkerte havnene i Svartehavet, sluttet kornet å nå markeder i Nord-Afrika og Midtøsten, og matprisene steg kraftig."
     },
     {
       "type": "text",
-      "content": "Det resulterte i en matkrise. Egypt, Tunisia og Libanon — land med høy brødavhengighet av ukrainsk hvete — opplevde dramatisk prisstigning. FN forhandlet frem en kornutekjørselsavtale som midlertidig åpnet havnene. Da Russland trakk seg fra avtalen sommeren 2023, gikk prisene opp igjen."
+      "content": "I juli 2022 forhandlet FN og Tyrkia fram Svartehavsinitiativet, en avtale som åpnet havnene igjen. På ett år fikk nesten 33 millioner tonn korn og matvarer komme ut av Ukraina til 45 land, og FAOs matvareprisindeks falt med over 23 prosent fra toppen i mars 2022. Da Russland nektet å forlenge avtalen 18. juli 2023, forsvant sikkerhetsgarantien for skipene igjen (FN, 2023)."
     },
     {
       "type": "component",
@@ -55,12 +59,16 @@
       "props": {
         "title": "Norsk sjømateksport",
         "items": [
-          "Norge eksporterer sjømat til over 100 land",
-          "I 2023 eksporterte Norge sjømat for 155 milliarder kroner",
-          "Laks utgjør omtrent 70 % av norsk sjømateksport",
+          "I 2023 eksporterte Norge sjømat til 153 land",
+          "Samlet verdi var 172 milliarder kroner",
+          "Laks sto for 122,5 milliarder kroner, altså 71 prosent",
           "En norsk laks kan ha spist soya produsert i Brasil"
         ]
       }
+    },
+    {
+      "type": "text",
+      "content": "Norge er selv en stormakt i den globale matkjeden. I 2023 eksporterte landet sjømat for 172 milliarder kroner til 153 land, og laksen alene sto for 71 prosent av verdien (Norges sjømatråd, 2024)."
     },
     {
       "type": "header",
@@ -68,26 +76,26 @@
     },
     {
       "type": "text",
-      "content": "Skipsfarten er ansvarlig for ca. 2,5 prosent av globale CO₂-utslipp — omtrent like mye som Tysklands totale utslipp. IMO (FNs sjøfartsorganisasjon) har satt ambisiøse mål: nullutslipp innen 2050. Det krever overgang til grønt hydrogen, ammoniakk eller metanol. Norsk skipsfartsindustri leder an med verden første nullutslipps-ferger og arbeider med hydrogen-drevne containerskip."
+      "content": "Skipsfarten er ansvarlig for nesten 3 prosent av verdens klimagassutslipp (International Maritime Organization, 2020). FNs sjøfartsorganisasjon IMO vedtok i 2023 et mål om netto null utslipp fra internasjonal skipsfart i eller rundt 2050, med delmål underveis: minst 20 prosent kutt innen 2030 og minst 70 prosent innen 2040, sammenlignet med 2008 (International Maritime Organization, 2023). Det krever overgang til drivstoff som hydrogen, ammoniakk eller metanol, og norsk skipsfartsindustri er langt framme i arbeidet med utslippsfrie ferger."
     },
     {
       "type": "text",
-      "content": "Samtidig åpner klimaendringene Arktis. Den nordøstlige passasjen langs Russlands arktiske kyst — kjent som Nordøstpassasjen — er nå is-fri deler av året. Den kutter reiseavstanden fra Asia til Europa med 40 prosent sammenlignet med Suezkanalen. Russland tjener penger på å tilby isbrytere. Men ruten er fortsatt risikabel og politisk kompleks."
+      "content": "Samtidig åpner klimaendringene Arktis. Nordøstpassasjen langs Russlands arktiske kyst kutter transporttiden mellom Europa og Asia med en tredel sammenlignet med ruten gjennom Suezkanalen. Men ruten er fortsatt isfylt store deler av året, og selv om sommeren vet ingen på forhånd hvordan isforholdene blir. Russland bygger stadig flere atomdrevne isbrytere for å holde ruten åpen lenger (Barr, 2025)."
     },
     {
         "type": "component",
         "name": "Oppgaver",
         "props": {
             "forstaa": [
-                "Hvem oppfant containerfrakten, og hvilket yrke hadde han da han fikk ideen i 1956?",
-                "Hvor mange containere kan et moderne containerskip på nesten 400 meter frakte, og hvor stort mannskap holder det gående?",
-                "Hvor stor andel av verdens hveteeksport står Ukraina og Russland for til sammen?",
-                "Hvor mye kortere blir reisen fra Asia til Europa hvis skip bruker Nordøstpassasjen i stedet for Suezkanalen?"
+                "Hvem sto bak den første containerreisen i 1956, hva jobbet han med, og hva het skipet?",
+                "Hvor mange standardcontainere kan de største containerskipene frakte?",
+                "Hva var Svartehavsinitiativet, og hva skjedde med avtalen i juli 2023?",
+                "Hvor mye kortere blir reisen mellom Europa og Asia hvis skip bruker Nordøstpassasjen i stedet for Suezkanalen?"
             ],
             "reflekter": [
-                "Artikkelen sier at det kan være billigere å frakte et eple 20 000 km enn å dyrke mat lokalt. Forklar hvordan containeren gjorde dette mulig.",
-                "Hvorfor rammet blokkeringen av havnene i Svartehavet nettopp land som Egypt, Tunisia og Libanon så hardt?",
-                "Skipsfarten står for rundt 2,5 prosent av verdens CO2-utslipp, like mye som hele Tyskland. Hvorfor er det vanskelig å kutte disse utslippene til null?",
+                "Regnestykket til McLean viste at containere gjorde lastingen enormt mye billigere. Forklar hvordan det henger sammen med at du kan kjøpe mat fra hele verden i butikken.",
+                "Hvorfor rammet blokkeringen av havnene i Svartehavet nettopp land i Nord-Afrika og Midtøsten så hardt?",
+                "Skipsfarten står for nesten 3 prosent av verdens klimagassutslipp. Hvorfor er det vanskelig å kutte disse utslippene til null?",
                 "Klimaendringene åpner Nordøstpassasjen samtidig som skipsfarten prøver å bli mer miljøvennlig. Hvorfor er det en motsetning i at Russland tjener penger på isbrytere langs denne ruten?"
             ],
             "gaaVidere": [
@@ -103,15 +111,15 @@
       "props": {
         "questions": [
           {
-            "question": "Hvem oppfant containerfrakt?",
+            "question": "Hvem sto bak den første containerreisen?",
             "options": [
               "En ingeniør fra IBM",
               "En lastebileier fra North Carolina",
-              "Det japanske militæret etter WW2",
+              "Det japanske militæret etter andre verdenskrig",
               "Hamburgbørsen"
             ],
             "correct": 1,
-            "explanation": "Malcolm McLean, en lastebileier fra North Carolina, oppfant prinsippet om standardiserte containere i 1956. Hans idé om å løfte lastebilens lasteplan direkte opp på et skip revolusjonerte verdenshandelen."
+            "explanation": "Malcolm McLean, en lastebileier fra North Carolina, sto bak den første containerreisen i 1956, da skipet Ideal-X seilte fra Newark til Houston med 58 containere. Ideen om å løfte lastebilens lasteplan rett opp på et skip revolusjonerte verdenshandelen."
           },
           {
             "question": "Hva skjedde med matvareprisene da Russland invaderte Ukraina?",
@@ -119,14 +127,32 @@
               "De falt fordi alternative leverandører økte produksjonen",
               "De var stabile fordi EU økte sin produksjon",
               "Hveteprisene steg kraftig, spesielt i Nord-Afrika og Midtøsten",
-              "Ingenting særlig — markedet justerte seg raskt"
+              "Ingenting særlig - markedet justerte seg raskt"
             ],
             "correct": 2,
-            "explanation": "Ukraina og Russland leverer til sammen ca. 30 % av verdens hvete. Da krigshandlingene blokkerte de ukrainske Svartehavshavnene, steg globale priser kraftig og skapte en matkrise i importavhengige land."
+            "explanation": "Ukraina og Russland er begge blant verdens største hveteleverandører. Da krigshandlingene blokkerte de ukrainske havnene i Svartehavet, steg globale priser kraftig og skapte en matkrise i importavhengige land."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Barr, S. (2025). *Nordøstpassasjen*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Nordøstpassasjen](https://snl.no/Nord%C3%B8stpassasjen)",
+          "FN. (2023). *The Black Sea Grain Initiative: What was achieved? Why was it important?* De forente nasjoner. Hentet 05.08.2026 fra [un.org](https://www.un.org/en/black-sea-grain-initiative/achievements)",
+          "International Maritime Organization. (2020). *Fourth IMO Greenhouse Gas Study 2020*. Hentet 05.08.2026 fra [imo.org](https://www.imo.org/en/ourwork/environment/pages/fourth-imo-greenhouse-gas-study-2020.aspx)",
+          "International Maritime Organization. (2023). *2023 IMO Strategy on Reduction of GHG Emissions from Ships*. Hentet 05.08.2026 fra [imo.org](https://www.imo.org/en/ourwork/environment/pages/2023-imo-strategy-on-reduction-of-ghg-emissions-from-ships.aspx)",
+          "Norges sjømatråd. (2024). *Prisvekst og svak krone ga eksportrekord for norsk sjømat i 2023*. Hentet 05.08.2026 fra [seafood.no](https://www.seafood.no/aktuelt/nyheter/prisvekst-og-svak-krone-ga-eksportrekord-for-norsk-sjomat-i-2023/)",
+          "Rabbevåg, F. (2024). *Containerskip*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/containerskip](https://snl.no/containerskip)",
+          "Rodrigue, J.-P. (2024). *First Containership, Ideal-X, 1956*. The Geography of Transport Systems, Texas A&M University. Hentet 05.08.2026 fra [transportgeography.org](https://transportgeography.org/contents/chapter1/the-setting-of-global-transportation-systems/idealx-first-containeriship-1956/)",
+          "Spurkeland, E. (2024a). *Container*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/container](https://snl.no/container)",
+          "Spurkeland, E. (2024b). *TEU - Container*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/TEU_-_Container](https://snl.no/TEU_-_Container)"
         ]
       }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-08-05T00:00:00Z"
 }

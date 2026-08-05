@@ -7,15 +7,15 @@
   "readTime": "8 min lesning",
   "heroImage": "/images/lessons/handel/internett-kabler-hero.webp",
   "details": [
-    "99 % av internetttrafikk går via undersjøiske kabler",
-    "Over 1 400 kabler dekker ca. 1,3 millioner km havbunn",
+    "Nesten all internasjonal internettrafikk går via undersjøiske kabler",
+    "Over 600 kabler dekker mer enn 1,5 millioner km havbunn",
     "En kabel er omtrent like tykk som en hageslange"
   ],
-  "externalUrl": "https://snl.no/undersjøisk_kabel",
+  "externalUrl": "https://snl.no/sj%C3%B8kabel",
   "content": [
     {
       "type": "text",
-      "content": "Forestill deg at du sender en e-post fra Oslo til New York. Den reiser ikke gjennom luften, selv om den virker umiddelbar. Den skytes ut som lyspulser gjennom tynne glassfibertråder, gjennom en kabel som er dumpet ned på Atlanterhavets bunn — der det er mørkt, kaldt og trykket er knusende. Internett er et fysisk objekt, og det eksisterer nesten utelukkende under vann."
+      "content": "Forestill deg at du sender en e-post fra Oslo til New York. Den reiser ikke gjennom luften, selv om den virker umiddelbar. Den skytes ut som lyspulser gjennom tynne glassfibertråder, gjennom en kabel som er lagt ned på Atlanterhavets bunn - der det er mørkt, kaldt og trykket er knusende. Internett er et fysisk objekt, og det eksisterer nesten utelukkende under vann."
     },
     {
       "type": "header",
@@ -23,11 +23,11 @@
     },
     {
       "type": "text",
-      "content": "I dag finnes det over 1 400 aktive undersjøiske kabler som til sammen strekker seg 1,3 millioner kilometer. De frakter ikke bare nettsider og Netflix — de er fundamentet for den globale finansøkonomien. Trillioner av dollar i transaksjoner skjer daglig gjennom disse kablene. Uten dem ville ikke moderne handel, ikke banker, ikke verdipapirhandel fungere."
+      "content": "I dag finnes det over 600 aktive og planlagte undersjøiske kabler, og til sammen strekker de seg mer enn 1,5 millioner kilometer (TeleGeography, 2026). Satellitter står bare for en brøkdel av trafikken mellom land, så nesten alt du gjør på nettet går gjennom en kabel på havbunnen. De frakter ikke bare nettsider og Netflix - de er fundamentet for den globale finansøkonomien. Uten dem ville ikke moderne handel, ikke banker, ikke verdipapirhandel fungere."
     },
     {
       "type": "text",
-      "content": "Teknologien er bemerkelsesverdig: en moderne kabel kan ha en kapasitet på hundrevis av terabit per sekund. Inni er det glassfibertråder som er tynnere enn et hår, og rundt dem lag av stålvire, isolasjon og plast. Kabelen er omtrent like tykk som en hageslange — men den kobler kontinenter."
+      "content": "Teknologien er bemerkelsesverdig. Den nye MAREA-kabelen over Atlanterhavet kan frakte 224 terabit i sekundet (TeleGeography, 2026). Inni kabelen ligger glassfibertråder som er omtrent like tynne som et hårstrå, og rundt dem ligger lag med stålvire, isolasjon og plast (Hofstad, 2025). Ute på dypt vann er kabelen omtrent like tykk som en hageslange - men den kobler kontinenter."
     },
     {
       "type": "component",
@@ -43,11 +43,11 @@
     },
     {
       "type": "text",
-      "content": "I mange år var de fleste undersjøiske kabler eid av telekommunikasjonsselskaper. Nå eier tech-giganter som Google, Meta, Amazon og Microsoft en stadig større andel. Det gir dem kontroll over infrastrukturen som driver deres egne tjenester — og bekymrer myndigheter som frykter for konsentrasjonen av makt."
+      "content": "I mange år var de fleste undersjøiske kabler eid av telekommunikasjonsselskaper. Nå er tech-giganter som Google, Meta, Amazon og Microsoft blitt store investorer i nye kabler, og de legger ut mer kapasitet enn de tradisjonelle nettselskapene (TeleGeography, 2026). Det gir dem kontroll over infrastrukturen som driver deres egne tjenester - og bekymrer myndigheter som frykter for konsentrasjonen av makt."
     },
     {
       "type": "text",
-      "content": "Det er også en militær og etterretningsdimensjon. NSA ble i 2013 avslørt for å tappe undersjøiske kabler som en del av overvåkingsprogrammet PRISM. Russland og Kina holder flåtefartøy i nærheten av kabelkorridorer. I 2022 ble undersjøiske kabler nær Svalbard skadet av mystiske årsaker. NATO tar nå trusler mot undersjøisk infrastruktur svært alvorlig."
+      "content": "Det er også en militær og etterretningsdimensjon. Da Edward Snowden lekket hemmelige dokumenter i 2013, kom det fram at den britiske etterretningstjenesten GCHQ overvåket fiberoptiske systemer gjennom programmet Tempora og hentet ut e-poster, meldinger, nettsøk og telefonsamtaler (Næss, 2020). Det var noe annet enn det amerikanske PRISM-programmet, som bygde på at NSA fikk data direkte fra store internettselskaper som Google, Facebook og Apple (Godbolt mfl., 2025). I januar 2022 ble fiberkabelen mellom Svalbard og fastlandet skadet, og Norge oppdaget hvor sårbart samfunnet er når slike linjer ryker (Schia mfl., 2023). NATO tar nå trusler mot undersjøisk infrastruktur svært alvorlig."
     },
     {
       "type": "component",
@@ -55,20 +55,20 @@
       "props": {
         "title": "Kablenes fiender",
         "items": [
-          "Skipanker er den vanligste årsaken til kabeltyveri",
+          "Skipsanker og fiskeredskaper står for rundt to tredeler av alle kabelbrudd",
           "Jordskjelv kan kutte flere kabler samtidig",
-          "I 2006 kuttet et taiwansk jordskjelv 9 kabler og lammet internett i Asia i uker",
-          "Haier biter av og til på kablene — trolig på grunn av elektromagnetiske felt"
+          "I 2006 kuttet et jordskjelv utenfor Taiwan åtte kabelsystemer og forstyrret internett i Asia",
+          "Haier biter av og til på kablene - trolig på grunn av elektromagnetiske felt"
         ]
       }
     },
     {
       "type": "header",
-      "text": "Reparasjonen — en undervurdert industri"
+      "text": "Reparasjonen - en undervurdert industri"
     },
     {
       "type": "text",
-      "content": "Rundt 150-200 kabelskader repareres hvert år. Spesialbygde kabelskip — det finnes bare rundt 50 i verden — lokaliserer skaden med sonar, henter opp kabelen med robotarmer fra dyp på opptil 8 000 meter, og spleiser den på nytt. En enkelt reparasjon kan ta uker og koster millioner av dollar."
+      "content": "Rundt 200 kabelbrudd må repareres hvert år (Mauldin, 2025). Spesialbygde kabelskip - International Cable Protection Committee (2025) har registrert drøyt 60 av dem - drar en spesialkrok langs havbunnen til de får tak i den ødelagte kabelen, haler den sakte opp på dekk, kutter vekk den skadde biten og spleiser inn ny kabel. En enkelt reparasjon kan ta uker, fordi skipet ofte må seile langt for å komme fram (Mauldin, 2025)."
     },
     {
         "type": "component",
@@ -78,7 +78,7 @@
                 "Hvor stor andel av den internasjonale internettrafikken går gjennom undersjøiske kabler?",
                 "Hvor tykk er en undersjøisk kabel omtrent, ifølge teksten?",
                 "Hva er den vanligste årsaken til at kabler blir skadet?",
-                "Omtrent hvor mange spesialbygde kabelskip finnes det i verden?"
+                "Omtrent hvor mange spesialbygde kabelskip er registrert i verden?"
             ],
             "reflekter": [
                 "Teksten sier at internett er et fysisk objekt. Hvorfor tror mange likevel at internett bare finnes i luften eller i skyen?",
@@ -102,17 +102,33 @@
             "question": "Hvor mye av global internetttrafikk reiser via undersjøiske kabler?",
             "options": ["40 %", "70 %", "90 %", "99 %"],
             "correct": 3,
-            "explanation": "Omtrent 99 % av all internasjonal internettrafikk reiser gjennom undersjøiske fiberoptiske kabler. Satellitter brukes kun som backup og i avsidesliggende strøk."
+            "explanation": "Omtrent 99 % av all internasjonal internettrafikk reiser gjennom undersjøiske fiberoptiske kabler. Satellitter står bare for en brøkdel, og brukes mest som reserve og i avsidesliggende strøk."
           },
           {
             "question": "Hva er den vanligste årsaken til at undersjøiske kabler skades?",
-            "options": ["Sabotasje", "Skipanker", "Jordskjelv", "Haier"],
+            "options": ["Sabotasje", "Skipsanker", "Jordskjelv", "Haier"],
             "correct": 1,
-            "explanation": "Den vanligste årsaken er skipanker — skip som kaster anker i kabelkorridorer. Jordskjelv og fisking er andre vanlige årsaker. Sabotasje er sjeldnere, men bekymringen øker."
+            "explanation": "Ulykker med skipsanker og fiskeredskaper står for rundt to tredeler av alle kabelbrudd. Jordskjelv er en annen vanlig årsak. Sabotasje er sjeldnere, men bekymringen øker."
           }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Godbolt, J., Restad, H. & Notaker, H. (2025). *Edward Snowden*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Edward_Snowden](https://snl.no/Edward_Snowden)",
+          "Hofstad, K. (2025). *Sjøkabel*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/sjøkabel](https://snl.no/sj%C3%B8kabel)",
+          "International Cable Protection Committee. (2025). *Cableships of the World*. Hentet 05.08.2026 fra [iscpc.org](https://www.iscpc.org/information/cableships-of-the-world/)",
+          "Mauldin, A. (2025). *You've Read About Submarine Cable Breaks. Now Read About the Repairs*. TeleGeography. Hentet 05.08.2026 fra [telegeography.com](https://resources.telegeography.com/youve-read-a-lot-on-cable-breaks-lately.-have-you-read-about-the-repairs)",
+          "Næss, M. (2020). *GCHQ*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/GCHQ](https://snl.no/GCHQ)",
+          "Schia, N. N., Gjesvik, L. & Rødningen, I. (2023). *The subsea cable cut at Svalbard January 2022: What happened, what were the consequences, and how were they managed?* Norsk Utenrikspolitisk Institutt. Hentet 05.08.2026 fra [nupi.no](https://www.nupi.no/en/publications/cristin-pub/the-subsea-cable-cut-at-svalbard-january-2022-what-happened-what-were-the-consequences-and-how-were-they-managed)",
+          "TeleGeography. (2026). *Submarine Cable Frequently Asked Questions*. Hentet 05.08.2026 fra [telegeography.com](https://www2.telegeography.com/submarine-cable-faqs-frequently-asked-questions)"
         ]
       }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "lastUpdated": "2026-08-05T00:00:00Z"
 }
