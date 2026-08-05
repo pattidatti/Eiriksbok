@@ -8,7 +8,7 @@
     "heroImage": "/images/lessons/arbeidsliv/arbeidsrett_hero.webp",
     "details": [
         "Arbeidsmiljøloven gir deg rett til ferie, sykepenger og trygt arbeidsmiljø",
-        "Tariffavtaler regulerer lønn og vilkår for over 70% av norske arbeidstakere",
+        "Tariffavtaler regulerer lønn og vilkår for om lag to av tre norske arbeidstakere",
         "Norge har noen av verdens sterkeste arbeidstakerrettigheter"
     ],
     "externalUrl": "https://snl.no/arbeidsmilj%C3%B8loven",
@@ -31,15 +31,15 @@
         },
         {
             "type": "text",
-            "content": "Den viktigste loven for alle som jobber i Norge heter arbeidsmiljøloven. Den ble vedtatt i 1977 og har blitt oppdatert mange ganger siden. Loven gjelder for nesten alle som jobber - enten du er heltidsansatt, deltidsansatt, vikar eller lærling. Den setter rammene for hva en arbeidsgiver kan og ikke kan gjøre."
+            "content": "Den viktigste loven for alle som jobber i Norge heter arbeidsmiljøloven. Den første kom i 1977, og i 2005 ble den erstattet av en ny lov som gjelder i dag (Gisle et al., 2025). Loven gjelder for nesten alle som jobber - enten du er heltidsansatt, deltidsansatt, vikar eller lærling. Den setter rammene for hva en arbeidsgiver kan og ikke kan gjøre."
         },
         {
             "type": "text",
-            "content": "Arbeidsmiljøloven handler ikke bare om lønn. Den dekker alt fra arbeidstid og pauser til mobbing, diskriminering og oppsigelse. Den krever at arbeidsplassen skal være trygg og helsefremmende, både fysisk og psykisk. Det betyr at sjefen din har plikt til å sørge for at du ikke skader deg på jobb, men også at du ikke blir syke av stress eller trakassering."
+            "content": "Arbeidsmiljøloven handler ikke bare om lønn. Den dekker alt fra arbeidstid og pauser til mobbing, diskriminering og oppsigelse (Gisle et al., 2025). Den krever at arbeidsplassen skal være trygg og helsefremmende, både fysisk og psykisk. Det betyr at sjefen din har plikt til å sørge for at du ikke skader deg på jobb, men også at du ikke blir syk av stress eller trakassering."
         },
         {
             "type": "text",
-            "content": "Her er noen av de viktigste rettighetene loven gir deg:"
+            "content": "Her er noen av de viktigste rettighetene du har som arbeidstaker i Norge (Arbeidstilsynet, u.å.-a, u.å.-c):"
         },
         {
             "type": "list",
@@ -54,7 +54,7 @@
         },
         {
             "type": "text",
-            "content": "Hvis arbeidsgiveren bryter disse reglene, kan du klage til Arbeidstilsynet. Det er et offentlig organ som overvåker at lover og regler blir fulgt. I alvorlige tilfeller kan Arbeidstilsynet stenge en arbeidsplass til problemene er løst."
+            "content": "Hvis arbeidsgiveren bryter disse reglene, kan du klage til Arbeidstilsynet. Det er Arbeidstilsynet som fører tilsyn med at arbeidsmiljøloven blir fulgt, og som veileder både arbeidsgivere og ansatte (Gisle et al., 2025). I alvorlige tilfeller kan Arbeidstilsynet stanse arbeidet til problemene er løst."
         },
         {
             "type": "header",
@@ -70,11 +70,11 @@
         },
         {
             "type": "text",
-            "content": "I Norge er over 70 prosent av alle arbeidstakere dekket av en tariffavtale. Det er en av de høyeste andelene i verden, og det er en viktig grunn til at norske lønninger er høye og forskjellene mellom folk er relativt små. Tariffavtalene sikrer at en renholder, en sykepleier og en ingeniør alle får anstendig betalt for arbeidet sitt."
+            "content": "I Norge er om lag 65 prosent av alle arbeidstakere dekket av en tariffavtale (Ese, 2025). I offentlig sektor er så godt som alle dekket, mens andelen i privat sektor er en god del lavere. Det er høyt sammenlignet med mange andre land, og det er en viktig grunn til at norske lønninger er høye og forskjellene mellom folk er relativt små. Tariffavtalene sikrer at en renholder, en sykepleier og en ingeniør alle får anstendig betalt for arbeidet sitt."
         },
         {
             "type": "text",
-            "content": "Tariffavtalene varer som regel i to år. Når avtalen løper ut, starter nye forhandlinger. Partene møtes, legger frem sine krav, og prøver å bli enige. Denne prosessen kalles tariffoppgjør, og den skjer hver vår. Hele den norske arbeidslivsmodellen bygger på at partene klarer å bli enige gjennom forhandlinger fremfor konflikter."
+            "content": "Tariffavtalene gjelder for en avtalt periode. Når perioden løper ut, starter nye forhandlinger. Partene møtes, legger frem sine krav, og prøver å bli enige. Denne prosessen kalles tariffoppgjør, og den skjer om våren. Hele den norske arbeidslivsmodellen bygger på at partene klarer å bli enige gjennom forhandlinger fremfor konflikter."
         },
         {
             "type": "header",
@@ -86,7 +86,7 @@
         },
         {
             "type": "text",
-            "content": "Streik er ikke noe du bare kan gjøre når du vil. Det finnes strenge regler. Du kan bare streike lovlig når tariffavtalen er utløpt og mekling hos Riksmekleren er forsøkt uten resultat. Mekleren er en uavhengig person oppnevnt av staten, som prøver å finne en løsning begge parter kan leve med. Bare hvis meklingen mislykkes, kan streiken starte."
+            "content": "Streik er ikke noe du bare kan gjøre når du vil. Så lenge en tariffavtale gjelder, har partene fredsplikt. Du kan bare streike lovlig når avtalen er utløpt, partene har forhandlet, og mekling hos Riksmekleren er forsøkt uten resultat (Gisle et al., 2024). Mekleren er en uavhengig person oppnevnt av staten, som prøver å finne en løsning begge parter kan leve med. Bare hvis meklingen mislykkes, kan streiken starte."
         },
         {
             "type": "text",
@@ -94,7 +94,7 @@
         },
         {
             "type": "text",
-            "content": "I noen tilfeller griper regjeringen inn med tvungen lønnsnemnd. Det betyr at staten bestemmer løsningen i stedet for partene. Dette skjer bare når en streik truer liv og helse, for eksempel hvis sykehusansatte eller brannfolk streiker. Det er kontroversielt fordi det tar bort retten til å streike, som regnes som en grunnleggende menneskerettighet."
+            "content": "I noen tilfeller griper regjeringen inn med tvungen lønnsnemnd. Det betyr at Rikslønnsnemnda avgjør saken i stedet for partene. Etter loven skal det bare skje når konflikten truer liv, helse eller personlig sikkerhet, for eksempel hvis sykehusansatte eller brannfolk streiker. Det er likevel omstridt, fordi det tar bort retten til å streike - og Norge har blitt kritisert av Den internasjonale arbeidsorganisasjonen (ILO) for å bruke virkemidlet oftere enn de strenge vilkårene tilsier (Alsos, 2023)."
         },
         {
             "type": "header",
@@ -106,7 +106,7 @@
         },
         {
             "type": "text",
-            "content": "Barn og ungdom har ekstra beskyttelse i arbeidslivet. Loven setter klare grenser for hvor mye du kan jobbe, når du kan jobbe, og hva slags arbeid du kan gjøre. Grunnen er enkel: skole og fritid skal komme først. Arbeid skal ikke gå utover helsen din eller utviklingen din."
+            "content": "Barn og ungdom har ekstra beskyttelse i arbeidslivet. Loven setter klare grenser for hvor mye du kan jobbe, når du kan jobbe, og hva slags arbeid du kan gjøre (Arbeidstilsynet, u.å.-b). Grunnen er enkel: skole og fritid skal komme først. Arbeid skal ikke gå utover helsen din eller utviklingen din."
         },
         {
             "type": "component",
@@ -115,7 +115,7 @@
                 "title": "Dine rettigheter som ung arbeidstaker",
                 "items": [
                     "Under 15 år: Du kan bare jobbe med lett arbeid, maks 2 timer per skoledag",
-                    "15-17 år: Du kan jobbe inntil 8 timer per dag, men ikke etter kl. 23",
+                    "15-17 år: Du kan jobbe inntil 8 timer per dag og 40 timer i uka, og skal som hovedregel ha fri mellom kl. 21 og kl. 06",
                     "Alle under 18: Du har krav på minst 30 minutters pause hvis du jobber mer enn 4,5 timer",
                     "Alle under 18: Farlig arbeid (maskiner, kjemikalier, høyder) er forbudt",
                     "Alle aldre: Du kan aldri tvinges til å jobbe gratis - det er ulovlig"
@@ -153,12 +153,12 @@
                     },
                     {
                         "label": "Sykepenger",
-                        "left": "100% lønn fra dag 1, opptil 1 år",
+                        "left": "100% lønn fra dag 1 (opptil 6G), i inntil 52 uker",
                         "right": "Ingen nasjonal sykelønnsordning"
                     },
                     {
                         "label": "Foreldrepermisjon",
-                        "left": "49 uker med full lønn (eller 59 uker med 80%)",
+                        "left": "49 uker med full lønn (eller 61 uker og 1 dag med 80%)",
                         "right": "12 uker ubetalt permisjon"
                     },
                     {
@@ -176,11 +176,11 @@
         },
         {
             "type": "text",
-            "content": "Forskjellene er slående. I USA har arbeidstakere null lovfestede feriedager. Det betyr at arbeidsgiveren selv bestemmer om du får ferie i det hele tatt - og mange lavtlønnede amerikanere får ingen betalt ferie. Hvis du blir syk i USA og ikke har privat forsikring, kan du ende opp med enorme sykehusregninger og miste jobben din på kjøpet."
+            "content": "Forskjellene er slående. Amerikansk føderal lov krever ikke at arbeidsgiveren betaler for tid som ikke jobbes - verken ferie, helligdager eller sykedager (U.S. Department of Labor, u.å.-b). Den føderale minstelønnen har dessuten stått stille på 7,25 dollar i timen siden 2009 (U.S. Department of Labor, u.å.-a). I Norge får en ansatt full lønn under sykdom: arbeidsgiveren betaler de første 16 dagene, og deretter dekker NAV opptil seks ganger folketrygdens grunnbeløp i inntil 52 uker (NAV, 2026). Forskjellen er like stor når et barn blir født. Norske foreldre kan dele 49 uker med full lønn, eller 61 uker og 1 dag med 80 prosent (NAV, u.å.), mens amerikansk lov bare gir rett til 12 uker ubetalt permisjon (U.S. Department of Labor, 2026)."
         },
         {
             "type": "text",
-            "content": "Men det er ikke bare USA som skiller seg fra Norge. I mange utviklingsland jobber barn i fabrikker og gruver. Fagforeninger er forbudt i flere autoritære land. Og selv i Europa varierer rettighetene mye. I Storbritannia etter Brexit har regjeringen fjernet flere arbeidstakerrettigheter som fulgte av EU-medlemskapet."
+            "content": "Men det er ikke bare USA som skiller seg fra Norge. I store deler av verden er barnearbeid fortsatt vanlig: 160 millioner barn var i barnearbeid i 2020, og sju av ti av dem jobbet i jordbruket (ILO & UNICEF, 2021). Rettighetene varierer mye fra land til land, også innenfor Europa."
         },
         {
             "type": "text",
@@ -240,7 +240,29 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Alsos, K. (2023). *Tvungen lønnsnemnd*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/tvungen_lønnsnemnd](https://snl.no/tvungen_l%C3%B8nnsnemnd)",
+                    "Arbeidstilsynet. (u.å.-a). *Arbeidstid*. Hentet 05.08.2026 fra [arbeidstilsynet.no](https://www.arbeidstilsynet.no/arbeidsforhold/arbeidstid/)",
+                    "Arbeidstilsynet. (u.å.-b). *Arbeidstid for personer under 18 år*. Hentet 05.08.2026 fra [arbeidstilsynet.no](https://www.arbeidstilsynet.no/arbeidsforhold/tilrettelegging/ungdom-i-arbeid/arbeidstid-for-personer-under-18-ar/)",
+                    "Arbeidstilsynet. (u.å.-c). *Ferie*. Hentet 05.08.2026 fra [arbeidstilsynet.no](https://www.arbeidstilsynet.no/arbeidsforhold/ferie/)",
+                    "Ese, E. (2025). *Fremtidig næringsstruktur og organisasjonsgrad*. NHO. Hentet 05.08.2026 fra [nho.no](https://www.nho.no/analyse/tema-okonomisk-overblikk/fremtidig-naringsstruktur-og-organisasjonsgrad/)",
+                    "Gisle, J., Agøy, N. I. & Jakhelln, H. (2024). *Streik*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/streik](https://snl.no/streik)",
+                    "Gisle, J., Jakhelln, H. & Stokke, T. A. (2025). *Arbeidsmiljøloven*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/arbeidsmiljøloven](https://snl.no/arbeidsmilj%C3%B8loven)",
+                    "ILO & UNICEF. (2021). *Child labour: Global estimates 2020, trends and the road forward*. Den internasjonale arbeidsorganisasjonen og UNICEF. Hentet 05.08.2026 fra [ilo.org](https://www.ilo.org/resource/news/child-labour-rises-160-million-first-increase-two-decades)",
+                    "NAV. (2026). *Sykepenger*. Arbeids- og velferdsetaten. Hentet 05.08.2026 fra [nav.no/sykepenger](https://www.nav.no/sykepenger)",
+                    "NAV. (u.å.). *Foreldrepenger*. Arbeids- og velferdsetaten. Hentet 05.08.2026 fra [nav.no/foreldrepenger](https://www.nav.no/foreldrepenger)",
+                    "U.S. Department of Labor. (2026). *Family and Medical Leave Act*. Wage and Hour Division. Hentet 05.08.2026 fra [dol.gov](https://www.dol.gov/agencies/whd/fmla)",
+                    "U.S. Department of Labor. (u.å.-a). *Minimum Wage*. Wage and Hour Division. Hentet 05.08.2026 fra [dol.gov](https://www.dol.gov/agencies/whd/minimum-wage)",
+                    "U.S. Department of Labor. (u.å.-b). *Vacation Leave*. Hentet 05.08.2026 fra [dol.gov](https://www.dol.gov/general/topic/workhours/vacation_leave)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-05"
 }

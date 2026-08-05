@@ -35,7 +35,7 @@
         },
         {
             "type": "text",
-            "content": "I Norge anslår forskere at rundt en tredjedel av alle jobber kan bli sterkt påvirket av automatisering i løpet av de neste tjue årene. Det betyr ikke at alle disse jobbene forsvinner helt. Mange vil bli forandret. En regnskapsfører bruker allerede programmer som gjør mye av jobben automatisk. En lege kan bruke AI til å lese røntgenbilder raskere. Jobben forsvinner ikke, men den ser helt annerledes ut enn før."
+            "content": "I Norge er det særlig yrker med mange rutinepregede oppgaver som er utsatt. SSB har undersøkt hvor mye av arbeidsdagen som styres av faste prosedyrer, og fant at 53 prosent av dem med videregående som høyeste utdanning har en arbeidsdag med mye prosedyrestyrte oppgaver - mot 48 prosent blant dem med kortere og lengre utdanning (Baumann, 2023). Kontoryrker og en del håndverksyrker er blant dem som peker seg ut. Det betyr ikke at disse jobbene forsvinner helt. Mange vil bli forandret. En regnskapsfører bruker allerede programmer som gjør mye av jobben automatisk. En lege kan bruke AI til å lese røntgenbilder raskere. Jobben forsvinner ikke, men den ser helt annerledes ut enn før."
         },
         {
             "type": "component",
@@ -63,20 +63,20 @@
         },
         {
             "type": "text",
-            "content": "Gig-arbeidere er nemlig ikke ansatte. De regnes som selvstendig næringsdrivende. Det betyr at de ikke har krav på sykepenger, feriepenger, pensjon eller vern mot usaklig oppsigelse. Hvis en matleverandør på sykkel blir syk en uke, tjener hen ingenting. Hvis plattformen plutselig endrer reglene eller senker betalingen, har gig-arbeideren ingen fagforening å henvende seg til."
+            "content": "Gig-arbeidere er nemlig som regel ikke ansatte. De regnes som selvstendig næringsdrivende eller frilansere. Det betyr at de ikke har feriepenger, tjenestepensjon fra en arbeidsgiver eller vern mot usaklig oppsigelse. Sykepenger får de først fra dag 17, og bare med 80 prosent dekning, mens en fast ansatt får full lønn fra første sykedag (NAV, 2026). Hvis en matleverandør på sykkel blir syk en uke, tjener hen altså ingenting. Hvis plattformen plutselig endrer reglene eller senker betalingen, har gig-arbeideren ingen fagforening å henvende seg til."
         },
         {
             "type": "list",
             "items": [
                 "Fast ansatt: Har rett til sykepenger, ferie, pensjon og vern mot usaklig oppsigelse",
-                "Gig-arbeider: Har som regel ingen av disse rettighetene",
+                "Gig-arbeider: Får sykepenger først fra dag 17, og mangler feriepenger, tjenestepensjon og oppsigelsesvern",
                 "Fast ansatt: Fagforeningen forhandler lønn og vilkår",
                 "Gig-arbeider: Plattformen setter prisene, ofte uten forhandling"
             ]
         },
         {
             "type": "text",
-            "content": "I flere land har det oppstått konflikter rundt dette. Er sjåfører for Uber virkelig selvstendig næringsdrivende, eller er de i praksis ansatte som burde ha vanlige rettigheter? EU har vedtatt nye regler som sier at mange plattformarbeidere skal regnes som ansatte. Norge diskuterer det samme. Svaret har store konsekvenser for millioner av mennesker."
+            "content": "I flere land har det oppstått konflikter rundt dette. Er sjåfører for Uber virkelig selvstendig næringsdrivende, eller er de i praksis ansatte som burde ha vanlige rettigheter? EU vedtok i 2024 et eget plattformdirektiv. Det slår fast at forholdet skal regnes som et ansettelsesforhold når plattformen i praksis styrer og kontrollerer arbeidet - og da er det plattformen som må bevise at personen likevel ikke er ansatt (Europalov, 2026). Norge diskuterer det samme. Svaret har store konsekvenser for millioner av mennesker."
         },
         {
             "type": "text",
@@ -92,11 +92,11 @@
         },
         {
             "type": "text",
-            "content": "I dag tilbyr mange norske bedrifter en hybrid løsning: noen dager på kontoret, noen dager hjemmefra. Det høres enkelt ut, men det skaper nye spørsmål. Hvem betaler for kontorstolen hjemme? Kan sjefen kreve at du er tilgjengelig på Teams klokken åtte om kvelden? Hva skjer med arbeidsmiljøet når kollegene bare sees på skjerm?"
+            "content": "I dag tilbyr mange norske bedrifter en hybrid løsning: noen dager på kontoret, noen dager hjemmefra. Det høres enkelt ut, men det skaper nye spørsmål. Hvem betaler for kontorstolen hjemme? Kan sjefen kreve at du er tilgjengelig på Teams klokken åtte om kvelden? Hva skjer med arbeidsmiljøet når kollegene bare sees på skjerm? I Norge finnes det egne regler: når hjemmekontor er en fast ordning, må arbeidsgiver og ansatt inngå en skriftlig avtale om omfang, arbeidstid og hvem som eier og vedlikeholder utstyret (Arbeidstilsynet, u.å.)."
         },
         {
             "type": "text",
-            "content": "Fagforeningene har måttet tilpasse seg raskt. Arbeidsmiljøloven ble laget for en tid da alle møtte opp på samme arbeidsplass. Nå forhandler tillitsvalgte om rett til hjemmekontor, digitale verktøy og grenser mellom jobb og fritid. I Frankrike har arbeidstakere fått lovfestet rett til å koble av - sjefen kan ikke forvente svar på meldinger etter arbeidstid. Flere land vurderer lignende regler."
+            "content": "Fagforeningene har måttet tilpasse seg raskt. Arbeidsmiljøloven ble laget for en tid da alle møtte opp på samme arbeidsplass. Nå forhandler tillitsvalgte om rett til hjemmekontor, digitale verktøy og grenser mellom jobb og fritid. Frankrike var det første landet i Europa som lovfestet en rett til å koble av, med virkning fra 1. januar 2017. Loven forbyr ikke sjefen å sende meldinger, men den pålegger bedrifter med mer enn 50 ansatte å forhandle fram en avtale med fagforeningene om hvordan de ansatte skal få koble av (Eurofound, 2023). Flere land har siden fått lignende regler."
         },
         {
             "type": "text",
@@ -116,7 +116,7 @@
         },
         {
             "type": "text",
-            "content": "En utfordring er at organisasjonsgraden synker i deler av arbeidslivet. I industrien er fortsatt mange organisert, men i servicenæringen - der veksten er størst - er langt færre fagforeningsmedlemmer. Hvis for få arbeidstakere er organisert, mister frontfagmodellen grepet. Tariffavtalene dekker ikke dem som trenger det mest."
+            "content": "En utfordring er at organisasjonsgraden er ujevnt fordelt. I offentlig sektor er rundt 74 prosent organisert, mens andelen i privat sektor er snaut 40 prosent (Ese, 2025) - og det er i privat tjenesteyting veksten er størst. Hvis for få arbeidstakere er organisert, mister frontfagmodellen grepet. Tariffavtalene dekker ikke dem som trenger det mest."
         },
         {
             "type": "text",
@@ -167,7 +167,7 @@
                     },
                     {
                         "id": "gig",
-                        "text": "Du registrerer deg på flere plattformer og tar oppdrag i design, oversettelse og dataanalyse. Noen uker tjener du dobbelt av en fast ansatt. Andre uker er det tomt.\n\nDu har ingen sykepenger, ingen pensjon, ingen ferie. Når du blir syk en uke, tjener du ingenting. Du lurer på om friheten er verdt usikkerheten.\n\nNoen gig-arbeidere har begynt å organisere seg i nye typer fagforeninger tilpasset plattformøkonomien. Kanskje det er veien å gå?",
+                        "text": "Du registrerer deg på flere plattformer og tar oppdrag i design, oversettelse og dataanalyse. Noen uker tjener du dobbelt av en fast ansatt. Andre uker er det tomt.\n\nDu har ingen feriepenger og ingen tjenestepensjon, og sykepenger får du først fra dag 17. Når du blir syk en uke, tjener du ingenting. Du lurer på om friheten er verdt usikkerheten.\n\nNoen gig-arbeidere har begynt å organisere seg i nye typer fagforeninger tilpasset plattformøkonomien. Kanskje det er veien å gå?",
                         "options": []
                     },
                     {
@@ -189,7 +189,7 @@
         },
         {
             "type": "text",
-            "content": "Fagforeningene må finne måter å organisere gig-arbeidere og selvstendig næringsdrivende. Arbeidsgiverne må investere i ansattes utvikling i stedet for bare å erstatte dem med teknologi. Og staten må oppdatere lover og regler som ble skrevet for en annen tid. Arbeidsmiljøloven fra 1977 ble laget lenge før noen hadde hørt om AI eller plattformøkonomi."
+            "content": "Fagforeningene må finne måter å organisere gig-arbeidere og selvstendig næringsdrivende. Arbeidsgiverne må investere i ansattes utvikling i stedet for bare å erstatte dem med teknologi. Og staten må oppdatere lover og regler som ble skrevet for en annen tid. Den første arbeidsmiljøloven kom i 1977, og dagens lov ble skrevet i 2005 - lenge før noen hadde hørt om AI-chatboter eller plattformøkonomi (Gisle et al., 2025)."
         },
         {
             "type": "text",
@@ -201,7 +201,7 @@
             "props": {
                 "forstaa": [
                     "Hva betyr gig-økonomi, og hvordan får gig-arbeiderne oppdragene sine?",
-                    "Hvor stor andel av alle jobber i Norge tror forskere kan bli sterkt påvirket av automatisering de neste tjue årene?",
+                    "Hvilke yrker er ifølge teksten mest utsatt for automatisering, og hvor stor andel av dem med videregående utdanning har en arbeidsdag med mye prosedyrestyrte oppgaver?",
                     "Nevn tre rettigheter en fast ansatt har, som en gig-arbeider som regel mangler.",
                     "Hvordan fungerer frontfagmodellen? Hvem forhandler først om lønn, og hva bestemmer denne forhandlingen?"
                 ],
@@ -246,12 +246,12 @@
                     {
                         "question": "Hva mangler gig-arbeidere ofte sammenlignet med fast ansatte?",
                         "options": [
-                            "Sykepenger, pensjon og feriepenger",
+                            "Feriepenger, tjenestepensjon og oppsigelsesvern",
                             "Tilgang til internett",
                             "Mulighet til å jobbe hjemmefra",
                             "Rett til å bytte jobb"
                         ],
-                        "answer": "Sykepenger, pensjon og feriepenger"
+                        "answer": "Feriepenger, tjenestepensjon og oppsigelsesvern"
                     },
                     {
                         "question": "Hva er den viktigste ferdigheten i fremtidens arbeidsliv ifølge mange eksperter?",
@@ -265,7 +265,23 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Arbeidstilsynet. (u.å.). *Hjemmekontor*. Hentet 05.08.2026 fra [arbeidstilsynet.no](https://www.arbeidstilsynet.no/lonn-og-ansettelse/ansettelse/heimekontor/)",
+                    "Baumann, S. H. (2023). *Stor grad av selvbestemmelse i norsk arbeidsliv*. Statistisk sentralbyrå. Hentet 05.08.2026 fra [ssb.no](https://www.ssb.no/arbeid-og-lonn/sysselsetting/statistikk/arbeidskraftundersokelsen/artikler/stor-grad-av-selvbestemmelse-i-norsk-arbeidsliv)",
+                    "Ese, E. (2025). *Fremtidig næringsstruktur og organisasjonsgrad*. NHO. Hentet 05.08.2026 fra [nho.no](https://www.nho.no/analyse/tema-okonomisk-overblikk/fremtidig-naringsstruktur-og-organisasjonsgrad/)",
+                    "Eurofound. (2023). *Right to disconnect: Implementation and impact at company level*. Publications Office of the European Union. Hentet 05.08.2026 fra [eurofound.europa.eu](https://www.eurofound.europa.eu/en/publications/all/right-disconnect-implementation-and-impact-company-level)",
+                    "Europalov. (2026). *Plattformdirektivet: forbedring av arbeidsvilkår for personer som arbeider via digitale plattformer*. Hentet 05.08.2026 fra [europalov.no](https://europalov.no/rettsakt/plattformdirektivet-forbedring-av-arbeidsvilkar-for-personer-som-arbeider-digitale-plattformer/id-29704)",
+                    "Gisle, J., Jakhelln, H. & Stokke, T. A. (2025). *Arbeidsmiljøloven*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/arbeidsmiljøloven](https://snl.no/arbeidsmilj%C3%B8loven)",
+                    "NAV. (2026). *Sykepenger*. Arbeids- og velferdsetaten. Hentet 05.08.2026 fra [nav.no/sykepenger](https://www.nav.no/sykepenger)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-05"
 }

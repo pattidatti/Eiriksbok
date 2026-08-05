@@ -47,19 +47,19 @@
         },
         {
             "type": "text",
-            "content": "Den første som virkelig organiserte norske arbeidere, var [Marcus Thrane](/persongalleri/marcus-thrane). I 1848 - det samme året som revolusjoner feide over Europa - startet han det som ble kjent som thranitterbevegelsen. Thrane var journalist og hadde sett hvordan vanlige folk ble behandlet. Han mente at arbeidsfolk fortjente en stemme i samfunnet."
+            "content": "Den første som virkelig organiserte norske arbeidere, var [Marcus Thrane](/persongalleri/marcus-thrane). I 1848 - det samme året som revolusjoner feide over Europa - stiftet han Drammens Arbeiderforening, starten på det som ble kjent som thranitterbevegelsen (Pryser & Ringvej, 2025). Thrane hadde vært lærer og ble redaktør for foreningenes eget blad. Han mente at arbeidsfolk fortjente en stemme i samfunnet."
         },
         {
             "type": "text",
-            "content": "Thrane reiste rundt i Norge og holdt møter. Han opprettet arbeiderforeninger i by etter by. I løpet av bare to år hadde bevegelsen over 30 000 medlemmer. Det var et enormt tall for et land med bare halvannen million innbyggere. Foreningene krevde bedre skoler, allmenn stemmerett og rettferdig fordeling av jord."
+            "content": "Thrane reiste rundt i Norge og holdt møter. Han opprettet arbeiderforeninger i by etter by. På det meste hadde bevegelsen mellom 25 000 og 30 000 medlemmer, fordelt på rundt 400 lokale foreninger (Pryser & Ringvej, 2025). Det var et enormt tall for et land med bare halvannen million innbyggere. Foreningene krevde blant annet allmenn stemmerett for menn, bedre skoler og bedre vilkår for husmennene."
         },
         {
             "type": "text",
-            "content": "Men myndighetene ble skremt. I 1851 ble Thrane arrestert sammen med over hundre andre ledere. Han satt i fengsel i åtte år. Bevegelsen ble knust. Likevel hadde Thrane vist noe viktig: Vanlige folk kunne organisere seg og stille krav. Frøet var sådd."
+            "content": "Men myndighetene ble skremt. Thrane ble arrestert i juli 1851, og til sammen tilbrakte han sju år i fengsel før han slapp ut i 1858 (Pryser & Ringvej, 2025). Bevegelsen ble knust. Likevel hadde Thrane vist noe viktig: Vanlige folk kunne organisere seg og stille krav. Frøet var sådd."
         },
         {
             "type": "text",
-            "content": "Etter thranitterbevegelsen tok det tid før nye organisasjoner vokste fram. I 1872 ble Den typografiske forening stiftet, Norges første egentlige fagforening. Den organiserte trykkeriarbeidere som krevde faste lønnsvilkår. I årene som fulgte, dukket det opp fagforeninger i bransje etter bransje: jernarbeidere, skoarbeidere, sjømenn og bygningsarbeidere fant sammen."
+            "content": "Etter thranitterbevegelsen tok det tid før varige organisasjoner vokste fram. Den eldste norske fagforeningen er Norges Farmaceutiske forening, som ble stiftet 2. november 1858. Typografene var også tidlig ute: de organiserte seg fjorten år senere, og typografstreiken i 1889 regnes som den første organiserte streiken i Norge (Gisle et al., 2026b). I årene som fulgte, dukket det opp fagforeninger i bransje etter bransje: jernarbeidere, skoarbeidere, sjømenn og bygningsarbeidere fant sammen."
         },
         {
             "type": "component",
@@ -119,7 +119,7 @@
         },
         {
             "type": "text",
-            "content": "I 1899 ble Landsorganisasjonen i Norge - LO - stiftet. For første gang hadde norske arbeidere en felles, nasjonal stemme. LO kunne koordinere streiker på tvers av bransjer, forhandle med arbeidsgiverne som en samlet front, og påvirke politikken. Samme år svarte arbeidsgiverne med å stifte sin egen organisasjon: Norsk Arbeidsgiverforening, som senere ble til NHO."
+            "content": "1. april 1899 ble Landsorganisasjonen i Norge - LO - stiftet (Gisle, 2026c). For første gang hadde norske arbeidere en felles, nasjonal stemme. LO kunne koordinere streiker på tvers av bransjer, forhandle med arbeidsgiverne som en samlet front, og påvirke politikken. Året etter, i 1900, svarte arbeidsgiverne med å stifte sin egen organisasjon: Norsk Arbeidsgiverforening, som i 1989 slo seg sammen med to andre forbund og ble til NHO (Gisle, 2025)."
         },
         {
             "type": "text",
@@ -127,7 +127,7 @@
         },
         {
             "type": "text",
-            "content": "Gradvis vant arbeiderbevegelsen viktige seire. I 1915 fikk Norge en lov om ti timers arbeidsdag. I 1919 ble åtte timers arbeidsdag lovfestet - en milepæl som fagforeningene hadde kjempet for i flere tiår. Retten til å organisere seg ble anerkjent, og tariffavtaler - avtaler mellom fagforeninger og arbeidsgivere om lønn og arbeidsvilkår - ble det normale."
+            "content": "Gradvis vant arbeiderbevegelsen viktige seire. I 1915 ble normalarbeidstiden satt til 54 timer i uka, og i 1919 ble den kuttet til 48 timer - åttetimersdagen som fagforeningene hadde kjempet for i flere tiår (Gisle et al., 2026a). Retten til å organisere seg ble anerkjent, og tariffavtaler - avtaler mellom fagforeninger og arbeidsgivere om lønn og arbeidsvilkår - ble det normale."
         },
         {
             "type": "component",
@@ -136,7 +136,7 @@
                 "compact": true,
                 "events": [
                     { "year": 1848, "title": "Thranitterbevegelsen", "description": "Norges første arbeiderforening stiftes" },
-                    { "year": 1872, "title": "Den typografiske forening", "description": "Norges første fagforening" },
+                    { "year": 1858, "title": "Norges Farmaceutiske forening", "description": "Den eldste norske fagforeningen" },
                     { "year": 1899, "title": "LO grunnlagt", "description": "Landsorganisasjonen i Norge stiftes" },
                     { "year": 1935, "title": "Hovedavtalen", "description": "Arbeidslivets grunnlov inngås" },
                     { "year": 1977, "title": "Arbeidsmiljøloven", "description": "Sterkere vern av arbeidstakere" }
@@ -149,11 +149,11 @@
         },
         {
             "type": "text",
-            "content": "1920- og 1930-tallet var en urolig tid i Norge. Økonomiske kriser herjet, arbeidsledigheten var høy, og konflikten mellom arbeidere og arbeidsgivere var bitter. Menstad-slaget i 1931 - der streikende arbeidere og politi støtte sammen i voldelige kamper - viste at Norge sto ved et veiskille. Ville konflikten fortsette å eskalere, eller fantes det en annen vei?"
+            "content": "1920- og 1930-tallet var en urolig tid i Norge. Økonomiske kriser herjet, arbeidsledigheten var høy, og konflikten mellom arbeidere og arbeidsgivere var bitter. Menstadslaget i 1931 - der rundt 2000 demonstrerende arbeidere og politiet støtte sammen under den store arbeidskonflikten det året - viste at Norge sto ved et veiskille (Dørum, 2024). Ville konflikten fortsette å eskalere, eller fantes det en annen vei?"
         },
         {
             "type": "text",
-            "content": "Svaret kom i 1935, da LO og Norsk Arbeidsgiverforening undertegnet Hovedavtalen. Denne avtalen blir ofte kalt arbeidslivets grunnlov, og det er ikke uten grunn. For første gang ble det slått fast klare regler for hvordan arbeidere og arbeidsgivere skulle forholde seg til hverandre. Begge sider anerkjente hverandres rett til å organisere seg. De ble enige om fredelige forhandlinger som førstevalg, med streik og lockout bare som siste utvei."
+            "content": "Svaret kom i 1935, da LO og Norsk Arbeidsgiverforening undertegnet den første Hovedavtalen (Alsos & Jakhelln, 2026). Denne avtalen blir ofte kalt arbeidslivets grunnlov, og det er ikke uten grunn. For første gang ble det slått fast klare regler for hvordan arbeidere og arbeidsgivere skulle forholde seg til hverandre: organisasjonsrett, fredsplikt, forhandlinger og retten til å ha tillitsvalgte. Begge sider anerkjente hverandres rett til å organisere seg, og fredelige forhandlinger ble førstevalget, med streik og lockout bare som siste utvei."
         },
         {
             "type": "text",
@@ -161,7 +161,7 @@
         },
         {
             "type": "text",
-            "content": "Det samme året - 1935 - inngikk Arbeiderpartiet og Bondepartiet det berømte kriseforliket i Stortinget. Disse to hendelsene - Hovedavtalen og kriseforliket - forandret Norge. Konfrontasjon ble erstattet av samarbeid, og grunnlaget for den moderne velferdsstaten ble lagt."
+            "content": "Det samme året - i mars 1935 - inngikk Arbeiderpartiet og Bondepartiet det berømte kriseforliket, som gjorde det mulig å danne Nygaardsvold-regjeringen (Dørum & Tvedt, 2024). Disse to hendelsene - Hovedavtalen og kriseforliket - forandret Norge. Konfrontasjon ble erstattet av samarbeid, og grunnlaget for den moderne velferdsstaten ble lagt."
         },
         {
             "type": "header",
@@ -169,7 +169,7 @@
         },
         {
             "type": "text",
-            "content": "I dag er omtrent halvparten av alle norske arbeidstakere medlem av en fagforening. LO er fortsatt den største, med rundt 980 000 medlemmer, men det finnes også andre store sammenslutninger som Unio, YS og Akademikerne. Til sammen dekker de alt fra industriarbeidere og lærere til sykepleiere og ingeniører."
+            "content": "I dag er omtrent halvparten av alle norske arbeidstakere medlem av en fagforening; organisasjonsgraden ble beregnet til 50,5 prosent i 2023 (Ese, 2025). LO er fortsatt den største, med rundt en million medlemmer (Gisle, 2026c), men det finnes også andre store sammenslutninger som Unio, YS og Akademikerne. Til sammen dekker de alt fra industriarbeidere og lærere til sykepleiere og ingeniører."
         },
         {
             "type": "text",
@@ -203,7 +203,7 @@
                 "forstaa": [
                     "Hvor mange timer om dagen og hvor mange dager i uken jobbet en vanlig industriarbeider rundt 1850?",
                     "Hvem var Marcus Thrane, og hva startet han i 1848?",
-                    "Hva het Norges første egentlige fagforening, og i hvilket år ble den stiftet?",
+                    "Hva het den eldste norske fagforeningen, og i hvilket år ble den stiftet?",
                     "Hvilket år ble LO grunnlagt, og hva står forkortelsen LO for?"
                 ],
                 "reflekter": [
@@ -246,7 +246,25 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Alsos, K. & Jakhelln, H. (2026). *Hovedavtale*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/hovedavtale](https://snl.no/hovedavtale)",
+                    "Dørum, K. (2024). *Menstadslaget*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Menstadslaget](https://snl.no/Menstadslaget)",
+                    "Dørum, K. & Tvedt, K. A. (2024). *Kriseforliket*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/kriseforliket](https://snl.no/kriseforliket)",
+                    "Ese, E. (2025). *Fremtidig næringsstruktur og organisasjonsgrad*. NHO. Hentet 05.08.2026 fra [nho.no](https://www.nho.no/analyse/tema-okonomisk-overblikk/fremtidig-naringsstruktur-og-organisasjonsgrad/)",
+                    "Gisle, J. (2025). *Norsk Arbeidsgiverforening*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Norsk_Arbeidsgiverforening](https://snl.no/Norsk_Arbeidsgiverforening)",
+                    "Gisle, J., Stoltz, G. & Stokke, T. A. (2026a). *Arbeidstid*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/arbeidstid](https://snl.no/arbeidstid)",
+                    "Gisle, J., Stokke, T. A. & Thingsaker, B. (2026b). *Fagforening*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/fagforening](https://snl.no/fagforening)",
+                    "Gisle, J. (2026c). *LO - Landsorganisasjonen i Norge*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/LO_-_Landsorganisasjonen_i_Norge](https://snl.no/LO_-_Landsorganisasjonen_i_Norge)",
+                    "Pryser, T. & Ringvej, M. (2025). *Marcus Thrane*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Marcus_Thrane](https://snl.no/Marcus_Thrane)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-05"
 }
