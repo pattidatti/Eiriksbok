@@ -15,15 +15,15 @@
     "content": [
         {
             "type": "text",
-            "value": "En befolkningspyramide er ikke bare statistikk; det er summen av millioner av menneskelige valg og skjebner. Hver søyle i diagrammet forteller en historie om hvem som ble født, hvem som flyttet, og hvem som døde."
+            "content": "En befolkningspyramide er ikke bare statistikk. Diagrammet viser folkemengden fordelt på kjønn og alder, og gjør det lett å se hvilke årskull som er små og hvilke som er store (Tønnessen, 2023). Hver søyle forteller en historie om hvem som ble født, hvem som flyttet, og hvem som døde."
         },
         {
             "type": "header",
-            "value": "De 5 Formene: Fra Kaos til Orden"
+            "text": "De fem formene: fra bred base til smal base"
         },
         {
             "type": "text",
-            "value": "Verdens land kan grovt sett deles inn i fem former, som nøye følger den demografiske overgangen (DTM). Ved å se på formen, kan du umiddelbart si hvor utviklet et land er."
+            "content": "Verdens land kan grovt sett deles inn i noen få grunnformer, og formene følger den demografiske overgangen. Den overgangen beskrives vanligvis i fire faser, men forskere har også foreslått en femte fase der fruktbarheten er lavere enn dødeligheten (Tønnessen, 2024a). Ser du på formen, kan du raskt danne deg et bilde av hvor i denne utviklingen landet befinner seg."
         },
         {
             "type": "component",
@@ -31,56 +31,80 @@
         },
         {
             "type": "header",
-            "value": "Fase 1: Den Konkave Pyramiden (Historisk)"
+            "text": "Fase 1: den konkave pyramiden (historisk)"
         },
         {
             "type": "text",
-            "value": "Denne formen finnes nesten ikke lenger i dagens verden, unntatt hos isolerte stammefolk i Amazonas. Den har en ekstremt bred base (svært mange barn blir født), men sidene buer bratt innover fordi dødeligheten er så høy i alle aldre. Livet er hardt og kort."
+            "content": "Denne formen finnes praktisk talt ikke i verden i dag. Basen er ekstremt bred fordi det fødes svært mange barn, men sidene buer bratt innover fordi dødeligheten er høy i alle aldre. Slik var det i Norge fram til 1800-tallet, da både dødeligheten og fruktbarheten lå høyt (Tønnessen, 2024a). Livet var hardt og kort."
         },
         {
             "type": "header",
-            "value": "Fase 2: Den Ekte Pyramiden (Ekspansiv)"
+            "text": "Fase 2: den ekte pyramiden (ekspansiv)"
         },
         {
             "type": "text",
-            "value": "**Eksempel: Niger eller Angola.**\n\nHer ser vi den klassiske trekantformen. Basen er bred fordi fødselsraten fortsatt er høy, men folk begynner å leve lenger enn i Fase 1.\n\n*   **Hva det betyr for samfunnet:** En enormt ung befolkning. Dette krever store investeringer i skoler og arbeidsplasser. Hvis staten feiler her, kan det føre til uro og arbeidsledighet."
+            "content": "Eksempel: Niger. Her ser vi den klassiske trekantformen. Basen er bred fordi fødselsraten fortsatt er høy - kvinner i Niger får i snitt 5,8 barn (FN-sambandet, 2021). Samtidig har dødeligheten falt, slik at langt flere barn vokser opp. Da fødes det mange flere enn det dør, og befolkningen vokser raskt (Tønnessen, 2024a)."
+        },
+        {
+            "type": "text",
+            "content": "Hva det betyr for samfunnet: en svært ung befolkning. Det krever store investeringer i skoler og arbeidsplasser. Klarer ikke staten å få det til, kan mange unge bli stående uten jobb."
         },
         {
             "type": "header",
-            "value": "Fase 3: Den Avrundede Pyramiden"
+            "text": "Fase 3: den avrundede pyramiden"
         },
         {
             "type": "text",
-            "value": "**Eksempel: India eller Mexico.**\n\nHer begynner basen å krympe litt, eller vokser i hvert fall ikke like raskt. Sidene blir rettere fordi flere lever opp til voksen alder. Landet er i rask økonomisk vekst, og kvinner får færre barn."
+            "content": "Eksempel: India. Her begynner basen å krympe, eller den vokser i hvert fall ikke like raskt lenger. Sidene blir rettere fordi flere lever opp til voksen alder, og kvinner velger å få færre barn: i India er fruktbarheten nede i 1,9 barn per kvinne (FN-sambandet, 2023). Folketallet fortsetter likevel å vokse en stund, men saktere enn før (Tønnessen, 2024a)."
         },
         {
             "type": "header",
-            "value": "Fase 4: Bikuben / Søylen (Stasjonær)"
+            "text": "Fase 4: bikuben eller søylen (stasjonær)"
         },
         {
             "type": "text",
-            "value": "**Eksempel: USA eller Norge.**\n\nNår fødselsraten er lav og dødsraten er lav, ser diagrammet nesten ut som en søyle eller en bikube. Hver aldersgruppe er omtrent like stor, frem til alderdommen.\n\n*   **Hva det betyr for samfunnet:** Stabilitet. Samfunnet er rikt og velutviklet, men veksten stopper opp."
+            "content": "Eksempel: Norge. Når både fødselsraten og dødsraten er lav, ser diagrammet nesten ut som en søyle eller en bikube. Aldersgruppene er omtrent like store, helt opp til alderdommen, og folketallet vokser lite (Tønnessen, 2024a). I Norge fikk hver kvinne i snitt 1,48 barn i 2025 (Statistisk sentralbyrå, 2026). Det er så lavt at Norge nærmer seg neste fase."
+        },
+        {
+            "type": "text",
+            "content": "Hva det betyr for samfunnet: stabilitet. Landet er rikt og velutviklet, men veksten stopper opp."
         },
         {
             "type": "header",
-            "value": "Fase 5: Urnen (Konstriktiv)"
+            "text": "Fase 5: urnen (konstriktiv)"
         },
         {
             "type": "text",
-            "value": "**Eksempel: Japan eller Italia.**\n\nDette er fremtidens store utfordring. Basen er smalere enn toppen – det fødes færre barn enn det finnes eldre. Pyramiden ser ut som en urne eller en kiste.\n\n*   **Hva det betyr for samfunnet:** Eldrebølge. Hvem skal jobbe og betale skatt for å støtte de mange pensjonistene? Dette kalles en høy *forsørgerbyrde*."
+            "content": "Eksempel: Japan og Italia. Dette er den foreslåtte femte fasen, der fruktbarheten er lavere enn dødeligheten. Basen blir smalere enn midten - det fødes færre barn enn det finnes eldre. Uten netto innvandring synker folketallet, og befolkningen aldres kraftig (Tønnessen, 2024a). I både Japan og Italia får kvinner i snitt bare 1,2 barn (FN-sambandet, 2022, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Hva det betyr for samfunnet: eldrebølge. Hvem skal jobbe og betale skatt for de mange pensjonistene? Dette kalles en høy forsørgerbyrde."
         },
         {
             "type": "info_box",
             "title": "Forsørgerbyrden",
-            "content": "Forsørgerbyrden er forholdet mellom de som jobber (15-64 år) og de som ikke jobber (barn og pensjonister). I Fase 2 er byrden mange barn. I Fase 5 er byrden mange eldre."
+            "content": "Forsørgerbyrde er forholdet mellom antall personer i aldre der det er vanlig å arbeide, og antall personer i aldre der det ikke er vanlig å arbeide. Ofte regnes de mellom 20 og 65 år som forsørgere, mens de under 20 og over 65 år blir forsørget (Tønnessen, 2024b). Målet er forenklet: ikke alle mellom 20 og 65 er i jobb, og noen jobber både før de fyller 20 og etter at de har fylt 65. I fase 2 er byrden mange barn. I fase 5 er byrden mange eldre."
         },
         {
             "type": "header",
-            "value": "Hvordan lese \"hakkene\" i diagrammet?"
+            "text": "Hvordan lese hakkene i diagrammet"
         },
         {
             "type": "text",
-            "value": "Hvis du ser nøye på en virkelig pyramide (sjekk gjerne data fra *populationpyramid.net*), vil du ofte se ujevne hakk inn eller ut.\n\n*   **Et innhugg i menn 20-30 år:** Kan tyde på en krig der soldater døde, eller stor utvandring av arbeidskraft.\n*   **En utbuling i 60-åringene:** Dette er \"Baby Boomers\" – generasjonen født like etter 2. verdenskrig da optimismen var stor."
+            "content": "Ser du nøye på en ekte befolkningspyramide, finner du ofte ujevne hakk inn eller ut. Hvert hakk er et spor etter noe som har skjedd."
+        },
+        {
+            "type": "list",
+            "items": [
+                "En utbuling: I 1946, året etter frigjøringen, ble det født 70 727 barn i Norge - det høyeste tallet noen gang (Østby, 1999). Så store årskull er lette å kjenne igjen i pyramiden.",
+                "Et innhugg: Gjennom 1930-årene falt fødselstallene i Norge år for år, i takt med de harde økonomiske tidene (Østby, 1999). Få fødsler gir en smal søyle som følger kullet oppover gjennom hele livet.",
+                "Et innhugg bare blant menn i enkelte årskull kan tyde på en krig der soldater døde, eller på at mange menn har reist ut av landet for å jobbe."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Store og små kull henger dessuten sammen. Et stort årskull har en tendens til å bli fulgt av et mindre, såkalte demografiske ekkovirkninger som setter spor i befolkningsstrukturen i mange tiår (Tønnessen, 2022)."
         },
         {
             "type": "component",
@@ -88,7 +112,7 @@
             "props": {
                 "forstaa": [
                     "Hvor mange grunnformer deler artikkelen verdens land inn i, og hva heter modellen de følger?",
-                    "Hvilke to land nevnes som eksempel på Fase 2, den ekte pyramiden med bred base?",
+                    "Hvilket land nevnes som eksempel på fase 2, og hvor mange barn får hver kvinne der i snitt?",
                     "Hva betyr det at basen er bred i en befolkningspyramide?",
                     "Hva kalles diagramformen i Fase 5, og hvilke to land nevnes som eksempel på den?"
                 ],
@@ -96,12 +120,30 @@
                     "Forklar hvorfor sidene på den konkave pyramiden i Fase 1 buer bratt innover. Hva sier det om livet i et slikt samfunn?",
                     "Hvorfor er en enormt ung befolkning (Fase 2) både en mulighet og en fare for et land? Hva må staten få til for at det skal gå bra?",
                     "Hva menes med forsørgerbyrde, og hvorfor er byrden mange barn i Fase 2, men mange eldre i Fase 5?",
-                    "Hvis du ser et tydelig innhugg blant menn i alderen 20-30 år i en pyramide, hva kan ha skjedd i landet? Nevn minst to mulige forklaringer."
+                    "Hvis du ser et tydelig innhugg blant menn i noen årskull i en pyramide, hva kan ha skjedd i landet? Nevn minst to mulige forklaringer."
                 ],
                 "gaaVidere": [
                     "Norge er nevnt som et Fase 4-land (bikube/søyle). Skriv en kort tekst (5-8 setninger) om hva slags utfordringer Norge kan møte de neste tiårene hvis vi beveger oss mot Fase 5.",
                     "Gå sammen med en partner. Den ene forklarer hvorfor Japan har en urneformet pyramide, den andre hvorfor Niger har en bred trekant. Diskuter deretter hvilket av landene dere tror har det vanskeligst, og hvorfor.",
                     "Sjekk en ekte befolkningspyramide for et land du er nysgjerrig på (for eksempel på populationpyramid.net). Beskriv hvilken fase landet ser ut til å være i, og pek på ett hakk eller én utbuling du legger merke til."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "FN-sambandet. (2021). *Niger*. Hentet 05.08.2026 fra [fn.no/land/niger](https://www.fn.no/land/niger)",
+                    "FN-sambandet. (2022). *Italia*. Hentet 05.08.2026 fra [fn.no/land/italia](https://www.fn.no/land/italia)",
+                    "FN-sambandet. (2023). *India*. Hentet 05.08.2026 fra [fn.no/land/india](https://www.fn.no/land/india)",
+                    "FN-sambandet. (2024). *Japan*. Hentet 05.08.2026 fra [fn.no/land/japan](https://www.fn.no/land/japan)",
+                    "Statistisk sentralbyrå. (2026). *Fødte*. Hentet 05.08.2026 fra [ssb.no/fodte](https://www.ssb.no/befolkning/fodte-og-dode/statistikk/fodte)",
+                    "Tønnessen, M. (2022). *Befolkningsstruktur*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/befolkningsstruktur](https://snl.no/befolkningsstruktur)",
+                    "Tønnessen, M. (2023). *Befolkningspyramide*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/befolkningspyramide](https://snl.no/befolkningspyramide)",
+                    "Tønnessen, M. (2024a). *Demografisk overgang*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/demografisk_overgang](https://snl.no/demografisk_overgang)",
+                    "Tønnessen, M. (2024b). *Forsørgerbyrde*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/forsørgerbyrde](https://snl.no/fors%C3%B8rgerbyrde)",
+                    "Østby, L. (1999). *Gledesbarn eller babyboom?* Statistisk sentralbyrå. Hentet 05.08.2026 fra [ssb.no](https://www.ssb.no/befolkning/artikler-og-publikasjoner/gledesbarn-eller-babyboom)"
                 ]
             }
         }
@@ -127,5 +169,6 @@
             ],
             "correctAnswer": 2
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-05"
 }

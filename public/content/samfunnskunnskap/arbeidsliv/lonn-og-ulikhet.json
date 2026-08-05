@@ -8,14 +8,14 @@
     "heroImage": "/images/lessons/arbeidsliv/lonn-ulikhet_hero.webp",
     "details": [
         "Norge har en av verdens mest sammenpresste lønnsstrukturer",
-        "Gini-koeffisienten måler ulikhet - Norge scorer 0,27",
+        "Gini-koeffisienten måler ulikhet - Norge lå på 0,285 i 2023",
         "Frontfagmodellen presser lave lønninger opp og høye lønninger ned"
     ],
     "externalUrl": "https://snl.no/inntektsfordeling",
     "content": [
         {
             "type": "text",
-            "content": "En sykepleier i Norge tjener 10 ganger mer enn en sykepleier i India. En norsk advokat tjener bare 2 ganger mer enn en indisk advokat. Hvorfor er det slik? Og er det rettferdig?"
+            "content": "Tenk deg to jobber: en butikkmedarbeider og en administrerende direktør. I Norge tjener direktøren omtrent dobbelt så mye som butikkmedarbeideren, hvis vi ser på midten av hver gruppe. I mange andre land er avstanden mellom topp og bunn mye større. Hvorfor er det slik? Og er det rettferdig?"
         },
         {
             "type": "text",
@@ -35,7 +35,7 @@
         },
         {
             "type": "text",
-            "content": "Utdanning og kompetanse spiller også en stor rolle. En hjernekirurg har brukt over 12 år på utdanning etter videregående. En frisør har gått to år i lære. Begge gjør viktig arbeid, men kirurgen har investert mye mer tid og krefter for å bli kvalifisert. Den høye lønnen er delvis en belønning for den investeringen. Økonomer kaller dette humankapital - verdien av kunnskapen og ferdighetene du har samlet deg opp. Jo mer humankapital du har, jo mer kan du i teorien kreve i lønn."
+            "content": "Utdanning og kompetanse spiller også en stor rolle. En hjernekirurg har brukt mange år på utdanning etter videregående. En frisør har gått i lære i et par år. Begge gjør viktig arbeid, men kirurgen har investert mye mer tid og krefter for å bli kvalifisert. Den høye lønnen er delvis en belønning for den investeringen. Økonomer kaller dette humankapital - verdien av kunnskapen og ferdighetene du har samlet deg opp. Jo mer humankapital du har, jo mer kan du i teorien kreve i lønn."
         },
         {
             "type": "text",
@@ -47,19 +47,34 @@
         },
         {
             "type": "text",
-            "content": "Forhandlingsmakt er kanskje den faktoren som skiller Norge mest fra andre land. I Norge er over 50 prosent av arbeidstakerne organisert i en fagforening. Fagforeningene forhandler tariffavtaler som sikrer at ingen tjener for lite. I USA er bare 10 prosent organisert, og mange arbeidere har lite makt til å kreve høyere lønn. Vi kommer tilbake til dette når vi ser på frontfagmodellen."
+            "content": "Forhandlingsmakt er kanskje den faktoren som skiller Norge mest fra andre land. I Norge var drøyt 51 prosent av de yrkesaktive medlem i en fagforening i 2023 (Stokke & Gisle, 2026). Fagforeningene forhandler tariffavtaler som sikrer at ingen tjener for lite. I USA var bare 10,0 prosent av arbeidstakerne fagorganisert i 2025 (Bureau of Labor Statistics, 2026), og mange arbeidere har lite makt til å kreve høyere lønn. Vi kommer tilbake til dette når vi ser på frontfagmodellen."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Lønn i Norge - noen tall",
+                "title": "Lønn i Norge - noen tall fra SSB",
                 "items": [
-                    { "label": "Median årslønn", "value": "Ca. 570 000 kr (2024)" },
-                    { "label": "Lavest betalte yrker", "value": "Renhold, servering, butikkarbeid: 350-400 000 kr" },
-                    { "label": "Høyest betalte yrker", "value": "Leger, advokater, toppledere: 800 000 - 2 000 000+ kr" },
-                    { "label": "Gini-koeffisient", "value": "0,27 (blant verdens laveste)" },
-                    { "label": "Lønnsforskjell topp/bunn", "value": "I Norge tjener de best betalte ca. 3x de dårligst betalte. I USA er forskjellen ca. 8x" }
+                    {
+                        "label": "Median månedslønn",
+                        "value": "55 800 kr (2025)"
+                    },
+                    {
+                        "label": "Lavtlønt yrke (eksempel)",
+                        "value": "Butikkmedarbeidere: median månedslønn 42 020 kr (2025)"
+                    },
+                    {
+                        "label": "Høytlønt yrke (eksempel)",
+                        "value": "Administrerende direktører: median månedslønn 84 000 kr (2025)"
+                    },
+                    {
+                        "label": "Gini-koeffisient",
+                        "value": "0,285 i 2023 - blant verdens laveste"
+                    },
+                    {
+                        "label": "Fagorganiserte",
+                        "value": "Norge: drøyt 51 % (2023). USA: 10,0 % (2025)"
+                    }
                 ],
                 "variant": "grid"
             }
@@ -70,11 +85,11 @@
         },
         {
             "type": "text",
-            "content": "Norge har det vi kaller en sammenpresset lønnsstruktur. Det betyr at forskjellen mellom de som tjener mest og de som tjener minst, er relativt liten sammenlignet med andre land. En toppleder i Norge tjener kanskje 10 til 15 ganger mer enn en renholder. I USA kan den samme topplederen tjene 300 ganger mer."
+            "content": "Norge har det vi kaller en sammenpresset lønnsstruktur. Det betyr at forskjellen mellom de som tjener mest og de som tjener minst, er relativt liten sammenlignet med andre land. Røttene går helt tilbake til hovedavtalen mellom LO og arbeidsgiverne i 1935, som la grunnlaget for at lønningene i Norge ble presset sammen (Salvanes, 2017). En toppleder i Norge tjener fortsatt langt mer enn en butikkmedarbeider, men avstanden er kortere enn i USA, som har både stor inntektsulikhet og lav sosial mobilitet (Salvanes, 2017)."
         },
         {
             "type": "text",
-            "content": "Hvordan har det blitt slik? Svaret ligger i frontfagmodellen. Denne modellen er grunnsteinen i det norske lønnssystemet, og den har vært med på å forme norsk arbeidsliv i mange tiår. Den fungerer slik: Først forhandler industrien som konkurrerer med utlandet (for eksempel fabrikkene som eksporterer varer). De setter en ramme for hvor mye lønningene kan øke det året. Deretter bruker alle andre bransjer - lærere, sykepleiere, bussjåfører, butikkansatte - denne rammen som rettesnor for sine egne forhandlinger."
+            "content": "Hvordan har det blitt slik? Svaret ligger i frontfagmodellen. Denne modellen er grunnsteinen i det norske lønnssystemet, og den har vært med på å forme norsk arbeidsliv i mange tiår. Den fungerer slik: Først forhandler den konkurranseutsatte industrien, altså bedriftene som selger varene sine til utlandet. Resultatet der blir en norm - en ramme for hvor mye lønningene kan øke det året. Deretter bruker de andre tariffområdene - lærere, sykepleiere, bussjåfører, butikkansatte - denne rammen som rettesnor for sine egne forhandlinger (Alsos, 2025). Tanken bak er at lønnsveksten ikke skal bli høyere enn det bedriftene som konkurrerer med utlandet, tåler (Alsos, 2025)."
         },
         {
             "type": "text",
@@ -82,11 +97,11 @@
         },
         {
             "type": "text",
-            "content": "Poenget er at frontfagmodellen virker i to retninger. Den holder igjen lønnen for de som kunne ha krevd mye mer (for eksempel ingeniører i oljesektoren). Samtidig trekker den opp lønnen for de som ellers ville ha tjent mye mindre (for eksempel ansatte i hotell og restaurant). Resultatet er at bunnen er høy og toppen er moderat - sammenlignet med andre land."
+            "content": "Poenget er at frontfagmodellen virker i to retninger. Den holder igjen lønnen for de som kunne ha krevd mye mer (for eksempel ingeniører i oljesektoren). Samtidig trekker den opp lønnen for de som ellers ville ha tjent mye mindre (for eksempel ansatte i hotell og restaurant). Resultatet er at bunnen er høy og toppen er moderat - sammenlignet med andre land (Salvanes, 2017)."
         },
         {
             "type": "text",
-            "content": "Et konkret eksempel gjør det tydeligere. Tenk på en renholder og en lege. I Norge tjener renholderen rundt 370 000 kroner i året, og legen rundt 900 000 kroner. Forskjellen er omtrent 2,5 ganger. I USA tjener en renholder rundt 250 000 norske kroner, mens en lege tjener rundt 2 500 000 norske kroner. Forskjellen er 10 ganger. Den norske renholderen tjener altså langt mer enn den amerikanske, mens den norske legen tjener langt mindre enn den amerikanske."
+            "content": "Et konkret eksempel gjør det tydeligere. Tall fra Statistisk sentralbyrå viser at butikkmedarbeidere i 2025 hadde en median månedslønn på 42 020 kroner, mens administrerende direktører hadde 84 000 kroner (Strand, 2026). Sjefen tjener altså rundt dobbelt så mye som den butikkansatte når vi sammenligner midten av hver gruppe. Det er en kort avstand i internasjonal målestokk. I USA, der bare ti av hundre arbeidstakere er fagorganisert (Bureau of Labor Statistics, 2026), er avstanden mellom topp og bunn langt større."
         },
         {
             "type": "header",
@@ -94,25 +109,25 @@
         },
         {
             "type": "text",
-            "content": "Hvordan kan vi egentlig sammenligne ulikhet mellom land? Vi trenger et tall som beskriver hvor jevnt eller ujevnt inntektene er fordelt. Det mest brukte målet heter Gini-koeffisienten, oppkalt etter den italienske statistikeren Corrado Gini."
+            "content": "Hvordan kan vi egentlig sammenligne ulikhet mellom land? Vi trenger et tall som beskriver hvor jevnt eller ujevnt inntektene er fordelt. Det mest brukte målet heter Gini-koeffisienten, oppkalt etter den italienske statistikeren Corrado Gini (Encyclopaedia Britannica, u.å.)."
         },
         {
             "type": "text",
-            "content": "Gini-koeffisienten er et tall mellom 0 og 1. Tenk deg en skala. På den ene enden er 0: Alle i landet tjener nøyaktig like mye. På den andre enden er 1: En enkelt person tjener alt, resten tjener ingenting. Ingen land er på 0 eller 1, men jo lavere tallet er, jo jevnere er fordelingen."
+            "content": "Gini-koeffisienten er et tall mellom 0 og 1. Tenk deg en skala. På den ene enden er 0: fullstendig likhet, alle tjener nøyaktig like mye. På den andre enden er 1: størst mulig ulikhet, én person tjener alt (Schönhage & Bojer, 2025). Ingen land ligger på 0 eller 1, men jo lavere tallet er, jo jevnere er fordelingen."
         },
         {
             "type": "list",
             "items": [
                 "0,00 til 0,25: Svært jevnt (ingen land ligger helt her, men det er idealet for mange)",
                 "0,25 til 0,30: Jevnt - her finner vi de nordiske landene",
-                "0,30 til 0,40: Moderat - her finner vi de fleste europeiske land og Japan",
-                "0,40 til 0,50: Ujevnt - her finner vi USA, Kina og mange andre land",
-                "Over 0,50: Svært ujevnt - her finner vi Sør-Afrika og flere land i Latin-Amerika"
+                "0,30 til 0,40: Moderat - her finner vi mange andre europeiske land",
+                "0,40 til 0,50: Ujevnt - her finner vi mange store økonomier",
+                "Over 0,50: Svært ujevnt - her finner vi blant annet Sør-Afrika"
             ]
         },
         {
             "type": "text",
-            "content": "Norges Gini-koeffisient ligger rundt 0,27. Det betyr at Norge er et av de mest likestilte landene i verden når det gjelder inntekt. Til sammenligning har USA 0,39, Brasil 0,48 og Sør-Afrika 0,63. Forskjellen mellom 0,27 og 0,63 høres kanskje ikke dramatisk ut, men i praksis betyr det at Sør-Afrika har noen av de rikeste menneskene i verden og noen av de fattigste - i det samme landet, ofte i den samme byen."
+            "content": "Gini-koeffisienten for norske husholdninger var 0,285 i 2023. Det gjør Norge til et av landene i verden med jevnest fordeling av inntekt (Schönhage & Bojer, 2025). I den andre enden av skalaen ligger Sør-Afrika, som med 0,620 har den høyeste inntektsulikheten i verden (Schönhage & Bojer, 2025). Forskjellen mellom 0,285 og 0,620 høres kanskje ikke dramatisk ut, men i praksis betyr det at Sør-Afrika har noen av de rikeste menneskene i verden og noen av de fattigste - i det samme landet, ofte i den samme byen."
         },
         {
             "type": "text",
@@ -143,9 +158,9 @@
                 "rightTitle": "Fri lønnsdannelse (USA/UK)",
                 "items": [
                     {
-                        "label": "Gini-koeffisient",
-                        "left": "Norge: 0,27 | Sverige: 0,29 | Danmark: 0,28",
-                        "right": "USA: 0,39 | UK: 0,35"
+                        "label": "Inntektsulikhet",
+                        "left": "Norge: Gini 0,285 (2023) - blant de jevneste i verden",
+                        "right": "USA: stor inntektsulikhet og lav sosial mobilitet"
                     },
                     {
                         "label": "Laveste lønninger",
@@ -154,24 +169,24 @@
                     },
                     {
                         "label": "Høyeste lønninger",
-                        "left": "Holdes tilbake av normen. Toppledere tjener 10-15x snittet",
-                        "right": "Ingen begrensning. Toppledere kan tjene 300x snittet"
+                        "left": "Holdes tilbake av ramma som frontfaget setter",
+                        "right": "Ingen felles ramme. Toppene kan dra fra"
                     },
                     {
                         "label": "Mobilitet",
-                        "left": "Høy. Lettere å klatre oppover fra bunnen",
-                        "right": "Lavere enn man tror. Ulikhet reproduseres mellom generasjoner"
+                        "left": "Høy. Norge scorer høyt på Great Gatsby-kurven",
+                        "right": "Lav. USA har både stor ulikhet og lav mobilitet"
                     }
                 ]
             }
         },
         {
             "type": "text",
-            "content": "Tabellen over viser noen viktige forskjeller. Legg merke til det siste punktet: mobilitet. Mange tror at stor ulikhet gir folk motivasjon til å jobbe seg oppover. Men forskning viser det motsatte. I land med store forskjeller er det vanskeligere å klatre oppover fra bunnen. Foreldrenes inntekt bestemmer i stor grad barnas inntekt. I de nordiske landene er det lettere å bryte ut av fattigdom og jobbe seg oppover."
+            "content": "Tabellen over viser noen viktige forskjeller. Legg merke til det siste punktet: mobilitet. Mange tror at stor ulikhet gir folk motivasjon til å jobbe seg oppover. Forskningen peker i motsatt retning: økonomisk ulikhet henger tett sammen med hvilke muligheter folk har til å bevege seg oppover i samfunnet (Schönhage & Bojer, 2025). USA har både stor inntektsulikhet og lav sosial mobilitet, mens Norge har lav ulikhet og høy mobilitet - her betyr foreldrenes inntekt mindre for hva barna kommer til å tjene (Salvanes, 2017)."
         },
         {
             "type": "text",
-            "content": "Denne sammenhengen kalles av og til Den store Gatsby-kurven, oppkalt etter den amerikanske romanen om en mann som prøver å kjøpe seg inn i overklassen. Kurven viser at land med stor ulikhet ofte har lav mobilitet. Land med liten ulikhet, som Norge, har høy mobilitet."
+            "content": "Denne sammenhengen kalles Great Gatsby-kurven, oppkalt etter den amerikanske romanen om en mann som prøver å kjøpe seg inn i overklassen. Kurven viser sammenhengen mellom inntektsulikhet i én generasjon og neste generasjons utsikter til å klatre høyere opp. Norge scorer høyt på kurven, mens USA ligger i motsatt ende (Salvanes, 2017)."
         },
         {
             "type": "header",
@@ -183,7 +198,7 @@
         },
         {
             "type": "text",
-            "content": "Motivasjonsproblemet er det vanligste argumentet. Hvis en lege tjener bare 2,5 ganger mer enn en renholder, er det da verdt å studere i 12 ekstra år? Noen mener at større lønnsforskjeller gir folk sterkere motivasjon til å ta lang utdanning, jobbe hardt og ta risiko. Hvis alle tjener omtrent det samme uansett, hvorfor skal noen starte egen bedrift eller jobbe ekstra?"
+            "content": "Motivasjonsproblemet er det vanligste argumentet. Hvis avstanden mellom lønningene er liten, er det da verdt å studere i mange ekstra år? Noen mener at større lønnsforskjeller gir folk sterkere motivasjon til å ta lang utdanning, jobbe hardt og ta risiko. Hvis alle tjener omtrent det samme uansett, hvorfor skal noen starte egen bedrift eller jobbe ekstra?"
         },
         {
             "type": "text",
@@ -199,26 +214,26 @@
         },
         {
             "type": "text",
-            "content": "Det finnes ingen fasit. De fleste økonomer er enige om at noe ulikhet er bra fordi det gir motivasjon og belønner innsats. Samtidig er for mye ulikhet skadelig fordi det skaper sosiale spenninger, dårligere helse og lavere tillit mellom mennesker. Forskning fra blant annet OECD viser at svært ulike samfunn har mer kriminalitet, dårligere folkehelse og lavere tillit mellom innbyggerne. Utfordringen er å finne balansepunktet - nok ulikhet til å motivere, men ikke så mye at det river samfunnet fra hverandre."
+            "content": "Det finnes ingen fasit. Mange økonomer mener at noe ulikhet virker motiverende fordi den belønner innsats. Samtidig går økonomisk ulikhet hånd i hånd med sosial ulikhet, og da særlig med hvilke muligheter folk har til å bevege seg oppover i samfunnet (Schönhage & Bojer, 2025). Utfordringen er å finne balansepunktet - nok ulikhet til å motivere, men ikke så mye at det river samfunnet fra hverandre."
         },
         {
             "type": "text",
-            "content": "Norge har valgt en modell som ligger nær den ene enden av skalaen. Det har gitt oss et av verdens rikeste, tryggeste og mest tillitsfulle samfunn. Vi har lite fattigdom, god folkehelse og en befolkning som i stor grad stoler på hverandre og på myndighetene. Men det betyr ikke at modellen er uten svakheter, eller at den vil vare for alltid. Globalisering gjør at bedrifter lettere kan flytte produksjonen til land med lavere lønninger. Teknologi gjør at maskiner og kunstig intelligens kan overta jobber som mennesker gjør i dag. Og nye arbeidsformer som plattformøkonomi og frilansing utfordrer det tradisjonelle systemet med fagforeninger og tariffavtaler. Hvordan vi velger å møte disse utfordringene, vil forme det arbeidslivet du skal inn i."
+            "content": "Norge har valgt en modell som ligger nær den jevne enden av skalaen: små lønnsforskjeller og høy sosial mobilitet (Salvanes, 2017; Schönhage & Bojer, 2025). Men det betyr ikke at modellen er uten svakheter, eller at den vil vare for alltid. Globalisering gjør at bedrifter lettere kan flytte produksjonen til land med lavere lønninger. Teknologi gjør at maskiner og kunstig intelligens kan overta jobber som mennesker gjør i dag. Og nye arbeidsformer som plattformøkonomi og frilansing utfordrer det tradisjonelle systemet med fagforeninger og tariffavtaler. Hvordan vi velger å møte disse utfordringene, vil forme det arbeidslivet du skal inn i."
         },
         {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva er en Gini-koeffisient, og hvilket tall har Norge ifølge artikkelen?",
+                    "Hva er en Gini-koeffisient, og hvilket tall hadde Norge i 2023 ifølge artikkelen?",
                     "Hva betyr det at Norge har en sammenpresset lønnsstruktur?",
-                    "Hvor mange prosent av arbeidstakerne i Norge er organisert i en fagforening, og hva er tallet i USA?",
+                    "Hvor stor andel av de yrkesaktive i Norge er organisert i en fagforening, og hva er tallet i USA?",
                     "Artikkelen nevner fem faktorer som er med på å bestemme lønnen din. Nevn minst tre av dem."
                 ],
                 "reflekter": [
                     "Forklar hvordan frontfagmodellen virker i to retninger. Hva skjer med de lavest betalte, og hva skjer med de høyest betalte?",
-                    "Hvorfor tjener en norsk renholder mer enn en amerikansk renholder, mens en norsk lege tjener mindre enn en amerikansk lege? Bruk det du har lest om tariffavtaler.",
-                    "Artikkelen sier at stor ulikhet ofte gir lav mobilitet. Forklar hvorfor det er vanskeligere å jobbe seg oppover fra bunnen i land med store lønnsforskjeller.",
+                    "Hvorfor er avstanden mellom de lavest og høyest lønte mindre i Norge enn i USA? Bruk det du har lest om tariffavtaler og frontfagmodellen.",
+                    "Artikkelen sier at stor ulikhet henger sammen med lav mobilitet. Forklar hvorfor det kan være vanskeligere å jobbe seg oppover fra bunnen i land med store lønnsforskjeller.",
                     "Gini-koeffisienten har begrensninger. Nevn én ting den ikke måler, og forklar hvorfor det kan gi et skjevt bilde av hvem som egentlig har det godt."
                 ],
                 "gaaVidere": [
@@ -275,7 +290,23 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Alsos, K. (2025). *Frontfag*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/frontfag](https://snl.no/frontfag)",
+                    "Bureau of Labor Statistics. (2026). *Union members - 2025*. U.S. Department of Labor. Hentet 05.08.2026 fra [bls.gov](https://www.bls.gov/news.release/union2.nr0.htm)",
+                    "Encyclopaedia Britannica. (u.å.). *Corrado Gini*. Hentet 05.08.2026 fra [britannica.com](https://www.britannica.com/biography/Corrado-Gini)",
+                    "Salvanes, K. G. (2017). *Ulikhet som i USA på utdannelse*. NHH Bulletin. Hentet 05.08.2026 fra [nhh.no](https://www.nhh.no/nhh-bulletin/artikkelarkiv/2017/januar/ulikhet-som-i-usa-pa-utdannelse/)",
+                    "Schönhage, N. L. & Bojer, H. (2025). *Økonomisk ulikhet*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/økonomisk_ulikhet](https://snl.no/%C3%B8konomisk_ulikhet)",
+                    "Stokke, T. A. & Gisle, J. (2026). *Organisasjonsgrad*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/organisasjonsgrad](https://snl.no/organisasjonsgrad)",
+                    "Strand, H. H. (2026). *Hva er vanlig lønn i Norge?* Statistisk sentralbyrå. Hentet 05.08.2026 fra [ssb.no](https://www.ssb.no/arbeid-og-lonn/lonn-og-arbeidskraftkostnader/artikler/hva-er-vanlig-lonn-i-norge)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-05"
 }
