@@ -24,7 +24,7 @@
         },
         {
             "type": "text",
-            "content": "Tenk deg to jenter som begge er 14 år gamle. Den ene heter Amara og bor i Niger i Vest-Afrika. Den andre heter Emma og bor i Oslo. Begge har drømmer. Begge vil ha et godt liv. Men sjansene deres er radikalt forskjellige - ikke fordi den ene er smartere eller mer hardt arbeidende enn den andre, men fordi de er født i ulike deler av verden. Amara kan forvente å leve til hun er rundt 62 år. Emma kan forvente å leve til hun er rundt 84 år. Hva forklarer denne forskjellen på over 20 år?"
+            "content": "Tenk deg to jenter som begge er 14 år gamle. Den ene heter Amara og bor i Niger i Vest-Afrika. Den andre heter Emma og bor i Oslo. Begge har drømmer. Begge vil ha et godt liv. Men sjansene deres er radikalt forskjellige - ikke fordi den ene er smartere eller mer hardt arbeidende enn den andre, men fordi de er født i ulike deler av verden. Amara kan forvente å leve til hun er rundt 61 år (Sæbø & Lundbo, 2026). Emma kan forvente å leve til hun er rundt 85 år (Statistisk sentralbyrå, 2026). Hva forklarer denne forskjellen på over 20 år?"
         },
         {
             "type": "image",
@@ -58,11 +58,11 @@
         },
         {
             "type": "text",
-            "content": "Hvordan sammenligner vi egentlig levekår på tvers av land? FN bruker et mål som kalles Human Development Index - ofte forkortet HDI, eller menneskelig utviklingsindeks på norsk. HDI kombinerer tre ting: levealder, utdanningsnivå og inntekt per innbygger. Resultatet er et tall mellom 0 og 1, der 1 er best mulig."
+            "content": "Hvordan sammenligner vi egentlig levekår på tvers av land? FN bruker et mål som kalles Human Development Index - ofte forkortet HDI, eller menneskelig utviklingsindeks på norsk. HDI kombinerer tre ting: levealder, utdanningsnivå og inntekt per innbygger (Husby et al., 2024). Resultatet er et tall mellom 0 og 1, der 1 er best mulig (FN-sambandet, u.å.)."
         },
         {
             "type": "text",
-            "content": "I 2023-rangeringen lå Norge på topp med 0,966. Niger, der Amara bor, lå på 0,394 - det laveste i verden. Men HDI er ikke perfekt. Det sier ingenting om ulikhet innad i et land. Brasil og Norge kan ha lik gjennomsnittsinntekt, men i Brasil kan pengene være svært ulikt fordelt mellom rik og fattig. Du kan lese mer om dette i artikkelen om [Fattigdom](/samfunnskunnskap/demografi/fattigdom)."
+            "content": "I den nyeste rangeringen, som bygger på tall for 2023, ligger Island øverst med 0,972, og Norge helt i toppsjiktet med 0,970. Nederst ligger Sør-Sudan med 0,388 (Qery, 2025). Niger, der Amara bor, er blant landene helt nederst på lista. Men HDI er ikke perfekt. Det sier ingenting om ulikhet innad i et land. Brasil og Norge kan ha lik gjennomsnittsinntekt, men i Brasil kan pengene være svært ulikt fordelt mellom rik og fattig. Du kan lese mer om dette i artikkelen om [Fattigdom](/samfunnskunnskap/demografi/fattigdom)."
         },
         {
             "type": "image",
@@ -76,7 +76,7 @@
         },
         {
             "type": "text",
-            "content": "Politikk, geografi og historie former ikke bare levekår - de bestemmer også hvor folk bor og hvor mange de er. Dette kaller vi bosettingsmønster og demografi. I rike land bor de fleste i byer. I Norge bor over 80 prosent av befolkningen i tettsteder eller byer. I lavinntektsland er bildet annerledes: store deler av befolkningen bor fortsatt på landsbygda og lever av jordbruk."
+            "content": "Politikk, geografi og historie former ikke bare levekår - de bestemmer også hvor folk bor og hvor mange de er. Dette kaller vi bosettingsmønster og demografi. I rike land bor de fleste i byer. I Norge bor over 80 prosent av befolkningen i tettsteder eller byer (Statistisk sentralbyrå, 2025). I lavinntektsland er bildet annerledes: store deler av befolkningen bor fortsatt på landsbygda og lever av jordbruk."
         },
         {
             "type": "text",
@@ -84,7 +84,7 @@
         },
         {
             "type": "text",
-            "content": "Demografien - altså befolkningssammensetningen - er også svært forskjellig. I Niger er gjennomsnittsalderen under 15 år. Det betyr at halvparten av befolkningen er barn. I Japan er gjennomsnittsalderen over 48 år. Det betyr at landet har mange eldre og få unge. Disse forskjellene påvirker alt: hvilke behov et land har, hvor mye det koster å drive velferdsstaten, og om landet vokser eller krymper. [Den demografiske overgangen](/samfunnskunnskap/demografi/den-demografiske-overgangen) hjelper oss forstå hvorfor dette er slik."
+            "content": "Demografien - altså befolkningssammensetningen - er også svært forskjellig. I Niger får hver kvinne i snitt 5,8 barn, og befolkningen er derfor svært ung (FN-sambandet, 2021). I Japan er bildet motsatt: levealderen er blant verdens høyeste, 87 år for kvinner og 81 år for menn, og folketallet synker svakt (Thuesen, 2026). Det betyr at landet har mange eldre og få unge. Disse forskjellene påvirker alt: hvilke behov et land har, hvor mye det koster å drive velferdsstaten, og om landet vokser eller krymper. [Den demografiske overgangen](/samfunnskunnskap/demografi/den-demografiske-overgangen) hjelper oss forstå hvorfor dette er slik."
         },
         {
             "type": "header",
@@ -108,7 +108,7 @@
         },
         {
             "type": "text",
-            "content": "Migrasjon kan også gjøre at land mister de menneskene de trenger mest. Når leger, ingeniører og lærere fra fattige land emigrerer til rike land for bedre lønn og levekår, kalles det hjerneflukt. Det forsterker ulikheten mellom land. Samtidig sender mange migranter penger hjem til familien - noe som i sum utgjør mer enn all verdens bistand. Sirkelen er altså kompleks. Les mer om drivkreftene bak migrasjon i [Migrasjon: Hvorfor flytter vi?](/samfunnskunnskap/demografi/migrasjon-push-pull)."
+            "content": "Migrasjon kan også gjøre at land mister de menneskene de trenger mest. Når leger, ingeniører og lærere fra fattige land emigrerer til rike land for bedre lønn og levekår, kalles det hjerneflukt. Det forsterker ulikheten mellom land. Samtidig sender mange migranter penger hjem til familien. I 2023 utgjorde slike pengeoverføringer rundt 656 milliarder dollar på verdensbasis (Verdensbanken, 2024). Sirkelen er altså kompleks. Les mer om drivkreftene bak migrasjon i [Migrasjon: Hvorfor flytter vi?](/samfunnskunnskap/demografi/migrasjon-push-pull)."
         },
         {
             "type": "image",
@@ -133,7 +133,7 @@
         },
         {
             "type": "text",
-            "content": "Et viktig spørsmål er om levekårsforskjellene i verden kan utjevnes. Historien viser at det er mulig. Sør-Korea var i 1950 et av verdens fattigste land, herjet av krig. I dag er det en avansert industriøkonomi med høy levealder og utdanning. Finland gikk på 100 år fra sult og utvandring til verdens lykkeligste land. Nøkkelen var investering i utdanning, stabile institusjoner og - i Sør-Koreas tilfelle - strategisk industripolitikk."
+            "content": "Et viktig spørsmål er om levekårsforskjellene i verden kan utjevnes. Historien viser at det er mulig. Sør-Korea var etter Koreakrigen et av verdens fattigste land. I dag er landet med i G20 og regnes som et av de mest utviklede i verden (Barth et al., 2026). Finland, et lite land i utkanten av Europa, er kåret til verdens lykkeligste land åtte år på rad (Finland Promotion Board, 2025). Nøkkelen var investering i utdanning, stabile institusjoner og - i Sør-Koreas tilfelle - strategisk industripolitikk."
         },
         {
             "type": "text",
@@ -156,7 +156,7 @@
                     "Sør-Korea og Finland klarte å forbedre levekårene dramatisk. Hva var felles for det som gjorde det mulig, og hvorfor har ikke alle land hatt de samme forutsetningene?"
                 ],
                 "gaaVidere": [
-                    "Amara i Niger kan forvente å leve til hun er rundt 62 år, mens Emma i Oslo kan forvente å leve til hun er rundt 84 år. Skriv en kort tekst (5-8 setninger) der du forklarer denne forskjellen ved å bruke minst to av de tre kreftene politikk, geografi og historie.",
+                    "Amara i Niger kan forvente å leve til hun er rundt 61 år, mens Emma i Oslo kan forvente å leve til hun er rundt 85 år. Skriv en kort tekst (5-8 setninger) der du forklarer denne forskjellen ved å bruke minst to av de tre kreftene politikk, geografi og historie.",
                     "Diskuter med en partner: Har rike land et ansvar for å hjelpe fattigere land med å utjevne levekårsforskjellene? Finn ett argument for og ett argument mot.",
                     "Se rundt i ditt eget nærmiljø: hvilke offentlige tjenester (som skole, helse eller rent vann) tar du for gitt hver dag, men som mangler i land med lav HDI? Lag en liste og velg ut den ene du mener betyr mest."
                 ]
@@ -224,6 +224,25 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Barth, D., Ryste, M. E. & Helgesen, G. (2026). *Sør-Korea*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Sør-Korea](https://snl.no/S%C3%B8r-Korea)",
+                    "Finland Promotion Board. (2025). *Eight years in a row: Finland remains in first place in World Happiness Report*. ThisisFINLAND. Hentet 05.08.2026 fra [finland.fi](https://finland.fi/life-society/eight-years-in-a-row-finland-remains-in-first-place-in-world-happiness-report-other-nordics-in/)",
+                    "FN-sambandet. (u.å.). *HDI - indeks for menneskelig utvikling*. Hentet 05.08.2026 fra [fn.no/Statistikk/hdi-menneskelig-utvikling](https://fn.no/Statistikk/hdi-menneskelig-utvikling)",
+                    "FN-sambandet. (2021). *Niger*. Hentet 05.08.2026 fra [fn.no/land/niger](https://www.fn.no/land/niger)",
+                    "Husby, T. B., Eggen, Ø. & Skatvik, F. (2024). *Human Development Index - HDI*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Human_Development_Index_-_HDI](https://snl.no/Human_Development_Index_-_HDI)",
+                    "Qery. (2025). *Human Development Index Data Tracker*. Hentet 05.08.2026 fra [qery.no/undp-human-development-index](https://qery.no/undp-human-development-index/)",
+                    "Statistisk sentralbyrå. (2025). *Tettsteders befolkning og areal*. Hentet 05.08.2026 fra [ssb.no](https://www.ssb.no/befolkning/folketall/statistikk/tettsteders-befolkning-og-areal)",
+                    "Statistisk sentralbyrå. (2026). *Døde*. Hentet 05.08.2026 fra [ssb.no](https://www.ssb.no/befolkning/fodte-og-dode/statistikk/dode)",
+                    "Sæbø, M. & Lundbo, S. (2026). *Niger*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Niger](https://snl.no/Niger)",
+                    "Thuesen, N. P. (2026). *Japan*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Japan](https://snl.no/Japan)",
+                    "Verdensbanken. (2024). *Remittances*. Hentet 05.08.2026 fra [worldbank.org](https://www.worldbank.org/en/topic/migration/brief/remittances-knomad)"
+                ]
+            }
         }
     ],
     "tags": [
@@ -233,5 +252,6 @@
         "migrasjon",
         "global ulikhet"
     ],
-    "createdDate": "2026-06-02T00:00:00Z"
+    "createdDate": "2026-06-02T00:00:00Z",
+    "lastUpdated": "2026-08-05T00:00:00Z"
 }
