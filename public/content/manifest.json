@@ -8032,6 +8032,20 @@
                   ],
                   "createdDate": "2026-08-03T00:00:00Z",
                   "lastUpdated": "2026-08-04T07:33:37+02:00"
+                },
+                {
+                  "id": "mesopotamisk-religion",
+                  "title": "Mesopotamisk religion: flommen som gikk igjen",
+                  "description": "Gudene i Mesopotamia kranglet, ble sinte og trengte mat. Og flomfortellingen deres er eldre enn Bibelens.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "mesopotamia",
+                    "religionshistorie",
+                    "fortellinger",
+                    "gilgamesj",
+                    "babylon"
+                  ],
+                  "createdDate": "2026-08-05T00:00:00Z"
                 }
               ]
             },

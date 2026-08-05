@@ -41,6 +41,7 @@ const LegendensVei3D = lazy(() => import('./LegendensVei3D'));
 const Alliansefella1914 = lazy(() => import('./Alliansefella1914'));
 const AryabhatasNatt3D = lazy(() => import('./AryabhatasNatt3D'));
 const HjertetsVekt3D = lazy(() => import('./HjertetsVekt3D'));
+const UtnapisjtimsArk3D = lazy(() => import('./UtnapisjtimsArk3D'));
 const SarajevoTunnelen3D = lazy(() => import('./SarajevoTunnelen3D'));
 const Leteboringen3D = lazy(() => import('./Leteboringen3D'));
 const Nedfallsvakten3D = lazy(() => import('./Nedfallsvakten3D'));
@@ -1631,6 +1632,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./AryabhatasNatt3D'),
         Component: AryabhatasNatt3D as never,
+    },
+    'utnapisjtims-ark-3d': {
+        id: 'utnapisjtims-ark-3d',
+        title: 'Utnapisjtims ark',
+        description:
+            'Flommen er på vei mot byen Shuruppak ved Eufrat, og guden Ea har advart deg i drømme. Du har under ett minutt på deg: dra familien, dyra, kornet og oljekrukka ut til arken mens regnet tetner, og la gullkista og kongetronen stå igjen - feil last stjeler tid du ikke har. Rekker du å tette døra, stiger arken med vannet, og du tenner offerbålet på taket. Lyspæren: oljen måtte med fordi gudene i Mesopotamia var avhengige av menneskene sine. Uten mennesker var det ingen igjen til å ofre til dem.',
+        estimatedSeconds: 110,
+        loader: () => import('./UtnapisjtimsArk3D'),
+        Component: UtnapisjtimsArk3D as never,
     },
     'hjertets-vekt-3d': {
         id: 'hjertets-vekt-3d',
