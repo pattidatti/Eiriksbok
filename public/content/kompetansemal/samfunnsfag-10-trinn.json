@@ -690,8 +690,26 @@
             "nummer": 10,
             "kortNavn": "Fornorsking og minoriteter",
             "tekst": "gjøre rede for fornorskingen av samene og de nasjonale minoritetene og uretten de har vært utsatt for, og reflektere over hvilke konsekvenser det har hatt og har på individ- og samfunnsnivå",
-            "merknad": "Dette målet er foreløpig svakt dekt i Eiriksbok. Egne artikler om samiske rettigheter, fornorskingspolitikken og sannhets- og forsoningskommisjonen er planlagt.",
-            "innhold": {}
+            "merknad": "Fornorskingen av samene og de fem nasjonale minoritetene er nå dekt. En egen artikkel om samiske rettigheter etter Alta-saken gjenstår.",
+            "innhold": {
+                "artikler": [
+                    {
+                        "tittel": "Fornorskingen av samene",
+                        "link": "/historie/norge-i-moderne-tid/fornorskingen-av-samene",
+                        "begrunnelse": "Dekker fornorskingspolitikken mot samene og veien fram til sannhets- og forsoningskommisjonen."
+                    },
+                    {
+                        "tittel": "De nasjonale minoritetene: fem folk staten ville gjøre like",
+                        "link": "/historie/norge-i-moderne-tid/nasjonale-minoriteter",
+                        "begrunnelse": "Dekker de fem nasjonale minoritetene og uretten de ble utsatt for, med Svanviken og jødeparagrafen som konkrete eksempler."
+                    },
+                    {
+                        "tittel": "Trommen, naturen og forfedrene",
+                        "link": "/krle/religion/samisk/intro",
+                        "begrunnelse": "Gir det samiske kulturgrunnlaget fornorskinga forsøkte å viske ut."
+                    }
+                ]
+            }
         },
         {
             "id": "saf-10-11",
