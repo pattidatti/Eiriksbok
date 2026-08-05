@@ -1,7 +1,7 @@
 {
     "id": "den-demografiske-overgangen",
     "title": "Den demografiske overgangen: En reise i 5 faser",
-    "ingress": "For 200 år siden var vi 1 milliard mennesker. I dag er vi over 8 milliarder. Hva skjedde? Og hvorfor sier forskerne nå at folketallet snart vil begynne å krympe?",
+    "ingress": "For 200 år siden var vi rundt 1 milliard mennesker. I dag er vi over 8 milliarder. Hva skjedde? Og hvorfor tror forskerne at folketallet vil nå toppen og så begynne å synke?",
     "image": "/images/lessons/demografi/demografi_overgang_hero.webp",
     "heroImage": "/images/lessons/demografi/demografi_overgang_hero.webp",
     "status": "published",
@@ -15,60 +15,76 @@
     "content": [
         {
             "type": "text",
-            "value": "Menneskehetens historie har i tusenvis av år vært preget av at vi fikk mange barn, men at mange også døde tidlig. Men så skjedde det noe revolusjonerende som endret alt: Vi sluttet å dø som fluer."
+            "content": "Menneskehetens historie har i tusenvis av år vært preget av at vi fikk mange barn, men at mange også døde tidlig. Verdens befolkning passerte ikke én milliard før i 1825 (Tønnessen, 2026). Så skjedde det noe som endret alt: vi sluttet å dø som fluer. I november 2022 passerte vi åtte milliarder mennesker (Tønnessen, 2026)."
         },
         {
             "type": "header",
-            "value": "Fase 1: Den skjøre likevekten (Før 1800)"
+            "text": "Fase 1: den skjøre likevekten (før 1800)"
         },
         {
             "type": "text",
-            "value": "**Kjennetegn:** Høy fødselsrate + Høy dødsrate = Lav vekst.\n\nFolk fikk 6-8 barn, men kanskje bare 2 vokste opp. Sult, krig og sykdommer holdt befolkningen nede. \n\n*   **Historisk eksempel:** Svartedauden i Europa. \n*   **I dag:** Ingen land er i denne fasen lenger, kun isolerte stammer i Amazonas."
+            "content": "Kjennetegn: høy fødselsrate og høy dødsrate gir lav vekst. Folk fikk mange barn, men mange av dem døde før de rakk å bli voksne. Slik var situasjonen i Norge helt fram til 1800-tallet (Tønnessen, 2024). Sult, krig og sykdom holdt folketallet nede."
+        },
+        {
+            "type": "text",
+            "content": "Et historisk eksempel er svartedauden. Da pesten herjet Europa i årene 1346-1353, døde trolig omtrent halvparten av befolkningen på tre år (Moseng, 2026). I Norge slo den til i 1349-1350."
+        },
+        {
+            "type": "text",
+            "content": "I dag har alle deler av verden begynt å bevege seg ut av denne fasen. I europeiske land skjedde det på 1800-tallet, mens dødeligheten i afrikanske land og flere andre områder først falt dramatisk på 1950-tallet (FN-sambandet, 2025b)."
         },
         {
             "type": "header",
-            "value": "Fase 2: Eksplosjonen (Industriell Revolusjon)"
+            "text": "Fase 2: eksplosjonen"
         },
         {
             "type": "text",
-            "value": "**Kjennetegn:** Dødsraten stuper, men fødselsraten er fortsatt høy.\n\nPlutselig får vi såpe, kloakk og medisiner. Barna overlever! Men kulturen henger igjen – folk fortsetter å få like mange barn som før. Resultatet er en befolkningseksplosjon.\n\n*   **Eksempel i dag:** Afghanistan, Niger og mange land i Afrika sør for Sahara."
+            "content": "Kjennetegn: dødsraten stuper, men fødselsraten er fortsatt høy. Bedre hygiene, reint vann og medisiner gjør at barna overlever. Men kulturen henger igjen - folk fortsetter å få like mange barn som før. Da fødes det langt flere enn det dør, og resultatet er en befolkningseksplosjon (Tønnessen, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Eksempel i dag: Niger, der hver kvinne får 5,8 barn i snitt (FN-sambandet, 2021), og Afghanistan med 4,7 barn per kvinne (FN-sambandet, 2025a). Fruktbarheten i Afrika er fortsatt høy, og det er der folketallet vokser raskest (Tønnessen, 2026)."
         },
         {
             "type": "info_box",
-            "title": "Utviklingsfellen",
-            "content": "Noen land blir sittende fast i Fase 2. Befolkningen vokser fortere enn økonomien klarer å skape jobber. Dette kalles \"The Development Trap\". Uten jobber forblir folk fattige, og fattige får ofte flere barn som en forsikring."
+            "title": "Fattigdom og barnetall",
+            "content": "Hvor mange barn en familie får, henger tett sammen med fattigdom. Når fattigdommen går ned, og flere får utdanning, bedre helsetjenester og styrkede rettigheter - særlig kvinner - får kvinner færre barn enn før (FN-sambandet, 2025b). Økonomisk utvikling fjerner behovet for å ha mange barn som inntektskilde for familien."
         },
         {
             "type": "header",
-            "value": "Fase 3: Bremsene settes på"
+            "text": "Fase 3: bremsene settes på"
         },
         {
             "type": "text",
-            "value": "**Kjennetegn:** Fødselsraten begynner å falle.\n\nHvorfor? Folk flytter til byene ([urbanisering](/samfunnskunnskap/demografi/urbanisering)). På en bondegård er barn gratis arbeidskraft; i en by er barn dyre i drift (skole, klær, iphones). Samtidig får kvinner utdanning og prevensjon, og velger å få færre barn.\n\n*   **Eksempel i dag:** Brasil, India, Mexico."
+            "content": "Kjennetegn: fødselsraten begynner å falle. Hvorfor? Folk flytter til byene ([urbanisering](/samfunnskunnskap/demografi/urbanisering)). På en bondegård er barn gratis arbeidskraft; i en by koster barn penger. Samtidig får kvinner utdanning, bedre helsetjenester og tilgang til prevensjon, og velger å få færre barn (FN-sambandet, 2025b). Folketallet fortsetter å vokse, men saktere enn før (Tønnessen, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Eksempel i dag: India, der fruktbarheten er nede i 1,9 barn per kvinne (FN-sambandet, 2023)."
         },
         {
             "type": "header",
-            "value": "Fase 4: Den moderne likevekten"
+            "text": "Fase 4: den moderne likevekten"
         },
         {
             "type": "text",
-            "value": "**Kjennetegn:** Lav fødselsrate + Lav dødsrate = Lav vekst.\n\nFolketallet flater ut. De fleste lever lenge, og familier har i snitt under 2 barn.\n\n*   **Eksempel i dag:** Norge, USA, Kina."
+            "content": "Kjennetegn: lav fødselsrate og lav dødsrate gir lav vekst. Folketallet flater ut, de fleste lever lenge, og familiene har i snitt under to barn (Tønnessen, 2024). Eksempel i dag: Norge, der hver kvinne i snitt fikk 1,48 barn i 2025 (Statistisk sentralbyrå, 2026)."
         },
         {
             "type": "header",
-            "value": "Fase 5: Nedgangstider (Eldrebølgen)"
+            "text": "Fase 5: nedgangstider (eldrebølgen)"
         },
         {
             "type": "text",
-            "value": "**Kjennetegn:** Dødsraten er høyere enn fødselsraten.\n\nIkke fordi folk dør unge, men fordi det er så mange gamle mennesker! Samtidig velger mange unge å ikke få barn i det hele tatt. Folketallet krymper.\n\n*   **Eksempel i dag:** Japan, Italia, Tyskland."
+            "content": "Kjennetegn: dødsraten er høyere enn fødselsraten. Ikke fordi folk dør unge, men fordi det er så mange eldre, samtidig som det fødes få barn. Uten netto innvandring synker folketallet, og befolkningen aldres kraftig (Tønnessen, 2024). Eksempel i dag: Japan og Italia, der kvinner i snitt får bare 1,2 barn (FN-sambandet, 2022, 2024)."
         },
         {
             "type": "header",
-            "value": "Interaktivitet: DTM-simulatoren"
+            "text": "Interaktivitet: DTM-simulatoren"
         },
         {
             "type": "text",
-            "value": "Prøv selv: Se hvordan endringer i dødsrate og fødselsrate påvirker totalbefolkningen over tid."
+            "content": "Prøv selv: se hvordan endringer i dødsrate og fødselsrate påvirker totalbefolkningen over tid."
         },
         {
             "type": "component",
@@ -76,7 +92,7 @@
         },
         {
             "type": "text",
-            "value": "Modellen er tegnet som en togreise som alle land må gjennom. Men tar vi feil? Kanskje Afrikas befolkningsvekst vil stoppe opp mye raskere enn vi tror, takket være smarttelefoner og internett? Les mer om debatten i [Malthus vs. Boserup](/samfunnskunnskap/demografi/malthus-vs-boserup)."
+            "content": "Modellen er tegnet som en togreise alle land må gjennom. Men den passer ikke like godt overalt: de rike landene startet tidlig og brukte lang tid, mens fattigere land startet senere og går raskere gjennom overgangen (Tønnessen, 2024). FNs framskrivinger fra 2024 anslår at verdens folketall vokser til rundt 10,4 milliarder midt på 2080-tallet, og at det deretter vil synke langsomt. Alle slike beregninger er usikre (Tønnessen, 2026). Les mer om debatten i [Malthus vs. Boserup](/samfunnskunnskap/demografi/malthus-vs-boserup)."
         },
         {
             "type": "component",
@@ -84,20 +100,38 @@
             "props": {
                 "forstaa": [
                     "Hvor mange mennesker var vi for 200 år siden, og hvor mange er vi i dag?",
-                    "I Fase 1 fikk folk 6-8 barn. Omtrent hvor mange av dem vokste opp, og hva var det som holdt befolkningen nede?",
+                    "Hva kjennetegner fase 1 når det gjelder fødselsrate og dødsrate, og hva var det som holdt folketallet nede?",
                     "Hva er kjennetegnet på Fase 2, og nevn to eksempler på land som er i denne fasen i dag.",
                     "Hvorfor krymper folketallet i Fase 5, ifølge teksten? Nevn to land som er i denne fasen."
                 ],
                 "reflekter": [
                     "I Fase 2 stuper dødsraten, men fødselsraten er fortsatt høy. Forklar hvorfor folk fortsetter å få mange barn selv om barna nå overlever.",
                     "Teksten sier at barn er gratis arbeidskraft på en bondegård, men dyre i drift i en by. Bruk dette til å forklare hvorfor fødselsraten faller i Fase 3.",
-                    "Hva er Utviklingsfellen, og hvorfor kan fattigdom føre til at folk får enda flere barn?",
+                    "Hvordan henger fattigdom og barnetall sammen? Bruk faktaboksen til å forklare hvorfor kvinner får færre barn når fattigdommen går ned.",
                     "Teksten sammenligner modellen med en togreise som alle land må gjennom. Hvorfor tror du noen mener det er feil å tro at alle land følger nøyaktig samme rute?"
                 ],
                 "gaaVidere": [
                     "Norge er i Fase 4 med lav fødselsrate. Skriv en kort tekst (5-8 setninger) om hva som kan skje i Norge hvis vi glir over i Fase 5 med en stor eldrebølge.",
-                    "Teksten nevner at smarttelefoner og internett kanskje kan bremse befolkningsveksten i Afrika raskere enn ventet. Diskuter med en partner: Hvordan kan tilgang til internett påvirke hvor mange barn en familie velger å få?",
+                    "Teksten sier at fattigere land går raskere gjennom den demografiske overgangen enn de rike landene gjorde. Diskuter med en partner: hvordan kan utdanning og bedre helsetjenester påvirke hvor mange barn en familie velger å få?",
                     "Finn ut hvilken fase et land du er nysgjerrig på befinner seg i (for eksempel besteforeldrenes hjemland eller et land du har besøkt). Begrunn svaret ditt ut fra kjennetegnene i teksten."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "FN-sambandet. (2021). *Niger*. Hentet 05.08.2026 fra [fn.no/land/niger](https://www.fn.no/land/niger)",
+                    "FN-sambandet. (2022). *Italia*. Hentet 05.08.2026 fra [fn.no/land/italia](https://www.fn.no/land/italia)",
+                    "FN-sambandet. (2023). *India*. Hentet 05.08.2026 fra [fn.no/land/india](https://www.fn.no/land/india)",
+                    "FN-sambandet. (2024). *Japan*. Hentet 05.08.2026 fra [fn.no/land/japan](https://www.fn.no/land/japan)",
+                    "FN-sambandet. (2025a). *Afghanistan*. Hentet 05.08.2026 fra [fn.no/land/afghanistan](https://www.fn.no/land/afghanistan)",
+                    "FN-sambandet. (2025b). *Befolkning*. Hentet 05.08.2026 fra [fn.no](https://www.fn.no/tema/fattigdom/befolkning)",
+                    "Moseng, O. G. (2026). *Svartedauden*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/svartedauden](https://snl.no/svartedauden)",
+                    "Statistisk sentralbyrå. (2026). *Fødte*. Hentet 05.08.2026 fra [ssb.no/fodte](https://www.ssb.no/befolkning/fodte-og-dode/statistikk/fodte)",
+                    "Tønnessen, M. (2024). *Demografisk overgang*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/demografisk_overgang](https://snl.no/demografisk_overgang)",
+                    "Tønnessen, M. (2026). *Verdens befolkning*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/verdens_befolkning](https://snl.no/verdens_befolkning)"
                 ]
             }
         }
@@ -114,14 +148,15 @@
             "correctAnswer": 1
         },
         {
-            "question": "Hva er 'Utviklingsfellen'?",
+            "question": "Hva skjer med barnetallet når fattigdommen går ned og flere får utdanning?",
             "options": [
-                "Når et land blir for rikt for fort",
-                "Når befolkningen vokser raskere enn antall jobber",
-                "Når alle flytter til utlandet",
-                "Når teknologien slutter å virke"
+                "Kvinner får færre barn",
+                "Kvinner får flere barn",
+                "Dødeligheten stiger",
+                "Folketallet slutter å vokse over natten"
             ],
-            "correctAnswer": 1
+            "correctAnswer": 0
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-05"
 }
