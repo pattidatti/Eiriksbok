@@ -16,15 +16,15 @@
     "content": [
         {
             "type": "text",
-            "value": "På overflaten er Finland et utstillingsvindu for menneskelig suksess. Hvert år kårer FN dem til verdens lykkeligste folk (FN-sambandet, 2023). De har teknologien, tilliten og skolesystemet resten av verden misunner. Men bak de blankpolerte fasadene i Helsingfors skjuler det seg et nytt drama. Vuggene står tomme. Befolkningen eldes raskere enn nesten noe annet sted på kloden. For å forstå dette paradokset – hvordan et land kan vinne sivilisasjonen, men risikere å tape fremtiden – må vi reise tilbake i tid. Tilbake til en tid da Finland ikke var kjent for mobiltelefoner, men for sult."
+            "content": "På overflaten er Finland et utstillingsvindu for menneskelig suksess. Åtte år på rad har landet havnet på førsteplass i World Happiness Report, rapporten som måler hvor fornøyde folk er med livet sitt. Den lages ikke av FN selv, men av FNs nettverk for bærekraftig utvikling (ThisisFINLAND, 2025). Finnene har teknologien, tilliten og skolesystemet resten av verden misunner. Men bak de blankpolerte fasadene i Helsingfors skjuler det seg et nytt drama. Vuggene står tomme. Befolkningen eldes raskere enn nesten noe annet sted på kloden. For å forstå dette paradokset - hvordan et land kan vinne sivilisasjonen, men risikere å tape fremtiden - må vi reise tilbake i tid. Tilbake til en tid da Finland ikke var kjent for mobiltelefoner, men for sult."
         },
         {
             "type": "text",
-            "value": "For 150 år siden var Finland et land i fase 1 (Eiriksbok, 2024a). Livet var en linebalansering mot døden. Vinteren 1867 kom som en hvit dommedag. Sommeren regnet bort, høsten frøs til is, og avlingene råtnet på jordene. Det som fulgte, er et av de mørkeste kapitlene i nordisk historie: «Det store uåret». Folk blandet bark i brødet og døde langs veiene. På bare to år krevde sulten og sykdommene livet til nesten hver tiende finne (Store norske leksikon, 2024). Det var naturens brutale måte å korrigere en befolkning som hadde vokst seg større enn matfatet – en maltusiansk sjekk i sin reneste, mest grusomme form (Eiriksbok, 2024b)."
+            "content": "For 150 år siden levde Finland med både høy dødelighet og store barnekull. Det er den første fasen i det vi kaller den demografiske overgangen (Tønnessen, 2024). Livet var en linebalansering mot døden. Så slo avlingene feil, og det som fulgte er et av de mørkeste kapitlene i nordisk historie: «Det store uåret».\n\nFolk blandet bark i brødet. Barkebrødet, pettu på finsk, ble laget av rug blandet med det innerste laget av furubark, malt opp til mel (Pehkonen, 2025). I årene 1866-1868 døde rundt 270 000 finner, og 150 000 av dem sultet i hjel. Verst var 1868, da omtrent åtte prosent av hele befolkningen døde (Pehkonen, 2025). Til sammen kostet hungersnøden nesten hver tiende finne livet (Economic History Society, 2021). Det var naturens brutale måte å korrigere en befolkning som hadde vokst seg større enn matfatet - en maltusiansk sjekk i sin reneste, mest grusomme form."
         },
         {
             "type": "text",
-            "value": "Men så, etter 1870, begynte mirakelet. Poteten ble redningen, og hygienen ble våpenet. Dødsratene stupte, men i de små stuene fortsatte mødrene å føde barnekull på fem, seks, syv barn, slik de alltid hadde gjort. Resultatet var en eksplosjon. Finland braste inn i fase 2. Plutselig var det liv overalt – og trangt om plassen. Landsbygda flommet over av unge mennesker uten jord, uten arbeid og uten fremtid. Presset (push-faktoren) ble uutholdelig (Eiriksbok, 2024c). Ventilen ble Amerika. Over 300 000 finner pakket kofferten, lokket av ryktene om gull og gratis jord på den andre siden av havet (Store norske leksikon, 2024). Uten denne flukten ville «trykkokeren» Finland kanskje ha eksplodert i sosialt opprør."
+            "content": "Men så begynte mirakelet. Dødeligheten falt, mens mødrene i de små stuene fortsatte å føde barnekull på fem, seks, syv barn, slik de alltid hadde gjort. Når det fødes langt flere enn det dør, vokser folketallet raskt. Det er selve motoren i fase 2 av den demografiske overgangen (Tønnessen, 2024).\n\nPlutselig var det liv overalt - og trangt om plassen. Landsbygda flommet over av unge mennesker uten jord og uten arbeid. Presset, det vi kaller push-faktoren, ble uutholdelig. Ventilen ble Amerika. Fra midten av 1800-tallet og fram til første verdenskrig utvandret rundt 300 000 finner over Atlanteren, på jakt etter arbeid og et bedre liv (Svenska litteratursällskapet i Finland, u.å.). Uten denne flukten ville «trykkokeren» Finland kanskje ha eksplodert i sosialt opprør."
         },
         {
             "type": "component",
@@ -65,11 +65,11 @@
         },
         {
             "type": "text",
-            "value": "Etter andre verdenskrig, hvor Finland hadde ofret en generasjon unge menn for sin uavhengighet, skiftet nasjonen gir. De skulle ikke lenger være bønder; de skulle bli ingeniører. Finland satset alt på sitt eneste virkelige råstoff: hjernene til befolkningen. Utdanningsrevolusjonen forvandlet landet. Kvinnene marsjerte ut av kjøkkenet og inn i fabrikkene og kontorene. Velstanden skjøt i været, men prisen var at barneflokkene skrumpet inn. På 1960- og 70-tallet dro en ny bølge migranter vestover, denne gangen til Volvo-fabrikkene i Sverige, trukket av høyere lønninger og en drøm om det svenske «folkhemmet» (Eiriksbok, 2024c)."
+            "content": "Etter andre verdenskrig, hvor Finland hadde mistet mange av sine unge menn i kampen for selvstendigheten, skiftet nasjonen gir. Landet gikk fra å være et jordbrukssamfunn til å bli et industri- og kunnskapssamfunn, og folk flyttet fra bygda til byene. I dag bor rundt 63 prosent av finnene i byer (Thuesen & Pihl, 2026).\n\nVelstanden skjøt i været, men prisen var at barneflokkene skrumpet inn. Og migrasjonen fortsatte: etter krigen gikk om lag 65 prosent av all utvandring fra Finland til Sverige, der industrien blomstret og trengte arbeidsfolk (Svenska litteratursällskapet i Finland, u.å.)."
         },
         {
             "type": "text",
-            "value": "I dag står Finland på toppen av verden, solid plantet i fase 5. Helsevesenet redder nesten alle, og folk lever lenger enn noen gang. Men stillheten senker seg over lekeplassene. Fødselsraten har stupt til 1,3 barn per kvinne – langt under det som trengs for å holde befolkningen ved like (FN-sambandet, 2023). Det finske paradokset er komplett: De har skapt et samfunn som er perfekt å bo i, men som folket sakte, men sikkert slutter å reprodusere seg i. Nå hviler fremtiden på om Finland kan tiltrekke seg nye hender utenfra, eller om velferdsstaten vil knele under vekten av sin egen aldrende suksess."
+            "content": "I dag står Finland på toppen av verden. Helsevesenet redder nesten alle, og folk lever lenger enn noen gang. Men stillheten senker seg over lekeplassene. I 2024 fikk finske kvinner i snitt 1,25 barn hver - det laveste tallet siden statistikken startet i 1776 (Statistics Finland, 2025). Det er langt under det som trengs for å holde befolkningen ved like.\n\nDette er den femte fasen som forskerne har foreslått: fruktbarheten blir lavere enn dødeligheten. Da eldes befolkningen kraftig, og uten netto innvandring synker folketallet (Tønnessen, 2024). I Finland har dødsfallene vært flere enn fødslene siden 2016, så befolkningen vokser nå bare på grunn av innvandring. Samtidig vokser regninga: utgiftene knyttet til eldre var over 32 milliarder euro i 2020, tre ganger så mye som i 2000 (DEMOGRAPHY-programmet, u.å.).\n\nDet finske paradokset er komplett: De har skapt et samfunn som er perfekt å bo i, men som folket sakte, men sikkert slutter å reprodusere seg i."
         },
         {
             "type": "component",
@@ -110,7 +110,7 @@
         },
         {
             "type": "text",
-            "value": "Historien om Finland er historien om at demografi er skjebne. Sulten tvang finnene til å flytte. Velstanden fikk dem til å slutte å få barn. Nå, i det 21. århundret, er sirkelen sluttet. Utfordringen er ikke lenger å finne mat til barna, men å finne barn til fremtiden."
+            "content": "Historien om Finland er historien om at demografi er skjebne. Sulten tvang finnene til å flytte. Velstanden fikk dem til å slutte å få barn. Nå, i det 21. århundret, er sirkelen sluttet. Utfordringen er ikke lenger å finne mat til barna, men å finne barn til fremtiden."
         },
         {
             "type": "component",
@@ -121,33 +121,41 @@
             }
         },
         {
-            "type": "header",
-            "value": "Litteraturliste"
-        },
-        {
-            "type": "text",
-            "value": "Eiriksbok. (2024a). *Den demografiske overgangen*. Eiriksbok. Hentet 15. januar 2026 fra [https://bok.haaland.de/samfunnskunnskap/demografi/den-demografiske-overgangen](https://bok.haaland.de/samfunnskunnskap/demografi/den-demografiske-overgangen)\n\nEiriksbok. (2024b). *Malthus vs. Boserup*. Eiriksbok. Hentet 15. januar 2026 fra [https://bok.haaland.de/samfunnskunnskap/demografi/malthus-vs-boserup](https://bok.haaland.de/samfunnskunnskap/demografi/malthus-vs-boserup)\n\nEiriksbok. (2024c). *Migrasjon: Hvorfor flytter vi?*. Eiriksbok. Hentet 15. januar 2026 fra [https://bok.haaland.de/samfunnskunnskap/demografi/migrasjon-push-pull](https://bok.haaland.de/samfunnskunnskap/demografi/migrasjon-push-pull)\n\nFN-sambandet. (2023). *Finland*. FN.no. Hentet 15. januar 2026 fra [https://www.fn.no/Land/finland](https://www.fn.no/Land/finland)\n\nStore norske leksikon. (2024). *Finlands historie*. Hentet 15. januar 2026 fra [https://snl.no/Finlands_historie](https://snl.no/Finlands_historie)"
-        },
-        {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva skjedde under Det store uåret vinteren 1867, og hvor stor del av befolkningen døde av sult og sykdom på bare to år?",
-                    "Hva blandet folk i brødet under hungersnøden, og hva slags mat ble redningen etter 1870?",
-                    "Omtrent hvor mange finner utvandret til Amerika, og hva ble de lokket av?",
-                    "Hvor mange barn per kvinne føder finske kvinner i dag, og hvilken fase i den demografiske overgangen befinner Finland seg i nå?"
+                    "Hva skjedde under Det store uåret, og hvor stor del av befolkningen døde av sult og sykdom i årene 1866-1868?",
+                    "Hva var barkebrød laget av, og hvorfor spiste folk det?",
+                    "Omtrent hvor mange finner utvandret til Amerika, og hva var de på jakt etter?",
+                    "Hvor mange barn per kvinne fikk finske kvinner i 2024, og hvilken fase i den demografiske overgangen befinner Finland seg i nå?"
                 ],
                 "reflekter": [
-                    "Teksten kaller hungersnøden i 1867 en maltusiansk sjekk. Forklar hvorfor sulten kan beskrives som naturens måte å korrigere en befolkning som hadde vokst seg større enn matfatet.",
-                    "Hvorfor eksploderte befolkningen i Finland etter 1870? Forklar hvordan lavere dødsrate og fortsatt store barnekull førte til fase 2.",
+                    "Teksten kaller hungersnøden en maltusiansk sjekk. Forklar hvorfor sulten kan beskrives som naturens måte å korrigere en befolkning som hadde vokst seg større enn matfatet.",
+                    "Hvorfor eksploderte befolkningen i Finland etter hungerårene? Forklar hvordan lavere dødelighet og fortsatt store barnekull førte til fase 2.",
                     "Teksten sier at utvandringen til Amerika var en ventil som hindret Finland i å eksplodere i sosialt opprør. Forklar hva som menes med dette bildet av trykkokeren.",
-                    "Etter andre verdenskrig valgte Finland å satse på hjernene til befolkningen fremfor jordbruk. Hvordan henger denne satsingen sammen med at barneflokkene ble mindre?"
+                    "Etter andre verdenskrig gikk Finland fra jordbrukssamfunn til industri- og kunnskapssamfunn. Hvordan henger denne endringen sammen med at barneflokkene ble mindre?"
                 ],
                 "gaaVidere": [
                     "Teksten sier at demografi er skjebne. Skriv en kort tekst (5-8 setninger) der du forklarer hvordan både sulten og velstanden formet Finlands befolkning, og hva du mener er den vanskeligste utfordringen landet står overfor nå.",
                     "Finland sliter med tomme vugger og en aldrende befolkning. Diskuter med en partner: Hva kan et land gjøre for å få folk til å ønske seg flere barn, eller for å tiltrekke seg nye hender utenfra?",
-                    "Finske unge flyttet først til Amerika, senere til Volvo-fabrikkene i Sverige. Tenk på i dag: Hvilke push- og pull-faktorer kan få unge mennesker til å flytte fra ett land til et annet nå?"
+                    "Finske unge flyttet først til Amerika, senere til industrien i Sverige. Tenk på i dag: Hvilke push- og pull-faktorer kan få unge mennesker til å flytte fra ett land til et annet nå?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "DEMOGRAPHY-programmet. (u.å.). *Briefing package - Demography*. Strategic Research Council. Hentet 05.08.2026 fra [demography.fi](https://demography.fi/en/programme/briefing-package/)",
+                    "Economic History Society. (2021). *Income inequality and famine mortality: evidence from the Finnish famine of the 1860s*. Hentet 05.08.2026 fra [ehs.org.uk](https://ehs.org.uk/income-inequality-and-famine-mortality-evidence-from-the-finnish-famine-of-the-1860s/)",
+                    "Pehkonen, K. (2025). *Three pieces of bark bread*. Helsinki University Museum Flame. Hentet 05.08.2026 fra [blogs.helsinki.fi](https://blogs.helsinki.fi/illuminating-the-collections/2025/06/12/three-pieces-of-bark-bread/)",
+                    "Statistics Finland. (2025). *Birth rate fell to the lowest level in statistical history in 2024*. Hentet 05.08.2026 fra [stat.fi](https://stat.fi/en/publication/cm1kgb0io92hk07w7910ibw3b)",
+                    "Svenska litteratursällskapet i Finland. (u.å.). *Migration*. Hentet 05.08.2026 fra [digi.sets.fi](https://digi.sets.fi/sls/migration/)",
+                    "ThisisFINLAND. (2025). *Eight years in a row: Finland remains in first place in World Happiness Report*. Finland Promotion Board. Hentet 05.08.2026 fra [finland.fi](https://finland.fi/life-society/eight-years-in-a-row-finland-remains-in-first-place-in-world-happiness-report-other-nordics-in/)",
+                    "Thuesen, N. P. & Pihl, R. (2026). *Finland*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/Finland](https://snl.no/Finland)",
+                    "Tønnessen, M. (2024). *Demografisk overgang*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/demografisk_overgang](https://snl.no/demografisk_overgang)"
                 ]
             }
         }
@@ -164,12 +172,12 @@
             "correctAnswer": 1
         },
         {
-            "question": "Hvorfor falt dødsraten i Finland dramatisk etter 1870?",
+            "question": "Hvorfor vokste folketallet i Finland raskt etter hungerårene?",
             "options": [
-                "Bedre hygiene, mat (poteten) og begynnende industrialisering",
+                "Dødeligheten falt, mens kvinnene fortsatt fikk mange barn",
                 "Klimaet ble varmere",
                 "Folk sluttet å krige",
-                "Det ble forbudt å dø"
+                "Det flyttet mange inn fra Amerika"
             ],
             "correctAnswer": 0
         },
@@ -183,5 +191,6 @@
             ],
             "correctAnswer": 1
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-05"
 }

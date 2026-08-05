@@ -1,7 +1,7 @@
 {
     "id": "intro",
     "title": "Introduksjon: Mennesket i tall",
-    "ingress": "Hvorfor er vi så mange mennesker på jorda akkurat nå? Og hvorfor bor vi der vi bor? Demografi er læren om befolkning – pulsslaget til hele sivilisasjonen vår.",
+    "ingress": "Hvorfor er vi så mange mennesker på jorda akkurat nå? Og hvorfor bor vi der vi bor? Demografi er læren om befolkning - pulsslaget til hele sivilisasjonen vår.",
     "image": "/images/lessons/demografi/demografi_overgang_hero.webp",
     "heroImage": "/images/lessons/demografi/demografi_overgang_hero.webp",
     "status": "published",
@@ -15,7 +15,7 @@
     "content": [
         {
             "type": "text",
-            "value": "Demografi høres kanskje ut som tørr statistikk, men det handler om alt som gjør oss til mennesker: fødsel, død, kjærlighet, flytting og drømmen om et bedre liv.\n\nRegnestykket for demografi er egentlig ganske enkelt:\n\nNeste års befolkning = Årets befolkning + (fødte - døde) + (innvandrere - utvandrere)\n\nMen bak disse tallene skjuler det seg dramatiske historier om teknologiske fremskritt, kriger, håp og store samfunnsendringer."
+            "content": "Demografi høres kanskje ut som tørr statistikk, men det handler om alt som gjør oss til mennesker: fødsel, død, kjærlighet, flytting og drømmen om et bedre liv.\n\nDemografi er rett og slett befolkningslære. Faget beskriver og forklarer hvor store befolkninger er, hvordan de fordeler seg på alder, kjønn og geografi, og hvordan de endrer seg gjennom de tre demografiske komponentene fruktbarhet, dødelighet og migrasjon (Solerød & Tønnessen, 2025).\n\nRegnestykket for demografi er egentlig ganske enkelt:\n\nNeste års befolkning = Årets befolkning + (fødte - døde) + (innvandrere - utvandrere)\n\nMen bak disse tallene skjuler det seg dramatiske historier om teknologiske fremskritt, kriger, håp og store samfunnsendringer."
         },
         {
             "type": "header",
@@ -23,7 +23,16 @@
         },
         {
             "type": "text",
-            "value": "Når politikerne skal planlegge fremtiden, må de vite hvor mange vi kommer til å være. \n\n*   Trenger vi flere barnehager eller flere gamlehjem?\n*   Kommer det til å være nok folk til å jobbe i fabrikkene?\n*   Hvor skal vi bygge de nye husene?"
+            "content": "Når politikerne skal planlegge fremtiden, må de vite hvor mange vi kommer til å være. Derfor lager Statistisk sentralbyrå befolkningsframskrivinger: beregninger av hvor stor og hvordan sammensatt befolkningen blir, ut fra ulike forutsetninger om nettopp fruktbarhet, dødelighet, innvandring og utvandring (Statistisk sentralbyrå, 2026).\n\nFramskrivingene brukes av kommuner, fylker og staten når de skal planlegge - for eksempel hvor mange barnehageplasser, hvor mye eldreomsorg og hvor mange boliger vi trenger (Statistisk sentralbyrå, 2026). Spørsmålene blir konkrete:"
+        },
+        {
+            "type": "list",
+            "ordered": false,
+            "items": [
+                "Trenger vi flere barnehager eller flere gamlehjem?",
+                "Kommer det til å være nok folk til å jobbe i fabrikkene?",
+                "Hvor skal vi bygge de nye husene?"
+            ]
         },
         {
             "type": "header",
@@ -42,7 +51,7 @@
         },
         {
             "type": "text",
-            "value": "Bli med på en reise gjennom tallene som former verden vår!"
+            "content": "Den demografiske overgangen er selve grunnfortellingen i emnet: et samfunn går fra å ha både høy fødselsrate og høy dødsrate til å ha både lav fødselsrate og lav dødsrate (Tønnessen, 2024). Underveis skjer det dramatiske ting med folketallet.\n\nBli med på en reise gjennom tallene som former verden vår!"
         },
         {
             "type": "component",
@@ -56,7 +65,7 @@
                 ],
                 "reflekter": [
                     "Artikkelen sier at demografi handler om mer enn tørr statistikk. Forklar med egne ord hvorfor fødsel, død og flytting kan skjule dramatiske historier.",
-                    "Hvorfor må politikerne vite hvor mange vi kommer til å være i fremtiden? Bruk et av eksemplene fra teksten (barnehager, gamlehjem, fabrikker eller hus) og forklar.",
+                    "Hvorfor må politikerne vite hvor mange vi kommer til å være i fremtiden? Bruk et av eksemplene fra teksten (barnehager, eldreomsorg eller boliger) og forklar.",
                     "I regnestykket kan befolkningen både øke og synke. Forklar hva som må skje med tallene for at et land skal få færre innbyggere fra ett år til det neste.",
                     "Den demografiske overgangen beskrives som veien fra mange barn til mange gamle. Hva tror du kan gjøre at et samfunn går fra å få mange barn til å få færre barn?"
                 ],
@@ -64,6 +73,17 @@
                     "Skriv en kort tekst (5-8 setninger) der du forklarer for en yngre elev hva demografi er, og hvorfor det er viktig å vite hvor mange mennesker vi er.",
                     "Snakk med en partner: Hvilket av de fem temaene i emnet (demografisk overgang, migrasjon, bæreevne, fattigdom eller urbanisering) synes dere er mest spennende, og hvorfor?",
                     "Tenk på din egen familie eller hjemsted. Har noen flyttet til eller fra stedet der du bor? Skriv ned én grunn til at folk flytter dit, og én grunn til at folk flytter derfra."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Solerød, H. & Tønnessen, M. (2025). *Demografi*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/demografi](https://snl.no/demografi)",
+                    "Statistisk sentralbyrå. (2026). *Nasjonale befolkningsframskrivinger*. Hentet 05.08.2026 fra [ssb.no](https://www.ssb.no/befolkning/befolkningsframskrivinger/statistikk/nasjonale-befolkningsframskrivinger)",
+                    "Tønnessen, M. (2024). *Demografisk overgang*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/demografisk_overgang](https://snl.no/demografisk_overgang)"
                 ]
             }
         }
@@ -79,5 +99,6 @@
             ],
             "correctAnswer": 1
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-05"
 }
