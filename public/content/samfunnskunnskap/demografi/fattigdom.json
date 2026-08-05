@@ -15,7 +15,7 @@
     "content": [
         {
             "type": "text",
-            "value": "Fattigdom handler om mer enn mangel på penger. Det handler om mangel på muligheter, trygghet og deltakelse i samfunnet. Vi skiller mellom to hovedtyper fattigdom."
+            "content": "Fattigdom handler om mer enn mangel på penger. Det handler om mangel på muligheter, trygghet og deltakelse i samfunnet. Vi skiller mellom to hovedtyper fattigdom."
         },
         {
             "type": "header",
@@ -23,7 +23,7 @@
         },
         {
             "type": "text",
-            "value": "Dette er den dypeste formen for fattigdom. Den innebærer at man mangler det helt grunnleggende for å overleve: nok mat, rent vann, klær og et trygt sted å bo.\n\nVerdensbanken bruker en grense på ca. 2,15 dollar per dag for å definere ekstrem fattigdom. Selv om antallet mennesker i denne kategorien har falt kraftig de siste 30 årene, lever fortsatt millioner av mennesker under denne grensen, spesielt i krigsområder."
+            "content": "Dette er den dypeste formen for fattigdom. Den innebærer at man ikke har mulighet til å dekke grunnleggende behov som mat, klær og bolig (Lind & Haugseth, 2026).\n\nVerdensbanken har en egen grense for hva som regnes som ekstrem fattigdom. Fra juni 2025 er grensa satt til 3,00 dollar per person per dag, målt i 2021-priser (Verdensbanken, 2025). I 2022 levde rundt 838 millioner mennesker under denne grensa (Verdensbanken, 2025).\n\nAndelen mennesker i ekstrem fattigdom har falt kraftig siden 1990. Men etter 2020 har utviklingen flatet ut, og noen steder har den snudd til økning - blant annet på grunn av pandemi, krig og prisvekst (Lind & Haugseth, 2026)."
         },
         {
             "type": "header",
@@ -31,7 +31,7 @@
         },
         {
             "type": "text",
-            "value": "I rike land som Norge snakker vi oftere om relativ fattigdom. Dette betyr at man er fattig sammenlignet med det generelle nivået i samfunnet man bor i.\n\nHvis alle naboene dine har råd til feriereiser, fritidsaktiviteter for barna og ordentlige klær, mens du ikke har det, kan du oppleve å falle utenfor. Relativ fattigdom handler ofte om ekskludering – at man ikke kan delta på de samme arenaene som de andre."
+            "content": "I rike land som Norge snakker vi oftere om relativ fattigdom. Det handler om å ha så lite midler at man ikke kan delta på lik linje med andre i samfunnet (Lind & Haugseth, 2026).\n\nHvis alle naboene dine har råd til feriereiser, fritidsaktiviteter for barna og ordentlige klær, mens du ikke har det, kan du oppleve å falle utenfor. Relativ fattigdom handler ofte om ekskludering - at man ikke kan delta på de samme arenaene som de andre."
         },
         {
             "type": "header",
@@ -39,7 +39,7 @@
         },
         {
             "type": "text",
-            "value": "Forfatteren Terry Pratchett beskrev økonomisk ulikhet gjennom \"støvel-teorien\":\n\nEn rik mann kan kjøpe støvler til 1000 kr som varer i 10 år. En fattig mann har ikke 1000 kr, så han kjøper billige støvler til 200 kr. Men disse går i stykker hvert år.\n\nOver en periode på 10 år har den fattige mannen brukt 2000 kr på støvler – dobbelt så mye som den rike – og han har fortsatt våte føtter. Fattigdom fanger folk i kortsiktige, dyre løsninger."
+            "content": "Forfatteren Terry Pratchett beskrev økonomisk ulikhet gjennom \"støvel-teorien\" i romanen Men at Arms fra 1993 (Davidson, 2025):\n\nEn rik mann kan kjøpe støvler til 1000 kr som varer i 10 år. En fattig mann har ikke 1000 kr, så han kjøper billige støvler til 200 kr. Men disse går i stykker hvert år.\n\nOver en periode på 10 år har den fattige mannen brukt 2000 kr på støvler - dobbelt så mye som den rike - og han har fortsatt våte føtter (Davidson, 2025). Fattigdom fanger folk i kortsiktige, dyre løsninger."
         },
         {
             "type": "header",
@@ -47,7 +47,19 @@
         },
         {
             "type": "text",
-            "value": "Hvordan vet vi om et land er rettferdig? Vi bruker en skala fra 0 til 1 som kalles Gini-koeffisienten.\n\n*   **0:** Total likhet (alle eier nøyaktig like mye).\n*   **1:** Total ulikhet (én person eier alt).\n\nNorge har en Gini på ca 0.27 (veldig likt). Sør-Afrika har ca 0.63 (ekstremt ulikt). Høy ulikhet skaper ofte kriminalitet og politisk uro."
+            "content": "Hvordan vet vi om et land er rettferdig? Vi bruker en skala fra 0 til 1 som kalles Gini-koeffisienten (Schönhage & Bojer, 2025)."
+        },
+        {
+            "type": "list",
+            "ordered": false,
+            "items": [
+                "0 betyr fullstendig likhet - alle tjener nøyaktig like mye.",
+                "1 betyr størst mulig ulikhet - én person tjener alt."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "For norske husholdninger var Gini-koeffisienten 0,285 i 2023. Det gjør Norge til et av landene med jevnest fordeling i verden. I den andre enden av skalaen ligger Sør-Afrika med 0,620, den høyeste inntektsulikheten i verden (Schönhage & Bojer, 2025).\n\nØkonomisk ulikhet pleier å gå hånd i hånd med andre sosiale forskjeller, og da særlig med hvor lett det er å bevege seg oppover i samfunnet (Schönhage & Bojer, 2025)."
         },
         {
             "type": "header",
@@ -59,7 +71,7 @@
         },
         {
             "type": "text",
-            "value": "I denne simulatoren ser du hvordan uforutsette utgifter kan velte lasset når du lever på marginene. Er det virkelig bare å \"ta seg sammen\", eller er systemet rigget mot deg?"
+            "content": "I denne simulatoren ser du hvordan uforutsette utgifter kan velte lasset når du lever på marginene. Er det virkelig bare å \"ta seg sammen\", eller er systemet rigget mot deg?"
         },
         {
             "type": "component",
@@ -67,20 +79,32 @@
             "props": {
                 "forstaa": [
                     "Hva er de to hovedtypene fattigdom som artikkelen skiller mellom?",
-                    "Hvilken grense per dag bruker Verdensbanken for å definere ekstrem fattigdom?",
+                    "Hvilken grense per dag bruker Verdensbanken for å definere ekstrem fattigdom, og fra når har denne grensa gjeldt?",
                     "I støvel-teorien til Terry Pratchett: hvor mye har den fattige mannen brukt på støvler etter 10 år, og hvor mye har den rike brukt?",
                     "Hva betyr tallet 0 og tallet 1 på Gini-koeffisienten?"
                 ],
                 "reflekter": [
                     "Forklar med egne ord hvorfor relativ fattigdom ofte handler om ekskludering, selv om personen har nok mat og et sted å bo.",
                     "Hvorfor blir det ifølge støvel-teorien dyrere å være fattig enn å være rik over tid? Forklar mekanismen.",
-                    "Norge har en Gini på ca. 0,27 og Sør-Afrika ca. 0,63. Hva forteller denne forskjellen oss om de to landene?",
-                    "Artikkelen sier at høy ulikhet ofte skaper kriminalitet og politisk uro. Hvorfor tror du det kan bli slik i et land med stor ulikhet?"
+                    "Norge har en Gini-koeffisient på 0,285 og Sør-Afrika 0,620. Hva forteller denne forskjellen oss om de to landene?",
+                    "Artikkelen sier at økonomisk ulikhet ofte henger sammen med hvor lett det er å bevege seg oppover i samfunnet. Hvorfor tror du det kan være vanskeligere å komme seg opp og fram i et land med stor ulikhet?"
                 ],
                 "gaaVidere": [
                     "Tenk på din egen skoleklasse. Nevn tre situasjoner der en elev kan oppleve relativ fattigdom eller falle utenfor på grunn av penger.",
                     "Skriv en kort tekst (5-8 setninger) der du forklarer for en venn hvorfor det kan være vanskelig å \"bare ta seg sammen\" når man er fattig. Bruk støvel-teorien som eksempel.",
                     "Diskuter med en partner: Bør et land helst ha lav ulikhet som Norge, eller finnes det gode grunner til at noen tjener mye mer enn andre? Bli enige om ett argument for hver side."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Davidson, T. (2025). *The Boots Theory*. Georgetown Journal on Poverty Law & Policy. Hentet 05.08.2026 fra [law.georgetown.edu](https://www.law.georgetown.edu/poverty-journal/blog/the-boots-theory/)",
+                    "Lind, J. T. & Haugseth, J. F. (2026). *Fattigdom*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/fattigdom](https://snl.no/fattigdom)",
+                    "Schönhage, N. L. & Bojer, H. (2025). *Økonomisk ulikhet*. Store norske leksikon. Hentet 05.08.2026 fra [snl.no/økonomisk_ulikhet](https://snl.no/%C3%B8konomisk_ulikhet)",
+                    "Verdensbanken. (2025). *June 2025 update to global poverty lines*. Hentet 05.08.2026 fra [worldbank.org](https://www.worldbank.org/en/news/factsheet/2025/06/05/june-2025-update-to-global-poverty-lines)"
                 ]
             }
         }
@@ -106,5 +130,6 @@
             ],
             "correctAnswer": 1
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-05"
 }
