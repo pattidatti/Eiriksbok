@@ -583,6 +583,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     PropagandaDecoder: lazy(() => import('./historie/PropagandaDecoder').then(m => ({ default: m.PropagandaDecoder }))),
     TrumansDilemma: lazy(() => import('./historie/TrumansDilemma').then(m => ({ default: m.TrumansDilemma }))),
     NuclearSimulator: lazy(() => import('./content/interactive/NuclearSimulator').then(m => ({ default: m.NuclearSimulator }))),
+    Informasjonsgapet: lazy(() => import('./content/interactive/Informasjonsgapet').then(m => ({ default: m.Informasjonsgapet }))),
     Seiersinnskriften: lazy(() => import('./content/interactive/Seiersinnskriften').then(m => ({ default: m.Seiersinnskriften }))),
     StormogulensValg: lazy(() => import('./content/interactive/StormogulensValg').then(m => ({ default: m.StormogulensValg }))),
     NullOppdagelsen: lazy(() => import('./content/interactive/NullOppdagelsen').then(m => ({ default: m.NullOppdagelsen }))),

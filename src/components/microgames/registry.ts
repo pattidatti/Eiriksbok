@@ -43,6 +43,7 @@ const AryabhatasNatt3D = lazy(() => import('./AryabhatasNatt3D'));
 const HjertetsVekt3D = lazy(() => import('./HjertetsVekt3D'));
 const SarajevoTunnelen3D = lazy(() => import('./SarajevoTunnelen3D'));
 const Leteboringen3D = lazy(() => import('./Leteboringen3D'));
+const Nedfallsvakten3D = lazy(() => import('./Nedfallsvakten3D'));
 const MonumentTorget3D = lazy(() => import('./MonumentTorget3D'));
 const Teknologibolgen3D = lazy(() => import('./Teknologibolgen3D'));
 const Nyheitsbobla3D = lazy(() => import('./Nyheitsbobla3D'));
@@ -1656,6 +1657,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 160,
         loader: () => import('./Leteboringen3D'),
         Component: Leteboringen3D as never,
+    },
+    'tsjernobyl-nedfall': {
+        id: 'tsjernobyl-nedfall',
+        title: 'Nedfallsvakten: skyen over Norge',
+        description:
+            'Slutten av april 1986. Den radioaktive skyen fra Tsjernobyl driver inn over Norge, og du er måleteamet. Skyen dekker hele landet uansett hva du gjør, men nedfallet setter seg bare der en regnbyge vasker det ned. Klikk hver nedfallsflekk mens den lyser, før sporet blir kaldt. Mister du for mange, blir kartet så hullete at ingen vet hvor det er trygt å beite. Lyspæra: det var ikke avstanden til Tsjernobyl som avgjorde hvem som ble rammet i Norge - det var hvor det regnet.',
+        estimatedSeconds: 150,
+        loader: () => import('./Nedfallsvakten3D'),
+        Component: Nedfallsvakten3D as never,
     },
 };
 

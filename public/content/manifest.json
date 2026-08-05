@@ -4327,6 +4327,21 @@
               ],
               "createdDate": "2026-05-31T00:00:00Z",
               "lastUpdated": "2026-07-23T19:36:55+02:00"
+            },
+            {
+              "id": "tsjernobyl",
+              "title": "Tsjernobyl 1986: Skyen som ikke stanset ved grensen",
+              "description": "En reaktor eksploderte i Sovjetunionen, og nedfallet landet der det regnet i Norge. En katastrofe som også ble en tillitskrise.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "kald-krig",
+                "sovjetunionen",
+                "atomkraft",
+                "norge",
+                "miljo"
+              ],
+              "createdDate": "2026-08-05T00:00:00Z"
             }
           ]
         },

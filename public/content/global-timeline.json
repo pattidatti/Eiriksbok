@@ -10905,6 +10905,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "tsjernobyl",
+      "title": "Tsjernobyl 1986: Skyen som ikke stanset ved grensen",
+      "description": "En reaktor eksploderte i Sovjetunionen, og nedfallet landet der det regnet i Norge. En katastrofe som også ble en tillitskrise.",
+      "startDate": 1986,
+      "endDate": null,
+      "displayDate": "1986",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "den-kalde-krigen",
+      "link": "/historie/den-kalde-krigen/tsjernobyl",
+      "tags": [
+        "historie",
+        "kald-krig",
+        "sovjetunionen",
+        "atomkraft",
+        "norge",
+        "miljo"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "ozonlaget-avtalen",
       "title": "Montreal-protokollen (Ozonlaget)",
       "description": "En global avtale for å redde atmosfæren, ofte sett på som menneskehetens første suksessfulle 'avverging' av en moderne apokalypse.",

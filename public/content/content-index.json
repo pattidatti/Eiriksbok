@@ -1,5 +1,5 @@
 {
-  "buildId": 234241317860309,
+  "buildId": 113598718581568,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1383,6 +1383,9 @@
     ],
     "suez-krisen": [
       "content/historie/den-kalde-krigen/suez-krisen.json"
+    ],
+    "tsjernobyl": [
+      "content/historie/den-kalde-krigen/tsjernobyl.json"
     ],
     "veien-mot-slutt": [
       "content/historie/den-kalde-krigen/veien-mot-slutt.json"
@@ -4197,6 +4200,7 @@
     "historie/den-kalde-krigen/peace-lines-belfast": "content/historie/den-kalde-krigen/peace-lines-belfast.json",
     "historie/den-kalde-krigen/romkapplopet": "content/historie/den-kalde-krigen/romkapplopet.json",
     "historie/den-kalde-krigen/suez-krisen": "content/historie/den-kalde-krigen/suez-krisen.json",
+    "historie/den-kalde-krigen/tsjernobyl": "content/historie/den-kalde-krigen/tsjernobyl.json",
     "historie/den-kalde-krigen/veien-mot-slutt": "content/historie/den-kalde-krigen/veien-mot-slutt.json",
     "historie/den-kalde-krigen/vietnamkrigen": "content/historie/den-kalde-krigen/vietnamkrigen.json",
     "historie/etterkrigstiden/den-unipolare-verden": "content/historie/etterkrigstiden/den-unipolare-verden.json",
