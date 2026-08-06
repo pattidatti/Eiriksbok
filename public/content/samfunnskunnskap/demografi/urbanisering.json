@@ -6,6 +6,7 @@
     "heroImage": "/images/lessons/demografi/urbanisering_hero.webp",
     "status": "published",
     "layout": "rich",
+    "lastUpdated": "2026-08-06",
     "tags": [
         "demografi",
         "byutvikling",
@@ -15,39 +16,57 @@
     "content": [
         {
             "type": "text",
-            "value": "I 2007 krysset verden en magisk grense: For første gang bodde flere mennesker i byer enn på landsbygda. Dette kalles urbanisering."
+            "content": "I 2007 mente FN at verden krysset en magisk grense: for første gang bodde flere mennesker i byer enn på landsbygda (Ortiz-Ospina mfl., 2024). Nyere FN-tall teller byer på en annen måte og lander på 45 prosent (UN DESA, 2025). Men uansett hvordan man måler, peker pilen samme vei. Det kalles urbanisering: en prosess der befolkning, marked og tjenester flytter fra landsbygda til byområdene (Butenschøn, 2020)."
         },
         {
             "type": "header",
-            "value": "Megabyer: Når byer blir land"
+            "text": "Megabyer: Når byer blir land"
         },
         {
             "type": "text",
-            "value": "En megaby er en by med over 10 millioner innbyggere. I 1950 var det bare to (New York og Tokyo). I dag er det over 30.\n\n*   **Tokyo (37 mill):** En velsmurt maskin. Tog går på sekundet, gatene er rene. Orden.\n*   **Lagos (15 mill):** En eksplosjon av vekst. Trafikkaos, strømbrudd, men også en enormt kreativ energi. Kaos."
+            "content": "En megaby er en by med 10 millioner innbyggere eller mer. I 1975 fantes det åtte av dem. I 2025 er tallet 33 (UN DESA, 2025)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Tokyo (rundt 38 millioner i storbyregionen): en velsmurt maskin. Et tett nett av forstads- og tunnelbaner frakter mange millioner passasjerer hver eneste dag (Gundersen, 2026). Orden.",
+                "Lagos (rundt 15 millioner i selve byen): en eksplosjon av vekst. Byen sliter med sterk vekst, vanskelige trafikkforhold og mangelfull vann- og kloakkforsyning, men er samtidig Nigerias økonomiske motor og landets viktigste havneby (Hagen & Skatvik, 2026). Kaos."
+            ]
         },
         {
             "type": "header",
-            "value": "Byens to ansikter: Slum vs. Forstad"
+            "text": "Byens to ansikter: Slum vs. Forstad"
         },
         {
             "type": "text",
-            "value": "Urbanisering skaper enorme forskjeller. I Rio de Janeiro ligger luksusleiligheter vegg i vegg med *favelas* (slumområder).\n\n*   **Slummen:** Ofte ulovlig bebyggelse uten vann og kloakk. Men for mange er det det eneste stedet de har råd til å bo nær jobbene.\n*   **Forstaden:** Eneboliger langt utenfor sentrum. Krever ofte at man eier bil, noe som skaper kø og forurensning."
+            "content": "Urbanisering skaper enorme forskjeller. I Rio de Janeiro vokser *favelaene* i sentrale og attraktive områder, tett på de rike nabolagene (Håndlykken-Luz, 2026). Rundt en fjerdedel av verdens bybefolkning bor i slumområder (FN-sambandet, 2026)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Slummen: tettbygde byområder der mange mangler formelle eiendomsrettigheter, bor i selvbygde hus og har begrenset tilgang til trygt drikkevann og gode sanitærforhold (Refstie, 2026). Nærhet til arbeid og transport er noe av det som gjør presset på arealene så stort.",
+                "Forstaden: eneboliger langt utenfor sentrum. Bor du langt fra jobb og skole, blir du ofte avhengig av bil - og mer biltrafikk gir både kø og forurensning."
+            ]
         },
         {
             "type": "header",
-            "value": "Miljø: Den urbane varmeøya"
+            "text": "Miljø: Den urbane varmeøya"
         },
         {
             "type": "text",
-            "value": "Betong og asfalt suger til seg solvarme. Derfor er byer ofte 2-3 grader varmere enn landsbygda rundt. Dette kalles *Urban Heat Island*-effekten. \n\nI fremtiden må vi bygge byer som puster – med parker, grønne tak og trær som gir skygge."
+            "content": "Betong og asfalt suger til seg solvarme, og byen blir varmere enn landskapet rundt. Under hetebølgen sommeren 2018 ville enkelte bydeler i Oslo vært opptil 3 grader varmere i snitt uten bytrærne (Syverhuset, 2020). Dette kalles *Urban Heat Island*-effekten."
+        },
+        {
+            "type": "text",
+            "content": "Byene dekker bare rundt 3 prosent av landarealet på jorda, men står for 60-80 prosent av verdens energiforbruk (FN-sambandet, 2026). I fremtiden må vi derfor bygge byer som puster - med parker, grønne tak og trær som gir skygge og kjøler ned (Syverhuset, 2020)."
         },
         {
             "type": "header",
-            "value": "Interaktivitet: By-Simulatoren"
+            "text": "Interaktivitet: By-Simulatoren"
         },
         {
             "type": "text",
-            "value": "I denne simulatoren er *du* byplanleggeren. Se hvordan slum og skyskrapere vokser frem basert på dine valg om sonering. Kan du lage en by som både er stor og god å leve i?"
+            "content": "I denne simulatoren er *du* byplanleggeren. Se hvordan slum og skyskrapere vokser frem basert på dine valg om sonering. Kan du lage en by som både er stor og god å leve i?"
         },
         {
             "type": "component",
@@ -55,28 +74,45 @@
         },
         {
             "type": "text",
-            "value": "Er fremtiden gigantiske megabyer som dekker halve kontinentet, eller vil vi flytte ut igjen takket være hjemmekontor og internett?"
+            "content": "Er fremtiden gigantiske megabyer som dekker halve kontinentet, eller vil vi flytte ut igjen takket være hjemmekontor og internett?"
         },
         {
             "type": "component",
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvilket år krysset verden grensen der flere mennesker bodde i byer enn på landsbygda?",
-                    "Hvor mange innbyggere må en by ha for å kalles en megaby, og hvor mange megabyer fantes i 1950 mot i dag?",
+                    "Hvilket år mente FN at verden krysset grensen der flere mennesker bodde i byer enn på landsbygda?",
+                    "Hvor mange innbyggere må en by ha for å kalles en megaby, og hvor mange megabyer fantes i 1975 mot i 2025?",
                     "Hva er forskjellen på en slum og en forstad slik teksten beskriver dem?",
                     "Hva er Urban Heat Island-effekten, og hvorfor blir byer varmere enn landsbygda rundt?"
                 ],
                 "reflekter": [
                     "Teksten kaller Tokyo en velsmurt maskin og Lagos en eksplosjon av vekst. Hva menes med disse beskrivelsene, og hvorfor kan begge byene fungere selv om de er så ulike?",
-                    "Hvorfor velger mange å bo i en slum uten vann og kloakk i stedet for å bo lenger unna byen?",
-                    "Teksten sier at forstaden ofte krever at man eier bil. Forklar hvordan dette henger sammen med kø og forurensning.",
+                    "Hvorfor velger mange å bo i en slum uten trygt drikkevann og gode sanitærforhold i stedet for å bo lenger unna byen?",
+                    "Teksten sier at forstaden ofte gjør deg avhengig av bil. Forklar hvordan dette henger sammen med kø og forurensning.",
                     "Hvordan kan parker, grønne tak og trær hjelpe mot at byer blir for varme? Forklar mekanismen med egne ord."
                 ],
                 "gaaVidere": [
                     "Bor du selv i by, forstad eller på landet? Skriv 5-8 setninger om hva som er bra og dårlig med å bo akkurat der, og bruk minst ett begrep fra teksten.",
                     "Teksten avslutter med et spørsmål: Vil fremtiden bli gigantiske megabyer, eller vil folk flytte ut igjen på grunn av hjemmekontor og internett? Skriv ned hva du tror, og gi to grunner.",
                     "Diskuter med en partner: Hvis dere skulle planlegge en helt ny by, hvilke tre ting ville dere gjort for at den skal være både stor og god å leve i?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Butenschøn, P. (2020). *Urbanisering*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/urbanisering](https://snl.no/urbanisering)",
+                    "FN-sambandet. (2026). *Bærekraftige byer og lokalsamfunn*. Hentet 06.08.2026 fra [fn.no/om-fn/fns-baerekraftsmaal/baerekraftige-byer-og-lokalsamfunn](https://fn.no/om-fn/fns-baerekraftsmaal/baerekraftige-byer-og-lokalsamfunn)",
+                    "Gundersen, D. (2026). *Tokyo*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Tokyo](https://snl.no/Tokyo)",
+                    "Hagen, M. & Skatvik, F. (2026). *Lagos - by i Nigeria*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Lagos_-_by_i_Nigeria](https://snl.no/Lagos_-_by_i_Nigeria)",
+                    "Håndlykken-Luz, Å. (2026). *Favela*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/favela](https://snl.no/favela)",
+                    "Ortiz-Ospina, E., Samborska, V., Ritchie, H. & Roser, M. (2024). *Urbanization*. Our World in Data. Hentet 06.08.2026 fra [ourworldindata.org/urbanization](https://ourworldindata.org/urbanization)",
+                    "Refstie, H. (2026). *Slum*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/slum](https://snl.no/slum)",
+                    "Syverhuset, A. O. (2020). *Trær i byen gjør hetebølger mer levelige*. Norsk institutt for naturforskning / forskning.no. Hentet 06.08.2026 fra [forskning.no](https://forskning.no/klima-naturvitenskap-norsk-institutt-for-naturforskning/traer-i-byen-gjor-hetebolger-mer-levelige/1652394)",
+                    "UN DESA. (2025). *Cities are home to 45 per cent of the global population, with megacities continuing to grow, UN report finds*. FNs avdeling for økonomiske og sosiale saker. Hentet 06.08.2026 fra [un.org](https://www.un.org/sustainabledevelopment/blog/2025/11/press-release-wup2025)"
                 ]
             }
         }

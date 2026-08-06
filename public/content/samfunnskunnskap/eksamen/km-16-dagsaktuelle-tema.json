@@ -11,7 +11,7 @@
     "tags": ["eksamen", "metode", "argumentasjon", "kilder"],
     "createdDate": "2024-01-01T00:00:00Z",
     "details": [
-        "Kompetansemål SAF01-04",
+        "Kompetansemål SAK01-01",
         "Dagsaktuelle tema og argumentasjon"
     ],
     "timeline": [],
@@ -52,11 +52,11 @@
         },
         {
             "type": "text",
-            "content": "Ikke alle kilder er like pålitelige. En bloggpost er ikke det samme som en rapport fra Folkehelseinstituttet. En nettside som tjener penger på klikk, skriver annerledes enn en forsker som publiserer i et vitenskapelig tidsskrift. Du må lære deg å skille mellom dem. Tre spørsmål hjelper deg: Hvem har laget dette? Hvorfor? Og stemmer det med det andre kilder sier?"
+            "content": "Ikke alle kilder er like pålitelige. En bloggpost er ikke det samme som en rapport fra Folkehelseinstituttet. En nettside som tjener penger på klikk, skriver annerledes enn en forsker som publiserer i et vitenskapelig tidsskrift. Du må lære deg å skille mellom dem. Kildekritikk handler nettopp om å vurdere hvem avsenderen er, og hvor troverdig det som blir sagt, egentlig er (Orgeret & Hatlen, 2026). Tre spørsmål hjelper deg: Hvem har laget dette? Hvorfor? Og stemmer det med det andre kilder sier?"
         },
         {
             "type": "text",
-            "content": "Digitale ressurser er en sentral del av dette kompetansemålet. Det betyr at du skal bruke nettet aktivt - men smart. Akademiske kilder som forskning.no, ssb.no (Statistisk sentralbyrå) og regjeringen.no er gode startpunkt. Søkemotorer som Google kan gi deg mange treff, men du må alltid spørre hvem som står bak. I artikkelen om ekkokamre og informasjonsbobler kan du lese mer om hvordan algoritmene kan gi deg et skjevt bilde av debatten."
+            "content": "Digitale ressurser er en sentral del av dette kompetansemålet. Det betyr at du skal bruke nettet aktivt - men smart. Akademiske kilder som forskning.no, ssb.no og regjeringen.no er gode startpunkt. SSB er en faglig uavhengig institusjon med ansvar for den offisielle statistikken i Norge (Statistisk sentralbyrå, 2021). Søkemotorer som Google kan gi deg mange treff, men du må alltid spørre hvem som står bak. I artikkelen om ekkokamre og informasjonsbobler kan du lese mer om hvordan algoritmene kan gi deg et skjevt bilde av debatten."
         },
         {
             "type": "component",
@@ -79,7 +79,7 @@
                         "name": "SSB - Statistisk sentralbyrå",
                         "type": "Uavhengig statlig statistikk",
                         "stance": "Nøytral",
-                        "content": "Olje og gass utgjorde 14 prosent av BNP i 2023. Eksportinntektene finansierer en vesentlig del av offentlige utgifter."
+                        "content": "Olje og gass sto for 56,8 prosent av Norges samlede eksport i 2025, til en verdi av 1 066 milliarder kroner. Skatter og avgifter fra næringen utgjorde 24,3 prosent av alle skatter og avgifter i 2024."
                     },
                     {
                         "name": "Nettavisen - kommentarartikkel",
@@ -92,7 +92,7 @@
         },
         {
             "type": "text",
-            "content": "Prøv BiasLens-verktøyet over: klikk på hver kilde og se hvordan den samme saken kan bli fremstilt veldig ulikt. Legg merke til hvem som tjener på hver fremstilling. Det er ikke slik at bare interesseorganisasjoner eller aviser har en agenda - statsetater og forskningsinstitusjoner kan også ha det. Men noen kilder er mer transparente og etterprøvbare enn andre."
+            "content": "Prøv BiasLens-verktøyet over: klikk på hver kilde og se hvordan den samme saken kan bli fremstilt veldig ulikt. Tallene i SSB-kortet er hentet fra offentlig statistikk (Statistisk sentralbyrå, u.å.). Legg merke til hvem som tjener på hver fremstilling. Det er ikke slik at bare interesseorganisasjoner eller aviser har en agenda - statsetater og forskningsinstitusjoner kan også ha det. Men noen kilder er mer transparente og etterprøvbare enn andre."
         },
         {
             "type": "image",
@@ -112,7 +112,7 @@
             "type": "list",
             "items": [
                 "Påstand: Norge bør avvikle ny oljeleting innen 2030.",
-                "Belegg: FNs klimapanel slår fast at vi må holde to tredeler av kjente fossilreserver i bakken for å nå 1,5-gradersmålet.",
+                "Belegg: Gjennom Parisavtalen er landene enige om at temperaturen på kloden ikke skal stige mer enn 2 grader, og at de skal gjøre alt de kan for å holde den under 1,5 grader (FN-sambandet, 2025).",
                 "Forklaring: Siden Norge er et rikt land med store fornybarressurser, har vi et særlig ansvar og en særlig mulighet til å gå foran."
             ]
         },
@@ -133,7 +133,7 @@
         },
         {
             "type": "text",
-            "content": "En av de beste måtene å teste argumentene dine på er å simulere en debatt. Når du må forsvare en posisjon, oppdager du raskt hvilke hull det er i argumentasjonen din. Prøv debatten under - vær nøye med å lytte til hva motparten sier og tenk på hvordan du ville svart."
+            "content": "En av de beste måtene å teste argumentene dine på er å simulere en debatt. Når du må forsvare en posisjon, oppdager du raskt hvilke hull det er i argumentasjonen din. Debatten under handler om reklame for usunn mat rettet mot barn. Fra 25. oktober 2025 har Norge hatt en forskrift som forbyr markedsføring av visse usunne matvarer særlig rettet mot barn (Helsedirektoratet, 2025). Prøv debatten - vær nøye med å lytte til hva motparten sier og tenk på hvordan du ville svart."
         },
         {
             "type": "component",
@@ -141,19 +141,19 @@
             "props": {
                 "topic": "Reklameforbud for usunn mat rettet mot barn",
                 "opponentName": "Reklamebransjens representant",
-                "context": "Norge vurderer å innføre forbud mot reklame for usunn mat rettet mot barn. Du er for forbudet. Motparten representerer reklamebransjen.",
+                "context": "Norge fikk i oktober 2025 et forbud mot markedsføring av visse usunne matvarer særlig rettet mot barn. Du argumenterer for forbudet. Motparten representerer reklamebransjen og vil ha det opphevet.",
                 "winningScore": 3,
                 "arguments": [
                     {
                         "id": "arg1",
-                        "text": "Barn er ikke modne nok til å motstå reklame laget av profesjonelle psykologer og markedsforere. Folkehelseinstituttet viser at barn som ser mye matvarereklame, spiser mer sukker og fett.",
+                        "text": "Barn er ikke modne nok til å motstå reklame laget av profesjonelle psykologer og markedsførere. Formålet med det norske forbudet er nettopp å beskytte barn mot press som fører til et usunt kosthold (Helsedirektoratet, 2025).",
                         "strength": 3,
                         "type": "laws",
                         "response": "Foreldres ansvar er viktigst - staten bør ikke sensurere lovlig næring."
                     },
                     {
                         "id": "arg2",
-                        "text": "Skottland og Storbritannia har allerede innfort liknande forbod og sett positive helseeffekter. Dette er ikke et eksperiment - det er bevist at det virker.",
+                        "text": "Storbritannia innførte i januar 2026 forbud mot TV-reklame for usunn mat før klokka 21 og mot betalt nettreklame. Britiske myndigheter venter at tiltaket vil fjerne opptil 7,2 milliarder kalorier fra barns kosthold hvert år (Department of Health and Social Care, 2026).",
                         "strength": 2,
                         "type": "honor",
                         "response": "Norske barn er ikke britiske barn. Kulturelle forskjeller gjør det vanskelig å overføre resultater direkte."
@@ -199,7 +199,7 @@
         },
         {
             "type": "text",
-            "content": "Et siste råd: vær nysgjerrig på standpunktene til andre, ikke bare dine egne. Kompetansemålet sier at du skal argumentere både for dine egne og andres meninger og verdier. Det betyr at du faktisk forstår motparten - du kan sette deg inn i hvorfor de mener det de gjør, selv om du er uenig. Det er det vi kaller ekte debattkompetanse, og det er noe du får bruk for langt utenfor samfunnsfagstimen."
+            "content": "Et siste råd: vær nysgjerrig på standpunktene til andre, ikke bare dine egne. Kompetansemålet sier at du skal argumentere både for dine egne og andres meninger og verdier (Utdanningsdirektoratet, 2020). Det betyr at du faktisk forstår motparten - du kan sette deg inn i hvorfor de mener det de gjør, selv om du er uenig. Det er det vi kaller ekte debattkompetanse, og det er noe du får bruk for langt utenfor samfunnsfagstimen."
         },
         {
             "type": "component",
@@ -286,6 +286,22 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Department of Health and Social Care. (2026). *Landmark junk food ad ban to protect kids' health*. GOV.UK. Hentet 06.08.2026 fra [gov.uk](https://www.gov.uk/government/news/landmark-junk-food-ad-ban-to-protect-kids-health)",
+                    "FN-sambandet. (2025). *Parisavtalen*. Hentet 06.08.2026 fra [fn.no](https://www.fn.no/om-fn/avtaler/miljoe-og-klima/parisavtalen)",
+                    "Helsedirektoratet. (2025). *Markedsføringsforbud mot visse næringsmidler til barn*. Hentet 06.08.2026 fra [helsedirektoratet.no](https://www.helsedirektoratet.no/lov-og-forskrift/markedsforing-forbud-naeringsmidler-barn)",
+                    "Orgeret, K. S. & Hatlen, J. F. (2026). *Kildekritikk*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/kildekritikk](https://snl.no/kildekritikk)",
+                    "Statistisk sentralbyrå. (u.å.). *Fakta om olje og energi*. Hentet 06.08.2026 fra [ssb.no](https://www.ssb.no/energi-og-industri/faktaside/olje-og-energi)",
+                    "Statistisk sentralbyrå. (2021). *Om SSB*. Hentet 06.08.2026 fra [ssb.no/omssb/om-oss](https://www.ssb.no/omssb/om-oss)",
+                    "Utdanningsdirektoratet. (2020). *Kompetansemål og vurdering - Læreplan i samfunnskunnskap (SAK01-01)*. Hentet 06.08.2026 fra [udir.no](https://www.udir.no/lk20/sak01-01/kompetansemaal-og-vurdering/kv48)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-06"
 }
