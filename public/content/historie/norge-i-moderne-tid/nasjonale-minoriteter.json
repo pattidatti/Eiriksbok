@@ -5,7 +5,7 @@
     "year": "1814-2015",
     "category": "Norge i moderne tid",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norge-i-moderne-tid/nasjonale-minoriteter-hero.webp",
     "factChecked": "2026-08-05",
     "details": [
         "Norge har fem nasjonale minoriteter: jøder, romanifolket, rom, kvener og skogfinner. Alle har vært her i hundrevis av år.",
@@ -24,7 +24,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/nasjonale-minoriteter-01.webp",
             "alt": "Rad med små like hus på et gårdstun i norsk kystlandskap",
             "caption": "På Svanviken bodde hver familie i sitt eget lille hus. Alle husene var like, og bestyreren inspiserte dem jevnlig."
         },
@@ -101,7 +101,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/nasjonale-minoriteter-02.webp",
             "alt": "Barn i 1950-tallsklær står alene på en tom gårdsplass",
             "caption": "Mellom 1900 og 1959 ble rundt 1500 barn fra romanifolket tatt fra foreldrene sine og plassert på barnehjem eller i fosterhjem."
         },
@@ -150,7 +150,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/nasjonale-minoriteter-03.webp",
             "alt": "Oppslått norsk grunnlov fra 1814 på et bord med stearinlys",
             "caption": "Paragrafen i Grunnloven av 1814 sto i 37 år. Henrik Wergeland brukte de siste seks årene av livet sitt på å få den fjernet."
         },

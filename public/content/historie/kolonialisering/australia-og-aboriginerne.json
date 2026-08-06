@@ -5,7 +5,7 @@
     "year": "1788-1992",
     "category": "Kolonialisering",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/kolonialisering/australia-og-aboriginerne-hero.webp",
     "factChecked": "2026-08-06",
     "externalUrl": "https://snl.no/Australias_historie",
     "details": [
@@ -20,7 +20,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/australia-og-aboriginerne-01.webp",
             "alt": "Britiske seilskip ankrer opp i en solfylt bukt med lav skog langs stranden",
             "caption": "Den første flåten ankom i januar 1788. Det britene kalte en tom kyst, var et landskap med eiere, grenser og navn."
         },
@@ -136,7 +136,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/australia-og-aboriginerne-02.webp",
             "alt": "Sauefarm med gjerder som strekker seg over tørt gresslandskap i innlandet",
             "caption": "Gjerdene som fulgte sauefarmene var britenes bevis på eierskap. For dem som hadde levd av landet i tusener av år, var de en stengsel."
         },
@@ -174,7 +174,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/australia-og-aboriginerne-03.webp",
             "alt": "Publikum utenfor et parlamentsbygg følger en tale på storskjerm",
             "caption": "I 2008 ba statsministeren om unnskyldning på vegne av staten. Folk fulgte talen på storskjerm over hele landet."
         },
