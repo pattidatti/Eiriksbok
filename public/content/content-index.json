@@ -1,5 +1,5 @@
 {
-  "buildId": 238996986142549,
+  "buildId": 255489539867437,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1588,6 +1588,9 @@
     ],
     "tiananmen-1989": [
       "content/historie/kinas-historie/tiananmen-1989.json"
+    ],
+    "australia-og-aboriginerne": [
+      "content/historie/kolonialisering/australia-og-aboriginerne.json"
     ],
     "britisk-imperium": [
       "content/historie/kolonialisering/britisk-imperium.json"
@@ -4277,6 +4280,7 @@
     "historie/kinas-historie/silkeveien": "content/historie/kinas-historie/silkeveien.json",
     "historie/kinas-historie/store-spranget": "content/historie/kinas-historie/store-spranget.json",
     "historie/kinas-historie/tiananmen-1989": "content/historie/kinas-historie/tiananmen-1989.json",
+    "historie/kolonialisering/australia-og-aboriginerne": "content/historie/kolonialisering/australia-og-aboriginerne.json",
     "historie/kolonialisering/britisk-imperium": "content/historie/kolonialisering/britisk-imperium.json",
     "historie/kolonialisering/eic": "content/historie/kolonialisering/eic.json",
     "historie/kolonialisering/europa-erobrer-verden": "content/historie/kolonialisering/europa-erobrer-verden.json",

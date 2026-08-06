@@ -74,6 +74,14 @@
       "countryId": 300,
       "source": "seed"
     },
+    "australia": {
+      "lat": -25.3,
+      "lng": 133.8,
+      "label": "Australia",
+      "kind": "land",
+      "countryId": 36,
+      "source": "seed"
+    },
     "aztekere": {
       "lat": 19.43,
       "lng": -99.13,
@@ -510,6 +518,14 @@
       "countryId": 528,
       "source": "seed"
     },
+    "new zealand": {
+      "lat": -41.5,
+      "lng": 172.8,
+      "label": "New Zealand",
+      "kind": "land",
+      "countryId": 554,
+      "source": "seed"
+    },
     "nicaragua": {
       "lat": 12.9,
       "lng": -85.2,
@@ -570,6 +586,13 @@
       "label": "Olympia",
       "kind": "by",
       "countryId": 300,
+      "source": "seed"
+    },
+    "oseania": {
+      "lat": -22,
+      "lng": 140,
+      "label": "Oseania",
+      "kind": "region",
       "source": "seed"
     },
     "osmanske-riket": {
@@ -784,7 +807,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 323
+      "count": 325
     },
     {
       "tag": "dekolonisering",
@@ -983,6 +1006,10 @@
       "count": 14
     },
     {
+      "tag": "kolonialisering",
+      "count": 13
+    },
+    {
       "tag": "fn",
       "count": 13
     },
@@ -1016,10 +1043,6 @@
     },
     {
       "tag": "buddhisme",
-      "count": 11
-    },
-    {
-      "tag": "kolonialisering",
       "count": 11
     },
     {
@@ -1372,6 +1395,10 @@
     },
     {
       "tag": "natur",
+      "count": 5
+    },
+    {
+      "tag": "urfolk",
       "count": 5
     },
     {
@@ -1756,10 +1783,6 @@
     },
     {
       "tag": "kommunikasjon",
-      "count": 3
-    },
-    {
-      "tag": "urfolk",
       "count": 3
     },
     {
@@ -2404,6 +2427,10 @@
     },
     {
       "tag": "grunnlov",
+      "count": 2
+    },
+    {
+      "tag": "terra nullius",
       "count": 2
     },
     {

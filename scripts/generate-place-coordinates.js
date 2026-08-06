@@ -145,6 +145,11 @@ const GAZETTEER = {
     indonesia: { lat: -2.5, lng: 118.0, label: 'Indonesia', kind: 'land', countryId: 360 },
     mongolene: { lat: 46.9, lng: 103.8, label: 'Mongolriket', kind: 'imperium', countryId: 496 },
 
+    // --- Oseania ---
+    australia: { lat: -25.3, lng: 133.8, label: 'Australia', kind: 'land', countryId: 36 },
+    'new zealand': { lat: -41.5, lng: 172.8, label: 'New Zealand', kind: 'land', countryId: 554 },
+    oseania: { lat: -22.0, lng: 140.0, label: 'Oseania', kind: 'region' },
+
     // --- Amerika ---
     amerika: { lat: 8.0, lng: -75.0, label: 'Amerika', kind: 'region' },
     'nord-amerika': { lat: 45.0, lng: -100.0, label: 'Nord-Amerika', kind: 'region' },
