@@ -175,6 +175,7 @@ const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
 const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
+const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'bedehuset-motet': {
@@ -1706,6 +1707,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./LandetMedIld3D'),
         Component: LandetMedIld3D as never,
+    },
+    'lalibela-kirke-3d': {
+        id: 'lalibela-kirke-3d',
+        title: 'Hugg klippekirka i Lalibela',
+        description:
+            'Et fjellplatå i det etiopiske høylandet på 1100-tallet. Rits omrisset av korset i steinen, dra spaken og hugg fjellet nedover meter for meter, og se kirka bli stående igjen nede i gropa med taket i flukt med bakken. Hugg du hull i taket, revner fjellet og regnet renner inn. Lyspæra: klippekirkene ble ikke bygd oppover av stein som ble båret dit, de ble hugget nedover ut av ett eneste fjell.',
+        estimatedSeconds: 150,
+        loader: () => import('./LalibelaKirke3D'),
+        Component: LalibelaKirke3D as never,
     },
 };
 

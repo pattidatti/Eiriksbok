@@ -1,0 +1,258 @@
+{
+    "id": "aksum-og-etiopia",
+    "title": "Aksum og Etiopia: riket som slo tilbake",
+    "layout": "rich",
+    "year": "100-1896",
+    "category": "Øst-Afrika",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Aksum var et av verdens store riker i antikken, med egne gullmynter og egen skrift.",
+        "Etiopia ble kristent allerede rundt år 330, lenge før store deler av Europa.",
+        "I 1896 slo Etiopia den italienske hæren ved Adwa og beholdt friheten sin."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "I 1937 sto italienske soldater i den etiopiske byen Aksum og saget i stykker en steinstøtte. Støtta var 24,6 meter høy, veide 160 tonn og var rundt 1700 år gammel (UN News, 2005). De delte den opp, kjørte den til kysten og fraktet den til Roma. Der ble den reist igjen som et trofé. Spørsmålet er hvorfor Italia ville ha akkurat den steinen. Svaret er at støtta beviste noe italienerne helst ville glemme: da Roma var et verdensrike, var Aksum det også. Og 41 år tidligere hadde Etiopia gjort noe ingen andre i Afrika klarte. Landet hadde slått en europeisk hær og beholdt friheten sin."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Høy steinstøtte av granitt som rager over et tørt landskap",
+            "caption": "Steinstøttene i Aksum markerte gravene til konger. Den største som fortsatt står, er over 20 meter høy."
+        },
+        {
+            "type": "header",
+            "text": "Riket ved Rødehavet"
+        },
+        {
+            "type": "text",
+            "content": "Aksumriket vokste fram rundt år 0, i det som i dag er Eritrea og Etiopia. Hovedstaden het Aksum og lå i Tigray helt nord i Etiopia. Fra 200-tallet gikk riket inn i en lang storhetstid, og på det meste kontrollerte kongene også områder på den andre siden av Rødehavet (Seland, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Rikdommen kom fra handel. Kjøpmenn fra Aksum solgte elfenben, skilpaddeskall, gull, røkelse og myrra ut over Rødehavet og Indiahavet. Røkelse og myrra er duftende harpiks fra trær, altså størknet plantesaft, og ble brukt i tempel og kirke over hele den gamle verden. Varene gikk til Romerriket, til Arabia og videre til India. Handelen ga Aksum noe svært få riker i antikken hadde: sine egne gullmynter (Seland, 2024). En mynt er ikke bare penger. Den er en beskjed om at staten er sterk nok til at folk stoler på den."
+        },
+        {
+            "type": "text",
+            "content": "Aksum hadde også sin egen skrift. På myntene sto det innskrifter både på gresk og på ge'ez, språket i riket (Seland, 2024). Ge'ez brukes fortsatt i gudstjenester i den etiopiske kirken. Dette er verdt å stoppe opp ved. Et afrikansk rike med egen skrift, egne mynter og handelsforbindelser til India passer dårlig med bildet mange i Europa senere tegnet av Afrika. Det samme gjelder [Stor-Zimbabwe](/historie/afrikanske-riker/stor-zimbabwe) i sør og [Mali-riket](/historie/afrikanske-riker/mansa-musa-og-mali) i vest."
+        },
+        {
+            "type": "header",
+            "text": "Kongen som byttet symbol"
+        },
+        {
+            "type": "text",
+            "content": "Rundt år 330 skjedde det noe som formet Etiopia helt fram til i dag. Kongefamilien i Aksum ble kristen. Kong Ezana gjorde kristendommen til statsreligion (Leraand & Østebø, 2026). Det merkelige er at vi kan se det skje på pengene. På de eldste myntene til Ezana står det symboler for sol og måne. På de yngre er symbolene byttet ut med et kors (Seland, 2024). En konge som endrer bildet på myntene, forteller hele riket at noe grunnleggende har endret seg."
+        },
+        {
+            "type": "text",
+            "content": "Etiopia ble altså kristent rundt 300 år før flere land i Nord-Europa. Det er en av grunnene til at etiopiere senere ble sinte når europeere kom og ville lære dem kristendom."
+        },
+        {
+            "type": "header",
+            "text": "Da kysten forsvant"
+        },
+        {
+            "type": "text",
+            "content": "Ingen storhetstid varer evig. Aksum mistet kontrollen over områdene sør for Rødehavet i 570. På 600-tallet spredte arabisk makt seg rundt hele havet, og handelsrutene som riket levde av, gikk tapt. Uten kysten forsvant inntektene. Pest og klimakrise gjorde det verre, og de siste kongene vi kjenner navnet på, styrte på 900-tallet (Seland, 2024). Men byen Aksum ble aldri glemt. Den er fortsatt et hellig sted for den etiopiske kirken."
+        },
+        {
+            "type": "header",
+            "text": "Kirker hugget ned i fjellet"
+        },
+        {
+            "type": "text",
+            "content": "Makten flyttet seg sørover. Fra 1137 til 1270 styrte Zagwe-dynastiet, og det er de vi kan takke for et av verdens merkeligste byggverk (Leraand & Østebø, 2026). I byen Lalibela, 330 kilometer nord for Addis Abeba, ligger elleve kirker hugget ut av fjellet på 1000- og 1100-tallet. Den største er over 30 meter lang, 25 meter bred og 10 meter høy (Østebø, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til ordet hugget. Kirkene er ikke bygd oppover av stein som er båret dit. De er hugget nedover, ut av ett eneste stykke fjell, slik at de står igjen som frittstående hus nede i en grop. Taket ligger i flukt med bakken rundt. Ifølge sagnet fikk kong Lalibela et syn om at han skulle gjøre byen til et nytt Jerusalem, og stedet kalles derfor Afrikas Jerusalem (Østebø, 2024). Prøv selv å hugge en slik kirke."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "lalibela-kirke-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Da Europa delte Afrika"
+        },
+        {
+            "type": "text",
+            "content": "På slutten av 1800-tallet delte europeiske stormakter Afrika mellom seg. Du kan lese mer om dette i artikkelen om [kappløpet om Afrika](/historie/kolonialisering/kapplopet-om-afrika). Italia kom sent til festen og ville også ha en koloni. Blikket falt på Etiopia, der keiser Menelik 2. hadde samlet flere kongedømmer til ett rike og kjøpt moderne våpen fra Europa (Leraand & Østebø, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "I 1889 skrev Italia og Etiopia under en vennskapsavtale i byen Wichale. Traktaten fantes i to versjoner, en på amharisk og en på italiensk, og artikkel 17 sa ikke helt det samme i de to tekstene. Menelik leste sin versjon som at han kunne bruke Italia som mellommann overfor andre land. Den italienske statsministeren Francesco Crispi leste sin versjon som at Etiopia måtte gjøre det, og at landet dermed var et italiensk protektorat (Encyclopaedia Britannica, 2026). Et protektorat er et land som formelt har egen konge, men der en fremmed stat styrer utenrikspolitikken. Prøv begge ordene nedenfor og se hva de gjør med Etiopia."
+        },
+        {
+            "type": "component",
+            "name": "TraktatFellen",
+            "props": {}
+        },
+        {
+            "type": "text",
+            "content": "Menelik sa opp artikkel 17 i 1890 og hele traktaten i 1893 (Encyclopaedia Britannica, 2026). Da hadde Italia allerede meldt til resten av Europa at Etiopia var italiensk område. Nå måtte italienerne enten trekke påstanden tilbake eller gå til krig."
+        },
+        {
+            "type": "header",
+            "text": "1. mars 1896: slaget ved Adwa"
+        },
+        {
+            "type": "text",
+            "content": "General Oreste Baratieri rykket inn i Nord-Etiopia med rundt 14 500 soldater. Litt over halvparten var italienere, resten var afrikanske soldater fra italienske kolonier. Menelik møtte dem med over 100 000 mann i et fjellandskap italienerne ikke kjente (Encyclopaedia Britannica, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Etiopiske soldater på en fjellrygg i morgenlys før et slag",
+            "caption": "Ved Adwa kjempet en etiopisk hær på over 100 000 mann i sitt eget fjellandskap."
+        },
+        {
+            "type": "text",
+            "content": "Den 1. mars 1896 gikk italienerne til angrep i tre kolonner som mistet kontakten med hverandre i terrenget. De ble slått hver for seg. Rundt 6000 av italienernes soldater ble drept, og mellom 3000 og 4000 ble tatt til fange. Det er omtrent 70 prosent av hele styrken. Etiopia mistet over 5000 mann og hadde 8000 sårede, men det var en langt mindre del av hæren (Encyclopaedia Britannica, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "I oktober 1896 skrev partene under en ny avtale i Addis Abeba. Den opphevet traktaten fra Wichale og alt snakk om et italiensk protektorat (Encyclopaedia Britannica, 2026). Adwa var det første knusende nederlaget en europeisk stormakt fikk mot en afrikansk hær i kolonitiden. Nyheten gikk verden rundt, og for folk av afrikansk avstamning på flere kontinenter ble Etiopia et bevis på at kolonimakten kunne slås."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Menelik hadde kjøpt moderne rifler og kanoner fra Europa i årene før krigen.",
+                "Italienerne kjempet langt hjemmefra, i fjell de ikke hadde gode kart over.",
+                "Etiopia var samlet til ett rike og kunne stille en hær fra hele landet."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Italia kommer tilbake"
+        },
+        {
+            "type": "text",
+            "content": "Nederlaget ved Adwa ble en skam mange italienske politikere ville viske ut. I 1935 sendte Mussolini en hær inn i Etiopia uten å erklære krig først (Leraand & Østebø, 2026). Denne gangen hadde angriperne fly og giftgass. Keiser Haile Selassie flyktet og holdt en berømt tale for [Folkeforbundet](/historie/mellomkrigstiden/folkeforbundet) i Genève, der han ba verden om hjelp. Han fikk sympati, men ingen redning. Det var i disse årene, i 1937, at steinstøtta i Aksum ble tatt til Roma. Okkupasjonen varte til britiske og etiopiske styrker drev italienerne ut under andre verdenskrig."
+        },
+        {
+            "type": "header",
+            "text": "Steinen kommer hjem"
+        },
+        {
+            "type": "text",
+            "content": "Etiopia krevde støtta tilbake i mange tiår. Først i 2005 skjedde det. Obelisken ble delt i tre og fløyet fra Roma til Aksum, 68 år etter at den ble tatt (UN News, 2005). UNESCO laget planen for å reise den igjen, og under arbeidet fant arkeologene spor etter en kongelig gravplass som ingen visste om (UN News, 2005)."
+        },
+        {
+            "type": "text",
+            "content": "Historien om denne steinen er hele Etiopias historie i kortform. Den ble reist av et rike som handlet med India, tatt av en europeisk stormakt som ville hevne et nederlag, og hentet hjem igjen av et fritt land. Etiopia var det eneste stedet i Afrika der kolonimakten ble slått på slagmarken og sendt hjem. Det er derfor Adwa fortsatt feires 1. mars hvert år."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Kranarbeidere reiser en høy granittstøtte på plass igjen",
+            "caption": "I 2005 kom obelisken tilbake til Aksum etter 68 år i Roma."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke varer solgte kjøpmennene fra Aksum, og hvilke hav gikk handelen over?",
+                    "Hva skjedde med symbolene på myntene til kong Ezana, og hva forteller endringen oss?",
+                    "Hva er spesielt med måten kirkene i Lalibela ble laget på?",
+                    "Hvor mange soldater hadde hver av de to hærene ved Adwa i 1896?"
+                ],
+                "reflekter": [
+                    "Teksten sier at egne gullmynter er en beskjed om at staten er sterk. Forklar hvorfor folk må stole på en stat for at mynter skal fungere.",
+                    "Artikkel 17 i Wichale-traktaten fantes i to versjoner. Forklar hvordan en oversettelse kan bli et maktmiddel.",
+                    "Bruk punktlista i teksten og forklar hvorfor Etiopia vant ved Adwa, mens andre afrikanske land tapte mot europeiske hærer.",
+                    "Hvorfor tror du Italia tok med seg akkurat steinstøtta fra Aksum i 1937, og ikke noe annet?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign Aksum med Stor-Zimbabwe og Mali-riket. Skriv noen setninger om hva de tre rikene hadde felles.",
+                    "Diskuter med en medelev: Bør museer og land levere tilbake gjenstander som ble tatt under kolonitiden? Finn minst ett argument for og ett mot.",
+                    "Haile Selassie ba Folkeforbundet om hjelp i 1936 og fikk sympati, men ingen redning. Skriv kort om hva den hendelsen sier om hvor sterkt Folkeforbundet var."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva var Aksum et av de få rikene i antikken som hadde?",
+                        "options": [
+                            "Sine egne gullmynter",
+                            "Et eget jernbanenett",
+                            "Skip drevet av damp",
+                            "Et skriftlig forbud mot handel"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Handelen over Rødehavet og Indiahavet gjorde Aksum så rikt at riket kunne slå sine egne gullmynter. Innskriftene sto på gresk og ge'ez."
+                    },
+                    {
+                        "question": "Omtrent når ble kristendommen statsreligion i Aksum?",
+                        "options": [
+                            "Rundt år 330",
+                            "Rundt år 1000",
+                            "Rundt år 1500",
+                            "Rundt år 1890"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Kong Ezana gjorde kristendommen til statsreligion rundt år 330. Vi kan følge skiftet på myntene hans, der sol og måne blir byttet ut med et kors."
+                    },
+                    {
+                        "question": "Hva er spesielt med kirkene i Lalibela?",
+                        "options": [
+                            "De er hugget nedover ut av ett stykke fjell",
+                            "De er bygd av tre fra Europa",
+                            "De flyter på en innsjø",
+                            "De er satt sammen av teglstein fra Egypt"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "De elleve kirkene er hugget nedover i fjellet og står igjen som frittstående hus nede i en grop. Den største er over 30 meter lang."
+                    },
+                    {
+                        "question": "Hva var problemet med artikkel 17 i Wichale-traktaten fra 1889?",
+                        "options": [
+                            "Den amhariske og den italienske versjonen betydde ikke det samme",
+                            "Den var skrevet med usynlig blekk",
+                            "Ingen av partene hadde undertegnet den",
+                            "Den handlet bare om handel med kaffe"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Menelik leste sin versjon som at han kunne bruke Italia som mellommann. Italia leste sin som at Etiopia måtte gjøre det, og dermed var et protektorat."
+                    },
+                    {
+                        "question": "Hvorfor er slaget ved Adwa i 1896 så viktig?",
+                        "options": [
+                            "Det var det første knusende nederlaget en europeisk stormakt fikk mot en afrikansk hær i kolonitiden",
+                            "Det var det siste slaget i første verdenskrig",
+                            "Det gjorde Etiopia til en italiensk koloni",
+                            "Det førte til at Folkeforbundet ble opprettet"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Etiopia slo den italienske hæren og beholdt friheten sin. Avtalen i Addis Abeba i oktober 1896 opphevet Italias krav om protektorat."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (2026). *Battle of Adwa*. Hentet 06.08.2026 fra [britannica.com](https://www.britannica.com/event/Battle-of-Adwa)",
+                    "Leraand, D. & Østebø, T. (2026). *Etiopias historie*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Etiopias_historie](https://snl.no/Etiopias_historie)",
+                    "Seland, E. H. (2024). *Aksumriket*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Aksumriket](https://snl.no/Aksumriket)",
+                    "UN News. (2005). *Ethiopian obelisk taken by Italy returns home under watchful eye of UN*. FN. Hentet 06.08.2026 fra [news.un.org](https://news.un.org/en/story/2005/04/135932)",
+                    "Østebø, T. (2024). *Lalibela*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Lalibela](https://snl.no/Lalibela)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

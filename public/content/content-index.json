@@ -1,5 +1,5 @@
 {
-  "buildId": 255489539867437,
+  "buildId": 203617673161546,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1185,6 +1185,9 @@
     ],
     "global-timeline.manual": [
       "content/global-timeline.manual.json"
+    ],
+    "aksum-og-etiopia": [
+      "content/historie/afrikanske-riker/aksum-og-etiopia.json"
     ],
     "ghana-riket": [
       "content/historie/afrikanske-riker/ghana-riket.json"
@@ -4146,6 +4149,7 @@
     "global-timeline-images.json/undefined/global-timeline-images": "content/global-timeline-images.json",
     "global-timeline.json/undefined/global-timeline": "content/global-timeline.json",
     "global-timeline.manual.json/undefined/global-timeline.manual": "content/global-timeline.manual.json",
+    "historie/afrikanske-riker/aksum-og-etiopia": "content/historie/afrikanske-riker/aksum-og-etiopia.json",
     "historie/afrikanske-riker/ghana-riket": "content/historie/afrikanske-riker/ghana-riket.json",
     "historie/afrikanske-riker/mansa-musa-og-mali": "content/historie/afrikanske-riker/mansa-musa-og-mali.json",
     "historie/afrikanske-riker/songhai-riket": "content/historie/afrikanske-riker/songhai-riket.json",
