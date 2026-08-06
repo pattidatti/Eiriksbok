@@ -17,7 +17,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Forente Nasjoner (FN) ble født ut av asken fra den andre verdenskrig. Etter at Folkeforbundet hadde feilet i å stoppe Hitler og Mussolini, innså verdens ledere at de trengte en sterkere organisasjon. Den 24. oktober 1945 trådte FN-pakten i kraft."
+            "content": "Forente Nasjoner (FN) ble født ut av asken fra den andre verdenskrig. Etter første verdenskrig hadde verden opprettet Folkeforbundet, men det viste seg maktesløst. Da den neste storkrigen var over, ville verdens ledere prøve på nytt med en sterkere organisasjon - selv om ingen visste om den ville lykkes bedre enn den forrige (Knudsen mfl., 2025). FN-pakten ble undertegnet i San Francisco 26. juni 1945, og den trådte i kraft 24. oktober samme år, etter at Kina, Frankrike, Sovjetunionen, Storbritannia og USA og flertallet av de andre statene hadde godkjent den (Knudsen & FN-sambandet, 2025)."
         },
         {
             "type": "header",
@@ -25,7 +25,7 @@
         },
         {
             "type": "text",
-            "content": "FNs hovedoppgave er å opprettholde internasjonal fred og sikkerhet. Men FN er mye mer enn bare blå hjelmer. Organisasjonen jobber med alt fra menneskerettigheter til miljøvern og fattigdomsbekjempelse. Likevel var det sikkerhetspolitikken som sto i sentrum under den kalde krigen."
+            "content": "FNs hovedoppgave er å bevare internasjonal fred og sikkerhet. Organisasjonen er forpliktet til å gjøre noe med alt som truer freden, og den skal alltid prøve å løse konflikter med fredelige midler (Knudsen & FN-sambandet, 2025). Men FN er mye mer enn bare blå hjelmer. Organisasjonen jobber også med menneskerettigheter, med klima og miljø, og med å få bukt med fattigdom (Knudsen mfl., 2025). Likevel var det sikkerhetspolitikken som sto i sentrum under den kalde krigen."
         },
         {
             "type": "header",
@@ -33,14 +33,14 @@
         },
         {
             "type": "text",
-            "content": "I hjertet av FN ligger Sikkerhetsrådet. Her sitter stormaktene som vant krigen – USA, Sovjetunionen (nå Russland), Storbritannia, Frankrike og Kina – som faste medlemmer. De har noe ingen andre har: vetorett. Hvis én av disse sier nei, blir ikke et forslag vedtatt. Under den kalde krigen ble denne retten brukt flittig, noe som ofte lammet organisasjonen i viktige konflikter."
+            "content": "I hjertet av FN ligger Sikkerhetsrådet. Her sitter de fem allierte stormaktene fra den andre verdenskrig - USA, Sovjetunionen (nå Russland), Storbritannia, Frankrike og Kina - som faste medlemmer. De har noe ingen andre har: vetorett. Hver av de fem kan stemme mot og dermed hindre et vedtak i alle saker som ikke bare handler om framgangsmåte (FN-sambandet & Ravndal, 2026). Vetoretten virker også uten at den blir brukt: bare det å true med veto er nok til at forslag ofte blir trukket før noen rekker å stemme (FN-sambandet & Ravndal, 2026). Under den kalde krigen lammet dette organisasjonen i mange viktige konflikter."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Koreakrigen: Et unntak",
-                "content": "Vanligvis ville Sovjetunionen lagt ned veto mot at FN skulle hjelpe Sør-Korea i 1950. Men på det tidspunktet boikottet sovjetene Sikkerhetsrådet i protest mot at Taiwan representerte Kina. Dermed kunne de andre medlemmene vedta å sende en FN-støttet styrke til Korea. Dette er en av de få gangene FN har gått til direkte militær aksjon mot en angriper under den kalde krigen."
+                "content": "Vanligvis ville Sovjetunionen lagt ned veto mot at FN skulle hjelpe Sør-Korea i 1950. Men på det tidspunktet boikottet sovjeterne Sikkerhetsrådet i protest mot at det var Taiwan (Republikken Kina), og ikke det kommunistiske Kina (Folkerepublikken Kina), som satt på den faste plassen. Nettopp derfor lot FN-inngripen til støtte for Sør-Korea seg gjennomføre (Helgesen, 2026). Dette er en av de få gangene FN har gått til direkte militær aksjon mot en angriper under den kalde krigen."
             }
         },
         {
@@ -49,7 +49,7 @@
         },
         {
             "type": "text",
-            "content": "I 1948 vedtok FN Verdenserklæringen om menneskerettigheter. Ledet av Eleanor Roosevelt ble dette et dokument som utfordret diktaturer over hele verden. Selv om mange land ikke fulgte den i praksis, ble den en moralsk målestokk som senere bidro til å inspirere frihetsbevegelser i østblokken."
+            "content": "Den 10. desember 1948 vedtok FNs generalforsamling i Paris Verdenserklæringen om menneskerettigheter (Strand, 2025). Eleanor Roosevelt ble leder for FNs menneskerettighetskommisjon og var en ledende skikkelse i komiteen som skrev utkastet (År, 2025).\n\nErklæringen er ikke formulert slik at den er rettslig bindende. Den setter opp et felles mål for alle folk og alle nasjoner. Men innholdet ble senere skrevet inn i konvensjoner som faktisk er bindende for de landene som slutter seg til dem (Strand, 2025). Slik ble et dokument uten lovkraft likevel målestokken alle senere menneskerettighetsavtaler måtte måles mot."
         },
         {
             "type": "component",
@@ -65,7 +65,7 @@
                     "Hvorfor følte verdens ledere at de trengte FN etter at Folkeforbundet hadde feilet?",
                     "Forklar hvorfor vetoretten ofte lammet FN i viktige konflikter under den kalde krigen.",
                     "Hvordan kunne FN sende en styrke til Sør-Korea i 1950 uten at Sovjetunionen stoppet det med veto?",
-                    "Hvorfor kaller teksten Menneskerettighetserklæringen en moralsk målestokk selv om mange land ikke fulgte den i praksis?"
+                    "Verdenserklæringen er ikke rettslig bindende. Hvorfor kunne den likevel få stor betydning?"
                 ],
                 "gaaVidere": [
                     "Skriv en kort tekst der du forklarer om du synes det er rettferdig at bare fem land har vetorett i dag, eller om reglene burde endres.",
@@ -73,8 +73,23 @@
                     "Diskuter med en medelev: Kan et dokument om menneskerettigheter forandre verden, selv når land bryter reglene?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "FN-sambandet & Ravndal, E. J. (2026). *FNs sikkerhetsråd*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/FNs_sikkerhetsråd](https://snl.no/FNs_sikkerhetsr%C3%A5d)",
+                    "Helgesen, G. (2026). *Koreakrigen*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Koreakrigen](https://snl.no/Koreakrigen)",
+                    "Knudsen, O. F. & FN-sambandet (2025). *FN-pakten*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/FN-pakten](https://snl.no/FN-pakten)",
+                    "Knudsen, O. F., Ravndal, E. J. & FN-sambandet (2025). *FN - Forente nasjoner*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/FN_-_Forente_nasjoner](https://snl.no/FN_-_Forente_nasjoner)",
+                    "Strand, V. B. (2025). *Verdenserklæringen om menneskerettigheter*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Verdenserklæringen_om_menneskerettigheter](https://snl.no/Verdenserkl%C3%A6ringen_om_menneskerettigheter)",
+                    "År, I. (2025). *Eleanor Roosevelt*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Eleanor_Roosevelt](https://snl.no/Eleanor_Roosevelt)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-08-06",
     "quiz": [
         {
             "question": "Når ble FN offisielt opprettet?",

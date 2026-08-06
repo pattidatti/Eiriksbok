@@ -29,7 +29,7 @@
         },
         {
             "type": "text",
-            "content": "Hvis du spurte en bonde i [Romerriket](/historie/romerriket/hverdagsliv-i-roma) eller i vikingtidens Norge om hvordan fremtiden ville se ut, ville han sannsynligvis svart: 'Som i fjor'. For dem var tiden sirkulær. Riker oppstår og går under, årstidene kommer og går, og mennesket er fanget i en evig gjentakelse.\n\nEndringen kom gradvis gjennom [de abrahamittiske religionene](/samfunnskunnskap/ideer-og-verdenssyn/eskatologi), som så historien som en fortelling med en begynnelse (Skapelsen) og en slutt (Dommedag). Men det var først under opplysningstiden på 1700-tallet at denne lineære tiden ble fylt med optimisme. Man begynte å tro at mennesket, gjennom fornuft og vitenskap, kunne gjøre verden stadig bedre."
+            "content": "Hvis du spurte en bonde i [Romerriket](/historie/romerriket/hverdagsliv-i-roma) eller i vikingtidens Norge om hvordan fremtiden ville se ut, ville han sannsynligvis svart: 'Som i fjor'. For dem var tiden sirkulær. Riker oppstår og går under, årstidene kommer og går, og mennesket er fanget i en evig gjentakelse.\n\nTanken om sirkulær tid er ikke bare et innfall. I hinduismen regner man med fire verdensaldre der det går gradvis nedover, og når den siste er over, går verden under - for så å oppstå igjen i en evig gjentakelse (Kraggerud, 2024).\n\nEndringen kom gradvis gjennom [de abrahamittiske religionene](/samfunnskunnskap/ideer-og-verdenssyn/eskatologi), som så historien som en fortelling med en begynnelse (Skapelsen) og en slutt (Dommedag). Men det var først under opplysningstiden på 1700-tallet at denne lineære tiden ble fylt med optimisme. Vitenskap, fornuft, frihet, toleranse og framskritt ble de nye idealene, og tanken var at menneskets egen fornuft kunne erstatte de gamle autoritetene og bekjempe overtro (Krefting, 2026)."
         },
         {
             "type": "header",
@@ -37,14 +37,14 @@
         },
         {
             "type": "text",
-            "content": "Filosofer som Condorcet og Immanuel Kant mente at menneskeheten var inne i en 'modningsprosess'. Akkurat som et barn blir voksen, ville menneskeheten som helhet vokse ut av overtro og rystende tradisjoner. \n\nSannhet (se [sannhetens historie](/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie)) var nøkkelen. Hvis vi bare lærte nok om naturen og oss selv, ville krig, fattigdom og sykdom til slutt forsvinne. Framskrittet ble sett på som en uunngåelig naturlov – en rett linje mot perfeksjon."
+            "content": "Filosofer som Condorcet og Immanuel Kant mente at menneskeheten var inne i en slags modningsprosess. I 1784 skrev Kant at opplysning handler om at menneskeheten må løfte seg selv ut av umodenheten, ved aktivt å ta ansvar for å forbedre samfunnet gjennom kritisk debatt og refleksjon (Hogstad, 2025). Akkurat som et barn blir voksen, skulle menneskeheten som helhet vokse ut av overtroen. \n\nSannhet (se [sannhetens historie](/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie)) var nøkkelen. Condorcet gikk lengst: i verket han er mest kjent for, hevdet han at menneskeheten kunne nå fram til en fullkommen tilstand gjennom stadig framskritt (Acton, u.å.). Framskrittet ble sett på som en uunngåelig naturlov - en rett linje mot perfeksjon."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Optimisme i fengsel",
-                "content": "Markien av Condorcet skrev sitt mest optimistiske verk om menneskehetens framgang mens han satt i fengsel under den franske revolusjon, rett før han ble henrettet. Selv i møte med sin egen undergang, nektet han å gi slipp på troen på at fremtiden ville bli bedre."
+                "content": "Markien av Condorcet var lyst fredløs fordi han gikk imot Robespierre. Mens han holdt seg i skjul, overtalte kona og vennene hans ham til å skrive verket han er mest kjent for: en optimistisk skisse over menneskeåndens framgang. Kort etter ble han tatt og satt i fengsel i Bourg-la-Reine, og om morgenen 29. mars 1794 ble han funnet død i cellen. Om det skyldtes utmattelse eller gift, vet ingen (Acton, u.å.). Selv med undergangen rett rundt hjørnet nektet han å gi slipp på troen på at framtiden ville bli bedre."
             }
         },
         {
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "content": "Under den industrielle revolusjon ble framskrittet synlig for alle. Jernbaner, dampskip og telegrafen bandt verden sammen. Det føltes som om mennesket hadde overvunnet avstanden, tiden og tyngdekraften.\n\nDette natursynet (se også [naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)) satte effektivitet og produksjon i høysetet. Men framskrittet ble også brukt som en unnskyldning for [kolonialisering](/historie/kolonialisering/eic). Europeerne mente de hadde en plikt til å bringe sitt 'framskritt' til resten av verden, ofte med brutale midler."
+            "content": "Under den industrielle revolusjon ble framskrittet synlig for alle. Jernbanen forandret hele transportsystemet, og fra 1830-tallet begynte dampskipene å erobre havstrekningene. I 1830 åpnet jernbanelinjen mellom Liverpool og Manchester, og varene ble nå produsert i store mengder (Schrumpf mfl., 2024). Det føltes som om mennesket hadde overvunnet avstanden og tiden.\n\nDette natursynet (se også [naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)) satte effektivitet og produksjon i høysetet. Men framskrittet ble også brukt som en unnskyldning for [kolonialisering](/historie/kolonialisering/eic). Europeerne følte en slags moralsk plikt til å bringe vestlig sivilisasjon, religion og kultur til det de kalte tilbakeliggende områder - 'den hvite manns byrde'. I praksis ble kolonipolitikken delvis gjennomført med stor hensynsløshet, og kolonimaktene brukte styrken sin til å tappe områdene de kontrollerte for verdier (Knudsen mfl., 2026)."
         },
         {
             "type": "component",
@@ -87,7 +87,7 @@
         },
         {
             "type": "text",
-            "content": "Troen på framskrittet led et enormt nederlag i det 20. århundre. Under [første verdenskrig](/historie/forste-verdenskrig/oversikt) ble den samme teknologien man hadde hyllet (fly, kjemikalier, masseproduksjon), brukt til å drepe millioner av mennesker med en effektivitet verden aldri hadde sett før.\n\nSenere, under [andre verdenskrig](/historie/andre-verdenskrig/oversikt) og Holocaust, så man at framskritt i organisering og teknologi kunne brukes til å utføre de verste forbrytelser mot menneskeheten (se også [humanisme](/samfunnskunnskap/ideer-og-verdenssyn/humanisme)). Man begynte å spørre: Hva hjelper det med raskere biler hvis mennesket ikke blir moralsk bedre?"
+            "content": "Troen på framskrittet led et enormt nederlag i det 20. århundre. [Første verdenskrig](/historie/forste-verdenskrig/oversikt) var den første moderne industrikrigen. Nyvinninger som fly, ubåter, stridsvogner og giftgass ble tatt i bruk, og klorgass ble sluppet ut første gang i april 1915. Til sammen er over 8,5 millioner soldater regnet som drept, og tallet på drepte soldater og sivile er anslått til nærmere 18 millioner (Brazier & Kirkhusmo, 2024). Den samme teknologien man hadde hyllet, drepte nå mennesker med en effektivitet verden aldri hadde sett før.\n\nSenere, under [andre verdenskrig](/historie/andre-verdenskrig/oversikt) og Holocaust, så man at framskritt i organisering og teknologi kunne brukes til å utføre de verste forbrytelser mot menneskeheten (se også [humanisme](/samfunnskunnskap/ideer-og-verdenssyn/humanisme)). Man begynte å spørre: Hva hjelper det med raskere biler hvis mennesket ikke blir moralsk bedre?"
         },
         {
             "type": "component",
@@ -120,13 +120,13 @@
                 "forstaa": [
                     "Hva menes med at mennesker før i tiden så på tiden som en sirkel og ikke en pil?",
                     "Hva mente filosofene Condorcet og Kant med at menneskeheten var inne i en 'modningsprosess'?",
-                    "Hvilke oppfinnelser fra den industrielle revolusjonen bandt verden tettere sammen?",
+                    "Hvilke transportnyvinninger fra den industrielle revolusjonen trekker artikkelen fram?",
                     "Hvorfor ble første verdenskrig et stort nederlag for troen på framskrittet?"
                 ],
                 "reflekter": [
                     "Hvorfor tror du opplysningstidens tenkere så på framskrittet som en naturlov, altså noe som måtte skje helt av seg selv?",
                     "Hvordan kunne den samme teknologien som folk hyllet som framskritt, som fly og kjemikalier, bli brukt til å drepe millioner under verdenskrigene?",
-                    "Condorcet skrev sitt mest optimistiske verk i fengsel rett før han ble henrettet. Hva forteller det oss om hvor sterk troen på framskrittet var?",
+                    "Condorcet skrev sitt mest optimistiske verk mens han var fredløs og måtte holde seg i skjul. Hva forteller det oss om hvor sterk troen på framskrittet var?",
                     "Artikkelen sier at uendelig vekst på en begrenset planet er umulig. Hvorfor kan dette tvinge oss til å tenke nytt om hva framskritt egentlig betyr?"
                 ],
                 "gaaVidere": [
@@ -187,6 +187,22 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Acton, H. B. (u.å.). *Marquis de Condorcet*. Encyclopaedia Britannica. Hentet 06.08.2026 fra [britannica.com](https://www.britannica.com/biography/Marie-Jean-Antoine-Nicolas-de-Caritat-marquis-de-Condorcet)",
+                    "Brazier, E. & Kirkhusmo, A. (2024). *Første verdenskrig*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/første_verdenskrig](https://snl.no/f%C3%B8rste_verdenskrig)",
+                    "Hogstad, K. H. (2025). *Dannelse*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/dannelse](https://snl.no/dannelse)",
+                    "Knudsen, O. F. mfl. (2026). *Kolonialisme*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/kolonialisme](https://snl.no/kolonialisme)",
+                    "Kraggerud, E. (2024). *Verdensaldrene*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/verdensaldrene](https://snl.no/verdensaldrene)",
+                    "Krefting, E. (2026). *Opplysningstiden*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/opplysningstiden](https://snl.no/opplysningstiden)",
+                    "Schrumpf, E., Bull, E. & Tvedt, K. A. (2024). *Den industrielle revolusjon*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/den_industrielle_revolusjon](https://snl.no/den_industrielle_revolusjon)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-06"
 }
