@@ -24,7 +24,7 @@
         },
         {
             "type": "text",
-            "content": "Ofte bruker vi ordet 'human' når vi mener at noen er snille eller barmhjertige. Men humanismen som idéhistorisk retning stikker dypere. Den handler om tre grunnleggende ideer:\n\n1. Individets verdi: Hvert enkelt menneske har en verdi i seg selv, uavhengig av rang, rase eller religion.\n2. Kritisk tenkning: Vi skal ikke godta sannheter bare fordi de er gamle eller kommer fra en autoritet (se [sannhetens historie](/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie)).\n3. Ansvar: Siden mennesket har fornuft og fri vilje, har vi også ansvaret for å skape et godt samfunn her og nå."
+            "content": "Ofte bruker vi ordet 'human' når vi mener at noen er snille eller barmhjertige. Men humanismen som idéhistorisk retning stikker dypere. Den handler om tre grunnleggende ideer (Bøhn, 2025):\n\n1. Individets verdi: Hvert enkelt menneske har en verdi i seg selv, uavhengig av rang, rase eller religion.\n2. Kritisk tenkning: Vi skal ikke godta sannheter bare fordi de er gamle eller kommer fra en autoritet (se [sannhetens historie](/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie)).\n3. Ansvar: Siden mennesket har fornuft og fri vilje, har vi også ansvaret for å skape et godt samfunn her og nå."
         },
         {
             "type": "header",
@@ -37,14 +37,14 @@
         },
         {
             "type": "text",
-            "content": "Etter [middelalderen](/historie/middelalderen/middelalderen) — i perioden vi kaller [renessansen](/historie/renessansen/oversikt) — begynte lærde i Italia å lete i klosterbibliotekene etter glemte tekster fra [Romerriket](/historie/romerriket/arven-etter-romerriket) og Hellas. De gjenoppdaget filosofer som [Sokrates](/krle/filosofi/sokrates) og Platon.\n\nDisse humanistene ble fascinert av hvordan antikkens mennesker snakket om politikk, kunst og moral uten å alltid starte med Gud. De begynte å male mennesker som så ut som ekte mennesker, med følelser og dybde. De feiret den 'universelle renessansemennesket' – en person som var god i alt fra musikk og matematikk til fekting og poesi. \n\nBudskapet var klart: Mennesket er et underverk med uante muligheter."
+            "content": "Etter [middelalderen](/historie/middelalderen/middelalderen) - i perioden vi kaller [renessansen](/historie/renessansen/oversikt) - begynte lærde i Italia å lete fram, kopiere og oversette glemte tekster fra [Romerriket](/historie/romerriket/arven-etter-romerriket) og Hellas (Styve & Bjerkestrand, 2025). De gjenoppdaget filosofer som [Sokrates](/krle/filosofi/sokrates) og Platon.\n\nDisse humanistene brøt på mange måter med middelalderens skolastikk, og de studerte gresk og romersk kunst, kultur og danning med nye øyne (Bøhn, 2025). De ble fascinert av hvordan antikkens mennesker snakket om politikk, kunst og moral uten å alltid starte med Gud. De begynte å male mennesker som så ut som ekte mennesker, med følelser og dybde. De feiret det 'universelle renessansemennesket' - en person som var god i alt fra musikk og matematikk til fekting og poesi.\n\nBudskapet var klart: Mennesket er et underverk med uante muligheter."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Menneskets verdighet",
-                "content": "I 1486 skrev Giovanni Pico della Mirandola et av humanismens viktigste skrifter: 'Tale om menneskets verdighet'. Her hevder han at Gud skapte mennesket uten en fast form, slik at vi selv kan velge om vi vil synke ned til dyrenes nivå eller heve oss opp til det guddommelige gjennom kunnskap."
+                "content": "I 1486 holdt Giovanni Pico della Mirandola en av humanismens mest kjente taler: 'Om menneskets verdighet'. Her hevder han at mennesket selv bygger sin egen personlighet og fritt kan velge sitt eksistensnivå - vi kan synke ned mot dyrenes nivå eller heve oss mot det guddommelige gjennom kunnskap (Store norske leksikon, 2025a)."
             }
         },
         {
@@ -53,7 +53,7 @@
         },
         {
             "type": "text",
-            "content": "På 1700-tallet tok humanismen steget ut i politikken. Hvis hvert menneske har samme verdi, hvorfor skal da noen fødes som konger og andre som slaver? \n\nDette førte til [den franske revolusjon](/historie/den-franske-revolusjon/intro) og den amerikanske uavhengighetserklæringen. Man formulerte for første gang ideen om *universelle* menneskerettigheter. Dette natursynet (se også [naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)) innebar at rettighetene ikke ble gitt av en konge, men var noe du hadde rett og slett fordi du var menneske."
+            "content": "På 1700-tallet tok humanismen steget ut i politikken. Hvis hvert menneske har samme verdi, hvorfor skal da noen fødes som konger og andre som slaver? Opplysningstidens tenkere satte fornuften over de arvede autoritetene - kongen, standssamfunnet og kirken (Krefting, 2026).\n\nBåde [den franske revolusjon](/historie/den-franske-revolusjon/intro) og den amerikanske uavhengighetserklæringen bygget på slike ideer. Ideen om universelle menneskerettigheter ble formulert på midten av 1700-tallet, med utgangspunkt i naturretten: rettighetene bygget på fornuft og på det å være menneske, ikke på en konges nåde (Krefting, 2026). Dette synet (se også [naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)) innebar at rettighetene var noe du hadde rett og slett fordi du var menneske.\n\nSamtidig var idealene fulle av motsetninger. Thomas Jefferson skrev om frihet og likhet, men forsvarte slaveriet, og slaveriet ble ikke avskaffet i Frankrike før på 1840-tallet og i USA før i 1865 (Krefting, 2026)."
         },
         {
             "type": "component",
@@ -87,14 +87,14 @@
         },
         {
             "type": "text",
-            "content": "Utover på 1800- og 1900-tallet vokste den sekulære humanismen fram. Mange mente at vi kunne beholde de humanistiske verdiene – som rettferdighet, kjærlighet og sannhet – selv om vi sluttet å tro på det overnaturlige.\n\nI Norge kjenner vi dette gjennom Human-Etisk Forbund, men tankegangen preger i dag nesten alle våre institusjoner. Skolen, sykehusene og lovverket vårt er bygget på ideen om at vi skal handle godt mot hverandre fordi vi er medmennesker, ikke fordi vi frykter straff i et etterliv (se [eskatologi](/samfunnskunnskap/ideer-og-verdenssyn/eskatologi))."
+            "content": "Utover på 1800- og 1900-tallet vokste den sekulære humanismen fram. Mange mente at vi kunne beholde de humanistiske verdiene - som rettferdighet, kjærlighet og sannhet - selv om vi sluttet å tro på det overnaturlige. Derfor skiller mange i dag mellom en sekulær og en religiøs form for humanisme (Bøhn, 2025).\n\nI Norge kjenner vi dette gjennom Human-Etisk Forbund, som definerer humanismen som et livssyn, men tankegangen preger i dag nesten alle våre institusjoner. Skolen, sykehusene og lovverket vårt er bygget på ideen om at vi skal handle godt mot hverandre fordi vi er medmennesker, ikke fordi vi frykter straff i et etterliv (se [eskatologi](/samfunnskunnskap/ideer-og-verdenssyn/eskatologi))."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Mennesket er altings målestokk.",
-                "author": "Protagoras (antikkens Hellas)"
+                "text": "Mennesket er alle tings målestokk.",
+                "author": "Protagoras, gresk sofist på 400-tallet fvt. (Store norske leksikon, 2025b)"
             }
         },
         {
@@ -103,7 +103,7 @@
         },
         {
             "type": "text",
-            "content": "Humanismens historie er ikke bare en solskinnshistorie. Under [andre verdenskrig](/historie/andre-verdenskrig/oversikt) så vi hvordan ideologier som nazismen forkastet menneskeverdet totalt. Dette førte til en fornyet innsats for å beskytte de humanistiske verdiene gjennom FNs menneskerettserklæring i 1948.\n\nI dag møter humanismen nye utfordringer. Kan kunstig intelligens bli 'menneskelig'? Hvis vi kan endre genene våre, hva skjer da med 'menneskets natur'? Og i møte med klimakrisen, har vi kanskje satt mennesket *for mye* i sentrum og glemt at vi er avhengige av resten av naturen?"
+            "content": "Humanismens historie er ikke bare en solskinnshistorie. Under [andre verdenskrig](/historie/andre-verdenskrig/oversikt) så vi hvordan ideologier som nazismen forkastet menneskeverdet totalt. Dette førte til en fornyet innsats for å beskytte de humanistiske verdiene: FNs verdenserklæring om menneskerettigheter ble vedtatt i 1948, som et svar på lidelsene under de to verdenskrigene (Strand, 2025).\n\nI dag møter humanismen nye utfordringer. Kan kunstig intelligens bli 'menneskelig'? Hvis vi kan endre genene våre, hva skjer da med 'menneskets natur'? Og i møte med klimakrisen, har vi kanskje satt mennesket *for mye* i sentrum og glemt at vi er avhengige av resten av naturen?"
         },
         {
             "type": "header",
@@ -119,8 +119,8 @@
             "props": {
                 "forstaa": [
                     "Nevn de tre grunnleggende ideene humanismen bygger på, ifølge teksten.",
-                    "Hva gjorde de lærde i Italia da renessansen begynte, og hvor lette de etter glemte tekster?",
-                    "Hva het skriftet Giovanni Pico della Mirandola skrev i 1486, og hva handlet det om?",
+                    "Hva gjorde de lærde i Italia med de glemte tekstene fra Romerriket og Hellas da renessansen begynte?",
+                    "Hva het talen Giovanni Pico della Mirandola holdt i 1486, og hva handlet den om?",
                     "Hva heter dokumentet fra 1948 som skulle beskytte de humanistiske verdiene?"
                 ],
                 "reflekter": [
@@ -187,6 +187,21 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bøhn, E. D. (2025). *Humanisme*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/humanisme](https://snl.no/humanisme)",
+                    "Krefting, E. (2026). *Opplysningstiden*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/opplysningstiden](https://snl.no/opplysningstiden)",
+                    "Store norske leksikon. (2025a). *Giovanni Pico della Mirandola*. Hentet 06.08.2026 fra [snl.no/Giovanni_Pico_della_Mirandola](https://snl.no/Giovanni_Pico_della_Mirandola)",
+                    "Store norske leksikon. (2025b). *Protagoras fra Abdera*. Hentet 06.08.2026 fra [snl.no/Protagoras_fra_Abdera](https://snl.no/Protagoras_fra_Abdera)",
+                    "Strand, V. B. (2025). *Verdenserklæringen om menneskerettigheter*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Verdenserklæringen_om_menneskerettigheter](https://snl.no/Verdenserkl%C3%A6ringen_om_menneskerettigheter)",
+                    "Styve, P. S. T. & Bjerkestrand, N. E. (2025). *Renessansen*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/renessansen](https://snl.no/renessansen)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-06"
 }
