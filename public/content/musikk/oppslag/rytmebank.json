@@ -6,12 +6,12 @@
     "content": [
         {
             "type": "text",
-            "content": "Rytme er fundamentet i all moderne musikk. Her er noen klassiske beats du kan høre på og eksperimentere med."
+            "content": "Sammen med melodi og harmoni er rytme et av musikkens grunnelementer (Sundberg & Eilertsen, 2024). Her er noen klassiske beats du kan høre på og eksperimentere med."
         },
         {
             "type": "text",
             "title": "Standard Rock Beat",
-            "content": "Dette er kanskje verdens mest brukte rytme. Basstromme på 1 og 3, skarp på 2 og 4, og åttedeler på hi-hat."
+            "content": "Basstromme på 1 og 3, skarptromme på 2 og 4, og åttedeler på hi-hat. Aksenten på slag 2 og 4 kalles backbeat, og den går igjen i alt fra rhythm and blues og country til funk og rock (Ruud, 2024)."
         },
         {
             "type": "component",
@@ -78,7 +78,7 @@
         {
             "type": "text",
             "title": "Four-on-the-Floor (Disco/House)",
-            "content": "Kjennetegnet ved at basstromma spiller på hvert slag (1, 2, 3, 4). Veldig vanlig i dansemusikk."
+            "content": "Kjennetegnet er at basstromma markerer hvert eneste slag i 4/4-takta (Solberg, 2024). Denne jevne, kraftige trommerytmen ble selve signaturen til diskomusikken, og den gjør musikken lett å danse til (Ruud, 2026)."
         },
         {
             "type": "component",
@@ -145,7 +145,7 @@
         {
             "type": "text",
             "title": "Hiphop Break",
-            "content": "En mer synkopert rytme hvor basstromma ikke alltid lander på de 'tunge' slagene. Gir en mer 'groovy' følelse."
+            "content": "Her er trommemønsteret synkopert: basstromma lander ikke alltid på de tunge slagene. En synkope er når en tone kommer på et lett taktslag og henger over til det tunge slaget etter (Furnes, 2024). Slike synkoperte breakbeats bygger ofte på samples fra eldre funk- og diskoplater (Solberg, 2024). Det gir en mer groovy følelse."
         },
         {
             "type": "component",
@@ -217,12 +217,12 @@
                     "Hvor spiller basstromma og hvor spiller skarptromma i en standard rock beat?",
                     "Hva er det som kjennetegner en four-on-the-floor-rytme, og i hvilken type musikk hører du den ofte?",
                     "Hva menes med at en hiphop break er synkopert, og hvordan påvirker det følelsen i rytmen?",
-                    "Hva mener teksten når den sier at rytme er fundamentet i all moderne musikk?"
+                    "Teksten sier at rytme er et av musikkens grunnelementer. Hvilke to andre grunnelementer nevnes sammen med rytmen?"
                 ],
                 "reflekter": [
                     "Forklar forskjellen mellom rock beat og four-on-the-floor. Hvorfor passer den ene bedre til dansemusikk?",
                     "Hvorfor tror du en rytme føles mer groovy når basstromma ikke lander på de tunge slagene?",
-                    "Rock beaten kalles verdens mest brukte rytme. Hvorfor tror du så mange sanger bruker akkurat denne rytmen?",
+                    "Backbeaten går igjen i alt fra country og funk til rock. Hvorfor tror du så mange sanger bruker akkurat dette mønsteret?",
                     "Hi-hat spiller ofte jevne slag i bakgrunnen. Hva gjør den for helheten i rytmen?"
                 ],
                 "gaaVidere": [
@@ -231,6 +231,20 @@
                     "Klapp eller tapp de tre rytmene på pulten sammen med en medelev. Hvilken var lettest å holde, og hvorfor?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Furnes, O. T. (2024). *Synkope - musikk*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/synkope_-_musikk](https://snl.no/synkope_-_musikk)",
+                    "Ruud, E. (2024). *Backbeat*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/backbeat](https://snl.no/backbeat)",
+                    "Ruud, E. (2026). *Disko*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/disko](https://snl.no/disko)",
+                    "Solberg, R. T. (2024). *EDM*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/EDM](https://snl.no/EDM)",
+                    "Sundberg, O. K. & Eilertsen, A. (2024). *Rytme - musikk*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/rytme_-_musikk](https://snl.no/rytme_-_musikk)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-06"
 }
