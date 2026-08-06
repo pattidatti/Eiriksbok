@@ -1,19 +1,19 @@
 {
   "id": "handel-og-infrastruktur-sti",
   "title": "Læringssti: Verdens årer",
-  "description": "Fra komparativt fortrinn til kaskadefeil — utforsk nettverkene som binder verden sammen og holder sivilisasjonen i gang.",
+  "description": "Fra komparativt fortrinn til kaskadefeil - utforsk nettverkene som binder verden sammen og holder sivilisasjonen i gang.",
   "layout": "learning-path",
   "subject": "samfunnskunnskap",
   "topic": "handel-og-infrastruktur",
   "heroImage": "/images/lessons/handel/global-handel-hero.webp",
-  "estimatedTime": "3–4 timer",
+  "estimatedTime": "3-4 timer",
   "learningPathData": {
     "steps": [
       {
         "id": "steg-0",
-        "title": "Steg 0: Prolog — En verden på reise",
+        "title": "Steg 0: Prolog - En verden på reise",
         "description": "Forbered deg på å oppdage den usynlige infrastrukturen som holder verden i gang.",
-        "phase": "Akt 1: Opptakten — Verden er koblet sammen",
+        "phase": "Akt 1: Opptakten - Verden er koblet sammen",
         "tasks": [
           {
             "id": "t0-1",
@@ -33,7 +33,7 @@
         "id": "steg-1",
         "title": "Steg 1: Verden er én maskin",
         "description": "Lær hvorfor alle land er avhengige av hverandre.",
-        "phase": "Akt 1: Opptakten — Verden er koblet sammen",
+        "phase": "Akt 1: Opptakten - Verden er koblet sammen",
         "tasks": [
           {
             "id": "t1-1",
@@ -59,7 +59,7 @@
         "id": "steg-2",
         "title": "Steg 2: Energi og rørledninger",
         "description": "Forstå hvorfor rørledninger er politikk støpt i stål.",
-        "phase": "Akt 2: Konfrontasjonen — De fysiske nettverkene",
+        "phase": "Akt 2: Konfrontasjonen - De fysiske nettverkene",
         "tasks": [
           {
             "id": "t2-1",
@@ -90,8 +90,8 @@
       {
         "id": "steg-3",
         "title": "Steg 3: Internett på havbunnen",
-        "description": "Oppdag at internett ikke er 'i skyen' — det er i havet.",
-        "phase": "Akt 2: Konfrontasjonen — De fysiske nettverkene",
+        "description": "Oppdag at internett ikke er 'i skyen' - det er i havet.",
+        "phase": "Akt 2: Konfrontasjonen - De fysiske nettverkene",
         "tasks": [
           {
             "id": "t3-1",
@@ -116,8 +116,8 @@
       {
         "id": "steg-4",
         "title": "Steg 4: Maten din og havet",
-        "description": "Spor maten din fra åker til tallerken — via hav.",
-        "phase": "Akt 2: Konfrontasjonen — De fysiske nettverkene",
+        "description": "Spor maten din fra åker til tallerken - via hav.",
+        "phase": "Akt 2: Konfrontasjonen - De fysiske nettverkene",
         "tasks": [
           {
             "id": "t4-1",
@@ -143,7 +143,7 @@
         "id": "steg-5",
         "title": "Steg 5: Når nettverkene brister",
         "description": "Utforsk hva som skjer når infrastrukturen svikter.",
-        "phase": "Akt 3: Resolusjonen — Sårbarhet og resiliens",
+        "phase": "Akt 3: Resolusjonen - Sårbarhet og resiliens",
         "tasks": [
           {
             "id": "t5-1",
@@ -160,7 +160,7 @@
           {
             "id": "t5-3",
             "type": "reflect",
-            "text": "COVID-19 avslørte at verden var for avhengig av Kina for halvlederproduksjon. Er det et problem at land spesialiserer seg mye? Diskuter fordeler (effektivitet) mot ulemper (sårbarhet).",
+            "text": "COVID-19 avslørte at verden var for avhengig av noen få land, som Taiwan og Sør-Korea, for halvlederproduksjon. Er det et problem at land spesialiserer seg mye? Diskuter fordeler (effektivitet) mot ulemper (sårbarhet).",
             "bloom": "refleksjon"
           }
         ]
@@ -169,7 +169,7 @@
         "id": "steg-6",
         "title": "Steg 6: Atlasoppgaven",
         "description": "Bruk InfrastrukturAtlas til å utforske og analysere.",
-        "phase": "Akt 3: Resolusjonen — Sårbarhet og resiliens",
+        "phase": "Akt 3: Resolusjonen - Sårbarhet og resiliens",
         "tasks": [
           {
             "id": "t6-1",
@@ -186,7 +186,7 @@
           {
             "id": "t6-3",
             "type": "reflect",
-            "text": "Skriv et kort avsnitt (5–8 setninger): Hva er den viktigste enkelt-infrastrukturen i verden, og hva ville skje hvis den forsvant?",
+            "text": "Skriv et kort avsnitt (5-8 setninger): Hva er den viktigste enkelt-infrastrukturen i verden, og hva ville skje hvis den forsvant?",
             "bloom": "refleksjon"
           }
         ]
