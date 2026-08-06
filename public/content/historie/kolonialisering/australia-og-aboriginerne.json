@@ -1,0 +1,291 @@
+{
+    "id": "australia-og-aboriginerne",
+    "title": "Australia: landet som ble kalt tomt",
+    "layout": "rich",
+    "year": "1788-1992",
+    "category": "Kolonialisering",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-08-06",
+    "externalUrl": "https://snl.no/Australias_historie",
+    "details": [
+        "Da britene gikk i land i Australia i 1788, hadde folk bodd der i minst 50 000 år.",
+        "Britene erklærte likevel landet for terra nullius, ingenmannsland, fordi de ikke fant plog, gjerder eller konger.",
+        "Det tok 204 år før en domstol sa at dette var feil. Dommen kom 3. juni 1992."
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "26. januar 1788 seilte elleve britiske skip inn i en bukt på østkysten av Australia. Om bord var rundt 750 fanger som var dømt i britiske rettssaler og sendt til den andre siden av kloden (Wensell, 2026). De gikk i land i det som i dag er Sydney havn, plantet et flagg og tok landet for den britiske kongen. På papiret tok de noe som tilhørte ingen. I virkeligheten sto det folk i skogkanten og så på."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Britiske seilskip ankrer opp i en solfylt bukt med lav skog langs stranden",
+            "caption": "Den første flåten ankom i januar 1788. Det britene kalte en tom kyst, var et landskap med eiere, grenser og navn."
+        },
+        {
+            "type": "header",
+            "text": "Femti tusen år før det første seilet"
+        },
+        {
+            "type": "text",
+            "content": "Australia er ikke et ungt land å bo i. Det er det eldste. Arkeologiske og genetiske undersøkelser tyder på at mennesker har levd der i mellom 50 000 og 65 000 år (Berta, 2025a). Under berget Madjedbebe helt nord i landet ligger steinredskaper og kullrester som kan være 65 000 år gamle. På bergveggene i Arnhem Land finnes malerier som er datert til 28 000 år tilbake, og kvernsteiner brukt til å male frø til mel er rundt 30 000 år gamle (Berta, 2025b)."
+        },
+        {
+            "type": "text",
+            "content": "Da britene kom, anslo de selv at det bodde et sted mellom 300 000 og en million mennesker i Australia (Berta & Lundbo, 2026). Disse menneskene var ikke ett folk. De snakket omtrent 250 forskjellige språk, og regner du med dialektene, kan tallet ha vært over 360. Folk levde stort sett i klaner på 20 til 50 personer, og hver klan hadde sitt eget landområde med grenser alle kjente (Berta, 2025a)."
+        },
+        {
+            "type": "text",
+            "content": "Grensene sto bare ikke skrevet noe sted. Det fantes ingen gjerder, ingen skjøter og ingen konge som kunne kalles inn til et møte og settes til å skrive under på en avtale. Alt dette skulle vise seg å bli avgjørende."
+        },
+        {
+            "type": "header",
+            "text": "Redskapet britene ikke så"
+        },
+        {
+            "type": "text",
+            "content": "Britene så et landskap uten åkrer og trakk den slutningen som passet dem: her drev ingen jordbruk, altså brukte ingen landet. Men landskapet de så på, var stelt. I over 20 000 år hadde folk styrt naturen med kontrollerte branner (Berta, 2025b). Små, kjølige branner brant ned krattet før det ble tett nok til å gi en storbrann, og de bestemte hvilke planter som fikk vokse opp igjen og hvor kenguruene kom for å beite. Det er jordbruk. Det bruker bare ild i stedet for plog."
+        },
+        {
+            "type": "text",
+            "content": "Det stoppet ikke der. Genetiske analyser tyder på at planter ble foredlet gjennom målrettet utvalg og bytte av frø mellom grupper, lenge før jordbruk oppsto andre steder i verden. Lange steinmurer i elver og laguner ledet fisken inn i kamre, noe som ligner det vi i dag kaller oppdrett, og enkelte grupper bodde fast på ett sted og lagret mat (Berta, 2025b). Redskapene fantes overalt. De lignet bare ikke på britiske redskaper."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "landet-med-ild-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Setningen som gjorde erobring lovlig"
+        },
+        {
+            "type": "text",
+            "content": "I folkeretten finnes uttrykket terra nullius. Det betyr herreløst land, altså land som ingen eier (Helgesen, 2025). Regelen var i utgangspunktet grei nok: finner du en ubebodd øy, kan du ta den. Norge fikk styringen over [Svalbard](/historie/norge-i-moderne-tid/svalbard) etter en lignende tankegang, og der bodde det faktisk ingen fra før."
+        },
+        {
+            "type": "text",
+            "content": "Australia var noe helt annet. Da britene brukte terra nullius der, gjorde de det ikke fordi landet var tomt, men fordi de mente at menneskene som bodde der, ikke hadde slått seg ned og tatt landet i bruk på riktig måte. Uten faste åkrer, uten steinhus og uten ledere som kunne undertegne en traktat, fantes det etter britisk tankegang ingen å inngå avtale med. Da trengte man heller ingen avtale. Dette skiller Australia fra store deler av resten av [det britiske imperiet](/historie/kolonialisering/britisk-imperium), der britene faktisk skrev traktater med lokale herskere, selv om avtalene ofte var svært urettferdige."
+        },
+        {
+            "type": "text",
+            "content": "Testen var altså laget slik at bare ett svar var mulig. Se selv hva som skjer når du legger bevisene på bordet."
+        },
+        {
+            "type": "component",
+            "name": "TerraNulliusDommen",
+            "props": {
+                "title": "Rettssaken om et helt land",
+                "criteria": [
+                    "Pløyer de åkrer?",
+                    "Bygger de hus av stein som blir stående?",
+                    "Har de en konge som kan skrive under en avtale?",
+                    "Har de gjerder rundt eiendommen sin?"
+                ],
+                "evidence": [
+                    {
+                        "title": "Boplass som er 65 000 år gammel",
+                        "detail": "Under berget Madjedbebe nord i Australia ligger redskaper og kullrester fra folk som bodde der for opptil 65 000 år siden."
+                    },
+                    {
+                        "title": "Bergkunst som er 28 000 år gammel",
+                        "detail": "I Arnhem Land finnes malerier på bergvegger som er datert til 28 000 år tilbake. Noen motiver er malt opp igjen av nye slekter i tusenvis av år."
+                    },
+                    {
+                        "title": "Kvernsteiner for korn",
+                        "detail": "Steiner brukt til å male frø til mel er rundt 30 000 år gamle. Folk høstet og bearbeidet korn her lenge før noen gjorde det i Europa."
+                    },
+                    {
+                        "title": "Landet ble stelt med ild",
+                        "detail": "I over 20 000 år har folk brent småflater av krattet med vilje for å styre hva som vokser og hvor dyrene beiter. Det er jordbruk, bare uten plog."
+                    },
+                    {
+                        "title": "Fiskefeller i stein",
+                        "detail": "Lange steinmurer i elver og laguner ledet fisken inn i kamre. Det ligner det vi i dag kaller oppdrett."
+                    },
+                    {
+                        "title": "Rundt 250 egne språk",
+                        "detail": "Ved koloniseringen ble det snakket omtrent 250 forskjellige språk i Australia. Hvert språk hørte til et folk med sitt eget område."
+                    },
+                    {
+                        "title": "Klanområder med faste grenser",
+                        "detail": "Folk levde i klaner på 20 til 50 personer. Hver klan hadde sitt eget land med grenser alle kjente, selv om ingen satte opp gjerder."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "header",
+            "text": "Straffekolonien vokser"
+        },
+        {
+            "type": "text",
+            "content": "James Cook hadde krevd østkysten for Storbritannia allerede i 1770, men det var fangeskipene som gjorde kravet til virkelighet (Wensell, 2026). Britiske fengsler var overfylte, og etter at koloniene i Nord-Amerika ble selvstendige, trengte britene et nytt sted å sende dømte. Australia ble svaret. Fram til 1868 ble til sammen rundt 160 000 straffanger sendt dit."
+        },
+        {
+            "type": "text",
+            "content": "Fangene sonet og ble ofte boende. Etter dem kom frie nybyggere, sauefarmer og senere gullgravere. For hver ny bølge ble mer land tatt i bruk til beite og dyrking, og det var alltid land som noen allerede levde av. Urbefolkningen ble utsatt for en lang rekke massakrer og overgrep, først fra britiske nybyggere og senere fra staten selv (Berta, 2025a)."
+        },
+        {
+            "type": "text",
+            "content": "Sykdommer gjorde resten. Kopper, meslinger og influensa fantes ikke i Australia før 1788, og befolkningen hadde ingen motstandskraft mot dem. Det samme mønsteret finner du igjen i [Europas erobring av verden](/historie/kolonialisering/europa-erobrer-verden) fra 1500-tallet og framover: sykdom drepte langt flere enn våpen."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Sauefarm med gjerder som strekker seg over tørt gresslandskap i innlandet",
+            "caption": "Gjerdene som fulgte sauefarmene var britenes bevis på eierskap. For dem som hadde levd av landet i tusener av år, var de en stengsel."
+        },
+        {
+            "type": "header",
+            "text": "De stjålne generasjonene"
+        },
+        {
+            "type": "text",
+            "content": "Australia ble et selvstendig land i 1901, og året etter kom en innvandringslov som i praksis stengte alle andre enn hvite europeere ute. Politikken som fulgte, gikk ut på at urbefolkningen skulle bli mest mulig lik den hvite befolkningen (Wensell, 2026). Dette kalles assimilering: at et folk skal gi opp sitt eget språk og sin egen kultur og gå opp i flertallet."
+        },
+        {
+            "type": "text",
+            "content": "Det mest brutale utslaget var at barn ble hentet fra foreldrene sine. Mellom en tiendedel og en tredjedel av alle aboriginske barn ble tatt fra familiene sine i perioden fra 1905 til 1970 og plassert i institusjoner eller hos hvite fosterfamilier (Berta, 2025a). Mange fikk aldri vite hvem foreldrene var. I Australia kalles de de stjålne generasjonene."
+        },
+        {
+            "type": "text",
+            "content": "Om dette høres kjent ut, er det fordi noe liknende skjedde i Norge. [Fornorskingen av samene](/historie/norgeshistorie/fornorskingen-av-samene) bygde på den samme tanken: at et urfolk ville få det bedre om det sluttet å være seg selv. Målestokken var i begge tilfeller flertallets måte å leve på, og prisen ble betalt av barn."
+        },
+        {
+            "type": "header",
+            "text": "1967, 1992 og 2008"
+        },
+        {
+            "type": "text",
+            "content": "Endringene kom sent. Urbefolkningen ble ikke engang talt med i folketellingene før i 1967, og det var først da de fikk fulle borgerrettigheter (Wensell, 2026; Berta & Lundbo, 2026). Men landet var fortsatt juridisk sett tomt i 1788. Terra nullius sto ved lag."
+        },
+        {
+            "type": "text",
+            "content": "Så gikk en mann til sak. Eddie Koiki Mabo kom fra øya Mer i Torresstredet nord for Australia, og han nektet å godta at familien hans ikke eide jorda de hadde brukt i generasjoner. Saken startet 20. mai 1982 og tok ti år. Mabo døde av kreft i januar 1992, før dommen falt (Museum of Australian Democracy, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "3. juni 1992 avgjorde Australias høyesterett saken. Seks av sju dommere slo fast at terra nullius aldri burde vært brukt på Australia, og at urfolks eiendomsrett hadde eksistert før både Cooks krav i 1770 og koloniens grunnleggelse i 1788. Året etter vedtok parlamentet Native Title Act, som ga urfolk over hele Australia en vei til å kreve tilbake tradisjonelle landområder (Museum of Australian Democracy, u.å.). I 2008 ga statsminister Kevin Rudd en offisiell unnskyldning til urbefolkningen i parlamentet (Berta, 2025a)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Publikum utenfor et parlamentsbygg følger en tale på storskjerm",
+            "caption": "I 2008 ba statsministeren om unnskyldning på vegne av staten. Folk fulgte talen på storskjerm over hele landet."
+        },
+        {
+            "type": "text",
+            "content": "Bevisene på at Australia var bebodd, hadde ligget der hele tiden. Boplassene, bergkunsten, kvernsteinene og de brente flatene forsvant ikke i 1788, og de dukket ikke opp igjen i 1992. Det som endret seg, var hvem retten var villig til å høre på."
+        },
+        {
+            "type": "text",
+            "content": "Aboriginere og folk fra Torresstredet utgjør i dag rundt 3,2 prosent av Australias befolkning (Berta & Lundbo, 2026). Av de omtrent 250 språkene som ble snakket i 1788, var bare rundt 20 fortsatt i bruk blant alle aldersgrupper ved inngangen til forrige tiår. Det er kanskje den tydeligste målestokken på hva et ord i en lovbok kan koste."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr terra nullius, og hvorfor brukte britene uttrykket om Australia i 1788?",
+                    "Omtrent hvor lenge har mennesker bodd i Australia, og hvilke funn bygger dette anslaget på?",
+                    "Nevn tre måter aboriginske folk brukte og stelte landet på, som ikke lignet europeisk jordbruk.",
+                    "Hva skjedde 3. juni 1992, og hvem var Eddie Koiki Mabo?"
+                ],
+                "reflekter": [
+                    "Den britiske testen spurte etter plog, steinhus, gjerder og konger. Forklar hvorfor en test kan gi feil svar selv om hvert enkelt spørsmål blir riktig besvart.",
+                    "Bevisene for at folk bodde i Australia, var de samme i 1788 og i 1992. Hva var det da som endret seg?",
+                    "Sammenlign fornorskingen av samene med de stjålne generasjonene i Australia. Hva er likt i tankegangen bak, og hva er ulikt?",
+                    "Av rundt 250 språk var bare omtrent 20 fortsatt i full bruk. Forklar hvorfor tap av språk er noe annet enn tap av land, og hvorfor de likevel henger sammen."
+                ],
+                "gaaVidere": [
+                    "Norge fikk styringen over Svalbard fordi øyene faktisk var ubebodde. Skriv et kort avsnitt der du forklarer hvorfor terra nullius kan være en rimelig regel i det ene tilfellet og en urett i det andre.",
+                    "Finn ut hva kontrollert brenning brukes til i Australia i dag, etter de store skogbrannene på 2000-tallet. Diskuter to og to: hva sier det om kunnskapen britene overså?",
+                    "Australia stemte mot FNs erklæring om urfolks rettigheter i 2007, men støtter den i dag. Undersøk hvorfor holdningen endret seg, og legg fram funnene for klassen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr terra nullius?",
+                        "options": [
+                            "Land som er erobret i krig",
+                            "Land som ingen eier",
+                            "Land som er delt mellom to stater",
+                            "Land som er for tørt til å dyrke"
+                        ],
+                        "answer": 1,
+                        "explanation": "Terra nullius er et uttrykk fra folkeretten og betyr herreløst land, altså land som ingen eier. Britene brukte det om Australia i 1788, selv om det bodde flere hundre tusen mennesker der."
+                    },
+                    {
+                        "question": "Omtrent hvor lenge har mennesker bodd i Australia?",
+                        "options": [
+                            "I rundt 5000 år",
+                            "I rundt 12 000 år",
+                            "I mellom 50 000 og 65 000 år",
+                            "I rundt 200 år"
+                        ],
+                        "answer": 2,
+                        "explanation": "Arkeologiske og genetiske undersøkelser tyder på 50 000 til 65 000 år. Boplassen Madjedbebe kan være så gammel som 65 000 år."
+                    },
+                    {
+                        "question": "Hvilket redskap brukte aboriginske folk til å stelle landskapet i over 20 000 år?",
+                        "options": [
+                            "Plogen",
+                            "Kontrollerte branner",
+                            "Vanningskanaler",
+                            "Terrasser i fjellsiden"
+                        ],
+                        "answer": 1,
+                        "explanation": "Små, kontrollerte branner holdt krattet nede, bestemte hvilke planter som vokste opp igjen og styrte hvor dyrene beitet. Britene lette etter plog og gjerder og så derfor ikke at landet var stelt."
+                    },
+                    {
+                        "question": "Hva ble avgjort i Australias høyesterett 3. juni 1992?",
+                        "options": [
+                            "At Australia skulle bli en republikk",
+                            "At straffangene skulle få oppreisning",
+                            "At terra nullius aldri burde vært brukt på Australia",
+                            "At all innvandring skulle stanses"
+                        ],
+                        "answer": 2,
+                        "explanation": "Seks av sju dommere slo fast at terra nullius aldri burde vært brukt på Australia, og at urfolks eiendomsrett fantes fra før koloniseringen. Året etter kom Native Title Act."
+                    },
+                    {
+                        "question": "Hva menes med de stjålne generasjonene?",
+                        "options": [
+                            "Straffanger som ble sendt til Australia mot sin vilje",
+                            "Gullgravere som mistet funnene sine til staten",
+                            "Aboriginske barn som ble tatt fra familiene sine",
+                            "Soldater som ikke kom hjem fra krigen"
+                        ],
+                        "answer": 2,
+                        "explanation": "Mellom en tiendedel og en tredjedel av alle aboriginske barn ble tatt fra familiene sine mellom 1905 og 1970 og plassert i institusjoner eller hos hvite fosterfamilier. I 2008 kom en offisiell unnskyldning fra statsministeren."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berta, O. G. (2025a). *Aboriginer*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/aboriginer](https://snl.no/aboriginer)",
+                    "Berta, O. G. (2025b). *Australias forhistorie*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Australias_forhistorie](https://snl.no/Australias_forhistorie)",
+                    "Berta, O. G. & Lundbo, S. (2026). *Australias befolkning*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Australias_befolkning](https://snl.no/Australias_befolkning)",
+                    "Helgesen, J. E. (2025). *Terra nullius*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/terra_nullius](https://snl.no/terra_nullius)",
+                    "Museum of Australian Democracy. (u.å.). *Mabo v Queensland No. 2 1992 (Cth)*. Documenting a Democracy. Hentet 06.08.2026 fra [foundingdocs.gov.au](https://www.foundingdocs.gov.au/item-did-33.html)",
+                    "Wensell, L. A. (2026). *Australias historie*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Australias_historie](https://snl.no/Australias_historie)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

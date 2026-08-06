@@ -23,6 +23,7 @@ import { MapCarousel } from './MapCarousel';
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
 const SvalbardTraktatTest = lazy(() => import('./content/interactive/SvalbardTraktatTest').then(m => ({ default: m.SvalbardTraktatTest })));
+const TerraNulliusDommen = lazy(() => import('./content/interactive/TerraNulliusDommen').then(m => ({ default: m.TerraNulliusDommen })));
 const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m => ({ default: m.Gaatekart })));
 const DhammaEllerSverd = lazy(() => import('./content/interactive/DhammaEllerSverd').then(m => ({ default: m.DhammaEllerSverd })));
 const Kildekjeden = lazy(() => import('./content/interactive/Kildekjeden').then(m => ({ default: m.Kildekjeden })));
@@ -358,6 +359,7 @@ const MicroGame = lazy(() => import('./microgames/MicroGameBlock').then(m => ({ 
 export const componentRegistry: Record<string, React.ComponentType<any>> = {
     // Core
     SvalbardTraktatTest,
+    TerraNulliusDommen,
     Gaatekart,
     TrojaMyteEllerFunn,
     SporTavlen,

@@ -5283,6 +5283,20 @@
               "lastUpdated": "2026-07-20T07:31:31+02:00"
             },
             {
+              "id": "australia-og-aboriginerne",
+              "title": "Australia: landet som ble kalt tomt",
+              "description": "Britene erklærte Australia for ingenmannsland i 1788, selv om folk hadde bodd der i minst 50 000 år.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "kolonialisering",
+                "australia",
+                "urfolk",
+                "terra nullius"
+              ],
+              "createdDate": "2026-08-06T00:00:00Z"
+            },
+            {
               "id": "britisk-imperium",
               "title": "Det britiske imperiet",
               "description": "Solen som aldri gikk ned: Handel, bosetting og dominans.",

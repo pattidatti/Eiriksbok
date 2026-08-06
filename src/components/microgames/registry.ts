@@ -174,6 +174,7 @@ const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
 const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
+const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'bedehuset-motet': {
@@ -1696,6 +1697,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 140,
         loader: () => import('./Kullkapplopet3D'),
         Component: Kullkapplopet3D as never,
+    },
+    'landet-med-ild-3d': {
+        id: 'landet-med-ild-3d',
+        title: 'Landet som ble stelt med ild',
+        description:
+            'En australsk slette i tørketiden. Krattet vokser seg tettere og mørkere for hvert sekund, og lynet slår ned uten forvarsel. Klikk den mørkeste busken og svi den av med en liten, kjølig brann, så holder du brenselet nede. Slurver du, tar den første gnisten hele sletta. Lyspæra: landet var ikke vilt. Det ble stelt med ild i over 20 000 år, men britene lette etter plog og gjerde i 1788, så de så aldri redskapet og kalte landet terra nullius.',
+        estimatedSeconds: 150,
+        loader: () => import('./LandetMedIld3D'),
+        Component: LandetMedIld3D as never,
     },
 };
 

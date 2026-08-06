@@ -5070,6 +5070,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "australia-og-aboriginerne",
+      "title": "Australia: landet som ble kalt tomt",
+      "description": "Britene erklærte Australia for ingenmannsland i 1788, selv om folk hadde bodd der i minst 50 000 år.",
+      "startDate": 1788,
+      "endDate": 1992,
+      "displayDate": "1788-1992",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "kolonialisering",
+      "link": "/historie/kolonialisering/australia-og-aboriginerne",
+      "tags": [
+        "historie",
+        "kolonialisering",
+        "australia",
+        "urfolk",
+        "terra nullius"
+      ],
+      "lat": -25.3,
+      "lng": 133.8,
+      "placeLabel": "Australia",
+      "placeCountryId": 36,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "intro",
       "title": "Den franske revolusjon",
       "description": "En kort introduksjon til hendelsene 1789-1799 og hvordan de formet moderne demokrati.",
