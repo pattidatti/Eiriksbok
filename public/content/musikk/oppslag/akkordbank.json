@@ -15,7 +15,19 @@
         },
         {
             "type": "text",
-            "content": "### Om Akkorder\n\nEn akkord består av tre eller flere toner som klinger sammen. De vanligste akkordene er treklanger (dur og moll) og fireklanger (septimakkorder)."
+            "content": "### Om Akkorder\n\nEn akkord er en samklang av tre eller flere toner, som oftest bygd opp av terser (Store norske leksikon, 2025). De vanligste akkordene er treklanger - grunntone, ters og kvint, i dur eller moll (Bjerkestrand, 2024) - og firklanger som septimakkorden, der en septim legges på toppen av treklangen (Store norske leksikon, 2023)."
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bjerkestrand, N. E. (2024). *Treklang*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/treklang](https://snl.no/treklang)",
+                    "Store norske leksikon. (2023). *Septimakkord*. Hentet 06.08.2026 fra [snl.no/septimakkord](https://snl.no/septimakkord)",
+                    "Store norske leksikon. (2025). *Akkord - musikk*. Hentet 06.08.2026 fra [snl.no/akkord_-_musikk](https://snl.no/akkord_-_musikk)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-06"
 }
