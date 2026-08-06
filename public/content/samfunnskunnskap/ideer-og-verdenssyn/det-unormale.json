@@ -6,11 +6,12 @@
     "category": "Idéhistorie",
     "readTime": "15 min lesing",
     "heroImage": "/images/lessons/ideer/det_unormale_hero.webp",
+    "lastUpdated": "2026-08-06",
     "details": [
         "Hvem bestemmer hva som er normalt?",
         "Guddommelig galskap og demoner",
         "Den store innesperringen: Fornuftens voktere",
-        "Pillen og sofaen: Medisinsk makt",
+        "Sofaen og pillen: Medisinsk makt",
         "Nevromangfold: En ny vei å forstå ulikhet på"
     ],
     "content": [
@@ -31,7 +32,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Narrenes skip",
-                "content": "I senere middelalder finnes det fortellinger om 'Narrenes skip' – skip som ble lastet med mennesker samfunnet ikke ville ha, og sendt ut på havet uten mål og mening. Dette ble symbolet på hvordan man ønsket å fjerne det 'unormale' fra byens synsfelt."
+                "content": "I senere middelalder finnes det fortellinger om 'Narrenes skip' - skip som ble lastet med mennesker samfunnet ikke ville ha, og sendt ut på havet uten mål og mening. Bildet ble stående som et symbol på hvordan man ønsket å fjerne det 'unormale' fra byens synsfelt. Historikere er uenige om hvor mange slike skip som faktisk seilte."
             }
         },
         {
@@ -40,7 +41,7 @@
         },
         {
             "type": "text",
-            "content": "Når vi kommer til 1600- og 1700-tallet og [opplysningstiden](/historie/den-franske-revolusjon/intro), skjer det noe rart. Man begynner å hylle fornuften over alt annet (se [sannhetens historie](/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie)). Men det betyr også at de som *ikke* oppfører seg fornuftig, blir sett på som en trussel mot selve grunnlaget for samfunnet.\n\nFilosofen Michel Foucault kalte dette 'den store innesperringen'. Man bygde enorme asyler og hospitaler der man stuet sammen de gale, de fattige og de kriminelle. De skulle ikke lenger vandre fritt; de skulle sperres inne og 'helbredes' ved å lære seg disiplin og fornuft. \n\nHer ser vi fødselen av det moderne natursynet (se [naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)): Alt som ikke er logisk og effektivt, må enten fikses eller gjemmes bort."
+            "content": "Når vi kommer til 1600- og 1700-tallet og [opplysningstiden](/historie/den-franske-revolusjon/intro), skjer det noe rart. Man begynner å hylle fornuften over alt annet (se [sannhetens historie](/samfunnskunnskap/ideer-og-verdenssyn/sannhetens-historie)). Men det betyr også at de som *ikke* oppfører seg fornuftig, blir sett på som en trussel mot selve grunnlaget for samfunnet.\n\nDen franske filosofen Michel Foucault skrev om dette i boka *Galskapens historie* fra 1961. Der undersøker han selve grensen mellom fornuft og ufornuft, og hvordan galskapen ble skilt ut og styrt gjennom institusjoner. Man bygde asyler og hospitaler der man stuet sammen de gale, de fattige og de kriminelle. De skulle ikke lenger vandre fritt; de skulle sperres inne og 'helbredes' ved å lære seg disiplin og fornuft. Foucault viste samtidig hvordan legen vokste fram som et maktsenter i det vestlige samfunnet (Hammer, 2025). \n\nPoenget hans var at galskap ikke er en ferdig, objektiv kategori vi bare oppdager. Den blir formet av hvordan samfunnet sorterer og navngir mennesker."
         },
         {
             "type": "header",
@@ -48,7 +49,11 @@
         },
         {
             "type": "text",
-            "content": "Utover på 1800-tallet ble galskapen overtatt av legene. Det gikk fra å være en moralsk feil til å bli en sykdom. Psykofarmaka (medisiner) og senere psykoanalyse (tanker som medisinsk objekt) vokste fram.\n\nSelv om dette førte til mye mer human behandling av pasienter, ga det også legene en enorm makt. De kunne nå 'stemple' mennesker med diagnoser som gjorde dem til annenrangs borgere. Diagnoser ble ofte brukt politisk – for eksempel ble kvinner som kjempet for rettigheter (se [humanisme](/samfunnskunnskap/ideer-og-verdenssyn/humanisme)), ofte diagnostisert med 'hysteri'."
+            "content": "Utover på 1800-tallet ble galskapen overtatt av legene. Det gikk fra å være en moralsk feil til å bli en sykdom. Først kom de psykologiske forklaringene: Sigmund Freud utviklet psykoanalysen sammen med kollegaen Josef Breuer, og i 1900 ga han ut *Drømmetydning* (Foss, 2026). Medisinene kom langt senere. Gjennombruddet for moderne psykofarmaka kom først på begynnelsen av 1950-tallet, med klorpromazin og litt senere de første midlene mot depresjon (Malt & Dietrichs, 2025).\n\nSelv om dette førte til mye mer human behandling av pasienter, ga det også legene en enorm makt. De kunne nå 'stemple' mennesker med diagnoser som gjorde dem til annenrangs borgere."
+        },
+        {
+            "type": "text",
+            "content": "Diagnosen hysteri er det tydeligste eksempelet. Ordet kommer fra det greske ordet for livmor, og bygget på en gammel forestilling om at livmoren vandret rundt i kroppen og skapte plager. Diagnosen ble særlig knyttet til kvinner, og den franske nevrologen Jean-Martin Charcot gjorde den berømt gjennom arbeidet sitt ved Salpêtrière-sykehuset i Paris på 1800-tallet. Behandlingen fulgte klassen din: rike pasienter fikk hvilekur på sanatorier, mens fattige ble lagt inn på offentlige anstalter. I dag er hysteri fjernet fra de offisielle diagnosesystemene og erstattet med kjønnsnøytrale begreper (Skålevåg & Malt, 2026)."
         },
         {
             "type": "component",
@@ -82,15 +87,19 @@
         },
         {
             "type": "text",
-            "content": "I de siste tiårene har vi sett starten på en ny endring. Begreper som nevromangfold (neurodiversity) utfordrer selve ideen om at det finnes én 'riktig' måte å ha en hjerne på.\n\nI stedet for å se på ADHD, autisme eller dysleksi bare som 'feil' som skal rettes, begynner vi å se på det som ulike måter å fungere på. Kanskje er menneskeheten som en skog (se [naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)): Vi trenger forskjellige typer trær for at skogen skal være sunn. \n\nDette er en dypt humanistisk tanke: At ulikhet ikke er en sykdom, men en ressurs. Men det krever at vi som samfunn utvider sirkelen for hva vi mener er 'normalt'."
+            "content": "I de siste tiårene har vi sett starten på en ny endring. Begreper som nevromangfold (neurodiversity) utfordrer selve ideen om at det finnes én 'riktig' måte å ha en hjerne på. Ordet vokste fram i autismemiljøet på slutten av 1990-tallet, og den australske sosiologen Judy Singer var en av dem som satte det på dagsordenen. Hun hentet bildet fra naturen: slik naturmangfold er nødvendig for at et økosystem skal være stabilt, kan nevromangfold være nødvendig for et samfunn (Birkbeck, University of London, u.å.).\n\nI stedet for å se på ADHD, autisme eller dysleksi bare som 'feil' som skal rettes, begynner vi å se på det som ulike måter å fungere på. Kanskje er menneskeheten som en skog (se [naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)): Vi trenger forskjellige typer trær for at skogen skal være sunn. \n\nDette er en dypt humanistisk tanke: At ulikhet ikke er en sykdom, men en ressurs. Men det krever at vi som samfunn utvider sirkelen for hva vi mener er 'normalt'."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Det er ikke et tegn på helse å være godt tilpasset et fundamentalt sykt samfunn.",
-                "author": "Jiddu Krishnamurti"
+                "text": "Er samfunnet friskt, slik at et menneske bør føres tilbake til det? Har ikke samfunnet selv vært med på å gjøre mennesket sykt?",
+                "author": "Jiddu Krishnamurti, Commentaries on Living Series 3 (1960)"
             }
+        },
+        {
+            "type": "text",
+            "content": "Dette sitatet er verdt en liten kildekritisk øvelse. På nettet finner du hele tiden en kortere versjon: 'Det er ikke et tegn på helse å være godt tilpasset et fundamentalt sykt samfunn.' Den versjonen tilskrives Krishnamurti overalt - men stiftelsen som forvalter tekstene hans, sier at de ikke finner de ordene noe sted hos ham. Det nærmeste de kommer, er spørsmålene over, fra boka *Commentaries on Living Series 3* fra 1960 (Krishnamurti Foundation Trust, u.å.). Et sitat kan altså bli 'sant' bare ved å bli gjentatt ofte nok."
         },
         {
             "type": "header",
@@ -107,12 +116,13 @@
                 "forstaa": [
                     "Hvordan ble galskap sett på i antikkens Hellas, og hvordan endret dette synet seg i middelalderen?",
                     "Hva var 'Narrenes skip', og hva ble det et symbol på?",
-                    "Hva mente filosofen Michel Foucault med 'den store innesperringen' på 1600- og 1700-tallet?",
+                    "Hva skrev filosofen Michel Foucault om i boka Galskapens historie fra 1961?",
+                    "Hva kom først på 1800- og 1900-tallet: psykoanalysen eller de moderne psykofarmaka? Nevn omtrent når hver av dem kom.",
                     "Hva betyr begrepet nevromangfold?"
                 ],
                 "reflekter": [
                     "Teksten sier at historien om det unormale egentlig handler om makt. Hvorfor kan det å bestemme hva som er 'normalt' gi makt over andre mennesker?",
-                    "Diagnosen 'hysteri' ble ofte brukt på kvinner som kjempet for rettigheter. Hvorfor er det farlig når legers diagnoser blir brukt politisk?",
+                    "Diagnosen 'hysteri' var særlig knyttet til kvinner og er i dag fjernet fra diagnosesystemene. Hvorfor er det farlig når en diagnose følger kjønn eller sosial rolle i stedet for symptomer?",
                     "Da galskap gikk fra å være en synd til å bli en sykdom på 1800-tallet, ble behandlingen mer human. Men teksten sier legene også fikk enorm makt. Hvordan kan begge deler være sanne samtidig?",
                     "Teksten sammenligner menneskeheten med en skog som trenger forskjellige typer trær. Hva prøver bildet å si om ulikhet mellom mennesker?"
                 ],
@@ -141,11 +151,11 @@
                     },
                     {
                         "id": "q2",
-                        "question": "Hva mente filosofen Michel Foucault med 'den store innesperringen'?",
+                        "question": "Hva handler Michel Foucaults bok Galskapens historie (1961) om?",
                         "options": [
                             "At alle ble låst inne i sine egne tanker",
                             "At man begynte å stenge ville dyr i bur",
-                            "At man bygde store asyler for å fjerne 'unormale' fra samfunnet",
+                            "Grensen mellom fornuft og ufornuft, og hvordan galskapen ble skilt ut og sperret inne i institusjoner",
                             "At alle land stengte grensene sine"
                         ],
                         "correctAnswer": 2
@@ -163,15 +173,40 @@
                     },
                     {
                         "id": "q4",
-                        "question": "Hvorfor ble diagnosen 'hysteri' ofte brukt på 1800-tallet?",
+                        "question": "Når kom gjennombruddet for moderne psykofarmaka?",
                         "options": [
-                            "For å beskrive en fysisk smittsom sykdom",
-                            "For å medisinere mennesker som lo for mye",
-                            "Ofte for å kontrollere og undertrykke kvinner som brøt sosiale normer",
-                            "For å forklare hvorfor folk flyttet til byene"
+                            "På 1600-tallet, samtidig med de store asylene",
+                            "På 1890-tallet, samtidig med psykoanalysen",
+                            "På begynnelsen av 1950-tallet, med klorpromazin",
+                            "Først etter år 2000"
+                        ],
+                        "correctAnswer": 2
+                    },
+                    {
+                        "id": "q5",
+                        "question": "Hva var diagnosen 'hysteri' særlig knyttet til?",
+                        "options": [
+                            "En fysisk smittsom sykdom",
+                            "Mennesker som lo for mye",
+                            "Kvinner - ordet kommer fra det greske ordet for livmor",
+                            "Folk som flyttet fra bygda til byen"
                         ],
                         "correctAnswer": 2
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Birkbeck, University of London. (u.å.). *Judy Singer*. Hentet 06.08.2026 fra [bbk.ac.uk](https://www.bbk.ac.uk/about-us/fellows/judy-singer)",
+                    "Foss, T. (2026). *Psykoanalyse*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/psykoanalyse](https://snl.no/psykoanalyse)",
+                    "Hammer, S. (2025). *Michel Foucault*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/Michel_Foucault](https://snl.no/Michel_Foucault)",
+                    "Krishnamurti Foundation Trust. (u.å.). *It Is No Measure of Health To Be Well Adjusted to a Profoundly Sick Society*. Hentet 06.08.2026 fra [kfoundation.org](https://kfoundation.org/it-is-no-measure-of-health-to-be-well-adjusted-to-a-profoundly-sick-society/)",
+                    "Malt, U. & Dietrichs, E. S. (2025). *Psykofarmaka*. Store medisinske leksikon. Hentet 06.08.2026 fra [sml.snl.no/psykofarmaka](https://sml.snl.no/psykofarmaka)",
+                    "Skålevåg, S. A. & Malt, U. (2026). *Hysteri*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/hysteri](https://snl.no/hysteri)"
                 ]
             }
         }
