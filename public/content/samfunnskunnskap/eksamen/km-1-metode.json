@@ -24,7 +24,7 @@
         },
         {
             "type": "text",
-            "content": "I fjor hevdet en norsk avis at «ungdommer bruker dobbelt så mye tid på sosiale medier som for fem år siden». Er det sant? Hvem spurte de? Hva betyr egentlig «dobbelt så mye»? Disse spørsmålene er kjernen i samfunnsfaglig metode: evnen til å undersøke, vurdere og presentere kunnskap om samfunnet på en ryddig og etterprøvbar måte."
+            "content": "Tenk deg at en avis skriver at «ungdommer bruker dobbelt så mye tid på sosiale medier som for fem år siden». Er det sant? Hvem spurte de? Hva betyr egentlig «dobbelt så mye»? Disse spørsmålene er kjernen i samfunnsfaglig metode: evnen til å undersøke, vurdere og presentere kunnskap om samfunnet på en ryddig og etterprøvbar måte."
         },
         {
             "type": "text",
@@ -63,11 +63,11 @@
         },
         {
             "type": "text",
-            "content": "Når problemstillingen er klar, trenger du data. I samfunnsfag bruker vi to typer: primærkilder er informasjon du samler selv (et intervju du gjør, en spørreundersøkelse du lager, tall du henter direkte fra SSB). Sekundærkilder er informasjon andre har samlet og tolket (en avisartikkel, en fagrapport, en lærebok)."
+            "content": "Når problemstillingen er klar, trenger du data. I samfunnsfag bruker vi to typer: primærkilder er informasjon du samler selv (et intervju du gjør, en spørreundersøkelse du lager, tall du henter direkte fra SSB). Sekundærkilder er informasjon andre har samlet og tolket (en avisartikkel, en fagrapport, en lærebok). Primærkildene er altså de kildene som sekundærkildene bygger på (Orgeret & Hatlen, 2026)."
         },
         {
             "type": "text",
-            "content": "Å finne kilder er ikke nok. Du må vurdere dem. Kildekritikk betyr at du stiller fire spørsmål: Hvem har laget dette? Når ble det laget? Hvorfor ble det laget? Kan informasjonen etterprøves? En politisk parti-nettside og Statistisk sentralbyrå (SSB) er begge kilder, men de er ikke like nøytrale. Se artikkelen om [Ekkokamre og informasjonsbobler](/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre) for mer om hvordan vi lett ender opp med ensidige kilder."
+            "content": "Å finne kilder er ikke nok. Du må vurdere dem. Kildekritikk handler om å vurdere hvem avsenderen er, og hvor troverdig det som blir sagt, egentlig er (Orgeret & Hatlen, 2026). Fire spørsmål hjelper deg på vei: Hvem har laget dette? Når ble det laget? Hvorfor ble det laget? Kan informasjonen etterprøves? En nettside for et politisk parti og Statistisk sentralbyrå (SSB) er begge kilder, men de er ikke like nøytrale: SSB er en faglig uavhengig institusjon med ansvar for den offisielle statistikken i Norge (Statistisk sentralbyrå, 2021). Se artikkelen om [Ekkokamre og informasjonsbobler](/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre) for mer om hvordan vi lett ender opp med ensidige kilder."
         },
         {
             "type": "text",
@@ -179,7 +179,7 @@
         },
         {
             "type": "text",
-            "content": "Når du tolker statistikk, still tre spørsmål: Hva måler dette egentlig? Sammenlignet med hva? Hvem er ikke med i tallene? Tenk for eksempel på [fattigdom](/samfunnskunnskap/demografi/fattigdom): måler vi absolutt fattigdom (mangler mat og husly) eller relativ fattigdom (tjener under 60 prosent av medianinntekten)? De to målene gir svært ulike tall for Norge."
+            "content": "Når du tolker statistikk, still tre spørsmål: Hva måler dette egentlig? Sammenlignet med hva? Hvem er ikke med i tallene? Tenk for eksempel på [fattigdom](/samfunnskunnskap/demografi/fattigdom): måler vi absolutt fattigdom, altså å ikke klare å dekke primærbehov som mat, klær og bolig, eller relativ fattigdom, der grensen i Norge går ved 60 prosent av medianinntekten (Hattrem, 2023)? De to målene gir svært ulike tall for Norge."
         },
         {
             "type": "text",
@@ -267,7 +267,7 @@
                     },
                     {
                         "id": "riktig",
-                        "text": "Du finner tall fra Medietilsynet som viser at daglig skjermtid blant 9-18-åringer økte fra 3,5 timer i 2019 til 5,2 timer i 2024. Hva gjør du nå?",
+                        "text": "Du finner tall fra Medietilsynet (2024) som viser at 86 prosent av 9-18-åringene bruker sosiale medier, og at andelen øker med alderen. Hva gjør du nå?",
                         "choices": [
                             {
                                 "text": "Bruke tallene direkte uten å stille spørsmål ved dem",
@@ -370,7 +370,7 @@
         },
         {
             "type": "text",
-            "content": "Samfunnsfaglig metode er ikke vanskeligere enn dette: du stiller et godt spørsmål, finner pålitelige kilder, tolker dataene kritisk, presenterer funnene tydelig og er ærlig om hva undersøkelsen kan og ikke kan si. Disse fem stegene gjelder enten du undersøker [urbanisering](/samfunnskunnskap/demografi/urbanisering) i Norge eller prøver å forstå en nyhetssak fra utlandet."
+            "content": "Samfunnsfaglig metode er ikke vanskeligere enn dette: du stiller et godt spørsmål, finner pålitelige kilder, tolker dataene kritisk, presenterer funnene tydelig og er ærlig om hva undersøkelsen kan og ikke kan si. Nettopp dette er det læreplanen ber om: du skal bruke samfunnsfaglige metoder og digitale ressurser i egne undersøkelser, presentere funn med digitale verktøy og drøfte hvor gyldige og relevante funnene er (Utdanningsdirektoratet, 2019). Disse fem stegene gjelder enten du undersøker [urbanisering](/samfunnskunnskap/demografi/urbanisering) i Norge eller prøver å forstå en nyhetssak fra utlandet."
         },
         {
             "type": "text",
@@ -482,6 +482,19 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hattrem, A. (2023). *Hvor mange er fattige i Norge?* Statistisk sentralbyrå. Hentet 06.08.2026 fra [ssb.no](https://www.ssb.no/inntekt-og-forbruk/inntekt-og-formue/artikler/hvor-mange-er-fattige-i-norge)",
+                    "Medietilsynet. (2024). *Barn og medier 2024: Barn og unges medievaner og tilgang til teknologi*. Hentet 06.08.2026 fra [medietilsynet.no](https://www.medietilsynet.no/fakta/rapporter/barn-og-medier/barn-medievaner-2024/)",
+                    "Orgeret, K. S. & Hatlen, J. F. (2026). *Kildekritikk*. Store norske leksikon. Hentet 06.08.2026 fra [snl.no/kildekritikk](https://snl.no/kildekritikk)",
+                    "Statistisk sentralbyrå. (2021). *Om SSB*. Hentet 06.08.2026 fra [ssb.no/omssb/om-oss](https://www.ssb.no/omssb/om-oss)",
+                    "Utdanningsdirektoratet. (2019). *Kompetansemål etter 10. trinn - Læreplan i samfunnsfag (SAF01-04)*. Hentet 06.08.2026 fra [udir.no](https://www.udir.no/lk20/saf01-04/kompetansemaal-og-vurdering/kv147)"
+                ]
+            }
         }
     ],
     "tags": [
@@ -491,5 +504,6 @@
         "presentasjon",
         "eksamen"
     ],
-    "createdDate": "2026-06-02T00:00:00Z"
+    "createdDate": "2026-06-02T00:00:00Z",
+    "lastUpdated": "2026-08-06"
 }
