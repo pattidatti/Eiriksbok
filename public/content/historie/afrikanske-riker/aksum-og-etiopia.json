@@ -5,7 +5,7 @@
     "year": "100-1896",
     "category": "Øst-Afrika",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/afrikanske-riker/aksum-og-etiopia-hero.webp",
     "details": [
         "Aksum var et av verdens store riker i antikken, med egne gullmynter og egen skrift.",
         "Etiopia ble kristent allerede rundt år 330, lenge før store deler av Europa.",
@@ -18,7 +18,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/afrikanske-riker/aksum-og-etiopia-01.webp",
             "alt": "Høy steinstøtte av granitt som rager over et tørt landskap",
             "caption": "Steinstøttene i Aksum markerte gravene til konger. Den største som fortsatt står, er over 20 meter høy."
         },
@@ -108,7 +108,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/afrikanske-riker/aksum-og-etiopia-02.webp",
             "alt": "Etiopiske soldater på en fjellrygg i morgenlys før et slag",
             "caption": "Ved Adwa kjempet en etiopisk hær på over 100 000 mann i sitt eget fjellandskap."
         },
@@ -150,7 +150,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/afrikanske-riker/aksum-og-etiopia-03.webp",
             "alt": "Kranarbeidere reiser en høy granittstøtte på plass igjen",
             "caption": "I 2005 kom obelisken tilbake til Aksum etter 68 år i Roma."
         },
