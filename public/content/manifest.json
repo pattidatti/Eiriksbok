@@ -7320,6 +7320,20 @@
               ],
               "createdDate": "2026-06-22T00:00:00Z",
               "lastUpdated": "2026-07-24T23:49:52+02:00"
+            },
+            {
+              "id": "aksum-og-etiopia",
+              "title": "Aksum og Etiopia: riket som slo tilbake",
+              "description": "Et afrikansk storrike med egne gullmynter og egen skrift, og landet som slo den italienske hæren ved Adwa i 1896.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "afrika",
+                "etiopia",
+                "aksum",
+                "kolonialisering",
+                "kristendom"
+              ],
+              "createdDate": "2026-08-06T00:00:00Z"
             }
           ]
         }

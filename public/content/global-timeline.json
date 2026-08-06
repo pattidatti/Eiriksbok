@@ -1286,6 +1286,29 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "aksum-og-etiopia",
+      "title": "Aksum og Etiopia: riket som slo tilbake",
+      "description": "Et afrikansk storrike med egne gullmynter og egen skrift, og landet som slo den italienske hæren ved Adwa i 1896.",
+      "startDate": 100,
+      "endDate": 1896,
+      "displayDate": "100-1896",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "afrikanske-riker",
+      "link": "/historie/afrikanske-riker/aksum-og-etiopia",
+      "tags": [
+        "afrika",
+        "etiopia",
+        "aksum",
+        "kolonialisering",
+        "kristendom"
+      ],
+      "lat": 2,
+      "lng": 20,
+      "placeLabel": "Afrika",
+      "geoConfidence": "tag"
+    },
+    {
       "id": "legitimitet-og-kristendom",
       "title": "Fra Princeps til Guds utvalgte",
       "description": "Hvordan keiserens makt gikk fra å være politisk til å bli guddommelig.",
