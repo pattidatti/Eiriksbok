@@ -19,6 +19,7 @@
         "integrering"
     ],
     "createdDate": "2026-06-02T00:00:00Z",
+    "lastUpdated": "2026-08-07",
     "timeline": [],
     "content": [
         {
@@ -35,7 +36,7 @@
         },
         {
             "type": "text",
-            "content": "I Norge i dag bor det folk med bakgrunn fra over 200 land. Noen familier har bodd her i generasjoner. Andre kom sist uke. Dette mangfoldet preger hverdagen - i klasserommet, på fotballbanen, i butikkene og i politikken. Men hva betyr det egentlig at vi er forskjellige? Og er det en styrke eller en utfordring?"
+            "content": "I Norge i dag bor det folk med bakgrunn fra over 200 land - i 2023 var tallet 223 land og selvstyrte regioner (Steinkellner et al., 2023). Noen familier har bodd her i generasjoner. Andre kom sist uke. Dette mangfoldet preger hverdagen - i klasserommet, på fotballbanen, i butikkene og i politikken. Men hva betyr det egentlig at vi er forskjellige? Og er det en styrke eller en utfordring?"
         },
         {
             "type": "image",
@@ -49,7 +50,7 @@
         },
         {
             "type": "text",
-            "content": "Identitet er summen av det som gjør deg til den du er. Psykologer deler gjerne identitet i to: den personlige og den sosiale. Din personlige identitet er dine verdier, interesser og livshistorie - det som skiller deg fra alle andre. Din sosiale identitet handler om gruppene du tilhører - familie, venner, religion, nasjonalitet, kjønn."
+            "content": "Identitet er summen av det som gjør deg til den du er. I psykologien handler identitet om en fornemmelse av hvem man er og hvilke grupper man er en del av (von Tetzchner, 2026). Psykologer deler gjerne identitet i to: den personlige og den sosiale. Din personlige identitet er dine verdier, interesser og livshistorie - det som skiller deg fra alle andre. Din sosiale identitet handler om gruppene du tilhører - familie, venner, religion, nasjonalitet, kjønn."
         },
         {
             "type": "text",
@@ -96,11 +97,11 @@
         },
         {
             "type": "text",
-            "content": "Et vanlig feilspor er å blande kultur og rase. Rase er et biologisk begrep - og et svært upresist ett. Forskning viser at det er større genetiske forskjeller innad i det vi kaller 'raser' enn mellom dem. Rasisme er forestillingen om at noen mennesker er mer verdt enn andre på grunn av hudfarge eller etnisitet. Rasisme er ikke en mening det er greit å ha - det er en form for diskriminering som er forbudt ved lov i Norge."
+            "content": "Et vanlig feilspor er å blande kultur og rase. Rase er et biologisk begrep - og et svært upresist ett når det brukes om mennesker. Moderne genetikk viser at de genetiske forskjellene mellom menneskegrupper går gradvis over i hverandre, uten skarpe grenser. Derfor har inndelingen av mennesker i biologiske raser ingen støtte i moderne genetikk (Brøgger et al., 2026). Rasisme er forestillingen om at noen mennesker er mer verdt enn andre på grunn av hudfarge eller etnisitet. Rasisme er ikke en mening det er greit å ha - det er en form for diskriminering som er forbudt ved lov i Norge."
         },
         {
             "type": "text",
-            "content": "Diskriminering betyr å behandle folk dårligere enn andre på grunn av hvem de er - ikke hva de har gjort. I Norge er det forbudt å diskriminere på grunnlag av etnisitet, religion, kjønn, seksuell orientering og funksjonsnedsettelse. Likevel skjer det. Forsøk har vist at jobbsøknader med 'utenlandske' navn får færre svar enn identiske søknader med norske navn. Dette kalles strukturell diskriminering - det sitter i systemene, ikke bare i enkeltmenneskers holdninger."
+            "content": "Diskriminering betyr å behandle folk dårligere enn andre på grunn av hvem de er - ikke hva de har gjort. I Norge er det forbudt å diskriminere på grunnlag av blant annet kjønn, etnisitet, religion, livssyn, funksjonsnedsettelse, seksuell orientering og alder (Likestillings- og diskrimineringsloven, 2017). Likevel skjer det. I et stort norsk forsøk sendte forskere ut par av jobbsøknader som var like på alt - språk, utdanning og arbeidserfaring - bortsett fra navnet på søkeren (Midtbøen & Rogstad, 2012). Søkere med utenlandsk navn hadde omtrent 25 prosent lavere sjanse for å bli kalt inn til intervju enn søkere med norsk navn (Fugelsnes, 2020). Diskriminering springer ofte ut av underliggende samfunnsstrukturer, fordommer og kulturelle normer. Dette kalles strukturell diskriminering - det sitter i systemene, ikke bare i enkeltmenneskers holdninger (Ikdahl, 2025)."
         },
         {
             "type": "component",
@@ -193,7 +194,7 @@
         },
         {
             "type": "text",
-            "content": "Forskning viser at grupper med ulike bakgrunner og perspektiver ofte løser problemer bedre enn grupper der alle tenker likt. Det kalles kognitiv mangfoldighet - og det er en av de viktigste grunnene til at mange bedrifter og organisasjoner aktivt søker folk med ulike erfaringer. Når folk ser verden fra forskjellige vinkler, ser de forskjellige problemer - og forskjellige løsninger."
+            "content": "Forskning viser at grupper med ulike bakgrunner og perspektiver ofte løser problemer bedre enn grupper der alle tenker likt (Page, 2007). Det kalles kognitiv mangfoldighet - og det er en av de viktigste grunnene til at mange bedrifter og organisasjoner aktivt søker folk med ulike erfaringer. Når folk ser verden fra forskjellige vinkler, ser de forskjellige problemer - og forskjellige løsninger."
         },
         {
             "type": "component",
@@ -208,7 +209,7 @@
         },
         {
             "type": "text",
-            "content": "Integrering handler om at mennesker med ulik bakgrunn finner en felles plattform - ikke at noen mister seg selv. En god integreringspolitikk gir alle mulighet til å delta i arbeidslivet, lære språk, og bidra til fellesskapet - samtidig som den respekterer at folk kan være forskjellige. Du kan lære mer om de demografiske sidene av innvandring i artikkelen om [migrasjon](/samfunnskunnskap/demografi/migrasjon-push-pull)."
+            "content": "Integrering handler om at mennesker med ulik bakgrunn finner en felles plattform - ikke at noen mister seg selv. Her skiller integrering seg fra assimilering: ved assimilering tar man gradvis opp i seg majoritetens normer og verdier til den opprinnelige kulturen ikke lenger skiller seg ut, mens integrering gir nykommere en likeverdig plass i fellesskapet samtidig som de beholder sin kulturelle identitet (Brochmann, 2025). En god integreringspolitikk gir alle mulighet til å delta i arbeidslivet, lære språk, og bidra til fellesskapet - samtidig som den respekterer at folk kan være forskjellige. Du kan lære mer om de demografiske sidene av innvandring i artikkelen om [migrasjon](/samfunnskunnskap/demografi/migrasjon-push-pull)."
         },
         {
             "type": "image",
@@ -331,6 +332,23 @@
                         "correctAnswer": 1,
                         "explanation": "Kulturell toleranse har klare grenser: praksiser som tvangsekteskap, kjønnslemlestelse og vold er forbudte uansett kulturell bakgrunn. Menneskeverdet er ikke kulturrelativt."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brochmann, G. (2025). *Integrering*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/integrering](https://snl.no/integrering)",
+                    "Brøgger, A., Skorgen, T., Haugen, L. K. & Walberg, F. (2026). *Rase - historisk bruk*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/rase_-_mennesket](https://snl.no/rase_-_mennesket)",
+                    "Fugelsnes, E. (2020). *When discrimination became a fact*. Forskningsetikk. Hentet 07.08.2026 fra [forskningsetikk.no](https://www.forskningsetikk.no/en/resources/the-research-ethics-magazine/2020-2/when-discrimination-became-a-fact/)",
+                    "Ikdahl, I. (2025). *Diskriminering*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/diskriminering](https://snl.no/diskriminering)",
+                    "Likestillings- og diskrimineringsloven. (2017). *Lov om likestilling og forbud mot diskriminering* (LOV-2017-06-16-51). Hentet 07.08.2026 fra [lovdata.no](https://lovdata.no/dokument/NL/lov/2017-06-16-51)",
+                    "Midtbøen, A. H. & Rogstad, J. (2012). *Diskrimineringens omfang og årsaker. Etniske minoriteters tilgang til norsk arbeidsliv* (Rapport 1/12). Institutt for samfunnsforskning. Hentet 07.08.2026 fra [fafo.no](https://www.fafo.no/en/publications/other-publications/diskrimineringens-omfang-og-arsaker-etniske-minoriteters-tilgang-til-norsk-arbeidsliv)",
+                    "Page, S. E. (2007). *The Difference: How the Power of Diversity Creates Better Groups, Firms, Schools, and Societies*. Princeton University Press.",
+                    "Steinkellner, A., Krokedal, L. & Andersen, E. (2023). *Innvandrerne og deres barn - en mangfoldig gruppe*. Statistisk sentralbyrå. Hentet 07.08.2026 fra [ssb.no](https://www.ssb.no/befolkning/innvandrere/artikler/innvandrerne-og-deres-barn--en-mangfoldig-gruppe)",
+                    "von Tetzchner, S. (2026). *Identitet*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/identitet](https://snl.no/identitet)"
                 ]
             }
         }

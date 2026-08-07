@@ -20,6 +20,7 @@
         "industrialisering"
     ],
     "createdDate": "2026-06-02T00:00:00Z",
+    "lastUpdated": "2026-08-07",
     "timeline": [],
     "content": [
         {
@@ -32,7 +33,7 @@
         },
         {
             "type": "text",
-            "content": "Det er midt på natten i en liten landsby i England. Året er 1811. Grupper av menn beveger seg lydløst mot nærmeste fabrikk. Bevæpnet med slegger og økser bryter de seg inn og knuser de nye mekaniske vevstolene som har overtatt jobben deres. De kaller seg luddittene. For disse mennene var ikke maskinene et tegn på framgang - de var en fiende som stjal levebrødet deres. To hundre år senere er situasjonen lik, men endringene skjer raskere enn noen gang. Hva skjer når et samfunn møter ny teknologi - og hvem bestemmer om det er en velsignelse eller en forbannelse?"
+            "content": "Det er midt på natten i en liten landsby i England. Året er 1811. Grupper av menn beveger seg lydløst mot nærmeste fabrikk. Bevæpnet med slegger og økser bryter de seg inn og knuser de nye mekaniske vevstolene som har overtatt jobben deres. De kaller seg luddittene. Fra 1811 til 1813 ødela de tekstilmaskiner i flere engelske industriområder for å hindre at maskinene skulle senke levestandarden deres eller gjøre dem arbeidsløse (Greve, 2025). For disse mennene var ikke maskinene et tegn på framgang - de var en fiende som stjal levebrødet deres. To hundre år senere er situasjonen lik, men endringene skjer raskere enn noen gang. Hva skjer når et samfunn møter ny teknologi - og hvem bestemmer om det er en velsignelse eller en forbannelse?"
         },
         {
             "type": "image",
@@ -46,11 +47,11 @@
         },
         {
             "type": "text",
-            "content": "Teknologi er alt vi lager for å løse oppgaver enklere eller raskere. Det er ikke bare datamaskiner og roboter. Den første teknologien var en skarp stein brukt til å skjære kjøtt - for over to millioner år siden. Plogen som forandret jordbruket, trykkpressen som spredte kunnskap til folket, og dampkjelen som satte fabrikker i gang, er alt sammen teknologi. Hver gang en ny teknologi dukker opp, endrer den hvordan vi lever, jobber og tenker. Det er dette vi kaller teknologi som endringsdriver: en kraft som dytter samfunnet i en ny retning, enten vi vil eller ikke."
+            "content": "Teknologi er alt vi lager for å løse oppgaver enklere eller raskere. Det er ikke bare datamaskiner og roboter. Den første teknologien var en skarp stein brukt til å skjære - de eldste kjente steinredskapene er omkring 2,6 millioner år gamle (Omland & Engevik, 2026). Plogen som forandret jordbruket, trykkpressen som spredte kunnskap til folket, og dampkjelen som satte fabrikker i gang, er alt sammen teknologi. Hver gang en ny teknologi dukker opp, endrer den hvordan vi lever, jobber og tenker. Det er dette vi kaller teknologi som endringsdriver: en kraft som dytter samfunnet i en ny retning, enten vi vil eller ikke."
         },
         {
             "type": "text",
-            "content": "Historikeren Yuval Noah Harari skriver at det er tre store revolusjoner som har formet menneskene: den kognitive revolusjonen (vi lærte å tenke abstrakt), jordbruksrevolusjonen (vi begynte å dyrke mat), og den vitenskapelige revolusjonen. Hver gang var det teknologi som utløste endringen. I dag er vi midt i en ny revolusjon: den digitale. Du kan lese mer om hvordan [urbanisering](/samfunnskunnskap/demografi/urbanisering) og industrialisering endret livet til folk - det er en av de mest dramatiske teknologidrevne omveltningene i historien."
+            "content": "Historikeren Yuval Noah Harari (2017) skriver at det er tre store revolusjoner som har formet menneskene: den kognitive revolusjonen (vi lærte å tenke abstrakt), jordbruksrevolusjonen (vi begynte å dyrke mat), og den vitenskapelige revolusjonen. Hver gang var det teknologi som utløste endringen. I dag er vi midt i en ny revolusjon: den digitale. Du kan lese mer om hvordan [urbanisering](/samfunnskunnskap/demografi/urbanisering) og industrialisering endret livet til folk - det er en av de mest dramatiske teknologidrevne omveltningene i historien."
         },
         {
             "type": "header",
@@ -87,7 +88,7 @@
         },
         {
             "type": "text",
-            "content": "Hvert av disse hoppene endret livet til vanlige mennesker helt grunnleggende. Industrialiseringen flyttet millioner fra jordbruk til fabrikkarbeid - og skapte nye sosiale problemer som barnearbeid og slumbyer, men også nye løsninger som fagforeninger og arbeidervern. Digitaliseringen har gitt oss tilgang til all verdens kunnskap gjennom et lite skjermglass, men har også skapt nye problemer: overvåking, falske nyheter, og avhengighet av plattformer styrt av store selskaper. Se hvordan [teknologi og helse](/samfunnskunnskap/demografi/teknologi-helse) har spilt sammen i den demografiske historien for et konkret eksempel."
+            "content": "Hvert av disse hoppene endret livet til vanlige mennesker helt grunnleggende. Internett har sin start i ARPANET, som sendte den første pakkesvitsjede meldingen mellom to amerikanske forskningsmiljøer i 1969 (Featherly, 2026). Apple lanserte iPhone i 2007 (Øverby, 2025), og i november 2022 kom ChatGPT fra OpenAI - det store kommersielle gjennombruddet for generativ kunstig intelligens (Velldal et al., 2026). Industrialiseringen flyttet millioner fra jordbruk til fabrikkarbeid. Folk, aktiviteter og markeder flyttet fra landsbygda til byene (Schrumpf et al., 2024), og det skapte nye sosiale problemer som barnearbeid og slumbyer, men også nye løsninger som fagforeninger og arbeidervern. Digitaliseringen har gitt oss tilgang til all verdens kunnskap gjennom et lite skjermglass, men har også skapt nye problemer: overvåking, falske nyheter, og avhengighet av plattformer styrt av store selskaper. Se hvordan [teknologi og helse](/samfunnskunnskap/demografi/teknologi-helse) har spilt sammen i den demografiske historien for et konkret eksempel."
         },
         {
             "type": "header",
@@ -110,7 +111,7 @@
         },
         {
             "type": "text",
-            "content": "Ny teknologi gjør ikke livet bedre for alle på samme tid. Noen tjener stort og fort, andre mister jobben sin. Dette er en av de viktigste innsiktene vi trenger for å drøfte teknologiens innvirkning. Da dampmaskinene kom, tjente fabrikkeierne enorme summer - mens arbeiderne jobbet 14-timers dager i et farlig miljø. Det tok tiår med kamp fra [fagforeninger](/samfunnskunnskap/arbeidsliv/fagforeninger) for å få 8-timers arbeidsdag og tryggere kår."
+            "content": "Ny teknologi gjør ikke livet bedre for alle på samme tid. Noen tjener stort og fort, andre mister jobben sin. Dette er en av de viktigste innsiktene vi trenger for å drøfte teknologiens innvirkning. Da dampmaskinene kom, tjente fabrikkeierne enorme summer - mens arbeidstiden i de tidlige fasene av industrialiseringen var svært lang overalt, 12-14 timer eller mer (Schrumpf et al., 2024). Det tok tiår med kamp fra [fagforeninger](/samfunnskunnskap/arbeidsliv/fagforeninger) for å få 8-timers arbeidsdag og tryggere kår. Fra 1880-årene og fram mot 1920 var åttetimersdagen et hovedkrav for arbeiderbevegelsen, og i Norge ble den innført i 1919 (Jakhelln, 2024)."
         },
         {
             "type": "text",
@@ -141,7 +142,7 @@
         },
         {
             "type": "text",
-            "content": "Teknologi endrer ikke bare menneskelivet - det endrer også planeten. Industrialiseringen startet en massiv økning i forbrenning av kull og olje. Det sendte karbondioksid opp i atmosfæren og startet den klimaendringen vi kjemper med i dag. Det er ett av de klareste eksemplene på at teknologi har konsekvenser langt utover det vi planla: dampmaskinen ble ikke oppfunnet for å smelte isbreer, men det er et av resultatene. Vi leser mer om dette i [framskrittstro](/samfunnskunnskap/ideer-og-verdenssyn/framskrittstro) - ideen om at teknologi og framgang alltid henger sammen."
+            "content": "Teknologi endrer ikke bare menneskelivet - det endrer også planeten. Industrialiseringen startet en massiv økning i forbrenning av kull og olje. Det sendte karbondioksid opp i atmosfæren og startet den klimaendringen vi kjemper med i dag. Den menneskeskapte økningen av CO2 begynte nettopp under den industrielle revolusjonen, og mesteparten av temperaturøkningen har kommet etter 1950 (Mamen & Benestad, 2026). Det er ett av de klareste eksemplene på at teknologi har konsekvenser langt utover det vi planla: dampmaskinen ble ikke oppfunnet for å smelte isbreer, men det er et av resultatene. Vi leser mer om dette i [framskrittstro](/samfunnskunnskap/ideer-og-verdenssyn/framskrittstro) - ideen om at teknologi og framgang alltid henger sammen."
         },
         {
             "type": "text",
@@ -274,7 +275,7 @@
                     "Hva betyr det at teknologi er en 'endringsdriver'?"
                 ],
                 "reflekter": [
-                    "Da dampmaskinene kom, tjente fabrikkeierne enorme summer mens arbeiderne jobbet 14-timers dager i farlige miljøer. Forklar hvorfor ny teknologi ofte skaper vinnere og tapere på samme tid.",
+                    "Da dampmaskinene kom, tjente fabrikkeierne enorme summer mens arbeidsdagen for arbeiderne var på 12-14 timer eller mer. Forklar hvorfor ny teknologi ofte skaper vinnere og tapere på samme tid.",
                     "Artikkelen kaller det digital monopolmakt at noen få selskaper i USA og Kina kontrollerer infrastrukturen verden er avhengig av. Hvorfor kan dette være et problem for et samfunn?",
                     "Dampmaskinen ble ikke oppfunnet for å smelte isbreer, men klimaendringen ble likevel et resultat. Bruk dette til å forklare hva vi mener med utilsiktede konsekvenser av teknologi.",
                     "Artikkelen foreslår tre spørsmål for å drøfte teknologi: Hvem vinner? Hvem taper? Hvilke alternativer finnes? Bruk denne malen på smarttelefonen og skriv minst én vinner og én taper."
@@ -346,6 +347,23 @@
                         "correctAnswer": 1,
                         "explanation": "I et demokrati er det borgerne som - gjennom valg, forbruk og engasjement - er med på å forme hvordan teknologi blir regulert og brukt. Uten kunnskap om teknologiens innvirkning blir vi passive mottakere i stedet for aktive deltakere."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Featherly, K. (2026). *ARPANET*. Encyclopaedia Britannica. Hentet 07.08.2026 fra [britannica.com](https://www.britannica.com/topic/ARPANET)",
+                    "Greve, T. (2025). *Ludditter*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/ludditter](https://snl.no/ludditter)",
+                    "Harari, Y. N. (2017). *Sapiens: En kort historie om menneskeheten*. Cappelen Damm.",
+                    "Jakhelln, H. (2024). *Åttetimersdag*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/åttetimersdag](https://snl.no/%C3%A5ttetimersdag)",
+                    "Mamen, J. & Benestad, R. (2026). *Klimaendringer*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/klimaendringer](https://snl.no/klimaendringer)",
+                    "Omland, A. & Engevik, A. (2026). *Steinalderen*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/steinalderen](https://snl.no/steinalderen)",
+                    "Schrumpf, E., Bull, E. & Tvedt, K. A. (2024). *Den industrielle revolusjon*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/den_industrielle_revolusjon](https://snl.no/den_industrielle_revolusjon)",
+                    "Velldal, E., Wold, S. & Tidemann, A. (2026). *Generativ kunstig intelligens*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/generativ_kunstig_intelligens](https://snl.no/generativ_kunstig_intelligens)",
+                    "Øverby, H. (2025). *Smarttelefon*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/smarttelefon](https://snl.no/smarttelefon)"
                 ]
             }
         }
