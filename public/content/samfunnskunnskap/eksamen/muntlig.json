@@ -11,7 +11,7 @@
     "details": [
         "Dag 1: du får vite at du er trukket i samfunnsfag.",
         "Dag 2: du får oppgaven og bruker hele dagen på å forberede deg.",
-        "Dag 3: eksamen - presentasjon (maks 10 min) og samtale med sensor.",
+        "Dag 3: eksamen - inntil 30 minutter med presentasjon og samtale med sensor.",
         "Presentasjonen skal vise ditt eget, selvstendige undersøkelsesarbeid.",
         "Du må kunne hele faget, ikke bare temaet du presenterer."
     ],
@@ -29,14 +29,14 @@
         },
         {
             "type": "paragraph",
-            "text": "Muntlig eksamen i samfunnsfag går over tre dager. Det er på forberedelsesdagen du legger grunnlaget for alt som skjer på selve eksamen. Faget dekker historie, geografi og samfunnskunnskap, så temaet du får kan komme fra hvilken som helst av disse delene."
+            "text": "Muntlig eksamen i samfunnsfag går over tre dager. Skolen skal si fra hvilket fag du er trukket i minst 48 timer før eksamen starter, og alle muntlige eksamener har 24 timers forberedelse. Selve eksamen kan vare inntil 30 minutter (Utdanningsdirektoratet, 2026). Det er på forberedelsesdagen du legger grunnlaget for alt som skjer på selve eksamen. Faget dekker historie, geografi og samfunnskunnskap, så temaet du får kan komme fra hvilken som helst av disse delene."
         },
         {
             "type": "component",
             "name": "Comparison",
             "props": {
                 "title": "De to delene av eksamen",
-                "leftTitle": "Presentasjonen (maks 10 min)",
+                "leftTitle": "Presentasjonen (ofte rundt 10 min)",
                 "rightTitle": "Samtalen (resten av tiden)",
                 "items": [
                     {
@@ -78,7 +78,7 @@
                     },
                     {
                         "label": "Dag 3: Eksamen",
-                        "value": "Du holder presentasjonen din (maks 10 minutter) og har deretter en samtale med sensor om temaet og resten av faget."
+                        "value": "Eksamen kan vare inntil 30 minutter. Du holder presentasjonen din - skolen setter rammen, og mange setter av rundt 10 minutter - og har deretter en samtale med sensor om temaet og resten av faget."
                     }
                 ]
             }
@@ -103,12 +103,12 @@
                     "correctAnswer": 1
                 },
                 {
-                    "question": "Hvor lang bør presentasjonen din være?",
+                    "question": "Hvem bestemmer hvor lang presentasjonen din skal være?",
                     "options": [
-                        "Maks 10 minutter",
-                        "Minst 20 minutter",
-                        "Akkurat 30 minutter",
-                        "Så lang du vil"
+                        "Skolen setter rammen, ofte rundt 10 minutter",
+                        "Sensor bestemmer det på selve eksamensdagen",
+                        "Det står i loven at den skal vare 30 minutter",
+                        "Eleven bestemmer helt selv"
                     ],
                     "correctAnswer": 0
                 }
@@ -183,12 +183,12 @@
         },
         {
             "type": "header",
-            "text": "Steg 4: Strukturer presentasjonen (maks 10 min)",
+            "text": "Steg 4: Strukturer presentasjonen (rundt 10 min)",
             "level": 3
         },
         {
             "type": "paragraph",
-            "text": "En god presentasjon har en klar form. Du har maks 10 minutter, så hold deg til poenget. Bygg alt rundt problemstillingen din, og bruk de egne kildene dine som bevis."
+            "text": "En god presentasjon har en klar form. Presentasjon er ikke et krav i seg selv - det er en arbeidsmåte skolen kan velge - og det er skolen som setter tidsrammen, ofte rundt 10 minutter (Utdanningsdirektoratet, 2026). Hold deg derfor til poenget. Bygg alt rundt problemstillingen din, og bruk de egne kildene dine som bevis."
         },
         {
             "type": "list",
@@ -219,7 +219,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Etter presentasjonen kommer samtalen, og det er her mange mister poeng. Sensor er ikke bundet av temaet ditt. De kan spørre om hva som helst fra samfunnsfag, fordi de vil teste om du forstår faget i bredden. Presentasjonen er ett vindu inn i faget, men samtalen kan gå overalt."
+            "text": "Etter presentasjonen kommer samtalen, og det er her mange mister poeng. Sensor er ikke bundet av temaet ditt. De kan spørre om hva som helst fra samfunnsfag, fordi de vil teste om du forstår faget i bredden. Presentasjonen er ett vindu inn i faget, men samtalen kan gå overalt. Sensorene skal stille spørsmål som gir deg anledning til å vise bredest mulig kompetanse i faget; en eksamen som bare prøver noen få kompetansemål, ville stride mot dette prinsippet (Utdanningsdirektoratet, 2026)."
         },
         {
             "type": "component",
@@ -401,7 +401,7 @@
         },
         {
             "type": "paragraph",
-            "text": "I samtalen vil sensor ofte spørre om sentrale begreper fra faget. Du trenger ikke kunne alt, men disse bør du kunne forklare og bruke i en setning:"
+            "text": "I samtalen vil sensor ofte spørre om sentrale begreper fra faget. Du trenger ikke kunne alt, men disse bør du kunne forklare og bruke i en setning. Definisjonen av bærekraftig utvikling kommer fra Brundtland-kommisjonens rapport «Vår felles framtid» fra 1987 (Olerud mfl., 2026):"
         },
         {
             "type": "list",
@@ -430,7 +430,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Muntlig eksamen tester bestemte kompetansemål fra LK20. Når du forstår hva hvert mål betyr i praksis, vet du også hva sensor leter etter."
+            "text": "Muntlig eksamen tester kompetansemålene i læreplanen for samfunnsfag (Utdanningsdirektoratet, u.å.). Når du forstår hva hvert mål betyr i praksis, vet du også hva sensor leter etter."
         },
         {
             "type": "component",
@@ -465,12 +465,12 @@
         },
         {
             "type": "paragraph",
-            "text": "Kjennetegn på måloppnåelse fra Udir: Ved lav kompetanse (karakter 2) gjengir eleven litt fagstoff og begrunner egne meninger til en viss grad. Ved god kompetanse (karakter 4) drøfter eleven temaet klart og bruker kilder for å underbygge egne synspunkter. Ved høy kompetanse (karakter 6) utforsker eleven temaet selvstendig, vurderer kilder kritisk og argumenterer saklig og tydelig."
+            "text": "Udir har laget kjennetegn på måloppnåelse i samfunnsfag på 10. trinn. De er veiledende for standpunktkarakteren og gjelder ikke eksamen, men de beskriver den samme kompetansen sensor ser etter. Ved lav kompetanse (karakter 2) finner og gjengir eleven informasjon fra kilder og forklarer ut fra et begrenset utvalg årsaks- og virkningsforhold. Ved god kompetanse (karakter 4) stiller eleven også spørsmål ved informasjonen i kildene og forklarer ut fra flere årsaks- og virkningsforhold. Ved høy kompetanse (karakter 6) velger, bruker og vurderer eleven informasjon fra kilder, forklarer ut fra sammensatte årsaks- og virkningsforhold og bruker ulike perspektiver til å belyse hendelser og fenomener nyansert (Utdanningsdirektoratet, 2020)."
         },
         {
             "type": "link",
             "text": "Kompetansemål samfunnsfag LK20 (Udir)",
-            "url": "https://www.udir.no/lk20/saf01-04",
+            "url": "https://www.udir.no/lk20/saf01-05",
             "icon": "external"
         },
         {
@@ -727,6 +727,18 @@
                     "Diskuter i par: Hva er den viktigste feilen å unngå på muntlig eksamen, og hvordan ville dere forberedt dere for å slippe å gjøre den?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Olerud, K., Tjernshaugen, A. & Andersen, G. (2026). *Bærekraftig utvikling*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no](https://snl.no/b%C3%A6rekraftig_utvikling)",
+                    "Utdanningsdirektoratet. (2020). *Kjennetegn på måloppnåelse - samfunnsfag 10. trinn*. Hentet 07.08.2026 fra [udir.no](https://www.udir.no/laring-og-trivsel/lareplanverket/kjennetegn/kjennetegn-pa-maloppnaelse-samfunnsfag-10-trinn/)",
+                    "Utdanningsdirektoratet. (2026). *Regler for muntlig eksamen i grunnskolen*. Hentet 07.08.2026 fra [udir.no](https://www.udir.no/eksamen-og-prover/eksamen/muntlig-eksamen/)",
+                    "Utdanningsdirektoratet. (u.å.). *Læreplan i samfunnsfag (SAF01-05)*. Hentet 07.08.2026 fra [udir.no/lk20/saf01-05](https://www.udir.no/lk20/saf01-05)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -794,5 +806,5 @@
         "vurdering"
     ],
     "createdDate": "2026-06-01T00:00:00Z",
-    "lastUpdated": "2026-06-01T00:00:00Z"
+    "lastUpdated": "2026-08-07T00:00:00Z"
 }
