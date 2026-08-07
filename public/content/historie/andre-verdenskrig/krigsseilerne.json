@@ -1,0 +1,294 @@
+{
+    "id": "krigsseilerne",
+    "title": "Krigsseilerne",
+    "layout": "rich",
+    "year": "1940-1945",
+    "category": "Norge",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-08-07",
+    "details": [
+        "Norge hadde over 1000 skip i utenlandsk farvann da krigen kom, og de ble Norges viktigste bidrag til de allierte",
+        "Rundt 27 000 sjøfolk seilte i handelsflåten, og omtrent 3700 av dem kom aldri hjem",
+        "Det tok 27 år etter freden før Stortinget bevilget penger til krigsseilerne"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Det er en vinternatt i Nord-Atlanteren. Et norsk lasteskip ligger midt i en konvoi på vei mot Storbritannia. I lasterommet er det drivstoff, mat og ammunisjon. Om bord sover mannskapet med klærne på og redningsvesten innen rekkevidde. De vet at et skip lastet med bensin ikke synker stille. Likevel seiler de, tur etter tur, år etter år."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Norsk lasteskip i konvoi på grå vinterhav i Nord-Atlanteren",
+            "caption": "Konvoiene krysset Atlanterhavet i all slags vær. Skipene seilte tett sammen, i den farten det tregeste skipet klarte."
+        },
+        {
+            "type": "text",
+            "content": "Disse sjøfolkene kalles krigsseilere. Ordet betyr rett og slett en som var med i mannskapet om bord i norske handelsskip under første og andre verdenskrig (Wisting, 2026). De var ikke soldater. De hadde ingen uniform å gjemme seg bak, og skipene deres kunne ikke skyte tilbake. Likevel regnes innsatsen deres som Norges viktigste bidrag til at de allierte vant krigen."
+        },
+        {
+            "type": "header",
+            "text": "Norges viktigste våpen var ikke soldater"
+        },
+        {
+            "type": "text",
+            "content": "Da tyske styrker angrep Norge 9. april 1940, tapte den norske hæren kampen om landet i løpet av to måneder. Du kan lese mer om selve angrepet og okkupasjonen i artikkelen [Norge under okkupasjonen](/historie/andre-verdenskrig/norge-under-okkupasjonen). Men Norge hadde noe annet enn en hær: en av verdens største handelsflåter, og størstedelen av den lå utenfor Norge da angrepet kom."
+        },
+        {
+            "type": "text",
+            "content": "Den 9. april 1940 lå 806 norske skip utenfor Nordsjøen (Rabbevåg, 2024). Til sammen målte de fire millioner bruttotonn. Bruttotonn er et mål på hvor stort et skip er innvendig. Den norske regjeringen, som flyktet til London, tok kontroll over skipene og opprettet et eget rederi for dem. Det fikk navnet Nortraship. Kapteinene fikk beskjed om å seile til allierte havner i stedet for hjem. De fleste gjorde det."
+        },
+        {
+            "type": "header",
+            "text": "Verdens største rederi"
+        },
+        {
+            "type": "text",
+            "content": "Nortraship vokste til å bli verdens største rederi, med over tusen skip og opptil 1200 ansatte. Hovedkontorene lå i London og New York (Rabbevåg, 2024). Det spesielle med den norske flåten var ikke bare størrelsen, men hva slags skip den besto av. Nesten halvparten av flåten, 1,9 millioner tonn, var moderne tankskip."
+        },
+        {
+            "type": "text",
+            "content": "Tankskip frakter olje og bensin. Uten drivstoff kunne ikke britiske fly lette, og ikke krigsskip gå ut. Da Storbritannia sto alene mot Tyskland i 1940 og 1941, var norske tankskip en helt sentral del av forsyningslinjen over Atlanterhavet. Det er derfor historikere sier at handelsflåten betydde mer for krigen enn alt annet Norge kunne stille opp med."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Nortraship i tall",
+                "content": "806 skip utenfor Nordsjøen 9. april 1940. Over 1000 skip totalt. Fire millioner bruttotonn, hvorav 1,9 millioner tonn tankskip. Opptil 1200 ansatte i land. Rederiet ble avviklet fra 1. oktober 1945, og sluttoppgjøret kom først i 1964."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvem var krigsseilerne?"
+        },
+        {
+            "type": "text",
+            "content": "Om bord i den norske handelsflåten seilte omtrent 27 000 sjøfolk. Rundt 24 000 av dem var nordmenn, og omtrent 200 var kvinner (Hjeltnes, 2016a). Resten kom fra hele verden, for et skip tar den mannskapet det får tak i når det ligger i en fremmed havn."
+        },
+        {
+            "type": "text",
+            "content": "Mange av dem var svært unge. De hadde tatt jobb på et handelsskip i fredstid og trodde de skulle være borte noen måneder. Så kom 9. april, og de kunne ikke reise hjem. Brev fram og tilbake til okkupert Norge var nesten umulig. Noen fikk ikke vite om familien levde før krigen var over, fem år senere."
+        },
+        {
+            "type": "header",
+            "text": "Livet i konvoien"
+        },
+        {
+            "type": "text",
+            "content": "Handelsskipene seilte ikke alene. De samlet seg i konvoier på opptil 60 skip, og fulgte etter krigsskip fra marinen som skulle beskytte dem (Wisting, 2024). De viktigste rutene gikk fra New York og Halifax til Liverpool, fra Sierra Leone nordover, og den svært farlige ruten fra Liverpool til Murmansk i Sovjetunionen."
+        },
+        {
+            "type": "text",
+            "content": "Fra tidlig i 1942 endret tyskerne taktikk. I stedet for at hver ubåt jaktet for seg selv, gikk de sammen i flokk og angrep samme konvoi (Wisting, 2024). Da ble det avgjørende hvor tett skipene holdt sammen. Et skip som lå utenfor flokken, var alene med ubåten."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "konvoien-3d"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Vendepunktet kom i 1943. De allierte fikk radar som kunne se periskoper, utstyr som fant ut hvor ubåtenes radiosignaler kom fra, og fly som nådde lenger ut over havet. I mai 1943 alene ble 41 tyske ubåter senket (Wisting, 2024). Etter det var Atlanterhavet fortsatt farlig, men ikke lenger tapt. Mer om teknologien som avgjorde kampene finner du i artikkelen [Teknologi i andre verdenskrig](/historie/andre-verdenskrig/teknologi)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Brennende tankskip synker mens sjøfolk ror bort i en livbåt",
+            "caption": "Et tankskip som ble truffet, brant. Mange sjøfolk overlevde selve torpedoen, men ikke oljen som brant på vannet rundt."
+        },
+        {
+            "type": "header",
+            "text": "Prisen"
+        },
+        {
+            "type": "text",
+            "content": "Regnestykket er brutalt. Uteflåten er navnet på skipene som seilte ute i verden for Nortraship. Der gikk 473 skip tapt, og omtrent 3700 krigsseilere omkom. I hjemmeflåten, altså skipene som ble igjen i norsk farvann, gikk 199 skip tapt og 1133 mennesker døde, av dem 441 passasjerer (Wisting, 2026). Til sammen mistet rundt 4600 nordmenn livet på havet under krigen, og 83 prosent av dem tjenestegjorde i utenriksfart (Hjeltnes, 2016a)."
+        },
+        {
+            "type": "text",
+            "content": "Det betyr at omtrent én av åtte i uteflåten ikke kom hjem. Til sammenlikning: hele den norske hjemmefronten, med sabotasje og illegalt arbeid, kostet langt færre liv. Likevel er det hjemmefronten de fleste husker fra skoletimene. Det har krigsseilerne merket."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Konstant fare for voldsom død, hjelpeløshet og forsvarsløshet overfor overmakt og fiendtlige fly- og ubåtangrep.",
+                "author": "Store norske leksikon om arbeidsforholdene til krigsseilerne"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hjemkomsten som ikke ble en fest"
+        },
+        {
+            "type": "text",
+            "content": "Da freden kom i 1945, sto Norge klar til å feire. Men mange krigsseilere hadde ikke noe hjem å komme til. Foreldre var døde, familier spredt. En del ble gående i byene uten bolig og arbeid, og bodde i enkle brakker (Hjeltnes, 2016c)."
+        },
+        {
+            "type": "text",
+            "content": "Helsekontoret som undersøkte sjøfolkene i New York, meldte at de var i langt dårligere helse enn noen hadde regnet med. Det største problemet var ikke brukne bein, men nervene. Vondt i kroppen uten at legene fant noe, nervøse rykninger, mareritt og alkoholproblemer var vanlig (Hjeltnes, 2016c). I dag ville vi kalt det posttraumatisk stress. Den gangen fantes ikke ordet, og mange møtte uforstand på legekontoret."
+        },
+        {
+            "type": "component",
+            "name": "KrigsseilernesRegnskap",
+            "props": {
+                "title": "Krigsseilernes regnskap"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Kampen om det hemmelige fondet"
+        },
+        {
+            "type": "text",
+            "content": "Bak tallene ligger en strid som varte i nesten 30 år. Under krigen fikk norske sjøfolk lønn etter britiske satser, som var lavere enn de norske. Forskjellen ble betalt inn på en konto hos Nortraship, som skulle brukes til beste for sjøfolk etter krigen. Kontoen ble etter hvert kalt Nortraships hemmelige fond. Fra 1940 til 1945 ble det betalt inn omtrent 140 millioner kroner, og rundt 43 millioner sto igjen da krigen var slutt (Hjeltnes, 2016b)."
+        },
+        {
+            "type": "text",
+            "content": "Sjøfolkene mente pengene var deres. Staten mente noe annet. Saken gikk helt til Høyesterett, og i 1954 tapte sjøfolkene (Hjeltnes, 2016b). Da hadde det gått ni år siden freden."
+        },
+        {
+            "type": "text",
+            "content": "Første gjennombrudd kom med tilleggsloven av 1968. Nå holdt det å ha seilt mer enn seks måneder for å få krigspensjon, uten at man måtte bevise at plagene kom akkurat av krigen. I 1966 fikk bare 377 krigsseilere pensjon. Få år senere var tallet mange tusen (Hjeltnes, 2016c)."
+        },
+        {
+            "type": "text",
+            "content": "I 1972 bevilget Stortinget 155 millioner kroner fordelt over tre statsbudsjetter. Pengene ble utbetalt ex gratia, et latinsk uttrykk som betyr av nåde og takknemlighet, altså ikke fordi retten krevde det. Hver krigsseiler fikk 180 kroner for hver måned til sjøs. Full fartstid ga 10 800 kroner (Hjeltnes, 2016b)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Eldre krigsseilere med ordensbånd står samlet foran et minnesmerke",
+            "caption": "Mange krigsseilere fikk anerkjennelsen først som gamle menn. Noen rakk det ikke."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor tok det så lang tid?"
+        },
+        {
+            "type": "text",
+            "content": "Norske myndigheters behandling av krigsseilerne har vært sterkt kritisert, og det tok mer enn 25 år før innsatsen deres ble akseptert (Wisting, 2026). Det er flere grunner til at det gikk slik."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Sjøfolkene var borte. Historien om krigen ble fortalt hjemme i Norge, av dem som hadde vært hjemme.",
+                "De hadde ikke uniform. Motstandsfolk og soldater passet inn i heltefortellingen, mens en sjømann på et lasteskip ikke gjorde det.",
+                "Skadene var usynlige. Nervene til en mann som hadde ligget i vannet mens skipet brant, kunne ingen ta bilde av.",
+                "Pengene lå hos staten, og staten hadde ingen hast med å gi dem fra seg."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "I 2013 kom en offisiell unnskyldning fra norske myndigheter for måten krigsseilerne ble behandlet på etter krigen. Da var de fleste av dem døde. Om hvordan Norge og Europa ble bygget opp igjen etter 1945, kan du lese mer i artikkelen [Konsekvenser av andre verdenskrig](/historie/andre-verdenskrig/konsekvenser)."
+        },
+        {
+            "type": "header",
+            "text": "Hva sitter du igjen med?"
+        },
+        {
+            "type": "text",
+            "content": "Krigen ble ikke bare avgjort av soldater og slag. Den ble også avgjort av at noen fraktet drivstoff, mat og våpen over et hav der ubåtene ventet. Norge hadde skipene, og rundt 27 000 sjøfolk seilte dem. Omtrent 3700 av dem kom aldri hjem, og de som kom hjem, måtte vente i nesten 30 år på at landet skulle si takk. Neste gang du hører at Norge sto på riktig side i andre verdenskrig, er det verdt å huske hvem som betalte for det."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor mange norske skip lå utenfor Nordsjøen 9. april 1940, og hva het rederiet som fikk ansvaret for dem?",
+                    "Hvor mange sjøfolk seilte i den norske handelsflåten, og hvor mange av dem omkom i uteflåten?",
+                    "Hva var Nortraships hemmelige fond, og hvor kom pengene fra?",
+                    "Hva vedtok Stortinget i 1972, og hvor mye fikk en krigsseiler per måned til sjøs?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor tankskipene var så viktige for de allierte i 1940 og 1941.",
+                    "Fra 1942 jaktet tyske ubåter i flokk. Forklar hvorfor konvoi med eskorte var svaret på det, og hva det kostet skipene i fart.",
+                    "Hjemmefronten mistet langt færre folk enn handelsflåten, men er likevel mer kjent. Foreslå minst to grunner til at det ble slik.",
+                    "Vurder om det var rimelig at sjøfolkene tapte saken om fondet i Høyesterett i 1954. Hva taler for og imot?"
+                ],
+                "gaaVidere": [
+                    "Skriv et brev fra en 18 år gammel krigsseiler til familien hjemme i Norge i 1943. Bruk fakta fra artikkelen, og husk at brevet neppe kom fram.",
+                    "Diskuter i klassen: Hva skal til for at et land sier ordentlig unnskyld til en gruppe? Er penger nok, eller trengs det noe mer?",
+                    "Finn ut om det finnes et minnesmerke over krigsseilere der du bor, eller i nærmeste by. Hva står det på det?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva var Nortraship?",
+                        "options": [
+                            "Et norsk marinefartøy som eskorterte konvoier",
+                            "Rederiet den norske eksilregjeringen opprettet i London i 1940 for å styre handelsflåten",
+                            "En tysk ubåtflokk i Nord-Atlanteren",
+                            "Navnet på fondet krigsseilerne fikk utbetalt i 1972"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Nortraship ble opprettet i London i 1940 og vokste til verdens største rederi, med over tusen norske skip."
+                    },
+                    {
+                        "question": "Omtrent hvor mange krigsseilere i uteflåten omkom under andre verdenskrig?",
+                        "options": ["Rundt 400", "Rundt 1100", "Rundt 3700", "Rundt 12 000"],
+                        "correctAnswer": 2,
+                        "explanation": "Omtrent 3700 krigsseilere i uteflåten omkom, og 473 skip gikk tapt."
+                    },
+                    {
+                        "question": "Hvorfor seilte handelsskipene i konvoi?",
+                        "options": [
+                            "Fordi de sparte drivstoff på å ligge tett",
+                            "Fordi eskortefartøyer kunne forsvare mange skip samtidig når de holdt sammen",
+                            "Fordi det var påbudt av Storbritannia av økonomiske grunner",
+                            "Fordi skipene ikke hadde eget navigasjonsutstyr"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Samlet i konvoi kunne noen få eskortefartøyer beskytte opptil 60 skip. Et skip som lå alene, var mye lettere bytte."
+                    },
+                    {
+                        "question": "Hva skjedde i 1972?",
+                        "options": [
+                            "Nortraship ble avviklet",
+                            "Høyesterett ga sjøfolkene medhold i saken om fondet",
+                            "Stortinget bevilget 155 millioner kroner til krigsseilerne, utbetalt ex gratia",
+                            "Norske myndigheter ga en offisiell unnskyldning"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Stortinget bevilget 155 millioner kroner i 1972. Hver krigsseiler fikk 180 kroner per måned til sjøs, maksimalt 10 800 kroner."
+                    },
+                    {
+                        "question": "Hva gjorde 1943 til et vendepunkt i Atlanterhavet?",
+                        "options": [
+                            "Tyskland ga opp ubåtkrigen helt",
+                            "De allierte fikk radar, bedre peileutstyr og fly med lengre rekkevidde",
+                            "Norge sendte krigsskip for å eskortere konvoiene",
+                            "Konvoiene begynte å seile om natten"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Ny teknologi og fly som nådde lenger ut over havet gjorde ubåtene mye mer utsatte. I mai 1943 ble 41 tyske ubåter senket."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hjeltnes, G. (2016a). *Sjøfolkene i handelsflåten*. Norgeshistorie, Universitetet i Oslo. Hentet 07.08.2026 fra https://www.norgeshistorie.no/andre-verdenskrig/1718-sjofolkene-i-handelsflaten.html",
+                    "Hjeltnes, G. (2016b). *Nortraships hemmelige fond*. Norgeshistorie, Universitetet i Oslo. Hentet 07.08.2026 fra https://www.norgeshistorie.no/andre-verdenskrig/1763-nortraships-hemmelige-fond.html",
+                    "Hjeltnes, G. (2016c). *Krigsseilerne etter krigen*. Norgeshistorie, Universitetet i Oslo. Hentet 07.08.2026 fra https://www.norgeshistorie.no/andre-verdenskrig/1764-krigsseilerne-etter-krigen.html",
+                    "Rabbevåg, F. (2024). *Nortraship*. Store norske leksikon. Hentet 07.08.2026 fra https://snl.no/Nortraship",
+                    "Wisting, T. (2024). *Slaget om Atlanterhavet*. Store norske leksikon. Hentet 07.08.2026 fra https://snl.no/Slaget_om_Atlanterhavet",
+                    "Wisting, T. (2026). *Krigsseiler*. Store norske leksikon. Hentet 07.08.2026 fra https://snl.no/krigsseiler"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

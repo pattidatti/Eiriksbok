@@ -3715,6 +3715,21 @@
               ],
               "createdDate": "2026-05-17T00:00:00Z",
               "lastUpdated": "2026-07-25T06:01:51+02:00"
+            },
+            {
+              "id": "krigsseilerne",
+              "title": "Krigsseilerne",
+              "description": "Norges viktigste bidrag i krigen var handelsflåten - og sjøfolkene som seilte den betalte en høy pris, både til sjøs og etterpå.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "andre-verdenskrig",
+                "norge",
+                "handelsflaten",
+                "nortraship",
+                "sjofart"
+              ],
+              "createdDate": "2026-08-07T00:00:00Z"
             }
           ]
         },

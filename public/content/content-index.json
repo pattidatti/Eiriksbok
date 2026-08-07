@@ -1,5 +1,5 @@
 {
-  "buildId": 203617673161546,
+  "buildId": 164683938261037,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1212,6 +1212,9 @@
     ],
     "andre-verdenskrig-krigens-lop": [
       "content/historie/andre-verdenskrig/krigens-lop.json"
+    ],
+    "krigsseilerne": [
+      "content/historie/andre-verdenskrig/krigsseilerne.json"
     ],
     "norge-under-okkupasjonen": [
       "content/historie/andre-verdenskrig/norge-under-okkupasjonen.json"
@@ -4158,6 +4161,7 @@
     "historie/andre-verdenskrig/konsekvenser": "content/historie/andre-verdenskrig/konsekvenser.json",
     "historie/andre-verdenskrig/konsentrasjonsleirene": "content/historie/andre-verdenskrig/konsentrasjonsleirene.json",
     "historie/andre-verdenskrig/krigens-lop": "content/historie/andre-verdenskrig/krigens-lop.json",
+    "historie/andre-verdenskrig/krigsseilerne": "content/historie/andre-verdenskrig/krigsseilerne.json",
     "historie/andre-verdenskrig/norge-under-okkupasjonen": "content/historie/andre-verdenskrig/norge-under-okkupasjonen.json",
     "historie/andre-verdenskrig/oversikt": "content/historie/andre-verdenskrig/oversikt.json",
     "historie/andre-verdenskrig/teknologi": "content/historie/andre-verdenskrig/teknologi.json",

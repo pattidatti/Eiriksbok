@@ -8024,6 +8024,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "krigsseilerne",
+      "title": "Krigsseilerne",
+      "description": "Norges viktigste bidrag i krigen var handelsflåten - og sjøfolkene som seilte den betalte en høy pris, både til sjøs og etterpå.",
+      "startDate": 1940,
+      "endDate": 1945,
+      "displayDate": "1940-1945",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "andre-verdenskrig",
+      "link": "/historie/andre-verdenskrig/krigsseilerne",
+      "tags": [
+        "historie",
+        "andre-verdenskrig",
+        "norge",
+        "handelsflaten",
+        "nortraship",
+        "sjofart"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "sorost-asia",
       "title": "Sørøst-Asia: Vakuumet etter Japan",
       "description": "Hvordan myten om hvit overlegenhet ble knust.",
