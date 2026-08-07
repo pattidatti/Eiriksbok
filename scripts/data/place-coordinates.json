@@ -879,7 +879,7 @@
     },
     {
       "tag": "1800-tallet",
-      "count": 26
+      "count": 28
     },
     {
       "tag": "verdensorden",
@@ -966,6 +966,10 @@
       "count": 18
     },
     {
+      "tag": "kolonialisering",
+      "count": 17
+    },
+    {
       "tag": "sivilisasjon",
       "count": 16
     },
@@ -980,10 +984,6 @@
     {
       "tag": "doctrinal",
       "count": 16
-    },
-    {
-      "tag": "kolonialisering",
-      "count": 15
     },
     {
       "tag": "folkemord",
@@ -1622,6 +1622,10 @@
       "count": 4
     },
     {
+      "tag": "utvandring",
+      "count": 4
+    },
+    {
       "tag": "symboler",
       "count": 4
     },
@@ -1783,6 +1787,10 @@
     },
     {
       "tag": "kommunikasjon",
+      "count": 3
+    },
+    {
+      "tag": "sult",
       "count": 3
     },
     {
@@ -2519,10 +2527,6 @@
     },
     {
       "tag": "marx",
-      "count": 2
-    },
-    {
-      "tag": "utvandring",
       "count": 2
     },
     {
@@ -3467,10 +3471,6 @@
     },
     {
       "tag": "hamsun",
-      "count": 1
-    },
-    {
-      "tag": "sult",
       "count": 1
     },
     {

@@ -353,6 +353,7 @@ const AttedeltVeiDilemma = lazy(() => import('./content/interactive/AttedeltVeiD
 const MokshaVeiene = lazy(() => import('./content/interactive/MokshaVeiene').then(m => ({ default: m.MokshaVeiene })));
 const DemokratietFaller = lazy(() => import('./content/interactive/DemokratietFaller').then(m => ({ default: m.DemokratietFaller })));
 const VeienTilFrihet = lazy(() => import('./content/interactive/VeienTilFrihet').then(m => ({ default: m.VeienTilFrihet })));
+const MonokulturAkeren = lazy(() => import('./content/interactive/MonokulturAkeren').then(m => ({ default: m.MonokulturAkeren })));
 
 // Mikrospill: lett, embeddbart spill inline i artikkel. gameId-prop velger spillet
 // fra mikrospill-registeret (src/components/microgames/registry.ts).
@@ -740,6 +741,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     AttedeltVeiDilemma,
     MokshaVeiene,
     DemokratietFaller,
+    MonokulturAkeren,
 };
 
 export const getComponent = (name: string) => {

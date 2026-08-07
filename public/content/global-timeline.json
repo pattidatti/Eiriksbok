@@ -6030,6 +6030,31 @@
       ]
     },
     {
+      "id": "irske-hungersnoden",
+      "title": "Den irske hungersnøden: da poteten sviktet",
+      "description": "Da tørråten ødela potetavlingene fra 1845, døde rundt én million irer. Hvorfor ble en plantesykdom til en katastrofe?",
+      "startDate": 1845,
+      "endDate": 1852,
+      "displayDate": "1845-1852",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "kolonialisering",
+      "link": "/historie/kolonialisering/irske-hungersnoden",
+      "tags": [
+        "irland",
+        "storbritannia",
+        "kolonialisering",
+        "sult",
+        "utvandring",
+        "1800-tallet"
+      ],
+      "lat": 53.4,
+      "lng": -8,
+      "placeLabel": "Irland",
+      "placeCountryId": 372,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "piken-med-svovelstikkene",
       "title": "Piken med svovelstikkene",
       "description": "Utgitt av H.C. Andersen",

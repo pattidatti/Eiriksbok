@@ -1,0 +1,268 @@
+{
+    "id": "irske-hungersnoden",
+    "title": "Den irske hungersnøden: da poteten sviktet",
+    "layout": "rich",
+    "year": "1845-1852",
+    "category": "Kolonialisering",
+    "readTime": "11 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-08-07",
+    "details": [
+        "På Irland levde millioner av fattige leilendinger nesten bare av poteter. Ingen annen plante kunne mette en stor familie på en så liten jordlapp.",
+        "Høsten 1845 kom en soppsykdom som gjorde potetene til svart grøt. Rundt én million mennesker sultet i hjel, og enda flere reiste fra landet.",
+        "Sykdommen var naturens verk. At den ble til en katastrofe uten sidestykke i Europa, handlet om hvem som eide jorda og hva myndighetene valgte å gjøre."
+    ],
+    "externalUrl": "https://snl.no/Irlands_historie",
+    "content": [
+        {
+            "type": "text",
+            "content": "En kveld i september 1845 gikk en irsk familie og la seg med en åker full av friske, grønne potetplanter utenfor døra. Neste morgen var bladene svarte og krøllet sammen. Det luktet råttent over hele bygda. Da de gravde, fant de ikke poteter, men en gråsvart, illeluktende grøt. Maten de skulle leve av hele vinteren, var borte i løpet av noen døgn."
+        },
+        {
+            "type": "text",
+            "content": "Det som begynte den høsten, ble stående som den verste sultkatastrofen i Europa på 1800-tallet. Etter noen år var rundt én million mennesker døde av sult og sykdom, og Irland hadde mistet omtrent halvparten av befolkningen sin (Scott, 2026). Men historien handler ikke bare om en plantesykdom. Den handler like mye om hvorfor så mange mennesker var helt avhengige av akkurat den ene planten."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Irsk potetåker med svarte, visne planter i regnvær",
+            "caption": "Slik så åkrene ut høsten 1845. Bladene ble svarte i løpet av få dager, og potetene under jorda råtnet."
+        },
+        {
+            "type": "header",
+            "text": "Et folk som levde av én plante"
+        },
+        {
+            "type": "text",
+            "content": "For å skjønne hvorfor det gikk så galt, må vi se på hvem som eide jorda. Irland var styrt fra London og var på mange måter Storbritannias eldste koloni. Gjennom flere hundre år hadde britiske myndigheter tatt jord fra katolske irer og gitt den til engelske og protestantiske godseiere. Rundt år 1603 eide katolikker omtrent 90 prosent av jorda på øya. På 1770-tallet var andelen nede i fem prosent (Julsrud & Mustad, 2024). De aller fleste irer var dermed leilendinger: de leide en liten jordlapp av en godseier og betalte leie for den."
+        },
+        {
+            "type": "text",
+            "content": "En leilending kunne ikke velge fritt hva han ville dyrke. Jordlappen var som regel bitteliten, og leia måtte betales. Da ble poteten redningen. Ingen annen vekst ga så mye mat på så lite jord. Nesten halvparten av alle irer levde til slutt nesten bare av poteter, og i de fattigste familiene spiste hver person nesten fire kilo poteter om dagen (Mokyr, u.å.). Kornet de dyrket, gikk stort sett til å betale husleia til godseieren."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig vokste folketallet raskt. I 1801 bodde det rundt 5,4 millioner mennesker på Irland. I 1845 var tallet 8,3 millioner, uten at det hadde kommet nye næringer eller industri som kunne gi arbeid til alle (Julsrud & Mustad, 2024). Mens England og Skottland gikk gjennom den [industrielle revolusjonen](/historie/industriell-revolusjon/industriell-revolusjon) med fabrikker og jernbane, ble Irland liggende igjen som et jordbrukssamfunn med altfor mange munner å mette på altfor lite jord."
+        },
+        {
+            "type": "text",
+            "content": "Når nesten alle dyrker den samme planten, og nesten bare den, kalles det monokultur. Monokultur betyr at ett enkelt slag vekst dekker store områder alene. Det gir mye mat i gode år. Men det betyr også at hele matforsyningen står og faller med hvordan det går med akkurat den planten. Prøv sammenhengen selv i modellen under."
+        },
+        {
+            "type": "component",
+            "name": "MonokulturAkeren",
+            "props": {
+                "title": "Åkeren: mette munner eller trygg mat?"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Sykdommen som kom med vinden"
+        },
+        {
+            "type": "text",
+            "content": "Sykdommen som rammet Irland heter tørråte. Den skyldes en soppliknende organisme med navnet Phytophthora infestans. Den lager små sporer som løsner lett og blåser flere kilometer med vinden, eller følger regnvannet ned i jorda og videre til nye planter. Tørråten trives best når bladene er våte i minst tre til fem timer og temperaturen ligger rundt 18 til 20 grader. Under slike forhold kan hele åkrer være ødelagt i løpet av sju til åtte dager (Sletten, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Irland har nettopp et fuktig og regnfullt klima. I tillegg dyrket de fattigste stort sett én eneste potetsort, kalt lumper. Den ga mye mat, men tålte tørråte dårlig. Og her ligger noe viktig: poteter formerer seg ikke med frø, men ved at man setter en bit av en potet i jorda. Alle lumper-plantene på Irland var derfor kloner, altså arvemessig helt like hverandre (Understanding Evolution, u.å.). Når én plante ikke tålte soppen, tålte ingen av dem den. Sporer med vind, konstant våte blader og millioner av identiske planter: det var en oppskrift som ikke kunne gå bra. På 1840-tallet fantes det heller ingen sprøytemidler mot sykdommen. Bøndene kunne se den komme, men de kunne ikke gjøre noe."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hvorfor ble det så mye verre på Irland?",
+                "content": "Tørråten rammet potetavlinger over hele Europa på 1840-tallet, også i Norge. Forskjellen var hvor mye folk hadde å falle tilbake på. I de fleste land var poteten én matvare blant flere. På Irland var poteten nesten hele kostholdet for de fattigste, og de eide ikke jorda de dyrket. Da avlingen sviktet, hadde de verken annen mat, penger eller eiendom å selge."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Da hjelpen kom for sent"
+        },
+        {
+            "type": "text",
+            "content": "Den britiske regjeringen visste hva som skjedde. Statsminister Robert Peel kjøpte inn mais fra USA for 100 000 pund tidlig i 1846 for å holde matprisene nede (Gray, 2020). Han fikk også opphevet kornlovene, som hadde holdt prisen på importert korn kunstig høy. Men i juni 1846 kom en ny regjering under John Russell til makta, og den mente at staten skulle blande seg minst mulig inn i handelen. Ansvaret for å hjelpe de sultende ble i stor grad skjøvet over på irske godseiere og lokale myndigheter."
+        },
+        {
+            "type": "text",
+            "content": "I stedet for å dele ut mat, satte myndighetene i gang nødsarbeid: folk kunne bygge veier og få lønn de skulle kjøpe mat for. I mars 1847 var mellom to og tre millioner mennesker avhengige av denne magre lønna, og ordningen brøt sammen i kaos, streiker og sykdom (Gray, 2020). Så kom suppekjøkkenene, og de virket. I juli 1847 fikk over tre millioner mennesker mat der. Likevel bestemte regjeringen at ordningen skulle avvikles allerede i august samme år."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Kø av utsultede mennesker utenfor et suppekjøkken",
+            "caption": "Sommeren 1847 fikk over tre millioner mennesker mat på suppekjøkken. Noen uker senere ble ordningen avviklet."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig ble fattigloven endret. Nå fikk ingen nødhjelp hvis de leide mer enn et kvart acre jord, altså omtrent ett mål. Regelen tvang familier til å velge mellom å beholde jorda og sulte, eller gi fra seg jorda for å få mat. Historikeren Peter Gray peker på at regelen gjorde det lettere for godseierne å kaste folk ut, og at hundretusener døde av feber, sykdom og sult i fattighusene i årene 1847 til 1850 (Gray, 2020). I mikrospillet under kan du kjenne på det valget selv."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "vinteren-1847-3d"
+            }
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "quote": "Fordommer og ideologi gjorde til sammen at Irland ikke fikk det som skulle til for å holde folket i live.",
+                "author": "Peter Gray, historiker ved Queen's University Belfast (2020), oversatt fra engelsk"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Var det maten som forsvant?"
+        },
+        {
+            "type": "text",
+            "content": "Ett spørsmål har blitt diskutert like siden: hvorfor fortsatte skipene å frakte mat ut av Irland mens folk sultet? Det er riktig at korn, kjøtt og andre varer av god kvalitet ble eksportert til Storbritannia gjennom hele hungersnøden (Mokyr, u.å.). Å eksportere betyr å selge og sende varer ut av landet. For mange irer ble dette selve beviset på at katastrofen var menneskeskapt."
+        },
+        {
+            "type": "text",
+            "content": "Men her er det verdt å tenke som en historiker. Historikere som har regnet på tallene, har funnet at Irland fra 1847 tok inn langt mer korn enn landet sendte ut. Eksporten fortsatte, men den var ikke stor nok til å forklare hvor lite mat det fantes. Fagfolk er fortsatt uenige om hvor mye eksporten betydde. Poenget er ikke at britiske myndigheter går fri. Poenget er at forklaringen ligger i hele systemet: hvem som eide jorda, hvor lite folk hadde å falle tilbake på, og hvilke valg politikerne tok i årene etter 1846. Dette systemet var en del av [Det britiske imperiet](/historie/kolonialisering/britisk-imperium)."
+        },
+        {
+            "type": "header",
+            "text": "Skipene som dro vestover"
+        },
+        {
+            "type": "text",
+            "content": "For mange var utvandring den eneste utveien. Rundt 1,5 millioner irer reiste fra landet under hungersnøden, de fleste til USA, men også til England og Skottland (Julsrud & Mustad, 2024). Regner vi med årene like etter, dro omtrent 2,2 millioner mennesker mellom 1845 og 1855 (McMahon, 2023). Dette var én av de store folkevandringene i moderne tid, og den handlet om det samme som mange andre: nød hjemme og håp et annet sted. Du kan lese mer om slike krefter i artikkelen om [push- og pull-faktorer](/samfunnskunnskap/demografi/migrasjon-push-pull)."
+        },
+        {
+            "type": "text",
+            "content": "Skipene fikk etter hvert kallenavnet likkister, eller coffin ships på engelsk. Bildet stemmer for én rute i ett år. I 1847 døde 10 820 av 98 749 irske utvandrere på veien til Canada eller i karantene ved øya Grosse Île, altså omtrent elleve prosent. Men bare fem prosent av alle utvandrerne under hungersnøden reiste til Canada det året. På ruta til New York i 1847 var dødeligheten 1,3 prosent, og samlet for hele perioden lå den rundt tre prosent (McMahon, 2023). Historien er altså både forferdelig og mer sammensatt enn kallenavnet gir inntrykk av. Det er en god påminnelse om at et sterkt bilde ikke alltid er et dekkende bilde."
+        },
+        {
+            "type": "text",
+            "content": "Utvandringen fra Irland kom noen tiår før den store norske utvandringen. Fra 1825 begynte nordmenn å reise vestover av delvis liknende grunner, selv om Norge aldri opplevde noe i nærheten av den irske katastrofen. Du kan sammenlikne i artikkelen om [utvandringen til Amerika](/historie/norgeshistorie/utvandringen-til-amerika)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Irske utvandrere om bord i et seilskip på vei vestover",
+            "caption": "Rundt 2,2 millioner mennesker forlot Irland mellom 1845 og 1855. De fleste dro til USA."
+        },
+        {
+            "type": "header",
+            "text": "Hva satt igjen"
+        },
+        {
+            "type": "text",
+            "content": "Irland tok aldri igjen det tapte. Folketallet falt fra 8,3 millioner i 1845 til 5,1 millioner i 1881 og videre til 4,4 millioner i 1911 (Julsrud & Mustad, 2024). Det er nesten uten sidestykke: de fleste land vokser igjen etter en katastrofe, men Irland fortsatte å krympe i mer enn seksti år etterpå, fordi utvandringen ble en fast del av livet."
+        },
+        {
+            "type": "text",
+            "content": "Hungersnøden satte også dype spor i forholdet mellom Irland og Storbritannia. Mange irer opplevde at et rikt imperium hadde latt dem dø, og minnet om det ble en viktig del av kampen for irsk selvstyre. Sporene fra denne mistroen kan følges helt fram til konflikten i Nord-Irland på 1900-tallet, som du kan lese om i artikkelen om [fredsmurene i Belfast](/historie/den-kalde-krigen/peace-lines-belfast)."
+        },
+        {
+            "type": "text",
+            "content": "Til slutt sitter vi igjen med en lærdom som ikke bare handler om Irland. Sult kommer sjelden av at det ikke finnes mat i verden. Den kommer av at noen mennesker ikke har tilgang til den maten som finnes. Tørråten var naturens verk. At den ble til en katastrofe, var det mennesker som bestemte."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva heter organismen som forårsaker tørråte, og hvordan sprer den seg fra plante til plante?",
+                    "Hvor stor del av jorda på Irland eide katolikker rundt år 1603, og hvor stor del eide de på 1770-tallet?",
+                    "Hva gikk kvart-acre-regelen fra 1847 ut på?",
+                    "Hvor mange mennesker bodde på Irland i 1845, og hvor mange bodde der i 1911?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor poteten var et fornuftig valg for en fattig leilending, selv om den gjorde familien sårbar.",
+                    "Suppekjøkkenene ga mat til over tre millioner mennesker sommeren 1847, men ble avviklet noen uker senere. Vurder hva denne beslutningen forteller om hvordan myndighetene tenkte om ansvar.",
+                    "Kvart-acre-regelen tvang folk til å velge mellom jorda og maten. Forklar hvorfor et slikt valg gjør skaden større enn selve sulten.",
+                    "Bildet av likkisteskipene er sterkt, men tallene viser at det passer best på én rute i ett år. Diskuter hvorfor slike sterke bilder likevel fester seg i folks minne."
+                ],
+                "gaaVidere": [
+                    "Sammenlikn utvandringen fra Irland med den norske utvandringen til Amerika. Skriv en kort tekst der du peker på minst én likhet og én viktig forskjell.",
+                    "I dag dyrkes store deler av verdens mat som monokultur, for eksempel hvete, ris og mais. Finn ut hva fagfolk mener om risikoen ved dette, og skriv et innlegg der du argumenterer for hva vi bør gjøre.",
+                    "Diskuter to og to: Hvem har ansvaret når mennesker sulter i et land som selv produserer mat? Bruk eksempler fra artikkelen i argumentasjonen deres."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva var hovedgrunnen til at fattige irer levde nesten bare av poteter?",
+                        "options": [
+                            "Poteter var den eneste planten som vokste i irsk klima",
+                            "Poteten ga mest mat på minst jord, og jordlappene de leide var svært små",
+                            "Britiske myndigheter forbød dem å dyrke annet",
+                            "Poteter var den dyreste og mest ettertraktede maten"
+                        ],
+                        "answer": 1,
+                        "explanation": "De fleste irer var leilendinger med bittesmå jordlapper. Poteten ga langt mer mat per kvadratmeter enn korn, og kornet de dyrket, gikk stort sett til å betale husleia til godseieren."
+                    },
+                    {
+                        "question": "Hva er monokultur?",
+                        "options": [
+                            "At bare én kultur eller religion er tillatt i et land",
+                            "At bønder dyrker jorda uten maskiner",
+                            "At ett enkelt slag vekst dyrkes alene over store områder",
+                            "At all maten i et land blir importert"
+                        ],
+                        "answer": 2,
+                        "explanation": "Monokultur betyr at ett enkelt slag vekst dekker store områder alene. Det gir mye mat i gode år, men gjør hele matforsyningen avhengig av at akkurat den planten lykkes."
+                    },
+                    {
+                        "question": "Hva gikk kvart-acre-regelen fra 1847 ut på?",
+                        "options": [
+                            "Alle familier fikk tildelt et kvart acre jord av staten",
+                            "Godseiere måtte gi bort et kvart acre til hver leilending",
+                            "Ingen fikk nødhjelp hvis de leide mer enn et kvart acre jord",
+                            "Bare et kvart acre av hver gård kunne brukes til poteter"
+                        ],
+                        "answer": 2,
+                        "explanation": "Regelen nektet nødhjelp til alle som leide mer enn et kvart acre. Familier måtte dermed velge mellom å beholde jorda og sulte, eller gi fra seg levebrødet for å få mat."
+                    },
+                    {
+                        "question": "Omtrent hvor mange mennesker døde av sult og sykdom under hungersnøden?",
+                        "options": [
+                            "Rundt 100 000",
+                            "Rundt én million",
+                            "Rundt fem millioner",
+                            "Rundt 20 000"
+                        ],
+                        "answer": 1,
+                        "explanation": "Omtrent én million mennesker sultet i hjel eller døde av sykdommer knyttet til sulten, som tyfus. I tillegg reiste rundt 1,5 millioner fra landet under selve hungersnøden."
+                    },
+                    {
+                        "question": "Hva viser tallene om likkisteskipene, coffin ships?",
+                        "options": [
+                            "At alle utvandrerskipene hadde svært høy dødelighet",
+                            "At ingen døde under overfarten, og at historien er oppdiktet",
+                            "At dødeligheten var ekstremt høy på ruta til Canada i 1847, men langt lavere ellers",
+                            "At skipene bare fraktet døde tilbake til Irland"
+                        ],
+                        "answer": 2,
+                        "explanation": "På ruta til Canada i 1847 døde omtrent elleve prosent av utvandrerne, men bare fem prosent av alle reiste den ruta det året. Til New York var dødeligheten 1,3 prosent, og samlet lå den rundt tre prosent."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Gray, P. (2020). *A policy disaster: British famine relief measures*. RTÉ. Hentet 07.08.2026 fra [rte.ie](https://www.rte.ie/history/famine-ireland/2020/1123/1180004-a-policy-to-disaster-british-famine-relief-measures/)",
+                    "Julsrud, O. & Mustad, E. (2024). *Irlands historie*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Irlands_historie](https://snl.no/Irlands_historie)",
+                    "McMahon, C. T. (2023). *Revisiting the coffin ships: emigrant mortality during the Famine*. RTÉ. Hentet 07.08.2026 fra [rte.ie](https://www.rte.ie/history/the-great-irish-famine/2023/1205/1420245-revisiting-the-coffin-ships-emigrant-mortality-during-the-famine/)",
+                    "Mokyr, J. (u.å.). *Great Famine*. Encyclopædia Britannica. Hentet 07.08.2026 fra [britannica.com](https://www.britannica.com/event/Great-Famine-Irish-history)",
+                    "Scott, I. (2026). *Hungersnøden i Irland*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/hungersnøden_i_Irland](https://snl.no/hungersn%C3%B8den_i_Irland)",
+                    "Sletten, A. (2025). *Potet-tørråte*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/potet-tørråte](https://snl.no/potet-t%C3%B8rr%C3%A5te)",
+                    "Understanding Evolution. (u.å.). *Monoculture and the Irish potato famine: cases of missing genetic variation*. University of California Museum of Paleontology. Hentet 07.08.2026 fra [evolution.berkeley.edu](https://evolution.berkeley.edu/the-relevance-of-evolution/agriculture/monoculture-and-the-irish-potato-famine-cases-of-missing-genetic-variation/)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
