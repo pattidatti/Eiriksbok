@@ -1,7 +1,7 @@
 {
     "id": "arbeidsspesialisering",
     "title": "Arbeidsspesialisering: Samarbeidets magi",
-    "ingress": "Hvorfor kan ingen i dag lage en smarttelefon helt alene? Svaret ligger i arbeidsspesialisering – selve motoren i den moderne verden.",
+    "ingress": "Hvorfor kan ingen i dag lage en smarttelefon helt alene? Svaret ligger i arbeidsspesialisering - selve motoren i den moderne verden.",
     "image": "/images/lessons/okonomi/arbeidsspesialisering_hero.webp",
     "heroImage": "/images/lessons/okonomi/arbeidsspesialisering_hero.webp",
     "status": "published",
@@ -15,40 +15,44 @@
     "content": [
         {
             "type": "text",
-            "value": "Tenk på en vanlig blyant. For å lage den trengs det tre utvunnet i én del av verden, grafitt fra en annen, gummi fra en tredje og lakk fra en fjerde. Ingen enkelperson vet hvordan man gjør alt dette. Vi er avhengige av hverandre."
+            "content": "Tenk på en vanlig blyant. For å lage den trengs det tre utvunnet i én del av verden, grafitt fra en annen, gummi fra en tredje og lakk fra en fjerde. Ingen enkelperson vet hvordan man gjør alt dette. Vi er avhengige av hverandre."
         },
         {
             "type": "header",
-            "value": "Adam Smith og knappenålsfabrikken"
+            "text": "Adam Smith og knappenålsfabrikken"
         },
         {
             "type": "text",
-            "value": "Den moderne økonomiens far, Adam Smith, beskrev dette i 1776 med et berømt eksempel: En knappenålsfabrikk. \n\nHvis én person skulle gjort alt selv – strukket tråden, rettet den ut, kuttet den, slipt spissen og festet hodet – ville han knapt klart å lage én nål om dagen. Men ved å dele oppgavene i 18 ulike trinn, kunne ti arbeidere lage over 48 000 nåler på en dag! \n\n**Produktiviteten økte altså med flere tusen prosent bare ved å organisere arbeidet annerledes.**"
+            "content": "Den moderne økonomiens far, Adam Smith, beskrev dette i 1776 med et berømt eksempel: en knappenålsfabrikk (Fjeld, 2024a).\n\nHvis én person skulle gjort alt selv - strukket tråden, rettet den ut, kuttet den, slipt spissen og festet hodet - ville han knapt klart å lage én nål om dagen. Men ved å dele arbeidet i omkring 18 ulike trinn, kunne ti arbeidere lage over 48 000 nåler på en dag (Smith, 1776).\n\nProduktiviteten økte altså enormt bare ved å organisere arbeidet annerledes."
         },
         {
             "type": "header",
-            "value": "Fordeler med spesialisering"
+            "text": "Fordeler med spesialisering"
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor virker dette så godt? Onshuus (2026) peker på to hovedgrunner: arbeiderne blir bedre til sin egen oppgave når de gjør den om og om igjen, og de slipper tidstapet som kommer av å skifte mellom mange ulike oppgaver."
         },
         {
             "type": "list",
             "ordered": false,
             "items": [
-                "**Mestring:** Man blir ekstremt god når man gjør én ting ofte.",
-                "**Tidsbesparelse:** Man slipper å bytte mellom verktøy og maskiner hele tiden.",
-                "**Innovasjon:** Spesialister finner lettere opp smartere måter å gjøre jobben sin på."
+                "Mestring: Man blir ekstremt god når man gjør én ting ofte.",
+                "Tidsbesparelse: Man slipper å bytte mellom verktøy og maskiner hele tiden.",
+                "Innovasjon: Spesialister finner lettere opp smartere måter å gjøre jobben sin på."
             ]
         },
         {
             "type": "header",
-            "value": "Baksiden: Fremmedgjøring"
+            "text": "Baksiden: Fremmedgjøring"
         },
         {
             "type": "text",
-            "value": "Men alt har en pris. Karl Marx pekte på at når en arbeider bare utfører en liten, repeterende del av en prosess, kan han føle seg som en del av en maskin. Dette kalte han *fremmedgjøring*. \n\nMan mister stoltheten over det ferdige produktet og følelsen av å være en skapende håndverker. Vi blir rike på ting, men kanskje fattigere på meningsfylt arbeid?"
+            "content": "Men alt har en pris. Karl Marx pekte på at når en arbeider bare utfører en liten, repeterende del av en prosess, kan han føle seg som en del av en maskin. Dette kalte han fremmedgjøring.\n\nMarx mente at arbeidet i et kapitalistisk samfunn gjorde mennesket fremmed for sin egen skapende evne, nettopp fordi arbeidet ble redusert til repeterende operasjoner i en industriell produksjonskjede (Fjeld, 2024b).\n\nMan mister stoltheten over det ferdige produktet og følelsen av å være en skapende håndverker. Vi blir rike på ting, men kanskje fattigere på meningsfylt arbeid?"
         },
         {
             "type": "header",
-            "value": "Interaktivitet: Produksjons-linjen"
+            "text": "Interaktivitet: Produksjons-linjen"
         },
         {
             "type": "component",
@@ -56,7 +60,7 @@
         },
         {
             "type": "text",
-            "value": "Uten arbeidsspesialisering ville vi alle vært fattige bønder som kjempet for å overleve. Spesialisering er det som gjør det mulig for oss å ha leger, lærere, ingeniører og YouTube-stjerner."
+            "content": "Uten arbeidsspesialisering ville vi alle vært fattige bønder som kjempet for å overleve. Spesialisering er det som gjør det mulig for oss å ha leger, lærere, ingeniører og YouTube-stjerner."
         },
         {
             "type": "component",
@@ -80,8 +84,21 @@
                     "Diskuter i klassen: Finnes det jobber i dag der arbeidet er så oppdelt at folk kan føle fremmedgjøring? Kom med eksempler og forslag til hvordan man kan gjøre slikt arbeid mer meningsfylt."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Fjeld, A. (2024a). *Adam Smith*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Adam_Smith](https://snl.no/Adam_Smith)",
+                    "Fjeld, A. (2024b). *Fremmedgjøring*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/fremmedgjøring](https://snl.no/fremmedgj%C3%B8ring)",
+                    "Onshuus, H. (2026). *Arbeidsdeling*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/arbeidsdeling](https://snl.no/arbeidsdeling)",
+                    "Smith, A. (1776). *An Inquiry into the Nature and Causes of the Wealth of Nations, Bok I, kapittel 1*. Wikisource. Hentet 07.08.2026 fra [en.wikisource.org](https://en.wikisource.org/wiki/The_Wealth_of_Nations/Book_I/Chapter_1)"
+                ]
+            }
         }
     ],
+    "lastUpdated": "2026-08-07",
     "quiz": [
         {
             "question": "Hvilket eksempel brukte Adam Smith for å forklare økt produktivitet?",
