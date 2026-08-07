@@ -22,6 +22,7 @@ import { MapCarousel } from './MapCarousel';
 // Lazy-loaded components for better performance
 // Interactive Content
 const Oppgaver = lazy(() => import('./content/interactive/Oppgaver').then(m => ({ default: m.Oppgaver })));
+const KrigsseilernesRegnskap = lazy(() => import('./content/interactive/KrigsseilernesRegnskap').then(m => ({ default: m.KrigsseilernesRegnskap })));
 const SvalbardTraktatTest = lazy(() => import('./content/interactive/SvalbardTraktatTest').then(m => ({ default: m.SvalbardTraktatTest })));
 const TerraNulliusDommen = lazy(() => import('./content/interactive/TerraNulliusDommen').then(m => ({ default: m.TerraNulliusDommen })));
 const Gaatekart = lazy(() => import('./content/interactive/Gaatekart').then(m => ({ default: m.Gaatekart })));
@@ -398,6 +399,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ParallelleSivilisasjoner,
     Quiz,
     Oppgaver,
+    KrigsseilernesRegnskap,
     AmerikaBevisSortering,
     GrenseTegner,
     StilleKilder,

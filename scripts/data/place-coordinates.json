@@ -807,7 +807,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 325
+      "count": 327
     },
     {
       "tag": "dekolonisering",
@@ -1234,6 +1234,10 @@
       "count": 7
     },
     {
+      "tag": "andre-verdenskrig",
+      "count": 7
+    },
+    {
       "tag": "cia",
       "count": 7
     },
@@ -1415,10 +1419,6 @@
     },
     {
       "tag": "propaganda",
-      "count": 5
-    },
-    {
-      "tag": "andre-verdenskrig",
       "count": 5
     },
     {
@@ -2715,6 +2715,18 @@
     },
     {
       "tag": "quisling",
+      "count": 2
+    },
+    {
+      "tag": "handelsflaten",
+      "count": 2
+    },
+    {
+      "tag": "nortraship",
+      "count": 2
+    },
+    {
+      "tag": "sjofart",
       "count": 2
     },
     {

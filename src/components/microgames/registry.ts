@@ -23,6 +23,7 @@ const LeonardoFlygemaskin3D = lazy(() => import('./LeonardoFlygemaskin3D'));
 const DeSjuHoydene3D = lazy(() => import('./DeSjuHoydene3D'));
 const SymbolerPaaTaket3D = lazy(() => import('./SymbolerPaaTaket3D'));
 const IngenmanslandMG = lazy(() => import('./IngenmanslandMG'));
+const Konvoien3D = lazy(() => import('./Konvoien3D'));
 const SvanvikenKontrakten3D = lazy(() => import('./SvanvikenKontrakten3D'));
 const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
@@ -870,6 +871,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Stemmesporet3D'),
         Component: Stemmesporet3D as never,
+    },
+    'konvoien-3d': {
+        id: 'konvoien-3d',
+        title: 'Konvoien over Atlanteren',
+        description:
+            'Du er eskorten i Nord-Atlanteren i 1942. Sett kursen, hold konvoien samlet og få minst fire av fem norske lasteskip fram til Liverpool.',
+        estimatedSeconds: 150,
+        loader: () => import('./Konvoien3D'),
+        Component: Konvoien3D as never,
     },
     'vikingskip-3d': {
         id: 'vikingskip-3d',
