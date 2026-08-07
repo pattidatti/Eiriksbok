@@ -5,7 +5,7 @@
     "year": "1845-1852",
     "category": "Kolonialisering",
     "readTime": "11 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/kolonialisering/irske-hungersnoden-hero.webp",
     "factChecked": "2026-08-07",
     "details": [
         "På Irland levde millioner av fattige leilendinger nesten bare av poteter. Ingen annen plante kunne mette en stor familie på en så liten jordlapp.",
@@ -24,7 +24,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/irske-hungersnoden-01.webp",
             "alt": "Irsk potetåker med svarte, visne planter i regnvær",
             "caption": "Slik så åkrene ut høsten 1845. Bladene ble svarte i løpet av få dager, og potetene under jorda råtnet."
         },
@@ -89,7 +89,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/irske-hungersnoden-02.webp",
             "alt": "Kø av utsultede mennesker utenfor et suppekjøkken",
             "caption": "Sommeren 1847 fikk over tre millioner mennesker mat på suppekjøkken. Noen uker senere ble ordningen avviklet."
         },
@@ -142,7 +142,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/kolonialisering/irske-hungersnoden-03.webp",
             "alt": "Irske utvandrere om bord i et seilskip på vei vestover",
             "caption": "Rundt 2,2 millioner mennesker forlot Irland mellom 1845 og 1855. De fleste dro til USA."
         },
