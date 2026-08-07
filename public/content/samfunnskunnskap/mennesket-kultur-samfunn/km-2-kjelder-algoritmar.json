@@ -7,6 +7,7 @@
     "heroImage": "/images/mennesket-kultur-samfunn/km-2-kjelder-algoritmar-hero.webp",
     "subject": "samfunnskunnskap",
     "topic": "mennesket-kultur-samfunn",
+    "lastUpdated": "2026-08-07",
     "description": "Lær deg å vurdere kilder kritisk, forstå hvordan algoritmer former det du ser, og oppdage hva som finnes i blindsonene dine.",
     "details": [
         "Kompetansemål SAF01-04",
@@ -49,7 +50,7 @@
         },
         {
             "type": "text",
-            "content": "For å vurdere en kilde godt, stiller du fire grunnleggende spørsmål. Hvem har laget dette? Hvorfor ble det laget? Hvem er tenkt publikum? Og stemmer det med det andre kilder sier? En nyhetsartikkel fra NRK, et innlegg fra en politisk organisasjon og en TikTok-video fra en privatperson kan alle si noe sant - men de har ulike perspektiver, ulik agenda og ulik grad av faktasjekk bak seg."
+            "content": "For å vurdere en kilde godt, stiller du fire grunnleggende spørsmål. Hvem har laget dette? Hvorfor ble det laget? Hvem er tenkt publikum? Og stemmer det med det andre kilder sier? Kildekritikk handler nettopp om å vurdere hvem avsenderen er og hvor troverdig informasjonen er (Orgeret & Hatlen, 2026). En nyhetsartikkel fra NRK, et innlegg fra en politisk organisasjon og en TikTok-video fra en privatperson kan alle si noe sant - men de har ulike perspektiver, ulik agenda og ulik grad av faktasjekk bak seg."
         },
         {
             "type": "header",
@@ -69,11 +70,11 @@
         },
         {
             "type": "text",
-            "content": "Her kommer det som gjør utfordringene med kilder ekstra krevende i dag: algoritmer. En algoritme er et sett med regler som en datamaskin bruker for å ta avgjørelser. På sosiale medier og søkemotorer bestemmer algoritmer hvilket innhold som dukker opp i feeden din, hvilke videoer YouTube anbefaler, og hvilke søkeresultater du ser først."
+            "content": "Her kommer det som gjør utfordringene med kilder ekstra krevende i dag: algoritmer. En algoritme er en fullstendig og presis beskrivelse av framgangsmåten for å løse en oppgave - altså et sett med regler en datamaskin følger, steg for steg (Hovde & Grønmo, 2025). På sosiale medier og søkemotorer bestemmer algoritmer hvilket innhold som dukker opp i feeden din, hvilke videoer YouTube anbefaler, og hvilke søkeresultater du ser først."
         },
         {
             "type": "text",
-            "content": "Algoritmer er ikke nøytrale. De er programmert til å nå et mål - som regel å holde deg engasjert lengst mulig, slik at plattformen tjener mer reklamepenger. Og det som holder oss mest engasjert, er gjerne innhold som bekrefter det vi allerede mener, som skaper sterke følelser - sinne, overraskelse, frykt - eller som kommer fra folk vi liker. Resultatet er at to personer som søker på det samme temaet, kan få helt ulike resultater - avhengig av hva de har likt og klikket på tidligere."
+            "content": "Algoritmer er ikke nøytrale. De er programmert til å nå et mål - som regel å holde deg engasjert lengst mulig, slik at plattformen tjener mer reklamepenger. Algoritmene er drevet av kommersielle interesser som handler om å få tak i tida og oppmerksomheten din, og de løfter fram innhold som skaper engasjement (Medietilsynet, 2025). Og det som holder oss mest engasjert, er gjerne innhold som bekrefter det vi allerede mener, som skaper sterke følelser - sinne, overraskelse, frykt - eller som kommer fra folk vi liker. Resultatet er at to personer som søker på det samme temaet, kan få helt ulike resultater - avhengig av hva de har likt og klikket på tidligere. Denne tilpasningen skjer ut fra det plattformen har samlet inn om tidligere søk, klikk og hvor du befinner deg, og kalles gjerne en filterboble (Orgeret & Dvergsdal, 2025)."
         },
         {
             "type": "component",
@@ -99,12 +100,12 @@
             "items": [
                 "Partiske kilder: Laget av en aktør med en klar agenda, for eksempel en politisk organisasjon, en lobbygruppe eller et kommersielt selskap. Ofte korrekt informasjon, men med et bevisst valgt perspektiv.",
                 "Sensasjonspregede kilder: Fokuserer på det dramatiske, overraskende eller provoserende fordi det gir klikk. Kan være faktisk riktig, men setter ting i et mer ekstremt lys enn det er grunn til.",
-                "Desinformasjon: Bevisst feil informasjon som er spredt for å lure, manipulere eller skape uro. Kan være vanskelig å kjenne igjen fordi den er laget for å se troverdig ut."
+                "Desinformasjon: Spredning av bevisst feilaktig og villedende informasjon. Hensikten kan være å spre bestemte holdninger og få mottakerne til å reagere på bestemte måter (Store norske leksikon, 2025). Kan være vanskelig å kjenne igjen fordi den er laget for å se troverdig ut."
             ]
         },
         {
             "type": "text",
-            "content": "Kildevurdering handler ikke om å være paranoid eller å mistro alt. Det handler om å være bevisst på at all informasjon kommer fra noen, og at den noen har et perspektiv. Et godt verktøy er å sjekke en sak mot minst to eller tre uavhengige kilder som ikke er knyttet til hverandre. Dette kalles kildekritikk - en grunnleggende ferdighet i et demokrati. Du kan lese mer om hvordan [flokkmentalitet](/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet) kan gjøre det vanskeligere å tenke kritisk når omgivelsene dine mener det samme."
+            "content": "Kildevurdering handler ikke om å være paranoid eller å mistro alt. Det handler om å være bevisst på at all informasjon kommer fra noen, og at den noen har et perspektiv. Et godt verktøy er å sjekke en sak mot minst to eller tre uavhengige kilder som ikke er knyttet til hverandre. I journalistikken regnes nettopp det å bruke flere kilder som et kvalitetstegn (Orgeret & Hatlen, 2026). Dette kalles kildekritikk - en grunnleggende ferdighet i et demokrati. Du kan lese mer om hvordan [flokkmentalitet](/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet) kan gjøre det vanskeligere å tenke kritisk når omgivelsene dine mener det samme."
         },
         {
             "type": "header",
@@ -262,6 +263,19 @@
                         "correctAnswer": 1,
                         "explanation": "Søkemotorer og sosiale medier bruker algoritmer som tar hensyn til hver enkelt brukers historikk og atferd. To personer med ulike interesser og tidligere klikkmønstre vil derfor se et algoritmetilpasset utvalg av samme verden - ikke det samme fullstendige bildet."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hovde, K.-O. & Grønmo, S. (2025). *Algoritme*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/algoritme](https://snl.no/algoritme)",
+                    "Medietilsynet. (2025). *Feil- og desinformasjon*. Hentet 07.08.2026 fra [medietilsynet.no](https://www.medietilsynet.no/digitale-medier/feil-desinformasjon/)",
+                    "Orgeret, K. S. & Dvergsdal, H. (2025). *Filterboble*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/filterboble](https://snl.no/filterboble)",
+                    "Orgeret, K. S. & Hatlen, J. F. (2026). *Kildekritikk*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/kildekritikk](https://snl.no/kildekritikk)",
+                    "Store norske leksikon. (2025). *Desinformasjon*. Hentet 07.08.2026 fra [snl.no/desinformasjon](https://snl.no/desinformasjon)"
                 ]
             }
         }
