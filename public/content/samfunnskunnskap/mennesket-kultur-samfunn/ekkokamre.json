@@ -7,7 +7,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Tenk deg at du går inn i et hus der hvert eneste rom er dekket av speil. Men dette er ikke vanlige speil. De viser ikke bare deg selv slik du er – de viser deg nøyaktig det du ønsker å se. Hvis du liker blå vegger, vil speilene vise deg en verden som bare er blå. Hvis du mener at jorda er flat, vil speilene vise deg 'bevis' for at horisonten aldri krummer seg. Hver person som går inn i huset, ender opp i sitt eget rom, og ingen ser det samme. Dette er den digitale virkeligheten for millioner av mennesker i dag. Vi kaller det ekkokamre og informasjonsbobler."
+            "content": "Tenk deg at du går inn i et hus der hvert eneste rom er dekket av speil. Men dette er ikke vanlige speil. De viser ikke bare deg selv slik du er - de viser deg nøyaktig det du ønsker å se. Hvis du liker blå vegger, vil speilene vise deg en verden som bare er blå. Hvis du mener at jorda er flat, vil speilene vise deg 'bevis' for at horisonten aldri krummer seg. Hver person som går inn i huset, ender opp i sitt eget rom, og ingen ser det samme. Dette er den digitale virkeligheten for millioner av mennesker i dag. Vi kaller det ekkokamre og informasjonsbobler."
         },
         {
             "type": "header",
@@ -15,11 +15,11 @@
         },
         {
             "type": "text",
-            "content": "For bare noen tiår siden var informasjonsflyten i samfunnet ganske oversiktlig. Folk leste de samme avisene, så på den samme nyhetssendingen klokka sju, og hørte på de samme radioprogrammene. Dette skapte det vi kaller en 'felles offentlighet' – en felles base av fakta som vi kunne være uenige om, men som vi alle anerkjente eksistensen av. Med fremveksten av sosiale medier har dette endret seg fundamentalt."
+            "content": "For bare noen tiår siden var informasjonsflyten i samfunnet ganske oversiktlig. Folk leste de samme avisene, så på den samme nyhetssendingen klokka sju, og hørte på de samme radioprogrammene. Dette skapte det vi kaller en 'felles offentlighet' - en felles base av fakta som vi kunne være uenige om, men som vi alle anerkjente eksistensen av. Med fremveksten av sosiale medier har dette endret seg."
         },
         {
             "type": "text",
-            "content": "Hjertet i denne endringen er algoritmene. En algoritme er rett og slett en oppskrift som sosiale medier bruker for å bestemme hva du skal se på skjermen din. Målet til plattformer som TikTok, YouTube og Facebook er enkelt: De vil at du skal bli værende så lenge som mulig. Jo lenger du er pålogget, desto mer reklame kan de vise deg, og desto mer penger tjener de. Og hva er den mest effektive måten å holde deg engasjert på? Ved å vise deg ting du allerede liker, og som bekrefter det du allerede mener."
+            "content": "Hjertet i denne endringen er algoritmene. En algoritme er rett og slett en oppskrift som sosiale medier bruker for å bestemme hva du skal se på skjermen din. Plattformene er finansiert av algoritmestyrt reklame, og de sprer nyheter slik at brukeren får se det systemet antar hun er interessert i, eller det andre i nettverket hennes har delt (Enli & Aalen, 2026). Målet til plattformer som TikTok, YouTube og Facebook er derfor enkelt: De vil at du skal bli værende så lenge som mulig. Jo lenger du er pålogget, desto mer reklame kan de vise deg, og desto mer penger tjener de. Og hva er den mest effektive måten å holde deg engasjert på? Ved å vise deg ting du allerede liker, og som bekrefter det du allerede mener."
         },
         {
             "type": "component",
@@ -37,11 +37,11 @@
         },
         {
             "type": "text",
-            "content": "Begrepet 'informasjonsboble' (filter bubble) ble gjort kjent av internettpioneren Eli Pariser. Han oppdaget at to venner som søkte på nøyaktig det samme ordet på Google – for eksempel 'Egypt' – fikk helt ulike resultater. Den ene fikk nyheter om demonstrasjoner og politisk uro, mens den andre fikk reisetips og bilder av pyramidene. Google hadde brukt deres tidligere søkehistorikk for å 'skreddersy' virkeligheten."
+            "content": "Begrepet 'informasjonsboble' (filterboble på norsk, filter bubble på engelsk) ble introdusert av forfatteren og internettaktivisten Eli Pariser i boka The Filter Bubble i 2011 (Orgeret & Dvergsdal, 2025). En filterboble er en systematisk, individuelt tilpasset avgrensing av informasjon på internett: algoritmen sorterer det du får se ut fra det den vet om deg. Pariser fikk to venner til å google nøyaktig det samme ordet - 'Egypt'. Den ene fikk søkeresultater fulle av nyheter om protestene og det politiske opprøret der, den andre fikk bokstavelig talt ingenting om protestene, bare nettsider om reiser og pyramider (Democracy Now!, 2011)."
         },
         {
             "type": "text",
-            "content": "Dette virker kanskje praktisk. Hvorfor kaste bort tid på ting man ikke er interessert i? Men faren er at boblen gradvis fjerner alt som kan utfordre oss. Hvis du aldri ser motforestillinger, begynner du å tro at dine egne meninger er de eneste logiske. Du ser ikke bare det du vil se, du slutter å se det du *burde* se. Dette skaper en snikende form for isolasjon, der vi lever dør i dør med folk som befinner seg i helt andre universer av informasjon."
+            "content": "Dette virker kanskje praktisk. Hvorfor kaste bort tid på ting man ikke er interessert i? Men faren er at boblen gradvis fjerner alt som kan utfordre oss, og at vi dermed ikke blir møtt med informasjon som kunne utvidet synet vårt på verden (Orgeret & Dvergsdal, 2025). Hvis du aldri ser motforestillinger, begynner du å tro at dine egne meninger er de eneste logiske. Du ser ikke bare det du vil se, du slutter å se det du burde se. Dette skaper en snikende form for isolasjon, der vi lever dør i dør med folk som befinner seg i helt andre universer av informasjon."
         },
         {
             "type": "header",
@@ -49,11 +49,11 @@
         },
         {
             "type": "text",
-            "content": "Mens en informasjonsboble handler om hva algoritmen *viser* deg, handler et 'ekkokammer' om hva som skjer inne i de sosiale gruppene vi tilhører. Et ekkokammer oppstår når vi bare omgås mennesker som mener det samme som oss selv. På nettet er det ekstremt lett å finne slike grupper. Er du motstander av vindkraft? Det finnes en gruppe for deg. Tror du på hemmelige konspirasjoner? Det finnes tusenvis av mennesker som venter på å 'bekrefte' dine mistanker."
+            "content": "Mens en informasjonsboble handler om hva algoritmen viser deg, handler et 'ekkokammer' om hva som skjer inne i de sosiale gruppene vi tilhører. Et ekkokammer er tendensen til at mennesker oppsøker og tiltrekkes av likesinnede ideer og interesser (Christensen Grøgaard, 2026). Et ekkokammer oppstår altså når vi bare omgås mennesker som mener det samme som oss selv. På nettet er det ekstremt lett å finne slike grupper. Er du motstander av vindkraft? Det finnes en gruppe for deg. Tror du på hemmelige konspirasjoner? Det finnes tusenvis av mennesker som venter på å 'bekrefte' dine mistanker."
         },
         {
             "type": "text",
-            "content": "I et ekkokammer blir de som er enige med oss, hyllet og løftet frem. De som er uenige, blir avvist som 'troll', 'hjernevaskede' eller rett og slett onde. Dette forsterker flokkmentaliteten (som du kan lese om i artikkelen om [flokkmentalitet](/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet)). I stedet for en sunn debatt, får vi en konkurranse om hvem som kan være mest ekstrem i sin gruppe. Dette kalles 'gruppepolarisering': Når likesinnede diskuterer en sak, ender de ofte opp med å innta et mer ekstremt standpunkt enn de hadde da de begynte."
+            "content": "I et ekkokammer blir de som er enige med oss, hyllet og løftet frem. De som er uenige, blir avvist som 'troll', 'hjernevaskede' eller rett og slett onde. Dette forsterker flokkmentaliteten (som du kan lese om i artikkelen om [flokkmentalitet](/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet)). I stedet for en sunn debatt, får vi en konkurranse om hvem som kan være mest ekstrem i sin gruppe. Dette kalles 'gruppepolarisering': medlemmene i en gruppe ender ofte opp med mer ekstreme synspunkter enn de ville hatt hver for seg, og et typisk eksempel er hvordan ekstreme miljøer blir enda mer ekstreme gjennom diskusjon på internett (Svartdal, 2026)."
         },
         {
             "type": "header",
@@ -61,11 +61,11 @@
         },
         {
             "type": "text",
-            "content": "Hvorfor biter vi så lett på algoritmens triks? Svaret ligger i hjernens evolusjon. Menneskehjernen hater usikkerhet. Det krever mye energi å vurdere en ny idé eller innrømme at man tar feil. Vi har derfor utviklet det psykologer kaller 'bekreftelsesfelle' (confirmation bias). Dette er en tendens til å legge merke til, tro på og huske informasjon som støtter det vi allerede mener, mens vi overser eller forkaster informasjon som motsier oss."
+            "content": "Hvorfor biter vi så lett på algoritmens triks? En del av svaret ligger i hvordan hjernen tar snarveier. Det krever mye energi å vurdere en ny idé eller innrømme at man tar feil. Psykologene kaller det bekreftelsestendens (også kalt bekreftelsesfelle, på engelsk confirmation bias): vi legger merke til og leter etter det som bekrefter noe vi allerede tror. Slik tenkning gjør oss sårbare for feil, fordi vi overser informasjon som tilsier at vi burde endre oppfatning (Svartdal, 2024)."
         },
         {
             "type": "text",
-            "content": "Før internett var vi tvunget til å møte folk med andre meninger på skolen, på jobben eller i butikken. I dag kan vi velge det ubehaget bort. Vi har skapt en digital verden som fungerer som en forsterker for våre egne fordommer. Når vi ser en overskrift som støtter vårt verdensbilde, får vi et lite dopaminkick. Når vi ser noe som irriterer oss, reagerer vi med sinne – noe som også skaper engasjement (algoritmen elsker sinne, fordi det får oss til å kommentere og dele)."
+            "content": "Før internett var vi tvunget til å møte folk med andre meninger på skolen, på jobben eller i butikken. I dag kan vi velge det ubehaget bort. Vi har skapt en digital verden som fungerer som en forsterker for våre egne fordommer. Når vi ser en overskrift som støtter vårt verdensbilde, kjennes det godt. Når vi ser noe som irriterer oss, reagerer vi med sinne - noe som også skaper engasjement (algoritmen elsker sinne, fordi det får oss til å kommentere og dele)."
         },
         {
             "type": "header",
@@ -80,6 +80,10 @@
             "content": "Tenk på eksempelet med vaksinespørsmål eller klimaendringer. For en person i et ekkokammer som er skeptisk til myndighetene, vil algoritmen pøse på med videoer og artikler som underbygger deres frykt. For dem ser det ut som om 'alle' er enige med dem, og at de tradisjonelle mediene lyver. Dette fører til en dyp mistillit til institusjoner som vitenskap, media og politikk. Uten tillit og en felles virkelighet blir det umulig å løse de store utfordringene vi står overfor i fellesskap."
         },
         {
+            "type": "text",
+            "content": "Men her må vi være ærlige: forskerne er ikke enige om hvor sterk denne effekten egentlig er. Enli og Aalen (2026) peker på at det er lite belegg i forskningen for at sosiale medier i seg selv skaper filterbobler. Folk har alltid hatt sosiale filtre - venner og familie har mye å si for hvilke nyheter vi får med oss - og i Norge fungerer mediene fortsatt i stor grad som felles møteplasser. Ekkokamre er altså en reell risiko å være klar over, ikke en dom over hele samfunnet."
+        },
+        {
             "type": "header",
             "text": "Historiske paralleller: Før algoritmene"
         },
@@ -89,7 +93,7 @@
         },
         {
             "type": "text",
-            "content": "Et interessant eksempel er radioens inntog på 1930-tallet. Mange fryktet at radioen ville føre til at folk bare hørte på 'sin' politiske leder og mistet kontakten med motforestillinger. Og ja, diktatorer som Hitler og Stalin brukte radioen nettopp slik. Men radioen (og senere TV) hadde også en samlende effekt fordi teknologien var kostbar og det fantes få kanaler. I dag er situasjonen motsatt: Det finnes uendelig mange kanaler, og det er billig å spre informasjon. Det har ført til en fragmentering av virkeligheten som vi aldri har sett maken til."
+            "content": "Et interessant eksempel er massemedienes inntog på 1930-tallet. Mange fryktet at radioen ville føre til at folk bare hørte på 'sin' politiske leder og mistet kontakten med motforestillinger. Og diktaturene gjorde nettopp det: da nazistene tok makten i Tyskland i januar 1933, var ensretting av massemediene et sentralt trekk ved den nye styringen, sammen med nazifisering av skolen og fritiden (Theodorsen, 2026). Men radioen (og senere TV) hadde også en samlende effekt fordi teknologien var kostbar og det fantes få kanaler. I dag er situasjonen motsatt: Det finnes svært mange kanaler, og det er billig å spre informasjon. Det har ført til at virkeligheten oppleves mer oppdelt enn før."
         },
         {
             "type": "header",
@@ -97,7 +101,7 @@
         },
         {
             "type": "text",
-            "content": "Kan vi komme oss ut av boblene? Det finnes dystre spådommer om at vi er på vei mot et 'post-truth'-samfunn, der sanne og falske nyheter er umulige å skille fra hverandre, styrt av AI-generert feilinformasjon. Men det finnes også lyspunkter. Noen utviklere jobber med algoritmer som er designet for å gjøre det motsatte av dagens sosiale medier: 'brobyggende algoritmer'."
+            "content": "Kan vi komme oss ut av boblene? Det finnes dystre spådommer om at vi er på vei mot et 'post-truth'-samfunn, der sanne og falske nyheter er umulige å skille fra hverandre, styrt av AI-generert feilinformasjon. Men det finnes også lyspunkter. Forskere har foreslått algoritmer som er laget for å gjøre det motsatte av dagens sosiale medier: 'brobyggende rangering', altså systemer som belønner innhold som skaper gode møter på tvers av grupper i stedet for å belønne splittelse (Ovadya, 2022)."
         },
         {
             "type": "text",
@@ -115,7 +119,7 @@
         },
         {
             "type": "text",
-            "content": "Å leve i en boble er behagelig. Det er trygt å få rett hele tiden. Men en verden uten motforestillinger er en verden uten utvikling. Innovasjon, rettferdighet og demokrati krever at vi tør å gå ut av speilhuset og se virkeligheten slik den er – rotete, kompleks og full av folk som mener noe helt annet enn oss selv."
+            "content": "Å leve i en boble er behagelig. Det er trygt å få rett hele tiden. Men en verden uten motforestillinger er en verden uten utvikling. Innovasjon, rettferdighet og demokrati krever at vi tør å gå ut av speilhuset og se virkeligheten slik den er - rotete, sammensatt og full av folk som mener noe helt annet enn oss selv."
         },
         {
             "type": "text",
@@ -216,6 +220,23 @@
                     "Diskuter med en medelev: Hva kan du selv gjøre for å komme deg litt ut av din egen boble og 'lese bredere', slik teksten oppfordrer til?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Christensen Grøgaard, S. (2026). *ekkokammer*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/ekkokammer](https://snl.no/ekkokammer)",
+                    "Democracy Now!. (2011). *Eli Pariser on \"The Filter Bubble: What the Internet Is Hiding from You\"*. Hentet 07.08.2026 fra [democracynow.org](https://www.democracynow.org/2011/5/27/eli_pariser_on_the_filter_bubble)",
+                    "Enli, G. & Aalen, I. (2026). *sosiale medier*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/sosiale_medier](https://snl.no/sosiale_medier)",
+                    "Orgeret, K. S. & Dvergsdal, H. (2025). *filterboble*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/filterboble](https://snl.no/filterboble)",
+                    "Ovadya, A. (2022). *Bridging-Based Ranking*. Belfer Center for Science and International Affairs, Harvard Kennedy School. Hentet 07.08.2026 fra [belfercenter.org](https://www.belfercenter.org/publication/bridging-based-ranking)",
+                    "Svartdal, F. (2024). *bekreftelsestendens*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/bekreftelsestendens](https://snl.no/bekreftelsestendens)",
+                    "Svartdal, F. (2026). *gruppepolarisering*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/gruppepolarisering](https://snl.no/gruppepolarisering)",
+                    "Theodorsen, C. (2026). *Gleichschaltung*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Gleichschaltung](https://snl.no/Gleichschaltung)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-07T00:00:00.000Z"
 }
