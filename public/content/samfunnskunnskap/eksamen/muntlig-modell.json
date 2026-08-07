@@ -11,7 +11,7 @@
     "details": [
         "Et fullstendig modellsvar om hvordan folkestyre blir til ettmannsstyre.",
         "En sammenligning av Romas keiserdømme og Weimarrepublikkens fall.",
-        "Hele manuset til en presentasjon på maks 10 minutter.",
+        "Hele manuset til en presentasjon på rundt 10 minutter.",
         "Tips og eksempelsvar til samtalen med sensor.",
         "Forklaring på hvorfor nettopp dette gir karakteren 6."
     ],
@@ -78,7 +78,7 @@
         },
         {
             "type": "paragraph",
-            "text": "Eleven nøyde seg ikke med læreboka. Hun fant kilder som lar de to eksemplene tale med sin egen stemme, og hun valgte med vilje kilder fra dem som var med den gangen. Når du bruker slike kilder, viser du at du kan jobbe som en historiker, ikke bare gjengi det andre har sagt. Det er kjernen i det sensor kaller selvstendig arbeid."
+            "text": "Eleven nøyde seg ikke med læreboka. Hun fant kilder som lar de to eksemplene tale med sin egen stemme, og hun valgte med vilje kilder fra dem som var med den gangen. Når du bruker slike kilder, viser du at du kan jobbe som en historiker, ikke bare gjengi det andre har sagt. Det er kjernen i det sensor kaller selvstendig arbeid. Res gestae, Augustus’ egen beretning om livet og styret sitt, er nettopp en slik kilde: den er ikke nøytral historieskriving, men en forherliget framstilling av hans eget styre - augusteisk propaganda (Andreassen mfl., 2024)."
         },
         {
             "type": "list",
@@ -143,7 +143,7 @@
             "name": "QuoteBlock",
             "props": {
                 "text": "Etter at jeg hadde gjort slutt på borgerkrigene, førte jeg staten tilbake fra min egen makt til senatets og det romerske folks styre.",
-                "author": "Augustus, i sin egen selvbiografi (Res Gestae)"
+                "author": "Augustus, i sin egen beretning Res gestae, kapittel 34"
             }
         },
         {
@@ -154,8 +154,8 @@
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Det vil alltid forbli en av demokratiets beste vitser at det selv ga sine dødsfiender midlene til å ødelegge det med.",
-                "author": "Joseph Goebbels, 1928"
+                "text": "Vi går inn i Riksdagen for å væpne oss med demokratiets egne våpen. Vi kommer ikke som venner, og ikke som nøytrale. Vi kommer som fiender!",
+                "author": "Joseph Goebbels, i avisa Der Angriff, 30. april 1928"
             }
         },
         {
@@ -191,6 +191,10 @@
         {
             "type": "paragraph",
             "text": "«La meg svare på problemstillingen min. Hvordan kan et folkestyre ende som ettmannsstyre? Svaret fra både Roma og Tyskland er det samme: gjennom en krise som gjør folk redde, en leder som lover trygghet, og makt som gripes innenfra med lovlige midler. Påstanden min holder: autokrati kommer sjelden utenfra, det vokser innenfra. Kunne det vært unngått? Jeg tror ja, men bare hvis institusjonene er sterke nok, og hvis folk forstår hva som skjer før det er for sent. Det er kanskje den viktigste grunnen til at vi i det hele tatt lærer om dette: for å kjenne igjen mønsteret neste gang. Takk.»"
+        },
+        {
+            "type": "paragraph",
+            "text": "Alt eleven sier i manuset, kan sjekkes mot kilder. Julius Cæsar krysset grenseelven Rubicon i år 49 fvt., stikk i strid med det senatet krevde, lot seg siden utrope til diktator på livstid og ble myrdet under et senatsmøte 15. mars år 44 fvt. (Andersen mfl., 2024). Augustus var Cæsars adoptivsønn, vant borgerkrigen som fulgte, men gjorde seg aldri til konge: han holdt fast på de republikanske embetene, ble anerkjent som princeps senatus - senatets førstemann - og styrte fra 27 fvt. til han døde i år 14 evt. (Steen & Iddeng, 2025). I Tyskland ble Hitler utnevnt til rikskansler 30. januar 1933, riksdagsbygningen ble satt i brann 27. februar, og med fullmaktsloven samme år fikk han diktatorisk makt (Tøllefsen, 2026). Sitatet fra Augustus står i kapittel 34 av Res gestae (Livius.org, 2020), og Goebbels-sitatet er hentet fra artikkelen «Was wollen wir im Reichstag?» i avisa Der Angriff 30. april 1928 (Goebbels, 1928)."
         },
         {
             "type": "header",
@@ -467,6 +471,20 @@
                     "Diskuter i klassen: Var Augustus en redningsmann som skapte fred etter borgerkrigene, eller en tyrann som knuste folkestyret? Kom med argumenter for begge syn."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Andersen, Ø., Steen, T. & Iddeng, J. W. (2024). *Julius Caesar*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Julius_Caesar](https://snl.no/Julius_Caesar)",
+                    "Andreassen, H. B., Amundsen, L. & Steen, T. (2024). *Den guddommelige Augustus’ bragder*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no](https://snl.no/Den_guddommelige_Augustus%E2%80%99_bragder)",
+                    "Goebbels, J. (1928). *Was wollen wir im Reichstag?* [Why Do We Want to Join the Reichstag?] (R. Bytwerk, overs.). Der Angriff, 30. april 1928. German Propaganda Archive, Calvin University. Hentet 07.08.2026 fra [research.calvin.edu](https://research.calvin.edu/german-propaganda-archive/angrif06.htm)",
+                    "Livius.org. (2020). *Augustus’ Res Gestae* (F. W. Shipley, overs.). Hentet 07.08.2026 fra [livius.org](https://www.livius.org/sources/content/augustus-res-gestae/)",
+                    "Steen, T. & Iddeng, J. W. (2025). *Augustus - første romerske keiser*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no](https://snl.no/Augustus_-_f%C3%B8rste_romerske_keiser)",
+                    "Tøllefsen, T. O. (2026). *Weimarrepublikken*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Weimarrepublikken](https://snl.no/Weimarrepublikken)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -525,5 +543,5 @@
         "demokrati"
     ],
     "createdDate": "2026-06-02T00:00:00Z",
-    "lastUpdated": "2026-06-02T00:00:00Z"
+    "lastUpdated": "2026-08-07T00:00:00Z"
 }
