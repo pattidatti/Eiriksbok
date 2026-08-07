@@ -5,7 +5,7 @@
     "year": "1940-1945",
     "category": "Norge",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/andre-verdenskrig/krigsseilerne-hero.webp",
     "factChecked": "2026-08-07",
     "details": [
         "Norge hadde over 1000 skip i utenlandsk farvann da krigen kom, og de ble Norges viktigste bidrag til de allierte",
@@ -19,7 +19,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/andre-verdenskrig/krigsseilerne-01.webp",
             "alt": "Norsk lasteskip i konvoi på grå vinterhav i Nord-Atlanteren",
             "caption": "Konvoiene krysset Atlanterhavet i all slags vær. Skipene seilte tett sammen, i den farten det tregeste skipet klarte."
         },
@@ -96,7 +96,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/andre-verdenskrig/krigsseilerne-02.webp",
             "alt": "Brennende tankskip synker mens sjøfolk ror bort i en livbåt",
             "caption": "Et tankskip som ble truffet, brant. Mange sjøfolk overlevde selve torpedoen, men ikke oljen som brant på vannet rundt."
         },
@@ -161,7 +161,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/andre-verdenskrig/krigsseilerne-03.webp",
             "alt": "Eldre krigsseilere med ordensbånd står samlet foran et minnesmerke",
             "caption": "Mange krigsseilere fikk anerkjennelsen først som gamle menn. Noen rakk det ikke."
         },
