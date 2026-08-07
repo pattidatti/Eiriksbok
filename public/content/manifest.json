@@ -5364,6 +5364,21 @@
               "image": "/images/kolonialisering/eic-hero.webp",
               "createdDate": "2025-11-28T22:22:13+01:00",
               "lastUpdated": "2026-07-28T08:55:41+02:00"
+            },
+            {
+              "id": "irske-hungersnoden",
+              "title": "Den irske hungersnøden: da poteten sviktet",
+              "description": "Da tørråten ødela potetavlingene fra 1845, døde rundt én million irer. Hvorfor ble en plantesykdom til en katastrofe?",
+              "tags": [
+                "irland",
+                "storbritannia",
+                "kolonialisering",
+                "sult",
+                "utvandring",
+                "1800-tallet"
+              ],
+              "image": "/images/placeholder.webp",
+              "createdDate": "2026-08-07T00:00:00Z"
             }
           ]
         },

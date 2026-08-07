@@ -175,6 +175,7 @@ const HormuzFlaskehalsen3D = lazy(() => import('./HormuzFlaskehalsen3D'));
 const GravaISkogen3D = lazy(() => import('./GravaISkogen3D'));
 const TajMahalSymmetri3D = lazy(() => import('./TajMahalSymmetri3D'));
 const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
+const Vinteren1847 = lazy(() => import('./Vinteren1847'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
 const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
 
@@ -1726,6 +1727,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./LalibelaKirke3D'),
         Component: LalibelaKirke3D as never,
+    },
+    'vinteren-1847-3d': {
+        id: 'vinteren-1847-3d',
+        title: 'Vinteren 1847',
+        description:
+            'En irsk jordlapp midt i hungersnøden. Klikk plantene og grav dem opp, men du ser ikke hva som ligger under før spaden er i jorda, og det meste er svart grøt. Sulten stiger hele tiden, og tørråten tar de friske plantene mens du står bøyd over en råtten. Til slutt åpner fattighuset porten. Lyspæra: fra 1847 fikk bare den som leide mindre enn et kvart acre nødhjelp, så maten som berget livet tok jorda familien levde av.',
+        estimatedSeconds: 150,
+        loader: () => import('./Vinteren1847'),
+        Component: Vinteren1847 as never,
     },
 };
 

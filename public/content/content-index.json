@@ -1,5 +1,5 @@
 {
-  "buildId": 164683938261037,
+  "buildId": 9198202751371,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1609,6 +1609,9 @@
     ],
     "fransk-kolonirike": [
       "content/historie/kolonialisering/fransk-kolonirike.json"
+    ],
+    "irske-hungersnoden": [
+      "content/historie/kolonialisering/irske-hungersnoden.json"
     ],
     "kapplopet-om-afrika": [
       "content/historie/kolonialisering/kapplopet-om-afrika.json"
@@ -4293,6 +4296,7 @@
     "historie/kolonialisering/eic": "content/historie/kolonialisering/eic.json",
     "historie/kolonialisering/europa-erobrer-verden": "content/historie/kolonialisering/europa-erobrer-verden.json",
     "historie/kolonialisering/fransk-kolonirike": "content/historie/kolonialisering/fransk-kolonirike.json",
+    "historie/kolonialisering/irske-hungersnoden": "content/historie/kolonialisering/irske-hungersnoden.json",
     "historie/kolonialisering/kapplopet-om-afrika": "content/historie/kolonialisering/kapplopet-om-afrika.json",
     "historie/kolonialisering/portugisisk-kolonialisering": "content/historie/kolonialisering/portugisisk-kolonialisering.json",
     "historie/kolonialisering/spansk-kolonialisering": "content/historie/kolonialisering/spansk-kolonialisering.json",
