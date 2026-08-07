@@ -57,7 +57,7 @@
         },
         {
             "type": "text",
-            "content": "I Europa beskytter GDPR - General Data Protection Regulation - deg mot det verste. GDPR er en lov som gjelder i hele EU og EØS-området, inkludert Norge. Den sier blant annet at du har rett til å vite hva som lagres om deg, rett til å kreve at det slettes (retten til å bli glemt) og rett til å få en kopi av alle dataene en bedrift har om deg. Vil du prøve dette i praksis? Du kan kontakte Google, Meta eller TikTok og be om innsyn i alt de vet om deg. Svaret er gjerne overraskende."
+            "content": "I Europa beskytter GDPR - General Data Protection Regulation - deg mot det verste. Regelverket trådte i kraft i EU 25. mai 2018 og i Norge 20. juli 2018, og gjelder i hele EØS-området (Gisle, 2026). Den som behandler personopplysninger om deg, må fortelle deg akkurat hva som blir lagret, og du kan kreve at opplysninger om deg blir slettet (Gisle, 2026). Det siste er det vi kaller retten til å bli glemt. Vil du prøve dette i praksis? Du kan kontakte Google, Meta eller TikTok og be om innsyn i alt de vet om deg. Svaret er gjerne overraskende."
         },
         {
             "type": "component",
@@ -185,11 +185,11 @@
         },
         {
             "type": "text",
-            "content": "I 2014 fikk en spansk mann medhold i en historisk sak mot Google. Han hadde solgt huset sitt på tvangsauksjon på 1990-tallet - en vanskelig periode i livet hans. Mange år etter dukket fortsatt denne nyheten opp som første treff når noen googlet ham. Han mente dette krenket privatlivet hans og krevde at Google slettet lenken. EU-domstolen ga ham rett. Dette la grunnlaget for det vi i dag kaller retten til å bli glemt."
+            "content": "I 2014 fikk spanjolen Mario Costeja González medhold i en historisk sak mot Google. Huset hans hadde blitt lagt ut på tvangsauksjon fordi han skyldte penger til det spanske trygdesystemet, og avisen La Vanguardia hadde kunngjort auksjonen i 1998. Mange år etter dukket disse avissidene fortsatt opp når noen googlet navnet hans, selv om saken for lengst var gjort opp. Han krevde at Google fjernet lenkene, og EU-domstolen ga ham rett (EU-domstolen, 2014). Dette la grunnlaget for det vi i dag kaller retten til å bli glemt."
         },
         {
             "type": "text",
-            "content": "I dag kan du kreve at Google, sosiale medier og andre tjenester sletter informasjon om deg - om visse vilkår er oppfylt. Informasjonen må ikke lenger være relevant, den må være feilaktig eller du må ha hatt en særlig grunn til å gi samtykke da den ble lagt ut (for eksempel at du var under 18 år). Retten gjelder ikke absolutt - avisartikler om offentlige figurer kan for eksempel ikke kreves slettet bare fordi personen synes det er flaut. Informasjonsfriheten veier også tungt."
+            "content": "I dag kan du kreve at Google, sosiale medier og andre tjenester sletter informasjon om deg - om visse vilkår er oppfylt. Datatilsynet (2026) lister blant annet opp at formålet med å lagre opplysningene er nådd, at du har trukket tilbake samtykket ditt, at bedriften har behandlet opplysningene ulovlig, eller at du er under 18 år og ikke lenger vil bruke en digital tjeneste du har vært på. Retten gjelder likevel ikke absolutt: er lagringen eller publiseringen vernet av ytringsfriheten og informasjonsfriheten, kan kravet ditt bli avslått (Datatilsynet, 2026). En avisartikkel om en offentlig person kan altså ikke kreves slettet bare fordi personen synes den er flau."
         },
         {
             "type": "component",
@@ -202,11 +202,11 @@
         },
         {
             "type": "text",
-            "content": "Personvern handler om dine data. Opphavsrett handler om noe litt annet: hvem som eier et kreativt verk. Når noen lager et bilde, skriver en sang, filmer en video eller skriver en tekst, får de automatisk opphavsrett til det de har laget. Det betyr at andre ikke kan bruke verket uten tillatelse - selv om det er gratis tilgjengelig på internett."
+            "content": "Personvern handler om dine data. Opphavsrett handler om noe litt annet: hvem som eier et kreativt verk. Loven sier det rett ut: den som skaper et åndsverk, har opphavsrett til verket (Åndsverkloven, 2018). Du trenger altså ikke søke om noe - retten oppstår i det øyeblikket du lager bildet, sangen, videoen eller teksten. Opphaveren har enerett til å lage kopier av verket og til å gjøre det tilgjengelig for allmennheten, og andre kan derfor ikke bruke det uten tillatelse - selv om det ligger gratis på internett (Lassen mfl., 2024)."
         },
         {
             "type": "text",
-            "content": "Dette er en vanlig misforståelse: Bare fordi noe er lagt ut gratis på nett, betyr det ikke at det er fritt å bruke. Tar du et bilde fra Google Bilder og bruker det i en skoleoppgave uten å oppgi kilde, bryter du opphavsretten - selv om bildet ikke kostet noe. Likevel er det mange som gjør dette uten å tenke seg om. Noen nettsteder tilbyr bilder og musikk under åpne lisenser (som Creative Commons), som betyr at du kan bruke dem gratis så lenge du oppgir hvem som har laget dem."
+            "content": "Dette er en vanlig misforståelse: Bare fordi noe er lagt ut gratis på nett, betyr det ikke at det er fritt å bruke. Loven gir opphaveren krav på å bli navngitt slik god skikk tilsier (Åndsverkloven, 2018). Tar du et bilde fra Google Bilder og bruker det i en skoleoppgave uten å oppgi hvem som har laget det, bryter du altså opphavsretten - selv om bildet ikke kostet noe. Likevel er det mange som gjør dette uten å tenke seg om. Noen nettsteder tilbyr bilder og musikk under åpne lisenser som Creative Commons. Alle variantene av disse lisensene krever at du navngir den som eier rettighetene når du bruker verket (Tande, 2025)."
         },
         {
             "type": "text",
@@ -236,7 +236,7 @@
             "props": {
                 "forstaa": [
                     "Hva er forskjellen på et aktivt og et passivt digitalt spor? Gi et eksempel på hver.",
-                    "Hva står forkortelsen GDPR for, og hvilke tre rettigheter gir loven deg over dataene dine?",
+                    "Hva står forkortelsen GDPR for, og hvilke rettigheter gir regelverket deg over dataene dine?",
                     "Hva skjedde i den spanske saken mot Google i 2014, og hva ble resultatet?",
                     "Hva menes med opphavsrett, og når får du opphavsrett til noe du har laget?"
                 ],
@@ -278,7 +278,7 @@
                             "GDPR gjelder bare for bedrifter, ikke privatpersoner"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "GDPR gir deg blant annet rett til innsyn i egne data, rett til å få rettet feil og rett til å bli glemt. Disse rettighetene gjelder for alle som bor i EØS-området, inkludert Norge."
+                        "explanation": "GDPR gir deg blant annet rett til å få vite hva som lagres om deg, og rett til å bli glemt. Disse rettighetene gjelder i hele EØS-området, inkludert Norge."
                     },
                     {
                         "question": "Hva er opphavsrett?",
@@ -315,6 +315,21 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Datatilsynet. (2026). *Rett til sletting*. Hentet 07.08.2026 fra [datatilsynet.no](https://www.datatilsynet.no/rettigheter-og-plikter/den-registrertes-rettigheter/rett-til-sletting/)",
+                    "EU-domstolen. (2014). *Judgment in Case C-131/12: Google Spain SL, Google Inc. v Agencia Española de Protección de Datos, Mario Costeja González* (pressemelding nr. 70/14). Hentet 07.08.2026 fra [curia.europa.eu](https://curia.europa.eu/jcms/upload/docs/application/pdf/2014-05/cp140070en.pdf)",
+                    "Gisle, J. (2026). *Personvernforordningen*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/personvernforordningen](https://snl.no/personvernforordningen)",
+                    "Lassen, B. S., Lund, A. M. & Tande, K. M. (2024). *Opphavsrett*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/opphavsrett](https://snl.no/opphavsrett)",
+                    "Tande, K. M. (2025). *Creative Commons*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Creative_Commons](https://snl.no/Creative_Commons)",
+                    "Åndsverkloven. (2018). *Lov om opphavsrett til åndsverk mv.* (LOV-2018-06-15-40). Lovdata. Hentet 07.08.2026 fra [lovdata.no](https://lovdata.no/dokument/NL/lov/2018-06-15-40)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-07T00:00:00Z"
 }
