@@ -16,7 +16,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Vi lever i en tid der ordet 'sannhet' ofte følges av spørsmålstegn. Med begreper som 'alternative fakta', ekkokamre på sosiale medier og kunstig intelligens som kan dikte opp troverdige bilder, kan det føles som om grunnen under oss svikter. Men kampen om sannheten er ikke ny. \n\nHistorien om mennesket er også historien om hvordan vi har avgjort hva som er sant. Det som var en uomtvistelig sannhet for et menneske i middelalderen, ville virke som ren overtro for en vitenskapsmann på 1800-tallet. Og kanskje vil våre etterkommere se på vår tids blindveier med samme hoderystende undring.\n\nI denne artikkelen skal vi se på hvordan vi har flyttet sannhetens kilde: Fra himmelen, inn i menneskets fornuft, og nå – kanskje – inn i maskinene."
+            "content": "Vi lever i en tid der ordet 'sannhet' ofte følges av spørsmålstegn. Med begreper som 'alternative fakta', ekkokamre på sosiale medier og kunstig intelligens som kan dikte opp troverdige bilder, kan det føles som om grunnen under oss svikter. Men kampen om sannheten er ikke ny. \n\nHistorien om mennesket er også historien om hvordan vi har avgjort hva som er sant. Det som var en uomtvistelig sannhet for et menneske i middelalderen, ville virke som ren overtro for en vitenskapsmann på 1800-tallet. Og kanskje vil våre etterkommere se på vår tids blindveier med samme hoderystende undring.\n\nI denne artikkelen skal vi se på hvordan vi har flyttet sannhetens kilde: Fra himmelen, inn i menneskets fornuft, og nå - kanskje - inn i maskinene."
         },
         {
             "type": "header",
@@ -36,7 +36,7 @@
         },
         {
             "type": "text",
-            "content": "Gjennom historien har vi skiftet på hvilken av disse vi legger mest vekt på – og hvem vi stoler på at skal fortelle oss det."
+            "content": "Begge svarene har sine svakheter, og filosofene diskuterer dem fortsatt (Holmen, 2025). Gjennom historien har vi skiftet på hvilken av disse vi legger mest vekt på - og hvem vi stoler på at skal fortelle oss det."
         },
         {
             "type": "header",
@@ -49,14 +49,14 @@
         },
         {
             "type": "text",
-            "content": "I det lange tidsrommet vi kaller [middelalderen](/historie/middelalderen/middelalderen), var ikke sannheten noe du trengte å finne opp selv. Den var allerede gitt. Sannheten var åpenbart av Gud gjennom Bibelen og kirken.\n\nHvis du ville vite hvordan verden var skapt, eller hva som var rett og galt, så du ikke på data eller gjorde eksperimenter. Du leste de hellige skriftene eller hørte på paven. Sannhet var knyttet til autoritet. Å tvile på kirken var ikke bare å ta feil; det var å sette seg opp mot selve universets orden.\n\nDette ga samfunnet en enorm stabilitet. Alle delte det samme verdensbildet. Men det betød også at nye ideer som ikke passet inn i puslespillet, ble undertrykt (se [inkvisisjonen](/historie/middelalderen/det-hellige-romerske-rike))."
+            "content": "I det lange tidsrommet vi kaller [middelalderen](/historie/middelalderen/middelalderen), var ikke sannheten noe du trengte å finne opp selv. Den var allerede gitt. Sannheten var åpenbart av Gud gjennom Bibelen og kirken.\n\nHvis du ville vite hvordan verden var skapt, eller hva som var rett og galt, så du ikke på data eller gjorde eksperimenter. Du leste de hellige skriftene eller hørte på paven. Sannhet var knyttet til autoritet. Å tvile på kirken var ikke bare å ta feil; det var å sette seg opp mot selve universets orden.\n\nDette ga samfunnet en enorm stabilitet. Alle delte det samme verdensbildet. Men det betød også at nye ideer som ikke passet inn i puslespillet, ble undertrykt (se [inkvisisjonen](/historie/middelalderen/det-hellige-romerske-rike)). Hvor sterke disse autoritetene var, ser vi tydeligst i det som skjedde da tenkere seinere begynte å utfordre dem: Gud, kirken, kongen og Bibelen var da fortsatt de selvsagte svarene på hva som er sant (Krefting, 2026)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Galileos sannhet",
-                "content": "Da Galileo Galilei på 1600-tallet hevdet at jorden beveget seg rundt solen, ble han tvunget til å trekke det tilbake. Det var ikke fordi kirken ikke så bevisene hans, men fordi bevisene hans brøt med autoriteten til skriftene. Det var en konflikt mellom to helt ulike måter å finne sannhet på."
+                "content": "Galileo Galilei sluttet seg offentlig til Kopernikus' lære i 1613. Den 22. juni 1633 måtte han avsverge læren om at jorden beveger seg, og han ble dømt til livsvarig fengsel (Elgarøy, 2024). Det var ikke fordi kirken ikke så bevisene hans, men fordi bevisene hans brøt med autoriteten til skriftene. Det var en konflikt mellom to helt ulike måter å finne sannhet på."
             }
         },
         {
@@ -65,7 +65,7 @@
         },
         {
             "type": "text",
-            "content": "Med den vitenskapelige revolusjon og [opplysningstiden](/historie/den-franske-revolusjon/intro) flyttet sannhetens kilde seg. Man begynte å stole på egne sanser og fornuft i stedet for gamle bøker. Sannhet ble til noe som kunne måles, veies og testes.\n\nDette er den vitenskapelige metodes fødsel. Nå var ikke noe sant bare fordi en konge eller en biskop sa det. Det var sant hvis hvem som helst kunne utføre det samme eksperimentet og få det samme svaret. Dette var en radikalt demokratisk tanke: Sannheten tilhørte alle som var villige til å bruke fornuften.\n\nDette natursynet (se også [naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)) la grunnlaget for den moderne verden, medisin og teknologi."
+            "content": "Med den vitenskapelige revolusjon og [opplysningstiden](/historie/den-franske-revolusjon/intro) flyttet sannhetens kilde seg. Man begynte å stole på egne sanser og fornuft i stedet for gamle bøker. Sannhet ble til noe som kunne måles, veies og testes.\n\nFornuften ble brukt som et våpen mot fordommer, enten de var forankret i religiøse dogmer, gammel filosofi, tradisjonell makt eller folketro (Krefting, 2026). Dette er den vitenskapelige metodes fødsel. Nå var ikke noe sant bare fordi en konge eller en biskop sa det. Det var sant hvis hvem som helst kunne utføre det samme eksperimentet og få det samme svaret. Dette var en radikalt demokratisk tanke: Sannheten tilhørte alle som var villige til å bruke fornuften.\n\nDette natursynet (se også [naturens sjel](/samfunnskunnskap/ideer-og-verdenssyn/naturens-sjel)) la grunnlaget for den moderne verden, medisin og teknologi."
         },
         {
             "type": "component",
@@ -99,7 +99,7 @@
         },
         {
             "type": "text",
-            "content": "Mot slutten av det 20. århundre begynte noen å spørre: Er vitenskapens sannhet egentlig så nøytral som vi tror? Filosofer påpekte at det vi kaller 'sant' ofte er farget av hvem som har makt i samfunnet.\n\nI denne perioden vokste tanken om at det kanskje finnes flere 'sannheter' som eksisterer side om side. Det man ser som en siviliserende misjon i ett perspektiv, kan sees på som brutal [kolonialisering](/historie/kolonialisering/eic) i et annet. \n\nDette har gitt oss viktig innsikt i at vi alle bærer på fordommer, men det har også gjort det vanskeligere å bli enige om felles fakta. Hvis alt bare er 'perspektiver', hvordan skal vi da løse globale problemer som krever felles handling?"
+            "content": "Mot slutten av det 20. århundre begynte noen å spørre: Er vitenskapens sannhet egentlig så nøytral som vi tror? Filosofer påpekte at det vi kaller 'sant' ofte er farget av hvem som har makt i samfunnet.\n\nDenne retningen kalles postmodernisme, og den kjennetegnes av skepsis til store fortellinger, absolutte sannheter og faste ideer. I stedet framheves det subjektive, det mangfoldige og det relative (Røstvik, 2024). I denne perioden vokste tanken om at det kanskje finnes flere 'sannheter' som eksisterer side om side. Det man ser som en siviliserende misjon i ett perspektiv, kan sees på som brutal [kolonialisering](/historie/kolonialisering/eic) i et annet. \n\nDette har gitt oss viktig innsikt i at vi alle bærer på fordommer, men det har også gjort det vanskeligere å bli enige om felles fakta. Hvis alt bare er 'perspektiver', hvordan skal vi da løse globale problemer som krever felles handling?"
         },
         {
             "type": "header",
@@ -107,7 +107,7 @@
         },
         {
             "type": "text",
-            "content": "I dag står vi foran et nytt skifte. Vi overlater mer og mer av sannhetssøkingen til maskiner. Når du søker på Google eller ser en video på TikTok, bestemmer algoritmer hva som er 'relevant' (og dermed ofte hva som føles 'sant') for akkurat deg.\n\nHer ser vi en ny type sannhet: Sannsynlighetssannhet. En AI som ChatGPT beregner ikke sannhet i filosofisk forstand; den beregner hvilket ord som mest sannsynlig kommer etter det forrige basert på enorme datamengder. \n\nFaren er at vi går tilbake til en form for 'autoritetssannhet' – men denne gangen er autoriteten ikke en gud eller en kirke, men en ugjennomsiktig kode som ingen egentlig forstår helt."
+            "content": "I dag står vi foran et nytt skifte. Vi overlater mer og mer av sannhetssøkingen til maskiner. Når du søker på Google eller ser en video på TikTok, bestemmer algoritmer hva som er 'relevant' (og dermed ofte hva som føles 'sant') for akkurat deg.\n\nHer ser vi en ny type sannhet: Sannsynlighetssannhet. En AI som ChatGPT beregner ikke sannhet i filosofisk forstand; den lærer å gjette hvilket ord som mest sannsynlig kommer etter det forrige, basert på enorme datamengder (Wold, 2025). Derfor kan tekstene den lager virke troverdige selv når de inneholder faktafeil (Wold, 2025).\n\nFaren er at vi går tilbake til en form for 'autoritetssannhet' - men denne gangen er autoriteten ikke en gud eller en kirke, men en ugjennomsiktig kode som ingen egentlig forstår helt."
         },
         {
             "type": "component",
@@ -123,7 +123,7 @@
         },
         {
             "type": "text",
-            "content": "Kanskje er vår tids største utfordring å finne tilbake til en felles sannhet uten å bli totalitære. Vi trenger vitenskapens objektivitet, men vi trenger også ydmykheten ved å vite at vi alltid ser verden gjennom et filter.\n\nSom [Sokrates](/krle/filosofi/sokrates) sa: 'Det eneste jeg vet, er at jeg intet vet.' Kanskje er dette den mest evigvarende sannheten vi har."
+            "content": "Kanskje er vår tids største utfordring å finne tilbake til en felles sannhet uten å bli totalitære. Vi trenger vitenskapens objektivitet, men vi trenger også ydmykheten ved å vite at vi alltid ser verden gjennom et filter.\n\nSom [Sokrates](/krle/filosofi/sokrates) sa: 'Det eneste jeg vet, er at jeg intet vet.' Poenget hans var at han var visere enn andre nettopp fordi han visste at han ikke visste, mens andre trodde de visste når de ikke gjorde det (Fossheim, 2024). Kanskje er dette den mest evigvarende sannheten vi har."
         },
         {
             "type": "component",
@@ -199,6 +199,21 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Elgarøy, Ø. (2024). *Galileo Galilei*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Galileo_Galilei](https://snl.no/Galileo_Galilei)",
+                    "Fossheim, H. (2024). *Sokrates*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Sokrates](https://snl.no/Sokrates)",
+                    "Holmen, H. A. (2025). *Sannhet*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/sannhet](https://snl.no/sannhet)",
+                    "Krefting, E. (2026). *Opplysningstiden*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/opplysningstiden](https://snl.no/opplysningstiden)",
+                    "Røstvik, C. M. (2024). *Postmodernisme*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/postmodernisme](https://snl.no/postmodernisme)",
+                    "Wold, S. (2025). *Språkmodell*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/språkmodell](https://snl.no/spr%C3%A5kmodell)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-07T00:00:00Z"
 }

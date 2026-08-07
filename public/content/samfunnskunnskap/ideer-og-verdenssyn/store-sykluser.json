@@ -5,7 +5,7 @@
     "layout": "rich",
     "image": "/images/ideer/store-sykluser/dalio-big-cycle.webp",
     "createdDate": "2023-12-22T12:00:00Z",
-    "lastUpdated": "2025-04-06T12:00:00Z",
+    "lastUpdated": "2026-08-07T00:00:00Z",
     "tags": [
         "økonomi",
         "historie",
@@ -15,7 +15,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Har du noen gang lurt på hvorfor noen land virker uovervinnelige i hundre år, for så å plutselig miste alt? Historien er ikke bare en rekke tilfeldige hendelser - det er en fortelling om sykluser. Akkurat som årstidene eller menneskelivet, går sivilisasjoner gjennom faser av fødsel, vekst, modenhet og forfall. Dette kalles ofte den store syklusen, et mønster som har gjentatt seg i over 500 år."
+            "content": "Har du noen gang lurt på hvorfor noen land virker uovervinnelige i hundre år, for så å plutselig miste alt? Historien er ikke bare en rekke tilfeldige hendelser - det er en fortelling om sykluser. Akkurat som årstidene eller menneskelivet, går sivilisasjoner gjennom faser av fødsel, vekst, modenhet og forfall. Dette kalles ofte den store syklusen, et mønster investoren Ray Dalio mener å finne igjen gjennom de siste 500 årene (Dalio, 2020)."
         },
         {
             "type": "header",
@@ -23,7 +23,7 @@
         },
         {
             "type": "text",
-            "content": "Ray Dalio (født 1949) er en av verdens mest kjente fondsforvaltere. Han har bygget opp en formue på over 150 milliarder kroner og har skrevet bøker om økonomi, historie og forhandlinger. Det som gjør Dalio spesiell er at han ikke bare investerer penger - han har brukt tiår på å studere historiens mønstre for å forstå hvordan verden egentlig fungerer. Hans konklusjon: stormaktenes oppgang og fall følger alltid det samme mønsteret."
+            "content": "Ray Dalio er en av verdens mest kjente fondsforvaltere. Han startet investeringsselskapet Bridgewater Associates i 1975 fra en toroms leilighet i New York, og ledet det som toppsjef og investeringssjef fram til han trakk seg ut mellom 2017 og 2021 (Bridgewater Associates, u.å.). Det som gjør Dalio spesiell er at han ikke bare investerer penger - han har studert oppgangen og fallet til alle de store imperiene og valutaene deres de siste 500 årene, med hovedvekt på det nederlandske, det britiske og det amerikanske (Dalio, 2020). Hans konklusjon: stormaktenes oppgang og fall følger stort sett det samme mønsteret."
         },
         {
             "type": "image",
@@ -37,7 +37,7 @@
         },
         {
             "type": "text",
-            "content": "For å forstå verden i dag, må vi se på de grunnleggende kreftene som driver endring. Dalio hevder at nasjoners styrke kan måles gjennom 8 indikatorer, men at det hele starter med ett fundament: utdanning."
+            "content": "For å forstå verden i dag, må vi se på de grunnleggende kreftene som driver endring. Dalio (2020) måler et imperiums samlede makt med åtte indekser, og i kurven hans er det utdanning som stiger først - fundamentet resten hviler på."
         },
         {
             "type": "text",
@@ -80,12 +80,12 @@
         {
             "type": "image",
             "src": "/images/ideer/store-sykluser/dalio-gullstandard.webp",
-            "alt": "34 dollar tilsvarte 1 unse gull under Bretton Woods-avtalen",
-            "caption": "Frem til 1971 var dollaren knyttet til gull: 34 dollar = 1 unse gull. President Nixon brøt denne koblingen."
+            "alt": "Illustrasjon av at USA holder på å gå tom for gull mens dollarsedler strømmer ut i verden",
+            "caption": "Frem til 1971 var dollaren knyttet til gull: 35 dollar = 1 unse gull. President Nixon brøt denne koblingen."
         },
         {
             "type": "text",
-            "content": "To historiske hendelser illustrerer prinsipp 1 godt. I 1933 forbød USA private borgere å eie gull og koblet løsere på gullstandarden. I 1971 brøt president Nixon den siste koblingen mellom dollar og gull helt. Fra da av kunne USA trykke penger uten noen fysisk grense. Dette la grunnlaget for enorme gjeldsnivåer - og satte i gang mekanismene Dalio advarer mot."
+            "content": "To historiske hendelser illustrerer prinsipp 1 godt. Under Bretton Woods-systemet var dollaren låst til gull med 35 dollar per unse (Ghizoni, 2013). I 1933 gikk president Roosevelt bort fra løftet om at folk kunne bytte inn pengene sine i gull, og amerikanere fikk stort sett ikke lov til å eie gull igjen før i 1974 (Dalio, 2020). Søndag 15. august 1971 kunngjorde president Nixon at USA ikke lenger ville løse inn papirdollar i gull (Dalio, 2020), og dermed falt både gullinnløsningen og de forpliktende valutakursene i Bretton Woods-avtalen bort (Thomassen, 2026). Fra da av kunne USA trykke penger uten noen fysisk grense. Dette la grunnlaget for enorme gjeldsnivåer - og satte i gang mekanismene Dalio advarer mot."
         },
         {
             "type": "header",
@@ -99,7 +99,7 @@
         },
         {
             "type": "text",
-            "content": "Hvis vi ser på de siste fem århundrene, ser vi en tydelig stafettveksling. Ingen makt forblir på toppen evig. Etter at nederlenderne mistet sitt forsprang, overtok det [britiske imperiet](/historie/kolonialisering/britisk-imperium). Gjennom den [industrielle revolusjonen](/historie/kolonialisering/europa-erobrer-verden) og overlegen militær makt, skapte de en periode med relativ fred kjent som Pax Britannica."
+            "content": "Hvis vi ser på de siste fem århundrene, ser vi en tydelig stafettveksling. Ingen makt forblir på toppen evig. Etter at nederlenderne mistet sitt forsprang, overtok det [britiske imperiet](/historie/kolonialisering/britisk-imperium). Gjennom den [industrielle revolusjonen](/historie/kolonialisering/europa-erobrer-verden) og overlegen militær makt, skapte de en periode med relativ fred og stabilitet i områdene de kontrollerte, omtrent fra 1815 til 1914. Denne perioden kalles Pax Britannica (Encyclopaedia Britannica, 2026)."
         },
         {
             "type": "text",
@@ -138,7 +138,7 @@
         },
         {
             "type": "text",
-            "content": "Dalio skiller mellom to typer orden som styrer verden. Den interne ordenen er et lands grunnlov og styresett - altså reglene for hvordan landet styres innenfor sine egne grenser. Denne endres som regel gjennom borgerkrig eller revolusjon. Den eksterne ordenen er avtalene mellom land om hvordan verden skal henge sammen - handel, grenser, militærallianer. Denne endres som regel gjennom internasjonale kriger. Den siste store endringen i ekstern orden kom etter andre verdenskrig i 1945, da USA satte de nye spillereglene."
+            "content": "Dalio skiller mellom to typer orden som styrer verden. Den interne ordenen er et lands grunnlov og styresett - altså reglene for hvordan landet styres innenfor sine egne grenser. Denne endres som regel gjennom borgerkrig eller revolusjon. Den eksterne ordenen er avtalene mellom land om hvordan verden skal henge sammen - handel, grenser, militærallianer. Denne endres som regel gjennom internasjonale kriger. Den siste store endringen i ekstern orden kom etter andre verdenskrig. I 1945 delte den nye verdensordenen verden i to ideologiske leirer: de demokratiske kapitalistene ledet av USA, og de autoritære kommunistene ledet av Sovjetunionen (Dalio, 2020)."
         },
         {
             "type": "header",
@@ -152,7 +152,7 @@
         },
         {
             "type": "text",
-            "content": "Hver stormakt gjennomgår typisk sju faser i løpet av en syklus som varer rundt 250 år:"
+            "content": "De viktigste imperiene har typisk vart i rundt 250 år, men med store variasjoner - Dalio (2020) sier pluss/minus 150 år. Innenfor en slik syklus gjennomgår stormakten typisk sju faser:"
         },
         {
             "type": "list",
@@ -217,7 +217,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Nederlandske oppfinnelser på toppen av syklusen",
-                "content": "Da Nederland var verdens mektigste nasjon på 1600-tallet, kom en rekke oppfinnelser som forandret verden:\n\n- Bestefarsklokke (presis tidtaking for navigasjon)\n- Teleskop (Galileo forbedret den, men nederlenderne oppfant den)\n- Store vindmøller (for å pumpe vann og drive industri)\n- Skip for det åpne hav (karavellene som muliggjorde verdensomseiling)\n- Aksjebørs (VOC - verdens første aksjeselskap i 1602)\n\nDette er ikke tilfeldig - det er resultatet av systematisk satsing på utdanning og innovasjon gjennom flere generasjoner."
+                "content": "Da Nederland var verdens mektigste nasjon på 1600-tallet, kom en rekke oppfinnelser som forandret verden:\n\n- Pendeluret (Christiaan Huygens fant det opp i 1656, og konstruksjonen hans er fortsatt grunnlaget for pendelur) (Holtebekk, 2024)\n- Teleskopet (nederlenderen Hans Lippershey lanserte det første kjente linseteleskopet i 1608, og Galilei tok det straks i bruk) (Engvold, 2026)\n- Store vindmøller (for å pumpe vann og drive industri)\n- Fløyteskipet (en hollandsk skipstype som på 1600-tallet kanskje var det viktigste handelsskipet i europeiske farvann) (Store norske leksikon, 2024)\n- Aksjehandel (VOC ble stiftet i 1602 og ble forbildet for alle andre kompanier; andelsbrevene kunne omsettes, og verdens første børs kom i Amsterdam i 1611) (Eliassen, 2025)\n\nDette er ikke tilfeldig - det er resultatet av systematisk satsing på utdanning og innovasjon gjennom flere generasjoner."
             }
         },
         {
@@ -410,6 +410,23 @@
                     "Artikkelen sier at mange mener vi i dag er i fase 5 eller 6. Skriv en kort tekst der du bruker det du har lest til å vurdere om du er enig, og hva du selv legger merke til i nyhetene.",
                     "Diskuter i par eller gruppe: Hvis penger i bunn og grunn bare er tillit, hva ville skje hvis verden mistet tilliten til dollaren? Skriv ned tre mulige følger.",
                     "Velg en oppfinnelse fra Nederlands storhetstid på 1600-tallet og sammenlign den med en teknologi som gir land makt i dag. Hva er likt, og hva er annerledes?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bridgewater Associates. (u.å.). *Our Founder*. Hentet 07.08.2026 fra [bridgewater.com/our-founder](https://www.bridgewater.com/our-founder)",
+                    "Dalio, R. (2020). *The Changing World Order*. Bridgewater Associates. Hentet 07.08.2026 fra [asiabusinesscouncil.org](https://asiabusinesscouncil.org/wp-content/uploads/2020/10/The-Changing-World-Order_Ray-Dalio.pdf)",
+                    "Eliassen, F.-E. (2025). *Handelskompani*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/handelskompani](https://snl.no/handelskompani)",
+                    "Encyclopaedia Britannica. (2026). *Pax Britannica*. Hentet 07.08.2026 fra [britannica.com/event/Pax-Britannica](https://www.britannica.com/event/Pax-Britannica)",
+                    "Engvold, O. (2026). *Teleskop*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/teleskop](https://snl.no/teleskop)",
+                    "Ghizoni, S. K. (2013). *Creation of the Bretton Woods System*. Federal Reserve History. Hentet 07.08.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/bretton-woods-created)",
+                    "Holtebekk, T. (2024). *Christiaan Huygens*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Christiaan_Huygens](https://snl.no/Christiaan_Huygens)",
+                    "Store norske leksikon. (2024). *Fløyte - skipstype*. Hentet 07.08.2026 fra [snl.no/fløyte_-_skip](https://snl.no/fl%C3%B8yte_-_skip)",
+                    "Thomassen, E. (2026). *Bretton Woods-avtalen*. Store norske leksikon. Hentet 07.08.2026 fra [snl.no/Bretton_Woods-avtalen](https://snl.no/Bretton_Woods-avtalen)"
                 ]
             }
         }

@@ -10,14 +10,14 @@
     "learningPathData": {
         "id": "store-sykluser-sti",
         "title": "Koden bak historien: Imperienes sykluser",
-        "description": "En fondsforvalter med 150 milliarder kroner hevder å ha knekket historiens kode. Gjennom Ray Dalios rammeverk skal du lære å se de usynlige mønstrene som bestemmer hvilke nasjoner som stiger og faller - og hva dette betyr for verden akkurat nå.",
+        "description": "En av verdens mest kjente fondsforvaltere hevder å ha knekket historiens kode. Gjennom Ray Dalios rammeverk skal du lære å se de usynlige mønstrene som bestemmer hvilke nasjoner som stiger og faller - og hva dette betyr for verden akkurat nå.",
         "steps": [
             {
                 "id": "prolog",
                 "phase": "Prolog: Hvem er mannen bak teorien?",
                 "title": "Koden bak historien",
                 "type": "fakta",
-                "content": "Tenk deg at du kan se bak nyhetene. At du kan forstå hvorfor USA er supermakt, hvorfor Kina vokser, og hva som egentlig skjedde i 2008-finanskrisen - ikke som tilfeldige hendelser, men som deler av et mønster som har gjentatt seg i over 500 år.\n\nRay Dalio hevder å ha funnet dette mønsteret. Han er en av verdens mest kjente investorer og har brukt tiår på å studere historiens imperier - fra det nederlandske på 1600-tallet til USA i dag.\n\nSpørsmålet hans er enkelt: Hvorfor gjentar historien seg? Og svaret hans har forandret måten mange tenker på økonomi og geopolitikk.",
+                "content": "Tenk deg at du kan se bak nyhetene. At du kan forstå hvorfor USA er supermakt, hvorfor Kina vokser, og hva som egentlig skjedde i 2008-finanskrisen - ikke som tilfeldige hendelser, men som deler av et mønster Ray Dalio mener å finne igjen gjennom de siste 500 årene.\n\nDalio er en av verdens mest kjente investorer, og han har studert historiens imperier - fra det nederlandske på 1600-tallet til USA i dag.\n\nSpørsmålet hans er enkelt: Hvorfor gjentar historien seg? Og svaret hans har forandret måten mange tenker på økonomi og geopolitikk.",
                 "tasks": [
                     "Les avsnittet 'Hvem er Ray Dalio?' i artikkelen [De store syklusene](/samfunnskunnskap/ideer-og-verdenssyn/store-sykluser)",
                     "Hvem er Ray Dalio og hva er han kjent for?",
