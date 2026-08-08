@@ -49,6 +49,36 @@ const normalizeProps = (props: Record<string, unknown>, type?: string) => {
     return props;
 };
 
+// Norsk brødtekst begynner ofte med en dato («26. januar 1788 seilte …») eller
+// et ordenstall («38. breddegrad»), og det ser ut nøyaktig som et markdown-
+// listepunkt. Skillet ligger i hva som følger tallet: ekte listepunkter i
+// innholdet vårt starter med stor bokstav eller et markup-tegn ([ eller **),
+// mens datoer og ordenstall fortsetter med liten bokstav. Månedsnavn sjekkes i
+// tillegg, slik at en feilskrevet «26. Januar» også fanges.
+const MONTH_START = /^(jan|feb|mar|apr|mai|jun|jul|aug|sep|okt|nov|des)[a-zæøå]*\.?$/i;
+
+const isOrderedListItem = (line: string): boolean => {
+    const match = line.match(/^(\d+)\.\s+(\S+)/);
+    if (!match) return false;
+    const [, number, firstWord] = match;
+    // «1950. Alarmen går …» er et årstall, ikke punkt nummer 1950. Ingen liste
+    // i innholdet vårt er i nærheten av så lang.
+    if (Number(number) > 99) return false;
+    if (MONTH_START.test(firstWord)) return false;
+    return !/^\p{Ll}/u.test(firstWord);
+};
+
+// En blokk er en nummerert liste bare hvis *alle* de nummererte linjene ser ut
+// som listepunkter. Er én av dem en dato, rendres hele blokka som brødtekst -
+// da mister vi bare listestilen, aldri selve teksten.
+const isOrderedListBlock = (block: string): boolean => {
+    const numbered = block
+        .split('\n')
+        .map((line) => line.trim())
+        .filter((line) => /^\d+\.\s/.test(line));
+    return numbered.length > 0 && numbered.every(isOrderedListItem);
+};
+
 // Simple markdown renderer fallback.
 // Tar imot undefined fordi blokkene henter teksten fra alternative felter
 // (content/text/value) som alle er valgfrie — funksjonen håndterer tomt selv.
@@ -85,10 +115,13 @@ const renderWithMarkdown = (text: string | undefined, concepts?: Concept[]) => {
                 }
 
                 // Check for Ordered Lists (starts with number dot)
-                if (block.match(/^\d+\.\s/)) {
+                if (block.match(/^\d+\.\s/) && isOrderedListBlock(block)) {
                     const items = block.split(/\n/).filter(line => line.trim().match(/^\d+\.\s/));
+                    // Behold forfatterens starttall, så «3. … / 4. …» ikke
+                    // renummereres til 1 av nettleseren.
+                    const start = Number(items[0].trim().match(/^(\d+)\./)?.[1] ?? 1);
                     return (
-                        <ol key={index} className="list-decimal list-outside ml-6 space-y-2 mb-6 text-slate-700">
+                        <ol key={index} start={start} className="list-decimal list-outside ml-6 space-y-2 mb-6 text-slate-700">
                             {items.map((item, i) => {
                                 const content = item.replace(/^\d+\.\s+/, '');
                                 return (
