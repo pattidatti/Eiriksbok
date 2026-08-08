@@ -35,7 +35,7 @@
         },
         {
             "type": "text",
-            "content": "På 1880-tallet gjorde den østerrikske økonomen Eugen von Böhm-Bawerk en oppdagelse som endret vår forståelse av rente. Han viste at rente ikke er noe bankene finner på for å tjene penger. Rente er prisen på tid."
+            "content": "På 1880-tallet gjorde den østerrikske økonomen Eugen von Böhm-Bawerk (1851-1914) en oppdagelse som endret vår forståelse av rente. Hovedverket hans, Kapital und Kapitalzins, kom i to bind mellom 1884 og 1889, og i det andre bindet la han fram sin egen teori om hva kapitalrenten bunner i (Store norske leksikon, 2024). Han viste at rente ikke er noe bankene finner på for å tjene penger. Rente er prisen på tid."
         },
         {
             "type": "text",
@@ -79,7 +79,7 @@
         },
         {
             "type": "text",
-            "content": "Den østerrikske økonomen Friedrich Hayek argumenterte for at prissystemet er som et enormt informasjonsnettverk. Ingen enkeltperson kan vite hva millioner av mennesker trenger, ønsker, eller planlegger. Men prisene samler opp denne informasjonen og formidler den videre."
+            "content": "Den østerrikske økonomen Friedrich Hayek argumenterte for at prissystemet er som et enormt informasjonsnettverk. Kunnskapen vi trenger for å styre en økonomi, finnes aldri samlet på ett sted, mente han - den ligger spredt som småbiter hos alle de menneskene som kjenner sin egen situasjon best (Hayek, 1945). Ingen enkeltperson kan vite hva millioner av mennesker trenger, ønsker eller planlegger. Men prisene samler opp denne informasjonen og formidler den videre."
         },
         {
             "type": "text",
@@ -89,11 +89,11 @@
             "type": "quote",
             "content": "Den naturlige renten er resultatet av millioner av individuelle beslutninger om å spare eller bruke penger. Ingen enkeltperson - og heller ingen sentralbank - kan beregne den.",
             "author": "Basert på Friedrich Hayek",
-            "source": "Prices and Production (1931)"
+            "source": "The Use of Knowledge in Society (1945)"
         },
         {
             "type": "text",
-            "content": "Dette er kjernen i Hayeks kunnskapsproblem: Informasjonen som trengs for å sette riktig rente er spredt blant millioner av mennesker. Den finnes ikke samlet noe sted. Når en sentralbank prøver å gjette seg frem til riktig rente, mangler den tilgang til denne informasjonen. Resultatet er at renten blir et falskt signal - en veiviser som peker i feil retning. [Ludwig von Mises](/krle/filosofi/mises), en annen østerriksk økonom, kalte dette det økonomiske kalkulasjonsproblemet."
+            "content": "Dette er kjernen i Hayeks kunnskapsproblem: Informasjonen som trengs for å sette riktig rente er spredt blant millioner av mennesker. Den finnes ikke samlet noe sted (Hayek, 1945). Når en sentralbank prøver å gjette seg frem til riktig rente, mangler den tilgang til denne informasjonen. Resultatet er at renten blir et falskt signal - en veiviser som peker i feil retning. [Ludwig von Mises](/krle/filosofi/mises), en annen østerriksk økonom, kalte dette det økonomiske kalkulasjonsproblemet."
         },
         {
             "type": "header",
@@ -152,7 +152,7 @@
         },
         {
             "type": "text",
-            "content": "I 1913 opprettet USA Federal Reserve, sin første moderne sentralbank. For første gang fikk et sentralt organ makt til å sette diskontorenten - prisen bankene betalte for å låne penger. Federal Reserve kunne nå trykke renten ned under det naturlige nivået. Gjennom 1920-årene holdt Fed renten kunstig lav, noe som utløste en massiv kredittekspansjon. Resultatet kjenner vi: [børskrakket i 1929 og Den store depresjonen](/historie/mellomkrigstiden/borskrakk)."
+            "content": "President Woodrow Wilson signerte Federal Reserve Act 23. desember 1913, og USA fikk sin første moderne sentralbank (Federal Reserve Bank of Kansas City, 2013). For første gang fikk et sentralt organ makt til å påvirke hva bankene måtte betale for å låne penger. Federal Reserve kunne nå trykke renten ned under det naturlige nivået. Etter østerriksk analyse holdt Fed renten kunstig lav gjennom 1920-årene, noe som utløste en massiv kredittekspansjon - og som endte med [børskrakket i 1929 og Den store depresjonen](/historie/mellomkrigstiden/borskrakk)."
         },
         {
             "type": "header",
@@ -160,7 +160,7 @@
         },
         {
             "type": "text",
-            "content": "Etter andre verdenskrig ble verdens land enige om et nytt pengesystem i byen Bretton Woods. Alle valutaer ble knyttet til den amerikanske dollaren, og dollaren ble knyttet til gull: 35 dollar per unse. Dette ga den amerikanske sentralbanken enorm global innflytelse. Men gullankeret satte fortsatt en viss grense for hvor mye sentralbanken kunne manipulere renten. Så lenge dollaren var knyttet til gull, kunne ikke Federal Reserve trykke ubegrenset med penger."
+            "content": "I juli 1944 ble verdens land enige om et nytt pengesystem i byen Bretton Woods. Valutaene ble holdt faste mot den amerikanske dollaren, og dollaren ble knyttet til gull: 35 dollar per unse (Ghizoni, 2013a). Fra konferansen kom også Det internasjonale valutafondet (IMF) og Verdensbanken. Dette ga den amerikanske sentralbanken enorm global innflytelse. Men gullankeret satte fortsatt en viss grense for hvor mye sentralbanken kunne manipulere renten. Så lenge dollaren var knyttet til gull, kunne ikke Federal Reserve trykke ubegrenset med penger."
         },
         {
             "type": "header",
@@ -168,7 +168,7 @@
         },
         {
             "type": "text",
-            "content": "Den 15. august 1971 gikk president Richard Nixon på TV og kunngjorde at dollaren ikke lenger kunne veksles inn i gull. Bretton Woods-systemet var over. Verdens pengesystem ble rent fiat-basert - pengene hadde ingen annen verdi enn tilliten folk hadde til dem. Gullankeret, som i over hundre år hadde begrenset sentralbankenes makt, var borte. Fra nå av kunne Federal Reserve og andre sentralbanker sette renten akkurat der de ville, uten noen naturlig bremse."
+            "content": "Den 15. august 1971 gikk president Richard Nixon på TV og kunngjorde at andre lands myndigheter ikke lenger kunne veksle dollar inn i gull. Han innførte samtidig en 90 dagers frys av lønninger og priser (Ghizoni, 2013b). Bretton Woods-systemet var i praksis over. Verdens pengesystem ble rent fiat-basert - pengene hadde ingen annen verdi enn tilliten folk hadde til dem. Gullankeret, som i over hundre år hadde begrenset sentralbankenes makt, var borte. Fra nå av kunne Federal Reserve og andre sentralbanker sette renten akkurat der de ville, uten noen naturlig bremse."
         },
         {
             "type": "header",
@@ -176,7 +176,7 @@
         },
         {
             "type": "text",
-            "content": "Etter finanskrisen i 2008 tok sentralbankene et steg som aldri tidligere var prøvd i denne skalaen: De satte renten til null, eller til og med under null. Federal Reserve holdt renten på 0-0,25 prosent i syv år. Den europeiske sentralbanken innførte negativ rente - du måtte betale for å ha penger i banken. Bank of Japan hadde allerede holdt renten nær null siden 1990-tallet."
+            "content": "Etter finanskrisen i 2008 tok sentralbankene et steg som aldri tidligere var prøvd i denne skalaen: De satte renten til null, eller til og med under null. Federal Reserve tok styringsrenten ned til et målområde på 0-0,25 prosent mot slutten av 2008 (Weinberg, 2013), og først 16. desember 2015 ble renten satt opp igjen (Board of Governors of the Federal Reserve System, 2015). Det ble sju år med tilnærmet nullrente. Den europeiske sentralbanken gikk enda lenger og satte innskuddsrenten til -0,10 prosent fra 11. juni 2014 (Den europeiske sentralbanken, 2014) - bankene måtte altså betale for å ha penger stående. Japan hadde da allerede levd med svært lave renter i mange år."
         },
         {
             "type": "text",
@@ -188,7 +188,7 @@
         },
         {
             "type": "text",
-            "content": "For å forstå hvorfor kunstig lav rente er så farlig, må vi se på hva som skjer inne i selve produksjonsstrukturen. Friedrich Hayek utviklet en modell kalt produksjonstriangelen, som viser hvordan økonomien er organisert i lag over tid."
+            "content": "For å forstå hvorfor kunstig lav rente er så farlig, må vi se på hva som skjer inne i selve produksjonsstrukturen. Hayek arbeidet særlig med penge-, pris- og konjunkturteori, og han la stor vekt på hvordan en inflasjonsskapende pengepolitikk forstyrrer økonomien. I 1974 fikk han nobelprisen i økonomi, sammen med Gunnar Myrdal (Munthe, 2024). Han utviklet en modell kalt produksjonstriangelen, som viser hvordan økonomien er organisert i lag over tid."
         },
         {
             "type": "text",
@@ -234,17 +234,17 @@
         },
         {
             "type": "text",
-            "content": "Keynesianerne mener at markeder ikke alltid rydder opp i seg selv. Lønninger og priser er trege til å justere seg nedover - en ansatt godtar sjelden lavere lønn selv når bedriften sliter. Uten aktiv rentepolitikk kan arbeidsledigheten vare i mange år. Sentralbanken kan, ved å senke renten, stimulere etterspørselen og redde jobber som ellers ville gått tapt. For keynesianske økonomer er stabilitet viktigere enn renhet."
+            "content": "Allerede i 1923 hånte Keynes økonomer som nøyde seg med å si at markedet ordner opp til slutt (Keynes, 1923). Keynesianerne mener at markeder ikke alltid rydder opp i seg selv. Lønninger og priser er trege til å justere seg nedover - en ansatt godtar sjelden lavere lønn selv når bedriften sliter. Uten aktiv rentepolitikk kan arbeidsledigheten vare i mange år. Sentralbanken kan, ved å senke renten, stimulere etterspørselen og redde jobber som ellers ville gått tapt. For keynesianske økonomer er stabilitet viktigere enn renhet."
         },
         {
             "type": "quote",
-            "content": "På lang sikt er vi alle døde. Økonomer setter seg selv en for lett og for ubrukelig oppgave hvis de i urolige tider bare kan fortelle oss at stormen vil gi seg av seg selv.",
+            "content": "På lang sikt er vi alle døde. Økonomer setter seg selv en for lett og for unyttig oppgave hvis de i stormfulle tider bare kan fortelle oss at når stormen er over, er havet flatt igjen.",
             "author": "John Maynard Keynes",
             "source": "A Tract on Monetary Reform (1923)"
         },
         {
             "type": "text",
-            "content": "Mainstream-sentralbankene forsvarer rentepolitikken med et pragmatisk argument: Et inflasjonsmål på 2 prosent gir forutsigbarhet og forhindrer deflasjonsspiraler. Ben Bernanke, sjefen for Federal Reserve under finanskrisen i 2008, argumenterte for at aktiv pengepolitikk ga en stor modereringsperiode med lavere svingninger fra 1985 til 2007. Mario Draghi, sjefen for den europeiske sentralbanken, hindret eurosonen fra å kollapse i 2012 ved å love å gjøre alt som var nødvendig for å redde euroen."
+            "content": "Mainstream-sentralbankene forsvarer rentepolitikken med et pragmatisk argument: Et inflasjonsmål på 2 prosent gir forutsigbarhet og forhindrer deflasjonsspiraler. Ben Bernanke, som senere ble sjef for Federal Reserve under finanskrisen, holdt i 2004 et foredrag han kalte «Den store modereringen». Der viste han at svingningene i økonomien hadde falt kraftig siden midten av 1980-tallet, og han mente bedre pengepolitikk var en viktig grunn (Bernanke, 2004). Mario Draghi, sjefen for den europeiske sentralbanken, roet markedene i juli 2012 med å love at ECB var «klar til å gjøre hva som helst som trengs for å bevare euroen» (Draghi, 2012)."
         },
         {
             "type": "header",
@@ -304,6 +304,26 @@
                     "Se på grafen over Federal Reserve sin styringsrente. Velg to årstall der renten var svært ulik, og skriv noen setninger om hva som kan ha skjedd i økonomien i de periodene.",
                     "Skriv en kort tekst der du forklarer for en venn hvorfor billige lån kan høres bra ut på kort sikt, men skape problemer på lengre sikt.",
                     "Diskuter i klassen: Bør en gruppe eksperter i en sentralbank bestemme renten, eller bør markedet finne den selv? Hvilke fordeler og farer ser dere ved hvert alternativ?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bernanke, B. S. (2004). *The Great Moderation*. Board of Governors of the Federal Reserve System. Hentet 08.08.2026 fra [federalreserve.gov](https://www.federalreserve.gov/boarddocs/speeches/2004/20040220/)",
+                    "Board of Governors of the Federal Reserve System. (2015). *Federal Reserve issues FOMC statement, 16. desember 2015*. Hentet 08.08.2026 fra [federalreserve.gov](https://www.federalreserve.gov/newsevents/pressreleases/monetary20151216a.htm)",
+                    "Den europeiske sentralbanken. (2014). *Monetary policy decisions, 5. juni 2014*. Hentet 08.08.2026 fra [ecb.europa.eu](https://www.ecb.europa.eu/press/pr/date/2014/html/pr140605.en.html)",
+                    "Draghi, M. (2012). *Speech at the Global Investment Conference in London*. Den europeiske sentralbanken. Hentet 08.08.2026 fra [ecb.europa.eu](https://www.ecb.europa.eu/press/key/date/2012/html/sp120726.en.html)",
+                    "Federal Reserve Bank of Kansas City. (2013). *Federal Reserve Act Signed into Law*. Federal Reserve History. Hentet 08.08.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/federal-reserve-act-signed)",
+                    "Ghizoni, S. K. (2013a). *Creation of the Bretton Woods System*. Federal Reserve History. Hentet 08.08.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/bretton-woods-created)",
+                    "Ghizoni, S. K. (2013b). *Nixon Ends Convertibility of U.S. Dollars to Gold and Announces Wage/Price Controls*. Federal Reserve History. Hentet 08.08.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/gold-convertibility-ends)",
+                    "Hayek, F. A. (1945). *The Use of Knowledge in Society*. American Economic Review, 35(4), 519-530. Hentet 08.08.2026 fra [econlib.org](https://www.econlib.org/library/Essays/hykKnw.html)",
+                    "Keynes, J. M. (1923). *A Tract on Monetary Reform*. Macmillan and Co.",
+                    "Munthe, P. (2024). *Friedrich August von Hayek*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/Friedrich_August_von_Hayek)",
+                    "Store norske leksikon. (2024). *Eugen von Böhm-Bawerk*. Hentet 08.08.2026 fra [snl.no](https://snl.no/Eugen_von_B%C3%B6hm-Bawerk)",
+                    "Weinberg, J. (2013). *The Great Recession and Its Aftermath*. Federal Reserve History. Hentet 08.08.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath)"
                 ]
             }
         }
@@ -426,5 +446,5 @@
     ],
     "timeline": [],
     "createdDate": "2026-03-17T00:00:00Z",
-    "lastUpdated": "2026-03-17T00:00:00Z"
+    "lastUpdated": "2026-08-08"
 }

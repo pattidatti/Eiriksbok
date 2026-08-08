@@ -9256,29 +9256,6 @@
       "geoConfidence": "tag"
     },
     {
-      "id": "frontfagmodellen",
-      "title": "Norges lønnsmaskin",
-      "description": "Motoren i norsk økonomi. Forstå systemet som balanserer lønn, eksport og rettferdighet.",
-      "startDate": 1952,
-      "endDate": null,
-      "displayDate": "1952",
-      "type": "lesson",
-      "subjectId": "samfunnskunnskap",
-      "topicId": "arbeidsliv",
-      "link": "/samfunnskunnskap/arbeidsliv/frontfagmodellen",
-      "tags": [
-        "arbeidsliv",
-        "økonomi",
-        "lønn",
-        "frontfag"
-      ],
-      "lat": 60.5,
-      "lng": 8.5,
-      "placeLabel": "Norge",
-      "placeCountryId": 578,
-      "geoConfidence": "guess"
-    },
-    {
       "id": "korea-dmz-etablert",
       "title": "DMZ etableres i Korea",
       "description": "Koreakrigen avsluttes med en våpenhvile. En 250 km lang demilitarisert sone deler halvøya. Ingen fredsavtale er signert.",
@@ -10186,6 +10163,29 @@
       "lng": 90,
       "placeLabel": "Asia",
       "geoConfidence": "tag"
+    },
+    {
+      "id": "frontfagmodellen",
+      "title": "Norges lønnsmaskin",
+      "description": "Motoren i norsk økonomi. Forstå systemet som balanserer lønn, eksport og rettferdighet.",
+      "startDate": 1965,
+      "endDate": null,
+      "displayDate": "1965",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "arbeidsliv",
+      "link": "/samfunnskunnskap/arbeidsliv/frontfagmodellen",
+      "tags": [
+        "arbeidsliv",
+        "økonomi",
+        "lønn",
+        "frontfag"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
     },
     {
       "id": "indonesia-1965",
