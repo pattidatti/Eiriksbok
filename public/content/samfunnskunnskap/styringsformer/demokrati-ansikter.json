@@ -20,11 +20,11 @@
         },
         {
             "type": "paragraph",
-            "content": "I dag kaller nesten alle land i verden seg for demokratier. Selv de mest brutale diktaturer gjennomfører valg og hevder at de representerer folkets vilje. Navnet har blitt så prestisjefylt at ingen tør å stå åpent frem mot det. Men hvis vi ser bak merkelappen, oppdager vi raskt at demokrati ikke er én ting, men et sett med prinsipper og institusjoner som kan organiseres på utallige måter. Ordet kommer fra de greske demos (folk) og kratos (makt), men i moderne tid er 'folkestyre' en kompleks maskin med mange tannhjul som må fungere sammen."
+            "content": "I dag kaller nesten alle land i verden seg for demokratier. Selv de mest brutale diktaturer gjennomfører valg og hevder at de representerer folkets vilje. Navnet har blitt så prestisjefylt at ingen tør å stå åpent frem mot det. Men hvis vi ser bak merkelappen, oppdager vi raskt at demokrati ikke er én ting, men et sett med prinsipper og institusjoner som kan organiseres på utallige måter. Ordet kommer fra det greske dêmokratia, satt sammen av dêmos (folk) og kratos (makt eller styre) (Svensson et al., 2025). I moderne tid er folkestyre en kompleks maskin med mange tannhjul som må fungere sammen: institusjoner som storting, regjering og domstoler, regler for maktfordeling mellom dem, og rettigheter som stemmerett og ytringsfrihet (Svensson et al., 2025)."
         },
         {
             "type": "paragraph",
-            "content": "Et avgjørende skille går mellom det vi kaller proseduralt demokrati og liberalt demokrati. Et proseduralt demokrati er et land som 'følger prosedyrene' – de holder valg, folk kaster en lapp i en kasse, og en vinner blir utropt. Men hvis den som vinner valget deretter bruker makten til å stenge kritiske aviser, fengsle politiske motstandere eller fjerne uavhengige dommere, har vi et illiberalt demokrati. Det er kun et liberalt demokrati som beskytter individets rettigheter og sørger for at flertallet ikke kan undertrykke mindretallet. Et ekte demokrati handler altså om hva som skjer mellom valgene, vel så mye som selve valgdagen."
+            "content": "Et avgjørende skille går mellom det vi kaller proseduralt demokrati og liberalt demokrati. Et proseduralt demokrati er et land som 'følger prosedyrene' - de holder valg, folk kaster en lapp i en kasse, og en vinner blir utropt. Men hvis den som vinner valget deretter bruker makten til å stenge kritiske aviser, fengsle politiske motstandere eller fjerne uavhengige dommere, har vi et illiberalt demokrati. Det er kun et liberalt demokrati som beskytter individets rettigheter og sørger for at flertallet ikke kan undertrykke mindretallet. Forskere skiller derfor mellom valgdemokrati og liberalt demokrati, og et land kan falle fra den ene kategorien til den andre uten at et eneste valg blir avlyst (V-Dem Institute, 2026). Et ekte demokrati handler altså om hva som skjer mellom valgene, vel så mye som selve valgdagen."
         },
         {
             "type": "header",
@@ -32,11 +32,11 @@
         },
         {
             "type": "paragraph",
-            "content": "Hvordan skal forholdet mellom folkevalgte og de som styrer landet være? Her har verden delt seg i to hovedspor. Det første er parlamentarismen, slik vi kjenner den fra Norge, Storbritannia og store deler av Europa. Her er ikke regjeringen valgt direkte av folket, men den utgår fra parlamentet (Stortinget). Kjernen i parlamentarismen er at regjeringen må ha parlamentets tillit for å kunne styre. Hvis Stortinget vedtar et mistillisforlag, må regjeringen gå av på dagen. Dette systemet skaper en tett kobling mellom lovgivende og utøvende makt, og det krever ofte at partier må forhandle og inngå kompromisser for å danne en stabil regjering."
+            "content": "Hvordan skal forholdet mellom folkevalgte og de som styrer landet være? Her har verden delt seg i to hovedspor. Det første er parlamentarismen, slik vi kjenner den fra Norge, Storbritannia og store deler av Europa. Her er ikke regjeringen valgt direkte av folket, men den utgår fra parlamentet (Stortinget). Kjernen i parlamentarismen er at regjeringen sitter så lenge flertallet i nasjonalforsamlingen tillater det (Nordby & Thorsen, 2026). Hvis flertallet vedtar et mistillitsforslag, eller regjeringen taper en avstemning der den selv har stilt kabinettsspørsmål, søker hele regjeringen avskjed (Nordby & Thorsen, 2026). Dette systemet skaper en tett kobling mellom lovgivende og utøvende makt, og det krever ofte at partier må forhandle og inngå kompromisser for å danne en stabil regjering."
         },
         {
             "type": "paragraph",
-            "content": "Det andre sporet er presidentstyre, med USA som det mest kjente eksempelet. Her velges presidenten og parlamentet hver for seg i to uavhengige valg. Presidenten sitter i en fast periode og kan som regel ikke fjernes av parlamentet med mindre hen begår et alvorlig lovbrudd (impeachment). Dette skaper et mye tydeligere skille mellom maktens grener. Presidenten har sitt eget mandat direkte fra folket. Utfordringen med dette systemet er at det kan oppstå politisk lammelse (deadlock) hvis presidenten kommer fra et annet parti enn flertallet i parlamentet, noe som ofte fører til harde politiske konflikter og lite samarbeid."
+            "content": "Det andre sporet er presidentstyre, med USA som det mest kjente eksempelet. Her velges presidenten og parlamentet hver for seg i to uavhengige valg. Regjeringen kan ikke avsettes av flertallet i nasjonalforsamlingen; presidenten sitter en fast periode og kan bare fjernes gjennom en egen riksrettsprosess (impeachment) (Nordby & Thorsen, 2026). Dette skaper et mye tydeligere skille mellom maktens grener. Presidenten har sitt eget mandat direkte fra folket. Utfordringen med dette systemet er at det kan oppstå politisk lammelse (deadlock) hvis presidenten kommer fra et annet parti enn flertallet i parlamentet, noe som ofte fører til harde politiske konflikter og lite samarbeid."
         },
         {
             "type": "header",
@@ -48,11 +48,11 @@
         },
         {
             "type": "paragraph",
-            "content": "I et system med forholdstallsvalg, som i Norge, forsøker man å gjøre parlamentet til et speilbilde av folket. Hvis et parti får 15 prosent av stemmene på landsbasis, skal de ha omtrent 15 prosent av plassene på Stortinget. Dette systemet gir rom for mange forskjellige partier og synspunkter. For å styre må partiene ofte samarbeide i koalisjoner. Dette oppmuntrer til en kultur preget av kompromiss, men det kan også føre til at små partier får uforholdsmessig stor makt (vippeposisjon) når de større partiene trenger deres støtte."
+            "content": "I et system med forholdstallsvalg fordeles mandatene mellom partiene etter hvor stor andel av stemmene hvert parti får (Thorsen, 2025a). Norge bruker dette til valg på Stortinget, kommunestyrer og fylkesting, og har gjort det siden 1921 (Thorsen, 2025a). Hvis et parti får 15 prosent av stemmene på landsbasis, skal de altså ha omtrent 15 prosent av plassene på Stortinget. Dette systemet gjør det lettere for flere enn to partier å komme inn i nasjonalforsamlingen (Thorsen, 2025a). For å styre må partiene ofte samarbeide i koalisjoner. Dette oppmuntrer til en kultur preget av kompromiss, men det kan også føre til at små partier får uforholdsmessig stor makt (vippeposisjon) når de større partiene trenger deres støtte."
         },
         {
             "type": "paragraph",
-            "content": "I kontrast står flertallsvalg i enmannskretser, ofte kalt winner takes it all. Dette systemet brukes i land som USA og Storbritannia. Her er landet delt opp i distrikter, og den kandidaten som får flest stemmer i sitt distrikt, får plassen i parlamentet. Alle stemmer gitt til de andre kandidatene i det distriktet går 'tapt'. Dette fører nesten alltid til et topartisystem, fordi det er ekstremt vanskelig for små partier å vinne et helt distrikt alene. Fordelen er ofte stabile regjeringer som kan handle kraftfullt, men ulempen er at millioner av velgere kan føle at deres stemme aldri blir hørt."
+            "content": "I kontrast står flertallsvalg i enmannskretser, ofte kalt winner takes it all. Systemet brukes særlig i engelsktalende land, spesielt i Storbritannia og tidligere britiske kolonier som USA, Canada og India (Evjen, 2026). Her er landet delt opp i distrikter, og den kandidaten som får flest stemmer i sitt distrikt, får plassen i parlamentet. Alle stemmer gitt til de andre kandidatene i det distriktet gir ingen mandater. Dette har en tendens til å skape et topartisystem, fordi det er ekstremt vanskelig for små partier å vinne et helt distrikt alene, og partisystemet blir da som regel svært stabilt med to partier som veksler på å vinne valg og regjeringsmakt (Evjen, 2026). Ulempen er at millioner av velgere kan føle at deres stemme aldri blir hørt."
         },
         {
             "type": "header",
@@ -60,7 +60,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Når vi ser på det norske systemet, møter vi ofte begreper som sperregrense og utjevningsmandater. Sperregrensen er på 4 prosent i Norge. Partier som havner under denne grensen på landsbasis, får ikke være med i kampen om utjevningsmandatene. Hensikten er å hindre at Stortinget blir sprengt i altfor mange bittesmå partier, noe som ville gjort landet nesten umulig å styre. Utjevningsmandatene er der for å rette opp de skjevhetene som oppstår fordi valgdistriktene våre har ulik størrelse. Målet er at det totale antallet mandater et parti får, skal samsvare best mulig med deres totale oppslutning i hele landet. Dette er matematikk i demokratiets tjeneste."
+            "content": "Når vi ser på det norske systemet, møter vi ofte begreper som sperregrense og utjevningsmandater. Sperregrensen er på 4 prosent i Norge, og et parti må over den for å være med i kampen om utjevningsmandatene (Gisle et al., 2025). Ved valget i 2021 fikk både Miljøpartiet De Grønne og Kristelig Folkeparti null utjevningsmandater, nettopp fordi de havnet under grensen (Gisle et al., 2025). Hensikten er å hindre at Stortinget blir sprengt i altfor mange bittesmå partier, noe som ville gjort landet nesten umulig å styre. Norge har 19 utjevningsmandater, ett fra hvert valgdistrikt, av Stortingets 169 plasser (Gisle et al., 2025). De skal sikre bedre samsvar mellom antallet stemmer et parti får, og hvor mange representanter det ender opp med. Dette er matematikk i demokratiets tjeneste."
         },
         {
             "type": "header",
@@ -68,11 +68,11 @@
         },
         {
             "type": "paragraph",
-            "content": "Et velfungerende demokrati er helt avhengig av rettsstaten. Dette betyr at ingen, selv ikke den mest populære statsministeren, står over loven. Politikk handler om hva vi vil gjøre, men rettsstaten handler om hva vi må og ikke får lov til å gjøre. Uavhengige domstoler er demokratiets øverste forsvarere. De skal dømme etter loven, ikke etter hvem som har flertallet bak seg i øyeblikket."
+            "content": "Et velfungerende demokrati er helt avhengig av rettsstaten. En rettsstat er en stat der maktutøvelsen på alle vesentlige punkter er regulert og begrenset av lover og andre kunngjorte, generelle regler (Thorsen, 2025b). Det betyr at ingen, selv ikke den mest populære statsministeren, står over loven. Politikk handler om hva vi vil gjøre, men rettsstaten handler om hva vi må og ikke får lov til å gjøre. Uavhengige domstoler er demokratiets øverste forsvarere: de skal avgjøre saker etter etablerte og anerkjente lover og regler, uten hensyn til hva andre deler av staten måtte mene er mest praktisk (Thorsen, 2025b)."
         },
         {
             "type": "paragraph",
-            "content": "I et rettssamfunn er borgerne beskyttet mot vilkårlig maktbruk. Du kan ikke fengsles uten dom, du har rett til å kjenne anklagene mot deg, og du har rett til en forsvarer. Dette kalles ofte prosedural rettferdighet. Uten dette skjoldet ville demokratiet raskt kunne forvandle seg til flertallets tyranni, der de 51 prosentene kunne stemme for å ta rettighetene fra de 49 prosentene."
+            "content": "I et rettssamfunn er borgerne beskyttet mot vilkårlig maktbruk. Beskyttelsen mot vilkårlig fengsling ble utviklet gjennom prinsipper som habeas corpus, og legalitetsprinsippet sier at ingen kan straffes for en handling som ikke på forhånd var definert som straffbar (Thorsen, 2025b). Motstykket til rettsstaten er politistaten, der makten brukes vilkårlig og uten grunnlag i anerkjente lover (Thorsen, 2025b). Uten dette skjoldet ville demokratiet raskt kunne forvandle seg til flertallets tyranni, der de 51 prosentene kunne stemme for å ta rettighetene fra de 49 prosentene."
         },
         {
             "type": "header",
@@ -92,7 +92,7 @@
         },
         {
             "type": "paragraph",
-            "content": "I de siste tiårene har forskere advart om en global trend kalt demokratisk tilbakefall. Vi ser at land som tidligere beveget seg mot mer frihet, nå snur. Dette skjer ofte ikke gjennom plutselige militærkupp, men gjennom en gradvis svekkelse av demokratiske institusjoner. Valgte ledere begynner å endre lover for å sitte lenger, de tar kontroll over domstolene, eller de trakasserer kritiske journalister og sivile organisasjoner."
+            "content": "I de siste tiårene har forskere advart om en global trend kalt demokratisk tilbakefall, eller autokratisering. Nesten en fjerdedel av verdens land var inne i en slik utvikling i 2025 (V-Dem Institute, 2026). Dette skjer ofte ikke gjennom plutselige militærkupp, men gjennom en gradvis svekkelse av demokratiske institusjoner, drevet av ledere som selv er demokratisk valgt (V-Dem Institute, 2026). Ytringsfriheten er det området som har blitt angrepet mest de siste 25 årene, og i mange av landene svekkes også rettsstaten og kontrollmekanismene rundt makten (V-Dem Institute, 2026)."
         },
         {
             "type": "paragraph",
@@ -102,7 +102,7 @@
             "type": "component",
             "name": "FactBox",
             "props": {
-                "title": "Populisme – en dobbeltegget kniv",
+                "title": "Populisme - en dobbeltegget kniv",
                 "content": "Populisme beskrives ofte som en retning som setter det rene folket opp mot den korrupte eliten. På den ene siden kan populisme virke demokratiserende ved å trekke frem saker som de etablerte partiene har oversett. På den andre siden kan det true demokratiet hvis ledere hevder at bare de kjenner folkets sanne vilje, og derfor ser på alle motstemmer som forrædere eller uekte representanter."
             }
         },
@@ -112,7 +112,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Selv om vi styres av valgte representanter, bruker mange land elementer av direkte demokrati i form av folkeavstemninger. I Sveits er dette en integrert del av styresettet, der innbyggerne flere ganger i året stemmer over konkrete lover. I Norge har vi hatt folkeavstemninger om viktige spørsmål som medlemskap i EU og forbud mot brennevin. Noen mener vi bør ha mer av dette for å øke engasjementet, mens andre frykter at komplekse saker ikke egner seg for enkle ja- eller nei-svar, og at det svekker parlamentets rolle."
+            "content": "Selv om vi styres av valgte representanter, bruker mange land elementer av direkte demokrati i form av folkeavstemninger. I Sveits er dette en integrert del av styresettet: siden 1848 har alle store lovendringer blitt til gjennom folkeavstemninger, både nasjonalt og i de 26 kantonene (Berg & Een de Amoriza, 2024). I Norge har vi hatt seks folkeavstemninger. To av dem, i 1919 og 1926, gjaldt forbud mot salg av brennevin, og to av dem, i 1972 og 1994, gjaldt norsk medlemskap i EF og EU (Berg & Een de Amoriza, 2024). Noen mener vi bør ha mer av dette for å øke engasjementet, mens andre frykter at komplekse saker ikke egner seg for enkle ja- eller nei-svar, og at det svekker parlamentets rolle."
         },
         {
             "type": "component",
@@ -138,13 +138,13 @@
             "items": [
                 {
                     "label": "Maktfordeling",
-                    "left": "Sterk – uavhengige domstoler og medier",
-                    "right": "Svak – makten samles hos lederen"
+                    "left": "Sterk - uavhengige domstoler og medier",
+                    "right": "Svak - makten samles hos lederen"
                 },
                 {
                     "label": "Mindretallsvern",
-                    "left": "Høyt – grunnlovssikrede rettigheter",
-                    "right": "Lavt – flertallets vilje trumfer alt"
+                    "left": "Høyt - grunnlovssikrede rettigheter",
+                    "right": "Lavt - flertallets vilje trumfer alt"
                 },
                 {
                     "label": "Mediesituasjon",
@@ -178,6 +178,22 @@
                     "Skriv en kort tekst der du forklarer for en venn hvorfor et sterkt sivilt samfunn (idrettslag, foreninger, frie medier) er viktig for at demokratiet skal fungere. Bruk minst tre eksempler fra artikkelen.",
                     "Teksten advarer om at sosiale medier skaper ekkokamre der vi bare møter folk som mener det samme som oss. Tenk over din egen bruk av sosiale medier: møter du meninger du er uenig i, eller mest folk som tenker som deg?",
                     "Norge har hatt folkeavstemninger om blant annet EU. Diskuter med en medelev: bør vi bruke folkeavstemninger oftere, eller egner ikke kompliserte saker seg for enkle ja- eller nei-svar?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, O. T. & Een de Amoriza, S. (2024). *folkeavstemning*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/folkeavstemning](https://snl.no/folkeavstemning)",
+                    "Evjen, K. (2026). *flertallsvalg*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/flertallsvalg](https://snl.no/flertallsvalg)",
+                    "Gisle, J., Holmøyvik, E., Berg, O. T., Evjen, K. & Bolstad, E. (2025). *utjevningsmandat*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/utjevningsmandater](https://snl.no/utjevningsmandater)",
+                    "Nordby, T. & Thorsen, D. E. (2026). *parlamentarisme*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/parlamentarisme](https://snl.no/parlamentarisme)",
+                    "Svensson, P., Thorsen, D. E. & Hovde, K.-O. (2025). *demokrati*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/demokrati](https://snl.no/demokrati)",
+                    "Thorsen, D. E. (2025a). *forholdstallsvalg*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/forholdstallsvalg](https://snl.no/forholdstallsvalg)",
+                    "Thorsen, D. E. (2025b). *rettsstat*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/rettsstat](https://snl.no/rettsstat)",
+                    "V-Dem Institute. (2026). *Democratic backsliding reaches Western democracies, with U.S. decline unprecedented*. University of Gothenburg. Hentet 08.08.2026 fra [v-dem.net](https://www.v-dem.net/news/press-release-democratic-backsliding-reaches-western-democracies-with-us-decline-unprecedented/)"
                 ]
             }
         }
@@ -223,5 +239,6 @@
             ],
             "correctAnswer": 1
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-08"
 }
