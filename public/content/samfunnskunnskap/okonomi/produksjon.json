@@ -14,7 +14,7 @@
     "content": [
         {
             "type": "text",
-            "value": "Hva tenker du på når du hører ordet produksjon? Kanskje ser du for deg en fabrikk med store piper, samlebånd og gnister som flyr? Det er riktig, men produksjon er mye mer enn det. \n\nI økonomifaget betyr produksjon alt som skapes av verdi. \n\nNår bakeren steker brød, er det produksjon. Når frisøren klipper hår, er det produksjon. Når en artist lager en ny sang, er det også produksjon. \n\nAlt vi mennesker lager for å dekke behovene våre – enten det er fysiske varer som biler og mat, eller tjenester som undervisning og helsepleie – faller inn under dette begrepet."
+            "content": "Hva tenker du på når du hører ordet produksjon? Kanskje ser du for deg en fabrikk med store piper, samlebånd og gnister som flyr? Det er riktig, men produksjon er mye mer enn det. \n\nI økonomifaget er produksjon den prosessen der ulike produksjonsfaktorer sammen lager nye økonomiske goder, altså varer og tjenester (Stoltz & Onshuus, 2025). \n\nNår bakeren steker brød, er det produksjon. Når frisøren klipper hår, er det produksjon. Når en artist lager en ny sang, er det også produksjon. \n\nAlt vi mennesker lager for å dekke behovene våre - enten det er fysiske varer som biler og mat, eller tjenester som undervisning og helsepleie - faller inn under dette begrepet."
         },
         {
             "type": "image",
@@ -24,19 +24,19 @@
         },
         {
             "type": "header",
-            "value": "Det store spørsmålet: Hva skal vi lage?"
+            "content": "Det store spørsmålet: Hva skal vi lage?"
         },
         {
             "type": "text",
-            "value": "Vi har ikke uendelig med ressurser på jorden. Det er begrenset med jern, tømmer, olje og – viktigst av alt – menneskelig arbeidskraft. \n\nDerfor må hvert samfunn svare på et vanskelig spørsmål: Hvordan skal vi bruke de knappe ressursene våre best mulig? \n\nSkal vi bruke stålet til å bygge jernbane eller sykehussenger? Skal vi bruke arbeidskraften til å bygge nye hus eller til å ta vare på eldre? \n\nUlike økonomiske systemer løser dette problemet på to helt forskjellige måter."
+            "content": "Vi har ikke uendelig med ressurser på jorden. Det er begrenset med jern, tømmer, olje og - viktigst av alt - menneskelig arbeidskraft. \n\nDerfor må hvert samfunn svare på et vanskelig spørsmål: Hvordan skal vi bruke de knappe ressursene våre best mulig? \n\nSkal vi bruke stålet til å bygge jernbane eller sykehussenger? Skal vi bruke arbeidskraften til å bygge nye hus eller til å ta vare på eldre? \n\nUlike økonomiske systemer løser dette problemet på to helt forskjellige måter."
         },
         {
             "type": "header",
-            "value": "1. Produksjon i Planøkonomi (Sosialisme)"
+            "content": "1. Produksjon i Planøkonomi (Sosialisme)"
         },
         {
             "type": "text",
-            "value": "I en planøkonomi (ofte knyttet til sosialisme) er det fellesskapet, representert ved staten eller kommunen, som bestemmer hva som skal produseres. \n\nI et demokrati har velgerne stor makt her. De stemmer på politikere som lover å bygge mer av det de ønsker seg, for eksempel sykehus, skoler eller jernbane. Politikernes jobb blir da å oppfylle disse valgløftene på vegne av folket.\n\nIdéen er at man gjennom valg kan styre ressursene dit samfunnet trenger dem mest, i stedet for dit det er mest lønnsomt. Betalingen skjer ofte over skatteseddelen."
+            "content": "En planøkonomi er et system der det offentlige har kontroll over varer, tjenester og produksjonsmidler i en stat (Thomassen & Brekke, 2025). Da er det fellesskapet, representert ved staten eller kommunen, som bestemmer hva som skal produseres. Den mest gjennomførte formen for planøkonomi så vi historisk i de kommunistiske landene, som Sovjetunionen, Cuba og Nord-Korea (Thomassen & Brekke, 2025).\n\nI et demokrati har velgerne stor makt her. De stemmer på politikere som lover å bygge mer av det de ønsker seg, for eksempel sykehus, skoler eller jernbane. Politikernes jobb blir da å oppfylle disse valgløftene på vegne av folket.\n\nIdéen er at man gjennom valg kan styre ressursene dit samfunnet trenger dem mest, i stedet for dit det er mest lønnsomt. Betalingen skjer ofte over skatteseddelen."
         },
         {
             "type": "section",
@@ -44,29 +44,36 @@
             "content": [
                 {
                     "type": "text",
-                    "value": "Tenk deg at du skulle bestemme hva alle i din kommune skulle ha til middag hver dag i en uke. Hvilke utfordringer ville du møtt på? Hvordan ville du vite hvem som er allergiske, hvem som hater fisk, eller hvem som plutselig fikk gjester?"
+                    "content": "Tenk deg at du skulle bestemme hva alle i din kommune skulle ha til middag hver dag i en uke. Hvilke utfordringer ville du møtt på? Hvordan ville du vite hvem som er allergiske, hvem som hater fisk, eller hvem som plutselig fikk gjester?"
                 }
             ]
         },
         {
             "type": "header",
-            "value": "2. Produksjon i Markedsøkonomi (Kapitalisme)"
+            "content": "2. Produksjon i Markedsøkonomi (Kapitalisme)"
         },
         {
             "type": "text",
-            "value": "I en markedsøkonomi (kapitalisme) er det ingen sentral sjef som bestemmer. I stedet er det kundene som er kongen. \n\nNår du kjøper en spesiell type sjokolade i butikken, sender du et signal til produsenten: «Lag mer av denne!» Dette kalles forbrukersuverenitet. \n\nBedriftene prøver hele tiden å gjette hva du vil ha. De kjøper råvarer og arbeidskraft for å lage produkter. \n\n*   Hvis de treffer blink og selger varen for mer enn det kostet å lage den, går de med overskudd. Det er et signal om at de har skapt verdi. \n*   Hvis ingen vil ha varen, går de med underskudd. Det er et signal om å stoppe – de sløser med samfunnets ressurser."
+            "content": "I en markedsøkonomi (kapitalisme) er det ingen sentral sjef som bestemmer. Ressursene fordeles i stedet gjennom markeder, altså gjennom handel mellom privatpersoner og bedrifter. Tilbud og etterspørsel danner priser, og prisene påvirker hva folk og bedrifter velger å produsere og kjøpe (Thomassen, 2026). \n\nNår du kjøper en spesiell type sjokolade i butikken, sender du et signal til produsenten: «Lag mer av denne!» Dette kalles forbrukersuverenitet. \n\nBedriftene prøver hele tiden å gjette hva du vil ha. De kjøper råvarer og arbeidskraft for å lage produkter."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Hvis de treffer blink og selger varen for mer enn det kostet å lage den, går de med overskudd. Det er et signal om at de har skapt verdi.",
+                "Hvis ingen vil ha varen, går de med underskudd. Det er et signal om å stoppe - de sløser med samfunnets ressurser."
+            ]
         },
         {
             "type": "text",
-            "value": "Den østerrikske økonomen Ludwig von Mises pekte på at uten markedspriser er det nesten umulig å vite om man sløser eller skaper verdi. Han kalte dette «kalkulasjonsproblemet»."
+            "content": "Den østerrikske økonomen Ludwig von Mises pekte på nettopp dette i 1920. Uten privat eiendomsrett til produksjonsmidlene finnes det ingen ekte markedspriser, og uten priser som viser hvor knappe og etterspurte ting er, kan ingen planlegger regne ut hva som er den beste bruken av ressursene (Encyclopaedia Britannica, 2026b). Han kalte dette kalkulasjonsproblemet."
         },
         {
             "type": "header",
-            "value": "Prøv selv: Planleggeren vs. Entreprenøren"
+            "content": "Prøv selv: Planleggeren vs. Entreprenøren"
         },
         {
             "type": "text",
-            "value": "I denne modellen kan du teste forskjellen. I den ene fanen er du en offentlig planlegger som må fordele budsjettet blindt. I den andre er du en bedrift som får umiddelbar respons fra markedet."
+            "content": "I denne modellen kan du teste forskjellen. I den ene fanen er du en offentlig planlegger som må fordele budsjettet blindt. I den andre er du en bedrift som får umiddelbar respons fra markedet."
         },
         {
             "type": "component",
@@ -74,55 +81,55 @@
         },
         {
             "type": "header",
-            "value": "3. Innvendinger og Østerrikske Svar"
+            "content": "3. Innvendinger og Østerrikske Svar"
         },
         {
             "type": "text",
-            "value": "Markedsøkonomien får ofte kritikk. Men hva sier egentlig de østerrikske økonomene til denne kritikken? Her er en oversikt:"
+            "content": "Markedsøkonomien får ofte kritikk. Under svarer vi med argumentene fra én bestemt retning i faget: den østerrikske skolen. Den bygger på at verdi er subjektiv, altså at en vare er verdt akkurat så mye som den klarer å dekke et menneskelig ønske, og at priser bærer informasjon som ingen sentral planlegger kan skaffe seg på annen måte (Encyclopaedia Britannica, 2026a). Dette er altså ett syn blant flere, ikke fasiten. Her er en oversikt:"
         },
         {
             "type": "header",
-            "value": "Ulikhet"
+            "content": "Ulikhet"
         },
         {
             "type": "text",
-            "value": "Kritikk: Markedet skaper store forskjeller mellom rike og fattige.\n\nSvar: Østerrikerne mener at ulikhet i seg selv ikke er problemet, men fattigdom. I et fritt marked blir man rik ved å tilby noe andre vil ha. Bill Gates ble rik fordi millioner av mennesker fikk nytte av PC-er. Kaken er ikke fastlåst; den vokser, slik at også de fattigste får det bedre over tid."
+            "content": "Kritikk: Markedet skaper store forskjeller mellom rike og fattige.\n\nSvar: Østerrikerne mener at ulikhet i seg selv ikke er problemet, men fattigdom. I et fritt marked blir man rik ved å tilby noe andre vil ha. Bill Gates ble rik fordi millioner av mennesker fikk nytte av PC-er. Kaken er ikke fastlåst; den vokser, slik at også de fattigste får det bedre over tid."
         },
         {
             "type": "header",
-            "value": "Eksternaliteter (f.eks. Miljø)"
+            "content": "Eksternaliteter (f.eks. Miljø)"
         },
         {
             "type": "text",
-            "value": "Kritikk: Bedrifter forurenser uten å betale for skaden (markedssvikt).\n\nSvar: Dette skyldes ofte manglende eiendomsrettigheter. Hvis noen eier en elv, vil de ikke tillate at en fabrikk dumper gift i den. Problemet (som «allmenningens tragedie») oppstår når ingen eier og passer på ressursen. Løsningen er sterkere eiendomsrett, ikke nødvendigvis mer regulering."
+            "content": "Kritikk: Bedrifter forurenser uten å betale for skaden (markedssvikt).\n\nSvar: Østerrikerne mener dette ofte skyldes manglende eiendomsrett. Hvis noen eier en elv, vil de ikke tillate at en fabrikk dumper gift i den. Problemet, som kalles allmenningens tragedie, oppstår når den enkelte bare regner med sin egen fortjeneste og ikke tapet de andre brukerne påføres (Thorsen, 2024).\n\nMerk at forskningen peker på tre veier ut av tragedien, ikke bare én: at allmenningen privatiseres, at myndighetene innfører begrensninger slik vi kjenner det fra fiskeriene, eller at brukerne selv organiserer seg og blir enige om regler for bruken (Thorsen, 2024). Østerrikerne foretrekker den første."
         },
         {
             "type": "header",
-            "value": "Monopoler"
+            "content": "Monopoler"
         },
         {
             "type": "text",
-            "value": "Kritikk: Store selskaper spiser de små og kan skru opp prisene.\n\nSvar: Ekte monopoler som varer over tid finnes nesten bare der staten beskytter dem (f.eks. konsesjoner eller tollmurer). På et fritt marked vil «overprofitt» tiltrekke seg konkurrenter. Hvis en bedrift blir stor fordi den er best og billigst, er det bra for kunden. Prøver de å bli dyre og dårlige, vil nye konkurrenter dukke opp."
+            "content": "Kritikk: Store selskaper spiser de små og kan skru opp prisene. Det er en reell fare: har en selger markedet for seg selv, kan hen sette prisen slik at fortjenesten blir størst mulig, og utnytte markedet ved å holde prisen høy (Stoltz & Andresen, 2025).\n\nSvar: Østerrikerne peker på at varige monopoler ofte er beskyttet av staten. De vanligste monopolene er da også offentlig eide, med en lovbestemt enerett til å tilby noe i et marked - Vinmonopolet er et norsk eksempel (Stoltz & Andresen, 2025). På et fritt marked vil høy fortjeneste tiltrekke seg konkurrenter. Hvis en bedrift blir stor fordi den er best og billigst, er det bra for kunden. Prøver den å bli dyr og dårlig, vil nye konkurrenter dukke opp."
         },
         {
             "type": "header",
-            "value": "Kortsiktighet"
+            "content": "Kortsiktighet"
         },
         {
             "type": "text",
-            "value": "Kritikk: Kapitalister tenker bare på neste kvartal.\n\nSvar: Tvert imot. Verdien av et selskap bygger på all fremtidig inntjening. En eier som ødelegger ressursene sine i dag, taper penger i morgen. Politikere, derimot, tenker ofte bare fram til neste valg (4 år). Markedet, gjennom renter og priser, koordinerer planer langt inn i fremtiden."
+            "content": "Kritikk: Kapitalister tenker bare på neste kvartal.\n\nSvar: Tvert imot. Verdien av et selskap bygger på all fremtidig inntjening. En eier som ødelegger ressursene sine i dag, taper penger i morgen. Politikere, derimot, tenker ofte bare fram til neste valg (4 år). Markedet, gjennom renter og priser, koordinerer planer langt inn i fremtiden."
         },
         {
             "type": "header",
-            "value": "Oppsummering"
+            "content": "Oppsummering"
         },
         {
             "type": "list",
             "ordered": false,
             "items": [
-                "**Produksjon** er alt som skapes av varer og tjenester.",
-                "I **planøkonomi** bestemmer politikerne/staten hva som lages, basert på antatte behov.",
-                "I **markedsøkonomi** bestemmer kundene gjennom sine kjøp. Profitt og tap styrer produksjonen dit behovet er størst.",
+                "Produksjon er å lage nye økonomiske goder: både varer og tjenester.",
+                "I planøkonomi bestemmer staten hva som lages, basert på antatte behov.",
+                "I markedsøkonomi fordeles ressursene gjennom markeder, og prisene styrer hva som blir laget.",
                 "Uten priser er det vanskelig å vite om man bruker ressursene effektivt."
             ]
         },
@@ -132,7 +139,7 @@
             "content": [
                 {
                     "type": "text",
-                    "value": "Norge har en blandingsøkonomi. Vi har både private bedrifter (som selger mat og klær) og offentlig produksjon (som sykehus og skoler). \n\nHvorfor tror du vi har valgt å la staten ta seg av akkurat sykehusene, mens vi lar Rema 1000 og Kiwi selge oss maten? Kunne det vært omvendt?"
+                    "content": "De aller fleste land i verden er blandingsøkonomier: markedene og de private aktørene spiller en stor rolle, men staten og fagforeningene griper inn på mange måter. Norge er ikke noe unntak, og forble en blandingsøkonomi gjennom hele etterkrigstiden (Thomassen, 2026; Thomassen & Brekke, 2025). Vi har både private bedrifter (som selger mat og klær) og offentlig produksjon (som sykehus og skoler). \n\nHvorfor tror du vi har valgt å la staten ta seg av akkurat sykehusene, mens vi lar Rema 1000 og Kiwi selge oss maten? Kunne det vært omvendt?"
                 }
             ]
         },
@@ -158,6 +165,22 @@
                     "Velg en vare du har kjøpt den siste uka. Diskuter med en medelev hvilket signal kjøpet ditt sendte til produsenten, og hva som ville skjedd om ingen kjøpte varen."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (2026a). *Austrian school of economics*. Hentet 08.08.2026 fra [britannica.com](https://www.britannica.com/money/Austrian-school-of-economics)",
+                    "Encyclopaedia Britannica. (2026b). *Economic Calculation in the Socialist Commonwealth*. Hentet 08.08.2026 fra [britannica.com](https://www.britannica.com/topic/Economic-Calculation-in-the-Socialist-Commonwealth)",
+                    "Stoltz, G. & Andresen, M. E. (2025). *Monopol*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/monopol](https://snl.no/monopol)",
+                    "Stoltz, G. & Onshuus, H. (2025). *Produksjon*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/produksjon](https://snl.no/produksjon)",
+                    "Thomassen, E. (2026). *Markedsøkonomi*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/markedsøkonomi](https://snl.no/markeds%C3%B8konomi)",
+                    "Thomassen, E. & Brekke, S. (2025). *Planøkonomi*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/planøkonomi](https://snl.no/plan%C3%B8konomi)",
+                    "Thorsen, D. E. (2024). *Allmenningens tragedie*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/allmenningens_tragedie](https://snl.no/allmenningens_tragedie)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-08T00:00:00Z"
 }
