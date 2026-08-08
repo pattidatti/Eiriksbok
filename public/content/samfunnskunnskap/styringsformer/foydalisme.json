@@ -21,11 +21,11 @@
         },
         {
             "type": "paragraph",
-            "content": "Forestill deg at du lever i en verden hvor politiet ikke finnes. Hvor det ikke er noen domstoler du kan ringe til, ingen nasjonal hær som beskytter grensene, og ingen penger i sirkulasjon som du kan stole på. Staten, slik vi kjenner den – med sine lover, byråkrater og institusjoner – er borte. Det eneste som står mellom deg og totalt anarki, mellom deg og de plyndrende bandene som herjer på landsbygda, er din evne til å finne noen som er sterkere enn deg selv, og overtale dem til å beskytte deg. Prisen for denne beskyttelsen er din frihet og din arbeidskraft. Velkommen til føydalismen."
+            "content": "Forestill deg at du lever i en verden hvor politiet ikke finnes. Hvor det ikke er noen domstoler du kan ringe til, ingen nasjonal hær som beskytter grensene, og ingen penger i sirkulasjon som du kan stole på. Staten, slik vi kjenner den - med sine lover, byråkrater og institusjoner - er borte. Det eneste som står mellom deg og totalt anarki, mellom deg og de plyndrende bandene som herjer på landsbygda, er din evne til å finne noen som er sterkere enn deg selv, og overtale dem til å beskytte deg. Prisen for denne beskyttelsen er din frihet og din arbeidskraft. Velkommen til føydalismen."
         },
         {
             "type": "paragraph",
-            "content": "Dette var realiteten for millioner av mennesker i Europa etter at [Vestromerriket falt](/historie/romerriket/vestromerrikets-fall) i 476 evt. Den enorme romerske infrastrukturen kollapset. Veinettet forfalt, handelen stanset opp, og bylivet visnet bort. I makttomrommet som oppsto, vokste det frem et nytt system, ikke basert på skrevne lover og abstrakte stater, men på personlige bånd, jordeiendom og militær makt. Vi kaller dette systemet for *føydalisme*, fra det latinske ordet *feodum* (len), selv om menneskene som levde da aldri brukte det ordet selv. For dem var det bare 'samfunnet'. Føydalismen varte i nesten tusen år og formet alt fra hvordan vi tenker om ære og lojalitet, til hvordan eiendom og makt er fordelt i dagens Europa."
+            "content": "Dette var realiteten for millioner av mennesker i Europa etter at [Vestromerriket falt](/historie/romerriket/vestromerrikets-fall) i 476 evt. Den enorme romerske infrastrukturen kollapset. Veinettet forfalt, handelen stanset opp, og bylivet visnet bort. I makttomrommet som oppsto, vokste det frem et nytt system, ikke basert på skrevne lover og abstrakte stater, men på personlige bånd, jordeiendom og militær makt. Vi kaller dette systemet for *føydalisme*, fra det latinske ordet *feudum* (len). Selv brukte ikke middelalderens mennesker ordet: det ble laget av lærde på 1600-tallet, lenge etter perioden det beskriver (Brown, 2026). For dem var det bare 'samfunnet'. Føydalismen varte i nesten tusen år og formet alt fra hvordan vi tenker om ære og lojalitet, til hvordan eiendom og makt er fordelt i dagens Europa."
         },
         {
             "type": "header",
@@ -33,11 +33,11 @@
         },
         {
             "type": "paragraph",
-            "content": "I hjertet av føydalismen lå en enkel byttehandel: Land mot lojalitet. Siden det nesten ikke fantes penger i omløp, kunne ikke konger lønne soldater eller embetsmenn med gullmynter. Den eneste virkelige formen for rikdom var jord – jord som kunne produsere mat, tømmer, ull og hester. Kongen, som i teorien eide alt land, delte ut store landområder til sine mektigste krigere og støttespillere. Disse landområdene ble kalt *len* (fief). Mottakeren av et len ble kalt en *vasall*. Til gjengjeld for jorda sverget vasallen en hellig ed på å være kongens mann: Han skulle stille med riddere i krig, gi råd ved hoffet, og huse kongen når han reiste rundt."
+            "content": "I hjertet av føydalismen lå en enkel byttehandel: Land mot lojalitet. Siden det nesten ikke fantes penger i omløp, kunne ikke konger lønne soldater eller embetsmenn med gullmynter. Den eneste virkelige formen for rikdom var jord - jord som kunne produsere mat, tømmer, ull og hester. Kongen, som i teorien eide alt land, delte ut store landområder til sine mektigste krigere og støttespillere. Disse landområdene ble kalt *len* (fief). Mottakeren av et len ble kalt en *vasall*. Til gjengjeld for jorda sverget vasallen en hellig ed på å være kongens mann: Han skulle stille med riddere i krig, gi råd ved hoffet, og huse kongen når han reiste rundt. Herren på sin side skyldte vasallen beskyttelse (Brown, 2026)."
         },
         {
             "type": "paragraph",
-            "content": "Men systemet stoppet ikke der. Storvasallene (hertuger og grever) hadde ofte fått så mye land at de ikke kunne styre alt selv. Derfor delte de sine områder opp igjen og ga dem til *sine* egne vasaller (ofte baroner eller riddere), mot at disse sverget troskap til dem. Dette skapte en kompleks pyramide av lojalitet. En ridder kunne være vasall til en baron, som var vasall til en hertug, som var vasall til kongen. Det betydde at makten ble ekstremt desentralisert. Kongen i Paris kunne kanskje beordre hertugen av Normandie til å gå i krig, men han kunne ikke beordre hertugens riddere direkte. Deres lojalitet lå hos hertugen, ikke kongen. Som et gammelt føydalt ordtak sa: 'Min vasalls vasall er ikke min vasall'."
+            "content": "Men systemet stoppet ikke der. Storvasallene (hertuger og grever) hadde ofte fått så mye land at de ikke kunne styre alt selv. Derfor delte de sine områder opp igjen og ga dem til *sine* egne vasaller (ofte baroner eller riddere), mot at disse sverget troskap til dem. Dette skapte en kompleks pyramide av lojalitet. En ridder kunne være vasall til en baron, som var vasall til en hertug, som var vasall til kongen. Det betydde at makten ble ekstremt desentralisert: jo mer land kongen delte ut, jo mer desentralisert ble hans egen makt (Tøllefsen, 2025). Kongen i Paris kunne kanskje beordre hertugen av Normandie til å gå i krig, men han kunne ikke beordre hertugens riddere direkte. Deres lojalitet lå hos hertugen, ikke kongen. Som et gammelt føydalt ordtak sa: 'Min vasalls vasall er ikke min vasall'."
         },
         {
             "type": "component",
@@ -45,7 +45,7 @@
             "props": {
                 "text": "Jeg sverger ved denne hellige dom at jeg fra denne dag av vil være trofast mot herren, aldri volde ham skade, og tjene ham med sverd og råd mot alle fiender.",
                 "author": "Fra en vasalled (Hyling)",
-                "source": "Middelaldersk seremoniell tekst"
+                "source": "Omskrevet etter ordlyden i middelalderens hyllingsseremoni"
             }
         },
         {
@@ -60,7 +60,7 @@
             "type": "list",
             "ordered": true,
             "items": [
-                "**Oratores (De som ber):** Geistligheten (prester, munker, biskoper). Deres oppgave var den aller viktigste – å sørge for menneskenes frelse og beskytte samfunnet mot Guds vrede gjennom bønn.",
+                "**Oratores (De som ber):** Geistligheten (prester, munker, biskoper). Deres oppgave var den aller viktigste - å sørge for menneskenes frelse og beskytte samfunnet mot Guds vrede gjennom bønn.",
                 "**Bellatores (De som kriger):** Adelen (konger, riddere, herrer). Deres oppgave var å beskytte de to andre gruppene med sverdets makt og opprettholde lov og orden.",
                 "**Laboratores (De som arbeider):** Bøndene. Deres oppgave var å produsere maten og klærne som alle trengte for å overleve."
             ]
@@ -71,7 +71,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Selv om denne modellen gir inntrykk av harmoni, skjuler den en brutal realitet. 'De som arbeider' utgjorde over 90% av befolkningen, men de hadde nesten ingen politisk makt og levde ofte på eksistensminimum. De bar hele samfunnsbyrden på sine skuldre, mens adelen og kirken nøt godt av deres slit. Adelen mente at deres blod var finere, deres rett til å herske var naturlig. Å forsøke å klatre ut av sin stand ble sett på som et opprør mot Gud."
+            "content": "Selv om denne modellen gir inntrykk av harmoni, skjuler den en brutal realitet. 'De som arbeider' var det store flertallet. Anslagsvis 90-95 prosent av middelalderens europeere bodde på landsbygda og levde av jorda (World Eras, 2026). Likevel hadde de nesten ingen politisk makt, og de levde ofte på eksistensminimum. De bar hele samfunnsbyrden på sine skuldre, mens adelen og kirken nøt godt av deres slit. Adelen mente at deres blod var finere, deres rett til å herske var naturlig. Å forsøke å klatre ut av sin stand ble sett på som et opprør mot Gud."
         },
         {
             "type": "header",
@@ -79,18 +79,18 @@
         },
         {
             "type": "paragraph",
-            "content": "Dersom føydalismen var det politiske systemet, var *godssystemet* (manorialism) det økonomiske fundamentet. Et len besto vanligvis av ett eller flere gods. Et gods var en selvforsynt enhet med en landsby, kirke, smie, mølle og jorder, alt eid av en herre. Herrene drev ikke jorda selv; det var bøndenes jobb."
+            "content": "Dersom føydalismen var det politiske systemet, var *godssystemet* (manorialism) det økonomiske fundamentet. Et len besto vanligvis av ett eller flere gods. Et gods var en selvforsynt enhet med en landsby, kirke, smie, mølle og jorder, alt eid av en herre. Herrene drev ikke jorda selv; det var bøndenes jobb. Godssystemet var måten adelen og kirken organiserte eiendommene sine på, og det var dette som gjorde føydalismen mulig (Brown, 2026)."
         },
         {
             "type": "paragraph",
-            "content": "De fleste bønder var *livegne*. Dette var ikke det samme som slaveri – herren kunne ikke selge dem som kveg, og han kunne ikke vilkårlig drepe dem. Men de var heller ikke frie. De var 'bundet til jorden'. De kunne ikke flytte, de kunne ikke gifte seg uten herrens tillatelse, og de måtte betale tunge avgifter for å få lov til å male kornet sitt på herrens mølle eller bake brød i hans ovn. I bytte mot denne trelldommen fikk de beskyttelse. Når vikinger eller røverridere angrep, kunne bøndene søke tilflukt bak murene til herrens borg. Det var et liv i dyp usikkerhet, byttet mot en hard, men noenlunde trygg, ufrihet."
+            "content": "De fleste bønder var *livegne*. Dette var ikke det samme som slaveri - herren kunne ikke selge dem som kveg, og han kunne ikke vilkårlig drepe dem. Men de var heller ikke frie. De var 'bundet til jorden'. De kunne ikke flytte uten herrens tillatelse, de måtte betale en avgift for å få lov til å gifte seg, og de måtte betale tunge avgifter for å få male kornet sitt på herrens mølle eller bake brød i hans ovn (Holmboe & Thorsnæs, 2024). I bytte mot denne trelldommen fikk de beskyttelse. Når vikinger eller røverridere angrep, kunne bøndene søke tilflukt bak murene til herrens borg. Det var et liv i dyp usikkerhet, byttet mot en hard, men noenlunde trygg, ufrihet."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Livegenskap vs. Slaveri",
-                "content": "Forskjellen er juridisk, men viktig. En slave er eiendom (chattel) og har ingen rettigheter. En livegen er et rettssubjekt – han har arverett til sin jordlapp og beskyttelse under sedvaneretten, men han eier ikke sin egen arbeidskraft eller bevegelsesfrihet. Livegenskapet forsvant gradvis i Vest-Europa etter Svartedauden, men besto i Russland helt til 1861."
+                "content": "Forskjellen er juridisk, men viktig. En slave er eiendom (chattel) og har ingen rettigheter. En livegen er et rettssubjekt - han har arverett til sin jordlapp og beskyttelse under sedvaneretten, men han eier ikke sin egen arbeidskraft eller bevegelsesfrihet. Livegenskapet forsvant gradvis i Vest-Europa etter Svartedauden, men besto i Russland helt til 1861."
             }
         },
         {
@@ -103,7 +103,7 @@
         },
         {
             "type": "paragraph",
-            "content": "I virkeligheten var mange riddere brutale krigsherrer som plyndret bønder og kjempet endeløse private kriger for personlig vinning. Kirken forsøkte desperat å temme denne volden gjennom 'Guds fred' (Pax Dei) – regler som forbød krigføring på visse helligdager og mot sivile. Men idealet om den edle ridderen levde videre i litteraturen, i fortellingene om Kong Arthur og ridderne av det runde bord, og former fortsatt vårt bilde av heltemot i dag."
+            "content": "I virkeligheten var mange riddere brutale krigsherrer som plyndret bønder og kjempet endeløse private kriger for personlig vinning. Kirken forsøkte å temme denne volden gjennom 'Guds fred' (Pax Dei), som skulle verne prester, pilegrimer, kjøpmenn og andre som ikke var stridende, og gjennom 'Guds våpenhvile' (Treuga Dei), som begrenset hvor mange dager i året det var lov å føre krig (Callahan, u.å.). Men idealet om den edle ridderen levde videre i litteraturen, i fortellingene om Kong Arthur og ridderne av det runde bord, og former fortsatt vårt bilde av heltemot i dag."
         },
         {
             "type": "header",
@@ -119,7 +119,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Ingen forståelse av føydalismen er komplett uten kirkens rolle. Kirken var ikke bare en åndelig veileder; den var den største jordeieren i Europa, og kontrollerte kanskje en tredjedel av all jord. Biskoper og abbeder var også føydalherrer med egne vasaller og hærer. Dette skapte en farlig maktkamp: Hvem skulle utnevne biskopen? Paven i Roma eller kongen i landet? Hvis kongen utnevnte biskopen, kunne han sikre seg en lojal vasall. Hvis paven gjorde det, sikret kirken sin uavhengighet. Denne konflikten, kjent som *Investiturstriden*, herjet Europa i århundrer og var med på å definere skillet mellom kirke og stat som vi har i dag."
+            "content": "Ingen forståelse av føydalismen er komplett uten kirkens rolle. Kirken var ikke bare en åndelig veileder; den var den største jordeieren i Europa, og kontrollerte enorme landområder. Biskoper og abbeder var også føydalherrer med egne vasaller og hærer. Dette skapte en farlig maktkamp: Hvem skulle utnevne biskopen? Paven i Roma eller kongen i landet? Hvis kongen utnevnte biskopen, kunne han sikre seg en lojal vasall. Hvis paven gjorde det, sikret kirken sin uavhengighet. Denne konflikten er kjent som *Investiturstriden*. Den brøt for alvor ut på 1070-tallet mellom pave Gregor 7. og keiser Henrik 4., og ble først løst med forliket i Worms i 1122 (Tøllefsen, 2022). Striden var med på å definere skillet mellom kirke og stat som vi har i dag."
         },
         {
             "type": "component",
@@ -161,7 +161,7 @@
             "ordered": false,
             "items": [
                 "**Pengeøkonomiens retur:** Handel og byvekst brakte penger tilbake i omløp. Konger kunne nå kreve skatt i penger i stedet for naturalia. Med penger kunne de leie profesjonelle soldater (leiesoldater) som var lojale kun mot betaleren, ikke mot en lokal hertug. Dette gjorde kongen mektigere og vasallene mindre viktige.",
-                "**Svartedauden:** Da pesten drepte en tredjedel av befolkningen, ble arbeidskraft mangelvare. Bøndene fikk plutselig makt. De kunne kreve lønn og bedre vilkår, eller true med å rømme til byene hvor 'byluft gjør fri'. Dette undergravde livegenskapet.",
+                "**Svartedauden:** Pesten drepte trolig rundt halvparten av befolkningen i Europa i løpet av tre år, og arbeidskraft ble mangelvare (Moseng, 2026). Prisen på arbeidskraft steg, mens prisen på jord falt. Bøndene fikk plutselig makt: de kunne kreve lønn og bedre vilkår, eller true med å rømme til byene hvor 'byluft gjør fri'. Dette undergravde livegenskapet.",
                 "**Militærteknologi:** Langbuen og senere kruttet og kanoner gjorde den pansrede ridderen utdatert. En bonde med en muskett kunne skyte en adelsmann av hesten på hundre meters hold. Ridderskapets militære monopol ble brutt.",
                 "**Nasjonalstaten:** Folk begynte gradvis å føle tilhørighet til en nasjon og en konge, snarere enn til sin lokale herre. Sentraliserte stater med byråkrati og stående hærer utkonkurrerte de løse føydale nettverkene."
             ]
@@ -252,6 +252,22 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Brown, E. A. R. (2026). *Feudalism*. Encyclopaedia Britannica. Hentet 08.08.2026 fra [britannica.com](https://www.britannica.com/topic/feudalism)",
+                    "Callahan, D. F. (u.å.). *Peace of God*. Encyclopaedia Britannica. Hentet 08.08.2026 fra [britannica.com](https://www.britannica.com/topic/Peace-of-God)",
+                    "Holmboe, H. & Thorsnæs, J. (2024). *livegenskap*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/livegenskap](https://snl.no/livegenskap)",
+                    "Moseng, O. G. (2026). *svartedauden*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/svartedauden](https://snl.no/svartedauden)",
+                    "Tøllefsen, T. O. (2022). *investiturstriden*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/investiturstriden](https://snl.no/investiturstriden)",
+                    "Tøllefsen, T. O. (2025). *føydalisme*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/føydalisme](https://snl.no/f%C3%B8ydalisme)",
+                    "World Eras. (2026). *Farmers and Peasants: Building Peasant Communities*. Encyclopedia.com. Hentet 08.08.2026 fra [encyclopedia.com](https://www.encyclopedia.com/history/news-wires-white-papers-and-books/farmers-and-peasants-building-peasant-communities)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-08"
 }
