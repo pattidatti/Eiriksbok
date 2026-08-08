@@ -5,7 +5,7 @@
     "year": "1888-1912",
     "category": "Norge i moderne tid",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/norge-i-moderne-tid/kapplopet-mot-sydpolen-hero.webp",
     "factChecked": "2026-08-08",
     "details": [
         "Roald Amundsen og fire menn nådde Sydpolen 14. desember 1911",
@@ -20,7 +20,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/kapplopet-mot-sydpolen-01.webp",
             "alt": "Fem menn med hundeslede ved flagg på hvit snøslette",
             "caption": "14. desember 1911: Amundsen, Bjaaland, Hanssen, Hassel og Wisting på Sydpolen."
         },
@@ -107,7 +107,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/kapplopet-mot-sydpolen-02.webp",
             "alt": "Polarskipet Fram i isen ved Antarktis, 1911",
             "caption": "Fram ved Hvalbukta. Herfra bygde laget basen Framheim på isbremmen."
         },
@@ -152,7 +152,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/norge-i-moderne-tid/kapplopet-mot-sydpolen-03.webp",
             "alt": "Snødekt telt på tom isslette i Antarktis, 1912",
             "caption": "Scotts siste leir lå bare 18 kilometer fra neste depot."
         },
