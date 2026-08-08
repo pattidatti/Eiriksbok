@@ -23,7 +23,7 @@
         "Post-keynesianere fokuserer på finansiell ustabilitet og ulikhet"
     ],
     "createdDate": "2026-05-26T00:00:00Z",
-    "lastUpdated": "2026-05-26T00:00:00Z",
+    "lastUpdated": "2026-08-08",
     "concepts": [
         {
             "id": "oesterriksk-skole",
@@ -174,17 +174,17 @@
         },
         {
             "type": "text",
-            "content": "Problemet oppstår når sentralbanker holder renten kunstig lav - lavere enn den naturlige. Da ser det ut som om folk sparer mer enn de gjør. Bedrifter starter langsiktige prosjekter det ikke er reell etterspørsel etter. Dette er feilinvesteringer. Når renten til slutt normaliseres, avsløres det at prosjektene ikke var lønnsomme. Da raser de, og det blir krise. Østerrikerne kaller dette boom-bust-syklusen - og de mener den er skapt av sentralbanken, ikke av markedet."
+            "content": "Problemet oppstår når sentralbanker holder renten kunstig lav - lavere enn den naturlige. Da ser det ut som om folk sparer mer enn de gjør. Bedrifter starter langsiktige prosjekter det ikke er reell etterspørsel etter. Dette er feilinvesteringer. Når renten til slutt normaliseres, avsløres det at prosjektene ikke var lønnsomme. Da raser de, og det blir krise. Østerrikerne kaller dette boom-bust-syklusen - og de mener den er skapt av sentralbanken, ikke av markedet. Hayek arbeidet nettopp med penge-, pris- og konjunkturteori, og han la stor vekt på hvordan en inflasjonsskapende pengepolitikk forstyrrer økonomien (Munthe, 2024)."
         },
         {
             "type": "quote",
             "content": "Å tro at sentralplanleggere kan sette en bedre rente enn markedet er å tro at noen få mennesker vet mer enn alle de millionene som sparer og låner.",
             "author": "Basert på Friedrich Hayek",
-            "source": "The Pure Theory of Capital (1941)"
+            "source": "The Use of Knowledge in Society (1945)"
         },
         {
             "type": "text",
-            "content": "Kjente navn: Ludwig von Mises, Friedrich Hayek, Eugen von Böhm-Bawerk. Det er denne brillen Økonomi-Verden bruker når den simulerer feilinvesteringer og kriser. Vil du gå dypere inn i teorien? Les artikkelen om [den naturlige renten](/samfunnskunnskap/okonomi/naturlig-rente)."
+            "content": "Kjernen i argumentet er Hayeks poeng om kunnskap: den informasjonen som trengs for å styre en økonomi, finnes aldri samlet på ett sted, men ligger spredt hos alle de menneskene som kjenner sin egen situasjon best (Hayek, 1945). Kjente navn: Ludwig von Mises, Friedrich Hayek, Eugen von Böhm-Bawerk. Det er denne brillen Økonomi-Verden bruker når den simulerer feilinvesteringer og kriser. Vil du gå dypere inn i teorien? Les artikkelen om [den naturlige renten](/samfunnskunnskap/okonomi/naturlig-rente)."
         },
         {
             "type": "header",
@@ -192,21 +192,21 @@
         },
         {
             "type": "text",
-            "content": "Den britiske økonomen John Maynard Keynes så hvordan arbeidsledigheten gikk i taket på 1930-tallet uten at markedet klarte å snu seg selv. Han mente at i en krise tør verken bedrifter eller folk å bruke penger. Da sparer alle - noe som høres fornuftig ut for den enkelte, men som gjør krisen verre for samfunnet. Keynes kalte dette spareparadokset."
+            "content": "Den britiske økonomen John Maynard Keynes så hvordan arbeidsledigheten gikk i taket på 1930-tallet uten at markedet klarte å snu seg selv. Han mente at i en krise tør verken bedrifter eller folk å bruke penger. Da sparer alle - noe som høres fornuftig ut for den enkelte, men som gjør krisen verre for samfunnet. Dette kalles spareparadokset. Hovedverket hans, The General Theory of Employment, Interest and Money, kom i 1936 og utfordret den klassiske ideen om at markedet av seg selv finner tilbake til full sysselsetting (Stoltz, 2024)."
         },
         {
             "type": "text",
-            "content": "Løsningen var at staten måtte ta over rollen som bruker. Bygge veier, ansette folk, holde hjulene i gang. Og her kommer det lure: pengene staten bruker, sirkulerer i samfunnet. En krone til en arbeider brukes i butikken, som betaler sin leverandør, som betaler sine ansatte. En krone statlig forbruk kan gi mer enn en krone i total aktivitet. Det er multiplikatoreffekten."
+            "content": "Løsningen var at staten måtte ta over rollen som bruker. Bygge veier, ansette folk, holde hjulene i gang. Og her kommer det lure: pengene staten bruker, sirkulerer i samfunnet. En krone til en arbeider brukes i butikken, som betaler sin leverandør, som betaler sine ansatte. En krone statlig forbruk kan gi mer enn en krone i total aktivitet. Det er multiplikatoreffekten, en tanke Keynes utviklet på 1930-tallet (Thøgersen, 2025)."
         },
         {
             "type": "quote",
-            "content": "På lang sikt er vi alle døde. Økonomer setter seg selv altfor enkle og for lite nyttige oppgaver i stormfulle tider hvis de bare kan fortelle oss at stormen er over og at markedet vil rette seg selv.",
+            "content": "På lang sikt er vi alle døde. Økonomer setter seg selv en for lett og for unyttig oppgave hvis de i stormfulle tider bare kan fortelle oss at når stormen er over, er havet flatt igjen.",
             "author": "John Maynard Keynes",
             "source": "A Tract on Monetary Reform (1923)"
         },
         {
             "type": "text",
-            "content": "Keynesianere mener altså at markedet kan svikte alvorlig, og at staten har en viktig rolle som motvekt. Kjente navn i dag: Paul Krugman, Joseph Stiglitz, Mariana Mazzucato."
+            "content": "Ordene er hentet fra boka A Tract on Monetary Reform fra 1923, og de var et spark til økonomer som nøyde seg med å si at markedet ordner opp til slutt (Keynes, 1923). Keynesianere mener altså at markedet kan svikte alvorlig, og at staten har en viktig rolle som motvekt. Kjente navn i dag: Paul Krugman, Joseph Stiglitz, Mariana Mazzucato."
         },
         {
             "type": "header",
@@ -214,11 +214,11 @@
         },
         {
             "type": "text",
-            "content": "Milton Friedman og hans tilhengere mener at inflasjon nesten alltid kommer av at det blir trykt for mye penger. Mengden penger i omløp bestemmer prisnivået. Dobler du pengemengden uten at produksjonen øker, stiger prisene. Friedman var også uenig med Keynes om hva som skapte den store depresjonen: ifølge ham var det sentralbanken som lot pengemengden krympe, ikke markedet som sviktet."
+            "content": "Milton Friedman og hans tilhengere mener at inflasjon nesten alltid kommer av at det blir trykt for mye penger. Endringer i pengemengden slår ut i produksjonen på kort sikt og i prisnivået på lang sikt (Encyclopaedia Britannica, u.å.). Dobler du pengemengden uten at produksjonen øker, stiger prisene til slutt. Friedman var også uenig med Keynes om hva som skapte den store depresjonen: sammen med Anna Schwartz hevdet han at nedturen ville vært helt vanlig hvis ikke Federal Reserve hadde gjort store feil (Encyclopaedia Britannica, u.å.). Pengemengden i USA falt med nesten 30 prosent fra 1930 til 1933, og sentralbanken kunne ha stanset deflasjonen, men gjorde det ikke (Richardson, 2013)."
         },
         {
             "type": "text",
-            "content": "Friedman tok dette et skritt videre med det han kalte k-prosent-regelen: sentralbanken bør øke pengemengden med en fast, forutsigbar prosent hvert år - uavhengig av konjunkturene. Ingen skjønn, ingen overraskelser. Da vet bedrifter og husholdninger hva de kan forvente, og prisene holder seg stabile."
+            "content": "Friedman tok dette et skritt videre med det som kalles k-prosent-regelen: myndighetene bør nøye seg med å la pengemengden vokse i takt med den veksten produksjonen faktisk kan klare, og dermed unngå både inflasjon og deflasjon (Munthe, 2025). Ingen skjønn, ingen overraskelser. Da vet bedrifter og husholdninger hva de kan forvente, og prisene holder seg stabile. Friedman fikk nobelprisen i økonomi i 1976 (Munthe, 2025)."
         },
         {
             "type": "text",
@@ -238,15 +238,15 @@
         },
         {
             "type": "text",
-            "content": "Hyman Minsky pekte på noe nesten ingen andre la merke til: jo lenger ting går bra, jo mer risiko tar bankene. Folk låner mer enn de burde, og sikkerheten for lånene blir stadig svakere. Minsky kalte dette stabilitetens paradoks - stabilitet avler ustabilitet. Når regningen til slutt kommer, kan hele finanssystemet kollapse på en gang."
+            "content": "Hyman Minsky pekte på noe nesten ingen andre la merke til: jo lenger ting går bra, jo mer risiko tar bankene. Folk låner mer enn de burde, og sikkerheten for lånene blir stadig svakere. Minsky delte låntakerne i tre grupper: de trygge, de spekulative og de som bare klarer å betale ved å ta opp stadig nye lån. Jo lenger oppgangen varer, jo flere havner i de to siste gruppene - og da blir hele systemet skjørt (Minsky, 1992). På norsk kalles dette gjerne stabilitetens paradoks: stabilitet avler ustabilitet. Når regningen til slutt kommer, kan hele finanssystemet kollapse på en gang."
         },
         {
             "type": "text",
-            "content": "Det øyeblikket alt snur kalles i dag Minsky-øyeblikket. I 2008 kollapset boligmarkedet i USA og utløste en global finanskrise. Mange økonomer som aldri hadde hørt om Minsky, gjenoppdaget ham plutselig - han hadde forutsagt akkurat dette mønsteret. Les mer om krisemekanismene i artikkelen om [finanskriser](/samfunnskunnskap/okonomi/finanskriser)."
+            "content": "Det øyeblikket alt snur kalles i dag Minsky-øyeblikket. Uttrykket ble laget av investoren Paul McCulley under den russiske finanskrisen i 1998, om det øyeblikket markedet plutselig skjønner at låntakerne ikke kan betale (Fisher, 2010). I 2008 kollapset boligmarkedet i USA og utløste en global finanskrise. Mange økonomer som aldri hadde hørt om Minsky, gjenoppdaget ham plutselig - han hadde beskrevet akkurat dette mønsteret. Les mer om krisemekanismene i artikkelen om [finanskriser](/samfunnskunnskap/okonomi/finanskriser)."
         },
         {
             "type": "text",
-            "content": "Andre i denne tradisjonen, som Thomas Piketty, er opptatt av ulikhet. Piketty viste at kapitaleiere historisk sett har fått høyere avkastning enn den generelle veksten i samfunnet. Det betyr at de som eier mye, over tid eier mer og mer av kaken - og at de som jobber, til slutt ikke har nok kjøpekraft til å holde etterspørselen oppe."
+            "content": "Andre i denne tradisjonen, som Thomas Piketty, er opptatt av ulikhet. Piketty hevder at avkastningen på kapital over tid har vært høyere enn veksten i økonomien. Da vokser arvet formue raskere enn lønn, og rikdommen samler seg på færre hender (Encyclopaedia Britannica, 2026). Det betyr at de som eier mye, over tid eier mer og mer av kaken - og at de som jobber, til slutt kan mangle kjøpekraft til å holde etterspørselen oppe."
         },
         {
             "type": "header",
@@ -380,6 +380,25 @@
                     "Økonomi-Verden-simuleringen er bygget på antakelser fra den østerrikske skolen. Skriv en kort tekst der du forklarer hva modellen kan vise deg, og hva den ikke får med seg.",
                     "Tenk deg at prisene i Norge plutselig stiger 8 prosent på ett år. Velg to av skolene og skriv hva hver av dem ville rådet politikerne til å gjøre.",
                     "Diskuter i klassen: Bør staten gripe inn når det er krise i økonomien, eller bør markedet få ordne opp selv? Bruk argumenter fra minst to av skolene."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Encyclopaedia Britannica. (u.å.). *Milton Friedman*. Hentet 08.08.2026 fra [britannica.com](https://www.britannica.com/money/Milton-Friedman)",
+                    "Encyclopaedia Britannica. (2026). *Capital in the Twenty-First Century*. Hentet 08.08.2026 fra [britannica.com](https://www.britannica.com/topic/Capital-in-the-Twenty-First-Century)",
+                    "Fisher, R. W. (2010). *Minsky Moments and Financial Regulatory Reform*. Federal Reserve Bank of Dallas. Hentet 08.08.2026 fra [dallasfed.org](https://www.dallasfed.org/news/speeches/fisher/2010/fs100414)",
+                    "Hayek, F. A. (1945). *The Use of Knowledge in Society*. American Economic Review, 35(4), 519-530. Hentet 08.08.2026 fra [econlib.org](https://www.econlib.org/library/Essays/hykKnw.html)",
+                    "Keynes, J. M. (1923). *A Tract on Monetary Reform*. Macmillan and Co.",
+                    "Minsky, H. P. (1992). *The Financial Instability Hypothesis* (Working Paper nr. 74). Levy Economics Institute of Bard College. Hentet 08.08.2026 fra [levyinstitute.org](https://www.levyinstitute.org/publications/the-financial-instability-hypothesis/)",
+                    "Munthe, P. (2024). *Friedrich August von Hayek*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/Friedrich_August_von_Hayek)",
+                    "Munthe, P. (2025). *Milton Friedman*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/Milton_Friedman)",
+                    "Richardson, G. (2013). *The Great Depression*. Federal Reserve History. Hentet 08.08.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/great-depression)",
+                    "Stoltz, G. (2024). *John Maynard Keynes*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/John_Maynard_Keynes)",
+                    "Thøgersen, J. (2025). *Multiplikator - økonomi*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/multiplikator_-_%C3%B8konomi)"
                 ]
             }
         }
