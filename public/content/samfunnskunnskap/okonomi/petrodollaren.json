@@ -12,7 +12,7 @@
         "Oljepenger blir til lån, og lån blir til gjeld.",
         "Petrodollaren er drivstoffet i hele systemet."
     ],
-    "externalUrl": "https://snl.no/oljekrisen_1973",
+    "externalUrl": "https://snl.no/oljekrisen_1973%E2%80%931974",
     "timeline": [
         {
             "year": "1971",
@@ -26,8 +26,8 @@
         },
         {
             "year": "1974",
-            "title": "Petrodollar-avtalen",
-            "description": "Oljen selges i dollar, og dollarene havner i vestlige banker."
+            "title": "Oljepengene resirkuleres",
+            "description": "Oljelandene setter overskuddet i vestlige banker, som låner det ut igjen."
         }
     ],
     "content": [
@@ -45,15 +45,19 @@
         },
         {
             "type": "text",
-            "content": "Lenge var dollaren knyttet til gull. For hver dollar lå det en bestemt mengde gull i USAs hvelv. Det ga folk tillit til pengene. Men i 1971 kuttet USA denne forbindelsen. Plutselig var en dollar bare verdt det folk trodde den var verdt. USA trengte noe nytt som kunne holde dollaren sterk."
+            "content": "Lenge var dollaren knyttet til gull. Etter Bretton Woods-avtalen skulle amerikanske dollar kunne løses inn i gull, og andre valutaer var knyttet til dollaren. Men i 1971 opphevet USA ensidig denne plikten til å løse inn dollar i gull (Thomassen, 2026). Plutselig var en dollar bare verdt det folk trodde den var verdt."
         },
         {
             "type": "text",
-            "content": "Svaret ble olje. Hvis all olje måtte kjøpes i dollar, ville alle land i verden trenge dollar hele tiden. Det holdt etterspørselen etter dollar høy, og dermed verdien oppe. Olje ble på en måte den nye 'sikkerheten' bak de amerikanske pengene."
+            "content": "Men dollaren mistet ikke sin plass i verden. En viktig grunn er olje. Når olje prises og betales i dollar, trenger alle land i verden dollar hele tiden. Det holder etterspørselen etter dollar høy. Olje ble på en måte den nye 'sikkerheten' bak de amerikanske pengene."
         },
         {
             "type": "text",
-            "content": "Hvorfor trenger penger noe bak seg i det hele tatt? Fordi en pengeseddel bare er et stykke papir. Den er verdt noe fordi alle stoler på at den er det. Gull ga dollaren den tilliten før. Etter 1971 var det olje som skulle gjøre den jobben."
+            "content": "Her er det viktig å være presis. Det finnes ingen kjent, formell avtale som sier at olje må selges i dollar. Da amerikanske myndigheter ble bedt om å legge fram en slik avtale mellom USA og Saudi-Arabia, fantes den ikke i arkivene. Det som derimot er dokumentert, er en uformell ordning fra 1974 der Saudi-Arabia investerte oljepenger i amerikanske statsobligasjoner mot militær støtte (Lu, 2024). Dollarens rolle i oljehandelen er altså et mønster som vokste fram, ikke en kontrakt noen kan legge på bordet."
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor trenger penger noe bak seg i det hele tatt? Fordi en pengeseddel bare er et stykke papir. Den er verdt noe fordi alle stoler på at den er det. Gull ga dollaren den tilliten før. Etter 1971 var det i praksis oljehandelen som holdt etterspørselen etter dollar oppe."
         },
         {
             "type": "header",
@@ -61,15 +65,19 @@
         },
         {
             "type": "text",
-            "content": "I 1973 skjedde noe dramatisk. En gruppe oljeland, kalt OPEC, ble enige om å stanse oljesalget til land som støttet Israel i en krig. Over natten ble olje en mangelvare i Vesten. Prisen firedoblet seg, og det ble lange køer på bensinstasjonene. Dette kalles oljekrisen."
+            "content": "I 1973 skjedde noe dramatisk. De arabiske oljelandene, samlet i organisasjonen OAPEC, ble enige om å kutte oljesalget til land som støttet Israel i en krig. Andre oljeland, organisert i OPEC, sluttet seg til. Over natten ble olje en mangelvare i Vesten. Prisen ble om lag firedoblet, til 11,65 dollar per fat i januar 1974, og det ble lange køer på bensinstasjonene (Leraand, 2022). Dette kalles oljekrisen."
         },
         {
             "type": "text",
-            "content": "OPEC er en klubb av oljeland som samarbeider om pris og mengde. Ved å skru igjen oljekranene sammen kunne de for første gang presse de rike landene, i stedet for omvendt. For mange tidligere kolonier føltes det som en seier: endelig hadde land i sør makt over landene i nord."
+            "content": "Her er det verdt å rydde opp i en vanlig misforståelse. Mange tror at det var OPEC som stod bak boikotten. Det var det ikke. Det var medlemmene i OAPEC, de arabiske oljelandene, som prøvde å bruke oljen som et politisk våpen for å stanse USAs støtte til Israel (Claes, 2026)."
         },
         {
             "type": "text",
-            "content": "Også i Norge merket folk krisen. Vinteren 1973 til 1974 innførte myndighetene bilfrie søndager. Da var det forbudt å kjøre privatbil i helgene, og barn kunne ake i tomme gater. Det viser hvor avhengig hele den moderne verden hadde blitt av olje, helt ned til en vanlig norsk søndagstur."
+            "content": "OPEC ble stiftet i 1960 av Iran, Irak, Kuwait, Saudi-Arabia og Venezuela. Det er en klubb av oljeland som samordner oljepolitikken sin for å sikre stabile priser og jevne inntekter fra oljeeksporten (Claes, 2026). Ved å skru igjen oljekranene sammen kunne oljelandene for første gang presse de rike landene, i stedet for omvendt. For mange tidligere kolonier føltes det som en seier: endelig hadde land i sør makt over landene i nord."
+        },
+        {
+            "type": "text",
+            "content": "Også i Norge merket folk krisen. Fra 5. desember 1973 ble det forbudt å kjøre privatbil i helgene, og barn kunne ake i tomme gater. Norge ble rammet indirekte, fordi landet var avhengig av å importere oljeprodukter, og allerede i første kvartal 1974 var forsyningene normale igjen (Leraand, 2022). Likevel viser de bilfrie helgene hvor avhengig hele den moderne verden hadde blitt av olje, helt ned til en vanlig norsk søndagstur."
         },
         {
             "type": "text",
@@ -88,18 +96,18 @@
         },
         {
             "type": "text",
-            "content": "Oljelandene satte de enorme dollarsummene sine i store vestlige banker. Bankene måtte tjene på pengene, så de lånte dem ivrig ut, blant annet til fattige land i Latin-Amerika, Afrika og Asia. Disse landene tok gjerne imot lån de egentlig ikke hadde råd til. Slik vokste gjelden som de økonomiske leiemorderne levde av."
+            "content": "Oljelandene satte de enorme dollarsummene sine i store vestlige banker. Bankene ga oljelandene et trygt sted å plassere pengene, og lånte dem så videre ut - blant annet til land i Latin-Amerika (Sims & Romero, 2013). Disse landene tok gjerne imot lån de egentlig ikke hadde råd til. Slik vokste gjelden som de økonomiske leiemorderne levde av."
         },
         {
             "type": "text",
-            "content": "Kretsløpet hadde en farlig bakside. På begynnelsen av 1980-tallet satte USA opp renten kraftig for å bekjempe sin egen inflasjon. Plutselig ble lånene til de fattige landene mye dyrere. I 1982 klarte ikke Mexico lenger å betale gjelden sin, og en stor gjeldskrise spredte seg over Latin-Amerika. Pengene som hadde virket som en gave på 1970-tallet, ble til en felle på 1980-tallet."
+            "content": "Kretsløpet hadde en farlig bakside. Mot slutten av 1970-tallet ville de rike landene få ned inflasjonen, og pengepolitikken ble strammet inn i USA og Europa. Rentene steg over hele verden, og i 1981 gikk verdensøkonomien inn i en nedgangstid. Plutselig ble lånene mye dyrere. I august 1982 meldte Mexicos finansminister at landet ikke lenger klarte å betjene gjelden sin, som da var på 80 milliarder dollar, og en stor gjeldskrise spredte seg over Latin-Amerika (Sims & Romero, 2013). Pengene som hadde virket som en gave på 1970-tallet, ble til en felle på 1980-tallet."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Hvorfor er dette så smart for USA?",
-                "content": "Fordi hele verden trenger dollar for å kjøpe olje, kan USA trykke flere dollar enn nesten noe annet land uten at pengene mister verdien. Det gir USA en økonomisk makt få andre land har. Mange forskere mener dette er en av de viktigste grunnene til at dollaren fortsatt er verdens viktigste valuta."
+                "content": "Dollaren er verdens dominerende valuta. I 2024 stod den for 58 prosent av alle valutareservene sentralbankene i verden sitter på, og i Amerika faktureres 96 prosent av eksporten i dollar (Bertaut, von Beschwitz & Curcuru, 2025). Fordi så mange vil eie og bruke dollar, blir det billigere for amerikanske husholdninger, bedrifter og myndigheter å låne penger. Oljehandelen er én av flere grunner til at dollaren har denne posisjonen - ikke hele forklaringen alene."
             }
         },
         {
@@ -112,7 +120,7 @@
         },
         {
             "type": "text",
-            "content": "Dollarmakten gir også USA et helt spesielt våpen. Fordi så mye av verdenshandelen går i dollar, kan USA stenge land det er uvenner med, ute fra dollarsystemet. Det er nesten som å skru av strømmen til en hel økonomi, uten å avfyre et eneste skudd. Slike sanksjoner er et av de sterkeste maktmidlene i verden i dag, og de hadde ikke vært mulige uten petrodollaren."
+            "content": "Dollarmakten gir også USA et helt spesielt våpen. Fordi så mye av verdenshandelen går i dollar, kan USA stenge land det er uvenner med, ute fra dollarsystemet. Blant de vanlige formene for økonomiske sanksjoner er nettopp kapitalrestriksjoner, der et land hindres i å nå det globale kapitalmarkedet, og frysing av verdier (Doornich, 2024). Det er nesten som å skru av strømmen til en hel økonomi, uten å avfyre et eneste skudd."
         },
         {
             "type": "text",
@@ -125,11 +133,11 @@
                 "forstaa": [
                     "Hva betyr ordet petrodollar?",
                     "Hva skjedde i 1971 med forbindelsen mellom dollaren og gull?",
-                    "Hva gjorde OPEC i 1973, og hva skjedde med oljeprisen?",
+                    "Hvilke land stod bak oljeboikotten i 1973, og hva skjedde med oljeprisen?",
                     "Hvilket tiltak innførte norske myndigheter vinteren 1973 til 1974 på grunn av oljekrisen?"
                 ],
                 "reflekter": [
-                    "Hvorfor holder dollaren seg sterk når all olje må kjøpes i dollar? Forklar med egne ord.",
+                    "Hvorfor holder dollaren seg sterk når olje handles i dollar? Forklar med egne ord.",
                     "Hvorfor sier teksten at en pengeseddel bare er verdt noe fordi alle stoler på at den er det?",
                     "Hvorfor ble oljepengene som virket som en gave på 1970-tallet til en felle på 1980-tallet for land som Mexico?",
                     "Hvorfor kan USA stenge land ute fra dollarsystemet uten å avfyre et eneste skudd?"
@@ -138,6 +146,21 @@
                     "Følg én dollar fra en oljebrønn og hele veien til gjeld i et fattig land. Skriv de fire til fem stegene i riktig rekkefølge.",
                     "Teksten sier at vi bør være litt kritiske til dem som forklarer petrodollaren som en hemmelig avtale. Diskuter i par: Når er det lurt å tvile på en forklaring som virker for enkel?",
                     "Norge tjener enorme summer på å selge olje i dollar. Skriv en kort tekst der du drøfter om det er en fordel eller en ulempe for Norge at hele verden er avhengig av olje og dollar."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bertaut, C., von Beschwitz, B. & Curcuru, S. (2025). *The International Role of the U.S. Dollar - 2025 Edition*. Board of Governors of the Federal Reserve System, FEDS Notes. Hentet 08.08.2026 fra [federalreserve.gov](https://www.federalreserve.gov/econres/notes/feds-notes/the-international-role-of-the-u-s-dollar-2025-edition-20250718.html)",
+                    "Claes, D. H. (2026). *OPEC*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/OPEC](https://snl.no/OPEC)",
+                    "Doornich, J. B. (2024). *Økonomiske sanksjoner*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/økonomiske_sanksjoner](https://snl.no/%C3%B8konomiske_sanksjoner)",
+                    "Leraand, D. (2022). *Oljekrisen 1973-1974*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/oljekrisen_1973-1974](https://snl.no/oljekrisen_1973%E2%80%931974)",
+                    "Lu, A. (2024). *Did a deal between Saudi Arabia and US to sell oil in dollars expire?* Asia Fact Check Lab, Radio Free Asia. Hentet 08.08.2026 fra [rfa.org](https://www.rfa.org/english/news/afcl/afcl-us-saudi-oil-deal-07082024043619.html)",
+                    "Sims, J. & Romero, J. (2013). *Latin American Debt Crisis of the 1980s*. Federal Reserve History. Hentet 08.08.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/latin-american-debt-crisis)",
+                    "Thomassen, E. (2026). *Bretton Woods-avtalen*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Bretton_Woods-avtalen](https://snl.no/Bretton_Woods-avtalen)"
                 ]
             }
         }
@@ -156,9 +179,9 @@
         },
         {
             "id": "q2",
-            "question": "Hvorfor ville USA at olje skulle kjøpes i dollar?",
+            "question": "Hvorfor styrker det dollaren at olje handles i dollar?",
             "options": [
-                "Da trenger alle land dollar, og dollaren holder seg sterk",
+                "Da trenger alle land dollar, og etterspørselen holder dollaren sterk",
                 "Fordi olje er gul som gull",
                 "For å gjøre olje billigere",
                 "For å hjelpe OPEC"
@@ -189,5 +212,5 @@
         }
     ],
     "createdDate": "2026-05-31T00:00:00Z",
-    "lastUpdated": "2026-05-31T00:00:00Z"
+    "lastUpdated": "2026-08-08T00:00:00Z"
 }
