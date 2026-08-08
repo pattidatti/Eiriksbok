@@ -18,7 +18,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Prøv å lage en blyant helt alene. Du må felle et tre, finne grafitt i en gruve, utvinne metall til ringen og koke maling. Ingen klarer det. Likevel ligger det blyanter i hver eneste butikk, til en billig penge. Hemmeligheten er at ingen lager blyanten alene. Tusenvis av mennesker over hele verden gjør hver sin lille del, og bytter resultatet med hverandre."
+            "content": "Prøv å lage en blyant helt alene. Du må felle et tre, finne grafitt i en gruve, utvinne metall til ringen og koke maling. Ingen klarer det. Likevel ligger det blyanter i hver eneste butikk, til en billig penge. Hemmeligheten er at ingen lager blyanten alene. Tusenvis av mennesker over hele verden gjør hver sin lille del, og bytter resultatet med hverandre. Nettopp dette poenget brukte Leonard E. Read i den berømte teksten «I, Pencil»: ingen sitter på et kontor og gir ordre til disse tusenvis av menneskene, men de samarbeider likevel om å lage en blyant (Read, 1958)."
         },
         {
             "type": "text",
@@ -80,6 +80,10 @@
         },
         {
             "type": "text",
+            "content": "Prinsippet ble formulert av den britiske økonomen David Ricardo i 1817 (Stoltz, 2025). Poenget hans var at det alltid finnes grunnlag for handel, selv om det ene landet er mer produktivt på alle områder. Det avgjørende er at graden av overlegenhet ikke er den samme for begge varer. Med slik spesialisering blir den samlede mengden varer større enn den ville vært uten handel, og gevinsten fordeles mellom partene (Munthe & Onshuus, 2025)."
+        },
+        {
+            "type": "text",
             "content": "La oss sette tall på det. Ada og Bjørn lager brød og fisk. Ada er raskest til begge deler. Men hvem bør egentlig lage hva? Klikk deg gjennom og se."
         },
         {
@@ -92,7 +96,7 @@
         },
         {
             "type": "text",
-            "content": "Et bytte er ikke som en fotballkamp, der den ene vinner og den andre taper. Når du frivillig bytter, gjør du det fordi du vil ha det du får mer enn det du gir fra deg. Den andre tenker akkurat motsatt. Dere verdsetter tingene ulikt, og derfor blir begge gladere etterpå. Den østerrikske økonomen Ludwig von Mises kalte dette loven om samvirke: nettopp fordi vi er forskjellige og ofrer ulikt, lønner det seg å samarbeide. Det er selve grunnen til at samfunn finnes."
+            "content": "Et bytte er ikke som en fotballkamp, der den ene vinner og den andre taper. Når du frivillig bytter, gjør du det fordi du vil ha det du får mer enn det du gir fra deg. Den andre tenker akkurat motsatt. Dere verdsetter tingene ulikt, og derfor blir begge gladere etterpå. Den østerrikske økonomen Ludwig von Mises bygde videre på Ricardo og kalte dette loven om samvirke (the Ricardian law of association). Han skrev at gevinsten ved arbeidsdeling alltid er gjensidig: når den flinkere samarbeider med den mindre flinke, tjener begge på det (Mises, 1998). Det er selve grunnen til at samfunn finnes."
         },
         {
             "type": "text",
@@ -104,15 +108,15 @@
         },
         {
             "type": "text",
-            "content": "Norge er et godt eksempel. Vi har en lang kyst med kaldt, rent vann og masse billig vannkraft. Det er en lokasjon som er perfekt for oppdrettslaks, aluminium og skipsfart. Samtidig er vi få mennesker, og lønningene er høye. Da blir det dyrt for oss å sy t-skjorter."
+            "content": "Norge er et godt eksempel. Vi har en lang kyst med kaldt, rent vann og masse billig vannkraft. Norge har gode forutsetninger for metallproduksjon nettopp fordi vi har tilgang på ren og rimelig elektrisk kraft (Rolsdorph & Thomassen, 2025). Det er en lokasjon som er perfekt for oppdrettslaks, aluminium og skipsfart. Samtidig er vi få mennesker, og lønningene er høye. Da blir det dyrt for oss å sy t-skjorter."
         },
         {
             "type": "text",
-            "content": "Derfor gjør Norge akkurat det Ada og Bjørn gjorde: vi lager mest av det vi ofrer minst på, som laks og olje, og bytter det mot t-skjorter fra land der mange hender gjør klesproduksjon billig. Begge land vinner. Du kan se hvordan dette spiller seg ut i hele verden i artikkelen om [global handel](/samfunnskunnskap/handel-og-infrastruktur/global-handel-oversikt)."
+            "content": "Derfor gjør Norge akkurat det Ada og Bjørn gjorde: vi lager mest av det vi ofrer minst på, og bytter det mot varer andre lager billigere. Olje og gass sto for halvparten av verdien på vareeksporten i 2019, og fiskeeksporten var på 104 milliarder kroner, altså rundt ti prosent av eksporten. Samme år importerte Norge klær og sko for over 28 milliarder kroner (Rolsdorph & Thomassen, 2025). Begge land vinner. Du kan se hvordan dette spiller seg ut i hele verden i artikkelen om [global handel](/samfunnskunnskap/handel-og-infrastruktur/global-handel-oversikt)."
         },
         {
             "type": "text",
-            "content": "Det er også derfor mange økonomer er skeptiske til toll og handelsmurer. Når et land legger høy avgift på varer utenfra, hindrer det byttet som kunne gjort begge sider rikere. Det blir litt som om legen ble nektet å la sekretæren skrive."
+            "content": "Det er også derfor mange økonomer er skeptiske til toll og handelsmurer. Når et land legger høy avgift på varer utenfra, hindrer det byttet som kunne gjort begge sider rikere. Da USA innførte nye tollsatser, advarte økonomer og politikere om at tollen ville gi høyere priser for amerikanske forbrukere og svekke både den amerikanske og den globale økonomien (Gundersen & Zarghooni-Hoffmann, 2025). Det blir litt som om legen ble nektet å la sekretæren skrive."
         },
         {
             "type": "component",
@@ -213,6 +217,21 @@
                     "Diskuter med en medelev: Finnes det ting et land bør lage selv, selv om det er dyrere, i stedet for å bytte til seg alt? Kom med minst ett eksempel og en grunn."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Gundersen, P. O. & Zarghooni-Hoffmann, S. (2025). *Toll*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/toll](https://snl.no/toll)",
+                    "Mises, L. von. (1998). *Human Action: A Treatise on Economics* (4. reviderte utgave; opprinnelig utgitt 1949), kapittel VIII. The Foundation for Economic Education. Hentet 08.08.2026 fra [econlib.org](https://www.econlib.org/library/Mises/HmA/msHmA8.html)",
+                    "Munthe, P. & Onshuus, H. (2025). *Handelsteori*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/handelsteori](https://snl.no/handelsteori)",
+                    "Read, L. E. (1958). *I, Pencil: My Family Tree as Told to Leonard E. Read*. The Foundation for Economic Education. Hentet 08.08.2026 fra [econlib.org](https://www.econlib.org/library/Essays/rdPncl.html)",
+                    "Rolsdorph, N. & Thomassen, E. (2025). *Norges utenrikshandel*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/Norges_utenrikshandel)",
+                    "Stoltz, G. (2025). *David Ricardo*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/David_Ricardo)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-08T00:00:00.000Z"
 }
