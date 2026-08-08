@@ -6,9 +6,10 @@
     "category": "Norges politiske grunnmur",
     "readTime": "9 min lesning",
     "heroImage": "/images/styringsformer/grunnloven-hero.webp",
+    "factChecked": "2026-08-08",
     "details": [
         "Skrevet på fem uker av 112 menn samlet på Eidsvoll våren 1814.",
-        "Verdens nest eldste grunnlov som fortsatt er i bruk — bare USAs er eldre.",
+        "Verdens nest eldste grunnlov som fortsatt er i bruk - bare USAs er eldre.",
         "Bygget på maktfordelingens prinsipp: ingen aktør skal kunne styre alene.",
         "Endres bare gjennom en streng prosess som krever to ulike storting.",
         "Feires hvert år 17. mai med barnetog i hele landet."
@@ -20,7 +21,7 @@
         },
         {
             "type": "text",
-            "content": "Grunnloven er Norges viktigste lov. Alle andre lover må følge den. Den forteller hvem som har makt, hvordan makten skal fordeles, og hvilke rettigheter folk har. Uten Grunnloven ville Norge vært et helt annet land."
+            "content": "Grunnloven er Norges viktigste lov. Alle andre lover må følge den. Den forteller hvem som har makt, hvordan makten skal fordeles, og hvilke rettigheter folk har (Holmøyvik, 2026). Uten Grunnloven ville Norge vært et helt annet land."
         },
         {
             "type": "image",
@@ -34,15 +35,15 @@
         },
         {
             "type": "text",
-            "content": "Norge hadde vært i union med Danmark i over fire hundre år. Men Danmark støttet Napoleon, og da Napoleon tapte krigen, måtte Danmark gi fra seg Norge til Sverige i Kielfreden i januar 1814. Nordmenn var sinte. De ville ikke bytte herre uten å bli spurt."
+            "content": "Norge hadde vært i union med Danmark i over fire hundre år. Men Danmark-Norge hadde alliert seg med Napoleon, og da Napoleon tapte, måtte kongen gi fra seg Norge til Sverige i Kielfreden 14. januar 1814 (Viken, 2026). Nordmenn var sinte. De ville ikke bytte herre uten å bli spurt."
         },
         {
             "type": "text",
-            "content": "Den danske prinsen Christian Frederik så sjansen sin. Han var stattholder i Norge, og han ville beholde landet. Han kalte sammen rike og innflytelsesrike menn fra hele landet. De skulle samles på Eidsvoll og lage en grunnlov før Sverige rakk å gripe inn."
+            "content": "Den danske prinsen Christian Frederik så sjansen sin. Han hadde vært stattholder i Norge siden 1813, og han ville beholde landet. Fra slutten av januar satte han i gang en norsk reisning mot fredsavtalen, og han bestemte at det skulle velges en riksforsamling som kunne gi landet en grunnlov (Mykland et al., 2026). Forsamlingen skulle møtes på Eidsvoll før Sverige rakk å gripe inn."
         },
         {
             "type": "text",
-            "content": "10. april 1814 møttes 112 valgte menn på Eidsvoll. Bønder, prester, embetsmenn og handelsfolk satt rundt samme bord. De hadde fem uker på seg. De jobbet seks dager i uken. De diskuterte hardt, drakk mye kaffe, og leste i bøker av franske og amerikanske tenkere. 17. mai 1814 var dokumentet ferdig."
+            "content": "10. april 1814 møttes 112 valgte menn på Eidsvoll. 33 av dem var valgt fra hæren og flåten, 25 fra byene og 54 fra landdistriktene, så bønder, prester, embetsmenn og handelsfolk satt rundt samme bord (Een de Amoriza & Mardal, 2025). De hadde drøyt fem uker på seg. De diskuterte hardt og hentet ideer fra franske og amerikanske tenkere. 16. mai ble Grunnloven vedtatt, og 17. mai 1814 ble den datert og underskrevet."
         },
         {
             "type": "header",
@@ -50,7 +51,7 @@
         },
         {
             "type": "text",
-            "content": "Eidsvollsmennene fryktet én ting mer enn alt annet: at en konge eller en regjering skulle bli for mektig og bestemme over folket uten kontroll. Løsningen deres var inspirert av den franske tenkeren Montesquieu, som hadde dødd over femti år tidligere. Han skrev at makten i en stat må deles i tre, slik at ingen kan misbruke den."
+            "content": "Eidsvollsmennene fryktet én ting mer enn alt annet: at en konge eller en regjering skulle bli for mektig og bestemme over folket uten kontroll. Løsningen deres var inspirert av den franske tenkeren Montesquieu, som hadde vært død i nesten seksti år. I boka «Om lovenes ånd» fra 1748 skrev han at den som har makt, lett misbruker den, og at makten i en stat derfor må deles i tre (Thorsen, 2024)."
         },
         {
             "type": "text",
@@ -71,9 +72,9 @@
         {
             "type": "list",
             "items": [
-                "Stortinget — den lovgivende makten. 169 valgte representanter lager nye lover, vedtar statsbudsjettet og kontrollerer regjeringen.",
-                "Regjeringen — den utøvende makten. Statsministeren og statsrådene styrer den daglige driften av landet og setter Stortingets lover ut i livet.",
-                "Domstolene — den dømmende makten. Tingretten, lagmannsretten og Høyesterett tolker loven. Høyesterett har siste ord."
+                "Stortinget - den lovgivende makten. 169 valgte representanter lager nye lover, vedtar statsbudsjettet og kontrollerer regjeringen (Berg & Gisle, 2025).",
+                "Regjeringen - den utøvende makten. Statsministeren og statsrådene styrer den daglige driften av landet og setter Stortingets lover ut i livet.",
+                "Domstolene - den dømmende makten. Tingretten, lagmannsretten og Høyesterett tolker loven. Høyesterett har siste ord."
             ]
         },
         {
@@ -81,7 +82,7 @@
             "name": "FactBox",
             "props": {
                 "title": "Verdens nest eldste",
-                "content": "Bare USAs grunnlov fra 1787 er eldre enn vår. Frankrikes har blitt skrevet om femten ganger siden 1791. Norges Grunnlov har vært i bruk uten avbrudd siden 1814 — det er ganske utrolig."
+                "content": "Bare USAs grunnlov fra 1787 er eldre enn vår (Stortinget, 2026). Frankrike har byttet grunnlov flere ganger siden 1791, og styres i dag etter den femte republikkens forfatning fra 1958 (Orban & Berg, 2025). Norges Grunnlov har vært i bruk uten avbrudd siden 1814 - det er ganske utrolig."
             }
         },
         {
@@ -90,21 +91,21 @@
         },
         {
             "type": "text",
-            "content": "Grunnloven fra 1814 var moderne for sin tid, men den var ikke perfekt. Bare menn med eiendom kunne stemme. Jøder fikk ikke lov til å komme inn i landet. Kongen hadde mye mer makt enn i dag. Heldigvis kan Grunnloven endres — men det er ikke lett."
+            "content": "Grunnloven fra 1814 var moderne for sin tid, men den var ikke perfekt. Bare menn med eiendom eller embete kunne stemme. Grunnlovens § 2 nektet jøder adgang til riket (Ulvund, 2025). Kongen hadde mye mer makt enn i dag. Heldigvis kan Grunnloven endres - men det er ikke lett."
         },
         {
             "type": "text",
-            "content": "For å endre Grunnloven må Stortinget først foreslå endringen, så må det gå et nytt valg, og så må det nye Stortinget vedta endringen med to tredjedels flertall. Det betyr at en endring tar minst fire år. Det er meningen. Eidsvollsmennene ville at hver generasjon skulle tenke seg godt om før de tuklet med fundamentet."
+            "content": "For å endre Grunnloven må forslaget legges fram i én stortingsperiode, og først det neste Stortinget kan stemme over det. Da kreves to tredjedels flertall, og minst to tredjedeler av representantene må være til stede (Holmøyvik, 2026). Det betyr at det alltid går et valg imellom, og at det kan ta fra ett til seks år fra forslag til vedtak. Det er meningen. Eidsvollsmennene ville at hver generasjon skulle tenke seg godt om før de tuklet med fundamentet."
         },
         {
             "type": "list",
             "items": [
-                "1851 — Jødeparagrafen oppheves. Henrik Wergeland kjempet for dette i mange år, men døde før det skjedde.",
-                "1884 — Parlamentarismen innføres. Regjeringen må heretter ha støtte i Stortinget.",
-                "1898 — Alminnelig stemmerett for menn over 25 år.",
-                "1913 — Kvinner får samme stemmerett som menn. Norge var blant de første landene i verden.",
-                "1956 — Forbudet mot jesuitter oppheves.",
-                "2014 — Et stort menneskerettighetskapittel skrives inn til 200-årsjubileet."
+                "1851 - Jødeparagrafen oppheves. Henrik Wergeland kjempet for dette i mange år, men døde seks år før det skjedde (Ulvund, 2025).",
+                "1884 - Parlamentarismen innføres. Regjeringen må heretter ha støtte i Stortinget (Berg & Gisle, 2025).",
+                "1898 - Alminnelig stemmerett for menn over 25 år (Søbye & Dørum, 2026).",
+                "1913 - Kvinner får samme stemmerett som menn. Bare New Zealand, Australia og Finland var tidligere ute (Søbye & Dørum, 2026).",
+                "1956 - Forbudet mot jesuitter oppheves (Ulvund, 2025).",
+                "2014 - Et eget menneskerettighetskapittel skrives inn til 200-årsjubileet (Holmøyvik, 2026)."
             ]
         },
         {
@@ -119,11 +120,11 @@
         },
         {
             "type": "text",
-            "content": "Mange land har skrevet nye grunnlover hver gang det har vært krig, revolusjon eller statskupp. Norge har klart seg uten. Hvorfor? En grunn er at endringsprosessen er treg, så ingen kan presse gjennom drastiske endringer i et øyeblikks raseri. En annen er at folket faktisk bryr seg. 17. mai-feiringen er ikke bare et show — den minner oss om at Grunnloven er vår, ikke kongens eller regjeringens."
+            "content": "Mange land har skrevet nye grunnlover hver gang det har vært krig, revolusjon eller statskupp. Norge har klart seg uten. Hvorfor? En grunn er at endringsprosessen er treg, så ingen kan presse gjennom drastiske endringer i et øyeblikks raseri. En annen er at folket faktisk bryr seg. 17. mai-feiringen er ikke bare et show - den minner oss om at Grunnloven er vår, ikke kongens eller regjeringens."
         },
         {
             "type": "text",
-            "content": "Selv under okkupasjonen i andre verdenskrig holdt nordmenn fast ved Grunnloven. Da nazistene ville sette den til side, fikk de hele befolkningen mot seg. Lærere nektet å undervise nazistisk pensum. Prester nektet å forkynne det Quisling ville. Grunnloven hadde blitt en del av folkesjelen, ikke bare et stykke papir."
+            "content": "Selv under okkupasjonen i andre verdenskrig møtte nazifiseringen hard motstand. Da lærerne i 1942 ble tvunget inn i et nazistyrt lærersamband, sendte rundt 11 000 av dem protestbrev, og omtrent 1100 ble arrestert (Færøy, 2025). Samme år la biskopene og 797 av 858 prester i Den norske kirke ned embetene sine i protest mot Quisling-regimet (Store norske leksikon, 2025). Motstanden viste at ideene fra 1814 om lov, rett og frihet satt dypt i folket - Grunnloven var ikke bare et stykke papir."
         },
         {
             "type": "component",
@@ -131,7 +132,7 @@
             "props": {
                 "text": "Ytringsfrihet bør finne sted.",
                 "author": "Grunnloven § 100, første setning",
-                "context": "Slik begynner paragrafen som beskytter retten din til å si hva du mener — i klasserommet, i avisa eller på TikTok."
+                "context": "Slik begynner paragrafen som beskytter retten din til å si hva du mener - i klasserommet, i avisa eller på TikTok."
             }
         },
         {
@@ -140,17 +141,17 @@
         },
         {
             "type": "text",
-            "content": "Hver gang Stortinget vedtar en ny lov, sjekkes den opp mot Grunnloven. Hvis Høyesterett mener en lov bryter Grunnloven, kan domstolen sette loven til side. Det skjedde for eksempel i klimasaken i 2020, da miljøorganisasjoner brukte Grunnlovens § 112 om retten til et sunt miljø for å utfordre oljeleting i Barentshavet."
+            "content": "Hver gang Stortinget vedtar en ny lov, sjekkes den opp mot Grunnloven. Hvis Høyesterett mener et vedtak bryter Grunnloven, kan domstolen sette vedtaket til side. Et kjent forsøk er klimasøksmålet: Greenpeace og Natur og Ungdom saksøkte staten og brukte Grunnlovens § 112 om retten til et sunt miljø for å angripe oljeleting i Barentshavet. 22. desember 2020 frifant Høyesterett staten, og slo fast at § 112 bare virker som en sikkerhetsventil dersom Stortinget grovt har forsømt miljøplikten sin (Jakobsen, 2026)."
         },
         {
             "type": "text",
-            "content": "Grunnloven gir også Norge en konge, men kongens makt er stort sett symbolsk. Han signerer lover, åpner Stortinget og representerer Norge. Noen mener vi bør bytte til republikk og velge presidenten vår. Andre mener kongen er en viktig del av norsk identitet. Diskusjonen er en grunnlovsdebatt — og slike debatter er nettopp det Grunnloven er laget for å tåle."
+            "content": "Grunnloven gir også Norge en konge, men kongens makt er stort sett symbolsk. Han signerer lover, åpner Stortinget og representerer Norge. Noen mener vi bør bytte til republikk og velge presidenten vår. Andre mener kongen er en viktig del av norsk identitet. Diskusjonen er en grunnlovsdebatt - og slike debatter er nettopp det Grunnloven er laget for å tåle."
         },
         {
             "type": "image",
             "src": "/images/styringsformer/grunnloven-02.webp",
             "alt": "Stortingssalen sett ovenfra med representanter på plass under en avstemning",
-            "caption": "Stortinget vedtar nye lover — men ingen lov kan stride mot Grunnloven."
+            "caption": "Stortinget vedtar nye lover - men ingen lov kan stride mot Grunnloven."
         },
         {
             "type": "component",
@@ -164,12 +165,12 @@
                 ],
                 "reflekter": [
                     "Eidsvollsmennene delte makten i tre fordi de fryktet at én person skulle bli for mektig. Forklar med egne ord hvordan de tre statsmaktene kan stoppe hverandre.",
-                    "Å endre Grunnloven tar minst fire år og krever to ulike storting. Hvorfor lagde Eidsvollsmennene en så treg prosess med vilje?",
+                    "En grunnlovsendring må behandles av to ulike storting med et valg imellom, og krever to tredjedels flertall. Hvorfor lagde Eidsvollsmennene en så treg prosess med vilje?",
                     "Under andre verdenskrig nektet lærere og prester å følge nazistene. Hva forteller det om hvor viktig Grunnloven hadde blitt for vanlige nordmenn?",
                     "I 1814 kunne bare menn med eiendom stemme, og jøder fikk ikke komme inn i landet. Hvorfor mener du Grunnloven likevel regnes som moderne for sin tid?"
                 ],
                 "gaaVidere": [
-                    "I klimasaken i 2020 brukte miljøorganisasjoner Grunnlovens § 112 om et sunt miljø for å utfordre oljeleting. Skriv en kort tekst om en sak i dag du synes Grunnloven burde beskytte.",
+                    "I klimasøksmålet brukte miljøorganisasjoner Grunnlovens § 112 om et sunt miljø for å utfordre oljeleting, men tapte i Høyesterett i 2020. Skriv en kort tekst om en sak i dag du synes Grunnloven burde beskytte.",
                     "Noen mener Norge bør bli republikk og velge en president, andre mener kongen er viktig for norsk identitet. Skriv ned tre argumenter for hver side, og fortell til slutt hva du selv mener.",
                     "Grunnloven § 100 sier at ytringsfrihet bør finne sted. Diskuter med en medelev hva denne friheten betyr for hva dere kan si på skolen og på sosiale medier - og om den bør ha grenser."
                 ]
@@ -212,7 +213,7 @@
                             "Hele Stortinget må stemme ja"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Det kreves to tredjedels flertall — og forslaget må vedtas av to ulike storting med valg imellom."
+                        "explanation": "Det kreves to tredjedels flertall - og forslaget må vedtas av to ulike storting med valg imellom."
                     },
                     {
                         "question": "Hvilken statsmakt avgjør om en ny lov bryter Grunnloven?",
@@ -225,6 +226,27 @@
                         "correctAnswer": 3,
                         "explanation": "Domstolene tolker loven. Høyesterett kan sette en lov til side hvis den strider mot Grunnloven."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, O. T. & Gisle, J. (2025). *Stortinget*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Stortinget](https://snl.no/Stortinget)",
+                    "Een de Amoriza, S. & Mardal, M. A. (2025). *Riksforsamlingen på Eidsvoll 1814*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Riksforsamlingen_på_Eidsvoll_1814](https://snl.no/Riksforsamlingen_p%C3%A5_Eidsvoll_1814)",
+                    "Færøy, F. (2025). *Lærerstriden*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/lærerstriden](https://snl.no/l%C3%A6rerstriden)",
+                    "Holmøyvik, E. (2026). *Grunnlova*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Grunnlova](https://snl.no/Grunnlova)",
+                    "Jakobsen, I. U. (2026). *Klimasøksmålet i 2016*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Klimasøksmålet_i_2016](https://snl.no/Klimas%C3%B8ksm%C3%A5let_i_2016)",
+                    "Mykland, K., Dørum, K. & Weidling, T. R. (2026). *Christian Frederik - Norges konge i 1814*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Christian_Frederik](https://snl.no/Christian_Frederik)",
+                    "Orban, F. & Berg, O. T. (2025). *Frankrikes politiske system*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Frankrikes_politiske_system](https://snl.no/Frankrikes_politiske_system)",
+                    "Store norske leksikon. (2025). *Kirkekampen*. Hentet 08.08.2026 fra [snl.no/kirkekampen](https://snl.no/kirkekampen)",
+                    "Stortinget. (2026). *Hva er Grunnloven?* Stortinget undervisning. Hentet 08.08.2026 fra [undervisning.stortinget.no](https://undervisning.stortinget.no/grunnloven/hva-er-grunnloven/)",
+                    "Søbye, E. & Dørum, K. (2026). *Stemmerettens historie i Norge*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/stemmerettens_historie_i_Norge](https://snl.no/stemmerettens_historie_i_Norge)",
+                    "Thorsen, D. E. (2024). *Maktfordelingsprinsippet*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/maktfordelingsprinsippet](https://snl.no/maktfordelingsprinsippet)",
+                    "Ulvund, F. (2025). *Jødeparagrafen*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Jødeparagrafen](https://snl.no/J%C3%B8deparagrafen)",
+                    "Viken, Ø. L. I. (2026). *Kielfreden*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Kielfreden](https://snl.no/Kielfreden)"
                 ]
             }
         }

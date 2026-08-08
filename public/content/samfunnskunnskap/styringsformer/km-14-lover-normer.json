@@ -8,6 +8,7 @@
     "category": "Samfunnskunnskap",
     "readTime": "8 min lesning",
     "heroImage": "/images/styringsformer/km-14-lover-normer-hero.webp",
+    "factChecked": "2026-08-08",
     "details": [
         "Kompetansemål SAF01-04",
         "Lover og regler i samfunnet"
@@ -50,7 +51,7 @@
         },
         {
             "type": "text",
-            "content": "Vi skiller gjerne mellom tre typer regler i samfunnet. For det første har vi lover - formelle regler vedtatt av Stortinget og skrevet ned i lovbøker. Straffeloven sier for eksempel at det er forbudt å stjele, og den bestemmer hva straffen skal være. [Grunnloven](/samfunnskunnskap/styringsformer/grunnloven) er den viktigste av alle lover, og ingen annen lov kan bryte med den."
+            "content": "Vi skiller gjerne mellom tre typer regler i samfunnet. For det første har vi lover - formelle regler vedtatt av Stortinget og skrevet ned i lovbøker. Å vedta lover er en av Stortingets viktigste oppgaver, sammen med å vedta statsbudsjettet og kontrollere regjeringen (Berg & Gisle, 2025). Straffeloven sier for eksempel at det er forbudt å stjele, og den bestemmer hva straffen skal være. [Grunnloven](/samfunnskunnskap/styringsformer/grunnloven) er den viktigste av alle lover, og ingen annen lov kan bryte med den (Holmøyvik, 2026)."
         },
         {
             "type": "text",
@@ -58,7 +59,7 @@
         },
         {
             "type": "text",
-            "content": "For det tredje har vi normer. Normer er uskrevne forventninger om hvordan man skal oppføre seg. Det finnes ingen lov som sier at du må si takk for maten, men det forventes likevel. Normer lærer vi gjennom oppvekst, kultur og sosiale miljøer. De varierer mellom land, grupper og generasjoner."
+            "content": "For det tredje har vi normer. En norm er en regel som sier noe om forventet oppførsel, og de uformelle normene er uskrevne «skikk og bruk»-regler som er innarbeidet over tid (Haugseth & Tjora, 2024). Det finnes ingen lov som sier at du må si takk for maten, men det forventes likevel. Normer lærer vi gjennom oppvekst, kultur og sosiale miljøer. De varierer mellom land, grupper og generasjoner."
         },
         {
             "type": "text",
@@ -77,11 +78,11 @@
         },
         {
             "type": "text",
-            "content": "Konsekvensene av regelbrudd avhenger av hva slags regel det dreier seg om. Bryter du en lov, kan staten straffe deg. Straffen kan være en bot, samfunnsstraff eller i alvorlige tilfeller fengsel. Formålet med straff er tredelt: den skal gjøre opp for skaden (gjengjeldelse), hindre den straffede fra å gjøre det igjen (individualprevensjon), og vise resten av samfunnet at lovbrudd har konsekvenser (allmennprevensjon)."
+            "content": "Konsekvensene av regelbrudd avhenger av hva slags regel det dreier seg om. Bryter du en lov, kan staten straffe deg. Straffen kan være en bot, samfunnsstraff, ungdomsstraff eller i alvorlige tilfeller fengsel. I Norge har straffen to formål, og begge peker framover: den skal hindre den straffede i å gjøre det igjen (individualprevensjon), og få andre til å la være når de ser hvordan samfunnet reagerer (allmennprevensjon). Gjengjeldelse og hevn er derimot ikke lenger godtatt som begrunnelse for å straffe, fordi de bare peker bakover (Elden, 2024)."
         },
         {
             "type": "text",
-            "content": "Bryter du en norm, blir konsekvensene annerledes. Du risikerer ikke fengsel, men du kan oppleve sosial utestengelse, blikk, kommentarer eller tap av tillit. En politiker som lyver for Stortinget bryter kanskje ikke noen lov, men bryter sterke normer om ærlighet - og konsekvensen kan bli at velgerne mister tilliten og vedkommende mister jobben. [Makt og legitimitet](/samfunnskunnskap/styringsformer/makt-og-legitimitet) handler nettopp om at makten må ha tillit for å fungere."
+            "content": "Bryter du en norm, blir konsekvensene annerledes. Du risikerer ikke fengsel, men du kan møte kritikk, latterliggjøring, sosial isolasjon eller utestengelse (Haugseth & Tjora, 2024). En politiker som lyver for Stortinget bryter kanskje ikke noen lov, men bryter sterke normer om ærlighet - og konsekvensen kan bli at velgerne mister tilliten og vedkommende mister jobben. [Makt og legitimitet](/samfunnskunnskap/styringsformer/makt-og-legitimitet) handler nettopp om at makten må ha tillit for å fungere."
         },
         {
             "type": "image",
@@ -120,11 +121,11 @@
         },
         {
             "type": "text",
-            "content": "I et demokrati er det Stortinget som vedtar lovene. Det betyr at lovene i teorien gjenspeiler hva flertallet av folket mener er riktig. Men historien viser at lover ikke alltid har vært rettferdige. Apartheid i Sør-Afrika var lovlig. Slaveri var lovlig i USA. I Norge var det lenge ulovlig å være homofil. Disse eksemplene minner oss om at en lov kan være vedtatt og gyldig, uten å være moralsk riktig."
+            "content": "I et demokrati er det Stortinget som vedtar lovene. Det betyr at lovene i teorien gjenspeiler hva flertallet av folket mener er riktig. Men historien viser at lover ikke alltid har vært rettferdige. Apartheid i Sør-Afrika var et system av lover som delte folk inn etter hudfarge, og det varte fra 1948 til 1994 (Tjønneland, 2025). Slaveri var lovlig i USA. I Norge var seksuell omgang mellom menn straffbart etter straffelovens § 213 helt fram til paragrafen ble opphevet i 1972 (Berge, 2022). Disse eksemplene minner oss om at en lov kan være vedtatt og gyldig, uten å være moralsk riktig."
         },
         {
             "type": "text",
-            "content": "Det er nettopp derfor vi har [menneskerettigheter](/samfunnskunnskap/ideer-og-verdenssyn/fn) som et overordnet rammeverk. FNs menneskerettighetserklæring fra 1948 sier at visse rettigheter gjelder alle mennesker, uansett hvilke lover det enkelte landet har vedtatt. Demokratier er forpliktet til å endre sine lover hvis de bryter med disse grunnleggende prinsippene."
+            "content": "Det er nettopp derfor vi har [menneskerettigheter](/samfunnskunnskap/ideer-og-verdenssyn/fn) som et overordnet rammeverk. FNs verdenserklæring om menneskerettigheter ble vedtatt 10. desember 1948, og artikkel 1 slår fast at alle mennesker er født frie og med samme menneskeverd og menneskerettigheter (FN-sambandet, 2025). Rettighetene gjelder altså uansett hvilke lover det enkelte landet har vedtatt. Demokratier er forpliktet til å endre sine lover hvis de bryter med disse grunnleggende prinsippene."
         },
         {
             "type": "image",
@@ -138,15 +139,15 @@
         },
         {
             "type": "text",
-            "content": "Normer er ikke statiske - de endrer seg over tid og varierer mellom kulturer. For hundre år siden var det normen at kvinner ikke jobbet utenfor hjemmet. I dag er det normen at begge foreldre arbeider og deler husarbeid. Det som oppfattes som uhøflig i Norge - for eksempel å ikke stille opp om tid - kan være helt normalt i andre kulturer."
+            "content": "Normer er ikke statiske - de varierer mellom kulturer og utvikler seg over tid (Haugseth & Tjora, 2024). For hundre år siden var det normen at kvinner ikke jobbet utenfor hjemmet. I dag er det normen at begge foreldre arbeider og deler husarbeidet. Det som oppfattes som uhøflig i Norge - for eksempel å komme for sent - kan være helt normalt i andre kulturer."
         },
         {
             "type": "text",
-            "content": "Noen ganger går normer foran lovene. Røyking på offentlige steder ble forbudt ved lov i 2004, men normskiftet startet allerede på 1990-tallet, da røyking gradvis ble sett på som upassende. Lovendringen kom som en bekreftelse av noe som allerede var i ferd med å bli normen. Andre ganger presser nye normer fram lovendringer nedenfra, gjennom folkebevegelser og aktivisme."
+            "content": "Noen ganger går normer og lov hånd i hånd over lang tid. Fra 1. juni 2004 ble det forbudt å røyke innendørs på alle serveringssteder, men det var ikke starten: den første røykebestemmelsen kom i 1988, og den ble gjort mer omfattende i 1995 og 1997 (Bahus et al., 2026). Synet på røyking endret seg altså gradvis, og det store forbudet kom som en bekreftelse av noe som allerede var i ferd med å bli normen. Andre ganger presser nye normer fram lovendringer nedenfra, gjennom folkebevegelser og aktivisme."
         },
         {
             "type": "text",
-            "content": "Som 14-åring er du selv midt i et miljø fullt av normer - om hva du bor ha på deg, hva musikk du lytter til, og hvordan du snakker. Noen av disse normene er friske og inkluderende. Andre kan presse folk til å skjule hvem de er. Det er en del av din kompetanse som samfunnsborger å kunne gjenkjenne disse normene, vurdere dem kritisk og forstå hvilke konsekvenser de har for de som bor i dem."
+            "content": "Som 14-åring er du selv midt i et miljø fullt av normer - om hva du bør ha på deg, hvilken musikk du lytter til, og hvordan du snakker. Noen av disse normene er åpne og inkluderende. Andre kan presse folk til å skjule hvem de er. Det er en del av din kompetanse som samfunnsborger å kunne gjenkjenne disse normene, vurdere dem kritisk og forstå hvilke konsekvenser de har for dem som lever i dem."
         },
         {
             "type": "component",
@@ -155,8 +156,8 @@
                 "forstaa": [
                     "Nevn de tre typene regler artikkelen skiller mellom, og forklar kort hva som kjennetegner hver av dem.",
                     "Hvem vedtar lovene i Norge, og hvorfor kan ingen annen lov bryte med Grunnloven?",
-                    "Hva menes med de tre formålene med straff: gjengjeldelse, individualprevensjon og allmennprevensjon?",
-                    "Hvilket år ble røyking på offentlige steder forbudt ved lov, og når startet selve normskiftet ifølge teksten?"
+                    "Hva menes med individualprevensjon og allmennprevensjon, og hvorfor er gjengjeldelse ikke lenger godtatt som begrunnelse for straff i Norge?",
+                    "Fra hvilken dato ble det forbudt å røyke innendørs på alle serveringssteder, og hvilke tidligere årstall nevner teksten i innstrammingen?"
                 ],
                 "reflekter": [
                     "Artikkelen bruker fotballbanen som bilde på et samfunn uten regler. Forklar hvorfor et spill trenger både lover, regler og normer samtidig.",
@@ -196,7 +197,7 @@
                             "At straff alltid skal være lik for samme type lovbrudd"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Allmennprevensjon betyr at straffen skal virke avskrekkende på hele befolkningen - ikke bare den som er straffet. Tanken er at folk unngår lovbrudd fordi de vet at det har konsekvenser."
+                        "explanation": "Allmennprevensjon betyr at straffen skal virke avskrekkende på hele befolkningen - ikke bare den som er straffet. Tanken er at folk unngår lovbrudd fordi de ser hvordan samfunnet reagerer."
                     },
                     {
                         "question": "Hvilket utsagn beskriver best de langsiktige samfunnskonsekvensene av utbredt lovbrudd?",
@@ -218,19 +219,35 @@
                             "At normer alltid er strengere enn lover"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Apartheid og slaveri var lovlige systemer i sine respektive land. Det viser at lovlig og rettferdig ikke er det samme. Derfor finnes menneskerettigheter som et overordnet rammeverk som setter grenser for hva lover kan bestemme."
+                        "explanation": "Apartheid (1948-1994) og slaveri var lovlige systemer i sine respektive land. Det viser at lovlig og rettferdig ikke er det samme. Derfor finnes menneskerettigheter som et overordnet rammeverk som setter grenser for hva lover kan bestemme."
                     },
                     {
-                        "question": "Hva er et eksempel på at en norm gikk foran loven og senere formet den?",
+                        "question": "Hva er et eksempel på at endrede holdninger og gradvis strengere lovverk fulgte hverandre over tid?",
                         "options": [
-                            "At Stortinget vedtok røykeforbudet etter at holdningene til røyking allerede hadde endret seg",
+                            "At røykeforbudet på serveringssteder i 2004 kom etter flere innstramminger fra 1988 og utover, mens holdningene til røyking endret seg",
                             "At politiet begynte å håndheve lover strengere etter folkekrav",
                             "At ungdommer ignorerte skoleregler og ingenting skjedde",
                             "At Grunnloven ble endret for å tillate nye styringsformer"
                         ],
                         "correctAnswer": 0,
-                        "explanation": "Røyking på offentlige steder ble stadig mer uakseptert på 1990-tallet - normen endret seg - og lovforbudet i 2004 kom som en formell bekreftelse av en norm som allerede var godt etablert i befolkningen."
+                        "explanation": "Den første røykebestemmelsen kom i 1988 og ble utvidet i 1995 og 1997. Forbudet mot innendørs røyking på alle serveringssteder fra 1. juni 2004 var derfor siste trinn i en utvikling der lov og holdninger endret seg sammen."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bahus, M. K., Hovde, K.-O. & Gursli-Berg, G. (2026). *Røykeloven*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/røykeloven](https://snl.no/r%C3%B8ykeloven)",
+                    "Berg, O. T. & Gisle, J. (2025). *Stortinget*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Stortinget](https://snl.no/Stortinget)",
+                    "Berge, B. (2022). *Paragraf 213 - seksuell omgang mellom menn som straffbart forhold*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Paragraf_213](https://snl.no/Paragraf_213_-_seksuell_omgang_mellom_menn_som_straffbart_forhold)",
+                    "Elden, J. C. (2024). *Straff - jus*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/straff_-_jus](https://snl.no/straff_-_jus)",
+                    "FN-sambandet. (2025). *FNs verdenserklæring om menneskerettigheter*. Hentet 08.08.2026 fra [fn.no](https://fn.no/avtaler/menneskerettigheter/fns-verdenserklaering-om-menneskerettigheter)",
+                    "Haugseth, J. F. & Tjora, A. (2024). *Norm*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/norm](https://snl.no/norm)",
+                    "Holmøyvik, E. (2026). *Grunnlova*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Grunnlova](https://snl.no/Grunnlova)",
+                    "Tjønneland, E. (2025). *Apartheid*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/apartheid](https://snl.no/apartheid)"
                 ]
             }
         }

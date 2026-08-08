@@ -16,6 +16,7 @@
         "sivilt-samfunn"
     ],
     "createdDate": "2026-06-02T00:00:00Z",
+    "factChecked": "2026-08-08",
     "details": ["Kompetansemål SAF01-04", "Maktaktører i samfunnet"],
     "timeline": [],
     "content": [
@@ -29,7 +30,7 @@
         },
         {
             "type": "text",
-            "content": "Hvem bestemmer egentlig prisen på strømmen din? Hvem avgjør om en skole skal legges ned eller om en motorvei skal bygges? Hvem former det du ser i nyhetene? Svarene er sjelden enkle. Makta i et moderne demokrati er ikke samlet på ett sted - den er spredt mellom mange ulike aktører som hver dag kjemper, forhandler og samarbeider om å sette agendaen for hvordan vi lever."
+            "content": "Hvem bestemmer egentlig prisen på strømmen din? Hvem avgjør om en skole skal legges ned eller om en motorvei skal bygges? Hvem former det du ser i nyhetene? Svarene er sjelden enkle. Makta i et moderne samfunn er ikke samlet på ett sted, men utspiller seg på flere felt samtidig - økonomi, politikk, militærvesen og kultur (Engelstad, 2024). Den er spredt mellom mange ulike aktører som hver dag kjemper, forhandler og samarbeider om å sette agendaen for hvordan vi lever."
         },
         {
             "type": "text",
@@ -47,7 +48,7 @@
         },
         {
             "type": "text",
-            "content": "En maktaktør er en person, organisasjon eller institusjon som kan påvirke avgjørelser som gjelder mange. Det finnes fire hovedtyper maktaktører i et demokratisk samfunn: politiske aktører, næringslivsaktører, medieaktører og sivilsamfunnsaktører. De har ulike ressurser og bruker ulike metoder, men de har én ting felles: de vil at deres syn skal vinne fram."
+            "content": "Makt er evnen til å få viljen sin gjennom, også når andre gjør motstand. Den viktigste makta er samlet i organisasjoner - bedrifter, forvaltningsorganer og nasjonalforsamlinger - fordi de rår over langt større ressurser enn enkeltpersoner (Engelstad, 2024). En maktaktør er altså en person, organisasjon eller institusjon som kan påvirke avgjørelser som gjelder mange. I denne artikkelen deler vi dem i fire hovedtyper: politiske aktører, næringslivsaktører, medieaktører og sivilsamfunnsaktører. De har ulike ressurser og bruker ulike metoder, men de har én ting felles: de vil at deres syn skal vinne fram."
         },
         {
             "type": "text",
@@ -59,25 +60,25 @@
         },
         {
             "type": "text",
-            "content": "De folkevalgte politikerne sitter med den formelle makta i et demokrati. I Norge er det Stortinget som vedtar lover og budsjett, mens regjeringen setter dem ut i livet. Les mer om hvordan dette fungerer i artikkelen om [Stortinget](/samfunnskunnskap/styringsformer/stortinget). Politikerne begrunner makta si med at de er valgt av folket og derfor representerer folket - dette kaller vi demokratisk legitimitet."
+            "content": "De folkevalgte politikerne sitter med den formelle makta i et demokrati. I Norge er Stortingets viktigste oppgaver å vedta lover, bestemme statsbudsjettet og kontrollere regjeringen, mens regjeringen setter lovene ut i livet (Berg & Gisle, 2025). Les mer om hvordan dette fungerer i artikkelen om [Stortinget](/samfunnskunnskap/styringsformer/stortinget). Politikerne begrunner makta si med at de er valgt av folket og derfor representerer folket. Da blir makta oppfattet som rettmessig, og nettopp det er kjernen i ordet legitimitet (Knudsen, 2025)."
         },
         {
             "type": "text",
-            "content": "Men politikerne er langt fra alene. Næringslivet - bedrifter, investorer og bransjeorganisasjoner - har enorm makt fordi de kontrollerer penger og arbeidsplasser. Når et stort selskap truer med å flytte virksomheten sin til et annet land, lytter politikerne. Næringslivsaktører begrunner maktbruken sin med hensynet til vekst, innovasjon og sysselsetting. De sier gjerne at det som er godt for næringslivet, er godt for alle."
+            "content": "Men politikerne er langt fra alene. Næringslivet - bedrifter, investorer og bransjeorganisasjoner - har enorm makt fordi de kontrollerer penger og arbeidsplasser. Når et stort selskap truer med å flytte virksomheten sin til et annet land, lytter politikerne. Næringslivsaktører begrunner maktbruken sin med hensynet til vekst, innovasjon og sysselsetting. De sier gjerne at det som er godt for næringslivet, er godt for alle. En vanlig framgangsmåte er lobbyvirksomhet: at interesseorganisasjoner, bedrifter, pressgrupper og enkeltpersoner forsøker å påvirke folkevalgte politikere og andre beslutningstakere i staten. Det er blitt stadig vanligere at større virksomheter ansetter egne folk til dette, eller leier inn kommunikasjonsbyråer (Thorsen, 2024). Nettopp derfor er lobbyvirksomhet omdiskutert: den koster ressurser, og de som har mest av dem, kommer lettest til."
         },
         {
             "type": "text",
-            "content": "Media - aviser, TV, nettsteder og sosiale medier - har makt fordi de avgjør hva vi ser og leser. Hvilke saker som får oppmerksomhet, hvordan de blir framstilt, hvem som får uttale seg: alt dette former hvordan vi forstår verden. Media begrunner makta si med rollen som 'den fjerde statsmakt' - en vaktbikkje som holder politikere og næringsliv ansvarlige på vegne av folket. I artikkelen [Ekkokamre og informasjonsbobler](/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre) kan du lese mer om hvordan algoritmer former hva vi faktisk møter av informasjon."
+            "content": "Media - aviser, TV, nettsteder og sosiale medier - har makt fordi de avgjør hva vi ser og leser. Massemediene har stor betydning for hvilke saker som havner på den politiske dagsordenen, og for hvilke temaer folk oppfatter som viktige (Syvertsen, 2025). Media begrunner makta si med rollen som «den fjerde statsmakt» - en uoffisiell betegnelse på pressen som viser til medienes selvpålagte rolle som samfunnets vaktbikkje overfor de tre andre statsmaktene (Orgeret, 2024). I artikkelen [Ekkokamre og informasjonsbobler](/samfunnskunnskap/mennesket-kultur-samfunn/ekkokamre) kan du lese mer om hvordan algoritmer former hva vi faktisk møter av informasjon."
         },
         {
             "type": "text",
-            "content": "Sivilsamfunnet er alle de frivillige organisasjonene, interessegruppene og bevegelsene som ikke er myndigheter eller næringsliv: fagforeninger, miljøorganisasjoner, religiøse samfunn, idrettslag, menneskerettighetsorganisasjoner. De begrunner maktbruken sin med at de representerer bestemte verdier eller grupper som ikke alltid blir hørt i det formelle systemet. En bevegelse som Natur og Ungdom sier at de taler på vegne av framtidige generasjoner som ikke kan stemme."
+            "content": "Sivilsamfunnet er den delen av samfunnslivet som verken ligger i offentlig sektor eller i næringslivet: frivillige organisasjoner, pressgrupper og enkeltmennesker som går sammen for å fremme en sak eller løse en oppgave på frivillig grunnlag (Thorsen, 2025). Hit hører fagforeninger, miljøorganisasjoner, religiøse samfunn, idrettslag og menneskerettighetsorganisasjoner. De begrunner maktbruken sin med at de representerer bestemte verdier eller grupper som ikke alltid blir hørt i det formelle systemet. En bevegelse som Natur og Ungdom sier at de taler på vegne av framtidige generasjoner som ikke kan stemme."
         },
         {
             "type": "image",
             "src": "/images/styringsformer/km-12-maktaktørar-02.webp",
             "alt": "Lobbyister i korridor utenfor politisk møterom",
-            "caption": "Lobbyisme - å forsøke å påvirke politikere - er en lovlig, men omdiskutert form for maktutøvelse."
+            "caption": "Lobbyvirksomhet - å forsøke å påvirke folkevalgte og andre beslutningstakere - er en lovlig, men omdiskutert form for maktutøvelse."
         },
         {
             "type": "header",
@@ -85,7 +86,7 @@
         },
         {
             "type": "text",
-            "content": "For å forstå hvordan disse aktørene faktisk opererer, er det nyttig å se på et konkret eksempel. Ta debatten om oljeboring i nye havområder. Oljeselskap og organisasjonene deres argumenterer for flere lisenstildelinger - de peker på inntekter til fellesskapet og arbeidsplasser på kysten. Fagforeninger i oljesektoren støtter dette. Miljøorganisasjoner og Natur og Ungdom demonstrerer og saksøker staten. Media dekker konflikten. Forskningsinstitutt leverer rapporter om klimakonsekvenser. Stortingsrepresentanter lover velgere i nord noe, og velgere i sør noe annet. I dette bildet ser du alle fire aktørtypene på en gang."
+            "content": "For å forstå hvordan disse aktørene faktisk opererer, er det nyttig å se på et konkret eksempel. Ta debatten om oljeboring i nye havområder. Oljeselskap og organisasjonene deres argumenterer for flere lisenstildelinger - de peker på inntekter til fellesskapet og arbeidsplasser på kysten. Fagforeninger i oljesektoren støtter dette. Miljøorganisasjoner demonstrerer, og noen går enda lenger: i 2016 saksøkte Greenpeace og Natur og Ungdom staten for å få kjent utvinningstillatelsene i Barentshavet ugyldige etter Grunnlovens § 112 (Jakobsen, 2026). Media dekker konflikten. Forskningsinstitutt leverer rapporter om klimakonsekvenser. Stortingsrepresentanter lover velgere i nord noe, og velgere i sør noe annet. I dette bildet ser du alle fire aktørtypene på en gang."
         },
         {
             "type": "text",
@@ -131,7 +132,7 @@
         },
         {
             "type": "text",
-            "content": "I dag finnes det en femte aktørgruppe som mange glemmer: kjendisene og de store influenserne. En fotballspiller med 50 millioner følgere på sosiale medier kan flytte mening om klimapolitikk, kosthold eller demokrati like effektivt som en stortingsrepresentant. De begrunner denne makta med at de 'bare deler meningene sine' - men det er jo også akkurat det de andre aktørene gjør. Forskjellen er at de ikke er valgt, ikke er ansvarlige overfor noen forsamling og ikke nødvendigvis har fagkunnskap om temaene de uttaler seg om. I artikkelen [Kjendismakt og influensere](/samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt) kan du lese mer om denne relativt nye maktformen."
+            "content": "I dag finnes det en femte aktørgruppe som mange glemmer: kjendisene og de store influenserne. En influenser er en opinionsleder som ytrer seg offentlig i sosiale medier for å påvirke beslutninger, holdninger og handlinger hos følgerne sine, og relasjonen bygger ofte på respekt og tillit (Pihl, 2025). En fotballspiller med mange millioner følgere kan derfor flytte mening om klimapolitikk, kosthold eller demokrati like effektivt som en stortingsrepresentant. De begrunner denne makta med at de «bare deler meningene sine» - men det er jo også akkurat det de andre aktørene gjør. Forskjellen er at de ikke er valgt, ikke er ansvarlige overfor noen forsamling og ikke nødvendigvis har fagkunnskap om temaene de uttaler seg om. I artikkelen [Kjendismakt og influensere](/samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt) kan du lese mer om denne relativt nye maktformen."
         },
         {
             "type": "text",
@@ -145,7 +146,7 @@
                     "Hva er en maktaktør? Skriv definisjonen med egne ord.",
                     "Nevn de fire hovedtypene maktaktører som artikkelen beskriver.",
                     "Hva mener vi med at media er den fjerde statsmakt?",
-                    "Hva er lobbyisme, og hvorfor kaller artikkelen det en omdiskutert form for maktutøvelse?"
+                    "Hva er lobbyvirksomhet, og hvorfor kaller artikkelen det en omdiskutert form for maktutøvelse?"
                 ],
                 "reflekter": [
                     "Politikere begrunner makta si med demokratisk legitimitet, mens et stort selskap begrunner sin med arbeidsplasser og vekst. Hvorfor lytter politikerne likevel til selskapet?",
@@ -199,15 +200,15 @@
                         "explanation": "Å tale på vegne av dem som ikke kan tale selv (framtidige generasjoner) er en prinsippbegrunnelse basert på rettferds- og representasjonsideal - ikke på egen interesse eller praktiske konsekvenser."
                     },
                     {
-                        "question": "Hva er lobbyisme?",
+                        "question": "Hva er lobbyvirksomhet?",
                         "options": [
                             "Ulovlig bestikkelse av politikere",
                             "En form for valgfusk",
-                            "Lovlig påvirkningsarbeid overfor politikere utenfor parlamentet",
+                            "At organisasjoner, bedrifter og enkeltpersoner forsøker å påvirke folkevalgte og andre beslutningstakere",
                             "Medias dekning av politiske saker"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Lobbyisme er lovlig, men omdiskutert påvirkning av politikere og embetsfolk. Det krever store ressurser og gir dermed dem som har mest penger et fortrinn i den politiske prosessen."
+                        "explanation": "Lobbyvirksomhet er lovlig, men omdiskutert påvirkning av politikere og beslutningstakere i staten. Større virksomheter ansetter egne folk eller leier inn kommunikasjonsbyråer til dette, og de som har mest ressurser kommer dermed lettest til."
                     },
                     {
                         "question": "Hvorfor er det viktig å spørre 'hvem tjener på dette argumentet?' når en maktaktør begrunner standpunktet sitt?",
@@ -220,6 +221,23 @@
                         "correctAnswer": 1,
                         "explanation": "Å analysere hvem som tjener på et argument er et grunnleggende kritisk verktøy - ikke fordi man skal mistro alt, men fordi det hjelper oss å forstå hvilke interesser som ligger bak, og dermed vurdere argumentet mer nyansert."
                     }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, O. T. & Gisle, J. (2025). *Stortinget*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Stortinget](https://snl.no/Stortinget)",
+                    "Engelstad, F. (2024). *Makt*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/makt](https://snl.no/makt)",
+                    "Jakobsen, I. U. (2026). *Klimasøksmålet i 2016*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Klimasøksmålet_i_2016](https://snl.no/Klimas%C3%B8ksm%C3%A5let_i_2016)",
+                    "Knudsen, O. F. (2025). *Legitimitet*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/legitimitet](https://snl.no/legitimitet)",
+                    "Orgeret, K. S. (2024). *Fjerde statsmakt*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/fjerde_statsmakt](https://snl.no/fjerde_statsmakt)",
+                    "Pihl, R. (2025). *Influenser*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/influenser](https://snl.no/influenser)",
+                    "Syvertsen, T. (2025). *Massemedier*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/massemedier](https://snl.no/massemedier)",
+                    "Thorsen, D. E. (2024). *Lobbyvirksomhet*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/lobbyvirksomhet](https://snl.no/lobbyvirksomhet)",
+                    "Thorsen, D. E. (2025). *Sivilsamfunn*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/sivilsamfunn](https://snl.no/sivilsamfunn)"
                 ]
             }
         }
