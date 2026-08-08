@@ -3288,6 +3288,21 @@
               "createdDate": "2026-08-05T00:00:00Z"
             },
             {
+              "id": "kapplopet-mot-sydpolen",
+              "title": "Kappløpet mot Sydpolen",
+              "description": "Amundsen, Nansen og Scott: hvorfor kunnskap tilpasset isen slo det nyeste utstyret.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "norge",
+                "polarhistorie",
+                "amundsen",
+                "nansen",
+                "antarktis"
+              ],
+              "createdDate": "2026-08-08T00:00:00Z"
+            },
+            {
               "id": "utvandringen-til-amerika",
               "title": "Utvandringen til Amerika",
               "description": "Rundt 800 000 nordmenn reiste til Nord-Amerika mellom 1825 og 1915. Press hjemmefra og lokking fra Amerika drev den største folkeflyttingen i norsk historie.",

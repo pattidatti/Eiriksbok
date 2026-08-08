@@ -807,7 +807,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 327
+      "count": 329
     },
     {
       "tag": "dekolonisering",
@@ -2635,6 +2635,22 @@
     },
     {
       "tag": "berlinkonferansen",
+      "count": 2
+    },
+    {
+      "tag": "polarhistorie",
+      "count": 2
+    },
+    {
+      "tag": "amundsen",
+      "count": 2
+    },
+    {
+      "tag": "nansen",
+      "count": 2
+    },
+    {
+      "tag": "antarktis",
       "count": 2
     },
     {

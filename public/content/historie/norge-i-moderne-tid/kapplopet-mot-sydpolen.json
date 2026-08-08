@@ -1,0 +1,291 @@
+{
+    "id": "kapplopet-mot-sydpolen",
+    "title": "Kappløpet mot Sydpolen",
+    "layout": "rich",
+    "year": "1888-1912",
+    "category": "Norge i moderne tid",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "factChecked": "2026-08-08",
+    "details": [
+        "Roald Amundsen og fire menn nådde Sydpolen 14. desember 1911",
+        "Robert Falcon Scott kom fram fem uker senere og døde på vei tilbake",
+        "Amundsen brukte pelsklær, hunder og depoter han hadde lært om i Arktis"
+    ],
+    "externalUrl": "https://snl.no/Sydpolen",
+    "content": [
+        {
+            "type": "text",
+            "content": "Fem menn stanser sledene sine på en flat, hvit slette. Det er 14. desember 1911. Rundt dem er det ingenting å se: ingen fjell, ingen sjø, ingen dyr. Bare snø som ligger 2800 meter over havet, oppå en is som er nesten like tykk (Njåstad, 2024). Likevel vet de nøyaktig hvor de er. Instrumentene sier at her går alle retninger nordover. De er på Sydpolen, og de er de første menneskene som har vært der."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Fem menn med hundeslede ved flagg på hvit snøslette",
+            "caption": "14. desember 1911: Amundsen, Bjaaland, Hanssen, Hassel og Wisting på Sydpolen."
+        },
+        {
+            "type": "text",
+            "content": "Fem uker senere kom en britisk gruppe fram til det samme punktet. De fant det norske teltet og forsto at de hadde tapt. Ingen av dem kom levende hjem. Historien om de to gruppene handler ikke om hvem som var modigst. Den handler om hvem som hadde skaffet seg riktig kunnskap på forhånd."
+        },
+        {
+            "type": "header",
+            "text": "Et land som nettopp hadde blitt sitt eget"
+        },
+        {
+            "type": "text",
+            "content": "For å skjønne hvorfor polarferdene betydde så mye i Norge, må vi tilbake til [unionsoppløsningen i 1905](/historie/norge-i-moderne-tid/unionsopplosningen-1905). Norge var et lite, nytt land som skulle vise verden at det klarte seg selv. Fridtjof Nansen var en av dem som talte høyest for norsk selvstendighet, og han ble Norges første minister i London fra 1906 til 1908 (Brox mfl., 2026). En polarhelt var derfor ikke bare en eventyrer. Han var et bevis på at det nye landet dugde til noe."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig var Arktis blitt et område mange land ville ha noe å si over. Norge kjempet også om [Svalbard](/historie/norge-i-moderne-tid/svalbard) i de samme årene. Å være god på is var altså både stolthet og politikk."
+        },
+        {
+            "type": "header",
+            "text": "Nansen og skipet som lot seg fryse fast"
+        },
+        {
+            "type": "text",
+            "content": "Fridtjof Nansen begynte med noe ingen trodde var mulig. I 1888 gikk han og laget hans over innlandsisen på Grønland på ski, fra øst til vest. De dro fra kysten 2. mai og kom fram til Godthåb 3. oktober (Brox mfl., 2026). Turen viste at ski og enkelt utstyr kunne bære mennesker over is der store ekspedisjoner hadde snudd."
+        },
+        {
+            "type": "text",
+            "content": "Så kom den ideen som gjorde Nansen verdenskjent. Forskeren Henrik Mohn hadde tenkt at isen i Polhavet driver sakte fra Sibir og over mot Grønland (Brox mfl., 2026). De fleste mente at et skip som frøs fast i isen ville bli knust. Nansen snudde problemet: hva om skipet ble bygget slik at isen ikke fikk tak i det?"
+        },
+        {
+            "type": "text",
+            "content": "Skipsbyggeren Colin Archer tegnet og bygde Fram i 1891 og 1892 etter Nansens idé. Skroget fikk en veldig rund form, slik at isen presset skipet opp i stedet for å klemme det i stykker. Skutesiden var bygget i tre lag, til sammen omtrent 70 centimeter tykk (Barr, 2025b). Fram dro fra Kristiania 24. juni 1893 med tretten mann. Nansen og Hjalmar Johansen forlot skipet 14. mars 1895 og kom seg til 86 grader og 4 minutter nord, lenger nord enn noe menneske hadde vært (Brox mfl., 2026)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Fram: skipet som gjorde tre ferder",
+                "content": "Fram var 39 meter langt og 11 meter bredt, og veide 800 tonn når det lå med 4,75 meters dypgang. Skipet ble brukt av Nansen i Polhavet fra 1893 til 1896, av Otto Sverdrup i Arktis fra 1898 til 1902, og av Amundsen i Antarktis fra 1910 til 1912. I dag står Fram på Frammuseet på Bygdøy i Oslo, der det har vært siden 1936 (Barr, 2025b)."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Læretida i Nordvestpassasjen"
+        },
+        {
+            "type": "text",
+            "content": "Roald Amundsen ble født 16. juli 1872 i Borge i Østfold (Barr, 2025a). I 1903 dro han av gårde med den lille skuta Gjøa for å finne veien gjennom Nordvestpassasjen, sjøveien nord for Canada. Det tok tre år, og de overvintret tre ganger. Gjøa ble det første skipet som kom gjennom hele passasjen (Barr, 2025a)."
+        },
+        {
+            "type": "text",
+            "content": "Men det viktigste Amundsen fikk med seg fra denne turen, var ikke en rute på et kart. Det var kunnskap. Ved Gjøahavn møtte laget netsilik-inuittene, og Amundsen gjorde grundige studier av hvordan de levde i et av verdens kaldeste områder (Barr, 2025a). Han byttet til seg klær og hunder, lærte hvordan man kjører slede, og gikk selv i reinskinnsklær i tjue måneder i strekk. Etterpå skrev han at urfolkets klær uten tvil var det beste man kunne bruke om vinteren (Norsk Polarinstitutt, u.å.-a)."
+        },
+        {
+            "type": "text",
+            "content": "Grunnen er enkel når man tenker over den. Tett stoff holder på svetten. Svetten fryser til is mot huden, og da blir du kaldere jo hardere du jobber. Løse skinnklær slipper fuktigheten ut. Dette er noe inuittene hadde visst i generasjoner, og som en europeisk ekspedisjon kunne lære på noen få måneder hvis den var villig til å spørre."
+        },
+        {
+            "type": "text",
+            "content": "Det er verdt å legge merke til kontrasten. I de samme årene drev norske myndigheter en hard [fornorsking av samene](/historie/norge-i-moderne-tid/fornorskingen-av-samene), der urfolkets språk og levemåte ble sett på som noe man skulle bort fra. Ute på isen var Amundsen helt avhengig av at et urfolk visste bedre enn ham."
+        },
+        {
+            "type": "component",
+            "name": "Polarvalget",
+            "props": {
+                "title": "Polarvalget: hva tar du med deg?",
+                "subtitle": "Fire valg avgjør turen. Se hvor langt sleden kommer.",
+                "goalKm": 2600
+            }
+        },
+        {
+            "type": "header",
+            "text": "Et telegram som snudde alt"
+        },
+        {
+            "type": "text",
+            "content": "Amundsen planla egentlig ikke å dra sørover i det hele tatt. Høsten 1908 la han fram planen sin for Det Norske Geografiske Selskab: han skulle drive over Polhavet slik Nansen hadde gjort, og nå Nordpolen. Men i 1909 meldte både Frederick Cook og Robert Peary at de allerede hadde vært på Nordpolen. Da snudde Amundsen planen sin mot Antarktis og Sydpolen (Barr, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Det nye målet holdt han hemmelig, også for de fleste i mannskapet, helt til skipet lå ved Madeira. Derfra sendte han et kort telegram til britiske Robert Falcon Scott, som allerede var på vei sørover: «Tillater meg å informere om at Fram går til Antarktis. Amundsen» (Barr, 2024). I Storbritannia ble dette oppfattet som et slag under beltet."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Polarskipet Fram i isen ved Antarktis, 1911",
+            "caption": "Fram ved Hvalbukta. Herfra bygde laget basen Framheim på isbremmen."
+        },
+        {
+            "type": "header",
+            "text": "99 dager på isen"
+        },
+        {
+            "type": "text",
+            "content": "Fram forlot Kristiania 7. juni 1910 og kom fram til Antarktis i januar 1911. Laget bygde basen Framheim ved Hvalbukta på Rossbarrieren (Barr, 2025a). Så gjorde de noe som ser kjedelig ut, men som avgjorde alt: de brukte hele høsten på å kjøre ut depoter. Et depot er et lager med mat og brensel som du legger ut på forhånd og merker godt, slik at du kan hente det på veien."
+        },
+        {
+            "type": "text",
+            "content": "Første forsøk på selve polferden gikk galt. 8. september 1911 dro de av gårde altfor tidlig, og både folk og hunder holdt på å fryse i hjel. De måtte snu (Barr, 2024). Den ordentlige starten kom 20. oktober 1911. Fem menn dro sørover med fire sleder og 52 hunder: Amundsen, Olav Bjaaland, Helmer Hanssen, Sverre Hassel og Oscar Wisting (Barr, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "De klatret opp fra isbremmen til høysletta og fortsatte sørover. 14. desember 1911 var de framme (Barr, 2025a). Turen tilbake gikk fortere enn turen ut, og 26. januar 1912 kjørte de inn i Framheim igjen. Til sammen hadde de vært 99 dager på isen og kjørt 2600 kilometer (Njåstad, 2024)."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "sydpolsferden-3d"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Scott kom fem uker for sent"
+        },
+        {
+            "type": "text",
+            "content": "Robert Falcon Scott var født 6. juni 1868 i Plymouth i England. Terra Nova-ekspedisjonen hans forlot London 1. juni 1910, altså bare uker før Fram dro fra Kristiania (Bache, 2026). Scott hadde med seg motorsleder, hester og noen hunder."
+        },
+        {
+            "type": "text",
+            "content": "Det gikk galt med begge de store satsingene. Motorsledene var splitter nye, men de brøt sammen etter få dager. Hestene taklet ikke kulda og ble til slutt avlivet. Da måtte mennene dra sledene selv (Bache, 2026). Å trekke en tung slede i tynn luft på nesten 3000 meters høyde, i 25 kuldegrader midt på sommeren, tapper kroppen fortere enn den klarer å ta til seg mat."
+        },
+        {
+            "type": "text",
+            "content": "Scott og fire menn nådde Sydpolen 17. januar 1912 og fant det norske teltet der (Njåstad, 2024). På vei tilbake døde de én etter én. Edgar Evans falt sammen 17. februar. Lawrence Oates gikk ut av teltet 16. mars med ordene om at han bare skulle ut en tur og kanskje ville bli borte en stund, og kom aldri tilbake (Bache, 2026). Scott, Henry Bowers og Edward Wilson slo opp teltet for siste gang 21. mars 1912. De hadde verken mat eller brensel igjen, og de var syke av skjørbuk, frostskader og koldbrann (Njåstad, 2024). De frosne kroppene ble funnet åtte måneder senere, omtrent 18 kilometer fra et depot (Bache, 2026; Norsk Polarinstitutt, u.å.-b)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Snødekt telt på tom isslette i Antarktis, 1912",
+            "caption": "Scotts siste leir lå bare 18 kilometer fra neste depot."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor gikk det så ulikt?"
+        },
+        {
+            "type": "text",
+            "content": "Det er lett å si at Amundsen var heldig. Men se på valgene. Han brukte klær som var utviklet av folk som bor i kulde. Han brukte hunder, som løper oppå snøen i stedet for å synke ned i den, og som kan trekke mens menneskene står på ski. Han la ut depoter på forhånd, slik at sleden var lett og maten ventet på ham. Og han kjørte faste dagsetapper med hvile i stedet for å presse laget til det stupte."
+        },
+        {
+            "type": "text",
+            "content": "Scott satset på det som så mest moderne ut. Motorsleder var toppen av britisk teknologi i 1910. Problemet var at teknologien var laget for et annet klima. Amundsen hadde brukt tre år i Arktis på å lære hva som virker der ute, og han hadde lært det av mennesker som allerede kunne det."
+        },
+        {
+            "type": "text",
+            "content": "Det betyr ikke at Scott var dum. Han var en dyktig marineoffiser som gjorde mye vitenskapelig arbeid underveis. Men han hadde bestemt seg for en plan hjemmefra, mens Amundsen hadde tilpasset planen sin til stedet."
+        },
+        {
+            "type": "header",
+            "text": "Livet etter isen"
+        },
+        {
+            "type": "text",
+            "content": "Nansen brukte resten av livet på noe helt annet enn is. I juli 1922 foreslo han å lage et eget reisedokument for flyktninger som ikke hadde noe land å høre til. Mer enn 50 land godtok til slutt det som ble hetende Nansenpasset, og samme år fikk han Nobels fredspris for hjelpearbeidet sitt (Brox mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Amundsen fortsatte nordover. I 1926 fløy han over Nordpolen med luftskipet Norge: de dro 11. mai, var over polen 12. mai og landet i Alaska 13. mai etter 72 timer i lufta (Barr, 2025a). To år senere, 18. juni 1928, forsvant han i Ishavet nær Bjørnøya mens han lette etter en savnet ekspedisjon (Barr, 2025a). Mannen som alltid planla seg ut av faren, døde på et redningsoppdrag han hadde dratt ut på i all hast."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Når nådde Amundsen Sydpolen, og hvem var de fire andre som var med ham?",
+                    "Hva var det spesielle med skroget til Fram, og hvorfor var det bygget slik?",
+                    "Hva lærte Amundsen av netsilik-inuittene under Gjøa-ferden?",
+                    "Hvorfor byttet Amundsen mål fra Nordpolen til Sydpolen?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor tette ullklær kan gjøre deg kaldere når du jobber hardt i kulde.",
+                    "Depotene tok en hel høst å legge ut, og de førte laget ikke ett skritt nærmere polen den høsten. Forklar hvorfor de likevel var det viktigste arbeidet Amundsen gjorde.",
+                    "Scott hadde det nyeste utstyret som fantes i 1910. Vurder hvorfor det ikke hjalp ham, og hva det sier om forholdet mellom ny teknologi og kunnskap om stedet.",
+                    "Norske myndigheter drev fornorsking av samene i de samme årene som Amundsen lærte av inuittene. Diskuter hva denne motsetningen forteller om hvordan folk så på urfolkskunnskap."
+                ],
+                "gaaVidere": [
+                    "Amundsens telegram til Scott ble oppfattet som et slag under beltet i Storbritannia. Skriv to korte innlegg om telegrammet: ett fra en norsk avis i 1910 og ett fra en britisk avis.",
+                    "Finn ut hvordan forskere kommer seg til Sydpolen i dag, og lag en liste over hva som er blitt lettere og hva som fortsatt er like vanskelig som i 1911.",
+                    "Diskuter to og to: bør vi kalle Amundsen en helt? Bruk minst tre konkrete opplysninger fra artikkelen i svaret deres."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Når sto Amundsen og mennene hans på Sydpolen?",
+                        "options": [
+                            "17. januar 1912",
+                            "14. desember 1911",
+                            "20. oktober 1911",
+                            "26. januar 1912"
+                        ],
+                        "answer": 1,
+                        "explanation": "Amundsen, Bjaaland, Hanssen, Hassel og Wisting nådde Sydpolen 14. desember 1911. Scott kom fram 17. januar 1912, fem uker senere."
+                    },
+                    {
+                        "question": "Hvorfor ble Fram bygget med et veldig rundt skrog?",
+                        "options": [
+                            "For at skipet skulle gå fortere",
+                            "For at det skulle få plass til flere hunder",
+                            "For at isen skulle presse skipet opp i stedet for å knuse det",
+                            "For at det skulle være lettere å bygge"
+                        ],
+                        "answer": 2,
+                        "explanation": "Nansens idé var at et rundt skrog ville gli opp av isen når trykket kom, i stedet for å bli klemt i stykker. Colin Archer bygde skipet etter denne ideen i 1891 og 1892."
+                    },
+                    {
+                        "question": "Hva er et depot i en polarekspedisjon?",
+                        "options": [
+                            "En hytte der laget overnatter",
+                            "Et lager med mat og brensel som er lagt ut på forhånd langs ruta",
+                            "En type slede som hundene trekker",
+                            "Et instrument som viser hvor polen er"
+                        ],
+                        "answer": 1,
+                        "explanation": "Amundsen brukte hele høsten 1911 på å kjøre ut depoter. Da ble sleden lett, og maten ventet på laget hele veien til polen og hjem igjen."
+                    },
+                    {
+                        "question": "Hva skjedde med motorsledene og hestene til Scott?",
+                        "options": [
+                            "De virket bra helt til polen",
+                            "Motorsledene brøt sammen etter få dager, og hestene tålte ikke kulda",
+                            "De ble stjålet av det norske laget",
+                            "De ble aldri tatt med til Antarktis"
+                        ],
+                        "answer": 1,
+                        "explanation": "Motorsledene brøt sammen etter få dager, og hestene sank ned i snøen og måtte avlives. Til slutt måtte mennene dra sledene selv."
+                    },
+                    {
+                        "question": "Hva lærte Amundsen av netsilik-inuittene som han hadde nytte av i Antarktis?",
+                        "options": [
+                            "Hvordan man bygger et skip som tåler is",
+                            "Hvordan man navigerer etter stjernene",
+                            "Hvordan man bruker løse skinnklær og kjører hundeslede",
+                            "Hvordan man lager mat av sel"
+                        ],
+                        "answer": 2,
+                        "explanation": "Under Gjøa-ferden gikk Amundsen i reinskinnsklær i tjue måneder og lærte hundekjøring av netsilik-inuittene. Løse skinnklær slipper svetten ut, mens tett stoff holder fuktigheten inne."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bache, A. (2026). *Robert Falcon Scott*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Robert_Falcon_Scott](https://snl.no/Robert_Falcon_Scott)",
+                    "Barr, S. (2024). *Fram III-ekspedisjonen*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Fram_III-ekspedisjonen](https://snl.no/Fram_III-ekspedisjonen)",
+                    "Barr, S. (2025a). *Roald Amundsen*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Roald_Amundsen](https://snl.no/Roald_Amundsen)",
+                    "Barr, S. (2025b). *Fram - polarskute*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Fram_-_polarskute](https://snl.no/Fram_-_polarskute)",
+                    "Brox, K. H., Tvedt, K. A., Barr, S. & Iversen, V. (2026). *Fridtjof Nansen*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Fridtjof_Nansen](https://snl.no/Fridtjof_Nansen)",
+                    "Njåstad, B. (2024). *Sydpolen*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/Sydpolen](https://snl.no/Sydpolen)",
+                    "Norsk Polarinstitutt. (u.å.-a). *1903-1906 Amundsens Gjøa-ekspedisjon*. Polarhistorie.no. Hentet 08.08.2026 fra [polarhistorie.no](https://polarhistorie.no/ekspedisjoner/amundsens-gjoa-ekspedisjon/)",
+                    "Norsk Polarinstitutt. (u.å.-b). *1911 Amundsens Sydpolekspedisjon*. Polarhistorie.no. Hentet 08.08.2026 fra [polarhistorie.no](https://polarhistorie.no/ekspedisjoner/amundsens-sydpolekspedisjon/)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

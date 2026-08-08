@@ -178,6 +178,7 @@ const Kullkapplopet3D = lazy(() => import('./Kullkapplopet3D'));
 const Vinteren1847 = lazy(() => import('./Vinteren1847'));
 const LandetMedIld3D = lazy(() => import('./LandetMedIld3D'));
 const LalibelaKirke3D = lazy(() => import('./LalibelaKirke3D'));
+const Sydpolsferden3D = lazy(() => import('./Sydpolsferden3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'bedehuset-motet': {
@@ -1736,6 +1737,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Vinteren1847'),
         Component: Vinteren1847 as never,
+    },
+    'sydpolsferden-3d': {
+        id: 'sydpolsferden-3d',
+        title: 'Ferden mot Sydpolen',
+        description:
+            'Førstepersons hundekjøring over isbreen mot Sydpolen. Hold inne for å la spannet trekke og styr med pekeren, men slipp og hvil før hundene er utkjørte. Matsekken tømmes hele tiden, og fylles bare når du styrer innom de røde depotflaggene du la ut om høsten. Polarsommeren teller ned. Lyspæra: Amundsen vant ikke fordi han var modigere enn Scott, men fordi depotene og hviledagene var planlagt inn i ruta fra første dag.',
+        estimatedSeconds: 170,
+        loader: () => import('./Sydpolsferden3D'),
+        Component: Sydpolsferden3D as never,
     },
 };
 
