@@ -21,11 +21,11 @@
         },
         {
             "type": "text",
-            "content": "Økonomien vår beveger seg ikke i en rett linje. Den går i bølger. Noen år er alt fantastisk: bedrifter ansetter, lønningene stiger, og børsen setter nye rekorder. Dette kalles en 'boom' eller oppgang i en Konjunktursyklus. Men så, nesten som en naturlov, snur det. Bedrifter går konkurs, folk mister jobben, og verdiene stuper. Dette er krisen, eller en Resesjon."
+            "content": "Økonomien vår beveger seg ikke i en rett linje. Den går i bølger. Noen år er alt fantastisk: bedrifter ansetter, lønningene stiger, og børsen setter nye rekorder. Dette kalles en 'boom' eller oppgang i en Konjunktursyklus. Men så snur det. Bedrifter går konkurs, folk mister jobben, og verdiene stuper. Dette er krisen, eller en Resesjon. En resesjon blir vanligvis regnet fra det øyeblikket bruttonasjonalproduktet faller to kvartaler på rad (Billington, 2025)."
         },
         {
             "type": "text",
-            "content": "Mange økonomer ser på dette som uunngåelige stormvær. Men den østerrikske skolen innen økonomi mener at disse svingningene ikke er tilfeldige. De skyldes en forstyrrelse av økonomiens viktigste signal: Renten."
+            "content": "Økonomer er ikke enige om hva som skaper disse bølgene. Det er lagt fram en lang rekke ulike konjunkturteorier, og spørsmålet er fortsatt ikke avklart (Stoltz, 2026). Den østerrikske skolen innen økonomi mener at svingningene ikke er tilfeldige. De skyldes en forstyrrelse av økonomiens viktigste signal: Renten (Boettke, u.å.)."
         },
         {
             "type": "header",
@@ -63,11 +63,11 @@
         },
         {
             "type": "text",
-            "content": "Problemet oppstår når en Sentralbank griper inn. Sentralbanken ønsker ofte å 'stimulere' økonomien. De gjør dette ved å trykke nye penger og låne dem ut til bankene billig. Dette presser renten ned kunstig."
+            "content": "Problemet oppstår når en Sentralbank griper inn. Sentralbanken setter styringsrenten, altså renten bankene får på pengene de har stående i sentralbanken, og den styrer dermed rentenivået i hele økonomien. Den kan også tilføre økonomien nye penger ved å kjøpe verdipapirer, såkalte kvantitative lettelser (Thomassen & Østenstad, 2025). Når sentralbanken ønsker å 'stimulere' økonomien, presses renten ned."
         },
         {
             "type": "text",
-            "content": "Dette skaper en Kredittekspansjon. Det ser ut som om det finnes masse sparing (billige penger), men i virkeligheten har ikke folk spart mer. Mengden fysiske ressurser (stål, betong, arbeidskraft) er den samme som før."
+            "content": "Dette skaper en Kredittekspansjon. Det ser ut som om det finnes masse sparing (billige penger), men i virkeligheten har ikke folk spart mer. Mengden fysiske ressurser (stål, betong, arbeidskraft) er den samme som før. Ludwig von Mises mente at det nettopp er den ukontrollerte veksten i bankenes utlån som skaper konjunktursvingningene (Henderson, u.å.)."
         },
         {
             "type": "image",
@@ -109,7 +109,7 @@
         },
         {
             "type": "text",
-            "content": "Men under overflaten skjer det noe farlig: En massiv Feilinvestering. Ressurser blir brukt på prosjekter som aldri skulle vært startet. Byggmesteren bruker opp de få mursteinene han faktisk har på å støpe 20 grunnmurer, i stedet for å bygge 10 ferdige hus."
+            "content": "Men under overflaten skjer det noe farlig: En massiv Feilinvestering. Ressurser blir brukt på prosjekter som aldri skulle vært startet. Ifølge den østerrikske konjunkturteorien er det nettopp dette kredittekspansjonen gjør: den bygger opp feilinvesteringer i oppgangstiden som må rettes opp igjen i nedturen (Boettke, u.å.). Byggmesteren bruker opp de få mursteinene han faktisk har på å støpe 20 grunnmurer, i stedet for å bygge 10 ferdige hus."
         },
         {
             "type": "header",
@@ -143,7 +143,7 @@
         },
         {
             "type": "text",
-            "content": "Dette er det vi kaller krisen eller nedturen. Det er smertefullt. Arbeidsledigheten stiger, og formuer forsvinner. Men ifølge østerriksk teori er ikke krisen selve problemet – krisen er kuren. Det er en nødvendig Korreksjon."
+            "content": "Dette er det vi kaller krisen eller nedturen. Det er smertefullt. Arbeidsledigheten stiger, og formuer forsvinner. Men ifølge østerriksk teori er ikke krisen selve problemet - krisen er kuren. Det er en nødvendig Korreksjon (Boettke, u.å.)."
         },
         {
             "type": "text",
@@ -155,17 +155,17 @@
         },
         {
             "type": "text",
-            "content": "Et klassisk eksempel fra virkeligheten er finanskrisen i 2008. I årene før holdt den amerikanske sentralbanken renten ekstremt lav. Dette lurte investorer og vanlige folk til å tro at det var trygt å låne enorme summer til bolig. Det ble bygget millioner av hus som ingen egentlig hadde råd til (feilinvesteringer)."
+            "content": "Et klassisk eksempel fra virkeligheten er finanskrisen i 2008. I årene før holdt den amerikanske sentralbanken styringsrenten lav lenge. Noen mener dette bidro til å blåse opp boligmarkedet, mens andre økonomer mener lav rente bare forklarer en liten del av boligboomen (Weinberg, 2013). Uansett var troen på at boligprisene skulle fortsette å stige så sterk at mange husholdninger fikk større boliglån enn de klarte å betale, såkalte subprime-lån (Notaker, 2026)."
         },
         {
             "type": "text",
-            "content": "Da renten til slutt måtte opp, sprakk boblen. Prisene kollapset, og bankene som hadde lånt ut pengene havnet i store problemer. Men forsøkene på å redde økonomien ved å trykke enda mer penger, har ifølge kritikerne bare blåst opp nye bobler andre steder. ([Se også: Det store børskrakket i 1929](/historie/mellomkrigstiden/borskrakk) for et historisk eksempel)."
+            "content": "Så sviktet innbetalingene, og boligmarkedet brøt sammen i 2007. Boligprisene i USA falt med over en femtedel fra 2007 til 2011 (Weinberg, 2013). Bankene som hadde lånt ut pengene havnet i store problemer: noen gikk konkurs, som investeringsbanken Lehman Brothers i 2008, mens andre ble reddet av staten. Arbeidsledigheten i USA ble doblet på to år, fra fem prosent i starten av 2008 til ti prosent sent i 2009 (Notaker, 2026). Men forsøkene på å redde økonomien ved å tilføre enda mer penger, har ifølge kritikerne bare blåst opp nye bobler andre steder. ([Se også: Det store børskrakket i 1929](/historie/mellomkrigstiden/borskrakk) for et historisk eksempel)."
         },
         {
             "type": "image",
             "src": "/content/samfunnskunnskap/demografi-okonomi/assets/spania-boligkrise-2012.jpg",
             "alt": "Uferdige boliger i Spania",
-            "caption": "Bilde fra 2012 utenfor Madrid hvor tusenvis av boliger stod uferdig. På det meste var det 800.000 uferdige boliger i Spania etter finanskrisen."
+            "caption": "Bilde fra 2012 utenfor Madrid hvor tusenvis av boliger stod uferdig etter at den spanske boligboblen sprakk."
         },
         {
             "type": "header",
@@ -173,7 +173,7 @@
         },
         {
             "type": "text",
-            "content": "Lærdommen fra byggmesteren er at vi ikke kan trylle frem velstand ved å manipulere penger og renter. Ekte økonomisk vekst krever ekte sparing – ekte murstein – før man kan bygge. Når vi prøver å jukse med dette, ender vi alltid opp med en bakrus."
+            "content": "Lærdommen fra byggmesteren er at vi ikke kan trylle frem velstand ved å manipulere penger og renter. Ekte økonomisk vekst krever ekte sparing - ekte murstein - før man kan bygge. Når vi prøver å jukse med dette, ender vi alltid opp med en bakrus."
         },
         {
             "type": "component",
@@ -189,12 +189,27 @@
                     "Forklar med egne ord hvorfor artikkelen kaller renten for et 'trafikklys' eller et signal.",
                     "Hvorfor blir byggmesteren lurt av plakatene som sier 'masse billig murstein til salgs', selv om det ikke ligger flere murstein på lageret?",
                     "Artikkelen sier at krisen ikke er problemet, men kuren. Forklar hva som må 'ryddes opp' i under en krise, og hvorfor det kan være smertefullt.",
-                    "Hvorfor mener den østerrikske skolen at det er farlig å presse renten kunstig ned, mens andre økonomer ser på svingningene som uunngåelig stormvær?"
+                    "Hvorfor mener den østerrikske skolen at det er farlig å presse renten kunstig ned, når andre økonomer forklarer konjunktursvingningene på helt andre måter?"
                 ],
                 "gaaVidere": [
                     "Skriv en kort tekst der du forklarer finanskrisen i 2008 ved å bruke bildet om byggmesteren og mursteinene.",
                     "Tenk deg at du skal låne penger til noe stort en dag, for eksempel en bolig. Hvorfor er det lurt å forstå hva renten forteller deg før du låner? Skriv ned tankene dine.",
                     "Diskuter med en medelev: Er det alltid best å redde økonomien ved å trykke mer penger, eller kan det skape nye problemer? Bruk argumenter fra artikkelen."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Billington, L. (2025). *Resesjon*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/resesjon](https://snl.no/resesjon)",
+                    "Boettke, P. J. (u.å.). *Austrian School of Economics*. The Concise Encyclopedia of Economics. Hentet 08.08.2026 fra [econlib.org](https://www.econlib.org/library/Enc/AustrianSchoolofEconomics.html)",
+                    "Henderson, D. R. (u.å.). *Ludwig von Mises*. The Concise Encyclopedia of Economics. Hentet 08.08.2026 fra [econlib.org](https://www.econlib.org/library/Enc/bios/Mises.html)",
+                    "Notaker, H. (2026). *Finanskrisen i 2008-2009*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/Finanskrisen_i_USA_2008-2009)",
+                    "Stoltz, G. (2026). *Konjunktur*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/konjunktur](https://snl.no/konjunktur)",
+                    "Thomassen, E. & Østenstad, G. T. (2025). *Sentralbank*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/sentralbank](https://snl.no/sentralbank)",
+                    "Weinberg, J. (2013). *The Great Recession and Its Aftermath*. Federal Reserve History. Hentet 08.08.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath)"
                 ]
             }
         }
@@ -332,5 +347,5 @@
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-08T00:00:00.000Z"
 }

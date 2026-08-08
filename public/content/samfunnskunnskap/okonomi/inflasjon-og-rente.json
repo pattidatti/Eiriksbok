@@ -14,7 +14,7 @@
         },
         {
             "type": "text",
-            "content": "Inflasjon er en økning av pengemengden i et gitt samfunn eller økonomi. Den vanligste effekten dette gir er en varig økning i det generelle prisnivået på varer og tjenester. Enkelt forklart betyr det at pengene dine blir mindre verdt over tid. Det du kunne kjøpe for 100 kroner i fjor, koster kanskje 105 kroner i år."
+            "content": "Inflasjon er en vedvarende stigning i det generelle prisnivået på varer og tjenester, målt som hvor mange prosent prisene har steget på ett år (Bårdsen & Stoltz, 2026). Enkelt forklart betyr det at pengene dine blir mindre verdt over tid. Det du kunne kjøpe for 100 kroner i fjor, koster kanskje 105 kroner i år."
         },
         {
             "type": "header",
@@ -22,7 +22,11 @@
         },
         {
             "type": "text",
-            "content": "Hovedårsaken til inflasjon er ofte en økning i pengemengden. Se for deg at alle i Norge plutselig fikk en million kroner hver inn på konto. Ville vi blitt rikere? Nei. Vi ville bare bydd over hverandre for å kjøpe de samme husene, bilene og varene som finnes. Resultatet ville blitt at prisene skjøt i været."
+            "content": "En gammel forklaring er at prisene stiger i takt med hvor mye penger som finnes. Den ideen kalles kvantitetsteorien. Moderne makroøkonomi regner med at også andre forhold spiller inn, så pengemengden alene forklarer ikke alt (Bårdsen & Stoltz, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Men tanken er lett å kjenne igjen. Se for deg at alle i Norge plutselig fikk en million kroner hver inn på konto. Ville vi blitt rikere? Nei. Vi ville bare bydd over hverandre for å kjøpe de samme husene, bilene og varene som finnes. Resultatet ville blitt at prisene skjøt i været."
         },
         {
             "type": "component",
@@ -38,7 +42,7 @@
         },
         {
             "type": "text",
-            "content": "For at du skal være villig til å vente, må du få en belønning. Hvis du får 1100 kroner om et år, er du kanskje villig til å vente. De ekstra 100 kronene er prisen på din tålmodighet. Dette er grunnlaget for all rente."
+            "content": "For at du skal være villig til å vente, må du få en belønning. Hvis du får 1100 kroner om et år, er du kanskje villig til å vente. De ekstra 100 kronene er prisen på din tålmodighet. Dette er grunnlaget for all rente. Økonomen Eugen von Böhm-Bawerk forklarte det slik: folk er villige til å betale rente for å få tak i ressurser nå, og krever rente hvis de skal gi slipp på dem (Henderson, u.å.-a)."
         },
         {
             "type": "component",
@@ -50,16 +54,16 @@
         },
         {
             "type": "text",
-            "content": "I et fritt marked ville renten blitt bestemt av samfunnets samlede tidspreferanse. Hvis folk sparer mye (er tålmodige), er det mye penger tilgjengelig for lån, og renten blir lav. Dette kalles den naturlige renten."
+            "content": "I et fritt marked ville renten blitt bestemt av samfunnets samlede tidspreferanse. Hvis folk sparer mye (er tålmodige), er det mye penger tilgjengelig for lån, og renten blir lav. Dette kalles den naturlige renten. Begrepet kommer fra økonomen Knut Wicksell, som skilte mellom den naturlige renten og den renten man faktisk møter i markedet (Henderson, u.å.-b)."
         },
         {
             "type": "text",
-            "content": "Men i dagens økonomi blir renten overstyrt av sentralbanken (Norges Bank). De setter en styringsrente som alle banker må forholde seg til. Dette er en \"kunstig\" rente som ikke nødvendigvis gjenspeiler hvor mye folk faktisk sparer."
+            "content": "Men i dagens økonomi blir renten overstyrt av sentralbanken (Norges Bank). Styringsrenten er renten bankene får på pengene sine i Norges Bank, og selv om den bare gjelder disse innskuddene, påvirker den rentenivået i hele økonomien. Den er Norges Banks viktigste verktøy for å holde prisveksten lav og stabil, og den settes åtte ganger i året av en komité med fem medlemmer (Norges Bank, 2026). Dette er en \"kunstig\" rente som ikke nødvendigvis gjenspeiler hvor mye folk faktisk sparer."
         },
         {
             "type": "list",
             "items": [
-                "**Hvis styringsrenten settes lavere enn den naturlige renten:** Det blir kunstig billig å låne. Folk og bedrifter låner mer enn de egentlig har råd til basert på ekte sparing. Dette skaper nye penger ut av intet, som fører til inflasjon og bobler (f.eks. i boligmarkedet).",
+                "**Hvis styringsrenten settes lavere enn den naturlige renten:** Det blir kunstig billig å låne. Wicksell viste hvordan dette virker: etterspørselen etter lån øker, sparingen faller, og den økte investeringen driver prisene oppover (Henderson, u.å.-b). Folk og bedrifter låner mer enn de egentlig har råd til basert på ekte sparing, og vi kan få inflasjon og bobler (f.eks. i boligmarkedet).",
                 "**Hvis styringsrenten settes høyere enn den naturlige renten:** Det blir kunstig dyrt å låne. Økonomien bremses mer enn nødvendig, og vi kan få arbeidsledighet."
             ]
         },
@@ -74,8 +78,8 @@
         {
             "type": "list",
             "items": [
-                "**Konsumprisindeksen (KPI):** Dette er den vanligste måleenheten. Statistisk Sentralbyrå (SSB) sjekker hver måned prisen på en fast \"handlekurv\" med varer og tjenester som en gjennomsnittlig husholdning kjøper. Denne kurven inneholder alt fra matvarer, strøm og bensin til klær, flyreiser og kinobilletter. Hvis den totale prisen for denne kurven stiger med 3% fra ett år til et annet, sier vi at inflasjonen er 3%.",
-                "**Pengemengde (M2):** Dette er et mål på hvor mye penger som finnes totalt i økonomien (sedler, mynter og bankinnskudd). Historisk sett har det vært en sterk sammenheng mellom økning i pengemengden og inflasjon. Hvis pengemengden øker raskere enn produksjonen av varer og tjenester, vil prisene som regel følge etter. Dette er ofte en tidlig indikator på fremtidig inflasjon."
+                "**Konsumprisindeksen (KPI):** Dette er den vanligste måleenheten. Statistisk sentralbyrå (SSB) sjekker hver måned prisen på en fast \"handlekurv\" med rundt 650 varer og tjenester som husholdningene kjøper i Norge, og publiserer tallet den 10. i hver måned (Statistisk sentralbyrå, 2026a). Denne kurven inneholder alt fra matvarer, strøm og bensin til klær, flyreiser og kinobilletter. Hvis den totale prisen for denne kurven stiger med 3% fra ett år til et annet, sier vi at inflasjonen er 3%.",
+                "**Pengemengde (M2):** Dette er et mål på hvor mye penger som finnes totalt i økonomien. M2 er summen av sedler og mynt, pengene på brukskontoene våre, og innskudd med kort bindingstid (Statistisk sentralbyrå, 2026b). Tanken bak kvantitetsteorien er at hvis pengemengden øker raskere enn produksjonen av varer og tjenester, følger prisene etter. Mange bruker derfor pengemengden som et tidlig varsel om inflasjon."
             ]
         },
         {
@@ -84,15 +88,15 @@
         },
         {
             "type": "text",
-            "content": "Inflasjon rammer ikke alle likt. Faktisk fører inflasjon til en omfordeling av verdier i samfunnet, ofte på måter som kan virke urettferdige:"
+            "content": "Inflasjon rammer ikke alle likt. Nye penger løfter ikke alle priser samtidig, og derfor får vi vinnere og tapere (Thornton, 2022). Inflasjon fører altså til en omfordeling av verdier i samfunnet, ofte på måter som kan virke urettferdige:"
         },
         {
             "type": "list",
             "items": [
-                "**Sparere taper:** De som har penger på bankkonto er de største taperne. Hvis du har 100 000 kroner på konto og inflasjonen er 5%, vil pengene dine i realiteten bare være verdt 95 000 kroner etter ett år. Selv om beløpet på kontoen er det samme, får du kjøpt mindre for dem. Hvis renten du får i banken er lavere enn inflasjonen, har du en *negativ realrente* – du betaler i praksis for å ha penger i banken.",
+                "**Sparere taper:** De som har penger på bankkonto er de største taperne. Hvis du har 100 000 kroner på konto og inflasjonen er 5%, vil pengene dine i realiteten bare være verdt 95 000 kroner etter ett år. Selv om beløpet på kontoen er det samme, får du kjøpt mindre for dem. Realrenten er forskjellen mellom den vanlige renten og prisstigningen (Sirnes, 2025). Hvis renten du får i banken er lavere enn inflasjonen, har du en *negativ realrente* - du betaler i praksis for å ha penger i banken.",
                 "**Låntakere vinner:** Inflasjon er godt nytt for de med mye gjeld. Hvis du har et boliglån på 3 millioner kroner, vil dette lånet bli \"mindre verdt\" i takt med at pengenes verdi faller. Over tid vil lønninger vanligvis stige i takt med prisene, noe som gjør at lånet utgjør en mindre del av inntekten din. Man sier ofte at inflasjon \"spiser opp\" gjelden.",
                 "**Bedrifter og planlegging:** Høy og uforutsigbar inflasjon er skadelig for næringslivet. Det gjør det vanskelig for bedrifter å vite hva råvarer vil koste i fremtiden, og hvilken pris de bør ta for varene sine. Dette skaper usikkerhet som kan føre til at bedrifter utsetter investeringer og ansettelser, noe som kan skade økonomien på sikt.",
-                "**Cantillon-effekten (Hvem får pengene først?):** Det betyr noe *hvor* de nye pengene kommer inn i økonomien. De som får de nye pengene først (ofte banker, investorer eller statlige leverandører) blir rikere, fordi de kan kjøpe varer og eiendeler til gamle, lave priser. Når de bruker pengene, stiger prisene. De som får pengene sist (vanlige lønnsmottakere og trygdede) taper, fordi de må betale de nye, høye prisene før inntekten deres har rukket å stige. Eksempel: Hvis staten trykker penger for å bygge en vei, blir entreprenøren rikere. Men når pengene til slutt når matbutikken din, har prisene allerede gått opp, uten at du har fått mer i lønn."
+                "**Cantillon-effekten (Hvem får pengene først?):** Det betyr noe *hvor* de nye pengene kommer inn i økonomien. De som får de nye pengene først (ofte banker, investorer eller statlige leverandører) blir rikere, fordi de kan kjøpe varer og eiendeler til gamle, lave priser. Når de bruker pengene, stiger nettopp de prisene (Thornton, 2022). De som får pengene sist (vanlige lønnsmottakere og trygdede) taper, fordi de må betale de nye, høye prisene før inntekten deres har rukket å stige. Eksempel: Hvis staten trykker penger for å bygge en vei, blir entreprenøren rikere. Men når pengene til slutt når matbutikken din, har prisene allerede gått opp, uten at du har fått mer i lønn."
             ]
         },
         {
@@ -125,13 +129,29 @@
                     "Diskuter i klassen: Er det rettferdig at de som får de nye pengene først blir rikere, mens vanlige lønnsmottakere taper? Kom med argumenter for begge sider."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bårdsen, G. & Stoltz, G. (2026). *Inflasjon*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/inflasjon](https://snl.no/inflasjon)",
+                    "Henderson, D. R. (u.å.-a). *Eugen von Böhm-Bawerk*. The Concise Encyclopedia of Economics. Hentet 08.08.2026 fra [econlib.org](https://www.econlib.org/library/Enc/bios/BohmBawerk.html)",
+                    "Henderson, D. R. (u.å.-b). *Knut Wicksell*. The Concise Encyclopedia of Economics. Hentet 08.08.2026 fra [econlib.org](https://www.econlib.org/library/Enc/bios/Wicksell.html)",
+                    "Norges Bank. (2026). *Styringsrenten*. Hentet 08.08.2026 fra [norges-bank.no](https://www.norges-bank.no/tema/pengepolitikk/Styringsrenten/)",
+                    "Sirnes, E. (2025). *Realrente*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no/realrente](https://snl.no/realrente)",
+                    "Statistisk sentralbyrå. (2026a). *Konsumprisindeksen*. Hentet 08.08.2026 fra [ssb.no](https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen)",
+                    "Statistisk sentralbyrå. (2026b). *Pengemengde*. Hentet 08.08.2026 fra [ssb.no](https://www.ssb.no/bank-og-finansmarked/finansielle-indikatorer/statistikk/pengemengde)",
+                    "Thornton, M. (2022). *Cantillon Effects: Why Inflation Helps Some and Hurts Others*. Mises Institute. Hentet 08.08.2026 fra [mises.org](https://mises.org/mises-wire/cantillon-effects-why-inflation-helps-some-and-hurts-others)"
+                ]
+            }
         }
     ],
     "concepts": [
         {
             "id": "inflasjon",
             "term": "Inflasjon",
-            "definition": "En økning av pengemengden som fører til at prisene stiger og pengene blir mindre verdt."
+            "definition": "En vedvarende stigning i det generelle prisnivået, som gjør at pengene blir mindre verdt."
         },
         {
             "id": "tidspreferanse",
@@ -262,7 +282,7 @@
             "id": "q9",
             "question": "Hva er inflasjon?",
             "options": [
-                "En økning i pengemengden som gjør at prisene stiger",
+                "En vedvarende stigning i det generelle prisnivået",
                 "Når prisene på varer synker",
                 "Når staten betaler ned gjeld",
                 "En plutselig økning i arbeidsledighet"
@@ -271,5 +291,5 @@
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-08T00:00:00.000Z"
 }
