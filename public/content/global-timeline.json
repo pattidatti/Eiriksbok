@@ -6690,6 +6690,31 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "kapplopet-mot-sydpolen",
+      "title": "Kappløpet mot Sydpolen",
+      "description": "Amundsen, Nansen og Scott: hvorfor kunnskap tilpasset isen slo det nyeste utstyret.",
+      "startDate": 1888,
+      "endDate": 1912,
+      "displayDate": "1888-1912",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/kapplopet-mot-sydpolen",
+      "tags": [
+        "historie",
+        "norge",
+        "polarhistorie",
+        "amundsen",
+        "nansen",
+        "antarktis"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "fandango",
       "title": "Fandango",
       "description": "Utgitt av Vilhelm Krag",
