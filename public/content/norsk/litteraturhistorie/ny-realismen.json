@@ -6,7 +6,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Etter nyromantikkens fokus på det indre sjeleliv, kom en ny bølge av realisme fra ca. 1905. Norge var blitt en selvstendig nasjon i 1905, og det var en tid for bygging og forankring. Nyrealistene skrev om vanlige folk, arbeidere, bønder og fiskere, men de tok med seg lærdommen fra nyromantikken: Mennesker er kompliserte.\n\nDerfor handler nyrealismen ikke bare om samfunnsproblemer (som i realismen), men om etiske valg, forholdet mellom slekt og individ, og menneskets plass i historien."
+            "content": "Etter nyromantikkens fokus på det indre sjeleliv, kom en ny bølge av realisme fra ca. 1905 (Bjerck Hagen, 2025). Unionen med Sverige ble oppløst samme år, og Norge sto igjen som en helt selvstendig stat (Sejersted, 2025). Det var en tid for bygging og forankring. Nyrealistene skrev om vanlige folk, arbeidere, bønder og fiskere, men de tok med seg lærdommen fra nyromantikken: Mennesker er kompliserte.\n\nDerfor handler nyrealismen ikke bare om samfunnsproblemer (som i realismen), men om etiske valg, forholdet mellom slekt og individ, og menneskets plass i historien. Ifølge Bjerck Hagen (2025) plasserte nyrealistene mennesket i ætt, klasse, kirke og lokalsamfunn, og diktningen ble en arena for etiske spørsmål."
         },
         {
             "type": "header",
@@ -15,10 +15,10 @@
         {
             "type": "list",
             "items": [
-                "**Store episke verk:** Mange forfattere skrev lange romanserier i flere bind som fulgte en slekt gjennom generasjoner.",
-                "**Historiske romaner:** Man så tilbake i historien (f.eks. middelalderen) for å forstå sin egen tid.",
+                "**Store episke verk:** Mange forfattere skrev lange romanserier i flere bind som fulgte en slekt gjennom generasjoner (Skei, 2026).",
+                "**Historiske romaner:** Man så tilbake i historien (f.eks. middelalderen) for å forstå menneskets røtter i samfunn og historie (Bjerck Hagen, 2025).",
                 "**Etiske dilemmaer:** Hva er rett og galt? Hva er menneskets ansvar overfor seg selv og andre?",
-                "**Hjemstavnsdiktning:** Handlingen var ofte lagt til et bestemt geografisk område som forfatteren kjente godt (f.eks. Jæren, Trøndelag eller Røros)."
+                "**Hjemstavnsdiktning:** Handlingen var ofte lagt til et bestemt geografisk område som forfatteren kjente godt, altså forfatterens eget hjemsted (Skei, 2024). To eksempler er Namdalen og Røros."
             ]
         },
         {
@@ -28,9 +28,9 @@
         {
             "type": "list",
             "items": [
-                "**Sigrid Undset:** Hun fikk Nobelprisen i litteratur, mest for sine mektige skildringer av livet i Norden i middelalderen. Trilogien om *Kristin Lavransdatter* er hennes hovedverk. Selv om den foregår på 1300-tallet, handler den om tidløse temaer som kjærlighet, tro, skyld og forholdet mellom foreldre og barn.",
-                "**Olav Duun:** Han skrev på nynorsk (jølster-dialekt) og er kjent for verket *Juvikfolke* (seks bind). Det handler om en slekt gjennom flere generasjoner og kampen mellom det gode og det onde i menneskesinnet.",
-                "**Johan Falkberget:** Han skrev om gruvearbeiderne på Røros. I verket *Den fjerde nattevakt* og serien om *Christianus Sextus* skildret han hardt arbeid, fattigdom, men også samhold og kristen nestekjærlighet."
+                "**Sigrid Undset:** Hun fikk Nobelprisen i litteratur i 1928 for sine mektige skildringer av livet i Norden i middelalderen (Hamm, 2026). Trilogien om *Kristin Lavransdatter* (1920-1922) er hennes hovedverk. Handlingen er lagt til 1300-tallet, men den handler om tidløse temaer som kjærlighet, tro, skyld og forholdet mellom foreldre og barn.",
+                "**Olav Duun:** Han kom fra Jøa i Namdalen og skrev på nynorsk. Hovedverket er *Juvikfolke* (seks bind, 1918-1923), som følger en slekt gjennom mange generasjoner og skildrer kampen mellom det gode og det onde i menneskesinnet (Skei, 2026).",
+                "**Johan Falkberget:** Han skrev om gruvearbeiderne på Røros, et miljø han selv kjente fra han var barn (Skei mfl., 2025). I *Den fjerde nattevakt* (1923) og serien om *Christianus Sextus* (1927-1935) skildret han hardt arbeid og fattigdom, men også samhold og kristen nestekjærlighet."
             ]
         },
         {
@@ -55,8 +55,22 @@
                     "Diskuter i par: Hvis en nyrealist skulle skrive om ditt hjemsted i dag, hvilke mennesker og hvilke etiske valg ville forfatteren trukket fram?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bjerck Hagen, E. (2025). *nyrealismen - litteratur*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/nyrealismen_-_litteratur](https://snl.no/nyrealismen_-_litteratur)",
+                    "Hamm, C. (2026). *Sigrid Undset*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Sigrid_Undset](https://snl.no/Sigrid_Undset)",
+                    "Sejersted, F. (2025). *Unionsoppløsningen i 1905*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Unionsoppløsningen_i_1905](https://snl.no/Unionsoppl%C3%B8sningen_i_1905)",
+                    "Skei, H. H. (2024). *hjemstavnsdiktning*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/hjemstavnsdiktning](https://snl.no/hjemstavnsdiktning)",
+                    "Skei, H. H. (2026). *Olav Duun*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Olav_Duun](https://snl.no/Olav_Duun)",
+                    "Skei, H. H., Moi, M., & Tørset, E. (2025). *Johan Falkberget*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Johan_Falkberget](https://snl.no/Johan_Falkberget)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-09T00:00:00Z"
 }

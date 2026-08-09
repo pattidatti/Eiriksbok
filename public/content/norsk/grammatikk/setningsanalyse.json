@@ -11,25 +11,25 @@
     "externalUrl": "https://snl.no/syntaks",
     "details": [
         "Verbal: Handlingen (hva skjer?)",
-        "Subjekt: Den som handler (hvem gjør det?)",
+        "Subjekt: Den setningen sier noe om (hvem eller hva?)",
         "Objekt: Den det går ut over (hvem/hva handles det mot?)"
     ],
     "content": [
         {
             "type": "text",
-            "content": "Setningsanalyse handler om å forstå hvordan en setning er bygget opp. Ved å dele setningen inn i ulike ledd, kan vi se hvilken funksjon de forskjellige ordene har. De tre viktigste setningsleddene vi starter med er verbal, subjekt og objekt."
+            "content": "Setningsanalyse handler om å forstå hvordan en setning er bygget opp. Setningsledd er de ulike delene en setning består av, og et ledd kan være ett ord eller flere ord (Hagemann, 2025a). Ved å dele setningen inn i ulike ledd, kan vi se hvilken funksjon de forskjellige ordene har. De tre viktigste setningsleddene vi starter med er verbal, subjekt og objekt."
         },
         {
             "type": "text",
-            "content": "Verbalet er selve kjernen i setningen. Det forteller oss hva som skjer eller hva som gjøres. Verbalet er alltid et verb. For å finne verbalet kan du spørre: 'Hva er det som skjer?'. I setningen 'Hunden løper', er 'løper' verbalet."
+            "content": "Verbalet er selve kjernen i setningen, og det inneholder alltid et verb (Store norske leksikon, 2025). Det forteller oss hva som skjer eller hva som gjøres. For å finne verbalet kan du spørre: 'Hva er det som skjer?'. I setningen 'Hunden løper', er 'løper' verbalet."
         },
         {
             "type": "text",
-            "content": "Subjektet er den eller det som utfører handlingen i setningen. Når du har funnet verbalet, kan du finne subjektet ved å spørre: 'Hvem eller hva er det som [verbal]?'. I setningen 'Hunden løper', spør vi 'Hvem er det som løper?'. Svaret er 'Hunden', som da er subjektet."
+            "content": "Subjektet er den eller det som resten av setningen sier noe om, og som oftest er det også den som utfører handlingen (Hagemann, 2025b). Når du har funnet verbalet, kan du finne subjektet ved å spørre: 'Hvem eller hva er det som [verbal]?'. I setningen 'Hunden løper', spør vi 'Hvem er det som løper?'. Svaret er 'Hunden', som da er subjektet."
         },
         {
             "type": "text",
-            "content": "Objektet er det leddet handlingen retter seg mot eller går ut over. Ikke alle setninger har objekt. Du finner det ved å spørre: 'Hva [verbal] [subjekt]?'. I setningen 'Jeg spiser eplet', er 'spiser' verbal og 'Jeg' subjekt. Da spør vi: 'Hva spiser jeg?'. Svaret er 'eplet', som dermed er objektet."
+            "content": "Objektet er det leddet handlingen retter seg mot eller går ut over. Det står som en utfylling til verbet, og ikke alle setninger har objekt (Hagemann, 2026). Du finner det ved å spørre: 'Hva [verbal] [subjekt]?'. I setningen 'Jeg spiser eplet', er 'spiser' verbal og 'Jeg' subjekt. Da spør vi: 'Hva spiser jeg?'. Svaret er 'eplet', som dermed er objektet."
         },
         {
             "type": "component",
@@ -53,13 +53,25 @@
                     "Sett deg sammen med en klassekamerat og lag fem setninger hver. Bytt setninger og analyser hverandres. Er dere enige om hva som er verbal, subjekt og objekt?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hagemann, K. (2025a). *setningsledd*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/setningsledd](https://snl.no/setningsledd)",
+                    "Hagemann, K. (2025b). *subjekt - grammatikk*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/subjekt_-_grammatikk](https://snl.no/subjekt_-_grammatikk)",
+                    "Hagemann, K. (2026). *objekt - grammatikk*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/objekt_-_grammatikk](https://snl.no/objekt_-_grammatikk)",
+                    "Store norske leksikon. (2025). *verbal - grammatikk*. Hentet 09.08.2026 fra [snl.no/verbal_-_grammatikk](https://snl.no/verbal_-_grammatikk)"
+                ]
+            }
         }
     ],
     "concepts": [
         {
             "id": "subjekt",
             "term": "Subjekt",
-            "definition": "Den eller det som utfører handlingen i setningen.",
+            "definition": "Den eller det som resten av setningen sier noe om, oftest den som utfører handlingen.",
             "example": "I setningen 'Hunden løper', er 'Hunden' subjektet."
         },
         {
@@ -87,5 +99,5 @@
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-09T00:00:00Z"
 }
