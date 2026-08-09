@@ -6,7 +6,7 @@
     "year": "1699",
     "category": "Sikhisme",
     "readTime": "10 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/sikhisme/overgangsriter-hero.webp",
     "details": [
         "Sikhene markerer fire store overganger i livet: navngiving, innvielse, bryllup og begravelse.",
         "Navnet til barnet begynner på bokstaven som står øverst på en tilfeldig side i den hellige boka.",
@@ -25,7 +25,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/sikhisme/overgangsriter-01.webp",
             "alt": "Familie med nyfødt barn foran åpen hellig bok i gurdwara",
             "caption": "Navneseremonien foregår i gurdwaraen, foran den åpne boka. Foreldrene velger navnet, men bokstaven kommer fra boka."
         },
@@ -111,7 +111,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/sikhisme/overgangsriter-02.webp",
             "alt": "Fem personer blander sukkervann med tveegget sverd i stålskål",
             "caption": "Ved amrit-seremonien rører fem sikher rundt i vannet med et tveegget sverd. Alle drikker av den samme skålen."
         },
@@ -156,7 +156,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/sikhisme/overgangsriter-03.webp",
             "alt": "Sørgende familie i hvite klær utenfor gurdwara med lys",
             "caption": "Sikhene kler seg gjerne i hvitt i sorg. Begravelsen ender med kremasjon og fellesbønnen Ardas."
         },
