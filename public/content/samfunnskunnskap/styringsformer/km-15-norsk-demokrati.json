@@ -46,15 +46,15 @@
         },
         {
             "type": "text",
-            "content": "Norge er et parlamentarisk demokrati. Det betyr at vi velger representanter til [Stortinget](/samfunnskunnskap/styringsformer/stortinget) hvert fjerde år, og disse representantene vedtar lover og bevilger penger på vegne av oss. Stortinget har 169 representanter fordelt på alle landets valgkretser."
+            "content": "Norge er et parlamentarisk demokrati. Det betyr at vi velger representanter til [Stortinget](/samfunnskunnskap/styringsformer/stortinget) hvert fjerde år, og disse representantene vedtar lover og bevilger penger på vegne av oss. Stortinget har 169 representanter, valgt fra 19 valgdistrikter (Berg & Gisle, 2025)."
         },
         {
             "type": "text",
-            "content": "Makten i Norge er delt mellom tre institusjoner. Stortinget lager lovene - dette kalles lovgivende makt. Regjeringen styrer landet i det daglige og setter lovene ut i livet - dette er den utøvende makten. Domstolene dømmer i rettssaker - det er den dømmende makten. Denne tredelingen av makt er ikke tilfeldig. Den skal hindre at én person eller gruppe får for mye kontroll."
+            "content": "Makten i Norge er delt mellom tre institusjoner. Stortinget lager lovene - dette kalles lovgivende makt. Regjeringen styrer landet i det daglige og setter lovene ut i livet - dette er den utøvende makten. Domstolene dømmer i rettssaker - det er den dømmende makten. Denne tredelingen av makt er ikke tilfeldig. Den skal hindre at én person eller gruppe får for mye kontroll. Tanken kommer fra Montesquieu, som mente at den som har makt, er tilbøyelig til å misbruke den. Derfor må makt stanse makt (Thorsen, 2024)."
         },
         {
             "type": "text",
-            "content": "Regjeringen ledes av statsministeren og er sammensatt av statsråder (ministre) som har ansvar for hvert sitt departement - som helse, skole, forsvar og finans. Regjeringen må ha Stortingets tillit for å sitte. Hvis Stortinget vedtar et mistillitsforslag, må regjeringen gå av. Dette er parlamentarismens kjerne: Stortinget er øverst."
+            "content": "Regjeringen ledes av statsministeren og er sammensatt av statsråder (ministre) som har ansvar for hvert sitt departement - som helse, skole, forsvar og finans. Regjeringen må ha Stortingets tillit for å sitte. Hvis Stortinget vedtar et mistillitsforslag, må regjeringen gå av (Berg & Gisle, 2025). Dette er parlamentarismens kjerne: Stortinget er øverst. Parlamentarismen ble skrevet inn i Grunnloven i 2007."
         },
         {
             "type": "header",
@@ -66,7 +66,7 @@
         },
         {
             "type": "text",
-            "content": "For å komme inn på Stortinget må et parti få minst fire prosent av stemmene på landsbasis. Dette kalles sperregrensen. Den er ment å hindre at mange bittesmå partier gjør det umulig å danne stabile regjeringer. Resultatet er at norsk politikk oftest handler om å bygge koalisjoner - samarbeidsavtaler mellom partier som er enige om nok til å styre sammen."
+            "content": "Et parti må få minst fire prosent av stemmene på landsbasis for å være med i fordelingen av de 19 utjevningsmandatene. Dette kalles sperregrensen (Broderstad m.fl., 2025). Et lite parti kan altså komme inn på Stortinget med et distriktsmandat selv om det ligger under sperregrensen, men da går det glipp av utjevningsmandatene. Grensen er ment å hindre at mange bittesmå partier gjør det umulig å danne stabile regjeringer. Resultatet er at norsk politikk oftest handler om å bygge koalisjoner - samarbeidsavtaler mellom partier som er enige om nok til å styre sammen."
         },
         {
             "type": "component",
@@ -79,21 +79,21 @@
         },
         {
             "type": "text",
-            "content": "En velferdsstat er en stat som tar ansvar for innbyggernes grunnleggende behov. I Norge betyr det at alle har rett på gratis skolegang, subsidiert helsetjeneste, trygd ved sykdom og uførhet, alderspensjon og støtte til barnefamilier. Disse rettighetene finansieres av skatter og avgifter som vi alle betaler."
+            "content": "En velferdsstat er en stat som tar ansvar for innbyggernes grunnleggende behov. I Norge betyr det at alle har rett på gratis skolegang, subsidiert helsetjeneste, trygd ved sykdom og uførhet, alderspensjon og støtte til barnefamilier. Disse rettighetene finansieres i hovedsak av vanlige skatter på inntekt, forbruk og formue (Christensen & Berg, 2025)."
         },
         {
             "type": "text",
-            "content": "Det norske velferdssystemet bygger på noen grunnprinsipper. For det første er det universelt - det gjelder alle innbyggere, ikke bare de fattige. For det andre er det solidarisk - de som tjener mest, betaler mest i skatt. For det tredje er det obligatorisk - du kan ikke velge bort folketrygden. Tanken er at risiko deles på tvers av hele befolkningen, slik at ingen skal falle helt utenfor."
+            "content": "Det norske velferdssystemet bygger på noen grunnprinsipper. For det første er det universelt - det gjelder alle innbyggere, ikke bare de fattige. For det andre er det solidarisk - de som tjener mest, betaler mest i skatt, mens godene fordeles ganske jevnt. Det gir velferdsstaten en tydelig omfordelende effekt (Christensen & Berg, 2025). For det tredje er det obligatorisk - du kan ikke velge bort folketrygden. Tanken er at risiko deles på tvers av hele befolkningen, slik at ingen skal falle helt utenfor."
         },
         {
             "type": "image",
             "src": "/images/styringsformer/km-15-norsk-demokrati-02.webp",
             "alt": "Norsk sykehus med ansatte i korridoren",
-            "caption": "Offentlige sykehus er kjernen i norsk velferdsstat. Behandlingen er gratis for alle."
+            "caption": "Offentlige sykehus er kjernen i norsk velferdsstat. Behandling på sykehus er i hovedsak gratis."
         },
         {
             "type": "text",
-            "content": "Velferdsstaten henger tett sammen med arbeidslivet. I Norge er det et tett samarbeid mellom staten, arbeidsgivere (ved NHO - Næringslivets Hovedorganisasjon) og arbeidstakere (ved LO - Landsorganisasjonen). Dette kalles trepartssamarbeidet. Gjennom frontfagmodellen forhandler de hvert år frem lønnsoppgjør som holder prisveksten i sjakk. Les mer om dette i artikkelen om [Norges lønnsmaskin](/samfunnskunnskap/arbeidsliv/frontfagmodellen)."
+            "content": "Velferdsstaten henger tett sammen med arbeidslivet. I Norge er det et tett samarbeid mellom staten, arbeidsgivere (ved NHO - Næringslivets Hovedorganisasjon) og arbeidstakere (ved LO - Landsorganisasjonen). Dette kalles trepartssamarbeidet (Thomassen, 2025). Gjennom frontfagmodellen forhandler de hvert år frem lønnsoppgjør som holder prisveksten i sjakk. Les mer om dette i artikkelen om [Norges lønnsmaskin](/samfunnskunnskap/arbeidsliv/frontfagmodellen)."
         },
         {
             "type": "text",
@@ -116,11 +116,11 @@
         },
         {
             "type": "text",
-            "content": "Den andre utfordringen handler om tillit og deltakelse. Demokratiet fungerer bare hvis folk engasjerer seg. Valgdeltakelsen ved stortingsvalg er høy i Norge - rundt 77 prosent - men unge stemmer sjeldnere enn eldre. Og selv om vi er enige om spillereglene, er vi stadig mer uenige om innholdet. Sosiale medier har gjort det lettere å leve i det noen kaller ekkokamre - der man bare hører meninger man allerede er enige med. Det kan gjøre det vanskeligere å føre en felles offentlig samtale."
+            "content": "Den andre utfordringen handler om tillit og deltakelse. Demokratiet fungerer bare hvis folk engasjerer seg. Valgdeltakelsen ved stortingsvalg er høy i Norge. Ved valget i 2025 brukte 80 prosent av de stemmeberettigede stemmeretten sin, tre prosentpoeng flere enn i 2021 (Statistisk sentralbyrå, 2025). Unge stemmer likevel sjeldnere enn eldre, men forskjellen mellom aldersgruppene er mindre nå enn ved tidligere valg. Og selv om vi er enige om spillereglene, er vi stadig mer uenige om innholdet. Sosiale medier har gjort det lettere å leve i det noen kaller ekkokamre - der man bare hører meninger man allerede er enige med. Det kan gjøre det vanskeligere å føre en felles offentlig samtale."
         },
         {
             "type": "text",
-            "content": "Den tredje utfordringen er klimaet. Norge er en stor eksportør av olje og gass - noe som har finansiert velferdsstaten gjennom Oljefondet (Statens pensjonsfond utland). Samtidig forplikter Norge seg til å kutte utslipp. Disse to hensynene er i konflikt med hverandre, og det er et spørsmål som deler politiske partier og velgere."
+            "content": "Den tredje utfordringen er klimaet. Norge er en stor eksportør av olje og gass - noe som har finansiert velferdsstaten gjennom Oljefondet, som egentlig heter Statens pensjonsfond utland og bygges opp av statens inntekter fra olje og gass (Thomassen, 2026). Samtidig forplikter Norge seg til å kutte utslipp. Disse to hensynene er i konflikt med hverandre, og det er et spørsmål som deler politiske partier og velgere."
         },
         {
             "type": "text",
@@ -229,6 +229,22 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, O. T. & Gisle, J. (2025). *Stortinget*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Stortinget](https://snl.no/Stortinget)",
+                    "Broderstad, T. S., Holmøyvik, E. & Gisle, J. (2025). *Sperregrense*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/sperregrense](https://snl.no/sperregrense)",
+                    "Christensen, J. & Berg, O. T. (2025). *Velferdsstat*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/velferdsstat](https://snl.no/velferdsstat)",
+                    "Statistisk sentralbyrå. (2025). *Flere unge menn stemte ved årets stortingsvalg*. Hentet 09.08.2026 fra [ssb.no](https://www.ssb.no/valg/stortingsvalg/statistikk/valgdeltakelse/artikler/flere-unge-menn-stemte-ved-arets-stortingsvalg)",
+                    "Thomassen, E. (2025). *Trepartssamarbeid*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/trepartssamarbeid](https://snl.no/trepartssamarbeid)",
+                    "Thomassen, E. (2026). *Statens pensjonsfond utland*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Statens_pensjonsfond_utland](https://snl.no/Statens_pensjonsfond_utland)",
+                    "Thorsen, D. E. (2024). *Maktfordelingsprinsippet*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/maktfordelingsprinsippet](https://snl.no/maktfordelingsprinsippet)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-09"
 }
