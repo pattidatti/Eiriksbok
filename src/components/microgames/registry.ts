@@ -28,6 +28,7 @@ const SvanvikenKontrakten3D = lazy(() => import('./SvanvikenKontrakten3D'));
 const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
+const AnandKaraj3D = lazy(() => import('./AnandKaraj3D'));
 const Spredning3D = lazy(() => import('./Spredning3D'));
 const UtvandringenFraAfrika3D = lazy(() => import('./UtvandringenFraAfrika3D'));
 const HimmelModellen3D = lazy(() => import('./HimmelModellen3D'));
@@ -945,6 +946,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./TidensFormer3D'),
         Component: TidensFormer3D as never,
+    },
+    'anand-karaj-3d': {
+        id: 'anand-karaj-3d',
+        title: 'Fire runder rundt boka',
+        description:
+            'Dra brudeparet fire runder rundt Guru Granth Sahib i gurdwaraen, i takt med at versene blir sunget. Kjenn på hvorfor sikh-vielsen ikke er et løfte til en prest, men en rundgang der boka står i sentrum.',
+        estimatedSeconds: 150,
+        loader: () => import('./AnandKaraj3D'),
+        Component: AnandKaraj3D as never,
     },
     'ut-av-afrika-3d': {
         id: 'ut-av-afrika-3d',
