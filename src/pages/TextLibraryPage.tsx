@@ -8,6 +8,15 @@ import { usePageTitle } from '../hooks/usePageTitle';
 
 type SortOption = 'title' | 'year_asc' | 'year_desc';
 
+// Fast liste - defineres på modulnivå så den ikke får ny identitet hver render
+// (og dermed river ned memoiseringen av tekstfiltreringen).
+const periods = [
+    { label: 'Før 1900', filter: (year: number) => year < 1900 },
+    { label: '1900 - 1950', filter: (year: number) => year >= 1900 && year <= 1950 },
+    { label: '1950 - 2000', filter: (year: number) => year > 1950 && year <= 2000 },
+    { label: 'Etter 2000', filter: (year: number) => year > 2000 }
+];
+
 export const TextLibraryPage: React.FC = () => {
     usePageTitle('Bibliotek');
 
@@ -53,13 +62,6 @@ export const TextLibraryPage: React.FC = () => {
 
     const genres = useMemo(() => Array.from(new Set(textLibraryData.map((t: TextEntry) => t.genre))), []);
     const themes = useMemo(() => Array.from(new Set(textLibraryData.flatMap((t: TextEntry) => t.theme || []))), []);
-
-    const periods = [
-        { label: 'Før 1900', filter: (year: number) => year < 1900 },
-        { label: '1900 - 1950', filter: (year: number) => year >= 1900 && year <= 1950 },
-        { label: '1950 - 2000', filter: (year: number) => year > 1950 && year <= 2000 },
-        { label: 'Etter 2000', filter: (year: number) => year > 2000 }
-    ];
 
     const filteredAndSortedTexts = useMemo(() => {
         const result = textLibraryData.filter(text => {

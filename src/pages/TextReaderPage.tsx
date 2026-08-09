@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, BookOpen, User, Tag, Volume2, Pause, Play, Square, Columns, Scan } from 'lucide-react';
 import { textLibraryData, type TextEntry } from '../data/textLibraryData';
@@ -23,6 +23,7 @@ const genreToAnalysisMap: Record<string, string> = {
 export const TextReaderPage: React.FC = () => {
     const { textId } = useParams<{ textId: string }>();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const textEntry = useMemo(() =>
         textLibraryData.find((t: TextEntry) => t.id === textId),
@@ -77,6 +78,10 @@ export const TextReaderPage: React.FC = () => {
     }, [textEntry, currentLanguage]);
 
     // Handle hash scrolling
+    // NB: her sto det tidligere `location.hash` uten useLocation, altså den
+    // globale window.location. Den er et mutabelt objekt React ikke ser
+    // endringer i, så effekten kjørte ikke når man klikket seg til et nytt
+    // anker på samme side. useLocation gir en ny verdi per navigasjon.
     useEffect(() => {
         if (location.hash && displayContent) {
             const id = location.hash.replace('#', '');

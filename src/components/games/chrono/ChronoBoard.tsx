@@ -118,6 +118,11 @@ export const ChronoBoard: React.FC<ChronoBoardProps> = ({ events, onGameOver, di
 
     useEffect(() => {
         if (events.length > 0) initGame();
+        // Spillet skal deles ut på nytt når kortstokken endres - ikke hver gang
+        // initGame får ny identitet. initGame lages på nytt ved hver render (den
+        // rører et titalls setters), så en dep på den ville startet et nytt spill
+        // midt i det eleven holder på med.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [events]);
 
     useEffect(() => {

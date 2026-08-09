@@ -80,7 +80,7 @@ export const TopicPage: React.FC = () => {
                 type: 'topic'
             });
         }
-    }, [currentTopic, subTopicId, subjectId]);
+    }, [currentTopic, subTopicId, subjectId, addToHistory]);
 
     // Analytics: Track topic view
     const analyticsPath = `${subjectId}/${topicId}${subTopicId ? `/${subTopicId}` : ''}`;

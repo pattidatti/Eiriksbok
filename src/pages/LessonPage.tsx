@@ -164,12 +164,12 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
     }, [manifest, subjectId, topicId, subTopicId, lessonId]);
 
     // Handle Layout Context
-    useEffect(() => {
-        const isSpecialLayout = lesson && (
-            lesson.layout === 'tool' ||
-            lesson.engine === 'historical-detective'
-        );
+    const isSpecialLayout = !!lesson && (
+        lesson.layout === 'tool' ||
+        lesson.engine === 'historical-detective'
+    );
 
+    useEffect(() => {
         if (isSpecialLayout) {
             setFullWidth(true);
             setHideHeader(true);
@@ -185,7 +185,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
             setHideHeader(false);
             setHideBreadcrumbs(false);
         };
-    }, [lesson?.layout, lesson?.engine, setFullWidth, setHideHeader, setHideBreadcrumbs]);
+    }, [isSpecialLayout, setFullWidth, setHideHeader, setHideBreadcrumbs]);
 
     // --- Hooks & Memoization (Rule of Hooks: Must be top-level and unconditional) ---
     const isHistory = subjectId === 'historie';

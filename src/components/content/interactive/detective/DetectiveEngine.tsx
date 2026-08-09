@@ -142,7 +142,7 @@ export const DetectiveEngine: React.FC<DetectiveEngineProps> = ({ data }) => {
                 }
             );
         }
-    }, [state.isCompleted, data.id, finalResult, evidenceStars, state.collectedClues]);
+    }, [state.isCompleted, data.id, data.title, finalResult, evidenceStars, state.collectedClues]);
 
     if (isBriefingVisible && data.briefing) {
         return (

@@ -279,11 +279,13 @@ function BuildSite({
 }
 
 // Den buede ringmuren: hvert lag er en ring av små granittblokker langs en bue.
+// Ringmurens geometri er faste tall - de hører til modulen, ikke til hver render.
+const RADIUS = 4.2;
+const SEG = 14; // blokker per lag langs buen
+const ARC = Math.PI * 1.35; // åpen ring (ikke helt lukket - har en åpning)
+const START = -Math.PI * 0.55;
+
 function RingWall({ courses, stone }: { courses: number; stone: string }) {
-    const RADIUS = 4.2;
-    const SEG = 14; // blokker per lag langs buen
-    const ARC = Math.PI * 1.35; // åpen ring (ikke helt lukket - har en åpning)
-    const START = -Math.PI * 0.55;
 
     const blocks = useMemo(() => {
         const out: { x: number; z: number; rot: number }[] = [];

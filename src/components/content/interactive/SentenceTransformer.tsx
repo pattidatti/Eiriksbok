@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { RotateCcw, ChevronLeft, ChevronRight, Sparkles, AlertTriangle } from 'lucide-react';
@@ -45,7 +45,7 @@ export const SentenceTransformer = ({
     const [celebrated, setCelebrated] = useState<Set<string>>(new Set());
 
     const s = sentences[idx];
-    const active = activeMap[s.id] ?? new Set<string>();
+    const active = useMemo(() => activeMap[s.id] ?? new Set<string>(), [activeMap, s.id]);
     const count = active.size;
     const isOver = count > s.sweetSpot;
     const isPerfect = count === s.sweetSpot;

@@ -44,6 +44,12 @@ export const QuizHost: React.FC = () => {
 
     const [cooldownTimer, setCooldownTimer] = useState(0);
 
+    // Timer- og lobby-effektene under kaller disse to. De lages på nytt ved hver
+    // render, så en dep på dem ville startet nedtellingen på nytt hele tiden.
+    // I stedet holder vi alltid den ferskeste utgaven i en ref og kaller derfra.
+    const revealResultRef = useRef<() => void>(() => {});
+    const startBalloonJourneyRef = useRef<() => void>(() => {});
+
     // Refs for stale closure fix
     const playersRef = useRef(players);
     useEffect(() => { playersRef.current = players; }, [players]);
@@ -93,7 +99,7 @@ export const QuizHost: React.FC = () => {
         const unsubscribeBalloonWatch = onValue(ref(db, `rooms/${pin}/lobby/balloonSize`), (snapshot) => {
             const val = snapshot.val() || 0;
             if (val >= 100 && flyingBalloonStatus === 'IDLE') {
-                startBalloonJourney();
+                startBalloonJourneyRef.current();
             }
             setBalloonSize(val);
         });
@@ -155,7 +161,7 @@ export const QuizHost: React.FC = () => {
         if (players.length > 0 && answeredCount === players.length) {
             // All players answered!
             const timer = setTimeout(() => {
-                revealResult();
+                revealResultRef.current();
             }, 4000);
             return () => clearTimeout(timer);
         }
@@ -186,7 +192,7 @@ export const QuizHost: React.FC = () => {
                         clearInterval(interval);
                         // Trigger next step via Firebase
                         playSound('timer_end');
-                        revealResult();
+                        revealResultRef.current();
                         return 0;
                     }
                     return prev - 1;
@@ -465,6 +471,13 @@ export const QuizHost: React.FC = () => {
             currentResult: result
         });
     }
+
+    // Hold ref-ene oppdatert etter render, ikke under - se kommentaren der de
+    // deklareres.
+    useEffect(() => {
+        revealResultRef.current = revealResult;
+        startBalloonJourneyRef.current = startBalloonJourney;
+    });
 
     // Renders
     if (!roomData) return <div className="p-8 text-center">Laster rom...</div>;

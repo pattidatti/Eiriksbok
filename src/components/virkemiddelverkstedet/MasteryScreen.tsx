@@ -55,6 +55,8 @@ export const MasteryScreen = ({ device, mode, onBack }: MasteryScreenProps) => {
             origin: { y: 0.6, x: 0.5 },
             startVelocity: 45,
         });
+        // Samme som i CompletionScreen: poengene deles ut én gang, ved mount.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const modeLabel = isApply ? 'bruke' : 'analysere';

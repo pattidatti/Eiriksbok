@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import * as Tone from 'tone';
 import confetti from 'canvas-confetti';
@@ -329,8 +329,16 @@ export const NuclearSimulator: React.FC = () => {
 const RollingNumber = ({ value }: { value: number }) => {
     const [display, setDisplay] = useState(0);
 
+    // Animasjonen starter der forrige animasjon endte. Verdien leses via en ref:
+    // hadde `display` stått i dep-lista under, ville hver eneste frame startet
+    // en ny animasjon, siden animasjonen selv oppdaterer display.
+    const displayRef = useRef(display);
     useEffect(() => {
-        const start = display;
+        displayRef.current = display;
+    }, [display]);
+
+    useEffect(() => {
+        const start = displayRef.current;
         const duration = 1500;
         const startTime = Date.now();
 
