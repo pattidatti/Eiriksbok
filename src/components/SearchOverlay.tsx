@@ -100,7 +100,8 @@ function getFuse(manifest: Manifest): Fuse<SearchResult> {
             title: path.title,
             path: path.path,
             description: path.description,
-            tags: (path as any).tags || []
+            // Læringsstier har ingen tags i registeret.
+            tags: []
         });
     });
 

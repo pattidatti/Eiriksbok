@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useManifest } from '../../hooks/useManifest';
 import { AlertCircle, CheckCircle, Image, Tag, Type, ArrowUpDown, Info, type LucideIcon } from 'lucide-react';
+import type { Lesson, ManifestLesson } from '../../types';
 
 interface ArticleAudit {
     id: string;
@@ -59,7 +60,7 @@ export const ContentInventory: React.FC = () => {
             setScanning(true);
             const audits: ArticleAudit[] = [];
 
-            const processLesson = async (lesson: any, subjectId: string, topicId: string, subTopicId?: string) => {
+            const processLesson = async (lesson: ManifestLesson, subjectId: string, topicId: string, subTopicId?: string) => {
                 const path = `/content/${subjectId}/${topicId}${subTopicId ? `/${subTopicId}` : ''}/${lesson.id}/artikkel.json`;
 
                 let wordCount = 0;
@@ -69,9 +70,9 @@ export const ContentInventory: React.FC = () => {
                 try {
                     const response = await fetch(path);
                     if (response.ok) {
-                        const data = await response.json();
+                        const data = (await response.json()) as Lesson;
                         if (data.content) {
-                            data.content.forEach((block: any) => {
+                            data.content.forEach((block) => {
                                 if (block.type === 'text' && block.content) {
                                     wordCount += block.content.split(/\s+/).length;
                                 }
@@ -142,8 +143,8 @@ export const ContentInventory: React.FC = () => {
     const sortedData = useMemo(() => {
         const sorted = [...auditData];
         sorted.sort((a, b) => {
-            let aValue: any = a[sortConfig.key];
-            let bValue: any = b[sortConfig.key];
+            let aValue: string | number | boolean = a[sortConfig.key];
+            let bValue: string | number | boolean = b[sortConfig.key];
 
             if (typeof aValue === 'boolean') {
                 aValue = aValue ? 1 : 0;

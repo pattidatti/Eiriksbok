@@ -72,23 +72,9 @@ export const SearchPage: React.FC = () => {
                     });
                 });
 
-                // Check Learning Paths for tags
-                learningPathsData.paths.forEach(path => {
-                    if ((path as any).tags?.some((t: string) => t.toLowerCase() === searchTag)) {
-                        found.push({
-                            lesson: {
-                                id: path.id,
-                                title: path.title,
-                                description: path.description,
-                                createdDate: (path as any).createdDate,
-                                tags: (path as any).tags
-                            },
-                            path: path.path,
-                            topicTitle: path.subjectName,
-                            subjectId: path.subjectId
-                        });
-                    }
-                });
+                // Læringsstier har ingen tags i registeret (se
+                // scripts/update-learning-paths.cjs), så de kan ikke treffe et
+                // tag-søk. De listes derfor bare i "nylig"-visningen under.
 
                 setResults(found);
             } else {
@@ -144,8 +130,6 @@ export const SearchPage: React.FC = () => {
                             id: path.id,
                             title: path.title,
                             description: path.description,
-                            createdDate: (path as any).createdDate,
-                            tags: (path as any).tags
                         },
                         path: path.path,
                         topicTitle: path.subjectName,

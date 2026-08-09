@@ -2,22 +2,34 @@ import type {
     Lesson,
     Manifest,
     ManifestLesson,
-    ManifestSubject,
-    ManifestSubTopic,
-    ManifestTopic,
     Philosopher,
     Religion,
-    TopicTool,
 } from '../types';
 
 /**
- * En hvilken som helst node i manifest-treet. Oppslagskartet under indekserer
- * fag, emner, undertemaer, leksjoner og verktøy om hverandre - de deler `id`,
- * og resten leses defensivt.
+ * En hvilken som helst node i manifest-treet, sett fra oppslagskartets side.
+ *
+ * Kartet indekserer fag, emner, undertemaer, leksjoner og verktøy om hverandre.
+ * Dette er derfor et bevisst snevert utsnitt - bare `id`, feltene leksjonen
+ * berikes med, og barne-listene vi går videre ned i. Å skjære alle typene
+ * sammen ville ikke gått: `content` er en streng på en leksjon og en
+ * blokk-liste på et emne.
  */
-type ManifestNode = Partial<
-    ManifestSubject & ManifestTopic & ManifestSubTopic & ManifestLesson & TopicTool
-> & { id?: string; subjects?: ManifestSubject[] };
+interface ManifestNode {
+    id?: string;
+    title?: string;
+    description?: string;
+    link?: string;
+    layout?: ManifestLesson['layout'];
+    year?: string;
+    tags?: string[];
+    definitions?: ManifestLesson['definitions'];
+    lessons?: ManifestNode[];
+    topics?: ManifestNode[];
+    subTopics?: ManifestNode[];
+    tools?: ManifestNode[];
+    subjects?: ManifestNode[];
+}
 
 /** Ekstra opsjoner til fetchWithTimeout, i tillegg til vanlige fetch-opsjoner. */
 interface FetchOptions extends RequestInit {

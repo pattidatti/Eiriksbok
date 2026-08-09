@@ -5,9 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { LayoutGrid } from 'lucide-react';
 import { TopicCard } from '../TopicCard';
 import { getTopicLink } from '../../utils/navigationUtils';
+import type { ManifestSubject } from '../../types';
 
 interface TopicViewProps {
-    subjectData: any;
+    subjectData: ManifestSubject;
     subjectId: string;
 }
 
@@ -19,7 +20,7 @@ export const TopicView: React.FC<TopicViewProps> = ({ subjectData, subjectId }) 
             {/* Tools Section - Pill ribbon */}
             {subjectData.tools && subjectData.tools.length > 0 && (
                 <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-                    {subjectData.tools.map((tool: any) => (
+                    {subjectData.tools.map((tool) => (
                         <button
                             key={tool.id}
                             onClick={() => navigate(tool.link)}
@@ -35,11 +36,11 @@ export const TopicView: React.FC<TopicViewProps> = ({ subjectData, subjectId }) 
 
             {/* Topics Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                {subjectData.topics.map((topic: any, index: number) => {
+                {subjectData.topics.map((topic, index: number) => {
                     // Calculate total lessons
                     let lessonCount = 0;
                     if (topic.subTopics) {
-                        topic.subTopics.forEach((st: any) => lessonCount += st.lessons?.length || 0);
+                        topic.subTopics.forEach((st) => lessonCount += st.lessons?.length || 0);
                     } else if (topic.lessons) {
                         lessonCount = topic.lessons.length;
                     }

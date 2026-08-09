@@ -104,8 +104,8 @@ export const TopicPage: React.FC = () => {
     // Safe to assume activeItem exists here due to earlier checks
     const subTopics = !currentSubTopic && currentTopic.subTopics ? currentTopic.subTopics : [];
     const title = activeItem!.title;
-    const description = (activeItem as any)?.description;
-    const image = (activeItem as any)?.image;
+    const description = activeItem?.description;
+    const image = activeItem?.image;
 
     return (
         <div className="topic-page max-w-7xl mx-auto px-4 py-6">
@@ -190,9 +190,9 @@ export const TopicPage: React.FC = () => {
             )}
 
             {/* Main Content Renderer */}
-            {(activeItem as any)?.content && (
+            {activeItem?.content && (
                 <div className="mb-16">
-                    <TopicContentRenderer content={(activeItem as any).content} />
+                    <TopicContentRenderer content={activeItem.content} />
                 </div>
             )}
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useManifest } from '../../hooks/useManifest';
 import { Link } from 'react-router-dom';
 import { Check, ExternalLink, RefreshCw } from 'lucide-react';
+import type { ContentBlock, Lesson } from '../../types';
 
 interface BrokenLink {
     sourceTitle: string;
@@ -75,10 +76,10 @@ export const LinkChecker: React.FC = () => {
             try {
                 const res = await fetch(lesson.contentUrl);
                 if (res.ok) {
-                    const data = await res.json();
+                    const data = (await res.json()) as Lesson;
 
                     // Recursive function to find links in content
-                    const findLinks = (blocks: any[]) => {
+                    const findLinks = (blocks: ContentBlock[]) => {
                         blocks.forEach(block => {
                             if (block.type === 'text' && block.content) {
                                 // Regex for markdown links [text](url)
