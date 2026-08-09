@@ -17,11 +17,11 @@
     "content": [
         {
             "type": "text",
-            "content": "«Spis bestemor!» Hvis du leser den setningen høyt for noen, blir de litt skremt. Men sett inn ett enkelt komma — «Spis, bestemor!» — og plutselig er du bare en omsorgsfull person som ber bestemor om å smake på maten. Det er det tegnsetting handler om. Små streker og prikker som styrer hva leseren faktisk forstår."
+            "content": "«Spis bestemor!» Hvis du leser den setningen høyt for noen, blir de litt skremt. Men sett inn ett enkelt komma - «Spis, bestemor!» - og plutselig er du bare en omsorgsfull person som ber bestemor om å smake på maten. Det er det tegnsetting handler om. Små streker og prikker som styrer hva leseren faktisk forstår."
         },
         {
             "type": "text",
-            "content": "Tegn er ikke pynt. De forteller leseren når de skal stoppe, puste, lytte til en ny stemme eller stille et spørsmål. Uten dem klistrer ordene seg sammen, og meningen blir uklar. Med dem får skriften din rytme, retning og presisjon."
+            "content": "Tegn er ikke pynt. Interpunksjon, altså bruken av skilletegn i en tekst, er et eget system i skriftspråket (Store norske leksikon, 2026). Tegnene forteller leseren når de skal stoppe, puste, lytte til en ny stemme eller stille et spørsmål. Uten dem klistrer ordene seg sammen, og meningen blir uklar. Med dem får skriften din rytme, retning og presisjon."
         },
         {
             "type": "image",
@@ -35,7 +35,7 @@
         },
         {
             "type": "text",
-            "content": "Tenk på en setning som en biltur. Tegnene er trafikkskiltene som styrer farten. Punktum er et stoppskilt. Komma er et lyssignal som blinker gult — ta en kort pust og se deg om. Spørsmålstegn løfter stemmen din opp i slutten av setningen, som om du venter på svar. Utropstegn skrur opp volumet et hakk."
+            "content": "Tenk på en setning som en biltur. Tegnene er trafikkskiltene som styrer farten. Punktum er et stoppskilt. Komma er et lyssignal som blinker gult - ta en kort pust og se deg om. Spørsmålstegn løfter stemmen din opp i slutten av setningen, som om du venter på svar. Utropstegn skrur opp volumet et hakk."
         },
         {
             "type": "list",
@@ -60,19 +60,19 @@
         },
         {
             "type": "text",
-            "content": "Den første er oppramsing. Når du ramser opp tre eller flere ting, setter du komma mellom dem og «og» foran det siste leddet: «Jeg hadde med pizza, brus og sjokolade.» Uten komma i lange opplistinger blir det fort en kaotisk velling."
+            "content": "Den første er oppramsing. Når du ramser opp tre eller flere ting, setter du komma mellom dem og «og» foran det siste leddet: «Jeg hadde med pizza, brus og sjokolade.» På norsk skal du altså ikke sette komma foran det siste leddet i en oppramsing (Bosoni & Krogsæter, 2025). Uten komma i lange opplistinger blir det fort en kaotisk velling."
         },
         {
             "type": "text",
-            "content": "Den andre er tiltale. Når du snakker direkte til noen, skiller du navnet fra resten med komma. «Hei, Mia.» «Spis, bestemor!» Hvis du dropper kommaet, blir personen plutselig en del av setningen i stedet for mottakeren — og det var akkurat det som skjedde med stakkars bestemor."
+            "content": "Den andre er tiltale. Når du snakker direkte til noen, skiller du navnet fra resten med komma (Bosoni & Krogsæter, 2025). «Hei, Mia.» «Spis, bestemor!» Hvis du dropper kommaet, blir personen plutselig en del av setningen i stedet for mottakeren - og det var akkurat det som skjedde med stakkars bestemor."
         },
         {
             "type": "text",
-            "content": "Den tredje er leddsetninger. En leddsetning er en setning som ikke kan stå alene. Den hekter seg på hovedsetningen med et bindeord som «fordi», «som», «da», «hvis» eller «når». Foran en leddsetning som kommer etter hovedsetningen, kan du ofte droppe kommaet. Men hvis leddsetningen står først, må du sette komma: «Når klokka ringer, går vi ut.» Det samme gjelder innskutte leddsetninger: «Hunden, som het Tassen, sov på sofaen.»"
+            "content": "Den tredje er leddsetninger. En leddsetning er en setning som ikke kan stå alene. Den hekter seg på hovedsetningen med et bindeord som «fordi», «som», «da», «hvis» eller «når». Foran en leddsetning som er nødvendig for meningen, og som kommer etter hovedsetningen, kan du ofte droppe kommaet. Men hvis leddsetningen står først, må du sette komma: «Når klokka ringer, går vi ut.» Det samme gjelder innskutte leddsetninger: «Hunden, som het Tassen, sov på sofaen.» Komma brukes nettopp for å skille ut innskudd og tillegg (Bosoni & Krogsæter, 2025)."
         },
         {
             "type": "text",
-            "content": "Den fjerde er to hovedsetninger bundet sammen. Når du knytter to fullstendige setninger med «og», «men», «for», «eller» eller «så», setter du komma foran bindeordet hvis setningene har ulike subjekter: «Jeg løp ut, og hunden fulgte etter.» Har de samme subjekt, kan du droppe kommaet: «Jeg løp ut og lukket døra.»"
+            "content": "Den fjerde er to hovedsetninger bundet sammen. Regelen er at det skal stå komma mellom sideordnede setninger (Bosoni & Krogsæter, 2025). Når du knytter to fullstendige setninger med «og», «men», «for», «eller» eller «så», setter du derfor komma foran bindeordet hvis setningene har ulike subjekter: «Jeg løp ut, og hunden fulgte etter.» Har de samme subjekt, kan du droppe kommaet: «Jeg løp ut og lukket døra.»"
         },
         {
             "type": "component",
@@ -85,7 +85,7 @@
         },
         {
             "type": "text",
-            "content": "Når noen snakker i en tekst, må du vise det med tegn. På norsk bruker vi vinklede anførselstegn (« og »), ikke de amerikanske krøllene. I dialog bruker mange forfattere også replikkstrek: en lang tankestrek som markerer at en person tar ordet."
+            "content": "Når noen snakker i en tekst, må du vise det med tegn. På norsk bruker vi vinklede anførselstegn (« og »), ikke de amerikanske krøllene (Bolstad, 2024). Anførselstegn markerer direkte tale, sitater og boktitler, eller viser at et ord brukes på en spesiell måte. I dialog bruker mange forfattere også replikkstrek: en lang tankestrek som markerer at en person tar ordet (Bolstad, 2024)."
         },
         {
             "type": "text",
@@ -99,7 +99,7 @@
         },
         {
             "type": "header",
-            "text": "Når du er i tvil — les høyt"
+            "text": "Når du er i tvil - les høyt"
         },
         {
             "type": "text",
@@ -107,7 +107,7 @@
         },
         {
             "type": "text",
-            "content": "Husk også at tegn aldri kommer alene. De henger fast i ordet før seg, ikke etter. Det skal være «hei, Mia» — ikke «hei , Mia». Etter tegnet kommer ett mellomrom. Akkurat som her."
+            "content": "Husk også at tegn aldri kommer alene. De henger fast i ordet før seg, ikke etter. Det skal være «hei, Mia» - ikke «hei , Mia». Etter tegnet kommer ett mellomrom. Akkurat som her."
         },
         {
             "type": "component",
@@ -123,7 +123,7 @@
         },
         {
             "type": "text",
-            "content": "I chat og sosiale medier har tegn fått nye roller. Et punktum på slutten av en kort melding kan oppleves som irritert eller passivt aggressivt — selv om det egentlig bare er korrekt grammatikk. Mange yngre dropper punktum i raske meldinger og bruker linjeskift eller emoji i stedet. Det er ikke feil, det er et nytt språk for et nytt medium."
+            "content": "I chat og sosiale medier har tegn fått nye roller. Et punktum på slutten av en kort melding kan oppleves som irritert eller passivt aggressivt - selv om det egentlig bare er korrekt grammatikk. I en amerikansk studie vurderte lesere svar i tekstmeldinger som mindre oppriktige når de sluttet med punktum, mens det samme ikke skjedde med håndskrevne lapper (Gunraj mfl., 2016). Mange yngre dropper punktum i raske meldinger og bruker linjeskift eller emoji i stedet. Det er ikke feil, det er et nytt språk for et nytt medium."
         },
         {
             "type": "text",
@@ -135,7 +135,7 @@
         },
         {
             "type": "text",
-            "content": "Tegn handler om å hjelpe leseren din. Hver gang du setter et komma, et punktum eller et spørsmålstegn, gir du leseren et lite kart over hvordan setningen henger sammen. Du sier: «Stol på meg, jeg vet hvor du skal hen.» En ryddig tekst med riktig tegnsetting er ikke bare lettere å lese — den er også mer overbevisende. Den viser at du har tenkt gjennom hva du faktisk vil si."
+            "content": "Tegn handler om å hjelpe leseren din. Hver gang du setter et komma, et punktum eller et spørsmålstegn, gir du leseren et lite kart over hvordan setningen henger sammen. Du sier: «Stol på meg, jeg vet hvor du skal hen.» En ryddig tekst med riktig tegnsetting er ikke bare lettere å lese - den er også mer overbevisende. Den viser at du har tenkt gjennom hva du faktisk vil si."
         },
         {
             "type": "text",
@@ -227,7 +227,20 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bolstad, E. (2024). *anførselstegn*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/anførselstegn](https://snl.no/anf%C3%B8rselstegn)",
+                    "Bosoni, J. G., & Krogsæter, T.-I. (2025). *komma*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/komma](https://snl.no/komma)",
+                    "Gunraj, D. N., Drumm-Hewitt, A. M., Dashow, E. M., Upadhyay, S. S. N., & Klin, C. M. (2016). Texting insincerely: The role of the period in text messaging. *Computers in Human Behavior*, 55, 1067-1075.",
+                    "Store norske leksikon. (2026). *interpunksjon*. Hentet 09.08.2026 fra [snl.no/interpunksjon](https://snl.no/interpunksjon)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-09T00:00:00Z"
 }
