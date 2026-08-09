@@ -14,7 +14,7 @@ import { ArticleContent } from './ArticleContent';
 import { RichSidebar } from './RichSidebar';
 import { LearningPath } from './content/LearningPath';
 import { LearningPathV2 } from './content/LearningPathV2';
-import type { ContentBlock, LearningPathData, LearningPathV2Data, MapData, Concept } from '../types';
+import type { ContentBlock, LearningPathData, LearningPathV2Data, MapData, Concept, GlobalTimelineEvent } from '../types';
 import { useTTS } from '../hooks/useTTS';
 import { cleanForTTS } from '../utils/speechUtils';
 import { useGlobalTimeline } from '../hooks/useGlobalTimeline';
@@ -96,7 +96,7 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
 
         event.content.forEach((block, index) => {
             if (block.type === 'text' || block.type === 'paragraph') {
-                const rawText = (block as any).content || (block as any).text || '';
+                const rawText = block.content || block.text || '';
                 const cleanText = cleanForTTS(rawText);
                 if (cleanText) {
                     blocks.push(cleanText);
@@ -181,7 +181,7 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
         const contextEnd = currentRange.end + buffer;
 
         // Helper to judge relevance
-        const getScore = (e: any) => {
+        const getScore = (e: GlobalTimelineEvent) => {
             let score = 0;
             const eStart = e.startDate;
             const eEnd = e.endDate || e.startDate;

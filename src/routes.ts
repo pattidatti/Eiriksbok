@@ -1,7 +1,9 @@
 import type { ComponentType } from 'react';
 
 // Define the type for the module that contains the component
-type PageModule = { default: ComponentType<any> };
+// Sidene har ingen felles props - ruteren rendrer dem uten. `never` sier
+// nettopp det, og er trygt der `any` bare slo av sjekkingen.
+type PageModule = { default: ComponentType<Record<string, never>> };
 
 // Factory function type
 type PageFactory = () => Promise<PageModule>;

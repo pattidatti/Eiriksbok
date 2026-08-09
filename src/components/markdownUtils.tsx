@@ -71,10 +71,10 @@ export const renderInlineMarkdown = (text: string, concepts?: (Concept | Glossar
         // Flatten all terms and aliases for matching
         const allTerms = concepts.flatMap(c => {
             const baseTerm = (c.term || ('title' in c ? (c as Concept).title : '') || '');
-            const aliases = (c as any).aliases || []; // Handle optional aliases
+            const aliases = c.aliases ?? [];
             return [
                 { term: baseTerm, concept: c },
-                ...aliases.map((a: string) => ({ term: a, concept: c }))
+                ...aliases.map((a) => ({ term: a, concept: c }))
             ];
         }).filter(t => t.term.length > 0)
             .sort((a, b) => b.term.length - a.term.length); // Prioritize longest matches
@@ -89,13 +89,16 @@ export const renderInlineMarkdown = (text: string, concepts?: (Concept | Glossar
                 const match = allTerms.find(t => t.term.toLowerCase() === part.toLowerCase());
 
                 if (match) {
-                    const concept: any = match.concept;
                     return (
                         <Tooltip
                             key={`c-${elIdx}-${i}-${part.substring(0, 10)}`}
-                            text={concept.definition || concept.description || ''}
-                            type={concept.type}
-                            link={concept.link}
+                            text={
+                                match.concept.definition ||
+                                ('description' in match.concept ? match.concept.description : '') ||
+                                ''
+                            }
+                            type={match.concept.type}
+                            link={match.concept.link}
                         >
                             {part}
                         </Tooltip>

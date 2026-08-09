@@ -50,7 +50,7 @@ export const BattleGame: React.FC<BattleGameProps> = ({ config, stats, onComplet
         if (isAnimating || playerHealth <= 0 || enemyHealth <= 0) return;
 
         setIsAnimating(true);
-        const playerMove = config.moves.find((m: any) => m.id === moveId)!;
+        const playerMove = config.moves.find((m) => m.id === moveId)!;
 
         // Simple AI: Random Move
         const enemyMove = pickEnemyMove(config.moves);
@@ -126,7 +126,7 @@ export const BattleGame: React.FC<BattleGameProps> = ({ config, stats, onComplet
 
             {/* Controls */}
             <div className="grid grid-cols-3 gap-4">
-                {config.moves.map((move: any) => {
+                {config.moves.map((move) => {
                     const Icon = MoveIcon[move.type] || Sword;
                     return (
                         <button

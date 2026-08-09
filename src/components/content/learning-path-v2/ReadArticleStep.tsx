@@ -6,6 +6,7 @@ import { QuizRunner } from './QuizRunner';
 import { ArticleContent } from '../../ArticleContent';
 import type { StepRendererProps } from './types';
 import { useStepSounds } from '../../../hooks/useStepSounds';
+import type { ContentBlock } from '../../../types';
 
 // Tre-fase steg:
 //   1. Vis kort intro + knapp "Les artikkelen"
@@ -137,7 +138,7 @@ interface ArticleModalProps {
 }
 
 const ArticleModal: React.FC<ArticleModalProps> = ({ articleUrl, title, onClose }) => {
-    const [content, setContent] = useState<any[] | null>(null);
+    const [content, setContent] = useState<ContentBlock[] | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {

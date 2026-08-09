@@ -316,7 +316,13 @@ const BarView: React.FC<{
                                             initial={{ scale: 0 }}
                                             animate={{ scale: 1 }}
                                             draggable
-                                            onDragStart={(e: any) => {
+                                            // motion.div deklarerer onDragStart som Framer sin
+                                            // pan-hendelse. Uten `drag`-propen tar ikke Framer over,
+                                            // så det som faktisk kommer hit er det native HTML5-
+                                            // draget - derfor oversettes typen her.
+                                            onDragStart={(nativeEvent) => {
+                                                const e =
+                                                    nativeEvent as unknown as React.DragEvent<HTMLDivElement>;
                                                 const currentChords = bar.chords || [];
                                                 const idx = currentChords.indexOf(nodeChord);
                                                 if (idx === -1) return;

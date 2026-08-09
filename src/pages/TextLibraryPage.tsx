@@ -6,6 +6,8 @@ import { Search, Filter, BookOpen, Tag } from 'lucide-react';
 import { textLibraryData, type TextEntry } from '../data/textLibraryData';
 import { usePageTitle } from '../hooks/usePageTitle';
 
+type SortOption = 'title' | 'year_asc' | 'year_desc';
+
 export const TextLibraryPage: React.FC = () => {
     usePageTitle('Bibliotek');
 
@@ -13,7 +15,7 @@ export const TextLibraryPage: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     // Sorting State
-    const [sortOption, setSortOption] = React.useState<'title' | 'year_asc' | 'year_desc'>('title');
+    const [sortOption, setSortOption] = React.useState<SortOption>('title');
 
     // Read Status State (Local Storage)
     const [readTexts, setReadTexts] = React.useState<string[]>(() => {
@@ -107,7 +109,7 @@ export const TextLibraryPage: React.FC = () => {
                     <span className="text-sm font-medium text-slate-500 pl-2">Sorter etter:</span>
                     <select
                         value={sortOption}
-                        onChange={(e) => setSortOption(e.target.value as any)}
+                        onChange={(e) => setSortOption(e.target.value as SortOption)}
                         className="bg-transparent text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer"
                     >
                         <option value="title">Tittel (A-Å)</option>

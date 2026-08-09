@@ -2,6 +2,7 @@ import React from 'react';
 import { TextAnalysisGame } from '../../games/text-analysis/TextAnalysisGame';
 import type { TextAnalysisGameData } from '../../../types';
 import { useDeskStore } from '../../../stores/useDeskStore';
+import type { TextAnalysisSpan } from '../../../types';
 
 // Same demo data as before, or import it
 const DEMO_GAME_DATA: TextAnalysisGameData = {
@@ -20,7 +21,7 @@ const DEMO_GAME_DATA: TextAnalysisGameData = {
     ]
 };
 
-export const XRay: React.FC<{ onFound?: (item: any) => void }> = ({ onFound }) => {
+export const XRay: React.FC<{ onFound?: (item: TextAnalysisSpan) => void }> = ({ onFound }) => {
     const { collectItem } = useDeskStore();
 
     return (

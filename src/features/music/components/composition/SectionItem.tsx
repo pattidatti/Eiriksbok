@@ -138,18 +138,18 @@ export const SectionItem: React.FC<SectionItemProps> = ({
                         onPointerDown={(e) => e.stopPropagation()}
                         onKeyDown={(e) => e.stopPropagation()}
                     >
-                        {[
+                        {([
                             { id: 'Vokal', label: 'Vokal' },
                             { id: 'Trommer', label: 'Trommer' },
                             { id: 'Bass', label: 'Bass' },
                             { id: 'Gitar', label: 'Gitar' },
                             { id: 'Piano', label: 'Piano' }
-                        ].map((inst) => (
+                        ] as const).map((inst) => (
                             <button
                                 key={inst.id}
-                                onClick={() => toggleInstrument(section.id, inst.id as any)}
+                                onClick={() => toggleInstrument(section.id, inst.id)}
                                 title={inst.id}
-                                className={`px-3 py-1.5 h-8 rounded-full flex items-center justify-center text-xs font-bold uppercase tracking-wider transition-all duration-200 border border-transparent ${section.instruments?.includes(inst.id as any)
+                                className={`px-3 py-1.5 h-8 rounded-full flex items-center justify-center text-xs font-bold uppercase tracking-wider transition-all duration-200 border border-transparent ${section.instruments?.includes(inst.id)
                                     ? 'bg-slate-900 text-white shadow-md scale-100'
                                     : 'bg-slate-50 text-slate-400 hover:bg-slate-100 hover:text-slate-600 hover:scale-105'
                                     }`}

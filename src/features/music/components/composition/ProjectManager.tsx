@@ -41,7 +41,7 @@ export const ProjectManager: React.FC<ProjectManagerProps> = ({
     const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
 
     // Library State
-    const [mySongs, setMySongs] = useState<any[]>([]);
+    const [mySongs, setMySongs] = useState<Composition[]>([]);
     const [loadingLibrary, setLoadingLibrary] = useState(true);
 
     // Update temp title when composition changes
@@ -65,7 +65,7 @@ export const ProjectManager: React.FC<ProjectManagerProps> = ({
             } catch {
                 // Korrupt localStorage - start med tom liste i stedet for å krasje
             }
-            const fetchedSongs = [];
+            const fetchedSongs: Composition[] = [];
             let storageNeedsUpdate = false;
             let finalIds = [...savedIds];
 
@@ -78,7 +78,7 @@ export const ProjectManager: React.FC<ProjectManagerProps> = ({
                     console.log(`[ProjectManager] ID ${id} exists in FB:`, exists);
 
                     if (exists) {
-                        const songData = snapshot.val();
+                        const songData = snapshot.val() as Composition;
                         if (songData.id !== id) {
                             console.warn(`[ProjectManager] FIXING MISMATCH: Key ${id} has wrong ID ${songData.id}. Updating FB...`);
 
@@ -306,7 +306,13 @@ export const ProjectManager: React.FC<ProjectManagerProps> = ({
                                                 <div>
                                                     <div className="font-serif font-bold text-slate-900 text-sm leading-tight">{song.title}</div>
                                                     <div className="flex items-center gap-2 text-[10px] text-slate-400 font-bold uppercase tracking-tighter">
-                                                        <span>{new Date(song.lastModified || song.createdAt).toLocaleDateString()}</span>
+                                                        <span>
+                                                            {song.lastModified || song.createdAt
+                                                                ? new Date(
+                                                                      song.lastModified ?? song.createdAt!
+                                                                  ).toLocaleDateString()
+                                                                : 'Ukjent dato'}
+                                                        </span>
                                                         <span>•</span>
                                                         <span>{song.sections?.length || 0} deler</span>
                                                     </div>

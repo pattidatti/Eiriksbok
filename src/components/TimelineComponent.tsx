@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
 
-interface TimelineEvent {
+export interface TimelineEvent {
     year?: string;
     date?: string;
     title: string;

@@ -230,7 +230,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                 ? (getFirstTextContent(lesson.content || [])?.substring(0, 150) + '...' || '')
                 : (lesson.learningPathData?.description || ''),
             content: lesson.content || [],
-            details: lesson.keyPoints || lesson.details || lesson.concepts?.map((c: any) => `${c.title || c.term}: ${c.description || c.definition}`) || [],
+            details: lesson.keyPoints || lesson.details || lesson.concepts?.map((c) => `${c.title || c.term}: ${c.description || c.definition}`) || [],
             category: lesson.category || lesson.topic,
             readTime: lesson.readTime || '5 min lesning',
             heroImage: lesson.heroImage || lessonImage,
@@ -353,11 +353,12 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                     event={{
                         ...timelineEvent,
                         year: timelineEvent.year || timelineEvent.displayDate || '',
+                        description: timelineEvent.description || '',
                         content: timelineEvent.content || [],
                         details: timelineEvent.details || [],
                         category: timelineEvent.category || 'Historie',
                         readTime: timelineEvent.readTime || '3 min',
-                    } as any}
+                    }}
                     sidebarConfig={sidebarConfig}
                 />
             </ErrorBoundary>

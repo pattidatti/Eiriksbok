@@ -53,7 +53,7 @@ export const TextReaderPage: React.FC = () => {
     const displayContent = useMemo(() => {
         if (!textEntry) return [];
         if (currentLanguage === (textEntry.language || 'bm.')) return textEntry.content;
-        const translation = textEntry.translations?.find((t: any) => t.language === currentLanguage);
+        const translation = textEntry.translations?.find((t) => t.language === currentLanguage);
         return translation ? translation.content : textEntry.content;
     }, [textEntry, currentLanguage]);
 
@@ -72,7 +72,7 @@ export const TextReaderPage: React.FC = () => {
     const displayTitle = useMemo(() => {
         if (!textEntry) return '';
         if (currentLanguage === (textEntry.language || 'bm.')) return textEntry.title;
-        const translation = textEntry.translations?.find((t: any) => t.language === currentLanguage);
+        const translation = textEntry.translations?.find((t) => t.language === currentLanguage);
         return translation ? translation.title : textEntry.title;
     }, [textEntry, currentLanguage]);
 
@@ -359,7 +359,7 @@ export const TextReaderPage: React.FC = () => {
                                     >
                                         {textEntry.language === 'bm.' ? 'Bokmål' : textEntry.language === 'nn.' ? 'Nynorsk' : textEntry.language}
                                     </button>
-                                    {textEntry.translations.map((t: any) => (
+                                    {textEntry.translations.map((t) => (
                                         <button
                                             key={t.language}
                                             onClick={() => setCurrentLanguage(t.language)}

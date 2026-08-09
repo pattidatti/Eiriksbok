@@ -121,8 +121,8 @@ export const useConcepts = () => {
 
         // 2. Extract from Text Library (if needed in future)
         textLibraryData.forEach(text => {
-            if ((text as any).definitions) {
-                (text as any).definitions.forEach((def: any, index: number) => {
+            if (text.definitions) {
+                text.definitions.forEach((def, index) => {
                     allConcepts.push({
                         id: `library-${text.id}-${index}`,
                         term: def.term,

@@ -6,6 +6,19 @@ export interface Concept {
     // Compatibility fields for legacy/different formats
     title?: string;
     description?: string;
+    // Feltene som faktisk ligger i public/data/concepts.json. `aliases` er de
+    // andre skrivemåtene et begrep kan ha i teksten, og styrer hva GlossaryText
+    // markerer.
+    aliases?: string[];
+    type?: 'concept' | 'person';
+    link?: string;
+    links?: { title: string; url: string }[];
+    tags?: string[];
+    subject?: string;
+    topic?: string;
+    context?: string;
+    explanation?: string;
+    usage?: string;
 }
 
 export interface Connection {

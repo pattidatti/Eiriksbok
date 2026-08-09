@@ -12,6 +12,7 @@ import {
     Filler
 } from 'chart.js';
 import { TrendingUp, Info } from 'lucide-react';
+import type { TooltipItem } from 'chart.js';
 
 // Register ChartJS components
 ChartJS.register(
@@ -87,8 +88,8 @@ export const BusinessCycleGraph: React.FC = () => {
                 mode: 'index' as const,
                 intersect: false,
                 callbacks: {
-                    label: function (context: any) {
-                        return `${context.dataset.label}: ${Math.round(context.raw)}`;
+                    label: function (context: TooltipItem<'line'>) {
+                        return `${context.dataset.label}: ${Math.round(Number(context.raw))}`;
                     }
                 }
             },

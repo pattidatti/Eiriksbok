@@ -37,7 +37,7 @@ export const OrchestraVisualizer: React.FC<OrchestraVisualizerProps> = ({ tracks
                                     transition-colors duration-200
                                 `}
                             >
-                                {React.cloneElement(track.icon as React.ReactElement, { size: 32 } as any)}
+                                {React.cloneElement(track.icon as React.ReactElement<{ size?: number }>, { size: 32 })}
                             </motion.div>
                             <span className={`mt-2 text-xs font-bold uppercase tracking-wider ${isActive ? 'text-white text-shadow-lg' : 'text-slate-600'}`}>
                                 {track.name}
