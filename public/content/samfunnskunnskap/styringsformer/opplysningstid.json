@@ -12,6 +12,7 @@
         "opplysningstid"
     ],
     "createdDate": "2025-12-21T23:00:00Z",
+    "lastUpdated": "2026-08-09",
     "layout": "standard",
     "content": [
         {
@@ -20,7 +21,7 @@
         },
         {
             "type": "paragraph",
-            "content": "På 1700-tallet skylte en bølge av nye tanker over Europa. Vi kaller denne perioden for opplysningstiden. Navnet er ikke tilfeldig; tenkerne i denne tiden mente at menneskeheten lenge hadde levd i mørket av overtro, religiøs fanatisme og kongelig tyranni. Ved å bruke fornuft, vitenskap og kritisk tenkning skulle man kaste lys over alle deler av samfunnet. Ingenting skulle lenger tas for gitt bare fordi det sto i en gammel bok eller fordi en pave hadde sagt det."
+            "content": "På 1700-tallet skylte en bølge av nye tanker over Europa. Vi kaller denne perioden for opplysningstiden - en epoke i Europas idéhistorie der vitenskap, fornuft, frihet, toleranse og framskritt ble satt inn som nye idealer og autoriteter (Krefting, 2026). Navnet er ikke tilfeldig; tenkerne i denne tiden mente at menneskeheten lenge hadde levd i mørket av overtro, religiøs fanatisme og kongelig tyranni. På alle felt ble fornuften brukt som våpen mot fordommer, enten de var forankret i dogmatisk religion, gammel filosofi, tradisjonell makt eller folkelig overtro (Krefting, 2026). Ingenting skulle lenger tas for gitt bare fordi det sto i en gammel bok eller fordi en pave hadde sagt det."
         },
         {
             "type": "paragraph",
@@ -32,19 +33,19 @@
         },
         {
             "type": "paragraph",
-            "content": "For å svare på disse spørsmålene gjennomførte filosofene et slags vitenskapelig eksperiment i tankene sine. De forestilte seg mennesket i det de kalte naturtilstanden – en tid før det fantes lover, politi, konger eller stater. Hvordan ville vi ha oppført oss mot hverandre hvis ingen hadde makt til å styre oss? Svaret på dette spørsmålet ble helt avgjørende for hvilken type stat filosofene senere ønsket å bygge."
+            "content": "For å svare på disse spørsmålene gjennomførte filosofene et slags vitenskapelig eksperiment i tankene sine. De forestilte seg mennesket i det de kalte naturtilstanden - en tid før det fantes lover, politi, konger eller stater. Hvordan ville vi ha oppført oss mot hverandre hvis ingen hadde makt til å styre oss? Svaret på dette spørsmålet ble helt avgjørende for hvilken type stat filosofene senere ønsket å bygge."
         },
         {
             "type": "header",
-            "content": "Thomas Hobbes: Flugten fra kaos"
+            "content": "Thomas Hobbes: Flukten fra kaos"
         },
         {
             "type": "paragraph",
-            "content": "Den engelske filosofen Thomas Hobbes opplevde de brutale engelske borgerkrigene på 1600-tallet, og hans syn på menneskenaturen var preget av dette. I sitt berømte verk Leviathan skrev han at mennesket i naturtilstanden er drevet av ren egoisme og frykt. Uten en sentral makt til å holde alle i sjakk, vil livet være en alles krig mot alle. Hobbes mente at vi dypest sett er redde for hverandre, og at vi alltid vil forsøke å tilegne oss mer makt og ressurser før naboen gjør det."
+            "content": "Den engelske filosofen Thomas Hobbes opplevde de brutale engelske borgerkrigene på 1600-tallet, og hans syn på menneskenaturen var preget av dette. I sitt berømte verk Leviathan fra 1651 skrev han at mennesket i naturtilstanden er drevet av ren egoisme og frykt. Uten en sentral makt til å holde alle i sjakk, vil livet være en alles krig mot alle (Alnes, 2024). Hobbes mente at vi dypest sett er redde for hverandre, og at vi alltid vil forsøke å tilegne oss mer makt og ressurser før naboen gjør det."
         },
         {
             "type": "paragraph",
-            "content": "I en slik tilstand ville det ikke finnes rom for industri, kunst eller samfunnsbygging, fordi ingen kunne være trygge på fruktene av sitt eget arbeid. Hobbes oppsummerte livet i naturtilstanden som ensomt, fattig, ekkelt, brutalt og kort. Hans løsning var derfor radikal: For å oppnå trygghet må vi inngå en samfunnskontrakt der vi gir fra oss all vår frihet til en hersker – en Leviathan – som har absolutt makt til å tvinge oss til fred. For Hobbes var et tyranni bedre enn det totale kaoset uten en stat."
+            "content": "I en slik tilstand ville det ikke finnes rom for industri, kunst eller samfunnsbygging, fordi ingen kunne være trygge på fruktene av sitt eget arbeid. Hobbes oppsummerte livet i naturtilstanden med fem berømte ord: ensomt, fattig, ekkelt, brutalt og kort (Lloyd & Sreedhar, 2022). Hans løsning var derfor radikal: For å oppnå trygghet må vi inngå en samfunnskontrakt der vi gir fra oss all vår frihet til en hersker - en Leviathan - som har absolutt makt til å tvinge oss til fred. Menneskene inngår avtaler om å slutte seg sammen i en stat og overlater styremakten til én hersker (Alnes, 2024). For Hobbes var et tyranni bedre enn det totale kaoset uten en stat."
         },
         {
             "type": "header",
@@ -52,11 +53,11 @@
         },
         {
             "type": "paragraph",
-            "content": "Noen tiår senere kom [John Locke](/krle/filosofi/locke) med et helt annet perspektiv. Locke mente at mennesket i naturtilstanden ikke var vilt og krigersk, men tvert imot var utstyrt med fornuft og visse medfødte rettigheter. Han kalte disse for naturlige rettigheter: retten til liv, frihet og eiendom. Locke mente at naturtilstanden var preget av frihet, men at den manglet en upartisk dommer. Hvis naboen din stjal sauen din, måtte du selv ta hevn, noe som lett kunne føre til endeløse feider."
+            "content": "Noen tiår senere kom [John Locke](/krle/filosofi/locke) med et helt annet perspektiv. Locke mente at mennesket i naturtilstanden ikke var vilt og krigersk, men tvert imot var utstyrt med fornuft og visse medfødte rettigheter. Han kalte disse for naturlige rettigheter: retten til liv, frihet og eiendom - rettigheter som ikke er skapt av lovene i et bestemt samfunn (Tuckness, 2020). Locke mente at naturtilstanden var preget av frihet, men at den manglet en felles dommer med myndighet til å avgjøre strid (Tuckness, 2020). Hvis naboen din stjal sauen din, måtte du selv ta hevn, noe som lett kunne føre til endeløse feider."
         },
         {
             "type": "paragraph",
-            "content": "Vi inngår derfor samfunnskontrakten ikke fordi vi er redde for å dø (som hos Hobbes), men fordi vi vil ha en stat som kan beskytte rettighetene våre mer effektivt enn vi kan selv. For Locke er statens makt bare lånt fra folket. Hvis herskeren bryter kontrakten og begynner å krenke folkets liv, frihet eller eiendom, mister staten sin legitimitet. Da har folket ikke bare en rett, men en plikt til å gjøre opprør og innsette et nytt styre. Dette er fundamentet for moderne liberalisme og demokrati."
+            "content": "Vi inngår derfor samfunnskontrakten ikke fordi vi er redde for å dø (som hos Hobbes), men fordi vi vil ha en stat som kan beskytte rettighetene våre mer effektivt enn vi kan selv. For Locke er statens makt bare lånt fra folket. Hvis herskeren bryter kontrakten og begynner å krenke folkets liv, frihet eller eiendom, mister staten sin legitimitet. Da kan et slikt styre møtes med motstand og erstattes av et nytt (Tuckness, 2020). Dette er fundamentet for moderne liberalisme og demokrati."
         },
         {
             "type": "header",
@@ -64,11 +65,11 @@
         },
         {
             "type": "paragraph",
-            "content": "[Jean-Jacques Rousseau](/krle/filosofi/rousseau) snudde saken helt på hodet. Han mente at naturtilstanden faktisk var menneskets lykkeligste tid. Han snakket om den edle ville som levde i harmoni med naturen og var fri fra sivilisasjonens laster. Det var først da det første mennesket satte opp et gjerde og sa 'dette er mitt', at ulikhet og elendighet oppsto. Mennesket er født fritt, men overalt er det i lenker, skrev han."
+            "content": "[Jean-Jacques Rousseau](/krle/filosofi/rousseau) snudde saken helt på hodet. Han mente at naturtilstanden faktisk var menneskets lykkeligste tid. Han snakket om den edle ville som levde i harmoni med naturen og var fri fra sivilisasjonens laster. Det var først da det første mennesket satte opp et gjerde og sa 'dette er mitt', at ulikhet og elendighet oppsto. Mennesket er født fritt, overalt er det i lenker, skrev han i åpningen av Om samfunnspakten fra 1762 (Svendsen & Kolderup, 2025)."
         },
         {
             "type": "paragraph",
-            "content": "Rousseau ønsket en samfunnskontrakt som kunne gi oss friheten tilbake, men i en ny form. Han introduserte begrepet allmennviljen (volonté générale). Han mente at i et rettferdig samfunn skal ikke hver person bare tenke på sin egen fordel (særinteresser), men vi skal i fellesskap beslutte hva som er best for alle. Frihet er ikke å gjøre som man vil, men å lyde de lovene som man selv har vært med på å vedta for fellesskapets beste. Rousseaus ideer var ekstremt radikale og ble selve drivkraften bak jakobinerne under den franske revolusjonen."
+            "content": "Rousseau ønsket en samfunnskontrakt som kunne gi oss friheten tilbake, men i en ny form. Han introduserte begrepet allmennviljen (volonté générale), og skilte det skarpt fra volonté de tous, altså summen av alle de egoistiske ønskene hver enkelt måtte ha (Svendsen & Kolderup, 2025). Han mente at i et rettferdig samfunn skal ikke hver person bare tenke på sin egen fordel (særinteresser), men vi skal i fellesskap beslutte hva som er best for alle. Frihet er ikke å gjøre som man vil, men å lyde de lovene som man selv har vært med på å vedta for fellesskapets beste. Rousseaus ideer var ekstremt radikale, og Om samfunnspakten er siden blitt kalt den franske revolusjons katekisme (Svendsen & Kolderup, 2025)."
         },
         {
             "type": "header",
@@ -80,7 +81,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Hans løsning var genial i sin enkelhet: makt må stanse makt. Han foreslo å dele statens makt i tre uavhengige grener som skulle balansere hverandre: den lovgivende (nasjonalforsamlingen), den utøvende (kongen eller regjeringen) og den dømmende makt (domstolene). Ved at disse grenene var adskilte, kunne ingen person eller gruppe få kontroll over hele statsapparatet. Dette prinsippet er i dag grunnsteinen i nesten alle demokratiske land, inkludert det norske systemet med Stortinget, Regjeringen og Høyesterett."
+            "content": "Hans løsning var genial i sin enkelhet: makt må stanse makt. I hovedverket Om lovenes ånd fra 1748 foreslo han å dele statens makt i tre grener som skulle balansere hverandre: den lovgivende myndigheten hos en folkevalgt forsamling, den utøvende hos kongen eller regjeringen, og den dømmende hos domstolene (Østberg, 2026). Ved at disse grenene var adskilte, kunne ingen person eller gruppe få kontroll over hele statsapparatet. Tanken preget både den amerikanske grunnloven, den franske av 1791 og den norske av 1814, og er i dag grunnsteinen i det norske systemet med Stortinget, regjeringen og Høyesterett (Østberg, 2026)."
         },
         {
             "type": "header",
@@ -88,18 +89,18 @@
         },
         {
             "type": "paragraph",
-            "content": "Ideene fra opplysningstiden ble ikke værende i tykke bøker i Paris eller London. De ble til krutt og kuler. I 1776 gjorde de amerikanske koloniene opprør mot den britiske kongen. Den amerikanske uavhengighetserklæringen er nesten et ekko av John Lockes tekster: 'Vi anser disse sannheter for å være selvinnlysende: at alle mennesker er skapt like; at de av sin Skaper er utstyrt med visse uavhendelige rettigheter, og at blant disse er liv, frihet og streben etter lykke.' Dette var første gang i historien en moderne stat ble bygget direkte på opplysningstidens filosofi."
+            "content": "Ideene fra opplysningstiden ble ikke værende i tykke bøker i Paris eller London. De ble til krutt og kuler. I 1776 gjorde de amerikanske koloniene opprør mot den britiske kongen. Den amerikanske uavhengighetserklæringen av 4. juli 1776 er nesten et ekko av John Lockes tekster: 'Vi anser disse sannheter for å være selvinnlysende: at alle mennesker er skapt like; at de av sin Skaper er utstyrt med visse uavhendelige rettigheter, og at blant disse er liv, frihet og streben etter lykke' (National Archives, 2026). Dette var første gang i historien en moderne stat ble bygget direkte på opplysningstidens filosofi."
         },
         {
             "type": "paragraph",
-            "content": "Noen år senere, i 1789, eksploderte Frankrike i en revolusjon som skulle ryste hele Europa. Erklæringen om menneskets og borgerens rettigheter slo fast at makten hviler hos folket, ikke hos kongen. Men den franske revolusjonen viste også opplysningstidens mørke side: Forsøket på å tvinge gjennom dygd og allmennvilje førte til en periode med terror (skrekkveldet), der tusenvis ble sendt til guillotinen i frihetens navn. Dette reiste et evig spørsmål: Kan man tvinge folk til å bli frie?"
+            "content": "Noen år senere, i 1789, eksploderte Frankrike i en revolusjon som skulle ryste hele Europa. Nasjonalforsamlingen vedtok en erklæring om menneskerettighetene som slo fast at alle mennesker er født frie og like, og at all myndighet i samfunnet må utgå fra folket (Østberg & Tønnesson, 2025). Men den franske revolusjonen viste også opplysningstidens mørke side: Forsøket på å tvinge gjennom dygd og allmennvilje førte til en periode med terror. Skrekkveldet varte fra sommeren 1793 til sommeren 1794, og mellom 35 000 og 40 000 mennesker ble henrettet, mange av dem i guillotinen (Østberg & Tønnesson, 2025). Dette reiste et evig spørsmål: Kan man tvinge folk til å bli frie?"
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Norges Grunnlov og Opplysningstiden",
-                "content": "Da de 112 mennene møttes på Eidsvoll i 1814, var de dypt preget av de franske og amerikanske ideene. Den norske grunnloven var et forsøk på å finne den gylne middelvei mellom Montesquieus maktfordeling og Lockes folkesuverenitet. Den var kanskje den mest radikale i Europa på den tiden, og den står fortsatt som et levende bevis på opplysningstidens kraft."
+                "content": "Da riksforsamlingen møttes på Eidsvoll våren 1814, var den inspirert av ideer om folkesuverenitet, maktfordeling og menneskerettigheter fra opplysningstiden og revolusjonene (Holmøyvik, 2026). Den norske grunnloven var et forsøk på å finne den gylne middelvei mellom Montesquieus maktfordeling og Lockes folkesuverenitet. Den var kanskje den mest radikale i Europa på den tiden, og den står fortsatt som et levende bevis på opplysningstidens kraft."
             }
         },
         {
@@ -124,7 +125,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Ordene over kommer fra [Immanuel Kant](/persongalleri/immanuel-kant), en av opplysningstidens største filosofer. Han mente at opplysning handlet om å tørre å tenke selv, i stedet for å la andre tenke for oss."
+            "content": "Ordene over kommer fra [Immanuel Kant](/persongalleri/immanuel-kant), som i 1784 skrev et lite skrift om hva opplysning egentlig er (Krefting, 2026). Han mente at opplysning handlet om å tørre å tenke selv, i stedet for å la andre tenke for oss."
         },
         {
             "type": "header",
@@ -183,6 +184,23 @@
                     "Artikkelen sier at vi diskuterer statens overvåking i dag, som er Hobbes' frykt satt i system. Skriv en kort tekst der du bruker Hobbes og Locke til å drøfte hvor mye staten bør få overvåke innbyggerne.",
                     "Den norske grunnloven bygger på Montesquieu og Locke. Finn ut hvilke tre organer som utgjør maktfordelingen i Norge i dag, og forklar hva hvert av dem gjør.",
                     "Diskuter i klassen spørsmålet artikkelen stiller til slutt: Kan man tvinge folk til å bli frie? Bruk eksempler fra egen hverdag eller nyhetene."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Alnes, J. H. (2024). *Thomas Hobbes*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Thomas_Hobbes](https://snl.no/Thomas_Hobbes)",
+                    "Holmøyvik, E. (2026). *Grunnlova*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Grunnloven](https://snl.no/Grunnloven)",
+                    "Krefting, E. (2026). *Opplysningstiden*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/opplysningstiden](https://snl.no/opplysningstiden)",
+                    "Lloyd, S. A. & Sreedhar, S. (2022). *Hobbes's Moral and Political Philosophy*. Stanford Encyclopedia of Philosophy. Hentet 09.08.2026 fra [plato.stanford.edu](https://plato.stanford.edu/entries/hobbes-moral/)",
+                    "National Archives. (2026). *Declaration of Independence: A Transcription*. U.S. National Archives. Hentet 09.08.2026 fra [archives.gov](https://www.archives.gov/founding-docs/declaration-transcript)",
+                    "Svendsen, L. F. H. & Kolderup, T. (2025). *Jean-Jacques Rousseau*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Jean-Jacques_Rousseau](https://snl.no/Jean-Jacques_Rousseau)",
+                    "Tuckness, A. (2020). *Locke's Political Philosophy*. Stanford Encyclopedia of Philosophy. Hentet 09.08.2026 fra [plato.stanford.edu](https://plato.stanford.edu/entries/locke-political/)",
+                    "Østberg, K. P. (2026). *Montesquieu*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Montesquieu](https://snl.no/Montesquieu)",
+                    "Østberg, K. P. & Tønnesson, K. (2025). *Den franske revolusjon*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/den_franske_revolusjon](https://snl.no/den_franske_revolusjon)"
                 ]
             }
         }
