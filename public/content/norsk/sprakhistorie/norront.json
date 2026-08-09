@@ -3,16 +3,16 @@
     "title": "Norrønt: Språket vikingene snakket",
     "description": "Norrønt er språket som ble snakket i Norge i vikingtid og middelalder. Det er forfaren til moderne norsk, og med litt øvelse kan du faktisk lese det.",
     "layout": "rich",
-    "year": "ca. 700–1350",
+    "year": "ca. 700-1350",
     "category": "Språk",
     "readTime": "9 min lesning",
     "heroImage": "/images/sprakhistorie/norront-hero.webp",
     "details": [
-        "Norrønt ble snakket i Norge, Island, Færøyene og deler av de britiske øyer i ca. 600 år.",
-        "Det hadde fire kasus, tre kjønn og kompliserte verbbøyninger — alt det moderne norsk har mistet.",
-        "Islandsk har endret seg så lite at en islending nesten kan lese sagaene som de ble skrevet."
+        "Norrønt ble brukt i Norge, på Island, Færøyene, Shetland og Orknøyene i perioden 700-1350.",
+        "Det hadde fire kasus, og verbene ble bøyd i person og tall - mye av dette har moderne norsk mistet.",
+        "Islandsk har endret seg så lite at dagens islendinger leser norrøne tekster uten større problemer."
     ],
-    "externalUrl": "https://snl.no/norrønt_språk",
+    "externalUrl": "https://snl.no/norrønt",
     "tags": [
         "språkhistorie",
         "norrønt",
@@ -25,7 +25,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Forestill deg at du finner en gammel bok på et loft. Du åpner den, og på første side står det: «Þar er maðr nefndr Egill». Du leser det høyt. Sakte begynner det å gi mening. «Þar» ligner «der». «Maðr» ligner «mann». «Nefndr» ligner «nevnt». Du leste akkurat din første setning på norrønt — språket som ble snakket i Norge for tusen år siden."
+            "content": "Forestill deg at du finner en gammel bok på et loft. Du åpner den, og på første side står det: «Þar er maðr nefndr Egill». Du leser det høyt. Sakte begynner det å gi mening. «Þar» ligner «der». «Maðr» ligner «mann». «Nefndr» ligner «nevnt». Du leste akkurat din første setning på norrønt - språket som ble snakket i Norge for tusen år siden."
         },
         {
             "type": "image",
@@ -39,7 +39,7 @@
         },
         {
             "type": "text",
-            "content": "Norrønt er fellesnavnet på språket som ble snakket i Norge, på Island, Færøyene, Grønland og deler av Storbritannia i tiden ca. 700 til 1350. Vi kaller det også gammelnorsk når vi snakker spesielt om varianten som ble brukt i Norge. På norrønt skrev folk Snorres kongesagaer, Edda-diktene og de islandske sagaene. Det er språket Snorre Sturlason brukte, det språket Olav den hellige snakket, og det språket runeinnskriftene på steiner og smykker forteller oss om."
+            "content": "Norrønt er fellesnavnet på språket som ble brukt i Norge i perioden 700 til 1350, og i områdene som ble bosatt fra Norge i samme tid: Island, Færøyene, Shetland og Orknøyene (Nordbø et al., 2025). Vi kaller det også gammelnorsk når vi snakker spesielt om varianten som ble brukt i Norge. På norrønt skrev folk Snorres kongesagaer, Edda-diktene og de islandske sagaene. Det er språket Snorre Sturlason brukte, det språket Olav den hellige snakket, og det språket runeinnskriftene på steiner og smykker forteller oss om."
         },
         {
             "type": "text",
@@ -51,11 +51,11 @@
         },
         {
             "type": "text",
-            "content": "Norrønt vokste fram fra urnordisk, et eldre språk vi kjenner fra runesteiner. Rundt år 700 hadde språket endret seg så mye at vi gir det et nytt navn. På [vikingtoktene](/historie/vikingtiden/artikkel) tok nordmennene språket med seg til Island, Færøyene, Hebridene, Shetland og Orknøyene. På Island ble det skrevet ned i stor stil fra rundt år 1100. Derfor heter det også «gammalislandsk» når vi leser sagaer."
+            "content": "Norrønt vokste fram fra urnordisk, et eldre språk vi kjenner fra runesteiner. Rundt år 700 hadde språket endret seg så mye at vi gir det et nytt navn. På [vikingtoktene](/historie/vikingtiden/artikkel) tok nordmennene språket med seg vestover, og det slo rot på Island, Færøyene, Shetland og Orknøyene (Nordbø et al., 2025). Etter hvert vokste det fram forskjeller mellom språket i Norge og på Island, og derfor skiller vi mellom «gammalnorsk» og «gammalislandsk» når vi leser gamle tekster (Nordbø et al., 2025)."
         },
         {
             "type": "text",
-            "content": "I starten ble norrønt skrevet med runer. Det yngre runealfabetet hadde bare 16 tegn, så det var litt som å skrive med en avkortet tastatur. Da [kristendommen](/historie/vikingtiden/kristningen-av-norge) kom rundt år 1000, fulgte det med skrivekunst og det latinske alfabetet. Munker og skrivere på Island begynte å skrive på pergament. Det er derfor vi har sagaene i dag — uten dem ville språket vært tapt, slik så mange andre språk fra middelalderen er det."
+            "content": "I starten ble norrønt skrevet med runer. Fra 800-tallet brukte folk et forenklet runealfabet som kalles den yngre futharken. Det eldre runealfabetet hadde 24 tegn, og det yngre hadde langt færre (Zilmer & Høst Heyerdahl, 2026). Det var litt som å skrive med et avkortet tastatur. Da [kristendommen](/historie/vikingtiden/kristningen-av-norge) kom rundt år 1000, fulgte det med skrivekunst og det latinske alfabetet. Munker og skrivere på Island begynte å skrive på pergament. Det er derfor vi har sagaene i dag - uten dem ville språket vært tapt, slik så mange andre språk fra middelalderen er det."
         },
         {
             "type": "component",
@@ -85,14 +85,38 @@
                 "title": "Norrøne ord møter moderne norsk",
                 "intro": "Klikk et norrønt ord, så det moderne ordet det ble til. Du har seks par.",
                 "pairs": [
-                    { "norront": "maðr", "modern": "mann", "hint": "ð uttales som engelsk «th» i «the»" },
-                    { "norront": "auga", "modern": "øye", "hint": "g forsvant, og «au» ble til «ø»" },
-                    { "norront": "hús", "modern": "hus", "hint": "nesten likt — bare aksenten er borte" },
-                    { "norront": "skip", "modern": "skip", "hint": "helt likt etter tusen år" },
-                    { "norront": "fjǫrðr", "modern": "fjord", "hint": "ǫ ble til «o», og slik fikk vi fjord-ordet" },
-                    { "norront": "kýr", "modern": "ku", "hint": "ý er en y-lyd. Vokalen ble kortere" }
+                    {
+                        "norront": "maðr",
+                        "modern": "mann",
+                        "hint": "ð uttales som engelsk «th» i «the»"
+                    },
+                    {
+                        "norront": "auga",
+                        "modern": "øye",
+                        "hint": "g forsvant, og «au» ble til «ø»"
+                    },
+                    {
+                        "norront": "hús",
+                        "modern": "hus",
+                        "hint": "nesten likt - bare aksenten er borte"
+                    },
+                    {
+                        "norront": "skip",
+                        "modern": "skip",
+                        "hint": "helt likt etter tusen år"
+                    },
+                    {
+                        "norront": "fjǫrðr",
+                        "modern": "fjord",
+                        "hint": "ǫ ble til «o», og slik fikk vi fjord-ordet"
+                    },
+                    {
+                        "norront": "kýr",
+                        "modern": "ku",
+                        "hint": "ý er en y-lyd. Vokalen ble kortere"
+                    }
                 ],
-                "successText": "Du leste seks norrøne ord. Et språk fra år 1000 — ikke så fremmed likevel."
+                "successText": "Du leste seks norrøne ord. Et språk fra år 1000 - ikke så fremmed likevel."
             }
         },
         {
@@ -101,11 +125,11 @@
         },
         {
             "type": "text",
-            "content": "Selv om mange ord er like, har grammatikken endret seg dramatisk. Norrønt hadde fire kasus: nominativ, akkusativ, dativ og genitiv. Det betyr at ordet for «hest» kunne hete fire forskjellige ting, alt etter hvilken rolle det hadde i setningen. Hesten som subjekt het hestr. Hesten som objekt het hest. Til hesten het hesti. Hestens het hests. Latin har dette. Tysk har det fortsatt litt. Islandsk har det enda. Norsk har det nesten ikke."
+            "content": "Selv om mange ord er like, har grammatikken endret seg dramatisk. Norrønt hadde fire kasus: nominativ, akkusativ, genitiv og dativ (Abusland, 2021). Det betyr at ordet for «hest» kunne hete fire forskjellige ting, alt etter hvilken rolle det hadde i setningen. Mønsteret er ryddig: nominativ fikk endelsen -r, akkusativ fikk ingen endelse, genitiv fikk -s og dativ fikk -i (Abusland, 2021). Hesten som subjekt het altså hestr, hesten som objekt het hest, hestens het hests, og til hesten het hesti. Latin har dette. Tysk har det fortsatt litt. Islandsk har det enda. Norsk har det nesten ikke."
         },
         {
             "type": "text",
-            "content": "Verbene var også mer kompliserte. På norrønt sa du ek em (jeg er), þú ert (du er), hann er (han er). Hver person hadde sin egen verbform. I dag sier vi bare «er» til alle. Det er én av grunnene til at moderne norsk er enklere å lære enn islandsk."
+            "content": "Verbene var også mer kompliserte. På norrønt ble verbene bøyd i person og tall, slik engelsk fortsatt har rester av. Språket hadde til og med egne totallsformer av de personlige pronomenene, altså egne ord for «vi to» og «dere to» (Lund, 2022). I dag sier vi bare «er» til alle. Grammatikken vår har blitt kraftig forenklet ved at bøyninger, og til slutt hele bøyningskategorier, har falt bort (Lund, 2022). Det er én av grunnene til at moderne norsk er enklere å lære enn islandsk."
         },
         {
             "type": "image",
@@ -119,11 +143,11 @@
         },
         {
             "type": "text",
-            "content": "I middelalderen var Norge en selvstendig stat med eget skriftspråk. Etter svartedauden i 1349–1350 ble Norge svakere, og fra 1380 var landet i union med Danmark. I løpet av 1400-tallet overtok dansk som skriftspråk i Norge. Talespråket utviklet seg videre, men ingen skrev det ned. Bøyningene falt vekk. Lydene endret seg. Da Norge ble selvstendig igjen i 1814, fantes det ikke noe norsk skriftspråk å bygge videre på — bare dansk."
+            "content": "I middelalderen var Norge en selvstendig stat med eget skriftspråk. Etter svartedauden i 1349-1350 kom det et skille: en helt ny generasjon skrivekyndige overtok, og skriftspråket endret seg (Nordbø & Thorvaldsen, 2026). Fra 1380 var Norge i union eller kongefellesskap med Danmark, og den perioden varte helt til 1814 (Viken et al., 2025). Det norrøne skriftspråket ble gradvis erstattet av dansk (Nordbø & Thorvaldsen, 2026). Talespråket utviklet seg videre, men ingen skrev det ned. Bøyningene falt vekk. Lydene endret seg. Da Norge ble selvstendig igjen i 1814, fantes det ikke noe norsk skriftspråk å bygge videre på - bare dansk."
         },
         {
             "type": "text",
-            "content": "Det var derfor Ivar Aasen reiste rundt på 1840-tallet og samlet inn dialektord. Han ville lage et nytt skriftspråk basert på de norske dialektene, som hadde bevart mye av det norrøne grunnlaget. Resultatet ble landsmål, som senere fikk navnet nynorsk. Mange nynorske former er nærmere norrønt enn bokmål er. «Eg», «ikkje» og «kvifor» er gode eksempler."
+            "content": "Det var derfor Ivar Aasen reiste rundt mellom 1842 og 1846 og samlet inn dialektord, særlig på Vestlandet og i fjellbygdene (Bull, 2026). Han ville lage et nytt skriftspråk basert på de norske dialektene, som hadde bevart mye av det norrøne grunnlaget. Resultatet ble landsmål, som senere fikk navnet nynorsk. Mange nynorske former er nærmere norrønt enn bokmål er. «Eg», «ikkje» og «kvifor» er gode eksempler."
         },
         {
             "type": "header",
@@ -131,11 +155,11 @@
         },
         {
             "type": "text",
-            "content": "Norrønt forsvant aldri helt. Det lever videre i nesten alle norske ord du sier. Stedsnavn er fulle av norrøn arv: -vik, -fjord, -sund, -bø, -stad, -nes, -dal. Alle disse er norrøne ord for landskap. Ukedagene er oppkalt etter norrøne guder: tirsdag (Tyrs dag), onsdag (Odins dag), torsdag (Tors dag) og fredag (Frøyas dag). Når du sier «verdi», «hjelm», «skog» eller «bjelke», bruker du norrønt nesten uendret."
+            "content": "Norrønt forsvant aldri helt. Det lever videre i nesten alle norske ord du sier. Stedsnavn er fulle av gammel arv: -vik, -fjord, -sund, -bø, -stad, -nes, -dal. Noen av dem er rene naturnavn som Nes, Dal og Berge, og de kan være så gamle som fra rundt år 0. Andre endelser, som -stad og -bø, er gamle ord for gård eller bosted, og navn på -stad var typiske i vikingtiden (Helleland et al., 2026). Ukedagene er oppkalt etter norrøne guder: tirsdag etter krigsguden Ty (Store norske leksikon, 2025), onsdag etter hovedguden Odin (Store norske leksikon, 2024b) og torsdag etter Tor (Næss, 2024). Fredag er litt vanskeligere: forleddet gjengir gudinnenavnene Frigg og Frøya, så navnet kan spores til begge (Store norske leksikon, 2024a). Når du sier «verdi», «hjelm», «skog» eller «bjelke», bruker du norrønt nesten uendret."
         },
         {
             "type": "text",
-            "content": "Norrøne ord finnes også i andre språk. Vikingene var i England i 200 år og etterlot seg ord som sky, knife, egg, window og husband. På islandsk kan du fortsatt lese sagaene som de ble skrevet for 800 år siden, fordi språket har endret seg så lite. Når en islending leser Snorres kongesagaer, forstår hen omtrent like mye som vi forstår av Henrik Wergeland. Sammenligningen er nyttig: islandsk er en tidsmaskin."
+            "content": "Norrøne ord finnes også i andre språk. Nordmenn og dansker reiste vestover til England, og språkkontakten satte varige spor. Forskere anslår at rundt tusen ord som brukes i engelsk i dag, stammer fra vikingenes språk. Law kommer fra lagu, husband fra husbondi, window fra vindauga og weak fra veikr, mens egg har overlevd uendret (Federl et al., 2026). På islandsk kan du fortsatt lese de gamle tekstene, fordi språket har endret seg så lite: dagens islendinger leser norrøne tekster uten større problemer (Nordbø et al., 2025). Sammenligningen er nyttig: islandsk er en tidsmaskin."
         },
         {
             "type": "image",
@@ -149,7 +173,7 @@
         },
         {
             "type": "text",
-            "content": "Norrønt er ikke bare et fagord du må huske til prøven. Det er beviset på at norsk har en historie. Når du leser «her bor en mann ved navn Egil» og forstår at det også er «þar er maðr nefndr Egill», kjenner du tråden bakover i tid. Vi har ikke skiftet språk — vi har bare endret det, ord for ord, generasjon for generasjon. Sagaene er ikke skrevet av fremmede. De er skrevet av dine egne forfedre."
+            "content": "Norrønt er ikke bare et fagord du må huske til prøven. Det er beviset på at norsk har en historie. Når du leser «her bor en mann ved navn Egil» og forstår at det også er «þar er maðr nefndr Egill», kjenner du tråden bakover i tid. Vi har ikke skiftet språk - vi har bare endret det, ord for ord, generasjon for generasjon. Sagaene er ikke skrevet av fremmede. De er skrevet av dine egne forfedre."
         },
         {
             "type": "component",
@@ -182,19 +206,34 @@
                 "questions": [
                     {
                         "question": "Hva betyr ordet «maðr» på norrønt?",
-                        "options": ["Mark", "Mann", "Mor", "Måned"],
+                        "options": [
+                            "Mark",
+                            "Mann",
+                            "Mor",
+                            "Måned"
+                        ],
                         "correctAnswer": 1,
                         "explanation": "Maðr er det norrøne ordet for mann. ð uttales som engelsk «th» i «the»."
                     },
                     {
                         "question": "Hvor mange kasus hadde norrønt?",
-                        "options": ["To", "Tre", "Fire", "Seks"],
+                        "options": [
+                            "To",
+                            "Tre",
+                            "Fire",
+                            "Seks"
+                        ],
                         "correctAnswer": 2,
                         "explanation": "Norrønt hadde fire kasus: nominativ, akkusativ, dativ og genitiv. Moderne norsk har stort sett mistet kasus."
                     },
                     {
                         "question": "Hvilket språk i dag ligner mest på norrønt?",
-                        "options": ["Bokmål", "Nynorsk", "Islandsk", "Svensk"],
+                        "options": [
+                            "Bokmål",
+                            "Nynorsk",
+                            "Islandsk",
+                            "Svensk"
+                        ],
                         "correctAnswer": 2,
                         "explanation": "Islandsk har endret seg så lite at islendinger kan lese norrøne sagaer nesten uten hjelp."
                     },
@@ -222,7 +261,29 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2021). *Norrønt - et kasusspråk*. NDLA. Hentet 09.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-pb/norront---et-kasussprak/fac01e88a6)",
+                    "Bull, T. (2026). *Ivar Aasen*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Ivar_Aasen](https://snl.no/Ivar_Aasen)",
+                    "Federl, M., Tørdal, R. M., & Abusland, Å. (2026). *Norsk møter norrønt*. NDLA. Hentet 09.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg2/norsk-moter-norront/3d69a42485)",
+                    "Helleland, B., Schmidt, T., & Antonsen, L. (2026). *Stedsnavn*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/stedsnavn](https://snl.no/stedsnavn)",
+                    "Lund, C. (2022). *Norsk grammatikk og norske lyder i framtida*. NDLA. Hentet 09.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-pb/norsk-grammatikk-og-norske-lyder-i-framtida/9574932783)",
+                    "Nordbø, B., Venås, K., Magerøy, H., Thorvaldsen, B. Ø., & Engesland, N. E. (2025). *Norrønt*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/norrønt](https://snl.no/norr%C3%B8nt)",
+                    "Nordbø, B., & Thorvaldsen, B. Ø. (2026). *Norsk språkhistorie*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/norsk_språkhistorie](https://snl.no/norsk_spr%C3%A5khistorie)",
+                    "Næss, E. M. (2024). *Tor - i norrøn mytologi*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Tor](https://snl.no/Tor_-_i_norr%C3%B8n_mytologi)",
+                    "Store norske leksikon. (2024a). *Fredag*. Hentet 09.08.2026 fra [snl.no/fredag](https://snl.no/fredag)",
+                    "Store norske leksikon. (2024b). *Onsdag*. Hentet 09.08.2026 fra [snl.no/onsdag](https://snl.no/onsdag)",
+                    "Store norske leksikon. (2025). *Tirsdag*. Hentet 09.08.2026 fra [snl.no/tirsdag](https://snl.no/tirsdag)",
+                    "Viken, Ø. L. I., Njåstad, M., & Scott, I. (2025). *Dansketida*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/dansketida](https://snl.no/dansketida)",
+                    "Zilmer, K., & Høst Heyerdahl, G. (2026). *Runer*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/runer](https://snl.no/runer)"
+                ]
+            }
         }
     ],
-    "timeline": []
+    "timeline": [],
+    "lastUpdated": "2026-08-09T00:00:00Z"
 }
