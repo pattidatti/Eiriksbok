@@ -124,6 +124,11 @@ function lesGitDatoer() {
     return datoer;
 }
 
+/** Sann for tidsstempler uten reelt klokkeslett, f.eks. "2026-08-07T00:00:00Z". */
+function erKunDato(iso) {
+    return /^\d{4}-\d{2}-\d{2}(T00:00:00(\.000)?Z?)?$/.test(iso);
+}
+
 function filsystemDatoer(filPath) {
     try {
         const stats = fs.statSync(filPath);
@@ -186,6 +191,21 @@ function syncDates() {
         if ((!lesson.createdDate || isPlaceholder) && dates.created) {
             lesson.createdDate = dates.created;
             changed = true;
+        } else if (lesson.createdDate && dates.created && erKunDato(lesson.createdDate)) {
+            // Artikkel-workflowene skriver createdDate for hånd, som ren dato:
+            // "2026-08-07T00:00:00Z". Alt som ble laget samme dag får da nøyaktig
+            // samme tidsstempel, og «Nytt innhold» på forsiden - som sorterer på
+            // createdDate - må falle tilbake på rekkefølgen i manifestet. Da kunne
+            // en artikkel lagt inn 04:03 havne over en lagt inn 10:24 samme dag.
+            //
+            // Er git enig i dagen, låner vi klokkeslettet derfra. Dagen står som
+            // den er; vi gjør den bare presis nok til å sortere riktig. Er git
+            // uenig om dagen (fila ble flyttet, eller skrevet én dag og committet
+            // den neste), lar vi den håndskrevne datoen være - den vet best.
+            if (dates.created.slice(0, 10) === lesson.createdDate.slice(0, 10)) {
+                lesson.createdDate = dates.created;
+                changed = true;
+            }
         }
 
         if (!lesson.lastUpdated || (dates.updated && lesson.lastUpdated !== dates.updated)) {
