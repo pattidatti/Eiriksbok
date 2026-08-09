@@ -14,7 +14,7 @@
     "content": [
         {
             "type": "text",
-            "content": "I hjertet av Oslo, med to løver som vokter inngangen, ligger Stortinget. Dette er Norges nasjonalforsamling, stedet hvor folkets valgte representanter møtes for å bestemme hvordan landet skal styres. Men selv om bygningen er fra 1866, har ideen om at 'folket skal møtes for å dømme og bestemme' røtter som strekker seg over tusen år tilbake i tid."
+            "content": "I hjertet av Oslo, med to løver som vokter inngangen, ligger Stortinget. Dette er Norges nasjonalforsamling, stedet hvor folkets valgte representanter møtes for å bestemme hvordan landet skal styres. Men selv om stortingsbygningen har vært i bruk siden 1866 (Stortinget, u.å.), har ideen om at 'folket skal møtes for å dømme og bestemme' røtter som strekker seg over tusen år tilbake i tid."
         },
         {
             "type": "header",
@@ -22,14 +22,14 @@
         },
         {
             "type": "text",
-            "content": "Stortinget har tre hovedoppgaver som gir dem enorm makt i det norske samfunnet. Dette kalles ofte 'Stortingets makt':\n\n1. Lovgivende makt: De vedtar lovene vi alle må følge. Ingen kan straffes uten etter lov, og den loven må komme fra Stortinget.\n\n2. Bevilgende makt: De bestemmer statsbudsjettet. Hvor mye penger skal gå til sykehus, veier, skole eller forsvar? Det er det Stortinget som avgjør hvert år.\n\n3. Kontrollerende makt: De passer på at Regjeringen gjør jobben sin. Regjeringen skal utføre det Stortinget har bestemt. Hvis de ikke gjør det, kan Stortinget kaste dem (mistillitsforslag)."
+            "content": "Stortinget har tre hovedoppgaver som gir dem enorm makt i det norske samfunnet: å vedta lover, bestemme statens budsjett og kontrollere regjeringen (Berg & Gisle, 2025). Dette kalles ofte 'Stortingets makt':\n\n1. Lovgivende makt: De vedtar lovene vi alle må følge. Ingen kan straffes uten etter lov, og den loven må komme fra Stortinget.\n\n2. Bevilgende makt: De bestemmer statsbudsjettet. Hvor mye penger skal gå til sykehus, veier, skole eller forsvar? Det er det Stortinget som avgjør hvert år.\n\n3. Kontrollerende makt: De passer på at Regjeringen gjør jobben sin. Regjeringen skal utføre det Stortinget har bestemt. Hvis de ikke gjør det, kan Stortinget kaste dem (mistillitsforslag)."
         },
         {
             "type": "component",
             "name": "FactBox",
             "props": {
                 "title": "Maktfordelingsprinsippet",
-                "content": "For å hindre misbruk av makt, er makten i Norge delt i tre:\n1. Stortinget (lovgivende)\n2. Regjeringen (utøvende)\n3. Domstolene (dømmende)\nDette prinsippet ble populært under opplysningstiden og er grunnlaget for [Grunnloven fra 1814](/samfunnskunnskap/styringsformer/grunnloven)."
+                "content": "For å hindre misbruk av makt, er makten i Norge delt i tre:\n1. Stortinget (lovgivende)\n2. Regjeringen (utøvende)\n3. Domstolene (dømmende)\nIdeen kom fra den franske tenkeren Montesquieu på 1700-tallet, og den spilte en viktig rolle da [Grunnloven ble laget i 1814](/samfunnskunnskap/styringsformer/grunnloven) (Thorsen, 2024)."
             }
         },
         {
@@ -38,7 +38,7 @@
         },
         {
             "type": "text",
-            "content": "Navnet 'Stortinget' er ikke tilfeldig. I vikingtiden og middelalderen møttes bøndene på lokale 'ting' (som [Gulatinget eller Frostatinget](/historie/vikingtiden/samfunn-og-rett)) for å løse konflikter og vedta lover. Dette var en form for direkte demokrati, men ofte styrt av de mektigste bøndene og høvdingene.\n\nForskjellen i dag er at vi har et representativt demokrati. Vi kan ikke samle 5,5 millioner nordmenn på en slette for å rope 'ja' eller 'nei'. Derfor velger vi 169 representanter som skal mene noe på vegne av oss. Men grunnprinsippet – at loven skal bygges på folkets vilje – er det samme som i det gamle ordtaket: 'Med lov skal land bygges'."
+            "content": "Navnet 'Stortinget' er ikke tilfeldig. I vikingtiden og middelalderen møttes folk på lokale 'ting' (som [Gulatinget eller Frostatinget](/historie/vikingtiden/samfunn-og-rett)) for å dømme i saker og vedta nye lover (Norseng, 2025). Etter hvert ble Gulatinget et representasjonsting, der bønder ble sendt som utsendinger på vegne av bygdene sine.\n\nForskjellen i dag er at hele landet har et representativt demokrati. Vi kan ikke samle 5,6 millioner nordmenn på en slette for å rope 'ja' eller 'nei' (Statistisk sentralbyrå, 2026). Derfor velger vi 169 representanter som skal mene noe på vegne av oss. Men grunnprinsippet - at loven skal bygges på folkets vilje - er det samme som i det gamle ordtaket: 'Med lov skal land bygges'."
         },
         {
             "type": "header",
@@ -46,7 +46,7 @@
         },
         {
             "type": "text",
-            "content": "De 169 representantene kommer fra hele Norge. Finnmark har sine representanter, og Oslo har sine. De tilhører ulike politiske partier, som er grupper av mennesker som er enige om hvordan samfunnet bør være. Når du stemmer ved et Stortingsvalg (hvert 4. år), stemmer du egentlig på hvilket parti du vil skal få flest seter i salen.\n\nDet partiet (eller de partiene som samarbeider) som har flest representanter, får vanligvis danne regjering. Dette systemet kalles parlamentarisme, og ble innført i 1884. Det betyr kort sagt: Regjeringen må ha Stortingets tillit for å styre. Hvis Stortinget sier 'nei, vi stoler ikke på dere lenger', må regjeringen gå av."
+            "content": "De 169 representantene kommer fra hele Norge (Berg & Gisle, 2025). Finnmark har sine representanter, og Oslo har sine. De tilhører ulike politiske partier, som er grupper av mennesker som er enige om hvordan samfunnet bør være. Når du stemmer ved et Stortingsvalg (hvert 4. år), stemmer du egentlig på hvilket parti du vil skal få flest seter i salen.\n\nDet partiet (eller de partiene som samarbeider) som har flest representanter, får vanligvis danne regjering. Dette systemet kalles parlamentarisme, og har vært praksis i Norge siden 1884. Først i 2007 ble regelen skrevet inn i Grunnloven (Nordby & Thorsen, 2026). Det betyr kort sagt: Regjeringen må ha Stortingets tillit for å styre. Hvis et flertall på Stortinget stemmer for et mistillitsforslag, må regjeringen gå av."
         },
         {
             "type": "component",
@@ -111,6 +111,21 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, O. T., & Gisle, J. (2025). *Stortinget*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Stortinget](https://snl.no/Stortinget)",
+                    "Nordby, T., & Thorsen, D. E. (2026). *Parlamentarisme*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/parlamentarisme](https://snl.no/parlamentarisme)",
+                    "Norseng, P. G. (2025). *Gulating*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Gulating](https://snl.no/Gulating)",
+                    "Statistisk sentralbyrå. (2026). *Befolkning*. Hentet 09.08.2026 fra [ssb.no/befolkning/folketall/statistikk/befolkning](https://www.ssb.no/befolkning/folketall/statistikk/befolkning)",
+                    "Stortinget. (u.å.). *Historikk*. Hentet 09.08.2026 fra [stortinget.no](https://www.stortinget.no/no/Stortinget-og-demokratiet/Historikk/)",
+                    "Thorsen, D. E. (2024). *Maktfordelingsprinsippet*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/maktfordelingsprinsippet](https://snl.no/maktfordelingsprinsippet)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-09"
 }

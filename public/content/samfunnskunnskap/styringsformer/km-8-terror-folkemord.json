@@ -32,7 +32,7 @@
         },
         {
             "type": "text",
-            "content": "Den 22. juli 2011 kjørte en mann en varebil inn i regjeringskvartalet i Oslo. Etterpå tok han ferja til Utøya og skjøt og drepte 69 unge mennesker på AUFs sommerleir. 77 mennesker døde den dagen. Det var Norges verste terrorangrep siden andre verdenskrig. Gjerningsmannen hadde brukt år på å planlegge angrepet. Han hadde fylt hodet sitt med ekstreme ideer om at han måtte 'redde' Europa fra innvandring. Han overbeviste seg selv om at drap var riktig. Hvordan kan et menneske komme dit?"
+            "content": "Den 22. juli 2011 plasserte en mann en varebil med en bombe foran høyblokka i regjeringskvartalet i Oslo. Etterpå kjørte han til Utøya og drepte 69 mennesker på AUFs årlige sommerleir. Til sammen ble 77 personer drept i angrepene, som er de verste terrorhandlingene i Norge etter andre verdenskrig (Heir et al., 2026). Gjerningsmannen hadde brukt år på å forberede angrepet. Han hadde fylt hodet sitt med konspirasjonsteorier om at eliten byttet ut den norske befolkningen med muslimer. Han overbeviste seg selv om at drap var riktig. Hvordan kan et menneske komme dit?"
         },
         {
             "type": "text",
@@ -54,7 +54,7 @@
         },
         {
             "type": "text",
-            "content": "Folkemord er noe enda mer systematisk og grusommere. FN definerer folkemord som handlinger som er gjort med hensikt om å utrydde, helt eller delvis, en nasjonal, etnisk, rasemessig eller religiøs gruppe. Det er ikke tilfeldige drap. Det er planlagt, organisert utryddelse. Holocaust under andre verdenskrig er det mest kjente eksemplet: Det nazistiske Tyskland drepte systematisk seks millioner jøder, og i tillegg millioner av romer, homofile, funksjonshemmede og politiske motstandere. I Rwanda i 1994 ble om lag 800 000 tutsier drept på bare 100 dager. I Bosnia på 1990-tallet ble over 8 000 muslimske menn og gutter massehenrettet i Srebrenica."
+            "content": "Folkemord er noe enda mer systematisk og grusommere. Folkemordkonvensjonen, som FN vedtok i 1948, definerer folkemord som handlinger gjort i den hensikt å ødelegge, helt eller delvis, en nasjonal, etnisk, rasemessig eller religiøs gruppe (Stigen, 2026). Det er ikke tilfeldige drap. Det er planlagt, organisert utryddelse. Holocaust under andre verdenskrig er det mest kjente eksemplet: Det nazistiske Tyskland drepte mer enn seks millioner jøder, rundt seksti prosent av alle jødene i Europa. Til sammen ble om lag elleve millioner mennesker drept på grunn av etnisitet, religion eller legning - blant dem romer, homofile, funksjonshemmede, sovjetiske krigsfanger og politiske motstandere (Banik, 2026). I Rwanda i 1994 ble mellom 800 000 og én million tutsier og moderate hutuer drept på bare 100 dager (Pedersen, 2026). I Srebrenica i Bosnia i 1995 ble over 9 000 bosniske gutter og menn massehenrettet (Stigen, 2026)."
         },
         {
             "type": "header",
@@ -62,24 +62,26 @@
         },
         {
             "type": "text",
-            "content": "Historikere og psykologer har studert disse hendelsene grundig. De har funnet at folkemord og terrorisme ikke oppstår plutselig. Det er en prosess, en trapp av eskaleringer der hvert steg gjør det neste enklere. Gregory Stanton, som grunnla organisasjonen Genocide Watch, har beskrevet denne prosessen i åtte steg."
+            "content": "Historikere og psykologer har studert disse hendelsene grundig. De har funnet at folkemord og terrorisme ikke oppstår plutselig. Det er en prosess, en trapp av eskaleringer der hvert steg gjør det neste enklere. Gregory Stanton, som grunnla organisasjonen Genocide Watch, beskrev denne prosessen i åtte steg da han la fram modellen sin i 1996. I 2012 utvidet han den til ti steg (Stanton, 2023)."
         },
         {
             "type": "list",
             "items": [
                 "Klassifisering: Vi deler verden inn i 'oss' og 'dem'. Folkemord begynner alltid med å definere en gruppe som annerledes.",
-                "Symbolisering: Gruppen får et merke eller et navn. Jødene måtte bære Davidsstjernen. Tutsi ble kalt 'inyenzi', kakerlakker.",
-                "Diskriminering: Loven begynner å behandle gruppen dårligere. Jødene mistet statsborgerskapet i Tyskland i 1935.",
+                "Symbolisering: Gruppen får et merke eller et navn. Fra 1941 måtte jøder i Tyskland bære en godt synlig gul davidsstjerne (Banik, 2026). I Rwanda ble tutsier omtalt som 'kakerlakker' i radiosendingene (United Nations, u.å.).",
+                "Diskriminering: Loven begynner å behandle gruppen dårligere. Med Nürnberglovene i 1935 mistet tyske jøder statsborgerskapet sitt (Banik, 2026).",
                 "Dehumanisering: Gruppen slutter å være mennesker i propagandaens språk. De beskrives som dyr, parasitter eller sykdommer.",
                 "Organisering: Staten eller ekstreme grupper begynner å planlegge vold.",
                 "Polarisering: Moderate stemmer ties. De som forsvarer den forfulgte gruppen, blir truet.",
                 "Forberedelse: Ofrene identifiseres, våpen samles, lister lages.",
-                "Forfølgelse og utryddelse: Massedrapet begynner."
+                "Forfølgelse: Gruppen skilles ut, tvangsflyttes eller sperres inne.",
+                "Utryddelse: Massedrapet begynner.",
+                "Fornektelse: Gjerningsmennene nekter for at det skjedde, skjuler bevisene og skylder på ofrene."
             ]
         },
         {
             "type": "text",
-            "content": "Legg merke til noe viktig: De fleste av disse stegene er ikke vold. De er ord, lover og propaganda. Folkemord bygges med språk lenge før det bygges med våpen. Nazistenes antisemittiske propaganda startet mange år før det første jødedrapet. Radiostasjoner i Rwanda kringkastet hat i måneder før folkemordet begynte."
+            "content": "Legg merke til noe viktig: De fleste av disse stegene er ikke vold. De er ord, lover og propaganda. Folkemord bygges med språk lenge før det bygges med våpen. Nazistenes antisemittiske propaganda startet mange år før det første jødedrapet. I Rwanda brukte myndighetene radiostasjonen RTLM til å lese opp lister over tutsier og moderate hutuer som skulle drepes (Pedersen, 2026)."
         },
         {
             "type": "component",
@@ -230,11 +232,11 @@
         },
         {
             "type": "text",
-            "content": "Folkemord ødelegger ikke bare individer, det river i stykker hele samfunn. Rwanda er et eksempel på dette: etter folkemordet i 1994 stod landet igjen med en befolkning der naboer hadde drept naboer, og kolleger hadde angitt kolleger. Hvordan bygger man tillit igjen? Rwanda har prøvd, blant annet med 'gacaca'-domstoler der lokalsamfunn selv behandlet saker. Det har vært smertefullt og ufullstendig, men det er noe. Les mer om dette i sammenheng med [diktaturet og ekstrem statsmakt](/samfunnskunnskap/styringsformer/diktaturet)."
+            "content": "Folkemord ødelegger ikke bare individer, det river i stykker hele samfunn. Rwanda er et eksempel på dette: etter folkemordet i 1994 stod landet igjen med en befolkning der naboer hadde drept naboer, og kolleger hadde angitt kolleger. Hvordan bygger man tillit igjen? Rwanda har prøvd, blant annet med gacaca-domstoler over hele landet - tradisjonelle folkedomstoler der lokalsamfunnet selv behandlet sakene (Pedersen, 2026). Det har vært smertefullt og ufullstendig, men det er noe. Les mer om dette i sammenheng med [diktaturet og ekstrem statsmakt](/samfunnskunnskap/styringsformer/diktaturet)."
         },
         {
             "type": "text",
-            "content": "Terrorisme påvirker også demokratiet. Når befolkningen er redd, er det fristende å godta innskrenkninger av frihet, som mer overvåking og strammere grensekontroll, i bytte mot trygghet. Dette er akkurat hva terrorister ønsker: at vi skal forandre samfunnet vårt av frykt. Etter 22. juli var det sterke krefter i Norge som ville straffe muslimer kollektivt. Det norske samfunnets svar var et annet: statsministeren og kongen deltok i rosetog, og den skyldige ble straffeforfulgt etter vanlige lover. Det viste verden at demokratiet kan stå imot uten å gi etter for fryktens logikk."
+            "content": "Terrorisme påvirker også demokratiet. Når befolkningen er redd, er det fristende å godta innskrenkninger av frihet, som mer overvåking og strammere grensekontroll, i bytte mot trygghet. Dette er akkurat hva terrorister ønsker: at vi skal forandre samfunnet vårt av frykt. Det norske svaret etter 22. juli var et annet. Statsministeren sa tidlig at angrepene skulle møtes med mer demokrati og mer åpenhet, og rundt 200 000 mennesker møtte opp med roser i Oslo tre dager etter angrepet (Stang, 2026). Gjerningsmannen ble straffeforfulgt etter vanlige lover, i en åpen rettssak. Det viste verden at demokratiet kan stå imot uten å gi etter for fryktens logikk."
         },
         {
             "type": "image",
@@ -252,7 +254,7 @@
         },
         {
             "type": "text",
-            "content": "På samfunnsnivå er demokrati, rettsstaten og sterke menneskerettighetsnormer det beste vernet. Land med fungerende demokrati og uavhengige domstoler begår ikke folkemord. Det er statsviteren Rudolph Rummels dokumenterte funn. Diktaturer og svake stater er derimot farlige. Internasjonale organisasjoner som FN kan og skal varsle tidlig og gripe inn, selv om FN dessverre har sviktet, som i Rwanda der FN-styrker stod og så på drapene. Les mer om [FN som fredsorgan](/samfunnskunnskap/ideer-og-verdenssyn/fn)."
+            "content": "På samfunnsnivå er demokrati, rettsstaten og sterke menneskerettighetsnormer det beste vernet. Statsviteren Rudolph Rummel gikk gjennom massedrap begått av stater gjennom hele 1900-tallet, og fant at demokratier står bak klart færre slike drap enn andre styreformer. Han oppsummerte det slik: jo mindre frihet folk har, jo mer vold (Rummel, 1994). Diktaturer og svake stater er derimot farlige. Internasjonale organisasjoner som FN kan og skal varsle tidlig og gripe inn, selv om FN dessverre har sviktet: i Rwanda stemte Sikkerhetsrådet for å trekke ut nesten hele FN-styrken bare to uker etter at drapene begynte (Pedersen, 2026). Les mer om [FN som fredsorgan](/samfunnskunnskap/ideer-og-verdenssyn/fn)."
         },
         {
             "type": "text",
@@ -283,12 +285,12 @@
                     "Artikkelen sier at 'folkemord bygges med språk lenge før det bygges med våpen'. Hva menes med dette, og hvorfor er propaganda så farlig?",
                     "Hvorfor er dehumanisering et så viktig varseltegn? Forklar hvordan det senker terskelen for å drepe.",
                     "Radikalisering starter ofte med en personlig krise. Hvorfor blir et menneske i krise mer sårbart for ekstreme grupper?",
-                    "Hvorfor sier artikkelen at rosetogene og det å straffe gjerningsmannen etter vanlig lov var en seier for demokratiet etter 22. juli?"
+                    "Hvorfor sier artikkelen at rosemarkeringene og det å straffe gjerningsmannen etter vanlig lov var en seier for demokratiet etter 22. juli?"
                 ],
                 "gaaVidere": [
                     "Artikkelen sier at algoritmer og ekkokamre gjør radikalisering raskere. Skriv en kort tekst der du forklarer hvordan din egen bruk av sosiale medier kan trekke deg mot mer ekstremt innhold, og hva du kan gjøre for å unngå det.",
                     "Diskuter i klassen: Hva kan du og medelevene dine gjøre for at ingen på skolen skal føle seg så ensomme og utenfor at de blir sårbare for ekstreme miljøer?",
-                    "Statsviteren Rudolph Rummel fant at fungerende demokratier ikke begår folkemord, mens diktaturer gjør det. Skriv noen setninger om hvorfor du tror et sterkt demokrati beskytter mot folkemord."
+                    "Statsviteren Rudolph Rummel fant at demokratier står bak klart færre massedrap mot egen befolkning enn diktaturer. Skriv noen setninger om hvorfor du tror et sterkt demokrati beskytter mot folkemord."
                 ]
             }
         },
@@ -339,7 +341,7 @@
                             "Kongen abdiserte som tegn på sorg"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Når demokratier reagerer på terror ved å innskrenke frihet og straffe uskyldige, gir de terroristen seier. Det norske svaret, med åpne rosetog, rettsstat og inkludering, ble sett på internasjonalt som et forbilde på demokratisk motstand."
+                        "explanation": "Når demokratier reagerer på terror ved å innskrenke frihet og straffe uskyldige, gir de terroristen seier. Det norske svaret var det motsatte: åpne rosemarkeringer, en vanlig rettssak og et uttalt mål om mer demokrati og mer åpenhet."
                     },
                     {
                         "question": "Hva er den mest effektive langsiktige forebyggingen av folkemord og terrorisme på samfunnsnivå?",
@@ -350,10 +352,27 @@
                             "Forbud mot politiske partier på ytterfløyene"
                         ],
                         "correctAnswer": 2,
-                        "explanation": "Statsvitenskapelig forskning viser at fungerende demokratier med sterke institusjoner og menneskerettighetsnormer er det beste vernet. Diktaturer begår folkemord, demokratier gjør det ikke. Å styrke demokratiet er dermed den viktigste forebyggende strategien."
+                        "explanation": "Statsvitenskapelig forskning viser at fungerende demokratier med sterke institusjoner og menneskerettighetsnormer er det beste vernet. Massedrap mot egen befolkning skjer i all hovedsak under diktaturer og i svake stater. Å styrke demokratiet er dermed den viktigste forebyggende strategien."
                     }
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Banik, V. K. (2026). *Holocaust*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Holocaust](https://snl.no/Holocaust)",
+                    "Heir, T., Stang, L., Njølstad, O., Refsdal, N. O., Kärki, F. U., & Dyrendal, A. (2026). *Terrorangrepene i Norge 22. juli 2011*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/terrorangrepene_i_Norge_22._juli_2011](https://snl.no/terrorangrepene_i_Norge_22._juli_2011)",
+                    "Pedersen, F. L. (2026). *Folkemordet i Rwanda*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Folkemordet_i_Rwanda](https://snl.no/Folkemordet_i_Rwanda)",
+                    "Rummel, R. J. (1994). *Death by government*. Transaction Publishers. Hentet 09.08.2026 fra [hawaii.edu/powerkills](https://www.hawaii.edu/powerkills/NOTE1.HTM)",
+                    "Stang, L. (2026). *Markeringene etter terrorangrepene i Norge 22. juli 2011*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Markeringene_etter_terrorangrepene_i_Norge_22._juli_2011](https://snl.no/Markeringene_etter_terrorangrepene_i_Norge_22._juli_2011)",
+                    "Stanton, G. H. (2023). *The ten stages of genocide*. Genocide Watch. Hentet 09.08.2026 fra [genocidewatch.com/tenstages](https://www.genocidewatch.com/tenstages)",
+                    "Stigen, J. (2026). *Folkemord*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/folkemord](https://snl.no/folkemord)",
+                    "United Nations. (u.å.). *Outreach Programme on the 1994 Genocide against the Tutsi in Rwanda and the United Nations: Historical background*. Hentet 09.08.2026 fra [un.org](https://www.un.org/en/preventgenocide/rwanda/historical-background.shtml)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-09"
 }
