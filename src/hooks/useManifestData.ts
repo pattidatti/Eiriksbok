@@ -96,14 +96,34 @@ export const useManifestData = () => {
             });
 
             // Calculate Recent Lessons — sort by createdDate only so trivial
-            // changes (image format, config edits) don't resurface old articles
+            // changes (image format, config edits) don't resurface old articles.
+            //
+            // Noen createdDate-er er ren dato uten klokkeslett, og da er to
+            // artikler laget samme dag helt like. Array.sort er stabil, så uten
+            // en tiebreaker arver de rekkefølgen i manifest.json (fag → tema),
+            // som ikke har noe med tid å gjøre. Vi bryter uavgjort på
+            // lastUpdated, og til slutt på id, så rekkefølgen i det minste er
+            // forutsigbar i stedet for tilfeldig.
+            const time = (value?: string) => {
+                if (!value) return null;
+                const t = new Date(value).getTime();
+                return Number.isNaN(t) ? null : t;
+            };
+
             const recent = [...lessons].sort((a, b) => {
-                const dateA = a.createdDate || a.date;
-                const dateB = b.createdDate || b.date;
-                if (!dateA && !dateB) return 0;
-                if (!dateA) return 1;
-                if (!dateB) return -1;
-                return new Date(dateB).getTime() - new Date(dateA).getTime();
+                const dateA = time(a.createdDate || a.date);
+                const dateB = time(b.createdDate || b.date);
+                if (dateA === null && dateB === null) return 0;
+                if (dateA === null) return 1;
+                if (dateB === null) return -1;
+                if (dateA !== dateB) return dateB - dateA;
+
+                const updatedA = time(a.lastUpdated);
+                const updatedB = time(b.lastUpdated);
+                if (updatedA !== null && updatedB !== null && updatedA !== updatedB) {
+                    return updatedB - updatedA;
+                }
+                return a.id.localeCompare(b.id);
             }).slice(0, 4);
 
             startTransition(() => {
