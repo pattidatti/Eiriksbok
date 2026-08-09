@@ -8527,6 +8527,18 @@
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
                   "lastUpdated": "2026-05-12T09:08:05+02:00"
+                },
+                {
+                  "id": "overgangsriter",
+                  "title": "Overgangsriter",
+                  "description": "Navngiving, amrit-innvielse, bryllup og begravelse - fire riter bygd for å viske ut forskjeller mellom mennesker.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "sikhisme",
+                    "overgangsriter",
+                    "ritual"
+                  ],
+                  "createdDate": "2026-08-09T00:00:00Z"
                 }
               ]
             },

@@ -108,6 +108,7 @@ const VeilOfIgnorance = lazy(() => import('./content/interactive/VeilOfIgnorance
 const DyreetikkBrillene = lazy(() => import('./content/interactive/DyreetikkBrillene').then(m => ({ default: m.DyreetikkBrillene })));
 const KiAnsvarskjeden = lazy(() => import('./content/interactive/KiAnsvarskjeden').then(m => ({ default: m.KiAnsvarskjeden })));
 const GoldenMeanSlider = lazy(() => import('./content/interactive/GoldenMeanSlider').then(m => ({ default: m.GoldenMeanSlider })));
+const SikhNavneseremoni = lazy(() => import('./content/interactive/SikhNavneseremoni').then(m => ({ default: m.SikhNavneseremoni })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
 const CategoricalImperativeTester = lazy(() => import('./content/interactive/CategoricalImperativeTester').then(m => ({ default: m.CategoricalImperativeTester })));
@@ -480,6 +481,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     KiAnsvarskjeden,
     MaktensFristelse,
     GoldenMeanSlider,
+    SikhNavneseremoni,
     MaatBalansen,
     ToFlomfortellinger,
     CategoricalImperativeTester,
