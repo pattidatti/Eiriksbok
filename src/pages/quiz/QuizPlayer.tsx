@@ -7,6 +7,12 @@ import { useQuizAudio } from '../../hooks/useQuizAudio';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import type { QuizQuestion } from '../../types';
 import { useProgressStore } from '../../features/progress/useProgressStore';
+import type {
+    BattleQuestion,
+    PlayerAnswer,
+    PublicQuestion,
+    QuizRoundResult,
+} from '../../types/quiz';
 
 // Korrekthetssjekk delt mellom «anbefalt lesing»-rapporten og XP-registreringen
 const isAnswerCorrect = (
@@ -44,7 +50,7 @@ export const QuizPlayer: React.FC = () => {
     const [selectedOption, setSelectedOption] = useState<string | string[] | null>(null);
     const [sortingOrder, setSortingOrder] = useState<string[]>([]);
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-    const [serverResult, setServerResult] = useState<any>(null);
+    const [serverResult, setServerResult] = useState<QuizRoundResult | null>(null);
     const [answerTime, setAnswerTime] = useState<number>(0);
     const [scoreProcessed, setScoreProcessed] = useState(false);
 
@@ -55,9 +61,9 @@ export const QuizPlayer: React.FC = () => {
 
     const [questionStartTime, setQuestionStartTime] = useState<number>(0);
 
-    const [allQuestions, setAllQuestions] = useState<any[]>([]);
-    const [privateQuestions, setPrivateQuestions] = useState<any[]>([]);
-    const [myAnswers, setMyAnswers] = useState<Record<string, any>>({}); // To store answer history from DB
+    const [allQuestions, setAllQuestions] = useState<PublicQuestion[]>([]);
+    const [privateQuestions, setPrivateQuestions] = useState<BattleQuestion[]>([]);
+    const [myAnswers, setMyAnswers] = useState<Record<string, PlayerAnswer>>({}); // To store answer history from DB
 
     useEffect(() => {
         const playerId = sessionStorage.getItem('quiz_player_id');
@@ -272,7 +278,7 @@ export const QuizPlayer: React.FC = () => {
         setHasAnswered(true);
         playSound('click');
 
-        const updates: any = {};
+        const updates: Record<string, unknown> = {};
         updates[`rooms/${pin}/players/${playerId}/answers/${currentQuestionIndex}`] = option;
         updates[`rooms/${pin}/players/${playerId}/answerTimes/${currentQuestionIndex}`] = now;
         updates[`rooms/${pin}/players/${playerId}/lastAnswer`] = option;
@@ -413,7 +419,7 @@ export const QuizPlayer: React.FC = () => {
                         </div>
                         <div className="max-h-60 overflow-y-auto divide-y divide-slate-100">
                             {(() => {
-                                const wrongLinks: any[] = [];
+                                const wrongLinks: { link: string; title?: string }[] = [];
                                 privateQuestions.forEach((q, i) => {
                                     const isCorrect = isAnswerCorrect(q, myAnswers[i]);
 

@@ -121,7 +121,7 @@ export const useRealtimeComposition = () => {
 
         // We will construct a Firebase update object here
         // path -> value
-        const fbUpdates: Record<string, any> = {};
+        const fbUpdates: Record<string, unknown> = {};
         const basePath = `compositions/${composition.id}`;
 
         // If we are in draft mode (no ID), we just update local state and localStorage

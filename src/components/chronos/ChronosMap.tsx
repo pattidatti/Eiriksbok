@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Tent, Swords, Droplets, Shield, Scroll, Castle, Home, Eye, Wind, Flag, ChevronUp, BookOpen, Map as MapIcon, CheckCircle } from 'lucide-react';
+import { MapPin, Tent, Swords, Droplets, Shield, Scroll, Castle, Home, Eye, Wind, Flag, ChevronUp, BookOpen, Map as MapIcon, CheckCircle, type LucideIcon } from 'lucide-react';
 import type { ChronosMapPoint, ChronosNode } from '../../data/chronos/types';
 
 interface ChronosMapProps {
@@ -9,7 +9,7 @@ interface ChronosMapProps {
     flags: string[];
 }
 
-const IconMap: Record<string, any> = {
+const IconMap: Record<string, LucideIcon> = {
     marker: MapPin,
     tent: Tent,
     swords: Swords,

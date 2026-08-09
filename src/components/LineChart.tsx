@@ -11,6 +11,7 @@ import {
     Filler
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import type { TooltipItem } from 'chart.js';
 
 ChartJS.register(
     CategoryScale,
@@ -23,6 +24,14 @@ ChartJS.register(
     Filler
 );
 
+/** Samme punkt, men med x/y-navn slik noe av innholds-JSON-en skriver det. */
+interface AliasedDataPoint {
+    x?: number;
+    y?: number;
+    year?: number;
+    value?: number;
+}
+
 interface DataPoint {
     year: number;
     value: number;
@@ -31,7 +40,7 @@ interface DataPoint {
 interface LineChartProps {
     title: string;
     data?: DataPoint[];
-    points?: any[]; // Aliased data from some JSON files
+    points?: AliasedDataPoint[]; // Aliased data from some JSON files
     xAxisLabel?: string;
     yAxisLabel?: string;
     datasetLabel?: string;
@@ -52,7 +61,7 @@ export const LineChart: React.FC<LineChartProps> = ({
         const source = (points && Array.isArray(points)) ? points : data;
         if (!source || !Array.isArray(source)) return [];
 
-        return source.map(item => ({
+        return source.map((item: AliasedDataPoint) => ({
             year: item.year ?? item.x ?? 0,
             value: item.value ?? item.y ?? 0
         }));
@@ -101,7 +110,7 @@ export const LineChart: React.FC<LineChartProps> = ({
             },
             tooltip: {
                 callbacks: {
-                    label: (context: any) => {
+                    label: (context: TooltipItem<'line'>) => {
                         let label = context.dataset.label || '';
                         if (label) {
                             label += ': ';

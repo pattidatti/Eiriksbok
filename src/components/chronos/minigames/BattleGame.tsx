@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Sword, RefreshCw, Skull, Heart } from 'lucide-react';
+import { Shield, Sword, RefreshCw, Skull, Heart, type LucideIcon } from 'lucide-react';
 import type { ChronosBattleConfig, ChronosStat } from '../../../data/chronos/types';
 
 interface BattleGameProps {
@@ -8,7 +8,7 @@ interface BattleGameProps {
     onComplete: (success: boolean) => void;
 }
 
-const MoveIcon: Record<string, any> = {
+const MoveIcon: Record<string, LucideIcon> = {
     attack: Sword,
     defend: Shield,
     maneuver: RefreshCw
@@ -50,7 +50,7 @@ export const BattleGame: React.FC<BattleGameProps> = ({ config, stats, onComplet
         if (isAnimating || playerHealth <= 0 || enemyHealth <= 0) return;
 
         setIsAnimating(true);
-        const playerMove = config.moves.find((m: any) => m.id === moveId)!;
+        const playerMove = config.moves.find((m) => m.id === moveId)!;
 
         // Simple AI: Random Move
         const enemyMove = pickEnemyMove(config.moves);
@@ -126,7 +126,7 @@ export const BattleGame: React.FC<BattleGameProps> = ({ config, stats, onComplet
 
             {/* Controls */}
             <div className="grid grid-cols-3 gap-4">
-                {config.moves.map((move: any) => {
+                {config.moves.map((move) => {
                     const Icon = MoveIcon[move.type] || Sword;
                     return (
                         <button

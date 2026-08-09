@@ -298,9 +298,12 @@ export default function Vinteren1847({ onComplete }: MicroGameProps) {
     const jordaTapt = fase === 'won-nodhjelp';
 
     // DEV: eksponer tilstanden for selvspill-testing. Samme informasjon som
-    // eleven ser på måleren, klokka og tellerne.
-    if (import.meta.env.DEV) {
-        (window as unknown as Record<string, unknown>).__vinteren1847Debug = {
+    // eleven ser på måleren, klokka og tellerne. Skrives i en effekt (ikke under
+    // render) — å endre window mens komponenten rendrer er en uren render.
+    useEffect(() => {
+        if (!import.meta.env.DEV) return;
+        const w = window as unknown as { __vinteren1847Debug?: unknown };
+        w.__vinteren1847Debug = {
             fase,
             sult: sult.value,
             sekunderIgjen: klokke.remaining,
@@ -308,7 +311,10 @@ export default function Vinteren1847({ onComplete }: MicroGameProps) {
             staaende,
             nodhjelpApen,
         };
-    }
+        return () => {
+            delete w.__vinteren1847Debug;
+        };
+    }, [fase, sult.value, klokke.remaining, maaltider, staaende, nodhjelpApen]);
 
     return (
         <MicroGameScaffold

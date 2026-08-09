@@ -3,8 +3,23 @@ import { Link } from 'react-router-dom';
 import { Clock, Shield, Sword, Trophy, History, Crown, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { usePageTitle } from '../hooks/usePageTitle';
-import { TimeTravelProfileProvider, useTimeTravelProfile } from '../components/chronos/context/TimeTravelProfileContext';
+import { useTimeTravelProfile } from '../components/chronos/context/TimeTravelProfileContext';
+import { TimeTravelProfileProvider } from '../components/chronos/context/TimeTravelProfileProvider';
 import type { ChronosRunLog } from '../data/chronos/types';
+import type { LucideIcon } from 'lucide-react';
+
+/** Ett kort i tidsreise-galleriet. */
+interface ScenarioCard {
+    id: string;
+    title: string;
+    era: string;
+    difficulty: string;
+    description: string;
+    icon: LucideIcon;
+    color: string;
+    image?: string;
+    disabled: boolean;
+}
 
 export const TimeTravelPage: React.FC = () => {
     return (
@@ -18,7 +33,7 @@ const TimeTravelHub: React.FC = () => {
     const { profile, isLoading } = useTimeTravelProfile();
     usePageTitle('Tidsreiser');
 
-    const scenarios = [
+    const scenarios: ScenarioCard[] = [
         {
             id: 'roman-soldier',
             title: 'Romersk Legionær',
@@ -180,7 +195,7 @@ const TimeTravelHub: React.FC = () => {
     );
 };
 
-const ScenarioCardContent: React.FC<{ scenario: any }> = ({ scenario }) => (
+const ScenarioCardContent: React.FC<{ scenario: ScenarioCard }> = ({ scenario }) => (
     <>
         <div className={`h-48 ${scenario.color} relative overflow-hidden`}>
             {scenario.image && (

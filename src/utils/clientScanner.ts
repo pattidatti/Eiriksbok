@@ -1,5 +1,6 @@
 
 import { stopWords } from '../data/stopwords';
+import type { Lesson } from '../types';
 
 export interface ScanResult {
     candidates: { term: string; count: number; sources: string[] }[];
@@ -8,7 +9,7 @@ export interface ScanResult {
 }
 
 export const runClientSideScan = async (
-    articles: any[],
+    articles: Lesson[],
     knownConcepts: { term: string }[],
     ignoredTerms: string[]
 ): Promise<ScanResult> => {
@@ -29,7 +30,7 @@ export const runClientSideScan = async (
         if (!article.content) return;
 
         let fullText = "";
-        article.content.forEach((block: any) => {
+        article.content.forEach((block) => {
             if (block.type === 'text') {
                 if (block.text) fullText += block.text + "\n";
                 if (block.content) fullText += block.content + "\n";

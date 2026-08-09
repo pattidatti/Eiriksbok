@@ -1,4 +1,57 @@
-import type { Lesson, LearningPathData, PresentationData, Slide, SlideRevealItem } from '../types';
+import type {
+    ContentBlock,
+    LearningPathData,
+    LearningPathStep,
+    Lesson,
+    PresentationData,
+    Slide,
+    SlidePhase,
+    SlideRevealItem,
+} from '../types';
+
+/**
+ * Feltene mapperen leter etter. De kan ligge rett på leksjonen, på
+ * `learningPathData`, eller nedgravd et sted i strukturen - derfor er alt
+ * valgfritt, og derfor finnes `deepFind`.
+ */
+interface PresentationSourceFields {
+    title?: string;
+    heroImage?: string;
+    category?: string;
+    subjectId?: string;
+    presentation?: PresentationData;
+    steps?: LearningPathStep[];
+    content?: ContentBlock[];
+    learningPathData?: PresentationSourceFields;
+}
+
+/** Sant når verdien er et objekt med en slides-liste, altså en ferdig presentasjon. */
+const isPresentation = (value: unknown): value is PresentationData =>
+    !!value && typeof value === 'object' && Array.isArray((value as PresentationData).slides);
+
+const SLIDE_PHASES: SlidePhase[] = ['opptakt', 'konfrontasjon', 'resolusjon'];
+
+/**
+ * Oversetter et lærings-stegs `phase` til lysbildets `phase`.
+ *
+ * Stegene skriver fritekst ("Akt 1: Opptakten"), mens lysbildene bruker en
+ * fast kode som presentasjonen slår opp i for å vise akt-etiketten. Før ble
+ * fritekststrengen sendt rett videre, og oppslaget ga da alltid undefined -
+ * altså ingen etikett på auto-genererte lysbilder.
+ *
+ * "Fase 1..5" oversettes med vilje ikke: hvor mange faser en sti har varierer,
+ * så det ville vært gjetting. De får ingen etikett, som er slik det er i dag.
+ */
+const toSlidePhase = (phase: string | undefined): SlidePhase | undefined => {
+    if (!phase) return undefined;
+    const normalized = phase.trim().toLowerCase();
+    const canonical = SLIDE_PHASES.find((p) => normalized.startsWith(p));
+    if (canonical) return canonical;
+    if (/^akt\s*1|^prolog/.test(normalized)) return 'opptakt';
+    if (/^akt\s*2/.test(normalized)) return 'konfrontasjon';
+    if (/^akt\s*3|^epilog|^avslutning/.test(normalized)) return 'resolusjon';
+    return undefined;
+};
 
 /**
  * Automagically maps a Lesson or LearningPath to a professional presentation structure.
@@ -6,23 +59,28 @@ import type { Lesson, LearningPathData, PresentationData, Slide, SlideRevealItem
  * for manual overrides if present in the data.
  */
 export const mapContentToPresentation = (
-    data: Lesson | LearningPathData | any,
+    data: Lesson | LearningPathData,
     id: string
 ): PresentationData => {
+    const source: PresentationSourceFields = data;
+
     // 1. Deep Discovery Utility
-    const deepFind = (obj: any, key: string): any => {
+    const deepFind = (obj: unknown, key: string): unknown => {
         if (!obj || typeof obj !== 'object') return null;
+        const record = obj as Record<string, unknown>;
 
         // If the key exists directly on this level and is what we expect
-        if (obj[key] && typeof obj[key] === 'object') {
+        const direct = record[key];
+        if (direct && typeof direct === 'object') {
             // For presentation, we want to ensure it actually has slides
-            if (key === 'presentation' && Array.isArray(obj[key].slides)) return obj[key];
-            if (key !== 'presentation') return obj[key];
+            if (key === 'presentation' && isPresentation(direct)) return direct;
+            if (key !== 'presentation') return direct;
         }
 
-        for (const k in obj) {
-            if (obj[k] && typeof obj[k] === 'object' && k !== 'presentation') {
-                const found = deepFind(obj[k], key);
+        for (const k in record) {
+            const child = record[k];
+            if (child && typeof child === 'object' && k !== 'presentation') {
+                const found = deepFind(child, key);
                 if (found) return found;
             }
         }
@@ -31,14 +89,25 @@ export const mapContentToPresentation = (
 
     // 2. Discover Data
     // Priority: root -> learningPathData -> deep search
-    const curatedPresentation = (data.presentation && Array.isArray(data.presentation.slides))
-        ? data.presentation
-        : (data.learningPathData?.presentation && Array.isArray(data.learningPathData.presentation.slides))
-            ? data.learningPathData.presentation
-            : deepFind(data, 'presentation');
+    const deepPresentation = deepFind(data, 'presentation');
+    const curatedPresentation: PresentationData | null = isPresentation(source.presentation)
+        ? source.presentation
+        : isPresentation(source.learningPathData?.presentation)
+            ? source.learningPathData.presentation
+            : isPresentation(deepPresentation)
+                ? deepPresentation
+                : null;
 
-    const steps = data.steps || data.learningPathData?.steps || deepFind(data, 'steps') || [];
-    const contentBlocks = data.content || data.learningPathData?.content || deepFind(data, 'content') || [];
+    const steps: LearningPathStep[] =
+        source.steps ??
+        source.learningPathData?.steps ??
+        (deepFind(data, 'steps') as LearningPathStep[] | null) ??
+        [];
+    const contentBlocks: ContentBlock[] =
+        source.content ??
+        source.learningPathData?.content ??
+        (deepFind(data, 'content') as ContentBlock[] | null) ??
+        [];
 
     console.log(`[PresentationMapper] Discovery for ID: ${id}`, {
         hasCurated: !!curatedPresentation,
@@ -54,9 +123,9 @@ export const mapContentToPresentation = (
 
     // 3. Fallback: Hybrid Generation
     const slides: Slide[] = [];
-    const title = data.title || curatedPresentation?.title || (data as any).learningPathData?.title || 'Uten Tittel';
-    const heroImage = (data as Lesson).heroImage || (data as any).learningPathData?.heroImage || '/og-image.png';
-    const category = (data as Lesson).category || 'Undervisning';
+    const title = source.title || source.learningPathData?.title || 'Uten Tittel';
+    const heroImage = source.heroImage || source.learningPathData?.heroImage || '/og-image.png';
+    const category = source.category || 'Undervisning';
 
     // A. Intro Slide
     slides.push({
@@ -70,7 +139,7 @@ export const mapContentToPresentation = (
 
     // B. Map Steps (Learning Paths)
     if (steps.length > 0) {
-        steps.forEach((step: any, index: number) => {
+        steps.forEach((step, index) => {
             const slideId = `slide-${step.id || index}`;
             const points: SlideRevealItem[] = [];
 
@@ -87,7 +156,7 @@ export const mapContentToPresentation = (
 
             // Convert tasks (string | LearningPathTask) to plain strings for talkingPoints
             const talkingPoints: string[] | undefined = step.tasks
-                ? step.tasks.map((t: any) => (typeof t === 'string' ? t : t.text))
+                ? step.tasks.map((t) => (typeof t === 'string' ? t : t.text))
                 : undefined;
 
             slides.push({
@@ -102,15 +171,17 @@ export const mapContentToPresentation = (
                 component: step.component,
                 visualEffect: 'scale',
                 linksToStepId: step.id,
-                phase: step.phase
+                phase: toSlidePhase(step.phase)
             });
         });
     }
     // C. Map Content Blocks (Standard Articles)
     else if (contentBlocks.length > 0) {
-        contentBlocks.forEach((block: any, index: number) => {
+        contentBlocks.forEach((block, index) => {
             if (block.type === 'text' || block.type === 'header') {
-                const blockTitle = block.title || (block.type === 'header' ? block.content : undefined);
+                const blockTitle =
+                    ('title' in block ? block.title : undefined) ||
+                    (block.type === 'header' ? block.content : undefined);
                 if (blockTitle || block.content) {
                     slides.push({
                         id: `block-${index}`,
@@ -138,7 +209,7 @@ export const mapContentToPresentation = (
             title: 'Innholdet lastes ikke korrekt',
             layout: 'content',
             summary: `Kunne ikke finne 'steps' eller 'content' i data-objektet for ID: ${id}`,
-            teacherNotes: `Data Keys: ${Object.keys(data).join(', ')} | Subject: ${(data as any).subjectId}`,
+            teacherNotes: `Data Keys: ${Object.keys(data).join(', ')} | Subject: ${source.subjectId}`,
             points: [
                 { id: 'd1', text: 'Sjekk om JSON-filen har riktig struktur.', type: 'bullet' },
                 { id: 'd2', text: 'Prøv å laste siden på nytt (Hard Refresh).', type: 'bullet' }

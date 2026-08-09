@@ -5,7 +5,7 @@ import type { LayerType } from '../types';
 
 const ALL_LAYERS: LayerType[] = ['shipping', 'cables', 'pipelines', 'production', 'chokepoints', 'riskzones'];
 
-function debounce<T extends (...args: any[]) => void>(fn: T, ms: number): T {
+function debounce<T extends (...args: never[]) => void>(fn: T, ms: number): T {
     let timer: ReturnType<typeof setTimeout>;
     return ((...args: Parameters<T>) => {
         clearTimeout(timer);

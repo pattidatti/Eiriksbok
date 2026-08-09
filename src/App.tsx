@@ -5,8 +5,8 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { routeFactories } from './routes';
 import { UpdatePrompt } from './components/UpdatePrompt';
 import { AdminGuard } from './components/AdminGuard';
-import { LayoutProvider } from './context/LayoutContext';
-import { GlossaryProvider } from './context/GlossaryContext';
+import { LayoutProvider } from './context/LayoutProvider';
+import { GlossaryProvider } from './context/GlossaryProvider';
 import './App.css';
 
 // Lazy load pages using centralized factories

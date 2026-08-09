@@ -33,7 +33,6 @@ export const cleanForTTS = (text: string): string => {
 
 export const cleanTextForSpeech = (blocks: ContentBlock[]): string => {
     return blocks
-        .filter((b) => b.type === 'text' && b.content)
-        .map((b) => cleanForTTS((b as any).content || ''))
+        .flatMap((b) => (b.type === 'text' && b.content ? [cleanForTTS(b.content)] : []))
         .join('. ');
 };

@@ -114,10 +114,10 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
 
         if (subTopicId && topic?.subTopics) {
             const subTopic = topic.subTopics.find(st => st.id === subTopicId);
-            foundLesson = subTopic?.lessons.find((l: any) => l.id === lessonId);
+            foundLesson = subTopic?.lessons.find((l) => l.id === lessonId);
             topicImg = subTopic?.image || topicImg;
         } else if (topic?.lessons) {
-            foundLesson = topic.lessons.find((l: any) => l.id === lessonId);
+            foundLesson = topic.lessons.find((l) => l.id === lessonId);
         }
 
         return { lesson: foundLesson, topicImage: topicImg };
@@ -164,12 +164,12 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
     }, [manifest, subjectId, topicId, subTopicId, lessonId]);
 
     // Handle Layout Context
-    useEffect(() => {
-        const isSpecialLayout = lesson && (
-            lesson.layout === 'tool' ||
-            lesson.engine === 'historical-detective'
-        );
+    const isSpecialLayout = !!lesson && (
+        lesson.layout === 'tool' ||
+        lesson.engine === 'historical-detective'
+    );
 
+    useEffect(() => {
         if (isSpecialLayout) {
             setFullWidth(true);
             setHideHeader(true);
@@ -185,7 +185,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
             setHideHeader(false);
             setHideBreadcrumbs(false);
         };
-    }, [lesson?.layout, lesson?.engine, setFullWidth, setHideHeader, setHideBreadcrumbs]);
+    }, [isSpecialLayout, setFullWidth, setHideHeader, setHideBreadcrumbs]);
 
     // --- Hooks & Memoization (Rule of Hooks: Must be top-level and unconditional) ---
     const isHistory = subjectId === 'historie';
@@ -230,7 +230,7 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                 ? (getFirstTextContent(lesson.content || [])?.substring(0, 150) + '...' || '')
                 : (lesson.learningPathData?.description || ''),
             content: lesson.content || [],
-            details: lesson.keyPoints || lesson.details || lesson.concepts?.map((c: any) => `${c.title || c.term}: ${c.description || c.definition}`) || [],
+            details: lesson.keyPoints || lesson.details || lesson.concepts?.map((c) => `${c.title || c.term}: ${c.description || c.definition}`) || [],
             category: lesson.category || lesson.topic,
             readTime: lesson.readTime || '5 min lesning',
             heroImage: lesson.heroImage || lessonImage,
@@ -353,11 +353,12 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
                     event={{
                         ...timelineEvent,
                         year: timelineEvent.year || timelineEvent.displayDate || '',
+                        description: timelineEvent.description || '',
                         content: timelineEvent.content || [],
                         details: timelineEvent.details || [],
                         category: timelineEvent.category || 'Historie',
                         readTime: timelineEvent.readTime || '3 min',
-                    } as any}
+                    }}
                     sidebarConfig={sidebarConfig}
                 />
             </ErrorBoundary>

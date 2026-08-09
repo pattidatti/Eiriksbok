@@ -55,7 +55,7 @@ export const PantheonExplorer: React.FC = () => {
                             }`}
                     >
                         <div className={`text-${activeGod.id === god.id ? 'white' : 'slate-400'}`}>
-                            {React.cloneElement(god.icon as any, { size: 32 })}
+                            {React.cloneElement(god.icon as React.ReactElement<{ size?: number }>, { size: 32 })}
                         </div>
                         <span className="font-bold">{god.name}</span>
                     </button>

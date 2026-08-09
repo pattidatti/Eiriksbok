@@ -198,7 +198,7 @@ export const TimelineDirector = ({
         const last = items[items.length - 1];
         if (last.chronologicalOrder === Math.max(...items.map((i) => i.chronologicalOrder))) s += 10;
         return Math.min(s, 100);
-    }, [items, techniques]);
+    }, [items]);
 
     const playSequence = async () => {
         setPhase('playing');

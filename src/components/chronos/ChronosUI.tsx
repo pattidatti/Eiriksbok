@@ -4,8 +4,7 @@ import {
     Shield, Heart, Zap, Scroll, Skull, Crown, Star, ArrowRight, Backpack,
     BookOpen, X, Map as MapIcon, Users, Hammer, Scale, Activity, Brain, Lightbulb,
     ExternalLink, Mail, Feather, PenLine, GitBranch, ArrowLeft, RotateCcw, Flag,
-    Play, Pause, TrendingUp, TrendingDown, Compass, Lock, CheckCircle,
-} from 'lucide-react';
+    Play, Pause, TrendingUp, TrendingDown, Compass, Lock, CheckCircle, type LucideIcon } from 'lucide-react';
 import type {
     ChronosNode, ChronosChoice, ChronosStat, ChronosConfig, ChronosEnvironment,
     ChronosEntry, ChronosMapPoint, ChronosRecipe, ChronosDiscoveryEvent,
@@ -57,7 +56,7 @@ interface ChronosUIProps {
     gameOverConditions?: ChronosGameOverCondition[];
 }
 
-const IconMap: Record<string, any> = {
+const IconMap: Record<string, LucideIcon> = {
     shield: Shield, heart: Heart, zap: Zap, scroll: Scroll, skull: Skull,
     crown: Crown, star: Star, backpack: Backpack, sword: Zap, book: BookOpen,
     'book-open': BookOpen, flag: Flag,

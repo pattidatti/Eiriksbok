@@ -143,15 +143,15 @@ export const GovernmentExplorer: React.FC<GovernmentExplorerProps> = ({ lesson }
                     <p className="text-slate-500">Utforsk styringsformer, makt og økonomi</p>
                 </div>
                 <div className="flex flex-wrap gap-2 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
-                    {[
+                    {([
                         { id: 'utforsk', label: 'Utforsker', icon: SparklesIcon },
                         { id: 'maktbalanse', label: 'Maktbalanse', icon: ScaleIcon },
                         { id: 'quiz', label: 'Quiz', icon: AcademicCapIcon },
                         { id: 'fagbegreper', label: 'Fagbegreper', icon: BuildingLibraryIcon }
-                    ].filter(tab => tab.id !== 'quiz' || !!lesson).map((tab) => (
+                    ] as const).filter(tab => tab.id !== 'quiz' || !!lesson).map((tab) => (
                         <button
                             key={tab.id}
-                            onClick={() => setActiveTab(tab.id as any)}
+                            onClick={() => setActiveTab(tab.id)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${activeTab === tab.id
                                 ? 'bg-white text-indigo-600 shadow-sm ring-1 ring-slate-200'
                                 : 'text-slate-500 hover:text-slate-900 hover:bg-white/50'
@@ -218,9 +218,6 @@ export const GovernmentExplorer: React.FC<GovernmentExplorerProps> = ({ lesson }
 
 export default GovernmentExplorer;
 
-// Safelist for dynamic classes to ensure Tailwind generates them
-export const safelist = [
-    'via-pink-600', 'via-yellow-600', 'via-red-600', 'via-purple-600', 'via-cyan-600',
-    'via-orange-600', 'via-green-600', 'via-blue-600', 'via-emerald-600', 'via-rose-600',
-    'via-indigo-600', 'via-indigo-700', 'via-slate-600', 'via-red-700'
-];
+// Tailwind-safelista for de dynamiske gradientklassene ligger i
+// ./governmentExplorerSafelist.ts (en komponentfil skal bare eksportere
+// komponenter — ellers mister Vite fast refresh for hele fila).

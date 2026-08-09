@@ -121,7 +121,7 @@ export const RomanPantheonExplorer: React.FC = () => {
                             }`}
                     >
                         <div className={`text-${activeGod.id === god.id ? 'yellow-400' : 'slate-400'} transition-colors`}>
-                            {React.cloneElement(god.icon as any, { size: 32 })}
+                            {React.cloneElement(god.icon as React.ReactElement<{ size?: number }>, { size: 32 })}
                         </div>
                         <span className="font-bold text-sm tracking-wide">{god.name}</span>
                     </button>

@@ -120,6 +120,10 @@ export const SmartChordInput: React.FC<SmartChordInputProps> = ({ onChordFound }
             if (input) parseChord(input);
         }, 150); // slight debounce
         return () => clearTimeout(timer);
+        // Debouncet tolking skal utløses av at eleven skriver, ikke av at
+        // parseChord får ny identitet ved hver render - da ville 150 ms-timeren
+        // nullstilt seg kontinuerlig og akkorden aldri blitt tolket.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [input]);
 
     return (

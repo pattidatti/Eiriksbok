@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { fetchLesson } from '../utils/contentLoader';
 import { ArticleContent } from './ArticleContent';
@@ -28,15 +28,23 @@ export function TopicPrintView({ subjectId, topicId, lessons, onClose }: Props) 
                     })
             )
         ).then(setArticles);
+        // Henter artiklene én gang, ved mount. Print-visningen monteres på nytt
+        // hvis emnet endrer seg, så det er ingen grunn til å hente på nytt her.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    // Print-dialogen skal åpnes én gang, når alle artiklene er lastet. Uten
+    // denne vakten ville en ny render etter print() kunne åpne dialogen igjen.
+    const hasPrinted = useRef(false);
 
     useEffect(() => {
         const ready = articles.filter(Boolean);
-        if (ready.length > 0 && ready.length === lessons.length) {
+        if (!hasPrinted.current && ready.length > 0 && ready.length === lessons.length) {
+            hasPrinted.current = true;
             window.onafterprint = onClose;
             window.print();
         }
-    }, [articles]);
+    }, [articles, lessons.length, onClose]);
 
     const isLoading = articles.filter(Boolean).length < lessons.length;
 

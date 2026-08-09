@@ -361,6 +361,13 @@ const MonokulturAkeren = lazy(() => import('./content/interactive/MonokulturAker
 // fra mikrospill-registeret (src/components/microgames/registry.ts).
 const MicroGame = lazy(() => import('./microgames/MicroGameBlock').then(m => ({ default: m.MicroGameBlock })));
 
+// Registeret holder ~200 komponenter med HVER SIN props-type, og kallstedene
+// sender inn props fra artikkel-JSON. Det finnes ingen felles props-type som
+// både er sann og brukbar her: React sine egne typer bruker ComponentType<any>
+// til nøyaktig dette (se signaturen til React.lazy). Dette er derfor det ene
+// stedet i kodebasen der `any` er riktig svar og ikke utsatt opprydding.
+// Props valideres av hver enkelt komponent.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const componentRegistry: Record<string, React.ComponentType<any>> = {
     // Core
     SvalbardTraktatTest,

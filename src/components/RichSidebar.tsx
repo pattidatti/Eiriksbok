@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, Map, ChevronDown, ChevronUp, Volume2, Pause, Play, Square, History, ShieldCheck } from 'lucide-react';
-import { TimelineComponent } from './TimelineComponent';
+import { TimelineComponent, type TimelineEvent } from './TimelineComponent';
 import { formatNorwegianDate } from '../utils/dateUtils';
-import type { SidebarConfig } from '../types';
+import type { MapData, SidebarConfig } from '../types';
+import type { RelatedLesson } from '../hooks/useRelatedContent';
 
 interface RichSidebarProps {
     details: string[];
-    timelineEvents: any[];
-    relatedArticles: any[];
-    mapData?: any;
+    timelineEvents: TimelineEvent[];
+    relatedArticles: RelatedLesson[];
+    mapData?: MapData;
     tags?: string[];
     config?: SidebarConfig;
     learningPaths?: { id: string; title: string; url: string }[];
@@ -237,7 +238,7 @@ export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, ti
                     {config?.showRelated !== false && relatedArticles.length > 0 && (
                         <ExpandableSection title="Relatert innhold" defaultOpen={true}>
                             <div className="space-y-3">
-                                {relatedArticles.map((article: any) => (
+                                {relatedArticles.map((article) => (
                                     <Link
                                         key={article.id}
                                         to={article.url}

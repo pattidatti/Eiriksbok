@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, BookOpen, User, Tag, Volume2, Pause, Play, Square, Columns, Scan } from 'lucide-react';
 import { textLibraryData, type TextEntry } from '../data/textLibraryData';
@@ -23,6 +23,7 @@ const genreToAnalysisMap: Record<string, string> = {
 export const TextReaderPage: React.FC = () => {
     const { textId } = useParams<{ textId: string }>();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const textEntry = useMemo(() =>
         textLibraryData.find((t: TextEntry) => t.id === textId),
@@ -53,7 +54,7 @@ export const TextReaderPage: React.FC = () => {
     const displayContent = useMemo(() => {
         if (!textEntry) return [];
         if (currentLanguage === (textEntry.language || 'bm.')) return textEntry.content;
-        const translation = textEntry.translations?.find((t: any) => t.language === currentLanguage);
+        const translation = textEntry.translations?.find((t) => t.language === currentLanguage);
         return translation ? translation.content : textEntry.content;
     }, [textEntry, currentLanguage]);
 
@@ -72,11 +73,15 @@ export const TextReaderPage: React.FC = () => {
     const displayTitle = useMemo(() => {
         if (!textEntry) return '';
         if (currentLanguage === (textEntry.language || 'bm.')) return textEntry.title;
-        const translation = textEntry.translations?.find((t: any) => t.language === currentLanguage);
+        const translation = textEntry.translations?.find((t) => t.language === currentLanguage);
         return translation ? translation.title : textEntry.title;
     }, [textEntry, currentLanguage]);
 
     // Handle hash scrolling
+    // NB: her sto det tidligere `location.hash` uten useLocation, altså den
+    // globale window.location. Den er et mutabelt objekt React ikke ser
+    // endringer i, så effekten kjørte ikke når man klikket seg til et nytt
+    // anker på samme side. useLocation gir en ny verdi per navigasjon.
     useEffect(() => {
         if (location.hash && displayContent) {
             const id = location.hash.replace('#', '');
@@ -359,7 +364,7 @@ export const TextReaderPage: React.FC = () => {
                                     >
                                         {textEntry.language === 'bm.' ? 'Bokmål' : textEntry.language === 'nn.' ? 'Nynorsk' : textEntry.language}
                                     </button>
-                                    {textEntry.translations.map((t: any) => (
+                                    {textEntry.translations.map((t) => (
                                         <button
                                             key={t.language}
                                             onClick={() => setCurrentLanguage(t.language)}

@@ -125,7 +125,7 @@ export const BusinessCycleModel: React.FC = () => {
                         {/* The Gap */}
                         {malinvestment > 0 && (
                             <div className="absolute bottom-[50%] left-4 right-4 border-2 border-dashed border-red-400 bg-red-50 h-[calc(100%*var(--gap-percent))] flex items-center justify-center text-red-600 text-xs font-bold text-center p-2"
-                                style={{ '--gap-percent': (malinvestment / 2000) } as any}>
+                                style={{ '--gap-percent': malinvestment / 2000 } as React.CSSProperties}>
                                 Manglende ressurser
                                 <br />
                                 (Feilinvestering)

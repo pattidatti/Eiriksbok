@@ -58,7 +58,7 @@ export const SongwriterStudio: React.FC = () => {
 
     // --- Effects ---
     useEffect(() => {
-        let interval: any;
+        let interval: ReturnType<typeof setInterval> | undefined;
         if (isPlaying) {
             interval = setInterval(() => {
                 setCurrentBars(prev => {

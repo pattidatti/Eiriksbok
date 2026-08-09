@@ -22,6 +22,21 @@ export default defineConfig([
     rules: {
       'jsx-a11y/alt-text': 'error',
       'jsx-a11y/anchor-is-valid': 'warn',
+      // Honorer to bevisste mønstre i koden, i stedet for å tvinge fram
+      // meningsløse omskrivinger:
+      //   1. `_`-prefiks = "denne finnes med vilje, men brukes ikke" (f.eks.
+      //      parametre som holdes for signatur-symmetri).
+      //   2. `const { answer, ...rest } = q` = den vanlige måten å fjerne
+      //      nøkler fra et objekt på. Søskenfeltene er hele poenget.
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
     },
     languageOptions: {
       ecmaVersion: 2020,

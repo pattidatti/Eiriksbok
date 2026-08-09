@@ -83,6 +83,11 @@ export const CompletionScreen = ({
         }, 300);
 
         return () => clearTimeout(timer);
+        // Skal kjøre NØYAKTIG én gang, når fullført-skjermen dukker opp. Tar vi
+        // inn poeng-funksjonene og nivå-verdiene i dep-lista, deles bonusen ut
+        // på nytt hver gang en av dem får ny identitet - eleven kan da farme
+        // poeng ved å bli stående på skjermen.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

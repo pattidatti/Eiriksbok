@@ -3,9 +3,10 @@ import { db } from '../../lib/firebase';
 import { ref, set, onValue, remove, update } from 'firebase/database';
 import { useNavigate } from 'react-router-dom';
 import { Users, Play, Trash2, RotateCcw } from 'lucide-react';
+import type { QuizRoom, QuizRoomWithId } from '../../types/quiz';
 
 export const QuizAdmin: React.FC = () => {
-    const [rooms, setRooms] = useState<any[]>([]);
+    const [rooms, setRooms] = useState<QuizRoomWithId[]>([]);
     const [newRoomName, setNewRoomName] = useState('');
     const navigate = useNavigate();
 
@@ -13,11 +14,11 @@ export const QuizAdmin: React.FC = () => {
     useEffect(() => {
         const roomsRef = ref(db, 'rooms');
         const unsubscribe = onValue(roomsRef, (snapshot) => {
-            const data = snapshot.val();
+            const data = snapshot.val() as Record<string, QuizRoom> | null;
             if (data) {
-                const roomList = Object.entries(data).map(([key, val]: [string, any]) => ({
+                const roomList = Object.entries(data).map(([key, val]) => ({
+                    ...val,
                     id: key,
-                    ...val
                 }));
                 setRooms(roomList);
             } else {

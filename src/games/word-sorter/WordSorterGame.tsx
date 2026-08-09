@@ -150,7 +150,7 @@ interface GameLoopProps {
 
 // --- Sound Utils ---
 const playSound = (type: 'success' | 'error') => {
-    const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
     if (!AudioContext) return;
 
     const ctx = new AudioContext();

@@ -3,6 +3,12 @@ import { Mic } from 'lucide-react';
 import { MiniGameHeader } from './MiniGameHeader';
 import type { ChronosEffect } from '../../../data/chronos/types';
 
+interface SpeechResult {
+    combo: string;
+    effects?: ChronosEffect;
+    setsFlag?: string;
+}
+
 interface SpeechGameProps {
     config: {
         onComplete: { nextNodeId: string };
@@ -20,7 +26,7 @@ interface SpeechGameProps {
             setsFlag?: string;
         }>;
     };
-    onComplete: (results: any) => void;
+    onComplete: (results: SpeechResult) => void;
 }
 
 export const SpeechGame: React.FC<SpeechGameProps> = ({ config, onComplete }) => {
@@ -29,7 +35,7 @@ export const SpeechGame: React.FC<SpeechGameProps> = ({ config, onComplete }) =>
     );
     const [submitted, setSubmitted] = useState(false);
     const [outcome, setOutcome] = useState<(typeof config.outcomes)[0] | null>(null);
-    const [resultData, setResultData] = useState<any>(null);
+    const [resultData, setResultData] = useState<SpeechResult | null>(null);
 
     const allSelected = selections.every((s) => s !== null);
 
@@ -86,7 +92,7 @@ export const SpeechGame: React.FC<SpeechGameProps> = ({ config, onComplete }) =>
                     )}
                 </div>
                 <button
-                    onClick={() => onComplete(resultData)}
+                    onClick={() => resultData && onComplete(resultData)}
                     className="w-full py-3 bg-stone-900 text-white font-bold rounded-2xl hover:bg-stone-800 transition-colors"
                 >
                     Fortsett

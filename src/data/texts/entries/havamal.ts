@@ -72,7 +72,7 @@ export const havamal: TextEntry = {
             "Veit du ein ven\nsom vel du trur,\nog du hjå han fagnad vil få:\ngjev han heile din hug\nog gåva ei spar,\nfar og finn han ofte.",
             "Veit du ein annan\nsom ille du trur,\nog du fagnad vil likevel få:\ndu fagert mæle,\nmen falskt tenkje,\nog ljuging møte med lygn.",
             "Eit ord til um den\nsom ille du trur\nog ikkje kann lit til leggje:\nlæ skal du med han\nog låst vera ven;\nlik vere gåve og løn.",
-            "Ung var eg fordom,\neg einsaman fór,\nvegvill då eg vart.\Rik eg tottest\nnår eg råka einkvar;\nmann er manns gaman.",
+            "Ung var eg fordom,\neg einsaman fór,\nvegvill då eg vart.\nRik eg tottest\nnår eg råka einkvar;\nmann er manns gaman.",
             "Milde, modige\nmenn lever best,\ndei ét seg sjeldan sut.\nFor alt ottast\nudjerv dreng,\ngjerug gryler når han fær.",
             "Klædi mine\nkasta eg til\ntre-menn tvo på voll.\nKaute karar\nmed klædi dei vart,\nneist vert naken mann.",
             "Turkar toll\nsom i tunet stend,\ndet hjelp' korkje bork eller bar.\nSo er kvar mann\nsom kjærleik vantar,\nkvi skal han lenge leva!",

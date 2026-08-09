@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ComponentProps } from 'react';
 import { motion } from 'framer-motion';
 import { FactBox } from '../FactBox';
 import { Comparison } from '../Comparison';
@@ -9,24 +9,20 @@ import { QuoteBlock } from '../QuoteBlock';
 import { GrammarRuleCard } from './interactive/GrammarRuleCard';
 import { WritingFix } from '../WritingFix';
 import { getComponent } from '../ComponentRegistry';
+import type { TopicContentBlock } from '../../types';
 
-interface ContentBlock {
-    type: 'header' | 'paragraph' | 'list' | 'component' | 'image';
-    level?: number;
-    text?: string;
-    items?: string[];
-    component?: string;
-    props?: any;
-    title?: string;
-    description?: string;
-    url?: string;
-    src?: string;
-    caption?: string;
-    alt?: string;
-}
+/**
+ * Props fra hånd-skrevet JSON på vei inn i en komponent.
+ *
+ * Blokkene forfattes for hånd, så formen kan ikke vites her - og komponenten
+ * validerer sine egne props (samme konvensjon som ComponentRegistry bruker).
+ * Overgangen skjer derfor ett sted, her, og hvert kallsted sier hvilken
+ * komponent det er props til.
+ */
+const asProps = <P,>(props: Record<string, unknown> | undefined): P => (props ?? {}) as P;
 
 interface TopicContentRendererProps {
-    content: ContentBlock[];
+    content: TopicContentBlock[];
 }
 
 const container = {
@@ -54,7 +50,7 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
             animate="show"
             className="space-y-6"
         >
-            {content.map((block: ContentBlock, index: number) => {
+            {content.map((block, index: number) => {
                 switch (block.type) {
                     case 'header': {
                         // ... (header logic)
@@ -127,11 +123,18 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                     case 'component': {
                         // ... (keep existing component logic)
                         if (block.component === 'FactBox') {
-                            const { items, content, ...restProps } = block.props;
-                            const boxContent = content || (Array.isArray(items) ? items.join('\n') : '');
+                            const { items, content, ...restProps } = block.props ?? {};
+                            const boxContent =
+                                (typeof content === 'string' ? content : undefined) ||
+                                (Array.isArray(items) ? items.join('\n') : '');
                             return (
                                 <motion.div key={index} variants={item} className="my-8">
-                                    <FactBox {...restProps} content={boxContent} />
+                                    <FactBox
+                                        {...asProps<ComponentProps<typeof FactBox>>({
+                                            ...restProps,
+                                            content: boxContent,
+                                        })}
+                                    />
                                 </motion.div>
                             );
                         }
@@ -139,14 +142,14 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                         if (block.component === 'QuoteBlock') {
                             return (
                                 <motion.div key={index} variants={item} className="my-8">
-                                    <QuoteBlock {...block.props} />
+                                    <QuoteBlock {...asProps<ComponentProps<typeof QuoteBlock>>(block.props)} />
                                 </motion.div>
                             );
                         }
 
                         if (block.component === 'Comparison') {
-                            const { leftItems, rightItems, ...restProps } = block.props;
-                            let comparedItems = block.props.items;
+                            const { leftItems, rightItems, ...restProps } = block.props ?? {};
+                            let comparedItems = block.props?.items;
 
                             if (!comparedItems && Array.isArray(leftItems) && Array.isArray(rightItems)) {
                                 comparedItems = leftItems.map((left: string, i: number) => ({
@@ -157,13 +160,22 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
 
                             return (
                                 <motion.div key={index} variants={item} className="my-8">
-                                    <Comparison {...restProps} items={comparedItems} />
+                                    <Comparison
+                                        {...asProps<ComponentProps<typeof Comparison>>({
+                                            ...restProps,
+                                            items: comparedItems,
+                                        })}
+                                    />
                                 </motion.div>
                             );
                         }
 
                         if (block.component === 'TimelineComponent') {
-                            const events = block.props.events.map((e: any) => ({
+                            const rawEvents = (block.props?.events ?? []) as {
+                                title?: string;
+                                year: string | number;
+                            }[];
+                            const events = rawEvents.map((e) => ({
                                 ...e,
                                 title: e.title || e.year.toString(),
                                 year: e.year.toString()
@@ -171,7 +183,12 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
 
                             return (
                                 <motion.div key={index} variants={item} className="my-6">
-                                    <TimelineComponent {...block.props} events={events} />
+                                    <TimelineComponent
+                                        {...asProps<ComponentProps<typeof TimelineComponent>>({
+                                            ...block.props,
+                                            events,
+                                        })}
+                                    />
                                 </motion.div>
                             );
                         }
@@ -179,7 +196,9 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                         if (block.component === 'GrammarRuleCard') {
                             return (
                                 <motion.div key={index} variants={item} className="my-8">
-                                    <GrammarRuleCard {...block.props} />
+                                    <GrammarRuleCard
+                                        {...asProps<ComponentProps<typeof GrammarRuleCard>>(block.props)}
+                                    />
                                 </motion.div>
                             );
                         }
@@ -187,7 +206,7 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                         if (block.component === 'WritingFix') {
                             return (
                                 <motion.div key={index} variants={item} className="my-8">
-                                    <WritingFix {...block.props} />
+                                    <WritingFix {...asProps<ComponentProps<typeof WritingFix>>(block.props)} />
                                 </motion.div>
                             );
                         }
@@ -197,7 +216,7 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                         if (RegistryComponent) {
                             return (
                                 <motion.div key={index} variants={item} className="my-8">
-                                    <RegistryComponent {...block.props} />
+                                    <RegistryComponent {...(block.props ?? {})} />
                                 </motion.div>
                             );
                         }

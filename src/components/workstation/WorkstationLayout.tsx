@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { BookOpen, Mic2, Layers, Archive, HelpCircle } from 'lucide-react';
+import { BookOpen, Mic2, Layers, Archive, HelpCircle, type LucideIcon } from 'lucide-react';
 import { ToneMixer } from './tools/ToneMixer';
 import { XRay } from './tools/XRay';
 import { Scrapbook } from './tools/Scrapbook';
@@ -15,7 +15,7 @@ import { InkParticles } from '../ui/InkParticles';
 
 // --- Components ---
 
-const SidebarItem = ({ icon: Icon, label, active, onClick }: { icon: any, label: string, active: boolean, onClick: () => void }) => (
+const SidebarItem = ({ icon: Icon, label, active, onClick }: { icon: LucideIcon; label: string; active: boolean; onClick: () => void }) => (
     <motion.button
         whileHover={{ scale: 1.05, x: 5 }}
         whileTap={{ scale: 0.95 }}

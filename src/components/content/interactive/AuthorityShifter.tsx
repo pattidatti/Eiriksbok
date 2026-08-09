@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Crown, Zap, Book, Quote, Info } from 'lucide-react';
+import { Crown, Zap, Book, Quote, Info, type LucideIcon } from 'lucide-react';
 
 type AuthorityType = 'traditional' | 'charismatic' | 'legal';
 
@@ -11,7 +11,7 @@ interface AuthorityData {
     description: string;
     example: string;
     color: string;
-    icon: any;
+    icon: LucideIcon;
 }
 
 const authorityData: Record<AuthorityType, AuthorityData> = {

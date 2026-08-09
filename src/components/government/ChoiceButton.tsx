@@ -1,10 +1,11 @@
 import * as React from 'react';
+import type { LucideIcon } from 'lucide-react';
 
 interface ChoiceButtonProps {
     selected: boolean;
     onClick: () => void;
     label: string;
-    icon?: React.ComponentType<any>;
+    icon?: LucideIcon;
     subtext?: string;
 }
 

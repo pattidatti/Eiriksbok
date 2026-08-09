@@ -16,7 +16,7 @@ export const SubjectPage: React.FC = () => {
     const { data: manifest, isLoading } = useManifest();
     const [viewMode, setViewMode] = useState<'hierarchical' | 'explorer'>('hierarchical');
 
-    const subjectData = manifest?.subjects.find((s: any) => s.id === subjectId);
+    const subjectData = manifest?.subjects.find((s) => s.id === subjectId);
 
     usePageTitle(subjectData?.title || 'Fag', !!subjectData);
 
@@ -25,11 +25,11 @@ export const SubjectPage: React.FC = () => {
 
     // Flatten lessons for timeline and explorer
     const allLessons: (ManifestLesson & { path: string; topicTitle: string; topicImage?: string })[] = [];
-    subjectData.topics.forEach((topic: any) => {
+    subjectData.topics.forEach((topic) => {
         if (topic.subTopics) {
-            topic.subTopics.forEach((subTopic: any) => {
+            topic.subTopics.forEach((subTopic) => {
                 if (subTopic.lessons) {
-                    subTopic.lessons.forEach((lesson: any) => {
+                    subTopic.lessons.forEach((lesson) => {
                         allLessons.push({
                             ...lesson,
                             path: `/${subjectId}/${topic.id}/${subTopic.id}/${lesson.id}`,
@@ -40,7 +40,7 @@ export const SubjectPage: React.FC = () => {
                 }
             });
         } else if (topic.lessons) {
-            topic.lessons.forEach((lesson: any) => {
+            topic.lessons.forEach((lesson) => {
                 allLessons.push({
                     ...lesson,
                     path: `/${subjectId}/${topic.id}/${lesson.id}`,

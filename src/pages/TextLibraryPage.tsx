@@ -6,6 +6,17 @@ import { Search, Filter, BookOpen, Tag } from 'lucide-react';
 import { textLibraryData, type TextEntry } from '../data/textLibraryData';
 import { usePageTitle } from '../hooks/usePageTitle';
 
+type SortOption = 'title' | 'year_asc' | 'year_desc';
+
+// Fast liste - defineres på modulnivå så den ikke får ny identitet hver render
+// (og dermed river ned memoiseringen av tekstfiltreringen).
+const periods = [
+    { label: 'Før 1900', filter: (year: number) => year < 1900 },
+    { label: '1900 - 1950', filter: (year: number) => year >= 1900 && year <= 1950 },
+    { label: '1950 - 2000', filter: (year: number) => year > 1950 && year <= 2000 },
+    { label: 'Etter 2000', filter: (year: number) => year > 2000 }
+];
+
 export const TextLibraryPage: React.FC = () => {
     usePageTitle('Bibliotek');
 
@@ -13,7 +24,7 @@ export const TextLibraryPage: React.FC = () => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     // Sorting State
-    const [sortOption, setSortOption] = React.useState<'title' | 'year_asc' | 'year_desc'>('title');
+    const [sortOption, setSortOption] = React.useState<SortOption>('title');
 
     // Read Status State (Local Storage)
     const [readTexts, setReadTexts] = React.useState<string[]>(() => {
@@ -51,13 +62,6 @@ export const TextLibraryPage: React.FC = () => {
 
     const genres = useMemo(() => Array.from(new Set(textLibraryData.map((t: TextEntry) => t.genre))), []);
     const themes = useMemo(() => Array.from(new Set(textLibraryData.flatMap((t: TextEntry) => t.theme || []))), []);
-
-    const periods = [
-        { label: 'Før 1900', filter: (year: number) => year < 1900 },
-        { label: '1900 - 1950', filter: (year: number) => year >= 1900 && year <= 1950 },
-        { label: '1950 - 2000', filter: (year: number) => year > 1950 && year <= 2000 },
-        { label: 'Etter 2000', filter: (year: number) => year > 2000 }
-    ];
 
     const filteredAndSortedTexts = useMemo(() => {
         const result = textLibraryData.filter(text => {
@@ -107,7 +111,7 @@ export const TextLibraryPage: React.FC = () => {
                     <span className="text-sm font-medium text-slate-500 pl-2">Sorter etter:</span>
                     <select
                         value={sortOption}
-                        onChange={(e) => setSortOption(e.target.value as any)}
+                        onChange={(e) => setSortOption(e.target.value as SortOption)}
                         className="bg-transparent text-sm font-semibold text-slate-700 focus:outline-none cursor-pointer"
                     >
                         <option value="title">Tittel (A-Å)</option>

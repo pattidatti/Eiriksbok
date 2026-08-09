@@ -15,7 +15,7 @@ interface TelegramGameProps {
         onComplete: { nextNodeId: string };
         telegrams: Telegram[];
     };
-    onComplete: (results: any) => void;
+    onComplete: (results: { correct: number; total: number }) => void;
 }
 
 export const TelegramGame: React.FC<TelegramGameProps> = ({ config, onComplete }) => {

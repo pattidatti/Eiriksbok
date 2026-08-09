@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { geoMercator, geoPath } from 'd3-geo';
-import * as topojson from 'topojson-client';
+import { topologyToFeatures, type GeoFeature } from '../../../types/geo';
 
 interface RomanExpansionMapProps {
     currentEra?: EraId;
@@ -109,15 +109,14 @@ export const RomanExpansionMap: React.FC<RomanExpansionMapProps> = ({
     title = 'Romerrikets utvidelse',
 }) => {
     const [activeEra, setActiveEra] = useState<EraId>(currentEra || 'republic');
-    const [geographies, setGeographies] = useState<any[]>([]);
+    const [geographies, setGeographies] = useState<GeoFeature[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch(GEO_URL)
             .then((r) => r.json())
             .then((worldData) => {
-                const countries = topojson.feature(worldData, worldData.objects.countries);
-                setGeographies((countries as any).features);
+                setGeographies(topologyToFeatures(worldData));
                 setLoading(false);
             })
             .catch((err) => {
@@ -174,7 +173,7 @@ export const RomanExpansionMap: React.FC<RomanExpansionMapProps> = ({
                     <rect width={WIDTH} height={HEIGHT} fill="#0c1424" />
 
                     {/* Base countries (modern) */}
-                    {geographies.map((geo: any, i: number) => {
+                    {geographies.map((geo, i: number) => {
                         const d = pathGenerator(geo);
                         if (!d) return null;
                         const name = geo.properties?.name || '';

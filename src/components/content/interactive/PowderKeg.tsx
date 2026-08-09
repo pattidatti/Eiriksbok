@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { Flame, Globe, Handshake, Swords, Skull, AlertTriangle } from 'lucide-react';
+import { Flame, Globe, Handshake, Swords, Skull, AlertTriangle, type LucideIcon } from 'lucide-react';
 
 // Konfetti-eksplosjonen ligger på modulnivå: den bruker Date.now() til å styre
 // varigheten, og impure kall som dette hører ikke hjemme inne i en komponent.
@@ -33,7 +33,7 @@ const burstConfetti = () => {
 interface Ingredient {
     id: string;
     name: string;
-    icon: any; // Relaxed type to avoid Lucide/React conflicts in build
+    icon: LucideIcon;
     description: string;
     color: string;
 }

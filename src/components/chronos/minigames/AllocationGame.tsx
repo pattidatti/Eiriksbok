@@ -13,7 +13,7 @@ interface AllocationGameProps {
             description: string;
         }>;
     };
-    onComplete: (results: any) => void;
+    onComplete: (results: { allocations: Record<string, number> }) => void;
 }
 
 export const AllocationGame: React.FC<AllocationGameProps> = ({ config, onComplete }) => {

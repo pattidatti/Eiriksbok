@@ -1,12 +1,29 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HeartPulse, Stethoscope, Baby, Skull, Hourglass } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+/** Én dødsårsak med sin andel av dødeligheten. */
+interface DeathCause {
+    id: string;
+    label: string;
+    val: number;
+    color: string;
+}
+
+/** Tallene for ett årstall på skyvebryteren. */
+interface Era {
+    le: number;
+    causes: DeathCause[];
+    desc: string;
+    icon: LucideIcon;
+}
 
 export const LifeExpectancyModel = () => {
     const [year, setYear] = useState<number>(1900);
 
     // Data mapping for different eras
-    const eras: Record<number, any> = {
+    const eras: Record<number, Era> = {
         1850: {
             le: 45,
             causes: [
@@ -111,7 +128,7 @@ export const LifeExpectancyModel = () => {
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
                         <h5 className="font-bold text-slate-500 text-xs uppercase tracking-wider mb-4">Dødsårsaker (Fordeling)</h5>
                         <div className="space-y-3">
-                            {data.causes.map((cause: any) => (
+                            {data.causes.map((cause) => (
                                 <div key={cause.id}>
                                     <div className="flex justify-between text-sm mb-1">
                                         <span className="font-medium text-slate-700">{cause.label}</span>

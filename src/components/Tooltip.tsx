@@ -50,7 +50,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ text, children, type = 'concep
     // Close on scroll/resize
     React.useEffect(() => {
         const handleScroll = () => setIsOpen(false);
-        window.addEventListener('scroll', handleScroll, { active: true } as any);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         window.addEventListener('resize', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);

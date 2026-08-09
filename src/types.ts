@@ -6,6 +6,19 @@ export interface Concept {
     // Compatibility fields for legacy/different formats
     title?: string;
     description?: string;
+    // Feltene som faktisk ligger i public/data/concepts.json. `aliases` er de
+    // andre skrivemåtene et begrep kan ha i teksten, og styrer hva GlossaryText
+    // markerer.
+    aliases?: string[];
+    type?: 'concept' | 'person';
+    link?: string;
+    links?: { title: string; url: string }[];
+    tags?: string[];
+    subject?: string;
+    topic?: string;
+    context?: string;
+    explanation?: string;
+    usage?: string;
 }
 
 export interface Connection {
@@ -163,6 +176,12 @@ export interface TopicTool {
     description?: string;
     link: string;
     icon?: string;
+    type?: string;
+    // Læringsstier ligger under `tools`, og listes side om side med leksjoner i
+    // «nylig oppdatert». Derfor bærer de de samme metadata-feltene.
+    image?: string;
+    createdDate?: string;
+    lastUpdated?: string;
 }
 
 export interface ManifestSubTopic {
@@ -172,6 +191,12 @@ export interface ManifestSubTopic {
     image?: string;
     lessons: ManifestLesson[];
     tools?: TopicTool[];
+    link?: string;
+    defaultView?: string;
+    createdDate?: string;
+    updatedDate?: string;
+    /** Valgfri brødtekst på undertema-siden, rendret av TopicContentRenderer. */
+    content?: TopicContentBlock[];
 }
 
 export interface ManifestTopic {
@@ -183,6 +208,29 @@ export interface ManifestTopic {
     subTopics?: ManifestSubTopic[];
     tags?: string[];
     tools?: TopicTool[];
+    link?: string;
+    defaultView?: string;
+    createdDate?: string;
+    updatedDate?: string;
+    /** Valgfri brødtekst på emnesiden, rendret av TopicContentRenderer. */
+    content?: TopicContentBlock[];
+}
+
+/** En innholdsblokk på en emne-/undertema-side (se TopicContentRenderer). */
+export interface TopicContentBlock {
+    type: 'header' | 'paragraph' | 'list' | 'component' | 'image';
+    level?: number;
+    text?: string;
+    items?: string[];
+    component?: string;
+    // Props sendes videre til komponenten og valideres der, ikke her.
+    props?: Record<string, unknown>;
+    title?: string;
+    description?: string;
+    url?: string;
+    src?: string;
+    caption?: string;
+    alt?: string;
 }
 
 export interface ManifestSubject {

@@ -2,11 +2,21 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sprout, AlertOctagon, Lightbulb } from 'lucide-react';
 
+/** Ett punkt i befolkningskurven. `crisis` brukes av Malthus-modellen,
+ *  `innovation` av Boserup-modellen. */
+interface PopulationPoint {
+    time: number;
+    pop: number;
+    food: number;
+    crisis?: boolean;
+    innovation?: boolean;
+}
+
 export const MalthusBoserupModel = () => {
     const [mode, setMode] = useState<'malthus' | 'boserup'>('malthus');
 
     // Malthus Data (Crisis at t=4)
-    const malthusData = [
+    const malthusData: PopulationPoint[] = [
         { time: 1, pop: 10, food: 20, crisis: false },
         { time: 2, pop: 20, food: 30, crisis: false },
         { time: 3, pop: 40, food: 40, crisis: false },
@@ -15,7 +25,7 @@ export const MalthusBoserupModel = () => {
     ];
 
     // Boserup Data (Innovation at t=3 and t=5)
-    const boserupData = [
+    const boserupData: PopulationPoint[] = [
         { time: 1, pop: 10, food: 20, innovation: false },
         { time: 2, pop: 20, food: 30, innovation: false },
         { time: 3, pop: 40, food: 80, innovation: true }, // Innovation jump
@@ -67,14 +77,14 @@ export const MalthusBoserupModel = () => {
                                 <motion.div
                                     initial={{ height: 0 }}
                                     animate={{ height: `${(point.pop / 250) * 100}%` }}
-                                    className={`w-4 rounded-t-sm absolute bottom-0 right-1 z-10 ${mode === 'malthus' && (point as any).crisis ? 'bg-rose-500' : 'bg-indigo-500'}`}
+                                    className={`w-4 rounded-t-sm absolute bottom-0 right-1 z-10 ${mode === 'malthus' && point.crisis ? 'bg-rose-500' : 'bg-indigo-500'}`}
                                 />
 
                                 {/* Label */}
                                 <span className="absolute -bottom-6 text-xs text-slate-400 font-mono">T{point.time}</span>
 
                                 {/* Innovation/Crisis Markers */}
-                                {mode === 'boserup' && (point as any).innovation && (
+                                {mode === 'boserup' && point.innovation && (
                                     <motion.div
                                         initial={{ scale: 0 }}
                                         animate={{ scale: 1 }}
@@ -83,7 +93,7 @@ export const MalthusBoserupModel = () => {
                                         <Lightbulb className="w-4 h-4" />
                                     </motion.div>
                                 )}
-                                {mode === 'malthus' && (point as any).crisis && (
+                                {mode === 'malthus' && point.crisis && (
                                     <motion.div
                                         initial={{ scale: 0 }}
                                         animate={{ scale: 1 }}

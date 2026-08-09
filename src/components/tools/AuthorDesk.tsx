@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDeskStore } from '../../stores/useDeskStore';
-import { BookOpen, Glasses, Type, Layers, X } from 'lucide-react';
+import { BookOpen, Glasses, Type, Layers, X, type LucideIcon } from 'lucide-react';
 
 // Placeholder components for tools (will be replaced by actual implementations)
 import { ToneTypewriter } from './ToneTypewriter';
@@ -84,7 +84,7 @@ const DeskItem = ({
     onClick,
     locked
 }: {
-    icon: any,
+    icon: LucideIcon,
     label: string,
     position: string,
     onClick: () => void,

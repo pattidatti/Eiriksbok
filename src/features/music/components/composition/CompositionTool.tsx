@@ -8,7 +8,7 @@ import { RhythmPalette } from './RhythmPalette';
 import { ProjectManager } from './ProjectManager';
 import { SectionAdder } from './SectionAdder';
 import { KeySelector } from './KeySelector';
-import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, type DragEndEvent } from '@dnd-kit/core';
 import { SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { SectionItem } from './SectionItem';
 
@@ -69,10 +69,10 @@ export const CompositionTool: React.FC = () => {
         })
     );
 
-    const handleDragEnd = (event: any) => {
+    const handleDragEnd = (event: DragEndEvent) => {
         const { active, over } = event;
         if (active.id !== over?.id) {
-            moveSection(active.id, over.id);
+            moveSection(String(active.id), String(over!.id));
         }
     };
 

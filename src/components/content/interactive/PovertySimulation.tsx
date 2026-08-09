@@ -31,7 +31,8 @@ export const PovertySimulation: React.FC = () => {
     const nextMonth = () => {
         if (gameState.gameOver) return;
 
-        let { money, health, happiness, month, log } = gameState;
+        let { money, health, happiness } = gameState;
+        const { month, log } = gameState;
 
         // Fixed expenses
         const totalExpenses = EXPENSES.rent + EXPENSES.food + EXPENSES.transport;

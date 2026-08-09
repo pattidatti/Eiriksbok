@@ -6,13 +6,14 @@ import { pipelines } from '../data/pipelines';
 import { productionSites } from '../data/productionSites';
 import { chokepoints } from '../data/chokepoints';
 import { useAtlasStore } from '../store/atlasStore';
-import type { LayerType } from '../types';
+import type { LayerType, SelectedFeature } from '../types';
 
 interface SearchItem {
     label: string;
     type: LayerType;
     coords: [number, number];
-    data: unknown;
+    // Samme sett som info-panelet viser - søketreffet sendes rett dit.
+    data: SelectedFeature['data'];
 }
 
 const WIDTH = 900;
@@ -81,7 +82,7 @@ export function SearchField() {
         const target = coordsToViewTarget(item.coords, projection);
         setViewTarget(target);
         // Open info panel
-        setSelectedFeature({ type: item.type, data: item.data as any });
+        setSelectedFeature({ type: item.type, data: item.data });
         setQuery('');
         setOpen(false);
     };

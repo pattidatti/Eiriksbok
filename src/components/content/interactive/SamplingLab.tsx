@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Disc3, Trash2, Sparkles, RotateCcw } from 'lucide-react';
 
@@ -69,7 +69,10 @@ export function SamplingLab({ title = 'Sampling-laboratoriet' }: SamplingLabProp
     const [slots, setSlots] = useState<(Sample | null)[]>([null, null, null, null]);
     const [selectedSample, setSelectedSample] = useState<Sample | null>(null);
 
-    const usedIds = new Set(slots.filter(Boolean).map((s) => s!.id));
+    const usedIds = useMemo(
+        () => new Set(slots.filter(Boolean).map((s) => s!.id)),
+        [slots]
+    );
     const filledCount = slots.filter(Boolean).length;
 
     const handleSelectSample = useCallback(

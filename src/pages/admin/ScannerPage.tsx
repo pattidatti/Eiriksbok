@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { runClientSideScan } from '../../utils/clientScanner';
 import type { ScanResult } from '../../utils/clientScanner';
+import type { Manifest } from '../../types';
 
 export const ScannerPage: React.FC = () => {
     const [result, setResult] = useState<ScanResult | null>(null);
@@ -15,7 +16,7 @@ export const ScannerPage: React.FC = () => {
             // 1. Fetch Manifest
             const manifestRes = await fetch(`${import.meta.env.BASE_URL}content/manifest.json`);
             if (!manifestRes.ok) throw new Error("Failed to load manifest");
-            const manifest = await manifestRes.json();
+            const manifest = (await manifestRes.json()) as Manifest;
 
             // 2. Fetch Concepts
             const conceptsRes = await fetch(`${import.meta.env.BASE_URL}data/concepts.json`);
@@ -27,13 +28,13 @@ export const ScannerPage: React.FC = () => {
 
             // 4. Collect Article URLs
             const articleUrls: string[] = [];
-            manifest.subjects.forEach((subj: any) => {
-                subj.topics.forEach((topic: any) => {
-                    topic.lessons?.forEach((lesson: any) => {
+            manifest.subjects.forEach((subj) => {
+                subj.topics.forEach((topic) => {
+                    topic.lessons?.forEach((lesson) => {
                         articleUrls.push(`content/${subj.id}/${topic.id}/${lesson.id}.json`);
                     });
-                    topic.subTopics?.forEach((sub: any) => {
-                        sub.lessons?.forEach((lesson: any) => {
+                    topic.subTopics?.forEach((sub) => {
+                        sub.lessons?.forEach((lesson) => {
                             // Verify path construction for subtopics if standard is consistent
                             articleUrls.push(`content/${subj.id}/${topic.id}/${lesson.id}.json`);
                         });
@@ -47,7 +48,7 @@ export const ScannerPage: React.FC = () => {
                     try {
                         const res = await fetch(`${import.meta.env.BASE_URL}${url}`);
                         if (res.ok) return await res.json();
-                    } catch (e) {
+                    } catch {
                         return null;
                     }
                 })
