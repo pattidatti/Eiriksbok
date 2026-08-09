@@ -7,7 +7,7 @@ export const useQuizAudio = () => {
 
     useEffect(() => {
         // Initialize AudioContext
-        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
         if (AudioContextClass) {
             audioContextRef.current = new AudioContextClass();
         }

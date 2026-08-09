@@ -27,7 +27,7 @@ export const BeatBuilder: React.FC<BeatBuilderProps> = ({ initialPattern }) => {
     const [currentStep, setCurrentStep] = useState(0);
     const [bpm, setBpm] = useState(120);
 
-    const timerRef = useRef<any>(null);
+    const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const kickSynth = useRef<Tone.MembraneSynth | null>(null);
     const snareSynth = useRef<Tone.NoiseSynth | null>(null);
     const hihatSynth = useRef<Tone.MetalSynth | null>(null);

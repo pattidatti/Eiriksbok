@@ -15,7 +15,7 @@ interface CensorGameProps {
             tokens: LetterToken[];
         }>;
     };
-    onComplete: (results: any) => void;
+    onComplete: () => void;
 }
 
 export const CensorGame: React.FC<CensorGameProps> = ({ config, onComplete }) => {
@@ -39,7 +39,7 @@ export const CensorGame: React.FC<CensorGameProps> = ({ config, onComplete }) =>
 
     const handleSubmit = () => {
         setSubmitted(true);
-        setTimeout(() => onComplete({}), 3500);
+        setTimeout(() => onComplete(), 3500);
     };
 
     const correctlyCensored = allPhrases.filter(

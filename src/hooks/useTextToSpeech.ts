@@ -187,7 +187,7 @@ export const useTextToSpeech = (): TTSReturn => {
 
             newUtterance.onerror = (event) => {
                 clearKeepAlive();
-                if ((event as any).error === 'interrupted') return;
+                if (event.error === 'interrupted') return;
 
                 console.error('Speech synthesis error:', event);
                 setIsPlaying(false);

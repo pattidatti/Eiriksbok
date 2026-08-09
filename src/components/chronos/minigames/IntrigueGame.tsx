@@ -18,7 +18,7 @@ interface IntrigueGameProps {
         tokens: number;
         characters: Character[];
     };
-    onComplete: (results: any) => void;
+    onComplete: (results: { trusted: string[]; correct: number }) => void;
 }
 
 export const IntrigueGame: React.FC<IntrigueGameProps> = ({ config, onComplete }) => {

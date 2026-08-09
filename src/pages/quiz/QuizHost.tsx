@@ -10,7 +10,14 @@ import { useQuizAudio } from '../../hooks/useQuizAudio';
 import { signInAnonymously } from 'firebase/auth';
 import { auth } from '../../lib/firebase';
 
-import type { QuizQuestion } from '../../types';
+import type {
+    BattleQuestion,
+    FloatingEmoji,
+    LessonRef,
+    QuizPlayerWithId,
+    QuizRoom,
+    QuizRoundResult,
+} from '../../types/quiz';
 
 export const QuizHost: React.FC = () => {
     const { pin } = useParams();
@@ -18,9 +25,9 @@ export const QuizHost: React.FC = () => {
     const { data: manifest } = useManifest();
     const { playSound } = useQuizAudio();
 
-    const [roomData, setRoomData] = useState<any>(null);
-    const [players, setPlayers] = useState<any[]>([]);
-    const [privateQuestions, setPrivateQuestions] = useState<any[]>([]); // Full questions with answers
+    const [roomData, setRoomData] = useState<QuizRoom | null>(null);
+    const [players, setPlayers] = useState<QuizPlayerWithId[]>([]);
+    const [privateQuestions, setPrivateQuestions] = useState<BattleQuestion[]>([]); // Full questions with answers
     const [debugStatus, setDebugStatus] = useState<string>('');
 
     // Setup State
@@ -31,7 +38,7 @@ export const QuizHost: React.FC = () => {
 
     // Lobby State
     const [balloonSize, setBalloonSize] = useState(0);
-    const [floatingEmojis, setFloatingEmojis] = useState<any[]>([]);
+    const [floatingEmojis, setFloatingEmojis] = useState<FloatingEmoji[]>([]);
     const [reactionCounts, setReactionCounts] = useState<Record<string, number>>({ '👍': 0, '❤️': 0, '🔥': 0, '🚀': 0 });
     const [flyingBalloonStatus, setFlyingBalloonStatus] = useState<'IDLE' | 'FLYING_OUT' | 'VISITING' | 'RETURNING'>('IDLE');
 
@@ -59,12 +66,12 @@ export const QuizHost: React.FC = () => {
         const reactionsRef = ref(db, `rooms/${pin}/reactions`);
 
         const unsubscribe = onValue(roomRef, (snapshot) => {
-            const data = snapshot.val();
+            const data = snapshot.val() as QuizRoom | null;
             if (data) {
                 // Play sound throttled
                 setRoomData(data);
                 if (data.players) {
-                    setPlayers(Object.entries(data.players).map(([id, p]: any) => ({ ...p, id })));
+                    setPlayers(Object.entries(data.players).map(([id, p]) => ({ ...p, id })));
                 }
 
                 // Sync local state with remote state
@@ -167,7 +174,7 @@ export const QuizHost: React.FC = () => {
     const [timer, setTimer] = useState(30);
 
     useEffect(() => {
-        let interval: any;
+        let interval: ReturnType<typeof setInterval> | undefined;
         if (roomData?.status === 'PLAYING' && !showResult && !showLeaderboard && currentQuestionIndex !== -1) {
             interval = setInterval(() => {
                 setTimer((prev) => {
@@ -193,7 +200,7 @@ export const QuizHost: React.FC = () => {
 
     // Cooldown Timer
     useEffect(() => {
-        let interval: any;
+        let interval: ReturnType<typeof setInterval> | undefined;
         if (cooldownTimer > 0) {
             interval = setInterval(() => {
                 setCooldownTimer(prev => prev - 1);
@@ -276,7 +283,7 @@ export const QuizHost: React.FC = () => {
             }
 
             // 1. Fetch Questions
-            const lessonsToFetch: any[] = [];
+            const lessonsToFetch: LessonRef[] = [];
 
             console.log('Starting game setup...');
             manifest.subjects.forEach(subject => {
@@ -310,7 +317,7 @@ export const QuizHost: React.FC = () => {
 
             setDebugStatus(`Henter ${lessonsToFetch.length} leksjoner...`);
             const results = await Promise.all(lessonsToFetch.map(l => fetchLesson(l.subjectId, l.topicId, l.lessonId, l.subTopicId).catch(() => null)));
-            let allQuestions: QuizQuestion[] = [];
+            let allQuestions: BattleQuestion[] = [];
 
             setDebugStatus('Prosesserer spørsmål...');
             results.forEach((lesson, index) => {
@@ -366,7 +373,7 @@ export const QuizHost: React.FC = () => {
 
             // 2. Save to Firebase
             setDebugStatus('Lagrer til database...');
-            const updates: any = {};
+            const updates: Record<string, unknown> = {};
 
             // Public Questions (Sanitized)
             const publicQuestions = allQuestions.map(q => {
@@ -393,13 +400,14 @@ export const QuizHost: React.FC = () => {
 
         } catch (e) {
             console.error(e);
-            setDebugStatus('Feil: ' + (e as any).message);
+            const message = e instanceof Error ? e.message : String(e);
+            setDebugStatus('Feil: ' + message);
 
             // Helpful Error Message for Firebase Permissions
-            if ((e as any).message && (e as any).message.includes('PERMISSION_DENIED')) {
+            if (message.includes('PERMISSION_DENIED')) {
                 alert('FEIL: Kunne ikke opprette rom. Firebase-tilgang nektet.\n\nÅrsak: Sikkerhetsreglene i Firebase Console har sannsynligvis utløpt.\n\nLøsning: Gå til Firebase Console -> Realtime Database -> Rules og oppdater reglene.');
             } else {
-                alert('Feil ved henting av spørsmål: ' + (e as any).message);
+                alert('Feil ved henting av spørsmål: ' + message);
             }
         } finally {
             setIsLoadingQuestions(false);
@@ -443,7 +451,7 @@ export const QuizHost: React.FC = () => {
         if (!q) return;
 
         // Construct result object
-        const result: any = {
+        const result: QuizRoundResult = {
             correctAnswer: q.correctAnswer
         };
 
@@ -536,7 +544,7 @@ export const QuizHost: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl mb-12 z-10">
-                    {players.map((p: any, i) => (
+                    {players.map((p, i) => (
                         <div key={i} className="bg-white border-2 border-indigo-100 p-6 rounded-2xl text-center font-bold text-xl animate-bounce-in shadow-sm text-indigo-900">
                             {p.name}
                         </div>
@@ -623,7 +631,7 @@ export const QuizHost: React.FC = () => {
                                 <span className="w-12 inline-block text-center mr-4 opacity-50">#{i + 1}</span>
                                 {p.name}
                                 {i === 0 && <span className="ml-4 text-4xl">👑</span>}
-                                {p.streak > 2 && <span className="ml-2 text-2xl animate-pulse">🔥</span>}
+                                {(p.streak ?? 0) > 2 && <span className="ml-2 text-2xl animate-pulse">🔥</span>}
                             </span>
                             <span className="text-4xl font-black">{p.score}p</span>
                         </motion.div>
@@ -643,7 +651,7 @@ export const QuizHost: React.FC = () => {
 
     // 4. Gameplay Screen
     // Use privateQuestions for Host visualization (so we see the answers)
-    const question = privateQuestions[currentQuestionIndex] || roomData.questions[currentQuestionIndex];
+    const question = privateQuestions[currentQuestionIndex] || roomData.questions?.[currentQuestionIndex];
     if (!question) return <div>Laster spørsmål...</div>;
 
     if (showLeaderboard) {
@@ -670,7 +678,7 @@ export const QuizHost: React.FC = () => {
                                 <div className="flex items-center gap-4">
                                     {p.score > 0 && <span className="text-sm bg-green-100 text-green-700 px-2 py-1 rounded-full font-bold">+{p.score % 100 || 100} speed!</span>}
                                     <span className="text-2xl font-black text-indigo-600">{p.score}p</span>
-                                    {p.streak > 2 && <div className="ml-2 text-orange-500 font-bold flex flex-col items-center leading-none">
+                                    {(p.streak ?? 0) > 2 && <div className="ml-2 text-orange-500 font-bold flex flex-col items-center leading-none">
                                         <span className="text-2xl">🔥</span>
                                         <span className="text-xs">{p.streak}x</span>
                                     </div>}
@@ -693,7 +701,7 @@ export const QuizHost: React.FC = () => {
             {/* Top Bar */}
             <div className="flex w-full justify-between items-center mb-12 max-w-7xl">
                 <div className="font-mono font-bold text-xl text-slate-400">PIN: {pin}</div>
-                <div className="font-bold text-2xl text-slate-400">Spørsmål <span className="text-indigo-600 text-3xl">{currentQuestionIndex + 1}</span> / {privateQuestions.length || roomData.questions.length}</div>
+                <div className="font-bold text-2xl text-slate-400">Spørsmål <span className="text-indigo-600 text-3xl">{currentQuestionIndex + 1}</span> / {privateQuestions.length || roomData.questions?.length || 0}</div>
 
                 {/* Timer */}
                 <div className={`

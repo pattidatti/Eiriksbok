@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Scale, Gavel, ThumbsUp } from 'lucide-react';
 import { MiniGameHeader } from './MiniGameHeader';
+import type { ChronosEffect } from '../../../data/chronos/types';
 
 interface JusticeGameProps {
     config: {
@@ -14,18 +15,18 @@ interface JusticeGameProps {
             options: {
                 mercy: {
                     label: string;
-                    effects?: any;
+                    effects?: ChronosEffect;
                     feedback: string;
                 };
                 harsh: {
                     label: string;
-                    effects?: any;
+                    effects?: ChronosEffect;
                     feedback: string;
                 };
             };
         }[];
     };
-    onComplete: (results: any) => void;
+    onComplete: (results: { completed: boolean }) => void;
 }
 
 export const JusticeGame: React.FC<JusticeGameProps> = ({ config, onComplete }) => {
