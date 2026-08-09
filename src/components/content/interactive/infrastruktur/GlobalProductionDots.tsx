@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { geoNaturalEarth1, geoPath } from 'd3-geo';
-import * as topojson from 'topojson-client';
 import { useQuery } from '@tanstack/react-query';
+import { topologyToFeatures, type WorldTopology } from '../../../../types/geo';
 
 interface Props {
     title?: string;
@@ -30,15 +30,14 @@ export function GlobalProductionDots({ title, description }: Props) {
         queryKey: ['world-atlas'],
         queryFn: async () => {
             const res = await fetch(GEO_URL);
-            return res.json();
+            return (await res.json()) as WorldTopology;
         },
         staleTime: 24 * 60 * 60 * 1000,
     });
 
     const geographies = useMemo(() => {
         if (!worldData) return [];
-        const countries = topojson.feature(worldData, worldData.objects.countries);
-        return (countries as any).features;
+        return topologyToFeatures(worldData);
     }, [worldData]);
 
     const projection = useMemo(
@@ -59,7 +58,7 @@ export function GlobalProductionDots({ title, description }: Props) {
                 <svg viewBox={`0 0 ${W} ${H}`} className="w-full">
                     <rect width={W} height={H} fill="#0f172a" />
                     <g>
-                        {geographies.map((geo: any, i: number) => (
+                        {geographies.map((geo, i: number) => (
                             <path key={i} d={pathGen(geo) || ''} fill="#1e293b" stroke="#334155" strokeWidth={0.3} />
                         ))}
                     </g>

@@ -24,7 +24,7 @@ export const LandingPage: React.FC = () => {
                     className="mb-8"
                 >
                     <div className="flex flex-col gap-1">
-                        {manifest.subjects.map((subject: any) => (
+                        {manifest.subjects.map((subject) => (
                             <motion.div
                                 key={subject.id}
                                 className="mb-8"

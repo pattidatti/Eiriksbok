@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { geoMercator, geoPath } from 'd3-geo';
-import * as topojson from 'topojson-client';
 import { territoryHistory, countryColors, colonizationEvents, majorWars } from './colonizationData';
 import { Tooltip } from 'react-tooltip';
+import { topologyToFeatures, type GeoFeature } from '../../types/geo';
 
 
 // Verdensgeometrien lastes LOKALT (public/data/world/) - aldri fra CDN. På Chromebook
@@ -14,14 +14,13 @@ interface MapChartProps {
 }
 
 const MapChart: React.FC<MapChartProps> = ({ year }) => {
-    const [geographies, setGeographies] = useState<any[]>([]);
+    const [geographies, setGeographies] = useState<GeoFeature[]>([]);
 
     useEffect(() => {
         fetch(GEO_URL)
             .then(response => response.json())
             .then(worldData => {
-                const countries = topojson.feature(worldData, worldData.objects.countries);
-                setGeographies((countries as any).features);
+                setGeographies(topologyToFeatures(worldData));
             })
             .catch(error => console.error("Error loading map data:", error));
     }, []);
@@ -120,12 +119,12 @@ const MapChart: React.FC<MapChartProps> = ({ year }) => {
         // South Africa is already at the top
     };
 
-    const getCountryColor = (geo: any) => {
-        let countryCode = geo.properties.ISO_A3;
+    const getCountryColor = (geo: GeoFeature) => {
+        let countryCode = geo.properties?.ISO_A3;
 
         // Fallback to name mapping if ISO_A3 is missing
         if (!countryCode || !territoryHistory[countryCode]) {
-            const name = geo.properties.name;
+            const name = geo.properties?.name;
             if (name && nameToIso[name]) {
                 countryCode = nameToIso[name];
             } else if (name && territoryHistory[name]) {
@@ -133,7 +132,10 @@ const MapChart: React.FC<MapChartProps> = ({ year }) => {
             }
         }
 
-        const history = territoryHistory[countryCode];
+        // countryCode kan fortsatt være undefined her (kartfila mangler både
+        // ISO_A3 og et navn vi kjenner igjen) - da faller vi til standardfargen,
+        // som er akkurat det oppslaget gjorde før.
+        const history = countryCode ? territoryHistory[countryCode] : undefined;
 
         if (!history) return countryColors["default"];
 

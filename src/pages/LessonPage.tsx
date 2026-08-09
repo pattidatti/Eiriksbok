@@ -114,10 +114,10 @@ export const LessonPage: React.FC<{ lessonIdOverride?: string }> = ({ lessonIdOv
 
         if (subTopicId && topic?.subTopics) {
             const subTopic = topic.subTopics.find(st => st.id === subTopicId);
-            foundLesson = subTopic?.lessons.find((l: any) => l.id === lessonId);
+            foundLesson = subTopic?.lessons.find((l) => l.id === lessonId);
             topicImg = subTopic?.image || topicImg;
         } else if (topic?.lessons) {
-            foundLesson = topic.lessons.find((l: any) => l.id === lessonId);
+            foundLesson = topic.lessons.find((l) => l.id === lessonId);
         }
 
         return { lesson: foundLesson, topicImage: topicImg };

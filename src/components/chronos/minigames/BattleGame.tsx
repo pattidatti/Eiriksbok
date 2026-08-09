@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Sword, RefreshCw, Skull, Heart } from 'lucide-react';
+import { Shield, Sword, RefreshCw, Skull, Heart, type LucideIcon } from 'lucide-react';
 import type { ChronosBattleConfig, ChronosStat } from '../../../data/chronos/types';
 
 interface BattleGameProps {
@@ -8,7 +8,7 @@ interface BattleGameProps {
     onComplete: (success: boolean) => void;
 }
 
-const MoveIcon: Record<string, any> = {
+const MoveIcon: Record<string, LucideIcon> = {
     attack: Sword,
     defend: Shield,
     maneuver: RefreshCw

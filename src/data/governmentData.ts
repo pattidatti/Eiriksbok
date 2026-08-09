@@ -1,4 +1,4 @@
-import * as React from 'react';
+import type { LucideIcon } from 'lucide-react';
 import {
     SparklesIcon,
     UserIcon,
@@ -20,7 +20,7 @@ export interface Definition {
     category: Category;
     description: string;
     details?: string;
-    icon: React.ComponentType<any>;
+    icon: LucideIcon;
     color: string;
 }
 

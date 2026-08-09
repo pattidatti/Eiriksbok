@@ -31,9 +31,9 @@ export const TopicPage: React.FC = () => {
     const [sortMode, setSortMode] = useState<SortMode>('alphabetical');
     const [showPrint, setShowPrint] = useState(false);
 
-    const subjectData = manifest?.subjects.find((s: any) => s.id === subjectId);
-    const currentTopic = subjectData?.topics.find((t: any) => t.id === topicId);
-    const currentSubTopic = currentTopic?.subTopics?.find((st: any) => st.id === subTopicId);
+    const subjectData = manifest?.subjects.find((s) => s.id === subjectId);
+    const currentTopic = subjectData?.topics.find((t) => t.id === topicId);
+    const currentSubTopic = currentTopic?.subTopics?.find((st) => st.id === subTopicId);
 
     const activeItem = currentSubTopic || currentTopic;
 
@@ -42,7 +42,7 @@ export const TopicPage: React.FC = () => {
     // tom liste hver render, og memoen regnet på nytt hver gang uansett.
     const sortedLessons = React.useMemo(() => {
         const rawLessons = activeItem?.lessons ?? [];
-        return [...rawLessons].sort((a: any, b: any) => {
+        return [...rawLessons].sort((a, b) => {
             if (sortMode === 'alphabetical') return a.title.localeCompare(b.title);
             if (sortMode === 'year') {
                 const dateA = a.date || '9999';
@@ -65,7 +65,7 @@ export const TopicPage: React.FC = () => {
 
     const filteredLessons = React.useMemo(() => {
         return tagFilter
-            ? sortedLessons.filter((l: any) => l.tags?.includes(tagFilter))
+            ? sortedLessons.filter((l) => l.tags?.includes(tagFilter))
             : sortedLessons;
     }, [sortedLessons, tagFilter]);
 
@@ -175,7 +175,7 @@ export const TopicPage: React.FC = () => {
             {/* Tools Section - Pill ribbon */}
             {activeItem!.tools && activeItem!.tools.length > 0 && (
                 <div className="flex gap-2 overflow-x-auto pb-1 mb-6 scrollbar-hide">
-                    {activeItem!.tools.map((tool: any) => (
+                    {activeItem!.tools.map((tool) => (
                         <Link
                             key={tool.id}
                             to={tool.link}
@@ -205,7 +205,7 @@ export const TopicPage: React.FC = () => {
                 <div className="mb-8">
                     <h2 className="text-lg font-display font-bold text-text-main mb-4">Emner</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-                        {subTopics.map((subTopic: any, index: number) => (
+                        {subTopics.map((subTopic, index: number) => (
                             <motion.div
                                 key={subTopic.id}
                                 {...motionPresets.slideUp}

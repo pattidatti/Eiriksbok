@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
-import { X, BookOpen, GraduationCap, History, Globe, Music, Dumbbell, Map, Sparkles } from 'lucide-react';
+import { X, BookOpen, GraduationCap, History, Globe, Music, Dumbbell, Map, Sparkles, type LucideIcon } from 'lucide-react';
 import { PrefetchLink } from './PrefetchLink';
 
 interface MobileMenuProps {
@@ -39,7 +39,7 @@ const itemVariants: Variants = {
 interface MenuItem {
     label: string;
     path: string;
-    icon: any;
+    icon: LucideIcon;
     prefetchTarget?: string;
 }
 

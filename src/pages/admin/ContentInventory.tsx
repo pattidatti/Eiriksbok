@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useManifest } from '../../hooks/useManifest';
-import { AlertCircle, CheckCircle, Image, Tag, Type, ArrowUpDown, Info } from 'lucide-react';
+import { AlertCircle, CheckCircle, Image, Tag, Type, ArrowUpDown, Info, type LucideIcon } from 'lucide-react';
 
 interface ArticleAudit {
     id: string;
@@ -30,7 +30,7 @@ const SortHeader = ({
 }: {
     label?: string;
     sortKey: SortKey;
-    icon?: any;
+    icon?: LucideIcon;
     sortConfig: SortConfig;
     onSort: (key: SortKey) => void;
 }) => (

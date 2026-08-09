@@ -2,7 +2,7 @@ import { useState, useEffect, useTransition } from 'react';
 import { useManifest } from './useManifest';
 import { useUserHistory } from './useUserHistory';
 import { textLibraryData } from '../data/textLibraryData';
-import type { ManifestLesson } from '../types';
+import type { ManifestLesson, TopicTool } from '../types';
 
 export interface ProcessedLesson extends ManifestLesson {
     subjectId: string;
@@ -27,8 +27,8 @@ export const useManifestData = () => {
             const lessons: ProcessedLesson[] = [];
 
             // Flatten manifest structure
-            manifest.subjects?.forEach((subject: any) => {
-                subject.topics?.forEach((topic: any) => {
+            manifest.subjects?.forEach((subject) => {
+                subject.topics?.forEach((topic) => {
                     const processLessons = (lessonList: ManifestLesson[], subTopicId?: string) => {
                         lessonList.forEach(l => {
                             if (l.id) {
@@ -43,7 +43,7 @@ export const useManifestData = () => {
                         });
                     };
 
-                    const processTools = (toolList: any[], subTopicId?: string) => {
+                    const processTools = (toolList: TopicTool[], subTopicId?: string) => {
                         toolList.forEach(t => {
                             // Filter for learning paths
                             // We treat tools that are learning paths as "lessons" for history/listing purposes
@@ -71,7 +71,7 @@ export const useManifestData = () => {
                     if (topic.tools) processTools(topic.tools);
 
                     if (topic.subTopics) {
-                        topic.subTopics.forEach((st: any) => {
+                        topic.subTopics.forEach((st) => {
                             if (st.lessons) processLessons(st.lessons, st.id);
                             if (st.tools) processTools(st.tools, st.id);
                         });

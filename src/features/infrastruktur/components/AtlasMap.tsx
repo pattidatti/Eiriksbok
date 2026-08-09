@@ -1,6 +1,5 @@
 import { useMemo, useRef, useState, useCallback, useEffect } from 'react';
 import { geoNaturalEarth1, geoPath } from 'd3-geo';
-import * as topojson from 'topojson-client';
 import { useQuery } from '@tanstack/react-query';
 import { useAtlasStore } from '../store/atlasStore';
 import { ShippingLanesLayer } from './layers/ShippingLanesLayer';
@@ -10,6 +9,7 @@ import { ProductionLayer } from './layers/ProductionLayer';
 import { ChokepointLayer } from './layers/ChokepointLayer';
 import { RiskZoneLayer } from './layers/RiskZoneLayer';
 import { COUNTRY_NAMES } from '../data/countryNames';
+import { topologyToFeatures, type WorldTopology } from '../../../types/geo';
 
 // Verdensgeometrien lastes LOKALT (public/data/world/) - aldri fra CDN. På Chromebook
 // i klasserom med ustabilt nett ville en CDN-henting gitt blank skjerm.
@@ -23,7 +23,7 @@ const MAX_SCALE = 8;
 async function fetchWorld() {
     const res = await fetch(GEO_URL);
     if (!res.ok) throw new Error('Failed to load world data');
-    return res.json();
+    return (await res.json()) as WorldTopology;
 }
 
 interface Transform {
@@ -67,8 +67,7 @@ export function AtlasMap({ onTransformChange }: AtlasMapProps) {
 
     const geographies = useMemo(() => {
         if (!worldData) return [];
-        const countries = topojson.feature(worldData, worldData.objects.countries);
-        return (countries as any).features;
+        return topologyToFeatures(worldData);
     }, [worldData]);
 
     const projection = useMemo(
@@ -252,7 +251,7 @@ export function AtlasMap({ onTransformChange }: AtlasMapProps) {
 
                 {/* Countries */}
                 <g>
-                    {geographies.map((geo: any, i: number) => {
+                    {geographies.map((geo, i: number) => {
                         const d = pathGenerator(geo);
                         const countryName = COUNTRY_NAMES[Number(geo.id)];
                         const isSelected = countryName && selectedCountry === countryName;

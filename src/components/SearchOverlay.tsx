@@ -32,8 +32,8 @@ function getFuse(manifest: Manifest): Fuse<SearchResult> {
     const allItems: SearchResult[] = [];
 
     // 1. Manifest Content
-    manifest.subjects.forEach((subject: any) => {
-        subject.topics.forEach((topic: any) => {
+    manifest.subjects.forEach((subject) => {
+        subject.topics.forEach((topic) => {
             // Add Topic
             allItems.push({
                 type: 'topic',
@@ -68,13 +68,13 @@ function getFuse(manifest: Manifest): Fuse<SearchResult> {
             };
 
             if (topic.subTopics) {
-                topic.subTopics.forEach((subTopic: any) => {
-                    subTopic.lessons.forEach((lesson: any) => {
+                topic.subTopics.forEach((subTopic) => {
+                    subTopic.lessons.forEach((lesson) => {
                         processLesson(lesson, `/${subject.id}/${topic.id}/${subTopic.id}/${lesson.id}`, subTopic.title);
                     });
                 });
             } else if (topic.lessons) {
-                topic.lessons.forEach((lesson: any) => {
+                topic.lessons.forEach((lesson) => {
                     processLesson(lesson, `/${subject.id}/${topic.id}/${lesson.id}`, topic.title);
                 });
             }

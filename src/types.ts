@@ -163,6 +163,12 @@ export interface TopicTool {
     description?: string;
     link: string;
     icon?: string;
+    type?: string;
+    // Læringsstier ligger under `tools`, og listes side om side med leksjoner i
+    // «nylig oppdatert». Derfor bærer de de samme metadata-feltene.
+    image?: string;
+    createdDate?: string;
+    lastUpdated?: string;
 }
 
 export interface ManifestSubTopic {
