@@ -13,6 +13,7 @@
         "teknokrati"
     ],
     "createdDate": "2025-12-21T23:25:00Z",
+    "lastUpdated": "2026-08-09",
     "layout": "standard",
     "content": [
         {
@@ -21,11 +22,11 @@
         },
         {
             "type": "paragraph",
-            "content": "De fleste styresett vi diskuterer i dag er basert på menneskelige valg, kompromisser og maktkamper. Vi antar at politikk hander om hva vi mennesker vil. Men det finnes to styringsformer som utfordrer dette utgangspunktet. De hevder begge at det finnes en høyere autoritet enn folkets vilje – enten det er Gud eller den objektive vitenskapen. I et teokrati styres samfunnet etter guddommelige lover, mens i et teknokrati er det ekspertene og teknisk kunnskap som sitter ved roret. Begge deler reiser et grunnleggende spørsmål: Kan vi egentlig ha et demokrati hvis vi mener at det bare finnes ett riktig svar som ingen kan være uenige i?"
+            "content": "De fleste styresett vi diskuterer i dag er basert på menneskelige valg, kompromisser og maktkamper. Vi antar at politikk handler om hva vi mennesker vil. Men det finnes to styringsformer som utfordrer dette utgangspunktet. De hevder begge at det finnes en høyere autoritet enn folkets vilje - enten det er Gud eller den objektive vitenskapen. I et teokrati styres samfunnet etter guddommelige lover, mens i et teknokrati er det ekspertene og teknisk kunnskap som sitter ved roret. Begge deler reiser et grunnleggende spørsmål: Kan vi egentlig ha et demokrati hvis vi mener at det bare finnes ett riktig svar som ingen kan være uenige i?"
         },
         {
             "type": "paragraph",
-            "content": "Disse to systemene kan ved første øyekast virke som motsetninger – det ene basert på eldgammel tro, det andre på fremtidsrettet teknologi. Men de deler en viktig egenskap: de flytter beslutningsmakten bort fra det vanlige mennesket og over til en elite med spesialinnsikt. Enten denne innsikten kommer fra hellige skrifter eller komplekse algoritmer, blir resultatet ofte at den vanlige borgerens stemme teller mindre enn 'Sannheten' slik eliten ser den."
+            "content": "Disse to systemene kan ved første øyekast virke som motsetninger - det ene basert på eldgammel tro, det andre på fremtidsrettet teknologi. Men de deler en viktig egenskap: de flytter beslutningsmakten bort fra det vanlige mennesket og over til en elite med spesialinnsikt. Enten denne innsikten kommer fra hellige skrifter eller komplekse algoritmer, blir resultatet ofte at den vanlige borgerens stemme teller mindre enn 'Sannheten' slik eliten ser den."
         },
         {
             "type": "header",
@@ -33,7 +34,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Ordet teokrati kommer fra gresk theos (Gud) og kratein (styre). Det betyr ganske enkelt Guds styre. I et rent teokrati er det ingen forskjell på religion og politikk; lovene er hentet direkte fra de hellige skriftene, og herskerne anses som Guds representanter på jorden. Dette er en av menneskehetens eldste styringsformer. Vi finner den i de gamle jødiske rikene, i det muslimske kalifatet, og i de europeiske kongerikene i middelalderen der kirken hadde enorm politisk makt."
+            "content": "Teokrati er en styreform der den politiske makten i teorien tilhører en gud, og i praksis blir utøvd av presteskapet (Kværne, 2025). Ordet ble laget av den jødiske historikeren Josefus, som brukte det om måten jødefolket var organisert på. I et rent teokrati er det ingen forskjell på religion og politikk. I et skriftteokrati blir en hellig tekst lagt til grunn for hele samfunnslivet, slik det skjedde i Genève under Jean Calvin, mens det i et sakralt kongedømme er kongen selv som regnes som guddommelig eller utpekt av en gud (Kværne, 2025). Dette er en av menneskehetens eldste styringsformer. Vi finner den i de gamle jødiske rikene, i det muslimske kalifatet, og i de europeiske kongerikene i middelalderen der kirken hadde enorm politisk makt."
         },
         {
             "type": "paragraph",
@@ -45,11 +46,11 @@
         },
         {
             "type": "paragraph",
-            "content": "I dag er Iran det mest kjente eksempelet på et teokrati. Etter revolusjonen i 1979 ble landet organisert etter prinsippet om vokterens styre (velayat-e faqih). Det betyr at den øverste religiøse lederen (ayatollahen) har det siste ordet i alle saker. Selv om Iran har et valgt parlament og en president, kan vokterrådet underkjenne enhver lov de mener strider mot islamsk lære (Sharia). Her ser vi tydelig spenningen mellom demokratiske elementer og den religiøse overmakten."
+            "content": "I dag er Iran det mest kjente eksempelet på et teokrati. Forfatningen ble innført etter revolusjonen i 1979, som satte sluttstrek for over 2500 år med monarki (Bøe & Berg, 2026). Kjernen i systemet er prinsippet om velayat-e faqih, den rettslærdes vergemål. Det betyr at den øverste religiøse lederen (ayatollahen) har nesten uinnskrenket makt og kan underkjenne alle vedtak som presidenten og parlamentet gjør. Selv om Iran har et valgt parlament og en president, er det Vokterrådet som skal passe på at alt parlamentet vedtar er i samsvar med islam og med grunnloven (Bøe & Berg, 2026). Her ser vi tydelig spenningen mellom demokratiske elementer og den religiøse overmakten."
         },
         {
             "type": "paragraph",
-            "content": "Vatikanstaten er et annet, om enn mindre, eksempel. Her er paven den absolutte monarken. Selv om han i dag mest styrer over den katolske kirken, er Vatikanet en suveren stat der kirkeloven er den øverste myndighet. Gjennom historien har teokratier ofte vært preget av streng morallovgivning, forfølgelse av annerledestenkende og en veldig liten grad av personlig frihet, nettopp fordi avvik blir sett på som synd fremfor bare politisk uenighet."
+            "content": "Vatikanstaten er et annet, om enn mindre, eksempel. Statsformen er absolutt monarki, og paven er statens eneveldige leder (Lima & Stensvold, 2026). Vatikanstaten skiller seg fra alle andre land i verden ved at det er en stat som tilhører en religiøs organisasjon, og hele området er pavens suverene område (Lima & Stensvold, 2026). Der religion og lov smelter sammen på denne måten, blir rommet for personlig frihet ofte lite, nettopp fordi avvik blir sett på som synd fremfor bare politisk uenighet."
         },
         {
             "type": "component",
@@ -61,7 +62,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Teknokratiet oppstod som en moderne bevegelse på begynnelsen av 1900-tallet. Tanken var enkel: Moderne samfunn er så komplekse at vanlige politikere og velgere ikke har sjans til å forstå dem. Hvorfor skal vi la folk som er flinke til å holde taler, styre over økonomien, energiforsyningen eller helsevesenet? Bør ikke disse beslutningene heller tas av de som faktisk har peiling – ingeniører, økonomer og vitenskapsfolk? Ordrett betyr teknokrati de flinkes styre (fra gresk tekhne - håndverk/kunst)."
+            "content": "Teknokrati betyr rett og slett ekspertvelde: de som er eksperter innenfor sitt felt, er også de som bestemmer i saker på det feltet (Hofstad, 2025). Som politisk ideologi ble teknokratiet formet av amerikaneren Howard Scott i årene etter første verdenskrig, og bevegelsen fikk sin største oppslutning under depresjonen på 1930-tallet (Hofstad, 2025). Tanken var enkel: Moderne samfunn er så komplekse at vanlige politikere og velgere ikke har sjans til å forstå dem. Hvorfor skal vi la folk som er flinke til å holde taler, styre over økonomien, energiforsyningen eller helsevesenet? Bør ikke disse beslutningene heller tas av de som faktisk har peiling - ingeniører, økonomer og vitenskapsfolk?"
         },
         {
             "type": "paragraph",
@@ -73,7 +74,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Selv om vi ikke har rene teknokratiske land, ser vi sterke elementer av dette i våre egne demokratier. Tenk på sentralbankene. I de fleste land er de helt uavhengige av politikerne. Vi har bestemt at renten er for viktig til å bli styrt av politikere som vil vinne neste valg; den må styres av økonomiske eksperter basert på kalde fakta. Det samme ser vi ofte under store kriser, som en pandemi. Da blir det ofte fagfolkene i helsedirektoratet som i praksis legger premissene for hvordan vi skal leve livene våre."
+            "content": "Selv om vi ikke har rene teknokratiske land, ser vi sterke elementer av dette i våre egne demokratier. Tenk på sentralbankene. I Norge er det komiteen for pengepolitikk og finansiell stabilitet i Norges Bank som setter styringsrenten, innenfor et mandat Stortinget har vedtatt (Stoltz mfl., 2025). Vi har altså bestemt at selve rentebeslutningen er for viktig til å tas av politikere som vil vinne neste valg; den skal tas av fagfolk. Det samme ser vi ofte under store kriser, som en pandemi. Da blir det ofte fagfolkene i helsedirektoratet som i praksis legger premissene for hvordan vi skal leve livene våre."
         },
         {
             "type": "paragraph",
@@ -85,11 +86,11 @@
         },
         {
             "type": "paragraph",
-            "content": "I det 21. århundre møter vi en helt ny form for teknokrati: algokrati. Dette beskriver et system der beslutninger blir tatt av algoritmer og kunstig intelligens. Dette skjer allerede i stor skala. Algoritmer bestemmer hvilke nyheter vi ser, hvilke lån vi får, og hvem som blir kalt inn til jobbintervju. I fremtiden kan vi se for oss at komplekse AI-systemer tar beslutninger om byplanlegging, klima-tiltak eller ressursfordeling fordi de kan behandle mer data enn noe menneske."
+            "content": "I det 21. århundre møter vi en helt ny form for teknokrati: algokrati. Dette beskriver et system der beslutninger blir tatt av algoritmer og kunstig intelligens. Dette skjer allerede i stor skala. En algoritme sorterer informasjonen du søker etter ut fra det den vet om deg, slik at treffene blir skreddersydd for akkurat din profil (Orgeret & Dvergsdal, 2025). Kunstig intelligens blir også brukt til å vurdere opptak til utdanning, til jobbrekruttering, til overvåking på arbeidsplassen og til tilgang på helsetjenester (Tidemann & Arnesen, 2026). I fremtiden kan vi se for oss at komplekse AI-systemer tar beslutninger om byplanlegging, klimatiltak eller ressursfordeling fordi de kan behandle mer data enn noe menneske."
         },
         {
             "type": "paragraph",
-            "content": "Argumentet for algokrati er at maskiner er objektive og ikke har menneskelige svakheter som korrupsjon, fordommer eller tretthet. Men faren er den sorte boksen-effekten: Hvis en algoritme nekter deg en tjeneste, hvordan kan du få vite hvorfor? Hvordan kan du protestere mot en matematisk formel? Algokratiet truer med å gjøre makten helt usynlig og utilgjengelig for borgerne, og det forutsetter at målene som legges inn i maskinen er de riktige til å begynne med."
+            "content": "Argumentet for algokrati er at maskiner er objektive og ikke har menneskelige svakheter som korrupsjon, fordommer eller tretthet. Men faren er den sorte boksen-effekten: Hvis en algoritme nekter deg en tjeneste, hvordan kan du få vite hvorfor? Hvordan kan du protestere mot en matematisk formel? Nettopp derfor har personvernreglene stilt krav om at den som blir utsatt for en automatisk avgjørelse, skal kunne få vite hvilke regler dataprogrammet bygger avgjørelsen på (Tidemann & Arnesen, 2026). Algokratiet truer likevel med å gjøre makten usynlig og utilgjengelig for borgerne, og det forutsetter at målene som legges inn i maskinen er de riktige til å begynne med."
         },
         {
             "type": "component",
@@ -101,7 +102,7 @@
         },
         {
             "type": "paragraph",
-            "content": "Nært knyttet til teknokratiet er ideen om meritokrati – at de som har mest evner og gjør størst innsats, skal ha mest makt. Dette høres rettferdig ut for de fleste. Men sosiologer advarer om at dette kan skape en ny, arrogant elite. Hvis de som styrer mener de er der utelukkende på grunn av egen dyktighet, kan de miste empati med de som faller utenfor. De kan begynne å tro at deres suksess er tegnet på at de har rett i alt, noe som skaper en ny form for klasseskille mellom de med høy utdanning og resten av befolkningen."
+            "content": "Nært knyttet til teknokratiet er ideen om meritokrati - at makt og autoritet fordeles etter de evnene og ferdighetene folk har (Berg, 2026). Dette høres rettferdig ut for de fleste. Selve ordet ble popularisert av sosiologen Michael Young i boken The Rise of the Meritocracy fra 1958, og allerede da var det ment som en advarsel (Berg, 2026). Poenget er at meritokratiske normer virker demokratiserende når de river ned arvede privilegier, men avdemokratiserende når de rettferdiggjør et nytt privilegiekriterium: dyktighet eller intelligens (Berg, 2026). Hvis de som styrer mener de er der utelukkende på grunn av egen dyktighet, kan de miste empati med dem som faller utenfor, og det vokser frem et nytt klasseskille mellom de med høy utdanning og resten av befolkningen."
         },
         {
             "type": "component",
@@ -121,13 +122,13 @@
         },
         {
             "type": "paragraph",
-            "content": "Men prisen vi betaler er vår egen myndighet. I et demokrati er det vi som er premissleverandørene; det er våre feil og våre suksesser. I et teokrati eller teknokrati blir vi pasienter eller tilbedere fremfor politiske borgere. De to systemene minner oss på at hvis vi ønsker å beholde folkestyret, må vi også akseptere at det ikke finnes noen enkel formel for å styre et land, og at vi må tåle uenigheten som følger med det å være frie mennesker."
+            "content": "Men prisen vi betaler er vår egen myndighet. I et demokrati er det vi som er premissleverandørene; det er våre feil og våre suksesser. I et teokrati eller teknokrati blir vi pasienter eller tilbedere fremfor politiske borgere. Abraham Lincoln sa det slik i en tale i Peoria i 1854: intet menneske er godt nok til å styre et annet menneske uten dette menneskets samtykke (Lincoln, 1854). De to systemene minner oss på at hvis vi ønsker å beholde folkestyret, må vi også akseptere at det ikke finnes noen enkel formel for å styre et land, og at vi må tåle uenigheten som følger med det å være frie mennesker."
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
-                "text": "Intet menneske er klokt nok til å styre et annet menneske uten dettes samtykke.",
+                "text": "Intet menneske er godt nok til å styre et annet menneske uten dettes samtykke.",
                 "author": "Abraham Lincoln"
             }
         },
@@ -172,7 +173,7 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva betyr ordet teokrati, og hvilke to greske ord kommer det fra?",
+                    "Hva betyr ordet teokrati, og hvem var det som laget ordet?",
                     "Hvem har det siste ordet i alle saker i Iran etter revolusjonen i 1979?",
                     "Hva betyr begrepet algokrati, ifølge teksten?",
                     "Nevn to eksempler fra teksten på at vi har ekspertstyre i hverdagen i vanlige demokratier."
@@ -184,9 +185,26 @@
                     "Hva menes med den sorte boksen-effekten, og hvorfor gjør den algokrati farlig for vanlige borgere?"
                 ],
                 "gaaVidere": [
-                    "Algoritmer bestemmer allerede hvilke nyheter du ser og hvem som blir kalt inn til jobbintervju. Skriv en kort tekst om en gang du selv har blitt påvirket av en algoritme, og om du synes det var rettferdig.",
-                    "Teksten sier at meritokrati kan skape en ny, arrogant elite som mister empati med de som faller utenfor. Diskuter med en medelev om du er enig i denne kritikken.",
+                    "Algoritmer er allerede med på å bestemme hvilket innhold du får se, og kunstig intelligens brukes i jobbrekruttering. Skriv en kort tekst om en gang du selv har blitt påvirket av en algoritme, og om du synes det var rettferdig.",
+                    "Teksten sier at meritokrati kan skape en ny elite som mister empati med dem som faller utenfor. Diskuter med en medelev om du er enig i denne kritikken.",
                     "Se for deg at et AI-system skal styre byplanleggingen i din kommune. Skriv en kort tekst der du sammenligner fordelene og farene ved dette med hvordan folkevalgte politikere styrer i dag."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Berg, O. T. (2026). *Meritokrati*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/meritokrati](https://snl.no/meritokrati)",
+                    "Bøe, M. H. & Berg, O. T. (2026). *Irans politiske system*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Irans_politiske_system](https://snl.no/Irans_politiske_system)",
+                    "Hofstad, K. (2025). *Teknokrati*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/teknokrati](https://snl.no/teknokrati)",
+                    "Kværne, P. (2025). *Teokrati*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/teokrati](https://snl.no/teokrati)",
+                    "Lima, G. & Stensvold, A. (2026). *Vatikanstaten*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Vatikanstaten](https://snl.no/Vatikanstaten)",
+                    "Lincoln, A. (1854). *Speech on the Repeal of the Missouri Compromise (Peoria Address)*. Teaching American History. Hentet 09.08.2026 fra [teachingamericanhistory.org](https://teachingamericanhistory.org/document/speech-on-the-repeal-of-the-missouri-compromise-3/)",
+                    "Orgeret, K. S. & Dvergsdal, H. (2025). *Filterboble*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/filterboble](https://snl.no/filterboble)",
+                    "Stoltz, G., Meinich, P., Gram, T. & Thomassen, E. (2025). *Norges Bank*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/Norges_Bank](https://snl.no/Norges_Bank)",
+                    "Tidemann, A. & Arnesen, L. (2026). *Kunstig intelligens*. Store norske leksikon. Hentet 09.08.2026 fra [snl.no/kunstig_intelligens](https://snl.no/kunstig_intelligens)"
                 ]
             }
         }
