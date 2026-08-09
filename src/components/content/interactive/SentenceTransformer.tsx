@@ -65,7 +65,8 @@ export const SentenceTransformer = ({
     const toggle = (techId: string) => {
         setActiveMap((prev) => {
             const cur = new Set(prev[s.id] ?? []);
-            cur.has(techId) ? cur.delete(techId) : cur.add(techId);
+            if (cur.has(techId)) cur.delete(techId);
+            else cur.add(techId);
             if (cur.size === s.sweetSpot && !celebrated.has(s.id)) {
                 setCelebrated((c) => new Set(c).add(s.id));
                 confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });

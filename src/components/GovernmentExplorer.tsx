@@ -218,9 +218,6 @@ export const GovernmentExplorer: React.FC<GovernmentExplorerProps> = ({ lesson }
 
 export default GovernmentExplorer;
 
-// Safelist for dynamic classes to ensure Tailwind generates them
-export const safelist = [
-    'via-pink-600', 'via-yellow-600', 'via-red-600', 'via-purple-600', 'via-cyan-600',
-    'via-orange-600', 'via-green-600', 'via-blue-600', 'via-emerald-600', 'via-rose-600',
-    'via-indigo-600', 'via-indigo-700', 'via-slate-600', 'via-red-700'
-];
+// Tailwind-safelista for de dynamiske gradientklassene ligger i
+// ./governmentExplorerSafelist.ts (en komponentfil skal bare eksportere
+// komponenter — ellers mister Vite fast refresh for hele fila).

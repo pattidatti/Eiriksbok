@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Clock, Shield, Sword, Trophy, History, Crown, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { usePageTitle } from '../hooks/usePageTitle';
-import { TimeTravelProfileProvider, useTimeTravelProfile } from '../components/chronos/context/TimeTravelProfileContext';
+import { useTimeTravelProfile } from '../components/chronos/context/TimeTravelProfileContext';
+import { TimeTravelProfileProvider } from '../components/chronos/context/TimeTravelProfileProvider';
 import type { ChronosRunLog } from '../data/chronos/types';
 
 export const TimeTravelPage: React.FC = () => {

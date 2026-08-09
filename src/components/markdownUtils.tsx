@@ -26,7 +26,7 @@ export const renderInlineMarkdown = (text: string, concepts?: (Concept | Glossar
         return el.split(/(\[.*?\]\(.*?\))/g).map((part, i) => {
             const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
             if (linkMatch) {
-                const [_, linkText, linkUrl] = linkMatch;
+                const [, linkText, linkUrl] = linkMatch;
                 const isExternal = linkUrl.startsWith('http');
                 if (isExternal) {
                     return (

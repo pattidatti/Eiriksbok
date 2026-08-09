@@ -47,7 +47,7 @@ export const ScannerPage: React.FC = () => {
                     try {
                         const res = await fetch(`${import.meta.env.BASE_URL}${url}`);
                         if (res.ok) return await res.json();
-                    } catch (e) {
+                    } catch {
                         return null;
                     }
                 })
