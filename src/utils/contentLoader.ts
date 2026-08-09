@@ -1,4 +1,28 @@
-import type { Lesson, Manifest, Philosopher, ManifestLesson } from '../types';
+import type {
+    Lesson,
+    Manifest,
+    ManifestLesson,
+    ManifestSubject,
+    ManifestSubTopic,
+    ManifestTopic,
+    Philosopher,
+    Religion,
+    TopicTool,
+} from '../types';
+
+/**
+ * En hvilken som helst node i manifest-treet. Oppslagskartet under indekserer
+ * fag, emner, undertemaer, leksjoner og verktøy om hverandre - de deler `id`,
+ * og resten leses defensivt.
+ */
+type ManifestNode = Partial<
+    ManifestSubject & ManifestTopic & ManifestSubTopic & ManifestLesson & TopicTool
+> & { id?: string; subjects?: ManifestSubject[] };
+
+/** Ekstra opsjoner til fetchWithTimeout, i tillegg til vanlige fetch-opsjoner. */
+interface FetchOptions extends RequestInit {
+    timeout?: number;
+}
 
 // Kastes når en leksjon ikke finnes i noen tier. React Query skal IKKE
 // retrye denne (i motsetning til nettverksfeil) - se useLesson.
@@ -21,7 +45,7 @@ let globalManifestPromise: Promise<Manifest | null> | null = null;
 let cachedManifest: Manifest | null = null;
 let globalRegistryPromise: Promise<ContentIndex | null> | null = null;
 let cachedRegistry: ContentIndex | null = null;
-let manifestLookupMap: Map<string, any> | null = null;
+let manifestLookupMap: Map<string, ManifestNode> | null = null;
 
 // --- Versioning Logic ---
 /**
@@ -50,7 +74,7 @@ const getBasePath = () => {
     return rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 };
 
-const fetchWithTimeout = async (url: string, options: any = {}) => {
+const fetchWithTimeout = async (url: string, options: FetchOptions = {}) => {
     const { timeout = 8000 } = options;
     const controller = new AbortController();
     const id = setTimeout(() => controller.abort(), timeout);
@@ -133,12 +157,12 @@ export async function fetchManifest(): Promise<Manifest | null> {
             cachedManifest = data;
 
             // Build the O(1) lookup map
-            const map = new Map<string, ManifestLesson>();
-            const indexNodes = (nodes: any[]) => {
+            const map = new Map<string, ManifestNode>();
+            const indexNodes = (nodes: ManifestNode[]) => {
                 for (const node of nodes) {
                     if (node.id) map.set(node.id, node);
 
-                    const children = [
+                    const children: (ManifestNode[] | undefined)[] = [
                         node.lessons, node.topics, node.subTopics,
                         node.tools, node.subjects
                     ];
@@ -280,8 +304,8 @@ export async function fetchLesson(subject: string, topic: string, lessonId: stri
     // --- TIER 2: MANIFEST AUTHORITY (Robustness) ---
     if (manifestLookupMap) {
         const node = manifestLookupMap.get(lessonId);
-        if (node && (node as any).link) {
-            let path = (node as any).link.startsWith('/') ? (node as any).link.slice(1) : (node as any).link;
+        if (node?.link) {
+            let path = node.link.startsWith('/') ? node.link.slice(1) : node.link;
             if (!path.startsWith('http') && !path.startsWith('content/')) {
                 path = `content/${path}`;
             }
@@ -320,9 +344,9 @@ export async function fetchLesson(subject: string, topic: string, lessonId: stri
 }
 
 
-function enrichLessonWithMetadata(data: Lesson, manifestNode: ManifestLesson) {
+function enrichLessonWithMetadata(data: Lesson, manifestNode: ManifestNode) {
     if (manifestNode.definitions) {
-        const newConcepts = manifestNode.definitions.map((def: any, index: number) => ({
+        const newConcepts = manifestNode.definitions.map((def, index) => ({
             id: `concept-${index}`, term: def.term, definition: def.definition
         }));
         data.concepts = [...(data.concepts || []), ...newConcepts];
@@ -338,7 +362,7 @@ function enrichLessonWithMetadata(data: Lesson, manifestNode: ManifestLesson) {
 
 // --- Specialized Loaders (Maintain compatibility but use registry eventually if needed) ---
 
-export async function fetchReligion(id: string): Promise<any | null> {
+export async function fetchReligion(id: string): Promise<Religion | null> {
     try {
         const basePath = getBasePath();
         const cleanId = id.replace(/\.json$/, '').split('/').pop();
@@ -346,7 +370,7 @@ export async function fetchReligion(id: string): Promise<any | null> {
         if (!response.ok) return null;
         const data = await response.json();
         // Religions-JSON-ene mangler id-felt; injiser fra filnavnet
-        return { id: cleanId, ...data };
+        return { id: cleanId, ...data } as Religion;
     } catch (error) {
         console.error("Error loading religion:", error);
         return null;
