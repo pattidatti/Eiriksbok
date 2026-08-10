@@ -16,6 +16,7 @@
 * **Rute:** `/krle/sammenligning` → artikler på `/krle/sammenligning/<slug>`
 * **Filmappe:** `public/content/krle/sammenligning/`
 * **Målgruppe:** 10. trinn (LK20, RLE01-03)
+* **Søsterdokument:** `docs/KRLE_OPPRUSTNING.md` — arbeidslista for å løfte de eksisterende KRLE-artiklene opp på plan_article-standard. De to dokumentene bygges i takt; se §9.4.
 * **Visual Theme:** `Ni tråder, ett vev` — lys glassbakgrunn (`bg-slate-50`) med ni faste fargetråder hentet fra `public/data/religion/*.json`, slik at samme religion har samme farge overalt i boka.
 
 | Religion | Farge | Gruppe |
@@ -76,29 +77,31 @@ Det nye emnet erstatter ikke dette — det leverer det maskinen ikke kan:
 
 ## 3. The Learning Path (The Spine)
 
-De 17 temaene i prioritert byggerekkefølge, pluss stiene. Kolonnen «Kilder» = hvor mange av de ni religionene som allerede har en per-religion-artikkel å lenke til.
+De 17 temaene i prioritert byggerekkefølge, pluss stiene. Kolonnen «Kilder» = hvor mange av de ni religionene som har en per-religion-artikkel å lenke til, og hvilken kvalitet de faktisk holder (`ferdig / halv / stub`, målt 2026-08-10 — se `docs/KRLE_OPPRUSTNING.md`). Kolonnen «Samisk» merker temaene der samisk religion kommer inn som gjestestemme.
 
-| # | Slug | Tittel | Smart-dimensjon | Kilder | LK20 |
-|---|---|---|---|---|---|
-| 1 | `skapelse` | Hvor kommer alt fra? | Narrative | 2/9 | 1, 13 |
-| 2 | `gudsbilde` | Én, mange eller ingen gud? | Doctrinal | 8/9 | 1, 6 |
-| 3 | `bonn` | Å snakke med det hellige | Ritual + Experiential | 8/9 | 1, 13 |
-| 4 | `overgangsriter` | Fra vugge til grav | Ritual | 9/9 | 1, 13 |
-| 5 | `doden` | Hva skjer når vi dør? | Doctrinal + Narrative | 8/9 | 13 |
-| 6 | `frelse` | Målet med det hele | Doctrinal | 8/9 | 6, 13 |
-| 7 | `hellige-tekster` | Bøkene som styrer liv | Narrative + Doctrinal | 9/9 | 6, 7 |
-| 8 | `grunnleggere` | Menneskene bak | Narrative | 9/9 | 10 |
-| 9 | `etikk-og-leveregler` | Hva er et godt liv? | Ethical | 0/9 | 10, 15 |
-| 10 | `hoytider` | Den hellige kalenderen | Ritual | delvis¹ | 1, 9 |
-| 11 | `hellige-rom` | Rommene vi bygger for det hellige | Material | 0/9 | 1 |
-| 12 | `symboler-og-klaer` | Tro du kan se | Material | delvis¹ | 1, 9 |
-| 13 | `mat-og-renhet` | Hva får du spise? | Ritual + Ethical | delvis¹ | 1 |
-| 14 | `kjonn-og-roller` | Kjønn, roller og likeverd | Social + Ethical | 0/9 | 8, 12 |
-| 15 | `ledelse-og-fellesskap` | Hvem bestemmer? | Social | 0/9 | 1, 4 |
-| 16 | `pilegrim` | Reisen til det hellige | Material + Experiential | 0/9 | 1 |
-| 17 | `lidelse` | Hvorfor finnes det vondt? | Doctrinal + Experiential | 0/9 | 13, 15 |
+| # | Slug | Tittel | Smart-dimensjon | Kilder | Kvalitet | Samisk | LK20 |
+|---|---|---|---|---|---|:-:|---|
+| 1 | `skapelse` | Hvor kommer alt fra? | Narrative | 2/9 | 0F / 1H / 1S | ✅ | 1, 13 |
+| 2 | `gudsbilde` | Én, mange eller ingen gud? | Doctrinal | 8/9 | 0F / 1H / 7S | | 1, 6 |
+| 3 | `bonn` | Å snakke med det hellige | Ritual + Experiential | 8/9 | 0F / 1H / 7S | | 1, 13 |
+| 4 | `overgangsriter` | Fra vugge til grav | Ritual | 9/9 | 1F / 1H / 7S | | 1, 13 |
+| 5 | `doden` | Hva skjer når vi dør? | Doctrinal + Narrative | 8/9 | 1F / 1H / 7S | ✅ | 13 |
+| 6 | `frelse` | Målet med det hele | Doctrinal | 8/9 | 0F / 1H / 7S | | 6, 13 |
+| 7 | `hellige-tekster` | Bøkene som styrer liv | Narrative + Doctrinal | 9/9 | 0F / 1H / 8S | | 6, 7 |
+| 8 | `grunnleggere` | Menneskene bak | Narrative | 9/9 | 0F / 1H / 8S | | 10 |
+| 9 | `etikk-og-leveregler` | Hva er et godt liv? | Ethical | 0/9 | — | ✅ | 10, 15 |
+| 10 | `hoytider` | Den hellige kalenderen | Ritual | delvis¹ | 1F | ✅ | 1, 9 |
+| 11 | `hellige-rom` | Rommene vi bygger for det hellige | Material | 0/9 | — | ✅ | 1 |
+| 12 | `symboler-og-klaer` | Tro du kan se | Material | delvis¹ | 1F | | 1, 9 |
+| 13 | `mat-og-renhet` | Hva får du spise? | Ritual + Ethical | delvis¹ | 1F | | 1 |
+| 14 | `kjonn-og-roller` | Kjønn, roller og likeverd | Social + Ethical | 0/9 | — | | 8, 12 |
+| 15 | `ledelse-og-fellesskap` | Hvem bestemmer? | Social | 0/9 | — | | 1, 4 |
+| 16 | `pilegrim` | Reisen til det hellige | Material + Experiential | 0/9 | — | | 1 |
+| 17 | `lidelse` | Hvorfor finnes det vondt? | Doctrinal + Experiential | 0/9 | — | ✅ | 13, 15 |
 
 ¹ Har allerede en tverrgående artikkel under `krle/religion-og-kultur/` (`hoytider-og-kultur`, `symboler-og-klaer`, `mat-og-religion`). Disse skal **ikke** dupliseres — se §9.3.
+
+> **Advarsel om kildekvalitet.** Kolonnen «Kilder» sier bare at det *finnes* en artikkel, ikke at den duger. Kvalitetskolonnen viser realiteten: nesten alle kildeartiklene er stubber på 60–90 ord uten komponenter eller kilder. Et tema regnes derfor ikke som ferdig før kildeartiklene er opprustet — se koblingen i §9.4 og arbeidslista i `docs/KRLE_OPPRUSTNING.md`.
 
 **Læringsstier (registreres under `tools[]`, ikke `lessons[]`):**
 
@@ -147,6 +150,7 @@ Alle filer: `public/content/krle/sammenligning/<slug>.json`
   * [ ] **The Resolution:** Alle fortellingene svarer på det samme: hvorfor er vi her, og hva skal vi gjøre med det?
 * **Signaturkomponent:** `SkapelsesVeven`
 * **Livssynshumanisme:** ja — «Og de som ikke tror?» (Big Bang som fortelling uten hensikt)
+* **Gjestestemme samisk:** ja — verden i tre lag, og landskapet selv som besjelet
 * **Merknad:** Krever nye kildeartikler for de øvrige religionene. Bygges i fase 2.
 
 ### Article 2: Én, mange eller ingen gud? (`gudsbilde`)
@@ -198,6 +202,7 @@ Alle filer: `public/content/krle/sammenligning/<slug>.json`
   * [ ] **The Resolution:** Begge svarer på: er urettferdighet det siste ordet?
 * **Signaturkomponent:** `EtterlivsKartet`
 * **Livssynshumanisme:** ja
+* **Gjestestemme samisk:** ja — de dødes rike under bakken, og reglene for hvordan graven skal legges
 
 ### Article 6: Målet med det hele (`frelse`)
 
@@ -242,6 +247,7 @@ Alle filer: `public/content/krle/sammenligning/<slug>.json`
 * **Comparison Hook:** «Nesten alle religioner har funnet fram til den samme setningen, uavhengig av hverandre: gjør mot andre det du vil at de skal gjøre mot deg.»
 * **Signaturkomponent:** `GyllenRegelVeven`
 * **Livssynshumanisme:** ja
+* **Gjestestemme samisk:** ja — ta bare det du trenger, og gi tilbake til stedet
 * **Kobling:** lenker til `krle/etikk/`-artiklene (pliktetikk, utilitarisme, dygdsetikk)
 
 ### Article 10: Den hellige kalenderen (`hoytider`)
@@ -250,6 +256,7 @@ Alle filer: `public/content/krle/sammenligning/<slug>.json`
 * **Dimension:** `ritual` · **LK20:** 1, 9 · **Kilder:** eksisterende `krle/religion-og-kultur/hoytider-og-kultur`
 * **Comparison Hook:** «Måneåret er elleve dager kortere enn solåret. Derfor flytter ramadan seg gjennom årstidene, mens julen står stille.»
 * **Signaturkomponent:** `HelligKalender` (sirkulært årshjul, sol- mot måneår)
+* **Gjestestemme samisk:** ja — de åtte årstidene og reinens år, en kalender styrt av dyret og lyset
 
 ### Article 11: Rommene vi bygger for det hellige (`hellige-rom`)
 
@@ -257,6 +264,7 @@ Alle filer: `public/content/krle/sammenligning/<slug>.json`
 * **Dimension:** `material` · **LK20:** 1 · **Kilder:** 0/9
 * **Comparison Hook:** «En moské har ingen bilder. En ortodoks kirke er dekket av dem. Begge vil vise deg det samme.»
 * **Signaturkomponent:** gjenbruk av mikrospill (`Bedehuset3D`, `LalibelaKirke3D`, `TempeletsRenselse3D`) + `RommetsGrammatikk`
+* **Gjestestemme samisk:** ja — sieidi og hellige fjell. Det sterkeste poenget i temaet: en helligdom man ikke bygger, men finner.
 
 ### Article 12: Tro du kan se (`symboler-og-klaer`)
 
@@ -301,6 +309,7 @@ Alle filer: `public/content/krle/sammenligning/<slug>.json`
 * **Comparison Hook:** «Hvis Gud er god og allmektig, hvorfor finnes det barn som sulter? Buddhismen svarer ikke på spørsmålet — den avviser premisset.»
 * **Signaturkomponent:** `TeodicéVerkstedet`
 * **Livssynshumanisme:** ja
+* **Gjestestemme samisk:** ja — her hører også fornorskningen hjemme: hva skjer med et folks tro når den blir forbudt?
 * **Merknad:** Emnets tyngste tema. Plasseres sist med vilje — krever at eleven kan begrepene fra artikkel 2, 5 og 6.
 
 ---
@@ -346,6 +355,34 @@ Alle filer: `public/content/krle/sammenligning/<slug>.json`
 | **Material** | Ni-kantede hus, ingen bilder | Templer, Mormons bok | Rikets sal, Vakttårnet |
 
 > **Merk:** Bahá'í springer ut av sjia-islam, mens mormonisme og Jehovas vitner springer ut av kristendommen. Grupperingen «nyere bevegelser» er en pedagogisk forenkling og skal forklares for eleven første gang den brukes.
+
+### 5.4 Gjestestemme: samisk religion
+
+Samisk religion står utenfor de ni faste sporene, men kommer inn som **gjestestemme** i seks av temaene. Det dekker LK20-mål 5 — «gjøre rede for og reflektere over samenes og andre urfolks religions- og livssynstradisjoner» — uten å kreve sytten nye samiske kildeartikler på et tynt kildegrunnlag.
+
+**Temaer med samisk seksjon:** `skapelse`, `doden`, `hoytider`, `hellige-rom`, `etikk-og-leveregler`, `lidelse`.
+**Temaer uten:** de øvrige elleve. Der finnes det ikke nok solid kildemateriale til å si noe presist, og en tynn seksjon ville vært verre enn ingen.
+
+**Kildegrunnlag:** `public/content/krle/religion/samisk/intro.json` (818 ord, egen signaturkomponent) og `laestadianismen.json` (1240 ord, komplett hale). Begge holder plan_article-standard allerede — samisk er faktisk bedre dekket enn seks av de ni hovedreligionene.
+
+| Dimensjon | Samisk religion |
+|---|---|
+| **Ritual** | Offer ved sieidi, runebomme (goavddis) brukt av noaiden, bjørnegraven med egne regler for hvordan byttet skulle behandles |
+| **Narrative** | Solguden Beaivi og hans døtre, Máttaráhkká og de tre datter-gudinnene som følger mennesket fra unnfangelse til fødsel, Stállu-fortellingene |
+| **Experiential** | Joik som måte å *være* noen eller noe på, ikke synge *om* det. Noaidens reise mellom verdener. |
+| **Social** | Siida-fellesskapet, noaiden som spesialist framfor prest, ingen skriftlig lære eller organisert presteskap |
+| **Ethical** | Ta bare det du trenger, gi tilbake til stedet, respekt for dyret du feller |
+| **Doctrinal** | Alt har sjel, verden i tre lag, ingen skarp grense mellom menneske, dyr og landskap |
+| **Material** | Sieidi-steiner og hellige fjell, runebommen, gievrie-symboler, landskapet selv som helligdom |
+
+**Egen toneregel for samisk innhold** — kommer i tillegg til reglene i §2.2:
+
+1. **Ikke fortid.** Samisk religiøs tradisjon lever videre i språk, joik, stedsnavn og praksis. Skriv «mange samer», ikke «samene trodde».
+2. **Undertrykkelsen skal nevnes** der den er relevant. Runebommer ble brent, sieidier ødelagt, joik forbudt i skolen. Det er en del av historien, ikke en fotnote — men det skal fortelles nøkternt, ikke sentimentalt.
+3. **Laestadianismen er ikke det samme som førkristen samisk religion.** Den er en kristen vekkelsesbevegelse med sterk samisk forankring. Hold de to fra hverandre.
+4. **Bruk samiske ord** med forklaring: *noaidi*, *sieidi*, *siida*, *joik*, *gievrie*. De er fagbegreper på linje med *salat* og *moksha*.
+
+**Kilder som må hentes ved bygging:** Store norske leksikon (samisk religion, noaidi, sieidi), Sametinget, RiddoDuottarMuseat / Samisk museum. Følg kilde-først-regelen i `plan_article`.
 
 ---
 
@@ -503,12 +540,13 @@ Fil: `public/content/krle/sammenligning/<slug>.json`
 | 3 | `component` | **Signaturkomponenten** — tidlig, mens nysgjerrigheten er høy |
 | 4 | `header` + `text` ×3 | Én seksjon per **gruppe** (abrahamittiske / indiske / nyere), ikke per religion |
 | 5 | `header` + `text` + `list` | **Mønsteret** — hva ligner, hva skiller, hvorfor |
-| 6 | `component: MicroGame` | Der et passende mikrospill finnes |
-| 7 | `text` | «Og de som ikke tror?» — livssynshumanisme, i utvalgte temaer |
-| 8 | `component: FactBox` | «Se rådataene» — lenke til `/krle/sammenlign/tema/<slug>` |
-| 9 | `component: Oppgaver` | Bloom-trapp: Forstå / Reflekter / Gå videre |
-| 10 | `component: Quiz` | 3–5 spørsmål |
-| 11 | `component: Kildeliste` | APA-formaterte kilder |
+| 6 | `header` + `text` | **Gjestestemmen** — samisk religion, i de seks temaene i §5.4 |
+| 7 | `component: MicroGame` | Der et passende mikrospill finnes |
+| 8 | `text` | «Og de som ikke tror?» — livssynshumanisme, i utvalgte temaer |
+| 9 | `component: FactBox` | «Se rådataene» — lenke til `/krle/sammenlign/tema/<slug>` |
+| 10 | `component: Oppgaver` | Bloom-trapp: Forstå / Reflekter / Gå videre |
+| 11 | `component: Quiz` | 3–5 spørsmål |
+| 12 | `component: Kildeliste` | APA-formaterte kilder |
 
 **Regler (fra `CLAUDE.md`):** flat `content`-array, ingen nøstede `section`-blokker, aldri `**fet**` i brødtekst, aldri markdown-lister i `text` — bruk `{ "type": "list" }`. `timeline` alltid `[]`.
 
@@ -580,11 +618,15 @@ Bygges i fase 4, når det finnes 3–4 temaartikler å peke på.
 
 ### 9.1 Datahygiene funnet under kartleggingen (bør ryddes i fase 1)
 
-| Funn | Detalj | Foreslått tiltak |
-|---|---|---|
-| Uregistrert artikkel | `public/content/krle/religion/islam/skapelse/artikkel.json` finnes på disk, men mangler i `manifest.json`. Usynlig i navigasjonen, men plukkes opp av comparison-manifestet. | Legg til i `manifest.json` under `krle → religion → islam` |
-| Mulig brutt lenke | Manifestet registrerer sikhisme-lesson `intro`, men mappa på disk heter `introduksjon/` | Verifiser ruten `/krle/religion/sikhisme/intro`, rett navnet ett av stedene |
-| Ujevn dekning | Sikhisme mangler `bonn`, `frelse` og `gudsbilde` — de tre temaene der de øvrige åtte har full dekning | Skriv de tre artiklene, gjerne som egen liten runde |
+Full bugliste med foreslåtte fikser står i `docs/KRLE_OPPRUSTNING.md` §7. Kort versjon:
+
+| # | Funn | Detalj | Tiltak |
+|---|---|---|---|
+| B1 | **Seks tomme intro-sider** | `religion/{bahai,buddhisme,hinduisme,jehovas-vitner,jodedom,mormonisme}/intro.json` bruker `ingress` + `body` i stedet for `content`. Ingen renderer leser `body` — sidene laster tomme. | Konverter til flat `content`-array |
+| B2 | **Ødelagt blokk-skjema** | `islam/bonn` og `islam/skapelse` skriver `{"name": "text"}` i stedet for `{"type": "text"}`. Eneste blokker i KRLE uten `type`. Bruker også eksterne Unsplash-URL-er. | Bytt `name` → `type`, erstatt eksterne bilder |
+| B3 | **Uregistrert artikkel** | `islam/skapelse/artikkel.json` finnes på disk, men mangler i `manifest.json`. Usynlig i navigasjonen, men plukkes opp av comparison-manifestet. | Legg til under `krle → religion → islam` |
+| B4 | **Mulig brutt lenke** | Manifestet registrerer sikhisme-lesson `intro`, men mappa heter `introduksjon/` | Verifiser ruten, rett navnet ett av stedene |
+| — | **Ujevn dekning** | Sikhisme mangler `bonn`, `frelse` og `gudsbilde` — de tre temaene der de øvrige åtte har artikkel | Skriv de tre i R3 og R5 |
 
 ### 9.2 `generate-comparison-manifest.mjs`
 
@@ -596,19 +638,23 @@ Tre temaer (`hoytider`, `symboler-og-klaer`, `mat-og-renhet`) har allerede en ar
 
 ### 9.4 Faseplan
 
-| Fase | Leveranse | Status |
-|---|---|---|
-| **0** | **Denne blueprinten** | ✅ |
-| 1 | Manifest-topic `sammenligning` + datahygiene (§9.1) + pilotartikkel `skapelse` + komponenten `SkapelsesVeven` | |
-| 2 | `skapelse`-kildeartikler for øvrige religioner + `skapelse-sti` | |
-| 3 | Tema 2–4 (`gudsbilde`, `bonn`, `overgangsriter`) med signaturkomponenter | |
-| 4 | Metode-stien `sammenligning-sti` | |
-| 5 | Tema 5–8 + `gudsbilde-sti` og `bonn-sti` | |
-| 6 | Tema 9–13 + `doden-sti` | |
-| 7 | Tema 14–17 (de faglig tyngste) | |
-| 8 | Bildeproduksjon for hele emnet | |
+Hver fase leverer **både** noe nytt i sammenligningsemnet **og** opprustningen av kildeartiklene det temaet lener seg på. Opprustningsrundene (R0–R7) er definert i `docs/KRLE_OPPRUSTNING.md` §5.
+
+| Fase | Nytt i sammenligningsemnet | Opprustning i samme runde | Status |
+|---|---|---|---|
+| **0** | **Denne blueprinten** + `KRLE_OPPRUSTNING.md` | — | ✅ |
+| 1 | Manifest-topic `sammenligning` + pilotartikkel `skapelse` + `SkapelsesVeven` | **R0**: bugene B1–B4 (9 filer) | |
+| 2 | `skapelse-sti` | **R1**: `skapelse` for de religionene som mangler den (8 artikler) | |
+| 3 | Tema 2–4 (`gudsbilde`, `bonn`, `overgangsriter`) med signaturkomponenter | **R2–R4**: kildeartiklene for de tre temaene (25 artikler) | |
+| 4 | Metode-stien `sammenligning-sti` | — | |
+| 5 | Tema 5–8 + `gudsbilde-sti` og `bonn-sti` | **R5**: `frelse`, `grunnleggere`, `hellige-tekster`, `sentrale-trekk` (33 artikler) | |
+| 6 | Tema 9–13 + `doden-sti` | **R6**: de 8 kristendom-artiklene i 325–396-båndet | |
+| 7 | Tema 14–17 (de faglig tyngste) | **R7**: 17 filosofi-artikler uten quiz og hale | |
+| 8 | Bildeproduksjon for hele emnet | — | |
 
 Hver fase er selvstendig komplett — ingenting står halvferdig mellom rundene.
+
+**Rekkefølgen innad i en fase:** sammenligningsartikkelen *blokkerer ikke* på kildeopprustningen (§9.5 punkt 3 gjelder fortsatt — den skrives så den står på egne ben). Men fasen regnes ikke som ferdig før kildeartiklene også er løftet, ellers lenker sammenligningen ned i 60-ords stubber.
 
 ### 9.5 Forutsetninger satt uten brukerbekreftelse
 
@@ -622,8 +668,9 @@ Disse ble valgt for å komme videre og kan overstyres:
 
 1. Skal `/krle/sammenligning` ha en egen landingsside med visuell temaoversikt, eller holder standard emneside fra manifestet?
 2. Skal temachipsene på `/krle/sammenlign` lenke til den skrevne artikkelen når en slik finnes?
-3. Samisk religion og historiske religioner står utenfor de ni. Skal de inn som gjestestemmer i utvalgte temaer (særlig `skapelse` og `doden`), der LK20-mål 5 om urfolks tradisjoner treffer?
+3. ~~Samisk religion og historiske religioner står utenfor de ni. Skal de inn som gjestestemmer?~~ **Avklart 2026-08-10:** samisk religion kommer inn som gjestestemme i seks utvalgte temaer — se §5.4. Historiske religioner holdes utenfor foreløpig.
 4. Skal emnet ha en egen quiz-battle-pakke eller flashcard-sett på tvers av temaene?
+5. Skal mikrospill-kravet i plan_article gjelde absolutt alle de 89 artiklene som skal opprustes? Se omfangsdrøftingen i `docs/KRLE_OPPRUSTNING.md` §5. Vurderes etter de første 8–10 artiklene.
 
 ---
 
