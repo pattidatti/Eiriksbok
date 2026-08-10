@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Eventyr er en av de eldste fortellerformene vi har. Lenge før vi fikk et skriftspråk, satt folk rundt leirbålene og fortalte hverandre historier om troll, prinsesser, helter og magiske hjelpere. Ordet eventyr kommer fra latin *adventura*, som betyr «hendelse» eller «opplevelse». Eventyrene er fantastiske fortellinger som ikke utgir seg for å være sanne, men som likevel ofte forteller oss noe sant om livet, om moral og om det å være menneske."
+            "content": "Eventyr er en av de eldste fortellerformene vi har. Lenge før vi fikk et skriftspråk, satt folk rundt leirbålene og fortalte hverandre historier om troll, prinsesser, helter og magiske hjelpere. Ordet eventyr kommer fra latin *adventura*, som betyr «en underfull hendelse» (Esborg mfl., 2026). Eventyrene er fantastiske fortellinger som ikke utgir seg for å være sanne, men som likevel ofte forteller oss noe sant om livet, om moral og om det å være menneske."
         },
         {
             "type": "header",
@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Vi skiller vanligvis mellom to hovedtyper eventyr:\n\nFolkeeventyr har ingen kjent forfatter. De har levd på folkemunne i generasjoner, og blitt fortalt videre fra foreldre til barn. Derfor finnes de ofte i mange ulike varianter. I Norge reiste Peter Christen Asbjørnsen og Jørgen Moe rundt på 1800-tallet og samlet inn disse fortellingene, som vi i dag kjenner som *Asbjørnsen og Moes norske folkeeventyr*.\n\nKunsteventyr har en navngitt forfatter. H.C. Andersen er kanskje verdens mest kjente eventyrforfatter. Kunsteventyr bruker ofte mange av de samme trekkene som folkeeventyrene, men de kan være mer personlige, ha et mer komplisert språk, og de ender ikke alltid lykkelig."
+            "content": "Vi skiller vanligvis mellom to hovedtyper eventyr:\n\nFolkeeventyr har ingen kjent forfatter. De har levd på folkemunne i generasjoner og er delt over store avstander og lange tidsspenn i mange ulike varianter (Esborg mfl., 2026). I Norge begynte Peter Christen Asbjørnsen og Jørgen Moe å samarbeide i 1837. De reiste rundt i landet og samlet inn eventyr og segner, og det første heftet av *Norske Folkeeventyr* kom ut i desember 1841 (Kvideland & Beyer, 2024).\n\nKunsteventyr har en navngitt forfatter. H.C. Andersen er verdenskjent for eventyrene sine, og de er oversatt til nesten 150 språk (Undheim, 2025). Kunsteventyr bruker ofte mange av de samme trekkene som folkeeventyrene, men de kan være mer personlige, ha et mer komplisert språk, og de ender ikke alltid lykkelig."
         },
         {
             "type": "header",
@@ -24,18 +24,18 @@
         },
         {
             "type": "text",
-            "content": "Eventyr følger ofte faste mønstre og regler. Dette gjorde dem lettere å huske for de som skulle fortelle dem videre."
+            "content": "Eventyr følger faste mønstre og regler. Gjentakelse er et viktig stilgrep, og folkloristen Axel Olrik kalte det den episke tretallsloven: hendelser blir gjerne gjentatt tre ganger (Esborg mfl., 2026). Mønstrene gjorde fortellingen lettere å huske for den som skulle fortelle den videre (Møller, 2021)."
         },
         {
             "type": "list",
             "items": [
-                "**Innledning og avslutning:** De fleste starter med «Det var en gang...» og slutter med «...og så levde de lykkelig alle sine dager» eller «snipp, snapp, snute, så er eventyret ute».",
-                "**Tid og sted:** Handlingen skjer i en ubestemt tid («i gamle dager») og på et ubestemt sted («i et land langt, langt borte», «øst for sol og vest for måne»).",
-                "**Tretallsloven:** Ting skjer ofte tre ganger. Helten må gjennom tre prøver, det er tre brødre, eller tre troll.",
-                "**Magiske tall:** I tillegg til 3, går tallene 7 (de syv hjelpere, sjuende far i huset) og 12 igjen.",
-                "**Typetegning:** Personene er ikke individer med sammensatte følelser, men typer. De er enten gode eller onde, dumme eller smarte, vakre eller stygge. Helten (ofte Askeladden) er god, hjelpsom og smart.",
-                "**Det overnaturlige:** Troll, hekser, drager, snakkende dyr og magiske gjenstander er en naturlig del av eventyrverdenen.",
-                "**Moral:** Det gode seirer alltid til slutt, og det onde får sin straff. Den som er snill og hjelpsom, vinner prinsessen og halve kongeriket."
+                "**Innledning og avslutning:** De fleste starter med «Det var en gang...» og slutter med «Så levde de lykkelig alle sine dager» eller «Snipp snapp snute, så er eventyret ute». Sluttformelen kaller tilhøreren tilbake fra eventyrverdenen.",
+                "**Tid og sted:** Eventyrene er verken tidfestet eller stedfestet. Handlingen skjer «i gamle dager» og «i et land langt, langt borte».",
+                "**Tretallsloven:** Ting skjer ofte tre ganger. Det er tre brødre, tre prinsesser eller tre like prøver, og gjentakelsene bygges opp etter en stigende skala.",
+                "**Magiske tall:** I tillegg til 3 går tallene 7 og 12 igjen. Alle tre har vært magiske tall i uminnelige tider.",
+                "**Typetegning:** Personene er ikke sammensatte individer, men typer. Persontegningen er svart-hvitt: en karakter er enten snill eller slem, og utvikler seg ikke gjennom fortellingen.",
+                "**Det overnaturlige:** Overnaturlige vesener som troll og drager hører naturlig hjemme i eventyret, sammen med snakkende dyr og magiske gjenstander.",
+                "**Moral:** Folkeeventyret har sin egen logikk, der de gode får sin lønn og de onde straffes."
             ]
         },
         {
@@ -44,7 +44,7 @@
         },
         {
             "type": "text",
-            "content": "Selv om eventyrene er fulle av magi, handler de ofte om virkelige problemer. Mange eventyr er *dannelsesreiser*: En ung gutt eller jente må dra hjemmefra, overvinne farer og vanskeligheter (troll og monstre), for å bli voksen og selvstendig (vinne prinsessen/kongeriket). Trollene kan sees som symboler på de mørke kreftene i naturen, eller i menneskesinnet, som må overvinnes."
+            "content": "Selv om eventyrene er fulle av magi, følger de et mønster som handler om å vokse og bevise seg. Hovedpersonen blir satt på prøver og må løse oppgaver (Esborg mfl., 2026). Helten er ofte Askeladden, den yngste og mest foraktede, som tilsynelatende er dum og døsig helt til den rette tiden kommer. Da seirer han i alle prøvene og vinner kongsdatteren og halve riket (Store norske leksikon, 2024). Motstanderen er gjerne trollet, som holder til i fjell og skog og kommer fram i nattens mørke. Trollet er større og sterkere, men også dummere enn mennesket, og et kjent motiv i flere eventyr er nettopp trollet som blir overvunnet av en kløktig gutt (Schjøtner Skaar & Blix Hagen, 2026). Slik forteller eventyret oss at klokskap kan slå rå styrke."
         },
         {
             "type": "header",
@@ -57,7 +57,7 @@
         {
             "type": "list",
             "items": [
-                "[Piken med svovelstikkene](/norsk/bibliotek/piken-med-svovelstikkene) av H.C. Andersen – Et rørende kunsteventyr som skiller seg fra folkeeventyrene ved sin tragiske slutt og sosiale realisme."
+                "[Piken med svovelstikkene](/norsk/bibliotek/piken-med-svovelstikkene) av H.C. Andersen - Et rørende kunsteventyr som skiller seg fra folkeeventyrene ved sin tragiske slutt og sosiale realisme."
             ]
         },
         {
@@ -73,13 +73,27 @@
                 "reflekter": [
                     "Hvorfor tror du eventyr følger så faste mønstre, som «Det var en gang...» og tretallsloven? Tenk på at de ble fortalt videre muntlig.",
                     "I eventyr er personene typer og ikke sammensatte individer. Hvorfor er det lettere å fortelle en historie når figurene bare er gode eller onde?",
-                    "Teksten sier at troll kan være symboler på mørke krefter i naturen eller i menneskesinnet. Forklar hva det betyr at et eventyr kan handle om en dannelsesreise.",
+                    "Teksten sier at et kjent motiv er trollet som blir overvunnet av en kløktig gutt. Hva tror du eventyret vil fortelle oss når klokskap slår rå styrke?",
                     "Kunsteventyr som «Piken med svovelstikkene» ender ikke alltid lykkelig. Hvorfor bryter det med det du forventer av et eventyr?"
                 ],
                 "gaaVidere": [
                     "Skriv starten på ditt eget eventyr. Bruk minst tre av kjennetegnene fra artikkelen: fast innledning, ubestemt tid og sted, tretallsloven eller en magisk hjelper.",
                     "Les «Piken med svovelstikkene» i biblioteket. Sammenlign den med et folkeeventyr du kjenner, og pek på minst to ting som er ulike.",
                     "Diskuter i klassen: Trenger vi fortsatt eventyr i dag, eller er de bare gamle historier? Bruk eksempler fra artikkelen i argumentene dine."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Esborg, L., Alver, B. & Sara-Skree, J. F. (2026). *eventyr*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/eventyr](https://snl.no/eventyr)",
+                    "Kvideland, R. & Beyer, E. (2024). *Peter Christen Asbjørnsen*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Peter_Christen_Asbjørnsen](https://snl.no/Peter_Christen_Asbj%C3%B8rnsen)",
+                    "Møller, J. (2021). *Typiske trekk ved eventyr*. NDLA. Hentet 10.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg2/typiske-trekk-ved-eventyr/ca531366d0)",
+                    "Schjøtner Skaar, A.-S. & Blix Hagen, R. (2026). *troll*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/troll](https://snl.no/troll)",
+                    "Store norske leksikon. (2024). *askeladden*. Hentet 10.08.2026 fra [snl.no/askeladden](https://snl.no/askeladden)",
+                    "Undheim, I. H. (2025). *H.C. Andersen*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/H.C._Andersen](https://snl.no/H.C._Andersen)"
                 ]
             }
         }
@@ -95,5 +109,5 @@
         "url": "/norsk/skrivehjelp/hvordan-skrive-eventyr"
     },
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-10T00:00:00.000Z"
 }

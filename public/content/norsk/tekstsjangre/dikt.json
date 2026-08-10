@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Lyrikk, eller dikt, er kanskje den mest konsentrerte litterære sjangeren vi har. Mens en roman trenger mange sider for å bygge opp en stemning, kan et dikt gjøre det samme på noen få linjer. Ordet lyrikk kommer fra det greske instrumentet *lyre*, noe som minner oss om at dikt opprinnelig ble sunget eller fremført til musikk. Dikt handler ofte mer om å formidle en opplevelse, en følelse eller en stemning, enn å fortelle en konkret historie fra A til Å."
+            "content": "Lyrikk, eller dikt, er kanskje den mest konsentrerte litterære sjangeren vi har. Mens en roman trenger mange sider for å bygge opp en stemning, kan et dikt gjøre det samme på noen få linjer. Lyrikk er konsentrerte, subjektive tekster som er i stand til å si mye med få ord (Vassenden, 2025). Ordet lyrikk kommer fra strengeinstrumentet *lyre*, som i den greske antikken akkompagnerte fremføringen av diktene (Vassenden, 2025). Dikt handler ofte mer om å formidle en opplevelse, en følelse eller en stemning, enn å fortelle en konkret historie fra A til Å."
         },
         {
             "type": "header",
@@ -16,7 +16,29 @@
         },
         {
             "type": "text",
-            "content": "Vi deler gjerne dikt inn i to hovedformer:\n\nTradisjonelle dikt følger ofte faste mønstre. De har gjerne:\n*   Fast rytme (takt)\n*   Ende-rim (f.eks. hjerte/smerte)\n*   Like lange strofer (vers)\n*   Et forståelig og klart språk\n\nModernistiske (frie) dikt bryter med disse reglene. De oppstod for alvor på 1900-tallet som en reaksjon på en mer kaotisk og fragmentert verden. De kjennetegnes ved:\n*   Ingen fast rytme eller rim (frie vers)\n*   Ulik lengde på strofene\n*   Brutte setninger og uventede linjedelinger\n*   Et mer komplekst, ofte symboltungt språk"
+            "content": "Vi deler gjerne dikt inn i to hovedformer. Tradisjonelle dikt følger ofte faste mønstre. De har gjerne:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Fast rytme (takt)",
+                "Ende-rim (for eksempel hjerte/smerte)",
+                "Like lange strofer (vers)",
+                "Et forståelig og klart språk"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Modernistiske (frie) dikt bryter med disse reglene. Modernistisk lyrikk har ofte verken enderim eller fast rytme, og modernismen vokste fram av en ny livsfølelse skapt av raske samfunnsendringer, nye teknologier og et mer sansemettende storbyliv (Bjerck Hagen, 2025). Frie vers mangler faste former og rytmiske mønstre (Vassenden, 2025). Modernistiske dikt kjennetegnes ved:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Ingen fast rytme eller rim (frie vers)",
+                "Ulik lengde på strofene",
+                "Brutte setninger og uventede linjedelinger",
+                "Et mer komplekst, ofte symboltungt språk"
+            ]
         },
         {
             "type": "header",
@@ -24,18 +46,18 @@
         },
         {
             "type": "text",
-            "content": "Diktet er «språk på tomgang» – hvert ord må jobbe hardt. Her er noen av de viktigste verktøyene dikteren bruker:"
+            "content": "I et dikt må hvert ord jobbe hardt. Mange av verktøyene dikteren bruker, er språklige bilder: uttrykk som brukes i overført og ikke bokstavelig betydning. Sammenligning, symbol, besjeling og metafor hører alle hjemme her (Nordbø, 2026). Forskjellen på metafor og sammenligning er at i metaforen skjer sammenligningen uten ordene *som* eller *lik* (Grue, 2025), mens besjeling er at noe som ikke er menneskelig, blir beskrevet som om det har menneskelige egenskaper og evner (Lauvstad, 2026). Et annet grep er lyd: allitterasjon, eller bokstavrim, betyr at flere trykksterke stavelser begynner på samme konsonant eller på ulike vokaler (Skei, 2026). Her er noen av de viktigste verktøyene dikteren bruker:"
         },
         {
             "type": "list",
             "items": [
-                "**Metafor:** Et språklig bilde der man sier at noe *er* noe annet (uten å bruke 'som'). F.eks. «Du er en rose».",
-                "**Sammenligning:** Et bilde der man sammenligner noe med noe annet ved å bruke 'som' eller 'lik'. F.eks. «Du er som en rose».",
-                "**Besjeling:** Når konkrete ting eller naturen får menneskelige egenskaper. F.eks. «Vinden hvisker», «Månen smiler».",
+                "**Metafor:** Et språklig bilde der sammenligningen skjer uten ordene 'som' eller 'lik'. Man sier at noe *er* noe annet, for eksempel «Du er en rose».",
+                "**Sammenligning:** Et bilde der noe blir sammenlignet med noe annet ved hjelp av 'som' eller 'lik', for eksempel «Du er som en rose».",
+                "**Besjeling:** Når noe som ikke er menneskelig, får menneskelige egenskaper og evner. For eksempel «Vinden hvisker» eller «Sola smiler».",
                 "**Symbol:** En gjenstand eller et fenomen som representerer noe annet og mer abstrakt. En due kan symbolisere fred, fargen rød kan symbolisere kjærlighet eller fare.",
                 "**Kontrast:** Å sette motsetninger opp mot hverandre for å forsterke budskapet (lys/mørke, liv/død, varm/kald).",
                 "**Gjentakelse:** Å gjenta ord, setninger eller lyder for å skape rytme og understreke noe viktig.",
-                "**Allitterasjon (bokstavrim):** Når flere ord som følger hverandre begynner på samme lyd (f.eks. «Sus og dus», «Vind og vær»)."
+                "**Allitterasjon (bokstavrim):** Når flere trykksterke stavelser etter hverandre begynner på samme konsonant, som i «Fra fjord og fjære», eller på ulike vokaler, som i «til odel og eie»."
             ]
         },
         {
@@ -57,7 +79,7 @@
         {
             "type": "list",
             "items": [
-                "[Døden](/norsk/bibliotek/doden) av Ragnar Hovland – Et moderne dikt som tar opp et alvorlig tema på en naivistisk og undrende måte."
+                "[Døden](/norsk/bibliotek/doden) av Ragnar Hovland - Et moderne dikt som tar opp et alvorlig tema på en naivistisk og undrende måte."
             ]
         },
         {
@@ -76,8 +98,8 @@
                     "Hva betyr besjeling, og hvilke to eksempler gir artikkelen på det?"
                 ],
                 "reflekter": [
-                    "Artikkelen sier at modernistiske dikt oppstod som en reaksjon på en kaotisk og fragmentert verden. Hvorfor kan det passe å bryte med fast rytme og rim når man vil vise en verden som føles kaotisk?",
-                    "Teksten kaller diktet «språk på tomgang», der hvert ord må jobbe hardt. Hvorfor tror du et dikt kan skape sterk stemning på få linjer, mens en roman trenger mange sider?",
+                    "Artikkelen sier at modernismen vokste fram av raske samfunnsendringer, nye teknologier og et mer sansemettende storbyliv. Hvorfor kan det passe å bryte med fast rytme og rim når man vil vise en verden som føles uoversiktlig?",
+                    "Teksten sier at hvert ord i et dikt må jobbe hardt. Hvorfor tror du et dikt kan skape sterk stemning på få linjer, mens en roman trenger mange sider?",
                     "Hvorfor kan en due bety fred i ett dikt og noe helt annet i et annet dikt? Forklar hvordan symboler fungerer.",
                     "Artikkelen anbefaler å oppleve diktet før du forstår det, og å ikke lete etter en fasit med en gang. Hvorfor kan det være lurt å lese diktet høyt og kjenne på følelsen først?"
                 ],
@@ -85,6 +107,20 @@
                     "Skriv ditt eget korte dikt på fire til seks linjer. Bruk minst to av virkemidlene fra artikkelen, for eksempel metafor, kontrast eller allitterasjon, og marker hvilke du har brukt.",
                     "Les diktet Døden av Ragnar Hovland i biblioteket. Hvilken stemning får du, og hvilke virkemidler kjenner du igjen fra artikkelen?",
                     "Diskuter med en medelev: Er et fritt, modernistisk dikt uten rim like mye et ekte dikt som et tradisjonelt dikt med fast rytme og rim? Begrunn hva dere mener."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bjerck Hagen, E. (2025). *modernisme - litteratur*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/modernisme_-_litteratur](https://snl.no/modernisme_-_litteratur)",
+                    "Grue, J. (2025). *metafor*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/metafor](https://snl.no/metafor)",
+                    "Lauvstad, H. (2026). *besjeling - litteratur*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/besjeling_-_litteratur](https://snl.no/besjeling_-_litteratur)",
+                    "Nordbø, B. (2026). *språklig bilde*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/språklig_bilde](https://snl.no/spr%C3%A5klig_bilde)",
+                    "Skei, H. H. (2026). *allitterasjon*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/allitterasjon](https://snl.no/allitterasjon)",
+                    "Vassenden, E. (2025). *lyrikk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/lyrikk](https://snl.no/lyrikk)"
                 ]
             }
         }
@@ -100,5 +136,5 @@
         "url": "/norsk/skrivehjelp/hvordan-skrive-dikt"
     },
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-10T00:00:00.000Z"
 }

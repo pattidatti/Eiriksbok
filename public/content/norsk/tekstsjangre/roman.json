@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Romanen er den «store» fortellingen i litteraturen. Mens novellen er et øyeblikksbilde, er romanen et panorama. Her har forfatteren plass til å brette ut store historier, følge karakterer gjennom hele livsløp, skildre komplekse samfunn og dykke dypt ned i menneskesinnet. Romanen er i dag den mest populære litterære sjangeren, og den kommer i utallige former – fra krim og fantasy til historiske dramaer og psykologiske studier."
+            "content": "Romanen er den «store» fortellingen i litteraturen. Mens novellen er et øyeblikksbilde, er romanen et panorama. En roman er en lang, oppdiktet fortelling i prosa, og den er lengre enn korte prosafortellinger som eventyr og novelle (Selboe, 2026). Her har forfatteren plass til å brette ut store historier, følge karakterer gjennom hele livsløp, skildre komplekse samfunn og dykke dypt ned i menneskesinnet. Romanen er fortsatt den litterære sjangeren som dominerer, både i Norge og internasjonalt, og den kommer i utallige former - fra krim og fantasy til historiske dramaer og psykologiske studier (Selboe, 2026)."
         },
         {
             "type": "header",
@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Ordet roman kommer av *romanz*, som opprinnelig betegnet fortellinger skrevet på folkespråket (romansk) i stedet for latin. Den moderne romanen, slik vi kjenner den, vokste frem på 1700- og 1800-tallet. I Norge fikk vi de store realistiske samfunnsromanene på slutten av 1800-tallet med «de fire store» (Ibsen, Bjørnson, Kielland, Lie), selv om Ibsen skrev drama. Senere kom modernismen med fokus på indre sjeleliv (f.eks. Knut Hamsun), og i dag er sjangeren mer variert enn noen gang."
+            "content": "Ordet roman oppstod i middelalderen av gammelfransk *romanz*, som var myntet på tekster skrevet på folkespråket i stedet for det lærde skriftspråket latin (Selboe, 2026). Sjangeren slo for alvor gjennom i Europa på 1700-tallet, og på 1800-tallet ble den den dominerende litterære formen (Selboe, 2026). I Norge var «de fire store» - Bjørnstjerne Bjørnson, Henrik Ibsen, Alexander Kielland og Jonas Lie - sentrale i siste del av 1800-tallet, særlig innenfor realismen og det moderne gjennombruddet (Store norske leksikon, 2026). Ibsen er likevel først og fremst kjent som dramatiker (Bjerck Hagen mfl., 2026). Senere kom modernismen: Knut Hamsuns *Sult* fra 1890 regnes som et pionerarbeid innen europeisk modernisme, og flyttet oppmerksomheten fra samfunnsskildring til menneskets indre (Bjerck Hagen, 2026). I dag er sjangeren mer variert enn noen gang."
         },
         {
             "type": "header",
@@ -24,7 +24,7 @@
         },
         {
             "type": "text",
-            "content": "Det som først og fremst skiller romanen fra andre sjangre, er omfanget og kompleksiteten:"
+            "content": "Det som først og fremst skiller romanen fra andre sjangre, er omfanget og kompleksiteten. Lengden gir plass til flere personer, flere handlingstråder og lange tidsspenn. Når fortelleren omtaler ting som har skjedd tidligere i fortellingen, kalles det tilbakeblikk (Lauvstad, 2026)."
         },
         {
             "type": "list",
@@ -33,7 +33,7 @@
                 "**Mange karakterer:** Vi møter ofte et stort persongalleri. Hovedpersonene er gjerne *sammensatte* individer som utvikler seg gjennom boka (dynamiske karakterer).",
                 "**Parallelle handlinger:** Romanen kan ha flere historier som løper samtidig, og som kanskje flettes sammen til slutt.",
                 "**Miljøskildringer:** Forfatteren bruker god plass på å beskrive steder, samfunn og atmosfære.",
-                "**Tid:** Handlingen kan strekke seg over år, tiår eller generasjoner. Forfatteren kan hoppe frem og tilbake i tid (retrospektiv teknikk)."
+                "**Tid:** Handlingen kan strekke seg over år, tiår eller generasjoner. Forfatteren kan hoppe frem og tilbake i tid ved hjelp av tilbakeblikk."
             ]
         },
         {
@@ -41,10 +41,14 @@
             "text": "Ulike typer romaner"
         },
         {
+            "type": "text",
+            "content": "Romanen finnes i mange undersjangre. En dannelsesroman, også kalt utviklingsroman, fremstiller hovedpersonens utvikling og dannelsesprosess fra ungdomsår til moden alder (Helmich Pedersen, 2025). En kollektivroman skildrer en yrkesgruppe, et samfunnslag eller en folkegruppe, der massen og ikke enkeltindividet eller familien er verkets sentrale emne (Skei, 2025). Historiske romaner er bygd på historiske personer og hendelser, men det er alltid noen elementer av diktning i dem, for eksempel når det gjelder hva personene sier og tenker. I de populærlitterære sjangrene forholder forfatteren seg til etablerte regler for sjangeren, og leserne har klare sjangerforventninger (Hamm, 2024)."
+        },
+        {
             "type": "list",
             "items": [
-                "**Utviklingsroman:** Følger en hovedperson fra barndom til voksen alder, med fokus på personlig vekst og dannelse.",
-                "**Kollektivroman:** Har ingen tydelig hovedperson, men skildrer en gruppe mennesker eller et lokalsamfunn.",
+                "**Utviklingsroman (dannelsesroman):** Følger hovedpersonens utvikling og dannelsesprosess fra ungdomsårene til moden alder.",
+                "**Kollektivroman:** Skildrer en gruppe, et yrke eller et samfunnslag. Det er massen, ikke enkeltindividet eller familien, som er hovedsaken.",
                 "**Historisk roman:** Handlingen er lagt til en bestemt historisk epoke, ofte med en blanding av oppdiktede og virkelige personer.",
                 "**Sjangerromaner:** Krim, fantasy, science fiction og kjærlighetsromaner er eksempler på populære undersjangre med sine egne regler og forventninger."
             ]
@@ -60,8 +64,8 @@
         {
             "type": "list",
             "items": [
-                "[Små nøkler, store rom](/norsk/bibliotek/sma-nokler-store-rom) av Bjørg Vik – Et utdrag fra en oppvekstskildring som viser hvordan en roman kan fange barnets perspektiv.",
-                "[Barsakh](/norsk/bibliotek/barsakh) av Simon Stranger – Et utdrag fra en ungdomsroman som tar opp aktuelle og alvorlige temaer som flukt og urettferdighet."
+                "[Små nøkler, store rom](/norsk/bibliotek/sma-nokler-store-rom) av Bjørg Vik - Et utdrag fra en oppvekstskildring som viser hvordan en roman kan fange barnets perspektiv.",
+                "[Barsakh](/norsk/bibliotek/barsakh) av Simon Stranger - Et utdrag fra en ungdomsroman som tar opp aktuelle og alvorlige temaer som flukt og urettferdighet."
             ]
         },
         {
@@ -77,13 +81,29 @@
                 "reflekter": [
                     "Teksten sier at romanen er et panorama, mens novellen er et øyeblikksbilde. Forklar med egne ord hva denne forskjellen betyr for hva forfatteren kan få til.",
                     "Hvorfor gir lengden på en roman rom for at hovedpersonene kan være sammensatte og utvikle seg gjennom boka?",
-                    "Hva menes med retrospektiv teknikk, og hvorfor kan det være nyttig for en forfatter å hoppe frem og tilbake i tid?",
+                    "Hva menes med tilbakeblikk, og hvorfor kan det være nyttig for en forfatter å hoppe frem og tilbake i tid?",
                     "Hvorfor tror du krim, fantasy og kjærlighetsromaner kalles sjangerromaner med egne regler og forventninger?"
                 ],
                 "gaaVidere": [
                     "Velg en bok eller film du kjenner godt, og plasser den i en av romantypene fra teksten (utviklingsroman, kollektivroman, historisk roman eller sjangerroman). Forklar valget ditt med minst to kjennetegn.",
                     "Skriv de første ti setningene på en roman. Prøv å få med en miljøskildring og introduser minst én karakter som virker sammensatt.",
-                    "Diskuter i klassen: Hvorfor tror dere romanen er blitt den mest populære litterære sjangeren i dag? Kom med minst tre grunner."
+                    "Diskuter i klassen: Hvorfor tror dere romanen fortsatt er den litterære sjangeren som dominerer? Kom med minst tre grunner."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bjerck Hagen, E. (2026). *Knut Hamsun*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Knut_Hamsun](https://snl.no/Knut_Hamsun)",
+                    "Bjerck Hagen, E., Ystad, V. & Alfsen, G. (2026). *Henrik Ibsen*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Henrik_Ibsen](https://snl.no/Henrik_Ibsen)",
+                    "Hamm, C. (2024). *sjanger - litteratur*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/sjanger_-_litteratur](https://snl.no/sjanger_-_litteratur)",
+                    "Helmich Pedersen, F. (2025). *dannelsesroman*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/dannelsesroman](https://snl.no/dannelsesroman)",
+                    "Lauvstad, H. (2026). *frampek*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/frampek](https://snl.no/frampek)",
+                    "Selboe, T. (2026). *roman*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/roman](https://snl.no/roman)",
+                    "Skei, H. H. (2025). *kollektivroman*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/kollektivroman](https://snl.no/kollektivroman)",
+                    "Store norske leksikon. (2026). *de fire store*. Hentet 10.08.2026 fra [snl.no/de_fire_store](https://snl.no/de_fire_store)"
                 ]
             }
         }
@@ -99,5 +119,5 @@
         "url": "/norsk/skrivehjelp/hvordan-skrive-roman"
     },
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-10T00:00:00.000Z"
 }
