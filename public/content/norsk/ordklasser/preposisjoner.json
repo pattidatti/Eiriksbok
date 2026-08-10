@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Dette er GPS-ordene i språket! De forteller oss hvor noe er (på, i, under, over) eller når noe skjer (før, etter, klokka). De står nesten alltid rett *før* det de styrer."
+            "content": "Dette er GPS-ordene i språket! De forteller oss hvor noe er (på, i, under, over) eller når noe skjer (før, etter, om). De står nesten alltid rett *før* ordet de styrer (Bordal & Hagemann, 2025). Preposisjon er en lukket ordklasse - det kommer sjelden nye ord til (Hagemann, 2026)."
         },
         {
             "type": "component",
@@ -48,7 +48,7 @@
         },
         {
             "type": "text",
-            "content": "Noen ganger gir ikke preposisjonen mening. Hvorfor heter det 'forelsket i' men 'sint på'? Det er bare sånn det er. Disse må du nesten bare lære deg utenat."
+            "content": "Noen ganger gir ikke preposisjonen mening. Hvorfor heter det 'forelsket i' men 'sint på'? Det er bare sånn det er. Det finnes få faste regler for hvilken preposisjon som hører til hvilket uttrykk, så disse må du nesten bare lære deg utenat (Abusland, 2024)."
         },
         {
             "type": "list",
@@ -82,8 +82,19 @@
                     "Diskuter med en medelev: hvorfor kan preposisjoner være ekstra vanskelige for noen som holder på å lære seg norsk? Kom med tre grunner."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2024). *Hvorfor er det så vanskelig med preposisjoner?* NDLA. Hentet 10.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-kort-botid-yf/hvorfor-er-det-sa-vanskelig-med-preposisjoner/785dadd006)",
+                    "Bordal, G., & Hagemann, K. (2025). *Preposisjon*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/preposisjon](https://snl.no/preposisjon)",
+                    "Hagemann, K. (2026). *Ordklasse*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/ordklasse](https://snl.no/ordklasse)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",
-    "lastUpdated": "2025-12-09T16:20:00Z"
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }
