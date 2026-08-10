@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Adjektiver er Beskrivelses-ord. De forteller oss hvordan noe ser ut, lukter, smaker eller føles. Uten adjektiver ville verden vært kjedelig og i gråskala!"
+            "content": "Adjektiver er beskrivelses-ord. De forteller oss hvordan noe ser ut, lukter, smaker eller føles. Uten adjektiver ville verden vært kjedelig og i gråskala! Litt mer presist sagt er adjektiv ord som sier noe om egenskapene til et substantiv eller et pronomen, som stor, gammeldags, grønn og fin (Bordal & Hagemann, 2026)."
         },
         {
             "type": "component",
@@ -36,7 +36,7 @@
         },
         {
             "type": "text",
-            "content": "På norsk er det sånn at adjektivet må tilpasse seg ordet det beskriver. Hvis ordet er hankjønn, bruker vi én form. Hvis det er intetkjønn, må vi ofte legge til en T."
+            "content": "På norsk er det sånn at adjektivet må tilpasse seg ordet det beskriver. Adjektivet retter seg altså etter substantivet i både kjønn og tall. Hvis ordet er hankjønn, bruker vi én form. Er det intetkjønn og står i entall, legger vi som regel til en T: et fint hus. I flertall og i bestemt form ender adjektivet på E, uansett kjønn (Bordal & Hagemann, 2026)."
         },
         {
             "type": "component",
@@ -57,7 +57,7 @@
         },
         {
             "type": "text",
-            "content": "Norsk er litt rart. Når vi peker på noe bestemt, liker vi å si det to ganger. Vi sier både 'Den' OG 'mannen'. Vi sier ikke 'Den gammel mann', men 'Den gamle mannen'."
+            "content": "Norsk er litt rart. Når vi peker på noe bestemt, liker vi å si det to ganger. Vi sier både 'Den' OG 'mannen'. Vi sier ikke 'Den gammel mann', men 'Den gamle mannen'. Etter ordene den, denne, det, dette, de og disse er det nesten alltid bestemt form, og da bøyes adjektivet i bestemt form også: en fin katt blir til den fine katten (Zickfeldt, 2024)."
         },
         {
             "type": "list",
@@ -73,7 +73,7 @@
         },
         {
             "type": "text",
-            "content": "Vi bruker adjektiver for å sammenligne ting."
+            "content": "Vi bruker adjektiver for å sammenligne ting. De tre gradene heter positiv, komparativ og superlativ - fin, finere, finest (Relling Berg, 2024). Lange adjektiver gradbøyes ikke på denne måten. Da bruker vi mer og mest i stedet: mer intelligent, mest intelligent (Bordal & Hagemann, 2026)."
         },
         {
             "type": "list",
@@ -105,8 +105,19 @@
                     "Lag tre setninger med intetkjønnsord ('et'-ord) der adjektivet må få en T på slutten. For eksempel: Et stort tre."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bordal, G. & Hagemann, K. (2026). *Adjektiv*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/adjektiv](https://snl.no/adjektiv)",
+                    "Relling Berg, S. (2024). *Adjektiv*. Lille norske leksikon. Hentet 10.08.2026 fra [lille.snl.no/adjektiv](https://lille.snl.no/adjektiv)",
+                    "Zickfeldt, E. (2024). *Bestemt og ubestemt form*. Lille norske leksikon. Hentet 10.08.2026 fra [lille.snl.no/bestemt_og_ubestemt_form](https://lille.snl.no/bestemt_og_ubestemt_form)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",
-    "lastUpdated": "2025-12-09T16:10:00Z"
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }
