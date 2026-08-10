@@ -79,25 +79,25 @@ Det nye emnet erstatter ikke dette — det leverer det maskinen ikke kan:
 
 De 17 temaene i prioritert byggerekkefølge, pluss stiene. Kolonnen «Kilder» = hvor mange av de ni religionene som har en per-religion-artikkel å lenke til, og hvilken kvalitet de faktisk holder (`ferdig / halv / stub`, målt 2026-08-10 — se `docs/KRLE_OPPRUSTNING.md`). Kolonnen «Samisk» merker temaene der samisk religion kommer inn som gjestestemme.
 
-| # | Slug | Tittel | Smart-dimensjon | Kilder | Kvalitet | Samisk | LK20 |
-|---|---|---|---|---|---|:-:|---|
-| 1 | `skapelse` | Hvor kommer alt fra? | Narrative | 2/9 | 0F / 1H / 1S | ✅ | 1, 13 |
-| 2 | `gudsbilde` | Én, mange eller ingen gud? | Doctrinal | 8/9 | 0F / 1H / 7S | | 1, 6 |
-| 3 | `bonn` | Å snakke med det hellige | Ritual + Experiential | 8/9 | 0F / 1H / 7S | | 1, 13 |
-| 4 | `overgangsriter` | Fra vugge til grav | Ritual | 9/9 | 1F / 1H / 7S | | 1, 13 |
-| 5 | `doden` | Hva skjer når vi dør? | Doctrinal + Narrative | 8/9 | 1F / 1H / 7S | ✅ | 13 |
-| 6 | `frelse` | Målet med det hele | Doctrinal | 8/9 | 0F / 1H / 7S | | 6, 13 |
-| 7 | `hellige-tekster` | Bøkene som styrer liv | Narrative + Doctrinal | 9/9 | 0F / 1H / 8S | | 6, 7 |
-| 8 | `grunnleggere` | Menneskene bak | Narrative | 9/9 | 0F / 1H / 8S | | 10 |
-| 9 | `etikk-og-leveregler` | Hva er et godt liv? | Ethical | 0/9 | — | ✅ | 10, 15 |
-| 10 | `hoytider` | Den hellige kalenderen | Ritual | delvis¹ | 1F | ✅ | 1, 9 |
-| 11 | `hellige-rom` | Rommene vi bygger for det hellige | Material | 0/9 | — | ✅ | 1 |
-| 12 | `symboler-og-klaer` | Tro du kan se | Material | delvis¹ | 1F | | 1, 9 |
-| 13 | `mat-og-renhet` | Hva får du spise? | Ritual + Ethical | delvis¹ | 1F | | 1 |
-| 14 | `kjonn-og-roller` | Kjønn, roller og likeverd | Social + Ethical | 0/9 | — | | 8, 12 |
-| 15 | `ledelse-og-fellesskap` | Hvem bestemmer? | Social | 0/9 | — | | 1, 4 |
-| 16 | `pilegrim` | Reisen til det hellige | Material + Experiential | 0/9 | — | | 1 |
-| 17 | `lidelse` | Hvorfor finnes det vondt? | Doctrinal + Experiential | 0/9 | — | ✅ | 13, 15 |
+| # | Slug | Tittel | Smart-dimensjon | Kilder | Kvalitet | Samisk | Spill | LK20 |
+|---|---|---|---|---|---|:-:|:-:|---|
+| 1 | `skapelse` | Hvor kommer alt fra? | Narrative | 2/9 | 0F / 1H / 1S | ✅ | NY | 1, 13 |
+| 2 | `gudsbilde` | Én, mange eller ingen gud? | Doctrinal | 8/9 | 0F / 1H / 7S | | — | 1, 6 |
+| 3 | `bonn` | Å snakke med det hellige | Ritual + Experiential | 8/9 | 0F / 1H / 7S | | ↻ vend-mot-mekka | 1, 13 |
+| 4 | `overgangsriter` | Fra vugge til grav | Ritual | 9/9 | 1F / 1H / 7S | | ↻ anand-karaj-3d | 1, 13 |
+| 5 | `doden` | Hva skjer når vi dør? | Doctrinal + Narrative | 8/9 | 1F / 1H / 7S | ✅ | ↻ tidens-former-3d | 13 |
+| 6 | `frelse` | Målet med det hele | Doctrinal | 8/9 | 0F / 1H / 7S | | — | 6, 13 |
+| 7 | `hellige-tekster` | Bøkene som styrer liv | Narrative + Doctrinal | 9/9 | 0F / 1H / 8S | | — | 6, 7 |
+| 8 | `grunnleggere` | Menneskene bak | Narrative | 9/9 | 0F / 1H / 8S | | — | 10 |
+| 9 | `etikk-og-leveregler` | Hva er et godt liv? | Ethical | 0/9 | — | ✅ | — | 10, 15 |
+| 10 | `hoytider` | Den hellige kalenderen | Ritual | delvis¹ | 1F | ✅ | ↻ festens-lys-3d | 1, 9 |
+| 11 | `hellige-rom` | Rommene vi bygger for det hellige | Material | 0/9 | — | ✅ | ↻ lalibela-kirke-3d | 1 |
+| 12 | `symboler-og-klaer` | Tro du kan se | Material | delvis¹ | 1F | | ↻ symboler-paa-taket-3d | 1, 9 |
+| 13 | `mat-og-renhet` | Hva får du spise? | Ritual + Ethical | delvis¹ | 1F | | ↻ matreglerbordet-3d | 1 |
+| 14 | `kjonn-og-roller` | Kjønn, roller og likeverd | Social + Ethical | 0/9 | — | | — | 8, 12 |
+| 15 | `ledelse-og-fellesskap` | Hvem bestemmer? | Social | 0/9 | — | | — | 1, 4 |
+| 16 | `pilegrim` | Reisen til det hellige | Material + Experiential | 0/9 | — | | NY | 1 |
+| 17 | `lidelse` | Hvorfor finnes det vondt? | Doctrinal + Experiential | 0/9 | — | ✅ | — | 13, 15 |
 
 ¹ Har allerede en tverrgående artikkel under `krle/religion-og-kultur/` (`hoytider-og-kultur`, `symboler-og-klaer`, `mat-og-religion`). Disse skal **ikke** dupliseres — se §9.3.
 
@@ -119,7 +119,7 @@ De 17 temaene i prioritert byggerekkefølge, pluss stiene. Kolonnen «Kilder» =
 
 | Artikkel-ID | jødedom | kristendom | islam | bahá'í | mormonisme | jeh. vitner | hinduisme | buddhisme | sikhisme |
 |---|---|---|---|---|---|---|---|---|---|
-| `intro` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️² |
+| `intro` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `grunnleggere` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `hellige-tekster` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | `sentrale-trekk` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -127,10 +127,11 @@ De 17 temaene i prioritert byggerekkefølge, pluss stiene. Kolonnen «Kilder» =
 | `bonn` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 | `frelse` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
 | `gudsbilde` | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| `skapelse` | ❌ | ✅ | ⚠️³ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| `skapelse` | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
-² Fila ligger i `sikhisme/introduksjon/`, men manifestet registrerer lesson-ID `intro`. Lenken er sannsynligvis brutt — se §9.1.
-³ `public/content/krle/religion/islam/skapelse/artikkel.json` finnes på disk, men mangler i `manifest.json`. Artikkelen er usynlig i navigasjonen, men plukkes opp av comparison-manifestet — se §9.1.
+✅ betyr at det finnes en artikkel — ikke at den holder standard. De aller fleste er stubber på 60–90 ord; se kvalitetskolonnen i §3 og statustabellene i `docs/KRLE_OPPRUSTNING.md` §6.
+
+De to avvikene som sto her tidligere (sikhisme-introen i feil mappe, og `islam/skapelse` uregistrert i manifestet) ble rettet i R0 2026-08-10.
 
 ---
 
@@ -670,7 +671,7 @@ Disse ble valgt for å komme videre og kan overstyres:
 2. Skal temachipsene på `/krle/sammenlign` lenke til den skrevne artikkelen når en slik finnes?
 3. ~~Samisk religion og historiske religioner står utenfor de ni. Skal de inn som gjestestemmer?~~ **Avklart 2026-08-10:** samisk religion kommer inn som gjestestemme i seks utvalgte temaer — se §5.4. Historiske religioner holdes utenfor foreløpig.
 4. Skal emnet ha en egen quiz-battle-pakke eller flashcard-sett på tvers av temaene?
-5. Skal mikrospill-kravet i plan_article gjelde absolutt alle de 89 artiklene som skal opprustes? Se omfangsdrøftingen i `docs/KRLE_OPPRUSTNING.md` §5. Vurderes etter de første 8–10 artiklene.
+5. ~~Skal mikrospill-kravet i plan_article gjelde absolutt alle de 89 artiklene som skal opprustes?~~ **Avklart 2026-08-10:** nei. Mikrospill lages kun der temaet er romlig, og de hører til sammenligningsartiklene — ikke til per-religion-artiklene. Testen og begrunnelsen står i `docs/KRLE_OPPRUSTNING.md` §2.1. Det tar prosjektet fra ~89 nye mikrospill til ~6.
 
 ---
 
