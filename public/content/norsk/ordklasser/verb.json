@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Verb er Gjøre-ord. Det er ord som forteller hva som skjer. Å løpe, å sove, å game, å tenke. Uten verbet står setningen helt stille - ingenting skjer!"
+            "content": "Verb er Gjøre-ord. Det er ord som forteller hva som skjer (Bordal & Hagemann, 2024). Å løpe, å sove, å game, å tenke. Uten verbet står setningen helt stille - ingenting skjer!"
         },
         {
             "type": "component",
@@ -36,7 +36,7 @@
         },
         {
             "type": "text",
-            "content": "I norske setninger er verbet sjefen. Verbet bestemmer at det ALLTID skal stå på plass nummer 2. Ikke ord nr 2, men *ledd* nr 2. Dette er superviktig for å skrive godt norsk."
+            "content": "I norske setninger er verbet sjefen. Verbet bestemmer at det ALLTID skal stå på plass nummer 2. Ikke ord nr 2, men *ledd* nr 2 (Hagemann, 2025). Dette er superviktig for å skrive godt norsk."
         },
         {
             "type": "component",
@@ -76,7 +76,7 @@
         },
         {
             "type": "text",
-            "content": "Vi bøyer verbet for å fortelle *når* noe skjer."
+            "content": "Vi bøyer verbet for å fortelle *når* noe skjer (Hagemann, 2026)."
         },
         {
             "type": "list",
@@ -92,7 +92,7 @@
         },
         {
             "type": "text",
-            "content": "Noen verb forteller ikke om en handling alene, men hjelper oss å si noe om *hvordan* vi gjør det. Disse kaller vi modale hjelpeverb."
+            "content": "Noen verb forteller ikke om en handling alene, men hjelper oss å si noe om *hvordan* vi gjør det. Disse kaller vi modale hjelpeverb (Simonsen, 2024)."
         },
         {
             "type": "list",
@@ -126,8 +126,20 @@
                     "Diskuter med en medelev: Hvorfor tror dere det er så lett å bryte V2-regelen når man skriver? Kommer feilen oftere når setningen starter med et tidsord?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bordal, G. & Hagemann, K. (2024). *verb*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/verb](https://snl.no/verb)",
+                    "Hagemann, K. (2025). *syntaks*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/syntaks](https://snl.no/syntaks)",
+                    "Hagemann, K. (2026). *ordklasse*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/ordklasse](https://snl.no/ordklasse)",
+                    "Simonsen, H. G. (2024). *hjelpeverb*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/hjelpeverb](https://snl.no/hjelpeverb)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",
-    "lastUpdated": "2025-12-09T16:05:00Z"
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }
