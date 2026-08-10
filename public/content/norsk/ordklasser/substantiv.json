@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Substantiver er rett og slett navn på ting, personer, steder eller følelser. Hvis du kan sette 'en', 'ei' eller 'et' foran det, er det mest sannsynlig et substantiv. Tenk på dem som byggeklossene i språket vårt."
+            "content": "Substantiver er rett og slett navn på ting, personer, steder eller følelser (Bordal & Hagemann, 2025). Hvis du kan sette 'en', 'ei' eller 'et' foran det, er det mest sannsynlig et substantiv (Hagemann, 2026b). Tenk på dem som byggeklossene i språket vårt."
         },
         {
             "type": "component",
@@ -37,7 +37,7 @@
         },
         {
             "type": "text",
-            "content": "Vi deler substantiver inn i to hovedgrupper:"
+            "content": "Vi deler substantiver inn i to hovedgrupper (Bordal & Hagemann, 2025):"
         },
         {
             "type": "list",
@@ -52,7 +52,7 @@
         },
         {
             "type": "text",
-            "content": "På norsk har ordene kjønn! Det er litt rart, men vi må vite kjønnet for å bøye ordet riktig. Artikkelen (det lille ordet foran) avslører kjønnet."
+            "content": "På norsk har ordene kjønn! Det er litt rart, men vi må vite kjønnet for å bøye ordet riktig (Abusland, 2024). Artikkelen (det lille ordet foran) avslører kjønnet (Bordal & Hagemann, 2025)."
         },
         {
             "type": "component",
@@ -73,7 +73,7 @@
         },
         {
             "type": "text",
-            "content": "Substantivet har ofte hovedrollen i setningen. Det er som regel substantivet som enten gjør noe (Subjekt) eller som det skjer noe med (Objekt)."
+            "content": "Substantivet har ofte hovedrollen i setningen. Det er som regel substantivet som enten gjør noe (Subjekt) eller som det skjer noe med (Objekt) (Hagemann, 2025, 2026a)."
         },
         {
             "type": "component",
@@ -98,7 +98,7 @@
         },
         {
             "type": "text",
-            "content": "De fleste ord følger et fast system når vi går fra én til mange. Systemet er: EN - EN - ER - ENE."
+            "content": "De fleste ord følger et fast system når vi går fra én til mange. Systemet er: EN - EN - ER - ENE (Abusland, 2024)."
         },
         {
             "type": "component",
@@ -107,7 +107,7 @@
                 "title": "Bøyingsmønsteret",
                 "rule": "Vi legger nesten alltid til -ER og -ENE i flertall.",
                 "examples": [
-                    "En gutt -> guten -> guttER -> guttENE",
+                    "En gutt -> guttEN -> guttER -> guttENE",
                     "En bil -> bilen -> bilER -> bilENE",
                     "Unntak: Et barn -> barnet -> BARN -> barna (korte intetkjønnsord)"
                 ]
@@ -135,8 +135,21 @@
                     "Lag tre setninger der det samme substantivet, for eksempel 'eplet', først er subjekt og deretter objekt. Forklar til en medelev hvordan du kan se forskjellen."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2024). *Bestemthet*. NDLA. Hentet 10.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-kort-botid-sf-vg1/bestemthet/9cd19927a2)",
+                    "Bordal, G. & Hagemann, K. (2025). *substantiv*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/substantiv](https://snl.no/substantiv)",
+                    "Hagemann, K. (2025). *subjekt - grammatikk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/subjekt_-_grammatikk](https://snl.no/subjekt_-_grammatikk)",
+                    "Hagemann, K. (2026a). *objekt - grammatikk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/objekt_-_grammatikk](https://snl.no/objekt_-_grammatikk)",
+                    "Hagemann, K. (2026b). *ordklasse*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/ordklasse](https://snl.no/ordklasse)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",
-    "lastUpdated": "2025-12-09T16:00:00Z"
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }

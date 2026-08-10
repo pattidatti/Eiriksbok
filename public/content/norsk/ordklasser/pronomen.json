@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Pronomen betyr 'i stedet for navn'. Tenk deg hvis vi måtte si navnet på folk hele tiden: 'Per gikk til Per sin bil fordi Per ville kjøre'. Det blir slitsomt! Derfor sier vi heller: 'Per gikk til SIN bil fordi HAN ville kjøre'."
+            "content": "Pronomen betyr 'i stedet for navn' (Bordal & Hagemann, 2026). Tenk deg hvis vi måtte si navnet på folk hele tiden: 'Per gikk til Per sin bil fordi Per ville kjøre'. Det blir slitsomt! Derfor sier vi heller: 'Per gikk til SIN bil fordi HAN ville kjøre'."
         },
         {
             "type": "component",
@@ -37,7 +37,7 @@
         },
         {
             "type": "text",
-            "content": "Dette er kanskje den vanligste feilen i norsk. Regelen er egentlig enkel: Eier subjektet tingen?"
+            "content": "Dette er en av de vanligste feilene i norsk. Regelen er egentlig enkel: Eier subjektet tingen? Viser du tilbake til subjektet i setningen, skal du bruke sin, si, sitt eller sine (Abusland, 2026)."
         },
         {
             "type": "component",
@@ -78,7 +78,7 @@
         },
         {
             "type": "text",
-            "content": "Vi bruker ofte Det når vi snakker om noe generelt, eller været. 'Det regner'. Vi kaller det et formelt subjekt - det betyr ingenting, men må være der for at setningen skal virke."
+            "content": "Vi bruker ofte Det når vi snakker om noe generelt, eller været. 'Det regner'. Vi kaller det et formelt subjekt - det betyr ingenting, men må være der for at setningen skal virke (Hagemann, 2025)."
         },
         {
             "type": "component",
@@ -102,8 +102,19 @@
                     "Diskuter med en medelev - hvorfor tror dere sin- og hans-feilen er så vanlig i norsk, selv blant voksne?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2026). *Sin/sitt/sine eller hans/hennes/deres?* NDLA. Hentet 10.08.2026 fra [ndla.no](https://ndla.no/r/norsk-sf-vg2/sinsittsine-eller-hanshennesderes/959b53e102)",
+                    "Bordal, G. & Hagemann, K. (2026). *pronomen*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/pronomen](https://snl.no/pronomen)",
+                    "Hagemann, K. (2025). *subjekt - grammatikk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/subjekt_-_grammatikk](https://snl.no/subjekt_-_grammatikk)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",
-    "lastUpdated": "2025-12-09T16:15:00Z"
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }
