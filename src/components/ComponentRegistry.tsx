@@ -201,6 +201,7 @@ const TsarsDilemma = lazy(() => import('./content/interactive/TsarsDilemma').the
 const HermeneuticCircle = lazy(() => import('./content/interactive/HermeneuticCircle').then(m => ({ default: m.HermeneuticCircle })));
 const CyprusPeaceTalks = lazy(() => import('./content/interactive/CyprusPeaceTalks').then(m => ({ default: m.CyprusPeaceTalks })));
 const DenStoreAkselerasjonen = lazy(() => import('./content/interactive/DenStoreAkselerasjonen').then(m => ({ default: m.DenStoreAkselerasjonen })));
+const RevolusjonsOppskriften = lazy(() => import('./content/interactive/RevolusjonsOppskriften').then(m => ({ default: m.RevolusjonsOppskriften })));
 const MaktfordelingMatch = lazy(() => import('./content/interactive/MaktfordelingMatch').then(m => ({ default: m.MaktfordelingMatch })));
 const PersonalunionSorter = lazy(() => import('./content/interactive/PersonalunionSorter').then(m => ({ default: m.PersonalunionSorter })));
 const Makttredelingen = lazy(() => import('./content/interactive/Makttredelingen').then(m => ({ default: m.Makttredelingen })));
@@ -564,6 +565,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     HermeneuticCircle,
     CyprusPeaceTalks,
     DenStoreAkselerasjonen,
+    RevolusjonsOppskriften,
     MaktfordelingMatch,
     PersonalunionSorter,
     Makttredelingen,

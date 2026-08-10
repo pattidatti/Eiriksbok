@@ -1,5 +1,5 @@
 {
-  "buildId": 125642471217732,
+  "buildId": 100623275688907,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -1534,6 +1534,9 @@
     ],
     "jernbanen": [
       "content/historie/industriell-revolusjon/jernbanen.json"
+    ],
+    "storbritannia": [
+      "content/historie/industriell-revolusjon/storbritannia.json"
     ],
     "det-foydale-japan": [
       "content/historie/japans-historie/det-foydale-japan.json"
@@ -4277,6 +4280,7 @@
     "historie/industriell-revolusjon/dopapirets-historie": "content/historie/industriell-revolusjon/dopapirets-historie.json",
     "historie/industriell-revolusjon/industriell-revolusjon": "content/historie/industriell-revolusjon/industriell-revolusjon.json",
     "historie/industriell-revolusjon/jernbanen": "content/historie/industriell-revolusjon/jernbanen.json",
+    "historie/industriell-revolusjon/storbritannia": "content/historie/industriell-revolusjon/storbritannia.json",
     "historie/japans-historie/det-foydale-japan": "content/historie/japans-historie/det-foydale-japan.json",
     "historie/japans-historie/japans-okonomiske-mirakel": "content/historie/japans-historie/japans-okonomiske-mirakel.json",
     "historie/japans-historie/japansk-imperialisme": "content/historie/japans-historie/japansk-imperialisme.json",

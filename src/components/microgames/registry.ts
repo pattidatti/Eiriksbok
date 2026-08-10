@@ -33,6 +33,7 @@ const Spredning3D = lazy(() => import('./Spredning3D'));
 const UtvandringenFraAfrika3D = lazy(() => import('./UtvandringenFraAfrika3D'));
 const HimmelModellen3D = lazy(() => import('./HimmelModellen3D'));
 const DampmaskinHjerte3D = lazy(() => import('./DampmaskinHjerte3D'));
+const Fabrikktomta3D = lazy(() => import('./Fabrikktomta3D'));
 const Falanksen3D = lazy(() => import('./Falanksen3D'));
 const LangeMurene3D = lazy(() => import('./LangeMurene3D'));
 const OlympiaDiskos3D = lazy(() => import('./OlympiaDiskos3D'));
@@ -991,6 +992,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./DampmaskinHjerte3D'),
         Component: DampmaskinHjerte3D as never,
+    },
+    'fabrikktomta-3d': {
+        id: 'fabrikktomta-3d',
+        title: 'Fabrikktomta',
+        description:
+            'Dra en fabrikk rundt i Nord-England og se tre målere svare i sanntid: hvor nær ligger kullet, havna og arbeidsfolkene? Poengsummen er alltid den svakeste av de tre, så du kan ikke vinne ved å legge deg oppå kullet. Lyspæra: forutsetningene for industri måtte ligge nær hverandre samtidig, og slike steder fantes det få av.',
+        estimatedSeconds: 140,
+        loader: () => import('./Fabrikktomta3D'),
+        Component: Fabrikktomta3D as never,
     },
     'falanksen-3d': {
         id: 'falanksen-3d',
