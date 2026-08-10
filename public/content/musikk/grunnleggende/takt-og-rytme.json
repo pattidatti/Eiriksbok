@@ -29,10 +29,6 @@
             ]
         },
         {
-            "type": "text",
-            "content": ""
-        },
-        {
             "type": "component",
             "component": "BeatBuilder"
         },
