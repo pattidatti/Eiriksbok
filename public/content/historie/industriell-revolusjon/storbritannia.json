@@ -5,7 +5,7 @@
   "year": "1688-1800",
   "category": "Industri",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/industriell-revolusjon/storbritannia-hero.webp",
   "details": [
     "Ingen enkelt oppfinnelse forklarer den industrielle revolusjonen",
     "Seks forutsetninger måtte ligge klare på samme sted samtidig",
@@ -22,7 +22,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/industriell-revolusjon/storbritannia-01.webp",
       "alt": "Newcomens dampmaskin ved en engelsk kullgruve, 1712",
       "caption": "Newcomens maskin fra 1712 var den første dampmaskinen som virkelig virket. Den brente kull for å pumpe vann ut av kullgruva."
     },
@@ -88,7 +88,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/industriell-revolusjon/storbritannia-02.webp",
       "alt": "Familie forlater gården etter innhegning av allmenningen, England 1700-tallet",
       "caption": "Da allmenningene ble gjerdet inn, mistet småbøndene livsgrunnlaget sitt. De ble arbeidskraften industrien trengte."
     },
@@ -166,7 +166,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/industriell-revolusjon/storbritannia-03.webp",
       "alt": "Fabrikkpiper og røyk over en engelsk industriby rundt 1840",
       "caption": "Sytti år etter Newcomens pumpe var Nord-England dekket av fabrikkpiper. Ingen enkelt oppfinnelse forklarer det."
     },
