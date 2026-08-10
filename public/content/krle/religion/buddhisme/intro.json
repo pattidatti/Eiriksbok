@@ -1,11 +1,27 @@
 {
     "id": "intro",
     "title": "Introduksjon til Buddhisme",
-    "ingress": "En av verdens eldste religioner, grunnlagt av Siddhartha Gautama.",
-    "body": [
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "buddhisme",
+    "dimension": "doctrinal",
+    "comparison_tags": [
+        "sentrale_trekk"
+    ],
+    "category": "Buddhisme",
+    "readTime": "2 min lesning",
+    "heroImage": "/images/krle/religion/buddhisme_hero.webp",
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-10T12:00:00Z",
+    "content": [
+        {
+            "type": "text",
+            "content": "En av verdens eldste religioner, grunnlagt av Siddhartha Gautama."
+        },
         {
             "type": "text",
             "content": "Buddhismen oppsto i India for rundt 2500 år siden. Den bygger på læren til Siddhartha Gautama, som ble kjent som Buddha ('den oppvåknede')."
         }
-    ]
+    ],
+    "timeline": []
 }

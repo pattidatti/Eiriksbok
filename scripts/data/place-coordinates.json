@@ -918,15 +918,15 @@
       "count": 22
     },
     {
+      "tag": "islam",
+      "count": 21
+    },
+    {
       "tag": "mysterier",
       "count": 21
     },
     {
       "tag": "steinalder",
-      "count": 20
-    },
-    {
-      "tag": "islam",
       "count": 20
     },
     {
@@ -946,6 +946,10 @@
       "count": 19
     },
     {
+      "tag": "narrative",
+      "count": 19
+    },
+    {
       "tag": "kultur",
       "count": 18
     },
@@ -959,10 +963,6 @@
     },
     {
       "tag": "holocaust",
-      "count": 18
-    },
-    {
-      "tag": "narrative",
       "count": 18
     },
     {
@@ -3178,6 +3178,10 @@
       "count": 2
     },
     {
+      "tag": "skapelse",
+      "count": 2
+    },
+    {
       "tag": "dap",
       "count": 2
     },
@@ -3691,10 +3695,6 @@
     },
     {
       "tag": "hellige_tekster",
-      "count": 1
-    },
-    {
-      "tag": "skapelse",
       "count": 1
     },
     {

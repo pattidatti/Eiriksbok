@@ -1,6 +1,6 @@
 # KRLE — opprustningsplan og statusoversikt
 
-> **Sist målt:** 2026-08-10 · **N = 116 artikler**
+> **Sist målt:** 2026-08-10 (etter R0) · **N = 116 artikler**
 > Dette dokumentet er arbeidslista for å løfte KRLE-innholdet opp på plan_article-standard.
 > Kryss av i `✔`-kolonnen når en artikkel er ferdigstilt, og oppdater sammendraget nederst.
 
@@ -69,8 +69,8 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert — de har et annet
 | Uten `Oppgaver` | 109 | 94,0 % |
 | Uten mikrospill | 96 | 82,8 % |
 | Uten signaturkomponent | 85 | 73,3 % |
-| Uten `heroImage` | 61 | 52,6 % |
-| Ødelagt blokk-skjema | 8 | 6,9 % |
+| Uten `heroImage` | 55 | 47,4 % |
+| Ødelagt blokk-skjema | 0 | 0 % |
 
 ---
 
@@ -80,7 +80,7 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert — de har et annet
 
 | Runde | Innhold | Antall | Kobling til sammenligningsemnet |
 |---|---|---:|---|
-| **R0** | Bugene B1–B4 i §7. Rene skjema- og manifest-fikser, ingen nytt innhold. | 9 filer | Blokkerer alt annet |
+| ~~**R0**~~ | ~~Bugene B1–B5 i §7. Rene skjema- og manifest-fikser.~~ **Ferdig 2026-08-10** | 10 filer | ✅ |
 | **R1** | `skapelse` for de religionene som mangler den | 8 nye | Tema 1 «Hvor kommer alt fra?» |
 | **R2** | `gudsbilde` × 8 | 8 | Tema 2 «Én, mange eller ingen gud?» |
 | **R3** | `bonn` × 8 + ny sikhisme-artikkel | 9 | Tema 3 «Å snakke med det hellige» |
@@ -99,11 +99,11 @@ Sortert med de svakeste øverst innenfor hver gruppe.
 
 ### Bahá'í
 
-n = 8 · snitt 61 ord · 8 stub / 0 halv / 0 ferdig
+n = 8 · snitt 65 ord · 8 stub / 0 halv / 0 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Mikro | Oppg | Kilde | Quiz | Hero |
 |:--|:--|:--|--:|:-:|:-:|:-:|:-:|--:|:-:|
-| ☐ | `STUB` | `religion/bahai/intro.json` | 0 | — | — | — | — | 0 | — |
+| ☐ | `STUB` | `religion/bahai/intro.json` | 37 | — | — | — | — | 0 | ✅ |
 | ☐ | `STUB` | `religion/bahai/grunnleggere/artikkel.json` | 61 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/bahai/hellige-tekster/artikkel.json` | 61 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/bahai/gudsbilde/artikkel.json` | 66 | — | — | — | — | 3 | — |
@@ -114,11 +114,11 @@ n = 8 · snitt 61 ord · 8 stub / 0 halv / 0 ferdig
 
 ### Jehovas vitner
 
-n = 8 · snitt 60 ord · 8 stub / 0 halv / 0 ferdig
+n = 8 · snitt 64 ord · 8 stub / 0 halv / 0 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Mikro | Oppg | Kilde | Quiz | Hero |
 |:--|:--|:--|--:|:-:|:-:|:-:|:-:|--:|:-:|
-| ☐ | `STUB` | `religion/jehovas-vitner/intro.json` | 0 | — | — | — | — | 0 | — |
+| ☐ | `STUB` | `religion/jehovas-vitner/intro.json` | 34 | — | — | — | — | 0 | ✅ |
 | ☐ | `STUB` | `religion/jehovas-vitner/grunnleggere/artikkel.json` | 59 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/jehovas-vitner/gudsbilde/artikkel.json` | 61 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/jehovas-vitner/hellige-tekster/artikkel.json` | 63 | — | — | — | — | 3 | — |
@@ -129,11 +129,11 @@ n = 8 · snitt 60 ord · 8 stub / 0 halv / 0 ferdig
 
 ### Mormonisme
 
-n = 8 · snitt 66 ord · 8 stub / 0 halv / 0 ferdig
+n = 8 · snitt 71 ord · 8 stub / 0 halv / 0 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Mikro | Oppg | Kilde | Quiz | Hero |
 |:--|:--|:--|--:|:-:|:-:|:-:|:-:|--:|:-:|
-| ☐ | `STUB` | `religion/mormonisme/intro.json` | 0 | — | — | — | — | 0 | — |
+| ☐ | `STUB` | `religion/mormonisme/intro.json` | 39 | — | — | — | — | 0 | ✅ |
 | ☐ | `STUB` | `religion/mormonisme/bonn/artikkel.json` | 60 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/mormonisme/sentrale-trekk/artikkel.json` | 72 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/mormonisme/frelse/artikkel.json` | 73 | — | — | — | — | 3 | — |
@@ -144,11 +144,11 @@ n = 8 · snitt 66 ord · 8 stub / 0 halv / 0 ferdig
 
 ### Jødedom
 
-n = 8 · snitt 150 ord · 7 stub / 1 halv / 0 ferdig
+n = 8 · snitt 154 ord · 7 stub / 1 halv / 0 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Mikro | Oppg | Kilde | Quiz | Hero |
 |:--|:--|:--|--:|:-:|:-:|:-:|:-:|--:|:-:|
-| ☐ | `STUB` | `religion/jodedom/intro.json` | 0 | — | — | — | — | 0 | — |
+| ☐ | `STUB` | `religion/jodedom/intro.json` | 27 | — | — | — | — | 0 | ✅ |
 | ☐ | `STUB` | `religion/jodedom/bonn/artikkel.json` | 54 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/jodedom/gudsbilde/artikkel.json` | 62 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/jodedom/hellige-tekster/artikkel.json` | 79 | — | — | — | — | 3 | — |
@@ -159,11 +159,11 @@ n = 8 · snitt 150 ord · 7 stub / 1 halv / 0 ferdig
 
 ### Hinduisme
 
-n = 8 · snitt 176 ord · 7 stub / 0 halv / 1 ferdig
+n = 8 · snitt 180 ord · 7 stub / 0 halv / 1 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Mikro | Oppg | Kilde | Quiz | Hero |
 |:--|:--|:--|--:|:-:|:-:|:-:|:-:|--:|:-:|
-| ☐ | `STUB` | `religion/hinduisme/intro.json` | 0 | — | — | — | — | 0 | — |
+| ☐ | `STUB` | `religion/hinduisme/intro.json` | 31 | — | — | — | — | 0 | ✅ |
 | ☐ | `STUB` | `religion/hinduisme/hellige-tekster/artikkel.json` | 60 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/hinduisme/gudsbilde/artikkel.json` | 63 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/hinduisme/frelse/artikkel.json` | 65 | — | — | — | — | 3 | — |
@@ -190,11 +190,11 @@ n = 9 · snitt 173 ord · 8 stub / 0 halv / 1 ferdig
 
 ### Buddhisme
 
-n = 9 · snitt 299 ord · 7 stub / 1 halv / 1 ferdig
+n = 9 · snitt 303 ord · 7 stub / 1 halv / 1 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Mikro | Oppg | Kilde | Quiz | Hero |
 |:--|:--|:--|--:|:-:|:-:|:-:|:-:|--:|:-:|
-| ☐ | `STUB` | `religion/buddhisme/intro.json` | 0 | — | — | — | — | 0 | — |
+| ☐ | `STUB` | `religion/buddhisme/intro.json` | 32 | — | — | — | — | 0 | ✅ |
 | ☐ | `STUB` | `religion/buddhisme/hellige-tekster/artikkel.json` | 61 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/buddhisme/frelse/artikkel.json` | 62 | — | — | — | — | 3 | — |
 | ☐ | `STUB` | `religion/buddhisme/bonn/artikkel.json` | 65 | — | — | — | — | 3 | — |
@@ -211,7 +211,7 @@ n = 5 · snitt 373 ord · 4 stub / 0 halv / 1 ferdig
 | ✔ | Status | Fil | Ord | Sig | Mikro | Oppg | Kilde | Quiz | Hero |
 |:--|:--|:--|--:|:-:|:-:|:-:|:-:|--:|:-:|
 | ☐ | `STUB` | `religion/sikhisme/grunnleggere/artikkel.json` | 124 | — | — | — | — | 3 | ✅ |
-| ☐ | `STUB` | `religion/sikhisme/introduksjon/artikkel.json` | 133 | — | — | — | — | 3 | ✅ |
+| ☐ | `STUB` | `religion/sikhisme/intro/artikkel.json` | 133 | — | — | — | — | 3 | ✅ |
 | ☐ | `STUB` | `religion/sikhisme/hellige-tekster/artikkel.json` | 134 | — | — | — | — | 3 | ✅ |
 | ☐ | `STUB` | `religion/sikhisme/sentrale-trekk/artikkel.json` | 170 | — | — | — | — | 3 | ✅ |
 | ☐ | `FERDIG` | `religion/sikhisme/overgangsriter.json` | 1304 | ✅ | ✅ | ✅ | ✅ | 5 | ✅ |
@@ -312,37 +312,53 @@ n = 10 · snitt 1140 ord · 0 stub / 2 halv / 8 ferdig
 | ☐ | `FERDIG` | `etikk/intro.json` | 1504 | ✅ | — | — | — | 4 | ✅ |
 ---
 
-## 7. Bugs som må fikses først (R0)
+## 7. Bugs — R0, fikset 2026-08-10
 
-Disse er ikke innholdsmangler, men feil som gjør at sider ikke virker. De bør ryddes før noen artikkel oppgraderes.
+Fem feil som gjorde at sider ikke virket. Alle er ryddet før innholdsarbeidet startet.
 
-### B1 — Seks intro-sider renderer helt tomt
+### B1 — Seks intro-sider renderte helt tomt ✅
 
 **Filer:** `religion/{bahai,buddhisme,hinduisme,jehovas-vitner,jodedom,mormonisme}/intro.json`
 
-De bruker feltene `ingress` og `body` i stedet for `content`. Ingen renderer i `src/` leser `body`, så sidene laster med tom brødtekst. Hver fil har faktisk rundt 40 ord tekst som ligger ubrukt. De mangler også `subject`, `topic`, `heroImage` og `layout`.
+De brukte feltene `ingress` og `body` i stedet for `content`. Verken `body` eller `ingress` leses noe sted i `src/`, så sidene lastet med tom brødtekst. Hver fil hadde rundt 30–40 ord tekst som lå ubrukt.
 
-**Fiks:** konverter `ingress` + `body` til en flat `content`-array med `text`-blokker, og legg til de manglende metadatafeltene. Innholdet skal uansett skrives om i R1–R5, men konverteringen gjør sidene synlige med én gang.
+**Gjort:** konvertert til flat `content`-array, og lagt til `subject`, `topic`, `religion`, `dimension`, `comparison_tags`, `category`, `readTime` og `heroImage`. Hero-bildene fantes allerede på disk (`bahai_hero.webp` osv.) — de var bare aldri koblet til.
 
-### B2 — To islam-artikler bruker feil blokk-skjema
+### B2 — To islam-artikler brukte feil blokk-skjema ✅
 
 **Filer:** `religion/islam/bonn/artikkel.json`, `religion/islam/skapelse/artikkel.json`
 
-De skriver `{"name": "text", ...}` og `{"name": "image", ...}` der resten av korpuset bruker `{"type": "text"}`. Dette er de eneste blokkene i hele KRLE uten `type`. De er også de eneste artiklene som henter bilder fra eksterne Unsplash-URL-er, i strid med bilderetningslinjene.
+De skrev `{"name": "text"}` der resten av korpuset bruker `{"type": "text"}`.
 
-**Fiks:** bytt `name` til `type` i de fire blokkene, og erstatt Unsplash-URL-ene med lokale WebP-bilder eller fjern bildeblokkene inntil bilder finnes.
+**Presisering:** dette gjorde dem ikke usynlige. `resolveBlockType` i `src/components/ArticleContent.tsx` (linje 193) leser `b.type || b.name`, så sidene rendret. Men de var de eneste blokkene i hele KRLE uten `type`, og de eneste artiklene som hentet bilder fra en ekstern Unsplash-URL.
 
-### B3 — `islam/skapelse` mangler i manifestet
+**Gjort:** `name` → `type`, `subject` normalisert fra `"KRLE"` til `"krle"`, `topic` fra `"Islam"` til `"religioner"`, manglende `id` lagt til. Unsplash-bildet i `bonn` erstattet med lokale `islam_bonn.webp`; i `skapelse` fjernet bildeblokken, siden ingen passende lokal illustrasjon finnes ennå — bilde kommer i R1.
 
-Fila `public/content/krle/religion/islam/skapelse/artikkel.json` finnes på disk, men er ikke registrert under `krle → religion → islam` i `public/content/manifest.json`. Artikkelen er derfor usynlig i navigasjonen, men plukkes likevel opp av `generate-comparison-manifest.mjs` og vises på `/krle/sammenlign/tema/skapelse`.
+### B3 — `islam/skapelse` manglet i manifestet ✅
 
-**Fiks:** legg til lesson-oppføringen i manifestet.
+Fila fantes på disk, men var ikke registrert under `krle → religion → islam`. Artikkelen var usynlig i navigasjonen, men ble likevel plukket opp av `generate-comparison-manifest.mjs` og vist på `/krle/sammenlign/tema/skapelse`.
 
-### B4 — Sikhisme sin intro-lenke peker feil
+**Gjort:** lesson-oppføring lagt inn etter `gudsbilde`.
 
-Manifestet registrerer lesson-ID `intro` under sikhisme, men mappa på disk heter `introduksjon/`. Ruten `/krle/religion/sikhisme/intro` er sannsynligvis brutt.
+### B4 — Sikhisme sin intro-lenke pekte feil ✅
 
-**Fiks:** verifiser ruten, og rett navnet enten i manifestet eller på disk. Endring på disk krever at `comparison-manifest` regenereres.
+Manifestet registrerte lesson-ID `intro`, JSON-fila hadde `"id": "intro"`, men mappa på disk het `introduksjon/`. Ruten `/krle/religion/sikhisme/intro` var brutt.
+
+**Gjort:** mappa omdøpt til `intro/` med `git mv`, slik at den følger samme mønster som alle de andre religionene. `comparison-manifest.json` regenerert med riktig lenke.
+
+### B5 — Duplikate React-nøkler i «Relatert innhold» ✅
+
+**Fil:** `src/components/RichSidebar.tsx`
+
+Lista over relaterte artikler brukte `key={article.id}`. Fordi hele KRLE er bygget på at samme artikkel-ID gjentas på tvers av religionene (`overgangsriter` finnes ni ganger, `bonn` åtte ganger), kolliderte nøklene, og React kunne utelate eller duplisere oppføringer.
+
+Denne ble oppdaget under verifiseringen av B1–B4 og var ikke med i den opprinnelige buglista. Den er verdt å merke seg fordi den blir **verre** jo flere parallelle artikler vi legger til — altså nøyaktig det dette prosjektet går ut på.
+
+**Gjort:** `key={article.url}`, som er unik per artikkel.
+
+### Verifisering av R0
+
+Alle ni berørte ruter lastet i Chromium på 1366×768: tekst til stede, alle bilder lastet (`naturalWidth > 0`), **null konsollfeil**. `npx tsc -b` og `npm run lint` rene. `/krle/sammenlign`, `/krle/sammenlign/tema/skapelse` og `/krle/religion/sikhisme` regresjonstestet uten feil.
 
 ---
 
@@ -354,6 +370,8 @@ Skillet **`/oppgrader-religion-artikkel`** (`.claude/skills/oppgrader-religion-a
 /oppgrader-religion-artikkel islam
 ```
 
+Skanneren regner en artikkel som ferdig først når den har signaturkomponent, mikrospill, `Oppgaver`, `Kildeliste` **og** minst 800 ord. Filer med ødelagt blokk-skjema rangeres øverst som `BROKEN`.
+
 Skillet dekker bare `religion/`-mappa. For `filosofi/` (R7) må `plan_article` kjøres direkte.
 
 ---
@@ -364,4 +382,4 @@ Før opp hver ferdigstilte artikkel her fra og med nå, så er historikken synli
 
 | Dato | Artikkel | Signaturkomponent | Mikrospill | PR |
 |---|---|---|---|---|
-| | | | | |
+| 2026-08-10 | R0: bugfiks B1–B5, 10 filer | — | — | — |

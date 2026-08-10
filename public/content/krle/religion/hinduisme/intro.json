@@ -1,11 +1,27 @@
 {
     "id": "intro",
     "title": "Introduksjon til Hinduisme",
-    "ingress": "En mangfoldig religion med røtter i India.",
-    "body": [
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "hinduisme",
+    "dimension": "doctrinal",
+    "comparison_tags": [
+        "sentrale_trekk"
+    ],
+    "category": "Hinduisme",
+    "readTime": "2 min lesning",
+    "heroImage": "/images/krle/religion/hinduisme_hero.webp",
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-10T12:00:00Z",
+    "content": [
+        {
+            "type": "text",
+            "content": "En mangfoldig religion med røtter i India."
+        },
         {
             "type": "text",
             "content": "Hinduismen regnes ofte som verdens eldste nålevende religion. Den har ingen enkelt grunnlegger, men er et resultat av en lang historisk utvikling i India."
         }
-    ]
+    ],
+    "timeline": []
 }
