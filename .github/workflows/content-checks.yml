@@ -33,7 +33,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          # Samme versjon som deploy.yml, så en PR ikke kan bli grønn på en
+          # annen Node enn den som faktisk bygger siden.
+          node-version: 22
           cache: npm
 
       - name: Installer avhengigheter
