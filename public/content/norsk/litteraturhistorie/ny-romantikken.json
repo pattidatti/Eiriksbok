@@ -1,7 +1,7 @@
 {
     "id": "ny-romantikken",
     "title": "Nyromantikken: Mystikk, sjel og underbevissthet",
-    "ingress": "Pendelen svinger alltid. Etter to tiår der alt skulle handle om samfunnsproblemer, kloakk og fattigdom, sa forfatterne stopp. De ville ikke lenger se utover på elendigheten – de ville se innover i sin egen sjel.",
+    "ingress": "Pendelen svinger alltid. Etter to tiår der alt skulle handle om samfunnsproblemer, kloakk og fattigdom, sa forfatterne stopp. De ville ikke lenger se utover på elendigheten - de ville se innover i sin egen sjel.",
     "heroImage": "/images/norsk/litteraturhistorie/ny-romantikken-hero.webp",
     "content": [
         {
@@ -10,7 +10,7 @@
         },
         {
             "type": "text",
-            "content": "Se for deg at du har hørt på foredrag om politikk, kvinnesak og lønnsforhold i tjue år. Du er lei av fornuft. Du er lei av vitenskap. Du lengter etter noe som får hjertet til å banke litt fortere. Slik hadde de unge forfatterne det rundt 1890. Realismen hadde vært viktig og nødvendig, men nå føltes den tørr og kjedelig.\n\nKnut Hamsun reiste rundt på turné og regelrett skjelte ut de 'fire store' (Ibsen, Bjørnson, Kielland og Lie). Han mente de skrev om 'typer' og samfunnsroller, ikke om levende mennesker av kjøtt og blod. Hamsun ville skrive om 'det ubevisste sjeleliv' – om de rare, ulogiske tankene vi alle har, men som vi sjelden snakker om."
+            "content": "Se for deg at du har hørt på foredrag om politikk, kvinnesak og lønnsforhold i tjue år. Du er lei av fornuft. Du er lei av vitenskap. Du lengter etter noe som får hjertet til å banke litt fortere. Slik hadde de unge forfatterne det rundt 1890. Realismen hadde vært viktig og nødvendig, men nå føltes den tørr og kjedelig. Nyromantikken ble en motreaksjon på realismen: nå var det den subjektive opplevelsen, følelsen og fantasien som gjaldt (Bjerck Hagen & Vestli, 2025).\n\nI 1891 reiste Knut Hamsun rundt på foredragsturné og skjelte ut de 'fire store' (Ibsen, Bjørnson, Kielland og Lie). Verst gikk det ut over Ibsen, men også Lie og Kielland fikk gjennomgå (Rottem, 2026). Hamsun mente de drev med 'samfunnsreformasjon og typediktning' - de skrev om samfunnsroller, ikke om levende mennesker av kjøtt og blod (Bjerck Hagen, 2026). I programartikkelen 'Fra det ubevidste Sjæleliv' krevde han i stedet at litteraturen skulle skildre 'det ubevisste sjeleliv' - de rare, ulogiske tankene vi alle har, men som vi sjelden snakker om (Rottem, 2026)."
         },
         {
             "type": "header",
@@ -31,7 +31,7 @@
         },
         {
             "type": "text",
-            "content": "For å forstå nyromantikken, må vi se hva den kom fra og hva den førte til."
+            "content": "For å forstå nyromantikken, må vi se hva den kom fra og hva den førte til. Selve perioden regnes fra starten av 1890-tallet og fram mot 1905 (Bjerck Hagen & Vestli, 2025), mens nyrealismen som kom etter, brukes om årene 1905-1940 (Bjerck Hagen, 2025)."
         },
         {
             "type": "comparison_card",
@@ -47,8 +47,8 @@
                     "color": "purple"
                 },
                 {
-                    "title": "Nyrealismen (1905-1935)",
-                    "content": "En blanding. Man beholdt den psykologiske innsikten fra nyromantikken, men begynte igjen å skrive om samfunnet og historien. Store etiske valg. Arbeiderklasse og historie.",
+                    "title": "Nyrealismen (1905-1940)",
+                    "content": "Et oppgjør med nyromantikken. Man beholdt den psykologiske innsikten, men begynte igjen å skrive om samfunnet og historien. Store etiske valg. Individets røtter i slekt, klasse og lokalsamfunn.",
                     "color": "orange"
                 }
             ]
@@ -60,17 +60,17 @@
         {
             "type": "expandable",
             "title": "Knut Hamsun - Psykologiens mester",
-            "content": "Det var Hamsun som brøytet vei med romanen *Sult* (1890). Det er ingen vanlig historie med begynnelse og slutt. Den handler om en navnløs forfatter som sulter i Kristiania. Vi følger hans desperate kamp for mat, men mest av alt hans merkelige, feberaktige tanker. Han gjør irrasjonelle ting, lyver uten grunn og forelsker seg i kvinner han ikke kjenner.\n\n> «Det var i den tid jeg gikk omkring og sultet i Kristiania, denne forunderlige by som ingen forlater før han har fått merker av den...»\n\nI *Pan* (1894) møter vi løytnant Glahn i Nordland. Han lever i en hytte i skogen med hunden sin, Æsop. Naturen er hans beste venn, mens menneskene – og spesielt Edvarda, som han elsker og hater – forstår han seg ikke på. Boken er kjent for sitt vakre, lyriske språk."
+            "content": "Det var Hamsun som brøytet vei med romanen *Sult* (1890). Det er ingen vanlig historie med begynnelse og slutt. Den handler om en navnløs forfatter som sulter i Kristiania. Vi følger hans desperate kamp for mat, men mest av alt hans merkelige, feberaktige tanker. Handlingsmønsteret hans er uforutsigbart, innfallspreget og irrasjonelt (Undheim, 2026).\n\n> «Det var i den tid jeg gikk omkring og sultet i Kristiania, denne forunderlige by som ingen forlater før han har fått merker av den...»\n\nI *Pan* (1894) møter vi løytnant Thomas Glahn, som slår seg ned i en hytte i Nordland. Naturen er hans beste venn, mens menneskene forstår han seg ikke på - og aller minst Edvarda. Glahn elsker drømmen om kjærligheten høyere enn han elsker henne (Rottem, 2026). Boken regnes som et prosalyrisk mesterverk og er kjent for sitt vakre språk."
         },
         {
             "type": "expandable",
             "title": "Sigbjørn Obstfelder - Den første modernisten",
-            "content": "Mens Hamsun skrev romaner, fornyet Obstfelder lyrikken. Dikt skulle rime og ha fast rytme, mente folk. 'Nei', sa Obstfelder. Han skrev 'frie vers' uten rim. Han følte seg fremmed i verden, som om han hadde havnet på feil planet. Diktet *Jeg ser* er kanskje periodens mest kjente uttrykk for fremmedfølelse:\n\n> «Jeg ser på den hvite himmel,\n> jeg ser på de gråblå skyer,\n> jeg ser på den blodige sol.\n> \n> Dette er altså verden.\n> Dette er altså klodenes hjem.\n> \n> En regndråpe!\n> \n> Jeg ser på de høye hus,\n> jeg ser på de tusende vinduer,\n> jeg ser på det fjerne kirketårn.\n> \n> Dette er altså jorden.\n> Dette er altså menneskenes hjem.\n> \n> ...\n> \n> Jeg er visst kommet på en feil klode!\n> Her er så underlig...»"
+            "content": "Mens Hamsun skrev romaner, fornyet Obstfelder lyrikken. Dikt skulle rime og ha fast rytme, mente folk. 'Nei', sa Obstfelder. Han skrev 'frie vers' uten rim. Han regnes som den fremste representanten for en tidlig modernistisk lyrikk i Norge, og diktningen hans handler ofte om angst og fremmedgjøring - på samme måte som bildene til Edvard Munch (Tørset & Lillebo, 2026). Diktet *Jeg ser* er kanskje periodens mest kjente uttrykk for fremmedfølelse:\n\n> «Jeg ser på den hvite himmel,\n> jeg ser på de gråblå skyer,\n> jeg ser på den blodige sol.\n> \n> Dette er altså verden.\n> Dette er altså klodenes hjem.\n> \n> En regndråpe!\n> \n> Jeg ser på de høye hus,\n> jeg ser på de tusende vinduer,\n> jeg ser på det fjerne kirketårn.\n> \n> Dette er altså jorden.\n> Dette er altså menneskenes hjem.\n> \n> ...\n> \n> Jeg er visst kommet på en feil klode!\n> Her er så underlig...»"
         },
         {
             "type": "expandable",
-            "title": "Vilhelm Krag - Startskuddet",
-            "content": "Egentlig var det Vilhelm Krag som 'offisielt' startet perioden da han leste diktet *Fandango* i 1890. Diktet var eksotisk, fargerikt og handlet om musikk og dans – milevis unna de grå, triste realistiske tekstene folk var vant til."
+            "title": "Vilhelm Krag - Gjennombruddet i 1890",
+            "content": "Vilhelm Krag fikk sitt litterære gjennombrudd med diktet *Fandango* i 1890. Diktet plasserte ham som nyromantisk dekadanseforfatter, i klar opposisjon til realismen som hadde preget 1880-årene (Wærp, 2025). Det var eksotisk, fargerikt og handlet om musikk og dans - milevis unna de grå, triste realistiske tekstene folk var vant til."
         },
         {
             "type": "info_box",
@@ -91,7 +91,7 @@
                     "Artikkelen sier at naturen i nyromantikken var 'besjelet'. Forklar hva det betyr, og bruk en mørk skog som eksempel.",
                     "Hvorfor tror du de unge forfatterne ble så lei av realismens fornuft og vitenskap at de heller ville skrive om 'det ubevisste sjeleliv'?",
                     "Sammenlign nyromantikken med den gamle romantikken fra rundt 1800. Hvorfor kaller vi den nye perioden for 'ny'-romantikk når de ligner på hverandre?",
-                    "Nyrealismen (1905-1935) beskrives som en blanding. Hva beholdt den fra nyromantikken, og hva hentet den tilbake fra realismen?"
+                    "Nyrealismen (1905-1940) beskrives som et oppgjør med nyromantikken. Hva beholdt den likevel fra nyromantikken, og hva hentet den tilbake fra realismen?"
                 ],
                 "gaaVidere": [
                     "Skriv et kort dikt i 'frie vers' uten rim, slik Obstfelder gjorde, der du beskriver et sted som føles fremmed for deg.",
@@ -99,8 +99,23 @@
                     "Skriv en kort tekst der du beskriver en helt vanlig tur, men lar naturen rundt deg speile følelsene dine slik nyromantikerne gjorde."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bjerck Hagen, E. (2025). *Nyrealismen - litteratur*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/nyrealismen_-_litteratur](https://snl.no/nyrealismen_-_litteratur)",
+                    "Bjerck Hagen, E. (2026). *Knut Hamsun*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Knut_Hamsun](https://snl.no/Knut_Hamsun)",
+                    "Bjerck Hagen, E. & Vestli, E. N. (2025). *Nyromantikken - litteratur*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/nyromantikken_-_litteratur](https://snl.no/nyromantikken_-_litteratur)",
+                    "Rottem, Ø. (2026). *Knut Hamsun*. Norsk biografisk leksikon. Hentet 10.08.2026 fra [nbl.snl.no/Knut_Hamsun](https://nbl.snl.no/Knut_Hamsun)",
+                    "Tørset, E. & Lillebo, H. (2026). *Sigbjørn Obstfelder*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Sigbjørn_Obstfelder](https://snl.no/Sigbj%C3%B8rn_Obstfelder)",
+                    "Undheim, I. H. (2026). *Sult - roman*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Sult_-_roman](https://snl.no/Sult_-_roman)",
+                    "Wærp, H. H. (2025). *Vilhelm Krag*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Vilhelm_Krag](https://snl.no/Vilhelm_Krag)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }
