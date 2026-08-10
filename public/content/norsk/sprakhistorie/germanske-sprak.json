@@ -3,14 +3,14 @@
   "title": "De germanske søskenbarna: Hvorfor norsk, engelsk og tysk er i slekt",
   "description": "Norsk, engelsk, tysk og nederlandsk er alle germanske språk med felles opphav. Oppdag språkfamilier, kognater og lydforskyvninger.",
   "layout": "rich",
-  "year": "ca. 500 f.Kr.–i dag",
+  "year": "ca. 500 f.Kr.-i dag",
   "category": "Språk",
   "readTime": "10 min lesning",
   "heroImage": "/images/topics/germanske_sprak_hero.webp",
   "details": [
     "Norsk, engelsk, tysk og nederlandsk stammer alle fra urgermansk",
     "Kognater viser slektskapet: natt/night/Nacht",
-    "Vikingene ga over 1000 ord til det engelske språket"
+    "Vikingene ga engelsk en mengde dagligord - blant annet they, them og their"
   ],
   "externalUrl": "https://snl.no/germanske_språk",
   "tags": [
@@ -32,7 +32,7 @@
     },
     {
       "type": "text",
-      "content": "I videoen over hører du nederlandsk og tysk som til tider ligner forbløffende mye på engelsk. Det er ikke tilfeldig, og det er heller ikke en morsom illusjon. Norsk, engelsk, tysk og nederlandsk er alle germanske språk. De er søskenbarn i en stor språkfamilie, og de deler et felles opphav som går over 2000 år tilbake i tid."
+      "content": "I videoen over hører du nederlandsk og tysk som til tider ligner forbløffende mye på engelsk. Det er ikke tilfeldig, og det er heller ikke en morsom illusjon. Norsk, engelsk, tysk og nederlandsk er alle germanske språk (Askedal, 2025). De er søskenbarn i en stor språkfamilie, og de deler et felles opphav langt tilbake i tid."
     },
     {
       "type": "header",
@@ -40,7 +40,7 @@
     },
     {
       "type": "text",
-      "content": "Tenk på språk som en familie. Akkurat som du har foreldre, besteforeldre og søskenbarn, har språk det også. Norsk og svensk er som søsken — de er veldig like fordi de nylig skilte lag. Norsk og engelsk er mer som søskenbarn — de er tydelig i slekt, men har utviklet seg i hver sin retning. Og norsk og hindi? De er som veldig fjerne slektninger som nesten ikke ligner hverandre lenger, men som faktisk har en felles stamfar."
+      "content": "Tenk på språk som en familie. Akkurat som du har foreldre, besteforeldre og søskenbarn, har språk det også. Norsk og svensk er som søsken - de er veldig like fordi de nylig skilte lag. Norsk og engelsk er mer som søskenbarn - de er tydelig i slekt, men har utviklet seg i hver sin retning. Og norsk og hindi? De er som veldig fjerne slektninger som nesten ikke ligner hverandre lenger, men som faktisk har en felles stamfar. Både germansk, gresk og indoiransk hører nemlig til den samme store indoeuropeiske språkfamilien (Theil, 2026)."
     },
     {
       "type": "component",
@@ -48,9 +48,9 @@
       "props": {
         "title": "Proto-indoeuropeisk: Stamfaren ingen har hørt",
         "items": [
-          "For ca. 5000 år siden snakket et folk på steppene nord for Svartehavet et språk vi kaller proto-indoeuropeisk.",
-          "Da de spredte seg utover Europa og Asia, utviklet språket seg i ulike retninger — og ble til germansk, romansk, slavisk, keltisk og mange flere grener.",
-          "Oppdagelsen av denne sammenhengen regnes som et av språkvitenskapens største gjennombrudd. Den kom på 1700-tallet, da europeiske forskere la merke til slående likheter mellom sanskrit, gresk og latin."
+          "For rundt 5000 år siden snakket et folk i elvedalene i dagens Ukraina, nord for Svartehavet, et språk vi kaller proto-indoeuropeisk.",
+          "Da de spredte seg utover Europa og Asia, utviklet språket seg i ulike retninger - og ble til germansk, italisk, slavisk, keltisk og mange flere greiner.",
+          "Oppdagelsen av denne sammenhengen regnes som et av språkvitenskapens største gjennombrudd. Den kom i 1786, da briten William Jones pekte på de slående likhetene mellom sanskrit, gresk og latin."
         ]
       }
     },
@@ -60,7 +60,7 @@
     },
     {
       "type": "text",
-      "content": "De germanske språkene er en av de største greinene på det indoeuropeiske treet. De stammer alle fra urgermansk, et språk som ble snakket for rundt 2500 år siden i Skandinavia og området rundt Østersjøen. Etter hvert som folk vandret og bosatte seg i nye områder, splittet urgermansk seg i tre hovedgreiner."
+      "content": "De germanske språkene er en av greinene på det indoeuropeiske språktreet (Theil, 2026). De stammer alle fra urgermansk. Det er et felles opphavsspråk ingen har skrevet ned; forskerne har rekonstruert det ved å sammenligne de eldste kjente kildene i de germanske språkene (Askedal, 2025). Etter hvert som folk vandret og bosatte seg i nye områder, splittet urgermansk seg i tre hovedgreiner."
     },
     {
       "type": "component",
@@ -85,7 +85,7 @@
     },
     {
       "type": "text",
-      "content": "Legg merke til noe interessant: norsk og engelsk tilhører ulike greiner. Norsk er nordgermansk, mens engelsk er vestgermansk. Likevel ligner de mer på hverandre enn man kanskje skulle tro. Det skyldes dels det felles urgermanske opphavet, og dels at vikingene i sin tid hadde enorm innflytelse på det engelske språket."
+      "content": "Legg merke til noe interessant: norsk og engelsk tilhører ulike greiner. Norsk er nordgermansk, mens engelsk er vestgermansk, sammen med tysk, nederlandsk og frisisk (Askedal, 2025; Dahl, 2026). Likevel ligner de mer på hverandre enn man kanskje skulle tro. Det skyldes dels det felles urgermanske opphavet, og dels at vikingene i sin tid hadde stor innflytelse på det engelske språket."
     },
     {
       "type": "header",
@@ -95,7 +95,7 @@
       "type": "component",
       "name": "SimpleTable",
       "props": {
-        "title": "Kognater — ord med felles opphav",
+        "title": "Kognater - ord med felles opphav",
         "columns": [
           "Norsk",
           "Engelsk",
@@ -165,13 +165,13 @@
     },
     {
       "type": "text",
-      "content": "Disse ordene kalles kognater — ord i ulike språk som stammer fra det samme urgermanske opphavet. De er ikke lånt fra hverandre, men har utviklet seg parallelt fra et felles uropphav. Det er som å se fem søskenbarn som alle ligner litt på bestemor, men på ulike måter."
+      "content": "Disse ordene kalles kognater - ord i ulike språk som stammer fra det samme urgermanske opphavet. De er ikke lånt fra hverandre, men har utviklet seg parallelt fra et felles uropphav. Det er som å se fem søskenbarn som alle ligner litt på bestemor, men på ulike måter."
     },
     {
       "type": "component",
       "name": "Comparison",
       "props": {
-        "title": "Tallene 1–10: Hør likheten",
+        "title": "Tallene 1-10: Hør likheten",
         "leftTitle": "Norsk",
         "rightTitle": "Engelsk",
         "items": [
@@ -234,7 +234,7 @@
     },
     {
       "type": "text",
-      "content": "Alle de nordiske språkene — norsk, svensk, dansk, islandsk og færøysk — stammer fra norrønt, språket vikingene snakket fra ca. 700 til 1300 e.Kr. Norrønt var et rikt og uttrykkfullt språk, skrevet med runer og senere med det latinske alfabetet. Da vikingene seilte til Island på 800-tallet, tok de med seg norrønt dit. Mens fastlandsspråkene forandret seg mye gjennom middelalderen, forble islandsk forbausende likt det opprinnelige norrønt. Islendinger i dag kan fortsatt lese sagaene fra 1200-tallet nesten uten hjelp."
+      "content": "Alle de nordiske språkene - norsk, svensk, dansk, islandsk og færøysk - har røttene sine i norrøn tid. Norrønt er navnet på språket som ble brukt i Norge i perioden 700-1350, og moderne norsk, islandsk og færøysk kommer fra det (Nordbø mfl., 2025). Norrønt var et rikt og uttrykkfullt språk, skrevet med runer og senere med det latinske alfabetet. Island ble bygd opp i perioden 870-920, i hovedsak av nordmenn eller av nordboere som allerede hadde slått seg ned i Irland og på Hebridene (Bandlien, 2026), og de tok norrønt med seg dit. Mens språket på fastlandet forandret seg mye gjennom middelalderen, gikk islandsk ikke gjennom de samme store endringene. Islandsk ligger derfor fortsatt nær norrønt, og dagens islendinger kan lese norrøne tekster uten større problemer (Nordbø mfl., 2025)."
     },
     {
       "type": "component",
@@ -263,7 +263,7 @@
     },
     {
       "type": "text",
-      "content": "Hvis alle germanske språk stammer fra det samme urgermanske opphavet, hvorfor høres tysk så annerledes ut enn norsk og engelsk? Svaret ligger i noe som kalles den høytyske lydforskyvningen — en serie systematiske lydendringer som skjedde i det sørlige Tyskland rundt 500–700 e.Kr. Visse konsonanter «forskjøv» seg: p ble til pf eller ff, t ble til ts eller ss, og k ble til ch. Denne endringen rammet bare de sørlige germanske dialektene, altså det som ble til høytysk. Norsk, engelsk og nederlandsk ble ikke berørt — og det er derfor disse tre ofte ligner mer på hverandre enn på tysk."
+      "content": "Hvis alle germanske språk stammer fra det samme urgermanske opphavet, hvorfor høres tysk så annerledes ut enn norsk og engelsk? Svaret ligger i noe som kalles den andre, eller høytyske, lydforskyvningen. Det var en serie systematiske lydendringer som skjedde rundt år 600 til 800 (Theodorsen, 2026a). Visse konsonanter «forskjøv» seg: p ble til pf, ff eller f, t ble til z, ss eller ß, og k ble til ch - som når nedertysk maken ble til machen og water ble til Wasser (Theodorsen, 2026b). Endringen slo bare gjennom i de sørlige og østlige delene av det tyske språkområdet, altså det som ble til høytysk. Nederlandsk, engelsk og de skandinaviske språkene gikk ikke gjennom den høytyske lydforskyvningen (Theodorsen, 2026a) - og det er derfor disse ofte ligner mer på hverandre enn på tysk."
     },
     {
       "type": "component",
@@ -312,22 +312,20 @@
     },
     {
       "type": "text",
-      "content": "Det er to hovedgrunner til at norsk og engelsk har så mange fellestrekk. For det første deler de det urgermanske opphavet. Grunnleggende ord for familie, kropp, natur og tall har vært med helt fra starten. For det andre kom vikingene. Fra slutten av 700-tallet og utover invaderte og bosatte nordiske vikinger seg i store deler av England. Området de kontrollerte ble kalt Danelagen, og her levde norrøsktalende og engelsktalende side om side i generasjoner. Resultatet var massiv språkpåvirkning."
+      "content": "Det er to hovedgrunner til at norsk og engelsk har så mange fellestrekk. For det første deler de det urgermanske opphavet. Grunnleggende ord for familie, kropp, natur og tall har vært med helt fra starten. For det andre kom vikingene. Vikingtiden regnes gjerne fra angrepet på klosteret Lindisfarne i 793 og fram til rundt 1050 (Bandlien, 2026). Den delen av England der dansk og norsk lov gjaldt, ble kalt Danelagen, og den omfattet Northumbria, East Anglia og deler av Mercia (Lunga, 2025). Her levde norrøntalende og engelsktalende side om side i generasjoner, og engelsk tok opp i seg en mengde dagligord fra de norsk- og danskættede innbyggerne (Hille & Dahl, 2025)."
     },
     {
       "type": "list",
       "items": [
-        "they, them, their — erstatter de gamle engelske pronomenene, direkte fra norrønt þeir, þeim, þeira",
-        "sky — fra norrønt ský (i gammelengelsk betydde sky «sky/tåke», men det norrøne ordet tok over)",
-        "window — fra vindauga (= «vindøye»), det norrøne ordet for vindusåpning",
-        "egg — fra norrønt egg (gammelengelsk hadde ey)",
-        "knife — fra norrønt knífr",
-        "husband — fra norrønt húsbóndi (= «husbonde»)",
-        "law — fra norrønt lǫg (jf. norsk «lov»)",
-        "take — fra norrønt taka (gammelengelsk brukte niman)",
-        "wrong — fra norrønt rangr (= «skjev, feil»)",
-        "call — fra norrønt kalla"
+        "Pronomen: they, them og their. Disse tok over for de gamle engelske pronomenene - og det er sjelden at et språk låner så små og sentrale ord.",
+        "Substantiv: egg, fellow, law (lov), sister (søster), skirt (skjørt), steak (steik) og window (vindu).",
+        "Adjektiv: ill, odd, rotten (råtten) og weak (veik).",
+        "Verb: call (kalle), cast (kaste), lift (løfte) og take (ta)."
       ]
+    },
+    {
+      "type": "text",
+      "content": "Alle ordene i lista over kom inn i engelsk fra de nordiske innbyggerne i Danelagen (Hille & Dahl, 2025). Den norske oversettelsen står i parentes. Legg merke til hvor hverdagslige de er: dette er ord du bruker hele tiden, ikke fine ord fra bøkene."
     },
     {
       "type": "header",
@@ -335,7 +333,7 @@
     },
     {
       "type": "text",
-      "content": "Når du lærer engelsk på skolen, har du allerede en hemmelig fordel: morsmålet ditt er i slekt med engelsk. Mange av de enkleste og mest hverdagslige engelske ordene — de du lærte først — er germanske arveord som ligner på norsk. Det er de lange, «vanskelige» engelske ordene som ofte er lånt fra latin og fransk. Å forstå språkfamilier gir deg også et nytt blikk på ditt eget språk. Norsk er ikke bare «norsk» — det er et levende resultat av tusenvis av år med vandring, kontakt og forandring. Hver gang du sier «natt» eller «vann», bruker du ord som forbinder deg med mennesker over hele Europa, helt tilbake til urgermansk tid."
+      "content": "Når du lærer engelsk på skolen, har du allerede en hemmelig fordel: morsmålet ditt er i slekt med engelsk. Mange av de enkleste og mest hverdagslige engelske ordene - de du lærte først - er germanske arveord som ligner på norsk. Det er de lange, «vanskelige» engelske ordene som oftere er lånt fra fransk og latin (Dahl, 2026). Å forstå språkfamilier gir deg også et nytt blikk på ditt eget språk. Norsk er ikke bare «norsk» - det er et levende resultat av tusenvis av år med vandring, kontakt og forandring. Hver gang du sier «natt» eller «vann», bruker du ord som forbinder deg med mennesker over hele Europa, helt tilbake til urgermansk tid."
     },
     {
         "type": "component",
@@ -349,9 +347,9 @@
             ],
             "reflekter": [
                 "Norsk er nordgermansk og engelsk er vestgermansk, men de ligner likevel mye på hverandre. Forklar de to grunnene artikkelen gir til dette.",
-                "Hvorfor kan islendinger fortsatt lese sagaer fra 1200-tallet nesten uten hjelp, mens vi som snakker norsk ikke klarer det like lett?",
+                "Hvorfor kan islendinger fortsatt lese norrøne tekster uten større problemer, mens vi som snakker norsk ikke klarer det like lett?",
                 "Den høytyske lydforskyvningen rammet bare de sørlige dialektene. Forklar hvordan dette gjorde at tysk høres mer annerledes ut enn norsk, engelsk og nederlandsk.",
-                "Ord som they, window og knife kom inn i engelsk fra norrønt. Hva forteller dette oss om hvordan vikinger og engelsktalende levde sammen i Danelagen?"
+                "Ord som they, window og egg kom inn i engelsk fra de nordiske innbyggerne i Danelagen. Hva forteller dette oss om hvordan vikinger og engelsktalende levde sammen der?"
             ],
             "gaaVidere": [
                 "Se på kognat-tabellen i artikkelen. Velg tre ord og skriv en kort tekst der du forklarer for en yngre elev hvorfor de like ordene i norsk, engelsk og tysk beviser at språkene er i slekt.",
@@ -422,9 +420,26 @@
           }
         ]
       }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Askedal, J. O. (2025). *Germanske språk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/germanske_språk](https://snl.no/germanske_spr%C3%A5k)",
+          "Bandlien, B. (2026). *Vikingtiden*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/vikingtiden](https://snl.no/vikingtiden)",
+          "Dahl, A. (2026). *Engelsk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/engelsk](https://snl.no/engelsk)",
+          "Hille, A. & Dahl, A. (2025). *Middelengelsk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/middelengelsk](https://snl.no/middelengelsk)",
+          "Lunga, P. S. (2025). *Danelagen*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Danelagen](https://snl.no/Danelagen)",
+          "Nordbø, B., Venås, K., Magerøy, H., Thorvaldsen, B. Ø. & Engesland, N. E. (2025). *Norrønt*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/norrønt](https://snl.no/norr%C3%B8nt)",
+          "Theil, R. (2026). *Indoeuropeiske språk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/indoeuropeiske_språk](https://snl.no/indoeuropeiske_spr%C3%A5k)",
+          "Theodorsen, C. (2026a). *Høytysk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/høytysk](https://snl.no/h%C3%B8ytysk)",
+          "Theodorsen, C. (2026b). *Nedertysk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/nedertysk](https://snl.no/nedertysk)"
+        ]
+      }
     }
   ],
   "timeline": [],
   "createdDate": "2026-03-09T12:00:00Z",
-  "lastUpdated": "2026-03-09T12:00:00Z"
+  "lastUpdated": "2026-08-10T12:00:00Z"
 }

@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "Novellen er en av de mest sentrale sjangrene i moderne litteratur. Ordet kommer fra italienske *novella*, som betyr «nyhet». En novelle er en kort, oppdiktet fortelling som kjennetegnes av fortetting og konsentrasjon. I motsetning til romanen, som kan bre seg ut over hundrevis av sider og følge mange karakterer gjennom et langt livsløp, fokuserer novellen gjerne på én enkelt hendelse, et avgjørende øyeblikk eller en kort tidsperiode i en eller få personers liv.\n\nDet sies ofte at en god novelle skal kunne leses i «én sitning». Den krever at leseren er oppmerksom, for i en novelle står det sjelden noe som er overflødig. Hvert ord veies nøye, og mye av handlingen og meningen ligger «mellom linjene». Forfatteren overlater mye til leserens fantasi og tolkningsevne."
+            "content": "Novellen er en av de mest sentrale sjangrene i moderne litteratur. Ordet kommer fra *novella*, som på latin betyr «nyhet». I Italia på 1200- og 1300-tallet ble ordet brukt om korte fortellinger i prosa, og det er den betydningen vi bruker i dag (Gullestad, 2025). En novelle er en kort, oppdiktet fortelling som kjennetegnes av konsentrasjon: forfatteren utelater det som ikke er nødvendig for historien, og antyder heller enn å forklare (Gullestad, 2025). I motsetning til romanen, som kan bre seg ut over hundrevis av sider og følge mange karakterer gjennom et langt livsløp, handler novellen gjerne om få personer over kort tid.\n\nDen amerikanske forfatteren Edgar Allan Poe la vekt på at en novelle ikke skulle være lengre enn at den kunne leses uten avbrudd (Gullestad, 2025). Sjangeren krever at leseren er oppmerksom, for i en novelle står det sjelden noe som er overflødig. Hvert ord veies nøye, og mye av meningen ligger «mellom linjene». Forfatteren overlater mye til leserens fantasi og tolkningsevne."
         },
         {
             "type": "header",
@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Sjangeren har røtter helt tilbake til middelalderen, med Giovanni Boccaccios *Dekameronen* (ca. 1350) som et tidlig høydepunkt. I Norge fikk vi de store realistiske samfunnsromanene på slutten av 1800-tallet, særlig med de realistiske forfatterne. Alexander Kielland regnes ofte som den norske novellens far, med sine *Novelletter*. Senere har forfattere som Cora Sandel, Tarjei Vesaas, Kjell Askildsen og i nyere tid Frode Grytten og Gunnhild Øyehaug, vært med på å forme og fornye sjangeren."
+            "content": "Sjangeren har røtter helt tilbake til middelalderen. Giovanni Boccaccios *Dekameronen* (ca. 1353) regnes som den første novellesamlingen. Den er bygd som en rammefortelling: pesten herjer, og sju kvinner og tre menn flykter fra byen og forteller til sammen 100 historier for hverandre (Gullestad, 2025).\n\nI Norge kom gjennombruddet på slutten av 1800-tallet. Alexander Kielland ga ut *Novelletter* i 1879, og de tre samlingene hans - *Novelletter*, *Nye Novelletter* og *To Novelletter* - regnes som høydepunkter i norsk novellekunst på 1800-tallet (Gullestad, 2025). Kielland fant en ny form: en kort, spisset fortelling som tar utgangspunkt i én hendelse, et tilfeldig møte eller en flyktig tanke, og derfra kaster lys over et samfunnsproblem (Rottem mfl., 2026). Senere har Cora Sandel, Tarjei Vesaas og Kjell Askildsen - som regnes som Norges mest kjente novelleforfatter i moderne tid - vært med på å fornye sjangeren, og i nyere tid har Frode Grytten og Gunnhild Øyehaug ført den videre (Gullestad, 2025)."
         },
         {
             "type": "header",
@@ -24,7 +24,7 @@
         },
         {
             "type": "text",
-            "content": "Selv om noveller kan være svært forskjellige, er det noen fellestrekk som ofte går igjen:"
+            "content": "Selv om noveller kan være svært forskjellige, er det noen fellestrekk som ofte går igjen. Store norske leksikon trekker fram konsentrasjon, utelatelse og antydning, og at novellen gjerne inneholder en overraskende hendelse (Gullestad, 2025). Et annet vanlig grep er *in medias res*, som betyr «midt inn i begivenhetene»: historien starter midt i handlingen, uten en forklarende innledning først (Store norske leksikon, 2026)."
         },
         {
             "type": "list",
@@ -44,7 +44,7 @@
         },
         {
             "type": "text",
-            "content": "Fordi novellen er så kort, må forfatteren bruke språklige virkemidler effektivt for å skape stemning og mening."
+            "content": "Fordi novellen er så kort, må forfatteren bruke språklige virkemidler effektivt for å skape stemning og mening. Et symbol er en gjenstand eller et ytre tegn som det knytter seg en overført betydning til (Svendsen, 2025) - i en novelle kan altså en helt vanlig ting bety noe langt større."
         },
         {
             "type": "list",
@@ -61,7 +61,7 @@
         },
         {
             "type": "text",
-            "content": "Når du skal analysere en novelle, bør du se etter *motivet* (det konkrete som skjer) og *temaet* (det teksten egentlig handler om på et dypere plan). Spør deg selv: Hva er konflikten? Hvordan utvikler hovedpersonen seg? Hva prøver forfatteren å si oss om det å være menneske? Se spesielt på tittelen – den gir ofte et hint om temaet."
+            "content": "Når du skal analysere en novelle, bør du se etter *motivet* (det konkrete som skjer) og *temaet* (det teksten egentlig handler om på et dypere plan). Spør deg selv: Hva er konflikten? Hvordan utvikler hovedpersonen seg? Hva prøver forfatteren å si oss om det å være menneske? Se spesielt på tittelen - den gir ofte et hint om temaet."
         },
         {
             "type": "header",
@@ -74,11 +74,11 @@
         {
             "type": "list",
             "items": [
-                "[En middag](/norsk/bibliotek/en-middag) av Alexander Kielland – En klassisk realistisk novelle med tydelig samfunnskritikk.",
-                "[Faderen](/norsk/bibliotek/faderen) av Bjørnstjerne Bjørnson – En fortelling om en manns livsløp, fortalt gjennom noen få, avgjørende scener.",
-                "[Karens jul](/norsk/bibliotek/karens-jul) av Amalie Skram – En naturalistisk novelle som skildrer fattigdom og urettferdighet.",
-                "[Karen](/norsk/bibliotek/karen) av Alexander Kielland – En parallellhistorie der to handlinger speiler hverandre.",
-                "[Twitter-noveller](/norsk/bibliotek/twitter-noveller) av Frode Grytten – Eksempler på svært korte korttekster som utfordrer sjangergrensene."
+                "[En middag](/norsk/bibliotek/en-middag) av Alexander Kielland - En klassisk realistisk novelle med tydelig samfunnskritikk.",
+                "[Faderen](/norsk/bibliotek/faderen) av Bjørnstjerne Bjørnson - En fortelling om en manns livsløp, fortalt gjennom noen få, avgjørende scener.",
+                "[Karens jul](/norsk/bibliotek/karens-jul) av Amalie Skram - En naturalistisk novelle som skildrer fattigdom og urettferdighet.",
+                "[Karen](/norsk/bibliotek/karen) av Alexander Kielland - En novelle som har blitt en gjenganger i antologier og i norskundervisningen (Rottem mfl., 2026).",
+                "[Twitter-noveller](/norsk/bibliotek/twitter-noveller) av Frode Grytten - Eksempler på svært korte korttekster som utfordrer sjangergrensene."
             ]
         },
         {
@@ -86,9 +86,9 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hva betyr ordet novella, som novelle kommer fra på italiensk?",
+                    "Hva betyr ordet novella på latin, og hva ble det brukt om i Italia på 1200- og 1300-tallet?",
                     "Nevn tre kjennetegn på en novelle som teksten trekker fram.",
-                    "Hvem regnes ofte som den norske novellens far, og hva het novellesamlingen hans?",
+                    "Hvilken norsk forfatter ga ut Novelletter i 1879, og hva heter de to andre samlingene hans?",
                     "Hva er forskjellen på motivet og temaet i en novelle?"
                 ],
                 "reflekter": [
@@ -101,6 +101,18 @@
                     "Velg en novelle fra biblioteket, for eksempel Karens jul av Amalie Skram, og skriv kort hva du mener er temaet og hvordan tittelen peker mot det.",
                     "Skriv starten på en egen novelle som begynner in medias res, altså rett inn i handlingen uten innledning. Bruk minst ett symbol.",
                     "Diskuter i klassen om en åpen slutt gjør en novelle bedre eller mer irriterende, og begrunn synet ditt."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Gullestad, A. M. (2025). *Novelle*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/novelle](https://snl.no/novelle)",
+                    "Rottem, Ø., Moi, M. & Beyer, E. (2026). *Alexander Kielland*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Alexander_Kielland](https://snl.no/Alexander_Kielland)",
+                    "Store norske leksikon. (2026). *In medias res*. Hentet 10.08.2026 fra [snl.no/in_medias_res](https://snl.no/in_medias_res)",
+                    "Svendsen, L. F. H. (2025). *Symbol*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/symbol](https://snl.no/symbol)"
                 ]
             }
         }
@@ -116,5 +128,5 @@
         "url": "/norsk/skrivehjelp/hvordan-skrive-novelle"
     },
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-10T12:00:00Z"
 }
