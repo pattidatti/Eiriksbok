@@ -1,6 +1,6 @@
 # KRLE - opprustningsplan og statusoversikt
 
-> **Sist målt:** 2026-08-10 (etter R1) · **N = 123 artikler**
+> **Sist målt:** 2026-08-10 (etter R1 + sikhisme/gudsbilde) · **N = 124 artikler**
 > Dette dokumentet er arbeidslista for å løfte KRLE-innholdet opp på plan_article-standard.
 > Kryss av i `✔`-kolonnen når en artikkel er ferdigstilt, og oppdater sammendraget nederst.
 
@@ -96,10 +96,10 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert - de har et annet s
 
 | Status | Antall | Andel |
 |---|---:|---:|
-| `STUB` | 57 | 46,3 % |
-| `HALV` | 32 | 26,0 % |
-| `FERDIG` | 34 | 27,6 % |
-| **Sum** | **123** | |
+| `STUB` | 57 | 46,0 % |
+| `HALV` | 32 | 25,8 % |
+| `FERDIG` | 35 | 28,2 % |
+| **Sum** | **124** | |
 
 | Mangel | Antall | Andel |
 |---|---:|---:|
@@ -120,7 +120,7 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert - de har et annet s
 |---|---|---:|---|
 | ~~**R0**~~ | ~~Bugene B1-B5 i §7. Rene skjema- og manifest-fikser.~~ **Ferdig 2026-08-10** | 10 filer | ✅ |
 | ~~**R1**~~ | ~~`skapelse` for de sju religionene som mangler den~~ **Ferdig 2026-08-10** | 7 nye | ✅ Tema 1 «Hvor kommer alt fra?» har nå 9/9 kilder |
-| **R2** | `gudsbilde` × 8 + ny sikhisme-artikkel | 9 | Tema 2 «Én, mange eller ingen gud?» |
+| **R2** | `gudsbilde` × 8 (sikhisme ferdig 2026-08-10) | 8 | Tema 2 «Én, mange eller ingen gud?» - 9/9 kilder finnes nå |
 | **R3** | `bonn` × 8 + ny sikhisme-artikkel | 9 | Tema 3 «Å snakke med det hellige» |
 | **R4** | `overgangsriter` × 8 (sikhisme er ferdig) | 8 | Tema 4 «Fra vugge til grav» |
 | **R5** | `frelse` × 8 + ny sikhisme-artikkel, `grunnleggere` × 9, `hellige-tekster` × 9, `sentrale-trekk` × 7 | 34 | Tema 5-8 |
@@ -265,7 +265,7 @@ n = 10 · snitt 376 ord · 7 stub / 1 halv / 2 ferdig
 
 ### Sikhisme
 
-n = 6 · snitt 460 ord · 4 stub / 0 halv / 2 ferdig
+n = 7 · snitt 526 ord · 4 stub / 0 halv / 3 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
@@ -275,6 +275,7 @@ n = 6 · snitt 460 ord · 4 stub / 0 halv / 2 ferdig
 | ☐ | `STUB` | `religion/sikhisme/sentrale-trekk/artikkel.json` | 170 | - | - | - | 3 | ✅ | - |
 | ☐ | `FERDIG` | `religion/sikhisme/overgangsriter.json` | 1304 | ✅ | ✅ | ✅ | 5 | ✅ | ✅ har |
 | ☑ | `FERDIG` | `religion/sikhisme/skapelse/artikkel.json` | 895 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
+| ☑ | `FERDIG` | `religion/sikhisme/gudsbilde/artikkel.json` | 922 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 
 ### Kristendom
 
@@ -461,3 +462,4 @@ Før opp hver ferdigstilte artikkel her fra og med nå, så er historikken synli
 | 2026-08-10 | Mormonisme: Skapelsen i mormonismen | `OrganisertAvMaterie` | - | - |
 | 2026-08-10 | Jehovas vitner: Seks dager eller seks tidsaldre? | `DeSeksPeriodene` | - | - |
 | 2026-08-10 | Sikhisme: Mørket før verden | `FoerLysetFantes` | - | - |
+| 2026-08-10 | R2: Sikhisme: Gud du ikke kan tegne | `DenTommeRammen` | - | - |

@@ -1,0 +1,278 @@
+{
+  "id": "gudsbilde",
+  "title": "Gud du ikke kan tegne",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "sikhisme",
+  "dimension": "doctrinal",
+  "comparison_tags": ["gudsbilde", "doctrinal"],
+  "category": "Sikhisme",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Sikhene tror på én Gud som verken er født eller kommer til å dø.",
+    "Den hellige boka åpner med linja Mul Mantar, som beskriver Gud med åtte korte ledd.",
+    "Ingen av leddene sier noe om hvordan Gud ser ut.",
+    "Derfor står det ingen gudestatue i en gurdwara. Der en statue kunne stått, ligger boka.",
+    "Gud har mange navn i sikhismen, blant dem Vahiguru, Nam og Akal Purakh."
+  ],
+  "concepts": [
+    {
+      "id": "mul-mantar",
+      "term": "Mul Mantar",
+      "definition": "Den korte linja som åpner Guru Granth Sahib. Den beskriver Gud på noen få ord."
+    },
+    {
+      "id": "ik-onkar",
+      "term": "Ik Onkar",
+      "definition": "De to første ordene i sikhenes hellige bok. Betyr omtrent at det finnes én."
+    },
+    {
+      "id": "vahiguru",
+      "term": "Vahiguru",
+      "definition": "Det vanligste navnet sikhene bruker om Gud."
+    },
+    {
+      "id": "nam-simaran",
+      "term": "Nam simaran",
+      "definition": "Å gjenta og meditere over Guds navn. En av hovedmåtene sikher nærmer seg Gud på."
+    },
+    {
+      "id": "gurdwara",
+      "term": "Gurdwara",
+      "definition": "Sikhenes forsamlingshus. Guru Granth Sahib ligger fremme i rommet."
+    }
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Gå inn i et hindutempel, og du møter blikk. Guder i farger, med armer og øyne og smykker. Gå inn i en katolsk kirke, og Jesus henger på veggen. Gå inn i en gurdwara, sikhenes forsamlingshus, og du finner ingen ansikter i det hele tatt."
+    },
+    {
+      "type": "text",
+      "content": "Fremme i rommet, på en opphøyd plass under en baldakin, ligger en bok. Ikke en statue, ikke et maleri. En bok. Sikhene regner Guru Granth Sahib som sin levende guru, og på alteret i hver eneste gurdwara ligger et eksemplar av den (Jacobsen, 2023). Det er dit blikkene går."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Bønnerom i gurdwara med hellig bok under baldakin",
+      "caption": "I en gurdwara ligger boka der en statue kunne stått."
+    },
+    {
+      "type": "text",
+      "content": "Det er ikke tilfeldig. Det henger sammen med hva sikhene tror om Gud, og det svaret er ganske uvanlig: du kan si mye om Gud, men du kan ikke tegne Gud."
+    },
+    {
+      "type": "header",
+      "text": "Linja som åpner boka"
+    },
+    {
+      "type": "text",
+      "content": "Guru Granth Sahib inneholder rundt 6000 salmer, skrevet av de første fem guruene, den niende guruen, og noen hinduiske og sufiske dikterhelgener (Jacobsen, 2020). Men aller først, før alt det andre, står en kort linje. Den kalles Mul Mantar, grunnlinja."
+    },
+    {
+      "type": "text",
+      "content": "Den begynner med to ord som er blitt selve kjennetegnet på sikhismen: Ik Onkar. Det betyr omtrent at det finnes én. Én virkelighet, én Gud, som alt annet henger sammen i. Hele åpningen sier at det bare finnes én Gud, og at navnet hans er sannhet (Jacobsen, 2020)."
+    },
+    {
+      "type": "text",
+      "content": "Så kommer resten av linja, ledd for ledd. Til sammen er det åtte korte beskrivelser, og så en niende setning om at Gud nås gjennom guruens nåde. Heng de åtte opp i rammen under, én om gangen, og følg med på hva som skjer med bildet."
+    },
+    {
+      "type": "component",
+      "name": "DenTommeRammen",
+      "props": {
+        "title": "Heng beskrivelsene i rammen"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva som skjedde. Du hengte opp åtte beskrivelser, og du vet fortsatt ingenting om hvordan Gud ser ut. Hvert ledd sier hvordan Gud er, eller hva Gud ikke er. Ingen av dem sier noe om form, farge, ansikt eller kropp."
+    },
+    {
+      "type": "header",
+      "text": "Aldri født, altså ingen kropp"
+    },
+    {
+      "type": "text",
+      "content": "Ett av leddene gjør mer av jobben enn de andre. Ajuni betyr aldri født. Gud har aldri kommet til verden som noen eller noe, og skal aldri gjøre det. Der andre religioner forteller om en Gud som blir menneske, eller om guder som viser seg i en bestemt skikkelse, sier sikhismen nei. Ingen fødsel, ingen kropp. Og har Gud aldri hatt en kropp, finnes det heller ingenting å avbilde."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Hvorfor dette er en stor forskjell",
+        "content": "Mange hinduer møter det guddommelige gjennom en murti, et innviet bilde eller en figur i tempelet. Det er ikke slik at figuren er Gud, men den er et sted å møte Gud. Sikhismen har ikke noe tilsvarende. Der plassen for det hellige bildet ville vært, ligger i stedet ordene."
+      }
+    },
+    {
+      "type": "text",
+      "content": "Samtidig er ikke Gud langt borte. Sikhismen framhever én samlet, altomfattende guddom som er én, evig, allvitende og allmektig, og som er å finne i menneskets egen sjel (Kristiansen, Kværne og Jacobsen, 2024). Gud er altså ikke usynlig fordi Gud er fjern, men fordi Gud ikke har noen ytterside å se på. Du kan lese mer om boka som holder disse ordene i artikkelen om [Guru Granth Sahib](/krle/religion/sikhisme/hellige-tekster)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Åpen bok med gurmukhi-skrift i varmt lys",
+      "caption": "Ordene står der bildet kunne stått."
+    },
+    {
+      "type": "header",
+      "text": "Ett navn, og mange navn"
+    },
+    {
+      "type": "text",
+      "content": "Hvis du spør en sikh hva Gud heter, får du ofte svaret Vahiguru. Men det er ikke det eneste navnet. Guru Nanak brukte flere: Nam, Akal Purakh, Ram og andre. Poenget er at Gud går utover språket (Jacobsen, 2025). Ingen av navnene tar hele Gud."
+    },
+    {
+      "type": "text",
+      "content": "Dette er verdt å stoppe ved. Ram er et navn mange hinduer bruker, og flere av navnene har røtter i den samme verdenen som islam og hinduismen vokste i. Sikhismen låner ikke bare ordene, den sier noe med det: den ene Gud er den samme uansett hvilket språk folk bruker. Guru Granth Sahib inneholder også dikt av både hinduiske og muslimske helgener (Jacobsen, 2020). Det er ikke vanlig at en hellig bok gjør plass til andre tradisjoners stemmer."
+    },
+    {
+      "type": "text",
+      "content": "Som i alle religioner finnes det ulike syn blant sikher selv, blant annet på hvor bokstavelig ordene i Mul Mantar skal forstås, og på hvor mye av det som lar seg oversette i det hele tatt. Guru Nanak lærte at Vahiguru er altomfattende og styrer verden, og at verden ble skapt gjennom Guds vilje (Jacobsen, 2025). Hvordan det skal forstås, har sikher diskutert i fem hundre år."
+    },
+    {
+      "type": "header",
+      "text": "Å nærme seg noe du ikke kan se"
+    },
+    {
+      "type": "text",
+      "content": "Hvis du ikke kan se Gud, hvordan kommer du da nær? Svaret i sikhismen handler om navnet, ikke om bildet. Nam simaran betyr å gjenta og meditere over Guds navn. Sammen med seva, det å gjøre noe for andre, og kirat, det å arbeide ærlig, er dette veien Guru Nanak pekte på for å bli fri fra gjenfødelsen (Jacobsen, 2025)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Det finnes én. Navnet er sant. Den som skaper. Uten frykt. Uten hat. Utenfor tiden. Aldri født. Til av seg selv.",
+        "author": "Mul Mantar, åpningen av Guru Granth Sahib"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til at ingen av de tre veiene krever et bilde. Du synger, du hjelper, du arbeider. I gurdwaraen synges ordene av musikere til orgel og tromme, og de som er der mediterer over det som blir sunget som guddommelig tale (Jacobsen, 2020). Boka er ikke pynt. Den er det stedet Gud blir tilgjengelig."
+    },
+    {
+      "type": "text",
+      "content": "Samtidig er ikke veien noe du klarer på egen hånd. Det siste leddet i Mul Mantar sier at Gud nås gjennom guruens nåde. Å bli forent med Gud krever nåde, ikke bare menneskelig innsats (Kristiansen, Kværne og Jacobsen, 2024). Du kan gjenta navnet i femti år, men gaven kommer fra den andre siden."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Sikher sitter sammen på gulvet under felles måltid",
+      "caption": "Seva, arbeidet for andre, er en del av veien mot Gud."
+    },
+    {
+      "type": "header",
+      "text": "Den tomme plassen"
+    },
+    {
+      "type": "text",
+      "content": "Gå tilbake til gurdwaraen en siste gang. Rommet er ikke tomt fordi sikhene mangler noe. Det er tomt fordi de mener at et bilde ville gjort Gud mindre. Alt som kan tegnes, har en kant. Har det en kant, er det ikke altomfattende lenger."
+    },
+    {
+      "type": "text",
+      "content": "Det er tre gurdwaraer i Norge, i Oslo, Lier og Bergen (Jacobsen, 2023). Går du inn i en av dem, ser du det samme som i Amritsar: en bok der bildet kunne vært. Vil du se hvordan andre religioner svarer på det samme spørsmålet, kan du sammenligne med [Tawhid i islam](/krle/religion/islam/gudsbilde) og med [de mange gudene i hinduismen](/krle/religion/hinduisme/gudsbilde). Sikhismens svar er verken det ene eller det andre, men noe helt eget: én Gud, uendelig mange navn, og ikke ett eneste bilde."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva ligger fremme i rommet i en gurdwara, der andre religioner ville hatt et gudebilde?",
+          "Hva betyr de to første ordene i Guru Granth Sahib, Ik Onkar?",
+          "Hva betyr leddet ajuni, og hvorfor har det så mye å si for om Gud kan avbildes?",
+          "Nevn minst tre navn sikhene bruker om Gud."
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor ingen av leddene i Mul Mantar gjør det mulig å tegne Gud.",
+          "Guru Granth Sahib inneholder dikt av både hinduiske og muslimske helgener. Hva sier det om sikhismens syn på andre religioner?",
+          "Artikkelen sier at alt som kan tegnes, har en kant. Er det et godt argument mot gudebilder? Begrunn svaret.",
+          "Sikhismen sier at Gud finnes i menneskets egen sjel, men også at forening med Gud krever nåde. Hvordan henger de to tankene sammen?"
+        ],
+        "gaaVidere": [
+          "Sammenlign gudsbildet i sikhismen med [Tawhid i islam](/krle/religion/islam/gudsbilde). Hva er likt, og hva skiller?",
+          "Skriv en kort tekst der du beskriver noe eller noen uten å si ett ord om hvordan det ser ut. Hva er vanskelig med det?",
+          "Diskuter i klassen: hjelper det å ha et bilde av det man tror på, eller kommer bildet i veien?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva ligger fremme på alteret i en gurdwara?",
+            "options": [
+              "En statue av Guru Nanak",
+              "Et eksemplar av Guru Granth Sahib",
+              "Et bilde av Gud",
+              "En tom ramme"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Sikhene regner Guru Granth Sahib som sin levende guru, og et eksemplar ligger på alteret i hver gurdwara."
+          },
+          {
+            "question": "Hva betyr leddet ajuni i Mul Mantar?",
+            "options": [
+              "Uten frykt",
+              "Til av seg selv",
+              "Aldri født",
+              "Navnet er sant"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Ajuni betyr aldri født. Har Gud aldri hatt en kropp, finnes det heller ingenting å avbilde."
+          },
+          {
+            "question": "Hvorfor lager ikke sikhene bilder av Gud?",
+            "options": [
+              "Fordi guruene forbød all kunst",
+              "Fordi Gud ikke har noen form som kan avbildes",
+              "Fordi bilder er for dyre å lage",
+              "Fordi bare guruene har lov til å se Gud"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Mul Mantar beskriver hvordan Gud er, aldri hvordan Gud ser ut. Gud er aldri født og har ingen kropp."
+          },
+          {
+            "question": "Hva er nam simaran?",
+            "options": [
+              "En årlig pilegrimsreise til Amritsar",
+              "Å gjenta og meditere over Guds navn",
+              "Måltidet som deles i gurdwaraen",
+              "Navneseremonien for nyfødte"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Nam simaran er meditasjon over det hellige navnet, og hører sammen med seva og ærlig arbeid."
+          },
+          {
+            "question": "Hva er spesielt med hvem som har skrevet i Guru Granth Sahib?",
+            "options": [
+              "Bare Guru Nanak har skrevet i den",
+              "Den inneholder også dikt av hinduiske og muslimske helgener",
+              "Den er skrevet av vanlige sikher gjennom hundre år",
+              "Ingen vet hvem som skrev den"
+            ],
+            "correctAnswer": 1,
+            "explanation": "I tillegg til guruene inneholder boka religiøs poesi av hinduiske og sufiske dikterhelgener."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Jacobsen, K. A. (2020). *Guru Granth Sahib*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Guru_Granth_Sahib](https://snl.no/Guru_Granth_Sahib)",
+          "Jacobsen, K. A. (2023). *Gurdwara*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/gurdwara](https://snl.no/gurdwara)",
+          "Jacobsen, K. A. (2025). *Guru Nanak*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Guru_Nanak](https://snl.no/Guru_Nanak)",
+          "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2024). *Sikhisme*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+          "SriGranth. (u.å.). *Sri Guru Granth Sahib, side 1*. Hentet 10.08.2026 fra [srigranth.org](https://www.srigranth.org/servlet/gurbani.gurbani?Action=Page&Param=1&english=t&id=1)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

@@ -478,6 +478,68 @@
       "total": 9
     },
     {
+      "slug": "gudsbilde",
+      "label": "Gudsbilde",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "En ukjennbar Gud",
+          "file": "content/krle/religion/bahai/gudsbilde/artikkel.json",
+          "link": "/krle/religion/bahai/gudsbilde"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Ingen skapergud",
+          "file": "content/krle/religion/buddhisme/gudsbilde/artikkel.json",
+          "link": "/krle/religion/buddhisme/gudsbilde"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Brahman og guder",
+          "file": "content/krle/religion/hinduisme/gudsbilde/artikkel.json",
+          "link": "/krle/religion/hinduisme/gudsbilde"
+        },
+        {
+          "religion": "islam",
+          "title": "Tawhid: Guds enhet",
+          "file": "content/krle/religion/islam/gudsbilde/artikkel.json",
+          "link": "/krle/religion/islam/gudsbilde"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Jehova",
+          "file": "content/krle/religion/jehovas-vitner/gudsbilde/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/gudsbilde"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Monoteisme: Troen på én Gud",
+          "file": "content/krle/religion/jodedom/gudsbilde/artikkel.json",
+          "link": "/krle/religion/jodedom/gudsbilde"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Treenigheten",
+          "file": "content/krle/religion/kristendom/gudsbilde/artikkel.json",
+          "link": "/krle/religion/kristendom/gudsbilde"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Guddommen",
+          "file": "content/krle/religion/mormonisme/gudsbilde/artikkel.json",
+          "link": "/krle/religion/mormonisme/gudsbilde"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Gud du ikke kan tegne",
+          "file": "content/krle/religion/sikhisme/gudsbilde/artikkel.json",
+          "link": "/krle/religion/sikhisme/gudsbilde"
+        }
+      ],
+      "count": 9,
+      "total": 9
+    },
+    {
       "slug": "hellige-tekster",
       "label": "Hellige tekster",
       "entries": [
@@ -826,62 +888,6 @@
           "title": "Evig progresjon",
           "file": "content/krle/religion/mormonisme/frelse/artikkel.json",
           "link": "/krle/religion/mormonisme/frelse"
-        }
-      ],
-      "count": 8,
-      "total": 9
-    },
-    {
-      "slug": "gudsbilde",
-      "label": "Gudsbilde",
-      "entries": [
-        {
-          "religion": "bahai",
-          "title": "En ukjennbar Gud",
-          "file": "content/krle/religion/bahai/gudsbilde/artikkel.json",
-          "link": "/krle/religion/bahai/gudsbilde"
-        },
-        {
-          "religion": "buddhisme",
-          "title": "Ingen skapergud",
-          "file": "content/krle/religion/buddhisme/gudsbilde/artikkel.json",
-          "link": "/krle/religion/buddhisme/gudsbilde"
-        },
-        {
-          "religion": "hinduisme",
-          "title": "Brahman og guder",
-          "file": "content/krle/religion/hinduisme/gudsbilde/artikkel.json",
-          "link": "/krle/religion/hinduisme/gudsbilde"
-        },
-        {
-          "religion": "islam",
-          "title": "Tawhid: Guds enhet",
-          "file": "content/krle/religion/islam/gudsbilde/artikkel.json",
-          "link": "/krle/religion/islam/gudsbilde"
-        },
-        {
-          "religion": "jehovas-vitner",
-          "title": "Jehova",
-          "file": "content/krle/religion/jehovas-vitner/gudsbilde/artikkel.json",
-          "link": "/krle/religion/jehovas-vitner/gudsbilde"
-        },
-        {
-          "religion": "jodedom",
-          "title": "Monoteisme: Troen på én Gud",
-          "file": "content/krle/religion/jodedom/gudsbilde/artikkel.json",
-          "link": "/krle/religion/jodedom/gudsbilde"
-        },
-        {
-          "religion": "kristendom",
-          "title": "Treenigheten",
-          "file": "content/krle/religion/kristendom/gudsbilde/artikkel.json",
-          "link": "/krle/religion/kristendom/gudsbilde"
-        },
-        {
-          "religion": "mormonisme",
-          "title": "Guddommen",
-          "file": "content/krle/religion/mormonisme/gudsbilde/artikkel.json",
-          "link": "/krle/religion/mormonisme/gudsbilde"
         }
       ],
       "count": 8,
@@ -1630,6 +1636,16 @@
       "dimension": null,
       "tags": [
         "grunnleggere"
+      ]
+    },
+    {
+      "religion": "sikhisme",
+      "title": "Gud du ikke kan tegne",
+      "link": "/krle/religion/sikhisme/gudsbilde",
+      "dimension": "doctrinal",
+      "tags": [
+        "gudsbilde",
+        "doctrinal"
       ]
     },
     {

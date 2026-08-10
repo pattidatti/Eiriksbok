@@ -970,6 +970,10 @@
       "count": 17
     },
     {
+      "tag": "doctrinal",
+      "count": 17
+    },
+    {
       "tag": "sivilisasjon",
       "count": 16
     },
@@ -979,10 +983,6 @@
     },
     {
       "tag": "geopolitikk",
-      "count": 16
-    },
-    {
-      "tag": "doctrinal",
       "count": 16
     },
     {
@@ -1110,6 +1110,10 @@
       "count": 9
     },
     {
+      "tag": "sikhisme",
+      "count": 9
+    },
+    {
       "tag": "opplysningstid",
       "count": 9
     },
@@ -1127,6 +1131,10 @@
     },
     {
       "tag": "sentrale_trekk",
+      "count": 9
+    },
+    {
+      "tag": "gudsbilde",
       "count": 9
     },
     {
@@ -1166,10 +1174,6 @@
       "count": 8
     },
     {
-      "tag": "sikhisme",
-      "count": 8
-    },
-    {
       "tag": "kolonialisme",
       "count": 8
     },
@@ -1199,10 +1203,6 @@
     },
     {
       "tag": "fred",
-      "count": 8
-    },
-    {
-      "tag": "gudsbilde",
       "count": 8
     },
     {
