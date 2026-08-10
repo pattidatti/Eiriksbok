@@ -39,7 +39,15 @@
         {
             "type": "text",
             "title": "Noteverdier: Hvor lenge varer en tone?",
-            "content": "I Beat Builderen over så du at hver takt var delt inn i 16 små ruter. Hver av disse kalles en sekstendelsnote. Noteverdiene er halvparten av hverandre hele veien nedover: en helnote varer like lenge som 2 halvnoter, 4 fjerdedeler, 8 åttedeler eller 16 sekstendeler (Holter, 2024).\n\n* Helnote: Varer hele takten (alle 16 ruter).\n* Fjerdedelsnote: Varer 1/4 av takten (4 ruter). Det er disse du trampet til i sted (kick på 1, 5, 9, 13).\n* Åttedelsnote: Varer 1/8 av takten (2 ruter). Brukes ofte på Hi-hat."
+            "content": "I Beat Builderen over så du at hver takt var delt inn i 16 små ruter. Hver av disse kalles en sekstendelsnote. Noteverdiene er halvparten av hverandre hele veien nedover: en helnote varer like lenge som 2 halvnoter, 4 fjerdedeler, 8 åttedeler eller 16 sekstendeler (Holter, 2024)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Helnote: Varer hele takten (alle 16 ruter).",
+                "Fjerdedelsnote: Varer 1/4 av takten (4 ruter). Det er disse du trampet til i sted (kick på 1, 5, 9, 13).",
+                "Åttedelsnote: Varer 1/8 av takten (2 ruter). Brukes ofte på Hi-hat."
+            ]
         },
         {
             "type": "text",

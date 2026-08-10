@@ -16,7 +16,33 @@
         },
         {
             "type": "text",
-            "content": "Vi deler gjerne dikt inn i to hovedformer:\n\nTradisjonelle dikt følger ofte faste mønstre. De har gjerne:\n*   Fast rytme (takt)\n*   Ende-rim (f.eks. hjerte/smerte)\n*   Like lange strofer (vers)\n*   Et forståelig og klart språk\n\nModernistiske (frie) dikt bryter med disse reglene. De oppstod for alvor på 1900-tallet som en reaksjon på en mer kaotisk og fragmentert verden. De kjennetegnes ved:\n*   Ingen fast rytme eller rim (frie vers)\n*   Ulik lengde på strofene\n*   Brutte setninger og uventede linjedelinger\n*   Et mer komplekst, ofte symboltungt språk"
+            "content": "Vi deler gjerne dikt inn i to hovedformer:"
+        },
+        {
+            "type": "text",
+            "content": "Tradisjonelle dikt følger ofte faste mønstre. De har gjerne:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Fast rytme (takt)",
+                "Ende-rim (f.eks. hjerte/smerte)",
+                "Like lange strofer (vers)",
+                "Et forståelig og klart språk"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Modernistiske (frie) dikt bryter med disse reglene. De oppstod for alvor på 1900-tallet som en reaksjon på en mer kaotisk og fragmentert verden. De kjennetegnes ved:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Ingen fast rytme eller rim (frie vers)",
+                "Ulik lengde på strofene",
+                "Brutte setninger og uventede linjedelinger",
+                "Et mer komplekst, ofte symboltungt språk"
+            ]
         },
         {
             "type": "header",

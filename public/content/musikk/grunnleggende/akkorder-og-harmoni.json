@@ -33,12 +33,45 @@
         {
             "type": "text",
             "title": "Oppgave: Dur (Glad) vs. Moll (Trist)",
-            "content": "Bruk pianoet over til å høre forskjellen:\n\nC-Dur (Glad):\n*   Finn C, E og G.\n*   Spill dem samtidig.\n*   Avstanden fra C til E er en stor ters, og det er den som gjør akkorden til dur (Ruud, 2024).\n*   Høres det lyst og åpent ut?\n\nC-Moll (Trist):\n*   Finn C og G igjen (de er like).\n*   Men i stedet for E (hvit), flytt fingeren ned til Eb (den svarte tangenten rett til venstre for E).\n*   Spill C, Eb og G. Nå er avstanden opp til tersen ett halvt trinn mindre, og akkorden er blitt moll (Ruud, 2025).\n*   Hører du at det ble mørkere og mer alvorlig?"
+            "content": "Bruk pianoet over til å høre forskjellen:"
+        },
+        {
+            "type": "text",
+            "content": "C-Dur (Glad):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Finn C, E og G.",
+                "Spill dem samtidig.",
+                "Avstanden fra C til E er en stor ters, og det er den som gjør akkorden til dur (Ruud, 2024).",
+                "Høres det lyst og åpent ut?"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "C-Moll (Trist):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Finn C og G igjen (de er like).",
+                "Men i stedet for E (hvit), flytt fingeren ned til Eb (den svarte tangenten rett til venstre for E).",
+                "Spill C, Eb og G. Nå er avstanden opp til tersen ett halvt trinn mindre, og akkorden er blitt moll (Ruud, 2025).",
+                "Hører du at det ble mørkere og mer alvorlig?"
+            ]
+        },
+        {
+            "type": "list",
+            "items": [
+                "Dur kommer fra latin *durus* som betyr 'hard' (Ruud, 2024).",
+                "Moll kommer fra *mollis* som betyr 'myk' (Ruud, 2025)."
+            ]
         },
         {
             "type": "text",
             "title": "Hvorfor heter det Dur og Moll?",
-            "content": "*   Dur kommer fra latin *durus* som betyr 'hard' (Ruud, 2024).\n*   Moll kommer fra *mollis* som betyr 'myk' (Ruud, 2025).\n\nI dag tenker vi ofte at Dur er 'glad' og Moll er 'trist', men det finnes mange glade sanger i moll og triste sanger i dur!"
+            "content": "I dag tenker vi ofte at Dur er 'glad' og Moll er 'trist', men det finnes mange glade sanger i moll og triste sanger i dur!"
         },
         {
             "type": "component",

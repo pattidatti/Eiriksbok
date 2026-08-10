@@ -10,7 +10,19 @@
         },
         {
             "type": "text",
-            "content": "For at en samling med ord skal kunne kalles en setning, må den inneholde to ting:\n\n1.  Verbal (Hva som skjer) \n2.  Subjekt (Hvem som gjør det)\n\nDette kaller vi setningens grunnmur. Uten disse faller setningen sammen."
+            "content": "For at en samling med ord skal kunne kalles en setning, må den inneholde to ting:"
+        },
+        {
+            "type": "list",
+            "ordered": true,
+            "items": [
+                "Verbal (Hva som skjer)",
+                "Subjekt (Hvem som gjør det)"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Dette kaller vi setningens grunnmur. Uten disse faller setningen sammen."
         },
         {
             "type": "component",
@@ -37,7 +49,14 @@
         },
         {
             "type": "text",
-            "content": "For å analysere en setning, starter vi alltid med å finne Verbalet.\n\n*   Verbal (V): Forteller hva som skjer eller gjøres. Det er alltid et verb.\n*   Subjekt (S): Den, det eller de som utfører handlingen. Vi finner det ved å spørre: *\"Hvem eller hva + verbal?\"*"
+            "content": "For å analysere en setning, starter vi alltid med å finne Verbalet."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Verbal (V): Forteller hva som skjer eller gjøres. Det er alltid et verb.",
+                "Subjekt (S): Den, det eller de som utfører handlingen. Vi finner det ved å spørre: *\"Hvem eller hva + verbal?\"*"
+            ]
         },
         {
             "type": "header",
