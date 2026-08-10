@@ -3213,6 +3213,21 @@
               ],
               "createdDate": "2026-07-13T03:31:41+02:00",
               "lastUpdated": "2026-07-25T15:55:31+02:00"
+            },
+            {
+              "id": "nodsarene",
+              "title": "Nødsårene: da sjøveien ble stengt",
+              "description": "Britene stengte kysten i sju år, og Norge som hentet tre fjerdedeler av kornet sitt fra Danmark, måtte blande bark i melet.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "norge",
+                "dansketiden",
+                "napoleonskrigene",
+                "handel",
+                "sult",
+                "1814"
+              ],
+              "createdDate": "2026-08-10T00:00:00Z"
             }
           ]
         },

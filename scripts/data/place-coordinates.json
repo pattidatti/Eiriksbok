@@ -830,16 +830,16 @@
       "count": 57
     },
     {
+      "tag": "handel",
+      "count": 43
+    },
+    {
       "tag": "kildekritikk",
       "count": 42
     },
     {
       "tag": "antikken",
       "count": 42
-    },
-    {
-      "tag": "handel",
-      "count": 41
     },
     {
       "tag": "politikk",
@@ -1166,6 +1166,10 @@
       "count": 8
     },
     {
+      "tag": "1814",
+      "count": 8
+    },
+    {
       "tag": "frihet",
       "count": 8
     },
@@ -1302,6 +1306,10 @@
       "count": 6
     },
     {
+      "tag": "dansketiden",
+      "count": 6
+    },
+    {
       "tag": "okonomi",
       "count": 6
     },
@@ -1319,10 +1327,6 @@
     },
     {
       "tag": "bolivar",
-      "count": 6
-    },
-    {
-      "tag": "1814",
       "count": 6
     },
     {
@@ -1403,6 +1407,10 @@
     },
     {
       "tag": "urfolk",
+      "count": 5
+    },
+    {
+      "tag": "sult",
       "count": 5
     },
     {
@@ -1575,10 +1583,6 @@
     },
     {
       "tag": "gustav-vasa",
-      "count": 4
-    },
-    {
-      "tag": "dansketiden",
       "count": 4
     },
     {
@@ -1787,10 +1791,6 @@
     },
     {
       "tag": "kommunikasjon",
-      "count": 3
-    },
-    {
-      "tag": "sult",
       "count": 3
     },
     {
@@ -2483,6 +2483,10 @@
     },
     {
       "tag": "standardtalemål",
+      "count": 2
+    },
+    {
+      "tag": "napoleonskrigene",
       "count": 2
     },
     {

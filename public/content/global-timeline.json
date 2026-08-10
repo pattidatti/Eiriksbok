@@ -5460,6 +5460,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "nodsarene",
+      "title": "Nødsårene: da sjøveien ble stengt",
+      "description": "Britene stengte kysten i sju år, og Norge som hentet tre fjerdedeler av kornet sitt fra Danmark, måtte blande bark i melet.",
+      "startDate": 1807,
+      "endDate": 1814,
+      "displayDate": "1807-1814",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/nodsarene",
+      "tags": [
+        "norge",
+        "dansketiden",
+        "napoleonskrigene",
+        "handel",
+        "sult",
+        "1814"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "latin-amerika",
       "title": "Latin-Amerika: Bolívars Drøm",
       "description": "Elitenes frigjøring og drømmen som brast.",

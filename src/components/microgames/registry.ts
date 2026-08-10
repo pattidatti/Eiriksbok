@@ -16,6 +16,7 @@ const MultietnolektGata3D = lazy(() => import('./MultietnolektGata3D'));
 const Stemmesporet3D = lazy(() => import('./Stemmesporet3D'));
 const MeijiByen3D = lazy(() => import('./MeijiByen3D'));
 const VikingShip3D = lazy(() => import('./VikingShip3D'));
+const Kornskuta3D = lazy(() => import('./Kornskuta3D'));
 const Vikinghjelmen3D = lazy(() => import('./Vikinghjelmen3D'));
 const Vesterled3D = lazy(() => import('./Vesterled3D'));
 const DelawareKrysning3D = lazy(() => import('./DelawareKrysning3D'));
@@ -884,6 +885,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./Konvoien3D'),
         Component: Konvoien3D as never,
+    },
+    'kornskuta-3d': {
+        id: 'kornskuta-3d',
+        title: 'Kornskuta gjennom blokaden',
+        description:
+            'Smugle korn fra Danmark til Norge en natt i 1809: sett seil for å komme fram, men berg seilet når månelyset treffer deg - ellers ser den britiske fregatten deg.',
+        estimatedSeconds: 160,
+        loader: () => import('./Kornskuta3D'),
+        Component: Kornskuta3D as never,
     },
     'vikingskip-3d': {
         id: 'vikingskip-3d',
