@@ -1,7 +1,7 @@
 {
     "id": "analyse-eventyr",
     "title": "Slik analyserer du: Eventyr",
-    "description": "Det var en gang... og det er alltid tre av dem. Her lære du å knekke koden bak eventyrenes magi og de strengere reglene som styrer dem.",
+    "description": "Det var en gang... og det er alltid tre av dem. Her lærer du å knekke koden bak eventyrenes magi og de strengere reglene som styrer dem.",
     "subject": "norsk",
     "topic": "analyse",
     "layout": "rich",
@@ -15,8 +15,8 @@
     ],
     "content": [
         {
-            "type": "paragraph",
-            "text": "Mange tror at eventyr bare er fri fantasi, skrevet på slump av folk som hadde god tid før i tiden. Sannheten er faktisk den stikk motsatte: Få sjangre i hele litteraturhistorien følger strengere og mer matematiske regler enn folkeeventyret. Dette skyldes at eventyrene ble fortalt fra munn til munn i århundrer før de ble skrevet ned. For at fortelleren skulle huske historien, og for at tilhørerne skulle klare å følge med, trengte man faste knagger å henge handlingen på.\n\nNår du skal analysere et eventyr, trenger du derfor ikke å gjette deg fram til dype, skjulte meninger. Du trenger bare å fungere som en kontrollør: Sjekk om teksten følger de klassiske lovene, og forklar hvordan disse lovene hjelper til med å få fram budskapet i historien."
+            "type": "text",
+            "content": "Mange tror at eventyr bare er fri fantasi, skrevet på slump av folk som hadde god tid før i tiden. Sannheten er faktisk den stikk motsatte: Få sjangre i hele litteraturhistorien følger strengere og mer matematiske regler enn folkeeventyret. Folkeeventyret er en muntlig tradisjon uten kjent forfatter, og fortellingene ble gitt videre fra munn til munn i århundrer før Asbjørnsen og Moe skrev dem ned på 1800-tallet (Esborg mfl., 2026). For at fortelleren skulle huske historien, og for at tilhørerne skulle klare å følge med, trengte man faste knagger å henge handlingen på.\n\nNår du skal analysere et eventyr, trenger du derfor ikke å gjette deg fram til dype, skjulte meninger. Du trenger bare å fungere som en kontrollør: Sjekk om teksten følger de klassiske lovene, og forklar hvordan disse lovene hjelper til med å få fram budskapet i historien."
         },
         {
             "type": "header",
@@ -24,8 +24,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Siden eventyr levde et liv i den muntlige tradisjonen, utviklet det seg faste mønstre som vi i dag kaller eventyrets lover. Disse er ikke bare pynt, men fungerer som selve skjelettet i fortellingen. Uten disse lovene ville historien falt sammen og blitt glemt."
+            "type": "text",
+            "content": "Siden eventyr levde et liv i den muntlige tradisjonen, utviklet det seg faste mønstre som vi i dag kaller eventyrets lover. Disse er ikke bare pynt, men fungerer som selve skjelettet i fortellingen. Uten disse lovene ville historien falt sammen og blitt glemt. Forskeren Axel Olrik fant en rekke slike lover, og den mest kjente er den episke tretallsloven: handlingen gjentas tre ganger (Esborg mfl., 2026). Åpningen «Det var en gang» er en like fast formel, lett å kjenne igjen, og den leder oss straks inn i eventyrenes verden (Møller, 2021)."
         },
         {
             "type": "component",
@@ -58,8 +58,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "I en analyse er det nyttig å se på karakterene ikke som mennesker med følelser, men som funksjoner i et spill. Vi kaller dem ofte for aktanter. I folkeeventyrene er disse rollene ekstremt rendyrket for å gjøre konflikten så tydelig som mulig for barna som lyttet."
+            "type": "text",
+            "content": "I en analyse er det nyttig å se på karakterene ikke som mennesker med følelser, men som funksjoner i fortellingen. Vi kaller dem ofte for aktanter, altså fortellingens grunnleggende roller: subjektet som vil oppnå noe, objektet det hele handler om, hjelperen og motstanderen (Mæhlum, 2024). Karakterene i eventyret er gjerne standardiserte typer, og navnet på en karakter kan skifte fra versjon til versjon, men aldri funksjonen den har (Esborg mfl., 2026). I folkeeventyrene er disse rollene ekstremt rendyrket for å gjøre konflikten så tydelig som mulig for barna som lyttet."
         },
         {
             "type": "component",
@@ -98,8 +98,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Vi skal bruke et av våre mest kjente eventyr for å se lovene i praksis. Askeladden som kappåt med trollet er kanskje det mest rendyrkede eksemplet på hvordan list vinner over styrke."
+            "type": "text",
+            "content": "Vi skal bruke et av våre mest kjente eventyr for å se lovene i praksis. Askeladden som kappåt med trollet er kanskje det mest rendyrkede eksemplet på hvordan list vinner over styrke."
         },
         {
             "type": "expandable",
@@ -127,8 +127,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Det første du ser i teksten, er tallet tre. Det er tre brødre. Men tenk som en analytiker: Hvorfor akkurat tre? Hvorfor ikke én eller fire?\n\nHvis bare Askeladden hadde dratt ut i skogen, ville vi ikke hatt noe grunnlag for å vite hvor farlig trollet egentlig var. Han kunne jo bare ha hatt flaks. Derfor må Per feile først. Da skjønner vi faren. Så drar Pål ut og feiler på akkurat samme måte. Da skjønner vi som lytter at oppgaven er umulig for et vanlig menneske. Spenningen stiger for hvert forsøk.\n\nNår Askeladden – som er minst, svakest og ofte sett ned på – melder seg på det tredje forsøket, er innsatsen på det høyeste nivået. Tretallet fungerer altså som en perfekt spenningskurve som kulminerer i Askeladdens uventede seier. Uten feilene til Per og Pål, ville ikke triumfen til Askeladden vært i nærheten av like tilfredsstillende."
+            "type": "text",
+            "content": "Det første du ser i teksten, er tallet tre. Det er tre brødre. Men tenk som en analytiker: Hvorfor akkurat tre? Hvorfor ikke én eller fire?\n\nHvis bare Askeladden hadde dratt ut i skogen, ville vi ikke hatt noe grunnlag for å vite hvor farlig trollet egentlig var. Han kunne jo bare ha hatt flaks. Derfor må Per feile først. Da skjønner vi faren. Så drar Pål ut og feiler på akkurat samme måte. Da skjønner vi som lytter at oppgaven er umulig for et vanlig menneske. Spenningen stiger for hvert forsøk. Per og Pål har nemlig ikke større hell eller evner enn folk flest, og de vinner aldri prinsessen (Store norske leksikon, 2024b).\n\nNår Askeladden - som er minst, svakest og ofte sett ned på - melder seg på det tredje forsøket, er innsatsen på det høyeste nivået. Det er nettopp den yngste og foraktede som lykkes i alle prøver og vinner kongsdatteren og halve riket (Store norske leksikon, 2024a). Tretallet fungerer altså som en perfekt spenningskurve som kulminerer i Askeladdens uventede seier. Uten feilene til Per og Pål, ville ikke triumfen til Askeladden vært i nærheten av like tilfredsstillende."
         },
         {
             "type": "header",
@@ -136,8 +136,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "I moderne filmer og bøker er skurkene ofte komplekse og kanskje litt snille på bunnen. Slik fungerer det ikke i eventyr. Her er verden knivskarp og delt i to: Det gode og det onde, det svarte og det hvite. Vi kaller dette for kontraster.\n\nSe på forholdet mellom Askeladden og Trollet. De er designet som motpoler på nesten alle plan for å understreke poenget i fortellingen. Trollet er enormt og representerer en overveldende naturkraft som truer mennesket. Askeladden er liten og representerer menneskeheten på sitt mest sårbare. Men den avgjørende kontrasten er mellom overfladisk kraft og indre kløkt. Trollet har musklene, men Askeladden har fantasien. Når han klemmer vannet av osten og later som det er en stein, vinner han ikke ved å være sterkere, men ved å være smartere. Dette er kjernen i folkeeventyret: Kampen mellom forstand (Hode) og rå makt (Mage)."
+            "type": "text",
+            "content": "I moderne filmer og bøker er skurkene ofte komplekse og kanskje litt snille på bunnen. Slik fungerer det ikke i eventyr. Her er verden knivskarp og delt i to: Det gode og det onde, det svarte og det hvite. Vi kaller dette for kontraster.\n\nSe på forholdet mellom Askeladden og Trollet. De er designet som motpoler på nesten alle plan for å understreke poenget i fortellingen. Trollet er enormt og representerer en overveldende naturkraft som truer mennesket. Askeladden er liten og representerer menneskeheten på sitt mest sårbare. Men den avgjørende kontrasten er mellom overfladisk kraft og indre kløkt. Trollet har musklene, men Askeladden har fantasien. Når han klemmer vannet av osten og later som det er en stein, vinner han ikke ved å være sterkere, men ved å være smartere. Dette er kjernen i folkeeventyret: Kampen mellom forstand (Hode) og rå makt (Mage)."
         },
         {
             "type": "header",
@@ -145,8 +145,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Til sist må du spørre deg selv: Hvorfor har denne enkle historien overlevd i generasjoner? Et eventyr er aldri bare underholdning; det er en lærepenge forkledd som magi. Moralen i eventyret handler om håp.\n\nEventyret forteller oss at selv om du starter med de dårligste kortene – om du er fattigst, minst og ingen har troen på deg – så kan du likevel vinne hele riket. Oppskriften er å beholde nysgjerrigheten (spørre og grave underveis) og våge å tenke annerledes enn flokken (Per og Pål). Askeladden er symbolet på den lille mann som overvinner de enorme utfordringene i livet ved hjelp av sin egen medfødte kløkt."
+            "type": "text",
+            "content": "Til sist må du spørre deg selv: Hvorfor har denne enkle historien overlevd i generasjoner? Et eventyr er aldri bare underholdning; det er en lærepenge forkledd som magi. Folkeeventyret har sin egen logikk, der de gode får sin lønn og de onde straffes (Esborg mfl., 2026). Moralen i eventyret handler om håp.\n\nEventyret forteller oss at selv om du starter med de dårligste kortene - om du er fattigst, minst og ingen har troen på deg - så kan du likevel vinne hele riket. Oppskriften er å beholde nysgjerrigheten (spørre og grave underveis) og våge å tenke annerledes enn flokken (Per og Pål). Askeladden er symbolet på den lille mann som overvinner de enorme utfordringene i livet ved hjelp av sin egen medfødte kløkt."
         },
         {
             "type": "component",
@@ -162,13 +162,13 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Når du skriver din egen analyse, er målet å vise at du forstår hvordan de tekniske lovene skaper de emosjonelle effektene i teksten. Ikke bare list opp lovene, men forklar hvordan de virker sammen."
+            "type": "text",
+            "content": "Når du skriver din egen analyse, er målet å vise at du forstår hvordan de tekniske lovene skaper de emosjonelle effektene i teksten. Ikke bare list opp lovene, men forklar hvordan de virker sammen."
         },
         {
             "type": "expandable",
             "title": "Les en mønstergyldig analyse av «Askeladden»",
-            "content": "Eventyret Askeladden som kappåt med trollet er en bauta i den norske folkediktningen og et mønstergyldig eksempel på sjangerens oppbygging. Teksten styres av strenge lover som gjør historien forutsigbar, men likevel spennende. Den mest sentrale strukturen er tretallsloven, som brukes for å etablere en stigende spenningskurve. Gjennom brødrenes feilslåtte forsøk blir trollets makt og trussel tydelig for leseren, noe som gjør Askeladdens endelige seier både heroisk og uventet.\n\nPersongalleriet er preget av en skarp typetegning uten indre kompleksitet. Her finnes det ingen gråsoner; Askeladden er ikke en person, men et bilde på nysgjerrighet og list, mens trollet er et symbol på en rå og tankeløs naturkraft. Denne motsetningsloven skaper et tydelig bilde av konflikten som ligger i kjernen av verket: Det er kampen mellom den fysiske overmakten og menneskets evne til intellektuell overlistelse.\n\nNår Askeladden lurer trollet til å skjære seg selv i magen, er dette den matematiske løsningen på eventyrets gåte. Det stadfester moralen som har gitt håp til lyttere i århundrer: At intelligens og mot trumfer makt og rikdom. Askeladden står som en universell representant for den svake part som seirer gjennom visdom, et budskap som er like aktuelt i dag som da historien ble fortalt rundt bålet i middelalderen."
+            "content": "Eventyret Askeladden som kappåt med trollet er en bauta i den norske folkediktningen og et mønstergyldig eksempel på sjangerens oppbygging. Teksten styres av strenge lover som gjør historien forutsigbar, men likevel spennende. Den mest sentrale strukturen er tretallsloven, som brukes for å etablere en stigende spenningskurve. Gjennom brødrenes feilslåtte forsøk blir trollets makt og trussel tydelig for leseren, noe som gjør Askeladdens endelige seier både heroisk og uventet.\n\nPersongalleriet er preget av en skarp typetegning uten indre kompleksitet. Her finnes det ingen gråsoner; Askeladden er ikke en person, men et bilde på nysgjerrighet og list, mens trollet er et symbol på en rå og tankeløs naturkraft. Denne motsetningsloven skaper et tydelig bilde av konflikten som ligger i kjernen av verket: Det er kampen mellom den fysiske overmakten og menneskets evne til intellektuell overlistelse.\n\nNår Askeladden lurer trollet til å skjære seg selv i magen, er dette den matematiske løsningen på eventyrets gåte. Det stadfester moralen som har gitt håp til lyttere i århundrer: At intelligens og mot trumfer makt og rikdom. Askeladden står som en universell representant for den svake part som seirer gjennom visdom, et budskap som er like aktuelt i dag som i de århundrene historien ble fortalt videre fra munn til munn."
         },
         {
             "type": "component",
@@ -192,6 +192,19 @@
                     "Diskuter med en medelev: Hvorfor er skurkene i moderne filmer ofte mer sammensatte enn trollet i eventyret? Hva vinner og hva taper man på det?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Esborg, L., Alver, B. & Sara-Skree, J. F. (2026). *eventyr*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/eventyr](https://snl.no/eventyr)",
+                    "Mæhlum, L. (2024). *aktantmodell*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/aktantmodell](https://snl.no/aktantmodell)",
+                    "Møller, J. (2021). *Typiske trekk ved eventyr*. NDLA. Hentet 10.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg2/typiske-trekk-ved-eventyr/ca531366d0)",
+                    "Store norske leksikon. (2024a). *askeladden*. Hentet 10.08.2026 fra [snl.no/askeladden](https://snl.no/askeladden)",
+                    "Store norske leksikon. (2024b). *Per og Pål*. Hentet 10.08.2026 fra [snl.no/Per_og_Pål](https://snl.no/Per_og_P%C3%A5l)"
+                ]
+            }
         }
     ],
     "relatedLink": {
@@ -206,5 +219,6 @@
     ],
     "createdDate": "2026-02-06T21:45:00Z",
     "readTime": "10 min lesning",
-    "category": "Analyse"
+    "category": "Analyse",
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }

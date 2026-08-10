@@ -1,7 +1,7 @@
 {
     "id": "analyse-debattinnlegg",
     "title": "Slik analyserer du: Debattinnlegg",
-    "description": "Ikke bare les – gjennomsku. En dybdeanalyse av retoriske triks, logiske feller og skjult påvirkning.",
+    "description": "Ikke bare les - gjennomsku. En dybdeanalyse av retoriske triks, logiske feller og skjult påvirkning.",
     "subject": "norsk",
     "topic": "analyse",
     "layout": "rich",
@@ -15,8 +15,8 @@
     ],
     "content": [
         {
-            "type": "paragraph",
-            "text": "Å analysere et debattinnlegg handler om å ta på seg rollen som etterforsker. Forfatteren har et mål: Han vil hacke hjernen din og få deg til å mene det samme som ham. Din jobb er å avsløre hvordan han gjør det. Bruker han fakta eller følelser? Er han ærlig eller manipulerende?\n\nNår du leser et debattinnlegg, må du være bevisst på at ingenting er tilfeldig. Hvert ord, hver metafor og hvert eksempel er nøye utvalgt for å styre tankene dine i en bestemt retning. En god analyse handler derfor om å se bak ordene og identifisere de retoriske mekanismene som er i sving."
+            "type": "text",
+            "content": "Å analysere et debattinnlegg handler om å ta på seg rollen som etterforsker. Forfatteren har et mål: Han vil hacke hjernen din og få deg til å mene det samme som ham. Din jobb er å avsløre hvordan han gjør det. Bruker han fakta eller følelser? Er han ærlig eller manipulerende?\n\nNår du leser et debattinnlegg, må du være bevisst på at ingenting er tilfeldig. Hvert ord, hver metafor og hvert eksempel er nøye utvalgt for å styre tankene dine i en bestemt retning. En god analyse handler derfor om å se bak ordene og identifisere de retoriske mekanismene som er i sving."
         },
         {
             "type": "header",
@@ -24,8 +24,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "For over 2000 år siden identifiserte Aristoteles tre måter å overbevise folk på. Disse gjelder fortsatt i dag, enten det er på TikTok eller i Aftenposten. Å mestre disse begrepene er som å ha et røntgensyn som ser rett gjennom teksten."
+            "type": "text",
+            "content": "For over 2000 år siden beskrev Aristoteles tre måter å overbevise folk på: etos, som handler om talerens karakter, logos, som handler om selve saken, og patos, som handler om følelsene til dem som lytter (Svendsen & Grue, 2025). Disse gjelder fortsatt i dag, enten det er på TikTok eller i Aftenposten. Å mestre disse begrepene er som å ha et røntgensyn som ser rett gjennom teksten."
         },
         {
             "type": "component",
@@ -54,8 +54,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "En klassisk konflikt i debattinnlegg er balansen mellom fornuft og følelser. Ofte fungerer de best når de kombineres, men de har helt ulik effekt på oss som lesere."
+            "type": "text",
+            "content": "En klassisk konflikt i debattinnlegg er balansen mellom fornuft og følelser. Logos betyr rett og slett argument, altså grunnene avsenderen gir for at han har rett (Fossheim, 2025). Patos tar utgangspunkt i følelsene til dem som lytter, og fornuft og følelser henger tett sammen (Grue, 2025). Ofte fungerer de best når de kombineres, men de har helt ulik effekt på oss som lesere."
         },
         {
             "type": "component",
@@ -94,8 +94,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Vi skal dissekere et innlegg av professor Bjørn Hofmann. Han er bekymret for at kunstig intelligens (KI) gjør oss sløve. Hofmann er en ekspert på medisinsk etikk, noe som gir ham en sterk inngang (Etos).\n\nLegg merke til hvordan han bruker språket for å male et skremmebilde av fremtiden vår hvis vi ikke tar grep nå."
+            "type": "text",
+            "content": "Vi skal dissekere et innlegg av professor Bjørn Hofmann. Han er bekymret for at kunstig intelligens (KI) gjør oss sløve, og han mener at KI er en ferdighetstyv på to måter: den svekker ferdighetene vi har, og den hindrer oss i å utvikle nye (Hofmann, 2025). Hofmann er professor og arbeider med medisinsk etikk ved NTNU og Universitetet i Oslo, noe som gir ham en sterk inngang (Etos). Vi lar oss nemlig lettere overbevise av en avsender vi oppfatter som pålitelig (Grue & Alfredsen, 2025).\n\nLegg merke til hvordan han bruker språket for å male et skremmebilde av fremtiden vår hvis vi ikke tar grep nå."
         },
         {
             "type": "expandable",
@@ -111,11 +111,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Det viser seg nemlig at KI er en ferdighetstyv... Leger blir for eksempel dårligere til å gjøre kliniske undersøkelser... Forskning viser at studenter som har skrevet oppgaver på egen hånd, leverer bedre oppgaver."
+                    "text": "Det viser seg nemlig at KI er en ferdighetstyv... Leger blir for eksempel dårligere til å gjøre kliniske undersøkelser... Forskning viser at studenter som har skrevet oppgaver på egen hånd, leverer bedre oppgaver enn dem som har laget dem ved hjelp av KI."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Det kan virke meningsløst å lære seg ferdigheter når KI kan gjøre oppgavene raskere og enklere. Problemet er bare at da får man aldri selv utviklet ferdigheten – man blir avhengig av teknologien."
+                    "text": "Det kan virke meningsløst å lære seg ferdigheter når KI kan gjøre oppgavene raskere og enklere. Problemet er bare at da får man aldri selv utviklet ferdigheten - man blir avhengig av teknologien."
                 },
                 {
                     "type": "paragraph",
@@ -143,8 +143,8 @@
             }
         },
         {
-            "type": "paragraph",
-            "text": "Nå skal vi se på ordvalgene. Les sitatet over nøye. Her bruker Hofmann et veldig spesielt nyord: ferdighetstyv.\n\nHvorfor valgte han akkurat det ordet? Han kunne ha skrevet «teknologi som svekker ferdighetene våre», men det er kjedelig og byråkratisk. Når han setter sammen ordene ferdighet og tyv, skaper han et bilde i hodet ditt (en metafor).\n\nTenk over hva en tyv er: En kriminell. En som tar noe fra deg mot din vilje. En du må beskytte deg mot. Ved å bruke dette ordet, personifiserer han teknologien. Han gjør KI om til en skurk. Dette vekker følelser hos leseren (Patos) – vi blir redde for å miste noe verdifullt. Språket hans er altså ikke nøytralt; det er designet for å skape motstand mot KI."
+            "type": "text",
+            "content": "Nå skal vi se på ordvalgene. Les sitatet over nøye. Her bruker Hofmann et veldig spesielt nyord: ferdighetstyv.\n\nHvorfor valgte han akkurat det ordet? Han kunne ha skrevet «teknologi som svekker ferdighetene våre», men det er kjedelig og byråkratisk. Når han setter sammen ordene ferdighet og tyv, skaper han et bilde i hodet ditt (en metafor).\n\nTenk over hva en tyv er: En kriminell. En som tar noe fra deg mot din vilje. En du må beskytte deg mot. Ved å bruke dette ordet, personifiserer han teknologien. Han gjør KI om til en skurk. Dette vekker følelser hos leseren (Patos) - vi blir redde for å miste noe verdifullt. Språket hans er altså ikke nøytralt; det er designet for å skape motstand mot KI."
         },
         {
             "type": "component",
@@ -166,8 +166,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Men Hofmann kan ikke bare skremme oss, han må også bevise at han har rett. Hvordan gjør han det? Han skriver: «Forskning viser at...».\n\nDette er et klassisk Logos-grep. Han låner autoritet fra vitenskapen. Når vi leser ordet «forskning», senker vi ofte garden fordi vi stoler på eksperter. Han nevner også en spesifikk yrkesgruppe: Leger. Dette gjør argumentet konkret. Vi ser for oss en lege som ikke klarer jobben sin, og det er et skremmende scenario som styrker poenget hans ytterligere.\n\nDu bør likevel være kritisk når du analyserer: Hvilken forskning? Han nevner ingen kilder. En streng analytiker ville påpekt at dette er en litt vag påstand, selv om den virker overbevisende der og da. Å påpeke svakheter i argumentasjonen er en viktig del av en dypere analyse."
+            "type": "text",
+            "content": "Men Hofmann kan ikke bare skremme oss, han må også bevise at han har rett. Hvordan gjør han det? Han skriver: «Forskning viser at...».\n\nDette er et klassisk Logos-grep. Han låner autoritet fra vitenskapen. Når vi leser ordet «forskning», senker vi ofte garden fordi vi stoler på eksperter. Han nevner også en spesifikk yrkesgruppe: Leger. Dette gjør argumentet konkret. Vi ser for oss en lege som ikke klarer jobben sin, og det er et skremmende scenario som styrker poenget hans ytterligere.\n\nDu bør likevel være kritisk når du analyserer: Hvilken forskning? Han nevner ingen kilder. Retoriske argumenter er sjelden fullstendige bevis; de bygger på det som virker sannsynlig (Fossheim, 2025). En streng analytiker ville påpekt at dette er en litt vag påstand, selv om den virker overbevisende der og da. Å påpeke svakheter i argumentasjonen er en viktig del av en dypere analyse."
         },
         {
             "type": "header",
@@ -175,8 +175,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "En god debattant vet hva motstanderen kommer til å si, og svarer på det før det blir sagt. Se på setningen: «Det kan virke meningsløst å lære seg ferdigheter...».\n\nHer innrømmer han faktisk at KI er nyttig! Hvorfor gjør han det? Er ikke det å skyte seg selv i foten? Nei, tvert imot. Ved å vise at han forstår motargumentet (at KI er raskt og enkelt), fremstår han som reflektert og balansert (Etos). Han er ikke en person som hater alt nytt; han er en som har tenkt nøye gjennom saken.\n\nDette kalles imøtegåelse. Det tar brodden av motstanderens argumenter og gjør at vi stoler mer på konklusjonen hans: At komforten har en pris. For å analysere dette godt, må du forklare hvordan denne innrømmelsen faktisk gjør hans eget poeng sterkere."
+            "type": "text",
+            "content": "En god debattant vet hva motstanderen kommer til å si, og svarer på det før det blir sagt. Se på setningen: «Det kan virke meningsløst å lære seg ferdigheter når KI kan gjøre oppgavene raskere og enklere» (Hofmann, 2025).\n\nHer innrømmer han faktisk at KI er nyttig! Hvorfor gjør han det? Er ikke det å skyte seg selv i foten? Nei, tvert imot. Ved å vise at han forstår motargumentet (at KI er raskt og enkelt), fremstår han som reflektert og balansert (Etos). Han er ikke en person som hater alt nytt; han er en som har tenkt nøye gjennom saken.\n\nDette kalles imøtegåelse. Det tar brodden av motstanderens argumenter og gjør at vi stoler mer på konklusjonen hans: At komforten har en pris. For å analysere dette godt, må du forklare hvordan denne innrømmelsen faktisk gjør hans eget poeng sterkere."
         },
         {
             "type": "header",
@@ -184,13 +184,13 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Til slutt må du sette disse observasjonene sammen til en helhetlig tekst. En god analyseramme er å starte med HVA (Hovedsyn), gå til HVORDAN (Virkemidler) og avslutte med HVORFOR (Effekt).\n\nLegg merke til hvordan modellteksten under unngår å bare liste opp virkemidler, men i stedet vever dem inn i en argumentasjon om hvordan teksten fungerer som helhet."
+            "type": "text",
+            "content": "Til slutt må du sette disse observasjonene sammen til en helhetlig tekst. En god analyseramme er å starte med HVA (Hovedsyn), gå til HVORDAN (Virkemidler) og avslutte med HVORFOR (Effekt).\n\nLegg merke til hvordan modellteksten under unngår å bare liste opp virkemidler, men i stedet vever dem inn i en argumentasjon om hvordan teksten fungerer som helhet."
         },
         {
             "type": "expandable",
             "title": "Les analysen av «Ferdighetstyven»",
-            "content": "I debattinnlegget «Fordummende intelligent teknologi» går Bjørn Hofmann til verks mot vår ukritiske bruk av kunstig intelligens. Teksten er en advarsel om at vi er i ferd med å ofre vår egen kompetanse på bekvemmelighetens alter.\n\nHofmanns hovedgrep er å etablere en fiende. Dette gjør han gjennom den sentrale metaforen om teknologien som en ferdighetstyv. Ordet er nøye valgt for å vekke ubehag (Patos); det fremstiller teknologien ikke som et dødt verktøy, men som en aktiv aktør som stjeler noe fra oss. Tittelen underbygger dette gjennom paradokset ferdummende intelligent, som effektivt fanger essensen i budskapet: Maskinene blir smartere, men vi blir dummere.\n\nFor å gi tyngde til denne advarselen, lener forfatteren seg på logos-argumentasjon. Han viser til forskning og bruker konkrete eksempler fra legestanden for å sannsynliggjøre at forfallet allerede er i gang. Selv om kildebruken er vag, fungerer den for å gi teksten et vitenskapelig alibi.\n\nTeksten styrkes av at forfatteren bruker imøtegåelse. Han anerkjenner at det kan føles meningsløst å pugge når maskiner kan gjøre jobben. Ved å validere motargumentet bygger han etos; han fremstår som en realistisk og reflektert fagperson. Slik leder han leseren frem til den logiske sluttslutningen: At KI først blir et gode når vi selv har grunnleggende forståelse, men en fare hvis vi bruker den som sovepute."
+            "content": "I debattinnlegget «Fordummende intelligent teknologi» går Bjørn Hofmann til verks mot vår ukritiske bruk av kunstig intelligens. Teksten er en advarsel om at vi er i ferd med å ofre vår egen kompetanse på bekvemmelighetens alter.\n\nHofmanns hovedgrep er å etablere en fiende. Dette gjør han gjennom den sentrale metaforen om teknologien som en ferdighetstyv. Ordet er nøye valgt for å vekke ubehag (Patos); det fremstiller teknologien ikke som et dødt verktøy, men som en aktiv aktør som stjeler noe fra oss. Tittelen underbygger dette gjennom paradokset fordummende intelligent, som effektivt fanger essensen i budskapet: Maskinene blir smartere, men vi blir dummere.\n\nFor å gi tyngde til denne advarselen, lener forfatteren seg på logos-argumentasjon. Han viser til forskning og bruker konkrete eksempler fra legestanden for å sannsynliggjøre at forfallet allerede er i gang. Selv om kildebruken er vag, fungerer den for å gi teksten et vitenskapelig alibi.\n\nTeksten styrkes av at forfatteren bruker imøtegåelse. Han anerkjenner at det kan føles meningsløst å pugge når maskiner kan gjøre jobben. Ved å validere motargumentet bygger han etos; han fremstår som en realistisk og reflektert fagperson. Slik leder han leseren frem til den logiske sluttslutningen: At KI først blir et gode når vi selv har grunnleggende forståelse, men en fare hvis vi bruker den som sovepute."
         },
         {
             "type": "component",
@@ -212,6 +212,19 @@
                     "Skriv en kort analyse av ett virkemiddel du finner i et debattinnlegg eller en reklame. Bruk rammen HVA, HVORDAN og HVORFOR, og forklar hvilken effekt grepet har på leseren.",
                     "Finn et debattinnlegg i en avis og let etter etos, logos og patos. Marker minst ett eksempel på hver, og skriv en setning om hvordan hvert grep prøver å påvirke deg.",
                     "Diskuter med en medelev: Når blir bruk av patos et ærlig virkemiddel, og når blir det manipulerende? Prøv å bli enige om hvor grensen går."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Fossheim, H. (2025). *logos*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/logos](https://snl.no/logos)",
+                    "Grue, J. (2025). *patos*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/patos](https://snl.no/patos)",
+                    "Grue, J. & Alfredsen, F. (2025). *etos*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/etos](https://snl.no/etos)",
+                    "Hofmann, B. (2025). *Fordummende intelligent teknologi*. Gemini. Hentet 10.08.2026 fra [gemini.no](https://gemini.no/2025/12/fordummende-intelligent-teknologi/)",
+                    "Svendsen, L. F. H. & Grue, J. (2025). *retorikk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/retorikk](https://snl.no/retorikk)"
                 ]
             }
         }
@@ -260,5 +273,6 @@
     ],
     "createdDate": "2026-02-06T21:44:00Z",
     "readTime": "12 min lesning",
-    "category": "Analyse"
+    "category": "Analyse",
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }
