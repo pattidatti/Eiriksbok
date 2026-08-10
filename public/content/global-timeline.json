@@ -4582,6 +4582,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "storbritannia",
+      "title": "Hvorfor begynte det i Storbritannia?",
+      "description": "Seks forutsetninger måtte ligge klare på samme sted samtidig. Ta bort én, og revolusjonen stopper opp.",
+      "startDate": 1688,
+      "endDate": 1800,
+      "displayDate": "1688-1800",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "industriell-revolusjon",
+      "link": "/historie/industriell-revolusjon/storbritannia",
+      "tags": [
+        "historie",
+        "industriell-revolusjon",
+        "storbritannia",
+        "kull",
+        "handel"
+      ],
+      "lat": 54,
+      "lng": -2.5,
+      "placeLabel": "Storbritannia",
+      "placeCountryId": 826,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "locke-treatises",
       "title": "John Locke: Two Treatises",
       "description": "John Locke utgir sitt viktigste politiske verk om naturlige rettigheter og samfunnskontrakten.",
