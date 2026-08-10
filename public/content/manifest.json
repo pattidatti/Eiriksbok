@@ -7738,6 +7738,19 @@
                   "lastUpdated": "2025-12-04T14:04:03+01:00"
                 },
                 {
+                  "id": "skapelse",
+                  "title": "Skapelsen i Islam",
+                  "description": "Allah skapte verden på seks perioder - men hvilte aldri.",
+                  "image": "/images/krle/religion/islam_hero.webp",
+                  "tags": [
+                    "islam",
+                    "skapelse",
+                    "narrative"
+                  ],
+                  "createdDate": "2023-01-01T12:00:00Z",
+                  "lastUpdated": "2026-08-10T12:00:00Z"
+                },
+                {
                   "id": "frelse",
                   "title": "Dommens dag",
                   "description": "Regnskapets time og livet etter døden.",

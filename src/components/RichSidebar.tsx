@@ -240,7 +240,10 @@ export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, ti
                             <div className="space-y-3">
                                 {relatedArticles.map((article) => (
                                     <Link
-                                        key={article.id}
+                                        // url, ikke id: KRLE gjenbruker samme artikkel-id
+                                        // (overgangsriter, bonn, frelse ...) på tvers av
+                                        // religionene, så id-er kolliderer i denne lista.
+                                        key={article.url}
                                         to={article.url}
                                         className="block py-2 px-3 rounded-lg bg-white border border-slate-100 shadow-sm hover:border-indigo-200 hover:shadow-md hover:bg-slate-50 transition-all duration-300 group relative overflow-hidden"
                                     >

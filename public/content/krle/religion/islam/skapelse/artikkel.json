@@ -1,7 +1,8 @@
 {
+    "id": "skapelse",
     "title": "Skapelsen i Islam",
-    "subject": "KRLE",
-    "topic": "Islam",
+    "subject": "krle",
+    "topic": "religioner",
     "religion": "islam",
     "dimension": "narrative",
     "comparison_tags": [
@@ -15,16 +16,12 @@
         "narrative",
         "skapelse"
     ],
+    "createdDate": "2023-01-01T12:00:00Z",
+    "lastUpdated": "2026-08-10T12:00:00Z",
     "content": [
         {
-            "name": "text",
+            "type": "text",
             "content": "Koranen forteller at Allah skapte himlene og jorden på seks perioder (dager). Alt er skapt med en hensikt. Mennesket (Adam) ble skapt av leire og fikk livets pust fra Allah. I motsetning til Bibelen, sier ikke Koranen at Gud hvilte, for Allah blir aldri trett."
-        },
-        {
-            "name": "image",
-            "src": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80",
-            "caption": "Universet.",
-            "alt": "Universet"
         }
     ],
     "concepts": [
@@ -78,6 +75,5 @@
         "source": "Koranen",
         "reference": "Sura 2:117"
     },
-    "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "timeline": []
 }

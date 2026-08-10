@@ -1,11 +1,27 @@
 {
     "id": "intro",
     "title": "Introduksjon til Bahá'í",
-    "ingress": "En ung verdensreligion som vektlegger menneskehetens enhet.",
-    "body": [
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "bahai",
+    "dimension": "doctrinal",
+    "comparison_tags": [
+        "sentrale_trekk"
+    ],
+    "category": "Bahá'í",
+    "readTime": "2 min lesning",
+    "heroImage": "/images/krle/religion/bahai_hero.webp",
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-10T12:00:00Z",
+    "content": [
+        {
+            "type": "text",
+            "content": "En ung verdensreligion som vektlegger menneskehetens enhet."
+        },
         {
             "type": "text",
             "content": "Bahá'í-troen ble grunnlagt i Iran på midten av 1800-tallet av Bahá'u'lláh. Sentralt i troen er tanken om at alle mennesker er likeverdige og at alle religioner har samme guddommelige opphav."
         }
-    ]
+    ],
+    "timeline": []
 }

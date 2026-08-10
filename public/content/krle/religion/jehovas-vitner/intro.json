@@ -1,11 +1,27 @@
 {
     "id": "intro",
     "title": "Introduksjon til Jehovas vitner",
-    "ingress": "Et kristent trossamfunn kjent for sin aktive forkynnelse.",
-    "body": [
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "jehovas-vitner",
+    "dimension": "doctrinal",
+    "comparison_tags": [
+        "sentrale_trekk"
+    ],
+    "category": "Jehovas vitner",
+    "readTime": "2 min lesning",
+    "heroImage": "/images/krle/religion/jehovas-vitner_hero.webp",
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-10T12:00:00Z",
+    "content": [
+        {
+            "type": "text",
+            "content": "Et kristent trossamfunn kjent for sin aktive forkynnelse."
+        },
         {
             "type": "text",
             "content": "Jehovas vitner ble grunnlagt i USA i 1870-årene. De lærer at de lever i 'de siste dager' og legger stor vekt på Bibelen som Guds ord."
         }
-    ]
+    ],
+    "timeline": []
 }

@@ -1,7 +1,8 @@
 {
+    "id": "bonn",
     "title": "Bønn (Salah) i Islam",
-    "subject": "KRLE",
-    "topic": "Islam",
+    "subject": "krle",
+    "topic": "religioner",
     "religion": "islam",
     "dimension": "ritual",
     "comparison_tags": [
@@ -15,16 +16,18 @@
         "ritual",
         "salah"
     ],
+    "createdDate": "2023-01-01T12:00:00Z",
+    "lastUpdated": "2026-08-10T12:00:00Z",
     "content": [
         {
-            "name": "text",
+            "type": "text",
             "content": "Salah er den rituelle bønnen som utføres fem ganger daglig. Det er den nest viktigste søylen i islam. Bønnen innebærer faste bevegelser og resitasjon fra Koranen. Før bønnen må man utføre en rituell vask (wudu) for å være ren."
         },
         {
-            "name": "image",
-            "src": "https://images.unsplash.com/photo-1564121211835-e88c852648ab?auto=format&fit=crop&q=80",
-            "caption": "Muslimer i bønn.",
-            "alt": "Bønn"
+            "type": "image",
+            "src": "/images/krle/religion/islam_bonn.webp",
+            "alt": "Muslimer som ber i rekker i en moské",
+            "caption": "Bønnen samler de troende i rekker, alle vendt mot Mekka."
         }
     ],
     "concepts": [
@@ -78,6 +81,5 @@
         "source": "Koranen",
         "reference": "Sura 4:103"
     },
-    "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "timeline": []
 }

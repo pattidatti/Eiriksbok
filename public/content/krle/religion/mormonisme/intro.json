@@ -1,11 +1,27 @@
 {
     "id": "intro",
     "title": "Introduksjon til Mormonisme",
-    "ingress": "Jesu Kristi Kirke av Siste Dagers Hellige.",
-    "body": [
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "mormonisme",
+    "dimension": "doctrinal",
+    "comparison_tags": [
+        "sentrale_trekk"
+    ],
+    "category": "Mormonisme",
+    "readTime": "2 min lesning",
+    "heroImage": "/images/krle/religion/mormonisme_hero.webp",
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-10T12:00:00Z",
+    "content": [
+        {
+            "type": "text",
+            "content": "Jesu Kristi Kirke av Siste Dagers Hellige."
+        },
         {
             "type": "text",
             "content": "Mormonismen, eller Jesu Kristi Kirke av Siste Dagers Hellige, ble grunnlagt av Joseph Smith i USA på 1800-tallet. De regner seg som kristne, men har også egne hellige skrifter, som Mormons bok."
         }
-    ]
+    ],
+    "timeline": []
 }

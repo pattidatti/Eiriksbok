@@ -651,6 +651,7 @@ A highly realistic 4K cinematic photograph of [scene], [time period].
 - `docs/DETEKTIV_GUIDE.md` — Detective case system
 - `docs/SCENARIO_DESIGN_GUIDE.md` — Tidsreise-scenario design
 - `docs/KRLE_PEDAGOGICAL_GUIDE.md` — KRLE content guidelines
+- `docs/KRLE_OPPRUSTNING.md` — Statusoversikt og arbeidsliste for å løfte KRLE-artiklene til plan_article-standard
 - `docs/motor-update.md` — Mini-spillmotor changelog/oppgraderingsnotat
 - `docs/Design documents/` — Per-topic blueprints
 - `docs/laereplaner/` — Læreplaner og kompetansemål per fag
