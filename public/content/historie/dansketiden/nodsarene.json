@@ -1,0 +1,280 @@
+{
+    "id": "nodsarene",
+    "title": "Nødsårene: da sjøveien ble stengt",
+    "layout": "rich",
+    "year": "1807-1814",
+    "category": "Norge",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Norge hentet normalt rundt tre fjerdedeler av kornet sitt sjøveien fra Danmark",
+        "Etter flåteranet i 1807 stengte den britiske marinen norskekysten i sju år",
+        "Sulten var verst i 1808-1809 og 1812-1813, og hardest i innlandet",
+        "Folk drøyde melet med bark fra furu, bjørk og alm",
+        "Misnøyen med Danmark i nødsårene ble en av veiene fram mot 1814"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "En vinterdag i 1809 går en familie i en innlandsbygd ut i skogen. De skal ikke hente ved. De skal hente bark. Kornbingen er tom, og butikken de kunne kjøpt mel i, finnes ikke. Faren feller en ung alm, og de skreller av det ytterste laget for å komme til den bleke, myke barken innenfor. Den skal bløtlegges, tørkes og males til et grovt mel som kan drøye det lille kornet de har igjen. Det smaker bittert. Men det metter litt."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Familie som skreller bark av et almetre i vinterskog",
+            "caption": "Bark fra alm, furu og bjørk ble tørket og malt til mel. Det var ikke mat folk ville ha. Det var mat de måtte ha."
+        },
+        {
+            "type": "text",
+            "content": "Det merkelige er dette: det fantes nok mat i verden rundt dem. Bare noen dagsreiser sørover, i Danmark, lå kornlagrene fulle. Problemet var ikke at maten var borte. Problemet var at veien til maten var stengt. Historikerne kaller perioden fra 1807 til 1814 for nødsårene, eller barkebrødstidene. Det er historien om hva som skjer med et land når noen kutter forbindelsene ut."
+        },
+        {
+            "type": "header",
+            "text": "Et land som spiste importert korn"
+        },
+        {
+            "type": "text",
+            "content": "Norge er langt og smalt, og det meste av landet ligger for høyt eller for nordlig til at korn vokser godt. Derfor hadde nordmenn i hundrevis av år løst matspørsmålet på en annen måte: de solgte noe de hadde mye av, og kjøpte kornet de manglet. Fra kysten gikk det tømmer, fisk og jern ut. Inn kom det korn. Ifølge Ottosen (2024) hentet Norge omtrent tre fjerdedeler av kornet sitt fra Danmark."
+        },
+        {
+            "type": "text",
+            "content": "Dette var ikke en nødløsning. Det var systemet. [Trelasthandelen](/historie/dansketiden/trelasthandelen) hadde gjort kystbyene rike, og pengene fra plankene betalte for melet i bakebollen. Så lenge skipene gikk, virket det utmerket. Norge og Danmark var samme rike, kongen satt i København, og det var like naturlig å frakte korn over Skagerrak som å kjøre det med hest over en fjellovergang."
+        },
+        {
+            "type": "text",
+            "content": "Men et system som virker perfekt så lenge alt går bra, kan være svakere enn det ser ut. Alt hvilte på én ting: at skipene kom fram. Dette er et mønster vi kjenner igjen i dag også, i alt fra matbutikker til strømnett og datakabler. Du kan lese mer om det i artikkelen om [sårbare nettverk](/samfunnskunnskap/handel-og-infrastruktur/saarbare-nettverk)."
+        },
+        {
+            "type": "header",
+            "text": "Flåteranet: krigen Norge ikke valgte"
+        },
+        {
+            "type": "text",
+            "content": "I september 1807 bestemte britene seg for å handle. Napoleon var i ferd med å vinne på kontinentet, og britene fryktet at den dansk-norske flåten skulle havne i hendene hans. Derfor gjorde de noe drastisk: de bombet København og tok med seg størstedelen av flåten hjem. Hendelsen kalles flåteranet. Ifølge Njåstad (2026) havnet tvillingriket Danmark-Norge dermed inn i napoleonskrigene på den tapende siden, uten egentlig å ha valgt det selv."
+        },
+        {
+            "type": "text",
+            "content": "Britene stoppet ikke der. De la en marineblokade langs norskekysten. Store britiske krigsskip patruljerte i Skagerrak og Nordsjøen og stanset skip som prøvde å krysse over. Denne delen av krigen kalles kanonbåtkrigen, og den varte fra 1807 helt til 1814 (Dyrhaug, 2022). For nordmenn betydde den én ting framfor alt: kornveien var stengt."
+        },
+        {
+            "type": "text",
+            "content": "Nordmennene ga ikke opp havet. De bygde en helt egen forsvarsflåte av små, kvikke fartøy. En kanonsjalupp var rundt tjue meter lang, hadde en besetning på 63 mann og to kanoner som skjøt kuler på 24 pund. Fram til desember 1812 bygde Norge 42 sjalupper og 53 mindre joller (Dyrhaug, 2022). Fordi de kunne bruke både seil og årer, kom de inn i grunne farvann og trange fjorder der de tunge britiske linjeskipene ikke våget å følge etter. Kanonbåtene klarte å holde britene på avstand fra land. Men de kunne ikke åpne handelsveien igjen."
+        },
+        {
+            "type": "component",
+            "name": "Kornveien",
+            "props": {
+                "title": "Kornveien til Norge",
+                "intro": "Dra i blokaden og se hva som skjer med maten."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Barkebrødstider"
+        },
+        {
+            "type": "text",
+            "content": "Etter 1807 forsøkte folk å trosse blokaden og frakte korn nordover, men lite nådde fram (Ottosen, 2024). Prisene på mel skjøt i været. Så begynte melet å ta slutt, og da hjalp det ikke hvor mye penger du hadde."
+        },
+        {
+            "type": "text",
+            "content": "Sulten kom ikke jevnt over hele landet, og den kom ikke alle årene. Den slo hardest til i 1808-1809 og igjen i 1812-1813, og verst gikk det ut over innlandsbygdene inne mot svenskegrensen (Ottosen, 2024). Grunnen er enkel når du tenker over den: langs kysten kunne folk fortsatt fiske. Havet ga mat selv når skipene ikke kom. I innlandet fantes ingen slik reserve. Der var kornet alt."
+        },
+        {
+            "type": "text",
+            "content": "Barkebrød var svaret mange landet på. De indre delene av barken fra furu, bjørk og alm ble tørket, malt til pulver og blandet med litt vanlig mel (Bugge, 2024). Framgangsmåten var tung: barken ble skrelt av unge greiner, bløtlagt i flere dager, hakket opp, tørket i sola og til slutt malt. Almemel var det beste, og ble beskrevet som nesten søtt. Furubark ga et dårlig brød. Barkebrød hadde vært kjent i Norge helt fra tidlig middelalder, men årene 1807-1814 var siste gang det ble vanlig kost (Bugge, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Hvor ille var det egentlig? Tallene gir et hardt svar. I 1808-1809 døde det mellom to og tre ganger så mange mennesker som i et normalt år (Ottosen, 2024). Interessant nok var dødeligheten lavere i 1812-1813, selv om det var enda mindre mat. Forklaringen er trolig at det gikk færre smittsomme sykdommer akkurat da. Sult alene dreper langsomt. Sult sammen med sykdom dreper fort."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Britisk krigsskip som patruljerer i grå sjø utenfor norsk kyst",
+            "caption": "Britiske krigsskip patruljerte Skagerrak i sju år. De trengte ikke gå i land for å ramme Norge. Det holdt å ligge i veien."
+        },
+        {
+            "type": "header",
+            "text": "Å trosse blokaden"
+        },
+        {
+            "type": "text",
+            "content": "Blokaden var aldri helt tett. Skagerrak er bredt, netter er mørke, og et lite skip er vanskelig å få øye på. Derfor var det hele tiden noen som prøvde seg. Skippere lastet skutene med korn i danske havner og satte kursen nordover om natten, med håp om å komme seg over før det ble lyst."
+        },
+        {
+            "type": "text",
+            "content": "Det var et sjansespill. Ble du oppdaget, mistet du både skipet og lasten. Kom du fram, var du en helt i hjembygda. I mikrospillet under kan du prøve turen selv."
+        },
+        {
+            "type": "component",
+            "name": "MicroGame",
+            "props": {
+                "gameId": "kornskuta-3d"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til noe når du har spilt: selv om du kommer fram, er ikke problemet løst. Én skute bærer noen få tonn. Et helt land trenger tusenvis. Det er nettopp derfor blokaden virket. Den trengte ikke stoppe alle skip. Den trengte bare å stoppe nok av dem."
+        },
+        {
+            "type": "header",
+            "text": "Kapere og lisenser"
+        },
+        {
+            "type": "text",
+            "content": "Krigen skapte også nye måter å tjene penger på. Staten begynte å dele ut kaperbrev. Et kaperbrev ga en skipsreder lov, i kongens navn, til å borde fiendtlige skip, ta lasten som såkalt prise og føre skipet til nærmeste stiftsstad, som regel Kristiansand eller Christiania (Frydenlund, 2024). Der avgjorde egne domstoler om fangsten var lovlig, og lasten ble solgt på auksjon."
+        },
+        {
+            "type": "text",
+            "content": "Kaperfarten gjorde noen få mennesker søkkrike på kort tid. Men Frydenlund (2024) peker på at den ødela langt mer for de etablerte handelshusene enn den ga tilbake, og at den samlet sett var til større skade enn nytte for samfunnet. Konkurser, tapte inntekter og vareknapphet skapte pengemangel, sult og fortvilelse."
+        },
+        {
+            "type": "text",
+            "content": "Fra høsten 1809 kom en annen løsning: lisenshandelen. Nå kunne norske handelsskip få lov til å handle med fienden, hvis de hadde riktige papirer (Frydenlund, 2024). Systemet var rotete, for et skip trengte to sett dokumenter som motarbeidet hverandre:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Dansk leidebrev, som ga lov til å seile ut fra en dansk-norsk havn",
+                "Britisk lisens, som ga lov til å passere blokaden",
+                "Og for mange: forfalskninger og smugling når papirene ikke var på plass"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Lisenshandelen fikk hjulene til å snurre igjen, og noe korn kom fram. Men den løste aldri grunnproblemet. Handelen var ikke lenger noe kjøpmennene styrte selv. Den var noe fienden ga dem lov til."
+        },
+        {
+            "type": "header",
+            "text": "Fra sult til Eidsvoll"
+        },
+        {
+            "type": "text",
+            "content": "Mens folk sultet, gikk krigen videre. Da den russiske tsaren angrep Sverige i 1808, erklærte Danmark-Norge krig mot svenskene. Prins Christian August ledet de norske styrkene til seire ved Toverud, Trangen og Prestebakke, og partene ble enige om våpenhvile i desember 1808 (Njåstad, 2026). Men det var ikke svenskene som hadde skapt sulten. Det var blokaden."
+        },
+        {
+            "type": "text",
+            "content": "Nødsårene forandret hvordan nordmenn tenkte om kongen sin. I sju år hadde de opplevd at styret i København verken kunne beskytte dem eller skaffe dem mat. Regjeringen i Norge måtte ta stadig flere avgjørelser på egen hånd, rett og slett fordi det ikke gikk an å vente på svar over Skagerrak. Ottosen (2024) peker på at misnøyen med unionen med Danmark vokste i disse årene, og at flere historikere ser dette som en viktig grunn til at selvstendighetstanken sto så sterkt i 1814."
+        },
+        {
+            "type": "text",
+            "content": "Krigen endte med Kielfreden i januar 1814 (Dyrhaug, 2022). I fredsavtalen ga den danske kongen Norge til Sverige. Men nordmennene sa nei. Christian Frederik samlet menn på Eidsvoll, og i mai 1814 vedtok de en helt ny [grunnlov](/samfunnskunnskap/styringsformer/grunnloven). Etter en kort krig mot Sverige ble Mossekonvensjonen inngått i august samme år: Norge gikk inn i [unionen med Sverige](/historie/norge-i-moderne-tid/unionen-med-sverige), men fikk beholde grunnloven sin (Njåstad, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Minnestein ved en gammel steinkirke i kveldslys",
+            "caption": "Ved Fjære kirke står en minnestein fra 1906 over dem fra Grimstad-traktene som mistet livet i nødsårene."
+        },
+        {
+            "type": "text",
+            "content": "Nødsårene fikk også et ettermæle i litteraturen. I 1862 ga Henrik Ibsen ut det lange diktet Terje Vigen, om en sjømann som ror over Skagerrak for å hente korn til familien sin og blir tatt av britene (Store norske leksikon, 2023). Diktet ble så elsket at mange trodde Terje Vigen hadde levd på ekte. Forskerne mener han neppe gjorde det. Men minnesteinen som ble reist ved Fjære kirke i 1906, er til minne om ekte mennesker: alle fra Grimstad-traktene som satte livet til i nødsårene."
+        },
+        {
+            "type": "text",
+            "content": "Det er verdt å ta med seg én ting fra disse sju årene. Norge sultet ikke fordi jorda sluttet å gi. Norge sultet fordi noen la seg i veien mellom landet og maten. Et samfunn er ikke bare det som finnes innenfor grensene. Det er også alle forbindelsene ut."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor stor del av kornet sitt hentet Norge normalt fra Danmark?",
+                    "Hva var flåteranet, og hvilket år skjedde det?",
+                    "Hvilke to perioder var sulten verst, ifølge teksten?",
+                    "Hva var barkebrød laget av, og hvilke tre treslag nevner teksten?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor innlandet ble hardere rammet enn kysten.",
+                    "Hvorfor kunne kanonbåtene holde britene unna land, men likevel ikke løse matproblemet?",
+                    "Frydenlund mener kaperfarten gjorde større skade enn nytte. Hva bygger han det på?",
+                    "I mikrospillet kan du komme fram med lasten og likevel ikke redde landet. Hva forteller det om forskjellen på ett skip og en handelsvei?"
+                ],
+                "gaaVidere": [
+                    "Les eller hør Terje Vigen av Henrik Ibsen. Hvilke deler av det du har lest her, kjenner du igjen i diktet?",
+                    "Skriv en kort dagbokside fra en innlandsgård vinteren 1809. Bruk bare det teksten gir dekning for.",
+                    "Diskuter i klassen: hvilke varer er Norge avhengig av å få inn utenfra i dag? Hva ville skjedd hvis de sluttet å komme i et halvt år?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvorfor ble det matmangel i Norge fra 1807?",
+                        "options": [
+                            "Fordi det ble for kaldt til å dyrke korn i Norge",
+                            "Fordi den britiske blokaden stengte kornimporten fra Danmark",
+                            "Fordi bøndene nektet å så korn i protest mot kongen",
+                            "Fordi alt kornet ble sendt til Napoleons hær"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Norge hentet rundt tre fjerdedeler av kornet sitt fra Danmark. Etter flåteranet i 1807 blokkerte britene kysten, og lite korn nådde fram (Ottosen, 2024)."
+                    },
+                    {
+                        "question": "Hva var flåteranet i 1807?",
+                        "options": [
+                            "Sjørøvere som stjal norske handelsskip utenfor Bergen",
+                            "En storm som senket store deler av den norske fiskeflåten",
+                            "Britene bombet København og tok med seg den dansk-norske flåten",
+                            "Svenskene brente den danske flåten i havn"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "I september 1807 bombet britene København og tok størstedelen av den dansk-norske flåten. Dermed havnet Danmark-Norge i napoleonskrigene på den tapende siden (Njåstad, 2026)."
+                    },
+                    {
+                        "question": "Hvorfor sultet innlandet mer enn kysten?",
+                        "options": [
+                            "Fordi det bodde flere folk i innlandet",
+                            "Fordi kysten fortsatt kunne skaffe mat fra havet",
+                            "Fordi britene angrep innlandsbygdene direkte",
+                            "Fordi kornet i innlandet råtnet i lagrene"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Langs kysten kunne folk fiske selv når skipene ikke kom. I innlandet fantes ingen slik reserve, og sulten slo hardest til i bygdene inne mot svenskegrensen (Ottosen, 2024)."
+                    },
+                    {
+                        "question": "Hva ga et kaperbrev lov til?",
+                        "options": [
+                            "Å kjøpe korn billig av staten",
+                            "Å slippe å betale skatt under krigen",
+                            "Å borde fiendtlige skip og ta lasten som prise",
+                            "Å reise fritt mellom Norge og Danmark"
+                        ],
+                        "correctIndex": 2,
+                        "explanation": "Kaperbrevet gjorde det lovlig, i kongens navn, å borde fiendtlige fartøy, ta lasten som prise og føre skipet til nærmeste stiftsstad, der en domstol avgjorde om fangsten var lovlig (Frydenlund, 2024)."
+                    },
+                    {
+                        "question": "Hvordan henger nødsårene sammen med 1814?",
+                        "options": [
+                            "Sulten gjorde folk mer fornøyde med styret i København",
+                            "Misnøyen med unionen med Danmark vokste og styrket selvstendighetstanken",
+                            "Nødsårene hadde ingen betydning for det som skjedde i 1814",
+                            "Kongen i København innførte grunnloven for å stoppe sulten"
+                        ],
+                        "correctIndex": 1,
+                        "explanation": "Styret i København klarte verken å beskytte Norge eller skaffe mat. Flere historikere ser misnøyen fra nødsårene som en viktig grunn til at selvstendighetstanken sto sterkt i 1814 (Ottosen, 2024)."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bugge, A. B. (2024). *Barkebrød*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/barkebrød](https://snl.no/barkebr%C3%B8d)",
+                    "Dyrhaug, T. (2022). *Kanonbåtkrigen*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/kanonbåtkrigen](https://snl.no/kanonb%C3%A5tkrigen)",
+                    "Frydenlund, B. (2024). *Kaperfart og lisenshandel under napoleonskrigene*. Norgeshistorie, Universitetet i Oslo. Hentet 10.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/grunnlov-og-ny-union/1342-kaperfart-og-lisenshandel-under-napoleonskrigene.html)",
+                    "Njåstad, M. (2026). *Norge under napoleonskrigene*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Norge_under_napoleonskrigene](https://snl.no/Norge_under_napoleonskrigene)",
+                    "Ottosen, M. N. (2024). *Barkebrødstider 1807-1814*. Norgeshistorie, Universitetet i Oslo. Hentet 10.08.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/grunnlov-og-ny-union/1346-barkebrodstider-1807-1814.html)",
+                    "Store norske leksikon. (2023). *Terje Vigen*. Hentet 10.08.2026 fra [snl.no/Terje_Vigen](https://snl.no/Terje_Vigen)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
