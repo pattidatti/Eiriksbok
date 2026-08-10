@@ -38,7 +38,7 @@
                 "ordklasser"
               ],
               "createdDate": "2025-12-09T15:25:34+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T15:58:44+02:00"
             },
             {
               "id": "verb",
@@ -51,7 +51,7 @@
                 "ordklasser"
               ],
               "createdDate": "2025-12-09T15:25:34+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T15:58:44+02:00"
             },
             {
               "id": "adjektiv",
@@ -64,7 +64,7 @@
                 "ordklasser"
               ],
               "createdDate": "2025-12-09T15:25:34+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T05:53:10+02:00"
             },
             {
               "id": "pronomen",
@@ -77,7 +77,7 @@
                 "ordklasser"
               ],
               "createdDate": "2025-12-09T15:25:34+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T15:58:44+02:00"
             },
             {
               "id": "preposisjoner",
@@ -90,7 +90,7 @@
                 "ordklasser"
               ],
               "createdDate": "2025-12-09T15:25:34+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T08:52:51+02:00"
             },
             {
               "id": "adverb",
@@ -103,7 +103,7 @@
                 "ordklasser"
               ],
               "createdDate": "2025-12-09T15:25:34+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T08:52:51+02:00"
             },
             {
               "id": "konjunksjoner-subjunksjoner",
@@ -117,7 +117,7 @@
                 "ordklasser"
               ],
               "createdDate": "2025-12-09T15:25:34+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T08:52:51+02:00"
             }
           ]
         },
@@ -137,7 +137,7 @@
                 "fortelling"
               ],
               "createdDate": "2025-11-27T18:40:30+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-09T23:53:52+02:00"
             },
             {
               "id": "tegnsetting",
@@ -150,7 +150,7 @@
                 "tegnsetting"
               ],
               "createdDate": "2026-05-24T03:14:48+02:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-09T23:53:52+02:00"
             }
           ]
         },
@@ -236,7 +236,7 @@
                 "novelle"
               ],
               "createdDate": "2025-11-30T18:12:18+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T19:55:47+02:00"
             },
             {
               "id": "eventyr",
@@ -361,7 +361,7 @@
                 "kommunikasjon"
               ],
               "createdDate": "2025-11-30T20:30:54+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T19:55:47+02:00"
             },
             {
               "id": "retoriske-grep",
@@ -493,7 +493,7 @@
                 "eventyr"
               ],
               "createdDate": "2026-02-02T15:09:02+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T11:51:38+02:00"
             },
             {
               "id": "analyse-dikt",
@@ -505,7 +505,7 @@
                 "dikt"
               ],
               "createdDate": "2026-02-02T15:09:02+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T11:51:38+02:00"
             },
             {
               "id": "analyse-roman",
@@ -541,7 +541,7 @@
                 "debatt"
               ],
               "createdDate": "2026-02-02T15:09:02+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T11:51:38+02:00"
             },
             {
               "id": "analyse-kommentar",
@@ -612,7 +612,7 @@
                 "nasjonsbygging",
                 "eventyr"
               ],
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-08-09T19:56:01+02:00"
             },
             {
               "id": "realismen",
@@ -625,7 +625,7 @@
                 "ibsen",
                 "samfunnskritikk"
               ],
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-08-10T05:53:10+02:00"
             },
             {
               "id": "ny-romantikken",
@@ -638,7 +638,7 @@
                 "hamsun",
                 "sult"
               ],
-              "lastUpdated": "2026-07-06T20:42:04+02:00"
+              "lastUpdated": "2026-08-10T05:53:10+02:00"
             },
             {
               "id": "ny-realismen",
@@ -651,7 +651,7 @@
                 "undset",
                 "historie"
               ],
-              "lastUpdated": "2026-07-06T20:42:04+02:00"
+              "lastUpdated": "2026-08-09T23:53:52+02:00"
             }
           ]
         },
@@ -674,7 +674,7 @@
                 "språkfamilie"
               ],
               "createdDate": "2026-03-09T14:10:48+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-10T19:55:47+02:00"
             },
             {
               "id": "bokmal-og-nynorsk",
@@ -689,7 +689,7 @@
                 "språkpolitikk"
               ],
               "createdDate": "2026-05-15T19:51:32+02:00",
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-08-09T19:56:01+02:00"
             },
             {
               "id": "norront",
@@ -705,7 +705,7 @@
                 "språkutvikling"
               ],
               "createdDate": "2026-05-19T10:09:39+02:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-09T19:56:01+02:00"
             }
           ]
         },
@@ -1388,7 +1388,7 @@
                 "weber"
               ],
               "createdDate": "2025-12-21T23:17:57+01:00",
-              "lastUpdated": "2026-07-06T19:12:27+02:00"
+              "lastUpdated": "2026-08-09T11:58:29+02:00"
             },
             {
               "id": "antikken-visjoner",
@@ -1415,7 +1415,7 @@
                 "norge"
               ],
               "createdDate": "2025-12-21T23:17:57+01:00",
-              "lastUpdated": "2026-07-06T19:12:27+02:00"
+              "lastUpdated": "2026-08-09T11:58:29+02:00"
             },
             {
               "id": "opplysningstid",
@@ -1428,7 +1428,7 @@
                 "rettigheter"
               ],
               "createdDate": "2025-12-21T23:17:57+01:00",
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-08-09T11:58:29+02:00"
             },
             {
               "id": "demokrati-ansikter",
@@ -1481,7 +1481,7 @@
                 "frihet"
               ],
               "createdDate": "2025-12-21T23:17:57+01:00",
-              "lastUpdated": "2026-07-06T19:12:27+02:00"
+              "lastUpdated": "2026-08-09T15:52:59+02:00"
             },
             {
               "id": "teokrati-teknokrati",
@@ -1494,7 +1494,7 @@
                 "vitenskap"
               ],
               "createdDate": "2025-12-21T23:17:57+01:00",
-              "lastUpdated": "2026-07-06T19:12:27+02:00"
+              "lastUpdated": "2026-08-09T15:52:59+02:00"
             },
             {
               "id": "foydalisme",
@@ -1520,7 +1520,7 @@
                 "demokrati"
               ],
               "createdDate": "2025-12-22T21:11:33+01:00",
-              "lastUpdated": "2026-07-06T19:12:27+02:00"
+              "lastUpdated": "2026-08-09T08:53:30+02:00"
             },
             {
               "id": "grunnloven",
@@ -1579,7 +1579,7 @@
                 "historiske-konflikter"
               ],
               "createdDate": "2026-06-02T09:38:09+02:00",
-              "lastUpdated": "2026-07-06T19:12:27+02:00"
+              "lastUpdated": "2026-08-09T08:53:30+02:00"
             },
             {
               "id": "km-8-terror-folkemord",
@@ -1594,7 +1594,7 @@
                 "forebygging"
               ],
               "createdDate": "2026-06-02T09:38:09+02:00",
-              "lastUpdated": "2026-07-06T19:12:27+02:00"
+              "lastUpdated": "2026-08-09T08:53:30+02:00"
             },
             {
               "id": "km-12-maktaktørar",
@@ -2464,7 +2464,7 @@
                 "historiske-konflikter"
               ],
               "createdDate": "2026-06-02T09:38:09+02:00",
-              "lastUpdated": "2026-07-06T19:12:27+02:00"
+              "lastUpdated": "2026-08-09T08:53:30+02:00"
             },
             {
               "id": "km-8-terror-folkemord",
@@ -2479,7 +2479,7 @@
                 "forebygging"
               ],
               "createdDate": "2026-06-02T09:38:09+02:00",
-              "lastUpdated": "2026-07-06T19:12:27+02:00"
+              "lastUpdated": "2026-08-09T08:53:30+02:00"
             },
             {
               "id": "km-9-identitet-mangfald",
@@ -3227,7 +3227,8 @@
                 "sult",
                 "1814"
               ],
-              "createdDate": "2026-08-10T00:00:00Z"
+              "createdDate": "2026-08-10T14:45:45+02:00",
+              "lastUpdated": "2026-08-10T14:45:45+02:00"
             }
           ]
         },
@@ -4619,7 +4620,8 @@
                 "kull",
                 "handel"
               ],
-              "createdDate": "2026-08-10T00:00:00Z"
+              "createdDate": "2026-08-10T03:52:32+02:00",
+              "lastUpdated": "2026-08-10T07:31:29+02:00"
             }
           ]
         },
@@ -7683,7 +7685,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T22:48:37+01:00"
+                  "lastUpdated": "2026-08-10T22:16:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
@@ -7747,8 +7749,8 @@
                     "skapelse",
                     "narrative"
                   ],
-                  "createdDate": "2023-01-01T12:00:00Z",
-                  "lastUpdated": "2026-08-10T12:00:00Z"
+                  "createdDate": "2025-12-02T22:54:02+01:00",
+                  "lastUpdated": "2026-08-10T22:16:47+02:00"
                 },
                 {
                   "id": "frelse",
@@ -7875,6 +7877,19 @@
                   "lastUpdated": "2025-12-04T14:04:03+01:00"
                 },
                 {
+                  "id": "skapelse",
+                  "title": "Spørsmålet Buddha ikke svarte på",
+                  "description": "Nesten alle religioner begynner med en skapelse. Buddhismen begynner med en mann som har en pil i skulderen og krever svar før han lar seg behandle.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "buddhisme",
+                    "skapelse",
+                    "narrative"
+                  ],
+                  "createdDate": "2026-08-10T12:00:00Z",
+                  "lastUpdated": "2026-08-10T21:05:21.771Z"
+                },
+                {
                   "id": "frelse",
                   "title": "Nirvana",
                   "description": "Frigjøring fra lidelse og gjenfødelse.",
@@ -7897,7 +7912,7 @@
                     "intro"
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
-                  "lastUpdated": "2025-12-04T13:10:30+01:00"
+                  "lastUpdated": "2026-08-10T22:16:47+02:00"
                 }
               ]
             },
@@ -7986,6 +8001,19 @@
                   "lastUpdated": "2025-12-04T14:04:03+01:00"
                 },
                 {
+                  "id": "skapelse",
+                  "title": "Skapelsen: Verden som blir til av ord",
+                  "description": "Gud bygger ikke verden med hendene, Gud sier den. Og den viktigste dagen i uka er den eneste der Gud ikke sier noe i det hele tatt.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "jodedom",
+                    "skapelse",
+                    "narrative"
+                  ],
+                  "createdDate": "2026-08-10T12:00:00Z",
+                  "lastUpdated": "2026-08-10T21:04:17.952Z"
+                },
+                {
                   "id": "frelse",
                   "title": "Livet her og nå",
                   "description": "Fokus på å leve et rettferdig liv.",
@@ -8008,7 +8036,7 @@
                     "intro"
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
-                  "lastUpdated": "2025-12-04T13:10:30+01:00"
+                  "lastUpdated": "2026-08-10T22:16:47+02:00"
                 }
               ]
             },
@@ -8097,6 +8125,19 @@
                   "lastUpdated": "2025-12-04T14:04:03+01:00"
                 },
                 {
+                  "id": "skapelse",
+                  "title": "Verden uten begynnelse",
+                  "description": "Hva om verden aldri ble skapt for foerste gang? I hinduismen har universet blitt til og gaatt under utallige ganger - og Rigveda sier selv at kanskje ingen vet hvordan det startet.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "hinduisme",
+                    "skapelse",
+                    "narrative"
+                  ],
+                  "createdDate": "2026-08-10T12:00:00Z",
+                  "lastUpdated": "2026-08-10T21:06:34.799Z"
+                },
+                {
                   "id": "frelse",
                   "title": "Moksha",
                   "description": "Frigjøring fra samsara.",
@@ -8119,7 +8160,7 @@
                     "intro"
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
-                  "lastUpdated": "2025-12-04T13:10:30+01:00"
+                  "lastUpdated": "2026-08-10T22:16:47+02:00"
                 }
               ]
             },
@@ -8278,6 +8319,19 @@
                   "lastUpdated": "2025-12-04T14:04:03+01:00"
                 },
                 {
+                  "id": "skapelse",
+                  "title": "Skapelsen som aldri begynte",
+                  "description": "Hva om det aldri fantes en foerste dag? Bahá'í-troen mener Gud alltid har skapt, og argumentet bak er enklere enn du tror.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "bahai",
+                    "skapelse",
+                    "narrative"
+                  ],
+                  "createdDate": "2026-08-10T12:00:00Z",
+                  "lastUpdated": "2026-08-10T21:05:44.411Z"
+                },
+                {
                   "id": "frelse",
                   "title": "Åndelig utvikling",
                   "description": "Sjelens reise mot Gud.",
@@ -8300,7 +8354,7 @@
                     "intro"
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
-                  "lastUpdated": "2025-12-04T13:10:30+01:00"
+                  "lastUpdated": "2026-08-10T22:16:47+02:00"
                 }
               ]
             },
@@ -8389,6 +8443,19 @@
                   "lastUpdated": "2025-12-04T14:04:03+01:00"
                 },
                 {
+                  "id": "skapelse",
+                  "title": "Skapelsen i mormonismen",
+                  "description": "De fleste kristne mener Gud skapte verden av ingenting. Siste dagers hellige mener han hadde materialer - og det endrer hva et menneske er.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "mormonisme",
+                    "skapelse",
+                    "narrative"
+                  ],
+                  "createdDate": "2026-08-10T12:00:00Z",
+                  "lastUpdated": "2026-08-10T21:04:50.688Z"
+                },
+                {
                   "id": "frelse",
                   "title": "Evig progresjon",
                   "description": "Muligheten til å bli lik Gud.",
@@ -8411,7 +8478,7 @@
                     "intro"
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
-                  "lastUpdated": "2025-12-04T13:10:30+01:00"
+                  "lastUpdated": "2026-08-10T22:16:47+02:00"
                 }
               ]
             },
@@ -8500,6 +8567,19 @@
                   "lastUpdated": "2025-12-04T14:04:03+01:00"
                 },
                 {
+                  "id": "skapelse",
+                  "title": "Seks dager eller seks tidsaldre?",
+                  "description": "Jehovas vitner leser skapelsesfortellingen bokstavelig, og mener likevel at jorda kan vaere milliarder av aar gammel. Hvordan henger det sammen?",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "jehovas-vitner",
+                    "skapelse",
+                    "narrative"
+                  ],
+                  "createdDate": "2026-08-10T12:00:00Z",
+                  "lastUpdated": "2026-08-10T21:02:58.337Z"
+                },
+                {
                   "id": "frelse",
                   "title": "Paradis på jord",
                   "description": "Håpet om evig liv på en paradisisk jord.",
@@ -8522,7 +8602,7 @@
                     "intro"
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
-                  "lastUpdated": "2025-12-04T13:10:30+01:00"
+                  "lastUpdated": "2026-08-10T22:16:47+02:00"
                 }
               ]
             },
@@ -8579,7 +8659,7 @@
                     "intro"
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
-                  "lastUpdated": "2026-05-12T09:08:05+02:00"
+                  "lastUpdated": "2026-08-10T22:16:47+02:00"
                 },
                 {
                   "id": "overgangsriter",
@@ -8592,7 +8672,20 @@
                     "ritual"
                   ],
                   "createdDate": "2026-08-09T03:54:35+02:00",
-                  "lastUpdated": "2026-08-09T03:54:35+02:00"
+                  "lastUpdated": "2026-08-09T07:31:41+02:00"
+                },
+                {
+                  "id": "skapelse",
+                  "title": "Mørket før verden: skapelsen i sikhismen",
+                  "description": "I utallige tidsaldre fantes bare mørke og Guds vilje. Så ville Gud det, og alt ble til på ett øyeblikk - men ingen vet når.",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "sikhisme",
+                    "skapelse",
+                    "narrative"
+                  ],
+                  "createdDate": "2026-08-10T12:00:00Z",
+                  "lastUpdated": "2026-08-10T21:02:59.805Z"
                 }
               ]
             },

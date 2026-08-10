@@ -1,5 +1,5 @@
 {
-  "buildId": 24050894540583,
+  "buildId": 269913021089769,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2310,6 +2310,9 @@
     "bahai-sentrale-trekk": [
       "content/krle/religion/bahai/sentrale-trekk/artikkel.json"
     ],
+    "bahai-skapelse": [
+      "content/krle/religion/bahai/skapelse/artikkel.json"
+    ],
     "buddhisme-bonn": [
       "content/krle/religion/buddhisme/bonn/artikkel.json"
     ],
@@ -2337,6 +2340,9 @@
     "buddhisme-sentrale-trekk": [
       "content/krle/religion/buddhisme/sentrale-trekk/artikkel.json"
     ],
+    "buddhisme-skapelse": [
+      "content/krle/religion/buddhisme/skapelse/artikkel.json"
+    ],
     "hinduisme-bonn": [
       "content/krle/religion/hinduisme/bonn/artikkel.json"
     ],
@@ -2360,6 +2366,9 @@
     ],
     "hinduisme-sentrale-trekk": [
       "content/krle/religion/hinduisme/sentrale-trekk/artikkel.json"
+    ],
+    "hinduisme-skapelse": [
+      "content/krle/religion/hinduisme/skapelse/artikkel.json"
     ],
     "egyptisk-religion": [
       "content/krle/religion/historiske-religioner/egyptisk-religion.json"
@@ -2421,6 +2430,9 @@
     "jehovas-vitner-sentrale-trekk": [
       "content/krle/religion/jehovas-vitner/sentrale-trekk/artikkel.json"
     ],
+    "jehovas-vitner-skapelse": [
+      "content/krle/religion/jehovas-vitner/skapelse/artikkel.json"
+    ],
     "jodedom-bonn": [
       "content/krle/religion/jodedom/bonn/artikkel.json"
     ],
@@ -2444,6 +2456,9 @@
     ],
     "jodedom-sentrale-trekk": [
       "content/krle/religion/jodedom/sentrale-trekk/artikkel.json"
+    ],
+    "jodedom-skapelse": [
+      "content/krle/religion/jodedom/skapelse/artikkel.json"
     ],
     "baptistene": [
       "content/krle/religion/kristendom/baptistene.json"
@@ -2511,6 +2526,9 @@
     "mormonisme-sentrale-trekk": [
       "content/krle/religion/mormonisme/sentrale-trekk/artikkel.json"
     ],
+    "mormonisme-skapelse": [
+      "content/krle/religion/mormonisme/skapelse/artikkel.json"
+    ],
     "samisk-intro": [
       "content/krle/religion/samisk/intro.json"
     ],
@@ -2531,6 +2549,9 @@
     ],
     "sikhisme-sentrale-trekk": [
       "content/krle/religion/sikhisme/sentrale-trekk/artikkel.json"
+    ],
+    "sikhisme-skapelse": [
+      "content/krle/religion/sikhisme/skapelse/artikkel.json"
     ],
     "hoytider-og-kultur": [
       "content/krle/religion-og-kultur/hoytider-og-kultur.json"
@@ -4542,6 +4563,7 @@
     "krle/religion/bahai/intro": "content/krle/religion/bahai/intro.json",
     "krle/religion/bahai/overgangsriter": "content/krle/religion/bahai/overgangsriter/artikkel.json",
     "krle/religion/bahai/sentrale-trekk": "content/krle/religion/bahai/sentrale-trekk/artikkel.json",
+    "krle/religion/bahai/skapelse": "content/krle/religion/bahai/skapelse/artikkel.json",
     "krle/religion/buddhisme/bonn": "content/krle/religion/buddhisme/bonn/artikkel.json",
     "krle/religion/buddhisme/den-attedelte-vei": "content/krle/religion/buddhisme/den-attedelte-vei/artikkel.json",
     "krle/religion/buddhisme/frelse": "content/krle/religion/buddhisme/frelse/artikkel.json",
@@ -4551,6 +4573,7 @@
     "krle/religion/buddhisme/intro": "content/krle/religion/buddhisme/intro.json",
     "krle/religion/buddhisme/overgangsriter": "content/krle/religion/buddhisme/overgangsriter/artikkel.json",
     "krle/religion/buddhisme/sentrale-trekk": "content/krle/religion/buddhisme/sentrale-trekk/artikkel.json",
+    "krle/religion/buddhisme/skapelse": "content/krle/religion/buddhisme/skapelse/artikkel.json",
     "krle/religion/hinduisme/bonn": "content/krle/religion/hinduisme/bonn/artikkel.json",
     "krle/religion/hinduisme/frelse": "content/krle/religion/hinduisme/frelse/artikkel.json",
     "krle/religion/hinduisme/grunnleggere": "content/krle/religion/hinduisme/grunnleggere/artikkel.json",
@@ -4559,6 +4582,7 @@
     "krle/religion/hinduisme/intro": "content/krle/religion/hinduisme/intro.json",
     "krle/religion/hinduisme/overgangsriter": "content/krle/religion/hinduisme/overgangsriter/artikkel.json",
     "krle/religion/hinduisme/sentrale-trekk": "content/krle/religion/hinduisme/sentrale-trekk/artikkel.json",
+    "krle/religion/hinduisme/skapelse": "content/krle/religion/hinduisme/skapelse/artikkel.json",
     "krle/religion/historiske-religioner/egyptisk-religion": "content/krle/religion/historiske-religioner/egyptisk-religion.json",
     "krle/religion/historiske-religioner/mesopotamisk-religion": "content/krle/religion/historiske-religioner/mesopotamisk-religion.json",
     "krle/religion/historiske-religioner/monoteismens-fodsel": "content/krle/religion/historiske-religioner/monoteismens-fodsel.json",
@@ -4579,6 +4603,7 @@
     "krle/religion/jehovas-vitner/intro": "content/krle/religion/jehovas-vitner/intro.json",
     "krle/religion/jehovas-vitner/overgangsriter": "content/krle/religion/jehovas-vitner/overgangsriter/artikkel.json",
     "krle/religion/jehovas-vitner/sentrale-trekk": "content/krle/religion/jehovas-vitner/sentrale-trekk/artikkel.json",
+    "krle/religion/jehovas-vitner/skapelse": "content/krle/religion/jehovas-vitner/skapelse/artikkel.json",
     "krle/religion/jodedom/bonn": "content/krle/religion/jodedom/bonn/artikkel.json",
     "krle/religion/jodedom/frelse": "content/krle/religion/jodedom/frelse/artikkel.json",
     "krle/religion/jodedom/grunnleggere": "content/krle/religion/jodedom/grunnleggere/artikkel.json",
@@ -4587,6 +4612,7 @@
     "krle/religion/jodedom/intro": "content/krle/religion/jodedom/intro.json",
     "krle/religion/jodedom/overgangsriter": "content/krle/religion/jodedom/overgangsriter/artikkel.json",
     "krle/religion/jodedom/sentrale-trekk": "content/krle/religion/jodedom/sentrale-trekk/artikkel.json",
+    "krle/religion/jodedom/skapelse": "content/krle/religion/jodedom/skapelse/artikkel.json",
     "krle/religion/kristendom/baptistene": "content/krle/religion/kristendom/baptistene.json",
     "krle/religion/kristendom/bonn": "content/krle/religion/kristendom/bonn/artikkel.json",
     "krle/religion/kristendom/frelse": "content/krle/religion/kristendom/frelse/artikkel.json",
@@ -4609,6 +4635,7 @@
     "krle/religion/mormonisme/intro": "content/krle/religion/mormonisme/intro.json",
     "krle/religion/mormonisme/overgangsriter": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
     "krle/religion/mormonisme/sentrale-trekk": "content/krle/religion/mormonisme/sentrale-trekk/artikkel.json",
+    "krle/religion/mormonisme/skapelse": "content/krle/religion/mormonisme/skapelse/artikkel.json",
     "krle/religion/samisk/intro": "content/krle/religion/samisk/intro.json",
     "krle/religion/samisk/laestadianismen": "content/krle/religion/samisk/laestadianismen.json",
     "krle/religion/sikhisme/grunnleggere": "content/krle/religion/sikhisme/grunnleggere/artikkel.json",
@@ -4616,6 +4643,7 @@
     "krle/religion/sikhisme/intro": "content/krle/religion/sikhisme/intro/artikkel.json",
     "krle/religion/sikhisme/overgangsriter": "content/krle/religion/sikhisme/overgangsriter.json",
     "krle/religion/sikhisme/sentrale-trekk": "content/krle/religion/sikhisme/sentrale-trekk/artikkel.json",
+    "krle/religion/sikhisme/skapelse": "content/krle/religion/sikhisme/skapelse/artikkel.json",
     "krle/religion-og-kultur/hoytider-og-kultur": "content/krle/religion-og-kultur/hoytider-og-kultur.json",
     "krle/religion-og-kultur/mat-og-religion": "content/krle/religion-og-kultur/mat-og-religion.json",
     "krle/religion-og-kultur/religion-i-medier": "content/krle/religion-og-kultur/religion-i-medier.json",

@@ -1,0 +1,254 @@
+{
+    "id": "skapelse",
+    "title": "Mørket før verden: skapelsen i sikhismen",
+    "layout": "rich",
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "sikhisme",
+    "dimension": "narrative",
+    "comparison_tags": ["skapelse", "narrative"],
+    "category": "Sikhismen",
+    "readTime": "6 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Sikhismens skapelsestekst begynner med utallige tidsaldre der det bare fantes mørke.",
+        "Det eneste som fantes før verden, var hukam, altså Guds vilje.",
+        "Da Gud ville det, ble hele verden til. Teksten beskriver ingen kamp og ingen motstander.",
+        "Japji Sahib sier rett ut at ingen vet når det skjedde.",
+        "Teksten snakker om utallige verdener, ikke bare vår ene."
+    ],
+    "concepts": [
+        {
+            "id": "hukam",
+            "term": "hukam",
+            "definition": "Guds vilje eller Guds befaling. Sikher mener at Gud styrer hele verden gjennom hukam."
+        },
+        {
+            "id": "guru-granth-sahib",
+            "term": "Guru Granth Sahib",
+            "definition": "Sikhenes hellige bok. Den har 1430 sider og inneholder rundt 6000 salmer."
+        },
+        {
+            "id": "japji-sahib",
+            "term": "Japji Sahib",
+            "definition": "Åpningsdiktet i Guru Granth Sahib, skrevet av Guru Nanak. Det handler blant annet om hvordan verden ble til."
+        },
+        {
+            "id": "mul-mantar",
+            "term": "Mul Mantar",
+            "definition": "De aller første linjene i Guru Granth Sahib. De sier at det bare finnes én Gud, og at navnet hans er sannhet."
+        },
+        {
+            "id": "samadhi",
+            "term": "samadhi",
+            "definition": "Dyp, stille konsentrasjon. I skapelsesteksten sitter Gud i samadhi før verden ble til."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk deg at du skrur av alt. Ikke bare lyset i rommet, men sola og månen også. Ta bort himmelen. Ta bort bakken under føttene. Ta bort dag og natt, slik at det ikke lenger finnes noen forskjell på når du sover og når du er våken. Hva er igjen da?"
+        },
+        {
+            "type": "text",
+            "content": "Sikhismens skapelsestekst svarer: mørke. Bare mørke, i utallige tidsaldre. Teksten står i Guru Granth Sahib, sikhenes hellige bok, og er skrevet av Guru Nanak, som levde fra 1469 til 1539 (Jacobsen, 2025). Han er den første av de ti guruene, og 974 av salmene hans er tatt vare på i boka (Jacobsen, 2025). Skapelsesverset står på side 1035, et godt stykke inne i en bok på 1430 sider (Jacobsen, 2020). Det åpner med at det i endeløse tidsaldre bare fantes mørke. Det fantes ingen jord og ingen himmel, bare hukam uten grenser (Guru Granth Sahib, u.å.)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Helt tomt mørkt rom uten stjerner, jord eller horisont",
+            "caption": "Sikhismens skapelsestekst begynner med et tomrom. Ingen jord, ingen himmel, ingen sol."
+        },
+        {
+            "type": "text",
+            "content": "Hukam er ordet du trenger for å skjønne resten. Det betyr Guds vilje eller Guds befaling. Sikher mener at Gud styrer hele verden gjennom hukam (Jacobsen, 2025). I skapelsesteksten er hukam det eneste som finnes før verden. Ikke et sted, ikke et lys, ikke en gjenstand. Bare en vilje. Og hukam er ikke bare noe som hendte den ene gangen helt i starten. Sikher mener at det er den samme viljen som fortsatt holder alt sammen, akkurat nå, mens du leser dette."
+        },
+        {
+            "type": "header",
+            "text": "Alt som ikke fantes"
+        },
+        {
+            "type": "text",
+            "content": "Guru Nanak bruker overraskende lang tid på å ramse opp hva som ikke fantes. Verset sier at det ikke fantes dag eller natt, ingen måne og ingen sol, og at Gud satt i dyp og stille samadhi (Guru Granth Sahib, u.å.). Så fortsetter listen over ting som manglet:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Jorda og himmelen.",
+                "Sola, månen og skillet mellom dag og natt.",
+                "Luft og vann.",
+                "Verdensdeler, hav og elver.",
+                "Underverdener og himmelriker.",
+                "Guder som Brahma, Vishnu og Shiva.",
+                "Døden og gjenfødselen."
+            ]
+        },
+        {
+            "type": "component",
+            "name": "FoerLysetFantes",
+            "props": {
+                "title": "Før lyset fantes"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva du satt igjen med da alt annet var borte. Ikke et gudebilde, ikke et urhav, ikke et egg eller et kaos som noen måtte kjempe mot. Bare en vilje som ennå ikke hadde bestemt seg for å gjøre noe."
+        },
+        {
+            "type": "text",
+            "content": "Det er også verdt å merke seg at gudene selv står på lista over det som ikke fantes. Sikhismen vokste fram i Punjab i India, der mange fortellinger handler om flere guddommer som samarbeider eller strides. Teksten nevner Brahma, Vishnu og Shiva ved navn, og slår fast at ingen av dem fantes ennå. Guru Nanak skriver dem rett og slett ut av begynnelsen. De aller første linjene i boka slår fast at det bare finnes én Gud, og at navnet hans er sannhet (Jacobsen, 2020). Disse linjene kalles Mul Mantar, og de setter tonen for alt som følger."
+        },
+        {
+            "type": "header",
+            "text": "Så ville Gud det"
+        },
+        {
+            "type": "text",
+            "content": "Vendepunktet i teksten er kort. Det tar én linje. Da Gud ville det, ble verden til. Han formet planeter, solsystemer og underverdener, og han gjorde synlig det som hadde vært skjult (Guru Granth Sahib, u.å.). Ingen kamp. Ingen motstander som måtte beseires. Ingen hjelper som holdt i noe mens Gud arbeidet. Og ingen brukte seks dager på det heller. Verden var ikke satt sammen bit for bit, den var bare plutselig der."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Da han ville det, skapte han verden.",
+                "author": "Guru Granth Sahib, side 1036 (oversatt fra engelsk)"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Japji Sahib, åpningsdiktet i den samme boka, sier det på en annen måte: Gud skapte hele universets vidde med ett eneste ord (Japji Sahib, u.å.). Det er verdt å stoppe ved det bildet. Et ord er noe du kan si på et halvt sekund. Guru Nanak bruker altså det korteste han finner for å beskrive det største han kan tenke seg. Du kan lese mer om boka disse versene står i, i artikkelen om [sikhenes hellige tekster](/krle/religion/sikhisme/hellige-tekster)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Lys som bryter fram i mørket og former planeter og stjerner",
+            "caption": "Vendepunktet tar én linje i teksten: Gud ville det, og verden ble til."
+        },
+        {
+            "type": "header",
+            "text": "Ingen vet når"
+        },
+        {
+            "type": "text",
+            "content": "Det neste er kanskje det mest uvanlige. Japji Sahib stiller spørsmålet alle vil ha svar på: når skjedde dette? Og så nekter teksten å svare. Dagen og datoen er ikke kjent, står det, og heller ikke måneden eller årstiden. De lærde finner ikke tidspunktet, selv om de leter i de gamle skriftene. Bare skaperen selv vet det (Japji Sahib, u.å.). Guru Nanak kunne lett ha satt inn et årstall. Mange andre gamle tekster gjør nettopp det. Han lar det være, og det er et poeng i seg selv: mennesket får ikke vite alt."
+        },
+        {
+            "type": "text",
+            "content": "Sikher leser dette på litt ulike måter. Noen legger mest vekt på at versene handler om Gud og om hvor lite mennesker klarer å forstå, ikke om naturvitenskap. Andre er mer opptatt av at teksten faktisk beskriver hvordan verden begynte. Teksten selv gir ingen fasit på hvem som har rett, for den slår fast at ingen kan vite det. Denne ydmykheten går igjen i sikhismen, og du møter den også i artikkelen om [sentrale trekk i sikhismen](/krle/religion/sikhisme/sentrale-trekk)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen hellig bok på trone under baldakin i gurdwara",
+            "caption": "Skapelsesversene står på side 1035 og 1036 i Guru Granth Sahib, som har 1430 sider til sammen."
+        },
+        {
+            "type": "header",
+            "text": "Utallige verdener, ikke bare vår"
+        },
+        {
+            "type": "text",
+            "content": "Til slutt gjør teksten noe som overrasker mange som leser den for første gang. Den nøyer seg ikke med én verden. Japji Sahib sier at det finnes underverdener under underverdener, og hundretusener av himmelverdener over. Og så mange verdener til at ingen klarer å telle dem (Japji Sahib, u.å.). Poenget er ikke å tegne et kart over verdensrommet. Poenget er å gjøre mennesket lite. Guds skaperkraft lar seg ikke beskrive, sier verset, og den som prøver, kommer til kort. Sikher mener at Gud er én, evig, allvitende og allmektig (Kristiansen mfl., 2024), og at alt annet, fra den minste dråpen til de utallige verdenene, ble til fordi Gud ville det. De ti guruene som formet denne læren, kan du lese mer om i artikkelen om [guruene i sikhismen](/krle/religion/sikhisme/grunnleggere)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva fantes ifølge sikhismens skapelsestekst før verden ble til?",
+                    "Hva betyr ordet hukam, og hvilken rolle spiller det i skapelsen?",
+                    "Hva svarer Japji Sahib på spørsmålet om når verden ble skapt?",
+                    "Hvorfor sier teksten at det finnes utallige verdener og ikke bare én?"
+                ],
+                "reflekter": [
+                    "Guru Nanak bruker mange linjer på å si hva som ikke fantes, og bare én linje på selve skapelsen. Hvorfor tror du han gjorde det slik?",
+                    "I sikhismens skapelsestekst er det ingen kamp og ingen motstander. Hva sier det om hvordan sikher ser på Gud?",
+                    "Teksten sier rett ut at ingen vet når verden ble til. Er det en styrke eller en svakhet ved en skapelsesfortelling? Begrunn svaret.",
+                    "Hvordan kan to sikher lese den samme teksten ulikt uten at noen av dem tar feil ifølge teksten selv?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign åpningen i sikhismens skapelsestekst med den første setningen i Første Mosebok. Skriv en kort tekst om hva som er likt og hva som skiller dem.",
+                    "Finn ut hva naturvitenskapen sier om universets alder, og diskuter i klassen om det svaret og Japji Sahib sitt svar kan stå side om side.",
+                    "Lag din egen liste over ti ting som måtte tas bort hvis du skulle beskrive et helt tomt univers. Sammenlign lista med Guru Nanaks."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva fantes ifølge skapelsesteksten i utallige tidsaldre før verden ble til?",
+                        "options": [
+                            "Et stort urhav med et egg i",
+                            "Bare mørke og Guds vilje, hukam",
+                            "En kamp mellom to guder",
+                            "Jorda, men uten mennesker"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Teksten sier at det i endeløse tidsaldre bare fantes mørke. Det var ingen jord og ingen himmel, bare hukam uten grenser."
+                    },
+                    {
+                        "question": "Hva betyr hukam?",
+                        "options": [
+                            "Guds vilje eller befaling",
+                            "Den hellige boka",
+                            "Sikhenes gudshus",
+                            "Sjelens vandring gjennom liv"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Hukam betyr Guds vilje eller befaling. Sikher mener at Gud styrer hele verden gjennom hukam."
+                    },
+                    {
+                        "question": "Hvordan ble verden til ifølge teksten?",
+                        "options": [
+                            "Gud kjempet mot et kaosvesen og vant",
+                            "Verden har alltid vært til og ble aldri skapt",
+                            "Gud ville det, og verden ble til",
+                            "Guder og gudinner bygde den sammen"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Vendepunktet tar én linje: da Gud ville det, skapte han verden. Det er ingen motstander og ingen kamp i fortellingen."
+                    },
+                    {
+                        "question": "Hva sier Japji Sahib om tidspunktet for skapelsen?",
+                        "options": [
+                            "At den skjedde for nøyaktig 8400 år siden",
+                            "At bare de lærde kan regne det ut",
+                            "At dagen og datoen ikke er kjent, og at bare skaperen vet det",
+                            "At den skjer på nytt hvert år"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Teksten sier at verken dag, dato, måned eller årstid er kjent, og at de lærde ikke finner tidspunktet. Bare skaperen selv vet."
+                    },
+                    {
+                        "question": "Hva sier teksten om hvor mange verdener som finnes?",
+                        "options": [
+                            "Nøyaktig sju verdener",
+                            "Bare vår ene verden",
+                            "Én verden for hver av de ti guruene",
+                            "Utallige verdener som ingen klarer å telle"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Japji Sahib beskriver underverdener under underverdener og hundretusener av himmelverdener over, og sier at ingen klarer å telle dem."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2024). *Sikhisme*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+                    "Jacobsen, K. A. (2025). *Guru Nanak*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Guru_Nanak](https://snl.no/Guru_Nanak)",
+                    "Jacobsen, K. A. (2020). *Guru Granth Sahib*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Guru_Granth_Sahib](https://snl.no/Guru_Granth_Sahib)",
+                    "Guru Granth Sahib. (u.å.). *Ang 1035-1036* (engelsk oversettelse ved Sant Singh Khalsa). SriGranth.org. Hentet 10.08.2026 fra [ang 1035](https://www.srigranth.org/servlet/gurbani.gurbani?Action=Page&Param=1035&english=t) og [ang 1036](https://www.srigranth.org/servlet/gurbani.gurbani?Action=Page&Param=1036&english=t)",
+                    "Japji Sahib. (u.å.). *Japji Sahib, engelsk oversettelse*. The Sikhism Home Page. Hentet 10.08.2026 fra [sikhs.org/english/eg1.htm](https://www.sikhs.org/english/eg1.htm)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

@@ -1,0 +1,250 @@
+{
+    "id": "skapelse",
+    "title": "Spørsmålet Buddha ikke svarte på",
+    "layout": "rich",
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "buddhisme",
+    "dimension": "narrative",
+    "comparison_tags": ["skapelse", "narrative"],
+    "category": "Buddhismen",
+    "readTime": "9 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Buddhismen har ingen skapelsesfortelling og ingen gud som har laget verden.",
+        "Ifølge tekstene nektet Buddha å svare på ti spørsmål, blant dem om verden er evig.",
+        "Lignelsen om mannen med pilen i skulderen forklarer hvorfor han lot dem stå.",
+        "Buddhistiske tekster sier at kretsløpet ikke har noe startpunkt som lar seg se.",
+        "I stedet for en begynnelse forklarer buddhismen at alt oppstår fordi noe annet er der først."
+    ],
+    "concepts": [
+        {
+            "id": "samsara",
+            "term": "samsara",
+            "definition": "Kretsløpet av fødsel, død og gjenfødelse som alle vesener går rundt i. Buddhister mener kretsløpet ikke har noen synlig begynnelse."
+        },
+        {
+            "id": "de-ubesvarte-sporsmalene",
+            "term": "de ubesvarte spørsmålene",
+            "definition": "Ti spørsmål som Buddha ifølge tekstene lot stå uten svar. De handler blant annet om verden er evig og hva som skjer med den opplyste etter døden."
+        },
+        {
+            "id": "de-fire-edle-sannheter",
+            "term": "de fire edle sannheter",
+            "definition": "Buddhas kjernelære: at det finnes lidelse, at lidelsen har en årsak, at den kan ta slutt, og at det finnes en vei dit."
+        },
+        {
+            "id": "betinget-tilblivelse",
+            "term": "betinget tilblivelse",
+            "definition": "Tanken om at ingenting oppstår av seg selv. Alt blir til fordi noe annet er der først, i en kjede uten første ledd."
+        },
+        {
+            "id": "nirvana",
+            "term": "nirvana",
+            "definition": "Målet i buddhismen: at lidelsen tar helt slutt og gjenfødelsen opphører."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk deg at du blir truffet av en pil. Den sitter i skulderen, giften sprer seg, og noen har hentet en lege. Men før hun får røre pilen, sier du stopp. Først vil du vite hvem som skjøt. Hvilken familie han kommer fra. Hvor høy han er, og hvilken hudfarge han har. Hva slags tre buen er laget av, hva strengen er tvinnet av, og hvilken fugl fjærene på pilen kommer fra. Legen står klar med hendene. Du fortsetter å spørre. Du kommer til å dø lenge før du får svar på alt sammen."
+        },
+        {
+            "type": "text",
+            "content": "Dette bildet er ikke funnet på for å være morsomt. Det står i en av buddhismens eldste tekster, og der er det Buddha selv som forteller det (Thanissaro Bhikkhu, 1998). Han bruker det som svar på et av de største spørsmålene mennesker har stilt: Hvor kommer verden fra? For buddhismen har ingen skapelsesfortelling. Det finnes ingen første dag, ingen stemme som sier at det skal bli lys, og ingen begynnelse å fortelle om."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Såret mann med pil i skulderen holder lege tilbake med hånden",
+            "caption": "Lignelsen om pilen er Buddhas eget bilde. Mannen krever svar før han lar seg behandle."
+        },
+        {
+            "type": "text",
+            "content": "Det er uvanlig. De fleste religioner åpner med en skapelse, og fortellingen om hvordan alt begynte pleier å stå helt fremst i de hellige tekstene. I indisk tradisjon finnes det flere slike fortellinger, og du kan lese om dem i artikkelen om [Brahman og guder](/krle/religion/hinduisme/gudsbilde). I buddhismen finnes det også guder, og mange buddhister dyrker både guddommer, buddhaer og bodhisattvaer (Kværne & Borgland, 2026a). Men ingen av dem har rollen som skaper. Ingen av dem har laget verden."
+        },
+        {
+            "type": "header",
+            "text": "De ti spørsmålene han lot ligge"
+        },
+        {
+            "type": "text",
+            "content": "Buddha levde i Nord-India. Forskerne er ikke helt sikre på når, men mener i dag at han levde rundt år 400 før vår tidsregning, og at han ble åtti år gammel (Kværne & Borgland, 2026b). Da hadde han undervist i flere tiår, og elevene var vant til å få svar av ham. Nettopp derfor la de merke til det når han tidde. En munk som het Malunkyaputta ble til slutt lei av å ikke få vite. Han oppsøkte Buddha og stilte et ultimatum: enten svarer du, eller så forlater jeg ordenen. Så ramset han opp ti spørsmål han krevde svar på (Thanissaro Bhikkhu, 1998). Spørsmålene kom parvis, og det siste hadde fire svaralternativer. Til sammen blir de ti, og de dekker omtrent alt et menneske kan lure på om verden i det store:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Er verden evig, eller har den ikke vart bestandig?",
+                "Har verden en ytterkant, eller er den uendelig?",
+                "Er sjelen og kroppen det samme, eller er de to ulike ting?",
+                "Finnes den opplyste etter døden, finnes han ikke, både og, eller verken eller?"
+            ]
+        },
+        {
+            "type": "component",
+            "name": "SporsmaalUtenSvar",
+            "props": {
+                "title": "Buddhas to bunker"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Buddha svarte ikke på ett eneste av dem. I stedet fortalte han lignelsen om pilen, og så sa han hva han faktisk hadde lært bort: dette er lidelse, dette er grunnen til at lidelsen oppstår, dette er hvordan lidelsen tar slutt, og dette er veien som fører dit (Thanissaro Bhikkhu, 1998). Det er de fire edle sannhetene, og veien han peker på, er [den åttedelte veien](/krle/religion/buddhisme/den-attedelte-vei)."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor svarte han ikke?"
+        },
+        {
+            "type": "text",
+            "content": "Grunnen han oppga selv, var ikke at spørsmålene var dumme eller for vanskelige. Grunnen var at svaret ikke ville hjelpe. Enten verden er evig eller ikke, sa han, så blir folk født, blir gamle, mister det de er glad i og dør. Spørsmålene hører ikke sammen med målet, og de fører ikke til at lidelsen slutter (Thanissaro Bhikkhu, 1998). Tenk deg at du fikk det endelige svaret på om verden er evig, skrevet ned på en lapp. Hva ville forandret seg i livet ditt neste morgen? Det var slik Buddha så på det. I en annen tekst går han lenger og kaller slike standpunkter et kratt av meninger som ingen blir fri av (Thanissaro Bhikkhu, 1997b). Buddha var også skarp i kritikken av de religiøse spekulasjonene om verdens innerste natur som var vanlige i samtiden hans (Kværne & Borgland, 2026b)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Guden som trodde han hadde skapt verden",
+                "content": "En av de eldste buddhistiske tekstene forteller om et vesen som blir født inn i en tom verden som akkurat har begynt å utvide seg igjen. Det sitter alene i lang tid og ønsker seg selskap. Så dukker det opp andre vesener, og det første tenker: Jeg er Brahma, den store Brahma, og disse vesenene har jeg skapt, for jeg ønsket det, og så kom de. Teksten sier at han tar feil. De andre kom av helt andre grunner. I buddhismen er altså troen på en skapergud ikke bare avvist, den blir forklart som en misforståelse (Bodhi, 2010)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Derfor kalles buddhismen ofte en ikke-teistisk religion. Det betyr ikke at buddhister nekter for at guder finnes, men at ingen gud står over kretsløpet og styrer det. Gudene er selv med i det. Du kan lese mer om dette i artikkelen om [ingen skapergud](/krle/religion/buddhisme/gudsbilde)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ensom gudeskikkelse på tom trone i lyst, folketomt rom",
+            "caption": "Ifølge Brahmajala-teksten tror Brahma at han har skapt de andre vesenene. Han tar feil."
+        },
+        {
+            "type": "header",
+            "text": "En verden uten første side"
+        },
+        {
+            "type": "text",
+            "content": "Men hva svarer buddhismen da, hvis noen spør hvor verden kommer fra? Tekstene gir et svar som egentlig er et ikke-svar. Kretsløpet av fødsel, død og ny fødsel kalles samsara. Om samsara sier tekstene at begynnelsen ikke lar seg tenke, og at ingen kan få øye på noe startpunkt, mens vesener holdes fast av uvitenhet og begjær og vandrer videre (Thanissaro Bhikkhu, 1997a). Verden har altså ingen første side. Den har alltid vært i gang."
+        },
+        {
+            "type": "text",
+            "content": "I stedet for en skapelse har buddhismen en forklaring på hvordan ting oppstår i det hele tatt. Den kalles betinget tilblivelse, og formelen er enkel: fordi dette er der, blir dette til. Tekstene setter opp en kjede på tolv ledd, der uvitenhet fører til det neste, som fører til det neste, helt fram til fødsel, alderdom og død (Thanissaro Bhikkhu, 1997c). Poenget er ikke å pugge kjeden. Poenget er at ingenting står alene og ingenting starter av seg selv. Alt oppstår fordi noe annet allerede er der. Et bål brenner så lenge det er ved, luft og varme. Ingen trenger å spørre hvem som fant opp ilden for å slukke det som brenner nå. Klipper du et ledd, stopper resten. Det er der buddhister mener frigjøringen ligger. Målet kalles [nirvana](/krle/religion/buddhisme/frelse), og betyr at lidelsen tar helt slutt og at gjenfødelsen opphører (Kværne & Borgland, 2025)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Lang kjede av ringer som forsvinner i disen uten synlig start",
+            "caption": "Betinget tilblivelse: hvert ledd henger i det forrige, og ingen finner det første."
+        },
+        {
+            "type": "header",
+            "text": "Buddhister i dag"
+        },
+        {
+            "type": "text",
+            "content": "I 2020 var det rundt 324 millioner buddhister i verden, og buddhismen er delt i to hovedtradisjoner, theravada og mahayana (Kværne & Borgland, 2026a). De er ikke enige om alt. Noen buddhister leser tekstene om verdensaldre og himler nokså bokstavelig, andre ser på dem som bilder. Noen synes fortsatt at spørsmålet om verdens opphav er spennende å tenke på, selv om Buddha lot det ligge. Mange buddhister mener at det er lov å undre seg, så lenge undringen ikke tar plassen til det som faktisk hjelper. Innenfor mahayana finnes det i tillegg egne retninger som zen og tantrisk buddhisme, med hver sine måter å øve på (Kværne & Borgland, 2026a). Men på ett punkt møtes de fleste: den som skal komme videre, må begynne med pilen som sitter i skulderen, ikke med bueskytteren. Det er derfor buddhismen ikke åpner med en skapelse. Den åpner med et sår."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Gjenfortell lignelsen om mannen med pilen med dine egne ord.",
+                    "Nevn tre av de ti spørsmålene Buddha lot stå uten svar.",
+                    "Hva er de fire edle sannhetene, altså det Buddha faktisk svarte på?",
+                    "Hva sier buddhistiske tekster om begynnelsen på samsara?"
+                ],
+                "reflekter": [
+                    "Buddha sa at svaret på spørsmålet om verdens opphav ikke ville hjelpe. Er du enig i at et spørsmål må være nyttig for å være verdt å svare på?",
+                    "Hvorfor tror du Malunkyaputta ble så frustrert at han truet med å forlate ordenen?",
+                    "Forklar med egne ord hvorfor betinget tilblivelse gjør at man ikke trenger en skaper.",
+                    "Historien om Brahma sier at han tar feil om sin egen rolle. Hvorfor tror du en religion forteller en slik historie om en gud?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign åpningen i buddhismen med en skapelsesfortelling fra en annen religion. Hva svarer de to på, og hva svarer de ikke på?",
+                    "Lag din egen versjon av pil-lignelsen med et eksempel fra din hverdag, der noen stiller spørsmål i stedet for å løse problemet.",
+                    "Diskuter i klassen: Finnes det spørsmål i naturfag eller samfunnsfag som vi ikke kan svare på, men som vi likevel mener det er viktig å stille?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva svarer buddhismen på spørsmålet om hvem som skapte verden?",
+                        "options": [
+                            "At Brahma skapte den på seks dager",
+                            "At verden ikke har noen skaper og heller ikke noe synlig startpunkt",
+                            "At Buddha skapte den da han ble opplyst",
+                            "At verden ble skapt av mange guder sammen"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Buddhismen har ingen skapergud. Tekstene sier at kretsløpet samsara ikke har noen begynnelse som lar seg få øye på."
+                    },
+                    {
+                        "question": "Hva er poenget med lignelsen om mannen som er truffet av en pil?",
+                        "options": [
+                            "At man må finne den skyldige før man kan bli frisk",
+                            "At leger ikke kan hjelpe alle",
+                            "At noen spørsmål må vente til man er i trygghet",
+                            "At det haster å fjerne lidelsen, og at spørsmål som ikke hjelper mot den, kan vente for alltid"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Mannen dør mens han spør. Buddha bruker bildet for å vise at spørsmål som ikke fører til at lidelsen slutter, ikke er verdt å bruke livet på."
+                    },
+                    {
+                        "question": "Hvem var Malunkyaputta?",
+                        "options": [
+                            "En munk som truet med å forlate ordenen om han ikke fikk svar",
+                            "En konge som forfulgte buddhistene",
+                            "Buddhas far",
+                            "En gud som trodde han hadde skapt verden"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Malunkyaputta stilte Buddha et ultimatum og ramset opp ti spørsmål. Buddha svarte med lignelsen om pilen i stedet."
+                    },
+                    {
+                        "question": "Hva betyr betinget tilblivelse?",
+                        "options": [
+                            "At verden skapes på nytt hver morgen",
+                            "At bare mennesker med god karma blir gjenfødt",
+                            "At ingenting oppstår av seg selv, men alltid fordi noe annet allerede er der",
+                            "At alt som skjer, er bestemt av en gud på forhånd"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Formelen er: fordi dette er der, blir dette til. Kjeden har ingen første ledd, og derfor trengs ingen skaper."
+                    },
+                    {
+                        "question": "Hva forteller Brahmajala-teksten om guden Brahma?",
+                        "options": [
+                            "At han skapte verden av ingenting",
+                            "At han feilaktig tror han har skapt de andre vesenene",
+                            "At han er Buddhas far",
+                            "At han nekter for at han finnes"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Brahma sitter alene, ønsker seg selskap, og tror han har skapt dem som kommer. Teksten sier at han tar feil."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Kværne, P. & Borgland, J. W. (2026a). *Buddhisme*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+                    "Kværne, P. & Borgland, J. W. (2026b). *Buddha*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Buddha](https://snl.no/Buddha)",
+                    "Kværne, P. & Borgland, J. W. (2025). *Nirvana*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/nirvana](https://snl.no/nirvana)",
+                    "Thanissaro Bhikkhu (overs.). (1998). *Cula-Malunkyovada Sutta: The Shorter Instructions to Malunkya* (MN 63). Access to Insight. Hentet 10.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/mn/mn.063.than.html)",
+                    "Thanissaro Bhikkhu (overs.). (1997a). *Assu Sutta: Tears* (SN 15.3). Access to Insight. Hentet 10.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/sn/sn15/sn15.003.than.html)",
+                    "Thanissaro Bhikkhu (overs.). (1997b). *Aggi-Vacchagotta Sutta: To Vacchagotta on Fire* (MN 72). Access to Insight. Hentet 10.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/mn/mn.072.than.html)",
+                    "Thanissaro Bhikkhu (overs.). (1997c). *Paticca-samuppada-vibhanga Sutta: Analysis of Dependent Co-arising* (SN 12.2). Access to Insight. Hentet 10.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/sn/sn12/sn12.002.than.html)",
+                    "Bodhi, B. (overs.). (2010). *Brahmajala Sutta: The All-embracing Net of Views* (DN 1). Access to Insight. Hentet 10.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/dn/dn.01.0.bodh.html)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

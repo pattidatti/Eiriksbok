@@ -602,6 +602,68 @@
       "total": 9
     },
     {
+      "slug": "skapelse",
+      "label": "Skapelsen",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Skapelsen som aldri begynte",
+          "file": "content/krle/religion/bahai/skapelse/artikkel.json",
+          "link": "/krle/religion/bahai/skapelse"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Spørsmålet Buddha ikke svarte på",
+          "file": "content/krle/religion/buddhisme/skapelse/artikkel.json",
+          "link": "/krle/religion/buddhisme/skapelse"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Verden uten begynnelse",
+          "file": "content/krle/religion/hinduisme/skapelse/artikkel.json",
+          "link": "/krle/religion/hinduisme/skapelse"
+        },
+        {
+          "religion": "islam",
+          "title": "Skapelsen i Islam",
+          "file": "content/krle/religion/islam/skapelse/artikkel.json",
+          "link": "/krle/religion/islam/skapelse"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Seks dager eller seks tidsaldre?",
+          "file": "content/krle/religion/jehovas-vitner/skapelse/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/skapelse"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Skapelsen: Verden som blir til av ord",
+          "file": "content/krle/religion/jodedom/skapelse/artikkel.json",
+          "link": "/krle/religion/jodedom/skapelse"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Skapelsen i Bibelen",
+          "file": "content/krle/religion/kristendom/skapelse/artikkel.json",
+          "link": "/krle/religion/kristendom/skapelse"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Skapelsen i mormonismen",
+          "file": "content/krle/religion/mormonisme/skapelse/artikkel.json",
+          "link": "/krle/religion/mormonisme/skapelse"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Mørket før verden: skapelsen i sikhismen",
+          "file": "content/krle/religion/sikhisme/skapelse/artikkel.json",
+          "link": "/krle/religion/sikhisme/skapelse"
+        }
+      ],
+      "count": 9,
+      "total": 9
+    },
+    {
       "slug": "bonn",
       "label": "Bønn",
       "entries": [
@@ -880,26 +942,6 @@
       ],
       "count": 8,
       "total": 9
-    },
-    {
-      "slug": "skapelse",
-      "label": "Skapelsen",
-      "entries": [
-        {
-          "religion": "islam",
-          "title": "Skapelsen i Islam",
-          "file": "content/krle/religion/islam/skapelse/artikkel.json",
-          "link": "/krle/religion/islam/skapelse"
-        },
-        {
-          "religion": "kristendom",
-          "title": "Skapelsen i Bibelen",
-          "file": "content/krle/religion/kristendom/skapelse/artikkel.json",
-          "link": "/krle/religion/kristendom/skapelse"
-        }
-      ],
-      "count": 2,
-      "total": 9
     }
   ],
   "religionArticles": [
@@ -972,6 +1014,16 @@
       "tags": [
         "sentrale-trekk",
         "frelse"
+      ]
+    },
+    {
+      "religion": "bahai",
+      "title": "Skapelsen som aldri begynte",
+      "link": "/krle/religion/bahai/skapelse",
+      "dimension": "narrative",
+      "tags": [
+        "skapelse",
+        "narrative"
       ]
     },
     {
@@ -1056,6 +1108,16 @@
       ]
     },
     {
+      "religion": "buddhisme",
+      "title": "Spørsmålet Buddha ikke svarte på",
+      "link": "/krle/religion/buddhisme/skapelse",
+      "dimension": "narrative",
+      "tags": [
+        "skapelse",
+        "narrative"
+      ]
+    },
+    {
       "religion": "hinduisme",
       "title": "Puja og Bønn i Hinduismen",
       "link": "/krle/religion/hinduisme/bonn",
@@ -1124,6 +1186,16 @@
       "tags": [
         "sentrale-trekk",
         "frelse"
+      ]
+    },
+    {
+      "religion": "hinduisme",
+      "title": "Verden uten begynnelse",
+      "link": "/krle/religion/hinduisme/skapelse",
+      "dimension": "narrative",
+      "tags": [
+        "skapelse",
+        "narrative"
       ]
     },
     {
@@ -1290,6 +1362,16 @@
       ]
     },
     {
+      "religion": "jehovas-vitner",
+      "title": "Seks dager eller seks tidsaldre?",
+      "link": "/krle/religion/jehovas-vitner/skapelse",
+      "dimension": "narrative",
+      "tags": [
+        "skapelse",
+        "narrative"
+      ]
+    },
+    {
       "religion": "jodedom",
       "title": "Bønn i Jødedommen",
       "link": "/krle/religion/jodedom/bonn",
@@ -1358,6 +1440,16 @@
       "tags": [
         "sentrale-trekk",
         "frelse"
+      ]
+    },
+    {
+      "religion": "jodedom",
+      "title": "Skapelsen: Verden som blir til av ord",
+      "link": "/krle/religion/jodedom/skapelse",
+      "dimension": "narrative",
+      "tags": [
+        "skapelse",
+        "narrative"
       ]
     },
     {
@@ -1522,6 +1614,16 @@
       ]
     },
     {
+      "religion": "mormonisme",
+      "title": "Skapelsen i mormonismen",
+      "link": "/krle/religion/mormonisme/skapelse",
+      "dimension": "narrative",
+      "tags": [
+        "skapelse",
+        "narrative"
+      ]
+    },
+    {
       "religion": "sikhisme",
       "title": "Guruene – sikhismens læremestre",
       "link": "/krle/religion/sikhisme/grunnleggere",
@@ -1553,6 +1655,16 @@
       "dimension": null,
       "tags": [
         "sentrale-trekk"
+      ]
+    },
+    {
+      "religion": "sikhisme",
+      "title": "Mørket før verden: skapelsen i sikhismen",
+      "link": "/krle/religion/sikhisme/skapelse",
+      "dimension": "narrative",
+      "tags": [
+        "skapelse",
+        "narrative"
       ]
     }
   ],

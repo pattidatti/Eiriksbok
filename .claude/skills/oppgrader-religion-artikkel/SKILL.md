@@ -9,15 +9,16 @@ Workflow for å systematisk løfte placeholder-artikler i KRLE verdensreligioner
 full plan_article-standard. Kjøres **én artikkel om gangen**.
 
 Arbeidslista og statusoversikten for hele prosjektet ligger i `docs/KRLE_OPPRUSTNING.md`.
-Les den før første kjøring — den definerer hva «ferdig» betyr og i hvilken rekkefølge
+Les den før første kjøring - den definerer hva «ferdig» betyr og i hvilken rekkefølge
 artiklene skal tas.
 
 ## Steg 1: Skann placeholder-artikler
 
-Kjør dette Python-skriptet fra repo-roten:
+Kjør dette Python-skriptet fra repo-roten. Religionsfilteret settes på **kommandolinja**,
+ikke inne i heredoc-teksten - `python3 - islam << 'EOF'`. Uten filter: `python3 - << 'EOF'`.
 
 ```bash
-python3 << 'EOF'
+python3 - << 'EOF'
 import json, os, re, sys
 
 ARGS = sys.argv[1:] if len(sys.argv) > 1 else []
@@ -28,8 +29,21 @@ SIG_IGNORE = {'Quiz', 'FactBox', 'QuoteBlock', 'TimelineComponent', 'MicroGame',
               'Gallery', 'MapCarousel', 'LinkButton', 'Comparison', 'WritingFix',
               'Oppgaver', 'Kildeliste', 'Image'}
 
+# De ni faste sporene og artiklene hver av dem skal ha.
+# Matrisen står i sammenligne-religion-blueprint.md §3.1.
+# samisk er BEVISST utelatt: den er gjestestemme, ikke et fast spor (blueprint §5.4),
+# og historiske-religioner er et samlemappe uten per-dimensjon-struktur.
+RELIGIONER = ['jodedom', 'kristendom', 'islam', 'bahai', 'mormonisme',
+              'jehovas-vitner', 'hinduisme', 'buddhisme', 'sikhisme']
+
+# Rekkefølgen ER prioriteringen: den følger rundene R1-R5 i
+# docs/KRLE_OPPRUSTNING.md §5. Manglende artikler rangeres etter denne lista.
+FORVENTET = ['skapelse', 'gudsbilde', 'bonn', 'overgangsriter', 'frelse',
+             'grunnleggere', 'hellige-tekster', 'sentrale-trekk', 'intro']
+
 base = 'public/content/krle/religion/'
 results = []
+paa_disk = set()   # (mappenavn, artikkel-id) - hva som faktisk finnes
 
 def count_words(content):
     n = 0
@@ -57,9 +71,14 @@ for root, dirs, files in os.walk(base):
         if not isinstance(d, dict):
             continue
 
-        # Fallback til mappenavnet: public/content/krle/religion/<religion>/...
+        # Mappenavnet er fasit for HVA som finnes; feltet `religion` kan avvike.
+        # Stiformer: <religion>/<id>/artikkel.json og <religion>/<id>.json
         parts = path.split(os.sep)
-        religion = d.get('religion') or (parts[4] if len(parts) > 4 else '?')
+        mappe = parts[4] if len(parts) > 4 else '?'
+        art_id = parts[5] if len(parts) > 6 else f[:-5]
+        paa_disk.add((mappe, art_id))
+
+        religion = d.get('religion') or mappe
         if FILTER_RELIGION and religion.lower() != FILTER_RELIGION:
             continue
 
@@ -102,6 +121,21 @@ for root, dirs, files in os.walk(base):
                             has_sig=has_sig, has_oppg=has_oppg,
                             has_kilde=has_kilde, broken=False, score=score))
 
+# MANGLENDE ARTIKLER: finnes ikke på disk ennå, men skal finnes.
+# Disse er runde R1-R5 i KRLE_OPPRUSTNING §5 og går foran alt annet enn ødelagte filer.
+missing = []
+for rel in RELIGIONER:
+    if FILTER_RELIGION and rel != FILTER_RELIGION:
+        continue
+    for rang, art in enumerate(FORVENTET):
+        if (rel, art) in paa_disk:
+            continue
+        missing.append(dict(path=f'{base}{rel}/{art}/artikkel.json',
+                            religion=rel, title=art, id=art, blocks=0, words=0,
+                            has_sig=False, has_oppg=False, has_kilde=False,
+                            broken=False, missing=True, score=1100 - rang))
+missing.sort(key=lambda x: -x['score'])
+
 # Prioriter intro/sentrale-trekk per religion over andre, men aldri over ødelagte filer
 PRIORITY_KEYWORDS = ['intro', 'sentrale', 'introduksjon', 'grunnlegger']
 broken, priority_first, rest = [], [], []
@@ -118,20 +152,26 @@ for r in sorted(results, key=lambda x: -x['score']):
     else:
         rest.append(r)
 
-ordered = broken + priority_first + rest
+ordered = broken + missing + priority_first + rest
 
-print(f'# {len(results)} kandidater ({len(broken)} med ødelagt skjema)')
+print(f'# {len(results) + len(missing)} kandidater '
+      f'({len(broken)} med ødelagt skjema, {len(missing)} som ikke finnes ennå)')
 print('STATUS|RELIGION|TITLE|WORDS|BLOCKS|MANGLER|ID|PATH')
 for r in ordered[:20]:
     if r['broken']:
         status = 'BROKEN'
+    elif r.get('missing'):
+        status = 'MISSING'
     elif not r['has_sig']:
         status = 'EMPTY'
     else:
         status = 'PARTIAL'
-    mangler = ','.join(k for k, v in (('sig', r['has_sig']),
-                                      ('oppg', r['has_oppg']), ('kilde', r['has_kilde']))
-                       if not v) or '-'
+    if r.get('missing'):
+        mangler = 'hele artikkelen'
+    else:
+        mangler = ','.join(k for k, v in (('sig', r['has_sig']),
+                                          ('oppg', r['has_oppg']), ('kilde', r['has_kilde']))
+                           if not v) or '-'
     print(f"{status}|{r['religion']}|{r['title']}|{r['words']}|{r['blocks']}|{mangler}|{r['id']}|{r['path']}")
 EOF
 ```
@@ -140,23 +180,31 @@ Statuskodene:
 
 | Status | Betydning |
 |---|---|
-| `BROKEN` | Renderer tomt eller feil — mangler `content`, eller har blokker uten `type`. Fiks skjemaet før innholdet. |
+| `BROKEN` | Renderer tomt eller feil - mangler `content`, eller har blokker uten `type`. Fiks skjemaet før innholdet. |
+| `MISSING` | Artikkelen finnes ikke ennå. Skal opprettes fra bunnen, ikke løftes. `PATH` er stien fila **skal** få. |
 | `EMPTY` | Ingen signaturkomponent |
 | `PARTIAL` | Har signaturkomponent, men mangler `Oppgaver`, `Kildeliste` eller ordtall |
 
+`MISSING`-lista er utledet av matrisen i `sammenligne-religion-blueprint.md` §3.1 og
+rangert etter rundene R1-R5 i `KRLE_OPPRUSTNING.md` §5 - `skapelse` først, så `gudsbilde`,
+`bonn`, `overgangsriter`, `frelse`. Samisk religion står **ikke** i matrisen: den er
+gjestestemme i seks temaer og dekkes av de to artiklene som allerede finnes (blueprint §5.4).
+
 ## Steg 2: Velg kandidat
 
-Parse output-linjene. Velg de **4 øverste kandidatene** — de er allerede sortert slik at
-ødelagte filer kommer først, deretter intro/sentrale-trekk-artikler fra ulike religioner.
+Parse output-linjene. Velg de **4 øverste kandidatene** - de er allerede sortert slik at
+ødelagte filer kommer først, så artikler som ikke finnes ennå (rundene R1-R5), og deretter
+intro/sentrale-trekk-artikler fra ulike religioner.
 
 Bruk **AskUserQuestion** med fire valg formatert slik:
 - `label`: `[Religion]: [Tittel]`
-- `description`: `[N] ord · [M] blokker · mangler [liste]`
+- `description`: `[N] ord · [M] blokker · mangler [liste]`, eller for `MISSING`:
+  `finnes ikke ennå · opprettes fra bunnen`
 
 Eksempel:
 ```
-label: "Bahá'í: Introduksjon"
-description: "0 ord · ødelagt skjema (renderer tomt) · mangler sig, oppg, kilde"
+label: "Hinduisme: skapelse"
+description: "finnes ikke ennå · opprettes fra bunnen (R1)"
 
 label: "Islam: Sentrale trekk i Islam"
 description: "100 ord · 6 blokker · mangler sig, oppg, kilde"
@@ -166,11 +214,17 @@ description: "100 ord · 6 blokker · mangler sig, oppg, kilde"
 
 Når brukeren har valgt en artikkel:
 
-1. Les artikkelfilen (path fra skannen) for å forstå eksisterende innhold og KRLE-felt
-   (`religion`, `dimension`, `comparison_tags`).
-2. Er statusen `BROKEN`, fiks skjemaet først — konverter `ingress`/`body` til en flat
+1. **Er statusen `MISSING`**, finnes det ingen fil å lese. Åpne i stedet en søsterartikkel
+   i samme religion (f.eks. `<religion>/gudsbilde/artikkel.json`) for å se hvilke verdier
+   `religion`, `topic`, `category` og `comparison_tags` skal ha, og hent `dimension` fra
+   temaraden i `sammenligne-religion-blueprint.md` §3. Artikkelen må i tillegg registreres
+   som ny lesson i `public/content/manifest.json` under `krle → religion → <religion>`.
+   Hopp deretter til punkt 4.
+2. Ellers: les artikkelfilen (path fra skannen) for å forstå eksisterende innhold og
+   KRLE-felt (`religion`, `dimension`, `comparison_tags`).
+3. Er statusen `BROKEN`, fiks skjemaet først - konverter `ingress`/`body` til en flat
    `content`-array, eller bytt `name` til `type` på blokkene som mangler det.
-3. Invokér `plan_article` via Skill-toolet med KRLE-kravene bakt inn i args.
+4. Invokér `plan_article` via Skill-toolet med KRLE-kravene bakt inn i args.
 
 **Merk om mikrospill:** `plan_article` §4 krever normalt et 3D-mikrospill i tillegg til
 signaturkomponenten, og sier «I tvil - lag det». Det gjelder **ikke** her. Per-religion-artikler
@@ -180,11 +234,11 @@ Begrunnelsen står i `docs/KRLE_OPPRUSTNING.md` §2.1.
 ```
 Skill({
   skill: "plan_article",
-  args: "[religion] [artikkel-tittel] — KRLE-krav: (1) Bevar feltene religion/dimension/comparison_tags — disse driver sammenligningssystemet på /krle/sammenlign/tema/:tag. (2) Tone objektiv og respektfull ('Muslimer tror...', 'Buddhister mener...'), aldri normativ, og nevn indre mangfold minst ett sted ('mange hinduer...', ikke 'hinduer...'). (3) Signaturkomponenten MÅ være ny og spesialtilpasset denne artikkelen — aldri gjenbruk av eksisterende komponent. (4) IKKE lag mikrospill - per-religion-artikler skal ha signaturkomponenten alene, se docs/KRLE_OPPRUSTNING.md §2.1. (5) Mål 900-1200 ord, tilgjengelig for 14-åringer. (6) Fast hale: Oppgaver → Quiz → Kildeliste som de tre siste blokkene. Referanse-mal: public/content/krle/religion/sikhisme/overgangsriter.json"
+  args: "[religion] [artikkel-tittel] - KRLE-krav: (1) Bevar feltene religion/dimension/comparison_tags - disse driver sammenligningssystemet på /krle/sammenlign/tema/:tag. (2) Tone objektiv og respektfull ('Muslimer tror...', 'Buddhister mener...'), aldri normativ, og nevn indre mangfold minst ett sted ('mange hinduer...', ikke 'hinduer...'). (3) Signaturkomponenten MÅ være ny og spesialtilpasset denne artikkelen - aldri gjenbruk av eksisterende komponent. (4) IKKE lag mikrospill - per-religion-artikler skal ha signaturkomponenten alene, se docs/KRLE_OPPRUSTNING.md §2.1. (5) Mål 800-1200 ord, tilgjengelig for 14-åringer. (6) Fast hale: Oppgaver → Quiz → Kildeliste som de tre siste blokkene. (7) Er artikkelen ny (status MISSING): opprett fila på oppgitt path OG registrer den som lesson i public/content/manifest.json under krle → religion → [religion]. Referanse-mal: public/content/krle/religion/sikhisme/overgangsriter.json"
 })
 ```
 
-**Referanse-malen er `public/content/krle/religion/sikhisme/overgangsriter.json`** — 40 blokker,
+**Referanse-malen er `public/content/krle/religion/sikhisme/overgangsriter.json`** - 40 blokker,
 1304 ord, egen signaturkomponent (`SikhNavneseremoni`), mikrospill (`anand-karaj-3d`) og komplett
 hale. Bruk ikke `kristendom/intro` som mal; den er eldre og mangler `Oppgaver`, `Kildeliste` og
 inline-bilder.
@@ -193,11 +247,15 @@ inline-bilder.
 
 Etter mønster fra `.claude/commands/oppgrader_km.md`. Ikke meld artikkelen ferdig før alt er grønt:
 
-1. `npx tsc -b` og `npm run lint` — begge rene
-2. `npm run dev`, last artikkelen, **0 konsollfeil**
-3. Sjekk signaturkomponenten på **1366×768** — ingen intern scrolling, ingenting avkuttet
+1. `npx tsc -b` og `npm run lint` - begge rene
+2. `npm run dev`, last artikkelen på `/krle/religion/<religion>/<id>` - ruta må faktisk
+   svare (var den `MISSING`, er det manifest-oppføringen som avgjør), **0 konsollfeil**
+3. Sjekk signaturkomponenten på **1366×768** - ingen intern scrolling, ingenting avkuttet
 4. Kjør `npm run scan:content` og rydd opp i eventuell churn
-5. Verifiser at `public/data/comparison-manifest.json` fortsatt har artikkelen på riktig tema
+5. Verifiser at `public/data/comparison-manifest.json` har artikkelen på riktig tema.
+   Gjelder kun artikler i undermappe-form (`<religion>/<id>/artikkel.json`) -
+   `generate-comparison-manifest.mjs` scanner `krle/religion/*/*/artikkel.json`, så flate
+   filer som `intro.json` kommer aldri med, og det er ikke en feil.
 
 Til slutt: kryss av artikkelen i tabellen i `docs/KRLE_OPPRUSTNING.md` §6, og før den inn i
 loggen i §9.
@@ -207,6 +265,11 @@ Ikke commit uten at brukeren ber om det.
 ## Argument-støtte
 
 Hvis brukeren kjørte skillen med et argument (f.eks. `/oppgrader-religion-artikkel islam`):
-- Send religion-navnet til Python-skriptet som filter
+
+- Sett religion-navnet **på kommandolinja**, ikke inn i heredoc-teksten:
+  `python3 - islam << 'EOF'`. Skriptet leser `sys.argv[1]`. Med bare `python3 << 'EOF'`
+  blir `sys.argv` lik `['']`, og filteret er alltid tomt.
+- Navnet må matche mappenavnet under `public/content/krle/religion/`, altså `jodedom`,
+  `bahai`, `jehovas-vitner` - ikke «jødedom» eller «Jehovas vitner».
 - Hopp direkte til steg 2 med kun artikler fra den religionen
 - Presenter de 4 beste kandidatene for den valgte religionen

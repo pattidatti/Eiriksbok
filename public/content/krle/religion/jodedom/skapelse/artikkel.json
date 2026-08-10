@@ -1,0 +1,259 @@
+{
+    "id": "skapelse",
+    "title": "Skapelsen: Verden som blir til av ord",
+    "layout": "rich",
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "jodedom",
+    "dimension": "narrative",
+    "comparison_tags": ["skapelse", "narrative"],
+    "category": "Jødedommen",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Den første boka i Tora heter Bereshit på hebraisk og betyr I begynnelsen.",
+        "I det første kapittelet skaper Gud ved å si noe. Uttrykket Gud sa står ti ganger.",
+        "Den sjuende dagen er den eneste dagen Gud kaller hellig, og sabbaten bygger på den.",
+        "Kapittel 2 har en annen skapelsesfortelling som ikke stemmer overens med den første.",
+        "Jødisk tradisjon leser teksten gjennom Talmud og midrasj, altså gjennom diskusjon og tolkning."
+    ],
+    "concepts": [
+        {
+            "id": "bereshit",
+            "term": "Bereshit",
+            "definition": "Hebraisk for I begynnelsen. Det er navnet på den første boka i Tora, som vi på norsk kaller 1. Mosebok."
+        },
+        {
+            "id": "sabbat",
+            "term": "Sabbat",
+            "definition": "Den jødiske hviledagen, fra fredag ettermiddag til lørdag kveld. Den bygger på den sjuende dagen i skapelsesfortellingen."
+        },
+        {
+            "id": "midrasj",
+            "term": "Midrasj",
+            "definition": "Jødisk tolkningslitteratur der lærde leter etter mening i bibelteksten. Midrasj dikter ofte videre på fortellingen for å få fram et poeng."
+        },
+        {
+            "id": "talmud",
+            "term": "Talmud",
+            "definition": "Jødedommens største samling av hellige skrifter etter Tanakh. Den består av lovtekster og lange diskusjoner mellom rabbinere."
+        },
+        {
+            "id": "ha-adam",
+            "term": "Ha-adam",
+            "definition": "Hebraisk for mennesket. Ordet er ikke et navn i utgangspunktet, og det er i slekt med adamah, som betyr jord."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Fredag ettermiddag, like før sola går ned. I et jødisk hjem tennes to lys. Datamaskinen slås av, handleposen settes fra seg, og arbeidet stopper i et helt døgn. Grunnen til at det skjer, står helt i begynnelsen av den hebraiske bibelen. Der ligger en fortelling om hvordan verden ble til, og den fortellingen ender ikke med at verden er ferdig. Den ender med at noen slutter å jobbe."
+        },
+        {
+            "type": "text",
+            "content": "Den hebraiske bibelen heter Tanakh, og den viktigste delen av den kalles Tora. Den første boka i Tora heter Bereshit på hebraisk, som betyr I begynnelsen (Groth, 2024a). På norsk kaller vi den 1. Mosebok. Boka åpner med seks dager der verden blir til, og en sjuende dag som er noe helt annet. Du kan lese mer om hvordan de jødiske tekstene henger sammen i artikkelen om [Tanakh og de hellige tekstene](/krle/religion/jodedom/hellige-tekster)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To tente sabbatslys på et dekket bord i skumringen",
+            "caption": "Sabbaten begynner fredag ettermiddag, når lysene tennes. Skikken henger sammen med den sjuende dagen i skapelsesfortellingen."
+        },
+        {
+            "type": "text",
+            "content": "Fortellinger om hvordan verden ble til, finnes i nesten alle kulturer. Slike fortellinger kalles skapelsesmyter. I de tre store monoteistiske religionene, altså religionene som lærer at det bare finnes én Gud, skaper guden verden gjennom sitt ord, sin tanke eller sin vilje (Kværne mfl., 2025). Nettopp derfor er åpningen av 1. Mosebok verdt å lese sakte. Måten Gud skaper på, er halve poenget."
+        },
+        {
+            "type": "header",
+            "text": "Gud sier, og det blir"
+        },
+        {
+            "type": "text",
+            "content": "Gud bygger ikke verden med hendene i dette kapittelet, og Gud kjemper ikke mot noe uhyre, slik gudene gjør i flere andre skapelsesmyter fra Midtøsten. Gud snakker. Den første setningen som skaper noe, lyder slik: Da sa Gud: Det bli lys! Og det ble lys (Barstad, 2024). Så gjentas mønsteret om og om igjen. Gud sier noe, og det blir slik. Uttrykket Gud sa står ti ganger i kapittelet, og rabbinerne, de jødiske lærde, festet seg ved akkurat det tallet. I en gammel samling med visdomsord heter det: Med ti utsagn ble verden skapt (Pirkei Avot 5,1). Hvorfor ti, når ett hadde holdt? Teksten svarer selv: den som ødelegger en verden det er brukt ti ord på, har desto mer å svare for, og den som tar vare på den, fortjener desto mer."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Dag 1: lyset, som skilles fra mørket.",
+                "Dag 2: en hvelving som skiller vannet over fra vannet under.",
+                "Dag 3: tørt land og hav, og planter som gror.",
+                "Dag 4: sol, måne og stjerner, som skiller dag fra natt.",
+                "Dag 5: fisk og andre sjødyr, og fugler.",
+                "Dag 6: dyrene på land, og mennesket."
+            ]
+        },
+        {
+            "type": "component",
+            "name": "SkapelseVedOrd",
+            "props": {
+                "title": "Skapt med ord"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Etter nesten hver dag står den samme setningen: Gud så at det var godt. Verden er ikke en feil eller en ulykke i denne fortellingen. Den er villet, og den er ordnet. Det som var rotete og tomt i starten, blir delt opp i par som hører sammen: lys og mørke, hav og land, dag og natt."
+        },
+        {
+            "type": "header",
+            "text": "Den sjuende dagen er målet"
+        },
+        {
+            "type": "text",
+            "content": "Så kommer bruddet. På den sjuende dagen sier Gud ingenting. Gud fullfører arbeidet, stopper, velsigner dagen og gjør den hellig (1. Mosebok 2,1-3). Legg merke til hva det er som får ordet hellig. Ikke et fjell, ikke et tempel, ikke en person. En dag. Mange jøder leser derfor hele kapittelet baklengs: de seks dagene er ikke målet, de er opptakten. Målet er hvilen."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Sabbaten: dagen som kom ut av fortellingen",
+                "content": "Sabbaten er den siste dagen i uka, satt av til hvile og gudstjeneste, og den regnes som jødedommens viktigste helligdag. Den varer fra fredag ettermiddag til lørdag kveld. Dagen skal minne om tre ting samtidig: skapelsen, utvandringen fra Egypt og pakten ved Sinai. Ut fra budet om å holde sabbaten har rabbinerne utledet 39 former for arbeid som ikke skal gjøres, blant annet skriving, håndarbeid og bilkjøring. Hvor strengt dette følges, varierer mye fra familie til familie (Cohen & Groth, 2025)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Hvilen er altså ikke en pause fra det viktige. I denne lesningen er hvilen det viktige. Gud, som lager alt som finnes, velger å stoppe, og mennesket får lov til å gjøre det samme en gang i uka. Det henger tett sammen med hvordan jøder tenker om Gud som én og som skaper. Det kan du lese mer om i artikkelen om [monoteisme](/krle/religion/jodedom/gudsbilde)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tomt arbeidsbord med verktøy lagt fra seg ved solnedgang",
+            "caption": "Den sjuende dagen sier Gud ingenting og gjør ingenting. Det er den eneste dagen fortellingen kaller hellig."
+        },
+        {
+            "type": "header",
+            "text": "To fortellinger, ikke én"
+        },
+        {
+            "type": "text",
+            "content": "Leser du videre inn i kapittel 2, skjer det noe rart. Fortellingen begynner nesten på nytt, og den nye versjonen er ikke lik den første. I kapittel 1 blir mennesket, ha-adam, skapt som mann og kvinne i Guds bilde, helt til slutt, etter plantene og dyrene. I kapittel 2 former Gud mennesket av jord først, blåser liv i det, og planter så en hage rundt det (Groth & Barstad, 2024). Ordet ha-adam er ikke et egennavn i utgangspunktet. Det er et vanlig ord for menneske, og det er i slekt med adamah, som betyr jord."
+        },
+        {
+            "type": "text",
+            "content": "Forskere forklarer forskjellen med at Mosebøkene er satt sammen av flere eldre tekster, skrevet i ulike miljøer og til ulike tider (Groth, 2024a). Men det mest interessante er hva jødisk tradisjon har gjort med problemet. Den har ikke strøket den ene fortellingen for å redde den andre. Begge to står, rett etter hverandre. Motsetningen er blitt noe å tenke over i stedet for noe å fjerne."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Oppslått bok med hebraisk tekst i lag rundt en midtre tekstblokk",
+            "caption": "En side i Talmud: én tekst i midten, og lag på lag med kommentarer og innvendinger rundt."
+        },
+        {
+            "type": "header",
+            "text": "En tekst man diskuterer"
+        },
+        {
+            "type": "text",
+            "content": "Etter at tempelet i Jerusalem ble ødelagt i år 70, vokste det fram en enorm tolkningslitteratur. Talmud er den største samlingen, og den består av lovtekster og lange, åpne diskusjoner mellom rabbinere som ofte ikke blir enige (Groth, 2024b). Ved siden av Talmud står midrasj, tekster som graver i bibelversene og leter etter mening mellom linjene (Mendelsohn mfl., 2026). En midrasj til 1. Mosebok forteller for eksempel at Gud lagde verdener og ødela dem igjen, helt til han lagde denne og sa: Denne behager meg (Bereshit Rabba 3,7). Det står ikke der som en opplysning om hva som faktisk hendte. Det er en måte å tenke over hvorfor verden ble akkurat slik."
+        },
+        {
+            "type": "text",
+            "content": "Derfor blir 1. Mosebok 1 sjelden lest som en lærebok i naturvitenskap i jødisk tradisjon. Den blir lest som en tekst man snakker med. Jøder er dessuten uenige seg imellom om hvor bokstavelig teksten skal forstås, og ortodokse, konservative og reformjøder svarer ulikt på slike spørsmål (Groth, 2026). Kristendommen og islam bruker mange av de samme bildene, men legger vekt på andre ting. Se selv i artiklene om [skapelsen i Bibelen](/krle/religion/kristendom/skapelse) og [skapelsen i islam](/krle/religion/islam/skapelse)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet Bereshit, og hvilken bok er det navnet på?",
+                    "Hvordan skaper Gud i 1. Mosebok kapittel 1? Svar med én setning.",
+                    "Hva skjer på den sjuende dagen, og hva kalles den dagen?",
+                    "Nevn to forskjeller mellom skapelsesfortellingen i kapittel 1 og den i kapittel 2."
+                ],
+                "reflekter": [
+                    "Hvorfor tror du det betyr noe at Gud skaper ved å si noe, og ikke ved å bygge eller kjempe?",
+                    "Fortellingen kaller en dag hellig, ikke et sted. Hva slags religion blir det plass til når hvile er det helligste?",
+                    "Jødisk tradisjon lot begge skapelsesfortellingene stå, selv om de ikke passer sammen. Hva er styrken og hva er svakheten ved å gjøre det?",
+                    "Midrasjen om verdener som ble ødelagt, skal ikke leses bokstavelig. Hva kan en fortelling gi deg som en faktaopplysning ikke kan?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign den jødiske lesningen med [skapelsen i islam](/krle/religion/islam/skapelse). Skriv fem punkter om hva som er likt og hva som skiller.",
+                    "Skriv din egen korte midrasj: velg én setning fra 1. Mosebok 1 og dikt videre på den for å få fram et poeng.",
+                    "Undersøk hva de 39 arbeidsforbudene på sabbaten går ut på, og diskuter i klassen hva de tilsvarer i dagens hverdag."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvordan skaper Gud i 1. Mosebok kapittel 1?",
+                        "options": [
+                            "Ved å forme verden av leire med hendene",
+                            "Ved å si noe, slik at det blir til",
+                            "Ved å beseire et sjøuhyre",
+                            "Ved å ofre en annen gud"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Kapittelet gjentar mønsteret Gud sa, og det ble slik. Uttrykket Gud sa står ti ganger i kapittelet."
+                    },
+                    {
+                        "question": "Hva er spesielt med den sjuende dagen i fortellingen?",
+                        "options": [
+                            "Da skapes mennesket",
+                            "Da sier Gud det siste og viktigste ordet",
+                            "Da stopper Gud, velsigner dagen og gjør den hellig",
+                            "Da får dyrene navn"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "På den sjuende dagen sier Gud ingenting. Gud fullfører, hviler og gjør dagen hellig. Det er den eneste dagen som kalles hellig."
+                    },
+                    {
+                        "question": "Hvilken jødisk helligdag bygger på den sjuende dagen?",
+                        "options": [
+                            "Sabbaten",
+                            "Pesach",
+                            "Jom kippur",
+                            "Hanukka"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Sabbaten varer fra fredag ettermiddag til lørdag kveld og skal minne om skapelsen, utvandringen fra Egypt og pakten ved Sinai."
+                    },
+                    {
+                        "question": "Hva er forskjellen på skapelsesfortellingen i kapittel 1 og den i kapittel 2?",
+                        "options": [
+                            "Kapittel 2 handler om en annen gud",
+                            "I kapittel 1 kommer mennesket sist, i kapittel 2 formes mennesket av jord først",
+                            "Kapittel 2 nevner ikke mennesket i det hele tatt",
+                            "Kapittel 1 varer i sju dager, kapittel 2 i førti"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "I kapittel 1 skapes ha-adam som mann og kvinne til slutt. I kapittel 2 formes mennesket av jord først, og hagen kommer etterpå."
+                    },
+                    {
+                        "question": "Hvordan har jødisk tradisjon først og fremst arbeidet med skapelsesteksten?",
+                        "options": [
+                            "Ved å regne ut nøyaktig når verden ble til",
+                            "Ved å forby folk å lese den",
+                            "Ved å tolke og diskutere den videre i Talmud og midrasj",
+                            "Ved å oversette den til latin"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Talmud og midrasj er tolkningslitteratur der rabbinere diskuterer og dikter videre på teksten i stedet for å lese den som naturvitenskap."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Barstad, H. M. (2024). *Bli lys!*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Bli_lys](https://snl.no/Bli_lys!)",
+                    "Cohen, K. J. & Groth, B. (2025). *Sabbat*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/sabbat](https://snl.no/sabbat)",
+                    "Groth, B. (2024a). *Mosebøkene*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Mosebøkene](https://snl.no/Moseb%C3%B8kene)",
+                    "Groth, B. (2024b). *Talmud*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Talmud](https://snl.no/Talmud)",
+                    "Groth, B. (2026). *Jødedom*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+                    "Groth, B. & Barstad, H. M. (2024). *Adam (bibelsk skikkelse)*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Adam](https://snl.no/Adam_-_bibelsk_skikkelse)",
+                    "Kværne, P., Groth, B. & Løøv, M. (2025). *Skapelsesmyter*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/skapelsesmyter](https://snl.no/skapelsesmyter)",
+                    "Mendelsohn, O., Wolf, Ø. W. & Groth, B. (2026). *Jødisk litteratur*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/jødisk_litteratur](https://snl.no/j%C3%B8disk_litteratur)",
+                    "Sefaria. (u.å.). *Bereshit Rabbah 3:7*. Hentet 10.08.2026 fra [sefaria.org/Bereshit_Rabbah.3.7](https://www.sefaria.org/Bereshit_Rabbah.3.7)",
+                    "Sefaria. (u.å.). *Genesis 1-2*. Hentet 10.08.2026 fra [sefaria.org/Genesis.1](https://www.sefaria.org/Genesis.1)",
+                    "Sefaria. (u.å.). *Pirkei Avot 5:1*. Hentet 10.08.2026 fra [sefaria.org/Pirkei_Avot.5.1](https://www.sefaria.org/Pirkei_Avot.5.1)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

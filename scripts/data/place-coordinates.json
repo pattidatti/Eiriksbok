@@ -886,6 +886,10 @@
       "count": 26
     },
     {
+      "tag": "narrative",
+      "count": 26
+    },
+    {
       "tag": "middelalderen",
       "count": 25
     },
@@ -943,10 +947,6 @@
     },
     {
       "tag": "olje",
-      "count": 19
-    },
-    {
-      "tag": "narrative",
       "count": 19
     },
     {
@@ -1022,6 +1022,10 @@
       "count": 12
     },
     {
+      "tag": "buddhisme",
+      "count": 12
+    },
+    {
       "tag": "globalisering",
       "count": 12
     },
@@ -1042,7 +1046,7 @@
       "count": 12
     },
     {
-      "tag": "buddhisme",
+      "tag": "hinduisme",
       "count": 11
     },
     {
@@ -1079,10 +1083,6 @@
     },
     {
       "tag": "diplomati",
-      "count": 10
-    },
-    {
-      "tag": "hinduisme",
       "count": 10
     },
     {
@@ -1134,6 +1134,22 @@
       "count": 9
     },
     {
+      "tag": "skapelse",
+      "count": 9
+    },
+    {
+      "tag": "bahai",
+      "count": 9
+    },
+    {
+      "tag": "mormonisme",
+      "count": 9
+    },
+    {
+      "tag": "jehovas-vitner",
+      "count": 9
+    },
+    {
       "tag": "historiens-store-gater",
       "count": 8
     },
@@ -1147,6 +1163,10 @@
     },
     {
       "tag": "adel",
+      "count": 8
+    },
+    {
+      "tag": "sikhisme",
       "count": 8
     },
     {
@@ -1198,15 +1218,7 @@
       "count": 8
     },
     {
-      "tag": "bahai",
-      "count": 8
-    },
-    {
-      "tag": "mormonisme",
-      "count": 8
-    },
-    {
-      "tag": "jehovas-vitner",
+      "tag": "jodedom",
       "count": 8
     },
     {
@@ -1219,10 +1231,6 @@
     },
     {
       "tag": "bøker",
-      "count": 7
-    },
-    {
-      "tag": "sikhisme",
       "count": 7
     },
     {
@@ -1255,10 +1263,6 @@
     },
     {
       "tag": "ordklasser",
-      "count": 7
-    },
-    {
-      "tag": "jodedom",
       "count": 7
     },
     {
@@ -3175,10 +3179,6 @@
     },
     {
       "tag": "dagsaktuelle-tema",
-      "count": 2
-    },
-    {
-      "tag": "skapelse",
       "count": 2
     },
     {

@@ -110,6 +110,13 @@ const DyreetikkBrillene = lazy(() => import('./content/interactive/DyreetikkBril
 const KiAnsvarskjeden = lazy(() => import('./content/interactive/KiAnsvarskjeden').then(m => ({ default: m.KiAnsvarskjeden })));
 const GoldenMeanSlider = lazy(() => import('./content/interactive/GoldenMeanSlider').then(m => ({ default: m.GoldenMeanSlider })));
 const SikhNavneseremoni = lazy(() => import('./content/interactive/SikhNavneseremoni').then(m => ({ default: m.SikhNavneseremoni })));
+const SkapelseVedOrd = lazy(() => import('./content/interactive/SkapelseVedOrd').then(m => ({ default: m.SkapelseVedOrd })));
+const UniversetsAandedrag = lazy(() => import('./content/interactive/UniversetsAandedrag').then(m => ({ default: m.UniversetsAandedrag })));
+const SporsmaalUtenSvar = lazy(() => import('./content/interactive/SporsmaalUtenSvar').then(m => ({ default: m.SporsmaalUtenSvar })));
+const SkapelseUtenBegynnelse = lazy(() => import('./content/interactive/SkapelseUtenBegynnelse').then(m => ({ default: m.SkapelseUtenBegynnelse })));
+const OrganisertAvMaterie = lazy(() => import('./content/interactive/OrganisertAvMaterie').then(m => ({ default: m.OrganisertAvMaterie })));
+const DeSeksPeriodene = lazy(() => import('./content/interactive/DeSeksPeriodene').then(m => ({ default: m.DeSeksPeriodene })));
+const FoerLysetFantes = lazy(() => import('./content/interactive/FoerLysetFantes').then(m => ({ default: m.FoerLysetFantes })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
 const CategoricalImperativeTester = lazy(() => import('./content/interactive/CategoricalImperativeTester').then(m => ({ default: m.CategoricalImperativeTester })));
@@ -492,6 +499,13 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     MaktensFristelse,
     GoldenMeanSlider,
     SikhNavneseremoni,
+    SkapelseVedOrd,
+    UniversetsAandedrag,
+    SporsmaalUtenSvar,
+    SkapelseUtenBegynnelse,
+    OrganisertAvMaterie,
+    DeSeksPeriodene,
+    FoerLysetFantes,
     MaatBalansen,
     ToFlomfortellinger,
     CategoricalImperativeTester,

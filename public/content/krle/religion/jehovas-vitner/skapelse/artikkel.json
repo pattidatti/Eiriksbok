@@ -1,0 +1,255 @@
+{
+    "id": "skapelse",
+    "title": "Seks dager eller seks tidsaldre?",
+    "layout": "rich",
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "jehovas-vitner",
+    "dimension": "narrative",
+    "comparison_tags": [
+        "skapelse",
+        "narrative"
+    ],
+    "category": "Jehovas vitner",
+    "readTime": "5 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jehovas vitner leser skapelsesfortellingen i 1. Mosebok bokstavelig, men mener de seks dagene var lange tidsperioder.",
+        "Begrunnelsen henter de fra selve teksten: ordet dag brukes om flere ulike lengder i Bibelen.",
+        "De mener jorda og universet fantes lenge før den første skapelsesdagen begynte.",
+        "Derfor sier de nei til at jorda er rundt 6000 år gammel, og de godtar at forskere daterer den til milliarder av år.",
+        "Målet med skapelsen er ifølge dem at jorda skal bli et paradis der mennesker lever evig."
+    ],
+    "concepts": [
+        {
+            "id": "skapelsesdag",
+            "term": "Skapelsesdag",
+            "definition": "En av de seks dagene Gud skaper på i 1. Mosebok. Jehovas vitner mener hver av dem var en lang tidsperiode."
+        },
+        {
+            "id": "jehova",
+            "term": "Jehova",
+            "definition": "Navnet Jehovas vitner bruker på Gud. De mener det gjør forholdet til Gud nærere enn å si Herren."
+        },
+        {
+            "id": "ny-verden-oversettelsen",
+            "term": "Ny verden-oversettelsen",
+            "definition": "Jehovas vitners egen bibeloversettelse. Den kom først ut på engelsk fra 1950."
+        },
+        {
+            "id": "kreasjonisme",
+            "term": "Kreasjonisme",
+            "definition": "Troen på at skapelsesfortellingen i Bibelen skal leses helt bokstavelig. Mange kreasjonister mener jorda er rundt 6000 år gammel."
+        },
+        {
+            "id": "paradis",
+            "term": "Paradis",
+            "definition": "En fullkommen jord uten sykdom og død. Jehovas vitner mener dette var hensikten med skapelsen fra begynnelsen av."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Slå opp på den aller første siden i Bibelen. Der står det at Gud skapte verden på seks dager. Så kommer spørsmålet som virker enkelt, men ikke er det: hvor lang er en dag? De fleste tenker med en gang på 24 timer. Jehovas vitner leser nøyaktig den samme setningen og svarer noe helt annet. En dag her kan ha vart i tusenvis av år."
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner er et kristent trossamfunn som vokste fram i USA på 1870-tallet, rundt bibelgruppa til Charles Taze Russell (Ringnes mfl., 2026). I 2019 var det rundt 8,6 millioner aktive medlemmer i 240 land, og omtrent 12 000 av dem bodde i Norge. De mener Bibelen er et budskap fra Gud, skrevet ned av mennesker Gud ledet, og at den er pålitelig fra første til siste side. Gud kaller de [Jehova](/krle/religion/jehovas-vitner/gudsbilde)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen bibel på første side i 1. Mosebok med lys fra vinduet",
+            "caption": "Alt starter med de første setningene i 1. Mosebok. Hvordan de skal leses, er nettopp det uenigheten handler om."
+        },
+        {
+            "type": "text",
+            "content": "Nettopp fordi de tar teksten på alvor, leser de ikke dagene som døgn. Poenget deres er greit å følge: skal du lese ordrett, må du først finne ut hva ordet faktisk betyr. Og ordet dag betyr flere forskjellige ting i Bibelen (Jehovas vitner, u.å.). Selv bruker de sin egen oversettelse, [Ny verden-oversettelsen](/krle/religion/jehovas-vitner/hellige-tekster), som kom ut på engelsk fra 1950 (Ringnes mfl., 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Hva betyr egentlig ordet dag?"
+        },
+        {
+            "type": "text",
+            "content": "Argumentene deres er hentet fra teksten selv, ikke fra naturvitenskap. Det hebraiske ordet som er oversatt med dag, kan stå for helt ulike lengder tid. Jehovas vitner peker på fire ting i Bibelen som de mener viser dette (Jehovas vitner, u.å.):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Det hebraiske ordet for dag kan bety mange forskjellige lengder, ikke bare et døgn på 24 timer.",
+                "På den første skapelsesdagen er det bare en del av døgnet som får navnet dag. Resten kalles natt.",
+                "Rett etter at de seks dagene er ferdig fortalt, omtaler teksten alle seks under ett som den dagen.",
+                "Andre steder i Bibelen sammenlignes tusen år med en eneste dag."
+            ]
+        },
+        {
+            "type": "component",
+            "name": "DeSeksPeriodene",
+            "props": {
+                "title": "Hvor lang er en skapelsesdag?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva denne lesemåten gjør med hele fortellingen. Rekkefølgen står fast: lys, himmel, hav og land, planter, sol og måne som blir synlige, dyr, og til slutt mennesket. Men klokka forsvinner. Fortellingen sier hva som skjedde og i hvilken rekkefølge, ikke hvor lang tid det tok."
+        },
+        {
+            "type": "text",
+            "content": "Den første dagen er et godt eksempel. Jehovas vitner mener den ikke handler om at lyset ble laget der og da. Sola fantes allerede. Det som skjer, er at lys når fram til overflaten av jorda, slik at det blir veksling mellom dag og natt (Jehovas vitner, u.å.). En slik endring i lufta rundt jorda kan ha tatt svært lang tid. Leser du dagene som døgn, må alt dette skje i løpet av 24 timer. Leser du dem som perioder, får naturen tid til å gjøre jobben."
+        },
+        {
+            "type": "header",
+            "text": "Jorda kan være eldre enn den første dagen"
+        },
+        {
+            "type": "text",
+            "content": "Det finnes et argument til, og det er kanskje det viktigste. Den aller første setningen i Bibelen sier at Gud i begynnelsen skapte himmelen og jorda. Først etterpå starter fortellingen om dag én. Jehovas vitner mener derfor at jorda og universet allerede fantes da den første skapelsesdagen begynte, og at Bibelen ikke sier noe om hvor lenge (Jehovas vitner, u.å.)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Hvorfor det første verset er nøkkelen",
+                "content": "Hvis 1. Mosebok 1:1 handler om noe som skjedde før dagene begynner, står det ingenting i Bibelen om hvor gammel jorda er. Da blir tallene fra geologene et spørsmål for forskningen, ikke for troen. Jehovas vitner skriver selv at de ikke har noen innvending mot troverdig forskning som viser at jorda kan være milliarder av år gammel."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Dette skiller dem fra en del andre kristne. Kreasjonisme bygger på en helt bokstavelig lesning av skapelsesfortellingen, og mange kreasjonister mener jorda er rundt 6000 år gammel (Gundersen og Elstad, 2025). Jehovas vitner avviser det tallet. Samtidig avviser de evolusjonslæren, altså tanken om at alle arter har utviklet seg fra felles opphav. De mener Gud skapte grunntypene av planter og dyr, og at variasjon innenfor hver type har kommet etterpå (Jehovas vitner, u.å.). Selv skriver de at de ikke er motstandere av vitenskap, og at ekte vitenskap og Bibelen passer sammen. Her plukker de altså fra begge hold: de tar imot geologenes tall om alder, men avviser biologenes forklaring på hvordan artene ble til."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Lagdelt fjellvegg med tydelige bergartslag i ulike farger",
+            "caption": "Geologene leser alderen til jorda ut av lagene i berget. Jehovas vitner mener slike funn ikke krasjer med Bibelen."
+        },
+        {
+            "type": "header",
+            "text": "Hensikten med det hele"
+        },
+        {
+            "type": "text",
+            "content": "For Jehovas vitner handler skapelsesfortellingen om mer enn hvordan verden ble til. Den handler om hvorfor. De mener Gud laget jorda for at mennesker skulle bo på den, og at den første hagen, Eden, var en begynnelse som skulle vokse. Adam og Eva skulle få barn, fylle jorda og gjøre hele kloden til et like godt sted å leve (Jehovas vitner, u.å.). De viser også til et vers om at Gud ikke skapte jorda forgjeves, men formet den for at noen skulle bo der."
+        },
+        {
+            "type": "text",
+            "content": "Den planen mener de fortsatt gjelder. Jehovas vitner venter på et stort oppgjør de kaller Harmageddon, og på at Jesus skal styre jorda som konge i tusen år (Ringnes mfl., 2026; Jehovas vitner, u.å.). Da skal jorda bli det den var ment å være, og mennesker skal leve evig på den uten sykdom, alderdom og død. Du kan lese mer om denne tanken i artikkelen om [paradis på jord](/krle/religion/jehovas-vitner/frelse). Skapelsen er altså ikke bare noe som skjedde en gang for lenge siden. Den er starten på noe de mener ikke er ferdig ennå."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Frodig hage med frukttrær, dyr og mennesker i rolig landskap",
+            "caption": "Ifølge Jehovas vitner var Eden bare begynnelsen. Hele jorda skulle etter hvert bli slik."
+        },
+        {
+            "type": "header",
+            "text": "Er de kreasjonister?"
+        },
+        {
+            "type": "text",
+            "content": "Svaret deres på det spørsmålet er nei, og de sier det selv rett ut: de tror at Gud skapte alt, men de er ikke enige med kreasjonismen (Jehovas vitner, u.å.). De mener også at forståelsen av Bibelen kan bli justert over tid, og beskriver det som at Gud lar nytt lys falle over teksten (Ringnes mfl., 2026). Det betyr at denne artikkelen beskriver hvordan trossamfunnet lærer i dag. Læren er felles, men medlemmene er ikke like: noen er svært opptatt av spørsmål om skapelse og naturvitenskap, mens andre bryr seg lite om detaljene. Blant kristne ellers finnes det mange andre måter å lese de samme versene på, fra helt bokstavelig til rent billedlig, og du kan sammenligne med [Skapelsen i Bibelen](/krle/religion/kristendom/skapelse)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvor lange mener Jehovas vitner at de seks skapelsesdagene var?",
+                    "Nevn to argumenter de henter fra selve bibelteksten for at dag ikke betyr 24 timer.",
+                    "Hva mener de skjedde før den første skapelsesdagen begynte?",
+                    "Hva er ifølge Jehovas vitner hensikten med at jorda ble skapt?"
+                ],
+                "reflekter": [
+                    "Jehovas vitner sier at de leser Bibelen bokstavelig, og likevel at dagene ikke er døgn. Forklar med egne ord hvordan de får dette til å henge sammen.",
+                    "Hvorfor blir spørsmålet om jordas alder mindre viktig hvis 1. Mosebok 1:1 handler om tiden før dag én?",
+                    "De godtar geologenes datering av jorda, men avviser evolusjonslæren. Hva sier det om hvordan de bruker naturvitenskap?",
+                    "Hva slags forskjell gjør det for en fortelling om den vil svare på hvordan noe skjedde, eller på hvorfor?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign denne artikkelen med Skapelsen i Bibelen. Skriv en kort tekst om hva som er likt, og hvor de to lesemåtene skiller lag.",
+                    "Finn ut hvor gammel forskerne mener jorda og universet er, og hvordan de kommer fram til tallene.",
+                    "Diskuter i klassen: Kan en religiøs fortelling og en naturvitenskapelig forklaring svare på hver sine spørsmål samtidig?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvordan forstår Jehovas vitner de seks skapelsesdagene i 1. Mosebok?",
+                        "options": [
+                            "Som seks døgn på 24 timer",
+                            "Som lange tidsperioder uten oppgitt lengde",
+                            "Som en ren fabel uten noe historisk innhold",
+                            "Som seks tusen år, ett tusen per dag"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "De mener dagene var lange tidsperioder. Bibelen sier ikke hvor lange de var, og derfor gjør ikke de det heller."
+                    },
+                    {
+                        "question": "Hvilket argument bruker de for at ordet dag ikke må bety et døgn?",
+                        "options": [
+                            "At forskerne har bevist at jorda er gammel",
+                            "At oversettelsen fra hebraisk er full av feil",
+                            "At Bibelen selv bruker ordet dag om ulike lengder tid",
+                            "At Jesus sa det direkte i Det nye testamente"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Argumentet er hentet fra teksten selv. Ordet dag brukes om flere forskjellige lengder i Bibelen, blant annet om alle seks dagene til sammen."
+                    },
+                    {
+                        "question": "Hva mener Jehovas vitner om jordas alder?",
+                        "options": [
+                            "Jorda er omtrent 6000 år gammel",
+                            "Bibelen oppgir alderen nøyaktig",
+                            "Jorda ble skapt samtidig med den første dagen",
+                            "Bibelen sier ingenting om alderen, så jorda kan godt være milliarder av år gammel"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "De mener 1. Mosebok 1:1 handler om tiden før dagene begynte. Derfor står det ingenting i Bibelen om hvor gammel jorda er."
+                    },
+                    {
+                        "question": "Hva svarer Jehovas vitner på spørsmålet om de er kreasjonister?",
+                        "options": [
+                            "Ja, de kaller seg kreasjonister",
+                            "Nei, de tror Gud skapte alt, men er uenige med kreasjonismen",
+                            "De mener spørsmålet ikke angår dem",
+                            "Ja, men bare når det gjelder mennesket"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "De skriver selv at de tror Gud skapte alt, men at flere kreasjonistiske ideer krasjer med det Bibelen faktisk sier."
+                    },
+                    {
+                        "question": "Hva er ifølge Jehovas vitner hensikten med skapelsen?",
+                        "options": [
+                            "At jorda skal bli et paradis der mennesker lever evig",
+                            "At mennesket skal komme til himmelen etter døden",
+                            "At jorda skal gå under og bli erstattet av en ny klode",
+                            "At mennesket skal finne ut alt om naturen"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "De mener Gud laget jorda for at mennesker skulle bo på den, og at hele kloden en gang skal bli et paradis."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Gundersen, D. & Elstad, H. (2025). *Kreasjonisme*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/kreasjonisme](https://snl.no/kreasjonisme)",
+                    "Jehovas vitner. (u.å.). *Do Jehovah's Witnesses Believe in Creationism?* Hentet 10.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/creationism-belief/)",
+                    "Jehovas vitner. (u.å.). *Science and the Genesis Account*. Hentet 10.08.2026 fra [jw.org](https://www.jw.org/en/library/brochures/was-life-created/science-and-the-genesis-account/)",
+                    "Jehovas vitner. (u.å.). *The Days of Creation: When Did God Begin to Create the Universe?* Hentet 10.08.2026 fra [jw.org](https://www.jw.org/en/bible-teachings/questions/days-of-creation-universe/)",
+                    "Jehovas vitner. (u.å.). *Why Did God Create the Earth?* Hentet 10.08.2026 fra [jw.org](https://www.jw.org/en/library/brochures/good-news-from-god/why-did-god-create-the-earth/)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

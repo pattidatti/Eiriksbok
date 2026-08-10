@@ -1,0 +1,267 @@
+{
+    "id": "skapelse",
+    "title": "Verden uten begynnelse",
+    "layout": "rich",
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "hinduisme",
+    "dimension": "narrative",
+    "comparison_tags": ["skapelse", "narrative"],
+    "category": "Hinduismen",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Hinduismen har ingen enkelt skapelsesfortelling, men flere som lever side om side.",
+        "Tiden går i ring: verden skapes, består og går under, om og om igjen.",
+        "En dag for guden Brahma varer 4 320 millioner år, og natten er like lang.",
+        "Purusha-hymnen forteller at verden ble til av kroppen til et urvesen som ble ofret.",
+        "Nasadiya-hymnen i Rigveda svarer ikke, men spør: hvem vet egentlig hvordan det begynte?"
+    ],
+    "concepts": [
+        {
+            "id": "syklisk-tid",
+            "term": "Syklisk tid",
+            "definition": "En tidsforståelse der tiden går i ring. Verden skapes, består og går under, og så begynner alt på nytt."
+        },
+        {
+            "id": "mahayuga",
+            "term": "Mahayuga",
+            "definition": "En skapelsesperiode på 4 320 000 menneskeår. Den er delt inn i fire tidsaldre."
+        },
+        {
+            "id": "kalpa",
+            "term": "Kalpa",
+            "definition": "En verdensperiode på 4 320 millioner år. Den regnes som én dag for guden Brahma."
+        },
+        {
+            "id": "kaliyuga",
+            "term": "Kaliyuga",
+            "definition": "Den siste og dårligste av de fire tidsaldrene. Mange hinduer mener vi lever i den nå."
+        },
+        {
+            "id": "purusha",
+            "term": "Purusha",
+            "definition": "Urvesenet i Rigveda. Verden blir til av kroppen hans når han blir ofret."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Når begynte alt sammen? De fleste svarer med et tidspunkt. Et smell, en dag, et øyeblikk der ingenting ble til noe. Stiller du det samme spørsmålet til en hindu, kan du få et motspørsmål tilbake: Hvilken begynnelse tenker du på? For i hinduismen har verden blitt skapt før. Mange ganger."
+        },
+        {
+            "type": "text",
+            "content": "Hinduismen har ingen enkelt skapelsesfortelling. De hellige tekstene rommer flere, og noen av dem passer dårlig sammen. Det er ikke en glipp som ingen har rukket å rette opp. Hinduisme er et samlenavn for et mangfold av religiøse tradisjoner som har vokst fram på det indiske subkontinentet gjennom flere tusen år, og religionen har verken et sentrum eller en sentral organisasjon (Kværne & Jacobsen, 2026). Ingen har myndighet til å bestemme at én fortelling er den eneste rette. Hinduismen har tre store hovedretninger som dyrker hver sin gud eller gudinne mest, og de vektlegger ikke de samme tekstene (Kværne & Jacobsen, 2026). Derfor er svaret på hvordan verden ble til, litt ulikt avhengig av hvem du spør."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Stjernehimmel over indisk tempel like før soloppgang",
+            "caption": "Der mange religioner starter med en første morgen, starter hinduismen midt i noe som allerede har skjedd utallige ganger."
+        },
+        {
+            "type": "text",
+            "content": "Det som går igjen, er ikke én fortelling, men én form: sirkelen. Hinduismen har en syklisk tidsforståelse. Det betyr at tiden går i ring. Verden blir skapt, den består en stund, og så går den under, før alt begynner på nytt (Løøv, 2024). En rett strek har et startpunkt. En sirkel har ingen."
+        },
+        {
+            "type": "header",
+            "text": "Brahmas dag og natt"
+        },
+        {
+            "type": "text",
+            "content": "Tre guder deler på arbeidet i denne kretsgangen. Brahma skaper verden, Vishnu holder den i gang, og Shiva løser den opp igjen. De tre kalles trimurti (Jacobsen, 2022). Du kan lese mer om dem i artikkelen om [Brahman og guder](/krle/religion/hinduisme/gudsbilde). Tekstene setter tall på hvor lenge hver runde varer, og tallene er svimlende. Trykk deg gjennom noen runder i hjulet lenger nede, så ser du hvordan det henger sammen."
+        },
+        {
+            "type": "list",
+            "items": [
+                "En skapelsesperiode, kalt mahayuga, varer 4 320 000 menneskeår.",
+                "En dag for Brahma er tusen slike perioder, altså 4 320 millioner år.",
+                "En natt for Brahma er nøyaktig like lang. Da finnes ikke verden.",
+                "Brahma lever i 100 av sine egne år. Så kommer det en ny Brahma, og alt starter forfra."
+            ]
+        },
+        {
+            "type": "component",
+            "name": "UniversetsAandedrag",
+            "props": {
+                "title": "Universets åndedrag"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Perioden mellom to slike oppløsninger kalles en kalpa (Store norske leksikon, 2025). Legg merke til hva som ikke skjer når du trykker deg bakover i hjulet. Du kommer aldri fram til en første runde. Uansett hvor langt tilbake du går, ligger det alltid en kalpa til bak den forrige. Det er dette som skiller hinduismen tydeligst fra religioner der Gud skaper verden én gang. Spørsmålet er ikke hva som skjedde i det aller første øyeblikket, for et slikt øyeblikk finnes ikke i denne måten å regne tid på."
+        },
+        {
+            "type": "header",
+            "text": "Vi lever i den dårligste tiden"
+        },
+        {
+            "type": "text",
+            "content": "Hver skapelsesperiode er delt inn i fire tidsaldre. Verden begynner fullkommen og blir gradvis dårligere for hver alder som går (Løøv, 2024). Den siste og verste heter kaliyuga, og en vanlig oppfatning blant hinduer er at det er der vi befinner oss nå. Det får følger for hvordan man ser på seg selv. I kaliyuga forventer man ikke at mennesker skal klare å leve opp til den høyeste dharma, altså den rette måten å leve på. At folk feiler, er ventet. Derfor regnes overbærenhet med menneskelig svakhet som en god egenskap nettopp i vår tidsalder (Jacobsen, 2025)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Brahma er ikke en evig skapergud",
+                "content": "Det er lett å tenke at Brahma er hinduismens utgave av Gud i Bibelen. Det stemmer dårlig. Brahma skaper verden, men han er ikke evig: han lever i 100 av sine egne år, og så kommer det en ny Brahma. Han er heller ikke den viktigste guden i praksis. I dag er få templer viet til ham, mens Vishnu, Shiva og gudinnen Durga står langt mer sentralt (Jacobsen, 2022; Kværne & Jacobsen, 2026). Brahma må heller ikke forveksles med brahman, som er navnet på den guddommelige enheten i verden og universet."
+            }
+        },
+        {
+            "type": "text",
+            "content": "At vi lever i den verste tidsalderen høres dystert ut. Men undergangen er ikke slutten på fortellingen slik den er i en religion med rett tidslinje. Den er halvveis. Etter kaliyuga kommer oppløsningen, og etter oppløsningen kommer en ny og fullkommen verden. Det er ikke et endelig punktum, bare et komma."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Steinrelieff av dansende Shiva omgitt av en ring av flammer",
+            "caption": "Shiva løser verden opp igjen. I hinduistisk tenkning er ødeleggelsen en betingelse for at noe nytt skal kunne skapes."
+        },
+        {
+            "type": "header",
+            "text": "Verden av en kropp"
+        },
+        {
+            "type": "text",
+            "content": "En av de eldste fortellingene står i Rigveda, den eldste av de fire vedaene. Rigveda inneholder 1028 sanger fordelt på ti bøker, og de fleste forskere mener at hovedmengden av dem ble diktet i århundrene før år 1000 fvt. (Store norske leksikon, 2026). I den tiende boka, sang 90, møter vi Purusha. Han er et urvesen med tusen hoder, tusen øyne og tusen føtter."
+        },
+        {
+            "type": "text",
+            "content": "Gudene ofrer Purusha, og av kroppen hans blir verden til. Månen kommer fra tankene hans, sola fra øynene, himmelen fra hodet og jorda fra føttene (Wikipedia, 2026b). Legg merke til at ingenting blir skapt av ingenting her. Noe som allerede fantes, blir gjort om til noe annet. Den samme tanken finnes i mange gamle skapelsesmyter, der kroppen til et urvesen blir til verden (Kværne, Groth & Løøv, 2025)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Håndskrevet vedatekst på palmeblad med sanskrittegn",
+            "caption": "Rigveda ble sunget og husket lenge før den ble skrevet ned. Skapelsessangene står i den tiende og yngste boka."
+        },
+        {
+            "type": "header",
+            "text": "Hymnen som ikke svarer"
+        },
+        {
+            "type": "text",
+            "content": "I den samme tiende boka står sang 129, som kalles Nasadiya-hymnen. Den begynner med at det verken fantes det som er, eller det som ikke er. Ingen luft, ingen himmel over den, verken død eller udødelighet. Så stiller hymnen spørsmålet rett ut: hvem vet egentlig hvor alt kom fra? Gudene selv kom til etter at verden ble til, står det, så hvordan skulle de kunne vite det? (Wikipedia, 2026a)"
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Hvor hele skapelsen kom fra, og om han formet den eller ikke - han som ser ned på den fra den høyeste himmelen, han vet det. Eller kanskje vet ikke han det heller.",
+                "author": "Rigveda 10.129, Nasadiya-hymnen"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Tenk over hvor uvanlig det er. En hellig tekst som ender med å innrømme at den ikke vet. Mange hinduer leser dette som ydmykhet: verden er større enn det et menneske kan fatte. Andre legger mest vekt på fortellingene i de senere tekstene, der Brahma skaper og Shiva ødelegger. Purusha-hymnen har på sin side et vers som er blitt mye omstridt. Der står det at de fire varna, de gamle samfunnsklassene i India, kom fra munnen, armene, lårene og føttene til urvesenet. Mange forskere mener at nettopp dette verset ble lagt til senere for å gi de sosiale forskjellene et guddommelig forsvar (Wikipedia, 2026b). Hvordan slike tekster skal leses i dag, er hinduer dypt uenige om."
+        },
+        {
+            "type": "text",
+            "content": "For mange hinduer er ikke målet å forstå begynnelsen. Målet er å komme ut av kretsløpet. Det kalles moksha, og du kan lese mer om det i artikkelen om [frelse i hinduismen](/krle/religion/hinduisme/frelse). Vil du sammenligne, kan du se hvordan [buddhismen klarer seg helt uten en skapergud](/krle/religion/buddhisme/gudsbilde), eller lese mer om tekstene fortellingene står i, i artikkelen om [Vedaene og Bhagavad Gita](/krle/religion/hinduisme/hellige-tekster)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr det at hinduismen har en syklisk tidsforståelse?",
+                    "Hvor lang er en dag for Brahma, og hva skjer i natten hans?",
+                    "Hva heter tidsalderen mange hinduer mener vi lever i nå, og hvordan beskrives den?",
+                    "Hvordan blir verden til i Purusha-hymnen?"
+                ],
+                "reflekter": [
+                    "Nasadiya-hymnen sier at kanskje ikke engang guden vet hvordan alt begynte. Hvorfor tror du en hellig tekst kan velge å ikke svare?",
+                    "Hva er forskjellen på å tenke at tiden går i en rett strek og at den går i ring? Hva gjør det med hvordan man ser på verdens undergang?",
+                    "Artikkelen sier at ingenting blir skapt av ingenting i Purusha-hymnen. Hvorfor er det en viktig forskjell fra en skapelse ut av intet?",
+                    "Mange forskere mener verset om de fire samfunnsklassene ble lagt til senere. Hvorfor kan det være viktig å vite hvem som skrev en tekst, og når?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign skapelsen i hinduismen med skapelsen i Bibelen. Lag en tabell med tre likheter og tre forskjeller.",
+                    "Regn ut hvor mange menneskeår en full runde med Brahmas dag og natt varer, og sammenlign tallet med det forskere sier om universets alder.",
+                    "Skriv en kort tekst der du bruker Nasadiya-hymnens form: still tre spørsmål om verden uten å svare på dem."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva menes med at hinduismen har en syklisk tidsforståelse?",
+                        "options": [
+                            "At verden ble skapt på sju dager",
+                            "At tiden går i ring, og at verden skapes og går under om og om igjen",
+                            "At tiden går saktere jo eldre verden blir",
+                            "At alle hinduer feirer nyttår på samme dag"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Verden blir skapt, består en stund og går under, og så begynner alt på nytt. Derfor har den ingen absolutt begynnelse."
+                    },
+                    {
+                        "question": "Hvor lenge varer én dag for Brahma?",
+                        "options": [
+                            "4 320 år",
+                            "4 320 000 år",
+                            "4 320 millioner år",
+                            "100 år"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "En dag for Brahma er tusen skapelsesperioder på 4 320 000 år hver, altså 4 320 millioner år. Natten er like lang."
+                    },
+                    {
+                        "question": "Hvilken tidsalder mener mange hinduer at vi lever i nå?",
+                        "options": [
+                            "Den første og fullkomne",
+                            "Kaliyuga, den siste og dårligste",
+                            "En alder helt uten guder",
+                            "Den evige alderen etter oppløsningen"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Kaliyuga er den siste og verste av de fire tidsaldrene. Etter den kommer oppløsningen, og så en ny fullkommen verden."
+                    },
+                    {
+                        "question": "Hva forteller Purusha-hymnen i Rigveda?",
+                        "options": [
+                            "At Gud skapte verden med ordet sitt",
+                            "At verden alltid har vært helt uforandret",
+                            "At verden blir til av kroppen til et urvesen som blir ofret",
+                            "At verden ble til av et lyn i havet"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Purusha ofres, og månen kommer fra tankene hans, sola fra øynene, himmelen fra hodet og jorda fra føttene."
+                    },
+                    {
+                        "question": "Hva er det spesielle med Nasadiya-hymnen?",
+                        "options": [
+                            "Den gir en detaljert oppskrift på hvordan verden ble laget",
+                            "Den svarer ikke, men spør om noen i det hele tatt kan vite hvordan alt begynte",
+                            "Den er den eldste teksten i verden",
+                            "Den forbyr hinduer å tenke på skapelsen"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Hymnen sier at gudene kom til etter skapelsen, og at kanskje ikke engang den som ser ned fra den høyeste himmelen vet svaret."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+                    "Jacobsen, K. A. (2022). *Brahma*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/Brahma](https://snl.no/Brahma)",
+                    "Jacobsen, K. A. (2025). *Dharma*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/dharma](https://snl.no/dharma)",
+                    "Løøv, M. (2024). *Verdens undergang*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/verdens_undergang](https://snl.no/verdens_undergang)",
+                    "Kværne, P., Groth, B. & Løøv, M. (2025). *Skapelsesmyter*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/skapelsesmyter](https://snl.no/skapelsesmyter)",
+                    "Store norske leksikon. (2025). *Kalpa*. Hentet 10.08.2026 fra [snl.no/kalpa](https://snl.no/kalpa)",
+                    "Store norske leksikon. (2026). *Rigveda*. Hentet 10.08.2026 fra [snl.no/Rigveda](https://snl.no/Rigveda)",
+                    "Wikipedia. (2026a, 25. april). *Nasadiya Sukta*. Hentet 10.08.2026 fra [en.wikipedia.org/wiki/Nasadiya_Sukta](https://en.wikipedia.org/wiki/Nasadiya_Sukta)",
+                    "Wikipedia. (2026b, 19. juni). *Purusha Sukta*. Hentet 10.08.2026 fra [en.wikipedia.org/wiki/Purusha_Sukta](https://en.wikipedia.org/wiki/Purusha_Sukta)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

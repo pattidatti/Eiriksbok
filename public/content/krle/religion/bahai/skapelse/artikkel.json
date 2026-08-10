@@ -1,0 +1,251 @@
+{
+    "id": "skapelse",
+    "title": "Skapelsen som aldri begynte",
+    "layout": "rich",
+    "subject": "krle",
+    "topic": "religioner",
+    "religion": "bahai",
+    "dimension": "narrative",
+    "comparison_tags": ["skapelse", "narrative"],
+    "category": "Bahá'í",
+    "readTime": "6 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Bahá'í-troen lærer at Guds skaping verken har begynt eller kan ta slutt.",
+        "Argumentet er enkelt: en skaper uten noe skapt er ingen skaper.",
+        "Gud regnes som umulig å fatte, og blir bare kjent gjennom sendebudene.",
+        "Skriftene sier at alt som finnes, har vært til før, men i andre former.",
+        "Bahá'í-troen mener vitenskap og religion skal stemme overens, ikke krangle."
+    ],
+    "concepts": [
+        {
+            "id": "manifestasjon",
+            "term": "manifestasjon",
+            "definition": "Et sendebud fra Gud i menneskelig form. Bahá'íer regner blant andre Abraham, Moses, Jesus, Muhammad, Báb og Bahá'u'lláh som manifestasjoner."
+        },
+        {
+            "id": "progressiv-apenbaring",
+            "term": "progressiv åpenbaring",
+            "definition": "Tanken om at Gud sender nye sendebud etter hvert som menneskeheten er klar for mer. Hvert sendebud bygger videre på de forrige."
+        },
+        {
+            "id": "ukjennbar",
+            "term": "ukjennbar",
+            "definition": "At noe ikke kan forstås fullt ut av mennesker. Bahá'íer mener Guds vesen er slik, uansett hvor mye vi lærer."
+        },
+        {
+            "id": "visdommens-tavle",
+            "term": "Visdommens tavle",
+            "definition": "Et brev Bahá'u'lláh skrev om visdom og verdens opphav. Der står det at det som finnes, har vært til før, men i andre former."
+        },
+        {
+            "id": "universell-syklus",
+            "term": "universell syklus",
+            "definition": "En lang periode i verdenshistorien som avløses av en ny. Bahá'í-skriftene beskriver at slike sykluser følger etter hverandre uten at noen av dem er den første."
+        }
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Spol filmen om universet bakover. Stjernene trekker seg sammen, jorda forsvinner, alt blir mindre og varmere. Til slutt sitter du igjen med det aller første bildet. Der begynner alt. Nesten alle skapelsesfortellinger er bygd slik, og mange tenker på Big Bang på samme måten: ett øyeblikk der ingenting blir til noe."
+        },
+        {
+            "type": "text",
+            "content": "I bahá'í-troen finnes ikke det første bildet. Bahá'u'lláh, som grunnla religionen på 1800-tallet, skrev at Guds skaping verken har hatt noen begynnelse eller kan få noen slutt (Bahá'u'lláh, u.å.-a). Det har altså aldri vært et tidspunkt da ingenting fantes. Det høres kanskje umulig ut. Men bak påstanden ligger et argument du kan følge helt selv, uten å kunne noe som helst om fysikk. Det handler ikke om hvor gammelt universet er, men om hva slags Gud bahá'íer mener står bak."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Stjernehimmel som fortsetter ut over begge bildekantene",
+            "caption": "Bahá'í-skriftene beskriver tilværelsen som uten start og uten slutt. Det finnes ikke noe første bilde å spole tilbake til."
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í er en av verdens yngste religioner. I 1844 sto en ung mann i Iran fram og kalte seg Báb, som betyr porten. Etter at han ble henrettet i 1850, tok Mirza Husayn-Ali Nuri over ledelsen av tilhengerne og fikk navnet [Bahá'u'lláh](/krle/religion/bahai/grunnleggere), som betyr Guds herlighet. I dag er det rundt seks millioner bahá'íer i verden, og omtrent 1100 i Norge. Bahá'íer mener at det bare finnes én Gud, og at de store religionene bygger på den samme sannheten (Vogt & Winje, 2026). Flere av [de sentrale trekkene i troen](/krle/religion/bahai/sentrale-trekk) handler nettopp om enhet."
+        },
+        {
+            "type": "header",
+            "text": "En skaper må ha noe å skape"
+        },
+        {
+            "type": "text",
+            "content": "Argumentet ble tydeligst forklart av 'Abdu'l-Bahá, sønnen til Bahá'u'lláh. Han pekte på at ord som skaper, herre og hersker ikke gir mening alene. En herre uten undersåtter går ikke an å forestille seg, og en hersker uten folk finnes ikke ('Abdu'l-Bahá, u.å.). Slike titler henger på at det finnes noen på den andre siden. Tar du bort den andre siden, faller tittelen sammen. Poenget er ikke at Gud trenger oss for å eksistere. Poenget er at ordet skaper ikke betyr noe hvis det aldri har vært noe å skape."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Gud har alltid vært til, uten begynnelse.",
+                "En av Guds egenskaper er at han skaper.",
+                "En skaper uten noe skapt er ingen skaper, like lite som en konge uten rike er konge.",
+                "Altså må det alltid ha vært noe skapt.",
+                "Da kan ikke skapelsen ha hatt en første dag."
+            ]
+        },
+        {
+            "type": "component",
+            "name": "SkapelseUtenBegynnelse",
+            "props": {
+                "title": "Tittelen som faller sammen"
+            }
+        },
+        {
+            "type": "text",
+            "content": "'Abdu'l-Bahá trakk konsekvensen helt ut. Å tenke seg en tid da ingenting var skapt, ville være det samme som å nekte for at Gud er Gud ('Abdu'l-Bahá, u.å.). Legg merke til hva slags argument dette er. Det er et tankeargument, ikke en måling. Ingen har målt at universet er uendelig gammelt. Bahá'íer kommer fram til påstanden ved å tenke seg fram fra hva Gud er, ikke ved å se ut i verdensrommet. Skriftene forteller heller ikke hvordan universet er skrudd sammen, og bahá'íer forstår detaljene på ulike måter."
+        },
+        {
+            "type": "header",
+            "text": "En Gud ingen kan fatte"
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor snakker bahá'íer så mye om hva Gud gjør, og så lite om hva Gud er? Svaret er at de mener Gud ikke lar seg fatte. Det er umulig for noe menneskesinn å forstå Guds virkelighet, står det hos det internasjonale bahá'í-samfunnet (Bahá'í International Community, u.å.-a). Ikke bare vanskelig. Umulig. Du kan lese mer om denne tanken i artikkelen om [en ukjennbar Gud](/krle/religion/bahai/gudsbilde)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Hver eneste skapte ting i hele universet er bare en dør som fører inn til kunnskapen om ham.",
+                "author": "Bahá'u'lláh, sitert på bahai.org"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Hvis Gud ikke kan nås direkte, hvordan kan mennesker vite noe i det hele tatt? Bahá'íer svarer at Gud sender manifestasjoner, altså sendebud som viser Guds egenskaper i menneskelig form. Abraham, Moses, Jesus, Muhammad, Báb og Bahá'u'lláh regnes alle som slike sendebud (Bahá'í International Community, u.å.-b). Hvert av dem kom med det menneskeheten var klar for på sin tid. Skriftene Bahá'u'lláh selv skrev, blant annet lovboka [Kitáb-i-Aqdas](/krle/religion/bahai/hellige-tekster), er det bahá'íer bygger troen sin på i dag."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Rekke med halvåpne dører i lyst landskap mot horisonten",
+            "caption": "Bahá'u'lláh kalte hver skapt ting en dør inn til kunnskapen om Gud. Selve Gud blir aldri synlig."
+        },
+        {
+            "type": "header",
+            "text": "Alt har vært til før, men i andre former"
+        },
+        {
+            "type": "text",
+            "content": "I et brev som kalles Visdommens tavle, skrev Bahá'u'lláh at det som finnes, har vært til før, men ikke i den formen du ser i dag (Bahá'u'lláh, u.å.-b). Det er en viktig setning. Den sier ikke at verden alltid har sett ut som nå. Fjell, planeter og dyrearter kommer og går. Det som ikke tar slutt, er selve tilværelsen. Stoffet skifter form, om og om igjen, uten at noen av formene er den aller første."
+        },
+        {
+            "type": "text",
+            "content": "'Abdu'l-Bahá beskrev det samme som en langsom utvikling. Materien har endret seg gjennom enorme tidsrom, jorda har gått fra én tilstand til en annen, og livet har fulgt etter ('Abdu'l-Bahá, u.å.). Han mente likevel at mennesket alltid har vært en egen art. Skriftene beskriver også at verden går i store sykluser som avløser hverandre. Hver syklus har en start, men rekka av sykluser har det ikke. Tenk på det som kapitler i en bok der du aldri finner kapittel én."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Fjell som forvitrer til sand ved siden av nytt fjell som reiser seg",
+            "caption": "Formene skifter hele tiden. Det som aldri tar slutt, er at det finnes noe i det hele tatt."
+        },
+        {
+            "type": "header",
+            "text": "Krasjer dette med naturvitenskapen?"
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í-troen har et eget prinsipp om at vitenskap og religion skal stemme overens. Religion uten vitenskap blir fort til overtro, mens vitenskap uten religion blir ren materialisme (Bahá'í International Community, u.å.-c). Derfor er ikke Big Bang noe problem for de fleste bahá'íer. Mange leser teorien som en forklaring på hvordan vårt univers fikk den formen det har nå, ikke som et bevis på at tilværelsen startet fra ingenting. Noen peker også på at enkelte fysikere har lagt fram modeller der universet verken har en start eller en slutt (Langness, 2016). Andre bahá'íer synes de to bildene er vanskeligere å få til å passe sammen, og det er lov å være uenig. Det som står fast i skriftene, er den korte setningen fra begynnelsen: Guds skaping har aldri startet, og den tar aldri slutt."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mener bahá'íer med at skapelsen ikke har noen begynnelse?",
+                    "Hvilket argument bruker 'Abdu'l-Bahá for å vise at det alltid må ha vært noe skapt?",
+                    "Hvorfor sier bahá'íer at Gud ikke kan fattes av mennesker?",
+                    "Hva er en manifestasjon i bahá'í-troen? Nevn tre av dem."
+                ],
+                "reflekter": [
+                    "Finn tre andre ord som ikke gir mening uten et motstykke, og forklar hvorfor de faller sammen uten det.",
+                    "Bahá'u'lláh skriver at alt har vært til før, men i andre former. Hva betyr det for spørsmålet om hva som egentlig er nytt i verden?",
+                    "Er et tankeargument like sterkt som en måling? Begrunn svaret ditt.",
+                    "Sammenlign med en skapelsesfortelling du kjenner fra før. Hva blir annerledes når det ikke finnes noen første dag?"
+                ],
+                "gaaVidere": [
+                    "Skriv et kort svar til en som sier at Big Bang beviser at bahá'í-troen tar feil. Bruk minst to opplysninger fra artikkelen.",
+                    "Undersøk hvordan en annen religion beskriver begynnelsen, og lag en tabell med tre likheter og tre forskjeller.",
+                    "Diskuter i klassen: Svarer vitenskap og religion på det samme spørsmålet, eller på ulike spørsmål?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva lærer bahá'í-troen om når skapelsen begynte?",
+                        "options": [
+                            "Den begynte da Báb sto fram i 1844",
+                            "Den har ingen begynnelse og kan ikke få noen slutt",
+                            "Den begynte for nøyaktig 6000 år siden",
+                            "Den begynte da det første mennesket ble skapt"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Bahá'u'lláh skrev at Guds skaping verken har hatt noen begynnelse eller kan få noen slutt."
+                    },
+                    {
+                        "question": "Hvilket argument bruker 'Abdu'l-Bahá for at det alltid må ha vært noe skapt?",
+                        "options": [
+                            "Vitenskapen har målt at universet er uendelig gammelt",
+                            "Det står i alle hellige bøker",
+                            "En hersker uten folk er ingen hersker, og en skaper uten skaperverk er ingen skaper",
+                            "Fordi tiden ikke kan måles"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Titler som hersker og skaper krever et motstykke. Uten skaperverk faller tittelen skaper sammen."
+                    },
+                    {
+                        "question": "Hva mener bahá'íer om menneskers mulighet til å forstå Gud?",
+                        "options": [
+                            "Alle kan forstå Gud fullt ut hvis de ber nok",
+                            "Bare prester kan forstå Gud",
+                            "Gud kan ikke fattes av noe menneskesinn, men blir kjent gjennom sendebudene",
+                            "Gud kan forstås gjennom naturvitenskapelige forsøk"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Bahá'íer mener Guds virkelighet er umulig å fatte. Kunnskap om Gud kommer gjennom manifestasjonene."
+                    },
+                    {
+                        "question": "Hva skrev Bahá'u'lláh i Visdommens tavle om det som finnes?",
+                        "options": [
+                            "At alt ble laget av ingenting på én dag",
+                            "At alt som finnes, har vært til før, men ikke i den formen vi ser i dag",
+                            "At verden er en illusjon",
+                            "At bare mennesket er virkelig skapt"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Formene skifter hele tiden, men selve tilværelsen tar ikke slutt og har ikke noen start."
+                    },
+                    {
+                        "question": "Hvordan ser bahá'í-troen på forholdet mellom vitenskap og religion?",
+                        "options": [
+                            "Vitenskapen må alltid vike for religionen",
+                            "De skal stemme overens, og trenger hverandre",
+                            "De har ingenting med hverandre å gjøre",
+                            "Religion skal bare handle om moral, aldri om verden"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Religion uten vitenskap blir lett overtro, og vitenskap uten religion blir ren materialisme."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Vogt, K. & Winje, G. (2026). *Bahai*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/bahai](https://snl.no/bahai)",
+                    "Bahá'u'lláh. (u.å.-a). *Gleanings from the Writings of Bahá'u'lláh*, avsnitt XXVI. Bahá'í Reference Library. Hentet 10.08.2026 fra [bahai.org](https://www.bahai.org/library/authoritative-texts/bahaullah/gleanings-writings-bahaullah/3)",
+                    "Bahá'u'lláh. (u.å.-b). *Lawh-i-Hikmat (Visdommens tavle)*. I *Tablets of Bahá'u'lláh Revealed After the Kitáb-i-Aqdas*. Bahá'í Reference Library. Hentet 10.08.2026 fra [bahai.org](https://www.bahai.org/library/authoritative-texts/bahaullah/tablets-bahaullah/5)",
+                    "'Abdu'l-Bahá. (u.å.). *The Origin of the Universe and the Evolution of Man*. I *Some Answered Questions*. Hentet 10.08.2026 fra [oceanoflights.org](https://oceanoflights.org/abdul-baha-bkw22-4-02-en/)",
+                    "Bahá'í International Community. (u.å.-a). *God and His Creation*. Hentet 10.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/god-his-creation/)",
+                    "Bahá'í International Community. (u.å.-b). *Revelation*. Hentet 10.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/god-his-creation/revelation/)",
+                    "Bahá'í International Community. (u.å.-c). *Science and Religion*. Hentet 10.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/god-his-creation/ever-advancing-civilization/science-religion)",
+                    "Langness, D. (2016). *What if the Universe Had No Beginning?* BahaiTeachings.org. Hentet 10.08.2026 fra [bahaiteachings.org](https://bahaiteachings.org/what-if-the-universe-had-no-beginning/)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
