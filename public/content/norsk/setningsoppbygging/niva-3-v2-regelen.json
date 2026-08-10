@@ -40,7 +40,18 @@
         },
         {
             "type": "text",
-            "content": "Når vi starter setningen med noe annet enn Subjektet (for eksempel et tidsadverb som \"I dag\"), må Subjektet og Verbalet bytte plass. Dette kaller vi inversjon.\n\n*   Vanlig: *Jeg (S) går (V) på skolen i dag.* (S-V-A)\n*   Inversjon: *I dag (A) går (V) jeg (S) på skolen.* (A-V-S)\n\nLegg merke til at verbet (går) står trygt på plass nummer 2 i begge setningene!"
+            "content": "Når vi starter setningen med noe annet enn Subjektet (for eksempel et tidsadverb som \"I dag\"), må Subjektet og Verbalet bytte plass. Dette kaller vi inversjon."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Vanlig: *Jeg (S) går (V) på skolen i dag.* (S-V-A)",
+                "Inversjon: *I dag (A) går (V) jeg (S) på skolen.* (A-V-S)"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til at verbet (går) står trygt på plass nummer 2 i begge setningene!"
         },
         {
             "type": "header",

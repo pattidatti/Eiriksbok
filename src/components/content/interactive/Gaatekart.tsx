@@ -31,7 +31,9 @@ interface Gaate {
     hook: string;
     stake: string;
     disagree: string;
-    href: string;
+    // Valgfri: gåter vi ennå ikke har skrevet artikkel om vises som kort uten
+    // «Utforsk gåten»-knapp, slik at prikken ikke leder til en død lenke.
+    href?: string;
 }
 
 interface GaatekartProps {
@@ -219,13 +221,19 @@ export function Gaatekart({ title, intro, mysteries }: GaatekartProps) {
                             </div>
                         </div>
 
-                        <Link
-                            to={selected.href}
-                            className={`mt-4 inline-flex items-center gap-1.5 rounded-lg bg-slate-800 px-4 py-2 text-sm font-bold text-white transition hover:bg-slate-900`}
-                        >
-                            Utforsk gåten
-                            <ArrowRight className="h-4 w-4" />
-                        </Link>
+                        {selected.href ? (
+                            <Link
+                                to={selected.href}
+                                className={`mt-4 inline-flex items-center gap-1.5 rounded-lg bg-slate-800 px-4 py-2 text-sm font-bold text-white transition hover:bg-slate-900`}
+                            >
+                                Utforsk gåten
+                                <ArrowRight className="h-4 w-4" />
+                            </Link>
+                        ) : (
+                            <p className="mt-4 text-sm font-medium text-slate-500">
+                                Egen artikkel om denne gåten kommer.
+                            </p>
+                        )}
                     </motion.div>
                 )}
             </AnimatePresence>

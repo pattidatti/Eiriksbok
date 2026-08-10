@@ -12,12 +12,28 @@
         {
             "type": "text",
             "title": "1. Noter (Det universelle språket)",
-            "content": "Noter brukes av nesten alle instrumenter, spesielt piano, blåseinstrumenter og orkestre. Systemet med fem notelinjer har vi arvet helt fra middelalderen (Haug, 2025). \n\n*   Notelinjer: Fem linjer som forteller oss hvor lys eller mørk tonen er (Holter, 2025).\n*   G-nøkkel: Symbolet i starten som forteller oss at \"G\" ligger på den andre linjen nedenfra (Holter, 2024).\n*   Noter: Sirklene som forteller oss hvilken tone vi skal spille og hvor lenge. Plasseringen viser tonehøyden, mens formen på noten viser hvor lenge den varer (Holter, 2025)."
+            "content": "Noter brukes av nesten alle instrumenter, spesielt piano, blåseinstrumenter og orkestre. Systemet med fem notelinjer har vi arvet helt fra middelalderen (Haug, 2025)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Notelinjer: Fem linjer som forteller oss hvor lys eller mørk tonen er (Holter, 2025).",
+                "G-nøkkel: Symbolet i starten som forteller oss at \"G\" ligger på den andre linjen nedenfra (Holter, 2024).",
+                "Noter: Sirklene som forteller oss hvilken tone vi skal spille og hvor lenge. Plasseringen viser tonehøyden, mens formen på noten viser hvor lenge den varer (Holter, 2025)."
+            ]
         },
         {
             "type": "text",
             "title": "2. Tabulatur (Gitaristens bestevenn)",
-            "content": "For gitar og bass bruker vi ofte TAB (Tabulatur). Det er mye enklere å lese! Tabulatur er ikke noe nytt påfunn: allerede på 1400-tallet skrev man musikk for lutt og gitar med tall og bokstaver som viste hvor fingrene skulle settes (Haug, 2025).\n\n*   6 linjer: Representerer de 6 strengene på gitaren (Ledang & Aksdal, 2025).\n*   Tall: Forteller hvilket bånd du skal trykke på (Encyclopaedia Britannica, u.å.).\n*   0: Betyr \"åpen streng\" (du trykker ikke inn noe) (Encyclopaedia Britannica, u.å.)."
+            "content": "For gitar og bass bruker vi ofte TAB (Tabulatur). Det er mye enklere å lese! Tabulatur er ikke noe nytt påfunn: allerede på 1400-tallet skrev man musikk for lutt og gitar med tall og bokstaver som viste hvor fingrene skulle settes (Haug, 2025)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "6 linjer: Representerer de 6 strengene på gitaren (Ledang & Aksdal, 2025).",
+                "Tall: Forteller hvilket bånd du skal trykke på (Encyclopaedia Britannica, u.å.).",
+                "0: Betyr \"åpen streng\" (du trykker ikke inn noe) (Encyclopaedia Britannica, u.å.)."
+            ]
         },
         {
             "type": "text",

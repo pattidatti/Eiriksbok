@@ -177,21 +177,42 @@ export const mapContentToPresentation = (
     }
     // C. Map Content Blocks (Standard Articles)
     else if (contentBlocks.length > 0) {
+        // Siste overskrift vi har sett. Brukes som tittel på list-blokker, som
+        // ikke har egen tittel — uten dette ville lista havnet på en slide som
+        // bare het det samme som artikkelen.
+        let lastHeading: string | undefined;
+
         contentBlocks.forEach((block, index) => {
-            if (block.type === 'text' || block.type === 'header') {
+            if (block.type === 'text' || block.type === 'header' || block.type === 'subheader') {
+                const isHeading = block.type === 'header' || block.type === 'subheader';
+                if (isHeading && block.content) lastHeading = block.content;
                 const blockTitle =
                     ('title' in block ? block.title : undefined) ||
-                    (block.type === 'header' ? block.content : undefined);
+                    (isHeading ? block.content : undefined);
                 if (blockTitle || block.content) {
                     slides.push({
                         id: `block-${index}`,
-                        title: blockTitle || title,
+                        title: blockTitle || lastHeading || title,
                         layout: 'content',
                         summary: block.content?.substring(0, 150),
                         teacherNotes: block.content,
                         image: heroImage
                     });
                 }
+            } else if (block.type === 'list' && Array.isArray(block.items) && block.items.length) {
+                // Uten denne grenen forsvant listeinnhold helt fra presentasjonen.
+                slides.push({
+                    id: `list-${index}`,
+                    title: lastHeading || title,
+                    layout: 'content',
+                    points: block.items.map((item: string, i: number) => ({
+                        id: `list-${index}-p-${i}`,
+                        text: item,
+                        type: 'bullet' as const
+                    })),
+                    teacherNotes: block.items.join('\n'),
+                    image: heroImage
+                });
             } else if (block.type === 'component') {
                 slides.push({
                     id: `comp-${index}`,

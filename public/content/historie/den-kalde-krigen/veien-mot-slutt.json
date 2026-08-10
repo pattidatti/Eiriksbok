@@ -45,7 +45,19 @@
         },
         {
             "type": "text",
-            "content": "Gorbatsjov lanserte to slagord som skulle forandre alt (Egge & Holm-Hansen, 2025):\n\n1.  Glasnost (Åpenhet): Han tillot mer ytringsfrihet, kritikk av myndighetene og en friere presse. Han håpet at åpenhet ville bidra til å bekjempe korrupsjon og ineffektivitet.\n2.  Perestrojka (Omstrukturering): Han forsøkte å modernisere økonomien ved å innføre elementer av markedsøkonomi og gi bedriftene mer selvstendighet.\n\nProblemet var at reformene kom for sent og ble utført halvhjertet. I stedet for å fikse systemet, ga de folk muligheten til å uttrykke hvor misfornøyde de faktisk var. Da lokket på kjelen ble tatt av, begynte alt å koke over."
+            "content": "Gorbatsjov lanserte to slagord som skulle forandre alt (Egge & Holm-Hansen, 2025):"
+        },
+        {
+            "type": "list",
+            "ordered": true,
+            "items": [
+                "Glasnost (Åpenhet): Han tillot mer ytringsfrihet, kritikk av myndighetene og en friere presse. Han håpet at åpenhet ville bidra til å bekjempe korrupsjon og ineffektivitet.",
+                "Perestrojka (Omstrukturering): Han forsøkte å modernisere økonomien ved å innføre elementer av markedsøkonomi og gi bedriftene mer selvstendighet."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Problemet var at reformene kom for sent og ble utført halvhjertet. I stedet for å fikse systemet, ga de folk muligheten til å uttrykke hvor misfornøyde de faktisk var. Da lokket på kjelen ble tatt av, begynte alt å koke over."
         },
         {
             "type": "header",

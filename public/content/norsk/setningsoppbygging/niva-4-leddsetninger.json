@@ -10,7 +10,23 @@
         },
         {
             "type": "text",
-            "content": "En helsetning kan stå alene og gi mening. \n*   Ex: *\"Jeg er sulten.\"*\n\nEn leddsetning gir ikke mening alene. Den må \"lene seg\" på en helsetning. Den starter ofte med ord som *fordi, at, om, når, hvis*.\n*   Ex: *\"...fordi jeg er sulten.\"* (Hva da? Setningen er ikke ferdig.)"
+            "content": "En helsetning kan stå alene og gi mening."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Ex: *\"Jeg er sulten.\"*"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "En leddsetning gir ikke mening alene. Den må \"lene seg\" på en helsetning. Den starter ofte med ord som *fordi, at, om, når, hvis*."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Ex: *\"...fordi jeg er sulten.\"* (Hva da? Setningen er ikke ferdig.)"
+            ]
         },
         {
             "type": "component",
@@ -34,7 +50,14 @@
         },
         {
             "type": "text",
-            "content": "Tenk på ordet \"ikke\" (eller \"aldri/alltid\") som en pute. \n*   I en helsetning kaster vi puten *bak* verbet.\n*   I en leddsetning setter vi puten *foran* verbet for å dempe det."
+            "content": "Tenk på ordet \"ikke\" (eller \"aldri/alltid\") som en pute."
+        },
+        {
+            "type": "list",
+            "items": [
+                "I en helsetning kaster vi puten *bak* verbet.",
+                "I en leddsetning setter vi puten *foran* verbet for å dempe det."
+            ]
         },
         {
             "type": "header",

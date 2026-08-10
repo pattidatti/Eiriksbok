@@ -1,0 +1,54 @@
+name: Innholds- og kodesjekk
+
+# Kjører på pull requests slik at strukturfeil i innholdet og typefeil i koden
+# fanges FØR merge, ikke etter deploy.
+#
+# Sjekkene her er de samme som kan kjøres lokalt:
+#   npm run lint
+#   npm run validate:content   (renderer innholdet slik det er ment?)
+#   npm run validate:links     (peker alle interne lenker på ekte ruter?)
+#
+# MERK: `auto-merge-bot-prs.yml` squash-merger bot-PR-er direkte via API-et.
+# En direkte merge venter ikke på status-checks. Skal denne workflowen faktisk
+# BLOKKERE de automatiske innholds-PR-ene, må den settes som required check i
+# branch protection på `main` - ellers er den kun et synlig signal.
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: content-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Samme versjon som deploy.yml, så en PR ikke kan bli grønn på en
+          # annen Node enn den som faktisk bygger siden.
+          node-version: 22
+          cache: npm
+
+      - name: Installer avhengigheter
+        run: npm ci
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Typesjekk
+        run: npx tsc -b
+
+      - name: Innholdsstruktur
+        run: npm run validate:content
+
+      - name: Interne lenker
+        run: npm run validate:links
