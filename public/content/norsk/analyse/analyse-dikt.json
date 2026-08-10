@@ -8,8 +8,8 @@
     "heroImage": "/images/lessons/norsk/analyse/analyse-dikt-hero.webp",
     "content": [
         {
-            "type": "paragraph",
-            "text": "Mange tror at [diktanalyse](/norsk/tekstsjangre/dikt) handler om å finne en skjult kode eller et hemmelig svar som læreren sitter på. Det stemmer ikke. Å analysere handler rett og slett om å sette ord på *hvorfor* diktet får deg til å føle det du føler.\n\nFor å vise deg nøyaktig hvordan vi gjør dette, skal vi analysere diktet «Bak glasset» sammen. Vi skal gå gjennom det bit for bit, og jeg skal forklare deg hva jeg ser etter underveis."
+            "type": "text",
+            "content": "Mange tror at [diktanalyse](/norsk/tekstsjangre/dikt) handler om å finne en skjult kode eller et hemmelig svar som læreren sitter på. Det stemmer ikke. Å analysere handler rett og slett om å sette ord på *hvorfor* diktet får deg til å føle det du føler.\n\nFor å vise deg nøyaktig hvordan vi gjør dette, skal vi analysere diktet «Bak glasset» sammen. Vi skal gå gjennom det bit for bit, og jeg skal forklare deg hva jeg ser etter underveis."
         },
         {
             "type": "header",
@@ -30,8 +30,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Det aller første vi må gjøre, er å se på det helt åpenbare. Hva skjer egentlig i diktet? En klassisk feil mange gjør, er å hoppe rett til tolkningen. Da sier man gjerne: «Diktet handler om ensomhet». Men ensomhet er en følelse, ikke et bilde. Vi må starte med bildet."
+            "type": "text",
+            "content": "Det aller første vi må gjøre, er å se på det helt åpenbare. Hva skjer egentlig i diktet? En klassisk feil mange gjør, er å hoppe rett til tolkningen. Da sier man gjerne: «Diktet handler om ensomhet». Men ensomhet er en følelse, ikke et bilde. Vi må starte med bildet."
         },
         {
             "type": "component",
@@ -53,24 +53,24 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Når vi har forstått hva diktet forestiller, må vi se på hvordan det er snekret sammen. Formen på diktet er nemlig ikke tilfeldig; den er der for å styre hvordan du leser det."
+            "type": "text",
+            "content": "Når vi har forstått hva diktet forestiller, må vi se på hvordan det er snekret sammen. Formen på diktet er nemlig ikke tilfeldig; den er der for å styre hvordan du leser det."
         },
         {
             "type": "subheader",
             "text": "Hva skjer med rimet?"
         },
         {
-            "type": "paragraph",
-            "text": "Les den første strofen høyt for deg selv. Legg merke til hvordan ordene faller på plass i en fast takt: *vei* rimer på *meg*, og *lett* rimer på *sett*. Dette kalles parrim (AABB).\n\nMen hvorfor har forfatteren gjort det sånn? Denne faste rytmen skaper en følelse av orden og kontroll. Det minner nesten om en barneregle hvor alt er trygt og forutsigbart. I dette diktet fungerer formen som et speilbilde av innholdet: Alt ser «perfekt» og ryddig ut på overflaten."
+            "type": "text",
+            "content": "Les den første strofen høyt for deg selv. Legg merke til hvordan ordene faller på plass i en fast takt: *vei* rimer på *meg*, og *lett* rimer på *sett*. Dette kalles parrim: enderimene kommer to og to etter hverandre, i mønsteret aabb (Abusland, 2025). At rimene ligger helt sist i verselinjene, er nettopp det som gjør dem til enderim (Skei, 2024).\n\nMen hvorfor har forfatteren gjort det sånn? Denne faste rytmen skaper en følelse av orden og kontroll. Det minner nesten om en barneregle hvor alt er trygt og forutsigbart. I dette diktet fungerer formen som et speilbilde av innholdet: Alt ser «perfekt» og ryddig ut på overflaten."
         },
         {
             "type": "subheader",
             "text": "Bruddet i strofe 2"
         },
         {
-            "type": "paragraph",
-            "text": "Men så skjer det noe. Les strofe 2. Plutselig forsvinner rimet helt. Rytmen blir ujevn og stotrende. Det flyter ikke lenger.\n\nDette er et [virkemiddel](/norsk/virkemidler/bildesprak-og-effekter)! Forfatteren bryter formen for å vise oss at fasaden sprekker. Når innholdet går fra det «perfekte» smilet til den vonde gråten, så *må* formen også endre seg. Hadde forfatteren fortsatt å rime her, ville gråten virket falsk og pyntet på. Nå virker den ekte og brutal."
+            "type": "text",
+            "content": "Men så skjer det noe. Les strofe 2. Plutselig forsvinner rimet helt. Rytmen blir ujevn og stotrende. Det flyter ikke lenger. Nå ligner diktet på frie vers, som mangler faste former og faste rytmemønstre. Da blir selve linjeskiftet viktigere for betydningen (Vassenden, 2025).\n\nDette er et [virkemiddel](/norsk/virkemidler/bildesprak-og-effekter)! Forfatteren bryter formen for å vise oss at fasaden sprekker. Når innholdet går fra det «perfekte» smilet til den vonde gråten, så *må* formen også endre seg. Hadde forfatteren fortsatt å rime her, ville gråten virket falsk og pyntet på. Nå virker den ekte og brutal."
         },
         {
             "type": "header",
@@ -78,8 +78,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Det viktigste bildet i dette diktet ligger i tittelen og i teksten: «Bak glasset». Bokstavelig talt er det snakk om mobilskjermen vi trykker på.\n\nMen i overført betydning er glasset noe mer. Glass er gjennomsiktig, men det er også hardt og kaldt. Vi kan se gjennom det, men vi kan ikke røre det som er på innsiden. Glasset blir derfor et [symbol](/norsk/virkemidler/bildesprak-og-effekter) på avstanden mellom personen og verden. Vi ser smilet, men vi når ikke inn til smerten."
+            "type": "text",
+            "content": "Det viktigste bildet i dette diktet ligger i tittelen og i teksten: «Bak glasset». Bokstavelig talt er det snakk om mobilskjermen vi trykker på.\n\nMen i overført betydning er glasset noe mer. Glass er gjennomsiktig, men det er også hardt og kaldt. Vi kan se gjennom det, men vi kan ikke røre det som er på innsiden. Glasset blir derfor et [symbol](/norsk/virkemidler/bildesprak-og-effekter) på avstanden mellom personen og verden. Et symbol er nettopp noe konkret som står for noe abstrakt, noe vi ikke kan vise fram direkte (Svendsen, 2025). Vi ser smilet, men vi når ikke inn til smerten."
         },
         {
             "type": "header",
@@ -87,8 +87,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Nå har vi samlet alle bevisene vi trenger for å si hva diktet egentlig handler om. Vi har sett en person som gjemmer seg bak en «perfekt» fasade (strofe 1 med rim), men som egentlig har det vondt (strofe 2 uten rim).\n\nDiktet handler altså om kontrasten mellom hvordan vi fremstiller oss selv på sosiale medier, og hvordan vi egentlig har det. Det handler om ensomheten som kan oppstå når ingen ser hvem vi egentlig er bak skjermen."
+            "type": "text",
+            "content": "Nå har vi samlet alle bevisene vi trenger for å si hva diktet egentlig handler om. Vi har sett en person som gjemmer seg bak en «perfekt» fasade (strofe 1 med rim), men som egentlig har det vondt (strofe 2 uten rim).\n\nDiktet handler altså om kontrasten mellom hvordan vi fremstiller oss selv på sosiale medier, og hvordan vi egentlig har det. Det handler om ensomheten som kan oppstå når ingen ser hvem vi egentlig er bak skjermen."
         },
         {
             "type": "section",
@@ -127,6 +127,18 @@
                     "Diskuter med en medelev: Er kontrasten mellom fasaden på sosiale medier og virkeligheten bak skjermen noe dere kjenner igjen? Finn ett eksempel hver og forklar det for hverandre."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2025). *Rimmønster*. NDLA. Hentet 10.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg1/rimmonster/965bd71275)",
+                    "Skei, H. H. (2024). *rim*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/rim](https://snl.no/rim)",
+                    "Svendsen, L. F. H. (2025). *symbol*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/symbol](https://snl.no/symbol)",
+                    "Vassenden, E. (2025). *lyrikk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/lyrikk](https://snl.no/lyrikk)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -161,5 +173,6 @@
         "metode",
         "eksempel"
     ],
-    "createdDate": "2026-02-02T14:41:00Z"
+    "createdDate": "2026-02-02T14:41:00Z",
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }
