@@ -6,10 +6,13 @@
     "topic": "religioner",
     "religion": "bahai",
     "dimension": "narrative",
-    "comparison_tags": ["skapelse", "narrative"],
+    "comparison_tags": [
+        "skapelse",
+        "narrative"
+    ],
     "category": "Bahá'í",
     "readTime": "6 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/bahai/skapelse-hero.webp",
     "details": [
         "Bahá'í-troen lærer at Guds skaping verken har begynt eller kan ta slutt.",
         "Argumentet er enkelt: en skaper uten noe skapt er ingen skaper.",
@@ -55,7 +58,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/skapelse-01.webp",
             "alt": "Stjernehimmel som fortsetter ut over begge bildekantene",
             "caption": "Bahá'í-skriftene beskriver tilværelsen som uten start og uten slutt. Det finnes ikke noe første bilde å spole tilbake til."
         },
@@ -114,7 +117,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/skapelse-02.webp",
             "alt": "Rekke med halvåpne dører i lyst landskap mot horisonten",
             "caption": "Bahá'u'lláh kalte hver skapt ting en dør inn til kunnskapen om Gud. Selve Gud blir aldri synlig."
         },

@@ -5,7 +5,7 @@
     "year": "1807-1814",
     "category": "Norge",
     "readTime": "9 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/dansketiden/nodsarene-hero.webp",
     "details": [
         "Norge hentet normalt rundt tre fjerdedeler av kornet sitt sjøveien fra Danmark",
         "Etter flåteranet i 1807 stengte den britiske marinen norskekysten i sju år",
@@ -20,7 +20,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dansketiden/nodsarene-01.webp",
             "alt": "Familie som skreller bark av et almetre i vinterskog",
             "caption": "Bark fra alm, furu og bjørk ble tørket og malt til mel. Det var ikke mat folk ville ha. Det var mat de måtte ha."
         },
@@ -90,7 +90,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dansketiden/nodsarene-02.webp",
             "alt": "Britisk krigsskip som patruljerer i grå sjø utenfor norsk kyst",
             "caption": "Britiske krigsskip patruljerte Skagerrak i sju år. De trengte ikke gå i land for å ramme Norge. Det holdt å ligge i veien."
         },
@@ -163,7 +163,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/dansketiden/nodsarene-03.webp",
             "alt": "Minnestein ved en gammel steinkirke i kveldslys",
             "caption": "Ved Fjære kirke står en minnestein fra 1906 over dem fra Grimstad-traktene som mistet livet i nødsårene."
         },
