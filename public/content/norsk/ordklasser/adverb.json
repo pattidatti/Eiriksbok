@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "Adverb er ord som forteller oss *hvordan*, *når* eller *hvor* noe skjer. De beskriver ofte verbet (handlingen). Tenk på dem som krydder i setningen."
+            "content": "Adverb er ord som forteller oss *hvordan*, *når* eller *hvor* noe skjer. De beskriver ofte verbet (handlingen) (Hagemann, 2025). Tenk på dem som krydder i setningen."
         },
         {
             "type": "component",
@@ -37,7 +37,7 @@
         },
         {
             "type": "text",
-            "content": "Mange blander disse. Forskjellen er hva de beskriver! Beskriver du tingen (substantivet) er det adjektiv. Beskriver du handlingen (verbet) er det adverb."
+            "content": "Mange blander disse. Forskjellen er hva de beskriver! Beskriver du tingen (substantivet) er det adjektiv. Beskriver du handlingen (verbet) er det adverb (Federl & Abusland, 2026). Et adjektiv bøyer seg etter substantivet det står til - vi sier *en fin bil*, men *et fint hus* (Bordal & Hagemann, 2026)."
         },
         {
             "type": "component",
@@ -88,8 +88,19 @@
                     "Gå sammen to og to. Den ene sier en handling ('spiser', 'synger', 'går'), den andre legger til et adverb som gjør handlingen tydeligere. Bytt på, og prøv å bruke alle de fire typene adverb."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bordal, G., & Hagemann, K. (2026). *Adjektiv*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/adjektiv](https://snl.no/adjektiv)",
+                    "Federl, M., & Abusland, Å. (2026). *Adjektiv og adverb*. NDLA. Hentet 10.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-sf-vg1/adjektiv-og-adverb/6f1d305013)",
+                    "Hagemann, K. (2025). *Adverb*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/adverb](https://snl.no/adverb)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",
-    "lastUpdated": "2025-12-09T16:30:00Z"
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }

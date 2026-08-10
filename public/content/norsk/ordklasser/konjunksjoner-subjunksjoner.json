@@ -17,7 +17,7 @@
         },
         {
             "type": "text",
-            "content": "Hvis vi ikke hadde bindeord, ville vi snakket som roboter. 'Jeg gikk ut. Det var kaldt.' Med bindeord blir det flytende: 'Jeg gikk ut, men det var kaldt.' Bindeord limer sammen ideene våre."
+            "content": "Hvis vi ikke hadde bindeord, ville vi snakket som roboter. 'Jeg gikk ut. Det var kaldt.' Med bindeord blir det flytende: 'Jeg gikk ut, men det var kaldt.' Bindeord limer sammen ideene våre. Konjunksjoner og subjunksjoner er to av de ti ordklassene vi deler norske ord inn i (Hagemann, 2026)."
         },
         {
             "type": "header",
@@ -25,7 +25,7 @@
         },
         {
             "type": "text",
-            "content": "Disse binder sammen to ting som er like viktige. Husk huskeregelen O-M-F-E-S:"
+            "content": "Disse binder sammen to ledd som er like viktige (Hagemann, 2025a). Husk huskeregelen O-M-F-E-S:"
         },
         {
             "type": "list",
@@ -43,7 +43,7 @@
         },
         {
             "type": "text",
-            "content": "Disse ordene starter en leddsetning. En leddsetning er en uferdig setning som ikke gir mening alene, som feks '...fordi jeg er sulten'. (Hvis du kommer inn i rommet og bare sier det, vil folk lure på hva du mener!)"
+            "content": "Disse ordene starter en leddsetning (Hagemann, 2025c). En leddsetning er en uferdig setning som ikke kan stå alene, for eksempel '...fordi jeg er sulten' (Hagemann, 2025b). (Hvis du kommer inn i rommet og bare sier det, vil folk lure på hva du mener!)"
         },
         {
             "type": "component",
@@ -62,7 +62,7 @@
         },
         {
             "type": "text",
-            "content": "Når du bruker en subjunksjon (som 'fordi', 'hvis', 'når'), skjer det noe rart med ordet 'ikke'. I vanlige setninger kommer 'ikke' *etter* verbet. Men i leddsetninger kommer det *før*!"
+            "content": "Når du bruker en subjunksjon (som 'fordi', 'hvis', 'når'), skjer det noe rart med ordet 'ikke'. I vanlige setninger kommer 'ikke' *etter* det bøyde verbet. Men i leddsetninger kommer det *før* (Hagemann, 2025b)!"
         },
         {
             "type": "component",
@@ -119,8 +119,20 @@
                     "Skriv et kort avsnitt om dagen din uten å bruke noen bindeord, og skriv det så om med bindeord. Diskuter med en klassekamerat hvilken versjon som er lettest å lese."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hagemann, K. (2025a). *Konjunksjon - grammatikk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/konjunksjon](https://snl.no/konjunksjon_-_grammatikk)",
+                    "Hagemann, K. (2025b). *Leddsetning - grammatikk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/leddsetning](https://snl.no/leddsetning_-_grammatikk)",
+                    "Hagemann, K. (2025c). *Subjunksjon - grammatikk*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/subjunksjon](https://snl.no/subjunksjon_-_grammatikk)",
+                    "Hagemann, K. (2026). *Ordklasse*. Store norske leksikon. Hentet 10.08.2026 fra [snl.no/ordklasse](https://snl.no/ordklasse)"
+                ]
+            }
         }
     ],
     "createdDate": "2023-12-09T14:00:00Z",
-    "lastUpdated": "2025-12-09T16:25:00Z"
+    "lastUpdated": "2026-08-10T00:00:00Z"
 }
