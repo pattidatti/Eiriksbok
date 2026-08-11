@@ -8,8 +8,8 @@
     "heroImage": "/images/lessons/norsk/analyse/analyse-fagartikkel-hero.webp",
     "content": [
         {
-            "type": "paragraph",
-            "text": "Når vi leser tekster fra virkeligheten (sakprosa), går vi ofte i en felle: Vi tror at vi leser den absolutte *sannheten*. Men ingen tekst er nøytral. Alt du leser er filtrert gjennom forfatterens hjerne. Din jobb som analytiker er å finne ut hvilken farge forfatteren har på brillene sine."
+            "type": "text",
+            "content": "Når vi leser tekster fra virkeligheten (sakprosa), går vi ofte i en felle: Vi tror at vi leser den absolutte *sannheten*. Sakprosa er tekster som leseren har grunn til å oppfatte som direkte utsagn om virkeligheten, og derfor stilles det strengere krav til etterprøvbarhet her enn i skjønnlitteraturen (Tønnesson, 2026). Men ingen tekst er nøytral. Alt du leser er filtrert gjennom forfatterens hjerne. Din jobb som analytiker er å finne ut hvilken farge forfatteren har på brillene sine."
         },
         {
             "type": "header",
@@ -17,8 +17,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "For å avsløre forfatterens holdning, må du se på adjektivene. Er de beskrivende (fakta) eller dømmende (mening)?"
+            "type": "text",
+            "content": "For å avsløre forfatterens holdning, må du se på adjektivene. Er de beskrivende (fakta) eller dømmende (mening)?"
         },
         {
             "type": "component",
@@ -47,8 +47,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Vi skal reise 1000 år tilbake i tid. En muslimsk diplomat fra Bagdad (Ibn Fadlan) møter vikingene for første gang ved elven Volga. Legg merke til hvordan han blander fakta og følelser."
+            "type": "text",
+            "content": "Vi skal reise over 1000 år tilbake i tid. Ahmad ibn Fadlan var en arabisk lærd som var med i en offisiell delegasjon fra kalifen i Bagdad til herskeren over Volga-bulgarene i 921. På denne reisen møtte han nordiske handelsmenn som kom nedover elven Volga med varene sine, og han skrev ned det han så av folket og ritualene deres (Jansen, 2025). Legg merke til hvordan han blander fakta og følelser."
         },
         {
             "type": "expandable",
@@ -84,8 +84,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Denne teksten svinger voldsomt. I det ene øyeblikket er forfatteren imponert, i det neste er han kvalm. La oss sortere setningene hans i to bokser: Hva han *ser* (Reporteren) og hva han *mener* (Dommeren)."
+            "type": "text",
+            "content": "Denne teksten svinger voldsomt. I det ene øyeblikket er forfatteren imponert, i det neste er han kvalm. La oss sortere setningene hans i to bokser: Hva han *ser* (Reporteren) og hva han *mener* (Dommeren)."
         },
         {
             "type": "component",
@@ -109,8 +109,8 @@
             }
         },
         {
-            "type": "paragraph",
-            "text": "Ser du forskjellen? Når han beskriver smykkene, kan vi stole på ham. Det er målbart. Men når han kaller dem «ville esler», slutter han å informere og begynner å *dømme*."
+            "type": "text",
+            "content": "Ser du forskjellen? Når han beskriver smykkene, kan vi stole på ham. Det er målbart. Men når han kaller dem «ville esler», slutter han å informere og begynner å *dømme*."
         },
         {
             "type": "header",
@@ -118,8 +118,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Hvorfor reagerer han så sterkt på hygienen deres? Hvorfor blir han sint?\n\nFor å forstå dette, må vi se på *konteksten*. Ibn Fadlan kommer fra Bagdad, verdensmetropolen på den tiden. Han er muslim, og i islam er rituell vask (Wudu) påbudt før bønn. Renslighet er ikke bare hygiene, det er religion. Når han ser vikingene dele samme vaskevannszfat, krasjer det med hele hans verdensbilde.\n\nHan ser dem altså gjennom sine egne «kulturbriller». Fordi de ikke følger *hans* regler for renslighet, stempler han dem som «ville esler». Dette er et perfekt eksempel på **etnosentrisme**: Å vurdere andres kultur som mindreverdig fordi den ikke ligner på din egen."
+            "type": "text",
+            "content": "Hvorfor reagerer han så sterkt på hygienen deres? Hvorfor blir han sint?\n\nFor å forstå dette, må vi se på *konteksten*. Ibn Fadlan kom med en delegasjon fra Bagdad, en av datidens store byer. Han var muslim, og den rituelle bønnen salah forutsetter at den troende er rituelt ren. Derfor er den lille renselsen wudu, der man vasker ansiktet, armene, hodet og føttene, en fast del av bønnen (Vogt, 2024). Renslighet er altså ikke bare hygiene, det er religion. Når han ser vikingene dele samme vaskevannsfat, krasjer det med hele hans verdensbilde.\n\nHan ser dem altså gjennom sine egne «kulturbriller». Fordi de ikke følger *hans* regler for renslighet, stempler han dem som «ville esler». Dette er et perfekt eksempel på etnosentrisme: å måle andres samfunn, kultur, verdier og normer med de forståelsesrammene som preger ditt eget samfunn, slik at de andre framstår som ufullstendige og mindreverdige utgaver av ditt eget (Johannessen, 2024)."
         },
         {
             "type": "section",
@@ -158,6 +158,18 @@
                     "Diskuter i par: Finnes det etnosentrisme i tekster vi leser i dag, for eksempel i nyheter eller på sosiale medier? Kom med et eksempel dere har sett."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Jansen, H. L. (2025). *Ahmad ibn Fadlan*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Ahmad_ibn_Fadlan](https://snl.no/Ahmad_ibn_Fadlan)",
+                    "Johannessen, S. F. (2024). *etnosentrisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/etnosentrisme](https://snl.no/etnosentrisme)",
+                    "Tønnesson, J. (2026). *sakprosa*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sakprosa](https://snl.no/sakprosa)",
+                    "Vogt, K. (2024). *wudu*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/wudu](https://snl.no/wudu)"
+                ]
+            }
         }
     ],
     "relatedLink": {
@@ -170,5 +182,6 @@
         "kildekritikk",
         "historie"
     ],
-    "createdDate": "2026-02-06T21:46:00Z"
+    "createdDate": "2026-02-06T21:46:00Z",
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }

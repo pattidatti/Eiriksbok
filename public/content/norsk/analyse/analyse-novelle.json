@@ -15,8 +15,8 @@
     ],
     "content": [
         {
-            "type": "paragraph",
-            "text": "Det viktigste du må vite om noveller, er at de nesten aldri handler om det de ser ut til å handle om på overflaten. Ernest Hemingway, en av historiens største novelleforfattere, lanserte Isfjell-teorien for å forklare dette: Akkurat som med et isfjell, er kun 10 prosent synlig over vannet (det er den ytre handlingen). De resterende 90 prosentene ligger under havoverflaten (det er temaet, følelsene og budskapet).\n\nNår du skal analysere en novelle, er din jobb å fungere som en dykker. Du må svømme ned under overflaten for å finne ut hva teksten egentlig prøver å si. Dette gjør du ved å lete etter små spor, symboler og tomrom som forfatteren har lagt igjen til deg."
+            "type": "text",
+            "content": "Det viktigste du må vite om noveller, er at de nesten aldri handler om det de ser ut til å handle om på overflaten. Novellene til Ernest Hemingway er et godt eksempel: Noe av det særegne ved dem er at de betyr langt mer enn det som møter oss på overflaten (Skei, 2025). Tenk på teksten som et isfjell. Bare toppen stikker opp over vannet, og det er den ytre handlingen. Det aller meste ligger under havoverflaten, og det er temaet, følelsene og budskapet. Denne isfjellsteknikken, der overflaten ser ut til å skjule store dybder, blir gjerne knyttet nettopp til Hemingway (Torjusen, 2026). Derfor kaller vi den ofte Isfjell-teorien.\n\nNår du skal analysere en novelle, er din jobb å fungere som en dykker. Du må svømme ned under overflaten for å finne ut hva teksten egentlig prøver å si. Dette gjør du ved å lete etter små spor, symboler og tomrom som forfatteren har lagt igjen til deg."
         },
         {
             "type": "header",
@@ -24,8 +24,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Siden en novelle er kort, har ikke forfatteren tid til å forklare alt. Hvert eneste ord må telle. Å analysere en novelle handler derfor mye om å se på de arkitektoniske valgene forfatteren har tatt for å bære temaet sitt."
+            "type": "text",
+            "content": "Siden en novelle er kort, har ikke forfatteren tid til å forklare alt. Hvert eneste ord må telle. Novellen kjennetegnes av konsentrasjon og av at alt som ikke er nødvendig blir utelatt, og den handler gjerne om én eller få personer (Gullestad, 2025). Å analysere en novelle handler derfor mye om å se på de arkitektoniske valgene forfatteren har tatt for å bære temaet sitt."
         },
         {
             "type": "component",
@@ -59,8 +59,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "For å lykkes med analysen må du kjenne til de faste grepene som gjør en novelle til en novelle. Her er de tre viktigste du bør lete etter først:"
+            "type": "text",
+            "content": "For å lykkes med analysen må du kjenne til de faste grepene som gjør en novelle til en novelle. In medias res betyr at historien starter midt i handlingen, uten en forklarende innledning først (Store norske leksikon, 2026). Og fordi så mye er utelatt, blir du som leser tvunget til selv å fylle ut tekstens tomrom (Gullestad, 2025). Her er de tre viktigste grepene du bør lete etter først:"
         },
         {
             "type": "component",
@@ -89,8 +89,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Vi skal bruke Bjørnstjerne Bjørnsons klassiker Faderen til å demonstrere hvordan vi finner det skjulte temaet. Legg merke til hvor lite Bjørnson egentlig skriver, og hvor ekstremt mye han stoler på at du som leser forstår betydningen av det som skjer mellom de store tidshoppene."
+            "type": "text",
+            "content": "Vi skal bruke Bjørnstjerne Bjørnsons klassiker Faderen til å demonstrere hvordan vi finner det skjulte temaet. Faderen er en av Bjørnsons bondefortellinger, tekster som balanserer en senromantisk fascinasjon for bygdesamfunnet med et blikk for problemene der (D'Amico, 2025). Legg merke til hvor lite Bjørnson egentlig skriver, og hvor ekstremt mye han stoler på at du som leser forstår betydningen av det som skjer mellom de store tidshoppene."
         },
         {
             "type": "expandable",
@@ -126,8 +126,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Det første som slår en moderne leser, er den utrolige farten i teksten. «Seksten år etter...», «Atter løp åtte år hen...». Bjørnson hopper over 99 prosent av livet til Tord. Han velger å vise oss kun fire dager spredt over et helt liv: Dåp, konfirmasjon, bryllup og begravelse (eller etterspillet etter den).\n\nHvorfor gjør han det? Fordi all tiden imellom er uinteressant for temaet. Tord Øverås bryr seg i starten av teksten kun om høydepunktene – de dagene han kan vise frem sin vellykkede sønn og sin egen makt for hele bygda. Tidshoppene fungerer derfor som en karakterkarakteristikk: De forteller oss at Tord er en mann som er sykelig opptatt av fasade, status og ytre suksess. Han lever ikke hverdagen, han lever for de øyeblikkene der han kan stå nummer 1 hos presten."
+            "type": "text",
+            "content": "Det første som slår en moderne leser, er den utrolige farten i teksten. «Seksten år etter...», «Atter løp åtte år hen...». Bjørnson hopper over 99 prosent av livet til Tord. Han velger å vise oss kun fire dager spredt over et helt liv: Dåp, konfirmasjon, bryllup og begravelse (eller etterspillet etter den).\n\nHvorfor gjør han det? Fordi all tiden imellom er uinteressant for temaet. Tord Øverås bryr seg i starten av teksten kun om høydepunktene - de dagene han kan vise frem sin vellykkede sønn og sin egen makt for hele bygda. Tidshoppene fungerer derfor som en karakterkarakteristikk: De forteller oss at Tord er en mann som er sykelig opptatt av fasade, status og ytre suksess. Han lever ikke hverdagen, han lever for de øyeblikkene der han kan stå nummer 1 hos presten."
         },
         {
             "type": "header",
@@ -135,8 +135,19 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Hvordan vet vi egentlig at Tord har forandret seg radikalt etter sønnens død? Bjørnson skriver aldri setninger som Tord var nå blitt en trist, fattig og ydmyk mann. Det ville vært kjedelig referat (tell).\n\nI stedet bruker han virkemidlet show, don't tell mesterlig. Han beskriver Tords ytre fremtoning når han kommer tilbake til presten etter ulykken: «Høy, foroverbøyd, mager og hvit i håret». Her må du være våken i analysen:\n- I starten var han høy og alvorlig (Stolt, han kneiset med nakken overfor presten).\n- Nå er han foroverbøyd. Han bærer bokstavelig talt på en tung bør av sorg og anger. Han er blitt bøyd i støvet.\n\nAt han kommer sent en høstkveld (i mørket) i stedet for i full dagslys som før, viser også at han har sluttet å bry seg om bygdas blikk. Han søker ikke dagslys for å skinne; han søker fred i skyggene. Det hvite håret er et tydelig symbol på en visdom og en alderdom som har kommet brått og brutalt gjennom lidelse."
+            "type": "text",
+            "content": "Hvordan vet vi egentlig at Tord har forandret seg radikalt etter sønnens død? Bjørnson skriver aldri setninger som Tord var nå blitt en trist, fattig og ydmyk mann. Det ville vært kjedelig referat (tell).\n\nI stedet bruker han virkemidlet show, don't tell mesterlig. Han beskriver Tords ytre fremtoning når han kommer tilbake til presten etter ulykken: «Høy, foroverbøyd, mager og hvit i håret». Her må du være våken i analysen:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "I starten var han høy og alvorlig (Stolt, han kneiset med nakken overfor presten).",
+                "Nå er han foroverbøyd. Han bærer bokstavelig talt på en tung bør av sorg og anger. Han er blitt bøyd i støvet."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "At han kommer sent en høstkveld (i mørket) i stedet for i full dagslys som før, viser også at han har sluttet å bry seg om bygdas blikk. Han søker ikke dagslys for å skinne; han søker fred i skyggene. Det hvite håret er et tydelig symbol på en visdom og en alderdom som har kommet brått og brutalt gjennom lidelse."
         },
         {
             "type": "component",
@@ -158,8 +169,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Når du skriver din konklusjon, må du klare å skille mellom det konkrete motivet og det abstrakte temaet. Motivet i Faderen er en rik bonde som mister sønnen sin i en drukningsulykke. Dette er bare overflaten av isfjellet.\n\nTemaet er hovmod og fall. Tord trodde han eide verden og at han kunne kjøpe seg Guds velsignelse gjennom gaver til kirken. Ulykken knuser denne stoltheten og tvinger ham til å se seg selv som et lite og sårbart menneske. Novellens budskap er at lidelse kan være en vei til visdom. Tord måtte miste det han elsket mest for å finne tilbake til sin egen sjel. Dette er den tunge veien fra hovmod til ydmykhet, et tema som har gjort novellen til en udødelig klassiker i norsk litteratur."
+            "type": "text",
+            "content": "Når du skriver din konklusjon, må du klare å skille mellom det konkrete motivet og det abstrakte temaet. Motivet i Faderen er en rik bonde som mister sønnen sin i en drukningsulykke. Dette er bare overflaten av isfjellet.\n\nTemaet er hovmod og fall. Tord trodde han eide verden og at han kunne kjøpe seg Guds velsignelse gjennom gaver til kirken. Ulykken knuser denne stoltheten og tvinger ham til å se seg selv som et lite og sårbart menneske. Novellens budskap er at lidelse kan være en vei til visdom. Tord måtte miste det han elsket mest for å finne tilbake til sin egen sjel. Dette er den tunge veien fra hovmod til ydmykhet, et tema som har gjort novellen til en udødelig klassiker i norsk litteratur."
         },
         {
             "type": "header",
@@ -167,8 +178,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Når du skriver din egen novelleanalyse, er det viktig å bruke fagbegrepene aktivt. Ikke forklar *hva* ordene betyr, men vis at du kan bruke dem til å belyse teksten."
+            "type": "text",
+            "content": "Når du skriver din egen novelleanalyse, er det viktig å bruke fagbegrepene aktivt. Ikke forklar *hva* ordene betyr, men vis at du kan bruke dem til å belyse teksten."
         },
         {
             "type": "expandable",
@@ -180,7 +191,7 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvor stor del av isfjellet er synlig over vannet i Hemingways teori, og hva står den delen for i en novelle?",
+                    "Hva står den synlige toppen av isfjellet for i en novelle, og hva er det som ligger under overflaten?",
                     "Hva betyr uttrykket in medias res, og hvordan starter en novelle som bruker dette grepet?",
                     "Hvilke fire dager i Tords liv velger Bjørnson å vise oss i Faderen?",
                     "Hva er forskjellen på motivet og temaet i novellen Faderen, ifølge artikkelen?"
@@ -197,6 +208,19 @@
                     "Skriv ett avsnitt av en novelleanalyse om en tekst du selv har lest. Bruk minst tre av fagbegrepene fra artikkelen (isfjell-teorien, in medias res, det tomme rom, show don't tell, vendepunkt eller tema)."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "D'Amico, G. (2025). *Bjørnstjerne Bjørnson*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Bjørnstjerne_Bjørnson](https://snl.no/Bj%C3%B8rnstjerne_Bj%C3%B8rnson)",
+                    "Gullestad, A. M. (2025). *novelle*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/novelle](https://snl.no/novelle)",
+                    "Skei, H. H. (2025). *Ernest Hemingway*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Ernest_Hemingway](https://snl.no/Ernest_Hemingway)",
+                    "Store norske leksikon. (2026). *in medias res*. Hentet 11.08.2026 fra [snl.no/in_medias_res](https://snl.no/in_medias_res)",
+                    "Torjusen, H. (2026). *Helle Helle*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Helle_Helle](https://snl.no/Helle_Helle)"
+                ]
+            }
         }
     ],
     "relatedLink": {
@@ -211,5 +235,6 @@
     ],
     "createdDate": "2026-02-06T21:49:00Z",
     "readTime": "11 min lesning",
-    "category": "Analyse"
+    "category": "Analyse",
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }
