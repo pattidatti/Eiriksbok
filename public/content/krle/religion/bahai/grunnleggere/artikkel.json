@@ -12,7 +12,7 @@
     ],
     "category": "Bahá'í",
     "readTime": "7 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/bahai/grunnleggere-hero.webp",
     "details": [
         "Bahá'í har to grunnleggere, og den første kunngjorde den andre.",
         "Báb erklærte seg i Shiraz om kvelden 22. mai 1844 og ble henrettet i Tabriz i 1850.",
@@ -60,7 +60,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/grunnleggere-01.webp",
             "alt": "Smal gate med hvitkalkede murhus i gammel persisk by",
             "caption": "Báb sto fram i Shiraz i Sør-Persia, i det som i dag er Iran."
         },
@@ -109,7 +109,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/grunnleggere-02.webp",
             "alt": "Terrassehager i trapper opp en grønn fjellside mot havet",
             "caption": "Verdenssenteret for bahá'í ligger på Karmelfjellet i Haifa i Israel."
         },
@@ -127,7 +127,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/grunnleggere-03.webp",
             "alt": "Rund tempelbygning med en kuppel og ni inngangsdører",
             "caption": "Kuppelen står for at Gud og menneskeheten hører sammen. De ni dørene står for at alle religioner er veier inn."
         },

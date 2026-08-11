@@ -12,7 +12,7 @@
     ],
     "category": "Bahá'í",
     "readTime": "7 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/bahai/frelse-hero.webp",
     "details": [
         "Bahá'í-troen sier at himmel og helvete ikke er fysiske steder, men tilstander: nærhet til Gud eller avstand fra Gud.",
         "Sjelen knyttes til fosteret ved unnfangelsen og skilles fra kroppen ved døden. Da fortsetter den.",
@@ -60,7 +60,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/frelse-01.webp",
             "alt": "Ultralydbilde av foster med tydelig lukket øye",
             "caption": "Fosteret bygger øyne i et mørke der øyne ikke er til noen nytte. Bahá'í-troen bruker dette som bilde på hele menneskelivet."
         },
@@ -109,7 +109,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/frelse-02.webp",
             "alt": "Hender som rekker en skål med mat til en annen person",
             "caption": "Tjeneste for andre er ikke en ekstraoppgave i bahá'í-troen. Det er en av hovedveiene til åndelig utvikling."
         },
@@ -139,7 +139,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/frelse-03.webp",
             "alt": "Sti som forsvinner oppover i lys morgentåke",
             "caption": "Reisen har ingen målstrek. Sjelen fortsetter å nærme seg Gud, skriver Bahá'u'lláh."
         },

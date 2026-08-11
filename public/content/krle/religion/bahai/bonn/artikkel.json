@@ -12,7 +12,7 @@
     ],
     "category": "Bahá'í",
     "readTime": "6 min lesning",
-    "heroImage": "/images/placeholder.webp",
+    "heroImage": "/images/bahai/bonn-hero.webp",
     "details": [
         "Bahá'íer har en obligatorisk bønn hver dag, men velger selv mellom tre ulike bønner.",
         "Den korte leses mellom middag og solnedgang, den middels lange morgen, middag og kveld, den lange en gang i døgnet.",
@@ -60,7 +60,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/bonn-01.webp",
             "alt": "Person står alene ved et vindu i morgenlys og ber",
             "caption": "Den obligatoriske bønnen bes alene. Ingen leder den."
         },
@@ -121,7 +121,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/bonn-02.webp",
             "alt": "Kart som viser bønneretning fra flere land mot Akko",
             "caption": "Uansett hvor i verden en bahá'í ber, går retningen mot Bahjí."
         },
@@ -147,7 +147,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/bahai/bonn-03.webp",
             "alt": "Liten gruppe mennesker leser og synger sammen i en stue",
             "caption": "På en andaktssamling kan hvem som helst lese høyt."
         },
