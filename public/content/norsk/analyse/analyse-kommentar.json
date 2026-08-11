@@ -16,8 +16,8 @@
     ],
     "content": [
         {
-            "type": "paragraph",
-            "text": "En kommentar i avisen skiller seg fra en vanlig nyhetsartikkel på ett helt avgjørende punkt: Den har ingen ambisjon om å være objektiv. Der nyhetsartikkelen skal informere deg nøkternt om hva som har skjedd, skriver kommentatoren for å mene noe sterkt om det. Skribentens mål er ofte å provosere deg, få deg til å le, eller viktigst av alt: Få deg til å mene det samme som hen.\n\nÅ analysere en kommentar handler derfor om å fungere som en retorisk demonteringsekspert. Du skal skru fra hverandre teksten for å avsløre de språklige triksene og manipulasjonsteknikkene som skribenten bruker for å hacke din kritiske sans og flytte dine meninger."
+            "type": "text",
+            "content": "En kommentar i avisen skiller seg fra en vanlig nyhetsartikkel på ett helt avgjørende punkt: Den har ingen ambisjon om å være objektiv. Kommentarjournalistikk er subjektiv og tar stilling, og det er nettopp dette som skiller den fra nyhetsjournalistikken, som siterer kilder og holder journalistens egen vurdering utenfor (Hågvar, 2026). Der nyhetsartikkelen skal informere deg nøkternt om hva som har skjedd, skriver kommentatoren for å mene noe sterkt om det. Skribentens mål er ofte å provosere deg, få deg til å le, eller viktigst av alt: Få deg til å mene det samme som hen.\n\nÅ analysere en kommentar handler derfor om å fungere som en retorisk demonteringsekspert. Du skal skru fra hverandre teksten for å avsløre de språklige triksene og manipulasjonsteknikkene som skribenten bruker for å hacke din kritiske sans og flytte dine meninger."
         },
         {
             "type": "header",
@@ -25,8 +25,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Kommentatorer kjemper om din oppmerksomhet i et hav av andre tekster. Derfor må språket deres være spissere, morsommere og mer billedlig enn i andre sjangre. Her er verktøyene du må kunne identifisere for å gjennomskue påvirkningen."
+            "type": "text",
+            "content": "Kommentatorer kjemper om din oppmerksomhet i et hav av andre tekster. Derfor må språket deres være spissere, morsommere og mer billedlig enn i andre sjangre. Her er verktøyene du må kunne identifisere for å gjennomskue påvirkningen."
         },
         {
             "type": "component",
@@ -55,8 +55,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Retorisk påvirkning handler i stor grad om å styre leserens emosjonelle respons. Ved å velge ord med omhu, kan skribenten male en virkelighet som føles sann, selv om den er ensidig."
+            "type": "text",
+            "content": "Retorisk påvirkning handler i stor grad om å styre leserens emosjonelle respons. Ved å velge ord med omhu, kan skribenten male en virkelighet som føles sann, selv om den er ensidig."
         },
         {
             "type": "component",
@@ -90,8 +90,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Vi skal bruke et utdrag fra en spiss kommentar som advarer mot ukritisk bruk av kunstig intelligens i skriving. Legg merke til hvordan skribenten bruker en ekstremt sterk metafor som premiss for hele sin argumentasjon."
+            "type": "text",
+            "content": "Vi skal bruke et utdrag fra en spiss kommentar som advarer mot ukritisk bruk av kunstig intelligens i skriving. Teksten heter «KI er Botox for hjernen» og ble publisert på NRK Ytring (Johansen, 2026). Legg merke til hvordan skribenten bruker en ekstremt sterk metafor som premiss for hele sin argumentasjon."
         },
         {
             "type": "expandable",
@@ -99,11 +99,11 @@
             "content": [
                 {
                     "type": "paragraph",
-                    "text": "Bruker du en KI til å skrive for deg, ender du gjerne med en pen og glatt tekst – like død som en Botox-panne. Botox kan slette rynkene i fjeset ditt, og språkmodeller kan fikse dårlig grammatikk... Men bra blir det ikke..."
+                    "text": "Bruker du en KI til å skrive for deg, ender du gjerne med en pen og glatt tekst - like død som en Botox-panne. Botox kan slette rynkene i fjeset ditt, og språkmodeller kan fikse dårlig grammatikk... Men bra blir det ikke..."
                 },
                 {
                     "type": "paragraph",
-                    "text": "Akkurat som at Botox kan rette rynkene i fjeset ditt... KI-en utbedrer svakhetene dine, og teksten blir kanskje helt riktig – men likevel fullstendig feil. Det er nemlig variasjonene og småfeilene som gjør den menneskelig."
+                    "text": "Akkurat som at Botox kan rette rynkene i fjeset ditt... KI-en utbedrer svakhetene dine, og teksten blir kanskje helt riktig - men likevel fullstendig feil. Det er nemlig variasjonene og småfeilene som gjør den menneskelig."
                 },
                 {
                     "type": "paragraph",
@@ -123,8 +123,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Hele denne teksten hviler på én sentral og provoserende sammenligning: KI = Botox. Som analytiker må du spørre: Hvorfor valgte forfatteren akkurat dette bildet? Han kunne ha sammenlignet det med en kalkulator eller en assistent, men valgte en rynkebehandling.\n\nBotox er assosiert med noe kunstig, jålete og i verste fall giftig. Det fjerner rynker (feil), men fjerner også evnen til å vise følelser (mimikk). Ved å koble KI-tekster til Botox, sier forfatteren indirekte at tekster skrevet av maskiner er emosjonelt døde. De ser kanskje pene ut på overflaten fordi de mangler grammatiske feil, men de mangler menneskelig sjel og varme. Denne metaforen fungerer som et effektivt patos-grep som vekker skepsis hos leseren uten at skribenten trenger å bevise dette vitenskapelig."
+            "type": "text",
+            "content": "En metafor er et ord eller et uttrykk som brukes i overført eller billedlig betydning: én ting blir satt i stedet for den tingen som skal beskrives (Grue, 2025a). Hele denne teksten hviler på én slik sentral og provoserende kobling: KI = Botox. Som analytiker må du spørre: Hvorfor valgte forfatteren akkurat dette bildet? Han kunne ha sammenlignet det med en kalkulator eller en assistent, men valgte en rynkebehandling.\n\nBotox er assosiert med noe kunstig, jålete og i verste fall giftig. Det fjerner rynker (feil), men fjerner også evnen til å vise følelser (mimikk). Ved å koble KI-tekster til Botox, sier forfatteren indirekte at tekster skrevet av maskiner er emosjonelt døde. De ser kanskje pene ut på overflaten fordi de mangler grammatiske feil, men de mangler menneskelig sjel og varme. Denne metaforen fungerer som et effektivt patos-grep. Patos er et retorisk bevismiddel som tar utgangspunkt i følelsene til dem som lytter (Grue, 2025b), og her vekker bildet skepsis hos leseren uten at skribenten trenger å bevise noe vitenskapelig."
         },
         {
             "type": "header",
@@ -132,8 +132,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Forfatteren prøver å styre din vurdering gjennom bevisst bruk av pluss- og minusord. Se på ordene han bruker om KI: død, glatt, juks, stiv. Dette er ord som vekker instinktivt ubehag og en følelse av noe uekte.\n\nI skarp kontrast til dette beskriver han det menneskelige strevet med ord som tilfredsstillende, menneskelig og å nå frem. Han fremstiller det å skrive selv som en edel og heroisk kamp, selv om det er tungt. Han prøver altså å få deg til å føle stolthet over å gjøre ting selv, og avsky for det å ta snarveier med teknologi. Legg merke til at han aldri diskuterer om KI faktisk kan være nyttig; han har allerede bestemt verdien gjennom ordvalget."
+            "type": "text",
+            "content": "Forfatteren prøver å styre din vurdering gjennom bevisst bruk av pluss- og minusord. Se på ordene han bruker om KI: død, glatt, juks, stiv. Dette er ord som vekker instinktivt ubehag og en følelse av noe uekte.\n\nI skarp kontrast til dette beskriver han det menneskelige strevet med ord som tilfredsstillende, menneskelig og å nå frem. Han fremstiller det å skrive selv som en edel og heroisk kamp, selv om det er tungt. Han prøver altså å få deg til å føle stolthet over å gjøre ting selv, og avsky for det å ta snarveier med teknologi. Legg merke til at han aldri diskuterer om KI faktisk kan være nyttig; han har allerede bestemt verdien gjennom ordvalget."
         },
         {
             "type": "component",
@@ -155,8 +155,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Les setningen «Teksten blir kanskje helt riktig – men likevel fullstendig feil» en gang til. Dette er et paradoks – en tilsynelatende selvmotsigelse som likevel rommer en dypere sannhet. Vanligvis lærer vi at riktig er målet for all skriving. Men her snur kommentatoren på alt vi kjenner til: Han hevder at det perfekte er feil, fordi det uperfekte er det som er menneskelig.\n\nDenne ironiske vridningen er et kraftfullt retorisk grep. Det tvinger leseren til å stoppe opp og revurdere sine egne verdier. Han bruker ironi for å vise hvor absurd det er å søke perfeksjon på bekostning av personlighet. En god analyse må her peke på hvordan skribenten bruker slike tankekors for å få leseren over på sin side."
+            "type": "text",
+            "content": "Les setningen «Teksten blir kanskje helt riktig - men likevel fullstendig feil» en gang til. Dette er et paradoks: en påstand som er sann, men som virker selvmotsigende, urimelig eller absurd (Persvold, 2025). Vanligvis lærer vi at riktig er målet for all skriving. Men her snur kommentatoren på alt vi kjenner til: Han hevder at det perfekte er feil, fordi det uperfekte er det som er menneskelig.\n\nIroni er å uttrykke noe man ikke mener, eller det motsatte av det man mener, i hånende eller spøkefull hensikt (Tranøy mfl., 2025). Denne ironiske vridningen er et kraftfullt retorisk grep. Det tvinger leseren til å stoppe opp og revurdere sine egne verdier. Han bruker ironi for å vise hvor absurd det er å søke perfeksjon på bekostning av personlighet. En god analyse må her peke på hvordan skribenten bruker slike tankekors for å få leseren over på sin side."
         },
         {
             "type": "header",
@@ -164,8 +164,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Når du skriver analysen din, må du vise hvordan de ulike virkemidlene jobber sammen for å bygge opp under skribentens hovedsyn."
+            "type": "text",
+            "content": "Når du skriver analysen din, må du vise hvordan de ulike virkemidlene jobber sammen for å bygge opp under skribentens hovedsyn."
         },
         {
             "type": "expandable",
@@ -194,6 +194,20 @@
                     "Diskuter med en medelev: Er det juks å bruke KI når du skriver, eller er det bare et nytt verktøy? Bruk argumenter fra teksten på begge sider."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Grue, J. (2025a). *metafor*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/metafor](https://snl.no/metafor)",
+                    "Grue, J. (2025b). *patos*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/patos](https://snl.no/patos)",
+                    "Hågvar, Y. B. (2026). *kommentar - journalistisk sjanger*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/kommentar](https://snl.no/kommentar_-_journalistisk_sjanger)",
+                    "Johansen, A. B. (2026). *KI er Botox for hjernen*. NRK Ytring. Hentet 11.08.2026 fra [nrk.no/ytring](https://www.nrk.no/ytring/ki-er-botox-for-hjernen-1.17657427)",
+                    "Persvold, A. Z. (2025). *paradoks*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/paradoks](https://snl.no/paradoks)",
+                    "Tranøy, K. E., Borthen, K. & Grue, J. (2025). *ironi*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/ironi](https://snl.no/ironi)"
+                ]
+            }
         }
     ],
     "relatedLink": {
@@ -209,5 +223,6 @@
     ],
     "createdDate": "2026-02-06T21:47:00Z",
     "readTime": "12 min lesning",
-    "category": "Analyse"
+    "category": "Analyse",
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }
