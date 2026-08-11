@@ -1,6 +1,7 @@
 {
     "id": "hellige-tekster",
-    "title": "Vedaene og Bhagavad Gita",
+    "title": "Hørt eller husket",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "hinduisme",
@@ -9,83 +10,255 @@
         "hellige-tekster",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Vedaene"
-        },
-        {
-            "type": "text",
-            "content": "Vedaene er de eldste hellige skriftene i hinduismen. De inneholder hymner til gudene, offerformler og filosofiske tekster (Upanishadene)."
-        },
-        {
-            "type": "header",
-            "text": "Bhagavad Gita"
-        },
-        {
-            "type": "text",
-            "content": "Bhagavad Gita ('Herrens sang') er en svært populær tekst. Den handler om guden Krishna som underviser krigeren Arjuna om plikt (dharma), handling og hengivelse."
-        },
-        {
-            "type": "header",
-            "text": "Ramayana og Mahabharata"
-        },
-        {
-            "type": "text",
-            "content": "Disse to store eposene forteller spennende historier om guder og helter, og lærer hinduer om rett og galt."
-        }
+    "category": "Hinduisme",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Hinduismen deler tekstene i to klasser: shruti, det som er hørt, og smriti, det som er husket.",
+        "Shruti regnes som evig og uforanderlig, og som tekst uten menneskelig forfatter. Vedaene er det viktigste eksempelet.",
+        "Smriti knyttes alltid til en forfatter. Hit hører Mahabharata med Bhagavadgita, Ramayana og puranaene.",
+        "Vedaene ble overlevert muntlig i svært lang tid, og lyden på sanskrit er selve poenget.",
+        "Den mest oversatte teksten, Bhagavadgita, tilhører den klassen som regnes som mindre evig."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
-            "id": "vedaene",
-            "term": "Vedaene",
-            "definition": "De eldste og helligste skriftene i hinduismen. Betyr 'viten'."
+            "id": "shruti",
+            "term": "Shruti",
+            "definition": "Sanskrit for det som er hørt. Tekster som regnes som evige og uforanderlige, og som etter tradisjonen ikke har noen menneskelig forfatter. Vedaene er shruti."
         },
         {
-            "id": "bhagavad-gita",
-            "term": "Bhagavad Gita",
-            "definition": "En viktig hellig tekst som lærer om plikt og hengivelse til Gud."
+            "id": "smriti",
+            "term": "Smriti",
+            "definition": "Sanskrit for det som er husket. Tekster som regnes som mindre evige, og som alltid knyttes til en forfatter. Eposene og puranaene er smriti."
         },
         {
-            "id": "sanskrit",
-            "term": "Sanskrit",
-            "definition": "Det hellige språket som hinduismens tekster er skrevet på."
+            "id": "veda",
+            "term": "Veda",
+            "definition": "De eldste kjente hellige skriftene i India. Ofte nevnes tre vedaer: Rigveda, Yajurveda og Samaveda. Regner man med Atharvaveda, blir det fire."
+        },
+        {
+            "id": "rishi",
+            "term": "Rishi",
+            "definition": "En hellig seer. Ifølge indisk tradisjon ble vedatekstene ikke forfattet, men skuet av slike seere."
+        },
+        {
+            "id": "devabhasha",
+            "term": "Devabhasha",
+            "definition": "Sanskrit for gudenes språk. Betegnelsen viser at sanskrit regnes som et hellig språk i hinduismen."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva betyr ordet Veda?",
-            "options": [
-                "Gud",
-                "Viten",
-                "Lov"
-            ],
-            "answer": "Viten"
+            "type": "text",
+            "content": "Tenk deg to bokhyller. I den ene står bøker som etter tradisjonen ingen mennesker har skrevet. I den andre står bøker med forfatter, tittel og en historie om hvordan de ble til. I hinduismen finnes begge hyllene. Og forskjellen mellom dem avgjør ikke bare hvor fint folk snakker om bøkene, men hva de faktisk gjør med dem."
         },
         {
-            "question": "Hvem er hovedpersonen i Bhagavad Gita?",
-            "options": [
-                "Krishna og Arjuna",
-                "Shiva og Parvati",
-                "Brahma"
-            ],
-            "answer": "Krishna og Arjuna"
+            "type": "text",
+            "content": "Hinduismen deler de hellige tekstene i to klasser. Shruti betyr det som er hørt. Det er tekster som regnes som evige og uforanderlige, og som ifølge tradisjonen ble åpenbart for hellige seere i urtiden. Smriti betyr det som er husket. Slike tekster regnes som mindre evige, og de blir alltid knyttet til en forfatter (Kværne & Jacobsen, 2026). Skillet handler ikke om hvilken bok som er finest å lese. Det handler om hvor autoriteten kommer fra."
         },
         {
-            "question": "Hva er Ramayana?",
-            "options": [
-                "En lovbok",
-                "Et stort epos (fortelling)",
-                "En type mat"
-            ],
-            "answer": "Et stort epos (fortelling)"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gamle håndskrevne palmebladmanuskripter på et bord",
+            "caption": "Gamle indiske tekster ble skrevet ned lenge etter at de først ble framført muntlig."
+        },
+        {
+            "type": "text",
+            "content": "Det er verdt å si med en gang at ingen sentral ledelse bestemmer dette. Hinduismen blir beskrevet som en mosaikk av tradisjoner uten noe sentrum og uten noen sentral organisasjon (Kværne & Jacobsen, 2026). Ulike retninger legger vekt på ulike tekster. Du kan lese mer om denne bredden i artikkelen om [sentrale trekk](/krle/religion/hinduisme/sentrale-trekk)."
+        },
+        {
+            "type": "header",
+            "text": "Tekstene ingen skal ha skrevet"
+        },
+        {
+            "type": "text",
+            "content": "Vedaene er de eldste kjente hellige skriftene i India. Ofte nevnes tre vedaer, altså Rigveda, Yajurveda og Samaveda. Tar man med Atharvaveda, blir det fire (Store norske leksikon, 2025a). Rigveda alene inneholder 1028 hymner fordelt på ti bøker (Eskild, 2025). Ifølge indisk tradisjon er Veda tidløs: tekstene ble ikke forfattet av noen, men skuet av hellige seere som kalles rishier (Store norske leksikon, 2025a). Det er nettopp dette som gjør dem til shruti. Under finner du fem kjente tekster. Plasser hver av dem i riktig klasse, og se hva plasseringen betyr i praksis."
+        },
+        {
+            "type": "component",
+            "name": "HoertEllerHusket",
+            "props": {
+                "title": "Hørt eller husket?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hvor Bhagavadgita havnet. Den er den hinduistiske teksten som er oversatt til flest språk (Jacobsen, 2025a), men den ligger i den klassen som regnes som mindre evig. Størst utbredelse og høyest rang er altså ikke det samme."
+        },
+        {
+            "type": "header",
+            "text": "Lyden er teksten"
+        },
+        {
+            "type": "text",
+            "content": "Hvis en tekst skal være uforanderlig, må noen passe på at den ikke forandrer seg. I vedatradisjonen er det ikke boka som gjør den jobben. Det er lyden. Hymnene fra Vedaene ble overlevert muntlig i svært lang tid, og de blir fortsatt resitert av brahmaner. Målet er at ordlyden ikke skal endre seg, og denne overleveringen blir omtalt som den eldste ubrutte religiøse tradisjonen i verden (Kværne & Jacobsen, 2026). Sanskrit regnes som et hellig språk, devabhasha, som betyr gudenes språk (Kværne & Jacobsen, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Resitasjon som verdensarv",
+                "content": "UNESCO førte tradisjonen med vedisk resitasjon opp på listen over verdens immaterielle kulturarv i 2008, etter først å ha framhevet den i 2003. Barn læres opp i innviklede resitasjonsteknikker som bygger på tonefall og en helt bestemt måte å uttale hver enkelt lyd på, nettopp for at lyden av hvert ord ikke skal endre seg. Av over tusen grener av vedisk resitasjon er bare tretten igjen i dag (UNESCO, u.å.)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Her ligger også svaret på spørsmålet om oversettelse. En norsk oversettelse kan fortelle deg hva en hymne betyr, men i ritualet er det den nøyaktige lyden på sanskrit som gjelder. Tradisjonelt har brahmanene, den øverste gruppen i kastesystemet, hatt hovedrollen med å resitere de vediske hymnene, og de utfører overgangsritene i familiene (Kværne & Jacobsen, 2026). I Norge ligger det største hindutempelet på Rommen i Oslo. Sivasubramanyar Alayam ble innviet sommeren 2023, og en ansatt prest utfører de daglige puja-ritualene der (Jacobsen, 2024). Mer om hva som skjer i selve ritualene kan du lese i artikkelen om [bønn](/krle/religion/hinduisme/bonn)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Prest som resiterer foran et alter i et hindutempel",
+            "caption": "I ritualet er det den nøyaktige lyden på sanskrit som teller, ikke oversettelsen."
+        },
+        {
+            "type": "header",
+            "text": "De huskede tekstene folk kjenner best"
+        },
+        {
+            "type": "text",
+            "content": "Smriti-tekstene har forfattere, og de er enorme. Mahabharata er et indisk epos på omkring 100 000 dobbeltvers. Det bygger på muntlige tradisjoner i dikterskoler som sto krigerkastene nær, og ble senere samlet og redigert i en sanskrittekst under det mytiske forfatternavnet Vyasa. Eposet ser ut til å ha fått sin nåværende form i siste halvdel av siste årtusen før vår tidsregning (Store norske leksikon & Bätcke, 2025). Ramayana er på 24 000 tolinjede vers, og forfatterskapet tilskrives Valmiki (Store norske leksikon, 2025b). Puranaene er en rekke episk-didaktiske sanskritverker om skapelsen, gudenes slekter, kastelover og ritualer. Tradisjonelt regnes det med 18 puranaer (Store norske leksikon, 2025c)."
+        },
+        {
+            "type": "text",
+            "content": "Bhagavadgita, som betyr Herrens sang, er et religiøst læredikt på sanskrit med rundt 700 vers. Det står i den sjette boka av Mahabharata, og er neppe eldre enn 200-tallet før vår tidsregning (Jacobsen, 2025a). Handlingen er enkel. Rett før et avgjørende slag klarer ikke krigeren Arjuna å kjempe. Krishna oppfordrer ham til å huske sin egen natur og gjøre pliktene sine uten egoistisk begjær, og røper til slutt for ham at han selv er Altets Herre (Jacobsen, 2025a). Teksten kritiserer asketen som trekker seg bort fra samfunnet, og peker i stedet på hengivelsens vei, bhakti, der den troende overgir seg til guden samtidig som han eller hun handler (Jacobsen, 2025a)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Vognfestival med pyntet tempelvogn og folkemengde",
+            "caption": "Fortellingene fra de huskede tekstene lever videre i fester, sang og teater."
+        },
+        {
+            "type": "header",
+            "text": "Åpen eller lukket samling?"
+        },
+        {
+            "type": "text",
+            "content": "Her skiller de to klassene lag igjen. Shruti regnes som evig og uforanderlig, og da gir det ikke mening å skrive en ny veda. Smriti er en åpnere samling. Grensen er likevel ikke alltid skarp. Upanishadene regnes som siste del av Veda, altså som shruti, men det finnes over 100 upanishad-tekster. Mange yoga-upanishader er mye yngre, og noen er så sene som fra 1500-tallet. De upanishadene som filosofen Shankara kommenterte, regnes som de klassiske (Jacobsen, 2025b)."
+        },
+        {
+            "type": "text",
+            "content": "Og hvem får bestemme hva tekstene betyr? Det finnes ikke ett svar. I praksis møter de fleste tekstene gjennom en lærer. Ordet upanishad kan bety å sitte ved siden av, og peker på elever som sitter ved føttene til læreren eller guruen sin. Mange hinduer i dag forstår ordet slik og oversetter det med hemmelig lære (Jacobsen, 2025b). Autoriteten ligger altså ikke bare i teksten, men i kjeden av lærere som fører den videre."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Hinduismen er ein mosaikk av tradisjonar og har ikkje noko sentrum eller nokon sentral organisasjon, men er eit mangfald på alle måtar.",
+                "author": "Per Kværne og Knut A. Jacobsen, Store norske leksikon"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Så hva er hinduismens hellige bok? Spørsmålet har ikke ett svar, og det er selve poenget. Vedaene har den høyeste rangen, men blir resitert av få. Bhagavadgita står lavere i systemet, men leses av flest. Ramayana regnes som mer utbredt enn noen annen bok i India og er oversatt til nesten alle moderne indiske språk (Store norske leksikon, 2025b). To hyller, to slags autoritet, og en religion som lever godt med begge. Vil du se hvordan tekstene henger sammen med troen på gudene, kan du lese videre i artikkelen om [gudsbildet](/krle/religion/hinduisme/gudsbilde)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordene shruti og smriti, og hva er hovedforskjellen mellom de to klassene?",
+                    "Hvilke tekster hører til shruti, og hvilke hører til smriti? Nevn minst to av hver.",
+                    "Hvorfor er den nøyaktige lyden så viktig når vediske hymner blir resitert?",
+                    "Hva er Bhagavadgita, og hvilken plass har den i Mahabharata?"
+                ],
+                "reflekter": [
+                    "Bhagavadgita har lavere rang enn Vedaene, men er hinduismens mest oversatte tekst. Forklar med egne ord hvorfor rang og utbredelse ikke er det samme.",
+                    "Artikkelen skiller mellom hva tradisjonen forteller om hvordan Vedaene ble til, og hva vi kan si historisk. Hvorfor er det viktig å holde de to fra hverandre?",
+                    "Hva slags makt får en gruppe som er alene om å kunne resitere de helligste tekstene riktig?",
+                    "Upanishadene regnes som shruti, men noen av dem er fra 1500-tallet. Hva sier det om hvor skarpe slike grenser egentlig er?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva de fire vedaene inneholder hver for seg, og lag en enkel oversikt.",
+                    "Sammenlign med en annen religion i sammenligningsemnet: har den også tekster med ulik rang, eller bare én samling?",
+                    "Diskuter i klassen: Kan en tekst miste noe når den blir oversatt? Finn eksempler fra sanger eller filmer dere kjenner."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr shruti?",
+                        "options": [
+                            "Det som er skrevet",
+                            "Det som er hørt",
+                            "Det som er husket",
+                            "Det som er sunget"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Shruti betyr det som er hørt. Slike tekster regnes som evige og uforanderlige, og de har ingen menneskelig forfatter."
+                    },
+                    {
+                        "question": "Hva kjennetegner smriti-tekstene?",
+                        "options": [
+                            "De regnes som evige og har ingen forfatter",
+                            "De må resiteres på sanskrit i ritualet",
+                            "De regnes som mindre evige og knyttes alltid til en forfatter",
+                            "De er alle eldre enn Vedaene"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Smriti betyr det som er husket. Disse tekstene regnes som mindre evige enn shruti, og de blir alltid identifisert med en forfatter."
+                    },
+                    {
+                        "question": "Hvor står Bhagavadgita?",
+                        "options": [
+                            "Den er en av de fire vedaene",
+                            "Den står i den sjette boka av eposet Mahabharata",
+                            "Den er siste del av Ramayana",
+                            "Den er en av de 18 hovedpuranaene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Bhagavadgita er et læredikt på rundt 700 vers, og det står i den sjette boka av Mahabharata. Diktet er neppe eldre enn 200-tallet før vår tidsregning."
+                    },
+                    {
+                        "question": "Hvorfor legger vedatradisjonen så stor vekt på resitasjon?",
+                        "options": [
+                            "Fordi det ikke fantes skriftspråk i India",
+                            "Fordi teksten skal være uforanderlig, og lyden bevarer den nøyaktig",
+                            "Fordi bøkene var for dyre å lage",
+                            "Fordi bare barn fikk lov til å lese tekstene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Hymnene ble overlevert muntlig i svært lang tid, og de resiteres fortsatt. Resitasjonsteknikkene er laget nettopp for at lyden av hvert ord ikke skal endre seg."
+                    },
+                    {
+                        "question": "Hva sier artikkelen om hvem som bestemmer i hinduismen?",
+                        "options": [
+                            "En sentral organisasjon i India avgjør hvilke tekster som gjelder",
+                            "Hinduismen har ikke noe sentrum eller noen sentral organisasjon",
+                            "Bare Bhagavadgita er felles for alle hinduer",
+                            "Alle hinduer følger de samme 18 puranaene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Hinduismen blir beskrevet som en mosaikk av tradisjoner uten noe sentrum og uten noen sentral organisasjon. Ulike retninger legger vekt på ulike tekster."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Eskild, H. (2025). *Hellige skrifter i hinduismen*. Lille norske leksikon. Hentet 11.08.2026 fra [lille.snl.no/hellige_skrifter_i_hinduismen](https://lille.snl.no/hellige_skrifter_i_hinduismen)",
+                    "Jacobsen, K. A. (2024). *Sivasubramanyar Alayam*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Sivasubramanyar_Alayam](https://snl.no/Sivasubramanyar_Alayam)",
+                    "Jacobsen, K. A. (2025a). *Bhagavadgita*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Bhagavadgita](https://snl.no/Bhagavadgita)",
+                    "Jacobsen, K. A. (2025b). *Upanishader*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/upanishader](https://snl.no/upanishader)",
+                    "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+                    "Store norske leksikon. (2025a). *Veda*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Veda](https://snl.no/Veda)",
+                    "Store norske leksikon. (2025b). *Ramayana*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Ramayana](https://snl.no/Ramayana)",
+                    "Store norske leksikon. (2025c). *Purana*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/purana](https://snl.no/purana)",
+                    "Store norske leksikon & Bätcke, C. (2025). *Mahabharata*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Mahabharata](https://snl.no/Mahabharata)",
+                    "UNESCO. (u.å.). *Tradition of Vedic chanting*. UNESCO Intangible Cultural Heritage. Hentet 11.08.2026 fra [ich.unesco.org](https://ich.unesco.org/en/RL/tradition-of-vedic-chanting-00062)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Gjør din plikt uten tanke på handlingens frukt.",
-        "source": "Bhagavad Gita",
-        "reference": "Kapittel 2:47"
-    }
+    "timeline": []
 }

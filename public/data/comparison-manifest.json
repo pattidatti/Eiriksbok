@@ -669,55 +669,55 @@
       "entries": [
         {
           "religion": "bahai",
-          "title": "Kitáb-i-Aqdas",
+          "title": "Boka grunnleggeren skrev selv",
           "file": "content/krle/religion/bahai/hellige-tekster/artikkel.json",
           "link": "/krle/religion/bahai/hellige-tekster"
         },
         {
           "religion": "buddhisme",
-          "title": "Tripitaka: De tre kurver",
+          "title": "Tre kurver, flere kanoner",
           "file": "content/krle/religion/buddhisme/hellige-tekster/artikkel.json",
           "link": "/krle/religion/buddhisme/hellige-tekster"
         },
         {
           "religion": "hinduisme",
-          "title": "Vedaene og Bhagavad Gita",
+          "title": "Hørt eller husket",
           "file": "content/krle/religion/hinduisme/hellige-tekster/artikkel.json",
           "link": "/krle/religion/hinduisme/hellige-tekster"
         },
         {
           "religion": "islam",
-          "title": "Koranen",
+          "title": "Boka som ikke kan oversettes",
           "file": "content/krle/religion/islam/hellige-tekster/artikkel.json",
           "link": "/krle/religion/islam/hellige-tekster"
         },
         {
           "religion": "jehovas-vitner",
-          "title": "Ny verden-oversettelsen",
+          "title": "Ett ord, to bibler",
           "file": "content/krle/religion/jehovas-vitner/hellige-tekster/artikkel.json",
           "link": "/krle/religion/jehovas-vitner/hellige-tekster"
         },
         {
           "religion": "jodedom",
-          "title": "Tanakh og Talmud",
+          "title": "Boka der uenigheten blir stående",
           "file": "content/krle/religion/jodedom/hellige-tekster/artikkel.json",
           "link": "/krle/religion/jodedom/hellige-tekster"
         },
         {
           "religion": "kristendom",
-          "title": "Bibelen",
+          "title": "Boka som ble satt sammen",
           "file": "content/krle/religion/kristendom/hellige-tekster/artikkel.json",
           "link": "/krle/religion/kristendom/hellige-tekster"
         },
         {
           "religion": "mormonisme",
-          "title": "Mormons bok",
+          "title": "Fire bøker, og plass til mer",
           "file": "content/krle/religion/mormonisme/hellige-tekster/artikkel.json",
           "link": "/krle/religion/mormonisme/hellige-tekster"
         },
         {
           "religion": "sikhisme",
-          "title": "Guru Granth Sahib",
+          "title": "Guruen som er en bok",
           "file": "content/krle/religion/sikhisme/hellige-tekster/artikkel.json",
           "link": "/krle/religion/sikhisme/hellige-tekster"
         }
@@ -1025,7 +1025,7 @@
     },
     {
       "religion": "bahai",
-      "title": "Kitáb-i-Aqdas",
+      "title": "Boka grunnleggeren skrev selv",
       "link": "/krle/religion/bahai/hellige-tekster",
       "dimension": "narrative",
       "tags": [
@@ -1116,7 +1116,7 @@
     },
     {
       "religion": "buddhisme",
-      "title": "Tripitaka: De tre kurver",
+      "title": "Tre kurver, flere kanoner",
       "link": "/krle/religion/buddhisme/hellige-tekster",
       "dimension": "narrative",
       "tags": [
@@ -1197,7 +1197,7 @@
     },
     {
       "religion": "hinduisme",
-      "title": "Vedaene og Bhagavad Gita",
+      "title": "Hørt eller husket",
       "link": "/krle/religion/hinduisme/hellige-tekster",
       "dimension": "narrative",
       "tags": [
@@ -1279,7 +1279,7 @@
     },
     {
       "religion": "islam",
-      "title": "Koranen",
+      "title": "Boka som ikke kan oversettes",
       "link": "/krle/religion/islam/hellige-tekster",
       "dimension": "narrative",
       "tags": [
@@ -1370,7 +1370,7 @@
     },
     {
       "religion": "jehovas-vitner",
-      "title": "Ny verden-oversettelsen",
+      "title": "Ett ord, to bibler",
       "link": "/krle/religion/jehovas-vitner/hellige-tekster",
       "dimension": "narrative",
       "tags": [
@@ -1451,7 +1451,7 @@
     },
     {
       "religion": "jodedom",
-      "title": "Tanakh og Talmud",
+      "title": "Boka der uenigheten blir stående",
       "link": "/krle/religion/jodedom/hellige-tekster",
       "dimension": "narrative",
       "tags": [
@@ -1532,7 +1532,7 @@
     },
     {
       "religion": "kristendom",
-      "title": "Bibelen",
+      "title": "Boka som ble satt sammen",
       "link": "/krle/religion/kristendom/hellige-tekster",
       "dimension": "narrative",
       "tags": [
@@ -1622,7 +1622,7 @@
     },
     {
       "religion": "mormonisme",
-      "title": "Mormons bok",
+      "title": "Fire bøker, og plass til mer",
       "link": "/krle/religion/mormonisme/hellige-tekster",
       "dimension": "narrative",
       "tags": [
@@ -1703,9 +1703,9 @@
     },
     {
       "religion": "sikhisme",
-      "title": "Guru Granth Sahib",
+      "title": "Guruen som er en bok",
       "link": "/krle/religion/sikhisme/hellige-tekster",
-      "dimension": null,
+      "dimension": "narrative",
       "tags": [
         "hellige-tekster"
       ]

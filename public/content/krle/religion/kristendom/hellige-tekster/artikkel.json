@@ -1,6 +1,7 @@
 {
     "id": "hellige-tekster",
-    "title": "Bibelen",
+    "title": "Boka som ble satt sammen",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "kristendom",
@@ -9,146 +10,254 @@
         "hellige_tekster",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2026-03-15T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "To deler - én bok"
-        },
-        {
-            "type": "text",
-            "content": "Bibelen er kristendommens hellige bok, og den mest leste boken i verdenshistorien. Den er egentlig ikke én bok, men en samling av 66 bøker skrevet av mange forskjellige forfattere over en periode på rundt tusen år. Bibelen er delt i to hoveddeler: Det gamle testamentet (39 bøker) og Det nye testamentet (27 bøker)."
-        },
-        {
-            "type": "header",
-            "text": "Det gamle testamentet"
-        },
-        {
-            "type": "text",
-            "content": "Det gamle testamentet deler kristne med jødedommen. Det inneholder skapelsesfortellingen, historien om Abraham og Moses, De ti bud, salmer og profetenes budskap. Testamente betyr pakt eller avtale, og viser til pakten mellom Gud og det jødiske folket. For kristne peker mange av tekstene i Det gamle testamentet fram mot Jesus."
-        },
-        {
-            "type": "header",
-            "text": "Evangeliene"
-        },
-        {
-            "type": "text",
-            "content": "De fire evangeliene er de viktigste tekstene i Det nye testamentet. De forteller om Jesu liv, lære, død og oppstandelse. Evangelium betyr godt budskap. De fire er skrevet av Matteus, Markus, Lukas og Johannes. De forteller den samme historien, men fra litt ulike vinkler - litt som fire vitner som beskriver den samme hendelsen."
-        },
-        {
-            "type": "header",
-            "text": "Paulus' brev"
-        },
-        {
-            "type": "text",
-            "content": "Mye av Det nye testamentet er brev skrevet av Paulus. Han var opprinnelig en motstander av de kristne, men hadde en dramatisk omvendelse da han opplevde å møte Jesus i et syn. Etter dette reiste Paulus rundt i Middelhavsområdet og grunnla kristne menigheter. Brevene hans til disse menighetene forklarer hva kristen tro betyr i praksis."
-        },
-        {
-            "type": "header",
-            "text": "Hvordan brukes Bibelen?"
-        },
-        {
-            "type": "text",
-            "content": "Bibelen leses på mange måter. I gudstjenesten leses det høyt fra Bibelen, og presten holder en tale (preken) som forklarer teksten. Mange kristne leser også Bibelen hjemme, alene eller i grupper. Bibelen er oversatt til over 700 språk og er den mest oversatte boken i verden."
-        },
-        {
-            "type": "header",
-            "text": "Ulike typer tekster"
-        },
-        {
-            "type": "text",
-            "content": "Bibelen inneholder mange forskjellige sjangre. Noen kristne leser alt bokstavelig, mens andre mener at deler av Bibelen skal forstås billedlig eller symbolsk. De fleste er enige om at det er viktig å forstå hva slags tekst man leser."
-        },
-        {
-            "type": "list",
-            "items": [
-                "Lover og regler (De ti bud)",
-                "Historiske fortellinger (konger og kriger)",
-                "Poesi og sanger (Salmenes bok)",
-                "Profetier (varsler om framtiden)",
-                "Evangelier (fortellinger om Jesus)",
-                "Brev (Paulus' brev til menighetene)"
-            ]
-        }
+    "category": "Kristendom",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Bibelen ble ikke skrevet som én bok. Den ble satt sammen av tekster som gradvis fikk status som hellige skrifter.",
+        "Verken en enkeltperson eller et kirkemøte bestemte hva som skulle med i Det nye testamentet.",
+        "Protestantiske bibler har 66 bøker. Katolske og ortodokse bibler har flere, fordi de tar med apokryfene.",
+        "Oversettelse har alltid vært tillatt og ønsket. Hele Bibelen finnes i dag på over 750 språk.",
+        "Samlingen er lukket, men uenigheten om kantene og om hvordan tekstene skal leses, lever fortsatt."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
-            "id": "bibelen",
-            "term": "Bibelen",
-            "definition": "Kristendommens hellige skrift, bestående av Det gamle og Det nye testamentet. Totalt 66 bøker."
+            "id": "kanon",
+            "term": "Kanon",
+            "definition": "Samlingen av tekster som en kirke regner som hellige. Ordet betyr rettesnor: dette er tekstene kirken måler lære og liv mot."
+        },
+        {
+            "id": "apokryfer",
+            "term": "Apokryfer",
+            "definition": "Skrifter som står i den greske og den latinske bibelen, men ikke i den hebraiske. Katolske og ortodokse bibler har dem med, de fleste nyere protestantiske har dem ikke."
+        },
+        {
+            "id": "septuaginta",
+            "term": "Septuaginta",
+            "definition": "Den greske oversettelsen av jødenes hellige skrifter, laget omkring 200 til 100 fvt. Den ble standardteksten for den kristne kirken."
+        },
+        {
+            "id": "deuterokanoniske-boker",
+            "term": "Deuterokanoniske bøker",
+            "definition": "Katolsk navn på de bøkene protestanter kaller de gammeltestamentlige apokryfene. Deutero betyr andre, og viser til at de kom til senere enn skriftene i den hebraiske bibelen."
         },
         {
             "id": "evangelium",
             "term": "Evangelium",
-            "definition": "Betyr godt budskap. Fortellingene om Jesu liv skrevet av Matteus, Markus, Lukas og Johannes."
-        },
-        {
-            "id": "testamente",
-            "term": "Testamente",
-            "definition": "Betyr pakt eller avtale. Viser til avtalen mellom Gud og menneskene."
-        },
-        {
-            "id": "profet",
-            "term": "Profet",
-            "definition": "En person som taler på vegne av Gud. Profetene i Det gamle testamentet varslet om framtiden."
-        },
-        {
-            "id": "salme",
-            "term": "Salme",
-            "definition": "En religiøs sang eller et dikt. Salmenes bok i Bibelen inneholder 150 salmer."
+            "definition": "Betyr godt budskap. Brukes om de fire fortellingene i Det nye testamentet om Jesu liv og gjerning."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvor mange bøker inneholder Bibelen totalt?",
-            "options": [
-                "27",
-                "39",
-                "66"
-            ],
-            "answer": "66"
+            "type": "text",
+            "content": "Ta ned to bibler fra hylla, en katolsk og en protestantisk, og se på innholdsfortegnelsen. De er ikke like. Den katolske har flere bøker enn den protestantiske. Begge heter Bibelen, og ingen av dem er en forfalskning. Hvordan kan det henge sammen?"
         },
         {
-            "question": "Hva betyr ordet evangelium?",
-            "options": [
-                "Hellig bok",
-                "Godt budskap",
-                "Lovsamling"
-            ],
-            "answer": "Godt budskap"
+            "type": "text",
+            "content": "Svaret er at Bibelen aldri ble skrevet som én bok. Den ble satt sammen. Samlingen har to hoveddeler. Det gamle testamentet er stort sett de samme skriftene som jødene regner som hellige. De er for det meste skrevet på hebraisk og ble til mellom omkring 950 og 150 fvt. Det nye testamentet er hellig skrift bare i kristendommen. Det er skrevet på gresk og ble til mellom omkring år 50 og begynnelsen av 100-tallet (Hvalvik, 2026a). Ordet testamente kommer fra latin og betyr pakt. I protestantiske bibler har Det gamle testamentet 39 bøker og Det nye 27, altså 66 til sammen. I katolske og ortodokse bibler er det flere (Hvalvik, 2026a)."
         },
         {
-            "question": "Hvem skrev mange av brevene i Det nye testamentet?",
-            "options": [
-                "Jesus",
-                "Moses",
-                "Paulus"
-            ],
-            "answer": "Paulus"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To åpne bibler ved siden av hverandre på et bord",
+            "caption": "To bibler, ulikt antall bøker. Begge er ekte utgaver."
         },
         {
-            "question": "Hvilken del av Bibelen deler kristne med jøder?",
-            "options": [
-                "Koranen",
-                "Det nye testamentet",
-                "Det gamle testamentet"
-            ],
-            "answer": "Det gamle testamentet"
+            "type": "text",
+            "content": "Samlingen av tekster som regnes som hellige, kalles kanon. Ordet betyr rettesnor. Dette er tekstene kirken måler lære og liv mot (Hvalvik, 2026a). Men hvem trakk streken? Verken en enkeltperson eller et kirkemøte. Det nye testamentet ble til ved at en rekke tekster gradvis ble anerkjent som hellige skrifter, lenge før noen i det hele tatt begynte å snakke om en kanon (Hvalvik, 2026b)."
         },
         {
-            "question": "Hvorfor har kristendommen fire evangelier og ikke bare ett?",
-            "options": [
-                "Fordi de handler om fire forskjellige personer",
-                "Fordi de forteller den samme historien fra ulike vinkler",
-                "Fordi de ble skrevet i fire forskjellige land"
-            ],
-            "answer": "Fordi de forteller den samme historien fra ulike vinkler"
+            "type": "header",
+            "text": "Kjernen og kantene"
+        },
+        {
+            "type": "text",
+            "content": "De eldste kristne skriftene vi har, er brevene til [Paulus](/krle/religion/kristendom/paulus-og-misjonen). De ble skrevet omkring år 50 til 60, altså før evangeliene, og de var også de første som ble samlet. Like etter år 100 finnes det spor av at en slik brevsamling fantes (Hvalvik, 2026b). De fire evangeliene daterer forskere til tidsrommet mellom år 60 og 95, og i andre halvdel av 100-tallet var de godt etablert som hellige skrifter (Hvalvik, 2026b). Kjernen var altså på plass tidlig. Det var kantene som tok tid."
+        },
+        {
+            "type": "component",
+            "name": "HvaKomMedIBoka",
+            "props": {
+                "title": "Hva kom med i boka?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Hva skulle til for at et skrift kom med? Tre ting gikk igjen: at det var gammelt nok til å kunne føres tilbake til apostlenes tid, at det var utbredt og i vanlig bruk i menighetene, og at det stemte med trosregelen, kirkens korte sammenfatning av apostlenes forkynnelse (Hvalvik, 2026b). Skriftet Hyrden av Hermas ble for eksempel anbefalt lest, men ikke i gudstjenesten. Begrunnelsen som ble gitt, var ikke at innholdet var farlig, men at skriftet var blitt til etter apostlenes tid (Hvalvik, 2026b). Teologen Origenes fra Alexandria oppsummerte holdningen på 200-tallet. Heretikerne han nevner, er de kirken mente lærte feil:"
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Kirken har fire evangelier. Heretikerne har mange",
+                "author": "Origenes fra Alexandria, teolog på 200-tallet"
+            }
+        },
+        {
+            "type": "header",
+            "text": "Bøkene kirkene lander ulikt på"
+        },
+        {
+            "type": "text",
+            "content": "Uenigheten som fortsatt lever, gjelder Det gamle testamentet. Omkring 200 til 100 fvt. ble jødenes hellige skrifter oversatt til gresk. Den mest kjente oversettelsen heter Septuaginta, og den inneholdt også en del tekster som jødene selv ikke regnet med i sin egen samling (Hvalvik, 2026b). Septuaginta ble standardteksten for den kristne kirken. Da kirkefaderen Hieronymus (347-420) senere oversatte Bibelen til latin, mente han at bare skriftene fra den hebraiske bibelen burde regnes med, og de andre kalte han apokryfer, et ord som betyr skjult eller hemmelig (Hvalvik, 2025). Han fikk ikke gjennomslag. Skriftene hadde vært i bruk så lenge blant kristne at de ble med i den latinske bibelen Vulgata likevel (Hvalvik, 2025)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Apokryfene i norske bibler",
+                "content": "Fra den første bibelen trykt i Danmark-Norge i 1550 og i århundrene etter var apokryfene med. Endringen kom på 1800-tallet. Det britiske bibelselskapet, som støttet det norske økonomisk, bestemte i 1827 at det ikke ville betale for bibler med apokryfer. I løpet av 1800-tallet ble det anslagsvis trykt 100 000 slike bibler i Norge, og mange ble vant til den mindre utgaven. Da Bibelselskapet kom med en revidert oversettelse i 1930, var apokryfene ute. Siden har de stort sett vært utgitt som egen bok, sist i ny oversettelse i 2018. I 2024 ga Bibelselskapet ut en katolsk utgave der bøkene står slik de tradisjonelt gjør i katolske bibler (Hvalvik, 2025)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Den katolske kirken avgjorde spørsmålet formelt på kirkemøtet i Trient i 1546, kalt Trientkonsilet. Der ble Vulgata slått fast som kirkens bibel, og skrifter som Tobit, Judit, Visdommens bok, Sirak, Baruk og Første og Andre Makkabeerbok står på listen (Hvalvik, 2025). I katolske bibler kalles de ikke apokryfer, men deuterokanoniske bøker, og de er plassert inne blant de andre gammeltestamentlige skriftene, ikke skilt ut (Hvalvik, 2025). Det sies ofte at reformatorene, kirkelederne som brøt med paven på 1500-tallet, kastet bøkene ut av Bibelen. Det stemmer ikke. Da Martin Luther ga ut hele Bibelen på tysk i 1534, tok han dem med, samlet i en egen bolk med overskriften at de ikke er likestilt med de kanoniske bøkene, men likevel er nyttige og gode å lese (Hvalvik, 2025). Først fra omkring år 1600 ble det vanlig å trykke bibler uten apokryfene i de reformerte kirkene (Hvalvik, 2025). Ulike [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn) landet altså ulikt."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gammel bok med latinsk tekst og slitte sider",
+            "caption": "Vulgata var Vest-Europas bibel i hele middelalderen."
+        },
+        {
+            "type": "header",
+            "text": "Boka som alltid har vært oversatt"
+        },
+        {
+            "type": "text",
+            "content": "Her skiller Bibelen seg fra flere andre hellige tekster. Den har vært oversatt så lenge den har eksistert. Jødenes skrifter ble oversatt til gresk før kristendommen fantes, og de første kristne brukte den greske teksten. Allerede i antikken kom det dessuten oversettelser til latin, syrisk, koptisk, gotisk, armensk og etiopisk (Kvalbein mfl., 2026). På slutten av 300-tallet laget Hieronymus den latinske Vulgata. Med reformasjonen på 1500-tallet ble det et poeng i seg selv at folk skulle lese Bibelen på sitt eget språk (Kvalbein mfl., 2026). I dag er hele Bibelen oversatt til over 750 språk, Det nye testamentet til over 1700, og deler av Bibelen til mer enn 1200 (Kvalbein mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Norge fikk sin første selvstendige oversettelse av hele Bibelen fra hebraisk og gresk så sent som i 1904. Før det brukte man den danske. Det nye testamentet på nynorsk kom i 1889, hele Bibelen på nynorsk i 1921, og en ny oversettelse til nordsamisk ble ferdig i 2019 (Kvalbein mfl., 2026). At oversettelse er tillatt, betyr ikke at det er enkelt. Oversettere må velge mellom å følge grunnteksten ord for ord, kalt konkordant metode, og å gjengi meningen med naturlige norske uttrykk, kalt idiomatisk metode. Valget har skapt strid. Da Bibelselskapet gikk idiomatisk til verks i 1978, kom det i 1988 en alternativ og mer ordnær utgave, Norsk Bibel 88 (Kvalbein mfl., 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Bibler på flere språk stablet i en bokhylle",
+            "caption": "Hele Bibelen finnes på over 750 språk."
+        },
+        {
+            "type": "header",
+            "text": "Hvem får tolke, og kan det komme mer?"
+        },
+        {
+            "type": "text",
+            "content": "Her går et av de store skillene i kristendommen. På Trientkonsilet slo den katolske kirken fast at Bibelen og kirkens tradisjon er likeverdige normer for hva kirken skal lære (Store norske leksikon, 2025). Reformatorene avviste dette og satte opp Skriften alene, på latin sola scriptura, som prinsipp (Barstad & Skogvang, 2026). Nettopp fordi tradisjonen ble avvist som lærenorm, ble det nødvendig å begrunne at Bibelen har absolutt autoritet. Det er bakgrunnen for læren om at hvert eneste tegn i Skriften er inspirert av Den hellige ånd og derfor ufeilbarlig, kalt verbalinspirasjon (Molland & Leivestad, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Kristne leser ikke likt. Noen leser bibeltekstene bokstavelig og ser dem som et lukket, tidløst system der man kan hente ut evige sannheter. Denne holdningen kalles gjerne biblisisme (Barstad & Skogvang, 2026). Andre mener at tekstene må forstås ut fra sin egen tid, og at man må vite hva slags tekst man leser, siden Bibelen rommer alt fra lover og historiefortellinger til dikt, ordspråk, profetier og brev (Hvalvik, 2026a). Læren om verbalinspirasjon er i dag oppgitt innenfor teologien, men holder seg fortsatt hos noen (Molland & Leivestad, 2025). Mer om forskjellene finner du i artikkelen om [sentrale trekk ved kristendommen](/krle/religion/kristendom/sentrale-trekk)."
+        },
+        {
+            "type": "text",
+            "content": "Kan det komme mer tekst? Nei. Athanasius, biskop i Alexandria, var den første som brukte ordet kanon om den nytestamentlige skriftsamlingen. I et påskebrev fra år 367 listet han opp nøyaktig de skriftene som står i Det nye testamentet i dag, og la til: «La ingen legge noe til disse, la ikke noe bli tatt bort fra dem.» Det ble kirkens syn (Hvalvik, 2026b). Boka er lukket, men bruken er det ikke. I gudstjenesten leses det høyt fra Bibelen, det holdes preken, og menigheten ber og synger (Thomassen, 2026). Teksten står stille. Det er leserne som beveger seg."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet kanon, og hva viser det til i kristendommen?",
+                    "Hvilke tre ting måtte til for at et skrift skulle bli anerkjent som hellig skrift i den tidlige kirken?",
+                    "Hva er apokryfene, og hvilke kirker har dem med i bibelen sin?",
+                    "Hva er forskjellen på konkordant og idiomatisk oversettelse?"
+                ],
+                "reflekter": [
+                    "Verken en enkeltperson eller et kirkemøte bestemte hva som skulle med i Det nye testamentet. Hvordan kan en samling likevel bli lukket?",
+                    "Hyrden av Hermas ble anbefalt lest, men ikke i gudstjenesten. Hva sier det om at en tekst kan ha ulike grader av autoritet?",
+                    "Hvorfor tror du valget mellom ord for ord og mening for mening skaper så mye strid blant bibeloversettere?",
+                    "Sammenlign prinsippet om Skriften alene med det katolske synet på Bibelen og tradisjonen. Hvilke følger får de to synene for hvem som får tolke?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hvilke bøker som står i en katolsk bibel, men ikke i en vanlig norsk protestantisk. Lag en enkel liste.",
+                    "Sammenlign svaret fra kristendommen med svaret fra en annen religion i sammenligningsemnet. Kan teksten oversettes, og kan samlingen vokse?",
+                    "Diskuter i klassen: Hva betyr det for en tekst at den er satt sammen av mange forfattere over mer enn tusen år?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvem bestemte hvilke skrifter som skulle med i Det nye testamentet?",
+                        "options": [
+                            "Apostelen Paulus, i et brev til menighetene",
+                            "Verken en enkeltperson eller et kirkemøte, tekstene ble anerkjent gradvis",
+                            "Kirkemøtet i Nikea i år 325",
+                            "Martin Luther under reformasjonen"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Det nye testamentet ble til ved at en rekke tekster gradvis ble anerkjent som hellige skrifter. Først på 300-tallet begynte man å snakke om en kanon."
+                    },
+                    {
+                        "question": "Hvorfor har katolske bibler flere bøker enn de fleste protestantiske?",
+                        "options": [
+                            "De har med flere evangelier om Jesus",
+                            "De har med de gammeltestamentlige apokryfene, som katolikker kaller deuterokanoniske bøker",
+                            "De deler hver bok i to",
+                            "De har med brev skrevet på 1500-tallet"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Apokryfene sto i den greske Septuaginta og den latinske Vulgata, men ikke i den hebraiske bibelen. De fleste nyere protestantiske bibler utelater dem."
+                    },
+                    {
+                        "question": "Hvilket av disse var et av kravene for at et skrift skulle bli regnet som hellig i den tidlige kirken?",
+                        "options": [
+                            "At det var skrevet på gresk",
+                            "At det var kort nok til å leses høyt",
+                            "At det var gammelt nok til å kunne føres tilbake til apostlenes tid",
+                            "At en biskop hadde godkjent det personlig"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Skriftene måtte kunne føres tilbake til apostlenes tid, være i vanlig bruk i menighetene og stemme med trosregelen. Hyrden av Hermas ble ikke lest i gudstjenesten nettopp fordi den var for ny."
+                    },
+                    {
+                        "question": "Hvilken status har oversettelser av Bibelen i kristendommen?",
+                        "options": [
+                            "Oversettelse har alltid vært vanlig og ønsket",
+                            "Bare den greske teksten regnes som ekte",
+                            "Oversettelse ble først tillatt på 1900-tallet",
+                            "Bare latin er godkjent som bibelspråk"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Bibelen har vært oversatt så lenge den har eksistert, og reformasjonen la stor vekt på at folk skulle lese den på sitt eget språk. I dag finnes hele Bibelen på over 750 språk."
+                    },
+                    {
+                        "question": "Hva sier prinsippet sola scriptura, Skriften alene?",
+                        "options": [
+                            "At Bibelen bare skal leses alene, ikke i grupper",
+                            "At bare Det nye testamentet gjelder for kristne",
+                            "At Bibelen skal leses uten oversettelse",
+                            "At Bibelen alene er norm for læren, ikke kirkens tradisjon ved siden av"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Reformatorene avviste tradisjonen som lærenorm. Den katolske kirken slo derimot fast på Trientkonsilet at Bibelen og tradisjonen er likeverdige normer."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Barstad, H. M. & Skogvang, H. L. (2026). *Biblisisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/biblisisme](https://snl.no/biblisisme)",
+                    "Hvalvik, R. (2025). *Apokryfer*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/apokryfer](https://snl.no/apokryfer)",
+                    "Hvalvik, R. (2026a). *Bibelen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Bibelen](https://snl.no/Bibelen)",
+                    "Hvalvik, R. (2026b). *Den kristne kanon*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/den_kristne_kanon](https://snl.no/den_kristne_kanon)",
+                    "Hvalvik, R. (2026c). *Tomasevangeliet*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Tomasevangeliet](https://snl.no/Tomasevangeliet)",
+                    "Kvalbein, H., Leivestad, R., Seim, T. K., Berg-Nordlie, M., Aasgaard, R. & Halse, P. (2026). *Bibeloversettelser*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bibeloversettelser](https://snl.no/bibeloversettelser)",
+                    "Molland, E. & Leivestad, R. (2025). *Inspirasjonsteori*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/inspirasjonsteori](https://snl.no/inspirasjonsteori)",
+                    "Store norske leksikon. (2025). *Tradisjon - kristen tradisjon*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/tradisjon_-_kristen_tradisjon](https://snl.no/tradisjon_-_kristen_tradisjon)",
+                    "Thomassen, M. (2026). *Gudstjeneste*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/gudstjeneste](https://snl.no/gudstjeneste)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Hele Skriften er innblåst av Gud og nyttig til opplæring, tilrettevisning, veiledning og oppdragelse i rettferd.",
-        "source": "Bibelen",
-        "reference": "2. Timoteus 3:16"
-    }
+    "timeline": []
 }

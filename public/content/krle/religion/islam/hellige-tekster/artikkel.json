@@ -1,6 +1,7 @@
 {
     "id": "hellige-tekster",
-    "title": "Koranen",
+    "title": "Boka som ikke kan oversettes",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "islam",
@@ -9,83 +10,261 @@
         "hellige-tekster",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Guds ord"
-        },
-        {
-            "type": "text",
-            "content": "Koranen er islams hellige bok. Muslimer tror den er Guds (Allahs) direkte ord, åpenbart for profeten Muhammad via engelen Gabriel. Den er skrevet på arabisk."
-        },
-        {
-            "type": "header",
-            "text": "Surer"
-        },
-        {
-            "type": "text",
-            "content": "Koranen er delt inn i 114 kapitler som kalles surer. De er ordnet etter lengde, fra de lengste til de korteste (unntatt den første)."
-        },
-        {
-            "type": "header",
-            "text": "Hadith"
-        },
-        {
-            "type": "text",
-            "content": "I tillegg til Koranen er Hadith-litteraturen viktig. Den forteller om hva Muhammad sa og gjorde (Sunna), og fungerer som et forbilde for muslimer."
-        }
+    "category": "Islam",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Koranen er en arabiskspråklig tekst. Enhver oversettelse regnes som en tolkning av grunnteksten, ikke som Koranen selv.",
+        "Teksten er delt i 114 surer, og surene er delt i vers som kalles ayaer.",
+        "Koranen er like mye lyd som bokstaver. Mange lærer deler utenat, og noen lærer hele teksten.",
+        "Ifølge muslimsk historieskriving mottok Muhammed åpenbaringene over noen og tjue år, fra rundt 610 til 632.",
+        "Samlingen er lukket. Muhammed regnes som den siste profeten, og det kan ikke komme mer koran-tekst."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "koranen",
             "term": "Koranen",
-            "definition": "Islams hellige bok. Guds ord."
+            "definition": "Islams viktigste tekst. En arabiskspråklig tekst som i islam regnes som en samling åpenbaringer sendt fra Gud til profeten Muhammed."
         },
         {
             "id": "sure",
             "term": "Sure",
-            "definition": "Kapittel i Koranen."
+            "definition": "Et kapittel i Koranen. Koranen har 114 surer, og de står stort sett etter lengde, med de lengste først."
         },
         {
-            "id": "hadith",
-            "term": "Hadith",
-            "definition": "Fortellinger om profeten Muhammads liv og lære."
+            "id": "aya",
+            "term": "Aya",
+            "definition": "Et vers i Koranen. Hver sure er delt inn i ayaer, og de varierer mye i lengde."
+        },
+        {
+            "id": "hafiz-al-quran",
+            "term": "Hafiz al-quran",
+            "definition": "En som bevarer Koranen i hjertet sitt, altså en som har lært hele teksten utenat. En hafiz har høy prestisje."
+        },
+        {
+            "id": "tafsir",
+            "term": "Tafsir",
+            "definition": "Betegnelsen i sunniislam på både arbeidet med å tolke Koranen og den skrevne kommentaren som kommer ut av det."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvilket språk er Koranen skrevet på?",
-            "options": [
-                "Norsk",
-                "Arabisk",
-                "Engelsk"
-            ],
-            "answer": "Arabisk"
+            "type": "text",
+            "content": "På mange norske bokhyller står det en bok med tittelen Koranen. Den er på norsk, den har perm og sidetall, og du kan lese den fra første til siste side. Spør du en muslim om dette er Koranen, kan svaret likevel bli nei. Det handler ikke om at oversettelsen er dårlig. Det handler om hva slags tekst Koranen regnes som."
         },
         {
-            "question": "Hvem åpenbarte Koranen for Muhammad?",
-            "options": [
-                "Engelen Gabriel",
-                "Jesus",
-                "Moses"
-            ],
-            "answer": "Engelen Gabriel"
+            "type": "text",
+            "content": "I islam er Koranen en arabiskspråklig tekst som regnes som en samling åpenbaringer sendt fra Gud til profeten Muhammed. Slik muslimer ser det, er den arabiske ordlyden ikke bare en innpakning rundt budskapet, men selve åpenbaringen. Allerede på 800-tallet ble det formulert et kompromiss som fortsatt gjelder: teksten kan gjengis på andre språk, men enhver oversettelse blir vurdert som en tolkning av grunnteksten (Eggen & Vogt, 2026a). Derfor sier mange at bare den arabiske versjonen regnes som Guds ord og den ekte Koranen (Ims, 2026)."
         },
         {
-            "question": "Hva kalles kapitlene i Koranen?",
-            "options": [
-                "Vers",
-                "Surer",
-                "Bøker"
-            ],
-            "answer": "Surer"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen bok med arabisk skrift på et lesestativ",
+            "caption": "Koranen leses ofte fra et stativ, slik at boka ikke skal røre bakken."
+        },
+        {
+            "type": "text",
+            "content": "Selve teksten er delt i 114 surer, altså kapitler, og hver sure er delt i vers som kalles ayaer (Eggen & Vogt, 2026a). Rekkefølgen er ikke kronologisk. Surene står stort sett etter lengde, med de lengste først. Den aller første suren er et unntak. Den heter al-Fatiha, Åpningsbønnen, er kort og har sju vers. Den lengste suren er sure 2 med 286 vers. Navnene på surene, som Lyset eller Abraham, regnes ikke som en del av selve teksten (Eggen, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor språket ikke kan byttes ut"
+        },
+        {
+            "type": "text",
+            "content": "Teksten sier noe om seg selv. I sure 20:113 heter det at Gud har åpenbart den som en arabisk Koran. Koranlærde og teologer har lest dette slik at det er Gud selv som taler, og at språket derfor henger nøye sammen med tekstens innhold og status som åpenbaring. Tanken fikk store følger. Arabisk ble et lærd og religiøst språk over enorme områder og satte spor i persisk, urdu, tyrkisk og malayisk. Både i ritualer og når noen skal avgjøre hva en regel betyr, legges vanligvis den arabiske teksten til grunn. Den rituelle [bønnen](/krle/religion/islam/bonn) utføres også i hovedsak på arabisk (Eggen & Vogt, 2026a)."
+        },
+        {
+            "type": "component",
+            "name": "OversettelsenSomIkkeErKoranen",
+            "props": {
+                "title": "Arabisk eller oversettelse?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Mønsteret er verdt å merke seg. Der teksten skal være Koranen, brukes arabisk. Der teksten skal forstås av noen som ikke kan arabisk, brukes oversettelser, laget nettopp for at folk skal skjønne det de leser (Ims, 2026). En oversettelse er altså verken forbudt eller uvanlig. Den har bare en annen status enn originalen."
+        },
+        {
+            "type": "header",
+            "text": "En tekst som skal høres og huskes"
+        },
+        {
+            "type": "text",
+            "content": "Koranen er like mye lyd som bokstaver. I koranresitasjon, altså høytlesing av teksten, er hovedfokuset å bevare teksten nøyaktig slik den er ved at hver bokstavlyd og hver stavelse uttales korrekt og klart. Muslimer resiterer fra Koranen i de daglige tidebønnene, i fastemåneden ramadan og ved sykeleie og dødsleie (Eggen & Vogt, 2026a). Teksten deles ofte i trettiendedeler, kalt juz. Det henger sammen med en kjent praksis: å lese gjennom hele Koranen i løpet av én måned, for eksempel i ramadan. De korteste kapitlene ligger i den siste trettiendedelen, og det er ofte dem en muslim lærer først (Eggen, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Den som bevarer Koranen i hjertet",
+                "content": "En hafiz al-quran er en som har lært hele Koranen utenat. Det er et ideal for muslimer at både jenter og gutter lærer mest mulig av teksten, og en hafiz har høy prestisje. For å klare hele teksten er det vanlig å begynne på koranskolen som fire- eller femåring, og det finnes egne teknikker for innlæringen (Vogt, 2024). I Norge kaller mange denne undervisningen moskeskole eller helgeskole i dag. Der lærer barna også om hadith, om religiøs praksis og om etikk (Vogt & Farstad, 2026)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Også selve boka behandles med respekt. Noen ganger står Koranen på et stativ når man leser i den, slik at boka ikke skal røre bakken, og man vasker seg på en bestemt måte før man tar på den. Skriftbildet skal dessuten være vakkert. Kalligrafi er skriftkunst, der teksten skrives så omhyggelig at den blir et kunstverk. Samtidig leser mange Koranen på mobil og nettbrett i dag (Ims, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Nærbilde av arabisk kalligrafi på en vegg",
+            "caption": "Kalligrafi gjør teksten til utsmykning. Skriftbildet skal være vakkert."
+        },
+        {
+            "type": "header",
+            "text": "Hva tradisjonen forteller, og hva forskerne sier"
+        },
+        {
+            "type": "text",
+            "content": "Her må vi skille mellom to ting: hva tradisjonen selv forteller, og hva historikere kan slå fast. Ifølge muslimsk historieskriving mottok Muhammed åpenbaringene muntlig over noen og tjue år, fra rundt 610 til han døde i 632. Samme tradisjon forteller at nedtegningen begynte alt mens han levde, og at man fra starten skilte klart mellom guddommelige åpenbaringer og andre overleveringer om hva profeten sa og gjorde. De siste ble kalt hadith. Etter hans død skal materialet ha blitt samlet og kontrollert mot det de korankyndige hadde lært utenat, i en kommisjon som kalifen Uthman satte ned. Den klassiske overleveringen er enstemmig i å bekrefte at teksten fant sin endelige form før år 656, omkring tjue år etter profetens død (Eggen & Vogt, 2026a). Mer om profeten står i artikkelen om [grunnleggeren](/krle/religion/islam/grunnleggere)."
+        },
+        {
+            "type": "text",
+            "content": "Forskere har undersøkt dette kritisk siden 1800-tallet, og fagfeltet er delt i to leirer. Den ene mener at de tidlige arabiske beretningene må ha en historisk kjerne, selv om enkeltheter kan diskuteres. Den andre, den revisjonistiske fløyen, har hevdet at teksten først ble skrevet ned mot slutten av 700-tallet eller på 800-tallet. Revisjonistene har mistet mye oppslutning, fordi håndskriftfunn de siste tiårene har styrket teorien om tidlig nedskriving. Birmingham-håndskriftet er datert til midten av 600-tallet og inneholder biter av sure 18, 19 og 20 der teksten er identisk med moderne trykte utgaver av de samme utdragene (Eggen & Vogt, 2026a)."
+        },
+        {
+            "type": "text",
+            "content": "Én ting begge sider er enige om, er at de eldste håndskriftene ikke markerte vokaler. Det ga rom for varianter i uttale og ordform. Senere ble bestemte lesetradisjoner definert, og noen varianter ble regnet som ekte, andre ikke. Hos Ibn Mujahid, som døde i 936, blir lesetradisjonene begrenset til sju, mens andre har holdt fast ved ti (Eggen & Vogt, 2026a)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Således har Vi åpenbart den som en arabisk Koran",
+                "author": "Koranen, sure 20:113, i Einar Bergs norske oversettelse"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Se på sitatet over. Du leser det på norsk. I streng forstand leser du altså ikke Koranen, men en tolkning av den. Den første fullstendige norske oversettelsen ble utgitt av Einar Berg i 1980 (Eggen & Vogt, 2026a). At vi kan sitere verset, viser at oversettelser er nyttige. At vi må skrive hvem som har oversatt, viser hvorfor de ikke er det samme som originalen."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To bokutgaver side om side på et bord",
+            "caption": "Den arabiske utgaven og en norsk oversettelse har ulik status."
+        },
+        {
+            "type": "header",
+            "text": "Hvem får tolke, og kan det komme mer?"
+        },
+        {
+            "type": "text",
+            "content": "Koranen må tolkes, og tolkningen har sine egne fag. I sunniislam brukes ordet tafsir både om selve arbeidet og om den skrevne kommentaren. Klassisk tafsir gikk gjennom teksten ord for ord, og skulle også gjøre rede for hvilke hendelser tradisjonen knyttet til de enkelte åpenbaringene. Det krevde omfattende kunnskap om arabisk språk og språkhistorie. Den fremste klassiske kommentaren er al-Tabaris verk i tretti bind, som fortsatt brukes og har stor autoritet (Vogt, 2025). Sjiaislam har sin egen kommentartradisjon, og i sufismen, den mystiske retningen i islam, søker man tekstens skjulte, symbolske mening (Eggen & Vogt, 2026a)."
+        },
+        {
+            "type": "text",
+            "content": "Hvem som får tolke, er ikke avgjort ett sted. Sunniislam har verken et organisert presteskap eller et sentralisert læreembete, altså ingen øverste instans som bestemmer hva som er rett lære. I prinsippet har alle mannlige muslimer de samme religiøse oppgavene og fullmaktene, men i praksis har de rettslærde, kalt ulama, fått særlig autoritet. Innad i islam er mangfoldet stort. Omkring 85 prosent av muslimene er sunnimuslimer, og de resterende 15 prosentene fordeler seg på flere sjiamuslimske grupper (Vogt, 2026). Mer om dette står i artikkelen om [sentrale trekk ved islam](/krle/religion/islam/sentrale-trekk)."
+        },
+        {
+            "type": "text",
+            "content": "Kan samlingen vokse? Nei. I islam regnes Muhammed som den siste i en lang rekke profeter, og Koranen sies å inneholde Guds ord i en så fullkommen form at alle andre profeters budskap blir overflødige (Vogt, 2026). Boka er lukket. Hadith-litteraturen er derimot langt større og mindre avgrenset. Hadith er overleverte fortellinger om hva profeten sa, gjorde eller stilltiende sa seg enig i, samlet og skrevet ned fra 700-tallet og utover 800- og 900-tallet. I sjiaislam kommer fortellinger om de tolv imamene i tillegg (Eggen & Vogt, 2026b). Koranen står altså stille som tekst, mens tolkningen og bruken av den er i bevegelse."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva kalles kapitlene og versene i Koranen, og hvordan er kapitlene ordnet?",
+                    "Hvorfor regnes ikke en norsk utgave av Koranen som Koranen selv?",
+                    "Hva vil det si å være en hafiz al-quran?",
+                    "Hva forteller muslimsk historieskriving om hvordan koranteksten ble samlet etter Muhammeds død?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord forskjellen på å bruke den arabiske teksten og å bruke en oversettelse. Gi ett eksempel på hver.",
+                    "Hvorfor tror du det er så viktig at hver bokstavlyd uttales korrekt når Koranen resiteres?",
+                    "Artikkelen skiller mellom hva tradisjonen forteller og hva forskerne diskuterer. Hvorfor er det viktig å holde de to fra hverandre?",
+                    "Sunniislam har ikke noe sentralt læreembete. Hvilke fordeler og ulemper kan det gi når teksten skal tolkes?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva hadith er, og lag en enkel oversikt over hvordan hadith og Koranen henger sammen.",
+                    "Sammenlign svaret fra islam med svaret fra en annen religion i sammenligningsemnet. Er teksten der oversettbar, og hvem får tolke den?",
+                    "Diskuter i klassen: Hva skjer med en tekst når den bare kan være seg selv på ett språk?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvilken status har en oversettelse av Koranen i islamsk tradisjon?",
+                        "options": [
+                            "Den regnes som like mye Koranen som den arabiske teksten",
+                            "Den er forbudt og finnes ikke",
+                            "Den regnes som en tolkning av grunnteksten",
+                            "Den brukes bare i den rituelle bønnen"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Allerede på 800-tallet ble kompromisset formulert: teksten kan gjengis på andre språk, men enhver oversettelse blir vurdert som en tolkning av grunnteksten."
+                    },
+                    {
+                        "question": "Hvordan er surene i Koranen ordnet?",
+                        "options": [
+                            "Etter når de ble åpenbart, fra først til sist",
+                            "Stort sett etter lengde, med de lengste først",
+                            "Alfabetisk etter navnet på suren",
+                            "Etter tema, med lovtekster først"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Surene står stort sett etter lengde, fra de lengste til de korteste. Den korte åpningssuren al-Fatiha er unntaket, og den står først."
+                    },
+                    {
+                        "question": "Hva betyr det å være en hafiz al-quran?",
+                        "options": [
+                            "Å ha lært hele Koranen utenat",
+                            "Å ha oversatt Koranen til et nytt språk",
+                            "Å lede fredagsbønnen i en moske",
+                            "Å ha skrevet en kommentar til Koranen"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "En hafiz al-quran er en som bevarer Koranen i hjertet sitt, altså har lært hele teksten utenat. Det gir høy prestisje."
+                    },
+                    {
+                        "question": "Hva sier den klassiske muslimske overleveringen om når koranteksten fikk sin endelige form?",
+                        "options": [
+                            "Mot slutten av 700-tallet",
+                            "Før år 656, omkring tjue år etter Muhammeds død",
+                            "Først da Kairo-utgaven ble trykket i 1924",
+                            "Allerede før Muhammed ble født"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Den klassiske overleveringen er enstemmig i å bekrefte at teksten fant sin endelige form før 656. Noen forskere har hevdet en langt senere datering, men nye håndskriftfunn har styrket teorien om tidlig nedskriving."
+                    },
+                    {
+                        "question": "Hva kalles den tradisjonelle kommentarlitteraturen til Koranen i sunniislam?",
+                        "options": [
+                            "Hadith",
+                            "Juz",
+                            "Tafsir",
+                            "Aya"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Tafsir brukes både om arbeidet med å tolke Koranen og om den skrevne kommentaren. Den mest kjente klassiske kommentaren er al-Tabaris verk i tretti bind."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Eggen, N. S. (2026). *Sure*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sure](https://snl.no/sure)",
+                    "Eggen, N. S. & Vogt, K. (2026a). *Koranen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Koranen](https://snl.no/Koranen)",
+                    "Eggen, N. S. & Vogt, K. (2026b). *Hadith*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/hadith](https://snl.no/hadith)",
+                    "Ims, B. A. (2026). *Hellige skrifter i islam*. Lille norske leksikon. Hentet 11.08.2026 fra [lille.snl.no/hellige_skrifter_i_islam](https://lille.snl.no/hellige_skrifter_i_islam)",
+                    "Vogt, K. (2024). *Hafiz al-quran*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/hafiz_al-quran](https://snl.no/hafiz_al-quran)",
+                    "Vogt, K. (2025). *Tafsir*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/tafsir](https://snl.no/tafsir)",
+                    "Vogt, K. (2026). *Islam*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/islam](https://snl.no/islam)",
+                    "Vogt, K. & Farstad, M. H. (2026). *Koranskole*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/koranskole](https://snl.no/koranskole)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Dette er Boken, tvil har ingen plass i den. En ledelse for de gudfryktige.",
-        "source": "Koranen",
-        "reference": "Sure 2:2"
-    }
+    "timeline": []
 }

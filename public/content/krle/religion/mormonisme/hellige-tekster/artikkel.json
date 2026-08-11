@@ -1,6 +1,7 @@
 {
     "id": "hellige-tekster",
-    "title": "Mormons bok",
+    "title": "Fire bøker, og plass til mer",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "mormonisme",
@@ -9,83 +10,241 @@
         "hellige-tekster",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Et annet testamente"
-        },
-        {
-            "type": "text",
-            "content": "Mormons bok er hellig skrift for mormonere, sidestilt med Bibelen. Den kalles 'Et annet testamente om Jesus Kristus'."
-        },
-        {
-            "type": "header",
-            "text": "Gullplatene"
-        },
-        {
-            "type": "text",
-            "content": "Joseph Smith fortalte at han fant boken skrevet på gullplater, og at han oversatte den ved Guds kraft. Den handler om folk som reiste fra Jerusalem til Amerika i oldtiden."
-        },
-        {
-            "type": "header",
-            "text": "Lære og pakter"
-        },
-        {
-            "type": "text",
-            "content": "I tillegg til Bibelen og Mormons bok, har kirken to andre hellige bøker: 'Lære og pakter' (åpenbaringer til Joseph Smith og andre profeter) og 'Den kostelige perle'."
-        }
+    "category": "Mormonisme",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jesu Kristi Kirke av Siste Dagers Hellige har fire hellige bøker, kalt standardverkene: Bibelen, Mormons bok, Lære og pakter og Den kostelige perle.",
+        "Samlingen er ikke lukket. Kirken lærer at Gud fortsatt åpenbarer nytt, og at ny tekst kan komme til.",
+        "Ny tekst må gjennom tre trinn: åpenbaring til kirkens president, tilslutning fra De tolv apostler, og en avstemning blant medlemmene.",
+        "Åttende trosartikkel tar forbehold om oversettelsen, ikke om Guds ord bak. Mormons bok er utgitt i sin helhet på 81 språk i tillegg til engelsk.",
+        "Ifølge tradisjonen ble Mormons bok oversatt fra gullplater. Mange kritikere mener den ble skrevet på 1800-tallet."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
-            "id": "mormons-bok",
-            "term": "Mormons bok",
-            "definition": "En hellig bok som forteller om Guds handlinger med folk i det gamle Amerika."
+            "id": "standardverkene",
+            "term": "Standardverkene",
+            "definition": "Fellesnavnet på de fire hellige bøkene i Jesu Kristi Kirke av Siste Dagers Hellige: Bibelen, Mormons bok, Lære og pakter og Den kostelige perle."
         },
         {
-            "id": "gullplater",
-            "term": "Gullplater",
-            "definition": "Platene som Joseph Smith oversatte Mormons bok fra."
+            "id": "kanon",
+            "term": "Kanon",
+            "definition": "Den offisielle lista over hvilke tekster som gjelder som hellig skrift i en religion. I de fleste religioner er lista lukket."
         },
         {
-            "id": "bibelen",
-            "term": "Bibelen",
-            "definition": "Mormonere tror på Bibelen 'så langt den er riktig oversatt'."
+            "id": "apenbaring",
+            "term": "Åpenbaring",
+            "definition": "At Gud gjør noe kjent for mennesker. Kirken lærer at åpenbaringer fortsatt kommer, blant annet gjennom kirkens president."
+        },
+        {
+            "id": "felles-samtykke",
+            "term": "Felles samtykke",
+            "definition": "Regelen om at viktige avgjørelser i kirken skal legges fram for medlemmene, som stemmer over dem."
+        },
+        {
+            "id": "moronis-lofte",
+            "term": "Moronis løfte",
+            "definition": "Oppfordringen i Moroni 10:4 om at leseren selv skal spørre Gud om Mormons bok er sann, i stedet for å stole på andre."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva er Mormons bok?",
-            "options": [
-                "En kokebok",
-                "Et annet testamente om Jesus",
-                "En historiebok om Norge"
-            ],
-            "answer": "Et annet testamente om Jesus"
+            "type": "text",
+            "content": "De fleste religioner har en liste over hvilke tekster som er hellige, og den lista er ferdig. Ingen kan legge noe til. I Jesu Kristi Kirke av Siste Dagers Hellige er det annerledes. Der står døra fortsatt på gløtt. Kirken lærer at Gud fremdeles taler, og at det kan komme ny tekst som blir like bindende som den gamle."
         },
         {
-            "question": "Hva var boken skrevet på?",
-            "options": [
-                "Papir",
-                "Gullplater",
-                "Stein"
-            ],
-            "answer": "Gullplater"
+            "type": "text",
+            "content": "Kirken har fire hellige bøker. De kalles standardverkene: Bibelen, Mormons bok, Lære og pakter og Den kostelige perle (Bloch-Hoell mfl., 2026). Bibelen deler de med andre kristne. De tre andre er deres egne. Medlemmene blir ofte kalt mormonere, etter Mormons bok. Men det interessante her er ikke hvor mange sider bøkene har. Det interessante er hvem som får bestemme hva de betyr, og hva som skal til for at samlingen kan vokse."
         },
         {
-            "question": "Tror mormonere på Bibelen?",
-            "options": [
-                "Nei, bare Mormons bok",
-                "Ja, sammen med andre skrifter",
-                "Aldri hørt om den"
-            ],
-            "answer": "Ja, sammen med andre skrifter"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Fire slitte bøker stablet på et bord",
+            "caption": "Standardverkene er fire bøker. Kirken lærer at det kan bli flere."
+        },
+        {
+            "type": "text",
+            "content": "Start med et lite forbehold i kirkens åttende trosartikkel: Vi tror at Bibelen er Guds ord så langt som den er riktig oversatt. Vi tror også at Mormons bok er Guds ord (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-f). Legg merke til hva som står der. En oversettelse kan bomme, og da er det oversettelsen som er problemet, ikke Guds ord bak. Derfor er det helt naturlig å oversette. Mormons bok er gitt ut i sin helhet på 81 språk i tillegg til engelsk, med utvalg fra boka på ytterligere 25 språk, og den er trykt i over 150 millioner eksemplarer (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b)."
+        },
+        {
+            "type": "header",
+            "text": "Kanonen som ikke er lukket"
+        },
+        {
+            "type": "text",
+            "content": "En kanon er den offisielle lista over hvilke tekster som gjelder som hellig skrift. Den niende trosartikkelen sier rett ut at denne lista ikke er ferdig: vi tror på alt som Gud har åpenbart, alt som han nå åpenbarer, og vi tror at han fortsatt vil åpenbare mange store og viktige ting angående Guds rike (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-f). Kirken ledes i dag av en president med to rådgivere, og under dem De tolv apostlers quorum, som er et fast råd på tolv ledere. Ifølge kirken mottar mennene i begge disse organene åpenbaringer direkte fra Gud (Bloch-Hoell mfl., 2026). Men én mann kan ikke skrive nytt inn i skriften alene. Prøv selv hva som må til."
+        },
+        {
+            "type": "component",
+            "name": "KanonenSomIkkeErLukket",
+            "props": {
+                "title": "Hva må til for at en ny tekst kommer inn?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Det siste trinnet er lett å overse. Lære og pakter slår fast at alle ting skal utføres med felles samtykke i kirken (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Derfor legges nye tekster fram på en generalkonferanse, det store møtet kirken holder to ganger i året, og der stemmer medlemmene. Slik gikk det i 1978, da kirkens president Spencer W. Kimball kunngjorde en åpenbaring om at alle verdige mannlige medlemmer kunne ordineres til prestedømmet uten hensyn til rase eller farge. Prestedømmet er den fullmakten som gir rett til å lede og til å utføre hellige handlinger som dåp og nattverd. Apostlene sluttet seg til, medlemmene stemte over teksten på generalkonferansen 30. september samme år, og den står i dag i Lære og pakter som Offisiell erklæring 2 (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-e). Autoriteten kommer altså ovenfra og nedenfra på én gang. Mer om hvordan kirken er bygd opp, finner du i artikkelen om [sentrale trekk](/krle/religion/mormonisme/sentrale-trekk)."
+        },
+        {
+            "type": "header",
+            "text": "Hva Mormons bok forteller"
+        },
+        {
+            "type": "text",
+            "content": "Mormons bok handler om en israelittisk familie som ifølge boka forlot Jerusalem og utvandret til det amerikanske kontinentet rundt år 600 fvt. Etterkommerne deler seg i to folk, nephittene og lamanittene. Midtpunktet i fortellingen er at Jesus viser seg for disse menneskene i år 34 evt. og oppretter en kirke med tolv apostler. Fortellingen slutter rundt år 400 evt. (Bloch-Hoell mfl., 2026). I 1982 fikk boka undertittelen Et annet testamente om Jesus Kristus (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Undertittelen sier hva kirken mener boka skal gjøre: ikke erstatte Bibelen, men bekrefte den og vitne om at Jesus har levd (Bloch-Hoell mfl., 2026)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Og når dere mottar dette, vil jeg be dere innstendig om å spørre Gud den evige Fader, i Kristi navn om ikke disse ting er sanne.",
+                "author": "Mormons bok, Moroni 10:4"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Dette verset kalles ofte Moronis løfte, og det sier noe viktig om autoritet. Boka ber ikke leseren stole på en lærd person eller på kirken. Den ber leseren spørre Gud selv, og lover at den som spør av et oppriktig hjerte og med tro på Kristus, skal få sannheten åpenbart ved Den hellige ånds kraft (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d). Tolkning er altså ikke bare noe ledere driver med. Hver enkelt skal be seg fram til sitt eget svar. Du kan lese mer om den siden av saken i artikkelen om [bønn](/krle/religion/mormonisme/bonn)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom leser i en bok ved et kjøkkenbord",
+            "caption": "Moronis løfte ber leseren spørre Gud selv om boka er sann."
+        },
+        {
+            "type": "header",
+            "text": "Tradisjonen og forskningen"
+        },
+        {
+            "type": "text",
+            "content": "På spørsmålet om hvordan boka ble til, finnes det to helt ulike svar. Ifølge kirkens egen fortelling fikk Joseph Smith besøk av engelen Moroni, som pekte ut stedet der han kunne grave opp Mormons bok i form av gullplater med tekst på et ukjent egyptisk språk. Ifølge den samme fortellingen kunne teksten oversettes til engelsk ved hjelp av to seersteiner (Bloch-Hoell mfl., 2026). Dette er altså det troen forteller, ikke noe historikere kan kontrollere. Det historikere kan slå fast, er at boka kom ut i 1830, samme år som kirken ble offisielt grunnlagt (Bloch-Hoell mfl., 2026). Mer om Joseph Smith står i artikkelen om [grunnleggerne](/krle/religion/mormonisme/grunnleggere)."
+        },
+        {
+            "type": "text",
+            "content": "Forskere og kritikere ser annerledes på det. Mange kritikere hevder at Mormons bok må være skrevet på 1800-tallet, sannsynligvis av Joseph Smith selv (Bloch-Hoell mfl., 2026). Kirken har også selv skrevet åpent om hva DNA-forskningen viser. Bevisene som er samlet så langt, tyder på at de fleste urfolk i Amerika bærer stort sett asiatisk DNA, og kirken skriver at DNA-studier verken kan bekrefte eller avvise med sikkerhet at Mormons bok er historisk (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). For mange troende er ikke dette avgjørende. Løftet i Moroni 10 handler om et svar man ber seg fram til, ikke om et bevis man graver opp."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Skogkledd høyde i staten New York en tidlig morgen",
+            "caption": "Ifølge kirkens egen fortelling gravde Joseph Smith opp gullplatene i en skogkledd høyde i staten New York."
+        },
+        {
+            "type": "header",
+            "text": "Hva folk gjør med bøkene"
+        },
+        {
+            "type": "text",
+            "content": "I praksis er dette bøker som er ment å bli slitt. Den vanlige omgangen med tekstene er lesing og studium, hjemme og i kirken. Kirken gir ut studieplanen Kom, følg med meg, som deler skriftene opp i én bit for hver uke i året, og som er laget for bruk både hjemme og i menigheten (Jesu Kristi Kirke av Siste Dagers Hellige, 2024). Bibelen og Mormons bok brukes side om side, både i forkynnelsen og i personlig studium (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Tyngdepunktet ligger altså på lesing og samtale: bøkene blir lest, understreket og diskutert."
+        },
+        {
+            "type": "text",
+            "content": "Mormonismen er heller ikke én ting. Allerede i 1860 brøt en gruppe ut og dannet Den reorganiserte Jesu Kristi Kirke av Siste Dagers Hellige, fordi de ville ha Joseph Smiths eldste sønn som leder framfor Brigham Young. I dag heter denne kirken Community of Christ (Bloch-Hoell mfl., 2026). De første norske medlemmene ble døpt i Risør i 1851, og ifølge medlemslistene har kirken nå i overkant av 4600 medlemmer i Norge, fordelt på 22 lokale menigheter. På verdensbasis oppga kirken selv om lag 15,5 millioner medlemmer i 2015 (Bloch-Hoell mfl., 2026). Felles for dem er en samling hellige tekster som ikke er slått igjen."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvilke fire bøker utgjør standardverkene, og hvilken av dem deles med andre kristne?",
+                    "Hva betyr det at en kanon er lukket, og hvorfor er den ikke lukket i denne kirken?",
+                    "Hvilke tre trinn må en ny tekst gjennom før den kan bli stående som hellig skrift?",
+                    "Hva er Moronis løfte, og hvem er det som skal finne svaret?"
+                ],
+                "reflekter": [
+                    "Åttende trosartikkel sier at Bibelen er Guds ord så langt den er riktig oversatt. Hvorfor gjør et slikt forbehold det lett å oversette teksten til nye språk?",
+                    "Autoriteten kommer både ovenfra, gjennom presidenten, og nedenfra, gjennom medlemmenes stemme. Hva er styrken og hva er svakheten ved en slik ordning?",
+                    "Hva er forskjellen på hva tradisjonen forteller om gullplatene, og hva kritikere og forskere mener? Hvorfor er det viktig å holde de to fra hverandre?",
+                    "Kirken skriver selv at DNA-studier verken kan bekrefte eller avvise at Mormons bok er historisk. Hva slags spørsmål kan vitenskapen svare på, og hva slags spørsmål kan den ikke svare på?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva Offisiell erklæring 2 fra 1978 handler om, og lag en enkel tidslinje over hvordan teksten ble til.",
+                    "Sammenlign med en annen religion i sammenligningsemnet. Er samlingen der lukket eller åpen, og hvem har rett til å tolke teksten?",
+                    "Diskuter i klassen: Blir en religion sterkere eller svakere av at det kan komme nye hellige tekster?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva kalles de fire hellige bøkene i Jesu Kristi Kirke av Siste Dagers Hellige?",
+                        "options": [
+                            "Standardverkene",
+                            "Grunnbøkene",
+                            "De fire vitnene",
+                            "Paktsbøkene"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Standardverkene er Bibelen, Mormons bok, Lære og pakter og Den kostelige perle. Bibelen deles med andre kristne, mens de tre andre er kirkens egne."
+                    },
+                    {
+                        "question": "Hva mener vi når vi sier at kanonen ikke er lukket?",
+                        "options": [
+                            "At bøkene kan leses i hvilken rekkefølge man vil",
+                            "At alle medlemmer kan skrive sine egne hellige tekster",
+                            "At det kan komme ny tekst som blir hellig skrift",
+                            "At bøkene finnes på mange språk"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Kirken lærer at Gud fortsatt åpenbarer nytt. Derfor kan samlingen av hellige tekster vokse, i motsetning til i de fleste andre religioner."
+                    },
+                    {
+                        "question": "Hva er det siste trinnet før en ny tekst blir stående som hellig skrift?",
+                        "options": [
+                            "En forsker godkjenner teksten",
+                            "Medlemmene stemmer over den på en generalkonferanse",
+                            "Teksten trykkes i 100 000 eksemplarer",
+                            "Teksten oversettes til alle språk"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Lære og pakter slår fast at alle ting skal utføres med felles samtykke i kirken. Derfor legges nye tekster fram for medlemmene, som stemmer over dem."
+                    },
+                    {
+                        "question": "Hva sier åttende trosartikkel om Bibelen?",
+                        "options": [
+                            "At den bare kan leses på hebraisk og gresk",
+                            "At den er mindre viktig enn Mormons bok",
+                            "At den er Guds ord så langt som den er riktig oversatt",
+                            "At den ikke skal oversettes"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Forbeholdet handler om oversettelsen, ikke om Guds ord bak. Derfor er det uproblematisk å oversette, og Mormons bok er gitt ut i sin helhet på 81 språk i tillegg til engelsk."
+                    },
+                    {
+                        "question": "Hva mener mange kritikere om hvordan Mormons bok ble til?",
+                        "options": [
+                            "At den ble skrevet på 1800-tallet, sannsynligvis av Joseph Smith",
+                            "At den ble skrevet i Jerusalem rundt år 600 fvt.",
+                            "At den er en oversettelse av en gresk tekst",
+                            "At den ble funnet i en hule ved Dødehavet"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Ifølge tradisjonen oversatte Joseph Smith boka fra gullplater han fikk anvist av engelen Moroni. Mange kritikere mener derimot at teksten må være skrevet på 1800-tallet."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H. J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (2024). *Kom, følg med meg - for hjem og kirke: Mormons bok 2024*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-book-of-mormon-2024?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-a). *Lære og pakter 26*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/26?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-b). *Mormons bok: Et annet testamente om Jesus Kristus*. Nyhetsrom. Hentet 11.08.2026 fra [nyheter-no.jesukristikirke.org](https://nyheter-no.jesukristikirke.org/artikkel/mormons-bok--et-annet-testamente-om-jesus-kristus)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-c). *Mormons bok og DNA-studier*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/book-of-mormon-and-dna-studies?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-d). *Moroni 10*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/10?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-e). *Offisiell erklæring 2*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/od/2?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-f). *Trosartiklene*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=nor)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Og når dere mottar dette, vil jeg formane dere til å spørre Gud, den evige Fader, i Kristi navn om ikke disse ting er sanne.",
-        "source": "Mormons bok",
-        "reference": "Moroni 10:4"
-    }
+    "timeline": []
 }

@@ -1,6 +1,7 @@
 {
     "id": "hellige-tekster",
-    "title": "Tripitaka: De tre kurver",
+    "title": "Tre kurver, flere kanoner",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "buddhisme",
@@ -9,83 +10,241 @@
         "hellige-tekster",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "De tre kurver"
-        },
-        {
-            "type": "text",
-            "content": "Buddhismens hellige skrifter kalles Tripitaka (pali) eller Tipitaka. Navnet betyr 'de tre kurver', fordi tekstene opprinnelig ble sortert i tre kurver."
-        },
-        {
-            "type": "header",
-            "text": "Innholdet"
-        },
-        {
-            "type": "text",
-            "content": "1. Vinaya Pitaka: Regler for munker og nonner.\n2. Sutta Pitaka: Buddhas taler og lære.\n3. Abhidhamma Pitaka: Filosofiske forklaringer av læren."
-        },
-        {
-            "type": "header",
-            "text": "Muntlig overlevering"
-        },
-        {
-            "type": "text",
-            "content": "Tekstene ble overlevert muntlig i flere hundre år før de ble skrevet ned på palmeblader på Sri Lanka."
-        }
+    "category": "Buddhisme",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Buddhismen har ingen felles hellig bok. Tripitaka betyr de tre kurvene, og bare theravada-skolens versjon er fullstendig bevart.",
+        "De tre kurvene er klosterreglene, talene som tilskrives Buddha, og den systematiske utlegningen av læren.",
+        "Læren ble husket og gjentatt høyt i flere hundre år før noe ble skrevet ned.",
+        "En tekst får myndighet ved å bli tilskrevet Buddha. Derfor kunne samlingen fortsette å vokse.",
+        "Oversettelse er normalen. Det meste av den indiske buddhistiske litteraturen finnes i dag bare på kinesisk og tibetansk."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "tripitaka",
             "term": "Tripitaka",
-            "definition": "De tre kurver. Buddhismens hellige skrifter."
+            "definition": "Sanskrit for de tre kurvene, på pali Tipitaka. Samlingen av buddhismens kanoniske skrifter. Bare theravada-skolens pali-versjon er fullstendig bevart."
         },
         {
-            "id": "sutta",
-            "term": "Sutta",
-            "definition": "En tale eller preken av Buddha."
+            "id": "vinaya",
+            "term": "Vinaya",
+            "definition": "Den første kurven. Tekstene med reglene som styrer klosterlivet for munker og nonner."
         },
         {
-            "id": "pali",
-            "term": "Pali",
-            "definition": "Språket som de eldste buddhistiske tekstene er skrevet på."
+            "id": "sutra",
+            "term": "Sutra",
+            "definition": "Sutta på pali. En kanonisk læretekst, oftest en preken eller en samtale som tilskrives Buddha."
+        },
+        {
+            "id": "abhidharma",
+            "term": "Abhidharma",
+            "definition": "Den høyere læren. Den tredje kurven, med en systematisk analyse av hva virkeligheten består av."
+        },
+        {
+            "id": "kanjur",
+            "term": "Kanjur",
+            "definition": "Den tibetanske samlingen av skrifter som tilskrives Buddha selv. Kommentarene står i en egen samling som heter Tenjur."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva betyr Tripitaka?",
-            "options": [
-                "De tre juveler",
-                "De tre kurver",
-                "De tre guder"
-            ],
-            "answer": "De tre kurver"
+            "type": "text",
+            "content": "Prøv å finne buddhismens bibel. Du finner den ikke. Det finnes ingen enkeltbok som alle buddhister er enige om, og det finnes ingen tekst Buddha skrev selv. Læren ble husket og sagt fram, ikke skrevet. Det du finner i stedet, er noe langt mer uvanlig: flere store samlinger, i flere land, på flere språk, som ikke inneholder det samme. Hvem mannen bak læren var, kan du lese om i artikkelen om [grunnleggeren](/krle/religion/buddhisme/grunnleggere)."
         },
         {
-            "question": "Hva inneholder Vinaya Pitaka?",
-            "options": [
-                "Sanger",
-                "Regler for munker og nonner",
-                "Historier om guder"
-            ],
-            "answer": "Regler for munker og nonner"
+            "type": "text",
+            "content": "Den eldste samlingen heter Tripitaka på sanskrit og Tipitaka på pali. Navnet betyr de tre kurvene (Borgland & Kværne, 2026; Store norske leksikon, 2026c). Kurvene er tre avdelinger. Den første, vinaya, er reglene for munke- og nonneordenen. Den andre, sutra, eller sutta på pali, er prekenene og dialogene som tilskrives Buddha. Den tredje, abhidharma, er den senere systematiske utlegningen av læren (Store norske leksikon, 2026c). Men så kommer det som skiller buddhismen fra mange andre religioner: de ulike buddhistiske skolene laget noe ulike versjoner av Tripitaka, og bare theravada-skolens pali-versjon er fullstendig bevart (Store norske leksikon, 2026c)."
         },
         {
-            "question": "Hvordan ble tekstene først overlevert?",
-            "options": [
-                "På internett",
-                "Muntlig",
-                "I bøker"
-            ],
-            "answer": "Muntlig"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gamle palmebladmanuskripter bundet sammen mellom to trelokk",
+            "caption": "Theravada-skolens Tripitaka ble skrevet ned på pali, trolig i det første århundret fvt."
+        },
+        {
+            "type": "text",
+            "content": "Før noe av dette ble skrevet ned, ble det husket. Den tidligste buddhistiske litteraturen var utelukkende muntlig, slik det meste av indisk litteratur var på den tiden (Borgland & Kværne, 2026). Ifølge buddhistisk tradisjon samlet de fremste av Buddhas disipler seg til et stort møte, et konsil, i Rajagriha etter at han døde. Der skal læren ha blitt gjentatt høyt, og de to første kurvene skal ha blitt satt sammen (Borgland & Kværne, 2026). Denne muntlige urkanonen var sannsynligvis bevart på magadhi, et språk som er utdødd i dag, og som Buddha etter alt å dømme selv snakket. Bare enkelte formuleringer i senere skrifter røper at det språket har eksistert (Borgland & Kværne, 2026). Nedskrivingen kom først flere hundre år senere. Theravada-skolens Tripitaka ble trolig først skrevet ned i det første århundret fvt. på Sri Lanka, og når den fikk sin nåværende form, er omdiskutert (Borgland & Kværne, 2026). Den norske sotozen buddhistorden oppgir et mer presist årstall fra tradisjonen: rundt 83 fvt., i Aluvihara på Sri Lanka (Den norske sotozen buddhistorden, u.å.)."
+        },
+        {
+            "type": "header",
+            "text": "Hvem bestemmer at dette er Buddhas ord?"
+        },
+        {
+            "type": "text",
+            "content": "Hva er det som gir en buddhistisk tekst myndighet? Svaret er kort: at den tilskrives Buddha selv. Det ser man tydeligst i klosterreglene. Alle reglene i vinaya-samlingene tilskrives Buddha, og det er nettopp der reglene henter autoriteten sin fra. Derfor ble også regler som må ha blitt til på et langt senere tidspunkt, tilskrevet ham (Borgland, 2026). Den samme mekanismen gjorde at samlingen kunne vokse. Fra rundt det første århundret fvt. og gjennom det neste årtusenet ble det skrevet en helt ny litteratur i India, mahayana-sutraene. Felles for dem alle er at de tilskrives Buddha selv, og i mahayana fikk de derfor kanonisk status. De kom etter hvert til å overskygge de eldre skolenes skrifter (Borgland & Kværne, 2026; Kværne & Borgland, 2026b). Prøv selv nedenfor: den samme teksten kan være hellig skrift i én tradisjon og stå utenfor i en annen."
+        },
+        {
+            "type": "component",
+            "name": "TreKurverOgFlereKanoner",
+            "props": {
+                "title": "Hva teller som hellig skrift her?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som ikke skjedde: ingen kastet ut de andres bøker. I stedet fikk hvert område sin egen samling. Da de buddhistiske skriftene ble ordnet på nytt i Kina og Tibet, ble resultatet nye kanoniske samlinger. Den første trykte kinesiske Tripitaka forelå i år 983, og den nyeste kritiske utgaven, japanske Taisho Daizokyo fra 1922 til 1933, er på 85 bind med rundt 1000 sider i hvert (Borgland & Kværne, 2026). I Tibet ble skriftene endelig ordnet på 1300-tallet i to samlinger: Kanjur, som er skriftene som tilskrives Buddha selv, på 100 bind, og Tenjur, som er kommentarer og annen sekundærlitteratur, på 225 bind (Borgland & Kværne, 2026). Tibetansk buddhisme har altså bygget selve spørsmålet om myndighet inn i bokhylla."
+        },
+        {
+            "type": "header",
+            "text": "Fra munn til minne"
+        },
+        {
+            "type": "text",
+            "content": "At tekstene ble husket før de ble skrevet ned, preger dem fremdeles. Mange av dem åpner med den samme formelen. Kåre A. Lie oversetter den til norsk som «Slik har jeg hørt det» (Lie, u.å.-b). Det er en stemme som sier fra med en gang hva slags kilde dette er: noe jeg har hørt, ikke noe jeg har funnet på. Det er også et ærlig svar på et vanskelig spørsmål. Historikere kan slå fast at tekstene finnes, og omtrent hvor gamle de er. De kan ikke slå fast at hvert eneste ord er nøyaktig slik Buddha sa det. En av de mest kjente tekstene, Dhammapada, er en samling korte og fyndige setninger ordnet etter emne, og den står i pali-kanonen (Store norske leksikon, 2026a). Slik lyder vers 183 (Lie, u.å.-a):"
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Å unngå å gjøre det onde, gå inn for å gjøre det gode, foredle sitt eget sinn - det er de oppvåknedes budskap.",
+                "author": "Dhammapada, vers 183, oversatt til norsk av Kåre A. Lie"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Dhammapada ble oversatt til norsk av Kåre A. Lie i 1976 (Store norske leksikon, 2026a). Det er verdt å stoppe litt ved akkurat det. I buddhismen er oversettelse ikke et problem som må løses. Den er selve normalen. Veien Dhammapada peker på, kan du lese mer om i artikkelen om [den åttedelte vei](/krle/religion/buddhisme/den-attedelte-vei)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Lange smale tekstblad stablet i hyller i et tibetansk kloster",
+            "caption": "I Tibet ble skriftene ordnet i to samlinger på 1300-tallet: Kanjur og Tenjur."
+        },
+        {
+            "type": "header",
+            "text": "Oversettelse er selve normalen"
+        },
+        {
+            "type": "text",
+            "content": "Buddhismen var fra første stund en aktivt misjonerende religion, og fra midten av 100-tallet evt. begynte for alvor arbeidet med å oversette buddhistiske skrifter til kinesisk. Det arbeidet fortsatte helt til Tang-dynastiet gikk under (Borgland & Kværne, 2026). Buddhismen kom til Tibet på 700-tallet, og i to perioder, 700- til 800-tallet og 1000- til 1300-tallet, ble så å si hele den indiske buddhistiske litteraturen oversatt til tibetansk, og senere videre til mongolsk (Borgland & Kværne, 2026). Fra midten av 1800-tallet kom oversettelsene til europeiske språk (Borgland & Kværne, 2026). Resultatet er nesten et paradoks: det meste av den indiske buddhistiske litteraturen er i dag bare tilgjengelig i tibetanske og kinesiske oversettelser. Theravada-skolens Tripitaka er den eneste samlingen indiske buddhistiske skrifter som i sin helhet er bevart på et indisk språk, nemlig pali (Borgland & Kværne, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Men å oversette er ikke det samme som å bytte ut. Pali brukes fortsatt som religiøst språk av theravada-buddhister i Sri Lanka, Myanmar, Thailand, Laos, Kambodsja og Vietnam (Store norske leksikon, 2026b). Og tekstene brukes ikke bare til lesing. I theravada-land er paritta utbredt: munker resiterer korte tekster fra Tripitaka høyt, og resitasjonen skal beskytte både mennesker og eiendom (Kværne & Borgland, 2026a). Da er teksten ikke informasjon du tar inn, men lyd som gjør noe. Mer om det rituelle livet finner du i artikkelen om [bønn](/krle/religion/buddhisme/bonn)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Munker i oransje kapper resiterer høyt sammen i en tempelhall",
+            "caption": "Paritta: munker sier fram korte tekster fra Tripitaka høyt, til beskyttelse."
+        },
+        {
+            "type": "header",
+            "text": "Kan det komme mer tekst?"
+        },
+        {
+            "type": "text",
+            "content": "Er samlingen lukket? Svaret avhenger av hvem du spør, og det er kanskje her buddhistene skiller tydeligst lag. Theravada hevder å ha bevart Buddhas lære uten endringer eller tillegg (Frydenlund & Store norske leksikon, 2026). Likevel er ikke engang theravadas egen liste helt fast: Milindapanha, som betyr Milindas spørsmål, er en tidlig tekst som i nyere tid er tatt inn i den burmesiske utgaven av Tripitaka (Borgland & Kværne, 2026). I mahayana kom det derimot ny tekst i tusen år, og fra 500-tallet vokste det fram enda en type litteratur, tantraene (Borgland & Kværne, 2026). Uenigheten går også innover i selve læren. Det er i abhidharma-tekstene vi tydeligst ser åpen uenighet og diskusjon mellom de buddhistiske skolene (Borgland, 2024). Og i det daglige klosterlivet er det ofte verken de kanoniske tekstene eller kommentarene som styrer mest, men lokale forordninger som bare gjelder for ett enkelt kloster (Borgland, 2026). Buddhismens hellige tekster er altså ikke én bok med én fasit. De er et bibliotek som har vokst i over to tusen år, på flere språk, med flere svar på hvem som får si hva Buddha mente."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr navnet Tripitaka, og hva heter de tre kurvene?",
+                    "Hvorfor er det bare theravada-skolens versjon av Tripitaka som er fullstendig bevart?",
+                    "Hvordan ble læren tatt vare på i de første hundreårene, før den ble skrevet ned?",
+                    "Hva er forskjellen på Kanjur og Tenjur i tibetansk buddhisme?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at en tekst får myndighet ved å bli tilskrevet Buddha. Forklar med egne ord hvordan det gjorde at samlingen kunne fortsette å vokse.",
+                    "Mange tekster åpner med «Slik har jeg hørt det». Hva sier den åpningen om hva slags kilde teksten er?",
+                    "Skill mellom hva tradisjonen forteller om nedskrivingen, og hva forskere kan si sikkert. Hvorfor er det viktig å holde de to fra hverandre?",
+                    "I buddhismen er oversettelse helt vanlig. Hva kan det gjøre med forholdet mellom en troende og teksten, sammenlignet med en religion der originalspråket står sterkt?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva paritta er, og lag en kort forklaring på forskjellen mellom å lese en tekst og å resitere den.",
+                    "Sammenlign buddhismens svar med en annen religion i sammenligningsemnet. Har den religionen én lukket samling, eller flere?",
+                    "Diskuter i klassen: Blir en religion sterkere eller svakere av å ikke ha én felles hellig bok?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr navnet Tripitaka?",
+                        "options": [
+                            "De tre juvelene",
+                            "De tre kurvene",
+                            "De tre veiene",
+                            "De tre klostrene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Tripitaka er sanskrit og betyr de tre kurvene. På pali heter samlingen Tipitaka. Kurvene er tre avdelinger: vinaya, sutra og abhidharma."
+                    },
+                    {
+                        "question": "Hvilken av de tre kurvene inneholder reglene for munker og nonner?",
+                        "options": [
+                            "Abhidharma",
+                            "Sutra",
+                            "Vinaya",
+                            "Kanjur"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Vinaya er den første kurven og samler reglene som styrer klosterlivet. Sutra er prekenene og dialogene som tilskrives Buddha, og abhidharma er den systematiske utlegningen av læren."
+                    },
+                    {
+                        "question": "Hva gir en buddhistisk tekst myndighet, ifølge artikkelen?",
+                        "options": [
+                            "At den er skrevet ned av Buddha selv",
+                            "At et konsil har stemt over den",
+                            "At den tilskrives Buddha",
+                            "At den er skrevet på pali"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Alle reglene i vinaya tilskrives Buddha, og det er kilden til reglenes autoritet. Derfor ble også regler som må ha blitt til langt senere, tilskrevet ham. Mahayana-sutraene tilskrives også Buddha selv."
+                    },
+                    {
+                        "question": "Hva er Kanjur og Tenjur?",
+                        "options": [
+                            "To tibetanske samlinger: skrifter som tilskrives Buddha, og kommentarer",
+                            "To språk som Tripitaka er oversatt til",
+                            "To buddhistiske klosterordener i Myanmar",
+                            "To navn på den samme pali-kanonen"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "I Tibet ble skriftene ordnet på 1300-tallet i to samlinger. Kanjur er skriftene som tilskrives Buddha selv, på 100 bind. Tenjur er kommentarer og annen sekundærlitteratur, på 225 bind."
+                    },
+                    {
+                        "question": "Hva er paritta?",
+                        "options": [
+                            "En kommentar til klosterreglene",
+                            "Resitasjon av korte tekster fra Tripitaka, til beskyttelse",
+                            "Navnet på den burmesiske utgaven av Tripitaka",
+                            "En form for meditasjon uten tekst"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "I theravada-land er paritta utbredt. Munker resiterer korte tekster fra Tripitaka høyt, og resitasjonen skal beskytte både mennesker og eiendom."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Borgland, J. W. (2024). *Abhidharma*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Abhidharma](https://snl.no/Abhidharma)",
+                    "Borgland, J. W. (2026). *Vinaya*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/vinaya](https://snl.no/vinaya)",
+                    "Borgland, J. W. & Kværne, P. (2026). *Buddhistisk litteratur*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/buddhistisk_litteratur](https://snl.no/buddhistisk_litteratur)",
+                    "Den norske sotozen buddhistorden. (u.å.). *Tripitaka*. Hentet 11.08.2026 fra [sotozen.no/tripitaka](https://www.sotozen.no/tripitaka)",
+                    "Frydenlund, I. & Store norske leksikon. (2026). *Theravada*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/theravada](https://snl.no/theravada)",
+                    "Kværne, P. & Borgland, J. W. (2026a). *Buddhisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+                    "Kværne, P. & Borgland, J. W. (2026b). *Mahayana-sutraer*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/mahayana-sutraer](https://snl.no/mahayana-sutraer)",
+                    "Lie, K. A. (overs.). (u.å.-a). *Dhammapada: Vers om læren, kapittel 14*. SuttaCentral. Hentet 11.08.2026 fra [suttacentral.net/dhp179-196/no/lie](https://suttacentral.net/dhp179-196/no/lie)",
+                    "Lie, K. A. (overs.). (u.å.-b). *Cakkavattisihanadasutta (DN 26)*. SuttaCentral. Hentet 11.08.2026 fra [suttacentral.net/dn26/no/lie](https://suttacentral.net/dn26/no/lie)",
+                    "Store norske leksikon. (2026a). *Dhammapada*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Dhammapada](https://snl.no/Dhammapada)",
+                    "Store norske leksikon. (2026b). *Pali*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/pali](https://snl.no/pali)",
+                    "Store norske leksikon. (2026c). *Tripitaka*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Tripitaka](https://snl.no/Tripitaka)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Gjør ikke noe ondt, gjør bare godt, rens ditt sinn. Dette er alle Buddhaers lære.",
-        "source": "Dhammapada",
-        "reference": "Vers 183"
-    }
+    "timeline": []
 }

@@ -1,6 +1,7 @@
 {
     "id": "hellige-tekster",
-    "title": "Ny verden-oversettelsen",
+    "title": "Ett ord, to bibler",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "jehovas-vitner",
@@ -9,83 +10,238 @@
         "hellige-tekster",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "En nøyaktig oversettelse"
-        },
-        {
-            "type": "text",
-            "content": "Jehovas vitner bruker sin egen bibeloversettelse, kalt 'Ny verden-oversettelsen av De hellige skrifter'. De mener den gjengir grunntekstene mer nøyaktig enn andre oversettelser."
-        },
-        {
-            "type": "header",
-            "text": "Guds navn"
-        },
-        {
-            "type": "text",
-            "content": "En viktig forskjell er at de har gjeninnført Guds navn, Jehova, over 7000 steder i teksten, der andre bibler ofte skriver 'Herren'."
-        },
-        {
-            "type": "header",
-            "text": "Bibelstudium"
-        },
-        {
-            "type": "text",
-            "content": "Vitnene legger stor vekt på å studere Bibelen grundig, ofte ved hjelp av bladet Vakttårnet og andre publikasjoner."
-        }
+    "category": "Jehovas vitner",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jehovas vitner lærer at Bibelen er et budskap fra Gud, skrevet ned av mennesker som Gud styrte.",
+        "De bruker sin egen oversettelse, Ny verden-oversettelsen. Den kom på norsk i 1996, og en kraftig revidert utgave kom i 2017.",
+        "Der de fleste norske bibler skriver Herren, står det Jehova. Gudsnavnet er hovedgrunnen de selv oppgir for å ha en egen oversettelse.",
+        "Kritikere peker på at oversettelsen noen steder gjenspeiler Jehovas vitners egen lære, blant annet i Johannes 1,1.",
+        "Det styrende råd avgjør hva teksten betyr, og bladet Vakttårnet og nettstedet jw.org er hovedkanalene for den godkjente forklaringen."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "ny-verden-oversettelsen",
             "term": "Ny verden-oversettelsen",
-            "definition": "Jehovas vitners egen bibeloversettelse."
+            "definition": "Jehovas vitners egen bibeloversettelse. Den kom på engelsk fra 1950, på norsk i 1996, og i en kraftig revidert utgave på norsk i 2017."
         },
         {
-            "id": "vakttarnet",
-            "term": "Vakttårnet",
-            "definition": "Et blad som brukes til å studere Bibelen."
+            "id": "jhvh",
+            "term": "JHVH",
+            "definition": "De fire hebraiske konsonanttegnene som utgjør gudsnavnet i Den hebraiske bibelen. Kalles også tetragrammaton, som betyr de fire bokstavene."
         },
         {
             "id": "jehova",
             "term": "Jehova",
-            "definition": "Guds personlige navn."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva heter Jehovas vitners bibel?",
-            "options": [
-                "King James",
-                "Ny verden-oversettelsen",
-                "Den norske bibel"
-            ],
-            "answer": "Ny verden-oversettelsen"
+            "definition": "En form av gudsnavnet JHVH. Uttalen oppsto blant kristne teologer i middelalderen og brukes i dag blant annet av Jehovas vitner."
         },
         {
-            "question": "Hvilket navn har de satt inn i Bibelen?",
-            "options": [
-                "Jesus",
-                "Jehova",
-                "Allah"
-            ],
-            "answer": "Jehova"
+            "id": "vakttarnet",
+            "term": "Vakttårnet",
+            "definition": "Jehovas vitners viktigste blad, etablert i 1879. Her legges bevegelsens syn på tro og sannhet fram for leserne."
         },
         {
-            "question": "Hva bruker de for å studere Bibelen?",
-            "options": [
-                "Avisen",
-                "Bladet Vakttårnet",
-                "Tegneserier"
-            ],
-            "answer": "Bladet Vakttårnet"
+            "id": "det-styrende-rad",
+            "term": "Det styrende råd",
+            "definition": "Den lille gruppen menn som bestemmer Jehovas vitners lære. De er de eneste som kan lansere nye forståelser av Bibelen."
         }
     ],
-    "quote": {
-        "text": "Hele Skriften er inspirert av Gud og nyttig til undervisning.",
-        "source": "Ny verden-oversettelsen",
-        "reference": "2. Timoteus 3:16"
-    }
+    "content": [
+        {
+            "type": "text",
+            "content": "På bordet i Rikets sal, som er forsamlingshuset til Jehovas vitner, ligger det en bibel. Utenpå ser den ut som andre bibler. Slår du opp på Jesaja 43,10, står det likevel noe annet enn i bibelen på skolebiblioteket. Der de fleste norske bibler skriver Herren, står det Jehova. Det ene ordet er hovedgrunnen de selv oppgir for at et helt trossamfunn har laget sin egen oversettelse, og det er også derfra de har navnet sitt."
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner lærer at Bibelen er et budskap fra Gud, skrevet ned av mennesker som var under guddommelig inspirasjon, altså styrt av Gud mens de skrev. Derfor er Bibelen for dem Guds ufeilbarlige og pålitelige ord (Ringnes mfl., 2026). Dette er troen deres om hvor teksten kommer fra, ikke noe forskere kan måle. Men hvilken tekst er det snakk om? Det gamle testamentet er for det meste skrevet på hebraisk og Det nye testamentet på gresk (Hvalvik, 2026). Tekstene på hebraisk og gresk kalles grunnteksten. De aller fleste lesere møter Bibelen i oversettelse. Da er det oversetteren som avgjør hvilke norske ord som havner på siden."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen bibel på et bord i en lys sal",
+            "caption": "I Rikets sal er boka arbeidsredskap. Møtene er bygd rundt studium av teksten."
+        },
+        {
+            "type": "text",
+            "content": "I den hebraiske grunnteksten står gudsnavnet som fire konsonanttegn, JHVH. Hebraisk skriftspråk består av konsonanttegn, uten vokaler (Ringnes mfl., 2026). Ifølge Talmud, en sentral jødisk tekstsamling, ble navnet tidlig regnet som så hellig at bare ypperstepresten uttalte det, i tempelet i Jerusalem på forsoningsdagen. Etter at tempelet falt i år 70, ble uttalen etter hvert ukjent blant jøder (Groth, 2026). Ingen vet altså sikkert hvordan de fire bokstavene skal lyde."
+        },
+        {
+            "type": "header",
+            "text": "Tre ord, de samme fire bokstavene"
+        },
+        {
+            "type": "text",
+            "content": "Derfor må enhver oversetter velge. Allerede fra 200-tallet før vår tidsregning skal navnet ha blitt erstattet med Adonaj, som betyr Herre, når teksten ble lest høyt. For å minne leseren om dette markerte man vokalene fra Adonaj i den hebraiske teksten. Det var slik uttalen Jehova oppsto blant kristne teologer i middelalderen. En annen rekonstruksjon er Jahve, og det er den formen fagfolk bruker i dag (Groth, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "NavnetSattInnIgjen",
+            "props": {
+                "title": "Du er oversetteren"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva valget gjør med lesningen. Med Herren blir et navn byttet ut med en tittel. Med Jehova står det et egennavn i teksten, og Gud får noe av det samme som et menneske har. Jehovas vitner anser bruken av Guds særegne navn som et viktig kjennetegn på sanne tilbedere, og mener de får et nærmere forhold til Gud ved å kjenne ham med et egennavn. Derfor tar de avstand fra omskrivninger som Herren (Ringnes mfl., 2026). Du kan lese mer om dette i artikkelen om [gudsbildet deres](/krle/religion/jehovas-vitner/gudsbilde)."
+        },
+        {
+            "type": "header",
+            "text": "Da navnet ble et navn"
+        },
+        {
+            "type": "text",
+            "content": "Bevegelsen het ikke alltid Jehovas vitner. Fram til 1931 kalte medlemmene seg Bibelstudentene. Da lederen Joseph Franklin Rutherford tok i bruk det nye navnet, hentet han det fra ett bibelvers. Rutherford understreket at Jehova skulle brukes som egennavn på Gud, noe som ikke hadde vært en hovedsak for grunnleggeren Charles Taze Russell, og oppmerksomheten flyttet seg fra Jesus til Jehova (Ringnes mfl., 2026). Mer om de to står i artikkelen om [grunnleggerne](/krle/religion/jehovas-vitner/grunnleggere)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Dere er mine vitner, sier Jehova.",
+                "author": "Jesaja 43,10 i Ny verden-oversettelsen"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Selve oversettelsen kom senere. Fra 1950 ble Ny verden-oversettelsen av De kristne greske skrifter, altså Det nye testamentet, gitt ut på stadig flere språk. Etter hvert kom også de hebraiske og arameiske skriftene, altså Det gamle testamentet. På norsk forelå bibelen i 1996. Den første utgaven var gjennomgående bokstavelig oversatt fra grunntekstene, ofte på bekostning av naturlig språkføring. En kraftig revidert versjon kom på engelsk i 2013 og på norsk i 2017, og den er mer lettlest. Utgaven finnes helt eller delvis på over 200 språk, og alle bygger på den engelske versjonen (Ringnes mfl., 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To bibelutgaver ved siden av hverandre på et bord",
+            "caption": "Samme vers, to ulike ord. Forskjellen er et valg en oversetter har tatt."
+        },
+        {
+            "type": "header",
+            "text": "Det kritikerne peker på"
+        },
+        {
+            "type": "text",
+            "content": "Men gudsnavnet er ikke det eneste som skiller. Ny verden-oversettelsen gjenspeiler noen steder Jehovas vitners egen lære. Det tydeligste eksempelet er Johannes 1,1, der Jesus kalles en gud, forstått som et mektig himmelsk vesen, og ikke Gud slik de fleste bibelutgaver har det. Det henger sammen med at Jehovas vitner ser Jesus som et vesen atskilt fra den allmektige Gud (Ringnes mfl., 2026). I oversikter over bibeloversettelser blir utgaven omtalt som en nisjeoversettelse, altså en utgave som brukes av én bestemt gruppe, samtidig som den har nådd store opplagstall (Kvalbein mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Her lønner det seg å skille to spørsmål fra hverandre. Det ene er hva et trossamfunn tror om teksten. Det andre er hva tekstforskere kan slå fast. Forskerne minner om at vi ikke har originalmanuskriptene til noen av de bibelske tekstene, bare avskrifter (Hvalvik, 2026). Ingen kan derfor slå i bordet med en original og avgjøre saken. Jehovas vitner svarer på kritikken med at gudsnavnet står omkring 7000 ganger i den hebraiske teksten, og at det er de andre oversettelsene som har fjernet noe (Jehovas vitner, u.å.). Begge sider er enige om ett faktum: uttalen er ikke kjent."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Nærbilde av hebraisk skrift i en gammel bok",
+            "caption": "Grunnteksten har ingen vokaler. Uttalen må rekonstrueres."
+        },
+        {
+            "type": "header",
+            "text": "Hvem får bestemme hva teksten betyr?"
+        },
+        {
+            "type": "text",
+            "content": "En tekst må tolkes, og hos Jehovas vitner er det klart hvem som gjør det. Det styrende råd bestemmer læren og er de eneste som kan lansere reviderte forståelser, som resten av organisasjonen forventes å ta lojalt til seg. Rådet består bare av menn, antallet har variert fra sju til atten, og man blir medlem ved invitasjon. Rådet begrunner autoriteten sin med et bibelvers om den trofaste og kloke slaven, Matteus 24,45, og forstår seg selv som denne slaven (Ringnes mfl., 2026). Samtidig har bevegelsen ingen trosbekjennelse, altså ingen fast tekst som slår fast én gang for alle hva medlemmene skal tro. Deres egen forklaring er at Gud leder sitt folk til stadig dypere forståelse, og endringer i læren begrunnes med at Gud har kastet nytt lys over Bibelen (Ringnes mfl., 2026). Teksten står stille, men forståelsen av den kan endres. Mer om dette finner du under [sentrale trekk](/krle/religion/jehovas-vitner/sentrale-trekk)."
+        },
+        {
+            "type": "text",
+            "content": "I praksis møter medlemmene teksten hele tiden. Aktive vitner samles to ganger i uka i Rikets sal, og programmet består av foredrag, bibelstudier, kurs i samtaleteknikk, filmer og små skuespill. Salene har ingen religiøs utsmykning bortsett fra årsteksten, et bibelsitat som byttes ut én gang i året. Bladet Vakttårnet ble etablert i 1879 og kom på norsk fra 1945, og i dag er nettstedet jw.org den viktigste kanalen og kilden til autorisert lærestoff (Ringnes mfl., 2026). Alle er ikke enige om alt. Da navnet ble skiftet i 1931, fortsatte utbrytergrupper å kalle seg Bibelstudentene, og Raymond Franz, som selv hadde sittet i det styrende råd, ble utstøtt og ga i 1983 ut en bok med kritikk av bevegelsen (Ringnes mfl., 2026)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva heter Jehovas vitners egen bibeloversettelse, og når kom den på norsk?",
+                    "Hva står i den hebraiske grunnteksten der norske bibler skriver Herren?",
+                    "Hvorfor er den opprinnelige uttalen av gudsnavnet ukjent i dag?",
+                    "Hvem avgjør hva Bibelen betyr hos Jehovas vitner?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hva som skjer med et vers når et navn byttes ut med en tittel.",
+                    "Jehovas vitner sier at de andre oversettelsene har fjernet noe. Kritikerne sier at Ny verden-oversettelsen har lagt til noe. Hvordan kan begge mene at de er tro mot teksten?",
+                    "Artikkelen skiller mellom hva et trossamfunn tror om teksten og hva tekstforskere kan slå fast. Hvorfor er det viktig å holde de to fra hverandre?",
+                    "Hva kan det bety for et fellesskap at bare én liten gruppe kan lansere nye forståelser av teksten?"
+                ],
+                "gaaVidere": [
+                    "Finn Jesaja 43,10 i en vanlig norsk bibel på nett, og sammenlign ordlyden med sitatet i denne artikkelen.",
+                    "Undersøk hvordan en annen religion i sammenligningsemnet håndterer oversettelse av sin viktigste tekst. Er oversettelse tillatt, og hvem får tolke?",
+                    "Diskuter i klassen: Kan en oversettelse noen gang være helt nøytral?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er hovedgrunnen Jehovas vitner selv oppgir for å ha en egen bibeloversettelse?",
+                        "options": [
+                            "At Bibelen skal være billigere å trykke",
+                            "At Guds navn skal stå i teksten",
+                            "At de vil fjerne Det gamle testamentet",
+                            "At de vil ha færre kapitler"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Jehovas vitner anser bruken av Guds særegne navn som et viktig kjennetegn på sanne tilbedere, og tar avstand fra omskrivninger som Herren."
+                    },
+                    {
+                        "question": "Hva står i den hebraiske grunnteksten der norske bibler som oftest skriver Herren?",
+                        "options": [
+                            "Fire konsonanttegn, JHVH",
+                            "Ordet Jesus",
+                            "En tom plass i teksten",
+                            "Et tall i stedet for et navn"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Gudsnavnet står som de fire hebraiske konsonanttegnene JHVH, også kalt tetragrammaton, altså de fire bokstavene."
+                    },
+                    {
+                        "question": "Hvorfor er den opprinnelige uttalen av gudsnavnet ukjent?",
+                        "options": [
+                            "Fordi teksten ble skrevet på gresk",
+                            "Fordi navnet aldri ble skrevet ned",
+                            "Fordi hebraisk skrives med konsonanter, og navnet gikk ut av bruk i talespråket",
+                            "Fordi alle håndskrifter er tapt"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Hebraisk skriftspråk består av konsonanttegn. Navnet ble regnet som så hellig at det nesten ikke ble sagt høyt, og etter at tempelet falt i år 70, ble uttalen etter hvert ukjent blant jøder."
+                    },
+                    {
+                        "question": "Hva peker kritikere av Ny verden-oversettelsen særlig på?",
+                        "options": [
+                            "At den er skrevet for hånd",
+                            "At den mangler Salmenes bok",
+                            "At den bare finnes på norsk",
+                            "At den noen steder gjenspeiler Jehovas vitners egen lære, som i Johannes 1,1"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "I Johannes 1,1 kalles Jesus en gud i stedet for Gud. Det henger sammen med at Jehovas vitner ser Jesus som et vesen atskilt fra den allmektige Gud."
+                    },
+                    {
+                        "question": "Hvem kan lansere nye forståelser av Bibelen hos Jehovas vitner?",
+                        "options": [
+                            "Hver enkelt menighet",
+                            "Det styrende råd",
+                            "Alle døpte medlemmer",
+                            "Redaktøren av bladet Våkn opp!"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Det styrende råd bestemmer læren og er de eneste som kan lansere reviderte forståelser. Endringer forklares med at Gud har kastet nytt lys over Bibelen."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Groth, B. (2026). *Jahve (JHVH)*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jahve_(JHVH)](https://snl.no/Jahve_%28JHVH%29)",
+                    "Hvalvik, R. (2026). *Bibelen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Bibelen](https://snl.no/Bibelen)",
+                    "Jehovas vitner. (u.å.). *Hvem er Jehova?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/hvem-er-jehova/)",
+                    "Kvalbein, H., Leivestad, R., Seim, T. K., Berg-Nordlie, M., Aasgaard, R. & Halse, P. (2026). *Bibeloversettelser*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bibeloversettelser](https://snl.no/bibeloversettelser)",
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
 }

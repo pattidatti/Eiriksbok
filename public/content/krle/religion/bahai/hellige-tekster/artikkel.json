@@ -1,6 +1,7 @@
 {
     "id": "hellige-tekster",
-    "title": "Kitáb-i-Aqdas",
+    "title": "Boka grunnleggeren skrev selv",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "bahai",
@@ -9,83 +10,250 @@
         "hellige-tekster",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Den helligste bok"
-        },
-        {
-            "type": "text",
-            "content": "Kitáb-i-Aqdas ('Den helligste bok') er den viktigste boken i bahá'í-troen. Den ble skrevet av grunnleggeren Bahá'u'lláh og inneholder lovene for bahá'í-samfunnet."
-        },
-        {
-            "type": "header",
-            "text": "Andre skrifter"
-        },
-        {
-            "type": "text",
-            "content": "Bahá'u'lláh skrev over 100 bind med tekster. Andre kjente bøker er 'De skjulte ord' og 'Visshetens bok' (Kitáb-i-Íqán)."
-        },
-        {
-            "type": "header",
-            "text": "Respekt for andre religioner"
-        },
-        {
-            "type": "text",
-            "content": "Bahá'íer leser også hellige tekster fra andre religioner, som Bibelen og Koranen, og ser på dem som inspirert av den samme Gud."
-        }
+    "category": "Bahá'í",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Skriftene ble til mens Bahá'u'lláh (1817-1892) levde. Brevene, tavlene og bøkene ville fylt mer enn 100 bind.",
+        "Kitáb-i-Aqdas, Den helligste bok, er lovboka. Den ble skrevet på arabisk rundt 1873 i fengselsbyen Akká.",
+        "Oppgaven med å tolke læren ble gitt videre i en fast rekke: først 'Abdu'l-Bahá, så Shoghi Effendi.",
+        "Oversettelse er vanlig. Den første autoriserte engelske utgaven av Kitáb-i-Aqdas kom i 1992.",
+        "Skriftene er avsluttet, men Det universelle rettferdighetens hus kan gi regler i saker tekstene ikke dekker."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "kitab-i-aqdas",
             "term": "Kitáb-i-Aqdas",
-            "definition": "Den helligste bok. Bahá'í-troens lovbok."
+            "definition": "Den helligste bok. Lovboka i bahá'í-troen, skrevet på arabisk av Bahá'u'lláh rundt 1873."
         },
         {
-            "id": "de-skjulte-ord",
-            "term": "De skjulte ord",
-            "definition": "En samling korte, poetiske tekster om etikk og åndelighet."
+            "id": "tavle",
+            "term": "Tavle",
+            "definition": "Navnet på skriftene til Bahá'u'lláh. I bahá'í-troen regnes de som åpenbaring. Mange av dem er brev til enkeltpersoner eller grupper."
         },
         {
-            "id": "bahaullah",
-            "term": "Bahá'u'lláh",
-            "definition": "Forfatteren av bahá'í-troens hellige skrifter."
+            "id": "abdul-baha",
+            "term": "'Abdu'l-Bahá",
+            "definition": "Bahá'u'lláhs eldste sønn (1844-1921). Faren pekte ham ut som den autoriserte tolkeren av læren."
+        },
+        {
+            "id": "shoghi-effendi",
+            "term": "Shoghi Effendi",
+            "definition": "Eldste barnebarn av 'Abdu'l-Bahá (1897-1957). Ledet bahá'í-samfunnet og oversatte mange av skriftene til engelsk."
+        },
+        {
+            "id": "rettferdighetens-hus",
+            "term": "Det universelle rettferdighetens hus",
+            "definition": "Et valgt råd på ni medlemmer som har ledet bahá'í-troen i verden siden 1963."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva betyr Kitáb-i-Aqdas?",
-            "options": [
-                "Den store boken",
-                "Den helligste bok",
-                "Guds ord"
-            ],
-            "answer": "Den helligste bok"
+            "type": "text",
+            "content": "I de fleste religioner er det andre som har skrevet ned det grunnleggeren sa, og ofte gikk det lang tid først. Muslimsk historieskriving forteller at Muhammed fikk åpenbaringene muntlig gjennom noen og tjue år, og at koranteksten fant sin endelige form omkring tjue år etter at han døde (Eggen & Vogt, 2026). I bahá'í-troen er utgangspunktet et annet. Der ble tekstene skrevet ned mens grunnleggeren selv levde, gjennom flere tiår."
         },
         {
-            "question": "Hvem skrev Kitáb-i-Aqdas?",
-            "options": [
-                "Muhammad",
-                "Bahá'u'lláh",
-                "Jesus"
-            ],
-            "answer": "Bahá'u'lláh"
+            "type": "text",
+            "content": "Bahá'í er en ung religion. Den har iransk opprinnelse og ble grunnlagt i andre halvdel av 1800-tallet (Vogt & Winje, 2026). Iraneren Mirza Husayn-Ali Núri (1817-1892) tok navnet Bahá'u'lláh, som betyr Guds herlighet. Troen bygger på skriftene hans, som bahá'íer regner som åpenbaring fra Gud. Skriftene kalles tavler (Vogt & Winje, 2026). Mengden er svær. Han skrev tusenvis av brev, tavler og bøker, og samlet ville de fylt mer enn 100 bind (Bahá'í International Community, u.a.-g). Du kan lese mer om ham i artikkelen om [grunnleggeren](/krle/religion/bahai/grunnleggere)."
         },
         {
-            "question": "Leser bahá'íer andre religioners tekster?",
-            "options": [
-                "Ja, de respekterer dem",
-                "Nei, det er forbudt",
-                "Bare på søndager"
-            ],
-            "answer": "Ja, de respekterer dem"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Håndskrevet ark med persisk skrift på et bord",
+            "caption": "Bahá'u'lláh skrev gjennom flere tiår. Tekstene kalles tavler."
+        },
+        {
+            "type": "text",
+            "content": "Én bok står over de andre. Kitáb-i-Aqdas betyr Den helligste bok, og det er lovboka. Bahá'u'lláh skrev den på arabisk rundt 1873, mens han fortsatt satt fengslet i byen Akká. Seinere skrifter er lagt til, og det samme er en lang rekke spørsmål og svar som en av sekretærene hans stilte (Bahá'í International Community, u.a.-e). Boka ble altså skrevet i hans egen levetid. Fordi tekstene er så unge, er det lite strid om hvor de kommer fra. Det betyr ikke at de er mer pålitelige enn andre religioners tekster. Det betyr bare at veien fra penn til leser har vært kort."
+        },
+        {
+            "type": "header",
+            "text": "Hvem får si hva ordene betyr?"
+        },
+        {
+            "type": "text",
+            "content": "Men en tekst må forstås, og der dukker et nytt spørsmål opp. Hvem har rett til å avgjøre hva ordene betyr? Bahá'í-troens egne kilder forteller at Bahá'u'lláh svarte på det selv. I testamentet sitt pekte han ut den eldste sønnen, 'Abdu'l-Bahá (1844-1921), som autorisert tolker av læren og som leder for troen. 'Abdu'l-Bahá pekte i sin tur ut sitt eldste barnebarn, Shoghi Effendi (1897-1957). Denne rekken kalles pakten, og den fortsetter til Det universelle rettferdighetens hus (Bahá'í International Community, u.a.-b; Vogt & Winje, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "SkrevetAvHamSelv",
+            "props": {
+                "title": "Hvem har siste ord?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Poenget er ikke at noen tekster er verdiløse. Poenget er at de har ulike roller. Bahá'í-troen har ikke presteskap og legger relativt liten vekt på felles kultus, altså felles ritualer (Vogt & Winje, 2026). Hver enkelt leser og tenker selv. Samtidig er det ikke opp til den enkelte å avgjøre hva læren betyr for alle andre. Bahá'í-referansebiblioteket på nett kaller seg den autoritative kilden til bahá'í-skrifter, og skiller mellom skriftene og tekster som andre har skrevet om troen (Bahá'í International Community, u.a.-a)."
+        },
+        {
+            "type": "header",
+            "text": "Lest hver morgen og hver kveld"
+        },
+        {
+            "type": "text",
+            "content": "Hvordan bruker folk tekstene? Daglig, er det korte svaret. Bahá'u'lláh ba de troende lese Guds vers hver morgen og hver kveld. Han la til noe viktig: mengde er ikke poenget. Å lese ett eneste vers med glede er bedre enn å lese alle Guds hellige bøker med tung sjel (Bahá'í International Community, u.a.-c). Skriftene inneholder også tre pliktbønner, og en bahá'í velger én av dem hver dag (Bahá'í International Community, u.a.-d). Mer om det står i artikkelen om [bønn](/krle/religion/bahai/bonn)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Les Guds vers hver morgen og hver kveld.",
+                "author": "Bahá'u'lláh, gjengitt av Bahá'í International Community. Oversatt fra engelsk."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Tekstene leses høyt, og de synges. På andaktssamlinger settes bønn og lesning ofte sammen med musikk og sang (Bahá'í International Community, u.a.-d). Andre skrifter brukes på samme måte. De skjulte ord er korte, poetiske avsnitt som Bahá'u'lláh skrev på persisk og arabisk i 1857 eller 1858, mens han var i eksil i Bagdad. Visshetens bok, Kitáb-i-Íqán, ble til i Bagdad i 1861 eller 1862 som svar på spørsmål fra en av morbrødrene til Báb (Bahá'í International Community, u.a.-g)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gruppe mennesker sitter i ring og leser høyt",
+            "caption": "På andaktssamlinger settes lesning og bønn ofte sammen med sang."
+        },
+        {
+            "type": "header",
+            "text": "Alle leser oversettelser"
+        },
+        {
+            "type": "text",
+            "content": "Her skiller bahá'í seg fra flere andre religioner. Skriftene ble skrevet på arabisk og persisk, men nesten alle bahá'íer i verden leser dem i oversettelse. Shoghi Effendi oversatte selv mange av verkene til engelsk, blant annet Visshetens bok i 1931 og De skjulte ord (Bahá'í International Community, u.a.-g). Den første autoriserte engelske oversettelsen av Kitáb-i-Aqdas kom derimot ikke før i 1992. Den kom med forklarende noter, med tilleggsskriftene og med spørsmålene og svarene (Bahá'í International Community, u.a.-e)."
+        },
+        {
+            "type": "text",
+            "content": "Ordet autorisert er verdt å stoppe ved. En oversettelse er ikke bare noe hvem som helst kan gi ut i eget navn. Ordet peker på at noen har godkjent akkurat denne utgaven. Sammenlign med islam, der enhver oversettelse av Koranen regnes som en tolkning av grunnteksten, og ikke som Koranen selv (Eggen & Vogt, 2026). To religioner gir to helt ulike svar på det samme spørsmålet: kan Guds ord bytte språk?"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To utgaver av samme bok på ulike språk",
+            "caption": "Bahá'í-skriftene leses over hele verden i godkjente oversettelser."
+        },
+        {
+            "type": "header",
+            "text": "Hva tradisjonen lærer, og hva forskerne beskriver"
+        },
+        {
+            "type": "text",
+            "content": "To måter å snakke om det samme stoffet på må holdes fra hverandre. Bahá'í-troen lærer at skriftene er åpenbaring, altså at det er Gud som taler gjennom Bahá'u'lláh. Religionsforskere beskriver det samme utenfra, som tekster fra en religiøs bevegelse i Iran på 1800-tallet. Bevegelsen begynte da Ali Muhammad i 1844 erklærte seg som Báb, og Bahá'u'lláh erklærte seg som profet i Bagdad i 1863 (Vogt & Winje, 2026). Den ene måten å snakke på gjør ikke den andre feil. De svarer på ulike spørsmål. Husk også at mye av det vi vet om hvordan tekstene ble til, kommer fra bahá'í-samfunnets egne kilder. Det er greit å vite når du leser."
+        },
+        {
+            "type": "text",
+            "content": "Fordi tekstene er unge og skrevet ned av grunnleggeren selv, ser forskningen annerledes ut enn i eldre religioner. Diskusjonen handler sjelden om hvem som holdt pennen. Men enighet om teksten er ikke det samme som enighet om alt. Da Bahá'u'lláh trådte fram, samlet han de fleste av tilhengerne til Báb, men ikke alle (Vogt & Winje, 2026). I dag er det rundt seks millioner bahá'íer i verden, og i Norge er bahá'í et registrert trossamfunn med om lag 1100 medlemmer (Vogt & Winje, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Kan det komme mer tekst?"
+        },
+        {
+            "type": "text",
+            "content": "Bahá'u'lláh døde i 1892, og skriftene hans er dermed avsluttet. Men nye spørsmål slutter jo ikke å dukke opp. Siden 1963 ledes troen av Det universelle rettferdighetens hus, et råd på ni medlemmer som velges hvert femte år av medlemmene i alle nasjonale bahá'í-råd (Bahá'í International Community, u.a.-f; Vogt & Winje, 2026). Rådet har fullmakt til å gi regler i saker som de hellige tekstene ikke dekker uttrykkelig (Bahá'í International Community, u.a.-f). Skriftene står stille. Veiledningen fortsetter. Mer om hvordan dette henger sammen, står i artikkelen om [sentrale trekk](/krle/religion/bahai/sentrale-trekk)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem skrev bahá'í-troens hellige skrifter, og hvor mange bind ville de fylt til sammen?",
+                    "Hva er Kitáb-i-Aqdas, og når og hvor ble den skrevet?",
+                    "Hvem pekte Bahá'u'lláh ut som autorisert tolker av læren?",
+                    "Hva sier skriftene om hvor ofte en bahá'í bør lese Guds vers?"
+                ],
+                "reflekter": [
+                    "Hvorfor kan det ha noe å si for en religion at det ikke er uenighet om hvem som skrev tekstene?",
+                    "I islam regnes en oversettelse av Koranen som en tolkning. I bahá'í leser nesten alle skriftene i oversettelse. Hvilke fordeler og ulemper har hver av løsningene?",
+                    "Bahá'í-troen har ikke presteskap, men den har utpekte tolkere. Hvordan henger de to tingene sammen?",
+                    "Artikkelen skiller mellom hva tradisjonen lærer og hvordan forskere beskriver det samme. Hvorfor er det viktig å holde de to fra hverandre?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva De skjulte ord er, og les noen avsnitt. Hva slags tekst er dette?",
+                    "Sammenlign svaret fra bahá'í med svaret fra en annen religion i sammenligningsemnet. Hvem får tolke teksten der?",
+                    "Diskuter i klassen: Hva skjer med en religion når grunnleggeren har svart skriftlig på svært mye selv?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er særegent med bahá'í-skriftene sammenlignet med mange eldre religioners tekster?",
+                        "options": [
+                            "De ble skrevet ned flere hundre år etter grunnleggerens død",
+                            "Grunnleggeren skrev dem selv mens han levde",
+                            "De ble overlevert muntlig helt fram til 1900-tallet",
+                            "De finnes bare på engelsk"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Bahá'u'lláh skrev i fire tiår. Tusenvis av brev, tavler og bøker ville samlet fylt mer enn 100 bind."
+                    },
+                    {
+                        "question": "Hva er Kitáb-i-Aqdas?",
+                        "options": [
+                            "En samling bønner skrevet av Shoghi Effendi",
+                            "En biografi om Báb",
+                            "Lovboka, skrevet på arabisk rundt 1873 i byen Akká",
+                            "En kommentar til Koranen"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Kitáb-i-Aqdas betyr Den helligste bok. Bahá'u'lláh skrev den på arabisk rundt 1873 mens han satt fengslet i Akká."
+                    },
+                    {
+                        "question": "Hvem pekte Bahá'u'lláh ut som autorisert tolker av læren?",
+                        "options": [
+                            "Báb",
+                            "Sin eldste sønn 'Abdu'l-Bahá",
+                            "Det universelle rettferdighetens hus",
+                            "Alle troende, hver for seg"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "I testamentet sitt pekte Bahá'u'lláh ut 'Abdu'l-Bahá (1844-1921) som autorisert tolker og leder for troen."
+                    },
+                    {
+                        "question": "Hva har Det universelle rettferdighetens hus fullmakt til?",
+                        "options": [
+                            "Å skrive nye åpenbaringer",
+                            "Å endre ordlyden i Kitáb-i-Aqdas",
+                            "Å gi regler i saker de hellige tekstene ikke dekker uttrykkelig",
+                            "Å utnevne prester i hvert land"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Rådet på ni medlemmer har ledet troen siden 1963 og kan gi regler i saker skriftene ikke dekker uttrykkelig."
+                    },
+                    {
+                        "question": "Når kom den første autoriserte engelske oversettelsen av Kitáb-i-Aqdas?",
+                        "options": [
+                            "1873",
+                            "1931",
+                            "1963",
+                            "1992"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Den kom i 1992, med forklarende noter, tilleggsskrifter og de tilhørende spørsmålene og svarene."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bahá'í International Community. (u.a.-a). *Bahá'í Reference Library*. Hentet 11.08.2026 fra [bahai.org/library](https://www.bahai.org/library)",
+                    "Bahá'í International Community. (u.a.-b). *Bahá'u'lláh and His Covenant*. Hentet 11.08.2026 fra [bahai.org/beliefs/bahaullah-covenant](https://www.bahai.org/beliefs/bahaullah-covenant)",
+                    "Bahá'í International Community. (u.a.-c). *Meditation*. Hentet 11.08.2026 fra [bahai.org/beliefs/life-spirit/devotion/meditation](https://www.bahai.org/beliefs/life-spirit/devotion/meditation)",
+                    "Bahá'í International Community. (u.a.-d). *Prayer*. Hentet 11.08.2026 fra [bahai.org/beliefs/life-spirit/devotion/prayer](https://www.bahai.org/beliefs/life-spirit/devotion/prayer)",
+                    "Bahá'í International Community. (u.a.-e). *The Kitáb-i-Aqdas*. Hentet 11.08.2026 fra [bahai.org/library/authoritative-texts/bahaullah/kitab-i-aqdas](https://www.bahai.org/library/authoritative-texts/bahaullah/kitab-i-aqdas/)",
+                    "Bahá'í International Community. (u.a.-f). *The Universal House of Justice*. Hentet 11.08.2026 fra [bahai.org/the-universal-house-of-justice](https://www.bahai.org/the-universal-house-of-justice)",
+                    "Bahá'í International Community. (u.a.-g). *Writings of Bahá'u'lláh*. Hentet 11.08.2026 fra [bahai.org/library/authoritative-texts/bahaullah](https://www.bahai.org/library/authoritative-texts/bahaullah/)",
+                    "Eggen, N. S. & Vogt, K. (2026). *Koranen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Koranen](https://snl.no/Koranen)",
+                    "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Fordyp dere i havet av Mine ord, så dere kan dykke ned i dets hemmeligheter og oppdage alle perlene av visdom som ligger skjult der.",
-        "source": "Kitáb-i-Aqdas",
-        "reference": "Vers 182"
-    }
+    "timeline": []
 }

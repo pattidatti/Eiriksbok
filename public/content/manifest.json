@@ -7500,7 +7500,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-03-15T21:57:26+01:00"
+                  "lastUpdated": "2026-08-11T14:16:17+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -7517,9 +7517,9 @@
                 },
                 {
                   "id": "hellige-tekster",
-                  "title": "Bibelen",
-                  "description": "66 bøker i to testamenter: evangelier, brev, profetier og poesi.",
-                  "image": "/images/krle/religion/kristendom_bible.webp",
+                  "title": "Boka som ble satt sammen",
+                  "description": "Bibelen ble aldri skrevet som én bok, den ble satt sammen. Se hvorfor katolske og protestantiske bibler har ulikt antall bøker, hva som skulle til for at et skrift kom med, og hvem som får tolke teksten.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "hellige_tekster",
@@ -7711,13 +7711,13 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T14:16:17+02:00"
                 },
                 {
                   "id": "hellige-tekster",
-                  "title": "Koranen",
-                  "description": "Islams hellige bok.",
-                  "image": "/images/krle/religion/islam_quran.webp",
+                  "title": "Boka som ikke kan oversettes",
+                  "description": "Hvorfor er ikke en norsk Koran «Koranen»? Om surer og ayaer, resitasjon og utenatlæring, og skillet mellom hva tradisjonen forteller om tekstens opphav og hva forskerne kan slå fast.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "hellige-tekster",
@@ -7848,13 +7848,13 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T14:16:17+02:00"
                 },
                 {
                   "id": "hellige-tekster",
-                  "title": "Tripitaka",
-                  "description": "De tre kurver - buddhismens hellige skrifter.",
-                  "image": "/images/krle/religion/buddhisme_statue.webp",
+                  "title": "Tre kurver, flere kanoner",
+                  "description": "Buddhismen har ingen felles hellig bok. Bli kjent med de tre kurvene i Tripitaka, og se hvorfor tradisjonene svarer ulikt på hva som er Buddhas ord.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "buddhisme",
                     "hellige-tekster",
@@ -7972,13 +7972,13 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T14:16:17+02:00"
                 },
                 {
                   "id": "hellige-tekster",
-                  "title": "Tanakh",
-                  "description": "Den hebraiske bibelen.",
-                  "image": "/images/krle/religion/jodedom_tanakh.webp",
+                  "title": "Boka der uenigheten blir stående",
+                  "description": "En side i Talmud har mishna-teksten i midten og kommentarer fra over tusen år i margene rundt. Bli kjent med Tanakh, Toraen og Talmud, og med hvorfor uenigheten mellom de lærde får bli stående på arket.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "hellige-tekster",
@@ -8096,13 +8096,13 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T14:16:17+02:00"
                 },
                 {
                   "id": "hellige-tekster",
-                  "title": "Vedaene og Bhagavad Gita",
-                  "description": "Hinduismens hellige skrifter.",
-                  "image": "/images/krle/religion/hinduisme_tekster.webp",
+                  "title": "Hørt eller husket",
+                  "description": "Noen bøker er hørt, andre er husket. Skillet avgjør hvilken tekst som har høyest rang, og hvorfor den teksten som er oversatt til flest språk likevel ikke er den helligste.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "hellige-tekster",
@@ -8290,13 +8290,13 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T14:16:17+02:00"
                 },
                 {
                   "id": "hellige-tekster",
-                  "title": "Kitáb-i-Aqdas",
-                  "description": "Den helligste boken i Bahá'í.",
-                  "image": "/images/krle/religion/bahai_hero.webp",
+                  "title": "Boka grunnleggeren skrev selv",
+                  "description": "Bahá'u'lláh skrev bahá'í-skriftene i sin egen levetid. Bli kjent med Kitáb-i-Aqdas, tavlene og de autoriserte oversettelsene, og finn ut hvem som har rett til å si hva ordene betyr.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "bahai",
                     "hellige-tekster",
@@ -8414,13 +8414,13 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T14:16:17+02:00"
                 },
                 {
                   "id": "hellige-tekster",
-                  "title": "Mormons bok",
-                  "description": "Et annet testamente om Jesus Kristus.",
-                  "image": "/images/krle/religion/mormonisme_hero.webp",
+                  "title": "Fire bøker, og plass til mer",
+                  "description": "Standardverkene er fire bøker, men samlingen er ikke lukket: se hva som skal til for at ny tekst kan bli hellig skrift, og hvordan tradisjonens fortelling om Mormons bok skiller seg fra det forskningen kan si.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "hellige-tekster",
@@ -8538,13 +8538,13 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T14:16:17+02:00"
                 },
                 {
                   "id": "hellige-tekster",
-                  "title": "Ny verden-oversettelsen",
-                  "description": "Jehovas vitners bibeloversettelse.",
-                  "image": "/images/krle/religion/jehovas-vitner_hero.webp",
+                  "title": "Ett ord, to bibler",
+                  "description": "Slå opp Jesaja 43,10 i to bibler, og du får to ulike ord. Finn ut hvorfor fire hebraiske bokstaver uten vokaler tvinger enhver oversetter til å velge, hvorfor Jehovas vitner laget sin egen bibel, og hvem som bestemmer hva teksten betyr.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "hellige-tekster",
@@ -8635,13 +8635,13 @@
                     "grunnleggere"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-07-09T10:26:20+02:00"
+                  "lastUpdated": "2026-08-11T14:16:17+02:00"
                 },
                 {
                   "id": "hellige-tekster",
-                  "title": "Guru Granth Sahib",
-                  "description": "Sikhismens hellige bok og evige lærer.",
-                  "image": "/images/krle/religion/sikhisme_tekster_hero.webp",
+                  "title": "Guruen som er en bok",
+                  "description": "Hvorfor bæres en bok til sengs hver kveld? Bli kjent med Guru Granth Sahib, som sikher ærer som sin levende guru.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "sikhisme",
                     "hellige-tekster"

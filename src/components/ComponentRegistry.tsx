@@ -160,6 +160,15 @@ const GrunnleggerenSomIkkeVil = lazy(() => import('./content/interactive/Grunnle
 const LetingenEtterEnStifter = lazy(() => import('./content/interactive/LetingenEtterEnStifter').then(m => ({ default: m.LetingenEtterEnStifter })));
 const MennesketSomVaaknet = lazy(() => import('./content/interactive/MennesketSomVaaknet').then(m => ({ default: m.MennesketSomVaaknet })));
 const TiGuruerOgEnBok = lazy(() => import('./content/interactive/TiGuruerOgEnBok').then(m => ({ default: m.TiGuruerOgEnBok })));
+const SidenSomVokser = lazy(() => import('./content/interactive/SidenSomVokser').then(m => ({ default: m.SidenSomVokser })));
+const HvaKomMedIBoka = lazy(() => import('./content/interactive/HvaKomMedIBoka').then(m => ({ default: m.HvaKomMedIBoka })));
+const OversettelsenSomIkkeErKoranen = lazy(() => import('./content/interactive/OversettelsenSomIkkeErKoranen').then(m => ({ default: m.OversettelsenSomIkkeErKoranen })));
+const SkrevetAvHamSelv = lazy(() => import('./content/interactive/SkrevetAvHamSelv').then(m => ({ default: m.SkrevetAvHamSelv })));
+const KanonenSomIkkeErLukket = lazy(() => import('./content/interactive/KanonenSomIkkeErLukket').then(m => ({ default: m.KanonenSomIkkeErLukket })));
+const NavnetSattInnIgjen = lazy(() => import('./content/interactive/NavnetSattInnIgjen').then(m => ({ default: m.NavnetSattInnIgjen })));
+const HoertEllerHusket = lazy(() => import('./content/interactive/HoertEllerHusket').then(m => ({ default: m.HoertEllerHusket })));
+const TreKurverOgFlereKanoner = lazy(() => import('./content/interactive/TreKurverOgFlereKanoner').then(m => ({ default: m.TreKurverOgFlereKanoner })));
+const BokaSomLeggerSeg = lazy(() => import('./content/interactive/BokaSomLeggerSeg').then(m => ({ default: m.BokaSomLeggerSeg })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
@@ -593,6 +602,15 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     LetingenEtterEnStifter,
     MennesketSomVaaknet,
     TiGuruerOgEnBok,
+    SidenSomVokser,
+    HvaKomMedIBoka,
+    OversettelsenSomIkkeErKoranen,
+    SkrevetAvHamSelv,
+    KanonenSomIkkeErLukket,
+    NavnetSattInnIgjen,
+    HoertEllerHusket,
+    TreKurverOgFlereKanoner,
+    BokaSomLeggerSeg,
     DagenSomBonn,
     MaatBalansen,
     ToFlomfortellinger,
