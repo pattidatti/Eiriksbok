@@ -10,7 +10,14 @@
         },
         {
             "type": "text",
-            "content": "Vi vet at S + V er nok til å lage en setning (f.eks. *\"Jens spiser\"*). Men det er litt kjedelig! Vi vil gjerne vite *hva* han spiser, og kanskje *når* han spiser.\n\nDerfor utvider vi setningen med to nye ledd:\n1.  Objekt (O): Hvem eller hva handlingen går ut over.\n2.  Adverbial (A): Tid, sted eller måte."
+            "content": "Vi vet at S + V er nok til å lage en setning (for eksempel «Jens spiser»). Men det er litt kjedelig! Vi vil gjerne vite hva han spiser, og kanskje når han spiser. En setning kan nemlig ha flere setningsledd i tillegg til subjekt og verbal (Simonsen & Hagemann, 2025). Derfor utvider vi setningen med to nye ledd:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Objekt (O): hvem eller hva handlingen går ut over",
+                "Adverbial (A): tid, sted eller måte"
+            ]
         },
         {
             "type": "header",
@@ -18,7 +25,14 @@
         },
         {
             "type": "text",
-            "content": "Objektet forteller oss *hva* som blir spist, kjøpt, slått eller sett. \n\n*   Ex: *\"Jens (S) spiser (V) et eple (O).\"*\n*   Ex: *\"Marit (S) kjøper (V) bil (O).\"*"
+            "content": "Objektet er et setningsledd som fyller ut verbet, og som viser hva handlingen går ut over (Hagemann, 2026). Det forteller oss hva som blir spist, kjøpt, slått eller sett."
+        },
+        {
+            "type": "list",
+            "items": [
+                "«Jens (S) spiser (V) et eple (O).»",
+                "«Marit (S) kjøper (V) bil (O).»"
+            ]
         },
         {
             "type": "header",
@@ -26,7 +40,15 @@
         },
         {
             "type": "text",
-            "content": "Adverbialet gir oss ekstra informasjon om omstendighetene. Det svarer ofte på *Når? Hvor?* eller *Hvordan?*.\n\n*   Ex: *\"Jens spiser et eple i dag (A).\"* (Tid)\n*   Ex: *\"Jens spiser et eple på kjøkkenet (A).\"* (Sted)\n*   Ex: *\"Jens spiser et eple raskt (A).\"* (Måte)"
+            "content": "Adverbialet er et setningsledd som fyller ut verbalet, og som kan si når, hvor eller hvordan en handling skjer (Simonsen, 2025). Det gir oss altså ekstra informasjon om omstendighetene."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Tid: «Jens spiser et eple i dag (A).»",
+                "Sted: «Jens spiser et eple på kjøkkenet (A).»",
+                "Måte: «Jens spiser et eple raskt (A).»"
+            ]
         },
         {
             "type": "header",
@@ -97,6 +119,18 @@
                     "Sett dere sammen to og to. Den ene sier en kort setning med bare subjekt og verbal, og den andre utvider den med objekt og adverbial. Bytt på hvem som starter."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hagemann, K. (2026). *Objekt - grammatikk*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/objekt_-_grammatikk](https://snl.no/objekt_-_grammatikk)",
+                    "Simonsen, H. G. (2025). *Adverbial*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/adverbial](https://snl.no/adverbial)",
+                    "Simonsen, H. G. & Hagemann, K. (2025). *Setning*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/setning](https://snl.no/setning)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }
