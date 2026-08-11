@@ -10,7 +10,7 @@
     "category": "Eksamen",
     "details": [
         "Du får vite faget 48 timer før, og har 24 timer forberedelsestid.",
-        "Eksamen varer inntil 30 minutter: presentasjon + samtale.",
+        "Eksamen varer inntil 30 minutter. Skolen bestemmer formen.",
         "Forbered 3-4 tekster som passer temaet, med kobling til epoker.",
         "Ha en klar påstand i presentasjonen, ikke bare en oppsummering.",
         "Forbered ekstra tekster for samtalen med faglærer."
@@ -19,8 +19,8 @@
     "timeline": [],
     "content": [
         {
-            "type": "paragraph",
-            "text": "Muntlig eksamen er annerledes enn skriftlig. Her handler det ikke bare om hva du kan skrive, men om hva du kan si, forklare og diskutere i samtale med faglæreren din. Du får et tema (for eksempel «Identitet» eller «Makt og avmakt») og skal vise at du kan knytte tekster, virkemidler og litteraturhistorie sammen i en muntlig fremføring. De som gjør det best, er ikke de som pugger mest. Det er de som forbereder seg smartest. Denne guiden gir deg en konkret oppskrift."
+            "type": "text",
+            "content": "Muntlig eksamen er annerledes enn skriftlig. Her handler det ikke bare om hva du kan skrive, men om hva du kan si, forklare og diskutere i samtale med faglæreren din. Du får et tema (for eksempel «Identitet» eller «Makt og avmakt») og skal vise at du kan knytte tekster, virkemidler og litteraturhistorie sammen i en muntlig fremføring. De som gjør det best, er ikke de som pugger mest. Det er de som forbereder seg smartest. Denne guiden gir deg en konkret oppskrift."
         },
         {
             "type": "header",
@@ -28,8 +28,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Muntlig eksamen i norsk har tre faser: forberedelse, presentasjon og samtale. Det er i forberedelsen du legger grunnlaget for alt som skjer etterpå."
+            "type": "text",
+            "content": "Alle muntlige eksamener har 24 timer forberedelsestid, og selve eksamen varer inntil 30 minutter (Utdanningsdirektoratet, 2026). Skolen bestemmer selv hvordan eksamen organiseres, og en presentasjon er frivillig for eleven. Denne guiden tar utgangspunkt i en vanlig form: en presentasjon og deretter en samtale. Uansett form er det i forberedelsen du legger grunnlaget for alt som skjer etterpå."
         },
         {
             "type": "component",
@@ -77,12 +77,12 @@
                         "value": "Du får det overordnede temaet (for eksempel «Identitet»). Dette er en obligatorisk skoledag. Du har tilgang til skolens fasiliteter og kan samarbeide med medelever."
                     },
                     {
-                        "label": "30 min på eksamensdagen",
-                        "value": "Du får den spesifikke oppgaven og forbereder presentasjonen alene."
+                        "label": "På eksamensdagen",
+                        "value": "Skolen bestemmer selv hvordan eksamen organiseres. Sjekk med faglæreren din om du får tid til å tilpasse presentasjonen på eksamensdagen, og hvor lang tid du i så fall får."
                     },
                     {
                         "label": "Selve eksamen",
-                        "value": "Inntil 30 minutter: presentasjon + samtale med faglærer."
+                        "value": "Inntil 30 minutter per elev."
                     }
                 ]
             }
@@ -124,8 +124,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Forberedelsestiden er det viktigste du har. Elevene som gjør det best på muntlig eksamen, er de som kommer med et arsenal av tekster, analyser og koblinger. De har ikke pugget en tale. De har bygget en verktøykasse som gjør dem klare for alt faglærer kan spørre om."
+            "type": "text",
+            "content": "Forberedelsestiden er det viktigste du har. Elevene som gjør det best på muntlig eksamen, er de som kommer med et arsenal av tekster, analyser og koblinger. De har ikke pugget en tale. De har bygget en verktøykasse som gjør dem klare for alt faglærer kan spørre om."
         },
         {
             "type": "header",
@@ -133,8 +133,8 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "Når du får temaet, start med å tenke bredt. Hva betyr dette temaet i ulike sammenhenger? Personlig, i samfunnet, i litteraturen? Lag et stort tankekart med temaet i sentrum. Denne første brainstormingen hjelper deg å se hvilke tekster og vinkler du har å spille på."
+            "type": "text",
+            "content": "Når du får temaet, start med å tenke bredt. Hva betyr dette temaet i ulike sammenhenger? Personlig, i samfunnet, i litteraturen? Lag et stort tankekart med temaet i sentrum. Denne første brainstormingen hjelper deg å se hvilke tekster og vinkler du har å spille på."
         },
         {
             "type": "info_box",
@@ -147,8 +147,8 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "Dette er nøkkelen til en sterk eksamen. Du trenger flere tekster som belyser temaet fra ulike vinkler. Velg en blanding av skjønnlitteratur og sakprosa, og sørg for at minst en tekst kan kobles til en litteraturhistorisk epoke. Da viser du sensor at du kan se sammenhenger mellom tema, tid og tekstform."
+            "type": "text",
+            "content": "Dette er nøkkelen til en sterk eksamen. Du trenger flere tekster som belyser temaet fra ulike vinkler. Velg en blanding av skjønnlitteratur og sakprosa, og sørg for at minst en tekst kan kobles til en litteraturhistorisk epoke. Da viser du sensor at du kan se sammenhenger mellom tema, tid og tekstform."
         },
         {
             "type": "list",
@@ -180,8 +180,8 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "For hver tekst du har valgt, lag et tankekart. I sentrum: tittelen på teksten. Grener ut: tema, virkemidler, budskap, kobling til epoke, personlig refleksjon. Bruk mye tid på denne fasen. Jo dypere du graver nå, jo lettere blir det å snakke fritt på eksamen."
+            "type": "text",
+            "content": "For hver tekst du har valgt, lag et tankekart. I sentrum: tittelen på teksten. Grener ut: tema, virkemidler, budskap, kobling til epoke, personlig refleksjon. Bruk mye tid på denne fasen. Jo dypere du graver nå, jo lettere blir det å snakke fritt på eksamen."
         },
         {
             "type": "component",
@@ -233,8 +233,8 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "Den vanligste feilen i presentasjoner er å bare beskrive: «I denne presentasjonen skal jeg snakke om identitet i tre tekster.» Det er ikke en tese, det er en innholdsfortegnelse. I stedet bør du åpne med en klar påstand som alt i presentasjonen din underbygger."
+            "type": "text",
+            "content": "Den vanligste feilen i presentasjoner er å bare beskrive: «I denne presentasjonen skal jeg snakke om identitet i tre tekster.» Det er ikke en tese, det er en innholdsfortegnelse. I stedet bør du åpne med en klar påstand som alt i presentasjonen din underbygger."
         },
         {
             "type": "comparison",
@@ -248,8 +248,8 @@
             }
         },
         {
-            "type": "paragraph",
-            "text": "Bygg presentasjonen rundt 2-3 tekster. Bruk konkrete sitater og pek på spesifikke virkemidler. Avslutt med å sirkel tilbake til påstanden din."
+            "type": "text",
+            "content": "Bygg presentasjonen rundt 2-3 tekster. Bruk konkrete sitater og pek på spesifikke virkemidler. Avslutt med å sirkel tilbake til påstanden din."
         },
         {
             "type": "list",
@@ -265,8 +265,8 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "Samtalen etter presentasjonen er der mange elever mister poeng. Det er ikke tilfeldig hva faglærer spør om. Faglærer tester om du virkelig forstår stoffet eller bare har pugget presentasjonen. Forbered deg ved å tenke gjennom hva faglærer sannsynligvis vil spørre om."
+            "type": "text",
+            "content": "Samtalen etter presentasjonen er der mange elever mister poeng. Det er ikke tilfeldig hva faglærer spør om. Faglærer tester om du virkelig forstår stoffet eller bare har pugget presentasjonen. Forbered deg ved å tenke gjennom hva faglærer sannsynligvis vil spørre om."
         },
         {
             "type": "component",
@@ -374,8 +374,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Hva du sier er viktig, men hvordan du sier det teller også. En trygg stemme og rolig kroppsspråk gjør at faglærer oppfatter deg som godt forberedt, selv om du er nervøs inni deg."
+            "type": "text",
+            "content": "Hva du sier er viktig, men hvordan du sier det teller også. En trygg stemme og rolig kroppsspråk gjør at faglærer oppfatter deg som godt forberedt, selv om du er nervøs inni deg."
         },
         {
             "type": "component",
@@ -452,8 +452,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "I samtalen vil faglærer ofte spørre om spesifikke virkemidler. Du trenger ikke kunne alle, men disse bør du kunne identifisere og forklare effekten av:"
+            "type": "text",
+            "content": "I samtalen vil faglærer ofte spørre om spesifikke virkemidler. Du trenger ikke kunne alle, men disse bør du kunne identifisere og forklare effekten av:"
         },
         {
             "type": "list",
@@ -479,8 +479,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Muntlig eksamen tester spesifikke kompetansemål fra LK20. Når du forstår hva hvert mål betyr i praksis, vet du også hva sensor leter etter."
+            "type": "text",
+            "content": "Muntlig eksamen tester spesifikke kompetansemål fra LK20 (Utdanningsdirektoratet, u.å.). Når du forstår hva hvert mål betyr i praksis, vet du også hva sensor leter etter."
         },
         {
             "type": "component",
@@ -514,13 +514,13 @@
             }
         },
         {
-            "type": "paragraph",
-            "text": "Kjennetegn på måloppnåelse for muntlig fra Udir: Ved lav kompetanse (karakter 2) kommuniserer eleven noe faglig innhold og begrunner til en viss grad egne oppfatninger. Ved god kompetanse (karakter 4) kommuniserer eleven faglig innhold klart og underbygger egne oppfatninger. Ved høy kompetanse (karakter 6) kommuniserer eleven faglig innhold klart og tydelig og argumenterer saklig."
+            "type": "text",
+            "content": "Kjennetegn på måloppnåelse for muntlig fra Udir (Utdanningsdirektoratet, 2020): Ved lav kompetanse (karakter 2) kommuniserer eleven noe faglig innhold og begrunner til en viss grad egne oppfatninger. Ved god kompetanse (karakter 4) kommuniserer eleven faglig innhold klart og underbygger egne oppfatninger. Ved høy kompetanse (karakter 6) kommuniserer eleven faglig innhold klart og tydelig og argumenterer saklig."
         },
         {
             "type": "link",
             "text": "Kompetansemål norsk LK20 (Udir)",
-            "url": "https://www.udir.no/lk20/nor01-07/kompetansemaal-og-vurdering/kv920",
+            "url": "https://www.udir.no/lk20/nor01-08/kompetansemaal-og-vurdering/kv111",
             "icon": "external"
         },
         {
@@ -578,12 +578,12 @@
         },
         {
             "type": "header",
-            "text": "Scenario: 30 minutter forberedelse",
+            "text": "Scenario: kort forberedelse på eksamensdagen",
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "På eksamensdagen får du den spesifikke oppgaven og har 30 minutter alene til å forberede presentasjonen. Hva gjør du?"
+            "type": "text",
+            "content": "Sett at du får den spesifikke oppgaven på eksamensdagen og har 30 minutter alene til å forberede presentasjonen. Hva gjør du?"
         },
         {
             "type": "component",
@@ -648,8 +648,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Her er en steg-for-steg plan for forberedelsestiden:"
+            "type": "text",
+            "content": "Her er en steg-for-steg plan for forberedelsestiden:"
         },
         {
             "type": "list",
@@ -808,7 +808,7 @@
             "name": "Oppgaver",
             "props": {
                 "forstaa": [
-                    "Hvor lang forberedelsestid har du, og hva skjer 48 timer, 24 timer og 30 minutter før eksamen?",
+                    "Hvor lang forberedelsestid har du, og hva skjer 48 timer og 24 timer før eksamen?",
                     "Hva er hovedforskjellen mellom presentasjonen og samtalen, ifølge artikkelen?",
                     "Hvor mange tekster bør du forberede, og hvorfor bør minst en av dem kunne kobles til en litterær epoke?",
                     "Hva er forskjellen mellom å beskrive og å analysere en tekst?"
@@ -825,6 +825,17 @@
                     "Øv sammen med en medelev: den ene holder en kort presentasjon, den andre stiller oppfølgingsspørsmål slik faglærer ville gjort på eksamen."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Utdanningsdirektoratet. (2020). *Kjennetegn på måloppnåelse - norsk 10. trinn*. Hentet 11.08.2026 fra [udir.no](https://www.udir.no/laring-og-trivsel/lareplanverket/kjennetegn/kjennetegn-pa-maloppnaelse-norsk-10.-trinn)",
+                    "Utdanningsdirektoratet. (2026). *Muntlig eksamen*. Hentet 11.08.2026 fra [udir.no](https://www.udir.no/eksamen-og-prover/eksamen/muntlig-eksamen/)",
+                    "Utdanningsdirektoratet. (u.å.). *Læreplan i norsk (NOR01-08): Kompetansemål etter 10. trinn*. Hentet 11.08.2026 fra [udir.no](https://www.udir.no/lk20/nor01-08/kompetansemaal-og-vurdering/kv111)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -837,10 +848,10 @@
                 "1 uke"
             ],
             "answer": 1,
-            "explanation": "Du har 24 timer forberedelsestid (forberedelsesdagen). Du får vite faget 48 timer før, og på selve eksamensdagen får du 30 minutter til å tilpasse presentasjonen til den spesifikke oppgaven."
+            "explanation": "Du har 24 timer forberedelsestid (forberedelsesdagen). Du får vite faget 48 timer før. Hvordan selve eksamensdagen organiseres, bestemmer skolen."
         },
         {
-            "question": "Hva bør du gjøre med de første 10 minuttene av de 30 minuttene på eksamensdagen?",
+            "question": "Får du en kort forberedelse på eksamensdagen, hva bør du gjøre med de første minuttene?",
             "options": [
                 "Skrive et fullstendig manus",
                 "Lese en ny tekst du ikke har sett før",
@@ -892,5 +903,5 @@
         "vurdering"
     ],
     "createdDate": "2026-03-15T00:00:00Z",
-    "lastUpdated": "2026-06-01T00:00:00Z"
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }

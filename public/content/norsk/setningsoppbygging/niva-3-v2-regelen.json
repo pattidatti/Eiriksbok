@@ -10,7 +10,7 @@
         },
         {
             "type": "text",
-            "content": "I mange språk (som engelsk) kan verbet flytte litt på seg. Men i norsk fortellende helsetninger er det én regel som gjelder uansett: Verbet skal stå på plass nummer to.\n\nDette kalles V2-regelen."
+            "content": "I norske fortellende setninger er ordstillingen som regel subjekt - verb - objekt, og derfor kalles norsk et SVO-språk (Store norske leksikon, 2024). Men i norsk gjelder også en regel til: det finitte verbet må alltid komme på andreplass i setningen, og dette skiller norsk fra for eksempel engelsk (Hagemann, 2025).\n\nDenne regelen kaller vi V2-regelen."
         },
         {
             "type": "component",
@@ -40,7 +40,18 @@
         },
         {
             "type": "text",
-            "content": "Når vi starter setningen med noe annet enn Subjektet (for eksempel et tidsadverb som \"I dag\"), må Subjektet og Verbalet bytte plass. Dette kaller vi inversjon.\n\n*   Vanlig: *Jeg (S) går (V) på skolen i dag.* (S-V-A)\n*   Inversjon: *I dag (A) går (V) jeg (S) på skolen.* (A-V-S)\n\nLegg merke til at verbet (går) står trygt på plass nummer 2 i begge setningene!"
+            "content": "Når vi starter setningen med noe annet enn subjektet (for eksempel et tidsadverb som «I dag»), må subjektet og verbalet bytte plass. Dette kaller vi inversjon (Simonsen & Hagemann, 2025)."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Vanlig: Jeg (S) går (V) på skolen i dag. (S-V-A)",
+                "Inversjon: I dag (A) går (V) jeg (S) på skolen. (A-V-S)"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til at verbet (går) står trygt på plass nummer 2 i begge setningene!"
         },
         {
             "type": "header",
@@ -111,6 +122,18 @@
                     "Lek V2-politiet med en medelev: skriv fem setninger der noen har brutt V2-regelen, og bytt med hverandre for å rette dem opp."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hagemann, K. (2025). *syntaks*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/syntaks](https://snl.no/syntaks)",
+                    "Simonsen, H. G. & Hagemann, K. (2025). *inversjon - språkvitenskap*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/inversjon_-_språkvitenskap](https://snl.no/inversjon_-_spr%C3%A5kvitenskap)",
+                    "Store norske leksikon. (2024). *ordstilling*. Hentet 11.08.2026 fra [snl.no/ordstilling](https://snl.no/ordstilling)"
+                ]
+            }
         }
-    ]
+    ],
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }
