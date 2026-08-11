@@ -938,11 +938,11 @@
       "count": 20
     },
     {
-      "tag": "samfunn",
-      "count": 19
+      "tag": "ritual",
+      "count": 20
     },
     {
-      "tag": "ritual",
+      "tag": "samfunn",
       "count": 19
     },
     {
@@ -1078,6 +1078,10 @@
       "count": 10
     },
     {
+      "tag": "sikhisme",
+      "count": 10
+    },
+    {
       "tag": "grunnleggere",
       "count": 10
     },
@@ -1110,10 +1114,6 @@
       "count": 9
     },
     {
-      "tag": "sikhisme",
-      "count": 9
-    },
-    {
       "tag": "opplysningstid",
       "count": 9
     },
@@ -1135,6 +1135,10 @@
     },
     {
       "tag": "gudsbilde",
+      "count": 9
+    },
+    {
+      "tag": "bønn",
       "count": 9
     },
     {
@@ -1207,10 +1211,6 @@
     },
     {
       "tag": "frelse",
-      "count": 8
-    },
-    {
-      "tag": "bønn",
       "count": 8
     },
     {
@@ -3787,6 +3787,10 @@
     },
     {
       "tag": "gilgamesj",
+      "count": 1
+    },
+    {
+      "tag": "dagligliv",
       "count": 1
     },
     {

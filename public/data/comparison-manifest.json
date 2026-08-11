@@ -416,6 +416,68 @@
   ],
   "topics": [
     {
+      "slug": "bonn",
+      "label": "Bønn",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Bønn i Bahá'í",
+          "file": "content/krle/religion/bahai/bonn/artikkel.json",
+          "link": "/krle/religion/bahai/bonn"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Meditasjon og Puja i Buddhismen",
+          "file": "content/krle/religion/buddhisme/bonn/artikkel.json",
+          "link": "/krle/religion/buddhisme/bonn"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Puja og Bønn i Hinduismen",
+          "file": "content/krle/religion/hinduisme/bonn/artikkel.json",
+          "link": "/krle/religion/hinduisme/bonn"
+        },
+        {
+          "religion": "islam",
+          "title": "Bønn (Salah) i Islam",
+          "file": "content/krle/religion/islam/bonn/artikkel.json",
+          "link": "/krle/religion/islam/bonn"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Bønn i Jehovas vitner",
+          "file": "content/krle/religion/jehovas-vitner/bonn/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/bonn"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Bønn i Jødedommen",
+          "file": "content/krle/religion/jodedom/bonn/artikkel.json",
+          "link": "/krle/religion/jodedom/bonn"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Bønn i kristendommen",
+          "file": "content/krle/religion/kristendom/bonn/artikkel.json",
+          "link": "/krle/religion/kristendom/bonn"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Bønn i Mormonismen",
+          "file": "content/krle/religion/mormonisme/bonn/artikkel.json",
+          "link": "/krle/religion/mormonisme/bonn"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Bønn i sikhismen: å huske et navn",
+          "file": "content/krle/religion/sikhisme/bonn/artikkel.json",
+          "link": "/krle/religion/sikhisme/bonn"
+        }
+      ],
+      "count": 9,
+      "total": 9
+    },
+    {
       "slug": "grunnleggere",
       "label": "Grunnleggere",
       "entries": [
@@ -726,62 +788,6 @@
       "total": 9
     },
     {
-      "slug": "bonn",
-      "label": "Bønn",
-      "entries": [
-        {
-          "religion": "bahai",
-          "title": "Bønn i Bahá'í",
-          "file": "content/krle/religion/bahai/bonn/artikkel.json",
-          "link": "/krle/religion/bahai/bonn"
-        },
-        {
-          "religion": "buddhisme",
-          "title": "Meditasjon og Puja i Buddhismen",
-          "file": "content/krle/religion/buddhisme/bonn/artikkel.json",
-          "link": "/krle/religion/buddhisme/bonn"
-        },
-        {
-          "religion": "hinduisme",
-          "title": "Puja og Bønn i Hinduismen",
-          "file": "content/krle/religion/hinduisme/bonn/artikkel.json",
-          "link": "/krle/religion/hinduisme/bonn"
-        },
-        {
-          "religion": "islam",
-          "title": "Bønn (Salah) i Islam",
-          "file": "content/krle/religion/islam/bonn/artikkel.json",
-          "link": "/krle/religion/islam/bonn"
-        },
-        {
-          "religion": "jehovas-vitner",
-          "title": "Bønn i Jehovas vitner",
-          "file": "content/krle/religion/jehovas-vitner/bonn/artikkel.json",
-          "link": "/krle/religion/jehovas-vitner/bonn"
-        },
-        {
-          "religion": "jodedom",
-          "title": "Bønn i Jødedommen",
-          "file": "content/krle/religion/jodedom/bonn/artikkel.json",
-          "link": "/krle/religion/jodedom/bonn"
-        },
-        {
-          "religion": "kristendom",
-          "title": "Bønn i kristendommen",
-          "file": "content/krle/religion/kristendom/bonn/artikkel.json",
-          "link": "/krle/religion/kristendom/bonn"
-        },
-        {
-          "religion": "mormonisme",
-          "title": "Bønn i Mormonismen",
-          "file": "content/krle/religion/mormonisme/bonn/artikkel.json",
-          "link": "/krle/religion/mormonisme/bonn"
-        }
-      ],
-      "count": 8,
-      "total": 9
-    },
-    {
       "slug": "doden",
       "label": "Døden",
       "entries": [
@@ -947,6 +953,26 @@
         }
       ],
       "count": 8,
+      "total": 9
+    },
+    {
+      "slug": "dagligliv",
+      "label": "Dagligliv",
+      "entries": [
+        {
+          "religion": "islam",
+          "title": "Bønn (Salah) i Islam",
+          "file": "content/krle/religion/islam/bonn/artikkel.json",
+          "link": "/krle/religion/islam/bonn"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Bønn i sikhismen: å huske et navn",
+          "file": "content/krle/religion/sikhisme/bonn/artikkel.json",
+          "link": "/krle/religion/sikhisme/bonn"
+        }
+      ],
+      "count": 2,
       "total": 9
     }
   ],
@@ -1627,6 +1653,17 @@
       "tags": [
         "skapelse",
         "narrative"
+      ]
+    },
+    {
+      "religion": "sikhisme",
+      "title": "Bønn i sikhismen: å huske et navn",
+      "link": "/krle/religion/sikhisme/bonn",
+      "dimension": "ritual",
+      "tags": [
+        "bonn",
+        "ritual",
+        "dagligliv"
       ]
     },
     {

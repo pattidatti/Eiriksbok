@@ -30,6 +30,7 @@ const Bedehuset3D = lazy(() => import('./Bedehuset3D'));
 const Stalmonsteret3D = lazy(() => import('./Stalmonsteret3D'));
 const TidensFormer3D = lazy(() => import('./TidensFormer3D'));
 const AnandKaraj3D = lazy(() => import('./AnandKaraj3D'));
+const LangarKjokkenet3D = lazy(() => import('./LangarKjokkenet3D'));
 const Spredning3D = lazy(() => import('./Spredning3D'));
 const UtvandringenFraAfrika3D = lazy(() => import('./UtvandringenFraAfrika3D'));
 const HimmelModellen3D = lazy(() => import('./HimmelModellen3D'));
@@ -966,6 +967,15 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         estimatedSeconds: 150,
         loader: () => import('./AnandKaraj3D'),
         Component: AnandKaraj3D as never,
+    },
+    'langar-kjokkenet-3d': {
+        id: 'langar-kjokkenet-3d',
+        title: 'Langar: ingen skal gå sultne',
+        description:
+            'Bær fatet med mat gjennom rekkene i gurdwaraens fellesmåltid mens folk strømmer inn og setter seg på gulvet. Går fatet tomt, må du hente påfyll i gryta. Lyspæren: i sikhismen stopper ikke bønnen ved boka - arbeidet på kjøkkenet er seva, og alle spiser det samme på det samme gulvet.',
+        estimatedSeconds: 150,
+        loader: () => import('./LangarKjokkenet3D'),
+        Component: LangarKjokkenet3D as never,
     },
     'ut-av-afrika-3d': {
         id: 'ut-av-afrika-3d',
