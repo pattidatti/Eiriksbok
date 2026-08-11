@@ -12,8 +12,8 @@
     ],
     "content": [
         {
-            "type": "paragraph",
-            "text": "Når du leser en tekst, ser en film eller spiller et spill, konsentrerer du deg ofte om hva som skjer med personene. Du følger med på spenningen, hindringene og hvordan det ender. Men etter at siste side er lest, sitter du kanskje igjen med en spesiell følelse eller en tanke som kverner i hodet. Det er fordi teksten har en sjel som lever uavhengig av handlingen. Denne sjelen kaller vi temaet.\n\nÅ finne temaet i en tekst er som å se det usynlige. Det krever at du slutter å se på hva som skjer (handlingen) og begynner å spørre hvorfor det skjer, og hva det forteller oss om mennesket eller samfunnet. I denne guiden skal vi trene opp din evne til å se forbi overflaten og forstå meningen bak ordene."
+            "type": "text",
+            "content": "Når du leser en tekst, ser en film eller spiller et spill, konsentrerer du deg ofte om hva som skjer med personene. Du følger med på spenningen, hindringene og hvordan det ender. Men etter at siste side er lest, sitter du kanskje igjen med en spesiell følelse eller en tanke som kverner i hodet. Det er fordi teksten har en sjel som lever uavhengig av handlingen. Denne sjelen kaller vi temaet.\n\nÅ finne temaet i en tekst er som å se det usynlige. Det krever at du slutter å se på hva som skjer (handlingen) og begynner å spørre hvorfor det skjer, og hva det forteller oss om mennesket eller samfunnet. I denne guiden skal vi trene opp din evne til å se forbi overflaten og forstå meningen bak ordene."
         },
         {
             "type": "header",
@@ -21,8 +21,8 @@
             "text": "1. Motivet: Den konkrete inngangen"
         },
         {
-            "type": "paragraph",
-            "text": "Før vi kan snakke om de store ideene, må vi identifisere motivet. Motivet er det konkrete, ytre planet i fortellingen. Hvis du ser på et bilde av en ensom gutt som sitter i regnet, er gutten og regnet motivet. Det er det vi faktisk kan se og ta på.\n\nNår du analyserer en litterær tekst, er motivet den enkle gjenfortellingen av situasjonen. I novellen Å drepe et barn er motivet en bilulykke en solfylt søndag. Motivet er viktig fordi det er selve råmaterialet som bærer temaet. Uten en konkret handling (motiv), har vi ingenting å tolke."
+            "type": "text",
+            "content": "Før vi kan snakke om de store ideene, må vi identifisere motivet. Motivet er det teksten handler om på det ytre, konkrete planet (Abusland, 2025). Hvis du ser på et bilde av en ensom gutt som sitter i regnet, er gutten og regnet motivet. Det er det vi faktisk kan se og ta på.\n\nNår du analyserer en litterær tekst, er motivet den enkle gjenfortellingen av situasjonen. I Stig Dagermans novelle Å drepe et barn fra 1948 er motivet en bilulykke en solfylt søndag: en lykkelig mann i bil kjører i hjel et barn (Nyberg, 2024). Motivet er viktig fordi det er selve råmaterialet som bærer temaet. Uten en konkret handling (motiv), har vi ingenting å tolke."
         },
         {
             "type": "header",
@@ -30,8 +30,19 @@
             "text": "2. Tema: Den dypere meningen"
         },
         {
-            "type": "paragraph",
-            "text": "Temaet er det teksten handler om på et abstrakt plan. Mens handlingen er unik for hver bok, er temaene universelle. Det betyr at de er gjenkjennelige for alle mennesker, uavhengig av tid og sted. Temaer som svik, identitet eller dødelighet har blitt utforsket i tusenvis av år og vil fortsette å bli det.\n\nTenk på forskjellen på denne måten:\n- Handlingen: En jente flytter til en ny by og kjenner ingen på skolen.\n- Temaet: Ensomhet, utenforskap eller det å finne sin egen identitet i en ny situasjon.\n\nI analysen din er det avgjørende at du går fra å beskrive personenes bevegelser til å drøfte disse store konseptene. Et tema er sjelden entydig; en god tekst kan ha flere temaer som flettes sammen til en kompleks helhet."
+            "type": "text",
+            "content": "Temaet er det teksten handler om på et abstrakt plan - tanken bak teksten, det den handler om for deg når du tolker den (Abusland, 2025). Mens handlingen er unik for hver bok, er temaene universelle. Det betyr at de er gjenkjennelige for alle mennesker, uavhengig av tid og sted. Temaer som svik, identitet eller dødelighet har blitt utforsket i tusenvis av år og vil fortsette å bli det.\n\nTenk på forskjellen på denne måten:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Handlingen: En jente flytter til en ny by og kjenner ingen på skolen.",
+                "Temaet: Ensomhet, utenforskap eller det å finne sin egen identitet i en ny situasjon."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "I analysen din er det avgjørende at du går fra å beskrive personenes bevegelser til å drøfte disse store konseptene. Et tema er sjelden entydig; en god tekst kan ha flere temaer som flettes sammen til en kompleks helhet."
         },
         {
             "type": "component",
@@ -53,8 +64,8 @@
             "text": "3. Budskap: Forfatterens stemme"
         },
         {
-            "type": "paragraph",
-            "text": "Mange blander tema og budskap, men det er en viktig forskjell. Temaet er emnet (Hva handler det om?), mens budskapet er forfatterens mening eller lærdom (Hva vil forfatteren si oss?). Hvis temaet er krig, kan budskapet være at krig er meningsløst eller at man må kjempe for fred.\n\nBudskapet er ofte mer direkte i eldre tekster, som folkeeventyr og fabler, hvor moralen ofte sies rett ut til slutt. I moderne litteratur er budskapet ofte mer tvetydig og gjemt mellom linjene. Forfatteren vil kanskje bare få oss til å reflektere over et problem, heller enn å gi oss et fasitsvar. Det er her din tolkning kommer inn; du må bygge en argumentasjon for hva du mener er tekstens viktigste budskap."
+            "type": "text",
+            "content": "Mange blander tema og budskap, men det er en viktig forskjell. Temaet er emnet (Hva handler det om?), mens budskapet er det forfatteren vil fortelle oss (Abusland, 2025). Hvis temaet er krig, kan budskapet være at krig er meningsløst eller at man må kjempe for fred.\n\nBudskapet er ofte mer direkte i eldre tekster, som folkeeventyr og fabler, hvor moralen ofte sies rett ut til slutt. I moderne litteratur er budskapet ofte mer tvetydig og gjemt mellom linjene. Forfatteren vil kanskje bare få oss til å reflektere over et problem, heller enn å gi oss et fasitsvar. Det er her din tolkning kommer inn; du må bygge en argumentasjon for hva du mener er tekstens viktigste budskap."
         },
         {
             "type": "component",
@@ -88,8 +99,17 @@
             "text": "4. Tolkningsprosessen: Den hermeneutiske sirkel"
         },
         {
-            "type": "paragraph",
-            "text": "Å finne tema og budskap er en sirkelprosess. Du starter med en forståelse av helheten etter å ha lest teksten én gang. Så begynner du å se på detaljene – ordvalg, titler, kontraster. Disse detaljene endrer din forståelse av helheten, og slik fortsetter du til du har en overbevisende tolkning.\n\nHer er de viktigste sporene du bør jakte på:\n\n* **Tittelen**: Forfatteren gir deg ofte en gave i tittelen. Hva antyder den om innholdet?\n* **Starten og slutten**: Hvordan blir konflikten introdusert, og hvordan blir den løst?\n* **Kontraster**: Finnes det motsetninger som lys/mørke eller rik/fattig? Kontraster peker ofte rett mot temaet.\n* **Symboler**: Er det gjenstander eller farger som betyr noe mer enn seg selv?"
+            "type": "text",
+            "content": "Å finne tema og budskap er en sirkelprosess. Du starter med en forståelse av helheten etter å ha lest teksten én gang. Så begynner du å se på detaljene - ordvalg, titler, kontraster. Disse detaljene endrer din forståelse av helheten, og slik fortsetter du til du har en overbevisende tolkning. Denne bevegelsen fram og tilbake mellom delene og helheten kalles den hermeneutiske sirkelen (Alnes, 2026).\n\nHer er de viktigste sporene du bør jakte på:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Tittelen: Forfatteren gir deg ofte en gave i tittelen. Hva antyder den om innholdet?",
+                "Starten og slutten: Hvordan blir konflikten introdusert, og hvordan blir den løst?",
+                "Kontraster: Finnes det motsetninger som lys/mørke eller rik/fattig? Kontraster peker ofte rett mot temaet.",
+                "Symboler: Er det gjenstander eller farger som betyr noe mer enn seg selv?"
+            ]
         },
         {
             "type": "component",
@@ -129,13 +149,13 @@
             "text": "Modelltekst: Fra tekst til tolkning"
         },
         {
-            "type": "paragraph",
-            "text": "Her ser du hvordan du kan bruke begrepene motiv, tema og budskap i en sammenhengende tekst. Legg merke til hvordan analysen hele tiden begrunner påstandene med eksempler fra teksten."
+            "type": "text",
+            "content": "Her ser du hvordan du kan bruke begrepene motiv, tema og budskap i en sammenhengende tekst. Legg merke til hvordan analysen hele tiden begrunner påstandene med eksempler fra teksten. Modellteksten tar for seg Sigbjørn Obstfelders dikt «Jeg ser» fra samlingen Digte (Obstfelder, 1893)."
         },
         {
             "type": "expandable",
             "title": "Les en analyse av tema og budskap i «Jeg ser»",
-            "content": "I diktet Jeg ser av Sigbjørn Obstfelder møter vi et lyrisk jeg som betrakter den moderne byen. Motivet er enkelt: En mann står og ser på husene, himmelen og menneskene rundt seg. Men bildet av denne betrakteren er preget av en dyp uro. Han kjenner seg ikke igjen; han føler at han har havnet på en feil klode.\n\nTemaet i diktet er utenforskap og moderne fremmedgjøring. Obstfelder bruker gjentakelsen av setningen «jeg ser» til å bygge opp en følelse av avstand. Vedkommende er en observatør, ikke en deltaker. Dette forsterkes av kontrasten mellom den vakre naturen («de spillende skyer») og de kalde, grå bygningene. Diktet utforsker hvordan det moderne bylivet kan skape en eksistensiell ensomhet selv når man er omgitt av tusenvis av mennesker.\n\nBudskapet i teksten kan tolkes som en advarsel eller en klage over det tidsmessige forfallet i mellommenneskelige relasjoner. Obstfelder formidler at det moderne mennesket har mistet sin naturlige plass i kosmos og lever i en tilstand av konstant hjemløshet. Gjennom diktet tvinges vi til å spørre oss selv: Hvor er vi egentlig hjemme? Slik blir en enkel observasjon av en by til en dyp refleksjon over menneskets plass i en foranderlig verden."
+            "content": "I diktet Jeg ser av Sigbjørn Obstfelder møter vi et lyrisk jeg som betrakter den moderne byen. Motivet er enkelt: En mann står og ser på husene, himmelen og menneskene rundt seg. Men bildet av denne betrakteren er preget av en dyp uro. Han kjenner seg ikke igjen; han føler at han har havnet på en feil klode.\n\nTemaet i diktet er utenforskap og moderne fremmedgjøring, det Obstfelder-diktningen er kjent for: angst, fremmedgjøring og ensomhet (Tørset & Lillebo, 2026). Obstfelder bruker gjentakelsen av setningen «jeg ser» til å bygge opp en følelse av avstand. Vedkommende er en observatør, ikke en deltaker. Dette forsterkes av bildene han stanser ved: «de gråblå skyer» som samler seg og blir tunge, «de høye huse» og «de tusende vinduer» (Obstfelder, 1893). Verken himmelen eller byen gir ham en plass å høre til. Diktet utforsker hvordan det moderne bylivet kan skape en eksistensiell ensomhet selv når man er omgitt av tusenvis av mennesker.\n\nBudskapet i teksten kan tolkes som en advarsel eller en klage over det tidsmessige forfallet i mellommenneskelige relasjoner. Obstfelder formidler at det moderne mennesket har mistet sin naturlige plass i kosmos og lever i en tilstand av konstant hjemløshet. Gjennom diktet tvinges vi til å spørre oss selv: Hvor er vi egentlig hjemme? Slik blir en enkel observasjon av en by til en dyp refleksjon over menneskets plass i en foranderlig verden."
         },
         {
             "type": "component",
@@ -159,6 +179,19 @@
                     "Skriv en kort analysesetning om en tekst du har lest, der du løfter blikket fra gjenfortelling til et menneskelig eller sosialt tema, slik eksempelet om piken med svovelstikkene gjør."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2025). *Motiv, tema og budskap*. NDLA. Hentet 11.08.2026 fra [ndla.no](https://ndla.no/r/norsk-yf/motiv-tema-og-budskap/413b90b078)",
+                    "Alnes, J. H. (2026). *hermeneutikk*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/hermeneutikk](https://snl.no/hermeneutikk)",
+                    "Nyberg, F. (2024). *Att döda ett barn: bilen & kollisionen*. Diktens museum, Litteraturbanken. Hentet 11.08.2026 fra [litteraturbanken.se](https://litteraturbanken.se/diktensmuseum/att-doda-ett-barn-bilen-kollisionen/)",
+                    "Obstfelder, S. (1893). *Jeg ser*. I *Digte*. Det norske språk- og litteraturselskap / bokselskap.no. Hentet 11.08.2026 fra [bokselskap.no/boker/digte/jegser](https://www.bokselskap.no/boker/digte/jegser)",
+                    "Tørset, E. & Lillebo, H. (2026). *Sigbjørn Obstfelder*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Sigbjørn_Obstfelder](https://snl.no/Sigbj%C3%B8rn_Obstfelder)"
+                ]
+            }
         }
     ],
     "relatedLink": {
@@ -174,5 +207,6 @@
     ],
     "createdDate": "2026-02-05T10:00:00Z",
     "readTime": "9 min lesning",
-    "category": "Analyse"
+    "category": "Analyse",
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }

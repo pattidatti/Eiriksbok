@@ -15,8 +15,8 @@
     ],
     "content": [
         {
-            "type": "paragraph",
-            "text": "Når du leser et utdrag fra en roman, er det viktigste spørsmålet ofte ikke hva som skjer i den ytre handlingen, men hvem som forteller historien til deg. Fortelleren er nemlig filteret som all informasjon må passere gjennom før den når din bevissthet som leser. Ser vi verden utenfra (som et objektivt kamera) eller innenfra (gjennom noens subjektive tanker)? Og viktigst av alt for en dypere analyse: Kan vi egentlig stole på det fortelleren sier?\n\nI moderne romaner er fortelleren sjelden en nøytral kilde. Han er ofte en del av handlingen selv, med egne fordommer, ønsker og hemmeligheter. Å analysere en roman handler derfor om å dekode fortellerstemmen for å forstå hva som skjer under overflaten av ordene."
+            "type": "text",
+            "content": "Når du leser et utdrag fra en roman, er det viktigste spørsmålet ofte ikke hva som skjer i den ytre handlingen, men hvem som forteller historien til deg. Fortelleren er nemlig filteret som all informasjon må passere gjennom før den når din bevissthet som leser. Ser vi verden utenfra (som et objektivt kamera) eller innenfra (gjennom noens subjektive tanker)? Og viktigst av alt for en dypere analyse: Kan vi egentlig stole på det fortelleren sier?\n\nI moderne romaner er fortelleren sjelden en nøytral kilde. Han er ofte en del av handlingen selv, med egne fordommer, ønsker og hemmeligheter. Å analysere en roman handler derfor om å dekode fortellerstemmen for å forstå hva som skjer under overflaten av ordene."
         },
         {
             "type": "header",
@@ -24,8 +24,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Forfattere velger fortellerstemme for å styre hvordan du skal føle og hva du skal vite. Å forstå synsvinkelen er nøkkelen som låser opp romanens psykologiske dyp."
+            "type": "text",
+            "content": "Forfattere velger fortellerstemme for å styre hvordan du skal føle og hva du skal vite. Synsvinkelen er den posisjonen fortelleren eller en av personene ser handlingen fra (Lauvstad, 2026a). Å forstå synsvinkelen er nøkkelen som låser opp romanens psykologiske dyp."
         },
         {
             "type": "component",
@@ -59,8 +59,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "For å beskrive hvordan en roman er bygget opp, trenger du et presist fagspråk. Her er de tre konseptene som er mest relevante når du skal analysere moderne romanutdrag:"
+            "type": "text",
+            "content": "For å beskrive hvordan en roman er bygget opp, trenger du et presist fagspråk. Her er de tre konseptene som er mest relevante når du skal analysere moderne romanutdrag:"
         },
         {
             "type": "component",
@@ -74,7 +74,7 @@
                     },
                     {
                         "label": "Indre monolog",
-                        "value": "Tankestrøm. Forfatteren skriver tankene akkurat slik de oppstår – ofte rotete, ulogiske og springende. Det er tekstens måte å vise at hodet sjelden er ryddig."
+                        "value": "Tankestrøm. Forfatteren skriver tankene akkurat slik de oppstår - ofte rotete, ulogiske og springende. Det er tekstens måte å vise at hodet sjelden er ryddig."
                     },
                     {
                         "label": "Upålitelig forteller",
@@ -89,8 +89,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Vi skal studere et utdrag fra Knut Hamsuns gjennombruddsroman Sult (1890). Hovedpersonen er en fattig, sulten og desperat forfatter i Kristiania (Oslo). Han er lutfattig og bor på gata, men han bærer på en enorm stolthet.\n\nI dette utdraget møter han kvinnen han kaller Ylajali. Legg merke til hvordan hans indre liv svinger voldsomt og hvordan han saboterer for seg selv."
+            "type": "text",
+            "content": "Vi skal studere et utdrag fra Knut Hamsuns gjennombruddsroman Sult, som kom ut i 1890 (Undheim, 2026). Hovedpersonen er en navnløs jeg-forteller som sulter og strever med å tjene penger som skribent i Kristiania (Oslo). Han er lutfattig, men han bærer på en enorm stolthet.\n\nI dette utdraget møter han kvinnen han kaller Ylajali. Legg merke til hvordan hans indre liv svinger voldsomt og hvordan han saboterer for seg selv."
         },
         {
             "type": "expandable",
@@ -133,13 +133,13 @@
             "type": "component",
             "component": "QuoteBlock",
             "props": {
-                "text": "Det var de selsomste lune av mine nerver; jeg satt der nesten dårlig av henrykkelse over den uformodede gunst hun viste meg.",
-                "author": "Knut Hamsun, Sult"
+                "text": "Hvert av hennes ord beruset meg, traff meg i hjertet som vindråper.",
+                "author": "Knut Hamsun, Sult (1890)"
             }
         },
         {
-            "type": "paragraph",
-            "text": "Det revolusjonerende med Hamsuns skrivemåte er at han viser oss det ubevisste sjeleliv i sanntid. Han filterer ikke tankene for å gjøre dem logiske; han lar oss være til stede i kaoset.\n\nSe på tempoet og humøret i teksten over. I det ene øyeblikket er jeg-personen totalt underdanig og passiv («Jeg glemmer å smile»), i det neste er han aggressiv og konfronterende. Han svinger fra en eksplosiv forelskelse («Mitt hjerte slo høyt») til en plutselig trang til å ødelegge øyeblikket ved å snakke om sin dype fattigdom. \n\nDette er indre monolog i praksis: Tankene hopper frem og tilbake uten moralske eller sosiale filter. Det gir oss et bilde av et menneske som er i ubalanse, og som styres mer av sine nervøse lyster enn av fornuften."
+            "type": "text",
+            "content": "Det revolusjonerende med Hamsuns skrivemåte er at han viser oss det ubevisste sjeleliv i sanntid. Hamsun ba selv forfatterne om å skildre de hemmelige bevegelsene i de avsides stedene i sjelen (Hagen & Vestli, 2025). Han filtrerer ikke tankene for å gjøre dem logiske; han lar oss være til stede i kaoset.\n\nSe på tempoet og humøret i teksten over. I det ene øyeblikket er jeg-personen totalt underdanig og passiv («Jeg glemmer å smile»), i det neste er han aggressiv og konfronterende. Han svinger fra en eksplosiv forelskelse («Mitt hjerte slo høyt») til en plutselig trang til å ødelegge øyeblikket ved å snakke om sin dype fattigdom. \n\nDette er indre monolog i praksis: hendelsene kommer til oss gjennom personens egne indre overveielser, og tankene hopper frem og tilbake uten moralske eller sosiale filter (Store norske leksikon, 2025). Det gir oss et bilde av et menneske som er i ubalanse, og som styres mer av sine nervøse lyster enn av fornuften."
         },
         {
             "type": "header",
@@ -147,8 +147,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Som lesere vil vi gjerne heie på helten og håpe at han får sin elskede Ylajali. Men når hun faktisk inviterer ham inn («Nå kunne De for eksempel gjerne holde Deres hånd...»), får han panikk. Hvorfor?\n\nHvis du bare leser det han sier, virker det som han endelig er brutalt ærlig når han bekjenner sin fattigdom. Men som analytiker må du spørre: Hvorfor akkurat nå? Han har løyet om sin status i hele romanen, men her – i det mest sårbare og intime øyeblikket – velger han å fortelle sannheten som et våpen.\n\nHovedpersonen er en upålitelig forteller overfor seg selv. Han sier han vil ha henne, men frykten for å bli sett ned på (skammen) er sterkere enn lysten på kjærlighet. Han velger å støte henne bort for å beskytte det siste han har igjen: Sin enorme og stolte verdighet. Han saboterer sin egen lykke fordi han er livredd for å miste kontrollen."
+            "type": "text",
+            "content": "Som lesere vil vi gjerne heie på helten og håpe at han får sin elskede Ylajali. Men når hun faktisk inviterer ham inn («Nå kunne De for eksempel gjerne holde Deres hånd...»), får han panikk. Hvorfor?\n\nHvis du bare leser det han sier, virker det som han endelig er brutalt ærlig når han bekjenner sin fattigdom. Men som analytiker må du spørre: Hvorfor akkurat nå? Han har løyet om sin status i hele romanen, men her - i det mest sårbare og intime øyeblikket - velger han å fortelle sannheten som et våpen.\n\nHovedpersonen er en upålitelig forteller overfor seg selv - en fortellerstemme som gir leseren et forvrengt bilde av det som skjer, ofte fordi han lyver eller holder noe tilbake (Lauvstad, 2026b). Han sier han vil ha henne, men frykten for å bli sett ned på (skammen) er sterkere enn lysten på kjærlighet. Han velger å støte henne bort for å beskytte det siste han har igjen: Sin enorme og stolte verdighet. Han saboterer sin egen lykke fordi han er livredd for å miste kontrollen."
         },
         {
             "type": "header",
@@ -156,8 +156,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Denne teksten er et kroneksempel på retningen nyromantikken på 1890-tallet. Mens realistene på 1870-tallet (som Ibsen og Bjørnson) ville sette problemer under debatt i samfunnet, ville Hamsun sette menneskesinnet under lupen. Han brydde seg ikke om politiske rettigheter eller sosial nød som samfunnsproblem, men som en psykologisk tilstand.\n\nDerfor utspiller ikke dramaet seg i et rettslokale eller i et borgerlig hjem, men i de mørke krokene av en manns hjerne. Hovedpersonen er den moderne, rotløse og fremmedgjorte mannen som ikke passer inn noen steder. Ved å analysere Sult får vi derfor ikke bare innsikt i en bok, men i selve fødselen til den moderne, psykologiske romanen."
+            "type": "text",
+            "content": "Denne teksten er et kroneksempel på nyromantikken, som vokste fram tidlig på 1890-tallet som en bevisst motstand mot realismen (Hagen & Vestli, 2025). Mens realistene på 1870- og 1880-tallet (som Ibsen og Bjørnson) ville sette problemer under debatt - et slagord den danske kritikeren Georg Brandes lanserte i 1871 (Hagen, 2026) - ville Hamsun sette menneskesinnet under lupen. Han brydde seg ikke om politiske rettigheter eller sosial nød som samfunnsproblem, men som en psykologisk tilstand.\n\nDerfor utspiller ikke dramaet seg i et rettslokale eller i et borgerlig hjem, men i de mørke krokene av en manns hjerne. Hovedpersonen er den moderne, rotløse og fremmedgjorte mannen som ikke passer inn noen steder. Ved å analysere Sult får vi derfor ikke bare innsikt i en bok, men i selve fødselen til den moderne, psykologiske romanen."
         },
         {
             "type": "header",
@@ -165,8 +165,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "En god analyse av et romanutdrag viser at du klarer å koble de språklige virkemidlene (som hvordan setningene er formet) til de psykologiske effektene de skaper."
+            "type": "text",
+            "content": "En god analyse av et romanutdrag viser at du klarer å koble de språklige virkemidlene (som hvordan setningene er formet) til de psykologiske effektene de skaper."
         },
         {
             "type": "expandable",
@@ -195,6 +195,21 @@
                     "Diskuter med en medelev: Er det mulig å stole på en jeg-forteller? Finn eksempler fra en bok, film eller serie dere kjenner der fortelleren lurer oss."
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hagen, E. B. (2026). *Realismen - litterær periode*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/realisme_-_litteratur](https://snl.no/realisme_-_litteratur)",
+                    "Hagen, E. B. & Vestli, E. N. (2025). *Nyromantikken - litteratur*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/nyromantikken_-_litteratur](https://snl.no/nyromantikken_-_litteratur)",
+                    "Hamsun, K. (1890). *Sult*. Det norske språk- og litteraturselskap / bokselskap.no. Hentet 11.08.2026 fra [bokselskap.no/boker/sult](https://www.bokselskap.no/boker/sult)",
+                    "Lauvstad, H. (2026a). *synsvinkel - litteratur*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/synsvinkel_-_litteratur](https://snl.no/synsvinkel_-_litteratur)",
+                    "Lauvstad, H. (2026b). *upålitelig forteller*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/upålitelig_forteller](https://snl.no/up%C3%A5litelig_forteller)",
+                    "Store norske leksikon. (2025). *indre monolog*. Hentet 11.08.2026 fra [snl.no/indre_monolog](https://snl.no/indre_monolog)",
+                    "Undheim, I. H. (2026). *Sult - roman*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Sult_-_roman](https://snl.no/Sult_-_roman)"
+                ]
+            }
         }
     ],
     "relatedLink": {
@@ -210,5 +225,6 @@
     ],
     "createdDate": "2026-02-06T21:49:00Z",
     "readTime": "13 min lesning",
-    "category": "Analyse"
+    "category": "Analyse",
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }

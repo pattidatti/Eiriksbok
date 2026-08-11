@@ -19,8 +19,8 @@
     "timeline": [],
     "content": [
         {
-            "type": "paragraph",
-            "text": "Det er én ting å lese om hvordan man får en god karakter. Det er noe helt annet å se det. I denne artikkelen følger vi en tenkt elev som har fått temaet framgang og motgang på muntlig eksamen. Du får se hele tankegangen: hvordan eleven velger en skarp påstand, bygger en presentasjon på cirka 10 minutter med tekster fra biblioteket, og håndterer fagsamtalen etterpå. Underveis forklarer vi hvorfor hvert valg løfter besvarelsen mot toppkarakteren."
+            "type": "text",
+            "content": "Det er én ting å lese om hvordan man får en god karakter. Det er noe helt annet å se det. I denne artikkelen følger vi en tenkt elev som har fått temaet framgang og motgang på muntlig eksamen. Du får se hele tankegangen: hvordan eleven velger en skarp påstand, bygger en presentasjon på cirka 10 minutter med tekster fra biblioteket, og håndterer fagsamtalen etterpå. Underveis forklarer vi hvorfor hvert valg løfter besvarelsen mot toppkarakteren."
         },
         {
             "type": "info_box",
@@ -54,8 +54,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Den vanligste feilen er å gjøre temaet til en innholdsfortegnelse: «Jeg skal snakke om framgang og motgang i tre tekster.» Det er ikke en påstand, det er en liste. En 6-er begynner med en tese eleven faktisk argumenterer for. Se forskjellen:"
+            "type": "text",
+            "content": "Den vanligste feilen er å gjøre temaet til en innholdsfortegnelse: «Jeg skal snakke om framgang og motgang i tre tekster.» Det er ikke en påstand, det er en liste. En 6-er begynner med en tese eleven faktisk argumenterer for. Se forskjellen:"
         },
         {
             "type": "comparison",
@@ -69,8 +69,8 @@
             }
         },
         {
-            "type": "paragraph",
-            "text": "Påstanden er omstridt. Den kan diskuteres, og den gir presentasjonen en retning. Alt eleven sier etterpå, bygger opp under den. Det er nettopp dette sensor leter etter når kjennetegnene sier at eleven skal argumentere saklig, ikke bare gjengi."
+            "type": "text",
+            "content": "Påstanden er omstridt. Den kan diskuteres, og den gir presentasjonen en retning. Alt eleven sier etterpå, bygger opp under den. Det er nettopp dette sensor leter etter når kjennetegnene sier at eleven skal argumentere saklig, ikke bare gjengi."
         },
         {
             "type": "header",
@@ -78,13 +78,13 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Eleven valgte tekster som belyser temaet fra hver sin tid. Det er smart, fordi et av kompetansemålene i LK20 er å sammenligne tekster ut fra historisk kontekst. Når tekstene står i tre ulike epoker, viser eleven nettopp den evnen."
+            "type": "text",
+            "content": "Eleven valgte tekster som belyser temaet fra hver sin tid. Det er smart, fordi et av kompetansemålene i LK20 er å sammenligne tekster ut fra historisk kontekst. Når tekstene står i tre ulike epoker, viser eleven nettopp den evnen."
         },
         {
             "type": "list",
             "items": [
-                "Askeladden som kappåt med trollet (Asbjørnsen og Moe, 1843) - folkediktning og nasjonalromantikk.",
+                "Askeladden som kappåt med trollet (Asbjørnsen og Moe) - folkediktning og nasjonalromantikk.",
                 "Karens jul (Amalie Skram, 1885) - realisme og naturalisme.",
                 "Sult (Knut Hamsun, 1890) - nyromantikk."
             ]
@@ -100,8 +100,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Under ser du hele manuset, delt inn slik eleven tenkte på tiden. Husk: eleven snakket fritt fra stikkord, ikke fra et ferdigskrevet ark. Teksten her viser innholdet i en 6-besvarelse."
+            "type": "text",
+            "content": "Under ser du hele manuset, delt inn slik eleven tenkte på tiden. Husk: eleven snakket fritt fra stikkord, ikke fra et ferdigskrevet ark. Teksten her viser innholdet i en 6-besvarelse."
         },
         {
             "type": "header",
@@ -109,8 +109,8 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "«Tenk deg den minste broren i et eventyr. Han er fattig, han blir ledd av, ingen tror på ham. Og likevel vet vi, allerede fra første setning, at det er han som kommer til å vinne. Eventyret har lovet oss det. Men hva skjer når litteraturen slutter å gi det løftet? Det er det jeg vil vise i dag. Påstanden min er at framgang flytter seg gjennom norsk litteraturhistorie: fra en belønning du kan vinne med list og vilje, til noe samfunnet eller ditt eget hode kan nekte deg. Jeg viser det gjennom tre tekster fra tre epoker.»"
+            "type": "text",
+            "content": "«Tenk deg den minste broren i et eventyr. Han er fattig, han blir ledd av, ingen tror på ham. Og likevel vet vi, allerede fra første setning, at det er han som kommer til å vinne. Eventyret har lovet oss det. Men hva skjer når litteraturen slutter å gi det løftet? Det er det jeg vil vise i dag. Påstanden min er at framgang flytter seg gjennom norsk litteraturhistorie: fra en belønning du kan vinne med list og vilje, til noe samfunnet eller ditt eget hode kan nekte deg. Jeg viser det gjennom tre tekster fra tre epoker.»"
         },
         {
             "type": "header",
@@ -118,20 +118,20 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "«Jeg begynner i folkediktningen, slik den ble samlet av Asbjørnsen og Moe i nasjonalromantikken på 1840-tallet. I Askeladden som kappåt med trollet møter vi en bonde i små kår, gammel og skrøpelig, med tre sønner. Askeladden er den yngste, den minste, den ingen satser på. Det er motgangen hans: han starter helt nederst. Men så møter han trollet, og her bruker eventyret det jeg vil kalle den smarte kontrasten. Askeladden er liten og svak, trollet er stort og sterkt. Likevel vinner gutten, fordi han er smartere. Han klemmer en hvit ost og lurer trollet til å tro det er en stein.»"
+            "type": "text",
+            "content": "«Jeg begynner i folkediktningen, slik den ble samlet av Asbjørnsen og Moe i nasjonalromantikken på 1840-tallet. I Askeladden som kappåt med trollet møter vi en bonde i små kår, gammel og skrøpelig, med tre sønner. Askeladden er den yngste, den minste, den ingen satser på. Det er motgangen hans: han starter helt nederst. Men så møter han trollet, og her bruker eventyret det jeg vil kalle den smarte kontrasten. Askeladden er liten og svak, trollet er stort og sterkt. Likevel vinner gutten, fordi han er smartere. Han klemmer en hvit ost og lurer trollet til å tro det er en stein.» (Beyer, 2024; Vold, 2025)"
         },
         {
             "type": "component",
             "name": "QuoteBlock",
             "props": {
                 "text": "Tier du ikke still, skal jeg klemme deg, som jeg klemmer vannet av denne hvite steinen!",
-                "author": "Askeladden som kappåt med trollet (1843)"
+                "author": "Askeladden som kappåt med trollet, Asbjørnsen og Moe"
             }
         },
         {
-            "type": "paragraph",
-            "text": "«Poenget mitt er ikke at Askeladden jukser. Poenget er hva eventyret lover: at den som er smart og utholdende, stiger til topps. Motgang er bare en prøve på veien til framgang. Askeladden ender med sølv og gull. I folkediktningen er verden rettferdig. Den lille fortjener å vinne, og han vinner. Hold fast på det løftet, for nå skal jeg vise hvordan det blir brutt.»"
+            "type": "text",
+            "content": "«Poenget mitt er ikke at Askeladden jukser. Poenget er hva eventyret lover: at den som er smart og utholdende, stiger til topps. Motgang er bare en prøve på veien til framgang. Askeladden ender med sølv og gull. I folkediktningen er verden rettferdig. Den lille fortjener å vinne, og han vinner. Hold fast på det løftet, for nå skal jeg vise hvordan det blir brutt.»"
         },
         {
             "type": "header",
@@ -139,8 +139,8 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "«Vi hopper drøyt 40 år fram, til realismen og naturalismen på 1880-tallet. Amalie Skram skrev Karens jul i 1885. Karen er en ung, fattig, enslig mor. Hun har ikke noe sted å bo, så hun gjemmer seg i et forlatt fergemannshus på en kai i Kristiania. Skram åpner med en lang, kald miljøskildring, og det er ikke pynt. Det er naturalismens metode: miljøet bestemmer mennesket. Snøen smelter mens den faller, gasslyktene gir et skittent, branngult lys. Alt er grått og vått før Karen sier et eneste ord. Og når vi ser henne, ser vi motgangen risset inn i kroppen: et dypt arr i ansiktet, hullete støvler uten lisser, og barnet som diet hennes magre bryst. Hun ber ikke om mye. Hun hvisker bare:»"
+            "type": "text",
+            "content": "«Vi hopper drøyt 40 år fram, til realismen og naturalismen på 1880-tallet. Amalie Skram skrev Karens jul i 1885. Karen er en ung, fattig, enslig mor. Hun har ikke noe sted å bo, så hun gjemmer seg i et forlatt fergemannshus på en kai i Kristiania. Skram åpner med en lang, kald miljøskildring, og det er ikke pynt. Det er naturalismens metode: miljøet bestemmer mennesket. Snøen smelter mens den faller, gasslyktene gir et skittent, branngult lys. Alt er grått og vått før Karen sier et eneste ord. Og når vi ser henne, ser vi motgangen risset inn i kroppen: et dypt arr i ansiktet, hullete støvler uten lisser, og barnet som diet hennes magre bryst. Hun ber ikke om mye. Hun hvisker bare:» (Engelstad, 2026; Hagen, 2026)"
         },
         {
             "type": "component",
@@ -151,8 +151,8 @@
             }
         },
         {
-            "type": "paragraph",
-            "text": "«Her kommer det viktigste poenget mitt. Karen gjør alt en mor kan gjøre. Hun kjemper for barnet sitt. I eventyret ville den innsatsen blitt belønnet. Men Skram er naturalist, og naturalistene tror ikke på det. De tror at arv og miljø avgjør alt. Derfor blir slutten det motsatte av et eventyr: politimannen finner til slutt Karen frosset i hjel i skuret, med det døde barnet i armene. Og legg merke til ironien Skram bygger inn. Dette skjer i julen, høytiden for et nyfødt barn og for lys og varme. Men Karens barn dør, og det dør i kulde og mørke. Kontrasten mellom julebudskapet og Karens virkelighet er selve samfunnskritikken. Skram sier: i dette samfunnet finnes ingen framgang for de fattigste. Bare motgang, helt til døden.»"
+            "type": "text",
+            "content": "«Her kommer det viktigste poenget mitt. Karen gjør alt en mor kan gjøre. Hun kjemper for barnet sitt. I eventyret ville den innsatsen blitt belønnet. Men Skram er naturalist, og naturalistene tror ikke på det. De tror at arv og miljø avgjør alt. Derfor blir slutten det motsatte av et eventyr: politimannen finner til slutt Karen frosset i hjel i skuret, med det døde barnet i armene. Og legg merke til ironien Skram bygger inn. Dette skjer i julen, høytiden for et nyfødt barn og for lys og varme. Men Karens barn dør, og det dør i kulde og mørke. Kontrasten mellom julebudskapet og Karens virkelighet er selve samfunnskritikken. Skram sier: i dette samfunnet finnes ingen framgang for de fattigste. Bare motgang, helt til døden.» (Skram, 1885; Engelstad, 2026)"
         },
         {
             "type": "header",
@@ -160,8 +160,8 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "«Min tredje tekst er fra 1890, og nå skjer det noe nytt igjen. Knut Hamsuns Sult hører til nyromantikken. Hos Skram lå motgangen i samfunnet, utenfor mennesket. Hos Hamsun flytter den seg innover, inn i hodet. Romanen åpner med en av de mest kjente setningene i norsk litteratur:»"
+            "type": "text",
+            "content": "«Min tredje tekst er fra 1890, og nå skjer det noe nytt igjen. Knut Hamsuns Sult hører til nyromantikken. Hos Skram lå motgangen i samfunnet, utenfor mennesket. Hos Hamsun flytter den seg innover, inn i hodet. Romanen åpner med en av de mest kjente setningene i norsk litteratur:» (Undheim, 2026; Hagen & Vestli, 2025)"
         },
         {
             "type": "component",
@@ -172,8 +172,8 @@
             }
         },
         {
-            "type": "paragraph",
-            "text": "«Jeg-fortelleren er en ung skribent uten penger. Han har pantsatt eiendelene sine og lever på fem kroner i ny og ne for en føljetong. Det ytre er ren motgang: sult, fattigdom, klær som faller fra hverandre. Men her bruker Hamsun et virkemiddel som var helt nytt. Han lar oss være inni hodet på fortelleren, i en stadig skiftende indre monolog. Og inni det hodet bor framgang og motgang samtidig. Midt i sulten tenker han at han er sterk som en rise og kan stanse en vogn med skulderen. Han som ikke har spist, føler seg som et troll i styrke. Det er den indre splittelsen Hamsun er ute etter, det han selv kalte det ubevisste sjeleliv. Og det aller sterkeste: når en gammel tigger ber om penger til melk, gir fortelleren bort penger han egentlig ikke har. Han som sulter, spiller raus. Hvorfor? Fordi stoltheten er det eneste han har igjen. Han nekter å være et offer. Her er framgang og motgang ikke to ulike skjebner, slik som hos Askeladden og Karen. Hos Hamsun bor de i samme menneske, i samme øyeblikk.»"
+            "type": "text",
+            "content": "«Jeg-fortelleren er en ung skribent uten penger. Han har pantsatt eiendelene sine og lever på fem kroner i ny og ne for en føljetong. Det ytre er ren motgang: sult, fattigdom, klær som faller fra hverandre. Men her bruker Hamsun et virkemiddel som var helt nytt. Han lar oss være inni hodet på fortelleren, i en stadig skiftende indre monolog. Og inni det hodet bor framgang og motgang samtidig. Midt i sulten tenker han at han er sterk som en rise og kan stanse en vogn med skulderen. Han som ikke har spist, føler seg som et troll i styrke. Det er den indre splittelsen Hamsun er ute etter, det han selv kalte det ubevisste sjeleliv. Og det aller sterkeste: når en gammel tigger ber om penger til melk, gir fortelleren bort penger han egentlig ikke har. Han som sulter, spiller raus. Hvorfor? Fordi stoltheten er det eneste han har igjen. Han nekter å være et offer. Her er framgang og motgang ikke to ulike skjebner, slik som hos Askeladden og Karen. Hos Hamsun bor de i samme menneske, i samme øyeblikk.» (Hamsun, 1890; Hagen & Vestli, 2025)"
         },
         {
             "type": "header",
@@ -181,8 +181,8 @@
             "level": 3
         },
         {
-            "type": "paragraph",
-            "text": "«La meg sirkle tilbake til der jeg begynte. Askeladden lærte oss at framgang er en belønning du kan vinne. Karen viste oss at samfunnet kan nekte deg den, uansett hvor hardt du kjemper. Og Hamsun viste oss at framgang og motgang kan bo i det samme hodet på én gang. Tre epoker, tre helt ulike svar på det samme spørsmålet: Hvem fortjener å lykkes, og hvem bestemmer det? Og dette spørsmålet er ikke ferdig. I dag, i tekster som Aldri godt nok fra 2024, har motgangen flyttet enda lenger inn, til speilet og følelsen av aldri å være god nok. Det er den samme kampen, bare i nytt språk. Så påstanden min står: framgang er ikke en fast belønning litteraturen deler ut. Det er et spørsmål hver epoke stiller på nytt. Og kanskje er den sanneste framgangen, fra Hamsun til i dag, rett og slett å beholde seg selv midt i motgangen. Takk.»"
+            "type": "text",
+            "content": "«La meg sirkle tilbake til der jeg begynte. Askeladden lærte oss at framgang er en belønning du kan vinne. Karen viste oss at samfunnet kan nekte deg den, uansett hvor hardt du kjemper. Og Hamsun viste oss at framgang og motgang kan bo i det samme hodet på én gang. Tre epoker, tre helt ulike svar på det samme spørsmålet: Hvem fortjener å lykkes, og hvem bestemmer det? Og dette spørsmålet er ikke ferdig. I dag, i tekster som Aldri godt nok fra 2024, har motgangen flyttet enda lenger inn, til speilet og følelsen av aldri å være god nok. Det er den samme kampen, bare i nytt språk. Så påstanden min står: framgang er ikke en fast belønning litteraturen deler ut. Det er et spørsmål hver epoke stiller på nytt. Og kanskje er den sanneste framgangen, fra Hamsun til i dag, rett og slett å beholde seg selv midt i motgangen. Takk.»"
         },
         {
             "type": "header",
@@ -190,8 +190,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Det er ikke tilfeldig at denne presentasjonen treffer toppkarakteren. Her er hva sensor ser etter, og hvordan eleven leverer på det."
+            "type": "text",
+            "content": "Det er ikke tilfeldig at denne presentasjonen treffer toppkarakteren. Her er hva sensor ser etter, og hvordan eleven leverer på det."
         },
         {
             "type": "component",
@@ -255,8 +255,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Etter presentasjonen kommer samtalen med faglærer. Det er her mange mister poeng, og her de beste skiller seg ut. Faglærer tester om du virkelig forstår, eller bare har pugget. Her er spørsmålene eleven fikk, og hvordan gode svar ser ut."
+            "type": "text",
+            "content": "Etter presentasjonen kommer samtalen med faglærer. Det er her mange mister poeng, og her de beste skiller seg ut. Faglærer tester om du virkelig forstår, eller bare har pugget. Her er spørsmålene eleven fikk, og hvordan gode svar ser ut."
         },
         {
             "type": "component",
@@ -364,8 +364,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Eleven forberedte noen ekstra tekster som ikke ble brukt i presentasjonen, men som var klare hvis faglærer ba om et eksempel til. Det er forskjellen mellom å famle og å svare trygt."
+            "type": "text",
+            "content": "Eleven forberedte noen ekstra tekster som ikke ble brukt i presentasjonen, men som var klare hvis faglærer ba om et eksempel til. Det er forskjellen mellom å famle og å svare trygt."
         },
         {
             "type": "info_box",
@@ -378,8 +378,8 @@
             "level": 2
         },
         {
-            "type": "paragraph",
-            "text": "Nå har du sett oppskriften brukt. Her er stegene for å lage ditt eget svar på det temaet du får:"
+            "type": "text",
+            "content": "Nå har du sett oppskriften brukt. Her er stegene for å lage ditt eget svar på det temaet du får:"
         },
         {
             "type": "list",
@@ -454,6 +454,22 @@
                     "Diskuter med en medelev: hvilken av de tre tekstene sier mest om vår egen tid, og hvorfor?"
                 ]
             }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Beyer, E. (2024). *Asbjørnsen og Moe*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Asbjørnsen_og_Moe](https://snl.no/Asbj%C3%B8rnsen_og_Moe)",
+                    "Engelstad, I. (2026). *Amalie Skram*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Amalie_Skram](https://snl.no/Amalie_Skram)",
+                    "Hagen, E. B. (2026). *Realismen - litterær periode*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/realisme_-_litteratur](https://snl.no/realisme_-_litteratur)",
+                    "Hagen, E. B. & Vestli, E. N. (2025). *Nyromantikken - litteratur*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/nyromantikken_-_litteratur](https://snl.no/nyromantikken_-_litteratur)",
+                    "Hamsun, K. (1890). *Sult*. Det norske språk- og litteraturselskap / bokselskap.no. Hentet 11.08.2026 fra [bokselskap.no/boker/sult](https://www.bokselskap.no/boker/sult)",
+                    "Skram, A. (1885). *Karens Jul*. Det norske språk- og litteraturselskap / bokselskap.no. Hentet 11.08.2026 fra [bokselskap.no/boker/karensjul](https://www.bokselskap.no/boker/karensjul/teksten)",
+                    "Undheim, I. H. (2026). *Sult - roman*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Sult_-_roman](https://snl.no/Sult_-_roman)",
+                    "Vold, T. (2025). *Nasjonalromantikken*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/nasjonalromantikken](https://snl.no/nasjonalromantikken)"
+                ]
+            }
         }
     ],
     "quiz": [
@@ -511,5 +527,5 @@
         "vurdering"
     ],
     "createdDate": "2026-06-02T00:00:00Z",
-    "lastUpdated": "2026-06-02T00:00:00Z"
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }
