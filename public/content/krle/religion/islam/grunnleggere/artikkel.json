@@ -1,6 +1,7 @@
 {
     "id": "grunnleggere",
-    "title": "Profeten Muhammad",
+    "title": "Profeten som ikke skal tilbes",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "islam",
@@ -9,83 +10,242 @@
         "grunnleggere",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Den siste profeten"
-        },
-        {
-            "type": "text",
-            "content": "Muhammad (født ca. 570 e.Kr. i Mekka) regnes som den siste og viktigste profeten i islam. Han kalles 'Profetenes segl'."
-        },
-        {
-            "type": "header",
-            "text": "Åpenbaringen"
-        },
-        {
-            "type": "text",
-            "content": "Da han var 40 år gammel, fikk han sin første åpenbaring fra Gud i hulen Hira. Han begynte å forkynne om én Gud i Mekka, men møtte motstand."
-        },
-        {
-            "type": "header",
-            "text": "Hijra"
-        },
-        {
-            "type": "text",
-            "content": "I år 622 flyktet Muhammad og hans følgesvenner fra Mekka til Medina. Denne flukten kalles Hijra og markerer starten på den muslimske tidsregningen."
-        }
+    "category": "Islam",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Muslimer regner Muhammad som Guds siste profet, ikke som Gud. All dyrkelse av religionsstifteren avvises.",
+        "Koranen kaller ham profetenes segl. Muslimer mener derfor at det ikke kommer noen ny profet etter ham.",
+        "Hijra, utvandringen fra Mekka til Medina i 622, ble år én i den muslimske kalenderen.",
+        "Fødselsåret rundt 570 er usikkert, mens 622 og 632 står fast i kildene.",
+        "Etter at han døde i 632, delte striden om hvem som skulle lede fellesskapet, muslimene i sunni og sjia."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
-        {
-            "id": "muhammad",
-            "term": "Muhammad",
-            "definition": "Guds sendebud og islams siste profet."
-        },
         {
             "id": "profet",
             "term": "Profet",
-            "definition": "En person som mottar og formidler budskap fra Gud."
+            "definition": "Et menneske som tar imot budskap fra Gud og bringer det videre til andre mennesker. Koranen nevner 24 profeter ved navn, fra Adam til Muhammad."
+        },
+        {
+            "id": "profetenes-segl",
+            "term": "Profetenes segl",
+            "definition": "Norsk oversettelse av det arabiske khatam al-nabiin. Uttrykket betyr at Muhammad er den siste profeten, og at ingen ny profet kommer etter ham."
         },
         {
             "id": "hijra",
             "term": "Hijra",
-            "definition": "Muhammads flukt fra Mekka til Medina i år 622."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva kalles Muhammad i islam?",
-            "options": [
-                "Guds sønn",
-                "Profetenes segl",
-                "Kongen av Arabia"
-            ],
-            "answer": "Profetenes segl"
+            "definition": "Muhammads utvandring fra Mekka til Medina i 622. Året ble senere gjort til år én i den islamsk-arabiske kalenderen."
         },
         {
-            "question": "Hvor ble Muhammad født?",
-            "options": [
-                "Medina",
-                "Jerusalem",
-                "Mekka"
-            ],
-            "answer": "Mekka"
+            "id": "sunna",
+            "term": "Sunna",
+            "definition": "Måten profeten levde og handlet på. Sunnaen er forbilde for muslimer og ble en av kildene til islamsk lov."
         },
         {
-            "question": "Hva skjedde i år 622?",
-            "options": [
-                "Muhammad døde",
-                "Hijra (flukten til Medina)",
-                "Koranen ble ferdig"
-            ],
-            "answer": "Hijra (flukten til Medina)"
+            "id": "shahada",
+            "term": "Shahada",
+            "definition": "Den islamske trosbekjennelsen: Det finnes ingen gud utenom Gud, og Muhammad er hans profet. Den er den første av islams fem søyler."
         }
     ],
-    "quote": {
-        "text": "Muhammad er ikke far til noen av deres menn, men han er Guds sendebud og profetenes segl.",
-        "source": "Koranen",
-        "reference": "Sure 33:40"
-    }
+    "content": [
+        {
+            "type": "text",
+            "content": "Hør etter neste gang en muslim sier navnet Muhammad. Som regel kommer det noe rett etterpå: «fred være med ham». Fire ord, hver eneste gang navnet nevnes. Dette er en fast høflighetsformel som muslimer bruker når profeter nevnes, og i norske tekster forkortes den ofte til fvmh (Islamsk Råd Norge, 2022a). Men legg merke til hva hilsenen ikke er. Den er ingen bønn til Muhammad. Muslimer ber ikke til ham. Og akkurat der ligger nøkkelen til hvem han er i islam."
+        },
+        {
+            "type": "text",
+            "content": "Islam trekker en grense som ikke kan krysses. Gud er én, og bare Gud skal tilbes. Trosbekjennelsen, som kalles shahada, sier det slik: «Det finnes ingen gud utenom Gud, og Muhammad er hans profet» (Vogt, 2025). Muhammad står altså i selve trosbekjennelsen. Men han står på menneskesiden av grensen. Muslimer regner ham som Guds største og siste profet, samtidig som all dyrkelse av religionsstifteren avvises (Vogt, 2026b). Islamsk Råd Norge beskriver ham på samme måte: den siste profeten og budbringeren til Gud (Islamsk Råd Norge, 2022a). I islam er han altså et menneske som fikk et oppdrag, ikke en gud."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Arabisk kalligrafi i grønt og gull på en moskevegg",
+            "caption": "Mange muslimer mener at profeten ikke skal avbildes. Derfor har skriftkunst en stor plass i moskeene."
+        },
+        {
+            "type": "text",
+            "content": "Hva vet historikere egentlig om ham? Kildene til profetens liv er Koranen, hadith-samlingene som ble redigert på 800- og 900-tallet, og de tradisjonelle profetbiografiene som kalles sira (Vogt, 2026c). Mye av det som fortelles, ble altså skrevet ned lenge etter at han levde. Derfor er noen opplysninger usikre. Fødselsåret er et godt eksempel: kildene sier rundt år 570, ikke nøyaktig 570 (Vogt, 2026c). Andre årstall står støtt, som 622 og 632. Vil du vite mer om tekstene, kan du lese artikkelen om [hellige tekster i islam](/krle/religion/islam/hellige-tekster)."
+        },
+        {
+            "type": "header",
+            "text": "Profet, ikke Gud"
+        },
+        {
+            "type": "text",
+            "content": "En profet er en person som mottar budskap fra Gud og bringer det videre. I islam er Muhammad ikke den første som gjør det. Koranen omtaler profeter som sendebud og påminnere, og nevner 24 profeter ved navn (Kværne mfl., 2026). Rekken begynner med Adam. Abraham fikk skrifter, Moses fikk Toraen og Jesus fikk evangeliet (Kværne mfl., 2026). Islamsk Råd Norge kaller dem brødre i profetskapet, og understreker at islam ikke begynte med Muhammad. Han bekreftet det budskapet de andre allerede hadde hatt med seg (Islamsk Råd Norge, 2022a). Muhammad er den siste. Koranen bruker uttrykket khatam al-nabiin om ham, som pleier å bli oversatt med profetenes segl (Kværne mfl., 2026). Et segl er det man lukker et brev med. Muslimer mener derfor at det ikke kan komme noen ny profet etter ham."
+        },
+        {
+            "type": "component",
+            "name": "ProfetIkkeGud",
+            "props": {
+                "title": "Grensen som ikke krysses"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til at ingen av kortene om Muhammad havnet på Guds side. Det er ikke tilfeldig. I islam er skillet mellom Gud og det skapte absolutt. Sure 112 i Koranen sier om Gud at han verken har avlet eller er født, og at ingen er ham jevnbyrdig (Vogt, 2026b). Å sette noen ved siden av Gud regnes som den alvorligste feilen et menneske kan gjøre. Derfor mener muslimer at den kristne læren om treenigheten ikke lar seg forene med islam (Vogt, 2026b). Mer om hvordan muslimer forstår Gud, finner du i artikkelen om [gudsbildet i islam](/krle/religion/islam/gudsbilde)."
+        },
+        {
+            "type": "header",
+            "text": "Fra Mekka til Medina"
+        },
+        {
+            "type": "text",
+            "content": "Muhammad ibn Abd Allah ble født i Mekka rundt år 570 (Vogt, 2026c). I måneden ramadan i 610 fikk han ifølge tradisjonen profetkallet (Vogt, 2026c). Han begynte å forkynne at det bare finnes én Gud. I Mekka vakte forkynnelsen motstand, og etter mer enn ti år blant mekkanerne bestemte han seg for å utvandre (Vogt, 2026c). I 622 dro han og følgesvennene hans til byen Yathrib, som senere fikk navnet Medina. Denne utvandringen kalles hijra (Vogt, 2026a)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Det finnes ingen gud utenom Gud, og Muhammad er hans profet.",
+                "author": "Shahada, den islamske trosbekjennelsen"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Hijra ble så viktig at den ble startpunktet for tidsregningen. I 637 bestemte kalifen Umar ibn al-Khattab at 622 skulle være år én i den islamsk-arabiske kalenderen (Vogt, 2026a). Tenk over hva som ble valgt. Muslimer teller ikke årene fra profetens fødsel eller fra hans død, slik kristne teller fra Jesu fødsel. De teller fra året fellesskapet fikk et sted å være. I Medina ble Muhammad noe mer enn en forkynner. Det han forkynte i Medina-tiden, inneholdt også lover og forordninger (Vogt, 2026c). I 630 dro han mot Mekka, inntok byen og renset Kabaen for gudebilder (Vogt, 2026c). To år senere døde han i Medina (Vogt, 2026c)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Steinete ørkenlandskap med lave fjell på Den arabiske halvøy",
+            "caption": "Strekningen mellom Mekka og Medina. Utvandringen i 622 ble år én i den muslimske kalenderen."
+        },
+        {
+            "type": "header",
+            "text": "Forbildet som ikke skal tilbes"
+        },
+        {
+            "type": "text",
+            "content": "Hva skjer med en religion når stifteren dør, og han ikke var Gud? I islam blir han ikke borte. Han blir en mal. I Koranen blir han framhevet som et forbilde for de troende (Vogt, 2026e). Sunna betyr skikk eller sedvane, altså måten han levde og handlet på. Hadith er de korte fortellingene om hva han sa og gjorde, og det er gjennom dem det forbilledlige livet hans ble belyst (Vogt, 2026e). På 800-tallet ble profetens sunna definert som en av lovens røtter, altså som en av kildene til islamsk lov (Vogt, 2026e). Islamsk Råd Norge skriver at ingen som en del av menneskeheten regner som fullkommen, noen gang har blitt etterlignet så nøye som Muhammad (Islamsk Råd Norge, 2022b)."
+        },
+        {
+            "type": "text",
+            "content": "Forskjellen fra kristendommen er lett å se her. Kristne regner Jesus som Gud og retter bønnene sine til ham. Muslimer regner Muhammad som et menneske og retter bønnene sine bare til Gud. Han står likevel i trosbekjennelsen, som er den første av islams fem søyler. Shahada er en fast del av bønneropet og av den daglige bønnen, den blir hvisket i øret på nyfødte barn, og den som sier den fram foran vitner for å bli en del av fellesskapet, går over til islam (Vogt, 2025). Mer om hvordan muslimer ber, kan du lese i artikkelen om [bønn i islam](/krle/religion/islam/bonn)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen bok med arabisk skrift på et lavt trebord",
+            "caption": "Hadith-samlingene forteller hva profeten sa og gjorde. De ble redigert på 800- og 900-tallet."
+        },
+        {
+            "type": "header",
+            "text": "Uenigheten som fulgte"
+        },
+        {
+            "type": "text",
+            "content": "Muhammad etterlot seg ingen ny profet. Men noen måtte lede fellesskapet. Da han døde i 632, oppsto det strid om hvem det skulle være (Vogt, 2026d). En gruppe mente at lederen måtte være i slekt med profeten selv, og støttet Ali ibn Abi Talib, som var Muhammads fetter og svigersønn. De ble kalt shi'at Ali, altså Alis parti, og derfra kommer navnet sjiamuslimer (Vogt, 2026d). Etterkommerne hans fikk tittelen imam, som betyr leder eller forbilde (Vogt, 2026d). Flertallet gikk en annen vei og ble sunnimuslimer. I dag er rundt 85 prosent av verdens muslimer sunnier og rundt 15 prosent sjiaer (Vogt, 2026b). I Norge er 15 til 20 prosent av muslimene tolversjiaer (Vogt, 2026d)."
+        },
+        {
+            "type": "text",
+            "content": "Striden handlet ikke om hvem Muhammad var. Begge retningene er enige om at han var Guds sendebud og den siste profeten. De var uenige om hvem som skulle lede etter ham. Det sier noe viktig om rollen hans: den kunne ikke overtas. Ingen kan bli den neste profeten. Det eneste som kan føres videre, er ledelsen av fellesskapet og forsøket på å leve slik han levde. Vil du se hvordan dette henger sammen med resten av religionen, kan du gå videre til [sentrale trekk ved islam](/krle/religion/islam/sentrale-trekk)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr «fred være med ham», og når bruker muslimer uttrykket?",
+                    "Hva er en profet, og hvorfor er Muhammad ikke den første i islam?",
+                    "Forklar hva hijra er, og hvorfor året 622 er så viktig.",
+                    "Hva betyr uttrykket profetenes segl?"
+                ],
+                "reflekter": [
+                    "Muslimer teller årene fra hijra, ikke fra Muhammads fødsel. Hva sier det valget om hvordan de ser på rollen hans?",
+                    "Muhammad er forbilde, men skal ikke tilbes. Forklar med egne ord hvorfor det ikke er en selvmotsigelse.",
+                    "Fødselsåret hans er usikkert, mens 622 og 632 står støtt. Hvorfor kan noen årstall være sikrere enn andre i så gamle kilder?",
+                    "Sammenlign med kristendommen, der stifteren regnes som Gud. Hvilken forskjell tror du dette gjør for hvordan de to religionene er bygd opp?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva forskjellen er mellom Koranen og hadith som kilde, og skriv fem linjer om hvorfor muslimer bruker begge.",
+                    "Undersøk hvordan sunnimuslimer og sjiamuslimer forklarer striden etter 632 hver for seg, og lag en enkel oversikt over de to forklaringene.",
+                    "Diskuter i klassen: Hvorfor kan det være viktig for en religion at det ikke kommer flere profeter?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvilken rolle har Muhammad i islam?",
+                        "options": [
+                            "Han er Gud i menneskelig skikkelse",
+                            "Han er Guds sønn",
+                            "Han er et menneske og Guds siste profet",
+                            "Han er en engel sendt fra Gud"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Muslimer regner Muhammad som Guds største og siste profet, men som et menneske. All dyrkelse av religionsstifteren avvises."
+                    },
+                    {
+                        "question": "Hva betyr uttrykket profetenes segl?",
+                        "options": [
+                            "At Muhammad skrev under på Koranen",
+                            "At Muhammad er den siste profeten, og at ingen ny kommer etter ham",
+                            "At Muhammad var den første profeten",
+                            "At Muhammad hadde et personlig stempel"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Koranen bruker uttrykket khatam al-nabiin om Muhammad. Det oversettes med profetenes segl og betyr at profetrekken er avsluttet."
+                    },
+                    {
+                        "question": "Hva skjedde i år 622?",
+                        "options": [
+                            "Muhammad fikk sitt første profetkall",
+                            "Muhammad døde i Medina",
+                            "Muhammad inntok Mekka og renset Kabaen",
+                            "Muhammad og følgesvennene hans utvandret fra Mekka til Medina"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Utvandringen kalles hijra. I 637 bestemte kalifen Umar ibn al-Khattab at 622 skulle være år én i den islamsk-arabiske kalenderen."
+                    },
+                    {
+                        "question": "Hva er sunna?",
+                        "options": [
+                            "Den daglige bønnen i moskeen",
+                            "Måten profeten levde og handlet på, som muslimer bruker som forbilde",
+                            "Navnet på Muhammads fødeby",
+                            "En av de 24 profetene Koranen nevner"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Sunna betyr skikk eller sedvane. Hadith forteller hva profeten sa og gjorde, og på 800-tallet ble sunnaen slått fast som en av kildene til islamsk lov."
+                    },
+                    {
+                        "question": "Hva var muslimene uenige om etter at Muhammad døde i 632?",
+                        "options": [
+                            "Om Muhammad var guddommelig eller ikke",
+                            "Om Koranen skulle skrives ned",
+                            "Hvem som skulle lede fellesskapet videre",
+                            "Om det skulle komme en ny profet etter ham"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "En gruppe mente lederen måtte være i slekt med profeten og støttet Ali ibn Abi Talib. De ble sjiamuslimer. Flertallet ble sunnimuslimer."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Islamsk Råd Norge. (2022a). *Grunnleggende om islamsk tro*. Hentet 11.08.2026 fra [irn.no](https://irn.no/grunnleggende-om-islamsk-tro/)",
+                    "Islamsk Råd Norge. (2022b). *Karakteren til profeten Muhammad (fvmh)*. Hentet 11.08.2026 fra [irn.no](https://irn.no/karakteren-til-profeten-muhammad-fvmh/)",
+                    "Kværne, P., Barstad, H. M., Groth, B. & Eggen, N. S. (2026). *Profet*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/profet](https://snl.no/profet)",
+                    "Vogt, K. (2025). *Shahada*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/shahada](https://snl.no/shahada)",
+                    "Vogt, K. (2026a). *Hijra*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/hijra](https://snl.no/hijra)",
+                    "Vogt, K. (2026b). *Islam*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/islam](https://snl.no/islam)",
+                    "Vogt, K. (2026c). *Muhammed*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Muhammed](https://snl.no/Muhammed)",
+                    "Vogt, K. (2026d). *Sjiaislam*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sjiaislam](https://snl.no/sjiaislam)",
+                    "Vogt, K. (2026e). *Sunna*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sunna](https://snl.no/sunna)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
 }

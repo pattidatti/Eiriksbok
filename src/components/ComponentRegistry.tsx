@@ -151,6 +151,15 @@ const HundreOgFortiFireTusen = lazy(() => import('./content/interactive/HundreOg
 const SamsaraHjulet = lazy(() => import('./content/interactive/SamsaraHjulet').then(m => ({ default: m.SamsaraHjulet })));
 const FlammenSomSlukner = lazy(() => import('./content/interactive/FlammenSomSlukner').then(m => ({ default: m.FlammenSomSlukner })));
 const DraapenIHavet = lazy(() => import('./content/interactive/DraapenIHavet').then(m => ({ default: m.DraapenIHavet })));
+const IngenStifterMenEnPakt = lazy(() => import('./content/interactive/IngenStifterMenEnPakt').then(m => ({ default: m.IngenStifterMenEnPakt })));
+const HanStiftetIngenReligion = lazy(() => import('./content/interactive/HanStiftetIngenReligion').then(m => ({ default: m.HanStiftetIngenReligion })));
+const ProfetIkkeGud = lazy(() => import('./content/interactive/ProfetIkkeGud').then(m => ({ default: m.ProfetIkkeGud })));
+const ToSomHengerSammen = lazy(() => import('./content/interactive/ToSomHengerSammen').then(m => ({ default: m.ToSomHengerSammen })));
+const VitnenesUnderskrifter = lazy(() => import('./content/interactive/VitnenesUnderskrifter').then(m => ({ default: m.VitnenesUnderskrifter })));
+const GrunnleggerenSomIkkeVil = lazy(() => import('./content/interactive/GrunnleggerenSomIkkeVil').then(m => ({ default: m.GrunnleggerenSomIkkeVil })));
+const LetingenEtterEnStifter = lazy(() => import('./content/interactive/LetingenEtterEnStifter').then(m => ({ default: m.LetingenEtterEnStifter })));
+const MennesketSomVaaknet = lazy(() => import('./content/interactive/MennesketSomVaaknet').then(m => ({ default: m.MennesketSomVaaknet })));
+const TiGuruerOgEnBok = lazy(() => import('./content/interactive/TiGuruerOgEnBok').then(m => ({ default: m.TiGuruerOgEnBok })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
@@ -575,6 +584,15 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     SamsaraHjulet,
     FlammenSomSlukner,
     DraapenIHavet,
+    IngenStifterMenEnPakt,
+    HanStiftetIngenReligion,
+    ProfetIkkeGud,
+    ToSomHengerSammen,
+    VitnenesUnderskrifter,
+    GrunnleggerenSomIkkeVil,
+    LetingenEtterEnStifter,
+    MennesketSomVaaknet,
+    TiGuruerOgEnBok,
     DagenSomBonn,
     MaatBalansen,
     ToFlomfortellinger,

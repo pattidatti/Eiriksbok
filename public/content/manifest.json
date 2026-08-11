@@ -7491,9 +7491,9 @@
                 },
                 {
                   "id": "grunnleggere",
-                  "title": "Jesus Kristus",
-                  "description": "Jesus fra Nasaret: lærer, helbreder, korsfestet og oppstanden.",
-                  "image": "/images/krle/religion/kristendom_hero.webp",
+                  "title": "Mannen som ikke grunnla en religion",
+                  "description": "Jesus grunnla aldri kristendommen. Han levde og døde som jøde, og religionen ble bygd av dem som kom etter ham. Sorter byggesteinene og se hvor liten grunnmuren egentlig er.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "grunnleggere",
@@ -7539,7 +7539,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-03-15T21:57:26+01:00"
+                  "lastUpdated": "2026-08-11T13:42:47+02:00"
                 },
                 {
                   "id": "bonn",
@@ -7702,9 +7702,9 @@
                 },
                 {
                   "id": "grunnleggere",
-                  "title": "Muhammad",
-                  "description": "Profeten Muhammad - islams siste profet.",
-                  "image": "/images/krle/religion/islam_hero.webp",
+                  "title": "Profeten som ikke skal tilbes",
+                  "description": "Muslimer regner Muhammad som Guds siste profet, men aldri som Gud. Bli med fra Mekka til Medina, se hvorfor 622 ble år én, og oppdag hvordan striden etter 632 delte muslimene i sunni og sjia.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "grunnleggere",
@@ -7763,7 +7763,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T13:42:47+02:00"
                 },
                 {
                   "id": "intro",
@@ -7839,9 +7839,9 @@
                 },
                 {
                   "id": "grunnleggere",
-                  "title": "Buddha",
-                  "description": "Siddhartha Gautama - den oppvåknede.",
-                  "image": "/images/krle/religion/buddhisme_hero.webp",
+                  "title": "Mannen som våknet",
+                  "description": "Buddha er ikke et navn, men en ærestittel. Bli kjent med Siddhartha Gautama, mannen forskerne mener levde rundt år 400 fvt., og se hvorfor buddhister er uenige om han var menneske eller noe langt mer.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "buddhisme",
                     "grunnleggere",
@@ -7900,7 +7900,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T13:42:47+02:00"
                 },
                 {
                   "id": "intro",
@@ -7963,9 +7963,9 @@
                 },
                 {
                   "id": "grunnleggere",
-                  "title": "Abraham og Moses",
-                  "description": "Stamfaren og lovgiveren.",
-                  "image": "/images/krle/religion/jodedom_hero.webp",
+                  "title": "Ingen stifter, men en pakt",
+                  "description": "Jødedommen har ingen enkelt stifter. Møt Abraham og Moses, og finn ut hvorfor pakten mellom Gud og folket er viktigere enn personene i fortellingen.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "grunnleggere",
@@ -8024,7 +8024,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T13:42:47+02:00"
                 },
                 {
                   "id": "intro",
@@ -8087,9 +8087,9 @@
                 },
                 {
                   "id": "grunnleggere",
-                  "title": "Ingen enkelt grunnlegger",
-                  "description": "En religion uten en enkelt stifter.",
-                  "image": "/images/krle/religion/hinduisme_hero.webp",
+                  "title": "Religionen ingen fant opp",
+                  "description": "Hinduismen har ingen stifter, ingen startdato og ingen fast ledelse. Bli med på letingen etter en grunnlegger som ikke finnes, og se hva som holder religionen sammen i stedet.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "grunnleggere",
@@ -8148,7 +8148,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T13:42:47+02:00"
                 },
                 {
                   "id": "intro",
@@ -8281,9 +8281,9 @@
                 },
                 {
                   "id": "grunnleggere",
-                  "title": "Bahá'u'lláh",
-                  "description": "Grunnleggeren av Bahá'í-troen.",
-                  "image": "/images/krle/religion/bahai_hero.webp",
+                  "title": "Porten og herligheten",
+                  "description": "Bahá'í er den eneste verdensreligionen med to grunnleggere: Báb varslet om den som skulle komme, og Bahá'u'lláh sto fram som ham. Bli med fra kvelden i Shiraz i 1844 til førti år i fengsel og eksil, og se hvordan sønnen 'Abdu'l-Bahá fikk en helt annen rolle enn faren.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "bahai",
                     "grunnleggere",
@@ -8342,7 +8342,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T13:42:47+02:00"
                 },
                 {
                   "id": "intro",
@@ -8405,9 +8405,9 @@
                 },
                 {
                   "id": "grunnleggere",
-                  "title": "Joseph Smith",
-                  "description": "Profeten som gjenopprettet kirken.",
-                  "image": "/images/krle/religion/mormonisme_hero.webp",
+                  "title": "Profeten som elleve menn gikk god for",
+                  "description": "Elleve menn skrev under på at de hadde sett gullplatene, og navnene deres står fortsatt trykt foran i Mormons bok. Møt Joseph Smith som profet, ikke guddom, og se hvordan rollen hans levde videre etter drapet i Carthage i 1844.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "grunnleggere",
@@ -8466,7 +8466,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T13:42:47+02:00"
                 },
                 {
                   "id": "intro",
@@ -8529,9 +8529,9 @@
                 },
                 {
                   "id": "grunnleggere",
-                  "title": "Charles Taze Russell",
-                  "description": "Grunnleggeren av Bibelstudentene.",
-                  "image": "/images/krle/religion/jehovas-vitner_hero.webp",
+                  "title": "Grunnleggeren som ikke ville være grunnlegger",
+                  "description": "Jehovas vitner sier at Jesus grunnla bevegelsen deres, mens historikere peker på Charles Taze Russell og bibelstudentene på 1870-tallet. Bli med og fordel æren mellom Russell, Rutherford og Jesus, og se hvorfor årstall som 1914 måtte forklares på nytt.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "grunnleggere",
@@ -8590,7 +8590,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2025-12-04T14:04:03+01:00"
+                  "lastUpdated": "2026-08-11T13:42:47+02:00"
                 },
                 {
                   "id": "intro",
@@ -8627,9 +8627,9 @@
                 },
                 {
                   "id": "grunnleggere",
-                  "title": "Guruene",
-                  "description": "Fra Guru Nanak til den evige Guru Granth Sahib.",
-                  "image": "/images/krle/religion/sikhisme_grunnleggere_hero.webp",
+                  "title": "Da guruen ble en bok",
+                  "description": "Guru Nanak og de ni som fulgte etter ham. Hvorfor sikhene sluttet med menneskelige guruer i 1708 og lot en bok overta rollen.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "sikhisme",
                     "grunnleggere"
@@ -8711,7 +8711,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2026-08-11T12:00:00Z",
-                  "lastUpdated": "2026-08-11T11:36:01.272Z"
+                  "lastUpdated": "2026-08-11T13:42:47+02:00"
                 },
                 {
                   "id": "bonn",

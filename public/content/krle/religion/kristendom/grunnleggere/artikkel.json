@@ -1,6 +1,7 @@
 {
     "id": "grunnleggere",
-    "title": "Jesus Kristus",
+    "title": "Mannen som ikke grunnla en religion",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "kristendom",
@@ -9,135 +10,249 @@
         "grunnleggere",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2026-03-15T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Jesus fra Nasaret"
-        },
-        {
-            "type": "text",
-            "content": "Jesus ble født i Betlehem for ca. 2000 år siden i enkle kår. Familien bodde i den lille byen Nasaret, og Jesus vokste opp som sønn av tømmermannen Josef. Da han var rundt 30 år gammel, begynte han å reise rundt i det som i dag er Israel og Palestina. Han samlet folk rundt seg, underviste og helbredet syke."
-        },
-        {
-            "type": "header",
-            "text": "Lærer og helbreder"
-        },
-        {
-            "type": "text",
-            "content": "Jesus var kjent for å fortelle lignelser - korte historier med et dypt poeng. Han fortalte for eksempel om den barmhjertige samaritan, som hjalp en fremmed selv om ingen andre ville. Jesus helbredet syke, ga mat til sultne og tilbrakte tid med mennesker som ble sett ned på i samfunnet. Han utfordret de religiøse lederne som han mente hadde gjort religionen til et sett med strenge regler i stedet for å fokusere på kjærlighet."
-        },
-        {
-            "type": "header",
-            "text": "Korsfestelsen"
-        },
-        {
-            "type": "text",
-            "content": "Etter tre år ble Jesus arrestert i Jerusalem. De religiøse lederne så ham som en trussel fordi han utfordret deres makt. Den romerske guvernøren Pontius Pilatus dømte ham til døden. Jesus ble korsfestet - en grusom henrettelsesmetode som romerne brukte. Kristne tror at Jesus døde for hele menneskehetens synder. Korsfestelsen er den mest sentrale hendelsen i kristendommen."
-        },
-        {
-            "type": "header",
-            "text": "Oppstandelsen"
-        },
-        {
-            "type": "text",
-            "content": "Tre dager etter korsfestelsen var graven tom. Kristne tror at Jesus sto opp fra de døde - dette kalles oppstandelsen. Det er dette påsken handler om. Oppstandelsen er selve grunnlaget for kristen tro. Uten den ville kristendommen ikke eksistert. Paulus skrev at hvis Jesus ikke sto opp, er troen uten verdi."
-        },
-        {
-            "type": "header",
-            "text": "Messias - den salvede"
-        },
-        {
-            "type": "text",
-            "content": "Kristus er gresk for Messias, som betyr den salvede. Det jødiske folket ventet på en frelser som var lovet av profetene. De fleste ventet en mektig krigerkonge som skulle beseire fiendene deres. Jesus var ikke den type Messias de forventet - han kom som en fredelig lærer som ofret seg selv. Likevel tror kristne at han oppfylte de gamle løftene."
-        },
-        {
-            "type": "header",
-            "text": "Disiplene og den første kirken"
-        },
-        {
-            "type": "text",
-            "content": "Jesus valgte ut 12 disipler som fulgte ham og lærte av ham. Etter oppstandelsen fikk de i oppdrag å spre budskapet til hele verden. Peter ble lederen for den første menigheten i Jerusalem og reiste senere til Roma. Paulus reiste over hele Middelhavsområdet og grunnla nye menigheter. I løpet av 300 år hadde kristendommen vokst fra en liten gruppe i Midtøsten til å bli Romerrikets offisielle religion."
-        }
+    "category": "Kristendom",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Historikere regner det som sikkert at Jesus levde, og at han ble korsfestet i Jerusalem rundt år 30.",
+        "Jesus var jøde. Bevegelsen rundt ham var en fornyelsesbevegelse inne i jødedommen, ikke en ny religion.",
+        "Kristendommen ble en egen religion først etter hans død, rundt troen på at han hadde stått opp.",
+        "Paulus og apostelmøtet i Jerusalem i år 48 åpnet bevegelsen for ikke-jøder og gjorde den til en verdensreligion.",
+        "Læren om at Jesus er sann Gud og sant menneske ble formet på kirkemøtene i Nikea i 325 og Kalkedon i 451."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "messias",
             "term": "Messias",
-            "definition": "Den salvede. En frelseskonge som jødene ventet på. Kristne tror Jesus er Messias."
+            "definition": "Hebraisk for den salvede. På gresk blir det Kristus. Mange jøder ventet på en slik frelseskonge. Kristne mener Jesus er ham."
         },
         {
-            "id": "disippel",
-            "term": "Disippel",
-            "definition": "Elev eller etterfølger. Jesus hadde 12 nære disipler som spredte budskapet hans."
+            "id": "evangelium",
+            "term": "Evangelium",
+            "definition": "En av de fire fortellingene om Jesus i Det nye testamentet. De er hovedkildene til det vi vet om ham."
         },
         {
-            "id": "lignelse",
-            "term": "Lignelse",
-            "definition": "En kort fortelling med et dypere poeng. Jesus brukte lignelser for å forklare vanskelige ting."
+            "id": "inkarnasjon",
+            "term": "Inkarnasjon",
+            "definition": "Den kristne læren om at Gud ble menneske i Jesus. Ordet betyr omtrent å bli kropp."
         },
         {
-            "id": "korsfestelse",
-            "term": "Korsfestelse",
-            "definition": "En romersk henrettelsesmetode. Jesus ble korsfestet i Jerusalem. Kristne tror han døde for menneskenes synder."
+            "id": "to-natur-laeren",
+            "term": "To-natur-læren",
+            "definition": "Læren fra kirkemøtet i Kalkedon i 451 om at Jesus er helt Gud og helt menneske i én person, uten at de to blandes sammen."
         },
         {
-            "id": "oppstandelse",
-            "term": "Oppstandelse",
-            "definition": "At Jesus sto opp fra de døde tre dager etter korsfestelsen. Grunnlaget for kristen tro."
+            "id": "treenigheten",
+            "term": "Treenigheten",
+            "definition": "Den kristne læren om at Gud er tre personer i ett vesen: Faderen, Sønnen og Den hellige ånd."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva betyr navnet Kristus?",
-            "options": [
-                "Guds sønn",
-                "Den salvede (Messias)",
-                "Kongen"
-            ],
-            "answer": "Den salvede (Messias)"
+            "type": "text",
+            "content": "Rundt år 30 ble en jødisk mann fra Nasaret korsfestet i Jerusalem (Seim & Elstad, 2024). Han hadde ikke skrevet en bok. Han hadde ikke bygd et tempel eller startet en organisasjon. Han hadde ikke gitt bevegelsen sin et navn, og han hadde ikke forlatt jødedommen. I dag samler rundt 2,3 milliarder mennesker seg om ham, omtrent 33 prosent av alle mennesker i verden (Elstad & Rasmussen, 2026)."
         },
         {
-            "question": "Hva er en lignelse?",
-            "options": [
-                "En lovtekst fra Bibelen",
-                "En kort fortelling med et dypere poeng",
-                "En type bønn"
-            ],
-            "answer": "En kort fortelling med et dypere poeng"
+            "type": "text",
+            "content": "Det er her kristendommen skiller seg fra de andre store religionene. Jesus grunnla ikke kristendommen. Den ble til etter at han døde, av folk som var overbevist om at han hadde stått opp igjen. Og det de etter hvert kom fram til om ham, går lenger enn det noen annen verdensreligion sier om sin egen stifter: at han ikke bare talte om Gud, men er Gud (Elstad & Rasmussen, 2026). Denne artikkelen handler derfor ikke om livsløpet hans, men om rollen han fikk."
         },
         {
-            "question": "Hva feirer kristne i påsken?",
-            "options": [
-                "Jesu fødsel",
-                "Jesu død og oppstandelse",
-                "Pinsedagen"
-            ],
-            "answer": "Jesu død og oppstandelse"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åslandskap ved innsjø i Galilea i morgenlys",
+            "caption": "Jesus kom fra Nasaret i Galilea. Det var her han samlet de første som fulgte ham."
         },
         {
-            "question": "Hvorfor ble Jesus oppfattet som en trussel?",
-            "options": [
-                "Fordi han var en soldat",
-                "Fordi han utfordret de religiøse ledernes makt",
-                "Fordi han ville bli konge"
-            ],
-            "answer": "Fordi han utfordret de religiøse ledernes makt"
+            "type": "text",
+            "content": "Hva vet historikere egentlig om ham? Ganske mye. Det er liten tvil om at Jesus har levd og er en historisk person (Seim & Elstad, 2024). Han kom fra Nasaret i Galilea, lot seg døpe av Johannes døperen og begynte så å reise rundt og undervise. Virket varte kort, kanskje bare ett år, og ikke mer enn tre (Seim & Elstad, 2024). Han ble korsfestet i Jerusalem i påsken rundt år 30. Fødselsåret hans kan ikke bestemmes nøyaktig (Seim & Elstad, 2024). Både den jødiske historikeren Josefus og den romerske historieskriveren Tacitus nevner ham (Seim & Elstad, 2024)."
         },
         {
-            "question": "Hvor mange disipler valgte Jesus ut?",
-            "options": [
-                "3",
-                "10",
-                "12"
-            ],
-            "answer": "12"
+            "type": "header",
+            "text": "Han levde og døde som jøde"
+        },
+        {
+            "type": "text",
+            "content": "Jesus var jøde og forsto seg selv innenfor rammen av jødisk tradisjon (Seim & Elstad, 2024). Det gjorde også de som fulgte ham. Bevegelsen rundt ham var en protest- og fornyelsesbevegelse inne i jødedommen, ikke et forsøk på å starte noe nytt ved siden av (Seim & Elstad, 2024). Evangeliene forteller at han utfordret religiøse ledere om renhetsregler og hykleri, og at han tok parti for dem som var nederst i samfunnet. Det var en indre strid, slik det til alle tider har vært strid inne i religioner. Under kan du selv sortere hva som skjedde mens han levde, og hva som kom senere."
+        },
+        {
+            "type": "component",
+            "name": "HanStiftetIngenReligion",
+            "props": {
+                "title": "Hvem la steinene?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hvor liten grunnmuren ble. Nesten alt som gjør kristendommen til en egen religion, kom på plass etter at Jesus var død: navnet, bøkene, medlemsreglene og læren om hvem han var. Det betyr ikke at han er uviktig. Det betyr at rollen hans ble bygd av dem som kom etter, og at vi kan følge byggingen ganske nøye."
+        },
+        {
+            "type": "header",
+            "text": "Troen som satte alt i gang"
+        },
+        {
+            "type": "text",
+            "content": "Det blir fortalt at Jesus viste seg for noen av disiplene noen dager etter at han døde, og at noen av kvinnene i følget hans samtidig fant graven tom (Seim & Elstad, 2024). Her går et viktig skille. At Jesus ble korsfestet, regner historikere som sikkert. At han sto opp igjen, er trosinnhold, altså noe kristne tror, og ikke noe historikere kan slå fast. Uten den troen hadde bevegelsen trolig stoppet der. Med den ble korsfestelsen snudd fra nederlag til seier. Hva kristne mener at dette betyr for mennesker i dag, kan du lese om i artikkelen om [frelse](/krle/religion/kristendom/frelse)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Kristus er ikke et etternavn",
+                "items": [
+                    {
+                        "label": "Kristus",
+                        "value": "Gresk for den salvede. Ordet kristendom kommer av denne tittelen."
+                    },
+                    {
+                        "label": "Messias",
+                        "value": "Det hebraiske ordet for det samme. Mange jøder ventet på en frelseskonge."
+                    },
+                    {
+                        "label": "Hvem brukte tittelen?",
+                        "value": "Jesus svarte ikke til de vanlige forestillingene om en slik frelseskonge, og han unngikk trolig å bruke ordet om seg selv. Det var andre som hengte tittelen på ham."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "text",
+            "content": "Så kom mannen som gjorde bevegelsen til en verdensreligion. Paulus var jøde fra byen Tarsos og fariseer, og i starten en motstander som forfulgte dem som trodde på Jesus (Aasgaard, 2025). Rundt år 35 var han på vei til Damaskus for å forfølge dem, og der fikk han en opplevelse han selv beskrev som at Jesus viste seg for ham (Aasgaard, 2025). Han forlot ikke jødedommen, men forsto seg kalt til å bringe budskapet videre til ikke-jøder (Aasgaard, 2025). Da meldte det store stridsspørsmålet seg: hva skulle kreves av dem som ble med? Moseloven, altså lovbøkene i jødedommen, krevde blant annet at menn skulle være omskåret. Måtte de ikke-jødiske også følge den? Dette var et hovedtema på apostelmøtet i Jerusalem i år 48. Der ble lederne enige om hvordan jødiske og ikke-jødiske Jesus-troende skulle forholde seg til hverandre, og om at Paulus særlig skulle ha ansvar for misjonen blant ikke-jøder (Aasgaard, 2025). Selv mente Paulus at de kristne skulle stilles fritt i lovspørsmålet, og at troen på Jesus var det grunnleggende (Aasgaard, 2025). Med det åpnet døren seg mot resten av verden. Mer om reisene hans finner du i artikkelen om [Paulus og misjonen](/krle/religion/kristendom/paulus-og-misjonen)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Håndskrevet gresk tekst på gammelt papyrusark",
+            "caption": "Evangeliene ble skrevet ned flere tiår etter Jesu død. Først gikk fortellingene muntlig fra person til person."
+        },
+        {
+            "type": "header",
+            "text": "Fra jødisk lærer til Gud"
+        },
+        {
+            "type": "text",
+            "content": "De fire evangeliene er hovedkildene våre. De ble trolig skrevet mellom 70 og 90 år etter at Jesus ble født, og bygger på fortellinger og sitater som først gikk muntlig fra person til person (Seim & Elstad, 2024). De fire tegner ikke helt like bilder av ham, og det forteller oss at de første kristne forsto ham på litt ulike måter. Det første stedet der tilhengerne ble kalt kristne, var byen Antiokia, og ved overgangen til 100-tallet framsto kristendommen tydelig som en egen religion (Elstad & Rasmussen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Da satt de igjen med et vanskelig spørsmål. Kristendommen er monoteistisk, altså en religion med bare én gud. Hvordan kunne da et menneske være Gud? Svaret kom på store kirkemøter, ikke fra Jesus selv. Kirkemøtet i Nikea i 325 slo fast at Kristus er sann Gud, av samme vesen som Faderen (Elstad, 2026). Det løste ett problem og skapte et nytt: hvordan kunne han da samtidig være menneske? På kirkemøtet i Kalkedon i 451 kom to-natur-læren. Den guddommelige og den menneskelige naturen er forent i én person, uten å blandes sammen og miste særpreget sitt (Elstad, 2026). Omtrent samtidig ble læren om treenigheten formet ferdig: Gud er tre personer i ett vesen, Faderen, Sønnen og Den hellige ånd (Elstad & Rasmussen, 2026). Kirkemøtet i Konstantinopel i 381 gjorde for Den hellige ånd det som Nikea hadde gjort for Sønnen (Leivestad & Elstad, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Steinbenker i halvsirkel i gammelt forsamlingsrom",
+            "caption": "Læren om hvem Jesus er, ble formet av biskoper på store kirkemøter på 300- og 400-tallet."
+        },
+        {
+            "type": "header",
+            "text": "Rollen han har i dag"
+        },
+        {
+            "type": "text",
+            "content": "Alle de store kirkesamfunnene holder fast på at Jesus er sann Gud og sant menneske (Elstad & Rasmussen, 2026). Men enigheten er ikke total. Kirkene i Egypt, Syria og Armenia sa nei til to-natur-læren fra Kalkedon, og lærer i stedet at det menneskeblitte Ordet har én natur (Halvorsen, 2025). Nyere samtaler mellom kirkene tyder på at mye av uenigheten handler om språk og ulike teologiske tradisjoner (Halvorsen, 2025). Rollen Jesus har i dag, er uansett ikke rollen som en fjern stifter. Den norske kirke sier det slik: troen på Jesus som verdens frelser er det viktigste i kristendommen, og kristne mener at han gjennom ord og handlinger viste hvem Gud er (Den norske kirke, 2014). Der andre religioner har en profet, en lærer eller et forbilde å se opp til, har kristne en grunnlegger de tilber som Gud. Nettopp det skiller kristendommen fra jødedommen og islam, som den ellers deler mye med (Elstad & Rasmussen, 2026). Mer om dette står i artikkelen om [gudsbildet](/krle/religion/kristendom/gudsbilde)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva regner historikere som sikkert om Jesus, og hva er trosinnhold? Gi minst ett eksempel på hver.",
+                    "Hva betyr titlene Kristus og Messias, og hvem var det som tok dem i bruk om Jesus?",
+                    "Hva var hovedtemaet på apostelmøtet i Jerusalem i år 48, og hvorfor var det viktig?",
+                    "Hva slo kirkemøtene i Nikea i 325 og Kalkedon i 451 fast om Jesus?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor man kan si at Jesus ikke grunnla kristendommen.",
+                    "Jesus levde og døde som jøde. Hvorfor er det viktig å vite når man skal forstå forholdet mellom jødedom og kristendom?",
+                    "Kristne tror at stifteren deres er Gud. Hvordan tror du det forandrer forholdet mellom en troende og grunnleggeren, sammenlignet med en religion der stifteren er en profet eller en lærer?",
+                    "Nesten 300 år gikk fra Jesus døde til Nikea i 325. Hvorfor tror du det tok så lang tid å bli enige om hvem han var?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva de orientalsk-ortodokse kirkene i Egypt, Syria og Armenia lærer om Jesus, og skriv en kort tekst om hvordan det skiller seg fra to-natur-læren.",
+                    "Sammenlign rollen Jesus har i kristendommen med rollen stifteren har i en annen religion i sammenligningsemnet. Lag en liste med tre likheter og tre forskjeller.",
+                    "Diskuter i klassen: Kan en person få en helt annen rolle etter sin død enn den han hadde mens han levde? Finn eksempler også utenfor religion."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvilken religion tilhørte Jesus selv?",
+                        "options": [
+                            "Kristendommen, som han grunnla",
+                            "Jødedommen",
+                            "Islam",
+                            "Han tilhørte ingen religion"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Jesus var jøde og forsto seg selv innenfor rammen av jødisk tradisjon. Bevegelsen rundt ham var en protest- og fornyelsesbevegelse inne i jødedommen."
+                    },
+                    {
+                        "question": "Hva betyr tittelen Kristus?",
+                        "options": [
+                            "Guds sønn",
+                            "Læreren",
+                            "Den salvede",
+                            "Kongen av Jerusalem"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Kristus er gresk for den salvede, det samme som det hebraiske Messias. Ordet kristendom kommer av denne tittelen."
+                    },
+                    {
+                        "question": "Hva var hovedtemaet på apostelmøtet i Jerusalem i år 48?",
+                        "options": [
+                            "Om Jesus er sann Gud og sant menneske",
+                            "Hvilke bøker som skulle være med i Bibelen",
+                            "Hvem som skulle bli kirkens leder i Roma",
+                            "Hvordan jødiske og ikke-jødiske Jesus-troende skulle forholde seg til hverandre"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Et hovedspørsmål var om ikke-jøder også måtte følge Moseloven. Møtet endte blant annet med at Paulus særlig skulle ha ansvar for misjonen blant ikke-jøder, og det åpnet bevegelsen mot resten av verden."
+                    },
+                    {
+                        "question": "Hvor og når ble det slått fast at Kristus er sann Gud, av samme vesen som Faderen?",
+                        "options": [
+                            "På kirkemøtet i Nikea i 325",
+                            "Av Jesus selv rundt år 30",
+                            "På kirkemøtet i Kalkedon i 451",
+                            "Av Paulus rundt år 48"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Kirkemøtet i Nikea i 325 slo dette fast, nesten 300 år etter at Jesus døde. Kalkedon i 451 kom senere med to-natur-læren."
+                    },
+                    {
+                        "question": "Hva er hovedkildene til det vi vet om Jesus?",
+                        "options": [
+                            "Brevene til Paulus alene",
+                            "Romerske rettsprotokoller fra Jerusalem",
+                            "De fire evangeliene",
+                            "Skrifter Jesus selv skrev"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "De fire evangeliene ble trolig skrevet mellom 70 og 90 år etter at Jesus ble født, og bygger på fortellinger som først gikk muntlig fra person til person."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Seim, T. K. & Elstad, H. (2024). *Jesus*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jesus](https://snl.no/Jesus)",
+                    "Aasgaard, R. (2025). *Paulus - apostel*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Paulus_-_apostel](https://snl.no/Paulus_-_apostel)",
+                    "Elstad, H. & Rasmussen, T. (2026). *Kristendom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/kristendom](https://snl.no/kristendom)",
+                    "Elstad, H. (2026). *Kristologi*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/kristologi](https://snl.no/kristologi)",
+                    "Leivestad, R. & Elstad, H. (2026). *Treenigheten*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/treenigheten](https://snl.no/treenigheten)",
+                    "Halvorsen, P. B. (2025). *Monofysitisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/monofysitisme](https://snl.no/monofysitisme)",
+                    "Den norske kirke. (2014). *Jesus Kristus*. Hentet 11.08.2026 fra [kirken.no](https://www.kirken.no/nb-NO/kristen-tro/kristen-tro/jesus-kristus/)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Jeg er veien, sannheten og livet. Ingen kommer til Faderen uten ved meg.",
-        "source": "Bibelen",
-        "reference": "Johannes 14:6"
-    }
+    "timeline": []
 }

@@ -1,6 +1,7 @@
 {
     "id": "grunnleggere",
-    "title": "Abraham og Moses",
+    "title": "Ingen stifter, men en pakt",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "jodedom",
@@ -9,83 +10,252 @@
         "grunnleggere",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Abraham: Stamfaren"
-        },
-        {
-            "type": "text",
-            "content": "Abraham regnes som stamfaren til jødedommen (og kristendom og islam). Han inngikk en pakt med Gud: Gud lovet ham land og mange etterkommere, mot at Abraham trodde på den ene Gud."
-        },
-        {
-            "type": "header",
-            "text": "Moses: Lovgiveren"
-        },
-        {
-            "type": "text",
-            "content": "Moses er den viktigste profeten. Han ledet folket ut av slaveriet i Egypt og mottok Toraen (inkludert De ti bud) fra Gud på Sinaifjellet."
-        },
-        {
-            "type": "header",
-            "text": "Pakten"
-        },
-        {
-            "type": "text",
-            "content": "Forholdet mellom Gud og folket er basert på en pakt (avtale). Jødene er Guds utvalgte folk med et spesielt ansvar for å følge Guds lov."
-        }
+    "category": "Jødedom",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jødedommen peker ikke på én stifter, men på to skikkelser og en avtale: Abraham, Moses og pakten.",
+        "Abraham regnes som stamfaren pakten begynner med. Tegnet på pakten er omskjæring, brit mila.",
+        "Moses kalles Moshe rabbenu, Moses vår lærer. Han blir æret, men ikke tilbedt.",
+        "Svært få akademiske bibelforskere mener i dag at Abraham var en historisk person.",
+        "Da tempelet ble brent i år 70, var det rabbinerne som førte tolkningen av loven videre."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "pakt",
             "term": "Pakt",
-            "definition": "En høytidelig avtale mellom Gud og menneskene."
+            "definition": "En høytidelig avtale med plikter og rettigheter på begge sider. I jødedommen går pakten mellom Gud og det jødiske folket."
         },
         {
-            "id": "abraham",
-            "term": "Abraham",
-            "definition": "Stamfaren til jødene. Den første som trodde på én Gud."
+            "id": "brit-mila",
+            "term": "Brit mila",
+            "definition": "Omskjæring av guttebarn. Ritualet markerer at barnet er tatt inn i pakten mellom Gud og folket."
         },
         {
-            "id": "moses",
-            "term": "Moses",
-            "definition": "Den største profeten. Han mottok Toraen og ledet folket ut av Egypt."
+            "id": "moshe-rabbenu",
+            "term": "Moshe rabbenu",
+            "definition": "Hebraisk for Moses vår lærer. Dette er det vanligste jødiske navnet på Moses."
+        },
+        {
+            "id": "tora",
+            "term": "Tora",
+            "definition": "Jødedommens helligste tekstsamling, de fem Mosebøkene. Ordet betyr lære, ikke bare lov."
+        },
+        {
+            "id": "rabbiner",
+            "term": "Rabbiner",
+            "definition": "En jødisk lærd som tolker loven og leder menigheten. Rabbinerne overtok ledelsen etter at tempelet i Jerusalem ble brent i år 70."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvem regnes som stamfaren til jødene?",
-            "options": [
-                "Moses",
-                "Abraham",
-                "David"
-            ],
-            "answer": "Abraham"
+            "type": "text",
+            "content": "Hvis du leter etter én person som startet jødedommen, får du et problem med en gang. Det dukker opp to navn, ikke ett: Abraham og Moses. Og ingen av dem er stifter slik vi vanligvis bruker ordet. Det viktigste i fortellingen er nemlig ikke personene i seg selv. Det er avtalen de står i."
         },
         {
-            "question": "Hva mottok Moses på Sinaifjellet?",
-            "options": [
-                "Gull",
-                "Toraen og De ti bud",
-                "Et kart"
-            ],
-            "answer": "Toraen og De ti bud"
+            "type": "text",
+            "content": "Avtalen kalles en pakt. En pakt er en høytidelig avtale med plikter og rettigheter på begge sider (Store norske leksikon, 2025). I jødedommen går pakten mellom Gud og det jødiske folket. Ifølge tekstene i Den hebraiske bibelen, Tanakh, begynner jødenes historie med at Gud velger ut Abraham og inngår en pakt med etterkommerne hans, og pakten føres tilbake til både Abraham og Moses (Groth, 2026a). To skikkelser, én avtale. Det er avtalen som fortsetter, lenge etter at begge er borte."
         },
         {
-            "question": "Hva er en pakt?",
-            "options": [
-                "En krig",
-                "En avtale med Gud",
-                "En fest"
-            ],
-            "answer": "En avtale med Gud"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Håndskrevet torarull rullet ut på et bord",
+            "caption": "Toraen leses høyt i synagogen. Ordet tora betyr lære."
+        },
+        {
+            "type": "text",
+            "content": "Her er det lett å blande sammen to helt ulike spørsmål. Det ene er hva tradisjonen forteller. Det andre er hva historikere kan si noe sikkert om. De to svarene er ikke like, og nettopp den forskjellen er nøkkelen til denne artikkelen. Vi tar tradisjonen først."
+        },
+        {
+            "type": "header",
+            "text": "Abraham: den pakten begynner med"
+        },
+        {
+            "type": "text",
+            "content": "Fortellingene om Abraham står i 1. Mosebok, kapittel 12 til 25. Der er han en rik saueeier som får beskjed fra Gud om å dra fra Ur i Mesopotamia til landet Kanaan sammen med familien sin (Groth mfl., 2026). I fortellingen inngår Gud etter hvert en formell pakt med ham: Gud skal være Abrahams gud, og slekten hans skal være Guds folk. Betingelsen er at alle mannlige etterkommere skal omskjæres (Groth mfl., 2026). Denne omskjæringen heter brit mila, og markerer fortsatt at et guttebarn er tatt inn i pakten (Groth, 2026a). Du kan lese mer om slike ritualer i artikkelen om [overgangsriter](/krle/religion/jodedom/overgangsriter). Legg merke til hva Abraham faktisk er i fortellingen: den ene enden av en avtale. Prøv selv å fordele rollene i pakten under."
+        },
+        {
+            "type": "component",
+            "name": "IngenStifterMenEnPakt",
+            "props": {
+                "title": "Hvem har hvilken rolle?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Plassen som ble stående tom, er ikke en glipp. Den er hele poenget. Troen på én Gud, og forholdet mellom denne guden og det jødiske folket, er det sentrale prinsippet i jødedommen (Groth, 2026a). Abraham og Moses blir æret og husket som ledere, profeter og lovgivere (Groth, 2026b), men i jødisk tenkning får ingen av dem Guds plass. Hvordan jøder tenker om Gud, kan du lese mer om i artikkelen om [gudsbildet](/krle/religion/jodedom/gudsbilde)."
+        },
+        {
+            "type": "header",
+            "text": "Moses: læreren, ikke guden"
+        },
+        {
+            "type": "text",
+            "content": "Moses er den andre store skikkelsen. Ifølge tekstene i Tanakh og Det gamle testamentet er han den som førte israelittene ut av Egypt, og som tok imot De ti bud og de mange andre lovene som skulle gjelde i det nye israelittiske samfunnet (Groth, 2026b). I jødisk tradisjon regnes han som det eneste mennesket som har hatt et direkte møte med Gud. Han regnes også som den som grunnla den israelittiske nasjonen, og hendelsene minnes hvert år under den jødiske høytiden pesach (Groth, 2026b)."
+        },
+        {
+            "type": "text",
+            "content": "Men se på navnet han får. Jøder omtaler ham gjerne som Moshe rabbenu, som betyr Moses vår lærer (Groth, 2026b). Ikke Moses vår gud. Ikke Moses vår frelser. Læreren."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Graven ingen kjenner",
+                "content": "Ifølge bibeltekstene døde Moses på Nebofjellet i Moab før folket kom inn i det lovede landet, og ble gravlagt i dalen nedenfor (Groth, 2026b). Teksten legger til noe påfallende: den dag i dag vet ingen hvor graven er (Sefaria, u.å.). Det finnes altså ingen kjent grav der folk kan samles for å ære ham."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Det samme mønsteret dukker opp i påskefeiringen. Under pesach leser jødiske familier fortellingen om utvandringen fra Egypt høyt hjemme. Rabbiner Avi Weinstein peker på at Moses bare nevnes én eneste gang i denne teksten, selv om han er hovedpersonen i det som skjedde (Weinstein, u.å.). Poenget teksten vil fram til, skriver han, er at det var Gud selv som fridde folket ut, ikke en engel og ikke en budbringer. Hovedpersonen blir holdt i bakgrunnen med vilje."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Dekket bord med tallerken, bok og lys",
+            "caption": "Under pesach leser familier fortellingen om utvandringen fra Egypt hjemme rundt bordet."
+        },
+        {
+            "type": "header",
+            "text": "Hva vet historikerne?"
+        },
+        {
+            "type": "text",
+            "content": "Så langt tradisjonen. Forskningen ser ganske annerledes på det. Lenge var det vanlig å anta at Abraham var en historisk person som kunne plasseres rundt 2000 til 1800 fvt. I dag er det svært få jødiske eller kristne akademiske bibelforskere som vil hevde at Abraham er en historisk person. Mange regner ham som en ren litterær skikkelse, mens andre inntar et mellomstandpunkt og mener at fortellingene inneholder en historisk kjerne som senere er blitt endret og utvidet (Groth mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "For Moses er bildet også omstridt. Forskere som mener at han har vært en historisk person, daterer levetiden hans til 1200-tallet fvt., og utvandringen fra Egypt til rundt 1250 til 1210 fvt. Men ingen egyptiske tekster forteller om en masseutvandring, og det er ikke funnet spor etter leirplasser i Sinai. I dag er historikerne stort sett enige om at beskrivelsene av flukten og den førtiårige vandringen gjennom ørkenen er senere konstruerte fortellinger, en blanding av historie og litteratur. De fleste bibelforskere mener heller ikke lenger at Moses skrev Mosebøkene selv (Groth, 2026b)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tørt fjellandskap med dal og disig horisont",
+            "caption": "Nebofjellet i Moab. Ifølge bibelteksten døde Moses her, uten å komme inn i det lovede landet."
+        },
+        {
+            "type": "header",
+            "text": "Pakten som fortsetter"
+        },
+        {
+            "type": "text",
+            "content": "Betyr dette at fortellingene er verdiløse? Mange jøder ville svart nei. For mange troende og ikke-troende i dag er vitenskapens oppfatninger om Abraham ikke spesielt relevante, fordi fortellingen leses som en hellig historie uansett om Abraham har vært en virkelig person (Groth mfl., 2026). Her går det også et skille innad i jødedommen. Innenfor ortodoks jødedom blir Mosebøkene fortsatt oppfattet som en uforanderlig åpenbaring fra Gud, mens de fleste innenfor reformjødedom, konservativ jødedom og rekonstruksjonisme godtar moderne bibelvitenskap (Groth, 2026c)."
+        },
+        {
+            "type": "text",
+            "content": "Det virkelig spesielle skjer likevel etter at skikkelsene er borte. I jødisk tenkning dør ikke pakten med Abraham eller Moses, for den er ikke deres personlige eiendom. Den gjelder hele folket (Groth, 2026a). Da romerne brente det siste tempelet i Jerusalem i år 70, mistet jødene sitt religiøse samlingspunkt, og presteskapet mistet mye av betydningen sin. Da var det de lærde, rabbinerne, som overtok som religiøse ledere og lærere (Groth, 2026a)."
+        },
+        {
+            "type": "text",
+            "content": "Rabbinerne bygde videre på lovtekstene i Mosebøkene og formet regler som kunne følges overalt, uten tempel. Tolkningene ble etter hvert skrevet ned i Mishna rundt år 200, og danner grunnteksten i Talmud (Groth, 2026c). Ordet tora betyr forresten lære, ikke bare lov, og oversettelsen loven blir derfor lett misvisende (Groth, 2026c). Mer om disse tekstene finner du i artikkelen om [hellige tekster](/krle/religion/jodedom/hellige-tekster)."
+        },
+        {
+            "type": "text",
+            "content": "I dag omfatter jødedommen mange religiøse retninger med ulike oppfatninger om både tro og praksis, og mange jøder ser seg selv som ikke-troende og betrakter jødedom mer som en kultur enn en religion (Groth, 2026a). Jødedommen har heller ingen dogmer som alle må bekjenne seg til (Groth, 2026a). Men grunnfortellingen holder stand: en avtale mellom Gud og et folk, båret videre av lærere og tolkere. Ikke samlet rundt én stifter, men rundt pakten."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er en pakt, og hvem er de to partene i pakten i jødedommen?",
+                    "Hva er brit mila, og hva markerer ritualet?",
+                    "Hva betyr Moshe rabbenu, og hva forteller navnet om rollen Moses har?",
+                    "Hvorfor overtok rabbinerne som ledere etter år 70?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at jødedommen ikke har én stifter. Forklar med egne ord hvorfor pakten er viktigere enn personene.",
+                    "Ifølge bibelteksten vet ingen hvor graven til Moses er, og han nevnes bare én gang i påskefortellingen. Hva kan det si oss om hvordan jødedommen ser på ham?",
+                    "Hva er forskjellen på hva tradisjonen forteller om Abraham, og hva historikere mener de kan vite? Hvorfor er det viktig å holde de to fra hverandre?",
+                    "Ortodokse og reformjøder ser ulikt på om Toraen kan leses som historie. Hvordan kan to grupper i samme religion lande så ulikt?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva Mishna og Talmud er, og lag en enkel oversikt over hvordan tekstene henger sammen med Toraen.",
+                    "Sammenlign svaret fra jødedommen med svaret fra en annen religion i sammenligningsemnet. Hvem er stifteren der, og hvilken rolle får han?",
+                    "Diskuter i klassen: Blir en religion sterkere eller svakere av å ikke ha én person i sentrum?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er en pakt slik ordet brukes i jødedommen?",
+                        "options": [
+                            "En bok med lover skrevet av rabbinerne",
+                            "En høytidelig avtale med plikter og rettigheter, her mellom Gud og folket",
+                            "En årlig fest til minne om Abraham",
+                            "Et løfte en enkeltperson gir ved bar mitsva"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "En pakt er en høytidelig avtale med plikter og rettigheter på begge sider. I jødedommen går pakten mellom Gud og det jødiske folket, og den føres tilbake til både Abraham og Moses."
+                    },
+                    {
+                        "question": "Hva betyr navnet Moshe rabbenu?",
+                        "options": [
+                            "Moses vår konge",
+                            "Moses vår frelser",
+                            "Moses vår lærer",
+                            "Moses den hellige"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Jøder omtaler Moses som Moshe rabbenu, Moses vår lærer. Han blir æret som lovgiver og frigjører, men ikke tilbedt."
+                    },
+                    {
+                        "question": "Hva sier bibelteksten om graven til Moses?",
+                        "options": [
+                            "At den ligger i Makpelahulen i Hebron",
+                            "At ingen vet hvor den er",
+                            "At den ble flyttet til Jerusalem",
+                            "At den er merket med tolv steiner"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Ifølge bibeltekstene døde Moses på Nebofjellet i Moab og ble gravlagt i dalen nedenfor, men teksten sier at ingen den dag i dag vet hvor graven er."
+                    },
+                    {
+                        "question": "Hva mener de fleste akademiske bibelforskere i dag om Abraham?",
+                        "options": [
+                            "At han levde rundt år 70 evt.",
+                            "At han sikkert var en historisk person som levde i Egypt",
+                            "At han skrev de fem Mosebøkene",
+                            "At svært få av dem vil hevde at han var en historisk person"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Svært få jødiske eller kristne akademiske bibelforskere vil i dag hevde at Abraham var en historisk person. Mange ser ham som en litterær skikkelse, mens andre mener fortellingene har en historisk kjerne."
+                    },
+                    {
+                        "question": "Hva skjedde med jødedommen etter at tempelet i Jerusalem ble brent i år 70?",
+                        "options": [
+                            "De lærde, rabbinerne, overtok som ledere og lærere",
+                            "Religionen fikk en ny stifter",
+                            "Toraen ble skrevet for første gang",
+                            "Alle jøder sluttet å feire pesach"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Tempelkulten opphørte og presteskapet mistet mye av sin betydning. Rabbinerne overtok som religiøse ledere og lærere, og utformet regler som kunne følges overalt, uten tempel."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Groth, B. (2026a). *Jødedom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+                    "Groth, B. (2026b). *Moses*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Moses](https://snl.no/Moses)",
+                    "Groth, B. (2026c). *Toraen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Toraen](https://snl.no/Toraen)",
+                    "Groth, B., Barstad, H. M. & Skatvik, F. (2026). *Abraham*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Abraham](https://snl.no/Abraham)",
+                    "Store norske leksikon. (2025). *Pakt*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/pakt](https://snl.no/pakt)",
+                    "Sefaria. (u.å.). *Femte Mosebok 34*. Sefaria. Hentet 11.08.2026 fra [sefaria.org/Deuteronomy.34](https://www.sefaria.org/Deuteronomy.34)",
+                    "Weinstein, A. (u.å.). *Where Was Moses?*. My Jewish Learning. Hentet 11.08.2026 fra [myjewishlearning.com](https://www.myjewishlearning.com/article/where-was-moses/)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Jeg vil gjøre deg til et stort folk. Jeg vil velsigne deg og gjøre navnet ditt stort.",
-        "source": "Toraen",
-        "reference": "1. Mosebok 12:2"
-    }
+    "timeline": []
 }

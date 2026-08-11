@@ -545,55 +545,55 @@
       "entries": [
         {
           "religion": "bahai",
-          "title": "Bahá'u'lláh",
+          "title": "Porten og herligheten",
           "file": "content/krle/religion/bahai/grunnleggere/artikkel.json",
           "link": "/krle/religion/bahai/grunnleggere"
         },
         {
           "religion": "buddhisme",
-          "title": "Siddhartha Gautama (Buddha)",
+          "title": "Mannen som våknet",
           "file": "content/krle/religion/buddhisme/grunnleggere/artikkel.json",
           "link": "/krle/religion/buddhisme/grunnleggere"
         },
         {
           "religion": "hinduisme",
-          "title": "Ingen enkelt grunnlegger",
+          "title": "Religionen ingen fant opp",
           "file": "content/krle/religion/hinduisme/grunnleggere/artikkel.json",
           "link": "/krle/religion/hinduisme/grunnleggere"
         },
         {
           "religion": "islam",
-          "title": "Profeten Muhammad",
+          "title": "Profeten som ikke skal tilbes",
           "file": "content/krle/religion/islam/grunnleggere/artikkel.json",
           "link": "/krle/religion/islam/grunnleggere"
         },
         {
           "religion": "jehovas-vitner",
-          "title": "Charles Taze Russell",
+          "title": "Grunnleggeren som ikke ville være grunnlegger",
           "file": "content/krle/religion/jehovas-vitner/grunnleggere/artikkel.json",
           "link": "/krle/religion/jehovas-vitner/grunnleggere"
         },
         {
           "religion": "jodedom",
-          "title": "Abraham og Moses",
+          "title": "Ingen stifter, men en pakt",
           "file": "content/krle/religion/jodedom/grunnleggere/artikkel.json",
           "link": "/krle/religion/jodedom/grunnleggere"
         },
         {
           "religion": "kristendom",
-          "title": "Jesus Kristus",
+          "title": "Mannen som ikke grunnla en religion",
           "file": "content/krle/religion/kristendom/grunnleggere/artikkel.json",
           "link": "/krle/religion/kristendom/grunnleggere"
         },
         {
           "religion": "mormonisme",
-          "title": "Joseph Smith",
+          "title": "Profeten som elleve menn gikk god for",
           "file": "content/krle/religion/mormonisme/grunnleggere/artikkel.json",
           "link": "/krle/religion/mormonisme/grunnleggere"
         },
         {
           "religion": "sikhisme",
-          "title": "Guruene – sikhismens læremestre",
+          "title": "Da guruen ble en bok",
           "file": "content/krle/religion/sikhisme/grunnleggere/artikkel.json",
           "link": "/krle/religion/sikhisme/grunnleggere"
         }
@@ -1005,7 +1005,7 @@
     },
     {
       "religion": "bahai",
-      "title": "Bahá'u'lláh",
+      "title": "Porten og herligheten",
       "link": "/krle/religion/bahai/grunnleggere",
       "dimension": "narrative",
       "tags": [
@@ -1096,7 +1096,7 @@
     },
     {
       "religion": "buddhisme",
-      "title": "Siddhartha Gautama (Buddha)",
+      "title": "Mannen som våknet",
       "link": "/krle/religion/buddhisme/grunnleggere",
       "dimension": "narrative",
       "tags": [
@@ -1177,7 +1177,7 @@
     },
     {
       "religion": "hinduisme",
-      "title": "Ingen enkelt grunnlegger",
+      "title": "Religionen ingen fant opp",
       "link": "/krle/religion/hinduisme/grunnleggere",
       "dimension": "narrative",
       "tags": [
@@ -1259,7 +1259,7 @@
     },
     {
       "religion": "islam",
-      "title": "Profeten Muhammad",
+      "title": "Profeten som ikke skal tilbes",
       "link": "/krle/religion/islam/grunnleggere",
       "dimension": "narrative",
       "tags": [
@@ -1350,7 +1350,7 @@
     },
     {
       "religion": "jehovas-vitner",
-      "title": "Charles Taze Russell",
+      "title": "Grunnleggeren som ikke ville være grunnlegger",
       "link": "/krle/religion/jehovas-vitner/grunnleggere",
       "dimension": "narrative",
       "tags": [
@@ -1431,7 +1431,7 @@
     },
     {
       "religion": "jodedom",
-      "title": "Abraham og Moses",
+      "title": "Ingen stifter, men en pakt",
       "link": "/krle/religion/jodedom/grunnleggere",
       "dimension": "narrative",
       "tags": [
@@ -1512,7 +1512,7 @@
     },
     {
       "religion": "kristendom",
-      "title": "Jesus Kristus",
+      "title": "Mannen som ikke grunnla en religion",
       "link": "/krle/religion/kristendom/grunnleggere",
       "dimension": "narrative",
       "tags": [
@@ -1602,7 +1602,7 @@
     },
     {
       "religion": "mormonisme",
-      "title": "Joseph Smith",
+      "title": "Profeten som elleve menn gikk god for",
       "link": "/krle/religion/mormonisme/grunnleggere",
       "dimension": "narrative",
       "tags": [
@@ -1684,9 +1684,9 @@
     },
     {
       "religion": "sikhisme",
-      "title": "Guruene – sikhismens læremestre",
+      "title": "Da guruen ble en bok",
       "link": "/krle/religion/sikhisme/grunnleggere",
-      "dimension": null,
+      "dimension": "narrative",
       "tags": [
         "grunnleggere"
       ]

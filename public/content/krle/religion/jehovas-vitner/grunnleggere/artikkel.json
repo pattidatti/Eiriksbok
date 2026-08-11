@@ -1,6 +1,7 @@
 {
     "id": "grunnleggere",
-    "title": "Charles Taze Russell",
+    "title": "Grunnleggeren som ikke ville være grunnlegger",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "jehovas-vitner",
@@ -9,83 +10,251 @@
         "grunnleggere",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Bibelstudentene"
-        },
-        {
-            "type": "text",
-            "content": "På 1870-tallet startet Charles Taze Russell en bibelstudiegruppe i USA. De kalte seg Bibelstudentene. De ville finne tilbake til den opprinnelige kristendommen."
-        },
-        {
-            "type": "header",
-            "text": "Vakttårnet"
-        },
-        {
-            "type": "text",
-            "content": "Russell begynte å utgi bladet Vakttårnet i 1879 for å spre bibelske sannheter."
-        },
-        {
-            "type": "header",
-            "text": "Navnet"
-        },
-        {
-            "type": "text",
-            "content": "Navnet Jehovas vitner ble tatt i bruk i 1931 for å skille dem fra andre kristne grupper og vise at de vitner om Jehova."
-        }
+    "category": "Jehovas vitner",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jehovas vitner sier selv at Charles Taze Russell ikke grunnla en ny religion. De peker på Jesus som grunnleggeren.",
+        "Historikere regner bevegelsen som stiftet i USA på 1870-tallet, da Russell startet bibelstudiegrupper.",
+        "Russell ga ut bladet Vakttårnet fra 1879 og regnet ut årstall for endetiden, blant annet 1914.",
+        "Joseph F. Rutherford ga 1914 en ny forklaring og fikk vedtatt navnet Jehovas vitner i 1931.",
+        "I dag bestemmes læren av Det styrende råd i USA, ikke av en ny grunnlegger."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
-        {
-            "id": "charles-taze-russell",
-            "term": "Charles Taze Russell",
-            "definition": "Grunnleggeren av bevegelsen som ble til Jehovas vitner."
-        },
         {
             "id": "bibelstudentene",
             "term": "Bibelstudentene",
-            "definition": "Det opprinnelige navnet på gruppen."
+            "definition": "Navnet på bevegelsen fra rundt 1870 til 1931, før den ble hetende Jehovas vitner."
         },
         {
-            "id": "forkynnelse",
-            "term": "Forkynnelse",
-            "definition": "Å gå ut og fortelle andre om Guds rike."
+            "id": "vakttarnet",
+            "term": "Vakttårnet",
+            "definition": "Bladet Charles Taze Russell begynte å gi ut i 1879. Det legger fram bevegelsens tolkninger av Bibelen."
+        },
+        {
+            "id": "endetiden",
+            "term": "Endetiden",
+            "definition": "Navnet på tiden rett før Gud etter troen griper inn og gjør slutt på verden slik den er nå."
+        },
+        {
+            "id": "harmageddon",
+            "term": "Harmageddon",
+            "definition": "Navnet på det avgjørende oppgjøret mellom Gud og det onde som Jehovas vitner venter på."
+        },
+        {
+            "id": "det-styrende-rad",
+            "term": "Det styrende råd",
+            "definition": "Gruppen menn i USA som bestemmer hva Jehovas vitner skal lære. Nye medlemmer kommer inn ved invitasjon."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvem startet bevegelsen?",
-            "options": [
-                "Joseph Smith",
-                "Charles Taze Russell",
-                "Martin Luther"
-            ],
-            "answer": "Charles Taze Russell"
+            "type": "text",
+            "content": "Spør et Jehovas vitne hvem som grunnla religionen deres, og svaret blir sjelden det du venter. Du får ikke navnet Charles Taze Russell. Du får Jesus. På sine egne nettsider skriver Jehovas vitner rett ut at Russell ikke var grunnleggeren av en ny religion, og at det er Jesus Kristus de regner som grunnleggeren av organisasjonen sin (Jehovas vitner, u.å.-a)."
         },
         {
-            "question": "Hva het gruppen først?",
-            "options": [
-                "Mormonere",
-                "Bibelstudentene",
-                "Guds barn"
-            ],
-            "answer": "Bibelstudentene"
+            "type": "text",
+            "content": "Historikere beskriver det annerledes. Store norske leksikon regner Jehovas vitner som et trossamfunn som oppsto i USA på 1870-tallet, da Russell (1852-1916) startet bibelstudiegrupper (Ringnes mfl., 2026). Et trossamfunn er en organisert gruppe mennesker som deler samme tro. Bevegelsen het den gangen Bibelstudentene, og den ble stiftet av predikanten Russell sammen med filantropen William Henry Conley (1840-1897) (Sommerfelt & Langhelle, 2026). En predikant er en som holder religiøse taler, og en filantrop er en som gir bort penger til gode formål. Avstanden mellom disse to fortellingene er kjernen i denne artikkelen."
         },
         {
-            "question": "Når fikk de navnet Jehovas vitner?",
-            "options": [
-                "1879",
-                "1931",
-                "2000"
-            ],
-            "answer": "1931"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Gammelt trykkeri med stabler av ferdigtrykte blader",
+            "caption": "Fra 1879 ga Russell ut bladet Vakttårnet. Trykte ord ble bevegelsens viktigste redskap."
+        },
+        {
+            "type": "text",
+            "content": "Den første gruppen av Russells bibelstudenter møttes i Pittsburgh i Pennsylvania i 1870 (Sommerfelt & Langhelle, 2026). Fra 1879 ga Russell ut bladet Vakttårnet, der bevegelsens tolkninger og profetier ble lagt fram (Ringnes mfl., 2026). En profeti er en forutsigelse om hva som kommer til å skje. Han skrev også bokserien Millenniets Daggry, som kom ut mellom 1886 og 1904 (Sommerfelt & Langhelle, 2026). Han var altså redaktør, foredragsholder og forfatter. Hvilke tekster bevegelsen bruker i dag, kan du lese om i artikkelen om [hellige tekster](/krle/religion/jehovas-vitner/hellige-tekster)."
+        },
+        {
+            "type": "header",
+            "text": "Tittelen han aldri fikk"
+        },
+        {
+            "type": "text",
+            "content": "Men Russell fikk aldri en tittel som profeten eller kirkens far. Jehovas vitner vil ikke bruke ordet leder om ham, fordi de mener at bare Kristus skal lede de kristne. I stedet skriver bladene deres at enkelte menn tar ledelsen (Ringnes mfl., 2026). Russell blir husket som den første redaktøren av Vakttårnet og som en som ledet bibelundervisningen i sin tid (Jehovas vitner, u.å.-a). Under kan du selv fordele æren for det som skjedde."
+        },
+        {
+            "type": "component",
+            "name": "GrunnleggerenSomIkkeVil",
+            "props": {
+                "title": "Hvem får æren?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hvor to av kortene havnet. Jehovas vitner gir grunnleggerrollen til en person som levde over 1800 år før bevegelsen fantes. Det er ikke en liten detalj. Det er hele selvbildet deres: de mener at de følger mønsteret fra den kristne menigheten i det første århundret, og at de derfor henter fram igjen noe gammelt i stedet for å lage noe nytt (Jehovas vitner, u.å.-a). Hvordan de ser på Gud og Jesus, kan du lese mer om i artikkelen om [gudsbildet](/krle/religion/jehovas-vitner/gudsbilde)."
+        },
+        {
+            "type": "header",
+            "text": "Året som måtte forklares på nytt"
+        },
+        {
+            "type": "text",
+            "content": "Russell brukte tidsangivelser i Bibelen til å regne seg fram til bestemte hendelser i endetiden. Endetiden er navnet på tiden rett før Gud etter troen griper inn og gjør slutt på verden slik den er nå. Han lærte at endetiden hadde begynt i 1799, at Jesus var usynlig til stede fra 1874, at Jesus ble konge i himmelen i 1878, og at Harmageddon på en måte allerede var i gang og ville ende i året 1914 (Ringnes mfl., 2026). Harmageddon er navnet på det avgjørende oppgjøret mellom Gud og det onde som bevegelsen venter på. Ifølge Russells skrifter skulle 1914 ende i en verdenskrig og deretter et inngrep fra Gud (Sommerfelt & Langhelle, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Årstall som ble regnet ut på nytt",
+                "items": [
+                    {
+                        "label": "1874 og 1878",
+                        "value": "Russell lærte at Jesus var usynlig til stede fra 1874 og ble konge i himmelen i 1878. Begge årstallene ble senere lagt bort."
+                    },
+                    {
+                        "label": "1914",
+                        "value": "Skulle avslutte Harmageddon. I dag lærer Jehovas vitner i stedet at det var da Jesus ble konge i himmelen og endetiden begynte."
+                    },
+                    {
+                        "label": "1925",
+                        "value": "Rutherford lærte at bibelske skikkelser skulle stå opp fra de døde og styre jorden. Læren ble droppet da året gikk."
+                    },
+                    {
+                        "label": "1975",
+                        "value": "Fra 1966 ble året løftet fram fordi bevegelsen regnet det som 6000 år etter at Adam ble skapt. Medlemstallet steg, og falt en periode etterpå."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "text",
+            "content": "Første verdenskrig brøt ut i 1914, men verden gikk ikke under. Russell døde i 1916, og Joseph Franklin Rutherford (1869-1942) overtok året etter. Han bygde om hele forklaringen på endetiden. De gamle årstallene ble lagt bort, og 1914 ble i stedet forklart som året da Jesus etter bevegelsens lære ble konge i himmelen og endetiden begynte (Ringnes mfl., 2026). I dag begrunner Jehovas vitner 1914 med en profeti i Daniels bok, der sju tider blir tolket som 2520 år som ender i oktober 1914 (Jehovas vitner, u.å.-c)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Enkel møtesal med stolrader og talerstol foran",
+            "caption": "Møtelokalene til Jehovas vitner kalles Rikets sal. De har ingen religiøs utsmykning bortsett fra et bibelsitat som byttes ut hvert år."
+        },
+        {
+            "type": "header",
+            "text": "Når årstallene ikke slår til"
+        },
+        {
+            "type": "text",
+            "content": "Det samme mønsteret gjentok seg. Rutherford pekte ut 1925 som året da bibelske skikkelser som Abraham skulle stå opp fra de døde og styre jorden, med slagordet om at millioner som nå lever, aldri skal dø. Da året passerte, ble læren droppet (Ringnes mfl., 2026). Fra 1966 ble 1975 løftet fram, fordi bevegelsen regnet det året som nøyaktig 6000 år etter at Adam ble skapt. Medlemstallet steg raskt, og falt en periode etter at året var over (Ringnes mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Hvordan forklarer bevegelsen selv slike endringer? Jehovas vitner sier at Bibelen alltid har vært den eneste autoriteten deres, og at de justerer troen når forståelsen av Bibelen blir klarere (Jehovas vitner, u.å.-b). De viser til Ordspråkene 4:18, der lyset blir sterkere og sterkere til det er full dag, og de peker på at også Moses og apostlene tok feil om Guds planer før Gud rettet dem opp. De understreker at de ikke skjuler endringene, men skriver dem ned og utgir dem (Jehovas vitner, u.å.-b)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To personer med blader utenfor en inngangsdør",
+            "caption": "Den første norske forsamlingen ble organisert i Skiensområdet i 1900, og i 1904 kom det et kontor i Kristiania."
+        },
+        {
+            "type": "header",
+            "text": "Hvem bestemmer nå?"
+        },
+        {
+            "type": "text",
+            "content": "Etter Russell kom det ingen ny grunnlegger. Læren blir i dag bestemt av Det styrende råd, en gruppe menn i USA. Rådet har hatt mellom sju og atten medlemmer, og nye kommer bare inn ved invitasjon fra dem som allerede sitter der (Ringnes mfl., 2026). Rådet forstår seg selv som den trofaste og kloke slaven i Matteus 24,45, altså tjeneren som i lignelsen får i oppgave av Jesus å dele ut åndelig mat. Maten er blader, bøker og undervisning. Rutherford la resten av systemet på plass: fra 1938 utnevnte ledelsen i USA de lokale lederne, og hvert medlem skulle forkynne, altså spre budskapet, fra dør til dør (Ringnes mfl., 2026). Mer om hvordan bevegelsen er bygd opp, finner du i artikkelen om [sentrale trekk](/krle/religion/jehovas-vitner/sentrale-trekk). Ikke alle ble med på denne veien. Det finnes fortsatt mindre grupper av bibelstudenter i noen land som holder fast på Russells bibelforståelse, men som tar avstand fra Rutherfords bøker og fra Jehovas vitner (Sommerfelt & Langhelle, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem var Charles Taze Russell, og hva gjorde han på 1870-tallet?",
+                    "Hva het bevegelsen før 1931, og hvem fikk vedtatt navnet Jehovas vitner?",
+                    "Hva mente Russell skulle skje i 1914, og hva ble den nye forklaringen etterpå?",
+                    "Hva er Det styrende råd, og hvordan kommer nye medlemmer inn i det?"
+                ],
+                "reflekter": [
+                    "Jehovas vitner sier at Jesus er grunnleggeren deres, mens historikere peker på Russell. Forklar med egne ord hvorfor de to svarene er så forskjellige.",
+                    "Bevegelsen vil ikke kalle Russell leder. Hva sier det valget om hvilken rolle de gir ham i dag?",
+                    "Jehovas vitner sier at de justerer troen når forståelsen av Bibelen blir klarere. Hvorfor tror du det er viktig for dem å forklare endringene på den måten?",
+                    "Noen bibelstudenter holdt fast på Russell og tok avstand fra Rutherford. Hva forteller det om hva som skjer med en bevegelse når grunnleggeren dør?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hvordan en annen religion i sammenligningsemnet beskriver rollen til stifteren sin, og skriv en kort tekst om hva som er den største forskjellen fra Jehovas vitner.",
+                    "Undersøk hvordan trossamfunn blir registrert i Norge, og diskuter i klassen om det gir mening å si at en bevegelse ikke har en grunnlegger.",
+                    "Lag en tidslinje over Bibelstudentene i Norge fra 1900 til 1931, og bruk artikkelen om Bibelstudentene i Store norske leksikon som kilde."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvem sier Jehovas vitner selv at grunnleggeren av bevegelsen deres er?",
+                        "options": [
+                            "Charles Taze Russell",
+                            "Joseph F. Rutherford",
+                            "Jesus Kristus",
+                            "William Henry Conley"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "På sine egne nettsider skriver Jehovas vitner at Russell ikke grunnla en ny religion. De regner Jesus Kristus som grunnleggeren av organisasjonen sin."
+                    },
+                    {
+                        "question": "Hva het bevegelsen før 1931?",
+                        "options": [
+                            "Bibelstudentene",
+                            "Adventistene",
+                            "Vakttårnet",
+                            "Millennistene"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Navnet Bibelstudentene ble brukt fra rundt 1870 til 1931. Det var under Joseph F. Rutherford at bevegelsen tok navnet Jehovas vitner."
+                    },
+                    {
+                        "question": "Hva lærte Russell om året 1914?",
+                        "options": [
+                            "At Jesus skulle bli født på nytt",
+                            "At Harmageddon skulle ende det året",
+                            "At bevegelsen skulle skifte navn",
+                            "At bibelstudentene skulle flytte til USA"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Russell lærte at Harmageddon allerede var i gang og ville ende i 1914. Etter at året gikk uten at verden gikk under, ga Rutherford 1914 en ny forklaring."
+                    },
+                    {
+                        "question": "Hvordan forklarer Jehovas vitner selv at læren har blitt endret?",
+                        "options": [
+                            "De sier at endringene er hemmelige",
+                            "De sier at Russell tok feil med vilje",
+                            "De sier at nye ledere alltid får bestemme fritt",
+                            "De sier at de justerer troen når forståelsen av Bibelen blir klarere"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Jehovas vitner viser til Ordspråkene 4:18 om lys som blir sterkere, og sier at de skriver ned og utgir endringene i stedet for å skjule dem."
+                    },
+                    {
+                        "question": "Hvem bestemmer læren til Jehovas vitner i dag?",
+                        "options": [
+                            "En valgt president i hvert land",
+                            "Hver enkelt menighet for seg",
+                            "Det styrende råd, en gruppe menn i USA",
+                            "Etterkommere av Charles Taze Russell"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Det styrende råd har hatt mellom sju og atten medlemmer. Nye kommer bare inn ved invitasjon fra dem som allerede sitter i rådet."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Sommerfelt, R. & Langhelle, S. I. (2026). *Bibelstudentene*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Bibelstudentene](https://snl.no/Bibelstudentene)",
+                    "Jehovas vitner. (u.å.-a). *Who Founded Jehovah's Witnesses?* Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/founder/)",
+                    "Jehovas vitner. (u.å.-b). *Why Have Jehovah's Witnesses Changed Some of Their Beliefs?* Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/jw-doctrine-changes/)",
+                    "Jehovas vitner. (u.å.-c). *What Do Daniel 4 and Bible Chronology Indicate About 1914?* Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/bible-teachings/questions/daniel-4-bible-chronology-1914/)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Dere er mine vitner, sier Jehova.",
-        "source": "Ny verden-oversettelsen",
-        "reference": "Jesaja 43:10"
-    }
+    "timeline": []
 }

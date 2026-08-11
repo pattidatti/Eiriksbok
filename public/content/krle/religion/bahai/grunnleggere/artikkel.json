@@ -1,6 +1,7 @@
 {
     "id": "grunnleggere",
-    "title": "Bahá'u'lláh",
+    "title": "Porten og herligheten",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "bahai",
@@ -9,83 +10,240 @@
         "grunnleggere",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Guds herlighet"
-        },
-        {
-            "type": "text",
-            "content": "Bahá'u'lláh (1817–1892) er grunnleggeren av bahá'í-troen. Navnet betyr 'Guds herlighet'. Han ble født i Persia (Iran)."
-        },
-        {
-            "type": "header",
-            "text": "Forfølgelse og eksil"
-        },
-        {
-            "type": "text",
-            "content": "Fordi han forkynte en ny religion, ble han fengslet og landsforvist. Han tilbrakte 40 år i fengsel og eksil, til slutt i Akka i dagens Israel."
-        },
-        {
-            "type": "header",
-            "text": "Budskapet"
-        },
-        {
-            "type": "text",
-            "content": "Bahá'u'lláh lærte at tiden er inne for at hele menneskeheten skal forenes i ett verdenssamfunn med fred og rettferdighet."
-        }
+    "category": "Bahá'í",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Bahá'í har to grunnleggere, og den første kunngjorde den andre.",
+        "Báb erklærte seg i Shiraz om kvelden 22. mai 1844 og ble henrettet i Tabriz i 1850.",
+        "Bahá'u'lláh sto fram i 1863 som den Báb hadde varslet om, og tilbrakte rundt 40 år i fengsel og eksil.",
+        "Bahá'ier regner begge som Guds sendebud, på linje med blant andre Moses, Jesus og Muhammad.",
+        "Sønnen 'Abdu'l-Bahá overtok ledelsen i 1892, men regnes ikke som et nytt sendebud."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "bahaullah",
             "term": "Bahá'u'lláh",
-            "definition": "Grunnleggeren av bahá'í-troen. Betyr 'Guds herlighet'."
+            "definition": "Tittelen til Mirza Husayn-Ali Núri (1817-1892), grunnleggeren av bahá'í-troen. Navnet betyr Guds herlighet."
         },
         {
             "id": "bab",
             "term": "Báb",
-            "definition": "Forløperen til Bahá'u'lláh. Betyr 'Porten'."
+            "definition": "Tittelen til Ali Muhammad (1819-1850). Báb er arabisk og betyr port. Han varslet om et større sendebud som skulle komme etter ham."
         },
         {
             "id": "abdul-baha",
             "term": "'Abdu'l-Bahá",
-            "definition": "Bahá'u'lláhs sønn og etterfølger."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva betyr navnet Bahá'u'lláh?",
-            "options": [
-                "Guds lys",
-                "Guds herlighet",
-                "Guds tjener"
-            ],
-            "answer": "Guds herlighet"
+            "definition": "Bahá'u'lláhs eldste sønn (1844-1921). Faren pekte ham ut som den som hadde rett til å forklare skriftene, og som leder for troen."
         },
         {
-            "question": "Hvor kom Bahá'u'lláh fra?",
-            "options": [
-                "Norge",
-                "USA",
-                "Persia (Iran)"
-            ],
-            "answer": "Persia (Iran)"
+            "id": "guds-sendebud",
+            "term": "Guds sendebud",
+            "definition": "I bahá'í: en budbringer Gud sender til menneskene. Bahá'ier regner blant andre Abraham, Krishna, Buddha, Moses, Jesus, Muhammad, Báb og Bahá'u'lláh som sendebud."
         },
         {
-            "question": "Hva var Bahá'u'lláhs hovedbudskap?",
-            "options": [
-                "Krig mot vantro",
-                "Menneskehetens enhet og fred",
-                "At man skal bo i skogen"
-            ],
-            "answer": "Menneskehetens enhet og fred"
+            "id": "ridvan",
+            "term": "Ridván",
+            "definition": "Bahá'í-høytiden i april og mai. Den markerer at Bahá'u'lláh i 1863 sto fram som den Báb hadde varslet om."
         }
     ],
-    "quote": {
-        "text": "Jorden er kun ett land, og menneskeheten dets innbyggere.",
-        "source": "Bahá'u'lláh",
-        "reference": "Tavler"
-    }
+    "content": [
+        {
+            "type": "text",
+            "content": "Om kvelden 22. mai 1844 sto en ung mann fram i den persiske byen Shiraz og sa noe uvanlig. Han het Ali Muhammad, og han erklærte at han var Báb (Bahá'í International Community, u.å.-b). Báb er arabisk og betyr port eller dør (Store norske leksikon, 2026). Han sa altså at han var porten inn til sannheten. Men han sa også noe enda mer uvanlig: han var ikke den viktigste. Etter ham skulle det komme en som Gud ville gjøre kjent (Bahá'í International Community, u.å.-b). Bahá'ier markerer dagen som 23. mai, fordi døgnet i bahá'í-kalenderen begynner ved solnedgang."
+        },
+        {
+            "type": "text",
+            "content": "Báb virket i seks år, og han fikk raskt mange tilhengere. Han kritiserte de religiøse lederne i landet og tolket Koranen på nye måter (Jansen & Vogt, 2025). Myndighetene så bevegelsen som farlig. I 1850 ble han henrettet i byen Tabriz (Bahá'í International Community, u.å.-b). Da var han rundt 30 år gammel, og løftet han hadde gitt, var fortsatt ikke oppfylt."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Smal gate med hvitkalkede murhus i gammel persisk by",
+            "caption": "Báb sto fram i Shiraz i Sør-Persia, i det som i dag er Iran."
+        },
+        {
+            "type": "text",
+            "content": "Her ligger det som gjør bahá'í spesiell blant verdensreligionene. De fleste religioner har én grunnlegger. Bahá'í har to, og den første kunngjorde den andre. Mannen som senere sto fram som den Báb hadde varslet om, het Mirza Husayn-Ali Núri. Han ble født i Teheran 12. november 1817 og tok tittelen Bahá'u'lláh, som betyr Guds herlighet (Bahá'í International Community, u.å.-a; Vogt & Winje, 2026). Han hadde selv vært en av Bábs tilhengere. Han var ikke alene om å hevde at han var den lovede: etter Bábs død var det flere som mente seg utpekt, men Bahá'u'lláh samlet de fleste bak seg (Vogt & Winje, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Hva er et sendebud?"
+        },
+        {
+            "type": "text",
+            "content": "For å skjønne rollen de to har, må du kjenne én tanke. Bahá'ier tror at det bare finnes én Gud, og at Gud er for stor til at mennesker kan forstå ham helt. Derfor sender Gud budbringere, mener de. Bahá'ier kaller dem Guds sendebud, eller manifestasjoner, altså noen som gjør Gud synlig for menneskene (Vogt & Winje, 2026). På listen står blant andre Abraham, Krishna, Zarathustra, Moses, Buddha, Jesus, Muhammad, Báb og Bahá'u'lláh (Bahá'í International Community, u.å.-d). Et sendebud er verken Gud selv eller en helt vanlig lærer. Slik bahá'ier ser det, kommer sendebudene etter tur gjennom historien, og hver av dem gir det samme budskapet på en måte som passer tiden og kulturen de kommer til (Vogt & Winje, 2026). Mer om denne tanken finner du i artikkelen om [gudsbildet i bahá'í](/krle/religion/bahai/gudsbilde)."
+        },
+        {
+            "type": "component",
+            "name": "ToSomHengerSammen",
+            "props": {
+                "title": "Hvem har hvilken rolle?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som skjedde da alle kortene lå på plass. To av de tre fikk samme merkelapp. Báb og Bahá'u'lláh regnes begge som Guds sendebud. Sønnen 'Abdu'l-Bahá gjør det ikke, selv om han betyr svært mye for troen. Vi kommer tilbake til ham."
+        },
+        {
+            "type": "header",
+            "text": "Førti år i fengsel og eksil"
+        },
+        {
+            "type": "text",
+            "content": "I 1852 ble Bahá'u'lláh kastet i et fangehull under bakken i Teheran, kjent som Det svarte hullet. Bahá'ier forteller at det var der han fikk sin første åpenbaring (Bahá'í International Community, u.å.-a). Året etter ble han sendt i eksil, det vil si tvunget til å bo utenfor hjemlandet, og havnet i Bagdad. I april 1863, i en hage utenfor byen, samlet han følget sitt og sa at han var den Báb hadde varslet om (Bahá'í International Community, u.å.-a). Hagen ble kalt Ridván, og høytiden bahá'ier feirer i april og mai, er minnet om nettopp dette (Vogt & Winje, 2026). Reisen stanset ikke der. Han ble sendt videre til Konstantinopel, så til Adrianopel, og 31. august 1868 kom han til fangebyen Akko ved Middelhavet (Bahá'í International Community, u.å.-a). Til sammen tilbrakte han rundt 40 år i fengsel og landsflukt. Gjennom alle disse årene skrev han bøker, bønner og brev, blant annet brev til datidens konger og herskere (Bahá'í International Community, u.å.-a)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Jorden er bare ett land, og menneskene er innbyggerne i det.",
+                "author": "Bahá'u'lláh, Lawh-i-Maqsúd, i norsk oversettelse"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Setningen over er blant de mest kjente han skrev (Bahá'í International Community, u.å.-g). Den viser hovedbudskapet: menneskeheten er én. Bahá'u'lláh lærte at religionene i bunn og grunn peker mot de samme evige sannhetene, og at tiden nå er inne for at hele menneskeheten skal samles i ett fellesskap (Vogt & Winje, 2026). Skriftene hans kalles tavler, og de er grunnlaget for troen. Bahá'ier regner også hellige skrifter fra andre religioner som verdifulle (Vogt & Winje, 2026). Du kan lese mer om dem i artikkelen om [hellige tekster i bahá'í](/krle/religion/bahai/hellige-tekster)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Terrassehager i trapper opp en grønn fjellside mot havet",
+            "caption": "Verdenssenteret for bahá'í ligger på Karmelfjellet i Haifa i Israel."
+        },
+        {
+            "type": "header",
+            "text": "Hva skjer når grunnleggeren dør?"
+        },
+        {
+            "type": "text",
+            "content": "Bahá'u'lláh døde 29. mai 1892 i Bahji, like ved Akko (Bahá'í International Community, u.å.-a). I mange religioner har akkurat et slikt øyeblikk ført til strid om hvem som skal overta. Bahá'u'lláh hadde forsøkt å hindre det. I testamentet sitt pekte han ut sin eldste sønn, 'Abdu'l-Bahá (1844-1921), som den som hadde rett til å forklare skriftene, og som leder for troen (Bahá'í International Community, u.å.-c; Bahá'í International Community, u.å.-e). Bahá'ier kaller denne linjen for pakten. Men 'Abdu'l-Bahá var ikke et nytt sendebud. Rollen hans var en annen: han skulle vise hva læren så ut som når den ble levd. Bahá'ier kaller ham det fullkomne forbildet (Bahá'í International Community, u.å.-c). Etter at han slapp ut av fangenskapet, reiste han til Egypt, Europa og Nord-Amerika og talte om rettferdighet og fred (Bahá'í International Community, u.å.-c)."
+        },
+        {
+            "type": "text",
+            "content": "Pakten fortsatte etter ham. 'Abdu'l-Bahá pekte ut sitt eldste barnebarn, Shoghi Effendi, som ledet troen i 36 år (Bahá'í International Community, u.å.-e). I april 1963 ble Det universelle rettferdighetens hus valgt for første gang. Det er et råd på ni medlemmer som velges av bahá'ier over hele verden, og det holder til på Karmelfjellet i Haifa (Bahá'í International Community, u.å.-f; Vogt & Winje, 2026). Bahá'í har ikke noe presteskap, altså ingen egne prester som leder, og legger relativt lite vekt på felles gudstjeneste (Vogt & Winje, 2026). Det betyr at troen leves nokså ulikt fra sted til sted, og at ingen enkeltperson taler på vegne av alle bahá'ier. Pakten stanset heller ikke all uenighet. Flere ganger har grupper brutt ut fordi de var uenige om hvem som skulle lede (Vogt & Winje, 2026). I dag er det rundt seks millioner bahá'ier i verden, flest i Asia. I Norge er bahá'í et registrert trossamfunn med rundt 1100 medlemmer (2024) (Vogt & Winje, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Rund tempelbygning med en kuppel og ni inngangsdører",
+            "caption": "Kuppelen står for at Gud og menneskeheten hører sammen. De ni dørene står for at alle religioner er veier inn."
+        },
+        {
+            "type": "header",
+            "text": "Rollen som ikke tok slutt"
+        },
+        {
+            "type": "text",
+            "content": "Så hva slags rolle har grunnleggerne i dag? Bahá'u'lláh er ikke først og fremst en historisk person man leser om. Det han skrev, er den øverste autoriteten i troen, og hverdagen til en bahá'i er formet av det: bønnene, høytidene og måten fellesskapet styres på. Báb er heller ikke glemt. Graven hans står på Karmelfjellet i Haifa (Bahá'í International Community, u.å.-b), og graven til Bahá'u'lláh ligger nord for Akko, som regnes som bahá'ienes helligste by (Skatvik & Store norske leksikon, 2026). To menn, to roller, ett budskap. Vil du se hvordan dette henger sammen med resten av troen, kan du lese om [sentrale trekk ved bahá'í](/krle/religion/bahai/sentrale-trekk)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet báb, og hva mente Ali Muhammad da han tok den tittelen?",
+                    "Hva skjedde i Ridván-hagen i 1863, og hvorfor er det viktig for bahá'ier?",
+                    "Forklar med egne ord hva bahá'ier mener med Guds sendebud.",
+                    "Hvilken rolle fikk 'Abdu'l-Bahá etter at faren døde?"
+                ],
+                "reflekter": [
+                    "Bahá'í har to grunnleggere, der den første varslet om den andre. Hvorfor tror du det er uvanlig blant religioner?",
+                    "Bahá'ier regner både Báb og Bahá'u'lláh som sendebud, men ikke 'Abdu'l-Bahá. Hvorfor er det viktig for troen å holde de to rollene fra hverandre?",
+                    "Bahá'u'lláh skrev testamentet sitt for å unngå strid om hvem som skulle overta. Hva sier det om hvilke problemer en ny religion kan møte?",
+                    "Bahá'í har ingen prester. Hvilke fordeler og ulemper kan det gi for et trossamfunn?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign rollen Bahá'u'lláh har i bahá'í med rollen grunnleggeren har i en annen religion i sammenligningsemnet. Skriv fem setninger om det viktigste skillet.",
+                    "Finn ut hvorfor Akko og Haifa i Israel er så viktige for bahá'ier, og lag et kort til klassen med de to stedene på.",
+                    "Undersøk hvordan Det universelle rettferdighetens hus blir valgt, og sammenlign det med hvordan lederne velges i et annet trossamfunn."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr tittelen Báb?",
+                        "options": [
+                            "Lærer",
+                            "Port eller dør",
+                            "Konge",
+                            "Skriver"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Báb er arabisk og betyr port eller dør. Ali Muhammad mente han var porten inn til sannheten, og at et større sendebud skulle komme etter ham."
+                    },
+                    {
+                        "question": "Hva er det spesielle ved bahá'í sammenlignet med de fleste andre religioner?",
+                        "options": [
+                            "Religionen har ingen hellige tekster",
+                            "Grunnleggeren skrev aldri noe selv",
+                            "Religionen har to grunnleggere, der den første kunngjorde den andre",
+                            "Religionen har ingen høytider"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Báb erklærte i 1844 at et større sendebud skulle komme. Bahá'u'lláh sto fram i 1863 som den han hadde varslet om."
+                    },
+                    {
+                        "question": "Hva markerer høytiden Ridván?",
+                        "options": [
+                            "At Báb ble henrettet i Tabriz",
+                            "At Bahá'u'lláh sto fram som Guds sendebud i 1863",
+                            "At Bahá'u'lláh ble født i Teheran",
+                            "At Det universelle rettferdighetens hus ble valgt"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Ridván feires i april og mai og minner om at Bahá'u'lláh i 1863 sa at han var den Báb hadde varslet om."
+                    },
+                    {
+                        "question": "Hvilken rolle har 'Abdu'l-Bahá i bahá'í-troen?",
+                        "options": [
+                            "Han regnes som et nytt sendebud fra Gud",
+                            "Han var faren til Bahá'u'lláh",
+                            "Han grunnla babismen",
+                            "Han var den som hadde rett til å forklare skriftene, og det fullkomne forbildet"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Bahá'u'lláh pekte i testamentet ut sin eldste sønn som leder og som den som fikk forklare skriftene. Han regnes ikke som et sendebud."
+                    },
+                    {
+                        "question": "Hvordan ledes bahá'í-troen i dag?",
+                        "options": [
+                            "Av et råd på ni medlemmer som velges av bahá'ier over hele verden",
+                            "Av en øversteprest i Iran",
+                            "Av en etterkommer av Bahá'u'lláh",
+                            "Av et møte som holdes hvert nittende år"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Det universelle rettferdighetens hus ble valgt første gang i april 1963. Rådet har ni medlemmer og holder til på Karmelfjellet i Haifa. Bahá'í har ikke noe presteskap."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+                    "Jansen, H. L. & Vogt, K. (2025). *Babisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/babisme](https://snl.no/babisme)",
+                    "Store norske leksikon. (2026). *Bab*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bab](https://snl.no/bab)",
+                    "Skatvik, F. & Store norske leksikon. (2026). *Acre - by i Israel*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Acre_-_by_i_Israel](https://snl.no/Acre_-_by_i_Israel)",
+                    "Bahá'í International Community. (u.å.-a). *The Life of Bahá'u'lláh*. Hentet 11.08.2026 fra [bahai.org/bahaullah/life-bahaullah](https://www.bahai.org/bahaullah/life-bahaullah/)",
+                    "Bahá'í International Community. (u.å.-b). *The Life of the Báb*. Hentet 11.08.2026 fra [bahai.org/the-bab/life-the-bab](https://www.bahai.org/the-bab/life-the-bab)",
+                    "Bahá'í International Community. (u.å.-c). *'Abdu'l-Bahá: The Perfect Exemplar*. Hentet 11.08.2026 fra [bahai.org/abdul-baha](https://www.bahai.org/abdul-baha/)",
+                    "Bahá'í International Community. (u.å.-d). *Revelation and the Manifestations of God*. Hentet 11.08.2026 fra [bahai.org/beliefs/god-his-creation/revelation](https://www.bahai.org/beliefs/god-his-creation/revelation/)",
+                    "Bahá'í International Community. (u.å.-e). *Bahá'u'lláh and His Covenant*. Hentet 11.08.2026 fra [bahai.org/beliefs/bahaullah-covenant](https://www.bahai.org/beliefs/bahaullah-covenant)",
+                    "Bahá'í International Community. (u.å.-f). *The Universal House of Justice: A Unique Institution*. Hentet 11.08.2026 fra [bahai.org/the-universal-house-of-justice/unique-institution](https://www.bahai.org/the-universal-house-of-justice/unique-institution)",
+                    "Bahá'í International Community. (u.å.-g). *Quotations from Bahá'u'lláh*. Hentet 11.08.2026 fra [bahai.org/bahaullah/quotations](https://www.bahai.org/bahaullah/quotations)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
 }

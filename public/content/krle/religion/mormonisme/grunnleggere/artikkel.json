@@ -1,6 +1,7 @@
 {
     "id": "grunnleggere",
-    "title": "Joseph Smith",
+    "title": "Profeten som elleve menn gikk god for",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "mormonisme",
@@ -9,83 +10,240 @@
         "grunnleggere",
         "narrative"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Det første synet"
-        },
-        {
-            "type": "text",
-            "content": "I 1820, da Joseph Smith var 14 år, ba han til Gud for å vite hvilken kirke som var sann. Han fortalte at Gud Faderen og Jesus Kristus viste seg for ham og sa at han ikke skulle slutte seg til noen av dem."
-        },
-        {
-            "type": "header",
-            "text": "Gjenopprettelsen"
-        },
-        {
-            "type": "text",
-            "content": "Mormonere tror at den opprinnelige kirken som Jesus grunnla, gikk tapt, og at Gud kalte Joseph Smith til å være profet for å gjenopprette den sanne kirken på jorden."
-        },
-        {
-            "type": "header",
-            "text": "Martyrdød"
-        },
-        {
-            "type": "text",
-            "content": "Joseph Smith fikk mange tilhengere, men også mange fiender. Han ble drept av en mobb i 1844."
-        }
+    "category": "Mormonisme",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Joseph Smith (1805-1844) grunnla Jesu Kristi Kirke av Siste Dagers Hellige, som ble formelt opprettet i 1830.",
+        "Rollen hans er profet, ikke guddom. Den første trosartikkelen bekjenner troen på Gud Faderen, Jesus Kristus og Den hellige ånd.",
+        "Elleve menn skrev under på at de hadde sett gullplatene. Erklæringene deres står fortsatt trykt foran i Mormons bok.",
+        "Flere av vitnene forlot kirken senere, men ingen av dem trakk vitnesbyrdet tilbake.",
+        "Smith ble drept av en bevæpnet folkemengde i fengselet i Carthage 27. juni 1844. Rollen som profet ble videreført av kirkens president."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
-            "id": "joseph-smith",
-            "term": "Joseph Smith",
-            "definition": "Profeten som grunnla mormonkirken i 1830."
+            "id": "profet",
+            "term": "Profet",
+            "definition": "En person som mener å få direkte beskjeder fra en gud, og som andre tror faktisk har en slik forbindelse. Kirken sier selv at en profet er kalt av Gud til å tale for ham."
         },
         {
             "id": "gjenopprettelsen",
             "term": "Gjenopprettelsen",
-            "definition": "At den sanne kirken ble brakt tilbake til jorden."
+            "definition": "Læren om at den kirken Jesus grunnla, gikk tapt, og at Gud opprettet den på nytt i vår tid gjennom Joseph Smith."
         },
         {
-            "id": "profet",
-            "term": "Profet",
-            "definition": "Lederen av kirken kalles profet, seer og åpenbarer."
+            "id": "mormons-bok",
+            "term": "Mormons bok",
+            "definition": "Hellig bok som siste dagers hellige regner som like viktig som Bibelen. Den er oppkalt etter profeten Mormon, som ifølge boken begynte å skrive den."
+        },
+        {
+            "id": "gullplatene",
+            "term": "Gullplatene",
+            "definition": "Platene med en gammel tekst som Joseph Smith sa han gravde opp og oversatte. Ifølge fortellingen ble de tatt fra ham igjen, og ingen kan undersøke dem i dag."
+        },
+        {
+            "id": "vitnesbyrd",
+            "term": "Vitnesbyrd",
+            "definition": "En erklæring om at man selv har sett eller opplevd noe. De elleve vitnenes vitnesbyrd står trykt foran i Mormons bok."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvem viste seg for Joseph Smith i 1820?",
-            "options": [
-                "En engel",
-                "Gud Faderen og Jesus",
-                "Moses"
-            ],
-            "answer": "Gud Faderen og Jesus"
+            "type": "text",
+            "content": "Slå opp en hvilken som helst utgave av Mormons bok. Før første kapittel kommer to korte erklæringer. Under den ene står tre navn. Under den andre står åtte. Til sammen elleve menn som skriver at de har sett noe ingen av oss kan få se i dag: plater av gull med en gammel tekst, som Joseph Smith sa han hadde gravd opp og oversatt. Selve platene er det ingen som kan undersøke. Underskriftene står igjen, trykt i hvert eneste eksemplar."
         },
         {
-            "question": "Hva gjorde Joseph Smith?",
-            "options": [
-                "Oppdaget Amerika",
-                "Gjenopprettet kirken",
-                "Skrev Bibelen"
-            ],
-            "answer": "Gjenopprettet kirken"
+            "type": "text",
+            "content": "Joseph Smith levde fra 1805 til 1844, og han grunnla trossamfunnet Jesu Kristi Kirke av Siste Dagers Hellige, som ble formelt opprettet i 1830. Hovedsetet har ligget i Salt Lake City i delstaten Utah siden 1847. Medlemmene blir ofte kalt mormonere, etter Mormons bok. Kirken vil helst at trossamfunnet omtales med hele navnet sitt, og at medlemmene kalles siste dagers hellige. Mer om bøkene deres finner du i artikkelen om [hellige tekster](/krle/religion/mormonisme/hellige-tekster)."
         },
         {
-            "question": "Hvordan døde Joseph Smith?",
-            "options": [
-                "Av alderdom",
-                "Han ble drept",
-                "I en ulykke"
-            ],
-            "answer": "Han ble drept"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen bok med rader av navn på en tittelside",
+            "caption": "De elleve navnene står trykt foran i Mormons bok, før fortellingen i det hele tatt begynner."
+        },
+        {
+            "type": "text",
+            "content": "Spørsmålet denne artikkelen handler om, er ikke bare hva Joseph Smith gjorde. Det er hva han er for dem som tror. Kirken lærer at han var en profet, ikke en guddom. Den første av kirkens tretten trosartikler sier: Vi tror på Gud, den evige Fader, og på hans Sønn, Jesus Kristus, og på Den hellige ånd. Smith står ikke i den setningen. Kirken forklarer selv at en profet er en person som er kalt av Gud til å tale for ham. Religionsforskere bruker ordet på en lignende måte: en profet er en som mener å få direkte beskjeder, altså åpenbaringer, fra en gud, og som andre tror faktisk har en slik forbindelse. Hvordan siste dagers hellige forstår Gud, kan du lese om i artikkelen om [gudsbildet](/krle/religion/mormonisme/gudsbilde)."
+        },
+        {
+            "type": "header",
+            "text": "Et syn i skogen og en engel i natten"
+        },
+        {
+            "type": "text",
+            "content": "Ifølge kirkens egen framstilling ba en ung Joseph Smith våren 1820 i skogen nær hjemmet sitt i delstaten New York, og Gud Faderen og Jesus Kristus viste seg for ham som svar på bønnen. Han var da fjorten år, og fikk ifølge sin egen beretning beskjed om ikke å slutte seg til noen av kirkene som fantes fra før. Natt til 22. september 1823 skal engelen Moroni ha vist seg for ham. Moroni var ifølge tradisjonen den oppstandne sønnen til profeten Mormon, og han skal ha pekt ut stedet der platene lå. Først i 1827 fikk Smith hente dem, sier beretningen. Teksten skulle være skrevet i et ukjent språk, og Smith sa at han oversatte den til engelsk ved hjelp av to seersteiner, altså steiner han mente Gud lot ham forstå teksten gjennom. Etterpå ble platene og steinene ifølge Smith tatt fra ham igjen. Men før det skjedde, sier han, fikk elleve menn se og ta på platene."
+        },
+        {
+            "type": "component",
+            "name": "VitnenesUnderskrifter",
+            "props": {
+                "title": "Vitnenes underskrifter"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til at de to gruppene ikke skrev under på det samme. De tre forteller om en engel som viste dem platene, og om en stemme fra himmelen. De åtte forteller om noe helt hverdagslig: at Joseph Smith kom med platene selv, og at de fikk løfte på dem og se inngraveringene. Her ligger noe av det som skiller mormonismen fra flere av de andre religionene i dette emnet. Fortellingen om grunnleggeren ble ikke bare gitt videre muntlig gjennom mange generasjoner. Den ble skrevet ned med navn under, mens alle de involverte fortsatt levde. Samtidig kan ingen kontrollere det de gikk god for, for ingen kan undersøke gjenstanden de beskriver."
+        },
+        {
+            "type": "header",
+            "text": "To måter å lese det samme på"
+        },
+        {
+            "type": "text",
+            "content": "Mange kritikere mener at Mormons bok må ha blitt skrevet på 1800-tallet, sannsynligvis av Joseph Smith selv. Siste dagers hellige ser boken som et vitnesbyrd om at Jesus virkelig levde, og som en bekreftelse på Bibelen. Boken er delt inn i femten mindre bøker og forteller om en israelittisk familie som utvandret til det amerikanske kontinentet rundt 600 år før vår tidsregning. Et sentralt punkt i fortellingen er at Jesus viser seg for dem i Amerika og oppretter en kirke der. En lærebok kan ikke avgjøre om dette skjedde. Den kan vise hva hver side hevder, og hvor grensen går mellom det historikere kan undersøke og det troen bygger på."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Det bekjentgjøres for alle nasjoner, slekter, tungemål og folk som dette verk skal komme til, at Joseph Smith jr., som har oversatt dette verk, har vist oss de omtalte plater som later til å være laget av gull.",
+                "author": "Innledningen til De åtte vitners vitnesbyrd, Mormons bok"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Vitnene ble ikke værende ved Joseph Smiths side. Martin Harris ble ekskludert, altså kastet ut av kirken, i 1837, Oliver Cowdery i 1838, og David Whitmer forlot den i 1838. Cowdery ble døpt på nytt i 1848 og Harris i 1870. Også noen av de åtte tok senere avstand fra kirken. Men ifølge kirkens egen historieframstilling trakk ingen av de elleve vitnesbyrdet sitt tilbake. For siste dagers hellige er nettopp dette et hovedargument: menn som ble uvenner med Smith om mye annet, holdt likevel fast ved at de hadde sett platene. Samtidig er det verdt å se nøye på hvem de elleve var. Åtte av dem tilhørte to familier: fem het Whitmer og tre het Smith."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Murbygning i to etasjer med små vinduer i sommerlys",
+            "caption": "Fengselet i Carthage i Illinois. Her ble Joseph Smith og broren Hyrum drept 27. juni 1844."
+        },
+        {
+            "type": "header",
+            "text": "Drapet i Carthage"
+        },
+        {
+            "type": "text",
+            "content": "I 1844 stilte Joseph Smith som kandidat i det amerikanske presidentvalget, blant annet for å komme i posisjon til å hindre forfølgelse av kirkens medlemmer. Samme år lot han og bystyret i Nauvoo, byen mormonerne hadde grunnlagt i Illinois, ødelegge trykkpressen til avisen Nauvoo Expositor. Avisen ble gitt ut av folk som hadde brutt med kirken, og angrep både Smith som person og deler av læren. Smith var ordfører og mente avisen skadet byen. Han og broren Hyrum ble arrestert, ført til byen Carthage og siktet for forræderi. Sent på ettermiddagen 27. juni 1844 stormet en bevæpnet folkemengde fengselet og skjøt inn i rommet der brødrene satt. Hyrum ble drept nesten med én gang. Joseph løp mot vinduet, ble truffet og falt ned på bakken utenfor."
+        },
+        {
+            "type": "text",
+            "content": "Det farligste øyeblikket for en ung religion er ofte det som kommer rett etter at grunnleggeren dør. Hvem skal ta over rollen hans? Flertallet anerkjente Brigham Young (1801-1877) som ny leder og profet. Han ledet en massevandring fra østkysten av USA til ørkenområdet i Utah, over 3500 kilometer. Salt Lake City ble grunnlagt i 1847, og rundt 80 000 mennesker slo seg ned der. Men ikke alle godtok Young. Noen mente at Smiths eldste sønn, Joseph Smith III (1832-1914), skulle føre kirken videre, og i 1860 grunnla de et eget trossamfunn som i dag heter Community of Christ. Gjennom årene har flere trossamfunn bygd på Mormons bok og på Joseph Smith som profet, men det Young ledet, har hele tiden vært det klart største."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Lang vogn med presenning på tørt slettelandskap ved solnedgang",
+            "caption": "Etter Smiths død vandret tilhengerne over 3500 kilometer vestover til Utah."
+        },
+        {
+            "type": "header",
+            "text": "Rollen hans i dag"
+        },
+        {
+            "type": "text",
+            "content": "Kirken ledes i dag av en president med to rådgivere, kalt Det første presidentskap, og under dem et fast råd på tolv apostler som kalles De tolv apostlers quorum. Ifølge kirken får mennene i begge disse organene åpenbaringer direkte fra Gud, og presidenten regnes som Guds profet på jorden i dag. Rollen Joseph Smith fikk, døde altså ikke med ham i 1844. Den ble til en stilling som blir fylt på nytt hver gang en president dør. Samtidig er Smith fortsatt uunnværlig: kirken lærer at et vitnesbyrd om det gjenopprettede evangeliet, altså troen på at Gud opprettet kirken sin på nytt, ikke er fullstendig uten et vitnesbyrd om Joseph Smiths guddommelige oppdrag. Det er kanskje det klareste svaret på spørsmålet vi begynte med. Han er verken gud eller bare en lærer. Han er den første i en rekke som fortsatt fylles, og døren han sa han åpnet, står ifølge kirken fremdeles åpen. Mer om hva som kjennetegner trossamfunnet, finner du i artikkelen om [sentrale trekk](/krle/religion/mormonisme/sentrale-trekk)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva heter trossamfunnet Joseph Smith grunnla, og når ble det formelt opprettet?",
+                    "Hva er forskjellen på det de tre vitnene skrev under på, og det de åtte vitnene skrev under på?",
+                    "Hva skjedde med Joseph Smith 27. juni 1844, og hvorfor satt han i fengsel?",
+                    "Hvem overtok som leder for flertallet etter Smiths død, og hvor førte han tilhengerne?"
+                ],
+                "reflekter": [
+                    "Kirken kaller Joseph Smith profet, ikke gud. Forklar med egne ord hva som er forskjellen på de to rollene.",
+                    "Flere av vitnene ble uvenner med Smith og forlot kirken, men trakk aldri vitnesbyrdet tilbake. Hvorfor mener siste dagers hellige at dette er et sterkt argument, og hvorfor mener kritikere at det ikke er nok?",
+                    "Åtte av de elleve vitnene tilhørte to familier. Hva betyr det for hvor mye vekt et vitneutsagn kan få?",
+                    "Da Smith døde, splittet tilhengerne seg i flere grupper. Hva sier det om hvor mye en religion er avhengig av én person?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva Community of Christ er i dag, og skriv en kort tekst om hvordan de forstår Joseph Smith sammenlignet med kirken i Salt Lake City.",
+                    "Sammenlign Joseph Smiths rolle med rollen til grunnleggeren i en annen religion i sammenligningsemnet. Er han mer som en profet, en lærer eller noe annet?",
+                    "Diskuter i klassen: Hva skal til for at dere skal tro på et vitneutsagn om noe dere ikke selv kan undersøke?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvor mange menn skrev under på at de hadde sett gullplatene?",
+                        "options": [
+                            "Tre",
+                            "Åtte",
+                            "Elleve",
+                            "Tolv"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Erklæringene foran i Mormons bok er signert av tre vitner i den ene og åtte vitner i den andre, til sammen elleve menn."
+                    },
+                    {
+                        "question": "Hva er hovedforskjellen mellom de tre og de åtte vitnene?",
+                        "options": [
+                            "De tre så platene gjennom en engel og hørte en stemme, mens de åtte fikk løfte på platene selv",
+                            "De tre var kvinner og de åtte var menn",
+                            "De tre skrev under lenge etter de åtte",
+                            "De tre nektet å skrive under"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "De tre beskriver et syn med en engel og Guds stemme. De åtte beskriver noe hverdagslig: Joseph Smith viste dem platene, og de tok på dem."
+                    },
+                    {
+                        "question": "Hvilken rolle har Joseph Smith ifølge kirkens egen lære?",
+                        "options": [
+                            "Han er en guddom ved siden av Jesus",
+                            "Han er profet, kalt av Gud til å tale for ham",
+                            "Han var bare en dyktig forfatter",
+                            "Han er en engel som viste seg for menneskene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Kirken lærer at Smith var en profet. Den første trosartikkelen bekjenner troen på Gud Faderen, Jesus Kristus og Den hellige ånd, og Smith står ikke i den."
+                    },
+                    {
+                        "question": "Hva skjedde med vitnene etter at kirken var grunnlagt?",
+                        "options": [
+                            "Alle ble værende i kirken hele livet",
+                            "Alle trakk vitnesbyrdet tilbake",
+                            "Flere forlot kirken, men ingen trakk vitnesbyrdet tilbake",
+                            "De ble alle drept sammen med Joseph Smith"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Harris ble ekskludert i 1837, Cowdery i 1838 og Whitmer forlot kirken i 1838. Ifølge kirkens egen historieframstilling trakk ingen av de elleve vitnesbyrdet tilbake."
+                    },
+                    {
+                        "question": "Hva skjedde med kirken etter at Joseph Smith ble drept i 1844?",
+                        "options": [
+                            "Den ble oppløst",
+                            "Flertallet fulgte Brigham Young til Utah, mens noen dannet egne trossamfunn",
+                            "Sønnen Joseph Smith III overtok hele kirken",
+                            "Ingen ny leder ble utpekt før på 1900-tallet"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Brigham Young ble anerkjent av flertallet og ledet vandringen til Utah, der Salt Lake City ble grunnlagt i 1847. Andre samlet seg senere om Joseph Smith III."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+                    "Kværne, P., Barstad, H. M., Groth, B. & Eggen, N. S. (2026). *Profet*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/profet](https://snl.no/profet)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *De åtte vitners vitnesbyrd*. Mormons bok. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/bofm/eight?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *De tre vitners vitnesbyrd*. Mormons bok. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/bofm/three?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Joseph Smith - Historie 1*. Den kostelige perle. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/pgp/js-h/1?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Trosartiklene*. Den kostelige perle. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=nor)",
+                    "The Church of Jesus Christ of Latter-day Saints. (u.å.). *Witnesses of the Book of Mormon*. Church History Topics. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/history/topics/witnesses-of-the-book-of-mormon?lang=eng)",
+                    "The Church of Jesus Christ of Latter-day Saints. (u.å.). *Deaths of Joseph and Hyrum Smith*. Church History Topics. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/history/topics/deaths-of-joseph-and-hyrum-smith?lang=eng)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Profeter*. Evangeliske emner. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics/prophets-study-guide?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.). *Det første syn*. Evangeliske emner. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics/first-vision-study-guide?lang=nor)",
+                    "The Church of Jesus Christ of Latter-day Saints. (u.å.). *Joseph Smith*. Gospel Topics. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics/joseph-smith?lang=eng)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Jeg så to personer hvis glans og herlighet overgår enhver beskrivelse, stående over meg i luften.",
-        "source": "Joseph Smith - Historie",
-        "reference": "Vers 17"
-    }
+    "timeline": []
 }
