@@ -1,91 +1,253 @@
 {
-    "id": "frelse",
-    "title": "Moksha: Frigjøring",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "hinduisme",
-    "dimension": "doctrinal",
-    "comparison_tags": [
-        "frelse",
-        "doctrinal"
-    ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Samsara"
-        },
-        {
-            "type": "text",
-            "content": "Hinduer tror på gjenfødelse (reinkarnasjon). Livet er en evig sirkel av fødsel, død og ny fødsel. Denne sirkelen kalles Samsara."
-        },
-        {
-            "type": "header",
-            "text": "Karma"
-        },
-        {
-            "type": "text",
-            "content": "Karma er loven om handling og konsekvens. Gode handlinger gir god karma og et bedre neste liv, mens dårlige handlinger gir dårlig karma."
-        },
-        {
-            "type": "header",
-            "text": "Moksha"
-        },
-        {
-            "type": "text",
-            "content": "Målet for en hindu er å bryte ut av Samsara. Denne frigjøringen kalles Moksha. Da blir sjelen (Atman) ett med verdenssjelen (Brahman)."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "samsara",
-            "term": "Samsara",
-            "definition": "Rekken av gjenfødsler. Livets sirkel."
-        },
-        {
-            "id": "karma",
-            "term": "Karma",
-            "definition": "Loven om at handlinger får konsekvenser for dette og neste liv."
-        },
-        {
-            "id": "moksha",
-            "term": "Moksha",
-            "definition": "Frigjøring fra gjenfødelse. Frelse i hinduismen."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva er målet i hinduismen?",
-            "options": [
-                "Å bli rik",
-                "Å oppnå Moksha",
-                "Å leve evig på jorden"
-            ],
-            "answer": "Å oppnå Moksha"
-        },
-        {
-            "question": "Hva bestemmer hva du blir i neste liv?",
-            "options": [
-                "Guds humør",
-                "Karma",
-                "Tilfeldigheter"
-            ],
-            "answer": "Karma"
-        },
-        {
-            "question": "Hva skjer når man oppnår Moksha?",
-            "options": [
-                "Man slutter å bli gjenfødt",
-                "Man blir en konge",
-                "Man blir til en stjerne"
-            ],
-            "answer": "Man slutter å bli gjenfødt"
-        }
-    ],
-    "quote": {
-        "text": "Som en mann kaster gamle klær og tar på seg nye, slik kaster sjelen gamle kropper og går inn i nye.",
-        "source": "Bhagavad Gita",
-        "reference": "Kapittel 2:22"
+  "id": "frelse",
+  "title": "Ikke et bedre sted, men ut",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "hinduisme",
+  "dimension": "doctrinal",
+  "comparison_tags": [
+    "frelse",
+    "doctrinal"
+  ],
+  "category": "Hinduisme",
+  "readTime": "7 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Målet er ikke å komme til et bedre sted, men å slippe ut av gjenfødelsene.",
+    "Kretsløpet av fødsel, død og ny fødsel heter samsara, og det drives av karma.",
+    "Frigjøringen heter moksha og betyr å bli fri fra karmas tvang.",
+    "Tradisjonen peker på tre hovedveier: handling, hengivelse og kunnskap.",
+    "Hinduer er uenige om hva moksha er: å gå opp i verdensaltet, eller å leve evig nær en gud."
+  ],
+  "createdDate": "2025-12-04T12:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "concepts": [
+    {
+      "id": "samsara",
+      "term": "Samsara",
+      "definition": "Verden vi lever i, kjennetegnet av at individet stadig fødes, dør og fødes på nytt."
+    },
+    {
+      "id": "karma",
+      "term": "Karma",
+      "definition": "Læren om at handlinger du gjør mot andre, får følger for deg selv i dette livet eller i et senere."
+    },
+    {
+      "id": "moksha",
+      "term": "Moksha",
+      "definition": "Frigjøring fra gjenfødelse og fra karmas tvang. Det hinduismen regner som det høyeste målet."
+    },
+    {
+      "id": "marga",
+      "term": "Marga",
+      "definition": "Sanskrit for vei. Brukes om de ulike veiene til frigjøring: handling, kunnskap og hengivelse."
+    },
+    {
+      "id": "atman",
+      "term": "Atman",
+      "definition": "Det evige og uforanderlige i menneskets indre, det som ikke dør når kroppen dør."
     }
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "I den indiske byen Varanasi ligger kremasjonsplassene midt inne i byen. Vanligvis ligger de utenfor landsbyene. Noen svært få mennesker reiser hit for å dø, og det var vanligere før i tiden. Byens egne pilegrimstekster hevdet at den som døde her, var garantert å slippe fri fra å bli født på nytt. En vei som kalles Panchakosi, går utenfor byen og markerer grensen for denne kraften (Store norske leksikon mfl., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva belønningen er. Ikke en plass i en himmel. Ikke et rikere liv neste gang. Belønningen er å slippe å bli født igjen i det hele tatt. Her skiller hinduismen seg fra mange andre religioner: målet er ikke å komme til et bedre sted, men å komme seg ut."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Trapper ned til elv i Varanasi med røyk fra likbål",
+      "caption": "Langs Ganges i Varanasi går det trapper, kalt ghat, i over åtte kilometer. Kremasjonsplassen ble liggende midt i sentrum da byen vokste."
+    },
+    {
+      "type": "text",
+      "content": "For å skjønne hvorfor det å slippe ut er noe godt, må du vite hva man slipper ut av. Hinduer regner med at mennesket blir født på nytt igjen og igjen. Verden vi lever i, kjennetegnes av at individet uopphørlig fødes, dør og fødes på nytt. Dette kretsløpet heter samsara (Jacobsen, 2025g). I indiske religioner finnes ikke døden som en egen tilstand man blir værende i. Døden fører enten med én gang, eller etter et kort opphold, til en ny fødsel. Å slippe unna denne hvileløse vandringen ble et frelsesmål ikke bare i hinduismen, men også i jainismen og buddhismen (Jacobsen, 2025g)."
+    },
+    {
+      "type": "header",
+      "text": "Hjulet som drives av handlingene dine"
+    },
+    {
+      "type": "text",
+      "content": "Det som holder kretsløpet i gang, heter karma. Ordet betyr handling, og læren sier at handlinger du gjør mot andre, får følger for deg selv, i dette livet eller i et senere (Jacobsen, 2026). Gode handlinger gir karma som fører til et bedre liv, dårlige handlinger gir karma som fører til et verre liv. Ytterpunktene er gjenfødsel i gudeverdener eller i helveter (Jacobsen, 2026). Men her ligger poenget som er lett å gå glipp av: uansett hvor god karma du samler, flytter du deg bare til et annet sted i det samme kretsløpet. Du kommer aldri ut av det. Karma og moksha er motsetninger. Frigjøringen fra kretsløpet heter moksha, og den handler nettopp om å bli fri fra den årsakssammenhengen karma legger på deg (Jacobsen, 2025f). Prøv selv under."
+    },
+    {
+      "type": "component",
+      "name": "SamsaraHjulet",
+      "props": {
+        "title": "Hjulet og de tre veiene ut"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Det du nettopp gjorde, viser forskjellen mellom to helt ulike mål. Å samle god karma er å forbedre plassen sin inne i systemet. Moksha er å forlate systemet. Bare det siste regnes som frelse i hinduismen. Mer om hvordan karma henger sammen med plikt, det som på sanskrit heter dharma, finner du i artikkelen om [sentrale trekk](/krle/religion/hinduisme/sentrale-trekk). En kort oversikt over religionen som helhet står i [innledningen](/krle/religion/hinduisme/intro)."
+    },
+    {
+      "type": "header",
+      "text": "Tre veier ut"
+    },
+    {
+      "type": "text",
+      "content": "Hinduismen peker ikke på én vei ut. Tradisjonen snakker om tre hovedveier, og hver av dem kalles en marga, som betyr vei. Karmamarga er handlingens vei, der alle handlinger blir forstått som offerritualer. Jnanamarga er kunnskapens vei, og den bygger på religiøse tankesystemer som samkhya og vedanta. Bhaktimarga er hengivelsens vei, og den prøver å appellere til alle: menn og kvinner, høy og lav, lærd og ulærd (Kværne & Jacobsen, 2026). Selve frigjøringen kan nås gjennom innsikt, gjennom yoga, gjennom askese, altså et strengt og nøysomt liv, eller gjennom dyrkelse av en gud (Jacobsen, 2025f)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Verdens største folkemengde, samlet i vann",
+        "content": "Festivalen Kumbh Mela går på omgang mellom fire nordindiske byer. Den største og viktigste feires hvert tolvte år i Prayagraj. Det sentrale er rituell bading. Badet skal gi frihet fra moralsk urenhet, kalt papa, og dermed virke inn på karmaen og den videre skjebnen. I 2025 deltok flere hundre millioner mennesker. Kumbh Mela i Prayagraj er verdens største samling av folk for ett felles formål (Jacobsen, 2025e)."
+      }
+    },
+    {
+      "type": "text",
+      "content": "Veiene ser ganske ulike ut i praksis. På handlingens vei gjør du pliktene dine, men uten å tenke på hva du selv får igjen. Bhagavadgita, et langt læredikt, sier at handling er bedre enn ikke-handling, rett og slett fordi handling er uunngåelig. Naturen tvinger oss til å handle. Løsningen er derfor ikke å trekke seg tilbake fra samfunnet, men å handle uten tanke på personlig vinning (Jacobsen, 2025c). På hengivelsens vei er det annerledes. Der har mennesket et personlig forhold til en gud, preget av hengivenhet og av tillit til at guden er full av nåde (Jacobsen, 2025d). Veiene er ikke rene konkurrenter, men tekstene rangerer dem noen ganger. Bhagavadgita argumenterer for at hengivelsens vei er den beste, der mennesket vender seg til en gud og handler med guden i tankene (Jacobsen, 2025c). Mer om dette diktet står i artikkelen om [hellige tekster](/krle/religion/hinduisme/hellige-tekster)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Kvinne setter blomster og lys foran hjemmealter",
+      "caption": "Hengivelsens vei, bhakti, bygger på et personlig forhold til en gud."
+    },
+    {
+      "type": "header",
+      "text": "To måter å tenke om målet"
+    },
+    {
+      "type": "text",
+      "content": "Så hva skjer egentlig med den som når moksha? Her er hinduer uenige, og uenigheten er gammel. Den handler om forholdet mellom to begreper. Atman er det evige og uforanderlige i menneskets indre, det som ikke dør når kroppen dør. Ordet oversettes ofte med selv. Atman er ikke tankene dine, for sinnet regnes som en del av kroppen. Atman er selve bevisstheten (Jacobsen, 2025b). Brahman er enheten bak alt, og blir ofte oversatt med verdensaltet, værensgrunnen eller gud. Brahman er usynlig, uforanderlig og til stede i alt (Jacobsen, 2024). De gamle tekstene som heter upanishadene, sa at det innerste i mennesket svarte til denne grunnen bak universet. Men hva svarte til egentlig betyr, har hindutenkere diskutert helt siden (Jacobsen, 2025b)."
+    },
+    {
+      "type": "text",
+      "content": "Retningen som heter advaita vedanta, med filosofen Shankara på 700-tallet som den mest kjente, lærer at atman og brahman er det samme. Følelsen av å være noe eget skyldes uvitenhet. Når uvitenheten forsvinner, oppnås moksha, og all tilsynelatende mangfoldighet forsvinner (Jacobsen, 2025a). Andre vedanta-skoler er uenige. For dem har hvert menneske sin egen atman, og målet er forening med brahman uten at du slutter å være deg selv. Var atman og brahman helt like, ville et personlig forhold mellom mennesket og guden være umulig, og mye av tempelritualene ville miste meningen (Jacobsen, 2025b). Mange håper derfor ikke på oppløsning, men på en evig plass hos guden sin, for eksempel Vishnus Vaikuntha eller Krishnas Goloka (Jacobsen, 2025f). Mer om disse gudene står i artikkelen om [gudsbilde](/krle/religion/hinduisme/gudsbilde)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "To gamle håndskrevne bøker på sanskrit side om side",
+      "caption": "Uenigheten om atman og brahman går tilbake til ulike tolkninger av de samme tekstene."
+    },
+    {
+      "type": "header",
+      "text": "Og hverdagen?"
+    },
+    {
+      "type": "text",
+      "content": "Det er lett å lese alt dette og tro at hinduer tenker på døden hele tiden. Slik er det ikke. I hinduistisk religiøst liv ligger vekten på det som skjer nå, og på å feire gudenes nærvær i templene. Livet etter døden får mindre oppmerksomhet (Jacobsen, 2025g). Hinduismen er heller ingen enhetlig religion med ett svar. Rundt 1,2 milliarder mennesker regnes som hinduer, omtrent 15 prosent av verdens befolkning, og over 20 000 av dem bor i Norge (Kværne & Jacobsen, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Samtidig finnes tanken om at hellige steder og hellig vann kan hjelpe et menneske videre. Å bli kremert på et slikt sted, eller å få asken fraktet dit og lagt i vannet, skal gjøre frigjøringen lettere (Jacobsen, 2025f). Det er noe av grunnen til at Varanasi har hatt en slik plass i hinduismen. Hvordan døden markeres i praksis, kan du lese om i artikkelen om [overgangsriter](/krle/religion/hinduisme/overgangsriter)."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr samsara, og hva er det som holder kretsløpet i gang?",
+          "Forklar med egne ord hva karma er.",
+          "Hva betyr moksha, og hvorfor er det noe annet enn å få god karma?",
+          "Hva heter de tre hovedveiene til frigjøring, og hva går hver av dem ut på?"
+        ],
+        "reflekter": [
+          "Hvorfor er det viktig for forståelsen at målet er å slippe ut av kretsløpet, og ikke å komme til et bedre sted?",
+          "Hvorfor tror du bhaktimarga har vært den veien som har nådd flest mennesker?",
+          "Advaita vedanta mener at atman og brahman er det samme. Andre skoler mener at mennesket beholder seg selv. Hvorfor får denne uenigheten praktiske følger for tempelritualene?",
+          "Bhagavadgita sier at man ikke kan la være å handle. Er du enig i at det å ikke gjøre noe også er et valg?"
+        ],
+        "gaaVidere": [
+          "Sammenlign moksha i hinduismen med hva en annen religion i dette emnet mener er målet. Skriv en kort tekst om hva som skiller dem.",
+          "Finn ut hvor mange hindutempler det finnes i Norge, og hvor det nærmeste ligger.",
+          "Undersøk hva Mahatma Gandhi mente Bhagavadgita handlet om, og sammenlign med det artikkelen sier."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er samsara?",
+            "options": [
+              "Navnet på hinduismens hellige bok",
+              "Kretsløpet av fødsel, død og ny fødsel",
+              "En gud som dømmer de døde",
+              "Et hellig sted ved elven Ganges"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Samsara er verden vi lever i, kjennetegnet av at individet stadig fødes, dør og fødes på nytt."
+          },
+          {
+            "question": "Hva skjer hvis en hindu samler mye god karma?",
+            "options": [
+              "Personen slipper automatisk ut av kretsløpet",
+              "Personen blir en gud",
+              "Personen får et bedre neste liv, men er fortsatt i kretsløpet",
+              "Karma har ingenting med neste liv å gjøre"
+            ],
+            "correctAnswer": 2,
+            "explanation": "God karma flytter deg til et bedre sted inne i kretsløpet. Å komme helt ut er noe annet, og det heter moksha."
+          },
+          {
+            "question": "Hva menes med moksha?",
+            "options": [
+              "Frigjøring fra gjenfødelse og fra karmas tvang",
+              "En bestemt bønn man leser før man dør",
+              "Å bli gjenfødt som menneske i stedet for dyr",
+              "Navnet på festivalen Kumbh Mela"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Moksha er det høyeste målet: å bli fri fra kretsløpet og fra den tvangen karma legger på mennesket."
+          },
+          {
+            "question": "Hvilke tre hovedveier peker tradisjonen på?",
+            "options": [
+              "Faste, pilegrimsferd og bønn",
+              "Handlingens vei, kunnskapens vei og hengivelsens vei",
+              "Lydighet, offer og lovlesning",
+              "Dåp, konfirmasjon og bryllup"
+            ],
+            "correctAnswer": 1,
+            "explanation": "De kalles karmamarga, jnanamarga og bhaktimarga. Marga betyr vei."
+          },
+          {
+            "question": "Hvorfor er hinduer uenige om hva moksha egentlig er?",
+            "options": [
+              "Fordi noen tror på gjenfødelse og andre ikke gjør det",
+              "Fordi ingen tekster nevner moksha",
+              "Fordi de tolker forholdet mellom atman og brahman ulikt",
+              "Fordi ordet betyr noe helt annet på sanskrit"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Advaita vedanta lærer at atman og brahman er det samme, mens andre skoler mener mennesket beholder sin egen atman og lever i et forhold til guden."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Jacobsen, K. A. (2025a). *Advaita*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/advaita](https://snl.no/advaita)",
+          "Jacobsen, K. A. (2025b). *Atman*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/atman](https://snl.no/atman)",
+          "Jacobsen, K. A. (2025c). *Bhagavadgita*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Bhagavadgita](https://snl.no/Bhagavadgita)",
+          "Jacobsen, K. A. (2025d). *Bhakti*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bhakti](https://snl.no/bhakti)",
+          "Jacobsen, K. A. (2025e). *Kumbh Mela*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Kumbh_Mela](https://snl.no/Kumbh_Mela)",
+          "Jacobsen, K. A. (2025f). *Moksha*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/moksha](https://snl.no/moksha)",
+          "Jacobsen, K. A. (2025g). *Samsara*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/samsara](https://snl.no/samsara)",
+          "Jacobsen, K. A. (2024). *Brahman*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/brahman](https://snl.no/brahman)",
+          "Jacobsen, K. A. (2026). *Karma*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/karma](https://snl.no/karma)",
+          "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+          "Store norske leksikon, Samuelsen, G. W. & Jacobsen, K. A. (2026). *Varanasi*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Varanasi](https://snl.no/Varanasi)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
 }

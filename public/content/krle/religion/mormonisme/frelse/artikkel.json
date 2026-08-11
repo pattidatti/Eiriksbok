@@ -1,91 +1,251 @@
 {
-    "id": "frelse",
-    "title": "Evig progresjon",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "mormonisme",
-    "dimension": "doctrinal",
-    "comparison_tags": [
-        "frelse",
-        "doctrinal"
-    ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Bli lik Gud"
-        },
-        {
-            "type": "text",
-            "content": "Målet for mormonere er ikke bare å komme til himmelen, men å fortsette å utvikle seg til man blir lik Gud. Dette kalles evig progresjon eller opphøyelse."
-        },
-        {
-            "type": "header",
-            "text": "Tre herlighetsriker"
-        },
-        {
-            "type": "text",
-            "content": "Etter dommedag havner nesten alle mennesker i et av tre riker: Det celestiale (høyeste), det terrestriale eller det telestiale riket. Bare de aller ondeste går fortapt."
-        },
-        {
-            "type": "header",
-            "text": "Evige familier"
-        },
-        {
-            "type": "text",
-            "content": "Familier kan være sammen for evig hvis de blir beseglet (viet) i tempelet. Dette er en viktig del av frelsen."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "opphoyelse",
-            "term": "Opphøyelse",
-            "definition": "Å bli lik Gud og leve i Guds nærvær for alltid."
-        },
-        {
-            "id": "besegling",
-            "term": "Besegling",
-            "definition": "Et ritual i tempelet som binder familier sammen for evigheten."
-        },
-        {
-            "id": "frelsesplanen",
-            "term": "Frelsesplanen",
-            "definition": "Guds plan for menneskenes lykke og utvikling."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva er det høyeste målet i mormonismen?",
-            "options": [
-                "Å bli en engel",
-                "Å bli lik Gud (opphøyelse)",
-                "Å sove"
-            ],
-            "answer": "Å bli lik Gud (opphøyelse)"
-        },
-        {
-            "question": "Hva skjer med familier i tempelet?",
-            "options": [
-                "De spiser middag",
-                "De blir beseglet for evigheten",
-                "De synger"
-            ],
-            "answer": "De blir beseglet for evigheten"
-        },
-        {
-            "question": "Hvor mange herlighetsriker finnes det?",
-            "options": [
-                "1",
-                "2",
-                "3"
-            ],
-            "answer": "3"
-        }
-    ],
-    "quote": {
-        "text": "Slik mennesket er, har Gud engang vært. Slik Gud er, kan mennesket bli.",
-        "source": "Lorenzo Snow",
-        "reference": "Tidligere kirkepresident"
+  "id": "frelse",
+  "title": "Tre slags himmel",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "mormonisme",
+  "dimension": "doctrinal",
+  "comparison_tags": [
+    "frelse",
+    "doctrinal"
+  ],
+  "category": "Mormonisme",
+  "readTime": "7 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Jesu Kristi Kirke av Siste Dagers Hellige lærer at nesten alle mennesker arver et rike med herlighet i.",
+    "De tre rikene har navn etter lys: det celestiale som solen, det terrestriale som månen og det telestiale som stjernene.",
+    "Bare en svært liten gruppe, fortapelsens sønner, står helt utenfor.",
+    "Å bli frelst og å bli opphøyet er ikke det samme. Opphøyelse krever tempelritene.",
+    "De som døde uten å høre budskapet, får høre det i åndeverdenen, og ordinansene kan utføres for dem på jorden."
+  ],
+  "createdDate": "2025-12-04T12:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "concepts": [
+    {
+      "id": "herlighetsriker",
+      "term": "Herlighetsriker",
+      "definition": "De tre stedene mennesker arver etter dommen: det celestiale, det terrestriale og det telestiale riket."
+    },
+    {
+      "id": "opphoyelse",
+      "term": "Opphøyelse",
+      "definition": "Å få full arv som Guds barn og leve i Guds nærvær. Regnes som mer enn å bli frelst."
+    },
+    {
+      "id": "fortapelsens-sonner",
+      "term": "Fortapelsens sønner",
+      "definition": "Kirkens navn på den svært lille gruppen som ikke arver noe herlighetsrike i det hele tatt."
+    },
+    {
+      "id": "andeverdenen",
+      "term": "Åndeverdenen",
+      "definition": "Stedet der de døde venter på oppstandelsen, delt i paradis og åndefengsel."
+    },
+    {
+      "id": "frelsesplanen",
+      "term": "Frelsesplanen",
+      "definition": "Guds plan for at mennesket skal kunne bli lik ham og vende tilbake til ham. Kalles også lykkens plan."
     }
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Spør du folk hva som finnes etter døden, får du gjerne to svar: himmel eller helvete. En dør opp og en dør ned. Jesu Kristi Kirke av Siste Dagers Hellige svarer annerledes. Der finnes det tre rom med lys i, og nesten hvert eneste menneske havner i et av dem."
+    },
+    {
+      "type": "text",
+      "content": "Den 16. februar 1832 arbeidet Joseph Smith og Sidney Rigdon med en oversettelse av Bibelen. De fortalte etterpå at de fikk se hva som venter menneskene etter dommen. Synet ble skrevet ned og er i dag kapittel 76 i Lære og pakter, en av kirkens hellige bøker (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d). Der får de tre rikene navn etter lys: solen, månen og stjernene. Mer om bøkene finner du i artikkelen om [hellige tekster](/krle/religion/mormonisme/hellige-tekster)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Nattehimmel med sol, måne og stjerner side om side",
+      "caption": "Sol, måne og stjerner. Tre styrker av lys, men lys i alle tre."
+    },
+    {
+      "type": "text",
+      "content": "Frelse betyr at mennesket blir fri fra en tilstand av ufullkommenhet, og religionene er uenige om hva man skal bli fri fra (Jacobsen mfl., 2026). I kristendommen handler det først og fremst om skyld og synd. Denne kirken regner seg som kristen, men deler spørsmålet i to. Det første er: blir du reddet fra døden? Svaret er ja, for alle. Det andre er: hvor mye av Guds nærhet får du leve i etterpå? Der er svarene forskjellige."
+    },
+    {
+      "type": "header",
+      "text": "Sol, måne og stjerner"
+    },
+    {
+      "type": "text",
+      "content": "Etter dommen arver menneskene et av tre riker. Kirken kaller dem herlighetsriker. Det celestiale riket er det sterkeste, som solen. Der bor Gud Faderen og Jesus Kristus, og dit kommer de som tok imot vitnesbyrdet om Jesus, ble døpt og holdt budene. Det terrestriale riket ligner månen. Dit kommer blant andre hederlige mennesker som ikke var trofaste mot troen på Jesus, og de som sa nei mens de levde, men tok imot budskapet senere. Jesus besøker dem, men ikke Faderen. Det telestiale riket er svakest, som stjernene. Dit kommer de som aldri tok imot budskapet, verken mens de levde eller etterpå, og de får besøk av Den hellige ånd (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b)."
+    },
+    {
+      "type": "component",
+      "name": "TreGraderAvHerlighet",
+      "props": {
+        "title": "Tre grader av herlighet"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Gruppen som blir stående helt utenfor, er svært liten. Kirken kaller dem fortapelsens sønner og beskriver dem som mennesker som kjente Guds kraft gjennom Den hellige ånd, og som likevel fornektet sannheten med vitende og vilje (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-d). Stedet de havner, kalles det ytre mørke. Alle andre arver et rike med lys i. Her deler kirken evigheten annerledes enn mange andre kristne retninger, som opererer med to utfall."
+    },
+    {
+      "type": "header",
+      "text": "Frelst er ikke det samme som opphøyet"
+    },
+    {
+      "type": "text",
+      "content": "I dagligtale brukes de to ordene om hverandre, men her betyr de ikke det samme. Å bli frelst handler først om oppstandelsen. Alle døde skal reise seg igjen, ånden blir gjenforent med den fysiske kroppen, og alle får evig liv, men på ulike herlighetsnivåer (Bloch-Hoell mfl., 2026). Dette er en gave som kommer gjennom Jesu forsoning, altså det kirken lærer at Jesus gjorde for menneskene da han led og døde. Opphøyelse er noe mer. Kirken beskriver det som å motta sin fulle arv som barn av Gud, og som en utvikling som ikke stopper når livet på jorden er slutt (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Som mennesket er, var Gud en gang, som Gud er, kan mennesket bli.",
+        "author": "Lorenzo Snow, gjengitt i kirkens essay Bli som Gud"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Setningen er kjent blant medlemmene og blir gjentatt i undervisningen. Samtidig er den aldri gjort til offisiell lære, og kirken skriver selv at lite er åpenbart om den første halvdelen (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Her finnes det altså flere måter å forstå saken på, også innenfor kirken selv. Mer om hvordan medlemmene ser på Gud, står i artikkelen om [gudsbildet](/krle/religion/mormonisme/gudsbilde)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungt par utenfor hvitt tempel i dagslys",
+      "caption": "Beseglingen i tempelet er kravet kirken knytter til den øverste graden."
+    },
+    {
+      "type": "header",
+      "text": "Veien inn i det sterkeste lyset"
+    },
+    {
+      "type": "text",
+      "content": "Inne i det celestiale riket finnes det tre grader, står det i Lære og pakter kapittel 131. For å nå den øverste må mennesket inngå det teksten kaller den nye og evige ekteskapspakt (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-e). I praksis betyr det å bli beseglet til ektefellen sin i et tempel. Å bli beseglet vil si å bli bundet sammen, ikke bare for livet, men for evigheten. Den som ikke gjør det, kan komme inn i de andre gradene, men kommer ikke lenger. Om selve ritene kan du lese i artikkelen om [overgangsriter](/krle/religion/mormonisme/overgangsriter)."
+    },
+    {
+      "type": "text",
+      "content": "Da oppstår et problem, og kirken tar det opp selv. Milliarder av mennesker har levd og dødd uten å høre om noe av dette. Skal de være utestengt fra det høyeste bare fordi de ble født på feil sted eller i feil århundre? Svaret ligger i det kirken kaller åndeverdenen. Etter døden venter menneskene der på oppstandelsen, noen i paradis og noen i det som kalles åndefengselet (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-g)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Hender som blar i gammel kirkebok med navnelister",
+      "caption": "Navnene må finnes før noe kan gjøres. Derfor er slektsgransking en religiøs oppgave."
+    },
+    {
+      "type": "header",
+      "text": "Dåp på vegne av de døde"
+    },
+    {
+      "type": "text",
+      "content": "I 1918 fortalte kirkens daværende president, Joseph F. Smith, at han hadde sett hvordan budskapet blir forkynt for de døde i åndeverdenen. De som tar imot det der, kan bli fri gjennom ordinanser som utføres for dem i templene på jorden (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-f). En ordinans er en hellig handling der Gud har bestemt formen. Det er derfor levende medlemmer lar seg døpe på vegne av slektninger som er døde (Bloch-Hoell mfl., 2026). Den døde bestemmer selv om tilbudet tas imot."
+    },
+    {
+      "type": "text",
+      "content": "Hele tankegangen henger sammen med noe som begynte lenge før du ble født. Kirken lærer at mennesket først levde som en ånd hos Gud, i det som kalles foruttilværelsen, og at livet på jorden er en prøve der mennesket får en kropp og må ta egne valg (Bloch-Hoell mfl., 2026). Planen har et navn som sier mye om hvordan den forstås: frelsesplanen, eller lykkens plan (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-c). Målet er ikke bare å slippe unna noe vondt. Målet er å komme tilbake dit man kom fra. Om Joseph Smith og de første lederne kan du lese i artikkelen om [grunnleggerne](/krle/religion/mormonisme/grunnleggere)."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva heter de tre herlighetsrikene, og hvilket lys sammenlignes hvert av dem med?",
+          "Hvem er det som ikke arver noe rike i det hele tatt, ifølge kirken?",
+          "Hva er forskjellen på å bli frelst og å bli opphøyet?",
+          "Hva skjer i åndeverdenen med dem som aldri fikk høre budskapet mens de levde?"
+        ],
+        "reflekter": [
+          "Kirken lærer at nesten alle får en form for herlighet. Hvordan er dette annerledes enn en lære med bare himmel og helvete?",
+          "Hvorfor tror du kirken knytter den øverste graden til en seremoni i tempelet, og ikke bare til hvordan man har levd?",
+          "Uttalelsen fra Lorenzo Snow er kjent, men aldri gjort til offisiell lære. Hva sier det om at en religion kan romme flere forståelser?",
+          "Er det rimelig at valget om å ta imot et budskap kan gjøres etter døden? Begrunn svaret ditt."
+        ],
+        "gaaVidere": [
+          "Sammenlign frelsestanken her med frelsestanken i en annen religion du har lest om. Skriv en kort tekst om hva som er likt og hva som skiller dem.",
+          "Lag en tegning eller et diagram over frelsesplanen slik kirken beskriver den, fra foruttilværelsen til rikene.",
+          "Diskuter i klassen: Bør en religion kunne rangere mennesker i grader etter døden? Finn argumenter for og imot."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvilket lys sammenlignes det celestiale riket med?",
+            "options": [
+              "Stjernene",
+              "Månen",
+              "Solen",
+              "Nordlyset"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Det celestiale riket er det sterkeste og sammenlignes med solen. Der bor Gud Faderen og Jesus Kristus."
+          },
+          {
+            "question": "Hva lærer kirken om hvor mange som arver et herlighetsrike?",
+            "options": [
+              "Bare medlemmer av kirken",
+              "Nesten alle mennesker",
+              "Omtrent halvparten",
+              "Bare de som ble døpt før de døde"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Nesten alle arver et av de tre rikene. Bare den lille gruppen som kalles fortapelsens sønner, står utenfor."
+          },
+          {
+            "question": "Hva er forskjellen på å bli frelst og å bli opphøyet?",
+            "options": [
+              "Det er to ord for det samme",
+              "Frelse gjelder bare barn, opphøyelse bare voksne",
+              "Frelse handler først om oppstandelsen, mens opphøyelse er full arv som Guds barn",
+              "Frelse skjer i tempelet, opphøyelse i menigheten"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Alle står opp fra de døde gjennom Jesu forsoning. Opphøyelse er noe mer, og hører til den øverste graden i det celestiale riket."
+          },
+          {
+            "question": "Hva sier Lære og pakter kapittel 131 om det celestiale riket?",
+            "options": [
+              "At det er delt i tre grader, og at den øverste krever den nye og evige ekteskapspakt",
+              "At det bare finnes ett rike",
+              "At det er stengt for dem som er døde",
+              "At det ligger på månen"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Kapittelet sier at det celestiale riket har tre grader. Den øverste krever ekteskapspakten, som inngås ved besegling i et tempel."
+          },
+          {
+            "question": "Hvorfor lar levende medlemmer seg døpe på vegne av døde slektninger?",
+            "options": [
+              "For å få flere navn i kirkens medlemslister",
+              "Fordi budskapet forkynnes for de døde i åndeverdenen, og ordinansene må utføres på jorden",
+              "Fordi de døde ellers blir fortapelsens sønner",
+              "Fordi det er et krav for å komme inn i tempelet"
+            ],
+            "correctAnswer": 1,
+            "explanation": "De døde får høre budskapet i åndeverdenen. Tar de imot det, kan ordinansene utføres for dem av levende stedfortredere. Den døde velger selv."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2026). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+          "Jacobsen, K. A., Løøv, M. & Eggen, N. S. (2026). *Frelse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/frelse](https://snl.no/frelse)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-a). *Bli som Gud*. Emneessay. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics-essays/becoming-like-god?lang=nor)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-b). *Den endelige dom*. Evangeliets prinsipper, kapittel 46. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-principles/chapter-46-the-final-judgment?lang=nor)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-c). *Frelsesplanen*. Evangeliske emner, studieveiledning. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-topics/plan-of-salvation-study-guide?lang=nor)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-d). *Lære og pakter 76*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/76?lang=nor)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-e). *Lære og pakter 131*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/131?lang=nor)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-f). *Lære og pakter 138*. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/138?lang=nor)",
+          "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-g). *Åndeverdenen etter døden*. Evangeliets prinsipper, kapittel 41. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-principles/chapter-41-the-postmortal-spirit-world?lang=nor)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
 }

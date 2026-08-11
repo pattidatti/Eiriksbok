@@ -454,7 +454,7 @@
               "link": "/norsk/analyse/tekstanalyse-sti",
               "icon": "map",
               "createdDate": "2026-03-10T13:05:18+01:00",
-              "lastUpdated": "2026-05-07T09:32:27+02:00"
+              "lastUpdated": "2026-08-11T08:55:34+02:00"
             }
           ],
           "lessons": [
@@ -481,7 +481,7 @@
                 "novelle"
               ],
               "createdDate": "2026-02-02T15:09:02+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-11T08:55:34+02:00"
             },
             {
               "id": "analyse-eventyr",
@@ -529,7 +529,7 @@
                 "fagartikkel"
               ],
               "createdDate": "2026-02-02T15:09:02+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-11T08:55:34+02:00"
             },
             {
               "id": "analyse-debattinnlegg",
@@ -553,7 +553,7 @@
                 "kommentar"
               ],
               "createdDate": "2026-02-02T15:09:02+01:00",
-              "lastUpdated": "2026-07-06T20:56:13+02:00"
+              "lastUpdated": "2026-08-11T08:55:34+02:00"
             }
           ]
         },
@@ -7530,9 +7530,9 @@
                 },
                 {
                   "id": "frelse",
-                  "title": "Frelse og nåde",
-                  "description": "Synd, nåde, korsets betydning og ulike syn på frelse.",
-                  "image": "/images/krle/religion/kristendom_frelse.webp",
+                  "title": "Gaven ingen kan fortjene",
+                  "description": "I 500 år kranglet katolikker og lutheranere om hvordan et menneske blir frelst - finn ut hva de faktisk var uenige om, og hvorfor de til slutt satte seg ned og skrev under.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "kristendom",
                     "frelse",
@@ -7565,7 +7565,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-03-15T21:57:26+01:00"
+                  "lastUpdated": "2026-08-11T09:38:59+02:00"
                 },
                 {
                   "id": "skapelse",
@@ -7698,7 +7698,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T09:38:59+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -7754,9 +7754,9 @@
                 },
                 {
                   "id": "frelse",
-                  "title": "Dommens dag",
-                  "description": "Regnskapets time og livet etter døden.",
-                  "image": "/images/krle/religion/islam_dommens_dag.webp",
+                  "title": "Vekten som ikke lyver",
+                  "description": "Alt du gjør skal veies, helt ned til et støvfnuggs vekt - men er det vekten eller Gud som har det siste ordet?",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "islam",
                     "frelse",
@@ -7835,7 +7835,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T09:38:59+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -7891,9 +7891,9 @@
                 },
                 {
                   "id": "frelse",
-                  "title": "Nirvana",
-                  "description": "Frigjøring fra lidelse og gjenfødelse.",
-                  "image": "/images/krle/religion/buddhisme_nirvana.webp",
+                  "title": "Hvor ble det av flammen?",
+                  "description": "Blås ut et stearinlys og spør hvor flammen ble av: nettopp det bildet brukte Buddha da han skulle forklare hva nirvana er.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "buddhisme",
                     "frelse",
@@ -7959,7 +7959,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T09:38:59+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8015,9 +8015,9 @@
                 },
                 {
                   "id": "frelse",
-                  "title": "Livet her og nå",
-                  "description": "Fokus på å leve et rettferdig liv.",
-                  "image": "/images/krle/religion/jodedom_hero.webp",
+                  "title": "Verden er ikke ferdig",
+                  "description": "Jødedommen snakker knapt om frelse - finn ut hvorfor svarene om livet her og nå er mye tydeligere enn svarene om det som kommer etterpå.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jodedom",
                     "frelse",
@@ -8083,7 +8083,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T09:38:59+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8139,9 +8139,9 @@
                 },
                 {
                   "id": "frelse",
-                  "title": "Moksha",
-                  "description": "Frigjøring fra samsara.",
-                  "image": "/images/krle/religion/hinduisme_moksha.webp",
+                  "title": "Ikke et bedre sted, men ut",
+                  "description": "Hva om belønningen ikke er en plass i himmelen, men å slippe å bli født igjen i det hele tatt? Bli med på hjulet av liv og død, og finn de tre veiene ut.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "hinduisme",
                     "frelse",
@@ -8277,7 +8277,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T09:38:59+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8333,9 +8333,9 @@
                 },
                 {
                   "id": "frelse",
-                  "title": "Åndelig utvikling",
-                  "description": "Sjelens reise mot Gud.",
-                  "image": "/images/krle/religion/bahai_hero.webp",
+                  "title": "Hva skal du med øyne i mørket?",
+                  "description": "Et foster bygger øyne i stummende mørke - hvorfor? Bahá'í-troen bruker det bildet til å forklare hva som skjer når du dør, og hvorfor himmel og helvete ikke er steder.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "bahai",
                     "frelse",
@@ -8401,7 +8401,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T09:38:59+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8457,9 +8457,9 @@
                 },
                 {
                   "id": "frelse",
-                  "title": "Evig progresjon",
-                  "description": "Muligheten til å bli lik Gud.",
-                  "image": "/images/krle/religion/mormonisme_hero.webp",
+                  "title": "Tre slags himmel",
+                  "description": "Ikke himmel eller helvete, men tre slags himmel, og nesten hvert eneste menneske havner i en av dem.",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "mormonisme",
                     "frelse",
@@ -8525,7 +8525,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2025-12-04T13:39:40+01:00"
+                  "lastUpdated": "2026-08-11T09:38:59+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8581,9 +8581,9 @@
                 },
                 {
                   "id": "frelse",
-                  "title": "Paradis på jord",
-                  "description": "Håpet om evig liv på en paradisisk jord.",
-                  "image": "/images/krle/religion/jehovas-vitner_hero.webp",
+                  "title": "Et tall, og en skare ingen kan telle",
+                  "description": "Hvorfor mener Jehovas vitner at nøyaktig 144 000 mennesker skal til himmelen, mens alle andre frelste skal bli igjen på en jord som gjøres om til et paradis?",
+                  "image": "/images/placeholder.webp",
                   "tags": [
                     "jehovas-vitner",
                     "frelse",
@@ -8699,6 +8699,19 @@
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
                   "lastUpdated": "2026-08-10T23:34:50+02:00"
+                },
+                {
+                  "id": "frelse",
+                  "title": "Dråpen som ikke ble borte",
+                  "description": "Hva skjer med en vanndråpe som faller i havet, og hvorfor er nettopp det sikhenes bilde på det største et menneske kan oppnå?",
+                  "image": "/images/placeholder.webp",
+                  "tags": [
+                    "sikhisme",
+                    "frelse",
+                    "doctrinal"
+                  ],
+                  "createdDate": "2026-08-11T12:00:00Z",
+                  "lastUpdated": "2026-08-11T11:36:01.272Z"
                 },
                 {
                   "id": "bonn",

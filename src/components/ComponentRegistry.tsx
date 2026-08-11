@@ -142,6 +142,15 @@ const Slektskjeden = lazy(() => import('./content/interactive/Slektskjeden').the
 const ValgetDuTarSelv = lazy(() => import('./content/interactive/ValgetDuTarSelv').then(m => ({ default: m.ValgetDuTarSelv })));
 const SamskaraStigen = lazy(() => import('./content/interactive/SamskaraStigen').then(m => ({ default: m.SamskaraStigen })));
 const RitenSomIkkeFinnes = lazy(() => import('./content/interactive/RitenSomIkkeFinnes').then(m => ({ default: m.RitenSomIkkeFinnes })));
+const DenneVerdenFoerst = lazy(() => import('./content/interactive/DenneVerdenFoerst').then(m => ({ default: m.DenneVerdenFoerst })));
+const Signeringsbordet = lazy(() => import('./content/interactive/Signeringsbordet').then(m => ({ default: m.Signeringsbordet })));
+const VektskaalenPaaDommensDag = lazy(() => import('./content/interactive/VektskaalenPaaDommensDag').then(m => ({ default: m.VektskaalenPaaDommensDag })));
+const Fosterkammeret = lazy(() => import('./content/interactive/Fosterkammeret').then(m => ({ default: m.Fosterkammeret })));
+const TreGraderAvHerlighet = lazy(() => import('./content/interactive/TreGraderAvHerlighet').then(m => ({ default: m.TreGraderAvHerlighet })));
+const HundreOgFortiFireTusen = lazy(() => import('./content/interactive/HundreOgFortiFireTusen').then(m => ({ default: m.HundreOgFortiFireTusen })));
+const SamsaraHjulet = lazy(() => import('./content/interactive/SamsaraHjulet').then(m => ({ default: m.SamsaraHjulet })));
+const FlammenSomSlukner = lazy(() => import('./content/interactive/FlammenSomSlukner').then(m => ({ default: m.FlammenSomSlukner })));
+const DraapenIHavet = lazy(() => import('./content/interactive/DraapenIHavet').then(m => ({ default: m.DraapenIHavet })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
@@ -557,6 +566,15 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     ValgetDuTarSelv,
     SamskaraStigen,
     RitenSomIkkeFinnes,
+    DenneVerdenFoerst,
+    Signeringsbordet,
+    VektskaalenPaaDommensDag,
+    Fosterkammeret,
+    TreGraderAvHerlighet,
+    HundreOgFortiFireTusen,
+    SamsaraHjulet,
+    FlammenSomSlukner,
+    DraapenIHavet,
     DagenSomBonn,
     MaatBalansen,
     ToFlomfortellinger,

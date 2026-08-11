@@ -1,6 +1,7 @@
 {
     "id": "frelse",
-    "title": "Livet her og nå",
+    "title": "Verden er ikke ferdig",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "jodedom",
@@ -9,83 +10,238 @@
         "frelse",
         "doctrinal"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Fokus på dette livet"
-        },
-        {
-            "type": "text",
-            "content": "Jødedommen er mer opptatt av livet her og nå enn av hva som skjer etter døden. Målet er å leve et godt og rettferdig liv i tråd med Guds vilje."
-        },
-        {
-            "type": "header",
-            "text": "Etterlivet"
-        },
-        {
-            "type": "text",
-            "content": "Det finnes ulike tanker om etterlivet (Olam Ha-Ba), men det er ingen fastlagt dogme om himmel og helvete slik som i kristendommen. Noen tror på sjelens udødelighet, andre på en fremtidig oppstandelse."
-        },
-        {
-            "type": "header",
-            "text": "Frelse"
-        },
-        {
-            "type": "text",
-            "content": "Frelse handler ikke om å bli reddet fra synd, men om å bidra til å gjøre verden hellig gjennom å følge budene (Mitzvot)."
-        }
+    "category": "Jødedom",
+    "readTime": "6 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jødedommen har ingen lære om arvesynd. Mennesket er ikke født med en synd det må reddes ut av.",
+        "Tyngdepunktet ligger på hvordan man lever nå. Rabbinsk jødedom har utledet 613 bud av Mosebøkene.",
+        "Olam ha-ba, den kommende verden, finnes i tradisjonen, men er lite utpenslet. Ingen forestilling om etterlivet er bindende for alle jøder.",
+        "Rabbinerne avviser evig fortapelse. Straffen i Gehinnom regnes som tidsbegrenset, og tolv måneder er det aller lengste.",
+        "Også ikke-jøder kan få del i et liv etter døden, ifølge læren om Noahs sju lover."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "olam-ha-ba",
-            "term": "Olam Ha-Ba",
-            "definition": "Den kommende verden. Jødedommens begrep om etterlivet."
+            "term": "Olam ha-ba",
+            "definition": "Den kommende verden. Jødedommens ord for et liv etter døden. Tradisjonen sier lite om hvordan det er der, og ingen bestemt beskrivelse er bindende for alle jøder."
         },
         {
             "id": "mitzvot",
             "term": "Mitzvot",
-            "definition": "Budene. Handlinger som Gud ønsker at menneskene skal gjøre."
+            "definition": "Budene. De 613 forpliktelsene rabbinsk jødedom har utledet av Mosebøkene: 248 ting man skal gjøre og 365 ting man ikke skal gjøre."
         },
         {
-            "id": "pikuach-nefesh",
-            "term": "Pikuach Nefesh",
-            "definition": "Prinsippet om at å redde liv går foran alle andre religiøse lover."
+            "id": "halakha",
+            "term": "Halakha",
+            "definition": "Den samlede jødiske religiøse loven. Ordet er avledet av et ord som betyr å gå, og viser til veien man går for å leve etter pakten."
+        },
+        {
+            "id": "pikuah-nefesh",
+            "term": "Pikuah nefesh",
+            "definition": "Prinsippet om at nesten alle bud kan brytes hvis det handler om å redde et menneskeliv."
+        },
+        {
+            "id": "mashiach",
+            "term": "Mashiach",
+            "definition": "Messias. En framtidig skikkelse som skal frigjøre det jødiske folket fra undertrykkelse. Rabbinerne har aldri blitt enige om én bindende lære om ham."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva er viktigst i jødedommen?",
-            "options": [
-                "Livet etter døden",
-                "Livet her og nå",
-                "Å konvertere andre"
-            ],
-            "answer": "Livet her og nå"
+            "type": "text",
+            "content": "Tenk deg at du spør en rabbiner hva som skjer når du dør. En rabbiner er en jødisk lærd og religiøs leder. Svaret kan bli kortere enn du venter. Jødedommen har forestillinger om et liv etter døden, men de er få og lite utpenslet. Rabbinerne har vært tilbakeholdne med å lage faste læresetninger om hva som kommer etterpå, og det finnes ingen forestillinger om dette som alle jøder er forpliktet til å tro på (Kværne mfl., 2026). Til gjengjeld har tradisjonen svært mye å si om hvordan du skal leve i dag."
         },
         {
-            "question": "Har jødedommen en klar lære om helvete?",
-            "options": [
-                "Ja, veldig detaljert",
-                "Nei, det varierer",
-                "Ja, det er et sted med ild"
-            ],
-            "answer": "Nei, det varierer"
+            "type": "text",
+            "content": "Ordet frelse kommer fra kristen tradisjon, og det passer dårlig på jødedommen. Rabbinerne har aldri utledet noen lære om arvesynd av fortellingen om Adam og Eva. Mennesket er ikke født med en synd det må reddes ut av. Rabbinerne lærer at hvert menneske fødes med både gode og dårlige tilbøyeligheter, og at den enkelte har fri vilje til å velge mellom dem. Jødedommen er derfor ikke opptatt av individuell frelse på samme måte som mange andre religioner (Groth, 2026a). Synd betyr her først og fremst å bryte en av Guds lover, eller å la være å gjøre en plikt man har. Den som oppriktig angrer og ber om tilgivelse, blir tilgitt (Groth, 2026a)."
         },
         {
-            "question": "Hva betyr Pikuach Nefesh?",
-            "options": [
-                "Å be tre ganger daglig",
-                "Å redde liv er viktigst",
-                "Å spise kosher"
-            ],
-            "answer": "Å redde liv er viktigst"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen torarull på et bord i en synagoge",
+            "caption": "Toraen regulerer både forholdet til Gud og forholdet mellom mennesker."
+        },
+        {
+            "type": "text",
+            "content": "Hva er så målet? Jødedommen svarer med en pakt. Ifølge de hellige tekstene har Gud inngått en avtale med det jødiske folket, og avtalen har to sider: forpliktelser og rettigheter. Forpliktelsene kalles mitzvot, altså bud (Groth, 2026a). Å leve rett er ikke en billett man kjøper til noe annet. Det er selve saken. Du kan lese mer om avtalen i artikkelen om [sentrale trekk ved jødedommen](/krle/religion/jodedom/sentrale-trekk)."
+        },
+        {
+            "type": "header",
+            "text": "613 bud, og veien mellom dem"
+        },
+        {
+            "type": "text",
+            "content": "Rabbinsk jødedom har utledet 613 bud av Mosebøkene. 248 av dem er ting du skal gjøre, 365 er ting du ikke skal gjøre (Groth, 2024). Regelverket kalles halakha. Ordet er avledet av et ord som betyr å gå, og peker på veien man går for å leve etter pakten (Groth, 2024). Budene står likevel ikke over alt annet. Nesten alle kan brytes hvis det handler om å redde et menneskeliv. Prinsippet kalles pikuah nefesh, og begrunnelsen er at budene ble gitt for at mennesket skal kunne leve etter dem (Groth, 2024). Prøv selv hvor jødedommen har sine tydeligste svar."
+        },
+        {
+            "type": "component",
+            "name": "DenneVerdenFoerst",
+            "props": {
+                "title": "Hvor har jødedommen sine tydeligste svar?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til mønsteret. Spørsmålene om hvordan du skal leve, har presise svar som rabbinerne har brukt to tusen år på å finpusse. Spørsmålene om hva som skjer etterpå, har flere svar som står side om side. Ingen av dem er vedtatt som det eneste riktige."
+        },
+        {
+            "type": "header",
+            "text": "Den kommende verden"
+        },
+        {
+            "type": "text",
+            "content": "Det finnes likevel et begrep for et liv etter døden. Det heter olam ha-ba, den kommende verden, og kalles også Gan Eden, Edens hage. Alle mennesker som har levd et godt og moralsk liv, kan komme dit, og en utbredt folkelig forestilling er at de rettferdige bruker tiden der på å studere Toraen, de fem Mosebøkene (Groth, 2026c). Noen må først gjennom en straffe- og renselsestid på et sted som kalles Gehinnom. Men rabbinsk jødedom har aldri utformet noen fast lære om dette stedet. Talmud sier verken hvor det ligger, hvem som havner der eller hvor lenge, og tolv måneder regnes som det aller lengste noen må være der (Groth og Store norske leksikon, 2026). Rabbinerne avviser tanken om en evig fortapelse (Kværne mfl., 2026)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Én time med anger og gode gjerninger i denne verden er mer verdt enn hele livet i den kommende verden. Og én time med den kommende verdens ro er mer verdt enn hele livet i denne verden.",
+                "author": "Pirkei Avot 4,17"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Sitatet er fra Pirkei Avot, en samling korte visdomsord i Mishna, en av jødedommens eldste rabbinske tekstsamlinger (Kulp, u.å.). Legg merke til at det peker begge veier. Den kommende verden blir ikke avvist, den blir omtalt som noe godt. Men timen du har akkurat nå, den du kan bruke til å gjøre opp for deg og gjøre noe godt, blir satt høyest. Mer om de rabbinske tekstene finner du i artikkelen om [hellige tekster i jødedommen](/krle/religion/jodedom/hellige-tekster)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Hebraisk bok åpnet under en lampe om kvelden",
+            "caption": "Tekstene sier mye om hvordan man skal leve, og lite om hva som venter etterpå."
+        },
+        {
+            "type": "header",
+            "text": "Messias og de messianske tidene"
+        },
+        {
+            "type": "text",
+            "content": "Jødedommen venter også på noe. Mashiach, Messias, er navnet på en framtidig skikkelse som skal frigjøre det jødiske folket fra alle undertrykkere. Rabbinerne har diskutert i århundrer hvem han skal være og hva oppgaven hans er, og de har aldri utformet én bindende lære om det (Groth, 2025). Én ting har det likevel aldri vært tvil om: Messias er et helt spesielt menneske som skal befri et folk fra undertrykkelse, ikke en guddommelig skikkelse som skal befri den enkelte fra synd (Groth, 2025). Ønsket om at Gud skal sende Messias, står i de viktigste jødiske [bønnene](/krle/religion/jodedom/bonn)."
+        },
+        {
+            "type": "text",
+            "content": "Her viser mangfoldet i dagens jødedom seg tydelig. Jødedommen er delt i flere retninger. Ved siden av den ortodokse vokste det på 1800-tallet og tidlig på 1900-tallet fram ikke-ortodokse retninger som reformjødedom, konservativ jødedom og rekonstruksjonisme (Groth, 2026a). Ortodoks jødedom lærer at det kommer en messiansk tid da alle verdens jøder igjen samles i Eretz Israel, landet Israel, og mange ortodokse miljøer venter fortsatt på en bestemt person. Reformjødedommen forkastet tidlig tanken om en personlig Messias, og mener messianske tider handler om å utvikle menneskeheten. Konservativ jødedom knytter også begrepet til en epoke med fred og rettferdighet for alle mennesker, ikke til en skikkelse. Rekonstruksjonismen har fjernet henvisningene til Messias fra bønnebøkene sine (Groth, 2025)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Utsikt over Jerusalems gamleby i tidlig morgenlys",
+            "caption": "Håpet om at folket igjen skal samles i Jerusalem, står i de viktigste jødiske bønnene."
+        },
+        {
+            "type": "header",
+            "text": "Å reparere verden"
+        },
+        {
+            "type": "text",
+            "content": "Et uttrykk som ofte dukker opp når jøder snakker om målet, er tikkun olam, å reparere verden. Uttrykket er gammelt. Det står allerede i Mishna, der det handler om regler som skal beskytte dem som ellers ville kommet dårlig ut. I den jødiske mystikken på 1500-tallet fikk det en helt annen mening, om guddommelige gnister mennesker kunne samle opp igjen. Fra 1950-tallet ble uttrykket tatt i bruk om sosialt arbeid og rettferdighet, og det er den betydningen de fleste bruker i dag (My Jewish Learning, u.å.). Og målet er ikke stengt for andre. Talmud, jødedommens mest omfattende samling av rabbinske tekster, lærer at sju lover ble gitt til Noah etter storflommen, og at de gjelder alle mennesker til alle tider fordi Noah regnes som alle menneskers stamfar. Blant dem er plikten til å opprette domstoler, og forbud mot å drepe, stjele, dyrke avguder og plage dyr. Rabbinsk jødedom lærer at alle som holder disse sju lovene og anerkjenner dem som gitt av Gud, kan få del i et liv etter døden. Toraens 613 bud gjelder bare jøder (Groth, 2026b), ikke fordi jøder er mer verdt enn andre, men fordi de er underlagt andre forpliktelser (Groth, 2026a)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvorfor passer ordet frelse dårlig på jødedommen? Bruk ordet arvesynd i svaret.",
+                    "Hva er mitzvot, og hvor mange bud har rabbinerne utledet av Mosebøkene?",
+                    "Hva betyr pikuah nefesh, og hvordan begrunnes prinsippet?",
+                    "Hva er olam ha-ba, og hvorfor er det vanskelig å beskrive nøyaktig hva jøder tror om det?"
+                ],
+                "reflekter": [
+                    "Sitatet fra Pirkei Avot setter én time med anger og gode gjerninger nå høyere enn hele livet i den kommende verden. Hva sier det om hva jødedommen mener er viktigst?",
+                    "Rabbinerne avviser evig fortapelse og regner straffen i Gehinnom som tidsbegrenset. Hvilken forskjell gjør det for hvordan man ser på mennesker som gjør noe galt?",
+                    "Ortodoks jødedom venter på en person, mens reformjødedommen snakker om messianske tider. Hva slags praktisk forskjell kan de to synene gi i hverdagen?",
+                    "Jødedommen lærer at også ikke-jøder kan få del i et liv etter døden. Hvorfor tror du dette punktet er viktig å få med når man sammenligner religioner?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign målet i jødedommen med målet i en annen religion dere har lest om. Skriv en kort tekst om hva som er likt, og hva som skiller dem.",
+                    "Finn ut hva de sju noahidiske lovene går ut på, og lag en plakat som forklarer dem for klassen.",
+                    "Diskuter i klassen: Blir en religion svakere eller sterkere av å la de store spørsmålene om døden stå åpne?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvorfor passer ordet frelse dårlig på jødedommen?",
+                        "options": [
+                            "Fordi jødedommen ikke tror på Gud",
+                            "Fordi rabbinerne ikke har utledet noen lære om arvesynd, og mennesket derfor ikke må reddes ut av en medfødt tilstand",
+                            "Fordi jødedommen mener alle mennesker er onde",
+                            "Fordi jødedommen ikke har noen hellige tekster om emnet"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Rabbinerne har ikke utledet noen arvesynd av fortellingen om Adam og Eva. Jødedommen er derfor ikke opptatt av individuell frelse på samme måte som mange andre religioner."
+                    },
+                    {
+                        "question": "Hvor mange bud har rabbinsk jødedom utledet av Mosebøkene?",
+                        "options": [
+                            "10",
+                            "40",
+                            "613",
+                            "1200"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "613 bud: 248 ting man skal gjøre og 365 ting man ikke skal gjøre. Til sammen utgjør regelverket halakha."
+                    },
+                    {
+                        "question": "Hva sier rabbinsk jødedom om straffen i Gehinnom?",
+                        "options": [
+                            "At den varer evig for alle som ikke er jøder",
+                            "At Talmud beskriver stedet i detalj",
+                            "At den er tidsbegrenset, og at tolv måneder regnes som det aller lengste",
+                            "At ingen jøder tror på noe slikt sted"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Talmud sier verken hvor stedet ligger eller hvem som havner der. Rabbinerne avviser evig fortapelse, og den vanligste tanken er en tidsbegrenset renselse på høyst tolv måneder."
+                    },
+                    {
+                        "question": "Hva sier rabbinsk tradisjon om Messias?",
+                        "options": [
+                            "At han er en guddommelig skikkelse som skal befri den enkelte fra synd",
+                            "At han er et helt spesielt menneske som skal befri det jødiske folket fra undertrykkelse",
+                            "At han allerede har kommet og dratt igjen",
+                            "At alle jødiske retninger er enige om nøyaktig hva han skal gjøre"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Det har aldri vært tvil om at Messias er et menneske som skal befri et folk fra undertrykkelse. Men rabbinerne har aldri blitt enige om én bindende lære om hvem han er."
+                    },
+                    {
+                        "question": "Kan ikke-jøder få del i et liv etter døden, ifølge rabbinsk jødedom?",
+                        "options": [
+                            "Nei, det er forbeholdt dem som er født av en jødisk mor",
+                            "Ja, alle mennesker uansett hva de gjør",
+                            "Ja, de som holder Noahs sju lover kan få det",
+                            "Bare hvis de først holder alle 613 bud"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Talmud lærer at Noahs sju lover gjelder alle mennesker, og at alle som holder dem kan få del i et liv etter døden. Toraens 613 bud gjelder bare jøder."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Groth, B. (2024). *Mitzva*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/mitzva](https://snl.no/mitzva)",
+                    "Groth, B. (2025). *Messias - i jødedommen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Messias_-_i_jødedommen](https://snl.no/Messias_-_i_j%C3%B8dedommen)",
+                    "Groth, B. (2026a). *Jødedom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+                    "Groth, B. (2026b). *Noahs syv lover*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Noahs_syv_lover](https://snl.no/Noahs_syv_lover)",
+                    "Groth, B. (2026c). *Paradis*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/paradis](https://snl.no/paradis)",
+                    "Groth, B. & Store norske leksikon. (2026). *Gehenna*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Gehenna](https://snl.no/Gehenna)",
+                    "Kulp, J. (overs.). (u.å.). *Pirkei Avot 4,17*. Sefaria. Hentet 11.08.2026 fra [sefaria.org](https://www.sefaria.org/Pirkei_Avot.4.17)",
+                    "Kværne, P., Seim, T. K., Groth, B. & Eggen, N. S. (2026). *Død - religion*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/død_-_religion](https://snl.no/d%C3%B8d_-_religion)",
+                    "My Jewish Learning. (u.å.). *Tikkun olam: Repairing the world*. Hentet 11.08.2026 fra [myjewishlearning.com](https://www.myjewishlearning.com/article/tikkun-olam-repairing-the-world/)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Den som redder ett liv, redder hele verden.",
-        "source": "Talmud",
-        "reference": "Sanhedrin 4:5"
-    }
+    "timeline": []
 }

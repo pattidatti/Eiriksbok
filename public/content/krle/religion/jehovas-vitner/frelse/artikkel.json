@@ -1,6 +1,7 @@
 {
     "id": "frelse",
-    "title": "Paradis på jord",
+    "title": "Et tall, og en skare ingen kan telle",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "jehovas-vitner",
@@ -9,83 +10,241 @@
         "frelse",
         "doctrinal"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Guds rike"
-        },
-        {
-            "type": "text",
-            "content": "Jehovas vitner forkynner om Guds rike, en himmelsk regjering som skal fjerne all ondskap på jorden."
-        },
-        {
-            "type": "header",
-            "text": "Evig liv på jorden"
-        },
-        {
-            "type": "text",
-            "content": "De fleste troende har håp om å leve evig på en paradisisk jord, ikke i himmelen. Bare en liten gruppe (144 000) skal til himmelen for å styre sammen med Jesus."
-        },
-        {
-            "type": "header",
-            "text": "Ingen helvete"
-        },
-        {
-            "type": "text",
-            "content": "De tror ikke på et brennende helvete. De døde er uten bevissthet, men Gud kan gi dem livet tilbake i oppstandelsen."
-        }
+    "category": "Jehovas vitner",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jehovas vitner deler de frelste i to grupper: 144 000 som skal til himmelen, og en stor skare som skal leve evig på jorden.",
+        "Tallet 144 000 er hentet fra Johannes' åpenbaring. De leser det bokstavelig, ikke som et symbol.",
+        "De lærer at det ikke finnes noe brennende helvete. De døde er uten bevissthet, men Gud kan gi dem livet tilbake.",
+        "Det er Gud som velger ut de 144 000. Det er ikke noe et menneske kan søke på.",
+        "Læren om de to gruppene ble lagt fram i 1935. Den første lederen, Charles Taze Russell, hadde ment noe annet."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
-            "id": "guds-rike",
-            "term": "Guds rike",
-            "definition": "En virkelig regjering i himmelen som skal styre jorden."
+            "id": "de-144-000",
+            "term": "De 144 000",
+            "definition": "Antallet mennesker som ifølge Jehovas vitner skal oppreises til liv i himmelen og styre sammen med Jesus. Tallet er hentet fra Johannes' åpenbaring."
         },
         {
-            "id": "paradis",
-            "term": "Paradis",
-            "definition": "Jorden når den er blitt renset og gjort vakker igjen."
+            "id": "den-store-skaren",
+            "term": "Den store skaren",
+            "definition": "Et uttrykk fra Johannes' åpenbaring om en gruppe ingen kan telle. Jehovas vitner mener dette er de aller fleste frelste, og at de skal leve evig på jorden."
         },
         {
-            "id": "armageddon",
-            "term": "Armageddon",
-            "definition": "Guds krig for å fjerne ondskapen."
+            "id": "harmageddon",
+            "term": "Harmageddon",
+            "definition": "Navnet på det siste slaget mellom Gud og fiendene hans. Jehovas vitner venter at Gud da skal fjerne den urettferdige verdensordningen."
+        },
+        {
+            "id": "tusenaarsriket",
+            "term": "Tusenårsriket",
+            "definition": "De tusen årene da Jesus og de 144 000 skal styre fra himmelen, mens menneskene lever i fred på en renset jord."
+        },
+        {
+            "id": "den-salvede-rest",
+            "term": "Den salvede rest",
+            "definition": "De av de 144 000 som fremdeles lever på jorden. De er de eneste som spiser brødet og drikker vinen ved den årlige minnehøytiden."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvor skal de fleste leve evig?",
-            "options": [
-                "I himmelen",
-                "På jorden",
-                "På Mars"
-            ],
-            "answer": "På jorden"
+            "type": "text",
+            "content": "De fleste religioner har ett mål for alle som blir frelst. Jehovas vitner har to. Et bestemt antall mennesker skal til himmelen. Alle de andre skal bli her, på en jord som blir gjort om til et paradis. Og antallet som skal til himmelen, er ikke omtrentlig. Det er 144 000."
         },
         {
-            "question": "Hva er Guds rike?",
-            "options": [
-                "En følelse",
-                "En regjering",
-                "En kirke"
-            ],
-            "answer": "En regjering"
+            "type": "text",
+            "content": "Jehovas vitner lærer at verden har gått inn i en kritisk endetid. Snart skal Gud ødelegge den verdensordningen vi lever i nå, og innføre et jordisk paradis for de trofaste. Dette er budskapet de går fra dør til dør med (Ringnes mfl., 2026). De kaller Gud ved navnet Jehova, og du kan lese mer om det i artikkelen om [gudsbildet deres](/krle/religion/jehovas-vitner/gudsbilde). Men veien fram til paradiset ser annerledes ut enn i de fleste andre kristne kirker. Forskjellen begynner allerede i selve dødsøyeblikket."
         },
         {
-            "question": "Tror de på helvete?",
-            "options": [
-                "Ja, veldig sterkt",
-                "Nei, døden er som søvn",
-                "Ja, for slemme barn"
-            ],
-            "answer": "Nei, døden er som søvn"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Frodig hage med frukttrær i tidlig morgenlys",
+            "caption": "Håpet de aller fleste Jehovas vitner har for seg selv, handler om denne jorden, ikke om en himmel."
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner mener at mennesket ikke har en udødelig sjel. Ordet sjel betyr etter deres forståelse hele personen, eller personens liv, og en sjel kan dø. Tanken om noe åndelig som lever videre uten kroppen, mener de kom inn i kristendommen fra gresk filosofi (Ringnes mfl., 2026). Når et menneske dør, slutter det derfor å eksistere. De døde kan verken tenke, føle eller gjøre noe, og selv peker de på at Bibelen sammenligner døden med en dyp søvn (Jehovas vitner, u.å.-e)."
+        },
+        {
+            "type": "header",
+            "text": "Ingen ild, bare en grav"
+        },
+        {
+            "type": "text",
+            "content": "Dette får en følge som overrasker mange. Siden de døde er uten bevissthet, avviser Jehovas vitner alle forestillinger om pine i et brennende helvete. Bibelvers om at de ufrelste havner i ild, leser de som bilder på total tilintetgjørelse, ikke på tortur (Ringnes mfl., 2026). De hevder også at ordene Sjeol og Hades, som eldre bibeloversettelser gjenga med helvete, stort sett betyr graven (Jehovas vitner, u.å.-a). Til sammenligning har helvete som et pinested for de fordømte stått sentralt i mye annen kristendom, og forestillingen finnes allerede i flere tekster i Det nye testamentet (Kværne og Groth, 2026). Hvordan Jehovas vitner leser Bibelen, kan du lese mer om i artikkelen om [Ny verden-oversettelsen](/krle/religion/jehovas-vitner/hellige-tekster). Men hvis døden er en slutt, hvordan kan noen bli frelst i det hele tatt? Svaret ligger i to oppstandelser. Følg begge under."
+        },
+        {
+            "type": "component",
+            "name": "HundreOgFortiFireTusen",
+            "props": {
+                "title": "To håp, to veier"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til at de to veiene ikke ender samme sted. Ifølge Jehovas vitner er det bare unntaksvis at de frelste kommer til himmelen. Det store flertallet skal i oppstandelsen gjenoppta livet sitt som mennesker her på jorden, hvor de blir undersåtter av det himmelske riket (Ringnes mfl., 2026). Selv kaller de oppstandelsen til himmelen for den første oppstandelsen, nettopp fordi uttrykket viser at det må komme en til (Jehovas vitner, u.å.-d)."
+        },
+        {
+            "type": "header",
+            "text": "Hvor kommer tallet fra?"
+        },
+        {
+            "type": "text",
+            "content": "Tallet 144 000 er hentet fra Johannes' åpenbaring, den siste boka i Bibelen. I kapittel 7 hører Johannes tallet på dem som blir beseglet, og det er hundre og førtifire tusen. Bare noen vers senere ser han en helt annen gruppe: en stor skare som ingen kunne telle. I kapittel 14 står Lammet på Sions fjell, og sammen med ham står igjen de 144 000 (Jehovas vitner, u.å.-f)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Lammet sto på Sions fjell, og sammen med ham de 144 000 som hadde Lammets navn og navnet til Lammets Far skrevet på pannen.",
+                "author": "Johannes' åpenbaring 14,1 (Bibelselskapets oversettelse fra 2011)"
+            }
+        },
+        {
+            "type": "text",
+            "content": "At tallet er ment symbolsk, er en vanlig innvending, og Jehovas vitner svarer på den selv. De medgir at Åpenbaringen inneholder symbolske tall, men mener noen av dem skal leses bokstavelig, slik som de tolv apostlene i kapittel 21. Hovedargumentet er kontrasten inne i teksten: hvis 144 000 også siktet til en gruppe ingen kan telle, ville forskjellen mellom de to gruppene i kapittel 7 forsvinne (Jehovas vitner, u.å.-f). Selve læren om de to gruppene er ikke like gammel som bevegelsen. Den ble lagt fram i 1935 av Joseph Rutherford, lederen etter Charles Taze Russell. Russell hadde selv ment at den store skaren var en slags annenrangs himmelsk gruppe (Ringnes mfl., 2026). Bevegelsen sprang ut av en bibelstudiegruppe i USA på 1870-tallet, og du kan lese mer om starten i artikkelen om [Charles Taze Russell](/krle/religion/jehovas-vitner/grunnleggere)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen bibel med et understreket vers i lampelys",
+            "caption": "Skal tallet leses bokstavelig eller som et bilde? Det er selve stridsspørsmålet."
+        },
+        {
+            "type": "header",
+            "text": "Ikke noe man søker på"
+        },
+        {
+            "type": "text",
+            "content": "Et vanlig spørsmål er hvordan man kommer med blant de 144 000. Svaret fra Jehovas vitner er at man ikke gjør det. Det er Gud som velger ut hvilke trofaste kristne som får det himmelske kallet, og egne ønsker eller ambisjoner har ingen betydning (Jehovas vitner, u.å.-f). De som mener seg utvalgt, kalles den salvede rest. Her går det altså en skillelinje inne i trossamfunnet selv. Medlemmene av det styrende rådet, som er ledelsen, skal alltid tilhøre denne gruppa. Og én gang i året, ved minnehøytiden for Jesu død, sendes vin og usyret brød rundt i forsamlingene, men de eneste som smaker på det, er de relativt få som regner seg til den salvede resten (Ringnes mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Hva må så et menneske gjøre? Jehovas vitner sier at man må tro på Jesus og vise det ved å følge det han sa. Tro uten handling er ikke levende tro. Samtidig understreker de at ingen kan gjøre seg fortjent til frelsen, for den er en gave fra Gud (Jehovas vitner, u.å.-b). Grunnlaget er Jesu død, som de forstår som en løsepenge (Jehovas vitner, u.å.-g). De mener også at frelsen kan mistes igjen, hvis et menneske slutter å vise tro (Jehovas vitner, u.å.-b)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To personer med blader ved et bord på fortauet",
+            "caption": "Forkynnelsen fra dør til dør handler om at Guds rike snart skal gjøre jorden til et paradis."
+        },
+        {
+            "type": "header",
+            "text": "Hvem blir igjen?"
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner regner ikke seg selv som de eneste som kan bli frelst. De viser til at det skal skje en oppstandelse av både rettferdige og urettferdige, og at mange som lever nå, fremdeles kan begynne å tjene Gud. Hvem som til slutt blir frelst, mener de er overlatt til Jesus å avgjøre (Jehovas vitner, u.å.-h). Samtidig venter de at svært mange vil falle under Guds fordømmelse i Harmageddon og bli utslettet for evig (Ringnes mfl., 2026). Utslettet betyr her at personen slutter å finnes, ikke at han eller hun blir pint. Ordet Harmageddon står forresten bare ett eneste sted i Bibelen, i Johannes' åpenbaring 16,16, og kommer trolig fra hebraisk Har-Megiddo, altså Megiddos fjell (Aasgaard, 2026). Det samme ordet står i alle kristnes bibler, men det leses svært ulikt. Noen venter et konkret slag, andre leser teksten som et bilde på kampen mellom godt og ondt."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mener Jehovas vitner skjer med et menneske i selve dødsøyeblikket?",
+                    "Hvilke to grupper deler de de frelste i, og hvor skal hver av dem være?",
+                    "Hvorfor avviser Jehovas vitner tanken om et brennende helvete?",
+                    "Hvem er den salvede resten, og hva gjør de ved minnehøytiden som andre ikke gjør?"
+                ],
+                "reflekter": [
+                    "Jehovas vitner leser tallet 144 000 bokstavelig. Hvilke argumenter bruker de, og hva ville du svart hvis du mente tallet var symbolsk?",
+                    "Ifølge Jehovas vitner er det Gud som velger ut de 144 000, ikke mennesket selv. Hva slags forskjell gjør det for hvordan man kan leve som troende?",
+                    "Læren om de to gruppene kom først i 1935. Hva gjør det med troverdigheten til en lære at den er blitt endret underveis? Prøv å finne argumenter både for og imot.",
+                    "Å bli utslettet og å bli pint for evig er to helt ulike svar på hva som skjer med de ufrelste. Hvorfor tror du dette har vært et så viktig stridsspørsmål mellom kristne?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign målet hos Jehovas vitner med målet i en annen religion dere har lest om. Skriv en kort tekst om hva som er likt, og hva som skiller dem.",
+                    "Slå opp Johannes' åpenbaring kapittel 7 i en vanlig norsk bibeloversettelse. Les versene 4 til 9, og skriv ned hva du selv legger merke til.",
+                    "Finn ut hva ordet Megiddo viser til i historien, og hvorfor et gammelt slagsted kunne bli et bilde på verdens ende."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvor skal de aller fleste frelste leve evig, ifølge Jehovas vitner?",
+                        "options": [
+                            "I himmelen sammen med Jesus",
+                            "På en jord som er gjort om til et paradis",
+                            "I en mellomtilstand til dommen er over",
+                            "Ingen steder, alle blir utslettet"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Bare 144 000 skal til himmelen. Det store flertallet skal gjenoppta livet sitt som mennesker på jorden, under det himmelske riket."
+                    },
+                    {
+                        "question": "Hvor i Bibelen er tallet 144 000 hentet fra?",
+                        "options": [
+                            "Første Mosebok",
+                            "Salmenes bok",
+                            "Johannes' åpenbaring",
+                            "Matteusevangeliet"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Tallet står i Johannes' åpenbaring, blant annet i kapittel 7 og kapittel 14."
+                    },
+                    {
+                        "question": "Hva mener Jehovas vitner skjer med et menneske når det dør?",
+                        "options": [
+                            "Sjelen lever videre uten kroppen",
+                            "Den døde er uten bevissthet og kan verken tenke eller føle",
+                            "Den døde pines i ild til dommens dag",
+                            "Den døde fødes på nytt i en ny kropp"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "De mener mennesket ikke har en udødelig sjel. Døden sammenlignes med en dyp søvn, og Gud kan gi den døde livet tilbake."
+                    },
+                    {
+                        "question": "Hvordan kommer et menneske med blant de 144 000?",
+                        "options": [
+                            "Ved å be om det på et stevne",
+                            "Ved å forkynne flest timer fra dør til dør",
+                            "Ved å bli født inn i en bestemt familie",
+                            "Det er Gud som velger, og egne ønsker har ingen betydning"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Jehovas vitner lærer at Gud selv velger ut hvem som får det himmelske kallet. Det er ikke noe man kan søke på."
+                    },
+                    {
+                        "question": "Når ble læren om at de frelste deles i to grupper, lagt fram?",
+                        "options": [
+                            "I 1870-årene, av bibelstudentene i USA",
+                            "I 1914, da endetiden ifølge dem begynte",
+                            "I 1935, av lederen Joseph Rutherford",
+                            "I 1975, etter en forventet Harmageddon"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Rutherford la fram denne læren i 1935. Grunnleggeren Charles Taze Russell hadde ment at den store skaren var en slags annenrangs himmelsk gruppe."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Kværne, P. & Groth, B. (2026). *Helvete*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/helvete](https://snl.no/helvete)",
+                    "Aasgaard, R. (2026). *Harmageddon*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Harmageddon](https://snl.no/Harmageddon)",
+                    "Jehovas vitner. (2006, 15. mai). *Guds hensikt med jorden skal snart bli gjennomført*. Vakttårnet. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/bibliotek/blader/w20060515/Guds-hensikt-med-jorden-skal-snart-bli-gjennomf%C3%B8rt/)",
+                    "Jehovas vitner. (u.å.-a). *Finnes det et helvete? Hva er «helvete» ifølge Bibelen?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/finnes-det-et-helvete/)",
+                    "Jehovas vitner. (u.å.-b). *Hva er frelse?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/hva-er-frelse/)",
+                    "Jehovas vitner. (u.å.-c). *Hva er Harmageddon-krigen?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/harmageddon-krigen/)",
+                    "Jehovas vitner. (u.å.-d). *Hva er oppstandelsen?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/hva-er-oppstandelsen/)",
+                    "Jehovas vitner. (u.å.-e). *Hva skjer når vi dør?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/nar-vi-dor/)",
+                    "Jehovas vitner. (u.å.-f). *Hvem kommer til himmelen?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/kommer-til-himmelen/)",
+                    "Jehovas vitner. (u.å.-g). *Hvordan kan du få leve evig?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/leve-evig/)",
+                    "Jehovas vitner. (u.å.-h). *Mener Jehovas vitner at de er de eneste som blir frelst?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/jehovas-vitner/faq/hvem-frelst/)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "De rettferdige skal arve jorden, og de skal bo på den for evig.",
-        "source": "Ny verden-oversettelsen",
-        "reference": "Salme 37:29"
-    }
+    "timeline": []
 }

@@ -1,5 +1,5 @@
 {
-  "buildId": 41084636238552,
+  "buildId": 59246309123154,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2538,6 +2538,9 @@
     "sikhisme-bonn": [
       "content/krle/religion/sikhisme/bonn/artikkel.json"
     ],
+    "sikhisme-frelse": [
+      "content/krle/religion/sikhisme/frelse/artikkel.json"
+    ],
     "sikhisme-grunnleggere": [
       "content/krle/religion/sikhisme/grunnleggere/artikkel.json"
     ],
@@ -4645,6 +4648,7 @@
     "krle/religion/samisk/intro": "content/krle/religion/samisk/intro.json",
     "krle/religion/samisk/laestadianismen": "content/krle/religion/samisk/laestadianismen.json",
     "krle/religion/sikhisme/bonn": "content/krle/religion/sikhisme/bonn/artikkel.json",
+    "krle/religion/sikhisme/frelse": "content/krle/religion/sikhisme/frelse/artikkel.json",
     "krle/religion/sikhisme/grunnleggere": "content/krle/religion/sikhisme/grunnleggere/artikkel.json",
     "krle/religion/sikhisme/gudsbilde": "content/krle/religion/sikhisme/gudsbilde/artikkel.json",
     "krle/religion/sikhisme/hellige-tekster": "content/krle/religion/sikhisme/hellige-tekster/artikkel.json",

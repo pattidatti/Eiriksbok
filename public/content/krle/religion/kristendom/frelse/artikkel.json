@@ -1,6 +1,7 @@
 {
     "id": "frelse",
-    "title": "Frelse og nåde",
+    "title": "Gaven ingen kan fortjene",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "kristendom",
@@ -9,135 +10,248 @@
         "frelse",
         "doctrinal"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2026-03-15T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Hva er synd?"
-        },
-        {
-            "type": "text",
-            "content": "I kristendommen handler synd ikke bare om å gjøre noe galt. Det handler om at mennesker er skilt fra Gud. Ifølge Bibelen begynte dette med syndefallet, da Adam og Eva brøt Guds bud i Edens hage. Siden da har alle mennesker en tendens til å velge feil. Kristne kaller dette arvesynden - ikke at babyer er onde, men at alle mennesker er født inn i en verden der det er lett å gjøre feil."
-        },
-        {
-            "type": "header",
-            "text": "Hvorfor trengs frelse?"
-        },
-        {
-            "type": "text",
-            "content": "Kristne tror at synden skaper et gap mellom mennesker og Gud. Uansett hvor hardt man prøver, klarer ingen å leve et perfekt liv. Mennesker kan ikke bygge bro over dette gapet på egen hånd. Derfor trengs det hjelp utenfra. Det er her frelsen kommer inn - Gud selv griper inn for å reparere forholdet."
-        },
-        {
-            "type": "header",
-            "text": "Nåde - Guds ufortjente gave"
-        },
-        {
-            "type": "text",
-            "content": "Frelse er en gave fra Gud, ikke noe man kan gjøre seg fortjent til. Dette kalles nåde. Tenk deg at du skylder noen en enorm sum penger du aldri kan betale tilbake - og personen sier: glem det, gjelden er slettet. Det er nåde. Kristne tror at Gud tilgir mennesker, ikke fordi de fortjener det, men fordi Gud elsker dem."
-        },
-        {
-            "type": "header",
-            "text": "Jesu død på korset"
-        },
-        {
-            "type": "text",
-            "content": "Korset er det mest kjente symbolet i kristendommen. Kristne tror at da Jesus døde på korset, tok han på seg straffen for menneskenes synder. Han ofret seg selv slik at forholdet mellom Gud og mennesker kunne bli gjenopprettet. Selv om korsfestelsen var en grusom hendelse, ser kristne på den som det ultimate uttrykket for Guds kjærlighet."
-        },
-        {
-            "type": "header",
-            "text": "Oppstandelse og evig liv"
-        },
-        {
-            "type": "text",
-            "content": "Kristne tror at Jesus sto opp fra de døde, og at de som tror på ham, skal få evig liv etter døden. Hva evig liv betyr konkret, finnes det ulike syn på. Noen forestiller seg himmelen som et sted der man møter Gud og sine kjære. Andre legger vekt på at det handler om å leve i fellesskap med Gud for alltid. De fleste kristne tror også på en dommedag, der alle mennesker en gang skal stå til regnskap."
-        },
-        {
-            "type": "header",
-            "text": "Ulike syn på frelse"
-        },
-        {
-            "type": "text",
-            "content": "Katolikker og protestanter er ikke helt enige om hvordan frelsen fungerer. Protestantene (som Den norske kirke) legger vekt på at man blir frelst ved tro alene - dette kalles sola fide. Katolikkene mener at tro og gode gjerninger hører sammen. Denne uenigheten var en av de viktigste grunnene til at Martin Luther startet reformasjonen på 1500-tallet."
-        }
+    "category": "Kristendom",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Kristne tror at Jesus gjennom sin død og oppstandelse sonet for menneskenes synd og overvant døden.",
+        "Frelsen kalles nåde: en ufortjent gave, ikke en lønn for gode handlinger.",
+        "Uenigheten om hvordan frelsen virker, splittet den vestlige kirken fra 1517.",
+        "Luthersk lære sier ved tro alene. Katolsk lære sier at mennesket samarbeider med nåden.",
+        "31. oktober 1999 skrev katolikker og lutheranere under på at de er enige om grunnprinsippene."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "nade",
             "term": "Nåde",
-            "definition": "Guds ufortjente kjærlighet og tilgivelse. Frelse gis ved nåde, ikke ved egne gjerninger."
+            "definition": "Guds kjærlighet og barmhjertighet. Gud fritar den skyldige fra straff og gir tilgivelse og evig liv, uten at mennesket har gjort seg fortjent til det."
         },
         {
-            "id": "frelse",
-            "term": "Frelse",
-            "definition": "Å bli reddet fra synd og død til evig liv sammen med Gud."
+            "id": "rettferdiggjorelse",
+            "term": "Rettferdiggjørelse",
+            "definition": "Å bli erklært rettferdig for Gud. Hvordan dette skjer, er hovedstriden mellom katolsk og luthersk lære."
         },
         {
-            "id": "synd",
-            "term": "Synd",
-            "definition": "Handlinger eller tanker som skiller mennesket fra Gud. Kristne tror alle mennesker synder."
+            "id": "sola-fide",
+            "term": "Sola fide",
+            "definition": "Latin for ved tro alene. Uttrykket står sentralt i luthersk lære om frelsen."
         },
         {
             "id": "arvesynd",
             "term": "Arvesynd",
-            "definition": "Læren om at alle mennesker er født med en tendens til å synde, som følge av syndefallet."
+            "definition": "Læren om at alle mennesker fødes inn i en tilstand der de er vendt bort fra Gud. Kirkene forstår den ulikt."
         },
         {
-            "id": "korset",
-            "term": "Korset",
-            "definition": "Det viktigste symbolet i kristendommen. Minner om at Jesus døde for menneskenes synder."
+            "id": "avlat",
+            "term": "Avlat",
+            "definition": "Ordning der folk kunne betale penger til kirken i stedet for å gjøre bot for syndene sine. Luther angrep denne i 1517."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva betyr nåde?",
-            "options": [
-                "At man må være snill",
-                "Guds ufortjente gave og tilgivelse",
-                "En type bønn"
-            ],
-            "answer": "Guds ufortjente gave og tilgivelse"
+            "type": "text",
+            "content": "Den 31. oktober 1999 satt to delegasjoner rundt et bord i den tyske byen Augsburg. Den ene kom fra Vatikanet, den andre fra Det lutherske verdensforbund. Papiret de skrev under på, handlet verken om penger eller land. Det handlet om ett eneste spørsmål: hvordan blir et menneske frelst? Det spørsmålet hadde delt kristendommen i Vest-Europa i nesten 500 år (Kristiansen, 2024)."
         },
         {
-            "question": "Hva er arvesynd?",
-            "options": [
-                "At barn arver foreldrenes synder",
-                "At alle mennesker er født med en tendens til å gjøre feil",
-                "At synd kan overføres mellom mennesker"
-            ],
-            "answer": "At alle mennesker er født med en tendens til å gjøre feil"
+            "type": "text",
+            "content": "Frelse betyr å bli reddet. I kristendommen står Jesus i sentrum av alt som har med frelse å gjøre. Kristne tror at Jesus gjennom sin død og oppstandelse sonet for menneskenes synd og overvant døden og det onde (Jacobsen mfl., 2026). Å sone betyr å ta straffen for noe. Å bli frelst handler derfor både om noe som skjedde en gang for lenge siden, og om noe som ligger foran: at den som tror, skal bli reddet av Gud."
         },
         {
-            "question": "Hvorfor er korset et viktig symbol?",
-            "options": [
-                "Fordi Jesus ble født i et kors-formet hus",
-                "Fordi Jesus døde på korset for menneskenes synder",
-                "Fordi De ti bud ble skrevet på et kors"
-            ],
-            "answer": "Fordi Jesus døde på korset for menneskenes synder"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Enkelt trekors mot lys morgenhimmel over åkerlandskap",
+            "caption": "Korset er det mest kjente symbolet i kristendommen. Kristne ser Jesu død som soning for menneskenes synd."
         },
         {
-            "question": "Hva betyr sola fide?",
-            "options": [
-                "Frelse ved tro alene",
-                "Frelse ved gode gjerninger",
-                "Frelse ved dåpen"
-            ],
-            "answer": "Frelse ved tro alene"
+            "type": "text",
+            "content": "Men reddet fra hva? Kristen lære sier at forholdet mellom Gud og mennesker er ødelagt. Det kalles synd. Synd er ikke bare enkelthandlinger som er gale, men også en tilstand: mennesket er vendt bort fra Gud. Kirken kaller det arvesynden, læren om at alle mennesker fødes inn i denne tilstanden. Læren bygger på et avsnitt Paulus skrev i Romerbrevet (Elstad & Store norske leksikon, 2024). Kirkesamfunnene forstår den ulikt: katolsk lære ser arvesynden som en mangel ved mennesket, luthersk lære ser den som noe som forandrer hele forholdet til Gud, mens ortodokse kirker legger mindre vekt på den (Elstad & Store norske leksikon, 2024). Hvem Paulus var, kan du lese om i artikkelen om [Paulus og misjonen](/krle/religion/kristendom/paulus-og-misjonen)."
         },
         {
-            "question": "Hva er den viktigste forskjellen mellom katolsk og protestantisk syn på frelse?",
-            "options": [
-                "Katolikker tror ikke på Jesus",
-                "Protestanter mener man blir frelst ved tro alene, katolikker vektlegger også gjerninger",
-                "Katolikker tror ikke på himmelen"
-            ],
-            "answer": "Protestanter mener man blir frelst ved tro alene, katolikker vektlegger også gjerninger"
+            "type": "header",
+            "text": "Nåden er en gave, ikke en lønn"
+        },
+        {
+            "type": "text",
+            "content": "Det kristne svaret på problemet heter nåde. Nåde er Guds kjærlighet og barmhjertighet: Gud fritar den skyldige fra straffen og gir tilgivelse og evig liv i stedet (Elstad & Store norske leksikon, 2026). Paulus gjorde nåden til kjernen i det han skrev. Mennesket kan ikke opparbeide frelsen gjennom gjerninger eller egen fortjeneste, og kan bare bli frelst av nåde alene, sola gratia på latin (Elstad & Store norske leksikon, 2026). Grunntanken er den samme i læren om forsoning, altså om hvordan det ødelagte forholdet mellom Gud og mennesker blir reparert. Mennesket kan ikke forsone seg med Gud på egen hånd, og det er Gud som tar det første steget (Leivestad & Rasmussen, 2026). Under kan du selv sortere hva de to største kirkeretningene i Vesten faktisk sier."
+        },
+        {
+            "type": "component",
+            "name": "Signeringsbordet",
+            "props": {
+                "title": "Signeringsbordet i Augsburg"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hvilken søyle som ble fullest. Det er lett å tro at katolikker og protestanter er uenige om alt som har med frelse å gjøre. Det er de ikke. Begge sier at mennesket ikke kan frelse seg selv, og begge sier at nåden kommer først. Uenigheten sitter på et smalere punkt: hvor stor plass mennesket selv har i det som skjer. Men det punktet var stort nok til å sprenge den vestlige kirken."
+        },
+        {
+            "type": "header",
+            "text": "Striden som sprengte kirken"
+        },
+        {
+            "type": "text",
+            "content": "Den 31. oktober 1517 ble 95 læresetninger fra munken Martin Luther kjent (Rasmussen, 2026). En av tingene han gikk løs på, var avlaten. Avlat gikk ut på at folk kunne betale for syndene sine med penger til kirken i stedet for å vise anger eller gjøre bot (Rasmussen, 2026). For Luther var dette et bevis på at kirken hadde snudd frelsen på hodet og gjort den til en handel."
+        },
+        {
+            "type": "text",
+            "content": "Luther og reformatoren Jean Calvin satte i stedet Paulus sin lære om rettferdiggjørelse i sentrum. Rettferdiggjørelse betyr å bli erklært rettferdig for Gud. De sa at det skjer ved tro alene, sola fide på latin, og at menneskelig fortjeneste er utelukket (Molland mfl., 2024). Nettopp dette ble et hovedskille mellom protestanter og katolikker, og reformasjonen delte den vestlige kristendommen i en katolsk, en luthersk og en reformert gren, der den reformerte fulgte Calvin (Rasmussen, 2026). Mer om de ulike retningene finner du i artikkelen om [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "For av nåde er dere frelst, ved tro. Det er ikke deres eget verk, men Guds gave. Det hviler ikke på gjerninger, for at ingen skal skryte av seg selv.",
+                "author": "Efeserne 2,8-9, Bibelen 2011"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Den katolske kirken svarte med et stort kirkemøte i byen Trient i Nord-Italia. Møtet gikk over tre bolker, i 1545-1547, 1551-1552 og 1562-1563, og regnes som starten på motreformasjonen, altså den katolske kirkens eget svar på reformasjonen (Stensvold & Store norske leksikon, 2026). Også katolsk lære sier at nåden kommer først. Katekismen, som er kirkens offisielle læreoversikt, slår fast at selv den forberedelsen mennesket gjør for å ta imot nåden, allerede er nådens eget verk (Den katolske kirke, u.å.). Men den legger til noe: når Gud rører ved hjertet, er mennesket ikke helt passivt, samtidig som mennesket heller ikke kan løfte seg opp til rettferdighet uten nåden (Den katolske kirke, u.å.)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To gamle bøker med bokmerker liggende åpne side om side",
+            "caption": "Begge sider leser de samme brevene fra Paulus, og trekker ulike konklusjoner av dem."
+        },
+        {
+            "type": "header",
+            "text": "Hvor går uenigheten egentlig?"
+        },
+        {
+            "type": "text",
+            "content": "Karikaturen sier at protestanter tror på tro og katolikker tror på gjerninger. Den stemmer ikke. Den norske kirke er evangelisk-luthersk, altså bygd på Luthers lære, og hviler på tre setninger med ordet alene i seg: ved tro alene, av nåde alene og etter Skriften alene (Den norske kirke, u.å.). Men luthersk lære sier ikke at gjerninger er likegyldige. Poenget er rekkefølgen. Den som er blitt rettferdiggjort ved tro, blir fri til å elske sin neste og skaperverket rundt seg (Den norske kirke, u.å.). Gjerningene er frukten, ikke veien. Kirken bruker også ordet nådemidler om Guds ord, dåpen og nattverden, altså kanalene nåden virker gjennom (Den norske kirke, u.å.). Dem kan du lese mer om i artikkelen om [sakramentene](/krle/religion/kristendom/sakramentene)."
+        },
+        {
+            "type": "text",
+            "content": "Katolsk lære snur ikke dette til det motsatte. Den sier ikke at man kan kjøpe seg frelse eller samle nok gode handlinger til å fortjene den. Kirkefaderen Augustin forsto rettferdiggjørelsen som en forvandling av mennesket innenfra, og den tanken preget katolsk teologi videre (Molland mfl., 2024). Katolsk lære holder fast på ordet fortjeneste, men snur på det: fortjeneste finnes bare fordi Gud har bestemt at mennesket skal få være med i sitt eget nådeverk. Katekismen sier det kort. Våre fortjenester er Guds gaver (Den katolske kirke, u.å.). Uenigheten handler altså om hvor stor plass mennesket får i sin egen frelse, ikke om nåden er nødvendig."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tomt langbord med to stoler vendt mot hverandre i lyst rom",
+            "caption": "Fra 1990-årene satt katolske og lutherske teologer sammen om det samme spørsmålet."
+        },
+        {
+            "type": "header",
+            "text": "Frelse til hva?"
+        },
+        {
+            "type": "text",
+            "content": "Frelsen peker framover. Mange kristne tror at de rettferdige kommer til paradis etter døden, og at dette er én form for frelse ved siden av den endelige frelsen ved tidens slutt (Jacobsen mfl., 2026). Kristne tekster forteller også at Kristus skal komme tilbake og opprette et tusenårsrike der Satan er bundet, og at Gud til slutt skaper et evig rike der døden og det onde er borte (Jacobsen mfl., 2026). Teologer har forklart hvordan selve forsoningen virker på ulike måter. Anselm av Canterbury mente Kristus oppfylte Guds krav og bar straffen mennesket hadde fortjent, mens Peter Abélard mente forsoningen først får virkning når mennesket selv tar imot den (Leivestad & Rasmussen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Så hvor tett kan de to sidene komme hverandre? I 1990-årene arbeidet katolske og lutherske teologer fram en felleserklæring om rettferdiggjørelsen (Molland mfl., 2024). Den ble skrevet under i Augsburg 31. oktober 1999. Partene slo fast at de er enige om grunnprinsippene, at hver kirke fortsatt har sine egne tilføyelser i læren, og at fordømmelsene de rettet mot hverandre på 1500-tallet, ikke lenger rammer den andres lære slik den står i dag (Kristiansen, 2024). Datoen var ikke tilfeldig valgt. Det var 482 år på dagen etter at Luthers 95 setninger ble kjent."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet frelse, og hva mener kristne at mennesket blir reddet fra?",
+                    "Forklar hva nåde betyr i kristendommen.",
+                    "Hva var avlat, og hvorfor reagerte Martin Luther på den?",
+                    "Hva betyr sola fide og sola gratia?"
+                ],
+                "reflekter": [
+                    "Både katolsk og luthersk lære sier at nåden kommer først. Forklar med egne ord hva de likevel er uenige om.",
+                    "Luthersk lære kaller gode gjerninger frukten av troen. Hva betyr det, og hvorfor er rekkefølgen viktig for lutheranere?",
+                    "Hvorfor tror du en uenighet om hvordan frelsen virker, kunne føre til at en hel kirke ble splittet?",
+                    "Felleserklæringen ble skrevet under 31. oktober, samme dato som Luthers teser ble kjent. Hva ville partene si med det valget?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hva Anselm av Canterbury og Peter Abélard mente om forsoningen, og skriv en kort tekst om hvordan de to forklaringene skiller seg fra hverandre.",
+                    "Sammenlign det kristne synet på frelse med svaret fra en annen religion i sammenligningsemnet. Hva er hovedforskjellen?",
+                    "Diskuter i klassen: Er det mulig for to grupper å bli enige om grunnen i en sak, og likevel beholde uenigheten sin?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr nåde i kristendommen?",
+                        "options": [
+                            "En bønn man ber før måltidet",
+                            "Guds ufortjente kjærlighet og tilgivelse",
+                            "En straff man må sone for synder",
+                            "Et løfte man gir ved konfirmasjonen"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Nåde er Guds kjærlighet og barmhjertighet. Gud fritar den skyldige fra straff og gir tilgivelse og evig liv, uten at mennesket har gjort seg fortjent til det."
+                    },
+                    {
+                        "question": "Hva angrep Martin Luther i de 95 læresetningene fra 1517?",
+                        "options": [
+                            "At kirken brukte latin i gudstjenesten",
+                            "At paven ikke var gift",
+                            "Avlaten, der folk kunne betale penger i stedet for å gjøre bot",
+                            "At Bibelen inneholdt for mange bøker"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Avlat gikk ut på at folk kunne betale for syndene sine med penger til kirken i stedet for å vise anger eller gjøre bot. Luther mente det gjorde frelsen til en handel."
+                    },
+                    {
+                        "question": "Hva er den viktigste forskjellen mellom luthersk og katolsk syn på frelsen?",
+                        "options": [
+                            "Katolikker tror ikke at Jesus sto opp fra de døde",
+                            "Lutheranere mener nåden er unødvendig",
+                            "Katolikker mener frelsen kan kjøpes for penger",
+                            "Hvor stor plass mennesket får i sin egen frelse etter at nåden er gitt"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Begge sier at nåden kommer først og er ufortjent. Luthersk lære sier ved tro alene, mens katolsk lære sier at mennesket samarbeider med nåden."
+                    },
+                    {
+                        "question": "Hva sier den katolske katekismen om menneskets fortjeneste?",
+                        "options": [
+                            "At fortjeneste ikke finnes i det hele tatt",
+                            "At våre fortjenester er Guds gaver",
+                            "At fortjeneste kan telles opp og veies",
+                            "At bare prester kan ha fortjeneste"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Katolsk lære holder fast på ordet fortjeneste, men sier at den finnes bare fordi Gud har bestemt at mennesket skal få være med i sitt eget nådeverk."
+                    },
+                    {
+                        "question": "Hva skjedde i Augsburg 31. oktober 1999?",
+                        "options": [
+                            "Den katolske kirken og Det lutherske verdensforbund slo seg sammen til én kirke",
+                            "Trientkonsilet ble avsluttet",
+                            "Luther slo opp de 95 læresetningene sine",
+                            "Vatikanet og Det lutherske verdensforbund skrev under på en felleserklæring om rettferdiggjørelsen"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Partene erklærte seg enige om grunnprinsippene, og slo fast at fordømmelsene fra 1500-tallet ikke lenger rammer den andres lære i dag. Kirkene er fortsatt atskilte."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Jacobsen, K. A., Løøv, M. & Eggen, N. S. (2026). *Frelse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/frelse](https://snl.no/frelse)",
+                    "Molland, E., Leivestad, R. & Elstad, H. (2024). *Rettferdiggjørelse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/rettferdiggjørelse](https://snl.no/rettferdiggj%C3%B8relse)",
+                    "Elstad, H. & Store norske leksikon. (2026). *Nåde - teologi*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/nåde_-_teologi](https://snl.no/n%C3%A5de_-_teologi)",
+                    "Elstad, H. & Store norske leksikon. (2024). *Arvesynd*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/arvesynd](https://snl.no/arvesynd)",
+                    "Leivestad, R. & Rasmussen, T. (2026). *Forsoning - i kristendommen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/forsoning_-_i_kristendommen](https://snl.no/forsoning_-_i_kristendommen)",
+                    "Rasmussen, T. (2026). *Reformasjonen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/reformasjonen](https://snl.no/reformasjonen)",
+                    "Stensvold, A. & Store norske leksikon. (2026). *Trientkonsilet*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Trientkonsilet](https://snl.no/Trientkonsilet)",
+                    "Kristiansen, I. S. (2024). *Felleserklæringen om rettferdiggjørelseslæren*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Felleserklæringen_om_rettferdiggjørelseslæren](https://snl.no/Felleserkl%C3%A6ringen_om_rettferdiggj%C3%B8relsesl%C3%A6ren)",
+                    "Den katolske kirke. (u.å.). *2. artikkel: Nåde og rettferdiggjørelse*. Den katolske kirkes katekisme. Hentet 11.08.2026 fra [katolsk.no/tro/kkk/k3_13](https://www.katolsk.no/tro/kkk/k3_13)",
+                    "Den norske kirke. (u.å.). *En evangelisk-luthersk kirke*. Hentet 11.08.2026 fra [kirken.no](https://www.kirken.no/nb-NO/kristen-tro/kristen-tro/en-evangelisk-luthersk-kirke/)",
+                    "Bibelselskapet. (2011). *Efeserne 2,8-9*. Bibelen. Hentet 11.08.2026 fra [bibel.no](https://bibel.no/nettbibelen/les/nb-2011/EPH/EPH.2)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "For av nåde er dere frelst, ved tro. Det er ikke deres eget verk, men Guds gave.",
-        "source": "Bibelen",
-        "reference": "Efeserne 2:8"
-    }
+    "timeline": []
 }

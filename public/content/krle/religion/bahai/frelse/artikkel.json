@@ -1,6 +1,7 @@
 {
     "id": "frelse",
-    "title": "Åndelig utvikling",
+    "title": "Hva skal du med øyne i mørket?",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "bahai",
@@ -9,83 +10,253 @@
         "frelse",
         "doctrinal"
     ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Sjelens reise"
-        },
-        {
-            "type": "text",
-            "content": "Bahá'íer tror at livet på jorden er som en skole der sjelen skal utvikle gode egenskaper (dyder) som kjærlighet, ærlighet og tålmodighet."
-        },
-        {
-            "type": "header",
-            "text": "Livet etter døden"
-        },
-        {
-            "type": "text",
-            "content": "Når kroppen dør, lever sjelen videre i en åndelig verden. Der fortsetter den å utvikle seg og komme nærmere Gud. Det er ingen fysisk himmel eller helvete."
-        },
-        {
-            "type": "header",
-            "text": "Tjeneste"
-        },
-        {
-            "type": "text",
-            "content": "En viktig del av den åndelige utviklingen er å tjene andre mennesker og arbeide for fred og rettferdighet i verden."
-        }
+    "category": "Bahá'í",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Bahá'í-troen sier at himmel og helvete ikke er fysiske steder, men tilstander: nærhet til Gud eller avstand fra Gud.",
+        "Sjelen knyttes til fosteret ved unnfangelsen og skilles fra kroppen ved døden. Da fortsetter den.",
+        "Bahá'u'lláh sammenlikner dette livet med tiden i mors liv: vi bygger opp noe vi først får bruk for etterpå.",
+        "Veien går gjennom bønn, kunnskap, gode egenskaper og tjeneste for andre. Det finnes ingen prestestand.",
+        "Utviklingen tar aldri slutt. Det finnes ikke noe punkt der sjelen er ferdig."
     ],
+    "createdDate": "2025-12-04T12:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
-            "id": "sjel",
+            "id": "sjel-bahai",
             "term": "Sjel",
-            "definition": "Menneskets åndelige del som lever videre etter døden."
+            "definition": "Den delen av mennesket som ifølge bahá'í-troen ikke hører til den fysiske skapelsen. Den knyttes til fosteret ved unnfangelsen og lever videre når kroppen dør."
         },
         {
-            "id": "dyder",
-            "term": "Dyder",
-            "definition": "Gode egenskaper som ærlighet, mot og vennlighet."
+            "id": "naerhet-til-gud",
+            "term": "Nærhet til Gud",
+            "definition": "Bahá'í-troens svar på det andre religioner kaller himmel. Ikke et sted, men en tilstand der mennesket er vendt mot Gud."
         },
         {
-            "id": "tjeneste",
+            "id": "dyder-bahai",
+            "term": "Gode egenskaper",
+            "definition": "Egenskaper som ærlighet, tålmodighet og vennlighet. Bahá'í-skriftene sier at et menneske som er fylt av dem, allerede er i det virkelige paradiset."
+        },
+        {
+            "id": "tjeneste-bahai",
             "term": "Tjeneste",
-            "definition": "Å hjelpe andre og bidra til samfunnet."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva er meningen med livet ifølge bahá'í-troen?",
-            "options": [
-                "Å bli rik",
-                "Å utvikle gode egenskaper",
-                "Å vinne kriger"
-            ],
-            "answer": "Å utvikle gode egenskaper"
+            "definition": "Å bruke tid, krefter og kunnskap på andre mennesker. I bahá'í-troen er dette en av hovedveiene til åndelig utvikling."
         },
         {
-            "question": "Hva skjer med sjelen etter døden?",
-            "options": [
-                "Den dør med kroppen",
-                "Den blir gjenfødt som dyr",
-                "Den lever videre og utvikler seg"
-            ],
-            "answer": "Den lever videre og utvikler seg"
-        },
-        {
-            "question": "Finnes det et fysisk helvete i bahá'í-troen?",
-            "options": [
-                "Ja, med ild",
-                "Nei, helvete er avstand fra Gud",
-                "Ja, under jorden"
-            ],
-            "answer": "Nei, helvete er avstand fra Gud"
+            "id": "guds-sendebud",
+            "term": "Guds sendebud",
+            "definition": "Bahá'í-troens ord for profetene Gud sender til menneskene. Krishna, Buddha, Moses, Jesus og Muhammad regnes som sendebud i hver sin tid."
         }
     ],
-    "quote": {
-        "text": "Edle har Jeg skapt dere, hvorfor har dere fornedret dere selv?",
-        "source": "De skjulte ord",
-        "reference": "Arabisk nr. 13"
-    }
+    "content": [
+        {
+            "type": "text",
+            "content": "Et foster i mors liv bygger øyne. Det er stummende mørkt der inne, og det finnes ingenting å se på. Likevel bygger det øyne. Det bygger ører selv om lyden er dempet og ordene ikke betyr noe ennå. Det bygger hender selv om det ikke er noe å gripe. Det bygger lunger selv om det ikke tar et eneste åndedrag før det er født. Alt sammen er ubrukelig akkurat der. Det er utstyr til et sted fosteret ikke vet at finnes."
+        },
+        {
+            "type": "text",
+            "content": "Dette bildet står sentralt i bahá'í-troen. Bahá'í er en religion som oppsto i Iran i siste halvdel av 1800-tallet. I dag finnes det rundt seks millioner bahá'íer i verden, og i Norge er bahá'í et registrert trossamfunn med omtrent 1100 medlemmer i 2024 (Vogt og Winje, 2026). Bahá'íer sier at meningen med livet er å bli kjent med Gud og komme nær ham (Bahá'í International Community, u.a.-d). Spørsmålet er hvordan et menneske kommer dit, og hva som venter når kroppen svikter."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ultralydbilde av foster med tydelig lukket øye",
+            "caption": "Fosteret bygger øyne i et mørke der øyne ikke er til noen nytte. Bahá'í-troen bruker dette som bilde på hele menneskelivet."
+        },
+        {
+            "type": "text",
+            "content": "Svaret begynner med sjelen. I bahá'í-troen hører ikke sjelen til den fysiske skapelsen i det hele tatt. Livet til et menneske starter ved unnfangelsen, når sjelen knytter seg til fosteret. Når døden kommer, går kroppen tilbake til støvet, mens sjelen skilles fra den og fortsetter videre (Bahá'í International Community, u.a.-b). Du kan lese mer om hvordan bahá'íer ser på mennesket og verden i artikkelen om [sentrale trekk](/krle/religion/bahai/sentrale-trekk)."
+        },
+        {
+            "type": "header",
+            "text": "Ingen steder, bare tilstander"
+        },
+        {
+            "type": "text",
+            "content": "Her går bahá'í-troen en annen vei enn mange andre religioner. Bahá'í-skriftene sier at det ikke finnes noe fysisk sted som heter himmel, og ikke noe fysisk sted som heter helvete. Når slike ord står i hellige tekster, skal de leses som bilder. De beskriver tilstander: hvor nær eller hvor langt unna Gud et menneske er, både i denne verden og i verdenene etter (Bahá'í International Community, u.a.-a). Prøv selv hvordan bahá'íer tenker om de to reisene under."
+        },
+        {
+            "type": "component",
+            "name": "Fosterkammeret",
+            "props": {
+                "title": "Fosterkammeret"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva de to rundene har til felles. I begge bygger noen opp noe de ikke får full bruk for der de er. Bahá'u'lláh skriver at verdenen etter døden er like annerledes fra denne verdenen som denne verdenen er fra barnets verden i mors liv (Bahá'u'lláh, u.a.-a). Det er en av grunnene til at bahá'íer ikke prøver å tegne kart over himmelen. De mener vi rett og slett ikke har sansene som skal til for å se det ennå. Mer om hvordan bahá'íer tenker om Gud, finner du i artikkelen om [gudsbildet](/krle/religion/bahai/gudsbilde)."
+        },
+        {
+            "type": "header",
+            "text": "Slik utvikler sjelen seg"
+        },
+        {
+            "type": "text",
+            "content": "Hvordan utvikler sjelen seg, da? Bahá'í-skriftene peker på flere ting som virker sammen: bønn, å studere de hellige tekstene, å skaffe seg kunnskap, å bli bedre til å oppføre seg mot andre, å komme seg gjennom vanskelige perioder, og å tjene andre mennesker (Bahá'í International Community, u.a.-c). I tillegg kommer meditasjon, altså å sitte i ro og tenke grundig over det man har lest og bedt om (Bahá'í International Community, u.a.-d). Ingen prest kan gjøre dette på vegne av deg, for bahá'í-troen har ingen prestestand (Vogt og Winje, 2026). Hvordan bønnen ser ut i praksis, kan du lese om i artikkelen om [bønn](/krle/religion/bahai/bonn)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Uten prester og uten én leder",
+                "content": "Bahá'í-troen har ingen prestestand, og legger relativt lite vekt på felles gudsdyrkelse. Trossamfunnet har heller ingen enkelt verdensleder. Det styres av et råd på ni valgte medlemmer som kalles Det universelle rettferdighetens hus, med sete i Haifa i Israel (Vogt og Winje, 2026)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Tjeneste har en egen plass i dette. Bahá'í-skriftene sammenlikner sjelen med et lys: et lys er til for å gi lys. Gode egenskaper vokser ikke fram av at et menneske graver i seg selv, men av at det gjør noe for andre (Bahá'í International Community, u.a.-d). 'Abdu'l-Bahá, sønnen til religionsstifteren, sa det så sterkt som at når mennesker blir opplyst av sannheten og fylt av alle de gode egenskapene, er akkurat det den største belønningen og det virkelige paradiset. Den åndelige straffen er det motsatte: å være stengt ute fra Gud og å bli styrt av sine egne mørke sider (Bahá'í International Community, u.a.-a)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Hender som rekker en skål med mat til en annen person",
+            "caption": "Tjeneste for andre er ikke en ekstraoppgave i bahá'í-troen. Det er en av hovedveiene til åndelig utvikling."
+        },
+        {
+            "type": "header",
+            "text": "Døden som budbringer"
+        },
+        {
+            "type": "text",
+            "content": "I bahá'í-troen er ikke døden noe å frykte. I skriftsamlingen De skjulte ord kaller Bahá'u'lláh døden en gledesbudbringer, og spør hvorfor mennesket sørger over den (Bahá'u'lláh, u.a.-b; Bahá'í International Community, u.a.-b). Om hva som skjer etterpå, skriver han at sjelen, etter at den er skilt fra kroppen, fortsetter å utvikle seg helt til den når Guds nærvær, i en tilstand som verken år, hundreår eller endringer i denne verden kan rokke ved (Bahá'u'lláh, u.a.-a)."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig setter han en grense for hvor mye vi kan vite. Sjelens tilstand etter døden kan aldri beskrives, skriver han, og det er heller ikke riktig å avdekke hele dens karakter for menneskeøyne (Bahá'u'lláh, u.a.-a). 'Abdu'l-Bahá sier at alt som finnes, er i stand til å utvikle seg videre, og at det gjelder sjelen etter døden også. Rikdommen i den neste verdenen er nærhet til Gud ('Abdu'l-Bahá, u.a.). Men sjelen blir værende innenfor sin egen grad. Et vanlig menneske blir altså ikke et av Guds sendebud av å utvikle seg langt nok. Guds sendebud er bahá'í-troens ord for de store profetene, som Moses, Jesus og Muhammad ('Abdu'l-Bahá, u.a.)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Vit i sannhet at sjelen, etter at den er skilt fra kroppen, vil fortsette å utvikle seg til den når Guds nærvær, i en tilstand som verken tidsaldrenes gang eller denne verdens omskiftelser kan forandre.",
+                "author": "Bahá'u'lláh, Gleanings from the Writings of Bahá'u'lláh, avsnitt LXXXI (oversatt fra Shoghi Effendis engelske utgave)"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Det betyr at reisen aldri stopper opp. I bahá'í-troen finnes det ikke noe punkt der sjelen er ferdig utviklet og kan legge fra seg arbeidet. Det finnes heller ingen siste dom som deler menneskeheten i to grupper for alltid. Utviklingen fortsetter, og målet er alltid å komme nærmere."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Sti som forsvinner oppover i lys morgentåke",
+            "caption": "Reisen har ingen målstrek. Sjelen fortsetter å nærme seg Gud, skriver Bahá'u'lláh."
+        },
+        {
+            "type": "header",
+            "text": "Det bahá'í-troen ikke har"
+        },
+        {
+            "type": "text",
+            "content": "Noen forestillinger som er vanlige i andre religioner, spiller liten eller ingen rolle her. Bahá'í-troen har ikke gjenfødelse, altså at sjelen fødes på nytt i en ny kropp. Forfedredyrkelse, altså at man dyrker og ofrer til slektninger som er døde, hører heller ikke hjemme i troen. Engler, dommedag og djevelen har mindre betydning enn i jødedom, kristendom og islam, selv om troen på én Gud og på Guds sendebud ligner mye på det man finner der (Vogt og Winje, 2026). Hvordan bahá'íer markerer død og begravelse, kan du lese om i artikkelen om [overgangsriter](/krle/religion/bahai/overgangsriter)."
+        },
+        {
+            "type": "text",
+            "content": "Bahá'í-troen er heller ingen ensartet blokk. Religionen har hatt splittelser og utbrytergrupper, blant annet de såkalte frie bahaiene. De uenighetene handlet først og fremst om hvem som skulle lede trossamfunnet (Vogt og Winje, 2026). Og selv om bahá'í-skriftene leser himmel og helvete i andre religioners tekster som bilder på nærhet og avstand (Bahá'í International Community, u.a.-a), leser andre religioner sine egne tekster på sin egen måte. Her er religionene reelt uenige, og det er verdt å merke seg når man sammenlikner dem."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mener bahá'í-troen med himmel og helvete, når det ikke er steder?",
+                    "Når begynner livet til et menneske ifølge bahá'í-troen, og hva skjer med sjelen ved døden?",
+                    "Nevn fire ting bahá'í-skriftene sier at et menneske kan gjøre for å utvikle sjelen.",
+                    "Hvorfor mener bahá'íer at vi ikke kan beskrive den neste verdenen?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor fosteret i mors liv passer som bilde på menneskelivet i bahá'í-troen. Hvor slutter bildet å passe?",
+                    "Bahá'í-troen har ingen prestestand. Hva slags forskjell tror du det gjør for et vanlig medlem?",
+                    "Bahá'u'lláh kaller døden en gledesbudbringer. Hva gjør det med måten et menneske kan møte sin egen død på?",
+                    "En reise uten målstrek: er det mer eller mindre motiverende enn et mål man kan nå én gang for alle? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Sammenlign bahá'í-troens syn på frelse med det dere har lest om i en annen religion. Sett opp likheter og forskjeller i to kolonner.",
+                    "Finn ut hvordan bahá'íer i Norge organiserer seg uten prester, og skriv en kort tekst om det.",
+                    "Diskuter i klassen: Hva betyr det for en religion at den sier at helvete er en tilstand og ikke et sted?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er himmel og helvete ifølge bahá'í-skriftene?",
+                        "options": [
+                            "To fysiske steder mennesket sendes til etter døden",
+                            "Tilstander av nærhet til Gud eller avstand fra Gud",
+                            "To land på jorden",
+                            "Noe bare Guds sendebud får se"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Bahá'í-skriftene sier at det ikke finnes noe fysisk sted som heter himmel eller helvete. Ordene beskriver hvor nær eller hvor langt unna Gud et menneske er."
+                    },
+                    {
+                        "question": "Hvilket bilde bruker Bahá'u'lláh om forholdet mellom dette livet og det neste?",
+                        "options": [
+                            "En elv som renner ut i havet",
+                            "En stige med sju trinn",
+                            "Barnet i mors liv, som er i en helt annen verden enn den som venter",
+                            "En dør som lukkes for alltid"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Han skriver at verdenen etter døden er like annerledes fra denne verdenen som denne verdenen er fra barnets verden i mors liv."
+                    },
+                    {
+                        "question": "Hva sier bahá'í-skriftene at sjelen gjør etter at den er skilt fra kroppen?",
+                        "options": [
+                            "Den sovner til dommens dag",
+                            "Den fødes på nytt i en ny kropp",
+                            "Den blir borte sammen med kroppen",
+                            "Den fortsetter å utvikle seg mot Guds nærvær"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Bahá'u'lláh skriver at sjelen fortsetter å utvikle seg helt til den når Guds nærvær, i en tilstand ingenting i denne verden kan rokke ved."
+                    },
+                    {
+                        "question": "Hvilken av disse hører ikke hjemme i bahá'í-troen?",
+                        "options": [
+                            "Gjenfødelse i en ny kropp",
+                            "Bønn og meditasjon",
+                            "Tjeneste for andre mennesker",
+                            "Troen på én Gud"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Gjenfødelse er ikke en del av bahá'í-troen. Sjelen fødes ikke på nytt i en ny kropp, men fortsetter videre i åndelige verdener."
+                    },
+                    {
+                        "question": "Hvordan styres bahá'í-samfunnet?",
+                        "options": [
+                            "Av en prestestand med utdanning fra Haifa",
+                            "Av en enkelt verdensleder som arver stillingen",
+                            "Av et valgt råd på ni medlemmer, Det universelle rettferdighetens hus",
+                            "Av de eldste i hvert lokalsamfunn"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Bahá'í-troen har verken prestestand eller én verdensleder. Den styres av et demokratisk valgt råd på ni medlemmer."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Vogt, K. & Winje, G. (2026). *Bahá'í*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bahá'í](https://snl.no/bah%C3%A1%E2%80%99%C3%AD)",
+                    "Bahá'í International Community. (u.a.-a). *Heaven and Hell*. The Bahá'í Faith. Hentet 11.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/life-spirit/human-soul/heaven-hell)",
+                    "Bahá'í International Community. (u.a.-b). *Life and Death*. The Bahá'í Faith. Hentet 11.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/life-spirit/human-soul/life-death)",
+                    "Bahá'í International Community. (u.a.-c). *The Human Soul*. The Bahá'í Faith. Hentet 11.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/life-spirit/human-soul)",
+                    "Bahá'í International Community. (u.a.-d). *The Life of the Spirit*. The Bahá'í Faith. Hentet 11.08.2026 fra [bahai.org](https://www.bahai.org/beliefs/life-spirit/)",
+                    "Bahá'u'lláh. (u.a.-a). *Gleanings from the Writings of Bahá'u'lláh*, avsnitt LXXXI (S. Effendi, overs.). Bahá'í Reference Library. Hentet 11.08.2026 fra [reference.bahai.org](https://reference.bahai.org/en/t/b/GWB/gwb-81.html)",
+                    "Bahá'u'lláh. (u.a.-b). *The Hidden Words*, arabisk del nr. 32 (S. Effendi, overs.). Bahá'í Reference Library. Hentet 11.08.2026 fra [reference.bahai.org](https://reference.bahai.org/en/t/b/HW/hw-33.html)",
+                    "'Abdu'l-Bahá. (u.a.). The Infinite Perfections of Existence and the Progress of the Soul in the Next World. I *Some Answered Questions*, del 4. Bahá'í Reference Library. Hentet 11.08.2026 fra [bahai.org](https://www.bahai.org/library/authoritative-texts/abdul-baha/some-answered-questions/10)"
+                ]
+            }
+        }
+    ],
+    "timeline": []
 }

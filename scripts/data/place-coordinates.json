@@ -966,11 +966,11 @@
       "count": 18
     },
     {
-      "tag": "kolonialisering",
-      "count": 17
+      "tag": "doctrinal",
+      "count": 18
     },
     {
-      "tag": "doctrinal",
+      "tag": "kolonialisering",
       "count": 17
     },
     {
@@ -1046,6 +1046,10 @@
       "count": 12
     },
     {
+      "tag": "sikhisme",
+      "count": 11
+    },
+    {
       "tag": "hinduisme",
       "count": 11
     },
@@ -1075,10 +1079,6 @@
     },
     {
       "tag": "rettsstat",
-      "count": 10
-    },
-    {
-      "tag": "sikhisme",
       "count": 10
     },
     {
@@ -1135,6 +1135,10 @@
     },
     {
       "tag": "gudsbilde",
+      "count": 9
+    },
+    {
+      "tag": "frelse",
       "count": 9
     },
     {
@@ -1207,10 +1211,6 @@
     },
     {
       "tag": "fred",
-      "count": 8
-    },
-    {
-      "tag": "frelse",
       "count": 8
     },
     {

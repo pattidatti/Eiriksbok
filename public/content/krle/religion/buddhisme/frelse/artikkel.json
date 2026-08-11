@@ -1,91 +1,272 @@
 {
-    "id": "frelse",
-    "title": "Nirvana: Utslukning",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "buddhisme",
-    "dimension": "doctrinal",
-    "comparison_tags": [
-        "frelse",
-        "doctrinal"
-    ],
-    "createdDate": "2025-12-04T12:00:00Z",
-    "lastUpdated": "2025-12-04T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Lidelse og begjær"
-        },
-        {
-            "type": "text",
-            "content": "Buddha lærte at livet er preget av lidelse (dukkha) fordi vi alltid ønsker oss noe mer (begjær). Vi blir gjenfødt gang på gang i Samsara."
-        },
-        {
-            "type": "header",
-            "text": "Nirvana"
-        },
-        {
-            "type": "text",
-            "content": "Målet er å slukke begjæret og dermed stoppe lidelsen. Denne tilstanden kalles Nirvana ('utslukning'). Da brytes sirkelen av gjenfødsler."
-        },
-        {
-            "type": "header",
-            "text": "Den åttedelte vei"
-        },
-        {
-            "type": "text",
-            "content": "Veien til Nirvana går gjennom Den åttedelte vei, som handler om rett innsikt, rett moral og rett meditasjon."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "nirvana",
-            "term": "Nirvana",
-            "definition": "Utslukning av begjær, hat og uvitenhet. Frigjøring fra gjenfødelse."
-        },
-        {
-            "id": "dukkha",
-            "term": "Dukkha",
-            "definition": "Lidelse eller utilfredshet. Alt er forgjengelig."
-        },
-        {
-            "id": "den-attedelte-vei",
-            "term": "Den åttedelte vei",
-            "definition": "Metoden for å oppnå Nirvana (symbolisert ved et hjul med åtte eiker)."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva betyr ordet Nirvana?",
-            "options": [
-                "Himmelen",
-                "Utslukning",
-                "Evig liv"
-            ],
-            "answer": "Utslukning"
-        },
-        {
-            "question": "Hva er årsaken til lidelse ifølge Buddha?",
-            "options": [
-                "Guds straff",
-                "Begjær (tørst etter livet)",
-                "Uflaks"
-            ],
-            "answer": "Begjær (tørst etter livet)"
-        },
-        {
-            "question": "Hva må man følge for å nå Nirvana?",
-            "options": [
-                "Den åttedelte vei",
-                "De ti bud",
-                "Sharia"
-            ],
-            "answer": "Den åttedelte vei"
-        }
-    ],
-    "quote": {
-        "text": "Det finnes en ufødt, en ikke-blitt, en ikke-skapt, en ikke-formet. Hvis det ikke var slik, ville det ikke være noen utvei fra det fødte, det blitte, det skapte, det formede.",
-        "source": "Udana",
-        "reference": "8.3"
+  "id": "frelse",
+  "title": "Hvor ble det av flammen?",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "buddhisme",
+  "dimension": "doctrinal",
+  "comparison_tags": [
+    "frelse",
+    "doctrinal"
+  ],
+  "category": "Buddhisme",
+  "readTime": "7 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Nirvana betyr utslukning. Det er ikke et sted man reiser til, men navnet på at en brann tar slutt.",
+    "Det som slukner, er begjæret, hatet og uvitenheten. De eldste tekstene kaller dem tre ilder.",
+    "Nirvana kan nås mens man lever. Buddha nådde det under et tre og levde i mange tiår etterpå.",
+    "Buddha nektet å svare på om den opplyste finnes etter døden, og brukte en slukket flamme som bilde.",
+    "Veien går gjennom visdom, etikk og meditasjon. I rent land-buddhismen står tilliten til buddhaen Amitabha i sentrum i stedet."
+  ],
+  "createdDate": "2025-12-04T12:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "concepts": [
+    {
+      "id": "nirvana",
+      "term": "Nirvana",
+      "definition": "Målet i buddhismen. Ordet betyr utslukning: lidelsen tar slutt, og mennesket blir fritt fra uvitenhet og fra å bli født på nytt."
+    },
+    {
+      "id": "samsara",
+      "term": "Samsara",
+      "definition": "Kretsløpet av fødsel, død og ny fødsel som alle levende vesener er inne i."
+    },
+    {
+      "id": "de-tre-ildene",
+      "term": "De tre ildene",
+      "definition": "Begjær, hat og uvitenhet. I en av Buddhas eldste taler er det disse som gjør at alt står i brann."
+    },
+    {
+      "id": "torst",
+      "term": "Tørst",
+      "definition": "Buddhas ord for trangen til hele tiden å ville ha noe: nytelse, mer liv, eller å slippe å finnes. Tørsten er årsaken til lidelsen."
+    },
+    {
+      "id": "arhat",
+      "term": "Arhat",
+      "definition": "Et menneske som har nådd nirvana ved å bli helt fritt fra begjær. I theravada-buddhismen er dette idealet for munker og nonner."
     }
+  ],
+  "quote": {
+    "text": "Det finnes noe ufødt, noe som ikke er blitt til, noe uskapt, noe uformet. Fantes ikke dette ufødte, ikke-blitte, uskapte, uformede, ville det ikke finnes noen utvei fra det fødte, det blitte, det skapte, det formede.",
+    "source": "Nibbana Sutta, Udana 8.3",
+    "reference": "Oversatt fra Thanissaro Bhikkhus engelske utgave"
+  },
+  "content": [
+    {
+      "type": "text",
+      "content": "Tenn et stearinlys, og blås det ut. Så spør noen deg: hvor ble det av flammen? Dro den østover eller vestover? Ligger den et sted og venter på å bli tent igjen? Spørsmålet føles rart med en gang. Flammen dro ingen steder. Den sluttet å brenne fordi den ikke hadde mer å brenne på. Nettopp dette bildet brukte Buddha da en mann ville vite hva som skjer med et opplyst menneske etter døden."
+    },
+    {
+      "type": "text",
+      "content": "Målet i buddhismen heter nirvana. På norsk blir ordet gjerne oversatt med utslukning (Kværne og Borgland, 2025). Det er verdt å stoppe ved den oversettelsen. Nirvana er ikke et sted du reiser til, og det er ingen premie noen deler ut. Det er navnet på det som skjer når en brann tar slutt. Nirvana betyr at lidelsen tar helt slutt, og at mennesket blir fritt fra uvitenhet og fra å bli født på nytt (Kværne og Borgland, 2025)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Liten oljelampe med flamme som holder på å dø ut",
+      "caption": "Nirvana betyr utslukning. Bildet er hentet fra en lampe som går tom for olje, ikke fra et lys noen blåser ut."
+    },
+    {
+      "type": "text",
+      "content": "For å skjønne hva som slukner, må du vite hva buddhismen mener brenner. I en av de eldste talene sier Buddha at alt står i brann. Øyet brenner, det du ser brenner, og det samme gjør alt du hører, lukter, smaker og tenker. Det brenner med begjærets ild, hatets ild og uvitenhetens ild (Thanissaro Bhikkhu, 1993). Dette er ingen ild du kan kjenne på huden. Det er tre krefter inne i mennesket."
+    },
+    {
+      "type": "header",
+      "text": "Kretsløpet som ikke stanser av seg selv"
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen deler et verdensbilde med flere religioner som oppsto i India. Døden er ikke slutten. Den fører til en ny fødsel, en ny død og en ny fødsel igjen, i kretsløpet som kalles samsara (Jacobsen, 2025). Hva slags liv du får neste gang, henger sammen med karma, altså virkningen av det du har gjort (Borgland, 2026). Å komme seg ut av denne vandringen ble et hovedmål i både hinduisme, jainisme og buddhisme (Jacobsen, 2025). Så lenge de tre ildene brenner, fortsetter runden. Prøv selv hvordan buddhismen mener en slik brann tar slutt."
+    },
+    {
+      "type": "component",
+      "name": "FlammenSomSlukner",
+      "props": {
+        "title": "Flammen som slukner"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva du gjorde, og hva du ikke gjorde. Du blåste ikke på flammene. Du tok bort det de levde av. Slik ser buddhismen på nirvana: ikke som en kraft utenfra som slukker deg, men som det som skjer helt av seg selv når begjæret, hatet og uvitenheten ikke lenger får påfyll. Frigjøringen kommer ikke som nåde utenfra. Den skjer gjennom egen moral, egen meditasjon og egen innsikt (Kværne og Borgland, 2026b). Mer om hvorfor gudene ikke redder noen, finner du i artikkelen om [gudsbildet i buddhismen](/krle/religion/buddhisme/gudsbilde)."
+    },
+    {
+      "type": "header",
+      "text": "Fire setninger og én vei"
+    },
+    {
+      "type": "text",
+      "content": "Buddha samlet dette i det som kalles de fire edle sannheter. Den første er at alt er lidelse, alt er forgjengelig, og ingenting har et evig vesen. Den andre er at lidelsen kommer av tørst, altså av hele tiden å ville ha noe: nytelse, mer liv, eller å slippe å finnes. Den tredje er at lidelsen tar slutt når tørsten dempes og uvitenheten løses opp, særlig innbilningen om at det finnes et evig jeg. Den fjerde er at dette skjer ved å følge den åttedelte veien (Kværne og Store norske leksikon, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Den åttedelte veien er delt i tre grupper: visdom, etikk og meditasjon (Borgland og Store norske leksikon, 2026a). Det er altså ikke nok å tenke riktig, og det holder ikke å oppføre seg pent heller. De tre henger sammen. Du kan lese mer om hvert av de åtte punktene i artikkelen om [den åttedelte veien](/krle/religion/buddhisme/den-attedelte-vei)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Det finnes noe ufødt, noe som ikke er blitt til, noe uskapt, noe uformet. Fantes ikke dette ufødte, ikke-blitte, uskapte, uformede, ville det ikke finnes noen utvei fra det fødte, det blitte, det skapte, det formede.",
+        "author": "Nibbana Sutta, Udana 8.3"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Sitatet over er noe av det nærmeste de eldste tekstene kommer en beskrivelse av nirvana. Legg merke til at alt sies med nektelser: ufødt, ikke blitt til, uskapt. Tekstene sier stort sett hva nirvana ikke er. I vesten er nirvana ofte blitt forstått som et paradis eller som ren tomhet, men begge deler bommer på det buddhistiske innholdet (Kværne og Borgland, 2025)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Munk i meditasjon foran gammelt tempel i morgenlys",
+      "caption": "Veien til nirvana er delt i tre: visdom, etikk og meditasjon. Ingen av delene kan stå alene."
+    },
+    {
+      "type": "header",
+      "text": "Nirvana mens du lever"
+    },
+    {
+      "type": "text",
+      "content": "Buddha nådde ikke nirvana da han døde. Han nådde det mens han satt under et tre i Bodh Gaya, og etterpå levde han i mange år til, reiste rundt i Nord-India og underviste. Han var 80 år gammel da han døde i Kushinagari (Kværne og Borgland, 2026a). Nirvana er altså noe et menneske kan nå midt i livet. Den som når det, kalles en arhat i theravada, en av buddhismens to store hovedretninger. En arhat er et menneske som er blitt helt fritt fra begjær, og som har våknet på samme måte som Buddha selv (Kværne, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Men hva så med døden? Her blir tekstene påfallende tause, og det er med vilje. En mann som het Vaccha spurte Buddha rett ut om den opplyste, altså den som har våknet, finnes etter døden. Buddha avviste svaret. Så spurte Vaccha om han da ikke finnes. Det avviste Buddha også. Både finnes og ikke finnes? Verken eller? Buddha avviste alle fire (Thanissaro Bhikkhu, 1997)."
+    },
+    {
+      "type": "text",
+      "content": "I stedet spurte Buddha om ilden som brant foran dem. Hvis den slukner, kan du si hvilken retning den dro? Nord, sør, øst eller vest? Vaccha svarte at spørsmålet ikke passer. Ilden brant så lenge den hadde noe å brenne på, og da det tok slutt, sluttet den å brenne. Poenget er verken at den opplyste blir borte, eller at han lever videre et sted. Poenget er at spørsmålet vårt er formet av en verden med fødsel og død, og at det derfor ikke griper (Thanissaro Bhikkhu, 1997)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Røyktråd stiger fra nettopp slukket veke",
+      "caption": "Vaccha kunne ikke si hvilken vei flammen hadde dratt. Det var hele poenget til Buddha."
+    },
+    {
+      "type": "header",
+      "text": "Én lære, mange svar"
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen er ingen enhetlig blokk, og synet på veien til målet varierer mye. I theravada er arhaten idealet for munker og nonner. Mahayana, den andre store hovedretningen, kritiserte dette hardt og mente det var å tenke mest på seg selv. Der er idealet i stedet bodhisattvaen, som avlegger et løfte om å arbeide for at alle levende vesener skal våkne, ikke bare seg selv (Borgland og Store norske leksikon, 2026b)."
+    },
+    {
+      "type": "text",
+      "content": "Enda tydeligere blir forskjellen i rent land-buddhismen, som står sterkt i Kina og Japan. Der er ikke egen innsats det avgjørende. Den troende setter sin lit til buddhaen Amitabha, og den som gjentar formelen namu Amida butsu, blir ved døden født inn i Amitabhas paradis i vest, Sukhavati. Der blir man værende til man når nirvana (Borgland og Store norske leksikon, 2025). I japansk buddhisme er nettopp gjenfødsel i det rene landet et vanlig mål ved dødsritualer (Borgland, 2026). Hvordan døden markeres, kan du lese mer om i artikkelen om [overgangsriter](/krle/religion/buddhisme/overgangsriter)."
+    },
+    {
+      "type": "text",
+      "content": "Noen buddhistiske retninger går enda lenger. De mener at alt er relativt, og at samsara og nirvana derfor er relative til hverandre, eller kanskje til og med er det samme (Kværne og Borgland, 2025). Da er ikke nirvana noe som venter etterpå. Da er det denne verden, sett uten de tre ildene."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr ordet nirvana, og hvorfor passer oversettelsen dårlig sammen med ordet paradis?",
+          "Hvilke tre ilder er det som brenner ifølge Buddhas tale om ilden?",
+          "Hva er samsara, og hva har karma med saken å gjøre?",
+          "Hvilke tre grupper er den åttedelte veien delt i?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord forskjellen på å blåse ut en flamme og å la den gå tom for olje. Hvorfor er den forskjellen viktig i buddhismen?",
+          "Buddha avviste alle fire svarene på hva som skjer med den opplyste etter døden. Hvorfor tror du han gjorde det, i stedet for å velge ett av dem?",
+          "I rent land-buddhismen er tilliten til Amitabha viktigere enn egen innsats. Hva slags forskjell gjør det for et menneske som mener det er vanskelig å meditere?",
+          "De eldste tekstene beskriver nirvana nesten bare med nektelser. Hva er fordelene og ulempene med å beskrive noe på den måten?"
+        ],
+        "gaaVidere": [
+          "Sammenlign nirvana med målet i en annen religion dere har lest om. Skriv en kort tekst om hva som er likt, og hva som skiller dem.",
+          "Finn ut hva som menes med bardo i tibetansk buddhisme, og hvordan det henger sammen med veien til nirvana.",
+          "Diskuter i klassen: Er et mål som ikke kan beskrives, et dårligere mål enn et som kan det?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva betyr ordet nirvana?",
+            "options": [
+              "Himmel",
+              "Utslukning",
+              "Evig liv",
+              "Dommens dag"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Nirvana oversettes gjerne med utslukning. Det viser til at en brann tar slutt, ikke til et sted man reiser til."
+          },
+          {
+            "question": "Hvilke tre ilder er det som brenner ifølge Buddhas tale om ilden?",
+            "options": [
+              "Sult, tørst og søvn",
+              "Frykt, sorg og sinne",
+              "Begjær, hat og uvitenhet",
+              "Krig, sykdom og alderdom"
+            ],
+            "correctAnswer": 2,
+            "explanation": "I talen sier Buddha at alt vi sanser brenner med begjærets ild, hatets ild og uvitenhetens ild."
+          },
+          {
+            "question": "Når nådde Buddha selv nirvana?",
+            "options": [
+              "I det øyeblikket han døde i Kushinagari",
+              "Da han ble født",
+              "Da han satt under et tre i Bodh Gaya, lenge før han døde",
+              "Først etter at kroppen hans var kremert"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Han våknet under treet og levde deretter i mange år som lærer. Han var 80 år da han døde. Nirvana kan altså nås mens man lever."
+          },
+          {
+            "question": "Hva svarte Buddha da Vaccha spurte om den opplyste finnes etter døden?",
+            "options": [
+              "At han finnes for alltid i en himmel",
+              "At han blir helt tilintetgjort",
+              "At han fødes på nytt som en gud",
+              "At ingen av de fire mulige svarene passer, og han brukte en slukket flamme som bilde"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Buddha avviste alle fire alternativene og spurte i stedet hvilken retning en slukket flamme hadde dratt. Spørsmålet passer ikke."
+          },
+          {
+            "question": "Hva er særegent for rent land-buddhismen?",
+            "options": [
+              "Den mener nirvana ikke finnes",
+              "Den setter tilliten til buddhaen Amitabha i sentrum, ikke egen innsats",
+              "Den har fjernet den åttedelte veien fra læren",
+              "Den er den eneste retningen som tror på gjenfødelse"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Den troende gjentar formelen namu Amida butsu og blir ved døden født inn i Amitabhas paradis Sukhavati, der man blir værende til man når nirvana."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Kværne, P. & Borgland, J. W. (2025). *Nirvana*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/nirvana](https://snl.no/nirvana)",
+          "Kværne, P. & Borgland, J. W. (2026a). *Buddha*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Buddha](https://snl.no/Buddha)",
+          "Kværne, P. & Borgland, J. W. (2026b). *Buddhisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/buddhisme](https://snl.no/buddhisme)",
+          "Kværne, P. (2025). *Arhat*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/arhat](https://snl.no/arhat)",
+          "Kværne, P. & Store norske leksikon. (2026). *De fire edle sannheter*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/De_fire_edle_sannheter](https://snl.no/De_fire_edle_sannheter)",
+          "Borgland, J. W. & Store norske leksikon. (2026a). *Den åttedelte veien*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/den_åttedelte_veien](https://snl.no/den_%C3%A5ttedelte_veien)",
+          "Borgland, J. W. & Store norske leksikon. (2026b). *Bodhisattva*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bodhisattva](https://snl.no/bodhisattva)",
+          "Borgland, J. W. & Store norske leksikon. (2025). *Amitabha*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Amitabha](https://snl.no/Amitabha)",
+          "Borgland, J. W. (2026). *Dødsritualer - buddhismen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/dødsritualer_-_buddhismen](https://snl.no/d%C3%B8dsritualer_-_buddhismen)",
+          "Jacobsen, K. A. (2025). *Samsara*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/samsara](https://snl.no/samsara)",
+          "Thanissaro Bhikkhu (overs.). (1993). *Adittapariyaya Sutta: The Fire Sermon (SN 35.28)*. Access to Insight. Hentet 11.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/sn/sn35/sn35.028.than.html)",
+          "Thanissaro Bhikkhu (overs.). (1997). *Aggi-Vacchagotta Sutta: To Vacchagotta on Fire (MN 72)*. Access to Insight. Hentet 11.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/mn/mn.072.than.html)",
+          "Thanissaro Bhikkhu (overs.). (2012). *Nibbana Sutta: Unbinding (Ud 8.3)*. Access to Insight. Hentet 11.08.2026 fra [accesstoinsight.org](https://www.accesstoinsight.org/tipitaka/kn/ud/ud.8.03.than.html)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
 }

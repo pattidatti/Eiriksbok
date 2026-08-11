@@ -478,6 +478,68 @@
       "total": 9
     },
     {
+      "slug": "frelse",
+      "label": "Frelse og mål",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Hva skal du med øyne i mørket?",
+          "file": "content/krle/religion/bahai/frelse/artikkel.json",
+          "link": "/krle/religion/bahai/frelse"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Hvor ble det av flammen?",
+          "file": "content/krle/religion/buddhisme/frelse/artikkel.json",
+          "link": "/krle/religion/buddhisme/frelse"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Ikke et bedre sted, men ut",
+          "file": "content/krle/religion/hinduisme/frelse/artikkel.json",
+          "link": "/krle/religion/hinduisme/frelse"
+        },
+        {
+          "religion": "islam",
+          "title": "Vekten som ikke lyver",
+          "file": "content/krle/religion/islam/frelse/artikkel.json",
+          "link": "/krle/religion/islam/frelse"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Et tall, og en skare ingen kan telle",
+          "file": "content/krle/religion/jehovas-vitner/frelse/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/frelse"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Verden er ikke ferdig",
+          "file": "content/krle/religion/jodedom/frelse/artikkel.json",
+          "link": "/krle/religion/jodedom/frelse"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Gaven ingen kan fortjene",
+          "file": "content/krle/religion/kristendom/frelse/artikkel.json",
+          "link": "/krle/religion/kristendom/frelse"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Tre slags himmel",
+          "file": "content/krle/religion/mormonisme/frelse/artikkel.json",
+          "link": "/krle/religion/mormonisme/frelse"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Dråpen som ikke ble borte",
+          "file": "content/krle/religion/sikhisme/frelse/artikkel.json",
+          "link": "/krle/religion/sikhisme/frelse"
+        }
+      ],
+      "count": 9,
+      "total": 9
+    },
+    {
       "slug": "grunnleggere",
       "label": "Grunnleggere",
       "entries": [
@@ -844,62 +906,6 @@
       "total": 9
     },
     {
-      "slug": "frelse",
-      "label": "Frelse og mål",
-      "entries": [
-        {
-          "religion": "bahai",
-          "title": "Åndelig utvikling",
-          "file": "content/krle/religion/bahai/frelse/artikkel.json",
-          "link": "/krle/religion/bahai/frelse"
-        },
-        {
-          "religion": "buddhisme",
-          "title": "Nirvana: Utslukning",
-          "file": "content/krle/religion/buddhisme/frelse/artikkel.json",
-          "link": "/krle/religion/buddhisme/frelse"
-        },
-        {
-          "religion": "hinduisme",
-          "title": "Moksha: Frigjøring",
-          "file": "content/krle/religion/hinduisme/frelse/artikkel.json",
-          "link": "/krle/religion/hinduisme/frelse"
-        },
-        {
-          "religion": "islam",
-          "title": "Dommens dag og Paradis",
-          "file": "content/krle/religion/islam/frelse/artikkel.json",
-          "link": "/krle/religion/islam/frelse"
-        },
-        {
-          "religion": "jehovas-vitner",
-          "title": "Paradis på jord",
-          "file": "content/krle/religion/jehovas-vitner/frelse/artikkel.json",
-          "link": "/krle/religion/jehovas-vitner/frelse"
-        },
-        {
-          "religion": "jodedom",
-          "title": "Livet her og nå",
-          "file": "content/krle/religion/jodedom/frelse/artikkel.json",
-          "link": "/krle/religion/jodedom/frelse"
-        },
-        {
-          "religion": "kristendom",
-          "title": "Frelse og nåde",
-          "file": "content/krle/religion/kristendom/frelse/artikkel.json",
-          "link": "/krle/religion/kristendom/frelse"
-        },
-        {
-          "religion": "mormonisme",
-          "title": "Evig progresjon",
-          "file": "content/krle/religion/mormonisme/frelse/artikkel.json",
-          "link": "/krle/religion/mormonisme/frelse"
-        }
-      ],
-      "count": 8,
-      "total": 9
-    },
-    {
       "slug": "overgangsriter",
       "label": "Overgangsriter",
       "entries": [
@@ -989,7 +995,7 @@
     },
     {
       "religion": "bahai",
-      "title": "Åndelig utvikling",
+      "title": "Hva skal du med øyne i mørket?",
       "link": "/krle/religion/bahai/frelse",
       "dimension": "doctrinal",
       "tags": [
@@ -1080,7 +1086,7 @@
     },
     {
       "religion": "buddhisme",
-      "title": "Nirvana: Utslukning",
+      "title": "Hvor ble det av flammen?",
       "link": "/krle/religion/buddhisme/frelse",
       "dimension": "doctrinal",
       "tags": [
@@ -1161,7 +1167,7 @@
     },
     {
       "religion": "hinduisme",
-      "title": "Moksha: Frigjøring",
+      "title": "Ikke et bedre sted, men ut",
       "link": "/krle/religion/hinduisme/frelse",
       "dimension": "doctrinal",
       "tags": [
@@ -1243,7 +1249,7 @@
     },
     {
       "religion": "islam",
-      "title": "Dommens dag og Paradis",
+      "title": "Vekten som ikke lyver",
       "link": "/krle/religion/islam/frelse",
       "dimension": "doctrinal",
       "tags": [
@@ -1334,7 +1340,7 @@
     },
     {
       "religion": "jehovas-vitner",
-      "title": "Paradis på jord",
+      "title": "Et tall, og en skare ingen kan telle",
       "link": "/krle/religion/jehovas-vitner/frelse",
       "dimension": "doctrinal",
       "tags": [
@@ -1415,7 +1421,7 @@
     },
     {
       "religion": "jodedom",
-      "title": "Livet her og nå",
+      "title": "Verden er ikke ferdig",
       "link": "/krle/religion/jodedom/frelse",
       "dimension": "doctrinal",
       "tags": [
@@ -1496,7 +1502,7 @@
     },
     {
       "religion": "kristendom",
-      "title": "Frelse og nåde",
+      "title": "Gaven ingen kan fortjene",
       "link": "/krle/religion/kristendom/frelse",
       "dimension": "doctrinal",
       "tags": [
@@ -1586,7 +1592,7 @@
     },
     {
       "religion": "mormonisme",
-      "title": "Evig progresjon",
+      "title": "Tre slags himmel",
       "link": "/krle/religion/mormonisme/frelse",
       "dimension": "doctrinal",
       "tags": [
@@ -1664,6 +1670,16 @@
         "bonn",
         "ritual",
         "dagligliv"
+      ]
+    },
+    {
+      "religion": "sikhisme",
+      "title": "Dråpen som ikke ble borte",
+      "link": "/krle/religion/sikhisme/frelse",
+      "dimension": "doctrinal",
+      "tags": [
+        "frelse",
+        "doctrinal"
       ]
     },
     {
