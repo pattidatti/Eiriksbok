@@ -8,7 +8,7 @@
     "content": [
         {
             "type": "text",
-            "content": "En fagartikkel er en saktekst som har som hovedmål å informere, forklare eller drøfte et faglig emne. I motsetning til skjønnlitteraturen, som er oppdiktet, forholder fagartikkelen seg til virkeligheten. Den skal være sannferdig, etterprøvbar og saklig. Du møter fagartikler overalt: i lærebøker, i tidsskrifter, i aviser og på nettsteder som Store norske leksikon eller Wikipedia."
+            "content": "En fagartikkel er en saktekst som har som hovedmål å informere, forklare eller drøfte et faglig emne. Sakprosa er tekster som leseren har grunn til å oppfatte som direkte ytringer om virkeligheten, og til forskjell fra skjønnlitteratur stilles det krav om etterrettelighet (Tønnesson, 2026). I en fagartikkel skal du undersøke fakta selv, utforske ideer, drøfte og skrive faglig (Abusland & Solbakken, 2026). Du møter fagartikler overalt: i lærebøker, i tidsskrifter, i aviser og på nettsteder som Store norske leksikon eller Wikipedia."
         },
         {
             "type": "header",
@@ -16,7 +16,7 @@
         },
         {
             "type": "text",
-            "content": "For at en tekst skal fungere som en god fagartikkel, stilles det visse krav:"
+            "content": "Faglig skriving skal være objektiv og saklig, den skal bygge på pålitelige kilder som du vurderer kritisk, og språket må passe for den som skal lese teksten (Abusland & Solbakken, 2026). Det gir noen konkrete krav:"
         },
         {
             "type": "list",
@@ -33,7 +33,7 @@
         },
         {
             "type": "text",
-            "content": "En ryddig struktur er avgjørende for at leseren skal henge med. Den klassiske oppbyggingen er «fisken»:"
+            "content": "En ryddig struktur er avgjørende for at leseren skal henge med. Overskriften bør ikke være for lang, den bør si hva teksten handler om, og den bør fange interessen til leseren (Abusland, 2026). Ingressen står rett etter tittelen, oppsummerer hovedinnholdet og gir leseren lyst til å lese videre, og den skilles ofte fra resten av teksten med fet eller kursiv skrift (Orgeret, 2025). I hoveddelen starter hvert avsnitt med en temasetning som bærer den mest sentrale informasjonen, og avsnitt som hører sammen samles under mellomtitler (Baker & Abusland, 2026). Slik ser den klassiske oppbyggingen ut:"
         },
         {
             "type": "list",
@@ -51,7 +51,7 @@
         },
         {
             "type": "text",
-            "content": "Språket i en fagartikkel skal være presist og klart. Bruk gjerne fagbegreper, men forklar dem hvis de er vanskelige. Unngå «jeg-form» med mindre det er helt nødvendig. Bruk heller passive former («Det hevdes at...») eller la saken være subjekt («Forskningen viser...»)."
+            "content": "Språket i en fagartikkel skal være saklig og konkret, men samtidig enkelt og lesbart (Abusland & Solbakken, 2026). Bruk gjerne fagbegreper, men forklar dem hvis de er vanskelige. Du kan godt ha egne meninger, men de skal ligge i bakgrunnen: målet er å informere om og undersøke emnet, ikke å spekulere. Skriv derfor heller «Forskningen viser ...» enn «jeg synes ...»."
         },
         {
             "type": "component",
@@ -59,7 +59,7 @@
             "props": {
                 "forstaa": [
                     "Hva er hovedmålet med en fagartikkel?",
-                    "Hvorfor kalles den klassiske oppbyggingen for fagartikkelen «fisken», og hvilke deler består den av?",
+                    "Hvilke deler består den klassiske oppbyggingen av en fagartikkel av?",
                     "Hva er forskjellen på en ingress og en innledning i en fagartikkel?",
                     "Nevn to nettsteder der du kan finne fagartikler, ifølge teksten."
                 ],
@@ -67,12 +67,25 @@
                     "Teksten sier at forfatteren skal «tre til side og la saken stå i sentrum». Hva betyr det å skrive objektivt, og hvorfor er det viktig i en fagartikkel?",
                     "Hvorfor gjør god kildebruk en fagartikkel mer troverdig?",
                     "Hvorfor må en fagartikkel tilpasses målgruppen? Forklar med et eksempel på hvordan en artikkel for eksperter kan se annerledes ut enn en for skoleelever.",
-                    "Hvorfor anbefaler teksten å bruke former som «Forskningen viser...» i stedet for «jeg-form»?"
+                    "Hvorfor anbefaler teksten å skrive «Forskningen viser ...» heller enn «jeg synes ...»?"
                 ],
                 "gaaVidere": [
                     "Skriv en ingress på tre-fire setninger til en fagartikkel om et emne du kan godt. Husk at ingressen skal oppsummere hovedsaken og gjøre leseren nysgjerrig.",
                     "Finn en tekst i en avis eller på nett, og undersøk om den følger kravene til en fagartikkel. Er den objektiv, bygger den på fakta, og oppgir den kilder? Begrunn svaret ditt.",
                     "Diskuter med en medelev: Kan en fagartikkel noen gang være helt objektiv, eller vil forfatterens valg av tema og fakta alltid prege teksten litt?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Abusland, Å. (2026). *Skriv innledning, avslutning og tittel til fagartikkelen*. NDLA. Hentet 11.08.2026 fra [ndla.no](https://ndla.no/r/norsk-sf-vg2/skriv-innledning-avslutning-og-tittel-til-fagartikkelen/66a804978d)",
+                    "Abusland, Å. & Solbakken, H. M. (2026). *Å skrive en fagartikkel*. NDLA. Hentet 11.08.2026 fra [ndla.no](https://ndla.no/nb/r/norsk-yf/a-skrive-en-fagartikkel/54faf3179a)",
+                    "Baker, C. N. & Abusland, Å. (2026). *Planlegg innhold og struktur i en fagartikkel*. NDLA. Hentet 11.08.2026 fra [ndla.no](https://ndla.no/r/norsk-yf/planlegg-innhold-og-struktur-i-en-fagartikkel/c4aac691fa)",
+                    "Orgeret, K. S. (2025). *ingress*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/ingress](https://snl.no/ingress)",
+                    "Tønnesson, J. (2026). *sakprosa*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sakprosa](https://snl.no/sakprosa)"
                 ]
             }
         }
@@ -84,5 +97,5 @@
         "kildebruk"
     ],
     "createdDate": "2023-01-01T12:00:00Z",
-    "lastUpdated": "2025-12-03T17:25:16.499Z"
+    "lastUpdated": "2026-08-11T00:00:00Z"
 }
