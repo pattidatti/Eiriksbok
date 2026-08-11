@@ -1,103 +1,257 @@
 {
     "id": "sentrale-trekk",
-    "title": "Sentrale trekk i sikhismen",
+    "title": "Tre regler du kan leve, fem ting du kan se",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "sikhisme",
+    "dimension": "doctrinal",
+    "comparison_tags": [
+        "sentrale-trekk"
+    ],
+    "category": "Sikhisme",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Kjernen er tre regler for hverdagen: husk Gud, arbeid ærlig, del med andre.",
+        "Sikhismen har ingen prester. Troen leves i vanlig arbeid og vanlige måltider.",
+        "Langar er felleskjøkkenet i hver gurdwara. Maten er gratis, og alle sitter på gulvet.",
+        "Khalsa-medlemmer bærer fem kjennetegn som alle begynner med k på punjabi.",
+        "Rundt 25 millioner sikher i verden og rundt 5000 i Norge, ifølge anslag fra 2026."
+    ],
     "createdDate": "2025-12-24T10:00:00Z",
-    "lastUpdated": "2025-12-24T10:00:00Z",
-    "heroImage": "/images/krle/religion/sikhisme_sentrale_trekk_hero.webp",
+    "lastUpdated": "2026-08-11T12:00:00Z",
+    "concepts": [
+        {
+            "id": "khalsa",
+            "term": "Khalsa",
+            "definition": "Fellesskapet av innviede sikher. Ordet betyr de rene. Medlemmene bærer fem faste kjennetegn."
+        },
+        {
+            "id": "langar",
+            "term": "Langar",
+            "definition": "Felleskjøkkenet i en gurdwara. Maten er gratis, og de som spiser sitter ved siden av hverandre på gulvet."
+        },
+        {
+            "id": "gurdwara",
+            "term": "Gurdwara",
+            "definition": "Sikhenes samlingssted. Navnet betyr døren til guruen og guruens hus."
+        },
+        {
+            "id": "seva",
+            "term": "Seva",
+            "definition": "Frivillig arbeid for andre, uten betaling. En av de tingene som gjør et menneske mindre opptatt av seg selv."
+        },
+        {
+            "id": "guru-granth-sahib",
+            "term": "Guru Granth Sahib",
+            "definition": "Sikhenes hellige bok. Den æres som den levende guruen og ligger i hver eneste gurdwara."
+        }
+    ],
     "content": [
+        {
+            "type": "text",
+            "content": "Tenk at du skal forklare en religion på ti sekunder. De fleste ville begynt med en gud, en bok eller et gudshus. En sikh kan begynne et helt annet sted: med tre ting du skal gjøre i løpet av en helt vanlig tirsdag. Husk Gud. Arbeid ærlig. Del med andre."
+        },
+        {
+            "type": "text",
+            "content": "Sikhismen ble stiftet i Punjab i India på 1500-tallet av Guru Nanak, som levde fra 1469 til 1539. Etter ham fulgte ni etterfølgere som kalles guruer, altså lærere (Kristiansen mfl., 2026). Ordet sikh betyr elev eller disippel. I dag er sikhismen verdens femte største religion. Anslag fra 2026 sier omtrent 25 millioner tilhengere i verden (Eskild, 2026). Sikhene er i flertall i delstaten Punjab og utgjør rundt 2 prosent av Indias befolkning. Store grupper bor også i Storbritannia og Canada, og i Norge bor det rundt 5000 sikher (Kristiansen mfl., 2026). Husk at slike tall alltid er anslag."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Mann med turban arbeider på en åker i Punjab",
+            "caption": "Sikhismen ble til blant bønder i Punjab. Arbeid og tro hørte sammen fra starten."
+        },
+        {
+            "type": "text",
+            "content": "De tre reglene har fulgt religionen fra begynnelsen. I hverdagen er det viktigste for en sikh å jobbe hardt og ærlig, dele med andre og huske Gud i alt man gjør (Eskild, 2026). Hver del har sitt eget navn på punjabi, som er språket i Punjab. Å meditere over det hellige Navnet heter nam simaran, frivillig arbeid for andre heter seva, og ærlig arbeid heter kirat. Guru Nanak lærte at et menneske som gjør alle tre, gradvis blir mindre egoistisk og lever mer i samsvar med Gud (Jacobsen, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor det ikke holder med to av tre"
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva reglene ikke sier. De sier ikke at du skal trekke deg ut av verden for å komme nær Gud. De sier ikke at noen andre kan gjøre jobben for deg. I 1520 grunnla Nanak et jordbrukssamfunn ved elven Ravi, nord for Lahore. De som sluttet seg til læren hans, flyttet dit. De arbeidet som bønder på markene om dagen og møttes til sang av Nanaks dikt om morgenen og kvelden (Jacobsen, 2025). Arbeidet og bønnen lå i det samme døgnet, hos de samme menneskene. Det er dette mønsteret hele religionen bygger på."
+        },
+        {
+            "type": "component",
+            "name": "TreReglerOgFemTing",
+            "props": {
+                "title": "Ett døgn, tre regler, fem ting"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Sikhismen har ingen prester (Eskild, 2026). Menn og kvinner deltar sammen i gudstjenesten, som består i lesning eller sang av hymner fra den hellige boka (Kristiansen mfl., 2026), og både kvinner og menn kan ha religiøse og politiske verv (Eskild, 2026). Når ingen har enerett på det religiøse arbeidet, blir hverdagen til den enkelte selve stedet troen leves. Hva sikher tror om Gud, kan du lese mer om i artikkelen om [gudsbildet](/krle/religion/sikhisme/gudsbilde)."
+        },
+        {
+            "type": "header",
+            "text": "Langar, måltidet som beviser poenget"
+        },
+        {
+            "type": "text",
+            "content": "Sikhenes samlingssted heter gurdwara. Navnet betyr døren til guruen og guruens hus. I alle gurdwaraer finnes en langar, et felleskjøkken der maten lages og serveres. Maten er gratis, og de som spiser, sitter ved siden av hverandre på gulvet for å markere at alle er like (Jacobsen, 2026a). Ingen får bedre plass fordi de er rike eller kommer fra en fin familie. De to første reglene blir mat på et fat, og den tredje blir en plass på gulvet ved siden av deg."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Verdens største kjøkken",
+                "content": "Harmandir Sahib i Amritsar, som ofte kalles Det gylne tempel, er sikhenes viktigste helligsted. Der ligger et av verdens største kjøkken. Det gir gratis mat til over hundre tusen mennesker hver eneste dag. Langar uttrykker likhet og verdien av frivillig arbeid for andre, som kalles seva (Jacobsen, 2024). I Norge er det tre gurdwaraer, i Oslo, Lier og Bergen (Jacobsen, 2026a)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Sikhismen deler noen grunntanker med naboreligionene sine. Fra samme del av verden kommer troen på karma, altså at handlingene dine får følger senere, og troen på gjenfødsel. Begge deler finnes også i hinduismen. Med islam, og særlig med sufismen, som er en mystisk retning innenfor islam, deler sikhismen troen på én gud, vekten på én hellig bok, tanken om de troende som ett folk og fraværet av presteskap (Kristiansen mfl., 2026). I sikhismens lære er målet at mennesket skal bli ett med Gud og slippe fri fra gjenfødslene (Kristiansen mfl., 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Mennesker sitter i lange rekker på gulvet og spiser",
+            "caption": "I langar sitter alle på gulvet. Plasseringen er selve budskapet."
+        },
         {
             "type": "header",
             "text": "De fem K-ene"
         },
         {
             "type": "text",
-            "content": "Mange sikher velger å bære fem ytre symboler som viser deres tilhørighet til troen og Khalsa-fellesskapet. Disse kalles de fem K-ene fordi alle starter med bokstaven K på språket punjabi:"
+            "content": "Under press fra muslimske herskere organiserte sikhene seg etter hvert som et krigersamfunn, khalsa, som betyr de rene. Utviklingen begynte under den sjette guruen, Guru Hargobind, som døde i 1645, og ble fullført under den tiende og siste menneskelige guruen, Guru Gobind Singh (Kristiansen mfl., 2026). Han ble født i 1666 og døde i 1708, og han ga påbud om fem kjennetegn: uklippet hår og skjegg, en kam skjult under turbanen, et stålarmbånd, et sverd eller en kniv som kalles kirpan, og en type underbukse (Jacobsen, 2026b). Alle fem begynner med bokstaven k på punjabi, og derfor kalles de de fem K-ene: kesh, kangha, kara, kachha og kirpan (Sikhs.org, 2011)."
         },
         {
-            "type": "list",
-            "items": [
-                "**Kesh**: Uklippet hår (symboliserer aksept av Guds vilje og naturen).",
-                "**Kangha**: En trekam (symboliserer renslighet og orden).",
-                "**Kara**: Et stålarmbånd (symboliserer evigheten og båndet til Gud).",
-                "**Kachera**: Spesielle bomullsbukser (symboliserer selvkontroll og moralsk renhet).",
-                "**Kirpan**: En liten seremoniell dolk (symboliserer plikten til å forsvare de svake og kjempe for rettferdighet)."
-            ]
-        },
-        {
-            "type": "header",
-            "text": "Langar – fellesmåltidet"
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Kirpan bæres bare som et religiøst symbol, ikke som et våpen.",
+                "author": "Sikhs.org om kirpan, oversatt fra engelsk"
+            }
         },
         {
             "type": "text",
-            "content": "I hver eneste Gurdwara (sikh-tempel) finnes det et kjøkken som kalles Langar. Her serveres det gratis vegetarmat til alle som kommer, uansett hvem de er. Alle sitter på gulvet og spiser sammen. Dette er en kraftfull demonstrasjon av at ingen er mer verdt enn andre."
+            "content": "Hver ting betyr noe. Uklippet hår viser at man tar imot Guds vilje. Kammen står for renslighet og disiplin. Stålarmbåndet minner om å holde igjen og huske Gud hele tiden. Buksa står for selvkontroll, og kirpan er et tegn på verdighet og på kampen mot urett (Sikhs.org, 2011). Guru Gobind Singh innførte også at innviede menn skulle bære etternavnet Singh, som betyr løve, og kvinner Kaur, som betyr prinsesse. Hensikten var å fjerne kastesystemet, som kan leses ut av etternavn, og å framheve likhet og enhet (Jacobsen, 2026b). Selve innvielsen er et eget rituale, og du kan lese om den i artikkelen om [overgangsriter](/krle/religion/sikhisme/overgangsriter)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Nærbilde av et stålarmbånd på et håndledd",
+            "caption": "Kara, stålarmbåndet, minner bæreren om Gud gjennom hele dagen."
         },
         {
             "type": "header",
-            "text": "De tre pilarene"
+            "text": "Sikher er ikke like"
         },
         {
             "type": "text",
-            "content": "Guru Nanak lærte bort tre enkle regler for hvordan man bør leve livet sitt:"
+            "content": "En religion med så tydelige kjennetegn kan virke helt ensartet. Den er ikke det. Innvielsen i khalsa skjer når den enkelte selv er klar for den, og mange sikher er ikke innviet (Sikhs.org, 2011). Turbanen er obligatorisk for mannlige sikher med uklippet hår, men sikh-kvinner bruker den bare unntaksvis, og barn bruker et kortere tøystykke som heter patka. Fargen kan si noe om hvilken gruppe man hører til: tilhengere av Nihang-tradisjonen bruker blå turban, tilhengere av Namdhari-tradisjonen hvit, og oransje turban symboliserte i 1980-årene kampen for en egen sikhstat. Til daglig handler fargevalget som oftest bare om smak (Jacobsen & Håberg, 2026). Sikhene avstår fra tobakk, men har ingen absolutte matregler (Kristiansen mfl., 2026), og mange unngår kjøtt fordi de tror på gjenfødelse (Eskild, 2026)."
         },
         {
-            "type": "list",
-            "items": [
-                "**Kirat Karni**: Å tjene til livets opphold gjennom ærlig arbeid.",
-                "**Vand Chakko**: Å dele det man har med andre som trenger det.",
-                "**Naam Japo**: Å alltid huske på Gud og be."
-            ]
+            "type": "text",
+            "content": "Under forskjellene ligger den samme kjernen. Guru Gobind Singh bestemte før han døde at han var den siste menneskelige guruen, og at sikhene heretter skulle se på den hellige boka som den levende guruen (Jacobsen, 2026b). Den heter Guru Granth Sahib og ligger i hver eneste gurdwara. Boka du kan lese mer om i artikkelen om [hellige tekster](/krle/religion/sikhisme/hellige-tekster), sier ikke at du skal bli munk. Den sier at du skal stå opp, gjøre jobben din ordentlig, gi bort noe av det du får, og huske hvem du har det fra. Mannen som formulerte det først, møter du i artikkelen om [grunnleggeren](/krle/religion/sikhisme/grunnleggere)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er de tre reglene sikher prøver å leve etter i hverdagen?",
+                    "Hva er en langar, og hvorfor sitter alle på gulvet når de spiser der?",
+                    "Hva heter de fem K-ene, og hva betyr hver av dem?",
+                    "Hvem var Guru Gobind Singh, og hva innførte han?"
+                ],
+                "reflekter": [
+                    "Hvorfor holder det ikke å følge to av de tre reglene? Forklar med et eksempel fra en helt vanlig dag.",
+                    "Sikhismen har ingen prester. Hvilke følger tror du det får for hvordan troen leves?",
+                    "De tre reglene er usynlige, de fem K-ene er synlige. Hvorfor kan en religion trenge begge deler?",
+                    "Artikkelen sier at sikher ikke er like. Hvorfor er det viktig å få med når man beskriver en religion?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hvor de tre gurdwaraene i Norge ligger, og lag en kort presentasjon av én av dem.",
+                    "Sammenlign langar med et måltid i en annen religion. Hvem får være med, og hvor sitter de?",
+                    "Diskuter i klassen: Hva gjør det med et fellesskap at medlemmene bærer noe alle kan se?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvilke tre regler regnes som kjernen i hverdagen for en sikh?",
+                        "options": [
+                            "Faste, pilegrimsreise og almisse",
+                            "Huske Gud, arbeide ærlig og dele med andre",
+                            "Be fem ganger daglig, faste og gi tiende",
+                            "Meditere, leve i kloster og tie stille"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "I hverdagen er det viktigste for en sikh å jobbe hardt og ærlig, dele med andre og huske Gud i alt man gjør."
+                    },
+                    {
+                        "question": "Hva er en langar?",
+                        "options": [
+                            "Et hellig sverd som bæres av innviede",
+                            "Sikhenes hellige bok",
+                            "Felleskjøkkenet i en gurdwara, der maten er gratis",
+                            "Navnet på innvielsesseremonien"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "I alle gurdwaraer finnes en langar. Maten er gratis, og de som spiser sitter ved siden av hverandre på gulvet for å markere at alle er like."
+                    },
+                    {
+                        "question": "Hvem ga påbud om de fem kjennetegnene?",
+                        "options": [
+                            "Guru Nanak",
+                            "Guru Arjan",
+                            "Guru Gobind Singh",
+                            "Ranjit Singh"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Guru Gobind Singh, den tiende og siste menneskelige guruen, fullførte organiseringen av khalsa og ga påbud om de fem kjennetegnene."
+                    },
+                    {
+                        "question": "Hva betyr etternavnene Singh og Kaur, og hvorfor ble de innført?",
+                        "options": [
+                            "Løve og prinsesse, for å fjerne kastesystemet og framheve likhet",
+                            "Kriger og mor, for å skille menn og kvinner",
+                            "Lærer og elev, for å vise hvem som underviste",
+                            "Ren og hellig, for å vise at man har fastet"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Singh betyr løve og Kaur betyr prinsesse. Hensikten var å fjerne kastesystemet, som kan leses ut av etternavn, og å framheve likhet og enhet."
+                    },
+                    {
+                        "question": "Hva er riktig om mangfoldet blant sikher?",
+                        "options": [
+                            "Alle sikher er innviet i khalsa og bærer alle fem K-ene",
+                            "Bare menn kan ha religiøse verv",
+                            "Alle sikh-kvinner bærer turban",
+                            "Mange sikher er ikke innviet i khalsa, og turbanbruk og farger varierer"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Innvielsen skjer når den enkelte er klar for den, og mange er ikke innviet. Turbanen er obligatorisk for menn med uklippet hår, men brukes bare unntaksvis av kvinner, og fargene varierer."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Eskild, H. (2026). *Sikhisme*. Lille norske leksikon. Hentet 11.08.2026 fra [lille.snl.no/sikhisme](https://lille.snl.no/sikhisme)",
+                    "Jacobsen, K. A. (2024). *Det gylne tempel*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Det_gylne_tempel](https://snl.no/Det_gylne_tempel)",
+                    "Jacobsen, K. A. (2025). *Guru Nanak*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Guru_Nanak](https://snl.no/Guru_Nanak)",
+                    "Jacobsen, K. A. (2026a). *Gurdwara*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/gurdwara](https://snl.no/gurdwara)",
+                    "Jacobsen, K. A. (2026b). *Guru Gobind Singh*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Guru_Gobind_Singh](https://snl.no/Guru_Gobind_Singh)",
+                    "Jacobsen, K. A. & Håberg, K. R. (2026). *Turban*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/turban](https://snl.no/turban)",
+                    "Kristiansen, K., Kværne, P. & Jacobsen, K. A. (2026). *Sikhisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sikhisme](https://snl.no/sikhisme)",
+                    "Sikhs.org. (2011). *The Khalsa*. Hentet 11.08.2026 fra [sikhs.org/khalsa.htm](https://www.sikhs.org/khalsa.htm)"
+                ]
+            }
         }
     ],
-    "concepts": [
-        {
-            "id": "khalsa",
-            "term": "Khalsa",
-            "definition": "Fellesskapet av innviede sikher som lover å følge sikhismens regler strengt."
-        },
-        {
-            "id": "langar",
-            "term": "Langar",
-            "definition": "Det åpne kjøkkenet i en Gurdwara der gratis mat serveres til alle."
-        },
-        {
-            "id": "gurdwara",
-            "term": "Gurdwara",
-            "definition": "Sikhismens gudshus. Navnet betyr 'porten til guruen'."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva symboliserer Kara (stålarmbåndet)?",
-            "options": [
-                "Styrke",
-                "Evigheten og båndet til Gud",
-                "Rikdom"
-            ],
-            "answer": "Evigheten og båndet til Gud"
-        },
-        {
-            "question": "Hvorfor sitter alle på gulvet under Langar-måltidet?",
-            "options": [
-                "Fordi de ikke har stoler",
-                "For å vise at alle er likeverdige",
-                "For å spare plass"
-            ],
-            "answer": "For å vise at alle er likeverdige"
-        },
-        {
-            "question": "Hva betyr 'Vand Chakko'?",
-            "options": [
-                "Å be hver morgen",
-                "Å dele med andre",
-                "Å jobbe hardt"
-            ],
-            "answer": "Å dele med andre"
-        }
-    ],
-    "comparison_tags": [
-        "sentrale-trekk"
-    ]
+    "timeline": []
 }

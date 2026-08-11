@@ -1,6 +1,7 @@
 {
     "id": "sentrale-trekk",
-    "title": "Sentrale trekk i Jehovas vitner",
+    "title": "Regjeringen som snart skal overta",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "jehovas-vitner",
@@ -9,83 +10,237 @@
         "sentrale_trekk",
         "frelse_og_mal"
     ],
-    "createdDate": "2025-12-04T10:00:00Z",
-    "lastUpdated": "2025-12-04T10:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Jehova og Guds rike"
-        },
-        {
-            "type": "text",
-            "content": "Jehovas vitner tror at Jehova er den eneste sanne Gud. De forkynner at Guds rike, en himmelsk regjering med Jesus som konge, snart skal gripe inn og fjerne ondskapen på jorden (Harmageddon)."
-        },
-        {
-            "type": "header",
-            "text": "Paradis på jorden"
-        },
-        {
-            "type": "text",
-            "content": "Målet er å overleve Harmageddon og leve evig på en paradisisk jord. En liten gruppe (144 000) skal til himmelen for å regjere med Jesus, mens de fleste troende skal leve på jorden."
-        },
-        {
-            "type": "header",
-            "text": "Bibeltroskap"
-        },
-        {
-            "type": "text",
-            "content": "De legger stor vekt på å følge Bibelen nøye og holder seg unna skikker de mener har hedensk opprinnelse (f.eks. jul og bursdager)."
-        }
+    "category": "Jehovas vitner",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Kjernen i troen er at Guds rike er en virkelig regjering i himmelen, med Jesus som konge, som snart skal styre jorda.",
+        "Nesten alle særtrekkene henger sammen med den ene troen: forkynnelsen, den politiske nøytraliteten og kalenderen uten høytider.",
+        "Jehovas vitner lærer at Guds rike ble opprettet i himmelen i 1914, og at endetiden begynte da.",
+        "De sier nei til blodoverføring av religiøse grunner, men tar imot annen legehjelp.",
+        "I 2019 hadde bevegelsen rundt 8,5 millioner medlemmer i 240 land, og rundt 12 000 av dem var i Norge."
     ],
+    "createdDate": "2025-12-04T10:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "guds-rike",
             "term": "Guds rike",
-            "definition": "En himmelsk regjering med Jesus som konge som skal styre over jorden."
+            "definition": "Ifølge Jehovas vitner en virkelig regjering opprettet av Gud, som styrer fra himmelen med Jesus som konge, og som snart skal overta styringen av jorda."
         },
         {
-            "id": "harmageddon",
-            "term": "Harmageddon",
-            "definition": "Guds krig for å fjerne ondskapen på jorden."
+            "id": "forkynner",
+            "term": "Forkynner",
+            "definition": "Et aktivt medlem av Jehovas vitner som er med på å spre budskapet. Det er forkynnerne som telles når bevegelsen oppgir medlemstall."
         },
         {
-            "id": "paradis",
-            "term": "Paradis",
-            "definition": "Tilstanden jorden skal bli i etter Harmageddon, der mennesker skal leve evig i fred."
+            "id": "rikets-sal",
+            "term": "Rikets sal",
+            "definition": "Navnet på forsamlingshusene til Jehovas vitner. Aktive medlemmer møtes der to ganger i uka."
+        },
+        {
+            "id": "minnehoytiden",
+            "term": "Minnehøytiden",
+            "definition": "Den ene høytiden Jehovas vitner markerer i året. Den holdes 14. nisan etter den jødiske kalenderen, til minne om Jesu død."
+        },
+        {
+            "id": "styrende-rad",
+            "term": "Det styrende råd",
+            "definition": "Gruppen i USA som bestemmer hva Jehovas vitner skal mene og lære. Bare menn er med, og man kommer inn ved invitasjon."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva er Guds rike ifølge Jehovas vitner?",
-            "options": [
-                "En følelse i hjertet",
-                "En himmelsk regjering",
-                "Den norske kirke"
-            ],
-            "answer": "En himmelsk regjering"
+            "type": "text",
+            "content": "Det ringer på døra. Utenfor står to personer med et blad i hånda, og de vil gjerne snakke om Bibelen. Dette er et syn mange i Norge kjenner igjen. En del vet også at Jehovas vitner ikke feirer jul, ikke feirer bursdager og sier nei til blodoverføring. Lista over ting de ikke gjør, er lang nok til at den kan virke tilfeldig, som om noen har plukket ut noen regler på måfå. Det er den ikke. Nesten alt sammen henger på én eneste tanke."
         },
         {
-            "question": "Hva skal skje i Harmageddon?",
-            "options": [
-                "Jorden går under",
-                "Ondskapen fjernes",
-                "Alle dør"
-            ],
-            "answer": "Ondskapen fjernes"
+            "type": "text",
+            "content": "Tanken er denne: Guds rike er ikke en følelse i hjertet og ikke et bilde på noe annet. Jehovas vitner lærer at det er en virkelig regjering, opprettet av Gud, som styrer fra himmelen med Jesus som konge (Jehovas vitner, u.å.-a). De lærer videre at denne regjeringen snart skal gripe inn, fjerne ondskapen på jorda i slaget ved Harmageddon og gjøre jorda til et paradis der mennesker kan leve evig (Ringnes mfl., 2026). Alt det andre er egentlig svar på ett spørsmål: hvordan lever du hvis du tror at dette skjer snart?"
         },
         {
-            "question": "Feirer Jehovas vitner jul?",
-            "options": [
-                "Ja, alltid",
-                "Nei, pga. hedensk opprinnelse",
-                "Bare gavene"
-            ],
-            "answer": "Nei, pga. hedensk opprinnelse"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To personer med blader utenfor en inngangsdør",
+            "caption": "Forkynnelsen fra dør til dør er det mest synlige særtrekket."
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner er et religiøst trossamfunn som vokste fram i en bibelstudiegruppe i USA på 1870-tallet, under lederen Charles Taze Russell. I 2019 var de virksomme i 240 land og hadde rundt 8,5 millioner medlemmer, og rundt 12 000 av dem var i Norge (Ringnes mfl., 2026). Tallene teller aktive forkynnere, altså de som er med på å spre budskapet. Læren bestemmes ett sted: Det styrende råd avgjør hva bevegelsen skal mene, og bare menn kan sitte i det (Ringnes mfl., 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Tre grunner som trekker samme vei"
+        },
+        {
+            "type": "text",
+            "content": "Når Jehovas vitner selv skal forklare hvorfor de gjør som de gjør, vender de tilbake til tre begrunnelser. Den første er at Riket kommer snart, og at det derfor haster å fortelle det videre. Den andre er at verden slik den er nå, med stater og politikk, ikke hører til Guds rike, og at kristne derfor ikke skal være en del av den. Den tredje er at Bibelen skal følges bokstavelig, også når det koster. Prøv å plassere seks kjente særtrekk i riktig begrunnelse."
+        },
+        {
+            "type": "component",
+            "name": "HvaSomSkillerDem",
+            "props": {
+                "title": "Tre grunner, én tro"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Det klareste eksempelet på den tredje begrunnelsen er blod. Jehovas vitner tar ikke imot blodoverføring, og de spiser heller ikke blod (Ringnes mfl., 2026). Begrunnelsen er ikke medisinsk, men religiøs. De leser flere steder i Bibelen som et påbud om å holde seg borte fra blod, og de mener Gud ser på blod som selve livet (Jehovas vitner, u.å.-d). Samtidig avviser de ikke legehjelp. På sine egne sider skriver de at de søker best mulig medisinsk behandling, og at de oppsøker leger som kan operere uten blod (Jehovas vitner, u.å.-d)."
+        },
+        {
+            "type": "header",
+            "text": "Året som forklarer ventingen"
+        },
+        {
+            "type": "text",
+            "content": "1914 er årstallet nesten alt hviler på. Jehovas vitner lærer at Guds rike ble opprettet i himmelen det året, at Jesus da ble himmelsk konge, og at endetiden begynte (Ringnes mfl., 2026). De regner seg fram til året ved å tolke en profeti i Daniel kapittel 4. Sju tider blir til 2 520 dager, og med regelen om at én dag i en profeti betyr ett år, blir det 2 520 år. Legger du dem til høsten 607 før vår tidsregning, havner du i oktober 1914 (Jehovas vitner, u.å.-f). Regnestykket bygger altså på flere tolkningsvalg som er Jehovas vitners egne. Bevegelsen har også forklart 1914 på ulike måter opp gjennom historien, og du kan lese mer om det i artikkelen om [grunnleggeren](/krle/religion/jehovas-vitner/grunnleggere)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "«Guds rike» blir også kalt «himmelriket» i Bibelen, for det styrer fra himmelen.",
+                "author": "jw.org, Jehovas vitners eget nettsted"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Hvis en ny regjering står klar til å overta, blir forkynnelsen det viktigste et menneske kan bruke tida si på. Vitnene går enkeltvis eller to og to fra dør til dør og forteller at Guds rike snart vil overta makten og gjøre jorda til et paradis (Ringnes mfl., 2026). Selv begrunner de arbeidet med at Jesus ba disiplene sine gjøre mennesker til disipler, og at de første kristne forkynte både offentlig og fra hus til hus (Jehovas vitner, u.å.-e). Bladet Vakttårnet, som kom første gang i 1879, og nettstedet jw.org er hovedkanalene for det bevegelsen mener er riktig (Ringnes mfl., 2026). Hvordan de leser selve bibelteksten, står i artikkelen om [hellige tekster](/krle/religion/jehovas-vitner/hellige-tekster)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Enkel møtesal med stolrader og talerstol",
+            "caption": "Rikets sal er navnet på forsamlingshuset. Aktive medlemmer møtes to ganger i uka."
+        },
+        {
+            "type": "header",
+            "text": "Å ikke være en del av verden"
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner mener at alle stater, all organisert religion og også FN er underlagt Satans styre (Ringnes mfl., 2026). Da blir det umulig å ta parti. De stemmer ikke ved valg, stiller ikke til valg og arbeider ikke for å skifte ut regjeringer, og de er ikke med på seremonier for flagg og nasjonaldager (Jehovas vitner, u.å.-b). De nekter militærtjeneste (Ringnes mfl., 2026). Samtidig sier de selv at de følger loven, betaler skatt og samarbeider med myndighetene om felles velferd (Jehovas vitner, u.å.-b). Nøytralitet betyr altså ikke å stå utenfor samfunnet, men å stå utenfor kampen om makten i det."
+        },
+        {
+            "type": "text",
+            "content": "Kalenderen har en litt annen begrunnelse. Jul og andre tradisjonelle høytider markerer de ikke, fordi høytidene ikke er nevnt i Bibelen, og de feirer heller ikke fødselsdager (Ringnes mfl., 2026). Når de selv vurderer en høytid, spør de blant annet om den bygger på lære de mener ikke står i Bibelen, om den blander sammen ulike religioner, og om den opphøyer mennesker eller setter én nasjon over andre (Jehovas vitner, u.å.-c). De skriver samtidig at hver enkelt må ta sitt eget valg, og at de viser respekt for mennesker uansett hva de tror på (Jehovas vitner, u.å.-c). Den ene faste markeringen i året er minnehøytiden for Jesu død, den 14. nisan etter den jødiske kalenderen (Ringnes mfl., 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tom kalender med bare én dag markert",
+            "caption": "Et år nesten uten fest. Minnehøytiden er den ene faste markeringen."
+        },
+        {
+            "type": "header",
+            "text": "Mer uenighet enn det ser ut til"
+        },
+        {
+            "type": "text",
+            "content": "Utenfra kan Jehovas vitner virke helt ensartet, siden læren avgjøres ett sted. Likevel finnes det uenighet, og det har det gjort lenge. Bevegelsen vokste ut av en gruppe som kalte seg bibelstudentene, og navnet Jehovas vitner ble vedtatt på et stevne i Columbus i Ohio i 1931. I dag finnes det fortsatt mindre grupper av bibelstudenter i enkelte land som holder fast på Charles Taze Russells bibelforståelse, men som tar avstand fra Jehovas vitner (Sommerfelt & Langhelle, 2026). Det finnes også et skille inne i bevegelsen selv. Under minnehøytiden er det bare de som mener de har et himmelsk kall, som spiser brødet og drikker vinen, mens de aller fleste medlemmene ser fram til å leve på jorda (Ringnes mfl., 2026). Det mest omstridte spørsmålet i vår tid er eksklusjon. Den som blir ekskludert, mister kontakten med alle i menigheten, og praksisen har vært prøvd for norske domstoler helt opp til Høyesterett (Ringnes mfl., 2026). Vil du gå videre, forklarer artiklene om [gudsbilde](/krle/religion/jehovas-vitner/gudsbilde) og [frelse](/krle/religion/jehovas-vitner/frelse) hvem Jehova er for dem, og hvem de mener skal få leve i paradiset."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva mener Jehovas vitner at Guds rike er, og hvem er konge i det?",
+                    "Hva skjedde i 1914, slik Jehovas vitner forstår det?",
+                    "Nevn tre ting Jehovas vitner ikke er med på fordi de vil holde seg politisk nøytrale.",
+                    "Hvorfor sier Jehovas vitner nei til blodoverføring, og hva sier de om annen legehjelp?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvordan forkynnelsen fra dør til dør henger sammen med troen på at Guds rike snart skal overta.",
+                    "Artikkelen skiller mellom hva Jehovas vitner tror og hva som er dokumentert historie. Finn to setninger i teksten der dette skillet er tydelig, og forklar hvorfor det er viktig.",
+                    "Hva kan være vanskelig for en ungdom i Norge som ikke markerer jul, nasjonaldag eller bursdager? Hva kan være enkelt?",
+                    "Hvorfor tror du et trossamfunn kan bli mer samlet av å skille seg tydelig fra samfunnet rundt?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hvordan norske sykehus i dag håndterer pasienter som ikke vil ha blod, og lag en kort oversikt.",
+                    "Sammenlign Jehovas vitners syn på politikk med synet i et annet trossamfunn i sammenligningsemnet. Hvor stor er forskjellen?",
+                    "Diskuter i klassen: Hvor går grensa mellom å ha et annerledes livssyn og å stå utenfor samfunnet?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva mener Jehovas vitner at Guds rike er?",
+                        "options": [
+                            "En følelse av fred i hjertet",
+                            "En virkelig regjering i himmelen med Jesus som konge",
+                            "Et annet navn på Den norske kirke",
+                            "Et land på jorda som skal opprettes av mennesker"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Jehovas vitner lærer at Guds rike er en virkelig regjering opprettet av Gud, som styrer fra himmelen med Jesus som konge, og som snart skal ta over styringen av jorda."
+                    },
+                    {
+                        "question": "Hva skjedde i 1914, slik Jehovas vitner forstår året?",
+                        "options": [
+                            "Bevegelsen ble grunnlagt i USA",
+                            "Bladet Vakttårnet kom ut for første gang",
+                            "Guds rike ble opprettet i himmelen, og endetiden begynte",
+                            "Navnet Jehovas vitner ble vedtatt"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "De lærer at Jesus ble himmelsk konge i 1914, og at endetiden begynte da. Årstallet regner de seg fram til ved å tolke en profeti i Daniel kapittel 4."
+                    },
+                    {
+                        "question": "Hvorfor stemmer ikke Jehovas vitner ved valg?",
+                        "options": [
+                            "De mener at alle stater hører til den nåværende verdensordningen, som skal bort",
+                            "De har ikke lov til å stemme etter norsk lov",
+                            "De mener at politikk er uinteressant",
+                            "De venter på at Det styrende råd skal peke ut et parti"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "De mener at alle stater og all organisert religion er underlagt Satans styre, og tar derfor ikke parti i kampen om makten. Samtidig sier de selv at de følger loven og betaler skatt."
+                    },
+                    {
+                        "question": "Hva er riktig om Jehovas vitner og helsehjelp?",
+                        "options": [
+                            "De avviser alle former for legehjelp",
+                            "De sier nei til blodoverføring, men tar imot annen behandling",
+                            "De godtar blod bare i nødstilfeller",
+                            "De bruker bare bønn i stedet for medisin"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Nei til blod er en religiøs begrunnelse, ikke en medisinsk. På sine egne sider skriver de at de søker best mulig medisinsk behandling og oppsøker leger som kan operere uten blod."
+                    },
+                    {
+                        "question": "Hvilken markering holder Jehovas vitner hvert år?",
+                        "options": [
+                            "Julaften",
+                            "Påskedag",
+                            "Minnehøytiden for Jesu død, 14. nisan",
+                            "Grunnleggerens fødselsdag"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Minnehøytiden er den ene faste markeringen i året. Den holdes 14. nisan etter den jødiske kalenderen, til minne om Jesu død."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Sommerfelt, R. & Langhelle, S. I. (2026). *Bibelstudentene*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Bibelstudentene](https://snl.no/Bibelstudentene)",
+                    "Jehovas vitner. (u.å.-a). *Hva er Guds rike?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/no/hva-bibelen-laerer/sporsmal/hva-er-guds-rike/)",
+                    "Jehovas vitner. (u.å.-b). *Why Do Jehovah's Witnesses Maintain Political Neutrality?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/political-neutrality/)",
+                    "Jehovas vitner. (u.å.-c). *Why Don't Jehovah's Witnesses Celebrate Certain Holidays?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/jw-celebrate-holidays/)",
+                    "Jehovas vitner. (u.å.-d). *Why Don't Jehovah's Witnesses Accept Blood Transfusions?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/jehovahs-witnesses-why-no-blood-transfusions/)",
+                    "Jehovas vitner. (u.å.-e). *Why Do Jehovah's Witnesses Go From Door to Door?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/faq/door-to-door/)",
+                    "Jehovas vitner. (u.å.-f). *What Do Daniel 4 and Bible Chronology Indicate About 1914?* jw.org. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/bible-teachings/questions/daniel-4-bible-chronology-1914/)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "De rettferdige skal arve jorden, og de skal bo på den for evig.",
-        "source": "Bibelen (NWT)",
-        "reference": "Salme 37:29"
-    }
+    "timeline": []
 }

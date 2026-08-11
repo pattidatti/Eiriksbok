@@ -169,6 +169,12 @@ const NavnetSattInnIgjen = lazy(() => import('./content/interactive/NavnetSattIn
 const HoertEllerHusket = lazy(() => import('./content/interactive/HoertEllerHusket').then(m => ({ default: m.HoertEllerHusket })));
 const TreKurverOgFlereKanoner = lazy(() => import('./content/interactive/TreKurverOgFlereKanoner').then(m => ({ default: m.TreKurverOgFlereKanoner })));
 const BokaSomLeggerSeg = lazy(() => import('./content/interactive/BokaSomLeggerSeg').then(m => ({ default: m.BokaSomLeggerSeg })));
+const DetAlleErEnigeOm = lazy(() => import('./content/interactive/DetAlleErEnigeOm').then(m => ({ default: m.DetAlleErEnigeOm })));
+const FemHandlingerIkkeFemTanker = lazy(() => import('./content/interactive/FemHandlingerIkkeFemTanker').then(m => ({ default: m.FemHandlingerIkkeFemTanker })));
+const TreEnheter = lazy(() => import('./content/interactive/TreEnheter').then(m => ({ default: m.TreEnheter })));
+const GjenopprettelsensPaastand = lazy(() => import('./content/interactive/GjenopprettelsensPaastand').then(m => ({ default: m.GjenopprettelsensPaastand })));
+const HvaSomSkillerDem = lazy(() => import('./content/interactive/HvaSomSkillerDem').then(m => ({ default: m.HvaSomSkillerDem })));
+const TreReglerOgFemTing = lazy(() => import('./content/interactive/TreReglerOgFemTing').then(m => ({ default: m.TreReglerOgFemTing })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
@@ -611,6 +617,12 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     HoertEllerHusket,
     TreKurverOgFlereKanoner,
     BokaSomLeggerSeg,
+    DetAlleErEnigeOm,
+    FemHandlingerIkkeFemTanker,
+    TreEnheter,
+    GjenopprettelsensPaastand,
+    HvaSomSkillerDem,
+    TreReglerOgFemTing,
     DagenSomBonn,
     MaatBalansen,
     ToFlomfortellinger,

@@ -1,6 +1,7 @@
 {
     "id": "sentrale-trekk",
-    "title": "Sentrale trekk i kristendommen",
+    "title": "Det alle kristne er enige om",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "kristendom",
@@ -9,135 +10,246 @@
         "sentrale_trekk",
         "frelse_og_mal"
     ],
-    "createdDate": "2025-12-04T10:00:00Z",
-    "lastUpdated": "2026-03-15T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Kjernen i troen"
-        },
-        {
-            "type": "text",
-            "content": "Kristendommen bygger på troen på at Jesus fra Nasaret er Guds sønn og verdens frelser. Ordet Kristus betyr den salvede, og viser til at kristne tror Jesus var den kongen og frelseren som var lovet i Det gamle testamentet. Kjernen i budskapet er at Gud elsker menneskene så høyt at han selv ble menneske i Jesus for å gjenopprette forholdet mellom Gud og mennesker."
-        },
-        {
-            "type": "header",
-            "text": "Treenigheten"
-        },
-        {
-            "type": "text",
-            "content": "Kristne tror på én Gud, men at Gud viser seg på tre måter: som Faderen (skaperen), Sønnen (Jesus, frelseren) og Den hellige ånd (Guds kraft i verden i dag). Dette kalles treenigheten. Det er ikke tre guder, men én Gud i tre personer. En måte å tenke på det er at vann kan være is, flytende vann og damp - tre former, men fortsatt det samme stoffet."
-        },
-        {
-            "type": "header",
-            "text": "Frelse ved nåde"
-        },
-        {
-            "type": "text",
-            "content": "Målet i kristendommen er frelse - å bli reddet fra synd og død, og få evig liv sammen med Gud. Kristne tror at alle mennesker gjør feil og er skilt fra Gud. Men gjennom Jesu død og oppstandelse åpnet Gud en vei tilbake. Frelsen er en gave fra Gud, ikke noe man kan gjøre seg fortjent til. Dette kalles nåde."
-        },
-        {
-            "type": "header",
-            "text": "Nestekjærligheten"
-        },
-        {
-            "type": "text",
-            "content": "Da Jesus ble spurt om hva som er det viktigste budet, svarte han: Du skal elske Gud av hele ditt hjerte, og du skal elske din neste som deg selv. Dette doble kjærlighetsbudet er grunnlaget for kristen etikk. Det betyr at kristne skal behandle alle mennesker med respekt og omsorg - uansett hvem de er."
-        },
-        {
-            "type": "header",
-            "text": "Ulike retninger"
-        },
-        {
-            "type": "text",
-            "content": "Kristendommen er delt i tre hovedretninger: den katolske kirke, de protestantiske kirkene og de ortodokse kirkene. Alle er enige om at Jesus er Guds sønn og verdens frelser. Men de er uenige om ting som pavens rolle, helgener, og om frelse kommer gjennom tro alene eller tro sammen med gode gjerninger. Den norske kirke er protestantisk og følger Martin Luthers lære."
-        },
-        {
-            "type": "header",
-            "text": "Kristendommen i dag"
-        },
-        {
-            "type": "text",
-            "content": "Med over 2,4 milliarder tilhengere er kristendommen verdens største religion. Den finnes i nesten alle land, men vokser raskest i Afrika og Asia. I Europa går antallet aktive kirkegjengere ned, men kristne verdier og tradisjoner preger fortsatt kulturen. I Norge er rundt 65 prosent av befolkningen medlemmer i Den norske kirke."
-        }
+    "category": "Kristendom",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Kristendommen er delt i svært mange kirkesamfunn, men alle deler troen på at Gud ble menneske i Jesus.",
+        "Den felles kjernen ble formulert på kirkemøtene i Nikea i 325, Konstantinopel i 381 og Kalkedon i 451.",
+        "Trosbekjennelsene sier ingenting om pavens rolle, dåpsalder eller antall sakramenter. Nettopp der er kirkene uenige.",
+        "Kristendommen hadde i 2026 rundt 2,3 milliarder tilhengere og er verdens største religion.",
+        "Nestekjærlighet er hovednormen i kristen etikk og bygger på det doble kjærlighetsbudet."
     ],
+    "createdDate": "2025-12-04T10:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
-            "id": "messias",
-            "term": "Messias",
-            "definition": "Betyr den salvede. I kristendommen er Jesus Messias, Guds sønn og verdens frelser."
-        },
-        {
-            "id": "nade",
-            "term": "Nåde",
-            "definition": "Guds ufortjente kjærlighet og tilgivelse. Frelse gis ved nåde, ikke ved egne gjerninger."
+            "id": "inkarnasjon",
+            "term": "Inkarnasjon",
+            "definition": "Betyr å bli kropp. I kristendommen troen på at Gud selv viste seg som menneske i Jesus fra Nasaret."
         },
         {
             "id": "treenigheten",
             "term": "Treenigheten",
-            "definition": "Læren om at Gud er én, men tre personer: Faderen, Sønnen og Den hellige ånd."
+            "definition": "Læren om at Gud er ett vesen i tre personer: Faderen, Sønnen og Den hellige ånd."
+        },
+        {
+            "id": "trosbekjennelse",
+            "term": "Trosbekjennelse",
+            "definition": "En kort tekst som oppsummerer en felles tro. De viktigste kristne er den nikenske og den apostoliske trosbekjennelsen."
+        },
+        {
+            "id": "oppstandelsen",
+            "term": "Oppstandelsen",
+            "definition": "Troen på at Jesus sto opp fra de døde. Kristendommen tar utgangspunkt i denne troen."
         },
         {
             "id": "nestekjaerlighet",
             "term": "Nestekjærlighet",
-            "definition": "Å elske og vise omsorg for andre mennesker. Det viktigste etiske prinsippet i kristendommen."
-        },
-        {
-            "id": "monoteisme",
-            "term": "Monoteisme",
-            "definition": "Troen på bare én Gud. Kristendommen, islam og jødedommen er alle monoteistiske."
+            "definition": "Kjærlighet og omsorg for medmennesker. Hovednormen i kristen etikk."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvem er Jesus ifølge kristendommen?",
-            "options": [
-                "En profet",
-                "Guds sønn og frelser",
-                "En engel"
-            ],
-            "answer": "Guds sønn og frelser"
+            "type": "text",
+            "content": "Gå inn i en katolsk katedral, en ortodoks kirke og et pinsemenighetslokale samme søndag. Du ser tre ganske ulike ting. Ulike klær, ulik musikk, ulik innredning, ulike ledere. Kirkenes verdensråd alene samler over 340 kirkesamfunn, og det finnes mange flere utenfor rådet (Seim & Elstad, 2024). Kristendommen er altså ikke én organisasjon. Likevel kaller vi alt dette den samme religionen. Hvorfor?"
         },
         {
-            "question": "Hva betyr frelse i kristendommen?",
-            "options": [
-                "Å bli rik",
-                "Redning fra synd og død",
-                "Å leve evig på jorden"
-            ],
-            "answer": "Redning fra synd og død"
+            "type": "text",
+            "content": "Fordi det finnes en kjerne. Store norske leksikon formulerer den slik: felles for alle kristne trosretninger er troen på Kristi inkarnasjon som avgjørende gudsåpenbaring (Elstad & Rasmussen, 2026). Oversatt til hverdagsspråk: kristne tror at Gud selv ble menneske i Jesus fra Nasaret. Inkarnasjon betyr å bli kropp. Dette er ikke ett punkt blant mange. Det er punktet resten henger på."
         },
         {
-            "question": "Hva består treenigheten av?",
-            "options": [
-                "Jesus, Maria og Josef",
-                "Faderen, Sønnen og Den hellige ånd",
-                "Abraham, Isak og Jakob"
-            ],
-            "answer": "Faderen, Sønnen og Den hellige ånd"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Enkelt trekors mot en lys kirkevegg",
+            "caption": "Korset er det ene tegnet alle kirkesamfunn deler."
         },
         {
-            "question": "Hva er nestekjærlighetsbudet?",
-            "options": [
-                "Du skal elske Gud og din neste som deg selv",
-                "Du skal elske bare din familie",
-                "Du skal elske deg selv mest"
-            ],
-            "answer": "Du skal elske Gud og din neste som deg selv"
+            "type": "text",
+            "content": "Den andre halvdelen av kjernen er oppstandelsen. Religionshistorikeren Dag Øistein Endsjø skriver at religionen tar utgangspunkt i troen på at Jesus sto opp udødelig to dager etter at han døde (Endsjø, 2026). Legg merke til ordet troen. Det er ikke historikernes jobb å avgjøre om det faktisk skjedde. Det historikere kan slå fast, er at de første kristne mente at det hadde skjedd, og at hele bevegelsen vokste ut av den overbevisningen. Allerede i brevene til Paulus, de eldste kristne tekstene vi har, er Jesu oppstandelse knyttet til et løfte: alle som tror, skal stå opp til det samme når han kommer tilbake (Endsjø, 2026). Hva dette betyr for den enkelte, står i artikkelen om [frelse](/krle/religion/kristendom/frelse)."
         },
         {
-            "question": "Hvilken kristen retning tilhører Den norske kirke?",
-            "options": [
-                "Katolsk",
-                "Protestantisk",
-                "Ortodoks"
-            ],
-            "answer": "Protestantisk"
+            "type": "header",
+            "text": "Hvordan kirken ble enig med seg selv"
+        },
+        {
+            "type": "text",
+            "content": "De første kristne var ikke enige om hvordan de skulle beskrive Jesus. Var han et menneske Gud hadde valgt ut? Var han Gud som bare så ut som et menneske? Striden ble avgjort på store kirkemøter der biskoper fra hele riket møttes. Kirkemøtet i Nikea i 325 slo fast at Kristus har samme vesen som Faderen, men er en egen person. Kirkemøtet i Konstantinopel i 381 gjorde det samme for Den hellige ånd, og dermed var læren om treenigheten i hovedsak ferdig (Leivestad & Elstad, 2026). I 451 fastslo kirkemøtet i Kalkedon at Jesus er sann Gud og sant menneske på samme tid (Leivestad & Groth, 2026). Resultatet ble skrevet ned i korte tekster som kalles trosbekjennelser. Den nikenske trosbekjennelsen fikk sin nåværende form i 381 og er den mest utbredte i hele kristendommen. Den brukes i ortodokse, katolske, anglikanske og protestantiske kirker (Elstad & Hvalvik, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "DetAlleErEnigeOm",
+            "props": {
+                "title": "Felles kjerne eller stridsspørsmål?"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva som ikke står i bekjennelsene. De sier ingenting om hvem som skal lede kirken, hvor mange sakramenter det skal være, eller hvor gammel man må være for å bli døpt. Nettopp derfor er det de spørsmålene kirkene har kranglet om siden. Den apostoliske trosbekjennelsen, som brukes ved dåp i vestlige kirker og leses i hver høymesse i Den norske kirke, fikk sin nåværende form på 500-tallet (Elstad, 2026a). Også den holder seg til kjernen."
+        },
+        {
+            "type": "header",
+            "text": "Der kirkene skiller lag"
+        },
+        {
+            "type": "text",
+            "content": "To store splittelser preger kartet. I 1054 kom det endelige bruddet mellom kirken i øst og kirken i vest. Et viktig stridspunkt var at Østkirken ikke ville godta pavens krav om å være den øverste lederen for hele kirken (Elstad & Rasmussen, 2026). I 1517 offentliggjorde Martin Luther 95 teser mot avlatshandelen, altså praksisen der folk kunne betale kirken penger i stedet for å gjøre bot for syndene sine. Det ble opptakten til reformasjonen. Pavedømmet hadde ifølge Luther ødelagt kirken innenfra, og reformatorene krevde at de fleste sakramentene i den romerske kirken skulle avskaffes. De mente også at Bibelen skulle tolkes ved hjelp av fornuften, ikke ut fra føringer gitt av paven eller kirkelig tradisjon (Rasmussen, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Tre store greiner",
+                "content": "Store norske leksikon oppgir i 2026 rundt 2,3 milliarder kristne i verden, omtrent 33 prosent av jordas befolkning. Det gjør kristendommen til verdens største religion. Omtrent halvparten, 1,1 milliarder, er katolikker. De ortodokse kirkene har rundt 260 millioner, og protestantene er rundt 800 millioner (Elstad & Rasmussen, 2026). I Norge var 3,4 millioner mennesker, 62 prosent av befolkningen, medlemmer i Den norske kirke i 2024. Den norske kirke er evangelisk-luthersk (Rasmussen, Lundal & Elstad, 2026)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Uenighetene er ikke bare pirk. Ta sakramentene, altså de hellige handlingene kirken utfører. Den katolske og de ortodokse kirkene regner sju: dåp, konfirmasjon, nattverd, skriftemål, sykesalving, ordinasjon og ekteskap. Protestantiske kirker regner bare to, dåp og nattverd, fordi de mener at bare disse to har et tydelig ytre tegn og er innstiftet av Jesus selv (Store norske leksikon, 2026). Dåpen er et annet eksempel. Barnedåp er den vanligste formen i de fleste kristne kirker i dag, og både Den norske kirke og de ortodokse kirkene døper spedbarn. Baptistmenigheter og pinsemenigheter døper bare den som selv har sagt ja til troen, og noen av dem krever at en som bytter kirkesamfunn, blir døpt på nytt (Elstad, 2026b). Du kan lese mer i artikkelen om [kirkesamfunn](/krle/religion/kristendom/kirkesamfunn), og om hvordan de hellige handlingene forstås, i artikkelen om [sakramentene](/krle/religion/kristendom/sakramentene)."
+        },
+        {
+            "type": "text",
+            "content": "Kjernen har også en yttergrense. Noen grupper kaller seg kristne, men avviser læren om treenigheten. Jehovas vitner mener at treenighetslæren er en senere konstruksjon som ikke står i Bibelen, men ble vedtatt på kirkemøtene på 300- og 400-tallet, og de avviser samtidig de andre kirkesamfunnene (Ringnes mfl., 2026). Slike grupper står altså utenfor den felles bekjennelsen resten av artikkelen handler om, samtidig som de selv mener de har den opprinnelige troen. Hvor grensen for kristendommen går, er med andre ord i seg selv omstridt."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tre kirkebygg i ulik byggestil ved siden av hverandre",
+            "caption": "Ulike bygg, ulike ritualer, samme kjerne."
+        },
+        {
+            "type": "header",
+            "text": "Hva kjernen krever av folk"
+        },
+        {
+            "type": "text",
+            "content": "Tror du at Gud ble menneske, får det følger for hvordan du skal behandle mennesker. I evangeliene knytter Jesus sammen to bud: du skal elske Gud, og du skal elske din neste som deg selv. Det siste er hentet fra Det gamle testamentet, der ordet neste opprinnelig betydde venn, landsmann eller slektning. I Det nye testamentet utvides det til å gjelde alle mennesker, og budet blir en oppsummering av hele loven. I lignelsen om den barmhjertige samaritanen er nesten den som viser barmhjertighet mot dem han møter på veien. Nestekjærlighet er hovednormen i kristen etikk (Elstad, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Her er det viktig å være presis. Kirkene er uenige om hvor mye menneskets egne gjerninger betyr for frelsen, og den uenigheten var en av de store stridene under reformasjonen. Men alle kirkene lærer at det var Gud som gjorde det første trekket, ved å bli menneske. Hvordan kristne forestiller seg denne Guden, står i artikkelen om [gudsbildet](/krle/religion/kristendom/gudsbilde)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To hender som rekker en skål med mat til hverandre",
+            "caption": "Nestekjærlighet er hovednormen i kristen etikk."
+        },
+        {
+            "type": "header",
+            "text": "Én religion, mange svar"
+        },
+        {
+            "type": "text",
+            "content": "Så hva er kristendommen? Ikke en samling like kirker. Det er en stor familie av kirkesamfunn som er uenige om ledelse, ritualer, tolkning og mye annet, men som svarer likt på ett spørsmål: hvem er Jesus? Svaret er at de tror at Gud ble menneske i ham, og at han sto opp fra de døde. Alt det andre er svar på oppfølgingsspørsmål. Siden 1948 har over 340 kirkesamfunn møttes i Kirkenes verdensråd for å arbeide fram det de har felles, selv om den katolske kirke lenge stilte seg avvisende og pinsekirkene har vært tilbakeholdne (Seim & Elstad, 2024). Vil du se hvor det hele begynte, kan du gå videre til artikkelen om [grunnleggeren](/krle/religion/kristendom/grunnleggere)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet inkarnasjon, og hvorfor kalles det kjernen i kristendommen?",
+                    "Hvilke tre kirkemøter nevnes i artikkelen, og hva ble bestemt på hvert av dem?",
+                    "Nevn tre ting kristne kirkesamfunn er uenige om.",
+                    "Hvor mange sakramenter regner den katolske kirken, og hvor mange regner protestantiske kirker?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at trosbekjennelsene ikke nevner pavens rolle eller dåpsalder. Hvorfor kan nettopp det forklare hvorfor kirkene har splittet seg?",
+                    "Forklar med egne ord forskjellen på å si at Jesus sto opp, og å si at de første kristne trodde at Jesus sto opp. Hvorfor er den forskjellen viktig i et skolefag?",
+                    "Hvis nestekjærlighet er hovednormen i kristen etikk, hva betyr det i praksis for hvordan en kristen skal møte fremmede?",
+                    "Er det rimelig å kalle katolikker, ortodokse og pinsevenner for samme religion? Begrunn svaret ditt."
+                ],
+                "gaaVidere": [
+                    "Finn den nikenske trosbekjennelsen og den apostoliske trosbekjennelsen, og lag en liste over hva de to har felles.",
+                    "Sammenlign kjernen i kristendommen med kjernen i islam eller jødedommen i sammenligningsemnet. Hva er det viktigste som skiller?",
+                    "Undersøk hvilke kristne kirkesamfunn som finnes i din kommune, og hva de er uenige om."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er ifølge Store norske leksikon felles for alle kristne trosretninger?",
+                        "options": [
+                            "Troen på at paven leder kirken",
+                            "Troen på Kristi inkarnasjon som avgjørende gudsåpenbaring",
+                            "At barn skal døpes som spedbarn",
+                            "At kirken skal ha sju sakramenter"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Kirkesamfunnene er uenige om ledelse, dåpsalder og sakramenter. Det de deler, er troen på at Gud viste seg som menneske i Jesus."
+                    },
+                    {
+                        "question": "Hva ble avgjort på kirkemøtet i Nikea i 325?",
+                        "options": [
+                            "At Bibelen skulle oversettes til folkespråk",
+                            "At paven skulle lede hele kirken",
+                            "At Kristus har samme vesen som Faderen, men er en egen person",
+                            "At kirken skulle deles i øst og vest"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Nikea i 325 avgjorde forholdet mellom Faderen og Sønnen. Konstantinopel i 381 gjorde det samme for Den hellige ånd, og da var treenighetslæren i hovedsak ferdig."
+                    },
+                    {
+                        "question": "Hvor mange sakramenter regner protestantiske kirker?",
+                        "options": [
+                            "To: dåp og nattverd",
+                            "Sju",
+                            "Ingen",
+                            "Fire"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Protestantiske kirker regner bare dåp og nattverd som sakramenter, fordi de mener bare disse to har et tydelig ytre tegn og er innstiftet av Jesus selv. Katolske og ortodokse kirker regner sju."
+                    },
+                    {
+                        "question": "Hvor stor andel av befolkningen i Norge var medlemmer i Den norske kirke i 2024?",
+                        "options": [
+                            "Rundt 40 prosent",
+                            "Rundt 62 prosent",
+                            "Rundt 85 prosent",
+                            "Rundt 95 prosent"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "I 2024 var 3,4 millioner mennesker, 62 prosent av befolkningen, medlemmer i Den norske kirke."
+                    },
+                    {
+                        "question": "Hva er det doble kjærlighetsbudet?",
+                        "options": [
+                            "Du skal elske familien din og fedrelandet ditt",
+                            "Du skal elske Gud, og din neste som deg selv",
+                            "Du skal elske deg selv før du elsker andre",
+                            "Du skal elske bare dem som tror det samme som deg"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Jesus knyttet sammen kjærligheten til Gud og kjærligheten til nesten. I Det nye testamentet gjelder nesten alle mennesker, ikke bare egne landsmenn."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Elstad, H. (2024). *Nestekjærlighet*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/nestekjærlighet](https://snl.no/nestekj%C3%A6rlighet)",
+                    "Elstad, H. (2026a). *Den apostoliske trosbekjennelse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/den_apostoliske_trosbekjennelse](https://snl.no/den_apostoliske_trosbekjennelse)",
+                    "Elstad, H. (2026b). *Dåp*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/dåp](https://snl.no/d%C3%A5p)",
+                    "Elstad, H. & Hvalvik, R. (2026). *Den nikenske trosbekjennelse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/den_nikenske_trosbekjennelse](https://snl.no/den_nikenske_trosbekjennelse)",
+                    "Elstad, H. & Rasmussen, T. (2026). *Kristendom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/kristendom](https://snl.no/kristendom)",
+                    "Endsjø, D. Ø. (2026). *Oppstandelse*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/oppstandelse](https://snl.no/oppstandelse)",
+                    "Leivestad, R. & Elstad, H. (2026). *Treenigheten*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/treenigheten](https://snl.no/treenigheten)",
+                    "Leivestad, R. & Groth, B. (2026). *Inkarnasjon*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/inkarnasjon](https://snl.no/inkarnasjon)",
+                    "Rasmussen, T. (2026). *Reformasjonen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/reformasjonen](https://snl.no/reformasjonen)",
+                    "Rasmussen, T., Lundal, S. O. & Elstad, H. (2026). *Den norske kirke*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Den_norske_kirke](https://snl.no/Den_norske_kirke)",
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Seim, T. K. & Elstad, H. (2024). *Økumenikk*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/økumenikk](https://snl.no/%C3%B8kumenikk)",
+                    "Store norske leksikon. (2026). *Sakrament*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/sakrament](https://snl.no/sakrament)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "For så høyt har Gud elsket verden at han ga sin Sønn, den enbårne, for at hver den som tror på ham, ikke skal gå fortapt, men ha evig liv.",
-        "source": "Bibelen",
-        "reference": "Johannes 3:16"
-    }
+    "timeline": []
 }

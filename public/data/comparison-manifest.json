@@ -731,7 +731,7 @@
       "entries": [
         {
           "religion": "bahai",
-          "title": "Sentrale trekk i Bahá'í",
+          "title": "Én Gud, én religion, én menneskehet",
           "file": "content/krle/religion/bahai/sentrale-trekk/artikkel.json",
           "link": "/krle/religion/bahai/sentrale-trekk"
         },
@@ -755,7 +755,7 @@
         },
         {
           "religion": "jehovas-vitner",
-          "title": "Sentrale trekk i Jehovas vitner",
+          "title": "Regjeringen som snart skal overta",
           "file": "content/krle/religion/jehovas-vitner/sentrale-trekk/artikkel.json",
           "link": "/krle/religion/jehovas-vitner/sentrale-trekk"
         },
@@ -773,13 +773,13 @@
         },
         {
           "religion": "mormonisme",
-          "title": "Sentrale trekk i Mormonismen",
+          "title": "Påstanden alt annet henger på",
           "file": "content/krle/religion/mormonisme/sentrale-trekk/artikkel.json",
           "link": "/krle/religion/mormonisme/sentrale-trekk"
         },
         {
           "religion": "sikhisme",
-          "title": "Sentrale trekk i sikhismen",
+          "title": "Tre regler du kan leve, fem ting du kan se",
           "file": "content/krle/religion/sikhisme/sentrale-trekk/artikkel.json",
           "link": "/krle/religion/sikhisme/sentrale-trekk"
         }
@@ -1046,7 +1046,7 @@
     },
     {
       "religion": "bahai",
-      "title": "Sentrale trekk i Bahá'í",
+      "title": "Én Gud, én religion, én menneskehet",
       "link": "/krle/religion/bahai/sentrale-trekk",
       "dimension": "doctrinal",
       "tags": [
@@ -1309,7 +1309,7 @@
     },
     {
       "religion": "islam",
-      "title": "Sentrale trekk i Islam",
+      "title": "Fire av fem søyler er noe du gjør",
       "link": "/krle/religion/islam/sentrale-trekk",
       "dimension": "doctrinal",
       "tags": [
@@ -1391,7 +1391,7 @@
     },
     {
       "religion": "jehovas-vitner",
-      "title": "Sentrale trekk i Jehovas vitner",
+      "title": "Regjeringen som snart skal overta",
       "link": "/krle/religion/jehovas-vitner/sentrale-trekk",
       "dimension": "doctrinal",
       "tags": [
@@ -1562,7 +1562,7 @@
     },
     {
       "religion": "kristendom",
-      "title": "Sentrale trekk i kristendommen",
+      "title": "Det alle kristne er enige om",
       "link": "/krle/religion/kristendom/sentrale-trekk",
       "dimension": "doctrinal",
       "tags": [
@@ -1643,7 +1643,7 @@
     },
     {
       "religion": "mormonisme",
-      "title": "Sentrale trekk i Mormonismen",
+      "title": "Påstanden alt annet henger på",
       "link": "/krle/religion/mormonisme/sentrale-trekk",
       "dimension": "doctrinal",
       "tags": [
@@ -1719,9 +1719,9 @@
     },
     {
       "religion": "sikhisme",
-      "title": "Sentrale trekk i sikhismen",
+      "title": "Tre regler du kan leve, fem ting du kan se",
       "link": "/krle/religion/sikhisme/sentrale-trekk",
-      "dimension": null,
+      "dimension": "doctrinal",
       "tags": [
         "sentrale-trekk"
       ]
