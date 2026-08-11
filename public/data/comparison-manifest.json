@@ -478,6 +478,68 @@
       "total": 9
     },
     {
+      "slug": "doden",
+      "label": "Døden",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Én setning, og alle foreldrenes ja",
+          "file": "content/krle/religion/bahai/overgangsriter/artikkel.json",
+          "link": "/krle/religion/bahai/overgangsriter"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Riten som ikke finnes",
+          "file": "content/krle/religion/buddhisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/buddhisme/overgangsriter"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Seksten riter gjennom et liv",
+          "file": "content/krle/religion/hinduisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/hinduisme/overgangsriter"
+        },
+        {
+          "religion": "islam",
+          "title": "Setningen som rammer inn livet",
+          "file": "content/krle/religion/islam/overgangsriter/artikkel.json",
+          "link": "/krle/religion/islam/overgangsriter"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Dåpen du må be om selv",
+          "file": "content/krle/religion/jehovas-vitner/overgangsriter/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/overgangsriter"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Dagen ansvaret bytter eier",
+          "file": "content/krle/religion/jodedom/overgangsriter/artikkel.json",
+          "link": "/krle/religion/jodedom/overgangsriter"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Uenigheten om vannet",
+          "file": "content/krle/religion/kristendom/overgangsriter/artikkel.json",
+          "link": "/krle/religion/kristendom/overgangsriter"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Ikke til døden skiller dere",
+          "file": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/mormonisme/overgangsriter"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Overgangsriter i sikhismen",
+          "file": "content/krle/religion/sikhisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/sikhisme/overgangsriter"
+        }
+      ],
+      "count": 9,
+      "total": 9
+    },
+    {
       "slug": "frelse",
       "label": "Frelse og mål",
       "entries": [
@@ -726,6 +788,68 @@
       "total": 9
     },
     {
+      "slug": "overgangsriter",
+      "label": "Overgangsriter",
+      "entries": [
+        {
+          "religion": "bahai",
+          "title": "Én setning, og alle foreldrenes ja",
+          "file": "content/krle/religion/bahai/overgangsriter/artikkel.json",
+          "link": "/krle/religion/bahai/overgangsriter"
+        },
+        {
+          "religion": "buddhisme",
+          "title": "Riten som ikke finnes",
+          "file": "content/krle/religion/buddhisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/buddhisme/overgangsriter"
+        },
+        {
+          "religion": "hinduisme",
+          "title": "Seksten riter gjennom et liv",
+          "file": "content/krle/religion/hinduisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/hinduisme/overgangsriter"
+        },
+        {
+          "religion": "islam",
+          "title": "Setningen som rammer inn livet",
+          "file": "content/krle/religion/islam/overgangsriter/artikkel.json",
+          "link": "/krle/religion/islam/overgangsriter"
+        },
+        {
+          "religion": "jehovas-vitner",
+          "title": "Dåpen du må be om selv",
+          "file": "content/krle/religion/jehovas-vitner/overgangsriter/artikkel.json",
+          "link": "/krle/religion/jehovas-vitner/overgangsriter"
+        },
+        {
+          "religion": "jodedom",
+          "title": "Dagen ansvaret bytter eier",
+          "file": "content/krle/religion/jodedom/overgangsriter/artikkel.json",
+          "link": "/krle/religion/jodedom/overgangsriter"
+        },
+        {
+          "religion": "kristendom",
+          "title": "Uenigheten om vannet",
+          "file": "content/krle/religion/kristendom/overgangsriter/artikkel.json",
+          "link": "/krle/religion/kristendom/overgangsriter"
+        },
+        {
+          "religion": "mormonisme",
+          "title": "Ikke til døden skiller dere",
+          "file": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/mormonisme/overgangsriter"
+        },
+        {
+          "religion": "sikhisme",
+          "title": "Overgangsriter i sikhismen",
+          "file": "content/krle/religion/sikhisme/overgangsriter/artikkel.json",
+          "link": "/krle/religion/sikhisme/overgangsriter"
+        }
+      ],
+      "count": 9,
+      "total": 9
+    },
+    {
       "slug": "sentrale-trekk",
       "label": "Sentrale trekk",
       "entries": [
@@ -847,118 +971,6 @@
         }
       ],
       "count": 9,
-      "total": 9
-    },
-    {
-      "slug": "doden",
-      "label": "Døden",
-      "entries": [
-        {
-          "religion": "bahai",
-          "title": "Én setning, og alle foreldrenes ja",
-          "file": "content/krle/religion/bahai/overgangsriter/artikkel.json",
-          "link": "/krle/religion/bahai/overgangsriter"
-        },
-        {
-          "religion": "buddhisme",
-          "title": "Riten som ikke finnes",
-          "file": "content/krle/religion/buddhisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/buddhisme/overgangsriter"
-        },
-        {
-          "religion": "hinduisme",
-          "title": "Seksten riter gjennom et liv",
-          "file": "content/krle/religion/hinduisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/hinduisme/overgangsriter"
-        },
-        {
-          "religion": "islam",
-          "title": "Setningen som rammer inn livet",
-          "file": "content/krle/religion/islam/overgangsriter/artikkel.json",
-          "link": "/krle/religion/islam/overgangsriter"
-        },
-        {
-          "religion": "jehovas-vitner",
-          "title": "Dåpen du må be om selv",
-          "file": "content/krle/religion/jehovas-vitner/overgangsriter/artikkel.json",
-          "link": "/krle/religion/jehovas-vitner/overgangsriter"
-        },
-        {
-          "religion": "jodedom",
-          "title": "Dagen ansvaret bytter eier",
-          "file": "content/krle/religion/jodedom/overgangsriter/artikkel.json",
-          "link": "/krle/religion/jodedom/overgangsriter"
-        },
-        {
-          "religion": "kristendom",
-          "title": "Uenigheten om vannet",
-          "file": "content/krle/religion/kristendom/overgangsriter/artikkel.json",
-          "link": "/krle/religion/kristendom/overgangsriter"
-        },
-        {
-          "religion": "mormonisme",
-          "title": "Ikke til døden skiller dere",
-          "file": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/mormonisme/overgangsriter"
-        }
-      ],
-      "count": 8,
-      "total": 9
-    },
-    {
-      "slug": "overgangsriter",
-      "label": "Overgangsriter",
-      "entries": [
-        {
-          "religion": "bahai",
-          "title": "Én setning, og alle foreldrenes ja",
-          "file": "content/krle/religion/bahai/overgangsriter/artikkel.json",
-          "link": "/krle/religion/bahai/overgangsriter"
-        },
-        {
-          "religion": "buddhisme",
-          "title": "Riten som ikke finnes",
-          "file": "content/krle/religion/buddhisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/buddhisme/overgangsriter"
-        },
-        {
-          "religion": "hinduisme",
-          "title": "Seksten riter gjennom et liv",
-          "file": "content/krle/religion/hinduisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/hinduisme/overgangsriter"
-        },
-        {
-          "religion": "islam",
-          "title": "Setningen som rammer inn livet",
-          "file": "content/krle/religion/islam/overgangsriter/artikkel.json",
-          "link": "/krle/religion/islam/overgangsriter"
-        },
-        {
-          "religion": "jehovas-vitner",
-          "title": "Dåpen du må be om selv",
-          "file": "content/krle/religion/jehovas-vitner/overgangsriter/artikkel.json",
-          "link": "/krle/religion/jehovas-vitner/overgangsriter"
-        },
-        {
-          "religion": "jodedom",
-          "title": "Dagen ansvaret bytter eier",
-          "file": "content/krle/religion/jodedom/overgangsriter/artikkel.json",
-          "link": "/krle/religion/jodedom/overgangsriter"
-        },
-        {
-          "religion": "kristendom",
-          "title": "Uenigheten om vannet",
-          "file": "content/krle/religion/kristendom/overgangsriter/artikkel.json",
-          "link": "/krle/religion/kristendom/overgangsriter"
-        },
-        {
-          "religion": "mormonisme",
-          "title": "Ikke til døden skiller dere",
-          "file": "content/krle/religion/mormonisme/overgangsriter/artikkel.json",
-          "link": "/krle/religion/mormonisme/overgangsriter"
-        }
-      ],
-      "count": 8,
       "total": 9
     },
     {
@@ -1716,6 +1728,17 @@
       "link": "/krle/religion/sikhisme/intro",
       "dimension": null,
       "tags": []
+    },
+    {
+      "religion": "sikhisme",
+      "title": "Overgangsriter i sikhismen",
+      "link": "/krle/religion/sikhisme/overgangsriter",
+      "dimension": "ritual",
+      "tags": [
+        "overgangsriter",
+        "ritual",
+        "doden"
+      ]
     },
     {
       "religion": "sikhisme",

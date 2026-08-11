@@ -1,5 +1,5 @@
 {
-  "buildId": 59246309123154,
+  "buildId": 202540421226115,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2554,7 +2554,7 @@
       "content/krle/religion/sikhisme/intro/artikkel.json"
     ],
     "sikhisme-overgangsriter": [
-      "content/krle/religion/sikhisme/overgangsriter.json"
+      "content/krle/religion/sikhisme/overgangsriter/artikkel.json"
     ],
     "sikhisme-sentrale-trekk": [
       "content/krle/religion/sikhisme/sentrale-trekk/artikkel.json"
@@ -4653,7 +4653,7 @@
     "krle/religion/sikhisme/gudsbilde": "content/krle/religion/sikhisme/gudsbilde/artikkel.json",
     "krle/religion/sikhisme/hellige-tekster": "content/krle/religion/sikhisme/hellige-tekster/artikkel.json",
     "krle/religion/sikhisme/intro": "content/krle/religion/sikhisme/intro/artikkel.json",
-    "krle/religion/sikhisme/overgangsriter": "content/krle/religion/sikhisme/overgangsriter.json",
+    "krle/religion/sikhisme/overgangsriter": "content/krle/religion/sikhisme/overgangsriter/artikkel.json",
     "krle/religion/sikhisme/sentrale-trekk": "content/krle/religion/sikhisme/sentrale-trekk/artikkel.json",
     "krle/religion/sikhisme/skapelse": "content/krle/religion/sikhisme/skapelse/artikkel.json",
     "krle/religion-og-kultur/hoytider-og-kultur": "content/krle/religion-og-kultur/hoytider-og-kultur.json",
