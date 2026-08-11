@@ -259,6 +259,8 @@ export function DagenSomBonn({
                                     <motion.circle
                                         cx={p.x}
                                         cy={p.y}
+                                        r={9}
+                                        initial={{ r: 9 }}
                                         animate={{ r: erValgt ? 11 : 9 }}
                                         transition={{ type: 'spring', stiffness: 320, damping: 20 }}
                                         fill={erBesokt ? SPOR[m.spor].dot : '#ffffff'}

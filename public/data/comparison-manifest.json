@@ -421,49 +421,49 @@
       "entries": [
         {
           "religion": "bahai",
-          "title": "Bønn i Bahá'í",
+          "title": "Tre bønner, og du velger selv",
           "file": "content/krle/religion/bahai/bonn/artikkel.json",
           "link": "/krle/religion/bahai/bonn"
         },
         {
           "religion": "buddhisme",
-          "title": "Meditasjon og Puja i Buddhismen",
+          "title": "Hvem snakker du til?",
           "file": "content/krle/religion/buddhisme/bonn/artikkel.json",
           "link": "/krle/religion/buddhisme/bonn"
         },
         {
           "religion": "hinduisme",
-          "title": "Puja og Bønn i Hinduismen",
+          "title": "Bønn du gjør med hendene",
           "file": "content/krle/religion/hinduisme/bonn/artikkel.json",
           "link": "/krle/religion/hinduisme/bonn"
         },
         {
           "religion": "islam",
-          "title": "Bønn (Salah) i Islam",
+          "title": "Bønnen som følger sola",
           "file": "content/krle/religion/islam/bonn/artikkel.json",
           "link": "/krle/religion/islam/bonn"
         },
         {
           "religion": "jehovas-vitner",
-          "title": "Bønn i Jehovas vitner",
+          "title": "Til Jehova, gjennom Jesus",
           "file": "content/krle/religion/jehovas-vitner/bonn/artikkel.json",
           "link": "/krle/religion/jehovas-vitner/bonn"
         },
         {
           "religion": "jodedom",
-          "title": "Bønn i Jødedommen",
+          "title": "Bønnen som trenger ni til",
           "file": "content/krle/religion/jodedom/bonn/artikkel.json",
           "link": "/krle/religion/jodedom/bonn"
         },
         {
           "religion": "kristendom",
-          "title": "Bønn i kristendommen",
+          "title": "Bønnen som snur etter tredje ledd",
           "file": "content/krle/religion/kristendom/bonn/artikkel.json",
           "link": "/krle/religion/kristendom/bonn"
         },
         {
           "religion": "mormonisme",
-          "title": "Bønn i Mormonismen",
+          "title": "Bønnen som stiller et spørsmål",
           "file": "content/krle/religion/mormonisme/bonn/artikkel.json",
           "link": "/krle/religion/mormonisme/bonn"
         },
@@ -961,7 +961,7 @@
       "entries": [
         {
           "religion": "islam",
-          "title": "Bønn (Salah) i Islam",
+          "title": "Bønnen som følger sola",
           "file": "content/krle/religion/islam/bonn/artikkel.json",
           "link": "/krle/religion/islam/bonn"
         },
@@ -979,7 +979,7 @@
   "religionArticles": [
     {
       "religion": "bahai",
-      "title": "Bønn i Bahá'í",
+      "title": "Tre bønner, og du velger selv",
       "link": "/krle/religion/bahai/bonn",
       "dimension": "ritual",
       "tags": [
@@ -1060,7 +1060,7 @@
     },
     {
       "religion": "buddhisme",
-      "title": "Meditasjon og Puja i Buddhismen",
+      "title": "Hvem snakker du til?",
       "link": "/krle/religion/buddhisme/bonn",
       "dimension": "ritual",
       "tags": [
@@ -1151,7 +1151,7 @@
     },
     {
       "religion": "hinduisme",
-      "title": "Puja og Bønn i Hinduismen",
+      "title": "Bønn du gjør med hendene",
       "link": "/krle/religion/hinduisme/bonn",
       "dimension": "ritual",
       "tags": [
@@ -1232,7 +1232,7 @@
     },
     {
       "religion": "islam",
-      "title": "Bønn (Salah) i Islam",
+      "title": "Bønnen som følger sola",
       "link": "/krle/religion/islam/bonn",
       "dimension": "ritual",
       "tags": [
@@ -1324,7 +1324,7 @@
     },
     {
       "religion": "jehovas-vitner",
-      "title": "Bønn i Jehovas vitner",
+      "title": "Til Jehova, gjennom Jesus",
       "link": "/krle/religion/jehovas-vitner/bonn",
       "dimension": "ritual",
       "tags": [
@@ -1405,7 +1405,7 @@
     },
     {
       "religion": "jodedom",
-      "title": "Bønn i Jødedommen",
+      "title": "Bønnen som trenger ni til",
       "link": "/krle/religion/jodedom/bonn",
       "dimension": "ritual",
       "tags": [
@@ -1486,7 +1486,7 @@
     },
     {
       "religion": "kristendom",
-      "title": "Bønn i kristendommen",
+      "title": "Bønnen som snur etter tredje ledd",
       "link": "/krle/religion/kristendom/bonn",
       "dimension": "ritual",
       "tags": [
@@ -1576,7 +1576,7 @@
     },
     {
       "religion": "mormonisme",
-      "title": "Bønn i Mormonismen",
+      "title": "Bønnen som stiller et spørsmål",
       "link": "/krle/religion/mormonisme/bonn",
       "dimension": "ritual",
       "tags": [

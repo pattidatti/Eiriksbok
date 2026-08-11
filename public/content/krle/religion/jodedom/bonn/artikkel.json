@@ -1,91 +1,257 @@
 {
-    "id": "bonn",
-    "title": "Bønn i Jødedommen",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "jodedom",
-    "dimension": "ritual",
-    "comparison_tags": [
-        "bønn",
-        "ritual"
-    ],
-    "createdDate": "2025-12-04T11:00:00Z",
-    "lastUpdated": "2025-12-04T11:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Tefillah"
-        },
-        {
-            "type": "text",
-            "content": "Jødisk bønn kalles Tefillah. Ortodokse jødiske menn ber tre ganger daglig: morgen (Shacharit), ettermiddag (Mincha) og kveld (Ma'ariv)."
-        },
-        {
-            "type": "header",
-            "text": "Shema og Amidah"
-        },
-        {
-            "type": "text",
-            "content": "De viktigste bønnene er Shema ('Hør Israel...') som er trosbekjennelsen, og Amidah (Atten-bønnen) som bes stående."
-        },
-        {
-            "type": "header",
-            "text": "Bønneustyr"
-        },
-        {
-            "type": "text",
-            "content": "Under morgenbønnen bruker menn bønnesjal (Tallit) og bønneremmer (Tefillin). Man dekker også hodet med en Kippah i respekt for Gud."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "tefillah",
-            "term": "Tefillah",
-            "definition": "Det hebraiske ordet for bønn."
-        },
-        {
-            "id": "shema",
-            "term": "Shema",
-            "definition": "Jødedommens trosbekjennelse: 'Hør Israel, Herren er vår Gud, Herren er én'."
-        },
-        {
-            "id": "kippah",
-            "term": "Kippah",
-            "definition": "En liten kalott som menn bruker for å dekke hodet i respekt for Gud."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hvor mange ganger om dagen ber ortodokse jødiske menn?",
-            "options": [
-                "En gang",
-                "Tre ganger",
-                "Fem ganger"
-            ],
-            "answer": "Tre ganger"
-        },
-        {
-            "question": "Hva er Shema?",
-            "options": [
-                "En matrett",
-                "Trosbekjennelsen",
-                "En høytid"
-            ],
-            "answer": "Trosbekjennelsen"
-        },
-        {
-            "question": "Hvorfor bruker menn Kippah?",
-            "options": [
-                "For å holde varmen",
-                "I respekt for Gud",
-                "Fordi det er mote"
-            ],
-            "answer": "I respekt for Gud"
-        }
-    ],
-    "quote": {
-        "text": "Hør, Israel! Herren er vår Gud, Herren er én.",
-        "source": "Toraen",
-        "reference": "5. Mosebok 6:4"
+  "id": "bonn",
+  "title": "Bønnen som trenger ni til",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "jodedom",
+  "dimension": "ritual",
+  "comparison_tags": [
+    "bønn",
+    "ritual"
+  ],
+  "category": "Jødedom",
+  "readTime": "7 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Ortodokse jødiske menn ber tre faste bønner hver dag: shaharit om morgenen, minha om ettermiddagen og maariv om kvelden.",
+    "Bønnene bes stående, med ansiktet vendt mot Jerusalem og hodet dekket.",
+    "Ti voksne, en minjan, skal til for at samlingen regnes som offentlig gudstjeneste og ikke privat bønn.",
+    "Retningene er uenige om hvem som telles med i de ti. I reformjødedommen telles kvinner med på lik linje med menn.",
+    "Bønnene står fast i bønneboka siddur, men det er ingenting i veien for å be med helt egne ord."
+  ],
+  "createdDate": "2025-12-04T11:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "concepts": [
+    {
+      "id": "minjan",
+      "term": "Minjan",
+      "definition": "Et bønnefellesskap. Etter tradisjonen må ti voksne menn være til stede for at gudstjenesten skifter fra privat til offentlig."
+    },
+    {
+      "id": "siddur",
+      "term": "Siddur",
+      "definition": "Den jødiske bønneboka. Ordet kommer av seder, som betyr orden."
+    },
+    {
+      "id": "shema",
+      "term": "Shema",
+      "definition": "Bønnen som ofte kalles jødedommens trosbekjennelse. Den innledes med ordene «Hør, Israel!»."
+    },
+    {
+      "id": "amida",
+      "term": "Amida",
+      "definition": "Attenbønnen. En stille bønn som bes stående, og som er kjernen i de fleste jødiske gudstjenester."
+    },
+    {
+      "id": "tefillin",
+      "term": "Tefillin",
+      "definition": "To små, svarte lærbokser med bibeltekster som festes med remmer til pannen og venstre arm under morgenbønnen på hverdager."
     }
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Klokka er sju om morgenen. En mann står i stua med ansiktet vendt mot Jerusalem. Rundt venstre arm og på pannen har han to små, svarte lærbokser, festet med lange lærremmer. Inne i boksene ligger fire tekster fra Bibelen, skrevet for hånd på pergament (Groth, 2024b). På hodet har han en liten kalott, en kipa, og over skuldrene et bønnesjal. Så begynner han å be de samme ordene som jøder har sagt om morgenen i mange hundre år."
+    },
+    {
+      "type": "text",
+      "content": "Alt dette kan han gjøre alene. Å be regnes som en religiøs plikt, en mitzva, og bønnene kan sies både alene og sammen med andre (Groth, 2026a). Men det finnes én ting han ikke får til på egen hånd, uansett hvor godt han ber. For at samlingen skal skifte karakter fra privat bønn til offentlig gudstjeneste, må det være ti voksne til stede. Der holder det ikke å være from. Der må man være mange."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Mann med bønneremmer på arm og panne ber ved vindu",
+      "caption": "Bønneremmene, tefillin, brukes under morgenbønnen på hverdager."
+    },
+    {
+      "type": "text",
+      "content": "Ortodokse jødiske menn ber tre faste bønner hver dag: shaharit om morgenen, minha om ettermiddagen og maariv om kvelden (Groth, 2026b). Bønnene fremsies stående, med ansiktet vendt mot Jerusalem, og hodet skal være dekket av en kipa eller en hatt (Groth, 2026a). Tefillin er etter jødisk religiøs lov påbudt for menn og gutter fra 13 år, altså fra bar mitzva (Groth, 2024b)."
+    },
+    {
+      "type": "header",
+      "text": "De ni andre"
+    },
+    {
+      "type": "text",
+      "content": "En minjan er et bønnefellesskap. Etter tradisjonen må det være en minjan, ti voksne menn, til stede for at gudstjenesten skifter karakter fra det private til det offentlige (Groth, 2026a). Å be alene teller fullt ut, men å be sammen med andre regnes som mest verdifullt."
+    },
+    {
+      "type": "text",
+      "content": "Hvem som telles med blant de ti, er jøder uenige om. I reformjødiske og rekonstruksjonistiske menigheter telles kvinner med i en minjan og deltar i bønnene på lik linje med menn. Konservativ jødedom lar hver enkelt menighet avgjøre spørsmålet selv (Groth, 2026a). Prøv selv under: sett folk inn i synagogen, og bytt mellom retningene mens de står der."
+    },
+    {
+      "type": "component",
+      "name": "MinjanRommet",
+      "props": {
+        "title": "Minjanrommet"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva som skjer når du bytter retning. De samme menneskene står i det samme rommet. Ingen blir sendt ut, og ingen slutter å be. Det eneste som endrer seg, er hvem som telles med i de ti. Plikten til å be gjelder både menn og kvinner. Men i tradisjonell jødedom er kvinner fritatt fra bønnene som må sies til bestemte tider på døgnet. I ortodokse menigheter er det fortsatt menn som leder og gjennomfører selve gudstjenesten i synagogen. Samtidig velger mange ortodokse kvinner i dag å ta på seg religiøse plikter de ikke må gjøre (Groth, 2026a). Mange kvinner bruker også bønneremmer frivillig, og i de ikke-ortodokse retningene er dette nå vanlig (Groth, 2024b)."
+    },
+    {
+      "type": "header",
+      "text": "To bønner nesten alle kjenner"
+    },
+    {
+      "type": "text",
+      "content": "Den mest kjente jødiske bønnen heter Shema, som betyr hør. Den handler om troen på [den ene Guden som ikke navngis](/krle/religion/jodedom/gudsbilde). Den blir ofte kalt jødedommens trosbekjennelse, fordi den sier hva forholdet mellom Gud og det jødiske folket går ut på. Strengt tatt er den ikke en vanlig bønn, men en bekjennelse av at Gud er én (Groth, 2024a). Shema skal bes to ganger om dagen. Det første verset regnes som særlig viktig, og mange ortodokse jøder lukker øynene og dekker dem med hånden mens de sier nettopp de ordene. Bønnen kan bes i en minjan, eller alene hjemme."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Hør, Israel! Adonaj (Herren) er vår Gud, Adonaj er én.",
+        "author": "Shema, 5. Mosebok 6,4"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Den andre store bønnen er Amida, på norsk kalt Attenbønnen. Den bes stille og stående, og utgjør kjernen i de fleste jødiske gudstjenester, ved siden av lesingen fra Toraen. I den lovpriser og takker man Gud, og ber om visdom, tilgivelse og helbredelse. Man ber også om at Messias snart må komme. Ifølge tradisjonen ble bønnen utformet allerede av skriveren Esra på 400-tallet fvt. (Groth, 2026a). Et helt rom kan altså stå stille samtidig, hver for seg, og likevel be den samme bønnen."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Menighet står stille side om side i synagoge under bønn",
+      "caption": "Amida bes stille og stående, med ansiktet vendt mot Jerusalem."
+    },
+    {
+      "type": "header",
+      "text": "Faste ord, og egne ord"
+    },
+    {
+      "type": "text",
+      "content": "Bønnene er samlet i en egen bønnebok, siddur, ved siden av de [hellige skriftene](/krle/religion/jodedom/hellige-tekster). Ordet kommer av seder, som betyr orden, og hver type gudstjeneste har sine faste bønner (Groth, 2026a). En fullstendig siddur inneholder liturgien som brukes i synagogen gjennom hele året, salmer, bønner til bruk i hjemmet og velsignelser til spesielle anledninger, som bryllup, begravelse og bar mitzva (Groth, 2022). Askenasiske og sefardiske jøder bruker ulike bønnebøker, og de ikke-ortodokse retningene har laget sine egne. Likevel er de viktigste bønnene fremdeles felles for alle retningene (Groth, 2026a)."
+    },
+    {
+      "type": "text",
+      "content": "Alt dette er fast. Likevel skal bønnene sies med innlevelse og kjærlighet til Gud, som om de var ens egne personlige bønner. Og det finnes ikke noe forbud mot å be med helt egne ord når man kjenner behov for det. Å be personlige bønner ved Vestmuren i Jerusalem er en gammel skikk som fremdeles er svært utbredt, og jøder fra hele verden reiser dit ved sykdom og livskriser. I tillegg kommer de korte velsignelsene, brakhot. Ortodokse jøder sier dem ved måltider, på sabbaten og ved spesielle syn, som en regnbue. For den som lever slik, får alt man opplever en religiøs betydning (Groth, 2026a)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Sammenbrettede papirlapper stukket inn mellom steinene i Vestmuren",
+      "caption": "Ved Vestmuren i Jerusalem ber mange med sine helt egne ord."
+    },
+    {
+      "type": "header",
+      "text": "Bønnen som overlevde tempelet"
+    },
+    {
+      "type": "text",
+      "content": "Slik har det ikke alltid vært. Så lenge tempelet i Jerusalem sto, var det der hele folket ba og ofret. Da romerne brente tempelet i år 70 evt., forsto rabbinerne at senteret for det hellige livet måtte flyttes hvis jødedommen skulle overleve som levende religion. Det ble flyttet to steder: til synagogen og til hjemmet (Groth, 2026a). Bønnen tok over plassen ofringene hadde hatt."
+    },
+    {
+      "type": "text",
+      "content": "Derfor er det heller ikke mulig å gi ett svar på når og hvordan jøder ber i dag. Noen følger den gamle rabbinske tradisjonen og ber gjennom hele dagen, andre møtes bare på sabbaten og høytidene, og noen ser på seg selv mest som kulturelle jøder (Groth, 2026a). I Norge holder Det Mosaiske Trossamfund gudstjeneste hver sabbat og på alle helligdager (Det Mosaiske Trossamfund, u.å.), og i 2021 ga de ut sidduren i norsk oversettelse, med kommentarer (Groth, 2022). Mannen i stua kan be alene. Men han venter på ni til."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva heter de tre faste bønnene, og når på dagen bes de?",
+          "Hva er en minjan, og hvor mange skal det til?",
+          "Hva er tefillin, og når brukes de?",
+          "Hva er en siddur?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hva som endrer seg når den tiende personen kommer inn i rommet.",
+          "Retningene i jødedommen teller ulikt når det gjelder hvem som er med i en minjan. Hvorfor kan et slikt spørsmål bli så viktig for en menighet?",
+          "Bønnene i sidduren er faste, men skal likevel sies som om de var dine egne ord. Hvordan kan begge deler stemme samtidig?",
+          "Da tempelet ble brent i år 70, tok bønnen over plassen ofringene hadde hatt. Hva sier det om hvordan religioner endrer seg når noe viktig går tapt?"
+        ],
+        "gaaVidere": [
+          "Finn ut hva Kaddish er, og i hvilke situasjoner den bes.",
+          "Skriv en kort tekst om en handling du bare kan gjøre sammen med andre, og forklar hva fellesskapet tilfører.",
+          "Diskuter i klassen: er det en fordel eller en ulempe at bønnene er de samme hver dag?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er en minjan?",
+            "options": [
+              "En bønnebok med faste bønner",
+              "Et bønnefellesskap på ti voksne",
+              "Et bønnesjal med frynser i hjørnene",
+              "Den stille bønnen som bes stående"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Etter tradisjonen må ti voksne menn være til stede for at gudstjenesten skifter karakter fra det private til det offentlige."
+          },
+          {
+            "question": "Hva heter de tre faste daglige bønnene?",
+            "options": [
+              "Shema, Amida og Kaddish",
+              "Shaharit, minha og maariv",
+              "Seder, siddur og mahzor",
+              "Tallit, tefillin og kipa"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Shaharit bes om morgenen, minha om ettermiddagen og maariv om kvelden."
+          },
+          {
+            "question": "Hva er tefillin?",
+            "options": [
+              "To svarte lærbokser med bibeltekster som festes til panne og arm",
+              "En kalott som dekker hodet under bønn",
+              "Bønnene som leses høyt fra Toraen",
+              "Skapet der torarullene oppbevares"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Boksene inneholder fire bibeltekster skrevet for hånd på pergament, og brukes under morgenbønnen på hverdager."
+          },
+          {
+            "question": "Hvordan bes Amida?",
+            "options": [
+              "Høyt og syngende, ledet av kantoren",
+              "Sittende, med boka i fanget",
+              "Stille og stående",
+              "Bare på sabbaten, aldri i hverdagen"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Amida, eller Attenbønnen, bes stille og stående, og utgjør kjernen i de fleste jødiske gudstjenester."
+          },
+          {
+            "question": "Hva er forskjellen mellom retningene når det gjelder minjan?",
+            "options": [
+              "Reformjødedommen krever tjue personer i stedet for ti",
+              "Kvinner telles med i reformjødiske menigheter, mens konservative menigheter avgjør det selv",
+              "Ortodokse jøder har sluttet å bruke minjan",
+              "Bare barn under 13 år telles med i ikke-ortodokse menigheter"
+            ],
+            "correctAnswer": 1,
+            "explanation": "I reformjødiske og rekonstruksjonistiske menigheter telles kvinner med på lik linje med menn. Konservativ jødedom lar hver menighet bestemme."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Groth, B. (2022). *Siddur*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/siddur](https://snl.no/siddur)",
+          "Groth, B. (2024a). *Shema*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Shema](https://snl.no/Shema)",
+          "Groth, B. (2024b). *Tefillin*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/tefillin](https://snl.no/tefillin)",
+          "Groth, B. (2026a). *Bønn - jødedom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bønn_-_jødedom](https://snl.no/b%C3%B8nn_-_j%C3%B8dedom)",
+          "Groth, B. (2026b). *Jødedom*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/jødedom](https://snl.no/j%C3%B8dedom)",
+          "Det Mosaiske Trossamfund. (u.å.). *Det Mosaiske Trossamfund*. Hentet 11.08.2026 fra [dmt.oslo.no](https://www.dmt.oslo.no/)"
+        ]
+      }
+    }
+  ],
+  "quote": {
+    "text": "Hør, Israel! Adonaj (Herren) er vår Gud, Adonaj er én.",
+    "source": "Toraen",
+    "reference": "5. Mosebok 6,4"
+  },
+  "timeline": []
 }

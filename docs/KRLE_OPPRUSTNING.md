@@ -1,6 +1,6 @@
 # KRLE - opprustningsplan og statusoversikt
 
-> **Sist målt:** 2026-08-11 (etter R2) · **N = 124 artikler**
+> **Sist målt:** 2026-08-11 (etter R3) · **N = 125 artikler**
 > Dette dokumentet er arbeidslista for å løfte KRLE-innholdet opp på plan_article-standard.
 > Kryss av i `✔`-kolonnen når en artikkel er ferdigstilt, og oppdater sammendraget nederst.
 
@@ -96,10 +96,10 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert - de har et annet s
 
 | Status | Antall | Andel |
 |---|---:|---:|
-| `STUB` | 50 | 40,3 % |
-| `HALV` | 31 | 25,0 % |
-| `FERDIG` | 43 | 34,7 % |
-| **Sum** | **124** | |
+| `STUB` | 43 | 34,4 % |
+| `HALV` | 30 | 24,0 % |
+| `FERDIG` | 52 | 41,6 % |
+| **Sum** | **125** | |
 
 | Mangel | Antall | Andel |
 |---|---:|---:|
@@ -121,7 +121,7 @@ Kvest-filene under `filosofi/quests/` (22 stk) er ekskludert - de har et annet s
 | ~~**R0**~~ | ~~Bugene B1-B5 i §7. Rene skjema- og manifest-fikser.~~ **Ferdig 2026-08-10** | 10 filer | ✅ |
 | ~~**R1**~~ | ~~`skapelse` for de sju religionene som mangler den~~ **Ferdig 2026-08-10** | 7 nye | ✅ Tema 1 «Hvor kommer alt fra?» har nå 9/9 kilder |
 | ~~**R2**~~ | ~~`gudsbilde` × 8~~ **Ferdig 2026-08-11** | 8 | ✅ Tema 2 «Én, mange eller ingen gud?» har nå 9/9 ferdige kilder |
-| **R3** | `bonn` × 8 + ny sikhisme-artikkel | 9 | Tema 3 «Å snakke med det hellige» |
+| ~~**R3**~~ | ~~`bonn` × 8~~ **Ferdig 2026-08-11**. Sikhisme-artikkelen kom fra bot-PR #390 og telles med i N. | 8 | ✅ Tema 3 «Å snakke med det hellige» har nå 9/9 ferdige kilder |
 | **R4** | `overgangsriter` × 8 (sikhisme er ferdig) | 8 | Tema 4 «Fra vugge til grav» |
 | **R5** | `frelse` × 8 + ny sikhisme-artikkel, `grunnleggere` × 9, `hellige-tekster` × 9, `sentrale-trekk` × 7 | 34 | Tema 5-8 |
 | **R6** | De 8 kristendom-artiklene i 325-396-båndet | 8 | Kortest vei til ferdig - har allerede quiz og tekst |
@@ -144,7 +144,8 @@ gjestestemme i seks av sammenligningstemaene og dekkes av `samisk/intro.json` og
 
 ## 6. Statustabeller
 
-Sortert med de svakeste øverst innenfor hver gruppe.
+Sortert med de svakeste øverst innenfor hver gruppe. Rader merket `☑` er ferdigstilt i
+denne opprustningen; `☐ FERDIG` holdt standard fra før eller kom fra den daglige innholdscronen.
 
 `⏳` i Hero-kolonnen betyr at artikkelen har `heroImage` satt til `/images/placeholder.webp`.
 Det er markøren bildecronen greper etter; ekte bilder kommer i neste 07:30-kjøring, eller
@@ -152,7 +153,7 @@ med en manuell `/bilde`.
 
 ### Bahá'í
 
-n = 9 · snitt 249 ord · 7 stub / 0 halv / 2 ferdig
+n = 9 · snitt 341 ord · 6 stub / 0 halv / 3 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
@@ -163,12 +164,12 @@ n = 9 · snitt 249 ord · 7 stub / 0 halv / 2 ferdig
 | ☐ | `STUB` | `religion/bahai/frelse/artikkel.json` | 69 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/bahai/sentrale-trekk/artikkel.json` | 74 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/bahai/overgangsriter/artikkel.json` | 76 | - | - | - | 3 | - | - |
-| ☐ | `STUB` | `religion/bahai/bonn/artikkel.json` | 79 | - | - | - | 3 | - | - |
+| ☑ | `FERDIG` | `religion/bahai/bonn/artikkel.json` | 904 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/bahai/skapelse/artikkel.json` | 878 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 
 ### Jehovas vitner
 
-n = 9 · snitt 262 ord · 7 stub / 0 halv / 2 ferdig
+n = 9 · snitt 367 ord · 6 stub / 0 halv / 3 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
@@ -177,19 +178,19 @@ n = 9 · snitt 262 ord · 7 stub / 0 halv / 2 ferdig
 | ☑ | `FERDIG` | `religion/jehovas-vitner/gudsbilde/artikkel.json` | 999 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `STUB` | `religion/jehovas-vitner/hellige-tekster/artikkel.json` | 63 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/jehovas-vitner/frelse/artikkel.json` | 68 | - | - | - | 3 | - | - |
-| ☐ | `STUB` | `religion/jehovas-vitner/bonn/artikkel.json` | 69 | - | - | - | 3 | - | - |
+| ☑ | `FERDIG` | `religion/jehovas-vitner/bonn/artikkel.json` | 1010 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `STUB` | `religion/jehovas-vitner/overgangsriter/artikkel.json` | 72 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/jehovas-vitner/sentrale-trekk/artikkel.json` | 88 | - | - | - | 3 | - | - |
 | ☑ | `FERDIG` | `religion/jehovas-vitner/skapelse/artikkel.json` | 910 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 
 ### Mormonisme
 
-n = 9 · snitt 263 ord · 7 stub / 0 halv / 2 ferdig
+n = 9 · snitt 365 ord · 6 stub / 0 halv / 3 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
 | ☐ | `STUB` | `religion/mormonisme/intro.json` | 39 | - | - | - | 0 | ✅ | - |
-| ☐ | `STUB` | `religion/mormonisme/bonn/artikkel.json` | 60 | - | - | - | 3 | - | - |
+| ☑ | `FERDIG` | `religion/mormonisme/bonn/artikkel.json` | 978 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `STUB` | `religion/mormonisme/sentrale-trekk/artikkel.json` | 72 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/mormonisme/frelse/artikkel.json` | 73 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/mormonisme/hellige-tekster/artikkel.json` | 75 | - | - | - | 3 | - | - |
@@ -200,12 +201,12 @@ n = 9 · snitt 263 ord · 7 stub / 0 halv / 2 ferdig
 
 ### Jødedom
 
-n = 9 · snitt 335 ord · 6 stub / 1 halv / 2 ferdig
+n = 9 · snitt 436 ord · 5 stub / 1 halv / 3 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
 | ☐ | `STUB` | `religion/jodedom/intro.json` | 27 | - | - | - | 0 | ✅ | - |
-| ☐ | `STUB` | `religion/jodedom/bonn/artikkel.json` | 54 | - | - | - | 3 | - | - |
+| ☑ | `FERDIG` | `religion/jodedom/bonn/artikkel.json` | 967 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/jodedom/gudsbilde/artikkel.json` | 923 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `STUB` | `religion/jodedom/hellige-tekster/artikkel.json` | 79 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/jodedom/grunnleggere/artikkel.json` | 80 | - | - | - | 3 | - | - |
@@ -216,7 +217,7 @@ n = 9 · snitt 335 ord · 6 stub / 1 halv / 2 ferdig
 
 ### Hinduisme
 
-n = 9 · snitt 374 ord · 6 stub / 0 halv / 3 ferdig
+n = 9 · snitt 468 ord · 5 stub / 0 halv / 4 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
@@ -224,7 +225,7 @@ n = 9 · snitt 374 ord · 6 stub / 0 halv / 3 ferdig
 | ☐ | `STUB` | `religion/hinduisme/hellige-tekster/artikkel.json` | 60 | - | - | - | 3 | - | - |
 | ☑ | `FERDIG` | `religion/hinduisme/gudsbilde/artikkel.json` | 1036 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `STUB` | `religion/hinduisme/frelse/artikkel.json` | 65 | - | - | - | 3 | - | - |
-| ☐ | `STUB` | `religion/hinduisme/bonn/artikkel.json` | 72 | - | - | - | 3 | - | - |
+| ☑ | `FERDIG` | `religion/hinduisme/bonn/artikkel.json` | 916 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `STUB` | `religion/hinduisme/grunnleggere/artikkel.json` | 72 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/hinduisme/overgangsriter/artikkel.json` | 110 | - | - | - | 3 | - | - |
 | ☐ | `FERDIG` | `religion/hinduisme/sentrale-trekk/artikkel.json` | 970 | ✅ | - | - | 4 | ✅ | ✅ har |
@@ -232,11 +233,11 @@ n = 9 · snitt 374 ord · 6 stub / 0 halv / 3 ferdig
 
 ### Islam
 
-n = 9 · snitt 269 ord · 7 stub / 0 halv / 2 ferdig
+n = 9 · snitt 374 ord · 6 stub / 0 halv / 3 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
-| ☐ | `STUB` | `religion/islam/bonn/artikkel.json` | 39 | - | - | - | 3 | - | - |
+| ☑ | `FERDIG` | `religion/islam/bonn/artikkel.json` | 987 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `STUB` | `religion/islam/skapelse/artikkel.json` | 45 | - | - | - | 3 | - | - |
 | ☑ | `FERDIG` | `religion/islam/gudsbilde/artikkel.json` | 928 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `STUB` | `religion/islam/grunnleggere/artikkel.json` | 71 | - | - | - | 3 | - | - |
@@ -248,14 +249,14 @@ n = 9 · snitt 269 ord · 7 stub / 0 halv / 2 ferdig
 
 ### Buddhisme
 
-n = 10 · snitt 465 ord · 6 stub / 1 halv / 3 ferdig
+n = 10 · snitt 561 ord · 5 stub / 1 halv / 4 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
 | ☐ | `STUB` | `religion/buddhisme/intro.json` | 32 | - | - | - | 0 | ✅ | - |
 | ☐ | `STUB` | `religion/buddhisme/hellige-tekster/artikkel.json` | 61 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/buddhisme/frelse/artikkel.json` | 62 | - | - | - | 3 | - | - |
-| ☐ | `STUB` | `religion/buddhisme/bonn/artikkel.json` | 65 | - | - | - | 3 | - | - |
+| ☑ | `FERDIG` | `religion/buddhisme/bonn/artikkel.json` | 1024 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/buddhisme/gudsbilde/artikkel.json` | 961 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `STUB` | `religion/buddhisme/grunnleggere/artikkel.json` | 83 | - | - | - | 3 | - | - |
 | ☐ | `STUB` | `religion/buddhisme/overgangsriter/artikkel.json` | 94 | - | - | - | 3 | - | - |
@@ -265,7 +266,7 @@ n = 10 · snitt 465 ord · 6 stub / 1 halv / 3 ferdig
 
 ### Sikhisme
 
-n = 7 · snitt 526 ord · 4 stub / 0 halv / 3 ferdig
+n = 8 · snitt 614 ord · 4 stub / 0 halv / 4 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
@@ -276,15 +277,16 @@ n = 7 · snitt 526 ord · 4 stub / 0 halv / 3 ferdig
 | ☐ | `FERDIG` | `religion/sikhisme/overgangsriter.json` | 1304 | ✅ | ✅ | ✅ | 5 | ✅ | ✅ har |
 | ☑ | `FERDIG` | `religion/sikhisme/skapelse/artikkel.json` | 895 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☑ | `FERDIG` | `religion/sikhisme/gudsbilde/artikkel.json` | 922 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
+| ☐ | `FERDIG` | `religion/sikhisme/bonn/artikkel.json` | 1226 | ✅ | ✅ | ✅ | 5 | ⏳ | ✅ har |
 
 ### Kristendom
 
-n = 14 · snitt 597 ord · 0 stub / 10 halv / 4 ferdig
+n = 14 · snitt 637 ord · 0 stub / 9 halv / 5 ferdig
 
 | ✔ | Status | Fil | Ord | Sig | Oppg | Kilde | Quiz | Hero | Spill |
 |:--|:--|:--|--:|:-:|:-:|:-:|--:|:-:|:-:|
 | ☐ | `HALV` | `religion/kristendom/hellige-tekster/artikkel.json` | 325 | - | - | - | 5 | - | - |
-| ☐ | `HALV` | `religion/kristendom/bonn/artikkel.json` | 347 | - | - | - | 5 | - | - |
+| ☑ | `FERDIG` | `religion/kristendom/bonn/artikkel.json` | 901 | ✅ | ✅ | ✅ | 5 | ⏳ | - |
 | ☐ | `HALV` | `religion/kristendom/skapelse/artikkel.json` | 347 | - | - | - | 5 | - | - |
 | ☐ | `HALV` | `religion/kristendom/sentrale-trekk/artikkel.json` | 358 | - | - | - | 5 | - | - |
 | ☐ | `HALV` | `religion/kristendom/grunnleggere/artikkel.json` | 368 | - | - | - | 5 | - | - |
@@ -471,3 +473,11 @@ Før opp hver ferdigstilte artikkel her fra og med nå, så er historikken synli
 | 2026-08-11 | Jehovas vitner: Gud med fornavn | `HvemErStorst` | - | - |
 | 2026-08-11 | Hinduisme: Én eller millioner? | `EnEllerMillioner` | - | - |
 | 2026-08-11 | Buddhisme: Gudene som ikke kan redde deg | `GudeneSomIkkeFrelser` | - | - |
+| 2026-08-11 | Jødedom: Bønnen som trenger ni til | `MinjanRommet` | - | - |
+| 2026-08-11 | Kristendom: Bønnen som snur etter tredje ledd | `FadervaarLinjeForLinje` | - | - |
+| 2026-08-11 | Islam: Bønnen som følger sola | `SolaSomKlokke` | - | - |
+| 2026-08-11 | Bahá'í: Tre bønner, og du velger selv | `TreBonnerEttValg` | - | - |
+| 2026-08-11 | Mormonisme: Bønnen som stiller et spørsmål | `BonnSomSamtale` | - | - |
+| 2026-08-11 | Jehovas vitner: Til Jehova, gjennom Jesus | `AdressenPaaBonnen` | - | - |
+| 2026-08-11 | Hinduisme: Bønn du gjør med hendene | `PujaBrettet` | - | - |
+| 2026-08-11 | Buddhisme: Hvem snakker du til? | `HvemSnakkerDuTil` | - | - |

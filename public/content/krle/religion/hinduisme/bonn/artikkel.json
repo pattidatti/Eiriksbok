@@ -1,6 +1,7 @@
 {
     "id": "bonn",
-    "title": "Puja og Bønn i Hinduismen",
+    "title": "Bønn du gjør med hendene",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "hinduisme",
@@ -9,83 +10,263 @@
         "bønn",
         "ritual"
     ],
-    "createdDate": "2025-12-04T11:00:00Z",
-    "lastUpdated": "2025-12-04T11:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Puja"
-        },
-        {
-            "type": "text",
-            "content": "Det viktigste ritualet er Puja, som utføres både i hjemmet og i tempelet. Man inviterer guden som en gjest, vasker gudestatuen (Murti), pynter den og ofrer mat, lys og røkelse."
-        },
-        {
-            "type": "header",
-            "text": "Darshan"
-        },
-        {
-            "type": "text",
-            "content": "Målet med tempelbesøk er ofte Darshan – å se guden og bli sett av guden. Øyekontakten med gudestatuen regnes som en velsignelse."
-        },
-        {
-            "type": "header",
-            "text": "Mantraer"
-        },
-        {
-            "type": "text",
-            "content": "Helliglyden 'Om' er det viktigste mantraet og brukes i bønn og meditasjon for å komme i kontakt med det guddommelige."
-        }
+    "category": "Hinduisme",
+    "readTime": "6 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Den viktigste bønnehandlingen i hinduismen heter puja, og den består av gaver mer enn av ord.",
+        "Guden blir tatt imot som en konge eller en æresgjest: vasket, pyntet, matet og underholdt.",
+        "De fleste hinduer har et husalter hjemme, og der gjør familien pujaen selv, uten prest.",
+        "Målet med et tempelbesøk er ofte darshan: å se guden og bli sett av guden.",
+        "Ritualet varierer mye mellom retninger, regioner og anledninger."
     ],
+    "createdDate": "2025-12-04T11:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "puja",
             "term": "Puja",
-            "definition": "Et ritual der man tilber gudene med ofringer av lys, røkelse, blomster og mat."
+            "definition": "Tilbedelse av en guddom med gaver som vann, blomster, røkelse, lys og mat."
         },
         {
             "id": "murti",
             "term": "Murti",
-            "definition": "En innviet gudestatue som guden er til stede i."
+            "definition": "Den innviede gudefiguren på alteret. Ordet betyr omtrent legemliggjøring."
         },
         {
             "id": "darshan",
             "term": "Darshan",
-            "definition": "Å se guden og bli sett av guden. Målet med tempelbesøk."
+            "definition": "Å se guden og bli sett av guden. Blikket går begge veier."
+        },
+        {
+            "id": "arti",
+            "term": "Arti",
+            "definition": "Ritualet der en brennende lampe svinges foran gudebildet."
+        },
+        {
+            "id": "bhakti",
+            "term": "Bhakti",
+            "definition": "Hengivenhet og tillit til gudens nåde. Følelsen bak gaven."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hva er Puja?",
-            "options": [
-                "En type yoga",
-                "Et tilbedelsesritual",
-                "En hellig bok"
-            ],
-            "answer": "Et tilbedelsesritual"
+            "type": "text",
+            "content": "Tenk deg at det ringer på døra, og utenfor står en gjest du har gledet deg lenge til. Du tar imot jakka. Du henter noe å drikke. Du setter fram det beste du har i huset. Du sier kanskje ikke så mye. Du gjør ting."
         },
         {
-            "question": "Hva er en Murti?",
-            "options": [
-                "En prest",
-                "En gudestatue",
-                "Et tempel"
-            ],
-            "answer": "En gudestatue"
+            "type": "text",
+            "content": "Slik ser den viktigste bønnehandlingen i hinduismen ut. Den heter puja, og den handler mer om hva hendene gjør enn om hva munnen sier. Puja er tilbedelse av en guddom, og den kan bestå av mat og drikke, lys og røkelse, underholdning i form av sang og dans, og av å vaske, salve og pynte gudebildet (Kværne, 2024)."
         },
         {
-            "question": "Hva er det viktigste mantraet i hinduismen?",
-            "options": [
-                "Amen",
-                "Om",
-                "Halleluja"
-            ],
-            "answer": "Om"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Messingbrett med oljelampe, blomster, røkelse og vannskål",
+            "caption": "Alt dette er bønn. Ikke ett ord på brettet."
+        },
+        {
+            "type": "text",
+            "content": "Puja kan skje i et tempel, ved et husalter hjemme, eller ute i friluft (Kværne, 2024). Ordet kommer fra sanskrit og betyr omtrent oppvarting. Tanken bak er at guden blir tatt imot som en konge eller en æresgjest (Kværne og Jacobsen, 2026). Det er akkurat det du gjør med en gjest du har lyst til å imponere: du varter opp."
+        },
+        {
+            "type": "header",
+            "text": "Skapet i hjørnet"
+        },
+        {
+            "type": "text",
+            "content": "De fleste hinduer har et hjemmealter. Der er hovedguden, og gjerne flere andre guder, representert med bilder eller statuer (Ilkama og Arnesen, 2017). Det kan være et lite skap, en hylle på veggen eller et helt rom, alt etter hvor mye plass familien har."
+        },
+        {
+            "type": "text",
+            "content": "I templene er det ritualprestene som utfører den daglige pujaen. Hjemme er det de som bor der som gjør den selv, og kvinner har ofte et særlig ansvar for pujaen i hjemmet (Ilkama og Arnesen, 2017). Det får en følge: for å be trenger du verken prest, tempel eller et bestemt klokkeslett. Du trenger et sted å sette gavene."
+        },
+        {
+            "type": "text",
+            "content": "Under kan du gjøre en puja selv. Brettet står klart. Klikk én gave om gangen, og følg med på hva som skjer med figuren på alteret."
+        },
+        {
+            "type": "component",
+            "name": "PujaBrettet",
+            "props": {
+                "title": "Puja-brettet"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til hva du faktisk gjorde. Du helte vann, du la fram blomster, du tente en flamme og satte fram mat. Nesten alt sammen gjorde du med hendene."
+        },
+        {
+            "type": "text",
+            "content": "Ord er likevel med. Mantraer er hellige eller kraftfulle setninger, ord eller stavelser, ofte på sanskrit (Jacobsen, 2025b). Tanken er at ordet inneholder essensen av det ordet står for, slik at et mantra kan gjøre en bestemt guddom til stede (Jacobsen, 2025b). Et vanlig eksempel er Om namah shivaya, som betyr hyllest til Shiva. Selve lyden om er blitt et symbol for hele hinduismen (Ilkama og Arnesen, 2017). Men mantraene kommer sammen med handlingene, ikke i stedet for dem."
+        },
+        {
+            "type": "header",
+            "text": "Gjesten i figuren"
+        },
+        {
+            "type": "text",
+            "content": "Figuren på alteret kalles en murti. Ordet betyr bokstavelig talt legemliggjøring (Morley, 2016). Gjennom ritualer blir figuren påkalt og innviet, slik at guden regnes som fysisk til stede i den (Ilkama og Arnesen, 2017). Derfor blir en murti behandlet som levende. Den blir vasket, stelt og matet i rituelle seremonier (Ilkama og Arnesen, 2017)."
+        },
+        {
+            "type": "text",
+            "content": "I store templer går dette som en dagsplan. Om morgenen blir guden vekket og vasket, og det blir satt fram et måltid, gjerne vegetarmat og søtsaker laget av melk og ris. Guden blir også underholdt med musikk (Kværne og Jacobsen, 2026). Blomster, røkelse og oljelamper hører også med til den daglige pujaen i tempelet (Ilkama og Arnesen, 2017). Arbeidet blir gjort av profesjonelle prester, oftest fra brahminklassen, den øverste gruppen i det gamle standssystemet (Kværne og Jacobsen, 2026)."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Den som gir meg et blad, en blomst, en frukt eller vann med hengivenhet, den gaven tar jeg imot.",
+                "author": "Bhagavadgita 9.26"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Verset sier noe om hva som teller. Ikke prisen på gaven, men følelsen bak. Det ordet er sentralt i hinduismen. Bhakti betyr hengivenhet og tillit til gudens nåde (Jacobsen, 2025a). Bhakti bygger på at gud og menneske er to ulike parter. Nettopp derfor kan det bli et forhold mellom dem (Jacobsen, 2025a). De første dikterhelgenene, altså diktere som ble regnet som hellige, levde i de tamilske områdene i Sør-India fra rundt 600-tallet. De skrev til gudene på vanlige folks språk i stedet for på sanskrit, og de gikk utenom brahminprestene som mellommenn (Jacobsen, 2025a)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Familie foran lite husalter med bilder og oljelampe",
+            "caption": "Hjemme er det familien selv som gjør pujaen."
+        },
+        {
+            "type": "header",
+            "text": "Å se, og å bli sett"
+        },
+        {
+            "type": "text",
+            "content": "Når mange hinduer går i tempelet, er målet å få darshan. Ordet kommer fra sanskrit og betyr syn, eller det å se (Kværne, 2025). Du stiller deg foran gudebildet og ser guden. Og like viktig: guden ser deg. Gjennom dette blikket blir gudens nåde formidlet til den som tilber (Kværne og Jacobsen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Darshan kan man også få av et hellig menneske, en guru eller en svamin (Kværne, 2025). På årlige festdager blir gudestatuen ofte båret i prosesjon til og fra tempelet, og da er det mange som vil ha gudens darshan (Kværne og Jacobsen, 2026). Høydepunktet i mange seremonier er arti, der en brennende lampe blir svingt foran gudebildet, ofte med veker dyppet i smeltet smør eller med kamfer (Wikipedia, u.å.). Maten som ble ofret, blir etterpå delt ut igjen til alle som er til stede. Da heter den prasad (Wikipedia, u.å.)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tempelbesøkende ser inn mot opplyst gudebilde",
+            "caption": "Darshan: du ser guden, og guden ser deg."
+        },
+        {
+            "type": "header",
+            "text": "Samme mønster, mange måter"
+        },
+        {
+            "type": "text",
+            "content": "Det finnes ingen fasit på hvordan en puja skal se ut. Ritualet varierer med retning, region, anledning og hvilken gud det gjelder, og finnes både i korte utgaver med fem gaver og i lange utgaver med seksten eller enda flere trinn (Wikipedia, u.å.). [Hinduismen](/krle/religion/hinduisme) har dessuten flere store retninger. Vishnuisme, shivaisme og shaktisme setter henholdsvis Vishnu, Shiva og gudinnen i sentrum, og hver av dem har sine egne underretninger (Ilkama og Arnesen, 2017). Mange hinduer tilber flere guder ved siden av hverandre (Kværne og Jacobsen, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Men mønsteret går igjen. Du inviterer. Du gir. Du får noe tilbake. For mange hinduer er bønn derfor ikke først og fremst noe du sier, men noe du gjør, og som oftest gjør du det hjemme, ved et lite skap i et hjørne av stua. Vil du se hvordan andre religioner gjør det samme, kan du [sammenligne religionene](/krle/sammenlign) side om side."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er puja, og hvilke slags gaver kan inngå i den?",
+                    "Hvor kan puja utføres, og hvem gjør den hjemme?",
+                    "Hva er en murti, og hva betyr ordet?",
+                    "Hva er darshan, og hvorfor sier artikkelen at blikket går begge veier?"
+                ],
+                "reflekter": [
+                    "Artikkelen sier at puja handler mer om hva hendene gjør enn om hva munnen sier. Forklar med egne ord hva som menes.",
+                    "Hvorfor tror du guden blir tatt imot som en æresgjest, og ikke bare snakket til?",
+                    "Verset fra Bhagavadgita nevner et blad, en blomst, en frukt og vann. Hva sier valget av så enkle gaver om hva som teller?",
+                    "Hva har det å si for en religion at man kan be hjemme, uten prest og uten fast klokkeslett?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign puja med bønn i en annen religion du har lest om. Hva er den største forskjellen i hva man faktisk gjør?",
+                    "Finn ut hva som skjer under en arti-seremoni, og lag en enkel beskrivelse i fem punkter.",
+                    "Diskuter i klassen: Kan en handling være en bønn selv om det ikke blir sagt et eneste ord?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er puja?",
+                        "options": [
+                            "En pilegrimsreise til Ganges",
+                            "Tilbedelse av en guddom med gaver som vann, lys, røkelse og mat",
+                            "En hellig tekst om gudene",
+                            "En årlig faste for alle hinduer"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Puja kan bestå av mat og drikke, lys og røkelse, sang og dans, og av å vaske, salve og pynte gudebildet."
+                    },
+                    {
+                        "question": "Hvem utfører den daglige pujaen ved et husalter?",
+                        "options": [
+                            "En brahminprest som kommer på besøk",
+                            "De som bor i hjemmet, ofte med kvinner som har et særlig ansvar",
+                            "Bare det eldste barnet i familien",
+                            "Ingen, husaltre brukes bare ved høytider"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "I templene er det prestene som gjør den daglige pujaen. Hjemme gjør de som bor der den selv."
+                    },
+                    {
+                        "question": "Hva betyr darshan?",
+                        "options": [
+                            "Å gjenta et hellig ord hundre ganger",
+                            "Å gi mat til fattige utenfor tempelet",
+                            "Å se guden og bli sett av guden",
+                            "Å bade i en hellig elv"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Ordet betyr syn, eller det å se. Gjennom blikket begge veier blir gudens nåde formidlet til den som tilber."
+                    },
+                    {
+                        "question": "Hva er en murti?",
+                        "options": [
+                            "En innviet gudefigur som guden regnes som til stede i",
+                            "Et rom i tempelet der bare prester får gå inn",
+                            "En sang som synges ved soloppgang",
+                            "Et sett med regler for hva man kan spise"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Ordet betyr omtrent legemliggjøring. Figuren blir behandlet som levende: vasket, stelt og matet."
+                    },
+                    {
+                        "question": "Hva sier artikkelen om hvordan puja utføres i ulike deler av hinduismen?",
+                        "options": [
+                            "Alle hinduer gjør nøyaktig det samme ritualet",
+                            "Ritualet varierer med retning, region, anledning og hvilken gud det gjelder",
+                            "Puja finnes bare innenfor shivaismen",
+                            "Ritualet ble fastsatt i en lovbok og kan ikke endres"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Puja finnes både i korte utgaver med fem gaver og i lange utgaver med seksten eller flere trinn."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Kværne, P. (2024). *Puja*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/puja](https://snl.no/puja)",
+                    "Kværne, P. (2025). *Darshana*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/darshana](https://snl.no/darshana)",
+                    "Kværne, P. & Jacobsen, K. A. (2026). *Hinduisme*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/hinduisme](https://snl.no/hinduisme)",
+                    "Jacobsen, K. A. (2025a). *Bhakti*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bhakti](https://snl.no/bhakti)",
+                    "Jacobsen, K. A. (2025b). *Mantra*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/mantra](https://snl.no/mantra)",
+                    "Ilkama, I. M. & Arnesen, H. O. (2017). *Hinduisme - en oversikt*. Religioner.no. Hentet 11.08.2026 fra [religioner.no](https://religioner.no/laeringsressurser/fagartikler/hinduisme-en-oversikt/)",
+                    "Morley, K. A. (2016). *Hinduenes rituelle univers*. Religioner.no. Hentet 11.08.2026 fra [kathleenamorley.religioner.no](https://kathleenamorley.religioner.no/religion-hinduism-norway/hinduenes-rituelle-univers/)",
+                    "Wikipedia. (u.å.). *Puja (Hinduism)*. Hentet 11.08.2026 fra [en.wikipedia.org](https://en.wikipedia.org/wiki/Puja_%28Hinduism%29)",
+                    "Bhagavadgita. (u.å.). *Kapittel 9, vers 26*. Holy Bhagavad Gita. Hentet 11.08.2026 fra [holy-bhagavad-gita.org](https://www.holy-bhagavad-gita.org/chapter/9/verse/26)"
+                ]
+            }
         }
     ],
     "quote": {
-        "text": "Den som ofrer et blad, en blomst, en frukt eller vann til meg med kjærlighet, den gaven tar jeg imot.",
+        "text": "Den som gir meg et blad, en blomst, en frukt eller vann med hengivenhet, den gaven tar jeg imot.",
         "source": "Bhagavadgita",
-        "reference": "9:26"
-    }
+        "reference": "9.26"
+    },
+    "timeline": []
 }

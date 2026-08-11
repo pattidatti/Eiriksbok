@@ -1,6 +1,7 @@
 {
     "id": "bonn",
-    "title": "Bønn i Jehovas vitner",
+    "title": "Til Jehova, gjennom Jesus",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "jehovas-vitner",
@@ -9,83 +10,284 @@
         "bønn",
         "ritual"
     ],
-    "createdDate": "2025-12-04T11:00:00Z",
-    "lastUpdated": "2025-12-04T11:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Bønn til Jehova"
-        },
-        {
-            "type": "text",
-            "content": "Bønn rettes kun til Jehova Gud, gjennom Jesus Kristus. Man kan be når som helst og hvor som helst, inni seg eller høyt."
-        },
-        {
-            "type": "header",
-            "text": "Innhold i bønnen"
-        },
-        {
-            "type": "text",
-            "content": "Bønnen kan inneholde lovprisning, takk, og bønner om tilgivelse og hjelp. Det er viktig at bønnen kommer fra hjertet og ikke er en ramse."
-        },
-        {
-            "type": "header",
-            "text": "Møter og studier"
-        },
-        {
-            "type": "text",
-            "content": "Alle møter i Rikets sal åpnes og avsluttes med bønn. Det er også vanlig å be før man studerer Bibelen eller spiser."
-        }
+    "category": "Jehovas vitner",
+    "readTime": "7 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Jehovas vitner ber bare til Gud, som de kaller Jehova.",
+        "Bønnen avsluttes i Jesu navn, men den er aldri stilet til Jesus selv.",
+        "De ber verken til Maria eller til helgener, slik katolikker og ortodokse kan gjøre.",
+        "Fadervår regnes som et mønster å lære av, ikke en tekst som skal gjentas ordrett.",
+        "Møtene i Rikets sal begynner og slutter med sang og bønn."
     ],
+    "createdDate": "2025-12-04T11:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
         {
             "id": "jehova",
             "term": "Jehova",
-            "definition": "Guds navn ifølge Jehovas vitner. Bønn rettes kun til ham."
+            "definition": "Navnet Jehovas vitner bruker om Gud. Bønn rettes bare til ham."
+        },
+        {
+            "id": "i-jesu-navn",
+            "term": "I Jesu navn",
+            "definition": "Uttrykket som avslutter bønnen. Det viser at bønnen går til Jehova gjennom Jesus."
         },
         {
             "id": "rikets-sal",
             "term": "Rikets sal",
-            "definition": "Jehovas vitners forsamlingslokale."
+            "definition": "Forsamlingslokalet til Jehovas vitner. Møtene der åpnes og avsluttes med bønn."
         },
         {
-            "id": "amen",
-            "term": "Amen",
-            "definition": "Betyr 'la det skje'. Sies i slutten av en bønn for å vise enighet."
+            "id": "monsterbonn",
+            "term": "Mønsterbønn",
+            "definition": "En bønn du skal lære av, ikke gjenta ordrett. Jehovas vitner leser Fadervår slik."
+        },
+        {
+            "id": "det-styrende-rad",
+            "term": "Det styrende råd",
+            "definition": "Ledelsen til Jehovas vitner. Den bestemmer hva trossamfunnet skal lære."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvem ber Jehovas vitner til?",
-            "options": [
-                "Jesus",
-                "Maria",
-                "Jehova"
-            ],
-            "answer": "Jehova"
+            "type": "text",
+            "content": "En bønn i Rikets sal slutter nesten alltid på samme måte: i Jesu navn, amen. Likevel har ikke ett eneste ord i bønnen vært stilet til Jesus. Han er ikke mottakeren. Han er veien fram."
         },
         {
-            "question": "Hvor holdes møtene til Jehovas vitner?",
-            "options": [
-                "I en kirke",
-                "I Rikets sal",
-                "I en moské"
-            ],
-            "answer": "I Rikets sal"
+            "type": "text",
+            "content": "For Jehovas vitner har bønnen en helt bestemt adresse. Den går til Gud, som de kaller Jehova, og den går i Jesu navn (Ringnes mfl., 2026). Ikke til Jesus. Ikke til Maria. Ikke til en helgen. Det er en av de tydeligste forskjellene mellom dem og de fleste andre kristne, og den er ikke tilfeldig. Den følger av hva de mener Bibelen sier om hvem Gud og Jesus er."
         },
         {
-            "question": "Hva bør en bønn komme fra?",
-            "options": [
-                "En bok",
-                "Hjertet",
-                "En prest"
-            ],
-            "answer": "Hjertet"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Enkel sal med rader av stoler og folk med lukkede øyne",
+            "caption": "Rikets sal er bygget for bibelstudium, ikke for seremonier."
+        },
+        {
+            "type": "text",
+            "content": "Bønn er ellers noe nesten alle religioner har. Ordet dekker mange slags kontakt mellom mennesker og høyere makter, og bønnen kan gå til guder, forfedre eller andre åndelige vesener (Jacobsen mfl., 2024). Nettopp derfor blir det interessant når en gruppe strammer inn hvem som får være mottaker."
+        },
+        {
+            "type": "header",
+            "text": "Navnet i adressen"
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner har hentet navnet sitt fra Jesaja 43,10, der Gud sier: Dere er mine vitner (Ringnes mfl., 2026). At de bruker gudsnavnet så mye, henger sammen med hvordan de leser Bibelen."
+        },
+        {
+            "type": "text",
+            "content": "Selve formen Jehova har en pussig historie. I den hebraiske bibelen skrives gudsnavnet med fire konsonanter, JHVH. Allerede fra rundt 200-tallet før vår tidsregning sluttet jødene å lese navnet høyt, og sa Adonaj i stedet. For å minne leserne om byttet, satte man vokalene fra Adonaj inn i teksten. Da kristne teologer i middelalderen leste konsonantene med disse vokalene, oppsto uttalen Jehova (Groth, 2025). Flere trossamfunn bruker fortsatt denne formen, blant dem Jehovas vitner."
+        },
+        {
+            "type": "text",
+            "content": "Bakgrunnen for at navnet sluttet å bli sagt høyt, er at det ble regnet som svært hellig. Ifølge jødisk tradisjon var det bare øverstepresten som uttalte det, og bare i tempelet på forsoningsdagen. Da tempelet falt i år 70, ble uttalen etter hvert glemt (Groth, 2025). Der jødedommen altså verner om navnet ved å la være å si det, gjør Jehovas vitner det motsatte: de bruker det i hver eneste bønn."
+        },
+        {
+            "type": "text",
+            "content": "Prøv å sette sammen adressen selv. Tre felter må stemme."
+        },
+        {
+            "type": "component",
+            "name": "AdressenPaaBonnen",
+            "props": {
+                "title": "Adressen på bønnen"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til at det ikke bare handler om hvem. Det handler også om via hvem, og om hva slags ord du bruker. Alle tre delene er styrt av lære."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor gjennom Jesus?"
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner avviser treenighetslæren. De mener Jesus er Guds sønn og det første Gud skapte, og at han er underordnet Gud. Før han levde som menneske, mener de at han var erkeengelen Mikael (Ringnes mfl., 2026). Er Jesus skapt, kan han ikke motta bønnen. Da ville en skapning fått den æren de mener bare Gud skal ha."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig kan de ikke hoppe over ham. I sitt eget studiemateriale forklarer Jehovas vitner at Jehova krever at vi anerkjenner den stillingen sønnen hans har, og de viser til at Jesus sa: Ingen kommer til Faderen uten gjennom meg (Jehovas vitner, u.å.-a). Derfor blir Jesus ikke mottaker, men mellomledd. Bønnen går til Jehova, men den går i Jesu navn."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Der veiene skiller lag",
+                "content": "I katolsk og ortodoks kristendom er helgener viktige. Man feirer festdagene deres og ber dem om hjelp, og katolikker ber dem særlig om forbønn. Reformatorene på 1500-tallet avviste helgendyrkelsen (Skjoldli, 2026). Jehovas vitner går enda et skritt: bønnen skal ikke gå til Jesus, Maria eller helgener, men til Gud alene (Jehovas vitner, u.å.-b)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Her er det verdt å være presis. De aller fleste kristne i verden ber også til Jesus, og mener det er riktig fordi de regner ham som Gud. Du kan lese mer om det synet i artikkelen om [kristendommen](/krle/religion/kristendom). Jehovas vitner er et mindretall som leser de samme tekstene annerledes. Ingen av sidene mangler bibelvers. De er uenige om hvordan versene henger sammen."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Åpen bibel med understreket vers og penn ved siden av",
+            "caption": "Uenigheten handler ikke om hvilke tekster som gjelder, men om hvordan de leses."
+        },
+        {
+            "type": "header",
+            "text": "Ord som ikke skal bli en ramse"
+        },
+        {
+            "type": "text",
+            "content": "De fleste kristne kjenner Fadervår, den viktigste bønnen i kristenheten (Jacobsen mfl., 2024). Jehovas vitner bruker den også, men på en annen måte. De leser den som et mønster å lære av. At bønnen åpner med Vår Far, er for dem selve beviset på at bønnen skal gå til Gud alene (Jehovas vitner, u.å.-b)."
+        },
+        {
+            "type": "text",
+            "content": "De peker samtidig på en advarsel fra Jesus i den samme talen: når dere ber, skal dere ikke si de samme tingene om og om igjen (Jehovas vitner, u.å.-b). Derfor gjentar de ikke Fadervår ordrett som en fast formel. De ber med egne ord."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Bønnene våre skal rettes til Gud, ikke til Jesus, Maria eller helgener.",
+                "author": "Jehovas vitner, jw.org"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Innholdet er ganske åpent. Studiematerialet nevner egne bekymringer, hjelp til å ta valg, styrke i vanskelige tider, tilgivelse, familie og trosfeller, og takk og lovprisning. Men det som gjelder Gud selv, skal komme først (Jehovas vitner, u.å.-a). Kroppen er det ingen regler for. Du kan sitte, bøye deg, knele eller stå. Det er innstillingen i hjertet som teller, ikke hva andre ser. Bønnen kan også være stille, midt i noe annet, uten at noen rundt deg merker det (Jehovas vitner, u.å.-a)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom sitter alene ved kjøkkenbord med lukkede øyne",
+            "caption": "Bønnen kan være helt stille, og ingen rundt trenger å merke den."
+        },
+        {
+            "type": "header",
+            "text": "Bønn i menigheten"
+        },
+        {
+            "type": "text",
+            "content": "Jehovas vitner møtes to ganger i uka i Rikets sal (Ringnes mfl., 2026). Møtene begynner og slutter med sang og bønn, og de er åpne for alle. Det samles aldri inn penger, og formen ligner mer på en samtale i et klasserom enn på en preken (Jehovas vitner, u.å.-c). I 2019 hadde trossamfunnet i underkant av 12 000 aktive forkynnere i Norge, fordelt på rundt 167 menigheter (Ringnes mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Selve lokalet sier noe om hva slags fellesskap dette er. Rikets sal er utformet for bibelstudium, ikke for religiøse seremonier (Ringnes mfl., 2026). Det er ingen alterbilder å be foran, ingen statuer og ingen lys å tenne. Rommet peker ikke mot noe du kan se. Det peker mot en mottaker som ikke er i rommet."
+        },
+        {
+            "type": "text",
+            "content": "Menighetene ledes av eldste, og bare menn kan ha den rollen. Læren bestemmes av det styrende råd ved hovedkontoret i USA, og medlemmene forventes å følge påleggene derfra (Ringnes mfl., 2026). Det gir mindre rom for lokale varianter enn i mange andre trossamfunn. Men i den personlige bønnen er variasjonen stor likevel: hver enkelt velger sine egne ord, sin egen stilling og sitt eget tidspunkt."
+        },
+        {
+            "type": "header",
+            "text": "Hva adressen forteller"
+        },
+        {
+            "type": "text",
+            "content": "Regelen om hvem bønnen går til, er ikke bare et formkrav. Den er hele gudsbildet skrevet om til en handling du kan gjøre hver dag. Hver gang et Jehovas vitne avslutter med i Jesu navn, gjentar hen samtidig at Jesus er stor, men ikke Gud selv."
+        },
+        {
+            "type": "text",
+            "content": "Det er derfor bønn er et så godt sted å sammenligne religioner. Ordene kan ligne, stillingen kan ligne, roen kan ligne. Men adressen røper hva noen faktisk tror. Vil du se hvordan de andre religionene svarer på det samme spørsmålet, kan du [sammenligne bønn på tvers av religionene](/krle/sammenlign/tema/bonn)."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem retter Jehovas vitner bønnen til, og hvem går den gjennom?",
+                    "Hvorfor ber de ikke til Maria eller til helgener?",
+                    "Hvordan bruker Jehovas vitner Fadervår, og hva gjør de ikke med den?",
+                    "Hva skjer i begynnelsen og slutten av et møte i Rikets sal?"
+                ],
+                "reflekter": [
+                    "Jehovas vitner mener Jesus er skapt av Gud. Forklar med egne ord hvorfor det får følger for hvem de ber til.",
+                    "Hvorfor kan to grupper lese de samme bibelversene og likevel ende opp med helt ulik praksis?",
+                    "Artikkelen sier at bønnen skal komme fra hjertet og ikke bli en ramse. Hva kan være fordelene og ulempene med å ikke ha en fast tekst?",
+                    "Læren bestemmes sentralt, men hver enkelt velger sine egne ord i bønnen. Hvordan henger de to tingene sammen?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hvordan en katolsk og en muslimsk bønn er bygget opp, og lag en enkel tabell over hvem bønnen går til i de tre tradisjonene.",
+                    "Skriv en kort tekst om hvorfor du tror adressen på bønnen betyr så mye for Jehovas vitner.",
+                    "Diskuter i klassen: Er det en fordel eller en ulempe for et trossamfunn at læren bestemmes ett sted for alle?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvem retter Jehovas vitner bønnen til?",
+                        "options": [
+                            "Til Jesus",
+                            "Til Jehova",
+                            "Til Maria",
+                            "Til erkeengelen Mikael"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Bønnen går bare til Gud, som de kaller Jehova. Jesus er mellomledd, ikke mottaker."
+                    },
+                    {
+                        "question": "Hva betyr det at bønnen går i Jesu navn?",
+                        "options": [
+                            "At Jesus svarer på bønnen",
+                            "At bønnen går til Jehova gjennom Jesus",
+                            "At bønnen må sies på hebraisk",
+                            "At bare eldste kan be den"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Jehovas vitner viser til at Jesus sa at ingen kommer til Faderen uten gjennom ham."
+                    },
+                    {
+                        "question": "Hvordan bruker Jehovas vitner Fadervår?",
+                        "options": [
+                            "De gjentar den ordrett hver dag",
+                            "De bruker den ikke i det hele tatt",
+                            "De regner den som et mønster å lære av",
+                            "De synger den på møtene"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "De leser den som et mønster, og viser til at Jesus advarte mot å si de samme tingene om og om igjen."
+                    },
+                    {
+                        "question": "Hvor kommer formen Jehova fra?",
+                        "options": [
+                            "Den sto slik i de eldste hebraiske håndskriftene",
+                            "Konsonantene JHVH ble lest med vokalene fra Adonaj",
+                            "Den ble funnet i Dødehavsrullene",
+                            "Den kommer fra gresk"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Jødene sa Adonaj i stedet for JHVH, og vokalene fra Adonaj ble markert i teksten. Kristne teologer i middelalderen leste dette som Jehova."
+                    },
+                    {
+                        "question": "Hva er riktig om møtene i Rikets sal?",
+                        "options": [
+                            "De holdes én gang i måneden og krever medlemskap",
+                            "De holdes to ganger i uka og begynner og slutter med sang og bønn",
+                            "De består bare av stille bønn",
+                            "De ledes av en prest som ber på vegne av alle"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Møtene holdes to ganger i uka, er åpne for alle, og rammes inn av sang og bønn."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ringnes, H. K., Winje, G., Langhelle, S. I., Fauskanger, H. K. & Rasmussen, T. (2026). *Jehovas vitner*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jehovas_vitner](https://snl.no/Jehovas_vitner)",
+                    "Groth, B. (2025). *Jahve (JHVH)*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jahve_(JHVH)](https://snl.no/Jahve_(JHVH))",
+                    "Jacobsen, K. A., Borgland, J. W., Groth, B. & Kværne, P. (2024). *Bønn*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bønn](https://snl.no/b%C3%B8nn)",
+                    "Skjoldli, J. (2026). *Helgen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/helgen](https://snl.no/helgen)",
+                    "Jehovas vitner. (u.å.-a). *Draw Close to God in Prayer*. Hva Bibelen egentlig lærer, kapittel 17. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/library/books/bible-teach/how-to-pray-draw-close-to-god/)",
+                    "Jehovas vitner. (u.å.-b). *How to Pray - Is the Lord's Prayer the Best Way?* Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/bible-teachings/questions/how-to-pray-lords-prayer-model/)",
+                    "Jehovas vitner. (u.å.-c). *Congregation Meetings of Jehovah's Witnesses*. Hentet 11.08.2026 fra [jw.org](https://www.jw.org/en/jehovahs-witnesses/meetings/)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Du som hører bønner, til deg skal alle slags mennesker komme.",
-        "source": "Bibelen (NWT)",
-        "reference": "Salme 65:2"
-    }
+    "timeline": []
 }

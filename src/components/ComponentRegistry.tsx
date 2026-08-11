@@ -126,6 +126,14 @@ const GuddommenModellen = lazy(() => import('./content/interactive/GuddommenMode
 const HvemErStorst = lazy(() => import('./content/interactive/HvemErStorst').then(m => ({ default: m.HvemErStorst })));
 const EnEllerMillioner = lazy(() => import('./content/interactive/EnEllerMillioner').then(m => ({ default: m.EnEllerMillioner })));
 const GudeneSomIkkeFrelser = lazy(() => import('./content/interactive/GudeneSomIkkeFrelser').then(m => ({ default: m.GudeneSomIkkeFrelser })));
+const MinjanRommet = lazy(() => import('./content/interactive/MinjanRommet').then(m => ({ default: m.MinjanRommet })));
+const FadervaarLinjeForLinje = lazy(() => import('./content/interactive/FadervaarLinjeForLinje').then(m => ({ default: m.FadervaarLinjeForLinje })));
+const SolaSomKlokke = lazy(() => import('./content/interactive/SolaSomKlokke').then(m => ({ default: m.SolaSomKlokke })));
+const TreBonnerEttValg = lazy(() => import('./content/interactive/TreBonnerEttValg').then(m => ({ default: m.TreBonnerEttValg })));
+const BonnSomSamtale = lazy(() => import('./content/interactive/BonnSomSamtale').then(m => ({ default: m.BonnSomSamtale })));
+const AdressenPaaBonnen = lazy(() => import('./content/interactive/AdressenPaaBonnen').then(m => ({ default: m.AdressenPaaBonnen })));
+const PujaBrettet = lazy(() => import('./content/interactive/PujaBrettet').then(m => ({ default: m.PujaBrettet })));
+const HvemSnakkerDuTil = lazy(() => import('./content/interactive/HvemSnakkerDuTil').then(m => ({ default: m.HvemSnakkerDuTil })));
 const DagenSomBonn = lazy(() => import('./content/interactive/DagenSomBonn').then(m => ({ default: m.DagenSomBonn })));
 const MaatBalansen = lazy(() => import('./content/interactive/MaatBalansen').then(m => ({ default: m.MaatBalansen })));
 const ToFlomfortellinger = lazy(() => import('./content/interactive/ToFlomfortellinger').then(m => ({ default: m.ToFlomfortellinger })));
@@ -525,6 +533,14 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     HvemErStorst,
     EnEllerMillioner,
     GudeneSomIkkeFrelser,
+    MinjanRommet,
+    FadervaarLinjeForLinje,
+    SolaSomKlokke,
+    TreBonnerEttValg,
+    BonnSomSamtale,
+    AdressenPaaBonnen,
+    PujaBrettet,
+    HvemSnakkerDuTil,
     DagenSomBonn,
     MaatBalansen,
     ToFlomfortellinger,

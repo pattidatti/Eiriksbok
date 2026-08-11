@@ -1,6 +1,7 @@
 {
     "id": "bonn",
-    "title": "Bønn i Mormonismen",
+    "title": "Bønnen som stiller et spørsmål",
+    "layout": "rich",
     "subject": "krle",
     "topic": "religioner",
     "religion": "mormonisme",
@@ -9,83 +10,242 @@
         "bønn",
         "ritual"
     ],
-    "createdDate": "2025-12-04T11:00:00Z",
-    "lastUpdated": "2025-12-04T11:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Personlig bønn"
-        },
-        {
-            "type": "text",
-            "content": "Bønn er en samtale med 'Vår himmelske Fader'. Man ber i Jesu Kristi navn. Det oppfordres til å be morgen og kveld, både alene og sammen med familien."
-        },
-        {
-            "type": "header",
-            "text": "Familiebønn"
-        },
-        {
-            "type": "text",
-            "content": "Familien står sentralt, og daglig familiebønn er en viktig tradisjon for å styrke samholdet og troen."
-        },
-        {
-            "type": "header",
-            "text": "Velsignelse av maten"
-        },
-        {
-            "type": "text",
-            "content": "Det er vanlig å be en bordbønn før hvert måltid for å takke Gud for maten."
-        }
+    "category": "Mormonisme",
+    "readTime": "6 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Bønn beskrives som en oppriktig samtale med den himmelske Faderen.",
+        "Bønnen har fire deler: tiltale, takk, det du ber om, og avslutning i Jesu Kristi navn.",
+        "Ordene er ikke fastlagt. Veiledningen fraråder utenatlærte fraser uten mening.",
+        "Moronis løfte gjør bønn til en måte å finne ut om noe er sant.",
+        "Medlemmene rådes til å be alene morgen og kveld, sammen med familien, og før hvert måltid."
     ],
+    "createdDate": "2025-12-04T11:00:00Z",
+    "lastUpdated": "2026-08-11T12:00:00Z",
     "concepts": [
+        {
+            "id": "moronis-lofte",
+            "term": "Moronis løfte",
+            "definition": "Avsnittet bakerst i Mormons bok som sier at den som spør Gud oppriktig, skal få vite om det som står der er sant."
+        },
+        {
+            "id": "himmelske-fader",
+            "term": "Himmelske Fader",
+            "definition": "Navnet medlemmene bruker om Gud når de ber. Alle bønner rettes dit."
+        },
         {
             "id": "familiebonn",
             "term": "Familiebønn",
-            "definition": "Daglig bønn der hele familien samles for å be sammen."
+            "definition": "Bønn der hele husstanden samles. Kirken råder familier til å be sammen morgen og kveld."
         },
         {
-            "id": "bordbonn",
-            "term": "Bordbønn",
-            "definition": "Bønn før hvert måltid for å takke Gud for maten."
+            "id": "den-hellige-and",
+            "term": "Den hellige ånd",
+            "definition": "Kirken lærer at svar på bønn kan komme ved Den hellige ånds kraft."
         },
         {
-            "id": "jesu-navn",
-            "term": "Jesu navn",
-            "definition": "Alle bønner avsluttes 'i Jesu Kristi navn'."
+            "id": "mormons-bok",
+            "term": "Mormons bok",
+            "definition": "En av kirkens hellige bøker. Den forteller om en israelittisk familie som reiser til Amerika rundt år 600 fvt."
         }
     ],
-    "quiz": [
+    "content": [
         {
-            "question": "Hvem ber man til i mormonismen?",
-            "options": [
-                "Joseph Smith",
-                "Vår himmelske Fader",
-                "Engelen Moroni"
-            ],
-            "answer": "Vår himmelske Fader"
+            "type": "text",
+            "content": "De fleste bøker vil at du skal tro på dem. Helt bakerst i Mormons bok står det noe annet. Der ber teksten leseren om å sjekke etter. Ikke ved å slå opp i en annen bok, men ved å spørre Gud direkte."
         },
         {
-            "question": "Hva er en viktig tradisjon i mormonske familier?",
-            "options": [
-                "Å se på TV",
-                "Daglig familiebønn",
-                "Å spise pizza"
-            ],
-            "answer": "Daglig familiebønn"
+            "type": "text",
+            "content": "Avsnittet er skrevet i navnet til Moroni, og i Jesu Kristi Kirke av Siste Dagers Hellige kalles det Moronis løfte. Der står det at den som spør Gud «av et oppriktig hjerte, med ærlig hensikt» og har tro på Kristus, skal få sannheten åpenbart ved Den hellige ånds kraft (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-b). Bønn er altså ikke bare noe medlemmene sier. Det er også måten de mener et menneske kan finne ut om noe stemmer."
         },
         {
-            "question": "Hvordan avsluttes en bønn?",
-            "options": [
-                "Amen",
-                "I Jesu Kristi navn, amen",
-                "Takk for i dag"
-            ],
-            "answer": "I Jesu Kristi navn, amen"
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom sitter alene med åpen bok og lukkede øyne",
+            "caption": "Teksten ber leseren om å spørre selv, ikke om å ta den på ordet."
+        },
+        {
+            "type": "text",
+            "content": "Kirkens egen veiledning beskriver bønn som «en oppriktig, dypfølt samtale med vår himmelske Fader», og sier at man skal be til Gud og ikke til noen annen (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Hvordan kirken tenker om denne Guden, kan du lese mer om i artikkelen om [gudsbildet](/krle/religion/mormonisme/gudsbilde). Ordet samtale er verdt å merke seg. En samtale har to sider. Noen sier noe, og noe kommer tilbake. Bønnen er derfor ikke tenkt som en formel som virker hvis den sies riktig, men som en henvendelse fra en person til en annen."
+        },
+        {
+            "type": "header",
+            "text": "Fire deler, og ingen ferdig tekst"
+        },
+        {
+            "type": "text",
+            "content": "Selve bønnen følger et enkelt mønster som medlemmene lærer tidlig. Du begynner med å tiltale din himmelske Fader. Så uttrykker du takknemlighet for det du har fått. Så stiller du spørsmål, søker veiledning og ber om det du trenger. Til slutt avslutter du med «I Jesu Kristi navn. Amen» (Jesu Kristi Kirke av Siste Dagers Hellige, 2023). Fire deler, alltid i den rekkefølgen, enten bønnen tar ti sekunder eller ti minutter."
+        },
+        {
+            "type": "text",
+            "content": "Det som ikke ligger fast, er ordene. Veiledningen ber medlemmene fortelle Gud hva de virkelig føler, og fraråder «meningsløse ord og setninger» (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Rammen er gitt, innholdet er ditt eget. Sett sammen en bønn i verktøyet under, og se hva som skjer når den er hel."
+        },
+        {
+            "type": "component",
+            "name": "BonnSomSamtale",
+            "props": {
+                "title": "Bygg bønnen, og se hva som kommer tilbake"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til at rekkefølgen ikke er tilfeldig. Takken kommer før det du ber om, og ikke etter. Mønsteret gjør også noe praktisk: det gir et barn på seks år en form å begynne i, uten at noen må lære det utenat en tekst det ikke forstår. Og bønnen ender ikke med at du er ferdig, men med at noe kan komme tilbake. Det er nettopp den forventningen om svar kirken legger mest vekt på."
+        },
+        {
+            "type": "header",
+            "text": "En gutt som spurte"
+        },
+        {
+            "type": "text",
+            "content": "Kirken ble formelt grunnlagt i 1830 av [Joseph Smith](/krle/religion/mormonisme/grunnleggere) (1805-1844). Han fortalte selv at han som fjortenåring hadde et syn der Gud Faderen og Jesus viste seg for ham som to atskilte skikkelser, og at han der fikk beskjed om ikke å slutte seg til noen av kirkesamfunnene som fantes. Sju år senere sa han at engelen Moroni pekte ut hvor det lå gullplater med teksten som ble Mormons bok (Bloch-Hoell mfl., 2024). Tanken om at et menneske kan spørre og få svar ligger altså helt i bunnen av kirkens fortelling om seg selv."
+        },
+        {
+            "type": "component",
+            "name": "QuoteBlock",
+            "props": {
+                "text": "Og hvis dere spør av et oppriktig hjerte, med ærlig hensikt og har tro på Kristus, vil han åpenbare sannheten av det for dere ved Den hellige ånds kraft.",
+                "author": "Mormons bok, Moroni 10:4"
+            }
+        },
+        {
+            "type": "text",
+            "content": "Det er dette løftet misjonærene bygger på når de deler ut Mormons bok. De ber ikke folk om å ta boka på tro. De ber dem lese den, tenke over den og be om den (Jesu Kristi Kirke av Siste Dagers Hellige, 2023). Rundt 84 000 medlemmer var ute i misjonstjeneste i 2018, og det er vanlig at tjenesten varer fra halvannet til to år (Bloch-Hoell mfl., 2024). Hva boka faktisk inneholder, står det mer om i artikkelen om [kirkens hellige tekster](/krle/religion/mormonisme/hellige-tekster). Mange av samtalene misjonærene har, ender med den samme oppfordringen: spør selv."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To misjonærer i dress samtaler med en person ved en dør",
+            "caption": "Misjonærene ber folk teste boka ved å be om den."
+        },
+        {
+            "type": "header",
+            "text": "Ved senga, ved bordet og i stua"
+        },
+        {
+            "type": "text",
+            "content": "Ved siden av de store spørsmålene ligger et helt vanlig hverdagsmønster. Kirken råder medlemmene til å be alene minst hver morgen og hver kveld. Familier rådes til å be sammen morgen og kveld. Før hvert måltid er det vanlig å be en bordbønn med takk for maten og om en velsignelse av den. Møter i kirken åpnes og avsluttes også med bønn (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a)."
+        },
+        {
+            "type": "text",
+            "content": "Det betyr at en hverdag kan ha flere bønner i seg, og at flere av dem sies høyt sammen med andre. Familiebønnen er den som skiller seg mest ut for en utenforstående. Hele husstanden stopper opp, og som regel ber én person høyt på vegne av alle. Det er også her de fleste barna lærer formen, ved å høre den brukt hver dag før de bruker den selv. Hvor mye av dette som faktisk skjer, varierer fra familie til familie, akkurat som i alle andre religioner. Noen husstander holder på hele mønsteret, andre ber bare av og til. I Norge er det over 4600 medlemmer fordelt på 22 lokale menigheter, og på verdensbasis hadde kirken rundt 15,5 millioner medlemmer i over 150 land i 2015 (Bloch-Hoell mfl., 2024)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Familie med barn sitter rundt kjøkkenbord med bøyde hoder",
+            "caption": "Bordbønn før måltidet er en av dagens faste bønner."
+        },
+        {
+            "type": "header",
+            "text": "Ja, nei eller vent"
+        },
+        {
+            "type": "text",
+            "content": "Hvis bønn er en samtale, hva er da svaret? Kirkens veiledning lover ikke at man alltid får det man ber om. Svaret kan være ja, det kan være nei, og det kan være at man må vente. Kirken lærer at svaret kommer når Herren vet at det er til størst hjelp. Ofte kommer det gjennom andre mennesker som blir inspirert til å handle, eller som kraft til å løse problemet selv (Jesu Kristi Kirke av Siste Dagers Hellige, u.å.-a). Man skal også be om at Guds vilje skal skje, ikke bare sin egen."
+        },
+        {
+            "type": "text",
+            "content": "Bønn er en fellesbetegnelse for de ulike måtene mennesker snakker med høyere makter på, og det å be finnes i nesten alle kulturer (Jacobsen mfl., 2024). Det spesielle her er derfor ikke at noen ber, eller at bønnen har faste deler. Det er at bønnen får en oppgave til: den er også metoden. I mange tradisjoner er det lærde, hellige tekster eller fellesskapet som avgjør hva som er sant. Her får den enkelte i tillegg beskjed om å spørre selv, og så vurdere svaret som kommer."
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hvem retter medlemmene bønnene sine til, og hvilke ord avsluttes bønnen med?",
+                    "Nevn de fire delene en bønn består av, i riktig rekkefølge.",
+                    "Hva sier Moronis løfte at den som spør, skal få?",
+                    "Når på dagen rådes medlemmene til å be, alene og sammen med familien?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor kirken kaller bønn en samtale og ikke bare en bønn.",
+                    "Veiledningen fraråder «meningsløse ord og setninger». Hvorfor kan det være et poeng at ordene ikke er fastlagt på forhånd?",
+                    "Kirken sier at svaret kan være ja, nei eller vent. Hva gjør det med måten man kan snakke om ubesvarte bønner på?",
+                    "Moronis løfte ber leseren teste boka selv. Hva er styrken ved en slik framgangsmåte, og hva kan være vanskelig med den?"
+                ],
+                "gaaVidere": [
+                    "Sammenlign bønnemønsteret her med bønn i en annen religion dere har lest om. Hva er likt, og hva er forskjellig?",
+                    "Finn ut hva misjonærene i denne kirken faktisk gjør i løpet av de halvannet til to årene de er ute.",
+                    "Diskuter i klassen: Kan man finne ut om noe er sant ved å spørre seg selv eller Gud? Hvilke andre måter finnes?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvordan avsluttes en bønn i denne kirken?",
+                        "options": [
+                            "Med «Amen» alene",
+                            "Med «I Jesu Kristi navn. Amen»",
+                            "Med en fast salme",
+                            "Med at man leser et vers fra Mormons bok"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Mønsteret er tiltale, takk, det man ber om, og til slutt avslutning i Jesu Kristi navn."
+                    },
+                    {
+                        "question": "Hva går Moronis løfte ut på?",
+                        "options": [
+                            "At den som ber hver dag, blir rik",
+                            "At den som spør Gud oppriktig, skal få vite om det som står i boka er sant",
+                            "At bønner alltid blir besvart med ja",
+                            "At bare kirkens ledere kan få svar på bønn"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Moroni 10:4 sier at den som spør av et oppriktig hjerte, med ærlig hensikt og med tro på Kristus, skal få sannheten åpenbart ved Den hellige ånds kraft."
+                    },
+                    {
+                        "question": "Hvem lærer kirken at medlemmene skal be til?",
+                        "options": [
+                            "Til Gud, den himmelske Faderen, og ikke til noen annen",
+                            "Til engelen Moroni",
+                            "Til Joseph Smith",
+                            "Til kirkens president"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Veiledningen slår fast at man skal be til Gud og ikke til noen annen, og at bønnen skjer i Jesu Kristi navn."
+                    },
+                    {
+                        "question": "Hvilke svar på bønn beskriver kirkens veiledning?",
+                        "options": [
+                            "Bare ja",
+                            "Ja eller nei",
+                            "Ja, nei eller vent",
+                            "Ingen svar kommer i dette livet"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Svaret kan være ja, nei eller vent, og det kommer ofte gjennom andre mennesker eller som kraft til å løse saken selv."
+                    },
+                    {
+                        "question": "Hva sier veiledningen om ordene man bruker i bønnen?",
+                        "options": [
+                            "De skal leses ordrett fra en fastsatt tekst",
+                            "De skal være på hebraisk",
+                            "Man skal fortelle Gud hva man virkelig føler, og unngå meningsløse ord og setninger",
+                            "Man skal be i stillhet uten ord"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Rammen med de fire delene ligger fast, men innholdet skal være personlig og ærlig."
+                    }
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bloch-Hoell, N. E., Winje, G., Storhaug, O. E., Weihe, H.-J. W. & Sommerfelt, R. (2024). *Jesu Kristi Kirke av Siste Dagers Hellige*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige](https://snl.no/Jesu_Kristi_Kirke_av_Siste_Dagers_Hellige)",
+                    "Jacobsen, K. A., Borgland, J. W., Groth, B. & Kværne, P. (2024). *Bønn*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bønn](https://snl.no/b%C3%B8nn)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-a). *Kapittel 8: Bønn til vår himmelske Fader*. Evangeliets prinsipper. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/gospel-principles/chapter-8-praying-to-our-heavenly-father?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (u.å.-b). *Moroni 10*. Mormons bok. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/scriptures/bofm/moro/10?lang=nor)",
+                    "Jesu Kristi Kirke av Siste Dagers Hellige. (2023). *Kapittel 3, leksjon 1: Budskapet om gjengivelsen av Jesu Kristi evangelium*. Forkynn mitt evangelium. Hentet 11.08.2026 fra [churchofjesuschrist.org](https://www.churchofjesuschrist.org/study/manual/preach-my-gospel-2023/04-chapter-3/08-chapter-3-lesson-1?lang=nor)"
+                ]
+            }
         }
     ],
-    "quote": {
-        "text": "Rådfør deg med Herren i alle dine gjerninger, og han skal lede deg til det gode.",
-        "source": "Mormons bok",
-        "reference": "Alma 37:37"
-    }
+    "timeline": []
 }

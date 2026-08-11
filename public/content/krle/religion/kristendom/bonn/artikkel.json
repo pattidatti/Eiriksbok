@@ -1,153 +1,270 @@
 {
-    "id": "bonn",
-    "title": "Bønn i kristendommen",
-    "subject": "krle",
-    "topic": "religioner",
-    "religion": "kristendom",
-    "dimension": "ritual",
-    "comparison_tags": [
-        "bønn",
-        "ritual"
-    ],
-    "createdDate": "2025-12-04T11:00:00Z",
-    "lastUpdated": "2026-03-15T12:00:00Z",
-    "content": [
-        {
-            "type": "header",
-            "text": "Samtale med Gud"
-        },
-        {
-            "type": "text",
-            "content": "I kristendommen er bønn en personlig samtale med Gud. Man kan be når som helst og hvor som helst - det finnes ingen faste tider eller regler for hvordan man skal stå eller sitte. Dette er annerledes enn for eksempel i islam, der bønnen har faste tidspunkter og bevegelser. Kristen bønn kan være stille eller høyt, spontan eller med faste ord."
-        },
-        {
-            "type": "header",
-            "text": "Forskjellige typer bønn"
-        },
-        {
-            "type": "text",
-            "content": "Det finnes mange former for bønn i kristendommen. De fleste kan deles inn i noen hovedtyper."
-        },
-        {
-            "type": "list",
-            "items": [
-                "Takk - å takke Gud for noe godt som har skjedd",
-                "Lovprisning - å prise Gud for den han er",
-                "Bekjennelse - å innrømme feil og be om tilgivelse",
-                "Forbønn - å be for andre mennesker som har det vanskelig",
-                "Bønn om hjelp - å be Gud om styrke eller veiledning i eget liv"
-            ]
-        },
-        {
-            "type": "header",
-            "text": "Fader vår"
-        },
-        {
-            "type": "text",
-            "content": "Den mest kjente bønnen i kristendommen er Fader vår, som Jesus selv lærte disiplene sine. Bønnen begynner med å henvende seg til Gud som en far, og ber om at Guds vilje skal skje. Den ber om daglig brød (det man trenger for å leve), om tilgivelse, og om beskyttelse mot fristelser. Fader vår brukes i nesten alle kirkesamfunn over hele verden."
-        },
-        {
-            "type": "header",
-            "text": "Gudstjenesten"
-        },
-        {
-            "type": "text",
-            "content": "Gudstjenesten er den viktigste felles samlingen for kristne. I Den norske kirke holdes den vanligvis søndag formiddag. En typisk gudstjeneste inneholder salmer, bønner, Bibellesning, en preken der presten forklarer teksten, og ofte nattverd. Menigheten ber sammen, og det er en veksling mellom fellesbønn og stille bønn."
-        },
-        {
-            "type": "header",
-            "text": "Nattverd"
-        },
-        {
-            "type": "text",
-            "content": "Nattverden er det andre store ritualet i kristendommen ved siden av dåpen. Under nattverden deler menigheten brød og vin, som representerer Jesu kropp og blod. Jesus innstiftet nattverden kvelden før han ble korsfestet, da han spiste det siste måltidet med disiplene sine. Katolikker tror at brødet og vinen faktisk blir til Jesu kropp og blod. Protestanter ser det mer som et minnemåltid."
-        },
-        {
-            "type": "header",
-            "text": "Bønn i hverdagen"
-        },
-        {
-            "type": "text",
-            "content": "Mange kristne ber også utenfor kirken. Bordbønn før maten, kveldsbønn før sengetid, og bønn i vanskelige situasjoner er vanlige eksempler. For troende er bønn en måte å holde kontakten med Gud i hverdagen - litt som å sende en melding til noen man er glad i."
-        }
-    ],
-    "concepts": [
-        {
-            "id": "bonn",
-            "term": "Bønn",
-            "definition": "En personlig samtale med Gud. Kan være takk, lovprisning, bekjennelse eller ønske om hjelp."
-        },
-        {
-            "id": "fader-var",
-            "term": "Fader vår",
-            "definition": "Den mest kjente bønnen i kristendommen, som Jesus lærte disiplene sine."
-        },
-        {
-            "id": "nattverd",
-            "term": "Nattverd",
-            "definition": "Et ritual der menigheten deler brød og vin til minne om Jesu siste måltid. Et av de to sakramentene."
-        },
-        {
-            "id": "forbonn",
-            "term": "Forbønn",
-            "definition": "Å be til Gud for andre mennesker - for eksempel for noen som er syke eller har det vanskelig."
-        },
-        {
-            "id": "gudstjeneste",
-            "term": "Gudstjeneste",
-            "definition": "Den viktigste felles samlingen for kristne, vanligvis søndag formiddag. Inneholder bønn, sang og preken."
-        }
-    ],
-    "quiz": [
-        {
-            "question": "Hva er bønn i kristendommen?",
-            "options": [
-                "En samtale med Gud",
-                "En sang",
-                "En tale av presten"
-            ],
-            "answer": "En samtale med Gud"
-        },
-        {
-            "question": "Hvem lærte disiplene bønnen Fader vår?",
-            "options": [
-                "Moses",
-                "Jesus",
-                "Paulus"
-            ],
-            "answer": "Jesus"
-        },
-        {
-            "question": "Hva er nattverd?",
-            "options": [
-                "Et vanlig måltid i kirken",
-                "Et ritual med brød og vin til minne om Jesu siste måltid",
-                "En type bønn"
-            ],
-            "answer": "Et ritual med brød og vin til minne om Jesu siste måltid"
-        },
-        {
-            "question": "Hva er forbønn?",
-            "options": [
-                "Å be for seg selv",
-                "Å be for andre mennesker",
-                "Å be høyt i kirken"
-            ],
-            "answer": "Å be for andre mennesker"
-        },
-        {
-            "question": "Hvordan er kristen bønn forskjellig fra islamsk bønn?",
-            "options": [
-                "Kristne ber aldri",
-                "Kristen bønn har ikke faste tider eller bestemte bevegelser",
-                "Kristne ber bare i kirken"
-            ],
-            "answer": "Kristen bønn har ikke faste tider eller bestemte bevegelser"
-        }
-    ],
-    "quote": {
-        "text": "Vår Far i himmelen! La navnet ditt helliges. La riket ditt komme. La viljen din skje på jorden slik som i himmelen.",
-        "source": "Bibelen",
-        "reference": "Matteus 6:9-10"
+  "id": "bonn",
+  "title": "Bønnen som snur etter tredje ledd",
+  "layout": "rich",
+  "subject": "krle",
+  "topic": "religioner",
+  "religion": "kristendom",
+  "dimension": "ritual",
+  "comparison_tags": [
+    "bønn",
+    "ritual"
+  ],
+  "category": "Kristendom",
+  "readTime": "7 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Fadervår er den bønnen Jesus ifølge evangeliene lærte disiplene sine, og den eneste bønnen alle kristne kirker har felles.",
+    "Bønnen har sju ledd. De tre første handler om Gud, de fire siste om det menneskene trenger.",
+    "Kristen bønn spenner fra faste liturgiske ord til helt fri bønn med egne ord.",
+    "I den katolske kirken bes tidebønner åtte ganger i døgnet, og rosenkransen brukes til å telle bønner.",
+    "I den ortodokse kirken gjentas Jesusbønnen til den følger pusten og hjerteslagene."
+  ],
+  "createdDate": "2025-12-04T11:00:00Z",
+  "lastUpdated": "2026-08-11T12:00:00Z",
+  "concepts": [
+    {
+      "id": "fadervar",
+      "term": "Fadervår",
+      "definition": "Bønnen Jesus ifølge evangeliene lærte disiplene sine. Den er felles for alle kristne kirker."
+    },
+    {
+      "id": "liturgisk-bonn",
+      "term": "Liturgisk bønn",
+      "definition": "Bønn med faste ord som gjentas hver gang, slik de brukes i en gudstjeneste."
+    },
+    {
+      "id": "tidebonner",
+      "term": "Tidebønner",
+      "definition": "Bønner knyttet til bestemte tider av døgnet. I den katolske kirken bes de åtte ganger daglig."
+    },
+    {
+      "id": "rosenkrans",
+      "term": "Rosenkrans",
+      "definition": "En bønnekrans med kors som katolikker bruker til å holde styr på antall bønner."
+    },
+    {
+      "id": "jesusbonnen",
+      "term": "Jesusbønnen",
+      "definition": "En kort bønn som gjentas mange ganger, særlig i den ortodokse kirken."
     }
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Disiplene hadde sett Jesus be mange ganger. En dag spurte de om han kunne lære dem hvordan de skulle gjøre det selv (Den norske kirke, u.å.). Svaret han ga, sies fortsatt høyt i kirker over hele verden. Fadervår er den ene bønnen alle kristne kirker har felles (Seim, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Men se på rekkefølgen i den. Bønnen begynner ikke med det du trenger. De tre første setningene handler bare om Gud. Først etter dem snur bønnen seg mot menneskene. Den rekkefølgen er ikke tilfeldig, og det er der hele bønnen har poenget sitt."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Foldede hender i lyset fra et kirkevindu",
+      "caption": "Fadervår er kort nok til å kunne utenat, og gammel nok til å ha fulgt kristendommen hele veien."
+    },
+    {
+      "type": "text",
+      "content": "Bønn i kristendommen er langt mer enn Fadervår. Bønn er et samlenavn på måter mennesker kommuniserer med høyere makter på, og finnes i alle religioner (Jacobsen mfl., 2024). Kristen bønn kan være ferdige ord fra en bønnebok, mange egne ord, helt uten ord, eller bare et sukk. Den norske kirke skriver at det viktigste er at man kan snakke med Gud rett fra hjertet (Den norske kirke, u.å.). Likevel er det Fadervår alt annet måles mot."
+    },
+    {
+      "type": "header",
+      "text": "Sju ledd, og et vendepunkt"
+    },
+    {
+      "type": "text",
+      "content": "Fadervår står to steder i [Bibelen](/krle/religion/kristendom/hellige-tekster). Hos Matteus i kapittel 6, vers 9 til 13, og hos Lukas i kapittel 11, vers 2 til 4. Versjonen hos Lukas er tydelig kortere, og det er Matteus sin versjon kirkene bruker (Seim, 2025). Den har sju ledd. De tre første handler om at Gud skal virkeliggjøre herredømmet sitt. De fire siste er bønn om det man trenger for å leve, og om hjelp i det som er vanskelig (Seim, 2025). Prøv å plassere leddene selv under, ett om gangen."
+    },
+    {
+      "type": "component",
+      "name": "FadervaarLinjeForLinje",
+      "props": {
+        "title": "Fadervår, ledd for ledd"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hvor bønnen snur. De tre første leddene ber ikke om noe til deg i det hele tatt. De ber om at Guds navn skal holdes hellig, at Guds rike skal komme, og at Guds vilje skal skje. Først etter det kommer brødet, tilgivelsen og hjelpen. Mange kristne mener at nettopp dette er det Jesus ville lære bort: du setter Gud først, og så ser du din egen plass i lys av det."
+    },
+    {
+      "type": "header",
+      "text": "Faste ord og egne ord"
+    },
+    {
+      "type": "text",
+      "content": "Kristen bønn beveger seg mellom to ytterpunkter. Det ene er liturgisk bønn, altså bønn med faste ord som gjentas hver gang. Liturgi er de faste leddene i en gudstjeneste, ordene og handlingene som ligger fast. Fadervår er slik: alle kan den, alle sier den samtidig, og ingen trenger å finne på noe selv."
+    },
+    {
+      "type": "text",
+      "content": "Det andre ytterpunktet er fri bønn, der du bruker dine egne ord. Den norske kirke skriver at det ikke finnes grenser for form eller innhold. Man kan be alene eller sammen med andre, i kirken, i skogen, hjemme eller på bussen, og bønn kan også være stillhet og korte pauser (Den norske kirke, u.å.). De aller fleste kristne bruker begge deler."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Bønn etter klokka",
+        "content": "Tidebønner er bønner knyttet til bestemte tider av døgnet, og i den katolske kirken bes de åtte ganger daglig: matutin, laudes, prim, ters, sekst, non, vesper og completorium. Alle prester og diakoner, og alle medlemmer av ordenssamfunn, er forpliktet til å be dem hver dag. Bønnene består av salmer, tekster fra Bibelen og lesninger fra kirkefedrene (Halvorsen, 2026)."
+      }
+    },
+    {
+      "type": "text",
+      "content": "I gudstjenesten møtes begge former. En gudstjeneste er en religiøs samling der troende møtes for å be, og der [dåp og nattverd](/krle/religion/kristendom/sakramentene) hører hjemme, og bibellesing og bønn er minstekravet (Thomassen, 2024). Den norske kirke følger en fast liturgi i luthersk tradisjon. Frikirkelige menigheter, særlig i pinsebevegelsen, har friere former der spontanitet betyr mer enn faste ledd (Thomassen, 2024). Katolske og ortodokse kirker holder på de mest faste formene. Alt dette er kristen bønn, og kristne er ikke enige om hvilken form som gir mest."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Menighet som ber sammen i et lyst kirkerom",
+      "caption": "I gudstjenesten veksler menigheten mellom faste ord og stille bønn."
+    },
+    {
+      "type": "header",
+      "text": "Perler, pust og gjentakelse"
+    },
+    {
+      "type": "text",
+      "content": "I flere religioner brukes bønnekjeder for å holde styr på hvor mange ganger en bønn er sagt (Jacobsen mfl., 2024). I den katolske kirken heter kjedet rosenkrans. Den tradisjonelle formen har 150 perler i grupper på ti, skilt av femten større perler, mens den vanligste i dag har femti små og fem store. På de små perlene bes Ave Maria, på de store Fadervår. Tallet 150 svarte opprinnelig til antallet salmer i Salmenes bok. Dominikanerne gjorde rosenkransen utbredt mot slutten av middelalderen (Store norske leksikon, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "I den ortodokse kirken finnes noe som ligner i form, men som er noe helt annet i innhold. Jesusbønnen er en enkel bønn som gjentas igjen og igjen: over en bestemt tid, et bestemt antall ganger, eller i perioder gjennom dagen mens man gjør vanlig hverdagsarbeid. Mange bruker en bønnesnor av ull med knuter for å telle, og ber i stillhet. Målet er at bønnen etter hvert skal følge pusten og hjerteslagene, slik at man kommer til indre ro (Thorbjørnsrud og Paulsen, 2018)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Herre Jesus Kristus, Guds Sønn, forbarm deg over meg, en synder.",
+        "author": "Jesusbønnen, ortodoks tradisjon"
+      }
+    },
+    {
+      "type": "text",
+      "content": "For ortodokse kristne rommer disse få ordene hele forholdet mellom menneske og Gud. Bønnen er enkel nok for den som akkurat har begynt, men kan også følge et menneske et helt liv (Thorbjørnsrud og Paulsen, 2018). De siste tiårene har bønnen fått større utbredelse, og den har også fått et visst innpass blant kristne utenfor de ortodokse kirkene (Thorbjørnsrud og Paulsen, 2018)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Bønnesnor av ull med knuter i en hånd",
+      "caption": "Knutene på bønnesnoren holder tellingen, slik at den som ber slipper å tenke på tallet."
+    },
+    {
+      "type": "header",
+      "text": "Den samme bønnen, litt ulikt sagt"
+    },
+    {
+      "type": "text",
+      "content": "Fadervår er karakteristisk for det Jesus forkynte, og den eneste bønnen alle kristne kirker deler. Derfor har den stor økumenisk betydning, altså betydning på tvers av kirkesamfunnene (Seim, 2025). Men selv den er ikke helt lik overalt. Avslutningen som begynner med at riket er ditt, er trolig et tillegg som speiler tidlig bruk i gudstjenesten, og noen kirker regner den ikke som en del av selve bønnen (Seim, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Ordene har også flyttet på seg på norsk. I bibelutgaven fra 2011 er bønnen oversatt med Vår Far, mens mange fortsatt kaller den Fadervår og sier den slik de lærte den (Seim, 2025). En bønn som har vært i bruk i nesten to tusen år, får altså fortsatt nye ord. Rekkefølgen står likevel fast. Først Gud, så oss. Det er den som gjør Fadervår til en mønsterbønn og ikke bare en ønskeliste."
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvor i Bibelen står Fadervår, og hvilken av de to versjonene bruker kirkene?",
+          "Hvor mange ledd har Fadervår, og hvordan deles de i to grupper?",
+          "Hva er forskjellen på liturgisk bønn og fri bønn?",
+          "Hva brukes rosenkransen til, og hvilke to bønner bes på perlene?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor det har noe å si at Fadervår begynner med Gud og ikke med mennesket.",
+          "Jesusbønnen gjentas til den følger pusten. Hva kan være poenget med å si de samme ordene så mange ganger?",
+          "Noen kristne setter pris på faste ord, andre vil be helt fritt. Hva kan være styrken ved hver av formene?",
+          "Fadervår er oversatt på nytt flere ganger. Hva kan gå tapt, og hva kan vinnes, når en gammel bønn får nytt språk?"
+        ],
+        "gaaVidere": [
+          "Skriv en kort bønn eller et ønske med samme oppbygning som Fadervår: først tre ledd som ikke handler om deg selv, så fire som gjør det.",
+          "Finn ut hva tidebønnene het og når på døgnet de ble bedt. Hvordan ville en dag med åtte faste bønnetider sett ut?",
+          "Diskuter i klassen: hjelper faste ord den som skal be, eller kommer de i veien?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvor mange ledd har Fadervår i versjonen kirkene bruker?",
+            "options": [
+              "Tre",
+              "Fem",
+              "Sju",
+              "Ti"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Matteus-versjonen har sju ledd. De tre første handler om Gud, de fire siste om det mennesker trenger."
+          },
+          {
+            "question": "Hva handler de tre første leddene i Fadervår om?",
+            "options": [
+              "Mat, klær og husly",
+              "At Gud skal virkeliggjøre herredømmet sitt",
+              "Tilgivelse for det man har gjort galt",
+              "Beskyttelse mot fristelser"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Navnet, riket og viljen handler alle om Gud. Først etter dem snur bønnen seg mot menneskene."
+          },
+          {
+            "question": "Hva er tidebønner?",
+            "options": [
+              "Bønner som bare bes ved høytider",
+              "Bønner knyttet til bestemte tider av døgnet",
+              "Bønner man må lese fra Bibelen",
+              "Bønner som bare prester kan høre på"
+            ],
+            "correctAnswer": 1,
+            "explanation": "I den katolske kirken bes de åtte ganger daglig, og prester, diakoner og ordensfolk er forpliktet til å be dem."
+          },
+          {
+            "question": "Hva bes på de små perlene i en rosenkrans?",
+            "options": [
+              "Fadervår",
+              "Jesusbønnen",
+              "Ave Maria",
+              "Den nikenske trosbekjennelsen"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Ave Maria bes på de små perlene og Fadervår på de store. Tallet 150 svarte opprinnelig til antallet salmer i Salmenes bok."
+          },
+          {
+            "question": "Hva er målet med å gjenta Jesusbønnen i ortodoks tradisjon?",
+            "options": [
+              "Å rekke flest mulig bønner på kort tid",
+              "At bønnen etter hvert følger pusten og hjerteslagene",
+              "Å lære hele Bibelen utenat",
+              "Å be høyt slik at andre hører det"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Bønnen gjentas i stillhet, ofte med en bønnesnor, til den følger pusten og hjerteslagene og fører til indre ro."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Seim, T. K. (2025). *Fadervår*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Fadervår](https://snl.no/Faderv%C3%A5r)",
+          "Jacobsen, K. A., Borgland, J. W., Groth, B. & Kværne, P. (2024). *Bønn*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/bønn](https://snl.no/b%C3%B8nn)",
+          "Thomassen, M. (2024). *Gudstjeneste*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/gudstjeneste](https://snl.no/gudstjeneste)",
+          "Halvorsen, P. B. (2026). *Tidebønner*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/tidebønner](https://snl.no/tideb%C3%B8nner)",
+          "Store norske leksikon. (2026). *Rosenkrans - kjede*. Hentet 11.08.2026 fra [snl.no/rosenkrans_-_kjede](https://snl.no/rosenkrans_-_kjede)",
+          "Thorbjørnsrud, B. S. & Paulsen, E. O. (2018). *Jesusbønnen*. Store norske leksikon. Hentet 11.08.2026 fra [snl.no/Jesusbønnen](https://snl.no/Jesusb%C3%B8nnen)",
+          "Den norske kirke. (u.å.). *Bønn*. Hentet 11.08.2026 fra [kirken.no](https://www.kirken.no/nb-NO/kristen-tro/kristen-tro/bonn/)"
+        ]
+      }
+    }
+  ],
+  "quote": {
+    "text": "Vår Far i himmelen! La navnet ditt helliges. La riket ditt komme. La viljen din skje på jorden slik som i himmelen.",
+    "source": "Bibelen",
+    "reference": "Matteus 6:9-10"
+  },
+  "timeline": []
 }
