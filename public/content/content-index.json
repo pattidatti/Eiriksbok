@@ -1,5 +1,5 @@
 {
-  "buildId": 202540421226115,
+  "buildId": 169465183053515,
   "contentMap": {
     "concept-absolutt-fortrinn": [
       "content/concepts/absolutt-fortrinn.json"
@@ -2574,6 +2574,9 @@
     "symboler-og-klaer": [
       "content/krle/religion-og-kultur/symboler-og-klaer.json"
     ],
+    "sammenligning-skapelse": [
+      "content/krle/sammenligning/skapelse.json"
+    ],
     "microgame-map": [
       "content/microgame-map.json"
     ],
@@ -4660,6 +4663,7 @@
     "krle/religion-og-kultur/mat-og-religion": "content/krle/religion-og-kultur/mat-og-religion.json",
     "krle/religion-og-kultur/religion-i-medier": "content/krle/religion-og-kultur/religion-i-medier.json",
     "krle/religion-og-kultur/symboler-og-klaer": "content/krle/religion-og-kultur/symboler-og-klaer.json",
+    "krle/sammenligning/skapelse": "content/krle/sammenligning/skapelse.json",
     "microgame-map.json/undefined/microgame-map": "content/microgame-map.json",
     "musikk/grunnleggende/akkorder-og-harmoni": "content/musikk/grunnleggende/akkorder-og-harmoni.json",
     "musikk/grunnleggende/notasjon": "content/musikk/grunnleggende/notasjon.json",

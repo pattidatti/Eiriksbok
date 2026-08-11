@@ -1,0 +1,410 @@
+{
+  "id": "skapelse",
+  "title": "Hvor kommer alt fra?",
+  "subject": "krle",
+  "topic": "sammenligning",
+  "layout": "rich",
+  "category": "Sammenligning",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "dimension": "narrative",
+  "comparison_tags": ["skapelse", "narrative"],
+  "religions": [
+    "jodedom",
+    "kristendom",
+    "islam",
+    "bahai",
+    "mormonisme",
+    "jehovas-vitner",
+    "hinduisme",
+    "buddhisme",
+    "sikhisme"
+  ],
+  "details": [
+    "Noen tradisjoner mener verden har en begynnelse. Andre mener den aldri har hatt en.",
+    "De abrahamittiske religionene forteller om en Gud som skaper ved å ville eller si noe.",
+    "Hinduismen regner tiden i ring: verden blir til, består og går under, om og om igjen.",
+    "Buddhismen svarer ikke på spørsmålet i det hele tatt, og mener det ikke hjelper å vite.",
+    "Om verden har en begynnelse eller ikke, avgjør hva mennesket er til for."
+  ],
+  "concepts": [
+    {
+      "id": "kosmogoni",
+      "term": "Kosmogoni",
+      "definition": "En fortelling om hvordan verden ble til."
+    },
+    {
+      "id": "ex-nihilo",
+      "term": "Ex nihilo",
+      "definition": "Latin for av ingenting. Tanken om at Gud skapte uten å bruke noe som fantes fra før."
+    },
+    {
+      "id": "syklisk-tid",
+      "term": "Syklisk tid",
+      "definition": "Tid som går i ring. Verden gjentar seg i stedet for å ha én begynnelse og én slutt."
+    },
+    {
+      "id": "animisme",
+      "term": "Animisme",
+      "definition": "Troen på at ting i naturen har en sjel eller en ånd."
+    }
+  ],
+  "createdDate": "2026-08-12T12:00:00Z",
+  "lastUpdated": "2026-08-12T12:00:00Z",
+  "content": [
+    {
+      "type": "text",
+      "content": "Bibelen bruker seks dager på å skape verden. Hinduismen bruker ikke dager i det hele tatt. Der har universet aldri begynt, og det kommer aldri til å slutte."
+    },
+    {
+      "type": "header",
+      "text": "Spørsmålet alle stiller"
+    },
+    {
+      "type": "text",
+      "content": "Fortellinger om hvordan verden ble til finnes i så å si alle religioner. Fagordet er kosmogoni. Slike fortellinger handler sjelden bare om fortiden. De svarer på noe mennesker lurer på nå: hvorfor finnes vi, og hva skal vi gjøre med den tida vi har."
+    },
+    {
+      "type": "text",
+      "content": "Religionshistorikere deler skapelsesfortellinger grovt i tre typer. Gud kan skape av ingenting, av et kaos eller et urstoff som allerede fantes, eller ved at et urvesen blir delt opp og blir til verden (Kværne, Groth og Løøv, 2025). Du kommer til å møte alle tre i denne artikkelen. Prøv dem i ruta under, tre tradisjoner om gangen."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Nattehimmel med stjerner over et åpent landskap",
+      "caption": "Det samme spørsmålet, stilt av mennesker over hele verden."
+    },
+    {
+      "type": "component",
+      "name": "SkapelsesVeven",
+      "props": {
+        "title": "Fire faser, tre tradisjoner om gangen",
+        "intro": "Velg inntil tre tradisjoner, og klikk deg gjennom fasene. Legg merke til de tomme rutene.",
+        "maxVisible": 3,
+        "defaultSelection": ["kristendom", "hinduisme", "buddhisme"],
+        "phases": [
+          { "id": "kaos", "label": "Før begynnelsen" },
+          { "id": "ordning", "label": "Verden blir til" },
+          { "id": "mennesket", "label": "Mennesket kommer" },
+          { "id": "oppdraget", "label": "Hva skal vi her?" }
+        ],
+        "traditions": [
+          {
+            "id": "jodedom",
+            "name": "Jødedom",
+            "color": "#3b82f6",
+            "group": "abrahamittisk",
+            "beats": {
+              "kaos": { "text": "Mørke over dypet. Gud er der før alt annet." },
+              "ordning": { "text": "Gud sier noe, og det blir til. Uttrykket Gud sa står ti ganger." },
+              "mennesket": { "text": "Skapt sist i den første fortellingen, først i den andre." },
+              "oppdraget": { "text": "Holde budene og hvile på den sjuende dagen." }
+            }
+          },
+          {
+            "id": "kristendom",
+            "name": "Kristendom",
+            "color": "#6366f1",
+            "group": "abrahamittisk",
+            "beats": {
+              "kaos": { "text": "Mørke over dypet, slik den jødiske teksten forteller det." },
+              "ordning": { "text": "Seks dager, bygget som tre par: tre tomme rom, så fylles de." },
+              "mennesket": { "text": "Skapt i Guds bilde." },
+              "oppdraget": { "text": "Ta vare på jorda." }
+            }
+          },
+          {
+            "id": "islam",
+            "name": "Islam",
+            "color": "#10b981",
+            "group": "abrahamittisk",
+            "beats": {
+              "kaos": { "text": "Gud er der før himlene og jorden." },
+              "ordning": { "text": "Seks dager, men ingen hviledag. Ingen tretthet rørte Gud." },
+              "mennesket": { "text": "Adam formet av leire." },
+              "oppdraget": { "text": "Være Guds forvalter på jorda." }
+            }
+          },
+          {
+            "id": "bahai",
+            "name": "Bahá'í",
+            "color": "#14b8a6",
+            "group": "nyere",
+            "beats": {
+              "ordning": { "text": "Gud har alltid skapt. En skaper uten skaperverk er ingen skaper." },
+              "mennesket": { "text": "Alt som finnes har vært til før, i andre former." },
+              "oppdraget": { "text": "Utvikle sjelen mot Gud." }
+            }
+          },
+          {
+            "id": "mormonisme",
+            "name": "Mormonisme",
+            "color": "#8b5cf6",
+            "group": "nyere",
+            "beats": {
+              "kaos": { "text": "Materie og grunnstoffer finnes fra evighet av." },
+              "ordning": { "text": "Gud organiserer det som alt er der, slik en byggmester bruker materialer." },
+              "mennesket": { "text": "Menneskene levde som Guds åndebarn før jorda ble til." },
+              "oppdraget": { "text": "Vokse videre mot å bli lik Gud." }
+            }
+          },
+          {
+            "id": "jehovas-vitner",
+            "name": "Jehovas vitner",
+            "color": "#0ea5e9",
+            "group": "nyere",
+            "beats": {
+              "kaos": { "text": "Jorda og universet fantes lenge før den første skapelsesdagen." },
+              "ordning": { "text": "Seks dager, men hver dag er en lang tidsperiode, ikke et døgn." },
+              "mennesket": { "text": "Skapt av Jehova på den sjette perioden." },
+              "oppdraget": { "text": "Gjøre jorda til et paradis." }
+            }
+          },
+          {
+            "id": "hinduisme",
+            "name": "Hinduisme",
+            "color": "#ec4899",
+            "group": "indisk",
+            "beats": {
+              "ordning": { "text": "Verden blir til, består og går under, om og om igjen." },
+              "mennesket": { "text": "I Purusha-hymnen blir verden til av kroppen til et urvesen." },
+              "oppdraget": { "text": "Slippe ut av kretsløpet." }
+            }
+          },
+          {
+            "id": "buddhisme",
+            "name": "Buddhisme",
+            "color": "#f59e0b",
+            "group": "indisk",
+            "beats": {
+              "oppdraget": { "text": "Få slutt på lidelsen. Spørsmålet om begynnelsen hjelper ikke." }
+            }
+          },
+          {
+            "id": "sikhisme",
+            "name": "Sikhisme",
+            "color": "#ff9933",
+            "group": "indisk",
+            "beats": {
+              "kaos": { "text": "Utallige tidsaldre der det bare fantes mørke." },
+              "ordning": { "text": "Gud ville det, og alt ble til. Ingen kamp, ingen motstander." },
+              "oppdraget": { "text": "Huske Guds navn, arbeide ærlig og dele med andre." }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "content": "La oss ta gruppene etter tur, og se hva de faktisk er uenige om."
+    },
+    {
+      "type": "header",
+      "text": "De abrahamittiske: en Gud som vil"
+    },
+    {
+      "type": "text",
+      "content": "Jødedommen, kristendommen og islam deler tanken om at Gud skaper av ingenting, gjennom sitt ord, sin tanke eller sin vilje (Kværne, Groth og Løøv, 2025). Fagordet er ex nihilo, latin for av ingenting. Det betyr at det ikke lå noe materiale klart som Gud kunne bruke."
+    },
+    {
+      "type": "text",
+      "content": "Jødedommen og kristendommen leser den samme teksten, [1. Mosebok](/krle/religion/jodedom/skapelse), men vektlegger den ulikt. I jødisk lesning er den sjuende dagen selve målet: den eneste dagen Gud kaller hellig. I kristen lesning ligger tyngden på at mennesket er skapt i Guds bilde og har fått ansvar for jorda. Du kan lese begge nærmere i artikkelen om [de to skapelsesfortellingene](/krle/religion/kristendom/skapelse)."
+    },
+    {
+      "type": "text",
+      "content": "Islam forteller også om seks dager, men med én forskjell som er lett å overse. Der den bibelske teksten lar Gud hvile, sier Koranen det motsatte: «Vi skapte visselig himlene og jorden og det som er mellom dem på seks dager, og ingen tretthet rørte Oss» (Koranen 50,38). Ingen hviledag. En Gud som ikke blir sliten, trenger den ikke."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Tre nyere bevegelser, tre helt ulike svar",
+        "content": "Bahá'í, mormonismen og Jehovas vitner er alle yngre enn de andre, og alle tre bryter med den vanlige lesningen på hvert sitt punkt. Bahá'í sier at skapelsen aldri begynte, fordi en Gud som ikke alltid har skapt, ikke ville vært en skaper. Mormonismen sier at Gud ikke skapte av ingenting, men organiserte materie som alt fantes. Jehovas vitner holder på seks dager, men leser dem som lange tidsperioder, ikke som døgn."
+      }
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Åpen bok ved siden av et hjul i tre",
+      "caption": "En linje eller en sirkel. Formen på tiden avgjør resten."
+    },
+    {
+      "type": "header",
+      "text": "De indiske: tiden går i ring"
+    },
+    {
+      "type": "text",
+      "content": "Hinduismen har ikke én skapelsesfortelling, men flere som lever side om side. Den mest kjente er Purusha-hymnen, der verden blir til av kroppen til et urvesen som ofres. Det er en helt annen type fortelling enn den abrahamittiske: her skapes verden ikke av ingenting, men av noe (Kværne, Groth og Løøv, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Enda viktigere er formen på tiden. Verden blir til, består og går under, og så begynner det på nytt. Det finnes ingen første gang. Spør du en hindu hva som skjedde helt i starten, er svaret at det ikke fantes noen start. Du kan lese mer i artikkelen om [verden uten begynnelse](/krle/religion/hinduisme/skapelse)."
+    },
+    {
+      "type": "text",
+      "content": "Buddhismen går enda lenger. Den har ingen skapergud og ingen skapelsesfortelling, og buddhismen har ikke vært opptatt av å utforme forestillinger om skapelsen i det hele tatt (Kværne, Groth og Løøv, 2025). Ifølge tekstene nektet Buddha å svare på om verden er evig. Han sammenlignet det med en mann som er truffet av en pil og krever å vite hvem som skjøt før han lar seg behandle."
+    },
+    {
+      "type": "text",
+      "content": "Sikhismen hører også hjemme i India, men svarer mer likt de abrahamittiske: før verden fantes bare mørke i utallige tidsaldre, til Gud ville det og alt ble til."
+    },
+    {
+      "type": "header",
+      "text": "Mønsteret"
+    },
+    {
+      "type": "text",
+      "content": "Sett fasene i ruta over ved siden av hverandre, og et mønster trer fram. Det som skiller tradisjonene mest, er ikke hvor mange dager de bruker. Det er om verden i det hele tatt har en begynnelse."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Har verden en begynnelse, må noen ha satt den i gang, og da har den trolig en hensikt.",
+        "Har verden ingen begynnelse, finnes det ingen som satte den i gang, og hensikten må ligge et annet sted.",
+        "Der det finnes en skaper, får mennesket et oppdrag fra noen.",
+        "Der det ikke finnes en skaper, må mennesket finne oppgaven sin i sin egen situasjon."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hvor buddhismen havner. Den fyller bare den siste ruta. Det er ikke fordi vi mangler kilder, men fordi tradisjonen mener spørsmålet ikke fører noen vei. Den tomme ruta er svaret."
+    },
+    {
+      "type": "header",
+      "text": "En gjestestemme: samisk religion"
+    },
+    {
+      "type": "text",
+      "content": "Den gamle samiske religionen bygde på animisme, altså troen på at ting i naturen er besjelet. Fjell, steiner, kilder og sjøer kunne ha åndelig kraft, og forestillinger om flere parallelle verdener var utbredt, blant annet de dødes rike og en underverden (Løøv, Kraft, Gaski og Fonneland, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Her ligger forskjellen et annet sted enn i de andre svarene. Spørsmålet er ikke bare når verden ble til, men hva slags ting verden er. Er landskapet noe som ble laget og overlatt til oss, eller er det selv levende? Samisk tradisjon svarer det siste. Solguden Beaivi står sentralt, og ifølge mytologien kom reinen vandrende til jorda langs solstrålene."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Fjellandskap i nordlys med en stein i forgrunnen",
+      "caption": "I samisk tradisjon er landskapet ikke bare et sted, men noe som lever."
+    },
+    {
+      "type": "header",
+      "text": "Og de som ikke tror?"
+    },
+    {
+      "type": "text",
+      "content": "Naturvitenskapen har også en fortelling om begynnelsen. Teorien om at universet startet i en ekstremt tett og varm tilstand ble først lagt fram av den belgiske presten og fysikeren Georges Lemaître. At han var prest, sier noe om at grensene her er mindre skarpe enn mange tror."
+    },
+    {
+      "type": "text",
+      "content": "Forskjellen er hva fortellingen svarer på. Big Bang forteller hvordan, ikke hvorfor. Humanister og andre som ikke tror på en gud, mener nettopp at universet ikke har noen hensikt utenfra, og at mennesket derfor må lage mening selv. Det er ikke et svar som mangler noe. Det er et annet svar på det samme spørsmålet."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Se rådataene",
+        "content": "Vil du lese hva hver enkelt religion sier om skapelsen, med kilder, finner du alle ni artiklene side om side på /krle/sammenlign/tema/skapelse."
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Nevn de tre typene skapelsesfortellinger religionshistorikere skiller mellom.",
+          "Hva betyr ex nihilo, og hvilke religioner bruker den tanken?",
+          "Hvorfor har ikke islam en hviledag i skapelsesfortellingen sin?",
+          "Hva svarte Buddha ifølge tekstene på spørsmålet om verden er evig?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor det får store følger om verden har en begynnelse eller ikke.",
+          "Buddhismen fyller bare den siste ruta i skapelsesveven. Er det en mangel, eller er det et svar? Begrunn.",
+          "Mormonismen sier at Gud organiserte materie som alt fantes. Hva gjør det med forholdet mellom Gud og verden, sammenlignet med å skape av ingenting?",
+          "Samisk tradisjon ser landskapet som levende. Hvordan kan det påvirke hvordan man behandler naturen?"
+        ],
+        "gaaVidere": [
+          "Velg to tradisjoner fra ulike grupper og sammenlign dem i skapelsesveven. Skriv et kort avsnitt om hva som overrasket deg.",
+          "Diskuter i klassen: svarer Big Bang og en skapelsesfortelling på det samme spørsmålet, eller på to ulike?",
+          "Finn ut hva din egen familie eller ditt eget livssyn sier om hvor alt kommer fra, og sammenlign med én av de ni."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva betyr det at Gud skaper ex nihilo?",
+            "options": [
+              "At Gud bruker materiale som allerede fantes",
+              "At Gud skaper av ingenting",
+              "At Gud skaper gjennom et urvesen",
+              "At verden skapes på nytt hver gang"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ex nihilo er latin for av ingenting, og brukes om skapelsen i jødedom, kristendom og islam."
+          },
+          {
+            "question": "Hva er den viktigste forskjellen mellom den bibelske og den koranske skapelsesfortellingen i denne artikkelen?",
+            "options": [
+              "Antall dager",
+              "Hvem som skapes først",
+              "At Koranen ikke har noen hviledag",
+              "At Koranen ikke nevner mennesket"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Koranen 50,38 sier at ingen tretthet rørte Gud. En Gud som ikke blir sliten, trenger ingen hviledag."
+          },
+          {
+            "question": "Hvordan forstår hinduismen tiden?",
+            "options": [
+              "Som en rett linje fra skapelse til dom",
+              "Som en ring der verden blir til og går under om og om igjen",
+              "Som noe som startet med Big Bang",
+              "Som seks lange tidsperioder"
+            ],
+            "correctAnswer": 1,
+            "explanation": "I hinduismen går tiden i ring. Verden blir til, består og går under, og så begynner det på nytt."
+          },
+          {
+            "question": "Hvorfor har buddhismen ingen skapelsesfortelling?",
+            "options": [
+              "Fortellingen er gått tapt",
+              "Bare munker får kjenne den",
+              "Tradisjonen mener spørsmålet ikke hjelper mot lidelsen",
+              "Den ble forbudt av senere konger"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Ifølge tekstene lot Buddha spørsmålet stå, og sammenlignet det med en såret mann som krever å vite hvem som skjøt før han lar seg behandle."
+          },
+          {
+            "question": "Hva kjennetegner det samiske synet på landskapet?",
+            "options": [
+              "At det ble skapt på seks dager",
+              "At fjell, steiner og sjøer kunne ha åndelig kraft",
+              "At det er en illusjon",
+              "At det ble til av et urvesen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Samisk religion bygde på animisme, der ting i naturen ble oppfattet som besjelet."
+          }
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Kværne, P., Groth, B. & Løøv, M. (2025). *Skapelsesmyter*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/skapelsesmyter](https://snl.no/skapelsesmyter)",
+          "Løøv, M., Kraft, S. E., Gaski, H. & Fonneland, T. (2024). *Samisk religion*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/samisk_religion](https://snl.no/samisk_religion)",
+          "Saheeh International. (u.å.). *Koranen 50,38 og 7,54*. Al Quran Cloud. Hentet 12.08.2026 fra [alquran.cloud](https://alquran.cloud/)",
+          "Grøn, Ø. (2025). *Georges Lemaître*. Store norske leksikon. Hentet 12.08.2026 fra [snl.no/Georges_Lemaître](https://snl.no/Georges_Lema%C3%AEtre)"
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

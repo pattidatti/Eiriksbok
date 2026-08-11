@@ -882,11 +882,11 @@
       "count": 28
     },
     {
-      "tag": "verdensorden",
-      "count": 26
+      "tag": "narrative",
+      "count": 27
     },
     {
-      "tag": "narrative",
+      "tag": "verdensorden",
       "count": 26
     },
     {
@@ -1106,6 +1106,10 @@
       "count": 10
     },
     {
+      "tag": "skapelse",
+      "count": 10
+    },
+    {
       "tag": "keiser",
       "count": 9
     },
@@ -1147,10 +1151,6 @@
     },
     {
       "tag": "overgangsriter",
-      "count": 9
-    },
-    {
-      "tag": "skapelse",
       "count": 9
     },
     {
@@ -3799,6 +3799,10 @@
     },
     {
       "tag": "nord-norge",
+      "count": 1
+    },
+    {
+      "tag": "sammenligning",
       "count": 1
     },
     {
